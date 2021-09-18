@@ -1,0 +1,875 @@
+@charset "utf-8";
+/* CSS Document */
+/*
+
+	i CSS per i dispositivi touch
+
+
+*/
+/*.tablet #scheda:not(.h150) .formBtn {
+	bottom:53px !important;
+}*/
+.touch .noTouch{
+	display:none !important;
+}
+.smart .noSmart{
+	display:none !important;
+}
+.touch:not(.android) input[type='text'],
+.touch:not(.android) input[type='email'],
+.touch:not(.android) input[type='password'],
+.touch:not(.android) #formMod select:not(.p_proc_gruppo):not(#grpPt):not(#grpMrd),
+.touch:not(.android) #dataTxt{
+	height:30px !important;
+	line-height:30px !important;
+	font-size:14px !important;
+}
+.touch:not(.android) #dataTxt *{
+	line-height:30px !important;
+	font-size:14px !important;
+}
+.touch:not(.android) textarea{
+	font-size:14px !important;
+	padding:15px !important;
+}
+.touch.android input[type='text'],
+.touch.android input[type='email'],
+.touch.android input[type='password'],
+.touch.android #formMod select:not(.p_proc_gruppo):not(.p_paz_gruppo):not(.p_paz_meridiani):not(#grpPt):not(#grpMrd),
+.touch.android #dataTxt{
+	height:32px !important;
+	line-height:32px !important;
+	font-size:16px !important;
+	padding-left:8px;
+}
+.touch.android #el_visceri,
+.touch.android #el_ossa,
+.touch.android #el_muscoli {
+	height: 163px !important;
+}
+.touch.android #chMuscoli{
+    margin-left: -27px !important;
+    margin-top: 9px !important;
+    margin-right: 3px !important;
+}
+.touch.android .date{
+    width: 135px;
+}
+.touch.android .campoData{
+	padding-left:0px !important;
+}
+.touch.android .giorno,
+.touch.android .mese{
+	width:26px !important;
+}
+.touch.android .anno{
+	width:52px !important;
+}
+.touch.android #dataTxt *{
+	line-height:32px !important;
+	font-size:16px !important;
+}
+.touch.android textarea{
+	font-size:16px !important;
+	padding:15px !important;
+}
+.touch .p_sch_punto,
+.touch .p_sch_tit,
+.touch .p_sch_descr,
+.touch #p_add_comm,
+.touch .p_paz_punto {
+	height:31px !important;
+	line-height:31px !important;
+}
+
+/* SCHEDA */
+body.touch:not(.smart) .visSch #ss,
+body.touch:not(.smart) .visSch #sc{
+	display:inline-block !important;
+}
+
+/* ELENCHI */
+body.touch:not(.smart) #l1,
+body.touch:not(.smart) #l2,
+body.touch:not(.smart) #l3{
+	display:none !important;
+}
+
+/* MAPPE */
+.smart #elenchi:not(.schExp) #btnCarMapMenu{
+	display:none;
+}
+.smart #elenchi:not(.schExp) .titolo_set span{
+	display:none;
+}
+.smart #elenchi:not(.schExp) #pulsanti_set > div:last-child{
+	margin-right: 38px;
+}
+.smart #elenchi:not(.schExp) #pulsanti_set .menuElenchi{
+	background-color: var(--colore-beige);
+	height: 54px !important;
+	margin-top: -4px;
+	border-top: 0px;
+	border-left: 1px solid rgba(0,0,0,0.5) !important;
+}
+/* ELENCHI */
+.smart #elenchi{
+	width:100%;
+	bottom:54px;
+	top:auto !important;
+	z-index:42 !important;
+}
+.smart #elenchi:not(.schExp){
+	height:auto;
+}
+.smart #elenchi.schExp{
+	height: calc(100% - 89px);
+}
+.smart #elenchi_cont{
+	background: var(--menu-fondino) !important;
+	width:100% !important;
+}
+.smart #elenchi:not(.schExp) #elenchi_cont{
+	height:auto !important;
+}
+.smart #elenchi_linguette{
+	display:none !important;
+}
+.smart #elenchi:not(.schExp) #elenchi_titolo{
+	font-size: 14px;
+	padding: 0px;
+	height: 27px;
+	line-height: 27px;
+	margin: 0px;
+	margin-left: 42px;
+	margin-top: -27px;
+	text-align: center;
+	width: fit-content;
+	padding-left: 30px;
+	padding-right: 17px;
+	border-top-left-radius: 6px;
+	border-top-right-radius: 6px;
+	background-color: var(--schede-fondino);
+	box-shadow: 0px 0px 3px #000;
+	position: relative;
+	background-size: auto 40px;
+	background-position: -5px center;
+}
+.bodyStyled2.smart #elenchi:not(.schExp) #elenchi_titolo{
+	background-image: url(../img/frSx.png);
+	color: #FFF !important;
+}
+.bodyStyled0.smart #elenchi:not(.schExp) #elenchi_titolo,
+.bodyStyled1.smart #elenchi:not(.schExp) #elenchi_titolo{
+	background-image: url(../img/frSxB.png);
+	color: #000;
+}
+
+.smart #elenchi:not(.schExp) #elenchi_icona{
+	display:none;
+}
+.smart #elenchi_lista{
+	width:100% !important;
+	position:relative;
+	height: calc(100% - 51px);
+}
+.smart #elenchi.schExp .lista{
+	position:relative;
+	padding:3px;
+}
+.smart #elenchi:not(.schExp) .lista{
+	border-top:none !important;
+	text-align: left !important;
+}
+.smart #elenchi:not(.schExp) .lista:not(.cont_cartellaAperta){
+	padding: 3px;
+	padding-bottom: 0px !important;
+	overflow-y: hidden;
+}
+.smart #elenchi:not(.schExp) .cartella > span img{
+	display:none;
+}
+.smart #elenchi:not(.schExp) .lista{
+	display: inline-block;
+	width: 100%;
+	left: 0px;
+	position: absolute;
+	height: 50px;
+	border-bottom: 1px solid rgba(0,0,0,0.3);
+	background: linear-gradient(to bottom, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.2) 8%, rgba(0,0,0,0.2) 92%, rgba(0,0,0,0.3) 100%);
+}
+.smart #elenchi.schExp .lista > div:not(.loading) {
+	height:44px;
+	margin:6px !important;
+}
+.smart #elenchi.schExp .lista > div:not(.loading):not(.cnmty){
+	line-height:44px !important;
+}
+.smart #elenchi.schExp .cartella > span{
+	height:44px !important;
+}
+.smart #elenchi:not(.schExp) .listaPazienti,
+.smart #elenchi:not(.schExp) .listaFornitori,
+.smart #elenchi:not(.schExp) .listaServizi,
+.smart #elenchi:not(.schExp) .listaTrattamenti,
+.smart #elenchi:not(.schExp) .trattElenco,
+.smart #elenchi:not(.schExp) .listaProcedure,
+.smart #elenchi:not(.schExp) .listaSaldi{
+	width: calc(100% - 30px) !important;
+	left: 0px !important;
+}
+.smart #elenchi:not(.schExp) .listaTrattamenti,
+.smart #elenchi:not(.schExp) .listaProcedure,
+.smart #elenchi:not(.schExp) .listaSaldi{
+	border-top: 1px solid rgba(0,0,0,0.3) !important;
+}
+.smart #elenchi:not(.schExp) .listaPazienti,
+.smart #elenchi:not(.schExp) .listaFornitori,
+.smart #elenchi:not(.schExp) .listaServizi,
+.smart #elenchi:not(.schExp) .listaTrattamenti,
+.smart #elenchi:not(.schExp) .listaSaldi,
+.smart #elenchi:not(.schExp) .listaProcedure{
+	border-bottom-right-radius:6px;
+	border-right: 1px solid rgba(0,0,0,0.2);
+	border-bottom: 1px solid rgba(0,0,0,0.2);
+}
+.smart #elenchi:not(.schExp) .trattElenco{
+	border-bottom-right-radius: 6px !important;
+	border-right: 1px solid rgba(0,0,0,0.52);
+}
+.smart #elenchi:not(.schExp) .cartellaAperta{
+	margin:0px !important;
+},
+.smart #elenchi:not(.schExp) .trattElenco{
+	right:auto !important;
+}
+.smart #elenchi:not(.schExp) #sistemaMeridiani_p,
+.smart #elenchi:not(.schExp) #add_paz,
+.smart #elenchi:not(.schExp) #add_forn,
+.smart #elenchi:not(.schExp) #add_serv,
+.smart #elenchi:not(.schExp) #add_ciclo,
+.smart #elenchi:not(.schExp) .trattTools,
+.smart #elenchi:not(.schExp) #add_proc,
+.smart #elenchi:not(.schExp) #add_saldo,
+.smart #elenchi:not(.schExp) #btnCarMapMenu{
+	text-align: center !important;
+	right: 0px !important;
+	bottom: 104px;
+	position: fixed !important;
+	background-color: #FFF;
+	box-shadow: 0px 0px 12px rgba(0,0,0,0.8);
+	height: auto !important;
+	line-height: normal;
+	padding: 0px !important;
+	display:none;
+	z-index: 500;
+}
+.smart #elenchi:not(.schExp) .trattTools i{
+	height: auto !important;
+	line-height: normal !important;
+}
+.smart #elenchi:not(.schExp) .trattTools{
+	bottom: 108px !important;
+}
+.smart #elenchi:not(.schExp) #add_pat{
+	display:none;
+}
+.smart #elenchi:not(.schExp) .cartellaAperta .menuElenchi{
+	background-color: var(--menu-fondino);
+	bottom: 57px !important;
+	/*border-bottom: 1px solid rgba(0,0,0,0.52);*/
+	height: 51px !important;
+	border-top: 1px solid rgba(0,0,0,0.52) !important;
+}
+.smart .cartella:not(.cartellaAperta) .menuElenchi{
+	display:none !important;
+}
+.smart #elenchi:not(.schExp) .menuElenchi{
+	display: inline-block;
+	position: fixed;
+	right: 0px;
+	width: 30px;
+	height: 51px;
+	background-image:url(../img/palliniMenuMobile.png);
+	background-repeat:no-repeat;
+	background-position:center center;
+	border-top: 1px solid rgba(0,0,0,0.3);
+	z-index:100;
+}
+.smart #elenchi:not(.schExp) .addTrattBtn span{
+	display:block !important;
+}
+.smart #elenchi:not(.schExp) #add_proc,
+.smart #elenchi:not(.schExp) #add_ciclo,
+.smart #elenchi:not(.schExp) #add_saldo{
+	background-image: linear-gradient(to bottom, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0) 50%, rgba(0,0,0,0.5) 100%);
+}
+.smart #elenchi:not(.schExp) #sistemaMeridiani_p i img,
+.smart #elenchi:not(.schExp) #add_paz i img,
+.smart #elenchi:not(.schExp) #add_forn i img,
+.smart #elenchi:not(.schExp) #add_serv i img,
+.smart #elenchi:not(.schExp) #add_ciclo i img,
+.smart #elenchi:not(.schExp) .trattTools img,
+.smart #elenchi:not(.schExp) #add_proc i img,
+.smart #elenchi:not(.schExp) #add_saldo i img,
+.smart #elenchi:not(.schExp) #btnCarMapMenu i img,
+.smart #elenchi:not(.schExp) #btnCarMapMenu i b{
+	display:none !important;
+}
+.smart #elenchi:not(.schExp) .elMenu{
+	display:block;
+	padding-left:18px;
+	padding-right:18px !important;
+	height:39px;
+	margin-left:0px !important;
+	background:#FFF !important;
+	float: none !important;
+	width: auto !important;
+}
+.smart #elenchi:not(.schExp) .elMenu span{
+	display:block !important;
+}
+.smart #elenchi:not(.schExp) .elMenu,
+.smart #elenchi:not(.schExp) .elMenu *{
+	line-height:39px;
+	font-style:normal;
+	color:#000 !important;
+	font-size:14px !important;
+}
+.smart #elenchi.schExp #elenchi_lista{
+	border-bottom: 1px solid rgba(0,0,0,0.5);
+}
+.smart #elenchi.schExp .lista{
+	position: absolute;
+}
+.smart #elenchi.schExp .listaPazienti,
+.smart #elenchi.schExp .listaFornitori,
+.smart #elenchi.schExp .listaServizi{
+	height: calc(100% - 39px);
+}
+.smart #elenchi.schExp .listaTrattamenti,
+.smart #elenchi.schExp .listaSaldi{
+	height: calc(100% - 120px);
+}
+.smart #elenchi.schExp .listaProcedure{
+	height: calc(100% - 79px);
+}
+.smart #elenchi:not(.schExp) .trattBtns{
+	height: 50px !important;
+	text-align:left !important;
+	padding:7px !important;
+}
+.smart #elenchi:not(.schExp) #lista_pazienti .trattBtns{
+	width:125px !important;
+}
+.smart #elenchi:not(.schExp) #lista_pazienti .trattBtns{
+	margin-top: -50px !important;
+}
+.smart #elenchi:not(.schExp) #lista_procedure .trattBtns{
+	margin-top:0px !important;
+}
+.smart #elenchi:not(.schExp) .trattBtns span{
+	border-top-left-radius: 6px !important;
+	border-top-right-radius: 6px !important;
+	height: 36px !important;
+	line-height: 36px !important;
+	margin-top: 7px !important;
+}
+.smart .trattNomeCliente span{
+	font-size: 13px;
+}
+.smart #elenchi:not(.schExp) .trattNomeCliente{
+	/*margin-left: calc(100% - 356px);*/
+    margin-top: 0px !important;
+    margin-bottom: 0px !important;
+    background-image: none !important;
+    height: 51px;
+    padding-left: 0px !important;
+}
+.smart #elenchi.schExp .trattNomeCliente{
+	overflow-x: visible !important;
+}
+.smart #elenchi:not(.schExp) .trattNomeCliente.conAvatar{
+	padding-right: 57px;
+}
+.smart .trattNomeCliente{
+	font-size: 15px !important;
+}
+
+.smart #elenchi:not(.schExp) .avatarMini{
+	float: right !important;
+	margin-right: -57px !important;
+	border-radius: 0px;
+	box-shadow: none;
+	width: 51px;
+	height: 51px;
+}
+.smart #elenchi.schExp .avatarMini{
+	width: 60px;
+	height: 60px;
+	margin-top: 5px !important;
+	margin-left: -41px;
+}
+.smart #elenchi.schExp .avatarList{
+	max-width: 45px;
+	max-height: 45px;
+}
+.smart #elenchi.schExp .imgList{
+	margin-top: 4px;
+	margin-left: -7px;
+}
+.smart #elenchi:not(.schExp) #pazBtnTratt,
+.smart #elenchi:not(.schExp) #pazBtnSaldi {
+	width: 53px;
+	padding-left: 53px;
+	padding-right: 0px;
+	overflow: hidden;
+	padding-top: 40px;
+	background-position: center center;
+	background-repeat: no-repeat;
+	margin-top: 0px !important;
+	height: 43px !important;
+	margin-right: 1px;
+}
+.smart #elenchi:not(.schExp) #pazBtnTratt:not(.selBtn){
+	background-image:url(../img/ico_trattamenti.png);
+	background-color:transparent !important;
+}
+.smart #elenchi:not(.schExp) #pazBtnSaldi:not(.selBtn){
+	background-image:url(../img/ico_saldi.png);
+	background-color:transparent !important;
+}
+.smart #elenchi:not(.schExp) #pazBtnTratt.selBtn{
+	background-image:url(../img/ico_trattamentiB.png);
+}
+.smart #elenchi:not(.schExp) #pazBtnSaldi.selBtn{
+	background-image:url(../img/ico_saldiB.png);
+}
+.smart #elenchi:not(.schExp) #elenchi_pulsanti,
+.smart #elenchi:not(.schExp) #elenchi_lista:not(.triplo){
+	overflow-y:hidden !important;
+	overflow-x:scroll;
+	white-space:nowrap;
+	height:auto !important;
+	font-size: 0px !important;
+}
+.smart #elenchi:not(.schExp)  #elenchi_pulsanti{
+	height:54px !important;
+	padding-top: 4px;
+	padding-bottom: 4px;
+	padding-right: 5px;
+}
+.smart #elenchi:not(.schExp) #elenchi_lista:not(.triplo){
+	height: 54px !important;
+}
+.smart #elenchi:not(.schExp) .noResults{
+	padding:0px !important;
+	line-height: 32px !important;
+	box-shadow: none !important;
+	padding-left: 10px !important;
+	margin: 6px;
+}
+.smart #elenchi:not(.schExp):not(.compresso) .triplo{
+	height:105px;
+	margin-top: -1px;
+}
+.smart #elenchi.compresso{
+	height:54px !important;
+	overflow:hidden !important;
+	z-index:2 !important;
+}
+.smart #elenchi.compresso #elenchi_cont{
+	display: none !important;
+}
+.smart #scheda.compresso{
+	bottom:108px !important;
+}
+
+.smart #elenchi:not(.schExp) .lista .frdx,
+.smart #elenchi:not(.schExp) .lista .frdxtratt{
+	background-position: 500px center, center center !important;
+}
+.smart #elenchi:not(.schExp) .listaTrattamenti > .frdxtratt,
+.smart #elenchi:not(.schExp) .trattElenco .cart_els{
+	background-position: 8px center, 500px center, center center !important;
+	padding-right:15px !important;
+}
+.smart #elenchi:not(.schExp) #lista_set,
+.smart #elenchi:not(.schExp) #lista_base,
+.smart #elenchi:not(.schExp) #pulsanti_set,
+.smart #elenchi:not(.schExp) #pulsanti_base{
+	white-space:nowrap;
+	background-color:transparent;
+	padding-left:4px;
+	padding-right:0px;
+	font-size: 0px !important;
+}
+.smart #elenchi:not(.schExp) #pulsanti_set,
+.smart #elenchi:not(.schExp) #pulsanti_base{
+	vertical-align:top;
+}
+.smart #elenchi:not(.schExp) #pulsanti_set > div,
+.smart #elenchi:not(.schExp) #pulsanti_base > div{
+	background: linear-gradient(to bottom, #333 0%,#0a0a0a 100%);
+	color:#FFF !important;
+}
+
+.smart #elenchi:not(.schExp) #pulsanti_base div:not(.elencoSel):not(.trattTools):not(#lista_titolo):not(.noResults):hover,
+.smart #elenchi:not(.schExp) #pulsanti_set div:not(.elencoSel):hover{
+	background: linear-gradient(to bottom, #444 0%,#222 100%) !important;
+	color:#FFF !important;
+}
+
+.smart #elenchi:not(.schExp) #pulsanti_set > div,
+.smart #elenchi:not(.schExp) #pulsanti_base > div{
+	display:inline-block !important;
+}
+.smart #elenchi:not(.schExp) #lista_set > div,
+.smart #elenchi:not(.schExp) #lista_base > div{
+	display:none;
+}
+.smart #elenchi:not(.schExp) #pulsanti_set > div,
+.smart #elenchi:not(.schExp) #pulsanti_base > div{
+	width:auto !important;
+	padding-left:20px;
+	padding-right:20px;
+	display:inline-block;
+}
+.smart #elenchi_pulsanti .elencoSel,
+.smart #elenchi_lista div:not(.listaMeridiani) > div.elencoSel:not(.procNotCond):not(.procCond):not(.procPref){
+	background: linear-gradient(to bottom, #1d4eaa 0%,#0a3d96 100%) !important;
+	color:#FFF !important;
+}
+.smart #elenchi_lista div:not(.listaMeridiani) > div.elencoSel.procNotCond{
+	background-image: url(../img/ico_not_condB.png), linear-gradient(to bottom, #1d4eaa 0%,#0a3d96 100%) !important;
+}
+.smart #elenchi_lista div:not(.listaMeridiani) > div.elencoSel.procCond{
+	background-image: url(../img/ico_condB.png), linear-gradient(to bottom, #1d4eaa 0%,#0a3d96 100%) !important;
+}
+.smart #elenchi_lista div:not(.listaMeridiani) > div.elencoSel.procPref{
+	background-image: url(../img/ico_prefB.png), linear-gradient(to bottom, #1d4eaa 0%,#0a3d96 100%) !important;
+}
+.smart #elenchi_lista div.listaMeridiani > div.elencoSel span{
+	box-shadow:none !important;
+}
+.smart .divisorioMenu{
+	display:inline-block !important;
+	width:1px !important;
+	height:35px !important;
+	vertical-align:top;
+	
+	border-top:none !important;
+	border-bottom:none !important;
+	border-left:1px solid rgba(0,0,0,0.2);
+	border-right:1px solid rgba(255,255,255,0.2);
+}
+.smart #elenchi:not(.schExp) .cartella{
+	display: inline-block;
+	width:auto !important;
+}
+.smart #elenchi:not(.schExp) .cont_cartellaAperta > div.cartella:not(.cartellaAperta){
+	display:none !important;
+}
+.smart #elenchi:not(.schExp) .cont_cartellaAperta{
+	background-color: var(--menu-fondino) !important;
+}
+.smart #elenchi:not(.schExp) .cartella > span{
+	background-image:url(../img/cartella.png) !important;
+	background-repeat:no-repeat !important;
+	background-position:8px center !important;
+	padding-left:50px !important;
+	padding-right:15px;
+}
+.smart #elenchi:not(.schExp) .cartellaAperta{
+	position:absolute;
+	left:0px;
+	height:50px;
+}
+.smart #elenchi:not(.schExp) .cartellaAperta > span{
+	position:fixed;
+	left:0px;
+	height:50px;
+	line-height:50px !important;
+	background-color:var(--menu-fondino) !important;
+	width:129px;
+	background-image:url(../img/chMenuB.png), url(../img/cartella.png) !important;
+	background-repeat:no-repeat !important;
+	background-size:auto 45%, auto !important;
+	background-position:99px center, 8px 5px !important;
+	
+	overflow:hidden;
+	text-overflow:ellipsis;
+	white-space:nowrap;
+	padding-right:30px !important;
+}
+.smart #elenchi:not(.schExp) .cartellaAperta > span{
+	margin-top: -35px;
+	width: 192px;
+	background-position: 163px center, 8px center !important;
+	background-color: #FFF !important;
+	height: 36px;
+	margin-left: 4px;
+	border-top-left-radius: 6px;
+	border-top-right-radius: 6px;
+	line-height: 36px !important;
+	background-size: auto 70%, auto !important;
+	box-shadow: 0px 0px 3px rgb(0 0 0 / 50%);
+}
+.smart #elenchi:not(.schExp) .listaTrattamenti .cartellaAperta > span{
+	height: 44px !important;
+	line-height: 44px !important;
+	margin-top: -44px;
+	background-position: 157px center, 8px center !important;
+}
+.smart #elenchi:not(.schExp) .cartellaAperta > div:not(.menuElenchi){
+	position:fixed;
+	right:0px;
+	padding:3px !important;
+	margin:0px !important;
+	height: 50px !important;
+	width:100%;
+	display:inline-block;
+	overflow-x:auto !important;
+	overflow-y:hidden !important;
+	white-space:nowrap;
+	text-overflow:initial !important;
+	border-top-right-radius:0px !important;
+	border-bottom-right-radius:0px;
+	border-bottom-left-radius:0px !important;
+	background-color:#FFF !important;
+	border-bottom: 1px solid rgba(0,0,0,0.5);
+}
+.smart #elenchi:not(.schExp) .cartellaAperta > div:not(.trattElenco):not(.menuElenchi){
+	border-top-left-radius:0px !important;
+}
+.smart #elenchi:not(.schExp) .cart_els{
+	border-radius:6px !important;
+}
+.smart #elenchi:not(.schExp) .cartellaAperta > div > div:not(.trattTools){
+	display: inline-block;
+	width: auto !important;
+	margin: 3px !important;
+	max-width: 200px;
+	vertical-align: middle;
+}
+.smart #elenchi:not(.schExp) .cartellaAperta > div > div.lockedItem{
+	padding-right:24px !important;
+}
+.smart #elenchi:not(.schExp) #totSaldi{
+	display:none;
+}
+/*.smart #elenchi:not(.schExp) .trattTools{
+	height: 37px !important;
+	background: transparent !important;
+	width: auto !important;
+	border-top:none !important;
+	margin-top: -2px !important;
+	max-width: none !important;
+	padding-top:0px !important;
+}
+.smart #elenchi:not(.schExp) .trattTools span:not(.elMenuTratt){
+	float:none !important;
+	margin-left:0px !important;
+	border-right:none !important;
+	color: #FFF !important;
+	font-size: 14px !important;
+	padding-right: 5px !important;
+	height: 37px !important;
+	margin-left:6px !important;
+}
+.smart #elenchi:not(.schExp) .trattTools span:not(.elMenuTratt){
+	width: 37px !important;
+	padding-right: 5px !important;
+}
+	
+.smart #elenchi:not(.schExp) .trattTools span:not(.anamnesiBtn):not(.addTrattBtn):not(.elMenuTratt){
+	padding-left: 5px !important;
+}
+.smart #elenchi:not(.schExp) .trattTools span:not(.anamnesiBtn):not(.riepilogoBtn):not(.addTrattBtn):not(.elMenuTratt){
+	background-color: #444 !important;
+}
+.smart #elenchi:not(.schExp) .anamnesiBtn{
+	padding-left:14px !important;
+	background-color: #789e33 !important;
+}
+.smart #elenchi:not(.schExp) .riepilogoBtn{
+	background-color: #cca23d !important;
+}*/
+.smart #elenchi:not(.schExp) .lista > div:not(.loading):not(.menuElenchi){
+	width: auto !important;
+	display: inline-block;
+}
+.smart #elenchi:not(.schExp) .lista > div:not(.loading):not(.menuElenchi).lockedItem{
+	padding-right:24px !important;
+}
+.smart:not(.AM):not(.AM_light) #scheda:not(.visSch) #l1,
+.smart:not(.AM):not(.AM_light) #scheda:not(.visSch) #l2,
+.smart #scheda:not(.visSch) #l3{
+	display:inline-block !important;
+}
+.smart #scheda.visSch #l1,
+.smart #scheda.visSch #l2,
+.smart #scheda.visSch #l3{
+	display:none !important;
+}
+/*.smart #scheda:not(.schOp) #l3{
+	display:none !important;
+}
+.smart #scheda:not(.schOp) #l2{
+	margin-right:8px;
+}*/
+.smart .visSch_1 #l1,
+.smart .visSch_1 #l2,
+.smart .visSch_1 #l3,
+.smart .schRid #l1,
+.smart .schRid #l2,
+.smart .schRid #l3,
+.smart .visSch #l1,
+.smart .visSch #l2,
+.smart .visSch #l3{
+	float:right;
+}
+.smart .visSch #l1{
+	margin-left:-109px;
+	margin-right:49px;
+}
+.smart .visSch #l2{
+	margin-left:-73px;
+	margin-right:12px !important;
+}
+.smart #elenchi:not(.schExp) #filtroCond{
+	width: 35px;
+	position: absolute;
+	right: 0px;
+	height: 50px;
+	padding-top: 4px;
+	line-height: 44px;
+	z-index: 1000;
+	overflow: hidden;
+	padding-left: 35px;
+	background-image: url(../img/lente.png);
+	background-repeat: no-repeat;
+	background-position: 2px 2px;
+}
+.smart #elenchi:not(.schExp) #filtroCond.vis{
+	padding-right: 38px;
+}
+.smart #elenchi:not(.schExp) #filtroCond.vis{
+	width:100%;
+}
+.smart #elenchi:not(.schExp) .cnmty{
+	line-height: 37px !important;
+	padding-top: 0px !important;
+	padding-bottom: 0px !important;
+}
+.smart #elenchi:not(.schExp) .cnmty span{
+	display:none !important;
+}
+.smart #elenchi:not(.schExp) #parolaRic{
+	height: 32px !important;
+	background-image: none !important;
+}
+.smart #elenchi:not(.schExp) #formRicProc{
+	padding:1px !important;
+}
+.smart #elenchi:not(.schExp) #prefFiltroCond,
+.smart #elenchi:not(.schExp) #lingueFiltroCond{
+	height: 35px !important;
+}
+.smart #elenchi:not(.schExp) .agenda{
+	padding-left:41px !important;
+	padding-right:0px !important;
+	background-position:center center, center center !important;
+}
+.smart #elenchi:not(.schExp) .agenda span{
+	display:none !important;
+}
+.smart #paz_filtrati{
+	width:auto !important;
+}
+.smart #paz_ricerca,
+.smart #forn_ricerca,
+.smart #serv_ricerca,
+.smart #pat_ricerca,
+.smart #proc_ricerca{
+	display:none !important;
+}
+
+
+/* SCHEDE */
+.smart #scheda{
+	width:100% !important;
+	bottom:0px;
+}
+.smart #scheda.schRid:not(.schExp):not(.compresso){
+	bottom:54px !important;
+	overflow: hidden;
+}
+.smart #scheda.schRid.schOp:not(.schExp):not(.triplo):not(.compresso){
+	/*bottom:102px !important;*/
+	bottom:108px !important;
+}
+.smart #scheda.schRid.triplo.schOp:not(.schExp):not(.compresso){
+	/*bottom:155px !important;*/
+	bottom:158px !important;
+}
+.smart #scheda.schExp.schOp{
+	width:100% !important;
+	bottom:calc(100% - 35px) !important;
+	background: var(--menu-anatomia);
+	padding-top: 3px;
+}
+.smart #scheda.schExp:not(.schOp){
+	width:100% !important;
+	bottom:218px !important;
+	overflow: hidden;
+}
+.smart .visSch_1,
+.smart #scheda_cont:not(.visSch){
+	display:block !important;
+}
+.smart #scheda_cont:not(.visSch) #scheda_titolo,
+.smart #scheda_cont:not(.visSch) #scheda_testo,
+.smart #scheda_cont:not(.visSch) #scheda_testo2{
+	display:none !important;
+}
+.smart #scheda_linguette{
+	height:29px;
+}
+.smart #scheda_linguette div{
+	width: 36px;
+	height: 26px;
+}
+.smart #ss{
+	height: 29px !important;
+}
+.smart #sc{
+	padding-top: 2px;
+}
+.smart #mn, #xp, sr{
+	display:none !important;
+}
+.smart #sc,
+.smart #ss{
+	display:none !important;
+}
+.smart .visSch #ss,
+.smart .visSch #sc{
+	display:inline-block !important;
+}
+.smart #scheda_testo > div,
+.smart #scheda_testo2 > div {
+	padding: 20px;
+}
+.smart .divEspansa {
+	width:calc(100% + 40px) !important;
+	margin-left: -20px !important;
+	margin-right: -20px !important;
+}
+.smart #logoSovra{
+	display:none !important;
+}
+.smart .SCH:not(#agCont) .agOpGen,
+.smart .SCH:not(#agCont) .calOpGen{
+	margin:-20px !important;
+}

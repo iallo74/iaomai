@@ -1,0 +1,1696 @@
+<!--
+
+form{
+	margin:0px;
+	padding:0px;
+}
+::-webkit-input-placeholder{
+	opacity:0;
+}
+input::-moz-placeholder{
+	opacity:0;
+}
+input, textarea{
+	-webkit-user-select: text !important;
+	-khtml-user-select: text !important;
+	-moz-user-select: text !important;
+	-ms-user-select: text !important;
+	user-select: text !important;
+}
+
+/* PULSANTI IN FONDO AI FORMS */
+.formBtn{
+	text-align:right;
+	margin-top:50px;
+	height:auto !important;
+}
+.submitBtn,
+.annullaBtn{
+	width: 100px;
+	clear: both;
+	border-radius: 3px;
+	border: none;
+	height: 40px;
+	line-height: 39px;
+	cursor: pointer;
+	color: #FFF;
+	margin-top: 10px;
+	margin-left: 5px;
+	display: inline-block;
+	text-align: center;
+	box-shadow: 0px 0px 3px rgb(0 0 0 / 50%);
+	-webkit-appearance: none;
+	background: #2b2b2b;
+	background: -moz-linear-gradient(top, #606060 0%, #2b2b2b 100%);
+	background: -webkit-linear-gradient(top, #606060 0%,#2b2b2b 100%);
+	background: linear-gradient(to bottom, #606060 0%,#2b2b2b 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#606060', endColorstr='#2b2b2b',GradientType=0 );
+}
+.submitBtn:not(.disBtn):hover,
+.annullaBtn:not(.disBtn):hover{
+	background: #3b3b3b;
+	background: -moz-linear-gradient(top, #707070 0%, #3b3b3b 100%);
+	background: -webkit-linear-gradient(top, #707070 0%,#3b3b3b 100%);
+	background: linear-gradient(to bottom, #707070 0%,#3b3b3b 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#707070', endColorstr='#3b3b3b',GradientType=0 );
+}
+.disBtn{
+	opacity:0.5;
+	cursor:default;
+}
+
+/*.schLibera .formBtn{*/
+body:not(.smart) #scheda:not(.h150) .formBtn{
+    position: absolute !important;
+    bottom: 0px;
+    left: 0px !important;
+    width: 100% !important;
+    padding: 10px !important;
+    padding-right: 18px !important;
+    border-top: 1px solid rgba(0,0,0,0.3) !important;
+    background-color: var(--menu-fondino) !important;
+    margin: 0px !important;
+}
+.smart .formBtn{
+	position: fixed;
+    z-index: 10000;
+    bottom: 54px;
+    width: 100%;
+    left: 0px;
+    padding-left: 10px;
+    padding-right: 10px;
+    background-color: #FFF;
+    height: 56px !important;
+    box-shadow: 0px 0px 10px;
+	margin-bottom: 0px !important;
+}
+.smart .formBtn span{
+	margin-top:8px !important;
+}
+.smart .formBtn div{
+	margin-top:16px !important;
+}
+/*.schLibera .submitBtn,
+.schLibera .annullaBtn{*/
+body:not(.smart) .submitBtn,
+body:not(.smart) .annullaBtn{
+    width: auto !important;
+    height: 32px !important;
+    line-height: 32px !important;
+    margin-top: 0px !important;
+    padding-left: 15px !important;
+    padding-right: 15px !important;
+}
+
+
+
+
+.puntoPat{ /* procedura */
+	padding-left:14px;
+	line-height:20px;
+	background:url(../img/pallinoPat.png) no-repeat left center;
+	font-weight:bold;
+	cursor:pointer;
+}
+.meridianoPat{ /* patologie */
+	display:inline-block;
+	background-color:#FFF;
+	border-radius:12px;
+	height: 24px;
+	line-height:24px;
+	margin-right:3px;
+	padding-left:10px;
+	padding-right:10px;
+	box-shadow:0px 0px 2px rgba(0,0,0,0.5);
+	cursor:pointer;
+}
+.p_sch_punto, /* procedura */
+.p_sch_tit, /* procedura */
+.p_sch_descr, /* procedura */
+#p_add_comm, /* procedura */
+.p_paz_punto, /* PAZIENTI */
+.p_paz_foto, /* PAZIENTI */
+.p_paz_label, /* PAZIENTI */
+#cont_paz_add, /* PAZIENTI */
+#cont_tag_add, /* PAZIENTI */
+#cont_medicina_add, /* PAZIENTI */
+#cont_allergia_add, /* PAZIENTI */
+#cont_patologia_add, /* PAZIENTI */
+#cont_intervento_add, /* PAZIENTI */
+.cont_label_add{ /* PAZIENTI */
+	font-size:11px !important;
+	border-radius:4px;
+	box-shadow:0px 0px 3px #000;
+	/*float:left;*/
+	display: inline-block;
+    vertical-align: middle;
+	background-color:#f9bf83;
+	text-align:center;
+
+}
+.p_sch_punto, /* procedura */
+.p_sch_tit, /* procedura */
+.p_sch_descr, /* procedura */
+.p_paz_punto, /* PAZIENTI */
+.p_paz_foto{ /* PAZIENTI */
+	cursor:pointer;
+}
+.p_sch_punto:hover, /* procedura */
+.p_sch_tit:hover, /* procedura */
+.p_sch_descr:hover, /* procedura */
+.p_paz_punto:hover, /* PAZIENTI */
+.p_paz_label:hover, /* PAZIENTI */
+.p_paz_foto:hover{ /* PAZIENTI */
+	background-color:#ffd8af !important
+}
+.sch_Max450 #cont_paz_add,
+#cont_tag_add,
+#cont_medicina_add,
+#cont_allergia_add,
+#cont_patologia_add,
+#cont_intervento_add,
+.cont_label_add{
+	padding-left: 4px !important;
+	background-image:none !important;
+	width: 100% !important;
+}
+.cont_label_add{
+	display:none;
+	margin-bottom:20px;
+}
+.p_sch_punto, /* procedura */
+.p_sch_tit, /* procedura */
+.p_sch_descr, /* procedura */
+#p_add_comm, /* procedura */
+.p_paz_foto, /* PAZIENTI */
+.p_paz_punto, /* PAZIENTI */
+.p_paz_label{ /* PAZIENTI */
+	padding-left: 10px;
+	padding-right: 10px;
+	line-height:31px;
+	height:31px;
+}
+#cont_paz_add{ /* PAZIENTI */
+	padding: 4px;
+	line-height:20px;
+	margin-bottom:20px;
+}
+#cont_tag_add,
+#cont_medicina_add,
+#cont_allergia_add,
+#cont_patologia_add,
+#cont_intervento_add,
+.cont_label_add{ /* PAZIENTI */
+	padding: 4px;
+	margin-bottom:0px !important;
+	margin-top: 6px;
+}
+.p_sch_punto, /* procedura */
+.p_sch_tit, /* procedura */
+.p_sch_descr{ /* procedura */
+	margin-right:7px;
+	margin-top:17px;
+}
+#cont_paz_add{ /* PAZIENTI */
+	width:auto !important;
+	background-image:url(../img/zoom+.png) !important;
+	background-position:left center !important;
+	background-repeat:no-repeat;
+	padding-left:30px;
+}
+#contSintomi{ /* PAZIENTI */
+	height:auto !important;
+	margin-top: 10px;
+	margin-bottom: 22px !important;
+}
+#contSintomi div:not(.noResults){ /* PAZIENTI */
+	padding-left:10px;
+	margin-bottom:2px !important;
+	border-radius:6px;
+	font-weight:bold;
+	background-color:rgba(0,0,0,0.05);
+	height: 36px;
+    line-height: 36px;
+}
+#contSintomi div:not(.noResults):hover{ /* PAZIENTI */	
+	background-color:rgba(0,0,0,0.1) !important;
+}
+#contSintomi .noResults{ /* PAZIENTI */
+	/*padding-top:0px;
+	padding-bottom:0px;*/
+}
+.scoreSelect{
+	float:right;
+	margin-right:4px;
+}
+.sintomiTratt img{ /* PAZIENTI */
+	display:none;
+}
+
+.p_paz_add, /* PAZIENTI */
+.p_tag_add, /* PAZIENTI */
+.p_medicina_add, /* PAZIENTI */
+.p_allergia_add, /* PAZIENTI */
+.p_patologia_add, /* PAZIENTI */
+.p_intervento_add, /* PAZIENTI */
+.p_label_add{ /* PAZIENTI */
+	cursor:pointer;
+	float:left;
+	padding-left:10px;
+	padding-right:10px;
+	border-radius:4px;
+	height:auto !important;
+	height:24px;
+	line-height:24px;
+}
+.sch_Max450 .p_paz_add,
+.p_tag_add,
+.p_medicina_add,
+.p_allergia_add,
+.p_patologia_add,
+.p_intervento_add,
+.p_label_add{
+    background-color: rgba(255,255,255,0.5);
+    height: 32px !important;
+    line-height: 32px !important;
+    box-shadow: 0px 0px 3px rgb(0,0,0,0.5) !important;
+	width: 130px;
+}
+.sch_Max450 .p_paz_add,
+.p_tag_add,
+.p_medicina_add,
+.p_allergia_add,
+.p_patologia_add,
+.p_intervento_add{
+    float: right !important;
+}
+.p_tag_add,
+.p_medicina_add,
+.p_allergia_add,
+.p_patologia_add,
+.p_intervento_add,
+.p_label_add{
+	width: 90px;
+}
+#tag_col{
+	    display: inline-block;
+    vertical-align: middle;
+    width: 26px;
+    height: 26px;
+    box-shadow: 0px 0px 3px rgb(0 0 0 / 50%);
+    margin: 3px;
+    margin-right: 7px;
+    border-radius: 2px;
+    background-image: url(../img/ico_coloriN.png);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 24px;
+    cursor: pointer;
+    margin-left: -36px;
+}
+.rgTagsMod,
+.rgMedicineMod,
+.rgAllergieMod,
+.rgPatologieMod,
+.rgInterventiMod{
+	border-bottom:1px solid rgba(0,0,0,0.05);
+}
+.tsb,
+.tag,
+.medicina,
+.allergia,
+.patologia,
+.intervento{
+	display:inline-block;
+	border-radius:12px;
+	height:24px;
+	line-height:24px !important;
+	padding-left:10px;
+	padding-right:10px;
+	margin:7px;
+	box-shadow:0px 0px 2px rgba(0,0,0,0.4);
+}
+#scheda:not(.schForm) .tsb,
+#scheda:not(.schForm) .tag,
+#scheda:not(.schForm) .medicina,
+#scheda:not(.schForm) .allergia,
+#scheda:not(.schForm) .patologia,
+#scheda:not(.schForm) .intervento{
+	margin-top: 0px;
+	margin-left: 0px;
+}
+.tsb,
+.medicina,
+.allergia,
+.patologia,
+.intervento{
+	background-color: #FFF;
+}
+.tagMini{
+    height: 20px !important;
+    vertical-align: middle !important;
+	margin-top: -2px !important;
+    margin-left: 0px !important;
+    margin-bottom: 0px !important;
+}
+#elencoMedicine,
+#elencoAllergie,
+#elencoPatologie,
+#elencoInterventi{
+	margin-top: 36px !important;
+}
+#elencoTags,
+#elencoMedicine,
+#elencoAllergie,
+#elencoPatologie,
+#elencoInterventi,
+.elencoEtichette,
+#elencoSintomi{
+	background-color: #FFF;
+    border: 1px solid rgba(0,0,0,0.4);
+    max-height: 100px;
+    overflow-y: auto;
+    margin-top: 3px;
+    margin-bottom: -1px;
+    border-radius: 4px;
+}
+#elencoTags > div > div:not(.noResults),
+#elencoMedicine > div > div:not(.noResults),
+#elencoAllergie > div > div:not(.noResults),
+#elencoPatologie > div > div:not(.noResults),
+#elencoInterventi > div > div:not(.noResults),
+.elencoEtichette > div > div:not(.noResults){
+	cursor:pointer;
+	width: calc(100% - 30px);
+    display: inline-block !important;
+    vertical-align: middle;
+    margin-right: -1px;
+}
+.elMod{
+	width: 30px !important;
+    height: 35px;
+    vertical-align: middle !important;
+    background-color: rgba(0,0,0,0.1);
+    background-image: url(../img/ico_modifica_anag.png);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 24px;
+    margin-left: -4px !important;
+    border-left: 1px solid rgba(0,0,0,0.1);
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+}
+
+.modEl input:first-child{
+	background-color: #d6f4ff !important;
+}
+.modEl .p_tag_add,
+.modEl .p_label_add,
+.modEl .p_medicina_add,
+.modEl .p_allergia_add,
+.modEl .p_patologia_add,
+.modEl .p_intervento_add{
+	background-color: #3f51b5 !important;
+    color: #FFF;
+}
+.tagElenco,
+.medicineElenco,
+.allergieElenco,
+.patologieElenco,
+.interventiElenco,
+.labelElenco{
+	border-bottom:1px solid rgba(0,0,0,0.05);
+	background-image:url(../img/frSuB.png);
+	background-repeat:no-repeat;
+	background-position:right center;
+	background-size:contain;
+	padding-top: 5px;
+    padding-bottom: 5px;
+	padding-left: 10px;
+	text-align:left !important;
+}
+.tagElenco:hover,
+.medicineElenco:hover,
+.allergieElenco:hover,
+.patologieElenco:hover,
+.interventiElenco:hover,
+.labelElenco:hover{
+	background-color:#f9eee3 !important;
+}
+
+.elencoEtichette{
+	margin-top:5px;
+}
+.etichetta{
+	height:24px;
+	line-height:24px !important;
+	border-bottom:1px solid rgba(0,0,0,0.1);
+}
+
+#p_add_comm{ /* procedura */
+	font-style:normal !important;
+	width:150px !important;
+	float:right !important;
+	margin-top:5px !important;
+	/*cursor:default !important;*/
+}
+.p_sch_punto:hover, /* procedura */
+.p_sch_tit:hover, /* procedura */
+.p_sch_descr:hover, /* procedura */
+#p_add_comm:hover, /* procedura */
+.p_paz_add:hover{ /* PAZIENTI */
+	background-color:#ffd8af !important;
+}
+.p_sch_punto{ /* procedura */
+	background-image:url(../img/pallinoPatChiaro.png);
+	background-position:5px center;
+	background-repeat:no-repeat;
+	padding-left:22px;
+}
+.p_paz_punto,
+.p_paz_foto,
+.p_paz_label{ /* PAZIENTI */
+	background-repeat:no-repeat;
+	padding-right:10px !important;
+	text-align:left !important;
+	width:auto !important;
+	min-width:70px !important;
+	text-wrap:none !important;
+	background-position:5px center;
+	font-size:12px !important;
+	padding-left:20px !important;
+}
+.p_paz_punto,
+.p_paz_label{
+	margin-top: 17px;
+}
+.p_paz_punto{
+    float: left;
+    margin-right: 7px;
+}
+.p_paz_punto{
+	background-image:url(../img/pallinoPatChiaro.png);
+}
+.p_paz_label{
+	background-image:url(../img/zoom+.png);
+	background-size: 23px;
+    background-position: left center;
+	/*float: right !important;*/
+	margin-top:5px !important;
+}
+.p_paz_foto{
+	background-image: url(../img/ico_foto.png);
+    background-size: auto 21px;
+    padding-left: 30px !important;
+}
+.p_paz_gruppo, /* PAZIENTI */
+.p_paz_meridiani, /* PAZIENTI */
+.p_proc_meridiani, /* procedura */
+.p_proc_gruppo{ /* procedura */
+	font-weight:normal !important;
+	border:none;
+	background-color:#f9bf83;
+	border-radius:4px;
+	padding-left:28px;
+	padding-right:10px;
+	font-weight:bold;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	padding-top:0px;
+	padding-left:5px;
+	padding-right:28px !important;
+	margin-right:7px !important;
+	box-shadow: 0px 0px 3px #000;
+	/*width: 160px;*/
+	line-height:29px;
+	height:31px;
+	cursor:pointer;
+	margin-top: 17px !important;
+	/*float: left;*/
+	display: inline-block;
+    vertical-align: middle;
+}
+.p_paz_gruppo{ /* PAZIENTI */
+	margin-right: 30px !important;
+}
+.p_paz_gruppo{
+	padding-left:30px !important;
+   /* padding-right: 13px !important;*/
+	background-position:3px center,calc(100% - -8px) center;
+	background-image:url(../img/pallinoPatChiaroGroup.png),url(../img/frDxB.png);
+	background-repeat:no-repeat;
+	background-size:auto,auto 42px;
+}
+.p_paz_meridiani{
+	padding-left:30px !important;
+   /* padding-right: 13px !important;*/
+	background-position:3px center,calc(100% - -8px) center;
+	background-image:url(../img/ico_meridiani.png),url(../img/frDxB.png);
+	background-repeat:no-repeat;
+	background-size:auto 22px,auto 42px;
+}
+.p_proc_gruppo,
+.p_proc_meridiani{
+    padding-left: 13px !important;
+    padding-right: 13px !important;
+}
+.p_paz_gruppo:hover, /* PAZIENTI */
+.p_paz_meridiani:hover, /* PAZIENTI */
+.p_proc_meridiani:hover, /* procedura */
+.p_proc_gruppo:hover{ /* procedura */
+	background-color:#ffd8af !important
+}
+.p_sch_tit{ /* procedura */
+	font-weight:bold;
+}
+.p_sch_label{ /* procedura */
+	font-size: 11px !important;
+    min-width: 60px;
+    padding: 4px;
+    margin-top: 17px;
+    font-style: italic;
+    margin-bottom: -12px !important;
+}
+.p_sch_label2{ /* procedura */
+	float:left;
+	padding:5px;
+}
+.p_sch_tools{ /* procedura */
+	text-align: right;
+    white-space: nowrap;
+    display: inline-block;
+    float: right;
+}
+.p_paz_el{ /* PAZIENTI */
+	height: 25px;
+    line-height: 25px;
+    padding: 0px;
+    cursor: pointer;
+    padding-left: 25px;
+    background-image: url(../img/ico_mod_cestino.png);
+    background-repeat: no-repeat;
+    background-position: left -2px;
+    text-align: right;
+    float: left;
+	margin-top: 17px;
+    margin-left: 2px;
+}
+/*.schLibera .p_paz_el{*/
+body:not(.smart) .p_paz_el{
+    margin-top: 4px;
+}
+#puntiTsuboMap,
+#meridianiTsuboMap{ /* PAZIENTI */
+	height:auto !important;
+	margin-top: 10px;
+}
+#puntiTsuboMap div,
+#meridianiTsuboMap div{ /* PAZIENTI */
+	margin-top:0px !important;
+	border-bottom:none !important;
+	margin-bottom: 2px !important;
+    border-radius: 6px;
+	background-color:rgba(0,0,0,0.05);
+}
+#puntiTsuboMap div{ /* PAZIENTI */
+	height:auto !important;
+	line-height:normal !important;
+}
+#puntiTsuboMap input,
+#meridianiTsuboMap input{ /* PAZIENTI */
+	/*margin-top:0px !important;*/
+}
+
+#puntiTsuboMap .noResults,
+#meridianiTsuboMap .noResults{ /* PAZIENTI */
+	/*padding-top:0px;*/
+}
+#puntiTsuboMap img.noMod
+#meridianiTsuboMap img.noMod{ /* PAZIENTI */
+	vertical-align: -webkit-baseline-middle;
+	margin-top: -9px;
+	height: 15px;
+	margin-right: 2px;
+	margin-left: 1px;
+}
+.p_sch_pref, /* procedura */
+.p_sch_no_pref, /* procedura */
+.p_sch_mod, /* procedura */
+.p_sch_el, /* procedura */
+.p_sch_cond, /* procedura */
+.p_sch_no_cond{ /* procedura */
+	display: inline-block;
+	width:30px;
+	height:22px;
+	padding:5px;
+	cursor:pointer;
+	margin-bottom:10px;
+	background-repeat: no-repeat;
+	background-position:center center;
+	border-left:1px dotted #999;
+}
+.p_sch_label3{ /* procedura */
+	display: inline-block;
+	width:100px;
+	height:18px;
+	line-height:18px;
+	padding:5px;
+	padding-right:0px;
+	margin-bottom:10px;
+	font-style:italic;
+	text-align:right;
+	color:rgba(0,0,0,0.4);
+	vertical-align: top;
+
+}
+.p_sch_pref{ /* procedura */
+	border-left:none !important;
+	background-position:5px center;
+	background-image:url(../img/ico_pref.png);
+}
+.p_sch_no_pref{ /* procedura */
+	border-left:none !important;
+	background-position:5px center;
+	background-image:url(../img/ico_not_pref.png);
+}
+.p_sch_mod{ /* procedura */
+	border-left:none !important;
+	background-image:url(../img/ico_modifica.png);
+}
+.p_sch_el{ /* procedura */
+	background-image:url(../img/ico_mod_cestino.png);
+}
+.p_sch_cond{ /* procedura */
+	background-position:10px center;
+	background-image:url(../img/ico_cond.png);
+}
+.p_sch_no_cond{ /* procedura */
+	background-position:10px center;
+	background-image:url(../img/ico_not_cond.png);
+}
+.rgProc_T{ /* procedura */
+	margin-top:15px;
+}
+.rgProc_D{ /* procedura */
+	margin-top:5px;
+	margin-bottom:5px;
+}
+.aggiunti{
+	box-shadow: 0px 0px 3px #93C !important;
+}
+#dettagliCont .rgProcMod{ /* procedura */
+	margin-bottom: 9px;
+    border-radius: 4px;
+    background-color: #b9ccfd;
+    padding: 1px;
+    box-shadow: 0px 0px 2px rgba(0,0,0,0.6);
+    padding-top: 7px;
+}
+#dettagliCont .rgProcMod:hover {
+    background-color: #a5baec;
+}
+#scheda:not(.sch_Max600) #formMod .schSx{ /* PAZIENTI */
+	padding-right: 5px;
+}
+#scheda:not(.sch_Max600) #formMod .schDx{ /* PAZIENTI */
+	padding-left: 5px;
+}
+#formCommenti{
+    padding: 15px;
+    background-color: #fbe2c8;
+    border-radius: 5px;
+    box-shadow: 0px 0px 4px rgba(0,0,0,0.3);
+    margin-top: 20px;	
+	overflow: hidden;
+}
+#formCommenti h2{
+	margin-top: 0px;
+    margin-bottom: 5px;
+}
+#formCommenti input:not([type="checkbox"]), /* procedura */
+#formAnnotazioni input:not([type="checkbox"]), /* --tsubo-- */
+#formMod input:not([type="checkbox"]):not([type="file"]), /* PAZIENTI */
+#formFeedback input:not([type="checkbox"]){ /* #feedback# */
+	background-color:rgba(255,255,255,0.5);
+	border-radius:3px;
+	padding-left: 8px;
+	font-weight:bold;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	border:1px solid rgba(0,0,0,0.3);
+}
+#formMod > div{ /* PAZIENTI */
+	line-height:24px;
+	margin-bottom:6px;
+}
+#p_add_dett{
+    margin-left: -30px;
+    margin-right: -30px;
+    overflow-y: hidden;
+    overflow-x: auto;
+    white-space: nowrap;
+    line-height: 23px !important;
+    padding-left: 30px;
+    padding-bottom: 20px;	
+	margin-top: 10px;
+}
+.noBR {
+	margin-bottom: -7px !important;
+}
+#formMod i, /* PAZIENTI */
+#formMod em,  /* PAZIENTI */
+.sezioneTrattamenti em{  /* PAZIENTI */
+	padding-left:6px;
+	font-style:italic;
+	color:#000;
+	display: block;
+}
+#scheda:not(.sch_Max600) #formMod i:not(.iProc){  /* PAZIENTI */
+	margin-bottom: -29px;
+	width: 100px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+#scheda:not(.sch_Max600) #formMod div:not(.labelSx) > i{  /* PAZIENTI */
+    overflow: hidden;
+}
+
+#scheda:not(.sch_Max600) #formMod div.labelSx > i{  /* PAZIENTI */
+	margin-top: 0px !important;
+}
+
+#scheda:not(.sch_Max600) #formMod div.labelSx > select{  /* PAZIENTI */
+	/*margin-bottom: 0px !important;*/
+}
+#formMod i{
+	margin-top: 12px;
+}
+.sch_Max600 #formMod i{
+	line-height: 12px;
+}
+.sch_Max600 #formMod i,
+.sch_Max600 #formMod em:not(.labelTrattamenti) {
+    opacity: 0.5;
+}
+
+.noBR i,
+.noBR em{
+	margin-bottom: 10px !important;
+}
+_:-moz-tree-row(hover),
+#formMod i {  /* PAZIENTI */
+	line-height:13px;
+}
+_:-ms-fullscreen, 
+formMod i{  /* PAZIENTI */
+	line-height:13px;
+} 
+@media (-ms-high-contrast: active), (-ms-high-contrast: none) {
+	#formMod i { line-height:13px; }  /* PAZIENTI */
+}  
+_:-ms-lang(x),
+_:-webkit-full-screen,
+#formMod i { /* PAZIENTI */
+	line-height:13px;
+}
+#formMod input:not([type=checkbox]):not([type=file]):not(#paz_add):not(#tag_add):not(#medicina_add):not(#allergia_add):not(#patologia_add):not(#intervento_add):not(.label_add){ /* PAZIENTI */
+	width:100%;
+	height:32px;
+	line-height:15px;
+	font-weight:normal !important;
+}
+#formMod input:not([type=checkbox]):not([type=file]):not(#paz_add):not(#tag_add):not(#medicina_add):not(#allergia_add):not(#patologia_add):not(#intervento_add):not(.label_add):not(.textPuntoTratt){ /* PAZIENTI */
+	margin-left:0px !important;
+}
+
+/*#scheda:not(.sch_Max600) #formMod input:not([type=checkbox]):not([type=file]):not(#paz_add):not(#tag_add):not(.dettProcText):not(.campoData){
+	padding-left:100px !important;
+}*/
+#scheda:not(.sch_Max600) .styled{
+	padding-left:100px !important;
+}
+#dettagliCont input:not([type=checkbox]):not([type=file])){
+	padding-left:6px !important;
+}
+
+#dettagliCont textarea{
+	margin-bottom:-7px !important;
+}
+
+
+
+
+
+#paz_add, /* PAZIENTI */
+#tag_add, /* PAZIENTI */
+#medicina_add, /* PAZIENTI */
+#allergia_add, /* PAZIENTI */
+#patologia_add, /* PAZIENTI */
+#intervento_add, /* PAZIENTI */
+.label_add{ /* PAZIENTI */
+	width:200px !important;
+	margin-left:0px !important;
+	float:left;
+	margin-top: 0px;
+	margin-right: 5px;
+	font-weight:normal !important;
+    height: 24px;
+    line-height: 24px;
+}
+
+/*#medicina_add,
+#allergia_add,
+#patologia_add,
+#intervento_add,
+.p_medicina_add,
+.p_allergia_add,
+.p_patologia_add,
+.p_intervento_add{
+	margin-bottom: 4px;
+}*/
+
+#paz_add::placeholder,
+.label_add::placeholder,
+.label_add::placeholder,
+#tag_add::placeholder,
+#medicina_add::placeholder,
+#allergia_add::placeholder,
+#patologia_add::placeholder,
+#intervento_add::placeholder{
+	opacity:1 !important;
+	font-style:italic !important;
+}
+.okPlaceHolder::placeholder{
+	opacity:1 !important;
+	font-style:italic !important;
+}
+#label_close{
+	background-image:url(../img/chMenuB.png);
+	background-repeat:no-repeat;
+	background-position:3px center;
+	background-size: 30px;
+	display: inline-block;
+    width: 32px;
+    height: 32px;
+    vertical-align: middle;
+    cursor: pointer;	
+}
+/*.sch_Max450 #paz_add,*/
+#tag_add,
+#medicina_add,
+#allergia_add,
+#patologia_add,
+#intervento_add{
+    height: 32px !important;
+    line-height: 32px;
+	width: calc(100% - 95px) !important;
+}
+#paz_add,
+.label_add{
+	width: calc(100% - 127px) !important;
+    height: 32px !important;
+    line-height: 32px;
+}
+.TitTrattDx{ /* PAZIENTI */
+	padding-left:5px !important;
+	max-width:300px !important;
+}
+.RicTrattDx{ /* PAZIENTI */
+	padding-left:5px !important;
+	max-width:100px !important;
+}
+.CostoTrattDx{ /* PAZIENTI */
+	padding-left:5px !important;
+	padding-right:5px !important;
+	width:150px !important;
+	text-align:right;
+}
+.numSedute{ /* PAZIENTI */
+	width:50px !important;
+}
+.inpProcTesta{ /* procedura */
+	width:100% !important;
+	margin-left:0px !important;
+	margin-top:5px !important;
+	margin-bottom:5px !important;
+}
+#NomeProcedura{ /* procedura */
+	width:100% !important;
+	font-size:14px !important;
+}
+.dettPunto{ /* procedura + PAZIENTI */
+	/*padding-left:20px !important;
+	background:url(../img/pallinoPat.png) no-repeat 6px 13px;*/
+	padding-left:4px !important;
+	border-bottom:1px solid #CCC;
+}
+#scheda:not(.scheda_procedura) .dettMeridiano span:not(.valPunto):not(.mezzoPunto){ /* PAZIENTI */
+    line-height: 34px !important;
+    height: 34px !important;
+	background:url(../img/lineaPat.png) no-repeat 6px center;
+	padding-left:28px !important;
+  	width: 100%;
+	background-color: rgba(0,0,0,0.08);
+}
+.scheda_procedura .dettMeridiano span{ /* PAZIENTI */
+    line-height: 24px !important;
+    height: 24px !important;
+	background: url(../img/lineaPat.png) no-repeat 10px center;
+    padding-left: 30px !important;
+	margin-bottom:2px;
+    margin-left: -10px;
+    padding-right: 10px;
+}
+.dettMeridiano span:hover{
+	background-color:rgba(255,255,255,0.2);
+}
+.dettMeridiano span:not(.valPunto):not(.mezzoPunto){ /* procedura + PAZIENTI */
+    display: inline-block;
+    border-radius: 6px;
+}
+.meridModif{ /* procedura + PAZIENTI */
+  	/*width: calc(100% - 32px) !important;*/
+	width:200px !important;
+}
+.dettMeridiano span:not(.valModif):not(.meridModif):not(.meridProc){
+	cursor:default !important;
+}
+#dettagliCont .dettMeridiano{ /* procedura */
+	padding-left:20px !important;
+	background:url(../img/lineaPat.png) no-repeat 6px center;
+}
+#scheda .p_fuoco_supplementare span{
+	color:#FFF !important;
+}
+body:not(.touch) #puntiTsuboMap .dettPunto:hover{
+	background-color:rgba(0,0,0,0.1) !important;
+}
+#dettagliCont .dettPunto,
+#dettagliCont .dettMeridiano{
+	background-color: #b9ccfd;
+	padding-top: 0px !important;
+	border-bottom:none !important;
+}
+.valPunto,
+.mezzoPunto{
+    /*padding-right: 10px;
+    width: 75px;
+    display: inline-block;
+    background-color: rgba(255,255,255,0.4);
+    margin-left: 3px;
+    height: 30px;
+    line-height: 28px;
+    padding-left: 4px;
+    border-radius: 3px;
+    border: 1px solid rgba(0,0,0,0.3);
+    vertical-align: middle;
+    margin-top: -3px;
+	cursor:pointer;
+	overflow: hidden;*/
+	
+    width: 27px;
+    display: inline-block;
+    margin-left: 0px;
+    height: 30px;
+    line-height: 30px;
+    vertical-align: middle;
+    margin-top: -3px;
+    cursor: pointer;
+    overflow: hidden;
+    border-right: 1px solid rgba(0,0,0,0.1);
+	background-image:url(../img/inpbg2p.png);
+	background-repeat:no-repeat;
+	background-position: calc(100% - 3px) calc(100% - 1px);
+    background-size: 10px;
+	text-align: center;
+}
+.valPunto{
+    border-left: 1px solid rgba(0,0,0,0.1);
+}
+.mezzoPunto{
+	margin-right:4px;
+}
+/*
+.valPunto b{
+	font-size: 9px;
+    font-family: arial;
+    color: rgba(0,0,0,0.5);
+	font-weight:normal !important;
+	display: inline-block;
+    width: calc(100% - 21px);
+    text-align: center;
+}*/
+.valPunto img,
+.mezzoPunto img{
+	margin-top:-1px;
+}
+.valMerid{
+	float: right;
+    margin: 2px;
+    background-color: #f6f6ec !important;
+    border-radius: 5px;
+    border: none;
+    background-position: calc(100% - 3px) calc(100% - 3px);
+}
+
+.val{
+	background-color:#014cdc;
+}
+.valP{
+	background-color:#f77002;
+}
+.valV{
+	background-color:#8c8c7c;
+}
+
+#formMod textarea{ /* PAZIENTI */
+	font-family:Verdana, Geneva, sans-serif;
+	background-color:rgba(255,255,255,0.5);
+	border-radius:3px;
+	padding:6px;
+	height:100px;
+	resize:none;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	border:1px solid rgba(0,0,0,0.3);
+}
+#AnamnesiMotivo{ /* PAZIENTI */
+	/*height:70px !important;*/
+}
+#formMod textarea{ /* PAZIENTI */
+	width:100% !important;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	border:1px solid rgba(0,0,0,0.3);
+}
+#scheda:not(.sch_Max600) .selectLargo{
+	padding-left: 100px !important;
+    margin-top: 0px !important;
+}
+.selectLargo{
+    width: 100%;	
+    margin-left: 0px !important;
+	line-height:32px !important;
+	height:32px !important;
+}
+
+.prefisso{
+	margin: 0px !important;
+	height: 32px !important;
+	line-height: 32px !important;
+}
+#scheda:not(.sch_Max600) .prefisso{
+	width: 170px !important;
+	padding-left: 100px !important;
+}
+.sch_Max600 .prefisso{
+	width: 80px !important;
+}
+
+.cellulare{
+	padding-left: 6px !important;
+   	float: right !important;
+}
+
+#scheda:not(.sch_Max600) .cellulare{
+   	margin-left: 50px !important;
+   	width: calc(100% - 170px) !important;
+}
+.sch_Max600 .cellulare{
+   	margin-left: 0px !important;
+   	width: calc(100% - 80px) !important;
+	
+}
+
+
+#dataTratt, /* PAZIENTI */
+#dataSaldo{ /* PAZIENTI */
+	text-align:right;
+}
+#dataSaldo, /* PAZIENTI */
+.div_saldi{ /* PAZIENTI */
+	margin-bottom:4px;
+}
+#dataSaldo i, /* PAZIENTI */
+.div_saldi i{ /* PAZIENTI */
+	display:inline !important;
+	width:auto !important;
+}
+.div_saldi, /* PAZIENTI */
+#saldi_cont, /* PAZIENTI */
+#saldi_cont .schSx, /* PAZIENTI */
+#saldi_cont .schDx{ /* PAZIENTI */
+	height:auto !important;
+}
+.labelSx i{
+	display: inline-block !important;
+}
+#formMod textarea{ /* PAZIENTI */
+	margin-left:0px !important;
+}
+#formMod textarea:not(#Intestazione){ /* PAZIENTI */
+	height:200px;
+}
+#Intestazione{
+	height:60px;
+	margin-bottom: -7px;
+}
+#formMod select:not(.p_proc_gruppo):not(.p_paz_gruppo):not(.p_paz_meridiani):not(.p_proc_meridiani), /* PAZIENTI */
+#dataTxt{
+	/*border:none;
+	background-color:rgba(255,255,255,0.5);
+	border-radius:3px;
+	padding:3px;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	border:1px solid rgba(0,0,0,0.3);
+	background:rgba(255,255,255,0.5) url(../img/inpbg.png) no-repeat right center;
+	padding-top:0px;
+	padding-left:5px;
+	padding-right:25px !important;*/
+	
+	border: none;
+    background-color: rgba(255,255,255,0.5);
+    border-radius: 3px;
+    padding: 3px;
+    /* margin-left: 3px; */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    border: 1px solid rgba(0,0,0,0.3);
+    background: rgba(255,255,255,0.5) url(../img/inpbg4.png) no-repeat right bottom;
+    padding-top: 0px;
+ 	padding-left: 7px;
+    padding-right: 13px;
+    background-size: 15px;
+}
+#formMod select:not(.p_proc_gruppo):not(.p_paz_gruppo):not(.p_paz_meridiani):not(.p_proc_meridiani), /* PAZIENTI */
+#dataTxt{
+	/*font-weight:bold;*/
+	line-height:30px;/* !important;*/
+	height:30px;
+}
+#dataTxt{
+	font-weight:normal;
+	min-width:240px;
+	display:inline-block;
+}
+.dataOp{
+	background-image:url(../img/inpbgOp.png) !important;
+	background-position: calc(100% - -4px) calc(100% - 3px) !important;
+}
+#formMod select:not(.p_proc_gruppo):not(.p_paz_gruppo):not(.p_paz_meridiani):not(.p_proc_meridiani):not(.mezzoPuntoTratt){ /* PAZIENTI */
+	margin-top:3px;
+	margin-bottom: 3px;
+}
+#formMod select::-ms-expand{ /* PAZIENTI */
+	display: none;
+}
+#idLinguaProcedura{ /* procedura */
+	font-weight:normal !important;
+	background-color:transparent !important;
+	color:#666 !important;
+	cursor:pointer;
+	border:none !important;
+	background:url(../img/ico_lingua.png) no-repeat left center, right center !important;
+}
+#divLinguaModProc{ /* procedura */
+	text-align:right;
+	padding-right:20px !important;
+}
+#linguaModProc{ /* procedura */
+	width:auto;
+	margin-right:-40px;
+}
+#p_sch_salva, /* procedura */
+#p_sch_annulla, /* procedura */
+#formAnnotazioni button{ /* tsubo */
+	border-radius:5px;
+	box-shadow:0px 0px 3px #000;
+	padding:5px;
+	width:70px;
+	float:right;
+	text-align:center;
+	margin-left:7px;
+	margin-top:17px;
+	cursor:pointer;
+	font-size:12px !important;
+}
+#p_sch_salva{
+	color:#000;
+	background-color:rgba(0,0,0,0.2);
+}
+#p_sch_annulla{
+	color:#000;
+	background-color:rgba(0,0,0,0.2);
+	opacity:0.7;
+}
+#p_sch_salva:hover{
+	background-color:rgba(0,0,0,0.25);
+}
+#p_sch_annulla:hover{
+	background-color:rgba(0,0,0,0.15);
+}
+.numPoints, /* procedura + PAZIENTI */
+.selectTratt,
+.scoreSelect{
+	width:40px;
+	padding-left: 3px !important;
+    /*text-align-last: center;*/
+}
+.smart .selectTratt{
+	text-align-last: center;
+}
+#dettagliCont .selectTratt:not(.numPoints){
+	width: 140px;
+    margin-left: -6px;
+}
+.delProcDett, /* procedura */
+.spsuProcDett{ /* procedura */
+	float:right;
+	width:16px;
+	height:16px;
+	background-position:center center;
+	background-repeat:no-repeat;
+	cursor:pointer;
+	opacity:0.5;
+    margin-bottom: 6px;
+}
+.delProcDett{ /* procedura */
+	background-image:url(../img/ico_cestino.png);
+    margin-right: 8px;
+}
+.spsuProcDett{ /* procedura */
+	background-image:url(../img/ico_frSu.png);
+}
+.delProcDett:hover, /* procedura */
+.spsuProcDett:hover{ /* procedura */
+	opacity:1;
+}
+.dettPunto .delProcDett,
+.dettPunto .spsuProcDett,
+.dettMeridiano .delProcDett,
+.dettMeridiano .spsuProcDett{
+	margin-top: 11px;
+}
+
+
+
+
+#gruppoPunti_cont{
+    margin-top: -15px;
+    margin-bottom: 20px;
+    display: none;
+    border-radius: 4px;
+    height: 232px;	
+    z-index: 1210;
+    position: absolute;
+	box-shadow: 0px 0px 10px #000;
+}
+.gr_0,
+.gr_1,
+.gr_2{
+    overflow-y: scroll;
+	background-color: #fff;
+}
+.gr_0{
+    height: 199px;
+}
+.gr_1{
+    height:167px;
+}
+.gr_2{
+    height:129px;
+}
+.gr_3{
+	cursor:pointer;
+	display:block;
+	height: 32px;
+	line-height: 32px;
+}
+.gr_0,
+.gr_1{
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+}
+.gr_1 i
+.gr_2 i,
+.gr_3 i{
+	display:inline !important;
+	margin-top: 0px !important;
+	padding-left: 0px !important;
+}
+.gr_btn{
+	height: 32px;
+	line-height: 32px;
+    padding-left: 6px;
+	font-weight:bold;
+	cursor:pointer;
+	border-top:1px solid rgba(0,0,0,0.1);
+	background: url(../img/frDxB.png) calc(100% - -8px) center no-repeat;
+    background-size: auto 42px;
+}
+.gr_3{
+	border-top:1px solid rgba(0,0,0,0.1);
+}
+.gr_btn:hover,
+.gr_3:hover{
+	background-color: rgba(0,0,0,0.05);
+}
+#gruppoPunti_cont .gr_btn:first-child,
+#gruppoPunti_cont .gr_3:first-child{
+	border-top:none !important;
+}
+.gr_ret{
+	height: 32px;
+	line-height: 32px;
+    padding-left: 32px;
+	font-weight:bold;
+	cursor:pointer;
+	border-top:1px solid rgba(0,0,0,0.1);
+	background: url(../img/frSx.png) -5px center no-repeat #666;
+    background-size: auto 42px;
+	color:#FFF;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+	white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.gr_tit{
+	padding-left:8px;
+	height: 32px;
+	line-height: 32px;
+	color:#000;
+	background-color: #d9d9d9;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+}
+.gr_tit span{
+	display: inline-block;
+    cursor: pointer;
+    float: right;
+    width: 32px;
+    height: 32px;
+	background:url(../img/chMenuB.png) center center no-repeat;
+	background-size: contain;
+}
+.gr_imp{
+	height: 39px;
+    font-weight: bold;
+    cursor: pointer;
+    background-color: #d9d9d9;
+    color: #FFF;
+    padding: 4px;
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+}
+.gr_imp span:first-child{
+	font-weight: normal !important;
+    display: inline-block;
+    margin-bottom: 0px;
+    cursor: pointer;
+    border-radius: 14px;
+    padding-left: 30px;
+    padding-right: 8px;
+    height: 24px;
+    line-height: 24px;
+    margin: 3px;
+	background:url(../img/frSelectAll.png) no-repeat left center;
+}
+.gr_imp span:first-child:hover{
+    color: #2c3fa8 !important;
+}
+.gr_imp span:last-child{
+	width:50%;
+	height: 32px;
+    line-height: 32px;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 5px;
+	background: -moz-linear-gradient(top, #1a4ba6 0%, #133f98 100%);
+	background: -webkit-linear-gradient(top, #1a4ba6 0%,#133f98 100%);
+	background: linear-gradient(to bottom, #1a4ba6 0%,#133f98 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1a4ba6', endColorstr='#133f98',GradientType=0 );
+    color: #FFF;
+    padding-left: 8px;
+    padding-right: 8px;
+	display: inline-block;
+    text-align: center;
+	box-shadow: 0px 0px 2px #000;
+	float: right;
+}
+.gr_imp span:hover:last-child{
+    background: #0b2d73;
+	background: -moz-linear-gradient(top, #133f98 0%, #0b2d73 100%);
+	background: -webkit-linear-gradient(top, #133f98 0%,#0b2d73 100%);
+	background: linear-gradient(to bottom, #133f98 0%,#0b2d73 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#133f98', endColorstr='#0b2d73',GradientType=0 );
+}
+
+
+
+
+
+
+/* campi data dei forms */
+.date{
+    background-color: rgba(255,255,255,0.5);
+    border-radius: 3px;
+    border: 1px solid rgba(0,0,0,0.3);
+    height: 32px;
+    line-height: 32px;
+    display: inline-block;
+    width: 119px;
+    padding-left: 7px !important;
+    padding-right: 7px !important;
+}
+.date .giorno,
+.date .mese,
+.date .anno{
+	border: none !important;
+	background: transparent !important;
+	margin: 0px !important;
+	padding: 0px !important;
+	text-align: center !important;
+	display: inline-block;
+	vertical-align: middle;
+	height: 30px !important;
+	margin-top: -4px !important;
+	border-radius: 0px !important;
+}
+.date .giorno,
+.date .mese{
+	width: 22px !important;	
+}
+.date .anno{
+	width: 44px !important;
+}
+.date span{
+    display: inline-block;
+    vertical-align: middle;
+    width: 7px;
+    overflow: hidden;
+    text-align: center;
+    height: 30px;
+    margin-top: -4px;
+    margin-left: -4px;
+    margin-right: -4px;
+    line-height: 30px;
+    opacity: 0.6;
+}
+
+
+.sezioneTrattamenti{
+    padding-top: 13px;
+	margin-bottom:0px !important;
+	border-bottom: 1px solid rgba(0,0,0,0.1);
+    border-top: 1px solid rgba(255,255,255,0.4);
+}
+body:not(.touch) .sezioneChiusa:hover{
+	background-color:rgba(0,0,0,0.05);
+}
+.sezioneTrattamenti:not(.sezioneChiusa){
+	background-color: rgba(255,255,255,0.2);
+}
+.sezioneChiusa{
+    overflow: hidden;
+    height: 48px;	
+}
+.sezioneChiusa > div{
+    display:none;	
+}
+.sezioneTrattamenti > .labelTrattamenti{
+	cursor:pointer;
+	background:url(../img/frSuB.png) no-repeat right center;
+	background-size:auto 170%;
+}
+.sezioneChiusa > .labelTrattamenti{
+	background-image:url(../img/frGiuB.png) !important;
+	margin-bottom: 13px;
+}
+.icoLabel{
+	width:32px;
+	height:32px;
+	float:left;
+	margin-right:10px;
+	margin-top:-5px;
+}
+#addFoto{
+    display: inline-block;
+    margin-top: 17px;
+    height: 32px;
+    line-height: 32px;
+    margin-left: 10px;
+}
+#fotoProvv_FL{
+    padding-left: 32px !important;
+    overflow: hidden !important;
+    width: 32px !important;
+    padding-right: 0px !important;
+    min-width: auto !important;
+    display: inline-block;
+}
+#contGallery{
+	overflow-y: hidden;
+    overflow-x: auto;
+    padding: 10px;
+    white-space: nowrap;	
+   /* width: 100%;*/
+}
+.galleryFull{
+    height: 180px;
+}
+#contGallery > div:not(.noResults),
+#contGallery > div:not(.noResults) > div {
+    width: 150px;
+    height: 150px;
+}
+#contGallery > div:not(.noResults) {
+    border-radius: 5px;
+    margin: 5px;
+    box-shadow: 0px 0px 3px rgb(0 0 0 / 50%);
+	background-image:url(../img/loadingBlack.gif);
+	background-color:#000;
+	background-size:50px;
+	background-position:center center;
+    background-repeat: no-repeat;
+	display:inline-block;
+	vertical-align:top;
+	overflow:hidden;
+}
+#contGallery > div:not(.noResults) > div {
+	background-size:cover;
+	background-position:center center;
+	cursor: pointer;
+}
+.noConn{
+	background-image: url(../img/noConn2.png) !important;
+    background-size: 64% !important;
+    background-color: rgba(0,0,0,0.2) !important;
+    background-repeat: no-repeat !important;
+}
+.noConn:not(.fotoLocale) img{
+	display:none;
+}
+.gall_full{
+	/*background-color: rgba(255,255,255,0.25);*/
+	border-radius: 2px;
+	float: right;
+	margin:4px;
+	cursor:pointer;
+}
+.gall_del{
+	padding: 5px;
+	/*background-color: rgba(255,255,255,0.5);*/
+	box-shadow:0px 0px 3px #000;
+	background-color: #F00;
+	border-radius: 13px;
+	margin: 3px;
+	float: left;
+	margin-top: 121px;
+	cursor:pointer;
+}
+body:not(.touch) #contGallery > div:not(.noResults) > div img{
+	opacity:0.2;
+}
+body:not(.touch) #contGallery > div:not(.noResults) > div:hover img{
+	opacity:1 !important;
+}
+
+
+
+
+#combo{
+    background-color: #FFF;
+    margin-right: 2px;
+    position: absolute;
+    line-height: 30px;
+    max-height: 110px;
+    overflow-y: auto;
+	border: 1px solid #adadab;
+	box-shadow: 0px 0px 3px rgba(0,0,0,0.2);
+	z-index:10000;
+}
+.sch_Max600 #combo{
+    width: calc(100% - 72px);
+    margin-left: 2px;
+}
+#scheda:not(.sch_Max600) #combo{
+    width: calc(100% - 164px);
+    margin-left: 93px;
+}
+#combo{
+	display:none;
+}
+#combo span{
+    display: block;
+    color: #000;
+    padding-left: 7px;
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+   /* background-image: url(../img/frSuB.png);
+    background-position: right center;
+    background-repeat: no-repeat;
+    background-size: 26px;*/
+    cursor: pointer;
+	display:none;
+	text-align: left;
+}
+#combo span:last-child{
+	 border-bottom: none !important;
+}
+
+#combo span:hover{
+	color:#FFF;
+	background-color:#5d90ef;
+}
+.comboElVis{
+	display:block !important;
+}
+.l_a{
+    float: none;
+    clear: both;
+    height: 20px !important;
+}
+#scheda:not(.sch_Max600) .contProvincia{
+	width:168px;
+	display:inline-block;
+}
+#scheda:not(.sch_Max600) .contCitta{
+	width:calc(100% - 174px);
+	display:inline-block;
+	margin-right:6px;
+	float:left;
+}
+#scheda:not(.sch_Max600) .contCAP{
+	width:168px;
+	display:inline-block;
+	float:left;
+}
+#scheda:not(.sch_Max600) .contStato{
+	width:calc(100% - 174px);
+	display:inline-block;
+	margin-left:6px;
+}
+#scheda:not(.sch_Max600) .contStato select{
+	margin-bottom:0px !important;
+}
+-->

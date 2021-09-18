@@ -1,0 +1,66 @@
+@charset "utf-8";
+/* CSS Document */
+
+
+#spSch, #spStesso{
+    display: inline-block;
+    color: #fff;
+    background: url(../../img/spuntaB.png) no-repeat left center;
+    margin-left: 13px;
+    border-radius: 5px;
+    padding-left: 40px;
+    padding-right: 15px;
+    line-height: 34px;
+}
+#spSch{
+	background-color:#194aa6;
+	cursor: pointer;
+}
+#spStesso{
+	background-color:#F93;
+}
+.spAdd{
+	 background-image:url(../../img/zoom+.png) !important;
+}
+
+#formAnnotazioni textarea{
+    background-color: transparent;
+    padding: 10px;
+	margin:0px;
+	margin-bottom: -4px;
+}
+#formAnnotazioni textarea::-webkit-scrollbar {
+    background: transparent;
+	width:8px;
+	height:8px;
+	padding:2px;
+}
+#formAnnotazioni textarea::-webkit-scrollbar-thumb {
+    background-color: #960;
+    border-radius: 50px;
+    min-width: 4px;
+    min-height: 4px;
+}
+#formAnnotazioni textarea::-webkit-scrollbar-thumb:hover {
+    background-color: #630;
+}
+
+#annotazioni_cont{
+	background-color: #f5e39b;
+    border: 1px solid #ab9336;
+}
+#pulsantiAnnotazione{
+	display:none;
+}
+#pulsantiAnnotazione #p_sch_salva{
+	background-color:#FFF;
+}
+#TestoAnnotazione::placeholder{
+	opacity:0.8 !important;
+	font-style:italic;
+}
+
+#annotazioni_label{
+	margin-top: 30px;
+    margin-bottom: 5px;
+}

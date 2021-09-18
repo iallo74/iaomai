@@ -1,0 +1,378 @@
+@charset "utf-8";
+/* CSS Document */
+
+
+#procTue{
+	width:80px;
+}
+#procComm{
+	width:106px;
+}
+#procAdd{
+	background:url(../../img/zoom+.png) no-repeat center center rgba(0,0,0,0.2);
+	width:24px;
+}
+.procSel{
+	background-color:#EEE;
+	background-image:url(../../img/frProc.png);
+	background-position:center bottom;
+	background-repeat:no-repeat;
+}
+.procSel:hover{
+	background-color::#FFF !important;
+}
+.procedureBut,
+.procedureButEvi{
+	width:215px;
+	padding:10px;
+	border-bottom:1px solid #999;
+	cursor:pointer;
+	overflow:hidden;
+	white-space:nowrap;
+	text-overflow:ellipsis;
+	-o-text-overflow:ellipsis;
+	padding-right:30px;
+}
+.procedureBut:hover{
+	background-color:#AAA;
+}
+.procedureButEvi{
+	background-color:#DDCC99;
+}
+.procedureBut span,
+.procedureButEvi span{
+	font-style:italic;
+	color:#666;
+	font-size:10px !important;
+}
+@media (max-width: 800px){
+	.touch #elenchi:not(.schExp) .lastComm{
+		display: inline-block;
+		width: 3px;
+	}
+}
+
+.frPrec,
+.frSucc{
+	background-position:center center;
+	background-size:auto 50px;
+	background-repeat:no-repeat;
+	width: calc(100% - 6px);
+	height:30px;
+	display:block;
+	cursor:pointer;
+}
+.frPrec{
+	background-image:url(../../img/frSuB.png);
+}
+.frSucc{
+	background-image:url(../../img/frGiuB.png);
+}
+
+@media (max-width: 800px){
+	.touch #elenchi:not(.schExp) .frPrec,
+	.touch #elenchi:not(.schExp) .frSucc{
+		background-position:center center;
+		background-size:50px;
+		background-repeat:no-repeat;
+		width: 40px;
+		height:40px;
+		display:inline-block;
+	}
+	.touch #elenchi:not(.schExp) .frPrec{
+		background-image:url(../../img/frSxB.png);
+	}
+	.touch #elenchi:not(.schExp) .frSucc{
+		background-image:url(../../img/frDxB.png);
+	}
+
+}
+/*.procCommenti{
+	border-top:1px solid rgba(0,0,0,0.2);
+	margin-top:20px;
+	padding-top:10px;
+}*/
+.procCommenti.sezioneChiusa{
+	background-color:rgba(0,0,0,0.05);
+}
+.procCommenti.sezioneChiusa:hover{
+	background-color:rgba(0,0,0,0.075) !important;
+}
+#formCommenti{
+	/*display:none;*/
+	padding-bottom:0px;
+}
+.placeholderCommento{
+	float: none;
+    clear: both;
+}
+.modCommento, .replyCommento{
+	margin-bottom:10px;
+	border-radius: 0px !important;
+}
+#formCommenti textarea,
+#formAnnotazioni textarea{
+	font-family:Verdana, Geneva, sans-serif;
+	border:none;
+	padding:3px;
+	width:100%;
+	height:100px;
+	resize:none;
+	margin-top:10px;
+}
+#formCommenti textarea{
+    background-color: rgba(255,255,255,0.7);
+    width: calc(100% + 30px);
+    margin-left: -15px;
+    margin-right: -15px;
+    padding: 10px;
+}
+
+#pulsantiProcedura{
+    width: calc(100% + 30px);
+    margin-left: -15px;
+    margin-right: -15px;
+	padding-right:5px;
+}
+#pulsantiProcedura #p_sch_salva,
+#pulsantiProcedura #p_sch_salva:hover{
+    background-color: #FFF;
+}
+#pulsantiProcedura div{
+	margin-top:5px;
+	margin-bottom:5px;
+}
+#notificaCommenti{
+	cursor:pointer;
+	font-size:10px;
+	padding-left:24px;
+	height:24px;
+	line-height:24px;
+	display:inline-block;
+	background-image:url(../../img/ico_notificheB.png);
+	background-size:18px;
+	background-position:3px center;
+	background-repeat:no-repeat;
+	background-color: rgba(0,0,0,0.1);
+    border-radius: 14px;
+    padding-right: 10px;
+}
+.notificheDisattivate{
+	background-image:url(../../img/ico_notificheGG.png) !important;
+}
+#labelCommenti{
+	padding-left: 6px;
+    font-style: italic;
+    color: #000;
+	height:24px;
+	line-height:24px;
+	margin-bottom:13px;
+}
+#elencoCommenti{
+	margin-bottom: 28px;
+}
+.commRG{
+	background-color:rgba(255,255,255,0.4);
+	border:1px solid rgba(0,0,0,0.1);
+	min-height:60px;
+	margin-bottom:5px;
+	box-shadow:0px 0px 1px rgba(0,0,0,0.3);
+    border-radius: 4px;
+}
+.commRG:not(.commReply){
+	width:100%;
+}
+.commReply{
+	width:calc(100% - 25px) !important;
+	margin-left:20px;
+	margin-right:5px;
+	color: #FFF;
+	background-color: rgba(0,0,0,0.5);
+	display: inline-block;
+	vertical-align:top;
+	border:none !important;
+	/*background-image:url(../../img/ico_reply.png);
+	background-size:20px;
+	background-repeat:no-repeat;
+	background-position:right top;*/
+	border-radius: 4px;
+}
+.commReply .commSX,
+.commReply .commDX,
+.commReply .commTL,
+.commReply .commSX *,
+.commReply .commDX *,
+.commReply .commTL *{
+	color: #FFF !important;
+}
+.commSX{
+	color:#000;
+	font-size:11px !important;
+	padding:8px;
+	overflow:hidden;
+	padding-bottom:3px;
+}
+.commSX *{
+	font-size:11px !important;
+	color:#000;
+}
+.commSX, .commSX *{
+	line-height: normal !important;
+}
+.commSX span{
+	font-size:10px !important;
+}
+.commDX{
+	padding:8px;
+	font-size:12px !important;
+	color:#000;
+	padding-top:3px;
+}
+.commTL{
+	width: 100%;
+    text-align: right;
+    padding-right: 5px;
+    height: 25px;
+}
+.commTL span{
+	font-size: 11px !important;
+    cursor: pointer;
+    background-color: rgba(0,0,0,0.2);
+    display: inline-block;
+    line-height: 20px;
+    padding-left: 5px;
+    padding-right: 5px;
+    border-radius: 10px;
+}
+.commTL span:hover{
+    background-color: rgba(0,0,0,0.25);
+}
+.commRS{
+	width: calc(100% - 25px) !important;
+    margin-right: 5px;
+    font-style: italic;
+    padding-bottom: 3px;
+    padding-left: 32px;
+    font-size: 11px;
+    background-image: url(../../img/ico_replyNsw.png);
+    background-size: 20px;
+    background-repeat: no-repeat;
+    background-position: 11px center;
+    height: 20px;
+    line-height: 20px;
+}
+.commAvatar{
+    display: inline-block;
+    background-size: cover;
+    vertical-align: middle;
+}
+.commAvatar:not(.commNoAvatar){
+	width: 22px;
+    height: 22px;
+    border-radius: 11px;
+}
+.commNoAvatar{
+	width: 16px;
+    height: 16px;
+	background-image:url(../../img/ico_utenteN.png);
+    border-radius: 0px;
+	margin-top: -5px;
+}
+.commReply .commNoAvatar{
+	background-image:url(../../img/ico_utente.png) !important;
+}
+#filtroCond input{
+	height:26px;
+	margin-top:4px;
+	border-radius:3px;
+	border:none;
+	background-image: url(../../img/lenteB.png);
+    background-repeat: no-repeat;
+    background-position: left top;
+    background-size: 20px;
+	background-color: #DDD;
+    padding-left: 22px;
+}
+#filtroCond input{
+	width:calc(100% - 79px);
+}
+#p_elRicProc{
+	display:none;
+	width:20px;
+	height:40px;
+	margin-right:5px !important;
+	background:url(../../img/chiusuraSmartPhoneBlack.png) no-repeat center center;
+	cursor:pointer;
+	float:right;
+}
+#prefFiltroCond{
+	border-left: 1px solid #696666;
+    background: url(../../img/ico_not_prefB.png) no-repeat 6px center;
+    float: right;
+    cursor: pointer;
+    height: 26px;
+    width: 36px;
+    margin-top: 3px;
+    background-size: auto 21px;
+}
+#chiudiRicComm{
+	position: absolute;
+    right: 7px;
+    bottom: 10px;
+    z-index: 1000;
+    background-color: #282828;
+    border-radius: 15px;
+}
+#lingueFiltroCond{
+    background: url(../../img/ico_linguaB.png) no-repeat center center;
+    float: right;
+    cursor: pointer;
+    height: 26px;
+    width: 36px;
+    margin-top: 4px;
+    overflow: hidden;
+}
+#idLinguaRic{
+	font-weight:normal !important;
+	background-color:transparent !important;
+	color:#FFF !important;
+	cursor:pointer;
+	height:31px;
+	padding-top:10px;
+	width:40px;
+	border:none !important;
+	font-family:Arial, Helvetica, sans-serif !important;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	padding-left:5px;
+}
+.okPref{
+	background-image: url(../../img/ico_prefB.png) !important;
+}
+.okLing{
+	background-image: url(../../img/ico_linguaG.png) !important;
+	background-position:center top !important;
+}
+.scheda_procedura .noResults{
+	padding-left:20px;
+}
+#p_swRicComm{
+	display:none;
+}
+
+@media (max-width: 800px){
+	.touch #elenchi:not(.schExp) #p_swRicComm{
+		display:inline-block !important;
+		width:35px;
+		height:50px;
+		margin-left:-50px;
+		margin-top:-4px;
+   		float: left;
+	}
+	.touch #filtroCond:not(.vis) #p_swRicComm img{
+		display:none;
+	}
+	.touch #elenchi:not(.schExp) #filtroCond input{
+		padding-left: 8px !important;
+	}
+}

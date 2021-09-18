@@ -1,0 +1,15 @@
+@charset "utf-8";
+/* CSS Document */
+/*
+
+	i CSS per i dispositivi non touch
+
+
+*/
+
+.visSch_1 #l1,
+.visSch_1 #l2,
+.schRid #l1,
+.schRid #l2{
+	display:none !important;
+}

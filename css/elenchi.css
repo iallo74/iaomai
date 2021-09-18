@@ -1,0 +1,695 @@
+@charset "utf-8";
+/* CSS Document */
+
+/* GENERICHE */
+
+
+/* INTESTAZIONE */
+body:not(.smart) #btnCarMapMenu,
+.smart #elenchi.schExp #btnCarMapMenu{
+	display:block;
+	text-align:left;
+	background-color:transparent;
+	box-shadow:none;
+	font-weight:normal;
+	height:40px;
+	line-height:40px;
+	color:#666;
+	margin:4px;
+	cursor:pointer;
+}
+
+body:not(.smart) #btnCarMapMenu i span,
+.smart #elenchi.schExp #btnCarMapMenu i span{
+	display:none;
+}
+#btnCarMapMenu{
+    padding-left: 15px;
+}
+#btnCarMapMenu,
+#btnCarMapMenu > span{
+    font-size: 21px !important;
+    color: rgba(0,0,0,0.6);
+}
+body:not(.smart) #chiudiSet,
+.smart #elenchi.schExp #chiudiSet{
+	/*float: right;
+    display: inline-block;
+    vertical-align: middle;
+    width: 25px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-image: url(../img/ico_logoutN.png);
+    background-size: 28px;
+    cursor: pointer;
+    margin-right: 3px;
+    height: 32px;
+    opacity: 0.4;*/
+	float: left;
+    display: inline-block;
+    vertical-align: middle;
+    width: 69px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-image: url(../img/frSxB.png);
+    background-size: auto 50px;
+    cursor: pointer;
+    margin-right: -15px;
+    height: 47px;
+    opacity: 1;
+    margin-left: -31px;
+    margin-top: -4px;
+}
+body:not(.smart) #impostazioniSet,
+.smart #elenchi.schExp #impostazioniSet{
+	float: right;
+    display: inline-block;
+    vertical-align: middle;
+    width: 25px;
+    height: 30px;
+    background-image: url(../img/p_impostazioniN.png);
+    background-position: center center;
+    background-size: auto 25px;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    opacity: 0.5;
+}
+body:not(.smart) #help_set,
+.smart #elenchi.schExp #help_set,
+#fumetti_testo #help_set{
+	border-radius: 10px;
+    width: 18px;
+    height: 18px;
+    line-height: 16px;
+    float: right;
+    text-align: center;
+    color: rgba(0,0,0,0.5);
+    margin-top: 7px;
+    margin-right: 4px;
+    border: 1px solid rgba(0,0,0,0.5);
+	cursor:pointer;
+}
+#help_clienti{
+	border-radius: 10px;
+    width: 18px;
+    height: 18px;
+    line-height: 16px;
+    float: right;
+    text-align: center;
+    color: rgba(0,0,0,0.5);
+    margin-top: 6px;
+    margin-right: -13px;
+    border: 1px solid rgba(0,0,0,0.5);
+    cursor: pointer;
+}
+.elMenu{
+	height:39px;
+	line-height:39px;
+	display:inline-block;
+}
+body:not(.smart) .elMenu{
+	opacity:0.8;
+}
+body:not(.smart) .elMenu:hover{
+	opacity:1 !important;
+}
+
+
+/* ELENCHI */
+.vis_base #lista_set,
+.vis_base #pulsanti_set,
+.vis_set #lista_base,
+.vis_set #pulsanti_base,
+body:not(.smart) #pulsante_agenda{
+	display:none;
+}
+#elenchi{  /* il contenuto globale del menu elenchi_linguette + elenchi_cont */
+	position:fixed;
+	z-index:19;
+	top:0px;
+	height:100%;
+	display:none;
+}
+.smart #elenchi{
+	left: 0px;
+}
+.smart #elenchi.compressi{
+	overflow:hidden;
+	height:54px;
+}
+body:not(.smart) #elenchi{
+	left: 48px;
+}
+	
+@media (min-width: 801px){	
+	#elenchi_cont{
+		box-shadow: 0px 0px 6px rgba(0,0,0,0.5);
+	}
+}
+@media (max-width: 800px) and (hover: hover) and (pointer: fine){	
+	#elenchi_cont{
+		box-shadow: 0px 0px 6px rgba(0,0,0,0.5);
+	}
+}
+#elenchi_linguette{
+	position: absolute;
+	margin-left: -32px;
+	overflow: hidden;
+	text-align: right;
+	padding-top:80px;
+}
+#elenchi_linguette div {
+	display: none;
+	background-color: var(--menu-linguette);
+	width: 22px;
+	height: 32px;
+	padding-top: 5px;
+	margin-top: 2px;
+	margin-bottom: 2px;
+	margin-left: 10px;
+	border-top-left-radius: 5px;
+	border-bottom-left-radius: 5px;
+	cursor: pointer;
+	box-shadow: var(--menu-linguette-ombra);
+}		
+#elenchi_linguette div line{
+	stroke:#000;
+	stroke-linecap: round;
+	stroke-width: 2px;
+}
+.bodyStyled2 #elenchi_linguette div line{
+	stroke:#FFF;
+}
+.linguettaSel line,
+#elenchi_linguette div:hover line,
+#l1.visBtn line,
+#l2.visBtn line,
+#l3.visBtn line{
+	stroke:var(--schede-icone-over) !important;
+}
+#l3{
+	margin-right: 8px !important;
+}
+#elenchi_cont{
+	background: var(--menu-fondino);
+	height:100%;
+	width: var(--menu-width);
+	display:none;
+	float:left;
+}
+#elenchi_contenuti{ /* ????? */
+	width:500px;
+	float:left;
+	display:none;
+}
+.smart #elenchi_testa{
+    width: fit-content;
+}
+.smart #elenchi.noTesta #elenchi_testa{
+   display:none;
+}
+.smart #elenchi:not(.schExp) #elenchi_testa{
+    height: 28px;
+    overflow: hidden;
+    padding-top: 2px;
+    margin-top: -30px;
+    margin-bottom: 2px;
+    padding-right: 3px;
+}
+.smart #elenchi.schExp #elenchi_testa #chiudiElenco{
+    margin-top: -30px;
+	background-color:#000;
+	box-shadow:none !important;
+	background-image:url(../img/chMenu.png);
+}
+#elenchi_titolo{ /* il titolo nel 2° livello */
+	height: 50px;
+    line-height: 42px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    padding-right: 14px;
+    padding-left: 50px;
+    background: url(../img/frSxB.png);
+    background-size: contain, auto 100%;
+    background-repeat: no-repeat, repeat-y;
+    background-position: left center, center center;
+    cursor: pointer;
+    display: none;
+    text-align: right;
+    overflow-x: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    font-size: 21px;
+    color: rgba(0,0,0,0.6);
+}
+#elenchi_icona{
+	vertical-align: middle;
+    margin-left: 10px;
+    opacity: 0.3;
+}
+#titolo_base{
+	height: 44px;
+    line-height: 42px;
+    text-align: left;
+    padding-left: 15px;
+    overflow-x: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    font-size: 21px;
+    color: rgba(0,0,0,0.6);
+    display: block;
+    padding-right: 20px;
+}
+.smart .schExp #titolo_base,
+.smart .schExp #btnCarMapMenu{
+	margin-top: 5px;
+}
+#descrizione_base{
+    text-align: left;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-bottom: 15px;
+	font-size:11px;
+	color: rgba(0,0,0,0.6);
+    display: block;
+}
+.smart #elenchi:not(.schExp) #titolo_base,
+.smart #elenchi:not(.schExp) #descrizione_base{
+	display:none;
+}
+#chiudiElenco{
+	width: 25px;
+    height: 25px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    cursor: pointer;
+    float: right;
+    margin-right: -25px;
+    background-color: var(--impostazioni-fondino);
+    border-bottom-right-radius: 8px;
+}
+.smart #chiudiElenco{
+	padding: 0px;
+    height: 27px;
+    line-height: 27px;
+    margin: 0px;
+    margin-left: 5px;
+    text-align: center;
+    width: fit-content;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+    border-bottom-right-radius: 0px;
+    background-color: var(--schede-fondino);
+    box-shadow: 0px 0px 3px #000;
+    float: none;
+    width: 30px !important;
+    background-position: 1px center !important;
+}
+.bodyStyled2 #chiudiElenco{
+    opacity: 0.6;
+    background-image: url(../img/chMenu.png);
+}
+body:not(.bodyStyled2) #chiudiElenco{
+    opacity: 0.8;
+    background-image: url(../img/chMenuB.png);
+}
+#chiudiElenco:hover{
+	opacity: 1 !important;
+}
+.titoloAperto{
+	background: url(../img/chMenu.png),linear-gradient(to bottom, #333 0%,#0a0a0a 100%);
+}
+#elenchi_pulsanti{
+	display:none;
+}
+#pulsanti_base div, #pulsanti_set div{ /* i pulsanti del menu radice */
+	height:40px;
+	line-height:40px;
+	color:#000;
+	font-weight:bold;
+	margin: 3px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 3px rgba(0,0,0,0.5);
+    background-color: #FFF;
+    background-repeat: no-repeat;
+    background-position: right center;
+    text-align: left;
+    padding-left: 15px;
+	padding-right: 40px;
+	cursor:pointer;
+}
+#pulsante_agenda{
+	background-image: url(../img/ico_agendaM.png), linear-gradient(to bottom, #FFF 0%,#EEE 100%);
+    background-size: auto, auto 100%;	
+}
+#pulsante_agenda:hover{
+	background-image: url(../img/ico_agendaM.png), linear-gradient(to bottom, #EEE 0%,#DDD 100%) !important;
+}
+#elenchi_lista .elencoSel:not(.frdxtratt){
+	background-image: linear-gradient(to bottom, #1d4eaa 0%,#0a3d96 100%);
+	color:#FFF;
+}
+#elenchi_lista .elencoSel.frdxtratt{
+	background-image: url(../img/ico_trattamenti2B.png), none, linear-gradient(to bottom, #1d4eaa 0%,#0a3d96 100%) !important;
+	color:#FFF;
+}
+#elenchi_lista .elencoSel *{
+	color:#FFF;
+}
+#elenchi_lista{
+	overflow-y:hidden;
+    height: calc(100% - 50px);
+    position: absolute;
+    width: 100%;
+	display:none;
+}
+.lista{
+	overflow-y:auto;
+    width: 100%;
+    position: absolute;
+    background-color:var(--menu-lista-f);
+	border-top:1px solid rgba(0,0,0,0.3);
+}
+.lista .noResults{
+	text-align: center !important;
+	box-shadow: none !important;
+}
+#lista_base > div, #lista_set > div{
+	display:none;
+}
+.lista > div:not(.loading):not(.menuElenchi){
+	height:36px;
+	color:#000;
+	line-height:36px;
+	text-align:left;
+	cursor:pointer;	
+	margin: 3px;
+    border-radius: 5px;
+	padding-left:15px;
+	padding-right:15px;
+	overflow:hidden;
+	text-overflow:ellipsis;
+	white-space:nowrap;
+    background-color: #FFF;
+	background-repeat: no-repeat;
+	background-position: right center;
+	box-shadow: 0px 0px 3px rgb(0 0 0 / 30%);
+}
+.elencoSel{
+    box-shadow: 0px 0px 3px rgba(0,0,0,0.5);
+}
+
+/* CARTELLE */
+.cartella{
+	padding:0px !important;
+	padding-bottom: 1px !important;
+}
+.cartella > span{ /* label */
+	display:block;
+	width:100%;
+	height:36px;
+	overflow:hidden;
+	text-overflow:ellipsis;
+	white-space:nowrap;
+	padding-left:15px;
+	padding-right:35px;
+	background-image:url(../img/frGiuB.png), linear-gradient(to bottom, #FFF 0%,#EEE 100%);
+	background-repeat:no-repeat, repeat-x;
+	/*background-position:right center, center center;*/
+	background-position:right top, center center;
+	background-size:auto 36px, auto;
+}
+.cartella:not(.cartellaAperta) > span:hover{
+	background-image:url(../img/frGiuB.png), linear-gradient(to bottom, #EEE 0%,#DDD 100%) !important;
+}
+.cartellaAperta{
+	height:auto !important;
+	box-shadow:0px 0px 3px rgba(0,0,0,0.5);
+}
+.cartellaAperta > span{
+	background-image:url(../img/frSuB.png) !important;
+	height: 25px !important;
+}
+.lista:not(.listaTrattamenti) .cartellaAperta > span{
+	height: 36px !important;
+}
+.listaTrattamenti .cartellaAperta > span{
+	height: 25px !important;
+}
+.cartellaAperta > div{
+	display: block !important;
+	margin-bottom: 0px !important;
+}
+.cartella > div:not(.menuElenchi){ /* contenuto */
+	display:none;
+	background:#666 !important;
+	height:auto !important;
+	padding:0px !important;
+	border-top-left-radius:0px !important;
+	border-top-right-radius:0px !important;
+	margin:1px !important;
+	margin-bottom: 0px !important;
+	overflow:hidden;
+	border-bottom-left-radius: 5px !important;
+    border-bottom-right-radius: 5px !important;
+}
+.cartella > div .noResults{
+    text-align: center !important;
+	color:#999 !important;
+	cursor: default !important;
+}
+.cart_els{ /* elementi della cartella*/
+	padding-left: 15px;
+	padding-right: 35px;
+	border-radius:0px !important;
+	color:#FFF !important;
+	border-top:1px solid #363636;
+	margin:0px !important;
+	text-overflow:ellipsis;
+	white-space:nowrap;
+	width: 100%;
+    overflow: hidden;
+	/*background: url(../img/frDx.png) right center no-repeat;*/
+    background-size: contain, auto 100%;
+	background-position: right center;
+	background-repeat: no-repeat;
+}
+.cart_els .nb{
+	color:#FFF;
+}
+.trattElenco .cart_els:not(.timer):not(.timerNo){
+	/*background-image:url(../img/ico_trattamenti2B.png), url(../img/frDx.png);*/
+	background-image:url(../img/ico_trattamenti2B.png);
+	background-position: 4px center, right center !important;
+	background-size: 26px, contain, auto 100%;
+	padding-left:34px;
+}
+.trattElenco .timer,
+.trattElenco .timerNo{
+	background-position: 9px center, right center !important;
+	padding-left:34px;
+	background-size: auto, contain, auto 100%;
+}
+.trattElenco .timer{
+	/*background-image:url(../img/ico_timer.png), url(../img/frDx.png);*/
+	background-image:url(../img/ico_timer.png);
+}
+.trattElenco .timerNo{
+	/*background-image:url(../img/ico_timerNo.png), url(../img/frDx.png);*/
+	background-image:url(../img/ico_timerNo.png);
+}
+.cart_els:not(.elencoSel){
+	background-color:#444 !important;
+}
+.cart_els:not(.elencoSel):not(.lockedItem):hover{
+	background-color:#555 !important;
+}
+.trattElenco .cart_els.elencoSel:not(.timer):not(.timerNo){
+	/*background-image:url(../img/ico_trattamenti2B.png), url(../img/frDx.png), linear-gradient(to bottom, #1d4eaa 0%,#0a3d96 100%) !important;*/
+	background-image:url(../img/ico_trattamenti2B.png), none, linear-gradient(to bottom, #1d4eaa 0%,#0a3d96 100%) !important;
+	background-position: 4px center, right center, center center !important;
+}
+.trattElenco .cart_els.timer.elencoSel{
+	/*background-image:url(../img/ico_timer.png), url(../img/frDx.png), linear-gradient(to bottom, #1d4eaa 0%,#0a3d96 100%) !important;*/
+	background-image:url(../img/ico_timer.png), none, linear-gradient(to bottom, #1d4eaa 0%,#0a3d96 100%) !important;
+	background-position: 9px center, right center, center center !important;
+}
+.trattElenco .cart_els.timerNo.elencoSel{
+	background-image:url(../img/ico_timerNo.png), url(../img/frDx.png), linear-gradient(to bottom, #1d4eaa 0%,#0a3d96 100%) !important;
+	background-position: 9px center, right center, center center !important;
+}
+.cart_els span{
+	color:#FFF;
+}
+.cart_video{
+	background-image: url(../img/play.png);
+	background-position: left center;
+	padding-left: 35px !important;
+	background-repeat: no-repeat;
+}
+.cart_video.elencoSel{
+	background-image: url(../img/play.png), linear-gradient(to bottom, #1d4eaa 0%,#0a3d96 100%) !important;
+}
+
+.cart_els.lockedItem:not(.cart_video){ /* elementi della cartella*/
+	background-image: url(../img/lockB.png);
+    background-size: auto 50%;
+    background-position: right 2px;
+	background-repeat: no-repeat;
+	cursor:default !important;
+	color:#999 !important;
+}
+.cart_video.lockedItem{ /* elementi della cartella*/
+	background-image: url(../img/play.png), url(../img/lockB.png);
+    background-size: auto, auto 50%;
+    background-position: left center, right 2px;
+	background-repeat: no-repeat;
+	cursor:default !important;
+	color:#999 !important;
+}
+
+/* CLASSI PULSANTI ELENCO */
+.frdis{
+	background-image: none, linear-gradient(to bottom, rgba(0,0,0,0.01) 0%,rgba(0,0,0,0.06) 100%) !important;
+    background-color: rgba(255,255,255,0.5) !important;
+    color: rgba(0,0,0,0.4) !important;
+    cursor: default !important;
+    box-shadow: 0px 0px 3px rgba(0,0,0,0.3) !important;
+}
+.base{
+	background-image: none, linear-gradient(to bottom, #FFF 0%,#EEE 100%);
+	background-size: auto, contain;
+	background-repeat: no-repeat;
+	background-position: right center;
+}
+.frdx{
+	background-image: url(../img/frDxB.png), linear-gradient(to bottom, #FFF 0%,#EEE 100%);
+	background-size: contain, auto 100%;
+	background-repeat: no-repeat;
+	background-position: right center;
+}
+.frdxtratt{
+	/*background-image: url(../img/ico_trattamenti2.png), url(../img/frDxB.png), linear-gradient(to bottom, #FFF 0%,#EEE 100%);*/
+	background-image: url(../img/ico_trattamenti2.png), none, linear-gradient(to bottom, #FFF 0%,#EEE 100%);
+	background-size: 26px, contain, auto 100%;
+	background-position: 8px center, right center, center center !important;
+	padding-left: 42px !important;
+	padding-right: 35px !important;
+}
+.frdxblack{
+    background-color: #444444 !important;
+    background-image: url(../img/frDx.png);
+	background-size: contain;
+	background-repeat: no-repeat !important;
+	background-position: right center !important;
+	padding-left:8px !important;
+	color:#FFF !important;
+	padding-right: 35px !important;
+	/*border:1px solid #FFF;
+	line-height:37px;*/
+}
+.timeTratt{
+	display: inline-block;
+    vertical-align: middle;
+    background: linear-gradient(to bottom, #FFF 0%,#EEE 100%);
+    margin-left: -8px;
+    padding-left: 8px;
+    padding-right: 8px;
+    height: 39px;
+    margin-right: 6px;
+    font-family: Arial;
+    width: 52px;
+    text-align: center;
+    overflow: hidden;
+}
+body:not(.touch) .frdx,
+body:not(.touch) .frdxtratt{
+	padding-right:28px !important;
+}
+.base:not(.elencoSel):hover{
+	background-image: none, linear-gradient(to bottom, #EEE 0%,#DDD 100%) !important;
+}
+.frdx:not(.elencoSel):hover{
+	background-image: url(../img/frDxB.png), linear-gradient(to bottom, #EEE 0%,#DDD 100%) !important;
+}
+.frdxtratt:not(.elencoSel):hover{
+	/*background-image: url(../img/ico_trattamenti2.png), url(../img/frDxB.png), linear-gradient(to bottom, #EEE 0%,#DDD 100%) !important;*/
+	background-image: url(../img/ico_trattamenti2.png), none, linear-gradient(to bottom, #EEE 0%,#DDD 100%) !important;
+}
+.frdxblack:not(.elencoSel):hover{
+	background-color: #555 !important;
+}
+.base.lockedItem{
+	background-image: url(../img/lock.png), linear-gradient(to bottom, #FFF 0%,#EEE 100%);
+    background-size: auto 50%, auto !important;
+    background-position: right 2px, right center !important;
+	cursor:default !important;
+	opacity: 0.6;
+}
+.base.lockedItem:not(.elencoSel):hover{
+	background-image: url(../img/lock.png), linear-gradient(to bottom, #FFF 0%,#EEE 100%) !important;
+}
+.cnmty{
+	height: auto !important;
+	line-height: normal !important;
+	padding-top: 12px;
+	padding-bottom: 12px;
+}
+.cnmty span{
+	font-size:10px;
+	opacity:0.8;
+}
+.procCond{
+	background-image:url(../img/ico_cond.png), linear-gradient(to bottom, #FFF 0%,#EEE 100%);
+	padding-right:35px !important;
+}
+.procCond:not(.elencoSel):hover{
+	background-image:url(../img/ico_cond.png), linear-gradient(to bottom, #EEE 0%,#DDD 100%) !important;
+}
+.procCond.elencoSel{
+	background-image: url(../img/ico_condB.png), linear-gradient(to bottom, #1d4eaa 0%,#0a3d96 100%) !important;
+}
+.procNotCond{
+	background-image:url(../img/ico_not_cond.png), linear-gradient(to bottom, #FFF 0%,#EEE 100%);
+	padding-right:35px !important;
+}
+.procNotCond:not(.elencoSel):hover{
+	background-image:url(../img/ico_not_cond.png), linear-gradient(to bottom, #EEE 0%,#DDD 100%) !important;
+}
+.procNotCond.elencoSel{
+	background-image: url(../img/ico_not_condB.png), linear-gradient(to bottom, #1d4eaa 0%,#0a3d96 100%) !important;
+}
+.procPref{
+	background-image:url(../img/ico_pref.png), linear-gradient(to bottom, #FFF 0%,#EEE 100%);
+	padding-right:35px !important;
+}
+.procPref:not(.elencoSel):hover{
+	background-image:url(../img/ico_pref.png), linear-gradient(to bottom, #EEE 0%,#DDD 100%) !important;
+}
+.procPref.elencoSel{
+	background-image: url(../img/ico_prefB.png), linear-gradient(to bottom, #1d4eaa 0%,#0a3d96 100%) !important;
+}
+.procPrefNew:not(.elencoSel):hover{
+	background-image:url(../img/ico_pref.png), linear-gradient(to bottom, #FFF 0%,#EEE 100%);
+	background-size:24px 16px;
+	font-weight:bold;
+	padding-right:35px !important;
+}
+.procPrefNew{
+	background-image:url(../img/ico_pref.png), linear-gradient(to bottom, #EEE 0%,#DDD 100%) !important;
+}
+.procPrefNew.elencoSel{
+	background-image: url(../img/ico_pref.png), linear-gradient(to bottom, #1d4eaa 0%,#0a3d96 100%);
+}
+.agenda {
+	background: url(../img/ico_agenda.png), linear-gradient(to bottom, #525252 0%,#333 100%) !important;
+	background-repeat:no-repeat !important;
+	background-position: right center, center center !important;
+	background-size:auto, auto !important;
+	padding-right:41px !important;
+	text-align: right !important;
+}
+.agenda span {
+    color: #FFF;
+}

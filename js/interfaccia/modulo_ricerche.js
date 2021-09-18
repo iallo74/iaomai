@@ -1,0 +1,451 @@
+
+var RICERCHE = { 
+	// RICERCHE GLOBALI
+	overElRis: false,
+	parolaProvv: '',
+	globOp: false,
+	cSel: -1,
+	
+	car_global: function( parola ){ // ricerca una parola
+		if(typeof(parola)=='undefined')var parola=document.getElementById("parolaGlobal").value;
+	
+		var parolaOr=parola;
+		RICERCHE.cSel = -1;
+		var nRis=0; // numero di risultati
+		var nRisBase=0;
+		/* 	nRisBase è il numero di risultati nei testi base dell'app7
+			(importante per capire se dobbiamo inserire contenuti) */
+		parola=RICERCHE.pulisciTesto(parola);
+		
+		var HTML=HTML_index=HTML_list='';
+		var sezioni = 0;
+		
+		// CERCO negli TSUBO
+		var R_parz='';
+		var nRisParz = 0;
+		if(	globals.set.cartella == 'meridiani_cinesi' ||
+			globals.set.cartella == 'meridiani_shiatsu' ){
+			for (k in DB.set.meridiani) {
+				for (p in DB.set.meridiani[k].tsubo) {
+					var MER = DB.set.meridiani[k].tsubo[p];
+					var testo = MER.AzioniTsubo+" "+MER.NomeTsubo+" "+MER.ChiaviTsubo;
+						
+					testo = RICERCHE.pulisciTesto(testo);
+					
+					if(testo.toUpperCase().indexOf(parola.toUpperCase())>-1){
+						NT = MER.NomeTsubo;
+						partiNT=NT.split(".");
+						NT = '<b>'+htmlEntities(partiNT[0]+"."+partiNT[1])+'</b>';
+						for(n=2;n<partiNT.length;n++){
+							NT+=partiNT[n];
+							if(n<partiNT.length-1)NT+=".";
+						}
+						if(partiNT[0].length == 1)partiNT[0]='0'+partiNT[0];
+						R_parz += RICERCHE.wR({
+							az: "SET.azRicercaTsubo('"+k+'.'+partiNT[0]+"');RICERCHE.nascondiGlobal();",
+							cont: NT,
+							bull: '<font style="color:#FF0000;">&#8226;</font>' });
+						nRisParz++;
+						nRis++;
+						nRisBase++;
+					}
+				}
+			}
+		}
+		if(R_parz){
+			sezioni++;
+			HTML_index+='<div class="labelGlobal" id="lb'+sezioni+'" onClick="RICERCHE.swCartGlob('+sezioni+');">'+Lingua(TXT_Punto)+' ('+nRisParz+')</div>';
+			HTML_list+='<div class="contRisGlob" id="cr'+sezioni+'">'+R_parz+'</div>';
+		}
+			
+		// CERCO nelle NOTE
+		var R_parz='';
+		var nRisParz = 0;
+		if(DB.note && (globals.set.cartella == 'meridiani_cinesi' || globals.set.cartella == 'meridiani_shiatsu') ){
+			for (p in DB.note.data) {
+				var NT = DB.note.data[p];
+				var testo=NT.TestoAnnotazione;
+				testo=RICERCHE.pulisciTesto(testo);
+				if(testo.toUpperCase().indexOf(parola.toUpperCase())>-1 && NT.Cancellato!='1' && NT.numeroTsubo*1-1>-1){
+					
+					NT = DB.set.meridiani[SET.leggiSiglaMeridiano(NT.meridiano)].tsubo[NT.numeroTsubo*1-1].NomeTsubo;
+					partiNT=NT.split(".");
+					NT='<b>'+htmlEntities(partiNT[0]+"."+partiNT[1])+"</b>";
+					for(n=2;n<partiNT.length;n++){
+						NT+=partiNT[n];
+						if(n<partiNT.length-1)NT+=".";
+					}
+					if(partiNT[0].length == 1)partiNT[0]='0'+partiNT[0];
+					
+					R_parz += RICERCHE.wR({ az: "SET.apriTsubo('"+partiNT[1]+"."+partiNT[0]+"');RICERCHE.nascondiGlobal();",
+											cont: NT,
+											bull: '<font style="color:#FFCC00;">&#8226;</font>' });
+					nRisParz++;
+					nRis++;
+				}
+			}
+		}
+		if(R_parz){
+			sezioni++;
+			HTML_index+='<div class="labelGlobal" id="lb'+sezioni+'" onClick="RICERCHE.swCartGlob('+sezioni+');">'+Lingua(TXT_ElAnnotazioni)+' ('+nRisParz+')</div>';
+			HTML_list+='<div class="contRisGlob" id="cr'+sezioni+'">'+R_parz+'</div>';
+		}
+			
+		// CERCO nelle PATOLOGIE
+		var R_parz='';
+		var nRisParz = 0;
+		var kS=0;
+		if(DB.set.patologie && (globals.set.cartella == 'meridiani_cinesi' || globals.set.cartella == 'meridiani_shiatsu') ){
+			for (p in DB.set.patologie) {
+				var PT = DB.set.patologie[p];
+				var testo=PT.NomePatologia+" "+PT.TestoPatologia+" "+PT.chiaviPatologia;
+				testo=RICERCHE.pulisciTesto(testo);
+				kS++;
+				if(testo.toUpperCase().indexOf(parola.toUpperCase())>-1){
+					
+					R_parz += RICERCHE.wR({ az: "SET.azRicercaPatologie("+p+");",
+											cont: htmlEntities(PT.NomePatologia) });
+					nRisParz++;
+					nRis++;
+					nRisBase++;
+				}
+			}
+		}
+		if(R_parz){
+			sezioni++;
+			HTML_index+='<div class="labelGlobal" id="lb'+sezioni+'" onClick="RICERCHE.swCartGlob('+sezioni+');">'+Lingua(TXT_Patologie)+' ('+nRisParz+')</div>';
+			HTML_list+='<div class="contRisGlob" id="cr'+sezioni+'">'+R_parz+'</div>';
+		}
+			
+		// CERCO negli APPROFONDIMENTI
+		var R_parz='';
+		var nRisParz = 0;
+		var kS=0;
+		if(DB.set.teoria && (globals.set.cartella == 'meridiani_cinesi' || globals.set.cartella == 'meridiani_shiatsu')){
+			for (i in DB.set.teoria) {
+				for (p in DB.set.teoria[i].contenuti) {
+					var TEO = DB.set.teoria[i].contenuti[p];
+					var testo=TEO.TitoloTeoria+" "+TEO.TestoTeoria;
+					testo=RICERCHE.pulisciTesto(testo);
+					kS++;
+					if(testo.toUpperCase().indexOf(parola.toUpperCase())>-1){
+						
+						R_parz += RICERCHE.wR({ az: "SET.azRicercaTeoria("+i+","+p+");",
+												cont: htmlEntities(TEO.TitoloTeoria) });
+						nRisParz++;
+						nRis++;
+						nRisBase++;
+					}
+				}
+			}
+		}
+		if(R_parz){
+			sezioni++;
+			HTML_index+='<div class="labelGlobal" id="lb'+sezioni+'" onClick="RICERCHE.swCartGlob('+sezioni+');">'+Lingua(TXT_Approfondimenti)+' ('+nRisParz+')</div>';
+			HTML_list+='<div class="contRisGlob" id="cr'+sezioni+'">'+R_parz+'</div>';
+		}
+			
+		// CERCO nelle PROCEDURE
+		var R_parz='';
+		var nRisParz = 0;
+		var kS=-1;
+		if(DB.procedure && (globals.set.cartella == 'meridiani_cinesi' || globals.set.cartella == 'meridiani_shiatsu') ){
+			for (p in DB.procedure.data) {
+				var PR = DB.procedure.data[p]
+				var testo = PR.NomeProcedura;
+				for (d in PR.dettagliProcedura){
+					testo+=" "+PR.dettagliProcedura[d].DescrizioneDettaglio;
+				}
+				testo=RICERCHE.pulisciTesto(testo);
+				kS++;
+				if(testo.toUpperCase().indexOf(parola.toUpperCase())>-1 && PR.Cancellato!='1'){
+					R_parz += RICERCHE.wR({ az: "SET.azRicercaProcedure("+p+");",
+											cont: htmlEntities(PR.NomeProcedura) });
+					nRisParz++;
+					nRis++;
+				}
+			}
+		}
+		if(R_parz){
+			sezioni++;
+			HTML_index+='<div class="labelGlobal" id="lb'+sezioni+'" onClick="RICERCHE.swCartGlob('+sezioni+');">'+Lingua(TXT_ElProcedure)+' ('+nRisParz+')</div>';
+			HTML_list+='<div class="contRisGlob" id="cr'+sezioni+'">'+R_parz+'</div>';
+		}
+			
+		// CERCO nei CLIENTI
+		var R_parz='';
+		var nRisParz = 0;
+		var kS=-1;
+		if(DB.pazienti){
+			for (p in DB.pazienti.data) {
+				var PZ = DB.pazienti.data[p];
+				var testo = PZ.Nome+" "+PZ.Cognome+" "+PZ.NotePaziente;
+				testo=RICERCHE.pulisciTesto(testo);
+				kS++;
+				if(testo.toUpperCase().indexOf(parola.toUpperCase())>-1 && PZ.Cancellato!='1'){
+					if(PZ.sesso=='m')sesso='uomo';
+					else sesso='donna';
+					R_parz += RICERCHE.wR({ az: "PAZIENTI.azRicercaPazienti("+p+");",
+											cont: htmlEntities(PZ.Nome+" "+PZ.Cognome) });
+					nRisParz++;
+					nRis++;
+				}
+				
+				// CERCO nei TRATTAMENTI
+				for (d in PZ.trattamenti){
+					var TR = PZ.trattamenti[d];
+					var testo=TR.TitoloTrattamento+" "+TR.TestoTrattamento+" "+TR.Prescrizione+" "+TR.sintomi;
+					testo=RICERCHE.pulisciTesto(testo);
+					kS++;
+					if(testo.toUpperCase().indexOf(parola.toUpperCase())>-1 && TR.Cancellato!='1'){
+						Titolo = TR.TitoloTrattamento;
+						if(TR.TipoTrattamento == 'A')Titolo = TR.LabelCiclo+" ("+Lingua(TXT_Anamnesi)+")";
+						R_parz += RICERCHE.wR({ az: "PAZIENTI.azRicercaTrattamenti("+p+","+d+");",
+												cont: htmlEntities(PZ.Nome+" "+PZ.Cognome)+' - '+htmlEntities(Titolo) });
+						nRisParz++;
+						nRis++;
+					}
+				}
+			}
+		}
+		if(R_parz){
+			sezioni++;
+			HTML_index+='<div class="labelGlobal" id="lb'+sezioni+'" onClick="RICERCHE.swCartGlob('+sezioni+');">'+Lingua(TXT_ElPazienti)+' ('+nRisParz+')</div>';
+			HTML_list+='<div class="contRisGlob" id="cr'+sezioni+'">'+R_parz+'</div>';
+		}
+		
+		
+		// CERCO nell'ANATOMIA
+		if(globals.modello.cartella){
+			var R_parz='';
+			var nRisParz = 0;
+			var kS=0;
+			var pAnat = [];
+			for (p in ANATOMIA.children[3].children) {
+				var pA = ANATOMIA.children[3].children[p].name.split("(");
+				var txt = pA[0].replace("_SX","").replace("_DX","").split(".")[0];
+				if(txt.substr(txt.length-1,1)=='_')txt = txt.substr(0,txt.length-1);
+				var pass = false;
+				var ELEM = txt; 
+				var testo = stripslashes(Lingua(eval("TXT_"+txt))).toLowerCase();
+				if(testo.indexOf(parola.toLowerCase()) > -1)pass = true;
+				if(pA[1]){
+					var txt = pA[1].replace(")","").replace("_SX","").replace("_DX","").split(".")[0];
+					if(txt.substr(txt.length-1,1)=='_')txt = txt.substr(0,txt.length-1);
+					var testo = stripslashes(Lingua(eval("TXT_"+txt))).toLowerCase();
+					if(testo.indexOf(parola.toLowerCase()) > -1)pass = true;
+				}
+				// cerco anche nelle schede di DB_anatomia
+				if(DB_anatomia[ELEM]){
+					if(DB_anatomia[ELEM].Titolo.toLowerCase().indexOf(parola.toLowerCase()) > -1)pass = true;
+					if(DB_anatomia[ELEM].Descrizione.toLowerCase().indexOf(parola.toLowerCase()) > -1)pass = true;
+				}
+				if(pAnat.indexOf(ELEM) >- 1)pass = false;
+				if(pass){
+					pAnat.push(ELEM);
+					var tipo = ELEM.split("_")[0].toLowerCase();
+					var Tipo = tipo.charAt(0).toUpperCase() + tipo.slice(1);
+					var iconaTipo = '';
+					if(tipo == 'osso')iconaTipo = 'O';
+					if(tipo == 'organo')iconaTipo = 'V';
+					if(tipo == 'muscolo')iconaTipo = 'M';
+					R_parz += RICERCHE.wR({ az: "MODELLO.azRicercaAnatomia('"+ELEM+"','"+tipo+"','"+ANATOMIA.children[3].children[p].name+"');",
+											cont: htmlEntities(stripslashes(Lingua(eval("TXT_"+ELEM)))),
+											class: "sel"+iconaTipo,
+											style: "padding-left:30px;" });
+					nRisParz++;
+					nRis++;
+				}
+			}
+			if(R_parz){
+				sezioni++;
+				HTML_index+='<div class="labelGlobal" id="lb'+sezioni+'" onClick="RICERCHE.swCartGlob('+sezioni+');">'+Lingua(TXT_Anatomia)+' ('+nRisParz+')</div>';
+				HTML_list+='<div class="contRisGlob" id="cr'+sezioni+'">'+R_parz+'</div>';
+			}
+		}
+			
+			
+		if(!nRis)HTML='<div class="noResGlob" id="noResGlob">'+Lingua(TXT_NessunRisultato)+'</div>';
+		else{
+			HTML='<div id="divGlobal">';
+			HTML+='<div id="globalIndex">'+HTML_index+'</div>';
+			HTML+='<div id="globalList">'+HTML_list+'</div></div><div style="height:1px;clear:both;"></div>';
+		}
+		
+		
+		document.getElementById("globalTesto").innerHTML=HTML;
+		document.getElementById("globalTesto").style.background='none';
+		document.getElementById("globalTesto").classList.remove("globalHistory");
+		applicaLoading(document.getElementById("globalTesto"));
+		
+		if(nRis)RICERCHE.swCartGlob(1);
+		
+		
+		totPuntiRic=kS*1;
+		
+		RICERCHE.salvaRicerca(parolaOr,nRis,nRisBase);
+		setTimeout(function(){rimuoviLoading(document.getElementById("globalTesto"));},300);
+	},
+	wR: function( obj ){ // scrive un risultato nella ricerca
+		if(typeof(obj.bull) == 'undefined')obj.bull = '<b>&raquo;</b>';
+		if(typeof(obj.class) == 'undefined')obj.class = '';
+		if(typeof(obj.style) == 'undefined')obj.style = '';
+		if(obj.style)obj.style = ' style="'+obj.style+'"';
+		return '<div class="risGlob '+obj.class+'"'+obj.style+' onClick="'+obj.az+'">'+obj.bull+' '+obj.cont+'</div>';
+	},
+	swCartGlob: function( n ){
+		var pass = true;
+		if(WF()<=600 && !document.getElementById("globalIndex").classList.contains("visIndex")){
+			document.getElementById("globalIndex").classList.add("visIndex");
+			pass = false;
+		}
+		if(pass){
+			if(RICERCHE.cSel>-1){
+				document.getElementById("lb"+RICERCHE.cSel).classList.remove("labelSel");
+				document.getElementById("cr"+RICERCHE.cSel).classList.remove("contGlobOp");
+			}
+			document.getElementById("lb"+n).classList.add("labelSel");
+			document.getElementById("cr"+n).classList.add("contGlobOp");
+			document.getElementById("globalIndex").classList.remove("visIndex");
+			RICERCHE.cSel = n;
+		}
+	},
+	car_historyGlobal: function(){ // carica la storia delle ricerche
+		HTML='';
+		RICERCHE.overElRis=false;
+		RICERCHE.parolaProvv='';
+		DB.ricerche.data.sort(sort_by("DataModifica", true, parseInt));
+		for(k in DB.ricerche.data){
+			RICERCHE.parolaProvv=DB.ricerche.data[k].TestoRicerca.replace(/\'/g, '\\\'');
+			if(DB.ricerche.data[k].Cancellato!=1){
+				if(smartphone)HTML+='<img src="img/chiusuraSmartPhoneBlack.png" align="right" title="'+stripslashes(Lingua(TXT_EliminaParola))+'" onClick="RICERCHE.eliminaRicerca('+k+');" class="imgDelRes"/>';
+				HTML+='<div ';
+				if(smartphone)HTML+='style="margin-right:30px;"';
+				HTML+=' class="risGlob risLente" onClick="if(!RICERCHE.overElRis){document.getElementById(\'parolaGlobal\').value=\''+htmlEntities(RICERCHE.parolaProvv)+'\';RICERCHE.globalSubmit();}';
+				if(!smartphone)HTML+='else{RICERCHE.eliminaRicerca('+k+');}';
+				HTML+='">';
+				if(!smartphone)HTML+='<img src="img/chiusuraSmartPhoneBlack.png" align="right" title="'+stripslashes(Lingua(TXT_EliminaParola))+'" onMouseOver="RICERCHE.overElRis=true;" onMouseOut="RICERCHE.overElRis=false;" />';
+				HTML+=htmlEntities(DB.ricerche.data[k].TestoRicerca)+'</div>';
+			}
+		}
+		if(!HTML)HTML='<div class="noResGlob" id="noResGlob">'+Lingua(TXT_NessunRisultato)+'</div>';
+		//if(HTML)
+		document.getElementById("globalTesto").innerHTML='<p><b>'+Lingua(TXT_TueRicerche)+'</b></p>'+HTML;
+		//else document.getElementById("globalTesto").innerHTML='';
+		document.getElementById("globalTesto").classList.add("globalHistory");
+	},
+	eliminaRicerca: function( n ){ // elimina una ricerca dalla storia
+		var DataModifica = DB.ricerche.lastSync+1;
+		JSNPUSH={	"TestoRicerca": DB.ricerche.data[n].TestoRicerca,
+					"DataModifica": parseInt(DataModifica),
+					"Cancellato": 1,
+					"frv": (LOGIN_frv()!='')	};
+		DB.ricerche.data[n]=JSNPUSH;
+		localPouchDB.setItem(MD5("DB"+LOGIN._frv()+".ricerche"), IMPORTER.COMPR(DB.ricerche)).then(function(){ // salvo il DB
+			LOGIN.sincronizza();
+		});
+		RICERCHE.car_historyGlobal();
+	},
+	salvaRicerca: function( parola, nRis, nRisBase ){ // salva una ricerca
+		// verifico che la parola non esista già
+		var nPres=false;
+		for(k in DB.ricerche.data){
+			if(DB.ricerche.data[k].TestoRicerca==parola)nPres=k;
+		}
+		
+		var DataModifica = DB.ricerche.lastSync+1;
+		JSNPUSH={	"TestoRicerca": parola,
+					"DataModifica": parseInt(DataModifica),
+					"nRis": parseInt(nRis),
+					"nRisBase": parseInt(nRisBase),
+					"Nuova": 1 };
+	
+		if(!nPres){
+			DB.ricerche.data.push(JSNPUSH); // se esiste già non la carico sul privato
+			pDef=DB.ricerche.data.length-1;
+		}else{
+			DB.ricerche.data[nPres]=JSNPUSH;
+			pDef=nPres;
+		}
+	
+		localPouchDB.setItem(MD5("DB"+LOGIN._frv()+".ricerche"), IMPORTER.COMPR(DB.ricerche)).then(function(){ // salvo il DB
+			LOGIN.sincronizza();
+		});
+		return false;
+	},
+	pulisciTesto: function( txt ){
+		txt=txt.replace(/(<([^>]+)>)/gi, ''); // elimino i tags html
+		txt=txt.replace(/&nbsp;/gi,String.fromCharCode(32)); // trasformo gli spazi
+		txt=txt.replace(/ /gi, String.fromCharCode(32)); // trasformo gli spazi
+		txt=txt.replace(/\-/gi, String.fromCharCode(32)); // trasformo i trattini
+		txt=txt.replace(/_/gi, String.fromCharCode(32)); // trasformo i trattini
+		return txt;
+	},
+	historyGlobal: function(){ // ???
+		if(document.getElementById("schedaGlobal").classList.contains("visSch")){
+			RICERCHE.nascondiGlobal(true);
+			return;
+		}
+		if(document.getElementById("parolaGlobal").value.trim()){
+			RICERCHE.apriGlobal();
+		}else{
+			RICERCHE.globalSubmit(true);
+			RICERCHE.car_historyGlobal();
+		}
+		if(smartMenu && document.getElementById("scheda").classList.contains("scheda_agenda"))SCHEDA.scaricaScheda();
+	},
+	globalSubmit: function( passa ){
+		/*if(!retNoFree()){
+			document.getElementById("parolaGlobal").blur();
+			return false;
+		}*/
+		if(typeof(passa)=='undefined')var passa=false;
+		var parola=document.formGlobal.parolaGlobal.value;
+		if(parola.length>=3 || passa){
+			RICERCHE.apriGlobal(passa);
+			document.getElementById("annGlobal").style.display='inline-block';
+			if(!passa){
+				RICERCHE.car_global(parola);
+				if(smartphone){
+					if(touchable)document.getElementById("parolaGlobal").blur();
+				}
+			}else{
+				if(parola.length==0)RICERCHE.annullaGlobal();
+				/*else if(!touchable){
+					document.getElementById("parolaGlobal").focus();
+					setTimeout(function(){document.getElementById("parolaGlobal").blur();},500);
+				}*/
+			}
+			return false;
+		}else return false;
+	},
+	apriGlobal: function( passa ){
+		MENU.chiudiMenu("ricerche");
+		if(typeof(passa)=='undefined')var passa=false;
+		document.getElementById("schedaGlobal").classList.add("visSch");
+		if(!passa){
+			if(!touchable)document.getElementById("globalTesto").style.marginTop='0px';
+		}
+		RICERCHE.globOp=true;
+		MENU.icoSelected = document.getElementById("p_ricerca");
+		MENU.icoSelected.classList.add("p_sel");
+		MENU.comprimiIcone(true);
+	},
+	nascondiGlobal: function( forza ){
+		if(typeof(forza) == 'undefined')var forza = false;
+		if(forza)MENU.desIcona();
+		document.getElementById("schedaGlobal").classList.remove("visSch");
+		RICERCHE.globOp=false;
+		document.getElementById("parolaGlobal").blur();
+	},
+	annullaGlobal: function(){
+		document.getElementById("parolaGlobal").value='';
+		document.getElementById("annGlobal").style.display='none';
+		document.getElementById("parolaGlobal").style.cursor='';
+		if(RICERCHE.globOp && !touchable)document.getElementById("parolaGlobal").focus();
+		if(!touchable)document.getElementById("globalTesto").style.marginTop='0px';
+		document.getElementById("globalTesto").innerHTML='<div class="noResGlob" id="noResGlob"></div>';
+		document.getElementById("globalTesto").style.background='none';
+		RICERCHE.car_historyGlobal();
+	}
+}

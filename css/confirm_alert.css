@@ -1,0 +1,96 @@
+#CNF{
+	display:none;
+	position:fixed;
+	top:0;
+	left:0;
+	width:100%;
+	height:100%;
+	z-index:1000002;
+	background:rgba(0,0,0,0.4);
+	opacity:0;
+	-webkit-transition: opacity 0.5s;
+	transition: opacity 0.5s;
+}
+#CNF_dialog{
+	background: #FFF;
+    position: fixed;
+    top: -50px;
+    left: 50%;
+    width: 342px;
+    margin-left: -171px;
+    overflow: hidden;
+    box-shadow: 0px 1px 4px rgb(0 0 0 / 50%);
+    z-index: 9999;
+    padding-top: 30px;
+    padding-bottom: 10px;
+    border-radius: 5px;
+	opacity:0;
+	-webkit-transition: opacity 0.3s, top 0.3s;
+	transition: opacity 0.3s, top 0.3s;
+}
+#CNF_titolo{
+	text-align:center;
+	color:#000;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+#CNF_btns{
+	padding: 20px;
+	text-align: center;
+}
+#CNF_btns button{
+	min-width: 62px;
+    line-height: 26px;
+    border-radius: 3px;
+    margin: 2px;
+	cursor:pointer;
+}
+#CNF_si,
+#CNF_ok,
+#CNF_lg{
+	background-color: #266fd4;
+    color: #FFF;
+    border: 1px solid #9fbde6;
+}
+#CNF_si:hover,
+#CNF_ok:hover,
+#CNF_lg:hover{
+	background-color: #1857af;
+}
+.alert #CNF_si,
+.alert #CNF_no,
+.alert #CNF_lg,
+.alert #CNF_an{
+	display:none;
+}
+#CNF_no,
+.alert #CNF_an{
+	border: 1px solid #999;	
+	background-color: #efefef;
+}
+#CNF_no:hover,
+.alert #CNF_an:hover{
+	background-color: #d4d4d4;
+}
+#CNF:not(.alert) #CNF_ok,
+.CNF_login #CNF_ok{
+	display:none;
+}
+#CNF:not(.CNF_login) #CNF_lg,
+#CNF:not(.CNF_login) #CNF_an{
+	display:none;
+}
+.CNF_login #CNF_lg,
+.CNF_login #CNF_an{
+	display: inline-block !important;
+}
+.opCNF{
+	opacity:1 !important;
+}
+.visCNF{
+	display: block !important;
+}
+.visCNF_dialog{
+	opacity:1 !important;
+	top:15px !important;
+}

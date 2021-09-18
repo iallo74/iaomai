@@ -1,0 +1,727 @@
+<!--
+
+.SCH:not(#agCont) #agendaPlaceHolder{
+	-webkit-transition: min-height 0.5s, opacity 0.5s;
+	transition: min-height 0.5s, opacity 0.5s;
+	height: 1px !important;
+	min-height: 1px;
+	margin-bottom: 0px;
+	overflow: hidden;
+	opacity:0;
+	border: 1px solid rgba(0,0,0,0.3);
+    border-radius: 6px;
+    overflow: hidden;
+}
+#agCont #agendaPlaceHolder{
+	margin-bottom: -1px !important;
+}
+
+
+/* agenda aperta */
+.agOp,
+.agOpGen{
+	opacity:1 !important;
+}
+.SCH:not(#agCont) .agOp{
+    min-height: 313px !important;
+}
+#agendaCont{
+	background-color:#FFF;
+}
+
+/* intestazione */
+#agendaTesta,
+#calTesta{
+	border-bottom: 1px solid #999;
+	height:52px;
+}
+#agendaTesta{
+    background-color: #dbcec0;
+}
+#agCont #agendaTesta{
+    position: fixed;
+    z-index: 100;
+    margin-top: -52px;
+    width: 600px;
+}
+
+/* intestazione giorno */
+.agendaInt{
+	width:calc(100% - 102px);
+	height:51px;
+	text-align:center;
+	display:block;
+	float:left;
+	vertical-align:middle;
+	cursor:pointer;
+}
+.agendaInt img{
+	vertical-align:middle;
+}
+
+.agendaInt p:first-child{
+	line-height: 15px !important;
+	height: 20px;
+	padding-top: 7px;
+	margin:0px !important;
+}
+.agendaInt p:last-child{
+	line-height: 15px !important;
+	height: 15px;
+	margin:0px !important;
+	margin-top: 4px !important;
+	margin-bottom: 0px !important;
+}
+.agendaGiorno{
+	font-size:18px;
+	font-weight:bold;
+}
+.agendaFestivo span{
+	color:#C00;
+}
+
+/* frecce di navigazione */
+#agendaPre,
+#agendaNext{
+	width: 51px;
+	height: 51px;
+	background-color: rgba(255,255,255,0.7);
+	cursor:pointer;
+	display:block;
+	float:left;
+	vertical-align:middle;
+	text-align:center;
+}
+#agendaPre{
+	border-top-right-radius: 26px;
+	border-bottom-right-radius: 26px;
+}
+#agendaNext{
+	border-top-left-radius: 26px;
+	border-bottom-left-radius: 26px;
+}
+#agendaTesta svg{
+	width: 30px;
+    height: 41px;
+    margin: 5px;
+}
+#agendaTesta svg polyline{
+	fill:none;
+	stroke:#666;
+	stroke-width:3;
+	stroke-linecap:round;
+	stroke-linejoin:round;
+}
+
+/* contenitore delle ore del giorno */
+.SCH:not(#agCont) .agendaCol{
+	height: 259px;
+    overflow-y: auto;	
+}
+
+/* le righe */
+body:not(.smart) .agendaOre div,
+body:not(.smart) .agendaOre div span{
+	line-height:20px !important;
+	height:20px !important;
+}
+/*body:not(.smart) .agendaOre div,*/
+body:not(.smart) .agendaOre div span:last-child{
+	cursor:pointer;
+}
+.smart .agendaOre div,
+.smart .agendaOre div span{
+	line-height:28px !important;
+	height:28px !important;
+}
+
+/* numero del giorno */
+.agendaOre div span:first-child{
+	display:inline-block;
+	width:30px;
+	border-right:1px solid rgba(0,0,0,0.06);
+	text-align:center;
+	vertical-align: top;
+	background-color: rgba(0,0,0,0.05);
+}
+#agCont .agendaOre div span:first-child{
+	background-color: var(--menu-fondino);
+	border-bottom: 1px solid var(--menu-fondino);
+}
+
+/* contenuto */
+.agendaOre div span:last-child{
+	display:inline-block;
+	width:calc(100% - 30px);
+	text-align:left;
+	padding-left:5px;
+	vertical-align: top;
+	color:rgba(0,0,0,0.5);
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+.agendaOre div:not(.timeFull):not(.timeFullGen) span:last-child{
+	border-bottom: 1px solid rgba(0,0,0,0.04);
+}
+.agendaOre div:not(.timeFull):not(.timeFullGen):not(.selProvv):hover span:last-child{
+	background-color:rgba(0,0,0,0.05) !important;
+}
+.agendaOre div span:last-child i{
+	margin-top:0px !important;
+}
+.agendaOre div span:last-child button{
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	background-color:#FFF;
+	border:none;
+	border:1px solid #C90;
+	border-radius:3px;
+	height:19px;
+	cursor:pointer;
+	margin-left:5px;
+}
+.agendaOre div span:last-child i{
+	float:right;
+}
+.agendaOre div:last-child{
+	border-bottom:none !important;
+}
+.timeFull span{
+	overflow:hidden;
+	text-overflow:ellipsis;
+}
+.timeFull span{
+	background-color:#cdddf1;
+}
+.timeFullGen span{
+	background-color:#c2f4cf;
+}
+.SCH:not(#agCont) .timeFullGen span,
+.SCH:not(#agCont) .timeFull span{
+	cursor:default;
+}
+#agCont .timeFullGen span:last-child,
+#agCont .timeFull span:last-child{
+	cursor:pointer;
+}
+
+.hSel{
+	background-color:#FC0 !important;
+	cursor:default !important;
+	text-overflow:unset !important;
+}
+.hSel span{
+	border-bottom:1px solid #FC0;
+	overflow:visible !important;
+}
+.selProvv,
+.selProvv:hover{
+	background-color:#FC0 !important;
+}
+
+.brdBtm span:last-child,
+.brdBtmSp{
+	border-bottom:1px solid rgba(0,0,0,0.1) !important;
+}
+.nTAg{
+	float:none !important;
+	opacity:0.5;
+	font-size:11px;
+	mergin-left:0px !important;
+	padding-left:0px !important;
+}
+.nCAg{
+	font-size:11px;
+	margin-top: -20px !important;
+    padding-right: 10px;
+	background-color: #FFF;
+	border-top-left-radius: 6px;
+	border-top-right-radius: 6px;
+	margin-right: 10px;
+}
+
+
+
+/* calendario */
+.contCal{
+	display:none;
+    z-index: 1500;
+    width: 360px;
+    left: 168px;
+    box-shadow: 0px 0px 5px #000;
+    border-radius: 3px;
+    overflow: hidden;
+    background-color: #EEE;
+    position: absolute;
+}
+#agCont .contCal{
+	top:48px;
+    position: fixed !important;
+}
+.SCH:not(#agCont) .contCal{
+    top: 104px;
+}
+.smart .contCal{
+	left: 50% !important;
+	margin-left:-180px !important;
+}
+@media (max-width: 360px){
+	.smart .contCal{
+		width:100% !important;
+		margin-left:0px !important;
+		left:0px !important;
+		border-radius:0px !important;
+		top:48px !important;
+	}
+}
+.calMese{
+	width:calc(100% - 102px);
+	height:51px;
+	text-align:center;
+	display:block;
+	float:left;
+	vertical-align:middle;
+	line-height:51px;
+	font-size:15px;
+	background-color:#444;
+	color:#FFF;
+}
+#calPre,
+#calNext{
+	width: 51px;
+	height: 51px;
+	background-color:#333;
+	cursor:pointer;
+	display:block;
+	float:left;
+	vertical-align:middle;
+	text-align:center;
+}
+#calTesta svg{
+	width: 30px;
+    height: 41px;
+    margin: 5px;
+}
+#calTesta svg polyline{
+	fill:none;
+	stroke:#DDD;
+	stroke-width:3;
+	stroke-linecap:round;
+	stroke-linejoin:round;
+}
+.calInt div, .calGiorni div{
+	float:left;
+	box-sizing:border-box;
+	text-align:center;
+	background-color:#FFF;
+}
+.calInt div {
+	height: 32px !important;
+	line-height: 32px !important;
+	background-color: rgba(0,0,0,0.1);
+	width: calc(100% / 7);
+}
+.calGiorni div {
+	height: 46px !important;
+	line-height: 46px !important;
+	cursor: pointer;
+	margin:1px !important;
+	width:calc((100% - 14px) / 7);
+	font-size:18px;
+}
+.calGiorni div:hover:not(.calInact):not(.hSel){
+	background-color:#FFC !important;
+}
+.festivo{
+	color:#C00;
+}
+.calInact{
+	background-color:rgba(255,255,255,0.5) !important;
+	cursor:default !important;
+}
+.chiudiCal{
+	width: 32px;
+    height: 32px;
+    background-image: url(../img/chMenuB.png);
+    background-position: center center;
+    background-size: contain;
+    float: right;
+    cursor: pointer;
+    position: absolute;
+    top: 8px;
+    background-color: #fff;
+    border-radius: 4px;
+}
+#agCont .chiudiCal{
+    margin-left: 138px;
+    position: fixed !important;
+}
+.scheda_stampa .chiudiCal{
+	margin-left: 269px;
+}
+body:not(.smart) #agCont .chiudiCal{
+    left: 348px;
+}
+
+.smart .chiudiCal{
+    left: 50%;
+}
+
+@media (max-width: 650px){
+	body:not(.smart) #agendaTesta{
+		width: calc(100% - 48px) !important;
+	}
+	body:not(.smart) #agCont .agendaOre{
+		width: 100% - 48px !important;
+	}
+	body:not(.smart) .contCal{
+		left: 50% !important;
+		margin-left:-156px !important;
+	}
+}
+.smart #agendaTesta{
+	width: 100% !important;
+}
+.smart #agCont .agendaOre{
+	width: 100% !important;
+}
+
+
+
+
+
+
+
+
+
+
+
+/* contenitore agenda generica */
+#agCont #cont_sceltaAppuntamento{
+	position: fixed;
+    margin-left: 15px !important;
+    background-color: #FFF;
+    padding: 20px;
+    border-radius: 6px;
+    box-shadow: 0px 0px 5px rgb(0 0 0 / 50%);
+    display: none;
+    margin-left: -15px;
+    z-index: 10000;
+    top: 15px;
+	text-align: left;
+}
+body:not(.smart) #agCont #cont_sceltaAppuntamento{
+    width: 570px;
+}
+.smart #agCont #cont_sceltaAppuntamento{
+	width: calc(100% - 30px);
+}
+#agCont #cont_sceltaAppuntamento p{
+	margin-top:0px;
+}
+#app_elenco:not(.serv_elenco){
+	height:150px;
+	background-color:rgba(0,0,0,0.1);
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+	overflow-y:auto;
+	margin-bottom:10px;
+	border:1px solid rgba(0,0,0,0.3);
+}
+#app_elenco > div{
+    line-height: 40px;
+    height: 40px;
+    padding-right: 15px;
+	background-position:right center, left center;
+	background-repeat:no-repeat;
+	background-size:contain, auto 30px;
+	cursor:pointer;
+}
+#app_elenco > div:not(.torna):not(.converti):not(.app_cart):not(.app_serv){
+    padding-left: 35px;
+	border-bottom:1px solid rgba(0,0,0,0.2);
+	background-image:url(../img/frDxB.png), url(../img/ico_cliente.png);
+}
+#app_elenco > div.torna{
+	line-height: 38px !important;
+    height: 38px !important;
+    padding-left: 40px;
+    background-image: url(../img/ico_clienteB.png);
+    background-position: 1px center;
+    background-color: #f38f27;
+    background-size: auto;
+    color: #FFF;
+}
+#app_cliente .converti{
+	line-height: 38px !important;
+    height: 38px !important;
+    padding-right: 40px;
+    background-image: url(../img/ico_trattamento_add.png), url(../img/frDxB.png);
+    background-position: 5px center, right center;
+    background-color: rgba(0,0,0,0.1);
+    background-size: auto, contain;
+    color: #000;
+    display: none;
+    float: right;
+    background-repeat: no-repeat;
+    padding-left: 38px;
+    border-radius: 7px;
+	cursor:pointer;
+}
+#app_cliente.clienteScelto .converti{
+    display: inline-block !important;
+}
+#app_cliente .converti:hover{
+	background-color: rgba(0,0,0,0.15) !important;
+}
+#app_elenco > div.app_cart,
+#app_elenco > div.app_serv{
+    padding-left: 35px;
+    background-position: left center, calc(100% - 10px) center;
+    border-bottom: 1px solid rgba(0,0,0,0.2);
+    padding-right: 0px;
+    background-size: auto 30px, auto;
+}
+#app_elenco > div.app_cart{
+    background-image: url(../img/cartella.png);
+}
+#app_elenco > div.app_serv{
+    background-image: url(../img/ico_servizio.png), url(../img/piu.png);
+}
+#app_elenco > div.app_serv .btn_invia,
+#app_elenco > div.app_cart .btn_invia{
+    float: right;
+    margin: 5px;
+}
+.serv_nrsed{
+	float:right;
+	margin-right:30px;
+	display:inline-block;
+}
+#app_elenco > div:last-child{
+	border-bottom:none !important;
+}
+#app_elenco > div:not(.torna):not(.converti):not(.app_ricerca):hover{
+	background-color:rgba(0,0,0,0.1);
+}
+#app_elenco > div.torna:hover{
+	background-color:#dd852a;
+}
+.btnApp{
+	text-align:right;
+	padding: 5px;
+}
+.btnApp .btn_invia{
+	margin-right:0px;
+	margin:0px;
+}
+#app_ricerca{
+	line-height: 30px !important;
+    background-color: rgba(0,0,0,0.8);
+    padding-left: 0px !important;
+    background-image: none !important;
+    padding-right: 0px !important;
+    width: 100%;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+}
+.app_top{
+    height: 32px !important;
+    width: 100%;
+}
+#app_ricerca_testo,
+#TestoAppuntamento{
+	width:100%;
+	background-color:#FFF;
+	border:1px solid rgba(0,0,0,0.8);
+	border-radius:3px;
+	padding-left:5px;
+	height: 31px;
+    line-height: 30px;
+}
+#app_ricerca_testo{
+	width: calc(100% - 30px);
+}
+#TestoAppuntamento{
+	width:100%;
+}
+#salvaAppuntamento{
+	width:80px;
+}
+.app_pulsanti{
+   text-align:right;
+   margin:0px;
+}
+.app_pulsanti span:first-child{
+   	font-size: 18px;
+    font-style: italic;
+    float: left;
+    display: inline-block;
+    height: 40px;
+    line-height: 40px;
+    padding-left: 10px;
+}
+.btnSw{
+    background:url(../img/frDxB.png) left center no-repeat;
+	background-size: 39px;
+	height: 40px;
+	line-height: 40px !important;
+    padding-left: 39px;
+    padding-right: 25px;
+    cursor: pointer;
+    display: inline-block;
+	vertical-align:middle;
+}
+#app_generico,
+#app_cliente{
+	display:none;
+}
+#app_generico{
+	margin-bottom:10px;
+}
+#app_elimina{
+   	background:url(../img/ico_cestino.png) left center no-repeat;
+    padding-left: 23px;
+    padding-right: 15px;
+    cursor: pointer;
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+#app_cliente_btn{
+	display:none;
+}
+.chCliApp{
+	width: 25px;
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: -2px;
+	cursor:pointer;
+}
+#chCliApp_scelto{
+	display: none;
+    vertical-align: middle;
+    margin-top: -9px !important;
+    margin-left: 3px;
+}
+.clienteScelto #chCliApp_scelto{
+    display:inline-block !important;
+}
+.clienteScelto #app_elenco{
+    height: 40px !important;
+}
+.clienteScelto #app_ricerca{
+    display:none;
+}
+.clienteScelto,
+.clienteScelto #app_elenco{
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;	
+	overflow:hidden !important;
+}
+
+.clienteScelto,
+.clienteScelto #app_elenco,
+.clienteScelto #app_elenco #torna{
+	width: auto !important;
+    display: inline-block;
+	vertical-align:middle;
+}
+
+
+
+
+
+
+#ag{
+	position:fixed;
+	height: calc(100% - 50px);
+	top:0px;
+	border-bottom-right-radius: 6px;
+	display:none;
+}
+body:not(.smart) #ag{
+	width:600px;
+	box-shadow: 0px 0px 5px rgba(0,0,0,0.7);
+	left:48px;
+	z-index:18;
+}
+.smart #ag{
+	width:100%;
+}
+.smart #ag{
+	padding-bottom: 35px !important;
+	z-index:1500 !important;
+	bottom: 54px;
+    height: calc(100% - 54px) !important;
+}
+
+#labelAg{
+	height:40px;
+	line-height:40px;
+	color:#FFF !important;
+	font-weight:bold;
+  	border-top-right-radius:5px;
+	background-image:url(../img/m_agenda.png);
+	background-repeat:no-repeat;
+	background-position:4px center;
+}
+#chiudi_ag{
+	height:40px;
+	background-image:url(../img/chMenu.png);
+	float:right;
+    margin-left: -40px;
+	background-size:80%;
+	width:40px;
+	background-repeat:no-repeat;
+	background-position:center center;
+	vertical-align:top;
+	cursor:pointer;
+}
+
+@media (max-width: 650px){
+    #ag{
+		height:100% !important;
+	}
+    body:not(.smart) #ag{
+		width: calc(100% - 48px) !important;
+	}
+    .smart #ag{
+		width: 100% !important;
+	}
+	#ag,
+	#agCont{
+		border-bottom-right-radius: 0px !important;
+	}
+	body:not(.smart) .chiudiCal{
+		left: calc(50% + 24px) !important;
+	}
+}
+
+#ag{
+	background-color:var(--colore-grigio-topo);
+}
+#agTesto{
+	color:#333;
+	width:100%;
+	box-sizing:border-box;
+}
+#agCont{
+    width: 100%;
+    position: relative;
+    border-bottom-right-radius: 6px;
+    overflow-y: auto;
+    margin-top: 51px;
+}
+body:not(.smart) #agCont{
+    height: calc(100% - 91px);
+}
+.smart #agCont{
+    height: calc(100% - 56px);
+}
+
+-->

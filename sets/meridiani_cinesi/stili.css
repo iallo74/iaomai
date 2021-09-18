@@ -1,0 +1,657 @@
+@charset "utf-8";
+/* CSS Document */
+
+
+.ideogrammaTsubo{
+	float:right;
+}
+
+.simboliTsubo{
+    width: 45px;
+    height: 45px;
+    margin-left: 10px;
+    background-color: #aec5f1;
+    border-radius: 25px;
+    padding: 5px;
+	background-repeat:no-repeat;
+	background-size:90%;
+	background-position:center center;
+	display:inline-block;
+	vertical-align:middle;
+}
+.zoomTsubo{
+	width:371px;
+	height:490px;
+}
+#p_contrasto{
+	background-image:url(img/p_contrasto.png);
+	display:none;
+}
+#p_contrasto.btnSel{
+	background-image:url(img/p_contrasto_sel.png) !important;
+	display:none;
+}
+/*.smart .btn_meridiani_cinesi{
+	background-image:url(img/logoBlu.png) !important;
+}*/
+.btn_meridiani_cinesi{
+	cursor:default !important;
+}
+
+
+/* POPUP IMPOSTAZIONI */
+#tbSigleMeridiani{
+    padding: 20px;
+    background-color: rgba(255,255,255,0.3);
+    margin-left: -10px;
+    margin-right: -10px;
+}
+#tbSigleMeridiani_tab{
+	width: 100%;
+}
+.tbSigleMeridiani_nomi{
+	width: 40%;
+}
+.tbSigleMeridiani_sigle{
+	width: 10%;
+	font-weight:bold;
+}
+#tbSigleMeridiani_tab tr td {
+    border-top: 1px solid rgba(0,0,0,0.1);
+}
+#tbSigleMeridiani_tab tr:first-child td {
+    border-top: none !important;
+}
+
+/* SCHEDE */
+.pallinoPat{
+	display:inline-block;
+	padding-left:16px;
+	height:16px;
+	line-height:16px;
+	background-image:url(img/pallinoPat.png);
+	background-position:left center;
+	background-repeat:no-repeat;
+	vertical-align:middle;
+	cursor:pointer;
+	font-weight:bold;
+	text-overflow:ellipsis;
+	overflow:hidden;
+}
+.pallinoPat:hover{
+	background-color:rgba(255,255,255,0.3);
+	border-radius:3px;
+}
+.pallinoPatEsteso{
+	text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    width: calc(100% - 20px);
+	height: 30px;
+    line-height: 30px;
+}
+.pallinoPat i{
+	font-weight:normal !important;
+	font-style:normal !important;
+}
+.elencoTsubo{
+	margin-top:10px;
+}
+.elencoTsubo p{
+	text-align:left;
+	height:30px;
+	line-height:30px;
+	margin:0px;
+}
+
+/* STILI DELLE SCHEDE */
+.scheda_meridiano #scheda_titolo{
+	background: #eb9a00 !important;
+    background: -moz-linear-gradient(top, #eb9a00 0%, #ce8707 100%) !important;
+    background: -webkit-linear-gradient(top, #eb9a00 0%,#ce8707 100%) !important;
+    background: linear-gradient(to bottom, #eb9a00 0%,#ce8707 100%) !important;
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#eb9a00', endColorstr='#ce8707',GradientType=0 ) !important;
+}
+.scheda_procedura #scheda_titolo{
+	background: #eb9a00 !important;
+    background: url(../../img/ico_prescrizioneB.png), -moz-linear-gradient(top, #eb9a00 0%, #ce8707 100%) !important;
+    background: url(../../img/ico_prescrizioneB.png), -webkit-linear-gradient(top, #eb9a00 0%,#ce8707 100%) !important;
+    background: url(../../img/ico_prescrizioneB.png), linear-gradient(to bottom, #eb9a00 0%,#ce8707 100%) !important;
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#eb9a00', endColorstr='#ce8707',GradientType=0 ) !important;
+	background-position:5px center, center center !important;
+	background-repeat:no-repeat !important;
+}
+
+.scheda_patologia #scheda_titolo{
+	background: #eb9a00 !important;
+    background: url(../../img/ico_patologie2B.png), -moz-linear-gradient(top, #eb9a00 0%, #ce8707 100%) !important;
+    background: url(../../img/ico_patologie2B.png), -webkit-linear-gradient(top, #eb9a00 0%,#ce8707 100%) !important;
+    background: url(../../img/ico_patologie2B.png), linear-gradient(to bottom, #eb9a00 0%,#ce8707 100%) !important;
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#eb9a00', endColorstr='#ce8707',GradientType=0 ) !important;
+	background-position:5px center, center center !important;
+	background-repeat:no-repeat !important;
+}
+
+.scheda_teoria #scheda_titolo{
+    background: #1d4eaa;
+    background: url(../../img/ico_teoria2B.png), -moz-linear-gradient(top, #1d4eaa 0%, #0a3d96 100%);
+    background: url(../../img/ico_teoria2B.png), url(../img/ico_utente.png)-webkit-linear-gradient(top, #1d4eaa 0%,#0a3d96 100%);
+    background: url(../../img/ico_teoria2B.png), linear-gradient(to bottom, #1d4eaa 0%,#0a3d96 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1d4eaa', endColorstr='#0a3d96',GradientType=0 );
+	background-position:2px center, center center !important;
+	background-repeat:no-repeat !important;
+}
+.scheda_video #scheda_titolo{
+    background: #1d4eaa;
+    background: url(../../img/play.png), -moz-linear-gradient(top, #1d4eaa 0%, #0a3d96 100%);
+    background: url(../../img/play.png), url(../img/ico_utente.png)-webkit-linear-gradient(top, #1d4eaa 0%,#0a3d96 100%);
+    background: url(../../img/play.png), linear-gradient(to bottom, #1d4eaa 0%,#0a3d96 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1d4eaa', endColorstr='#0a3d96',GradientType=0 );
+	background-position:8px center, center center !important;
+	background-repeat:no-repeat !important;
+}
+
+
+/* ELENCHI */
+/*body:not(.touch) */#p_set{ /* <<<<<<<<<<<< NUOVO MENU */
+	background-image: url(img/logoMenu.png);
+}
+body:not(.bodyStyled1):not(.bodyStyled2):not(.smart) #p_set{ /* <<<<<<<<<<<< NUOVO MENU */
+	background-image: url(img/logoMenuN.png);
+}
+/*body:not(.touch) */#p_set svg polygon{ /* <<<<<<<<<<<< NUOVO MENU */
+	fill: var(--menu-fondino);
+}
+.listaMeridiani > div{
+	/*background-image:linear-gradient(to bottom, #FFF 0%,#EEE 100%);*/
+	background-color: rgba(255,255,255,0.83) !important;
+}
+/*.listaMeridiani > div:not(.elencoSel):not(.lockedItem):hover{
+	background-image:linear-gradient(to bottom, #EEE 0%,#DDD 100%);
+}*/
+.listaMeridiani > div strong{
+	float: right;
+    display: inline-block;
+	margin:2px;
+    width:32px;
+	height:32px;
+	border-radius:16px;
+	/*background-image:url(../../img/frGiuB.png);*/
+	background-size:auto 40px;
+	background-repeat: no-repeat;
+	background-position:center center;
+}
+.smart #elenchi:not(.schExp) .listaMeridiani > div strong{
+    display: none !important;
+}
+.smart .schExp .listaMeridiani > div strong{
+   	margin-top: 6px !important;
+	margin-right: -4px !important;
+}
+
+.smart #elenchi:not(.schExp) .listaMeridiani > div:not(.loading):not(.menuElenchi){
+	padding-left: 0px !important;
+}
+.smart #elenchi:not(.schExp) .listaMeridiani > div:not(.loading):not(.menuElenchi) b{
+	margin-left: 0px !important;
+}
+.listaMeridiani > div:not(.frSw) strong{
+	background-image:url(../../img/frGiuB.png);
+}
+.listaMeridiani > div.frSw strong{
+	background-image:url(../../img/frSuB.png);
+}
+.listaMeridiani > div:not(.overLight):hover strong{
+	background-color:rgba(0,0,0,0.1);
+}
+.listaMeridiani > div b{
+	float: left;
+    display: inline-block;
+    text-align: left;
+    text-shadow: 1px 1px 1px rgb(255 255 255 / 60%), -1px -1px 1px rgb(0 0 0 / 11%);
+    color: rgba(0,0,0,0.6);
+    width: 32px;
+}
+.listaMeridiani > div.lockedItem {
+    cursor: default !important;
+	background-image: url(../../img/lock.png) !important;
+    background-size: auto 50% !important;
+    background-position: calc(100% - 68px) 5px !important;
+	cursor:default !important;
+	opacity: 0.6 !important;
+}
+.smart .listaMeridiani > div.lockedItem {
+    background-position: calc(100% - 38px) 5px !important;
+}
+.smart .listaMeridiani > div.lockedItem span{
+	margin-left: 26px !important;
+}
+.smart .listaMeridiani > div:not(.lockedItem) span{
+	margin-left: 10px !important;
+}
+.elencoPunti{
+    display: none;
+    width: 100% !important;
+    margin: 0px !important;
+    border: 0px !important;
+	color:#FFF !important;
+    text-align: left;
+    padding-left: 5px;
+    padding-right: 5px;
+    margin-bottom: 10px !important;	
+	height: auto !important;
+}
+.visElPt{
+	display:block !important;
+}
+.elencoPunti p{
+	margin:0px;
+}
+.elencoPunti a{
+	width: calc(100% - 5px) !important;
+	background-position: 5px 9px !important;
+    padding-left: 22px !important;
+	height:28px !important;
+	border-radius:3px !important;
+}
+body:not(.smart) .elencoPunti a,
+body:not(.smart) .elencoPunti a *{
+	color: #FFF !important;
+	font-size:11px !important;
+}
+.smart .elencoPunti a,
+.smart .elencoPunti a *{
+	color: #FFF !important;
+	font-size:13px !important;
+}
+.selElPt{
+	background-color:rgba(0,0,0,0.3) !important;
+}
+.smart #elenchi:not(.schExp) .listaTeoria .cart_els{
+	padding-right:15px !important;
+}
+/*#lista_meridiani div span{
+	float:right;
+	margin-right:-4px;
+	border-radius:8px;
+	width:16px;
+	height:16px;
+	margin-left:0px;
+	margin-top: 12px;
+	background-repeat:no-repeat !important;
+	background-position:center center !important;
+	background-size:12px 12px !important;
+	border:1px solid rgba(0,0,0,0.3);
+}*/
+
+/* pallino lucido */
+/*#lista_meridiani div span { 
+    float: right;
+    margin-right: -6px;
+    border-radius: 9px;
+    width: 18px;
+    height: 18px;
+    margin-left: 0px;
+    margin-top: 10px;
+    background-repeat: no-repeat !important;
+    background-position: center center !important;
+    
+   
+}
+.listaMeridiani .elencoSel span {
+    background-size: 100% auto !important;
+	background-size: 12px 12px !important;
+}
+
+.listaMeridiani div:not(.elencoSel) span {
+    box-shadow: 0px 0px 3px rgb(0 0 0 / 70%);
+    background-image: linear-gradient(to bottom, rgba(255,255,255,0.4) 0%, transparent 49%, rgba(0,0,0,0.25) 50%, transparent 100%) !important;
+    background-size: 100% auto !important;
+}*/
+/* linguetta a destra */
+#lista_meridiani div span { 
+    float: right;
+    margin-right: -16px;
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+    width: 36px;
+    height: 36px;
+    margin-left: 0px;
+    margin-top: 0px;
+    background-repeat: no-repeat !important;
+    background-position: center center !important;
+    border-left: 1px solid rgba(0,0,0,0.5);
+}
+.listaMeridiani .elencoSel span {
+    background-size: 12px 12px !important;
+}
+.listaMeridiani div:not(.elencoSel) span {
+    background-image: linear-gradient(to right, rgba(0,0,0,0.3) 0%, transparent 10%) !important;
+    background-size: 100% auto !important;
+}
+.listaMeridiani .elencoSel{
+	box-shadow: 0px 0px 4px rgba(0,0,0,0.6) !important;
+}
+
+body:not(.touch) .listaMeridiani .spazioDopo{
+	margin-bottom: 6px !important;
+}
+body:not(.touch) .listaMeridiani .spazioPrima{
+	margin-top: -6px !important;
+	margin-bottom: 16px !important;
+}
+
+.elencoSel span{
+	border: none !important;
+}
+.elencoSel b{
+	text-shadow:none !important;
+}
+#pEX{
+	padding-right: 0px !important;
+}
+.p_none.elencoSel span,
+.p_legno.elencoSel span,
+.p_fuoco.elencoSel span,
+.p_fuoco_supplementare.elencoSel span,
+.p_acqua.elencoSel span{
+	background-image:url(img/chMenu.png) !important;
+}
+.p_terra.elencoSel span,
+.p_aria.elencoSel span{
+	background-image:url(img/chMenuB.png) !important;
+}
+
+body:not(.smart) .listaMeridiani .p_none:not(.elencoSel) span:hover,
+body:not(.smart) .listaMeridiani .p_legno:not(.elencoSel) span:hover,
+body:not(.smart) .listaMeridiani .p_fuoco:not(.elencoSel) span:hover,
+body:not(.smart) .listaMeridiani .p_fuoco_supplementare:not(.elencoSel) span:hover,
+body:not(.smart) .listaMeridiani .p_acqua:not(.elencoSel) span:hover,
+body:not(.smart) .listaMeridiani .p_terra:not(.elencoSel) span:hover{
+    background-image:url(../../img/ico_lampadinaB.png) !important;
+	background-size:auto !important;
+}
+body:not(.smart) .listaMeridiani .p_aria:not(.elencoSel) span:hover{
+	background-image:url(../../img/ico_lampadinaN.png) !important;
+	background-size:auto !important;
+}
+
+
+.p_none.elencoSel:not(.frSw) strong,
+.p_acqua.elencoSel:not(.frSw) strong,
+.p_legno.elencoSel:not(.frSw) strong,
+.p_fuoco.elencoSel:not(.frSw) strong,
+.p_fuoco_supplementare.elencoSel:not(.frSw) strong{
+	background-image:url(../../img/frGiu.png) !important;
+}
+.p_none.elencoSel.frSw strong,
+.p_acqua.elencoSel.frSw strong,
+.p_legno.elencoSel.frSw strong,
+.p_fuoco.elencoSel.frSw strong,
+.p_fuoco_supplementare.elencoSel.frSw strong{
+	background-image:url(../../img/frSu.png) !important;
+}
+
+.p_none.elencoSelnot(.overLight):hover strong,
+.p_acqua.elencoSelnot(.overLight):hover strong,
+.p_legno.elencoSelnot(.overLight):hover strong,
+.p_fuoco.elencoSelnot(.overLight):hover strong,
+.p_fuoco_supplementare.elencoSelnot(.overLight):hover strong{
+	background-color:rgba(255,255,255,0.3) !important;
+}
+.p_none span:not(.valMerid),
+.p_none.elencoSel{
+	color:#FFF !important;
+}
+.p_none.elencoSel{
+	background:#006699 !important;
+}
+.p_none span:not(.valMerid){
+	background-color:#006699 !important;
+}
+.p_legno span:not(.valMerid),
+.p_legno.elencoSel{
+	color:#FFF !important;
+}
+.p_legno.elencoSel{
+	background:#009900 !important;
+}
+.p_legno span:not(.valMerid){
+	background-color:#009900 !important;
+}
+.p_fuoco span:not(.valMerid),
+.p_fuoco.elencoSel{
+	color:#FFF !important;
+}
+.p_fuoco.elencoSel{
+	background:#FF0000 !important;
+}
+.p_fuoco span:not(.valMerid){
+	background-color:#FF0000 !important;
+}
+.p_fuoco_supplementare.elencoSel{
+	background:#990000 !important;
+}
+.p_fuoco_supplementare span:not(.valMerid){
+	background-color:#990000 !important;
+}
+.p_terra span:not(.valMerid),
+.p_terra.elencoSel{
+	color:#000 !important;
+}
+.p_terra.elencoSel{
+	background:#FF8800 !important;
+}
+.p_terra span:not(.valMerid){
+	background-color:#FF8800 !important;
+}
+.p_aria span:not(.valMerid),
+.p_aria.elencoSel{
+	color:#000 !important;
+}
+.p_aria.elencoSel{
+	background:#FFFFFF !important;
+}
+.p_aria span:not(.valMerid){
+	background-color:#FFFFFF !important;
+}
+.p_acqua span:not(.valMerid),
+.p_acqua.elencoSel{
+	color:#FFF !important;
+}
+.p_acqua.elencoSel{
+	background:#000000 !important;
+}
+.p_acqua span:not(.valMerid){
+	background-color:#000000 !important;
+}
+.p_acqua.elencoSel b{
+	color:#FFF !important;
+}
+.p_aria.elencoSel b{
+	color:#000 !important;
+}
+
+@media (max-width: 800px){
+		
+	.touch #elenchi:not(.schExp) #lista_meridiani div span{
+		margin-right:1px !important;
+	}
+	.touch #elenchi.schExp #lista_meridiani div span{
+		/*margin-right:-5px !important;*/
+	}
+	
+	.touch #elenchi.schExp #lista_meridiani div > div span{
+		/*margin-top:10px !important;*/
+		height: 50px;
+	}
+	.touch #elenchi:not(.schExp) #lista_meridiani div span{
+		/*margin-left:10p !important;*/
+		margin-right: 0px !important;
+		box-shadow:0px 0px 2px rgba(0,0,0,0.5);
+	}
+	.touch #elenchi:not(.schExp) #lista_meridiani > div > div{
+		padding-right:0px !important;
+	}
+	.listaMeridiani > div b {
+		/*padding-right: 0px !important;*/
+		padding-left: 12px;
+	}
+	body:not(.smart) .listaMeridiani > div.lockedItem b {
+		margin-left: 14px;
+	}
+	.smart .schExp .listaMeridiani > div b {
+		padding-left: 0px;
+	}
+}
+
+.mezzoPuntoTratt{
+	width:100px;
+	margin-right: 4px !important;
+    vertical-align: middle;
+	display:inline-block;
+	margin-bottom: 4px;
+}
+#scheda:not(.sch_Max600) .mezzoPuntoTratt{
+	margin-top: 1px !important;
+}
+.mezzoPuntoTratt:required:invalid {
+	color: #666;
+}
+.mezzoPuntoTratt option[value=""][disabled] {
+	display: none;
+}
+
+.textPuntoTratt,
+.textMeridianoTratt{
+	margin-top: 0px !important;
+    border: none !important;
+    background: transparent !important;
+    border-radius: 0px !important;
+    /*width: calc(100% - 10px) !important;*/
+	height: 24px !important;
+    margin-bottom: 6px;
+	font-style:italic;
+}
+#scheda:not(.sch_Max600) .textPuntoTratt,
+#scheda:not(.sch_Max600) .textMeridianoTratt{
+	margin-top: 0px !important;
+}
+.textPuntoTratt{
+    width: calc(100% - 216px) !important;
+}
+.textMeridianoTratt{
+    width: calc(100% - 232px) !important;
+    margin-left: 5px !important;
+}
+
+#meridianiSmart_ico{
+	position: fixed;
+    top: 5px;
+    right: 5px;
+	width:30px;
+	height:30px;
+	/*background-image:url(../../img/jingB.png);*/
+	background-image:url(../../img/ico_meridianiB.png);
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-size: 24px;
+	cursor:pointer;
+	border-radius:15px;
+	background-color: rgba(0,0,0,0.2);
+}
+/*body.bodyStyled2:not(.smart) #meridianiSmart_ico{
+	background-image:url(../../img/ico_meridiani.png);
+}*/
+.smart #meridianiSmart_ico{
+	width: 50px !important;
+    height: 50px !important;
+	top: 0px !important;
+	right: 0px !important;
+    background-color: #333 !important;
+    border-bottom-left-radius: 54px !important;
+    border-bottom-right-radius: 0px !important;
+    border-top-left-radius: 0px !important;
+    border-top-right-radius: 0px !important;
+    background-position: 19px 9px !important;
+}
+#meridianiSmart_cont{
+	position: fixed;
+    top: 36px;
+    right: 6px;
+	display:none;
+}
+.smart #meridianiSmart_cont{
+    top: 50px !important;
+    right: 0px !important;
+}
+#meridianiSmart_cont div{
+	width: 24px;
+    height: 24px;
+    line-height: 24px;
+    border-radius: 12px;
+    text-align: center;
+    font-size: 9px;
+    margin: 2px;
+    cursor: pointer;
+    background-color: rgba(255,255,255,0.2);
+}
+body:not(.smart) #meridianiSmart_cont div:not(.elencoSel):hover{
+	background-color: rgba(255,255,255,0.3) !important;
+}
+.smart #meridianiSmart_cont div{
+	width: 40px !important;
+    height: 40px !important;
+    line-height: 40px !important;
+    border-radius: 20px !important;
+    font-size: 11px !important;
+}
+.sm_legno{
+	border:1px solid #009900;
+}
+.sm_legno.elencoSel{
+	background:#009900 !important;
+	color:#FFF !important;
+}
+.sm_acqua{
+	border:1px solid #000000;
+}
+.sm_acqua.elencoSel{
+	background:#000000 !important;
+	color:#FFF !important;
+}
+.sm_aria{
+	border:1px solid #FFFFFF;
+}
+.sm_aria.elencoSel{
+	background:#FFFFFF !important;
+	color:#000 !important;
+}
+.sm_terra{
+	border:1px solid #FF8800;
+}
+.sm_terra.elencoSel{
+	background:#FF8800 !important;
+	color:#FFF !important;
+}
+.sm_fuoco{
+	border:1px solid #FF0000;
+}
+.sm_fuoco.elencoSel{
+	background:#FF0000 !important;
+	color:#FFF !important;
+}
+.sm_fuoco_supplementare{
+	border:1px solid #990000;
+}
+.sm_fuoco_supplementare.elencoSel{
+	background:#990000 !important;
+	color:#FFF !important;
+}
+.sm_none{
+	border:1px solid #006699;
+}
+.sm_none.elencoSel{
+	background:#006699 !important;
+	color:#FFF !important;
+}

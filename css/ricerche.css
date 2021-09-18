@@ -1,0 +1,320 @@
+@charset "utf-8";
+/* CSS Document */
+
+#parolaGlobal{
+	width: calc(100% + 9px);
+    background-color: #FFF;
+    text-align: center;
+    color: #000;
+    text-overflow: ellipsis;
+    border: 3px solid #2f2e2b;
+    margin-left: -10px;
+    margin-right: -7px;
+    margin-top: -3px;
+    font-weight: bold;
+}
+body:not(.smart) #parolaGlobal{
+    height: 36px !important;
+    line-height: 36px !important;
+}
+.smart #parolaGlobal{
+	height: 44px !important;
+}
+#parolaGlobal::-webkit-input-placeholder{
+	font-weight:normal !important;
+	text-align:center !important;
+	font-size:10px !important;
+}
+#parolaGlobal::-moz-placeholder{
+	opacity:0.5 !important;
+	font-weight:normal !important;
+	text-align:center !important;
+	font-size:10px !important;
+}
+#annGlobal{
+	width: 16px;
+    height: 16px;
+    background: url(../img/ch.png) no-repeat center center;
+    background-size: contain;
+    right: 40px;
+    margin-top: 7px;
+    cursor: pointer;
+    position: absolute;
+    z-index: 16;
+}
+.boxMnOp:not(.globalOk) #annGlobal{
+    right: var(--menu-width) !important;
+    margin-right: -29px;
+}
+@media (max-width: 600px){
+	.imgDelRes{
+		border-top: 1px solid rgba(0,0,0,0.2);
+		padding: 5px;
+		padding-bottom: 0px;
+	}
+}
+.globalOk{
+    height: 32px !important;
+    padding-right: 35px !important;
+    opacity: 1 !important;
+    right: 53px !important;
+    top: 4px !important;
+    z-index: 19 !important;
+}
+#parolaGlobal::-webkit-input-placeholder, .globalOk input::-webkit-input-placeholder{
+	opacity:0.5 !important;
+}
+#parolaGlobal::-moz-placeholder{
+	opacity:0.5 !important;
+}
+.globalOk input::-moz-placeholder{
+	opacity:0.5 !important;
+}
+#schedaGlobal{
+	position:fixed;
+	height: calc(100% - 50px);
+	top:0px;
+	padding-bottom:35px;
+	padding-top:3px;
+	border-bottom-right-radius: 6px;
+	display:none;
+}
+body:not(.smart) #schedaGlobal{
+	width:600px;
+	box-shadow: 0px 0px 5px rgba(0,0,0,0.7);
+	left:48px;
+	z-index:18;
+}
+.smart #schedaGlobal{
+	width:100%;
+	padding-bottom: 35px !important;
+	z-index:500 !important;
+	bottom: 54px;
+    height: calc(100% - 60px) !important;
+}
+@media (max-width: 600px){
+    #schedaGlobal{
+		width: 100% !important;
+		height:100% !important;
+	}
+	#schedaGlobal,
+	#globalCont{
+		border-bottom-right-radius: 0px !important;
+	}
+}
+#globalTitolo{
+	font-size: 13px !important;
+    font-weight: bold;
+    width: calc(100% - 38px);
+    height: 30px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    -o-text-overflow: ellipsis;
+    border-radius: 3px;
+    margin-left: 3px;
+    display: inline-block;
+    vertical-align: middle;
+}
+.smart #globalTitolo{
+	height: 38px !important;
+    width: calc(100% - 44px) !important;
+}
+body:not(.smart) #globalTesta{
+	height: 35px;
+}
+.smart #globalTesta{
+	height: 41px;
+}
+#schedaGlobal{
+	background-color:#2f2e2b;
+}
+#globalCont{
+	background-color:var(--ricerche-fondino) !important;
+}
+#globalTesto{
+	color:#333;
+	width:100%;
+	box-sizing:border-box;
+}
+.globalHistory{
+    overflow-y: auto;
+    height: 100%;
+}
+#globalChiusura{
+    width: 35px;
+    height: 32px;
+    background: url(../img/chMenu.png) no-repeat center center;
+    background-size: 35px;
+    cursor: pointer;
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: -5px;
+}
+.smart #globalChiusura{
+	width: 41px !important;
+    height: 38px !important;
+}
+#globalCont{
+    width: 100%;
+    position: relative;
+    height: 100%;
+    border-bottom-right-radius: 6px;
+}
+#globalCont{
+	background-color:#2f2e2b;
+}
+.risGlob{
+    font-size: 12px !important;
+	padding:7px;
+	overflow:hidden;
+	white-space:nowrap;
+	cursor:pointer;
+	overflow:hidden;
+	text-overflow: ellipsis;
+	text-align: left;
+}
+.risGlob.selO,
+.risGlob.selV,
+.risGlob.selM{
+	background-size:auto 80%;
+	background-repeat:no-repeat;
+	background-position:-500px center, 5px center;
+}
+.globalHistory .risGlob{
+	border-top: 1px solid rgba(0,0,0,0.2);
+}
+#globalTesto:not(.globalHistory) .risGlob{
+	color: rgba(255,255,255,0.7);
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+}
+#globalTesto:not(.globalHistory) .risGlob *:not(font){
+	color: rgba(255,255,255,0.7);
+}
+.risLente{
+	background-image:url(../img/lenteRis.png);
+	background-repeat:no-repeat;
+	background-position:10px center;
+	padding-left:35px;
+}
+.risGlob:hover{
+	background-color:rgba(0,0,0,0.2);
+}
+.noResGlob{
+	color:#666;
+	font-style:italic;
+	font-size:12px !important;
+	padding:7px;
+	overflow:hidden;
+	white-space:nowrap;
+}
+#globalIndex, #globalList{
+	display:inline-block;
+	vertical-align:top;
+	height:100%;
+}
+
+@media (max-width: 600px){
+	#globalIndex, #globalList{
+		display: block;
+		width: 100% !important;
+		float: none !important;
+	}
+	#globalList{
+		height: calc(100% - 36px);
+		top:36px !important;
+	}
+	#globalIndex:not(.visIndex) > div:not(.labelSel){
+		display: none;
+	}
+	#globalIndex:not(.visIndex) .labelSel{
+		background-image:url(../img/frGiuB.png) !important;
+		background-size: auto 146%;
+		line-height: 36px;
+    	height: 36px;
+	}
+	#globalIndex.visIndex .labelGlobal{
+		background-image:url(../img/frDxB.png) !important;
+		background-repeat:no-repeat;
+		background-position:right center;
+		background-size: auto 146%;
+		line-height: 36px;
+    	height: 36px;
+	}
+	.visIndex{
+		z-index: 18 !important;
+		position: absolute !important;
+		background: var(--menu-fondino) !important;
+	}
+	.risGlob{
+		line-height: 20px;
+    	height: 36px;
+	}
+}
+#globalIndex{
+	width: 200px;
+	float:left;
+}
+#globalList{
+	width: 400px;
+    background-color:#2f2e2b;
+    overflow-y: auto;
+    position: absolute;
+    right: 0px;
+}
+.labelGlobal{
+	width:100%;
+    color: #666;
+    text-align: left;
+    background-size: 44px;
+    line-height: 30px;
+    padding-left: 10px;
+    padding-right: 10px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+    cursor: pointer;
+}
+.labelGlobal:not(.labelSel):hover{
+	background-color:rgba(0,0,0,0.05);
+}
+.labelSel{
+	background-color:rgba(0,0,0,0.1);
+	background-image:url(../img/frRicerca.png);
+	background-position:right center;
+	background-repeat:no-repeat;
+	background-size: auto 25px;
+	color: #222;
+}
+.contRisGlob{
+	display:none;
+}
+.contRisSel{
+	display:block !important;
+}
+.contGlobOp{
+	display:block !important;
+}
+#divGlobal .colsGlobal{
+    box-sizing: border-box;
+    width: 100%;
+    padding-top: 10px;
+    margin-bottom: 10px;
+    border-top: 1px solid rgba(0,0,0,0.2);
+}
+#divGlobal .colsGlobal:first-child{
+	border-top: none !important;
+}
+
+
+
+/* evidenziatori di parole nelle schede */
+.fraseEvi{
+	background-color:#FC9;
+	padding:3px;
+	border-radius:5px
+}
+.parolaEvi{
+	background-color:#FF9;
+}
