@@ -86,7 +86,6 @@ THREE.ObjectControls = function ( object, domElement ) {
 		if(this.ROTATE || this.PAN){
 			try{SET.desIntersected();}catch(err){}
 			startInteractionTimer();
-				
 			
 			if(this.ROTATE){
 				MENU.attBtnCentro();

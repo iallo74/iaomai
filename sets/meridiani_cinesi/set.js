@@ -230,7 +230,7 @@ SET = {
 	_render: function(){
 		var make=true;
 		//console.log(manichinoCaricato && !raycastDisable && !controlsM._ZPR && controlsM._MM)
-	 	if(manichinoCaricato && !raycastDisable && !controlsM._ZPR && controlsM._MM){ // roll-over sui punti
+	 	if(manichinoCaricato && !raycastDisable && !controlsM._ZPR && !controlsM._premuto){//} && controlsM._MM){ // roll-over sui punti
 			
 			camera.updateMatrixWorld();
 			raycaster.setFromCamera( mouse, camera );

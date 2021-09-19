@@ -1704,6 +1704,7 @@ var PAZIENTI = {
 				}
 			}
 		}
+		LISTA.sort(sort_by("Nome"+obj.el,false))
 		return LISTA;
 	},
 	selezionaElemento: function( m, tipo ){ // seleziona un elemento dallo storico degli elementi

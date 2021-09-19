@@ -382,10 +382,10 @@ var H = {
 			
 			document.getElementById("combo").innerHTML = HTML;
 			sch.addEventListener("scroll", H.rimuoviCombo, false);
-			window.addEventListener("wheel", function(){
+			/*window.addEventListener("wheel", function(){
 				H.comboOver=false;
 				H.rimuoviCombo();
-			}, false);
+			}, false);*/
 			window.addEventListener("mouseup", H.rimuoviCombo, false);
 			H.elCombo.addEventListener("keyup", H.filtraCombo, false);
 			H.elCombo.addEventListener("mouseover", H.overCombo, false);
@@ -468,6 +468,7 @@ var H = {
 				EL.indexOf(db[p][campo.name]) == -1 &&
 				db[p].Cancellato*1 != 1)EL.push(db[p][campo.name]);
 		}
+		EL.sort()
 		return EL;
 	},
 	getElenco: function( elenco, campo ){
