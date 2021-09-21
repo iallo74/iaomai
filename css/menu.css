@@ -1242,3 +1242,34 @@ body:not(.smart) #loginGuida{
 	margin-right: 0px;
     margin-left: 10px;
 }
+
+
+
+#tooltipmenu{
+	position:fixed;
+	display:block;
+	top:-500px;
+	left:-500px;
+	opacity:0;
+	padding-left: 8px;
+    width: fit-content;
+    background-image: url(../img/frRicerca.png);
+    background-position: -20px center;
+    background-repeat: no-repeat;
+	z-index:100;
+	transition: opacity 0.8s;
+	-webkit-transition: opacity 0.8s;
+}
+#tooltipmenu span{
+	background-color:#333;
+	color:#FFF;
+	border-radius:3px;
+	box-shadow:0px 0px 3px rgba(0,0,0,0.5);
+	width:fit-content;
+	padding:10px;
+	font-size:11px;
+	font-family:Verdana, Geneva, sans-serif;
+}
+.tooltipmenuVis{
+	opacity: 0.8 !important;
+}

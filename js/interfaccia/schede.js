@@ -710,6 +710,7 @@ var SCHEDA = {
 		document.getElementById("scheda").classList.remove("schOp");
 		MENU.desIcona();
 		SCHEDA.setMenuDim(2);
+		MENU.setTT();
 	},
 	torna: function( daCarica ){
 		if(document.getElementById("scheda").className.indexOf("schedaRitorno") > -1){

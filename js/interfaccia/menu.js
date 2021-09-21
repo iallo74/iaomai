@@ -101,6 +101,7 @@ var MENU = {
 			if(	MENU.icoSelected.id!='p_cartella' && 
 				MENU.icoSelected.id!='p_set' )MENU.desIcona();
 		}
+		MENU.nasTT();
 		RICERCHE.nascondiGlobal();
 		BACKUPS.bkpProvv = null;
 		nasLoader();
@@ -526,7 +527,10 @@ var MENU = {
 	},
 	comprimiIcone: function( netto ){
 		if(typeof(netto) == 'undefined')var netto = false;
-		if(netto)MENU.inizio = false;
+		if(netto){
+			MENU.inizio = false;
+			MENU.setTT();
+		}
 		if(!MENU.inizio){
 			var tm = 0;
 			if(!netto)tm = 300;
@@ -536,8 +540,41 @@ var MENU = {
 				document.getElementById("icone").classList.remove("iconeTrans");
 			}, tm );
 		}
+	},
+	setTT: function(){
+		// verifico i tooltips del menu
+		var divs = document.getElementById("icone").getElementsByTagName("div");
+		for(i=0;i<divs.length;i++){
+			var labels = divs[i].getElementsByTagName("i");
+			if(labels.length){
+				if(MENU.icoSelected && MENU.icoSelected!=divs[i]){
+					divs[i].onmouseenter = function(){
+						MENU.visTT(this);
+					}
+					divs[i].onmouseleave = function(){
+						MENU.nasTT();
+					}
+				}else{
+					divs[i].onmouseenter = '';
+					divs[i].onmouseleave = '';
+				}
+			}
+		}
+	},
+	visTT: function( el ){
+		if(touchable)return;
+		if(!MENU.icoSelected)return;
+		document.getElementById("tooltipmenu_txt").innerHTML = el.getElementsByTagName('i')[0].innerHTML;
+		document.getElementById("tooltipmenu").classList.add("tooltipmenuVis");
+		document.getElementById("tooltipmenu").style.left='48px';
+		document.getElementById("tooltipmenu").style.top=(tCoord(el,'y')+15)+'px';
+	},
+	nasTT: function(){
+		document.getElementById("tooltipmenu").classList.remove("tooltipmenuVis");
+		document.getElementById("tooltipmenu_txt").innerHTML='';
+		document.getElementById("tooltipmenu").style.left='-500px';
+		document.getElementById("tooltipmenu").style.top='-500px';
 	}
-	
 }
 
 
