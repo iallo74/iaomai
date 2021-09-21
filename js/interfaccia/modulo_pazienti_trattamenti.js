@@ -785,6 +785,8 @@ var PAZIENTI_TRATTAMENTI = {
 					'	<div id="gruppoPunti_cont">' +
 							/*PAZIENTI.gruppoPunti() +*/
 					'	</div>';
+			}else{
+				HTML += '<div class="labelModificaCon">'+htmlEntities(Lingua(TXT_ModificaCon))+' <img src="sets/meridiani_cinesi/img/logoNero.png" width="25" height="25"> TsuboMap '+htmlEntities(Lingua(TXT_o))+' <img src="sets/meridiani_shiatsu/img/logoNero.png" width="25" height="25">ShiatsuMap</div>';
 			}
 			HTML += '</div>' +
 			
@@ -818,6 +820,8 @@ var PAZIENTI_TRATTAMENTI = {
 								SET.elencoMeridiani(Lingua(TXT_AggiungiMeridiani)) +
 					'		</select>' +
 					'	</div>';*/
+			}else{
+				HTML += '<div class="labelModificaCon">'+htmlEntities(Lingua(TXT_ModificaCon))+' <img src="sets/meridiani_cinesi/img/logoNero.png" width="25" height="25"> TsuboMap o <img src="sets/meridiani_shiatsu/img/logoNero.png" width="25" height="25">ShiatsuMap</div>';
 			}
 			HTML += '</div>' +
 			
@@ -1708,8 +1712,10 @@ var PAZIENTI_TRATTAMENTI = {
 				'</div>';
 		if(PAZIENTI.elencoGruppoAtt.livello>1){
 			var titRet = htmlEntities(PAZIENTI.elencoGruppoAtt.titolo);
-			HTML += '<div class="gr_ret" onClick="PAZIENTI.swGrLabel(-1);">' +
+			HTML += '<div class="gr_ret">' +
+					'	<div class="gr_ret_img" onClick="PAZIENTI.swGrLabel(-1);"></div>' +
 						titRet +
+					'	<input id="gr_ret_ric" onKeyUp="PAZIENTI.filtraGruppoPunti();">' +
 					'</div>';
 		}
 		HTML += '<div class="gr_'+(PAZIENTI.elencoGruppoAtt.livello-1)+'">';
@@ -1737,6 +1743,26 @@ var PAZIENTI_TRATTAMENTI = {
 		}
 		document.getElementById("gruppoPunti_cont").innerHTML = HTML;
 		document.getElementById("gruppoPunti_cont").scrollTo(0,0);
+		document.getElementById("gr_ret_ric").focus();
+	},
+	filtraGruppoPunti: function(){
+		var tag = 'div';
+		var lista = '.gr_1';
+		var cont = document.getElementById("gruppoPunti_cont");
+		if(cont.getElementsByClassName("gr_2").length){
+			tag = 'label';
+			lista = '.gr_2';
+		}
+		var val = document.getElementById("gr_ret_ric").value.toLowerCase().trim();
+		var tags = document.querySelector(lista).getElementsByTagName(tag);
+		for(t=0;t<tags.length;t++){
+			var txt = tags[t].innerText+"";
+			if(txt.toLowerCase().indexOf(val)>-1 || !val)tags[t].classList.remove("hide");
+			else{
+				if(tag=='label')tags[t].getElementsByTagName("input")[0].checked = false;
+				tags[t].classList.add("hide");
+			}
+		}
 	},
 	swGrLabel: function( k ){ // cambia il livello di visualizzazione del menu dei gruppi di punti
 		if(PAZIENTI.overAll)return;
@@ -1763,10 +1789,18 @@ var PAZIENTI_TRATTAMENTI = {
 	},
 	ptGruppoSelAll: function( el ){ // seleziona tutti i punti visualizzati del menu dei gruppi di punti
 		var els = el.parentElement.parentElement.getElementsByTagName("input");
-		var sel = true;
-		if(els[0].checked)sel = false
+		var sel = '';
+		//if(els[0].checked)sel = false
 		for(e in els){
-			if(els[e].type=='checkbox')els[e].checked = sel;
+			if(els[e].type=='checkbox'){
+				if(!els[e].parentElement.classList.contains("hide")){
+					if(sel==''){
+						if(els[e].checked)sel = false;
+						else sel = true;
+					}
+					els[e].checked = sel;
+				}else els[e].checked = false;
+			}
 		}
 	},
 	ptGruppoImporta: function(){ // importa il gruppo dei punti nel trattamento

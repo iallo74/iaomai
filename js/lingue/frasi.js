@@ -114,6 +114,11 @@ var TXT_no={
 	eng: "No",
 	esp: "" };
 	
+	var TXT_o={
+		ita: "o",
+		eng: "or",
+		esp: "" };
+	
 	var TXT_per={
 		ita: "Per",
 		eng: "For",
@@ -1409,6 +1414,11 @@ var TXT_AggiungiGruppo={
 	var TXT_ImportaMeridiani={
 		ita: "Importa meridiani da...",
 		eng: "Import meridiani from...",
+		esp: "" };
+	
+	var TXT_ModificaCon={
+		ita: "N.B: Per modificare questo sezione devi aprire ",
+		eng: "To edit this section you must open  ",
 		esp: "" };
 	
 var TXT_PuntiAnamnesi={

@@ -1362,18 +1362,41 @@ body:not(.touch) #puntiTsuboMap .dettPunto:hover{
 .gr_ret{
 	height: 32px;
 	line-height: 32px;
-    padding-left: 32px;
+    /*padding-left: 32px;*/
 	font-weight:bold;
-	cursor:pointer;
+	/*cursor:pointer;*/
 	border-top:1px solid rgba(0,0,0,0.1);
-	background: url(../img/frSx.png) -5px center no-repeat #666;
-    background-size: auto 42px;
+	/*background: url(../img/frSx.png) -5px center no-repeat #666;
+    background-size: auto 42px;*/
+	background-color: #666;
 	color:#FFF;
     border-top-left-radius: 4px;
     border-top-right-radius: 4px;
 	white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+}
+.gr_ret_img{
+	width: 32px;
+	height: 32px;
+	line-height: 32px;
+	cursor:pointer;
+	background: url(../img/frSx.png) -5px center no-repeat;
+    background-size: auto 42px;
+	color:#FFF;
+    display: inline-block;
+    vertical-align: middle;
+}
+#gr_ret_ric{
+	background-image: url(../img/lenteB.png);
+    background-repeat: no-repeat;
+    background-position: right center;
+    background-size: contain;
+    background-color: #FFF !important;
+    width: 150px !important;
+    float: right;
+    height: 26px !important;
+    margin: 2px;	
 }
 .gr_tit{
 	padding-left:8px;
@@ -1444,6 +1467,9 @@ body:not(.touch) #puntiTsuboMap .dettPunto:hover{
 	background: -webkit-linear-gradient(top, #133f98 0%,#0b2d73 100%);
 	background: linear-gradient(to bottom, #133f98 0%,#0b2d73 100%);
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#133f98', endColorstr='#0b2d73',GradientType=0 );
+}
+.hide{
+	display:none;
 }
 
 

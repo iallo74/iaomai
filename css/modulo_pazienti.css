@@ -1524,3 +1524,20 @@ body:not(.smart) #rgApplicaFiltri{
 .anaVis{
 	background-image: url(../img/frSuB.png) !important;
 }
+
+.labelModificaCon{
+	margin-bottom: 20px;
+	font-size:11px;
+	font-style:italic;
+	color:rgba(0,0,0,0.6);
+	background-color:rgba(0,0,0,0.05);
+	border-radius:4px;
+	padding-left:15px;
+	padding-right:15px;
+	height:35px;
+	line-height:35px;
+}
+.labelModificaCon img{
+	opacity:0.6;
+	vertical-align:middle;
+}

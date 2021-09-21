@@ -27,7 +27,7 @@
 	width: fit-content;
 }
 .tooltipVis{
-	opaticy:1 !important;
+	opacity:1 !important;
 }
 #context_menu div{
 	cursor: pointer;
