@@ -357,28 +357,31 @@ SET = {
 			if(this.pulse>=1.6)this.pulse=1;
 			var op=1.8-this.pulse;
 			
-			var pP = this.ptSel.name.split(".");
+			SET.setPulsePt( this.ptSel, this.pulse, op );
 			
-			var ptCc = manichino.getObjectByName(pP[0]+"."+pP[1]);
-			var ptSx = manichino.getObjectByName(pP[0]+"."+pP[1]+".SX");
-			var ptDx = manichino.getObjectByName(pP[0]+"."+pP[1]+".DX");
-			
-			if(ptCc){
-				ptCc.scale.set(this.pulse,this.pulse,this.pulse);
-				//ptCc.material.setValues( { opacity: op } );
-			}
-			if(ptSx){
-				ptSx.scale.set(this.pulse,this.pulse,this.pulse);
-				//ptSx.material.setValues( { opacity: op } );
-			}
-			if(ptDx){
-				ptDx.scale.set(this.pulse,this.pulse,this.pulse);
-				//ptDx.material.setValues( { opacity: op } );
-			}
-			SET.MAT.pointSel.setValues( { opacity: op } );
 			make=true;
 		}
 		return make;
+	},
+	setPulsePt: function( pt, pulse, op, mat ){
+		if(typeof(mat)=='undefined')var mat = '';
+		var pP = pt.name.split(".");
+		var ptCc = manichino.getObjectByName(pP[0]+"."+pP[1]);
+		var ptSx = manichino.getObjectByName(pP[0]+"."+pP[1]+".SX");
+		var ptDx = manichino.getObjectByName(pP[0]+"."+pP[1]+".DX");
+		if(ptCc){
+			ptCc.scale.set(pulse,pulse,pulse);
+			if(mat)ptCc.material=mat;
+		}
+		if(ptSx){
+			ptSx.scale.set(pulse,pulse,pulse);
+			if(mat)ptSx.material=mat;
+		}
+		if(ptDx){
+			ptDx.scale.set(pulse,pulse,pulse);
+			if(mat)ptDx.material=mat;
+		}
+		SET.MAT.pointSel.setValues( { opacity: op } );
 	},
 	desIntersected: function(){
 		var n='';
@@ -452,6 +455,11 @@ SET = {
 			localStorage.sistemaMeridianiAdd = '';
 		}
 		if(typeof(ritorno) == 'undefined')var ritorno = '';
+		if(this.ptSel){
+			var mat=this.MAT.pointOn;
+			if(this.ptSel.userData.nota)mat=this.MAT.pointNote;
+			SET.setPulsePt( this.ptSel, 1, 1, mat );
+		}
 		var pP = PT_name.split(".");		
 		var siglaMeridiano = pP[0];
 		var nTsubo = parseInt(pP[1])-1;
