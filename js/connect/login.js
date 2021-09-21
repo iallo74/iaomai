@@ -1358,7 +1358,7 @@ var LOGIN = {
 							"NomeServizio": LOGIN.decryptPrivacy(elenco.servizi[p].NomeServizio)+"",
 							"DescrizioneServizio": LOGIN.decryptPrivacy(elenco.servizi[p].DescrizioneServizio)+"",
 							"CostoServizio": elenco.servizi[p].CostoServizio*1,
-							"NumeroSedute": LOGIN.decryptPrivacy(elenco.servizi[p].NumeroSedute)*1,
+							"NumeroSedute": elenco.servizi[p].NumeroSedute*1,
 							"DataModifica": elenco.servizi[p].DataModifica*1,
 							"DataCreazione": elenco.servizi[p].DataCreazione*1,
 							"Cancellato": elenco.servizi[p].Cancellato*1,

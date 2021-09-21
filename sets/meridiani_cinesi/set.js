@@ -279,10 +279,6 @@ SET = {
 				else objOver=near.object;
 			}
 			var n1=n2='';
-			/*if(this.INTERSECTED){
-				n2=this.INTERSECTED.name.substr(1,2); // meridiano 
-				if(!MERIDIANI[n2].meridianoAcceso)this.coloraMeridiano(this.INTERSECTED.name.substr(1,2),'','Base');
-			}*/
 			SET.desIntersected();
 			if(objOver){
 				n1=objOver.name.substr(1,2); // meridiano intersecato
@@ -309,30 +305,6 @@ SET = {
 			SET.setPulsePt( this.ptSel, this.pulse, op );
 			
 			make=true;
-			/*
-			this.pulse+=0.01;
-			if(this.pulse>=1.6)this.pulse=1;
-			var op=1.8-this.pulse;
-			
-			var pP = this.ptSel.name.split(".");
-			
-			var ptCc = manichino.getObjectByName(pP[0]+"."+pP[1]);
-			var ptSx = manichino.getObjectByName(pP[0]+"."+pP[1]+".SX");
-			var ptDx = manichino.getObjectByName(pP[0]+"."+pP[1]+".DX");
-			
-			if(ptCc){
-				ptCc.scale.set(this.pulse,this.pulse,this.pulse);
-				//ptCc.material.setValues( { opacity: op } );
-			}
-			if(ptSx){
-				ptSx.scale.set(this.pulse,this.pulse,this.pulse);
-				//ptSx.material.setValues( { opacity: op } );
-			}
-			if(ptDx){
-				ptDx.scale.set(this.pulse,this.pulse,this.pulse);
-				//ptDx.material.setValues( { opacity: op } );
-			}
-			SET.MAT.pointSel.setValues( { opacity: op } );*/
 		
 			if(pP[0]=='EX'){
 				var els = scene.getObjectByName("PT_EX").children;
@@ -966,32 +938,6 @@ SET = {
 		(!SCHEDA.schedaAperta && !SCHEDA.scheda2Aperta) )return;
 		var nScheda = '';
 		if(SCHEDA.scheda2Aperta)nScheda='2';
-		
-		/*var els = document.getElementById("scheda_testo"+nScheda).getElementsByClassName("pallinoPat");
-		var regexp = /[0-9]{1,2}\.([A-Z]){2}/ig;
-		for(e in els){
-			if(typeof(els[e])!='undefined'){
-				var str = els[e].innerHTML;
-				if(typeof(str)!='undefined'){
-					var pts = str.match(regexp);
-					for(p in pts){
-						var pP = pts[p].split(".");
-						str = str.replace(pts[p], pP[0]+"."+SET.convSigla(pP[1]))
-					}
-					els[e].innerHTML = str;
-				}
-			}
-		}
-		var els = document.getElementById("scheda_testo"+nScheda).getElementsByTagName("h1");
-		var str = els[0].innerHTML;
-		if(typeof(str)!='undefined'){
-			var pts = str.match(regexp);
-			for(p in pts){
-				var pP = pts[p].split(".");
-				str = str.replace(pts[p], pP[0]+"."+SET.convSigla(pP[1]))
-			}
-			els[0].innerHTML = str;
-		}*/
 		
 		var regexp = /[\s>\(\.\,]{0,1}[0-9]{1,2}\.[A-Z]{2}[\s<\.,\)]{1}/ig;
 		var str = document.getElementById("scheda_testo"+nScheda).innerHTML;

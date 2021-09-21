@@ -315,16 +315,6 @@ SET = {
 				else objOver=near.object;
 			}
 			var n1=n2='';
-			/*if(this.INTERSECTED){
-				if(this.INTERSECTED.name.substr(0,1)=='_'){
-					n2=this.INTERSECTED.name.substr(1,2); // meridiano 
-					if(!MERIDIANI[n2].meridianoAcceso)this.coloraMeridiano(n2,'','Base');
-				}
-				if(this.INTERSECTED.name.substr(2,4)=='_mas'){
-					n2 = this.INTERSECTED.name.substr(0,2);
-					if(!MERIDIANI[n2+"_mas"].meridianoAcceso)this.coloraMeridiano(n2,'','Base');
-				}
-			}*/
 			SET.desIntersected();
 			if(objOver){
 				
@@ -927,33 +917,6 @@ SET = {
 		(!SCHEDA.schedaAperta && !SCHEDA.scheda2Aperta) )return;
 		var nScheda = '';
 		if(SCHEDA.scheda2Aperta)nScheda='2';
-		
-		/*var els = document.getElementById("scheda_testo"+nScheda).getElementsByClassName("pallinoPat");
-		var regexp = /[0-9]{1,2}\.([A-Z]){2}/ig;
-		for(e in els){
-			if(typeof(els[e])!='undefined'){
-				var str = els[e].innerHTML;
-				if(typeof(str)!='undefined'){
-					var pts = str.match(regexp);
-					for(p in pts){
-						var pP = pts[p].split(".");
-						str = str.replace(pts[p], pP[0]+"."+SET.convSigla(pP[1]))
-					}
-					els[e].innerHTML = str;
-				}
-			}
-		}
-		var els = document.getElementById("scheda_testo"+nScheda).getElementsByTagName("h1");
-		var str = els[0].innerHTML;
-		if(typeof(str)!='undefined'){
-			var pts = str.match(regexp);
-			for(p in pts){
-				var pP = pts[p].split(".");
-				str = str.replace(pts[p], pP[0]+"."+SET.convSigla(pP[1]))
-			}
-			els[0].innerHTML = str;
-		}*/
-		
 		var regexp = /[\s>\(\.\,]{0,1}[0-9]{1,2}\.[A-Z]{2}[\s<\.,\)]{1}/ig;
 		var str = document.getElementById("scheda_testo"+nScheda).innerHTML;
 		var pts = str.match(regexp);
