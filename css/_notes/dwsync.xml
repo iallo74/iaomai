@@ -34,11 +34,11 @@
 <file name="confirm_alert.css" server="ftp.iaomai.app/www.iaomai.app/" local="132637707881835371" remote="132744629400000000" />
 <file name="console.css" server="ftp.iaomai.app/www.iaomai.app/" local="132605781000000000" remote="132744629400000000" />
 <file name="elenchi.css" server="ftp.iaomai.app/www.iaomai.app/" local="132744615173971421" remote="132744629400000000" />
-<file name="forms.css" server="ftp.iaomai.app/www.iaomai.app/" local="132767231669982885" remote="132767341800000000" />
+<file name="forms.css" server="ftp.iaomai.app/www.iaomai.app/" local="132767814993227797" remote="132767752800000000" />
 <file name="guida.css" server="ftp.iaomai.app/www.iaomai.app/" local="132680623853422791" remote="132744629400000000" />
-<file name="manichino.css" server="ftp.iaomai.app/www.iaomai.app/" local="132767068561933295" remote="132767341800000000" />
+<file name="manichino.css" server="ftp.iaomai.app/www.iaomai.app/" local="132767068561933295" remote="132767752800000000" />
 <file name="moduli.css" server="ftp.iaomai.app/www.iaomai.app/" local="132642469968225386" remote="132744629400000000" />
-<file name="modulo_pazienti.css" server="ftp.iaomai.app/www.iaomai.app/" local="132767190057107743" remote="132767341800000000" />
+<file name="modulo_pazienti.css" server="ftp.iaomai.app/www.iaomai.app/" local="132767190057107743" remote="132767752800000000" />
 <file name="popup.css" server="ftp.iaomai.app/www.iaomai.app/" local="132636005033259333" remote="132744629400000000" />
 <file name="popup_backups.css" server="ftp.iaomai.app/www.iaomai.app/" local="132617518539068052" remote="132744629400000000" />
 <file name="popup_colori.css" server="ftp.iaomai.app/www.iaomai.app/" local="132671404810000000" remote="132744629400000000" />
@@ -55,7 +55,7 @@
 <file name="schede_notouch.css" server="ftp.iaomai.app/www.iaomai.app/" local="132601562400000000" remote="132744629400000000" />
 <file name="scrollbars.css" server="ftp.iaomai.app/www.iaomai.app/" local="132605781000000000" remote="132744629400000000" />
 <file name="agenda.css" server="ftp.iaomai.app/www.iaomai.app/" local="132765315407472102" remote="132767005800000000" />
-<file name="menu.css" server="ftp.iaomai.app/www.iaomai.app/" local="132767004132897340" remote="132767341800000000" />
+<file name="menu.css" server="ftp.iaomai.app/www.iaomai.app/" local="132767805882480376" remote="132767752800000000" />
 <file name="schede.css" server="ftp.iaomai.app/www.iaomai.app/" local="132677532610000000" remote="132744629400000000" />
 <file name="schede_touch.css" server="ftp.iaomai.app/www.iaomai.app/" local="132721565654975830" remote="132744629400000000" />
 <file name="forms - Copia.css" server="ftp.iaomai.app/www.iaomai.app/" local="132728312172444789" remote="132744629400000000" />

@@ -1249,12 +1249,19 @@ body:not(.touch) #puntiTsuboMap .dettPunto:hover{
 #p_sch_annulla:hover{
 	background-color:rgba(0,0,0,0.15);
 }
-.numPoints, /* procedura + PAZIENTI */
-.selectTratt,
+.selectTratt{
+	width:33px;
+	padding-left: 3px !important;
+    padding-right: 7px !important;
+}
 .scoreSelect{
 	width:40px;
 	padding-left: 3px !important;
-    /*text-align-last: center;*/
+}
+.numPoints{
+	width:47px;
+	padding-left: 3px !important;
+    padding-right: 7px !important;
 }
 .smart .selectTratt{
 	text-align-last: center;
@@ -1262,6 +1269,22 @@ body:not(.touch) #puntiTsuboMap .dettPunto:hover{
 #dettagliCont .selectTratt:not(.numPoints){
 	width: 140px;
     margin-left: -6px;
+}
+.ptNo{
+	display: inline-block;
+    margin-top: 3px;
+    margin-bottom: 3px;
+    margin-right: 32px;
+    height: 30px;
+    line-height: 30px;
+    vertical-align: middle;
+    padding-left: 7px;
+    padding-right: 7px;
+    width: 89px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    text-align: center;
 }
 .delProcDett, /* procedura */
 .spsuProcDett{ /* procedura */

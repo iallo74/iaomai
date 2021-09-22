@@ -1271,5 +1271,5 @@ body:not(.smart) #loginGuida{
 	font-family:Verdana, Geneva, sans-serif;
 }
 .tooltipmenuVis{
-	opacity: 0.8 !important;
+	opacity: 1 !important;
 }

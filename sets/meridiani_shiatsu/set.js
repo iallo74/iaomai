@@ -858,8 +858,10 @@ SET = {
 	overTsubo: function( el, over ){
 		if(el.classList.contains("dettPunto")){
 			var sl = el.getElementsByTagName("select");
+			if(!sl.length)return;
 			var mer = sl[0].value;
 			var nTsubo = sl[1].value;
+			if(typeof(DB.set.meridiani[mer])=='undefined')return;
 		}else{
 			var re = /selTsubo\([^\)]+\)/ig;
 			var re2 = /apriTsubo\([^\,]+\,/ig;
