@@ -325,6 +325,7 @@ function caricaSet( cartella, el ){
 }
 function scaricaSet(notInit){
 	try{SET._scaricaSet();}catch(err){};
+	SCHEDA.scaricaScheda();
 	manichino.remove(SETS);
 	overInterfaccia=false;
 	render( true );

@@ -70,9 +70,12 @@ var LINGUE = {
 	},
 	
 	linguaBrowser: function(){ // legge la lingua di default del browser
-		var l_lang = "en";
-		if (navigator.userLanguage)  l_lang = navigator.userLanguage;
-		else if (navigator.language)  l_lang = navigator.language;
+		var l_lang = "it";
+		
+		// Sospesa momentaneamente perché siam pronti col solo italiano
+		
+		/*if (navigator.userLanguage)  l_lang = navigator.userLanguage;
+		else if (navigator.language)  l_lang = navigator.language;*/
 		return l_lang.substring(0,2);
 	}
 };

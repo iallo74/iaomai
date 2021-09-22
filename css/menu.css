@@ -1097,6 +1097,7 @@ body:not(.bodyStyled2) #btn_modut{
 }
 
 #p_lingua{
+	display: none !important; /* tolto momentaneamente perché pronto solo ITA */
 	background-image:url(../img/ico_linguaprefN.png);
 }
 .bodyStyled2 #p_lingua{
