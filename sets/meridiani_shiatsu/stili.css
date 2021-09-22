@@ -78,7 +78,13 @@
 	text-overflow:ellipsis;
 	overflow:hidden;
 }
-.pallinoPat:hover{
+.pallinoPat:not(.ptNoSel){
+	cursor:pointer;
+}
+.pallinoPat.ptNoSel{
+	cursor:default !important;
+}
+.pallinoPat:not(.ptNoSel):hover{
 	background-color:rgba(255,255,255,0.3);
 	border-radius:3px;
 }

@@ -223,7 +223,18 @@ var MODULO_PROCEDURE = { // extend SET
 					}
 					if(TipoDettaglio=='P'){
 						pD=DescrizioneDettaglio.split(".");
-						if(pD[0] && pD[1])HTML += '<span class="pallinoPat" onClick="SET.selTsubo(\''+pD[0]+"|"+pD[1]+'\')">'+pD[0]+'.'+pD[1]+'</span>';
+						var pt = pD[0];
+						var mr = pD[1];
+						var s = __(pD[2]);
+						var sg = pt+'.'+mr;
+						if(s)sg = s;
+						if(pt && mr){
+							HTML += '<span class="pallinoPat';
+							if(typeof(DB.set.meridiani[mr])=='undefined')HTML += ' ptNoSel';
+							HTML += '"';
+							if(typeof(DB.set.meridiani[mr])!='undefined')HTML += ' onClick="SET.selTsubo(\''+pt+"|"+mr+'\')"';
+							HTML += '>'+sg+'</span>';
+						}
 					}
 					if(TipoDettaglio=='M'){
 						HTML += '<span class="rgProcMod dettMeridiano' +
@@ -728,55 +739,70 @@ var MODULO_PROCEDURE = { // extend SET
 						pP=DescrizioneDettaglio.split(".");
 						p0=pP[0]*1;
 						p1=pP[1];
+						p2=__(pP[2]);
 					}else{
 						p0=0;
 						p1='';
+						p2='';
 					}
 					
-					HTML += 
-						'	<select name="mr_'+p+'"' +
-						'		    id="mr_'+p+'"' +
-						'		    onChange="this.blur();SET.modNumPunti(\'formMod\','+p+');' +
-						'		    		  SET.ritOverTsubo(\'dettagliCont\','+p+');" class="selectTratt">';
-					
-					var totPunti=0;
-					if(p1=='')HTML +=
-						'		<option value="">- '+Lingua(TXT_ScegliMeridiano)+' -</option>';
-						
-					for(k in DB.set.meridiani){
+					if(typeof(DB.set.meridiani[p1])=='undefined'){
+						var siglaTsubo = __(p2, p0+"."+p1);
+						HTML += '<span class="ptNo">'+siglaTsubo+'</span>' +
+								'<input type="hidden" id="mr_'+p+'" name="mr_'+p+'" value="'+p1+'">' +
+								'<input type="hidden" id="pt_'+p+'" name="pt_'+p+'" value="'+p0+'">' +
+								'<input type="hidden" id="sg_'+p+'" name="sg_'+p+'" value="'+p2+'">';
+					}else{
 						HTML += 
-						'		<option value="'+k+'"';
-						if(p1==k){
-							HTML += ' SELECTED';
-							totPunti=DB.set.meridiani[k].tsubo.length;
+							'	<select name="mr_'+p+'"' +
+							'		    id="mr_'+p+'"' +
+							'		    onChange="this.blur();SET.modNumPunti(\'formMod\','+p+');' +
+							'		    		  SET.ritOverTsubo(\'dettagliCont\','+p+');" class="selectTratt">';
+						
+						var totPunti=0;
+						if(p1=='')HTML +=
+							'		<option value="">- '+Lingua(TXT_ScegliMeridiano)+' -</option>';
+							
+						for(k in DB.set.meridiani){
+							HTML += 
+							'		<option value="'+k+'"';
+							if(p1==k){
+								HTML += ' SELECTED';
+								totPunti=DB.set.meridiani[k].tsubo.length;
+							}
+							HTML += '>'+SET.convSigla(k);
+							if(WF()>=509)HTML += ' &nbsp; ('+DB.set.meridiani[k].NomeMeridiano+')';
+							HTML += '</option>';
 						}
-						HTML += '>'+SET.convSigla(k);
-						if(WF()>=509)HTML += ' &nbsp; ('+DB.set.meridiani[k].NomeMeridiano+')';
-						HTML += '</option>';
+						HTML += '	</select>';
+						HTML += '	<select class="numPoints"' +
+								' 			name="pt_'+p+'"' +
+								' 			id="pt_'+p+'"' +
+								' 			onChange="SET.ritOverTsubo(\'dettagliCont\','+p+');this.blur();">';
+						
+						for(n=1;n<=totPunti;n++){
+							var siglaTsubo = n;
+							if(__(DB.set.meridiani[p1].tsubo[n-1].siglaTsubo)){
+								siglaTsubo = __(DB.set.meridiani[p1].tsubo[n-1].siglaTsubo);
+								siglaTsubo = siglaTsubo.substr(3,siglaTsubo.length-3);
+							}
+							HTML += '	<option value="'+n+'"';
+							if(p0==n)HTML += ' SELECTED';
+							HTML += '>'+siglaTsubo+'</option>';
+						}
+						HTML += '	</select>';
+						HTML += '	<img src="img/ico_vedi.png"' +
+								' 		 width="16"' +
+								' 		 height="16"' +
+								' 		 align="absmiddle"' +
+								' 		 id="ico_vis'+p+'"' +
+								' 		 style="' + ((p1=='') ? 'display:none;':'') +
+								'				margin-left:10px;' +
+								'				cursor:pointer;"' +
+								' 		 class="occhio"' +
+								' 		 title="'+Lingua(TXT_VisualizzaPunto)+'"' +
+								' 		 onClick="SET.selTsuboMod('+p+')">'; // ???????
 					}
-					HTML += '	</select>';
-					HTML += '	<select class="numPoints"' +
-							' 			name="pt_'+p+'"' +
-							' 			id="pt_'+p+'"' +
-							' 			onChange="SET.ritOverTsubo(\'dettagliCont\','+p+');this.blur();">';
-					
-					for(n=1;n<=totPunti;n++){
-						HTML += '	<option value="'+n+'"';
-						if(p0==n)HTML += ' SELECTED';
-						HTML += '>'+n+'</option>';
-					}
-					HTML += '	</select>';
-					HTML += '	<img src="img/ico_vedi.png"' +
-							' 		 width="16"' +
-							' 		 height="16"' +
-							' 		 align="absmiddle"' +
-							' 		 id="ico_vis'+p+'"' +
-							' 		 style="' + ((p1=='') ? 'display:none;':'') +
-							'				margin-left:10px;' +
-							'				cursor:pointer;"' +
-							' 		 class="occhio"' +
-							' 		 title="'+Lingua(TXT_VisualizzaPunto)+'"' +
-							' 		 onClick="SET.selTsuboMod('+p+')">'; // ???????
 				}
 				
 				if(TipoDettaglio=='M'){
@@ -789,15 +815,17 @@ var MODULO_PROCEDURE = { // extend SET
 					var totPunti=0;
 						
 					for(k in DB.set.meridiani){
-						HTML += 
-						'		<option value="'+k+'"';
-						if(DescrizioneDettaglio==k){
-							HTML += ' SELECTED';
-							totPunti=DB.set.meridiani[k].tsubo.length;
+						if(k!='EX'){
+							HTML += 
+							'		<option value="'+k+'"';
+							if(DescrizioneDettaglio==k){
+								HTML += ' SELECTED';
+								totPunti=DB.set.meridiani[k].tsubo.length;
+							}
+							HTML += '>'+SET.convSigla(k);
+							if(WF()>=509)HTML += ' &nbsp; ('+DB.set.meridiani[k].NomeMeridiano+')';
+							HTML += '</option>';
 						}
-						HTML += '>'+SET.convSigla(k);
-						if(WF()>=509)HTML += ' &nbsp; ('+DB.set.meridiani[k].NomeMeridiano+')';
-						HTML += '</option>';
 					}
 					HTML += '	</select>';
 				}
@@ -824,7 +852,20 @@ var MODULO_PROCEDURE = { // extend SET
 			for(p in SET.dettagliProvvisori){ // estraggo l'ultimo numero d'ordine
 				if(!SET.dettagliProvvisori[p].Cancellato){
 					TipoDettaglio=eval("document.formMod.ti_"+p+".value");
-					if(TipoDettaglio=='P')DescrizioneDettaglio=eval("document.formMod.pt_"+p+".value")+"."+eval("document.formMod.mr_"+p+".value");
+					if(TipoDettaglio=='P'){
+						var pt = eval("document.formMod.pt_"+p+".value");
+						var mr = eval("document.formMod.mr_"+p+".value");
+						var siglaTsubo = pt+"."+mr;
+						if(typeof(DB.set.meridiani[mr])!='undefined'){
+							if(__(DB.set.meridiani[mr].tsubo[pt*1-1].siglaTsubo)){
+								siglaTsubo += "."+__(DB.set.meridiani[mr].tsubo[pt*1-1].siglaTsubo);
+							}
+						}else{
+							var sg = eval("document.formMod.sg_"+p+".value");
+							if(sg)siglaTsubo += "."+sg;
+						}
+						DescrizioneDettaglio = siglaTsubo;
+					}
 					else if(TipoDettaglio!='M')DescrizioneDettaglio=eval("document.formMod.de_"+p+".value");
 					else DescrizioneDettaglio=eval("document.formMod.mr_"+p+".value");
 					
