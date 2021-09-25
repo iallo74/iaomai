@@ -37,6 +37,19 @@ var DB = {
 		"FILES" ],
 	
 	// i metodi
+	pulisciFRV: function( jsn ){
+		for( i in jsn){
+			if(jsn[i].frv)delete jsn[i].frv;
+			for( l in jsn[i]){
+				if(typeof(jsn[i][l])=='object'){
+					for(u in jsn[i][l]){
+						if(jsn[i][l][u].frv)jsn[i][l][u].frv=false;
+					}
+				}
+			}
+		}
+		return jsn;
+	},
 	_reset: function(){
 		var pazientiBase = fotoBase = serviziBase = fornitoriBase = [];
 		if(typeof(localStorage.dbInizializzato) == 'undefined'){

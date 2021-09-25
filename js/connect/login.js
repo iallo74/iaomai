@@ -167,6 +167,10 @@ var LOGIN = {
 			if(typeof(USRprovv)=='undefined')USRprovv='';
 			document.getElementById("btnRecupero").style.display='block';
 		}else{
+			var jsn = JSON.parse(txt);
+			var Nuovo = jsn.data.Nuovo;
+			delete jsn.data.Nuovo;
+			txt = JSON.stringify(jsn);
 			DB._reset();
 			LOGIN.salvaToken(txt);
 			LOGIN.tmAttesaLogin = 	setInterval( function(){
@@ -174,7 +178,7 @@ var LOGIN = {
 											clearInterval(LOGIN.tmAttesaLogin);
 											LOGIN.tmAttesaLogin = null;
 											//DB._reset();
-											if(!LOGIN.retIni)LOGIN.globalSync();
+											if(!LOGIN.retIni)LOGIN.globalSync(false,false,Nuovo);
 											setTimeout(function(){LOGIN.scriviUtente();},1000);
 											document.getElementById("login").classList.remove("popup_back");
 											MENU.chiudiMenu();
@@ -440,7 +444,8 @@ var LOGIN = {
 			i!='p' && 
 			i!='Stato' && 
 			i!='DataNascita' && 
-			i!='paeseCellulare'){
+			i!='paeseCellulare' &&
+			i!='id_interno'){
 			if(typeof(txt)=='string' && txt!='')txt='[@]'+LZString.compressToUTF16(txt);
 		}
 		return txt;
@@ -829,9 +834,10 @@ var LOGIN = {
 			LOGIN.afterFunct = null;
 		}
 	},
-	globalSync: function(dwnl, bkp){ // sincro globale up e down
+	globalSync: function(dwnl, bkp, Nuovo){ // sincro globale up e down
 		if(typeof(dwnl)=='undefined')var dwnl=false;
 		if(typeof(bkp)=='undefined')var bkp=false;
+		if(typeof(Nuovo)=='undefined')var Nuovo=false;
 		// da controllare all'avvio dell'app e ogni volta che riprende la connessione
 		// invio i lastSync delle tabelle
 		if(CONN.getConn() || dwnl){
@@ -865,6 +871,17 @@ var LOGIN = {
 												DB.foto=IMPORTER.DECOMPR(dbCont);
 												//totSinc++; /* le foto non contano perché sono solo in upload */
 												var elenco='';
+												
+												
+												
+												if(Nuovo){ // se è un account nuovo popolo i DB con quelli DEMO
+													DB.pazienti.data = DB.pulisciFRV(archiviDemo.pazienti);
+													DB.fornitori.data = DB.pulisciFRV(archiviDemo.fornitori);
+													DB.servizi.data = DB.pulisciFRV(archiviDemo.servizi);
+													DB.foto.data = DB.pulisciFRV(archiviDemo.foto);
+												}
+												
+												
 												elencoFoto='';
 												for(k in DB.foto.data){
 													if(!__(DB.foto.data[k].frv))elencoFoto+=JSON.stringify(DB.foto.data[k])+", ";
@@ -1022,7 +1039,7 @@ var LOGIN = {
 																"trattamenti": [],
 																"saldi": [],
 																"Cancellato": DB.pazienti.data[k].Cancellato*1,
-																"id_interno": k };
+																"id_interno": k*1 };
 													
 													var aggiungere=false;
 													
@@ -1115,7 +1132,7 @@ var LOGIN = {
 													localPouchDB.setItem(MD5("DB"+LOGIN._frv()+".cicli"), IMPORTER.COMPR(DB.cicli)).then(function(){
 														// salvo il DB
 													});
-												}	
+												}
 												
 												syncJSN='{';
 												if(BACKUPS.titleProvv)syncJSN += '"title":"'+BACKUPS.titleProvv.replace(/"/,'\"')+'",';
@@ -1133,7 +1150,6 @@ var LOGIN = {
 												else syncJSN += '"'+window.btoa(encodeURIComponent(elenco))+'"';
 												
 												syncJSN += '}';
-												
 												
 												if(!dwnl){
 													CONN.caricaUrl(	"sincro_globale_2_6.php",
@@ -1655,7 +1671,8 @@ var LOGIN = {
 				for(k in DB.pazienti.data){
 					PZ = DB.pazienti.data[k];
 					if( ( PZ.idPaziente*1>0 && PZ.idPaziente*1==elenco.pazienti[p].idPaziente*1 ) || 
-						( PZ.idPaziente*1==0 && PZ.Nome==elenco.pazienti[p].Nome && PZ.Cognome==elenco.pazienti[p].Cognome ) ){
+						( PZ.idPaziente*1==0 && PZ.Nome==elenco.pazienti[p].Nome && PZ.Cognome==elenco.pazienti[p].Cognome ) || 
+						( PZ.idPaziente*1==0 && k==elenco.pazienti[p].p) ){
 							
 						// se esiste aggiorna
 						if(typeof(PZ.trattamenti)=='undefined')PZ.trattamenti=[];
