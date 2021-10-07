@@ -110,7 +110,7 @@ body:not(.smart) #scheda{
 .schLibera .scheda_redim{
     display: block !important;
 }
-#redim_brsvg line{
+#redim_br svg line{
 	stroke-linecap: round;
 	stroke-width: 1px;
 }
@@ -153,17 +153,19 @@ body:not(.smart) #scheda{
     overflow-y: hidden;
     padding-top: 8px;
 }
-#scheda_linguette > div{
+#scheda_linguette > div{	
 	display:none;
-	background-color:var(--schede-fondino);
 	height:22px;
 	margin-left:2px;
 	margin-right:2px;
+	margin-top:-5px;
+	vertical-align:bottom;
+}
+#scheda_linguette > div:not(#lF){
+	background-color:var(--schede-fondino);
 	border-top-left-radius:5px;
 	border-top-right-radius:5px;
 	cursor:pointer;
-	margin-top:-5px;
-	vertical-align:bottom;
 	box-shadow:0px 0px 3px #000;
 }
 #scheda_linguette > div:not(#sr){
@@ -175,8 +177,38 @@ body:not(.smart) #scheda{
 	stroke-linecap: round;
 	stroke-width: 2px;
 }
+.schExp.schOp.LISTE .fixExp .lll:not(#lF){
+	visibility:hidden !important;
+}
+.schOp .fixExp #l3,
+.schOp:not(.LISTE) #l3{
+	visibility:hidden !important;
+	width:0px !important;
+	margin-left:0px !important;
+	margin-right:6px !important;
+}
+#lF{
+	background-repeat:no-repeat;
+	background-position:center center;
+}
+#scheda_linguette:not(.fixExp) #lF{
+	background-image:url(../img/puntina.png);
+}
+#scheda_linguette.fixExp #lF{
+	background-image:url(../img/puntinaFix.png);
+}
+#scheda.schExp #lF{
+	float: right;
+    height: 36px;
+    margin-top: -11px;
+}
+.schExp:not(.schOp) #lF,
+.schExp.schOp:not(.LISTE) #lF{
+	display:none !important;
+}
 body:not(.touch ) .lll:hover line,
-body:not(.touch ) .lll:hover rect{
+body:not(.touch ) .lll:hover rect,
+body:not(.touch ) .lll:hover polygon{
 	stroke:var(--schede-icone-over) !important;
 }
 body:not(.touch ) .lll:hover rect.filled{

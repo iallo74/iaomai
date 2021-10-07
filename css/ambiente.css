@@ -68,6 +68,11 @@
     	--menu-width: 300px;
 	}
 }
+@media (max-width: 699px){
+	:root {
+    	--menu-width: 100%;
+	}
+}
 
 *{
 	-webkit-text-size-adjust:none;

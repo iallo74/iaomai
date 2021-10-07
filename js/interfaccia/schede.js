@@ -33,6 +33,7 @@ var SCHEDA = {
 	form: null,
 	versoRedim: '',
 	gapScheda: 16, /* 17 */
+	livelloApertura: 2,
 	htmlPallini:	'<div id="btnMenuScheda" onClick="SCHEDA.swMenuScheda();">' +
 					'<svg viewBox="0 0 25 36"><circle cy="11"></circle><circle cy="18"></circle>' +
 					'<circle cy="25"></circle></svg></div><div id="menuScheda"></div>',
@@ -41,6 +42,10 @@ var SCHEDA = {
 		if(!touchable && localStorage.schedaLibera){
 			SCHEDA.libera = JSON.parse(localStorage.schedaLibera);
 			if(SCHEDA.libera.stato)SCHEDA.swLibera(true);
+		}
+		if(localStorage.livelloApertura){
+			SCHEDA.livelloApertura = localStorage.livelloApertura*1;
+			SCHEDA.fissaMenuEspanso(SCHEDA.livelloApertura);
 		}
 		SCHEDA.verRedim();
 		window.addEventListener("resize",function(){
@@ -197,6 +202,9 @@ var SCHEDA = {
 			if(salvato)SCHEDA.msgSalvataggio(true);
 			
 			SCHEDA.espandiElenco();
+			var livello = SCHEDA.livelloApertura;
+			if(!document.getElementById("elenchi_cont").classList.contains("visSch"))livello = 2;
+			SCHEDA.setMenuDim(livello);
 		}});
 	},
 	nasScheda: function(){
@@ -617,7 +625,10 @@ var SCHEDA = {
 		var visGuida = false;
 		if(	!document.getElementById("elenchi_cont").classList.contains("visSch") || 
 			!document.getElementById("elenchi").classList.contains("vis_"+tipo))visGuida=true;
-		SCHEDA.setMenuDim(2);
+		document.getElementById("elenchi_cont").classList.add("visSch");
+		var livello = SCHEDA.livelloApertura;
+		//if(!document.getElementById("elenchi").classList.contains("LISTE"))livello = 2;
+		SCHEDA.setMenuDim(SCHEDA.livelloApertura);
 		MENU.desIcona();
 		MENU.chiudiMenu();
 		if(typeof(expanded)=='undefined')var expanded = false;
@@ -657,12 +668,19 @@ var SCHEDA = {
 			}
 		}
 	},
-	setMenuDim: function(tipo){
+	fissaMenuEspanso: function( tipo ){
+		SCHEDA.livelloApertura = tipo;
+		localStorage.livelloApertura = tipo;
+		if(SCHEDA.livelloApertura==3)document.getElementById("scheda_linguette").classList.add("fixExp");
+		else document.getElementById("scheda_linguette").classList.remove("fixExp");
+	},
+	setMenuDim: function( tipo ){
 		switch(tipo){
 			case 1:
 				document.getElementById("l1").classList.add("visBtn");
 				document.getElementById("l2").classList.remove("visBtn");
 				document.getElementById("l3").classList.remove("visBtn");
+				document.getElementById("lF").classList.remove("visBtn");
 				document.getElementById("icone").classList.add("iconeNasc");
 				document.getElementById("scheda").classList.remove("schRid");
 				document.getElementById("scheda").classList.remove("schExp");
@@ -676,6 +694,7 @@ var SCHEDA = {
 				document.getElementById("l1").classList.remove("visBtn");
 				document.getElementById("l2").classList.add("visBtn");
 				document.getElementById("l3").classList.remove("visBtn");
+				document.getElementById("lF").classList.remove("visBtn");
 				document.getElementById("icone").classList.remove("iconeNasc");
 				document.getElementById("scheda").classList.add("schRid");
 				document.getElementById("scheda").classList.remove("schExp");
@@ -689,6 +708,7 @@ var SCHEDA = {
 				document.getElementById("l1").classList.remove("visBtn");
 				document.getElementById("l2").classList.remove("visBtn");
 				document.getElementById("l3").classList.add("visBtn");
+				document.getElementById("lF").classList.add("visBtn");
 				document.getElementById("icone").classList.remove("iconeNasc");
 				document.getElementById("scheda").classList.remove("schRid");
 				document.getElementById("scheda").classList.add("schExp");
@@ -700,16 +720,21 @@ var SCHEDA = {
 					document.getElementById("icone").classList.add("iconeHome");
 					MENU.chiudiMenu();
 				}
+				if(	smartphone &&
+					document.getElementById("elenchi").classList.contains("LISTE") && 
+					SCHEDA.livelloApertura == 2 )GUIDA.visFumetto('guida_fix');
 				break;
 				
 		}
 		SCHEDA.verPosScheda();
 	},
 	chiudiElenco: function(){
+		var aperto = document.getElementById("elenchi_cont").classList.contains("visSch");
+		//console.log(aperto)
 		document.getElementById("elenchi_cont").classList.remove("visSch");
 		document.getElementById("scheda").classList.remove("schOp");
 		MENU.desIcona();
-		SCHEDA.setMenuDim(2);
+		SCHEDA.setMenuDim(2)
 		MENU.setTT();
 	},
 	torna: function( daCarica ){
@@ -748,6 +773,8 @@ var SCHEDA = {
 		document.getElementById("elenchi_titolo").innerHTML = document.getElementById("pulsante_"+elenco).innerHTML + iconaAdd;
 		SCHEDA.setTriploLivello( elenco );
 		document.getElementById("elenchi_titolo").classList.add("visSch");
+		document.getElementById("elenchi").classList.add("LISTE");
+		document.getElementById("scheda").classList.add("LISTE");
 		document.getElementById("elenchi_lista").classList.add("visSch");
 		document.getElementById("elenchi_pulsanti").classList.remove("visSch");
 		document.getElementById("scheda").classList.add("schOp");
@@ -760,6 +787,8 @@ var SCHEDA = {
 		//if(elenco == 'pazienti' && mouseDetect && PAZIENTI.idCL==-1)document.getElementById("paz_ricerca").focus();
 		//if(elenco == 'patologie' && mouseDetect)document.getElementById("pat_ricerca").focus();
 		//if(elenco == 'procedure' && mouseDetect)document.getElementById("proc_ricerca").focus();
+		
+		if(document.getElementById("elenchi").classList.contains("LISTE"))SCHEDA.setMenuDim(SCHEDA.livelloApertura);
 	},
 	setTriploLivello: function( elenco ){
 		if(elenco == 'pazienti' || elenco == 'procedure'){
@@ -791,6 +820,8 @@ var SCHEDA = {
 			}
 			if(document.getElementById("elenchi_pulsanti").className.indexOf("visSch")==-1 || forza){
 				// PULSANTI
+				document.getElementById("scheda").classList.remove("LISTE");
+				document.getElementById("elenchi").classList.remove("LISTE");
 				document.getElementById("elenchi_lista").classList.remove("visSch");
 				document.getElementById("elenchi_pulsanti").classList.add("visSch");
 				document.getElementById("elenchi_titolo").classList.remove("visSch");
@@ -805,12 +836,15 @@ var SCHEDA = {
 				if(SCHEDA.classeAperta=='scheda_fornitore' || SCHEDA.classeAperta=='scheda_servizio')SCHEDA.scaricaScheda();
 			}else{
 				// LISTA
+				document.getElementById("scheda").classList.add("LISTE");
+				document.getElementById("elenchi").classList.add("LISTE");
 				document.getElementById("elenchi_lista").classList.add("visSch");
 				document.getElementById("elenchi_pulsanti").classList.remove("visSch");
 				document.getElementById("elenchi_titolo").classList.remove("titoloAperto");
 				document.getElementById("elenchi_titolo").classList.add("visSch");
 			}
 		}
+		if(!document.getElementById("elenchi").classList.contains("LISTE"))SCHEDA.setMenuDim(2);
 	},
 	caricaPulsanti: function(html){
 		document.getElementById("pulsanti_set").innerHTML=html;

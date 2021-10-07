@@ -409,6 +409,43 @@ body:not(.smart) #guida_generica .fumetti_freccia:last-child{
 	margin-left:-18px;
 }
 
+/* guida_fix */
+.guida_fix{
+	width: 280px;
+	z-index:45;
+	top:50px;
+	right:0px;
+	margin-top:80px;
+	opacity: 0;
+	-webkit-transition: margin-left 0.3s, opacity 0.3s;
+	transition: margin-left 0.3s, opacity 0.3s;
+}
+.guida_fix .fumetti_cont h1{
+	display:none;
+}
+.guida_fix.vis{
+	margin-top:0px !important;
+	opacity: 1 !important;
+}
+.guida_fix .fumetti_cont{
+	background-image:url(../img/puntinaGuida.png);
+	background-position:0px 0px;
+	display: inline-block;
+    text-align: right;
+	border-top-right-radius:0px;
+	border-bottom-right-radius:0px;
+	
+}
+.guida_fix .fumetti_freccia:first-child{
+	height:18px;
+	background-image:url(../img/guideFrSu.png);
+	background-position:right top;
+	display: inline-block;
+	width: calc(100%);
+	margin-top:-18px;
+}
+
+
 /* guida_archivi e guida set */
 .guida_archivi .fumetti_cont h1,
 .guida_set .fumetti_cont h1{

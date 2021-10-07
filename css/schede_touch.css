@@ -787,11 +787,11 @@ body.touch:not(.smart) #l3{
 .smart #paz_filtrati{
 	width:auto !important;
 }
-.smart #paz_ricerca,
-.smart #forn_ricerca,
-.smart #serv_ricerca,
-.smart #pat_ricerca,
-.smart #proc_ricerca{
+.smart #elenchi:not(.schExp) #paz_ricerca,
+.smart #elenchi:not(.schExp) #forn_ricerca,
+.smart #elenchi:not(.schExp) #serv_ricerca,
+.smart #elenchi:not(.schExp) #pat_ricerca,
+.smart #elenchi:not(.schExp) #proc_ricerca{
 	display:none !important;
 }
 
