@@ -284,10 +284,10 @@ function caricaSet( cartella, el ){
 		// CHIUDE il set aperto
 		if(globals.set.setSel)globals.set.setSel.classList.remove("btnSetSel");
 		scaricaSet();
-		localStorage.set = '';
+		/*localStorage.set = '';
 		document.getElementById("pulsanti_set").classList.remove("setAperto");
 		if(!smartMenu)SCHEDA.chiudiElenco();
-		document.getElementById("p_sets").classList.add("visSch");
+		document.getElementById("p_sets").classList.add("visSch");*/
 		MENU.visSets();
 	}else{
 		// APRE un set
@@ -350,6 +350,11 @@ function scaricaSet(notInit){
 	}
 	if(muscleView)MODELLO.meshMuscoli.visible = true;
 	MENU.aggiornaIconeModello();
+	localStorage.set = '';
+	document.getElementById("pulsanti_set").classList.remove("setAperto");
+	if(!smartMenu)SCHEDA.chiudiElenco();
+	document.getElementById("p_sets").classList.add("visSch");
+	GUIDA.nasFumetto();
 }
 
 function cambiaLingua(nLingua){
