@@ -203,7 +203,7 @@ var SCHEDA = {
 			
 			SCHEDA.espandiElenco();
 			var livello = SCHEDA.livelloApertura;
-			if(!document.getElementById("elenchi_cont").classList.contains("visSch"))livello = 2;
+			if(!document.getElementById("elenchi_cont").classList.contains("visSch") || !document.getElementById("elenchi").classList.contains("LISTE"))livello = 2;
 			SCHEDA.setMenuDim(livello);
 		}});
 	},
