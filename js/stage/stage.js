@@ -270,6 +270,7 @@ function cambiaModello( cartella ){
 			caricaModello(globals.modello.cartella);
 		}else{
 			scaricaModello();
+			MENU.visModello(true);
 		}
 	}});
 }

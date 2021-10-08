@@ -251,6 +251,7 @@ var MODELLO = {
 		}
 		
 		MODELLO.filtraAnatomia();
+		MENU.visModello(true);
 		if(globals.set.cartella){
 			if(SET)SET._init();
 			else{

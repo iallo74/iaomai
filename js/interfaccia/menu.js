@@ -89,12 +89,12 @@ var MENU = {
 		if(n!="impset")document.getElementById("impset").classList.remove("visSch");
 		if(n!="community")document.getElementById("community").classList.remove("visSch")
 		if(n!="ag")document.getElementById("ag").classList.remove("visSch")
-		if( n=='pulsanti_modello' ||
+		if( (n=='pulsanti_modello' && !smartphone) ||
 			n=='impostazioni' ||
 			n=='sets' ||
 			n=='ricerche' ||
 			n=='elencoSelected' ||
-			n=='ag' ){;
+			n=='ag' ){
 			SCHEDA.chiudiElenco();
 		}
 		if(MENU.icoSelected){
@@ -129,10 +129,12 @@ var MENU = {
 				}, ((m+1)*2 + vel) * 100, m );
 			}
 		}
-		if(document.getElementById("pulsanti_modello").classList.contains("visSch")){
-			MENU.icoSelected = document.getElementById("p_modello");
-			MENU.icoSelected.classList.add("p_sel");
-		}else MENU.desIcona();
+		if(!smartphone){
+			if(document.getElementById("pulsanti_modello").classList.contains("visSch")){
+				MENU.icoSelected = document.getElementById("p_modello");
+				MENU.icoSelected.classList.add("p_sel");
+			}else MENU.desIcona();
+		}
 		MENU.comprimiIcone(true);
 	},
 	visElencoSets: function( set ){
