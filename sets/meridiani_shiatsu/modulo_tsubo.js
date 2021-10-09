@@ -87,13 +87,17 @@ var MODULO_TSUBO = { // extend SET
 		imgDettaglio='';
 		posPunti='';
 		var wCont = 370;
-		if(touchable && smartphone)wCont = WF()-40;
+		var marginLeft = 0;
+		if(touchable && smartphone){
+			wCont = WF()-40;
+			marginLeft = 20;
+		}
 		var rp = wCont/370;
 		if(coordZoom.length>1){
 			var pC=coordZoom.split("|");
 			for(pu in pC){
 				pC2=pC[pu].split(",");
-				posPunti+='<img src="sets/common/mtc/img/zoom/punto.png" width="'+parseInt(43*rp)+'" height="'+parseInt(40*rp)+'" style="position:absolute;left:'+parseInt((pC2[0]-7)*rp-20)+'px;top:'+parseInt((pC2[1]-7)*rp)+'px;">';
+				posPunti+='<img src="sets/common/mtc/img/zoom/punto.png" width="'+parseInt(43*rp)+'" height="'+parseInt(40*rp)+'" style="position:absolute;left:'+parseInt((pC2[0]-7)*rp-marginLeft)+'px;top:'+parseInt((pC2[1]-7)*rp)+'px;">';
 			}
 		}
 		if(imgZoom)imgDettaglio='<div style="position:relative;width:370px;"><img src="sets/common/mtc/img/zoom/'+imgZoom+'" border="0" width="370" id="imgDettTsubo">'+posPunti+'</div>';
