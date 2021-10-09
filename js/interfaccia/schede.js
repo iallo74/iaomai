@@ -34,7 +34,7 @@ var SCHEDA = {
 	versoRedim: '',
 	gapScheda: 16, /* 17 */
 	livelloApertura: 2,
-	ultimaCartella: '', // l'id della sottocartella aperta quando si clicca su una scheda (per smartphone)
+	ultimaCartella: '', // l'id della sottocartella aperta quando si clicca su una scheda (per smartMenu)
 	htmlPallini:	'<div id="btnMenuScheda" onClick="SCHEDA.swMenuScheda();">' +
 					'<svg viewBox="0 0 25 36"><circle cy="11"></circle><circle cy="18"></circle>' +
 					'<circle cy="25"></circle></svg></div><div id="menuScheda"></div>',
@@ -711,7 +711,7 @@ var SCHEDA = {
 				document.getElementById("elenchi").classList.remove("iconeNasc");
 				document.getElementById("icone").classList.remove("iconeHome");
 				//if(daBtn){
-				if(document.getElementById("scheda").classList.contains("visSch") || daBtn){
+				if((document.getElementById("scheda").classList.contains("visSch") || daBtn) && smartMenu){
 					var liste = document.getElementById("elenchi").getElementsByClassName("lista");
 					for(i=liste.length-1;i>=0;i--){
 						var els = liste[i].getElementsByClassName("cartellaAperta");
@@ -748,7 +748,7 @@ var SCHEDA = {
 					document.getElementById("icone").classList.add("iconeHome");
 					MENU.chiudiMenu();
 				}
-				if(	smartphone &&
+				if(	smartMenu &&
 					document.getElementById("elenchi").classList.contains("LISTE") && 
 					SCHEDA.livelloApertura == 2 )GUIDA.visFumetto('guida_fix');
 				break;
@@ -924,7 +924,7 @@ var SCHEDA = {
 				// sgangiata
 				var h = 0;
 				var mm = 20;
-				if(smartphone)mm = 1;
+				if(smartMenu)mm = 1;
 				//if(!SCHEDA.libera.stato)mm=20;
 				if(tCoord(document.getElementById("scheda"),'y') < mm){
 					h = (HF()-SCHEDA.getMM()+SCHEDA.gapScheda);

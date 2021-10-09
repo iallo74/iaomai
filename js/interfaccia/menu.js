@@ -89,7 +89,7 @@ var MENU = {
 		if(n!="impset")document.getElementById("impset").classList.remove("visSch");
 		if(n!="community")document.getElementById("community").classList.remove("visSch")
 		if(n!="ag")document.getElementById("ag").classList.remove("visSch")
-		if( (n=='pulsanti_modello' && !smartphone) ||
+		if( (n=='pulsanti_modello' && !smartMenu) ||
 			n=='impostazioni' ||
 			n=='sets' ||
 			n=='ricerche' ||
@@ -129,7 +129,7 @@ var MENU = {
 				}, ((m+1)*2 + vel) * 100, m );
 			}
 		}
-		if(!smartphone){
+		if(!smartMenu){
 			if(document.getElementById("pulsanti_modello").classList.contains("visSch")){
 				MENU.icoSelected = document.getElementById("p_modello");
 				MENU.icoSelected.classList.add("p_sel");
