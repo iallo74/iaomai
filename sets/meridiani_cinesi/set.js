@@ -1084,7 +1084,8 @@ SET = {
 				if(evidenziati){
 					for(e in evidenziati){
 						for(i in evidenziati[e]){
-							scene.getObjectByName( evidenziati[e][i] ).material = MODELLO.MAT.materialVisceri;
+							var tipo = scene.getObjectByName( evidenziati[e][i] ).parent.name;
+							scene.getObjectByName( evidenziati[e][i] ).material = eval("MODELLO.MAT.material"+tipo);
 						}
 					}
 				}
