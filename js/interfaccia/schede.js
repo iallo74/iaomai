@@ -628,7 +628,7 @@ var SCHEDA = {
 		document.getElementById("elenchi_cont").classList.add("visSch");
 		var livello = SCHEDA.livelloApertura;
 		//if(!document.getElementById("elenchi").classList.contains("LISTE"))livello = 2;
-		SCHEDA.setMenuDim(SCHEDA.livelloApertura);
+		SCHEDA.setMenuDim(livello);
 		MENU.desIcona();
 		MENU.chiudiMenu();
 		if(typeof(expanded)=='undefined')var expanded = false;
@@ -675,6 +675,12 @@ var SCHEDA = {
 		else document.getElementById("scheda_linguette").classList.remove("fixExp");
 	},
 	setMenuDim: function( tipo ){
+		
+		// forzo l'apertura compressa se c'è una scheda aperta
+		if(	SCHEDA.livelloApertura==3 && 
+			document.getElementById("scheda").classList.contains("visSch") && 
+			tipo==3 )tipo=2;
+			
 		switch(tipo){
 			case 1:
 				document.getElementById("l1").classList.add("visBtn");
@@ -887,8 +893,9 @@ var SCHEDA = {
 			if(!SCHEDA.libera.stato){
 				// sgangiata
 				var h = 0;
-				var mm = 0;
-				if(!SCHEDA.libera.stato)mm=20;
+				var mm = 20;
+				if(smartphone)mm = 1;
+				//if(!SCHEDA.libera.stato)mm=20;
 				if(tCoord(document.getElementById("scheda"),'y') < mm){
 					h = (HF()-SCHEDA.getMM()+SCHEDA.gapScheda);
 				}else{
