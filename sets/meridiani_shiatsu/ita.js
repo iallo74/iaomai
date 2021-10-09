@@ -1,806 +1,578 @@
 DB.set= {
+	
 	meridiani: {
 		"BL": {
 			NomeMeridiano: "Vescica urinaria",
-			cartella: "vescica_urinaria",
 			tsubo: [
 				{
 					NomeTsubo: "1.BL. Jingming (Occhi luminosi)",
 					AzioniTsubo: "<p><span style=\"font-weight:bold;\">M.T.C.<br></span><span>• </span>Punto d'incontro dei meridiani di<span style=\"font-style:italic;\"> Intestino tenue</span>, <span style=\"font-style:italic;\">Vescica urinaria</span>, <span style=\"font-style:italic;\">Cistifellea</span>, <span style=\"font-style:italic;\">Stomaco</span>, <span style=\"font-style:italic;\">Triplice riscaldatore</span>, <span style=\"font-style:italic;\">Vaso governatore</span>, <span style=\"font-style:italic;\">Yangqiaomai </span>e <span style=\"font-style:italic;\">Yinqiaomai</span><br><span>• </span>Giova agli occhi<br><span>• </span>Elimina il Vento<br><span>• </span>Purifica il Calore <br></p><p><b>Applicazioni</b><br><span>• </span>Punto locale importante per svariate malattie oculari<br><span>• </span>Rossore, gonfiore, lacrimazione da esposizione al Vento<br><span>• </span>Visione offuscata<br><span>• </span>Fotofobia<br><span>• </span>Cecità per i colori<br><span>• </span>Presbiopia<br><span>• </span>Glaucoma<br><span>• </span>Atrofia del nervo ottico<br><span>• </span>Astigmatismo<br><span>• </span>Nevrite ottica<br><span>• </span>Emorragia retinica<br><span>• </span>Cataratta precoce<br><span>• </span>Dolore agli occhi<br><span>• </span>Emeralopia<br></p><p><b>Moxa</b><br><span>• </span>Controindicato<br></p><p><b>Ubicazione</b><br><span>• </span>Al di sopra della ghiandola lacrimale<br><span>• </span>Sul bordo mediale dell'orbita oculare <br></p>",
 					ChiaviTsubo: "",
-					noMoxa: true,
-					noGravidanza: false	
 				},
 				{
 					NomeTsubo: "2.BL. Zanzhu (Bambù conservato)",
 					AzioniTsubo: "<p><b>M.T.C.</b><br><span>• </span>Elimina il Vento<br><span>• </span>Purifica il Calore<br><span>• </span>Elimina il dolore e la stanchezza dagli occhi<br></p><p><b>Applicazioni</b><br><span>• </span>Punto locale per le patologie oculari<br><span>• </span>Visione offuscata<br><span>• </span>Riduzione del visus<br><span>• </span>Lacrimazione da esposizione al Vento<br><span>• </span>Emeralopia, rossore, gonfiore e dolore agli occhi<br><span>• </span>Sensazione di bruciore<br><span>• </span>Capogiri visivi, prurito oculare<br><span>• </span>Punto locale per il dolore alla fronte o alla regione sopraorbitale<br><span>• </span>Riniti<br><span>• </span>Starnuti<br><span>• </span>Dolori al seno frontale<br><span>• </span>Cefalea frontale<br></p><p><b>Moxa</b><br><span>• </span>Controindicato<br></p><p><b>Ubicazione</b><br><span>• </span>Sulla verticale di 1.BL<br><span>• </span>Sull'estremità mediale del sopracciglio in un piccolo avallamento<br></p>",
 					ChiaviTsubo: "",
-					noMoxa: false,
-					noGravidanza: false	
 				},
 				{
 					NomeTsubo: "3.BL. Meichong (Riversarsi dei sopraccigli)",
 					AzioniTsubo: "<p><b>M.T.C.</b><br><span>• </span>Giova a occhi e naso<br><span>• </span>Espelle il Vento<br><span>• </span>Purifica il Calore<br><span>• </span>Allevia il dolore e la stanchezza<br></p><p><b>Applicazioni</b><br><span>• </span>Poco usato<br><span>• </span>Cefalea<br><span>• </span>Cefalea del vertice<br><span>• </span>Congestione nasale<br><span>• </span>Piaghe nasali<br><span>• </span>Dispnea<br><span>• </span>Vertigini<br><span>• </span>Epilessia<br><span>• </span>Agitazione e pienezza di Cuore<br></p><p><b>Moxa</b><br><span>• </span>Usata raramente, consigliata la moxa tiepida<br></p><p><b>Ubicazione</b><br><span>• </span>Sulla verticale di 2.BL a 0,5 cun verso l'interno dell'attaccatura dei capelli<br><span>• </span><span>A livello di 24.GV</span></p>",
 					ChiaviTsubo: "",
-					noMoxa: false,
-					noGravidanza: false	
 				},
 				{
 					NomeTsubo: "4.BL. Quchai (Curva storta)",
 					AzioniTsubo: "<p><b>M.T.C.</b><br><span>• </span>Giova a occhi e naso<br><span>• </span>Espelle il Vento<br><span>• </span>Purifica il Calore<br><span>• </span>Allevia il dolore e la stanchezza<br></p><p><b>Applicazioni</b><br><span>• </span>Poco usato<br><span>• </span>Cefalea<br><span>• </span>Cefalea del vertice<br><span>• </span>Congestione nasale<br><span>• </span>Piaghe nasali<br><span>• </span>Dispnea<br><span>• </span>Epistassi<br><span>• </span>Rinite<br><span>• </span>Assenza di sudorazione<br><span>• </span>calore nel corpo<br></p><p><b>Moxa</b><br><span>• </span>Usata raramente, consigliata la moxa tiepida<br></p><p><b>Ubicazione</b><br><span>• </span>A 1,5 cun a lato di 24.GV<br><span>• </span>A 0,5 cun all'interno dell'attaccatura dei capelli<br><span>• </span><span>A un terzo della distanza tra 24.GV e 8.ST</span></p>",
 					ChiaviTsubo: "",
-					noMoxa: false,
-					noGravidanza: false	
 				},
 				{
 					NomeTsubo: "5.BL. Wuchu (Cinque luoghi)",
 					AzioniTsubo: "<p><b>M.T.C.</b><br><span>• </span>Espelle il vento interno<br><span>• </span>Giova a occhi e naso<br><span>• </span>Purifica il Calore <br><span>• </span>Allevia il dolore e la stanchezza<br></p><p><b>Applicazioni</b><br><span>• </span>Poco usato<br><span>• </span>Dolori alla testa e al naso<br><span>• </span>Rigidità alla colonna<br><span>• </span>Occhi fissi in alto<br><span>• </span>Epilessia<br><span>• </span>Follia<br><span>• </span>Trisma mandibolare<br><span>• </span>Spasmi clonici<br><span>• </span>Vertigini<br></p><p><b>Moxa</b><br><span>• </span>Raramente usato, consigliata la moxa tiepida<br></p><p><b>Ubicazione</b><br><span>• </span>1 cun all'interno dell'attaccatura dei capelli<br><span>• </span>1,5 cun laterale a 23.GV<br><span>• </span>0,5 cun dietro 4.BL<br></p>",
 					ChiaviTsubo: "",
-					noMoxa: false,
-					noGravidanza: false	
 				},
 				{
 					NomeTsubo: "6.BL. Chengguang (Ricevere la luce)",
 					AzioniTsubo: "<p><b>M.T.C.</b><br><span>• </span>Giova a occhi e naso<br><span>• </span>Purifica il Calore<br><span>• </span>Purifica la testa<br><span>• </span>Giova a occhi e naso<br><span>• </span>Espelle il Vento<br></p><p><b>Applicazioni</b><br><span>• </span>Poco usato<br><span>• </span>Dolori alla testa e al naso<br><span>• </span>Disturbi generici agli occhi<br><span>• </span>Presbiopia, visione offuscata, ecc.<br><span>• </span>Vomito<br><span>• </span>Agitazione del Cuore con vomito<br><span>• </span>Malattia febbrile con assenza di sudorazione<br></p><p><b>Moxa</b><br><span>• </span>Raramente usato, consigliata la moxa tiepida<br></p><p><b>Ubicazione</b><br><span>• </span>1,5 cun dietro 5.BL<br><span>• </span>2,5 cun all'interno dell'attaccatura dei capelli<br><span>• </span>A 1,5 cun dalla linea mediana<br></p>",
 					ChiaviTsubo: "",
-					noMoxa: false,
-					noGravidanza: false	
 				},
 				{
 					NomeTsubo: "7.BL. Tongtian (Collegamento celeste)",
 					AzioniTsubo: "<p><b>M.T.C.</b><br><span>• </span>Giova al naso<br><span>• </span>Purifica la testa. <br></p><p><b>Applicazioni</b><br><span>• </span>Congestione nasale<br><span>• </span>Rinite<br><span>• </span>Perdita dell'olfatto<br><span>• </span>Epistassi<br><span>• </span>Piaghe nasali<br><span>• </span>Per il flegma che ostruisce la parte superiore del corpo<br><span>• </span>Rinorrea profusa<br><span>• </span>Pesantezza del capo<br><span>• </span>Faccia gonfia<br><span>• </span>Gozzo<br><span>• </span>Dispnea<br><span>• </span>Cefalea del vertice<br></p><p><b>Moxa</b><br><span>• </span>Controindicato<br></p><p><b>Ubicazione</b><br><span>• </span>1,5 cun dietro a 6.BL<br><span>• </span>1,5 cun a lato della linea mediana<br><span>• </span>4 cun dall'attaccatura dei capelli<br></p>",
 					ChiaviTsubo: "",
-					noMoxa: true,
-					noGravidanza: false	
 				},
 				{
 					NomeTsubo: "8.BL. Luoque (Collegamento diminuito)",
 					AzioniTsubo: "<p><b>M.T.C.</b><br><span>• </span>Rafforza gli organi di senso<br><span>• </span>Calma il Vento<br><span>• </span>Trasforma il flegma<br><span>• </span>Calma lo Shen<br></p><p><b>Applicazioni</b><br><span>• </span>Congestione nasale<br><span>• </span>Deviazione della rima buccale<br><span>• </span>Visione offuscata<br><span>• </span>Vertigini<br><span>• </span>Acufeni<br><span>• </span>Sindrome maniaco-depressiva<br><span>• </span>Camminata da folle<br><span>• </span>Disorientamento<br><span>• </span>Epilessia<br><span>• </span>Gozzo<br><span>• </span>Vomito<br><span>• </span>Collasso<br></p><p><b>Moxa</b><br><span>• </span>Controindicato<br></p><p><b>Ubicazione</b><br><span>• </span>1,5 cun dietro 7.BL<br><span>• </span>1,5 cun a lato della linea mediana<br><span>• </span>5,5 cun dall'attaccatura dei capelli<br></p>",
 					ChiaviTsubo: "",
-					noMoxa: true,
-					noGravidanza: false	
 				},
 				{
 					NomeTsubo: "9.BL. Yuzhen (Cuscino di giada)",
 					AzioniTsubo: "<p><b>M.T.C.</b><br><span>• </span>Espelle il Vento freddo<br><span>• </span>Allevia il dolore<br><span>• </span>Rafforza naso e occhi<br></p><p><b>Applicazioni</b><br><span>• </span>Cefalea occipitale<br><span>• </span>Rigidità e dolore al collo<br><span>• </span>Sensibilità al Vento alla testa e alla regione del collo<br><span>• </span>Patologie di naso e occhi<br><span>• </span>Presbiopia<br><span>• </span>Naso chiuso<br><span>• </span>Perdita dell'olfatto<br><span>• </span>Follia<br><span>• </span>Epilessia<br><span>• </span>Collasso alzandosi bruscamente<br></p><p><b>Moxa</b><br><span>• </span>Controindicato<br></p><p><b>Ubicazione</b><br><span>• </span>1,5 cun sopra 16.GV<br><span>• </span>1,3 cun a lato di 17.GV (che è ubicato nella depressione superiore alla protuberanza occipitale esterna)<br></p>",
 					ChiaviTsubo: "",
-					noMoxa: true,
-					noGravidanza: false	
 				},
 				{
 					NomeTsubo: "10.BL. Tianzhu (Cuscino celeste)",
 					AzioniTsubo: "<p><b>M.T.C.</b><br><span>• </span>Regola il Qi nel meridiano<br><span>• </span>Calma il Vento<br><span>• </span>Rafforza testa e orifizi sensoriali<br><span>• </span>Calma lo Shen<br><span>• </span>Allevia il dolore<br><span>• </span>Punto finestra del cielo per Qi ribelle verso il capo<br></p><p><b>Applicazioni</b><br><span>• </span>Pesantezza del capo<br><span>• </span>Vertigini<br><span>• </span>Rigidità del collo<br><span>• </span>Cefalea<br><span>• </span>Mal di gola, occhi e naso<br><span>• </span>Debolezza delle gambe<br><span>• </span>Manie<br><span>• </span>Parlare incessantemente<br><span>• </span>Visioni (es. fantasmi)<br><span>• </span>Epilessia<br></p><p><b>Moxa</b><br><span>• </span>E' consigliata la moxa indiretta<br></p><p><b>Ubicazione</b><br><span>• </span>Al di sotto dell'osso occipitale<br><span>• </span>A 1,5 cun dalla linea mediana (e da 15.GV)<br><span>• </span>Sul lato dell'inserzione del muscolo trapezio nell'occipite<br></p>",
 					ChiaviTsubo: "",
-					noMoxa: false,
-					noGravidanza: false	
 				},
 				{
 					NomeTsubo: "11.BL. Dazhu (Grande spola)",
 					AzioniTsubo: " <p><span style=\"font-weight:bold;\">M.T.C.<br></span><span>• </span>Punto Mare del sangue<br><span>• </span>Punto <span style=\"font-style:italic;\">hui</span>-riunione delle ossa<br><span>• </span>Punto d'incontro dei i meridiani di <span style=\"font-style:italic;\">Intestino tenue</span>, <span style=\"font-style:italic;\">Vescica urinaria</span>, <span style=\"font-style:italic;\">Cistifellea </span>e <span style=\"font-style:italic;\">Vaso governatore</span><br><span>• </span>Rafforza ossa e articolazioni<br><span>• </span>Espelle i fattori patogeni <br><span>• </span>Consolida l'esterno<br><span>• </span>Regola il Qi di Polmone<br><span>• </span>Calma la tosse<br></p><p><b>Applicazioni</b><br><span>• </span>Patologie delle ossa<br><span>• </span>Rigidità della colonna e del collo<br><span>• </span>Dolore lombare e della scapola<br><span>• </span>Spasmi<br><span>• </span>Contrattura delle articolazioni associata a follia<br><span>• </span>Rigidità e dolore alle ginocchia<br><span>• </span>Febbre<br><span>• </span>Tremori da Freddo<br><span>• </span>Attacco da Freddo senza sudorazione<br><span>• </span>Malaria<br><span>• </span>Cefalea<br><span>• </span>Ostruzione dolorosa della gola<br><span>• </span>Tosse<br><span>• </span>Pienezza del petto<br><span>• </span>Dispnea<br></p><p><b>Moxa</b><br><span>• </span>Usata per le patologie di cui sopra può essere sia diretta che indiretta<br></p><p><b>Ubicazione</b><br><span>• </span>1,5 cun a lato del bordo inferiore dell'apofisi spinosa traversa della prima vertebra dorsale (D1)<br><span>• </span>Localizzare al più alto punto visibile dei muscoli paravertebrali<br></p>",
 					ChiaviTsubo: "",
-					noMoxa: false,
-					noGravidanza: false	
 				},
 				{
 					NomeTsubo: "12.BL. Fengmen (Porta del Vento)",
 					AzioniTsubo: "<p><span style=\"font-weight:bold;\">M.T.C.<br></span><span>• </span>Punto d'incontro dei meridiani di <span style=\"font-style:italic;\">Vescica urinaria</span> e <span style=\"font-style:italic;\">Vaso governatore</span><br><span>• </span>Espelle il Vento<br><span>• </span>Libera e consolida l'esterno<br><span>• </span>Dona beneficio al naso<br><span>• </span>Giova al QI difensivo<br><span>• </span>Diffonde e riduce il QI di Polmone<br></p><p><b>Applicazioni</b><br><span>• </span>Attacco da Vento con febbre<br><span>• </span>Cefalea<br><span>• </span>Rigidità da Freddo a testa e collo<br><span>• </span>Patologie al naso<br><span>• </span>Abbondante scolo nasale acquoso<br><span>• </span>Naso chiuso<br><span>• </span>Rinite<br><span>• </span>Starnuti<br><span>• </span>Epistassi<br><span>• </span>Freddo<br><span>• </span>Tosse con dolore al petto e al dorso<br><span>• </span>Emoftoe<br><span>• </span>Dispnea<br></p><p><b>Moxa</b><br><span>• </span>Usato per le patologie di cui sopra sia in modo diretto che indiretto<br></p><p><b>Ubicazione</b><br><span>• </span>1,5 cun a lato del bordo inferiore dalla apofisi spinosa trasversa della seconda vertebra dorsale (D2)<br><span>• </span>Localizzare al più alto punto visibile dei muscoli paravertebrali<br></p>",
 					ChiaviTsubo: "",
-					noMoxa: false,
-					noGravidanza: false	
 				},
 				{
 					NomeTsubo: "13.BL. Feishu (Shu di Polmone)",
 					AzioniTsubo: "<p><span style=\"font-weight:bold;\">M.T.C.<br></span><span>• </span>Punto <span style=\"font-style:italic;\">shu </span>del dorso del meridiano di <span style=\"font-style:italic;\">Polmone</span><br><span>• </span>Tonifica il QI di Polmone<br><span>• </span>Nutre lo Yin di Polmone<br><span>• </span>Purifica il Calore di Polmone <br><span>• </span>Fa scendere e diffonde il QI di Polmone<br><span>• </span>Libera l'esterno<br></p><p><b>Applicazioni</b><br><span>• </span>Patologie polmonari sia da eccesso che da vuoto<br><span>• </span>Tosse<br><span>• </span>Asma<br><span>• </span>Dispnea<br><span>• </span>Respiro corto senza desiderio di parlare<br><span>• </span>Pienezza del petto<br><span>• </span>Tosse persistente del bambino<br><span>• </span>Freddo del Polmone<br><span>• </span>Sensazioni di Calore nel petto<br><span>• </span>Difficoltà di respiro in posizione distesa<br><span>• </span>Tosse con flegma<br><span>• </span>Ascesso polmonare<br><span>• </span>Attacco di Vento al Polmone<br><span>• </span>Polso rapido<br><span>• </span>Febbre<br><span>• </span>Sudorazione notturna<br><span>• </span>Ostruzione dolorosa della gola<br><span>• </span>Atrofia del Polmone<br><span>• </span>Dolore al petto<br><span>• </span>Sputo ematico<br><span>• </span>Secchezza delle fauci<br><span>• </span>Febbre da vuoto-esaurimento<br><span>• </span>Dolori alla cintura scapolare<br><span>• </span>Scoliosi<br><span>• </span>Vomito in generale<br></p><p><b>Moxa</b><br><span>• </span>Usato per le patologie di cui sopra sia in modo diretto che indiretto<br></p><p><b>Ubicazione</b><br><span>• </span>1,5 cun a lato del bordo inferiore dell'apofisi spinosa traversa della terza vertebra dorsale (D3)<br><span>• </span>Localizzare al più alto punto visibile dei muscoli paravertebrali<br></p>",
 					ChiaviTsubo: "PuntoShu di Polmone",
-					noMoxa: false,
-					noGravidanza: false	
 				},
 				{
 					NomeTsubo: "14.BL. Jueyinshu (Shu di Pericardio)",
 					AzioniTsubo: "<p><span style=\"font-weight:bold;\">M.T.C.<br></span><span>• </span>Punto <span style=\"font-style:italic;\">shu </span>del dorso del meridiano di <span style=\"font-style:italic;\">Mastro del cuore</span><br><span>• </span>Diffonde il QI di Fegato<br><span>• </span>Libera il petto<br><span>• </span>Regola e riduce il QI<br><span>• </span>Equilibra il Cuore <br></p><p><b>Applicazioni</b><br><span>• </span>Dolore e oppressione al Cuore petto e diaframma da accumulo di Qi<br><span>• </span>Tosse<br><span>• </span>Respiro corto<br><span>• </span>vomito da Qi ribelle <br><span>• </span>Palpitazioni<br></p><p><b>Moxa</b><br><span>• </span>Usato per le patologie di cui sopra sia in modo diretto che indiretto<br> </p><p><b>Ubicazione</b><br><span>• </span>1,5 cun a lato del bordo inferiore dell'apofisi spinosa traversa della quarta vertebra dorsale (D4)<br><span>• </span>Localizzare al più alto punto visibile dei muscoli paravertebrali<br></p>",
 					ChiaviTsubo: "PuntoShu di Mastro del cuore",
-					noMoxa: false,
-					noGravidanza: false	
 				},
 				{
 					NomeTsubo: "15.BL. Xinshu (Shu di Cuore)",
 					AzioniTsubo: "<p><span style=\"font-weight:bold;\">M.T.C.<br></span><span>• </span>Punto <span style=\"font-style:italic;\">shu </span>del dorso del meridiano di <span style=\"font-style:italic;\">Cuore</span><br><span>• </span>Tonifica e alimenta il Cuore<br><span>• </span>Regola il Qi di Cuore<br><span>• </span>Calma lo Shen<br><span>• </span>Sblocca la stasi di sangue<br><span>• </span>Purifica il Fuoco di Cuore<br></p><p><b>Applicazioni</b><br><span>• </span>Tutte le sindromi di Cuore sia da pieno che da vuoto<br><span>• </span>Palpitazioni<br><span>• </span>Paura<br><span>• </span>Dolore al Cuore<br><span>• </span>Polso irregolare<br><span>• </span>Deficit di Qi di Cuore nel bambino<br><span>• </span>Senso di oppressione al petto con ansia e impossibilità a prendere fiato<br><span>• </span>Scarsa memoria<br><span>• </span>Pianto di dolore<br><span>• </span>Paura<br><span>• </span>Insonnia<br><span>• </span>Sogni eccessivi<br><span>• </span>Disorientamento<br><span>• </span>Sviluppo ritardato della parola<br><span>• </span>Sindrome maniaco-depressiva<br><span>• </span>Epilessia<br><span>• </span>Demenza<br></p><p><b>Moxa</b><br><span>• </span>Usato per le patologie di cui sopra sia in modo diretto che indiretto<br></p><p><b>Ubicazione</b><br><span>• </span>1,5 cun a lato del bordo inferiore dell'apofisi spinosa traversa della quinta vertebra dorsale (D5)<br><span>• </span>localizzare al più alto punto visibile dei muscoli paravertebrali<br></p>",
 					ChiaviTsubo: "PuntoShu di Cuore",
-					noMoxa: false,
-					noGravidanza: false	
 				},
 				{
 					NomeTsubo: "16.BL. Dushu (Shu di Dumai)",
 					AzioniTsubo: "<p><b>M.T.C.</b><br><span>• </span>Regola il Qi di petto e addome<br></p><p><b>Applicazioni</b><br><span>• </span>Psoriasi<br><span>• </span>Alopecia<br><span>• </span>Vitiligine<br><span>• </span>Prurito generalizzato<br></p><p><b>Moxa</b><br><span>• </span>Usato per le patologie di cui sopra sia in modo diretto che indiretto<br></p><p><b>Ubicazione</b><br><span>• </span>1,5 cun a lato del bordo inferiore dell'apofisi spinosa traversa della sesta vertebra dorsale (D6)<br><span>• </span>localizzare al più alto punto visibile dei muscoli paravertebrali<br></p>",
 					ChiaviTsubo: "",
-					noMoxa: false,
-					noGravidanza: false	
 				},
 				{
 					NomeTsubo: "17.BL. Geshu (Shu del diaframma)",
 					AzioniTsubo: "<p><span style=\"font-weight:bold;\">M.T.C.<br></span><span>• </span>Punto <span style=\"font-style:italic;\">hui</span>-riunione del sangue<br><span>• </span>Rafforza e rinfresca il sangue<br><span>• </span>Sblocca la stasi<br><span>• </span>Blocca il sanguinamento<br><span>• </span>Equilibra sangue e diaframma<br><span>• </span>Riduce il Qi ribelle<br></p><p><b>Applicazioni</b><br><span>• </span>Stasi di sangue e sanguinamento<br><span>• </span>Oppressione al petto<br><span>• </span>Dolore al Cuore<br><span>• </span>Tosse con sangue<br><span>• </span>Epistassi<br><span>• </span>Vomito ematico<br><span>• </span>Sangue nelle feci<br><span>• </span>Tutte le malattie del sangue<br><span>• </span>Orticaria<br><span>• </span>Dolore a pelle, muscoli e ossa<br><span>• </span>Ostruzione dolorosa di tutto il corpo<br><span>• </span>Dolore epigastrico<br><span>• </span>Singhiozzo<br><span>• </span>Difficoltà ad inghiottire<br><span>• </span>Impossibilità a mangiare<br><span>• </span>Reflusso esofageo<br></p><p><b>Moxa</b><br><span>• </span>Usato per le patologie di cui sopra sia in modo diretto che indiretto<br></p><p><b>Ubicazione</b><br><span>• </span>1,5 cun a lato del bordo inferiore dell'apofisi spinosa traversa della settima vertebra dorsale (D7)<br><span>• </span>Localizzare al più alto punto visibile dei muscoli paravertebrali<br></p>",
 					ChiaviTsubo: "",
-					noMoxa: false,
-					noGravidanza: false	
 				},
 				{
 					NomeTsubo: "18.BL. Ganshu (Shu di Fegato)",
 					AzioniTsubo: "<p><span style=\"font-weight:bold;\">M.T.C.<br></span><span>• </span>Punto <span style=\"font-style:italic;\">shu </span>del dorso del meridiano di <span style=\"font-style:italic;\">Fegato</span><br><span>• </span>Diffonde il Qi di Fegato<br><span>• </span>Regola e nutre il sangue del Fegato<br><span>• </span>Acquieta il Vento<br><span>• </span>Rinfresca il Fuoco<br><span>• </span>Purifica l'Umidità-Calore<br><span>• </span>Rafforza gli occhi e i muscoli<br></p><p><b>Applicazioni</b><br><span>• </span>Tosse con dolore al petto e alla regione costale laterale<br><span>• </span>Pienezza toracica<br><span>• </span>Distensione della regione costale laterale<br><span>• </span>Dolore epigastrico<br><span>• </span>Masse addominali<br><span>• </span>Impossibilità di prendere fiato<br><span>• </span>Respiro corto<br><span>• </span>Sindromi Shan<br><span>• </span>Ittero<br><span>• </span>Dolore e crampi al basso ventre<br><span>• </span>Molta collera<br><span>• </span>Sindrome maniaco-depressiva<br><span>• </span>Epilessia<br><span>• </span>Tosse<br><span>• </span>Sputo ematico<br><span>• </span>Vomito di sangue<br><span>• </span>Epistassi<br><span>• </span>Visione offuscata<br><span>• </span>Emeralopia<br><span>• </span>Rossore agli occhi<br><span>• </span>Lacrimazione eccessiva<br><span>• </span>Occhi fissi in alto<br><span>• </span>Rigidità di collo e colonna<br><span>• </span>Dolore alla colonna<br><span>• </span>Dolore lombare<br><span>• </span>Dolore collo e spalle<br><span>• </span>Crampi, dolore ai tendini<br></p><p><b>Moxa</b><br><span>• </span>Usato per le patologie di cui sopra sia in modo diretto che indiretto<br></p><p><b>Ubicazione</b><br><span>• </span>1,5 cun a lato del bordo inferiore dell'apofisi spinosa traversa della nona vertebra dorsale (D9)<br></p>",
 					ChiaviTsubo: "PuntoShu di Fegato",
-					noMoxa: false,
-					noGravidanza: false	
 				},
 				{
 					NomeTsubo: "19.BL. Danshu (Shu di Colecisti)",
 					AzioniTsubo: "<p><span style=\"font-weight:bold;\">M.T.C.<br></span><span>• </span>Punto <span style=\"font-style:italic;\">shu </span>del dorso del meridiano di <span style=\"font-style:italic;\">Cistifellea</span><br><span>• </span>Purifica l'Umidità-Calore da Fegato e Cistifellea<br><span>• </span>Purifica i fattori patogeni dallo Shaoyang<br><span>• </span>Tonifica e regola il Qi di Cistifellea<br><span>• </span>Tonifica il vuoto<br></p><p><b>Applicazioni</b><br><span>• </span>Ittero<br><span>• </span>Occhi gialli<br><span>• </span>Sapore amaro in bocca<br><span>• </span>Distensione e dolore al petto e alla regione costale laterale<br><span>• </span>Bocca secca<br><span>• </span>Visione offuscata<br><span>• </span>Palpitazioni da paura con sonno agitato<br><span>• </span>Nausea<br><span>• </span>Vomito<br><span>• </span>Insonnia<br><span>• </span>Febbre da esaurimento con \"ossa fumanti\"<br><span>• </span>Deficit da esaurimento<br></p><p><b>Moxa</b><br><span>• </span>Usato per le patologie di cui sopra sia in modo diretto che indiretto<br></p><p><b>Ubicazione</b><br><span>• </span>1,5 cun a lato del bordo inferiore dell'apofisi spinosa traversa della decima vertebra dorsale (D10)<br></p>",
 					ChiaviTsubo: "PuntoShu di Cistifellea",
-					noMoxa: false,
-					noGravidanza: false	
 				},
 				{
 					NomeTsubo: "20.BL. Pishu (Shu di Milza)",
 					AzioniTsubo: "<p><span style=\"font-weight:bold;\">M.T.C.<br></span><span>• </span>Punto <span style=\"font-style:italic;\">shu </span>del dorso del meridiano di <span style=\"font-style:italic;\">Milza</span><br><span>• </span>Tonifica il Qi e Yangdi Milza<br><span>• </span>Dilegua l'Umidità<br><span>• </span>Aumenta il Qi di Milza<br><span>• </span>Conserva il sangue<br><span>• </span>Riequilibra il Qi del Jiao medio<br></p><p><b>Applicazioni</b><br><span>• </span>Inappetenza<br><span>• </span>Magrezza nonostante si mangi molto<br><span>• </span>Disturbi infantili della nutrizione<br><span>• </span>Feci con presenza di cibo indigerito<br><span>• </span>Dissenteria<br><span>• </span>Edema<br><span>• </span>Sonnolenza<br><span>• </span>Stanchezza o pesantezza del corpo senza voglia di muoversi<br><span>• </span>Pienezza<br><span>• </span>Distensione addominale<br><span>• </span>Vomito<br><span>• </span>Ipocondri dolorosi<br><span>• </span>Distensione focale<br><span>• </span>Masse addominali<br><span>• </span>Sangue nelle feci o nelle urine<br><span>• </span>Menorraggia<br><span>• </span>Emorragia cronica<br><span>• </span>Prolasso uterino<br></p><p><b>Moxa</b><br><span>• </span>Usato per le patologie di cui sopra sia in modo diretto che indiretto<br></p><p><b>Ubicazione</b><br><span>• </span>1,5 cun a lato del bordo inferiore dell'apofisi spinosa traversa della undicesima vertebra dorsale (D11)<br></p>",
 					ChiaviTsubo: "PuntoShu di Milza",
-					noMoxa: false,
-					noGravidanza: false	
 				},
 				{
 					NomeTsubo: "21.BL. Weishu (Shu di Stomaco)",
 					AzioniTsubo: "<p><span style=\"font-weight:bold;\">M.T.C.<br></span><span>• </span>Punto <span style=\"font-style:italic;\">shu </span>del dorso del meridiano di <span style=\"font-style:italic;\">Stomaco</span><br><span>• </span>Riequilibra lo Stomaco<br><span>• </span>Riduce il Qi ribelle<br><span>• </span>Riequilibra il Jiao medio<br></p><p><b>Applicazioni</b><br><span>• </span>Magrezza pur mangiando molto<br><span>• </span>Appetito con incapacità di mangiare<br><span>• </span>Mancanza di appetito<br><span>• </span>Difficoltà ad ingerire<br><span>• </span>Vomito di liquido chiaro<br><span>• </span>Disturbi infantili della nutrizione<br><span>• </span>Rigurgiti di latte del bambino<br></p><p><b>Moxa</b><br><span>• </span>Usato per le patologie di cui sopra sia in modo diretto che indiretto<br></p><p><b>Ubicazione</b><br><span>• </span>1,5 cun a lato del bordo inferiore dell'apofisi spinosa traversa della dodicesima vertebra dorsale (D12)<br></p>",
 					ChiaviTsubo: "PuntoShu di Stomaco",
-					noMoxa: false,
-					noGravidanza: false	
 				},
 				{
 					NomeTsubo: "22.BL. Sanjiaoshu (Shu del Triplice riscaldatore)",
 					AzioniTsubo: "<p><span style=\"font-weight:bold;\">M.T.C.<br></span><span>• </span>Punto <span style=\"font-style:italic;\">shu </span>del dorso del meridiano di <span style=\"font-style:italic;\">Triplice riscaldatore</span><br><span>• </span>Armonizza il meridiano di Triplice riscaldatore<br><span>• </span>Riequilibra Milza e Stomaco<br><span>• </span>Risolve l'Umidità<br><span>• </span>Disperde le masse<br><span>• </span>Regola i passaggi dell'acqua<br><span>• </span>Aiuta la diuresi<br></p><p><b>Applicazioni</b><br><span>• </span>Borborigmi<br><span>• </span>Dissenteria<br><span>• </span>Feci con presenza di cibo indigerito<br><span>• </span>Distensione addominale con emaciazione<br><span>• </span>Edema<br><span>• </span>Minzione difficoltosa<br><span>• </span>Torpidità bianche<br><span>• </span>Sangue nelle urine<br></p><p><b>Moxa</b><br><span>• </span>Usato per le patologie di cui sopra sia in modo diretto che indiretto<br></p><p><b>Ubicazione</b><br><span>• </span>1,5 cun a lato del bordo inferiore dell'apofisi spinosa traversa della prima vertebra lombare (L1)<br></p>",
 					ChiaviTsubo: "PuntoShu di Triplo riscaldatore",
-					noMoxa: false,
-					noGravidanza: false	
 				},
 				{
 					NomeTsubo: "23.BL. Shenshu (Shu di Rene)",
 					AzioniTsubo: "<p><span style=\"font-weight:bold;\">M.T.C.<br></span><span>• </span>Punto <span style=\"font-style:italic;\">shu </span>del dorso del meridiano di <span style=\"font-style:italic;\">Rene</span><br><span>• </span>Tonifica i Reni <br><span>• </span>Rafforza lo Yang<br><span>• </span>Rafforza l'essenza<br><span>• </span>Alimenta lo Yin di Rene<br><span>• </span>Regola i passaggi dell'acqua <br><span>• </span>Aiuta la diuresi<br><span>• </span>Rafforza e scalda l'utero<br><span>• </span>Fa bene a orecchie e occhi<br><span>• </span>Allevia dolori alla regione lombare<br><span>• </span>Consolida il Qi di Rene<br></p><p><b>Applicazioni</b><br><span>• </span>Enuresi<br><span>• </span>Sindrome da consumazione e sete con minzione frequente<br><span>• </span>Sangue nelle urine<br><span>• </span>Emissione seminale<br><span>• </span>Sperma nelle urine<br><span>• </span>Impotenza<br><span>• </span>Eiaculazione precoce<br><span>• </span>Dolore ai genitali<br><span>• </span>Mestrui irregolari<br><span>• </span>Leucorrea<br><span>• </span>Edema<br><span>• </span>Freddo cronico all'utero<br><span>• </span>Dissenteria da Freddo o Umidità<br><span>• </span>Borborigmi<br><span>• </span>Feci con presenza di cibo indigerito<br><span>• </span>Magrezza malgrado si mangi molto<br><span>• </span>Freddo e distensione dello Stomaco<br><span>• </span>Dispnea cronica e tosse<br><span>• </span>Qi scarso<br><span>• </span>Giova agli orecchi e agli occhi<br><span>• </span>Sordità da deficit di Rene<br><span>• </span>Acufeni<br><span>• </span>Capogiri visivi<br><span>• </span>Emeralopia<br><span>• </span>Tonifica l'esaurimento estremo<br><span>• </span>Visione offuscata<br><span>• </span>Tratta la regione lombare e le gambe<br><span>• </span>Dolore a lombi e ginocchia<br><span>• </span>Sensazioni di Freddo come ghiaccio nella regione lombare<br><span>• </span>Arti freddi<br><span>• </span>Sensazioni di Calore o Freddo nelle ossa<br><span>• </span>Vomito Freddo<br></p><p><b>Moxa</b><br><span>• </span>Usato per le patologie di cui sopra sia in modo diretto che indiretto<br></p><p><b>Ubicazione</b><br><span>• </span>1,5 cun a lato del bordo inferiore dell'apofisi spinosa traversa della seconda vertebra lombare(L2)<br></p>",
 					ChiaviTsubo: "PuntoShu di Rene",
-					noMoxa: false,
-					noGravidanza: false	
 				},
 				{
 					NomeTsubo: "24.BL. Qihaishu (Shu del mare del Qi)",
 					AzioniTsubo: "<p><b>M.T.C.</b><br><span>• </span>Potenzia la regione lombare e le gambe<br><span>• </span>Riequilibra il Jiao inferiore<br></p><p><b>Applicazioni</b><br><span>• </span>Dolore e rigidità lombare<br><span>• </span>Ostruzione dolorosa e dolore agli arti inferiori<br><span>• </span>Dismenorrea<br><span>• </span>Mestrui irregolari<br><span>• </span>Leucorrea<br><span>• </span>Emorroidi<br><span>• </span>Emorroidi sanguinolente<br><span>• </span>Dissenteria con sangue<br><span>• </span>Male all'addome<br></p><p><b>Moxa</b><br><span>• </span>Usato per le patologie di cui sopra sia in modo diretto che indiretto<br></p><p><b>Ubicazione</b><br><span>• </span>1,5 cun a lato del bordo inferiore dell'apofisi spinosa traversa della terza vertebra lombare (L3)<br></p>",
 					ChiaviTsubo: "",
-					noMoxa: false,
-					noGravidanza: false	
 				},
 				{
 					NomeTsubo: "25.BL. Dachangshu (Shu di Intestino crasso)",
 					AzioniTsubo: "<p><span style=\"font-weight:bold;\">M.T.C.<br></span><span>• </span>Punto <span style=\"font-style:italic;\">shu </span>del dorso del meridiano di<span style=\"font-style:italic;\"> Intestino crasso</span><br><span>• </span>Riequilibra gli Intestini<br><span>• </span>Potenzia la regione lombare e le gambe<br><span>• </span>Smuove il ristagno e allevia il dolore. <br></p><p><b>Applicazioni</b><br><span>• </span>Diarrea da Freddo e Umidità<br><span>• </span>Dissenteria<br><span>• </span>Feci con presenza di sangue<br><span>• </span>Minzione e defecazione difficoltose<br><span>• </span>Stitichezza<br><span>• </span>Prolasso del retto<br><span>• </span>Dolore e distensione addominali<br><span>• </span>Distensione e pienezza dell'ipogastrio<br><span>• </span>Borborigmi<br><span>• </span>Male spasmodico al basso ventre<br><span>• </span>Dolore tagliente alla regione ombelicale<br><span>• </span>Feci con presenza di cibo indigerito<br><span>• </span>Impossibilità di mangiare e bere<br><span>• </span>Magrezza malgrado si mangi molto<br><span>• </span>Algia lombare<br><span>• </span>Contratture e rigidità della colonna lombare<br><span>• </span>Ostruzione dolorosa degli arti inferiori.<br></p><p><b>Moxa</b><br><span>• </span>Usato per le patologie di cui sopra sia in modo diretto che indiretto<br></p><p><b>Ubicazione</b><br><span>• </span>1,5 cun a lato del bordo inferiore dell'apofisi spinosa traversa della quarta vertebra lombare (L4)<br></p>",
 					ChiaviTsubo: "PuntoShu di Intestino crasso",
-					noMoxa: false,
-					noGravidanza: false	
 				},
 				{
 					NomeTsubo: "26.BL. Guanyuanshu (Shu del cancello della sorgente)",
 					AzioniTsubo: "<p><b>M.T.C.</b><br><span>• </span>Potenzia la regone lombare<br><span>• </span>Riequilibra il Jiao inferiore<br></p><p><b>Applicazioni</b><br><span>• </span>Lombalgie di varia origine<br><span>• </span>Distensione addominale da vuoto<br><span>• </span>Enuresi<br><span>• </span>Minzione frequente<br><span>• </span>Sindrome da consunzione e sete<br></p><p><b>Moxa</b><br><span>• </span>Usato per le patologie di cui sopra sia in modo diretto che indiretto<br></p><p><b>Ubicazione</b><br><span>• </span>1,5 cun a lato del bordo inferiore dell'apofisi spinosa traversa della quinta vertebra lombare (L5)<br></p>",
 					ChiaviTsubo: "",
-					noMoxa: false,
-					noGravidanza: false	
 				},
 				{
 					NomeTsubo: "27.BL. Xiaochangshu (Shu di Intestino tenue)",
 					AzioniTsubo: "<p><span style=\"font-weight:bold;\">M.T.C.<br></span><span>• </span>Punto <span style=\"font-style:italic;\">shu </span>del dorso del meridiano di<span style=\"font-style:italic;\"> Intestino tenue</span><br><span>• </span>Divide il puro dal torbido<br><span>• </span>Riequilibra Intestini e Vescica urinaria<br><span>• </span>Drena l'Umidità torbida<br><span>• </span>Purifica l'Umidità-Calore<br><span>• </span>Regola il Qi del meridiano<br></p><p><b>Applicazioni</b><br><span>• </span>Dissenteria<br><span>• </span>Feci con presenza di sangue e muco<br><span>• </span>Emorroidi<br><span>• </span>Urine giallo scuro<br><span>• </span>Enuresi<br><span>• </span>Ritenzione urinaria<br><span>• </span>Difficoltà alla minzione e alla defecazione<br><span>• </span>Sangue nelle urine<br><span>• </span>Leucorrea<br><span>• </span>Emissione seminale<br><span>• </span>Tratta il 'Qi annodato di Intestino tenue'<br><span>• </span>Male al basso ventre<br><span>• </span>Dolore testicolare che si irradia alla regione lombare<br></p><p><b>Moxa</b><br><span>• </span>Usato per le patologie di cui sopra sia in modo diretto che indiretto<br></p><p><b>Ubicazione</b><br><span>• </span>1,5 cun a alto della linea mediana<br><span>• </span>Alla stessa altezza del primo forame sacrale<br></p>",
 					ChiaviTsubo: "PuntoShu di Intestino tenue",
-					noMoxa: false,
-					noGravidanza: false	
 				},
 				{
 					NomeTsubo: "28.BL. Pangguangshu (Shu di Vescica)",
 					AzioniTsubo: "<p><span style=\"font-weight:bold;\">M.T.C.<br></span><span>• </span>Punto <span style=\"font-style:italic;\">shu </span>del dorso del meridiano di <span style=\"font-style:italic;\">Vescica urinaria</span><br><span>• </span>Riequilibra la vescica<br><span>• </span>Elimina i ristagni<br><span>• </span>Sblocca le masse<br><span>• </span>Beneficia la zona lombare e gambe<br><span>• </span>Purifica l'Umidità-Calore dal Jiao medio<br></p><p><b>Applicazioni</b><br><span>• </span>Minzione difficoltosa<br><span>• </span>Ritenzione urinaria<br><span>• </span>Enuresi<br><span>• </span>Disfunzione urinaria dolorosa torbida<br><span>• </span>Gonfiore e dolore ai genitali esterni<br><span>• </span>Ulcere ai genitali<br><span>• </span>Prurito umido<br><span>• </span>Diarrea con dolore addominale<br><span>• </span>Defecazione difficoltosa<br><span>• </span>Stitichezza<br><span>• </span>Pienezza addominale<br><span>• </span>Masse addominali nelle donne<br><span>• </span>Masse addominali dure<br><span>• </span>Rigidità e male ai lombi, al sacro, ai glutei e al coccige<br><span>• </span>Difficoltà a flettersi<br><span>• </span>Impossibilità di stare seduti a lungo<br><span>• </span>Urine scure con flusso irregolare<br><span>• </span>Debolezza di gambe e ginocchia<br><span>• </span>Prurito umido<br><span>• </span>Contrattura dell'arto inferiore<br><span>• </span>Intorpidimento della gamba<br><span>• </span>Sindrome atrofica e pesantezza della gamba<br><span>• </span>Sciatica e intorpidimento della gamba<br><span>• </span>Urine scure con flusso irregolare<br></p><p><b>Moxa</b><br><span>• </span>Usato per le patologie di cui sopra sia in modo diretto che indiretto<br></p><p><b>Ubicazione</b><br><span>• </span>1,5 cun a alto della linea mediana,<br><span>• </span>Alla stessa altezza del secondo forame sacrale<br></p>",
 					ChiaviTsubo: "PuntoShu di Vescica",
-					noMoxa: false,
-					noGravidanza: false	
 				},
 				{
 					NomeTsubo: "29.BL. Zhonglushu (Shu del centro della colonna)",
 					AzioniTsubo: "<p><b>M.T.C.</b><br><span>• </span>Giova alla regione lombare<br><span>• </span>Elimina il Freddo e risolve la dissenteria<br></p><p><b>Applicazioni</b><br><span>• </span>Viene usato raramente<br><span>• </span>Sindrome da consunzione e sete da deficit di Rene<br><span>• </span>Dissenteria<br><span>• </span>Freddo negli Intestini<br><span>• </span>Sindromi Shan<br><span>• </span>Dolore alla regione costale laterale<br><span>• </span>Assenza di sudorazione<br><span>• </span>Rigidità e dolore alla colonna lombare<br><span>• </span>Impossibilità di ruotare il rachide<br><span>• </span>Distensione addominale<br></p><p><b>Moxa</b><br><span>• </span>Usato per le patologie di cui sopra sia in modo diretto che indiretto<br></p><p><b>Ubicazione</b><br><span>• </span>1,5 cun a alto della linea mediana<br><span>• </span>Alla stessa altezza del terzo forame sacrale<br></p>",
 					ChiaviTsubo: "",
-					noMoxa: false,
-					noGravidanza: false	
 				},
 				{
 					NomeTsubo: "30.BL. Baihuanshu (Shu dell'anello bianco)",
 					AzioniTsubo: "<p><b>M.T.C.</b><br><span>• </span>Rafforza la regione lombare e gambe<br><span>• </span>Regola il ciclo mestruale<br><span>• </span>Blocca la leucorrea e l'emissione seminale<br></p><p><b>Applicazioni</b><br><span>• </span>Dolore locale alla colonna lombare, al sacro e al coccige<br><span>• </span>Cicli mestruali irregolari<br><span>• </span>Dismenorrea<br><span>• </span>Leucorrea<br><span>• </span>Emissione seminale<br><span>• </span>Difficoltà alla minzione e alla defecazione<br><span>• </span>Urine scure<br><span>• </span>Prolasso del retto<br></p><p><b>Moxa</b><br><span>• </span>Usato per le patologie di cui sopra sia in modo diretto che indiretto<br></p><p><b>Ubicazione</b><br><span>• </span>1,5 cun a alto della linea mediana,<br><span>• </span>Alla stessa altezza del quarto forame sacrale<br></p>",
 					ChiaviTsubo: "",
-					noMoxa: false,
-					noGravidanza: false	
 				},
 				{
 					NomeTsubo: "31.BL. Shangliao (Fessura superiore)",
 					AzioniTsubo: "<p><span style=\"font-weight:bold;\">M.T.C.<br></span><span>• </span>Punto d'incontro dei meridiani di <span style=\"font-style:italic;\">Vescica urinaria</span> e <span style=\"font-style:italic;\">Cistifellea</span><br><span>• </span>Riequilibra il Jiao inferiore <br><span>• </span>Favorisce minzione e defecazione<br><span>• </span>Regola il ciclo mestruale<br><span>• </span>Arresta la leucorrea<br><span>• </span>Risolve i problemi di lombi e gambe<br></p><p><b>Applicazioni</b><br><span>• </span>Usato per dolori al sacro e al coccige<br><span>• </span>Problemi collegati con l'apparato sessuale in genere<br></p><p><b>Moxa</b><br><span>• </span>Usato per le patologie di cui sopra sia in modo diretto che indiretto<br></p><p><b>Ubicazione</b><br><span>• </span>Sopra il primo forame sacrale<br></p>",
 					ChiaviTsubo: "",
-					noMoxa: false,
-					noGravidanza: false	
 				},
 				{
 					NomeTsubo: "32.BL. Ciliao (Seconda fessura)",
 					AzioniTsubo: "<p><span style=\"font-weight:bold;\">M.T.C.<br></span><span>• </span>Punto d'incontro dei meridiani di <span style=\"font-style:italic;\">Vescica urinaria</span> e <span style=\"font-style:italic;\">Cistifellea</span><br><span>• </span>Riequilibra il Jiao inferiore <br><span>• </span>Favorisce minzione e defecazione<br><span>• </span>Regola il ciclo mestruale<br><span>• </span>Arresta la leucorrea<br><span>• </span>Potenzia lombi e gambe</p><p><b>Applicazioni</b><br><span>• </span>Disfunzione urinaria dolorosa<br><span>• </span>Ritenzione urinaria<br><span>• </span>Difficoltà nella minzione e alla defecazione<br><span>• </span>Stitichezza, borborigmi e diarrea acquosa<br><span>• </span>Dismenorrea, mestrui irregolari e infertilità<br><span>• </span>Leucorrea<br><span>• </span>Urine scure<br><span>• </span>Dolore da parto<br><span>• </span>Punto locale per trattare le patologie sacrali e lombari<br><span>• </span>Intorpidimento dei lombi che si irradia ai piedi<br><span>• </span>Dolore lombare irradiato ai genitali<br><span>• </span>Sciatica<br><span>• </span>Dolore e ostruzione dolorosa delle gambe<br><span>• </span>Emiplegia<br><span>• </span>Algie sacrali<br><span>• </span>Sensazione di Freddo nella regione lombare<br></p><p><b>Moxa</b><br><span>• </span>Usato per le patologie di cui sopra sia in modo diretto che indiretto<br></p><p><b>Ubicazione</b><br><span>• </span>Sopra il secondo forame sacrale<br></p>",
 					ChiaviTsubo: "",
-					noMoxa: false,
-					noGravidanza: false	
 				},
 				{
 					NomeTsubo: "33.BL. Zhongliao (Fessura centrale)",
 					AzioniTsubo: "<p><span style=\"font-weight:bold;\">M.T.C.<br></span><span>• </span>Punto d'incontro dei meridiani di <span style=\"font-style:italic;\">Vescica urinaria</span> e <span style=\"font-style:italic;\">Cistifellea</span><br><span>• </span>Riequilibra il Jiao inferiore <br><span>• </span>Favorisce minzione e defecazione<br><span>• </span>Regola il ciclo mestruale<br><span>• </span>Arresta la leucorrea<br><span>• </span>Risolve i problemi di lombi e gambe</p><p><b>Applicazioni</b><br><span>• </span>Dolori e problemi del sistema urinario e del meridiano<br></p><p><b>Moxa</b><br><span>• </span>Usato per le patologie di cui sopra sia in modo diretto che indiretto<br></p><p><b>Ubicazione</b><br><span>• </span>Sopra il terzo forame sacrale<br></p>",
 					ChiaviTsubo: "",
-					noMoxa: false,
-					noGravidanza: false	
 				},
 				{
 					NomeTsubo: "34.BL. Xialiao (Fessura inferiore)",
 					AzioniTsubo: "<p><b>M.T.C.<br></b><span>• </span>Punto d'incontro dei meridiani di <span style=\"font-style:italic;\">Vescica urinaria</span> e <span style=\"font-style:italic;\">Cistifellea</span><br><span>• </span>Regola il Jiao inferiore <br><span>• </span>Facilita la minzione e la defecazione<br><span>• </span>Regola il ciclo mestruale <br><span>• </span>Arresta la leucorrea<br><span>• </span>Risolve i problemi di lombi e gambe<br></p><p><b>Applicazioni</b><br><span>• </span>Disturbi ginecologici<br><span>• </span>Disturbi mestruali<br><span>• </span>Disturbi intestinali</p><p><b>Moxa</b><br><span>• </span>Usato per le patologie di cui sopra sia in modo diretto che indiretto<br></p><p><b>Ubicazione</b><br><span>• </span>Sopra il quarto forame sacrale<br></p>",
 					ChiaviTsubo: "",
-					noMoxa: false,
-					noGravidanza: false	
 				},
 				{
 					NomeTsubo: "35.BL. Huiyang (Incontro dello Yang)",
 					AzioniTsubo: "<p><b>M.T.C.</b><br><span>• </span>Riequilibra il Jiao inferiore <br><span>• </span>Purifica l'Umidità-Calore<br><span>• </span>Risolve problemi al coccige <br><span>• </span>Tratta le emorroidi interne ed esterne<br></p><p><b>Applicazioni</b><br><span>• </span>Dolore al coccige ed emorroidi<br><span>• </span>Dissenteria<br><span>• </span>Feci con presenza di sangue<br><span>• </span>Emorroidi croniche<br><span>• </span>Prurito ai genitali<br><span>• </span>Gonfiore dei genitali<br><span>• </span>Leucorrea<br><span>• </span>Prolasso rettale<br></p><p><b>Moxa</b><br><span>• </span>Controindicato<br></p><p><b>Ubicazione</b><br><span>• </span>0,5 cun a lato di Vaso governatore<br><span>• </span>All'altezza della punta del coccige<br></p>",
 					ChiaviTsubo: "",
-					noMoxa: true,
-					noGravidanza: false	
 				},
 				{
 					NomeTsubo: "36.BL. Chengfu (Contenere e sostenere)",
 					AzioniTsubo: "<p><b>M.T.C.</b><br><span>• </span>Favorisce la circolazione del Qi nel meridiano<br><span>• </span>Rilassa i muscoli e allevia il dolore<br><span>• </span>Tratta le emorroidi<br><span>• </span>Riequilibra il Jiao inferiore<br></p><p><b>Applicazioni</b><br><span>• </span>Sindrome atrofica della gamba<br><span>• </span>Sciatalgie<br><span>• </span>Dolore che si irradia lungo il meridiani dalla regione lombare e dai glutei<br><span>• </span>Defecazione difficoltosa<br><span>• </span>Emissione seminale<br><span>• </span>Freddo nell'utero<br><span>• </span>Emorroidi croniche o sanguinanti <br><span>• </span>Dolore ai genitali<br></p><p><b>Moxa</b><br><span>• </span>Usato per le patologie di cui sopra sia in modo diretto che indiretto<br></p><p><b>Ubicazione</b><br><span>• </span>Sotto il grande gluteo <br><span>• </span>Sulla verticale di 40.BL <br><span>• </span>Nel centro della piega trasversale del gluteo <br><span>• </span>In una depressione tra i muscoli posteriori della coscia<br></p>",
 					ChiaviTsubo: "",
-					noMoxa: false,
-					noGravidanza: false	
 				},
 				{
 					NomeTsubo: "37.BL. Yinmen (Porta dell'abbondanza)",
 					AzioniTsubo: "<p><b>M.T.C.</b><br><span>• </span>Favorisce la circolazione del Qi nel meridiano<br><span>• </span>Allevia il dolore<br><span>• </span>Migliora lo stato del rachide<br></p><p><b>Applicazioni</b><br><span>• </span>Trattare spesso, specie se dolente alla pressione, nella sciatica con dolore che si irradia dai glutei lungo il meridiano<br><span>• </span>Ostruzione dolorosa e sindrome atrofica dell'arto inferiore<br><span>• </span>Dolore e rigidità del rachide<br></p><p><b>Moxa</b><br><span>• </span>Usato per le patologie di cui sopra sia in modo diretto che indiretto<br></p><p><b>Ubicazione</b><br><span>• </span>Sulla parte posteriore della coscia <br><span>• </span>Nella depressione tra i muscoli posteriori<br><span>• </span>A 6 cun di distanza da 36.BL e 8 cun da 40.BL<br><span>• </span>Sulla verticale che collega questi due punti<br></p>",
 					ChiaviTsubo: "",
-					noMoxa: false,
-					noGravidanza: false	
 				},
 				{
 					NomeTsubo: "38.BL. Fuxi (Chiave galleggiante)",
 					AzioniTsubo: "<p><b>M.T.C.</b><br><span>• </span>Rilassa i muscoli<br><span>• </span>Allevia il dolore<br><span>• </span>Purifica il Calore<br><span>• </span>Risolve le contratture<br></p><p><b>Applicazioni</b><br><span>• </span>Intorpidimento delle natiche <br><span>• </span>Contrattura e dolore alla coscia esterna<br><span>• </span>Sindrome coleriforme acuta con crampi<br><span>• </span>Annodamento dell'Intestino crasso<br><span>• </span>Urine calde<br><span>• </span>Contrattura dei muscoli della zona poplitea<br><span>• </span>Calore nell'Intestino tenue<br></p><p><b>Moxa</b><br><span>• </span>Controindicato<br></p><p><b>Ubicazione</b><br><span>• </span>All'altezza del cavo popliteo<br><span>• </span>1 cun al di sopra di 39.BL<br><span>• </span>Sul lato mediale del tendine muscolo bicipite femorale<br></p>",
 					ChiaviTsubo: "",
-					noMoxa: true,
-					noGravidanza: false	
 				},
 				{
 					NomeTsubo: "39.BL. Weiyang (Esterno della curva)",
 					AzioniTsubo: "<p><span style=\"font-weight:bold;\">M.T.C.<br></span><span>• </span>Punto <span style=\"font-style:italic;\">he</span>-mare del meridiano di <span style=\"font-style:italic;\">Triplice riscaldatore</span><br><span>• </span>Armonizza il meridiano di Triplice riscaldatore<br><span>• </span>Regolarizza la diuresi<br><span>• </span>Favorisce la circolazione del Qi nel meridiano<br><span>• </span>Allevia il dolore<br></p><p><b>Applicazioni</b><br><span>• </span>Rigidità e dolore alla colonna lombare<br><span>• </span>Dolore lombare che si irradia all'addome<br><span>• </span>Contratture e dolore alla gamba e al piede<br><span>• </span>Distensione e pienezza del basso ventre<br><span>• </span>Emorroidi<br><span>• </span>Stitichezza<br><span>• </span>Regola la funzione urinaria<br><span>• </span>Minzione difficoltosa<br><span>• </span>Ritenzione di urine<br><span>• </span>Disfunzione urinaria dolorosa<br></p><p><b>Moxa</b><br><span>• </span>Controindicato<br></p><p><b>Ubicazione</b><br><span>• </span>All'estremità laterale del cavo popliteo<br><span>• </span>Nella depressione mediale al tendine del bicipite femorale<br><span>• </span>Si localizza meglio a ginocchio leggermente flesso<br></p>",
 					ChiaviTsubo: "",
-					noMoxa: true,
-					noGravidanza: false	
 				},
 				{
 					NomeTsubo: "40.BL. Weizhong (Centro della curva)",
 					AzioniTsubo: "<p><span style=\"font-weight:bold;\">M.T.C.<br></span><span>• </span>Punto <span style=\"font-style:italic;\">he</span>-mare e Terra del meridiano di <span style=\"font-style:italic;\">Vescica urinaria</span><br><span>• </span>Punto di comando di Gao Wu<br><span>• </span>Punto Stella del cialo Ma Danyang<br><span>• </span>Rinforza le ginocchia e la regione lombare<br><span>• </span>Giova alla Vescica<br><span>• </span>Rinfresca il sangue<br><span>• </span>Facilita la circolazione del Qi nel meridiano<br><span>• </span>Allevia il dolore<br><span>• </span>Purifica il Calore estivo <br><span>• </span>Blocca vomito e dissenteria<br></p><p><b>Applicazioni</b><br><span>• </span>Ostruzione dolorosa degli arti inferiori<br><span>• </span>Sindrome atrofica<br><span>• </span>Patologie del ginocchio<br><span>• </span>Debolezza delle gambe<br><span>• </span>Sciatica<br><span>• </span>Emiplegia<br><span>• </span>Purifica il Calore dal sangue<br><span>• </span>Noduli sottocutanei dolorosi<br><span>• </span>Eczema<br><span>• </span>Orticaria<br><span>• </span>Epistassi<br><span>• </span>Tratta le malattie febbrili in assenza di sudorazione<br><span>• </span>Brividi e febbre alterni<br><span>• </span>Malaria<br><span>• </span>Sindrome coleriforme acuta<br><span>• </span>Sindrome dissenterica<br><span>• </span>Sete incessante<br><span>• </span>Danni da Calore estivo <br><span>• </span>Vomito e diarrea<br></p><p><b>Moxa</b><br><span>• </span>Controindicato<br></p><p><b>Ubicazione</b><br><span>• </span>Sulla piega poplitea<br><span>• </span>Sul dorso del ginocchio<br><span>• </span>Nella depressione a metà strada tra il tendine del muscolo bicipite femorale e il semitendinoso<br></p>",
 					ChiaviTsubo: "",
-					noMoxa: true,
-					noGravidanza: false	
 				},
 				{
 					NomeTsubo: "41.BL. Fufen (Ramo attaccato)",
 					AzioniTsubo: "<p><span style=\"font-weight:bold;\">M.T.C.<br></span><span>• </span>Punto d'incontro dei meridiani di <span style=\"font-style:italic;\">Vescica urinaria </span>e <span style=\"font-style:italic;\">Intestino tenue</span><br><span>• </span>Espelle Freddo e Vento<br><span>• </span>Facilita la circolazione del Qi nel canale <br><span>• </span>Allevia il dolore<br></p><p><b>Applicazioni</b><br><span>• </span>Rigidità e male al collo<br><span>• </span>Dolore al dorso irradiato alla testa<br><span>• </span>Contrattura di spalla, scapola e dorso<br><span>• </span>Esaurimento da Vento localizzato negli interstizi<br></p><p><b>Moxa</b><br><span>• </span>Usato per le patologie di cui sopra sia in modo diretto che indiretto<br></p><p><b>Ubicazione</b><br><span>• </span>A livello del bordo inferiore dal processo spinoso della seconda vertebra toracica (D2)<br><span>• </span>A livello di 12.BL<br><span>• </span>3 cun a lato alla linea mediana<br></p>",
 					ChiaviTsubo: "",
-					noMoxa: false,
-					noGravidanza: false	
 				},
 				{
 					NomeTsubo: "42.BL. Pohu (Porta dell'anima corporea)",
 					AzioniTsubo: "<p><b>M.T.C.</b><br><span>• </span>Calma la tosse e la dispnea<br><span>• </span>Alimenta e rafforza il Polmone<br><span>• </span>Favorisce la circolazione del Qi nel meridiano<br><span>• </span>Allevia il dolore<br></p><p><b>Applicazioni</b><br><span>• </span>Indicato per forme di grave esaurimento dei Polmoni <br><span>• </span>Tosse da esaurimento con Calore nel corpo<br><span>• </span>Atrofia del Polmone <br><span>• </span>Non viene usato spesso nella pratica clinica moderna<br></p><p><b>Moxa</b><br><span>• </span>Usato per le patologie di cui sopra sia in modo diretto che indiretto<br></p><p><b>Ubicazione</b><br><span>• </span>A livello del bordo inferiore del processo spinoso della terza vertebra toracica (D3)<br><span>• </span>A livello di 13.BL<br><span>• </span>3 cun a lato alla linea mediana<br></p>",
 					ChiaviTsubo: "",
-					noMoxa: false,
-					noGravidanza: false	
 				},
 				{
 					NomeTsubo: "43.BL. Gaohuangshu (Shu della regione vitale)",
 					AzioniTsubo: "<p><b>M.T.C.</b><br><span>• </span>Alimenta il Qi originale<br><span>• </span>Rafforza Polmoni, Cuore, Reni, Milza e Stomaco. <br><span>• </span>Nutre lo Yin e purifica il Calore<br><span>• </span>Calma lo Shen<br></p><p><b>Applicazioni</b><br><span>• </span>Asma<br><span>• </span>Tosse<br><span>• </span>Sudorazione notturna<br><span>• </span>Tosse con sangue<br><span>• </span>Scarsa memoria<br><span>• </span>Insonnia<br><span>• </span>Mania da flegma-Fuoco<br><span>• </span>Emissione seminale<br><span>• </span>Impotenza<br><span>• </span>Debolezza e deficit di Milza e Stomaco<br><span>• </span>Cibo non digerito<br><span>• </span>Debolezza degli arti<br><span>• </span>Vomito di sangue<br></p><p><b>Moxa</b><br><span>• </span>Usato per le patologie di cui sopra sia in modo diretto che indiretto<br></p><p><b>Ubicazione</b><br><span>• </span>A livello del bordo inferiore del processo spinoso della quarta vertebra toracica (D4)<br><span>• </span>A livello di 14.BL<br><span>• </span>3 cun a lato alla linea mediana<br></p>",
 					ChiaviTsubo: "",
-					noMoxa: false,
-					noGravidanza: false	
 				},
 				{
 					NomeTsubo: "44.BL. Shentang (Casa dello Shen)",
 					AzioniTsubo: "<p><b>M.T.C.</b><br><span>• </span>Regola e facilita la circolazione del Qi nel meridiano<br><span>• </span>Allevia il dolore e libera il petto<br></p><p><b>Applicazioni</b><br><span>• </span>Tratta il dolore alla parte alta del dorso<br><span>• </span>Dolore alla spalla e al dorso che si irradia al petto<br><span>• </span>Asma<br><span>• </span>Tosse<br><span>• </span>Dispnea<br><span>• </span>Pienezza del petto con Qi ribelle<br></p><p><b>Moxa</b><br><span>• </span>Usato per le patologie di cui sopra sia in modo diretto che indiretto<br></p><p><b>Ubicazione</b><br><span>• </span>A livello del bordo inferiore del processo spinoso della quinta vertebra toracica (D5)<br><span>• </span>A livello di 15.BL<br><span>• </span>3 cun a lato alla linea mediana</p>",
 					ChiaviTsubo: "",
-					noMoxa: false,
-					noGravidanza: false	
 				},
 				{
 					NomeTsubo: "45.BL. Yixi",
 					AzioniTsubo: "<p><b>M.T.C.</b><br><span>• </span>Rafforza Qi e sangue <br><span>• </span>Riduce il Qi nel Polmone<br><span>• </span>Espelle il vento<br><span>• </span>Purifica il Calore<br><span>• </span>Allevia il dolore<br></p><p><b>Applicazioni</b><br><span>• </span>Cefalea e dolore al petto irradiato ai lombi<br><span>• </span>Capogiri visivi<br><span>• </span>Epistassi<br><span>• </span>Malaria<br><span>• </span>Dolore oculare<br><span>• </span>Indicato anche per tosse<br><span>• </span>Dispnea<br><span>• </span>Malattia febbrile senza sudorazione<br><span>• </span>Attacco da Vento senza sudorazione<br><span>• </span>Dolore a spalla, scapola e dorso,<br><span>• </span>Dolore al petto irradiato nella regione lombare<br><span>• </span>Dolore alla regione costale che si irradia al Cuore e al Polmone<br><span>• </span>Contrattura ascellare<br><span>• </span>Cefalea nel bambino mentre mangia<br></p><p><b>Moxa</b><br><span>• </span>Usato per le patologie di cui sopra sia in modo diretto che indiretto<br></p><p><b>Ubicazione</b><br><span>• </span>A livello del bordo inferiore del processo spinoso della sesta vertebra toracica (D6)<br><span>• </span>A livello di 16.BL<br><span>• </span>3 cun a lato alla linea mediana</p>",
 					ChiaviTsubo: "",
-					noMoxa: false,
-					noGravidanza: false	
 				},
 				{
 					NomeTsubo: "46.BL. Geguan (Cancello del diaframma)",
 					AzioniTsubo: "<p><b>M.T.C.</b><br><span>• </span>Riduce il Qi ribelle<br><span>• </span>Favorisce la circolazione nel meridiano<br><span>• </span>Giova al Jiao medio<br><span>• </span>Armonizza il diaframma<br><span>• </span>Allevia il dolore<br></p><p><b>Applicazioni</b><br><span>• </span>Tratta il dolore al corpo<br><span>• </span>Rigidità articolare<br><span>• </span>Problemi al dorso e alla colonna<br><span>• </span>Dolore e difficoltà a flettere ed estendere  il rachide<br><span>• </span>Dolore al dorso con avversione al Freddo<br><span>• </span>Regola lo stomaco, il diaframma e il petto<br><span>• </span>Vomito<br><span>• </span>Vomito di sangue<br><span>• </span>Eruttazioni<br><span>• </span>Difficoltà di ingestione<br><span>• </span>Sospiri<br><span>• </span>Pienezza ed oppressione a petto e diaframma<br></p><p><b>Moxa</b><br><span>• </span>Usato per le patologie di cui sopra sia in modo diretto che indiretto<br></p><p><b>Ubicazione</b><br><span>• </span>A livello del bordo inferiore del processo spinoso della settima vertebra toracica (D7)<br><span>• </span>A livello di 17.BL<br><span>• </span>3 cun a lato alla linea mediana</p>",
 					ChiaviTsubo: "",
-					noMoxa: false,
-					noGravidanza: false	
 				},
 				{
 					NomeTsubo: "47.BL. Hunmen (Porta dell'anima etera)",
 					AzioniTsubo: "<p><b>M.T.C.</b><br><span>• </span>Rilassa i muscoli <br><span>• </span>Riequilibra il Jiao medio<br><span>• </span>Diffonde il Qi di Fegato<br></p><p><b>Applicazioni</b><br><span>• </span>Vomito<br><span>• </span>Diarrea<br><span>• </span>Defecazione irregolare<br><span>• </span>Borborigmi<br><span>• </span>Difficoltà di ingestione<br><span>• </span>Tratta gli spasmi e i dolori di dorso, petto, tendini e articolazioni<br><span>• </span>Dolore ad articolazioni e ossa di tutto il corpo<br><span>• </span>Contrattura muscolare<br><span>• </span>Pienezza e distensione della zona costale laterale <br><span>• </span>Dolore al dorso<br></p><p><b>Moxa</b><br><span>• </span>Usato per le patologie di cui sopra sia in modo diretto che indiretto<br></p><p><b>Ubicazione</b><br><span>• </span>A livello del bordo inferiore del processo spinoso della nona vertebra toracica (D9)<br><span>• </span>A livello di 18.BL<br><span>• </span>3 cun a lato alla linea mediana</p>",
 					ChiaviTsubo: "",
-					noMoxa: false,
-					noGravidanza: false	
 				},
 				{
 					NomeTsubo: "48.BL. Yanggang (Anello della chiave dello Yang)",
 					AzioniTsubo: "<p><b>M.T.C.</b><br><span>• </span>Riequilibra il Jiao medio e la Cistifellea<br><span>• </span>Purifica l'Umidità-Calore<br></p><p><b>Applicazioni</b><br><span>• </span>Dolore e distensione addominale<br><span>• </span>Defecazione irregolare e sindrome dissenterica<br><span>• </span>Patologie del sangue<br><span>• </span>Borborigmi<br><span>• </span>Mancanza di appetito<br><span>• </span>Purifica l'Umidità-Calore dalla Vescica Biliare<br><span>• </span>Dolore alla zona costale laterale<br><span>• </span>Faccia e occhi gialli<br><span>• </span>Urine scure e poco frequenti<br></p><p></p><p><b>Moxa</b><br><span>• </span>Usato per le patologie di cui sopra sia in modo diretto che indiretto<br></p><p><b>Ubicazione</b><br><span>• </span>A livello del bordo inferiore del processo spinoso della decima vertebra toracica (D10)<br><span>• </span>A livello di 19.BL<br><span>• </span>3 cun a lato alla linea mediana</p><p></p>",
 					ChiaviTsubo: "",
-					noMoxa: false,
-					noGravidanza: false	
 				},
 				{
 					NomeTsubo: "49.BL. Yishe (Dimora del pensiero)",
 					AzioniTsubo: "<p><b>M.T.C.</b><br><span>• </span>Riequilibra Stomaco e Milza<br><span>• </span>Purifica l'Umidità-Calore<br></p><p><b>Applicazioni</b><br><span>• </span>Faccia e occhi gialli<br><span>• </span>Vomito<br><span>• </span>Urine rosso-giallastre<br><span>• </span>Distensione e pienezza addominali<br><span>• </span>Distensione e dolore alla zona costale laterale e al petto<br><span>• </span>Purifica l'Umidità-Calore dai tre Jiao<br></p><p></p><p><b>Moxa</b><br><span>• </span>Usato per le patologie di cui sopra sia in modo diretto che indiretto<br></p><p><b>Ubicazione</b><br><span>• </span>A livello del bordo inferiore del processo spinoso della undicesima vertebra toracica (D11)<br><span>• </span>A livello di 20.BL<br><span>• </span>3 cun a lato alla linea mediana</p><p></p>",
 					ChiaviTsubo: "",
-					noMoxa: false,
-					noGravidanza: false	
 				},
 				{
 					NomeTsubo: "50.BL. Weicang (Granaio dello Stomaco)",
 					AzioniTsubo: "<p><b>M.T.C.</b><br><span>• </span>Riequilibra il Jiao medio<br> </p><p><b>Applicazioni</b><br><span>• </span>Dolore dorsale<br><span>• </span>Disturbi infantili riguardanti la nutrizione<br><span>• </span>Edema<br><span>• </span>Pienezza addominale<br><span>• </span>Difficoltà ingerire<br><span>• </span>Avversione al Freddo<br></p><p></p><p><b>Moxa</b><br><span>• </span>Usato per le patologie di cui sopra sia in modo diretto che indiretto<br></p><p><b>Ubicazione</b><br><span>• </span>A livello del bordo inferiore del processo spinoso della dodicesima vertebra toracica (D12)<br><span>• </span>A livello di 21.BL<br><span>• </span>3 cun a lato alla linea mediana</p><p></p>",
 					ChiaviTsubo: "",
-					noMoxa: false,
-					noGravidanza: false	
 				},
 				{
 					NomeTsubo: "51.BL. Huangmen (Porta vitale)",
 					AzioniTsubo: "<p><b>M.T.C.</b><br><span>• </span>Giova al seno <br><span>• </span>Disperde i ristagni<br> </p><p><b>Applicazioni</b><br><span>• </span>Tratta le patologie del seno (pienezza e dolore) <br><span>• </span>Stipsi<br><span>• </span>Dolore epigastrico<br></p><p></p><p><b>Moxa</b><br><span>• </span>Usato per le patologie di cui sopra sia in modo diretto che indiretto<br></p><p><b>Ubicazione</b><br><span>• </span>A livello del bordo inferiore del processo spinoso della prima vertebra lombare (L1)<br><span>• </span>A livello di 22.BL<br><span>• </span>3 cun a lato alla linea mediana</p><p></p>",
 					ChiaviTsubo: "",
-					noMoxa: false,
-					noGravidanza: false	
 				},
 				{
 					NomeTsubo: "52.BL. Zhishi (Residenza della volontà)",
 					AzioniTsubo: "<p><b>M.T.C.</b><br><span>• </span>Regola la diuresi<br><span>• </span>Rinforza i Reni <br><span>• </span>Potenzia la zona lombare<br></p><p><b>Applicazioni</b><br><span>• </span>Edema<br><span>• </span>Eiaculazione precoce<br><span>• </span>Emissione seminale durante il sonno<br><span>• </span>Impotenza<br><span>• </span>Minzione a goccia e difficoltosa<br><span>• </span>Colica renale<br><span>• </span>Dolore ai muscoli lombari<br></p><p></p><p><b>Moxa</b><br><span>• </span>Usato per le patologie di cui sopra sia in modo diretto che indiretto<br></p><p><b>Ubicazione</b><br><span>• </span>A livello del bordo inferiore del processo spinoso della seconda vertebra lombare (L2)<br><span>• </span>A livello di 23.BL<br><span>• </span>3 cun a lato alla linea mediana</p><p></p>",
 					ChiaviTsubo: "",
-					noMoxa: false,
-					noGravidanza: false	
 				},
 				{
 					NomeTsubo: "53.BL. Baohuang (Centri vitali dalla vescica)",
 					AzioniTsubo: "<p><b>M.T.C.</b><br><span>• </span>Riequilibra il Jiao inferiore<br><span>• </span>Giova alla zona lombare <br><span>• </span>Favorisce la diuresi<br><span>• </span>Facilita la circolazione del Qi nel meridiano<br><span>• </span>Allevia il dolore<br></p><p><b>Applicazioni</b><br><span>• </span>Sciatalgia<br><span>• </span>Dolore lombare<br><span>• </span>Dolore che si irradia alla natica e scende alla gamba<br><span>• </span>Riequilibra la defecazione e la minzione<br><span>• </span>Impossibilità di urinare o defecare<br><span>• </span>Ritenzione di urine<br><span>• </span>Minzione a goccia<br><span>• </span>Borborigmi<br><span>• </span>Edema<br><span>• </span>Feci con presenza di cibo non digerito<br></p><p></p><p><b>Moxa</b><br><span>• </span>Usato per le patologie di cui sopra sia in modo diretto che indiretto<br></p><p><b>Ubicazione</b><br><span>• </span>A livello del bordo inferiore del processo spinoso della seconda vertebra sacrale<br><span>• </span>3 cun a lato alla linea mediana</p><p></p>",
 					ChiaviTsubo: "",
-					noMoxa: false,
-					noGravidanza: false	
 				},
 				{
 					NomeTsubo: "54.BL. Zhibian (Limite dell'ordine)",
 					AzioniTsubo: "<p><b>M.T.C.</b><br><span>• </span>Dona beneficio alla zona lombare<br><span>• </span>Riequilibra la diuresi <br><span>• </span>Tratta le emorroidi<br><span>• </span>Favorisce la circolazione del Qi nel meridiano<br><span>• </span>Allevia il dolore<br></p><p><b>Applicazioni</b><br><span>• </span>Sciatalgia<br><span>• </span>Dolore ai glutei, al sacro e ai lombi<br><span>• </span>Emorroidi<br><span>• </span>Minzione e defecazione difficoltose<br></p><p><b>Moxa</b><br><span>• </span>Usato per le patologie di cui sopra sia in modo diretto che indiretto<br></p><p><b>Ubicazione</b><br><span>• </span>Nella depressione sulla natica<br><span>• </span>3 cun laterali allo iato sacrococcigeo<br></p>",
 					ChiaviTsubo: "",
-					noMoxa: false,
-					noGravidanza: false	
 				},
 				{
 					NomeTsubo: "55.BL. Heyang (Confluenza dello Yang)",
 					AzioniTsubo: "<p><b>M.T.C.</b><br><span>• </span>Tratta il dolore ai genitali<br><span>• </span>Arresta il sanguinamento uterino<br><span>• </span>Favorisce la circolazione del Qi nel meridiano<br><span>• </span>Allevia il dolore<br></p><p><b>Applicazioni</b><br><span>• </span>Usato poco frequentemente<br><span>• </span>Dolore lombare irradiato all'addome<br><span>• </span>Pesantezza delle ginocchia<br><span>• </span>Calore nell'interno della coscia<br><span>• </span>Difficoltà a camminare<br><span>• </span>Dolori violenti ai genitali<br><span>• </span>Leucorrea<br><span>• </span>Sanguinamento uterino<br></p><p><b>Moxa</b><br><span>• </span>Usato per le patologie di cui sopra sia in modo diretto che indiretto. <br></p><p><b>Ubicazione</b><br><span>• </span>Nella depressione tra i due capi del muscolo gastrocnemio<br><span>• </span>Sull'arto inferiore<br><span>• </span>Sulla linea che collega 57.BL e 40.BL, 2 cun sotto quest'ultimo</p>",
 					ChiaviTsubo: "",
-					noMoxa: false,
-					noGravidanza: false	
 				},
 				{
 					NomeTsubo: "56.BL. Chengjin (Supporto dei tendini)",
 					AzioniTsubo: "<p><b>M.T.C.</b><br><span>• </span>Rilassa i tendini <br><span>• </span>Giova al piede<br><span>• </span>Favorisce la circolazione del Qi nel meridiano<br><span>• </span>Allevia il dolore<br></p><p><b>Applicazioni</b><br><span>• </span>Tratta i disturbi riguardanti il percorso del meridiano<br><span>• </span>Mal di testa<br><span>• </span>Capogiri<br><span>• </span>Calore nella testa<br><span>• </span>Rinite<br><span>• </span>Epistassi<br><span>• </span>Emorroidi<br><span>• </span>Dolore alla colonna lombare e alle articolazioni dell'arto inferiore<br></p><p><b>Moxa</b><br><span>• </span>Usato per le patologie di cui sopra sia in modo diretto che indiretto<br></p><p><b>Ubicazione</b><br><span>• </span>Sull'arto inferiore<br><span>• </span>Nel centro del muscolo gastrocnemio<br><span>• </span>Sulla linea che collega 57.BL e 40.BL, 5 cun sotto quest'ultimo (a metà strada tra i 2 punti)</p>",
 					ChiaviTsubo: "",
-					noMoxa: false,
-					noGravidanza: false	
 				},
 				{
 					NomeTsubo: "57.BL. Chengshan (Supporto della montagna)",
 					AzioniTsubo: "<p><b>M.T.C.</b><br><span>• </span>Tratta le emorroidi<br><span>• </span>Giova a piedi<br><span>• </span>Rilassa i tendini<br><span>• </span>Favorisce la circolazione del Qi nel meridiano<br><span>• </span>Allevia il dolore<br></p><p><b>Applicazioni</b><br><span>• </span>Indicato per spasmi e dolore al polpaccio<br><span>• </span>Sciatica<br><span>• </span>Dolore al tallone<br><span>• </span>Emorroidi<br></p><p><b>Moxa</b><br><span>• </span>Usato per le patologie di cui sopra sia in modo diretto che indiretto<br></p><p><b>Ubicazione</b><br><span>• </span>Arto inferiore<br><span>• </span>Nella depressione tra i ventri del muscolo gastrocnemio quando è in flessione<br><span>• </span>Sulla linea che collega 57.BL e 40.BL, 8 cun sotto quest'ultimo<br><span>• </span>A metà strada tra 60.BL e 40.BL</p>",
 					ChiaviTsubo: "",
-					noMoxa: false,
-					noGravidanza: false	
 				},
 				{
 					NomeTsubo: "58.BL. Feiyang (Volare in alto)",
 					AzioniTsubo: "<p><b>M.T.C.</b><br><span>• </span>Espelle il Vento dal canale Taiyang <br><span>• </span>Riequilibra l'alto col basso<br><span>• </span>Favorisce la circolazione del Qi nel meridiano<br><span>• </span>Allevia il dolore<br></p><p><b>Applicazioni</b><br><span>• </span>Dolore sciatico localizzato sul meridiano di Vescica urinaria o Cistifellea<br><span>• </span>Cefalea<br><span>• </span>Capogiri visivi<br><span>• </span>Dolore a collo, occipite, testa e dorso<br><span>• </span>Congestione nasale<br><span>• </span>Epistassi<br><span>• </span>Rinite<br><span>• </span>Emorroidi<br><span>• </span>Debolezza nelle gambe<br><span>• </span>Freddo nella parte inferiore del corpo<br><span>• </span>Dolore lombare<br></p><p><b>Moxa</b><br><span>• </span>Usato per le patologie di cui sopra sia in modo diretto che indiretto<br></p><p><b>Ubicazione</b><br><span>• </span>Sulla gamba<br><span>• </span>1 cun a lato e sotto 57.BL<br><span>• </span>7 cun sopra 60.BL<br></p>",
 					ChiaviTsubo: "",
-					noMoxa: false,
-					noGravidanza: false	
 				},
 				{
 					NomeTsubo: "59.BL. Fuyang (Collo del piede Yang)",
 					AzioniTsubo: "<p><span style=\"font-weight:bold;\">M.T.C.<br></span><span>• </span>Punto <span style=\"font-style:italic;\">xi</span>-fessura del meridiano di <span style=\"font-style:italic;\">Yangqiaomai</span><br><span>• </span>Dona beneficio alla zona lombare e alle gambe<br><span>• </span>Favorisce la circolazione del Qi nel meridiano<br><span>• </span>Allevia il dolore<br></p><p><b>Applicazioni</b><br><span>• </span>Dolore alla coscia<br><span>• </span>Sindrome atrofica della gamba e degli arti<br><span>• </span>Dolore e pesantezza di gambe e ginocchia<br><span>• </span>Ulcerazioni della gamba<br><span>• </span>Sciatica<br><span>• </span>Rossore e gonfiore del malleolo laterale<br><span>• </span>Dolore alla fronte e testa pesante<br><span>• </span>BrividI<br><span>• </span>Febbre<br><span>• </span>Spasmi clonici<br><span>• </span>Sindrome coleriforme acuta con crampi<br></p><p><b>Moxa</b><br><span>• </span>Usato per le patologie di cui sopra sia in modo diretto che indiretto<br></p><p><b>Ubicazione</b><br><span>• </span>Sulla gamba<br><span>• </span>3 cun sopra 60.BL<br></p>",
 					ChiaviTsubo: "",
-					noMoxa: false,
-					noGravidanza: false	
 				},
 				{
 					NomeTsubo: "60.BL. Kunlun (Montagne Kunlun)",
 					AzioniTsubo: "<p><span style=\"font-weight:bold;\">M.T.C.<br></span><span>• </span>Punto <span style=\"font-style:italic;\">jing</span>-fiume e Fuoco del meridiano di <span style=\"font-style:italic;\">Vescica urinaria</span><br><span>• </span>Punto Stella del cielo di Ma Danyang<br><span>• </span>Rinforza il rachide<br><span>• </span>Rilassa i tendini<br><span>• </span>Purifica il calore<br><span>• </span>Calma il Vento<br><span>• </span>Riduce gli eccessi<br><span>• </span>Abbassa lo <span style=\"font-style:italic;\">yang</span><br><span>• </span>Favorisce la circolazione del Qi nel meridiano<br><span>• </span>Allevia il dolore <br><span>• </span>Induce il parto<br></p><p><b>Applicazioni</b><br><span>• </span>Dolore lungo l'intero percorso del meridiano<br><span>• </span>Contrattura della spalla e del dorso<br><span>• </span>Rigidità del collo<br><span>• </span>Dolore lombare, sacrale, coccigeo<br><span>• </span>Dolore all'anca<br><span>• </span>Dolore dietro al ginocchio<br><span>• </span>Emiplegia<br><span>• </span>Sciatica<br><span>• </span>Capogiri<br><span>• </span>Dolore alla testa<br><span>• </span>Trisma mandibolare<br><span>• </span>Epilessia, rinite con epistassi<br><span>• </span>Dolore ai denti superiori<br><span>• </span>Dolore e gonfiore degli occhi<br><span>• </span>Tratta la ritenzione di placenta (facilitando il parto)<br></p><p><b>Moxa</b><br><span>• </span>Usato per le patologie di cui sopra sia in modo diretto che indiretto<br></p><p><b>Ubicazione</b><br><span>• </span>Nella depressione tra la prominenza del malleolo esterno e il tendine d'Achille, con la caviglia flessa<br></p>",
 					ChiaviTsubo: "",
-					noMoxa: false,
-					noGravidanza: false	
 				},
 				{
 					NomeTsubo: "61.BL. Pucan (Rispetto del servo)",
 					AzioniTsubo: "<p><span style=\"font-weight:bold;\">M.T.C.<br></span><span>• </span>Punto d'incontro dei meridiani di <span style=\"font-style:italic;\">Vescica urinaria</span> e <span style=\"font-style:italic;\">Yangqiaomai</span><br><span>• </span>Favorisce la circolazione del Qi nel meridiano<br><span>• </span>Allevia il dolore<br><span>• </span>Rilassa i tendini<br></p><p><b>Applicazioni</b><br><span>• </span>Dolore lombare<br><span>• </span>Atrofia della gamba<br><span>• </span>Sindrome coleriforme acuta con crampi<br><span>• </span>Male al tallone<br><span>• </span>Gonfiore del ginocchio<br><span>• </span>Cefalea<br><span>• </span>Epilessia infantile<br><span>• </span>Disfunzione urinaria dolorosa torbida<br><span>• </span>Perdita di coscienza<br><span>• </span>Testa pesante<br></p><p><b>Moxa</b><br><span>• </span>Usato per le patologie di cui sopra sia in modo diretto che indiretto<br></p><p><b>Ubicazione</b><br><span>• </span>Sul lato esterno del piede<br><span>• </span>Nella depressione molle del calcagno<br><span>• </span>1.5 cun sotto 60.BL<br></p>",
 					ChiaviTsubo: "",
-					noMoxa: false,
-					noGravidanza: false	
 				},
 				{
 					NomeTsubo: "62.BL. Shenmai (Ampliamento del vaso)",
 					AzioniTsubo: "<p><span style=\"font-weight:bold;\">M.T.C.<br></span><span>• </span>Punto Confluente del meridiano di <span style=\"font-style:italic;\">Yangqiaomai</span><br><span>• </span>Uno dei 13 \"punti Demone\" per il medico Sun Simiao indicati per curare la dissociazione tra Hun e Po<br><span>• </span>Apre e riequilibra il meridiano Yangqiaomai<br><span>• </span>calma lo Shen<br><span>• </span>Espelle il Vento esterno<br><span>• </span>Calma il Vento interno<br><span>• </span>Favorisce la circolazione del Qi nel meridiano<br><span>• </span>Allevia il dolore<br></p><p><b>Applicazioni</b><br><span>• </span>Insonnia <br><span>• </span>Epilessia <br><span>• </span>Malattie degli occhi<br><span>• </span>Capogiri<br><span>• </span>Mal di testa<br><span>• </span>Cefalea laterale e mediana<br><span>• </span>Sordità<br><span>• </span>Acufeni<br><span>• </span>Impossibilità di parlare<br><span>• </span>Emiplegia<br><span>• </span>Ictus<br><span>• </span>Tetania<br><span>• </span>Trisma mandibolare<br><span>• </span>Occhi fissi in alto<br><span>• </span>Rigidità del collo<br><span>• </span>Brividi e febbre<br><span>• </span>Dolore all'anca e alla zona lombare<br></p><p><b>Moxa</b><br><span>• </span>Usato per le patologie di cui sopra sia in modo diretto che indiretto<br></p><p><b>Ubicazione</b><br><span>• </span>Sul lato esterno del piede<br><span>• </span>In una depressione dietro ai tendini peronei<br><span>• </span>A 0.5 cun circa sotto il bordo inferiore del malleolo esterno<br></p>",
 					ChiaviTsubo: "",
-					noMoxa: false,
-					noGravidanza: false	
 				},
 				{
 					NomeTsubo: "63.BL. Jinmen (Porta d'oro)",
 					AzioniTsubo: "<p><span style=\"font-weight:bold;\">M.T.C.<br></span><span>• </span>Punto <span style=\"font-style:italic;\">xi</span>-fessura del meridiano di <span style=\"font-style:italic;\">Vescica urinaria</span><br><span>• </span>Punto d'incontro dei meridiani di <span style=\"font-style:italic;\">Vescica urinaria</span> e <span style=\"font-style:italic;\">Yangqiaomai</span><br><span>• </span>Rilassa i tendini<br><span>• </span>Calma il Vento<br><span>• </span>Riduce l'acuzie<br><span>• </span>Favorisce la circolazione del Qi nel meridiano<br><span>• </span>Allevia il dolore<br></p><p><b>Applicazioni</b><br><span>• </span>Male ai genitali esterni<br><span>• </span>Male ai testicoli o allo scroto<br><span>• </span>Dolore addominale intenso<br><span>• </span>Ernia<br><span>• </span>Stitichezza<br><span>• </span>Ritenzione urinaria<br><span>• </span>Diarrea <br><span>• </span>Vomito <br><span>• </span>Epilessia <br></p><p><b>Moxa</b><br><span>• </span>Usato per le patologie di cui sopra sia in modo diretto che indiretto<br></p><p><b>Ubicazione</b><br><span>• </span>Sul lato esterno del piede<br><span>• </span>Nella depressione dietro la tuberosità del quinto osso metatarsale<br></p>",
 					ChiaviTsubo: "",
-					noMoxa: false,
-					noGravidanza: false	
 				},
 				{
 					NomeTsubo: "64.BL. Jinggu (Osso capitale)",
 					AzioniTsubo: "<p><span style=\"font-weight:bold;\">M.T.C.<br></span><span>• </span>Punto <span style=\"font-style:italic;\">yuan</span>-sorgente del meridiano di <span style=\"font-style:italic;\">Vescica urinaria</span><br><span>• </span>Placa lo Shen<br><span>• </span>Rilassa i tendini<br><span>• </span>Elimina il Vento<br><span>• </span>Purifica la testa<br><span>• </span>Purifica gli occhi<br><span>• </span>Favorisce la circolazione del Qi nel meridiano<br><span>• </span>Allevia il dolore<br></p><p><span><b>Applicazioni</b></span><br><span>• </span>Calma il cuore<br><span>• </span>Palpitazioni<br><span>• </span>Sindrome maniaco depressiva<br><span>• </span>Mal di testa acuto<br><span>• </span>Capogiri visivi<br><span>• </span>Ririnite con epistassi incessante<br><span>• </span>Rossore del canto interno<br><span>• </span>Piedi freddi<br></p><p><b>Moxa</b><br><span>• </span>Usato per le patologie di cui sopra sia in modo diretto che indiretto<br></p><p><b>Ubicazione</b><br><span>• </span>Sul lato esterno del piede<br><span>• </span>Nella depressione davanti e sotto la tuberosità del quinto osso metatarsale<br></p>",
 					ChiaviTsubo: "",
-					noMoxa: false,
-					noGravidanza: false	
 				},
 				{
 					NomeTsubo: "65.BL. Shugu (Restringere l'osso)",
 					AzioniTsubo: "<p><span style=\"font-weight:bold;\">M.T.C.<br></span><span>• </span>Punto <span style=\"font-style:italic;\">shu</span>-corrente e Legno del meridiano di <span style=\"font-style:italic;\">Vescica urinaria</span><br><span>• </span>Purifica il Calore, testa e occhi<br><span>• </span>Elimina il gonfiore<br><span>• </span>Favorisce la circolazione del Qi nel meridiano<br><span>• </span>Allevia il dolore<br></p><p><b>Applicazioni</b><br><span>• </span>Collo rigido<br><span>• </span>Cefalea occipitale<br><span>• </span>Dolore e rossore al canto interno<br><span>• </span>Noduli dolenti<br><span>• </span>Emorroidi<br><span>• </span>Febbre<br><span>• </span>Sordità<br></p><p><b>Moxa</b><br><span>• </span>Usato per le patologie di cui sopra sia in modo diretto che indiretto<br></p><p><b>Ubicazione</b><br><span>• </span>Sul lato esterno del piede<br><span>• • </span>Nella depressione dietro e sotto la testa del quinto osso metatarsale<br></p>",
 					ChiaviTsubo: "",
-					noMoxa: false,
-					noGravidanza: false	
 				},
 				{
 					NomeTsubo: "66.BL. Zutonggu (Valle di collegamento del piede)",
 					AzioniTsubo: "<p><span style=\"font-weight:bold;\">M.T.C.<br></span><span>• </span>Punto <span style=\"font-style:italic;\">ying</span>-ruscello e Acqua del meridiano di <span style=\"font-style:italic;\">Vescica urinaria</span><br><span>• </span>Riduce il Qi di Stomaco e Polmone<br><span>• </span>Purifica la testa</p><p><b>Applicazioni</b><br><span>• </span>Pienezza del petto<br><span>• </span>Vomito<br><span>• </span>Dispnea<br><span>• </span>Tosse<br><span>• </span>Capogiri visivi<br><span>• </span>Dolore al collo<br><span>• </span>Epistassi<br><span>• </span>Pesantezza della testa<br></p><p><b>Moxa</b><br><span>• </span>Usato per le patologie di cui sopra sia in modo diretto che indiretto<br></p><p><b>Ubicazione</b><br><span>• </span>Sul lato esterno del piede<br><span>• </span>Nella depressione antero-inferiore alla quinta articolazione metatarso-falangea<br></p>",
 					ChiaviTsubo: "",
-					noMoxa: false,
-					noGravidanza: false	
 				},
 				{
 					NomeTsubo: "67.BL. Zhiyin (Raggiungere lo Yin)",
 					AzioniTsubo: "<p><span style=\"font-weight:bold;\">M.T.C.<br></span><span>• </span>Punto <span style=\"font-style:italic;\">jing</span>-pozzo e Metallo del meridiano di <span style=\"font-style:italic;\">Vescica urinaria</span><br><span>• </span>Facilita il parto<br><span>• </span>Fa girare il feto<br><span>• </span>Purifica il Calore<br><span>• </span>Espelle il Vento negli occhi e nella testa<br></p><p><b>Applicazioni</b><br><span>• </span>Mal di testa acuto<br><span>• </span>Disturbi al collo e agli occhi<br><span>• </span>Epistassi e disturbi al naso<br><span>• </span>Acufeni e disturbi alle orecchie<br><span>• </span>Ritenzione della placenta<br><span>• </span>Difficoltà nel parto<br><span>• </span>Cattiva posizione del feto <br></p><p><b>Moxa</b><br><span>• </span>Per far girare il feto: indicato a questo scopo, il trattamento con coni di moxa o sigari ogni giorno, fino a quando il feto non si gira. Da trattare preferibilmente intorno alla trentaquattresima settimana di gravidanza. E' importante notare di interrompere il trattamento con la moxa una volta che il feto si è girato, per non indurre nuovamente la malposizione del feto.</p><p><b>Ubicazione</b><br><span>• </span>A circa 0.1 cun dall'angolo ungueale<br><span>• </span>Alla giunzione delle tangenti al bordo e alla base dell'unghia<br><span>• </span>Sul dorso del quinto dito<br></p>",
 					ChiaviTsubo: "",
-					noMoxa: false,
-					noGravidanza: true,
-					
-					coordZoom: "68,359"
 				}
 			]
 		},
 		"KI": {
 			NomeMeridiano: "Rene",
-			cartella: "rene",
 			tsubo: [
 				{
 					NomeTsubo: "1.KI. Yongquan (Sorgente zampillante)",
 					AzioniTsubo: "<p><span style=\"font-weight:bold;\">M.T.C.<br></span><span>• </span>Punto <span style=\"font-style:italic;\">jing</span>-pozzo e Legno del meridiano di <span style=\"font-style:italic;\">Rene</span><br><span>• </span>Calma lo <span style=\"font-style:italic;\">shen</span><br><span>• </span>Riduce l'accumulo dalla testa<br><span>• </span>Ripristina la coscienza<br><span>• </span>Riequilibra lo Yang<br></p><p><b>Applicazioni</b><br><span>• </span>Agitazione<br><span>• </span>Scarsa memoria<br><span>• </span>Follia<br><span>• </span>Paura<br><span>• </span>Rabbia con desiderio di aggressione<br><span>• </span>Insonnia<br><span>• </span>Aiuta tutte le patologie di lingua e gola<br><span>• </span>Congestione e dolore<br><span>• </span>Impossibilità di deglutire<br><span>• </span>Lingua secca<br><span>• </span>Perdita della voce<br><span>• </span>Cefalea<br><span>• </span>Capogiri visivi<br><span>• </span>Visione offuscata<br><span>• </span>Ipertensione<br><span>• </span>Epistassi<br><span>• </span>Epilessia<br><span>• </span>Vampate della menopausa<br><span>• </span>Colpo apoplettico<br></p><p><b>Moxa</b><br><span>• </span>E' consigliata la moxa indiretta<br></p><p><b>Ubicazione</b><br><span>• </span>Sulla pianta del piede<br><span>• </span>Tra il secondo e terzo osso metatarsale<br><span>• </span>A un terzo della distanza tra la base del secondo dito e il tallone<br><span>• </span>Nella depressione che si forma flettendo il piede verso la pianta<br></p>",
 					ChiaviTsubo: "",
-					noMoxa: false,
-					noGravidanza: false	
 				},
 				{
 					NomeTsubo: "2.KI. Rangu (Valle fiammeggiante)",
 					AzioniTsubo: "<p><span style=\"font-weight:bold;\">M.T.C.<br></span><span>• </span>Punto <span style=\"font-style:italic;\">ying</span>-ruscello e Legno del meridiano di <span style=\"font-style:italic;\">Rene</span><br><span>• </span>Normalizza il Jiao inferiore<br><span>• </span>Riequilibra i Reni<br><span>• </span>Purifica il calore vuoto<br><span>• </span>Rafforza il Rene Yang <br></p><p><b>Applicazioni</b><br><span>• </span>Freddo ai piedi e alle gambe<br><span>• </span>Diarrea da freddo<br><span>• </span>Edema<br><span>• </span>Impotenza<br><span>• </span>Sudorazione spontanea<br><span>• </span>Asma<br><span>• </span>Tosse con sangue<br><span>• </span>Prurito ai genitali<br><span>• </span>Mestrui irregolari<br><span>• </span>Sterilità<br><span>• </span>Eccessivo desiderio sessuale<br><span>• </span>Mal di gola e gola secca<br><span>• </span>Sudorazione notturna<br><span>• </span>Emissione notturna di seme<br></p><p><b>Moxa</b><br><span>• </span>E' consigliata la moxa indiretta<br></p><p><b>Ubicazione</b><br><span>• </span>Sull'arco interno del piede (lato mediale)<br><span>• </span>Distalmente e inferiormente rispetto al malleolo interno<br><span>• </span>Localizzato nella depressione infero-distale della tuberosità navicolare<br></p>",
 					ChiaviTsubo: "",
-					noMoxa: false,
-					noGravidanza: false	
 				},
 				{
 					NomeTsubo: "3.KI. Taixi (Corrente suprema)",
 					AzioniTsubo: "<p><span style=\"font-weight:bold;\">M.T.C.<br></span><span>• </span>Punto <span style=\"font-style:italic;\">shu</span>-corrente e Terra del meridiano di <span style=\"font-style:italic;\">Rene</span><br><span>• </span>Rafforza la zona lombare della colonna vertebrale<br><span>• </span>Rafforza lo Yang del Rene<br><span>• </span>Alimenta lo Yin del meridiano<br><span>• </span>Purifica il Calore vuoto<br><span>• </span>Controlla il Qi<br><span>• </span>Giova al Polmone<br><span>• </span>Armonizza la relazione del Rene col Fegato, Cuore e Polmoni<br><span>• </span>Punto importante per tonificare qualsiasi vuoto di Rene (Yin, Yang, Qi),<br></p><p><b>Applicazioni</b><br><span>• </span>Insonnia<br><span>• </span>Eccessiva attività onirica<br><span>• </span>Sibili polmonari<br><span>• </span>Scarsa memoria<br><span>• </span>Tosse secca<br><span>• </span>Dispnea <br><span>• </span>Asma<br><span>• </span>Mal di testa<br><span>• </span>Capogiri<br><span>• </span>Emottisi<br><span>• </span>Mal di denti cronico o perdita di denti<br><span>• </span>Capogiri<br><span>• </span>Impotenza sessuale<br><span>• </span>Esaurimento sessuale<br><span>• </span>Freddo negli arti inferiori<br><span>• </span>Incontinenza<br><span>• </span>Dolore al tallone e ai lombi<br></p><p><b>Moxa</b><br><span>• </span>Molto usato per le patologie di cui sopra, è consigliata la moxa indiretta<br></p><p><b>Ubicazione</b><br><span>• </span>A livello dell'apice del malleolo mediale<br><span>• </span>Nella depressione tra il malleolo mediale e il tendine d'Achille. <br></p>",
 					ChiaviTsubo: "",
-					noMoxa: false,
-					noGravidanza: false	
 				},
 				{
 					NomeTsubo: "4.KI. Dazhong (Grande campana)",
 					AzioniTsubo: "<p><span style=\"font-weight:bold;\">M.T.C.<br></span><span>• </span>Punto <span style=\"font-style:italic;\">luo</span>-collegamento del meridiano di <span style=\"font-style:italic;\">Rene</span><br><span>• </span>Aumenta la forza di volontà<br><span>• </span>Elimina la paura<br><span>• </span>Regola il Qi<br><span>• </span>Aiuta il Polmone<br><span>• </span>Rilassa lo Shen ed elimina la paura <br></p><p><b>Applicazioni</b><br><span>• </span>Troppa sonnolenza<br><span>• </span>Lombalgia<br><span>• </span>Dolore al calcagno<br><span>• </span>Terrore<br><span>• </span>Paura<br><span>• </span>Palpitazioni<br><span>• </span>Demenza e ritardo mentale<br><span>• </span>Tristezza<br><span>• </span>Voglia di isolarsi<br><span>• </span>Facilità alla rabbia<br><span>• </span>Asma<br><span>• </span>Tosse con sangue<br><span>• </span>Fiato corto<br><span>• </span>Gola dolente e secca<br></p><p><b>Moxa</b><br><span>• </span>E' consigliata la moxa indiretta<br></p><p><b>Ubicazione</b><br><span>• </span>Lungo il margine anteriore del tendine d'Achille<br><span>• </span>Circa a 0.5 cun posteriormente al punto mediano della linea tra 3.KI e 5.KI <br></p>",
 					ChiaviTsubo: "",
-					noMoxa: false,
-					noGravidanza: false	
 				},
 				{
 					NomeTsubo: "5.KI. Shuiquan (Sorgente d'acqua)",
 					AzioniTsubo: "<p><b>M.T.C.</b><br><span>• </span>Punto <span style=\"font-style:italic;\">xi</span>-fessura del meridiano di <span style=\"font-style:italic;\">Rene</span><br><span>• </span>Normalizza i meridiani di Chongmai e Vaso concezione<br><span>• </span>Regola i mestrui<br></p><p><b>Applicazioni</b><br><span>• </span>Amenorrea<br><span>• </span>Dismenorrea<br><span>• </span>Mestruazioni irregolari<br><span>• </span>Ritardo mestruale caratterizzato da vuoto (di sangue o di Qi) o da pieno (stasi di sangue)<br></p><p><b>Moxa</b><br><span>• </span>E' consigliata la moxa indiretta<br></p><p><b>Ubicazione</b><br><span>• </span>Nel punto d'inserzione del tendine d'Achille sul tallone<br><span>• </span>1 cun inferiormente a 3.KI<br><span>• </span>Nella depressione anteriore e superiore alla tuberosità del calcagno. <br></p>",
 					ChiaviTsubo: "",
-					noMoxa: false,
-					noGravidanza: false	
 				},
 				{
 					NomeTsubo: "6.KI. Zhaohai (Mare splendente)",
 					AzioniTsubo: "<p><b>M.T.C.</b><br><span>• </span>Punto confluente del meridiano di <span style=\"font-style:italic;\">Yinqiaomai</span><br><span>• </span>Alimenta i Reni e ne purifica il Calore vuoto<br><span>• </span>Calma lo Shen<br><span>• </span>Ottimizza il Jiao inferiore e Yinqiaomai<br><span>• </span>Aiuta la gola<br><span>• </span>Ottimizza il Jiao inferiore regolando i mestrui <br></p><p><b>Applicazioni</b><br><span>• </span>Amenorrea <br><span>• </span>Parto difficile<br><span>• </span>Dismenorrea<br><span>• </span>Infertilità portata da freddo cronico nell'utero<br><span>• </span>Capogiri e dolori post-partum<br><span>• </span>Prurito ai genitali<br><span>• </span>Erezioni ed emissioni di seme involontarie ed improvvise<br><span>• </span>Stipsi<br><span>• </span>Edema<br><span>• </span>Enuresi<br><span>• </span>Lochiazioni persistenti<br><span>• </span>Tristezza<br><span>• </span>Terrore<br><span>• </span>Incubi ed insonnia<br><span>• </span>Epilessia notturna<br><span>• </span>Malattie degli occhi<br><span>• </span>Insonnia<br><span>• </span>Gonfiore, rossore e secchezza alla gola<br></p><p><b>Moxa</b><br><span>• </span>E' consigliata la moxa indiretta<br></p><p><b>Ubicazione</b><br><span>• </span>Sotto la prominenza del malleolo interno di 1 cun<br><span>• </span>Nella depressione formata da due fasci legamentari<br></p>",
 					ChiaviTsubo: "",
-					noMoxa: false,
-					noGravidanza: false	
 				},
 				{
 					NomeTsubo: "7.KI. Fuliu (Corrente che ritorna)",
 					AzioniTsubo: "<p><b>M.T.C.</b><br><span>• </span>Punto <span><span style=\"font-style:italic;\">jing</span>-fiume e Metallo </span>del meridiano del <span style=\"font-style:italic;\">Rene</span><br><span>• </span><span>Punto Metallo del meridiano del </span><span style=\"font-style:italic;\">Rene</span><br><span>• </span><span>Prosciuga l'Umidità<br></span><span>• </span><span>Purifica l'Umidità-Calore<br></span><span>• </span><span>Tratta i dolori lombari<br></span><span>• </span><span>Riequilibra la sudorazione<br></span><span>• </span><span>Riequilibria i passaggi dell'acqua<br></span><span>• </span><span>Aiuta i reni e tratta l'edema. </span></p><p><b>Applicazioni</b><br><span>• </span>Sudorazione notturna<br><span>• </span>Febbre con assenza di sudore<br><span>• </span>Pus e sangue nelle feci<br><span>• </span>Emorroidi sanguinanti<br><span>• </span>Diarrea<br><span>• </span>Attenua il dolore lombare<br><span>• </span>Punto importante nel trattamento degli edemi e per regolare la minzione<br><span>• </span>Edema ai quattro arti con distensione a tamburo<br><span>• </span>Minzione difficile<br><span>• </span>Urine scure<br><span>• </span>Sabbia nelle urine<br></p><p><b>Moxa</b><br><span>• </span>E' consigliata la moxa indiretta<br></p><p><b>Ubicazione</b><br><span>• </span>Sul lato mediale dell'arto inferiore<br><span>• </span>Sul margine anteriore del tendine d'Achille<br><span>• </span>Nella cavità 2 cun sopra 3.KI<br></p>",
 					ChiaviTsubo: "",
-					noMoxa: false,
-					noGravidanza: false	
 				},
 				{
 					NomeTsubo: "8.KI. Jiaoxin (Cambio di credo)",
 					AzioniTsubo: "<p><b>M.T.C.</b><br><span>• </span>Punto <span style=\"font-style:italic;\">xi</span>-fessura del meridiano di <span style=\"font-style:italic;\">Yinqiaomai</span><br><span>• </span>Arresta il sanguinamento uterino<br><span>• </span>Riequilibra le mestruazioni<br><span>• </span>Regola<span> </span><span>i meridiani di Vaso concezione</span><span> e Chongmai<br></span><span>• </span><span>Pulisce il Calore<br></span><span>• </span><span>Espelle</span><span> l'Umidità dal Jiao inferiore</span></p><p><b>Applicazioni</b><br><span>• </span>Dolore, prurito e gonfiore ai genitali<br><span>• </span>Disfunzione urinaria dolorosa (in particolare quella da Qi)<br><span>• </span>Ritenzione di urine<br><span>• </span>Dissenteria<br><span>• </span>Amenorrea<br><span>• </span>Dismenorrea<br><span>• </span>Mestrui irregolari<br><span>• </span>Sanguinamento<br></p><p><b>Moxa</b><br><span>• </span>E' consigliata la moxa indiretta. <br></p><p><b>Ubicazione</b><br><span>• </span>Sul lato mediale dell'arto inferiore<br><span>• </span>2 cun sopra 3.KI<br><span>• </span>0,5 cun anteriormente a 7.KI<br><span>• </span>Posteriormente al margine interno della tibia. <br></p>",
 					ChiaviTsubo: "",
-					noMoxa: false,
-					noGravidanza: false	
 				},
 				{
 					NomeTsubo: "9.KI. Zhubin (Casa dell'ospite)",
 					AzioniTsubo: "<p><b>M.T.C.</b><br><span>• </span>Punto <span style=\"font-style:italic;\">xi</span>-fessura del meridiano di <span style=\"font-style:italic;\">Yinweimai</span><br><span>• </span>Riequilibra il Qi<br><span>• </span>Attenua il dolore<br><span>• </span>Trasforma il flegma<br><span>• </span>Purifica il Calore<br></p><p><b>Applicazioni</b><br><span>• </span>Malattie ombelicali di tipo Shan nei bambini<br><span>• </span>Contrattura dei muscoli del polpaccio<br><span>• </span>Debolezza delle gambe<br><span>• </span>Dolore alla parte mediale delle gambe<br><span>• </span>Sindrome maniaco-depressiva<br><span>• </span>Rabbia<br><span>• </span>Furia<br><span>• </span>Gozzo<br><span>• </span>Mania<br><span>• </span>Follia<br><span>• </span>Raptus<br><span>• </span>Vomito di saliva schiumosa<br></p><p><b>Moxa</b><br><span>• </span>E' consigliata la moxa indiretta<br></p><p><b>Ubicazione</b><br><span>• </span>Sul lato mediale dell'arto inferiore <br><span>• </span><span>Sulla linea che unisce 3.KI con 10.KI</span><br><span>• </span>5 cun sopra 3.KI<br><span>• </span>Dietro il margine posteriore della tibia di circa 1 cun</p>",
 					ChiaviTsubo: "",
-					noMoxa: false,
-					noGravidanza: false	
 				},
 				{
 					NomeTsubo: "10.KI. Yingu (Valle Yin)",
 					AzioniTsubo: "<p><b>M.T.C.</b><br><span>• </span>Punto <span style=\"font-style:italic;\">he</span><span>-mare e </span><span>Acqua </span>del meridiano di <span style=\"font-style:italic;\">Rene</span><br><span>• </span><span>Aiuta i Reni e la circolazione del Qi nel meridiano<br></span><span>• </span><span>Attenua il dolore<br></span><span>• </span><span>Purifica l'Umidità-Calore dal Jiao inferiore</span></p><p><b>Applicazioni</b><br><span>• </span>Dolore ai genitali<br><span>• </span>Dolore alla minzione<br><span>• </span>Minzione urgente con dolore irradiato lungo il lato mediale della coscia<br><span>• </span>Dolore periombelicale e ipogastrico che si irradia alla parte interna della cocsia e ai genitali<br><span>• </span>Impotenza<br><span>• </span>Infertilità<br> </p><p><b>Moxa</b><br><span>• </span>E' consigliata la moxa indiretta<br></p><p><b>Ubicazione</b><br><span>• </span>Sul lato mediale dell'arto inferiore <br><span>• </span>Tra i tendini dei muscoli semimembranoso e semitendinoso<br><span>• </span>Al termine mediale della piega poplitea<br><span>• </span><span>Localizzare a ginocchio leggermente flesso.</span><span> </span></p>",
 					ChiaviTsubo: "",
-					noMoxa: false,
-					noGravidanza: false	
 				},
 				{
 					NomeTsubo: "11.KI. Henggu (Osso pubico)",
 					AzioniTsubo: "<p><b>M.T.C.</b><br><span>• </span>Punto d'incontro tra i meridiani di <span style=\"font-style:italic;\">Rene </span>e <span style=\"font-style:italic;\">Chongmai</span><br><span>• </span>Aiuta il Jiao inferiore. <br></p><p><b>Applicazioni</b><br><span>• </span>Dolore ipogastrico<br><span>• </span>Rossore degli occhi che parte dal canto interno<br><span>• </span>Retrazione dolorosa dei genitali<br><span>• </span>Prolasso uterino<br><span>• </span>Prolasso rettale<br><span>• </span>Enuresi<br><span>• </span>Ritenzione di urina<br><span>• </span>Impotenza<br><span>• </span>Emissione seminale<br><span>• </span>Sindromi shan <br></p><p><b>Moxa</b><br><span>• </span>E' consigliata la moxa indiretta<br></p><p><b>Ubicazione</b><br><span>• </span>Zona addominale inferiore<br><span>• </span>Margine superiore della sinfisi pubica<br><span>• </span>5 cun sotto l'ombelico<br><span>• </span>0,5 cun lateralmente alla linea mediana del corpo. <br></p>",
 					ChiaviTsubo: "",
-					noMoxa: false,
-					noGravidanza: false	
 				},
 				{
 					NomeTsubo: "12.KI. Dahe (Grande luminescenza)",
 					AzioniTsubo: "<p><b>M.T.C.</b><br><span>• </span>Punto d'incontro tra i meridiani di <span style=\"font-style:italic;\">Rene </span>e <span style=\"font-style:italic;\">Chongmai</span><br><span>• </span>Riduce l'essenza <br><span>• </span>Potenzia i reni<br></p><p><b>Applicazioni</b><br><span>• </span>Rinforza il Cancello dell'essenza<br><span>• </span>Riduce le emissioni di seme<br><span>• </span>Tratta la leucorrea <br></p><p><b>Moxa</b><br><span>• </span>E' consigliata la moxa indiretta<br></p><p><b>Ubicazione</b><br><span>• </span>Nella zona addominale inferiore<br><span>• </span>1 cun sopra il margine superiore della sinfisi pubica<br><span>• </span>4 cun sotto l'ombelico<br><span>• </span>0,5 cun a lato della linea mediana. <br></p>",
 					ChiaviTsubo: "",
-					noMoxa: false,
-					noGravidanza: false	
 				},
 				{
 					NomeTsubo: "13.KI. Qixue (Caverna del QI)",
 					AzioniTsubo: "<p><b>M.T.C.</b><br><span>• </span>Punto d'incontro tra i meridiani di <span style=\"font-style:italic;\">Rene </span>e <span style=\"font-style:italic;\">Chongmai</span><br><span>• </span>Regola il Jiao inferiore<br><span>• </span>Riequilibra Vaso concezione e Chongmai<br></p><p><b>Applicazioni</b><br><span>• </span>Sensazione di qualcosa che sale e che scende velocemente lungo il rachide (<span>Qi del maialino che corre</span><span>) accompagnata da paura e panico<br></span><span>• </span><span>Controlla i mestrui<br></span><span>• </span><span>Irregolarità mestruale<br></span><span>• </span><span>Sanguinamento uterino<br></span><span>• </span><span>Leucorrea<br></span><span>• </span><span>Infertilità nella donna<br></span><span>• </span><span>Amenorrea</span></p><p><b>Moxa</b><br><span>• </span>E' consigliata la moxa indiretta<br></p><p><b>Ubicazione</b><br><span>• </span>Nella zona addominale inferiore<br><span>• </span>2 cun sopra il margine superiore della sinfisi pubica<br><span>• </span>3 cun sotto l'ombelico<br><span>• </span>0.5 cun a lato della linea mediana<br></p>",
 					ChiaviTsubo: "",
-					noMoxa: false,
-					noGravidanza: false	
 				},
 				{
 					NomeTsubo: "14.KI. Siman (Quattro pienezze)",
 					AzioniTsubo: "<p><b>M.T.C.</b><br><span>• </span>Punto d'incontro tra i meridiani di <span style=\"font-style:italic;\">Rene </span>e <span style=\"font-style:italic;\">Chongmai</span><br><span>• </span>Riequilibra il Jiao inferiore e attenua il dolore<br><span>• </span>Favorisce la circolazione del Qi nel meridiano<br><span>• </span>Movimenta le stasi di sangue<br><span>• </span>Riequilibra il Qi<br><span>• </span>Regola i passaggi dell'acqua<br><span>• </span>Favorisce la minzione<br></p><p><b>Applicazioni</b><br><span>• </span>Distensione addominale<br><span>• </span>Edema addominale<br><span>• </span>Stipsi o dissenteria<br><span>• </span>Dolori taglienti sotto l'ombelico<br><span>• </span>Sangue maligno con dolore acuto <br></p><p><b>Moxa</b><br><span>• </span>E' consigliata la moxa indiretta<br></p><p><b>Ubicazione</b><br><span>• </span>Nella zona addominale inferiore<br><span>• </span>3 cun sopra il margine superiore della sinfisi pubica<br><span>• </span>2 cun sotto l'ombelico<br><span>• </span>0.5 cun a lato della linea mediana (5.CV)<br></p>",
 					ChiaviTsubo: "",
-					noMoxa: false,
-					noGravidanza: false	
 				},
 				{
 					NomeTsubo: "15.KI. Zhongzhu (Flusso centrale)",
 					AzioniTsubo: "<p><b>M.T.C.</b><br><span>• </span>Punto d'incontro tra i meridiani di <span style=\"font-style:italic;\">Rene </span>e <span style=\"font-style:italic;\">Chongmai</span><br><span>• </span>Riequilibra il Jiao inferiore e gli Intestini<br></p><p><b>Applicazioni</b><br><span>• </span>Raramente utilizzato<br><span>• </span>Stipsi<br><span>• </span>Dissenteria<br><span>• </span>Feci secche<br><span>• </span>Sensazione di calore alla parte inferiore della pancia<br><span>• </span>Irregolarità mestruale<br><span>• </span>Dolore rossore al canto interno<br><span>• </span>Sensazione di qualcosa che sale e scende velocemente lungo la colonna lombare<br><span>• </span>Dolore a colonna lombare e addome<br></p><p><b>Moxa</b><br><span>• </span>E' consigliata la moxa indiretta<br></p><p><b>Ubicazione</b><br><span>• </span>Nella zona addominale inferiore<br><span>• </span>4 cun sopra il margine superiore della sinfisi pubica<br><span>• </span>1 cun sotto l'ombelico<br><span>• </span>0.5 cun a lato della linea mediana (7.CV)<br></p>",
 					ChiaviTsubo: "",
-					noMoxa: false,
-					noGravidanza: false	
 				},
 				{
 					NomeTsubo: "16.KI. Huangshu (Shu vitale)",
 					AzioniTsubo: "<p><b>M.T.C.</b><br><span>• </span>Punto d'incontro tra i meridiani di <span style=\"font-style:italic;\">Rene </span>e <span style=\"font-style:italic;\">Chongmai</span><br><span>• </span>Armonizza il Qi <br><span>• </span>Attenua il dolore<br><span>• </span>Regola e riscalda gli intestini. <br></p><p><b>Applicazioni</b><br><span>• </span>Usato nel trattamento di stipsi specialmente da freddo vuoto o pieno<br><span>• </span>Dissenteria<br><span>• </span>Borborigmi<br><span>• </span>Feci secche<br></p><p><b>Moxa</b><br><span>• </span>E' consigliata la moxa indiretta<br></p><p><b>Ubicazione</b><br><span>• </span>Nella zona addominale<br><span>• </span>0.5 cun lateralmente al centro dell'ombelico<br></p>",
 					ChiaviTsubo: "",
-					noMoxa: false,
-					noGravidanza: false	
 				},
 				{
 					NomeTsubo: "17.KI. Shangqu (Curva dello Shang)",
 					AzioniTsubo: "<p><b>M.T.C.</b><br><span>• </span>Attenua il dolore <br><span>• </span>Disperde gli accumuli<br></p><p><b>Applicazioni</b><br><span>• </span>Usato raramente<br><span>• </span>Dolore intestinale<br><span>• </span>Masse addominali con dolori taglienti<br><span>• </span>Rossore al canto interno dell'occhio con dolore<br><span>• </span>Dissenteria<br><span>• </span>Vomito<br><span>• </span>Stitichezza<br><span>• </span>Mancanza di appetito<br></p><p><b>Moxa</b><br><span>• </span>Indicato <br></p><p><b>Ubicazione</b><br><span>• </span>Sulla zona superiore dell'addome<br><span>• </span>2 cun sopra ombelico<br><span>• </span>0.5 cun a lato della linea mediana (10.CV)<br></p>",
 					ChiaviTsubo: "",
-					noMoxa: false,
-					noGravidanza: false	
 				},
 				{
 					NomeTsubo: "18.KI. Shiguan (Passaggio della pietra)",
 					AzioniTsubo: "<p><b>M.T.C.</b><br><span>• </span>Punto d'incontro tra i meridiani di <span style=\"font-style:italic;\">Rene </span>e <span style=\"font-style:italic;\">Chongmai</span><br><span>• </span>Attenua il dolore<br><span>• </span>Armonizza il Jiao inferiore<br><span>• </span>Riequilibra il Qi<br><span>• </span>Regola lo Stomaco<br><span>• </span>Smuove le stasi di sangue<br></p><p><b>Applicazioni</b><br><span>• </span>Stasi di sangue nell'utero<br><span>• </span>Blocchi addominali<br><span>• </span>Stasi nella regione costale laterale<br><span>• </span>Sangue maligno nell'utero<br><span>• </span>Sangue stagnante<br><span>• </span>Sterilità<br><span>• </span>Dolore addominale<br></p><p><b>Moxa</b><br><span>• </span>Indicato <br></p><p><b>Ubicazione</b><br><span>• </span>Zona superiore dell'addome<br><span>• </span>3 cun sopra ombelico<br><span>• </span>0.5 cun a lato della linea mediana<br></p>",
 					ChiaviTsubo: "",
-					noMoxa: false,
-					noGravidanza: false	
 				},
 				{
 					NomeTsubo: "19.KI. Yindu (Metropoli dello Yin)",
 					AzioniTsubo: "<p><b>M.T.C.</b><br><span>• </span>Punto d'incontro tra i meridiani di <span style=\"font-style:italic;\">Rene </span>e <span style=\"font-style:italic;\">Chongmai</span><br><span>• </span>Regola lo Stomaco<br><span>• </span>Riequilibra il Qi <br><span>• </span>Allevia tosse e affanno<br><span>• </span>Riduce il Qi ribelle<br></p><p><b>Applicazioni</b><br><span>• </span>Poco usato<br><span>• </span>Nausea <br><span>• </span>Vomito<br><span>• </span>Pienezza sotto il cuore<br><span>• </span>Agitazione sotto il cuore<br><span>• </span>Infertilità<br><span>• </span>Tosse<br><span>• </span>Sangue maligno nell'utero<br><span>• </span>Malaria<br><span>• </span>Dolore agli occhi<br><span>• </span>Borborigmi<br><span>• </span>Stitichezza</p><p><b>Moxa</b><br><span>• </span>Nessuna controindicazione<br></p><p><b>Ubicazione</b><br><span>• </span>Zona superiore dell'addome<br><span>• </span>4 cun sopra ombelico<br><span>• </span>0.5 cun a lato della linea mediana (12.CV)<br></p>",
 					ChiaviTsubo: "",
-					noMoxa: false,
-					noGravidanza: false	
 				},
 				{
 					NomeTsubo: "20.KI. Futonggu (Valle di collegamento dell'addome)",
 					AzioniTsubo: "<p><b>M.T.C.</b><br><span>• </span>Punto d'incontro tra i meridiani di <span style=\"font-style:italic;\">Rene </span>e <span style=\"font-style:italic;\">Chongmai</span><br><span>• </span>Riequilibra il Jiao medio<br><span>• </span>Libera il torace<br><span>• </span>Trasforma il flegma<br></p><p><b>Applicazioni</b><br><span>• </span>Usato raramente<br><span>• </span>Vomito<br><span>• </span>Feci con presenza di cibo indigerito<br><span>• </span>Distensione addominale<br><span>• </span>Dissenteria<br><span>• </span>Pienezza del torace<br><span>• </span>Dolore alla regione costale laterale<br><span>• </span>Dolore al Cuore<br><span>• </span>Tosse e dispnea<br><span>• </span>Palpitazioni<br><span>• </span>Disorientamento<br><span>• </span>Epilessia<br><span>• </span>Afonia improvvisa<br><span>• </span>Gonfiore sotto la lingua con difficoltà a parlare<br><span>• </span>Deviazione della rima buccale<br><span>• </span>Incapacità di girare il collo<br><span>• </span>Malaria<br><span>• </span>Rossore e dolore all'occhio che iniziano al canto interno<br></p><p><b>Ubicazione</b><br><span>• </span>Sull'addome nella parte superiore<br><span>• </span>5 cun al di sopra dell'ombelico<br><span>• </span>0,5 cun a lato della linea mediana (13.CV)<br></p>",
 					ChiaviTsubo: "",
-					noMoxa: false,
-					noGravidanza: false	
 				},
 				{
 					NomeTsubo: "21.KI. Youmen (Porta nascosta)",
 					AzioniTsubo: "<p><b>M.T.C.</b><br><span>• </span>Punto d'incontro tra i meridiani di <span style=\"font-style:italic;\">Rene </span>e <span style=\"font-style:italic;\">Chongmai</span><br><span>• </span>Rinforza la Milza<br><span>• </span>Regola lo Stomaco<br><span>• </span>Riduce le ribellioni<br><span>• </span>Fa circolare il Qi di Fegato<br><span>• </span>Giova al torace e ai seni <br><span>• </span>Attenua il dolore<br></p><p><b>Applicazioni</b><br><span>• </span>Dolore addominale<br><span>• </span>Nausea<br><span>• </span>Vomito<br><span>• </span>Vomito con saliva schiumosa (acquosa)<br><span>• </span>Nausea e vomito in gravidanza<br><span>• </span>Eruttazioni<br><span>• </span>Pienezza con inappetenza<br><span>• </span>Difficoltà all'ingestione<br><span>• </span>Tosse<br><span>• </span>Tratta le malattie del torace, della regione costale laterale e dei seni<br></p><p><b>Moxa</b><br><span>• </span>Nessuna controindicazione<br></p><p><b>Ubicazione</b><br><span>• </span>Sull'addome nella parte superiore<br><span>• </span>6 cun al di sopra dell'ombelico<br><span>• </span>0,5 cun a lato della linea mediana (14.CV)</p>",
 					ChiaviTsubo: "",
-					noMoxa: false,
-					noGravidanza: false	
 				},
 				{
 					NomeTsubo: "22.KI. Bulang (Corridoio di marcia)",
 					AzioniTsubo: "<p><b>M.T.C.</b><br><span>• </span>Libera il torace<br><span>• </span>Abbassa il Qi ribelle di Polmone e Stomaco<br></p><p><b>Applicazioni</b><br><span>• </span>Dispnea e tosse da 'pieno sopra e vuoto sotto', questa situazione si verifica quando il Qi de Reni non è abbastanza forte per affermare il Qi di Polmone<br><span>• </span>Sibili<br><span>• </span>Dispnea<br><span>• </span>Tosse</p><p><b>Moxa</b><br><span>• </span>Nessuna controindicazione<br></p><p><b>Ubicazione</b><br><span>• </span>Nella zona toracica<br><span>• </span>Quinto spazio intercostale<br><span>• </span>2 cun a lato dalla linea mediana<br></p>",
 					ChiaviTsubo: "",
-					noMoxa: false,
-					noGravidanza: false	
 				},
 				{
 					NomeTsubo: "23.KI. Shenfeng (Sigillo dello Shen)",
 					AzioniTsubo: "<p><b>M.T.C.</b><br><span>• </span>Libera il torace<br><span>• </span>Riduce il Qi ribelle di Polmone e Stomaco<br><span>• </span>Giova ai sensi<br></p><p><b>Applicazioni</b><br><span>• </span>Pienezza del torace e della regione costale laterale con difficoltà a respirare<br><span>• </span>Tosse<br><span>• </span>Asma<br><span>• </span>Sibili<br><span>• </span>Ostruzione dolorosa del petto<br><span>• </span>Vomito e inappetenza<br><span>• </span>Ascessi mammari<br></p><p><b>Moxa</b><br><span>• </span>Nessuna controindicazione<br></p><p><b>Ubicazione</b><br><span>• </span>Nella zona toracica<br><span>• </span>Nel quarto spazio intercostale<br><span>• </span>2 cun lateralmente alla linea mediana</p>",
 					ChiaviTsubo: "",
-					noMoxa: false,
-					noGravidanza: false	
 				},
 				{
 					NomeTsubo: "24.KI. Lingxu (Rovine dello spirito)",
 					AzioniTsubo: "<p><b>M.T.C.</b><br><span>• </span>Libera il torace<br><span>• </span>Riduce il Qi ribelle di Polmone e Stomaco<br><span>• </span>Giova ai sensi<br></p><p><b>Applicazioni</b><br><span>• </span>Pienezza del torace e della regione costale laterale con difficoltà a respirare<br><span>• </span>Tosse<br><span>• </span>Asma<br><span>• </span>Sibili<br><span>• </span>Ostruzione dolorosa del petto<br><span>• </span>Vomito e inappetenza<br><span>• </span>Ascessi mammari</p><p><b>Moxa</b><br><span>• </span>Nessuna controindicazione<br></p><p><b>Ubicazione</b><br><span>• </span>Nella zona toracica<br><span>• </span>Nel terzo spazio intercostale<br><span>• </span>2 cun lateralmente alla linea mediana</p>",
 					ChiaviTsubo: "",
-					noMoxa: false,
-					noGravidanza: false	
 				},
 				{
 					NomeTsubo: "25.KI. Shencang (Magazzino dello shen)",
 					AzioniTsubo: "<p><b>M.T.C.</b><br><span>• </span>Libera il torace<br><span>• </span>Riduce il Qi ribelle di Polmone e Stomaco<br></p><p><b>Applicazioni</b><br><span>• </span>Pienezza del torace e della regione costale laterale con difficoltà a respirare<br><span>• </span>Tosse<br><span>• </span>Asma<br><span>• </span>Sibili<br><span>• </span>Ostruzione dolorosa del petto<br><span>• </span>Vomito e inappetenza<br></p><p><b>Moxa</b><br><span>• </span>Nessuna controindicazione<br></p><p><b>Ubicazione</b><br><span>• </span>Nella zona toracica<br><span>• </span>Nel secondo spazio intercostale<br><span>• </span>2 cun lateralmente alla linea mediana</p>",
 					ChiaviTsubo: "",
-					noMoxa: false,
-					noGravidanza: false	
 				},
 				{
 					NomeTsubo: "26.KI. Yuzhong (Torace confortevole)",
 					AzioniTsubo: "<p><b>M.T.C.<br></b><span>• </span>Riduce il Qi ribelle di Polmone e Stomaco<br><span>• </span>Libera il torace<br><span>• </span>Dona beneficio ai seni<br><span>• </span>Trasforma il flegma<br></p><p><b>Applicazioni</b><br><span>• </span>Tosse<br><span>• </span>Asma<br><span>• </span>Dispnea<br><span>• </span>Pienezza e distensione a livello del torace e della regione costale laterale<br><span>• </span>Accumulo di flegma<br><span>• </span>Vomito (di flegma)<br><span>• </span>Bava dalla bocca con saliva eccessiva<br><span>• </span>Ascesso mammario <br></p><p><b>Moxa</b><br><span>• </span>Nessuna controindicazione<br></p><p><b>Ubicazione</b><br><span>• </span>Nella zona toracica<br><span>• </span>Nel primo spazio intercostale<br><span>• </span>2 cun lateralmente alla linea mediana</p>",
 					ChiaviTsubo: "",
-					noMoxa: false,
-					noGravidanza: false	
 				},
 				{
 					NomeTsubo: "27.KI. Shufu (Magione dello Shu)",
 					AzioniTsubo: "<p></p><p><b>M.T.C.<br></b><span>• </span>Riduce il Qi ribelle di Polmone e Stomaco<br><span>• </span>Libera il torace<br><span>• </span>Dona beneficio ai seni<br><span>• </span>Trasforma il flegma<br></p><p><b>Applicazioni</b><br><span>• </span>Tosse<br><span>• </span>Asma<br><span>• </span>Dispnea<br><span>• </span>Pienezza e distensione a livello del torace e della regione costale laterale<br><span>• </span>Accumulo di flegma<br><span>• </span>Vomito (di flegma)<br><span>• </span>Bava dalla bocca con saliva eccessiva<br><span>• </span>Sindrome delle \"ossa fumanti\"<br><span>• </span>Circolazione disequilibrata di sangue caldo</p><p><b>Moxa</b><br><span>• </span>Nessuna controindicazione<br></p><p><b>Ubicazione</b><br><span>• </span>Nella zona toracica<br><span>• </span>Nell'avvallamento che si trova al margine inferiore della clavicola<br><span>• </span>2 cun lateralmente alla linea mediana</p><p></p>",
 					ChiaviTsubo: "",
-					noMoxa: false,
-					noGravidanza: false	
 				}
 			]
 		},
 		"GB": {
 			NomeMeridiano: "Cistifellea",
-			cartella: "cistifellea",
 			tsubo: [
 				{
 					NomeTsubo: "1.GB. Tongziliao (Forame della pupilla)",
 					AzioniTsubo: " <p><b>M.T.C.</b><br><span>•</span> Punto d'incontro dei meridiani di <span style=\"font-style:italic;\">Cistifellea</span>, <span style=\"font-style:italic;\">Intestino tenue</span> e <span style=\"font-style:italic;\">Triplice riscaldatore</span><span><br>• </span>Elimina il Vento e purifica il Calore<br><span>• </span>Giova agli occhi<br></p><p><span><b>Applicazioni</b><br><span>• </span>Si occupa delle patologie oculari dovute principalmente a Vento-Calore del canale di Fegato<br>(combinazione di Fuoco di Fegato interno o di </span><span>yang </span>di Fegato con attacco di Vento o Vento-Calore esterni)<br><span>• </span>Gonfiore, dolore, rossore e prurito agli occhi<br><span>• </span>Lacrimazione<br><span>• </span>Patologie della visione (glaucoma, emorragia retinica, fotofobia, atrofia del nervo ottico)<br><span>• </span>Dolore sopraorbitario<br><span>• </span>Cefalea temporale<br></p><p><b>Moxa</b><br><span>• </span>Secondo molti testi questo punto è controindicato alla moxa<br></p><p><b>Ubicazione</b><br><span>• </span>A lato del forame orbitario nella cavità.<br><span>• </span>A circa 0.5 cun lateralmente al canto esterno. <br></p>",
 					ChiaviTsubo: "",
-					noMoxa: true,
-					noGravidanza: false	
 				},
 				{
 					NomeTsubo: "2.GB. Tinghui (Riunione dell'udito)",
 					AzioniTsubo: "<p><b>M.T.C.</b><br><span>• </span>Purifica il Calore<br><span>• </span>Elimina il Vento<br><span>• </span>Giova all'orecchio<br><span>• </span>Facilita la circolazione del Qi nel meridiano<br><span>• </span>Allevia il dolore<br></p><p><b>Applicazioni</b><br><span>• </span>Sordità<br><span>• </span>Acufeni<br><span>• </span>Otorrea<br><span>• </span>Prurito e dolore all'orecchio. <br><span>• </span>Parotite (comunemente chiamati orecchioni)<br><span>• </span>Deviazione della rima buccale e degli occhi<br><span>• </span>Mal di denti<br><span>• </span>Difficoltà di masticazione<br><span>• </span>Patologie delle mandibole. <br></p><p><b>Moxa</b><br><span>• </span>E' consigliata la moxa indiretta<br></p><p><b>Ubicazione</b><br><span>• </span>Nella cavità che si trova tra il processo condiloideo della mandibola (anteriormente) e l'incisura intertragica dalla parte posteriore.<br><span>• </span><span>Individuare questo punto con la bocca spalancata</span><br><br></p>",
 					ChiaviTsubo: "",
-					noMoxa: false,
-					noGravidanza: false	
 				},
 				{
 					NomeTsubo: "3.GB. Shangguan (Sopra l'articolazione)",
 					AzioniTsubo: "<p><b>M.T.C.</b><br><span>•</span> Punto di incontro dei meridiani di <span style=\"font-style:italic;\">Cistifellea</span>, <span style=\"font-style:italic;\">Triplice riscaldatore</span> e <span style=\"font-style:italic;\">Stomaco</span><br><span>• </span>Giova alle orecchie ed elimina il Vento<br><span>• </span>Facilita la circolazione del Qi nel meridiano<br><span>• </span>Allevia il dolore<br></p><p><b>Applicazioni</b><br><span>• </span>Nevralgia del trigemino<br><span>• </span>Diminuzione della vista<br><span>• </span>Dolore facciale<br><span>• </span>Mal di testa<br><span>• </span>Mal di denti dell'arcata superiore<br><span>• </span>Rigidità delle labbra<br><span>• </span>Patologie delle mascelle (trisma) e dell'orecchio (sordità, acufeni, scolo purulento dell'orecchio)<br><span>• </span><span>Mal di denti (arcata superiore)</span></p><p><b>Moxa</b><br><span>• </span>E' consigliata la moxa indiretta<br></p><p><b>Ubicazione</b><br><span>• </span>Anteriormente all'orecchio<br><span>• </span>Direttamente sopra 7.ST<br><span>• </span>Nella cavità posta al di sopra del margine superiore dell'arco zigomatico<br></p>",
 					ChiaviTsubo: "",
-					noMoxa: false,
-					noGravidanza: false	
 				},
 				{
 					NomeTsubo: "4.GB. Hanyan (Serenità della mandibola)",
 					AzioniTsubo: "<p><b>M.T.C.</b> <br><span>•</span> Punto d'incontro dei meridiani di <span style=\"font-style:italic;\">Cistifellea</span>, <span style=\"font-style:italic;\">Triplice riscaldatore</span> e <span style=\"font-style:italic;\">Stomaco</span><br><span>• </span>Elimina il Vento<br><span>• </span>Facilita la circolazione del Qi nel meridiano<br><span>• </span>Attenua il dolore<br></p><p><b>Applicazioni</b><br><span>• </span>Indicato per casi di cefalea monolaterale (con sintomatologia dolorosa bilaterale), a livello di Taiyang<br></p><p><b>Moxa</b><br><span>• </span>E' consigliata la moxa indiretta<br></p><p><b>Ubicazione</b><br><span>• </span>A un quarto della distanza tra 8.ST e 7.GB<br><span>• </span>All'interno dell'attaccatura dei capelli, nella regione temporale.<br></p>",
 					ChiaviTsubo: "",
-					noMoxa: false,
-					noGravidanza: false	
 				},
 				{
 					NomeTsubo: "5.GB. Xuanlu (Cranio sospeso)",
 					AzioniTsubo: "<p><b>M.T.C.</b><br><span>•</span> Punto d'incontro dei meridiani di <span style=\"font-style:italic;\">Cistifellea</span>, <span style=\"font-style:italic;\">Stomaco</span>, <span style=\"font-style:italic;\">Triplice riscaldatore</span> e <span style=\"font-style:italic;\">Intestino crasso</span><br><span>• </span>Purifica il Calore<br><span>• </span>Elimina il Vento<br><span>• </span>Facilita la circolazione del Qi nel meridiano alleviando il dolore. <br></p><p><b>Applicazioni</b><br><span>• </span>Febbre senza sudorazione<br><span>• </span>Rossore e gonfiore della pelle del viso<br><span>• </span>Mal di testa monolaterale che si estende al canto esterno<br><span>• </span>Disturbi del naso<br><span>• </span>Mal di denti<br><span>• </span>Cefalea<br></p><p><b>Moxa</b><br><span>• </span>E' consigliata la moxa indiretta<br></p><p><b>Ubicazione</b><br><span>• </span>Nella regione temporale<br><span>• </span>A metà strada tra 8.ST e 7.GB<br><span>• </span>All'interno dell'attaccatura dei capelli<br></p>",
 					ChiaviTsubo: "",
-					noMoxa: false,
-					noGravidanza: false	
 				},
 				{
 					NomeTsubo: "6.GB. Xuanli (Capelli sospesi)",
 					AzioniTsubo: "<p><b>M.T.C.<br></b><span>• </span>Punto d'incontro dei meridiani di <span style=\"font-style:italic;\">Cistifellea</span>, <span style=\"font-style:italic;\">Stomaco</span>, <span style=\"font-style:italic;\">Triplice riscaldatore</span> e <span style=\"font-style:italic;\">Intestino crasso</span><span><br>• </span><span>Purifica il Calore<br></span><span>• </span><span>Elimina il Vento<br></span><span>• </span><span>Facilita la circolazione del Qi nel canale<br></span><span>• </span><span>Allevia il dolore</span></p><p><b>Applicazioni</b><br><span>• </span>Tinnito<br><span>• </span>Agitazione del Cuore con inappetenza<br><span>• </span><span>Febbre senza sudorazione<br></span><span>• </span><span>Rossore e gonfiore della pelle del viso<br></span><span>• </span><span>Mal di testa monolaterale che si estende al canto esterno</span><span><br></span><span>• </span><span>Cefalea</span></p><p><b>Moxa</b><br><span>• </span>E' consigliata la moxa indiretta<br></p><p><b>Ubicazione</b><br><span>• </span>Nella regione temporale<br><span>• </span>A tre quarti della distanza tra 8.ST e 7.GB<br><span>• </span>All'interno dell'attaccatura dei capelli<br></p>",
 					ChiaviTsubo: "",
-					noMoxa: false,
-					noGravidanza: false	
 				},
 				{
 					NomeTsubo: "7.GB. Qubin (Curva della tempia)",
 					AzioniTsubo: "<p><b>M.T.C.<br></b><span>• </span>Punto d'incontro dei meridiani di <span style=\"font-style:italic;\">Cistifellea </span>e <span style=\"font-style:italic;\">Vescica urinaria</span><br><span>• </span>Giova a bocca e mascella<br><span>• </span>Espelle il Vento<br></p><p><b>Applicazioni</b><br><span>• </span>Deviazione di occhi e bocca<br><span>• </span>Vomito<br><span>• </span>Perdita della parola<br><span>• </span>Rigidità del collo e impossibilità di girare la testa<br><span>• </span>Cefalea<br></p><p><b>Moxa</b><br><span>• </span>E' consigliata la moxa indiretta<br></p><p><b>Ubicazione</b><br><span>• </span>Regione temporale<br><span>• </span>Interno dell'attaccatura dei capelli<br><span>• </span>Stesso livello di 20.TE<br><span>• </span>A livello dell'apice dell'orecchio piegato in avanti</p>",
 					ChiaviTsubo: "",
-					noMoxa: false,
-					noGravidanza: false	
 				},
 				{
 					NomeTsubo: "8.GB. Shuaigu (Valle che conduce)",
 					AzioniTsubo: "<p><b>M.T.C.<br></b><span>• </span>Punto d'incontro dei meridiani di <span style=\"font-style:italic;\">Cistifellea</span><span><span style=\"font-style:italic;\"> </span>e <span style=\"font-style:italic;\">Vescica urinaria</span></span><span><br></span><span>• </span><span>Allevia il vomito<br></span><span>• </span><span>Riequilibra il diaframma e lo Stomaco<br></span><span>• </span><span>Tratta l'intossicazione dall'alcool<br></span><span>• </span><span>Espelle il Vento<br></span><span>• </span><span>Giova alla testa<br></span><span>• </span><span>Allevia il dolore</span></p><p><b>Applicazioni</b><br><span>• </span>Pesantezza della testa<br><span>• </span>Cefalee parietali,<span> t</span>emporali e specialmente monolaterali, dovute a Vento esterno, Fuoco di Fegato, yang o Vento di Fegato<br><span>• </span>Indicato anche per cefalee emicraniche accompagnate da nausea e vomito e causate dall'alcool<br><span>• </span>Per l'accumulo di flegma nel diaframma e nello Stomaco che porta a dolore al diaframma e vomito incessante<br></p><p><b>Moxa</b><br><span>• </span>E' consigliata la moxa indiretta<br></p><p><b>Ubicazione</b><br><span>• </span>Regione temporale<br><span>• </span>1 cun, direttamente sopra l'apice dell'orecchio<br><span>• </span>In una leggera depressione<br></p>",
 					ChiaviTsubo: "",
-					noMoxa: false,
-					noGravidanza: false	
 				},
 				{
 					NomeTsubo: "9.GB. Tianchong (Risalita celeste)",
 					AzioniTsubo: "<p><b>M.T.C.<br></b><span>• </span>Punto d'incontro dei meridiani di <span style=\"font-style:italic;\">Cistifellea </span>e <span style=\"font-style:italic;\">Vescica urinaria</span><br><span>• </span>Purifica il Calore dal meridiano <br><span>• </span>Calma lo Shen e riduce le fobie<br></p><p><b>Applicazioni</b><br><span>• </span>Alcuni esperti in materia sostengono che questo punto, anziché 17.SI, sia uno dei dieci punti Finestra del Cielo<br><span>• </span>Epilessia<br><span>• </span>Palpitazioni da spavento<br><span>• </span>Paura<br><span>• </span>Follia<br></p><p><b>Moxa</b><br><span>• </span>E' consigliata la moxa indiretta<br></p><p><b>Ubicazione</b><br><span>• </span>Sopra l'orecchio<br><span>• </span>In una depressione <br><span>• </span>0.5 cun posteriormente a 8.GB<br></p>",
 					ChiaviTsubo: "",
-					noMoxa: false,
-					noGravidanza: false	
 				},
 				{
 					NomeTsubo: "10.GB. Fubai (Bianco galleggiante)",
 					AzioniTsubo: "<p><b>M.T.C.</b><br><span>• </span>Punto d'incontro dei meridiani di <span style=\"font-style:italic;\">Cistifellea </span>e <span style=\"font-style:italic;\">Vescica urinaria</span><br><span>• </span>Giova al collo<br><span>• </span>Purifica la testa<br><span>• </span>Facilita la circolazione del Qi nel meridiano<br><span>• </span>Allevia il dolore<br></p><p><b>Applicazioni</b><br><span style=\"font-style:italic;\">(Usato raramente) </span><br><span>• </span>Punto indicato per il gozzo <br><span>• </span>Cefalea e dolore agli occhi<br><span>• </span>Disturbi all'udito, acufeni<span><br></span><span>• </span><span>Patologie degli organi di senso<br></span><span>• </span><span>Ribellione del Qi di Polmone caratterizzata da tosse<br></span><span>• </span><span>Gambe con incapacità di camminare e flaccidità</span></p><p><b>Moxa</b><br><span>• </span>Poco usato<br></p><p><b>Ubicazione</b><br><span><span>• </span><span>Posteriormente all'orecchio</span><br>• </span>Lungo una linea curva diretta da 9.GB a 12.GB, parallela al margine dell'orecchio<br><span>• </span>La linea scorre all'interno dell'attaccatura dei capelli<br><span>• </span>In una depressione che si trova circa a un terzo della distanza tra 9.GB e 12.GB</p>",
 					ChiaviTsubo: "",
-					noMoxa: false,
-					noGravidanza: false	
 				},
 				{
 					NomeTsubo: "11.GB. Touqiaoyin (Aperture Yin del capo)",
 					AzioniTsubo: "<p><b>M.T.C.<br></b><span>• </span>Punto d'incontro dei meridiani di <span style=\"font-style:italic;\">Cistifellea</span>, <span style=\"font-style:italic;\">Vescica urinaria</span>,<span style=\"font-style:italic;\"> Intestino tenue</span> e <span style=\"font-style:italic;\">Triplice riscaldatore</span><br><span>• </span>Giova agli organi di senso<br><span>• </span>Purifica la testa<br><span>• </span>Facilita la circolazione del Qi nel meridiano<br><span>• </span>Allevia il dolore<br></p><p><b>Applicazioni</b><br><span>• </span>Punto indicato per il gozzo <br><span>• </span>Cefalea e dolore agli occhi<br><span>• </span>Disturbi alle orecchie<br><span>• </span>Disturbi alla testa<br>• Disturbi a lingua e bocca<br><span>• </span>Agitazione<br><span>• </span>Patologie degli organi di senso<br><span>• </span>Ribellione del Qi di Polmone caratterizzata da tosse<br><span>• </span>Agitazione e Calore nelle mani e nei piedi<br><span>• </span>Contrattura delle articolazioni dei quattro arti<br>• Logoramento osseo</p><p><b>Moxa</b><br><span>• </span>Poco usato<br></p><p><b>Ubicazione</b><br><span>• </span>Lungo una linea curva diretta da 9.GB a 12.GB, parallela al margine dell'orecchio<br><span>• </span>Scorre all'interno dell'attaccatura dei capelli<br><span>• </span>Posteriormente all'orecchio<br><span>• </span>In una depressione che si trova circa a poco più di due terzi della distanza tra 9.GB e 12.GB</p>",
 					ChiaviTsubo: "",
-					noMoxa: false,
-					noGravidanza: false	
 				},
 				{
 					NomeTsubo: "12.GB. Wangu (Processo mastoideo)",
 					AzioniTsubo: "<p><b>M.T.C.<br></b><span>• </span>Punto d'incontro dei meridiani di <span style=\"font-style:italic;\">Vescica urinaria </span>e <span style=\"font-style:italic;\">Cistifellea</span><span><span><br>• </span>Calma lo </span>Shen<br><span>• </span><span>Elimina il Vento<br></span><span>• </span><span>Giova alla testa<br></span><span>• </span><span>Allenta il dolore</span></p><p><b>Applicazioni</b><br><span>• </span>Mal di testa e dietro l'orecchio<br><span>• </span>Dolore e rigidità al collo<br><span>• </span>Trisma mandibolare<br><span>• </span>Deviazione degli occhi e della bocca<br><span>• </span>Scosse della testa<br><span>• </span>Calore/dolore/gonfiore a gola, orecchie, guance e denti<br><span>• </span>Epilessia<br><span>• </span>Insonnia<br><span>• </span>Allenta mania e agitazione del Cuore<br><span>• </span>Debolezza/flaccidità degli arti e disturbi atrofici</p><p><b>Moxa</b><br><span>• </span>Nessuna controindicazione<br></p><p><b>Ubicazione</b><br><span>• </span>Appena dietro e sotto il processo mastoideo nella sua depressione<br></p>",
 					ChiaviTsubo: "",
-					noMoxa: false,
-					noGravidanza: false	
 				},
 				{
 					NomeTsubo: "13.GB. Benshen (Radice dello Shen)",
 					AzioniTsubo: "<p><b>M.T.C.<br></b><span>• </span>Punto d'incontro dei meridiani di <span style=\"font-style:italic;\">Cistifellea </span>e <span style=\"font-style:italic;\">Yangweimai</span><br><span>• </span><span>Indicato per flegma e per l'epilessia<br></span><span>• </span><span>Elimina il Vento</span></p><p><b>Applicazioni</b>,<br><span>• </span>Usato poco frequentemente<br><span>• </span>Tratta deviazione di occhi e di bocca<br><span>• </span>Apoplessia<br><span>• </span>Emiplegia<br><span>• </span>Epilessia infantile da spavento<br><span>• </span>Capogiri visivi<br><span>• </span>Mal di testa<br><span>• </span>Dolore e rigidità al collo<br><span>• </span>Algie al torace e alla zona costale che rende difficoltosi i movimenti<br><span>• </span>Vomito di saliva schiumosa<br></p><p><b>Moxa</b><br><span>• </span>Molto usato per le patologie di cui sopra, è consigliata la moxa indiretta<br></p><p><b>Ubicazione</b><br><span><span>• </span><span>Sulla fronte</span><br>• </span>A 0.5 cun all'interno dell'attaccatura anteriore dei capelli<br><span>• </span>A due terzi della distanza tra 24.GV e 8.ST</p>",
 					ChiaviTsubo: "",
-					noMoxa: false,
-					noGravidanza: false	
 				},
 				{
 					NomeTsubo: "14.GB. Yangbai (Yang bianco)",
 					AzioniTsubo: "<p><b>M.T.C.<br></b><span>• </span>Punto d'incontro dei meridiani di <span style=\"font-style:italic;\">Cistifellea</span>, <span style=\"font-style:italic;\">Triplice riscaldatore</span>, <span style=\"font-style:italic;\">Stomaco</span> e <span style=\"font-style:italic;\">Intestino crasso </span><span style=\"font-style:italic;\">Yangweimai</span><br><span>• </span>Giova alla testa e agli occhi<br><span>• </span>Elimina il Vento<br><span>• </span>Allevia il dolore<br></p><p><b>Applicazioni</b><br><span>• </span>Importante per dolori alla fronte che si irradiano all'occhio e alle regioni infraorbitali (es. sinusite) temporali o parietali<br><span>• </span>Malattie di occhi e palpebre<br><span>• </span>Deviazione degli occhi<br><span>• </span>Spasmo delle palpebre<br><span>• </span>Pruriti <br><span>• </span>Cecità notturna<br><span>• </span>Lacrimazione<br></p><p><b>Moxa</b><br><span>• </span>E' consigliata la moxa indiretta<br></p><p><b>Ubicazione</b><br><span><span>• </span><span>Sulla fronte</span><br>• </span>Precisamente sulla linea verticale sopra la pupilla quando gli occhi guardano in avanti<br><span>• </span>1 cun sopra il centro del sopracciglio<br></p>",
 					ChiaviTsubo: "",
-					noMoxa: false,
-					noGravidanza: false	
 				},
 				{
 					NomeTsubo: "15.GB. Toulinqi (Governatore delle lacrime del capo)",
 					AzioniTsubo: "<p><b>M.T.C.<br></b><span>• </span>Punto d'incontro dei meridiani di <span style=\"font-style:italic;\">Vescica urinaria </span>e <span style=\"font-style:italic;\">Cistifellea </span>e <span style=\"font-style:italic;\">Yangweimai</span><br><span>• </span>Utilizzato per gli occhi e per il naso<br><span>• </span>Elimina il vento<br><span>• </span>Da sollievo alla testa alleviandone il dolore<br></p><p><b>Applicazioni</b><br><span>• </span>Molto usato per naso chiuso<br><span>• </span>Rossore e dolore agli occhi<br><span>• </span>Lacrimazione<br><span>• </span>Impedimento superficiale della visione<br></p><p><b>Moxa</b><br><span>• </span>E' consigliata la moxa indiretta<br></p><p><b>Ubicazione</b><br><span><span>• </span><span>Sulla verticale sopra la pupilla</span><br>• </span>0.5 cun all'interno dell'attaccatura anteriore dei capelli sulla fronte<br><span>• </span>A metà strada tra 24.GV e 8.ST<br></p>",
 					ChiaviTsubo: "",
-					noMoxa: false,
-					noGravidanza: false	
 				},
 				{
 					NomeTsubo: "16.GB. Muchuang (Finestra dell'occhio)",
 					AzioniTsubo: "<p><b>M.T.C.<br></b><span>• </span>Punto d'incontro dei meridiani di <span style=\"font-style:italic;\">Cistifellea </span>e <span style=\"font-style:italic;\">Yangweimai</span><br><span>• </span>Giova agli occhi<br><span>• </span>Elimina il vento<br><span>• </span>Allevia il dolore<br></p><p><b>Applicazioni</b><br><span>• </span>Cefalea<br><span>• </span>Male all'arcata dentale superiore<br><span>• </span>Avversione al Freddo<br><span>• </span>Patologie dell'occhio<br><span>• </span>Gonfiori della testa e delle gengive<br><span>• </span>Epilessia<br><span>• </span>Congestione nasale<br><span>• </span>Febbre con brividi senza sudorazione<br></p><p><b>Moxa</b><br><span>• </span>E' consigliata la moxa indiretta<br></p><p><b>Ubicazione</b><br><span>• </span>Sopra la fronte<br><span>• </span>Lungo una linea curva che segue il contorno del cranio tra 15.GB e 20.GB<br><span>• </span>1,5 cun posteriormente a 15.GB<br></p>",
 					ChiaviTsubo: "",
-					noMoxa: false,
-					noGravidanza: false	
 				},
 				{
 					NomeTsubo: "17.GB. Zhengying (Nutrizione corretta)",
 					AzioniTsubo: "<p><b>M.T.C.<br></b><span>• </span>Punto d'incontro dei meridiani di <span style=\"font-style:italic;\">Cistifellea </span>e <span style=\"font-style:italic;\">Yangweimai</span><br><span>• </span>Giova alla testa<br><span>• </span>Calma lo stomaco<br><span>• </span>Allevia il dolore<br></p><p><b>Applicazioni</b><br><span>• </span>Cefalea<br><span>• </span>Male all'arcata dentale superiore<br><span>• </span>Avversione al Freddo<br><span>• </span>Capogiri da flegma fluido<br><span>• </span>Vomito incessante<br><span>• </span>Avversione ai rumori <br><span>• </span>Collo rigido <br><span>• </span>Nausea<br></p><p><b>Moxa</b><br><span>• </span>E' consigliata la moxa indiretta<br></p><p><b>Ubicazione</b><br><span>• </span>Sopra la fronte<br><span>• </span>Lungo una linea curva che segue il contorno del cranio tra 15.GB e 20.GB<br><span>• </span>3 cun posteriormente a 15.GB<br></p>",
 					ChiaviTsubo: "",
-					noMoxa: false,
-					noGravidanza: false	
 				},
 				{
 					NomeTsubo: "18.GB. Chengling (Giovare allo spirito)",
 					AzioniTsubo: "<p><b>M.T.C.<br></b><span>• </span>Punto d'incontro dei meridiani di <span style=\"font-style:italic;\">Cistifellea </span>e <span style=\"font-style:italic;\">Yangweimai</span><br><span>• </span>Allevia il dolore alla testa<br><span>• </span>Giova al capo e al naso<br><span>• </span>Riduce il Qi di Polmone<br></p><p><b>Applicazioni</b><br><span>• </span>Poco usato<br><span>• </span>Mal di testa<br><span>• </span>Capogiri<br><span>• </span>Dolore all'occhio<br><span>• </span>Rinite<br><span>• </span>Congestione nasale<br><span>• </span>Epistassi<br><span>• </span>Dispnea<br><span>• </span>Tosse<br><span>• </span>Avversione al Freddo e Vento<br></p><p><b>Moxa</b><br><span>• </span>E' consigliata la moxa indiretta<br></p><p><b>Ubicazione</b><br><span><span>• </span><span>Nella regione parietale</span><br>• </span>Lungo la linea curva che segue il contorno del cranio tra 15.GB e 20.GB<br><span>• </span>1,5 cun posteriormente a 17.GB<br></p>",
 					ChiaviTsubo: "",
-					noMoxa: false,
-					noGravidanza: false,
 					
 					 	
 				},
@@ -808,8 +580,6 @@ DB.set= {
 					NomeTsubo: "19.GB. Naokong (Cavità del cervello)",
 					AzioniTsubo: "<p><span style=\"font-weight:bold;\">M.T.C.<br></span><span>• </span>Punto d'incontro dei meridiani di <span style=\"font-style:italic;\">Cistifellea </span>e <span style=\"font-style:italic;\">Yangweimai</span><br><span>• </span>Calma il Vento<br><span>• </span>Purifica gli organi di senso<br><span>• </span>Giova alla testa<br><span>• </span>Allevia il dolore al capo<br></p><p><b>Applicazioni</b><br><span>• </span>Indicato per Vento alla testa e al cervello<br><span>• </span>Cefalea<br><span>• </span>Mal di testa monolaterale con pesantezza<br><span>• </span>Dolore e rigidità al collo con incapacità di muovere la testa<br><span>• </span>Capogiri da Vento<br><span>• </span>Gonfiore, rossore e dolore agli occhi<br><span>• </span>Sordità<br><span>• </span>Acufeni<br><span>• </span>Congestione nasale ed epistassi<br><span>• </span>Dolore al naso<br><span>• </span>Palpitazioni da spavento<br><span>• </span>Sindrome maniaco depressiva e malattie da esaurimento<br><span>• </span>Calore nel corpo<br></p><p><b>Moxa</b><br><span>• </span>Nessuna controindicazione<br></p><p><b>Ubicazione</b><br><span>• </span>Nella regione occipitale<br><span>• </span>Sulla verticale direttamente sopra 20.GB<br><span>• </span>A livello di 16.GV<br></p>",
 					ChiaviTsubo: "",
-					noMoxa: false,
-					noGravidanza: false,
 					
 					 	
 				},
@@ -817,1809 +587,1300 @@ DB.set= {
 					NomeTsubo: "20.GB. Fengchi (Stagno del vento)",
 					AzioniTsubo: "  <p><span><span style=\"font-weight:bold;\">M.T.C.</span><br></span><span>• </span>Punto d'incontro dei meridiani di <span style=\"font-style:italic;\">Cistifellea </span>e <span style=\"font-style:italic;\">Yangweimai</span><br><span>• </span>Elimina il Vento<br><span>• </span>Purifica gli organi di senso<br><span>• </span>Giova agli occhi e alla testa<br><span>• </span>Facilita la circolazione del Qi nel meridiano<br><span>• </span>Allevia il dolore. <br></p><p><b>Applicazioni</b><br><span>• </span>Punto importante per qualunque tipo di mal di testa<br><span>• </span>Capogiri<br><span>• </span>Deviazione della bocca e degli occhi<br><span>• </span>Trisma mandibolare<br><span>• </span>Ipertensione<br><span>• </span>Emiplegia<br><span>• </span>Punto fondamentale nel trattamentodi problematiche relative agli organi di senso<br><span>• </span>Brividi accompagnati da male al capo<br><span>• </span>Febbre accompagnata da mal di testa<br><span>• </span>Lacrimazione, occhi rossi e dolenti<br><span>• </span>Disturbi della visione<br><span>• </span>Congestione e scolo nasale<br><span>• </span>Mal di gola<br><span>• </span>Edema facciale<br><span>• </span>Epistassi<br><span>• </span>Rinite<br><span>• </span>Rinorrea<br><span>• </span>Acufeni e sordità<br><span>• </span>Per patologie del cervello<br><span>• </span>Perdita della parola in seguito a ictus<br><span>• </span>Perdita di memoria<br><span>• </span>Epilessia e colpo apoplettico<br><span>• </span>Tratta le malattie di collo, spalle, e parte superiore del dorso<br></p><p><b>Moxa</b><br>E' consigliata la moxa indiretta<br></p><p><b>Ubicazione</b><br><span>• </span>Vicino alla base del cranio sotto l'occipite<br><span>• </span>Circa a metà strada tra 16.GV e 12.GB<br><span>• </span>Nella cavità tra i capi dei muscoli trapezio e sternocleidomastoideo<br><span>• </span>Viene solitamente localizzato nella zona della cavità più dolente alla pressione. <br></p>",
 					ChiaviTsubo: "",
-					noMoxa: false,
-					noGravidanza: false	
 				},
 				{
 					NomeTsubo: "21.GB. Ianjing (Pozzo della spalla)",
 					AzioniTsubo: "<p><span style=\"font-weight:bold;\">M.T.C.<br></span><span>• </span>Punto d'incontro dei meridiani di <span style=\"font-style:italic;\">Cistifellea</span>, <span style=\"font-style:italic;\">Triplice riscaldatore</span>, <span style=\"font-style:italic;\">Stomaco</span> e <span style=\"font-style:italic;\">Yangweimai</span><br><span>• </span>Facilita e regola la circolazione del Qi nel canale<br><span>• </span>Allevia il dolore<br><span>• </span>Scioglie i noduli<br><span>• </span>Trasforma e abbassa il flegma<br><span>• </span>Riequilibra il Qi<br></p><p><b>Applicazioni</b><br><span>• </span>Giova al seno e sollecita il travaglio<br><span>• </span>Indicato in situazioni di parto difficoltoso<br><span>• </span>Ascesso mammario<br><span>• </span>Difficoltà di fuoriuscita del latte<br><span>• </span>Rigidità e dolore al collo e spalle, estesi a braccia e dorso. <br><span>• </span>Tratta il flegma<br><span>• </span>Perdita della parola dopo colpo apoplettico<br><span>• </span>Emiplegia<br><span>• </span>Gozzo<br><span>• </span>Scrofola<br><span>• </span>Ictus<br></p><p><b>Moxa</b><br><span>• </span>E' consigliata la moxa indiretta<br><span>• </span>Assolutamente controindicato in gravidanza<br></p><p><b>Ubicazione</b><br><span>• </span>Sulla cresta del muscolo trapezio nel punto più alto localizzato di solito nella zona più dolente<br><span>• </span>A metà strada tra 14.GV e l'apice dell' acromion. <br></p>",
 					ChiaviTsubo: "",
-					noMoxa: false,
-					noGravidanza: true	
 				},
 				{
 					NomeTsubo: "22.GB. Yuanye (Abisso dell'ascella)",
 					AzioniTsubo: "<p><b>M.T.C.</b><br><span>• </span>Libera il torace<br><span>• </span>Regola il Qi<br><span>• </span>Giova all'ascella<br></p><p><b>Applicazioni</b><br><span>• </span>Utilizzato raramente<br><span>• </span>Tosse e pienezza toracica<br><span>• </span>Febbre e brividi<br><span>• </span>Gonfiore ascellare<br><span>• </span>Dolori nella regione costale laterale<br><span>• </span>Dolore a braccio e spalla con impossibilità di alzare il braccio <br></p><p><b>Moxa</b><br><span>• </span>Secondo molti testi classici, questo punto è controindicato alla moxibustione. <br></p><p><b>Ubicazione</b><br><span>• </span>Localizzato sulla linea ascellare media<br><span>• </span>Nel quinto spazio intercostale<br><span>• </span>A livello del capezzolo<br><span>• </span>Circa a 3 cun inferiormente all'apice dell'ascella<br><span>• </span>Individuare la cartilagine costale della seconda costa localizzata a livello dell'angolo sternale, a livello del secondo spazio intercostale sotto di essa e quindi, tre spazi sotto, il quinto intercostale.</p>",
 					ChiaviTsubo: "",
-					noMoxa: true,
-					noGravidanza: false	
 				},
 				{
 					NomeTsubo: "23.GB. Zhejin (Articolazione del fianco)",
 					AzioniTsubo: "<p><span style=\"font-weight:bold;\">M.T.C.<br></span><span>• </span>Punto d'incontro dei meridiani di <span style=\"font-style:italic;\">Cistifellea </span>e <span style=\"font-style:italic;\">Vescica urinaria</span><br><span>• </span>Regola il Qi dei tre Jiao<br><span>• </span>Slega il torace e abbassa il Qi ribelle<br><span>• </span>Secondo alcuni testi è un punto MU-frontale di Cistifellea (invece che 24.GB)<br></p><p><b>Applicazioni</b><br><span>• </span>Pienezza toracica<br><span>• </span>Dispnea<br><span>• </span>Asma<br><span>• </span>Sospiri e tendenza alla tristezza<br><span>• </span>Insonnia<br><span>• </span>Dolore alla regione costale laterale</p><p><b>Moxa</b><br>E' consigliata la moxa indiretta<br></p><p><b>Ubicazione</b><br><span>• </span>Nel quinto spazio intercostale sotto l'ascella<br><span>• </span>A livello del capezzolo<br><span>• </span>1 cun anteriormente a 22.GB<br><span>• </span>Individuare la cartilagine costale della seconda costa localizzata a livello dell'angolo sternale, a livello del secondo spazio intercostale sotto di essa e quindi, tre spazi sotto, il quinto intercostale. <br></p>",
 					ChiaviTsubo: "",
-					noMoxa: false,
-					noGravidanza: false	
 				},
 				{
 					NomeTsubo: "24.GB. Riyue (Sole e luna)",
 					AzioniTsubo: "<p><span style=\"font-weight:bold;\">M.T.C.<br></span><span>• </span>Punto d'incontro dei meridiani di <span style=\"font-style:italic;\">Cistifellea</span>, <span style=\"font-style:italic;\">Milza </span>e <span style=\"font-style:italic;\">Yangweimai</span><br><span>• </span>Punto<span style=\"font-style:italic;\"> mu</span>-frontale di Cistifellea<br style=\"font-style:italic;\"><span>• </span>Fa circolare il Qi di Fegato<br><span>• </span>Giova alla Cistifellea tonificandone il Qi<br><span>• </span>Abbassa il Qi ribelle<br><span>• </span>Armonizza il Jiao medio<br><span>• </span>Risolve Umidità-Calore<br></p><p><b>Applicazioni</b><br><span>• </span>Distensione e pienezza con dolore alla regione costale laterale<br><span>• </span>Distensione addominale<br><span>• </span>Vomito<br><span>• </span>Ittero<br><span>• </span>Rigurgiti acidi<br><span>• </span>Dolore epigastrico<br><span>• </span>Singhiozzo<br><span>• </span>Tendenza alla tristezza<br><span>• </span>Indecisione<br><span>• </span>Sospiri<br></p><p><b>Moxa</b><br><span>• </span>E' consigliata la moxa indiretta<br></p><p><b>Ubicazione</b><br><span><span>• </span>Nella parte toracica anteriore<br>• </span>Nel settimo spazio intercostale sulla linea verticale direttamente sotto il capezzolo<br><span>• </span>4 cun lateralmente alla linea mediana del busto<br></p>",
 					ChiaviTsubo: "Punto BO di Cistifellea",
-					noMoxa: false,
-					noGravidanza: false	
 				},
 				{
 					NomeTsubo: "25.GB. Jingmen (Porta della capitale)",
 					AzioniTsubo: "<p><b>M.T.C.<br></b><span>• </span>Punto <span italic;=\"\">mu</span>-frontale dei Reni<br><span>• </span>Regola i passaggi dell'acqua<br><span>• </span>Rinforza la regione lombare<br><span>• </span>Tonifica i Reni<br><span>• </span>Regola gli Intestini<br><span>• </span>Fortifica la Milza<br></p><p><b>Applicazioni</b><br><span>• </span>Lombalgia con impossibilità di stare in piedi a lungo<br><span>• </span>Dolore all'anca e alla regione costale laterale<br><span>• </span>Debolezza della spina dorsale<br><span>• </span>Diarrea da Freddo o Umidità<br><span>• </span>Borborigmi<br><span>• </span>Distensione addominale<br><span>• </span>Urine concentrate<br><span>• </span>Edema facciale<br><span>• </span>Difficoltà di funzionamento della via dell'acqua<br><span>• </span>Difficoltà di minzione. <br></p><p><b>Moxa</b><br><span>• </span>E' consigliata la moxa indiretta<br></p><p><b>Ubicazione</b><br><span>• </span>Nella regione toracica laterale<br><span>• </span>Anteriormente e inferiormente al margine libero della dodicesima costa<br></p>",
 					ChiaviTsubo: "Punto BO di Rene",
-					noMoxa: false,
-					noGravidanza: false	
 				},
 				{
 					NomeTsubo: "26.GB. Daimai (Vaso cintura)",
 					AzioniTsubo: "<p><span style=\"font-weight:bold;\">M.T.C.<br></span><span>• </span>Punto d'incontro dei meridiani di <span style=\"font-style:italic;\">Cistifellea </span>e <span style=\"font-style:italic;\">Daimai</span><br><span>• </span>Riequilibra il meridiano di Daimai <br><span>• </span>Drena l'Umidità<br><span>• </span>Favorisce la circolazione del Qi nel canale<br><span>• </span>Allevia il dolore<br><span>• </span>Regola i mestrui<br><span>• </span>Muove il ristagno del Qi nel Jiao inferiore<br></p><p><b>Applicazioni</b><br><span>• </span>Amenorrea<br><span>• </span>Leucorrea di qualsiasi origine<br><span>• </span>Prolasso uterino<br><span>• </span>Infertilità<br><span>• </span>Irregolarità mestruale<br><span>• </span>Tratta dolore alla regione costale laterale<br><span>• </span>Lombalgia<br><span>• </span>Addome disteso duro e dolente<br></p><p><b>Moxa</b><br><span>• </span>E' consigliata la moxa indiretta<br></p><p><b>Ubicazione</b><br><span>• </span>A livello dell'ombelico direttamente sotto 13.LR <br><span>• </span>Anteriormente ed inferiormente al margine libero dell' undicesima costa. <br></p>",
 					ChiaviTsubo: "",
-					noMoxa: false,
-					noGravidanza: false	
 				},
 				{
 					NomeTsubo: "27.GB. Wushu (Cinque cardini)",
 					AzioniTsubo: "<p><b>M.T.C.<br></b><span>• </span>Punto d'incontro dei meridiani di <span style=\"font-style:italic;\">Cistifellea </span>e <span style=\"font-style:italic;\">Daimai</span><br><span>• </span>Riequilibra il meridiano di Daimai <br><span>• </span>Regola il Jiao inferiore<br><span>• </span>Trasforma i ristagni del Qi<br></p><p><span><b>Applicazioni</b><br><span>• </span>Indicato per le sindromi </span><span>shan </span>da Freddo nell'uomo<br><span>• </span>Dolore addominale da retrazione dei testicoli (Il qi di shan grave è caratterizzato da acuti dolori che dai testicoli si estendono al basso addome. Il dolore può essere a livello testicolare o vicino al punto 27.GB, in entrambi i casi viene coinvolto il canale <span>jueyin </span>del piede)<br><span>• </span>Prolasso uterino<br><span>• </span>Perdite vaginali rosse e bianche<br><span>• </span>Irregolarità mestruali<br></p><p><b>Moxa</b><br><span>• </span>E' consigliata la moxa indiretta<br></p><p><b>Ubicazione</b><br><span>• </span>Nella depressione antero-superiore della cresta iliaca<br><span>• </span>A livello di 4.CV<br><span>• </span>3 cun sotto l'ombelico<br></p>",
 					ChiaviTsubo: "",
-					noMoxa: false,
-					noGravidanza: false	
 				},
 				{
 					NomeTsubo: "28.GB. Weidao (Via di collegamento)",
 					AzioniTsubo: "<p><b>M.T.C.<br></b><span>• </span>Punto d'incontro dei meridiani di <span style=\"font-style:italic;\">Cistifellea </span>e <span style=\"font-style:italic;\">Daimai</span><br><span>• </span><span>Riequilibra il meridiano di Daimai <br></span><span>• </span><span>Regola Jiao inferiore<br></span><span>• </span><span>Trasforma i ristagni di Qi</span></p><p><b>Applicazioni</b><br><span>• </span>Raramente utilizzato<br><span>• </span>Prolasso uterino<br><span>• </span>Leucorrea<br><span>• </span>Dolori all'addome inferiore<br><span>• </span>Dolore al dorso e all'ileo<br><span>• </span>Mestrui irregolari. <br></p><p><b>Moxa</b><br><span>• </span>Nessuna controindicazione<br></p><p><b>Ubicazione</b><br><span>• </span>Anteriormente ed inferiormente a 27.GB di 0.5 cun<br></p>",
 					ChiaviTsubo: "",
-					noMoxa: false,
-					noGravidanza: false	
 				},
 				{
 					NomeTsubo: "29.GB. Juliao (Fessura immobile)",
 					AzioniTsubo: "<p><b>M.T.C.<br></b><span>• </span>Punto d'incontro dei meridiani di <span style=\"font-style:italic;\">Cistifellea </span>e <span style=\"font-style:italic;\">Yangqiaomai</span><br><span>• </span><span>Favorisce la circolazione del Qi nel canale<br></span><span>• </span><span>Allevia il dolore<br></span><span>• </span><span>Giova all'articolazione dell'anca</span></p><p><b>Applicazioni</b><br><span>• </span>Patologie che provocano dolori lombari e alle gambe<br><span>• </span>Dolori lombari che si irradiano all'addome inferiore<br><span>• </span>Sciatica<br><span>• </span>Dolore nella zona anteriore della spalla che si irradia al petto<br><span>• </span>Impossibilità di sollevare il braccio<br><span>• </span>Importante da lavorare localmente per le patologie dell'articolazione dell'anca, specialmente se il dolore è irradiato all'addome inferiore e all'inguine. <br></p><p><b>Moxa</b><br><span>• </span>E' consigliata la moxa indiretta<br></p><p><b>Ubicazione</b><br><span>• </span>A lato dell'articolazione dell'anca<br><span>• </span>A metà tra la prominenza del grande trocantere e la spina iliaca antero-superiore<br><span>• </span>Piegando l'articolazione dell'anca localizzare 39.GB al termine laterale della piega così formatasi<br></p>",
 					ChiaviTsubo: "",
-					noMoxa: false,
-					noGravidanza: false	
 				},
 				{
 					NomeTsubo: "30.GB. Huantiao (Cerchio che salta)",
 					AzioniTsubo: "<p><b>M.T.C.<br></b><span>• </span>Punto d'incontro dei meridiani di <span style=\"font-style:italic;\">Cistifellea </span>e <span style=\"font-style:italic;\">Vescica urinaria</span><br><span>• </span>Punto Stella del cielo di Ma Danyang<br><span>• </span><span>Facilita la circolazione del Qi nel meridiani<br></span><span>• </span><span>Allevia il dolore<br></span><span>• </span><span>Giova all'articolazione dell'anca e alla gamba<br></span><span>• </span><span>Discioglie il Vento-Umidità. </span></p><p><b>Applicazioni</b><br><span>• </span>Importante perle patologie degli arti inferiori, compresa la sciatica<br><span>• </span>Rigidità<br><span>• </span>Dolori e contratture<br><span>• </span>Parestesie<br><span>• </span>Ostruzioni dolorose<br><span>• </span>Da lavorare localmente per malattie dell'articolazione dell'anca<br></p><p><b>Moxa</b><br><span>• </span>E' consigliata la moxa indiretta<br></p><p><b>Ubicazione</b><br><span>• </span>Nella zona postero- laterale dell'articolazione dell'anca<br><span>• </span>a un terzo della distanza tra la prominenza del grande trocantere e lo iato sacro coccigeo<br> </p>",
 					ChiaviTsubo: "",
-					noMoxa: false,
-					noGravidanza: false	
 				},
 				{
 					NomeTsubo: "31.GB. Fengshi (Mercato del Vento)",
 					AzioniTsubo: "<p><b>M.T.C.</b><br><span>• </span>Facilita la circolazione del Qi nel canale <br><span>• </span>Allevia il dolore<br><span>• </span>Disperde il Vento-Umidità<br><span>• </span>Allevia il prurito<br></p><p><b>Applicazioni</b><br><span>• </span>Sciatica<br><span>• </span>Emiplegia<br><span>• </span>Ostruzione con dolore migrante<br>• Prurito in tutto il corpo e orticaria<br></p><p><b>Moxa</b><br><span>• </span>E' consigliata la moxa indiretta<br></p><p><b>Ubicazione</b><br><span>• </span>A lato della coscia <br><span>• </span>Direttamente sotto il grande trocantere<br><span>• </span>7 cun sopra la piega poplitea. <br></p>",
 					ChiaviTsubo: "",
-					noMoxa: false,
-					noGravidanza: false	
 				},
 				{
 					NomeTsubo: "32.GB. Zhongdu (Fosso centrale)",
 					AzioniTsubo: "<p><b>M.T.C.</b><br><span>• </span>Facilita la circolazione del Qi nel canale<br><span>• </span>Allevia il dolore<br><span>• </span>Espelle Vento, Freddo e Umidità<br></p><p><b>Applicazioni</b><br><span>• </span>Punto molto usato per malattia atrofica<br><span>• </span>Ostruzione dolorosa<span> </span><span>dei tendini</span><span> dell'arto inferiore<br></span><span>• </span><span>Parestesie accompagnato da dolore emiplegia<br></span><span>• </span><span>Sciatica<br></span><span>• </span><span>Dolore al dorso e ai glutei<br></span><span>• </span><span>Qi freddo che risiede nei muscoli e nei tendini<br></span><span>• </span><span>Orticaria</span></p><p><b>Moxa</b><br><span>• </span>E' consigliata la moxa indiretta<br></p><p><b>Ubicazione</b><span><br><span>• </span><span>Sul lato della coscia</span><br>• </span>2 cun inferiormente a 31.GB<br></p>",
 					ChiaviTsubo: "",
-					noMoxa: false,
-					noGravidanza: false	
 				},
 				{
 					NomeTsubo: "33.GB. Xiyangguan (Cancello Yang del ginocchio)",
 					AzioniTsubo: "<p><b>M.T.C.</b><br><span>• </span>Disperde il Vento-Umidità<br><span>• </span>Rilassa i tendini<br><span>• </span>Giova alle articolazioni. <br></p><p><b>Applicazioni</b><br><span>• </span>Gonfiore e rossore al ginocchio<br><span>• </span>Dolore alla regione laterale dell'articolazione del ginocchio<br></p><p><b>Moxa</b><br><span>• </span>Controindicato alla moxibustione<br></p><p><b>Ubicazione</b><br><span>• </span>Sul lato esterno del ginocchio<br><span>• </span>Nella depressione sopra l'epicondilo laterale del femore<br><span>• </span>Tra il femore e il tendine del bicipite femorale. </p>",
 					ChiaviTsubo: "",
-					noMoxa: true,
-					noGravidanza: false	
 				},
 				{
 					NomeTsubo: "34.GB. Yanglingquan (Fonte della collina dello Yang)",
 					AzioniTsubo: "<p><b>M.T.C.<br></b><span>• </span>Punto <span style=\"font-style:italic;\">he</span>-mare e Terra del meridiano di <span style=\"font-style:italic;\">Cistifellea</span><br><span>• </span>Punto <span style=\"font-style:italic;\">hui</span>-riunione dei tendini<br><span>• </span>Punto Stella del cielo di Ma Danyang<br><span>• </span><span>Fa circolare e tonifica il Qi di Fegato e di Cistifellea</span><br><span>• </span>Giova alla regione costale laterale<br><span>• </span>Allevia il dolore<br><span>• </span>Armonizza lo Shaoyang<br><span>• </span>Purifica l'Umidità-Calore di Vescica Biliare e Fegato<br><span>• </span>Giova ai tendini e alle articolazioni<br></p><p><b>Applicazioni</b><br><span>• </span>Timore, sospiri frequenti<br><span>• </span>Contrattura dei tendini<br><span>• </span>Rigidità del collo e delle spalle<br><span>• </span>Dolore al gomito<br><span>• </span>Punto importante per tutte le malattie degli arti inferiori<br><span>• </span>Dolore a ginocchio e anca<br><span>• </span>Sciatica<br><span>• </span>Emiplegia<br><span>• </span>Sindromi atrofiche<br><span>• </span>Ostruzione dolorosa<br><span>• </span>Tratta tutti i disturbi della regione costale laterale<br><span>• </span>Brividi e febbre alternati<br><span>• </span>Dolore alla regione costale laterale<br><span>• </span>Sapore amaro in bocca<br><span>• </span>Fauci secche<br><span>• </span>Nausea e vomito<br><span>• </span>Ittero<br><span>• </span>Colecistite<br></p><p><b>Moxa</b><br><span>• </span>E' consigliata la moxa indiretta<br></p><p><b>Ubicazione</b><br><span>• </span>Nella zona laterale del ginocchio<br><span>• </span>Nella depressione dolente alla palpazione<br><span>• </span>1 cun anteriormente ed inferiormente alla testa del perone <br></p>",
 					ChiaviTsubo: "",
-					noMoxa: false,
-					noGravidanza: false	
 				},
 				{
 					NomeTsubo: "35.GB. Yangjiao (Intersezione Yang)",
 					AzioniTsubo: "<p><span style=\"font-weight:bold;\">M.T.C.<br></span><span>• </span>Punto <span style=\"font-style:italic;\">xi</span>-fessura del meridiano di <span style=\"font-style:italic;\">Yangweimai</span><br><span>• </span>Riequilibra e facilita la circolazione il Qi del meridiano<br><span>• </span>Calma lo Shen<br><span>• </span>Allevia il dolore. <br></p><p><b>Applicazioni</b><br><span>• </span>Poco usato<br><span>• </span>Dolore e gonfiore al ginocchio<br><span>• </span>Malattia atrofica <br><span>• </span>Ostruzione dolorosa degli arti inferiori (anche da freddo)<br><span>• </span>Mania provocata da spavento<br><span>• </span>Gonfiore della faccia e tutta la testa<br><span>• </span>Ostruzione dolorosa della gola<br><span>• </span>Contrattura dei tendini durante la sindrome coleriforme acuta<br></p><p><b>Moxa</b><br><span>• </span>E' consigliata la moxa indiretta<br></p><p><b>Ubicazione</b><br><span>• </span>Nella zona laterale della gamba<br><span>• </span>Nella depressione lungo il bordo anteriore del perone<br><span>• </span>7 cun superiormente alla prominenza del malleolo laterale <br></p>",
 					ChiaviTsubo: "",
-					noMoxa: false,
-					noGravidanza: false	
 				},
 				{
 					NomeTsubo: "36.GB. Waiqiu (Collina esterna)",
 					AzioniTsubo: "<p><b>M.T.C.<br></b><span>• </span>Punto <span style=\"font-style:italic;\">xi</span>-fessura del meridiano di <span style=\"font-style:italic;\">Cistifellea</span><br><span>• </span>Aiuta la circolazione del Qi nel meridiano<br><span>• </span>Attenua il dolore<br><span>• </span>Purifica il Calore<br><span>• </span>Disintossica dai veleni<br></p><p><b>Applicazioni</b><br><span>• </span>Indicato per il trattamento delle condizioni acute e del dolore<br><span>• </span>Pelle dolorante<br><span>• </span>Rabbia con brividi e febbre<br><span>• </span>Distensione e dolore alla regione costale laterale<br><span>• </span>Mal di testa<br><span>• </span>Manie<br><span>• </span>Dolore addominale<br><span>• </span>Rigidità al collo e alla nuca<br><span>• </span>Insofferenza al freddo e al vento<br></p><p><b>Moxa</b><br><span>• </span>E' consigliata la moxa indiretta<br></p><p><b>Ubicazione</b><br><span>• </span>Nella zona laterale della gamba<br><span>• </span>Nella depressione lungo il bordo posteriore del perone<br><span>• </span>7 cun superiormente alla prominenza del malleolo laterale<br></p>",
 					ChiaviTsubo: "",
-					noMoxa: false,
-					noGravidanza: false	
 				},
 				{
 					NomeTsubo: "37.GB. Guangming (Luce luminosa)",
 					AzioniTsubo: "<p><span style=\"font-weight:bold;\">M.T.C.<br></span><span>• </span>Punto <span style=\"font-style:italic;\">luo</span>-collegamento del meridiano di <span style=\"font-style:italic;\">Cistifellea</span><br><span>• </span>Aiuta la circolazione del Qi nel meridiano<br><span>• </span>Attenua il dolore<br><span>• </span>Purifica il Vento-Umidità<br><span>• </span>Giova agli occhi. <br></p><p><b>Applicazioni</b><br><span>• </span>Miopia<br><span>• </span>Prurito agli occhi <br><span>• </span>Cecità notturna<br><span>• </span>Presbiopia<br><span>• </span>Problemi alla parte inferiore della gamba<br><span>• </span>Ostruzione dolorosa degli arti inferiori con parestesie nella parte alta<br><span>• </span>Dolori al ginocchio<br><span>• </span>Algie con impossibilità di stare in piedi<br></p><p><b>Moxa</b><br><span>• </span>E' consigliata la moxa indiretta<br></p><p><b>Ubicazione</b><br><span>• </span>Nella zona laterale della gamba<br><span>• </span>5 cun superiormente alla prominenza del malleolo laterale<br><span>• </span>Nella depressione sul bordo anteriore del perone<br></p>",
 					ChiaviTsubo: "",
-					noMoxa: false,
-					noGravidanza: false	
 				},
 				{
 					NomeTsubo: "38.GB. Yangfu (Assistenza dello yang)",
 					AzioniTsubo: "<p><span style=\"font-weight:bold;\">M.T.C.<br></span><span>• </span>Punto <span style=\"font-style:italic;\">jing</span>-fiume e Fuoco del meridiano di <span style=\"font-style:italic;\">Cistifellea</span><br><span>• </span>Aiuta la circolazione del Qi nel meridiano<br><span>• </span>Attenua il dolore<br><span>• </span>Purifica il Calore nel meridiano<br><span>• </span>Equilibra lo <span style=\"font-style:italic;\">shaoyang</span><br><span>• </span>Aiuta la salute di tendini e ossa<br></p><p><span><b>Applicazioni</b><br><span>• </span>Dolore al petto e alla regione costale laterale con sospiri<br><span>• </span>Dolore al petto<br><span>• </span>Malaria<br><span>• </span>Sapore amaro<br><span>• </span>Febbre e brividi<br><span>• </span>Punto fondamentale per le ostruzioni da Vento<br><span>• </span>Dolore alle articolazioni e contratture<br><span>• </span>Sensazione nella regione lombare come di stare molto seduti nell'acqua<br><span>• </span>Dolore lombare come martello che colpisce in centro schiena<br><span>• </span>Lombalgie intense<br><span>• </span>Mal di testa monolaterale provocato da ristagno del Qi di Fegato o da risalita del Fuoco o dello </span><span style=\"font-style:italic;\">yang </span>di Fegato<br></p><p><b>Moxa</b><br><span>• </span>E' consigliata la moxa indiretta<br></p><p><b>Ubicazione</b><br><span>• </span>Nella zona laterale della gamba<br><span>• </span>4 cun superiormente alla prominenza del malleolo laterale<br><span>• </span>Nella depressione sul bordo anteriore del perone<br></p>",
 					ChiaviTsubo: "",
-					noMoxa: false,
-					noGravidanza: false	
 				},
 				{
 					NomeTsubo: "39.GB. Xuanzhong (Campana sospesa)",
 					AzioniTsubo: "<p><span style=\"font-weight:bold;\">M.T.C.<br></span><span>• </span>Punto <span style=\"font-style:italic;\">hui</span>-riunione dei midolli<br><span>• </span>Aiuta la circolazione del Qi nel meridiano<br><span>• </span>Attenua il dolore<br><span>• </span>Purifica il Calore, giova al collo, ai tendini, alle ossa<br><span>• </span>Elimina il Vento-Umidità<br></p><p><b>Applicazioni</b><br><span>• </span>Ripulisce il Qi stagnante e il Fuoco<br><span>• </span>Distensione e pienezza del torace e del Cuore nell'addome e nella regione costale<br><span>• </span>Rabbia<br><span>• </span>Mania<br><span>• </span>Indignazione<br><span>• </span>Epistassi ed emorroidi<br><span>• </span>Flaccidità<br><span>• </span>Contrattura e dolore agli arti<br><span>• </span>Ostruzioni dolorose<br><span>• </span>Sindromi atrofiche croniche<br><span>• </span>Punto fondamentale che libera da dolore al collo e rigidità. <br></p><p><b>Moxa</b><br><span>• </span>E' consigliata la moxa indiretta<br></p><p><b>Ubicazione</b><br><span>• </span>Prossimalmente all'articolazione della caviglia<br><span>• </span>3 cun sopra la prominenza del malleolo laterale<br><span>• </span>Tra il bordo posteriore della fibula e i tendini dei muscoli peronei<br><span>• </span>Si trova quattro dita trasverse sopra il malleolo laterale. <br></p>",
 					ChiaviTsubo: "",
-					noMoxa: false,
-					noGravidanza: false	
 				},
 				{
 					NomeTsubo: "40.GB. Qiuxu (Cumulo di macerie)",
 					AzioniTsubo: "<p><span style=\"font-weight:bold;\">M.T.C.<br></span><span>• </span>Punto <span style=\"font-style:italic;\">yuan</span>-sorgente del meridiano di <span style=\"font-style:italic;\">Cistifellea</span><br><span>• </span>Aiuta la circolazione del Qi di Fegato e Cistifellea<br><span>• </span>Attenua il dolore<br><span>• </span>Purifica il Calore e l'Umidità-Calore del meridiano<br><span>• </span>Aiuta le articolazioni<br><span>• </span>Normalizza <span style=\"font-style:italic;\">shaoyang</span> <br></p><p><b>Applicazioni</b><br><span>• </span>Patologie degli arti inferiori<br><span>• </span>Sciatica<br><span>• </span>Dolori e crampi alle gambe e all'anca<br><span>• </span>Ostruzione dolorosa particolarmente dell'articolazione della caviglia<br><span>• </span>Gonfiore e flaccidità della zona laterale della caviglia<br><span>• </span>Rossore, gonfiore, dolore, distensione della testa del collo, degli occhi, dell'ascella, del torace, della gola, della zona costale laterale<br><span>• </span>Sospiri<br><span>• </span>Incapacità di riprendere fiato<br><span>• </span>Malaria cronica<br><span>• </span>Ripulisce il meridiano dall' Umidità-Calore<br><span>• </span>Vomito<br><span>• </span>Rigurgiti acidi<br><span>• </span>Herpes zoster<br><span>• </span>Colecistiti<br></p><p><b>Moxa</b><br><span>• </span>E' consigliata la moxa indiretta<br></p><p><b>Ubicazione</b><br><span>• </span><span>Nella zona articolare della caviglia</span><br><span>• </span>Nella depressione anteriore e inferiore al malleolo esterno <br></p>",
 					ChiaviTsubo: "",
-					noMoxa: false,
-					noGravidanza: false	
 				},
 				{
 					NomeTsubo: "41.GB. Zulinqi (Governatore delle lacrime del piede)",
 					AzioniTsubo: "<p><span style=\"font-weight:bold;\">M.T.C.<br></span><span>• </span>Punto <span style=\"font-style:italic;\">shu</span>-corrente e legno del meridiano di <span style=\"font-style:italic;\">Cistifellea</span><br><span>• </span>Punto Confluente del meridiano di <span style=\"font-style:italic;\">Daimai</span><br><span>• </span>Aiuta la circolazione del Qi nel meridiano di Fegato<br><span>• </span>Purifica la testa<br><span>• </span>Aiuta gli occhi<br><span>• </span>Aiuta la regione costale laterale, i seni e il torace<br><span>• </span>Fluidifica il flegma <br><span>• </span>Scioglie i noduli. <br></p><p><b>Applicazioni</b><br><span>• </span>Tratta gonfiore e dolore ai piedi<br><span>• </span>Dolore e contrattura delle dita<br><span>• </span>Cefalea temporale occipitale o al vertice<br><span>• </span>Capogiri<br><span>• </span>Acufeni<br><span>• </span>Sordità<br><span>• </span>Negli occhi tratta il gonfiore il rossore, secchezza, lacrimazione<br><span>• </span>Nel seno, la distensione, i noduli, ascessi, gonfiore, dolore<br><span>• </span>Nel torace lavora sull'ostruzione dolorosa<br><span>• </span>Dispnea<br></p><p><b>Moxa</b><br><span>• </span>E' consigliata la moxa indiretta<br></p><p><b>Ubicazione</b><br><span>• </span>A livello della depressione tra il quarto e quinto osso metatarsale<br><span>• </span>Sul margine laterale del tendine del muscolo estensore lungo delle dita del piede. <br></p>",
 					ChiaviTsubo: "",
-					noMoxa: false,
-					noGravidanza: false	
 				},
 				{
 					NomeTsubo: "42.GB. Diwuhui (Cinque incontri terrestri)",
 					AzioniTsubo: "<p><b>M.T.C.</b><br><span>• </span>Aiuta la circolazione del Qi nel meridiano di <span style=\"font-style:italic;\">Fegato</span><br><span>• </span>Purifica il Calore del meridiano<br></p><p><b>Applicazioni</b><br><span>• </span>Punto efficace per il mal di testa<br><span>• </span>Prurito agli occhi<br><span>• </span>Rossore agli occhi<br><span>• </span>Acufeni<br><span>• </span>Algie alla regione costale laterale<br><span>• </span>Gonfiore e dolore ascellare<br><span>• </span>Sordità, pienezza di torace<br><span>• </span>Dolore e distensione al seno<br><span>• </span>Ascesso mammario<br><span>• </span>Gonfiore, rossore, dolore al dorso del piede<br></p><p><b>Moxa</b><br><span>• </span>Fonti concordano su fatto che non esistono controindicazioni alla moxibustione mentre<br>il 'Grande compendio di agopuntura e moxibustione' lo sconsiglia. <br></p><p><b>Ubicazione</b><br><span>• </span>Nella depressione prossimale alle teste metatarsali del quarto e quinto dito<br><span>• </span>Lateralmente al margine del tendine del muscolo estensore lungo<br></p>",
 					ChiaviTsubo: "",
-					noMoxa: true,
-					noGravidanza: false	
 				},
 				{
 					NomeTsubo: "43.GB. Xiaxi (Ruscello bloccato)",
 					AzioniTsubo: " <p><span style=\"font-weight:bold;\">M.T.C.<br></span><span>• </span>Punto <span style=\"font-style:italic;\">ying</span>-ruscello<br><span>• </span>Punto Acqua del meridiano di <span style=\"font-style:italic;\">Cistifellea</span><br><span>• </span>Aiuta per problemi ad occhi, orecchie e testa<br><span>• </span>Purifica il Calore<br><span>• </span>Purifica l'Umidità-Calore e riduce i gonfiori<br></p><p><b>Applicazioni</b><br><span>• </span>Capogiri<br><span>• </span>Mal di testa<br><span>• </span>Sordità<br><span>• </span>Dolore all'orecchio<br><span>• </span>Rossore e prurito agli occhi<br><span>• </span>Dolore al petto e alla regione costale laterale<br><span>• </span>Ascesso mammario (compreso quello che spurga)<br><span>• </span>Gonfiore alla regione sottomandibolare e alle guance e al ginocchio<br><span>• </span>Erosioni e ragadi alle dita dei piedi<br></p><p><b>Moxa</b><br><span>• </span>E' consigliata la moxa indiretta<br></p><p><b>Ubicazione</b><br><span>• </span>Nella zona dorsale del piede<br><span>• </span>Tra quarto e quinto dito<br><span>• </span>In direzione prossimale al margine della piega interdigitale di 0.5 cun. <br></p>",
 					ChiaviTsubo: "",
-					noMoxa: false,
-					noGravidanza: false	
 				},
 				{
 					NomeTsubo: "44.GB. Zuqiaoyin (Aperture Yin del piede)",
 					AzioniTsubo: "  <p><b>M.T.C.<br></b><span>• </span>Punto <span style=\"font-style:italic;\">jing</span>-pozzo del meridiano di <span style=\"font-style:italic;\">Cistifellea</span><br><span>• </span>Punto Metallo del meridiano di <span style=\"font-style:italic;\">Cistifellea</span><br><span>• </span>Calma lo Shen<br><span>• </span>Aiuta la testa<br><span>• </span>Purifica il Calore<br><span>• </span>Giova alla regione costale laterale e al torace<br></p><p><b>Applicazioni</b><br><span>• </span>Per algie e dolori alla regione costale laterale<br><span>• </span>Tosse ed incapacità di respirare<br><span>• </span>Indicato per attacchi gravi ed acuti di Fuoco del meridiano, o per Vento-Calore alla testa<br><span>• </span>Capogiri<br><span>• </span>Rossore, gonfiore e dolore agli occhi<br><span>• </span>Ostruzione dolorosa della gola<br><span>• </span>Mal di testa<br><span>• </span>Acufeni<br><span>• </span>Sordità improvvisa<br><span>• </span>Insonnia ed incubi <br></p><p><b>Moxa</b><br><span>• </span>E' consigliata la moxa indiretta<br></p><p><b>Ubicazione</b><br><span>• </span>Sul dorso del quarto dito del piede<br><span>• </span>A circa 0.1 cun dall'angolo laterale dell'unghia. <br></p>",
 					ChiaviTsubo: "",
-					noMoxa: false,
-					noGravidanza: false	
 				}
 			]
 		},
 		"LR": {
 			NomeMeridiano: "Fegato",
-			cartella: "fegato",
 			tsubo: [
 				{
 					NomeTsubo: "1.LR. Dadun (Grande montagnola)",
 					AzioniTsubo: "<p><b>M.T.C.<br></b><span>• </span>Punto <span style=\"font-style:italic;\">jing</span>-pozzo e Legno del meridiano di <span style=\"font-style:italic;\">Fegato</span><br><span>• </span><span>Calma lo Shen<br></span><span>• </span><span>Ristabilisce la coscienza<br></span><span>• </span><span>Riequilibra il Qi di Fegato<br></span><span>• </span><span>Dona beneficio ai genitali<br></span><span>• </span><span>Regola la minzione<br></span><span>• </span><span>Arresta il mestruo<br></span><span>• </span><span>Regola il Qi del Jiao inferiore<br></span><span>• </span><span>Attenua il dolore<br></span><span>• </span><span>Tratta le sindromi shan</span></p><p><b>Applicazioni</b><br><span>• </span>Irregolarità mestruali<br><span>• </span>Menorragia<br><span>• </span>Metrorragia<br><span>• </span>Sangue nelle urine<br><span>• </span>Epistassi<br><span>• </span>Sanguinamento uterino incessante<br><span>• </span>Minzione dolorosa<br><span>• </span>Enuresi<br><span>• </span>Gonfiore genitale<br><span>• </span>Dolore al basso addome<br><span>• </span>Algie al basso addome<br><span>• </span>Poliuria<br><span>• </span>Disfunzione urinaria dolorosa<br><span>• </span>Disuria<br><span>• </span>Ernie<br></p><p><b>Moxa</b><br><span>• </span>Indicato<br></p><p><b>Ubicazione</b><br><span>• </span>Sull'alluce<br><span>• </span>Sul lato dorsale <br><span>• </span>A circa 0.1 cun dall'angolo dell'unghia<br><span>• </span>Sul lato interno verso le altre dita <br></p>",
 					ChiaviTsubo: "",
-					noMoxa: false,
-					noGravidanza: false	
 				},
 				{
 					NomeTsubo: "2.LR. Xingjian (Muovere attraverso)",
 					AzioniTsubo: "<p><b>M.T.C.<br></b><span>• </span>Punto <span style=\"font-style:italic;\">ying</span>-ruscello e Fuoco del meridiano di <span style=\"font-style:italic;\">Fegato</span><br><span>• </span>Riequilibra il Qi del meridiano Fegato<br><span>• </span><span>Purifica il Calore <br></span><span>• </span><span>Calma il Vento di Fegato<br></span><span>• </span><span>Arresta il sanguinamento<br></span><span>• </span><span>Purifica il Fuoco di Fegato<br></span><span>• </span><span>Fa muovere il Qi di Fegato<br></span><span>• </span><span>Regola il Jiao inferiore</span></p><p><b>Applicazioni</b><br><span>• </span>Dolore lombare<br><span>• </span>Mestruo bloccato<br><span>• </span>Masse addominali<br><span>• </span>Epistassi <br><span>• </span>Sanguinamento uterino incessante<br><span>• </span>Emoftoe<br><span>• </span>Menorragia<br><span>• </span>Perdite vaginali rosse e bianche<br><span>• </span>Distensione addominale<br><span>• </span>Stipsi<br><span>• </span>Ritenzione di urina <br><span>• </span>Minzione dolorosa<br><span>• </span>Enuresi<br><span>• </span>Ictus<br><span>• </span>Tendini contratti<br><span>• </span>Dolore e prurito dei genitali<br><span>• </span>Follia <br><span>• </span>Insonnia<br><span>• </span>Paura<br><span>• </span>Spavento<br><span>• </span>Rabbia<br><span>• </span>Palpitazioni<br><span>• </span>Lacrimazione<br><span>• </span>Dolore agli occhi<br><span>• </span>Mal di gola<br><span>• </span>Cefalea<br><span>• </span>Capogiri<br><span>• </span>Bruciore al volto<br><span>• </span>Rossore agli occhi<br><span>• </span>Dolore al pene<br><span>• </span>Erezione improvvisa e involontaria<br><span>• </span>Tristezza<br></p><p><b>Moxa</b><br><span>• </span>Indicato<br></p><p><b>Ubicazione</b><br><span>• </span>Sul piede tra primo e secondo dito<br><span>• </span>Sul lato dorsale<br><span>• </span>A circa 0.5 cun prossimalmente al margine della piega interdigitale<br></p>",
 					ChiaviTsubo: "",
-					noMoxa: false,
-					noGravidanza: false	
 				},
 				{
 					NomeTsubo: "3.LR. Taichong (Grande assalto)",
 					AzioniTsubo: "<p><b>M.T.C.<br></b><span>• </span>Punto <span style=\"font-style:italic;\">shu</span>-corrente, <span style=\"font-style:italic;\">yuan</span>-sorgente e Terra del meridiano di <span style=\"font-style:italic;\">Fegato</span><br><span>• </span>Punto Stella del Cielo di Ma Danyang<br><span>• </span><span>Riequilibra il Qi di Fegato<br></span><span>• </span><span>Sottomette lo yang<br></span><span>• </span><span>Elimina il Vento di Fegato<br></span><span>• </span><span>Alimenta il sangue e lo yin di Fegato<br></span><span>• </span><span>Fa muovere il Qi di Fegato<br></span><span>• </span><span>Regola il Jiao inferiore<br></span><span>• </span><span>Regolarizza le mestruazioni<br></span><span>• </span><span>Purifica occhi e testa</span></p><p><b>Applicazioni</b><br><span>•</span> Insieme a 4.LI allevia le contratture e il dolore <br><span>• </span>Defecazione difficoltosa<br><span>• </span>Diarrea <br><span>• </span>Gonfiore e retrazione dei testicoli<br><span>• </span>Dolore ai genitali<br><span>• </span>Incontinenza<br><span>• </span>Sindromi shan, del basso addome<br><span>• </span>Amenorrea<br><span>• </span>Mestrui irregolari<br><span>• </span>Sanguinamento incessante uterino<br><span>• </span>Stipsi<br><span>• </span>Ritenzione di urina <br><span>• </span>Disfunzione urinaria dolorosa<br><span>• </span>Enuresi<br><span>• </span>Epilessia<br><span>• </span>Capogiri<br><span>• </span>Cefalea<br><span>• </span>Per far circolare il Qi di Fegato in testa, occhi, gola, seni, addome, utero o genitali<br><span>• </span>Visione offuscata o diminuita<br><span>• </span>Rossore, dolore o gonfiore agli occhi<br></p><p><b>Moxa</b><br><span>• </span>Indicato<br></p><p><b>Ubicazione</b><br><span>• </span>Sul piede tra primo e secondo metatarso<br><span>• </span>Nella depressione distale<br><span>• </span>Sul lato dorsale<br></p>",
 					ChiaviTsubo: "",
-					noMoxa: false,
-					noGravidanza: false	
 				},
 				{
 					NomeTsubo: "4.LR. Zhongfeng (Sigillo centrale)",
 					AzioniTsubo: "<p><b>M.T.C.<br></b><span>• </span>Punto <span style=\"font-style:italic;\">jing</span>-fiume e Metallo del meridiano di <span style=\"font-style:italic;\">Fegato</span><br><span>• </span><span>Purifica il meridiano dal Calore che ristagna<br></span><span>• </span><span>Fa muovere il Qi di Fegato<br></span><span>• </span><span>Regola il Jiao inferiore</span></p><p><b>Applicazioni</b><br><span>• </span>Gonfiore e retrazione dei testicoli<br><span>• </span>Dolore ai genitali<br><span>• </span>Ritenzione di urina<br><span>• </span>Disfunzione urinaria dolorosa<br><span>• </span>Difficoltà di minzione<br><span>• </span>Emissione di seme<br><span>• </span>Dolore ipogastrico<br><span>• </span>Sindromi shan (del basso ventre)<br></p><p><b>Moxa</b><br><span>• </span>Indicato<br></p><p><b>Ubicazione</b><br><span>• </span>Sulla caviglia<br><span>• </span>Nell'incavo maggiore tra la protuberanza del malleolo mediale e il tendine del tibiale anteriore<br><span>• </span>Localizzabile a caviglia estesa<br></p>",
 					ChiaviTsubo: "",
-					noMoxa: false,
-					noGravidanza: false	
 				},
 				{
 					NomeTsubo: "5.LR. Ligou (Canale del tarlo)",
 					AzioniTsubo: "<p><b>M.T.C.<br></b><span>• </span>Punto <span style=\"font-style:italic;\">luo</span>-collegamento del meridiano di <span style=\"font-style:italic;\">Fegato</span><br><span>• </span><span>Fa circolare il Fegato<br></span><span>• </span><span>Purifica il Calore nel Jiao inferiore<br></span><span>• </span><span>Dona beneficio ai genitali<br></span><span>• </span><span>Regola il Qi<br></span><span>• </span><span>Regola il ciclo mestruale<br></span><span>• </span><span>Tratta il ristagno di Qi in gola</span></p><p><b>Applicazioni</b><br><span>• </span>Gonfiore e dolore dei testicoli<br><span>• </span>Erezione continua <br><span>• </span>Perdite vaginali rosse e bianche <br><span>• </span>Dismenorrea<br><span>• </span>Irregolarità mestruale<br><span>• </span>Prolasso uterino <br><span>• </span>Paura e terrore<br><span>• </span>Preoccupazioni<br><span>• </span>Oppressione<br><span>• </span>Disturbi psicoemozionali<br><span>• </span>Depressione<br><span>• </span>Palpitazioni da paura<br><span>• </span>Sindromi shan<br><span>• </span>Dolore lombare </p><p><b>Moxa</b><br><span>• </span>Indicato<br></p><p><b>Ubicazione</b><br><span>• </span>Sopra la prominenza del malleolo mediale<br><span>• </span>Dietro la cresta mediale della tibia<br><span>• </span>Tra la cresta della tibia e muscolo gastrocnemio<br></p>",
 					ChiaviTsubo: "",
-					noMoxa: false,
-					noGravidanza: false	
 				},
 				{
 					NomeTsubo: "6.LR. Zhongdu (Capitale centrale)",
 					AzioniTsubo: "<p><b>M.T.C.<br></b><span>• </span>Punto <span style=\"font-style:italic;\">xi</span>-fessura del meridiano di <span style=\"font-style:italic;\">Fegato</span><br><span>• </span><span>Fa muovere il Qi di Fegato<br></span><span>• </span><span>Regola il Jiao inferiore<br></span><span>• </span><span>Regola il sangue<br></span><span>• </span><span>Disperde l'Umidità</span></p><p><b>Applicazioni</b><br><span>• </span>Freddo agli arti inferiori<br><span>• </span>Incapacità di deambulazione e dolori da Umidità<br><span>• </span>Diarrea<br><span>• </span>Dolore ipogastrico<br><span>• </span>Dolore all'addome inferiore<br><span>• </span>Insensibilità di mani e piedi<br><span>• </span>Flaccidità ed emaciazione delle gambe<br><span>• </span>Sanguinamento uterino<br><span>• </span>Sindromi shan (dell'addome inferiore)<br></p><p><b>Moxa</b><br><span>• </span>Indicato<br></p><p><b>Ubicazione</b><br><span>• </span>7 cun al di sopra della prominenza del malleolo mediale<br><span>• </span>Dietro la cresta mediale della tibia<br><span>• </span>Nell'incavo tra margine mediale della tibia e muscolo gastrocnemio<br></p>",
 					ChiaviTsubo: "",
-					noMoxa: false,
-					noGravidanza: false	
 				},
 				{
 					NomeTsubo: "7.LR. Xiguan (Articolazione del ginocchio)",
 					AzioniTsubo: "<p><b>M.T.C.</b><br><span>• </span>Aiuta il ginocchio e rilassa i tendini<br><span>• </span>Disperde il Vento-Umidità<br></p><p><b>Applicazioni</b><br><span>• </span>Difficoltà di flessione ed estensione del ginocchio<br><span>• </span>Dolore articolare<br><span>• </span>Ostruzione dolorosa da Vento<br><span>• </span>Dolore alla parte mediale del ginocchio che si diffonde alla rotula<br><span>• </span>Dolore e gonfiore al ginocchio<br></p><p><b>Moxa</b><br><span>• </span>Indicato<br></p><p><b>Ubicazione</b><br><span>• </span>Dietro e sotto al condilo mediale della tibia<br><span>• </span>1 cun dietro 9.SP<br></p>",
 					ChiaviTsubo: "",
-					noMoxa: false,
-					noGravidanza: false	
 				},
 				{
 					NomeTsubo: "8.LR. Ququan (Sorgente nella curva)",
 					AzioniTsubo: "<p><b>M.T.C.<br></b><span>• </span>Punto <span style=\"font-style:italic;\">he</span>-mare e Acqua del meridiano di <span style=\"font-style:italic;\">Fegato</span><br><span>• </span><span>Dona beneficio a utero e genitali<br></span><span>• </span><span>Rafforza il sangue<br></span><span>• </span><span>Alimenta il sangue e lo yin<br></span><span>• </span><span>Purifica l'Umidità-Calore dal Jiao inferiore</span></p><p><b>Applicazioni</b><br><span>• </span>Mal di testa <br><span>• </span>Capogiri<br><span>• </span>Amenorrea<br><span>• </span>Sterilità<br><span>• </span>Diarrea<br><span>• </span>Impotenza<br><span>• </span>Dolore al pene<br><span>• </span>Minzione difficile<br><span>• </span>Dolore genitale <br><span>• </span>Gonfiore e prurito ai genitali<br></p><p><b>Moxa</b><br><span>• </span>Indicato<br></p><p><b>Ubicazione</b><br><span>• </span>Sopra la parte terminale della piega poplitea<br><span>• </span>Nell'avvallamento anteriore ai tendini del muscolo semitendinoso e semimembranoso<br><span>• </span>1 cun davanti 10.KI<br></p>",
 					ChiaviTsubo: "",
-					noMoxa: false,
-					noGravidanza: false	
 				},
 				{
 					NomeTsubo: "9.LR. Yinbao (Involucro dello Yin)",
 					AzioniTsubo: "<p><b>M.T.C.</b><br><span>• </span>Regola il Jiao inferiore<br><span>• </span>Regola le mestruazioni<br></p><p><b>Applicazioni</b><br><span>• </span>Dolore lombosacrale che si estende all'addome<br><span>• </span>Disturbi mestruali<br><span>• </span>Enuresi<br><span>• </span>Ritenzione di urina <br><span>• </span>Irregolarità mestruale<br></p><p><b>Moxa</b><br><span>• </span>Indicato<br></p><p><b>Ubicazione</b><br><span>• </span>4 cun sopra 8.LR<br><span>• </span>Nell'avvallamento fra muscolo vasto mediale e sartorio<br><span>• </span>Sopra l'epicondilo mediale del femore<br></p>",
 					ChiaviTsubo: "",
-					noMoxa: false,
-					noGravidanza: false	
 				},
 				{
 					NomeTsubo: "10.LR. Zuwuli (Cinque miglia della gamba)",
 					AzioniTsubo: "<p><b>M.T.C.</b><br><span>• </span>Regola il Jiao inferiore<br><span>• </span>Purifica l'Umidità-Calore<br></p><p><b>Applicazioni</b><br><span>• </span>Tosse<br><span>• </span>Difficoltà di respirazione<br><span>• </span>Pienezza addominale<br><span>• </span>Dolore e gonfiore ai testicoli<br><span>• </span>Prurito genitale<br><span>• </span>Disturbi mestruali<br><span>• </span>Enuresi<br><span>• </span>Ritenzione di urina <br><span>• </span>Sonnolenza da consunzione da Vento<br></p><p><b>Moxa</b><br><span>• </span>Indicato<br></p><p><b>Ubicazione</b><br><span>• </span>Sotto 30.ST di 3 cun<br><span>• </span>Sul bordo anteriore del muscolo adduttore lungo<br></p>",
 					ChiaviTsubo: "",
-					noMoxa: false,
-					noGravidanza: false	
 				},
 				{
 					NomeTsubo: "11.LR. Yinlian (Angolo yin)",
 					AzioniTsubo: "<p><b>M.T.C.</b><br><span>• </span>Dà beneficio all'utero<br></p><p><b>Applicazioni</b><br><span>• </span>Sterilità<br><span>• </span>Dolore alla parte interna della coscia e al ginocchio<br><span>• </span>Irregolarità mestruale<br></p><p><b>Moxa</b><br><span>• </span>Indicato<br></p><p><b>Ubicazione</b><br><span>• </span>Sotto 30.ST di 2 cun<br><span>• </span>Sul bordo anteriore del muscolo adduttore lungo<br></p>",
 					ChiaviTsubo: "",
-					noMoxa: false,
-					noGravidanza: false	
 				},
 				{
 					NomeTsubo: "12.LR. Jimai (Polso accelerato)",
 					AzioniTsubo: "<p><b>M.T.C.</b><br><span>• </span>Regola il Jiao inferiore<br><span>• </span>Elimina il Freddo dal meridiano<br></p><p><b>Applicazioni</b><br><span>• </span>Dolore al pene<br><span>• </span>Dolore ipogastrico<br><span>• </span>Gonfiore dei testicoli<br><span>• </span>Dolore genitale<br><span>• </span>Dolore alla parte interna della coscia <br><span>• </span>Irregolarità mestruale<br><span>• </span>Sindromi shan<br><span>• </span>Prolasso uterino<br></p><p><b>Moxa</b><br><span>• </span>Controindicato<br></p><p><b>Ubicazione</b><br><span>• </span>1 cun inferiormente e 2.5 cun lateralmente a 2.CV<br><span>• </span>Medialmente alla vena femorale<br><span>• </span>Nella piega inguinale<br></p>",
 					ChiaviTsubo: "",
-					noMoxa: true,
-					noGravidanza: false	
 				},
 				{
 					NomeTsubo: "13.LR. Zhangmen (Porta della completezza)",
 					AzioniTsubo: "<p><b>M.T.C.<br></b><span>• </span>Punto d'incontro dei meridiani di <span style=\"font-style:italic;\">Cistifellea </span>e <span style=\"font-style:italic;\">Fegato</span><br><span>• </span>Punto <span style=\"font-style:italic;\">mu</span>-frontale del meridiano di <span style=\"font-style:italic;\">Milza</span><br><span>• </span>Punto <span style=\"font-style:italic;\">hui</span>-riunione dei visceri (Zang)<br><span>• </span><span>Regola il Jiao inferiore e medio<br></span><span>• </span><span>Normalizza Milza e Fegato<br></span><span>• </span><span>Regola il Qi del meridiano</span></p><p><b>Applicazioni</b><br><span>• </span>Rigidità della colonna<br><span>• </span>Dolore lombare con difficoltà di movimento<br><span>• </span>Diarrea<br><span>• </span>Stipsi<br><span>• </span>Masse addominali<br><span>• </span>Pienezza di torace<br><span>• </span>Borborigmi<br><span>• </span>Rabbia <br><span>• </span>Paura<br><span>• </span>Emaciazione<br></p><p><b>Moxa</b><br><span>• </span>Indicato<br></p><p><b>Ubicazione</b><br><span>• </span>Anteriormente e inferiormente al margine libero dell'undicesima costola<br></p>",
 					ChiaviTsubo: "Punto BO di Milza",
-					noMoxa: false,
-					noGravidanza: false	
 				},
 				{
 					NomeTsubo: "14.LR. Qimen (Porta del ciclo)",
 					AzioniTsubo: "<p><b>M.T.C.<br></b><span>• </span>Punto d'incontro dei meridiani di <span style=\"font-style:italic;\">Milza</span>, <span style=\"font-style:italic;\">Fegato </span>e <span style=\"font-style:italic;\">Yinweimai</span><br><span>• </span>Punto <span style=\"font-style:italic;\">mu</span>-frontale di <span style=\"font-style:italic;\">Fegato</span><br><span>• </span><span>Elimina le masse<br></span><span>• </span><span>Tonifica il Sangue<br></span><span>• </span><span>Aiuta la circolazione del Qi nel meridiano<br></span><span>• </span><span>Normalizza lo Stomaco<br></span><span>• </span><span>Regola il Fegato</span></p><p><b>Applicazioni</b><br><span>• </span>Dolore epigastrico<br><span>• </span>Rigurgiti acidi<br><span>• </span>Vomito <br><span>• </span>Singhiozzo<br><span>• </span>Masse addominali dolorose<br><span>• </span>Masse dolorose al torace e alla regione costale laterale<br><span>• </span>Dolore al Cuore<br><span>• </span>Sospiri<br><span>• </span>Distensione o noduli al seno<br><span>• </span>Distensione toracica<br><span>• </span>Tosse<br><span>• </span>Pienezza di torace<br></p><p><b>Moxa</b><br><span>• </span>Indicato<br></p><p><b>Ubicazione</b><br><span>• </span>Sulla verticale del capezzolo <br><span>• </span>Sesto spazio intercostale<br><span>• </span>4 cun dalla linea mediana del torace<br></p>",
 					ChiaviTsubo: "Punto BO di Fegato",
-					noMoxa: false,
-					noGravidanza: false	
 				}
 			]
 		},
 		"ST": {
 			NomeMeridiano: "Stomaco",
-			cartella: "stomaco",
 			tsubo: [
 				{
 					NomeTsubo: "1.ST. Chengqi (Contenitore di lacrime)",
 					AzioniTsubo: "<p><b>M.T.C.</b><br><span>• </span>Punto d'incontro dei meridiani di <span style=\"font-style:italic;\">Stomaco</span>, <span style=\"font-style:italic;\">Vaso concezione</span> e<span> </span><span style=\"font-style:italic;\">Yangqiaomai</span><br><span>• </span><span>Espelle il Vento<br></span><span>• </span><span>Purifica il Calore<br></span><span>• </span><span>Arresta la lacrimazione<br></span><span>• </span><span>Dona beneficio agli occhi</span></p><p><b>Applicazioni</b><br><span>• </span>Dolore, rossore, gonfiore degli occhi<br><span>• </span>Impedimento visivo<br><span>• </span>Vista corta<br><span>• </span>Prurito oculare<br><span>• </span>Tic palpebrale<br><span>• </span>Miopia<br><span>• </span>Glaucoma<br><span>• </span>Nevrite ottica<br><span>• </span>Astigmatismo<br><span>• </span>Congiuntivite acuta e cronica<br></p><p><b>Moxa</b><br><span>• </span>Controindicato<br></p><p><b>Ubicazione</b><br><span>• </span>A sguardo in avanti<br><span>• </span>Direttamente sulla verticale sotto pupilla<br><span>• </span>Tra bulbo e bordo infraorbitale<br></p>",
 					ChiaviTsubo: "",
-					noMoxa: true,
-					noGravidanza: false	
 				},
 				{
 					NomeTsubo: "2.ST. Sisibai (Quattro bianchi)",
 					AzioniTsubo: "<p><b>M.T.C.</b><br><span>• </span>Espelle il Vento<br><span>• </span>Dona beneficio agli occhi<br><span>• </span>Purifica il Calore<br></p><p><b>Applicazioni</b><br><span>• </span>Paralisi<br><span>• </span>Dolore facciale<br><span>• </span>Dolore provocato da ascaridi del dotto biliare</p><p><b>Moxa</b><br><span>• </span>Controindicato<br></p><p><b>Ubicazione</b><br><span>• </span>A sguardo in avanti<br><span>• </span>1 cun sulla verticale sotto la pupilla<br><span>• </span>Nell'incavo del forame infraorbitale<br></p>",
 					ChiaviTsubo: "",
-					noMoxa: true,
-					noGravidanza: false	
 				},
 				{
 					NomeTsubo: "3.ST. Juliao (Grande fessura)",
 					AzioniTsubo: "<p><b>M.T.C.<br></b><span>• </span>Punto d'incontro dei meridiani di <span style=\"font-style:italic;\">Stomaco </span>e <span style=\"font-style:italic;\">Yangqiaomai</span><br><span>• </span>Espelle il Vento<br><span>• </span>Attenua i dolori<br><span>• </span>Disperde i gonfiori<br></p><p><b>Applicazioni</b><br><span>• </span>Poco usato<br><span>• </span>Dolore al naso<br><span>• </span>Mal di denti<br><span>• </span>Dolore e gonfiore a labbra e guance<br><span>• </span>Epistassi<br><span>• </span>Lacrimazione eccessiva<br><span>• </span>Spasmi cronici<br><span>• </span>Qi di gamba <br><span>• </span>Gonfiore al ginocchio<br></p><p><b>Moxa</b><br><span>• </span>Indicato<br></p><p><b>Ubicazione</b><br><span>• </span>A sguardo in avanti<br><span>• </span>Sulla verticale sotto pupilla<br><span>• </span>Esternamente alla piega nasolabiale<br></p>",
 					ChiaviTsubo: "",
-					noMoxa: false,
-					noGravidanza: false	
 				},
 				{
 					NomeTsubo: "4.ST. Dicang (Granaio della terra)",
 					AzioniTsubo: "<p><b>M.T.C.</b><br><span>• </span>Punto d'incontro dei meridiani di <span style=\"font-style:italic;\">Stomaco</span>, <span style=\"font-style:italic;\">Intestino crasso</span>, <span style=\"font-style:italic;\">Vaso concezione</span> e <span style=\"font-style:italic;\">Yangqiaomai</span><br><span>• </span><span>Favorisce la circolazione del Qi nel meridiano<br></span><span>• </span><span>Attenua il dolore<br></span><span>• </span><span>Espelle il Vento dal viso</span></p><p><b>Applicazioni</b><br><span>• </span>Nevralgie del trigemino<br><span>• </span>Tic palpebrale<br><span>• </span>Prurito agli occhi<br><span>• </span>Formicolio a labbra e faccia <br><span>• </span>Dolore facciale<br><span>• </span>Deviazione della rima buccale</p><p><b>Moxa</b><br><span>• </span>Indicato<br></p><p><b>Ubicazione</b><br><span>• </span>0.4 cun a lato angolo bocca<br></p>",
 					ChiaviTsubo: "",
-					noMoxa: false,
-					noGravidanza: false	
 				},
 				{
 					NomeTsubo: "5.ST. Daying (Grande accoglienza)",
 					AzioniTsubo: "<p><b>M.T.C.</b><br><span>• </span>Riduce il gonfiore<br><span>• </span>Espelle il Vento<br></p><p><b>Applicazioni</b><br><span>• </span>Tic labiale<br><span>• </span>Sbadigli frequenti<br><span>• </span>Male ai denti inferiori<br><span>• </span>Rigidità della lingua<br></p><p><b>Moxa</b><br><span>• </span>Indicato<br></p><p><b>Ubicazione</b><br><span>• </span>Anteriormente all'angolo della mandibola<br><span>• </span>Sull'avvallamento del muscolo massetere<br></p>",
 					ChiaviTsubo: "",
-					noMoxa: false,
-					noGravidanza: false	
 				},
 				{
 					NomeTsubo: "6.ST. Jiache (Osso della mascella)",
 					AzioniTsubo: "<p><b>M.T.C.</b><br><span>• </span>Uno dei 13 \"punti Demone\" per il medico Sun Simiao indicati per curare la dissociazione tra Hun e Po<br><span>• </span>Favorisce la circolazione del Qi nel meridiano<br><span>• </span>Espelle il Vento<br><span>• </span>Dona beneficio a denti e mascelle<br><span>• </span>Attenua il dolore<br></p><p><b>Applicazioni</b><br><span>• </span>Paralisi, tensione, dolore, spasmi alla mascella <br><span>• </span>Problemi di denti e gengive<br><span>• </span>Paralisi facciale<br><span>• </span>Impossibilità di masticare<br><span>• </span>Rigidità e dolore al collo<br><span>• </span>Orecchioni<br><span>• </span>Incapacità di aprire la bocca<br></p><p><b>Moxa</b><br><span>• </span>Indicato<br></p><p><b>Ubicazione</b><br><span>• </span>Anteriormente all'angolo della mandibola<br><span>• </span>Sulla prominenza del massetere<br></p>",
 					ChiaviTsubo: "",
-					noMoxa: false,
-					noGravidanza: false	
 				},
 				{
 					NomeTsubo: "7.ST. Xiaguan (Sotto l'articolazione)",
 					AzioniTsubo: "<p><b>M.T.C.</b><br><span>• </span>Punto d'incontro dei meridiani di <span style=\"font-style:italic;\">Stomaco </span>e <span style=\"font-style:italic;\">Cistifellea</span><br><span>• </span>Dona beneficio a mascella, denti e orecchie<br><span>• </span>Favorisce la circolazione del Qi nel meridiano<br><span>• </span>Attenua il dolore<br></p><p><b>Applicazioni</b><br><span>• </span>Lussazione mandibolare<br><span>• </span>Trisma<br><span>• </span>Dolore ai denti<br><span>• </span>Genvive gonfie e doloranti<br><span>• </span>Paralisi facciale<br><span>• </span>Nevralgia del trigemino<br><span>• </span>Sordità<br><span>• </span>Scolo purulento dall'orecchio<br><span>• </span>Otalgia<br></p><p><b>Moxa</b><br><span>• </span>Indicato<br></p><p><b>Ubicazione</b><br><span>• </span>Bordo inferiore dell'arcata zigomatica<br><span>• </span>Nell'avvallamento anteriormente al condilo della mandibola<br></p>",
 					ChiaviTsubo: "",
-					noMoxa: false,
-					noGravidanza: false	
 				},
 				{
 					NomeTsubo: "8.ST. Touwei (Legame del capo)",
 					AzioniTsubo: "<p><b>M.T.C.</b><br><span>• </span>Punto d'incontro dei meridiani di <span style=\"font-style:italic;\">Stomaco</span>, <span style=\"font-style:italic;\">Cistifellea </span>e <span style=\"font-style:italic;\">Yangweimai</span><br><span>• </span>Dona beneficio agli occhi<br><span>• </span>Espelle il Vento<br><span>• </span>Attenua il dolore<br></p><p><b>Applicazioni</b><br><span>• </span>Cefalea<br><span>• </span>Emicranie frontali<br><span>• </span>Cefalea al vertice e alle tempie<br></p><p><b>Moxa</b><br><span>• </span>Controindicato<br></p><p><b>Ubicazione</b><br><span>• </span>0.5 cun all'interno dell'attaccatura dei capelli<br><span>• </span>4.5 cun lateralmente a 24.GV<br><span>• </span>All'angolo della fronte<br></p>",
 					ChiaviTsubo: "",
-					noMoxa: true,
-					noGravidanza: false	
 				},
 				{
 					NomeTsubo: "9.ST. Renying (Benvenuto dell'uomo)",
 					AzioniTsubo: "<p><b>M.T.C.</b><br><span>• </span>Punto Finestra del Cielo<br><span>• </span>Punto d'incontro dei meridiani di <span style=\"font-style:italic;\">Stomaco </span>e <span style=\"font-style:italic;\">Cistifellea</span><br><span>• </span>Punto Mare del Qi<br><span>• </span>Riequilibra il Qi<br><span>• </span>Attenua il dolore<br><span>• </span>Dona beneficio a collo e gola<br><span>• </span>Regola sangue e ribellione agli arti inferiori<br></p><p><b>Applicazioni</b><br><span>• </span>Cefalea<br><span>• </span>Vertigini<br><span>• </span>Asma<br><span>• </span>Vomito<br><span>• </span>Arrossamento del viso<br><span>• </span>Ipertensione<br></p><p><b>Moxa</b><br><span>• </span>Indicato<br></p><p><b>Ubicazione</b><br><span>• </span>Lateralmente alla prominenza laringea di 1.5 cun<br><span>• </span>Nella depressione tra il muscolo sternocleidomastoideo e la cartilagine tiroidea<br><span>• </span><span>Precauzioni: d</span><span>irettamente sotto punto si trova l'arteria Carotide. Non eseguire alcuna operazione senza l'adeguata supervisione clinica</span></p>",
 					ChiaviTsubo: "",
-					noMoxa: false,
-					noGravidanza: false	
 				},
 				{
 					NomeTsubo: "10.ST. Shuitu (Prominenza dell'acqua)",
 					AzioniTsubo: "<p><b>M.T.C.</b><br><span>• </span>Dona beneficio al collo <br><span>• </span>Efficace per problemi di gola<br><span>• </span>Riduce il Qi di Polmone<br></p><p><b>Applicazioni</b><br><span>• </span>Tosse <br><span>• </span>Dispnea<br><span>• </span>Gozzo<br><span>• </span>Gola gonfia e dolente<br></p><p><b>Moxa</b><br><span>• </span>Indicato<br></p><p><b>Ubicazione<br></b><span>• </span>Sul collo <br><span>• </span>Sul bordo dello sternocleidomastoideo<br><span>• </span>A metà strada tra 9.ST e 11.ST<br><span>• </span>Precauzioni: direttamente sotto punto si trova l'arteria Carotide. Non eseguire alcuna operazione senza l'adeguata supervisione clinica </p>",
 					ChiaviTsubo: "",
-					noMoxa: false,
-					noGravidanza: false	
 				},
 				{
 					NomeTsubo: "11.ST. Qishe (Dimora del Qi)",
 					AzioniTsubo: "<p><b>M.T.C.</b><br><span>• </span>Riduce il Qi<br><span>• </span>Dona beneficio alla gola <br><span>• </span>Efficace per il collo<br></p><p><b>Applicazioni</b><br><span>• </span>Tosse <br><span>• </span>Dispnea<br><span>• </span>Gozzo<br><span>• </span>Gonfiore alla gola<br><span>• </span>Dolore alla gola <br><span>• </span>Singhiozzo<br><span>• </span>Difficoltà a deglutire<br></p><p><b>Moxa</b><br><span>• </span>Indicato<br></p><p><b>Ubicazione</b><br><span>• </span>Alla base del collo<br><span>• </span>Sopra l'estremità mediale della clavicola<br><span>• </span>Direttamente sotto 9.ST<br><span>• </span>Nell'avvallamento tra i capi sternale e clavicolare dello sternocleidomastoideo<br> </p>",
 					ChiaviTsubo: "",
-					noMoxa: false,
-					noGravidanza: false	
 				},
 				{
 					NomeTsubo: "12.ST. Quepen (Bacile vuoto)",
 					AzioniTsubo: "<p><b>M.T.C.</b><br><span>• </span>Punto d'incontro dei meridiani di <span style=\"font-style:italic;\">Stomaco</span>, <span style=\"font-style:italic;\">Intestino crasso</span>, <span style=\"font-style:italic;\">Intestino tenue</span>, <span style=\"font-style:italic;\">Triplo riscaldatore</span> e <span style=\"font-style:italic;\">Cistifellea</span><br><span>• </span>Purifica Calore dal petto<br><span>• </span>Favorisce la circolazione del Qi nel meridiano<br><span>• </span>Attenua il dolore<br><span>• </span>Riduce il Qi di Polmone<br></p><p><b>Applicazioni</b><br><span>• </span>Tosse<br><span>• </span>Pienezza di petto<br><span>• </span>Dispnea<br><span>• </span>Dolore alla spalla irradiato al collo<br><span>• </span>Dolore alla fossa sopra la clavicola<br><span>• </span>Formicolio all'arto superiore<br><span>• </span>Dolore all'arto superiore <br></p><p><b>Moxa</b><br><span>• </span>Indicato<br></p><p><b>Ubicazione</b><br><span>• </span>Fossa sopraclaveare<br><span>• </span>Dietro il bordo superiore della clavicola<br><span>• </span>A 4 cun alla linea centrale<br><span>• </span>Sulla verticale del capezzolo<br></p>",
 					ChiaviTsubo: "",
-					noMoxa: false,
-					noGravidanza: true	
 				},
 				{
 					NomeTsubo: "13.ST. Qihu (Porta del Qi)",
 					AzioniTsubo: "<p><b>M.T.C.</b><br><span>• </span>Dissolve la pienezza nel petto<br><span>• </span>Riduce il Qi ribelle<br></p><p><b>Applicazioni</b><br><span>• </span>Tosse<br><span>• </span>Pienezza nel petto <br><span>• </span>Dispnea <br><span>• </span>Singhiozzo<br><span>• </span>Collo rigido<br><span>• </span>Impossibilità di ruotare la testa <br><span>• </span>Asma <br><span>• </span>Affanno <br><span>• </span>Impossibilità di sentire i sapori<br><span>• </span>Dolore al petto e al dorso superiore<br></p><p><b>Moxa</b><br><span>• </span>Indicato<br></p><p><b>Ubicazione</b><br><span>• </span>Nella zona toracica<br><span>• </span>Sul bordo inferiore della clavicola<br><span>• </span>A 4 cun dalla linea mediana<br><span>• </span>Sulla verticale del capezzolo s<span>otto 12.ST</span></p>",
 					ChiaviTsubo: "",
-					noMoxa: false,
-					noGravidanza: false	
 				},
 				{
 					NomeTsubo: "14.ST. Kufang (Magazzino di casa)",
 					AzioniTsubo: "<p><b>M.T.C.</b><br><span>• </span>Dissolve il pieno nel petto<br><span>• </span>Riduce il Qi ribelle<br></p><p><b>Applicazioni<br></b><span>• </span>Poco utilizzato<br><span>• </span>Disturbi locali del petto<br></p><p><b>Moxa</b><br><span>• </span>Indicato<br></p><p><b>Ubicazione<br></b><span>• </span>Nella zona toracica<br><span>• </span>Nel primo spazio intercostale<br><span>• </span>A 4 cun dalla linea mediana<br><span>• </span>A livello di 20.CV<br><span>• </span>Sulla verticale del capezzolo<br></p>",
 					ChiaviTsubo: "",
-					noMoxa: false,
-					noGravidanza: false	
 				},
 				{
 					NomeTsubo: "15.ST. Wuyi (Muro della stanza)",
 					AzioniTsubo: "<p><b>M.T.C.</b><br><span>• </span>Dissolve il pieno nel petto<br><span>• </span>Riduce il Qi ribelle<br><span>• </span>Dona beneficio al seno<br></p><p><b>Applicazioni</b><b><br></b><span>• </span>Poco utilizzato<br><span>• </span>Disturbi locali del petto<br><span>• </span>Problemi di pelle che rendono i vestiti insopportabili addosso<br><span>• </span>Prurito generale<br><span>• </span>Gonfiore del corpo<br><span>• </span>Debolezza e gonfiore degli arti <br><span>• </span>Pesantezza del corpo<br></p><p><b>Moxa</b><br><span>• </span>Indicato<br></p><p><b>Ubicazione<br></b><span>• </span>Nella zona toracica<br><span>• </span>Nel secondo spazio intercostale<br><span>• </span>A 4 cun dalla linea mediana<br><span>• </span>A livello di 19.CV<br><span>• </span>Sulla verticale del capezzolo<br></p>",
 					ChiaviTsubo: "",
-					noMoxa: false,
-					noGravidanza: false	
 				},
 				{
 					NomeTsubo: "16.ST. Yingchuang (Finestra del seno)",
 					AzioniTsubo: "<p><b>M.T.C.</b><br><span>• </span>Dona beneficio al seno<br><span>• </span>Calma la tosse <br><span>• </span>Elimina l'affanno<br></p><p><b>Applicazioni</b><br><span>• </span>Pienezza di petto <br><span>• </span>Tosse<br><span>• </span>Sonno agitato<br><span>• </span>Febbre e brividi<br><span>• </span>Diarrea acquosa<br><span>• </span>Ascesso mammario<br><span>• </span>Borborigmi<br><span>• </span>Respiro corto<br></p><p><b>Moxa</b><br><span>• </span>Controindicato <br></p><p><b>Ubicazione</b><br><span>• </span>Nella zona toracica<br><span>• </span>Nel terzo spazio intercostale<br><span>• </span>A 4 cun dalla linea mediana<br><span>• </span>A livello di 18.CV<br><span>• </span>Sulla verticale del capezzolo</p>",
 					ChiaviTsubo: "",
-					noMoxa: true,
-					noGravidanza: false	
 				},
 				{
 					NomeTsubo: "17.ST. Ruzhong (Centro del seno)",
 					AzioniTsubo: "<p><b>M.T.C.</b><br><span>• </span>Non utilizzato: questo punto è controindicato alla puntura e alla moxibustione, viene considerato solo un punto di riferimento.<br></p><p><b>Applicazioni</b><br><span>• </span>Non utilizzato<br></p><p><b>Moxa</b><br><span>• </span>Non utilizzato</p><p><b>Ubicazione</b><br><span>• </span>Nella zona toracica<br><span>• </span>Al centro del capezzolo<br><span>• </span>Nel quarto spazio intercostale<br><span>• </span>A 4 cun dalla linea mediana<br><span>• </span>A livello di 18.CV<br><span>• </span>Sulla verticale del capezzolo</p>",
 					ChiaviTsubo: "",
-					noMoxa: true,
-					noGravidanza: true	
 				},
 				{
 					NomeTsubo: "18.ST. Rugen (Radice del seno)",
 					AzioniTsubo: "<p><b>M.T.C.</b><br><span>• </span>Dona beneficio al seno<br><span>• </span>Riduce il gonfiore<br><span>• </span>Calma la tosse <br><span>• </span>Elimina l'affanno<br><span>• </span>Dissolve la pienezza nel petto<br></p><p><b>Applicazioni</b><br><span>• </span>Punto fondamentale per trattare disturbi del seno<br><span>• </span>Difficoltà alla lattazione<br><span>• </span>Ascesso<br><span>• </span>Dolore<br><span>• </span>Tosse<br><span>• </span>Dispnea <br><span>• </span>Oppressione e dolore al petto<br></p><p><b>Moxa</b><br><span>• </span>Indicato<br></p><p><b>Ubicazione</b><br><span>• </span>Nella zona toracica<br><span>• </span>Nel quinto spazio intercostale<br><span>• </span>A 4 cun dalla linea mediana<br><span>• </span>Sulla verticale direttamente sotto capezzolo</p>",
 					ChiaviTsubo: "",
-					noMoxa: false,
-					noGravidanza: false	
 				},
 				{
 					NomeTsubo: "19.ST. Burong (Non contenuto)",
 					AzioniTsubo: "<p><b>M.T.C.</b><br><span>• </span>Riduce il Qi <br><span>• </span>Allevia l'affanno<br><span>• </span>Elimina la tosse <br><span>• </span>Riequilibra il Jiao medio<br><span>• </span>Riduce la ribellione<br></p><p><b>Applicazioni</b><br><span>• </span>Nausea da colicistite<br><span>• </span>Vomito da colicistite<br><span>• </span>Difficoltà di respiro<br><span>• </span>Male al petto<br><span>• </span>Dolore al dorso <br><span>• </span>Dolore alle spalle<br><span>• </span>Dolore intercostale<br><span>• </span>Dolore al Cuore<br></p><p><b>Moxa</b><br><span>• </span>Indicato<br></p><p><b>Ubicazione</b><br><span>• </span>Nella zona addominale<br><span>• </span>A 2 cun dalla linea mediana<br><span>• </span>6 cun sopra l'ombelico<br><span>• </span>A livello di 14.CV</p>",
 					ChiaviTsubo: "",
-					noMoxa: false,
-					noGravidanza: false	
 				},
 				{
 					NomeTsubo: "20.ST. Chengman (Sostenere il pieno)",
 					AzioniTsubo: "<p><b>M.T.C.</b><br><span>• </span>Riequilibra il Jiao medio<br><span>• </span>Riduce la ribellione di Polmone e Stomaco<br></p><p><b>Applicazioni<br></b><span>• </span>Poco usato<br><span>• </span>Singhiozzo<br><span>• </span>Difficoltà d'ingestione<br><span>• </span>Inappetenza<br><span>• </span>Dissenteria<br><span>• </span>Affanno<br><span>• </span>Male alla regione costale<br><span>• </span>Vomito di sangue<br><span>• </span>Dolore epigastrico<br></p><p><b>Moxa</b><br><span>• </span>Indicato<br></p><p><b>Ubicazione</b><br><span>• </span>Nella zona addominale<br><span>• </span>A 2 cun dalla linea mediana<br><span>• </span>5 cun sopra l'ombelico<br><span>• </span>A livello di 13.CV</p>",
 					ChiaviTsubo: "",
-					noMoxa: false,
-					noGravidanza: false	
 				},
 				{
 					NomeTsubo: "21.ST. Liangmen (Porta del raggio)",
 					AzioniTsubo: "<p><b>M.T.C.</b><br><span>• </span>Riequilibra il Jiao medio<br><span>• </span>Arresta la diarrea<br><span>• </span>Trasforma il ristagno<br><span>• </span>Regola il qi<br><span>• </span>Alza i Qi <br><span>• </span>Attenua il dolore<br></p><p><b>Applicazioni<br></b><span>• </span>Distensione dell'addome con dolore<br><span>• </span>Scarso appetito<br><span>• </span>Dissenteria<br><span>• </span>Feci con presenza di cibo indigerito<br><span>• </span>Vomito<br></p><p><b>Moxa</b><br><span>• </span>Indicato<br></p><p><b>Ubicazione</b><br><span>• </span>Nella zona addominale<br><span>• </span>A 2 cun dalla linea mediana<br><span>• </span>4 cun sopra l'ombelico<br><span>• </span>A livello di 12.CV</p>",
 					ChiaviTsubo: "",
-					noMoxa: false,
-					noGravidanza: false	
 				},
 				{
 					NomeTsubo: "22.ST. Guanmen (Porta di passaggio)",
 					AzioniTsubo: "<p><b>M.T.C.</b><br><span>• </span>Favorisce la diuresi<br><span>• </span>Riequilibra il Qi<br><span>• </span>Regola gli Intestini<br><span>• </span>Attenua il dolore<br></p><p><b>Applicazioni</b><br><span>• </span>Scarso appetito<br><span>• </span>Accumulo e dolore addominale<br><span>• </span>Dissenteria<br><span>• </span>Dolore acuto periombelicale<br><span>• </span>Stitichezza<br><span>• </span>Edema<br><span>• </span>Enuresi<br><span>• </span>Malaria da flegma con tremori da Freddo<br></p><p><b>Moxa</b><br><span>• </span>Indicato<br></p><p><b>Ubicazione</b><br><span>• </span>Nella zona addominale<br><span>• </span>A 2 cun dalla linea mediana<br><span>• </span>3 cun sopra l'ombelico<br><span>• </span>A livello di 11.CV</p>",
 					ChiaviTsubo: "",
-					noMoxa: false,
-					noGravidanza: false	
 				},
 				{
 					NomeTsubo: "23.ST. Taiyi (Unità suprema)",
 					AzioniTsubo: "<p><b>M.T.C.</b><br><span>• </span>Riequilibra il Jiao medio<br><span>• </span>Trasforma il flegma <br><span>• </span>Calma lo Shen<br></p><p><b>Applicazioni</b><br><span>• </span>Scarso appetito<br><span>• </span>Dissenteria<br><span>• </span>Dolore epigastrico<br><span>• </span>Agitazione<br><span>• </span>Camminata folle<br><span>• </span>Sindrome maniaco-depressiva<br></p><p><b>Moxa</b><br><span>• </span>Indicata<br></p><p><b>Ubicazione</b><br><span>• </span>Nella zona addominale<br><span>• </span>A 2 cun dalla linea mediana<br><span>• </span>2 cun sopra l'ombelico<br><span>• </span>A livello di 10.CV</p>",
 					ChiaviTsubo: "",
-					noMoxa: false,
-					noGravidanza: false	
 				},
 				{
 					NomeTsubo: "24.ST. Huaroumen (Porta della carne scivolosa)",
 					AzioniTsubo: "<p><b>M.T.C.</b><br><span>• </span>Riequilibra lo Stomaco<br><span>• </span>Trasforma il flegma <br><span>• </span>Calma lo Shen<br><span>• </span>Blocca il vomito<br></p><p><b>Applicazioni</b><br><span>• </span>Dolore epigastrico<br><span>• </span>Depressione maniacale<br><span>• </span>Lingua rigida<br><span>• </span>Ematemesi<br><span>• </span>Vomito<br><span>• </span>Lingua a \"fior di loto\"<br><span>• </span>Protrusione della lingua<br></p><p><b>Moxa</b><br><span>• </span>Indicata<br></p><p><b>Ubicazione</b><br><span>• </span>Nella zona addominale<br><span>• </span>A 2 cun dalla linea mediana<br><span>• </span>1 cun sopra l'ombelico<br><span>• </span>A livello di 9.CV</p>",
 					ChiaviTsubo: "",
-					noMoxa: false,
-					noGravidanza: false	
 				},
 				{
 					NomeTsubo: "25.ST. Tianshu (Cardine celeste)",
 					AzioniTsubo: "<p><b>M.T.C.</b><br><span>• </span>Riequilibra Milza e Stomaco<br><span font-size:\"=\"\" 13.3333px;\"=\"\">• </span><span font-size:\"=\"\" 13.3333px;\"=\"\">Punto </span><span font-size:\"=\"\" 13.3333px;=\"\" font-style:=\"\" italic;\"=\"\">mu</span><span font-size:\"=\"\" 13.3333px;\"=\"\">-frontale del meridiano di </span><span font-size:\"=\"\" 13.3333px;=\"\" font-style:=\"\" italic;\"=\"\">Intestino crasso</span><br><span>• </span>Dissolve la stasi di sangue e di Qi<br><span>• </span>Armonizza il Qi<br><span>• </span>Regola gli Intestini<br><span>• </span>Regola Umidità e Umidità-Calore<br></p><p><b>Applicazioni</b><br><span>• </span>Disturbi intestinali<br><span>• </span>Dissenteria <br><span>• </span>Costipazione<br><span>• </span>Scarso appetito<br><span>• </span>Vomito <br><span>• </span>Eruttazioni<br><span>• </span>Dolore uterino<br><span>• </span>Dismenorrea<br><span>• </span>Irregolarità mestruale<br></p><p><b>Moxa</b><br><span>• </span>Indicata<br></p><p><b>Ubicazione</b><br><span>• </span>Nella zona addominale<br><span>• </span>2 cun lateralmente all'ombelico</p>",
 					ChiaviTsubo: "Punto BO di Intestino crasso",
-					noMoxa: false,
-					noGravidanza: false	
 				},
 				{
 					NomeTsubo: "26.ST. Wailing (Montagnola esterna)",
 					AzioniTsubo: "<p><b>M.T.C.</b><br><span>• </span>Riequilibra il Qi <br><span>• </span>Attenua il dolore<br></p><p><b>Applicazioni</b><br><span>• </span>Dismenorrea <br><span>• </span>Amenorrea<br><span>• </span>Distensione addominale<br><span>• </span>Forti dolori addominali<br></p><p><b>Moxa</b><br><span>• </span>Indicata<br></p><p><b>Ubicazione</b><br><span>• </span>Nella zona addominale<br><span>• </span>A 2 cun dalla linea mediana<br><span>• </span>1 cun sotto l'ombelico<br><span>• </span>A livello di 7.CV</p>",
 					ChiaviTsubo: "",
-					noMoxa: false,
-					noGravidanza: false	
 				},
 				{
 					NomeTsubo: "27.ST. Daju (Il grande)",
 					AzioniTsubo: "<p><b>M.T.C.</b><br><span>• </span>Riequilibra il Qi <br><span>• </span>Favorisce la diuresi<br><span>• </span>Dona beneficio ai Reni<br><span>• </span>Fazzorza l'essenza<br></p><p><b>Applicazioni</b><br><span>• </span>Eiaculazione precoce<br><span>• </span>Spermatorrea<br><span>• </span>Minzione difficile <br><span>• </span>Ritenzione urinaria<br></p><p><b>Moxa</b><br><span>• </span>Indicata<br></p><p><b>Ubicazione</b><br><span>• </span>Nella zona addominale<br><span>• </span>A 2 cun dalla linea mediana<br><span>• </span>2 cun sotto l'ombelico<br><span>• </span>A livello di 5.CV</p>",
 					ChiaviTsubo: "",
-					noMoxa: false,
-					noGravidanza: false	
 				},
 				{
 					NomeTsubo: "28.ST. Shuidao (Passaggio dell'acqua)",
 					AzioniTsubo: "<p><b>M.T.C.</b><br><span>• </span>Riequilibra il Jiao inferiore<br><span>• </span>Elimina il ristagno<br><span>• </span>Dona beneficio alla Vescica<br><span>• </span>Giova all'utero<br><span>• </span>Favorisce la diuresi</p><p><b>Applicazioni</b><br><span>• </span>Ritenzione urinaria<br><span>• </span>Blocco intestinale<br><span>• </span>Edema <br><span>• </span>Freddo nella Vescica<br><span>• </span>Ritenzione di feci <br><span>• </span>Dismenorrea<br><span>• </span>Infertilità<br><span>• </span>Freddo nell'utero che si irradia in basso dalla coscia al ginocchio<br><span>• </span>Ritenzione di placenta<br></p><p><b>Moxa</b><br><span>• </span>Indicata<br></p><p><b>Ubicazione</b><br><span>• </span>Nella zona addominale<br><span>• </span>A 2 cun dalla linea mediana<br><span>• </span>3 cun sotto l'ombelico<br><span>• </span>A livello di 4.CV</p>",
 					ChiaviTsubo: "",
-					noMoxa: false,
-					noGravidanza: false	
 				},
 				{
 					NomeTsubo: "29.ST. Guilai (Ritorno)",
 					AzioniTsubo: "<p><b>M.T.C.</b><br><span>• </span>Riequilibra il Jiao inferiore<br><span>• </span>Dona beneficio alla zona genitale<br><span>• </span>Regola le mestruazioni<br></p><p><b>Applicazioni</b><br><span>• </span>Amenorrea<br><span>• </span>Leucorrea<br><span>• </span>Impotenza<br><span>• </span>Retrazione dei testicoli<br><span>• </span>Dolore al pene<br><span>• </span>Spermatorrea<br><span>• </span>Freddo nella vagina<br><span>• </span>Infertilità<br><span>• </span>Prolasso uterino</p><p><b>Moxa</b><br><span>• </span>Indicata<br></p><p><b>Ubicazione</b><br><span>• </span>Nella zona addominale<br><span>• </span>A 2 cun dalla linea mediana<br><span>• </span>4 cun sotto l'ombelico<br><span>• </span>A livello di 3.CV</p>",
 					ChiaviTsubo: "",
-					noMoxa: false,
-					noGravidanza: false	
 				},
 				{
 					NomeTsubo: "30.ST. Qichong (Assalto del Qi)",
 					AzioniTsubo: "<p><b>M.T.C.</b><br><span>• </span>Punto d'incontro dei meridiani di <span style=\"font-style:italic;\">Stomaco </span>e <span style=\"font-style:italic;\">Chongmai</span><br><span>• </span>Punto mare dell'acqua e dei cereali<br><span>• </span>Riequilibra il Jiao inferiore<br><span>• </span>Regola Chongmai <br><span>• </span>Blocca il Qi del \"maialino che corre\"</p><p><b>Applicazioni</b><br><span>• </span>Male ipogastrico<br><span>• </span>Pienezza addominale<br><span>• </span>Prolasso rettale<br><span>• </span>Amenorrea<br><span>• </span>Ritenzione di urina e feci<br><span>• </span>Metroraggia<br><span>• </span>Ritenzione di placenta<br><span>• </span>Retrazione dei testicoli<br><span>• </span>Dolore ai testicoli<br><span>• </span>Impotenza<br><span>• </span>Gonfiore e dolore alla vagina esterna<br><span>• </span>Infertilità<br></p><p><b>Moxa</b><br><span>• </span>Indicata<br></p><p><b>Ubicazione</b><br><span>• </span>Nella zona addominale bassa<br><span>• </span>A 2 cun dalla linea mediana<br><span>• </span>A livello del borso superiore della sinfisi pubica<br><span>• </span>A livello di 2.CV</p>",
 					ChiaviTsubo: "",
-					noMoxa: false,
-					noGravidanza: false	
 				},
 				{
 					NomeTsubo: "31.ST. Biguan (Cancello della coscia)",
 					AzioniTsubo: "<p><b>M.T.C.</b><br><span>• </span>Attenua il dolore<br><span>• </span>Disperde il Vento-Umidità<br><span>• </span>Favorisce la circolazione del Qi nel meridiano<br></p><p><b>Applicazioni</b><br><span>• </span>Dolore all'articolazione dell'anca<br><span>• </span>Dolore ai muscoli della coscia<br><span>• </span>Contrattura dei muscoli della coscia<br><span>• </span>Immobilità del ginocchio<br><span>• </span>Emiplegia<br><span>• </span>Parestesie degli arti<br><span>• </span>Combinato a 36.ST e 41.ST per i disturbi dell'arto inferiore<br></p><p><b>Moxa</b><br><span>• </span>Indicata<br></p><p><b>Ubicazione</b><br><span>• </span>Sulla coscia nella parte superiore<br><span>• </span>Lateralmente al muscolo sartorio<br><span>• </span>A livello del bordo della sinfisi pubica<br><span>• </span>Sulla verticale della spina iliaca</p>",
 					ChiaviTsubo: "",
-					noMoxa: false,
-					noGravidanza: false	
 				},
 				{
 					NomeTsubo: "32.ST. Futu (Coniglio accovacciato)",
 					AzioniTsubo: "<p><b>M.T.C.</b><br><span>• </span>Attenua il dolore<br><span>• </span>Disperde il Vento-Umidità<br><span>• </span>Favorisce la circolazione del Qi nel meridiano<br></p><p><b>Applicazioni</b><br><span>• </span>Contrattura dei muscoli della coscia<br><span>• </span>Freddo e dolore al ginocchio<br><span>• </span>Parestesia <br><span>• </span>Sindrome atrofica<br></p><p><b>Moxa</b><br><span>• </span>Indicata<br></p><p><b>Ubicazione</b><br><span>• </span>Sulla coscia<br><span>• </span>6 cun prossimalmente al bordo superiore della rotula<br><span>• </span>Sulla linea che unisce la cresta iliaca e il bordo laterale della rotula<br> </p>",
 					ChiaviTsubo: "",
-					noMoxa: false,
-					noGravidanza: false	
 				},
 				{
 					NomeTsubo: "33.ST. Yinshi (Mercato dello Yin)",
 					AzioniTsubo: "<p><b>M.T.C.</b><br><span>• </span>Attenua il dolore<br><span>• </span>Disperde il Vento-Umidità<br><span>• </span>Favorisce la circolazione del Qi nel meridiano<br></p><p><b>Applicazioni<br></b><span>• </span>Poco usato<br><span>• </span>Ostruzione dolorosa della gamba<br><span>• </span>Sindrome atrofica<br><span>• </span>Dolore a coscia e ginocchio<br><span>• </span>Difficoltà a flettere e allungare la gamba<br><span>• </span>Edema con addome ingrossato<br></p><p><b>Moxa</b><br><span>• </span>Indicata<br></p><p><b>Ubicazione</b><br><span>• </span>Sulla coscia<br><span>• </span>3 cun prossimalmente al bordo superiore della rotula<br><span>• </span>Sulla linea che unisce la cresta iliaca e il bordo laterale della rotula </p>",
 					ChiaviTsubo: "",
-					noMoxa: false,
-					noGravidanza: false	
 				},
 				{
 					NomeTsubo: "34.ST. Liangqiu (Colmo della collina)",
 					AzioniTsubo: "<p><b>M.T.C.</b><br><span>• </span>Punto <span style=\"font-style:italic;\">xi</span>-fessura del meridiano di <span style=\"font-style:italic;\">Stomaco</span><br><span>• </span>Attenua il dolore<br><span>• </span>Riequilibra lo Stomaco<br><span>• </span>Allevia le condizioni acute<br><span>• </span>Favorisce la circolazione del Qi nel meridiano<br></p><p><b>Applicazioni</b><br><span>• </span>Ascesso doloroso al seno<br><span>• </span>Dolore epigastrico acuto<br><span>• </span>Disturbi del ginocchio<br></p><p><b>Moxa</b><br><span>• </span>Indicata<br></p><p><b>Ubicazione</b><br><span>• </span>Sulla coscia<br><span>• </span>2 cun prossimalmente al bordo superiore della rotula<br><span>• </span>Sulla linea che unisce la cresta iliaca e il bordo laterale della rotula </p>",
 					ChiaviTsubo: "",
-					noMoxa: false,
-					noGravidanza: false	
 				},
 				{
 					NomeTsubo: "35.ST. Dubi (Naso del bue)",
 					AzioniTsubo: "<p><b>M.T.C.</b><br><span>• </span>Espelle il Vento-Umidità<br><span>• </span>Attenua il dolore<br><span>• </span>Favorisce la circolazione del Qi nel meridiano<br><span>• </span>Riduce il gonfiore<br></p><p><b>Applicazioni</b><br><span>• </span>Dolore gonfiore al ginocchio<br><span>• </span>Rigidità dell'articolazione del ginocchio<br><span>• </span>Parestesie<br><span>• </span>Debolezza<br></p><p><b>Moxa</b><br><span>• </span>Indicata<br></p><p><b>Ubicazione</b><br><span>• </span>Sul ginocchio<br><span>• </span>A ginocchio flesso nella fossetta sotto la patella<br><span>• </span>Lateralmente al legamento rotuleo laterale<br> </p>",
 					ChiaviTsubo: "",
-					noMoxa: false,
-					noGravidanza: false	
 				},
 				{
 					NomeTsubo: "36.ST. Zusanli (Tre miglia della gamba)",
 					AzioniTsubo: "<p><b>M.T.C.</b><br><span>• </span>Punto di comando di Gao Wu<br><span>• </span>Punto Stella del cielo di Ma Danyang<br><span>• </span>Punto Mare dell'acqua e dei cereali<br><span>• </span>Punto <span style=\"font-style:italic;\">he</span>-mare e Terra del meridiano di <span style=\"font-style:italic;\">Stomaco</span><br><span>• </span>Potenzia la Milza <br><span>• </span>Dissolve l'Umidità<br><span>• </span>Riequilibra lo Stomaco<br><span>• </span>Nutre il Qi originario<br><span>• </span>Sostiene il Qi corretto<br><span>• </span>Rafforza il Qi <br><span>• </span>Nutre sangue e yin<br><span>• </span>Calma lo <span style=\"font-style:italic;\">shen</span><br><span>• </span>Purifica il Fuoco <br><span>• </span>Rivitalizza lo yang<br><span>• </span>Riporta la coscienza<br><span>• </span>Favorisce la circolazione del Qi nel meridiano<br></p><p><span><b>Applicazioni</b><br><span>• </span>Tratta qualsiasi patologia del </span><span style=\"font-style:italic;\">fu</span> di Stomaco sia da vuoto che da pieno da Calore o Freddo<br><span>• </span>Nausea<br><span>• </span>Vomito<br><span>• </span>Dolore epigastrico<br><span>• </span>Singhiozzo<br><span>• </span>Distensione e dolore addominale<br><span>• </span>Inappetenza<br><span>• </span>Fame senza desiderio di mangiare<br><span>• </span>Flatulenza<br><span>• </span>Dissenteria<br><span>• </span>Ittero<br><span>• </span>Respiro corto<br><span>• </span>Vertigini<br><span>• </span>Tosse<br><span>• </span>Vertigini post-partum<br><span>• </span>Palpitazioni<br><span>• </span>Sindrome maniaco depressiva<br><span>• </span>Ira <br><span>• </span>Paura <br><span>• </span>Tendenza alla tristezza<br><span>• </span>Parlare ingiurioso<br><span>• </span>Gonfiore al seno <br><span>• </span>Male al petto<br><span>• </span>Ascesso mammario<br><span>• </span>Dolore a tutto l'arto inferiore<br></p><p><b>Moxa</b><br><span>• </span>Indicata<br></p><p><b>Ubicazione</b><br><span>• </span>Sotto il ginocchio<br><span>• </span>3 cun sotto 35.ST<br><span>• </span>Lateralmente alla cresta tibiale anteriore<br></p>",
 					ChiaviTsubo: "",
-					noMoxa: false,
-					noGravidanza: false	
 				},
 				{
 					NomeTsubo: "37.ST. Shangjuxu (Gran vuoto superiore)",
 					AzioniTsubo: "<p><b>M.T.C.</b><br><span>• </span>Punto <span style=\"font-style:italic;\">he</span>-mare di <span style=\"font-style:italic;\">Intestino crasso</span><br><span>• </span>Punto Mare del sangue<br><span>• </span>Blocca la dissenteria<br><span>• </span>Riequilibra Milza e Stomaco<br><span>• </span>Purifica Umidità-Calore<br><span>• </span>Favorisce la circolazione del Qi nel meridiano<br><span>• </span>Attenua il dolore<br></p><p><b>Applicazioni</b><br><span>• </span>Dissenteria<br><span>• </span>Deficit di Qi nell'Intestino crasso<br><span>• </span>Costipazione<br><span>• </span>Distensione addominale <br><span>• </span>Mal di pancia<br><span>• </span>Emiplegia<br><span>• </span>Parestesie<br><span>• </span>Freddo, debolezza, contrazione e dolore della gamba <br><span>• </span>Sindrome atrofica <br><span>• </span>Ascesso intestinale</p><p><b>Moxa</b><br><span>• </span>Indicata<br></p><p><b>Ubicazione</b><br><span>• </span>Parte inferiore della gamba<br><span>• </span>3 cun sotto 36.ST<br><span>• </span>Lateralmente alla cresta tibiale anteriore<br></p>",
 					ChiaviTsubo: "",
-					noMoxa: false,
-					noGravidanza: false	
 				},
 				{
 					NomeTsubo: "38.ST. Tiaokou (Linee aperte)",
 					AzioniTsubo: "<p><b>M.T.C.</b><br><span>• </span>Disperde il Vento-Umidità<br><span>• </span>Attenua il dolore<br><span>• </span>Dona beneficio alla spalla<br></p><p><b>Applicazioni</b><br><span>• </span>Disturbi della spalla<br><span>• </span>Parestesie<br><span>• </span>Gonfiore e dolore alla tibia <br><span>• </span>Impossibilità di stare in piedi a lungo<br><span>• </span>Gonfiore di coscia e ginocchio<br><span>• </span>Calore nelle piante dei piedi<br><span>• </span>Freddo</p><p><b>Moxa</b><br><span>• </span>Indicata<br></p><p><b>Ubicazione</b><br><span>• </span>Sulla gamba<br><span>• </span>A metà tra l'articolazione tibiofemorale e la prominenza del malleolo laterale<br><span>• </span>Un dito trasverso lateralmente alla cresta tibiale anteriore<br></p>",
 					ChiaviTsubo: "",
-					noMoxa: false,
-					noGravidanza: false	
 				},
 				{
 					NomeTsubo: "39.ST. Xiajuxu (Grande vuoto inferiore)",
 					AzioniTsubo: "<p><b>M.T.C.</b><br><span>• </span>Punto <span style=\"font-style:italic;\">he</span>-mare di <span style=\"font-style:italic;\">Intestino tenue</span><br><span>• </span>Punto Mare del sangue<br><span>• </span>Trasforma il ristagno<br><span>• </span>Purifica Umidità Calore<br><span>• </span>Favorisce la circolazione del Qi nel meridiano<br><span>• </span>Attenua il dolore<br><span>• </span>Regola il Qi di Intestino tenue<br><span>• </span>Riequilibra gli Intestini<br></p><p><b>Applicazioni</b><br><span>• </span>Feci contenenti sangue o pus<br><span>• </span>Algia lombare irradiata ai testicoli<br><span>• </span>Male al basso ventre<br><span>• </span>Dissenteria<br><span>• </span>Insufficienza di Qi dell'Intestino tenue<br><span>• </span>Atrofia del piede<br><span>• </span>Dolore al calcagno<br><span>• </span>Emiplegia della gamba<br></p><p><b>Moxa</b><br><span>• </span>Indicata<br></p><p><b>Ubicazione</b><br><span>• </span>Sulla gamba<br><span>• </span>3 cun inferiormente a 37.ST<br><span>• </span>Un dito trasverso lateralmente alla cresta tibiale anteriore</p>",
 					ChiaviTsubo: "",
-					noMoxa: false,
-					noGravidanza: false	
 				},
 				{
 					NomeTsubo: "40.ST. Fenglong (Gran prosperità)",
 					AzioniTsubo: "<p><b>M.T.C.</b><br><span>• </span>Punto <span style=\"font-style:italic;\">luo</span>-collegamento del meridiano di <span style=\"font-style:italic;\">Stomaco</span><br><span>• </span>Attenua la tosse e la dispnea<br><span>• </span>Trasforma il ristagno<br><span>• </span>Purifica Umidità <br><span>• </span>Favorisce la circolazione del Qi nel meridiano<br><span>• </span>Attenua il dolore<br><span>• </span>Purifica il flegma dal Cuore<br><span>• </span>Calma lo Shen<br><span>• </span>Trasforma il flegma dal Polmone<br><span>• </span>Dona beneficio al petto<br></p><p><b>Applicazioni<br></b><span>• </span>Tosse grassa<br><span>• </span>Affanno<br><span>• </span>Cefalea <br><span>• </span>Vertigini<br><span>• </span>Nodo in gola<br><span>• </span>Mal di testa da flegma-Vento<br><span>• </span>Visione di fantasmi<br><span>• </span>Risata folle<br><span>• </span>Agitazione<br><span>• </span>Eccessiva euforia<br><span>• </span>Epilessia <br><span>• </span>Indolenza<br><span>• </span>Viso gonfio<br><span>• </span>Corpo pesante e lento<br></p><p><b>Moxa</b><br><span>• </span>Indicata<br></p><p><b>Ubicazione</b><br><span>• </span>Sulla gamba<br><span>• </span>2 dita trasverse lateralmente alla cresta tibiale anteriore (1 dito traversa lateralmente a 38.ST)<br><span>• </span>A metà tra l'articolazione tibiofemorale e la prominenza del malleolo laterale<br></p>",
 					ChiaviTsubo: "",
-					noMoxa: false,
-					noGravidanza: false	
 				},
 				{
 					NomeTsubo: "41.ST. Jiexi (Divisione del ruscello)",
 					AzioniTsubo: "<p><b>M.T.C.</b><br><span>• </span>Punto <span style=\"font-style:italic;\">jing</span>-fiume e Fuoco del meridiano di <span style=\"font-style:italic;\">Stomaco</span><br><span>• </span>Calma lo Shen<br><span>• </span>Aiuta la circolazione del Qi nel meridiano<br><span>• </span>Attenua il dolore<br><span>• </span>Purifica il Calore dal meridiano <br><span>• </span>Purifica dal<span style=\"font-style:italic;\"> fu</span> Stomaco<br></p><p><b>Applicazioni</b><br><span>• </span>Atrofia della gamba<br><span>• </span>Male e gonfiore all'articolazione della caviglia<br><span>• </span>Epilessia<br><span>• </span>Paura e palpitazioni<br><span>• </span>Mania<br><span>• </span>Tristezza<br><span>• </span>Visioni<br><span>• </span>Viso e testa gonfi<br><span>• </span>Viso e occhi arrossati<br><span>• </span>Algie alla bocca <br><span>• </span>Male alle sopracciglia<br><span>• </span>Stitichezza<br><span>• </span>Fame con incapacità di mangiare<br></p><p><b>Moxa</b><br><span>• </span>Indicata<br></p><p><b>Ubicazione</b><br><span>• </span>Sulla caviglia<br><span>• </span>In un avvallamento tra il tendine estensore lungo dell'alluce e l'estensore lungo delle dita<br><span>• </span>A livello della prominenza malleolo laterale (a piede esteso)<br></p>",
 					ChiaviTsubo: "",
-					noMoxa: false,
-					noGravidanza: false	
 				},
 				{
 					NomeTsubo: "42.ST. Chongyang (Yang d'assalto)",
 					AzioniTsubo: "<p><b>M.T.C.</b><br><span>• </span>Punto <span style=\"font-style:italic;\">yuan</span>-sorgente del meridiano di <span style=\"font-style:italic;\">Stomaco</span><br><span>• </span>Calma lo Shen<br><span>• </span>Favorisce la circolazione del Qi nel meridiano<br><span>• </span>Attenua il dolore<br><span>• </span>Purifica il Calore dal meridiano <br><span>• </span>Purifica dal <span style=\"font-style:italic;\">fu</span> Stomaco<br></p><p><b>Applicazioni</b><br><span>• </span>Atrofia della gamba<br><span>• </span>Male e gonfiore all'articolazione della caviglia<br><span>• </span>Epilessia<br><span>• </span>Paura e palpitazioni<br><span>• </span>Mania<br><span>• </span>Tristezza<br><span>• </span>Visioni<br><span>• </span>Viso e testa gonfi<br><span>• </span>Viso e occhi arrossati<br><span>• </span>Algie alla bocca <br><span>• </span>Male alle sopracciglia<br><span>• </span>Stitichezza<br><span>• </span>Fame con incapacità di mangiare</p><p><b>Moxa</b><br><span>• </span>Indicata<br></p><p><b>Ubicazione</b><br><span>• </span>Sul dorso del piede<br><span>• </span>Nell'avvallamento formato dalla congiunzione del secondo e terzo metatarsale con le ossa cuneiformi<br><span>• </span>1,5 cun distalmente da 41.ST<br><span>• </span>Sulla linea tra 41.ST e 43.ST<br><span>• </span>Nel punto in cui si può palpare la pulsazione dell'arteria pedidia dorsale<br></p>",
 					ChiaviTsubo: "",
-					noMoxa: false,
-					noGravidanza: false	
 				},
 				{
 					NomeTsubo: "43.ST. Xiangu (Valle sommersa)",
 					AzioniTsubo: "<p><b>M.T.C.</b><br><span>• </span>Punto <span style=\"font-style:italic;\">shu</span>-corrente e Legno del meridiano di <span style=\"font-style:italic;\">Stomaco</span><br><span>• </span>Riequilibra Stomaco e Intestini<br><span>• </span>Armonizza la Milza<br><span>• </span>Elimina l'edema<br></p><p><b>Applicazioni</b><br><span>• </span>Dorso del piede gonfio e dolorante<br><span>• </span>Estensione e flessione delle dita difficoltose<br><span>• </span>Eruttazioni<br><span>• </span>Borborigmi<br><span>• </span>Pienezza e distensione addominale<br><span>• </span>Edema facciale<br><span>• </span>Ostruzione dolorosa febbrile <br></p><p><b>Moxa</b><br><span>• </span>Indicata<br></p><p><b>Ubicazione</b><br><span>• </span>Sul dorso del piede<br><span>• </span>Tra secondo e terzo osso metatarsale<br><span>• </span>1 cun prossimalmente a 44.ST<br></p>",
 					ChiaviTsubo: "",
-					noMoxa: false,
-					noGravidanza: false	
 				},
 				{
 					NomeTsubo: "44.ST. Neiting (Cortile interno)",
 					AzioniTsubo: "<p><b>M.T.C.</b><br><span>• </span>Punto Stella del cielo di Ma Danyanng<br><span>• </span>Punto <span style=\"font-style:italic;\">ying</span>-ruscello e Acqua del meridiano di <span style=\"font-style:italic;\">Stomaco</span><br><span>• </span>Riequilibra gli Intestini<br><span>• </span>Purifica l'Umidità-Calore<br><span>• </span>Calma lo <span style=\"font-style:italic;\">shen</span><br></p><p><b>Applicazioni</b><br><span>• </span>Dorso del piede gonfio e dolorante<br><span>• </span>Freddo a mani e piedi (con corpo caldo)<br><span>• </span>Stitichezza<br><span>• </span>Feci con presenza di sangue<br><span>• </span>Sete<br><span>• </span>Dissenteria<br><span>• </span>Viso e occhi doloranti<br><span>• </span>Epistassi<br><span>• </span>Mal di gola<br><span>• </span>Male ai denti inferiori<br><span>• </span>Deviazione di bocca e occhi<br><span>• </span>Dolore agli occhi<br></p><p><b>Moxa</b><br><span>• </span>Indicata<br></p><p><b>Ubicazione</b><br><span>• </span>Sul dorso del piede<br><span>• </span>Tra secondo e terzo dito<br><span>• </span>0.5 cun prossimalmente al margine palmato<br></p>",
 					ChiaviTsubo: "",
-					noMoxa: false,
-					noGravidanza: false	
 				},
 				{
 					NomeTsubo: "45.ST. Lidui (Scambio stretto)",
 					AzioniTsubo: "<p><b>M.T.C.</b><br><span>• </span>Punto <span style=\"font-style:italic;\">jing</span>-pozzo e Metallo del meridiano di <span style=\"font-style:italic;\">Stomaco</span><br><span>• </span>Ripristina la coscienza<br><span>• </span>Calma lo Shen<br><span>• </span>Purifica il Calore dal meridiano<br></p><p><b>Applicazioni</b><br><span>• </span>Perdita di coscienza <br><span>• </span>Sindrome maniaco depressiva<br><span>• </span>Panico facile<br><span>• </span>Insonnia<br><span>• </span>Vertigini<br><span>• </span>Mal di gola<br><span>• </span>Scolo nasale purulento<br><span>• </span>Viso e occhi doloranti<br><span>• </span>Epistassi<br><span>• </span>Mal di gola<br><span>• </span>Male ai denti inferiori<br><span>• </span>Testa calda<br><span>• </span>Faccia gonfia<br></p><p><b>Moxa</b><br><span>• </span>Indicata<br></p><p><b>Ubicazione</b><br><span>• </span>Sul secondo dito del piede<br><span>• </span>0.1 cun dall'angolo laterale dell'unghia<br></p>",
 					ChiaviTsubo: "",
-					noMoxa: false,
-					noGravidanza: false	
 				}
 			]	
 		},
 		"SP": {
 			NomeMeridiano: "Milza-pancreas",
-			cartella: "Milza-pancreas",
 			tsubo: [
 				{
 					NomeTsubo: "1.SP. Yinbai (Bianco nascosto)",
 					AzioniTsubo: "<p><b>M.T.C.</b><br><span>• </span>Punto <span style=\"font-style:italic;\">jing</span>-pozzo e Legno del meridiano di <span style=\"font-style:italic;\">Milza</span> <br><span>• </span>Uno dei 13 \"punti Demone\" per il medico Sun Simiao indicati per curare la dissociazione tra Hun e Po<br><span>• </span>Blocca l'emorragia <br><span>• </span>Ripristina la coscienza<br><span>• </span>Calma lo shen<br><span>• </span>Libera il petto<br><span>• </span>Riequilibra la Milza</p><p><b>Applicazioni</b><br><span>• </span>Sindrome maniaco depressiva<br><span>• </span>Insonnia<br><span>• </span>Perdita di coscienza<br><span>• </span>Tristezza<br><span>• </span>Eccesso di attività onirica<br><span>• </span>Dispnea<br><span>• </span>Pienezza di petto<br><span>• </span>Sospiri<br><span>• </span>Vomito <br><span>• </span>Diarrea<br><span>• </span>Gonfiore dei quattro arti<br><span>• </span>Distensione addominale<br><span>• </span>Vomito di sangue<br><span>• </span>Epistassi<br><span>• </span>Menorragia<br><span>• </span>Sangue nelle urine o nelle feci<br><span>• </span>Emorragia uterina<br></p><p><b>Moxa</b><br><span>• </span>Indicato<br></p><p><b>Ubicazione</b><br><span>• </span>Sull'alluce<br><span>• </span>Alla congiunzione delle linee tangenti al bordo mediale e la base dell'unghia<br><span>• </span>0.1 cun dall'angolo dell'unghia<br></p>",
 					ChiaviTsubo: "",
-					noMoxa: false,
-					noGravidanza: false	
 				},
 				{
 					NomeTsubo: "2.SP. Dadu (Grande metropoli)",
 					AzioniTsubo: "<p><b>M.T.C.<br></b><span>• </span>Punto <span style=\"font-style:italic;\">ying</span>-ruscello e Fuoco del meridiano di <span style=\"font-style:italic;\">Milza </span><b><br></b><span>• </span><span>Riequilibra il Jiao medio<br></span><span>• </span><span>Purifica il Calore<br></span><span>• </span><span>Risolve l'Umidità e l'Umidità-Calore<br></span><span>• </span><span>Riequilibra la Milza</span></p><p><b>Applicazioni</b><br><span>• </span>Tratta patologie dell'alluce<br><span>• </span>Malattie febbrili con assenza di sudorazione<br><span>• </span>Dolore epigastrico<br><span>• </span>Vomito<br><span>• </span>Diarrea<br><span>• </span>Stipsi<br><span>• </span>Distensione addominale<br><span>• </span>Gonfiore degli arti<br><span>• </span>Oppressione al petto<br><span>• </span>Senso di pesantezza con dolori alle ossa <br><span>• </span>Edema agli arti<br></p><p><b>Moxa</b><br><span>• </span>Indicato<br></p><p><b>Ubicazione</b><br><span>• </span>Lato mediale dell'alluce<br><span>• </span>Nella depressione inferiore alla prima articolazione metatarso-falangea<br></p>",
 					ChiaviTsubo: "",
-					noMoxa: false,
-					noGravidanza: false	
 				},
 				{
 					NomeTsubo: "3.SP. Taibai (Bianco supremo)",
 					AzioniTsubo: "<p><b>M.T.C.<br></b><span>• </span>Punto <span style=\"font-style:italic;\">shu</span>-corrente <br><span>• </span>Punto <span style=\"font-style:italic;\">yuan</span>-sorgente e Terra del meridiano di <span style=\"font-style:italic;\">Milza </span><br><span>• </span>Riequilibra il Qi<br><span>• </span>Tonifica Milza<br><span>• </span>Risolve l'Umidità e l'Umidità-Calore<br><span>• </span>Riequilibra la Milza e Stomaco<br></p><p><b>Applicazioni</b><br><span>• </span>Dolori articolari e lombari<br><span>• </span>Patologie dell'alluce<br><span>• </span>Stati febbrili con pienezza e oppressione <br><span>• </span>Stati febbrili con pienezza di capo e dolore alla fronte<br><span>• </span>Dolore epigastrico<br><span>• </span>Vomito<br><span>• </span>Stipsi<br><span>• </span>Distensione addominale<br><span>• </span>Gonfiore degli arti<br><span>• </span>Oppressione al petto<br><span>• </span>Senso di pesantezza<br><span>• </span>Dolori alle ossa<br><span>• </span>Edema agli arti<br><span>• </span>Cibo indigerito nelle feci<br><span>• </span>Dissenteria <br><span>• </span>Oppressione ai quattro arti<br></p><p><b>Moxa</b><br><span>• </span>Indicato<br></p><p><b>Ubicazione</b><br><span>• </span>Lato mediale del piede<br><span>• </span>Nella depressione inferiore della testa dell'osso metatarsale<br></p>",
 					ChiaviTsubo: "",
-					noMoxa: false,
-					noGravidanza: false	
 				},
 				{
 					NomeTsubo: "4.SP. Gongsun (Nonno nipote)",
 					AzioniTsubo: "<p><b>M.T.C.<br></b><span>• </span>Punto <span style=\"font-style:italic;\">luo</span>-collegamento del meridiano di <span style=\"font-style:italic;\">Milza</span><br><span>• </span>Punto Confluente del meridiano di <span style=\"font-style:italic;\">Chongmai </span><br><span>• </span>Riequilibra il Qi<br><span>• </span>Tonifica Milza<br><span>• </span>Risolve l'Umidità <br><span>• </span>Riequilibra il Jiao medio<br><span>• </span>Calma lo shen<br><span>• </span>Regola Chongmai <br><span>• </span>Dona beneficio a petto e cuore</p><p><b>Applicazioni</b><br><span>• </span>Dolori al Cuore e al petto<br><span>• </span>Disordini ginecologici<br><span>• </span>Dismenorrea<br><span>• </span>Ritenzione di placenta<br><span>• </span>Epilessia<br><span>• </span>Insonnia<br><span>• </span>Agitazione<br><span>• </span>Sindrome maniaco depressiva<br><span>• </span>Delirio maniacale<br><span>• </span>Mancanza di piacere nel mangiare<br><span>• </span>Freddo nello Stomaco<br><span>• </span>Vomito<br><span>• </span>Distensione addominale superiore e inferiore<br><span>• </span>Borborigmi<br><span>• </span>Diarrea<br><span>• </span>Cibo indigerito nelle feci<br><span>• </span>Dissenteria <br><span>• </span>Sangue nelle feci<br></p><p><b>Moxa</b><br><span>• </span>Indicato<br></p><p><b>Ubicazione</b><br><span>• </span>Lato mediale del piede<br><span>• </span>Nella depressione distale inferiore alla base del primo osso metatarsale<br></p>",
 					ChiaviTsubo: "",
-					noMoxa: false,
-					noGravidanza: false	
 				},
 				{
 					NomeTsubo: "5.SP. Shangqiu (Monte Shang)",
 					AzioniTsubo: "<p><b>M.T.C.<br></b><span>• </span>Punto <span style=\"font-style:italic;\">jing</span>-fiume e Metallo del meridiano di <span style=\"font-style:italic;\">Milza</span><br><span>• </span><span>Aiuta tendini e ossa<br></span><span>• </span><span>Tonifica Milza<br></span><span>• </span><span>Risolve l'Umidità <br></span><span>• </span><span>Calma lo shen</span></p><p><b>Applicazioni</b><br><span>• </span>Patologie della caviglia e tessuti molli circostanti<br><span>• </span>Rigidità della lingua<br><span>• </span>Difficoltà di linguaggio<br><span>• </span>Epilessia infantile da spavento<br><span>• </span>Incubi notturni<br><span>• </span>Pensieri eccessivi<br><span>• </span>Agitazione<br><span>• </span>Sindrome maniaco depressiva<br><span>• </span>Emiplegia<br><span>• </span>Senso di pesantezza con dolori articolari<br><span>• </span>Dolore all'interno coscia<br><span>• </span>Contrattura e dolore dei tendini<br><span>• </span>Distensione addominale <br><span>• </span>Sonnolenza<br><span>• </span>Letargia<br><span>• </span>Indolenza<br><span>• </span>Borborigmi<br><span>• </span>Diarrea<br><span>• </span>Cibo indigerito nelle feci<br></p><p><b>Moxa</b><br><span>• </span>Indicato<br></p><p><b>Ubicazione</b><br><span>• </span>Lato mediale della caviglia<br><span>• </span>Nella depressione che si trova all'incrocio dei bordi inferiore e anteriore del malleolo<br></p>",
 					ChiaviTsubo: "",
-					noMoxa: false,
-					noGravidanza: false	
 				},
 				{
 					NomeTsubo: "6.SP. Sanyianjiao (Incontro dei tre Yin)",
 					AzioniTsubo: "<p><b>M.T.C.<br></b><span>• </span>Punto d'incontro dei meridiani di <span style=\"font-style:italic;\">Milza</span>, <span style=\"font-style:italic;\">Fegato </span>e <span style=\"font-style:italic;\">Rene </span><br><span>• </span>Aiuta lo Stomaco e la Milza<br><span>• </span>Regola la circolazione del Qi nel meridiano<br><span>• </span>Attenua il dolore<br><span>• </span>Rinforza il sangue<br><span>• </span>Armonizza il Jiao medio<br><span>• </span>Giova ai genitali<br><span>• </span>Regola la diuresi<br><span>• </span>Induce il parto<br><span>• </span>Tonifica Rene e armonizza Fegato<br><span>• </span>Risolve l'Umidità <br><span>• </span>Calma lo Shen<br></p><p><b>Applicazioni</b><br><span>• </span>Atrofia e ostruzione dolorosa degli arti inferiori<br><span>• </span>Eczema<br><span>• </span>Sindrome coleriforme acuta<br><span>• </span>Vertigini post-partum<br><span>• </span>Parto difficile<br><span>• </span>Masse addominali<br><span>• </span>Leucorrea<br><span>• </span>Prolasso uterino<br><span>• </span>Infertilità<br><span>• </span>Amenorrea<br><span>• </span>Sanguinamento uterino<br><span>• </span>Dismenorrea<br><span>• </span>Sindrome da agitazione del feto<br><span>• </span>Mestrui irregolari<br><span>• </span>Menorragia<br><span>• </span>Mancanza di appetito<br><span>• </span>Vomito<br><span>• </span>Pesantezza dei quattro arti<br><span>• </span>Emissione seminale<br><span>• </span>Iperattività sessuale nell'uomo<br><span>• </span>Impotenza<br><span>• </span>Dolore ai genitali<br><span>• </span>Dolore al pene<br><span>• </span>Testicoli contratti<br><span>• </span>Ostruzione dolorosa da Umidità<br><span>• </span>Distensione addominale <br><span>• </span>Freddo nell'addome e inappetenza<br><span>• </span>Minzione difficoltosa<br><span>• </span>Disfunzione urinaria dolorosa<br><span>• </span>Urine torbide<br><span>• </span>Insonnia <br><span>• </span>Deficit di Cistifellea<br><span>• </span>Borborigmi<br><span>• </span>Diarrea<br><span>• </span>Cibo indigerito nelle feci<br></p><p><b>Moxa</b><br><span>• </span>Indicato<br><span>• </span>Controindicato in gravidanza<br></p><p><b>Ubicazione</b><br><span>• </span>Lato mediale della gamba<br><span>• </span>Nella depressione vicino alla cresta mediale della tibia<br><span>• </span>3 cun sopra la prominenza del malleolo mediale<br></p>",
 					ChiaviTsubo: "",
-					noMoxa: false,
-					noGravidanza: true	
 				},
 				{
 					NomeTsubo: "7.SP. Lougu (Valle gocciolante)",
 					AzioniTsubo: "<p><b>M.T.C.</b><br><span>• </span>Attenua il gonfiore<br><span>• </span>Regola la diuresi<br><span>• </span>Tonifica la Milza<br><span>• </span>Risolve l'Umidità <br></p><p><b>Applicazioni</b><br><span>• </span>Dolore alle ginocchia<br><span>• </span>Qi di gamba<br><span>• </span>Paralisi delle gambe<br><span>• </span>Gonfiore delle caviglie<br><span>• </span>Edema <br><span>• </span>Difficoltà di minzione<br><span>• </span>Diarrea<br><span>• </span>Borborigmi<br><span>• </span>Pienezza addominale<br><span>• </span>Eruttazione dolorosa<br><span>• </span>Diminuzione ingiustificata di peso dovuta a Fuoco nascosto di Stomaco, a livello del Qi, che deriva da grande assunzione di cibo<br></p><p><b>Moxa</b><br><span>• </span>Controindicato<br></p><p><b>Ubicazione</b><br><span>• </span>Lato mediale della gamba<br><span>• </span>Nella depressione dietro la cresta mediale della tibia<br><span>• </span>3 cun sopra 6.SP<br></p>",
 					ChiaviTsubo: "",
-					noMoxa: true,
-					noGravidanza: false	
 				},
 				{
 					NomeTsubo: "8.SP. Diji (Cardine terrestre)",
 					AzioniTsubo: "<p><b>M.T.C.<br></b><span>• </span>Punto <span style=\"font-style:italic;\">xi</span>-fessura del meridiano di <span style=\"font-style:italic;\">Milza </span><br><span>• </span>Rinforza il sangue<br><span>• </span>Regola le mestruazioni<br><span>• </span>Attenua le situazioni acute<br><span>• </span>Riequilibra la Milza<br><span>• </span>Risolve l'Umidità <br></p><p><b>Applicazioni</b><br><span>• </span>Mancanza di appetito<br><span>• </span>Distensione addominale<br><span>• </span>Edema <br><span>• </span>Difficoltà di minzione<br><span>• </span>Masse addominali<br><span>• </span>Mestrui irregolari<br><span>• </span>Leucorrea<br><span>• </span>Dismenorrea acuta (se trattato insieme a 4.LI)<br></p><p><b>Moxa</b><br><span>• </span>Indicato<br></p><p><b>Ubicazione</b><br><span>• </span>Lato mediale della gamba<br><span>• </span>Nella depressione dietro la cresta mediale della tibia<br><span>• </span>3 cun sotto 9.SP<br></p>",
 					ChiaviTsubo: "",
-					noMoxa: false,
-					noGravidanza: false	
 				},
 				{
 					NomeTsubo: "9.SP. Yinlingquan (Sorgente della collina Yin)",
 					AzioniTsubo: "<p><b>M.T.C.<br></b><span>• </span>Punto <span style=\"font-style:italic;\">he</span>-mare e Acqua del meridiano di <span style=\"font-style:italic;\">Milza</span><br><span>• </span><span>Giova al Jiao inferiore<br></span><span>• </span><span>Muove i passaggi dell'acqua<br></span><span>• </span><span>Riequilibra la Milza<br></span><span>• </span><span>Risolve l'Umidità </span></p><p><b>Applicazioni</b><br><span>• </span>Mancanza di appetito<br><span>• </span>Distensione addominale<br><span>• </span>Edema <br><span>• </span>Difficoltà di minzione<br><span>• </span>Leucorrea<br><span>• </span>Diarrea con presenza di cibo indigerito<br><span>• </span>Ittero<br><span>• </span>Gonfiore agli arti inferiori<br><span>• </span>Dissenteria<br><span>• </span>Ritenzione di urina<br><span>• </span>Gonfiore e dolore alle ginocchia e ostruzione dolorosa sistemica <br></p><p><b>Moxa</b><br><span>• </span>Indicato<br></p><p><b>Ubicazione</b><br><span>• </span>Sul lato mediale della gamba<br><span>• </span><span>Nella depressione che si trova posteriormente alla cresta mediale della tibia, immediatamente sotto il condilo</span></p>",
 					ChiaviTsubo: "",
-					noMoxa: false,
-					noGravidanza: false	
 				},
 				{
 					NomeTsubo: "10.SP. Xuehai (Mare del sangue)",
 					AzioniTsubo: "<p><b>M.T.C.</b><br><span>• </span>Giova alla pelle<br><span>• </span>Riequilibra i mestrui<br><span>• </span>Elimina la stasi<br><span>• </span>Ravviva e rinfresca il sangue<br></p><p><b>Applicazioni</b><br><span>• </span>Punto principale per smuovere la stasi di sangue<br><span>• </span>Per patologie mestruali e cutanee<br><span>• </span>Dismenorrea<br><span>• </span>Irregolarità mestruale<br><span>• </span>Amenorrea<br><span>• </span>Orticaria<br><span>• </span>Eczema<br><span>• </span>Sanguinamento uterino<br><span>• </span>Metrorragia<br><span>• </span>Erisipela<br><span>• </span>Herpes zoster<br><span>• </span>Piaghe calde dolorose<br></p><p><b>Moxa</b><br><span>• </span>Indicato<br></p><p><b>Ubicazione</b><br><span>• </span>2 cun prossimalmente al bordo superiore della rotula<br><span>• </span>Sulla massa muscolare del vasto mediale<br><span>• </span>Sulla depressione dolente del muscolo<br></p>",
 					ChiaviTsubo: "",
-					noMoxa: false,
-					noGravidanza: false	
 				},
 				{
 					NomeTsubo: "11.SP. Jimen (Porta che vaglia)",
 					AzioniTsubo: "<p><b>M.T.C.</b><br><span>• </span>Drena l'Umidità<br><span>• </span>Purifica il Calore <br><span>• </span>Regola la diuresi<br></p><p><b>Applicazioni</b><br><span>• </span>Enuresi<br><span>• </span>Ritenzione di urine<br><span>• </span>Eczema scrotale<br><span>• </span>Blocco della diuresi<br><span>• </span>Prurito umido ai genitali esterni<br><span>• </span>Dolore e gonfiore nella regione inguinale<br><span>• </span>Dolore all'addome inferiore<br><span>• </span>Disfunzione urinaria dolorosa<br></p><p><b>Moxa</b><br><span>• </span>Indicato<br></p><p><b>Ubicazione</b><br><span>• </span>Sul lato mediale della coscia<br><span>• </span>6 cun sopra 10.SP<br><span>• </span>Sulla verticale tra 10.SP e 12.SP</p>",
 					ChiaviTsubo: "",
-					noMoxa: false,
-					noGravidanza: false	
 				},
 				{
 					NomeTsubo: "12.SP. Chongmen (Porta dell'assalto)",
 					AzioniTsubo: "<p><b>M.T.C.<br></b><span>• </span>Punto d'incontro dei meridiani di <span style=\"font-style:italic;\">Milza</span>, <span style=\"font-style:italic;\">Fegato </span>e <span style=\"font-style:italic;\">Yinweimai</span><br><span>• </span><span>Regola il Qi <br></span><span>• </span><span>Attenua il dolore<br></span><span>• </span><span>Purifica il Calore<br></span><span>• </span><span>Drena l'Umidità<br></span><span>• </span><span>Attiva il sangue<br></span><span>• </span><span>Regola la diuresi</span></p><p><b>Applicazioni</b><br><span>• </span>Distensione<br><span>• </span>Pienezza<br><span>• </span>Dolore all'addome e al Cuore in gravidanza<br></p><p><b>Moxa</b><br><span>• </span>Indicato<br></p><p><b>Ubicazione</b><br><span>• </span>3.5 cun lateralmente a 2.CV<br><span>• </span>Sul lato esterno dell'arteria femorale<br></p>",
 					ChiaviTsubo: "",
-					noMoxa: false,
-					noGravidanza: false	
 				},
 				{
 					NomeTsubo: "13.SP. Fushe (Dimora dei visceri)",
 					AzioniTsubo: "<p><b>M.T.C.<br></b><span>• </span>Punto d'incontro dei meridiani di <span style=\"font-style:italic;\">Milza</span>, <span style=\"font-style:italic;\">Fegato</span> e <span style=\"font-style:italic;\">Yinweimai</span><br><span>•</span><span> </span><span>Regola il Qi <br></span><span>• </span><span>Attenua il dolore</span></p><p><b>Applicazioni</b><br><span>• </span>Dolore e pienezza dell'addome <br><span>• </span>Stitichezza<br><span>• </span>Sindromi shan<br><span>• </span>Dolore alla coscia<br><span>• </span>Masse addominali dolorose<br><span>• </span>Dolore al costato<br><span>• </span>Sindrome coleriforme acuta<br></p><p><b>Moxa</b><br><span>• </span>Indicato<br></p><p><b>Ubicazione</b><br><span>• </span>Basso ventre <br><span>• </span>0.7 cun sopra e 0.5 cun lateralmente a 12.SP<br><span>• </span>4 cun dalla linea mediana <br></p>",
 					ChiaviTsubo: "",
-					noMoxa: false,
-					noGravidanza: false	
 				},
 				{
 					NomeTsubo: "14.SP. Fujie (Annodamento dell'addome)",
 					AzioniTsubo: "<p><b>M.T.C.</b><br><span>• </span>Regola il Qi <br><span>• </span>Fa scendere il Qi ribelle<br><span>• </span>Giova al Jiao inferiore e lo scalda<br></p><p><b>Applicazioni</b><br><span>• </span>Distensione addominale<br><span>• </span>Dolore periombelicale<br><span>• </span>Dolore al Cuore<br><span>• </span>Tosse<br><span>• </span>Ristagno di Qi nell'addome<br><span>• </span>Afflusso in alto di Qi di Cuore<br><span>• </span>Stipsi<br><span>• </span>Sindromi shan dolorose<br></p><p><b>Moxa</b><br><span>• </span>Indicato<br></p><p><b>Ubicazione</b><br><span>• </span>Basso ventre <br><span>• </span>1.3 cun sotto a 15.SP<br><span>• </span>4 cun dalla linea mediana <br></p>",
 					ChiaviTsubo: "",
-					noMoxa: false,
-					noGravidanza: false	
 				},
 				{
 					NomeTsubo: "15.SP. Daheng (Grande orizzontale)",
 					AzioniTsubo: "<p><span style=\"font-weight:bold;\">M.T.C.<br></span><span>• </span>Punto di incontro dei meridiani di <span style=\"font-style:italic;\">Milza </span>e <span style=\"font-style:italic;\">Yinweimai</span><br><span>• </span><span>Smuove il Qi <br></span><span>• </span><span>Regola gli Intestini</span></p><p><b>Applicazioni</b><br><span>• </span>Tristezza<br><span>• </span>Sospiri<br><span>• </span>Diarrea da Freddo e Umidità<br><span>• </span>Dissenteria<br><span>• </span>Stipsi<br></p><p><b>Moxa</b><br><span>• </span>Indicato<br></p><p><b>Ubicazione</b><br><span>• </span>Sull'addome <br><span>• </span>A livello dell'ombelico<br><span>• </span>Nell'avvallamento sul bordo esterno del muscolo retto dell'addome<br></p>",
 					ChiaviTsubo: "",
-					noMoxa: false,
-					noGravidanza: false	
 				},
 				{
 					NomeTsubo: "16.SP. Fuai (Dolore addominale)",
 					AzioniTsubo: "<p><b>M.T.C.<br></b><span>• </span>Punto d'incontro dei meridiani di <span style=\"font-style:italic;\">Milza </span>e <span style=\"font-style:italic;\">Yinweimai</span><br><span>• </span>Regola gli Intestini<br></p><p><b>Applicazioni</b><br><span>• </span>Feci con pus e sangue<br><span>• </span>Cibo indigerito nelle feci<br><span>• </span>Freddo nell'addome<br><span>• </span>Dissenteria<br><span>• </span>Stipsi<br><span>• </span>Dolore periombelicale<br></p><p><b>Moxa</b><br><span>• </span>Indicato<br></p><p><b>Ubicazione</b><br><span>• </span>Sull'addome<br><span>• </span>Nell'avvallamento sul bordo esterno del muscolo retto dell'addome <br><span>• </span>3 cun sopra 15.SP<br></p>",
 					ChiaviTsubo: "",
-					noMoxa: false,
-					noGravidanza: false	
 				},
 				{
 					NomeTsubo: "17.SP. Shidou (Cavità degli alimenti)",
 					AzioniTsubo: "<p><b>M.T.C.</b><br><span>• </span>Aiuta la digestione<br><span>• </span>Elimina gli accumuli di cibo e liquidi<br></p><p><b>Applicazioni</b><br><span>• </span>Tratta tutte le malattie principali di Milza<br></p><p><b>Moxa</b><br><span>• </span>Indicato<br></p><p><b>Ubicazione</b><br><span>• </span>Sul lato del torace <br><span>• </span>Quinto spazio intercostale<br><span>• </span>6 cun alla linea mediana<br></p>",
 					ChiaviTsubo: "",
-					noMoxa: false,
-					noGravidanza: false	
 				},
 				{
 					NomeTsubo: "18.SP. Tianxi (Villaggio del petto)",
 					AzioniTsubo: "<p><b>M.T.C.</b><br><span>• </span>Regola il Qi<br><span>• </span>Aiuta il seno e la lattazione<br><span>• </span>Fa scendere il Qi<br></p><p><b>Applicazioni</b><br><span>• </span>Tosse<br><span>• </span>Fiato corto<br><span>• </span>Catarro in gola<br><span>• </span>Singhiozzo<br><span>• </span>Diminuzione del flusso di latte<br><span>• </span>Ipogalattia<br><span>• </span>Ascesso mammario<br></p><p><b>Moxa</b><br><span>• </span>Indicato<br></p><p><b>Ubicazione</b><br><span>• </span>Sul lato del torace <br><span>• </span>Nel quarto spazio intercostale<br><span>• </span>6 cun alla linea mediana<br></p>",
 					ChiaviTsubo: "",
-					noMoxa: false,
-					noGravidanza: false	
 				},
 				{
 					NomeTsubo: "19.SP. Xiongxiang (Fiume celeste)",
 					AzioniTsubo: "<p><b>M.T.C.</b><br><span>• </span>Scioglie il petto<br><span>• </span>Aiuta la discesa del Qi <br><span>• </span>Regola il Qi <br></p><p><b>Applicazioni</b><br><span>• </span>Pienezza di petto nella regione costale laterale<br><span>• </span>Fiato corto<br><span>• </span>Tosse<br></p><p><b>Moxa</b><br><span>• </span>Indicato<br></p><p><b>Ubicazione</b><br><span>• </span>Sul lato del torace <br><span>• </span>Nel terzo spazio intercostale<br><span>• </span>6 cun alla linea mediana</p><p></p>",
 					ChiaviTsubo: "",
-					noMoxa: false,
-					noGravidanza: false	
 				},
 				{
 					NomeTsubo: "20.SP. Zhourong (Gloria accerchiata)",
 					AzioniTsubo: "<p><b>M.T.C.</b><br><span>• </span>Scioglie il petto<br><span>• </span>Aiuta la discesa del Qi <br><span>• </span>Regola il Qi </p><p><b>Applicazioni</b><br><span>• </span>Tosse<br><span>• </span>Fiato corto<br><span>• </span>Catarro in gola<br><span>• </span>Tosse con catarro e pus<br><span>• </span>Ingestione difficile<br><span>• </span>Pienezza di petto irradiata nella regione costale laterale<br></p><p><b>Moxa</b><br><span>• </span>Indicato<br></p><p><b>Ubicazione</b><br><span>• </span>Sul lato del torace <br><span>• </span>Nel secondo spazio intercostale<br><span>• </span>6 cun dalla linea mediana<br></p>",
 					ChiaviTsubo: "",
-					noMoxa: false,
-					noGravidanza: false	
 				},
 				{
 					NomeTsubo: "21.SP. Dabao (Grande coperta)",
 					AzioniTsubo: "<p><b>M.T.C.<br></b><span>• </span>Punto <span style=\"font-style:italic;\">grande luo</span>-collegamento del meridiano di <span style=\"font-style:italic;\">Milza</span><br><span>• </span>Regola il Qi<br><span>• </span>Elimina pienezza e dolore al petto<br><span>• </span>Aiuta la regolazione del sangue<br><span>• </span>Rafforza articolazioni e tendini<br></p><p><b>Applicazioni</b><br><span>• </span>Flaccidità degli arti<br><span>• </span>Flaccidità delle articolazioni<br><span>• </span>Dolore agli arti<br><span>• </span>Dolore a tutto il corpo<br></p><p><b>Moxa</b><br><span>• </span>Indicato<br></p><p><b>Ubicazione</b><br><span>• </span>Linea ascellare media <br><span>• </span>Nel settimo spazio intercostale<br></p>",
 					ChiaviTsubo: "",
-					noMoxa: false,
-					noGravidanza: false	
 				}
 			]
 		},
 		"SI": {
 			NomeMeridiano: "Intestino tenue",
-			cartella: "intestino_tenue",
 			tsubo: [
 				{
 					NomeTsubo: "1.SI. Shaoze (Palude minore)",
 					AzioniTsubo: "<p><b>M.T.C.</b><br><span>• </span>Punto <span style=\"font-style:italic;\">jing</span>-pozzo e Metallo del meridiano di<span style=\"font-style:italic;\"> Intestino tenue</span><br><span>• </span>Purifica il Calore<br><span>• </span>Dona beneficio agli orifizi degli organi di senso<br><span>• </span>Ripristina la coscienza<br><span>• </span>Favorisce la lattazione<br><span>• </span>Giova al seno<br></p><p><b>Applicazioni</b><br><span>• </span>Mal di testa<br><span>• </span>Vertigini<br><span>• </span>Impedimento superficiale della visione<br><span>• </span>Congiuntivite<br><span>• </span>Epistassi<br><span>• </span>Sordità<br><span>• </span>Acufeni<br><span>• </span>Mal di gola o alla lingua<br><span>• </span>Ulcere del cavo orale<br><span>• </span>Patologie del torace<br><span>• </span>Ictus<br><span>• </span>Dolore al cuore<br><span>• </span>Dolore alla regione costale laterale<br><span>• </span>Tosse<br><span>• </span>Gonfiore del seno (abbinato con 17.CV)<br><span>• </span>Ascesso al seno (abbinato con 17.CV)<br><span>• </span>Assenza di latte (abbinato con 17.CV)<br></p><p><b>Moxa</b><br><span>• </span>Attenzione a non ustionare l'anima dell'unghia<br></p><p><b>Ubicazione</b><br><span>• </span>Sul dorso del dito mignolo della mano<br><span>• </span>Sull'angolo ulnare dell'unghia<br><span>• </span>A 0,1 cun dall'angolo ungueale<br></p>",
 					ChiaviTsubo: "",
-					noMoxa: false,
-					noGravidanza: false	
 				},
 				{
 					NomeTsubo: "2.SI. Qiangu (Valle anteriore)",
 					AzioniTsubo: "<p><b>M.T.C.</b><br><span>• </span>Punto <span style=\"font-style:italic;\">jing</span>-ruscello e Acqua del meridiano di <span style=\"font-style:italic;\">Intestino tenue</span><br><span>• </span>Dona beneficio a occhi, orecchie e gola<br><span>• </span>Favorisce la circolazione del Qi nel meridiano<br><span>• </span>Allevia il dolore<br><span>• </span>Purifica il Calore e il gonfiore dalla porzione superiore del meridiano<br></p><p><b>Applicazioni</b><br><span>• </span>Orecchioni<br><span>• </span>Gonfiore e dolore al collo<br><span>• </span>Gonfiore della guancia con dolore che si irradia all'orecchio<br><span>• </span>Mal di gola<br><span>• </span>Dolore agli occhi con lacrimazione<br><span>• </span>Congiuntivite<br><span>• </span>Congestione nasale<br><span>• </span>Epistassi<br><span>• </span>Acufeni<br></p><p><b>Moxa</b><br><span>• </span>Nessuna controindicazione<br></p><p><b>Ubicazione</b><br><span>• </span>Bordo ulnare del mignolo della mano<br><span>• </span>A mano chiusa, nell'avvallamento che si forma in prossimità dell'articolazione metacarpo-falangea<br></p>",
 					ChiaviTsubo: "",
-					noMoxa: false,
-					noGravidanza: false	
 				},
 				{
 					NomeTsubo: "3.SI. Houxi (Ruscello posteriore)",
 					AzioniTsubo: "<p><b>M.T.C.</b><br><span>• </span>Punto <span style=\"font-style:italic;\">shu</span>-corrente e Legno del meridiano di<span style=\"font-style:italic;\"> Intestino tenue</span><br><span>• </span>Punto confluente del meridiano di <span style=\"font-style:italic;\">Vaso governatore</span><br><span>• </span>Favorisce la circolazione del Qi nel meridiano<br><span>• </span>Attenua il dolore<br><span>• </span>Purifica il Vento e il Calore<br><span>• </span>Calma lo Shen<br><span>• </span>Dona beneficio agli orifizi sensoriali<br><span>• </span>Riequilibra Vaso governatore<br></p><p><b>Applicazioni</b><br><span>• </span>Punto distale, importante per disturbi di collo, scapola, dorso e arto superiore<br><span>• </span>Stiramento lombare con dolore acuto<br><span>• </span>Febbre e brividi<br><span>• </span>Malaria<br><span>• </span>Sudorazione notturna<br><span>• </span>Epilessia<br><span>• </span>Sordità<br><span>• </span>Acufeni<br><span>• </span>Rossore<br><span>• </span>Dolore e gonfiore degli occhi con lacrimazione<br><span>• </span>Epistassi<br><span>• </span>Mal di denti<br></p><p><b>Moxa</b><br><span>• </span>Nessuna controindicazione<br></p><p><b>Ubicazione</b><br><span>• </span>Bordo ulnare della mano<br><span>• </span>In un'avvallamento evidente prossimale alla testa del quinto metacarpo<br></p>",
 					ChiaviTsubo: "",
-					noMoxa: false,
-					noGravidanza: false	
 				},
 				{
 					NomeTsubo: "4.SI. Wangu (Osso del polso)",
 					AzioniTsubo: "<p><b>M.T.C.</b><br><span>• </span>Punto <span style=\"font-style:italic;\">yuan</span>-sorgente del meridiano di <span style=\"font-style:italic;\">Intestino tenue</span><br><span>• </span>Favorisce la circolazione del QI nel meridiano<br><span>• </span>Attenua il dolore<br><span>• </span>Purifica il Calore <br><span>• </span>Riduce il gonfiore<br><span>• </span>Purifica l'Umidità-Calore <br></p><p><b>Applicazioni</b><br><span>• </span>Disturbi dell'arto superiore e del capo<br><span>• </span>Gonfiore della guancia con dolore che si irradia all'orecchio<br><span>• </span>Ostruzione dolorosa della gola<br><span>• </span>Acufeni<br><span>• </span>Lacrimazione<br><span>• </span>Perdita del gusto<br><span>• </span>Ittero<br></p><p><b>Moxa</b><br><span>• </span>Nessuna controindicazione<br></p><p><b>Ubicazione</b><br><span>• </span>Sul bordo ulnare della mano<br><span>• </span>Nell'avvallamento tra la base del quinto osso metacarpale e l'osso piramidale<br></p>",
 					ChiaviTsubo: "",
-					noMoxa: false,
-					noGravidanza: false	
 				},
 				{
 					NomeTsubo: "5.SI. Yanggu (Valle dello Yang)",
 					AzioniTsubo: "<p><b>M.T.C.</b><br><span>• </span>Punto <span style=\"font-style:italic;\">jing</span>-fiume e Fuoco del meridiano di <span style=\"font-style:italic;\">Intestino tenue</span><br><span>• </span>Purifica il Calore <br><span>• </span>Calma lo Shen<br><span>• </span>Allevia il gonfiore</p><p><b>Applicazioni</b><br><span>• </span>Mal di denti<br><span>• </span>Acufeni<br><span>• </span>Sordità<br><span>• </span>Capogiri visivi<br><span>• </span>Congiuntivite<br><span>• </span>Gonfiore al collo e alla mandibola</p><p><b>Moxa</b><br><span>• </span>Nessuna controindicazione<br></p><p><b>Ubicazione</b><br><span>• </span>Sul bordo ulnare del polso<br><span>• </span>Nell'avvallamento tra l'osso piramidale e la testa dell'ulna<br></p>",
 					ChiaviTsubo: "",
-					noMoxa: false,
-					noGravidanza: false	
 				},
 				{
 					NomeTsubo: "6.SI. Yanglao (Sostegno dell'anziano)",
 					AzioniTsubo: "<p><b>M.T.C.</b><br><span>• </span>Punto <span style=\"font-style:italic;\">xi</span>-fessura del meridiano di <span style=\"font-style:italic;\">Intestino tenue</span><br><span>• </span>Favorisce la circolazione del Qi nel meridiano<br><span>• </span>Allevia il dolore<br><span>• </span>Dona beneficio a spalla e braccio<br><span>• </span>Giova agli occhi<br></p><p><b>Applicazioni</b><br><span>• </span>Dolore molto intenso a spalla e avambraccio<br><span>• </span>Pesantezza e dolore alla regione lombare<br><span>• </span>Ostruzione dolorosa del piede<br><span>• </span>Difficoltà a flettere ed estendere il piede<br><span>• </span>Vista debole<br><span>• </span>Cataratta<br><span>• </span>Male all'occhio<br></p><p><b>Moxa</b><br><span>• </span>Nessuna controindicazione<br></p><p><b>Ubicazione</b><br><span>• </span>Sul dorso della testa dell'ulna (lato radiale)<br><span>• </span>Nella fessura tra il processo stiloideo ulnare e il tendine del muscolo estensore del mignolo<br></p>",
 					ChiaviTsubo: "",
-					noMoxa: false,
-					noGravidanza: false	
 				},
 				{
 					NomeTsubo: "7.SI. Zhizheng (Ramo del diritto)",
 					AzioniTsubo: "<p><b>M.T.C.</b><br><span>• </span>Punto <span style=\"font-style:italic;\">luo</span>-collegamento del meridiano di <span style=\"font-style:italic;\">Intestino tenue</span><br><span>• </span>Libera l'esterno<br><span>• </span>Purifica il Calore <br><span>• </span>Calma lo Shen<br><span>• </span>Favorisce la circolazione del Qi nel meridiano<br><span>• </span>Attenua il dolore<br><span>• </span>Dona beneficio alle articolazioni delle dita<br></p><p><b>Applicazioni</b><br><span>• </span>Utilizzato soprattutto per trattare il Cuore e lo Shen <br><span>• </span>Sindrome maniaco-depressiva<br><span>• </span>Paura <br><span>• </span>Spavento<br><span>• </span>Tristezza <br><span>• </span>Febbre<br><span>• </span>Freddo<br><span>• </span>Cefalea<br><span>• </span>Vertigini<br><span>• </span>Capogiri visivi<br><span>• </span>Cataratta<br><span>• </span>Artrosi alle dita<br><span>• </span>Impossibilità di chiudere la mano a pugno<br><span>• </span>Difficoltà ad afferrare con forza</p><p><b>Moxa</b><br><span>• </span>Nessuna controindicazione<br></p><p><b>Ubicazione</b><br><span>• </span>Nella fessura tra il bordo anteriore dell'ulna e il muscolo flessore ulnare del carpo<br><span>• </span>A 5 cun da 5.SI sulla linea che congiunge quest'ultimo a 8.SI</p>",
 					ChiaviTsubo: "",
-					noMoxa: false,
-					noGravidanza: false	
 				},
 				{
 					NomeTsubo: "8.SI. Xiaohai (Piccolo mare)",
 					AzioniTsubo: "<p><b>M.T.C.</b><br><span>• </span>Punto <span style=\"font-style:italic;\">he</span>-mare e Terra del meridiano di <span style=\"font-style:italic;\">Intestino tenue</span><br><span>• </span>Purifica il Calore<br><span>• </span>Calma lo Shen<br><span>• </span>Favorisce la circolazione del Qi nel meridiano<br><span>• </span>Attenua il dolore<br></p><p><b>Applicazioni</b><br><span>• </span>Gola e gengive gonfie e doloranti<br><span>• </span>Gonfiore della guancia<br><span>• </span>Dolore e gonfiore del gomito e dell'ascella<br><span>• </span>Mal di denti<br><span>• </span>Vertigini<br><span>• </span>Cefalea<br><span>• </span>Sordità<br><span>• </span>Disturbi del collo<br><span>• </span>Problemi all'arto superiore<br></p><p><b>Moxa</b><br><span>• </span>Nessuna controindicazione<br></p><p><b>Ubicazione</b><br><span>• </span>Nell'avvallamento tra la punta dell'olecrano ulnare e l'epicondilo mediale dell'omero<br></p>",
 					ChiaviTsubo: "",
-					noMoxa: false,
-					noGravidanza: false	
 				},
 				{
 					NomeTsubo: "9.SI. Jianzhen (Spalla vera)",
 					AzioniTsubo: "<p><b>M.T.C.</b><br><span>• </span>Disperde il Vento <br><span>• </span>Dona beneficio alla spalla<br><span>• </span>Favorisce la circolazione del Qi nel meridiano<br><span>• </span>Attenua il dolore<br></p><p><b>Applicazioni</b><br><span>• </span>Punto per disturbi locali di spalla, scapola e arto superiore<br></p><p><b>Moxa</b><br><span>• </span>Nessuna controindicazione<br></p><p><b>Ubicazione</b><br><span>• </span>Sul lato posteriore della spalla<br><span>• </span>Sopra la piega ascellare posteriore a braccio abbassato (circa 1 cun al di sopra)<br></p>",
 					ChiaviTsubo: "",
-					noMoxa: false,
-					noGravidanza: false	
 				},
 				{
 					NomeTsubo: "10.SI. Naoshu (Punto trasporto del braccio)",
 					AzioniTsubo: "<p><b>M.T.C.</b><br><span>• </span>Punto di incontro dei meridiani di <span style=\"font-style:italic;\">Intestino tenue</span>, <span style=\"font-style:italic;\">Vescica urinaria</span>, <span style=\"font-style:italic;\">Yangqiaomai </span>e <span style=\"font-style:italic;\">Yangweimai</span><br><span>• </span>Dona beneficio alla spalla<br><span>• </span>Favorisce la circolazione del Qi nel meridiano<br><span>• </span>Attenua il dolore<br></p><p><b>Applicazioni</b><br><span>• </span>Punto usato per disturbi locali di spalla, scapola e arto superiore<br></p><p><b>Moxa</b><br><span>• </span>Nessuna controindicazione<br></p><p><b>Ubicazione</b><br><span>• </span>Sulla parte posteriore della spalla<br><span>• </span>Nell'avvallamento sotto la spina scapolare<br><span>• </span>Sopra la piega ascellare posteriore a braccio abbassato<br></p>",
 					ChiaviTsubo: "",
-					noMoxa: false,
-					noGravidanza: false	
 				},
 				{
 					NomeTsubo: "11.SI. Tianzong (Raduno celeste)",
 					AzioniTsubo: "<p><b>M.T.C.</b><br><span>• </span>Favorisce la circolazione del Qi nel meridiano<br><span>• </span>Attenua il dolore<br><span>• </span>Smuove il Qi <br><span>• </span>Scioglie petto e ragione costale laterale<br><span>• </span>Dona beneficio al seno<br></p><p><b>Applicazioni</b><br><span>• </span>Dolori locali della regione scapolare (es. per postura errata)<br><span>• </span>Disturbi del seno<br><span>• </span>Noduli al seno<br><span>• </span>Lattazione insufficiente<br></p><p><b>Moxa</b><br><span>• </span>Nessuna controindicazione<br></p><p><b>Ubicazione</b><br><span>• </span>Al centro della scapola<br></p>",
 					ChiaviTsubo: "",
-					noMoxa: false,
-					noGravidanza: false	
 				},
 				{
 					NomeTsubo: "12.SI. Bingfeng (Afferrare il Vento)",
 					AzioniTsubo: "<p><b>M.T.C.</b><br><span>• </span>Punto d'incontro dei meridiani di <span style=\"font-style:italic;\">Intestino tenue</span>, <span style=\"font-style:italic;\">Intestino crasso</span>, <span style=\"font-style:italic;\">Triplice riscaldatore</span> e <span style=\"font-style:italic;\">Cistifellea</span><br><span>• </span>Disperde il Vento<br><span>• </span>Dona beneficio a spalla e scapola<br></p><p><b>Applicazioni</b><br><span>• </span>Disturbi locali di spalla, scapola e collo<br></p><p><b>Moxa</b><br><span>• </span>Nessuna controindicazione<br></p><p><b>Ubicazione</b><br><span>• </span>Nel centro fossa soprascapolare <br><span>• </span>Sulla verticale di 11.SI, direttamente sopra<br><span>• </span>Nell'avvallamento che si forma a braccio alzato<br></p>",
 					ChiaviTsubo: "",
-					noMoxa: false,
-					noGravidanza: false	
 				},
 				{
 					NomeTsubo: "13.SI. Quyuan (Muro storto)",
 					AzioniTsubo: "<p><b>M.T.C.</b><br><span>• </span>Dona beneficio a spalla e scapola<br></p><p><b>Applicazioni</b><br><span>• </span>Dolori locali alla spalla e alla scapola<br></p><p><b>Moxa</b><br><span>• </span>Nessuna controindicazione<br></p><p><b>Ubicazione</b><br><span>• </span>Esattamente a metà tra il punto 10.SI e il processo spinoso della seconda vertebra toracica (D2)<br><span>• </span>Nell'avvallamento dolente sull'estremità mediale della spina scapolare</p>",
 					ChiaviTsubo: "",
-					noMoxa: false,
-					noGravidanza: false	
 				},
 				{
 					NomeTsubo: "14.SI. Jianwaishu (Punto trasporto della spalla esterna)",
 					AzioniTsubo: "<p><b>M.T.C.</b><br><span>• </span>Favorisce la circolazione del Qi nel meridiano<br><span>• </span>Attenua il dolore<br><span>• </span>Disperde il Vento e il Freddo<br><span>• </span>Dona beneficio a spalla e scapola<br></p><p><b>Applicazioni</b><br><span>• </span>Disturbi locali alla spalla e alla scapola<br><span>• </span>Febbre con brividi e<span> rigidità cervicale o torcicollo</span></p><p><b>Moxa</b><br>Nessuna controindicazione<br></p><p><b>Ubicazione</b><br><span>• </span>3 cun a lato del bordo inferiore del processo spinoso della prima vertebra dorsale (D1)<br></p>",
 					ChiaviTsubo: "",
-					noMoxa: false,
-					noGravidanza: false	
 				},
 				{
 					NomeTsubo: "15.SI. Jianzhongshu (Punto trasporto del centro della spalla)",
 					AzioniTsubo: "<p><b>M.T.C.</b><br><span>• </span>Riduce la circolazione del Qi di Polmone<br><span>• </span>Favorisce la circolazione del Qi nel meridiano<br><span>• </span>Attenua il dolore<br></p><p><b>Applicazioni</b><br><span>• </span>Poco usato<br><span>• </span>Febbre con brividi<br><span>• </span>Tosse<br><span>• </span>Vista debole<br><span>• </span>Disturbi locali alla spalla e alla scapola<br></p><p><b>Moxa</b><br>Nessuna controindicazione<br></p><p><b>Ubicazione</b><br><span>• </span>2 cun a lato del processo spinoso della settima vertebra cervicale (C7 o 14.GV)<br></p>",
 					ChiaviTsubo: "",
-					noMoxa: false,
-					noGravidanza: false	
 				},
 				{
 					NomeTsubo: "16.SI. Tianchuang (Finestra del cielo)",
 					AzioniTsubo: "<p><b>M.T.C.</b><br><span>• </span>Punto Finestra del cielo<br><span>• </span>Dona beneficio a orecchie, gola e voce<br><span>• </span>Riequilibra il Qi<br><span>• </span>Calma lo Shen<br><span>• </span>Favorisce la circolazione del Qi nel meridiano<br><span>• </span>Attenua il dolore <br><span>• </span>Purifica il Calore<br></p><p><b>Applicazioni</b><br><span>• </span>Gozzo<br><span>• </span>Disturbi della gola<br><span>• </span>Raucedine<br><span>• </span>Mal di testa<br><span>• </span>Sordità<br><span>• </span>Acufeni<br><span>• </span>Dolore auricolare<br><span>• </span>Afonia improvvisa e momentanea<br><span>• </span>Sindrome maniaco-depressiva<br></p><p><b>Moxa</b><br><span>• </span>Nessuna controindicazione<br></p><p><b>Ubicazione</b><br><span>• </span>Sul bordo posteriore del muscolo sternocleidomastoideo<br><span>• </span>All'altezza della prominenza laringea<br></p>",
 					ChiaviTsubo: "",
-					noMoxa: false,
-					noGravidanza: false	
 				},
 				{
 					NomeTsubo: "17.SI. Tianrong (Apparizione celeste)",
 					AzioniTsubo: "<p><b>M.T.C.</b><br><span>• </span>Punto Finestra del cielo<br><span>• </span>Dona beneficio a gola, collo e orecchio<br><span>• </span>Riduce il Qi ribelle<br></p><p><b>Applicazioni</b><br><span>• </span>Gozzo (causato da stasi di Qi e flegma nella regione cardine del collo)<br><span>• </span>Disturbi della gola <br><span>• </span>Difficoltà di respiro<br><span>• </span>Disturbi generici degli organi di senso<br><span>• </span>Tosse<br><span>• </span>Dolore al petto<br><span>• </span>Affanno<br><span>• </span>Vomito<br><span>• </span>Acufeni<br><span>• </span>Sordità<br></p><p><b>Moxa</b><br><span>• </span>Nessuna controindicazione<br></p><p><b>Ubicazione</b><br><span>• </span>Nell'avvallamento tra l'angolo della mandibola e il muscolo sternocleidomastoideo<br></p>",
 					ChiaviTsubo: "",
-					noMoxa: false,
-					noGravidanza: false	
 				},
 				{
 					NomeTsubo: "18.SI. Quanliao (Fessura dello zigomo)",
 					AzioniTsubo: "<p><b>M.T.C.</b><br><span>• </span>Punto d'incontro dei meridiani di <span style=\"font-style:italic;\">Intestino tenue</span> e <span style=\"font-style:italic;\">Triplice riscaldatore</span><br><span>• </span>Disperde il Vento <br><span>• </span>Attenua il dolore<br><span>• </span>Purifica il Calore<br><span>• </span>Dissolve il gonfiore<br></p><p><b>Applicazioni</b><br><span>• </span>Paralisi facciale (associato spesso con 20.LI, 4.ST e 6.ST)<br><span>• </span>Nevralgia del trigemino (associato spesso con 20.LI, 4.ST e 6.ST)<br><span>• </span>Tic palpebrale<br><span>• </span>Male all'arcata superiore dei denti<br></p><p><b>Moxa</b><br><span>• </span>Controindicato<br></p><p><b>Ubicazione</b><br><span>• </span>Sul bordo inferiore dello zigomo, in un avvallamento<br><span>• </span>Sulla verticale del bordo laterale dell'occhio<br></p>",
 					ChiaviTsubo: "",
-					noMoxa: true,
-					noGravidanza: false	
 				},
 				{
 					NomeTsubo: "19.SI. Tinggong (Palazzo dell'udito)",
 					AzioniTsubo: "<p><b>M.T.C.</b><br><span>• </span>Punto d'incontro tra i meridiani di <span style=\"font-style:italic;\">Intestino tenue</span>, <span style=\"font-style:italic;\">Triplice riscaldatore</span> e <span style=\"font-style:italic;\">Cistifellea</span><br><span>• </span>Dona beneficio alle orecchie<br><span>• </span>Calma lo Shen<br></p><p><b>Applicazioni</b><br><span>• </span>Tutti i disturbi dell'orecchio <br><span>• </span>Acufeni <br><span>• </span>Scolo purulento <br><span>• </span>Sordità </p><p><b>Moxa</b><br><span>• </span>Nessuna controindicazione<br></p><p><b>Ubicazione</b><br><span>• </span>Nell'avvallamento che si viene a formare aprendo la bocca, tra il condilo mandibolare e il punto centrale del trago<br></p>",
 					ChiaviTsubo: "",
-					noMoxa: false,
-					noGravidanza: false	
 				}
 			]
 		},
 		"HT": {
 			NomeMeridiano: "Cuore",
-			cartella: "cuore",
 			tsubo: [
 				{
 					NomeTsubo: "1.HT. Jiquan (Sorgente superiore)",
 					AzioniTsubo: "<p><span style=\"font-weight:bold;\">M.T.C.</span><br><span>• </span>Facilita la circolazione del Qi nel meridiano<br><span>• </span>Libera il petto<br><span>• </span>Giova alle braccia<br></p><p><span style=\"font-weight:bold;\">Applicazioni</span><br><span>• </span>Dolore al braccio e gomito<br><span>• </span>Freddo al braccio e gomito<br><span>• </span>Dolore ascellare<br><span>• </span>Immobilità della spalla<br><span>• </span>Dolore al petto <br><span>• </span>Fiato corto<br><span>• </span>Ansia<br><span>• </span>Palpitazioni<br><span>• </span>Tristezza<br><span>• </span>Dolore al Cuore<br><span>• </span>Conati di vomito<br><span>• </span>Pienezza e distensione nella regione costale laterale<br></p><p><span style=\"font-weight:bold;\">Moxa</span><br><span>• </span><span>Indicato</span></p><p><span style=\"font-weight:bold;\">Ubicazione</span><span><br>• </span>Da localizzare con braccio alzato<br><span>• </span>Centro ascella, nella depressione creata dai muscoli pettorale, gran dorsale e bicipite</p>",
 					ChiaviTsubo: "",
-					noMoxa: false,
-					noGravidanza: false	
 				},
 				{
 					NomeTsubo: "2.HT. Qingling (Spirito verde)",
 					AzioniTsubo: "<p><b>M.T.C.</b><br><span>• </span>Attenua il dolore<br><span>• </span>Facilita la circolazione del Qi nel meridiano<br></p><p><b>Applicazioni</b><br><span>• </span>Dolore della spalla<br><span>• </span>Cefalea con brividi di Freddo <br><span>• </span>Dolore ascellare<br><span>• </span>Scrofola<br><span>• </span>Rossore e gonfiore della spalla<br><span>• </span>Immobilità della spalla<br><span>• </span>Dolore alla regione costale<br></p><p><b>Moxa</b><br><span>• </span><span>Indicato</span></p><p><b>Ubicazione</b><br><span>• </span>3 cun all'estremità mediale della piega cubitale trasversa (4 dita da 3.HT)<br><span>• </span>Sulla linea che congiunge 1.HT e 3.HT sul solco mediale del bicipite<br><span>• </span>Questo punto va localizzato a gomito flesso.<br></p>",
 					ChiaviTsubo: "",
-					noMoxa: false,
-					noGravidanza: false	
 				},
 				{
 					NomeTsubo: "3.HT. Shaohai (Mare minore)",
 					AzioniTsubo: "<p><b>M.T.C.<br></b><span>• </span>Punto <span style=\"font-style:italic;\">he</span>-mare e acqua del meridiano di <span style=\"font-style:italic;\">Cuore</span><br><span>• </span><span>Purifica il Calore<br></span><span>• </span><span>Trasforma il flegma<br></span><span>• </span><span>Calma lo shen<br></span><span>• </span><span>Aiuta la circolazione del Qi nel meridiano<br></span><span>• </span><span>Giova al braccio</span></p><p><b>Applicazioni</b><br><span>• </span>Mania <br><span>• </span>Epilessia<br><span>• </span>Scarsa memoria<br><span>• </span>Vomito di saliva schiumosa<br><span>• </span>Sindrome atrofica del braccio<br><span>• </span>Assieme a 11.LI per emiplagia cronica<br><span>• </span>Dolore e gonfiore all'articolazione<br><span>• </span>Flaccidità del gomito<br><span>• </span>Tremore al braccio<br><span>• </span>Parestesie al braccio<br><span>• </span>Impossibilità di alzare i quattro arti<br></p><p><b>Moxa</b><br><span>• </span>Controindicato<br></p><p><b>Ubicazione</b><br><span>• </span>A metà strada tra 3.PC e l'epicondilo mediale dell'omero<br><span>• </span>A gomito flesso, all'estremità mediale della plica cubitale<br></p>",
 					ChiaviTsubo: "",
-					noMoxa: true,
-					noGravidanza: false	
 				},
 				{
 					NomeTsubo: "4.HT. Lingdao (Via dello spirito)",
 					AzioniTsubo: "<p><b>M.T.C.<br></b><span>• </span>Punto <span style=\"font-style:italic;\">jing</span>-fiume e Metallo del meridiano di <span style=\"font-style:italic;\">Cuore</span><br><span>• </span><span>Aiuta la voce<br></span><span>• </span><span>Rilassa tendini e muscoli<br></span><span>• </span><span>Calma lo shen</span></p><p><b>Applicazioni</b><br><span>• </span>Freddo nelle ossa e nei midolli<br><span>• </span>Contrattura di braccio e gomito<br><span>• </span>Comportamenti disturbati<br><span>• </span>Insonnia<br><span>• </span>Agitazione<br><span>• </span>Perdita della voce<br><span>• </span>Follia<br><span>• </span>Malinconia<br><span>• </span>Ansia<br><span>• </span>Tristezza<br><span>• </span>Paura<br><span>• </span>Patologie che danneggiano Cuore, Milza e Fegato provocate da troppo lavoro ed eccesso di preoccupazioni (patologie degli zang agitati)</p><p><b>Moxa</b><br><span>• </span>Indicato<br></p><p><b>Ubicazione</b><br><span>• </span>Sul polso, nella sua parte dorsale<br><span>• </span>Sul lato radiale del tendine flessore ulnare del carpo<br><span>• </span>1.5 cun prossimalmente a 7.HT<br></p>",
 					ChiaviTsubo: "",
-					noMoxa: false,
-					noGravidanza: false	
 				},
 				{
 					NomeTsubo: "5.HT. Tongli (Penetrare l'interno)",
 					AzioniTsubo: "<p><b>M.T.C.<br></b><span>• </span>unto <span style=\"font-style:italic;\">luo</span>-collegamento del meridiano di <span style=\"font-style:italic;\">Cuore</span><br><span>• </span>Punto Stella del Cielo di Ma Danyang<br><span>• </span><span>Dà beneficio alla lingua<br></span><span>• </span><span>Regola il battito cardiaco<br></span><span>• </span><span>Aiuta la circolazione del Qi nel meridiano<br></span><span>• </span><span>Attenua il dolore<br></span><span>• </span><span>Calma lo shen</span></p><p><b>Applicazioni</b><br><span>• </span>Sbadigli <br><span>• </span>Gemiti frequenti abbinati a tristezza<br><span>• </span>Depressione<br><span>• </span>Palpitazioni da paura<br><span>• </span>Disturbi del battito cardiaco<br><span>• </span>Perdita della voce<br><span>• </span>Rigidità della lingua<br><span>• </span>Balbuzie<br><span>• </span>Irritabilità<br><span>• </span>Collera<br><span>• </span>Cefalea<br><span>• </span>Vertigini<br><span>• </span>Eccessiva preoccupazione<br><span>• </span>Tristezza<br><span>• </span>Paura<br><span>• </span><span>Patologia degli zang agitati (vedi 4.HT)</span></p><p><b>Moxa</b><br><span>• </span>Indicato<br></p><p><b>Ubicazione</b><br><span>• </span>Sul polso, nella sua parte dorsale<br><span>• </span>Sul lato radiale del tendine flessore ulnare del carpo <br><span>• </span>1 cun prossimalmente a 7.HT<br></p>",
 					ChiaviTsubo: "",
-					noMoxa: false,
-					noGravidanza: false	
 				},
 				{
 					NomeTsubo: "6.HT. Yinxi (Fessura dello Yin)",
 					AzioniTsubo: "<p><b>M.T.C.<br></b><span>• </span>Punto <span style=\"font-style:italic;\">xi</span>-fessura del meridiano di <span style=\"font-style:italic;\">Cuore</span><br><span>• </span><span>Regola il sangue del meridiano<br></span><span>• </span><span>Purifica il Fuoco vuoto<br></span><span>• </span><span>Allevia le condizioni acute<br></span><span>• </span><span>Attenua la sudorazione notturna<br></span><span>• </span><span>Calma lo shen</span></p><p><b>Applicazioni</b><br><span>• </span>Pienezza al petto<br><span>• </span>Dolore al Cuore<br><span>• </span>Eccessiva preoccupazione<br><span>• </span>Paura e palpitazioni<br><span>• </span>La dispersione di HT.6 ferma la sudorazione notturna e tratta la \"sindrome delle ossa fumanti\" nei bambini</p><p><b>Moxa</b><br><span>• </span>Indicato<br></p><p><b>Ubicazione<br></b><span>• </span>Sul polso, nella sua parte dorsale<br><span>• </span>Sul lato radiale del tendine flessore ulnare del carpo  <br><span>• </span>0.5 cun prossimalmente a 7.HT<br></p>",
 					ChiaviTsubo: "",
-					noMoxa: false,
-					noGravidanza: false	
 				},
 				{
 					NomeTsubo: "7.HT. Shenmen (Porta dello spirito)",
 					AzioniTsubo: "<p><b>M.T.C.<br></b><span>• </span>Punto <span style=\"font-style:italic;\">shu</span>-corrente, <span style=\"font-style:italic;\">yuan</span>-sorgente e Terra del meridiano di <span style=\"font-style:italic;\">Cuore</span><br><span>• </span><span>Tonifica e regola il meridiano<br></span><span>• </span><span>Calma lo shen</span></p><p><b>Applicazioni</b><br><span>• </span>Perdita della voce<br><span>• </span>Disorientamento<br><span>• </span>Tristezza<br><span>• </span>Epilessia<br><span>• </span>Scarsa memoria<br><span>• </span>Depressione<br><span>• </span>Risata folle<br><span>• </span>Parlare nel sonno<br><span>• </span>Insonnia<br><span>• </span>Pienezza al petto<br><span>• </span>Dolore al Cuore<br><span>• </span>Eccessiva preoccupazione<br><span>• </span>Paura<br><span>• </span>Punto principale per calmare lo shen <br><span>• </span>Patologia degli zang agitati (vedi 4.HT)</p><p><b>Moxa</b><br><span>• </span>Indicato<br></p><p><b>Ubicazione<br></b><span>• </span>Sul polso, nella sua parte dorsale<br><span>• </span>Sul lato radiale del tendine flessore ulnare del carpo   <br><span>• </span>Nell'avvallamento vicino al bordo prossimale dell'osso pisiforme<br></p>",
 					ChiaviTsubo: "",
-					noMoxa: false,
-					noGravidanza: false	
 				},
 				{
 					NomeTsubo: "8.HT. Shaofu (palazzo minore)",
 					AzioniTsubo: "<p><b>M.T.C.<br></b><span>• </span>Punto <span style=\"font-style:italic;\">ying</span>-ruscello e Fuoco del meridiano di <span style=\"font-style:italic;\">Cuore</span><br><span>• </span><span>Aiuta la circolazione del Qi nel meridiano<br></span><span>• </span><span>Attenua il dolore<br></span><span>• </span><span>Purifica il Calore da Cuore e Intestino Tenue<br></span><span>• </span><span>Calma lo shen</span></p><p><b>Applicazioni</b><br><span>• </span>Palpitazioni eccessive<br><span>• </span>Prolasso uterino<br><span>• </span>Tristezza<br><span>• </span>Sospiri eccessivi<span><br></span><span>• </span>Sociofobia<br><span>• </span>Dolore al petto<br><span>• </span>Eccessiva preoccupazione<br><span>• </span>Paura<br><span>• </span>Difficoltà di minzione<br><span>• </span>Enuresi<br><span>• </span>Prurito e dolore ai genitali<br></p><p><b>Moxa</b><br><span>• </span>Indicato<br></p><p><b>Ubicazione</b><br><span>• </span>Sul palmo della mano<br><span>• </span>Nell'avvallamento tra quarto e quinto metacarpale<br><span>• </span>Viene localizzato a pugno chiuso, dove si trova la punta del mignolo<br></p>",
 					ChiaviTsubo: "",
-					noMoxa: false,
-					noGravidanza: false	
 				},
 				{
 					NomeTsubo: "9.HT. Shaochong (Afflusso minore)",
 					AzioniTsubo: "<p><b>M.T.C.<br></b><span>• </span>Punto <span style=\"font-style:italic;\">jing</span>-pozzo e Legno del meridiano di <span style=\"font-style:italic;\">Cuore</span><br><span>• </span><span>Aiuta lingua, occhi e gola <br></span><span>• </span><span>Ristabilisce la coscienza<br></span><span>• </span><span>Purifica il Calore <br></span><span>• </span><span>Regola il Qi di Cuore<br></span><span>• </span><span>Calma lo shen</span></p><p><b>Applicazioni</b><br><span>• </span>Sospiri<br><span>• </span>Qi scarso<br><span>• </span>Perdita di coscienza da colpo apoplettico<br><span>• </span>Tristezza<br><span>• </span>Paura<br><span>• </span>Sindrome maniaco-depressiva <br><span>• </span>Occhi gialli o rossi<br><span>• </span>Dolore agli occhi<br><span>• </span>Gonfiore della lingua<br><span>• </span>Lingua protrusa<br><span>• </span>Mal di gola <br><span>• </span>Gola secca<br><span>• </span>Epilessia<br></p><p><b>Moxa</b><br><span>• </span>Indicato<br></p><p><b>Ubicazione</b><br><span>• </span>Sul mignolo (zona dorsale)<br><span>• </span>Incontro delle tangenti tra bordo radiale e base dell'unghia<br><span>• </span>0.1 cun dall'angolo dell'unghia<br></p>",
 					ChiaviTsubo: "",
-					noMoxa: false,
-					noGravidanza: false	
 				}
 			]
 		},
 		"TE": {
 			NomeMeridiano: "Triplo riscaldatore",
-			cartella: "triplo_riscaldatore",
 			tsubo: [
 				{
 					NomeTsubo: "1.TE. Guanchong (Assalto al passaggio)",
 					AzioniTsubo: "<p><b>M.T.C.</b><br><span>• </span>Punto <span style=\"font-style:italic;\">jing</span>-pozzo e Metallo del meridiano di <span style=\"font-style:italic;\">Triplice riscaldatore</span><br><span>• </span>Dona beneficio a orecchie e gola<br><span>• </span>Purifica il Calore nel Jiao superiore<br><span>• </span>Favorisce la circolazione del Qi nel meridiano<br><span>• </span>Attenua il dolore<br></p><p><b>Applicazioni</b><br><span>• </span>Febbre <br><span>• </span>Brividi<br><span>• </span>Oppressione al Cuore<br><span>• </span>Acufeni<br><span>• </span>Sordità<br><span>• </span>Mal di testa<br><span>• </span>Occhi rossi<br><span>• </span>Dolore alla lingua<br><span>• </span>Lingua rigida<br><span>• </span>Capogiri<br><span>• </span>Mal di gola <br><span>• </span>Mal d'orecchio<br></p><p><b>Moxa</b><br><span>• </span>Indicato<br></p><p><b>Ubicazione</b><br><span>• </span>Sul lato dorsale del 4° dito della mano (anulare)<br><span>• </span>A 0,1 cun dall'angolo ulnare dell'unghia<br></p>",
 					ChiaviTsubo: "",
-					noMoxa: false,
-					noGravidanza: false	
 				},
 				{
 					NomeTsubo: "2.TE. Yemen (Porta dei fluidi)",
 					AzioniTsubo: "<p><b>M.T.C.</b><br><span>• </span>Punto <span style=\"font-style:italic;\">ying</span>-ruscello e Acqua del meridiano di <span style=\"font-style:italic;\">Triplice riscaldatore</span><br><span>• </span>Dona beneficio alle orecchie <br><span>• </span>Purifica il Calore nel Jiao superiore<br><span>• </span>Favorisce la circolazione del Qi nel meridiano<br><span>• </span>Attenua il dolore<br><span>• </span>Dissipa il Calore<br><span>• </span>Calma lo Shen</p><p><b>Applicazioni</b><br><span>• </span>Dolore al collo<br><span>• </span>Debolezza del polso<br><span>• </span>Gonfiore del dorso della mano<br><span>• </span>Contrattura delle dita<br><span>• </span>Paura <br><span>• </span>Delirio<br><span>• </span>Epilessia<br><span>• </span>Acufeni<br><span>• </span>Mal d'orecchio<br><span>• </span>Male agli occhi<br><span>• </span>Stanchezza, rossore, lacrimazione agli occhi<br></p><p><b>Moxa</b><br><span>• </span>Indicato<br></p><p><b>Ubicazione</b><span><span><br></span></span><span>• </span>Sul lato dorsale della mano<br><span>• </span>Tra il 4° (anulare) e il 5° dito (mignolo)<br><span>• </span>A 0,5 cun <span>prossimalmente </span><span>dal margine della piega interdigitale<br></span><span>• </span>Si individua meglio a pugno leggermente chiuso</p>",
 					ChiaviTsubo: "",
-					noMoxa: false,
-					noGravidanza: false	
 				},
 				{
 					NomeTsubo: "3.TE. Zhongzhu (Isoletta centrale)",
 					AzioniTsubo: "<p><b>M.T.C.</b><br><span>• </span>Punto <span style=\"font-style:italic;\">shu</span>-corrente e Legno del meridiano di <span style=\"font-style:italic;\">Triplice riscaldatore</span><br><span>• </span>Dona beneficio alle orecchie <br><span>• </span>Libera testa e occhi<br><span>• </span>Favorisce la circolazione del Qi nel meridiano<br><span>• </span>Attenua il dolore<br><span>• </span>Dissipa il Calore<br></p><p><b>Applicazioni</b><br><span>• </span>Dolore a spalla e gomito<br><span>• </span>Dolore alla colonna vertebrale<br><span>• </span>Gonfiore del dorso della mano<br><span>• </span>Contrattura dei quattro arti<br><span>• </span>Sordità<br><span>• </span>Febbre malarica cronica<br><span>• </span>Febbre con brividi<br><span>• </span>Acufeni<br><span>• </span>Mal d'orecchio<br><span>• </span>Capogiri<br><span>• </span>Emicrania e mal di testa<br><span>• </span>Tempie dolenti<br><span>• </span>Otite<br><span>• </span>Orecchie tappate<br><span>• </span>Dolore, rossore e gonfiore agli occhi<br></p><p><b>Moxa</b><br><span>• </span>Indicato<br></p><p><b>Ubicazione</b><span><br>• </span>Sul lato dorsale della mano<br><span>• </span>Tra le articolazioni metacarpo-falangee del 4° (anulare) e 5° (mignolo) dito<br><span>• </span>Nell'avvallamento prossimale <br></p>",
 					ChiaviTsubo: "",
-					noMoxa: false,
-					noGravidanza: false	
 				},
 				{
 					NomeTsubo: "4.TE. Yangchi (Stagno dello Yang)",
 					AzioniTsubo: "<p><b>M.T.C.</b><br><span>• </span>Punto <span style=\"font-style:italic;\">yuan</span>-sorgente del meridiano di <span style=\"font-style:italic;\">Triplice riscaldatore</span><br><span>• </span>Rilassa i tendini<br><span>• </span>Attenua il dolore<br><span>• </span>Pulisce il Calore<br></p><p><b>Applicazioni</b><br><span>• </span>Dolore, debolezza, rossore, gonfiore del polso<br></p><p><b>Moxa</b><br><span>• </span>Indicato<br></p><p><b>Ubicazione</b><br><span>• </span>Sul lato dorsale del polso<br><span>• </span>Nell'avvallamento tra i tendini dell'estensore comune delle dita e l'estensore del mignolo<br><span>• </span>Nella zona articolare<br></p>",
 					ChiaviTsubo: "",
-					noMoxa: false,
-					noGravidanza: false	
 				},
 				{
 					NomeTsubo: "5.TE. Waiguan (Passaggio esterno)",
 					AzioniTsubo: "<p><b>M.T.C.</b><br><span>• </span>Punto <span style=\"font-style:italic;\">luo</span>-collegamento del meridiano di <span style=\"font-style:italic;\">Triplice riscaldatore</span><br><span>• </span>Punto Confluente del meridiano di <span style=\"font-style:italic;\">Yiangqiaomai</span><br><span>• </span>Apre Yangweimai<br><span>• </span>Dona beneficio a testa e orecchie<br><span>• </span>Disperde il Vento<br><span>• </span>Calma l'esterno<br><span>• </span>Attenua il dolore<br><span>• </span>Favorisce la circolazione del Qi nel meridiano<br><span>• </span>Pulisce il Calore<br></p><p><b>Applicazioni</b><br><span>• </span>Disturbi del polso e della mano<br><span>• </span>Malattie del gomito e del braccio<br><span>• </span>Problemi alla spalla<br><span>• </span>Mal di denti<br><span>• </span>Epistassi<br><span>• </span>Ulcere in bocca<br><span>• </span>Scrofola<br><span>• </span>Orecchioni<br><span>• </span>Prurito all'orecchio<br><span>• </span>Sordità <br><span>• </span>Acufeni<br><span>• </span>Disturbi agli occhi con dolori articolari <br><span>• </span>Gonfiore ghiandolare<br></p><p><b>Moxa</b><br><span>• </span>Indicato<br></p><p><b>Ubicazione</b><br><span>• </span>Sul dorso dell'avambraccio<br><span>• </span>A 2 cun da 4.TE prossimalmente<br><span>• </span>Sul lato radiale del tendine dell'estensore delle dita<br><span>• </span>Nell'avvallamento tra radio e ulna<br></p>",
 					ChiaviTsubo: "",
-					noMoxa: false,
-					noGravidanza: false	
 				},
 				{
 					NomeTsubo: "6.TE. Zhigou (Fossa dei rami)",
 					AzioniTsubo: "<p><b>M.T.C.</b><br><span>• </span>Punto <span style=\"font-style:italic;\">jing</span>-fiume e Fuoco del meridiano di <span style=\"font-style:italic;\">Triplice riscaldatore</span><br><span>• </span>Giova la voce<br><span>• </span>Aiuta la peristalsi<br><span>• </span>Attenua il dolore<br><span>• </span>Favorisce la circolazione del Qi nel meridiano<br><span>• </span>Pulisce il Calore dei tre Jiao<br><span>• </span>Riequilibra il Qi<br><span>• </span>Dona beneficio torace e regione costale<br></p><p><b>Applicazioni</b><br><span>• </span>Malattie dell'arto superiore<br><span>• </span>Dolore a spalla, dorso, ascella <br><span>• </span>Tremore e intorpidimento della mano<br><span>• </span>Oppressione toracica<br><span>• </span>Dolore agli occhi <br><span>• </span>Trisma mandibolare<br><span>• </span>Stitichezza<br><span>• </span>Rossore, gonfiore, dolore agli occhi<br><span>• </span>Trisma mandibolare<br><span>• </span>Gonfiore alla gola<br><span>• </span>Tosse<br><span>• </span>Dolore e gonfiore all'addome <br><span>• </span>Sordità <br><span>• </span>Acufeni<br></p><p><b>Moxa</b><br><span>• </span>Indicato<br></p><p><b>Ubicazione</b><br><span>• </span>Sul dorso dell'avambraccio<br><span>• </span>A 3 cun da 4.TE prossimalmente<br><span>• </span>Sul lato radiale del tendine dell'estensore delle dita<br><span>• </span>Nell'avvallamento tra radio e ulna</p>",
 					ChiaviTsubo: "",
-					noMoxa: false,
-					noGravidanza: false	
 				},
 				{
 					NomeTsubo: "7.TE. Huizong (Incontro ancestrale)",
 					AzioniTsubo: "<p><b>M.T.C.</b><br><span>• </span>Punto <span style=\"font-style:italic;\">xi</span>-fessura del meridiano di <span style=\"font-style:italic;\">Triplice riscaldatore</span><br><span>• </span>Dona beneficio alle orecchie<br><span>• </span>Purifica il meridiano<br></p><p><b>Applicazioni</b><br><span>• </span>Dolore alla pelle<br><span>• </span>Epilessia<br><span>• </span>Sordità <br><span>• </span>Acufeni<br></p><p><b>Moxa</b><br><span>• </span>Indicato<br></p><p><b>Ubicazione</b><br><span>• </span>Sul dorso dell'avambraccio<br><span>• </span>A 3 cun da 4.TE prossimalmente<br><span>• </span>Allo stesso livello di 6.TE verso l'ulna<br><span>• </span>Tra l'ulna e il muscolo estensore comune delle dita</p>",
 					ChiaviTsubo: "",
-					noMoxa: false,
-					noGravidanza: false	
 				},
 				{
 					NomeTsubo: "8.TE. Sanyangluo (Collegamento dei tre Yang)",
 					AzioniTsubo: "<p><b>M.T.C.</b><br><span>• </span>Purifica il meridiano<br><span>• </span>Attenua il dolore<br><span>• </span>Favorisce la circolazione del Qi nel meridiano<br></p><p><b>Applicazioni</b><br><span>• </span>Poco usato<br><span>• </span>Dolore lombare di origine traumatica<br><span>• </span>Dolore al braccio<br><span>• </span>Sordità improvvisa<br><span>• </span>Afonia improvvisa<br><span>• </span>Sonnolenza<br><span>• </span>Mal di denti<br><span>• </span>Febbre<br><span>• </span>Immobilità del braccio<br></p><p><b>Moxa</b><br><span>• </span>Indicato<br></p><p><b>Ubicazione</b><br><span>• </span>Sul dorso dell'avambraccio<br><span>• </span>A 4 cun da 4.TE prossimalmente<br><span>• </span>Nell'avvallamento tra radio e ulna<br><span>• </span>Sul muscolo estensore comune delle dita (lato radiale)</p>",
 					ChiaviTsubo: "",
-					noMoxa: false,
-					noGravidanza: false	
 				},
 				{
 					NomeTsubo: "9.TE. Sidu (Quattro fiumi)",
 					AzioniTsubo: "<p><b>M.T.C.</b><br><span>• </span>Dona beneficio a orecchie e gola<br></p><p><b>Applicazioni</b><br><span>• </span>Poco usato<br><span>• </span>Acufeni<br><span>• </span>Fiato corto<br><span>• </span>Dolore al avambraccio<br><span>• </span>Sordità improvvisa<br><span>• </span>Afonia improvvisa<br><span>• </span>Mal di denti<br><span>• </span>Mal di gola<br></p><p><b>Moxa</b><br><span>• </span>Indicato<br></p><p><b>Ubicazione</b><br><span>• </span><span>Nell'avvallamento tra radio e ulna </span><br><span>• </span>Sulla linea tra 4.TE e l'epicondilo laterale dell'omero<br><span>• </span>A 7 cun a 4.TE <span>prossimalmente</span></p>",
 					ChiaviTsubo: "",
-					noMoxa: false,
-					noGravidanza: false	
 				},
 				{
 					NomeTsubo: "10.TE. Tianjing (Pozzo celeste)",
 					AzioniTsubo: "<p><b>M.T.C.</b><br><span>• </span>Punto <span style=\"font-style:italic;\">he</span>-mare e Terra del meridiano di <span style=\"font-style:italic;\">Triplice riscaldatore</span><br><span>• </span>Calma lo Shen<br><span>• </span>Favorisce la circolazione del Qi nel meridiano<br><span>• </span>Purifica il Calore nel meridiano<br><span>• </span>Riduce il Qi ribelle<br><span>• </span>Riequilibra il Qi</p><p><b>Applicazioni</b><br><span>• </span>Atrofia e intorpidimento di braccio, spalla, collo, gomito, parte superiore e del dorso<br><span>• </span>Tosse<br><span>• </span>Scrofola<br><span>• </span>Noduli al collo o all'ascella<br><span>• </span>Sonnolenza<br><span>• </span>Epilessia<br><span>• </span>Follia<br><span>• </span>Tristezza<br><span>• </span>Vomito di pus e sangue<br><span>• </span>Mal di gola <br><span>• </span>Dolore agli occhi<br></p><p><b>Moxa</b><br><span>• </span>Indicato<br></p><p><b>Ubicazione</b><br><span>• </span>Nell'avvallamento che si trova 1 cun prossimalmente all'olecrano<br><span>• </span>Individuare a gomito flesso<br></p>",
 					ChiaviTsubo: "",
-					noMoxa: false,
-					noGravidanza: false	
 				},
 				{
 					NomeTsubo: "11.TE. Qinglengyuan (Abisso chiaro e freddo)",
 					AzioniTsubo: "<p><span style=\"font-weight:bold;\">M.T.C.</span><br><span>• </span>Dissolve il Vento-Umidità<br><span>• </span>Favorisce la circolazione del Qi nel meridiano<br><span>• </span>Pulisce l'Umidità-Calore</p><p><b>Applicazioni</b><br><span>• </span>Poco usato<br><span>• </span>Difficoltà e intorpidimento di braccio, spalla, collo e gomito<br><span>• </span>Mal di testa<br><span>• </span>Dolore agli occhi<br><span>• </span>Ittero<br><span>• </span>Pesantezza del capo<br></p><p><b>Moxa</b><br><span>• </span>Indicato<br></p><p><b>Ubicazione</b><br><span>• </span>A 1 cun da 10.TE<span> </span><span>prossimalmente<br></span><span>• </span>Individuare a gomito flesso</p>",
 					ChiaviTsubo: "",
-					noMoxa: false,
-					noGravidanza: false	
 				},
 				{
 					NomeTsubo: "12.TE. Xiaoluo (Dispersione del Fiume Luo)",
 					AzioniTsubo: "<p><span style=\"font-weight:bold;\">M.T.C.</span><br><span>• </span>Favorisce la circolazione del Qi nel meridiano<br><span>• </span>Attenua il dolore</p><p><span style=\"font-weight:bold;\">Applicazioni</span><br><span>• </span>Poco usato<br><span>• </span>Mal di denti<br><span>• </span>Pazzia<br><span>• </span>Capogiri<br><span>• </span>Brividi<br><span>• </span>Febbre<br><span>• </span>Torcicollo e dolore alla nuca<br><span>• </span>Dolore a spalla e braccio<br></p><p><b>Moxa</b><br><span>• </span>Indicato<br></p><p><b>Ubicazione</b><br><span>• </span>Sulla faccia posteriore del braccio<br><span>• </span>Sulla linea da 14.TE e 10.TE<br><span>• </span>A 4 cun da 10.TE prossimalmente<br><span>• </span>A 6 cun da 14.TE<span> </span><span>distalmente</span></p>",
 					ChiaviTsubo: "",
-					noMoxa: false,
-					noGravidanza: false	
 				},
 				{
 					NomeTsubo: "13.TE. Naohui (Incontro della parte superiore del braccio)",
 					AzioniTsubo: "<p><span style=\"font-weight:bold;\">M.T.C.</span><br><span>• </span>Punto d'incontro dei meridiani di <span style=\"font-style:italic;\">Triplice riscaldatore</span> e <span style=\"font-style:italic;\">Yangweimai</span><br><span>• </span>Attenua il dolore<br><span>• </span>Trasforma il flegma<br><span>• </span>Riequilibra il Qi <br><span>• </span>Favorisce la circolazione del Qi nel meridiano</p><p><b>Applicazioni</b><br><span>• </span>Dolore di braccio e spalla<br><span>• </span>Dolore che si irradia dalla spalla lungo la parte superiore del braccio<br><span>• </span>Gozzo<br><span>• </span>Scrofola<br><span>• </span>Noduli al collo<br><span>• </span>Noduli ascellari<br></p><p><b>Moxa</b><br><span>• </span>Indicato<br></p><p><b>Ubicazione</b><br><span>• </span>Sulla parte superiore del braccio (lato posteriore)<br><span>• </span>Sulla linea tra 14.TE e 10.TE<br><span>• </span>Sul margine posteriore del muscolo deltoide<br></p>",
 					ChiaviTsubo: "",
-					noMoxa: false,
-					noGravidanza: false	
 				},
 				{
 					NomeTsubo: "14.TE. Jianliao (Fessura della spalla)",
 					AzioniTsubo: "<p><span style=\"font-weight:bold;\">M.T.C.</span><br><span>• </span>Attenua il dolore<br><span>• </span>Dissipa il Vento-Umidità<br><span>• </span>Dona beneficio all'articolazione della spalla</p><p><b>Applicazioni</b><br><span>• </span>Dolore di braccio e spalla<br><span>• </span>Disturbi dell'articolazione della spalla (in special modo se interessano il lato posteriore)<br><span>• </span>Spalla rigida, debole o immobile<br><span>• </span>Sensazione di spalla congelata<br></p><p><b>Moxa</b><br><span>• </span>Indicato<br></p><p><b>Ubicazione</b><br><span>• </span>Nell'avvallamento che si trova posteriormente e inferiormente all'estremità laterale dell'acromion<br><span>• </span>Nell'inserzione del muscolo deltoide<br><span>• </span>Nota: nell'avvallamento anteriore si trova il punto 15.LI</p>",
 					ChiaviTsubo: "",
-					noMoxa: false,
-					noGravidanza: false	
 				},
 				{
 					NomeTsubo: "15.TE. Tianliao (Fessura celeste)",
 					AzioniTsubo: "<p><span style=\"font-weight:bold;\">M.T.C.</span><br><span>• </span><span>Punto d'incontro dei meridiani di <span style=\"font-style:italic;\">Triplice riscaldatore</span>, <span style=\"font-style:italic;\">Yangweimai </span>e <span style=\"font-style:italic;\">Cistifellea</span><br></span><span>• </span>Attenua il dolore<br><span>• </span>Dissipa il Vento-Umidità<br><span>• </span>Favorisce la circolazione del Qi nel meridiano<br><span>• </span>Riequilibra il Qi <br><span>• </span>Libera il torace</p><p><b>Applicazioni</b><br><span>• </span>Dolore di braccio, spalla e collo<br><span>• </span>Disturbi dell'articolazione della spalla<br><span>• </span>Agitazione<br><span>• </span>Oppressione nel torace<br></p><p><b>Moxa</b><br><span>• </span>Indicato<br></p><p><b>Ubicazione</b><span><br>• </span>Nella fossa sovrascapolare<br><span>• </span>In un avvallamento a metà tra 21.GB e 13.SI</p>",
 					ChiaviTsubo: "",
-					noMoxa: false,
-					noGravidanza: false	
 				},
 				{
 					NomeTsubo: "16.TE. Tianyou (Finestra del cielo)",
 					AzioniTsubo: "<p><span style=\"font-weight:bold;\">M.T.C.</span><span><br>• </span>Punto Finestra del cielo<br><span>• </span>Dona beneficio agli organi di senso <br><span>• </span>Giova alla testa<br><span>• </span>Riequilibra e riduce il Qi</p><p><b>Applicazioni</b><br><span>• </span>Gonfiore della faccia<br><span>• </span>Scrofola<br><span>• </span>Mal di testa<br><span>• </span>Capogiri<br><span>• </span>Sordità improvvisa<br><span>• </span>Disturbi agli occhi<br><span>• </span>Problemi del naso<br></p><p><b>Moxa</b><br><span>• </span>Indicato<br></p><p><b>Ubicazione</b><br><span>• </span><span>Sul bordo posteriore del muscolo sternocleidomastoideo<br></span><span>• </span>A livello dell'angolo mandibolare<br><span>• </span>A 1 cun da 12.GB<span> </span><span>inferiormente</span></p>",
 					ChiaviTsubo: "",
-					noMoxa: false,
-					noGravidanza: false	
 				},
 				{
 					NomeTsubo: "17.TE. Yifeng (Schermo del Vento)",
 					AzioniTsubo: "<p><span style=\"font-weight:bold;\">M.T.C.</span><br><span>• </span>Punto d'incontro dei meridiani di <span style=\"font-style:italic;\">Triplice riscaldatore</span> e <span style=\"font-style:italic;\">Cistifellea</span><br><span>• </span>Espelle il Vento<br><span>• </span>Favorisce la circolazione del Qi nel meridiano<br><span>• </span>Dona beneficio alle orecchie<br><span>• </span>Attenua il dolore<br><span>• </span>Purifica il Calore</p><p><b>Applicazioni</b><br><span>• </span>Scrofola<br><span>• </span>Sordità<br><span>• </span>Acufeni<br><span>• </span>Rossore gonfiore e dolore all'orecchio<br><span>• </span>Nevralgia del trigemino<br><span>• </span>Spasmi<br><span>• </span>Trisma mandibolare<br><span>• </span>Orecchioni<br><span>• </span>Mal di denti <br><span>• </span>Gonfiore della guancia<br><span>• </span>Patologie dell'orecchio<br></p><p><b>Moxa</b><br><span>• </span>Indicato<br></p><p><b>Ubicazione</b><br><span>• </span>Nascosto dal lobo dell'orecchio<br><span>• </span>Tra l'osso mandibolare e il processo mastoideo<br><span>• </span>Nell'avvallamento sopra il processo trasverso dell'Atlante (C1)<br></p>",
 					ChiaviTsubo: "",
-					noMoxa: false,
-					noGravidanza: false	
 				},
 				{
 					NomeTsubo: "18.TE. Qimai (Spasmo del vaso)",
 					AzioniTsubo: "<p><span style=\"font-weight:bold;\">M.T.C.</span><br><span>• </span>Espelle il Vento<br><span>• </span>Placa lo spavento<br><span>• </span>Dona beneficio alle orecchie</p><p><b>Applicazioni</b><br><span>• </span>Poco usato<br><span>• </span>Sordità<br><span>• </span>Acufeni<br><span>• </span>Rossore gonfiore e dolore all'orecchio<br><span>• </span>Mal di testa<br><span>• </span>Vomito <br><span>• </span>Dissenteria<br><span>• </span>Diminuzione della vista<br><span>• </span>Vento alla testa<br></p><p><b>Moxa</b><br><span>• </span>Indicato<br></p><p><b>Ubicazione</b><br><span>• </span>Posteriormente all'orecchio<br><span>• </span>Seguendo il margine dell'orecchio sulla linea curva tra 17.TE e 20.TE, a un terzo della distanza<br><span>• </span>Nell'avvallamento dell'osso mastoideo<br></p>",
 					ChiaviTsubo: "",
-					noMoxa: false,
-					noGravidanza: false	
 				},
 				{
 					NomeTsubo: "19.TE. Luxi (Riposo del cranio)",
 					AzioniTsubo: "<p><span style=\"font-weight:bold;\">M.T.C.</span><br><span>• </span>Placa lo spavento<br><span>• </span>Consigliato per la tetania<br><span>• </span>Dona beneficio alle orecchie<br><span>• </span>Purifica il Calore</p><p><b>Applicazioni</b><br><span>• </span>Poco usato<br><span>• </span>Tetania<br><span>• </span>Capogiri<br><span>• </span>Epilessia infantile<br><span>• </span>Paura<br><span>• </span>Terrore<br><span>• </span>Acufeni<br><span>• </span>Sordità<br><span>• </span>Pus dall'orecchio<br><span>• </span>Vomito di saliva<br><span>• </span>Insonnia per Calore nel corpo con mal di testa<br><span>• </span>Cefalea<br><span>• </span>Gonfiore e prurito alla faccia</p><p><b>Moxa</b><br><span>• </span>Indicato<br></p><p><b>Ubicazione</b><br><span>• </span>Posteriormente all'orecchio<br><span>• </span>Seguendo il margine dell'orecchio sulla linea curva tra 17.TE e 20.TE, a due terzi della distanza<br><span>• </span>Nell'avvallamento sull'osso mastoideo<br></p>",
 					ChiaviTsubo: "",
-					noMoxa: false,
-					noGravidanza: false	
 				},
 				{
 					NomeTsubo: "20.TE. Jiaosun (Angolo minuto)",
 					AzioniTsubo: "<p><span style=\"font-weight:bold;\">M.T.C.</span><br><span>• </span>Punto d'incontro dei meridiani di <span style=\"font-style:italic;\">Triplice riscaldatore</span>,<span style=\"font-style:italic;\"> Intestino tenue</span> e <span style=\"font-style:italic;\">Cistifellea</span><br><span>• </span>Dona beneficio a orecchie, denti, gengive e labbra<br><span>• </span>Purifica il calore</p><p><b>Applicazioni</b><br><span>• </span>Pus dalle orecchie<br><span>• </span>Sordità<br><span>• </span>Acufeni<br><span>• </span>Rossore gonfiore e dolore dietro l'orecchio e al padiglione auricolare<br><span>• </span>Carie<br><span>• </span>Labbra secche e fessurate<br><span>• </span>Dolore a denti e gengive<br><span>• </span>Gonfiore della guancia<br></p><p><b>Moxa</b><br><span>• </span>Indicato<br></p><p><b>Ubicazione</b><br><span>• </span>Sulla verticale dell'apice dell'orecchio, quando questo è piegato in avanti<br></p>",
 					ChiaviTsubo: "",
-					noMoxa: false,
-					noGravidanza: false	
 				},
 				{
 					NomeTsubo: "21.TE. Ermen (Porta dell'orecchio)",
 					AzioniTsubo: "<p><span style=\"font-weight:bold;\">M.T.C.</span><br><span>• </span>Dona beneficio all'orecchio<br><span>• </span>Purifica il Calore</p><p><b>Applicazioni</b><br><span>• </span>Prurito all'orecchio<br><span>• </span>Sordità<br><span>• </span>Acufeni<br><span>• </span>Rossore, gonfiore e dolore all'orecchio<br><span>• </span>Mal di denti <br><span>• </span>Rigidità delle labbra <br><span>• </span>Pus dall'orecchio<br></p><p><b>Moxa</b><br><span>• </span>Controindicato in caso di secrezione di pus<br></p><p><b>Ubicazione</b><br><span>• </span>Alla base superiore del trago<br><span>• </span>Sopra il processo condiloideo della mandibola</p>",
 					ChiaviTsubo: "",
-					noMoxa: true,
-					noGravidanza: false	
 				},
 				{
 					NomeTsubo: "22.TE. Erheliao (Fessura dell'armonia dell'orecchio)",
 					AzioniTsubo: "<p><span style=\"font-weight:bold;\">M.T.C.</span><br><span>• </span>Punto d'incontro dei meridiani di <span style=\"font-style:italic;\">Triplice riscaldatore</span>, <span style=\"font-style:italic;\">Cistifellea </span>e <span style=\"font-style:italic;\">Intestino tenue</span><br><span>• </span>Attenua il dolore<br><span>• </span>Elimina il Vento</p><p><b>Applicazioni</b><br><span>• </span>Gonfiore della zona sottomandibolare e del collo<br><span>• </span>Sordità<br><span>• </span>Acufeni<br><span>• </span>Mal di testa<br><span>• </span>Trisma mandibolare<br><span>• </span>Secrezione nasale<br><span>• </span>Deviazione della rima buccale</p><p><b>Moxa</b><br><span>• </span>Indicato<br></p><p><b>Ubicazione</b><br><span>• </span>Nella zona vicino al trago<br><span>• </span>0,5 cun anteriormente al margine della radice dell'elice<br><span>• </span>Nell'avvallamento sul margine posteriore all'attaccatura dei capelli<br></p>",
 					ChiaviTsubo: "",
-					noMoxa: false,
-					noGravidanza: false	
 				},
 				{
 					NomeTsubo: "23.TE. Sizhukong (Cavità del bambù di seta)",
 					AzioniTsubo: "<p><span style=\"font-weight:bold;\">M.T.C.</span><br><span>• </span>Attenua il dolore<br><span>• </span>Espelle il Vento<br><span>• </span>Dona beneficio agli occhi</p><p><b>Applicazioni</b><br><span>• </span>Cataratta<br><span>• </span>Malattie degli occhi<br><span>• </span>Congiuntivite<br><span>• </span>Fibrillazione del sopracciglio<br><span>• </span>Crescita di ciglia all'interno<br><span>• </span>Emicrania<br><span>• </span>Manie<br><span>• </span>Capogiri <br><span>• </span>Epilessia<br></p><p><b>Moxa</b><br><span>• </span>Controindicato<br></p><p><b>Ubicazione</b><br><span>• </span>Estremità laterale del sopracciglio<br><span>• </span>Nell'avvallamento sul margine sopraorbitario<br></p>",
 					ChiaviTsubo: "",
-					noMoxa: true,
-					noGravidanza: false	
 				}
 			]
 		},
 		"PC": {
 			NomeMeridiano: "Mastro del cuore",
-			cartella: "mastro_del_cuore",
 			tsubo: [
 				{
 					NomeTsubo: "1.PC. Tianchi (Stagno celeste)",
 					AzioniTsubo: "<p><b>M.T.C.<br></b><span>•</span><span> </span><span>Punto Finestra del cielo<br></span><span>•</span><span> </span><span>Punto d'incontro dei meridiani di <span style=\"font-style:italic;\">Triplo riscaldatore</span>, <span style=\"font-style:italic;\">Fegato</span>, <span style=\"font-style:italic;\">Mastro del cuore</span> e <span style=\"font-style:italic;\">Cistifellea</span><br></span><span>• </span><span>Giova al seno<br></span><span>• </span><span>Dissipa i noduli<br></span><span>• </span><span>Libera il torace<br></span><span>• </span><span>Regolarizza il Qi <br></span><span>• </span><span>Trasforma il flegma riducendo il Qi ribelle del polmone, degli organi di senso e del collo</span></p><p><b>Applicazioni</b><br><span>• </span>Ascessi <br><span>• </span>Lattazione insufficiente<br><span>• </span>Dolore e gonfiore all'ascella <br><span>• </span>Dolore nella regione costale laterale<br><span>• </span>Agitazione e fiato corto<br><span>• </span>Pienezza del torace<br><span>• </span>Cataratta<br><span>• </span>Scrofola<br><span>• </span>Mal di testa<br><span>• </span>Tosse<br><span>• </span>Visione offuscata<br></p><p><b>Moxa</b><br><span>• </span>Indicato<br></p><p><b>Ubicazione</b><br><span>• </span>Lateralmente al capezzolo di 1 cun<br><span>• </span>A livello del quarto spazio intercostale<br></p>",
 					ChiaviTsubo: "",
-					noMoxa: false,
-					noGravidanza: false	
 				},
 				{
 					NomeTsubo: "2.PC. Tianquan (Fonte celeste)",
 					AzioniTsubo: "<p><b>M.T.C.</b><br><span>• </span>Rafforza il sangue<br><span>• </span>Libera il torace<br><span>• </span>Attenua il dolore<br></p><p><b>Applicazioni</b><br><span>• </span>Dolore a torace, scapola, spalla e braccio<br><span>• </span>Pienezza del torace e della regione costale laterale<br><span>• </span>Palpitazioni<br><span>• </span>Dolore cardiaco<br><span>• </span>Visione offuscata<br><span>• </span>Edema di pietra<span><br>• </span><span>Avversione al Vento e al Freddo<br></span><span>• </span><span>Dolore al lato interno del braccio<br></span><span>• </span><span>Tosse</span></p><p><b>Moxa</b><br><span>• </span>Indicato<br></p><p><b>Ubicazione</b><br><span>• </span>2 cun sotto la piega ascellare anteriore<br><span>• </span>Anteriormente sul braccio<br><span>• </span>Tra i due capi del muscolo bicipite del braccio<br></p>",
 					ChiaviTsubo: "",
-					noMoxa: false,
-					noGravidanza: false	
 				},
 				{
 					NomeTsubo: "3.PC. Quze (Palude nella piega)",
 					AzioniTsubo: "<p><b>M.T.C.<br></b><span>• </span>Punto<span style=\"font-style:italic;\"> he</span>-mare e Acqua del meridiano di <span style=\"font-style:italic;\">Mastro del cuore</span><br><span>• </span><span>Attenua il dolore<br></span><span>• </span><span>Blocca il vomito<br></span><span>• </span><span>Riequilibra Stomaco e Intestini<br></span><span>• </span><span>Pulisce il Calore dagli eccessi di Qi nutritizio e del sangue<br></span><span>• </span><span>Aiuta la circolazione del Qi nel meridiano</span></p><p><b>Applicazioni</b><br><span>• </span>Dolore al gomito<br><span>• </span>Dolore e tremore di braccio e mano<br><span>• </span>Vomito<br><span>• </span>Dissenteria<br><span>• </span>Sindrome coleriforme acuta<br><span>• </span>Emorragie polmonari e dello stomaco<br><span>• </span>Agitazione<br><span>• </span>Febbre alta<br><span>• </span>Irrequietudine<br><span>• </span>Bocca asciutta e sete<br></p><p><b>Moxa</b><br><span>• </span>Indicato<br></p><p><b>Ubicazione</b><br><span>• </span>Sul braccio<br><span>• </span>Piega cubitale trasversa<br><span>• </span>Nell'avvallamento che si trova sul lato ulnare dell'aponeurosi del bicipite brachiale<br></p>",
 					ChiaviTsubo: "",
-					noMoxa: false,
-					noGravidanza: false	
 				},
 				{
 					NomeTsubo: "4.PC. Ximen (Porta della fessura)",
 					AzioniTsubo: "<p><b>M.T.C.<br></b><span>• </span><span>Punto <span style=\"font-style:italic;\">xi</span>-fessura del meridiano di <span style=\"font-style:italic;\">Mastro del cuore</span><br></span><span>• </span><span>Calma le condizioni acute<br></span><span>• </span><span>Placa lo shen<br></span><span>• </span><span>Ripulisce il Calore<br></span><span>• </span><span>Blocca l'emorragia <br></span><span>• </span><span>Rafforza il sangue<br></span><span>• </span><span>Scioglie la stasi</span></p><p><b>Applicazioni</b><br><span>• </span>Insonnia<br><span>• </span>Paura e terrore della gente<br><span>• </span>Melanconia<br><span>• </span>Emorragie da Calore<br><span>• </span>Stasi al torace e al Cuore<br><span>• </span>Dolore acuto irradiato al collo <br></p><p><b>Moxa</b><br><span>• </span>Indicato<br></p><p><b>Ubicazione</b><br><span>• </span>Parte palmare dell'avambraccio<br><span>• </span>5 cun prossimalmente a 7.PC<br><span>• </span>Tra i tendini dei muscoli palmare lungo e flessore radiale del carpo<br></p>",
 					ChiaviTsubo: "",
-					noMoxa: false,
-					noGravidanza: false	
 				},
 				{
 					NomeTsubo: "5.PC. Jianshi (Messaggero intermedio)",
 					AzioniTsubo: "<p><b>M.T.C.<br></b><span>• </span>Punto <span style=\"font-style:italic;\">jing</span>-fiume e Metallo del meridiano di <span style=\"font-style:italic;\">Mastro del cuore</span><br><span>• </span><span>Fa scendere il Qi ribelle<br></span><span>• </span><span>Placa lo shen<br></span><span>• </span><span>Regola lo Stomaco <br></span><span>• </span><span>Regolarizza il mestruo<br></span><span>• </span><span>Trasforma il flegma</span></p><p><b>Applicazioni</b><br><span>• </span>Leucorrea<br><span>• </span>Dismenorrea<br><span>• </span>Flusso mestruale coagulato<br><span>• </span>Nausea<br><span>• </span>Vomito<br><span>• </span>Dolore epigastrico<br><span>• </span>Gozzo<br><span>• </span>Epilessia <br><span>• </span>Raptus maniacale<br><span>• </span>Mania<br><span>• </span>Scarsa memoria<br><span>• </span>Facili spaventi e agitazione</p><p><b>Moxa</b><br><span>• </span>Indicato<br></p><p><b>Ubicazione</b><br><span>• </span>Parte palmare dell'avambraccio<br><span>• </span>3 cun prossimalmente a 7.PC<br><span>• </span>Tra i tendini dei muscoli palmare lungo e flessore radiale del carpo<br></p>",
 					ChiaviTsubo: "",
-					noMoxa: false,
-					noGravidanza: false	
 				},
 				{
 					NomeTsubo: "6.PC. Neiguan (Passaggio interno)",
 					AzioniTsubo: "<p><b>M.T.C.<br></b><span>• </span>Punto <span style=\"font-style:italic;\">luo</span>-collegamento del meridiano di <span style=\"font-style:italic;\">Mastro del cuore</span><br><span>• </span>Punto Confluente del meridiano di <span style=\"font-style:italic;\">Yinweimai</span><br><span>• </span><span>Placa lo Shen<br></span><span>• </span><span>Regola il Cuore<br></span><span>• </span><span>Regola il Qi<br></span><span>• </span><span>Libera il petto<br></span><span>• </span><span>Regola lo Stomaco <br></span><span>• </span><span>Attenua nausea e vomito<br></span><span>• </span><span>Apre il meridiano di Yinweimai<br></span><span>• </span><span>Purifica il Calore</span></p><p><b>Applicazioni</b><br><span>• </span>Nausea<br><span>• </span>Vomito (anche gravidico e post chemio-radioterapia)<br><span>• </span>Insonnia<br><span>• </span>Epilessia<br><span>• </span>Memoria scarsa<br><span>• </span>Paura<br><span>• </span>Apprensione<br><span>• </span>Tristezza<br><span>• </span>Asma <br><span>• </span>Tosse<br><span>• </span>Pienezza toracica<br><span>• </span>Disturbi del ritmo cardiaco e della frequenza<br><span>• </span>Dolore al petto e alla regione costale<br></p><p><b>Moxa</b><br><span>• </span>Indicato<br></p><p><b>Ubicazione</b><br><span>• </span>Parte palmare dell'avambraccio<br><span>• </span>2 cun prossimalmente a 7.PC<br><span>• </span>Tra i tendini dei muscoli palmare lungo e flessore radiale del carpo<br></p>",
 					ChiaviTsubo: "",
-					noMoxa: false,
-					noGravidanza: false	
 				},
 				{
 					NomeTsubo: "7.PC. Daling (Grande collina)",
 					AzioniTsubo: "<p><b>M.T.C.<br></b><span>• </span>Punto <span style=\"font-style:italic;\">shu</span>-corrente, <span style=\"font-style:italic;\">yuan</span>-sorgente e Terra del meridiano di <span style=\"font-style:italic;\">Mastro del cuore</span><br><span>• </span>Uno dei 13 \"punti Demone\" per il medico Sun Simiao indicati per curare la dissociazione tra Hun e Po<br><span>• </span><span>Placa lo Shen<br></span><span>• </span><span>Rinfresca il sangue<br></span><span>• </span><span>Libera il petto<br></span><span>• </span><span>Regola lo Stomaco e gli Intestini <br></span><span>• </span><span>Purifica il Calore dal Cuore</span></p><p><b>Applicazioni</b><br><span>• </span>Sindrome del tunnel carpale<br><span>• </span>Foruncoli<br><span>• </span>Carbuncoli<br><span>• </span>Eczema<br><span>• </span>Febbre con agitazione<br><span>• </span>Eruzione cutanea da Vento<br><span>• </span>Dolore al seno<br><span>• </span>Pienezza toracica<br><span>• </span>Sospiri<br><span>• </span>Alitosi<br><span>• </span>Vomito <br><span>• </span>Dolore epigastrico<br><span>• </span>Difficoltà di minzione<br><span>• </span>Tristezza<br><span>• </span>Insonnia<br><span>• </span>Irrequietezza<br></p><p><b>Moxa</b><br><span>• </span>Indicato<br></p><p><b>Ubicazione</b><br><span>• </span>Sul polso<br><span>• </span>A livello di 7.HT<br><span>• </span>Tra tendini del muscolo palmare lungo e flessore radiale del carpo<br></p>",
 					ChiaviTsubo: "",
-					noMoxa: false,
-					noGravidanza: false	
 				},
 				{
 					NomeTsubo: "8.PC. Laogong (Palazzo della fatica)",
 					AzioniTsubo: "<p><b>M.T.C.<br></b><span>• </span>Punto <span style=\"font-style:italic;\">ying</span>-ruscello e Fuoco del meridiano di <span style=\"font-style:italic;\">Mastro del cuore</span><br><span>• </span>Uno dei 13 \"punti Demone\" per il medico Sun Simiao indicati per curare la dissociazione tra Hun e Po<br><span>• </span><span>Placa lo Shen<br></span><span>• </span><span>Rinfresca il sangue<br></span><span>• </span><span>Regola lo Stomaco<br></span><span>• </span><span>Pulisce il Calore dal Jiao medio<br></span><span>• </span>Purifica il Calore dai meridiani di Cuore e Mastro del cuore<span><br></span><span>• </span><span>Ripristina la coscienza</span></p><p><b>Applicazioni</b><br><span>• </span>Vomito <br><span>• </span>Eczema<br><span>• </span>Feci con sangue<br><span>• </span>Epistassi<br><span>• </span>Desquamazione delle mani<br><span>• </span>Alitosi<br><span>• </span>Difficoltà digestive<br><span>• </span>Apprensione<br><span>• </span>Terrore<br><span>• </span>Epilessia<br><span>• </span>Sindrome maniaco depressiva<br><span>• </span>Perdita di coscienza<br><span>• </span>Coma <br></p><p><b>Moxa</b><br><span>• </span>Indicato<br></p><p><b>Ubicazione</b><br><span>• </span>Sul palmo mano<br><span>• </span>Tra il secondo e terzo osso metacarpale<br><span>• </span>Prossimalmente all'articolazione metacarpo-falangea<br><span>• </span>Nell'avvallamento sul lato radiale del terzo osso metacarpale<br></p>",
 					ChiaviTsubo: "",
-					noMoxa: false,
-					noGravidanza: false	
 				},
 				{
 					NomeTsubo: "9.PC. Zhongchong (Assalto centrale)",
 					AzioniTsubo: "<p><b>M.T.C.<br></b><span>• </span>Punto <span style=\"font-style:italic;\">jing</span>-pozzo e Legno del meridiano di <span style=\"font-style:italic;\">Mastro del cuore</span><br><span>• </span>Aiuta la lingua<br><span>• </span>Purifica il Calore estivo<br><span>• </span>Purifica il Calore dai meridiani di Cuore e Mastro del cuore<br><span>• </span>Ripristina la coscienza<br></p><p><b>Applicazioni</b><br><span>• </span>Collasso<br><span>• </span>Diarrea<br><span>• </span>Vomito<br><span>• </span>Agitazione<br><span>• </span>Febbre<br><span>• </span>Blocco della parola<br><span>• </span>Rigidità della lingua<br><span>• </span>Ripristina la coscienza negli stati febbrili<br></p><p><b>Moxa</b><br><span>• </span>Indicato<br></p><p><b>Ubicazione</b><br><span>• </span>Sul dito medio in punta e al centro<br><span>• </span>In alternativa sul lato radiale del dito medio a circa 0.1 cun dall'angolo dell'unghia<br></p>",
 					ChiaviTsubo: "",
-					noMoxa: false,
-					noGravidanza: false	
 				}
 			]
 		},
 		"LI": {
 			NomeMeridiano: "Intestino crasso",
-			cartella: "intestino_crasso",
 			tsubo: [
 				{
 					NomeTsubo: "1.LI. Shangyang (Shang yang)",
 					AzioniTsubo: "<p><span style=\"font-weight:bold;\">M.T.C.<br></span><span>• </span>Punto <span style=\"font-style:italic;\">jing</span>-pozzo e Metallo del meridiano di<span style=\"font-style:italic;\"> Intestino crasso</span><br><span>• </span><span>Ristabilisce la coscienza<br></span><span>• </span><span>Purifica il Calore<br></span><span>• </span><span>Diminuisce il gonfiore<br></span><span>• </span><span>Attenua il dolore</span></p><p><b>Applicazioni</b><br><span>• </span>Perdita di coscienza<br><span>• </span>Dolore all'estremità opposta del meridiano<br><span>• </span>Gonfiore all'estremità opposta del meridiano<br><span>• </span>Sordità <br><span>• </span>Acufeni<br><span>• </span>Patologie dell'orecchio<br><span>• </span>Mal di gola <br><span>• </span>Mal di denti<br><span>• </span>Dolore alla mandibola<br><span>• </span>Dolore e gonfiore alla regione sottomandibolare<br></p><p><b>Moxa</b><br><span>• </span>Indicato<br></p><p><b>Ubicazione</b><br><span>• </span>Dorso dell'indice<br><span>• </span>Sulla base dell'unghia nell'angolo mediale<br><span>• </span>0.1 cun dall'angolo ungueale<br></p>",
 					ChiaviTsubo: "",
-					noMoxa: false,
-					noGravidanza: false	
 				},
 				{
 					NomeTsubo: "2.LI. Erjian (Secondo spazio)",
 					AzioniTsubo: "<p><b>M.T.C.<br></b><span>• </span>Punto <span style=\"font-style:italic;\">ying</span>-ruscello e Acqua del meridiano di<span style=\"font-style:italic;\"> Intestino crasso</span><br><span>• </span>Purifica il Calore<br><span>• </span>Diminuisce il gonfiore<br><span>• </span>Attenua il dolore<br><span>• </span>Elimina il Vento<br></p><p><b>Applicazioni</b><br><span>• </span>Malattie degli occhi<br><span>• </span>Eczema<br><span>• </span>Epistassi<br><span>• </span>Mal di gola <br><span>• </span>Mal di denti<br><span>• </span>Dolore alla mandibola<br><span>• </span>Dolore e gonfiore alla regione mandibolare<br><span>• </span>Rinite<br></p><p><b>Moxa</b><br><span>• </span>Indicato<br></p><p><b>Ubicazione</b><br><span>• </span>Bordo dell'indice<br><span>• </span>Nell'infossamento distale all'articolazione metacarpo-falangea<br></p>",
 					ChiaviTsubo: "",
-					noMoxa: false,
-					noGravidanza: false	
 				},
 				{
 					NomeTsubo: "3.LI. Sanjian (Terzo spazio)",
 					AzioniTsubo: "<p><b>M.T.C.<br></b><span>• </span>Punto <span style=\"font-style:italic;\">shu</span>-corrente e Legno del meridiano di<span style=\"font-style:italic;\"> Intestino crasso</span><br><span>• </span>Elimina il Calore<br><span>• </span>Aiuta denti e gola <br><span>• </span>Elimina il Vento<br><span>• </span>Tratta la diarrea<br><span>• </span>Elimina la pienezza<br></p><p><b>Applicazioni</b><br><span>• </span>Dolore agli occhi<br><span>• </span>Labbra secche e brucianti<br><span>• </span>Epistassi<br><span>• </span>Mal di gola <br><span>• </span>Mal di denti grave della mascella inferiore<br><span>• </span>Patologie delle dita e del dorso della mano<br><span>• </span>Rinite<br><span>• </span>Acufeni<br></p><p><b>Moxa</b><br><span>• </span>Indicato<br></p><p><b>Ubicazione</b><br><span>• </span>Bordo radiale dell'indice<br><span>• </span>Nell'infossamento prossimale alla testa del secondo metacarpo<br></p>",
 					ChiaviTsubo: "",
-					noMoxa: false,
-					noGravidanza: false	
 				},
 				{
 					NomeTsubo: "4.LI. Hegu (Riunione della valle)",
 					AzioniTsubo: "<p><span style=\"font-weight:bold;\">M.T.C.<br></span><span>• </span>Punto <span style=\"font-style:italic;\">yuan</span>-sorgente del meridiano di <span style=\"font-style:italic;\">Intestino crasso</span><br><span>• </span>Punto Stella del cielo di Ma Danyang<br><span>• </span>Punto di comando di Gao Wu<br><span>• </span>Attenua il dolore<br><span>• </span>Aiuta occhi, naso, orecchie, bocca e faccia<br><span>• </span>Induce il parto<br><span>• </span>Rieuilibra il Qi difensivo e la sudorazione<br><span>• </span>Elimina il Vento<br><span>• </span>Aiuta la circolazione del Qi nel meridiano<br><span>• </span>Nutre lo yang<br></p><p><b>Applicazioni</b><br><span>• </span>Gonfiore alla faccia<br><span>• </span>Malattie febbrili <br><span>• </span>Starnuti<br><span>• </span>Perdita di voce<br><span>• </span>Epistassi<br><span>• </span>Mal di gola<br><span>• </span>Mal di denti specialmente se nella mascella inferiore<br><span>• </span>Rinite<br><span>• </span>Travaglio prolungato<br><span>• </span>Orecchioni<br><span>• </span>Gonfiore della faccia<br><span>• </span>Emiplegia<br><span>• </span>Dolore al braccio<br><span>• </span>Cefalea<br><span>• </span>Amenorrea<br><span>• </span>Sordità e acufeni<br><span>• </span>Atrofia dolorosa dei 4 arti<br><span>• </span>Malattie degli occhi</p><p><b>Moxa</b><br><span>• </span>Indicato<br></p><p><b>Ubicazione</b><br><span>• </span>Vicino al bordo radiale dell'indice<br><span>• </span>Sul dorso della mano<br><span>• </span>Tra primo e secondo metacarpo<br><span>• </span>A metà del secondo metacarpo<br><span>• </span>Punto più alto della protuberanza muscolare piegando il pollice contro la base dell'indice<br></p>",
 					ChiaviTsubo: "",
-					noMoxa: false,
-					noGravidanza: true	
 				},
 				{
 					NomeTsubo: "5.LI. Yangxi (Fonte dello Yang)",
 					AzioniTsubo: "<p><b>M.T.C.<br></b><span>• </span>Punto <span style=\"font-style:italic;\">jing</span>-fiume e Fuoco del meridiano di <span style=\"font-style:italic;\">Intestino crasso</span><b><br></b><span>• </span><span>Attenua il dolore<br></span><span>• </span><span>Giova all'articolazione del polso <br></span><span>• </span><span>Purifica il Fuoco di yangming e il Calore<br></span><span>• </span><span>Calma lo shen</span></p><p><b>Applicazioni</b><br><span>• </span>Gonfiore, rossore e dolore agli occhi<br><span>• </span>Calore ai palmi<br><span>• </span>Contrattura delle dita<br><span>• </span>Dolore e debolezza al polso<br><span>• </span>Terrore<br><span>• </span>Delirio maniacale<br><span>• </span>Cefalea frontale<br><span>• </span>Dolore all'orecchio<br><span>• </span>Lacrimazione eccessiva <br><span>• </span>Acufeni<br><span>• </span>Epistassi<br><span>• </span>Mal di gola <br><span>• </span>Mal di denti <br><span>• </span>Rinite<br><span>• </span>Cefalea<br></p><p><b>Moxa</b><br><span>• </span>Indicato<br></p><p><b>Ubicazione</b><br><span>• </span>Vicino al bordo radiale del polso<br><span>• </span>Nella cavità formata dai tendini dell'estensore lungo e breve del pollice<br></p>",
 					ChiaviTsubo: "",
-					noMoxa: false,
-					noGravidanza: false	
 				},
 				{
 					NomeTsubo: "6.LI. Pianli (Passaggio deviato)",
 					AzioniTsubo: "<p><b>M.T.C.<br></b><span>• </span>Punto <span style=\"font-style:italic;\">luo</span>-collegamento del meridiano di <span style=\"font-style:italic;\">Intestino crasso</span><br><span>• </span>Regolarizza il deflusso dell'acqua<br><span>• </span>Elimina il Vento<br><span>• </span>Purifica il Calore<br></p><p><b>Applicazioni</b><br><span>• </span>Edema<br><span>• </span>Dolore e rossore agli occhi<br><span>• </span>Lacrimazione eccessiva <br><span>• </span>Acufeni<br><span>• </span>Sordità<br><span>• </span>Epistassi<br><span>• </span>Mal di gola<br><span>• </span>Diminuzione della vista<br><span>• </span>Gonfiore della guancia <br><span>• </span>Mal di denti<br><span>• </span>Cefalea<br><span>• </span>Deviazione della rima buccale</p><p><b>Moxa</b><br><span>• </span>Indicato<br></p><p><b>Ubicazione</b><br><span>• </span>Sulla linea di collegamento tra 5.LI e 11.LI<br><span>• </span>3 cun prossimalmente da 5.LI</p>",
 					ChiaviTsubo: "",
-					noMoxa: false,
-					noGravidanza: false	
 				},
 				{
 					NomeTsubo: "7.LI. Wenliu (Flusso caldo)",
 					AzioniTsubo: "<p><b>M.T.C.<br></b><span>• </span>Punto <span style=\"font-style:italic;\">xi</span>-fessura del meridiano di <span style=\"font-style:italic;\">Intestino crasso</span><br><span>• </span>Purifica il Fuoco di yangming<br><span>• </span>Calma lo shen<br><span>• </span>Armonizza Stomaco e Intestini<br><span>• </span>Attenua le condizioni acute<br><span>• </span>Purifica il Calore<br><span>• </span>Disintossica dai veleni<br></p><p><b>Applicazioni</b><br><span>• </span>Vomito di saliva schiumosa<br><span>• </span>Dolore e gonfiore alla faccia<br><span>• </span>Dolore ai denti e alla bocca<br><span>• </span>Foruncoli<br><span>• </span>Carbuncoli<br><span>• </span>Rossore alla faccia<br><span>• </span>Noduli dolenti</p><p><b>Moxa</b><br><span>• </span>Indicato<br></p><p><b>Ubicazione</b><br><span>• </span>Sulla linea di collegamento tra LI.5 e LI.11<br><span>• </span>5 cun prossimalmente da LI.5</p>",
 					ChiaviTsubo: "",
-					noMoxa: false,
-					noGravidanza: false	
 				},
 				{
 					NomeTsubo: "8.LI. Xialian (Angolo inferiore)",
 					AzioniTsubo: "<p><b>M.T.C.</b><br><span>• </span>Purifica il Fuoco di Yangming<br><span>• </span>Calma lo shen<br><span>• </span>Regolarizza l'Intestino Tenue<br><span>• </span>Purifica il Calore<br><span>• </span>Espelle il Vento<br></p><p><b>Applicazioni</b><br><span>• </span>Sangue nelle feci<br><span>• </span>Urine scure<br><span>• </span>Diarrea<br><span>• </span>Dolore e distensione al basso ventre<br></p><p><b>Moxa</b><br><span>• </span>Indicato<br></p><p><b>Ubicazione</b><br><span>• </span>Sulla linea di collegamento tra 5.LI e 11.LI<br><span>• </span>4 cun distalmente da 11.LI</p>",
 					ChiaviTsubo: "",
-					noMoxa: false,
-					noGravidanza: false	
 				},
 				{
 					NomeTsubo: "9.LI. Shanglian (Angolo superiore)",
 					AzioniTsubo: "<p><b>M.T.C.</b><br><span>• </span>Attenua il dolore<br><span>• </span>Aiuta la circolazione del Qi nel meridiano<br><span>• </span>Regolarizza l'Intestino Crasso<br></p><p><b>Applicazioni</b><br><span>• </span>Stasi del Qi nell'Intestino Crasso<br><span>• </span>Dolore all'addome<br><span>• </span>Borborigmi</p><p><b>Moxa</b><br><span>• </span>Indicato<br></p><p><b>Ubicazione</b><br><span>• </span>Sulla linea di collegamento tra 5.LI.5 e 11.LI<br><span>• </span>3 cun distalmente da 11.LI</p>",
 					ChiaviTsubo: "",
-					noMoxa: false,
-					noGravidanza: false	
 				},
 				{
 					NomeTsubo: "10.LI. Shousanli (Tre miglia del braccio)",
 					AzioniTsubo: "<p><b>M.T.C.</b><br><span>• </span>Regolarizza Intestini e Stomaco<br><span>• </span>Attenua il dolore<br><span>• </span>Aiuta la circolazione del Qi nel meridiano<br><span>• </span>Riequilibra il Qi e il sangue<br></p><p><b>Applicazioni</b><br><span>• </span>Mal di denti alla mascella superiore <br><span>• </span>Gomito del tennista<br><span>• </span>Atrofia <br><span>• </span>Contrattura e difficoltà a flettere il gomito<br><span>• </span>Paralisi del braccio<br><span>• </span>Dolore e immobilità di braccio e spalla<br><span>• </span>Emiplegia<br><span>• </span>Freddo agli Intestini<br></p><p><b>Moxa</b><br><span>• </span>Indicato<br></p><p><b>Ubicazione</b><br><span>• </span>Sulla linea di collegamento tra 5.LI e11.LI<br><span>• </span>3 cun distalmente da 11.LI</p>",
 					ChiaviTsubo: "",
-					noMoxa: false,
-					noGravidanza: false	
 				},
 				{
 					NomeTsubo: "11.LI. Quchi (Stagno sulla curva)",
 					AzioniTsubo: "     <p><b>M.T.C.<br></b><span>• </span>Punto Stella del cielo di Ma Danyang<br><span>• </span>Punto <span style=\"font-style:italic;\">he</span>-mare e Terra del meridiano di <span style=\"font-style:italic;\">Intestino crasso</span><br><span>• </span>Uno dei 13 \"punti Demone\" per il medico Sun Simiao indicati per curare la dissociazione tra Hun e Po<br><span>• </span>Rinfresca il sangue<br><span>• </span>Allevia il prurito<br><span>• </span>Drena l'Umidità<br><span>• </span>Elimina il Vento<br><span>• </span>Attenua il dolore<br><span>• </span>Aiuta la circolazione del qi nel meridiano<br><span>• </span>Riequilibra il qi e il sangue<br></p><p><b>Applicazioni</b><span><br><span>• </span><span>Abbassa la febbre alta (nello <span style=\"font-style:italic;\">yangming</span>)<br></span><span>• </span><span>Abbassa la pressione del sangue<br></span><span>• </span><span>Mal di denti</span><br>• </span>Gomito del tennista<br><span>• </span>Atrofia <br><span>• </span>Contrattura, difficoltà e dolore a flettere il gomito e spalla <br><span>• </span>Paralisi del braccio<br><span>• </span>Punto importante per le patologie del braccio<br><span>• </span>Formicolio<br><span>• </span>Prurito cutaneo<br><span>• </span>Dolore e prurito in tutto il corpo<br><span>• </span>Noduli dolenti al dorso<br><span>• </span>Erpete<br><span>• </span>Pelle secca <br><span>• </span>Orticaria <br><span>• </span>Epilessia (punto Demone)<br><span>• </span>Erisipela<br><span>• </span>Mal di gola<br><span>• </span>Dolore rossore agli occhi<br><span>• </span>Sindrome maniacale (punto Demone)<br><span>• </span>Emiplegia<br></p><p><b>Moxa</b><br><span>• </span>Indicato<br></p><p><b>Ubicazione</b><br><span>• </span>Gomito flesso<br><span>• </span>A metà tra 5.LU e l'epicondilo laterale dell'omero<br><span>• </span>Sulla piega trasversale del gomito (estremità laterale)<br></p>",
 					ChiaviTsubo: "",
-					noMoxa: false,
-					noGravidanza: false	
 				},
 				{
 					NomeTsubo: "12.LI. Zhouliao (Fessura del gomito)",
 					AzioniTsubo: " <p><b>M.T.C.</b><br><span>• </span>Aiuta l'articolazione del gomito<br><span>• </span>Attenua il dolore<br><span>• </span>Aiuta la circolazione del qi nel meridiano<br></p><p><b>Applicazioni</b><br><span>• </span>Contrattura, difficoltà di movimento e dolore al gomito <br><span>• </span>Immobilità del braccio<br><span>• </span>Punto importante per le patologie del gomito<br><span>• </span>Anche quando il dolore si irradia verso la spalla<br></p><p><b>Moxa</b><br><span>• </span>Indicato<br></p><p><b>Ubicazione</b><br><span>• </span>Gomito flesso<br><span>• </span>Nella depressione 1 cun prossimalmente e lateralmente a 11.LI<br><span>• </span>Direttamente sopra l'epicondilo laterale dell'omero<br></p>",
 					ChiaviTsubo: "",
-					noMoxa: false,
-					noGravidanza: false	
 				},
 				{
 					NomeTsubo: "13.LI. Shouwuli (Cinque miglia del braccio)",
 					AzioniTsubo: " <p><b>M.T.C.</b><br><span>• </span>Armonizza il Qi <br><span>• </span>Toglie l'Umidità<br><span>• </span>Trasforma il flegma<br><span>• </span>Attenua il dolore<br><span>• </span>Aiuta la circolazione del qi nel meridiano<br></p><p><b>Applicazioni</b><br><span>• </span>Efficace per scrofola (noduli ai lati del collo, inguine, ascella)<br><span>• </span>Punto importante per le patologie dell'arto superiore<br></p><p><b>Moxa</b><br><span>• </span>Indicato<br></p><p><b>Ubicazione</b><br><span>• </span>Nella depressione tra il bordo laterale del bicipite brachiale e omero<br><span>• </span>3 cun prossimalmente a 11.LI<br><span>• </span>Direttamente sopra l'epicondilo laterale dell'omero<br></p>",
 					ChiaviTsubo: "",
-					noMoxa: false,
-					noGravidanza: false	
 				},
 				{
 					NomeTsubo: "14.LI. Binao (Arto superiore)",
 					AzioniTsubo: "      <p><span><span style=\"font-weight:bold;\">M.T.C.</span><br></span><span>• </span>Punto di incontro dei meridiani di <span style=\"font-style:italic;\">Vescica urinaria</span>, <span style=\"font-style:italic;\">Intestino tenue</span><span>, </span><span style=\"font-style:italic;\">Intestino crasso</span><span> e <span style=\"font-style:italic;\">Yangweimai <br></span></span><span>• </span><span>Armonizza il Qi<br></span><span>• </span><span>Aiuta gli occhi<br></span><span>• </span><span>Scioglie i noduli di flegma<br></span><span>• </span><span>Attenua il dolore<br></span><span>• </span><span>Aiuta la circolazione del Qi nel meridiano</span></p><p><b>Applicazioni</b><br><span>• </span>Efficace per scrofola e gozzo<br><span>• </span>Rossore dolore gonfiore agli occhi<br><span>• </span>Punto importante per le patologie dell'arto superiore con dolore irradiato dal gomito alla spalla<br></p><p><b>Moxa</b><br><span>• </span>Indicato<br></p><p><b>Ubicazione</b><br><span>• </span>Faccia laterale del braccio<br><span>• </span>Nella depressione tra il bicipite brachiale e inserzione distale del deltoide<br><span>• </span>Tre quinti di distanza lungo la linea che collega 11.LI e 15.LI<br></p>",
 					ChiaviTsubo: "",
-					noMoxa: false,
-					noGravidanza: false	
 				},
 				{
 					NomeTsubo: "15.LI. Jianyu (Osso della spalla)",
 					AzioniTsubo: "<p><b>M.T.C.<br></b><span>• </span>Punto d'incontro dei meridiani di <span style=\"font-style:italic;\">Intestino crasso</span> e <span style=\"font-style:italic;\">Yangqiaomai</span><br><span>• </span>Armonizza il Qi <br><span>• </span>Aiuta l'articolazione della spalla <br><span>• </span>Elimina il Vento<br><span>• </span>Scioglie i noduli di flegma<br><span>• </span>Regola il sangue<br><span>• </span>Attenua il dolore<br><span>• </span>Aiuta l'eliminazione del Vento-Umidità<br></p><p><b>Applicazioni</b><br><span>• </span>Punto importante per le patologie dell'arto superiore <br><span>• </span>Punto importante per le patologie della spalla <br><span>• </span>Emiplegia <br><span>• </span>Atrofia<br><span>• </span>Elimina il Vento nelle forme di orticaria<br><span>• </span>Apoplessia<br></p><p><b>Moxa</b><br><span>• </span>Indicato<br></p><p><b>Ubicazione</b><br><span>• </span>Nella depressione davanti e sotto l'acromion<br><span>• </span>All'inserzione del muscolo deltoide<br><span>• </span>14.TE è localizzato nella depressione dietro e sotto l'acromion<br></p>",
 					ChiaviTsubo: "",
-					noMoxa: false,
-					noGravidanza: false	
 				},
 				{
 					NomeTsubo: "16.LI. Jugu (Grande osso)",
 					AzioniTsubo: "<p><b>M.T.C.<br></b><span>• </span>Punto di incontro dei meridiani di <span style=\"font-style:italic;\">Intestino crasso</span> e <span style=\"font-style:italic;\">Yangqiaomai</span><br><span>• </span>Armonizza il Qi <br><span>• </span>Aiuta l'articolazione della spalla <br><span>• </span>Regola il sangue<br><span>• </span>Scioglie i noduli di flegma<br><span>• </span>Aiuta la circolazione del Qi nel meridiano<br><span>• </span>Attenua il dolore<br></p><p><b>Applicazioni</b><br><span>• </span>Punto importante per le patologie della spalla (anche quelle croniche)<br><span>• </span>Anche per vomito di sangue<br><span>• </span><span>Anche per s</span><span>tasi di sangue nel petto</span></p><p><b>Moxa</b><br><span>• </span>Indicato<br></p><p><b>Ubicazione</b><br><span>• </span>Sulla spalla, faccia superiore<br><span>• </span>Nell'incavo tra l'acromion, l'estremità della clavicola e la spina della scapola<br></p>",
 					ChiaviTsubo: "",
-					noMoxa: false,
-					noGravidanza: false	
 				},
 				{
 					NomeTsubo: "17.LI. Tianding (Tripode celeste)",
 					AzioniTsubo: "<p><b>M.T.C.</b><br><span>• </span>Aiuta la gola e la voce<br></p><p><b>Applicazioni</b><br><span>• </span>Punto importante per la perdita improvvisa di voce<br><span>• </span>Difficoltà respiratorie<br><span>• </span>Scrofola<br><span>• </span>Mal di gola <br><span><span>• </span><span>Raucedine</span><br>• </span>Difficoltà d'ingestione<br></p><p><b>Moxa</b><br><span>• </span>Indicato<br></p><p><b>Ubicazione</b><br><span>• </span>Sul collo, faccia laterale<br><span>• </span>Sul bordo posteriore del muscolo sternocleidomastoideo<br><span>• </span>1 cun sotto 18.LI<br></p>",
 					ChiaviTsubo: "",
-					noMoxa: false,
-					noGravidanza: false	
 				},
 				{
 					NomeTsubo: "18.LI. Futu (Sostegno della prominenza)",
 					AzioniTsubo: "<p><b>M.T.C.<br></b><span>• </span>Punto Finestra del cielo<br><span>• </span>Attenua tosse <br><span>• </span>Allevia l'affanno<br><span>• </span>Aiuta la gola e la voce<br></p><p><b>Applicazioni</b><br><span>• </span>Punto importante per la perdita improvvisa di voce<br><span>• </span>Gozzo<br><span>• </span>Tosse <br><span>• </span>Affanno<br><span>• </span>Scrofola<br><span>• </span>Gonfiore alla gola<br><span>• </span>Mal di gola <br><span>• </span>Difficoltà d'ingestione<br></p><p><b>Moxa</b><br><span>• </span>Indicato<br></p><p><b>Ubicazione</b><br><span>• </span>Sul collo, faccia laterale<br><span>• </span>Tra capo sternale e clavicolare del muscolo sternocleidomastoideo<br><span>• </span>In linea orizzontale con le punta della prominenza laringea<br></p>",
 					ChiaviTsubo: "",
-					noMoxa: false,
-					noGravidanza: false	
 				},
 				{
 					NomeTsubo: "19.LI. Kouheliao (Fessura della bocca dei cereali)",
 					AzioniTsubo: "<p><b>M.T.C.</b><br><span>• </span>Apre i passaggi del naso<br><span>• </span>Espelle il Vento<br></p><p><b>Applicazioni</b><br><span>• </span>Perdita di coscienza<br><span>• </span>Perdita dell'olfatto<br><span>• </span>Rinite con epistassi<br><span>• </span>Polipi nasali<br><span>• </span>Piaghe nasali<br><span>• </span>Congestione e scolo nasale<br></p><p><b>Moxa</b><br><span>• </span>Controindicato<br></p><p><b>Ubicazione</b><br><span>• </span>Sul viso<br><span>• </span>Sotto il margine laterale della narice<br><span>• </span>0.5 cun lateralmente a 26.GV<br></p>",
 					ChiaviTsubo: "",
-					noMoxa: true,
-					noGravidanza: false	
 				},
 				{
 					NomeTsubo: "20.LI. Yingxiang (benvenuto profumo)",
 					AzioniTsubo: "<p><b>M.T.C.</b><br><span>• </span>Punto d'incontro dei meridiani di <span style=\"font-style:italic;\">Stomaco </span>e <span style=\"font-style:italic;\">Intestino crasso</span><br><span>• </span>Ripulisce dal Calore<br><span>• </span>Apre i passaggi del naso<br><span>• </span>Elimina il Vento<br></p><p><b>Applicazioni</b><br><span>• </span>Perdita di coscienza<br><span>• </span>Perdita dell'olfatto<br></p><p><b>Moxa</b><br><span>• </span>Controindicato<br></p><p><b>Ubicazione</b><br><span>• </span>Sul viso<br><span>• </span>Piega nasolabiale<br><span>• </span>A livello del punto centrale del bordo laterale dell'ala del naso<br></p>",
 					ChiaviTsubo: "",
-					noMoxa: true,
-					noGravidanza: false	
 				}
 			]
 		},
 		"LU": {
 			NomeMeridiano: "Polmone",
-			cartella: "polmone",
 			tsubo: [
 				{
 					NomeTsubo: "1.LU. Zhongfu (Palazzo centrale)",
 					AzioniTsubo: "<p><b>M.T.C.</b><br><span>• </span>Punto <span style=\"font-style:italic;\">mu</span>-frontale del meridiano di <span style=\"font-style:italic;\">Polmone</span><br><span>• </span>Punto di incontro dei meridiani di <span style=\"font-style:italic;\">Milza </span>e <span style=\"font-style:italic;\">Polmone</span><br><span>• </span>Riduce e diffonde il Qi di Polmone<br><span>• </span>Allevia tosse e affanno<br><span>• </span>Riduce il Qi di Stomaco<br><span>• </span>Trasforma il flegma<br><span>• </span>Purifica il Calore <br><span>• </span>Regola i passaggi dell'acqua<br></p><p><b>Applicazioni</b><br><span>• </span>Tosse con espettorazione di flegma torbido, sangue o pus<br><span>• </span>Dispnea<br><span>• </span>Asma respiro affannoso<br><span>• </span>Pienezza e oppressione al petto<br><span>• </span>Congestione di naso e gola <br><span>• </span>Viso gonfio<br><span>• </span>Rigurgiti e vomito<br><span>• </span>Distensione addominale <br></p><p><b>Moxa</b><br><span>• </span>Nessuna controindicazione <br></p><p><b>Ubicazione</b><br><span>• </span>A lato del petto<br><span>• </span>Nel primo spazio intercostale<br><span>• </span>6 cun a lato della line mediana<br><span>• </span>1 cun sotto 2.LU</p>",
 					ChiaviTsubo: "Punto BO di Polmone",
-					noMoxa: false,
-					noGravidanza: false	
 				},
 				{
 					NomeTsubo: "2.LU. Yunmen (Porta delle nuvole)",
 					AzioniTsubo: "<p><b>M.T.C.</b><br><span>• </span>Elimina agitazione e pienezza<br><span>• </span>Purifica il Calore nel Polmone<br><span>• </span>Riduce e diffonde il Qi di Polmone<br></p><p><b>A</b><b>pplicazioni<br></b><span>• </span>Poco usato<br><span>• </span>Dolore locale, nella porzione antero-mediale della spalla<br></p><p><b>Moxa</b><br><span>• </span>Nessuna controindicazione <br></p><p><b>Ubicazione</b><br><span>• </span>Posto sulla parte anterolaterale del petto<br><span>• </span>Al centro della fossa triangolare deltopettorale<br><span>• </span>Sotto l'estremità esterna della clavicola<br><span>• </span>6 cun a lato della line mediana</p>",
 					ChiaviTsubo: "",
-					noMoxa: false,
-					noGravidanza: false	
 				},
 				{
 					NomeTsubo: "3.LU. Tianfu (Palazzo del cielo)",
 					AzioniTsubo: "<p><b>M.T.C.</b><br><span>• </span>Punto Finestra del cielo<br><span>• </span>Purifica il Calore al Polmone<br><span>• </span>Riduce il Qi di Polmone<br><span>• </span>Rinfresca il sangue<br><span>• </span>Blocca il sanguinamento<br><span>• </span>Rilassa l'anima corporea (Po)<br></p><p><b>Applicazioni</b><br><span>• </span>Epistassi<br><span>• </span>Emoftoe<br><span>• </span>Tosse (anche con sangue)<br><span>• </span>Asma<br><span>• </span>Affanno<br><span>• </span>Tristezza<br><span>• </span>Pianto<br><span>• </span>Disorientamento<br><span>• </span>Amnesia<br><span>• </span>Insonnia<br><span>• </span>Gozzo<br><span>• </span>Disturbi agli occhi<br></p><p><b>Moxa</b><br><span>• </span>Controindicato: può provocare un inversione del flusso del Qi<br></p><p><b>Ubicazione</b><br><span>• </span>Arto superiore<br><span>• </span>Faccia anterolaterale<br><span>• </span>Nella depressione tra il bordo laterale dell'omero e il bicipite brachiale<br><span>• </span>3 cun sotto l'ascella<br><span>• </span>6 cun sopra 5.LU</p>",
 					ChiaviTsubo: "",
-					noMoxa: true,
-					noGravidanza: false	
 				},
 				{
 					NomeTsubo: "4.LU. Xiabai (Stringere il bianco)",
 					AzioniTsubo: "<p><b>M.T.C.</b><br><span>• </span>Riequilibra il Qi e il sangue nel torace Polmone<br><span>• </span>Riduce il Qi di Polmone<br></p><p><b>A</b><b>pplicazioni<br></b><span>• </span>Poco usato<br><span>• </span>Dispnea<br><span>• </span>Asma<br><span>• </span>Tosse<br><span>• </span>Respiro corto<br><span>• </span>Male al Cuore<br><span>• </span>Palpitazioni<br><span>• </span>Agitazione<br><span>• </span>Rigurgiti<br><span>• </span>Male al lato mediale del braccio<br><span>• </span>Pitiriasi versicolor<br></p><p><b>Moxa</b><br><span>• </span>Nessuna controindicazione<br></p><p><b>Ubicazione</b><br><span>• </span>Arto superiore<br><span>• </span>Faccia antero-laterale<br><span>• </span>Nella depressione tra il bordo laterale dell'omero e il bicipite brachiale<br><span>• </span>4 cun sotto l'ascella<br><span>• </span>5 cun sopra 5.LU<br></p>",
 					ChiaviTsubo: "",
-					noMoxa: false,
-					noGravidanza: false	
 				},
 				{
 					NomeTsubo: "5.LU. Chize (Palude del gomito)",
 					AzioniTsubo: "<p><b>M.T.C.</b><br><span>• </span>Punto <span style=\"font-style:italic;\">he</span>-mare e Acqua del meridiano di <span style=\"font-style:italic;\">Polmone</span><br><span>• </span>Purifica il Calore dal Polmone<br><span>• </span>Riduce il Qi ribelle<br><span>• </span>Regola i passaggi dell'acqua<br><span>• </span>Favorisce la circolazione del Qi nel Meridiano<br><span>• </span>Distende i tendini<br><span>• </span>Dona beneficio ai muscoli<br><span>• </span><span>Favorisce la diuresi</span></p><p><b>Applicazioni</b><br><span>• </span>Tosse (anche con flegma)<br><span>• </span>Escreato<br><span>• </span>Respiro corto<br><span>• </span>Pienezza del petto<br><span>• </span>Affanno<br><span>• </span>Asma<br><span>• </span>Vomito con sangue<br><span>• </span>Epistassi<br><span>• </span>Gonfiore dei quattro arti<br><span>• </span>Enuresi<br><span>• </span>Minzione frequente<br><span>• </span>Agitazione del Cuore e dolore<br><span>• </span>Male e la mobilità ridotta di spalla, braccio, gomito e mano<br><span>• </span>Lombi e ginocchio doloranti<br></p><p><b>Moxa</b><br><span>• </span>Nessuna controindicazione<br></p><p><b>Ubicazione</b><br><span>• </span>Arto superiore<br><span>• </span>Nella piega del gomito<br><span>• </span>Sull'avvallamento sul lato radiale del tendine del bicipite brachiale<br></p>",
 					ChiaviTsubo: "",
-					noMoxa: false,
-					noGravidanza: false	
 				},
 				{
 					NomeTsubo: "6.LU. Kongzui (Aperta massima)",
 					AzioniTsubo: "<p><b>M.T.C.</b><br><span>• </span>Punto <span style=\"font-style:italic;\">xi</span>-fessura del meridiano di <span style=\"font-style:italic;\">Polmone</span><br><span>• </span>Riduce e diffonde il Qi di Polmone<br><span>• </span>Purifica il Calore e umidifica il Polmone<br><span>• </span>Purifica il Calore e blocca il sanguinamento<br><span>• </span>Allevia le condizioni acute<br></p><p><b>Applicazioni</b><br><span>• </span>Affanno<br><span>• </span>Asma<br><span>• </span>Dolore al petto<br><span>• </span>Tosse <br><span>• </span>Gola gonfia e dolorante<br><span>• </span>Afonia momentanea<br><span>• </span>Febbre senza sudorazione<br><span>• </span>Sputo o vomito di sangue <br><span>• </span>Dolore a gomito, braccio e dita<br></p><p><b>Moxa</b><br><span>• </span>Nessuna controindicazione<br></p><p><b>Ubicazione</b><br><span>• </span>Arto superiore<br><span>• </span>Sul muscolo flessore radiale del carpo<br><span>• </span>A 7 cun da 9.LU prossimalmente<br><span>• </span>Sulla linea tra 9.LU e 5.LU</p>",
 					ChiaviTsubo: "",
-					noMoxa: false,
-					noGravidanza: false	
 				},
 				{
 					NomeTsubo: "7.LU. Lieque (Sequenza interrotta)",
 					AzioniTsubo: "<p><b>M.T.C.</b><br><span>• </span>Punto chiave del meridiano di <span style=\"font-style:italic;\">Vaso concezione</span><br><span>• </span>Punto Stella del cielo di Ma Danjang<br><span>• </span>Punto <span style=\"font-style:italic;\">luo</span>-collegamento del meridiano di <span style=\"font-style:italic;\">Polmone</span><br><span>• </span>Punto di comando Gao-Wu<br><span>• </span>Espelle il Vento e libera l'esterno<br><span>• </span>Favorisce la discesa del Polmone<br><span>• </span>Riduce il Vento e il flegma<br><span>• </span>Dona beneficio a testa e nuca<br><span>• </span>Regola i passaggi dell'acqua<br><span>• </span>Riequilibra e apre il meridiano di Vaso concezione<br><span>• </span>Favorisce la circolazione del Qi nel meridiano<br><span>• </span>Attenua il dolore<br></p><p><b>Applicazioni</b><br><span>• </span>Febbre e brividi<br><span>• </span>Gonfiore acuto degli arti<br><span>• </span>Congestione<br><span>• </span>Scolo nasale<br><span>• </span>Ostruzione dolorosa della gola<br><span>• </span>Affanno<br><span>• </span>Dispnea<br><span>• </span>Asma<br><span>• </span>Tosse<br><span>• </span>Cefalea<br><span>• </span>Collo e nuca rigidi<br><span>• </span>Emicrania<br><span>• </span>Deviazione di bocca e occhi<br><span>• </span>Epilessia<br><span>• </span>Sangue nelle urine<br><span>• </span>Minzione difficoltosa<br><span>• </span>Dolore ai genitali<br><span>• </span>Emissione seminale<br><span>• </span>Sbadigli frequenti<br><span>• </span>Disturbi della memoria<br><span>• </span>Punto prossimale importante per i problemi del pollice<br></p><p><b>Moxa</b><br><span>• </span>Nessuna controindicazione<br></p><p><b>Ubicazione</b><br><span>• </span>Faccia radiale dell'avambraccio<br><span>• </span>Tra i tendini dei muscoli adduttore lungo del pollice e il brachioradiale <br><span>• </span>A 1,5 cun da 5.LI prossimalmente</p>",
 					ChiaviTsubo: "",
-					noMoxa: false,
-					noGravidanza: false	
 				},
 				{
 					NomeTsubo: "8.LU. Jingqu (Grondaia del canale)",
 					AzioniTsubo: "<p><b>M.T.C.</b><br><span>• </span>Punto <span style=\"font-style:italic;\">jing</span>-fiume e Metallo del meridiano di <span style=\"font-style:italic;\">Polmone</span><br><span>• </span>Riduce il Qi di Polmone <br><span>• </span>Calma la tosse e l'affanno<br></p><p><b>Applicazioni<br></b><span>• </span>Febbre e brividi<br><span>• </span>Febbre senza sudorazione<br><span>• </span>Tosse<br><span>• </span>Dispnea<br><span>• </span>Affanno<br><span>• </span>Distensione e dolore al petto e all'alto dorso<br></p><p><b>Moxa</b><br><span>• </span>Nessuna controindicazione<br></p><p><b>Ubicazione</b><br><span>• </span>Sopra il polso<br><span>• </span>Nella depressione alla base del processo stiloideo radiale<br><span>• </span>Sul lato radiale dell'arteria radiale<br><span>• </span>A 1 cun da 9.LU prossimalmente<br><span>• </span>Sulla linea tra 9.LU e 6.LU</p>",
 					ChiaviTsubo: "",
-					noMoxa: false,
-					noGravidanza: false	
 				},
 				{
 					NomeTsubo: "9.LU. Taiyuan (Abisso supremo)",
 					AzioniTsubo: "<p><b>M.T.C.</b><br><span>• </span>Punto <span style=\"font-style:italic;\">shu</span>-corrente, <span style=\"font-style:italic;\">yuan</span>-sorgente e Terra del meridiano di <span style=\"font-style:italic;\">Polmone</span><br><span>• </span>Punto <span style=\"font-style:italic;\">hui</span>-riunione dei vasi sanguigni<br><span>• </span>Potenzia il Polmone<br><span>• </span>Trasforma il flegma<br><span>• </span>Favorisce la discesa del Polmone<br><span>• </span>Regola e armonizza i \"cento vasi\"<br><span>• </span>Favorisce circolazione del Qi nel meridiano<br><span>• </span>Attenua il dolore<br></p><p><b>Applicazioni</b><br><span>• </span>Affanno<br><span>• </span>Dispnea<br><span>• </span>Asma<br><span>• </span>Tosse (anche con catarro acquoso)<br><span>• </span>Respiro corto<br><span>• </span>Calore nei palmi<br><span>• </span>Gola secca<br><span>• </span>Vomito di sangue<br><span>• </span>Sbadigli frequenti<br><span>• </span>Agitazione con dolore al Cuore <br><span>• </span>Delirio maniacale<br><span>• </span>Sindrome con assenza di polso<br><span>• </span>Dolore a spalla, dorso e fossa sopraclavicolare<br></p><p><b>Moxa</b><br><span>• </span>Nessuna controindicazione<br></p><p><b>Ubicazione</b><br><span>• </span>Sull'articolazione del polso<br><span>• </span>Nell'avvallamento tra l'arteria radiale e il tendine dell'adduttore lungo del pollice<br><span>• </span>Sul bordo prossimale dell'osso piriforme<br><span>• </span>Al livello di 7.HT (che si trova sul bordo prossimale dell'osso pisiforme)</p>",
 					ChiaviTsubo: "",
-					noMoxa: false,
-					noGravidanza: false	
 				},
 				{
 					NomeTsubo: "10.LU. Yuji (Bordo del pesce)",
 					AzioniTsubo: "<p><b>M.T.C.</b><br><span>• </span>Punto <span style=\"font-style:italic;\">ying</span>-ruscello e Fuoco del meridiano di <span style=\"font-style:italic;\">Polmone</span><br><span>• </span>Dona beneficio alla gola<br><span>• </span>Purifica il Calore di Polmone<br><span>• </span>Riduce il Qi ribelle<br><span>• </span>Riequilibra Stomaco e Cuore<br></p><p><b>Applicazioni</b><br><span>• </span>Ostruzione dolorosa della gola<br><span>• </span>Gola secca<br><span>• </span>Afonia momentanea<br><span>• </span>Tosse senza sudorazione (anche con sangue)<br><span>• </span>Febbre<br><span>• </span>Agitazione<br><span>• </span>Paura e tristezza<br><span>• </span>Mania e collera<br><span>• </span>Male al ventre con impossibilità di mangiare<br><span>• </span>Vomito<br><span>• </span>Tosse con singhiozzo<br><span>• </span>Asceso mammario<br><span>• </span>Dolore ai denti<br></p><p><b>Moxa</b><br><span>• </span>Nessuna controindicazione<br></p><p><b>Ubicazione</b><br><span>• </span>Sul culmine dell'eminenza tenar della mano<br><span>• </span>Nell'avvallamento tra il punto medio del bordo del primo metacarpo e i muscoli tenar<br></p>",
 					ChiaviTsubo: "",
-					noMoxa: false,
-					noGravidanza: false	
 				},
 				{
 					NomeTsubo: "11.LU. Shaoshang (Piccolo shang)",
 					AzioniTsubo: "<p><b>M.T.C.</b><br><span>• </span>Punto <span style=\"font-style:italic;\">jing</span>-pozzo e Legno del meridiano di <span style=\"font-style:italic;\">Polmone </span><br><span>• </span>Uno dei 13 \"punti Demone\" per il medico Sun Simiao indicati per curare la dissociazione tra Hun e Po<br><span>• </span>Recupera la coscienza<br><span>• </span>Purifica il Calore<br><span>• </span>Dona beneficio alla gola<br></p><p><b>Applicazioni</b><br><span>• </span>Perdita di coscienza da apoplessia<br><span>• </span>Gonfiore acuto<br><span>• </span>Congestione e dolore alla gola<br><span>• </span>Orecchioni<br><span>• </span>Manie</p><p><b>Moxa</b><br><span>• </span>Nessuna controindicazione<br></p><p><b>Ubicazione</b><br><span>• </span>Dorso del pollice<br><span>• </span>Sulla giunzione delle linee tangenti al bordo radiale<br><span>• </span>A 0,1 cun dall'angolo distale dell'unghia<br></p>",
 					ChiaviTsubo: "",
-					noMoxa: false,
-					noGravidanza: false	
 				}
 			]
 		},
 		"GV": {
 			NomeMeridiano: "Vaso governatore",
-			cartella: "vaso_governatore",
 			tsubo: [
 				{
 					NomeTsubo: "1.GV. Changqiang (Lungo duro)",
 					AzioniTsubo: "<p><b>M.T.C.</b><br><span>• </span>Punto <span style=\"font-style:italic;\">luo</span>-collegamento di <span style=\"font-style:italic;\">Vaso governatore</span><br><span>• </span>Punto d'incontro dei meridiani di <span style=\"font-style:italic;\">Vaso governatore</span>, <span style=\"font-style:italic;\">Vaso concezione</span>, <span style=\"font-style:italic;\">Cistifellea </span>e <span style=\"font-style:italic;\">Rene</span><br><span>• </span>Favorisce la circolazione del Qi nel meridiano<br><span>• </span>Attenua il dolore<br><span>• </span>Calma lo Shen<br><span>• </span>Tratta le emorroidi</p><p><b>Applicazioni</b><br><span>• </span>Prolasso del retto<br><span>• </span>Difficoltà di minzione e defecazione<br><span>• </span>Infezione urinaria dolorosa<br><span>• </span>Ritenzione urinaria<br><span>• </span>Emissione di seme<br><span>• </span>Rigidità del rachide<br><span>• </span>Epilessia da spavento<br></p><p><b>Moxa</b><br><span>• </span>Controindicato<br></p><p><b>Ubicazione</b><br><span>• </span>Sulla linea mediana<br><span>• </span>Esattamente tra coccige e ano<br></p>",
 					ChiaviTsubo: "",
-					noMoxa: true,
-					noGravidanza: false	
 				},
 				{
 					NomeTsubo: "2.GV. Yaoshu (Shu dei lombi)",
 					AzioniTsubo: "<p><b>M.T.C.</b><br><span>• </span>Giova alla regione lombare <br><span>• </span>Giova alle gambe<br><span>• </span>Disperde il Vento-Umidità<br></p><p><b>Applicazioni</b><br><span>• </span>Per dolore al sacro<br><span>• </span>Per dolore alla regione lombare che si irradia ai fianchi e lungo le gambe<br></p><p><b>Moxa</b><br><span>• </span>Poco usato<br><span>• </span>nessuna controindicazione<br></p><p><b>Ubicazione</b><br><span>• </span>Sulla linea mediana<br><span>• </span>Nello iato sacrococcigeo<br></p>",
 					ChiaviTsubo: "",
-					noMoxa: false,
-					noGravidanza: false	
 				},
 				{
 					NomeTsubo: "3.GV. Yaoyangguan (Cancello Yang dei lombi)",
 					AzioniTsubo: "<p><b>M.T.C.</b><br><span>• </span>Dona beneficio a regione lombare e arti inferiori<br><span>• </span>Riequilibra il Jiao inferiore<br><span>• </span>Espelle il Vento-Umidità</p><p><b>Applicazioni</b><br><span>• </span>Incapacità di flettere ed estendere il ginocchio<br><span>• </span>Dolore alla parte esterna del ginocchio<br><span>• </span>Parestesie<br><span>• </span>Rigidità delle articolazioni<br><span>• </span>Impossibilità alla deambulazione<br><span>• </span>Dolore all'inguine e alla regione lombare<br><span>• </span>Impotenza<br><span>• </span>Emissione di seme<br><span>• </span>Disturbi del mestruo<br><span>• </span>Leucorrea<br></p><p><b>Moxa</b><br><span>• </span>Nessuna controindicazione<br></p><p><b>Ubicazione</b><br><span>• </span>Sulla linea mediana del dorso<br><span>• </span>Nell'avvallamento sotto il processo spinoso della quarta vertebra lombare (L4)<br><span>• </span>Allo stesso livello di 25.BL</p>",
 					ChiaviTsubo: "",
-					noMoxa: false,
-					noGravidanza: false	
 				},
 				{
 					NomeTsubo: "4.GV. Mingmen (Porta della vita)",
 					AzioniTsubo: "<p><b>M.T.C.</b><br><span>• </span>Riequilibra il meridiano di Vaso governatore<br><span>• </span>Rafforza i Reni<br><span>• </span>Dona beneficio alla regione lombare<br><span>• </span>Purifica il Calore</p><p><b>Applicazioni</b><br><span>• </span>Malaria<br><span>• </span>Sindrome delle \"ossa fumanti\"<br><span>• </span>Capogiri<br><span>• </span>Acufeni<br><span>• </span>Forte mal di testa (come se si spaccasse)<br><span>• </span>Epilessia<br><span>• </span>Rigidità e male alla regione lombare<br><span>• </span>Disturbi dei genitali e dell'ano<br><span>• </span>Torpidità bianche<br><span>• </span>Emissione di seme<br><span>• </span>Leucorrea<br><span>• </span>Feci con presenza di sangue<br><span>• </span>Prolasso del retto<br><span>• </span>Emorroidi<br></p><p><b>Moxa</b><br><span>• </span>Controindicato su persone al di sotto dei 20 anni di età<span>, secondo alcuni testi classici</span></p><p><b>Ubicazione</b><br><span>• </span>Sulla linea mediana del dorso<br><span>• </span>Nell'avvallamento sotto il processo spinoso della seconda vertebra lombare (L2)<br><span>• </span>Allo stesso livello di 23.BL</p>",
 					ChiaviTsubo: "",
-					noMoxa: true,
-					noGravidanza: false	
 				},
 				{
 					NomeTsubo: "5.GV. Xuanshu (Cardine sospeso)",
 					AzioniTsubo: "<p><b>M.T.C.</b><br><span>• </span>Dona beneficio alla regione lombare del rachide<br><span>• </span>Dona beneficio al Jiao inferiore<br></p><p><b>Applicazioni</b><br><span>• </span>Rigidità del rachide<br><span>• </span>Feci con presenza di cibo indigerito<br><span>• </span>Dissenteria<br><span>• </span>Retrazione dei testicoli<br><span>• </span>Sindromi Shan</p><p><b>Moxa</b><br><span>• </span>Nessuna controindicazione<br></p><p><b>Ubicazione</b><br><span>• </span>Sulla linea mediana del dorso<br><span>• </span>Nell'avvallamento sotto il processo spinoso della prima vertebra lombare (L1)<br><span>• </span>Allo stesso livello di 22.BL</p>",
 					ChiaviTsubo: "",
-					noMoxa: false,
-					noGravidanza: false	
 				},
 				{
 					NomeTsubo: "6.GV. Jizhong (Centro della colonna)",
 					AzioniTsubo: "<p><b>M.T.C.</b><br><span>• </span>Disperde l'umidità<br><span>• </span>Potenzia la Milza<br><span>• </span>Dona beneficio al rachide<br></p><p><b>Applicazioni</b><br><span>• </span>Ittero<br><span>• </span>Dissenteria<br><span>• </span>Pienezza addominale <br><span>• </span>Masse addominali<br><span>• </span>Feci con presenza di sangue<br><span>• </span>Emorroidi<br><span>• </span>Prolasso del retto nei bambini<br><span>• </span>Rigidità del rachide a livello lombare<br><span>• </span>Epilessia<br><span>• </span>Febbre da Calore<br></p><p></p><p><b>Moxa</b><br><span>• </span>Nessuna controindicazione<br></p><p><b>Ubicazione</b><br><span>• </span>Sulla linea mediana del dorso<br><span>• </span>Nell'avvallamento sotto il processo spinoso dell'undicesima vertebra dorsale (D11)<br><span>• </span>Allo stesso livello di 20.BL</p><p></p>",
 					ChiaviTsubo: "",
-					noMoxa: false,
-					noGravidanza: false	
 				},
 				{
 					NomeTsubo: "7.GV. Zhongshu (Cardine centrale)",
 					AzioniTsubo: "<p><b>M.T.C.</b><br><span>• </span>Rafforza il Jiao medio<br><span>• </span>Dona beneficio al rachide</p><p><b>Applicazioni</b><br><span>• </span>Poco usato<br><span>• </span>Ittero<br><span>• </span>Amenorrea<br><span>• </span>Male al dorso a alla regione lombare<br><span>• </span>Pienezza addominale<br><span>• </span>Inappetenza<br></p><p><b>Moxa</b><br><span>• </span>Controindicato, secondo alcuni testi classici<br></p><p><b>Ubicazione</b><br><span>• </span>Sulla linea mediana del dorso<br><span>• </span>Nell'avvallamento sotto il processo spinoso della decima vertebra dorsale (D10)<br><span>• </span>Allo stesso livello di 19.BL</p><p></p>",
 					ChiaviTsubo: "",
-					noMoxa: true,
-					noGravidanza: false	
 				},
 				{
 					NomeTsubo: "8.GV. Jinsuo (Contrazione delle articolazioni)",
 					AzioniTsubo: "<p><b>M.T.C.</b><br><span>• </span>Favorisce la circolazione del Qi nel meridiano di Fegato<br><span>• </span>Calma il Vento<br><span>• </span>Calma lo Shen<br><span>• </span>Allenta gli spasmi</p><p><b>Applicazioni</b><br><span>• </span>Occhi sbarrati<br><span>• </span>Epilessia<br><span>• </span>Mania<br><span>• </span>Camminata da folle<br><span>• </span>Rabbia<br><span>• </span>Rigidità e contrattura del rachide</p><p></p><p><b>Moxa</b><br><span>• </span>Nessuna controindicazione</p><p><b>Ubicazione</b><br><span>• </span>Sulla linea mediana del dorso<br><span>• </span>Nell'avvallamento sotto il processo spinoso della nona vertebra dorsale (D9)<br><span>• </span>Allo stesso livello di 18.BL</p><p></p>",
 					ChiaviTsubo: "",
-					noMoxa: false,
-					noGravidanza: false	
 				},
 				{
 					NomeTsubo: "9.GV. Zhiyang (Raggiungere lo Yang)",
 					AzioniTsubo: "<p><b>M.T.C.</b><br><span>• </span>Disperde l'Umidità <br><span>• </span>Riequilibra il Jiao medio<br><span>• </span>Tratta l'ittero<br><span>• </span>Rinforza la Milza<br><span>• </span>Scioglie il torace<br></p><p><b>Applicazioni</b><br><span>• </span>Ittero<br><span>• </span>Inappetenza<br><span>• </span>Emaciazione<br><span>• </span>Pesantezza dei quattro arti<br><span>• </span>Pienezza toracica e della regione costale laterale<br><span>• </span>Tosse<br><span>• </span>Dispnea<br></p><p></p><p><b>Moxa</b><br><span>• </span>Nessuna controindicazione<br></p><p><b>Ubicazione</b><br><span>• </span>Sulla linea mediana del dorso<br><span>• </span>Nell'avvallamento sotto il processo spinoso della settima vertebra dorsale (D7)<br><span>• </span>Allo stesso livello di 17.BL</p><p></p>",
 					ChiaviTsubo: "",
-					noMoxa: false,
-					noGravidanza: false	
 				},
 				{
 					NomeTsubo: "10.GV. Lingtai (Torre dello spirito)",
 					AzioniTsubo: "<p><b>M.T.C.</b><br><span>• </span>Calma la tosse<br><span>• </span>Attenua l'affanno<br><span>• </span>Purifica il Calore<br><span>• </span>Disintossica dai veleni<br></p><p><b>Applicazioni</b><br><span>• </span>Foruncoli<br><span>• </span>Linfangite<br><span>• </span>Noduli piccoli, duri, profondi e purulenti<br></p><p><b>Moxa</b><br><span>• </span>Nessuna controindicazione<br></p><p><b>Ubicazione</b><br><span>• </span>Sulla linea mediana del dorso<br><span>• </span>Nell'avvallamento sotto il processo spinoso della sesta vertebra dorsale (D6)<br><span>• </span>Allo stesso livello di 16.BL</p>",
 					ChiaviTsubo: "",
-					noMoxa: false,
-					noGravidanza: false	
 				},
 				{
 					NomeTsubo: "11.GV. Shendao (Via dello Shen)",
 					AzioniTsubo: "<p><b>M.T.C.</b><br><span>• </span>Calma lo Shen<br><span>• </span>Purifica il Calore<br><span>• </span>Calma il Vento<br><span>• </span>Potenzia Cuore e Polmoni</p><p><b>Applicazioni</b><br><span>• </span>Epilessia<br><span>• </span>Spasmi clonici<br><span>• </span>Trisma mandibolare<br><span>• </span>Palpitazioni<br><span>• </span>Timidezza e agitazione<br><span>• </span>Disorientamento<br><span>• </span>Scarsa memoria<br><span>• </span>Tristezza<br><span>• </span>Ansia<br></p><p></p><p><b>Moxa</b><br><span>• </span>Nessuna controindicazione<br></p><p><b>Ubicazione</b><br><span>• </span>Sulla linea mediana del dorso<br><span>• </span>Nell'avvallamento sotto il processo spinoso della quinta vertebra dorsale (D5)<br><span>• </span>Allo stesso livello di 15.BL</p><p></p>",
 					ChiaviTsubo: "",
-					noMoxa: false,
-					noGravidanza: false	
 				},
 				{
 					NomeTsubo: "12.GV. Shenzhu (Pilastro del corpo)",
 					AzioniTsubo: "<p><b>M.T.C.</b><br><span>• </span>Calma lo Shen<br><span>• </span>Calma il Vento<br><span>• </span>Purifica il Calore da Polmone e Cuore</p><p><b>Applicazioni</b><br><span>• </span>Agitazione e grida deliranti<br><span>• </span>Camminata folle<br><span>• </span>Visione di fantasmi<br><span>• </span>Rabbia con desiderio di uccidere<br><span>• </span><span>Tosse<br></span><span>• </span><span>Dispnea<br></span><span>• </span><span>Febbre</span></p><p></p><p><b>Moxa</b><br><span>• </span>Nessuna controindicazione<br></p><p><b>Ubicazione</b><br><span>• </span>Sulla linea mediana del dorso<br><span>• </span>Nell'avvallamento sotto il processo spinoso della terza vertebra dorsale (D3)<br><span>• </span>Allo stesso livello di 13.BL</p><p></p>",
 					ChiaviTsubo: "",
-					noMoxa: false,
-					noGravidanza: false	
 				},
 				{
 					NomeTsubo: "13.GV. Taodao (Via per la felicità)",
 					AzioniTsubo: "<p><b>M.T.C.</b><br><span>• </span>Punto d'incontro dei meridiani di <span style=\"font-style:italic;\">Vaso governatore</span> e <span style=\"font-style:italic;\">Vescica urinaria</span><br><span>• </span>Tratta la malaria<br><span>• </span>Purifica il Calore<br><span>• </span>Riequilibra il meridiani di Vaso governatore<br></p><p><b>Applicazioni</b><br><span>• </span>Malaria<br><span>• </span>Febbre e brividi<br><span>• </span>Sindrome delle \"ossa fumanti\"<br><span>• </span>Mancanza di sudorazione<br><span>• </span>Disorientamento e infelicità<br></p><p></p><p><b>Moxa</b><br><span>• </span>Nessuna controindicazione<br></p><p><b>Ubicazione</b><br><span>• </span>Sulla linea mediana del dorso<br><span>• </span>Nell'avvallamento sotto il processo spinoso della prima vertebra dorsale (D1)<br><span>• </span>Allo stesso livello di 11.BL</p><p></p>",
 					ChiaviTsubo: "",
-					noMoxa: false,
-					noGravidanza: false	
 				},
 				{
 					NomeTsubo: "14.GV. Dazhui (Grande vertebra)",
 					AzioniTsubo: "<p><b>M.T.C.</b><br><span>• </span>Punto d'incontro del meridiano di <span style=\"font-style:italic;\">Vaso governatore</span> con i 6 meridiani Yang di mani e piedi<br><span>• </span>Punto Mare del Qi<br><span>• </span>Potenzia l'esterno<br><span>• </span>Calma ed espelle il Vento<br><span>• </span>Purifica il Calore<br><span>• </span>Tratta la malaria<br><span>• </span>Compensa il vuoto<br></p><p><b>Applicazioni</b><br><span>• </span>Febbre e brividi<br><span>• </span>Avversione al Vento con fremiti<br><span>• </span>Mal di gola<br><span>• </span>Febbre alta con agitazione<br><span>• </span>Malaria<br><span>• </span>Sudorazione notturna<br><span>• </span>Mancanza di forza<br><span>• </span>Epilessia<br><span>• </span>Disturbi del collo e del rachide<br><span>• </span>Epistassi<br></p><p></p><p><b>Moxa</b><br><span>• </span>Nessuna controindicazione<br></p><p><b>Ubicazione</b><br><span>• </span>Sulla linea mediana delle cervicali<br><span>• </span>Nell'avvallamento sotto il processo spinoso della settima vertebra cervicale (C7)<br></p><p></p>",
 					ChiaviTsubo: "",
-					noMoxa: false,
-					noGravidanza: false	
 				},
 				{
 					NomeTsubo: "15.GV. Yamen (Porta del mutismo)",
 					AzioniTsubo: "<p><b>M.T.C.</b><br><span>• </span>Punto d'incontro dei meridiani di <span style=\"font-style:italic;\">Vaso governatore</span> e <span style=\"font-style:italic;\">Yangweimai</span><br><span>• </span>Punto Mare del Qi<br><span>• </span>Espelle il Vento<br><span>• </span>Dona beneficio al collo e al rachide<br><span>• </span>Dona beneficio alla lingua<br><span>• </span>Tratta il mutismo</p><p><b>Applicazioni</b><br><span>• </span>Mutismo e afonia improvvisa<br><span>• </span>Flaccidità della lingua<br><span>• </span>Rigidità cervicale<br><span>• </span>Perdita di coscienza <br><span>• </span>Coma improvviso<br><span>• </span>Epilessia<br><span>• </span>Spasmi clonici<br><span>• </span>Febbre con brividi e sudorazione<br><span>• </span>Epistassi<br></p><p></p><p><b>Moxa</b><br><span>• </span>Controindicato<span>, secondo alcuni testi classici</span></p><p><b>Ubicazione</b><br><span>• </span>Sulla linea mediana della nuca<br><span>• </span>Nell'avvallamento sotto il processo spinoso dell'Atlante (C1)<br><span>• </span>A 0,5 cun sotto 16.GV e 0,5 cun sopra l'attaccatura dei capelli</p><p></p>",
 					ChiaviTsubo: "",
-					noMoxa: true,
-					noGravidanza: false	
 				},
 				{
 					NomeTsubo: "16.GV. Fengfu (Palazzo del Vento)",
 					AzioniTsubo: "<p><b>M.T.C.</b><br><span>• </span>Punto d'incontro dei meridiani di <span style=\"font-style:italic;\">Vaso governatore</span> e <span style=\"font-style:italic;\">Yangweimai</span><br><span>• </span>Punto Mare dei midolli<br><span>• </span>Punto Finestra del cielo<br><span>• </span>Uno dei 13 \"punti Demone\" per il medico Sun Simiao indicati per curare la dissociazione tra Hun e Po<br><span>• </span>Calma lo Shen<br><span>• </span>Espelle il Vento<br><span>• </span>Alimenta i midolli<br><span>• </span>Dona beneficio a testa e collo<br></p><p><b>Applicazioni</b><span><span><br></span>• </span>Mal di testa<br><span>• </span>Brividi<br><span>• </span>Sudorazione<br><span>• </span>Capogiri<br><span>• </span>Visione offuscata<br><span>• </span>Occhi sbarrati rivolti in alto<br><span>• </span>Rigidità cervicale<br><span>• </span>Ictus<br><span>• </span>Emiplegia<br><span>• </span>Desiderio di suicidarsi<br><span>• </span>Fobie e tristezza e paura con palpitazioni<br><span>• </span>Parestesie delle gambe<br><span>• </span>Disturbi degli organi di senso <br><span>• </span>Afonia improvvisa </p><p></p><p><b>Moxa</b><br><span>• </span>Nessuna controindicazione</p><p><b>Ubicazione</b><br><span>• </span>Sulla linea mediana della nuca<br><span>• </span>Nell'avvallamento sotto la protuberanza occipitale esterna</p><p></p>",
 					ChiaviTsubo: "",
-					noMoxa: false,
-					noGravidanza: false	
 				},
 				{
 					NomeTsubo: "17.GV. Naohu (Porta del cervello)",
 					AzioniTsubo: "<p><b>M.T.C.</b><span><br>• </span>Punto d'incontro dei meridiani di <span style=\"font-style:italic;\">Vaso governatore</span> e <span style=\"font-style:italic;\">Vescica urinaria</span><br><span>• </span>Calma lo Shen<br><span>• </span>Espelle il Vento<br><span>• </span>Attenua il dolore<br><span>• </span>Dona beneficio agli occhi<br></p><p><b>Applicazioni</b><br><span>• </span>Diminuzione della vista<br><span>• </span>Miopia<br><span>• </span>Dolore agli occhi<br><span>• </span>Eccessiva lacrimazione<br><span>• </span>Pesantezza del capo<br><span>• </span>Gonfiore e dolore al capo<br><span>• </span>Dolore alla faccia<br><span>• </span>Viso arrossato <br><span>• </span>Rigidità e dolore cervicale<br><span>• </span>Epilessia<br><span>• </span>Spasmi clonici<br><span>• </span>Trisma mandibolare<br><span>• </span>Afonia improvvisa<br><span>• </span>Sanguinamento dalla radice della lingua<br><span>• </span>Male alle ossa<br><span>• </span>Febbre e brividi<br><span>• </span>Eccesso di sudorazione<br><span>• </span>Occhi gialli<br><span>• </span>Ittero</p><p></p><p><b>Moxa</b><br><span>• </span>Controindicato, secondo alcuni testi classici</p><p><b>Ubicazione</b><br><span>• </span>Sulla linea mediana della testa<br><span>• </span>Nell'avvallamento sopra la protuberanza occipitale esterna<br><span>• </span>1,5 cun sopra 16.GV</p><p></p>",
 					ChiaviTsubo: "",
-					noMoxa: true,
-					noGravidanza: false	
 				},
 				{
 					NomeTsubo: "18.GV. Qiangjian (Spazio non cedevole)",
 					AzioniTsubo: "<p><b>M.T.C.</b><br><span>• </span>Calma lo Shen<br><span>• </span>Attenua il dolore<br><span>• </span>Calma il  Vento<br></p><p><b>Applicazioni</b><br><span>• </span>Mal di testa insopportabile<br><span>• </span>Torcicollo<br><span>• </span>Epilessia<br><span>• </span>Insonnia<br><span>• </span>Sindrome maniaco-depressiva<br><span>• </span><span>Capogiri con agitazione<br></span><span>• </span><span>Nausea e vomito di saliva schiumosa</span><span> </span></p><p></p><p><b>Moxa</b><br><span>• </span>Nessuna controindicazione</p><p><b>Ubicazione</b><br><span>• </span>Sulla linea mediana della testa<br><span>• </span>A metà tra 16.GV e 20.GV<br><span>• </span>1,5 cun sopra 17.GV</p><p></p>",
 					ChiaviTsubo: "",
-					noMoxa: false,
-					noGravidanza: false	
 				},
 				{
 					NomeTsubo: "19.GV. Houding (Dietro la corona)",
 					AzioniTsubo: "<p><b>M.T.C.</b><br><span>• </span>Calma lo Shen<br><span>• </span>Attenua il dolore<br><span>• </span>Calma il  Vento</p><p><b>Applicazioni</b><br><span>• </span>Torcicollo<br><span>• </span>Emicrania<br><span>• </span>Capogiri <br><span>• </span>Insonnia<br><span>• </span>Convulsioni epilettiche<br><span>• </span>Camminata da folle</p><p></p><p><b>Moxa</b><br><span>• </span>Nessuna controindicazione</p><p><b>Ubicazione</b><br><span>• </span>Sulla linea mediana della testa<br><span>• </span>A metà tra 18.GV e 20.GV</p><p></p>",
 					ChiaviTsubo: "",
-					noMoxa: false,
-					noGravidanza: false	
 				},
 				{
 					NomeTsubo: "20.GV. Baihui (Cento incontri)",
 					AzioniTsubo: "<p><b>M.T.C.</b><br><span>• </span>Punto d'incontro dei meridiani di <span style=\"font-style:italic;\">Vaso governatore</span>, <span style=\"font-style:italic;\">Vescica urinaria</span>, <span style=\"font-style:italic;\">Cistifellea</span>, <span style=\"font-style:italic;\">Triplice riscaldatore</span> e <span style=\"font-style:italic;\">Fegato</span><br><span>• </span>Punto Mare dei midolli<br><span>• </span>Calma lo Shen<br><span>• </span>Calma il Vento<br><span>• </span>Sottomette e innalza lo Yang<br><span>• </span>Dona beneficio a testa e organi di senso<br><span>• </span>Alimenta i midolli<br><span>• </span>Dona beneficio al cervello <br></p><p><b>Applicazioni</b><br><span>• </span>Perdita di coscienza<br><span>• </span>Prolasso di retto, utero o vagina<br><span>• </span>Dissenteria incessante<br><span>• </span>Senso di oppressione al Cuore<br><span>• </span>Spavento con palpitazioni<br><span>• </span>Scarsa memoria<br><span>• </span>Disorientamento<br><span>• </span>Tristezza con desiderio di morire<br><span>• </span>Male alla parte inferiore delle gambe<br><span>• </span>Disturbi della vista<br><span>• </span>Ictus<br><span>• </span>Capogiri<br><span>• </span>Acufeni<br><span>• </span>Mal di testa<br><span>• </span>Pesantezza della testa<br><span>• </span>Tetania</p><p><b>Moxa</b><br><span>• </span>Nessuna controindicazione<br></p><p><b>Ubicazione</b><br><span>• </span>Sulla linea mediana del capo<br><span>• </span>Nella depressione posteriore all'attaccatura frontale dei capelli, a 5 cun di distanza<br><span>• </span>Sulla sommità del capo<br><span>• </span>Il punto più alto del corpo mantenendo la testa dritta con lo sguardo all'orizzonte<br></p>",
 					ChiaviTsubo: "",
-					noMoxa: false,
-					noGravidanza: false	
 				},
 				{
 					NomeTsubo: "21.GV. Qianding (Davanti alla corona)",
 					AzioniTsubo: "<p><b>M.T.C.</b><br><span>• </span>Espelle il Vento<br><span>• </span>Tratta le convulsioni<br><span>• </span>Dona beneficio al capo<br></p><p><b>Applicazioni</b><br><span>• </span>Poco usato<br><span>• </span>Rossore e gonfiore della faccia<br><span>• </span>Edema<br><span>• </span>Rinorrea chiara<br><span>• </span>Capogiri visivi<br><span>• </span>Epilessia </p><p><b>Moxa</b><br><span>• </span>Controindicata su bambini con fontanella aperta<br></p><p><b>Ubicazione</b><br><span>• </span>Sulla linea mediana del capo<br><span>• </span>1,5 cun anteriore al punto 20.GV<br><span>• </span>3,5 cun posteriore all'attaccatura frontale dei capelli<br></p>",
 					ChiaviTsubo: "",
-					noMoxa: false,
-					noGravidanza: false	
 				},
 				{
 					NomeTsubo: "22.GV. Xinhui (Incontro delle fontanelle)",
 					AzioniTsubo: "<p><b>M.T.C.</b><br><span>• </span>Espelle il Vento<br><span>• </span>Dona beneficio alla testa e al naso<br></p><p><b>Applicazioni</b><br><span>• </span>Poco usato<br><span>• </span>Epistassi<br><span>• </span>Congestione nasale<br><span>• </span>Rinorrea eccessiva nei bambini<br><span>• </span>Male al naso<br><span>• </span>Polipi nasali<br><span>• </span>Mal di testa cronico o da eccessivo consumo di alcool<br><span>• </span>Capogiri<br><span>• </span>Faccia gonfia e rossa<br><span>• </span>Forfora<br><span>• </span>Sonnolenza<br></p><p><b>Moxa</b><br><span>• </span>Controindicato nei bambini con fontanella aperta<br></p><p><b>Ubicazione</b><br><span>• </span>Sulla linea mediana del capo<br><span>• </span>A 2 cun di distanza dall'attaccatura frontale dei capelli<br></p>",
 					ChiaviTsubo: "",
-					noMoxa: false,
-					noGravidanza: false	
 				},
 				{
 					NomeTsubo: "23.GV. Shangxing (Stella superiore)",
 					AzioniTsubo: "<p><b>M.T.C.<br></b><span>• </span>Uno dei 13 \"punti Demone\" per il medico Sun Simiao indicati per curare la dissociazione tra Hun e Po<br><span>• </span>Dona beneficio alla testa agli occhi<br><span>• </span>Espelle il Vento<br><span>• </span>Scioglie gli edemi<br><span>• </span>Calma lo Shen<br></p><p><b>Applicazioni</b><br><span>• </span>Miopia<br><span>• </span>Dolore agli occhi<br><span>• </span>Diminuzione della vista<br><span>• </span>Eccessivo scolo nasale<br><span>• </span>Sinusite e rinite<br><span>• </span>Capogiri visivi<br><span>• </span>Faccia rossa e gonfia<br></p><p><b>Moxa</b><br><span>• </span>Controindicato nei bambini con fontanella aperta<br></p><p><b>Ubicazione</b><br><span>• </span>Sulla linea mediana del capo<br><span>• </span>1 cun posteriore all'attaccatura frontale dei capelli (24GV)<br></p>",
 					ChiaviTsubo: "",
-					noMoxa: false,
-					noGravidanza: false	
 				},
 				{
 					NomeTsubo: "24.GV. Shenting (Cortile dello Shen)",
 					AzioniTsubo: "<p><b>M.T.C.</b><br><span>• </span>Punto d'incontro dei meridiani di <span style=\"font-style:italic;\">Vaso governatore</span>, <span style=\"font-style:italic;\">Vescica urinaria</span> e <span style=\"font-style:italic;\">Stomaco</span><br><span>• </span>Calma lo Shen<br><span>• </span>Espelle il Vento<br><span>• </span>Dona beneficio a testa, cervello, naso e occhi<br></p><p><b>Applicazioni</b><br><span>• </span>Naso chiuso<br><span>• </span>Rinorrea chiara e incessante<br><span>• </span>Sensazione di freddo al capo<br><span>• </span>Febbre e brividi associati a mal di testa<br><span>• </span>Epistassi<br><span>• </span>Lacrimazione<br><span>• </span>Perdita di coscienza<br><span>• </span>Occhi sbarrati rivolti in alto<br><span>• </span>Capogiri<br><span>• </span>Epilessia<br><span>• </span>Sindrome maniaco-depressiva<br><span>• </span>Spavento e palpitazioni<br><span>• </span>Insonnia</p><p></p><p><b>Moxa</b><br><span>• </span>Nessuna controindicazione<br></p><p><b>Ubicazione</b><br><span>• </span>Sulla linea mediana del capo<br><span>• </span>0,5 cun posteriore all'attaccatura frontale dei capelli (24GV)<br><span>• </span>0,5 cun anteriormente a 23.GV</p><p></p>",
 					ChiaviTsubo: "",
-					noMoxa: false,
-					noGravidanza: false	
 				},
 				{
 					NomeTsubo: "25.GV. Suliao (Fessura bianca)",
 					AzioniTsubo: "<p><b>M.T.C.</b><br><span>• </span>Dona beneficio al naso<br></p><p><b>Applicazioni</b><br><span>• </span>Disturbi procurati da intossicazione alcolica<br><span>• </span>Rinorrea copiosa<br><span>• </span>Rinite<br><span>• </span>Epistassi<br><span>• </span>Naso da alcolista<br><span>• </span>Polipi nasali<br><span>• </span>Dispnea e ipotensione<br><span>• </span>Problemi all'olfatto<br><span>• </span>Naso chiuso<br><span>• </span>Ulcere alle narici<br></p><p><b>Moxa</b><br><span>• </span>Usato raramente per il fastidio che crea il fumo<br><span>• </span>Controindicato, secondo alcuni testi classici<br></p><p><b>Ubicazione</b><br><span>• </span>Sulla punta del naso<br></p>",
 					ChiaviTsubo: "",
-					noMoxa: true,
-					noGravidanza: false	
 				},
 				{
 					NomeTsubo: "26.GV. Renzhong (Centro dell'uomo)",
 					AzioniTsubo: "<p><b>M.T.C.</b><br><span>• </span>Punto d'incontro dei meridiani di <span style=\"font-style:italic;\">Vaso governatore</span>, <span style=\"font-style:italic;\">Intestino crasso</span> e <span style=\"font-style:italic;\">Stomaco</span><br><span>• </span>Uno dei 13 \"punti Demone\" per il medico Sun Simiao indicati per curare la dissociazione tra Hun e Po<br><span>• </span><span>Calma lo Shen<br></span><span>• </span>Ripristina la coscienza <br><span>• </span>Dona beneficio a faccia, naso e rachide<br><span>• </span>Espelle il vento<br></p><p><b>Applicazioni</b><span><br>• </span>Instabilità emotiva<br><span>• </span>Shok di vario genere<br><span>• </span>Sindromi psicoemozionali gravi<br><span>• </span>Sindrome maniaco-depressiva<br><span>• </span>Epilessia<br><span>• </span>Strappi lombari acuti principalmente localizzati al centro del rachide<br></p><p><b>Moxa</b><br><span>• </span>Nessuna controindicazione<br><span>• </span>Poco usato per il fastidio del fumo</p><p><b>Ubicazione</b><br><span>• </span>Sulla linea mediana anteriore del capo<br><span>• </span>Sopra il labbro superiore<br><span>• </span>A due terzi della distanza tra labbro e naso</p>",
 					ChiaviTsubo: "",
-					noMoxa: false,
-					noGravidanza: false	
 				},
 				{
 					NomeTsubo: "27.GV. Duiduan (estremità della bocca)",
 					AzioniTsubo: "<p><b>M.T.C.<br></b><span>• </span>Libera il Calore<br><span>• </span>Rigenera i fluidi<br><span>• </span>Dona beneficio alla bocca<br><span>• </span>Calma lo Shen</p><p><b>Applicazioni<br></b><span>• </span>Ulcerazioni nella bocca<br><span>• </span>Alito cattivo<br><span>• </span>Dolore alle gengive<br><span>• </span>Lingua secca<br><span>• </span>Disturbi conseguenti ad elevato consumo di alcol<br><span>• </span>Gonfiore e rigidità delle labbra<br><span>• </span>Epistassi incessante<br><span>• </span>Congestione nasale<br><span>• </span>Depressione<br><span>• </span>Epilessia<br><span>• </span>Mascella bloccata<br><span>• </span>Urine scure<br><span>• </span>Vomito di saliva schiumosa</p><p><b>Ubicazione<br></b><span>• </span>Sulla linea mediana anteriore del capo<br><span>• </span>All'altezza del bordo superiore del labbro superiore</p>",
 					ChiaviTsubo: "",
-					noMoxa: false,
-					noGravidanza: false	
 				},
 				{
 					NomeTsubo: "28.GV. Yinjiao (incrocio delle gengive)",
 					AzioniTsubo: "<p><b>M.T.C.<br></b><span>• </span>Libera il Calore<br><span>• </span>Dona beneficio a gengive, naso e occhi</p><p><b>Applicazioni<br></b><span>• </span>Rossore, gonfiore e dolore alle gengive<br><span>• </span>Erosione delle gengive<br><span>• </span>Gengive sanguinanti<br><span>• </span>Polipi nasali<br><span>• </span>Dolore al naso<br><span>• </span>Congestione nasale<br><span>• </span>Dolore alla fronte<br><span>• </span>Lacrimazione eccessiva<br><span>• </span>Rossore, prurito e dolore all'angolo interno dell'occhio<br><span>• </span>Dolore agli occhi<br><span>• </span>Sfocamento della vista<br><span>• </span>Ostruzione superficiale della vista<br><span>• </span>Rossore in faccia per l'agitazione<br><span>• </span>Ittero<br><span>• </span>Torcicollo</p><p><b>Ubicazione<br></b><span>• </span>All'interno della bocca<br><span>• </span>Sul frenulo superiore<br><span>• </span>Sull'incrocio tra il labbro superiore e la gengiva</p>",
 					ChiaviTsubo: "",
-					noMoxa: false,
-					noGravidanza: false	
 				}
 			]
 		},
 		"CV": {
 			NomeMeridiano: "Vaso concezione",
-			cartella: "vaso_concezione",
 			tsubo: [
 				{
 					NomeTsubo: "1.CV. Huiyin (Incontro degli Yin)",
 					AzioniTsubo: "<p><b>M.T.C.</b><br><span>• </span>Punto d'incontro dei meridiani di <span style=\"font-style:italic;\">Vaso concezione</span> e <span style=\"font-style:italic;\">Vaso governatore</span><br><span>• </span>Uno dei 13 \"punti Demone\" per il medico Sun Simiao indicati per curare la dissociazione tra Hun e Po<br><span>• </span>Ripristina la coscienza<br><span>• </span>Riequilibra lo Yin anteriore e posteriore<br><span>• </span>Calma lo Shen<br><span>• </span>Dissipa l'Umidità-Calore<br></p><p><b>Applicazioni</b><br><span>• </span>Disturbi dell'apparato urogenitale<br><span>• </span>Minzione e defecazione difficoltose<br><span>• </span>Enuresi<br><span>• </span>Impotenza<br><span>• </span>Dolore all'ano e all'uretra<br><span>• </span>Male al glande<br><span>• </span>Dolore o sensazione di freddo al glande<br><span>• </span>Gonfiore dei testicoli<br><span>• </span>Sudore ai genitali<br><span>• </span>Gonfiore e dolore alla vagina<br><span>• </span>Prolasso del retto<br><span>• </span>Emorroidi<br><span>• </span>Prurito e dolore al perineo<br></p><p><b>Moxa</b><br><span>• </span>Controindicato<br></p><p><b>Ubicazione</b><br><span>• </span>Sul perineo<br><span>• </span>A metà tra ano e scroto (negli uomini)<br><span>• </span>A metà tra ano e commissura labiale (nelle donne)<br></p>",
 					ChiaviTsubo: "",
-					noMoxa: true,
-					noGravidanza: true	
 				},
 				{
 					NomeTsubo: "2.CV. Qugu (Osso curvo)",
 					AzioniTsubo: "<p><b>M.T.C.</b><br><span>• </span>Punto d'incontro dei meridiani di <span style=\"font-style:italic;\">Vaso concezione</span> e <span style=\"font-style:italic;\">Fegato</span><br><span>• </span>Favorisce la minzione<br><span>• </span>Riequilibra il Jiao inferiore<br><span>• </span>Rafforza e scalda i Reni<br></p><p><b>Applicazioni</b><span><br>• </span>Disturbi dell'apparato urogenitale<br><span>• </span>Tutte le patologie che possano interessare la zona pelvica<br><span>• </span>Ritenzione di urina per la pressione esercitata del feto<br><span>• </span>Impotenza<br><span>• </span>Emissione seminale<br><span>• </span>Prurito scrotale<br><span>• </span>Contrazione del pene<br><span>• </span>Secchezza e dolore ai genitali<br><span>• </span>Perdite vaginali rosse e bianche<br><span>• </span>Mestrui irregolari<br><span>• </span>Dismenorrea<br><span>• </span>Minzione a goccia e difficoltosa</p><p><b>Moxa</b><br><span>• </span>Controindicato<br></p><p><b>Ubicazione</b><br><span>• </span>Nella zona inferiore dell'addome<br><span>• </span>Lungo la linea mediana<br><span>• </span>A livello del bordo superiore della sinfisi pubica<br><span>• </span>5 cun sotto l'ombelico<br></p>",
 					ChiaviTsubo: "",
-					noMoxa: true,
-					noGravidanza: false	
 				},
 				{
 					NomeTsubo: "3.CV. Zhongji (Stagno centrale)",
 					AzioniTsubo: "<p><b>M.T.C.</b><br><span>• </span>Punto d'incontro dei meridiani di <span style=\"font-style:italic;\">Vaso concezione</span>, <span style=\"font-style:italic;\">Milza</span>, <span style=\"font-style:italic;\">Fegato </span>e <span style=\"font-style:italic;\">Rene</span><br><span>• </span>Punto <span style=\"font-style:italic;\">mu</span>-frontale del meridiano di <span style=\"font-style:italic;\">Vescica urinaria</span><br><span>• </span>Dona beneficio alla vescica e all'utero<br><span>• </span>Controlla la trasformazione del Qi<br><span>• </span>Dissipa l'Umidità-Calore<br><span>• </span>Regola i mestrui<br><span>• </span>Sblocca i ristagni<br><span>• </span>Dona beneficio al Jiao inferiore<br><span>• </span>Rafforza i Reni<br></p><p><b>Applicazioni</b><br><span>• </span>Disturbi urinari<br><span>• </span>Ritenzione di urina in gravidanza<br><span>• </span>Minzione frequente<br><span>• </span>Leucorrea<br><span>• </span>Urine scure<br><span>• </span>Dolore uretrale<br><span>• </span>Emissione seminale<br><span>• </span>Dolore e gonfiore della cervice<br><span>• </span>Masse addominali <br><span>• </span>Mestrui irregolari o assenti<br><span>• </span>Sterilità<br><span>• </span>Ritenzione di placenta o di lochi<br></p><p><b>Moxa</b><br><span>• </span>Controindicato in gravidanza<br></p><p><b>Ubicazione</b><br><span>• </span>Nella zona inferiore dell'addome<br><span>• </span>Lungo la linea mediana<br><span>• </span>A 1 cun sopra il bordo superiore della sinfisi pubica<br><span>• </span>4 cun sotto l'ombelico</p>",
 					ChiaviTsubo: "Punto BO di Vescica",
-					noMoxa: false,
-					noGravidanza: true	
 				},
 				{
 					NomeTsubo: "4.CV. Guanyuan (Cancello dell'origine)",
 					AzioniTsubo: "<p><b>M.T.C.</b><br><span>• </span>Punto d'incontro dei meridiani di <span style=\"font-style:italic;\">Vaso concezione</span>, <span style=\"font-style:italic;\">Milza</span>, <span style=\"font-style:italic;\">Fegato </span>e <span style=\"font-style:italic;\">Rene</span><br><span>• </span>Punto <span style=\"font-style:italic;\">mu</span>-frontale del meridiano di <span style=\"font-style:italic;\">Intestino tenue</span><br><span>• </span>Tonifica e alimenta i Reni<br><span>• </span>Rafforza e scalda la Milza<br><span>• </span>Dona beneficio all'utero e alla vescica<br><span>• </span>Tonifica il Qi originale<br><span>• </span>Giova all'essenza<br><span>• </span>Favorisce il concepimento<br><span>• </span>Riequilibra il Jiao inferiore<br><span>• </span>Riequilibra il Qi di Intestino tenue<br></p><p><b>Applicazioni</b><br><span>• </span><span>Trofìa auricolare</span><br><span>• </span>Graduale scurimento del viso<br><span>• </span>Paura e terrore<br><span>• </span>Ulcere ossee profonde causate dalla paura <br><span>• </span>Minzione frequente<br><span>• </span>Enuresi<br><span>• </span>Emissione seminale<br><span>• </span>Impotenza<br><span>• </span>Infertilità<br><span>• </span>Amenorrea<br><span>• </span>Sanguinamento in gravidanza<br><span>• </span>Perdite vaginali rosse e bianche<br><span>• </span>Dolore addominale post-partum<br><span>• </span>Tosse con sangue<br><span>• </span>Febbre remittente<br><span>• </span>Dissenteria cronica<br><span>• </span>Incontinenza fecale senile<br><span>• </span>Debolezza ai quattro arti<br><span>• </span>Feci con presenza di cibo indigerito<br><span>• </span>Dolore violento al basso addome irradiato ai genitali<br><span>• </span>Minzione dolorosa<br><span>• </span>Disfunzione urinaria dolorosa<br><span>• </span>Debolezza alla regione lombare e alle gambe</p><p><b>Moxa</b><br><span>• </span>Controindicato in gravidanza<br></p><p><b>Ubicazione</b><br><span>• </span>Nella zona inferiore dell'addome<br><span>• </span>Lungo la linea mediana<br><span>• </span>A 2 cun sopra il bordo superiore della sinfisi pubica<br><span>• </span>3 cun sotto l'ombelico</p>",
 					ChiaviTsubo: "Punto BO di Intestino tenue",
-					noMoxa: false,
-					noGravidanza: true	
 				},
 				{
 					NomeTsubo: "5.CV. Shimen (Porta di pietra)",
 					AzioniTsubo: "<p><b>M.T.C.</b><br><span>• </span>Punto <span style=\"font-style:italic;\">mu</span>-frontale di <span style=\"font-style:italic;\">Triplice riscaldatore</span><br><span>• </span>Stimola i passaggi dell'acqua<br><span>• </span>Riequilibra il Qi <br><span>• </span>Attenua il dolore<br><span>• </span>Dona beneficio all'utero<br></p><p><b>Applicazioni</b><br><span>• </span>Minzione difficoltosa<br><span>• </span>Ritenzione e disfunzione urinaria con dolore<br><span>• </span>Dissenteria<br><span>• </span>Feci con presenza di cibo indigerito<br><span>• </span>Dolore violento al basso addome <br><span>• </span>Dolore intenso della zona ombelicale<br><span>• </span>Distensione addominale<br><span>• </span>Retrazione, gonfiore e dolore ai genitali<br><span>• </span>Masse addominali<br><span>• </span>Sanguinamento uterino<br><span>• </span>Leucorrea<br></p><p><b>Moxa</b><br><span>• </span>Controindicato in gravidanza<br></p><p><b>Ubicazione</b><br><span>• </span>Nella zona inferiore dell'addome<br><span>• </span>Lungo la linea mediana<br><span>• </span>A 3 cun sopra il bordo superiore della sinfisi pubica<br><span>• </span>2 cun sotto l'ombelico</p>",
 					ChiaviTsubo: "Punto BO di Triplice riscaldatore",
-					noMoxa: false,
-					noGravidanza: true	
 				},
 				{
 					NomeTsubo: "6.CV. Qihai (Mare del Qi)",
 					AzioniTsubo: "<p><b>M.T.C.</b><br><span>• </span>Alimenta e tonifica il Qi originale<br><span>• </span>Potenzia i Reni e lo Yang<br><span>• </span>Alimenta lo Yang collassato<br><span>• </span>Riequilibra il Qi<br><span>• </span>Armonizza il sangue<br></p><p><b>Applicazioni</b><br><span>• </span>Perdita di coscienza da ictus<br><span>• </span>Emaciazione dei muscoli del corpo<br><span>• </span>Debolezza muscolare e spossatezza in genere<br><span>• </span>Polso debole e lento<br><span>• </span>Chiusura ritardata della fontanella nei bambini<br><span>• </span>Impotenza<br><span>• </span>Prolasso uterino<br><span>• </span>Prolasso rettale<br><span>• </span>Dissenteria<br><span>• </span>Urine torbide o scure<br><span>• </span>Minzione difficoltosa<br><span>• </span>Enuresi infantile<br><span>• </span>Dolore addominale e distensione<br><span>• </span>Stitichezza<br><span>• </span>Freddo e dolore addominale<br><span>• </span>Masse addominali<br><span>• </span>Sanguinamento uterino<br><span>• </span>Emorragie del puerperio<br><span>• </span>Mestrui irregolari<br><span>• </span>Dismenorrea<br><span>• </span>Retrazione dei testicoli da Freddo</p><p><b>Moxa</b><br><span>• </span>Controindicato in gravidanza<br></p><p><b>Ubicazione</b><br><span>• </span>Nella zona inferiore dell'addome<br><span>• </span>Lungo la linea mediana<br><span>• </span>A 3,5 cun sopra il bordo superiore della sinfisi pubica<br><span>• </span>1,5 cun sotto l'ombelico</p>",
 					ChiaviTsubo: "",
-					noMoxa: false,
-					noGravidanza: true	
 				},
 				{
 					NomeTsubo: "7.CV. Yinjiao (Incrocio degli Yin)",
 					AzioniTsubo: "<p><b>M.T.C.</b><br><span>• </span>Punto d'incontro dei meridiani di <span style=\"font-style:italic;\">Vaso concezione</span>, <span style=\"font-style:italic;\">Chongmai </span>e <span style=\"font-style:italic;\">Rene</span><br><span>• </span>Dona beneficio basso ventre e regione pelvica<br><span>• </span>Regola le mestruazioni<br></p><p><b>Applicazioni</b><br><span>• </span>Mestrui irregolari<br><span>• </span>Sanguinamento uterino<br><span>• </span>Amenorrea<br><span>• </span>Leucorrea<br><span>• </span>Sterilità <br><span>• </span>Dolore, retrazione e prurito dei genitali<br><span>• </span>Dolore intenso alla zona ombelicale</p><p><b>Moxa</b><br><span>• </span>Controindicato in gravidanza<br></p><p><b>Ubicazione</b><br><span>• </span>Nella zona inferiore dell'addome<br><span>• </span>Lungo la linea mediana<br><span>• </span>A 4 cun sopra il bordo superiore della sinfisi pubica<br><span>• </span>1 cun sotto l'ombelico</p>",
 					ChiaviTsubo: "",
-					noMoxa: false,
-					noGravidanza: true	
 				},
 				{
 					NomeTsubo: "8.CV. Shenque (Torre di guardia dello Shen)",
 					AzioniTsubo: "<p><b>M.T.C.</b><br><span>• </span><span>Recupera ciò che è collassato<br></span><span>• </span>Scalda lo Yang e Intestini<br></p><p><b>Applicazioni</b><br><span>• </span>Dissenteria incessante<br><span>• </span>Diarrea in neonati allattati<br><span>• </span>Diarrea negli anziani <br><span>• </span>Borborigmi<br><span>• </span>Dolore alla zona ombelicale<br><span>• </span>Prolasso rettale<br></p><p><b>Moxa</b><br><span>• </span>Molto usato con interposizione di zenzero, sale o aglio<br><span>• </span>Controindicato in gravidanza<br></p><p><b>Ubicazione</b><br><span>• </span>Al centro dell'ombelico<br></p>",
 					ChiaviTsubo: "",
-					noMoxa: false,
-					noGravidanza: true	
 				},
 				{
 					NomeTsubo: "9.CV. Shuifen (Separazione dell'acqua)",
 					AzioniTsubo: "<p><b>M.T.C.</b><br><span>• </span>Favorisce i passaggi dell'acqua<br><span>• </span>Tratta l'edema (di Milza o Rene)<br><span>• </span>Armonizza gli Intestini<br><span>• </span>Sclioglie gli accumuli<br></p><p><b>Applicazioni</b><br><span>• </span>Dolore addominale intenso e distensione<br><span>• </span>Dolore intenso alla zona ombelicale<br><span>• </span>Respirazione difficoltosa<br><span>• </span>Inappetenza improvvisa<br><span>• </span>Rigurgiti acidi<br><span>• </span>Vomito<br></p><p><b>Moxa</b><br><span>• </span>Controindicato in gravidanza<br></p><p><b>Ubicazione</b><br><span>• </span>Nella zona superiore dell'addome<br><span>• </span>Lungo la linea mediana<br><span>• </span>A 1 cun sopra l'ombelico<br><span>• </span>7 cun sotto l'angolo sternocostale</p>",
 					ChiaviTsubo: "",
-					noMoxa: false,
-					noGravidanza: true	
 				},
 				{
 					NomeTsubo: "10.CV. Xiawan (Cavità inferiore)",
 					AzioniTsubo: "<p><b>M.T.C.</b><br><span>• </span>Punto d'incontro dei meridiani di <span style=\"font-style:italic;\">Vaso concezione</span> e <span style=\"font-style:italic;\">Milza</span><br><span>• </span>Riequilibra il Qi<br><span>• </span>Sblocca il ristagno di cibo<br><span>• </span>Armonizza lo Stomaco</p><p><b>Applicazioni</b><br><span>• </span>Pienezza addominale<br><span>• </span>Dolore epigastrico<br><span>• </span>Nausea<br><span>• </span>Vomito dopo mangiato<br><span>• </span>Inappetenza<br><span>• </span>Feci con presenza di cibo indigerito<br></p><p><b>Moxa</b><br><span>• </span>Controindicato in gravidanza<br></p><p><b>Ubicazione</b><br><span>• </span>Nella zona superiore dell'addome<br><span>• </span>Lungo la linea mediana<br><span>• </span>A 2 cun sopra l'ombelico<br><span>• </span>6 cun sotto l'angolo sternocostale</p>",
 					ChiaviTsubo: "",
-					noMoxa: false,
-					noGravidanza: true	
 				},
 				{
 					NomeTsubo: "11.CV. Jianli (Rinforzare l'interno)",
 					AzioniTsubo: "<p><b>M.T.C.</b><br><span>• </span>Riequilibra il Jiao medio e il Qi<br></p><p><b>Applicazioni</b><br><span>• </span>Poco usato<br><span>• </span>Distensione e dolore addominale<br><span>• </span>Addome duro<br><span>• </span>Vomito<br><span>• </span>Dolore al Cuore<br><span>• </span>Edema del corpo<br></p><p><b>Moxa</b><br><span>• </span>Controindicato in gravidanza<br></p><p><b>Ubicazione</b><br><span>• </span>Nella zona superiore dell'addome<br><span>• </span>Lungo la linea mediana<br><span>• </span>A 3 cun sopra l'ombelico<br><span>• </span>5 cun sotto l'angolo sternocostale</p>",
 					ChiaviTsubo: "",
-					noMoxa: false,
-					noGravidanza: true	
 				},
 				{
 					NomeTsubo: "12.CV. Zhongwan (Cavità centrale)",
 					AzioniTsubo: "<p><b>M.T.C.</b><br><span>• </span>Punto d'incontro dei meridiani di <span style=\"font-style:italic;\">Vaso concezione</span>,<span style=\"font-style:italic;\"> Intestino tenue</span>, <span style=\"font-style:italic;\">Triplo riscaldatore</span> e <span style=\"font-style:italic;\">Stomaco</span><br><span>• </span>Punto <span style=\"font-style:italic;\">mu</span>-frontale del meridiano di <span style=\"font-style:italic;\">Stomaco</span><br><span>• </span>Punto <span style=\"font-style:italic;\">hui</span>-riunione degli organi (Fu)<br><span>• </span>Riduce il Qi ribelle<br><span>• </span>Rafforza Milza e Stomaco<br><span>• </span>Riequilibra Qi e Jiao medio<br><span>• </span>Attenua il dolore</p><p><b>Applicazioni</b><br><span>• </span>Tratta tutti i disturbi di Stomaco e Milza<br><span>• </span>Dolore epigastrico e pienezza dopo il pasto<br><span>• </span>Nausea<br><span>• </span>Reflusso gastroesofageo<br><span>• </span>Vomito<br><span>• </span>Vomito di sangue<br><span>• </span>Distensione e dolore addominale<br><span>• </span>Pienezza addominale improvvisa<br><span>• </span>Distensione localizzata con pienezza<br><span>• </span>Dolore alla Milza<br><span>• </span>Regione costale laterale dura e dolente<br><span>• </span>Ansia e pensieri eccessivi<br><span>• </span>Dissenteria<br><span>• </span>Feci con presenza di cibo indigerito<br><span>• </span>Capogiri del post-partum<br><span>• </span>Itterizia<br></p><p><b>Moxa</b><br><span>• </span>Controindicato in gravidanza<br></p><p><b>Ubicazione</b><br><span>• </span>Nella zona superiore dell'addome<br><span>• </span>Lungo la linea mediana<br><span>• </span>A 4 cun sopra l'ombelico<br><span>• </span>4 cun sotto l'angolo sternocostale</p>",
 					ChiaviTsubo: "Punto BO di Stomaco",
-					noMoxa: false,
-					noGravidanza: true	
 				},
 				{
 					NomeTsubo: "13.CV. Shangwan (Cavità superiore)",
 					AzioniTsubo: "<p><b>M.T.C.</b><br><span>• </span>Punto d'incontro dei meridiani di <span style=\"font-style:italic;\">Vaso concezione</span>, <span style=\"font-style:italic;\">Stomaco </span>e<span style=\"font-style:italic;\"> Intestino tenue</span><br><span>• </span>Riequilibra il Qi<br><span>• </span>Riduce il Qi ribelle<br><span>• </span>Blocca il vomito<br><span>• </span>Regola il Cuore<br><span>• </span>Armonizza lo Stomaco</p><p><b>Applicazioni</b><br><span>• </span>Ingestione difficoltosa<br><span>• </span>Diaframma ostruito<br><span>• </span>Nausea<br><span>• </span>Vomito di sangue<br><span>• </span>Reflusso gastroesofageo<br><span>• </span>Dolore, distensione, pienezza e masse addominali<br><span>• </span>Agitazione con palpitazioni<br></p><p><b>Moxa</b><br><span>• </span>Controindicato in gravidanza<br></p><p><b>Ubicazione</b><br><span>• </span>Nella zona superiore dell'addome<br><span>• </span>Lungo la linea mediana<br><span>• </span>A 5 cun sopra l'ombelico<br><span>• </span>3 cun sotto l'angolo sternocostale </p>",
 					ChiaviTsubo: "",
-					noMoxa: false,
-					noGravidanza: true	
 				},
 				{
 					NomeTsubo: "14.CV. Juque (Gran torre di guardia)",
 					AzioniTsubo: "<p><b>M.T.C.</b><br><span>• </span>Punto <span style=\"font-style:italic;\">mu</span>-frontale del meridiano di <span style=\"font-style:italic;\">Cuore </span><br><span>• </span>Attenua il dolore<br><span>• </span>Regola il Cuore <br><span>• </span>Riduce il Qi di Polmone<br><span>• </span>Riduce il Qi ribelle<br><span>• </span>Libera il torace<br><span>• </span>Trasforma il flegma<br><span>• </span>Calma lo Shen<br><span>• </span>Armonizza lo Stomaco <br></p><p><b>Applicazioni</b><br><span>• </span>Dolore cardiaco improvviso o da Freddo<br><span>• </span>Agitazione nel Cuore<br><span>• </span>Male al torace che si irradia nella regione laterale<br><span>• </span>Accumulo di flegma nel torace<br><span>• </span>Fiato corto e tosse<br><span>• </span>Sindrome maniaco-depressiva<br><span>• </span>Vaneggiamenti e delirii da rabbia<br><span>• </span>Disorientamento<br><span>• </span>Perdita di coscienza<br><span>• </span>Epilessia con vomito di schiuma<br><span>• </span>Spavento con palpitazioni<br><span>• </span>Riduzione della memoria<br><span>• </span>Nausea<br><span>• </span>Reflusso gastroesofageo<br><span>• </span>Vomito<br><span>• </span>Rigurgiti acidi<br><span>• </span>Distensione addominale<br><span>• </span>Costrizione esofagea e diaframmatica<br></p><p><b>Moxa</b><br><span>• </span>Controindicato in gravidanza<br></p><p><b>Ubicazione</b><br><span>• </span>Nella zona superiore dell'addome<br><span>• </span>Lungo la linea mediana<br><span>• </span>A 6 cun sopra l'ombelico<br><span>• </span>2 cun sotto l'angolo sternocostale</p>",
 					ChiaviTsubo: "Punto BO di Cuore",
-					noMoxa: false,
-					noGravidanza: true	
 				},
 				{
 					NomeTsubo: "15.CV. Jiuwei (Coda di gazza)",
 					AzioniTsubo: "<p><b>M.T.C.</b><br><span>• </span>Punto <span style=\"font-style:italic;\">luo</span>-collegamento del meridiano di <span style=\"font-style:italic;\">Vaso concezione</span> <br><span>• </span>Calma lo Shen<br><span>• </span>Riduce il Qi di Polmone <br><span>• </span>Regola il Cuore <br><span>• </span>Libera il torace<br></p><p><b>Applicazioni</b><br><span>• </span>Epilessia<br><span>• </span>Avversione al vociare<br><span>• </span>Palpitazioni da spavento<br><span>• </span>Sensazione di oppressione al Cuore<br><span>• </span>Dolore al petto<br><span>• </span>Sospiri eccessivi<br><span>• </span>Dispnea<br><span>• </span>Pienezza del torace<br><span>• </span>Tosse<br><span>• </span>Rantoli in gola<br></p><p><b>Moxa</b><br><span>• </span>Nessuna controindicazione <br></p><p><b>Ubicazione</b><br><span>• </span>Nella zona superiore dell'addome<br><span>• </span>Lungo la linea mediana<br><span>• </span>A 7 cun sopra l'ombelico<br><span>• </span>1 cun sotto l'angolo sternocostale<br><span>• </span>Sul processo xiloideo dello sterno</p>",
 					ChiaviTsubo: "",
-					noMoxa: false,
-					noGravidanza: false	
 				},
 				{
 					NomeTsubo: "16.CV. Zhongting (Cortile centrale)",
 					AzioniTsubo: "<p><b>M.T.C.</b><br><span>• </span>Libera il torace<br><span>• </span>Riduce il Qi ribelle<br><span>• </span>Regola lo Stomaco</p><p><b>Applicazioni</b><br><span>• </span>Poco usato<br><span>• </span>Costrizione esofagea<br><span>• </span>Ingestione difficoltosa<br><span>• </span>Vomito dopo aver mangiato<br><span>• </span>Vomito di latte materno nei neonati<br><span>• </span>Freddo e male all'ombelico<br></p><p><b>Moxa</b><br><span>• </span>Nessuna controindicazione<br></p><p><b>Ubicazione</b><br><span>• </span>Sulla linea mediana dello sterno<br><span>• </span>Sull'angolo sternocostale<br></p>",
 					ChiaviTsubo: "",
-					noMoxa: false,
-					noGravidanza: false	
 				},
 				{
 					NomeTsubo: "17.CV. Shanzhong (Centro del petto)",
 					AzioniTsubo: "<p><b>M.T.C.</b><br><span>• </span>Punto d'incontro dei meridiani di <span style=\"font-style:italic;\">Vaso concezione</span>, <span style=\"font-style:italic;\">Milza</span>, <span style=\"font-style:italic;\">Reni</span>, <span style=\"font-style:italic;\">Intestino tenue</span> e <span style=\"font-style:italic;\">Triplice riscaldatore</span><br><span>• </span>Punto <span style=\"font-style:italic;\">mu</span>-frontale del meridiano di <span style=\"font-style:italic;\">Mastro del cuore</span><br><span>• </span>Punto <span style=\"font-style:italic;\">hui</span>-riunione del Qi, punto Mare del Qi<br><span>• </span>Riequilibra il Qi <br><span>• </span>Libera il torace<br><span>• </span>Riduce il Qi ribelle di Stomaco e Polmone<br><span>• </span>Dona beneficio al Qi del petto (Zong) e ai seni <br><span>• </span>Favorisce la lattazione<br></p><p><b>Applicazioni</b><br><span>• </span>Incapacità di parlare<br><span>• </span>Dispnea<br><span>• </span>Rantoli in gola<br><span>• </span>Tosse<br><span>• </span>Asma<br><span>• </span>Pienezza e oppressione al petto e al diaframma<br><span>• </span>Difficoltà all'ingestione<br><span>• </span>Rigurgiti acidi<br><span>• </span>Costrizione esofagea e vomito<br><span>• </span>Lattazione insufficiente<br><span>• </span>Ascessi mammari<br><span>• </span>Distensione e dolore ai seni<br></p><p><b>Moxa</b><br><span>• </span>Nessuna controindicazione<br></p><p><b>Ubicazione</b><br><span>• </span>Sulla linea mediana dello sterno<br><span>• </span>Nella depressione a livello della giunzione del quarto spazio intercostale con lo sterno<br></p>",
 					ChiaviTsubo: "Punto BO di Mastro del cuore",
-					noMoxa: false,
-					noGravidanza: false	
 				},
 				{
 					NomeTsubo: "18.CV. Yutang (Palazzo di giada)",
 					AzioniTsubo: "<p><b>M.T.C.</b><span><br>• </span>Riequilibra e riduce il Qi<br><span>• </span>Libera il torace</p><p><b>Applicazioni</b><br><span>• </span>Dolore locale a torace e sterno<br><span>• </span>Tosse<br><span>• </span>Vomito <br><span>• </span>Ingestione difficoltosa<br></p><p><b>Moxa</b><br><span>• </span>Nessuna controindicazione<br></p><p><b>Ubicazione</b><br><span>• </span>Sulla linea mediana dello sterno<br><span>• </span>Nella giunzione del terzo spazio intercostale con lo sterno<br></p>",
 					ChiaviTsubo: "",
-					noMoxa: false,
-					noGravidanza: false	
 				},
 				{
 					NomeTsubo: "19.CV. Zigong (Palazzo di porpora)",
 					AzioniTsubo: "<p></p><p><b>M.T.C.</b><span><br>• </span>Riequilibra e riduce il Qi<br><span>• </span>Libera il torace</p><p><b>Applicazioni</b><br><span>• </span>Dolore locale a torace e sterno<br><span>• </span>Tosse<br><span>• </span>Vomito <br><span>• </span>Ingestione difficoltosa<br></p><p><b>Moxa</b><br><span>• </span>Nessuna controindicazione<br></p><p><b>Ubicazione</b><br><span>• </span>Sulla linea mediana dello sterno<br><span>• </span>Nella giunzione del secondo spazio intercostale con lo sterno</p><p></p>",
 					ChiaviTsubo: "",
-					noMoxa: false,
-					noGravidanza: false	
 				},
 				{
 					NomeTsubo: "20.CV. Huagai (Magnifico baldacchino)",
 					AzioniTsubo: "<p></p><p><b>M.T.C.</b><span><br>• </span>Riequilibra e riduce il Qi<br><span>• </span>Libera il torace</p><p><b>Applicazioni</b><br><span>• </span>Dolore locale a torace e sterno<br><span>• </span>Tosse<br><span>• </span>Vomito <br><span>• </span>Ingestione difficoltosa<br></p><p><b>Moxa</b><br><span>• </span>Nessuna controindicazione<br></p><p><b>Ubicazione</b><br><span>• </span>Sulla linea mediana dello sterno<br><span>• </span>Nella giunzione del primo spazio intercostale con lo sterno</p><p></p>",
 					ChiaviTsubo: "",
-					noMoxa: false,
-					noGravidanza: false	
 				},
 				{
 					NomeTsubo: "21.CV. Xuanji (Cardine di giada)",
 					AzioniTsubo: "<p><b>M.T.C.</b><br><span>• </span>Riduce il Qi di Stomaco<br><span>• </span>Scioglie gli accumuli di cibo<br><span>• </span>Riduce il Qi di Polmone<br><span>• </span>Dona beneficio alla gola<br><span>• </span>Libera il torace <br></p><p><b>Applicazioni</b><br><span>• </span>Dolore e pienezza del torace e della regione costale laterale<br><span>• </span>Tosse<br><span>• </span>Dispnea <br><span>• </span>Incapacità di parlare<br><span>• </span>Rantoli in gola<br></p><p><b>Moxa</b><br><span>• </span>Nessuna controindicazione<br></p><p><b>Ubicazione</b><br><span>• </span>Sulla linea mediana <br><span>• </span>All'altezza del manubrio dello sterno<br><span>• </span>Situato a metà tra 20.CV e 22.CV<br></p>",
 					ChiaviTsubo: "",
-					noMoxa: false,
-					noGravidanza: false	
 				},
 				{
 					NomeTsubo: "22.CV. Tiantu (Prominenza celeste)",
 					AzioniTsubo: "<p><b>M.T.C.</b><br><span>• </span>Punto d'incontro dei meridiani di <span style=\"font-style:italic;\">Vaso concezione</span> e <span style=\"font-style:italic;\">Yinweimai</span><br><span>• </span>Riduce il Qi ribelle<br><span>• </span>Allevia la tosse <br><span>• </span>Purifica la gola<br><span>• </span>Dona beneficio alla voce<br></p><p><b>Applicazioni</b><br><span>• </span>Tosse<br><span>• </span>Asma<br><span>• </span>Dispnea<br><span>• </span>Incapacità di respirare<br><span>• </span>Ascesso polmonare con tosse, pus e sangue<br><span>• </span>Ostruzione del petto<br><span>• </span>Pienezza del torace<br><span>• </span>Disturbi della gola in genere<br><span>• </span>Afonia improvvisa<br><span>• </span>Dolore al cuore e al dorso<br><span>• </span>Gozzo<br></p><p><b>Moxa</b><br><span>• </span>Nessuna controindicazione<br></p><p><b>Ubicazione</b><br><span>• </span>Sulla linea mediana <br><span>• </span>Al centro della fossa soprasternale<br></p>",
 					ChiaviTsubo: "",
-					noMoxa: false,
-					noGravidanza: false	
 				},
 				{
 					NomeTsubo: "23.CV. Lianquan (Sorgente d'angolo)",
 					AzioniTsubo: "<p><b>M.T.C.</b><br><span>• </span>Punto d'incontro dei meridiani di <span style=\"font-style:italic;\">Vaso concezione</span> e <span style=\"font-style:italic;\">Yinweimai</span><span><br>• </span>Dona beneficio alla lingua<br><span>• </span>Riduce il Qi<br><span>• </span>Blocca la tosse<br><span>• </span>Regola la produzione saliva</p><p><b>Applicazioni</b><br><span>• </span>Perdita della voce<br><span>• </span>Rigidità della lingua in seguito a ictus<br></p><p><b>Moxa</b><br><span>• </span>Controindicato<br></p><p><b>Ubicazione</b><br><span>• </span>Sulla linea mediana anteriore del collo<br><span>• </span>Sulla fossetta sopra l'osso ioide <br></p>",
 					ChiaviTsubo: "",
-					noMoxa: true,
-					noGravidanza: false	
 				},
 				{
 					NomeTsubo: "24.CV. Chengjiang (Contenitore di fluidi)",
 					AzioniTsubo: " <p><b>M.T.C.</b><br><span>• </span><span>Punto d'incontro dei meridiani di <span>Vaso concezione</span>, <span>Vaso governatore</span>, <span>Intestino crasso</span> e <span>Stomaco </span></span><br><span>• </span><span>Uno dei 13 \"punti Demone\" per il medico Sun Simiao indicati per curare la dissociazione tra Hun e Po</span><br><span>• </span><span>Disperde il Vento </span><br><span>• </span><span>Dona beneficio alla faccia</span><br><span>• </span><span>Riequilibra il meridiano di Vaso concezione</span><br></p><p><b>Applicazioni</b><br><span>• </span>Problemi al volto<br><span>• </span>Dolore e parestesie della faccia<br><span>• </span>Nevralgia del trigemio<br><span>• </span>Deviazione della rima buccale<br><span>• </span>Paralisi facciale<br><span>• </span>Eccessiva produzione di saliva acquosa<br><span>• </span>Secchezza della bocca<br><span>• </span>Torcicollo e rigidità alla nuca<br></p><p><b>Moxa</b><br><span>• </span>Nessuna controindicazione<br></p><p><b>Ubicazione</b><br><span>• </span>Sulla linea mediana <br><span>• </span>Sopra il mento<br><span>• </span>Al centro dell'avvallamento della piega mentolabiale <br></p>",
 					ChiaviTsubo: "",
-					noMoxa: false,
-					noGravidanza: false	
 				}
 			]
 		}
 	},
-
-	
 		
 	patologie: {
 		"1": {
@@ -3560,7 +2821,6 @@ DB.set= {
 			chiaviPatologia: "" 	
 		}
 	},
-	
 		
 	teoria: [
 		{
@@ -3572,15 +2832,15 @@ DB.set= {
 				},
 				{
 					TitoloTeoria: "2. Il Qi",
-					TestoTeoria: "<p align=\"justify\"><img src=\"sets/meridiani_cinesi/img/teoria/tao.png\" width=\"90\" height=\"87\" hspace=\"20\" align=\"right\">La   prima descrizione che può essere fatta del Qi riguarda il Principio dello   Yin e Yang. Ogni forma energetica e materiale esistente ha due aspetti opposti   e complementari che associati ne formano l’identità nello schema   universale e che sono rappresentati dal simbolo del TAO. </p><p align=\"justify\">Essi sono le due fasi di una trasformazione ciclica cosmica   (materiale/immateriale; energia/forma). Sono contrapposti, complementari, ciascuno   prende origine dall’altro e ciascuno contiene il principio dell’altro.</p><table width=\"100%\" border=\"0\" cellspacing=\"0\" cellpadding=\"20\">  <tr>    <td width=\"50%\" align=\"center\" valign=\"top\"><b>YANG</b><br>      Fuoco<br>      Caldo<br>      Agitazione<br>      Secco<br>      Duro<br>      Eccitazione<br>      Rapidità<br>      Non materiale<br>      Trasformazione</td>    <td align=\"center\" valign=\"top\"><b>YIN</b><br>      Acqua<br>      Freddo<br>      Calma<br>      Umido<br>      Morbido<br>      Inibizione<br>      Lentezza<br>      Materiale<br>      Conservazione</td>  </tr></table><p align=\"justify\">Nel corpo umano una delle migliori rappresentazione di tale   principio è il dualismo ortosimpatico – parasimpatico che regola   e governa ogni funzione fisiologica.</p>" 	
+					TestoTeoria: "<p align=\"justify\"><img src=\"sets/common/mtc/img/teoria/tao.png\" width=\"90\" height=\"87\" hspace=\"20\" align=\"right\">La   prima descrizione che può essere fatta del Qi riguarda il Principio dello   Yin e Yang. Ogni forma energetica e materiale esistente ha due aspetti opposti   e complementari che associati ne formano l’identità nello schema   universale e che sono rappresentati dal simbolo del TAO. </p><p align=\"justify\">Essi sono le due fasi di una trasformazione ciclica cosmica   (materiale/immateriale; energia/forma). Sono contrapposti, complementari, ciascuno   prende origine dall’altro e ciascuno contiene il principio dell’altro.</p><table width=\"100%\" border=\"0\" cellspacing=\"0\" cellpadding=\"20\">  <tr>    <td width=\"50%\" align=\"center\" valign=\"top\"><b>YANG</b><br>      Fuoco<br>      Caldo<br>      Agitazione<br>      Secco<br>      Duro<br>      Eccitazione<br>      Rapidità<br>      Non materiale<br>      Trasformazione</td>    <td align=\"center\" valign=\"top\"><b>YIN</b><br>      Acqua<br>      Freddo<br>      Calma<br>      Umido<br>      Morbido<br>      Inibizione<br>      Lentezza<br>      Materiale<br>      Conservazione</td>  </tr></table><p align=\"justify\">Nel corpo umano una delle migliori rappresentazione di tale   principio è il dualismo ortosimpatico – parasimpatico che regola   e governa ogni funzione fisiologica.</p>" 	
 				},
 				{
 					TitoloTeoria: "3. Legge dei 5 elementi",
-					TestoTeoria: "<p align=\"justify\">Una descrizione successiva e maggiormente dettagliata parte   dal riconoscimento che ogni materia primordiale prende origine da cinque principi   fondamentali o ELEMENTI che ne rappresentano la caratteristica fondamentale. </p><table width=\"100%\" border=\"0\" cellspacing=\"0\" cellpadding=\"0\">  <tr>    <td bgcolor=\"#999999\"><table width=\"100%\" border=\"0\" cellspacing=\"1\" cellpadding=\"4\" class=\"schemi\">        <tr>          <td bgcolor=\"#AAAAAA\">&nbsp;</td>          <td align=\"center\" bgcolor=\"#AAAAAA\">Legno</td>          <td align=\"center\" bgcolor=\"#AAAAAA\">Fuoco</td>          <td align=\"center\" bgcolor=\"#AAAAAA\">Terra</td>          <td align=\"center\" bgcolor=\"#AAAAAA\">Aria</td>          <td align=\"center\" bgcolor=\"#AAAAAA\">Acqua</td>  </tr>  <tr>    <td bgcolor=\"#CCCCCC\">Sapori</td>    <td align=\"center\" bgcolor=\"#FFFFFF\">Acido</td>    <td align=\"center\" bgcolor=\"#FFFFFF\">Amaro</td>    <td align=\"center\" bgcolor=\"#FFFFFF\">Piccante</td>    <td align=\"center\" bgcolor=\"#FFFFFF\">Dolce</td>    <td align=\"center\" bgcolor=\"#FFFFFF\">Salato</td>  </tr>  <tr>    <td bgcolor=\"#CCCCCC\">Organi</td>    <td align=\"center\" bgcolor=\"#FFFFFF\">Fegato</td>    <td align=\"center\" bgcolor=\"#FFFFFF\">Cuore</td>    <td align=\"center\" bgcolor=\"#FFFFFF\">Milza</td>    <td align=\"center\" bgcolor=\"#FFFFFF\">Polmoni</td>    <td align=\"center\" bgcolor=\"#FFFFFF\">Reni</td>  </tr>  <tr>    <td bgcolor=\"#CCCCCC\">Visceri</td>    <td align=\"center\" bgcolor=\"#FFFFFF\">Cistifellea</td>    <td align=\"center\" bgcolor=\"#FFFFFF\">Int. tenue</td>    <td align=\"center\" bgcolor=\"#FFFFFF\">Stomaco</td>    <td align=\"center\" bgcolor=\"#FFFFFF\">Int. crasso</td>    <td align=\"center\" bgcolor=\"#FFFFFF\">Vescica</td>  </tr>  <tr>    <td bgcolor=\"#CCCCCC\">Organi di senso</td>    <td align=\"center\" bgcolor=\"#FFFFFF\">Occhi</td>    <td align=\"center\" bgcolor=\"#FFFFFF\">Lingua</td>    <td align=\"center\" bgcolor=\"#FFFFFF\">Bocca</td>    <td align=\"center\" bgcolor=\"#FFFFFF\">Naso</td>    <td align=\"center\" bgcolor=\"#FFFFFF\">Orecchie</td>  </tr>  <tr>    <td bgcolor=\"#CCCCCC\">Tessuti</td>    <td align=\"center\" bgcolor=\"#FFFFFF\">Tendini</td>    <td align=\"center\" bgcolor=\"#FFFFFF\">Vasi</td>    <td align=\"center\" bgcolor=\"#FFFFFF\">Muscoli</td>    <td align=\"center\" bgcolor=\"#FFFFFF\">Pelle</td>    <td align=\"center\" bgcolor=\"#FFFFFF\">Ossa</td>  </tr>  <tr>    <td bgcolor=\"#CCCCCC\">Occhio</td>    <td align=\"center\" bgcolor=\"#FFFFFF\">Iride</td>    <td align=\"center\" bgcolor=\"#FFFFFF\">Vasi angolo palpebre</td>    <td align=\"center\" bgcolor=\"#FFFFFF\">Palpebre: inferiore (Milza), inferiore (Stomaco)</td>    <td align=\"center\" bgcolor=\"#FFFFFF\">Sclera</td>    <td align=\"center\" bgcolor=\"#FFFFFF\">Pupille</td>  </tr>  <tr>    <td bgcolor=\"#CCCCCC\">Emozioni</td>    <td align=\"center\" bgcolor=\"#FFFFFF\">Collera</td>    <td align=\"center\" bgcolor=\"#FFFFFF\">Gioia</td>    <td align=\"center\" bgcolor=\"#FFFFFF\">Preoccupazione</td>    <td align=\"center\" bgcolor=\"#FFFFFF\">Tristezza</td>    <td align=\"center\" bgcolor=\"#FFFFFF\">Paura</td>  </tr>  <tr>    <td bgcolor=\"#CCCCCC\">Sensi</td>    <td align=\"center\" bgcolor=\"#FFFFFF\">Vista</td>    <td align=\"center\" bgcolor=\"#FFFFFF\">Tatto</td>    <td align=\"center\" bgcolor=\"#FFFFFF\">Gusto</td>    <td align=\"center\" bgcolor=\"#FFFFFF\">Olfatto</td>    <td align=\"center\" bgcolor=\"#FFFFFF\">Udito</td>  </tr>  <tr>    <td bgcolor=\"#CCCCCC\">Tessuti</td>    <td align=\"center\" bgcolor=\"#FFFFFF\">Tendini, unghie, legamenti</td>    <td align=\"center\" bgcolor=\"#FFFFFF\">Vasi sanguigni</td>    <td align=\"center\" bgcolor=\"#FFFFFF\">Muscoli, connettivo, labbra</td>    <td align=\"center\" bgcolor=\"#FFFFFF\">Pelle, peli, capelli</td>    <td align=\"center\" bgcolor=\"#FFFFFF\">Ossa, midollo osseo</td>  </tr>  <tr>    <td bgcolor=\"#CCCCCC\">Secrezioni fluide</td>    <td align=\"center\" bgcolor=\"#FFFFFF\">Lacrime</td>    <td align=\"center\" bgcolor=\"#FFFFFF\">Sudorazione</td>    <td align=\"center\" bgcolor=\"#FFFFFF\">Saliva, succhi gastrici, urine</td>    <td align=\"center\" bgcolor=\"#FFFFFF\">Muco, catarro, feci</td>    <td align=\"center\" bgcolor=\"#FFFFFF\">Saliva, sperma, urina</td>  </tr>  <tr>    <td bgcolor=\"#CCCCCC\">Patologia</td>    <td align=\"center\" bgcolor=\"#FFFFFF\">Mania</td>    <td align=\"center\" bgcolor=\"#FFFFFF\">Riso, euforia irrefrenabile</td>    <td align=\"center\" bgcolor=\"#FFFFFF\">Angoscia, depressione</td>    <td align=\"center\" bgcolor=\"#FFFFFF\">Ansia</td>    <td align=\"center\" bgcolor=\"#FFFFFF\">Shock, fobie</td>  </tr>  <tr>    <td bgcolor=\"#CCCCCC\">Zone algiche</td>    <td align=\"center\" bgcolor=\"#FFFFFF\">Testa ecollo</td>    <td align=\"center\" bgcolor=\"#FFFFFF\">Torace e costole</td>    <td align=\"center\" bgcolor=\"#FFFFFF\">Spina dorsale e ventre</td>    <td align=\"center\" bgcolor=\"#FFFFFF\">Spalle e dorso</td>    <td align=\"center\" bgcolor=\"#FFFFFF\">Lombi e estremità</td>  </tr>  <tr>    <td bgcolor=\"#CCCCCC\">Eccessi patogeni</td>    <td align=\"center\" bgcolor=\"#FFFFFF\">Camminare</td>    <td align=\"center\" bgcolor=\"#FFFFFF\">Sforzare la vista</td>    <td align=\"center\" bgcolor=\"#FFFFFF\">Sedere</td>    <td align=\"center\" bgcolor=\"#FFFFFF\">Giacere</td>    <td align=\"center\" bgcolor=\"#FFFFFF\">Stare in piedi</td>  </tr>  <tr>    <td bgcolor=\"#CCCCCC\">Tono della voce</td>    <td align=\"center\" bgcolor=\"#FFFFFF\">Urlato</td>    <td align=\"center\" bgcolor=\"#FFFFFF\">Ridente</td>    <td align=\"center\" bgcolor=\"#FFFFFF\">Melodioso</td>    <td align=\"center\" bgcolor=\"#FFFFFF\">Piangente</td>    <td align=\"center\" bgcolor=\"#FFFFFF\">Lamentoso</td>  </tr>  <tr>    <td bgcolor=\"#CCCCCC\">Emozione contraria</td>    <td align=\"center\" bgcolor=\"#FFFFFF\">Tristezza</td>    <td align=\"center\" bgcolor=\"#FFFFFF\">Paura</td>    <td align=\"center\" bgcolor=\"#FFFFFF\">Rabbia</td>    <td align=\"center\" bgcolor=\"#FFFFFF\">Gioia</td>    <td align=\"center\" bgcolor=\"#FFFFFF\">Riflessione</td>  </tr>  <tr>    <td bgcolor=\"#CCCCCC\">Potenzialità</td>    <td align=\"center\" bgcolor=\"#FFFFFF\">Armonizzare, diffondere</td>    <td align=\"center\" bgcolor=\"#FFFFFF\">Rendere manifesto</td>    <td align=\"center\" bgcolor=\"#FFFFFF\">Lubrificare, idratare</td>    <td align=\"center\" bgcolor=\"#FFFFFF\">Purificare</td>    <td align=\"center\" bgcolor=\"#FFFFFF\">Raffreddare</td>  </tr>  <tr>    <td bgcolor=\"#CCCCCC\">Funzioni</td>    <td align=\"center\" bgcolor=\"#FFFFFF\">Mobilitare</td>    <td align=\"center\" bgcolor=\"#FFFFFF\">Accelerare</td>    <td align=\"center\" bgcolor=\"#FFFFFF\">Trasformare</td>    <td align=\"center\" bgcolor=\"#FFFFFF\">Consolidare e proteggere</td>    <td align=\"center\" bgcolor=\"#FFFFFF\">Immagazzinare</td>  </tr>  <tr>    <td bgcolor=\"#CCCCCC\">Cereali</td>    <td align=\"center\" bgcolor=\"#FFFFFF\">Frumento</td>    <td align=\"center\" bgcolor=\"#FFFFFF\">Avena, sorgo</td>    <td align=\"center\" bgcolor=\"#FFFFFF\">Miglio</td>    <td align=\"center\" bgcolor=\"#FFFFFF\">Riso</td>    <td align=\"center\" bgcolor=\"#FFFFFF\">Legumi</td>  </tr>  <tr>    <td bgcolor=\"#CCCCCC\">Direzione</td>    <td align=\"center\" bgcolor=\"#FFFFFF\">Est</td>    <td align=\"center\" bgcolor=\"#FFFFFF\">Sud</td>    <td align=\"center\" bgcolor=\"#FFFFFF\">Centro</td>    <td align=\"center\" bgcolor=\"#FFFFFF\">Ovest</td>    <td align=\"center\" bgcolor=\"#FFFFFF\">Nord</td>  </tr>  <tr>    <td bgcolor=\"#CCCCCC\">Pianeti</td>    <td align=\"center\" bgcolor=\"#FFFFFF\">Giove</td>    <td align=\"center\" bgcolor=\"#FFFFFF\">Marte</td>    <td align=\"center\" bgcolor=\"#FFFFFF\">Saturno</td>    <td align=\"center\" bgcolor=\"#FFFFFF\">Venere</td>    <td align=\"center\" bgcolor=\"#FFFFFF\">Mercurio</td>  </tr>  <tr>    <td bgcolor=\"#CCCCCC\">Mutazioni</td>    <td align=\"center\" bgcolor=\"#FFFFFF\">Nascita</td>    <td align=\"center\" bgcolor=\"#FFFFFF\">Crescita</td>    <td align=\"center\" bgcolor=\"#FFFFFF\">Trasformazione</td>    <td align=\"center\" bgcolor=\"#FFFFFF\">Energia in raccolta</td>    <td align=\"center\" bgcolor=\"#FFFFFF\">Conservazione</td>  </tr>  <tr>    <td bgcolor=\"#CCCCCC\">Stagione favorevole</td>    <td align=\"center\" bgcolor=\"#FFFFFF\">Primavera</td>    <td align=\"center\" bgcolor=\"#FFFFFF\">Estate</td>    <td align=\"center\" bgcolor=\"#FFFFFF\">I 15 giorni di passaggio tra una stagione e l'altra</td>    <td align=\"center\" bgcolor=\"#FFFFFF\">Autunno</td>    <td align=\"center\" bgcolor=\"#FFFFFF\">Inverno</td>  </tr></table></td>  </tr></table><br><table width=\"100%\" border=\"0\" cellspacing=\"0\" cellpadding=\"0\">  <tr>    <td><div align=\"justify\">I cinque elementi sono:<br>        <b>Acqua</b>, <b>Fuoco</b>, <b>Legno</b>,         <b>Aria</b> e <b>Terra</b><br>        Sono anche cinque processi fondamentali, cinque qualità, cinque         fasi di un ciclo che regola ogni momento della trasformazione naturale         energia – materia – energia. <br>        Inoltre essi costituiscono ciascuno il principio di generazione di un         altro secondo uno schema ben definito:<br>        <b>IL CICLO DI GENERAZIONE</b></div></td>    <td align=\"center\"><img src=\"sets/meridiani_cinesi/img/teoria/generazione.png\" width=\"212\" height=\"206\" hspace=\"20\"></td>  </tr></table><p align=\"justify\">Tale schematizzazione risulta particolarmente utile quando   viene applicata al funzionamento del corpo umano ed in particolare un ruolo   importante lo detiene la Milza come organo che estrae l’energia dagli   alimenti da inviare a tutte le parti del corpo.<br>  Gli organi interni del corpo umano sono classificati, secondo il modello cinese,   attraverso la simbologia dei cinque elementi. Inoltre ad ogni elemento viene   assegnata una coppia secondo il dualismo Yin-Yang e quindi sono divisi in \"Organi\"   (Zang) e \"visceri\" (Fu) <br>  Le funzioni degli organi propriamente detti è di assicurare la produzione,   il mantenimento la trasformazione ed il movimento delle sostanze vitali (Qi,   sangue, Jing e liquidi corporei)<br>  La funzione dei visceri Yang è quella di trasformare i cibi e le bevande   per produrre il Qi e il sangue da inviare all’organo corrispondente. Mantenimento   e produzione sono quindi i due aspetti Yin e Yang del dualismo Organo –   Viscere</p>" 	
+					TestoTeoria: "<p align=\"justify\">Una descrizione successiva e maggiormente dettagliata parte   dal riconoscimento che ogni materia primordiale prende origine da cinque principi   fondamentali o ELEMENTI che ne rappresentano la caratteristica fondamentale. </p><table width=\"100%\" border=\"0\" cellspacing=\"0\" cellpadding=\"0\">  <tr>    <td bgcolor=\"#999999\"><table width=\"100%\" border=\"0\" cellspacing=\"1\" cellpadding=\"4\" class=\"schemi\">        <tr>          <td bgcolor=\"#AAAAAA\">&nbsp;</td>          <td align=\"center\" bgcolor=\"#AAAAAA\">Legno</td>          <td align=\"center\" bgcolor=\"#AAAAAA\">Fuoco</td>          <td align=\"center\" bgcolor=\"#AAAAAA\">Terra</td>          <td align=\"center\" bgcolor=\"#AAAAAA\">Aria</td>          <td align=\"center\" bgcolor=\"#AAAAAA\">Acqua</td>  </tr>  <tr>    <td bgcolor=\"#CCCCCC\">Sapori</td>    <td align=\"center\" bgcolor=\"#FFFFFF\">Acido</td>    <td align=\"center\" bgcolor=\"#FFFFFF\">Amaro</td>    <td align=\"center\" bgcolor=\"#FFFFFF\">Piccante</td>    <td align=\"center\" bgcolor=\"#FFFFFF\">Dolce</td>    <td align=\"center\" bgcolor=\"#FFFFFF\">Salato</td>  </tr>  <tr>    <td bgcolor=\"#CCCCCC\">Organi</td>    <td align=\"center\" bgcolor=\"#FFFFFF\">Fegato</td>    <td align=\"center\" bgcolor=\"#FFFFFF\">Cuore</td>    <td align=\"center\" bgcolor=\"#FFFFFF\">Milza</td>    <td align=\"center\" bgcolor=\"#FFFFFF\">Polmoni</td>    <td align=\"center\" bgcolor=\"#FFFFFF\">Reni</td>  </tr>  <tr>    <td bgcolor=\"#CCCCCC\">Visceri</td>    <td align=\"center\" bgcolor=\"#FFFFFF\">Cistifellea</td>    <td align=\"center\" bgcolor=\"#FFFFFF\">Int. tenue</td>    <td align=\"center\" bgcolor=\"#FFFFFF\">Stomaco</td>    <td align=\"center\" bgcolor=\"#FFFFFF\">Int. crasso</td>    <td align=\"center\" bgcolor=\"#FFFFFF\">Vescica</td>  </tr>  <tr>    <td bgcolor=\"#CCCCCC\">Organi di senso</td>    <td align=\"center\" bgcolor=\"#FFFFFF\">Occhi</td>    <td align=\"center\" bgcolor=\"#FFFFFF\">Lingua</td>    <td align=\"center\" bgcolor=\"#FFFFFF\">Bocca</td>    <td align=\"center\" bgcolor=\"#FFFFFF\">Naso</td>    <td align=\"center\" bgcolor=\"#FFFFFF\">Orecchie</td>  </tr>  <tr>    <td bgcolor=\"#CCCCCC\">Tessuti</td>    <td align=\"center\" bgcolor=\"#FFFFFF\">Tendini</td>    <td align=\"center\" bgcolor=\"#FFFFFF\">Vasi</td>    <td align=\"center\" bgcolor=\"#FFFFFF\">Muscoli</td>    <td align=\"center\" bgcolor=\"#FFFFFF\">Pelle</td>    <td align=\"center\" bgcolor=\"#FFFFFF\">Ossa</td>  </tr>  <tr>    <td bgcolor=\"#CCCCCC\">Occhio</td>    <td align=\"center\" bgcolor=\"#FFFFFF\">Iride</td>    <td align=\"center\" bgcolor=\"#FFFFFF\">Vasi angolo palpebre</td>    <td align=\"center\" bgcolor=\"#FFFFFF\">Palpebre: inferiore (Milza), inferiore (Stomaco)</td>    <td align=\"center\" bgcolor=\"#FFFFFF\">Sclera</td>    <td align=\"center\" bgcolor=\"#FFFFFF\">Pupille</td>  </tr>  <tr>    <td bgcolor=\"#CCCCCC\">Emozioni</td>    <td align=\"center\" bgcolor=\"#FFFFFF\">Collera</td>    <td align=\"center\" bgcolor=\"#FFFFFF\">Gioia</td>    <td align=\"center\" bgcolor=\"#FFFFFF\">Preoccupazione</td>    <td align=\"center\" bgcolor=\"#FFFFFF\">Tristezza</td>    <td align=\"center\" bgcolor=\"#FFFFFF\">Paura</td>  </tr>  <tr>    <td bgcolor=\"#CCCCCC\">Sensi</td>    <td align=\"center\" bgcolor=\"#FFFFFF\">Vista</td>    <td align=\"center\" bgcolor=\"#FFFFFF\">Tatto</td>    <td align=\"center\" bgcolor=\"#FFFFFF\">Gusto</td>    <td align=\"center\" bgcolor=\"#FFFFFF\">Olfatto</td>    <td align=\"center\" bgcolor=\"#FFFFFF\">Udito</td>  </tr>  <tr>    <td bgcolor=\"#CCCCCC\">Tessuti</td>    <td align=\"center\" bgcolor=\"#FFFFFF\">Tendini, unghie, legamenti</td>    <td align=\"center\" bgcolor=\"#FFFFFF\">Vasi sanguigni</td>    <td align=\"center\" bgcolor=\"#FFFFFF\">Muscoli, connettivo, labbra</td>    <td align=\"center\" bgcolor=\"#FFFFFF\">Pelle, peli, capelli</td>    <td align=\"center\" bgcolor=\"#FFFFFF\">Ossa, midollo osseo</td>  </tr>  <tr>    <td bgcolor=\"#CCCCCC\">Secrezioni fluide</td>    <td align=\"center\" bgcolor=\"#FFFFFF\">Lacrime</td>    <td align=\"center\" bgcolor=\"#FFFFFF\">Sudorazione</td>    <td align=\"center\" bgcolor=\"#FFFFFF\">Saliva, succhi gastrici, urine</td>    <td align=\"center\" bgcolor=\"#FFFFFF\">Muco, catarro, feci</td>    <td align=\"center\" bgcolor=\"#FFFFFF\">Saliva, sperma, urina</td>  </tr>  <tr>    <td bgcolor=\"#CCCCCC\">Patologia</td>    <td align=\"center\" bgcolor=\"#FFFFFF\">Mania</td>    <td align=\"center\" bgcolor=\"#FFFFFF\">Riso, euforia irrefrenabile</td>    <td align=\"center\" bgcolor=\"#FFFFFF\">Angoscia, depressione</td>    <td align=\"center\" bgcolor=\"#FFFFFF\">Ansia</td>    <td align=\"center\" bgcolor=\"#FFFFFF\">Shock, fobie</td>  </tr>  <tr>    <td bgcolor=\"#CCCCCC\">Zone algiche</td>    <td align=\"center\" bgcolor=\"#FFFFFF\">Testa ecollo</td>    <td align=\"center\" bgcolor=\"#FFFFFF\">Torace e costole</td>    <td align=\"center\" bgcolor=\"#FFFFFF\">Spina dorsale e ventre</td>    <td align=\"center\" bgcolor=\"#FFFFFF\">Spalle e dorso</td>    <td align=\"center\" bgcolor=\"#FFFFFF\">Lombi e estremità</td>  </tr>  <tr>    <td bgcolor=\"#CCCCCC\">Eccessi patogeni</td>    <td align=\"center\" bgcolor=\"#FFFFFF\">Camminare</td>    <td align=\"center\" bgcolor=\"#FFFFFF\">Sforzare la vista</td>    <td align=\"center\" bgcolor=\"#FFFFFF\">Sedere</td>    <td align=\"center\" bgcolor=\"#FFFFFF\">Giacere</td>    <td align=\"center\" bgcolor=\"#FFFFFF\">Stare in piedi</td>  </tr>  <tr>    <td bgcolor=\"#CCCCCC\">Tono della voce</td>    <td align=\"center\" bgcolor=\"#FFFFFF\">Urlato</td>    <td align=\"center\" bgcolor=\"#FFFFFF\">Ridente</td>    <td align=\"center\" bgcolor=\"#FFFFFF\">Melodioso</td>    <td align=\"center\" bgcolor=\"#FFFFFF\">Piangente</td>    <td align=\"center\" bgcolor=\"#FFFFFF\">Lamentoso</td>  </tr>  <tr>    <td bgcolor=\"#CCCCCC\">Emozione contraria</td>    <td align=\"center\" bgcolor=\"#FFFFFF\">Tristezza</td>    <td align=\"center\" bgcolor=\"#FFFFFF\">Paura</td>    <td align=\"center\" bgcolor=\"#FFFFFF\">Rabbia</td>    <td align=\"center\" bgcolor=\"#FFFFFF\">Gioia</td>    <td align=\"center\" bgcolor=\"#FFFFFF\">Riflessione</td>  </tr>  <tr>    <td bgcolor=\"#CCCCCC\">Potenzialità</td>    <td align=\"center\" bgcolor=\"#FFFFFF\">Armonizzare, diffondere</td>    <td align=\"center\" bgcolor=\"#FFFFFF\">Rendere manifesto</td>    <td align=\"center\" bgcolor=\"#FFFFFF\">Lubrificare, idratare</td>    <td align=\"center\" bgcolor=\"#FFFFFF\">Purificare</td>    <td align=\"center\" bgcolor=\"#FFFFFF\">Raffreddare</td>  </tr>  <tr>    <td bgcolor=\"#CCCCCC\">Funzioni</td>    <td align=\"center\" bgcolor=\"#FFFFFF\">Mobilitare</td>    <td align=\"center\" bgcolor=\"#FFFFFF\">Accelerare</td>    <td align=\"center\" bgcolor=\"#FFFFFF\">Trasformare</td>    <td align=\"center\" bgcolor=\"#FFFFFF\">Consolidare e proteggere</td>    <td align=\"center\" bgcolor=\"#FFFFFF\">Immagazzinare</td>  </tr>  <tr>    <td bgcolor=\"#CCCCCC\">Cereali</td>    <td align=\"center\" bgcolor=\"#FFFFFF\">Frumento</td>    <td align=\"center\" bgcolor=\"#FFFFFF\">Avena, sorgo</td>    <td align=\"center\" bgcolor=\"#FFFFFF\">Miglio</td>    <td align=\"center\" bgcolor=\"#FFFFFF\">Riso</td>    <td align=\"center\" bgcolor=\"#FFFFFF\">Legumi</td>  </tr>  <tr>    <td bgcolor=\"#CCCCCC\">Direzione</td>    <td align=\"center\" bgcolor=\"#FFFFFF\">Est</td>    <td align=\"center\" bgcolor=\"#FFFFFF\">Sud</td>    <td align=\"center\" bgcolor=\"#FFFFFF\">Centro</td>    <td align=\"center\" bgcolor=\"#FFFFFF\">Ovest</td>    <td align=\"center\" bgcolor=\"#FFFFFF\">Nord</td>  </tr>  <tr>    <td bgcolor=\"#CCCCCC\">Pianeti</td>    <td align=\"center\" bgcolor=\"#FFFFFF\">Giove</td>    <td align=\"center\" bgcolor=\"#FFFFFF\">Marte</td>    <td align=\"center\" bgcolor=\"#FFFFFF\">Saturno</td>    <td align=\"center\" bgcolor=\"#FFFFFF\">Venere</td>    <td align=\"center\" bgcolor=\"#FFFFFF\">Mercurio</td>  </tr>  <tr>    <td bgcolor=\"#CCCCCC\">Mutazioni</td>    <td align=\"center\" bgcolor=\"#FFFFFF\">Nascita</td>    <td align=\"center\" bgcolor=\"#FFFFFF\">Crescita</td>    <td align=\"center\" bgcolor=\"#FFFFFF\">Trasformazione</td>    <td align=\"center\" bgcolor=\"#FFFFFF\">Energia in raccolta</td>    <td align=\"center\" bgcolor=\"#FFFFFF\">Conservazione</td>  </tr>  <tr>    <td bgcolor=\"#CCCCCC\">Stagione favorevole</td>    <td align=\"center\" bgcolor=\"#FFFFFF\">Primavera</td>    <td align=\"center\" bgcolor=\"#FFFFFF\">Estate</td>    <td align=\"center\" bgcolor=\"#FFFFFF\">I 15 giorni di passaggio tra una stagione e l'altra</td>    <td align=\"center\" bgcolor=\"#FFFFFF\">Autunno</td>    <td align=\"center\" bgcolor=\"#FFFFFF\">Inverno</td>  </tr></table></td>  </tr></table><br><table width=\"100%\" border=\"0\" cellspacing=\"0\" cellpadding=\"0\">  <tr>    <td><div align=\"justify\">I cinque elementi sono:<br>        <b>Acqua</b>, <b>Fuoco</b>, <b>Legno</b>,         <b>Aria</b> e <b>Terra</b><br>        Sono anche cinque processi fondamentali, cinque qualità, cinque         fasi di un ciclo che regola ogni momento della trasformazione naturale         energia – materia – energia. <br>        Inoltre essi costituiscono ciascuno il principio di generazione di un         altro secondo uno schema ben definito:<br>        <b>IL CICLO DI GENERAZIONE</b></div></td>    <td align=\"center\"><img src=\"sets/common/mtc/img/teoria/generazione.png\" width=\"212\" height=\"206\" hspace=\"20\"></td>  </tr></table><p align=\"justify\">Tale schematizzazione risulta particolarmente utile quando   viene applicata al funzionamento del corpo umano ed in particolare un ruolo   importante lo detiene la Milza come organo che estrae l’energia dagli   alimenti da inviare a tutte le parti del corpo.<br>  Gli organi interni del corpo umano sono classificati, secondo il modello cinese,   attraverso la simbologia dei cinque elementi. Inoltre ad ogni elemento viene   assegnata una coppia secondo il dualismo Yin-Yang e quindi sono divisi in \"Organi\"   (Zang) e \"visceri\" (Fu) <br>  Le funzioni degli organi propriamente detti è di assicurare la produzione,   il mantenimento la trasformazione ed il movimento delle sostanze vitali (Qi,   sangue, Jing e liquidi corporei)<br>  La funzione dei visceri Yang è quella di trasformare i cibi e le bevande   per produrre il Qi e il sangue da inviare all’organo corrispondente. Mantenimento   e produzione sono quindi i due aspetti Yin e Yang del dualismo Organo –   Viscere</p>" 	
 				},
 				{
 					TitoloTeoria: "4. Gli elementi",
-					TestoTeoria: "<table width=\"100%\" border=\"0\" cellspacing=\"0\" cellpadding=\"0\">  <tr>    <td style=\"border-bottom:1px dotted #666;padding-bottom:10px;padding-left:10px;\"><div align=\"justify\"><b><span style=\"border-bottom:1px dotted #666;padding-bottom:10px;\"><img src=\"sets/meridiani_cinesi/img/teoria/terra.png\" width=\"119\" height=\"44\" hspace=\"10\" align=\"left\"></span>Terra</b><br>        Milza: mantiene l’energia pura dei cibi (GuQi) e la invia in alto.         Governa la digestione. Ha una funzione antiemorragica. Permette la salita         del Qi e mantiene al loro posto gli organi. Alloggia il pensiero (Yi)         e la memoria. Detesta l’umidità e soffre di vuoto <br>        Stomaco: tritura i cibi e ne manda la parte impura verso il piccolo intestino.         La sua attività si correla con l’induito della lingua. Controlla         la discesa del Qi soffre di pieno detesta il secco. </div></td>  </tr>  <tr>    <td style=\"border-bottom:1px dotted #666;padding-bottom:10px;padding-top:10px;padding-left:10px;\"><div align=\"justify\"><b><span style=\"border-bottom:1px dotted #666;padding-bottom:10px;padding-top:10px;\"><img src=\"sets/meridiani_cinesi/img/teoria/legno.png\" width=\"97\" height=\"61\" hspace=\"21\" align=\"left\"></span>Legno</b><br>        Fegato: Trattiene il sangue, controlla il libero fluire del QI ed influenza         lo stato emozionale, controlla le articolazioni ed invia la bile alla         cistifellea. Alloggia l’anima eterea (Hun), detesta il vento e la         collera. Soffre di pieno.<br>        Vescicola biliare: secerne la bile ed esprime il corretto funzionamento         del fegato. Controlla la capacità di prendere decisioni e i tendini.</div></td>  </tr>  <tr>    <td style=\"border-bottom:1px dotted #666;padding-bottom:10px;padding-top:10px;padding-left:10px;\"><div align=\"justify\"><b><span style=\"border-bottom:1px dotted #666;padding-bottom:10px;padding-top:10px;\"><img src=\"sets/meridiani_cinesi/img/teoria/fuoco.png\" width=\"53\" height=\"71\" hspace=\"43\" align=\"left\"></span>Fuoco</b><br>        Cuore: governa il sangue e ne è responsabile della produzione.         Alloggia la mente cosciente (Shen) Controlla i sogni e il sudore. Detesta         il calore.<br>        Intestino Tenue: Prosegue la digestione dopo lo stomaco dei solidi e dei         liquidi. Influenza la chiarezza mentale e la capacità di discernere         il giusto dall’ingiusto.</div></td>  </tr>  <tr>    <td style=\"border-bottom:1px dotted #666;padding-bottom:10px;padding-top:10px;padding-left:10px;\"><div align=\"justify\"><b><span style=\"border-bottom:1px dotted #666;padding-bottom:10px;padding-top:10px;\"><img src=\"sets/meridiani_cinesi/img/teoria/acqua.png\" width=\"96\" height=\"52\" hspace=\"21\" align=\"left\"></span>Acqua</b><br>        Reni: sono la radice energetica sia Yin che Yang di tutti gli organi essendo         la sede di tutte le energie e sostanze vitali primordiali (genetica).         Producono il midollo, riempiono il cervello e controllano le ossa. Governano         l’acqua e la purificano inviandola agli organi. Controllano il deflusso         di urina e di sperma. Alloggiano la volontà. Detestano il secco.<br>        Vescica: Accumula e secerne l’urina e partecipa alla trasformazione         dei liquidi. Un suo squilibrio produce a livello mentale gelosia, sospetto,         rancore ecc.</div></td>  </tr>  <tr>    <td style=\"padding-top:10px;padding-left:10px;\"><div align=\"justify\"><b><span style=\"padding-top:10px;\"><img src=\"sets/meridiani_cinesi/img/teoria/aria.png\" width=\"92\" height=\"66\" hspace=\"23\" align=\"left\"></span>Aria         (o metallo)</b><br>        Polmoni: Governano la respirazione, controllano i meridiani ed i vasi         sanguigni. Diffondono energia protettiva alle parti esterne del copro         insieme all’acqua. Controllano la resistenza alle malattie. Alloggiano         l’anima corporea (Po) e detestano il freddo.<br>        Grosso Intestino: controlla l’ultima separazione dei cibi ed espelle         l’impuro. Viene influenzato per questo aspetto dalla Milza. La sua         funzione viene anche alterata da deficit del Qi del polmone e la corretta         escrezione delle feci è un requisito indispensabile per il corretto         funzionamento del polmone (dispnea).<br>        Tale relazione viene utilizzata principalmente per comprende gli squilibri         energetici che si verificano nel corpo poiché ogni elemento è         Madre di un altro (e Figlio a suo volta!). Vige pertanto la regola che         in caso di vuoto di un elemento tonificare la madre, in caso di pieno         in eccesso disperdere il figlio.<br>        Ogni elemento poi regola un altro elemento inibendolo. Quando tale controllo         è eccessivo si ha una super-inibizione. Tale fenomeno è         regolato dallo schema:<br>        Legno <img src=\"sets/meridiani_cinesi/img/teoria/freccina.png\" width=\"11\" height=\"8\" align=\"absmiddle\">         Terra <img src=\"sets/meridiani_cinesi/img/teoria/freccina.png\" width=\"11\" height=\"8\" align=\"absmiddle\">         Acqua <img src=\"sets/meridiani_cinesi/img/teoria/freccina.png\" width=\"11\" height=\"8\" align=\"absmiddle\">         Fuoco <img src=\"sets/meridiani_cinesi/img/teoria/freccina.png\" width=\"11\" height=\"8\" align=\"absmiddle\">         Metallo <img src=\"sets/meridiani_cinesi/img/teoria/freccina.png\" width=\"11\" height=\"8\" align=\"absmiddle\">         Legno <br>        In questo caso va sempre disperso quello a monte.</div></td>  </tr></table>" 	
+					TestoTeoria: "<table width=\"100%\" border=\"0\" cellspacing=\"0\" cellpadding=\"0\">  <tr>    <td style=\"border-bottom:1px dotted #666;padding-bottom:10px;padding-left:10px;\"><div align=\"justify\"><b><span style=\"border-bottom:1px dotted #666;padding-bottom:10px;\"><img src=\"sets/common/mtc/img/teoria/terra.png\" width=\"119\" height=\"44\" hspace=\"10\" align=\"left\"></span>Terra</b><br>        Milza: mantiene l’energia pura dei cibi (GuQi) e la invia in alto.         Governa la digestione. Ha una funzione antiemorragica. Permette la salita         del Qi e mantiene al loro posto gli organi. Alloggia il pensiero (Yi)         e la memoria. Detesta l’umidità e soffre di vuoto <br>        Stomaco: tritura i cibi e ne manda la parte impura verso il piccolo intestino.         La sua attività si correla con l’induito della lingua. Controlla         la discesa del Qi soffre di pieno detesta il secco. </div></td>  </tr>  <tr>    <td style=\"border-bottom:1px dotted #666;padding-bottom:10px;padding-top:10px;padding-left:10px;\"><div align=\"justify\"><b><span style=\"border-bottom:1px dotted #666;padding-bottom:10px;padding-top:10px;\"><img src=\"sets/common/mtc/img/teoria/legno.png\" width=\"97\" height=\"61\" hspace=\"21\" align=\"left\"></span>Legno</b><br>        Fegato: Trattiene il sangue, controlla il libero fluire del QI ed influenza         lo stato emozionale, controlla le articolazioni ed invia la bile alla         cistifellea. Alloggia l’anima eterea (Hun), detesta il vento e la         collera. Soffre di pieno.<br>        Vescicola biliare: secerne la bile ed esprime il corretto funzionamento         del fegato. Controlla la capacità di prendere decisioni e i tendini.</div></td>  </tr>  <tr>    <td style=\"border-bottom:1px dotted #666;padding-bottom:10px;padding-top:10px;padding-left:10px;\"><div align=\"justify\"><b><span style=\"border-bottom:1px dotted #666;padding-bottom:10px;padding-top:10px;\"><img src=\"sets/common/mtc/img/teoria/fuoco.png\" width=\"53\" height=\"71\" hspace=\"43\" align=\"left\"></span>Fuoco</b><br>        Cuore: governa il sangue e ne è responsabile della produzione.         Alloggia la mente cosciente (Shen) Controlla i sogni e il sudore. Detesta         il calore.<br>        Intestino Tenue: Prosegue la digestione dopo lo stomaco dei solidi e dei         liquidi. Influenza la chiarezza mentale e la capacità di discernere         il giusto dall’ingiusto.</div></td>  </tr>  <tr>    <td style=\"border-bottom:1px dotted #666;padding-bottom:10px;padding-top:10px;padding-left:10px;\"><div align=\"justify\"><b><span style=\"border-bottom:1px dotted #666;padding-bottom:10px;padding-top:10px;\"><img src=\"sets/common/mtc/img/teoria/acqua.png\" width=\"96\" height=\"52\" hspace=\"21\" align=\"left\"></span>Acqua</b><br>        Reni: sono la radice energetica sia Yin che Yang di tutti gli organi essendo         la sede di tutte le energie e sostanze vitali primordiali (genetica).         Producono il midollo, riempiono il cervello e controllano le ossa. Governano         l’acqua e la purificano inviandola agli organi. Controllano il deflusso         di urina e di sperma. Alloggiano la volontà. Detestano il secco.<br>        Vescica: Accumula e secerne l’urina e partecipa alla trasformazione         dei liquidi. Un suo squilibrio produce a livello mentale gelosia, sospetto,         rancore ecc.</div></td>  </tr>  <tr>    <td style=\"padding-top:10px;padding-left:10px;\"><div align=\"justify\"><b><span style=\"padding-top:10px;\"><img src=\"sets/common/mtc/img/teoria/aria.png\" width=\"92\" height=\"66\" hspace=\"23\" align=\"left\"></span>Aria         (o metallo)</b><br>        Polmoni: Governano la respirazione, controllano i meridiani ed i vasi         sanguigni. Diffondono energia protettiva alle parti esterne del copro         insieme all’acqua. Controllano la resistenza alle malattie. Alloggiano         l’anima corporea (Po) e detestano il freddo.<br>        Grosso Intestino: controlla l’ultima separazione dei cibi ed espelle         l’impuro. Viene influenzato per questo aspetto dalla Milza. La sua         funzione viene anche alterata da deficit del Qi del polmone e la corretta         escrezione delle feci è un requisito indispensabile per il corretto         funzionamento del polmone (dispnea).<br>        Tale relazione viene utilizzata principalmente per comprende gli squilibri         energetici che si verificano nel corpo poiché ogni elemento è         Madre di un altro (e Figlio a suo volta!). Vige pertanto la regola che         in caso di vuoto di un elemento tonificare la madre, in caso di pieno         in eccesso disperdere il figlio.<br>        Ogni elemento poi regola un altro elemento inibendolo. Quando tale controllo         è eccessivo si ha una super-inibizione. Tale fenomeno è         regolato dallo schema:<br>        Legno <img src=\"sets/common/mtc/img/teoria/freccina.png\" width=\"11\" height=\"8\" align=\"absmiddle\">         Terra <img src=\"sets/common/mtc/img/teoria/freccina.png\" width=\"11\" height=\"8\" align=\"absmiddle\">         Acqua <img src=\"sets/common/mtc/img/teoria/freccina.png\" width=\"11\" height=\"8\" align=\"absmiddle\">         Fuoco <img src=\"sets/common/mtc/img/teoria/freccina.png\" width=\"11\" height=\"8\" align=\"absmiddle\">         Metallo <img src=\"sets/common/mtc/img/teoria/freccina.png\" width=\"11\" height=\"8\" align=\"absmiddle\">         Legno <br>        In questo caso va sempre disperso quello a monte.</div></td>  </tr></table>" 	
 				},
 				{
 					TitoloTeoria: "5. Trasformazione del Qi",
@@ -3618,74 +2878,74 @@ DB.set= {
 				{
 					TitoloTeoria: "Vescica urinaria",
 					sigla: "BL",
-					TestoTeoria: "<div style=\"background:url(sets/meridiani_cinesi/img/txt_meridiani/BL/simbolo_elemento.png) no-repeat;min-height:441px;\"><p><i>Purificazione dei fluidi dal corpo</i><br>  <font color=\"#666666\">Meridiano Yang di Acqua</font></p>  <p><b>Governa:</b><br>    - Vescica Urinaria<br />    - Sistema nervoso autonomo<br />    - Sistema urinario<br />    - Sistema riproduttivo<br />    - Sistema linfatico<br />    - Ossa, giunture<br />    - Ghiandola pituitaria<br />    - Utero<br />    - Colonna vertebrale<br />  - Scheletro</p>  <p><b>Rappresenta:</b><br>    - Fluidità<br />    - Spinta<br />    - Impeto<br />    - Subconscio<br />  - Adattabilità</p>  <p><b>Risolve:</b><br>    - Paura <br />    - Ansia<br />    - Insicurezza<br />    - Stanchezza<br />  - Patologie scheletriche e vertebrali</p></div>" 	
+					TestoTeoria: "<div style=\"background:url(sets/common/mtc/img/txt_meridiani/BL/simbolo_elemento.png) no-repeat;min-height:441px;\"><p><i>Purificazione dei fluidi dal corpo</i><br>  <font color=\"#666666\">Meridiano Yang di Acqua</font></p>  <p><b>Governa:</b><br>    - Vescica Urinaria<br />    - Sistema nervoso autonomo<br />    - Sistema urinario<br />    - Sistema riproduttivo<br />    - Sistema linfatico<br />    - Ossa, giunture<br />    - Ghiandola pituitaria<br />    - Utero<br />    - Colonna vertebrale<br />  - Scheletro</p>  <p><b>Rappresenta:</b><br>    - Fluidità<br />    - Spinta<br />    - Impeto<br />    - Subconscio<br />  - Adattabilità</p>  <p><b>Risolve:</b><br>    - Paura <br />    - Ansia<br />    - Insicurezza<br />    - Stanchezza<br />  - Patologie scheletriche e vertebrali</p></div>" 	
 				},
 				{
 					TitoloTeoria: "Rene",
 					sigla: "KI",
-					TestoTeoria: "<div style=\"background:url(sets/meridiani_cinesi/img/txt_meridiani/KI/simbolo_elemento.png) no-repeat left 15px;min-height:460px;\"><p><i>Purificazione dei fluidi del corpo</i><br>  <font color=\"#666666\">Meridiano Yin di Acqua</font></p>  <p><b>Governa:</b><br>    - Liquidi del corpo<br>    - Ormoni<br>    - Ghiandole surrenali<br>    - Reni<br>    - Energia sessuale<br>    - Desiderio sessuale<br>    - Jing del cielo anteriore<br>    - Jing del cielo posteriore<br>  - Yuan QI</p>  <p><b>Rappresenta:</b><br>    - Purificazione del sangue<br>    - Energia ancestrale<br>    - Scorta di energia<br>    - Forza di volontà<br>  - Spinta ad andare avanti</p>  <p><b>Risolve:</b><br>    - Stress<br>    - Paura<br>    - Ansia<br>    - Insicurezza<br>    - Flessibilità<br>    - Sincronizzazione<br>  - Problemi correlati ai liquidi</p></div>" 	
+					TestoTeoria: "<div style=\"background:url(sets/common/mtc/img/txt_meridiani/KI/simbolo_elemento.png) no-repeat left 15px;min-height:460px;\"><p><i>Purificazione dei fluidi del corpo</i><br>  <font color=\"#666666\">Meridiano Yin di Acqua</font></p>  <p><b>Governa:</b><br>    - Liquidi del corpo<br>    - Ormoni<br>    - Ghiandole surrenali<br>    - Reni<br>    - Energia sessuale<br>    - Desiderio sessuale<br>    - Jing del cielo anteriore<br>    - Jing del cielo posteriore<br>  - Yuan QI</p>  <p><b>Rappresenta:</b><br>    - Purificazione del sangue<br>    - Energia ancestrale<br>    - Scorta di energia<br>    - Forza di volontà<br>  - Spinta ad andare avanti</p>  <p><b>Risolve:</b><br>    - Stress<br>    - Paura<br>    - Ansia<br>    - Insicurezza<br>    - Flessibilità<br>    - Sincronizzazione<br>  - Problemi correlati ai liquidi</p></div>" 	
 				},
 				{
 					TitoloTeoria: "Cistifellea",
 					sigla: "GB",
-					TestoTeoria: "<div style=\"background:url(sets/meridiani_cinesi/img/txt_meridiani/GB/simbolo_elemento.png) no-repeat left 15px;min-height:460px;\"><p><i>Distribuzione, Decisione</i><br><font color=\"#666666\">Meridiano Yang di Legno</font></p><p><b>Governa:</b><br>  - Cistifellea<br>  - Muscoli<br>  - Tendini <br>  - Legamenti<br>  - Occhi<br>  <br>  <b>Rappresenta: </b><br>  - Responsabilità<br>  - Controllo<br>  - Decisioni<br>  - Organizzazione<br>  - Perfezionamento<br>- Resistenza</p><p><b>Risolve:</b><br>  - Esitazione<br>  - Rabbia trattenuta<br>  - Tensioni<br>  - Stress<br>- Contratture</p></div>" 	
+					TestoTeoria: "<div style=\"background:url(sets/common/mtc/img/txt_meridiani/GB/simbolo_elemento.png) no-repeat left 15px;min-height:460px;\"><p><i>Distribuzione, Decisione</i><br><font color=\"#666666\">Meridiano Yang di Legno</font></p><p><b>Governa:</b><br>  - Cistifellea<br>  - Muscoli<br>  - Tendini <br>  - Legamenti<br>  - Occhi<br>  <br>  <b>Rappresenta: </b><br>  - Responsabilità<br>  - Controllo<br>  - Decisioni<br>  - Organizzazione<br>  - Perfezionamento<br>- Resistenza</p><p><b>Risolve:</b><br>  - Esitazione<br>  - Rabbia trattenuta<br>  - Tensioni<br>  - Stress<br>- Contratture</p></div>" 	
 				},
 				{
 					TitoloTeoria: "Fegato",
 					sigla: "LR",
-					TestoTeoria: "<div style=\"background:url(sets/meridiani_cinesi/img/txt_meridiani/LR/simbolo_elemento.png) no-repeat left 15px;min-height:460px;\"><p><i>Pianificazione, Immagazzinamento, Detossificazione</i><br><font color=\"#666666\">Meridiano Yin di Legno</font></p><p><b>  Governa:</b><br>  - Fegato<br>  - Muscoli<br>  - Tendini<br>  - Legamenti<br>  - Occhi<br>  - Unghie</p><p><b>Rappresenta:</b><br>  - Controllo<br>  - Autocontrollo<br>  - Coraggio<br>  - Pianificazione<br>  - Fertilità<br>  - Resistenza<br>  - Disintossicazione <br>  - Temperamento <br>  - Magazzino di energia in generale ( a livello energetico)</p><p><b>Risolve:</b><br>  - Assuefazione<br>  - Rabbia esplosiva<br>  - Patologie muscolari</p></div>" 	
+					TestoTeoria: "<div style=\"background:url(sets/common/mtc/img/txt_meridiani/LR/simbolo_elemento.png) no-repeat left 15px;min-height:460px;\"><p><i>Pianificazione, Immagazzinamento, Detossificazione</i><br><font color=\"#666666\">Meridiano Yin di Legno</font></p><p><b>  Governa:</b><br>  - Fegato<br>  - Muscoli<br>  - Tendini<br>  - Legamenti<br>  - Occhi<br>  - Unghie</p><p><b>Rappresenta:</b><br>  - Controllo<br>  - Autocontrollo<br>  - Coraggio<br>  - Pianificazione<br>  - Fertilità<br>  - Resistenza<br>  - Disintossicazione <br>  - Temperamento <br>  - Magazzino di energia in generale ( a livello energetico)</p><p><b>Risolve:</b><br>  - Assuefazione<br>  - Rabbia esplosiva<br>  - Patologie muscolari</p></div>" 	
 				},
 				{
 					TitoloTeoria: "Stomaco",
 					sigla: "ST",
-					TestoTeoria: "<div style=\"background:url(sets/meridiani_cinesi/img/txt_meridiani/ST/simbolo_elemento.png) no-repeat left 15px;min-height:460px;\"><p><i>Sistema digerente e sistema riproduttivo</i><br><font color=\"#666666\">Meridiano Yang di Terra</font></p><p><b>Governa:</b><br>  - Stomaco<br>  - Carnagione<br>  - Tubi digerenti<br>  - Digestione<br>  - Tubi del sistema riproduttivo<br>  - Cicli naturali<br>  - Allattamento<br>  - Pensiero</p><p><b>Rappresenta:<br>  </b>- Testardaggine<br>  - Realtà<br>  - Costrizione <br>  - Abbraccio<br>  - Simpatia<br>  - Preoccupazione<br>  - Tenersi aggrappati<br>  - Stabilità<br>  - Conquista</p><p><b>Risolve:</b><br>  - Appetito<br>  - Fame<br>  - Voglia di …<br>  - Ossessione<br>  - Apatia</p></div>" 	
+					TestoTeoria: "<div style=\"background:url(sets/common/mtc/img/txt_meridiani/ST/simbolo_elemento.png) no-repeat left 15px;min-height:460px;\"><p><i>Sistema digerente e sistema riproduttivo</i><br><font color=\"#666666\">Meridiano Yang di Terra</font></p><p><b>Governa:</b><br>  - Stomaco<br>  - Carnagione<br>  - Tubi digerenti<br>  - Digestione<br>  - Tubi del sistema riproduttivo<br>  - Cicli naturali<br>  - Allattamento<br>  - Pensiero</p><p><b>Rappresenta:<br>  </b>- Testardaggine<br>  - Realtà<br>  - Costrizione <br>  - Abbraccio<br>  - Simpatia<br>  - Preoccupazione<br>  - Tenersi aggrappati<br>  - Stabilità<br>  - Conquista</p><p><b>Risolve:</b><br>  - Appetito<br>  - Fame<br>  - Voglia di …<br>  - Ossessione<br>  - Apatia</p></div>" 	
 				},
 				{
 					TitoloTeoria: "Milza-pancreas",
 					sigla: "SP",
-					TestoTeoria: "<div style=\"background:url(sets/meridiani_cinesi/img/txt_meridiani/SP/simbolo_elemento.png) no-repeat left 15px;min-height:460px;\"><p><i>Sistema digerente e sistema riproduttivo</i><br><font color=\"#666666\">Meridiano Yin di Terra</font></p><p><b>Governa:</b><br>  - Milza<br>  - Pancreas<br>  - Succhi gastrici<br>  - Secrezioni del sistema riproduttivo<br>  - Circolazione del sangue nei vasi<br>  - Cicli bionaturali<br>  - Ciclo Mestruale<br>  - Digestione<br>  - Pensiero</p><p><b>Rappresenta:</b><br>  - Simpatia<br>  - Attività mentale<br>  - Maturità mentale<br>  - Maturità sessuale<br>  - La capacità di mantenere gli organi al loro posto<br>  - Mantenere il sangue nei vasi<br>  - Realtà</p><p><b>Risolve:</b><br>  - Preoccupazione<br>  - Problemi correlati al ciclo mestruale<br>  - Emorragie<br>  - Prolassi<br>  - Problemi del tubo digerente<br>  - Problemi mentali</p></div>" 	
+					TestoTeoria: "<div style=\"background:url(sets/common/mtc/img/txt_meridiani/SP/simbolo_elemento.png) no-repeat left 15px;min-height:460px;\"><p><i>Sistema digerente e sistema riproduttivo</i><br><font color=\"#666666\">Meridiano Yin di Terra</font></p><p><b>Governa:</b><br>  - Milza<br>  - Pancreas<br>  - Succhi gastrici<br>  - Secrezioni del sistema riproduttivo<br>  - Circolazione del sangue nei vasi<br>  - Cicli bionaturali<br>  - Ciclo Mestruale<br>  - Digestione<br>  - Pensiero</p><p><b>Rappresenta:</b><br>  - Simpatia<br>  - Attività mentale<br>  - Maturità mentale<br>  - Maturità sessuale<br>  - La capacità di mantenere gli organi al loro posto<br>  - Mantenere il sangue nei vasi<br>  - Realtà</p><p><b>Risolve:</b><br>  - Preoccupazione<br>  - Problemi correlati al ciclo mestruale<br>  - Emorragie<br>  - Prolassi<br>  - Problemi del tubo digerente<br>  - Problemi mentali</p></div>" 	
 				},
 				{
 					TitoloTeoria: "Intestino tenue",
 					sigla: "SI",
-					TestoTeoria: "<div style=\"background:url(sets/meridiani_cinesi/img/txt_meridiani/SI/simbolo_elemento.png) no-repeat;min-height:441px;\"><p><i>Assimilazione, Assorbimento</i><br><font color=\"#666666\">Meridiano Yang di Fuoco</font></p><p><b>Governa:</b><br>  - Intestino Tenue<br>  - Midollo spinale</p><p><b>Rappresenta:</b><br>  - Meccanismo anti-shock<br>  - Risata <br>  - Autoanalisi<br>  - Rivalutazione del Sé<br>  - Intuizione<br>  - Determinazione<br>  - Emozioni<br>  - Stabilità emozionale<br>  - Compassione<br>  - Amore<br>  - Gioia</p><p><b>Risolve:</b><br>  - Grandi cambiamenti interiori<br>  - Transizioni<br>  - Problemi dell'assimilazione<br>  - Problemi di interpretazione</p></div>" 	
+					TestoTeoria: "<div style=\"background:url(sets/common/mtc/img/txt_meridiani/SI/simbolo_elemento.png) no-repeat;min-height:441px;\"><p><i>Assimilazione, Assorbimento</i><br><font color=\"#666666\">Meridiano Yang di Fuoco</font></p><p><b>Governa:</b><br>  - Intestino Tenue<br>  - Midollo spinale</p><p><b>Rappresenta:</b><br>  - Meccanismo anti-shock<br>  - Risata <br>  - Autoanalisi<br>  - Rivalutazione del Sé<br>  - Intuizione<br>  - Determinazione<br>  - Emozioni<br>  - Stabilità emozionale<br>  - Compassione<br>  - Amore<br>  - Gioia</p><p><b>Risolve:</b><br>  - Grandi cambiamenti interiori<br>  - Transizioni<br>  - Problemi dell'assimilazione<br>  - Problemi di interpretazione</p></div>" 	
 				},
 			
 				{
 					TitoloTeoria: "Cuore",
 					sigla: "HT",
-					TestoTeoria: "<div style=\"background:url(sets/meridiani_cinesi/img/txt_meridiani/HT/simbolo_elemento.png) no-repeat left 15px;min-height:460px;\"><p><i>Interpretazione</i><br><font color=\"#666666\">Meridiano Yin di Fuoco</font></p><p><b>Governa:</b><br>  - Cuore<br>  - Sistema nervoso centrale<br>  - Cervello<br>  - Sangue quantità<br>  - Emozioni<br>  - Stabilità emozionale<br>  - Shen ( Spirito )</p><p><b>Rappresenta:</b><br>  - Amore<br>  - Gioia<br>  - Compassione<br>  - Risata<br>  - Autoanalisi<br>  - Rivalutazione del Sé <br>  - Intuizione<br>  - Interpretazione<br>  - Stabilità affettiva</p><p><b>Risolve:</b><br>  - Grandi cambiamenti interiori<br>  - Transizione<br>  - Depressione<br>  - Infelicità</p></div>" 	
+					TestoTeoria: "<div style=\"background:url(sets/common/mtc/img/txt_meridiani/HT/simbolo_elemento.png) no-repeat left 15px;min-height:460px;\"><p><i>Interpretazione</i><br><font color=\"#666666\">Meridiano Yin di Fuoco</font></p><p><b>Governa:</b><br>  - Cuore<br>  - Sistema nervoso centrale<br>  - Cervello<br>  - Sangue quantità<br>  - Emozioni<br>  - Stabilità emozionale<br>  - Shen ( Spirito )</p><p><b>Rappresenta:</b><br>  - Amore<br>  - Gioia<br>  - Compassione<br>  - Risata<br>  - Autoanalisi<br>  - Rivalutazione del Sé <br>  - Intuizione<br>  - Interpretazione<br>  - Stabilità affettiva</p><p><b>Risolve:</b><br>  - Grandi cambiamenti interiori<br>  - Transizione<br>  - Depressione<br>  - Infelicità</p></div>" 	
 				},
 				{
 					TitoloTeoria: "Triplice riscaldatore",
 					sigla: "TE",
-					TestoTeoria: "<div style=\"background:url(sets/meridiani_cinesi/img/txt_meridiani/TE/simbolo_elemento.png) no-repeat left 35px;min-height:480px;\"><p><i>Protezione</i><br><font color=\"#666666\">Meridiano Yang di Fuoco supplementare</font></p><p><b>Governa:</b><br>  - Temperatura del corpo<br>  - Sistema immunitario<br>  - Sistema linfatico<br>  - Esperienza emotiva sessuale <br>  - Coordinazione dell'interazione fra i vari organi</p><p><b>Rappresenta:</b><br>  - Autoprotezione emotiva <br>  - Tutte le difese<br>  - Emozioni</p><p><b>Risolve:</b><br>  - Innamoramento<br>  - Violenza<br>  - Stupro<br>  - Sentimenti <br>  - Iperprotezione<br>  - Mancanza di protezione<br>  - Patologie virali e batteriche<br>  - Infiammazioni</p></div>" 	
+					TestoTeoria: "<div style=\"background:url(sets/common/mtc/img/txt_meridiani/TE/simbolo_elemento.png) no-repeat left 35px;min-height:480px;\"><p><i>Protezione</i><br><font color=\"#666666\">Meridiano Yang di Fuoco supplementare</font></p><p><b>Governa:</b><br>  - Temperatura del corpo<br>  - Sistema immunitario<br>  - Sistema linfatico<br>  - Esperienza emotiva sessuale <br>  - Coordinazione dell'interazione fra i vari organi</p><p><b>Rappresenta:</b><br>  - Autoprotezione emotiva <br>  - Tutte le difese<br>  - Emozioni</p><p><b>Risolve:</b><br>  - Innamoramento<br>  - Violenza<br>  - Stupro<br>  - Sentimenti <br>  - Iperprotezione<br>  - Mancanza di protezione<br>  - Patologie virali e batteriche<br>  - Infiammazioni</p></div>" 	
 				},
 				{
 					TitoloTeoria: "Mastro del cuore",
 					sigla: "PC",
-					TestoTeoria: "<div style=\"background:url(sets/meridiani_cinesi/img/txt_meridiani/PC/simbolo_elemento.png) no-repeat left 35px;min-height:480px;\"><p><i>Circolazione</i><br><font color=\"#666666\">Meridiano Yin di Fuoco supplementare</font></p><p><b>Governa:</b><br>  - Sistema vascolare<br>  - Sangue<br>  - Pressione sanguigna<br>  - Circolazione sanguigna<br>  - Pericardio<br>  - Energia sessuale <br>  - Sogni<br>  - Emozioni<br>  - Sentimenti</p><p><b>Rappresenta:</b><br>  - Esperienza emotiva sessuale<br>  - Stato emotivo generale<br>  - Stabilità emozionale</p><p><b>Risolve:</b><br>  - Innamoramento<br>  - Violenza<br>  - Stupro<br>  - L'abbandono</p></div>" 	
+					TestoTeoria: "<div style=\"background:url(sets/common/mtc/img/txt_meridiani/PC/simbolo_elemento.png) no-repeat left 35px;min-height:480px;\"><p><i>Circolazione</i><br><font color=\"#666666\">Meridiano Yin di Fuoco supplementare</font></p><p><b>Governa:</b><br>  - Sistema vascolare<br>  - Sangue<br>  - Pressione sanguigna<br>  - Circolazione sanguigna<br>  - Pericardio<br>  - Energia sessuale <br>  - Sogni<br>  - Emozioni<br>  - Sentimenti</p><p><b>Rappresenta:</b><br>  - Esperienza emotiva sessuale<br>  - Stato emotivo generale<br>  - Stabilità emozionale</p><p><b>Risolve:</b><br>  - Innamoramento<br>  - Violenza<br>  - Stupro<br>  - L'abbandono</p></div>" 	
 				},
 				{
 					TitoloTeoria: "Intestino crasso",
 					sigla: "LI",
-					TestoTeoria: "<div style=\"background:url(sets/meridiani_cinesi/img/txt_meridiani/LI/simbolo_elemento.png) no-repeat left 35px;min-height:480px;\"><p><i>Eliminazione della stagnazione di KI</i><br><font color=\"#666666\">Meridiano Yang di Aria (o Metallo)</font></p><p><b>Governa:</b><br>  - Intestino Crasso<br>  - Pelle<br>  - Escrezioni in generale</p><p><b>Rappresenta:</b><br>  - Trattenere (anche fisico, materiale ,cose come libri, mobili, ecc.) <br>  - Relazioni con l'ambiente esterno</p><p><b>Risolve:</b><br>  - Insoddisfazione <br>  - Mancanza di pensiero positivo<br>  - Mancanza  di vitalità<br>  - Capacità a lasciar andare<br>  - Dolore<br>  - Tristezza<br>  - Pianto</p><p>&nbsp;</p><p>&nbsp;</p></div>" 	
+					TestoTeoria: "<div style=\"background:url(sets/common/mtc/img/txt_meridiani/LI/simbolo_elemento.png) no-repeat left 35px;min-height:480px;\"><p><i>Eliminazione della stagnazione di KI</i><br><font color=\"#666666\">Meridiano Yang di Aria (o Metallo)</font></p><p><b>Governa:</b><br>  - Intestino Crasso<br>  - Pelle<br>  - Escrezioni in generale</p><p><b>Rappresenta:</b><br>  - Trattenere (anche fisico, materiale ,cose come libri, mobili, ecc.) <br>  - Relazioni con l'ambiente esterno</p><p><b>Risolve:</b><br>  - Insoddisfazione <br>  - Mancanza di pensiero positivo<br>  - Mancanza  di vitalità<br>  - Capacità a lasciar andare<br>  - Dolore<br>  - Tristezza<br>  - Pianto</p><p>&nbsp;</p><p>&nbsp;</p></div>" 	
 				},
 				{
 					TitoloTeoria: "Polmone",
 					sigla: "LU",
-					TestoTeoria: "<div style=\"background:url(sets/meridiani_cinesi/img/txt_meridiani/LU/simbolo_elemento.png) no-repeat left 35px;min-height:480px;\"><p><i>Immissione di KI, limiti, struttura, vitalità</i><br><font color=\"#666666\">Meridiano Yin di Aria (o Metallo)</font></p><p><b>Governa:</b><br>  - Apparato respiratorio<br>  - Scambio energetico<br>  - Pelle<br>  - Sudore</p><p><b>Rappresenta:</b><br>  - Relazioni con l'ambiente esterno<br>  - Relazioni sociali<br>  - Trattenere o lasciare andare<br>  - I nostri confini</p><p><b>Risolve:</b><br>  - Comportamento antisociale<br>  - Lutto<br>  - Dolore<br>  - Pianto<br>  - Tristezza<br>  - Problemi correlati all'apparato respiratorio<br>  - Problemi dermatologici</p></div>" 	
+					TestoTeoria: "<div style=\"background:url(sets/common/mtc/img/txt_meridiani/LU/simbolo_elemento.png) no-repeat left 35px;min-height:480px;\"><p><i>Immissione di KI, limiti, struttura, vitalità</i><br><font color=\"#666666\">Meridiano Yin di Aria (o Metallo)</font></p><p><b>Governa:</b><br>  - Apparato respiratorio<br>  - Scambio energetico<br>  - Pelle<br>  - Sudore</p><p><b>Rappresenta:</b><br>  - Relazioni con l'ambiente esterno<br>  - Relazioni sociali<br>  - Trattenere o lasciare andare<br>  - I nostri confini</p><p><b>Risolve:</b><br>  - Comportamento antisociale<br>  - Lutto<br>  - Dolore<br>  - Pianto<br>  - Tristezza<br>  - Problemi correlati all'apparato respiratorio<br>  - Problemi dermatologici</p></div>" 	
 				},
 			
 				{
 					TitoloTeoria: "Vaso governatore",
 					sigla: "GV",
-					TestoTeoria: "<div style=\"background:url(sets/meridiani_cinesi/img/txt_meridiani/GV/simbolo_elemento.png) no-repeat left -55px;min-height:389px;\"><p><font color=\"#666666\">Meridiano straordinario Yang</font></p><p><b>Governa:</b><br>  - I meridiani Yang<br>  - Energie Yang<br>  - Parte energetica<br>  - Sfera psichica<br>  - Rachide superficiale<br>  - Caratteri sessuali energetici<br>  - Cervello</p><p><b>Rappresenta:</b><br>  - Creazione<br>  - Relazioni esterne<br>  - Forza</p><p><b>Risolve:</b><br>  - Malattie esterne<br>  - Malattie psichiche<br>  - Sindromi da pieno</p></div>" 	
+					TestoTeoria: "<div style=\"background:url(sets/common/mtc/img/txt_meridiani/GV/simbolo_elemento.png) no-repeat left -55px;min-height:389px;\"><p><font color=\"#666666\">Meridiano straordinario Yang</font></p><p><b>Governa:</b><br>  - I meridiani Yang<br>  - Energie Yang<br>  - Parte energetica<br>  - Sfera psichica<br>  - Rachide superficiale<br>  - Caratteri sessuali energetici<br>  - Cervello</p><p><b>Rappresenta:</b><br>  - Creazione<br>  - Relazioni esterne<br>  - Forza</p><p><b>Risolve:</b><br>  - Malattie esterne<br>  - Malattie psichiche<br>  - Sindromi da pieno</p></div>" 	
 				},
 				{
 					TitoloTeoria: "Vaso concezione",
 					sigla: "CV",
-					TestoTeoria: "<div style=\"background:url(sets/meridiani_cinesi/img/txt_meridiani/CV/simbolo_elemento.png) no-repeat left -55px;min-height:389px;\"><p><font color=\"#666666\">Meridiano straordinario Yin</font></p><p><b>Governa:</b><br>  - I meridiani Yin<br>  - Energie Yin<br>  - Parte materiale<br>  - Fisiologia organica<br>  - Rachide profondo<br>  - Caratteri  sessuali esterni</p><p><b>Rappresenta:</b><br>  - Procreazione<br>  - Crescita<br>  - Realizzazione della vita</p><p><b>Risolve:</b><br>  - Malattie interne<br>  - Disfunzioni organiche<br>  - Sindromi da vuoto</p></div>" 	
+					TestoTeoria: "<div style=\"background:url(sets/common/mtc/img/txt_meridiani/CV/simbolo_elemento.png) no-repeat left -55px;min-height:389px;\"><p><font color=\"#666666\">Meridiano straordinario Yin</font></p><p><b>Governa:</b><br>  - I meridiani Yin<br>  - Energie Yin<br>  - Parte materiale<br>  - Fisiologia organica<br>  - Rachide profondo<br>  - Caratteri  sessuali esterni</p><p><b>Rappresenta:</b><br>  - Procreazione<br>  - Crescita<br>  - Realizzazione della vita</p><p><b>Risolve:</b><br>  - Malattie interne<br>  - Disfunzioni organiche<br>  - Sindromi da vuoto</p></div>" 	
 				}
 			]
 		},
@@ -3788,7 +3048,7 @@ DB.set= {
 				},
 				{
 					TitoloTeoria: "Unità di misura",
-					TestoTeoria: "<p align=\"justify\">Nella Medicina Tradizionale Cinese l'unità di misura di riferimento è il <b>CUN</b>.<br>  1 CUN corrisponde alla distanza tra le due pieghe interfalangee del dito medio quando è piegato oppure alla larghezza del dito pollice.<br>  <br><b>N.B.</b> Questi rapporti di misura sono riferiti alla persona trattata, cioè, la mano di riferimento è quella del paziente e non quella dell'operatore.</p><div style=\"background:url(sets/meridiani_cinesi/img/teoria/cun.png) no-repeat left top;width:100%;height:301px;\" class=\"resImg\" id=\"410\"></div>" 	
+					TestoTeoria: "<p align=\"justify\">Nella Medicina Tradizionale Cinese l'unità di misura di riferimento è il <b>CUN</b>.<br>  1 CUN corrisponde alla distanza tra le due pieghe interfalangee del dito medio quando è piegato oppure alla larghezza del dito pollice.<br>  <br><b>N.B.</b> Questi rapporti di misura sono riferiti alla persona trattata, cioè, la mano di riferimento è quella del paziente e non quella dell'operatore.</p><div style=\"background:url(sets/common/mtc/img/teoria/cun.png) no-repeat left top;width:100%;height:301px;\" class=\"resImg\" id=\"410\"></div>" 	
 				},
 				{
 					TitoloTeoria: "Corrispondenza delle 5 fasi",
@@ -3797,114 +3057,5 @@ DB.set= {
 			]
 		}
 	],
-		
-	lingueProcedure: {
-		"1": "ITA",
-		"2": "ENG",
-		"3": "ESP",
-		"4": "DEU",
-		"5": "FRA",
-		"6": "POR" 
-	},
-		
-	sigleMeridiani: {
-		"BL": {
-			"INT": "BL",
-			"OMS": "UB",
-			"ITA": "V",
-			"FRA": "V",
-			"VOL": "V"
-		},
-		"KI": {
-			"INT": "KI",
-			"OMS": "K",
-			"ITA": "R",
-			"FRA": "RP",
-			"VOL": "R"
-		},
-		"GB": {
-			"INT": "GB",
-			"OMS": "GB",
-			"ITA": "VB",
-			"FRA": "VB",
-			"VOL": "VB"
-		},
-		"LR": {
-			"INT": "LR",
-			"OMS": "LIV",
-			"ITA": "F",
-			"FRA": "F",
-			"VOL": "F"
-		},
-		"ST": {
-			"INT": "ST",
-			"OMS": "ST",
-			"ITA": "S",
-			"FRA": "E",
-			"VOL": "S"
-		},
-		"SP": {
-			"INT": "SP",
-			"OMS": "SP",
-			"ITA": "MP",
-			"FRA": "RP",
-			"VOL": "MP"
-		},
-		"SI": {
-			"INT": "SI",
-			"OMS": "SI",
-			"ITA": "IT",
-			"FRA": "IT",
-			"VOL": "IT"
-		},
-		"HT": {
-			"INT": "HT",
-			"OMS": "H",
-			"ITA": "C",
-			"FRA": "C",
-			"VOL": "C"
-		},
-		"TE": {
-			"INT": "TE",
-			"OMS": "SJ",
-			"ITA": "TR",
-			"FRA": "TR",
-			"VOL": "End"
-		},
-		"PC": {
-			"INT": "PC",
-			"OMS": "P",
-			"ITA": "MC",
-			"FRA": "MC",
-			"VOL": "VS"
-		},
-		"LI": {
-			"INT": "LI",
-			"OMS": "LI",
-			"ITA": "IC",
-			"FRA": "GI",
-			"VOL": "GI"
-		},
-		"LU": {
-			"INT": "LU",
-			"OMS": "LI",
-			"ITA": "P",
-			"FRA": "P",
-			"VOL": "P"
-		},
-		"CV": {
-			"INT": "CV",
-			"OMS": "REN",
-			"ITA": "VC",
-			"FRA": "VC",
-			"VOL": "VC"
-		},
-		"GV": {
-			"INT": "GV",
-			"OMS": "DU",
-			"ITA": "VG",
-			"FRA": "VG",
-			"VOL": "VG"
-		}
-	}
-};
+	
+}

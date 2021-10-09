@@ -141,7 +141,7 @@ SET = {
 		
 		if(!localStorage.sistemaSigleMeridiani)localStorage.sistemaSigleMeridiani="INT";
 		var contPulsanti = 	'<span class="menuElenchi" onclick="MENU.visMM(\'btnCarMapMenu\');"></span>' +
-							'<span id="btnCarMapMenu" class="btn_meridiani_cinesi titolo_set">' +
+							'<span id="btnCarMapMenu" class="btn_meridiani_shiatsu titolo_set">' +
 							'<span>ShiatsuMap</span>' +
 							'<i class="elMenu" id="chiudiSet" onClick="caricaSet(\''+globals.set.cartella+'\',document.getElementById(\'p_'+globals.set.cartella+'\'));" title="'+htmlEntities(Lingua(TXT_ChiudiSet))+'"><span>' +
 								htmlEntities(Lingua(TXT_ChiudiSet)) +
@@ -198,7 +198,7 @@ SET = {
 		// sistemi sigle
 		HTML_imp += '<p><i>'+htmlEntities(Lingua(TXT_SistemaSigle))+':</i> ';
 		HTML_imp += '<select id="sceltaSigle" onChange="SET.popolaImpSet();">';
-		for(k in DB.set.sigleMeridiani["BL"]){
+		for(k in DB.mtc.meridiani["BL"]){
 			HTML_imp += '  <option value="'+k+'"';
 			if(localStorage.sistemaSigleMeridiani == k)HTML_imp += ' SELECTED';
 			HTML_imp += '>'+k+'</option>'+H.chr10;
@@ -912,7 +912,7 @@ SET = {
 	},
 	convSigla: function( siglaMeridiano ){
 		if( localStorage.sistemaSigleMeridiani=='INT' )return siglaMeridiano;
-		else return DB.set.sigleMeridiani[siglaMeridiano][localStorage.sistemaSigleMeridiani];
+		else return DB.mtc.meridiani[siglaMeridiano].sigle[localStorage.sistemaSigleMeridiani];
 	},
 	convSigleScheda: function(){
 		if(localStorage.sistemaSigleMeridiani == 'INT' || 
@@ -984,7 +984,7 @@ SET = {
 					'		<td class="tbSigleMeridiani_sigle">';
 					
 			if( s=='INT' )HTML += m;
-			else HTML += DB.set.sigleMeridiani[m][s];
+			else HTML += DB.mtc.meridiani[m].sigle[n];
 			
 			HTML += '		</td>';
 			if(!disp)HTML += 

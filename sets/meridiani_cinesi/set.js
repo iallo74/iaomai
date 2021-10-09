@@ -169,7 +169,7 @@ SET = {
 		
 		HTML_imp = '<p><i>'+htmlEntities(Lingua(TXT_SistemaSigle))+':</i> ';
 		HTML_imp += '<select id="sceltaSigle" onChange="SET.popolaImpSet();">';
-		for(k in DB.set.sigleMeridiani["BL"]){
+		for(k in DB.mtc.meridiani["BL"].sigle){
 			HTML_imp += '  <option value="'+k+'"';
 			if(localStorage.sistemaSigleMeridiani == k)HTML_imp += ' SELECTED';
 			HTML_imp += '>'+k+'</option>'+H.chr10;
@@ -933,7 +933,7 @@ SET = {
 	},
 	convSigla: function( siglaMeridiano ){
 		if( localStorage.sistemaSigleMeridiani=='INT' )return siglaMeridiano;
-		else return DB.set.sigleMeridiani[siglaMeridiano][localStorage.sistemaSigleMeridiani];
+		else return DB.mtc.meridiani[siglaMeridiano].sigle[localStorage.sistemaSigleMeridiani];
 	},
 	convSigleScheda: function(){
 		if(localStorage.sistemaSigleMeridiani == 'INT' || 
@@ -1006,7 +1006,7 @@ SET = {
 					'		<td class="tbSigleMeridiani_sigle">';
 					
 			if( s=='INT' )HTML += m;
-			else HTML += DB.set.sigleMeridiani[m][s];
+			else HTML += DB.mtc.meridiani[m].sigle[n];
 			
 			HTML += '		</td>';
 			if(!disp)HTML += 

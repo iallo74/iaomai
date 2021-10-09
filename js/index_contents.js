@@ -18,6 +18,7 @@ var sets = {
 			"uomo"
 		],
 		imports: [
+			'sets/common/mtc/mtc.js',
 			'frasi.js',
 			'geometrie.js',
 			'set.js',
@@ -32,6 +33,7 @@ var sets = {
 			'stili_tsubo.css'
 		],
 		dims: [
+			43,
 			6,
 			4830,
 			40,
@@ -61,6 +63,7 @@ var sets = {
 			"uomo"
 		],
 		imports: [
+			'sets/common/mtc/mtc.js',
 			'frasi.js',
 			'geometrie.js',
 			'set.js',
@@ -75,6 +78,7 @@ var sets = {
 			'stili_tsubo.css'
 		],
 		dims: [
+			43,
 			7,
 			2740,
 			39,

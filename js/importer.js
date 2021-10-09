@@ -21,6 +21,7 @@ var iPhone = false;
 var mouseDetect = false;
 var onlineVersion=false;
 var isTablet = false;
+var globals = {};
 
 // IMPOSTAZIONI DI APP
 var nomeApp = 'Iáomai';
@@ -232,17 +233,23 @@ var IMPORTER = {
 		
 		var isModello = (file.indexOf("modelli/")==0 && typeof(modelli)!='undefined');
 		var isSet = (file.indexOf("sets/")==0 && typeof(sets)!='undefined');
-		if(  isModello || isSet ){
+		if( isModello || isSet ){
 			if(!n)this.dimProgr = 0;
 			var totDim = 0;
 			var pF = file.split("/");
+			if(file.indexOf("common")>-1 && isSet){
+				pF[1] = globals.set.cartella;
+			}
 			if(n < lista.length-1){
 				for(l=0;l<lista.length-1;l++){
-					if(eval(pF[0]+"."+pF[1]+".dims")){
-						totDim += eval(pF[0]+"."+pF[1]+".dims["+l+"]");
+					var dims = eval(pF[0]+"."+pF[1]+".dims");
+					if(globals.set.cartella)
+					if(dims){
+						totDim += dims[l];
 					}
 				}
 				var dim = eval(pF[0]+"."+pF[1]+".dims["+n+"]");
+				
 				this.dimProgr += dim;
 				var perc = parseInt((this.dimProgr*100) / totDim);
 				if(isModello)visLoader(globals.modello.txtLoading + " " + perc + "%");

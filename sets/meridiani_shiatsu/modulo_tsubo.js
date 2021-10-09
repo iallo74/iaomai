@@ -12,17 +12,19 @@ var MODULO_TSUBO = { // extend SET
 		if(nTsubo2.length == 1)nTsubo2 = "0"+nTsubo2;
 		var titolo = DB.set.meridiani[siglaMeridiano].tsubo[nTsubo].NomeTsubo;
 		var meridiano = DB.set.meridiani[siglaMeridiano];
+		var coordZoom = __(DB.mtc.meridiani[siglaMeridiano].tsubo[nTsubo].coordZoom);
+		var imgZoom = __(DB.mtc.meridiani[siglaMeridiano].tsubo[nTsubo].imgZoom);
 		var TS = meridiano.tsubo[nTsubo];
-		var cartella = DB.set.meridiani[siglaMeridiano].cartella;
+		var cartella = DB.mtc.meridiani[siglaMeridiano].cartella;
 		var HTML = "<h1>"+htmlEntities(titolo)+"</h1>";
 		var HTML_simboli = '';
 		
 		// noMoxa
-		if(TS.noMoxa)HTML_simboli += 	'<div style="background-image:url(sets/meridiani_cinesi/img/nomoxa.png);"' +
+		if(DB.set.meridiani[siglaMeridiano].noMoxa)HTML_simboli += 	'<div style="background-image:url(sets/meridiani_shiatsu/img/nomoxa.png);"' +
 										'	  class="simboliTsubo"></div>';
 		
 		// noGravidanza
-		if(TS.noGravidanza && globals.modello.cartella == 'donna')HTML_simboli += '<div style="background-image:url(sets/meridiani_cinesi/img/nogravidanza.png);" class="simboliTsubo"></div>';
+		if(DB.set.meridiani[siglaMeridiano].noGravidanza && globals.modello.cartella == 'donna')HTML_simboli += '<div style="background-image:url(sets/meridiani_shiatsu/img/nogravidanza.png);" class="simboliTsubo"></div>';
 		
 		
 		if( ritorno && 
@@ -81,9 +83,26 @@ var MODULO_TSUBO = { // extend SET
 		
 		HTML += DB.set.meridiani[siglaMeridiano].tsubo[nTsubo].AzioniTsubo;
 		
+		
+		imgDettaglio='';
+		posPunti='';
+		var wCont = 370;
+		if(touchable && smartphone)wCont = WF()-40;
+		var rp = wCont/370;
+		if(coordZoom.length>1){
+			var pC=coordZoom.split("|");
+			for(pu in pC){
+				pC2=pC[pu].split(",");
+				posPunti+='<img src="sets/common/mtc/img/zoom/punto.png" width="'+parseInt(43*rp)+'" height="'+parseInt(40*rp)+'" style="position:absolute;left:'+parseInt((pC2[0]-7)*rp-20)+'px;top:'+parseInt((pC2[1]-7)*rp)+'px;">';
+			}
+		}
+		if(imgZoom)imgDettaglio='<div style="position:relative;width:370px;"><img src="sets/common/mtc/img/zoom/'+imgZoom+'" border="0" width="370" id="imgDettTsubo">'+posPunti+'</div>';
+		
+		
+		
 		// ideogramma
-		HTML = 	'<img 	src="sets/meridiani_cinesi/img/txt_meridiani/'+siglaMeridiano+'/tsubo_'+nTsubo2+'.png"' +
-				'		class="ideogrammaTsubo">'+HTML;
+		HTML = 	'<img 	src="sets/common/mtc/img/txt_meridiani/'+siglaMeridiano+'/tsubo_'+nTsubo2+'.png"' +
+				'		class="ideogrammaTsubo">'+HTML+imgDettaglio;
 		
 		
 		
@@ -280,7 +299,7 @@ var MODULO_TSUBO = { // extend SET
 	},
 	leggiSiglaMeridiano: function( cartella ){
 		for(k in DB.set.meridiani){
-			if(DB.set.meridiani[k].cartella == cartella)return k;
+			if(DB.mtc.meridiani[k].cartella == cartella)return k;
 		}
 	},
 	azRicercaTsubo: function( pt ){

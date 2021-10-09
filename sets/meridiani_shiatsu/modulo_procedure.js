@@ -428,7 +428,7 @@ var MODULO_PROCEDURE = { // extend SET
 			if(!dettagliProcedura)dettagliProcedura=[];
 			SET.dettagliProvvisori=JSON.parse(JSON.stringify(dettagliProcedura));
 			var siglaLinguaProcedura='';
-			if(idLinguaProcedura)siglaLinguaProcedura=DB.set.lingueProcedure[idLinguaProcedura];
+			if(idLinguaProcedura)siglaLinguaProcedura=DB.lingueProcedure[idLinguaProcedura];
 			
 			var HTML = '';
 			// intestazione se la procedura è dell'utente
@@ -441,11 +441,11 @@ var MODULO_PROCEDURE = { // extend SET
 					'			<select name="idLinguaProcedura"' +
 					'				    id="idLinguaProcedura"' +
 					'		  			onChange="this.blur();">';
-			for(p in DB.set.lingueProcedure){
+			for(p in DB.lingueProcedure){
 				HTML += 
 						'			<option value="'+p+'"';
-									if(siglaLinguaProcedura==DB.set.lingueProcedure[p])HTML+=' SELECTED';
-									HTML+='>&nbsp;&nbsp;&nbsp;&nbsp;'+DB.set.lingueProcedure[p]+'</option>';
+									if(siglaLinguaProcedura==DB.lingueProcedure[p])HTML+=' SELECTED';
+									HTML+='>&nbsp;&nbsp;&nbsp;&nbsp;'+DB.lingueProcedure[p]+'</option>';
 			}
 			HTML += '			</select>' +
 					'		</div>' +

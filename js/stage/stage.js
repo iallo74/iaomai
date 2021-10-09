@@ -307,7 +307,9 @@ function caricaSet( cartella, el ){
 		globals.set.imports.push(globals.siglaLingua+".js");
 		visLoader(globals.set.txtLoading);
 		var imports = clone(globals.set.imports);
-		for(i in imports)imports[i]='sets/'+cartella+'/'+imports[i];
+		for(i in imports){
+			if(imports[i].indexOf("/")==-1)imports[i]='sets/'+cartella+'/'+imports[i];
+		}
 		IMPORTER.importaFiles(	0,
 								imports,
 								'SET._init();MENU.aggiornaIconeModello();',
