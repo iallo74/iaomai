@@ -240,7 +240,10 @@ SET = {
 			var ints = [];
 			if(SETS){
 				for(i in SETS.children){
-					if(SETS.children[i].isGroup && SETS.children[i].name.substr(0,2)!='LN' && SETS.children[i].name.substr(0,2)!='GD'){
+					if(	SETS.children[i].visible &&
+						SETS.children[i].isGroup && 
+						SETS.children[i].name.substr(0,2)!='LN' && 
+						SETS.children[i].name.substr(0,2)!='GD'){
 						var intersects = raycaster.intersectObjects( SETS.children[i].children );
 						if ( intersects.length > 0 ) { // roll-over
 							for(l in intersects)ints.push(intersects[l]);

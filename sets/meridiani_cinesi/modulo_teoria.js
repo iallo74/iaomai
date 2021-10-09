@@ -19,7 +19,7 @@ var MODULO_TEORIA = { // extend SET
 	caricaApprofondimenti: function(){
 		var contTeoria = '';
 		for(p in DB.set.teoria){
-			contTeoria += 	'<div class="cartella">' +
+			contTeoria += 	'<div class="cartella" onTouchStart="SCHEDA.setCartella(this);">' +
 							'	<span id="btn_teoria_cart_'+p+'" onClick="SCHEDA.swCartella(this);">' +
 							 		DB.set.teoria[p].TitoloSezione +
 							'	</span>' +

@@ -200,7 +200,7 @@ var PAZIENTI_TRATTAMENTI = {
 					var cartAperta = this.aperture[NomeCiclo];
 					if(typeof(cartAperta)=='undefined')cartAperta=false;
 					if(this.aperture[NomeCiclo])HTML+=' cartellaAperta';
-					HTML+='"><div class="menuElenchi"' +
+					HTML+='" onTouchStart="SCHEDA.setCartella(this);"><div class="menuElenchi"' +
 						'	  onClick="MENU.visMM(\'trattTools_'+elAn+'\');">' +
 						'</div><span id="cl_'+c+'"' +
 							'      onClick="SCHEDA.swCartella(this);' +

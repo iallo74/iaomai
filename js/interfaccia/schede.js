@@ -34,6 +34,7 @@ var SCHEDA = {
 	versoRedim: '',
 	gapScheda: 16, /* 17 */
 	livelloApertura: 2,
+	ultimaCartella: '', // l'id della sottocartella aperta quando si clicca su una scheda (per smartphone)
 	htmlPallini:	'<div id="btnMenuScheda" onClick="SCHEDA.swMenuScheda();">' +
 					'<svg viewBox="0 0 25 36"><circle cy="11"></circle><circle cy="18"></circle>' +
 					'<circle cy="25"></circle></svg></div><div id="menuScheda"></div>',
@@ -674,7 +675,8 @@ var SCHEDA = {
 		if(SCHEDA.livelloApertura==3)document.getElementById("scheda_linguette").classList.add("fixExp");
 		else document.getElementById("scheda_linguette").classList.remove("fixExp");
 	},
-	setMenuDim: function( tipo ){
+	setMenuDim: function( tipo, daBtn ){
+		if(typeof(daBtn) == 'undefined')var daBtn = false;
 		
 		// forzo l'apertura compressa se c'è una scheda aperta
 		if(	SCHEDA.livelloApertura==3 && 
@@ -708,6 +710,26 @@ var SCHEDA = {
 				document.getElementById("elenchi").classList.remove("schExp");
 				document.getElementById("elenchi").classList.remove("iconeNasc");
 				document.getElementById("icone").classList.remove("iconeHome");
+				//if(daBtn){
+				if(document.getElementById("scheda").classList.contains("visSch") || daBtn){
+					var liste = document.getElementById("elenchi").getElementsByClassName("lista");
+					for(i=liste.length-1;i>=0;i--){
+						var els = liste[i].getElementsByClassName("cartellaAperta");
+						var l = els.length;
+						var c = 0;
+						if(l){
+							for(e=l-1;e>=0;e--){
+								if(els[e].getElementsByTagName("span")[0].id!=SCHEDA.ultimaCartella){
+									els[e].classList.remove("cartellaAperta");
+									c++;
+								}
+							}
+							if(c == l && els[0]){
+								els[0].parentElement.classList.remove("cont_cartellaAperta");
+							}
+						}
+					}
+				}
 				break;
 				
 			case 3:
@@ -862,12 +884,20 @@ var SCHEDA = {
 		if(typeof(forza) == 'undefined')var forza = false;
 		MENU.nasMM();
 		if(!forza){
-			el.parentElement.classList.toggle("cartellaAperta");
-			el.parentElement.parentElement.classList.toggle("cont_cartellaAperta");
+			if(el.parentElement.classList.contains("cartellaAperta")){
+				el.parentElement.classList.remove("cartellaAperta");
+				el.parentElement.parentElement.classList.remove("cont_cartellaAperta");
+			}else{
+				el.parentElement.classList.add("cartellaAperta");
+				el.parentElement.parentElement.classList.add("cont_cartellaAperta");
+			}
 		}else{
 			el.parentElement.classList.add("cartellaAperta");
 			el.parentElement.parentElement.classList.add("cont_cartellaAperta");
 		}
+	},
+	setCartella: function( el ){ // setta la cartella che deve restare aperta quando si clicca su un elemento
+		SCHEDA.ultimaCartella = el.getElementsByTagName("span")[0].id;
 	},
 	caricaBtns: function( btns, icona ){
 		document.getElementById("btns_set").innerHTML = btns;
