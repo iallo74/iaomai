@@ -41,12 +41,7 @@ SET.COL = {
 	pienoPTemissive: 0x000000,
 	*/
 	
-	sel2: 0x0072ff,
-	sel3: 0xbf870f,
-	sel4: 0x3a8a05,
-	sel5: 0x940692,
 	
-	selMT: 0x0090ff,
 	
 	biancoPT: 0xFFFFFF,
 	gialloPT: 0xFFCC00,
@@ -81,17 +76,10 @@ SET.MAT = {
 	opLineContr: 0.2,
 	opPoint: 1,
 	opPointContr: 0.3,
-	lineSel: new THREE.LineBasicMaterial( {
-		color:SET.COL.sel,
-		transparent: true,
-		opacity:0.6,
-		depthFunc: 1
-	} ),
 	lineYang: new THREE.LineBasicMaterial( {
 		color:SET.COL.base,
 		transparent: true,
-		opacity:0.6,
-		depthWrite: false
+		opacity:0.6
 	} ),
 	lineYin: new THREE.LineDashedMaterial( {
 		color: SET.COL.base,
@@ -99,8 +87,7 @@ SET.MAT = {
 		dashSize: 1,
 		gapSize: .5,
 		transparent: true,
-		opacity:0.6,
-		depthWrite: false
+		opacity:0.6
 	} ),
 	lineGuide: new THREE.LineBasicMaterial( { // meridiani YANG
 		color: SET.COL.guide,
@@ -127,8 +114,7 @@ SET.MAT = {
 	pointBase: new THREE.MeshStandardMaterial( {
 		color: SET.COL.basePT,
 		roughness:1,
-		transparent: true,
-		depthWrite: false
+		transparent: true
 	}),
 	pointOver: new THREE.MeshStandardMaterial( {
 		color: SET.COL.overPT,
@@ -217,13 +203,13 @@ SET.MAT = {
 	})
 };
 
-SET.MAT.lineYangInt = cloneMAT(SET.MAT.lineYang,{opacity:0.3, depthFunc: 1, visible: false});
+SET.MAT.lineYangInt = cloneMAT(SET.MAT.lineYang,{opacity:0.3});
 SET.MAT.lineYangOver = cloneMAT(SET.MAT.lineYang,{color: SET.COL.over});
-SET.MAT.lineYangIntOver = cloneMAT(SET.MAT.lineYangInt,{color: SET.COL.over, depthFunc: 1, visible: false});
+SET.MAT.lineYangIntOver = cloneMAT(SET.MAT.lineYangInt,{color: SET.COL.over});
 	
-SET.MAT.lineYinInt = cloneMAT(SET.MAT.lineYin,{opacity:0.3, depthFunc: 1, visible: false});
+SET.MAT.lineYinInt = cloneMAT(SET.MAT.lineYin,{opacity:0.3});
 SET.MAT.lineYinOver = cloneMAT(SET.MAT.lineYin,{color: SET.COL.over});
-SET.MAT.lineYinIntOver = cloneMAT(SET.MAT.lineYinInt,{color: SET.COL.over, depthFunc: 1, visible: false});
+SET.MAT.lineYinIntOver = cloneMAT(SET.MAT.lineYinInt,{color: SET.COL.over});
 
 SET._setLineMaterials = function(){
 	for(elemento in SET.colsElementi){
@@ -233,8 +219,7 @@ SET._setLineMaterials = function(){
 			if(!muscleView)col =  SET.COL.sel;
 			else col =  SET.COL.musc;
 		}
-		depthFunc = 3;
-		if(MODELLO.opAtt<1)depthFunc = 1;
+
 		SET.MAT.lineOn[elemento] = new THREE.ShaderMaterial( {
 			uniforms: {
 				diffuse: {value:  new THREE.Color(col)},
@@ -261,8 +246,7 @@ SET._setLineMaterials = function(){
 			},
 			vertexShader: SET.MAT.vertexShader,
 			fragmentShader: SET.MAT.fragmentShader,
-			transparent: true,
-			depthFunc: depthFunc
+			transparent: true
 		});
 	}
 }
@@ -287,9 +271,5 @@ SET._setLineTrasp = function(depthFunc){
 	SET.MAT.lineYinInt.depthFunc = depthFunc;
 	SET.MAT.lineYinOver.depthFunc = depthFunc;
 	SET.MAT.lineYinIntOver.depthFunc = depthFunc;
-	if(SET.meridianiSecondariAccesi.length){
-		SET.MAT.lineYang.depthFunc = 3;
-		SET.MAT.lineYin.depthFunc = 3;
-	}
 		
 }
