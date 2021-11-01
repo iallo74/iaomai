@@ -243,13 +243,13 @@ var IMPORTER = {
 			if(n < lista.length-1){
 				for(l=0;l<lista.length-1;l++){
 					var dims = eval(pF[0]+"."+pF[1]+".dims");
-					if(globals.set.cartella)
-					if(dims){
-						totDim += dims[l];
+					if(globals.set.cartella || pF[0]=='modelli'){
+						if(dims){
+							totDim += dims[l];
+						}
 					}
 				}
 				var dim = eval(pF[0]+"."+pF[1]+".dims["+n+"]");
-				
 				this.dimProgr += dim;
 				var perc = parseInt((this.dimProgr*100) / totDim);
 				if(isModello)visLoader(globals.modello.txtLoading + " " + perc + "%");
