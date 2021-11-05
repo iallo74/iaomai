@@ -2713,72 +2713,128 @@ DB.mtc= {
 				{
 					siglaTsubo: "EX-HN-1",
 					NomeTsubo: "1.EX.",
+					imgZoom: "testa_sopra.png",
+					coordZoom: "164,299|224,299|194,269|194,329",
 					noMoxa: false,
 					noGravidanza: false
 				},
 				{
-					siglaTsubo: "EX-HN-3",
+					siglaTsubo: "EX-HN-2",
 					NomeTsubo: "2.EX.",
+					imgZoom: "testa_fronte.png",
+					coordZoom: "119,92|245,92",
 					noMoxa: false,
 					noGravidanza: false	
 				},
 				{
-					siglaTsubo: "EX-HN-6",
+					siglaTsubo: "EX-HN-3",
 					NomeTsubo: "3.EX.",
+					imgZoom: "testa_fronte.png",
+					coordZoom: "185,209",
 					noMoxa: false,
 					noGravidanza: false	
 				},
 				{
-					siglaTsubo: "EX-HN-8",
+					siglaTsubo: "EX-HN-4",
 					NomeTsubo: "4.EX.",
-					noMoxa: false,
+					imgZoom: "testa_fronte.png",
+					coordZoom: "117,180|243,183",
+					noMoxa: true,
 					noGravidanza: false	
 				},
 				{
 					siglaTsubo: "EX-HN-5",
 					NomeTsubo: "5.EX.",
+					imgZoom: "testa_lato.png",
+					coordZoom: "134,154",
+					noMoxa: true,
+					noGravidanza: false	
+				},
+				{
+					siglaTsubo: "EX-HN-6",
+					NomeTsubo: "6.EX.",
+					imgZoom: "testa_lato.png",
+					coordZoom: "224,138",
+					noMoxa: false,
+					noGravidanza: false	
+				},
+				{
+					siglaTsubo: "EX-HN-7",
+					NomeTsubo: "7.EX.",
+					imgZoom: "testa_fronte.png",
+					coordZoom: "106,253|257,254",
+					noMoxa: false,
+					noGravidanza: false	
+				},
+				{
+					siglaTsubo: "EX-HN-8",
+					NomeTsubo: "8.EX.",
+					imgZoom: "testa_fronte.png",
+					coordZoom: "164,275|202,275",
 					noMoxa: false,
 					noGravidanza: false	
 				},
 				{
 					siglaTsubo: "EX-HN-10",
-					NomeTsubo: "6.EX.",
+					NomeTsubo: "9.EX.",
+					imgZoom: "lingua_sopra.png",
+					coordZoom: "183,255",
 					noMoxa: false,
 					noGravidanza: false	
 				},
 				{
+					siglaTsubo: "EX-HN-11",
+					NomeTsubo: "10.EX.",
+					imgZoom: "lingua_sotto.png",
+					coordZoom: "191,256",
+					noMoxa: false,
+					noGravidanza: false	
+				},
+				{
+					siglaTsubo: "EX-HN-12",
+					NomeTsubo: "11.EX.",
+					imgZoom: "lingua_sotto.png",
+					coordZoom: "222,229",
+					noMoxa: true,
+					noGravidanza: false	
+				},
+				{
+					siglaTsubo: "EX-HN-13",
+					NomeTsubo: "12.EX.",
+					imgZoom: "lingua_sotto.png",
+					coordZoom: "159,229",
+					noMoxa: true,
+					noGravidanza: false	
+				},
+				{
 					siglaTsubo: "EX-HN-14",
-					NomeTsubo: "7.EX.",
+					NomeTsubo: "13.EX.",
+					imgZoom: "testa_lato.png",
+					coordZoom: "234,221",
+					noMoxa: false,
+					noGravidanza: false	
+				},
+				{
+					siglaTsubo: "EX-HN-15",
+					NomeTsubo: "14.EX.",
+					imgZoom: "testa_dietro.png",
+					coordZoom: "215,291|155,291",
 					noMoxa: false,
 					noGravidanza: false	
 				},
 				{
 					siglaTsubo: "EX-HN-18",
-					NomeTsubo: "8.EX.",
-					noMoxa: false,
-					noGravidanza: false	
-				},
-				{
-					siglaTsubo: "EX-HN-20",
-					NomeTsubo: "9.EX.",
-					noMoxa: false,
-					noGravidanza: false	
-				},
-				{
-					siglaTsubo: "EX-HN-30",
-					NomeTsubo: "10.EX.",
-					noMoxa: false,
-					noGravidanza: false	
-				},
-				{
-					siglaTsubo: "EX-HN-37",
-					NomeTsubo: "11.EX.",
+					NomeTsubo: "15.EX.",
+					imgZoom: "testa_fronte.png",
+					coordZoom: "145,374|216,374",
 					noMoxa: false,
 					noGravidanza: false	
 				},
 				{
 					siglaTsubo: "EX-HN-54",
-					NomeTsubo: "12.EX.",
+					NomeTsubo: "16.EX.",
+					imgZoom: "testa_lato.png",
+					coordZoom: "258,207",
 					noMoxa: false,
 					noGravidanza: false	
 				},
@@ -2786,19 +2842,25 @@ DB.mtc= {
 				// petto e addome
 				{
 					siglaTsubo: "EX-CA-4",
-					NomeTsubo: "13.EX.",
+					NomeTsubo: "17.EX.",
+					imgZoom: "busto_davanti_3.png",
+					coordZoom: "132,278|276,278",
 					noMoxa: false,
 					noGravidanza: false	
 				},
 				{
 					siglaTsubo: "EX-CA-18",
-					NomeTsubo: "14.EX.",
+					NomeTsubo: "18.EX.",
+					imgZoom: "busto_davanti_3.png",
+					coordZoom: "144,300|258,300",
 					noMoxa: false,
 					noGravidanza: false	
 				},
 				{
 					siglaTsubo: "EX-CA-23",
-					NomeTsubo: "15.EX.",
+					NomeTsubo: "19.EX.",
+					imgZoom: "busto_davanti_3.png",
+					coordZoom: "177,260|221,260|198,226",
 					noMoxa: false,
 					noGravidanza: false	
 				},
@@ -2806,37 +2868,49 @@ DB.mtc= {
 				// dorso
 				{
 					siglaTsubo: "EX-BW-1",
-					NomeTsubo: "16.EX.",
+					NomeTsubo: "20.EX.",
+					imgZoom: "busto_dietro_4.png",
+					coordZoom: "166,84|210,84",
 					noMoxa: false,
 					noGravidanza: false	
 				},
 				{
 					siglaTsubo: "EX-BW-6",
-					NomeTsubo: "17.EX.",
+					NomeTsubo: "21.EX.",
+					imgZoom: "busto_dietro_4.png",
+					coordZoom: "156,206|220,206",
 					noMoxa: false,
 					noGravidanza: false	
 				},
 				{
 					siglaTsubo: "EX-BW-12",
-					NomeTsubo: "18.EX.",
+					NomeTsubo: "22.EX.",
+					imgZoom: "busto_dietro_4.png",
+					coordZoom: "153,299|223,299",
 					noMoxa: false,
 					noGravidanza: false	
 				},
 				{
 					siglaTsubo: "EX-BW-24",
-					NomeTsubo: "19.EX.",
+					NomeTsubo: "23.EX.",
+					imgZoom: "busto_dietro_2.png",
+					coordZoom: "93,225|286,225",
 					noMoxa: false,
 					noGravidanza: false	
 				},
 				{
 					siglaTsubo: "EX-BW-25",
-					NomeTsubo: "20.EX.",
+					NomeTsubo: "24.EX.",
+					imgZoom: "busto_dietro_2.png",
+					coordZoom: "189,241",
 					noMoxa: false,
 					noGravidanza: false	
 				},
 				{
 					siglaTsubo: "EX-BW-35",
-					NomeTsubo: "21.EX.",
+					NomeTsubo: "25.EX.",
+					imgZoom: "busto_dietro_4.png",
+					coordZoom: "173,99|173,120|173,147|173,168|173,188|173,216|173,243|173,274|173,302|173,334|173,361|173,395|173,425|173,462|173,491|203,99|203,120|203,147|203,168|203,188|203,216|203,243|203,274|203,302|203,334|203,361|203,395|203,425|203,462|203,491",
 					noMoxa: false,
 					noGravidanza: false	
 				},
@@ -2844,49 +2918,65 @@ DB.mtc= {
 				// arti superiori
 				{
 					siglaTsubo: "EX-UE-1",
-					NomeTsubo: "22.EX.",
+					NomeTsubo: "26.EX.",
+					imgZoom: "mano_palmo.png",
+					coordZoom: "61,130|146,21|191,12|234,30|282,58",
 					noMoxa: false,
 					noGravidanza: false	
 				},
 				{
 					siglaTsubo: "EX-UE-9",
-					NomeTsubo: "23.EX.",
+					NomeTsubo: "27.EX.",
+					imgZoom: "mano_palmo.png",
+					coordZoom: "147,101|187,98|223,109|259,121",
 					noMoxa: false,
 					noGravidanza: false	
 				},
 				{
 					siglaTsubo: "EX-UE-19",
-					NomeTsubo: "24.EX.",
+					NomeTsubo: "28.EX.",
+					imgZoom: "mano_dorso.png",
+					coordZoom: "198,221|146,221",
 					noMoxa: false,
 					noGravidanza: false	
 				},
 				{
 					siglaTsubo: "EX-UE-22",
-					NomeTsubo: "25.EX.",
+					NomeTsubo: "29.EX.",
+					imgZoom: "mano_dorso.png",
+					coordZoom: "136,158|168,148|202,147|242,216",
 					noMoxa: false,
 					noGravidanza: false	
 				},
 				{
 					siglaTsubo: "EX-UE-24",
-					NomeTsubo: "26.EX.",
+					NomeTsubo: "30.EX.",
+					imgZoom: "mano_dorso.png",
+					coordZoom: "199,185",
 					noMoxa: false,
 					noGravidanza: false	
 				},
 				{
 					siglaTsubo: "EX-UE-29",
-					NomeTsubo: "27.EX.",
+					NomeTsubo: "31.EX.",
+					imgZoom: "avambraccio_davanti_2.png",
+					coordZoom: "158,269|181,279",
 					noMoxa: false,
 					noGravidanza: false	
 				},
 				{
 					siglaTsubo: "EX-UE-46",
-					NomeTsubo: "28.EX.",
+					NomeTsubo: "32.EX.",
+					imgZoom: "arto_superiore_dietro.png",
+					coordZoom: "165,231",
 					noMoxa: false,
 					noGravidanza: false	
 				},
 				{
 					siglaTsubo: "EX-UE-48",
-					NomeTsubo: "29.EX.",
+					NomeTsubo: "33.EX.",
+					imgZoom: "busto_davanti.png",
+					coordZoom: "62,122",
 					noMoxa: false,
 					noGravidanza: false	
 				},
@@ -2894,37 +2984,49 @@ DB.mtc= {
 				// arti inferiori
 				{
 					siglaTsubo: "EX-LE-8",
-					NomeTsubo: "30.EX.",
+					NomeTsubo: "34.EX.",
+					imgZoom: "piede_dorso.png",
+					coordZoom: "92,329|112,343|136,356|166,363",
 					noMoxa: false,
 					noGravidanza: false	
 				},
 				{
 					siglaTsubo: "EX-LE-13",
-					NomeTsubo: "31.EX.",
+					NomeTsubo: "35.EX.",
+					imgZoom: "gambe_davanti.png",
+					coordZoom: "235,206|119,206",
 					noMoxa: false,
 					noGravidanza: false	
 				},
 				{
 					siglaTsubo: "EX-LE-16",
-					NomeTsubo: "32.EX.",
+					NomeTsubo: "36.EX.",
+					imgZoom: "ginocchia_davanti.png",
+					coordZoom: "116,272|145,272|214,272|239,272",
 					noMoxa: false,
 					noGravidanza: false	
 				},
 				{
 					siglaTsubo: "EX-LE-23",
-					NomeTsubo: "33.EX.",
+					NomeTsubo: "37.EX.",
+					imgZoom: "gamba_lato.png",
+					coordZoom: "149,169",
 					noMoxa: false,
 					noGravidanza: false	
 				},
 				{
 					siglaTsubo: "EX-LE-27",
-					NomeTsubo: "34.EX.",
+					NomeTsubo: "38.EX.",
+					imgZoom: "ginocchia_davanti.png",
+					coordZoom: "131,236|228,236",
 					noMoxa: false,
 					noGravidanza: false	
 				},
 				{
 					siglaTsubo: "EX-LE-34",
-					NomeTsubo: "35.EX.",
+					NomeTsubo: "39.EX.",
+					imgZoom: "coscia_davanti.png",
+					coordZoom: "195,301",
 					noMoxa: false,
 					noGravidanza: false	
 				}

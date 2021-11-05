@@ -77,6 +77,10 @@
 	text-overflow:ellipsis;
 	overflow:hidden;
 }
+.pallinoTsubo{
+	color: #366ee1;
+	cursor:pointer;
+}
 .pallinoPat:not(.ptNoSel){
 	cursor:pointer;
 }
@@ -95,7 +99,8 @@
 	height: 30px;
     line-height: 30px;
 }
-.pallinoPat i{
+.pallinoPat i,
+.pallinoTsubo i{
 	font-weight:normal !important;
 	font-style:normal !important;
 }

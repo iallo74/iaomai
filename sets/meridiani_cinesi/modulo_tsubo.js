@@ -84,7 +84,7 @@ var MODULO_TSUBO = { // extend SET
 		}
 		if(HTML_simboli)HTML += '<div>'+HTML_simboli+'</div>';
 		
-		HTML += DB.set.meridiani[siglaMeridiano].tsubo[nTsubo].AzioniTsubo;
+		HTML += SET.convPuntiScheda(DB.set.meridiani[siglaMeridiano].tsubo[nTsubo].AzioniTsubo,true);
 		
 		
 		imgDettaglio='';

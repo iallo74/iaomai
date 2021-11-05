@@ -161,10 +161,23 @@ SET.MAT = {
 		roughness:1,
 		transparent: true
 	}),
+	pointSelInt: new THREE.MeshStandardMaterial( {
+		color: SET.COL.sel, /* 0xFFFFFF */
+		roughness:1,
+		depthFunc:1,
+		transparent: true
+	}),
 	pointSelNote: new THREE.MeshStandardMaterial( {
 		color: SET.COL.notePTSel,
 		emissive: SET.COL.notePTemissive,
 		roughness:1,
+		transparent: true
+	}),
+	pointSelNoteInt: new THREE.MeshStandardMaterial( {
+		color: SET.COL.notePTSel,
+		emissive: SET.COL.notePTemissive,
+		roughness:1,
+		depthFunc:1,
 		transparent: true
 	}),
 	pointSel2: new THREE.MeshStandardMaterial( {

@@ -20,6 +20,7 @@ SET = {
 	pMod: -1,
 	pointEvi: '',
 	meridianiSecondariAccesi: [],
+	preCM: false, // memorizza il contrast method prima di attivarlo su un punto interno
 	
 	// FUNZIONI
 	_init: function(){
@@ -94,6 +95,8 @@ SET = {
 					var x=PTS[p].array[0];
 					var y=PTS[p].array[1];
 					var z=PTS[p].array[2];
+					var interno=__(PTS[p].interno,false);
+					var evidenziati=__(PTS[p].evidenziati);
 					var pN = PTS[p].nome.split(".");
 					var N = pN[1];
 					var sigla = '';
@@ -103,12 +106,16 @@ SET = {
 						
 					// pallino colorato
 					n++;
-					var geometry = new THREE.SphereGeometry( 0.02, 6, 6 );
+					var raggio = 0.02;
+					if(__(PTS[p].dupl))raggio = 0.018;
+					var geometry = new THREE.SphereGeometry( raggio, 6, 6 );
 					//var geometry = new THREE.BoxGeometry( 0.02, 0.02, 0.02 );
 					this.P[n] = new THREE.Mesh( geometry, this.MAT.pointBase );
 					this.P[n].position.set(x,y,z);
 					this.P[n].name=PTS[p].nome;
 					if(sigla)this.P[n].userData.sigla = sigla;
+					if(interno)this.P[n].userData.interno = true;
+					if(evidenziati)this.P[n].userData.evidenziati = evidenziati;
 					this.PT[m].add( this.P[n] );
 						
 					// pallino trasparente
@@ -118,6 +125,8 @@ SET = {
 					this.P[n].position.set(x,y,z);
 					this.P[n].name='_'+PTS[p].nome;
 					if(sigla)this.P[n].userData.sigla = sigla;
+					if(interno)this.P[n].userData.interno = true;
+					if(evidenziati)this.P[n].userData.evidenziati = evidenziati;
 					this.PT[m].add( this.P[n] );
 					ptAdd = true;
 				}
@@ -425,9 +434,11 @@ SET = {
 		if(typeof(ptSx)=='undefined')ptSx=null;
 		if(typeof(ptDx)=='undefined')ptDx=null;
 		if(!ritorno && PT_name.indexOf("EX")==-1)this.accendiMeridiano(pP[0]);
-		var mat = this.MAT.pointSel;
 		document.getElementById("pt_"+(nTsubo+1)+"_"+siglaMeridiano).classList.add("selElPt");
-		if(PT.userData.nota)mat = this.MAT.pointSelNote;
+		var matTxt = "this.MAT.pointSel";
+		if(PT.userData.nota)matTxt = "this.MAT.pointSelNote";
+		if(this.ptSel.userData.interno)matTxt += "Int";
+		var mat = eval(matTxt);
 		if(ptCc)ptCc.material=mat;
 		if(ptSx)ptSx.material=mat;
 		if(ptDx)ptDx.material=mat;
@@ -466,6 +477,24 @@ SET = {
 		}
 		this.pulse = 1;
 		
+		
+		
+		// se è un punto interno
+		if(this.ptSel.userData.interno){
+			this.preCM = SET.COL.contrastMethod;
+			this.swContrastMethod(false);
+			//this.ptSel.material.depthFunc = 1;
+			
+			var evidenziati = this.ptSel.userData.evidenziati;
+			if(evidenziati){
+				for(e in evidenziati){
+					for(i in evidenziati[e]){
+						scene.getObjectByName( evidenziati[e][i] ).material = MODELLO.MAT.materialVisceriEvi;
+					}
+				}
+			}
+		}
+		// ---------------------
 		SET.caricaTsubo( siglaMeridiano, nTsubo, ritorno );
 	},
 	chiudiTsubo: function( nonChiudereScheda, cambiaPunto ){
@@ -474,6 +503,22 @@ SET = {
 		if(!nonChiudereScheda){
 			endChangeDetection();
 			SCHEDA.formModificato = false;
+		}
+		if(this.ptSel){
+			//this.ptSel.material.depthFunc = 3;
+			if(this.ptSel.userData.interno){
+				this.preCM = false;
+				this.swContrastMethod(true);
+				var evidenziati = this.ptSel.userData.evidenziati;
+				if(evidenziati){
+					for(e in evidenziati){
+						for(i in evidenziati[e]){
+							var tipo = scene.getObjectByName( evidenziati[e][i] ).parent.name;
+							scene.getObjectByName( evidenziati[e][i] ).material = eval("MODELLO.MAT.material"+tipo);
+						}
+					}
+				}
+			}
 		}
 		
 		var exPt = SET.ptSel;
@@ -707,7 +752,7 @@ SET = {
 			SET.MAT.lineYin.depthTest = false;
 			SET.MAT.pointBase.depthTest = false;*/
 		}else{
-			if(!SET.meridianiSecondariAccesi.length){
+			if(!SET.meridianiSecondariAccesi.length || this.ptSel.userData.evidenziati){
 				if(muscleView)MODELLO.swMuscle();
 				SET.MAT.lineYang.opacity = SET.MAT.opLine;
 				SET.MAT.lineYin.opacity = SET.MAT.opLine;
@@ -962,7 +1007,10 @@ SET = {
 			document.getElementById("scheda_titolo"+nScheda).innerHTML = str;
 		}
 	},
-	convPuntiScheda: function( html ){
+	convPuntiScheda: function( html, noPall ){
+		if(typeof(noPall)=='undefined')var noPall = false;
+		var pallClass = 'pallinoPat';
+		if(noPall)pallClass = 'pallinoTsubo';
 		var nScheda = '';
 		if(SCHEDA.scheda2Aperta)nScheda='2';
 		var regexp = /\[\.[0-9]{1,2}\.[A-Z]{2}\.\]/ig;
@@ -971,7 +1019,7 @@ SET = {
 			var pP = pts[p].split(".");
 			var n_P = pP[1];
 			var n_M = SET.convSigla(pP[2].substr(0,2))+pP[2].substr(2,1);
-			html = html.replace(pts[p], '<span class="pallinoPat" onClick="SET.selTsubo(\''+n_P+'|'+n_M+'\')">'+n_P+'.'+n_M+'</span>');
+			html = html.replace(pts[p], '<span class="'+pallClass+'" onClick="SET.selTsubo(\''+n_P+'|'+n_M+'\')">'+n_P+'.'+n_M+'</span>');
 		}
 		var regexp = /\[\.[A-Z]{2}\.\]/ig;
 		var pts = html.match(regexp);
