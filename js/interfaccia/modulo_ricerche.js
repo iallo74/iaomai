@@ -35,7 +35,12 @@ var RICERCHE = {
 					if(testo.toUpperCase().indexOf(parola.toUpperCase())>-1){
 						NT = MER.NomeTsubo;
 						partiNT=NT.split(".");
-						NT = '<b>'+htmlEntities(partiNT[0]+"."+partiNT[1])+'</b>';
+						siglaTsubo = partiNT[0];
+						var nomeTsubo = partiNT[0]+"."+partiNT[1];
+						if(globals.set.cartella == 'meridiani_cinesi'){
+							if(__(MER.siglaTsubo))nomeTsubo = MER.siglaTsubo;
+						}
+						NT = '<b>'+htmlEntities(nomeTsubo)+'</b>';
 						for(n=2;n<partiNT.length;n++){
 							NT+=partiNT[n];
 							if(n<partiNT.length-1)NT+=".";

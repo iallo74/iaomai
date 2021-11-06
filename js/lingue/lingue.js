@@ -113,7 +113,7 @@ function doHighlight( html, parola, cls ){
 	var i = -1;
 	var lcParola = parola.toLowerCase();
 	var lcHtml = html.toLowerCase();
-	console.log(parola)
+	//console.log(parola)
 	while(html.length > 0){
 		i = lcHtml.indexOf(lcParola, i+1);
 		if(i < 0){
