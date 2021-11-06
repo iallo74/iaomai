@@ -733,7 +733,8 @@ var PAZIENTI_TRATTAMENTI = {
 					'	<input type="text"' +
 					'		   id="paz_add"' +
 					'		   placeholder="'+htmlEntities(stripslashes(Lingua(TXT_SintomoSpiegazione)))+'"' +
-					'		   onKeyup="if(event.keyCode==13)PAZIENTI.aggiungiSintomoTrattamento();"/>' +
+					'		   autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"' +
+					'		   onKeyup="PAZIENTI.filtraSintomi(this);"/>' +
 					'	<div class="p_label_add"' +
 					'		 onClick="PAZIENTI.aggiungiSintomoTrattamento();">' +
 							Lingua(TXT_Aggiungi) +
@@ -2163,6 +2164,20 @@ var PAZIENTI_TRATTAMENTI = {
 		if(!HTML)HTML = '<div class="noResults">' + htmlEntities(Lingua(TXT_NoResSintomi)) + '</div>';
 		document.getElementById("elencoSintomi").innerHTML = HTML;
 	},
+	filtraSintomi: function(el){
+		var val = el.value.trim().toLowerCase();
+		if(event.keyCode==13)PAZIENTI.aggiungiSintomoTrattamento();
+		else{
+			var els = document.getElementById("elencoSintomi").getElementsByTagName("div");
+			for(e in els){
+				if(els[e].innerText){
+					var cont=els[e].innerText.toLowerCase();
+					if(cont.indexOf(val)>-1 || !val)els[e].style.display = 'block';
+					else els[e].style.display = 'none';
+				}
+			}
+		}
+	},
 	
 	// gallery
 	caricaGalleryTrattamento: function(){
@@ -2318,8 +2333,8 @@ var PAZIENTI_TRATTAMENTI = {
 			//puntiGroup='|';
 			var HTML0=HTML='';
 			HTML0 += '<div id="schedaCiclo">';
-			if(LabelCiclo!='0')HTML0+='<h1 class="noPrint">'+htmlEntities(LabelCiclo)+'</h1>';
-			else HTML0+='<h1 class="noPrint">'+htmlEntities(Lingua(TXT_CicloSenzaNome))+'</h1>';
+			if(LabelCiclo!='0')HTML0+='<h1>'+htmlEntities(LabelCiclo)+'</h1>';
+			else HTML0+='<h1>'+htmlEntities(Lingua(TXT_CicloSenzaNome))+'</h1>';
 			HTML0+='<p><i>Cliente:</i> '+htmlEntities(DB.pazienti.data[PAZIENTI.idCL].Nome+" "+DB.pazienti.data[PAZIENTI.idCL].Cognome)+'</p>';
 			// ELENCO I TRATTAMENTI DELLA CARTELA LabelCiclo
 			var n=-1;
@@ -2360,7 +2375,8 @@ var PAZIENTI_TRATTAMENTI = {
 					giorno=TimeTrattamento.getDate();
 					mese=TimeTrattamento.getMonth()+1;
 					anno=TimeTrattamento.getFullYear();
-					data+=getFullDataTS(Data);
+					if(Data)data+=getFullDataTS(Data);
+					else data+='-';
 					
 					if(i>0)HTML+='<hr>';
 					if(TipoTrattamento!='A'){
@@ -2389,9 +2405,9 @@ var PAZIENTI_TRATTAMENTI = {
 						AnamnesiDiagnosiOccidentale=TestoTrattamento.AnamnesiDiagnosiOccidentale;
 						AnamnesiDiagnosiMTC=TestoTrattamento.AnamnesiDiagnosiMTC;
 						//HTML+='<h3>'+htmlEntities(Lingua(TXT_Anamnesi))+'</h3>'+data;
-						if(AnamnesiMotivo)HTML+='<p><i>'+htmlEntities(Lingua(TXT_AnamnesiMotivo)).replace(/\n/g, '<br>')+':</i><br>'+htmlEntities(AnamnesiMotivo)+'</p>';
-						if(AnamnesiDiagnosiOccidentale)HTML+='<p><i>'+htmlEntities(Lingua(TXT_AnamnesiDiagnosiOccidentale)).replace(/\n/g, '<br>')+':</i><br>'+htmlEntities(AnamnesiDiagnosiOccidentale)+'</p>';
-						if(AnamnesiDiagnosiMTC)HTML+='<p><i>'+htmlEntities(Lingua(TXT_AnamnesiDiagnosiMTC)).replace(/\n/g, '<br>')+':</i><br>'+htmlEntities(AnamnesiDiagnosiMTC)+'</i></p>';
+						if(AnamnesiMotivo)HTML+='<p><i>'+htmlEntities(Lingua(TXT_AnamnesiMotivo))+':</i><br>'+htmlEntities(AnamnesiMotivo).replace(/\n/g, '<br>')+'</p>';
+						if(AnamnesiDiagnosiOccidentale)HTML+='<p><i>'+htmlEntities(Lingua(TXT_AnamnesiDiagnosiOccidentale))+':</i><br>'+htmlEntities(AnamnesiDiagnosiOccidentale).replace(/\n/g, '<br>')+'</p>';
+						if(AnamnesiDiagnosiMTC)HTML+='<p><i>'+htmlEntities(Lingua(TXT_AnamnesiDiagnosiMTC))+':</i><br>'+htmlEntities(AnamnesiDiagnosiMTC).replace(/\n/g, '<br>')+'</i></p>';
 						var TXT_P=TXT_PuntiAnamnesi;
 						for(s in sintomi){
 							valori[s]=[];
