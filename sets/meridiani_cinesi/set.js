@@ -10,6 +10,7 @@ SET = {
 	time: 0,
 	pulse: 1,
 	ptSel: null,
+	eviPoint: '',
 	eviPoint1: '',
 	eviPoint2: '',
 	diffX: 0,
@@ -21,6 +22,7 @@ SET = {
 	pointEvi: '',
 	meridianiSecondariAccesi: [],
 	preCM: false, // memorizza il contrast method prima di attivarlo su un punto interno
+	eviPalls: [],
 	
 	// FUNZIONI
 	_init: function(){
@@ -195,13 +197,13 @@ SET = {
 		if(preElenco)SCHEDA.selElenco(preElenco);
 		
 		// pallini di evidenza
-		var geoPoint =  new THREE.SphereGeometry( 0.11, 16, 16 );
+		/*var geoPoint =  new THREE.SphereGeometry( 0.11, 16, 16 );
 		this.eviPoint1 =  new THREE.Mesh( geoPoint, this.MAT.pointSel2.clone() );
 		this.eviPoint1.name='Selected point 1';
 		this.eviPoint2 =  new THREE.Mesh( geoPoint, this.MAT.pointSel2.clone() );
 		this.eviPoint2.name='Selected point 2';
 		SETS.add( this.eviPoint1 );
-		SETS.add( this.eviPoint2 );
+		SETS.add( this.eviPoint2 );*/
 		manichino.add( SETS );
 		this._setLineMaterials();
 		raycastDisable=false;
@@ -427,31 +429,19 @@ SET = {
 		this.ptSel=PT;
 		var pP = this.ptSel.name.split(".");
 		
-		var ptCc = manichino.getObjectByName(pP[0]+"."+pP[1]);
-		var ptSx = manichino.getObjectByName(pP[0]+"."+pP[1]+".SX");
-		var ptDx = manichino.getObjectByName(pP[0]+"."+pP[1]+".DX");
-		if(typeof(ptCc)=='undefined')ptCc=null;
-		if(typeof(ptSx)=='undefined')ptSx=null;
-		if(typeof(ptDx)=='undefined')ptDx=null;
 		if(!ritorno && PT_name.indexOf("EX")==-1)this.accendiMeridiano(pP[0]);
 		document.getElementById("pt_"+(nTsubo+1)+"_"+siglaMeridiano).classList.add("selElPt");
 		var matTxt = "this.MAT.pointSel";
 		if(PT.userData.nota)matTxt = "this.MAT.pointSelNote";
 		if(this.ptSel.userData.interno)matTxt += "Int";
 		var mat = eval(matTxt);
-		if(ptCc)ptCc.material=mat;
-		if(ptSx)ptSx.material=mat;
-		if(ptDx)ptDx.material=mat;
 		this.diffX = this.ptSel.position.x*1;
 		this.diffY = this.ptSel.position.y*1;
 		
 		
-		// coloro tutti gli altri punti non SX o DX o CC
-		if(siglaMeridiano=='EX'){
-			var els = scene.getObjectByName("PT_EX").children;
-			for(e in els){
-				if(els[e].name.indexOf(pP[0]+"."+pP[1]+".")==0)els[e].material=mat;
-			}
+		var els = scene.getObjectByName("PT_"+siglaMeridiano).children;
+		for(e in els){
+			if(els[e].name.indexOf(pP[0]+"."+pP[1]+".")==0)els[e].material=mat;
 		}
 		
 		panEndZero = { x: 0-this.ptSel.position.x, y: 0-this.ptSel.position.y, z: 0-this.ptSel.position.z };
@@ -461,25 +451,12 @@ SET = {
 			normalizeRotation();
 		}
 		
-		if(ptCc){
-			this.eviPoint1.position.set( ptCc.position.x, ptCc.position.y, ptCc.position.z );
-			this.eviPoint1.material.visible = true;
-			this.eviPoint2.material.visible = false;
-		}else{
-			if(ptSx){
-				this.eviPoint1.position.set( ptSx.position.x, ptSx.position.y, ptSx.position.z );
-				this.eviPoint1.material.visible = true;
-			}else this.eviPoint1.material.visible = false;
-			if(ptDx){
-				this.eviPoint2.position.set( ptDx.position.x, ptDx.position.y, ptDx.position.z );
-				this.eviPoint2.material.visible = true;
-			}else this.eviPoint2.material.visible = false;
-		}
+		SET.addEviPalls(siglaMeridiano,pP[1],'Select');
 		this.pulse = 1;
 		
 		
 		
-		// se è un punto interno
+		// se è un punto interno evidenzio gli organi o le ossa
 		if(this.ptSel.userData.interno){
 			this.preCM = SET.COL.contrastMethod;
 			this.swContrastMethod(false);
@@ -525,43 +502,21 @@ SET = {
 		
 		if(!this.ptSel)return;
 		var pP = this.ptSel.name.split(".");
-		var ptCc = manichino.getObjectByName(pP[0]+"."+pP[1]);
-		var ptSx = manichino.getObjectByName(pP[0]+"."+pP[1]+".SX");
-		var ptDx = manichino.getObjectByName(pP[0]+"."+pP[1]+".DX");
-		this.eviPoint1.material.visible = false;
-		this.eviPoint2.material.visible = false;
+		var siglaMeridiano = pP[0];
+		var nTsubo = pP[1];
 		this.pulse=0;
-		if(typeof(ptCc)=='undefined')ptCc=null;
-		if(typeof(ptSx)=='undefined')ptSx=null;
-		if(typeof(ptDx)=='undefined')ptDx=null;
 		var mat=this.MAT.pointBase;
 		if(MERIDIANI[pP[0]].meridianoAcceso)mat=this.MAT.pointSel;
 		if(this.ptSel.userData.nota)mat=this.MAT.pointNote;
-		if(ptCc){
-			ptCc.material=mat;
-			ptCc.material.opacity=1;
-			ptCc.scale.set(1,1,1);
-		}
-		if(ptSx){
-			ptSx.material=mat;
-			ptSx.material.opacity=1;
-			ptSx.scale.set(1,1,1);
-		}
-		if(ptDx){
-			ptDx.material=mat;
-			ptDx.material.opacity=1;
-			ptDx.scale.set(1,1,1);
- 		}
+		SET.delEviPalls(siglaMeridiano,nTsubo,'Select');
 		
 		// coloro tutti gli altri punti non SX o DX o CC
-		if(pP[0]=='EX'){
-			var els = scene.getObjectByName("PT_EX").children;
-			for(e in els){
-				if(els[e].name.indexOf(pP[0]+"."+pP[1]+".")==0){
-					els[e].material=mat;
-					els[e].material.opacity=1;
-					els[e].scale.set(1,1,1);
-				}
+		var els = scene.getObjectByName("PT_"+siglaMeridiano).children;
+		for(e in els){
+			if(els[e].name.indexOf(pP[0]+"."+pP[1]+".")==0){
+				els[e].material=mat;
+				els[e].material.opacity=1;
+				els[e].scale.set(1,1,1);
 			}
 		}
 		
@@ -952,31 +907,10 @@ SET = {
 		}
 		
 		if(nTsubo.length == 1)nTsubo = "0"+nTsubo;
-		var pointEvi = mer+"."+nTsubo;
-		var ptCc = manichino.getObjectByName(pointEvi);
-		var ptSx = manichino.getObjectByName(pointEvi+".SX");
-		var ptDx = manichino.getObjectByName(pointEvi+".DX");
-		if(typeof(ptCc)=='undefined')ptCc=null;
-		if(typeof(ptSx)=='undefined')ptSx=null;
-		if(typeof(ptDx)=='undefined')ptDx=null;
 		if(over){
-			if(ptCc){
-				this.eviPoint1.position.set( ptCc.position.x, ptCc.position.y, ptCc.position.z );
-				this.eviPoint1.material.visible = true;
-				this.eviPoint2.material.visible = false;
-			}else{
-				if(ptSx){
-					this.eviPoint1.position.set( ptSx.position.x, ptSx.position.y, ptSx.position.z );
-					this.eviPoint1.material.visible = true;
-				}else this.eviPoint1.material.visible = false;
-				if(ptDx){
-					this.eviPoint2.position.set( ptDx.position.x, ptDx.position.y, ptDx.position.z );
-					this.eviPoint2.material.visible = true;
-				}else this.eviPoint2.material.visible = false;
-			}
-		}else if(!this.ptSel || (this.ptSel != ptSx && this.ptSel != ptCc)){
-			this.eviPoint1.material.visible = false;
-			this.eviPoint2.material.visible = false;
+			SET.addEviPalls(mer,nTsubo,'Over');
+		}else{
+			SET.delEviPalls(mer,nTsubo,'Over');
 		}
 	},
 	convSigla: function( siglaMeridiano ){
@@ -1155,6 +1089,29 @@ SET = {
 			SET.MAT.lineYin.visible = true;
 			MODELLO.MAT.materialVisceri.visible = true;
 			/*MODELLO.MAT.materialOssa.visible = true;*/
+		}
+	},
+	
+	addEviPalls: function( siglaMeridiano, nTsubo, tipo ){
+		var els = scene.getObjectByName("PT_"+siglaMeridiano).children;
+		for(e in els){
+			if(els[e].name.indexOf(siglaMeridiano+"."+nTsubo+".")==0){
+				var geoPoint =  new THREE.SphereGeometry( 0.11, 16, 16 );
+				var eviPoint;
+				eviPoint =  new THREE.Mesh( geoPoint, this.MAT.pointSel2.clone() );
+				eviPoint.name=tipo+' point: '+els[e].name;
+				eviPoint.material.visible=true;
+				eviPoint.position.set( els[e].position.x, els[e].position.y, els[e].position.z )
+				SETS.add( eviPoint );
+			}
+		}
+	},
+	delEviPalls: function( siglaMeridiano, nTsubo, tipo ){
+		var els = SETS.children;
+		for(e=els.length-1;e>=0;e--){
+			if(els[e].name.indexOf(tipo+' point: '+siglaMeridiano+"."+nTsubo+".")==0){
+				SETS.remove( els[e] );
+			}
 		}
 	},
 	
