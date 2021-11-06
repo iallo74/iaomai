@@ -12,7 +12,7 @@ var PAZIENTI_TRATTAMENTI = {
 	elencoGruppoPunti: {},
 	elencoGruppoAtt: {},
 	tipoGruppo: '', // M (meridiani) o P (punti)
-	
+	 
 	// TRATTAMENTI
 	vis_add: function( daPiu ){
 		if(typeof(daPiu) == 'undefined')var daPiu='';
