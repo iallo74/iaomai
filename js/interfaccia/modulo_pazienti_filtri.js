@@ -251,7 +251,7 @@ var PAZIENTI_FILTRI = {
 					'>' +
 					'	<div>' +
 							/*htmlEntities(Lingua(TXT_PazientiFiltrati)) +*/
-					'		<div class="btn_invia" onClick="PAZIENTI.cancellaFiltri();">' +
+					'		<div class="btn_invia" onClick="this.blur();PAZIENTI.cancellaFiltri();">' +
 								htmlEntities(Lingua(TXT_AnnullaFiltri)) +
 					'		</div>' +
 					'		<div class="btn_frdx"' +
