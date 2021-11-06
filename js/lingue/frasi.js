@@ -429,6 +429,11 @@ var TXT_StampaStage={
 	eng: "Print 3D model",
 	esp: "" };
 	
+var TXT_StampaRicevuta={
+	ita: "Stampa la ricevuta",
+	eng: "Print",
+	esp: "" };
+	
 var TXT_DownloadScheda={
 	ita: "Scarica la scheda",
 	eng: "Download",
@@ -1681,7 +1686,7 @@ var TXT_MotivoSaldo={
 	esp: "" };
 	
 var TXT_RicevutaSaldo={
-	ita: "Ricevuta dell'incasso",
+	ita: "Ricevuta di incasso",
 	eng: "Payment receipt ",
 	esp: "" };
 	

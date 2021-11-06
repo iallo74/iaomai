@@ -481,6 +481,7 @@ var SCHEDA = {
 		}
 	},
 	stampaScheda: function( obj ){
+		if(typeof(noInt)=='undefined')var noInt = false;
 		if(document.getElementById("menuScheda").className.indexOf("visSch")>-1)SCHEDA.swMenuScheda();
 		// verifico le autorizzazioni
 		if(!DB.login.data.auths.length && tipoApp!='AM'){
@@ -502,10 +503,16 @@ var SCHEDA = {
 			cartaIntestata = true;
 			var titolo = '';
 			TITOLO_PAGINA = htmlEntities(obj.titolo)+" "+htmlEntities(Lingua(TXT_per))+" "+htmlEntities(obj.intestazione)
-			var corpo = '<p>'+htmlEntities(Lingua(TXT_per))+' '+htmlEntities(obj.intestazione) + '</p>' + 
+			var dati = '<p>'+htmlEntities(Lingua(TXT_per))+' '+htmlEntities(obj.intestazione) + '</p>' + 
 						'<p>'+htmlEntities(obj.corpo) + '</p>' + 
 						'<p style="padding-left:50px;padding-top:50px;"><i>' + Lingua(TXT_Data) + ':</i> ' + getFullDataTS(d/1000) + '<br><br>' +
 						'<i style="font-size:15px;">' + DB.login.data.Nominativo + '</i></p>';
+						
+			if(JSON.stringify(obj)!='{}')var corpo = dati;
+			else{
+				var titolo = document.getElementById("scheda_titolo").innerHTML;
+				var corpo = document.getElementById("scheda_testo").querySelector(".scheda_stampa").outerHTML;
+			}
 		}
 		
 		var HTML_styles = '';
@@ -538,11 +545,12 @@ var SCHEDA = {
 				'			'+TITOLO_PAGINA+'' +
 				'		</title>' +
 				'	</head>' +
-				'	<body style="background:#FFF;">' +
+				'	<body style="background:#FFF;">';
+		if(!cartaIntestata)HTML += 
 				'		<div style="margin-bottom:10px;' +
 				'					border-bottom:1px solid #DDD;' +
-				'					width:100%;">' +
-				'			<table width="100%"' +
+				'					width:100%;">'+
+		 		'			<table width="100%"' +
 				'				   id="testataStampa"' +
 				'				   cellpadding="10"' +
 				'				   cellspacing="0"' +
@@ -562,12 +570,21 @@ var SCHEDA = {
 				'				   	</td>' +
 				'				</tr>' +
 				'			</table>' +
-				'		</div>' +
-				'		<div id="cont">';
+				'		</div>';
+		else{
+			var logo = __(DB.login.data.logoAzienda);
+			if(!logo)logo = __(DB.login.data.imgAvatar);
+			HTML += '<div style="';
+			if(logo)HTML += 'text-align:left;';
+			HTML += 'border-bottom:1px solid #DDD;margin-bottom:20px;">';
+			if(logo)HTML += '<img src="'+logo+'" style="height:80px;float:left;">';
+			HTML += '<span style="display:inline-block;font-size:11px;padding-top:10px;">' + DB.login.data.Intestazione.replace(/\n/gi,"<br>") + '</span>';
+			HTML += '<div class="l" style="margin-bottom:20px;"></div></div>';
+		}
+		HTML += '		<div id="cont">';
 		if(titolo)HTML +=
 				'			<h1 style="font-size: 27px;' +
 				'			   		   font-weight: normal;' +
-				'			   		   color: #069;' +
 				'			   		   text-align: right;' +
 				'			   		   margin-top: 0px;' +
 				'			   		   display: inline-block;' +
@@ -577,7 +594,7 @@ var SCHEDA = {
 		HTML +=	'			<div id="scheda"' +
 				'			   	 style="display:block;' +
 				'			   	 		position:relative;"' +
-				'			   	 class="schLibera sch_Max800 scheda_paziente schForm">' +
+				'			   	 class="schLibera sch_Max800 scheda_paziente schForm contStampa">' +
 				'				<div id="scheda_cont"' +
 				'			   	 	 style="display:block;' +
 				'			   	 	  		box-shadow:none !important;' +

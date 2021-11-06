@@ -27,6 +27,8 @@ var LOGIN = {
 				"ExpDate": 0,
 				"TOKEN": "",
 				"LastVer": CONN.VERSIONE,
+				"imgAvatar": "",
+				"logoAzienda": "",
 				"auths": []
 			}
 		};
@@ -798,6 +800,8 @@ var LOGIN = {
 			DB.login.data.Email=UT.Email;
 			DB.login.data.Pseudonimo=UT.Pseudonimo;
 			DB.login.data.Intestazione=UT.Intestazione;
+			DB.login.data.imgAvatar=UT.imgAvatar;
+			DB.login.data.logoAzienda=UT.logoAzienda;
 			localPouchDB.setItem(MD5("DB.login"), IMPORTER.COMPR(DB.login)).then(function(){ // salvo il DB
 				rimuoviLoading(document.getElementById("scheda_testo"));
 				SCHEDA.noChiudi = false;
@@ -1185,7 +1189,6 @@ var LOGIN = {
 	},
 	retGlobalSyncro: function(txt){ // chiamato da "globalSync" o da "ripristinaBackup"
 		//console.log("---retGlobalSyncro---  "+txt);
-		
 		if(txt.substr(0,3)+""=='404'){
 			if(debug)console.log(txt);
 			return;

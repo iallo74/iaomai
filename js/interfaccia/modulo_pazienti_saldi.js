@@ -123,7 +123,9 @@ var PAZIENTI_SALDI = {
 			if(typeof(DB.login.data.Intestazione)=='undefined')DB.login.data.Intestazione='';
 			Intestazione = htmlEntities(DB.login.data.Intestazione);
 			while(Intestazione.indexOf(H.chr10)>-1)Intestazione = Intestazione.replace(H.chr10,'<br>');
-			IntestazioneCliente = PZ.Nome+" "+PZ.Cognome+'<br>'+PZ.Indirizzo+'<br>'+PZ.CAP+' '+PZ.Citta+' ('+PZ.Provincia+')<br>';
+			IntestazioneCliente = PZ.Nome+" "+PZ.Cognome+'<br>'+PZ.Indirizzo+'<br>'+PZ.CAP+' '+PZ.Citta;
+			if(PZ.Provincia)IntestazioneCliente += ' ('+PZ.Provincia+')';
+			IntestazioneCliente += '<br>';
 			
 			
 			HTML += '<form id="formMod"' +
@@ -140,13 +142,8 @@ var PAZIENTI_SALDI = {
 					'			   	 		    line-height:normal;' +
 					'			   	 		    font-style:italic;' +
 					'			   	 		    font-size:11px">' +
-									Intestazione +
+									Lingua(TXT_per) + " " + IntestazioneCliente +
 					'				</div>';
-			/*else HTML += 
-					'				<div class="noResults"' +
-					'			   	 	 style="margin:10px;">' +
-									Lingua(TXT_NoRes)+' ...' +
-					'		   		</div>';*/
 			HTML += '			</div>' +
 					'		</div>' +
 					'		<div class="schDx">';
@@ -192,6 +189,7 @@ var PAZIENTI_SALDI = {
 							classRiga: "div_saldi" });
 							
 			HTML += '		</div>' +
+					'		<span id="btn_stampa" class="stampaBtn noPrint" onclick="SCHEDA.stampaScheda({});">'+Lingua(TXT_StampaRicevuta)+'</span>' +
 					'	</div>';
 			
 			// pulsanti SALVA, ANNULLA e ELIMINA

@@ -493,8 +493,8 @@ body:not(.touch) .schRid #l2{
 	background-color: rgb(238, 238, 238);
     /*border-top: 1px solid rgba(0, 0, 0, 0.4);*/
 }
-.android #scheda:not(.schForm) #scheda_testo *:not(h1):not(h2):not(.annullaBtn):not(.submitBtn),
-.android #scheda:not(.schForm) #scheda_testo2 *:not(h1):not(h2):not(.annullaBtn):not(.submitBtn){
+.android #scheda:not(.schForm) #scheda_testo *:not(h1):not(h2):not(.annullaBtn):not(.submitBtn):not(.stampaBtn),
+.android #scheda:not(.schForm) #scheda_testo2 *:not(h1):not(h2):not(.annullaBtn):not(.submitBtn):not(.stampaBtn){
 	font-size:15px;
 	line-height:20px;
 }
