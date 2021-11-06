@@ -64,7 +64,10 @@
 }
 
 /* SCHEDE */
-.pallinoPat{
+.pallinoPat,
+.pallinoTsubo{
+}
+.pallinoPat:not(.pallinoTsubo){
 	display:inline-block;
 	padding-left:16px;
 	height:16px;
@@ -79,15 +82,15 @@
 }
 .pallinoTsubo{
 	color: #366ee1;
+	/*cursor:pointer;*/
+}
+.pallinoPat:not(.ptNoSel):not(.pallinoTsubo){
 	cursor:pointer;
 }
-.pallinoPat:not(.ptNoSel){
-	cursor:pointer;
-}
-.pallinoPat.ptNoSel{
+.pallinoPat.ptNoSel:not(.pallinoTsubo){
 	cursor:default !important;
 }
-.pallinoPat:not(.ptNoSel):hover{
+.pallinoPat:not(.ptNoSel):not(.pallinoTsubo):hover{
 	background-color:rgba(255,255,255,0.3);
 	border-radius:3px;
 }

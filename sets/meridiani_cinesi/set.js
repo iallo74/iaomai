@@ -196,14 +196,6 @@ SET = {
 		//SCHEDA.apriElenco();
 		if(preElenco)SCHEDA.selElenco(preElenco);
 		
-		// pallini di evidenza
-		/*var geoPoint =  new THREE.SphereGeometry( 0.11, 16, 16 );
-		this.eviPoint1 =  new THREE.Mesh( geoPoint, this.MAT.pointSel2.clone() );
-		this.eviPoint1.name='Selected point 1';
-		this.eviPoint2 =  new THREE.Mesh( geoPoint, this.MAT.pointSel2.clone() );
-		this.eviPoint2.name='Selected point 2';
-		SETS.add( this.eviPoint1 );
-		SETS.add( this.eviPoint2 );*/
 		manichino.add( SETS );
 		this._setLineMaterials();
 		raycastDisable=false;
@@ -337,7 +329,7 @@ SET = {
 	setPulsePt: function( pt, pulse, op, mat ){
 		if(typeof(mat)=='undefined')var mat = '';
 		var pP = pt.name.split(".");
-		var ptCc = manichino.getObjectByName(pP[0]+"."+pP[1]);
+		/*var ptCc = manichino.getObjectByName(pP[0]+"."+pP[1]);
 		var ptSx = manichino.getObjectByName(pP[0]+"."+pP[1]+".SX");
 		var ptDx = manichino.getObjectByName(pP[0]+"."+pP[1]+".DX");
 		if(ptCc){
@@ -351,7 +343,16 @@ SET = {
 		if(ptDx){
 			ptDx.scale.set(pulse,pulse,pulse);
 			if(mat)ptDx.material=mat;
+		}*/
+		
+		var els = scene.getObjectByName("PT_"+pP[0]).children;
+		for(e in els){
+			if(els[e].name.indexOf(pP[0]+"."+pP[1]+".")==0){
+				els[e].scale.set(pulse,pulse,pulse);
+				if(mat)els[e].material=mat;
+			}
 		}
+		
 		SET.MAT.pointSel.setValues( { opacity: op } );
 	},
 	desIntersected: function(){
@@ -418,9 +419,10 @@ SET = {
 		var pP = PT_name.split(".");		
 		var siglaMeridiano = pP[0];
 		var nTsubo = parseInt(pP[1])-1;
-		
 		if(!scene.getObjectByName( PT_name )){
-			if(!(PT=scene.getObjectByName( PT_name + ".SX" ))){
+			if(!(PT=scene.getObjectByName( PT_name + "." ))){
+				PT=scene.getObjectByName( PT_name + ".SX" );
+			}else if(!(PT=scene.getObjectByName( PT_name + ".SX" ))){
 				PT=scene.getObjectByName( PT_name + ".SX" );
 			}
 		}else PT=scene.getObjectByName( PT_name );
@@ -944,7 +946,7 @@ SET = {
 	convPuntiScheda: function( html, noPall ){
 		if(typeof(noPall)=='undefined')var noPall = false;
 		var pallClass = 'pallinoPat';
-		if(noPall)pallClass = 'pallinoTsubo';
+		if(noPall)pallClass += ' pallinoTsubo';
 		var nScheda = '';
 		if(SCHEDA.scheda2Aperta)nScheda='2';
 		var regexp = /\[\.[0-9]{1,2}\.[A-Z]{2}\.\]/ig;
@@ -953,7 +955,9 @@ SET = {
 			var pP = pts[p].split(".");
 			var n_P = pP[1];
 			var n_M = SET.convSigla(pP[2].substr(0,2))+pP[2].substr(2,1);
-			html = html.replace(pts[p], '<span class="'+pallClass+'" onClick="SET.selTsubo(\''+n_P+'|'+n_M+'\')">'+n_P+'.'+n_M+'</span>');
+			var addClick = '';
+			if(noPall)adClick = 'return;';
+			html = html.replace(pts[p], '<span class="'+pallClass+'" onClick="'+addClick+'return;SET.selTsubo(\''+n_P+'|'+n_M+'\');">'+n_P+'.'+n_M+'</span>');
 		}
 		var regexp = /\[\.[A-Z]{2}\.\]/ig;
 		var pts = html.match(regexp);
@@ -1057,7 +1061,6 @@ SET = {
 					//if(SET.meridianiSecondariAccesi[m]!='CV' && SET.meridianiSecondariAccesi[m] != 'GV')
 					if(forza)SET.accendiMeridiano(SET.meridianiSecondariAccesi[m],true,true);
 					meridianoPrincipale = true;
-					console.log()
 				}else{
 					
 					var elM = meridiano.children
