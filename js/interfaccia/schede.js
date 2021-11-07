@@ -573,12 +573,13 @@ var SCHEDA = {
 				'		</div>';
 		else{
 			var logo = __(DB.login.data.logoAzienda);
-			if(!logo)logo = __(DB.login.data.imgAvatar);
+			//if(!logo)logo = __(DB.login.data.imgAvatar);
 			HTML += '<div style="';
-			if(logo)HTML += 'text-align:left;';
+			//if(logo)
+			HTML += 'text-align:left;';
 			HTML += 'border-bottom:1px solid #DDD;margin-bottom:20px;">';
-			if(logo)HTML += '<img src="'+logo+'" style="height:80px;float:left;">';
-			HTML += '<span style="display:inline-block;font-size:11px;padding-top:10px;">' + DB.login.data.Intestazione.replace(/\n/gi,"<br>") + '</span>';
+			if(logo)HTML += '<img src="'+logo+'" style="height:80px;float:left;margin-right:10px;">';
+			HTML += '<span style="display:inline-block;font-size:11px;">' + DB.login.data.Intestazione.replace(/\n/gi,"<br>") + '</span>';
 			HTML += '<div class="l" style="margin-bottom:20px;"></div></div>';
 		}
 		HTML += '		<div id="cont">';

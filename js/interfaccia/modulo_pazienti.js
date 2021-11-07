@@ -1146,38 +1146,38 @@ var PAZIENTI = {
 		//if(DataNascita<0)DataNascita=0;
 		
 		JSNPUSH={ 	"idPaziente": document.formMod.idPaziente.value*1,
-					"Nome": document.formMod.Nome.value,
-					"Cognome": document.formMod.Cognome.value,
-					"Indirizzo": document.formMod.Indirizzo.value,
-					"CAP": document.formMod.CAP.value,
-					"Citta": document.formMod.Citta.value,
-					"Provincia": document.formMod.Provincia.value,
-					"Stato": document.formMod.Stato.value,
-					"Telefono": document.formMod.Telefono.value,
-					"Cellulare": document.formMod.Cellulare.value,
+					"Nome": document.formMod.Nome.value.trim(),
+					"Cognome": document.formMod.Cognome.value.trim(),
+					"Indirizzo": document.formMod.Indirizzo.value.trim(),
+					"CAP": document.formMod.CAP.value.trim(),
+					"Citta": document.formMod.Citta.value.trim(),
+					"Provincia": document.formMod.Provincia.value.trim(),
+					"Stato": document.formMod.Stato.value.trim(),
+					"Telefono": document.formMod.Telefono.value.trim(),
+					"Cellulare": document.formMod.Cellulare.value.trim(),
 					"paeseCellulare": document.formMod.paeseCellulare.value,
-					"Email": document.formMod.Email.value,
+					"Email": document.formMod.Email.value.trim(),
 					"sesso": document.formMod.sesso.value,
 					"NotePaziente": document.formMod.NotePaziente.value,
 					
 					"DataNascita": DataNascita,
-					"LuogoNascita": document.formMod.LuogoNascita.value,
+					"LuogoNascita": document.formMod.LuogoNascita.value.trim(),
 					"tags": PAZIENTI.tagsProvvisori,
 					"etichette": H.etichetteProvvisorie,
 					"medicine": PAZIENTI.medicineProvvisorie,
 					"allergie": PAZIENTI.allergieProvvisorie,
 					"patologie": PAZIENTI.patologieProvvisorie,
 					"interventi": PAZIENTI.interventiProvvisori,
-					"Provenienza": document.formMod.Provenienza.value,
-					"Professione": document.formMod.Professione.value,
-					"Social": document.formMod.Social.value,
+					"Provenienza": document.formMod.Provenienza.value.trim(),
+					"Professione": document.formMod.Professione.value.trim(),
+					"Social": document.formMod.Social.value.trim(),
 					"Intestazione": document.formMod.Intestazione.value,
 					"avatar": avatar,
 					
-					"CodiceFiscale": document.formMod.CodiceFiscale.value,
-					"PartitaIva": document.formMod.PartitaIva.value,
-					"Altezza": document.formMod.Altezza.value,
-					"Peso": document.formMod.Peso.value,
+					"CodiceFiscale": document.formMod.CodiceFiscale.value.trim(),
+					"PartitaIva": document.formMod.PartitaIva.value.trim(),
+					"Altezza": document.formMod.Altezza.value.trim(),
+					"Peso": document.formMod.Peso.value.trim(),
 					
 					"DataModifica": parseInt(DataModifica),
 					"md5": md5,
@@ -1347,7 +1347,7 @@ var PAZIENTI = {
 		if(pass){
 			
 			JSNPUSH={	"idTag": id*1,
-						"NomeTag": txt,
+						"NomeTag": txt.trim(),
 						"colore": colore };
 			
 			if(!oldValue){
@@ -1385,7 +1385,7 @@ var PAZIENTI = {
 					}
 					PAZIENTI.popolaTags();
 					PAZIENTI.caricaTags();
-					console.log(modificato)
+					//console.log(modificato)
 					if(modificato){
 						applicaLoading(document.getElementById("scheda_testo"));
 						applicaLoading(document.getElementById("elenchi_lista"));
@@ -1444,7 +1444,7 @@ var PAZIENTI = {
 		if(typeof(id)=='undefined')var id=0;
 		var globalTags = PAZIENTI.getTags();
 		JSNPUSH={	"idTag": id*1,
-					"NomeTag": globalTags[t].NomeTag,
+					"NomeTag": globalTags[t].NomeTag.trim(),
 					"colore": globalTags[t].colore };
 			
 		SCHEDA.formModificato = true;
@@ -1622,7 +1622,7 @@ var PAZIENTI = {
 		if(pass){
 			JSNPUSH={};
 			JSNPUSH["id"+obj.el] = id*1;
-			JSNPUSH["Nome"+obj.el] = txt;
+			JSNPUSH["Nome"+obj.el] = txt.trim();
 			
 			var EL = null;
 			if(tipo=='medicine')EL = PAZIENTI.medicineProvvisorie;
@@ -1713,7 +1713,7 @@ var PAZIENTI = {
 		var global = PAZIENTI.getElementi(tipo);
 		JSNPUSH={}
 		JSNPUSH["id"+obj.el] = id*1;
-		JSNPUSH["Nome"+obj.el] = global[m]["Nome"+obj.el];
+		JSNPUSH["Nome"+obj.el] = global[m]["Nome"+obj.el].trim();
 		SCHEDA.formModificato = true;
 		if(tipo=='medicine')PAZIENTI.medicineProvvisorie.push(JSNPUSH);
 		if(tipo=='allergie')PAZIENTI.allergieProvvisorie.push(JSNPUSH);

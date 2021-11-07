@@ -2081,7 +2081,7 @@ var PAZIENTI_TRATTAMENTI = {
 		if(txt.trim()!=''){
 			
 			JSNPUSH={	"idSintomo": id*1,
-						"NomeSintomo": txt,
+						"NomeSintomo": txt.trim(),
 						"score": 0 };
 			
 			SCHEDA.formModificato = true;

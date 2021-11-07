@@ -604,7 +604,7 @@ var H = {
 		if(pass){
 			
 			JSNPUSH={	"idEtichetta": id*1,
-						"NomeEtichetta": txt,
+						"NomeEtichetta": txt.trim(),
 						"ValoreEtichetta": "",
 						"sezione": sezione };
 			
@@ -719,7 +719,7 @@ var H = {
 		if(typeof(id)=='undefined')var id=0;
 		var globalEtichette = H.getEtichette(sezione);
 		JSNPUSH={	"idEtichetta": id*1,
-					"NomeEtichetta": globalEtichette[t],
+					"NomeEtichetta": globalEtichette[t].trim(),
 					"ValoreEtichetta": "",
 					"sezione": sezione };
 			
