@@ -23,11 +23,11 @@ var MODULO_TSUBO = { // extend SET
 		var HTML_simboli = '';
 		
 		// noMoxa
-		if(DB.set.meridiani[siglaMeridiano].noMoxa)HTML_simboli += 	'<div style="background-image:url(sets/meridiani_cinesi/img/nomoxa.png);"' +
+		if(DB.mtc.meridiani[siglaMeridiano].tsubo[nTsubo].noMoxa)HTML_simboli += 	'<div style="background-image:url(sets/meridiani_cinesi/img/nomoxa.png);"' +
 										'	  class="simboliTsubo"></div>';
 		
 		// noGravidanza
-		if(DB.set.meridiani[siglaMeridiano].noGravidanza && globals.modello.cartella == 'donna')HTML_simboli += '<div style="background-image:url(sets/meridiani_cinesi/img/nogravidanza.png);" class="simboliTsubo"></div>';
+		if(DB.mtc.meridiani[siglaMeridiano].tsubo[nTsubo].noGravidanza && globals.modello.cartella == 'donna')HTML_simboli += '<div style="background-image:url(sets/meridiani_cinesi/img/nogravidanza.png);" class="simboliTsubo"></div>';
 		
 		
 		if( ritorno && 
