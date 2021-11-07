@@ -192,6 +192,8 @@ var LOGIN = {
 												scaricaSet();
 												caricaSet(vSet);
 											}
+											PAZIENTI.cancellaFiltri();
+											SCHEDA.scaricaScheda();
 										}
 									}, 500);
 		}
@@ -397,6 +399,8 @@ var LOGIN = {
 		DB._reset(); // <<<<<<<< FRV
 		LOGIN.getDB();
 		scaricaSet();
+		PAZIENTI.cancellaFiltri();
+		SCHEDA.scaricaScheda();
 	},
 	annullaUtente: function(){ // cancella tutti i dati utente in locale
 		CONFIRM.vis(	Lingua(TXT_ChiediAnnullaUtente)+'<br>'+

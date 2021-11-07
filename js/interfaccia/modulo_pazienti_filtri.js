@@ -234,7 +234,7 @@ var PAZIENTI_FILTRI = {
 			stats.patologie = sortObject(stats.patologie);
 			stats.interventi = sortObject(stats.interventi);
 			stats.sintomi = sortObject(stats.sintomi);
-			console.log(stats)
+			//console.log(stats)
 			var titolo = stripslashes(Lingua(TXT_FiltroPazienti));	
 			var HTML = '';
 			var noRes = '...';
