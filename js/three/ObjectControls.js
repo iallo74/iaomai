@@ -120,10 +120,16 @@ THREE.ObjectControls = function ( object, domElement ) {
 				
 				var xTarget = this._xIni-deltaX;
 				var yTarget = this._yIni+deltaY;
-				if(xTarget<scope.panLimits.x[0])xTarget=scope.panLimits.x[0];
-				if(xTarget>scope.panLimits.x[1])xTarget=scope.panLimits.x[1];
-				if(yTarget<scope.panLimits.y[0])yTarget=scope.panLimits.y[0];
-				if(yTarget>scope.panLimits.y[1])yTarget=scope.panLimits.y[1];
+				
+				var x0 = scope.panLimits.x[0]-manichino.position.x/2;
+				var x1 = scope.panLimits.x[1]-manichino.position.x/2;
+				var y0 = scope.panLimits.y[0]-manichino.position.y/2;
+				var y1 = scope.panLimits.y[1]-manichino.position.y/2;
+				
+				if(xTarget<x0)xTarget=x0;
+				if(xTarget>x1)xTarget=x1;
+				if(yTarget<y0)yTarget=y0;
+				if(yTarget>y1)yTarget=y1;
 				
 				panEnd = { x: xTarget, y: yTarget, z: this._zIni };
 				MODELLO.INTERSECTED=null;
