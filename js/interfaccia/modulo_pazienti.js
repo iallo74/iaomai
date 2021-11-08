@@ -580,6 +580,10 @@ var PAZIENTI = {
 					'				  data-colore="FFFFFF"' +
 					'				  style="background-color:#FFFFFF;"/>' +
 					'			</span>' +
+					'			<div class="p_tag_ann"' +
+					'				 onClick="PAZIENTI.annullaTag();">' +
+									Lingua(TXT_Annulla) +
+					'			</div>' +
 					'			<div class="p_tag_add"' +
 					'				 onClick="PAZIENTI.aggiungiTag(this);">' +
 									Lingua(TXT_Nuovo) +
@@ -623,6 +627,10 @@ var PAZIENTI = {
 					'				   id="medicina_add"' +
 					'				   placeholder="'+htmlEntities(Lingua(TXT_MedicineSpiegazione))+'"' +
 					'				   onKeyup="PAZIENTI.filtraElemento(\'medicine\',this);"'+H.noAutoGen+'/>' +
+					'			<div class="p_medicina_ann"' +
+					'				 onClick="PAZIENTI.annullaElemento(\'medicine\');">' +
+									Lingua(TXT_Annulla) +
+					'			</div>' +
 					'			<div class="p_medicina_add"' +
 					'				 onClick="PAZIENTI.aggiungiElemento(\'medicine\',this);">' +
 									Lingua(TXT_Nuova) +
@@ -646,6 +654,10 @@ var PAZIENTI = {
 					'				   id="allergia_add"' +
 					'				   placeholder="'+htmlEntities(Lingua(TXT_AllergieSpiegazione))+'"' +
 					'				   onKeyup="PAZIENTI.filtraElemento(\'allergie\',this);"'+H.noAutoGen+'/>' +
+					'			<div class="p_allergia_ann"' +
+					'				 onClick="PAZIENTI.annullaElemento(\'allergie\');">' +
+									Lingua(TXT_Annulla) +
+					'			</div>' +
 					'			<div class="p_allergia_add"' +
 					'				 onClick="PAZIENTI.aggiungiElemento(\'allergie\',this);">' +
 									Lingua(TXT_Nuova) +
@@ -669,6 +681,10 @@ var PAZIENTI = {
 					'				   id="patologia_add"' +
 					'				   placeholder="'+htmlEntities(Lingua(TXT_PatologieSpiegazione))+'"' +
 					'				   onKeyup="PAZIENTI.filtraElemento(\'patologie\',this);"'+H.noAutoGen+'/>' +
+					'			<div class="p_patologia_ann"' +
+					'				 onClick="PAZIENTI.amnnullaElemento(\'patologie\');">' +
+									Lingua(TXT_Annulla) +
+					'			</div>' +
 					'			<div class="p_patologia_add"' +
 					'				 onClick="PAZIENTI.aggiungiElemento(\'patologie\',this);">' +
 									Lingua(TXT_Nuova) +
@@ -693,6 +709,10 @@ var PAZIENTI = {
 					'				   id="intervento_add"' +
 					'				   placeholder="'+htmlEntities(Lingua(TXT_InterventiSpiegazione))+'"' +
 					'				   onKeyup="PAZIENTI.filtraElemento(\'interventi\',this);"'+H.noAutoGen+'/>' +
+					'			<div class="p_intervento_ann"' +
+					'				 onClick="PAZIENTI.annullaElemento(\'interventi\');">' +
+									Lingua(TXT_Annulla) +
+					'			</div>' +
 					'			<div class="p_intervento_add"' +
 					'				 onClick="PAZIENTI.aggiungiElemento(\'interventi\',this);">' +
 									Lingua(TXT_Nuovo) +
@@ -1390,7 +1410,8 @@ var PAZIENTI = {
 						applicaLoading(document.getElementById("scheda_testo"));
 						applicaLoading(document.getElementById("elenchi_lista"));
 						localPouchDB.setItem(MD5("DB"+LOGIN._frv()+".pazienti"), IMPORTER.COMPR(DB.pazienti)).then(function(){ // salvo il DB
-							LOGIN.sincronizza(	'rimuoviLoading(document.getElementById("scheda_testo"));' +
+							LOGIN.sincronizza(	'/*noRic*/' +
+												'rimuoviLoading(document.getElementById("scheda_testo"));' +
 												'rimuoviLoading(document.getElementById("elenchi_lista"));' );
 						});
 					}
@@ -1408,6 +1429,7 @@ var PAZIENTI = {
 		PAZIENTI.tagsProvvisori.splice(n, 1); 
 		PAZIENTI.caricaTags();
 		PAZIENTI.popolaTags();
+		PAZIENTI.annullaTag();
 		SCHEDA.formModificato = true;
 	},
 	cambiaColTag: function( el ){ // elimina un tag del paziente
@@ -1484,25 +1506,29 @@ var PAZIENTI = {
 		valore = el.dataset.value;
 		document.getElementById("tag_add").value = valore;
 		document.getElementById("tag_add").dataset.oldValue = valore;
-		var pulsante = document.getElementById("cont_tag_add").getElementsByTagName("div")[0];
-		pulsante.dataset.oldName = pulsante.innerHTML;
-		pulsante.innerText = htmlEntities(Lingua(TXT_Modifica));
+		var pulsanteModifica = document.getElementById("cont_tag_add").getElementsByTagName("div")[1];
+		var pulsanteAnnulla = document.getElementById("cont_tag_add").getElementsByTagName("div")[0];
+		pulsanteModifica.dataset.oldName = pulsanteModifica.innerHTML;
+		pulsanteModifica.innerText = htmlEntities(Lingua(TXT_Modifica));
 		document.getElementById("tag_col").style.backgroundColor = '#'+el.dataset.colore;
 		document.getElementById("tag_col").dataset.colore = el.dataset.colore;
 		document.getElementById("tag_col").dataset.oldColor = el.dataset.colore;
 		document.getElementById("cont_tag_add").classList.add("modEl");
 		document.getElementById('tag_add').focus();
+		pulsanteAnnulla.classList.add("visBtn");
 	},
 	annullaTag: function(){
-		var el = document.getElementById("cont_tag_add").getElementsByTagName("div")[0];
+		var pulsanteModifica = document.getElementById("cont_tag_add").getElementsByTagName("div")[1];
+		var pulsanteAnnulla = document.getElementById("cont_tag_add").getElementsByTagName("div")[0];
 		document.getElementById("tag_add").value = '';
 		document.getElementById("tag_add").dataset.oldValue = '';
-		if(el.dataset.oldName)el.innerHTML = el.dataset.oldName;
-		el.dataset.oldName = '';
+		if(pulsanteModifica.dataset.oldName)pulsanteModifica.innerHTML = pulsanteModifica.dataset.oldName;
+		pulsanteModifica.dataset.oldName = '';
 		document.getElementById("tag_col").style.backgroundColor = '#FFFFFF';
 		document.getElementById("tag_col").dataset.colore = 'FFFFFF';
 		document.getElementById("tag_col").dataset.oldColor = '';
 		document.getElementById("cont_tag_add").classList.remove("modEl");
+		pulsanteAnnulla.classList.remove("visBtn");
 	},
 	filtraTag: function(el){
 		if(event.keyCode==13)PAZIENTI.aggiungiTag(el);
@@ -1605,7 +1631,7 @@ var PAZIENTI = {
 		var pass = true;
 		if(txt.trim()=='')pass=false;
 		var oldValue = '';
-		if(el.parentElement.getElementsByTagName("div")[0].dataset.oldName){ // verifico se è in modifica con oldValue
+		if(el.parentElement.getElementsByTagName("div")[1].dataset.oldName){ // verifico se è in modifica con oldValue
 			oldValue = el.parentElement.getElementsByTagName("input")[0].dataset.oldValue;
 		}
 		var els = document.getElementById("elenco"+obj.els).getElementsByClassName("elMod");
@@ -1667,7 +1693,8 @@ var PAZIENTI = {
 						applicaLoading(document.getElementById("scheda_testo"));
 						applicaLoading(document.getElementById("elenchi_lista"));
 						localPouchDB.setItem(MD5("DB"+LOGIN._frv()+".pazienti"), IMPORTER.COMPR(DB.pazienti)).then(function(){ // salvo il DB
-							LOGIN.sincronizza(	'rimuoviLoading(document.getElementById("scheda_testo"));' +
+							LOGIN.sincronizza(	'/*noRic*/' +
+												'rimuoviLoading(document.getElementById("scheda_testo"));' +
 												'rimuoviLoading(document.getElementById("elenchi_lista"));' );
 						});
 					}
@@ -1684,6 +1711,7 @@ var PAZIENTI = {
 		obj.ELS.splice(n, 1); 
 		PAZIENTI.caricaElementi(tipo);
 		PAZIENTI.popolaElementi(tipo);
+		PAZIENTI.annullaElemento(tipo);
 		SCHEDA.formModificato = true;
 	},
 	getElementi: function( tipo ){ // restituisce l'elenco globale degli elementi di un elenco
@@ -1704,7 +1732,7 @@ var PAZIENTI = {
 				}
 			}
 		}
-		LISTA.sort(sort_by("Nome"+obj.el,false))
+		LISTA.sort(sort_by("Nome"+obj.el,false));
 		return LISTA;
 	},
 	selezionaElemento: function( m, tipo ){ // seleziona un elemento dallo storico degli elementi
@@ -1751,11 +1779,13 @@ var PAZIENTI = {
 		var valore = el.dataset.value;
 		var cont = document.getElementById("cont_"+obj.el.toLowerCase()+"_add");
 		var campo = cont.getElementsByTagName("input")[0];
-		var pulsante = cont.getElementsByTagName("div")[0];
+		var pulsanteAnnulla = cont.getElementsByTagName("div")[0];
+		var pulsanteModifica = cont.getElementsByTagName("div")[1];
 		campo.value = valore;
 		campo.dataset.oldValue = valore;
-		pulsante.dataset.oldName = pulsante.innerHTML;
-		pulsante.innerHTML = htmlEntities(Lingua(TXT_Modifica));
+		pulsanteModifica.dataset.oldName = pulsanteModifica.innerHTML;
+		pulsanteModifica.innerHTML = htmlEntities(Lingua(TXT_Modifica));
+		pulsanteAnnulla.classList.add("visBtn");
 		cont.classList.add("modEl");
 		campo.focus();
 	},
@@ -1763,11 +1793,13 @@ var PAZIENTI = {
 		obj = PAZIENTI.defElemento( tipo );
 		var cont = document.getElementById("cont_"+obj.el.toLowerCase()+"_add");
 		var campo = document.getElementById(obj.el.toLowerCase()+"_add");
-		var el = campo.parentElement.getElementsByTagName("div")[0];
+		var pulsanteAnnulla = campo.parentElement.getElementsByTagName("div")[0];
+		var pulsanteModifica = campo.parentElement.getElementsByTagName("div")[1];
 		campo.value = '';
 		campo.dataset.oldValue = '';
-		if(el.dataset.oldName)el.innerHTML = el.dataset.oldName;
-		el.dataset.oldName = '';
+		if(pulsanteModifica.dataset.oldName)pulsanteModifica.innerHTML = pulsanteModifica.dataset.oldName;
+		pulsanteModifica.dataset.oldName = '';
+		pulsanteAnnulla.classList.remove("visBtn");
 		cont.classList.remove("modEl");
 	},
 	filtraElemento: function(tipo, el){

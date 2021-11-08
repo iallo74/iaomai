@@ -102,6 +102,10 @@ var H = {
 						'	  onClick="'+obj.azModifica+';"' +
 						'	  data-value="'+htmlEntities(obj.label)+'"' +
 						'	  class="occhio">';
+						/*'		<img src="img/ico_modifica_anag.png"' +
+						'			 class="ico_mod_label_etichette"' +
+						'			 data-value="'+htmlEntities(obj.label)+'"' +
+						'		 	 onClick="'+obj.azModifica+';">';*/
 				if(obj.label && !obj.noLabel){
 					if(obj.labelOut)tgLab = 'em';
 					else tgLab = 'i';
@@ -366,6 +370,8 @@ var H = {
 	
 	creaCombo: function( el, lista){
 		if(typeof(lista) == 'undefined')var lista = [];
+		console.log(lista)
+		console.log(lista.length)
 		if(lista.length){
 			
 			if(H.elCombo)H.rimuoviCombo();
@@ -374,12 +380,13 @@ var H = {
 			var HTML = '';
 			var sch = document.getElementById("scheda_testo");
 			for(l in lista){
-				HTML += '<span onMouseUp="H.selComboVal(this);"' +
-						'	   onMouseOver="H.overCombo();"' +
-						'	   onMouseOut="H.outCombo();"' +
-						'	   class="comboElVis">'+htmlEntities(lista[l])+'</span>';
+				if(lista[l].trim())HTML += 
+					'<span onMouseUp="H.selComboVal(this);"' +
+					'	   onMouseOver="H.overCombo();"' +
+					'	   onMouseOut="H.outCombo();"' +
+					'	   class="comboElVis">'+htmlEntities(lista[l])+'</span>';
 			}
-			
+			if(!HTML)return;
 			document.getElementById("combo").innerHTML = HTML;
 			sch.addEventListener("scroll", H.rimuoviCombo, false);
 			/*window.addEventListener("wheel", function(){
@@ -521,6 +528,10 @@ var H = {
 				'					 onClick="H.aggiungiEtichetta(\''+obj.nome+'\',this);">' +
 									Lingua(TXT_Nuovo) +
 				'				</div>' +
+				'				<div class="p_label_ann"' +
+				'					 onClick="H.annullaEtichetta(\''+obj.nome+'\');">' +
+									Lingua(TXT_Annulla) +
+				'				</div>' +
 				'				<span id="label_close"' +
 				'					  onClick="H.nasAggiungiEtichetta(\''+obj.nome+'\');">' +
 				'				</span>' +
@@ -650,7 +661,8 @@ var H = {
 						applicaLoading(document.getElementById("elenchi_lista"));
 						localPouchDB.setItem(MD5("DB"+LOGIN._frv()+".pazienti"), IMPORTER.COMPR(DB.pazienti)).then(function(){ // salvo il DB
 							localPouchDB.setItem(MD5("DB"+LOGIN._frv()+".fornitori"), IMPORTER.COMPR(DB.fornitori)).then(function(){ // salvo il DB
-								LOGIN.sincronizza(	'rimuoviLoading(document.getElementById("scheda_testo"));' +
+								LOGIN.sincronizza(	'/*noRic*/' +
+													'rimuoviLoading(document.getElementById("scheda_testo"));' +
 													'rimuoviLoading(document.getElementById("elenchi_lista"));' );
 							});
 						});
@@ -678,6 +690,7 @@ var H = {
 		H.etichetteProvvisorie.splice(n, 1); 
 		H.caricaEtichette(sezione);
 		H.popolaEtichette(sezione);
+		H.annullaEtichetta(sezione);
 		SCHEDA.formModificato = true;
 	},
 	getEtichette: function( sezione, elenchi ){ // restituisce l'elenco globale delle etichette personalizzate
@@ -796,23 +809,27 @@ var H = {
 		var valore = el.dataset.value;
 		var cont = document.getElementById("cont_label_add_"+sezione);
 		var campo = cont.getElementsByTagName("input")[0];
-		var pulsante = cont.getElementsByTagName("div")[0];
+		var pulsanteModifica = cont.getElementsByTagName("div")[0];
+		var pulsanteAnnulla = cont.getElementsByTagName("div")[1];
 		campo.value = valore;
 		campo.dataset.oldValue = valore;
-		pulsante.dataset.oldName = pulsante.innerHTML;
-		pulsante.innerHTML = htmlEntities(Lingua(TXT_Modifica));
+		pulsanteModifica.dataset.oldName = pulsanteModifica.innerHTML;
+		pulsanteModifica.innerHTML = htmlEntities(Lingua(TXT_Modifica));
+		pulsanteAnnulla.classList.add("visBtn");
 		cont.classList.add("modEl");
 		campo.focus();
 	},
 	annullaEtichetta: function( sezione ){
 		var cont = document.getElementById("cont_label_add_"+sezione);
-		var campo = document.getElementById(obj.el.toLowerCase()+"_add");
-		var el = cont.getElementsByTagName("div")[0];
+		var campo = cont.getElementsByTagName("input")[0];
+		var pulsanteModifica = cont.getElementsByTagName("div")[0];
+		var pulsanteAnnulla = cont.getElementsByTagName("div")[1];
 		campo.value = '';
 		campo.dataset.oldValue = '';
-		if(el.dataset.oldName)el.innerHTML = el.dataset.oldName;
-		el.dataset.oldName = '';
+		if(pulsanteModifica.dataset.oldName)pulsanteModifica.innerHTML = pulsanteModifica.dataset.oldName;
+		pulsanteModifica.dataset.oldName = '';
 		cont.classList.remove("modEl");
+		pulsanteAnnulla.classList.remove("visBtn");
 	},
 	filtraEtichetta: function( sezione, el ){
 		if(event.keyCode==13)H.aggiungiEtichetta(sezione,el);

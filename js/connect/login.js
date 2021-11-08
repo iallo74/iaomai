@@ -1899,40 +1899,42 @@ var LOGIN = {
 	},
 	verSincro: function (txt){
 		nSinc++;
-		switch(txt){
-			
-			case "appuntamenti":
-				//
-				break;
-			
-			case "annotazioni":
-				ANNOTAZIONI.caricaAnnotazioni();
-				break;
-			
-			case "servizi":
-				SERVIZI.caricaServizi();
-				break;
-			
-			case "fornitori":
-				FORNITORI.caricaFornitori();
-				break;
-			
-			case "pazienti":
-				if(PAZIENTI.idCL == -1)PAZIENTI.caricaPazienti();
-				else{
-					if(PAZIENTI.trattOp)PAZIENTI.caricaTrattamenti();
-					if(PAZIENTI.saldoOp)PAZIENTI.caricaSaldi();
-				}
-				break;
-			
-			case "procedure":
-				if(globals.set.cartella == 'meridiani_cinesi'){
-					try{
-						SET.car_procedure('',true);
-					}catch(err){}
-				}
-				break;
+		if(LOGIN.afterFunct && LOGIN.afterFunct.indexOf('/*noRic*/')==-1) {
+			switch(txt){
 				
+				case "appuntamenti":
+					//
+					break;
+				
+				case "annotazioni":
+					ANNOTAZIONI.caricaAnnotazioni();
+					break;
+				
+				case "servizi":
+					SERVIZI.caricaServizi();
+					break;
+				
+				case "fornitori":
+					FORNITORI.caricaFornitori();
+					break;
+				
+				case "pazienti":
+					if(PAZIENTI.idCL == -1)PAZIENTI.caricaPazienti();
+					else{
+						if(PAZIENTI.trattOp)PAZIENTI.caricaTrattamenti();
+						if(PAZIENTI.saldoOp)PAZIENTI.caricaSaldi();
+					}
+					break;
+				
+				case "procedure":
+					if(globals.set.cartella == 'meridiani_cinesi'){
+						try{
+							SET.car_procedure('',true);
+						}catch(err){}
+					}
+					break;
+					
+			}
 		}
 		if(nSinc == totSinc){ // pazienti | procedure | note | ricerche
 			LOGIN.pulisciTabelle();
@@ -2006,6 +2008,10 @@ var LOGIN = {
 								localPouchDB.setItem(MD5("DB"+LOGIN._frv()+".foto"), JSON.stringify(DB.foto)).then(function(){ // salvo il DB
 									if(LOGIN.afterFunct){
 										eval(LOGIN.afterFunct);
+										if(LOGIN.afterFunct && LOGIN.afterFunct.indexOf('/*noRic*/')>=-1){
+											LOGIN.afterFunct = null;
+											return;
+										}
 										LOGIN.afterFunct = null;
 									}else{
 										try{SET.car_procedure(-1,1);}catch(err){}
@@ -2017,7 +2023,7 @@ var LOGIN = {
 									FORNITORI.caricaFornitori();
 									SERVIZI.caricaServizi();
 									ANNOTAZIONI.caricaAnnotazioni();
-									if(SCHEDA.elencoSel == 'pazienti'){	
+									if(	SCHEDA.elencoSel == 'pazienti'){	
 										var lista = document.getElementById("lista_pazienti").querySelector(".lista");
 										if(lista.classList.contains("listaTrattamenti"))PAZIENTI.caricaTrattamenti( true ); // true serve per ...
 										if(lista.classList.contains("listaSaldi"))PAZIENTI.caricaSaldi( true ); //    ... riaccendere il pulsante
@@ -2085,7 +2091,9 @@ var LOGIN = {
 				LOGIN.addHTML("<i>"+Lingua(TXT_Provincia)+":</i> "+LOGIN.dataW(backup.pazienti[p].Provincia)+"<br>");
 				LOGIN.addHTML("<i>"+Lingua(TXT_Stato)+":</i> "+LOGIN.dataW(backup.pazienti[p].Stato)+"<br>");
 				LOGIN.addHTML("<i>"+Lingua(TXT_Telefono)+":</i> "+LOGIN.dataW(backup.pazienti[p].Telefono)+"<br>");
-				LOGIN.addHTML("<i>"+Lingua(TXT_Cellulare)+":</i> "+paesi[backup.pazienti[p].paeseCellulare].prefisso+LOGIN.dataW(backup.pazienti[p].Cellulare)+"<br>");
+				var prefisso = '';
+				if(backup.pazienti[p].paeseCellulare)prefisso = paesi[backup.pazienti[p].paeseCellulare].prefisso;
+				LOGIN.addHTML("<i>"+Lingua(TXT_Cellulare)+":</i> "+prefisso+LOGIN.dataW(backup.pazienti[p].Cellulare)+"<br>");
 				LOGIN.addHTML("<i>"+Lingua(TXT_Email)+":</i> "+LOGIN.dataW(backup.pazienti[p].Email)+"<br>");
 				LOGIN.addHTML("<i>"+Lingua(TXT_Sesso)+":</i> "+Lingua(eval("TXT_"+LOGIN.dataW(backup.pazienti[p].sesso)))+"<br>");
 				LOGIN.addHTML("<i>"+Lingua(TXT_Note)+":</i> "+LOGIN.dataW(backup.pazienti[p].NotePaziente)+"</p>");
@@ -2155,7 +2163,7 @@ var LOGIN = {
 								LOGIN.addHTML("<i>"+Lingua(TXT_AnamnesiMotivo)+":</i> "+TT.AnamnesiMotivo+"<br>");
 								LOGIN.addHTML("<i>"+Lingua(TXT_AnamnesiDiagnosiOccidentale)+":</i> "+TT.AnamnesiDiagnosiOccidentale+"<br>");
 								LOGIN.addHTML("<i>"+Lingua(TXT_AnamnesiDiagnosiMTC)+":</i> "+TT.AnamnesiDiagnosiMTC+"<br>");
-							}else LOGIN.addHTML("<i>"+Lingua(TXT_Descrizione)+":</i> "+TT+"<br>");
+							}else LOGIN.addHTML("<i>"+Lingua(TXT_Descrizione)+":</i> "+TT.replace(/\n/gi,"<br>")+"<br>");
 							
 							sintomi=[];
 							if(trattamenti[t].sintomi)var sintomi=JSON.parse(trattamenti[t].sintomi);
@@ -2171,24 +2179,27 @@ var LOGIN = {
 								LOGIN.addHTML("<i>"+Lingua(TXT_Sintomi)+":</i> "+txtSintomi+"<br>");
 							}
 							if(trattamenti[t].puntiTsuboMap){
-								var punti=LOGIN.dataW(trattamenti[t].puntiTsuboMap).split("|");
+								var punti=JSON.parse(LOGIN.dataW(trattamenti[t].puntiTsuboMap));
 								var txtPunti='';
 								for(f in punti){
-									var pP=punti[f].split(".");
-									txtPunti+=pP[0]+"."+pP[1];
-									if(pP[2]){
-										if(pP[2]=='V')txtPunti+=' (vuoto)';
-										if(pP[2]=='P')txtPunti+=' (pieno)';
-									}
+									nTsubo=punti[f].n*1;
+									siglaMeridiano=punti[f].m;
+									valutazione=__(punti[f].e);
+									mezzo=__(punti[f].z);
+									descrizione=__(punti[f].t);
+									siglaTsubo=__(punti[f].s);
+									if(!siglaTsubo)txtPunti+=siglaMeridiano+"."+nTsubo;
+									else txtPunti+=siglaTsubo;
+									if(valutazione=='V')txtPunti+=' (vuoto)';
+									if(valutazione=='P')txtPunti+=' (pieno)';
+									if(mezzo)txtPunti+=' '+mezzo;
+									if(descrizione)txtPunti+=' '+descrizione;
 									txtPunti+=", ";
 								}
 								txtPunti=txtPunti.substr(0,txtPunti.length-2);
 								LOGIN.addHTML("<i>"+Lingua(TXT_PuntiTrattamento)+":</i> "+txtPunti+"<br>");
 							}
-							
-							
 							LOGIN.addHTML("<br>");
-								
 						}
 						LOGIN.addHTML("</div>");
 					}
@@ -2217,11 +2228,7 @@ var LOGIN = {
 				if(note.length>0){
 					LOGIN.addHTML("<br><i>"+Lingua(TXT_ANNOTAZIONI)+":</i><br><div class=\"rientro\">");
 					for(n in note){
-						var mr = '';
-						for(m in DB.meridiani){
-							if(DB.meridiani[m].cartella == note[n].meridiano)mr = k;
-						}
-						LOGIN.addHTML("<b>"+LOGIN.dataW(note[n].numeroTsubo)+"."+mr+"</b>: "+LOGIN.dataW(note[n].TestoAnnotazione)+"<br>");
+						LOGIN.addHTML("<b>"+note[n].meridiano+" "+LOGIN.dataW(note[n].numeroTsubo)+"</b>: "+LOGIN.dataW(note[n].TestoAnnotazione.replace(/\n/gi,"<br>"))+"<br>");
 					}
 					LOGIN.addHTML("</div>");
 				}
@@ -2240,10 +2247,12 @@ var LOGIN = {
 				LOGIN.addHTML("<i>"+Lingua(TXT_Data)+": </i> "+getFullDataTS(backup.procedure[n].DataCreazione)+"<br>");
 				for(d in backup.procedure[n].dettagliProcedura){
 					var TD=backup.procedure[n].dettagliProcedura[d].TipoDettaglio;
-					if(TD=='P')LOGIN.addHTML("<i>Punto: </i>");
-					if(TD=='T' || TD=='P')LOGIN.addHTML("<b>");
-					LOGIN.addHTML(backup.procedure[n].dettagliProcedura[d].DescrizioneDettaglio);
-					if(TD=='T' || TD=='P')LOGIN.addHTML("</b>");
+					if(TD=='P')LOGIN.addHTML("<i>"+Lingua(TXT_Tsubo)+": </i>");
+					if(TD=='M')LOGIN.addHTML("<i>"+Lingua(TXT_AggiungiMeridiano)+": </i>");
+					if(TD=='T' || TD=='P' || TD=='M')LOGIN.addHTML("<b>");
+					var descrizione = backup.procedure[n].dettagliProcedura[d].DescrizioneDettaglio.replace(/\n/gi,"<br>");
+					LOGIN.addHTML(descrizione);
+					if(TD=='T' || TD=='P' || TD=='M')LOGIN.addHTML("</b>");
 					LOGIN.addHTML("<br>");
 				}
 				LOGIN.addHTML("<i>"+Lingua(TXT_Condiviso)+": </i> ");
@@ -2260,11 +2269,7 @@ var LOGIN = {
 	
 		for(n in backup.note){
 			if(backup.note[n].TestoAnnotazione && backup.note[n].idPaziente==-1 && backup.note[n].Cancellato!='1'){
-				var mr = '';
-				for(m in DB.meridiani){
-					if(DB.meridiani[m].cartella == LOGIN.dataW(backup.note[n].meridiano))mr = k;
-				}
-				LOGIN.addHTML("<b class=\"tits\">"+LOGIN.dataW(backup.note[n].numeroTsubo)+"."+mr+"</b>: "+ LOGIN.dataW(backup.note[n].TestoAnnotazione)+"<br>");
+				LOGIN.addHTML("<b class=\"tits\">"+LOGIN.dataW(backup.note[n].meridiano)+" "+LOGIN.dataW(backup.note[n].numeroTsubo)+"</b>: "+ LOGIN.dataW(backup.note[n].TestoAnnotazione.replace(/\n/gi,"<br>"))+"<br>");
 				
 				LOGIN.addHTML("<hr>");
 			}

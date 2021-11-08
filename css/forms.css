@@ -166,6 +166,7 @@ body:not(.smart) .stampaBtn{
 	text-align:center;
 
 }
+.p_paz_label,
 .p_sch_punto, /* procedura */
 .p_sch_tit, /* procedura */
 .p_sch_descr, /* procedura */
@@ -271,7 +272,13 @@ body:not(.smart) .stampaBtn{
 .p_allergia_add, /* PAZIENTI */
 .p_patologia_add, /* PAZIENTI */
 .p_intervento_add, /* PAZIENTI */
-.p_label_add{ /* PAZIENTI */
+.p_label_add, /* PAZIENTI */
+.p_tag_ann, /* PAZIENTI */
+.p_medicina_ann, /* PAZIENTI */
+.p_allergia_ann, /* PAZIENTI */
+.p_patologia_ann, /* PAZIENTI */
+.p_intervento_ann, /* PAZIENTI */
+.p_label_ann{ /* PAZIENTI */
 	cursor:pointer;
 	float:left;
 	padding-left:10px;
@@ -281,13 +288,27 @@ body:not(.smart) .stampaBtn{
 	height:24px;
 	line-height:24px;
 }
+.p_tag_ann, /* PAZIENTI */
+.p_medicina_ann, /* PAZIENTI */
+.p_allergia_ann, /* PAZIENTI */
+.p_patologia_ann, /* PAZIENTI */
+.p_intervento_ann, /* PAZIENTI */
+.p_label_ann{ /* PAZIENTI */
+	display:none;
+}
 .sch_Max450 .p_paz_add,
 .p_tag_add,
 .p_medicina_add,
 .p_allergia_add,
 .p_patologia_add,
 .p_intervento_add,
-.p_label_add{
+.p_label_add,
+.p_tag_ann,
+.p_medicina_ann,
+.p_allergia_ann,
+.p_patologia_ann,
+.p_intervento_ann,
+.p_label_ann{
     background-color: rgba(255,255,255,0.5);
     height: 32px !important;
     line-height: 32px !important;
@@ -299,7 +320,12 @@ body:not(.smart) .stampaBtn{
 .p_medicina_add,
 .p_allergia_add,
 .p_patologia_add,
-.p_intervento_add{
+.p_intervento_add,
+.p_tag_ann,
+.p_medicina_ann,
+.p_allergia_ann,
+.p_patologia_ann,
+.p_intervento_ann{
     float: right !important;
 }
 .p_tag_add,
@@ -307,7 +333,13 @@ body:not(.smart) .stampaBtn{
 .p_allergia_add,
 .p_patologia_add,
 .p_intervento_add,
-.p_label_add{
+.p_label_add,
+.p_tag_ann,
+.p_medicina_ann,
+.p_allergia_ann,
+.p_patologia_ann,
+.p_intervento_ann,
+.p_label_ann{
 	width: 90px;
 }
 #tag_col{
@@ -397,7 +429,8 @@ body:not(.smart) .stampaBtn{
 #elencoAllergie > div > div:not(.noResults),
 #elencoPatologie > div > div:not(.noResults),
 #elencoInterventi > div > div:not(.noResults),
-.elencoEtichette > div > div:not(.noResults){
+.elencoEtichette > div > div:not(.noResults),
+#elencoSintomi > div > div:not(.noResults){
 	cursor:pointer;
 	width: calc(100% - 30px);
     display: inline-block !important;
@@ -430,12 +463,22 @@ body:not(.smart) .stampaBtn{
 	background-color: #3f51b5 !important;
     color: #FFF;
 }
+.modEl .p_tag_ann,
+.modEl .p_label_ann,
+.modEl .p_medicina_ann,
+.modEl .p_allergia_ann,
+.modEl .p_patologia_ann,
+.modEl .p_intervento_ann{
+	background-color: #CCC !important;
+	margin-left: 5px;
+}
 .tagElenco,
 .medicineElenco,
 .allergieElenco,
 .patologieElenco,
 .interventiElenco,
 .labelElenco{
+	cursor:pointer;
 	border-bottom:1px solid rgba(0,0,0,0.05);
 	background-image:url(../img/frSuB.png);
 	background-repeat:no-repeat;
@@ -875,17 +918,6 @@ _:-webkit-full-screen,
     line-height: 24px;
 }
 
-/*#medicina_add,
-#allergia_add,
-#patologia_add,
-#intervento_add,
-.p_medicina_add,
-.p_allergia_add,
-.p_patologia_add,
-.p_intervento_add{
-	margin-bottom: 4px;
-}*/
-
 #paz_add::placeholder,
 .label_add::placeholder,
 .label_add::placeholder,
@@ -922,11 +954,36 @@ _:-webkit-full-screen,
     line-height: 32px;
 	width: calc(100% - 95px) !important;
 }
+.modEl #tag_add,
+.modEl #medicina_add,
+.modEl #allergia_add,
+.modEl #patologia_add,
+.modEl #intervento_add{
+	width: calc(100% - 190px) !important;
+}
+.ico_mod_label,
+.ico_mod_label_etichette{
+    height: 20px;
+    vertical-align: middle;
+    margin-top: -10px;
+    opacity: 0.6;
+    cursor: pointer;
+}
+/*.ico_mod_label_etichette{
+    margin-bottom: -55px;
+    margin-left: 79px;
+    border-radius: 10px;
+}*/
+
 #paz_add,
 .label_add{
 	width: calc(100% - 127px) !important;
     height: 32px !important;
     line-height: 32px;
+}
+.modEl .label_add,
+#cont_label_add_sintomi.modEl #paz_add{
+	width: calc(100% - 222px) !important;
 }
 .TitTrattDx{ /* PAZIENTI */
 	padding-left:5px !important;

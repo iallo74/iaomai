@@ -736,12 +736,8 @@ var PAZIENTI_TRATTAMENTI = {
 					'		   autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"' +
 					'		   onKeyup="PAZIENTI.filtraSintomi(this);"/>' +
 					'	<div class="p_label_add"' +
-					'		 onClick="PAZIENTI.aggiungiSintomo();">' +
+					'		 onClick="PAZIENTI.aggiungiSintomoTrattamento();">' +
 							Lingua(TXT_Aggiungi) +
-					'	</div>' +
-					'	<div class="p_label_ann"' +
-					'		 onClick="PAZIENTI.annullaSintomo();">' +
-							Lingua(TXT_Annulla) +
 					'	</div>' +
 					'	<span id="label_close"' +
 					'		  onClick="PAZIENTI.nasAggiungiSintomo();">' +
@@ -903,7 +899,7 @@ var PAZIENTI_TRATTAMENTI = {
 			if(TipoTrattamento=='A' || !LabelCiclo)PAZIENTI.popolaSintomi();
 			PAZIENTI.caricaPuntiTrattamento();
 			PAZIENTI.caricaMeridianiTrattamento();
-			PAZIENTI.caricaSintomi();
+			PAZIENTI.caricaSintomiTrattamento();
 			PAZIENTI.caricaGalleryTrattamento( Q_idTratt );
 			PAZIENTI.trattOp = true;
 		}});
@@ -2026,7 +2022,7 @@ var PAZIENTI_TRATTAMENTI = {
 	},
 	
 	// sintomi
-	caricaSintomi: function(){ // carica i punti del trattamento
+	caricaSintomiTrattamento: function(){ // carica i punti del trattamento
 		var HTML='';
 		var totSintomi = 0;
 		var selectScoreHTML = 	'<select onChange="PAZIENTI.ricSintomiTratt([p],this);" class="scoreSelect">' +
@@ -2049,10 +2045,6 @@ var PAZIENTI_TRATTAMENTI = {
 				HTML += '<div data-id="'+PAZIENTI.sintomiProvvisori[p].idSintomo+'">' +
 						'	<span>' +
 								htmlEntities(PAZIENTI.sintomiProvvisori[p].NomeSintomo) +
-						'		<img src="img/ico_modifica_anag.png"' +
-						'			 class="ico_mod_label"' +
-						'			 data-value="'+htmlEntities(PAZIENTI.sintomiProvvisori[p].NomeSintomo)+'"' +
-						'		 	 onClick="PAZIENTI.modificaSintomo(this);">' +
 						'	</span>' +
 						'	<img src="img/ico_cestino.png"' +
 						'		 width="16"' +
@@ -2063,7 +2055,7 @@ var PAZIENTI_TRATTAMENTI = {
 						'		 		cursor:pointer;' +
 						'		 		opacity:0.5;"' +
 						'		 title="'+Lingua(TXT_DelDett)+'"' +
-						'		 onClick="PAZIENTI.eliminaSintomo('+p+');"' +
+						'		 onClick="PAZIENTI.eliminaSintomoTrattamento('+p+');"' +
 						'		 class="occhio">' +
 							selectScoreHTML.replace('value="'+PAZIENTI.sintomiProvvisori[p].score+'"',
 													'value="'+PAZIENTI.sintomiProvvisori[p].score+'" SELECTED').replace("[p]",p) +
@@ -2080,109 +2072,31 @@ var PAZIENTI_TRATTAMENTI = {
 	},
 	ricSintomiTratt: function(n,el){ // ricarica i sintomi del trattamento (dopo un'azione es. elimina o nuovo)
 		PAZIENTI.sintomiProvvisori[n].score=el.value*1;
-		PAZIENTI.caricaSintomi();
+		PAZIENTI.caricaSintomiTrattamento();
 		SCHEDA.formModificato = true;
 	},
-	aggiungiSintomo: function(){ // aggiunge un singolo punto al trattamento
+	aggiungiSintomoTrattamento: function(){ // aggiunge un singolo punto al trattamento
 		if(typeof(id)=='undefined')var id=0;
-		var el = document.getElementById("paz_add");
-		var txt = el.value;
+		var txt=document.getElementById("paz_add").value;
 		if(txt.trim()!=''){
-			var global = PAZIENTI.sintomiProvvisori;
-			var pass = true;
-			if(txt.trim()=='')pass=false;
-			var oldValue = '';
-			if(el.parentElement.getElementsByTagName("div")[0].dataset.oldName){ // verifico se è in modifica con oldValue
-				oldValue = el.parentElement.getElementsByTagName("input")[0].dataset.oldValue;
-			}
-			var els = document.getElementById("elencoSintomi").getElementsByClassName("elMod");
-			for(e in els){
-				if(els[e].dataset){
-					var val = els[e].dataset.value.toLowerCase();
-					if(	val.trim() == txt.toLowerCase().trim() && !oldValue){
-						PAZIENTI.selezionaSintomo(e);
-						return;
-					}
-				}
-			}
-			var id = 0;
-			if(pass){
-				JSNPUSH={	"idSintomo": id*1,
-							"NomeSintomo": txt.trim(),
-							"score": 0 };
-				if(!oldValue){
-					SCHEDA.formModificato = true;
-					PAZIENTI.sintomiProvvisori.push(JSNPUSH);
-					PAZIENTI.caricaSintomi();
-				}else{
-					if(oldValue!=txt){
-						var DataModifica = DB.pazienti.lastSync+1;
-						var modificato = false;
-						var PZS = clone(DB.pazienti.data);
-						for(p in PZS){
-							if(PZS.Cancellato!=1){
-								var TRS = PZS[p].trattamenti;
-								for(t in TRS){
-									if(TRS.Cancellato!=1 && TRS[t].sintomi!='[]'){
-										var sintomi = JSON.parse(TRS[t].sintomi);
-										for(s in sintomi){
-											if(sintomi[s].NomeSintomo==oldValue){
-												sintomi[s].NomeSintomo=txt;
-												modificato = true;
-											}
-										}
-										DB.pazienti.data[p].trattamenti[t].sintomi = JSON.stringify(sintomi);
-									}
-								}
-							}
-						}
-
-						for(p in PAZIENTI.sintomiProvvisori){
-							if(PAZIENTI.sintomiProvvisori[p]["NomeSintomo"]== oldValue){
-								PAZIENTI.sintomiProvvisori[p] = JSNPUSH;
-							}
-						}
-						if(!el.parentElement.getElementsByTagName("div")[0].dataset.oldName){
-							if(PAZIENTI.sintomiProvvisori=='')PAZIENTI.sintomiProvvisori=[];
-							PAZIENTI.sintomiProvvisori.push(JSNPUSH);
-						}
-						PAZIENTI.popolaSintomi();
-						PAZIENTI.caricaSintomi();
-						if(modificato){
-							applicaLoading(document.getElementById("scheda_testo"));
-							applicaLoading(document.getElementById("elenchi_lista"));
-							localPouchDB.setItem(MD5("DB"+LOGIN._frv()+".pazienti"), IMPORTER.COMPR(DB.pazienti)).then(function(){ // salvo il DB
-								LOGIN.sincronizza(	'/*noRic*/' +
-													'rimuoviLoading(document.getElementById("scheda_testo"));' +
-													'rimuoviLoading(document.getElementById("elenchi_lista"));' );
-							});
-						}
-					}
-				}
-				
-				
-				
-				/*SCHEDA.formModificato = true;
-				
-				if(PAZIENTI.sintomiProvvisori=='')PAZIENTI.sintomiProvvisori=[];
-				PAZIENTI.sintomiProvvisori.push(JSNPUSH);
-				PAZIENTI.caricaSintomi();
-				document.getElementById("paz_add").value='';
-				SCHEDA.formModificato = true;
-				PAZIENTI.nasAggiungiSintomo();*/
-			}
+			
+			JSNPUSH={	"idSintomo": id*1,
+						"NomeSintomo": txt.trim(),
+						"score": 0 };
+			
+			SCHEDA.formModificato = true;
+			
+			if(PAZIENTI.sintomiProvvisori=='')PAZIENTI.sintomiProvvisori=[];
+			PAZIENTI.sintomiProvvisori.push(JSNPUSH);
+			PAZIENTI.caricaSintomiTrattamento();
 			document.getElementById("paz_add").value='';
+			SCHEDA.formModificato = true;
+			PAZIENTI.nasAggiungiSintomo();
 		}
-		PAZIENTI.popolaSintomi();
-		PAZIENTI.caricaSintomi();
-		if(oldValue)PAZIENTI.annullaSintomo();
-		//PAZIENTI.nasAggiungiSintomo();
 	},
-	eliminaSintomo: function( n ){ // elimina un punto del trattamento
+	eliminaSintomoTrattamento: function( n ){ // elimina un punto del trattamento
 		PAZIENTI.sintomiProvvisori.splice(n, 1); 
-		PAZIENTI.caricaSintomi();
-		PAZIENTI.popolaSintomi();
-		PAZIENTI.annullaSintomo();
+		PAZIENTI.caricaSintomiTrattamento();
 		SCHEDA.formModificato = true;
 	},
 	getSintomi: function(){ // restituisce l'elenco globale dei sintomi
@@ -2207,7 +2121,6 @@ var PAZIENTI_TRATTAMENTI = {
 				}
 			}
 		}
-		SINTOMI.sort(sort_by("NomeSintomo",false))
 		return SINTOMI;
 	},
 	visAggiungiSintomo: function(){
@@ -2231,10 +2144,9 @@ var PAZIENTI_TRATTAMENTI = {
 		SCHEDA.formModificato = true;
 		if(PAZIENTI.sintomiProvvisori=='')PAZIENTI.sintomiProvvisori=[];
 		PAZIENTI.sintomiProvvisori.push(JSNPUSH);
-		PAZIENTI.caricaSintomi();
+		PAZIENTI.caricaSintomiTrattamento();
 		document.getElementById("paz_add").value='';
 		PAZIENTI.nasAggiungiSintomo();
-		PAZIENTI.annullaSintomo();
 	},
 	popolaSintomi: function(){
 		var HTML = '';
@@ -2244,64 +2156,24 @@ var PAZIENTI_TRATTAMENTI = {
 			for(e in PAZIENTI.sintomiProvvisori){
 				if(PAZIENTI.sintomiProvvisori[e].NomeSintomo == globalSintomi[t].NomeSintomo)pass = false;
 			}
-			if(pass)HTML += '<div id="sintomo">' +
-							'	<div class="labelElenco"' +
+			if(pass)HTML += '	<div class="labelElenco"' +
 							'		 onClick="PAZIENTI.selezionaSintomo('+t+');">' +
 									htmlEntities(globalSintomi[t].NomeSintomo) +
-							'	</div>' +
-							'	<div class="elMod"' +
-							'		 data-value="'+htmlEntities(globalSintomi[t].NomeSintomo)+'"' +
-							'		 onClick="PAZIENTI.modificaSintomo(this);"></div>' +
-							'</div>';
+							'	</div>';
 		}
 		if(!HTML)HTML = '<div class="noResults">' + htmlEntities(Lingua(TXT_NoResSintomi)) + '</div>';
 		document.getElementById("elencoSintomi").innerHTML = HTML;
 	},
-	modificaSintomo: function( el ){
-		PAZIENTI.visAggiungiSintomo();
-		var valore = el.dataset.value;
-		var cont = document.getElementById("cont_label_add_sintomi");
-		var campo = cont.getElementsByTagName("input")[0];
-		var pulsanteModifica = cont.getElementsByTagName("div")[0];
-		var pulsanteAnnulla = cont.getElementsByTagName("div")[1];
-		campo.value = valore;
-		campo.dataset.oldValue = valore;
-		pulsanteModifica.dataset.oldName = pulsanteModifica.innerHTML;
-		pulsanteModifica.innerHTML = htmlEntities(Lingua(TXT_Modifica));
-		pulsanteAnnulla.classList.add("visBtn");
-		cont.classList.add("modEl");
-		campo.focus();
-	},
-	annullaSintomo: function(){
-		var cont = document.getElementById("cont_label_add_sintomi");
-		var campo = cont.getElementsByTagName("input")[0];
-		var pulsanteModifica = cont.getElementsByTagName("div")[0];
-		var pulsanteAnnulla = cont.getElementsByTagName("div")[1];
-		campo.value = '';
-		campo.dataset.oldValue = '';
-		if(pulsanteModifica.dataset.oldName)pulsanteModifica.innerHTML = pulsanteModifica.dataset.oldName;
-		pulsanteModifica.dataset.oldName = '';
-		cont.classList.remove("modEl");
-		pulsanteAnnulla.classList.remove("visBtn");
-	},
 	filtraSintomi: function(el){
 		var val = el.value.trim().toLowerCase();
-		if(event.keyCode==13)PAZIENTI.aggiungiSintomo();
+		if(event.keyCode==13)PAZIENTI.aggiungiSintomoTrattamento();
 		else{
-			var elenco = document.getElementById("elencoSintomi");
-			var els = elenco.getElementsByClassName("elMod");
-			var campo = document.getElementById("paz_add");
-			var oldValue = campo.dataset.oldValue;
-			if(typeof(oldValue)=='undefined')oldValue = '';
-			if(oldValue==''){
-				
-				var els = document.getElementById("elencoSintomi").getElementsByTagName("div");
-				for(e in els){
-					if(els[e].innerText){
-						var cont=els[e].innerText.toLowerCase();
-						if(cont.indexOf(val)>-1 || !val)els[e].style.display = 'block';
-						else els[e].style.display = 'none';
-					}
+			var els = document.getElementById("elencoSintomi").getElementsByTagName("div");
+			for(e in els){
+				if(els[e].innerText){
+					var cont=els[e].innerText.toLowerCase();
+					if(cont.indexOf(val)>-1 || !val)els[e].style.display = 'block';
+					else els[e].style.display = 'none';
 				}
 			}
 		}
