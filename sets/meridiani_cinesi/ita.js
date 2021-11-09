@@ -2207,14 +2207,14 @@ DB.set= {
 	
 		"11": {
 			NomePatologia: "Angoscia",
-			TestoPatologia: "L’emotività di ogni persona  è soggettiva e si manifesta nei modi più inverosimili, una scarsa autostima di fondo può indurre una persona a pensare di non farcela a superare prove che la vita ci pone davanti. Uno stress accentuato che va a ledere la nostra calma e ci può portare ad andare in \"tilt\" ed ecco apparire l’ansia, la paura, il famoso attacco di panico. Come sintomo in fase acuta si possono avere tachicardia, respirazione affannosa, paura con conseguente scarica di adrenalina, una sensazione molto sgradevole anche perché le crisi a volte arrivano improvvise, senza preavviso, e chi ne è colpito vive nel terrore di entrare nella fase di \" Terrore\".<br>Se lo stato di angoscia è profondo, grave e permanente allora necessita dell’intervento di uno specialista.<br><br><b>M.T.C.</b><br>Ansia, paura, angoscia e iperemotività sono considerati un eccesso di Qi nei meridiani di Cuore e del Pericardio, che deve regolare il tono del plesso cardiaco. <br>Se la patologia è cronica può essere in relazione anche con altri meridiani.<br><br><b>Terapia</b><br>Disperdere e regolare il Qi nei meridiani del Cuore e di Pericardio, <br>Calmare lo Shen<br><br><b>Agopuntura</b><br>[.7.HT.]<br>[.6.PC.]<br>[.7.PC.]<br><br><b>Moxa</b><br><span style=\"font-style: italic;\">Indiretta a beccata di passero</span><br>Giornalmente nei tre giorni che precedono un evento di particolare stress emotivo       ( es. un esame ). A giorni alterni per tenere sotto controllo la situazione fino alla scomparsa dei sintomi.<br><br><b>Shiatsu</b><br>Trattare i meridiani di [.HT.], in quanto alloggia lo Shen,  [.LR.]  per rilasciare lo stress, [.BL.] per scaricare e risolvere le paure.<br><br><b>Consigli</b><br>In caso di attacco di panico fare delle pressioni sul diaframma penetrando le dita a lato della gabbia toracica regolare la respirazione con respiri lunghi e profondi e mentalmente ripetersi che è tutto sotto controllo, che ora passa tutto , che ora il cuore tornerà alla frequenza normale.<br>Cercare di avere una vita attiva, impegnata ma con momenti propri ( es. dedicarsi all’arte, suonare uno strumento, studiare una lingua, fare sport….)",
+			TestoPatologia: "L’emotività di ogni persona  è soggettiva e si manifesta nei modi più inverosimili, una scarsa autostima di fondo può indurre una persona a pensare di non farcela a superare prove che la vita ci pone davanti. Uno stress accentuato che va a ledere la nostra calma e ci può portare ad andare in \"tilt\" ed ecco apparire l’ansia, la paura, il famoso attacco di panico. Come sintomo in fase acuta si possono avere tachicardia, respirazione affannosa, paura con conseguente scarica di adrenalina, una sensazione molto sgradevole anche perché le crisi a volte arrivano improvvise, senza preavviso, e chi ne è colpito vive nel terrore di entrare nella fase di \" Terrore\".<br>Se lo stato di angoscia è profondo, grave e permanente allora necessita dell’intervento di uno specialista.<br><br><b>M.T.C.</b><br>Ansia, paura, angoscia e iperemotività sono considerati un eccesso di Qi nei meridiani di Cuore e del Mastro del cuore, che deve regolare il tono del plesso cardiaco. <br>Se la patologia è cronica può essere in relazione anche con altri meridiani.<br><br><b>Terapia</b><br>Disperdere e regolare il Qi nei meridiani del Cuore e di Mastro del cuore, <br>Calmare lo Shen<br><br><b>Agopuntura</b><br>[.7.HT.]<br>[.6.PC.]<br>[.7.PC.]<br><br><b>Moxa</b><br><span style=\"font-style: italic;\">Indiretta a beccata di passero</span><br>Giornalmente nei tre giorni che precedono un evento di particolare stress emotivo       ( es. un esame ). A giorni alterni per tenere sotto controllo la situazione fino alla scomparsa dei sintomi.<br><br><b>Shiatsu</b><br>Trattare i meridiani di [.HT.], in quanto alloggia lo Shen,  [.LR.]  per rilasciare lo stress, [.BL.] per scaricare e risolvere le paure.<br><br><b>Consigli</b><br>In caso di attacco di panico fare delle pressioni sul diaframma penetrando le dita a lato della gabbia toracica regolare la respirazione con respiri lunghi e profondi e mentalmente ripetersi che è tutto sotto controllo, che ora passa tutto , che ora il cuore tornerà alla frequenza normale.<br>Cercare di avere una vita attiva, impegnata ma con momenti propri ( es. dedicarsi all’arte, suonare uno strumento, studiare una lingua, fare sport….)",
 			sessoPatologia: "",
 			chiaviPatologia: "" 	
 		},
 	
 		"12": {
 			NomePatologia: "Ansia",
-			TestoPatologia: "<div style=\"font: normal normal normal 10pt/normal arial, sans-serif; background-attachment: fixed; \">L’emotività di ogni persona  è soggettiva e si manifesta nei modi più inverosimili, una scarsa autostima di fondo può indurre una persona a pensare di non farcela a superare prove che la vita ci pone davanti. Uno stress accentuato che va a ledere la nostra calma e ci può portare ad andare in \"tilt\" ed ecco apparire l’ansia, la paura, il famoso attacco di panico. Come sintomo in fase acuta si possono avere tachicardia, respirazione affannosa, paura con conseguente scarica di adrenalina, una sensazione molto sgradevole anche perché le crisi a volte arrivano improvvise, senza preavviso, e chi ne è colpito vive nel terrore di entrare nella fase di \" Terrore\".<br>Se lo stato di angoscia è profondo, grave e permanente allora necessita dell’intervento di uno specialista.<br><br><b>M.T.C.</b><br>Ansia, paura, angoscia e iperemotività sono considerati un eccesso di Qi nei meridiani di Cuore e del Pericardio, che deve regolare il tono del plesso cardiaco. <br>Se la patologia è cronica può essere in relazione anche con altri meridiani.<br><br><b>Terapia</b><br>Disperdere e regolare il Qi nei meridiani del Cuore e di Pericardio, <br>Calmare lo Shen<br><br><b>Agopuntura</b><br>[.7.HT.]<br>[.6.PC.]<br>[.7.PC.]<br><br><b>Moxa</b><br><span style=\"font-style: italic; \">Indiretta a beccata di passero</span><br>Giornalmente nei tre giorni che precedono un evento di particolare stress emotivo       ( es. un esame ). A giorni alterni per tenere sotto controllo la situazione fino alla scomparsa dei sintomi.<br><br><b>Shiatsu</b><br>Trattare i meridiani di [.HT.], in quanto alloggia lo Shen, [.LR.]  per rilasciare lo stress, [.BL.] per scaricare e risolvere le paure.<br><br><b>Consigli</b><br>In caso di attacco di panico fare delle pressioni sul diaframma penetrando le dita a lato della gabbia toracica regolare la respirazione con respiri lunghi e profondi e mentalmente ripetersi che è tutto sotto controllo, che ora passa tutto , che ora il cuore tornerà alla frequenza normale.<br>Cercare di avere una vita attiva, impegnata ma con momenti propri ( es. dedicarsi all’arte, suonare uno strumento, studiare una lingua, fare sport….)",
+			TestoPatologia: "<div style=\"font: normal normal normal 10pt/normal arial, sans-serif; background-attachment: fixed; \">L’emotività di ogni persona  è soggettiva e si manifesta nei modi più inverosimili, una scarsa autostima di fondo può indurre una persona a pensare di non farcela a superare prove che la vita ci pone davanti. Uno stress accentuato che va a ledere la nostra calma e ci può portare ad andare in \"tilt\" ed ecco apparire l’ansia, la paura, il famoso attacco di panico. Come sintomo in fase acuta si possono avere tachicardia, respirazione affannosa, paura con conseguente scarica di adrenalina, una sensazione molto sgradevole anche perché le crisi a volte arrivano improvvise, senza preavviso, e chi ne è colpito vive nel terrore di entrare nella fase di \" Terrore\".<br>Se lo stato di angoscia è profondo, grave e permanente allora necessita dell’intervento di uno specialista.<br><br><b>M.T.C.</b><br>Ansia, paura, angoscia e iperemotività sono considerati un eccesso di Qi nei meridiani di Cuore e del Mastro del cuore, che deve regolare il tono del plesso cardiaco. <br>Se la patologia è cronica può essere in relazione anche con altri meridiani.<br><br><b>Terapia</b><br>Disperdere e regolare il Qi nei meridiani del Cuore e di Mastro del cuore, <br>Calmare lo Shen<br><br><b>Agopuntura</b><br>[.7.HT.]<br>[.6.PC.]<br>[.7.PC.]<br><br><b>Moxa</b><br><span style=\"font-style: italic; \">Indiretta a beccata di passero</span><br>Giornalmente nei tre giorni che precedono un evento di particolare stress emotivo       ( es. un esame ). A giorni alterni per tenere sotto controllo la situazione fino alla scomparsa dei sintomi.<br><br><b>Shiatsu</b><br>Trattare i meridiani di [.HT.], in quanto alloggia lo Shen, [.LR.]  per rilasciare lo stress, [.BL.] per scaricare e risolvere le paure.<br><br><b>Consigli</b><br>In caso di attacco di panico fare delle pressioni sul diaframma penetrando le dita a lato della gabbia toracica regolare la respirazione con respiri lunghi e profondi e mentalmente ripetersi che è tutto sotto controllo, che ora passa tutto , che ora il cuore tornerà alla frequenza normale.<br>Cercare di avere una vita attiva, impegnata ma con momenti propri ( es. dedicarsi all’arte, suonare uno strumento, studiare una lingua, fare sport….)",
 			sessoPatologia: "",
 			chiaviPatologia: "" 	
 		},
@@ -2263,7 +2263,7 @@ DB.set= {
 	
 		"19": {
 			NomePatologia: "Attacchi di panico",
-			TestoPatologia: "L’emotività di ogni persona  è soggettiva e si manifesta nei modi più inverosimili, una scarsa autostima di fondo può indurre una persona a pensare di non farcela a superare prove che la vita ci pone davanti. Uno stress accentuato che va a ledere la nostra calma e ci può portare ad andare in \"tilt\" ed ecco apparire l’ansia, la paura, il famoso attacco di panico. Come sintomo in fase acuta si possono avere tachicardia, respirazione affannosa, paura con conseguente scarica di adrenalina, una sensazione molto sgradevole anche perché le crisi a volte arrivano improvvise, senza preavviso, e chi ne è colpito vive nel terrore di entrare nella fase di \" Terrore\".<br>Se lo stato di angoscia è profondo, grave e permanente allora necessita dell’intervento di uno specialista.<br><br><b>M.T.C.</b><br>Ansia, paura, angoscia e iperemotività sono considerati un eccesso di Qi nei meridiani di Cuore e del Pericardio, che deve regolare il tono del plesso cardiaco. <br>Se la patologia è cronica può essere in relazione anche con altri meridiani.<br><br><b>Terapia</b><br>Disperdere e regolare il Qi nei meridiani del Cuore e di Pericardio, <br>Calmare lo Shen<br><br><b>Agopuntura</b><br>[.7.HT.]<br>[.6.PC.]<br>[.7.PC.]<br><br><b>Moxa</b><br><span style=\"font-style: italic;\">Indiretta a beccata di passero</span><br>Giornalmente nei tre giorni che precedono un evento di particolare stress emotivo       ( es. un esame ). A giorni alterni per tenere sotto controllo la situazione fino alla scomparsa dei sintomi.<br><br><b>Shiatsu</b><br>Trattare i meridiani di [.HT.], in quanto alloggia lo Shen, [.LR.]  per rilasciare lo stress, [.BL.] per scaricare e risolvere le paure.<br><br><b>Consigli</b><br>In caso di attacco di panico fare delle pressioni sul diaframma penetrando le dita a lato della gabbia toracica regolare la respirazione con respiri lunghi e profondi e mentalmente ripetersi che è tutto sotto controllo, che ora passa tutto , che ora il cuore tornerà alla frequenza normale.<br>Cercare di avere una vita attiva, impegnata ma con momenti propri ( es. dedicarsi all’arte, suonare uno strumento, studiare una lingua, fare sport….)",
+			TestoPatologia: "L’emotività di ogni persona  è soggettiva e si manifesta nei modi più inverosimili, una scarsa autostima di fondo può indurre una persona a pensare di non farcela a superare prove che la vita ci pone davanti. Uno stress accentuato che va a ledere la nostra calma e ci può portare ad andare in \"tilt\" ed ecco apparire l’ansia, la paura, il famoso attacco di panico. Come sintomo in fase acuta si possono avere tachicardia, respirazione affannosa, paura con conseguente scarica di adrenalina, una sensazione molto sgradevole anche perché le crisi a volte arrivano improvvise, senza preavviso, e chi ne è colpito vive nel terrore di entrare nella fase di \" Terrore\".<br>Se lo stato di angoscia è profondo, grave e permanente allora necessita dell’intervento di uno specialista.<br><br><b>M.T.C.</b><br>Ansia, paura, angoscia e iperemotività sono considerati un eccesso di Qi nei meridiani di Cuore e del Mastro del cuore, che deve regolare il tono del plesso cardiaco. <br>Se la patologia è cronica può essere in relazione anche con altri meridiani.<br><br><b>Terapia</b><br>Disperdere e regolare il Qi nei meridiani del Cuore e di Mastro del cuore, <br>Calmare lo Shen<br><br><b>Agopuntura</b><br>[.7.HT.]<br>[.6.PC.]<br>[.7.PC.]<br><br><b>Moxa</b><br><span style=\"font-style: italic;\">Indiretta a beccata di passero</span><br>Giornalmente nei tre giorni che precedono un evento di particolare stress emotivo       ( es. un esame ). A giorni alterni per tenere sotto controllo la situazione fino alla scomparsa dei sintomi.<br><br><b>Shiatsu</b><br>Trattare i meridiani di [.HT.], in quanto alloggia lo Shen, [.LR.]  per rilasciare lo stress, [.BL.] per scaricare e risolvere le paure.<br><br><b>Consigli</b><br>In caso di attacco di panico fare delle pressioni sul diaframma penetrando le dita a lato della gabbia toracica regolare la respirazione con respiri lunghi e profondi e mentalmente ripetersi che è tutto sotto controllo, che ora passa tutto , che ora il cuore tornerà alla frequenza normale.<br>Cercare di avere una vita attiva, impegnata ma con momenti propri ( es. dedicarsi all’arte, suonare uno strumento, studiare una lingua, fare sport….)",
 			sessoPatologia: "",
 			chiaviPatologia: "" 	
 		},
@@ -2795,7 +2795,7 @@ DB.set= {
 	
 		"95": {
 			NomePatologia: "Paura",
-			TestoPatologia: "L’emotività di ogni persona  è soggettiva e si manifesta nei modi più inverosimili, una scarsa autostima di fondo può indurre una persona a pensare di non farcela a superare prove che la vita ci pone davanti. Uno stress accentuato che va a ledere la nostra calma e ci può portare ad andare in \"tilt\" ed ecco apparire l’ansia, la paura, il famoso attacco di panico. Come sintomo in fase acuta si possono avere tachicardia, respirazione affannosa, paura con conseguente scarica di adrenalina, una sensazione molto sgradevole anche perché le crisi a volte arrivano improvvise, senza preavviso, e chi ne è colpito vive nel terrore di entrare nella fase di \"Terrore\".<br>Se lo stato di angoscia è profondo, grave e permanente allora necessita dell’intervento di uno  specialista.<br><br><b>M.T.C.</b><br>Ansia, paura, angoscia e iperemotività sono considerati un eccesso di Qi nei meridiani di Cuore e del Pericardio, che deve regolare il tono del plesso cardiaco. <br>Se la patologia è cronica può essere in relazione anche con altri meridiani.<br><br><b>Terapia</b><br>Disperdere e regolare il Qi nei meridiani del Cuore e di Pericardio,.<br>Calmare lo Shen.<br><br><b>Agopuntura</b><br>[.7.HT.]<br>[.6.PC.]<br>[.7.PC.]<br><br><b>Moxa</b><br><i>Indiretta a beccata di passero</i><br>Giornalmente nei tre giorni che precedono un evento di particolare stress emotivo (es. un esame). A giorni alterni per tenere sotto controllo la situazione fino alla scomparsa dei sintomi.<br><br><b>Shiatsu</b><br>Trattare i meridiani di [.HT.], in quanto alloggia lo Shen, [.LR.]  per rilasciare lo stress, [.BL.] per scaricare e risolvere le paure.<br><br><b>Consigli</b><br>In caso di attacco di panico fare delle pressioni sul diaframma penetrando le dita a lato della gabbia toracica regolare la respirazione con respiri lunghi e profondi e mentalmente ripetersi che è tutto sotto controllo, che ora passa tutto, che ora il cuore tornerà alla frequenza normale.<br>Cercare di avere una vita attiva, impegnata ma con momenti propri (es. dedicarsi all’arte, suonare uno strumento, studiare una lingua, fare sport…)",
+			TestoPatologia: "L’emotività di ogni persona  è soggettiva e si manifesta nei modi più inverosimili, una scarsa autostima di fondo può indurre una persona a pensare di non farcela a superare prove che la vita ci pone davanti. Uno stress accentuato che va a ledere la nostra calma e ci può portare ad andare in \"tilt\" ed ecco apparire l’ansia, la paura, il famoso attacco di panico. Come sintomo in fase acuta si possono avere tachicardia, respirazione affannosa, paura con conseguente scarica di adrenalina, una sensazione molto sgradevole anche perché le crisi a volte arrivano improvvise, senza preavviso, e chi ne è colpito vive nel terrore di entrare nella fase di \"Terrore\".<br>Se lo stato di angoscia è profondo, grave e permanente allora necessita dell’intervento di uno  specialista.<br><br><b>M.T.C.</b><br>Ansia, paura, angoscia e iperemotività sono considerati un eccesso di Qi nei meridiani di Cuore e del Mastro del cuore, che deve regolare il tono del plesso cardiaco. <br>Se la patologia è cronica può essere in relazione anche con altri meridiani.<br><br><b>Terapia</b><br>Disperdere e regolare il Qi nei meridiani del Cuore e di Mastro del cuore,.<br>Calmare lo Shen.<br><br><b>Agopuntura</b><br>[.7.HT.]<br>[.6.PC.]<br>[.7.PC.]<br><br><b>Moxa</b><br><i>Indiretta a beccata di passero</i><br>Giornalmente nei tre giorni che precedono un evento di particolare stress emotivo (es. un esame). A giorni alterni per tenere sotto controllo la situazione fino alla scomparsa dei sintomi.<br><br><b>Shiatsu</b><br>Trattare i meridiani di [.HT.], in quanto alloggia lo Shen, [.LR.]  per rilasciare lo stress, [.BL.] per scaricare e risolvere le paure.<br><br><b>Consigli</b><br>In caso di attacco di panico fare delle pressioni sul diaframma penetrando le dita a lato della gabbia toracica regolare la respirazione con respiri lunghi e profondi e mentalmente ripetersi che è tutto sotto controllo, che ora passa tutto, che ora il cuore tornerà alla frequenza normale.<br>Cercare di avere una vita attiva, impegnata ma con momenti propri (es. dedicarsi all’arte, suonare uno strumento, studiare una lingua, fare sport…)",
 			sessoPatologia: "",
 			chiaviPatologia: "" 	
 		},
@@ -3076,7 +3076,7 @@ DB.set= {
 		
 	teoria: [
 		{
-			TitoloSezione: "Teoria MTC",
+			TitoloSezione: "Fondamenti di MTC",
 			contenuti: [
 				{
 					TitoloTeoria: "1. Prefazione",
@@ -3092,7 +3092,7 @@ DB.set= {
 				},
 				{
 					TitoloTeoria: "4. Gli elementi",
-					TestoTeoria: "<table width=\"100%\" border=\"0\" cellspacing=\"0\" cellpadding=\"0\">  <tr>    <td style=\"border-bottom:1px dotted #666;padding-bottom:10px;padding-left:10px;\"><div align=\"justify\"><b><span style=\"border-bottom:1px dotted #666;padding-bottom:10px;\"><img src=\"sets/common/mtc/img/teoria/terra.png\" width=\"119\" height=\"44\" hspace=\"10\" align=\"left\"></span>Terra</b><br>        Milza: mantiene l’energia pura dei cibi (GuQi) e la invia in alto.         Governa la digestione. Ha una funzione antiemorragica. Permette la salita         del Qi e mantiene al loro posto gli organi. Alloggia il pensiero (Yi)         e la memoria. Detesta l’umidità e soffre di vuoto <br>        Stomaco: tritura i cibi e ne manda la parte impura verso il piccolo intestino.         La sua attività si correla con l’induito della lingua. Controlla         la discesa del Qi soffre di pieno detesta il secco. </div></td>  </tr>  <tr>    <td style=\"border-bottom:1px dotted #666;padding-bottom:10px;padding-top:10px;padding-left:10px;\"><div align=\"justify\"><b><span style=\"border-bottom:1px dotted #666;padding-bottom:10px;padding-top:10px;\"><img src=\"sets/common/mtc/img/teoria/legno.png\" width=\"97\" height=\"61\" hspace=\"21\" align=\"left\"></span>Legno</b><br>        Fegato: Trattiene il sangue, controlla il libero fluire del QI ed influenza         lo stato emozionale, controlla le articolazioni ed invia la bile alla         cistifellea. Alloggia l’anima eterea (Hun), detesta il vento e la         collera. Soffre di pieno.<br>        Vescicola biliare: secerne la bile ed esprime il corretto funzionamento         del fegato. Controlla la capacità di prendere decisioni e i tendini.</div></td>  </tr>  <tr>    <td style=\"border-bottom:1px dotted #666;padding-bottom:10px;padding-top:10px;padding-left:10px;\"><div align=\"justify\"><b><span style=\"border-bottom:1px dotted #666;padding-bottom:10px;padding-top:10px;\"><img src=\"sets/common/mtc/img/teoria/fuoco.png\" width=\"53\" height=\"71\" hspace=\"43\" align=\"left\"></span>Fuoco</b><br>        Cuore: governa il sangue e ne è responsabile della produzione.         Alloggia la mente cosciente (Shen) Controlla i sogni e il sudore. Detesta         il calore.<br>        Intestino Tenue: Prosegue la digestione dopo lo stomaco dei solidi e dei         liquidi. Influenza la chiarezza mentale e la capacità di discernere         il giusto dall’ingiusto.</div></td>  </tr>  <tr>    <td style=\"border-bottom:1px dotted #666;padding-bottom:10px;padding-top:10px;padding-left:10px;\"><div align=\"justify\"><b><span style=\"border-bottom:1px dotted #666;padding-bottom:10px;padding-top:10px;\"><img src=\"sets/common/mtc/img/teoria/acqua.png\" width=\"96\" height=\"52\" hspace=\"21\" align=\"left\"></span>Acqua</b><br>        Reni: sono la radice energetica sia Yin che Yang di tutti gli organi essendo         la sede di tutte le energie e sostanze vitali primordiali (genetica).         Producono il midollo, riempiono il cervello e controllano le ossa. Governano         l’acqua e la purificano inviandola agli organi. Controllano il deflusso         di urina e di sperma. Alloggiano la volontà. Detestano il secco.<br>        Vescica: Accumula e secerne l’urina e partecipa alla trasformazione         dei liquidi. Un suo squilibrio produce a livello mentale gelosia, sospetto,         rancore ecc.</div></td>  </tr>  <tr>    <td style=\"padding-top:10px;padding-left:10px;\"><div align=\"justify\"><b><span style=\"padding-top:10px;\"><img src=\"sets/common/mtc/img/teoria/aria.png\" width=\"92\" height=\"66\" hspace=\"23\" align=\"left\"></span>Aria         (o metallo)</b><br>        Polmoni: Governano la respirazione, controllano i meridiani ed i vasi         sanguigni. Diffondono energia protettiva alle parti esterne del copro         insieme all’acqua. Controllano la resistenza alle malattie. Alloggiano         l’anima corporea (Po) e detestano il freddo.<br>        Grosso Intestino: controlla l’ultima separazione dei cibi ed espelle         l’impuro. Viene influenzato per questo aspetto dalla Milza. La sua         funzione viene anche alterata da deficit del Qi del polmone e la corretta         escrezione delle feci è un requisito indispensabile per il corretto         funzionamento del polmone (dispnea).<br>        Tale relazione viene utilizzata principalmente per comprende gli squilibri         energetici che si verificano nel corpo poiché ogni elemento è         Madre di un altro (e Figlio a suo volta!). Vige pertanto la regola che         in caso di vuoto di un elemento tonificare la madre, in caso di pieno         in eccesso disperdere il figlio.<br>        Ogni elemento poi regola un altro elemento inibendolo. Quando tale controllo         è eccessivo si ha una super-inibizione. Tale fenomeno è         regolato dallo schema:<br>        Legno <img src=\"sets/common/mtc/img/teoria/freccina.png\" width=\"11\" height=\"8\" align=\"absmiddle\">         Terra <img src=\"sets/common/mtc/img/teoria/freccina.png\" width=\"11\" height=\"8\" align=\"absmiddle\">         Acqua <img src=\"sets/common/mtc/img/teoria/freccina.png\" width=\"11\" height=\"8\" align=\"absmiddle\">         Fuoco <img src=\"sets/common/mtc/img/teoria/freccina.png\" width=\"11\" height=\"8\" align=\"absmiddle\">         Metallo <img src=\"sets/common/mtc/img/teoria/freccina.png\" width=\"11\" height=\"8\" align=\"absmiddle\">         Legno <br>        In questo caso va sempre disperso quello a monte.</div></td>  </tr></table>" 	
+					TestoTeoria: "<table width=\"100%\" border=\"0\" cellspacing=\"0\" cellpadding=\"0\">  <tr>    <td style=\"border-bottom:1px dotted #666;padding-bottom:10px;padding-left:10px;\"><div align=\"justify\"><b><span style=\"border-bottom:1px dotted #666;padding-bottom:10px;\"><img src=\"sets/common/mtc/img/teoria/terra.png\" width=\"119\" height=\"44\" hspace=\"10\" align=\"left\"></span>Terra</b><br>        Milza: mantiene l’energia pura dei cibi (GuQi) e la invia in alto.         Governa la digestione. Ha una funzione antiemorragica. Permette la salita         del Qi e mantiene al loro posto gli organi. Alloggia il pensiero (Yi)         e la memoria. Detesta l’umidità e soffre di vuoto <br>        Stomaco: tritura i cibi e ne manda la parte impura verso il piccolo intestino.         La sua attività si correla con l’induito della lingua. Controlla         la discesa del Qi soffre di pieno detesta il secco. </div></td>  </tr>  <tr>    <td style=\"border-bottom:1px dotted #666;padding-bottom:10px;padding-top:10px;padding-left:10px;\"><div align=\"justify\"><b><span style=\"border-bottom:1px dotted #666;padding-bottom:10px;padding-top:10px;\"><img src=\"sets/common/mtc/img/teoria/legno.png\" width=\"97\" height=\"61\" hspace=\"21\" align=\"left\"></span>Legno</b><br>        Fegato: Trattiene il sangue, controlla il libero fluire del QI ed influenza         lo stato emozionale, controlla le articolazioni ed invia la bile alla         cistifellea. Alloggia l’anima eterea (Hun), detesta il vento e la         collera. Soffre di pieno.<br>        Cistifellea: secerne la bile ed esprime il corretto funzionamento         del fegato. Controlla la capacità di prendere decisioni e i tendini.</div></td>  </tr>  <tr>    <td style=\"border-bottom:1px dotted #666;padding-bottom:10px;padding-top:10px;padding-left:10px;\"><div align=\"justify\"><b><span style=\"border-bottom:1px dotted #666;padding-bottom:10px;padding-top:10px;\"><img src=\"sets/common/mtc/img/teoria/fuoco.png\" width=\"53\" height=\"71\" hspace=\"43\" align=\"left\"></span>Fuoco</b><br>        Cuore: governa il sangue e ne è responsabile della produzione.         Alloggia la mente cosciente (Shen) Controlla i sogni e il sudore. Detesta         il calore.<br>        Intestino Tenue: Prosegue la digestione dopo lo stomaco dei solidi e dei         liquidi. Influenza la chiarezza mentale e la capacità di discernere         il giusto dall’ingiusto.</div></td>  </tr>  <tr>    <td style=\"border-bottom:1px dotted #666;padding-bottom:10px;padding-top:10px;padding-left:10px;\"><div align=\"justify\"><b><span style=\"border-bottom:1px dotted #666;padding-bottom:10px;padding-top:10px;\"><img src=\"sets/common/mtc/img/teoria/acqua.png\" width=\"96\" height=\"52\" hspace=\"21\" align=\"left\"></span>Acqua</b><br>        Reni: sono la radice energetica sia Yin che Yang di tutti gli organi essendo         la sede di tutte le energie e sostanze vitali primordiali (genetica).         Producono il midollo, riempiono il cervello e controllano le ossa. Governano         l’acqua e la purificano inviandola agli organi. Controllano il deflusso         di urina e di sperma. Alloggiano la volontà. Detestano il secco.<br>        Vescica: Accumula e secerne l’urina e partecipa alla trasformazione         dei liquidi. Un suo squilibrio produce a livello mentale gelosia, sospetto,         rancore ecc.</div></td>  </tr>  <tr>    <td style=\"padding-top:10px;padding-left:10px;\"><div align=\"justify\"><b><span style=\"padding-top:10px;\"><img src=\"sets/common/mtc/img/teoria/aria.png\" width=\"92\" height=\"66\" hspace=\"23\" align=\"left\"></span>Aria         (o metallo)</b><br>        Polmoni: Governano la respirazione, controllano i meridiani ed i vasi         sanguigni. Diffondono energia protettiva alle parti esterne del copro         insieme all’acqua. Controllano la resistenza alle malattie. Alloggiano         l’anima corporea (Po) e detestano il freddo.<br>        Grosso Intestino: controlla l’ultima separazione dei cibi ed espelle         l’impuro. Viene influenzato per questo aspetto dalla Milza. La sua         funzione viene anche alterata da deficit del Qi del polmone e la corretta         escrezione delle feci è un requisito indispensabile per il corretto         funzionamento del polmone (dispnea).<br>        Tale relazione viene utilizzata principalmente per comprende gli squilibri         energetici che si verificano nel corpo poiché ogni elemento è         Madre di un altro (e Figlio a suo volta!). Vige pertanto la regola che         in caso di vuoto di un elemento tonificare la madre, in caso di pieno         in eccesso disperdere il figlio.<br>        Ogni elemento poi regola un altro elemento inibendolo. Quando tale controllo         è eccessivo si ha una super-inibizione. Tale fenomeno è         regolato dallo schema:<br>        Legno <img src=\"sets/common/mtc/img/teoria/freccina.png\" width=\"11\" height=\"8\" align=\"absmiddle\">         Terra <img src=\"sets/common/mtc/img/teoria/freccina.png\" width=\"11\" height=\"8\" align=\"absmiddle\">         Acqua <img src=\"sets/common/mtc/img/teoria/freccina.png\" width=\"11\" height=\"8\" align=\"absmiddle\">         Fuoco <img src=\"sets/common/mtc/img/teoria/freccina.png\" width=\"11\" height=\"8\" align=\"absmiddle\">         Metallo <img src=\"sets/common/mtc/img/teoria/freccina.png\" width=\"11\" height=\"8\" align=\"absmiddle\">         Legno <br>        In questo caso va sempre disperso quello a monte.</div></td>  </tr></table>" 	
 				},
 				{
 					TitoloTeoria: "5. Trasformazione del Qi",
@@ -3212,7 +3212,7 @@ DB.set= {
 					OcchielloTeoria: "Meridiano PRINCIPALE",
 					TitoloTeoria: "Mastro del cuore",
 					sigla: "PC",
-					TestoTeoria: "<div style=\"background:url(sets/common/mtc/img/txt_meridiani/PC/simbolo_elemento.png) no-repeat left 35px;min-height:480px;\"><p><i>Circolazione</i><br><font color=\"#666666\">Meridiano Yin di Fuoco supplementare</font></p><p><b>Governa:</b><br>  - Sistema vascolare<br>  - Sangue<br>  - Pressione sanguigna<br>  - Circolazione sanguigna<br>  - Pericardio<br>  - Energia sessuale <br>  - Sogni<br>  - Emozioni<br>  - Sentimenti</p><p><b>Rappresenta:</b><br>  - Esperienza emotiva sessuale<br>  - Stato emotivo generale<br>  - Stabilità emozionale</p><p><b>Risolve:</b><br>  - Innamoramento<br>  - Violenza<br>  - Stupro<br>  - L'abbandono</p></div>",
+					TestoTeoria: "<div style=\"background:url(sets/common/mtc/img/txt_meridiani/PC/simbolo_elemento.png) no-repeat left 35px;min-height:480px;\"><p><i>Circolazione</i><br><font color=\"#666666\">Meridiano Yin di Fuoco supplementare</font></p><p><b>Governa:</b><br>  - Sistema vascolare<br>  - Sangue<br>  - Pressione sanguigna<br>  - Circolazione sanguigna<br>  - Mastro del cuore<br>  - Energia sessuale <br>  - Sogni<br>  - Emozioni<br>  - Sentimenti</p><p><b>Rappresenta:</b><br>  - Esperienza emotiva sessuale<br>  - Stato emotivo generale<br>  - Stabilità emozionale</p><p><b>Risolve:</b><br>  - Innamoramento<br>  - Violenza<br>  - Stupro<br>  - L'abbandono</p></div>",
 					meridianiSecondari: [
 						"PC"
 					]
@@ -3241,13 +3241,14 @@ DB.set= {
 			TitoloSezione: "Meridiani LUO",
 			contenuti: [
 				{
+					OcchielloTeoria: "Meridiani LUO",
 					TitoloTeoria: "Introduzione",
-					TestoTeoria: ""
+					TestoTeoria: "<p>I <em>canali lu&ograve;</em> si distinguono in quattro categorie, in base alla profondit&agrave; e al flusso del <em>q&igrave;</em>:<br />  - i <strong>canali Principali</strong>, chiamati <em>j&#299;ng m&agrave;i</em>, sono come linee rette (<em>j&#299;ng</em> vuol dire strada, percorso) e il <em>q&igrave;</em> segue un flusso verticale&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br />  - i <strong>canali lu&ograve;</strong>, definiti <em>lu&ograve; m&agrave;i</em>, sono ramificati in piccoli canali (<em>lu&ograve; </em>significa rete) e il flusso del <em>q&igrave;</em> &egrave; orizzontale; si trovano a un livello pi&ugrave; superficiale, tra la pelle e i canali principali; talvolta raggiungono le principali articolazioni del corpo, pertanto  possono verificarsi delle stasi&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br />  - i vasi pi&ugrave; piccoli, detti <strong>Minuti</strong> (<em>sun</em>) e <strong>Superficiali</strong> (<em>f&#363;</em>), si trovano in superficie, subito al di sotto della pelle e raggiungono ogni parte del corpo,  formando un fitto intreccio&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br />  - i <strong>canali lu&ograve; Profondi</strong>, si trovano a un livello pi&ugrave; profondo dei canali lu&ograve; e sono collegati, dal punto di vista energetico, con il sangue e i vasi sanguigni;  se si verificano delle stasi di sangue, spesso ne conseguono delle patologie croniche, a cui i canali lu&ograve; Profondi sono correlati</p><p>Ad ogni categoria di canale corrisponde un tipo di <em>q&igrave;</em>:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br />  - i canali lu&ograve; coincidono con il <em>w&egrave;i q&igrave;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</em><br />  - i canali Principali coincidono con lo <em>y&iacute;ng q&igrave;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</em><br />  - i canali lu&ograve; Profondi sono collegati con il sangue</p><p>I canali Principali si trovano tra i canali di collegamento y&aacute;ng e y&iacute;n: <em>w&egrave;i q&igrave;</em>, <em>y&iacute;ng q&igrave;</em> e Sangue si muovono in ogni direzione raggiungendo gli Organi Interni. L&#8217;essenza degli Organi Interni viene trasportata dagli stessi ai canali principali, tramite i canali lu&ograve;, ed in questo modo  arrivano in tutte le zone del corpo.</p><p> <u>Nota</u>:<br />  Il termine <em>canale lu&ograve;</em> pu&ograve; avere due differenti significati:</p><p> - Il canale lu&ograve; che nasce da un punto lu&ograve; e segue una linea precisa (definito &#8220;canale lu&ograve;&#8221;  o &#8220;canale lu&ograve; propriamente detto&#8221;)</p><p> - L&#8217;area situata tra i canali Principali e la superficie del corpo, da cui partono i canali lu&ograve;: quest&#8217;area,  detta &#8220;area del canale lu&ograve;&#8221;, si trova lungo tutto il percorso del canale Principale e non solo lungo quello del canale lu&ograve; propriamente detto.</p><p>&#160;</p>"
 				},
 				{
 					OcchielloTeoria: "Meridiano LUO",
 					TitoloTeoria: "Polmoni",
-					TestoTeoria: "Origine: [.7.LU.]",
+					TestoTeoria: "Origine: [.7.LU.]<br><br><p>Il canale lu&ograve; dei Polmoni parte dal punto [.7.LU.] <em>li&egrave; qu&#275;</em>, segue il canale dei Polmoni, arrivando fino al palmo della mano e si dirama nell&#8217;eminenza tenar.</p><p>Il punto [.7.LU.] <em>li&egrave; qu&#275; </em>agevola la discesa del q&igrave; dei polmoni, quindi &egrave; molto importante, dal punto di vista clinico, per il trattamento di condizioni patologiche della  testa. Inoltre, &egrave; il punto di apertura del <em>r&egrave;n m&agrave;i</em>.</p>",
 					meridianiSecondari: [
 						"LU_LUO"
 					]
@@ -3255,7 +3256,7 @@ DB.set= {
 				{
 					OcchielloTeoria: "Meridiano LUO",
 					TitoloTeoria: "Cuore",
-					TestoTeoria: "Origine: [.5.HT.]",
+					TestoTeoria: "Origine: [.5.HT.]<br><br><p>Il canale lu&ograve; del Cuore muove dal punto [.5.HT.] <em>t&#333;ng l&#301;</em>, si collega al canale dell&#8217;intestino tenue, prosegue attraverso il canale del cuore, arrivando al cuore e giungendo infine alla lingua e agli occhi.&nbsp;</p><p>  Il  punto [.5.HT.] <em>t&#333;ng l&#301;</em> &egrave; fondamentale per le condizioni patologiche di lingua e occhio, collegate al cuore: &egrave; utile, ad esempio, nel trattamento  di ulcere linguali e di disturbi del linguaggio conseguenti all&#8217;ictus.</p>",
 					meridianiSecondari: [
 						"HT_LUO"
 					]
@@ -3263,7 +3264,7 @@ DB.set= {
 				{
 					OcchielloTeoria: "Meridiano LUO",
 					TitoloTeoria: "Mastro del cuore",
-					TestoTeoria: "Origine: [.6.PC.]",
+					TestoTeoria: "Origine: [.6.PC.]<br><br><p>Il canale lu&ograve; del Mastro del cuore ha origine nel punto [.6.PC.] <em>n&egrave;i gu&#257;n</em>, che si trova all&#8217;interno dell&#8217;avambraccio, prosegue verso l&#8217;alto, lungo il canale Principale, e giunge al pericardio e al cuore.</p><p>Il punto [.6.PC.] <em>n&egrave;i gu&#257;n</em> &egrave; molto importante perch&eacute; funge da cardine: &egrave; un punto di connessione  tra il <em>t&agrave;i y&#299;n</em> e il <em>ju&eacute; y&#299;n</em> e tra il Mastro del cuore e il Triplice riscaldatore. Il punto [.6.PC.] <em>n&egrave;i gu&#257;n</em> &egrave; caratterizzato da una forte vitalit&agrave;, che lo rende molto utile a livello psicologico: questo punto fa s&igrave; che il <em>q&igrave;</em> si muova sul piano emotivo, con la conseguenza di incitare l&#8217;&#8220;andare e venire&#8221; dello <em>h&ugrave;n</em> e rinvigorire l&#8217;umore depresso.</p>",
 					meridianiSecondari: [
 						"PC_LUO"
 					]
@@ -3271,7 +3272,7 @@ DB.set= {
 				{
 					OcchielloTeoria: "Meridiano LUO",
 					TitoloTeoria: "Triplo riscaldatore",
-					TestoTeoria: "Origine: [.5.TE.]",
+					TestoTeoria: "Origine: [.5.TE.]<br><br><p>Il canale lu&ograve; del Triplice riscaldatore parte dal punto [.5.TE.] <em>w&agrave;i gu&#257;n</em>, corre lungo la parte posteriore del braccio per arrivare alla spalla, muoversi verso il torace e collegarsi al Mastro del cuore.</p><p>Il punto [.5.TE.] <em>w&agrave;i gu&#257;n</em>, come il PC6 <em>n&egrave;i gu&#257;n</em>, funge da cardine, collegando <em>t&agrave;i y&aacute;ng</em> e <em>y&aacute;ng m&iacute;ng</em> e Mastro del cuore e Triplice riscaldatore. Questa caratteristica di doppio cardine fa s&igrave; che lo <em>y&aacute;ng</em> raggiunga un equilibrio, che lo <em>y&aacute;ng</em> del fegato venga soggiogato e che il Vento interno ed esterno siano rimossi.</p>",
 					meridianiSecondari: [
 						"TE_LUO"
 					]
@@ -3279,7 +3280,7 @@ DB.set= {
 				{
 					OcchielloTeoria: "Meridiano LUO",
 					TitoloTeoria: "Intestino crasso",
-					TestoTeoria: "Origine: [.6.LI.]",
+					TestoTeoria: "Origine: [.6.LI.]<br><br><p>Il canale lu&ograve; dell&#8217;Intestino Crasso parte dal punto [.6.LI.] <em>pi&#257;n l&igrave;</em>, si collega al canale dei Polmoni 3 <em>cun </em>sopra al polso e sale lungo il braccio, attraverso [.15.LI.] <em>ji&#257;n y&uacute;</em>, giunge alla mascella per poi prendere due strade: una verso i denti e una verso l&#8217;orecchio, luogo in cui si unisce al Vaso Ancestrale (<em>z&#333;ng m&agrave;i</em>).</p><p>Il punto [.6.LI.] <em>pi&#257;n l&igrave;</em> &egrave; utile per trattare condizioni patologiche di denti, mascella e guancia.</p>",
 					meridianiSecondari: [
 						"LI_LUO"
 					]
@@ -3287,7 +3288,7 @@ DB.set= {
 				{
 					OcchielloTeoria: "Meridiano LUO",
 					TitoloTeoria: "Stomaco",
-					TestoTeoria: "Origine: [.40.ST.]",
+					TestoTeoria: "Origine: [.40.ST.]<br><br><p>Il canale lu&ograve; dello Stomaco muove dal punto [.40.ST.] <em>f&#275;ng l&ograve;ng</em>, 8 <em>cun</em> sopra il malleolo esterno, prosegue lungo la gamba, si collega al canale della Milza, va verso il tronco, raggiunge la nuca e la testa, qui si  unisce al <em>q&igrave; </em>degli altri canali e infine scende verso la gola.</p><p>Il punto [.40.ST.] <em>f&#275;ng l&ograve;ng</em> &egrave; importante per il trattamento del dolore al collo, provocato da una disarmonia del canale dello Stomaco. Inoltre, poich&eacute; il canale raggiunge la testa, il punto pu&ograve; essere utile per sciogliere  il Flegma (<em>t&agrave;n</em>), che pu&ograve; generare confusione mentale, agitazione o addirittura comportamenti maniacali. Infine, &egrave; un punto che serve per il trattamento  del gozzo da Flegma, causato da un deficit di Milza o Stomaco.</p>",
 					meridianiSecondari: [
 						"ST_LUO"
 					]
@@ -3295,7 +3296,7 @@ DB.set= {
 				{
 					OcchielloTeoria: "Meridiano LUO",
 					TitoloTeoria: "Vescica",
-					TestoTeoria: "Origine: [.58.BL.]",
+					TestoTeoria: "Origine: [.58.BL.]<br><br><p>Il canale lu&ograve; della Vescica ha origine nel punto [.58.BL.]<em> f&#275;i y&aacute;ng</em> e converge con il canale dei Reni. </p><p>Il punto [.58.BL.]<em> f&#275;i y&aacute;ng</em> &egrave; utile per trattare la lombalgia e la sciatica e, grazie a una certa vitalit&agrave;, riesce ad eliminare le stasi lungo il canale lu&ograve; della Vescica.</p>",
 					meridianiSecondari: [
 						"BL_LUO"
 					]
@@ -3303,7 +3304,7 @@ DB.set= {
 				{
 					OcchielloTeoria: "Meridiano LUO",
 					TitoloTeoria: "Cistifellea",
-					TestoTeoria: "Origine: [.37.GB.]",
+					TestoTeoria: "Origine: [.37.GB.]<br><br><p>Il canale lu&ograve; della Vescicola Biliare parte dal punto [.37.GB.] <em>gu&#257;ng m&iacute;ng</em>, si unisce al canale del Fegato, si muove verso il piede e si dirama sul dorso.</p>",
 					meridianiSecondari: [
 						"GB_LUO"
 					]
@@ -3311,7 +3312,7 @@ DB.set= {
 				{
 					OcchielloTeoria: "Meridiano LUO",
 					TitoloTeoria: "Milza-pancreas",
-					TestoTeoria: "Origine: [.4.SP.]",
+					TestoTeoria: "Origine: [.4.SP.]<br><br><p>Il canale lu&ograve; della Milza muove dal punto [.4.SP.] <em>g&#333;ng s&#365;n</em>, situato 1 <em>cun</em> dietro all&#8217;articolazione dell&#8217;alluce, converge con il canale dello Stomaco, si addentra nell&#8217;addome, collegandosi con  Intestini e Stomaco.</p><p>Il punto [.4.SP.] <em>g&#333;ng s&#365;n</em> pu&ograve; servire per trattare disturbi dello Stomaco e degli Intestini; inoltre, &egrave;  il punto di apertura di <em>ch&#333;ng m&agrave;i</em>.</p>",
 					meridianiSecondari: [
 						"SP_LUO"
 					]
@@ -3319,7 +3320,7 @@ DB.set= {
 				{
 					OcchielloTeoria: "Meridiano LUO",
 					TitoloTeoria: "Intestino tenue",
-					TestoTeoria: "Origine: [.7.SI.]",
+					TestoTeoria: "Origine: [.7.SI.]<br><br><p>Il canale lu&ograve; dell&#8217;Intestino Tenue ha origine nel punto [.7.SI.] <em>zh&#299; zh&egrave;ng</em>, converge con il canale del Cuore, sale lungo il braccio fino alla spalla e, precisamente, nel punto [.15.LI.] <em>ji&#257;n y&uacute;</em>.</p><p>Il punto [.7.SI.] <em>zh&#299; zh&egrave;ng</em> &egrave; importante per il trattamento di infiammazioni dei tendini del condilo mediale.</p>",
 					meridianiSecondari: [
 						"SI_LUO"
 					]
@@ -3327,7 +3328,7 @@ DB.set= {
 				{
 					OcchielloTeoria: "Meridiano LUO",
 					TitoloTeoria: "Reni",
-					TestoTeoria: "Origine: [.4.KI.]",
+					TestoTeoria: "Origine: [.4.KI.]<br><br><p>Il canale lu&ograve; dei Reni parte dal punto [.4.KI.] <em>d&agrave; zh&#333;ng</em>, che si trova dietro al malleolo esterno, ingloba il tallone e si unisce al canale della Vescica, prosegue fino al Mastro del cuore, dopodich&eacute; scende verso la schiena e giunge alle vertebre lombari.</p><p>Il punto [.4.KI.] <em>d&agrave; zh&#333;ng</em> &egrave; utile in presenza di deficit dei Reni, che pu&ograve; provocare ansia o lombalgia  cronica.</p>",
 					meridianiSecondari: [
 						"KI_LUO"
 					]
@@ -3335,7 +3336,7 @@ DB.set= {
 				{
 					OcchielloTeoria: "Meridiano LUO",
 					TitoloTeoria: "Fegato",
-					TestoTeoria: "Origine: [.5.LR.]",
+					TestoTeoria: "Origine: [.5.LR.]<br><br><p>Il canale lu&ograve; del Fegato ha origine nel punto [.5.LR.] <em>l&iacute; g&#333;u</em>, situato nella zona interna della gamba e collegato al canale della Vescicola Biliare, sale verso i genitali.</p><p> Il punto [.5.LR.] <em>l&iacute; g&#333;u</em> &egrave; adatto per il trattamento di vaginiti, perdite vaginali, minzione dolorosa.</p>",
 					meridianiSecondari: [
 						"LR_LUO"
 					]
@@ -3343,7 +3344,7 @@ DB.set= {
 				{
 					OcchielloTeoria: "Meridiano LUO",
 					TitoloTeoria: "Vaso concezione",
-					TestoTeoria: "Origine: [.15.CV.]",
+					TestoTeoria: "Origine: [.15.CV.]<br><br><p>Il canale lu&ograve; del r&egrave;n m&agrave;i parte dal punto [.15.CV.] <em>ji&#365; w&ecirc;i</em> e si irradia nella parte alta dell&#8217;addome.</p><p> Il punto [.15.CV.] <em>ji&#365; w&ecirc;i</em> &egrave; utile per problematiche mentali-emotive.</p>",
 					meridianiSecondari: [
 						"CV_LUO"
 					]
@@ -3351,7 +3352,7 @@ DB.set= {
 				{
 					OcchielloTeoria: "Meridiano LUO",
 					TitoloTeoria: "Vaso governatore",
-					TestoTeoria: "Origine: [.1.GV.]",
+					TestoTeoria: "Origine: [.1.GV.]<br><br><p>Il canale lu&ograve; del d&#363; m&agrave;i ha origine nel punto [.1.GV.] ch&aacute;ng qi&aacute;ng, sale lungo la colonna vertebrale, fino al collo, per poi diramarsi nella zona occipitale  e arrivare fino al vertice. Nella zona scapolare si connette con la Vescica. </p>",
 					meridianiSecondari: [
 						"GV_LUO"
 					]
@@ -3359,7 +3360,7 @@ DB.set= {
 				{
 					OcchielloTeoria: "Meridiano LUO",
 					TitoloTeoria: "Milza-pancreas (grande LUO)",
-					TestoTeoria: "Origine: [.21.SP.]",
+					TestoTeoria: "Origine: [.21.SP.]<br><br><p>Il grande canale lu&ograve; della Milza muove dal punto [.21.SP.] <em>d&agrave; b&#257;o</em>, che si trova 3<em> cun</em> sotto l&#8217;ascella, e si irradia nel torace e nell&#8217;ipocondrio.</p>",
 					meridianiSecondari: [
 						"SP_GLUO"
 					]
@@ -3367,7 +3368,7 @@ DB.set= {
 				{
 					OcchielloTeoria: "Meridiano LUO",
 					TitoloTeoria: "Stomaco (grande LUO)",
-					TestoTeoria: "",
+					TestoTeoria: "Il grande canale luò dello Stomaco ha origine nel torace, si muove verso il diaframma, si collega con i Polmoni e giunge sotto il seno sinistro.",
 					meridianiSecondari: [
 						"ST_GLUO"
 					]
@@ -3561,10 +3562,15 @@ DB.set= {
 			TitoloSezione: "Meridiani MUSCOLARI",
 			contenuti: [
 				{
+					OcchielloTeoria: "Meridiani MUSCOLARI",
+					TitoloTeoria: "Introduzione",
+					TestoTeoria: "<p>I canali tendino-muscolari sono, secondo la Medicina Cinese tradizionale, i muscoli scheletrici del corpo, ma non sono soltanto muscoli, come li designa la medicina occidentale: essendo  compresi nel sistema dei canali, sono coinvolti nella circolazione del Sangue e del <em>q&igrave;</em>.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br />  Caratteristiche dei canali tendino-muscolari:</p><p>- Si trovano sulla superficie del corpo</p><p>- Non si collegano con gli Organi interni</p><p>- Seguono il percorso dei canali Principali (fatta eccezione per alcuni, come il canale Tendino-Muscolare della Vescica)</p><p>- Percorrono il contorno di alcuni muscoli, lungo i canali Principali</p><p>- Sono suddivisi in quattro gruppi da tre canali, accomunati dal medesimo potenziale energetico (arto superiore o inferiore) e dalla stessa polarit&agrave; (<em>y&#299;n</em> o <em>y&aacute;ng</em>)</p>",
+				},
+				{
 					OcchielloTeoria: "Meridiano MUSCOLARE",
 					TitoloTeoria: "Vescica urinaria",
 					sigla: "BL",
-					TestoTeoria: ""	,
+					TestoTeoria: "<p>Il percorso del canale Tendino-Muscolare della Vescica parte dal mignolo del piede, sale lungo la gamba ramificandosi in due: un ramo segue la parte laterale della gamba fino all&#8217;esterno  del ginocchio; l&#8217;altro ramo inizia sotto il malleolo, sale verso il polpaccio e si ramifica ulteriormente: un percorso segue il lato del polpaccio e raggiunge il lato mediale della fossa poplitea, l&#8217;altro corre  parallelamente per poi riunirsi nella regione glutea. (Qui ho confrontato la spiegazione, il riassunto e il disegno, cercando di trarre un riassunto: non ci capivo granch&eacute; quindi non so se vada  bene)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br />  A questo punto i due rami riuniti proseguono lungo la spina dorsale fino all&#8217;occipite: qui un ramo  giunge alla radice della lingua, mentre il ramo principale sale verso la calotta cranica, confluisce di fianco al naso, gira intorno all&#8217;orbita e raggiunge lo zigomo.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br />  Sul  dorso un altro ramo prende un&#8217;altra direzione e si muove verso il pilastro ascellare posteriore, fino all&#8217;acromion. Un altro ramo ancora segue la strada sotto l&#8217;ascella, va verso il petto ed arriva nella  fossa sopraclaveare ([.12.ST.] <em>qu&#275; p&eacute;n</em>); dopodich&eacute; percorre il margine inferiore del processo mastoideo ([.12.GB.] <em>w&acirc;n g&#365;</em>) dietro l&#8217;orecchio. Un ramo che emerge dalla fossa sopraclaveare sale lungo il naso, verso lo zigomo.</p><p>Il canale Tendino-Muscolare della Vescica si collega con i canali Tendino-Muscolari dell&#8217;Intestino Crasso, dell&#8217;Intestino Tenue, della Vescicola Biliare, dello Stomaci e  dei Reni.</p><p>Seguendo un percorso particolare, differisce da quello del canale Principale. Il ramo che transita sopra la spalla giustifica l&#8217;utilizzo di [.58.BL.] <em>f&#275;i y&aacute;ng </em>come punto distale per trattare il dolore e il blocco acuto della spalla.</p>"	,
 					meridianiSecondari: [
 						"BL_MT"
 					]
@@ -3573,7 +3579,7 @@ DB.set= {
 					OcchielloTeoria: "Meridiano MUSCOLARE",
 					TitoloTeoria: "Rene",
 					sigla: "KI",
-					TestoTeoria: "",
+					TestoTeoria: "<p>Il canale Tendino-Muscolare dei Reni parte dalla parte inferiore del quinto dito del piede e si muove verso il lato inferiore del malleolo mediale: da qui si collega al canale Tendino-Muscolare  della Milza. Sul tallone si collega al canale Tendino-Muscolare della Vescica. Successivamente procede lungo la gamba e confluisce nel condilo tibiale mediale. Qui si collega al canale Tendino-Muscolare della Milza e si muove  verso i genitali. Un ramo ascende verso la nuca, lungo la colonna vertebrale: in corrispondenza dell&#8217;osso occipitale si unisce al canale Tendino-Muscolare della Vescica.</p><p>Sia la Vescica sia i Reni hanno grande influenza sul rachide. I Reni influiscono sul rachide per due ragioni: in quanto Organo e in quanto canale Tendino-Muscolare che scorre al suo  interno.</p>",
 					meridianiSecondari: [
 						"KI_MT"
 					]
@@ -3582,7 +3588,7 @@ DB.set= {
 					OcchielloTeoria: "Meridiano MUSCOLARE",
 					TitoloTeoria: "Cistifellea",
 					sigla: "GB",
-					TestoTeoria: "",
+					TestoTeoria: "<p>Il percorso del canale Tendino-Muscolare della Cistifellea parte dal quarto dito del piede, confluisce nella parte anteriore del malleolo laterale e sale lungo la gamba, passa  di fianco al ginocchio, corre sul lato esterno della coscia. A questo punto si ramifica in due: un ramo anteriore giunge al di sopra di [.32.ST.] <em>f&uacute; t&ugrave;</em>, l&#8217;altro si muove posteriormente verso il sacro. Il ramo principale risale il corpo, fino al margine anteriore dell&#8217;ascella, va verso la mammella  e sfocia nella fossa sopraclaveare ([.12.ST.] <em>qu&#275; p&eacute;n</em>). Qui un altro ramo prosegue dietro l&#8217;orecchio e raggiunge l&#8217;angolo della fronte, per poi  approdare sul vertice del capo, scendere sulla guancia ed andare verso lo zigomo. Un altro ramo giunge al canto esterno dell&#8217;occhio.</p><p>Il canale Tendino-Muscolare della Cistifellea &egrave; collegato con i canali Tendino-Muscolari della Vescica e dello Stomaco.</p><p>Dal momento che un ramo si muove lungo il muscolo Grande Gluteo, punti come [.30.GB] <em>hu&aacute;n ti&agrave;o</em> hanno un notevole effetto nel trattamento della sciatica.</p>",
 					meridianiSecondari: [
 						"GB_MT"
 					]
@@ -3591,7 +3597,7 @@ DB.set= {
 					OcchielloTeoria: "Meridiano MUSCOLARE",
 					TitoloTeoria: "Fegato",
 					sigla: "LR",
-					TestoTeoria: "",
+					TestoTeoria: "<p>Il canale Tendino-Muscolare del Fegato inizia sul dorso dell&#8217;alluce, prosegue sul lato anteriore del malleolo mediale, lungo la fascia mediale della tibia e incontra il condilo  mediale; dopodich&eacute; procede verso i genitali, seguendo la superficie mediale della coscia; a livello dei genitali si collega con il canale Tendino-Muscolare della Milza.</p><p>Proprio per il percorso che segue questo canale, si pu&ograve; affermare che il fegato sia strettamente legato ai problemi genitali.</p>",
 					meridianiSecondari: [
 						"LR_MT"
 					]
@@ -3600,7 +3606,7 @@ DB.set= {
 					OcchielloTeoria: "Meridiano MUSCOLARE",
 					TitoloTeoria: "Stomaco",
 					sigla: "ST",
-					TestoTeoria: "",
+					TestoTeoria: "<p>Il canale Tendino-Muscolare dello Stomaco parte dal terzo dito del piede, passa sul dorso del piede e si divide in due rami: uno sale lungo il lato della tibia fino al ginocchio, dove  si collega con il canale Tendino-Muscolare della Vescicola Biliare, continua sulla gamba, confluisce nell&#8217;anca e giunge al rachide, attraversando le ultime coste; l&#8217;altro ramo, il principale, prosegue su per la  tibia e la coscia, nella zona di [.32.ST.] <em>f&uacute; t&ugrave;</em>, e raggiunge i genitali, quindi sale lungo l&#8217;addome, il torace, fino a raggiungere la fossa sopraclaveare  ([.12.ST.] <em>qu&#275; p&eacute;n</em>), continua sul collo, procedendo verso la mandibola, la bocca, il lato del naso e infine lo zigomo, dove si collega con il canale Tendino-Muscolare  della Vescica. Un altro ramo si stacca dalla mandibola per muoversi verso l&#8217;orecchio.</p><p>Il canale Tendino-Muscolare dello Stomaco &egrave; collegato con i canali Tendino-Muscolari della Cistifellea, della Vescica e dell&#8217;Intestino Crasso.</p><p>Nell&#8217;ambito clinico, si pu&ograve; notare che, poich&eacute; un ramo si muove verso il dorso e la colonna vertebrale, i punti di Stomaco e Milza, influenzano il rachide.</p>",
 					meridianiSecondari: [
 						"ST_MT"
 					]
@@ -3609,7 +3615,7 @@ DB.set= {
 					OcchielloTeoria: "Meridiano MUSCOLARE",
 					TitoloTeoria: "Milza-pancreas",
 					sigla: "SP",
-					TestoTeoria: "",
+					TestoTeoria: "<p>Il canale Tendino-Muscolare della Milza parte dall&#8217;alluce, sale sul il piede, si muove verso il malleolo interno, prosegue lungo la tibia e confluisce sul lato mediale del ginocchio;  procede poi lungo la coscia per arrivare all&#8217;inguine e ai genitali esterni; in corrispondenza dell&#8217;ombelico, penetra nell&#8217;addome, confluisce nelle costole e si dirama nel torace. Un ramo parte dal petto e  si unisce al rachide.</p><p>Questo canale si collega ai canali Tendino-Muscolari del Fegato e dei Reni.</p><p>Dal punto di vista pratico, grazie al ramo che va in direzione del petto e del rachide, la colonna vertebrale pu&ograve; trarre beneficio, utilizzando [.3.SP.] <em>t&agrave;i b&aacute;i</em>.</p>",
 					meridianiSecondari: [
 						"SP_MT"
 					]
@@ -3618,7 +3624,7 @@ DB.set= {
 					OcchielloTeoria: "Meridiano MUSCOLARE",
 					TitoloTeoria: "Intestino tenue",
 					sigla: "SI",
-					TestoTeoria: "",
+					TestoTeoria: "<p>Il canale Tendino-Muscolare dell&#8217;Intestino Tenue inizia dal dorso del mignolo della mano, si sposta verso il polso, prosegue lungo l&#8217;ulna e incrocia il margine mediale dell&#8217;osso  del gomito; ascende, tramite il braccio, verso il lato posteriore dell&#8217;ascella. Dall&#8217;ascella si muove verso la scapola, circondandola; un ramo sale verso il collo, confluisce nel processo mastoideo, da cui ha origine  un ramo che va verso l&#8217;orecchio, sale verso l&#8217;occhio, riscende alla mandibola e sale ancora verso il canto esterno dell&#8217;occhio.</p><p>Il canale Tendino-Muscolare dell&#8217;Intestino Tenue &egrave; collegato con i canali Tendino-Muscolari della Vescica, dell&#8217;Intestino Crasso, del Triplice riscaldatore e dello  Stomaco.</p><p>Dal momento che questo canale copre l&#8217;intera scapola, va ad interessare tutti i muscoli presenti sull&#8217;osso in questione: il Gran Dorsale, il Grande Rotondo, il Piccolo Rotondo  e il Sottospinato.</p>",
 					meridianiSecondari: [
 						"SI_MT"
 					]
@@ -3627,7 +3633,7 @@ DB.set= {
 					OcchielloTeoria: "Meridiano MUSCOLARE",
 					TitoloTeoria: "Cuore",
 					sigla: "HT",
-					TestoTeoria: "",
+					TestoTeoria: "<p>Il canale Tendino-Muscolare del Cuore parte dal lato radiale del mignolo, passa sul polso, procede lungo il braccio, incontra il lato mediale del gomito e successivamente l&#8217;ascella.  A livello dell&#8217;ascella si collega al canale Tendino-Muscolare dei Polmoni e prosegue verso il torace, attraverso le mammelle. Qui scende nel diaframma e giunge all&#8217;ombelico.</p><p>Il canale Tendino-Muscolare del Cuore si collega al canale Tendino-Muscolare dei Polmoni.</p><p>&#160;</p>",
 					meridianiSecondari: [
 						"HT_MT"
 					]
@@ -3636,7 +3642,7 @@ DB.set= {
 					OcchielloTeoria: "Meridiano MUSCOLARE",
 					TitoloTeoria: "Triplice riscaldatore",
 					sigla: "TE",
-					TestoTeoria: "",
+					TestoTeoria: "<p>Il canale Tendino-Muscolare del Triplice riscaldatore parte dal lato ulnare dell&#8217;anulare, confluisce sul dorso del polso, prosegue lungo la zona posteriore dell&#8217;avambraccio  e giunge al gomito; procede sulla faccia laterale del braccio, fino alla spalla, per arrivare al collo, punto in cui si collega al canale Tendino-Muscolare dell&#8217;Intestino Tenue. A questo punto il canale si ramifica in  due: il ramo principale passa davanti all&#8217;orecchio per giungere al canto esterno dell&#8217;occhio, proseguire sulla tempia e raggiungere l&#8217;angolo della fronte; il ramo laterale, invece, si muove dall&#8217;angolo  della mandibola fino alla lingua.</p><p>Il canale Tendino-Muscolare del Triplice riscaldatore si collega con il canale Tendino-Muscolare dell&#8217;Intestino Tenue.</p><p>Dal punto di vista del trattamento, grazie al percorso che questo canale compie fino alla tempia, il punto [.5.TE.] <em>w&agrave;i gu&#257;n</em> &egrave; fondamentale per le cefalee temporali.</p>",
 					meridianiSecondari: [
 						"TE_MT"
 					]
@@ -3645,7 +3651,7 @@ DB.set= {
 					OcchielloTeoria: "Meridiano MUSCOLARE",
 					TitoloTeoria: "Mastro del cuore",
 					sigla: "PC",
-					TestoTeoria: "",
+					TestoTeoria: "<p>Il canale Tendino-Muscolare del Mastro del cuore inizia dalla punta del dito medio, segue il percorso accanto al canale Tendino-Muscolare dei Polmoni e raggiunge il lato mediale del gomito,  prosegue lungo il lato mediale del braccio, passa sotto l&#8217;ascella si dirama verso il petto, fino al diaframma, e sulle coste, anteriori e posteriori.</p><p>Il canale Tendino-Muscolare del Mastro del cuore &egrave; collegato al canale Tendino-Muscolare dei Polmoni.</p><p>In ambito clinico, questo canale &egrave; importante per trattare i sintomi digestivi e respiratori, quali eruttazioni, singhiozzo, sospiri (punto [.6.PC.] <em>n&egrave;i gu&#257;n</em>).</p>",
 					meridianiSecondari: [
 						"PC_MT"
 					]
@@ -3654,7 +3660,7 @@ DB.set= {
 					OcchielloTeoria: "Meridiano MUSCOLARE",
 					TitoloTeoria: "Intestino crasso",
 					sigla: "LI",
-					TestoTeoria: "",
+					TestoTeoria: "<p>Il canale Tendino-Muscolare dell&#8217;Intestino Crasso inizia dalla parte laterale della punta dell&#8217;indice, passa sul dorso del polso, procede lungo l&#8217;avambraccio, incontra  la zona laterale del gomito, prosegue sul braccio, fino ad arrivare sulla spalla. Qui un ramo si muove verso la colonna vertebrale dorsale alta, passando sopra la scapola. Il ramo principale, invece, dalla spalla sale lungo  il collo e, passando dalle guance, arriva allo zigomo. Un altro ramo prosegue sul vertice del capo e raggiunge la mandibola opposta.</p><p>Il canale Tendino-Muscolare dell&#8217;Intestino Crasso si collega con i canali Tendino-Muscolari dell&#8217;Intestino Tenue, della Vescica e dello Stomaco.</p><p>In ambito pratico, questo canale, percorrendo tutta la testa, passando da un lato all&#8217;altro, &egrave; importante nel trattamento delle cefalee (punto [.4.LI.] <em>h&eacute; g&#365;</em>).</p>",
 					meridianiSecondari: [
 						"LI_MT"
 					]
@@ -3663,7 +3669,7 @@ DB.set= {
 					OcchielloTeoria: "Meridiano MUSCOLARE",
 					TitoloTeoria: "Polmone",
 					sigla: "LU",
-					TestoTeoria: "",
+					TestoTeoria: "<p>Il canale Tendino-Muscolare dei Polmoni inizia dal pollice, incontra l&#8217;eminenza tenar, passa sul polso radiale, procede lungo il lato interno dell&#8217;avambraccio per arrivare  fino al gomito e proseguire quindi lungo la superficie anterolaterale del braccio; dopodich&eacute; confluisce nel torace, sotto l&#8217;ascella, e giunge nella fossa sopraclaveare ([.12.ST.] <em>qu&#275; p&eacute;n</em>): nel petto si dirama verso la regione cardiaca fino alle ultime coste.</p>",
 					meridianiSecondari: [
 						"LU_MT"
 					]

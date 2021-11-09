@@ -46,7 +46,10 @@ body:not(.smart) #parolaGlobal{
     box-shadow: 0px 0px 3px rgb(0 0 0 / 50%);
     cursor: pointer;
     width: 95px;
-    background-color: #3f51b5;
+    background-color: #2f67d2;
+}
+#cerca_btn:hover{
+    background-color: #1b4ca8 !important;
 }
 .smart #cerca_btn{
 	height: 38px !important;
