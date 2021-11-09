@@ -342,6 +342,22 @@ body:not(.smart) .stampaBtn{
 .p_label_ann{
 	width: 90px;
 }
+.sch_Max450 .modEl .p_tag_add,
+.sch_Max450 .modEl .p_medicina_add,
+.sch_Max450 .modEl .p_allergia_add,
+.sch_Max450 .modEl .p_patologia_add,
+.sch_Max450 .modEl .p_intervento_add,
+.sch_Max450 .modEl .p_label_add,
+.sch_Max450 .modEl .p_tag_ann,
+.sch_Max450 .modEl .p_medicina_ann,
+.sch_Max450 .modEl .p_allergia_ann,
+.sch_Max450 .modEl .p_patologia_ann,
+.sch_Max450 .modEl .p_intervento_ann,
+.sch_Max450 .modEl .p_label_ann{
+	width: 100%;
+    margin-left: 0px !important;
+    margin: 1px;
+}
 #tag_col{
 	    display: inline-block;
     vertical-align: middle;
@@ -961,6 +977,13 @@ _:-webkit-full-screen,
 .modEl #intervento_add{
 	width: calc(100% - 190px) !important;
 }
+.sch_Max450 .modEl #tag_add,
+.sch_Max450 .modEl #medicina_add,
+.sch_Max450 .modEl #allergia_add,
+.sch_Max450 .modEl #patologia_add,
+.sch_Max450 .modEl #intervento_add{
+    width: 100% !important;
+}
 .ico_mod_label,
 .ico_mod_label_etichette{
     height: 20px;
@@ -985,9 +1008,15 @@ _:-webkit-full-screen,
 #cont_label_add_sintomi.modEl #paz_add{
 	width: calc(100% - 222px) !important;
 }
+.sch_Max450 .modEl .label_add,
+.sch_Max450 #cont_label_add_sintomi.modEl #paz_add {
+    width: calc(100% - 37px) !important;
+}
+
 .TitTrattDx{ /* PAZIENTI */
 	padding-left:5px !important;
-	max-width:300px !important;
+	max-width:100% !important;
+	margin-top:20px;
 }
 .RicTrattDx{ /* PAZIENTI */
 	padding-left:5px !important;

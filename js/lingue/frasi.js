@@ -359,6 +359,11 @@ var TXT_Ricerca={
 	eng: "Search",
 	esp: "" };
 	
+var TXT_Cerca={
+	ita: "Cerca",
+	eng: "Search",
+	esp: "" };
+	
 var TXT_CercaQualcosa={
 	ita: "Cerca qualcosa",
 	eng: "Search something",

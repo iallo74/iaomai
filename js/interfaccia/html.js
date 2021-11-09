@@ -524,6 +524,9 @@ var H = {
 				'					   class="label_add"' +
 				'					   placeholder="'+htmlEntities(stripslashes(Lingua(TXT_EtichettaSpiegazione)))+'"' +
 				'					   onKeyup="H.filtraEtichetta(\''+obj.nome+'\',this);"'+H.noAutoGen+'/>' +
+				'				<span id="label_close"' +
+				'					  onClick="H.nasAggiungiEtichetta(\''+obj.nome+'\');">' +
+				'				</span>' +
 				'				<div class="p_label_add"' +
 				'					 onClick="H.aggiungiEtichetta(\''+obj.nome+'\',this);">' +
 									Lingua(TXT_Nuovo) +
@@ -532,9 +535,6 @@ var H = {
 				'					 onClick="H.annullaEtichetta(\''+obj.nome+'\');">' +
 									Lingua(TXT_Annulla) +
 				'				</div>' +
-				'				<span id="label_close"' +
-				'					  onClick="H.nasAggiungiEtichetta(\''+obj.nome+'\');">' +
-				'				</span>' +
 				'				<div class="elencoEtichette"' +
 				'					 id="elencoEtichette_'+obj.nome+'">' +
 				'				</div>' +
@@ -647,7 +647,7 @@ var H = {
 								for(e in etichette){
 									if(	etichette[e].NomeEtichetta == oldValue &&
 										etichette[e].sezione == sezione ){
-										etichette[e].NomeEtichetta = txt;
+										etichette[e].NomeEtichetta = txt.trim();
 										modificato = true;
 										etMod = true;
 									}

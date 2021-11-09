@@ -169,9 +169,12 @@ var PAZIENTI_SALDI = {
 							styleRiga: "text-align:right;",
 							classRiga: "div_saldi" });
 			
+			HTML += '		</div>';
+					
 			
-			HTML += H.r({	t: "r",
+			HTML += H.r({	t: "t",
 							name: "MotivoSaldo",
+							noLabel: true,
 							value: MotivoSaldo,
 							classCampo: "TitTrattDx",
 							styleRiga: "text-align:right;",
@@ -188,8 +191,7 @@ var PAZIENTI_SALDI = {
 							styleRiga: "text-align:right;",
 							classRiga: "div_saldi" });
 							
-			HTML += '		</div>' +
-					'		<span id="btn_stampa" class="stampaBtn noPrint" onclick="SCHEDA.stampaScheda({});">'+Lingua(TXT_StampaRicevuta)+'</span>' +
+			HTML += '		<span id="btn_stampa" class="stampaBtn noPrint" onclick="SCHEDA.stampaScheda({});">'+Lingua(TXT_StampaRicevuta)+'</span>' +
 					'	</div>';
 			
 			// pulsanti SALVA, ANNULLA e ELIMINA
