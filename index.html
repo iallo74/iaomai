@@ -574,7 +574,7 @@
             <div id="schedaGlobal">  <!-- RICERCHE -->
             	<div id="globalTesta"> 
                 <div id="globalTitolo">
-                  <form name="formGlobal" method="post" onSubmit="return RICERCHE.globalSubmit();" target="ricercaFrame"><input name="parolaGlobal" type="text" id="parolaGlobal" title="{{TXT_GuidaRicerca}}" placeholder="{{TXT_CercaQualcosa}}" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"><div id="annGlobal" onClick="RICERCHE.annullaGlobal();" style="display:none;"></div></form></div>
+                  <form name="formGlobal" method="post" onSubmit="return RICERCHE.globalSubmit();" target="ricercaFrame"><input name="parolaGlobal" type="text" id="parolaGlobal" title="{{TXT_GuidaRicerca}}" placeholder="{{TXT_CercaQualcosa}}" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"><div id="annGlobal" onClick="RICERCHE.annullaGlobal();" style="display:none;"></div><div onClick="RICERCHE.globalSubmit();" id="cerca_btn">CERCA</div></form></div>
                 <div id="globalChiusura" onClick="RICERCHE.nascondiGlobal(true);" title="{{TXT_ChiudiScheda}}"></div>
                 </div>
                 <div id="globalCont">

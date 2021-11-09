@@ -502,7 +502,7 @@ var SCHEDA = {
 		}else{
 			cartaIntestata = true;
 			var titolo = '';
-			TITOLO_PAGINA = htmlEntities(obj.titolo)+" "+htmlEntities(Lingua(TXT_per))+" "+htmlEntities(obj.intestazione)
+			if(JSON.stringify(obj)!='{}')TITOLO_PAGINA = htmlEntities(obj.titolo)+" "+htmlEntities(Lingua(TXT_per))+" "+htmlEntities(obj.intestazione)
 			var dati = '<p>'+htmlEntities(Lingua(TXT_per))+' '+htmlEntities(obj.intestazione) + '</p>' + 
 						'<p>'+htmlEntities(obj.corpo) + '</p>' + 
 						'<p style="padding-left:50px;padding-top:50px;"><i>' + Lingua(TXT_Data) + ':</i> ' + getFullDataTS(d/1000) + '<br><br>' +

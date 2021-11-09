@@ -1,7 +1,7 @@
 @charset "utf-8";
 /* CSS Document */
 :root {
-    --menu-width: 220px;
+    --menu-width: 300px;
 	--colore-nero: #000;
 	--colore-beige: #e0dcd4;
 	--colore-grigio-chiaro: #c6c5c3;
@@ -63,13 +63,13 @@
 	--fondino-icone-over: rgba(0,0,0,0.45);
 }
 
-@media (min-width: 700px){
+/*@media (max-width: 699px){
 	:root {
-    	--menu-width: 300px;
+    	--menu-width: 220px;
 	}
-}
+}*/
 @media (max-width: 699px){
-	:root {
+	:root .smart{
     	--menu-width: 100%;
 	}
 }

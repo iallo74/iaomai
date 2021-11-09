@@ -2143,10 +2143,10 @@ var PAZIENTI_TRATTAMENTI = {
 												pzMod = true;
 											}
 										}
-										DB.pazienti.data[p].trattamenti[t].sintomi = JSON.stringify(sintomi);
+										if(pzMod)DB.pazienti.data[p].trattamenti[t].sintomi = JSON.stringify(sintomi);
 									}
 								}
-								if(pzMod)PZS[p].DataModifica = DataModifica;
+								if(pzMod)DB.pazienti.data[p].DataModifica = DataModifica;
 							}
 						}
 

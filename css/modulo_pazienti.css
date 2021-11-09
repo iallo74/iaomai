@@ -1018,9 +1018,15 @@ body:not(.smart) .listaProcedure{
 	background-color:rgba(0,0,0,0.025);
 }
 #pazienti_stats table td:not(.statsBarre):not(.nPazStats){
-	width:1%;
 	white-space:nowrap;
 	background-color:rgba(0,0,0,0.05);
+}
+#pazienti_stats table tr td:last-child{
+	width:28px;
+	text-align:center;
+}
+#pazienti_stats table td:not(.statsBarre):not(.nPazStats) input{
+	margin:0px;
 }
 #pazienti_stats table td:first-child{
 	width:180px !important;
@@ -1077,7 +1083,7 @@ body:not(.smart) .listaProcedure{
     width: 28px;
     height: 25px;
     text-align: center;
-    padding-top: 3px;
+    padding: 3px;
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
 }
