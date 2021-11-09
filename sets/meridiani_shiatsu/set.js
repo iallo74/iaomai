@@ -198,7 +198,7 @@ SET = {
 		// sistemi sigle
 		HTML_imp += '<p><i>'+htmlEntities(Lingua(TXT_SistemaSigle))+':</i> ';
 		HTML_imp += '<select id="sceltaSigle" onChange="SET.popolaImpSet();">';
-		for(k in DB.mtc.meridiani["BL"]){
+		for(k in DB.mtc.meridiani["BL"].sigle){
 			HTML_imp += '  <option value="'+k+'"';
 			if(localStorage.sistemaSigleMeridiani == k)HTML_imp += ' SELECTED';
 			HTML_imp += '>'+k+'</option>'+H.chr10;

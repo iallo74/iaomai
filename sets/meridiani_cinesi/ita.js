@@ -2015,7 +2015,7 @@ DB.set= {
 				{
 					siglaTsubo: "EX-BW-6",
 					NomeTsubo: "21.EX. Huanmen (Porta della sofferenza)",
-					AzioniTsubo: "<p><b>Azioni</b><br />    <span>•</span> Nutre lo yin<br />  <span>•</span> Tonifica il qi<br />  <span>•</span> Elimina il calore</p><p><b>Applicazioni</b><br />  <span>•</span> Sudorazione notturna<br /><span>•</span> Irritabilità e calore<br /><span>•</span> Scarso appetito<br /><span>•</span> Affaticamento<br /><span>•</span> Tosse<br /><span>•</span> Dispnea</p><p><b>Ago</b><br />Inserire l'ago obliquamente 0,5-0,7 cun.</p><p><b>Ubicazione</b><br />Huanmen si trova 1,5 cun lateralmente alla prominenza del processo spinoso della 5° vertebra toracica.</p>",
+					AzioniTsubo: "<p><b>Azioni</b><br />    <span>•</span> Nutre lo yin<br />  <span>•</span> Tonifica il qi<br />  <span>•</span> Elimina il calore</p><p><b>Applicazioni</b><br />  <span>•</span> Sudorazione notturna<br /><span>•</span> Irritabilità e calore<br /><span>•</span> Scarso appetito<br /><span>•</span> Affaticamento<br /><span>•</span> Tosse<br /><span>•</span> Dispnea</p><p><b>Ago</b><br />Inserire l'ago obliquamente 0,5-0,7 cun.</p><p><b>Ubicazione</b><br />Huanmen si trova 1,5 cun lateralmente alla prominenza del processo spinoso della 5&ordf; vertebra toracica.</p>",
 					ChiaviTsubo: "",
 				},
 				{
