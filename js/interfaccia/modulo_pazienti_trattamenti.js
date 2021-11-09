@@ -2105,6 +2105,16 @@ var PAZIENTI_TRATTAMENTI = {
 					}
 				}
 			}
+			
+			// verifico doppione
+			if(!oldValue){
+				for(s in PAZIENTI.sintomiProvvisori){
+					if(txt.trim() == PAZIENTI.sintomiProvvisori[s].NomeSintomo){
+						ALERT(Lingua(TXT_erroreDuplicazioneElemento))
+						return;
+					}
+				}
+			}
 			var id = 0;
 			if(pass){
 				JSNPUSH={	"idSintomo": id*1,
@@ -2122,6 +2132,7 @@ var PAZIENTI_TRATTAMENTI = {
 						for(p in PZS){
 							if(PZS.Cancellato!=1){
 								var TRS = PZS[p].trattamenti;
+								var pzMod = false;
 								for(t in TRS){
 									if(TRS.Cancellato!=1 && TRS[t].sintomi!='[]'){
 										var sintomi = JSON.parse(TRS[t].sintomi);
@@ -2129,11 +2140,13 @@ var PAZIENTI_TRATTAMENTI = {
 											if(sintomi[s].NomeSintomo==oldValue){
 												sintomi[s].NomeSintomo=txt;
 												modificato = true;
+												pzMod = true;
 											}
 										}
 										DB.pazienti.data[p].trattamenti[t].sintomi = JSON.stringify(sintomi);
 									}
 								}
+								if(pzMod)PZS[p].DataModifica = DataModifica;
 							}
 						}
 
@@ -2159,24 +2172,12 @@ var PAZIENTI_TRATTAMENTI = {
 						}
 					}
 				}
-				
-				
-				
-				/*SCHEDA.formModificato = true;
-				
-				if(PAZIENTI.sintomiProvvisori=='')PAZIENTI.sintomiProvvisori=[];
-				PAZIENTI.sintomiProvvisori.push(JSNPUSH);
-				PAZIENTI.caricaSintomi();
-				document.getElementById("paz_add").value='';
-				SCHEDA.formModificato = true;
-				PAZIENTI.nasAggiungiSintomo();*/
 			}
 			document.getElementById("paz_add").value='';
 		}
 		PAZIENTI.popolaSintomi();
 		PAZIENTI.caricaSintomi();
 		if(oldValue)PAZIENTI.annullaSintomo();
-		//PAZIENTI.nasAggiungiSintomo();
 	},
 	eliminaSintomo: function( n ){ // elimina un punto del trattamento
 		PAZIENTI.sintomiProvvisori.splice(n, 1); 
@@ -2286,8 +2287,10 @@ var PAZIENTI_TRATTAMENTI = {
 	},
 	filtraSintomi: function(el){
 		var val = el.value.trim().toLowerCase();
-		if(event.keyCode==13)PAZIENTI.aggiungiSintomo();
-		else{
+		if(event.keyCode==13){
+			el.blur();
+			PAZIENTI.aggiungiSintomo();
+		}else{
 			var elenco = document.getElementById("elencoSintomi");
 			var els = elenco.getElementsByClassName("elMod");
 			var campo = document.getElementById("paz_add");

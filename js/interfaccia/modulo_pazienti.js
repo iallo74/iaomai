@@ -1363,6 +1363,15 @@ var PAZIENTI = {
 				}
 			}
 		}
+		// verifico doppione
+		if(!oldValue){
+			for(t in PAZIENTI.tagsProvvisori){
+				if(txt.trim() == PAZIENTI.tagsProvvisori[t]["NomeTag"]){
+					ALERT(Lingua(TXT_erroreDuplicazioneElemento))
+					return;
+				}
+			}
+		}
 		var id = 0;
 		if(pass){
 			
@@ -1531,8 +1540,10 @@ var PAZIENTI = {
 		pulsanteAnnulla.classList.remove("visBtn");
 	},
 	filtraTag: function(el){
-		if(event.keyCode==13)PAZIENTI.aggiungiTag(el);
-		else{
+		if(event.keyCode==13){
+			el.blur();
+			PAZIENTI.aggiungiTag(el);
+		}else{
 			var elenco = document.getElementById("elencoTags");
 			var els = elenco.getElementsByClassName("elMod");
 			var campo = document.getElementById("tag_add");
@@ -1655,6 +1666,15 @@ var PAZIENTI = {
 			if(tipo=='allergie')EL = PAZIENTI.allergieProvvisorie;
 			if(tipo=='patologie')EL = PAZIENTI.patologieProvvisorie;
 			if(tipo=='interventi')EL = PAZIENTI.interventiProvvisori;
+			// verifico doppione
+			if(!oldValue){
+				for(e in EL){
+					if(txt.trim() == EL[e]["Nome"+obj.el]){
+						ALERT(Lingua(TXT_erroreDuplicazioneElemento))
+						return;
+					}
+				}
+			}
 			if(!oldValue){
 				SCHEDA.formModificato = true;
 				EL.push(JSNPUSH);
@@ -1803,8 +1823,10 @@ var PAZIENTI = {
 		cont.classList.remove("modEl");
 	},
 	filtraElemento: function(tipo, el){
-		if(event.keyCode==13)PAZIENTI.aggiungiElemento(tipo, el);
-		else{
+		if(event.keyCode==13){
+			el.blur();
+			PAZIENTI.aggiungiElemento(tipo, el);
+		}else{
 			obj = PAZIENTI.defElemento( tipo );
 			var elenco = document.getElementById("elenco"+obj.els);
 			var els = elenco.getElementsByClassName("elMod");

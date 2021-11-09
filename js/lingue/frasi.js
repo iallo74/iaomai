@@ -1554,6 +1554,12 @@ var TXT_NoResSintomi={
 	esp: ""
 };
 
+	var TXT_erroreDuplicazioneElemento={
+		ita: "Attenzione! L'elemento è già presente in elenco.",
+		eng: "Please note! The item is already in the list.",
+		esp: ""
+	};
+
 var TXT_Componi={
 	ita: "Scrivi un messaggio",
 	eng: "Write a message",

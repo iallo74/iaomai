@@ -611,6 +611,16 @@ var H = {
 				}
 			}
 		}
+		// verifico doppione
+		if(!oldValue){
+			for(e in H.etichetteProvvisorie){
+				if(	txt.trim() == H.etichetteProvvisorie[e]["NomeEtichetta"] && 
+					sezione == H.etichetteProvvisorie[e]["sezione"]){
+					ALERT(Lingua(TXT_erroreDuplicazioneElemento))
+					return;
+				}
+			}
+		}
 		var id=0;
 		if(pass){
 			
@@ -832,8 +842,10 @@ var H = {
 		pulsanteAnnulla.classList.remove("visBtn");
 	},
 	filtraEtichetta: function( sezione, el ){
-		if(event.keyCode==13)H.aggiungiEtichetta(sezione,el);
-		else{
+		if(event.keyCode==13){
+			el.blur();
+			H.aggiungiEtichetta(sezione,el);
+		}else{
 			var elenco = document.getElementById("elencoEtichette_"+sezione);
 			var els = elenco.getElementsByClassName("elMod");
 			var campo = document.getElementById("label_add_"+sezione);

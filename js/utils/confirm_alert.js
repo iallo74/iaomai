@@ -87,7 +87,7 @@ function ALERT( msg, login ){
 		document.getElementById("CNF").classList.add("opCNF");
 	},50);
 	document.getElementById("CNF").classList.add("alert");
-	window.addEventListener("keyup", CONFIRM.keyAlert, false );
+	setTimeout(function(){window.addEventListener("keyup", CONFIRM.keyAlert, false );},500);
 }
 
 // Funzioni per il controllo del passaggio degli argomenti
