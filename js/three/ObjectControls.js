@@ -72,12 +72,13 @@ THREE.ObjectControls = function ( object, domElement ) {
 		}
 	}
 	
-	var touchInterval = null;
+	this.touchInterval = null;
 	function startInteractionTimer(){
 		scope._MM=true;
-		clearInterval(touchInterval);
-		touchInterval = setInterval(function(){
+		clearInterval(scope.touchInterval);
+		scope.touchInterval = setInterval(function(){
 			scope._MM=false;
+			console.log("_MM=false");
 		}, 6000);
 	}
 	function onMouseMove2( event ) {
@@ -144,7 +145,10 @@ THREE.ObjectControls = function ( object, domElement ) {
 	}
 	function onMouseUp2( event ) {
 		if(noAnimate)return;
-		if(!smothingView)scope._MM = false;
+		//if(!smothingView)scope._MM = false;
+		clearInterval(scope.touchInterval);
+		scope.touchInterval = null;
+		setTimeout(function(){scope._MM = true;},100);
 		this.xEnd = event.clientX;
 		this.yEnd = event.clientY;
 		
@@ -186,8 +190,8 @@ THREE.ObjectControls = function ( object, domElement ) {
 		manichinoCont.position.set( preX , preY ,newZ );
 		zoomEnd = null;
 		zoomStart = null;
-		clearInterval(touchInterval);
-		touchInterval = null;
+		clearInterval(scope.touchInterval);
+		scope.touchInterval = null;
 		setTimeout(function(){scope._MM = true;},100);
 		//zoomEnd = scaleAtt;
 	}

@@ -697,9 +697,15 @@ var MODELLO = {
 	},
 	caricaAnatomia: function( n, espansa ){
 		var titolo = DB_anatomia[n].Titolo;
-		var html = '<div class="descrAnatomia"><h1>'+titolo+'</h1>'+DB_anatomia[n].Descrizione+'</div>';
+		var html = '<div class="descrAnatomia';
+		if(!__(DB_anatomia[n].baseImg,false))html += ' noBaseImg';
+		html += '"><h1>'+titolo+'</h1>'+DB_anatomia[n].Descrizione+'</div>';
 		// dettaglio
-		html += '<div class="dettaglioAnatomia" style="background-image:url(img/anatomia/'+n+'.jpg)"><img src="img/anatomia/'+n+'.jpg"></div>';
+		if(__(DB_anatomia[n].baseImg,false)){
+			var im = n;
+			if(typeof(DB_anatomia[n].baseImg)=='string')im = DB_anatomia[n].baseImg;
+			html += '<div class="dettaglioAnatomia" style="background-image:url(img/anatomia/'+im+'.jpg)"><img src="img/anatomia/'+n+'.jpg"></div>';
+		}
 		SCHEDA.caricaScheda(titolo,html,"","tab_anatomia", false, espansa);
 		MODELLO.schSel = n;
 	},

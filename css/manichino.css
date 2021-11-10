@@ -112,9 +112,11 @@
 @media (min-width: 700px){
 	.descrAnatomia{
 		float:left;
-		width: 50%;
 		/*position:absolute;*/
 		line-height: 20px;
+	}
+	.descrAnatomia:not(.noBaseImg){
+		width: 50%;
 	}
 }
 @media (max-width: 699px){
