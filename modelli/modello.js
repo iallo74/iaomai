@@ -397,7 +397,7 @@ var MODELLO = {
 	
 	
 	
-	rifletti: function(){
+	rifletti: function(){ // riflette il manichino
 		ANATOMIA.applyMatrix(new THREE.Matrix4().makeScale(-1, 1, 1));
 		document.getElementById("p_rifletti").classList.toggle("btnSel");
 	},
@@ -655,11 +655,15 @@ var MODELLO = {
 		MODELLO.riposLegenda();
 	},
 	visContextMenu: function(n,leg){ //  visualizza il menu contestuale dell'anatomia
+		if(noAnimate)return;
 		MENU.chiudiMenu();
-		
 		var txt = '';
 		var pN = n.split("_");
-		if(DB_anatomia[n])txt += '<div class="s" onClick="MODELLO.caricaAnatomia(\''+n+'\',true);">'+Lingua(eval("TXT_ApriScheda"))+'</div>';
+		var id = leg.id.substr(4,leg.id.length-4);
+		if(id.substr(id.length-3,3)=='_SX' || id.substr(id.length-3,3)=='_DX')id=id.substr(0,id.length-3);
+		var p = '';
+		//console.log(id);
+		if(DB_anatomia[id])txt += '<div class="s" onClick="MODELLO.caricaAnatomia(\''+id+'\',true);">'+Lingua(eval("TXT_ApriScheda"))+'</div>';
 		txt += '<div class="c" onClick="MODELLO.centraAnatomia(\''+leg.dataset.idObj+'\');">'+Lingua(eval("TXT_CentraDaQui"))+'</div>';
 		var isola = 'MODELLO.isola'+pN[0]+'(document.getElementById(\''+n+'\'))';
 		txt += '<div class="d" onClick="'+isola+';">'+Lingua(eval("TXT_Deseleziona"))+'</div>';
@@ -693,7 +697,7 @@ var MODELLO = {
 	},
 	caricaAnatomia: function( n, espansa ){
 		var titolo = DB_anatomia[n].Titolo;
-		var html = '<div class="descrAnatomia">'+DB_anatomia[n].Descrizione+'</div>';
+		var html = '<div class="descrAnatomia"><h1>'+titolo+'</h1>'+DB_anatomia[n].Descrizione+'</div>';
 		// dettaglio
 		html += '<div class="dettaglioAnatomia" style="background-image:url(img/anatomia/'+n+'.jpg)"><img src="img/anatomia/'+n+'.jpg"></div>';
 		SCHEDA.caricaScheda(titolo,html,"","tab_anatomia", false, espansa);

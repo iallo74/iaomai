@@ -20,7 +20,7 @@ var PAZIENTI = {
 	overCestino: false,
 	mnMobileOpened: null,
 	pazientiFiltrati: [],
-	maxFoto: 5,
+	maxFoto: 15,
 		
 	caricaPazienti: function(){ // carica l'elenco dei pazienti
 		var HTML = '';

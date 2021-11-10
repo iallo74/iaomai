@@ -41,6 +41,7 @@ THREE.ObjectControls = function ( object, domElement ) {
 	
 	// MOUSE
 	function onMouseDown2( event ) {
+		if(noAnimate)return;
 		if(!overInterfaccia){
 			//try{SET.desIntersected();}catch(err){console.log(err)}
 			event.preventDefault();
@@ -82,6 +83,7 @@ THREE.ObjectControls = function ( object, domElement ) {
 	function onMouseMove2( event ) {
 		//if(!overInterfaccia){
 			//event.preventDefault();
+		if(noAnimate)return;
 			
 		if(this.ROTATE || this.PAN){
 			try{SET.desIntersected();}catch(err){}
@@ -141,6 +143,7 @@ THREE.ObjectControls = function ( object, domElement ) {
 		//}
 	}
 	function onMouseUp2( event ) {
+		if(noAnimate)return;
 		if(!smothingView)scope._MM = false;
 		this.xEnd = event.clientX;
 		this.yEnd = event.clientY;
@@ -151,7 +154,7 @@ THREE.ObjectControls = function ( object, domElement ) {
 		if(scope.domElement.PAN)scope.domElement.PAN=false;
 	}
 	function onMouseWheel( event ) {
-		if ( this.PAN || this.ROTATE || overInterfaccia)return;
+		if ( this.PAN || this.ROTATE || overInterfaccia || noAnimate)return;
 		//event.preventDefault();
 		event.stopPropagation();
 		if(!touchable){
@@ -168,6 +171,7 @@ THREE.ObjectControls = function ( object, domElement ) {
 		MODELLO.nasContextMenu();
 	}
 	function zoom( incr ) {
+		if(noAnimate)return;
 		var scaleAtt=manichinoCont.position.z;
 		var step=2 - ( scaleAtt / ( scope.maxZoom - scope.minZoom ) ) * 1.9;
 		scaleAtt+=incr*step
@@ -201,6 +205,7 @@ THREE.ObjectControls = function ( object, domElement ) {
 		
 	// TOUCH
 	function handleTouchStartRotate( event ) {
+		if(noAnimate)return;
 		this.xIni=event.touches[ 0 ].pageX;
 		this.yIni=event.touches[ 0 ].pageY;
 		this.xAtt=event.touches[ 0 ].pageX;
@@ -209,6 +214,7 @@ THREE.ObjectControls = function ( object, domElement ) {
 		this._yIni=object.rotation._y;
 	}
 	function handleTouchStartDollyPan( event ) {
+		if(noAnimate)return;
 		this.xIni = 0.5 * ( event.touches[ 0 ].pageX + event.touches[ 1 ].pageX );
 		this.yIni = 0.5 * ( event.touches[ 0 ].pageY + event.touches[ 1 ].pageY );
 		var dx = event.touches[ 0 ].pageX - event.touches[ 1 ].pageX;
@@ -219,6 +225,7 @@ THREE.ObjectControls = function ( object, domElement ) {
 		this._zIni=object.position.z;
 	}
 	function handleTouchMoveRotate( event ) {
+		if(noAnimate)return;
 		var element = scope.domElement === document ? scope.domElement.body : scope.domElement;
 		this.xAtt=event.touches[ 0 ].pageX;
 		this.yAtt=event.touches[ 0 ].pageY;
@@ -244,6 +251,7 @@ THREE.ObjectControls = function ( object, domElement ) {
 		}
 	}
 	function handleTouchMoveDollyPan( event ) {
+		if(noAnimate)return;
 		var x = 0.5 * ( event.touches[ 0 ].pageX + event.touches[ 1 ].pageX );
 		var y = 0.5 * ( event.touches[ 0 ].pageY + event.touches[ 1 ].pageY );
 			var r = 0.4;
@@ -284,12 +292,14 @@ THREE.ObjectControls = function ( object, domElement ) {
 		//}
 	}
 	function handleTouchEnd( event ) {
+		if(noAnimate)return;
 		event.preventDefault();
 		if( Math.abs(this.xAtt-this.xIni) < 10 && Math.abs(this.yAtt-this.yIni) < 10 ){
 			onClick();
 		}
 	}
 	function onTouchStart( event ) {
+		if(noAnimate)return;
 		event.preventDefault();
 		//if(overInterfaccia)return;
 		MENU.attBtnCentro();
@@ -318,6 +328,7 @@ THREE.ObjectControls = function ( object, domElement ) {
 		}
 	}
 	function onTouchMove( event ) {
+		if(noAnimate)return;
 		event.preventDefault();
 		event.stopPropagation();
 		MENU.attBtnCentro();
@@ -336,6 +347,7 @@ THREE.ObjectControls = function ( object, domElement ) {
 		}
 	}
 	function onTouchEnd( event ) {
+		if(noAnimate)return;
 		handleTouchEnd( event );
 		this.ROTATE=false;
 		this.PAN=false;

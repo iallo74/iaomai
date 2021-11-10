@@ -75,7 +75,6 @@
 	opacity:0.8;
 	padding-left:5px;
 	padding-right:5px;
-	cursor:pointer;
 	
 		width:calc(fit-content + 30px) !important;
 		background-color:rgba(0,0,0,0.7);
@@ -86,6 +85,12 @@
 		background-repeat:no-repeat;
 		background-position:right center;
 		background-size:auto 130%;
+}
+#legende:not(.noAnimate) div{
+	cursor:pointer;	
+}
+#legende.noAnimate{
+	opacity:0.4 !important;	
 }
 @media (max-width: 600px){
 	#legende div{

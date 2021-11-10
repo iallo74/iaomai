@@ -510,11 +510,13 @@ function stopAnimate( subito ){
 	if(typeof(subito) == 'undefined'){ // interrompe l'animazione dopo un minuto e mezzo
 		tmaNoAn = setTimeout(function(){
 			noAnimate=true;
+			document.getElementById("legende").classList.add("noAnimate");
 			document.getElementById("container").style.opacity = 0.4;
 			document.getElementById("p_piuma").classList.add("piumaAtt");
 		},1500);
 	}else{ // oppure subito
 		noAnimate=true;
+		document.getElementById("legende").classList.add("noAnimate");
 		document.getElementById("container").style.opacity = 0.4;
 		document.getElementById("p_piuma").classList.add("piumaAtt");
 		document.getElementById("p_piuma").getElementsByTagName("i")[0].innerHTML = htmlEntities(Lingua(TXT_3DinPausa));
@@ -525,6 +527,7 @@ function startAnimate(){
 		if(tmaNoAn)clearTimeout(tmaNoAn);
 		noAnimate=false;
 		animate();
+		document.getElementById("legende").classList.remove("noAnimate");
 		document.getElementById("container").style.opacity = 1;
 		document.getElementById("p_piuma").classList.remove("piumaAtt");
 		document.getElementById("p_piuma").getElementsByTagName("i")[0].innerHTML = htmlEntities(Lingua(TXT_Pausa3D));
