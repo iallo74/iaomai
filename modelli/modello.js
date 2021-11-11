@@ -706,6 +706,7 @@ var MODELLO = {
 			if(typeof(DB_anatomia[n].baseImg)=='string')im = DB_anatomia[n].baseImg;
 			html += '<div class="dettaglioAnatomia" style="background-image:url(img/anatomia/'+im+'.jpg)"><img src="img/anatomia/'+n+'.jpg"></div>';
 		}
+		raycastDisable = false;
 		SCHEDA.caricaScheda(titolo,html,"","tab_anatomia", false, espansa);
 		MODELLO.schSel = n;
 	},
