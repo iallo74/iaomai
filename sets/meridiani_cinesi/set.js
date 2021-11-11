@@ -420,13 +420,14 @@ SET = {
 		var siglaMeridiano = pP[0];
 		var nTsubo = parseInt(pP[1])-1;
 		if(!scene.getObjectByName( PT_name )){
-			if(!(PT=scene.getObjectByName( PT_name + "." ))){
-				PT=scene.getObjectByName( PT_name + ".SX" );
-			}else if(!(PT=scene.getObjectByName( PT_name + ".SX" ))){
+			if(scene.getObjectByName( PT_name + "." )){
+				PT=scene.getObjectByName( PT_name + "." );
+			}else if(scene.getObjectByName( PT_name + ".SX" )){
 				PT=scene.getObjectByName( PT_name + ".SX" );
 			}
 		}else PT=scene.getObjectByName( PT_name );
-		
+		console.log(PT_name)
+		console.log(PT)
 		if(this.ptSel && !SCHEDA.schedaAperta)this.chiudiTsubo();
 		this.ptSel=PT;
 		var pP = this.ptSel.name.split(".");
@@ -956,8 +957,8 @@ SET = {
 			var n_P = pP[1];
 			var n_M = SET.convSigla(pP[2].substr(0,2))+pP[2].substr(2,1);
 			var addClick = '';
-			if(noPall)adClick = 'return;';
-			html = html.replace(pts[p], '<span class="'+pallClass+'" onClick="'+addClick+'return;SET.selTsubo(\''+n_P+'|'+n_M+'\');">'+n_P+'.'+n_M+'</span>');
+			if(noPall)addClick = 'return;';
+			html = html.replace(pts[p], '<span class="'+pallClass+'" onClick="'+addClick+'SET.selTsubo(\''+n_P+'|'+n_M+'\');">'+n_P+'.'+n_M+'</span>');
 		}
 		var regexp = /\[\.[A-Z]{2}\.\]/ig;
 		var pts = html.match(regexp);

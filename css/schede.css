@@ -544,9 +544,17 @@ body:not(.touch) .schRid #l2{
     margin-top: 0px;
 	line-height: normal !important;
 }
+#scheda li{
+	margin-top:10px;
+}
 #scheda h1 *{
 	font-size: 28px;
     font-weight: normal;
+}
+.tdScuro{
+    background-color: #333;
+    color: #FFF;
+    font-weight: bold;
 }
 .col50{
 	display: inline-block;
