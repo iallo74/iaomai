@@ -426,8 +426,6 @@ SET = {
 				PT=scene.getObjectByName( PT_name + ".SX" );
 			}
 		}else PT=scene.getObjectByName( PT_name );
-		console.log(PT_name)
-		console.log(PT)
 		if(this.ptSel && !SCHEDA.schedaAperta)this.chiudiTsubo();
 		this.ptSel=PT;
 		var pP = this.ptSel.name.split(".");
