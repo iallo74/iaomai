@@ -581,7 +581,7 @@ var DB_anatomia = {
 	},
 	Muscolo_ESTENSORE_PROPRIO_MIGNOLO: {
 		Titolo: "Muscolo Estensore proprio del mignolo",
-		Descrizione: ""
+		Descrizione: "<p><i>Origine:</i> origina dalla faccia posteriore dell'epicondilo dell'omero e dalla sua faccia anterobrachiale. <br /><i>Inserzione:</i> attraversando il quinto condotto del legamento dorsale del carpo, si unisce al tendine dell'estensore comune delle dita a livello del quinto metacarpo.<br />    <i>Azione: </i>estende il mignolo e collabora all'estensione e all'abduzione ulnare della mano.<br />    <i>Innervazione:</i> innervato dal nervo radiale C6, C8.  <br />    <i>Vascolarizzazione: </i>arteria interossea comune</p>"
 	},
 	Muscolo_ABDUTTORE_LUNGO_POLLICE: {
 		Titolo: "Muscolo Abduttore lungo del pollice",
@@ -589,11 +589,11 @@ var DB_anatomia = {
 	},
 	Muscolo_ESTENSORE_BREVE_POLLICE: {
 		Titolo: "Muscolo Estensore breve del pollice",
-		Descrizione: ""
+		Descrizione: "<p><i>Origine:</i> origina dall'ulna, dalla membrana interossea e dalla faccia dorsale del radio. <br /><i>Inserzione:</i> attraversando il primo condotto del legamento dorsale del carpo, si inserisce alla base dorsale della falange prossimale del pollice.<br />    <i>Azione: </i>estende e abduce il pollice lavorando assieme al muscolo abduttore lungo del pollice .<br /><i>Innervazione:</i> ramo profondo del nervo radiale C7, T1. <br /><i>Vascolarizzazione:</i> ramo palmare superficiale dell'arteria radiale.</p>"
 	},
 	Muscolo_ESTENSORE_LUNGO_POLLICE: {
 		Titolo: "Muscolo Estensore lungo del pollice",
-		Descrizione: ""
+		Descrizione: "<p><i>Origine:</i> origina dal terzo intermedio della faccia dorsale dell'ulna  e dalla relativa membrana interossea. <br />  <i>Inserzione:</i> attraversando il terzo condotto del legamento dorsale del carpo, si inserisce alla base della falange distale del pollice.<br />      <i>Azione: </i>estende e abduce il pollie facendo leva sul tubercolo dorsale del radio e abduce la mano in direzione del radio.<br />  <i>Innervazione:</i> ramo profondo del nervo radiale C7, C8. <br />  <i>Vascolarizzazione:</i>arteria interossea posteriore.</p>"
 	},
 	Muscolo_PALMARE_BREVE: {
 		Titolo: "Muscolo Palmare breve",
