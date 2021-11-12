@@ -541,7 +541,7 @@ body:not(.smart) .guida_set .fumetti_freccia:last-child{
 	
 	.smart .guida_anatomia{
 		left:20px !important;
-		top:220px;
+		top:280px;
 		margin-left:0px !important;
 		margin-top:50px;
 		-webkit-transition: margin-top 0.3s, opacity 0.3 !importants;

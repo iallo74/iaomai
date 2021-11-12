@@ -47,7 +47,7 @@ body:not(.smart) #icone{
 	background-color: var(--fondino-icone);
 	z-index:20;
 }
-.smart #icone{
+body.smart:not(.AM):not(.AM_light) #icone{
 	width:100%;
 	height:54px;
 	background-color: #333;
@@ -317,6 +317,9 @@ body:not(.smart) #p_rifletti{
 .piumaAtt{
 	background-image:url(../img/p_piumaAtt.png) !important;
 	opacity:1 !important;
+}
+body:not(.AM):not(.AM_light) #p_impostazioniAM{
+	display:none;
 }
 body:not(.smart) #p_impostazioni{
 	position:fixed;

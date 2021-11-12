@@ -127,9 +127,10 @@ function init() {
 	// setto la donna al primo accesso
 	//if(typeof(localStorage.modello) == 'undefined')localStorage.modello = "donna"; // apertura automatica all'inizio
 	if(tipoApp == 'AM' || tipoApp == 'AM_light'){
-		if(!localStorage.modello || typeof(localStorage.modello)=='undefined'){
+		//if(!localStorage.modello || typeof(localStorage.modello)=='undefined'){
 			localStorage.modello = 'uomo';
-		}
+			globals.memorizza = true;
+		//}
 		modello = localStorage.modello;
 	}
 	if(localStorage.modello && globals.memorizza)caricaModello(localStorage.modello);

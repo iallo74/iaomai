@@ -251,7 +251,7 @@ var MODELLO = {
 		}
 		
 		MODELLO.filtraAnatomia();
-		MENU.visModello(true);
+		if(tipoApp != 'AM' && tipoApp != 'AM_light')MENU.visModello(true);
 		if(globals.set.cartella){
 			if(SET)SET._init();
 			else{
@@ -278,9 +278,10 @@ var MODELLO = {
 				MODELLO.swMuscle();
 				setTimeout(function(){
 					nasLoader();
-					setTimeout(function(){
+					/*setTimeout(function(){
 						GUIDA.visFumetto("guida_anatomia");
-					},1200);
+					},1200);*/
+					
 				},300);
 			}
 		}

@@ -25,6 +25,8 @@
 	.AM_light #l1,
 	.AM #l2,
 	.AM_light #l2,
+	.AM #l3,
+	.AM_light #l3,
 	.AM #p_download,
 	.AM_light #p_download,
 	.AM #p_stampa,
@@ -32,6 +34,7 @@
 	.AM #btnMenuScheda,
 	.AM_light #btnMenuScheda{
 		display:none !important;
+		visibility: hidden !important;
 	}
 	
 	.AM #scheda:not(.visSch) #scheda_cont,
@@ -45,6 +48,47 @@
 		top: 50px !important;
 		z-index: 100 !important;
 	}	
+	.AM #icone > div,
+	.AM_light #icone > div{
+		display:none !important;
+	}
+	
+	.AM #p_impostazioniAM,
+	.AM_light #p_impostazioniAM{
+		position:fixed;
+		bottom:0px;
+		left:0px;
+		z-index:10;
+		width:50px;
+		height:50px;
+		background-position: center center;
+		background-image: url(../img/m_ingranaggio.png);
+	}
+	.AM.bodyStyled2 #p_impostazioniAM,
+	.AM_light.bodyStyled2 #p_impostazioniAM{
+		background-image: url(../img/m_ingranaggioN.png);
+	}
+	.AM #cont_menu,
+	.AM_light #cont_menu{
+		bottom: 0px !important;
+	}
+	.AM #scheda:not(.visSch),
+	.AM_light #scheda:not(.visSch){
+		display:none !important;
+	}
+	.AM #impostazioni,
+	.AM_light #impostazioni{
+		float:left !important;
+		border-top-left-radius:0px !important;
+		border-top-right-radius:5px !important;
+	}
+	/*.AM #icone > div#p_impostazioni,
+	.AM_light #icone > div#p_impostazioni{
+		width: 54px;
+		display: block;
+		position: fixed;
+		bottom: 0px;
+	}*/
 	.AM #guida_anatomia .fumetti_freccia,
 	.AM_light #guida_anatomia .fumetti_freccia{
 		background-position: 11px bottom !important;
@@ -53,13 +97,13 @@
 	
 /* LOGHI AM */
 body.AM:not(.bodyModello):not(.bodyStyled1):not(.bodyStyled2){
-	background-image:url(../img/ombra.png), url(../img/logo_AM_Bucato_Nero.png) !important;
+	background-image:url(../img/logo_AM_Bucato_Nero.png), url(../img/ombra.png) !important;
 }
 body.AM:not(.bodyModello).bodyStyled1{
-	background-image:url(../img/ombra.png), url(../img/logo_AM_Bucato_Blu.png) !important
+	background-image:url(../img/logo_AM_Bucato_Blu.png), url(../img/ombra.png) !important
 }
 body.AM:not(.bodyModello).bodyStyled2{
-	background-image:url(../img/ombra.png), url(../img/logo_AM_Bucato_Beige.png) !important;
+	background-image:url(../img/logo_AM_Bucato_Beige.png), url(../img/ombra.png) !important;
 }
 .AM #logoSovra{
     background-image: url(../img/logo_AM_white.png) !important;
@@ -81,6 +125,15 @@ body.AM:not(.bodyModello).bodyStyled2{
 	background-image: url(../img/logo_AM_light_blue.png) !important;
 }
 
+.AM #p_piuma,
+/*.AM #p_centro,*/
+.AM_light #p_piuma/*,
+.AM_light #p_centro*/{
+	display: none !important;
+	visibility: hidden !important;
+	height:5px !important;
+	overflow:hidden !important;
+}
 
 @media (max-width: 360px){
 	.AM #logo_inizio,

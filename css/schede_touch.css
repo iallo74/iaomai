@@ -801,15 +801,15 @@ body.touch:not(.smart) #l3{
 	width:100% !important;
 	bottom:0px;
 }
-.smart #scheda.schRid:not(.schExp):not(.compresso){
+body.smart:not(.AM):not(.AM_light) #scheda.schRid:not(.schExp):not(.compresso){
 	bottom:54px !important;
 	overflow: hidden;
 }
-.smart #scheda.schRid.schOp:not(.schExp):not(.triplo):not(.compresso){
+body.smart:not(.AM):not(.AM_light) #scheda.schRid.schOp:not(.schExp):not(.triplo):not(.compresso){
 	/*bottom:102px !important;*/
 	bottom:108px !important;
 }
-.smart #scheda.schRid.triplo.schOp:not(.schExp):not(.compresso){
+body.smart:not(.AM):not(.AM_light) #scheda.schRid.triplo.schOp:not(.schExp):not(.compresso){
 	/*bottom:155px !important;*/
 	bottom:158px !important;
 }
