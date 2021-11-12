@@ -36,7 +36,7 @@
 		esp: "" };
 			
 		TXT_TsuboMapDESCR = {
-			ita: "TsuboMap è il set che ti consente di studiare i concetti della Medicina Tradizionale Cinese applicati ai punti agopuntura (gli tsubo) e i meridiani energetici. Oltre all'anatomia completa e la gestione dei pazienti, è a tua disposizione un elenco di più di 130 patologie preconfigurate e il relativo trattamento secondo la MTC. Potrai inoltre elaborare procedure di trattamento personalizzate e condividerle nella Community."+chr10+chr10+"Il set include anche:"+chr10+"[anatomy_full]"+chr10+"[clients_full]",
+			ita: "TsuboMap è il set che ti consente di studiare i concetti della Medicina Tradizionale Cinese applicati ai punti agopuntura (gli tsubo) e i meridiani energetici. Oltre all'anatomia completa e la gestione dei pazienti, è a tua disposizione un elenco di più di 130 patologie preconfigurate e il relativo trattamento secondo la MTC. Potrai inoltre elaborare procedure di trattamento personalizzate e condividerle nella Community."+chr10+chr10+"Il set include anche:"+chr10+"[anatomy_full]",
 			eng: "TsuboMap is the set that allows you to study the concepts of Traditional Chinese Medicine applied to acupuncture points (tsubo) and energy meridians. In addition to complete anatomy and patient management, a list of more than 130 preconfigured pathologies and their treatment according to TCM is available to you. You will also be able to develop customized treatment procedures and share them in the Community.",
 			esp: "" };
 		
@@ -49,7 +49,7 @@
 		eng: "Shiatsu Meridians",
 		esp: "" };
 		TXT_ShiatsuMapDESCR = {
-			ita: "Il set contiene i percorsi dei meridiani Shiatsu secondo la teoria di Shizuto Masunaga e le informazioni teoriche sugli elementi.",
+			ita: "Il set contiene i percorsi dei meridiani Shiatsu secondo la teoria di Shizuto Masunaga e le informazioni teoriche sugli elementi."+chr10+chr10+"Il set include anche:"+chr10+"[anatomy_full]",
 			eng: "The set contains the paths of the Shiatsu meridians according to the theory of Shizuto Masunaga and the theoretical information on the elements.",
 			esp: "" };
 		
@@ -64,7 +64,7 @@
 		esp: ""
 	};
 		TXT_ReflessologiaPlantareDESCR = {
-			ita: "Mappe e zone della reflessologia del piede secondo la visione occidentale."+chr10+chr10+"Il set include anche:"+chr10+"[anatomy_full]"+chr10+"[clients_full]",
+			ita: "Mappe e zone della reflessologia del piede secondo la visione occidentale."+chr10+chr10+"Il set include anche:"+chr10+"[anatomy_full]",
 			eng: "Foot reflexology maps and zones according to the Western view.",
 			esp: ""
 		};
@@ -80,7 +80,7 @@
 		esp: ""
 	};
 		TXT_AuricologiaDESCR = {
-			ita: "Il set contiene la mappa dei punti dell'auricologia e il trattamento dei disturbi attraverso l'auricoloterapia."+chr10+chr10+"Il set include anche:"+chr10+"[anatomy_full]"+chr10+"[clients_full]",
+			ita: "Il set contiene la mappa dei punti dell'auricologia e il trattamento dei disturbi attraverso l'auricoloterapia."+chr10+chr10+"Il set include anche:"+chr10+"[anatomy_full]",
 			eng: "The set contains the map of points of auricology and the treatment of ailments through auriculotherapy.",
 			esp: ""
 		};
@@ -96,7 +96,7 @@
 		esp: ""
 	};
 		TXT_TriggerPointsDESCR = {
-			ita: "Mappa dei punti trigger e delle zone riflesse del dolore."+chr10+chr10+"Il set include anche:"+chr10+"[anatomy_full]"+chr10+"[clients_full]",
+			ita: "Mappa dei punti trigger e delle zone riflesse del dolore."+chr10+chr10+"Il set include anche:"+chr10+"[anatomy_full]",
 			eng: "Map of trigger points and pain reflex zones.",
 			esp: ""
 		};
