@@ -102,6 +102,8 @@
 .dettaglioAnatomia{
 	float: right;
     margin: -30px;
+}
+.bodyStyled2 .dettaglioAnatomia{
     background-blend-mode: multiply;
     background-repeat: no-repeat;
     background-color: #eae8e3;
