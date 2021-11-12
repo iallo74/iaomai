@@ -113,7 +113,7 @@ var sets = {
 		auth: false,
 		locked: true,
 		opening: true,
-		dataPubblicazione: '2022-04'
+		dataPubblicazione: '2022-06'
 	},
 	auricologia: {
 		nome: Lingua(TXT_Auricologia),
@@ -129,7 +129,7 @@ var sets = {
 		auth: false,
 		locked: true,
 		opening: true,
-		dataPubblicazione: '2022-01'
+		dataPubblicazione: '2022-04'
 	},
 	trigger_points: {
 		nome: Lingua(TXT_TriggerPoints),
@@ -146,7 +146,7 @@ var sets = {
 		auth: false,
 		locked: true,
 		opening: true,
-		dataPubblicazione: '2022-06'
+		dataPubblicazione: '2022-10'
 	},
 	clients_full: {
 		nome: Lingua(TXT_MedicalFiles),
