@@ -29,6 +29,8 @@
 	.AM_light #l3,
 	.AM #p_download,
 	.AM_light #p_download,
+	.AM #p_notifiche,
+	.AM_light #p_notifiche,
 	.AM #p_stampa,
 	.AM_light #p_stampa,
 	.AM #btnMenuScheda,
