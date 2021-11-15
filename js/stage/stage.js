@@ -138,11 +138,18 @@ function init() {
 		document.getElementById("logo_inizio").style.display = 'none';
 		document.getElementById("poweredby_inizio").style.display = 'none';
 		scaricaModello();
+		if(getVar("demo")){
+			if(getVar("demo")=='anatomymap')cambiaModello('donna');
+			if(getVar("demo")=='tsubomap')caricaSet('meridiani_cinesi',this);
+			if(getVar("demo")=='shiatsumap')caricaSet('meridiani_shiatsu',this);
+			if(getVar("demo")=='pazienti')SCHEDA.apriElenco('base');
+		}else{
 		//if(!smartMenu){
 			setTimeout( function(){
 				GUIDA.visFumetto("guida_generica");
 			}, 1000 );
 		//}
+		}
 	}
 }
 

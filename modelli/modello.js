@@ -273,7 +273,7 @@ var MODELLO = {
 			}//else postApreSet = false;
 			document.getElementById("logo_inizio").style.display = 'none';
 			document.getElementById("poweredby_inizio").style.display = 'none';
-			if(tipoApp == 'AM' || tipoApp == 'AM_light'){
+			if(tipoApp == 'AM' || tipoApp == 'AM_light' || getVar("demo")=='anatomymap'){
 				visLoader('');
 				MODELLO.swMuscle();
 				setTimeout(function(){

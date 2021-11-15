@@ -145,20 +145,6 @@ var IMPORTER = {
 		}
 	},
 	init: function(){
-		if(	tipoApp == 'AM' ||
-			tipoApp == 'AM_light' ){
-			document.body.classList.add(tipoApp);
-			document.getElementById("favicon").href='icons/faviconAM.ico?v='+(new Date()*1000);
-			document.getElementById("p_reg").getElementsByTagName("span")[0].innerHTML = '{{TXT_TestoRegistrazioneAM}}';
-			document.getElementById("testoRegistrazione").innerHTML = '{{TXT_TestoRegistrazioneEspansoAM}}';
-			document.getElementById("app").value = tipoApp;
-			nomeApp = 'Anatomy Map';
-			sloganApp = 'Your pocket body atlas';
-			IMPORTER.files.unshift("css/AM.css");
-			CONN.linkPrivacy = 'https://www.anatomymap.com/privacy';
-		}
-		document.title = nomeApp+" - "+sloganApp;
-		
 		
 		var UA=navigator.userAgent;
 		if(UA.toLowerCase().indexOf("ipad")>-1)iPad=1;
@@ -169,6 +155,23 @@ var IMPORTER = {
 		brw_firefox=(typeof InstallTrigger !== 'undefined');
 		brw_edge=(!(document.documentMode) && window.StyleMedia)
 		android=(navigator.userAgent.indexOf("Android") != -1);
+		
+		if(	tipoApp == 'AM' ||
+			tipoApp == 'AM_light' ){
+			document.body.classList.add(tipoApp);
+			document.getElementById("favicon").href='icons/faviconAM.ico?v='+(new Date()*1000);
+			document.getElementById("p_reg").getElementsByTagName("span")[0].innerHTML = '{{TXT_TestoRegistrazioneAM}}';
+			document.getElementById("testoRegistrazione").innerHTML = '{{TXT_TestoRegistrazioneEspansoAM}}';
+			if(!(iPad || iPhone))document.getElementById("testoRegistrazione").innerHTML += '{{TXT_TestoRegistrazioneEspansoAM2}}';
+			else document.getElementById("testoRegistrazione").innerHTML += '{{TXT_TestoRegistrazioneEspansoAM3}}';
+			document.getElementById("app").value = tipoApp;
+			nomeApp = 'Anatomy Map';
+			sloganApp = 'Your pocket body atlas';
+			IMPORTER.files.unshift("css/AM.css");
+			CONN.linkPrivacy = 'https://www.anatomymap.com/privacy';
+		}
+		document.title = nomeApp+" - "+sloganApp;
+		
 		var el = document.getElementById('scripts');
 		el.setAttribute('ontouchstart', 'return;');
 		if(typeof el.ontouchstart == "function"){

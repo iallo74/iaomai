@@ -2274,9 +2274,19 @@ var TXT_TestoRegistrazioneEspanso={
 	esp: "" };
 	
 var TXT_TestoRegistrazioneEspansoAM={
-	ita: "Con la registrazione gratuita ad [§] potrai usufruire dei seguenti vantaggi:"+chr10+chr10+"[#] Backup dei dati"+chr10+"[#] 15 giorni di prova multipiattaforma"+chr10+"[#] 10% di sconto su un prodotto [IAOMAI]",
-	eng: "With the free registration to [§] you can use the following advantages:"+chr10+chr10+"[#] Data backup"+chr10+"[#] 15 days of cross-platform trial"+chr10+"[#] 10% discount on [IAOMAI] product",
+	ita: "Con la registrazione gratuita ad [§] potrai usufruire dei seguenti vantaggi:"+chr10+chr10+"[#] Backup dei dati"+chr10+"[#] 15 giorni di prova multipiattaforma",
+	eng: "With the free registration to [§] you can use the following advantages:"+chr10+chr10+"[#] Data backup"+chr10+"[#] 15 days of cross-platform trial",
 	esp: "" };
+	
+var TXT_TestoRegistrazioneEspansoAM2={
+	ita: chr10+"[#] 10% di sconto su un prodotto [IAOMAI]",
+	eng: chr10+"[#] 10% discount on [IAOMAI] product",
+	esp: "" };
+	
+	var TXT_TestoRegistrazioneEspansoAM3={
+		ita: chr10+"[#] numerosi vantaggi su prodotti [IAOMAI]",
+		eng: chr10+"[#] numerosi vantaggi su prodotti [IAOMAI] product",
+		esp: "" };
 	
 var TXT_ErroreGenerico={
 	ita: "Si è verificato un errore",
