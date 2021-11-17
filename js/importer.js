@@ -22,6 +22,7 @@ var mouseDetect = false;
 var onlineVersion=false;
 var isTablet = false;
 var globals = {};
+var verApp = '1.0.0';
 
 // IMPOSTAZIONI DI APP
 var nomeApp = 'Iáomai';
@@ -212,7 +213,7 @@ var IMPORTER = {
 			while(JSNPOST.indexOf(".")>-1)JSNPOST=JSNPOST.replace(".","_");
 			console.log("Sto inviando: "+JSNPOST);
 			CONN.caricaUrl(	"verificaScripts.php",
-							'TK=D6G-w34rgV&b64=1&JSNPOST='+window.btoa(encodeURIComponent(JSON.stringify(JSNPOST))), 
+							'TK=D6G-w34rgV&b64=1&verApp='+verApp+'&JSNPOST='+window.btoa(encodeURIComponent(JSON.stringify(JSNPOST))), 
 							"IMPORTER.applicaAggiornamenti" );
 		}else IMPORTER.applicaAggiornamenti('');
 	},
