@@ -63,6 +63,15 @@ var elTXprovv=null;
 // OPERAZIONI AL CARICAMENTO DELLA PAGINA
 function INIT(){
 	
+	
+	// aggiunto per errore su importer
+	if(	tipoApp == 'AM' || tipoApp == 'AM_light' ){
+		smartMenu = true;
+		document.body.classList.add("smart");
+	}
+	
+	
+	
 	// unisco i moduli
 	Object.assign(PAZIENTI, PAZIENTI_TRATTAMENTI);
 	Object.assign(PAZIENTI, PAZIENTI_SALDI);

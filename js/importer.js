@@ -187,7 +187,7 @@ var IMPORTER = {
 		}
 		if(location.host!='')onlineVersion=true;
 		if(this.WFINI()<510)smartphone=true;
-		if(!mouseDetect && this.WFINI()<=800)smartMenu=true;
+		if(!mouseDetect && this.WFINI()<=800 ||	tipoApp == 'AM' || tipoApp == 'AM_light' )smartMenu=true;
 		if(smartMenu)document.body.classList.add("smart");
 		if(isTablet)document.body.classList.add("tablet");
 

@@ -48,7 +48,7 @@ var MODULO_MERIDIANI = { // extend SET
 									'     onMouseOut="SET.eviMeridiano(\''+m+'\',false);"' +
 									'     onClick="SET.accendiMeridiano(\''+m+'\',true);"' + // elenco dei punti
 									'	  id="sm'+m+'"' +
-									'     class="sm_'+MERIDIANI[m].elemento+addClass+addLock+'">'+m+'</div>';
+									'     class="sm_'+MERIDIANI[m].elemento+addClass+addLock+'">'+siglaPunto+'</div>';
 		}
 									
 		document.getElementById("lista_meridiani").innerHTML = '<div class="lista listaMeridiani">'+contElencoMeridiani+'</div>';
@@ -60,14 +60,6 @@ var MODULO_MERIDIANI = { // extend SET
 			else SET.coloraMeridiano(m,'','Base');
 		}
 	},
-	/*elencoMeridiani: function( label ){ // elenca i meridiani per la select di trattamenti e procedure
-		var HTML = '<option>'+htmlEntities(label)+'</option>';
-		var presenti = false;
-		for(i in DB.set.meridiani){
-			HTML+='<option value="'+i+'">'+DB.set.meridiani[i].NomeMeridiano+'</option>';
-		}
-		return HTML;
-	},*/
 	swMeridianiSmart: function(){ // visualizza/nasconde il menu rapido dei meridiani (in alto a SX)
 		document.getElementById("meridianiSmart_cont").classList.toggle("visSch");
 	},

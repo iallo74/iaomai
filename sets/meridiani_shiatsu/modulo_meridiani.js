@@ -32,7 +32,7 @@ var MODULO_MERIDIANI = { // extend SET
 						 '     onMouseOut="SET.eviMeridiano(\''+m+'\',false);"' +
 						 '     onClick="SET.accendiMeridiano(\''+m+'\',true);"' + // elenco dei punti
 						 '	   id="sm'+m+'"' +
-						 '     class="sm_'+MERIDIANI[m].elemento+addClass+addLock+'"'+addStyle+'>'+m+'</div>';
+						 '     class="sm_'+MERIDIANI[m].elemento+addClass+addLock+'"'+addStyle+'>'+SET.convSigla(m)+'</div>';
 		}
 		sceltaMeridianiTag = 	'<div class="menuElenchi"' +
 								'	  onClick="MENU.visMM(\'sistemaMeridiani_p\');">' +

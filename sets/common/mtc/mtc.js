@@ -2314,11 +2314,11 @@ DB.mtc= {
 		"GV": {
 			cartella: "vaso_governatore",
 			sigle:  {
-				"INT": "CV",
-				"OMS": "REN",
-				"ITA": "VC",
-				"FRA": "VC",
-				"VOL": "VC"
+				"INT": "GV",
+				"OMS": "DU",
+				"ITA": "VG",
+				"FRA": "VG",
+				"VOL": "VG"
 			},
 			tsubo: [
 				{
@@ -2522,11 +2522,11 @@ DB.mtc= {
 		"CV": {
 			cartella: "vaso_concezione",
 			sigle: {
-				"INT": "GV",
-				"OMS": "DU",
-				"ITA": "VG",
-				"FRA": "VG",
-				"VOL": "VG"
+				"INT": "CV",
+				"OMS": "REN",
+				"ITA": "VC",
+				"FRA": "VC",
+				"VOL": "VC"
 			},
 			tsubo: [
 				{

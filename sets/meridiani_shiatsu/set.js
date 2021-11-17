@@ -911,7 +911,7 @@ SET = {
 		}
 	},
 	convSigla: function( siglaMeridiano ){
-		if( localStorage.sistemaSigleMeridiani=='INT' )return siglaMeridiano;
+		if( localStorage.sistemaSigleMeridiani=='INT' || !__(DB.mtc.meridiani[siglaMeridiano]))return siglaMeridiano;
 		else return DB.mtc.meridiani[siglaMeridiano].sigle[localStorage.sistemaSigleMeridiani];
 	},
 	convSigleScheda: function(){
@@ -944,29 +944,32 @@ SET = {
 		var pts = html.match(regexp);
 		for(p in pts){
 			var pP = pts[p].split(".");
+			var siglaMeridiano = pP[2].substr(0,2);
 			var n_P = pP[1];
-			var n_M = SET.convSigla(pP[2].substr(0,2))+pP[2].substr(2,1);
-			html = html.replace(pts[p], '<span class="pallinoPat" onClick="SET.selTsubo(\''+n_P+'|'+n_M+'\')">'+n_P+'.'+n_M+'</span>');
+			var n_M = SET.convSigla(siglaMeridiano)+pP[2].substr(2,1);
+			html = html.replace(pts[p], '<span class="pallinoPat" onClick="SET.selTsubo(\''+n_P+'|'+siglaMeridiano+'\')">'+n_P+'.'+n_M+'</span>');
 		}
 		var regexp = /\[\.[A-Z]{2}\.\]/ig;
 		var pts = html.match(regexp);
 		for(p in pts){
 			var pP = pts[p].split(".");
-			var n_M = SET.convSigla(pP[1].substr(0,2))+pP[1].substr(2,1);
+			var siglaMeridiano = pP[1].substr(0,2);
+			var n_M = SET.convSigla(siglaMeridiano)+pP[1].substr(2,1);
 			var nome = '';
 			for(m in DB.set.teoria[1].contenuti){
-				if(DB.set.teoria[1].contenuti[m].sigla == n_M)nome = DB.set.teoria[1].contenuti[m].TitoloTeoria;
+				if(m && DB.set.teoria[1].contenuti[m].sigla == siglaMeridiano)nome = DB.set.teoria[1].contenuti[m].TitoloTeoria;
 			}
 			html = html.replace(pts[p], '<span class="meridianoPat"' +
-										'	   onClick="SET.accendiMeridiano(\''+n_M+'\',true);"' +
-										'	   onMouseOver="SET.eviMeridiano(\''+n_M+'\',true);"' +
-										'	   onMouseOut="SET.eviMeridiano(\''+n_M+'\',false);">'+htmlEntities(nome)+'</span>');
+										'	   onClick="SET.accendiMeridiano(\''+siglaMeridiano+'\',true);"' +
+										'	   onMouseOver="SET.eviMeridiano(\''+siglaMeridiano+'\',true);"' +
+										'	   onMouseOut="SET.eviMeridiano(\''+siglaMeridiano+'\',false);">'+htmlEntities(nome)+'</span>');
 		}
 		return html;
 	},
 	salvaImpostazioni: function(){
 		localStorage.sistemaSigleMeridiani = document.getElementById("sceltaSigle").value;
 		SET.cambiaSistema(document.getElementById("sceltaMeridiani").value);
+		SET.caricaMeridiani();
 		MENU.chiudiMenu();
 	},
 	popolaImpSet: function(){
@@ -984,7 +987,7 @@ SET = {
 					'		<td class="tbSigleMeridiani_sigle">';
 					
 			if( s=='INT' )HTML += m;
-			else HTML += DB.mtc.meridiani[m].sigle[n];
+			else HTML += DB.mtc.meridiani[m].sigle[s];
 			
 			HTML += '		</td>';
 			if(!disp)HTML += 
