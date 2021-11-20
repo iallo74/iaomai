@@ -57,6 +57,7 @@ var sessi = {
 var oggi=new Date(),
 oggi=new Date(oggi.getFullYear(),oggi.getMonth(),oggi.getDate(),0,0,0,0);
 var elTXprovv=null;
+var overChiudiProva = false;
 
 
 	
@@ -116,6 +117,27 @@ function INIT(){
 	window.addEventListener("resize",function(){
 		SCHEDA.verPosScheda();
 	},false);
+	
+	// DEMO
+	if(onlineVersion){
+		setTimeout( function(){
+			if(getVar('demo') && !LOGIN.reg()){
+				
+				var boxProva = document.createElement('div');
+				boxProva.onclick = function(){
+					if(!overChiudiProva)MENU.visRegistrazione();
+					document.body.removeChild(boxProva);
+				};
+				boxProva.id = 'boxProvaDemo';
+				boxProva.innerHTML = 
+							'	<div onMouseOver="overChiudiProva=true;"' +
+							'		 onMouseOut="overChiudiProva=false;"></div>' +
+							'	<b>Prova GRATUITA di tutte le app per 30 giorni.</b><br>Clicca qui per registrarti e iniziare subito!';
+				document.body.appendChild(boxProva);
+				
+			}
+		},2000);
+	}
 	
 	console.log('\n \n  .------------------------------------------.\n  |                                          |\n  |     SE STAI VEDENDO QUESTA SCHERMATA     |\n  |     PER MODIFICARE IL CODICE             |\n  |     VERRAI FULMINATO!!!!        ]o:      |\n  |                                          |\n  *------------------------------------------*\n  ');
 }

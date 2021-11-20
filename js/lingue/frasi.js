@@ -2268,10 +2268,10 @@ var TXT_TestoRegistrazioneAM={
 	eng: 'Please sign-up to use more features.',
 	esp: "" };
 	
-var TXT_TestoRegistrazioneEspanso={
-	ita: "Con la registrazione gratuita ad [§] potrai usufruire di tutte le funzionalità di base dell'app:"+chr10+chr10+"[#] Fino a 20 clienti"+chr10+"[#] Backup dei dati"+chr10+"[#] Accesso multipiattaforma"+chr10+"[#] Funzionalità della community",
-	eng: 'With the free registration to [§] you will be able to use all the basic functions of the app:'+chr10+chr10+"[#] Up to 20 customers"+chr10+"[#] Data backup"+chr10+"[#] Cross-platform access"+chr10+"[#] Community functionality",
-	esp: "" };
+	var TXT_TestoRegistrazioneEspanso={
+		ita: "Con la registrazione gratuita a [§] avrai {30 giorni di prova gratuita di tutte le app} e allo scadere potrai usufruire di  di tutte le funzionalità di base dell'app:"+chr10+chr10+"[#] Fino a 20 clienti"+chr10+"[#] Backup dei dati"+chr10+"[#] Accesso multipiattaforma"+chr10+"[#] Funzionalità della community"+chr10+"[#] 10% di sconto su un prodotto [IAOMAI]",
+		eng: 'With the free registration to [§] you will have {30-day free trial of all apps} and upon expiry you will be able to use all the basic functions of the app:'+chr10+chr10+"[#] Up to 20 customers"+chr10+"[#] Data backup"+chr10+"[#] Cross-platform access"+chr10+"[#] Community functionality"+chr10+"[#] Tutte le app gratis per 30 giorni"+chr10+"[#] 10% discount on [IAOMAI] product",
+		esp: "" };
 	
 var TXT_TestoRegistrazioneEspansoAM={
 	ita: "Con la registrazione gratuita ad [§] potrai usufruire dei seguenti vantaggi:"+chr10+chr10+"[#] Backup dei dati"+chr10+"[#] 15 giorni di prova multipiattaforma",

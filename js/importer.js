@@ -163,8 +163,8 @@ var IMPORTER = {
 			document.getElementById("favicon").href='icons/faviconAM.ico?v='+(new Date()*1000);
 			document.getElementById("p_reg").getElementsByTagName("span")[0].innerHTML = '{{TXT_TestoRegistrazioneAM}}';
 			document.getElementById("testoRegistrazione").innerHTML = '{{TXT_TestoRegistrazioneEspansoAM}}';
-			if(!(iPad || iPhone))document.getElementById("testoRegistrazione").innerHTML += '{{TXT_TestoRegistrazioneEspansoAM2}}';
-			else document.getElementById("testoRegistrazione").innerHTML += '{{TXT_TestoRegistrazioneEspansoAM3}}';
+			/*if(iPad && !iPhone)document.getElementById("testoRegistrazione").innerHTML += '{{TXT_TestoRegistrazioneEspansoAM2}}';
+			else document.getElementById("testoRegistrazione").innerHTML += '{{TXT_TestoRegistrazioneEspansoAM3}}';*/
 			document.getElementById("app").value = tipoApp;
 			nomeApp = 'Anatomy Map';
 			sloganApp = 'Your pocket body atlas';

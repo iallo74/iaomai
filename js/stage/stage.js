@@ -142,7 +142,11 @@ function init() {
 			if(getVar("demo")=='anatomymap')cambiaModello('donna');
 			if(getVar("demo")=='tsubomap')caricaSet('meridiani_cinesi',this);
 			if(getVar("demo")=='shiatsumap')caricaSet('meridiani_shiatsu',this);
-			if(getVar("demo")=='pazienti')SCHEDA.apriElenco('base');
+			if(getVar("demo")=='pazienti'){
+				setTimeout(function(){
+					SCHEDA.apriElenco('base');
+				},1000);
+			}
 		}else{
 		//if(!smartMenu){
 			setTimeout( function(){

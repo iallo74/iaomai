@@ -337,3 +337,42 @@ body:not(.AM):not(.AM_light) #poweredby_inizio{
 	padding-left: 1px;
     padding-right: 1px;
 }
+#boxProvaDemo {
+    position: fixed;
+    z-index: 20;
+    bottom: 0px;
+    padding: 20px;
+    padding-left: 90px;
+    padding-right: 42px;
+    background: url(../img/ico_regalo2.png) left bottom no-repeat #076baa;
+    background-size: contain;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    cursor: pointer;
+    color: #FFF;
+    right: 30px;
+    box-shadow: 0px 0px 15px #feA;
+}
+@media (max-width: 620px){	
+	#boxProvaDemo{
+		right: 0px;
+   		box-shadow: none;
+   		background-size: auto 80px;
+		border-top-left-radius: 0px;
+		border-top-right-radius: 0px;
+	}
+}
+#boxProvaDemo *{
+    color: #FFF;
+}
+#boxProvaDemo div {
+    background: url(../img/chMenu.png) center center no-repeat;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    float: right;
+    margin-left: -30px;
+    margin-top: -10px;
+    margin-right: -30px;
+    background-size: 30px;
+}

@@ -62,6 +62,7 @@ var LINGUE = {
 				testo = testo.replace(/\[\*\]/g,'<img src="img/p_impostazioniN.png" height="22" style="vertical-align: middle;margin-top: -11px;margin-bottom: -8px;margin-left: -4px;">');
 				testo = testo.replace(/(iáomai)/g,"<b>iáomai</b>");
 				testo = testo.replace('[IAOMAI]','<img src="img/logo_iaomai_mini.png" style="display:inline-block;vertical-align:middle;width:80px;">');
+				testo = testo.replace(/\{/g,"<b>").replace(/\}/g,"</b>")
 				element.innerHTML = str.replace(/\{\{TXT_[^\}\}]+\}\}/i, testo);
 				str = element.innerHTML;
 			}
