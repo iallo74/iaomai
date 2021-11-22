@@ -26,7 +26,6 @@ SET = {
 	
 	// FUNZIONI
 	_init: function(){
-		
 		SETS = new THREE.Group();
 		SETS.name = "SETS";
 		for(m in MERIDIANI){ // elenco i meridiani

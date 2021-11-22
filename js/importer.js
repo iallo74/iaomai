@@ -49,6 +49,8 @@ if(location.search){
 }
 
 var FILES = {};
+FILES[verApp]={};
+
 var IMPORTER = {
 	files: [ // i files caricati all'inizio
     	'css/ambiente.css',
@@ -205,8 +207,9 @@ var IMPORTER = {
 		if(this.produzione && CONN.getConn()){
 			// verifico la presenza di aggiornamenti di versione (solo in "produzione")
 			var versioni = {};
-			for(f in FILES){
-				versioni[f] = FILES[f].lastVer;
+			if(!FILES[verApp])FILES[verApp]={};
+			for(f in FILES[verApp]){
+				versioni[f] = FILES[verApp][f].lastVer;
 			}
 			var JSNPOST = JSON.stringify( versioni );
 			while(JSNPOST.indexOf("/")>-1)JSNPOST=JSNPOST.replace("/","_");
@@ -221,7 +224,7 @@ var IMPORTER = {
 		if(txt!='' && txt!='404' && txt!='404-1' && txt!='undefined' && typeof(txt)!='undefined'){
 			console.log("Ricevo: "+txt);
 			modificati = JSON.parse(txt);
-			for(m in modificati)FILES[m]=modificati[m];
+			for(m in modificati)FILES[verApp][m]=modificati[m];
 			localPouchDB.setItem(MD5("FILES"), IMPORTER.COMPR(JSON.stringify(FILES))).then(function(){
 				// salvo il DB
 			});
@@ -271,8 +274,8 @@ var IMPORTER = {
 		var pass = true;
 		if(this.produzione){
 			// verifico la presenza in FILES (solo in versione "produzione")
-			if( FILES[nomeFile] ){
-				content = FILES[nomeFile].content;
+			if( FILES[verApp][nomeFile] ){
+				content = FILES[verApp][nomeFile].content;
 			}
 		}
 		if(!isModello){
@@ -368,29 +371,43 @@ window.addEventListener("load",function(){
 },false);
 
 var comb1=comb2=comb3=false;
+var prss_Z=prss_X=prss_C=prss_P=false;
 function tasti(e){
 	if(window.event)tasto=window.event.keyCode;
 	else tasto=e.keyCode;
 	//alert(tasto)
-	if(tasto==17)comb1=true; // CTRL
-	if(tasto==16)comb2=true; // SHIFT
-	if(tasto==18)comb3=true; // ALT
-	if(tasto==37 && comb3)return false; // FR SX
-	if(tasto==39 && comb3)return false; // FR DX
-	if(tasto==73 && comb1 && comb2)return false; // CTRL + SHIFT + i
-	if(tasto==123)return false; // F12
-	if(tasto==73 && comb1 && comb2)return false; // CTRL + SHIFT + i
-	if(tasto==83 && comb1 && comb2)return false; // CTRL + SHIFT + s
-	if(tasto==74 && comb1 && comb2)return false; // CTRL + SHIFT + j
-	if(tasto==77 && comb1 && comb2)return false; // CTRL + SHIFT + m
-	
+	if(tasto == 17)comb1=true; // CTRL
+	if(tasto == 16)comb2=true; // SHIFT
+	if(tasto == 18)comb3=true; // ALT
+	if(tasto == 37 && comb3)return false; // FR SX
+	if(tasto == 39 && comb3)return false; // FR DX
+	if(tasto == 73 && comb1 && comb2)return false; // CTRL + SHIFT + i
+	if(tasto == 123)return false; // F12
+	if(tasto == 73 && comb1 && comb2)return false; // CTRL + SHIFT + i
+	if(tasto == 83 && comb1 && comb2)return false; // CTRL + SHIFT + s
+	if(tasto == 74 && comb1 && comb2)return false; // CTRL + SHIFT + j
+	if(tasto == 77 && comb1 && comb2)return false; // CTRL + SHIFT + m
+	if(tasto == 90)prss_Z=true;
+	if(tasto == 88)prss_X=true;
+	if(tasto == 67)prss_C=true;
+	if(tasto == 80)prss_P=true;
+	if(prss_Z && prss_X && prss_C && prss_P){ // CTRL + SHIFT + ALT + x
+		CONFIRM.vis(	"Vuoi davvero cancellare tutti i dati in memoria?" ).then(function(pass){if(pass){
+			localPouchDB.clear();
+			localStorage.clear();
+		}});
+	}
 }
 function tastiUp(e){
 	if(window.event)tasto=window.event.keyCode;
 	else tasto=e.keyCode;
-	if(tasto==17)comb1=false; // CTRL
-	if(tasto==16)comb2=false; // SHIFT
-	if(tasto==18)comb3=false; // ALT
+	if(tasto == 17)comb1=false; // CTRL
+	if(tasto == 16)comb2=false; // SHIFT
+	if(tasto == 18)comb3=false; // ALT
+	if(tasto == 90)prss_Z=false;
+	if(tasto == 88)prss_X=false;
+	if(tasto == 67)prss_C=false;
+	if(tasto == 80)prss_P=false;
 }
 if(!touchable){	
 	document.onkeydown = tasti;
