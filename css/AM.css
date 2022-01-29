@@ -114,6 +114,7 @@ body.AM:not(.bodyModello).bodyStyled2{
 	height:110px !important;
 	margin-top:-110px !important;
 	background-image: url(../img/logo_AM_blue.png) !important;
+	background-size: auto 110px !important;
 }
 
 
@@ -125,6 +126,7 @@ body.AM:not(.bodyModello).bodyStyled2{
 	height:110px !important;
 	margin-top:-110px !important;
 	background-image: url(../img/logo_AM_light_blue.png) !important;
+	background-size: auto 110px !important;
 }
 
 .AM #p_piuma,

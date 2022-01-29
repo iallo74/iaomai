@@ -971,11 +971,13 @@ var PAZIENTI_FILTRI = {
 			}
 		}catch(err){}
 	},
-	cancellaFiltri: function(){
+	cancellaFiltri: function( noCar ){
+		if(typeof(noCar)=='undefined')var noCar = false;
+		console.log(noCar)
 		PAZIENTI.pazientiFiltrati = [];
 		PAZIENTI.parametriFiltri = [];
 		document.getElementById("scheda_testo").scrollTo(0,0);
-		PAZIENTI.car_filtri();
+		if(!noCar)PAZIENTI.car_filtri();
 		document.getElementById("paz_filtrati").style.display = 'none';
 		for(p in DB.pazienti.data){
 			if(!DB.pazienti.data[p].Cancellato*1){

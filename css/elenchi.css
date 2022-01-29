@@ -45,14 +45,14 @@ body:not(.smart) #chiudiSet,
     margin-right: 3px;
     height: 32px;
     opacity: 0.4;*/
-	float: left;
+    float: left;
     display: inline-block;
     vertical-align: middle;
-    width: 69px;
-    background-position: center center;
+    width: 88px;
+    background-position: 14px center, calc(100% - 6px)center;
     background-repeat: no-repeat;
-    background-image: url(../img/frSxB.png);
-    background-size: auto 50px;
+    background-image: url(../img/m_setsN.png), url(../img/frSxB.png);
+    background-size: auto 32px, auto 50px;
     cursor: pointer;
     margin-right: -15px;
     height: 47px;

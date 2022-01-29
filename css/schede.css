@@ -177,16 +177,17 @@ body:not(.smart) #scheda{
 	stroke-linecap: round;
 	stroke-width: 2px;
 }
-.schExp.schOp.LISTE .fixExp .lll:not(#lF){
+/*.schExp.schOp.LISTE .fixExp .lll:not(#lF){*/
+.schExp.schOp.schExp .fixExp .lll:not(#lF){
 	visibility:hidden !important;
 }
-.schOp .fixExp #l3,
+/*.schOp .fixExp #l3,
 .schOp:not(.LISTE) #l3{
 	visibility:hidden !important;
 	width:0px !important;
 	margin-left:0px !important;
 	margin-right:6px !important;
-}
+}*/
 #lF{
 	background-repeat:no-repeat;
 	background-position:center center;
@@ -202,8 +203,8 @@ body:not(.smart) #scheda{
     height: 36px;
     margin-top: -11px;
 }
-.schExp:not(.schOp) #lF,
-.schExp.schOp:not(.LISTE) #lF{
+.schExp:not(.schOp) #lF/*,
+.schExp.schOp:not(.LISTE) #lF*/{
 	display:none !important;
 }
 body:not(.touch ) .lll:hover line,

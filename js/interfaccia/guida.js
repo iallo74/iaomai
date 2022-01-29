@@ -48,6 +48,7 @@ var GUIDA = {
 			if(GUIDA.fumettoAperto){
 				document.getElementById(GUIDA.fumettoAperto).classList.remove("vis");
 				document.getElementById(GUIDA.fumettoAperto).classList.remove("visSch");
+				document.getElementById(GUIDA.fumettoAperto).classList.remove("noFr");
 			}
 			clearTimeout(GUIDA.tmFumetto);
 			document.getElementById("no_guida").dataset.name = "no_"+n;
@@ -59,6 +60,7 @@ var GUIDA = {
 				n='guida_def';
 			}
 			document.getElementById(n).classList.add("visSch");
+			if(document.getElementById('elenchi').classList.contains("schExp") && SCHEDA.menu_to3)document.getElementById(n).classList.add("noFr");
 			setTimeout( function(n){
 				document.getElementById(n).classList.add("vis");
 			},200, n);
@@ -71,6 +73,7 @@ var GUIDA = {
 	nasFumetto: function(){
 		if(GUIDA.fumettoAperto && (!GUIDA.overFumetto || GUIDA.overChiudi)){
 			document.getElementById(GUIDA.fumettoAperto).classList.remove("vis");
+			document.getElementById(GUIDA.fumettoAperto).classList.remove("noFr");
 			GUIDA.tmFumetto = setTimeout( function(){
 				if(GUIDA.fumettoAperto){
 					document.getElementById(GUIDA.fumettoAperto).classList.remove("visSch");

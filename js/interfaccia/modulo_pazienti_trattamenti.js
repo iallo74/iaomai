@@ -971,13 +971,14 @@ var PAZIENTI_TRATTAMENTI = {
 			var GA = PAZIENTI.galleryProvvisoria;
 			//if(typeof(DB.foto) == 'undefined')DB.foto = { data: [], lastSync: 0 };
 			for(i in GA){
-				if(typeof(GA[i].imgMini) != 'undefined'){
+				if(typeof(GA[i].imgMini) != 'undefined' && GA[i]!=null){
+					
 					// salvo l'immagine nel DB locale
 					DB.foto.data[i] = {
 						idFoto: GA[i].idFoto,
 						imgMini: GA[i].imgMini,
 						imgBig: GA[i].imgBig,
-						frv: (LOGIN_frv()!='')
+						frv: (LOGIN._frv()!='')
 					}
 					var NG = {
 						idFoto: GA[i].idFoto
@@ -985,51 +986,51 @@ var PAZIENTI_TRATTAMENTI = {
 					GA[i] = NG;
 				}
 			}
-			localPouchDB.setItem(MD5("DB"+LOGIN._frv()+".foto"), JSON.stringify(DB.foto)).then(function(){});
-
-			PAZIENTI.ricPuntiTratt();
-			if(TipoTrattamento=='A'){
-				TestoTrattamento={};
-				TestoTrattamento.AnamnesiMotivo=document.formMod.AnamnesiMotivo.value;
-				TestoTrattamento.AnamnesiDiagnosiOccidentale=document.formMod.AnamnesiDiagnosiOccidentale.value;
-				TestoTrattamento.AnamnesiDiagnosiMTC=document.formMod.AnamnesiDiagnosiMTC.value;
-				TestoTrattamento=JSON.stringify(TestoTrattamento);
-			}else TestoTrattamento=document.formMod.TestoTrattamento.value;
-			JSNPUSH={	"idTrattamento": document.formMod.idTrattamento.value*1,
-						"TitoloTrattamento": document.formMod.TitoloTrattamento.value,
-						"TimeTrattamento": document.formMod.TimeTrattamento.value*1,
-						"oraInizio": document.formMod.oraInizio.value*1,
-						"oraFine": document.formMod.oraFine.value*1,
-						"TestoTrattamento": TestoTrattamento,
-						"Prescrizione": document.formMod.Prescrizione.value,
-						"puntiTsuboMap": JSON.stringify(PAZIENTI.puntiProvvisori),
-						"sintomi": JSON.stringify(PAZIENTI.sintomiProvvisori),
-						"meridiani": JSON.stringify(PAZIENTI.meridianiProvvisori),
-						"gallery": JSON.stringify(GA),
-						"DataModifica": parseInt(DataModifica),
-						"LabelCiclo": LabelCiclo,
-						"TipoTrattamento": TipoTrattamento,
-						"CostoTrattamento": parseFloat(document.formMod.CostoTrattamento.value.replace(",","."))*1,
-						"Cancellato": 0,
-						"frv": (LOGIN._frv()!='') };
-			if(!DB.pazienti.data[PAZIENTI.idCL].trattamenti)DB.pazienti.data[PAZIENTI.idCL].trattamenti=[];
-			if(document.formMod.idTratt.value*1>-1){
-				DB.pazienti.data[PAZIENTI.idCL].trattamenti[document.formMod.idTratt.value*1]=JSNPUSH;
-				pDef=document.formMod.idTratt.value*1;
-			}else{
-				DB.pazienti.data[PAZIENTI.idCL].trattamenti.push(JSNPUSH);
-				pDef=DB.pazienti.data[PAZIENTI.idCL].trattamenti.length-1;
-			}
-			endChangeDetection();
-			SCHEDA.formModificato = false;
-			applicaLoading(document.querySelector(".listaTrattamenti"));
-			applicaLoading(document.getElementById("scheda_testo"));
-			localPouchDB.setItem(MD5("DB"+LOGIN._frv()+".pazienti"), IMPORTER.COMPR(DB.pazienti)).then(function(){ // salvo il DB
-				LOGIN.sincronizza(	'rimuoviLoading(document.querySelector(".listaTrattamenti"));'+
-									'rimuoviLoading(document.getElementById("scheda_testo"));'+
-									'PAZIENTI.pulisciGallery('+pDef+');' );
-				//SCHEDA.scaricaScheda();
-				
+			localPouchDB.setItem(MD5("DB"+LOGIN._frv()+".foto"), IMPORTER.COMPR(DB.foto)).then(function(){
+				PAZIENTI.ricPuntiTratt();
+				if(TipoTrattamento=='A'){
+					TestoTrattamento={};
+					TestoTrattamento.AnamnesiMotivo=document.formMod.AnamnesiMotivo.value;
+					TestoTrattamento.AnamnesiDiagnosiOccidentale=document.formMod.AnamnesiDiagnosiOccidentale.value;
+					TestoTrattamento.AnamnesiDiagnosiMTC=document.formMod.AnamnesiDiagnosiMTC.value;
+					TestoTrattamento=JSON.stringify(TestoTrattamento);
+				}else TestoTrattamento=document.formMod.TestoTrattamento.value;
+				JSNPUSH={	"idTrattamento": document.formMod.idTrattamento.value*1,
+							"TitoloTrattamento": document.formMod.TitoloTrattamento.value,
+							"TimeTrattamento": document.formMod.TimeTrattamento.value*1,
+							"oraInizio": document.formMod.oraInizio.value*1,
+							"oraFine": document.formMod.oraFine.value*1,
+							"TestoTrattamento": TestoTrattamento,
+							"Prescrizione": document.formMod.Prescrizione.value,
+							"puntiTsuboMap": JSON.stringify(PAZIENTI.puntiProvvisori),
+							"sintomi": JSON.stringify(PAZIENTI.sintomiProvvisori),
+							"meridiani": JSON.stringify(PAZIENTI.meridianiProvvisori),
+							"gallery": JSON.stringify(GA),
+							"DataModifica": parseInt(DataModifica),
+							"LabelCiclo": LabelCiclo,
+							"TipoTrattamento": TipoTrattamento,
+							"CostoTrattamento": parseFloat(document.formMod.CostoTrattamento.value.replace(",","."))*1,
+							"Cancellato": 0,
+							"frv": (LOGIN._frv()!='') };
+				if(!DB.pazienti.data[PAZIENTI.idCL].trattamenti)DB.pazienti.data[PAZIENTI.idCL].trattamenti=[];
+				if(document.formMod.idTratt.value*1>-1){
+					DB.pazienti.data[PAZIENTI.idCL].trattamenti[document.formMod.idTratt.value*1]=JSNPUSH;
+					pDef=document.formMod.idTratt.value*1;
+				}else{
+					DB.pazienti.data[PAZIENTI.idCL].trattamenti.push(JSNPUSH);
+					pDef=DB.pazienti.data[PAZIENTI.idCL].trattamenti.length-1;
+				}
+				endChangeDetection();
+				SCHEDA.formModificato = false;
+				applicaLoading(document.querySelector(".listaTrattamenti"));
+				applicaLoading(document.getElementById("scheda_testo"));
+				localPouchDB.setItem(MD5("DB"+LOGIN._frv()+".pazienti"), IMPORTER.COMPR(DB.pazienti)).then(function(){ // salvo il DB
+					LOGIN.sincronizza(	'rimuoviLoading(document.querySelector(".listaTrattamenti"));'+
+										'rimuoviLoading(document.getElementById("scheda_testo"));'+
+										'PAZIENTI.pulisciGallery('+pDef+');' );
+					//SCHEDA.scaricaScheda();
+					
+				});
 			});
 		}
 		return false;
@@ -1559,40 +1560,42 @@ var PAZIENTI_TRATTAMENTI = {
 		
 		// punti da TEORIA
 		for(t in DB.set.teoria){
-			EL = {};
-			EL.titolo = DB.set.teoria[t].TitoloSezione;
-			EL.contenuto = [];
-			EL.livello = 2;
-			EL.parent = PAZIENTI.elencoGruppoPunti;
-			for(i in DB.set.teoria[t].contenuti){
-				EL2 = {};
-				EL2.titolo = DB.set.teoria[t].contenuti[i].TitoloTeoria;
-				EL2.contenuto = [];
-				EL2.livello = 3;
-				EL2.parent = EL;
-				// scansiono il testo
-				var txtTeo=DB.set.teoria[t].contenuti[i].TestoTeoria;
-				
-				if(PAZIENTI.tipoGruppo=='P')re = /\[\.[0-9]{1,2}\.[A-Z]{2}\.\]/ig;
-				else re = /\[\.[A-Z]{2}\.\]/ig;
-				var result = txtTeo.match(re);
-				for(k in result){
-					var pP = result[k].split(".");
-					PT=pP[1];
-					if(PAZIENTI.tipoGruppo=='P')PT += '.'+pP[2];
-					if(EL2.contenuto.indexOf(PT)===-1){
-						EL2.contenuto.push(PT);
-						presenti = true;
+			if(!__(DB.set.teoria[t].noList)){
+				EL = {};
+				EL.titolo = DB.set.teoria[t].TitoloSezione;
+				EL.contenuto = [];
+				EL.livello = 2;
+				EL.parent = PAZIENTI.elencoGruppoPunti;
+				for(i in DB.set.teoria[t].contenuti){
+					EL2 = {};
+					EL2.titolo = DB.set.teoria[t].contenuti[i].TitoloTeoria;
+					EL2.contenuto = [];
+					EL2.livello = 3;
+					EL2.parent = EL;
+					// scansiono il testo
+					var txtTeo=DB.set.teoria[t].contenuti[i].TestoTeoria;
+					
+					if(PAZIENTI.tipoGruppo=='P')re = /\[\.[0-9]{1,2}\.[A-Z]{2}\.\]/ig;
+					else re = /\[\.[A-Z]{2}\.\]/ig;
+					var result = txtTeo.match(re);
+					for(k in result){
+						var pP = result[k].split(".");
+						PT=pP[1];
+						if(PAZIENTI.tipoGruppo=='P')PT += '.'+pP[2];
+						if(EL2.contenuto.indexOf(PT)===-1){
+							EL2.contenuto.push(PT);
+							presenti = true;
+						}
+					}
+					//if(puntiTeoGroup){
+					if(EL2.contenuto.length){
+						EL.contenuto[i] = EL2;
 					}
 				}
-				//if(puntiTeoGroup){
-				if(EL2.contenuto.length){
-					EL.contenuto[i] = EL2;
+				//if(HTML_provv && t*1>0){
+				if(EL.contenuto.length && t*1>0){
+					PAZIENTI.elencoGruppoPunti.contenuto.push(EL);
 				}
-			}
-			//if(HTML_provv && t*1>0){
-			if(EL.contenuto.length && t*1>0){
-				PAZIENTI.elencoGruppoPunti.contenuto.push(EL);
 			}
 		}
 		
@@ -1734,7 +1737,8 @@ var PAZIENTI_TRATTAMENTI = {
 			}
 			document.getElementById("gruppoPunti_cont").style.left = l+"px";
 			document.getElementById("gruppoPunti_cont").style.width = w+"px";
-			document.getElementById("gruppoPunti_cont").style.top = (document.getElementById("scheda").scrollHeight/2-70)+"px";
+			/*document.getElementById("gruppoPunti_cont").style.top = (document.getElementById("scheda").scrollHeight/2-70)+"px";*/
+			document.getElementById("gruppoPunti_cont").style.top = '118px';
 			document.getElementById("gruppoPunti_cont").classList.add("visSch");
 			PAZIENTI.popolaGruppoPunti();
 		}else{

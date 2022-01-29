@@ -81,12 +81,23 @@ var RICERCHE = {
 						if(n<partiNT.length-1)NT+=".";
 					}
 					if(partiNT[0].length == 1)partiNT[0]='0'+partiNT[0];
-					
-					R_parz += RICERCHE.wR({ az: "SET.apriTsubo('"+partiNT[1]+"."+partiNT[0]+"');RICERCHE.nascondiGlobal();",
-											cont: NT,
-											bull: '<font style="color:#FFCC00;">&#8226;</font>' });
-					nRisParz++;
-					nRis++;
+					var pass = true;
+					if(DB.note.data[p].idPaziente>-1){
+						pass = false;
+						for(paz in DB.pazienti.data){
+							if(	DB.pazienti.data[paz].idPaziente == DB.note.data[p].idPaziente){
+								NT += ' - '+DB.pazienti.data[paz].Nome+" "+DB.pazienti.data[paz].Cognome;
+								pass = true;
+							}
+						}
+					}
+					if(pass){
+						R_parz += RICERCHE.wR({ az: "SET.apriTsubo('"+partiNT[1]+"."+partiNT[0]+"');RICERCHE.nascondiGlobal();",
+												cont: NT,
+												bull: '<font style="color:#FFCC00;">&#8226;</font>' });
+						nRisParz++;
+						nRis++;
+					}
 				}
 			}
 		}
@@ -344,7 +355,7 @@ var RICERCHE = {
 		JSNPUSH={	"TestoRicerca": DB.ricerche.data[n].TestoRicerca,
 					"DataModifica": parseInt(DataModifica),
 					"Cancellato": 1,
-					"frv": (LOGIN_frv()!='')	};
+					"frv": (LOGIN._frv()!='')	};
 		DB.ricerche.data[n]=JSNPUSH;
 		localPouchDB.setItem(MD5("DB"+LOGIN._frv()+".ricerche"), IMPORTER.COMPR(DB.ricerche)).then(function(){ // salvo il DB
 			LOGIN.sincronizza();

@@ -3133,7 +3133,8 @@ DB.set= {
 					TitoloTeoria: "11. Principi generali di terapia cinese",
 					TestoTeoria: "<p align=\"justify\">Nella terapia è necessario inquadrare la radice della   malattia (Zheng Qi, condizione iniziale, stato cronico) e la manifestazione   (agente patogeno, manifestazione clinica) che in ogni caso formano un tutt'uno.   L’analisi della situazione è sempre estremamente importante per   poter agire sulla base di ogni alterazione e quindi rendere duraturo lo stato   di benessere.</p><p align=\"justify\"> <b>Tonificare la Zheng Qi</b><br>  Agopuntura, erbologia, Tai Qi, riposo. La tonificazione del Qi si effettua quando   è presente del vuoto. Ruolo cardine lo detiene la Milza come fonte di   energia vitale e quindi se necessario va tonificata.</p><p align=\"justify\"> <b>Espellere il fattore patogeno</b><br>  Agopuntura, erbologia, Tui-Na, coppettazione. In condizione di pieno. In particolare   si usa solo questo trattamento nelle sindromi esterne a meno che il paziente   non sia debilitato.</p>" 	
 				}
-			]
+			],
+			noList: true
 		},
 		{
 			TitoloSezione: "Meridiani PRINCIPALI",
@@ -3252,7 +3253,8 @@ DB.set= {
 						"LU"
 					]
 				}
-			]
+			],
+			noList: true
 		},
 		{
 			TitoloSezione: "Meridiani LUO",
@@ -3390,7 +3392,8 @@ DB.set= {
 						"ST_GLUO"
 					]
 				}
-			]
+			],
+			noList: true
 		},
 		{
 			TitoloSezione: "Meridiani DISTINTI",
@@ -3496,7 +3499,8 @@ DB.set= {
 						"LU_DIV"
 					]
 				}
-			]
+			],
+			noList: true
 		},
 		{
 			TitoloSezione: "Meridiani STRAORDINARI",
@@ -3525,7 +3529,7 @@ DB.set= {
 				{
 					OcchielloTeoria: "Meridiano STRAORDINARIO",
 					TitoloTeoria: "Chongmai (Vaso d'incrocio)",
-					TestoTeoria: "<p align=\"justify\">Detto anche Vaso d'incrocio o Vaso di attacco, per il significato della parola Chong (appunto strategia, attacco, luogo di passaggio), Chongmai è il pimo meridiano che si forma in fase embrionale. Per questa ragione viene detto la \"madre di tutti i meridiani\". E' dislocato secondo un asse verticale, partendo dai piedi e raggiungendo la testa. Costituisce l'asse strutturale che collega il Cielo con la Terra.<br>  E' un meridiano di prima generazione, ovvero è uno dei primi quattro che si formano nello stato embrionale (assieme a Daimai, Dumai e Renmai). In questa fase il Qi prenatale si trasforma nel cosiddetto Mingmen (la Porta della Vita o Porta del Destino) dove la vita si forma e si genera in ogni momento.<br>  Chongmai è un meridiano Yin e nasce dal Rene (come tutti i meridiani straordinari Yin) nella zona Mingmen.<br>  <br>  <b>Azione</b><br>   E' un meridiano bilaterale che sale dal piede verso la testa e si riunisce all'altezza di [.23.CV.] (punto in stretta relazione con la Tiroide) dopo essersi ramificato all'altezza dei polmoni. In seguito si separa per gingere ai lati del naso con varie ramificazioni.Il Chongmai e il \"mare del sangue\" e comanda e alimenta tutti i meridiani tradizionali per la sua stretta relazione con i reni e con lo stomaco (nutrimento energetico il primo e fisico il secondo).<br>E' detto Vaso d'attacco per la sua grande capacità di alimentare tutti i meridiani con l'energia nativa. Per questa ragione è efficace con tutti i disturbi aggressivi e di origine improvvisa come gli spasmi, crisi di origine nervosa o circolatoria, eccitazione improvvisa, disturbi della motricità derivanti da in di Yang oppure per atonia e debolezza muscolare e nervosa da insufficienza energetica.<br>La sintomatogolia, oltre a quella appena descritta può includere  violenti disturbi all'apparato urogenitale (aborti, cistiti, prostatiti), rigidità della colonna, dolore all'inguine o all'interno coscia e piedi freddi.<br><br><b>Meridiano accoppiato</b><br><i>Yinweimai</i> (Vaso di unione Yin)<br><br><b>Punto chiave</b><br>[.4.SP.] (Gongsun)</p><br><br><p><b>IL PERCORSO</b><br><br>Il <i>ch&#333;ng mài</i> (vaso direttore) viene definito \"mare dei cinque organi <i>y&#299;n</i> e sei organi <i>yáng</i>\", poiché è molto importante per la connessione tra <i>qì</i> del Cielo anteriore e <i>qì</i> del Cielo posteriore. Viene inoltre chiamato \"mare dei 12 canali\", perché si divide in diversi piccoli  rami, attraverso i quali scorre il <i>qì</i> difensivo. Infine, si chiama anche \"mare del sangue\", per il controllo che svolge sul flusso sanguigno all'interno  dell'utero e dei canali luò profondi del sangue. è un canale molto complesso e interessa diversi organi.</p><p>Il <i>ch&#333;ng mài</i> è strutturato in diversi rami: interno, addominale, spinale, discendente e della testa.<br />    - Il  <b style=\"color:#0072ff;\">ramo interno</b> inizia a livello dell'addome, passa dall'utero, nelle donne, e dalla prostata, negli uomini, e riaffiora nel punto [.1.CV.] <i>huì y&#299;n</i>.<br />  - Il <b style=\"color:#F00;\">ramo addominale</b> fuoriesce dal punto [.30.ST.] <i>qì ch&#333;ng</i>, attraversa tutti i punti del rene, fino a [.21.KI.] <i>you mèn</i>; dopodiché si muove verso il torace.<br />  - Il <b style=\"color:#3a8a05;\">ramo spinale</b> sale lungo la colonna  vertebrale fino al punto [.1.CV.] <i>huì y&#299;n</i>.<br />  - Il <b style=\"color:#940692;\">ramo discendente</b> affiora  dal punto [.30.ST.] <i>qì ch&#333;ng</i>, procede verso la gamba, seguendone la faccia interna, fino al malleolo interno; qui si si ramifica: da un lato giunge all'arco  del piede, dove si collega al canale dei reni; dall'altro approda sull'alluce, dove si connette con il canale del fegato.<br />  - Il  <b style=\"color:#bf870f;\">ramo della testa</b> passa attraverso la gola, il mento e arriva agli occhi.</p>",
+					TestoTeoria: "<p align=\"justify\">Detto anche Vaso d'incrocio o Vaso di attacco, per il significato della parola Chong (appunto strategia, attacco, luogo di passaggio), Chongmai è il pimo meridiano che si forma in fase embrionale. Per questa ragione viene detto la \"madre di tutti i meridiani\". E' dislocato secondo un asse verticale, partendo dai piedi e raggiungendo la testa. Costituisce l'asse strutturale che collega il Cielo con la Terra.<br>  E' un meridiano di prima generazione, ovvero è uno dei primi quattro che si formano nello stato embrionale (assieme a Daimai, Dumai e Renmai). In questa fase il Qi prenatale si trasforma nel cosiddetto Mingmen (la Porta della Vita o Porta del Destino) dove la vita si forma e si genera in ogni momento.<br>  Chongmai è un meridiano Yin e nasce dal Rene (come tutti i meridiani straordinari Yin) nella zona Mingmen.<br>  <br>  <b>Azione</b><br>   E' un meridiano bilaterale che sale dal piede verso la testa e si riunisce all'altezza di [.23.CV.] (punto in stretta relazione con la Tiroide) dopo essersi ramificato all'altezza dei polmoni. In seguito si separa per gingere ai lati del naso con varie ramificazioni.Il Chongmai e il \"mare del sangue\" e comanda e alimenta tutti i meridiani tradizionali per la sua stretta relazione con i reni e con lo stomaco (nutrimento energetico il primo e fisico il secondo).<br>E' detto Vaso d'attacco per la sua grande capacità di alimentare tutti i meridiani con l'energia nativa. Per questa ragione è efficace con tutti i disturbi aggressivi e di origine improvvisa come gli spasmi, crisi di origine nervosa o circolatoria, eccitazione improvvisa, disturbi della motricità derivanti da in di Yang oppure per atonia e debolezza muscolare e nervosa da insufficienza energetica.<br>La sintomatogolia, oltre a quella appena descritta può includere  violenti disturbi all'apparato urogenitale (aborti, cistiti, prostatiti), rigidità della colonna, dolore all'inguine o all'interno coscia e piedi freddi.<br><br><b>Meridiano accoppiato</b><br><i>Yinweimai</i> (Vaso di unione Yin)<br><br><b>Punto chiave</b><br>[.4.SP.] (Gongsun)</p><br><br><p><b>IL PERCORSO</b><br><br>Il <i>ch&#333;ng mài</i> (vaso direttore) viene definito \"mare dei cinque organi <i>y&#299;n</i> e sei organi <i>yáng</i>\", poiché è molto importante per la connessione tra <i>qì</i> del Cielo anteriore e <i>qì</i> del Cielo posteriore. Viene inoltre chiamato \"mare dei 12 canali\", perché si divide in diversi piccoli  rami, attraverso i quali scorre il <i>qì</i> difensivo. Infine, si chiama anche \"mare del sangue\", per il controllo che svolge sul flusso sanguigno all'interno  dell'utero e dei canali luò profondi del sangue. è un canale molto complesso e interessa diversi organi.</p><p>Il <i>ch&#333;ng mài</i> è strutturato in diversi rami: interno, addominale, spinale, discendente e della testa.<br />    - Il  <b style=\"color:#F00;\">ramo interno</b> inizia a livello dell'addome, passa dall'utero, nelle donne, e dalla prostata, negli uomini, e riaffiora nel punto [.1.CV.] <i>huì y&#299;n</i>.<br />  - Il <b style=\"color:#0072ff;\">ramo addominale</b> fuoriesce dal punto [.30.ST.] <i>qì ch&#333;ng</i>, attraversa tutti i punti del rene, fino a [.21.KI.] <i>you mèn</i>; dopodiché si muove verso il torace.<br />  - Il <b style=\"color:#940692;\">ramo spinale</b> sale lungo la colonna  vertebrale fino al punto [.1.CV.] <i>huì y&#299;n</i>.<br />  - Il <b style=\"color:#3a8a05;\">ramo discendente</b> affiora  dal punto [.30.ST.] <i>qì ch&#333;ng</i>, procede verso la gamba, seguendone la faccia interna, fino al malleolo interno; qui si si ramifica: da un lato giunge all'arco  del piede, dove si collega al canale dei reni; dall'altro approda sull'alluce, dove si connette con il canale del fegato.<br />  - Il  <b style=\"color:#bf870f;\">ramo della testa</b> passa attraverso la gola, il mento e arriva agli occhi.</p>",
 					meridianiSecondari: [
 						"CHM_r1",
 						"CHM_r2",
@@ -3574,7 +3578,8 @@ DB.set= {
 						"YAWM_"
 					]
 				}
-			]
+			],
+			noList: true
 		},
 		{
 			TitoloSezione: "Meridiani MUSCOLARI",
@@ -3692,7 +3697,8 @@ DB.set= {
 						"HT_MT"
 					]
 				}
-			]
+			],
+			noList: true
 		},
 		{
 			TitoloSezione: "Punti particolari",
@@ -3782,7 +3788,8 @@ DB.set= {
 					TitoloTeoria: "Coppettazione su dorso[video]coppettazione",
 					TestoTeoria: "video=coppettazione" 	
 				}
-			]
+			],
+			noList: true
 		},
 		{
 			TitoloSezione: "Glossario e riferimenti",
@@ -3803,7 +3810,8 @@ DB.set= {
 					TitoloTeoria: "Riferimenti bibliografici",
 					TestoTeoria: "<ol><li><b> I fondamenti della Medicina Tradizionale Cinese</b><br />    di Giovanni Maciocia<br />    ed. Casa editrice Ambrosiana<br />    Anno 1996</li>  <li><b> I canali di agopuntura</b><br />    di Giovanni Maciocia<br />    ed. Edra<br />    Anno 2008</li><li> <b>Manuale di Agopuntura</b><br />    <i>di Peter Deedman e Mazin Al-Khafaji con Kevin Baker</i><br />    ed. Casa Editrice Ambrosiana<br />    Anno 2000</li><li><b> Atlas of acupuncture</b><br />    di Claudia Focks<br />    ed. Churchill Livingstone<br />    Anno 2008</li><li> <b>Agopuntura Tradizionale, la legge dei 5 elementi</b><br />    <i>di Dianne M. Connely</i><br />    ed. RED<br />    Anno 2014</li><li><b>Medicina Tradizionale Cinese per lo Shiatsu e il TuiNa</b><br />    <i>di Maurizio Corradini, Carlo di Stanislao e Maurizio Porimi</i><br />    ed. Casa editrice Ambrosiana VOL I e II<br />    Anno 2001</li></ol>" 	
 				}
-			]
+			],
+			noList: true
 		}
 	],
 

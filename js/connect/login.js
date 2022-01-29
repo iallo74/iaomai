@@ -192,7 +192,7 @@ var LOGIN = {
 												scaricaSet();
 												caricaSet(vSet);
 											}
-											PAZIENTI.cancellaFiltri();
+											PAZIENTI.cancellaFiltri(true);
 											SCHEDA.scaricaScheda();
 										}
 									}, 500);
@@ -399,7 +399,7 @@ var LOGIN = {
 		DB._reset(); // <<<<<<<< FRV
 		LOGIN.getDB();
 		scaricaSet();
-		PAZIENTI.cancellaFiltri();
+		PAZIENTI.cancellaFiltri(true);
 		SCHEDA.scaricaScheda();
 	},
 	annullaUtente: function(){ // cancella tutti i dati utente in locale
@@ -879,8 +879,6 @@ var LOGIN = {
 												DB.foto=IMPORTER.DECOMPR(dbCont);
 												//totSinc++; /* le foto non contano perché sono solo in upload */
 												var elenco='';
-												
-												
 												
 												if(Nuovo){ // se è un account nuovo popolo i DB con quelli DEMO
 													DB.pazienti.data = DB.pulisciFRV(archiviDemo.pazienti);

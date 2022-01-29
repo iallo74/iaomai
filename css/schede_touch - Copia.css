@@ -284,7 +284,8 @@ body.touch:not(.smart) #l3{
 .smart .cartella:not(.cartellaAperta) .menuElenchi{
 	display:none !important;
 }
-.smart #elenchi:not(.schExp) .menuElenchi{
+/*.smart #elenchi:not(.schExp) .menuElenchi{*/
+.smart #elenchi .menuElenchi{
 	display: inline-block;
 	position: fixed;
 	right: 0px;
@@ -296,7 +297,9 @@ body.touch:not(.smart) #l3{
 	border-top: 1px solid rgba(0,0,0,0.3);
 	z-index:100;
 }
-
+.smart #elenchi.schExp .menuElenchi{
+    top: 34px;
+}
 .smart #elenchi:not(.schExp) .addTrattBtn span{
 	display:block !important;
 }

@@ -65,7 +65,7 @@
     box-shadow: 0px 0px 5px #000;
 	z-index: 1000;
     position: absolute;
-	cursor:pointer;
+	cursor:grab;
 }
 #img_man{
     position: absolute;
@@ -73,7 +73,7 @@
     right: 0px;
     width: 40px;
     height: 40px;
-	cursor:pointer;	
+	cursor:nwse-resize;	
 	padding-top:10px;
 	padding-left:10px;
 }

@@ -1,6 +1,5 @@
 
 SET = {
-	
 	// VARIABILI
 	INTERSECTED: null,
 	P: [],
@@ -23,11 +22,24 @@ SET = {
 	meridianiSecondariAccesi: [],
 	preCM: false, // memorizza il contrast method prima di attivarlo su un punto interno
 	eviPalls: [],
+	geometryPallino: null,
+	geometryPallinoTrasp: null,
 	
 	// FUNZIONI
 	_init: function(){
 		SETS = new THREE.Group();
 		SETS.name = "SETS";
+		
+		/*var facce = 6;
+		var facceTrasp = 8;*/
+		var facce = 5;
+		var facceTrasp = 7;
+		if(isTablet){
+			facce = 4;
+			facceTrasp = 6;
+		}
+		this.geometryPallino = new THREE.SphereGeometry( 0.02, facce, facce );
+		this.geometryPallinoTrasp = new THREE.SphereGeometry( 0.07, facceTrasp, facceTrasp );
 		for(m in MERIDIANI){ // elenco i meridiani
 			this.LN[m] = new THREE.Group();
 			this.LN[m].name="LN_"+m;
@@ -91,6 +103,7 @@ SET = {
 			var n=-1;
 			var PTS=MERIDIANI[m][globals.modello.cartella].punti;
 			var ptAdd = false;
+			
 			for(p in PTS){
 				if(PTS[p]!=''){
 					var x=PTS[p].array[0];
@@ -107,12 +120,16 @@ SET = {
 						
 					// pallino colorato
 					n++;
-					var raggio = 0.02;
-					if(__(PTS[p].dupl))raggio = 0.018;
-					var geometry = new THREE.SphereGeometry( raggio, 6, 6 );
+					/////var raggio = 0.02;
+					/////if(__(PTS[p].dupl))raggio = 0.018;
+					/////var geometry = new THREE.SphereGeometry( raggio, 6, 6 );
 					//var geometry = new THREE.BoxGeometry( 0.02, 0.02, 0.02 );
-					this.P[n] = new THREE.Mesh( geometry, this.MAT.pointBase );
+					
+					
+					this.P[n] = new THREE.Mesh( this.geometryPallino, this.MAT.pointBase );
 					this.P[n].position.set(x,y,z);
+					
+					if(__(PTS[p].dupl))raggio = this.P[n].scale = 0.9;
 					this.P[n].name=PTS[p].nome;
 					if(sigla)this.P[n].userData.sigla = sigla;
 					if(interno)this.P[n].userData.interno = true;
@@ -121,8 +138,8 @@ SET = {
 						
 					// pallino trasparente
 					n++;
-					var geometryTrasp = new THREE.SphereGeometry( 0.07, 8, 8 );
-					this.P[n] = new THREE.Mesh( geometryTrasp, this.MAT.pointTrasp ); 
+					/////var geometryTrasp = new THREE.SphereGeometry( 0.07, 8, 8 );
+					this.P[n] = new THREE.Mesh( this.geometryPallinoTrasp, this.MAT.pointTrasp ); 
 					this.P[n].position.set(x,y,z);
 					this.P[n].name='_'+PTS[p].nome;
 					if(sigla)this.P[n].userData.sigla = sigla;
@@ -224,7 +241,14 @@ SET = {
 		
 		SET.leggiNote();
 		nasLoader();
-		if(postApreSet)SCHEDA.apriElenco('set');
+		if(postApreSet){
+			if(SCHEDA.livelloApertura!=3)SCHEDA.apriElenco('set');
+			else{
+				GUIDA.visFumetto("guida_set_mini");
+				SCHEDA.chiudiElenco();
+				MENU.chiudiMenu();
+			}
+		}
 		postApreSet = false;
 	},
 	
@@ -801,7 +825,7 @@ SET = {
 			if(nTsubo.length == 1)nTsubo = "0"+nTsubo;
 			var ptSx = scene.getObjectByName("_"+pP[1]+"."+nTsubo+".SX");
 			var ptDx = scene.getObjectByName("_"+pP[1]+"."+nTsubo+".DX");
-			var ptCc = scene.getObjectByName("_"+pP[1]+"."+nTsubo);
+			var ptCc = scene.getObjectByName("_"+pP[1]+"."+nTsubo+".");
 			if(ptSx)ptSx.material=SET.MAT.pointEvi;
 			if(ptDx)ptDx.material=SET.MAT.pointEvi;
 			if(ptCc)ptCc.material=SET.MAT.pointEvi;
@@ -824,7 +848,7 @@ SET = {
 			}
 			var ptSx = scene.getObjectByName("_"+pP[1]+"."+nTsubo+".SX");
 			var ptDx = scene.getObjectByName("_"+pP[1]+"."+nTsubo+".DX");
-			var ptCc = scene.getObjectByName("_"+pP[1]+"."+nTsubo);
+			var ptCc = scene.getObjectByName("_"+pP[1]+"."+nTsubo+".");
 			if(ptSx)ptSx.material = mat;
 			if(ptDx)ptDx.material = mat;
 			if(ptCc)ptCc.material = mat;
@@ -841,7 +865,7 @@ SET = {
 				if(nTsubo.length == 1)nTsubo = "0"+nTsubo;
 				var ptSx = scene.getObjectByName("_"+pP[1]+"."+nTsubo+".SX");
 				var ptDx = scene.getObjectByName("_"+pP[1]+"."+nTsubo+".DX");
-				var ptCc = scene.getObjectByName("_"+pP[1]+"."+nTsubo);
+				var ptCc = scene.getObjectByName("_"+pP[1]+"."+nTsubo+".");
 				if(ptSx)ptSx.material=SET.MAT.pointTrasp;
 				if(ptDx)ptDx.material=SET.MAT.pointTrasp;
 				if(ptCc)ptCc.material=SET.MAT.pointTrasp;

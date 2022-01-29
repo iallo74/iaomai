@@ -34,6 +34,7 @@ var SCHEDA = {
 	versoRedim: '',
 	gapScheda: 16, /* 17 */
 	livelloApertura: 2,
+	menu_to3: true, // indica che il menu di primo livello deve restare sempre a 3
 	ultimaCartella: '', // l'id della sottocartella aperta quando si clicca su una scheda (per smartMenu)
 	htmlPallini:	'<div id="btnMenuScheda" onClick="SCHEDA.swMenuScheda();">' +
 					'<svg viewBox="0 0 25 36"><circle cy="11"></circle><circle cy="18"></circle>' +
@@ -139,7 +140,7 @@ var SCHEDA = {
 		if(espansa){
 			if(!SCHEDA.libera.stato){
 				if(!SCHEDA.hOpened)SCHEDA.hOpened = 200;
-				if(classe.indexOf("scheda_")==-1){
+				if(classe.indexOf("scheda_")==-1 || smartMenu){
 					document.getElementById("scheda_testo").style.height = SCHEDA.hOpened+"px";
 				}else{
 					document.getElementById("scheda_testo").style.height = (HF()-SCHEDA.getMM()+SCHEDA.gapScheda)+"px";
@@ -647,9 +648,10 @@ var SCHEDA = {
 		document.getElementById("elenchi_cont").classList.add("visSch");
 		var livello = SCHEDA.livelloApertura;
 		//if(!document.getElementById("elenchi").classList.contains("LISTE"))livello = 2;
-		SCHEDA.setMenuDim(livello);
+		SCHEDA.setMenuDim(2);
 		MENU.desIcona();
 		MENU.chiudiMenu();
+		SCHEDA.setMenuDim(livello);
 		if(typeof(expanded)=='undefined')var expanded = false;
 		if(typeof(tipo)=='undefined')var tipo = false;
 		if(tipo){
@@ -695,7 +697,6 @@ var SCHEDA = {
 	},
 	setMenuDim: function( tipo, daBtn ){
 		if(typeof(daBtn) == 'undefined')var daBtn = false;
-		
 		// forzo l'apertura compressa se c'è una scheda aperta
 		if(	SCHEDA.livelloApertura==3 && 
 			document.getElementById("scheda").classList.contains("visSch") && 
@@ -890,7 +891,11 @@ var SCHEDA = {
 				document.getElementById("elenchi_titolo").classList.add("visSch");
 			}
 		}
-		if(!document.getElementById("elenchi").classList.contains("LISTE"))SCHEDA.setMenuDim(2);
+		
+		/*
+		decommentare per far restare il menu di primo livello basso anche quando è ".schExp"
+		*/
+		//if(!document.getElementById("elenchi").classList.contains("LISTE"))SCHEDA.setMenuDim(2);
 	},
 	caricaPulsanti: function(html){
 		document.getElementById("pulsanti_set").innerHTML=html;

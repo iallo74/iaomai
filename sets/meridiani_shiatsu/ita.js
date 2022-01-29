@@ -2870,7 +2870,8 @@ DB.set= {
 					TitoloTeoria: "11. Principi generali di terapia cinese",
 					TestoTeoria: "<p align=\"justify\">Nella terapia è necessario inquadrare la radice della   malattia (Zheng Qi, condizione iniziale, stato cronico) e la manifestazione   (agente patogeno, manifestazione clinica) che in ogni caso formano un tutt'uno.   L’analisi della situazione è sempre estremamente importante per   poter agire sulla base di ogni alterazione e quindi rendere duraturo lo stato   di benessere.</p><p align=\"justify\"> <b>Tonificare la Zheng Qi</b><br>  Agopuntura, erbologia, Tai Qi, riposo. La tonificazione del Qi si effettua quando   è presente del vuoto. Ruolo cardine lo detiene la Milza come fonte di   energia vitale e quindi se necessario va tonificata.</p><p align=\"justify\"> <b>Espellere il fattore patogeno</b><br>  Agopuntura, erbologia, Tui-Na, coppettazione. In condizione di pieno. In particolare   si usa solo questo trattamento nelle sindromi esterne a meno che il paziente   non sia debilitato.</p>" 	
 				}
-			]
+			],
+			noList: true
 		},
 		{
 			TitoloSezione: "Meridiani tradizionali",
@@ -2910,7 +2911,6 @@ DB.set= {
 					sigla: "SI",
 					TestoTeoria: "<div style=\"background:url(sets/common/mtc/img/txt_meridiani/SI/simbolo_elemento.png) no-repeat;min-height:441px;\"><p><i>Assimilazione, Assorbimento</i><br><font color=\"#666666\">Meridiano Yang di Fuoco</font></p><p><b>Governa:</b><br>  - Intestino Tenue<br>  - Midollo spinale</p><p><b>Rappresenta:</b><br>  - Meccanismo anti-shock<br>  - Risata <br>  - Autoanalisi<br>  - Rivalutazione del Sé<br>  - Intuizione<br>  - Determinazione<br>  - Emozioni<br>  - Stabilità emozionale<br>  - Compassione<br>  - Amore<br>  - Gioia</p><p><b>Risolve:</b><br>  - Grandi cambiamenti interiori<br>  - Transizioni<br>  - Problemi dell'assimilazione<br>  - Problemi di interpretazione</p></div>" 	
 				},
-			
 				{
 					TitoloTeoria: "Cuore",
 					sigla: "HT",
@@ -2936,7 +2936,6 @@ DB.set= {
 					sigla: "LU",
 					TestoTeoria: "<div style=\"background:url(sets/common/mtc/img/txt_meridiani/LU/simbolo_elemento.png) no-repeat left 35px;min-height:480px;\"><p><i>Immissione di KI, limiti, struttura, vitalità</i><br><font color=\"#666666\">Meridiano Yin di Aria (o Metallo)</font></p><p><b>Governa:</b><br>  - Apparato respiratorio<br>  - Scambio energetico<br>  - Pelle<br>  - Sudore</p><p><b>Rappresenta:</b><br>  - Relazioni con l'ambiente esterno<br>  - Relazioni sociali<br>  - Trattenere o lasciare andare<br>  - I nostri confini</p><p><b>Risolve:</b><br>  - Comportamento antisociale<br>  - Lutto<br>  - Dolore<br>  - Pianto<br>  - Tristezza<br>  - Problemi correlati all'apparato respiratorio<br>  - Problemi dermatologici</p></div>" 	
 				},
-			
 				{
 					TitoloTeoria: "Vaso governatore",
 					sigla: "GV",
@@ -2947,7 +2946,8 @@ DB.set= {
 					sigla: "CV",
 					TestoTeoria: "<div style=\"background:url(sets/common/mtc/img/txt_meridiani/CV/simbolo_elemento.png) no-repeat left -55px;min-height:389px;\"><p><font color=\"#666666\">Meridiano straordinario Yin</font></p><p><b>Governa:</b><br>  - I meridiani Yin<br>  - Energie Yin<br>  - Parte materiale<br>  - Fisiologia organica<br>  - Rachide profondo<br>  - Caratteri  sessuali esterni</p><p><b>Rappresenta:</b><br>  - Procreazione<br>  - Crescita<br>  - Realizzazione della vita</p><p><b>Risolve:</b><br>  - Malattie interne<br>  - Disfunzioni organiche<br>  - Sindromi da vuoto</p></div>" 	
 				}
-			]
+			],
+			noList: true
 		},
 		{
 			TitoloSezione: "Punti particolari",
@@ -3037,7 +3037,8 @@ DB.set= {
 					TitoloTeoria: "Coppettazione su dorso[video]coppettazione",
 					TestoTeoria: "video=coppettazione" 	
 				}
-			]
+			],
+			noList: true
 		},
 		{
 			TitoloSezione: "Glossario e riferimenti",
@@ -3054,7 +3055,8 @@ DB.set= {
 					TitoloTeoria: "Corrispondenza delle 5 fasi",
 					TestoTeoria: "<table width=\"100%\" border=\"0\" cellspacing=\"0\" cellpadding=\"0\" id=\"tbPunti\">  <tr>    <td bgcolor=\"#999999\"><table width=\"100%\" border=\"0\" cellspacing=\"1\" cellpadding=\"5\">      <tr>        <td class=\"testaColonne\">&nbsp;</td>        <td align=\"center\" class=\"testaColonne\">Legno</td>        <td align=\"center\" class=\"testaColonne\">Fuoco</td>        <td align=\"center\" class=\"testaColonne\">Terra</td>        <td align=\"center\" class=\"testaColonne\">Aria/Metallo</td>        <td align=\"center\" class=\"testaColonne\">Acqua</td>        </tr>      <tr>        <td width=\"105\" bgcolor=\"#FFFFFF\" class=\"testaColonne\">Direzione</td>        <td width=\"105\" align=\"center\" bgcolor=\"#FFFFFF\">est</td>        <td width=\"105\" align=\"center\" bgcolor=\"#FFFFFF\">sud</td>        <td width=\"105\" align=\"center\" bgcolor=\"#FFFFFF\">centro</td>        <td width=\"105\" align=\"center\" bgcolor=\"#FFFFFF\">ovest</td>        <td width=\"105\" align=\"center\" bgcolor=\"#FFFFFF\">nord</td>        </tr>      <tr>        <td bgcolor=\"#FFFFFF\" class=\"testaColonne\">Colore</td>        <td align=\"center\" bgcolor=\"#FFFFFF\">verde</td>        <td align=\"center\" bgcolor=\"#FFFFFF\">rosso</td>        <td align=\"center\" bgcolor=\"#FFFFFF\">giallo</td>        <td align=\"center\" bgcolor=\"#FFFFFF\">bianco</td>        <td align=\"center\" bgcolor=\"#FFFFFF\">nero</td>        </tr>      <tr>        <td bgcolor=\"#FFFFFF\" class=\"testaColonne\">Clima</td>        <td align=\"center\" bgcolor=\"#FFFFFF\">ventoso</td>        <td align=\"center\" bgcolor=\"#FFFFFF\">caldo</td>        <td align=\"center\" bgcolor=\"#FFFFFF\">umido</td>        <td align=\"center\" bgcolor=\"#FFFFFF\">secco</td>        <td align=\"center\" bgcolor=\"#FFFFFF\">freddo</td>        </tr>      <tr>        <td bgcolor=\"#FFFFFF\" class=\"testaColonne\">Suono</td>        <td align=\"center\" bgcolor=\"#FFFFFF\">grido</td>        <td align=\"center\" bgcolor=\"#FFFFFF\">riso</td>        <td align=\"center\" bgcolor=\"#FFFFFF\">canto</td>        <td align=\"center\" bgcolor=\"#FFFFFF\">pianto</td>        <td align=\"center\" bgcolor=\"#FFFFFF\">gemito</td>        </tr>      <tr>        <td bgcolor=\"#FFFFFF\" class=\"testaColonne\">Emozione</td>        <td align=\"center\" bgcolor=\"#FFFFFF\">ira</td>        <td align=\"center\" bgcolor=\"#FFFFFF\">gioia</td>        <td align=\"center\" bgcolor=\"#FFFFFF\">riflessione</td>        <td align=\"center\" bgcolor=\"#FFFFFF\">tristezza</td>        <td align=\"center\" bgcolor=\"#FFFFFF\">paura</td>        </tr>      <tr>        <td bgcolor=\"#FFFFFF\" class=\"testaColonne\">Sapore</td>        <td align=\"center\" bgcolor=\"#FFFFFF\">agro</td>        <td align=\"center\" bgcolor=\"#FFFFFF\">amaro</td>        <td align=\"center\" bgcolor=\"#FFFFFF\">dolce</td>        <td align=\"center\" bgcolor=\"#FFFFFF\">piccante</td>        <td align=\"center\" bgcolor=\"#FFFFFF\">salato</td>        </tr>      <tr>        <td bgcolor=\"#FFFFFF\" class=\"testaColonne\">Organo</td>        <td align=\"center\" bgcolor=\"#FFFFFF\">fegato</td>        <td align=\"center\" bgcolor=\"#FFFFFF\">cuore</td>        <td align=\"center\" bgcolor=\"#FFFFFF\">Milza</td>        <td align=\"center\" bgcolor=\"#FFFFFF\">polmone</td>        <td align=\"center\" bgcolor=\"#FFFFFF\">rene</td>        </tr>      <tr>        <td bgcolor=\"#FFFFFF\" class=\"testaColonne\">Viscere</td>        <td align=\"center\" bgcolor=\"#FFFFFF\">cistifellea</td>        <td align=\"center\" bgcolor=\"#FFFFFF\">i. tenue</td>        <td align=\"center\" bgcolor=\"#FFFFFF\">stomaco</td>        <td align=\"center\" bgcolor=\"#FFFFFF\">i. crasso</td>        <td align=\"center\" bgcolor=\"#FFFFFF\">vescica</td>        </tr>      <tr>        <td bgcolor=\"#FFFFFF\" class=\"testaColonne\">Orifizio</td>        <td align=\"center\" bgcolor=\"#FFFFFF\">occhio</td>        <td align=\"center\" bgcolor=\"#FFFFFF\">lingua</td>        <td align=\"center\" bgcolor=\"#FFFFFF\">bocca</td>        <td align=\"center\" bgcolor=\"#FFFFFF\">naso</td>        <td align=\"center\" bgcolor=\"#FFFFFF\">orecchio</td>        </tr>      <tr>        <td bgcolor=\"#FFFFFF\" class=\"testaColonne\">Tessuto</td>        <td align=\"center\" bgcolor=\"#FFFFFF\">tendini</td>        <td align=\"center\" bgcolor=\"#FFFFFF\">vasi sanguigni</td>        <td align=\"center\" bgcolor=\"#FFFFFF\">carne</td>        <td align=\"center\" bgcolor=\"#FFFFFF\">pelle</td>        <td align=\"center\" bgcolor=\"#FFFFFF\">ossa</td>        </tr>      <tr>        <td bgcolor=\"#FFFFFF\" class=\"testaColonne\">Odore</td>        <td align=\"center\" bgcolor=\"#FFFFFF\">rancido</td>        <td align=\"center\" bgcolor=\"#FFFFFF\">bruciato</td>        <td align=\"center\" bgcolor=\"#FFFFFF\">fragrante</td>        <td align=\"center\" bgcolor=\"#FFFFFF\">acre</td>        <td align=\"center\" bgcolor=\"#FFFFFF\">marcio</td>      </tr>    </table></td>  </tr></table>"
 				}
-			]
+			],
+			noList: true
 		}
 	],
 	

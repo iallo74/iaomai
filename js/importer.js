@@ -22,7 +22,7 @@ var mouseDetect = false;
 var onlineVersion=false;
 var isTablet = false;
 var globals = {};
-var verApp = '1.0.0';
+var verApp = '1.0.1';
 
 // IMPOSTAZIONI DI APP
 var nomeApp = 'Iáomai';

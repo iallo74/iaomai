@@ -198,12 +198,24 @@ body:not(.bodyModello) #logoSovra{
 	top:50%;
 	left:0px;
 	width:100%;
-	height:130px;
+	height:230px;
+	padding-top:160px;
 	margin-top:-130px;
 	background-image:url(../img/logo_iaomai.png);
 	background-position:center center;
-	background-size:contain;
+	background-size:auto 130px;
 	background-repeat:no-repeat;
+}
+#car_inizio{
+	display:inline-block;
+	color:rgba(255,255,255,0.6);
+	line-height:50px;
+	height:50px;
+	padding-left:50px;
+	background-image:url(../img/loadingBlack.gif);
+	background-repeat:no-repeat;
+	background-position:left center;
+	background-size:contain;
 }
 
 
@@ -339,7 +351,7 @@ body:not(.AM):not(.AM_light) #poweredby_inizio{
 }
 #boxProvaDemo {
     position: fixed;
-    z-index: 20;
+    z-index: 200;
     bottom: 0px;
     padding: 20px;
     padding-left: 90px;
@@ -355,11 +367,15 @@ body:not(.AM):not(.AM_light) #poweredby_inizio{
 }
 @media (max-width: 620px){	
 	#boxProvaDemo{
-		right: 0px;
-   		box-shadow: none;
+		width:380px;
+		right: auto;
+		margin-left:-190px;
+		left:50%;
+		bottom:auto;
+		top:240px;
+		border-radius:8px;
+   		box-shadow: 0px 0px 10px rgba(0,0,0,0.5);
    		background-size: auto 80px;
-		border-top-left-radius: 0px;
-		border-top-right-radius: 0px;
 	}
 }
 #boxProvaDemo *{

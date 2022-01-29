@@ -21,6 +21,8 @@ SET = {
 	pMod: -1,
 	pointEvi: '',
 	meridianiOn: false,
+	geometryPallino: null,
+	geometryPallinoTrasp: null,
 	
 	// FUNZIONI
 	_init: function(){
@@ -31,6 +33,18 @@ SET = {
 		}
 		SETS = new THREE.Group();
 		SETS.name = "SETS";
+		
+		/*var facce = 6;
+		var facceTrasp = 8;*/
+		var facce = 5;
+		var facceTrasp = 7;
+		if(isTablet){
+			facce = 4;
+			facceTrasp = 6;
+		}
+		this.geometryPallino = new THREE.SphereGeometry( 0.02, facce, facce );
+		this.geometryPallinoTrasp = new THREE.SphereGeometry( 0.07, facceTrasp, facceTrasp );
+		
 		for(m in MERIDIANI){ // elenco i meridiani
 			this.LN[m] = new THREE.Group();
 			this.LN[m].name="LN_"+m;
@@ -118,16 +132,16 @@ SET = {
 						
 					// pallino colorato
 					n++;
-					var geometry = new THREE.SphereGeometry( 0.02, 6, 6 );
-					this.P[n] = new THREE.Mesh( geometry, this.MAT.pointBase );
+					/////var geometry = new THREE.SphereGeometry( 0.02, 6, 6 );
+					this.P[n] = new THREE.Mesh( this.geometryPallino, this.MAT.pointBase );
 					this.P[n].position.set(x,y,z);
 					this.P[n].name=PTS[p].nome;
 					this.PT[m].add( this.P[n] );
 						
 					// pallino trasparente
 					n++;
-					var geometryTrasp = new THREE.SphereGeometry( 0.07, 8, 8 );
-					this.P[n] = new THREE.Mesh( geometryTrasp, this.MAT.pointTrasp ); 
+					////var geometryTrasp = new THREE.SphereGeometry( 0.07, 8, 8 );
+					this.P[n] = new THREE.Mesh( this.geometryPallinoTrasp, this.MAT.pointTrasp ); 
 					this.P[n].position.set(x,y,z);
 					this.P[n].name='_'+PTS[p].nome
 					this.P[n].userData.raycastable = true;
@@ -255,7 +269,14 @@ SET = {
 		
 		SET.leggiNote();
 		nasLoader();
-		if(postApreSet)SCHEDA.apriElenco('set');
+		if(postApreSet){
+			if(SCHEDA.livelloApertura!=3)SCHEDA.apriElenco('set');
+			else{
+				GUIDA.visFumetto("guida_set_mini");
+				SCHEDA.chiudiElenco();
+				MENU.chiudiMenu();
+			}
+		}
 		postApreSet = false;
 	},
 	

@@ -177,6 +177,12 @@
 	position:fixed;
 	z-index:10;
 }
+.smart #guida_def{
+	z-index:45;
+}
+.smart #guida_def.noFr .fumetti_freccia{
+	display:none !important;
+}
 .fumetti_cont{
 	background-color:#FFF;
 	border-radius:6px;
@@ -256,7 +262,7 @@ body:not(.smart) #guida_generica.vis{
 }
 .smart #guida_generica{
 	left:10px;
-	bottom:90px;
+	bottom:82px;
 	margin-bottom:50px;
 	-webkit-transition: margin-bottom 0.3s, opacity 0.3s;
 	transition: margin-bottom 0.3s, opacity 0.3s;
@@ -451,20 +457,27 @@ body:not(.smart) #guida_generica .fumetti_freccia:last-child{
 .guida_set .fumetti_cont h1{
 	margin-left: 50px;
 }
+.guida_set_mini .fumetti_cont h1{
+	display:none;
+}
 .guida_archivi .fumetti_freccia:last-child,
-.guida_set .fumetti_freccia:last-child{
+.guida_set .fumetti_freccia:last-child,
+.guida_set_mini .fumetti_freccia:last-child{
 	display:none;
 }
 .guida_archivi,
-.guida_set{
+.guida_set,
+.guida_set_min{
 	opacity: 0;
 }
 .smart .guida_archivi,
-.smart .guida_set{
+.smart .guida_set,
+.smart .guida_set_mini{
 	left:20px;
 }
 .smart .guida_archivi h1,
-.smart .guida_set h1{
+.smart .guida_set h1,
+.smart .guida_set_mini h1{
 	margin-top: 20px !important;
 }
 body:not(.smart) .guida_archivi,
@@ -475,16 +488,24 @@ body:not(.smart) .guida_set{
 	-webkit-transition: margin-left 0.3s, opacity 0.3s;
 	transition: margin-left 0.3s, opacity 0.3s;
 }
+.guida_set_mini{
+	margin-left:0px;
+	left: var(--menu-width);
+	-webkit-transition: margin-left 0.3s, opacity 0.3s;
+	transition: margin-left 0.3s, opacity 0.3s;
+}
 body:not(.smart) .guida_archivi.vis,
 body:not(.smart) .guida_set.vis{
 	margin-left:100px !important;
 }
 .guida_archivi.vis,
-.guida_set.vis{
+.guida_set.vis,
+.guida_set_mini.vis{
 	opacity: 1 !important;
 }
 .guida_archivi .fumetti_cont,
-.guida_set .fumetti_cont{
+.guida_set .fumetti_cont,
+.guida_set_mini .fumetti_cont{
 	background-position:0px -15px;
 	display: inline-block;
     vertical-align: top;
@@ -492,7 +513,8 @@ body:not(.smart) .guida_set.vis{
 .guida_archivi .fumetti_cont{
 	background-image:url(../img/splash_pazientiB.png);
 }
-.guida_set .fumetti_cont{
+.guida_set .fumetti_cont,
+.guida_setmini .fumetti_cont{
 	background-image:url(../img/splash_mappeB.png);
 }
 body:not(.smart) .guida_archivi .fumetti_freccia:first-child,
@@ -510,12 +532,14 @@ body:not(.smart) .guida_set .fumetti_freccia:last-child{
 	display:none;
 }
 .smart .guida_archivi .fumetti_freccia:first-child,
-.smart .guida_set .fumetti_freccia:first-child{
+.smart .guida_set .fumetti_freccia:first-child,
+.smart .guida_set_mini .fumetti_freccia:first-child{
 	display:none;
 }
 
 .smart .guida_archivi .fumetti_freccia:last-child,
-.smart .guida_set .fumetti_freccia:last-child{
+.smart .guida_set .fumetti_freccia:last-child,
+.smart .guida_set_mini .fumetti_freccia:last-child{
 	height:18px;
 	background-image:url(../img/guideFrGiu.png);
 	background-position:50% center;
@@ -534,7 +558,8 @@ body:not(.smart) .guida_set .fumetti_freccia:last-child{
 @media (max-width: 800px){	
 	.smart .guida_anatomia .fumetti_cont,
 	.smart .guida_archivi .fumetti_cont,
-	.smart .guida_set .fumetti_cont{
+	.smart .guida_set .fumetti_cont,
+	.smart .guida_set_mini .fumetti_cont{
 		width: 330px;
 		display: block !important;
 	}
@@ -568,22 +593,37 @@ body:not(.smart) .guida_set .fumetti_freccia:last-child{
 		-webkit-transition: margin-bottom 0.3s, opacity 0.3 !importants;
 		transition: margin-bottom 0.3s, opacity 0.3s !important;
 	}
+	.smart .guida_set_mini{
+		bottom:90px;
+		margin-bottom:50px;
+		-webkit-transition: margin-bottom 0.3s, opacity 0.3 !importants;
+		transition: margin-bottom 0.3s, opacity 0.3s !important;
+	}
 	.smart .guida_archivi.vis,
-	.smart .guida_set.vis{
+	.smart .guida_set.vis,
+	.smart .guida_set_mini.vis{
 		margin-bottom:0px !important;
 	}
 	.smart .guida_archivi .fumetti_freccia:last-child,
-	.smart .guida_set .fumetti_freccia:last-child{
+	.smart .guida_set .fumetti_freccia:last-child,
+	.smart .guida_set_mini .fumetti_freccia:last-child{
 		display: block !important;
 		height:18px !important;
 		width:100% !important;
 		background-image:url(../img/guideFrGiu.png) !important;
+	}
+	.smart .guida_archivi .fumetti_freccia:last-child,
+	.smart .guida_set .fumetti_freccia:last-child{
 		background-position:calc(50%) top !important;
+	}
+	.smart .guida_set_mini .fumetti_freccia:last-child{
+		background-position:38px top !important;
 	}
 }
 @media (max-width: 450px){	
 	.guida_archivi .fumetti_cont h1,
-	.guida_set .fumetti_cont h1{
+	.guida_set .fumetti_cont h1,
+	.guida_set_mini .fumetti_cont h1{
 		margin-left:75px !important;
 	}
 	.guida_anatomia .fumetti_cont h1{
@@ -595,5 +635,8 @@ body:not(.smart) .guida_set .fumetti_freccia:last-child{
 	.smart .guida_anatomia,
 	.smart .guida_set{
 		width:calc(100% - 40px);
+	}
+	.smart .guida_set_mini{
+		width:250px;
 	}
 }
