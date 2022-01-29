@@ -104,3 +104,11 @@ git status
 git add .
 git status
 git commit -m "primo"
+git status
+git add .
+git commit -m "Blocco modifiche inizio 2022"
+git push -u origin master
+git push -u origin main
+git push -u origin master
+git push -u Origin master
+git push -u Origin master
