@@ -94,11 +94,6 @@ body:not(.smart) #icone.iconeEspanse{
 	cursor:pointer;
 	text-align:left;
 }
-#contBtnModello div{
-	background-repeat:no-repeat;
-	background-position:center center;
-	cursor:pointer;
-}
 .smart #icone div:not(#btns_set):not(#cartella_set){
 	width: 54px;
     height: 54px;
@@ -130,7 +125,6 @@ body:not(.smart) #icone.iconeEspanse{
 	width: 48px !important;
     height: 48px !important;
 }
-
 .smart #icone:not(.iconeHome) #p_modello,
 .smart #icone:not(.iconeHome) #cartella_set,
 .smart #icone:not(.iconeHome) #p_impostazioni{
@@ -148,38 +142,17 @@ body:not(.smart) #icone.iconeEspanse{
     width: calc((100% / 3) + 1px) !important;
     margin-left: -1px !important;	
 }
-#contBtnModello{
-    display: block;
-    position: fixed;
-}
-body:not(.smart) #contBtnModello{
-    top: 5px;
-    right: 48px;
-    text-align: center;
-    padding-left: 5px;
-    padding-right: 5px;
-    border-radius: 6px;
-    background-color: rgba(0,0,0,0.15);
-}
-body:not(.smart) #contBtnModello > div{
-	vertical-align:top;
-}
 .smart #contBtnModello{
     width: 54px;
+    display: block;
+    position: fixed;
     top: 0px;
-}
-body:not(.smart) #contBtnModello:hover{
-	 background-color: rgba(0,0,0,0.25) !important;
 }
 body:not(.smart) #icone div:not(#btns_set):not(#cartella_set){
 	width: 48px;
 	height: 48px;
 	padding-left:48px;
 	overflow:hidden;
-}
-body:not(.smart) #contBtnModello div{
-	width: 33px;
-	height: 40px;
 }
 #icone div:not(#btns_set):not(#cartella_set) svg{
 	width: 12px;
@@ -323,8 +296,8 @@ body:not(.bodyStyled1):not(.bodyStyled2):not(.smart) #p_modello{
 	fill: var(--fondino-anatomia);
 }
 body:not(.smart) .p_noTxt{
-	/*height: 28px !important;
-	background-position:8px center !important;*/
+	height: 28px !important;
+	background-position:8px center !important;
 }
 #p_selected{
 	background-image:url(../img/p_selected.png);
@@ -368,31 +341,6 @@ body:not(.smart) #p_rifletti{
 
 
 
-
-#p_liv_pelle{
-	background-image:url(../img/p_pelle.png);
-	display:none;
-}
-#p_liv_muscoli,
-#p_liv_ossa,
-#p_liv_visceri,
-#p_liv_pelle{
-	display:none;
-	background-size:auto 70%;
-}
-#p_liv_muscoli{
-	background-image:url(../img/p_muscoli.png);
-}
-#p_liv_ossa{
-	background-image:url(../img/p_ossa.png);
-}
-#p_liv_visceri{
-	background-image:url(../img/p_visceri.png);
-}
-#p_liv_pelle.disattLiv,
-#p_liv_muscoli.disattLiv{
-	opacity:0.5 !important;
-}
 
 
 
@@ -684,7 +632,7 @@ body:not(.smart) #labelModello{
 	font-size: 18.7px !important;
 	font-weight:bold;
 }
-.modelloScelto #livelli_cont{
+#livelli_cont{
 	padding-top:5px;
 	padding-bottom:5px;
 }
@@ -713,7 +661,7 @@ body:not(.smart) #labelModello{
     height: 33px !important;
     display: inline-block;
     background-image: url(../img/noManichino.png);
-    background-size: 30px !important;
+    background-size: 30px;
     background-repeat: no-repeat;
     background-position: center center;
     float: right;
@@ -1003,14 +951,15 @@ body:not(.smart) #labelModello{
 	display:none;
 	position:fixed;
 	width:300px;
-  	border-radius:5px;
+  	border-top-right-radius:5px;
+  	border-bottom-right-radius:5px;
 	background-color:var(--anatomia-fondino);
 	box-shadow:0px 0px 5px rgba(0,0,0,0.6);
 	z-index:60;
 }
 body:not(.smart) #elencoSelected{
-    top: 44px;
-    right: 48px;
+	top:79px;
+	left:48px;
 }
 .smart #elencoSelected{
 	top:88px;
@@ -1023,7 +972,6 @@ body:not(.smart) #elencoSelected{
 	color:#FFF !important;
 	font-weight:bold;
 	border-top-right-radius: 5px;
-    border-top-left-radius: 5px;
 }
 body:not(.smart) #labelSelected{
 	text-align:left;
@@ -1089,20 +1037,8 @@ body:not(.smart) #labelSelected{
 	height:24px;
 	line-height:24px;
 }
-#sliderAnatomia{
-	display:none;
-	position:fixed;
-	top:0px;
-	height:30px;
-	box-shadow:0px 0px 10px rgba(0,0,0,0.5);
-	border-radius:5px;
-	background: linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(0,0,0,0.1) 100%), #FFF;
-	width:220px;
-	padding-top:5px;
-}
-#sliderAnatomia .slider{
-	width: calc(100% - 10px) !important;
-}
+
+
 
 
 /* 3 - IMPOSTAZIONI */

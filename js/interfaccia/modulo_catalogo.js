@@ -15,11 +15,11 @@ var CATALOGO = {
 				}
 
 
-				HTML_elenco += 	'<div style="background-image: url(sets/'+cartella+'/img/logoNero.png), '+ ((sets[cartella].locked) ? ' none, url(img/work.png)' : 'url(img/frDxB.png), none') +';"' +
+				HTML_elenco += 	'<div style="background-image: url(sets/'+cartella+'/img/logoNero.png), '+ ((sets[cartella].locked) ? ' none, url(img/ico_clessidraBlu.png)' : 'url(img/frDxB.png), none') +';"' +
 								addClass +
 								'	  onClick="'+linkSet+'">' +
 									htmlEntities(sets[cartella].nome) +
-									( (sets[cartella].locked) ? "<span>work in progress</span>" : "" ) +
+									( (sets[cartella].locked) ? "<span>"+Lingua(TXT_PrestoInArrivo)+"</span>" : "" ) +
 								'</div>';
 			}
 		}

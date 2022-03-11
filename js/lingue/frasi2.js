@@ -203,6 +203,11 @@
 		eng: "Set activated",
 		esp: "" };
 	
+	TXT_PrestoInArrivo = {
+		ita: "PRESTO IN ARRIVO",
+		eng: "COMING SOON",
+		esp: "" };
+	
 	TXT_InviaRichiesta = {
 		ita: "Invia la richiesta",
 		eng: "Send request",

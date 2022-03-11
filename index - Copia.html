@@ -58,15 +58,15 @@
 			transition:opacity 1s !important;	
 		}
 		
-		/*@media (max-width: 800px){*/
+		@media (max-width: 800px){
 			#schermo_nero{
 				background-color:#0054a7;
-				background-image:url(img/omino_splash.png), url(img/fInizio.jpg);
-				background-size:auto 35%, 100% 100%;
+				background-image:url(img/fInizio.jpg);
+				background-size:100% 100%;
 				background-repeat:no-repeat;
-				background-position:center 20%,center center;
+				background-position:center center;
 			}
-		/*}*/
+		}
 		
 		-->
         </style>
@@ -486,37 +486,28 @@
             	<div id="contSelected"></div>
             	<div id="chiudiTuttiSelected" onClick="MENU.chiudiAllSelected();">{{TXT_ChiudiTutto}}</div>
             </div>
-        
-            <div id="contBtnModello">
-                <div id="p_liv_pelle"
-                     onWheel="MODELLO.opw(event,'Pelle');"
-                	 onmousedown="MODELLO.slw(event,'pelle');"></div>
-                <div id="p_liv_muscoli"
-                     onWheel="MODELLO.opw(event,'Muscoli');"
-                	 onmousedown="MODELLO.slw(event,'muscoli');"></div>
-                <div id="p_liv_ossa"
-                     onWheel="MODELLO.opw(event,'Ossa');"
-                	 onmousedown="MODELLO.slw(event,'ossa');"></div>
-                <div id="p_liv_visceri"
-                     onWheel="MODELLO.opw(event,'Visceri');"
-                	 onmousedown="MODELLO.slw(event,'visceri');"></div>
-                <!--<div id="p_piuma" class="p_noTxt" onClick="swAnimate();">
-                    <i>{{TXT_Pausa3D}}</i></div>-->
-                <div id="p_centro" class="p_noTxt" onClick="centro();" title="{{TXT_CentraModello}}"></div>
-                <div id="p_selected" class="p_noTxt" onClick="MENU.visSelected();" title="{{TXT_ElementiSelezionati}}"></div>
-                <div id="p_pins" class="p_noTxt" onClick="MODELLO.swPins();" title="{{TXT_MostraPin}}"></div>
-                <div id="p_rifletti" class="p_noTxt" onClick="MODELLO.rifletti();" title="{{TXT_RiflettiModello}}"></div>
-            </div>
-            <div id="sliderAnatomia"><div class="slider"><div></div></div></div>
-                
+            
             <div id="icone"
             	 class="iconeEspanse"
                  onMouseEnter="MENU.espandiIcone();"
                  onMouseLeave="MENU.comprimiIcone();"> <!-- ICONE DELLO STAGE -->
-                <div id="p_modello" onClick="MENU.visModello();">
-                    <svg viewBox="0 0 12 48"><polygon points="5,24 12,13 12,35"></polygon></svg>
-                    <i>{{TXT_Anatomia3D}}</i></div>
-                <div id="btns_set"></div>
+                <span id="contBtnModello">
+                    <div id="p_modello" onClick="MENU.visModello();">
+                        <svg viewBox="0 0 12 48"><polygon points="5,24 12,13 12,35"></polygon></svg>
+                        <i>{{TXT_Anatomia3D}}</i></div>
+                    <!--<div id="p_piuma" class="p_noTxt" onClick="swAnimate();">
+                        <i>{{TXT_Pausa3D}}</i></div>-->
+                    <div id="p_centro" class="p_noTxt" onClick="centro();">
+                        <i>{{TXT_CentraModello}}</i></div>
+                    <div id="p_selected" class="p_noTxt" onClick="MENU.visSelected();">
+                        <svg viewBox="0 0 12 48"><polygon points="5,24 12,13 12,35"></polygon></svg>
+                        <i>{{TXT_ElementiSelezionati}}</i></div>
+                    <div id="p_pins" class="p_noTxt" onClick="MODELLO.swPins();">
+                        <i>{{TXT_MostraPin}}</i></div>
+                    <div id="p_rifletti" class="p_noTxt" onClick="MODELLO.rifletti();">
+                        <i>{{TXT_RiflettiModello}}</i></div>
+                    <div id="btns_set"></div>
+                </span>
                 <div id="p_sets" class="visSch" onClick="MENU.visSets();">
                 	<svg viewBox="0 0 12 48"><polygon points="5,24 12,13 12,35"></polygon></svg>
                 	<i>{{TXT_Mappe}}</i></div>
@@ -566,13 +557,13 @@
                         <div id="el_muscoli" class="scrb_scura"></div>
                     </div>
                     
-                    <div id="p_ossa" class="slider_cont"><div id="i_ossa"></div><div class="slider" id="s_ossa"><div class="slider_btn" onMouseDown="SLIDER.iniziaSlide(event,this);" onTouchStart="SLIDER.iniziaSlide(event,this);"></div></div><div id="fr_ossa" onClick="MENU.swElOssa();"></div></div>
+                    <div id="p_ossa" class="slider_cont"><div id="i_ossa"></div><div class="slider"><div class="slider_btn" onMouseDown="SLIDER.iniziaSlide(event,this);" onTouchStart="SLIDER.iniziaSlide(event,this);"></div></div><div id="fr_ossa" onClick="MENU.swElOssa();"></div></div>
                     <div id="el_ossa_cont">
                     	<input type="text" id="filtro_ossa" onKeyUp="MENU.filtra(this);" placeholder="{{TXT_CercaOssa}}" class="okPlaceHolder" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"><span id="ch_ossa" onClick="MENU.annullaFiltro(this);"></span>
                         <div id="el_ossa" class="scrb_scura"></div>
                     </div>
                     
-                    <div id="p_visceri" class="slider_cont"><div id="i_visceri"></div><div class="slider" id="s_visceri"><div class="slider_btn" onMouseDown="SLIDER.iniziaSlide(event,this);" onTouchStart="SLIDER.iniziaSlide(event,this);"></div></div><div id="fr_visceri" onClick="MENU.swElVisceri();"></div></div>
+                    <div id="p_visceri" class="slider_cont"><div id="i_visceri"></div><div class="slider"><div class="slider_btn" onMouseDown="SLIDER.iniziaSlide(event,this);" onTouchStart="SLIDER.iniziaSlide(event,this);"></div></div><div id="fr_visceri" onClick="MENU.swElVisceri();"></div></div>
                     <div id="el_visceri_cont">
                     	<input type="text" id="filtro_visceri" onKeyUp="MENU.filtra(this);" placeholder="{{TXT_CercaVisceri}}" class="okPlaceHolder" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"><span id="ch_visceri" onClick="MENU.annullaFiltro(this);"></span>
                         <div id="el_visceri" class="scrb_scura"></div>

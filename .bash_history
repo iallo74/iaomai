@@ -179,3 +179,9 @@ git tag
 git tag -a v1.1.0 -m "Versione 1.1.0"
 git tag
 git show v1.1.0
+git tag 1.1.0
+git status
+git add .
+git commit -m "Modifiche cumulative inizio 2022"
+git status
+git push --tags

@@ -513,15 +513,15 @@ body:not(.smart) .listaMeridiani .p_aria:not(.elencoSel) span:hover{
 	position: fixed;
     top: 5px;
     right: 5px;
-	width:30px;
-	height:30px;
+	width:40px;
+	height:40px;
 	/*background-image:url(../../img/jingB.png);*/
 	background-image:url(../../img/ico_meridianiB.png);
 	background-repeat: no-repeat;
 	background-position: center center;
 	background-size: 24px;
 	cursor:pointer;
-	border-radius:15px;
+	border-radius:6px;
 	background-color: rgba(0,0,0,0.2);
 }
 /*body.bodyStyled2:not(.smart) #meridianiSmart_ico{
@@ -546,19 +546,20 @@ body:not(.bodyModello) #btns_set{
 }
 #meridianiSmart_cont{
 	position: fixed;
-    top: 36px;
+    top: 48px;
     right: 6px;
-	display:none;
+    display: none;
+    padding: 2px;
 }
 .smart #meridianiSmart_cont{
     top: 50px !important;
     right: 0px !important;
 }
 #meridianiSmart_cont div{
-	width: 24px;
-    height: 24px;
-    line-height: 24px;
-    border-radius: 12px;
+	width: 30px;
+    height: 30px;
+    line-height: 28px;
+    border-radius: 15px;
     text-align: center;
     font-size: 9px;
     margin: 2px;

@@ -56,7 +56,8 @@ body:not(.smart) #sets{
 #sets_elenco div span{
 	float:right;
 	font-size:11px !important;
-	padding-right:32px
+	padding-right:32px;
+	color: #ff5722;
 }
 #sets_elenco div:last-child{
 	border-bottom: none !important;

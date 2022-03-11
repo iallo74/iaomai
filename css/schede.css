@@ -365,7 +365,7 @@ body:not(.touch)#ss{
 body:not(.smart) #scheda_cont{
 	padding-top:3px;
 }
-body:not(.smart) #scheda.schForm:not(.schedaRitorno):not(.h150):not(.minimized) #scheda_cont{
+body:not(.smart) #scheda.schForm:not(.schedaRitorno):not(.h150):not(.minimized):not(.tab_tsubo) #scheda_cont{
     padding-bottom: 53px;
 }
 #scheda_titolo{

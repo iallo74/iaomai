@@ -58,7 +58,6 @@ var MENU = {
 				if(els[e].id.indexOf("p_")>-1){
 					var livello=els[e].id.replace("p_","");
 					if(globals.modello.livelli.indexOf(livello) > -1){
-						document.getElementById("p_liv_"+livello).classList.add("visBtn");
 						els[e].getElementsByClassName("slider_btn")[0].style.marginLeft='0px';
 						livello=livello.substr(0,1).toUpperCase()+livello.substr(1,livello.length-1);
 						els[e].classList.add("visSch");
@@ -68,7 +67,6 @@ var MENU = {
 						els[e].getElementsByClassName("slider_btn")[0].style.marginLeft=mL+'px';
 					}else{
 						els[e].classList.remove("visSch");
-						document.getElementById("p_liv_"+livello).classList.remove("visBtn");
 					}
 				}
 			}
@@ -293,11 +291,11 @@ var MENU = {
 	},
 	verSelected: function(){
 		if(globals.pezziSelezionati.length){
-			document.getElementById("p_selected").classList.add("visBtn");
-			document.getElementById("p_pins").classList.add("visBtn");
+			document.getElementById("p_selected").classList.add("visSch");
+			document.getElementById("p_pins").classList.add("visSch");
 		}else{
-			document.getElementById("p_selected").classList.remove("visBtn");
-			document.getElementById("p_pins").classList.remove("visBtn");
+			document.getElementById("p_selected").classList.remove("visSch");
+			document.getElementById("p_pins").classList.remove("visSch");
 		}
 	},
 	visSelected: function(){
@@ -670,7 +668,7 @@ var SLIDER = {
 			document.body.addEventListener("touchmove", SLIDER.moveSlider, false );	
 		}
 		var mL = "0"+SLIDER.slider_btn.style.marginLeft.replace("px","")+"";
-		SLIDER.mIni = parseInt(mL);
+		this.mIni = parseInt(mL);
 		if(touchable){
 			try{ SLIDER.xIni = event.touches[ 0 ].pageX; }catch(err){};
 		}else SLIDER.xIni = event.clientX;
@@ -685,7 +683,6 @@ var SLIDER = {
 		if(mL<0)mL = 0;
 		if(mL>SLIDER.maxVal)mL = SLIDER.maxVal;
 		SLIDER.slider_btn.style.marginLeft = mL+'px';
-		document.getElementById("sliderAnatomia").querySelector(".slider").getElementsByTagName("div")[0].style.marginLeft = mL+'px';
 		perc=mL/SLIDER.maxVal;
 		var l = SLIDER.livelloSel.substr(0,1).toUpperCase()+SLIDER.livelloSel.substr(1,SLIDER.livelloSel.length-1);
 		MODELLO.op(l,perc);
@@ -700,7 +697,6 @@ var SLIDER = {
 			document.body.removeEventListener("touchend", SLIDER.arrestaSlide, false );
 			document.body.removeEventListener("touchmove", SLIDER.moveSlider, false );	
 		}
-		document.getElementById("sliderAnatomia").classList.remove("visSch");
 		SLIDER.sliderSel = '';
 		SLIDER.slider = null;
 		SLIDER.slider_btn = null;

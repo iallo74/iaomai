@@ -441,7 +441,9 @@ var MODELLO = {
 			}
 			document.getElementById("i_muscoli").classList.add("btnSel");
 			document.getElementById("p_pelle").classList.add("disattLiv");
+			document.getElementById("p_liv_pelle").classList.add("disattLiv");
 			document.getElementById("p_muscoli").classList.remove("disattLiv");
+			document.getElementById("p_liv_muscoli").classList.remove("disattLiv");
 			document.getElementById("slideMuscles").classList.add("slideOn");
 			MENU.setOp("Muscoli", MENU.getOp('Muscoli'));
 			MODELLO.op("Muscoli",MENU.getOp('Muscoli'));
@@ -452,7 +454,9 @@ var MODELLO = {
 			}
 			document.getElementById("i_muscoli").classList.remove("btnSel");
 			document.getElementById("p_pelle").classList.remove("disattLiv");
+			document.getElementById("p_liv_pelle").classList.remove("disattLiv");
 			document.getElementById("p_muscoli").classList.add("disattLiv");
+			document.getElementById("p_liv_muscoli").classList.add("disattLiv");
 			document.getElementById("slideMuscles").classList.remove("slideOn");
 			MENU.setOp("Pelle", MENU.getOp('Pelle'));
 			MODELLO.op("Pelle",MENU.getOp('Pelle'));
@@ -534,6 +538,51 @@ var MODELLO = {
 				}
 			}
 		}
+	},
+	opw: function( event, livello ){
+		event.stopPropagation();
+		var livAtt = MENU.getOp(livello);
+		livAtt = Math.round(livAtt*25) / 25;
+		if(typeof(livAtt)=='NaN')livaAtt = 0;
+		if(livello=='Muscoli')MODELLO.swMuscle(1);
+		if(livello=='Pelle')MODELLO.swMuscle(2);
+		if ( event.deltaY > 0 ) {
+			if(livAtt-0.04 >= 0)MODELLO.op( livello, livAtt-0.04 );
+		} else {
+			if(livAtt+0.04 <= 1)MODELLO.op( livello, livAtt+0.04 );
+		}
+		MENU.aggiornaIconeModello();
+	},
+	slw: function( event, livello ){
+		
+		var sliderDest = document.getElementById('s_'+livello).getElementsByTagName('div')[0];
+		var modelloAperto = document.getElementById("pulsanti_modello").classList.contains("visSch");
+		if(!modelloAperto){
+			document.getElementById("pulsanti_modello").style.opacity = 0;
+			document.getElementById("pulsanti_modello").classList.add("visSch");
+		}
+		SLIDER.iniziaSlide(event,sliderDest);
+		if(!modelloAperto){
+			document.getElementById("pulsanti_modello").classList.remove("visSch");
+			document.getElementById("pulsanti_modello").style.opacity = 1;
+		}
+		
+		var x = event.pageX;
+		//SLIDER.xIni = x;
+		var y = event.pageY;
+		var w = 210;
+		if(livello=='pelle')w = 240;
+		var posSlider = MENU.getOp(livello)*(w - 24);
+		var posCont = MENU.getOp(livello)*(w - 24) + 17;
+		document.getElementById("sliderAnatomia").style.width = (w+10) + 'px';
+		document.getElementById("sliderAnatomia").classList.add("visSch");
+		
+		var sliderDiv = document.getElementById("sliderAnatomia").querySelector(".slider");
+		var sliderBtn = sliderDiv.getElementsByTagName("div")[0];
+		
+		sliderBtn.style.marginLeft = posSlider + 'px';
+		document.getElementById("sliderAnatomia").style.left = (x - posCont) + 'px';
+		document.getElementById("sliderAnatomia").style.top = (y - 16) + 'px';;
 	},
 	filtraAnatomia: function(){
 		var vis = true;

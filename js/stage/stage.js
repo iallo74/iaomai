@@ -153,6 +153,7 @@ function init() {
 		//}
 		}
 	}
+	onWindowResize();
 }
 
 
@@ -209,6 +210,11 @@ function scaricaModello( esci ){
 	document.getElementById("p_ossa").classList.remove("visSch");
 	document.getElementById("p_visceri").classList.remove("visSch");
 	document.getElementById("p_muscoli").classList.remove("visSch");
+	
+	document.getElementById("p_liv_pelle").classList.remove("visBtn");
+	document.getElementById("p_liv_ossa").classList.remove("visBtn");
+	document.getElementById("p_liv_visceri").classList.remove("visBtn");
+	document.getElementById("p_liv_muscoli").classList.remove("visBtn");
 	
 	document.getElementById("p_pelle").classList.remove("visBtn");
 	document.getElementById("p_ossa").classList.remove("visBtn");
