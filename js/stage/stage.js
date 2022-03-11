@@ -89,7 +89,8 @@ function init() {
 	if(isTablet)aspectRatio/=2;
 	//aspectRatio = 1;
 	renderer.setPixelRatio( aspectRatio );
-	renderer.setSize( window.innerWidth, window.innerHeight );
+	//renderer.setSize( window.innerWidth, window.innerHeight );
+	renderer.setSize( canvas.width, canvas.height );
 	renderer.sortObjects = false; // lasciare per la questione delle trasparenze
 	
 	document.getElementById("container").appendChild( renderer.domElement );
@@ -107,6 +108,7 @@ function init() {
 	//manichinoCaricato=true;
 	
 	// inserisco i controlli sul manichino (pan e rotate)
+	//controlsM = new THREE.ObjectControls( camera, renderer.domElement );
 	controlsM = new THREE.ObjectControls( manichinoCont, renderer.domElement );
 
 	window.addEventListener( 'resize', onWindowResize, false );
@@ -123,20 +125,16 @@ function init() {
 	nasLoader();
 	//var modello = 'donna';
 	//if(localStorage.modello)modello = localStorage.modello;
-	
+
 	// setto la donna al primo accesso
 	//if(typeof(localStorage.modello) == 'undefined')localStorage.modello = "donna"; // apertura automatica all'inizio
-	if(tipoApp == 'AM' || tipoApp == 'AM_light'){
-		//if(!localStorage.modello || typeof(localStorage.modello)=='undefined'){
-			localStorage.modello = 'uomo';
-			globals.memorizza = true;
-		//}
-		modello = localStorage.modello;
-	}
+	
+	document.getElementById("logo_inizio").style.display = 'none';
 	if(localStorage.modello && globals.memorizza)caricaModello(localStorage.modello);
+	else if(globals.open3d)caricaModello("donna");
+	else if(globals.openMap && globals.mapOpened)caricaSet(globals.mapOpened);
 	else{
-		document.getElementById("logo_inizio").style.display = 'none';
-		document.getElementById("poweredby_inizio").style.display = 'none';
+		inizio = false;
 		scaricaModello();
 		if(getVar("demo")){
 			if(getVar("demo")=='anatomymap')cambiaModello('donna');
@@ -160,17 +158,9 @@ function init() {
 
 // CARICAMENTO DEI MODELLI
 function caricaModello( cartella ){
-	// verifico le autorizzazioni
-	if(tipoApp == 'AM_light' && cartella!='uomo'){
-		setTimeout(function(){
-			ALERT(Lingua(TXT_MsgModelloSoloPay));
-		},100);
-		return;
-	}
-	// --------------------------
-	
+	manichino.remove( SETS );
 	visLoader("");
-	startAnimate()
+	startAnimate();
 	scaricaModello();
 	noAnimate = false;
 	animate();
@@ -194,14 +184,14 @@ function caricaModello( cartella ){
 	localStorage.modello = globals.modello.cartella;
 	document.body.classList.add('bodyModello');
 	document.getElementById("p_centro").classList.add("visBtn");
-	document.getElementById("p_piuma").classList.add("visBtn");
+	//document.getElementById("p_piuma").classList.add("visBtn");
 	if(mouseDetect)document.getElementById("nav").classList.add("visBtn");
 }
 function scaricaModello( esci ){
 	var elencoSel = SCHEDA.elencoSel;
-	var notInit = false;
+	/*var notInit = false;
 	if(globals.set.cartella)notInit = true;
-	scaricaSet(notInit);
+	scaricaSet(notInit);*/
 	
 	obj_guide = null;
 	MENU.chiudiAllSelected();
@@ -226,7 +216,7 @@ function scaricaModello( esci ){
 	document.getElementById("p_muscoli").classList.remove("visBtn");
 	document.getElementById("p_rifletti").classList.remove("visBtn");
 	document.getElementById("p_centro").classList.remove("visBtn");
-	document.getElementById("p_piuma").classList.remove("visBtn");
+	//document.getElementById("p_piuma").classList.remove("visBtn");
 	if(mouseDetect)document.getElementById("nav").classList.remove("visBtn");
 	
 	document.getElementById("el_ossa_cont").classList.remove("elOpened");
@@ -245,6 +235,7 @@ function scaricaModello( esci ){
 		globals.initModello();
 		localStorage.modello = "";
 	}
+	try{SETS.visible = false;}catch(err){}
 	noAnimate = true;
 	render( true );
 	if(smartMenu && elencoSel && !globals.set.cartella)SCHEDA.apriElenco('base');
@@ -253,7 +244,7 @@ function cambiaModello( cartella ){
 	if(typeof(cartella) == 'undefined')var cartella='';
 	var chiedi = false;
 	var ChiediUscitaSet = ''
-	if(globals.set.cartella!=''){
+	if(globals.set.cartella!='' && cartella){
 		if(sets[globals.set.cartella].modelli.indexOf(cartella)==-1){
 			if(!cartella){
 				ChiediUscitaSet = Lingua(TXT_ChiediUscitaSet1).replace("[NomeSet]",globals.set.nome);
@@ -269,8 +260,7 @@ function cambiaModello( cartella ){
 					var v = getParamNames(CONFIRM.args.callee.toString());
 					for(i in v)eval(getArguments(v,i));
 		if(chiedi){
-			caricaSet(globals.set.cartella);
-			muscleView=false;
+			scaricaSet();
 		}
 		if(cartella){			
 			if(cartella==globals.modello.cartella)return;
@@ -291,6 +281,7 @@ function cambiaModello( cartella ){
 // CARICAMENTO DEI SETS
 function caricaSet( cartella, el ){
 	//if(DB.login.data.auths.indexOf(cartella) == -1)return;
+	var daScheda = (SCHEDA.classeAperta == 'scheda_A' || SCHEDA.classeAperta == 'scheda_B' );
 	startAnimate();
 	if(el)postApreSet = true;
 	if(cartella == globals.set.cartella){
@@ -301,21 +292,23 @@ function caricaSet( cartella, el ){
 		document.getElementById("pulsanti_set").classList.remove("setAperto");
 		if(!smartMenu)SCHEDA.chiudiElenco();
 		document.getElementById("p_sets").classList.add("visSch");*/
-		MENU.visSets();
+		if(	!daScheda )MENU.visSets();
 	}else{
 		// APRE un set
 		scaricaSet();
-		if(!smartMenu)SCHEDA.chiudiElenco();
+		if(!daScheda){
+			if(!smartMenu)SCHEDA.chiudiElenco();
+			MENU.chiudiMenu();
+		}
 		visLoader("");
-		MENU.chiudiMenu();
 		globals.set=JSON.parse(JSON.stringify(sets[cartella]));
 		globals.set.cartella = cartella;
 		globals.set.setSel = el;
 		var modelli = filtraModelli(cartella);
-		if(modelli.indexOf(globals.modello.cartella) == -1){
+		/*if(modelli.indexOf(globals.modello.cartella) == -1){
 			caricaModello(modelli[0]);
 			return;
-		}
+		}*/
 		globals.set.imports.push(globals.siglaLingua+".js");
 		visLoader(globals.set.txtLoading);
 		var imports = clone(globals.set.imports);
@@ -328,23 +321,32 @@ function caricaSet( cartella, el ){
 								document.getElementById("scripts") );
 		
 		if(el)el.classList.add("btnSetSel");
-		MODELLO.meshMuscoli.visible = false;
+		if(globals.modello.cartella){
+			MODELLO.meshMuscoli.visible = false;
+			document.getElementById("pulsanti_modello").classList.add('modelloScelto');
+		}
 		//centro();
 		localStorage.set = globals.set.cartella;
 		document.getElementById("pulsanti_set").classList.add("setAperto");
-		document.getElementById("pulsanti_modello").classList.add('modelloScelto');
+		
 	}
 	try{
 		SET.leggiNote();
 	}catch(err){}
+	if(globals.openMap){
+		globals.mapOpened = globals.set.cartella;
+		localStorage.mapOpened = globals.set.cartella;
+	}
 }
-function scaricaSet(notInit){
+function scaricaSet( notInit ){
+	var daScheda = (SCHEDA.classeAperta == 'scheda_A' ||
+					SCHEDA.classeAperta == 'scheda_B');
 	try{SET._scaricaSet();}catch(err){};
-	SCHEDA.scaricaScheda();
+	if(	!daScheda )SCHEDA.scaricaScheda();
 	manichino.remove(SETS);
 	overInterfaccia=false;
 	render( true );
-	SCHEDA.scaricaScheda();
+	if(	!daScheda )SCHEDA.scaricaScheda();
 	if(typeof(notInit) == 'undefined')var notInit = false;
 	if(!notInit){
 		if(SETS){
@@ -361,15 +363,26 @@ function scaricaSet(notInit){
 		SET = null;
 		DB.set = [];
 		globals.initSet();
-		if(smartMenu)SCHEDA.chiudiElenco();
+		if(smartMenu && !daScheda)SCHEDA.chiudiElenco();
 	}
 	if(muscleView)MODELLO.meshMuscoli.visible = true;
 	MENU.aggiornaIconeModello();
 	localStorage.set = '';
 	document.getElementById("pulsanti_set").classList.remove("setAperto");
-	if(!smartMenu)SCHEDA.chiudiElenco();
+	if(!smartMenu && !daScheda)SCHEDA.chiudiElenco();
 	document.getElementById("p_sets").classList.add("visSch");
 	GUIDA.nasFumetto();
+	if(	daScheda ){
+		setTimeout(function(){ SCHEDA.apriElenco('base'); },200 );
+		PAZIENTI.caricaDettagliSet();
+	}
+	globals.mapOpened = '';
+	localStorage.mapOpened = '';
+}
+function chiudiSet(){
+	CONFIRM.vis(	Lingua(TXT_ChiediEsciMappa).replace("[mappa]",globals.set.nome) ).then(function(pass){if(pass){
+		caricaSet(globals.set.cartella,document.getElementById('p_'+globals.set.cartella));
+	}});
 }
 
 function cambiaLingua(nLingua){
@@ -396,17 +409,38 @@ function filtraModelli(cartella){
 }
 
 // GESTORI EVENTI
-function onWindowResize() {
-	camera.aspect = window.innerWidth / window.innerHeight;
+var stopOnResize = false;
+var traslStage = 0;
+function onWindowResize(){
+	if(stopOnResize)return;
+	var w = window.innerWidth;
+	var s = window.innerWidth;
+	var h = window.innerHeight;
+	if(SCHEDA.aggancio.tipo == 'lato'){
+		/*w -= 20;
+		if(document.getElementById("elenchi_cont").classList.contains("visSch"))w -= document.getElementById("elenchi_cont").scrollWidth;
+		if(document.getElementById("scheda").classList.contains("visSch"))w -= document.getElementById("scheda").scrollWidth;*/
+		//s -= 20;
+		if(document.getElementById("elenchi_cont").classList.contains("visSch"))s -= document.getElementById("elenchi_cont").scrollWidth;
+		if(document.getElementById("scheda").classList.contains("visSch"))s -= document.getElementById("scheda").scrollWidth;
+		traslStage =((w - s) / 2);
+		
+	}
+	document.getElementById("container").getElementsByTagName("canvas")[0].style.marginLeft = traslStage + "px";
+	if(smartMenu && !document.body.classList.contains("nasSch"))h -= 54;
+	camera.aspect = w / h;
 	camera.updateProjectionMatrix();
-	renderer.setSize( window.innerWidth, window.innerHeight );
+	renderer.setSize( w, h );
 	render();
 }
 function onMouseMove( event ) {
 	if(!overInterfaccia){
 		event.preventDefault();
-		mouse.x = ( event.clientX / window.innerWidth ) * 2 - 1;
-		mouse.y = - ( event.clientY / window.innerHeight ) * 2 + 1;
+		const rect = renderer.domElement.getBoundingClientRect();
+		mouse.x = ( ( event.clientX - rect.left ) / ( rect.right - rect.left ) ) * 2 - 1;
+		mouse.y = - ( ( event.clientY - rect.top ) / ( rect.bottom - rect.top) ) * 2 + 1;
+		//mouse.x = ( event.clientX / window.innerWidth ) * 2 - 1;
+		//mouse.y = - ( event.clientY / window.innerHeight ) * 2 + 1;
 		mouse.xAbs = event.clientX;
 		mouse.yAbs = event.clientY;
 	}
@@ -518,20 +552,49 @@ function swAnimate(){
 		startAnimate();
 	}
 }
+function verAnimate(){
+	if(smartMenu){
+		if(	(
+				(	document.getElementById("elenchi").classList.contains("visSch") ||
+					document.getElementById("scheda").classList.contains("visSch")
+				) && !document.body.classList.contains("nasSch")
+			) || 
+			document.getElementById("sets").classList.contains("visSch") || 
+			document.getElementById("schedaGlobal").classList.contains("visSch") || 
+			document.getElementById("ag").classList.contains("visSch") || 
+			document.getElementById("impostazioni").classList.contains("visSch") ||
+			document.getElementById("login").classList.contains("visSch") ||
+			document.getElementById("feedback").classList.contains("visSch") ||
+			document.getElementById("colori").classList.contains("visSch") ||
+			document.getElementById("notifiche").classList.contains("visSch") ||
+			document.getElementById("backups").classList.contains("visSch") ||
+			document.getElementById("registrazione").classList.contains("visSch") ||
+			document.getElementById("community").classList.contains("visSch") ||
+			document.getElementById("impset").classList.contains("visSch") ||
+			document.getElementById("photo").classList.contains("visSch") ||
+			document.getElementById("versione").classList.contains("visSch") ){
+			if(!noAnimate)stopAnimate( true );
+			return;
+		}else if(globals.modello.cartella && noAnimate){
+			startAnimate();
+		}
+	}
+}
+setInterval( function(){ verAnimate(); }, 200 );
 function stopAnimate( subito ){
 	if(typeof(subito) == 'undefined'){ // interrompe l'animazione dopo un minuto e mezzo
 		tmaNoAn = setTimeout(function(){
 			noAnimate=true;
 			document.getElementById("legende").classList.add("noAnimate");
 			document.getElementById("container").style.opacity = 0.4;
-			document.getElementById("p_piuma").classList.add("piumaAtt");
+			//document.getElementById("p_piuma").classList.add("piumaAtt");
 		},1500);
 	}else{ // oppure subito
 		noAnimate=true;
 		document.getElementById("legende").classList.add("noAnimate");
 		document.getElementById("container").style.opacity = 0.4;
-		document.getElementById("p_piuma").classList.add("piumaAtt");
-		document.getElementById("p_piuma").getElementsByTagName("i")[0].innerHTML = htmlEntities(Lingua(TXT_3DinPausa));
+		//document.getElementById("p_piuma").classList.add("piumaAtt");
+		//document.getElementById("p_piuma").getElementsByTagName("i")[0].innerHTML = htmlEntities(Lingua(TXT_3DinPausa));
 	}
 }
 function startAnimate(){
@@ -541,8 +604,8 @@ function startAnimate(){
 		animate();
 		document.getElementById("legende").classList.remove("noAnimate");
 		document.getElementById("container").style.opacity = 1;
-		document.getElementById("p_piuma").classList.remove("piumaAtt");
-		document.getElementById("p_piuma").getElementsByTagName("i")[0].innerHTML = htmlEntities(Lingua(TXT_Pausa3D));
+		//document.getElementById("p_piuma").classList.remove("piumaAtt");
+		//document.getElementById("p_piuma").getElementsByTagName("i")[0].innerHTML = htmlEntities(Lingua(TXT_Pausa3D));
 	}
 }
 function normalizeRotation(){
@@ -635,3 +698,20 @@ function selCol(n){
 }
 
 
+
+	
+	
+function get_memOpen3d(){
+	document.getElementById("mem_open3d").checked = globals.open3d;
+}
+function set_memOpen3d(){
+	globals.open3d = document.getElementById("mem_open3d").checked;
+	localStorage.open3d = globals.open3d;
+}
+function get_memOpenMap(){
+	document.getElementById("mem_openMap").checked = globals.openMap;
+}
+function set_memOpenMap(){
+	globals.openMap = document.getElementById("mem_openMap").checked;
+	localStorage.openMap = globals.openMap;
+}

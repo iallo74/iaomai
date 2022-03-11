@@ -27,11 +27,11 @@
 }
 
 /* scheda ANATOMIA */
-.tab_anatomia #btnMenuScheda svg{
+body:not(.smart) .tab_anatomia:not(.schLato) #btnMenuScheda svg{
 	background-color: #14439d;
 	opacity:0.9 !important;
 }
-.tab_anatomia #btnMenuScheda svg circle{
+.tab_anatomia:not(.schLato) #btnMenuScheda svg circle{
 	fill: #FFF !important;
 }
 

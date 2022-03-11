@@ -6,15 +6,20 @@ var CATALOGO = {
 		for(cartella in sets){
 			if(	cartella != 'anatomy_full' &&
 				cartella != 'clients_full'){
+				var addClass = '';
 				var linkSet = 'caricaSet(\''+cartella+'\',this);MENU.visSets();';
 				if(cartella == globals.set.cartella)linkSet = 'SCHEDA.apriElenco(\'set\')';
-				if(sets[cartella].locked)linkSet = 'MENU.visElencoSets(\''+cartella+'\');';
+				if(sets[cartella].locked){
+					linkSet = 'MENU.visElencoSets(\''+cartella+'\');';
+					addClass = ' class="lockedMap"';
+				}
 
 
-
-				HTML_elenco += 	'<div style="background-image: url(sets/'+cartella+'/img/logoNero.png), url(img/frDxB.png);"' +
+				HTML_elenco += 	'<div style="background-image: url(sets/'+cartella+'/img/logoNero.png), '+ ((sets[cartella].locked) ? ' none, url(img/work.png)' : 'url(img/frDxB.png), none') +';"' +
+								addClass +
 								'	  onClick="'+linkSet+'">' +
 									htmlEntities(sets[cartella].nome) +
+									( (sets[cartella].locked) ? "<span>work in progress</span>" : "" ) +
 								'</div>';
 			}
 		}

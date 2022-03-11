@@ -194,22 +194,20 @@ body:not(.bodyStyled1):not(.bodyStyled2):not(.smart) #p_set{ /* <<<<<<<<<<<< NUO
 	background-repeat: no-repeat;
 	background-position:center center;
 }
-.smart #elenchi:not(.schExp) .listaMeridiani > div strong{
-    display: none !important;
-}
-.smart .schExp .listaMeridiani > div strong{
-   	margin-top: 6px !important;
+.smart .listaMeridiani > div strong{
 	margin-right: -4px !important;
 }
 
-.smart #elenchi:not(.schExp) .listaMeridiani > div:not(.loading):not(.menuElenchi){
-	padding-left: 0px !important;
-}
-.smart #elenchi:not(.schExp) .listaMeridiani > div:not(.loading):not(.menuElenchi) b{
-	margin-left: 0px !important;
-}
 .listaMeridiani > div:not(.frSw) strong{
 	background-image:url(../../img/frGiuB.png);
+}
+.smart.android .listaMeridiani > div strong{
+	width: 46px;
+    height: 46px;
+    border-radius: 23px;
+}
+.smart.android .listaMeridiani > div#pEX strong{
+	margin-right: 3px !important;
 }
 .listaMeridiani > div.frSw strong{
 	background-image:url(../../img/frSuB.png);
@@ -254,6 +252,18 @@ body:not(.bodyStyled1):not(.bodyStyled2):not(.smart) #p_set{ /* <<<<<<<<<<<< NUO
     margin-bottom: 10px !important;	
 	height: auto !important;
 }
+.smart.android .elencoPunti p{
+	height:41px;
+	border-bottom: 1px solid rgba(0,0,0,0.2);
+}
+.smart.android .elencoPunti p:last-child{
+	border-bottom: none;
+}
+.smart.android .elencoPunti p *{
+	line-height: 37px !important;
+    font-size: 16px !important;
+	background-position: 5px 14px !important;
+}
 .visElPt{
 	display:block !important;
 }
@@ -270,57 +280,16 @@ body:not(.bodyStyled1):not(.bodyStyled2):not(.smart) #p_set{ /* <<<<<<<<<<<< NUO
 body:not(.smart) .elencoPunti a,
 body:not(.smart) .elencoPunti a *{
 	color: #FFF !important;
-	font-size:11px !important;
+	font-size:12px !important;
 }
 .smart .elencoPunti a,
 .smart .elencoPunti a *{
 	color: #FFF !important;
 	font-size:13px !important;
 }
-.selElPt{
+body:not(.smart) .selElPt{
 	background-color:rgba(0,0,0,0.3) !important;
 }
-.smart #elenchi:not(.schExp) .listaTeoria .cart_els{
-	padding-right:15px !important;
-}
-/*#lista_meridiani div span{
-	float:right;
-	margin-right:-4px;
-	border-radius:8px;
-	width:16px;
-	height:16px;
-	margin-left:0px;
-	margin-top: 12px;
-	background-repeat:no-repeat !important;
-	background-position:center center !important;
-	background-size:12px 12px !important;
-	border:1px solid rgba(0,0,0,0.3);
-}*/
-
-/* pallino lucido */
-/*#lista_meridiani div span { 
-    float: right;
-    margin-right: -6px;
-    border-radius: 9px;
-    width: 18px;
-    height: 18px;
-    margin-left: 0px;
-    margin-top: 10px;
-    background-repeat: no-repeat !important;
-    background-position: center center !important;
-    
-   
-}
-.listaMeridiani .elencoSel span {
-    background-size: 100% auto !important;
-	background-size: 12px 12px !important;
-}
-
-.listaMeridiani div:not(.elencoSel) span {
-    box-shadow: 0px 0px 3px rgb(0 0 0 / 70%);
-    background-image: linear-gradient(to bottom, rgba(255,255,255,0.4) 0%, transparent 49%, rgba(0,0,0,0.25) 50%, transparent 100%) !important;
-    background-size: 100% auto !important;
-}*/
 /* linguetta a destra */
 #lista_meridiani div span { 
     float: right;
@@ -334,6 +303,9 @@ body:not(.smart) .elencoPunti a *{
     background-repeat: no-repeat !important;
     background-position: center center !important;
     border-left: 1px solid rgba(0,0,0,0.5);
+}
+.smart.android #lista_meridiani div span { 
+    height: 50px;
 }
 .listaMeridiani .elencoSel span {
     background-size: 12px 12px !important;
@@ -486,34 +458,13 @@ body:not(.smart) .listaMeridiani .p_aria:not(.elencoSel) span:hover{
 }
 
 @media (max-width: 800px){
-		
-	.touch #elenchi:not(.schExp) #lista_meridiani div span{
-		margin-right:1px !important;
-	}
-	.touch #elenchi.schExp #lista_meridiani div span{
-		/*margin-right:-5px !important;*/
-	}
-	
-	.touch #elenchi.schExp #lista_meridiani div > div span{
-		/*margin-top:10px !important;*/
-		height: 50px;
-	}
-	.touch #elenchi:not(.schExp) #lista_meridiani div span{
-		/*margin-left:10p !important;*/
-		margin-right: 0px !important;
-		box-shadow:0px 0px 2px rgba(0,0,0,0.5);
-	}
-	.touch #elenchi:not(.schExp) #lista_meridiani > div > div{
-		padding-right:0px !important;
-	}
 	.listaMeridiani > div b {
-		/*padding-right: 0px !important;*/
 		padding-left: 12px;
 	}
 	body:not(.smart) .listaMeridiani > div.lockedItem b {
 		margin-left: 14px;
 	}
-	.smart .schExp .listaMeridiani > div b {
+	.smart .listaMeridiani > div b {
 		padding-left: 0px;
 	}
 }
@@ -587,6 +538,11 @@ body:not(.smart) .listaMeridiani .p_aria:not(.elencoSel) span:hover{
     border-top-left-radius: 0px !important;
     border-top-right-radius: 0px !important;
     background-position: 19px 9px !important;
+}
+body:not(.bodyModello) #meridianiSmart_cont,
+body:not(.bodyModello) #meridianiSmart_ico,
+body:not(.bodyModello) #btns_set{
+	display:none !important;
 }
 #meridianiSmart_cont{
 	position: fixed;

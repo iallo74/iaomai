@@ -251,7 +251,15 @@ var MODELLO = {
 		}
 		
 		MODELLO.filtraAnatomia();
-		if(tipoApp != 'AM' && tipoApp != 'AM_light')MENU.visModello(true);
+		
+		if(	SCHEDA.classeAperta != 'scheda_A' &&
+			SCHEDA.classeAperta != 'scheda_B' ){
+				if(!inizio)MENU.visModello(true);
+		}else{
+			MENU.visModello();
+		}
+		
+		
 		if(globals.set.cartella){
 			if(SET)SET._init();
 			else{
@@ -268,12 +276,12 @@ var MODELLO = {
 		raycastDisable=false;
 		if(inizio){
 			MODELLO.op('Pelle',1);
+			if(globals.openMap && globals.mapOpened && !globals.set.cartella)caricaSet(globals.mapOpened); // riapro il set al caricamento
 			if(localStorage.set && globals.memorizza){
 				caricaSet(localStorage.set,document.getElementById("p_"+localStorage.set));
 			}//else postApreSet = false;
-			document.getElementById("logo_inizio").style.display = 'none';
-			document.getElementById("poweredby_inizio").style.display = 'none';
-			if(tipoApp == 'AM' || tipoApp == 'AM_light' || getVar("demo")=='anatomymap'){
+			//document.getElementById("logo_inizio").style.display = 'none';
+			if(getVar("demo")=='anatomymap'){
 				visLoader('');
 				MODELLO.swMuscle();
 				setTimeout(function(){
@@ -282,7 +290,12 @@ var MODELLO = {
 						GUIDA.visFumetto("guida_anatomia");
 					},1200);*/
 					
+					
 				},300);
+			}else{
+				setTimeout( function(){
+					GUIDA.visFumetto("guida_generica");
+				}, 1000 );
 			}
 		}
 		document.getElementById("pulsanti_modello").classList.add('modelloScelto');
@@ -360,7 +373,7 @@ var MODELLO = {
 				txtTT = addType+stripslashes(Lingua(eval("TXT_"+nome)));
 				
 				// verifico le autorizzazioni
-				if((DB.login.data.auths.indexOf("anatomy_full")==-1 || !LOGIN.logedin()) && tipoApp != 'AM'){
+				if((DB.login.data.auths.indexOf("anatomy_full")==-1 || !LOGIN.logedin()) && !globals.AnatomyFREE){
 					if(	nome.split("_")[0]!='Osso' ){
 						if(	nome.split("_")[0]=='Organo' && 
 						nome.substr(7,nome.length-7)!='CUORE' )pass = false;
@@ -525,7 +538,7 @@ var MODELLO = {
 	filtraAnatomia: function(){
 		var vis = true;
 		var mat = "MODELLO.MAT.pinMuscoloTrasp";
-		if((DB.login.data.auths.indexOf("anatomy_full")==-1 || !LOGIN.logedin()) && tipoApp != 'AM'){
+		if((DB.login.data.auths.indexOf("anatomy_full")==-1 || !LOGIN.logedin()) && !globals.AnatomyFREE){
 			vis = false;
 			mat = "MODELLO.MAT.pinMuscoloDemo";
 		}
@@ -595,7 +608,7 @@ var MODELLO = {
 				if(pos2.x < pos1.x)x -= els[e].scrollWidth;
 			}
 			
-			els[e].style.left = parseInt(x) + 'px';
+			els[e].style.left = parseInt(x)+traslStage + 'px';
 			els[e].style.top = parseInt(y) + 'px';
 		}
 	},
@@ -805,7 +818,7 @@ var MODELLO = {
 		var organo = el.id.replace("Organo_","");
 		
 		// verifico le autorizzazioni
-		if((DB.login.data.auths.indexOf("anatomy_full")==-1 || !LOGIN.logedin()) && tipoApp != 'AM'){
+		if((DB.login.data.auths.indexOf("anatomy_full")==-1 || !LOGIN.logedin()) && !globals.AnatomyFREE){
 			if(	organo != 'CUORE' ){
 				if(!modo)ALERT(Lingua(TXT_MsgNoAnatomy));
 				return;
@@ -907,7 +920,7 @@ var MODELLO = {
 		if(el.id)muscolo = el.id.replace("Muscolo_","");
 		
 		// verifico le autorizzazioni
-		if((DB.login.data.auths.indexOf("anatomy_full")==-1 || !LOGIN.logedin()) && tipoApp != 'AM'){
+		if((DB.login.data.auths.indexOf("anatomy_full")==-1 || !LOGIN.logedin()) && !globals.AnatomyFREE){
 			if(	muscolo != 'PETTORALE' ){
 				if(!modo)ALERT(Lingua(TXT_MsgNoAnatomy));
 				nasLoader();
@@ -1085,5 +1098,6 @@ var MODELLO = {
 			ANATOMIA.children[2].children[p].material = MODELLO.MAT["materialPelle"+MODELLO.tipoPelle];
 		}
 	}
+	
 };
 

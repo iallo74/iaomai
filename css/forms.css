@@ -34,31 +34,85 @@ textarea{
 	margin-top:50px;
 	height:auto !important;
 }
+.smart .formBtn{
+	text-align:center;
+}
 .submitBtn,
 .annullaBtn,
 .stampaBtn{
-	width: 100px;
+	/*width: 100px;*/
+	min-width: 100px;
+	padding-left:15px;
+	padding-right:15px;
 	clear: both;
 	border-radius: 3px;
 	border: none;
 	height: 40px;
 	line-height: 39px;
 	cursor: pointer;
-	color: #FFF;
 	margin-top: 10px;
 	margin-left: 5px;
 	display: inline-block;
 	text-align: center;
-	box-shadow: 0px 0px 3px rgb(0 0 0 / 50%);
 	-webkit-appearance: none;
+	
+}
+.submitBtn,
+.stampaBtn{
+	color: #FFF;
 	background: #2b2b2b;
 	background: -moz-linear-gradient(top, #606060 0%, #2b2b2b 100%);
 	background: -webkit-linear-gradient(top, #606060 0%,#2b2b2b 100%);
 	background: linear-gradient(to bottom, #606060 0%,#2b2b2b 100%);
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#606060', endColorstr='#2b2b2b',GradientType=0 );
+	box-shadow: 0px 0px 3px rgba(0,0,0,0.5);
+}
+.annullaBtn{
+    color: #000;
+	background: #b0b0b0;
+	background: -moz-linear-gradient(top, #999 0%, #b0b0b0 100%);
+	background: -webkit-linear-gradient(top, #999 0%,#b0b0b0 100%);
+	background: linear-gradient(to bottom, #999 0%,#b0b0b0 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#999', endColorstr='#b0b0b0',GradientType=0 );
+}
+.smart #scheda.schForm .submitBtn{
+	position: fixed;
+    z-index: 10000;
+    top: -4px;
+    left: 38px;
+    overflow: hidden;
+    padding-right: 0px;
+    min-width: auto;
+    width: 50px;
+    padding-left: 50px;
+    background-image: url(../img/spuntaB.png);
+    height: 54px !important;
+    background-position: center center;
+    margin-top: 0px !important;
+    margin-left: 0px;
+    background-color: #ff9100;
+}
+.smart #scheda.schForm .annullaBtn,
+.smart #scheda.schForm .p_paz_el{
+	display:none;
+}
+#scheda.schForm .p_paz_el_menu{
+    padding: 0px;
+    cursor: pointer;
+    padding-left: 37px;
+    background-image: url(../img/ico_cestinoR.png);
+    background-repeat: no-repeat;
+    background-position: 8px center;
+    background-size: auto auto;
+    border-bottom: 1px solid rgba(0,0,0,0.2);
+}
+	
+.smart.android .submitBtn,
+.smart.android .annullaBtn,
+.smart.android .stampaBtn{
+	font-size:17px;
 }
 .submitBtn:not(.disBtn):hover,
-.annullaBtn:not(.disBtn):hover,
 .stampaBtn:not(.disBtn):hover{
 	background: #3b3b3b;
 	background: -moz-linear-gradient(top, #707070 0%, #3b3b3b 100%);
@@ -66,12 +120,18 @@ textarea{
 	background: linear-gradient(to bottom, #707070 0%,#3b3b3b 100%);
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#707070', endColorstr='#3b3b3b',GradientType=0 );
 }
+.annullaBtn:not(.disBtn):hover{
+	background: #bcbcbc;
+	background: -moz-linear-gradient(top, #9c9c9c 0%, #bcbcbc 100%);
+	background: -webkit-linear-gradient(top, #9c9c9c 0%,#bcbcbc 100%);
+	background: linear-gradient(to bottom, #9c9c9c 0%,#bcbcbc 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#9c9c9c', endColorstr='#bcbcbc',GradientType=0 );
+}
 .disBtn{
 	opacity:0.5;
 	cursor:default;
 }
 
-/*.schLibera .formBtn{*/
 body:not(.smart) #scheda:not(.h150) .formBtn{
     position: absolute !important;
     bottom: 0px;
@@ -83,17 +143,17 @@ body:not(.smart) #scheda:not(.h150) .formBtn{
     background-color: var(--menu-fondino) !important;
     margin: 0px !important;
 }
-.smart .formBtn{
+/*.smart .formBtn{
 	position: fixed;
     z-index: 10000;
-    bottom: 54px;
+    bottom: 0px;
     width: 100%;
     left: 0px;
     padding-left: 10px;
     padding-right: 10px;
     background-color: #FFF;
     height: 56px !important;
-    box-shadow: 0px 0px 10px;
+    box-shadow: 0px 0px 3px rgba(0,0,0,0.5);
 	margin-bottom: 0px !important;
 }
 .smart .formBtn span{
@@ -101,9 +161,8 @@ body:not(.smart) #scheda:not(.h150) .formBtn{
 }
 .smart .formBtn div{
 	margin-top:16px !important;
-}
-/*.schLibera .submitBtn,
-.schLibera .annullaBtn{*/
+}*/
+
 body:not(.smart) .submitBtn,
 body:not(.smart) .annullaBtn,
 body:not(.smart) .stampaBtn{
@@ -156,7 +215,7 @@ body:not(.smart) .stampaBtn{
 #cont_patologia_add, /* PAZIENTI */
 #cont_intervento_add, /* PAZIENTI */
 .cont_label_add{ /* PAZIENTI */
-	font-size:11px !important;
+	font-size:12.1px !important;
 	border-radius:4px;
 	box-shadow:0px 0px 3px #000;
 	/*float:left;*/
@@ -251,6 +310,28 @@ body:not(.smart) .stampaBtn{
 	height: 36px;
     line-height: 36px;
 }
+#contSintomi .occhio{
+	width:16px;
+	height:16px;
+	vertical-align:middle;
+    float: right;
+    margin: 11px;
+    cursor: pointer;
+    opacity: 0.5;
+}
+.smart.android #contSintomi .occhio{
+	margin:16px !important;
+}
+.smart.android #contSintomi div:not(.noResults){ /* PAZIENTI */
+	height: 48px !important;
+    line-height: 48px !important;
+}
+.smart.android #contSintomi div:not(.noResults) span{ /* PAZIENTI */
+	font-size: 15px !important;
+}
+.smart.android .scoreSelect{
+	margin-top:3px !important;
+}
 #contSintomi div:not(.noResults):hover{ /* PAZIENTI */	
 	background-color:rgba(0,0,0,0.1) !important;
 }
@@ -315,6 +396,23 @@ body:not(.smart) .stampaBtn{
     box-shadow: 0px 0px 3px rgb(0,0,0,0.5) !important;
 	width: 130px;
 }
+.smart.android .sch_Max450 .p_paz_add,
+.smart.android .p_tag_add,
+.smart.android .p_medicina_add,
+.smart.android .p_allergia_add,
+.smart.android .p_patologia_add,
+.smart.android .p_intervento_add,
+.smart.android .p_label_add,
+.smart.android .p_tag_ann,
+.smart.android .p_medicina_ann,
+.smart.android .p_allergia_ann,
+.smart.android .p_patologia_ann,
+.smart.android .p_intervento_ann,
+.smart.android .p_label_ann{
+    height: 42px !important;
+    line-height: 42px !important;
+	font-size:16px;
+}
 .sch_Max450 .p_paz_add,
 .p_tag_add,
 .p_medicina_add,
@@ -374,6 +472,9 @@ body:not(.smart) .stampaBtn{
     cursor: pointer;
     margin-left: -36px;
 }
+.smart.android #tag_col{
+	height: 36px;
+}
 .rgTagsMod,
 .rgMedicineMod,
 .rgAllergieMod,
@@ -395,6 +496,15 @@ body:not(.smart) .stampaBtn{
 	padding-right:10px;
 	margin:7px;
 	box-shadow:0px 0px 2px rgba(0,0,0,0.4);
+}
+
+.smart.android .tsb,
+.smart.android .tag,
+.smart.android .medicina,
+.smart.android .allergia,
+.smart.android .patologia,
+.smart.android .intervento{
+	font-size: 16px;
 }
 #scheda:not(.schForm) .tsb,
 #scheda:not(.schForm) .tag,
@@ -425,6 +535,12 @@ body:not(.smart) .stampaBtn{
 #elencoInterventi{
 	margin-top: 36px !important;
 }
+.smart.android #elencoMedicine,
+.smart.android #elencoAllergie,
+.smart.android #elencoPatologie,
+.smart.android #elencoInterventi{
+	margin-top: 45px !important;
+}
 #elencoTags,
 #elencoMedicine,
 #elencoAllergie,
@@ -451,7 +567,18 @@ body:not(.smart) .stampaBtn{
 	width: calc(100% - 30px);
     display: inline-block !important;
     vertical-align: middle;
-    margin-right: -1px;
+    margin-left: -1px;
+}
+.smart.android #elencoTags > div > div:not(.noResults),
+.smart.android #elencoMedicine > div > div:not(.noResults),
+.smart.android #elencoAllergie > div > div:not(.noResults),
+.smart.android #elencoPatologie > div > div:not(.noResults),
+.smart.android #elencoInterventi > div > div:not(.noResults),
+.smart.android .elencoEtichette > div > div:not(.noResults),
+.smart.android #elencoSintomi > div > div:not(.noResults){
+	height:42px !important;
+	line-height:33px !important;
+	font-size:16px !important;
 }
 .elMod{
 	width: 30px !important;
@@ -496,14 +623,15 @@ body:not(.smart) .stampaBtn{
 .labelElenco{
 	cursor:pointer;
 	border-bottom:1px solid rgba(0,0,0,0.05);
-	background-image:url(../img/frSuB.png);
-	background-repeat:no-repeat;
-	background-position:right center;
-	background-size:contain;
+	background-image: url(../img/addB.png);
+    background-repeat: no-repeat;
+    background-position: calc(100% - 12px)center;
+    background-size: 13px;
 	padding-top: 5px;
     padding-bottom: 5px;
 	padding-left: 10px;
 	text-align:left !important;
+	font-size: 14px;
 }
 .tagElenco:hover,
 .medicineElenco:hover,
@@ -553,8 +681,26 @@ body:not(.smart) .stampaBtn{
 	min-width:70px !important;
 	text-wrap:none !important;
 	background-position:5px center;
-	font-size:12px !important;
+	font-size:13.2px !important;
 	padding-left:20px !important;
+}
+.smart.android .p_paz_punto,
+.smart.android .p_paz_foto,
+.smart.android .p_paz_label{ /* PAZIENTI */
+	height:42px !important;
+	line-height:42px !important;
+	font-size:15px !important;
+	background-position:8px center !important;
+	padding-left:30px !important;
+}
+.smart.android .p_paz_gruppo,
+.smart.android .p_paz_meridiani{ /* PAZIENTI */
+	height:42px !important;
+	line-height:42px !important;
+	font-size:15px !important;
+	background-position:8px center, right !important;
+	padding-left:41px !important;
+	padding-right: 37px !important;
 }
 .p_paz_punto,
 .p_paz_label{
@@ -573,6 +719,14 @@ body:not(.smart) .stampaBtn{
     background-position: left center;
 	/*float: right !important;*/
 	margin-top:5px !important;
+}
+,cont_p_paz_label{
+	height: 35px;
+	padding-top: 5px;
+}
+.smart.android .cont_p_paz_label{
+	height:50px !important;
+	padding-top: 10px !important;
 }
 .p_paz_foto{
 	background-image: url(../img/ico_foto.png);
@@ -640,7 +794,7 @@ body:not(.smart) .stampaBtn{
 	font-weight:bold;
 }
 .p_sch_label{ /* procedura */
-	font-size: 11px !important;
+	font-size:12.1px !important;
     min-width: 60px;
     padding: 4px;
     margin-top: 17px;
@@ -663,7 +817,7 @@ body:not(.smart) .stampaBtn{
     padding: 0px;
     cursor: pointer;
     padding-left: 25px;
-    background-image: url(../img/ico_mod_cestino.png);
+    background-image: url(../img/ico_cestinoR.png);
     background-repeat: no-repeat;
     background-position: left -2px;
     text-align: right;
@@ -671,9 +825,12 @@ body:not(.smart) .stampaBtn{
 	margin-top: 17px;
     margin-left: 2px;
 }
-/*.schLibera .p_paz_el{*/
+.smart.android .p_paz_el{
+	font-size:17px;
+}
 body:not(.smart) .p_paz_el{
     margin-top: 4px;
+	color: #b26c6c;
 }
 #puntiTsuboMap,
 #meridianiTsuboMap{ /* PAZIENTI */
@@ -692,15 +849,6 @@ body:not(.smart) .p_paz_el{
 	height:auto !important;
 	line-height:normal !important;
 }
-#puntiTsuboMap input,
-#meridianiTsuboMap input{ /* PAZIENTI */
-	/*margin-top:0px !important;*/
-}
-
-#puntiTsuboMap .noResults,
-#meridianiTsuboMap .noResults{ /* PAZIENTI */
-	/*padding-top:0px;*/
-}
 #puntiTsuboMap img.noMod
 #meridianiTsuboMap img.noMod{ /* PAZIENTI */
 	vertical-align: -webkit-baseline-middle;
@@ -709,6 +857,27 @@ body:not(.smart) .p_paz_el{
 	margin-right: 2px;
 	margin-left: 1px;
 }
+
+
+.smart.android .dettMeridiano > img{
+	margin-top: 13px !important;
+}
+.smart.android .rgProcMod .valPunto,
+.smart.android .rgProcMod .valMerid{
+	height: 38px;
+}
+.smart.android .rgProcMod .valPunto img,
+.smart.android .rgProcMod .valMerid img{
+    margin-top: 5px;
+}
+.smart.android .rgProcMod input{
+	margin-bottom: 0px !important;
+    vertical-align: top;
+}
+.smart.android .rgProcMod .meridModif{
+    line-height: 41px !important;
+}
+
 .p_sch_pref, /* procedura */
 .p_sch_no_pref, /* procedura */
 .p_sch_mod, /* procedura */
@@ -837,6 +1006,7 @@ body:not(.smart) .p_paz_el{
 #formMod em,  /* PAZIENTI */
 .sezioneTrattamenti em{  /* PAZIENTI */
 	padding-left:6px;
+	padding-right: 5px;
 	font-style:italic;
 	color:#000;
 	display: block;
@@ -860,6 +1030,7 @@ body:not(.smart) .p_paz_el{
 }
 #formMod i{
 	margin-top: 12px;
+	margin-bottom: 4px;
 }
 .sch_Max600 #formMod i{
 	line-height: 12px;
@@ -868,7 +1039,13 @@ body:not(.smart) .p_paz_el{
 .sch_Max600 #formMod em:not(.labelTrattamenti) {
     opacity: 0.5;
 }
-
+.smart.android .sch_Max600 #formMod i,
+.smart.android .sch_Max600 #formMod em:not(.labelTrattamenti) {
+    font-size: 15px;
+}
+.smart.android .labelSx{
+	margin-top:5px;
+}
 .noBR i,
 .noBR em{
 	margin-bottom: 10px !important;
@@ -894,6 +1071,10 @@ _:-webkit-full-screen,
 	height:32px;
 	line-height:15px;
 	font-weight:normal !important;
+}
+.smart.android #formMod input:not([type=checkbox]):not([type=file]):not(#paz_add):not(#tag_add):not(#medicina_add):not(#allergia_add):not(#patologia_add):not(#intervento_add):not(.label_add){ /* PAZIENTI */
+	height:42px !important;
+	line-height:20px !important;
 }
 #formMod input:not([type=checkbox]):not([type=file]):not(#paz_add):not(#tag_add):not(#medicina_add):not(#allergia_add):not(#patologia_add):not(#intervento_add):not(.label_add):not(.textPuntoTratt){ /* PAZIENTI */
 	margin-left:0px !important;
@@ -945,6 +1126,17 @@ _:-webkit-full-screen,
 	opacity:1 !important;
 	font-style:italic !important;
 }
+
+.smart.android #paz_add::placeholder,
+.smart.android .label_add::placeholder,
+.smart.android .label_add::placeholder,
+.smart.android #tag_add::placeholder,
+.smart.android #medicina_add::placeholder,
+.smart.android #allergia_add::placeholder,
+.smart.android #patologia_add::placeholder,
+.smart.android #intervento_add::placeholder{
+	font-size:17px !important;
+}
 .okPlaceHolder::placeholder{
 	opacity:1 !important;
 	font-style:italic !important;
@@ -960,6 +1152,9 @@ _:-webkit-full-screen,
     vertical-align: middle;
     cursor: pointer;	
 }
+.smart.android #label_close{
+    height: 42px !important;
+}
 /*.sch_Max450 #paz_add,*/
 #tag_add,
 #medicina_add,
@@ -969,6 +1164,14 @@ _:-webkit-full-screen,
     height: 32px !important;
     line-height: 32px;
 	width: calc(100% - 95px) !important;
+}
+.smart.android #tag_add,
+.smart.android #medicina_add,
+.smart.android #allergia_add,
+.smart.android #patologia_add,
+.smart.android #intervento_add{
+    height: 42px !important;
+    line-height: 42px;
 }
 .modEl #tag_add,
 .modEl #medicina_add,
@@ -1001,7 +1204,7 @@ _:-webkit-full-screen,
 #paz_add,
 .label_add{
 	width: calc(100% - 127px) !important;
-    height: 32px !important;
+    height: 32px;
     line-height: 32px;
 }
 .modEl .label_add,
@@ -1016,7 +1219,7 @@ _:-webkit-full-screen,
 .TitTrattDx{ /* PAZIENTI */
 	padding-left:5px !important;
 	max-width:100% !important;
-	margin-top:20px;
+	/*margin-top:20px;*/
 }
 .RicTrattDx{ /* PAZIENTI */
 	padding-left:5px !important;
@@ -1039,7 +1242,7 @@ _:-webkit-full-screen,
 }
 #NomeProcedura{ /* procedura */
 	width:100% !important;
-	font-size:14px !important;
+	font-size:15.4px !important;
 }
 .dettPunto{ /* procedura + PAZIENTI */
 	/*padding-left:20px !important;
@@ -1054,6 +1257,15 @@ _:-webkit-full-screen,
 	padding-left:28px !important;
   	width: 100%;
 	background-color: rgba(0,0,0,0.08);
+}
+.smart.android #scheda:not(.scheda_procedura) .dettMeridiano span:not(.valPunto):not(.mezzoPunto){ /* PAZIENTI */
+    line-height: 42px !important;
+    height: 42px !important;
+	background:url(../img/lineaPat.png) no-repeat 6px center;
+	padding-left:28px !important;
+  	width: 100%;
+	background-color: rgba(0,0,0,0.08);
+	font-size: 15px;
 }
 .scheda_procedura .dettMeridiano span{ /* PAZIENTI */
     line-height: 24px !important;
@@ -1121,11 +1333,13 @@ body:not(.touch) #puntiTsuboMap .dettPunto:hover{
     cursor: pointer;
     overflow: hidden;
     border-right: 1px solid rgba(0,0,0,0.1);
+	text-align: center;
+}
+.rgMod .valPunto{
 	background-image:url(../img/inpbg2p.png);
 	background-repeat:no-repeat;
 	background-position: calc(100% - 3px) calc(100% - 1px);
     background-size: 10px;
-	text-align: center;
 }
 .valPunto{
     border-left: 1px solid rgba(0,0,0,0.1);
@@ -1133,16 +1347,7 @@ body:not(.touch) #puntiTsuboMap .dettPunto:hover{
 .mezzoPunto{
 	margin-right:4px;
 }
-/*
-.valPunto b{
-	font-size: 9px;
-    font-family: arial;
-    color: rgba(0,0,0,0.5);
-	font-weight:normal !important;
-	display: inline-block;
-    width: calc(100% - 21px);
-    text-align: center;
-}*/
+
 .valPunto img,
 .mezzoPunto img{
 	margin-top:-1px;
@@ -1167,7 +1372,7 @@ body:not(.touch) #puntiTsuboMap .dettPunto:hover{
 }
 
 #formMod textarea{ /* PAZIENTI */
-	font-family:Verdana, Geneva, sans-serif;
+	/*font-family:Verdana, Geneva, sans-serif;*/
 	background-color:rgba(255,255,255,0.5);
 	border-radius:3px;
 	padding:6px;
@@ -1292,6 +1497,11 @@ body:not(.touch) #puntiTsuboMap .dettPunto:hover{
 	line-height:30px;/* !important;*/
 	height:30px;
 }
+.smart.android #formMod select:not(.p_proc_gruppo):not(.p_paz_gruppo):not(.p_paz_meridiani):not(.p_proc_meridiani),
+.smart.android #dataTxt{
+	line-height:40px !important;
+	height:40px !important;
+}
 #dataTxt{
 	font-weight:normal;
 	min-width:240px;
@@ -1304,6 +1514,10 @@ body:not(.touch) #puntiTsuboMap .dettPunto:hover{
 #formMod select:not(.p_proc_gruppo):not(.p_paz_gruppo):not(.p_paz_meridiani):not(.p_proc_meridiani):not(.mezzoPuntoTratt){ /* PAZIENTI */
 	margin-top:3px;
 	margin-bottom: 3px;
+}
+.smart.android #formMod select:not(.scoreSelect):not(.p_proc_gruppo):not(.p_paz_gruppo):not(.p_paz_meridiani):not(.p_proc_meridiani):not(.mezzoPuntoTratt){ /* PAZIENTI */
+	margin-top:0px !important;
+	margin-bottom: 0px !important;
 }
 #formMod select::-ms-expand{ /* PAZIENTI */
 	display: none;
@@ -1336,7 +1550,7 @@ body:not(.touch) #puntiTsuboMap .dettPunto:hover{
 	margin-left:7px;
 	margin-top:17px;
 	cursor:pointer;
-	font-size:12px !important;
+	font-size:13.2px !important;
 }
 #p_sch_salva{
 	color:#000;
@@ -1513,6 +1727,17 @@ body:not(.touch) #puntiTsuboMap .dettPunto:hover{
 	color:#FFF;
     display: inline-block;
     vertical-align: middle;
+	margin-top:-4px;
+}
+.gr_ret_txt{
+    display: inline-block;
+    width: calc(100% - 200px);
+    color: #FFF;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    vertical-align: middle;
+	margin-top:-4px;
 }
 #gr_ret_ric{
 	background-image: url(../img/lenteB.png);
@@ -1616,6 +1841,10 @@ body:not(.touch) #puntiTsuboMap .dettPunto:hover{
     padding-left: 7px !important;
     padding-right: 7px !important;
 }
+.smart.android .date{
+    height: 42px !important;
+    line-height: 42px !important;
+}
 .date .giorno,
 .date .mese,
 .date .anno{
@@ -1629,6 +1858,11 @@ body:not(.touch) #puntiTsuboMap .dettPunto:hover{
 	height: 30px !important;
 	margin-top: -4px !important;
 	border-radius: 0px !important;
+}
+.smart.android .date .giorno,
+.smart.android .date .mese,
+.smart.android .date .anno{
+	height: 40px !important;
 }
 .date .giorno,
 .date .mese{
@@ -1676,6 +1910,15 @@ body:not(.touch) .sezioneChiusa:hover{
 	background:url(../img/frSuB.png) no-repeat right center;
 	background-size:auto 170%;
 }
+.smart .sezioneTrattamenti > .labelTrattamenti{
+	font-style:normal !important;
+}
+.smart.android .sezioneTrattamenti > .labelTrattamenti{
+	font-size: 16px;
+}
+.smart.android .sezioneTrattamenti:not(sezioneChiusa) > .labelTrattamenti{
+	margin-bottom: 15px;
+}
 .sezioneChiusa > .labelTrattamenti{
 	background-image:url(../img/frGiuB.png) !important;
 	margin-bottom: 13px;
@@ -1701,6 +1944,12 @@ body:not(.touch) .sezioneChiusa:hover{
     padding-right: 0px !important;
     min-width: auto !important;
     display: inline-block;
+}
+.smart.android #fotoProvv_FL{
+    padding-left: 42px !important;
+    width: 42px !important;
+	background-position: center center !important;
+    background-size: auto;
 }
 #contGallery{
 	overflow-y: hidden;

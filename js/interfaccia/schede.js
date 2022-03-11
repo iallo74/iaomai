@@ -1,10 +1,18 @@
 var SCHEDA = {
-	libera: {
-		stato: false,
-		x: -1,
-		y: -1,
-		w: -1,
-		h: -1
+	aggancio: {
+		tipo: 'sotto',
+		libera: {
+			x: -1,
+			y: -1,
+			w: -1,
+			h: -1
+		},
+		sotto: {
+			y: -1
+		},
+		lato: {
+			w: -1
+		}
 	},
 	xMouseIni: 0,
 	yMouseIni: 0,
@@ -23,7 +31,6 @@ var SCHEDA = {
 	classeAperta: '',
 	functRitorno: '',
 	memHrit: '',
-	memY: 0,
 	elencoSel: '',
 	elencoSelSet: '',
 	elencoSelBase: '',
@@ -33,28 +40,19 @@ var SCHEDA = {
 	form: null,
 	versoRedim: '',
 	gapScheda: 16, /* 17 */
-	livelloApertura: 2,
-	menu_to3: true, // indica che il menu di primo livello deve restare sempre a 3
 	ultimaCartella: '', // l'id della sottocartella aperta quando si clicca su una scheda (per smartMenu)
-	htmlPallini:	'<div id="btnMenuScheda" onClick="SCHEDA.swMenuScheda();">' +
-					'<svg viewBox="0 0 25 36"><circle cy="11"></circle><circle cy="18"></circle>' +
-					'<circle cy="25"></circle></svg></div><div id="menuScheda"></div>',
 	
 	initScheda: function(){
-		if(!touchable && localStorage.schedaLibera){
-			SCHEDA.libera = JSON.parse(localStorage.schedaLibera);
-			if(SCHEDA.libera.stato)SCHEDA.swLibera(true);
-		}
-		if(localStorage.livelloApertura){
-			SCHEDA.livelloApertura = localStorage.livelloApertura*1;
-			SCHEDA.fissaMenuEspanso(SCHEDA.livelloApertura);
+		if(!touchable && localStorage.schedaAggancio){
+			SCHEDA.aggancio = JSON.parse(localStorage.schedaAggancio);
+			SCHEDA.aggancia(SCHEDA.aggancio.tipo);
 		}
 		SCHEDA.verRedim();
 		window.addEventListener("resize",function(){
 			SCHEDA.verRedim();
 		}, false);
 	},
-	caricaScheda: function( titolo, html, funct, classe, ritorno, espansa, btn ){
+	caricaScheda: function( titolo, html, funct, classe, ritorno, espansa, btn, btnAdd ){
 		/*
 		titolo: titolo della scheda
 		html: contenuto della scheda
@@ -63,7 +61,6 @@ var SCHEDA = {
 		ritorno: indica se ci deve essere un ritorno ad un altra scheda (scrive su scheda_testo2 e visualizza il pulsante di ritorno) [ può contenere la funzione di ritorno ]
 		espansa: apre la scheda non compressa
 		*/
-		
 		try{
 			SET._caricaScheda({
 				"funct": funct,
@@ -93,6 +90,7 @@ var SCHEDA = {
 		if(typeof(ritorno)=='undefined')var ritorno = '';
 		if(typeof(espansa)=='undefined')var espansa = false;
 		if(typeof(btn)=='undefined')var btn = null;
+		if(typeof(btnAdd)=='undefined')var btnAdd = '';
 		
 		if(SCHEDA.btnSel && !ritorno){
 			SCHEDA.btnSel.classList.remove("elencoSel");
@@ -121,7 +119,14 @@ var SCHEDA = {
 			SCHEDA.classeAperta = classe;
 			SCHEDA.torna();
 		}
-		if(classe != "scheda_agenda" && classe != "scheda_video"  && classe != "scheda_ricerche" )html = SCHEDA.htmlPallini + html;
+		if(classe != "scheda_agenda" && classe != "scheda_video"  && classe != "scheda_ricerche" ){
+			html =  '<div id="btnMenuScheda" onClick="SCHEDA.swMenuScheda();">' +
+					'	<svg viewBox="0 0 25 36"><circle cy="11"></circle><circle cy="18"></circle>' +
+					'	<circle cy="25"></circle></svg>' +
+					'</div>' + html;
+			document.getElementById("addBtnMenu").innerHTML = btnAdd;
+		}
+					
 		document.getElementById("scheda_titolo").innerHTML=htmlEntities(titolo);
 		document.getElementById("scheda_testo"+nScheda).innerHTML=html;
 		
@@ -129,22 +134,23 @@ var SCHEDA = {
 		document.getElementById("scheda_cont").classList.add("visSch");
 		
 		SCHEDA.schedaAperta = true;
-		document.getElementById("elenchi").classList.remove("schExp");
-		document.getElementById("scheda").classList.remove("schExp");
-		document.getElementById("l3").classList.remove("visBtn");
 		document.getElementById("elenchi").classList.add("noTesta");
 		
 		if(!nScheda && funct){ // imposto la funzione alla chiusura della scheda
 			document.getElementById("sc").dataset.funct=funct;
 		}
-		if(espansa){
-			if(!SCHEDA.libera.stato){
+		if(smartMenu){
+			SCHEDA.hOpened = window.innerHeight - 45;
+			document.getElementById("scheda_testo").style.height = SCHEDA.hOpened+"px";
+			document.getElementById("scheda_testo2").style.height = (SCHEDA.hOpened+SCHEDA.getHbtns())+"px";
+		}else if(espansa){
+			if(SCHEDA.aggancio.tipo == 'sotto'){
 				if(!SCHEDA.hOpened)SCHEDA.hOpened = 200;
-				if(classe.indexOf("scheda_")==-1 || smartMenu){
-					document.getElementById("scheda_testo").style.height = SCHEDA.hOpened+"px";
-				}else{
+				//if(classe.indexOf("scheda_")==-1 || smartMenu){
+					//document.getElementById("scheda_testo").style.height = SCHEDA.hOpened+"px";
+				/*}else{
 					document.getElementById("scheda_testo").style.height = (HF()-SCHEDA.getMM()+SCHEDA.gapScheda)+"px";
-				}
+				}*/
 				document.getElementById("scheda_testo").scrollTop = '0px';
 			}
 		}
@@ -154,11 +160,15 @@ var SCHEDA = {
 			SCHEDA.btnSel=btn;
 			btn.classList.add("elencoSel");	
 		}
-		SCHEDA.memY = tCoord(document.getElementById("scheda"),'y');
-		if(SCHEDA.libera.stato)SCHEDA.verPosScheda();
+		//if(SCHEDA.aggancio.tipo == 'sotto')SCHEDA.aggancio.sotto.y = tCoord(document.getElementById("scheda"),'y');
+		//if(SCHEDA.aggancio.tipo == 'libera')SCHEDA.verPosScheda();
 		SCHEDA.verRedim();
-		SCHEDA.setMenuDim(2);
+		//SCHEDA.verPosScheda();
+		SCHEDA.setMenuDim();
 		GUIDA.nasFumetto();
+		SCHEDA.riapriScheda();
+		SCHEDA.swMenuScheda('chiudi');
+		if(!ritorno)document.getElementById("scheda_testo").scrollTo(0,0);
 	},
 	verificaSchedaRet: function(){
 		formHasChanges();
@@ -175,7 +185,7 @@ var SCHEDA = {
 			try{
 				SET._scaricaScheda();
 			}catch(err){}
-			
+			SCHEDA.addForm = 0;
 			SCHEDA.form = null;
 			SCHEDA.torna();
 			document.getElementById("scheda").classList.remove("visSch");
@@ -186,7 +196,6 @@ var SCHEDA = {
 			document.getElementById("elenchi").classList.remove("noTesta");
 			if(SCHEDA.classeAperta){
 				document.getElementById("scheda").classList.remove(SCHEDA.classeAperta);
-				document.getElementById("l2").classList.add("visBtn");
 			}
 			SCHEDA.schedaAperta = false;
 			SCHEDA.scheda2Aperta = false;
@@ -204,9 +213,9 @@ var SCHEDA = {
 			if(salvato)SCHEDA.msgSalvataggio(true);
 			
 			SCHEDA.espandiElenco();
-			var livello = SCHEDA.livelloApertura;
-			if(!document.getElementById("elenchi_cont").classList.contains("visSch") || !document.getElementById("elenchi").classList.contains("LISTE"))livello = 2;
-			SCHEDA.setMenuDim(livello);
+			livello = 3;
+			SCHEDA.setMenuDim();
+			//verAnimate();
 		}});
 	},
 	nasScheda: function(){
@@ -241,53 +250,86 @@ var SCHEDA = {
 		document.getElementById("elenchi").classList.remove("compresso");
 		SCHEDA.verPosScheda();
 	},
-	
-	swLibera: function(forza){
-		if(typeof(forza) == 'undefined')var forza = false;
-		if(forza == 'true')var forza = true;
-		if(forza == 'false')var forza = false;
-		
-		SCHEDA.libera.stato = !SCHEDA.libera.stato;
-		if(forza)SCHEDA.libera.stato = true;
-		//localStorage.schedaLibera = JSON.stringify(SCHEDA.libera);
-
-		if(SCHEDA.libera.stato){
+	aggancia: function(tipo){
+		SCHEDA.aggancio.tipo = tipo;
+		if(SCHEDA.aggancio.tipo == 'libera'){
 			// sganciata
-			if(SCHEDA.libera.w>-1)
-			if(SCHEDA.libera.w == -1){
-				if(WF()<550)SCHEDA.libera.w = WF() - 30;
-				else SCHEDA.libera.w = 550;
-				if(HF()<480)SCHEDA.libera.h = HF() - 30;
-				else SCHEDA.libera.h = 480;
-				SCHEDA.libera.x = WF() - SCHEDA.libera.w - 30;
-				SCHEDA.libera.y = HF() - SCHEDA.libera.h - 30;
+			if(SCHEDA.aggancio.libera.w == -1){
+				if(WF()<550)SCHEDA.aggancio.libera.w = WF() - 30;
+				else SCHEDA.aggancio.libera.w = 550;
+				if(HF()<480)SCHEDA.aggancio.libera.h = HF() - 30;
+				else SCHEDA.aggancio.libera.h = 480;
+				SCHEDA.aggancio.libera.x = WF() - SCHEDA.aggancio.libera.w - 30;
+				SCHEDA.aggancio.libera.y = HF() - SCHEDA.aggancio.libera.h - 30;
 			}
-			
-			document.getElementById("scheda").style.left = SCHEDA.libera.x + "px";
-			document.getElementById("scheda").style.top = SCHEDA.libera.y + "px";
-			document.getElementById("scheda").style.width = SCHEDA.libera.w + "px";
-			document.getElementById("scheda_testo").style.height = SCHEDA.libera.h - SCHEDA.getMM() + "px";
-			document.getElementById("scheda_testo2").style.height = SCHEDA.libera.h - SCHEDA.getMM() + "px";
+			document.getElementById("scheda").classList.remove("h150")
+			document.getElementById("scheda").style.left = SCHEDA.aggancio.libera.x + "px";
+			document.getElementById("scheda").style.top = SCHEDA.aggancio.libera.y + "px";
+			document.getElementById("scheda").style.width = SCHEDA.aggancio.libera.w + "px";
+			document.getElementById("scheda_testo").style.height = (SCHEDA.aggancio.libera.h - SCHEDA.getMM()) + "px";
+			document.getElementById("scheda_testo2").style.height = (SCHEDA.aggancio.libera.h - SCHEDA.getMM() + SCHEDA.getHbtns()) + "px";
 			document.getElementById("scheda").classList.add("schLibera");
-		}else{
-			// agganciata
+			document.getElementById("scheda").classList.remove("schLato");
+			document.getElementById("elenchi").classList.remove("schLato");
+		}
+		if(SCHEDA.aggancio.tipo == 'sotto'){
+			// agganciata SOTTO
 			document.getElementById("scheda").style.left = "";
 			document.getElementById("scheda").style.top = "";
 			document.getElementById("scheda").style.width = "";
-			document.getElementById("scheda_testo").style.height = HF() - SCHEDA.getMM() - SCHEDA.memY;
-			document.getElementById("scheda_testo2").style.height = HF() - SCHEDA.getMM() - SCHEDA.memY;
+			
+			var mm = 20;
+			if(smartMenu)mm = 1;
+			var h =(HF()-(SCHEDA.aggancio.sotto.y-SCHEDA.gapScheda)-SCHEDA.getMM()+mm);
+			
+			//document.getElementById("scheda").classList.remove("h150")
+			document.getElementById("scheda_testo").style.height = h + 'px';
+			document.getElementById("scheda_testo2").style.height = (h + SCHEDA.getHbtns()) + 'px';
 			document.getElementById("scheda").classList.remove("schLibera");
+			document.getElementById("scheda").classList.remove("schLato");
+			document.getElementById("elenchi").classList.remove("schLato");
 		}
-		localStorage.schedaLibera = JSON.stringify(SCHEDA.libera);
+		
+		if(SCHEDA.aggancio.tipo == 'lato'){
+			// agganciata a LATO
+			if(SCHEDA.aggancio.lato.w == -1)SCHEDA.aggancio.lato.w = 500;
+			document.getElementById("scheda").style.top = "0px";
+			document.getElementById("scheda_testo").style.height = (HF() - SCHEDA.getMM()) + "px";
+			document.getElementById("scheda_testo2").style.height = (HF() - SCHEDA.getMM() + SCHEDA.getHbtns()) + "px";
+			document.getElementById("scheda").style.width = SCHEDA.aggancio.lato.w + "px";
+			
+			document.getElementById("scheda").classList.remove("h150")
+			document.getElementById("scheda").classList.remove("schLibera");
+			document.getElementById("scheda").classList.add("schLato");
+			document.getElementById("elenchi").classList.add("schLato");
+		}
+		
+		localStorage.schedaAggancio = JSON.stringify(SCHEDA.aggancio);
 		SCHEDA.verRedim();
+		SCHEDA.verPosScheda();
+		SCHEDA.swMenuScheda('chiudi');
 	},
-	aggancia: function(tipo){
-		/*if(tipo=='0')SCHEDA.swLibera(true);
-		else SCHEDA.swLibera();*/
-		SCHEDA.swLibera();
+	nascondiScheda: function(){
+		document.getElementById("riapriTit").innerHTML = document.getElementById("scheda_titolo").innerHTML;
+		document.body.classList.add("nasSch");
+		onWindowResize();
+		startAnimate();
+	},
+	riapriScheda: function(){
+		if(document.body.classList.contains("nasSch")){
+			document.body.classList.remove("nasSch");
+			document.getElementById("riapriTit").innerHTML = '';
+			document.getElementById("scheda_testo").style.height = (HF() - 47) + "px";
+			document.getElementById("scheda_testo").style.height = (HF() - 47) + "px";
+			onWindowResize();
+			stopAnimate();
+		}
 	},
 	
-	iniziaMoveScheda: function( event ){
+	
+	iniziaMoveScheda: function( event, onTitle ){ // sposta la scheda libera o ridimansina quella sotto
+		if(typeof(onTitle)=='undefined')var onTitle = false;
+		if(SCHEDA.aggancio.tipo == 'lato' || (SCHEDA.aggancio.tipo == 'sotto' && onTitle) || smartMenu)return;
 		event.preventDefault();
 		noAnimate = true;
 		if(!touchable){
@@ -298,11 +340,16 @@ var SCHEDA = {
 			document.body.addEventListener("touchend", SCHEDA.arrestaMoveScheda, false );
 			document.body.addEventListener("touchmove", SCHEDA.moveMoveScheda, false );	
 		}
-		if(!SCHEDA.libera.stato){
-			SCHEDA.tIni = "0"+document.getElementById("scheda_testo").style.height.replace("px","")+"";
-		}else{
+		if(SCHEDA.aggancio.tipo == 'libera'){
 			SCHEDA.xIni = tCoord(document.getElementById("scheda"));
 			SCHEDA.yIni = tCoord(document.getElementById("scheda"),'y');
+		}
+		if(SCHEDA.aggancio.tipo == 'sotto'){
+			SCHEDA.tIni = parseInt("0"+document.getElementById("scheda_testo").style.height.replace("px","")+"");
+			if(document.getElementById("scheda").classList.contains("h150"))SCHEDA.tIni -= SCHEDA.getHbtns();
+		}
+		if(SCHEDA.aggancio.tipo == 'lato'){
+			SCHEDA.xIni = tCoord(document.getElementById("scheda"));
 		}
 		if(touchable){
 			try{
@@ -318,19 +365,7 @@ var SCHEDA = {
 		event.preventDefault();
 		SCHEDA.xMouseAtt = touchable ? event.touches[ 0 ].pageX : event.clientX;
 		SCHEDA.yMouseAtt = touchable ? event.touches[ 0 ].pageY : event.clientY;
-		if(!SCHEDA.libera.stato){
-			var h = SCHEDA.tIni-(SCHEDA.yMouseAtt - SCHEDA.yMouseIni);
-			if(h<0)h = 0;
-			var mm = SCHEDA.getMM()-SCHEDA.gapScheda;
-			if(h>HF()-mm)h = HF()-mm;
-			if(h>5)SCHEDA.hOpened = h;
-			else SCHEDA.hOpened = 200;
-			document.getElementById("scheda_testo").style.height = h+'px';
-			document.getElementById("scheda_testo2").style.height = h+'px';
-			SCHEDA.memHrit = h*1+"px";
-			if(h<=150)document.getElementById("scheda").classList.add("h150");
-			else document.getElementById("scheda").classList.remove("h150");
-		}else{
+		if(SCHEDA.aggancio.tipo == 'libera'){
 			var x = SCHEDA.xIni+(SCHEDA.xMouseAtt - SCHEDA.xMouseIni);
 			var y = SCHEDA.yIni+(SCHEDA.yMouseAtt - SCHEDA.yMouseIni);
 			
@@ -339,6 +374,29 @@ var SCHEDA = {
 			SCHEDA.verPosScheda();
 			SCHEDA.moving = true;
 		}
+		if(SCHEDA.aggancio.tipo == 'sotto'){
+			var h = SCHEDA.tIni-(SCHEDA.yMouseAtt - SCHEDA.yMouseIni);
+			if(h<0-SCHEDA.getHbtns())h = 0-SCHEDA.getHbtns();
+			var mm = SCHEDA.getMM()-SCHEDA.gapScheda;
+			if(h>HF()-mm)h = HF()-mm;
+			var h2 = 0;
+			if(document.getElementById("scheda").scrollHeight<=275){
+				document.getElementById("scheda").classList.add("h150");
+				h2 = SCHEDA.getHbtns();
+			}else{
+				document.getElementById("scheda").classList.remove("h150");
+			}
+			
+			if(h>5)SCHEDA.hOpened = h + SCHEDA.getHbtns()+h2;
+			else SCHEDA.hOpened = 200;
+			document.getElementById("scheda_testo").style.height = (h + h2) +'px';
+			document.getElementById("scheda_testo2").style.height = (h + h2 + SCHEDA.getHbtns()) +'px';
+			SCHEDA.memHrit = ((h + h2)*1)+"px";
+		}
+		if(SCHEDA.aggancio.tipo == 'lato'){
+			// non esiste
+		}
+		
 		SCHEDA.verRedim();
 	},
 	arrestaMoveScheda: function( event ){
@@ -348,23 +406,27 @@ var SCHEDA = {
 		noAnimate = false;
 		animate();
 		controlsM._MM = true
-		if(!SCHEDA.libera.stato){
+		if(SCHEDA.aggancio.tipo == 'libera'){
+			SCHEDA.aggancio.libera.x = tCoord(document.getElementById("scheda"));
+			SCHEDA.aggancio.libera.y = tCoord(document.getElementById("scheda"),'y');
+			setTimeout(function(){ SCHEDA.moving = false; },300);
+		}
+		if(SCHEDA.aggancio.tipo == 'sotto'){
 			if(SCHEDA.yMouseIni == y){
 				h = "0"+document.getElementById("scheda_testo").style.height.replace("px","")+"";
 				if(h==0)h=SCHEDA.hOpened;
 				else h=0;
 				document.getElementById("scheda_testo").style.height = h+'px';
 				document.getElementById("scheda_testo2").style.height = h+'px';
-				if(h<=150)document.getElementById("scheda").classList.add("h150");
-				else document.getElementById("scheda").classList.remove("h150");
+				document.getElementById("scheda").classList.toggle("h150", (document.getElementById("scheda").scrollHeight<=275));
 			}
-			SCHEDA.memY = tCoord(document.getElementById("scheda"),'y');
-		}else{
-			SCHEDA.libera.x = tCoord(document.getElementById("scheda"));
-			SCHEDA.libera.y = tCoord(document.getElementById("scheda"),'y');
-			localStorage.schedaLibera = JSON.stringify(SCHEDA.libera);
-			setTimeout(function(){ SCHEDA.moving = false; },300);
+			SCHEDA.aggancio.sotto.y = tCoord(document.getElementById("scheda"),'y');
 		}
+		if(SCHEDA.aggancio.tipo == 'lato'){
+			// -----------DA FARE--------------
+			SCHEDA.aggancio.lato.w = document.getElementById("scheda").scrollWidth;
+		}
+		localStorage.schedaAggancio = JSON.stringify(SCHEDA.aggancio);
 		if(!touchable){
 			document.body.removeEventListener("mouseup",SCHEDA.arrestaMoveScheda,false);
 			document.body.removeEventListener("mousemove",SCHEDA.moveMoveScheda,false);
@@ -376,12 +438,17 @@ var SCHEDA = {
 	},
 	
 	iniziaRedimScheda: function( event, verso ){
+		if(SCHEDA.aggancio.tipo == 'lato')stopOnResize = true;
 		SCHEDA.versoRedim = verso;
 		var gapH = 0;
 		var gapV = 0;
 		
 		if(SCHEDA.versoRedim.indexOf("l")>-1 || SCHEDA.versoRedim.indexOf("r")>-1)gapH = 5;
 		if(SCHEDA.versoRedim.indexOf("t")>-1 || SCHEDA.versoRedim.indexOf("b")>-1)gapV = 5;
+		/*if(SCHEDA.aggancio.tipo == 'lato'){
+			stopOnResize = true;
+			gapH = 27;
+		}*/
 		
 		event.preventDefault();
 		document.body.addEventListener("mouseup",SCHEDA.arrestaRedimScheda,false);
@@ -396,7 +463,7 @@ var SCHEDA = {
 		SCHEDA.xMouseIni = event.clientX + gapH;
 		SCHEDA.yMouseIni = event.clientY + gapV;
 	},
-	moveRedimScheda: function( event ){
+	moveRedimScheda: function( event ){ // ridimensiona la scheda libera o laterale
 		event.preventDefault();
 		SCHEDA.xMouseAtt = touchable ? event.touches[ 0 ].pageX : event.clientX;
 		SCHEDA.yMouseAtt = touchable ? event.touches[ 0 ].pageY : event.clientY;
@@ -427,7 +494,7 @@ var SCHEDA = {
 		}
 		if(SCHEDA.versoRedim.indexOf("t")>-1 || SCHEDA.versoRedim.indexOf("b")>-1){
 			document.getElementById("scheda_testo").style.height = (h - (SCHEDA.getMM()-SCHEDA.gapScheda+9)) + 'px';
-			document.getElementById("scheda_testo2").style.height = (h - (SCHEDA.getMM()-SCHEDA.gapScheda+9)) + 'px';
+			document.getElementById("scheda_testo2").style.height = (h - (SCHEDA.getMM()-SCHEDA.gapScheda+9+SCHEDA.getHbtns())) + 'px';
 		}
 		if(SCHEDA.versoRedim.indexOf("l")>-1){
 			if(w>350){
@@ -452,40 +519,48 @@ var SCHEDA = {
 		var x = touchable ? SCHEDA.xMouseAtt : event.clientX;
 		var y = touchable ? SCHEDA.yMouseAtt : event.clientY;
 		SCHEDA.verPosScheda();
-		
-		SCHEDA.libera.w = document.getElementById("scheda").scrollWidth;
-		SCHEDA.libera.h = document.getElementById("scheda").scrollHeight+SCHEDA.gapScheda;
+		if(SCHEDA.aggancio.tipo == 'libera'){
+			SCHEDA.aggancio.libera.w = document.getElementById("scheda").scrollWidth;
+			SCHEDA.aggancio.libera.h = document.getElementById("scheda").scrollHeight+SCHEDA.gapScheda;
+		}
+		if(SCHEDA.aggancio.tipo == 'lato'){
+			SCHEDA.aggancio.libera.w = document.getElementById("scheda").scrollWidth;
+		}
 		
 		document.body.removeEventListener("mouseup",SCHEDA.arrestaRedimScheda,false);
 		document.body.removeEventListener("mousemove",SCHEDA.moveRedimScheda,false);
 		document.body.removeEventListener("mouseleave",SCHEDA.arrestaRedimScheda,false);
-		localStorage.schedaLibera = JSON.stringify(SCHEDA.libera);
+		localStorage.schedaAggancio = JSON.stringify(SCHEDA.aggancio);
+		if(SCHEDA.aggancio.tipo == 'lato'){
+			stopOnResize = false;
+			onWindowResize();
+		}
 	},
 	
 	minimizzaScheda: function(){
-		if(SCHEDA.libera.stato)document.getElementById("scheda").classList.toggle("minimized");
+		if(SCHEDA.aggancio.tipo == 'libera')document.getElementById("scheda").classList.toggle("minimized");
 	},
 	
 	
 	
 	swMenuScheda: function( forza ){
-		if(document.getElementById("menuScheda").className.indexOf("visSch")==-1 || forza){
-			var txt = '';
-			txt += '<div id="btnStampaScheda" onClick="SCHEDA.stampaScheda();">'+Lingua(TXT_StampaScheda)+'</div>';
+		if(!document.getElementById("btnMenuScheda"))return;
+		if(typeof(forza)=='undefined')var forza = false;
+		var aperto = (document.getElementById("menuScheda").className.indexOf("visSch")!=-1);
+		if(!aperto || forza==true){
 			document.getElementById("menuScheda").classList.add("visSch");
 			document.getElementById("btnMenuScheda").classList.add("btnFix");
-			document.getElementById("menuScheda").innerHTML=txt;
-		}else{
+		}
+		if(aperto || forza=='chiudi'){
 			document.getElementById("menuScheda").classList.remove("visSch");
 			document.getElementById("btnMenuScheda").classList.remove("btnFix");
-			document.getElementById("menuScheda").innerHTML="";
 		}
 	},
 	stampaScheda: function( obj ){
 		if(typeof(noInt)=='undefined')var noInt = false;
 		if(document.getElementById("menuScheda").className.indexOf("visSch")>-1)SCHEDA.swMenuScheda();
 		// verifico le autorizzazioni
-		if(!DB.login.data.auths.length && tipoApp!='AM'){
+		if(!DB.login.data.auths.length){
 			setTimeout(function(){
 				ALERT(Lingua(TXT_MsgFunzioneSoloPay));
 			},100);
@@ -558,9 +633,7 @@ var SCHEDA = {
 				'				   border="0">' +
 				'				<tr>' +
 				'					<td>' +
-				'						<img src="img/logo_' +
-										(tipoApp=='AM' || tipoApp=='AM_light' ? 'AM' : 'iaomai') +
-										'_Bucato_Beige.png"' +
+				'						<img src="img/logo_iaomai_Bucato_Beige.png"' +
 				'				   			 width="125"' +
 				'				   			 height="38" />' +
 				'				   	</td>' +
@@ -622,10 +695,11 @@ var SCHEDA = {
 	},
 	
 	initElenco: function(){
-		document.getElementById("elenchi").classList.add("visSch");
+		//document.getElementById("elenchi").classList.add("visSch");
 		document.getElementById("elenchi_pulsanti").classList.add("visSch");
 		document.getElementById("scheda").classList.add("visSch_1");
 		if(!smartMenu)SCHEDA.chiudiElenco();
+		else onWindowResize();
 	},
 	caricaElenco: function( titolo, html ){
 		document.getElementById("scheda").classList.add("visSch_1");
@@ -646,12 +720,10 @@ var SCHEDA = {
 		if(	!document.getElementById("elenchi_cont").classList.contains("visSch") || 
 			!document.getElementById("elenchi").classList.contains("vis_"+tipo))visGuida=true;
 		document.getElementById("elenchi_cont").classList.add("visSch");
-		var livello = SCHEDA.livelloApertura;
-		//if(!document.getElementById("elenchi").classList.contains("LISTE"))livello = 2;
-		SCHEDA.setMenuDim(2);
+		
 		MENU.desIcona();
 		MENU.chiudiMenu();
-		SCHEDA.setMenuDim(livello);
+		SCHEDA.setMenuDim();
 		if(typeof(expanded)=='undefined')var expanded = false;
 		if(typeof(tipo)=='undefined')var tipo = false;
 		if(tipo){
@@ -681,108 +753,29 @@ var SCHEDA = {
 		if(smartMenu)SCHEDA.verPosScheda();
 		if(visGuida){
 			if(document.getElementById("elenchi").classList.contains("vis_base")){
-				if(!SCHEDA.elencoSel)GUIDA.visFumetto("guida_archivi");
+				if(!SCHEDA.elencoSel)GUIDA.visFumetto("guida_archivi",false,true);
 			}else{
 				try{
-					if(!SCHEDA.elencoSel)GUIDA.visFumetto("guida_set");
+					if(!SCHEDA.elencoSel)GUIDA.visFumetto("guida_set",false,true);
 				}catch(err){};
 			}
 		}
-	},
-	fissaMenuEspanso: function( tipo ){
-		SCHEDA.livelloApertura = tipo;
-		localStorage.livelloApertura = tipo;
-		if(SCHEDA.livelloApertura==3)document.getElementById("scheda_linguette").classList.add("fixExp");
-		else document.getElementById("scheda_linguette").classList.remove("fixExp");
-	},
-	setMenuDim: function( tipo, daBtn ){
-		if(typeof(daBtn) == 'undefined')var daBtn = false;
-		// forzo l'apertura compressa se c'è una scheda aperta
-		if(	SCHEDA.livelloApertura==3 && 
-			document.getElementById("scheda").classList.contains("visSch") && 
-			tipo==3 )tipo=2;
-			
-		switch(tipo){
-			case 1:
-				document.getElementById("l1").classList.add("visBtn");
-				document.getElementById("l2").classList.remove("visBtn");
-				document.getElementById("l3").classList.remove("visBtn");
-				document.getElementById("lF").classList.remove("visBtn");
-				document.getElementById("icone").classList.add("iconeNasc");
-				document.getElementById("scheda").classList.remove("schRid");
-				document.getElementById("scheda").classList.remove("schExp");
-				
-				document.getElementById("elenchi").classList.remove("schExp");
-				document.getElementById("elenchi").classList.add("iconeNasc");
-				document.getElementById("icone").classList.remove("iconeHome");
-				break;
-				
-			case 2:
-				document.getElementById("l1").classList.remove("visBtn");
-				document.getElementById("l2").classList.add("visBtn");
-				document.getElementById("l3").classList.remove("visBtn");
-				document.getElementById("lF").classList.remove("visBtn");
-				document.getElementById("icone").classList.remove("iconeNasc");
-				document.getElementById("scheda").classList.add("schRid");
-				document.getElementById("scheda").classList.remove("schExp");
-				
-				document.getElementById("elenchi").classList.remove("schExp");
-				document.getElementById("elenchi").classList.remove("iconeNasc");
-				document.getElementById("icone").classList.remove("iconeHome");
-				//if(daBtn){
-				if((document.getElementById("scheda").classList.contains("visSch") || daBtn) && smartMenu){
-					var liste = document.getElementById("elenchi").getElementsByClassName("lista");
-					for(i=liste.length-1;i>=0;i--){
-						var els = liste[i].getElementsByClassName("cartellaAperta");
-						var l = els.length;
-						var c = 0;
-						if(l){
-							for(e=l-1;e>=0;e--){
-								if(els[e].getElementsByTagName("span")[0].id!=SCHEDA.ultimaCartella){
-									els[e].classList.remove("cartellaAperta");
-									c++;
-								}
-							}
-							if(c == l && els[0]){
-								els[0].parentElement.classList.remove("cont_cartellaAperta");
-							}
-						}
-					}
-				}
-				break;
-				
-			case 3:
-				document.getElementById("l1").classList.remove("visBtn");
-				document.getElementById("l2").classList.remove("visBtn");
-				document.getElementById("l3").classList.add("visBtn");
-				document.getElementById("lF").classList.add("visBtn");
-				document.getElementById("icone").classList.remove("iconeNasc");
-				document.getElementById("scheda").classList.remove("schRid");
-				document.getElementById("scheda").classList.add("schExp");
-				
-				if(document.getElementById("elenchi_cont").classList.contains("visSch")){
-					document.getElementById("elenchi").classList.add("schExp");
-					document.getElementById("elenchi").classList.remove("iconeNasc");
-				}else{
-					document.getElementById("icone").classList.add("iconeHome");
-					MENU.chiudiMenu();
-				}
-				if(	smartMenu &&
-					document.getElementById("elenchi").classList.contains("LISTE") && 
-					SCHEDA.livelloApertura == 2 )GUIDA.visFumetto('guida_fix');
-				break;
-				
-		}
 		SCHEDA.verPosScheda();
+		SCHEDA.setMenuDim();
+	},
+	setMenuDim: function(){
+		document.getElementById("scheda").classList.toggle("schRid", document.getElementById("elenchi").classList.contains("visSch"));
 	},
 	chiudiElenco: function(){
 		var aperto = document.getElementById("elenchi_cont").classList.contains("visSch");
 		//console.log(aperto)
 		document.getElementById("elenchi_cont").classList.remove("visSch");
 		document.getElementById("scheda").classList.remove("schOp");
+		document.getElementById("elenchi").classList.remove("visSch");
 		MENU.desIcona();
-		SCHEDA.setMenuDim(2)
+		SCHEDA.setMenuDim(2);
 		MENU.setTT();
+		//setTimeout(function(){verAnimate();},200);
 	},
 	torna: function( daCarica ){
 		if(document.getElementById("scheda").className.indexOf("schedaRitorno") > -1){
@@ -797,6 +790,9 @@ var SCHEDA = {
 			document.getElementById("scheda_testo").style.height = SCHEDA.memHrit;
 			eval(SCHEDA.functRitorno);
 			SCHEDA.scheda2Aperta = false;
+			document.getElementById("scheda").classList.toggle("h150", (document.getElementById("scheda").scrollHeight<=275));
+			document.getElementById("scheda").classList.toggle("schForm", (document.getElementById("scheda").querySelector(".formBtn")));
+			SCHEDA.verPosScheda();
 		}
 	},
 	selElenco: function( elenco, el ){
@@ -835,7 +831,7 @@ var SCHEDA = {
 		//if(elenco == 'patologie' && mouseDetect)document.getElementById("pat_ricerca").focus();
 		//if(elenco == 'procedure' && mouseDetect)document.getElementById("proc_ricerca").focus();
 		
-		if(document.getElementById("elenchi").classList.contains("LISTE"))SCHEDA.setMenuDim(SCHEDA.livelloApertura);
+		if(document.getElementById("elenchi").classList.contains("LISTE"))SCHEDA.setMenuDim(3);
 	},
 	setTriploLivello: function( elenco ){
 		if(elenco == 'pazienti' || elenco == 'procedure'){
@@ -858,7 +854,10 @@ var SCHEDA = {
 		}
 	},
 	swPulsanti: function(forza){
-		if(SCHEDA.elencoSelBase=='pazienti' && PAZIENTI.idCL>-1 && !forza){
+		if(	SCHEDA.elencoSelBase=='pazienti' && 
+			PAZIENTI.idCL>-1 && 
+			!forza && 
+			document.getElementById("elenchi").classList.contains("vis_base") ){
 			PAZIENTI.deselPaziente();
 		}else{
 			if(!forza){
@@ -891,11 +890,6 @@ var SCHEDA = {
 				document.getElementById("elenchi_titolo").classList.add("visSch");
 			}
 		}
-		
-		/*
-		decommentare per far restare il menu di primo livello basso anche quando è ".schExp"
-		*/
-		//if(!document.getElementById("elenchi").classList.contains("LISTE"))SCHEDA.setMenuDim(2);
 	},
 	caricaPulsanti: function(html){
 		document.getElementById("pulsanti_set").innerHTML=html;
@@ -935,31 +929,24 @@ var SCHEDA = {
 		while(!el.classList.contains("cartella"))el = el.parentElement;
 		return el;
 	},
+	getHbtns: function(){
+		if( document.getElementById("scheda").querySelector(".formBtn") &&
+			!SCHEDA.scheda2Aperta &&
+			/*!document.getElementById("scheda").classList.contains("h150") &&*/
+			!smartMenu )return 53;
+		else return 0;
+	},
 	getMM: function(){
-		var mm = 90;
+		var addForm = SCHEDA.getHbtns();
+		var mm = 90 + addForm;
 		if(smartMenu)mm += 5 + document.getElementById("elenchi").scrollHeight + document.getElementById("icone").scrollHeight;
-		else if(!SCHEDA.libera.stato)mm+=20;
+		else if(SCHEDA.aggancio.tipo == 'sotto')mm+=20;
+		else if(SCHEDA.aggancio.tipo == 'lato')mm-=41;
 		return mm;
 	},
 	verPosScheda: function(){
-		if(document.getElementById("scheda").classList.contains("visSch")){
-			if(!SCHEDA.libera.stato){
-				// sgangiata
-				var h = 0;
-				var mm = 20;
-				if(smartMenu)mm = 1;
-				//if(!SCHEDA.libera.stato)mm=20;
-				if(tCoord(document.getElementById("scheda"),'y') < mm){
-					h = (HF()-SCHEDA.getMM()+SCHEDA.gapScheda);
-				}else{
-					h = (HF()-(SCHEDA.memY-SCHEDA.gapScheda)-SCHEDA.getMM()+mm);
-				}
-				document.getElementById("scheda_testo").style.height = h+"px";
-				SCHEDA.memY = tCoord(document.getElementById("scheda"),'y');
-				if(h<=150)document.getElementById("scheda").classList.add("h150");
-				else document.getElementById("scheda").classList.remove("h150");
-			}else{
-				// agganciata
+		if(document.getElementById("scheda").classList.contains("visSch") && !smartMenu){
+			if(SCHEDA.aggancio.tipo == 'libera'){
 				var limiteW = WF();
 				var limiteH = HF()-SCHEDA.gapScheda;
 				var limiteXmax = WF()-20;
@@ -967,38 +954,61 @@ var SCHEDA = {
 				var limiteXmin = 20 - document.getElementById("scheda").scrollWidth;
 				if(document.getElementById("scheda").scrollWidth > limiteW){
 					document.getElementById("scheda").style.width = limiteW+"px";
-					SCHEDA.libera.w = limiteW;
+					SCHEDA.aggancio.libera.w = limiteW;
 				}
 				if(document.getElementById("scheda").scrollWidth < 350){
 					document.getElementById("scheda").style.width = "350px";
-					SCHEDA.libera.w = 350;
+					SCHEDA.aggancio.libera.w = 350;
 				}
 				if(document.getElementById("scheda").scrollHeight < 180){
 					document.getElementById("scheda_testo").style.height = (180-SCHEDA.getMM()+13)+"px";
-					SCHEDA.libera.h = 180;
+					SCHEDA.aggancio.libera.h = 180;
 				}
 				if(document.getElementById("scheda").scrollHeight > limiteH){
 					document.getElementById("scheda_testo").style.height = (limiteH-SCHEDA.getMM()+13)+"px";
-					SCHEDA.libera.h = limiteH;
+					SCHEDA.aggancio.libera.h = limiteH;
 				}
 				if(tCoord(document.getElementById("scheda")) > limiteXmax){
 					document.getElementById("scheda").style.left = limiteXmax + 'px';
-					SCHEDA.libera.x = limiteXmax;
+					SCHEDA.aggancio.libera.x = limiteXmax;
 				}
 				if(tCoord(document.getElementById("scheda"),'y') < -51){
 					document.getElementById("scheda").style.top = '-51px';
-					SCHEDA.libera.y = -51;
+					SCHEDA.aggancio.libera.y = -51;
 				}
 				if(tCoord(document.getElementById("scheda"),'y') > limiteYmax){
 					document.getElementById("scheda").style.top = limiteYmax + 'px';
-					SCHEDA.libera.y = limiteYmax;
+					SCHEDA.aggancio.libera.y = limiteYmax;
 				}
 				if(tCoord(document.getElementById("scheda")) < limiteXmin){
 					document.getElementById("scheda").style.left = limiteXmin + 'px';
-					SCHEDA.libera.x = limiteXmin;
+					SCHEDA.aggancio.libera.x = limiteXmin;
 				}
 			}
+			if(SCHEDA.aggancio.tipo == 'sotto'){
+				var h = 0;
+				var mm = 20;
+				if(smartMenu)mm = 1;
+				if(tCoord(document.getElementById("scheda"),'y') < mm){
+					h = (HF()-SCHEDA.getMM()+SCHEDA.gapScheda);
+				}else{
+					h = (HF()-(SCHEDA.aggancio.sotto.y-SCHEDA.gapScheda)-SCHEDA.getMM()+mm);
+				}
+				document.getElementById("scheda_testo").style.height = h+"px";
+				document.getElementById("scheda_testo2").style.height = (h + SCHEDA.getHbtns())+"px";
+				SCHEDA.aggancio.sotto.y = tCoord(document.getElementById("scheda"),'y');
+				document.getElementById("scheda").classList.toggle("h150", (document.getElementById("scheda").scrollHeight<=275));
+			}
+			if(SCHEDA.aggancio.tipo == 'lato'){
+				document.getElementById("scheda_testo").style.height = (HF() - SCHEDA.getMM()) +"px";
+				document.getElementById("scheda_testo2").style.height = (HF() - SCHEDA.getMM() + SCHEDA.getHbtns()) +"px";
+				var x = document.getElementById("elenchi_cont").scrollWidth;
+				if(!document.getElementById("elenchi_cont").classList.contains("visSch"))x = 0;
+				document.getElementById("scheda").style.left = (48 + x) + "px";
+			}
+			localStorage.schedaAggancio = JSON.stringify(SCHEDA.aggancio);
 		}
+		onWindowResize();
 	},
 	verRedim: function(){
 		var W = document.getElementById("scheda").scrollWidth;

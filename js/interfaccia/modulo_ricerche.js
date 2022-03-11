@@ -337,7 +337,7 @@ var RICERCHE = {
 				if(smartphone)HTML+='<img src="img/chiusuraSmartPhoneBlack.png" align="right" title="'+stripslashes(Lingua(TXT_EliminaParola))+'" onClick="RICERCHE.eliminaRicerca('+k+');" class="imgDelRes"/>';
 				HTML+='<div ';
 				if(smartphone)HTML+='style="margin-right:30px;"';
-				HTML+=' class="risGlob risLente" onClick="if(!RICERCHE.overElRis){document.getElementById(\'parolaGlobal\').value=\''+htmlEntities(RICERCHE.parolaProvv)+'\';RICERCHE.globalSubmit();}';
+				HTML+=' class="risGlob risLente" onClick="if(!RICERCHE.overElRis){document.getElementById(\'parolaGlobal\').value=\''+addslashes(htmlEntities(RICERCHE.parolaProvv))+'\';RICERCHE.globalSubmit();}';
 				if(!smartphone)HTML+='else{RICERCHE.eliminaRicerca('+k+');}';
 				HTML+='">';
 				if(!smartphone)HTML+='<img src="img/chiusuraSmartPhoneBlack.png" align="right" title="'+stripslashes(Lingua(TXT_EliminaParola))+'" onMouseOver="RICERCHE.overElRis=true;" onMouseOut="RICERCHE.overElRis=false;" />';
@@ -346,9 +346,22 @@ var RICERCHE = {
 		}
 		if(!HTML)HTML='<div class="noResGlob" id="noResGlob">'+Lingua(TXT_NessunRisultato)+'</div>';
 		//if(HTML)
-		document.getElementById("globalTesto").innerHTML='<p><b>'+Lingua(TXT_TueRicerche)+'</b></p>'+HTML;
+		document.getElementById("globalTesto").innerHTML='<p id="titHistoryGlobal"><b>'+Lingua(TXT_TueRicerche)+'</b><span onClick="RICERCHE.clear_historyGlobal();">'+Lingua(TXT_SvuotaCronologia)+'</span></p>'+HTML;
 		//else document.getElementById("globalTesto").innerHTML='';
 		document.getElementById("globalTesto").classList.add("globalHistory");
+	},
+	clear_historyGlobal: function(){
+		CONFIRM.vis(	Lingua(TXT_ConfSvuotaCronologia),
+						false,
+						arguments ).then(function(pass){if(pass){
+						var v = getParamNames(CONFIRM.args.callee.toString());
+						for(i in v)eval(getArguments(v,i));
+			DB.ricerche.data=[];
+			localPouchDB.setItem(MD5("DB"+LOGIN._frv()+".ricerche"), IMPORTER.COMPR(DB.ricerche)).then(function(){ // salvo il DB
+				LOGIN.sincronizza();
+			});
+			RICERCHE.car_historyGlobal();
+		}});
 	},
 	eliminaRicerca: function( n ){ // elimina una ricerca dalla storia
 		var DataModifica = DB.ricerche.lastSync+1;

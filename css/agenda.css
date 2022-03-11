@@ -73,7 +73,7 @@
 	margin-bottom: 0px !important;
 }
 .agendaGiorno{
-	font-size:18px;
+	font-size:19.8px;
 	font-weight:bold;
 }
 .agendaFestivo span{
@@ -228,12 +228,12 @@ body:not(.smart) .agendaOre div span:last-child{
 .nTAg{
 	float:none !important;
 	opacity:0.5;
-	font-size:11px;
+	font-size:12.1px;
 	mergin-left:0px !important;
 	padding-left:0px !important;
 }
 .nCAg{
-	font-size:11px;
+	font-size:12.1px;
 	margin-top: -20px !important;
     padding-right: 10px;
 	background-color: #FFF;
@@ -284,7 +284,7 @@ body:not(.smart) .agendaOre div span:last-child{
 	float:left;
 	vertical-align:middle;
 	line-height:51px;
-	font-size:15px;
+	font-size:16.5px;
 	background-color:#444;
 	color:#FFF;
 }
@@ -329,7 +329,7 @@ body:not(.smart) .agendaOre div span:last-child{
 	cursor: pointer;
 	margin:1px !important;
 	width:calc((100% - 14px) / 7);
-	font-size:18px;
+	font-size:19.8px;
 }
 .calGiorni div:hover:not(.calInact):not(.hSel){
 	background-color:#FFC !important;
@@ -555,7 +555,7 @@ body:not(.smart) #agCont #cont_sceltaAppuntamento{
    margin:0px;
 }
 .app_pulsanti span:first-child{
-   	font-size: 18px;
+   	font-size: 19.8px;
     font-style: italic;
     float: left;
     display: inline-block;
@@ -670,6 +670,9 @@ body:not(.smart) #ag{
 	background-repeat:no-repeat;
 	background-position:4px center;
 }
+.smart.android #labelAg{
+	font-size:18px;
+}
 #chiudi_ag{
 	height:40px;
 	background-image:url(../img/chMenu.png);
@@ -681,6 +684,9 @@ body:not(.smart) #ag{
 	background-position:center center;
 	vertical-align:top;
 	cursor:pointer;
+}
+.smart #chiudi_ag{
+	background-size: auto;
 }
 
 @media (max-width: 650px){

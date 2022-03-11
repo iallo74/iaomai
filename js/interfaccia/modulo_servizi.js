@@ -171,6 +171,13 @@ var SERVIZI = {
 								classCampo: 'CostoTrattDx prezzi numSedute',
 								classRiga: "labelSx",
 								styleRiga: "text-align:right;" });
+			
+			
+			var azElimina = Q_idServ>-1 ? "SERVIZI.el_servizio("+Q_idServ+");":"";
+			var btnAdd = '';
+			if(azElimina){
+				btnAdd = '<div class="p_paz_el_menu" onClick="'+azElimina+'">'+Lingua(TXT_EliminaScheda)+'</div>';
+			}
 								
 			HTML += SCHEDA.pulsantiForm(
 									Q_idServ>-1 ? "SERVIZI.el_servizio("+Q_idServ+");":"",
@@ -188,7 +195,9 @@ var SERVIZI = {
 									'SERVIZI.chiudiServizio();',
 									'scheda_servizio',
 									false,
-									true );
+									true,
+									'',
+									btnAdd );
 									
 			initChangeDetection( "formMod" );
 			

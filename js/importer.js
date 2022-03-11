@@ -22,14 +22,13 @@ var mouseDetect = false;
 var onlineVersion=false;
 var isTablet = false;
 var globals = {};
-var verApp = '1.0.1';
+var verApp = '1.0.2';
 
 // IMPOSTAZIONI DI APP
 var nomeApp = 'Iáomai';
 var sloganApp = 'A new vision on health';
 var tipoApp = '';
-//var tipoApp = 'AM';
-//var tipoApp = 'AM_light';
+
 if(location.search){
 	var vDef='';
 	str=location.search.substr(1,location.search.length-1);
@@ -159,20 +158,6 @@ var IMPORTER = {
 		brw_edge=(!(document.documentMode) && window.StyleMedia)
 		android=(navigator.userAgent.indexOf("Android") != -1);
 		
-		if(	tipoApp == 'AM' ||
-			tipoApp == 'AM_light' ){
-			document.body.classList.add(tipoApp);
-			document.getElementById("favicon").href='icons/faviconAM.ico?v='+(new Date()*1000);
-			document.getElementById("p_reg").getElementsByTagName("span")[0].innerHTML = '{{TXT_TestoRegistrazioneAM}}';
-			document.getElementById("testoRegistrazione").innerHTML = '{{TXT_TestoRegistrazioneEspansoAM}}';
-			/*if(iPad && !iPhone)document.getElementById("testoRegistrazione").innerHTML += '{{TXT_TestoRegistrazioneEspansoAM2}}';
-			else document.getElementById("testoRegistrazione").innerHTML += '{{TXT_TestoRegistrazioneEspansoAM3}}';*/
-			document.getElementById("app").value = tipoApp;
-			nomeApp = 'Anatomy Map';
-			sloganApp = 'Your pocket body atlas';
-			IMPORTER.files.unshift("css/AM.css");
-			CONN.linkPrivacy = 'https://www.anatomymap.com/privacy';
-		}
 		document.title = nomeApp+" - "+sloganApp;
 		
 		var el = document.getElementById('scripts');
@@ -190,7 +175,7 @@ var IMPORTER = {
 		}
 		if(location.host!='')onlineVersion=true;
 		if(this.WFINI()<510)smartphone=true;
-		if(!mouseDetect && this.WFINI()<=800 ||	tipoApp == 'AM' || tipoApp == 'AM_light' )smartMenu=true;
+		if(!mouseDetect && this.WFINI()<=800 )smartMenu=true;
 		if(smartMenu)document.body.classList.add("smart");
 		if(isTablet)document.body.classList.add("tablet");
 

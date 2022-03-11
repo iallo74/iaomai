@@ -192,55 +192,9 @@ body:not(.bodyStyled1):not(.bodyStyled2):not(.smart) #p_set{ /* <<<<<<<<<<<< NUO
 	opacity: 0.6 !important;
 }
 body:not(.smart) .listaMeridiani,
-body.smart #elenchi.schExp .listaMeridiani{
+body.smart #elenchi .listaMeridiani{
 	height: calc(100% - 48px) !important;
 }
-.smart #elenchi:not(.schExp) .listaMeridiani{
-	width: calc(100% - 30px) !important;
-	left: 0px !important;
-	border-bottom-right-radius: 6px;
-    border-right: 1px solid rgba(0,0,0,0.2);
-    border-bottom: 1px solid rgba(0,0,0,0.2);
-}
-
-/*#lista_meridiani div span{
-	float:right;
-	margin-right:-4px;
-	border-radius:8px;
-	width:16px;
-	height:16px;
-	margin-left:0px;
-	margin-top: 12px;
-	background-repeat:no-repeat !important;
-	background-position:center center !important;
-	background-size:12px 12px !important;
-	border:1px solid rgba(0,0,0,0.3);
-}*/
-
-/* pallino lucido */
-/*#lista_meridiani div span { 
-    float: right;
-    margin-right: -6px;
-    border-radius: 9px;
-    width: 18px;
-    height: 18px;
-    margin-left: 0px;
-    margin-top: 10px;
-    background-repeat: no-repeat !important;
-    background-position: center center !important;
-    
-   
-}
-.listaMeridiani .elencoSel span {
-    background-size: 100% auto !important;
-	background-size: 12px 12px !important;
-}
-
-.listaMeridiani div:not(.elencoSel) span {
-    box-shadow: 0px 0px 3px rgb(0 0 0 / 70%);
-    background-image: linear-gradient(to bottom, rgba(255,255,255,0.4) 0%, transparent 49%, rgba(0,0,0,0.25) 50%, transparent 100%) !important;
-    background-size: 100% auto !important;
-}*/
 /* linguetta a destra */
 #lista_meridiani div span { 
     float: right;
@@ -360,28 +314,10 @@ body:not(.touch) .listaMeridiani .spazioDopo{
 	color:#000 !important;
 }
 @media (max-width: 800px){
-		
-	.touch #elenchi:not(.schExp) #lista_meridiani div span{
-		margin-right:1px !important;
-	}
-	.touch #elenchi.schExp #lista_meridiani div span{
-		/*margin-right:-5px !important;*/
-	}
-	
-	.touch #elenchi.schExp #lista_meridiani div > div span{
-		/*margin-top:10px !important;*/
+	.touch #elenchi #lista_meridiani div > div span{
 		height: 50px;
 	}
-	.touch #elenchi:not(.schExp) #lista_meridiani div span{
-		/*margin-left:10p !important;*/
-		margin-right: 0px !important;
-		box-shadow:0px 0px 2px rgba(0,0,0,0.5);
-	}
-	.touch #elenchi:not(.schExp) #lista_meridiani > div > div{
-		padding-right:0px !important;
-	}
 	.listaMeridiani > div b {
-		/*padding-right: 0px !important;*/
 		padding-left: 12px;
 	}
 	.listaMeridiani > div.lockedItem b {
@@ -505,6 +441,12 @@ body:not(.touch) .listaMeridiani .spazioDopo{
     right: 6px;
 	display:none;
 }
+
+body:not(.bodyModello) #meridianiSmart_cont,
+body:not(.bodyModello) #meridianiSmart_ico,
+body:not(.bodyModello) #btns_set > div{
+	display:none !important;
+}
 .smart #meridianiSmart_cont{
     top: 50px !important;
     right: 0px !important;
@@ -606,11 +548,8 @@ body:not(.smart) #meridianiSmart_cont div:not(.elencoSel):hover{
 	box-shadow:0px 0px 3px rgba(0,0,0,0.5);
 	cursor:pointer;
 }
-body.smart #elenchi:not(.schExp) #selectCambioMeridiani{
-	display:none;
-}
 
 body:not(.smart) #cambioSistemaMeridiani,
-body.smart #elenchi.schExp #cambioSistemaMeridiani{
+body.smart #elenchi #cambioSistemaMeridiani{
 	display:none;
 }

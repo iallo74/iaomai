@@ -93,7 +93,7 @@ var MODULO_PROCEDURE = { // extend SET
 				'</p>' + HTML;
 		
 		document.getElementById("lista_procedure").innerHTML=HTML;
-		if(Q_idProc)SCHEDA.btnSel = document.getElementById("btn_procedura_"+Q_idProc);
+		if(Q_idProc>-1)SCHEDA.btnSel = document.getElementById("btn_procedura_"+Q_idProc);
 	},
 	filtraProcedure: function( event ){
 		var parola = document.getElementById("proc_ricerca").value.trim();

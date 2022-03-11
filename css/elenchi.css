@@ -6,7 +6,7 @@
 
 /* INTESTAZIONE */
 body:not(.smart) #btnCarMapMenu,
-.smart #elenchi.schExp #btnCarMapMenu{
+.smart #elenchi #btnCarMapMenu{
 	display:block;
 	text-align:left;
 	background-color:transparent;
@@ -18,9 +18,12 @@ body:not(.smart) #btnCarMapMenu,
 	margin:4px;
 	cursor:pointer;
 }
+.smart.android #elenchi #btnCarMapMenu{
+	margin-bottom: 20px;
+}
 
 body:not(.smart) #btnCarMapMenu i span,
-.smart #elenchi.schExp #btnCarMapMenu i span{
+.smart #elenchi #btnCarMapMenu i span{
 	display:none;
 }
 #btnCarMapMenu{
@@ -28,45 +31,42 @@ body:not(.smart) #btnCarMapMenu i span,
 }
 #btnCarMapMenu,
 #btnCarMapMenu > span{
-    font-size: 21px !important;
+    font-size:23.1px !important;
     color: rgba(0,0,0,0.6);
 }
 body:not(.smart) #chiudiSet,
-.smart #elenchi.schExp #chiudiSet{
-	/*float: right;
-    display: inline-block;
-    vertical-align: middle;
-    width: 25px;
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-image: url(../img/ico_logoutN.png);
-    background-size: 28px;
-    cursor: pointer;
-    margin-right: 3px;
-    height: 32px;
-    opacity: 0.4;*/
+body:not(.smart) #chiudiCliente,
+.smart #elenchi #chiudiSet,
+.smart #elenchi #chiudiCliente{
     float: left;
     display: inline-block;
     vertical-align: middle;
-    width: 88px;
+    width: 54px;
     background-position: 14px center, calc(100% - 6px)center;
     background-repeat: no-repeat;
-    background-image: url(../img/m_setsN.png), url(../img/frSxB.png);
+    background-image: url(../img/ico_quit4.png);
     background-size: auto 32px, auto 50px;
     cursor: pointer;
-    margin-right: -15px;
-    height: 47px;
+    margin-right: 14px;
+    height: 36px;
     opacity: 1;
-    margin-left: -31px;
-    margin-top: -4px;
+    margin-left: -25px;
+    margin-top: 1px;
+	border-right:1px solid rgba(0,0,0,0.1);
+}
+body:not(.smart) #chiudiSet:hover,
+body:not(.smart) #chiudiCliente:hover,
+.smart #elenchi#chiudiSet:hover,
+.smart #elenchi #chiudiCliente:hover{
+    background-image: url(../img/ico_quit4Over.png) !important;
 }
 body:not(.smart) #impostazioniSet,
-.smart #elenchi.schExp #impostazioniSet{
+.smart #elenchi #impostazioniSet{
 	float: right;
     display: inline-block;
     vertical-align: middle;
-    width: 25px;
-    height: 30px;
+    width: 32px;
+    height: 32px;
     background-image: url(../img/p_impostazioniN.png);
     background-position: center center;
     background-size: auto 25px;
@@ -74,43 +74,63 @@ body:not(.smart) #impostazioniSet,
     cursor: pointer;
     opacity: 0.5;
 }
+.smart #elenchi #impostazioniSet{
+	background-size: auto 32px;
+	opacity:0.8;
+	margin-right:3px;
+}
 body:not(.smart) #help_set,
-.smart #elenchi.schExp #help_set,
-#fumetti_testo #help_set{
+.smart #elenchi #help_set,
+#fumetti_testo #help_set,
+#help_clienti,
+.help_sets,
+.smart #help_set{
 	border-radius: 10px;
-    width: 18px;
-    height: 18px;
-    line-height: 16px;
+    width: 20px;
+    height: 20px;
+    line-height: 17px;
     float: right;
     text-align: center;
-    color: rgba(0,0,0,0.5);
+    color: rgba(0,0,0,0.7);
+    border: 1px solid rgba(0,0,0,0.35);
+	cursor:pointer;
     margin-top: 7px;
     margin-right: 4px;
-    border: 1px solid rgba(0,0,0,0.5);
-	cursor:pointer;
+	font-size: 18.7px !important;
+	font-weight:bold !important;
+	font-style: normal !important;
 }
-#help_clienti{
-	border-radius: 10px;
-    width: 18px;
-    height: 18px;
-    line-height: 16px;
-    float: right;
-    text-align: center;
-    color: rgba(0,0,0,0.5);
+#help_clienti,
+.smart #help_set{
     margin-top: 6px;
     margin-right: -13px;
-    border: 1px solid rgba(0,0,0,0.5);
-    cursor: pointer;
+}
+.help_sets{
+    margin-top: 0px;
+    margin-right: 0px;
+}
+#fumetti_testo #help_set{
+    margin-top: 0px;
+    margin-bottom: 0px;
+    margin-left: 2px;
+	float: none;
+    vertical-align: middle;
+    display: inline-block;
+    margin-right: 2px !important;
 }
 .elMenu{
 	height:39px;
 	line-height:39px;
 	display:inline-block;
 }
+.smart.android .elMenu{
+	height:41px;
+	line-height:41px;
+}
 body:not(.smart) .elMenu{
 	opacity:0.8;
 }
-body:not(.smart) .elMenu:hover{
+body:not(.smart) .elMenu:not(.anamnesiBtn):hover{
 	opacity:1 !important;
 }
 
@@ -181,14 +201,8 @@ body:not(.smart) #elenchi{
 	stroke:#FFF;
 }
 .linguettaSel line,
-#elenchi_linguette div:hover line,
-#l1.visBtn line,
-#l2.visBtn line,
-#l3.visBtn line{
+#elenchi_linguette div:hover line{
 	stroke:var(--schede-icone-over) !important;
-}
-#l3{
-	margin-right: 8px !important;
 }
 #elenchi_cont{
 	background: var(--menu-fondino);
@@ -208,19 +222,17 @@ body:not(.smart) #elenchi{
 .smart #elenchi.noTesta #elenchi_testa{
    display:none;
 }
-.smart #elenchi:not(.schExp) #elenchi_testa{
-    height: 28px;
-    overflow: hidden;
-    padding-top: 2px;
-    margin-top: -30px;
-    margin-bottom: 2px;
-    padding-right: 3px;
-}
-.smart #elenchi.schExp #elenchi_testa #chiudiElenco{
-    margin-top: -30px;
-	background-color:#000;
-	box-shadow:none !important;
-	background-image:url(../img/chMenu.png);
+.smart #elenchi #elenchi_testa #chiudiElenco{
+   	position: fixed;
+    background-color: transparent;
+    box-shadow: none !important;
+    background-image: url(../img/chMenuB.png);
+    width: 41px !important;
+    height: 40px !important;
+    right: 0px;
+    top: 0px;
+    background-size: auto;
+	opacity: 1;
 }
 #elenchi_titolo{ /* il titolo nel 2° livello */
 	height: 50px;
@@ -239,9 +251,17 @@ body:not(.smart) #elenchi{
     overflow-x: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
-    font-size: 21px;
+    font-size:23.1px;
     color: rgba(0,0,0,0.6);
 }
+/*#elenchi_titolo.clientAtt{
+    background-image: url(../img/ico_quit4.png) !important;
+	background-size:auto 32px !important;
+	background-position:8px 7px !important;
+}
+#elenchi_titolo.clientAtt:hover{
+    background-image: url(../img/ico_quit4Over.png) !important;
+}*/
 #elenchi_icona{
 	vertical-align: middle;
     margin-left: 10px;
@@ -255,27 +275,29 @@ body:not(.smart) #elenchi{
     overflow-x: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
-    font-size: 21px;
+    font-size:23.1px;
     color: rgba(0,0,0,0.6);
     display: block;
     padding-right: 20px;
 }
-.smart .schExp #titolo_base,
-.smart .schExp #btnCarMapMenu{
+.smart.android #titolo_base,
+.smart.android #elenchi_titolo,
+.smart.android #btnCarMapMenu span{
+	font-size:28px !important;
+}
+.smart #titolo_base,
+.smart #btnCarMapMenu{
 	margin-top: 5px;
+	width: calc(100% - 35px);
 }
 #descrizione_base{
     text-align: left;
     padding-left: 15px;
     padding-right: 15px;
     padding-bottom: 15px;
-	font-size:11px;
+	font-size:12.1px;
 	color: rgba(0,0,0,0.6);
     display: block;
-}
-.smart #elenchi:not(.schExp) #titolo_base,
-.smart #elenchi:not(.schExp) #descrizione_base{
-	display:none;
 }
 #chiudiElenco{
 	width: 25px;
@@ -289,6 +311,25 @@ body:not(.smart) #elenchi{
     background-color: var(--impostazioni-fondino);
     border-bottom-right-radius: 8px;
 }
+.schLato #chiudiElenco{
+    height: 200px;
+    position: absolute;
+    left: 300px;
+    border-top-right-radius: 8px;
+    background-position: -15px center;
+    width: 15px;
+    background-size: 47px;
+    top: 50%;
+    margin-top: -100px;
+	background-color:var(--colore-grigio-scuro);
+    background-image: url(../img/frSx.png) !important;
+}
+/*body.bodyStyled2 .schLato #chiudiElenco{
+    background-image: url(../img/frSx.png) !important;
+}
+body:not(.bodyStyled2) .schLato #chiudiElenco{
+    background-image: url(../img/frSxB.png) !important;
+}*/
 .smart #chiudiElenco{
 	padding: 0px;
     height: 27px;
@@ -323,7 +364,8 @@ body:not(.bodyStyled2) #chiudiElenco{
 #elenchi_pulsanti{
 	display:none;
 }
-#pulsanti_base div, #pulsanti_set div{ /* i pulsanti del menu radice */
+#pulsanti_base div,
+#pulsanti_set div{ /* i pulsanti del menu radice */
 	height:40px;
 	line-height:40px;
 	color:#000;
@@ -338,6 +380,19 @@ body:not(.bodyStyled2) #chiudiElenco{
     padding-left: 15px;
 	padding-right: 40px;
 	cursor:pointer;
+}
+.smart.android #pulsanti_base div,
+.smart.android #pulsanti_set div{
+	height: 50px !important;
+    line-height: 50px !important;
+	margin: 5px;
+	margin-left: 10px;
+    margin-right: 10px;
+	font-size:17px;
+}
+.smart #pulsanti_base div,
+.smart #pulsanti_set div{
+	font-weight: normal !important;
 }
 #pulsante_agenda{
 	background-image: url(../img/ico_agendaM.png), linear-gradient(to bottom, #FFF 0%,#EEE 100%);
@@ -374,6 +429,7 @@ body:not(.bodyStyled2) #chiudiElenco{
 .lista .noResults{
 	text-align: center !important;
 	box-shadow: none !important;
+	min-height: 75px;
 }
 #lista_base > div, #lista_set > div{
 	display:none;
@@ -395,6 +451,28 @@ body:not(.bodyStyled2) #chiudiElenco{
 	background-repeat: no-repeat;
 	background-position: right center;
 	box-shadow: 0px 0px 3px rgb(0 0 0 / 30%);
+}
+
+.smart.android .lista > div:not(.loading):not(.menuElenchi){
+	height: 50px;
+    line-height: 50px;
+	margin: 5px;
+}
+.smart:not(.android) .lista > div:not(.loading):not(.menuElenchi){
+	height: 40px;
+    line-height: 40px;
+	margin: 5px;
+}
+.smart .lista > div:not(.loading):not(.menuElenchi) b{
+	font-weight:normal !important;
+}
+.smart.android .lista > div:not(.loading):not(.menuElenchi),
+.smart.android .lista > div:not(.loading):not(.menuElenchi) *{
+	font-size:17px;
+}
+.smart:not(.android) .lista > div:not(.loading):not(.menuElenchi),
+.smart:not(.android) .lista > div:not(.loading):not(.menuElenchi) *{
+	font-size:15px;
 }
 .elencoSel{
     box-shadow: 0px 0px 3px rgba(0,0,0,0.5);
@@ -420,6 +498,17 @@ body:not(.bodyStyled2) #chiudiElenco{
 	background-position:right top, center center;
 	background-size:auto 36px, auto;
 }
+.smart.android .cartella > span{
+	height:50px !important;
+	background-position:right center, center center;
+	background-size:auto 46px, auto;
+}
+.smart:not(.android) .cartella > span{
+	height:40px !important;
+}
+/*.smart.android .cartella > span b{
+	font-size:17px !important;
+}*/
 .cartella:not(.cartellaAperta) > span:hover{
 	background-image:url(../img/frGiuB.png), linear-gradient(to bottom, #EEE 0%,#DDD 100%) !important;
 }
@@ -434,8 +523,14 @@ body:not(.bodyStyled2) #chiudiElenco{
 .lista:not(.listaTrattamenti) .cartellaAperta > span{
 	height: 36px !important;
 }
+.smart.android .lista:not(.listaTrattamenti) .cartellaAperta > span{
+	height: 50px !important;
+}
 .listaTrattamenti .cartellaAperta > span{
-	height: 25px !important;
+	height: 30px !important;
+}
+.smart:not(.android) .listaTrattamenti .cartellaAperta > span{
+	height: 32px !important;
 }
 .cartellaAperta > div{
 	display: block !important;
@@ -485,6 +580,11 @@ body:not(.bodyStyled2) #chiudiElenco{
 	background-size: 26px, contain, auto 100%;
 	padding-left:34px;
 }
+
+.smart.android .trattElenco .cart_els:not(.timer):not(.timerNo){
+	padding-left: 42px;
+	background-position: 4px center !important;
+}
 .trattElenco .timer,
 .trattElenco .timerNo{
 	background-position: 9px center, right center !important;
@@ -501,6 +601,11 @@ body:not(.bodyStyled2) #chiudiElenco{
 }
 .cart_els:not(.elencoSel){
 	background-color:#444 !important;
+}
+
+.smart.android .cart_els,
+.smart.android .cart_els *{
+	font-size:17px !important;
 }
 .cart_els:not(.elencoSel):not(.lockedItem):hover{
 	background-color:#555 !important;
@@ -589,7 +694,7 @@ body:not(.bodyStyled2) #chiudiElenco{
 	/*border:1px solid #FFF;
 	line-height:37px;*/
 }
-.timeTratt{
+/*.timeTratt{
 	display: inline-block;
     vertical-align: middle;
     background: linear-gradient(to bottom, #FFF 0%,#EEE 100%);
@@ -602,7 +707,7 @@ body:not(.bodyStyled2) #chiudiElenco{
     width: 52px;
     text-align: center;
     overflow: hidden;
-}
+}*/
 body:not(.touch) .frdx,
 body:not(.touch) .frdxtratt{
 	padding-right:28px !important;
@@ -637,7 +742,7 @@ body:not(.touch) .frdxtratt{
 	padding-bottom: 12px;
 }
 .cnmty span{
-	font-size:10px;
+	font-size:11px;
 	opacity:0.8;
 }
 .procCond{

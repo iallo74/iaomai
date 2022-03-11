@@ -157,7 +157,8 @@ var MODULO_TSUBO = { // extend SET
 		SET.ptSel = ptSel;
 		if(!ritorno || !SCHEDA.formModificato)initChangeDetection( "formAnnotazioni" );
 		
-		if(ritorno && !SCHEDA.libera.stato)SCHEDA.nasScheda();
+		//if(ritorno && !SCHEDA.libera.stato)SCHEDA.nasScheda(); // <<<< CANCELLARE
+		if(ritorno && !SCHEDA.aggancio.tipo == 'libera')SCHEDA.nasScheda();
 		
 		document.getElementById("frSchSu").onclick = '';
 		document.getElementById("frSchGiu").onclick = '';

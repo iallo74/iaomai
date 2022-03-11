@@ -43,8 +43,10 @@ var GUIDA = {
 		}
 		document.getElementById("guida_cont").classList.add("guida"+GUIDA.nGuida+g);
 	},
-	visFumetto: function( n ){
-		if(localStorage.getItem("no_"+n) != 'true'){
+	visFumetto: function( n, forza, noFr ){
+		if(typeof(forza)=='undefined')var forza = false;
+		if(typeof(noFr)=='undefined')var noFr = false;
+		if(localStorage.getItem("no_"+n) != 'true' || forza){
 			if(GUIDA.fumettoAperto){
 				document.getElementById(GUIDA.fumettoAperto).classList.remove("vis");
 				document.getElementById(GUIDA.fumettoAperto).classList.remove("visSch");
@@ -52,7 +54,7 @@ var GUIDA = {
 			}
 			clearTimeout(GUIDA.tmFumetto);
 			document.getElementById("no_guida").dataset.name = "no_"+n;
-			document.getElementById("no_guida").checked = false;
+			document.getElementById("no_guida").checked = (localStorage.getItem("no_"+n));
 			if(!document.getElementById(n)){
 				document.getElementById('guida_def').className = 'fumetti '+n;
 				document.getElementById('fumetti_titolo').innerHTML = guide[n].titolo[globals.siglaLingua];
@@ -60,7 +62,7 @@ var GUIDA = {
 				n='guida_def';
 			}
 			document.getElementById(n).classList.add("visSch");
-			if(document.getElementById('elenchi').classList.contains("schExp") && SCHEDA.menu_to3)document.getElementById(n).classList.add("noFr");
+			if(noFr)document.getElementById(n).classList.add("noFr");
 			setTimeout( function(n){
 				document.getElementById(n).classList.add("vis");
 			},200, n);

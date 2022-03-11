@@ -38,13 +38,15 @@ SET = {
 			facce = 4;
 			facceTrasp = 6;
 		}
+		var modelloAperto = globals.modello.cartella;
+		if(!modelloAperto)modelloAperto='donna';
 		this.geometryPallino = new THREE.SphereGeometry( 0.02, facce, facce );
 		this.geometryPallinoTrasp = new THREE.SphereGeometry( 0.07, facceTrasp, facceTrasp );
 		for(m in MERIDIANI){ // elenco i meridiani
 			this.LN[m] = new THREE.Group();
 			this.LN[m].name="LN_"+m;
 			var n=-1;
-			var LNS=MERIDIANI[m][globals.modello.cartella].linee;
+			var LNS=MERIDIANI[m][modelloAperto].linee;
 			if(LNS){
 				for(l in LNS){ // aggiungo le linee
 					var loader = new THREE.ObjectLoader();
@@ -80,7 +82,7 @@ SET = {
 			this.LN[m].userData.evidenziati=MERIDIANI[m].evidenziati;
 			SETS.add( this.LN[m] );
 			var n=-1;
-			var GDS=MERIDIANI[m][globals.modello.cartella].guide;
+			var GDS=MERIDIANI[m][modelloAperto].guide;
 			if(GDS){
 				if(GDS.length){
 					this.GD[m] = new THREE.Group();
@@ -101,7 +103,7 @@ SET = {
 			this.PT[m].name="PT_"+m;
 			// carico i punti parametrizzati
 			var n=-1;
-			var PTS=MERIDIANI[m][globals.modello.cartella].punti;
+			var PTS=MERIDIANI[m][modelloAperto].punti;
 			var ptAdd = false;
 			
 			for(p in PTS){
@@ -156,14 +158,12 @@ SET = {
 		var contPulsanti = 	'<span class="menuElenchi" onclick="MENU.visMM(\'btnCarMapMenu\');"></span>' +
 							'<span id="btnCarMapMenu" class="btn_meridiani_cinesi titolo_set">' +
 							'<span>TsuboMap</span>' +
-							'<i class="elMenu" id="chiudiSet" onClick="caricaSet(\''+globals.set.cartella+'\',document.getElementById(\'p_'+globals.set.cartella+'\'));" title="'+htmlEntities(Lingua(TXT_ChiudiSet))+'"><span>' +
+							'<i class="elMenu" id="chiudiSet" onClick="chiudiSet();" title="'+htmlEntities(Lingua(TXT_ChiudiSet))+'"><span>' +
 								htmlEntities(Lingua(TXT_ChiudiSet)) +
 							'</span></i><i class="elMenu" id="impostazioniSet" onClick="MENU.visImpset();" title="'+htmlEntities(Lingua(TXT_ImpostazioniSet))+'"><span>' +
 								htmlEntities(Lingua(TXT_ImpostazioniSet)) +
 							'</span></i>' +
-							'<i class="elMenu" id="help_set" onClick="MENU.visElencoSets(\''+globals.set.cartella+'\')"><b style="font-weight:normal;font-style:normal;">?</b><span>' +
-								htmlEntities(Lingua(TXT_Help)) +
-							'</span></i></span>';
+							'<i class="elMenu" id="help_set" onClick="GUIDA.visFumetto(\'guida_set\',true,true);">?</i></span>';
 		var contElenco = '';
 		
 		// meridiani
@@ -215,7 +215,13 @@ SET = {
 		manichino.add( SETS );
 		this._setLineMaterials();
 		raycastDisable=false;
-		
+		if(!globals.modello.cartella){
+			SETS.visible = false;
+			stopAnimate( true );
+		}else{
+			SETS.visible = true;
+			startAnimate();
+		}
 		
 		// unisco i moduli al set
 		Object.assign(SET, MODULO_PATOLOGIE);
@@ -242,9 +248,17 @@ SET = {
 		SET.leggiNote();
 		nasLoader();
 		if(postApreSet){
-			if(SCHEDA.livelloApertura!=3)SCHEDA.apriElenco('set');
-			else{
-				GUIDA.visFumetto("guida_set_mini");
+			if(	SCHEDA.livelloApertura!=3 ){
+				
+				if(	SCHEDA.classeAperta != 'scheda_A' &&
+					SCHEDA.classeAperta != 'scheda_B' )SCHEDA.apriElenco('set');
+				else{
+					SCHEDA.apriElenco('base');
+					PAZIENTI.caricaDettagliSet();
+				}
+				
+			}else{
+				GUIDA.visFumetto("guida_set_mini",false,true);
 				SCHEDA.chiudiElenco();
 				MENU.chiudiMenu();
 			}
@@ -437,6 +451,10 @@ SET = {
 			var mat=this.MAT.pointOn;
 			if(this.ptSel.userData.nota)mat=this.MAT.pointNote;
 			SET.setPulsePt( this.ptSel, 1, 1, mat );
+			var pP = this.ptSel.name.split(".");		
+			var siglaMeridiano = pP[0];
+			var nTsubo = parseInt(pP[1])-1;
+			document.getElementById("pt_"+(nTsubo+1)+"_"+siglaMeridiano).classList.remove("selElPt");
 		}
 		if(this.MAT.pointSel)SET.chiudiTsubo(true,true);
 		var pP = PT_name.split(".");		
@@ -499,6 +517,9 @@ SET = {
 		SET.caricaTsubo( siglaMeridiano, nTsubo, ritorno );
 	},
 	chiudiTsubo: function( nonChiudereScheda, cambiaPunto ){
+		document.getElementById("scheda").classList.remove("tab_tsubo");
+		document.getElementById("scheda").classList.remove("schForm");
+		if(!globals.modello.cartella)return;
 		if(typeof(nonChiudereScheda)=='undefined')nonChiudereScheda=false;
 		if(typeof(cambiaPunto)=='undefined')cambiaPunto=false;
 		if(!nonChiudereScheda){
@@ -550,8 +571,9 @@ SET = {
 			nonChiudereScheda=true;
 			document.getElementById("scheda_ritorno").click();
 		}
-		if(!nonChiudereScheda)SCHEDA.scaricaScheda(); 
-		else if(SET.meridianiSecondariAccesi.length)SET.swContrastMethod(false);
+		if(!nonChiudereScheda){
+			SCHEDA.scaricaScheda(); 
+		}else if(SET.meridianiSecondariAccesi.length)SET.swContrastMethod(false);
 		// ricentro il manichino
 		exPt.updateMatrixWorld();
 		var vector = exPt.geometry.vertices[i].clone();
@@ -605,6 +627,7 @@ SET = {
 		}
 	},
 	accendiMeridiano: function( siglaMeridiano, g, noSw ){
+		if(!globals.modello.cartella)return;
 		// verifico le autorizzazioni
 		if(SET.MERIDIANI_free.indexOf(siglaMeridiano)==-1 && (DB.login.data.auths.indexOf(globals.set.cartella)==-1 || !LOGIN.logedin())){
 			ALERT(Lingua(TXT_MsgFunzioneSoloPay));

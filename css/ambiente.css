@@ -88,15 +88,16 @@
 	-ms-user-select: none;
 	user-select: none;
 	
-	font-family:Verdana, Geneva, sans-serif;
-	font-size: 12px;
+	/*font-family:Verdana, Geneva, sans-serif;*/
+	font-family:'SF Pro Display', Verdana, Geneva, sans-serif;
+	font-size: 13.2px;
 	color:#000;
 }
 
-body {
+body{
 	color: #FFF;
-	font-family:Monospace;
-	font-size:13px;
+	/*font-family:Monospace;*/
+	font-size:14.3px;
 	text-align:center;
 	background-color: #333;
 	margin: 0px;
@@ -132,8 +133,6 @@ body:not(.bodyModello).bodyStyled2{
 .bodyStyled2{
 	background-color: #ffebd6; /*#f1dfcb;/*#eae3d3;*/
 }
-
-
 
 
 .btns{
@@ -216,6 +215,14 @@ body:not(.bodyModello) #logoSovra{
 	background-repeat:no-repeat;
 	background-position:left center;
 	background-size:contain;
+	mix-blend-mode: lighten;
+}
+
+@media (max-width: 800px){
+	#car_inizio{
+		background-blend-mode: lighten;
+		background-color: #0054a7;
+	}
 }
 
 
@@ -290,6 +297,14 @@ body:not(.bodyModello) #logoSovra{
     height: calc(100% - 71px) !important;
     top: 71px !important;
 }
+.schLato .loadingScheda{
+    height: calc(100% - 46px) !important;
+    top: 46px !important;
+}
+.smart .loadingScheda{
+    height: calc(100% - 45px) !important;
+    top: 45px !important;
+}
 #msgScheda{
     background-color:#cddcf7 !important;
     position: absolute !important;
@@ -338,11 +353,6 @@ body:not(.bodyModello) #logoSovra{
 	margin-top:0px !important;
 }
 
-body:not(.AM):not(.AM_light) #poweredby_inizio{
-	display:none !important;
-	visibility:hidden;
-}
-
 .nb{
 	font-weight:normal;
 	opacity:0.6;
@@ -381,7 +391,7 @@ body:not(.AM):not(.AM_light) #poweredby_inizio{
 #boxProvaDemo *{
     color: #FFF;
 }
-#boxProvaDemo div {
+#boxProvaDemo div{
     background: url(../img/chMenu.png) center center no-repeat;
     width: 20px;
     height: 20px;
@@ -391,4 +401,60 @@ body:not(.AM):not(.AM_light) #poweredby_inizio{
     margin-top: -10px;
     margin-right: -30px;
     background-size: 30px;
+}
+#notLogged{
+    display: none;
+    position: fixed;
+    bottom: 0px;
+    z-index: 5;
+    padding-left: 50px;
+    padding-right: 20px;
+    background-image: url(../img/ico_connessione.png);
+    background-repeat: no-repeat;
+    background-color: #aa4b1d;
+    background-position: calc(100% - 10px) center;
+    /* border-top-left-radius: 8px; */
+    cursor: pointer;
+    color: #FFF;
+    right: 0px;
+    height: 50px;
+    line-height: 50px;
+    width: 100%;
+}
+.smart #notLogged{
+    z-index: 21;
+	box-shadow:0px 0px 20px rgba(0,0,0,0.4);
+}
+.chNotLogged{
+	display:none;
+}
+.smart #notLogged{
+	width:100%;
+	right: auto;
+	height:auto !important;
+	line-height:normal !important;
+	padding-top:20px;	
+	padding-bottom:20px;	
+	padding-right:50px;	
+	bottom:auto;
+	top:0px;
+	border-radius:0px !important;
+	background-position: calc(100% - 5px) 5px !important;
+}
+.smart .chNotLogged{
+	display:inline-block !important;
+	height:41px;
+	line-height:41px;
+	padding-left:15px;
+	padding-right:15px;
+	background-color:#FFF;
+	margin:4px;
+	margin-top:24px;
+	color:#000;
+	text-align:center;
+	border-radius:6px;
+	box-shadow:0px 0px 4px rgba(0,0,0,0.5);
+}
+.smart .demoContinue{
+	opacity:0.8;
 }

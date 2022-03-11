@@ -240,6 +240,7 @@ var LOGIN = {
 			document.getElementById("btn_logout").classList.add("btn_logout_mini");
 			document.getElementById("btn_logout").title='LOGOUT';
 			document.getElementById("loginGuida").style.display = 'none';
+			document.getElementById("notLogged").classList.remove("visSch");
 		}else{
 			if(NN){
 				document.getElementById("utDisc").style.display = 'block';
@@ -253,8 +254,10 @@ var LOGIN = {
 				document.getElementById("btn_modut").style.display = 'none';
 				document.getElementById("loginGuida").style.display = 'block';
 			}
+			document.getElementById("p_cartella").classList.remove("clientAtt");
 			document.getElementById("btn_login").style.display = 'inline-block';
 			document.getElementById("btn_logout").style.display = 'none';
+			document.getElementById("notLogged").classList.add("visSch");
 		}
 		document.getElementById("nomeUtente").innerHTML=NN;
 	},

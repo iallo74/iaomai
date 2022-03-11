@@ -26,7 +26,6 @@ SET = {
 	
 	// FUNZIONI
 	_init: function(){
-		
 		if(!localStorage.sistemaMeridiani){
 			localStorage.sistemaMeridiani = "";
 			localStorage.sistemaMeridianiAdd = "";
@@ -42,6 +41,8 @@ SET = {
 			facce = 4;
 			facceTrasp = 6;
 		}
+		var modelloAperto = globals.modello.cartella;
+		if(!modelloAperto)modelloAperto='donna';
 		this.geometryPallino = new THREE.SphereGeometry( 0.02, facce, facce );
 		this.geometryPallinoTrasp = new THREE.SphereGeometry( 0.07, facceTrasp, facceTrasp );
 		
@@ -55,7 +56,7 @@ SET = {
 			if(categoria!=localStorage.sistemaMeridiani)vis = false;
 			this.LN[m].userData.categoria=categoria;
 			
-			var LNS=MERIDIANI[m][globals.modello.cartella].linee;
+			var LNS=MERIDIANI[m][modelloAperto].linee;
 			if(LNS){
 				for(l in LNS){ // aggiungo le linee
 					var loader = new THREE.ObjectLoader();
@@ -75,7 +76,7 @@ SET = {
 			this.LN[m].visible = vis;
 			this.LN[m].userData.categoria = categoria;
 			SETS.add( this.LN[m] );
-			var ARS = MERIDIANI[m][globals.modello.cartella].aree;
+			var ARS = MERIDIANI[m][modelloAperto].aree;
 			if(ARS){
 				var n=-1;
 				this.AR[m] = new THREE.Group();
@@ -97,7 +98,7 @@ SET = {
 			
 			
 			var n=-1;
-			var GDS=MERIDIANI[m][globals.modello.cartella].guide;
+			var GDS=MERIDIANI[m][modelloAperto].guide;
 			if(GDS){
 				if(GDS.length){
 					this.GD[m] = new THREE.Group();
@@ -120,7 +121,7 @@ SET = {
 			this.PT[m].name="PT_"+m;
 			// carico i punti parametrizzati
 			var n=-1;
-			var PTS=MERIDIANI[m][globals.modello.cartella].punti;
+			var PTS=MERIDIANI[m][modelloAperto].punti;
 			
 			for(p in PTS){
 				if(PTS[p]!=''){
@@ -157,14 +158,12 @@ SET = {
 		var contPulsanti = 	'<span class="menuElenchi" onclick="MENU.visMM(\'btnCarMapMenu\');"></span>' +
 							'<span id="btnCarMapMenu" class="btn_meridiani_shiatsu titolo_set">' +
 							'<span>ShiatsuMap</span>' +
-							'<i class="elMenu" id="chiudiSet" onClick="caricaSet(\''+globals.set.cartella+'\',document.getElementById(\'p_'+globals.set.cartella+'\'));" title="'+htmlEntities(Lingua(TXT_ChiudiSet))+'"><span>' +
+							'<i class="elMenu" id="chiudiSet" onClick="chiudiSet();" title="'+htmlEntities(Lingua(TXT_ChiudiSet))+'"><span>' +
 								htmlEntities(Lingua(TXT_ChiudiSet)) +
 							'</span></i><i class="elMenu" id="impostazioniSet" onClick="MENU.visImpset();" title="'+htmlEntities(Lingua(TXT_ImpostazioniSet))+'"><span>' +
 								htmlEntities(Lingua(TXT_ImpostazioniSet)) +
 							'</span></i>' +
-							'<i class="elMenu" id="help_set" onClick="MENU.visElencoSets(\''+globals.set.cartella+'\')"><b style="font-weight:normal;font-style:normal;">?</b><span>' +
-								htmlEntities(Lingua(TXT_Help)) +
-							'</span></i></span>';
+							'<i class="elMenu" id="help_set" onClick="GUIDA.visFumetto(\'guida_set\',true,true);">?</i></span>';
 		var contElenco = '';
 		
 		// meridiani
@@ -243,7 +242,13 @@ SET = {
 		
 		this._setLineMaterials();
 		raycastDisable=false;
-		
+		if(!globals.modello.cartella){
+			SETS.visible = false;
+			stopAnimate( true );
+		}else{
+			SETS.visible = true;
+			startAnimate();
+		}
 		
 		// unisco i moduli al set
 		Object.assign(SET, MODULO_PATOLOGIE);
@@ -270,9 +275,17 @@ SET = {
 		SET.leggiNote();
 		nasLoader();
 		if(postApreSet){
-			if(SCHEDA.livelloApertura!=3)SCHEDA.apriElenco('set');
-			else{
-				GUIDA.visFumetto("guida_set_mini");
+			if(SCHEDA.livelloApertura!=3 ){
+				
+				if(	SCHEDA.classeAperta != 'scheda_A' &&
+					SCHEDA.classeAperta != 'scheda_B' )SCHEDA.apriElenco('set');
+				else{
+					SCHEDA.apriElenco('base');
+					PAZIENTI.caricaDettagliSet();
+				}
+				
+			}else{
+				GUIDA.visFumetto("guida_set_mini",false,true);
 				SCHEDA.chiudiElenco();
 				MENU.chiudiMenu();
 			}
@@ -523,6 +536,9 @@ SET = {
 		SET.caricaTsubo( siglaMeridiano, nTsubo, ritorno );
 	},
 	chiudiTsubo: function( nonChiudereScheda ){
+		document.getElementById("scheda").classList.remove("tab_tsubo");
+		document.getElementById("scheda").classList.remove("schForm");
+		if(!globals.modello.cartella)return;
 		if(!nonChiudereScheda){
 			endChangeDetection();
 			SCHEDA.formModificato = false;
@@ -565,7 +581,9 @@ SET = {
 			nonChiudereScheda=true;
 			document.getElementById("scheda_ritorno").click();
 		}
-		if(!nonChiudereScheda)SCHEDA.scaricaScheda(); 
+		if(!nonChiudereScheda){
+			SCHEDA.scaricaScheda(); 
+		}
 		
 		// ricentro il manichino
 		exPt.updateMatrixWorld();

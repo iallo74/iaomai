@@ -84,6 +84,11 @@ var TXT_Elimina={
 	eng: "Delete",
 	esp: "" };
 	
+	var TXT_EliminaScheda={
+		ita: "Elimina la scheda",
+		eng: "Delete file",
+		esp: "" };
+	
 var TXT_NessunRisultato={
 	ita: "Nessun risultato",
 	eng: "No result",
@@ -279,6 +284,21 @@ var TXT_NessunUtente={
 	ita: "Nessun utente connesso",
 	eng: "No user logged in",
 	esp: "" };
+		
+	var TXT_NonLoggato={	
+		ita: "ATTENZIONE! Stai utilizzando la versione demo dell'app. Clicca per effettuare il login.",
+		eng: "PLEASE NOTE! You are using the demo version of the app. Click to login.",
+		esp: "" };
+		
+	var TXT_HoCapito={	
+		ita: "Ho capito",
+		eng: "I understand",
+		esp: "" };
+		
+	var TXT_ContinuaDemo={	
+		ita: "Continua con la demo",
+		eng: "Continue with demo",
+		esp: "" };
 	
 var TXT_Accedi={
 	ita: "Accedi",
@@ -336,6 +356,11 @@ var TXT_ChiudiScheda={
 	ita: "Chiudi la scheda",
 	eng: "Close file",
 	esp: "" };
+	
+	var TXT_RiapriScheda={
+		ita: "RIAPRI",
+		eng: "RESUME",
+		esp: "" };
 		
 var TXT_PuntoPrecedente={
 	ita: "Vai al punto precedente",
@@ -374,6 +399,16 @@ var TXT_TueRicerche={
 	eng: "Your searches",
 	esp: "" };
 	
+	var TXT_SvuotaCronologia={
+		ita: "Svuota cronologia",
+		eng: "Clear history",
+		esp: "" };
+	
+	var TXT_ConfSvuotaCronologia={
+		ita: "Vuoi davvero cancellare tutti i risultati di ricerca?",
+		eng: "Do you really want to clear all search results?",
+		esp: "" };
+	
 var TXT_EliminaParola={
 	ita: "Elimina l'elemento",
 	eng: "Delete item",
@@ -387,8 +422,8 @@ var TXT_ImpostazioniSet={
 	esp: "" };
 	
 var TXT_ChiudiSet={
-	ita: "Esci dal set",
-	eng: "Leave the set",
+	ita: "Esci dalla mappa",
+	eng: "Leave the map",
 	esp: "" };
 	
 	
@@ -428,6 +463,11 @@ var TXT_StampaScheda={
 	ita: "Stampa la scheda",
 	eng: "Print",
 	esp: "" };
+	
+	var TXT_AggancioScheda={
+		ita: "Aggancio scheda",
+		eng: "Tab hooking",
+		esp: "" };
 	
 var TXT_StampaStage={
 	ita: "Stampa il manichino",
@@ -1307,7 +1347,12 @@ var TXT_Anamnesi={
 var TXT_AggiungiTrattamento={
 	ita: "Aggiungi un trattamento",
 	eng: "Add a treatment",
-	esp: "" };
+	esp: "" }
+
+	var TXT_InserisciTrattamento={
+		ita: "Inserisci un trattamento nel ciclo",
+		eng: "Insert a treatment in the cycle",
+		esp: "" };
 	
 var TXT_NoResTrattamento={
 	ita: "Nessun trattamento",
@@ -1385,6 +1430,11 @@ var TXT_MeridianiTrattamento={
 	ita: "Meridiani",
 	eng: "Meridians",
 	esp: "" };
+	
+	var TXT_MeridianiAnamnesi={
+		ita: "Valutazione sui meridiani",
+		eng: "Evaluation on meridians",
+		esp: "" };
 	
 var TXT_PuntiTrattamento={
 	ita: "Tsubo trattati",
@@ -1625,6 +1675,11 @@ var TXT_ChiediEliminaFoto={
 		eng: "Edit cycle",
 		esp: "" };
 		
+	var TXT_SchedaAnamnesi={
+		ita: "Scheda di anamnesi",
+		eng: "Anamnesis file",
+		esp: "" };
+		
 	var TXT_AggiungiCiclo={
 		ita: "Aggiungi un ciclo",
 		eng: "New a cycle",
@@ -1646,8 +1701,8 @@ var TXT_ChiediEliminaFoto={
 		esp: "" };
 		
 	var TXT_GuidaCiclo={
-		ita: "Creando un ciclo di trattamenti aggiungerai una cartella nella quale potrai inserire una serie di trattamenti raggruppati secondo uno specifico obiettivo terapeutico (es. Trattamento dell'insonnia)."+chr10+"Nella scheda del ciclo puoi gestire alcuni parametri che non sono presenti nei trattamenti singoli, come ad esempio la diagnosi e i sintomi."+chr10+"I sintomi indicati in questa scheda potranno essere monitorati e aggiornati nel corso di tutto il ciclo di trattamenti e infine potrai visualizzare e stampare la scheda riepoligativa del ciclo completo.",
-		eng: "Creando un ciclo di trattamenti aggiungerai una cartella nella quale potrai inserire una serie di trattamenti raggruppati secondo uno specifico obiettivo terapeutico (es. Trattamento dell'insonnia)."+chr10+"Nella scheda del ciclo puoi gestire alcuni parametri che non sono presenti nei trattamenti singoli, come ad esempio la diagnosi e i sintomi."+chr10+"I sintomi indicati in questa scheda potranno essere monitorati e aggiornati nel corso di tutto il ciclo di trattamenti e infine potrai visualizzare e stampare la scheda riepoligativa del ciclo completo.",
+		ita: "Creando un ciclo di trattamenti aggiungerai una cartella nella quale potrai inserire una serie di trattamenti raggruppati secondo uno specifico obiettivo terapeutico (es. Trattamento dell'insonnia)."+chr10+"Nella scheda del ciclo puoi gestire alcuni parametri che non sono presenti nei trattamenti singoli, come ad esempio la diagnosi."+chr10+"I sintomi indicati in questa scheda potranno essere monitorati e aggiornati nel corso di tutto il ciclo di trattamenti e infine potrai visualizzare e stampare la scheda riepoligativa del ciclo completo.",
+		eng: "Creando un ciclo di trattamenti aggiungerai una cartella nella quale potrai inserire una serie di trattamenti raggruppati secondo uno specifico obiettivo terapeutico (es. Trattamento dell'insonnia)."+chr10+"Nella scheda del ciclo puoi gestire alcuni parametri che non sono presenti nei trattamenti singoli, come ad esempio la diagnosi."+chr10+"I sintomi indicati in questa scheda potranno essere monitorati e aggiornati nel corso di tutto il ciclo di trattamenti e infine potrai visualizzare e stampare la scheda riepoligativa del ciclo completo.",
 		esp: "" };
 	
 var TXT_CicloTrattamenti={
@@ -2263,29 +2318,9 @@ var TXT_TestoRegistrazione={
 	eng: 'Sign-up to use all the features of the free version.',
 	esp: "" };
 	
-var TXT_TestoRegistrazioneAM={
-	ita: "Effettua la registrazione per usufruire di maggiori funzionalità.",
-	eng: 'Please sign-up to use more features.',
-	esp: "" };
-	
 	var TXT_TestoRegistrazioneEspanso={
 		ita: "Con la registrazione gratuita a [§] avrai {30 giorni di prova gratuita di tutte le app} e allo scadere potrai usufruire di  di tutte le funzionalità di base dell'app:"+chr10+chr10+"[#] Fino a 20 clienti"+chr10+"[#] Backup dei dati"+chr10+"[#] Accesso multipiattaforma"+chr10+"[#] Funzionalità della community"+chr10+"[#] 10% di sconto su un prodotto [IAOMAI]",
 		eng: 'With the free registration to [§] you will have {30-day free trial of all apps} and upon expiry you will be able to use all the basic functions of the app:'+chr10+chr10+"[#] Up to 20 customers"+chr10+"[#] Data backup"+chr10+"[#] Cross-platform access"+chr10+"[#] Community functionality"+chr10+"[#] Tutte le app gratis per 30 giorni"+chr10+"[#] 10% discount on [IAOMAI] product",
-		esp: "" };
-	
-var TXT_TestoRegistrazioneEspansoAM={
-	ita: "Con la registrazione gratuita ad [§] potrai usufruire dei seguenti vantaggi:"+chr10+chr10+"[#] Backup dei dati"+chr10+"[#] 15 giorni di prova multipiattaforma",
-	eng: "With the free registration to [§] you can use the following advantages:"+chr10+chr10+"[#] Data backup"+chr10+"[#] 15 days of cross-platform trial",
-	esp: "" };
-	
-var TXT_TestoRegistrazioneEspansoAM2={
-	ita: chr10+"[#] 10% di sconto su un prodotto [IAOMAI]",
-	eng: chr10+"[#] 10% discount on [IAOMAI] product",
-	esp: "" };
-	
-	var TXT_TestoRegistrazioneEspansoAM3={
-		ita: chr10+"[#] numerosi vantaggi su prodotti [IAOMAI]",
-		eng: chr10+"[#] numerosi vantaggi su prodotti [IAOMAI] product",
 		esp: "" };
 	
 var TXT_ErroreGenerico={
@@ -2369,3 +2404,16 @@ var TXT_MsgModelloSoloPay={
 	ita: "Con la versione gratuita è possibile visualizzare solo il manichino maschile.",
 	eng: "With the free version you can only view the male 3D model.",
 	esp: "" };
+	
+	var TXT_ApriAnatomia={
+		ita: "Apri sempre il modello 3D all'inizio",
+		eng: "Always open the 3D model at the beginning",
+		esp: "" };
+	
+	var TXT_ApriMappa={
+		ita: "Memorizza la scelta",
+		eng: "Memorize your choice",
+		esp: "" };
+	
+	
+	

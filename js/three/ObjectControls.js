@@ -85,7 +85,7 @@ THREE.ObjectControls = function ( object, domElement ) {
 		//if(!overInterfaccia){
 			//event.preventDefault();
 		if(noAnimate)return;
-			
+		
 		if(this.ROTATE || this.PAN){
 			try{SET.desIntersected();}catch(err){}
 			startInteractionTimer();
@@ -245,8 +245,11 @@ THREE.ObjectControls = function ( object, domElement ) {
 			/*mouse.x=this.xAtt;
 			mouse.y=this.yAtt;*/
 			
-			mouse.x = + (event.targetTouches [0] .pageX / window.innerWidth) * 2 + -1;
-			mouse.y = - (event.targetTouches [0] .pageY / window.innerHeight) * 2 + 1;	
+		const rect = renderer.domElement.getBoundingClientRect();
+		mouse.x = ( ( event.targetTouches [0].pageX - rect.left ) / ( rect.right - rect.left ) ) * 2 - 1;
+		mouse.y = - ( ( event.targetTouches [0].pageY - rect.top ) / ( rect.bottom - rect.top) ) * 2 + 1;
+			//mouse.x = + (event.targetTouches [0] .pageX / window.innerWidth) * 2 + -1;
+			//mouse.y = - (event.targetTouches [0] .pageY / window.innerHeight) * 2 + 1;	
 			
 			MODELLO.INTERSECTED=null;
 			try{ SET.INTERSECTED=null; }catch(err){}
@@ -314,8 +317,11 @@ THREE.ObjectControls = function ( object, domElement ) {
 				handleTouchStartRotate( event );
 				this.ROTATE=true;
 				
-				mouse.x = + (event.targetTouches [0] .pageX / window.innerWidth) * 2 + -1;
-				mouse.y = - (event.targetTouches [0] .pageY / window.innerHeight) * 2 + 1;
+		const rect = renderer.domElement.getBoundingClientRect();
+		mouse.x = ( ( event.targetTouches[0].pageX - rect.left ) / ( rect.right - rect.left ) ) * 2 - 1;
+		mouse.y = - ( ( event.targetTouches[0].pageY - rect.top ) / ( rect.bottom - rect.top) ) * 2 + 1;
+				//mouse.x = + (event.targetTouches [0] .pageX / window.innerWidth) * 2 + -1;
+				//mouse.y = - (event.targetTouches [0] .pageY / window.innerHeight) * 2 + 1;
 				//console.log(mouse)
 				
 				//console.log(mouse)

@@ -152,8 +152,18 @@ var PAZIENTI = {
 			PAZIENTI.idCL = n*1;
 			PAZIENTI.idPaziente = DB.pazienti.data[PAZIENTI.idCL].idPaziente;
 			var sesso = sessi[DB.pazienti.data[PAZIENTI.idCL].sesso];
-			var pass = true;
+			document.getElementById("p_cartella").classList.add("clientAtt");
+			//document.getElementById("elenchi_titolo").classList.add("clientAtt");
+			document.getElementById("ico_cliente").style.backgroundImage = "url(img/ico_cliente_"+sesso+"B.png)";
+			document.getElementById("ico_cliente").getElementsByTagName("i")[0].innerHTML = DB.pazienti.data[PAZIENTI.idCL].Nome+" "+DB.pazienti.data[PAZIENTI.idCL].Cognome;
 			
+			// cambio sesso al manichino
+			/*
+			
+				TOLTO PER RENDERLO PIU' smart
+			
+			*/
+			/*var pass = true;
 			if(globals.modello.cartella){
 				if( sesso == globals.modello.cartella ) pass = false;
 				if(typeof(globals.set.modelli)!='undefined'){
@@ -163,7 +173,8 @@ var PAZIENTI = {
 			if( pass ){
 				if(sesso!='altro')cambiaModello( sesso );
 				SCHEDA.selElenco('pazienti');
-			}
+			}*/
+			
 			var d=new Date();
 			pazSelMD5=MD5("P"+d);
 			PAZIENTI.caricaTrattamenti();
@@ -195,6 +206,9 @@ var PAZIENTI = {
 			PAZIENTI.idPaziente = -1;
 			PAZIENTI.caricaPazienti();
 			PAZIENTI.aperture = [];
+			document.getElementById("p_cartella").classList.remove("clientAtt");
+			//document.getElementById("elenchi_titolo").classList.remove("clientAtt");
+			document.getElementById("p_cartella").getElementsByTagName("i")[0].innerHTML = Lingua(TXT_ElGestionale);
 			try{
 				SET.leggiNote();
 			}catch(err){}
@@ -488,6 +502,7 @@ var PAZIENTI = {
 				}
 			cont += '			</select>' +
 					'			<input  id="@|Cellulare|0|0|tel"' +
+					'					type="text"' +
 					'					name="Cellulare"' +
 					'					placeholder="'+htmlEntities(Lingua(TXT_Cellulare))+'"' +
 					'					value="'+htmlEntities(Cellulare)+'"' +
@@ -752,9 +767,14 @@ var PAZIENTI = {
 			var azAnnulla = "SCHEDA.scaricaScheda();";
 			if(PAZIENTI.idCL>-1)azAnnulla = "PAZIENTI.vis_paziente();";
 			//if(PAZIENTI.idCL>-1)azAnnulla = "SCHEDA.scaricaScheda();";
+			var azElimina = PAZIENTI.idCL>-1 ? "PAZIENTI.el_paziente("+PAZIENTI.idCL+");":"";
+			var btnAdd = '';
+			if(azElimina){
+				btnAdd = '<div class="p_paz_el_menu" onClick="'+azElimina+'">'+Lingua(TXT_EliminaScheda)+'</div>';
+			}
 			
 			HTML += SCHEDA.pulsantiForm(
-									PAZIENTI.idCL>-1 ? "PAZIENTI.el_paziente("+PAZIENTI.idCL+");":"",
+									azElimina,
 									azAnnulla, 
 									"if(H.verData(\'DataNascita\'))PAZIENTI.mod_paziente();" );
 			
@@ -769,7 +789,9 @@ var PAZIENTI = {
 									'',
 									'scheda_paziente',
 									false,
-									true );
+									true,
+									'',
+									btnAdd );
 									
 			initChangeDetection( "formMod" );
 			
@@ -1160,10 +1182,14 @@ var PAZIENTI = {
 		var avatar = document.getElementById("avatarPaziente").getElementsByTagName("div")[0].style.backgroundImage;
 		if(avatar)avatar = avatar.split(avatar[4])[1].replace(location.origin+location.pathname,'');
 		if(typeof(avatar) == 'undefined')avatar = '';
-		DataNascita=document.formMod.annoDataNascita.value+"-"+document.formMod.meseDataNascita.value+"-"+document.formMod.giornoDataNascita.value;
-		////DataNascita=DataNascita.getTime();
-		//DataNascita=parseInt(DataNascita/1000);
-		//if(DataNascita<0)DataNascita=0;
+		
+		GiornoNascita = document.formMod.giornoDataNascita.value;
+		MeseNascita = document.formMod.meseDataNascita.value;
+		AnnoNascita = document.formMod.annoDataNascita.value;
+		DataNascita = '0000-00-00';
+		if(GiornoNascita && MeseNascita && AnnoNascita){
+			DataNascita=AnnoNascita+"-"+MeseNascita+"-"+GiornoNascita;
+		}
 		
 		JSNPUSH={ 	"idPaziente": document.formMod.idPaziente.value*1,
 					"Nome": document.formMod.Nome.value.trim(),

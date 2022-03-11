@@ -136,7 +136,7 @@
 
 		
 		
-	TXT_CaricaMappa = {
+	/*TXT_CaricaMappa = {
 		ita: "Carica un set",
 		eng: "Load a set",
 		esp: "" 
@@ -145,18 +145,43 @@
 		ita: "Set aggiuntivi",
 		eng: "Additional sets",
 		esp: "" 
+	};*/
+	TXT_CaricaMappa = {
+		ita: "Carica una mappa",
+		eng: "Load a map",
+		esp: "" 
+	};
+	TXT_Mappe = {
+		ita: "Mappe tematiche",
+		eng: "Thematic maps",
+		esp: "" 
+	};
+	TXT_ChiediEsciMappa = {
+		ita: "Vuoi davvero uscire da [mappa]?",
+		eng: "Do you really want quit [mappa]?",
+		esp: "" 
 	};
 	
 // popup SETS
-	TXT_SetAperto = {
+	/*TXT_SetAperto = {
 		ita: "Set in uso",
 		eng: "Set in use",
 		esp: "" };
-	
+		
 	TXT_ApriSet = {
 		ita: "Apri il set",
 		eng: "Open set",
+		esp: "" };*/
+	TXT_SetAperto = {
+		ita: "Mappa in uso",
+		eng: "Map in use",
 		esp: "" };
+		
+	TXT_ApriSet = {
+		ita: "Apri la mappa",
+		eng: "Open map",
+		esp: "" };
+	
 	
 	TXT_ApriDemo = {
 		ita: "Apri demo",

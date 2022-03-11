@@ -25,8 +25,8 @@ var guide = {
 			eng: 'The set'
 		},
 		testo: {
-			ita: 'Con questo menu puoi navigare i contenuti del set e utilizzarne le funzionalità specifiche.'+chr10+'<span style="line-height:25px;margin-top:5px;display:block;"><i>Utilizzo delle icone:</i>'+chr10+'<i id="help_set" style="float: left;vertical-align: middle;display: inline-block;margin: 3px !important;margin-right: 7px !important;"><b style="font-weight:normal;font-style:normal;">?</b></i> Guida online'+chr10+'<img src="img/p_impostazioniN.png" style="width:25px; vertical-align:middle"> Impostazioni del set'+chr10+'<img src="img/ico_frsxN.png" style="width:25px; vertical-align:middle"> Uscire dal set</span>',
-			eng: 'With this menu you can browse the contents of the set and use its specific features.'+chr10+'<span style="line-height:25px;margin-top:5px;display:block;"><i>Using icons:</i>'+chr10+'<i id="help_set" style="float: left;vertical-align: middle;display: inline-block;margin: 3px !important;margin-right: 7px !important;"><b style="font-weight:normal;font-style:normal;">?</b></i> Online help'+chr10+'<img src="img/p_impostazioniN.png" style="width:25px; vertical-align:middle"> Set settings'+chr10+'<img src="img/ico_frsxN.png" style="width:25px; vertical-align:middle"> Exit the set</span>'
+			ita: 'Con questo menu puoi navigare i contenuti del set e utilizzarne le funzionalità specifiche.'+chr10+'<span style="line-height:25px;margin-top:5px;display:block;"><i>Utilizzo delle icone:</i>'+chr10+'<i id="help_set">?</i> Guida online'+chr10+'<img src="img/p_impostazioniN.png" style="width:25px; vertical-align:middle"> Impostazioni del set'+chr10+'<img src="img/ico_quit4.png" style="width:25px; vertical-align:middle"> Uscire dal set</span>',
+			eng: 'With this menu you can browse the contents of the set and use its specific features.'+chr10+'<span style="line-height:25px;margin-top:5px;display:block;"><i>Using icons:</i>'+chr10+'<i id="help_set">?</i> Online help'+chr10+'<img src="img/p_impostazioniN.png" style="width:25px; vertical-align:middle"> Set settings'+chr10+'<img src="img/ico_quit4.png" style="width:25px; vertical-align:middle"> Exit the set</span>'
 		}
 	},
 	guida_set_mini: {
@@ -37,16 +37,6 @@ var guide = {
 		testo: {
 			ita: 'Utilizza questa icona per navigare tutti i contenuti del set',
 			eng: 'Utilizza questa icona per navigare tutti i contenuti del set'
-		}
-	},
-	guida_fix: {
-		titolo: {
-			ita: '',
-			eng: ''
-		},
-		testo: {
-			ita: 'Utilizza questa icona per fissare la visualizzazione degli elenchi sempre in modalità espansa.',
-			eng: 'Utilizza questa icona per fissare la visualizzazione degli elenchi sempre in modalità espansa.'
 		}
 	}
 };

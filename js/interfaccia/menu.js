@@ -89,7 +89,7 @@ var MENU = {
 		if(n!="impset")document.getElementById("impset").classList.remove("visSch");
 		if(n!="community")document.getElementById("community").classList.remove("visSch")
 		if(n!="ag")document.getElementById("ag").classList.remove("visSch")
-		if( (n=='pulsanti_modello' && !smartMenu) ||
+		if( n=='pulsanti_modello' ||
 			n=='impostazioni' ||
 			n=='sets' ||
 			n=='ricerche' ||
@@ -97,6 +97,7 @@ var MENU = {
 			n=='ag' ){
 			SCHEDA.chiudiElenco();
 		}
+		rimuoviLoading( document.getElementById("elenchi_cont"));
 		if(MENU.icoSelected){
 			if(	MENU.icoSelected.id!='p_cartella' && 
 				MENU.icoSelected.id!='p_set' )MENU.desIcona();
@@ -105,15 +106,34 @@ var MENU = {
 		RICERCHE.nascondiGlobal();
 		BACKUPS.bkpProvv = null;
 		nasLoader();
+		
+		
+		// recupero il focus sul pulsante degli archivi
+		if((SCHEDA.classeAperta == 'scheda_A' ||
+			SCHEDA.classeAperta == 'scheda_B') && 
+			!document.getElementById("p_cartella").classList.contains("p_sel") &&
+			!n &&
+			!smartMenu ){
+			MENU.icoSelected = document.getElementById("p_cartella");
+			MENU.icoSelected.classList.add("p_sel");
+			MENU.comprimiIcone(true);
+		}
+		//verAnimate();
 	},
 	visModello: function( forza ){
 		if(typeof(forza) == 'undefined')var forza = false;
-		if(!document.getElementById("pulsanti_modello").classList.contains("visSch") && !globals.modello.cartella){
-			GUIDA.visFumetto("guida_anatomia");
-		}else{
-			GUIDA.nasFumetto();
-		}
-		this.chiudiMenu("pulsanti_modello");
+		var daScheda = ((SCHEDA.classeAperta == 'scheda_A' ||
+						 SCHEDA.classeAperta == 'scheda_B') && !smartMenu);
+						
+		if(!daScheda){
+			if(!document.getElementById("pulsanti_modello").classList.contains("visSch") && !globals.modello.cartella){
+				GUIDA.visFumetto("guida_anatomia");
+			}else{
+				GUIDA.nasFumetto();
+			}
+			this.chiudiMenu("pulsanti_modello");
+		}else document.getElementById("p_cartella").classList.remove("p_sel");
+		
 		if(!forza)document.getElementById("pulsanti_modello").classList.toggle("visSch");
 		else document.getElementById("pulsanti_modello").classList.add("visSch");
 		this.aggiornaIconeModello();
@@ -129,19 +149,30 @@ var MENU = {
 				}, ((m+1)*2 + vel) * 100, m );
 			}
 		}
-		if(!smartMenu){
+		//if(!smartMenu){
 			if(document.getElementById("pulsanti_modello").classList.contains("visSch")){
 				MENU.icoSelected = document.getElementById("p_modello");
 				MENU.icoSelected.classList.add("p_sel");
 			}else MENU.desIcona();
-		}
+		//}
 		MENU.comprimiIcone(true);
+		if(daScheda){
+			if(document.getElementById("pulsanti_modello").classList.contains("visSch")){
+				applicaLoading( document.getElementById("elenchi_cont"));
+			}else{
+				SCHEDA.apriElenco('base');
+			}
+			document.getElementById("p_sets").classList.remove("p_sel");
+			document.getElementById("sets").classList.remove("visSch");
+		}
+		get_memOpen3d();
+		MENU.nasTT();
 	},
 	visElencoSets: function( set ){
 		if(typeof(set) == 'undefined')var set = '';
 		MENU.chiudiMenu("elencoSets");
 		CATALOGO.scriviElencoSets( set );
-		if(document.getElementById("scheda").className.indexOf("schExp") > -1)SCHEDA.chiudiElenco();
+		SCHEDA.chiudiElenco();
 		document.getElementById("elencoSets").classList.toggle("visSch");
 		document.getElementById("elencoSets").style.marginTop = '-'+( document.getElementById("elencoSets").scrollHeight / 2 )+'px';
 		if(document.getElementById("elencoSets").className.indexOf("visSch") > -1){
@@ -152,9 +183,14 @@ var MENU = {
 			//document.getElementById("loader").removeEventListener("mouseup",MENU.visElencoSets,false);
 		}
 		MENU.comprimiIcone(true);
+		//verAnimate();
 	},
-	visSets: function(){	
-		MENU.chiudiMenu("sets");
+	visSets: function(){
+		var daScheda = ((SCHEDA.classeAperta == 'scheda_A' ||
+						 SCHEDA.classeAperta == 'scheda_B') && !smartMenu);	
+		if(!daScheda)MENU.chiudiMenu("sets");
+		else document.getElementById("p_cartella").classList.remove("p_sel");
+		//document.getElementById("elenchi_titolo").classList.remove("clientAtt");
 		document.getElementById("sets").classList.toggle("visSch");
 		if(document.getElementById("sets").classList.contains("visSch")){
 			CATALOGO.scriviListaSets();
@@ -164,6 +200,18 @@ var MENU = {
 			MENU.icoSelected.classList.add("p_sel");
 		}else MENU.desIcona();
 		MENU.comprimiIcone(true);
+		if(daScheda){
+			if(document.getElementById("sets").classList.contains("visSch")){
+				applicaLoading( document.getElementById("elenchi_cont"));
+			}else{
+				SCHEDA.apriElenco('base');
+			}
+			document.getElementById("p_modello").classList.remove("p_sel");
+			document.getElementById("pulsanti_modello").classList.remove("visSch");
+		}
+		MENU.nasTT();
+		get_memOpenMap();
+		//verAnimate();
 	},
 	
 	desIcona: function(){
@@ -433,7 +481,16 @@ var MENU = {
 			document.getElementById("agTesto").innerHTML = '';
 		}
 	},
-	
+	setNotLogged: function(){
+		setTimeout( function(){
+			if(document.getElementById("notLogged").classList.contains("visSch")){
+				MENU.visLogin();
+			}
+		}, 200 );
+	},
+	closeNotLogged: function(){
+		document.getElementById("notLogged").classList.remove("visSch");
+	},
 	
 	visVersione: function(){
 		MENU.chiudiMenu("versione");
@@ -473,7 +530,7 @@ var MENU = {
 		try{ SET.popolaImpSet(); }catch(err){}
 	},
 	stampaStage: function(){
-		if(!DB.login.data.auths.length && tipoApp!='AM'){
+		if(!DB.login.data.auths.length){
 			setTimeout(function(){
 				ALERT(Lingua(TXT_MsgFunzioneSoloPay));
 			},100);
@@ -566,7 +623,9 @@ var MENU = {
 	visTT: function( el ){
 		if(touchable)return;
 		if(!MENU.icoSelected)return;
-		document.getElementById("tooltipmenu_txt").innerHTML = el.getElementsByTagName('i')[0].innerHTML;
+		txt = el.getElementsByTagName('i')[0].innerHTML;
+		if(!txt && el.getElementsByTagName('i'))txt = el.getElementsByTagName('i')[1].innerHTML;
+		document.getElementById("tooltipmenu_txt").innerHTML = txt;
 		document.getElementById("tooltipmenu").classList.add("tooltipmenuVis");
 		document.getElementById("tooltipmenu").style.left='48px';
 		document.getElementById("tooltipmenu").style.top=(tCoord(el,'y')+15)+'px';

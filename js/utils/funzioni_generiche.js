@@ -178,6 +178,7 @@ function initChangeDetection(form) {
 	SCHEDA.form = document.getElementById( form );
 	document.getElementById("scheda").classList.add("schForm");
 	Array.from( SCHEDA.form ).forEach(el => el.dataset.origValue = el.value);
+	SCHEDA.verPosScheda();
 }
 function endChangeDetection() {
 	SCHEDA.formModificato = false;

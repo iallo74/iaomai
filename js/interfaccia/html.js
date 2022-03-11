@@ -540,8 +540,7 @@ var H = {
 				'				</div>' +
 				'				<div class="l"></div>' +
 				'			</div>' +
-				'			<div id="cont_p_paz_label_'+obj.nome+'"' +
-				'				 style="height: 35px;padding-top: 5px;">' +
+				'			<div class="cont_p_paz_label" id="cont_p_paz_label_'+obj.nome+'">' +
 				'				<div id="p_paz_label_'+obj.nome+'"' +
 				'					 class="p_paz_label"' +
 				'					 onclick="H.visAggiungiEtichetta(\''+obj.nome+'\');">' +

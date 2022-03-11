@@ -20,6 +20,11 @@ body:not(.smart) #sets{
 	bottom:54px;
 	z-index:550;
   	border-top-right-radius:5px;
+    position: fixed;
+	width: 100% !important;
+    height: calc(100% - 54px);
+	border-radius:0px !important;
+	box-shadow:none !important;
 }
 #labelSets{
 	height:40px;
@@ -41,18 +46,37 @@ body:not(.smart) #sets{
 	line-height:50px;
 	padding-left:50px;
 	background-repeat:no-repeat;
-	background-position:5px center, right center;
-	background-size:auto 38px, auto 90%;
+	background-position:5px center, right center, calc(100% - 10px) center;
+	background-size:auto 38px, auto 90%, auto 47%;
 	text-align:left;
 	color:#000;
 	border-bottom:1px solid rgba(0,0,0,0.1);
 	cursor:pointer;
+}
+#sets_elenco div span{
+	float:right;
+	font-size:11px !important;
+	padding-right:32px
 }
 #sets_elenco div:last-child{
 	border-bottom: none !important;
 }
 #sets_elenco div:hover{
 	background-color:rgba(0,0,0,0.05);
+}
+.smart.android #sets_elenco div,
+.smart.android #labelSets{
+	font-size:17px !important;
+}
+.smart.android #labelSets{
+	margin-bottom: 10px;
+}
+.lockedMap{
+	background-color:rgba(0,0,0,0.1) !important;
+	opacity:0.5;
+}
+.lockedMap:hover{
+	background-color:rgba(0,0,0,0.2) !important;
 }
 #chiudi_sets{
 	height:40px;
@@ -66,7 +90,9 @@ body:not(.smart) #sets{
 	vertical-align:top;
 	cursor:pointer;
 }
-
+.smart #chiudi_sets{
+	background-size: auto;
+}
 
 /* SETS - CATALOGO */
 #elencoSets{
@@ -74,7 +100,7 @@ body:not(.smart) #sets{
 	margin-left:-270px;
 }
 #labelSets{
-	background-image:url(../img/p_paccoN.png);
+	background-image:url(../img/ico_mappa.png);
 }
 #setElenco{
 	display:inline-block;
@@ -130,7 +156,7 @@ body:not(.smart) #sets{
 	background-color:rgba(0,0,0,0.05);
 }
 #setElenco > div i{
-	font-size:11px !important;
+	font-size:12.1px !important;
     line-height: 16px;
 }
 .setSel{
@@ -196,7 +222,7 @@ body:not(.smart) #sets{
 	height:40px;
 }
 .costoSet b{
-	font-size:22px;
+	font-size:24.2px;
 	font-weight: normal;
 }
 .titSet{
@@ -212,7 +238,7 @@ body:not(.smart) #sets{
 	background-image: url(../img/devicesB.png);
 }
 .titSet b{
-	font-size:24px;
+	font-size:25px;
 	font-weight: normal;
 	color: #1a4ba7;
 	text-shadow: 0px 0px 4px #fff;
@@ -237,12 +263,12 @@ body:not(.smart) #sets{
 	float: right;
     padding-top: 10px;
     padding-right: 39px;
-	font-size:11px;
+	font-size:12.1px;
 	opacity:0.6;
 }
 .pubblSet i{
 	font-style:normal;
-	font-size:10px;
+	font-size:11px;
 	color:#999;
 }
 .txtSet{
@@ -277,7 +303,7 @@ body:not(.smart) #sets{
     margin-top: 0px;
     margin-bottom: 0px;
     color: #123f97;
-    font-size: 18px;
+    font-size:19.8px;
     font-weight: normal;
 }
 #p_info > div p{

@@ -230,35 +230,35 @@ var PAZIENTI_TRATTAMENTI = {
 							'	<i class="infoCiclo">'+InfoAn+'</i>' +
 							'	<i class="addTrattBtn elMenu"' +
 							'	   id="add_tratt_'+elAn+'"' +
-							'	   title="'+htmlEntities(Lingua(TXT_AggiungiTrattamento))+'"' +
+							'	   title="'+htmlEntities(Lingua(TXT_InserisciTrattamento))+'"' +
 							'	   onclick="PAZIENTI.car_trattamento( -1,' +
 							'	     	  							  null,' +
 							'	     	  							  \''+addslashes(PAZIENTI.cicli[c].NomeCiclo)+'\',' +
 							'	     	  							  false,' +
 							'	     	  							  '+elAn+');">' +
-							'		<img src="img/ico_trattamento_add.png"' +
+							'		<img src="img/ico_trattamento_ins.png"' +
 							'			 class="noBG"' +
 							'			 align="absmiddle">' +
-							'		<span>'+htmlEntities(Lingua(TXT_AggiungiTrattamento))+'</span>' +
+							'		<span>'+htmlEntities(Lingua(TXT_InserisciTrattamento))+'</span>' +
 							'	</i>' +
-							'   <i class="riepilogoBtn elMenu"' +
-							'	   title="'+htmlEntities(Lingua(TXT_SchedaCiclo))+'"' +
-							'      onclick="PAZIENTI.car_ciclo(	\''+addslashes(PAZIENTI.cicli[c].NomeCiclo)+'\',this);">' +
+							'	<i class="riepilogoBtn elMenu"' +
+							'		title="'+htmlEntities(Lingua(TXT_SchedaCiclo))+'"' +
+							'		onclick="PAZIENTI.car_ciclo(\''+addslashes(PAZIENTI.cicli[c].NomeCiclo)+'\',this);">' +
 							'		<span>'+htmlEntities(Lingua(TXT_SchedaCiclo))+'</span>' +
 							'	</i>' +
-							'   <i class="anamnesiBtn elMenu"' +
-							'      id="btn_trattamento_'+elAn+'"' +
-							'	   title="'+htmlEntities(Lingua(TXT_ModificaCiclo))+'"';
+					
+							'</div>' +
+							'<div 	class="anamnesiBtn elMenu"' +
+							'		id="btn_trattamento_'+elAn+'"' +
+							'		title="'+htmlEntities(Lingua(TXT_SchedaAnamnesi))+'"';
 					if(!touchable)HTML += ' onMouseOver="PAZIENTI.eviPallStat('+DataAn+');"' +
 										  ' onMouseOut="PAZIENTI.desPallStat('+DataAn+');"';
 					HTML += ' 	   onclick="PAZIENTI.car_trattamento(\''+elAn+'\',this,\''+NC+'\',true);">'; // anamnesi
 					if(DataModAn>DB.pazienti.lastSync)HTML += H.imgSyncro();
-					HTML += '		<span>'+htmlEntities(Lingua(TXT_ModificaCiclo))+'</span>' +
-							'   </i>';
-					
-					HTML += '</div>';
-					HTML += HTMLProvv;
-					HTML += '</div></div>';
+					HTML += '	<span>'+htmlEntities(Lingua(TXT_SchedaAnamnesi))+'</span>' +
+							'</div>' +
+							HTMLProvv +
+							'</div></div>';
 				}else{
 					var TR = PZ.trattamenti[PAZIENTI.cicli[c].p];
 					if( !TR.Cancellato ){
@@ -399,7 +399,6 @@ var PAZIENTI_TRATTAMENTI = {
 				TitoloTrattamento=TR.TitoloTrattamento;
 				TestoTrattamento=TR.TestoTrattamento;
 				Prescrizione=__(TR.Prescrizione);
-				//puntiTsuboMap=TR.puntiTsuboMap;
 				meridiani=__(TR.meridiani);
 				
 				TimeTrattamento=(TR.TimeTrattamento*1)/1000;
@@ -511,11 +510,6 @@ var PAZIENTI_TRATTAMENTI = {
 				HTML += '</div>';
 			}
 			
-			
-			
-			
-			
-			//if(frv)HTML+=box_frv3;
 			if(TipoTrattamento != 'A' && LabelCiclo)HTML +=	'<div class="label_ciclo">'+htmlEntities(LabelCiclo)+'</div>';
 			HTML +=	'<form id="formMod" name="formMod" method="post" onSubmit="return false;"';
 			if(TipoTrattamento!='A'){
@@ -532,6 +526,7 @@ var PAZIENTI_TRATTAMENTI = {
 			HTML += H.r({	t: "h", name: "stessa",				value: "1" 					}) +
 					H.r({	t: "h", name: "idTrattamento",		value: idTrattamento*1 		}) +
 					H.r({	t: "h", name: "idTratt",			value: Q_idTratt 			}) +
+					H.r({	t: "h", name: "idCiclo",			value: idCiclo	 			}) +
 					H.r({	t: "h", name: "md5",				value: PAZIENTI.pazSelMD5 	}) +
 					H.r({	t: "h", name: "TimeTrattamento",	value: TimeTrattamento*1 	}) +
 					H.r({	t: "h", name: "oraInizio",			value: oraInizio 			}) +
@@ -574,14 +569,11 @@ var PAZIENTI_TRATTAMENTI = {
 								name: "AnamnesiMotivo",	
 								value: AnamnesiMotivo,
 								noLabel: true,
-								classCampo: "okPlaceHolder",
-								/*styleCampo: "margin-bottom:10px;"*/ });
+								classCampo: "okPlaceHolder" });
 			}
 			var TXT_DT=TXT_Data;
 			if(TimeTrattamento*1>(oggi*1)/1000)TXT_DT=TXT_DataProgrammata;
 			
-			//if(Q_idTratt==-1)var DT='... '+htmlEntities(Lingua(TXT_ScegliData));
-			//console.log(TimeTrattamento)
 			if(!TimeTrattamento)var DT='... '+htmlEntities(Lingua(TXT_ScegliData));
 			else{
 				oI=oraInizio+"";
@@ -606,8 +598,9 @@ var PAZIENTI_TRATTAMENTI = {
 					'			 padding: 0px;">'+
 					'</div>';
 			if(TipoTrattamento!='A' || (TipoTrattamento=='A' && oraInizio>-1)){		
-			// AGENDA
-			HTML+=	'<div id="dataTratt" class="labelSx">' +
+				// AGENDA
+				HTML+=	
+					'<div id="dataTratt" class="labelSx">' +
 					'	<i class="vis">'+Lingua(TXT_DT)+':</i>' +
 					'	<div onClick="	PAZIENTI.swAgenda('+(TimeAgenda*1000)+',' +
 					'						document.getElementById(\'agendaPlaceHolder\'),' +
@@ -652,19 +645,18 @@ var PAZIENTI_TRATTAMENTI = {
 								classCampo: "okPlaceHolder",
 								styleCampo: "margin-bottom:10px;" });
 				
-				/*var TXT_P=TXT_PuntiTrattamento;
-				if(TimeTrattamento*1>(oggi*1)/1000)TXT_P=TXT_PuntiDaTrattare;*/
 				var TXT_P=TXT_Tsubo;
+				var TXT_M=TXT_MeridianiTrattamento;
 				HTML += separatore;
 				
 			}else{
-				
 				HTML += separatore.replace('padding: 0px;','padding: 5px;') +
-				
-						'<div id="tratt_cont_disgnosi"' +
-						'	  class="sezioneTrattamenti divEspansa sezioneChiusa">' +	
+						'<div id="tratt_cont_diagnosi"' +
+						'	  class="sezioneTrattamenti divEspansa '+ 
+						((localStorage.getItem("op_diagnosi")) ? '' : 'sezioneChiusa') +
+						'">' +	
 						'	<em class="labelMobile labelTrattamenti"' +
-						'  		onClick="parentElement.classList.toggle(\'sezioneChiusa\');">' +
+						'  		onClick="H.swSezione(this);">' +
 						'		<img class="icoLabel"' +
 						'			 src="img/ico_diagnosi.png">' +
 								Lingua(TXT_Diagnosi) +
@@ -688,14 +680,17 @@ var PAZIENTI_TRATTAMENTI = {
 						'</div>';
 				
 				var TXT_P=TXT_PuntiAnamnesi;
-				
+				var TXT_M=TXT_MeridianiAnamnesi;
 			}
+			
 			// PRESCRIZIONE
 			HTML += 
 				'<div id="tratt_cont_prescrizione"' +
-				'	  class="sezioneTrattamenti divEspansa sezioneChiusa">' +	
+				'	  class="sezioneTrattamenti divEspansa '+ 
+						((localStorage.getItem("op_prescrizione")) ? '' : 'sezioneChiusa') +
+						'">' +	
 				'	<em class="labelMobile labelTrattamenti"' +
-				'  		onClick="parentElement.classList.toggle(\'sezioneChiusa\');">' +
+				'  		onClick="H.swSezione(this);">' +
 				'		<img class="icoLabel"' +
 				'			 src="img/ico_prescrizione.png">' +
 						Lingua(TXT_Prescrizione) +
@@ -715,19 +710,21 @@ var PAZIENTI_TRATTAMENTI = {
 			
 			// SINTOMI
 			HTML += '<div id="tratt_cont_sintomi"' +
-						  (((TipoTrattamento == 'B' && !PAZIENTI.sintomiProvvisori.length) && LabelCiclo) ? ' style="display:none;"' : '') +
-					'	  class="sezioneTrattamenti divEspansa sezioneChiusa">' +
+						  //(((TipoTrattamento == 'B' && !PAZIENTI.sintomiProvvisori.length) && LabelCiclo) ? ' style="display:none;"' : '') +
+					'	  class="sezioneTrattamenti divEspansa '+ 
+						((localStorage.getItem("op_sintomi")) ? '' : 'sezioneChiusa') +
+						'">' +
 					'	<em class="labelMobile labelTrattamenti"' +
-					'  		onClick="parentElement.classList.toggle(\'sezioneChiusa\');">' +
+					'  		onClick="H.swSezione(this);">' +
 					'		<img class="icoLabel"' +
 					'			 src="img/ico_sintomi.png">' +
 							Lingua(TXT_Sintomi)+' (<span id="totSintomi"></span>)'+
 					'	</em>' +
 					'	<div id="contSintomi"' +
-							 ((TipoTrattamento!='A') && LabelCiclo ? ' class="sintomiTratt"' : '')+'>' +
-					'	</div>';
-			if(TipoTrattamento=='A' || !LabelCiclo){
-				HTML += 
+							 //((TipoTrattamento!='A') && LabelCiclo ? ' class="sintomiTratt"' : '') +
+					'>' +
+					'	</div>' +
+					
 					'<div id="cont_label_add_sintomi"' +
 					'	  class="cont_label_add">' +
 					'	<input type="text"' +
@@ -750,91 +747,61 @@ var PAZIENTI_TRATTAMENTI = {
 					'	</div>' +
 					'	<div class="l"></div>' +
 					'</div>' +
-					'<div style="height: 50px;">' +
+					'<div class="cont_p_paz_label">' +
 					'	<div class="p_paz_label"' +
 					'		 id="p_paz_label_sintomi"' +
 					'			 onclick="PAZIENTI.visAggiungiSintomo();">' +
 							htmlEntities(Lingua(TXT_AggiungiSintomo)) +
 					'	</div>'+
-					'</div>';
-			}
-			HTML += '	<div class="l"></div>' +
 					'</div>' +
+
+					'	<div class="l_a"></div>' +
+					'</div>' +
+					
+					// POPUP di caricamento punti e meridiani
+					'<div id="gruppoPunti_cont"></div>' +
 			
-					// TSUBO
+			// TSUBO
 					'<div id="tratt_cont_punti"' +
-					'	  class="sezioneTrattamenti divEspansa sezioneChiusa">' +
+					'	  class="sezioneTrattamenti divEspansa '+ 
+						((localStorage.getItem("op_punti")) ? '' : 'sezioneChiusa') +
+						'">' +
 					'	<em id="label_puntiTsuboMap"' +
 					'		class="labelMobile labelTrattamenti"' +
-					'		onClick="parentElement.classList.toggle(\'sezioneChiusa\');">' +
+					'		onClick="H.swSezione(this);">' +
 					'		<img class="icoLabel"' +
 					'		     src="img/ico_tsubo.png">' +
 							Lingua(TXT_P)+' (<span id="totTsubo"></span>)' +
 					'	</em>' +
 					'	<div id="puntiTsuboMap">' +
-					'	</div>';
-			if( globals.set.cartella == 'meridiani_cinesi' ||
-				globals.set.cartella == 'meridiani_shiatsu' ){
-				HTML+=
-					'	<div id="p_add_dett">' +
-					/*'		<div class="p_paz_punto"' +
-					'		     onClick="PAZIENTI.aggiungiPuntoTrattamento();">' +
-							Lingua(TXT_AggiungiPunto) +
-					'		</div>' +*/
-					'		<div id="grpPt"' +
-					'		    class="p_paz_gruppo"' +
-					'		    onClick="PAZIENTI.gruppoPunti(\'P\');">' +
-								htmlEntities(Lingua(TXT_AggiungiPunti)) +
-					'		</div>' +
 					'	</div>' +
-					'	<div id="gruppoPunti_cont">' +
-							/*PAZIENTI.gruppoPunti() +*/
-					'	</div>';
-			}else{
-				HTML += '<div class="labelModificaCon">'+htmlEntities(Lingua(TXT_ModificaCon))+' <img src="sets/meridiani_cinesi/img/logoNero.png" width="25" height="25"> TsuboMap '+htmlEntities(Lingua(TXT_o))+' <img src="sets/meridiani_shiatsu/img/logoNero.png" width="25" height="25">ShiatsuMap</div>';
-			}
-			HTML += '</div>' +
+					'	<div id="tratt_btns_punti"></div>' +
+					'</div>' +
 			
-					// MERIDIANI
+			// MERIDIANI
 					'<div id="tratt_cont_meridiani"' +
-					'	  class="sezioneTrattamenti divEspansa sezioneChiusa">' +
+					'	  class="sezioneTrattamenti divEspansa '+ 
+						((localStorage.getItem("op_meridiani")) ? '' : 'sezioneChiusa') +
+						'">' +
 					'	<em id="label_meridianiTsuboMap"' +
 					'		class="labelMobile labelTrattamenti"' +
-					'		onClick="parentElement.classList.toggle(\'sezioneChiusa\');">' +
+					'		onClick="H.swSezione(this);">' +
 					'		<img class="icoLabel"' +
 					'		     src="img/ico_meridiani.png">' +
-							Lingua(TXT_MeridianiTrattamento)+' (<span id="totMeridiani"></span>)' +
+							Lingua(TXT_M)+' (<span id="totMeridiani"></span>)' +
 					'	</em>' +
 					'	<div id="meridianiTsuboMap">' +
-					'	</div>';
-			if( globals.set.cartella == 'meridiani_cinesi' || 
-				globals.set.cartella == 'meridiani_shiatsu' ){
-				HTML+=
-					'	<div id="p_add_dett">' +
-					'		<div id="grpMrd"' +
-					'		    class="p_paz_meridiani"' +
-					'		    onClick="PAZIENTI.gruppoPunti(\'M\');">' +
-								htmlEntities(Lingua(TXT_AggiungiMeridiani)) +
-					'		</div>' +
-					'	</div>';
-				/*HTML+=
-					'	<div id="p_add_dett">' +
-					'		<select id="grpMrd"' +
-					'		    class="p_paz_meridiani"' +
-					'		    onChange="PAZIENTI.aggiungiMeridianoTrattamento(this);">' +
-								SET.elencoMeridiani(Lingua(TXT_AggiungiMeridiani)) +
-					'		</select>' +
-					'	</div>';*/
-			}else{
-				HTML += '<div class="labelModificaCon">'+htmlEntities(Lingua(TXT_ModificaCon))+' <img src="sets/meridiani_cinesi/img/logoNero.png" width="25" height="25"> TsuboMap o <img src="sets/meridiani_shiatsu/img/logoNero.png" width="25" height="25">ShiatsuMap</div>';
-			}
-			HTML += '</div>' +
+					'	</div>' +
+					'	<div id="tratt_btns_meridiani"></div>' +
+					'</div>' +
 			
-					// GALLERY
+			// GALLERY
 					'<div id="tratt_cont_gallery"' +
-					'	  class="sezioneTrattamenti divEspansa sezioneChiusa">' +
+					'	  class="sezioneTrattamenti divEspansa '+ 
+						((localStorage.getItem("op_gallery")) ? '' : 'sezioneChiusa') +
+						'">' +
 					'	<em class="labelMobile labelTrattamenti"' +
-					'		onClick="parentElement.classList.toggle(\'sezioneChiusa\');">' +
+					'		onClick="H.swSezione(this);">' +
 					'		<img class="icoLabel"' +
 					'		     src="img/ico_foto.png">' +
 							Lingua(TXT_Gallery)+' (<span id="totFoto"></span>)' +
@@ -857,6 +824,12 @@ var PAZIENTI_TRATTAMENTI = {
 			if(nuovoCiclo)HTML += '</div>';		 // nascondo tutto se è un nuovo ciclo
 			HTML += '</form>';
 			
+			var azElimina = Q_idTratt>-1 ? 'PAZIENTI.el_trattamento('+Q_idTratt+')':"";
+			var btnAdd = '';
+			if(azElimina){
+				btnAdd = '<div class="p_paz_el_menu" onClick="'+azElimina+'">'+Lingua(TXT_EliminaScheda)+'</div>';
+			}
+			
 			// pulsanti SALVA, ANNULLA e ELIMINA
 			HTML += SCHEDA.pulsantiForm( 	Q_idTratt>-1 ? 'PAZIENTI.el_trattamento('+Q_idTratt+')':"",
 											"SCHEDA.scaricaScheda();", 
@@ -876,7 +849,7 @@ var PAZIENTI_TRATTAMENTI = {
 			}
 			
 			if(Q_idTratt>-1 || an){
-				if(TipoTrattamento=='A')titoloDef=TXT_CicloTrattamenti;
+				if(TipoTrattamento=='A')titoloDef=TXT_SchedaAnamnesi;
 				else titoloDef=TXT_ModificaTrattamento;
 			}else{
 				if(TipoTrattamento=='A')titoloDef=TXT_CicloTrattamenti;//titoloDef=TXT_CreaCiclo;
@@ -890,10 +863,8 @@ var PAZIENTI_TRATTAMENTI = {
 									'scheda_'+TipoTrattamento,
 									false,
 									true,
-									btn );
-			initChangeDetection( "formMod" );
-			
-			SCHEDA.formModificato = false;
+									btn,
+									btnAdd );
 			if(mouseDetect){
 				if(TipoTrattamento!='A')document.formMod.TitoloTrattamento.focus();
 				else document.formMod.LabelCiclo.focus();
@@ -901,12 +872,51 @@ var PAZIENTI_TRATTAMENTI = {
 			//H.verData();
 			
 			if(TipoTrattamento=='A' || !LabelCiclo)PAZIENTI.popolaSintomi();
-			PAZIENTI.caricaPuntiTrattamento();
-			PAZIENTI.caricaMeridianiTrattamento();
+			PAZIENTI.caricaDettagliSet(); // carico le schede dei singoli sets (TsuboMap, ShiatsuMap, ecc)
 			PAZIENTI.caricaSintomi();
 			PAZIENTI.caricaGalleryTrattamento( Q_idTratt );
 			PAZIENTI.trattOp = true;
+			initChangeDetection( "formMod" );
+			SCHEDA.formModificato = false;
 		}});
+	},
+	caricaDettagliSet: function(){ // carica i dettagli trattamento dei singoli set
+		
+		// PUNTI
+		var HTML = '';
+		if( globals.set.cartella == 'meridiani_cinesi' ||
+			globals.set.cartella == 'meridiani_shiatsu' ){
+			HTML+=
+				'	<div id="p_add_dett">' +
+				'		<div id="grpPt"' +
+				'		    class="p_paz_gruppo"' +
+				'		    onClick="PAZIENTI.gruppoPunti(\'P\');">' +
+							htmlEntities(Lingua(TXT_AggiungiPunti)) +
+				'		</div>' +
+				'	</div>';
+		}else{
+			HTML += '<div class="labelModificaCon">'+htmlEntities(Lingua(TXT_ModificaCon))+'<br><span onClick="caricaSet(\'meridiani_cinesi\',this);"><img src="sets/meridiani_cinesi/img/logoNero.png" width="25" height="25"> TsuboMap</span> o <span onClick="caricaSet(\'meridiani_shiatsu\',this);"><img src="sets/meridiani_shiatsu/img/logoNero.png" width="25" height="25"> ShiatsuMap</span></div>';
+		}
+		document.getElementById("tratt_btns_punti").innerHTML = HTML;
+		PAZIENTI.caricaPuntiTrattamento();
+		
+		// MERIDIANI
+		var HTML = '';
+		if( globals.set.cartella == 'meridiani_cinesi' || 
+			globals.set.cartella == 'meridiani_shiatsu' ){
+			HTML+=
+				'	<div id="p_add_dett">' +
+				'		<div id="grpMrd"' +
+				'		    class="p_paz_meridiani"' +
+				'		    onClick="PAZIENTI.gruppoPunti(\'M\');">' +
+							htmlEntities(Lingua(TXT_AggiungiMeridiani)) +
+				'		</div>' +
+				'	</div>';
+		}else{
+			HTML += '<div class="labelModificaCon">'+htmlEntities(Lingua(TXT_ModificaCon))+'<br><span onClick="caricaSet(\'meridiani_cinesi\',this);"><img src="sets/meridiani_cinesi/img/logoNero.png" width="25" height="25"> TsuboMap</span> o <span onClick="caricaSet(\'meridiani_cinesi\',this);"><img src="sets/meridiani_shiatsu/img/logoNero.png" width="25" height="25"> ShiatsuMap</span></div>';
+		}
+		document.getElementById("tratt_btns_meridiani").innerHTML = HTML;
+		PAZIENTI.caricaMeridianiTrattamento();
 	},
 	trasformaTrattamento: function( Q_idTratt){
 		if(DB.login.data.auths.indexOf("clients_full")==-1){
@@ -955,6 +965,7 @@ var PAZIENTI_TRATTAMENTI = {
 				}
 				if(LabelCiclo!=LabelCiclo_C && document.formMod.idTratt.value*1>-1){ // se cambio il nome del ciclo, lo cambio a tutti i trattamenti
 					for(i in DB.pazienti.data[PAZIENTI.idCL].trattamenti){
+						var TR = DB.pazienti.data[PAZIENTI.idCL].trattamenti[i];
 						if(TR.LabelCiclo=='0'){
 							TR.LabelCiclo='';
 						}
@@ -965,16 +976,51 @@ var PAZIENTI_TRATTAMENTI = {
 					}
 					PAZIENTI.aperture[LabelCiclo] = PAZIENTI.aperture[LabelCiclo_C];
 				}
+			}else{
+				if(document.formMod.idCiclo.value*1>-1){
+					// verifico i sintomi
+					var TRS = DB.pazienti.data[PAZIENTI.idCL].trattamenti;
+					var sintomiCiclo = JSON.parse(TRS[document.formMod.idCiclo.value*1].sintomi);
+					for(s in PAZIENTI.sintomiProvvisori){
+						// per ogni sintomo verifico che esista anche nel modello
+						var esiste = false;
+						for(sc in sintomiCiclo){
+							if(PAZIENTI.sintomiProvvisori[s].NomeSintomo == sintomiCiclo[sc].NomeSintomo){
+								esiste = true;
+							}
+						}
+						if(!esiste){ // se non esiste lo aggiungo
+							var sintomo = clone(PAZIENTI.sintomiProvvisori[s]);
+							sintomo.score = -1;
+							sintomiCiclo.push(sintomo);
+						}
+					}
+					for(sc in sintomiCiclo){
+						// per ogni sintomo del modello verifico che esista anche nel trattamento
+						var esiste = false;
+						for(s in PAZIENTI.sintomiProvvisori){
+							if(PAZIENTI.sintomiProvvisori[s].NomeSintomo == sintomiCiclo[sc].NomeSintomo){
+								esiste = true;
+							}
+						}
+						if(!esiste){ // se non esiste lo cancello dal modello
+							sintomiCiclo.splice(sc,1);
+						}
+					}
+					TRS[document.formMod.idCiclo.value*1].sintomi = JSON.stringify(sintomiCiclo);
+				}
 			}
+			
+			
 
 			// salvo le immagini
+			var f = 0;
 			var GA = PAZIENTI.galleryProvvisoria;
-			//if(typeof(DB.foto) == 'undefined')DB.foto = { data: [], lastSync: 0 };
 			for(i in GA){
-				if(typeof(GA[i].imgMini) != 'undefined' && GA[i]!=null){
+				if(typeof(GA[i].imgMini) != 'undefined' && GA[i]!=null && GA[i].imgMini!=null){
 					
 					// salvo l'immagine nel DB locale
-					DB.foto.data[i] = {
+					DB.foto.data[f] = {
 						idFoto: GA[i].idFoto,
 						imgMini: GA[i].imgMini,
 						imgBig: GA[i].imgBig,
@@ -984,6 +1030,7 @@ var PAZIENTI_TRATTAMENTI = {
 						idFoto: GA[i].idFoto
 					}
 					GA[i] = NG;
+					f++;
 				}
 			}
 			localPouchDB.setItem(MD5("DB"+LOGIN._frv()+".foto"), IMPORTER.COMPR(DB.foto)).then(function(){
@@ -1194,9 +1241,10 @@ var PAZIENTI_TRATTAMENTI = {
 					mezzo=__(PAZIENTI.puntiProvvisori[p].z);
 					descrizione=__(PAZIENTI.puntiProvvisori[p].t);
 					siglaTsubo=__(PAZIENTI.puntiProvvisori[p].s);
+					if(!siglaTsubo)siglaTsubo = nTsubo+'.'+siglaMeridiano;
 					
 					totPunti=0;
-					HTML += '<div class="rgProcMod dettPunto"' +
+					HTML += '<div class="rgProcMod rgMod dettPunto"' +
 							'	  id="rg_'+p+'"';
 					if(mouseDetect)HTML += 	' onMouseOver="SET.overTsubo(this,true);"' +
 											' onMouseOut="SET.overTsubo(this,false);"';
@@ -1327,17 +1375,20 @@ var PAZIENTI_TRATTAMENTI = {
 			if( PAZIENTI.puntiProvvisori.length ){
 				var HTML_noMod = '';
 				for(p in PAZIENTI.puntiProvvisori){
-					HTML_noMod += '<span class="tsb"><img src="img/mezzo_'+__(PAZIENTI.puntiProvvisori[p].z)+'.png" class="noMod" style="vertical-align: middle;margin-top: -2px;margin-right: -5px;"> ';
-					//if(PAZIENTI.puntiProvvisori[p].z || PAZIENTI.puntiProvvisori[p].t)HTML_noMod += ' ';
-					var siglaMeridiano = PAZIENTI.puntiProvvisori[p].m;
-					var nTsubo = PAZIENTI.puntiProvvisori[p].n;
-					var siglaTsubo = __(PAZIENTI.puntiProvvisori[p].s,nTsubo+"."+siglaMeridiano);
-					HTML_noMod += 	'<b>'+siglaTsubo+'</b>';
-					if(PAZIENTI.puntiProvvisori[p].e)HTML_noMod += '<img src="img/ico_PV'+PAZIENTI.puntiProvvisori[p].e+'.png" class="noMod" style="vertical-align: middle;margin-top: -3px;">';
-					if(PAZIENTI.puntiProvvisori[p].t)HTML_noMod += ' <span style="font-style:italic;">'+htmlEntities(PAZIENTI.puntiProvvisori[p].t)+'</span>';
+					nTsubo=PAZIENTI.puntiProvvisori[p].n*1;
+					siglaMeridiano=PAZIENTI.puntiProvvisori[p].m;
+					valutazione=__(PAZIENTI.puntiProvvisori[p].e);
+					mezzo=__(PAZIENTI.puntiProvvisori[p].z);
+					descrizione=__(PAZIENTI.puntiProvvisori[p].t);
+					siglaTsubo=__(PAZIENTI.puntiProvvisori[p].s);
+					if(!siglaTsubo)siglaTsubo = nTsubo+'.'+siglaMeridiano;
+					HTML_noMod += '<span class="tsb"><img src="img/mezzo_'+mezzo+'.png" class="noMod" style="vertical-align: middle;margin-top: -2px;margin-right: -2px;"> ';
+					HTML_noMod += '<b>'+siglaTsubo+'</b>';
+					if(valutazione)HTML_noMod += '<img src="img/ico_PV'+valutazione+'.png" class="noMod" style="vertical-align: middle;margin-top: -3px;">';
+					if(descrizione)HTML_noMod += ' <span style="font-style:italic;">'+htmlEntities(descrizione)+'</span>';
 					HTML_noMod += '</span> ';
-					elenco += PAZIENTI.puntiProvvisori[p].n+'.'+PAZIENTI.puntiProvvisori[p].m;
-					if(PAZIENTI.puntiProvvisori[p].e)elenco += '.'+PAZIENTI.puntiProvvisori[p].e;
+					elenco += nTsubo+'.'+siglaMeridiano;
+					if(valutazione)elenco += '.'+valutazione;
 					elenco += '|';
 				}
 				totTsubo = PAZIENTI.puntiProvvisori.length;
@@ -1515,7 +1566,7 @@ var PAZIENTI_TRATTAMENTI = {
 	},
 	
 	// importazione GRUPPI di punti e meridiani
-	gruppoPunti: function(tipo){ // costruisce il JSON dei gruppi punti (all'apertura del trattamento)
+	gruppoPunti: function( tipo ){ // costruisce il JSON dei gruppi punti (all'apertura del trattamento)
 		if(typeof(tipo)=='undefined')var tipo = 'P';
 		PAZIENTI.tipoGruppo = tipo;
 		applicaLoading(document.getElementById("scheda_testo"));
@@ -1538,14 +1589,12 @@ var PAZIENTI_TRATTAMENTI = {
 		var n = -1;
 		for(i in DB.set.meridiani){
 			n++;
-			if(PAZIENTI.tipoGruppo=='P'){
+			if(PAZIENTI.tipoGruppo=='P'){ // punti
 				EL.contenuto[n] = {};
 				EL.contenuto[n].titolo = DB.set.meridiani[i].NomeMeridiano;
 				EL.contenuto[n].contenuto = [];
 				EL.contenuto[n].livello = 3;
 				EL.contenuto[n].parent = EL;
-			}
-			if(PAZIENTI.tipoGruppo=='P'){ // punti
 				for(pm in DB.set.meridiani[i].tsubo){
 					if(DB.set.meridiani[i].tsubo[pm].NomeTsubo){
 						var pP=DB.set.meridiani[i].tsubo[pm].NomeTsubo.split(". ");
@@ -1760,7 +1809,7 @@ var PAZIENTI_TRATTAMENTI = {
 			var titRet = htmlEntities(PAZIENTI.elencoGruppoAtt.titolo);
 			HTML += '<div class="gr_ret">' +
 					'	<div class="gr_ret_img" onClick="PAZIENTI.swGrLabel(-1);"></div>' +
-						titRet +
+					'	<div class="gr_ret_txt">'+titRet+'</div>' +
 					'	<input id="gr_ret_ric" onKeyUp="PAZIENTI.filtraGruppoPunti();">' +
 					'</div>';
 		}
@@ -1805,7 +1854,7 @@ var PAZIENTI_TRATTAMENTI = {
 			var txt = tags[t].innerText+"";
 			if(txt.toLowerCase().indexOf(val)>-1 || !val)tags[t].classList.remove("hide");
 			else{
-				if(tag=='label')tags[t].getElementsByTagName("input")[0].checked = false;
+				//if(tag=='label')tags[t].getElementsByTagName("input")[0].checked = false;
 				tags[t].classList.add("hide");
 			}
 		}
@@ -1906,7 +1955,9 @@ var PAZIENTI_TRATTAMENTI = {
 			for(m in PAZIENTI.meridianiProvvisori){
 				var m2 = __(PAZIENTI.meridianiProvvisori[m].valEnergetica);
 				var descrizione = __(PAZIENTI.meridianiProvvisori[m].descrizione);
-				HTML += '<div class="rgProcMod dettMeridiano';
+				HTML += '<div class="rgProcMod ';
+				if(modificabile)HTML += 'rgMod ';
+				HTML += 'dettMeridiano';
 				if(typeof(MERIDIANI) != 'undefined'){
 					if(MERIDIANI[PAZIENTI.meridianiProvvisori[m].siglaMeridiano].meridianoAcceso){
 						HTML += ' p_'+MERIDIANI[PAZIENTI.meridianiProvvisori[m].siglaMeridiano].elemento;
@@ -2059,13 +2110,6 @@ var PAZIENTI_TRATTAMENTI = {
 						'		 	 onClick="PAZIENTI.modificaSintomo(this);">' +
 						'	</span>' +
 						'	<img src="img/ico_cestino.png"' +
-						'		 width="16"' +
-						'		 height="16"' +
-						'		 align="absmiddle"' +
-						'		 style="float:right;' +
-						'		 		margin:11px;' +
-						'		 		cursor:pointer;' +
-						'		 		opacity:0.5;"' +
 						'		 title="'+Lingua(TXT_DelDett)+'"' +
 						'		 onClick="PAZIENTI.eliminaSintomo('+p+');"' +
 						'		 class="occhio">' +
@@ -2486,16 +2530,11 @@ var PAZIENTI_TRATTAMENTI = {
 					TitoloTrattamento=TR.TitoloTrattamento;
 					TestoTrattamento=TR.TestoTrattamento;
 					Prescrizione=__(TR.Prescrizione);
-					puntiTsuboMap=TR.puntiTsuboMap;
-					if(typeof(puntiTsuboMap)=='undefined')puntiTsuboMap='';
-					sintomi=TR.sintomi;
-					if(typeof(sintomi)=='undefined')sintomi={};
-					else if(sintomi!='')sintomi=JSON.parse(sintomi);
-					else sintomi={};
-					meridiani=TR.meridiani;
-					if(typeof(meridiani)=='undefined')meridiani={};
-					else if(meridiani!='')meridiani=JSON.parse(meridiani);
-					else meridiani={};
+					puntiTsuboMap=JSON.parse(__(TR.puntiTsuboMap,"[]"));
+					sintomi=JSON.parse(__(TR.sintomi,"{}"));
+					meridiani = TR.meridiani;
+					if(!meridiani)meridiani = "{}";
+					meridiani=JSON.parse(__(meridiani,"{}"));
 					TipoTrattamento=TR.TipoTrattamento;
 					if(debug)console.log(i+" - "+TipoTrattamento+" - "+TitoloTrattamento)
 					TimeTrattamento=TR.TimeTrattamento*1;
@@ -2555,20 +2594,43 @@ var PAZIENTI_TRATTAMENTI = {
 						}
 						sintomiModello=JSON.parse(JSON.stringify(sintomi));
 					}
-					if(puntiTsuboMap.indexOf(".")>-1){
+					if(puntiTsuboMap.length){
 						HTML+='<i>'+Lingua(TXT_P)+':</i> ';
 						HTML+='<div id="puntiCiclo"><img src="img/pallinoPat.png" width="12" height="12" align="absmiddle"> ';
-						var parti=puntiTsuboMap.split("|");
-						for(p in parti){
-							pP=parti[p].split(".");
-							p0=pP[0]*1;
-							p1=pP[1];
-							p2=pP[2];
-							if(typeof(p2)=='undefined')p2='';
-							totPunti=0;
-							HTML+='<b>'+p1+'.'+p0+'</b>';
-							if(p2)HTML+=' <img src="img/ico_PV'+p2+'.png" width="12" height="12" align="absmiddle">';
-							if(p<parti.length-1)HTML+=', ';
+						for(p in puntiTsuboMap){
+							nTsubo=puntiTsuboMap[p].n*1;
+							siglaMeridiano=puntiTsuboMap[p].m;
+							valutazione=__(puntiTsuboMap[p].e);
+							mezzo=__(puntiTsuboMap[p].z);
+							descrizione=__(puntiTsuboMap[p].t);
+							siglaTsubo=__(puntiTsuboMap[p].s);
+							
+							if(mezzo)HTML +='<img src="img/mezzo_'+mezzo+'.png"' +
+											'	  width="20"' +
+											'	  height="20"' +
+											'	  align="absmiddle"' +
+											'	  class="occhio valEn">';
+							
+							HTML += '<b>'+nTsubo+'.'+siglaMeridiano+'</b>';
+							if(valutazione)HTML += ' <img src="img/ico_PV'+valutazione+'.png" width="12" height="12" align="absmiddle">';
+							if(descrizione)HTML += ' '+descrizione;
+							if(p<puntiTsuboMap.length-1)HTML += '<br>';
+						}
+						HTML+='</div>';
+					}
+					if(meridiani.length){
+						HTML+='<br><i>'+Lingua(TXT_MeridianiTrattamento)+':</i> ';
+						HTML+='<div id="meridianiCiclo">';
+						for(m in meridiani){
+							NomeMeridiano=meridiani[m].NomeMeridiano;
+							siglaMeridiano=meridiani[m].siglaMeridiano;
+							valEnergetica=__(meridiani[m].valEnergetica);
+							descrizione=__(meridiani[m].descrizione);
+							
+							HTML += 	'<span>' +
+										'<b>'+NomeMeridiano+'</b>';
+							if(descrizione)HTML += ' '+descrizione;
+							if(p<puntiTsuboMap.length-1)HTML += '</span><br>';
 						}
 						HTML+='</div>';
 					}

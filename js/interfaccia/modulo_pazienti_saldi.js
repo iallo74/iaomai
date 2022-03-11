@@ -7,7 +7,6 @@ var PAZIENTI_SALDI = {
 			
 			var PZ = DB.pazienti.data[PAZIENTI.idCL];
 			var HTML='';
-			HTML += '<div class="lista listaSaldi">';
 			var vuoto=true;
 			var DaSaldare=Saldato=0;
 			if(typeof(PZ.saldi)!='undefined'){
@@ -31,9 +30,6 @@ var PAZIENTI_SALDI = {
 					}
 				}
 			}
-	
-			if(vuoto)HTML += '<p class="noResults">'+Lingua(TXT_NoResSaldi)+'...</div>';
-			HTML += '</div>';
 			
 			
 			if(typeof(PZ.trattamenti)!='undefined'){
@@ -43,6 +39,26 @@ var PAZIENTI_SALDI = {
 				}
 			}
 			var RIS=DaSaldare-Saldato;
+	
+			if(vuoto)HTML += '<p class="noResults">'+Lingua(TXT_NoResSaldi)+'...</div>';
+			else{
+				var HTML_provv = '';
+				if(RIS>0){
+					HTML_provv += 	'<p id="totSaldi">' +
+									'	<i>'+htmlEntities(Lingua(TXT_AncoraSaldare))+':</i> ' +
+									'	<span';
+					if(RIS<0)HTML_provv += 	' style="background-color:#F00;' +
+									 		'		  padding-left:4px;' +
+									 		'		  padding-right:4px;' +
+									 		'		  border-radius:4px;"';
+					HTML_provv += 	'>&euro; '+ArrotondaEuro(RIS) +
+									'	</span>' +
+									'</p>';
+				}
+				HTML = '<div class="lista listaSaldi">' + HTML_provv + HTML + '</div>';
+			}
+			
+			
 			var HTML_pre = '';
 			HTML_pre += PAZIENTI.intestazionePaziente("s");
 			HTML_pre += '<div class="menuElenchi"' +
@@ -58,18 +74,7 @@ var PAZIENTI_SALDI = {
 						'		<span>'+htmlEntities(Lingua(TXT_AggiungiSaldo))+'</span>' +
 						'	</i>' +
 						'</p>';
-			if(RIS>0){
-				HTML_pre += '<p id="totSaldi">' +
-							'	<i>'+htmlEntities(Lingua(TXT_AncoraSaldare))+':</i> ' +
-							'	<span';
-				if(RIS<0)HTML_pre += ' style="background-color:#F00;' +
-									 '		  padding-left:4px;' +
-									 '		  padding-right:4px;' +
-									 '		  border-radius:4px;"';
-				HTML_pre += '>&euro; '+ArrotondaEuro(RIS) +
-							'	</span>' +
-							'</p>';
-			}
+			
 			HTML = HTML_pre + HTML;
 			
 			document.getElementById("lista_pazienti").innerHTML = HTML;
@@ -194,6 +199,12 @@ var PAZIENTI_SALDI = {
 			HTML += '		<span id="btn_stampa" class="stampaBtn noPrint" onclick="SCHEDA.stampaScheda({});">'+Lingua(TXT_StampaRicevuta)+'</span>' +
 					'	</div>';
 			
+			var azElimina = Q_idSaldo>-1 ? 'PAZIENTI.el_saldo('+Q_idSaldo+')':"";
+			var btnAdd = '';
+			if(azElimina){
+				btnAdd = '<div class="p_paz_el_menu" onClick="'+azElimina+'">'+Lingua(TXT_EliminaScheda)+'</div>';
+			}
+			
 			// pulsanti SALVA, ANNULLA e ELIMINA
 			HTML += SCHEDA.pulsantiForm( 	Q_idSaldo>-1 ? 'PAZIENTI.el_saldo('+Q_idSaldo+')':"",
 											"SCHEDA.scaricaScheda();", 
@@ -210,7 +221,8 @@ var PAZIENTI_SALDI = {
 									'scheda_saldo', 
 									false, 
 									true, 
-									btn );
+									btn,
+									btnAdd );
 			initChangeDetection( "formMod" );
 			
 			SCHEDA.formModificato = false;

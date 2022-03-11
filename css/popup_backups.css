@@ -9,6 +9,19 @@
     margin-top: 0px;
     top: 20px;
 }
+.smart #backups{
+	top:0px;
+	left:0px;
+	height: 100%;
+    width: 100%;
+	border-radius:0px;
+	margin-left:0px;
+}
+.smart #backups .popup_chiudi{
+    position: fixed;
+    top: 0px;
+    right: 0px;
+}
 #contBackups{
 	padding:0px;
 	height: calc(100% - 90px);

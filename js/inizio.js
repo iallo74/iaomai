@@ -30,6 +30,10 @@ var debug=false;
 var globals = {
 	siglaLingua: 'ita',
 	memorizza: false,
+	open3d: true,
+	openMap: false,
+	mapOpened: '',
+	AnatomyFREE: true, // settiamo l'anatomia libera per tutti
 	modello: null,
 	set: null,
 	pezziSelezionati: [],
@@ -38,6 +42,11 @@ var globals = {
 			cartella: '',
 			muscoli:true
 		}
+		if(localStorage.open3d=='true')globals.open3d = true;
+		if(localStorage.open3d=='false')globals.open3d = false;
+		if(localStorage.openMap=='true')globals.openMap = true;
+		if(localStorage.openMap=='false')globals.openMap = false;
+		globals.mapOpened = localStorage.mapOpened;
 	},
 	initSet: function(){
 		globals.set = {
@@ -63,13 +72,6 @@ var overChiudiProva = false;
 	
 // OPERAZIONI AL CARICAMENTO DELLA PAGINA
 function INIT(){
-	
-	
-	// aggiunto per errore su importer
-	if(	tipoApp == 'AM' || tipoApp == 'AM_light' ){
-		smartMenu = true;
-		document.body.classList.add("smart");
-	}
 	
 	
 	// unisco i moduli

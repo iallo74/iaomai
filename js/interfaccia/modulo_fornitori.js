@@ -270,6 +270,11 @@ var FORNITORI = {
 			
 			var azAnnulla = "SCHEDA.scaricaScheda();";
 			if(Q_idForn>-1)azAnnulla = "SCHEDA.scaricaScheda();";
+			var azElimina = Q_idForn>-1 ? "FORNITORI.el_fornitore("+Q_idForn+");":"";
+			var btnAdd = '';
+			if(azElimina){
+				btnAdd = '<div class="p_paz_el_menu" onClick="'+azElimina+'">'+Lingua(TXT_EliminaScheda)+'</div>';
+			}
 			
 			HTML += SCHEDA.pulsantiForm(
 									Q_idForn>-1 ? "FORNITORI.el_fornitore("+Q_idForn+");":"",
@@ -287,7 +292,9 @@ var FORNITORI = {
 									'FORNITORI.chiudiFornitore();',
 									'scheda_fornitore',
 									false,
-									true );
+									true,
+									'',
+									azElimina );
 									
 			initChangeDetection( "formMod" );
 			

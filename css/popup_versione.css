@@ -10,23 +10,22 @@
 	/*background-color: #0963a2;*/
 	background-color: #154e9c;
 }
-body:not(.AM):not(.AM_light) #contVersione{
+.smart.android #versione .popup_chiudi{
+	background-image:url(../img/chMenu.png);
+}
+body #contVersione{
 	padding-top:0px !important;
 	margin-top: -20px;
 }
-body:not(.AM):not(.AM_light) #contVersione img{
+body #contVersione img{
 	margin-top:-10px !important;
-}
-.AM #contVersione,
-.AM_light #contVersione{
-	margin-top:-20px !important;
 }
 #contVersione, #contColori{
 	padding-left:30px;
 	padding-right:30px;
 }
 #contVersione, #contVersione *{
-	font-size:10px;
+	font-size:11px;
 	color:rgba(255,255,255,0.5);
 }
 #logoVersione{
@@ -37,10 +36,4 @@ body:not(.AM):not(.AM_light) #contVersione img{
 	background-size:contain;
 	background-position:center center;
 	background-repeat:no-repeat;
-}
-.AM #logoVersione,
-.AM_light #logoVersione{
-	width:250px;
-	height:77px;
-	background-image:url(../img/logo_AM_white.png);
 }

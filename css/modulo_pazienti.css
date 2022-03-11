@@ -181,10 +181,13 @@
 }
 #nomeCliente{
     color: #2076d8;
-    font-size: 14px;
+    font-size:15.4px;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+}
+.smart.android #nomeCliente{
+	font-size:17px;
 }
 #esciCliente{
     width: 30px;
@@ -201,6 +204,11 @@
    /* border-right: 1px solid rgba(0,0,0,0.2);*/
     background-size: 27px;
 }
+.smart.android #btnAnagraficaCliente{
+	background-size: auto;
+	margin-left: -3px;
+	margin-right: 3px;
+}
 .trattNomeCliente.conAvatar #nomeCliente{
     margin-left: 10px;
     width: calc(100% - 77px);
@@ -208,12 +216,6 @@
 .trattNomeCliente:not(.conAvatar) #nomeCliente{
    /* margin-left: 38px;*/
     width: calc(100% - 39px);
-}
-.smart #elenchi:not(.schExp) .trattNomeCliente:not(.conAvatar) #nomeCliente{
-	width: calc(100% - 209px) !important;
-}
-.smart #elenchi:not(.schExp) .trattNomeCliente.conAvatar #nomeCliente{
-	width: calc(100% - 249px) !important;
 }
 
 .avatar > div,
@@ -242,8 +244,9 @@
     margin-bottom: -40px;
 	cursor:pointer;
 }
-body:not(.smart) #elenchi:not(.schExp) .avatarMini{
-	margin-top: 3px;
+.smart .avatarMini{
+	width: 70px;
+    height: 70px;
 }
 @media (min-width:700px){
 	.trattNomeCliente{
@@ -252,10 +255,6 @@ body:not(.smart) #elenchi:not(.schExp) .avatarMini{
 	body:not(.smart) .avatarMini{
 		width: 70px !important;
 		height: 70px !important;
-	}
-	.trattBtns {
-		text-align: right;
-		margin-right: 20px;
 	}
 }
 .avatarList,
@@ -271,6 +270,16 @@ body:not(.smart) #elenchi:not(.schExp) .avatarMini{
     margin-right: 11px;
     border-top-left-radius: 5px;
     border-bottom-left-radius: 5px;
+}
+.smart.android .avatarList,
+.smart.android .imgList{
+	max-width: 51px !important;
+	max-height: 50px !important;
+}
+.smart:not(.android) .avatarList,
+.smart:not(.android) .imgList{
+	max-width: 41px !important;
+	max-height: 40px !important;
 }
 .avatarList{
 	border-right: 1px solid rgba(0,0,0,0.7);
@@ -305,11 +314,11 @@ body:not(.smart) #elenchi:not(.schExp) .avatarMini{
 	overflow:hidden;
 }
 #schedaCiclo h1{
-	font-size:18px !important;
+	font-size:19.8px !important;
 	margin-bottom:0px !important;
 }
 #schedaCiclo h3{
-	font-size:15px !important;
+	font-size:16.5px !important;
 	margin-bottom:0px !important;
 }
 #schedaCiclo i{
@@ -324,11 +333,13 @@ body:not(.smart) #elenchi:not(.schExp) .avatarMini{
 #schedaCiclo .labelCicli{
 	margin-top:0px !important;
 }
-#puntiCiclo{
+#puntiCiclo,
+#meridianiCiclo{
 	border-radius:6px;
 	border:1px solid rgba(0,0,0,0.3);
 	padding:6px;
 	background-color:rgba(0,0,0,0.1);
+	font-size:12.1px;
 }
 #totSaldi{
 	background-color: #ffe3a4 !important;
@@ -406,7 +417,7 @@ body:not(.smart) #elenchi:not(.schExp) .avatarMini{
 }
 .graficoInt div div{
 	font-style:italic;
-	font-size:11px;
+	font-size:12.1px;
 	width:60px;
 	margin-left:-13px;
 	text-align:center;
@@ -467,16 +478,10 @@ body:not(.smart) #elenchi:not(.schExp) .avatarMini{
 	margin-top:5px;
 	cursor:pointer;
 }
-.smart #elenchi:not(.schExp) .trattNomeCliente span:not(.avatarMini){
-	margin-top: 8px !important;
-}
-.smart #elenchi:not(.schExp) .trattNomeCliente.conAvatar #nomeCliente{
-	width: calc(100% - 203px) !important;
-}
 .trattNomeCliente span i{
 	font-style:normal !important;
     text-decoration: underline;
-    font-size: 11px;
+    font-size:12.1px;
 	cursor:pointer;
 }
 .trattTools{
@@ -490,6 +495,11 @@ body:not(.smart) #elenchi:not(.schExp) .avatarMini{
 	height: 30px !important;
     padding-top: 2px;
 }
+
+.smart.android .trattTools{
+	height: 44px !important;
+    padding-top: 0px !important;
+}
 .trattTools i{
 	cursor:pointer;
 	line-height: 27px !important;
@@ -498,7 +508,14 @@ body:not(.smart) #elenchi:not(.schExp) .avatarMini{
 	float:right;
 	border-radius: 4px;
 }
-.smart #elenchi.schExp .trattTools i,
+.smart.android .trattTools i{
+	width: 44px !important;
+	height: 44px !important;
+	padding-top:7px;
+	padding-bottom:7px;
+	text-align:center;
+}
+.smart #elenchi .trattTools i,
 body:not(.smart) .trattTools i{
 	opacity:0.5;
 }
@@ -512,36 +529,61 @@ body:not(.smart) .trattTools i{
 	background-position:top center, center center;
 	width:28px;
 }
+.smart.android .riepilogoBtn{
+	background-position:center center, center center !important;
+}
 .riepilogoBtn{
 	background-image: url(../img/ico_statsT.png);
 }
 
 .anamnesiBtn{
-	background-image: url(../img/ico_modifica_ciclo.png);
+	background-image: url(../img/ico_anamnesi.png);
+    padding-left: 36px;
+    background-position: left -4px, left center;
+    padding-right: 10px;
+    float: left;
+    /*margin-top: 1px;*/
+    margin-left: 0px;
+    border-radius: 0px !important;
+    width: 100%;
+    height: 32px !important;
+    line-height: 32px !important;
+    background-color: #fff4e8;
+    opacity: 0.8;
+    /*border-top: 1px solid rgba(0,0,0,0.2);*/
+}
+.smart.android .anamnesiBtn{
+    height: 44px !important;
+    line-height: 44px !important;
+    background-position: 4px 2px, left center;
+    padding-left: 42px;
+}
+.anamnesiBtn:hover{
+    background-color: #fae6d1 !important;
+}
+.anamnesiBtn span{
+	display: inline !important;
+    font-style: normal;
+}
+.smart.android .anamnesiBtn span{
+	font-size:17px;
 }
 .riepilogoBtn.elencoSel{
 	background-image: url(../img/ico_statsTB.png), linear-gradient(to bottom, #1d4eaa 0%,#0a3d96 100%) !important;
 }
 
 .anamnesiBtn.elencoSel{
-	background-image: url(../img/ico_modifica_cicloB.png), linear-gradient(to bottom, #1d4eaa 0%,#0a3d96 100%) !important;
+	background-image: url(../img/ico_anamnesiB.png), linear-gradient(to bottom, #1d4eaa 0%,#0a3d96 100%) !important;
 }
-/*body:not(.smart) .addTrattBtn i,
-.smart #elenchi.schExp .addTrattBtn i{
-	display:none;
-}*/
 .trattTools span img{
 	vertical-align:middle;
-}
-.smart #elenchi:not(.schExp) .add_tratt{
-	width:auto !important;
 }
 .infoCiclo{
 	opacity: 0.6;
 	float: left !important;
 	margin-top: 0px;
 	padding-left: 13px;
-	font-size: 11px;
+	font-size:12.1px;
 	line-height: normal;
 	cursor:default !important;
 }
@@ -554,12 +596,6 @@ body:not(.smart) .trattTools i{
 	vertical-align:middle;
 	margin-top: -3px;
 }
-.smart #elenchi:not(.schExp) .infoCiclo{
-	display:none;
-}
-/*.trattTools span:first-child{
-	float: left;
-}*/
 @media (max-width: 699px){
 	body:not(.smart) .trattTools span:first-child{
 		width:calc(100% - 73px);
@@ -582,6 +618,8 @@ body:not(.smart) .trattTools i{
 .trattBtns{
     margin-bottom: 0px;
     margin-top: 5px;
+	text-align: right;
+	margin-right: 20px;
 }
 .trattBtns span{
 	background-color: rgba(0,0,0,0.2);
@@ -600,15 +638,18 @@ body:not(.smart) .trattTools i{
 .trattBtns span:not(.selBtn):hover{
 	background-color: rgba(0,0,0,0.23) !important;
 }
-.addTrattBtn{
+/*.addTrattBtn{
 	margin-left:11px;
+}*/
+.trattElenco .noResults{
+	margin-top:32px;
 }
 .addTrattBtn span{
 	/*display:none;*/
 	font-style: italic;
     color: #FFF;
 	margin-right:5px;
-	font-size: 11px;
+	font-size:12.1px;
 }
 .selBtn{
 	background-color: #525252 !important;
@@ -627,6 +668,17 @@ body:not(.smart) .trattTools i{
     line-height: 37px;
     height: 39px;
 }
+.smart.android #add_ciclo,
+.smart.android #add_paz,
+.smart.android #add_forn,
+.smart.android #add_serv,
+.smart.android #add_pat,
+.smart.android #add_saldo,
+.smart.android #sistemaMeridiani_p,
+.smart.android #add_proc, /* specifico di PROCEDURE */
+.smart.android #filtroCond{ /* specifico di PROCEDURE */
+    height: 41px;
+}
 #add_paz,
 #sistemaMeridiani_p,
 #add_forn,
@@ -644,20 +696,73 @@ body:not(.smart) .trattTools i{
 	margin-left: -11px;
     padding-right: 8px;
     cursor: pointer;
-    font-size: 11px;
+    font-size:12.1px;
     color: #c6c5c3;
+}
+.smart #add_ciclo i,
+.smart #add_paz i,
+.smart #sistemaMeridiani_p i,
+.smart #add_forn i,
+.smart #add_serv i,
+.smart #add_saldo i,
+.smart #add_proc i{ /* specifico di PROCEDURE */
+	margin-left: 0px;
+    padding-right: 0px;
+	min-width:41px;
+	text-align:center;
+}
+.smart #addPaziente,
+.smart #addFornitore,
+.smart #addServizio,
+.smart #addProcedura{
+	position: fixed;
+    bottom: 70px;
+    right: 12px;
+    opacity: 1 !important;
+    z-index: 100;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: auto;
+    box-shadow: 0px 0px 20px rgb(0 0 0 / 65%);
+    border-radius: 25px;
+    width: 50px;
+    height: 50px;
+    padding-left: 50px;
+}
+.smart.android #addPaziente,
+.smart.android #addFornitore,
+.smart.android #addServizio,
+.smart.android #addProcedura{
+    border-radius: 30px !important;
+    width: 60px !important;
+    height: 60px !important;
+    padding-left: 60px !important;
+}
+.smart #addPaziente,
+.smart #addFornitore,
+.smart #addServizio{
+    background-color: #FFF;
+    background-image: url(../img/addBlu3.png);
+}
+.smart #addProcedura{
+	background-color: #d38100;
+    background-image: url(../img/add.png);
+}
+.smart #addServizioMenu{
+    padding-left: 10px !important;
+    padding-right: 10px !important;
 }
 #add_ciclo i span,
 #add_saldo i span,
 #add_proc i span{ /* specifico di PROCEDURE */
-    font-size: 11px;
+    font-size:12.1px;
     color: #FFF;
 }
 #add_paz i span,
 #sistemaMeridiani_p i span,
 #add_forn i span,
 #add_serv i span{
-    font-size: 11px;
+    font-size:12.1px;
     color: #525252;
 }
 #add_ciclo,
@@ -688,7 +793,6 @@ body:not(.smart) #add_proc{
 #add_ciclo img:not(.noBG),
 #add_forn img,
 #add_serv img,
-/*#add_saldo img,*/
 #add_proc img{ /* specifico di PROCEDURE */
     box-shadow: 0px 0px 3px rgb(0 0 0 / 50%);
     padding: 2px;
@@ -773,6 +877,9 @@ body:not(.smart) #addServizioMenu{
 	background-image:url(../img/ico_statsN.png);
 	margin-left:3px !important;
 }
+.smart #filtroPazienti{
+	padding-left:41px;
+}
 #cambioSistemaMeridiani{
 	background-image:url(../img/ico_meridiani.png);
 	margin-left:3px !important;
@@ -838,7 +945,7 @@ body:not(.smart) .listaProcedure{
 #pazienti_vis h1{
 	color: #154e9c;
     margin-bottom: 10px;
-    font-size: 26px;
+    font-size:28.6px;
     margin-top: 0px;
 }
 #pazienti_vis i{
@@ -846,8 +953,7 @@ body:not(.smart) .listaProcedure{
 }
 
 #pazienti_vis .rgAnag i{
-	font-size: 11px;
-    font-family: Arial;
+	font-size: 13.2px;
 }
 #pazienti_vis p{
 	line-height:20px !important;
@@ -977,7 +1083,7 @@ body:not(.smart) .listaProcedure{
 	margin-bottom:0px !important;
 }
 
-#modAnag{
+body:not(.smart) #modAnag{
 	background-color:rgba(0,51,159,0.1);
 	border-radius:3px;
 	height:32px;
@@ -994,6 +1100,25 @@ body:not(.smart) .listaProcedure{
 	margin-top:-10px;
 	margin-right:20px;
 	margin-bottom: 10px;
+}
+.smart #modAnag{
+    position: fixed;
+    bottom: 15px;
+    right: 15px;
+    z-index: 100;
+    border-radius: 30px;
+    padding-right: 0px;
+    overflow: hidden;
+    width: 60px;
+    height: 60px;
+    padding-left: 60px;
+    background-position: center center;
+    background-size: auto;
+    background-color: #184aa5;
+    background-image: url(../img/ico_modifica_anagB.png);
+    box-shadow: 0px 0px 20px;
+    margin: 0px;
+	background-repeat:no-repeat;
 }
 #modAnag:hover{
 	background-color:rgba(0,51,159,0.2);
@@ -1070,7 +1195,7 @@ body:not(.smart) .listaProcedure{
 	margin-top:20px;
 }
 .etStats{
-	font-size:18px;
+	font-size:19.8px;
 	padding:5px;
 }
 .etStats span{
@@ -1097,7 +1222,6 @@ body:not(.smart) .listaProcedure{
 	display:none;
 }
 
-/*.schLibera #rgApplicaFiltri{*/
 body:not(.smart) #rgApplicaFiltri{
 	background-position: calc(100% - 39px) top !important;
     padding-right: 80px !important;
@@ -1127,21 +1251,6 @@ body:not(.smart) #rgApplicaFiltri{
     padding-right: 30px;
     width: 92%;
 }
-/*#pat_ricerca{
-    width: calc(100% - 6px);
-    border: 1px solid rgba(255,255,255,0.4);
-    border-radius: 3px;
-    background-color: rgba(255,255,255,0.3);
-    height: 26px;
-    line-height: 26px;
-    text-align: center;
-    margin-top: 2px;
-    background-image: url(../img/lente.png);
-    background-repeat: no-repeat;
-    background-position: left center;
-    background-size: auto 90%;
-    box-shadow: 0px 0px 5px rgb(0 0 0 / 50%);
-}*/
 #paz_ricerca,
 #forn_ricerca,
 #serv_ricerca,
@@ -1160,6 +1269,16 @@ body:not(.smart) #rgApplicaFiltri{
     display: inline-block;
     float: left;
 }
+.smart.android #paz_ricerca,
+.smart.android #forn_ricerca,
+.smart.android #serv_ricerca,
+.smart.android #proc_ricerca,
+.smart.android #pat_ricerca{
+    height: 32px;
+    line-height: 32px;
+    margin-top: 3px;
+	font-size:17px;
+}
 #paz_ricerca,
 #forn_ricerca,
 #serv_ricerca,
@@ -1170,11 +1289,20 @@ body:not(.smart) #rgApplicaFiltri{
 #paz_ricerca{
 	width: calc(var(--menu-width) - 121px);
 }
+.smart #paz_ricerca{
+	width: calc(var(--menu-width) - 94px);
+}
 #proc_ricerca{
     width: calc(var(--menu-width) - 46px);
     border: 1px solid rgba(255,255,255,0.5);
     background-color: rgba(255,255,255,0.4);
     margin-left: 5px;
+}
+.smart #proc_ricerca{
+    width: calc(var(--menu-width) - 9px);
+}
+.smart.android #proc_ricerca{
+	margin-top:4px;
 }
 #pat_ricerca{
     width: calc(var(--menu-width) - 13px);
@@ -1182,6 +1310,10 @@ body:not(.smart) #rgApplicaFiltri{
 #forn_ricerca,
 #serv_ricerca{
 	width: calc(var(--menu-width) - 45px);
+}
+.smart #forn_ricerca,
+.smart #serv_ricerca{
+	width: calc(var(--menu-width) - 6px);
 }
 .filtro_attivo{
 	background-color:#ffcf00 !important;
@@ -1341,7 +1473,7 @@ body:not(.smart) #rgApplicaFiltri{
 	padding-bottom:10px;
 }
 #alertCoda{
-	font-size: 11px;
+	font-size:12.1px;
     text-align: right;
     line-height: 16px;
     height: 16px;
@@ -1364,6 +1496,21 @@ body:not(.smart) #rgApplicaFiltri{
     margin-left: -19px;
     margin-top: -24px;
     margin-bottom: 10px !important;
+}
+.smart .label_ciclo{
+    border-bottom: 1px solid rgba(0,0,0,0.3);
+    margin-top: -20px !important;
+    margin-left: -20px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    background-color: #FFF;
+    width: calc(100% + 40px);
+    padding-left: 41px;
+    padding-right: 10px;
+    line-height: 40px !important;
+    height: 40px;
+    background-position: 5px center;
 }
 #stampa_prescr{
 	margin-bottom: -9px;
@@ -1438,7 +1585,7 @@ body:not(.smart) #rgApplicaFiltri{
    	margin-bottom: 10px;
 }
 #serv_titolo{
-	font-size: 18px;
+	font-size:19.8px;
     /*border-bottom: 1px solid rgba(0,0,0,0.2);*/
     padding: 10px;
     background: url(../img/ico_servizio.png) left 3px no-repeat;
@@ -1533,17 +1680,38 @@ body:not(.smart) #rgApplicaFiltri{
 
 .labelModificaCon{
 	margin-bottom: 20px;
-	font-size:11px;
+	font-size:12.1px;
 	font-style:italic;
 	color:rgba(0,0,0,0.6);
 	background-color:rgba(0,0,0,0.05);
 	border-radius:4px;
 	padding-left:15px;
 	padding-right:15px;
-	height:35px;
+	padding-bottom:10px;
+	/*height:35px;*/
 	line-height:35px;
+	text-align:center;
+}
+.labelModificaCon span{
+	display:inline-block;
+	height:30px;
+	line-height:30px;
+	background-color:#FFF;
+	border-radius:5px;
+	padding-left:5px;
+	padding-right:10px;
+	box-shadow:0px 0px 3px rgba(0,0,0,0.5);
+	margin-left: 5px;
+    margin-right: 5px;
+}
+.labelModificaCon span:hover{
+	background-color:#EEE;
 }
 .labelModificaCon img{
 	opacity:0.6;
 	vertical-align:middle;
+}
+.labelModificaCon span{
+	font-size:inherit;
+	cursor:pointer;
 }
