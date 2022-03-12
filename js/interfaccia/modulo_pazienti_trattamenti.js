@@ -853,10 +853,12 @@ var PAZIENTI_TRATTAMENTI = {
 	apriSpostaTrattamento: function( Q_idTratt){
 		applicaLoading(document.getElementById("scheda_testo"),'vuoto');
 		var HTML =  '<div id="titCartelle">'+htmlEntities(Lingua(TXT_SpostaIn))+'<span onClick="PAZIENTI.chiudiSpostaTrattamento();"></span></div>' +
-					'<div>';
+					'<div id="elencoCartelle">';
 		for(c in PAZIENTI.cicli){
-			HTML += '	<div onClick="PAZIENTI.spostaTrattamento(this);"' +
-					'		 data-id="'+PAZIENTI.cicli[c].p+'">'+PAZIENTI.cicli[c].NomeCiclo+'</div>';
+			if(PAZIENTI.cicli[c].NomeCiclo != document.formMod.LabelCiclo.value){
+				HTML += '	<div onClick="PAZIENTI.spostaTrattamento(this);"' +
+						'		 data-id="'+PAZIENTI.cicli[c].p+'">'+PAZIENTI.cicli[c].NomeCiclo+'</div>';
+			}
 		}
 		HTML += 	'</div>';
 		var cont = document.getElementById("gruppoPunti_cont");

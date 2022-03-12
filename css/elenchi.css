@@ -497,6 +497,10 @@ body:not(.bodyStyled2) #chiudiElenco{
     text-overflow: ellipsis;
 	cursor:pointer;
 }
+.cartelle #elencoCartelle{
+	overflow-y: auto;
+    height: calc(100% - 32px);
+}
 .cartelle > div:not(#titCartelle) > div:hover{
 	background-color:#eee;
 }
