@@ -127,16 +127,8 @@ body:not(.smart) #scheda{
 	stroke:#999 !important;
 }
 .schLibera #ss,
-body:not(.touch) .schLato #ss{
+.schLato #ss{
     display: none !important;
-}
-.touch:not(.smart) .schLato #ss{
-	transform: rotate(90deg);
-    position: absolute;
-    top: 50%;
-    left: calc(100% - 39px);
-    display: block;
-    margin-left: 0px !important;
 }
 .minimized {
     width: 250px !important;
@@ -260,10 +252,10 @@ body:not(.touch ) .lll:hover polygon{
 body:not(.touch ) .lll:hover rect.filled{
 	fill:var(--schede-icone-over) !important;
 }
-body:not(.smart) #sc,
-body:not(.smart) #scheda:not(.schLibera):not(.schLato) #ss,
-body:not(.smart) #scheda.schLibera:not(.minimized) #mn,
-body:not(.smart) #scheda.minimized #xp{
+body:not(.touch) #sc,
+body:not(.touch) #scheda:not(.schLibera):not(.schLato) #ss,
+body:not(.touch) #scheda.schLibera:not(.minimized) #mn,
+body:not(.touch) #scheda.minimized #xp{
 	display:inline-block !important;
 }
 #sc,
@@ -343,7 +335,7 @@ body:not(.smart) #scheda.minimized #xp{
     margin-left: calc(50% - 50px) !important;
 	cursor: ns-resize !important;
 }
-body:not(.smart)#ss{
+body:not(.touch)#ss{
     margin-left: calc(50% - 50px) !important;
 }
 .touch #scheda:not(.schRid) #ss{

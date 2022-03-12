@@ -568,9 +568,11 @@ var MODELLO = {
 			document.getElementById("pulsanti_modello").style.opacity = 1;
 		}
 		
-		var x = event.pageX;
-		//SLIDER.xIni = x;
-		var y = event.pageY;
+		/*var x = event.pageX;
+		var y = event.pageY;*/
+		
+		var x = touchable ? event.touches[ 0 ].pageX : event.clientX;
+		var y = touchable ? event.touches[ 0 ].pageY : event.clientY;
 		var w = 210 / SLIDER.demolt;
 		if(livello=='pelle')w = 240 / SLIDER.demolt;
 		var posSlider = MENU.getOp(livello)*(w - 12);

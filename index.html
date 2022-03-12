@@ -149,7 +149,9 @@
                             <rect x="10" y="8" width="12" height="8" rx="0"></rect>
                         </svg>
                     </div>
-                	<div id="ss" class="lll" onMouseDown="SCHEDA.iniziaMoveScheda(event);" onTouchStart="SCHEDA.iniziaMoveScheda(event);">
+                	<div id="ss" class="lll"
+                    	 onMouseDown="SCHEDA.iniziaMoveScheda(event);"
+                         onTouchStart="SCHEDA.iniziaMoveScheda(event);">
                         <svg viewBox="0 0 32 26">
                             <line x1="7" x2="16" y1="12" y2="8"></line>
                             <line x1="16" x2="25" y1="8" y2="12"></line>
@@ -159,7 +161,9 @@
                     </div>
                 </div>
                 <div id="scheda_cont">
-                	<div class="scheda_redim" id="redim_br" onMouseDown="SCHEDA.iniziaRedimScheda(event, 'br');">
+                	<div class="scheda_redim" id="redim_br"
+                    	 onMouseDown="SCHEDA.iniziaRedimScheda(event, 'br');"
+                    	 onTouchStart="SCHEDA.iniziaRedimScheda(event, 'br');">
                         <svg viewBox="0 0 30 30">
                             <line x1="24" x2="6" y1="6" y2="24"></line>
                             <line x1="24" x2="15" y1="15" y2="24"></line>
@@ -168,12 +172,18 @@
                         </svg>
                     </div>
                     
-                	<div class="scheda_redim" id="redim_tl" onMouseDown="SCHEDA.iniziaRedimScheda(event, 'tl');"></div>
-                	<div class="scheda_redim" id="redim_bl" onMouseDown="SCHEDA.iniziaRedimScheda(event, 'bl');"></div>
-                	<div class="scheda_redim" id="redim_l" onMouseDown="SCHEDA.iniziaRedimScheda(event, 'l');"></div>
-                	<div class="scheda_redim" id="redim_r" onMouseDown="SCHEDA.iniziaRedimScheda(event, 'r');"></div>
-                	<div class="scheda_redim" id="redim_t" onMouseDown="SCHEDA.iniziaRedimScheda(event, 't');"></div>
-                	<div class="scheda_redim" id="redim_b" onMouseDown="SCHEDA.iniziaRedimScheda(event, 'b');"></div>
+                	<div class="scheda_redim" id="redim_tl"
+                    	 onMouseDown="SCHEDA.iniziaRedimScheda(event, 'tl');"></div>
+                	<div class="scheda_redim" id="redim_bl"
+                    	 onMouseDown="SCHEDA.iniziaRedimScheda(event, 'bl');"></div>
+                	<div class="scheda_redim" id="redim_l"
+                    	 onMouseDown="SCHEDA.iniziaRedimScheda(event, 'l');"></div>
+                	<div class="scheda_redim" id="redim_r"
+                    	 onMouseDown="SCHEDA.iniziaRedimScheda(event, 'r');"></div>
+                	<div class="scheda_redim" id="redim_t" 
+                    	 onMouseDown="SCHEDA.iniziaRedimScheda(event, 't');"></div>
+                	<div class="scheda_redim" id="redim_b"
+                    	 onMouseDown="SCHEDA.iniziaRedimScheda(event, 'b');"></div>
                     
                     <div id="scheda_intestazione">
                     	<div id="scheda_back" onClick="SCHEDA.scaricaScheda();"></div>
@@ -192,7 +202,10 @@
                                 <line y1="19" y2="13" x1="22" x2="16"></line>
                             </svg>
                         </div>
-                    	<div id="scheda_titolo" onDblClick="SCHEDA.minimizzaScheda();" onMouseDown="SCHEDA.iniziaMoveScheda(event,true);" onTouchStart="SCHEDA.iniziaMoveScheda(event,true);"></div>
+                    	<div id="scheda_titolo"
+                        	 onDblClick="SCHEDA.minimizzaScheda();"
+                             onMouseDown="SCHEDA.iniziaMoveScheda(event,true);"
+                             onTouchStart="SCHEDA.iniziaMoveScheda(event,true);"></div>
                         
                     	<div id="scheda_modello" onClick="SCHEDA.nascondiScheda();"></div>
                     </div>
@@ -490,16 +503,20 @@
             <div id="contBtnModello">
                 <div id="p_liv_pelle"
                      onWheel="MODELLO.opw(event,'Pelle');"
-                	 onmousedown="MODELLO.slw(event,'pelle');"></div>
+                	 onmousedown="MODELLO.slw(event,'pelle');"
+                	 onTouchStart="MODELLO.slw(event,'pelle');"></div>
                 <div id="p_liv_muscoli"
                      onWheel="MODELLO.opw(event,'Muscoli');"
-                	 onmousedown="MODELLO.slw(event,'muscoli');"></div>
+                	 onmousedown="MODELLO.slw(event,'muscoli');"
+                	 onTouchStart="MODELLO.slw(event,'muscoli');"></div>
                 <div id="p_liv_ossa"
                      onWheel="MODELLO.opw(event,'Ossa');"
-                	 onmousedown="MODELLO.slw(event,'ossa');"></div>
+                	 onmousedown="MODELLO.slw(event,'ossa');"
+                	 onTouchStart="MODELLO.slw(event,'ossa');"></div>
                 <div id="p_liv_visceri"
                      onWheel="MODELLO.opw(event,'Visceri');"
-                	 onmousedown="MODELLO.slw(event,'visceri');"></div>
+                	 onmousedown="MODELLO.slw(event,'visceri');"
+                	 onTouchStart="MODELLO.slw(event,'visceri');"></div>
                 <!--<div id="p_piuma" class="p_noTxt" onClick="swAnimate();">
                     <i>{{TXT_Pausa3D}}</i></div>-->
                 <div id="p_centro" onClick="centro();" title="{{TXT_CentraModello}}"></div>

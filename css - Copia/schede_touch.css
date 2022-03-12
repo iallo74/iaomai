@@ -102,10 +102,10 @@
 }
 
 /* SCHEDA */
-/*body.touch:not(.smart) .visSch #ss,
+body.touch:not(.smart) .visSch #ss,
 body.touch:not(.smart) .visSch #sc{
 	display:inline-block !important;
-}*/
+}
 /* ELENCHI */
 .smart #elenchi{
 	width:100%;

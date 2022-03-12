@@ -1,0 +1,134 @@
+@charset "utf-8";
+/* CSS Document */
+@media print{
+	.bodyStampa #interfaccia{
+		display:none;
+	}
+}
+#tooltip, #context_menu{
+	position:fixed;
+	display:block;
+	top:-500px;
+	left:-500px;
+	opacity:0;
+	width:fit-content;
+	background-color:#FFF;
+	box-shadow:0px 0px 3px rgba(0,0,0,0.5);
+	border-radius:3px;
+	z-index:11;
+	color:#000;
+	font-size:12.1px;
+	/*font-family:Verdana, Geneva, sans-serif;*/
+}
+#tooltip{
+	padding:5px;
+}
+#context_menu{
+	width: fit-content;
+}
+.tooltipVis{
+	opacity:1 !important;
+}
+#context_menu div{
+	cursor: pointer;
+    line-height: 25px;
+    text-align: left;
+    padding-left: 30px;
+    padding-right: 10px;
+	background-repeat:no-repeat;
+	background-position:3px center;
+	background-size:22px auto;
+}
+#context_menu div:hover{
+	background-color:rgba(0,0,0,0.1);
+}
+.c{
+	background-image:url(../img/p_targetB.png);
+}
+.d{
+	background-image:url(../img/chMenuB.png);
+}
+.a{
+	background-image:url(../img/p_selectedAltri.png);
+}
+.i{
+	background-image:url(../img/p_isola.png);
+}
+.s{
+	background-image:url(../img/p_scheda.png);
+}
+
+#legende{
+	display:none;
+}
+#legende div{
+	position:fixed;
+	z-index:9;
+	/*width:fit-content;*/
+	width:calc(fit-content + 20px);
+	height:16px;
+	line-height:16px;
+	color:#FFF;
+	text-align:center;
+	white-space:nowrap;
+	font-size:10px;
+	opacity:0.8;
+	padding-left:5px;
+	padding-right:5px;
+	
+		width:calc(fit-content + 30px) !important;
+		background-color:rgba(0,0,0,0.7);
+		border-radius:10px;
+		padding-left:10px !important;
+		padding-right:20px !important;
+		background-image:url(../img/frGiu.png);
+		background-repeat:no-repeat;
+		background-position:right center;
+		background-size:auto 130%;
+}
+#legende:not(.noAnimate) div{
+	cursor:pointer;	
+}
+#legende.noAnimate{
+	opacity:0.4 !important;	
+}
+@media (max-width: 600px){
+	#legende div{
+		font-size:12.1px !important;
+		height:20px !important;
+		line-height:20px !important;
+	}
+}
+.dettaglioAnatomia{
+	float: right;
+    margin: -30px;
+}
+.bodyStyled2 .dettaglioAnatomia{
+    background-blend-mode: multiply;
+    background-repeat: no-repeat;
+    background-color: #eae8e3;
+}
+.dettaglioAnatomia img{
+	opacity:0;
+}
+@media (min-width: 700px){
+	.descrAnatomia{
+		float:left;
+		/*position:absolute;*/
+		line-height: 20px;
+	}
+	.descrAnatomia:not(.noBaseImg){
+		width: 50%;
+	}
+}
+@media (max-width: 699px){
+	.dettaglioAnatomia{
+		margin-top:30px !important;
+	}
+}
+.tab_anatomia #scheda_testo{
+	background-color:#FFF;
+}
+.tab_anatomia #scheda_testo i{
+	color:#0000ff;
+}

@@ -43,7 +43,7 @@ var SCHEDA = {
 	ultimaCartella: '', // l'id della sottocartella aperta quando si clicca su una scheda (per smartMenu)
 	
 	initScheda: function(){
-		if(!touchable && localStorage.schedaAggancio){
+		if(!smartMenu && localStorage.schedaAggancio){
 			SCHEDA.aggancio = JSON.parse(localStorage.schedaAggancio);
 			SCHEDA.aggancia(SCHEDA.aggancio.tipo);
 		}
@@ -329,6 +329,7 @@ var SCHEDA = {
 	
 	iniziaMoveScheda: function( event, onTitle ){ // sposta la scheda libera o ridimansina quella sotto
 		if(typeof(onTitle)=='undefined')var onTitle = false;
+		if(SCHEDA.aggancio.tipo == 'lato' && !onTitle)SCHEDA.iniziaRedimScheda( event, 'r', true )
 		if(SCHEDA.aggancio.tipo == 'lato' || (SCHEDA.aggancio.tipo == 'sotto' && onTitle) || smartMenu)return;
 		event.preventDefault();
 		noAnimate = true;
@@ -437,7 +438,8 @@ var SCHEDA = {
 		}
 	},
 	
-	iniziaRedimScheda: function( event, verso ){
+	iniziaRedimScheda: function( event, verso, fromMove ){
+		if(typeof(fromMove)=='undefined')var fromMove = false;
 		if(SCHEDA.aggancio.tipo == 'lato')stopOnResize = true;
 		SCHEDA.versoRedim = verso;
 		var gapH = 0;
@@ -451,17 +453,31 @@ var SCHEDA = {
 		}*/
 		
 		event.preventDefault();
-		document.body.addEventListener("mouseup",SCHEDA.arrestaRedimScheda,false);
-		document.body.addEventListener("mousemove",SCHEDA.moveRedimScheda,false);
-		document.body.addEventListener("mouseleave",SCHEDA.arrestaRedimScheda,false);
+		
+		if(!touchable){
+			document.body.addEventListener("mouseup",SCHEDA.arrestaRedimScheda,false);
+			document.body.addEventListener("mousemove",SCHEDA.moveRedimScheda,false);
+			document.body.addEventListener("mouseleave",SCHEDA.arrestaRedimScheda,false);
+		}else{
+			document.body.addEventListener("touchend", SCHEDA.arrestaRedimScheda, false );
+			document.body.addEventListener("touchmove", SCHEDA.moveRedimScheda, false );	
+		}
 		
 		SCHEDA.wIni = document.getElementById("scheda").scrollWidth;
 		SCHEDA.hIni = document.getElementById("scheda").scrollHeight;
 		SCHEDA.xIni = tCoord(document.getElementById("scheda"));
 		SCHEDA.yIni = tCoord(document.getElementById("scheda"),'y');
 		
-		SCHEDA.xMouseIni = event.clientX + gapH;
-		SCHEDA.yMouseIni = event.clientY + gapV;
+		if(touchable){
+			try{
+				SCHEDA.xMouseIni = event.touches[ 0 ].pageX;
+				if(fromMove)SCHEDA.xMouseIni += 21;
+				SCHEDA.yMouseIni = event.touches[ 0 ].pageY;
+			}catch(err){};
+		}else{
+			SCHEDA.xMouseIni = event.clientX + gapH;
+			SCHEDA.yMouseIni = event.clientY + gapV;
+		}
 	},
 	moveRedimScheda: function( event ){ // ridimensiona la scheda libera o laterale
 		event.preventDefault();
@@ -527,9 +543,14 @@ var SCHEDA = {
 			SCHEDA.aggancio.libera.w = document.getElementById("scheda").scrollWidth;
 		}
 		
-		document.body.removeEventListener("mouseup",SCHEDA.arrestaRedimScheda,false);
-		document.body.removeEventListener("mousemove",SCHEDA.moveRedimScheda,false);
-		document.body.removeEventListener("mouseleave",SCHEDA.arrestaRedimScheda,false);
+		if(!touchable){
+			document.body.removeEventListener("mouseup",SCHEDA.arrestaRedimScheda,false);
+			document.body.removeEventListener("mousemove",SCHEDA.moveRedimScheda,false);
+			document.body.removeEventListener("mouseleave",SCHEDA.arrestaRedimScheda,false);
+		}else{
+			document.body.removeEventListener("touchend", SCHEDA.arrestaRedimScheda, false );
+			document.body.removeEventListener("touchmove", SCHEDA.moveRedimScheda, false );	
+		}
 		localStorage.schedaAggancio = JSON.stringify(SCHEDA.aggancio);
 		if(SCHEDA.aggancio.tipo == 'lato'){
 			stopOnResize = false;

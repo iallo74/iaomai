@@ -1,0 +1,30 @@
+@charset "utf-8";
+/* CSS Document */
+
+.android #el_visceri p,
+.android #el_ossa p,
+.android #el_muscoli p{
+	font-size: 14.3px !important;
+	height:30px !important;
+	line-height:30px !important;
+	border-radius:15px !important;
+}
+.android #legende div{
+	font-size:12.1px !important;
+	height:20px !important;
+	line-height:20px !important;
+}
+.android .popup input[type='text'],
+.android .popup input[type='email'],
+.android .popup input[type='password']{
+	height:32px !important;
+	line-height:32px !important;
+	font-size:17.6px !important;
+}
+.android #CNF_titolo,
+.android #CNF_btns button{
+	font-size:17.6px !important;
+}
+.android #CNF_btns button{
+	line-height:32px !important;
+}

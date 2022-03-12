@@ -1,0 +1,59 @@
+@charset "utf-8";
+/* CSS Document */
+
+/* FEEDBACK */
+#feedback{
+	width:660px;
+	height:366px;
+	margin-left:-330px;
+	margin-top:-183px;
+}
+.smart #feedback{
+	top:0px;
+	left:0px;
+	height: 100%;
+    width: 100%;
+	border-radius:0px;
+	margin-left:0px;
+	margin-top: 0px;
+}
+.smart #labelFeedback{
+	background-position:left center;
+}
+.smart #feedback .popup_chiudi{
+    position: fixed;
+    top: 0px;
+    right: 0px;
+}
+#feedbackForm input[type='text']::placeholder, 
+#feedbackForm input[type='email']::placeholder, 
+#feedbackForm textarea::placeholder{
+	opacity:1;
+	font-style:italic;
+}
+@media (max-width: 480px){
+	body:not(.smart) #feedback{
+		padding-left:10px;
+		padding-right:10px;
+	}
+}
+#labelFeedback{
+	background-image:url(../img/ico_feedbackN.png);
+	background-position:10px center;
+}
+@media (max-width: 700px){
+	body:not(.smart) #feedback{
+		left:10px;
+		width:calc(100% - 20px);
+		margin-left:0px;
+	}
+}
+@media (max-width: 480px){
+	body:not(.smart) #feedback{
+		left:0px;
+		width:100%;
+		height:auto !importan;/*344px;*/
+		margin-top:-172px;
+		border-radius:0px;
+	}
+}

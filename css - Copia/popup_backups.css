@@ -1,0 +1,159 @@
+@charset "utf-8";
+/* CSS Document */
+
+/* BACKUPS */
+#backups{
+    width: 400px;
+    height: calc(100% - 40px);
+    margin-left: -200px;
+    margin-top: 0px;
+    top: 20px;
+}
+.smart #backups{
+	top:0px;
+	left:0px;
+	height: 100%;
+    width: 100%;
+	border-radius:0px;
+	margin-left:0px;
+}
+.smart #backups .popup_chiudi{
+    position: fixed;
+    top: 0px;
+    right: 0px;
+}
+#contBackups{
+	padding:0px;
+	height: calc(100% - 90px);
+    background-color: #FFF;
+    overflow-y: auto;
+    border-bottom-left-radius: 6px;
+    border-bottom-right-radius: 6px;
+}
+.dbBig{
+	background: url(../img/dbBig.png);
+    background-repeat: no-repeat;
+    background-size: 250px;
+    background-position: -20px bottom;
+}
+
+#contBackups.noConn{
+    background-position: center 50px !important;
+    background-color: rgba(0,0,0,0.2) !important;
+    background-repeat: no-repeat !important;
+	background-size: auto !important;
+}
+#labelBackups{
+	background-image:url(../img/ico_downloadN.png);
+	background-position:10px center;
+}
+#toolsBackups,
+#titBackups{
+	padding:5px;
+	border-top:1px solid rgba(0,0,0,0.2);
+	border-bottom:1px solid rgba(0,0,0,0.2);
+	background-color:rgba(0,0,0,0.3);
+	text-align:center;
+	height:50px;
+}
+#toolsBackups span{
+	width: 1px;
+    height: 31px;
+    display: inline-block;
+    border-left: 1px dotted rgba(0,0,0,0.3);
+    margin-left: 1px;
+    vertical-align: middle;
+}
+#creaBackup_btn,
+#creaDownload_btn{
+	display:inline-block;
+	vertical-align:middle;
+	margin:3px;
+	border-radius:5px;
+	background-repeat:no-repeat;
+	background-position:left center;
+	color:#DDD;
+	padding-left:35px;
+	padding-right:10px;
+	height:32px;
+	line-height:32px;
+	cursor:pointer;
+}
+#toolsBackups div:hover{
+	background-color:rgba(255,255,255,0.1);
+}
+#creaBackup_btn{
+	background-image:url(../img/ico_backup.png);
+}
+#creaDownload_btn{
+	background-image:url(../img/ico_download.png);
+}
+
+.elsBackups{
+    width: calc(100%);
+    height: 40px;
+    line-height: 40px;
+    padding-right: 10px;
+    padding-left: 35px;
+    background-image: url(../img/ico_backupN.png), url(../img/frDxB.png);
+    background-position: 3px center, calc(100% - -6px) center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    border-bottom: 1px solid #CCC;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    background-size: auto 32px, auto 46px;
+    text-align: left;
+	cursor:pointer;
+}
+.elsBackups:hover{
+	background-color:rgba(0,0,0,0.1);
+}
+#backupsTorna{
+    background-image:url(../img/frSx.png);
+    background-position: left center;
+    background-repeat: no-repeat;
+    background-size: auto 46px;
+	padding-left:44px;
+    width: calc(100%);
+    height: 40px;
+    line-height: 40px;
+    border-bottom: 1px solid #CCC;
+	background-color:#444;
+	color:#DDD;
+	text-align:left;
+	cursor:pointer;
+}
+#backupsTorna:hover{
+	background-color:#4E4E4E;
+}
+#elBackup{
+	float:right;
+	width:40px;
+	height:40px;
+	margin-left:-40px;
+	display:inline-block;
+	background:url(../img/ico_notifiche_cestino.png) no-repeat center center;
+	cursor:pointer;
+}
+#elBackup:hover{
+	background-color:rgba(255,255,255,0.1);
+}
+#contBackups .btn_annulla{
+	padding:10px;
+}
+#contBackups .btn_invia{
+	margin-left:13px;
+}
+#nomeBackup{
+	background-color: rgba(0,0,0,0.1);
+    margin-left: 20px;
+    margin-right: 20px;
+    width: calc(100% - 41px);
+    text-align: center;
+}
+#nomeBackup::placeholder{
+	opacity:1;
+	font-style:italic;
+}

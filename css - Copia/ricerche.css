@@ -1,0 +1,376 @@
+@charset "utf-8";
+/* CSS Document */
+
+#parolaGlobal{
+	width: calc(100% - 86px);
+    background-color: #FFF;
+    /*text-align: center;*/
+    color: #000;
+    text-overflow: ellipsis;
+    border: 3px solid #2f2e2b;
+    margin-left: -10px;
+    margin-right: -7px;
+    margin-top: -3px;
+   /* font-weight: bold;*/
+	padding-left:10px;
+}
+body:not(.smart) #parolaGlobal{
+    height: 36px !important;
+    line-height: 36px !important;
+}
+.smart #parolaGlobal{
+	height: 40px !important;
+	line-height: 34px !important;
+	width: calc(100% - 80px) !important;
+}
+body:not(.smart) #parolaGlobal::-webkit-input-placeholder{
+	font-weight:normal !important;
+	font-size:11px !important;
+	padding-left:2px;
+}
+.smart #parolaGlobal::-webkit-input-placeholder{
+	font-weight:normal !important;
+	font-size:16.5px !important;
+	padding-left:2px;
+}
+#parolaGlobal::-moz-placeholder{
+	opacity:0.5 !important;
+	font-weight:normal !important;
+	/*text-align:center !important;*/
+	font-size:11px !important;
+	padding-left:2px;
+}
+#cerca_btn{
+    display: inline-block;
+    height: 30px !important;
+    line-height: 30px !important;
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+    padding-left: 10px;
+    padding-right: 10px;
+    color: #FFF;
+    box-shadow: 0px 0px 3px rgba(0,0,0,0.5);
+    cursor: pointer;
+    width: 95px;
+    background-color: #2f67d2;
+}
+#cerca_btn:hover{
+    background-color: #1b4ca8 !important;
+}
+.smart #cerca_btn{
+	height: 34px !important;
+    line-height: 34px !important;
+    vertical-align: top;
+}
+#annGlobal {
+    width: 30px;
+    height: 30px;
+    background: url(../img/ch.png) no-repeat center center;
+    background-size: 16px;
+    background-position: center center;
+    cursor: pointer;
+    position: absolute;
+    z-index: 16;
+    margin-left: -30px;
+}
+.boxMnOp:not(.globalOk) #annGlobal{
+    right: var(--menu-width) !important;
+    margin-right: -29px;
+}
+@media (max-width: 600px){
+	.imgDelRes{
+		border-top: 1px solid rgba(0,0,0,0.2);
+		padding: 5px;
+		padding-bottom: 0px;
+	}
+}
+.globalOk{
+    height: 32px !important;
+    padding-right: 35px !important;
+    opacity: 1 !important;
+    right: 53px !important;
+    top: 4px !important;
+    z-index: 19 !important;
+}
+#parolaGlobal::-webkit-input-placeholder, .globalOk input::-webkit-input-placeholder{
+	opacity:0.5 !important;
+}
+#parolaGlobal::-moz-placeholder{
+	opacity:0.5 !important;
+}
+.globalOk input::-moz-placeholder{
+	opacity:0.5 !important;
+}
+#schedaGlobal{
+	position:fixed;
+	height: calc(100% - 50px);
+	top:0px;
+	padding-bottom:35px;
+	border-bottom-right-radius: 6px;
+	display:none;
+}
+body:not(.smart) #schedaGlobal{
+	width:600px;
+	box-shadow: 0px 0px 5px rgba(0,0,0,0.7);
+	left:48px;
+	z-index:18;
+	padding-top:3px;
+}
+.smart #schedaGlobal{
+	width:100%;
+	padding-bottom: 35px !important;
+	z-index:500 !important;
+	bottom: 54px;
+    height: calc(100% - 60px) !important;
+}
+@media (max-width: 600px){
+    #schedaGlobal{
+		width: 100% !important;
+		height:100% !important;
+	}
+	#schedaGlobal,
+	#globalCont{
+		border-bottom-right-radius: 0px !important;
+	}
+}
+#globalTitolo{
+	font-size:14.3px !important;
+    font-weight: bold;
+    width: calc(100% - 38px);
+    height: 30px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    -o-text-overflow: ellipsis;
+    border-radius: 3px;
+    display: inline-block;
+    vertical-align: middle;
+}
+body:not(.smart) #globalTitolo{
+    margin-left: 3px;
+}
+.smart #globalTitolo{
+	height: 34px !important;
+    width: calc(100% - 41px) !important;
+}
+body:not(.smart) #globalTesta{
+	height: 35px;
+}
+.smart #globalTesta{
+	height: 39px;
+}
+#schedaGlobal{
+	background-color:#2f2e2b;
+}
+#globalCont{
+	background-color:var(--ricerche-fondino) !important;
+}
+#globalTesto{
+	color:#333;
+	width:100%;
+	box-sizing:border-box;
+}
+.smart.android #globalTesto > p:first-child > b{
+	font-size:17px !important;
+}
+.globalHistory{
+    overflow-y: auto;
+    height: 100%;
+}
+#titHistoryGlobal{
+	height:32px;
+}
+#titHistoryGlobal b{
+	float:left;
+	cursor:pointer;
+	margin-left:14px;
+	font-size:18px;
+}
+#titHistoryGlobal span{
+	display:block;
+	float:right;
+	cursor:pointer;
+	margin-right:14px;
+}
+#globalChiusura{
+    width: 35px;
+    height: 32px;
+    background: url(../img/chMenu.png) no-repeat center center;
+    background-size: 35px;
+    cursor: pointer;
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: -5px;
+}
+.smart #globalChiusura{
+	width: 40px !important;
+    height: 38px !important;
+	background-size: auto;
+	background-position: center top;
+	margin-right: -2px;
+    margin-left: -5px;
+}
+#globalCont{
+    width: 100%;
+    position: relative;
+    height: 100%;
+    border-bottom-right-radius: 6px;
+	background-color:#2f2e2b;
+}
+.smart #globalCont{
+	height: calc(100% + 2px) !important;
+}
+.risGlob{
+    font-size:13.2px !important;
+	padding:7px;
+	overflow:hidden;
+	white-space:nowrap;
+	cursor:pointer;
+	overflow:hidden;
+	text-overflow: ellipsis;
+	text-align: left;
+}
+.risGlob.selO,
+.risGlob.selV,
+.risGlob.selM{
+	background-size:auto 80%;
+	background-repeat:no-repeat;
+	background-position:-500px center, 5px center;
+}
+.globalHistory .risGlob{
+	border-top: 1px solid rgba(0,0,0,0.2);
+}
+#globalTesto:not(.globalHistory) .risGlob{
+	color: rgba(255,255,255,0.7);
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+}
+#globalTesto:not(.globalHistory) .risGlob *:not(font){
+	color: rgba(255,255,255,0.7);
+}
+.risLente{
+	background-image:url(../img/lenteRis.png);
+	background-repeat:no-repeat;
+	background-position:10px center;
+	padding-left:35px;
+}
+.risGlob:hover{
+	background-color:rgba(0,0,0,0.2);
+}
+.noResGlob{
+	color:#666;
+	font-style:italic;
+	font-size:13.2px !important;
+	padding:7px;
+	overflow:hidden;
+	white-space:nowrap;
+}
+#globalIndex, #globalList{
+	display:inline-block;
+	vertical-align:top;
+	height:100%;
+}
+
+@media (max-width: 600px){
+	#globalIndex, #globalList{
+		display: block;
+		width: 100% !important;
+		float: none !important;
+	}
+	#globalList{
+		height: calc(100% - 36px);
+		top:36px !important;
+	}
+	#globalIndex:not(.visIndex) > div:not(.labelSel){
+		display: none;
+	}
+	#globalIndex:not(.visIndex) .labelSel{
+		background-image:url(../img/frGiuB.png) !important;
+		background-size: auto 146%;
+		line-height: 36px;
+    	height: 36px;
+	}
+	#globalIndex.visIndex .labelGlobal{
+		background-image:url(../img/frDxB.png) !important;
+		background-repeat:no-repeat;
+		background-position:right center;
+		background-size: auto 146%;
+		line-height: 36px;
+    	height: 36px;
+	}
+	.visIndex{
+		z-index: 18 !important;
+		position: absolute !important;
+		background: var(--menu-fondino) !important;
+	}
+	.risGlob{
+		line-height: 20px;
+    	height: 36px;
+	}
+}
+#globalIndex{
+	width: 200px;
+	float:left;
+}
+#globalList{
+	width: 400px;
+    background-color:#2f2e2b;
+    overflow-y: auto;
+    position: absolute;
+    right: 0px;
+}
+.labelGlobal{
+	width:100%;
+    color: #666;
+    text-align: left;
+    background-size: 44px;
+    line-height: 30px;
+    padding-left: 10px;
+    padding-right: 10px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+    cursor: pointer;
+}
+.labelGlobal:not(.labelSel):hover{
+	background-color:rgba(0,0,0,0.05);
+}
+.labelSel{
+	background-color:rgba(0,0,0,0.1);
+	background-image:url(../img/frRicerca.png);
+	background-position:right center;
+	background-repeat:no-repeat;
+	background-size: auto 25px;
+	color: #222;
+}
+.contRisGlob{
+	display:none;
+}
+.contRisSel{
+	display:block !important;
+}
+.contGlobOp{
+	display:block !important;
+}
+#divGlobal .colsGlobal{
+    box-sizing: border-box;
+    width: 100%;
+    padding-top: 10px;
+    margin-bottom: 10px;
+    border-top: 1px solid rgba(0,0,0,0.2);
+}
+#divGlobal .colsGlobal:first-child{
+	border-top: none !important;
+}
+
+
+
+/* evidenziatori di parole nelle schede */
+.fraseEvi{
+	background-color:#FC9;
+	padding:3px;
+	border-radius:5px
+}
+.parolaEvi{
+	background-color:#FF9;
+}

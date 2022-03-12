@@ -1,0 +1,77 @@
+@charset "utf-8";
+/* CSS Document */
+
+/* COLORI */
+#colori{
+	width:400px;
+	height:280px;
+	margin-left:-200px;
+	margin-top:-140px;
+}
+#labelColori{
+	background-image:url(../img/ico_coloriN.png);
+	background-position:10px center;
+}
+#colSel,
+#skinSel{
+	text-align:center;
+}
+#colSel span,
+#skinSel span{
+	display:inline-block;
+	width:40px;
+	height:40px;
+	margin:5px;
+	border-radius:4px;
+	box-shadow:0px 0px 5px #000;
+	cursor:pointer;
+}
+#guida_generica #colSel{
+    text-align: left;
+    width: 120px;
+    margin-bottom: -47px;
+    margin-top: 36px;
+}
+body:not(.smart) #guida_generica #colSel{
+    margin-left: -28px;
+}
+#guida_generica #colSel p{
+	margin:0px;
+}
+#guida_generica #colSel p:first-child{
+	margin-bottom: 3px;
+    font-style: italic;
+    opacity: 0.6;
+    font-size: 11px;
+    padding-left: 3px;
+}
+#guida_generica #colSel span{
+	width:20px;
+	height:20px;
+	box-shadow:0px 0px 2px #000;
+	border-radius:3px;
+	margin:3px;
+}
+.cSel{
+	border:1px solid #FFF;
+	cursor:default;
+}
+.c0{
+	background-color:#333;
+}
+.c1{
+	background-color:#06C;
+}
+.c2{
+	background-color:#eae3d3;
+}
+
+.p0{
+	background-color:#e6c8b5;
+}
+.p1{
+	background-color:#86715f;
+}
+.p2{
+	background-color:#52453b;
+}
