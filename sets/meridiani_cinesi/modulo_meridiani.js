@@ -64,14 +64,12 @@ var MODULO_MERIDIANI = { // extend SET
 		document.getElementById("meridianiSmart_cont").classList.toggle("visSch");
 	},
 	swElencoPt: function( el, m ){
-		//if(!smartMenu){
-			if(!document.getElementById("e_"+m).classList.contains("visElPt")){
-				document.getElementById("e_"+m).classList.add("visElPt");
-				el.classList.add("frSw");
-			}else{
-				document.getElementById("e_"+m).classList.remove("visElPt")
-				el.classList.remove("frSw");
-			}
-		//}else SET.accendiMeridiano(m,true);
+		if(!document.getElementById("e_"+m).classList.contains("visElPt")){
+			document.getElementById("e_"+m).classList.add("visElPt");
+			el.classList.add("frSw");
+		}else{
+			document.getElementById("e_"+m).classList.remove("visElPt")
+			el.classList.remove("frSw");
+		}
 	}
 }

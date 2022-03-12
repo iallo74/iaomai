@@ -159,17 +159,20 @@
 
 
 /* ELENCHI */
-/*body:not(.touch) */#p_set{ /* <<<<<<<<<<<< NUOVO MENU */
+
+.smart #p_set{
 	background-image: url(img/logoMenu.png);
 }
-body:not(.bodyStyled1):not(.bodyStyled2):not(.smart) #p_set{ /* <<<<<<<<<<<< NUOVO MENU */
+body:not(.smart) #p_set{
+	background: url(img/logoMenu.png), linear-gradient(to bottom, #0f3a89 0%,#1546a1 5px,#1546a1 calc(100% - 5px),#0f3a89 100%);
+}
+body:not(.bodyStyled1):not(.bodyStyled2):not(.smart) #p_set{
 	background-image: url(img/logoMenuN.png);
 }
-/*body:not(.touch) */#p_set svg polygon{ /* <<<<<<<<<<<< NUOVO MENU */
+/*body:not(.touch) */#p_set svg polygon{
 	fill: var(--menu-fondino);
 }
 .listaMeridiani > div{
-	/*background-image:linear-gradient(to bottom, #FFF 0%,#EEE 100%);*/
 	background-color: rgba(255,255,255,0.83) !important;
 }
 .listaMeridiani > div:not(.elencoSel):not(.lockedItem):hover{
@@ -182,6 +185,54 @@ body:not(.bodyStyled1):not(.bodyStyled2):not(.smart) #p_set{ /* <<<<<<<<<<<< NUO
     padding-right: 12px;
     text-shadow: 1px 1px 1px rgba(255,255,255,0.6), -1px -1px 1px rgba(0,0,0,0.11);
     color: rgba(0,0,0,0.6);
+}
+.listaMeridiani > div strong{
+	float: right;
+    display: inline-block;
+	margin:2px;
+    width:32px;
+	height:32px;
+	border-radius:16px;
+	/*background-image:url(../../img/frGiuB.png);*/
+	background-size:auto 40px;
+	background-repeat: no-repeat;
+	background-position:center center;
+}
+.smart .listaMeridiani > div strong{
+	margin-right: -4px !important;
+}
+
+.listaMeridiani > div:not(.frSw) strong{
+	background-image:url(../../img/frGiuB.png);
+}
+.smart.android .listaMeridiani > div strong{
+	width: 46px;
+    height: 46px;
+    border-radius: 23px;
+}
+.smart.android .listaMeridiani > div#pEX strong{
+	margin-right: 3px !important;
+}
+.listaMeridiani > div.frSw strong{
+	background-image:url(../../img/frSuB.png);
+}
+.listaMeridiani > div:not(.overLight):hover strong{
+	background-color:rgba(0,0,0,0.1);
+}
+.listaMeridiani > div b{
+	float: left;
+    display: inline-block;
+    text-align: left;
+    text-shadow: 1px 1px 1px rgb(255 255 255 / 60%), -1px -1px 1px rgb(0 0 0 / 11%);
+    color: rgba(0,0,0,0.6);
+    width: 32px;
+}
+#meridianiSmart_cont:not(.onlyCIN) .noMAS,
+.listaMeridiani:not(.onlyCIN) .noMAS{
+	display:none !important;
+}
+.onlyCIN .noCIN{
+	display:none !important;
 }
 .listaMeridiani > div.lockedItem {
     cursor: default !important;
@@ -224,11 +275,78 @@ body:not(.touch) .listaMeridiani .spazioDopo{
 	margin-bottom: 6px !important;
 }
 
+
+
+
+.elencoPunti{
+    display: none;
+    width: 100% !important;
+    margin: 0px !important;
+    border: 0px !important;
+	color:#FFF !important;
+    text-align: left;
+    padding-left: 5px;
+    padding-right: 5px;
+    margin-bottom: 10px !important;	
+	height: auto !important;
+}
+.smart.android .elencoPunti p{
+	height:41px;
+	border-bottom: 1px solid rgba(0,0,0,0.2);
+}
+.smart.android .elencoPunti p:last-child{
+	border-bottom: none;
+}
+.smart.android .elencoPunti p *{
+	line-height: 37px !important;
+    font-size: 16px !important;
+	background-position: 5px 14px !important;
+}
+.visElPt{
+	display:block !important;
+}
+.elencoPunti p{
+	margin:0px;
+}
+.elencoPunti a{
+	width: calc(100% - 5px) !important;
+	background-position: 5px 9px !important;
+    padding-left: 22px !important;
+	height:28px !important;
+	border-radius:3px !important;
+}
+body:not(.smart) .elencoPunti a,
+body:not(.smart) .elencoPunti a *{
+	color: #FFF !important;
+	font-size:12px !important;
+}
+.smart .elencoPunti a,
+.smart .elencoPunti a *{
+	color: #FFF !important;
+	font-size:13px !important;
+}
+body:not(.smart) .selElPt{
+	background-color:rgba(0,0,0,0.3) !important;
+}
+
+
+
+
+
+
+
+
+
+
+
 .elencoSel span{
 	border: none !important;
 }
 .elencoSel b{
 	text-shadow:none !important;
+}
+#pEX{
+	padding-right: 0px !important;
 }
 .p_none.elencoSel span,
 .p_legno.elencoSel span,
@@ -240,6 +358,44 @@ body:not(.touch) .listaMeridiani .spazioDopo{
 .p_terra.elencoSel span,
 .p_aria.elencoSel span{
 	background-image:url(img/chMenuB.png) !important;
+}
+
+body:not(.smart) .listaMeridiani .p_none:not(.elencoSel) span:hover,
+body:not(.smart) .listaMeridiani .p_legno:not(.elencoSel) span:hover,
+body:not(.smart) .listaMeridiani .p_fuoco:not(.elencoSel) span:hover,
+body:not(.smart) .listaMeridiani .p_fuoco_supplementare:not(.elencoSel) span:hover,
+body:not(.smart) .listaMeridiani .p_acqua:not(.elencoSel) span:hover,
+body:not(.smart) .listaMeridiani .p_terra:not(.elencoSel) span:hover{
+    background-image:url(../../img/ico_lampadinaB.png) !important;
+	background-size:auto !important;
+}
+body:not(.smart) .listaMeridiani .p_aria:not(.elencoSel) span:hover{
+	background-image:url(../../img/ico_lampadinaN.png) !important;
+	background-size:auto !important;
+}
+
+
+.p_none.elencoSel:not(.frSw) strong,
+.p_acqua.elencoSel:not(.frSw) strong,
+.p_legno.elencoSel:not(.frSw) strong,
+.p_fuoco.elencoSel:not(.frSw) strong,
+.p_fuoco_supplementare.elencoSel:not(.frSw) strong{
+	background-image:url(../../img/frGiu.png) !important;
+}
+.p_none.elencoSel.frSw strong,
+.p_acqua.elencoSel.frSw strong,
+.p_legno.elencoSel.frSw strong,
+.p_fuoco.elencoSel.frSw strong,
+.p_fuoco_supplementare.elencoSel.frSw strong{
+	background-image:url(../../img/frSu.png) !important;
+}
+
+.p_none.elencoSelnot(.overLight):hover strong,
+.p_acqua.elencoSelnot(.overLight):hover strong,
+.p_legno.elencoSelnot(.overLight):hover strong,
+.p_fuoco.elencoSelnot(.overLight):hover strong,
+.p_fuoco_supplementare.elencoSelnot(.overLight):hover strong{
+	background-color:rgba(255,255,255,0.3) !important;
 }
 .p_none span:not(.valMerid),
 .p_none.elencoSel{
@@ -317,11 +473,11 @@ body:not(.touch) .listaMeridiani .spazioDopo{
 	.touch #elenchi #lista_meridiani div > div span{
 		height: 50px;
 	}
-	.listaMeridiani > div b {
-		padding-left: 12px;
-	}
-	.listaMeridiani > div.lockedItem b {
+	body:not(.smart) .listaMeridiani > div.lockedItem b {
 		margin-left: 14px;
+	}
+	.smart .listaMeridiani > div b {
+		padding-left: 0px;
 	}
 }
 
@@ -458,7 +614,7 @@ body:not(.bodyModello) #btns_set > div{
     line-height: 28px;
     border-radius: 15px;
     text-align: center;
-    font-size: 9px;
+    font-size: 11px;
     margin: 2px;
     cursor: pointer;
     background-color: rgba(255,255,255,0.2);

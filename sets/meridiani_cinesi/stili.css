@@ -166,22 +166,21 @@
 
 
 /* ELENCHI */
-/*body:not(.touch) */#p_set{ /* <<<<<<<<<<<< NUOVO MENU */
+.smart #p_set{
 	background-image: url(img/logoMenu.png);
 }
-body:not(.bodyStyled1):not(.bodyStyled2):not(.smart) #p_set{ /* <<<<<<<<<<<< NUOVO MENU */
+body:not(.smart) #p_set{
+	background: url(img/logoMenu.png), linear-gradient(to bottom, #0f3a89 0%,#1546a1 5px,#1546a1 calc(100% - 5px),#0f3a89 100%);
+}
+body:not(.bodyStyled1):not(.bodyStyled2):not(.smart) #p_set{
 	background-image: url(img/logoMenuN.png);
 }
-/*body:not(.touch) */#p_set svg polygon{ /* <<<<<<<<<<<< NUOVO MENU */
+/*body:not(.touch) */#p_set svg polygon{
 	fill: var(--menu-fondino);
 }
 .listaMeridiani > div{
-	/*background-image:linear-gradient(to bottom, #FFF 0%,#EEE 100%);*/
 	background-color: rgba(255,255,255,0.83) !important;
 }
-/*.listaMeridiani > div:not(.elencoSel):not(.lockedItem):hover{
-	background-image:linear-gradient(to bottom, #EEE 0%,#DDD 100%);
-}*/
 .listaMeridiani > div strong{
 	float: right;
     display: inline-block;
@@ -561,7 +560,7 @@ body:not(.bodyModello) #btns_set{
     line-height: 28px;
     border-radius: 15px;
     text-align: center;
-    font-size: 9px;
+    font-size: 11px;
     margin: 2px;
     cursor: pointer;
     background-color: rgba(255,255,255,0.2);

@@ -483,6 +483,10 @@ SET = {
 			var mat=this.MAT.pointOn;
 			if(this.ptSel.userData.nota)mat=this.MAT.pointNote;
 			SET.setPulsePt( this.ptSel, 1, 1, mat );
+			var pP = this.ptSel.name.split(".");		
+			var siglaMeridiano = pP[0];
+			var nTsubo = parseInt(pP[1])-1;
+			document.getElementById("pt_"+(nTsubo+1)+"_"+siglaMeridiano).classList.remove("selElPt");
 		}
 		var pP = PT_name.split(".");		
 		var siglaMeridiano = pP[0];
@@ -509,6 +513,7 @@ SET = {
 		if(ptDx)ptDx.material=mat;
 		this.diffX = this.ptSel.position.x*1;
 		this.diffY = this.ptSel.position.y*1;
+		document.getElementById("pt_"+(nTsubo+1)+"_"+siglaMeridiano).classList.add("selElPt");
 		
 		panEndZero = { x: 0-this.ptSel.position.x, y: 0-this.ptSel.position.y, z: 0-this.ptSel.position.z };
 		panEnd = { x: 0, y: 0, z: 0 };
@@ -649,6 +654,7 @@ SET = {
 	},
 	accendiMeridiano: function( siglaMeridiano, g ){
 		// verifico le autorizzazioni
+		if(!globals.modello.cartella)return;
 		if(SET.MERIDIANI_free.indexOf(siglaMeridiano)==-1 && (DB.login.data.auths.indexOf(globals.set.cartella)==-1 || !LOGIN.logedin())){
 			ALERT(Lingua(TXT_MsgFunzioneSoloPay));
 			controlsM._MM = true;
@@ -758,16 +764,27 @@ SET = {
 		if(SET.COL.contrastMethod)document.getElementById("p_contrasto").classList.add("btnSel");
 		else document.getElementById("p_contrasto").classList.remove("btnSel");
 	},
-	scriviTsubo: function(tsubo,esteso){
+	scriviTsubo: function( tsubo, esteso, noRet, sigla ){
 		if(typeof(esteso)=='undefined')var esteso = false;
+		if(typeof(noRet)=='undefined')var noRet = false;
+		if(typeof(sigla)=='undefined')var sigla = false;
 		var pT = tsubo.split(".");
 		var siglaTsubo = pT[0]+"."+pT[1];
+		var siglaTsuboOr = siglaTsubo;
+		var nomeTsubo = tsubo.substr(siglaTsubo.length,tsubo.length-siglaTsubo.length);
+		if(sigla)siglaTsubo = sigla;
 		var nTsubo = pT[0];
 		if(nTsubo.length == 1)nTsubo = '0' + nTsubo;
 		var html = '<a class="pallinoPat';
 		if(esteso)html += ' pallinoPatEsteso';
-		html += '" onClick="SET.apriTsubo(\''+pT[1]+"."+nTsubo+'\',\'SET.chiudiTsubo(true)\');"> '+siglaTsubo+'';
-		if(esteso)html+='<i>'+tsubo.substr(siglaTsubo.length,tsubo.length-siglaTsubo.length);
+		var ret = '';
+		if(!noRet)ret = SET.chiudiTsubo(true);
+		html += '" onClick="SET.apriTsubo(\''+pT[1]+"."+nTsubo+'\',\''+ret+'\');"';
+		if(noRet)html += '  onMouseOver="SET.overTsubo(this,true);"' +
+						 '  onMouseOut="SET.overTsubo(this,false);"' +
+						 '	id="pt_'+siglaTsuboOr.replace('.','_')+'"';
+		html += '> '+siglaTsubo;//+' ';
+		if(esteso)html+='<i>'+nomeTsubo;
 		html+='</i></a>';
 		return html;
 	},
