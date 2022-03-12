@@ -57,7 +57,6 @@ textarea{
 	-webkit-appearance: none;
 	
 }
-.submitBtn,
 .stampaBtn{
 	color: #FFF;
 	background: #2b2b2b;
@@ -65,6 +64,15 @@ textarea{
 	background: -webkit-linear-gradient(top, #606060 0%,#2b2b2b 100%);
 	background: linear-gradient(to bottom, #606060 0%,#2b2b2b 100%);
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#606060', endColorstr='#2b2b2b',GradientType=0 );
+	box-shadow: 0px 0px 3px rgba(0,0,0,0.5);
+}
+.submitBtn{
+	color: #000;
+	background: #FFF;
+	background: -moz-linear-gradient(top, #FFF 0%, #BBB 100%);
+	background: -webkit-linear-gradient(top, #FFF 0%,#BBB 100%);
+	background: linear-gradient(to bottom, #FFF 0%,#BBB 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#FFF', endColorstr='#BBB',GradientType=0 );
 	box-shadow: 0px 0px 3px rgba(0,0,0,0.5);
 }
 .annullaBtn{
@@ -112,13 +120,19 @@ textarea{
 .smart.android .stampaBtn{
 	font-size:17px;
 }
-.submitBtn:not(.disBtn):hover,
 .stampaBtn:not(.disBtn):hover{
 	background: #3b3b3b;
 	background: -moz-linear-gradient(top, #707070 0%, #3b3b3b 100%);
 	background: -webkit-linear-gradient(top, #707070 0%,#3b3b3b 100%);
 	background: linear-gradient(to bottom, #707070 0%,#3b3b3b 100%);
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#707070', endColorstr='#3b3b3b',GradientType=0 );
+}
+.submitBtn:not(.disBtn):hover{
+	background: #EEE;
+	background: -moz-linear-gradient(top, #EEE 0%, #AAA 100%);
+	background: -webkit-linear-gradient(top, #EEE 0%,#AAA 100%);
+	background: linear-gradient(to bottom, #EEE 0%,#AAA 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#EEE', endColorstr='#AAA',GradientType=0 );
 }
 .annullaBtn:not(.disBtn):hover{
 	background: #bcbcbc;
@@ -140,7 +154,7 @@ body:not(.smart) #scheda:not(.h150) .formBtn{
     padding: 10px !important;
     padding-right: 18px !important;
     border-top: 1px solid rgba(0,0,0,0.3) !important;
-    background-color: var(--menu-fondino) !important;
+    background-color: #444 !important;
     margin: 0px !important;
 }
 /*.smart .formBtn{
@@ -828,9 +842,10 @@ body:not(.smart) .stampaBtn{
 .smart.android .p_paz_el{
 	font-size:17px;
 }
-body:not(.smart) .p_paz_el{
+body:not(.smart) #scheda:not(.h150) .p_paz_el{
     margin-top: 4px;
-	color: #b26c6c;
+	color: #ff815a;
+    background-image: url(../img/ico_cestinoA.png) !important;
 }
 #puntiTsuboMap,
 #meridianiTsuboMap{ /* PAZIENTI */

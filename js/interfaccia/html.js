@@ -102,10 +102,6 @@ var H = {
 						'	  onClick="'+obj.azModifica+';"' +
 						'	  data-value="'+htmlEntities(obj.label)+'"' +
 						'	  class="occhio">';
-						/*'		<img src="img/ico_modifica_anag.png"' +
-						'			 class="ico_mod_label_etichette"' +
-						'			 data-value="'+htmlEntities(obj.label)+'"' +
-						'		 	 onClick="'+obj.azModifica+';">';*/
 				if(obj.label && !obj.noLabel){
 					if(obj.labelOut)tgLab = 'em';
 					else tgLab = 'i';
@@ -119,8 +115,7 @@ var H = {
 						'		placeholder="'+htmlEntities(obj.label)+'"';
 				if(obj.maxChars)html += '		maxlength="'+obj.maxChars+'"'	
 				if(id.indexOf("|tel")>-1 || id.indexOf("|cell")>-1)html += 
-						'		onKeyUp="return H.keyTelefono(this,'+(id.indexOf("|cell")>-1)+');"'/* +
-						'		onBlur="return H.blurTelefono(this,'+(id.indexOf("|cell")>-1)+');"'*/;
+						'		onKeyUp="return H.keyTelefono(this,'+(id.indexOf("|cell")>-1)+');"';
 						
 				html += 		addCampo+H.noAutoGen+'>';
 				if(obj.azCancella)html += 

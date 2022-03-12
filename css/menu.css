@@ -30,7 +30,6 @@
     z-index: 1000;
     bottom: 54px;
     width: 100%;
-    /*padding-top: 10px;*/
 }
 
 
@@ -57,13 +56,6 @@ body.smart #icone{
 }
 .smart #icone{
 	box-shadow: 0px 0px 5px rgba(0,0,0,0.5);
-}
-.smart .iconeNasc{
-	overflow:hidden;
-	height: 0px !important;
-}
-.smart .iconeNasc div:not(.p_noTxt){
-	display:none;
 }
 .smart #icone.iconeHome{
 	height: 220px !important;
@@ -106,16 +98,16 @@ body:not(.smart) #icone.iconeEspanse{
     margin: 0px;
     background-position: center center;
 }
-.smart #icone:not(.iconeHome) div:not(#btns_set):not(#cartella_set):not(.p_noTxt){
+.smart #icone:not(.iconeHome) div:not(#btns_set):not(#cartella_set){
     margin-top: 7px;
     border-left: 1px solid rgba(255,255,255,0.1);
     border-right: 1px solid rgba(0,0,0,0.4);
 }
-.smart #icone:not(.iconeHome) div:not(#btns_set):not(#cartella_set):not(.p_noTxt):not(#p_set){
+.smart #icone:not(.iconeHome) div:not(#btns_set):not(#cartella_set):not(#p_set){
     height: 40px !important;
 }
 
-.smart #icone.iconeHome div:not(#btns_set):not(#cartella_set):not(#p_modello):not(.p_noTxt){
+.smart #icone.iconeHome div:not(#btns_set):not(#cartella_set){
 	width: calc((100% + 0px) / 3);
     height: 110px;
     float: left;
@@ -126,7 +118,7 @@ body:not(.smart) #icone.iconeEspanse{
     padding-top: 70px;
     border-bottom: 1px solid #444;
 }
-.smart .p_noTxt{
+.smart #contBtnModello > div{
 	width: 48px !important;
     height: 48px !important;
 }
@@ -135,10 +127,6 @@ body:not(.smart) #icone.iconeEspanse{
 .smart #icone:not(.iconeHome) #cartella_set,
 .smart #icone:not(.iconeHome) #p_impostazioni{
     border-left: none !important;
-}
-.smart #icone:not(.iconeHome) #p_sets,
-.smart #icone:not(.iconeHome) #cartella_set{
-	margin-left:54px !important;
 }
 .smart #icone:not(.iconeHome) #p_impostazioni{
     border-right: none !important;
@@ -203,7 +191,7 @@ body:not(.smart) #icone.iconeTrans div:not(#btns_set):not(#cartella_set){
 .smart #icone div i{
 	display:none;
 }
-.smart #icone.iconeHome div:not(#btns_set):not(#cartella_set):not(#p_modello):not(.p_noTxt) i{
+.smart #icone.iconeHome div:not(#btns_set):not(#cartella_set) i{
 	display:block !important;
 	color:#FFF;
 	font-style:normal;
@@ -219,10 +207,6 @@ body:not(.smart) #icone div:not(#btns_set):not(#cartella_set) i{
 }
 body:not(.bodyStyled1):not(.bodyStyled2):not(.smart) #icone div:not(#btns_set):not(#cartella_set) i{
 	color:#000;
-}
-.p_noTxt i{
-	font-size:12.1px !important;
-	line-height: 28px !important;
 }
 body:not(.smart) #icone.iconeTrans div:not(#btns_set):not(#cartella_set) i{
 	transition: opacity 0.3s;
@@ -264,9 +248,6 @@ body:not(.bodyStyled1):not(.bodyStyled2):not(.smart) #p_sets{
 #p_agenda.p_sel svg polygon{
 	fill: var(--menu-fondino);
 }
-.smart #p_modello.p_sel svg{
-	margin-top: -31px !important;
-}
 .smart #p_modello.p_sel svg polygon{
 	fill: #FFF !important;
 }
@@ -303,13 +284,6 @@ body:not(.bodyStyled1):not(.bodyStyled2):not(.smart) #p_sets{
 #p_modello{
 	margin-top:5px;
 }
-.smart #p_modello{
-	/*background-color: #333;/* VECCHIA VERSIONE */
-    /*border-bottom-right-radius: 54px;/* VECCHIA VERSIONE */
-   /* background-position: left top !important;/* VECCHIA VERSIONE */
-	position: fixed;/* NUOVA VERSIONE */
-    bottom: 8px;/* NUOVA VERSIONE */
-}
 .smart.nasSch #p_modello{
 	display:none;
 }
@@ -321,10 +295,6 @@ body:not(.bodyStyled1):not(.bodyStyled2):not(.smart) #p_modello{
 }
 #p_modello.p_sel svg polygon{
 	fill: var(--fondino-anatomia);
-}
-body:not(.smart) .p_noTxt{
-	/*height: 28px !important;
-	background-position:8px center !important;*/
 }
 #p_selected{
 	background-image:url(../img/p_selected.png);
@@ -419,9 +389,6 @@ body:not(.smart) #p_impostazioni.p_sel svg polygon{
 	fill: var(--impostazioni-fondino-smart);
 }
 body:not(.smart) #p_sets{
-	/*position:fixed;
-	bottom:40px;
-	background-image:url(../img/m_sets.png);*/
 	background-image:url(../img/ico_mappaB.png);
 }
 #p_ricerca{
@@ -523,22 +490,21 @@ body:not(.smart) #pulsanti_modello{
 .smart #pulsanti_modello{
 	z-index:1600;
 }
-.smart #pulsanti_modello{ /* NUOVA VERSIONE */
-    bottom: 54px; /* NUOVA VERSIONE */
-    top: auto; /* NUOVA VERSIONE */
-    border-bottom-right-radius: 0px; /* NUOVA VERSIONE */
+.smart #pulsanti_modello{
+    bottom: 54px;
+    top: auto;
+    border-bottom-right-radius: 0px;
 }
 @media (max-width: 500px){	
-	.smart #pulsanti_modello{ /* NUOVA VERSIONE */
-		border-top-right-radius: 0px; /* NUOVA VERSIONE */
-		width: 100%; /* NUOVA VERSIONE */
-		box-shadow: 0px -3px 6px rgba(0,0,0,0.4); /* NUOVA VERSIONE */
-		/*border-top: 7px solid #000; /* NUOVA VERSIONE */
+	.smart #pulsanti_modello{
+		border-top-right-radius: 0px;
+		width: 100%;
+		box-shadow: 0px -3px 6px rgba(0,0,0,0.4);
 	}
-	.smart #pulsanti_modello #labelModello{ /* NUOVA VERSIONE */
-		padding-top:7px; /* NUOVA VERSIONE */
-		background-position:5px 7px; /* NUOVA VERSIONE */
-		height:50px; /* NUOVA VERSIONE */
+	.smart #pulsanti_modello #labelModello{
+		padding-top:7px;
+		background-position:5px 7px;
+		height:50px;
 	}
 }
 
@@ -571,7 +537,6 @@ body:not(.smart) #pulsanti_modello{
 #p1 div{
 	display:inline-block;
 	background-size: auto 72%, auto;
-	/*display:none;*/
 }
 .smart.android #p1 div:not(#scarica_modello){
 	width:48px !important;
@@ -805,8 +770,7 @@ body:not(.smart) #labelModello{
 }
 .livelli_listed .slider,
 .livelli_listed .slider{
-	/*width:205px;/* VECCHIA VERSIONE */
-	width: calc(100% - 80px); /* NUOVA VERSIONE */
+	width: calc(100% - 80px);
 }
 .slider_cont{
 	width:100%;
@@ -843,7 +807,6 @@ body:not(.smart) #labelModello{
 #el_muscoli_cont{
 	display:none;
 	margin-left:10px;
-	/*width:300px;/* VECCHIA VERSIONE */
 	width:100%;
 	height:202px;
 	background-color:#575757;
@@ -1471,7 +1434,6 @@ body:not(.smart) #loginGuida{
 	width:fit-content;
 	padding:10px;
 	font-size:12.1px;
-	/*font-family:Verdana, Geneva, sans-serif;*/
 }
 .tooltipmenuVis{
 	opacity: 1 !important;

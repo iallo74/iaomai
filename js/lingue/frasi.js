@@ -1644,12 +1644,6 @@ var TXT_DestinatariFiltrati={
 	esp: ""
 };
 
-	var TXT_TrasformaTrattamento={
-		ita: "Trasforma in un ciclo di trattamenti",
-		eng: "Trasforma in un ciclo di trattamenti",
-		esp: ""
-	};
-
 	var TXT_SpostaTrattamento={
 		ita: "Sposta in un'altra cartella",
 		eng: "Sposta in un'altra cartella",

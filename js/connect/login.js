@@ -608,7 +608,7 @@ var LOGIN = {
 						'	</div>';
 				HTML += H.r({	t: "s", 
 								name: "Sesso",
-								value: UT.Sesso,
+								value: UT.Sesso.toLowerCase(),
 								opts: { "":"", "m": Lingua(TXT_Maschio), "f": Lingua(TXT_Femmina) },
 								label: Lingua(TXT_Sesso),
 								id: "selectPaz",

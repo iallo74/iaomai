@@ -182,7 +182,6 @@ var PAZIENTI = {
 				SET.leggiNote();
 			}catch(err){}
 			SCHEDA.setTriploLivello('pazienti');
-			//if(SCHEDA.classeAperta == 'tab_tsubo')SCHEDA.scaricaScheda();
 		}});
 	},
 	deselPaziente: function(){ // deseleziona il paziente su cui si sta lavorando
@@ -568,12 +567,6 @@ var PAZIENTI = {
 							clickCampo: 'H.creaCombo(this,H.getElencoDB(DB.pazienti.data,this));',
 							focusCampo: 'H.creaCombo(this,H.getElencoDB(DB.pazienti.data,this));' });
 							
-			/*9cont += H.r({	t: "s", 
-							name: "Social",
-							value: Social,
-							opts: DB.socials,
-							label: Lingua(TXT_Social),
-							classCampo: "selectLargo" });*/
 			HTML += H.sezione({
 				label: Lingua(TXT_LabelAggiuntive),
 				nome: 'aggiuntive',
@@ -766,7 +759,6 @@ var PAZIENTI = {
 			
 			var azAnnulla = "SCHEDA.scaricaScheda();";
 			if(PAZIENTI.idCL>-1)azAnnulla = "PAZIENTI.vis_paziente();";
-			//if(PAZIENTI.idCL>-1)azAnnulla = "SCHEDA.scaricaScheda();";
 			var azElimina = PAZIENTI.idCL>-1 ? "PAZIENTI.el_paziente("+PAZIENTI.idCL+");":"";
 			var btnAdd = '';
 			if(azElimina){
@@ -1040,24 +1032,6 @@ var PAZIENTI = {
 					'			</div>' +
 					'		<div class="l"></div>' +
 					'	</div>';
-					
-			/*// TAGS	
-			if(tags.length){
-				
-				H__1 +=	'	<div class="rgAnag rgTags">' +
-						'			<div class="contAnag">';
-						
-				for(p in tags){
-					H__1 += '<span class="tag"' +
-							'	   style="background-color:#'+tags[p].colore+';">' +
-								htmlEntities(tags[p].NomeTag) +
-							'</span>';
-				}	
-				H__1 += '			</div>' +
-						'		<div class="l"></div>' +
-						'	</div>';
-				
-			}*/
 			
 			// scheda medica
 			var H__2 = '';
@@ -1260,8 +1234,6 @@ var PAZIENTI = {
 			LOGIN.sincronizza(	'rimuoviLoading(document.getElementById("scheda_testo"));' +
 								'rimuoviLoading(document.getElementById("elenchi_lista"));' +
 								'PAZIENTI.vis_paziente(true);' +
-								/*'PAZIENTI.car_paziente(true);' +*/
-								/*'SCHEDA.scaricaScheda(true);' +*/
 								postAction );
 		});
 		return false;
@@ -1279,8 +1251,6 @@ var PAZIENTI = {
 				DB.pazienti.data[Q_idPaz].Cancellato=1;
 				DB.pazienti.data[Q_idPaz].md5='';
 				PAZIENTI.pazSelMD5='';
-				// cancello anche le note
-				//cancellaNoteInutilizzate();
 			}
 			
 			for(n in DB.note.data){
@@ -1440,7 +1410,6 @@ var PAZIENTI = {
 					}
 					PAZIENTI.popolaTags();
 					PAZIENTI.caricaTags();
-					//console.log(modificato)
 					if(modificato){
 						applicaLoading(document.getElementById("scheda_testo"));
 						applicaLoading(document.getElementById("elenchi_lista"));

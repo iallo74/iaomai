@@ -48,7 +48,7 @@ var PAZIENTI_TRATTAMENTI = {
 			// CREO CARTELLE e TRATTAMENTI SINGOLI E ORDINO PER DATA ULTIMO ELEMENTO
 			PAZIENTI.cicli = [];
 			PAZIENTI.cicli.push({
-				NomeCiclo: Lingua(TXT_TrattamentiSingoli), // >>>>>>  da tradurre!!!;
+				NomeCiclo: Lingua(TXT_TrattamentiSingoli),
 				Tipo: 'V',
 				UltimaModifica: 99999999999,
 				p: -1
@@ -68,22 +68,6 @@ var PAZIENTI_TRATTAMENTI = {
 											   "UltimaModifica": TR.TimeTrattamento*1,
 											   "Tipo": "C",
 											   "p": TR.p*1 });
-					}
-					/*if(!TR.LabelCiclo){ // trattamento singolo
-						PAZIENTI.cicli[n++]={  "TitoloTrattamento": TR.TitoloTrattamento, 
-											   "UltimaModifica": TR.TimeTrattamento*1,
-											   "Tipo": "T",
-											   "p": TR.p*1 };
-					}*/
-				}
-			}
-			for(c in PAZIENTI.cicli){
-				for(i in cloneTRATTAMENTI){
-					var TR = cloneTRATTAMENTI[i];
-					if(PAZIENTI.cicli[c].NomeCiclo == TR.LabelCiclo && TR.Cancellato == 0){
-						if(TR.TimeTrattamento*1 > PAZIENTI.cicli[c].UltimaModifica*1){
-							//PAZIENTI.cicli[c].UltimaModifica = TR.TimeTrattamento*1;
-						}
 					}
 				}
 			}
@@ -105,14 +89,6 @@ var PAZIENTI_TRATTAMENTI = {
 					'			 align="absmiddle">' +
 					'		<span>'+htmlEntities(Lingua(TXT_ScegliServizio))+'</span>' +
 					'	</i>' +
-					/*'	<i class="elMenu"' +
-					'	   title="'+htmlEntities(Lingua(TXT_AggiungiTrattamento))+'"' +
-					'	   onclick="PAZIENTI.car_trattamento(-2);">' +
-					'		<img src="img/ico_trattamentoB_add.png"' +
-					'			 class="noBG"' +
-					'			 align="absmiddle">' +
-					'		<span>'+htmlEntities(Lingua(TXT_AggiungiTrattamento))+'</span>' +
-					'	</i>' +*/
 					'	<i class="elMenu"' +
 					'	   title="'+htmlEntities(Lingua(TXT_AggiungiCiclo))+'"' +
 					'	   onclick="PAZIENTI.car_trattamento();">' +
@@ -126,9 +102,6 @@ var PAZIENTI_TRATTAMENTI = {
 			HTML += '<div class="lista listaTrattamenti';
 			if(typeof(Q_resta) == 'number' && Q_resta > -1)HTML += ' cont_cartellaAperta';
 			HTML += '">';
-			if(typeof(cloneTRATTAMENTI)!='undefined'){
-				//cloneTRATTAMENTI.sort(sort_by("TimeTrattamento", false, parseInt));
-			}
 			var vuoto=true;
 			
 			for(c in PAZIENTI.cicli){
@@ -225,7 +198,6 @@ var PAZIENTI_TRATTAMENTI = {
 					HTML+='<b class="nomeCiclo">'+htmlEntities(NomeCiclo)+'</b>';
 					NC = NomeCiclo;	
 					
-					//if(dataAn)HTML+=' <i style="opacity:0.6;">('+dataAn+')</i>';
 					HTML+='</span><div class="trattElenco" id="ciclo_'+c+'"';
 					if(!(cartAperta))HTML+=' style="display:none;"';
 					HTML+='>';
@@ -236,7 +208,6 @@ var PAZIENTI_TRATTAMENTI = {
 					
 					HTML +=	'<div class="trattTools"' +
 							'	  id="trattTools_'+elAn+'">' +
-							/*'	<i class="infoCiclo">'+InfoAn+'</i>' +*/
 							'	<i class="addTrattBtn elMenu"' +
 							'	   id="add_tratt_'+elAn+'"' +
 							'	   title="'+htmlEntities(Lingua(TXT_AggiungiTrattamento))+'"';
@@ -247,11 +218,7 @@ var PAZIENTI_TRATTAMENTI = {
 							'	     	  							  false,' +
 							'	     	  							  '+elAn+');"';
 					else HTML += ' onclick="PAZIENTI.car_trattamento( -2);"'; // aggiungo in trattamenti singoli
-					HTML += '>' +
-							/*'		<img src="img/ico_trattamento_ins.png"' +
-							'			 class="noBG"' +
-							'			 align="absmiddle">'*/
-							'	</i>';
+					HTML += '></i>';
 					if(PAZIENTI.cicli[c].Tipo == 'C'){ // escludo dai trattamenti singoli
 						HTML +=
 							'	<i class="riepilogoBtn elMenu"' +
@@ -264,8 +231,7 @@ var PAZIENTI_TRATTAMENTI = {
 					if(PAZIENTI.cicli[c].Tipo == 'C'){ // escludo dai trattamenti singoli
 						HTML +=
 							'<div 	class="anamnesiBtn elMenu"' +
-							'		id="btn_trattamento_'+elAn+'"'/* +
-							'		title="'+htmlEntities(Lingua(TXT_SchedaAnamnesi))+'"'*/;
+							'		id="btn_trattamento_'+elAn+'"';
 					if(!touchable)HTML += ' onMouseOver="PAZIENTI.eviPallStat('+DataAn+');"' +
 										  ' onMouseOut="PAZIENTI.desPallStat('+DataAn+');"';
 					HTML += ' 	   onclick="PAZIENTI.car_trattamento(\''+elAn+'\',this,\''+NC+'\',true);">'; // anamnesi
@@ -275,51 +241,7 @@ var PAZIENTI_TRATTAMENTI = {
 					}
 					HTML += HTMLProvv +
 							'</div></div>';
-				}/*else{
-					var TR = PZ.trattamenti[PAZIENTI.cicli[c].p];
-					if( !TR.Cancellato ){
-						data = '';
-						if(TR.TimeTrattamento){
-							pD=getDataTS(TR.TimeTrattamento).split("/");
-							data=pD[0]+H.sl+pD[1]+H.sl+pD[2].substr(2,2);
-						}
-						if(	TR.TimeTrattamento*1000>Date.now() ){
-							data =	'<font style="background-color:#c5831f !important;' +
-									'      padding:3px;border-radius:8px;' +
-									'	   color:#FFF;">' +
-									'	<img src="img/ico_timer.png"' +
-									'		 align="absmiddle"> <b style="color:#FFF;">' +
-										data +
-									'</b></font>';
-						}else if(	!TR.TimeTrattamento ){
-							data =	'<font style="padding:3px;">' +
-									'	<img src="img/ico_timerNoB.png"' +
-									'		 align="absmiddle"' +
-									'		 style="background-color: rgba(255,255,255,0.7);' +
-									'		 padding: 5px;' +
-									'		 margin-top: -2px;' +
-									'		 margin-left: -5px;' +
-									'		 border-radius: 9px;">' +
-									'</font>';
-						}else data = '<b>'+data+'</b>';
-						HTMLProvv+=	'<div id="btn_trattamento_'+PAZIENTI.cicli[c].p+'"' +
-									'	  class="frdxtratt"' +
-									'	  id="cr_'+PAZIENTI.cicli[c].p+'"' +
-									'	  onClick="PAZIENTI.car_trattamento('+PAZIENTI.cicli[c].p+',this,\'\',false,-1);">';
-						
-						if(TR.DataModifica>DB.pazienti.lastSync){
-							mdT=true;
-							HTMLProvv += H.imgSyncro();
-						}
-						HTMLProvv+=data;
-						HTMLProvv += ' <span style="color:rgba(0,0,0,0.5);">-</span> ';
-						if(TR.TitoloTrattamento)HTMLProvv += htmlEntities(TR.TitoloTrattamento);
-						else HTMLProvv += '...';
-						
-						HTMLProvv += '</div>';
-					}	
-					HTML += HTMLProvv;
-				}*/
+				}
 			}
 			if(vuoto)HTML += '<p class="noResults">'+Lingua(TXT_NoResTrattamento)+'...</div>';
 			HTML += '</div>';
@@ -453,7 +375,7 @@ var PAZIENTI_TRATTAMENTI = {
 			if(gallery!='')gallery=JSON.parse(gallery);
 			else gallery=[];
 			
-			if(idCiclo>-1){// || Q_idTratt>-1){
+			if(idCiclo>-1){
 				var CI = DB.pazienti.data[PAZIENTI.idCL].trattamenti[idCiclo];
 				if(CI.sintomi){
 					sintomiModello=JSON.parse(CI.sintomi);
@@ -735,7 +657,6 @@ var PAZIENTI_TRATTAMENTI = {
 			
 			// SINTOMI
 			HTML += '<div id="tratt_cont_sintomi"' +
-						  //(((TipoTrattamento == 'B' && !PAZIENTI.sintomiProvvisori.length) && LabelCiclo) ? ' style="display:none;"' : '') +
 					'	  class="sezioneTrattamenti divEspansa '+ 
 						((localStorage.getItem("op_sintomi")) ? '' : 'sezioneChiusa') +
 						'">' +
@@ -745,10 +666,7 @@ var PAZIENTI_TRATTAMENTI = {
 					'			 src="img/ico_sintomi.png">' +
 							Lingua(TXT_Sintomi)+' (<span id="totSintomi"></span>)'+
 					'	</em>' +
-					'	<div id="contSintomi"' +
-							 //((TipoTrattamento!='A') && LabelCiclo ? ' class="sintomiTratt"' : '') +
-					'>' +
-					'	</div>' +
+					'	<div id="contSintomi"></div>' +
 					
 					'<div id="cont_label_add_sintomi"' +
 					'	  class="cont_label_add">' +
@@ -862,22 +780,11 @@ var PAZIENTI_TRATTAMENTI = {
 			
 			HTML+='<div class="l"></div>';
 			
-			//if(!LabelCiclo && Q_idTratt>-1){
-			/*if(TipoTrattamento!='A' && Q_idTratt>-1){
-				HTML += '<div style="text-align:right;">' +
-						'	<div onClick="PAZIENTI.apriSpostaTrattamento('+Q_idTratt+');"' +
-						'		  id="btnTrasf">' +
-								htmlEntities(Lingua(TXT_SpostaTrattamento)) +
-						'	</div>' +
-						'</div>' +
-						'<div class="l"></div>';
-			}*/
-			
 			if(Q_idTratt>-1 || an){
 				if(TipoTrattamento=='A')titoloDef=TXT_SchedaAnamnesi;
 				else titoloDef=TXT_ModificaTrattamento;
 			}else{
-				if(TipoTrattamento=='A')titoloDef=TXT_CicloTrattamenti;//titoloDef=TXT_CreaCiclo;
+				if(TipoTrattamento=='A')titoloDef=TXT_CicloTrattamenti;
 				else titoloDef=TXT_CreaTrattamento;
 			}
 			
@@ -942,21 +849,6 @@ var PAZIENTI_TRATTAMENTI = {
 		}
 		document.getElementById("tratt_btns_meridiani").innerHTML = HTML;
 		PAZIENTI.caricaMeridianiTrattamento();
-	},
-	trasformaTrattamento: function( Q_idTratt){ // <<<<<<<<<<<<<<< TOGLIERE
-		if(DB.login.data.auths.indexOf("clients_full")==-1){
-			ALERT(Lingua(TXT_MsgFunzioneSoloPay));
-			return;
-		}
-		CONFIRM.vis(	Lingua(TXT_UscireSenzaSalvare),
-						!SCHEDA.verificaSchedaRet(), 
-						arguments ).then(function(pass){if(pass){
-						var v = getParamNames(CONFIRM.args.callee.toString());
-						for(i in v)eval(getArguments(v,i));
-			endChangeDetection();
-			SCHEDA.formModificato = false;
-			PAZIENTI.car_trattamento(Q_idTratt, document.getElementById("btn_trattamento_"+Q_idTratt), '', true, -1, true);
-		}});
 	},
 	apriSpostaTrattamento: function( Q_idTratt){
 		applicaLoading(document.getElementById("scheda_testo"),'vuoto');
@@ -1043,7 +935,6 @@ var PAZIENTI_TRATTAMENTI = {
 					var TRS = DB.pazienti.data[PAZIENTI.idCL].trattamenti;
 					var sintomiCiclo = [];
 					if(document.formMod.idCiclo.value*1>-1)sintomiCiclo = JSON.parse(TRS[document.formMod.idCiclo.value*1].sintomi);
-					//console.log(JSON.stringify(sintomiCiclo));
 					for(s in PAZIENTI.sintomiProvvisori){
 						// per ogni sintomo verifico che esista anche nel modello
 						var esiste = false;
@@ -1058,8 +949,7 @@ var PAZIENTI_TRATTAMENTI = {
 							sintomiCiclo.push(sintomo);
 						}
 					}
-					/*console.log(JSON.stringify(sintomiCiclo));
-					for(sc in sintomiCiclo){
+					/*for(sc in sintomiCiclo){
 						// per ogni sintomo del modello verifico che esista anche nel trattamento
 						var esiste = false;
 						for(s in PAZIENTI.sintomiProvvisori){
@@ -1070,9 +960,7 @@ var PAZIENTI_TRATTAMENTI = {
 						if(!esiste){ // se non esiste lo cancello dal modello
 							sintomiCiclo.splice(sc,1);
 						}
-					}
-					console.log(JSON.stringify(sintomiCiclo));
-					return;*/
+					}*/
 					if(document.formMod.idCiclo.value*1>-1){
 						TRS[document.formMod.idCiclo.value*1].sintomi = JSON.stringify(sintomiCiclo);
 						TRS[document.formMod.idCiclo.value*1].DataModifica = parseInt(DataModifica);
@@ -1342,7 +1230,7 @@ var PAZIENTI_TRATTAMENTI = {
 							'	  	     width="20"' +
 							'	  	     height="20"' +
 							'	  	     align="absmiddle"' +
-							'	  	     title="'+htmlEntities(Lingua(TXT_PZDett))+'"'+//+addMezzoTit)+'"' +
+							'	  	     title="'+htmlEntities(Lingua(TXT_PZDett))+'"'+
 							'	  	     class="occhio valEn"> ' +
 							'	</span>';
 							
@@ -1423,7 +1311,7 @@ var PAZIENTI_TRATTAMENTI = {
 							'	  	     width="16"' +
 							'	  	     height="16"' +
 							'	  	     align="absmiddle"' +
-							'	  	     title="'+htmlEntities(Lingua(TXT_PVDett))+'"' +//+' '+Lingua(eval("TXT_Valutazione"+valutazione)))+'"' +
+							'	  	     title="'+htmlEntities(Lingua(TXT_PVDett))+'"' +
 							'	  	     class="occhio valEn"> ' +
 							'	</span>';
 					
@@ -1462,11 +1350,7 @@ var PAZIENTI_TRATTAMENTI = {
 				}
 				totTsubo = PAZIENTI.puntiProvvisori.length;
 				HTML = '<span style="margin-bottom: 15px;display: inline-block;">'+HTML_noMod+'</span>';
-			}/*else if( DB.login.data.auths.indexOf("meridiani_cinesi")==-1 && 
-					  DB.login.data.auths.indexOf("meridiani_shiatsu")==-1 ){
-				document.getElementById('puntiTsuboMap').style.display = 'none';
-				document.getElementById('tratt_cont_punti').style.display = 'none';
-			}*/
+			}
 		}
 		if(!totTsubo){
 			totTsubo=0;
@@ -1591,7 +1475,6 @@ var PAZIENTI_TRATTAMENTI = {
 	cambiaPV: function( n, m ){ // cambia la valutazione energetica su un punto
 		var el = document.getElementById("ico_PV"+n);
 		el.getElementsByTagName("img")[0].src='img/ico_PV'+m+'.png';
-		/*el.title = htmlEntities(Lingua(TXT_PVDett)+' '+Lingua(eval("TXT_Valutazione"+m)));*/
 		SET.overTsubo(document.getElementById("pt_"+n).parentElement,false);
 		PAZIENTI.puntiProvvisori[n].e = m;
 		SCHEDA.formModificato = true;
@@ -1604,9 +1487,6 @@ var PAZIENTI_TRATTAMENTI = {
 		var el = document.getElementById("ico_PZ"+n);
 		el.getElementsByTagName("img")[0].src='img/mezzo_'+m+'.png';
 		SET.overTsubo(document.getElementById("pt_"+n).parentElement,false);
-		/*var addMezzoTit = '';
-		if(m)addMezzoTit = ': '+PAZIENTI.mezzi[m];
-		el.title = htmlEntities(Lingua(TXT_PZDett)+addMezzoTit);*/
 		PAZIENTI.puntiProvvisori[n].z = m;
 		SCHEDA.formModificato = true;
 		PAZIENTI.ricGroup("formMod",n);
@@ -1855,7 +1735,6 @@ var PAZIENTI_TRATTAMENTI = {
 			}
 			document.getElementById("gruppoPunti_cont").style.left = l+"px";
 			document.getElementById("gruppoPunti_cont").style.width = w+"px";
-			/*document.getElementById("gruppoPunti_cont").style.top = (document.getElementById("scheda").scrollHeight/2-70)+"px";*/
 			document.getElementById("gruppoPunti_cont").style.top = '118px';
 			document.getElementById("gruppoPunti_cont").classList.add("visSch");
 			PAZIENTI.popolaGruppoPunti();
@@ -1955,7 +1834,6 @@ var PAZIENTI_TRATTAMENTI = {
 	ptGruppoSelAll: function( el ){ // seleziona tutti i punti visualizzati del menu dei gruppi di punti
 		var els = el.parentElement.parentElement.getElementsByTagName("input");
 		var sel = '';
-		//if(els[0].checked)sel = false
 		for(e in els){
 			if(els[e].type=='checkbox'){
 				if(!els[e].parentElement.classList.contains("hide")){
@@ -2011,14 +1889,7 @@ var PAZIENTI_TRATTAMENTI = {
 		if( globals.set.cartella == 'meridiani_cinesi' ||
 			globals.set.cartella == 'meridiani_shiatsu' ){
 			modificabile = true;
-		}/*else{
-			if( !PAZIENTI.meridianiProvvisori.length &&
-				DB.login.data.auths.indexOf("meridiani_cinesi")==-1 && 
-				DB.login.data.auths.indexOf("meridiani_shiatsu")==-1 ){
-				document.getElementById('meridianiTsuboMap').style.display = 'none';
-				document.getElementById('tratt_cont_meridiani').style.display = 'none';
-			}
-		}*/
+		}
 		var HTML = '';
 		if(PAZIENTI.meridianiProvvisori.length){
 			for(m in PAZIENTI.meridianiProvvisori){
@@ -2032,9 +1903,7 @@ var PAZIENTI_TRATTAMENTI = {
 						HTML += ' p_'+MERIDIANI[PAZIENTI.meridianiProvvisori[m].siglaMeridiano].elemento;
 					}
 				}
-				HTML += '"' +
-						//' id="rg_'+m+'"';
-						' id="tr_p'+PAZIENTI.meridianiProvvisori[m].siglaMeridiano+'">';
+				HTML += '" id="tr_p'+PAZIENTI.meridianiProvvisori[m].siglaMeridiano+'">';
 				if(modificabile){
 					HTML +=
 						
@@ -2078,7 +1947,7 @@ var PAZIENTI_TRATTAMENTI = {
 						'		  	     width="16"' +
 						'		  	     height="16"' +
 						'		  	     align="absmiddle"' +
-						'		  	     title="'+ htmlEntities(Lingua(TXT_PVDett))+'"' +//+' '+Lingua(eval("TXT_Valutazione"+m2)));+'"' +
+						'		  	     title="'+ htmlEntities(Lingua(TXT_PVDett))+'"' +
 						'		  	     class="occhio valEn"> ' +
 						'  		 	<b>' +
 										Lingua(eval("TXT_Valutazione"+m2)) +
@@ -2132,7 +2001,6 @@ var PAZIENTI_TRATTAMENTI = {
 	cambiaMV: function( n, m ){ // cambia la valutazione energetica su un punto
 		var el = document.getElementById("ico_MV"+n);
 		el.getElementsByTagName("img")[0].src='img/ico_PV'+m+'.png';
-		/*el.title = htmlEntities(Lingua(TXT_PVDett)+' '+Lingua(eval("TXT_Valutazione"+m)));*/
 		PAZIENTI.meridianiProvvisori[n].valEnergetica = m;
 		SCHEDA.formModificato = true;
 		document.getElementById("tt_mezzival").dataset.on='0';
@@ -2578,7 +2446,6 @@ var PAZIENTI_TRATTAMENTI = {
 			MENU.nasMM();
 			var valori=[];
 			PAZIENTI.cicOp=true;
-			//puntiGroup='|';
 			var HTML0=HTML='';
 			HTML0 += '<div id="schedaCiclo">';
 			if(LabelCiclo!='0')HTML0+='<h1>'+htmlEntities(LabelCiclo)+'</h1>';
@@ -2593,7 +2460,7 @@ var PAZIENTI_TRATTAMENTI = {
 			}
 			for(i in TRS){
 				var TR = TRS[i];
-				if(TR.Cancellato==0 && TR.LabelCiclo==LabelCiclo){// && TR.TimeTrattamento*1000<=Date.now()){
+				if(TR.Cancellato==0 && TR.LabelCiclo==LabelCiclo){
 					n++;
 					idTrattamento=TR.idTrattamento*1;
 					TitoloTrattamento=TR.TitoloTrattamento;
@@ -2625,8 +2492,8 @@ var PAZIENTI_TRATTAMENTI = {
 					if(TipoTrattamento!='A'){
 						HTML+='<h3>'+data+'</h3><p class="labelCicli"><i>'+htmlEntities(TitoloTrattamento)+'</i></p>';
 						HTML+='<p>'+htmlEntities(TestoTrattamento).replace(/\n/g, '<br>')+'</p>';
-						//var TXT_P=TXT_PuntiTrattamento;
 						var TXT_P=TXT_Tsubo;
+						var TXT_M=TXT_MeridianiTrattamento
 						for(v in valori){
 							score=-1;
 							for(s in sintomi){
@@ -2647,11 +2514,11 @@ var PAZIENTI_TRATTAMENTI = {
 						AnamnesiMotivo=TestoTrattamento.AnamnesiMotivo;
 						AnamnesiDiagnosiOccidentale=TestoTrattamento.AnamnesiDiagnosiOccidentale;
 						AnamnesiDiagnosiMTC=TestoTrattamento.AnamnesiDiagnosiMTC;
-						//HTML+='<h3>'+htmlEntities(Lingua(TXT_Anamnesi))+'</h3>'+data;
 						if(AnamnesiMotivo)HTML+='<p><i>'+htmlEntities(Lingua(TXT_AnamnesiMotivo))+':</i><br>'+htmlEntities(AnamnesiMotivo).replace(/\n/g, '<br>')+'</p>';
 						if(AnamnesiDiagnosiOccidentale)HTML+='<p><i>'+htmlEntities(Lingua(TXT_AnamnesiDiagnosiOccidentale))+':</i><br>'+htmlEntities(AnamnesiDiagnosiOccidentale).replace(/\n/g, '<br>')+'</p>';
 						if(AnamnesiDiagnosiMTC)HTML+='<p><i>'+htmlEntities(Lingua(TXT_AnamnesiDiagnosiMTC))+':</i><br>'+htmlEntities(AnamnesiDiagnosiMTC).replace(/\n/g, '<br>')+'</i></p>';
 						var TXT_P=TXT_PuntiAnamnesi;
+						var TXT_M=TXT_MeridianiAnamnesi;
 						for(s in sintomi){
 							valori[s]=[];
 							valori[s].NomeSintomo=sintomi[s].NomeSintomo;
@@ -2665,7 +2532,7 @@ var PAZIENTI_TRATTAMENTI = {
 					}
 					if(puntiTsuboMap.length){
 						HTML+='<i>'+Lingua(TXT_P)+':</i> ';
-						HTML+='<div id="puntiCiclo"><img src="img/pallinoPat.png" width="12" height="12" align="absmiddle"> ';
+						HTML+='<div id="puntiCiclo">';
 						for(p in puntiTsuboMap){
 							nTsubo=puntiTsuboMap[p].n*1;
 							siglaMeridiano=puntiTsuboMap[p].m;
@@ -2673,22 +2540,18 @@ var PAZIENTI_TRATTAMENTI = {
 							mezzo=__(puntiTsuboMap[p].z);
 							descrizione=__(puntiTsuboMap[p].t);
 							siglaTsubo=__(puntiTsuboMap[p].s);
+							if(!siglaTsubo)siglaTsubo = nTsubo+'.'+siglaMeridiano;
 							
-							if(mezzo)HTML +='<img src="img/mezzo_'+mezzo+'.png"' +
-											'	  width="20"' +
-											'	  height="20"' +
-											'	  align="absmiddle"' +
-											'	  class="occhio valEn">';
-							
-							HTML += '<b>'+nTsubo+'.'+siglaMeridiano+'</b>';
-							if(valutazione)HTML += ' <img src="img/ico_PV'+valutazione+'.png" width="12" height="12" align="absmiddle">';
-							if(descrizione)HTML += ' '+descrizione;
-							if(p<puntiTsuboMap.length-1)HTML += '<br>';
+							HTML += '<span class="tsb"><img src="img/mezzo_'+mezzo+'.png" class="noMod" style="vertical-align: middle;margin-top: -2px;margin-right: -2px;"> ';
+							HTML += '<b>'+siglaTsubo+'</b>';
+							if(valutazione)HTML += '<img src="img/ico_PV'+valutazione+'.png" class="noMod" style="vertical-align: middle;margin-top: -3px;">';
+							if(descrizione)HTML += ' <span style="font-style:italic;">'+htmlEntities(descrizione)+'</span>';
+							HTML += '</span> '+chr10;
 						}
 						HTML+='</div>';
 					}
 					if(meridiani.length){
-						HTML+='<br><i>'+Lingua(TXT_MeridianiTrattamento)+':</i> ';
+						HTML+='<br><i>'+Lingua(TXT_M)+':</i> ';
 						HTML+='<div id="meridianiCiclo">';
 						for(m in meridiani){
 							NomeMeridiano=meridiani[m].NomeMeridiano;
@@ -2696,10 +2559,10 @@ var PAZIENTI_TRATTAMENTI = {
 							valEnergetica=__(meridiani[m].valEnergetica);
 							descrizione=__(meridiani[m].descrizione);
 							
-							HTML += 	'<span>' +
+							HTML += 	'<span class="tsb">' +
 										'<b>'+NomeMeridiano+'</b>';
 							if(descrizione)HTML += ' '+descrizione;
-							if(p<puntiTsuboMap.length-1)HTML += '</span><br>';
+							HTML += '</span>'+chr10;
 						}
 						HTML+='</div>';
 					}

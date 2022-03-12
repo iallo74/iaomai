@@ -331,6 +331,7 @@ var RICERCHE = {
 		RICERCHE.overElRis=false;
 		RICERCHE.parolaProvv='';
 		DB.ricerche.data.sort(sort_by("DataModifica", true, parseInt));
+		var btnSvuota = '';
 		for(k in DB.ricerche.data){
 			RICERCHE.parolaProvv=DB.ricerche.data[k].TestoRicerca.replace(/\'/g, '\\\'');
 			if(DB.ricerche.data[k].Cancellato!=1){
@@ -345,9 +346,8 @@ var RICERCHE = {
 			}
 		}
 		if(!HTML)HTML='<div class="noResGlob" id="noResGlob">'+Lingua(TXT_NessunRisultato)+'</div>';
-		//if(HTML)
-		document.getElementById("globalTesto").innerHTML='<p id="titHistoryGlobal"><b>'+Lingua(TXT_TueRicerche)+'</b><span onClick="RICERCHE.clear_historyGlobal();">'+Lingua(TXT_SvuotaCronologia)+'</span></p>'+HTML;
-		//else document.getElementById("globalTesto").innerHTML='';
+		else btnSvuota = '<span onClick="RICERCHE.clear_historyGlobal();">'+Lingua(TXT_SvuotaCronologia)+'</span>';
+		document.getElementById("globalTesto").innerHTML='<p id="titHistoryGlobal"><b>'+Lingua(TXT_TueRicerche)+'</b>'+btnSvuota+'</p>'+HTML;
 		document.getElementById("globalTesto").classList.add("globalHistory");
 	},
 	clear_historyGlobal: function(){
@@ -424,10 +424,6 @@ var RICERCHE = {
 		if(smartMenu && document.getElementById("scheda").classList.contains("scheda_agenda"))SCHEDA.scaricaScheda();
 	},
 	globalSubmit: function( passa ){
-		/*if(!retNoFree()){
-			document.getElementById("parolaGlobal").blur();
-			return false;
-		}*/
 		if(typeof(passa)=='undefined')var passa=false;
 		var parola=document.formGlobal.parolaGlobal.value;
 		if(parola.length>=3 || passa){
@@ -440,10 +436,6 @@ var RICERCHE = {
 				}
 			}else{
 				if(parola.length==0)RICERCHE.annullaGlobal();
-				/*else if(!touchable){
-					document.getElementById("parolaGlobal").focus();
-					setTimeout(function(){document.getElementById("parolaGlobal").blur();},500);
-				}*/
 			}
 			return false;
 		}else return false;
