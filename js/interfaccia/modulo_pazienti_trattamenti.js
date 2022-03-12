@@ -47,6 +47,12 @@ var PAZIENTI_TRATTAMENTI = {
 			
 			// CREO CARTELLE e TRATTAMENTI SINGOLI E ORDINO PER DATA ULTIMO ELEMENTO
 			PAZIENTI.cicli = [];
+			PAZIENTI.cicli.push({
+				NomeCiclo: Lingua(TXT_TrattamentiSingoli), // >>>>>>  da tradurre!!!;
+				Tipo: 'V',
+				UltimaModifica: 99999999999,
+				p: -1
+			});
 			var n=0;
 			var cartOpened = false;
 			for(i in cloneTRATTAMENTI){
@@ -58,17 +64,17 @@ var PAZIENTI_TRATTAMENTI = {
 						if(PAZIENTI.cicli[c].NomeCiclo == TR.LabelCiclo)esiste=true;
 					}
 					if(!esiste && TR.LabelCiclo){ // ciclo
-						PAZIENTI.cicli[n++]={  "NomeCiclo": TR.LabelCiclo, 
+						PAZIENTI.cicli.push({  "NomeCiclo": TR.LabelCiclo, 
 											   "UltimaModifica": TR.TimeTrattamento*1,
 											   "Tipo": "C",
-											   "p": TR.p*1 };
+											   "p": TR.p*1 });
 					}
-					if(!TR.LabelCiclo){ // trattamento singolo
+					/*if(!TR.LabelCiclo){ // trattamento singolo
 						PAZIENTI.cicli[n++]={  "TitoloTrattamento": TR.TitoloTrattamento, 
 											   "UltimaModifica": TR.TimeTrattamento*1,
 											   "Tipo": "T",
 											   "p": TR.p*1 };
-					}
+					}*/
 				}
 			}
 			for(c in PAZIENTI.cicli){
@@ -99,14 +105,14 @@ var PAZIENTI_TRATTAMENTI = {
 					'			 align="absmiddle">' +
 					'		<span>'+htmlEntities(Lingua(TXT_ScegliServizio))+'</span>' +
 					'	</i>' +
-					'	<i class="elMenu"' +
+					/*'	<i class="elMenu"' +
 					'	   title="'+htmlEntities(Lingua(TXT_AggiungiTrattamento))+'"' +
 					'	   onclick="PAZIENTI.car_trattamento(-2);">' +
 					'		<img src="img/ico_trattamentoB_add.png"' +
 					'			 class="noBG"' +
 					'			 align="absmiddle">' +
 					'		<span>'+htmlEntities(Lingua(TXT_AggiungiTrattamento))+'</span>' +
-					'	</i>' +
+					'	</i>' +*/
 					'	<i class="elMenu"' +
 					'	   title="'+htmlEntities(Lingua(TXT_AggiungiCiclo))+'"' +
 					'	   onclick="PAZIENTI.car_trattamento();">' +
@@ -124,10 +130,11 @@ var PAZIENTI_TRATTAMENTI = {
 				//cloneTRATTAMENTI.sort(sort_by("TimeTrattamento", false, parseInt));
 			}
 			var vuoto=true;
+			
 			for(c in PAZIENTI.cicli){
 				vuoto=false;
 				HTMLProvv  = '';
-				if(PAZIENTI.cicli[c].Tipo == 'C'){
+				if(PAZIENTI.cicli[c].Tipo == 'C' || PAZIENTI.cicli[c].Tipo == 'V'){
 					NomeCiclo=PAZIENTI.cicli[c].NomeCiclo;
 					if(typeof(PAZIENTI.aperture[NomeCiclo]) != 'undefined' && PAZIENTI.aperture[NomeCiclo])cartOpened = true;
 					
@@ -139,7 +146,8 @@ var PAZIENTI_TRATTAMENTI = {
 					cloneTRATTAMENTI.sort(sort_by("TipoTrattamento", false));
 					
 					for(p in cloneTRATTAMENTI){
-						if( cloneTRATTAMENTI[p].LabelCiclo==PAZIENTI.cicli[c].NomeCiclo && 
+						if( (cloneTRATTAMENTI[p].LabelCiclo==NomeCiclo || 
+							(PAZIENTI.cicli[c].Tipo == 'V' && !cloneTRATTAMENTI[p].LabelCiclo)) && 
 							!cloneTRATTAMENTI[p].Cancellato ){
 								
 							Data=cloneTRATTAMENTI[p].TimeTrattamento;
@@ -196,7 +204,7 @@ var PAZIENTI_TRATTAMENTI = {
 					}
 					
 					HTML+='<div class="cartella';
-					
+					if(PAZIENTI.cicli[c].Tipo == 'V')HTML += ' cartellaSingoli';
 					var cartAperta = this.aperture[NomeCiclo];
 					if(typeof(cartAperta)=='undefined')cartAperta=false;
 					if(this.aperture[NomeCiclo])HTML+=' cartellaAperta';
@@ -225,29 +233,36 @@ var PAZIENTI_TRATTAMENTI = {
 					if(!presente)HTMLProvv+='<div class="noResults">'+Lingua(TXT_NoResTrattamento)+'...</div>';
 					var InfoAn= '';
 					if(DataAn)InfoAn +=	'<img src="img/ico_agendaM2.png">'+getDataTS(DataAn);
+					
 					HTML +=	'<div class="trattTools"' +
 							'	  id="trattTools_'+elAn+'">' +
-							'	<i class="infoCiclo">'+InfoAn+'</i>' +
+							/*'	<i class="infoCiclo">'+InfoAn+'</i>' +*/
 							'	<i class="addTrattBtn elMenu"' +
 							'	   id="add_tratt_'+elAn+'"' +
-							'	   title="'+htmlEntities(Lingua(TXT_InserisciTrattamento))+'"' +
+							'	   title="'+htmlEntities(Lingua(TXT_AggiungiTrattamento))+'"';
+					if(PAZIENTI.cicli[c].Tipo == 'C')HTML += // aggiungo in ciclo
 							'	   onclick="PAZIENTI.car_trattamento( -1,' +
 							'	     	  							  null,' +
 							'	     	  							  \''+addslashes(PAZIENTI.cicli[c].NomeCiclo)+'\',' +
 							'	     	  							  false,' +
-							'	     	  							  '+elAn+');">' +
-							'		<img src="img/ico_trattamento_ins.png"' +
+							'	     	  							  '+elAn+');"';
+					else HTML += ' onclick="PAZIENTI.car_trattamento( -2);"'; // aggiungo in trattamenti singoli
+					HTML += '>' +
+							/*'		<img src="img/ico_trattamento_ins.png"' +
 							'			 class="noBG"' +
-							'			 align="absmiddle">' +
-							'		<span>'+htmlEntities(Lingua(TXT_InserisciTrattamento))+'</span>' +
-							'	</i>' +
+							'			 align="absmiddle">'*/
+							'	</i>';
+					if(PAZIENTI.cicli[c].Tipo == 'C'){ // escludo dai trattamenti singoli
+						HTML +=
 							'	<i class="riepilogoBtn elMenu"' +
 							'		title="'+htmlEntities(Lingua(TXT_SchedaCiclo))+'"' +
 							'		onclick="PAZIENTI.car_ciclo(\''+addslashes(PAZIENTI.cicli[c].NomeCiclo)+'\',this);">' +
 							'		<span>'+htmlEntities(Lingua(TXT_SchedaCiclo))+'</span>' +
-							'	</i>' +
-					
-							'</div>' +
+							'	</i>';
+					}
+					HTML += '</div>';
+					if(PAZIENTI.cicli[c].Tipo == 'C'){ // escludo dai trattamenti singoli
+						HTML +=
 							'<div 	class="anamnesiBtn elMenu"' +
 							'		id="btn_trattamento_'+elAn+'"' +
 							'		title="'+htmlEntities(Lingua(TXT_SchedaAnamnesi))+'"';
@@ -256,10 +271,11 @@ var PAZIENTI_TRATTAMENTI = {
 					HTML += ' 	   onclick="PAZIENTI.car_trattamento(\''+elAn+'\',this,\''+NC+'\',true);">'; // anamnesi
 					if(DataModAn>DB.pazienti.lastSync)HTML += H.imgSyncro();
 					HTML += '	<span>'+htmlEntities(Lingua(TXT_SchedaAnamnesi))+'</span>' +
-							'</div>' +
-							HTMLProvv +
+							'</div>';
+					}
+					HTML += HTMLProvv +
 							'</div></div>';
-				}else{
+				}/*else{
 					var TR = PZ.trattamenti[PAZIENTI.cicli[c].p];
 					if( !TR.Cancellato ){
 						data = '';
@@ -303,7 +319,7 @@ var PAZIENTI_TRATTAMENTI = {
 						HTMLProvv += '</div>';
 					}	
 					HTML += HTMLProvv;
-				}
+				}*/
 			}
 			if(vuoto)HTML += '<p class="noResults">'+Lingua(TXT_NoResTrattamento)+'...</div>';
 			HTML += '</div>';

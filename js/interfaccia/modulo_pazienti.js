@@ -48,7 +48,7 @@ var PAZIENTI = {
 				'	   id="addPaziente"' +
 				'	   onclick="PAZIENTI.car_paziente();"' +
 				'	   title="'+Lingua(TXT_AggiungiPaziente)+'">' +
-				'		<span>'+Lingua(TXT_AggiungiPaziente)+'</span>' +
+				/*'		<span>'+Lingua(TXT_AggiungiPaziente)+'</span>' +*/
 				'	</i>' +
 				'</p>' +
 				'<div class="lista listaPazienti">' +

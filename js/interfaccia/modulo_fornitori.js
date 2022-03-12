@@ -18,7 +18,7 @@ var FORNITORI = {
 				'	   id="addFornitore"' +
 				'	   title="'+Lingua(TXT_AggiungiFornitore)+'"' +
 				'	   onclick="FORNITORI.car_fornitore();">' +
-				'		<span>'+Lingua(TXT_AggiungiFornitore)+'</span>' +
+				/*'		<span>'+Lingua(TXT_AggiungiFornitore)+'</span>' +*/
 				'	</i>' +
 				'</p>' +
 				'<div class="lista listaFornitori">';

@@ -485,28 +485,37 @@
 	cursor:pointer;
 }
 .trattTools{
-	background:#FFF !important;/*#c88f1d !important; /*#789e33 !important;/*#999 !important;*/
 	padding-left: 0px !important;
     padding-right: 0px !important;
-	cursor:default !important;
-	border-radius:0px !important;
-	color:#FFF !important;
-	margin:0px !important;
-	height: 30px !important;
-    padding-top: 2px;
+    cursor: default !important;
+    border-radius: 0px !important;
+    color: #FFF !important;
+    margin: 0px !important;
 }
-
+.trattTools{
+	padding-right:45px !important;
+}
+.cartella:not(.cartellaSingoli) .trattTools{
+	background:#FFF !important;/*#c88f1d !important; /*#789e33 !important;/*#999 !important;*/
+    height: 42px !important;
+    padding-top: 13px;
+}
+.cartellaSingoli .trattTools{
+    height: 29px !important;
+}
 .smart.android .trattTools{
 	height: 44px !important;
     padding-top: 0px !important;
 }
 .trattTools i{
 	cursor:pointer;
-	line-height: 27px !important;
-	height:27px !important;
 	display: inline-block;
 	float:right;
 	border-radius: 4px;
+}
+.trattTools i:not(.addTrattBtn){
+	line-height: 27px !important;
+	height:27px !important;
 }
 .smart.android .trattTools i{
 	width: 44px !important;
@@ -542,21 +551,21 @@ body:not(.smart) .trattTools i{
     background-position: left -4px, left center;
     padding-right: 10px;
     float: left;
-    /*margin-top: 1px;*/
     margin-left: 0px;
     border-radius: 0px !important;
-    width: 100%;
+    width: calc(100% - 88px);
     height: 32px !important;
     line-height: 32px !important;
-    background-color: #fff4e8;
-    opacity: 0.8;
-    /*border-top: 1px solid rgba(0,0,0,0.2);*/
+    opacity: 1 !important;
+    margin-top: -32px;
+    border-right: 1px solid rgba(0,0,0,0.2);
 }
 .smart.android .anamnesiBtn{
     height: 44px !important;
     line-height: 44px !important;
     background-position: 4px 2px, left center;
     padding-left: 42px;
+	margin-top: -44px;
 }
 .anamnesiBtn:hover{
     background-color: #fae6d1 !important;
@@ -641,7 +650,51 @@ body:not(.smart) .trattTools i{
 /*.addTrattBtn{
 	margin-left:11px;
 }*/
-.trattElenco .noResults{
+
+
+.addTrattBtn,
+body:not(.smart) #addPaziente,
+body:not(.smart) #addFornitore,
+body:not(.smart) #addServizio,
+body:not(.smart) #addProcedura{
+	border-radius: 30px !important;
+    width: 32px;
+    height: 32px;
+	background-color:#2669bc;
+    background-image: url(../img/add.png);
+    background-size: 57%;
+    background-repeat: no-repeat;
+    background-position: center center;
+    margin: 4px;
+    margin-top: 12px;
+    opacity: 1 !important;
+    box-shadow: 0px 0px 5px rgb(0 0 0 / 30%);
+    position: absolute;
+    right: 0px;
+    z-index: 10;
+}
+.smart .addTrattBtn{
+	margin-right:12px;
+}
+.addTrattBtn,
+body:not(.smart) #addProcedura{
+    background-color: #e88e00;
+}
+body:not(.smart) .addTrattBtn{
+    margin-top: 0px !important;
+}
+
+body:not(.smart) #addPaziente:hover,
+body:not(.smart) #addFornitore:hover,
+body:not(.smart) #addServizio:hover{
+    background-color: #337cd7 !important;
+}
+body:not(.smart) .addTrattBtn:hover,
+body:not(.smart) #addProcedura:hover{
+    background-color: #eba029 !important;
+}
+
+.cartella:not(.cartellaSingoli) .trattElenco .noResults{
 	margin-top:32px;
 }
 .addTrattBtn span{
@@ -685,6 +738,12 @@ body:not(.smart) .trattTools i{
 #add_serv,
 #add_pat{
 	padding-left: 6px !important;
+}
+body:not(.smart) #add_paz,
+body:not(.smart) #add_forn,
+body:not(.smart) #add_serv,
+body:not(.smart) #add_pat{
+	padding-right: 45px;
 }
 #add_ciclo i,
 #add_paz i,
@@ -824,10 +883,10 @@ body:not(.smart) #addServizioMenu{
 	background-color: #deaa15;
 }
 
-#addProcedura,
+/*#addProcedura,
 #addServizio,
 #addFornitore,
-#addPaziente,
+#addPaziente,*/
 #filtroPazienti,
 #cambioSistemaMeridiani,
 #marketingPazienti{
@@ -845,23 +904,23 @@ body:not(.smart) #addServizioMenu{
 }
 #add_ciclo i:not(#addServizioMenu) span,
 .trattTools i span,
-#addProcedura span,
+/*#addProcedura span,
 #addServizio span,
 #addFornitore span,
-#addPaziente span,
+#addPaziente span,*/
 #add_saldo span,
 #marketingPazienti span,
 #marketingPazienti span{
 	display:none;
 }
-#addProcedura,
+/*#addProcedura,
 #addPaziente,
 #addFornitore,
 #addServizio{
 	margin-left:-3px !important;
 	margin-right:2px !important;
-}
-#addPaziente{
+}*/
+/*#addPaziente{
 	background-image:url(../img/ico_clienti_add.png);
 }
 #addFornitore{
@@ -872,7 +931,7 @@ body:not(.smart) #addServizioMenu{
 }
 #addProcedura{
 	background-image:url(../img/ico_procedure_add.png);
-}
+}*/
 #filtroPazienti{
 	background-image:url(../img/ico_statsN.png);
 	margin-left:3px !important;
@@ -887,9 +946,9 @@ body:not(.smart) #addServizioMenu{
 #marketingPazienti{
 	background-image:url(../img/ico_marketingN.png);
 }
-body:not(.smart) #addServizio,
+/*body:not(.smart) #addServizio,
 body:not(.smart) #addFornitore,
-body:not(.smart) #addPaziente,
+body:not(.smart) #addPaziente,*/
 body:not(.smart) #filtroPazienti,
 body:not(.smart) #cambioSistemaMeridiani,
 body:not(.smart) #marketingPazienti{
@@ -1293,7 +1352,7 @@ body:not(.smart) #rgApplicaFiltri{
 	width: calc(var(--menu-width) - 94px);
 }
 #proc_ricerca{
-    width: calc(var(--menu-width) - 46px);
+    width: calc(var(--menu-width) - 52px);
     border: 1px solid rgba(255,255,255,0.5);
     background-color: rgba(255,255,255,0.4);
     margin-left: 5px;
@@ -1309,7 +1368,7 @@ body:not(.smart) #rgApplicaFiltri{
 }
 #forn_ricerca,
 #serv_ricerca{
-	width: calc(var(--menu-width) - 45px);
+	width: calc(var(--menu-width) - 48px);
 }
 .smart #forn_ricerca,
 .smart #serv_ricerca{
@@ -1488,6 +1547,20 @@ body:not(.smart) #rgApplicaFiltri{
 .label_ciclo{
 	text-align: left;
     background-image: url(../img/cartellaClinicaG.png);
+    background-position: 5px center;
+    background-repeat: no-repeat;
+    padding-left: 42px;
+    height: 42px;
+    line-height: 42px !important;
+    margin-left: -30px;
+    margin-top: -30px;
+    margin-bottom: 10px !important;
+    display: block;
+    width: calc(100% + 59px);
+    background-color: #FFF;
+    border-bottom: 1px solid rgba(0,0,0,0.2);
+	/*text-align: left;
+    background-image: url(../img/cartellaClinicaG.png);
     background-position: left center;
     background-repeat: no-repeat;
     padding-left: 35px;
@@ -1495,7 +1568,7 @@ body:not(.smart) #rgApplicaFiltri{
     line-height: 33px !important;
     margin-left: -19px;
     margin-top: -24px;
-    margin-bottom: 10px !important;
+    margin-bottom: 10px !important;*/
 }
 .smart .label_ciclo{
     border-bottom: 1px solid rgba(0,0,0,0.3);

@@ -483,6 +483,10 @@ body:not(.bodyStyled2) #chiudiElenco{
 	padding:0px !important;
 	padding-bottom: 1px !important;
 }
+.cartellaSingoli,
+.cartellaSingoli .trattTools{
+	background-color: #fdebd6 !important;
+}
 .cartella > span{ /* label */
 	display:block;
 	width:100%;
@@ -492,11 +496,16 @@ body:not(.bodyStyled2) #chiudiElenco{
 	white-space:nowrap;
 	padding-left:15px;
 	padding-right:35px;
-	background-image:url(../img/frGiuB.png), linear-gradient(to bottom, #FFF 0%,#EEE 100%);
 	background-repeat:no-repeat, repeat-x;
 	/*background-position:right center, center center;*/
 	background-position:right top, center center;
 	background-size:auto 36px, auto;
+}
+.cartella:not(.cartellaSingoli) > span{
+	background-image:url(../img/frGiuB.png), linear-gradient(to bottom, #FFF 0%,#EEE 100%);
+}
+.cartellaSingoli > span{
+	background-image: url(../img/frGiuB.png), linear-gradient(to bottom, #fdebd6 0%,#dccab8 100%);
 }
 .smart.android .cartella > span{
 	height:50px !important;
@@ -509,8 +518,11 @@ body:not(.bodyStyled2) #chiudiElenco{
 /*.smart.android .cartella > span b{
 	font-size:17px !important;
 }*/
-.cartella:not(.cartellaAperta) > span:hover{
+.cartella:not(.cartellaSingoli):not(.cartellaAperta) > span:hover{
 	background-image:url(../img/frGiuB.png), linear-gradient(to bottom, #EEE 0%,#DDD 100%) !important;
+}
+.cartellaSingoli:not(.cartellaAperta) > span:hover{
+	background-image:url(../img/frGiuB.png), linear-gradient(to bottom, #fdebd6 0%,#d5bea7 100%) !important;
 }
 .cartellaAperta{
 	height:auto !important;

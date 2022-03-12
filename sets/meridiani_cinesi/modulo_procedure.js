@@ -88,7 +88,7 @@ var MODULO_PROCEDURE = { // extend SET
 				'	   onclick="SET.mod_procedura();"' +
 				'	   id="addProcedura"' +
 				'	   title="'+Lingua(TXT_AggiungiProcedura)+'">' +
-				'		<span>'+Lingua(TXT_AggiungiProcedura)+'</span>' +
+				/*'		<span>'+Lingua(TXT_AggiungiProcedura)+'</span>' +*/
 				'	</i>' +
 				'</p>' + HTML;
 		

@@ -1359,6 +1359,11 @@ var TXT_NoResTrattamento={
 	eng: "No treatment",
 	esp: "" };
 
+var TXT_TrattamentiSingoli={
+	ita: "Trattamenti singoli",
+	eng: "Single treatments",
+	esp: "" };
+
 // scheda
 var TXT_ChiediEliminaTrattamento={
 	ita: "Vuoi davvero eliminare il trattamento?",

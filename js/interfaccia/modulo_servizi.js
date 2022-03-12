@@ -16,8 +16,8 @@ var SERVIZI = {
 				'	   onclick="SERVIZI.car_servizio();"' +
 				'	   id="addServizio"' +
 				'	   title="'+Lingua(TXT_AggiungiServizio)+'">' +
-				'		<span>'+Lingua(TXT_AggiungiServizio)+'</span>' +
-				'		<img src="img/piu.png" align="absmiddle">' +
+				/*'		<span>'+Lingua(TXT_AggiungiServizio)+'</span>' +
+				'		<img src="img/piu.png" align="absmiddle">' +*/
 				'	</i>' +
 				'</p>' +
 				'<div class="lista listaServizi">';
@@ -360,22 +360,14 @@ var SERVIZI = {
 				'</span></div>';
 			}
 		}
-		if(DB.servizi.data[p].NumeroSedute>1){
-			HTML += '<p class="btnApp">' +
-					'	<span class="btn_invia"' +
-					'		  onClick="SERVIZI.aggiungi('+p+',-1);">' +
-							htmlEntities(Lingua(TXT_AggiungiCartella)) +
-					'	</span>' +
-					'</p>';
-		}else{
-			HTML += '<p class="btnApp">' +
-					'	<span class="btn_invia"' +
-					'		  onClick="SERVIZI.aggiungi('+p+',-2);">' +
-							htmlEntities(Lingua(TXT_Aggiungi)) +
-					'	</span>' +
-					'</p>';
-		}
-		HTML += '</div>';
+		HTML += '	<div class="app_cart">' +
+						htmlEntities(Lingua(TXT_TrattamentiSingoli)) +
+				'		<span class="btn_invia"' +
+				'		  	  onClick="SERVIZI.aggiungi('+p+',-'+((DB.servizi.data[p].NumeroSedute>1)?'1':'2')+');">' +
+							htmlEntities(Lingua(TXT_Aggiungi_a))+"..." +
+				'		</span>' +
+				'	</div>' +
+				'</div>';
 		
 		
 		
