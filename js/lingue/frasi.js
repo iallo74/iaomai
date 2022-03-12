@@ -1650,6 +1650,12 @@ var TXT_DestinatariFiltrati={
 		esp: ""
 	};
 
+	var TXT_SpostaTrattamento={
+		ita: "Sposta in un'altra cartella",
+		eng: "Sposta in un'altra cartella",
+		esp: ""
+	};
+
 
 
 var TXT_MsgComponiEmail={
@@ -1670,9 +1676,19 @@ var TXT_ChiediEliminaFoto={
 	esp: "" };
 	
 // cartella clinica
+	var TXT_Cartelle={
+		ita: "Cartelle",
+		eng: "Folders",
+		esp: "" };
+		
+	var TXT_SpostaIn={
+		ita: "Sposta in...",
+		eng: "Move to...",
+		esp: "" };
+		
 	var TXT_CicloTrattamenti={
 		ita: "Ciclo di trattamenti",
-		eng: "Tratments cycle",
+		eng: "Tratments cycles",
 		esp: "" };
 		
 	var TXT_ModificaCiclo={

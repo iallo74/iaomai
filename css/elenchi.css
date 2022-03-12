@@ -479,6 +479,44 @@ body:not(.bodyStyled2) #chiudiElenco{
 }
 
 /* CARTELLE */
+.cartelle{
+	background-color:#FFF;
+}
+.cartelle > div:not(#titCartelle) > div{
+	background-image: url(../img/cartellaClinicaG.png), url(../img/frDxB.png);
+    background-repeat: no-repeat;
+    background-position: left center, calc(100% - -4px) center;
+    background-size: auto, auto 113%;
+    height: 36px;
+    line-height: 36px;
+    padding-left: 35px;
+    padding-right: 40px;
+    border-bottom: 1px solid rgba(0,0,0,0.2);
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+	cursor:pointer;
+}
+#titCartelle{
+	color:#FFF;
+    height: 32px;
+    line-height: 32px;
+	padding-left:14px;
+	font-weight:bold;
+	background-color:#666;
+	border-radius: 3px 3px 0px 0px;
+}
+#titCartelle span{
+	position:absolute;
+	right:0px;
+	width:32px;
+    height: 32px;
+	background-image:url(../img/chMenu.png);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: contain;
+	cursor:pointer;
+}
 .cartella{
 	padding:0px !important;
 	padding-bottom: 1px !important;

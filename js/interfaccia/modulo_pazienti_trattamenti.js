@@ -58,7 +58,7 @@ var PAZIENTI_TRATTAMENTI = {
 			for(i in cloneTRATTAMENTI){
 				var TR = cloneTRATTAMENTI[i];
 				if(!PAZIENTI.trattOp)TR.md5='';
-				if(TR.Cancellato==0){
+				if(TR.Cancellato==0 && TR.TipoTrattamento=='A'){
 					esiste=false;
 					for(c in PAZIENTI.cicli){
 						if(PAZIENTI.cicli[c].NomeCiclo == TR.LabelCiclo)esiste=true;
@@ -264,8 +264,8 @@ var PAZIENTI_TRATTAMENTI = {
 					if(PAZIENTI.cicli[c].Tipo == 'C'){ // escludo dai trattamenti singoli
 						HTML +=
 							'<div 	class="anamnesiBtn elMenu"' +
-							'		id="btn_trattamento_'+elAn+'"' +
-							'		title="'+htmlEntities(Lingua(TXT_SchedaAnamnesi))+'"';
+							'		id="btn_trattamento_'+elAn+'"'/* +
+							'		title="'+htmlEntities(Lingua(TXT_SchedaAnamnesi))+'"'*/;
 					if(!touchable)HTML += ' onMouseOver="PAZIENTI.eviPallStat('+DataAn+');"' +
 										  ' onMouseOut="PAZIENTI.desPallStat('+DataAn+');"';
 					HTML += ' 	   onclick="PAZIENTI.car_trattamento(\''+elAn+'\',this,\''+NC+'\',true);">'; // anamnesi
@@ -526,7 +526,14 @@ var PAZIENTI_TRATTAMENTI = {
 				HTML += '</div>';
 			}
 			
-			if(TipoTrattamento != 'A' && LabelCiclo)HTML +=	'<div class="label_ciclo">'+htmlEntities(LabelCiclo)+'</div>';
+			if(TipoTrattamento != 'A'){
+				HTML +=	'<div id="label_ciclo"';
+				if(Q_idTratt>-1)HTML += ' class="label_ciclo_cambia" onClick="PAZIENTI.apriSpostaTrattamento('+Q_idTratt+');"';
+				HTML += '><span>';
+				if(LabelCiclo)HTML +=	htmlEntities(LabelCiclo);
+				else HTML += htmlEntities(Lingua(TXT_TrattamentiSingoli));
+				HTML +=	'</span></div>';
+			}
 			HTML +=	'<form id="formMod" name="formMod" method="post" onSubmit="return false;"';
 			if(TipoTrattamento!='A'){
 				HTML+=' style="background:url(img/f_';
@@ -573,7 +580,9 @@ var PAZIENTI_TRATTAMENTI = {
 								ver: '1|0',
 								label: Lingua(TXT_Ciclo),
 								classCampo: 'styled' }) +
-						H.r({	t: "h",	name: "TitoloTrattamento",	value: Lingua(TXT_Anamnesi) });
+						H.r({	t: "h",
+								name: "TitoloTrattamento",
+								value: Lingua(TXT_Anamnesi) });
 						
 				if(nuovoCiclo){
 					HTML +=  	'<div><div id="anamnesi_btn"' +
@@ -853,16 +862,16 @@ var PAZIENTI_TRATTAMENTI = {
 			
 			HTML+='<div class="l"></div>';
 			
-			
-			if(!LabelCiclo && Q_idTratt>-1){
+			//if(!LabelCiclo && Q_idTratt>-1){
+			/*if(TipoTrattamento!='A' && Q_idTratt>-1){
 				HTML += '<div style="text-align:right;">' +
-						'	<div onClick="PAZIENTI.trasformaTrattamento('+Q_idTratt+');"' +
+						'	<div onClick="PAZIENTI.apriSpostaTrattamento('+Q_idTratt+');"' +
 						'		  id="btnTrasf">' +
-								htmlEntities(Lingua(TXT_TrasformaTrattamento)) +
+								htmlEntities(Lingua(TXT_SpostaTrattamento)) +
 						'	</div>' +
 						'</div>' +
 						'<div class="l"></div>';
-			}
+			}*/
 			
 			if(Q_idTratt>-1 || an){
 				if(TipoTrattamento=='A')titoloDef=TXT_SchedaAnamnesi;
@@ -934,7 +943,7 @@ var PAZIENTI_TRATTAMENTI = {
 		document.getElementById("tratt_btns_meridiani").innerHTML = HTML;
 		PAZIENTI.caricaMeridianiTrattamento();
 	},
-	trasformaTrattamento: function( Q_idTratt){
+	trasformaTrattamento: function( Q_idTratt){ // <<<<<<<<<<<<<<< TOGLIERE
 		if(DB.login.data.auths.indexOf("clients_full")==-1){
 			ALERT(Lingua(TXT_MsgFunzioneSoloPay));
 			return;
@@ -948,6 +957,42 @@ var PAZIENTI_TRATTAMENTI = {
 			SCHEDA.formModificato = false;
 			PAZIENTI.car_trattamento(Q_idTratt, document.getElementById("btn_trattamento_"+Q_idTratt), '', true, -1, true);
 		}});
+	},
+	apriSpostaTrattamento: function( Q_idTratt){
+		applicaLoading(document.getElementById("scheda_testo"),'vuoto');
+		var HTML =  '<div id="titCartelle">'+htmlEntities(Lingua(TXT_SpostaIn))+'<span onClick="PAZIENTI.chiudiSpostaTrattamento();"></span></div>' +
+					'<div>';
+		for(c in PAZIENTI.cicli){
+			HTML += '	<div onClick="PAZIENTI.spostaTrattamento(this);"' +
+					'		 data-id="'+PAZIENTI.cicli[c].p+'">'+PAZIENTI.cicli[c].NomeCiclo+'</div>';
+		}
+		HTML += 	'</div>';
+		var cont = document.getElementById("gruppoPunti_cont");
+		cont.innerHTML = HTML;
+		cont.scrollTo(0,0);
+		var w = (document.getElementById("scheda_testo").scrollWidth-60);
+		var l = 30;
+		var maxW = 400;
+		if(w>maxW){
+			w = maxW;
+			l = (document.getElementById("scheda").scrollWidth/2-maxW/2);
+		}
+		cont.style.left = l+"px";
+		cont.style.width = w+"px";
+		cont.style.top = '118px';
+		cont.classList.add("cartelle");
+		cont.classList.add("visSch");
+	},
+	spostaTrattamento: function( el ){
+		document.getElementById("label_ciclo").innerHTML = '<span>'+htmlEntities(el.innerText)+'</span>';
+		document.formMod.LabelCiclo.value = el.innerText;
+		document.formMod.idCiclo.value = el.dataset.id;
+		PAZIENTI.chiudiSpostaTrattamento();
+	},
+	chiudiSpostaTrattamento: function(){
+		document.getElementById("gruppoPunti_cont").classList.remove("visSch");
+		document.getElementById("gruppoPunti_cont").classList.remove("cartelle");
+		rimuoviLoading(document.getElementById("scheda_testo"));
 	},
 	chiudiTrattamento: function(){ // funzione chiamata alla chiusura del trattamento
 		try{
@@ -993,10 +1038,12 @@ var PAZIENTI_TRATTAMENTI = {
 					PAZIENTI.aperture[LabelCiclo] = PAZIENTI.aperture[LabelCiclo_C];
 				}
 			}else{
-				if(document.formMod.idCiclo.value*1>-1){
+				if(	document.formMod.LabelCiclo.value!=document.formMod.LabelCicloOr.value){
 					// verifico i sintomi
 					var TRS = DB.pazienti.data[PAZIENTI.idCL].trattamenti;
-					var sintomiCiclo = JSON.parse(TRS[document.formMod.idCiclo.value*1].sintomi);
+					var sintomiCiclo = [];
+					if(document.formMod.idCiclo.value*1>-1)sintomiCiclo = JSON.parse(TRS[document.formMod.idCiclo.value*1].sintomi);
+					//console.log(JSON.stringify(sintomiCiclo));
 					for(s in PAZIENTI.sintomiProvvisori){
 						// per ogni sintomo verifico che esista anche nel modello
 						var esiste = false;
@@ -1011,6 +1058,7 @@ var PAZIENTI_TRATTAMENTI = {
 							sintomiCiclo.push(sintomo);
 						}
 					}
+					/*console.log(JSON.stringify(sintomiCiclo));
 					for(sc in sintomiCiclo){
 						// per ogni sintomo del modello verifico che esista anche nel trattamento
 						var esiste = false;
@@ -1023,7 +1071,12 @@ var PAZIENTI_TRATTAMENTI = {
 							sintomiCiclo.splice(sc,1);
 						}
 					}
-					TRS[document.formMod.idCiclo.value*1].sintomi = JSON.stringify(sintomiCiclo);
+					console.log(JSON.stringify(sintomiCiclo));
+					return;*/
+					if(document.formMod.idCiclo.value*1>-1){
+						TRS[document.formMod.idCiclo.value*1].sintomi = JSON.stringify(sintomiCiclo);
+						TRS[document.formMod.idCiclo.value*1].DataModifica = parseInt(DataModifica);
+					}
 				}
 			}
 			

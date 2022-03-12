@@ -1544,7 +1544,7 @@ body:not(.smart) #rgApplicaFiltri{
     padding-right: 22px;
 }
 
-.label_ciclo{
+#label_ciclo{
 	text-align: left;
     background-image: url(../img/cartellaClinicaG.png);
     background-position: 5px center;
@@ -1570,7 +1570,13 @@ body:not(.smart) #rgApplicaFiltri{
     margin-top: -24px;
     margin-bottom: 10px !important;*/
 }
-.smart .label_ciclo{
+#label_ciclo span{
+	display:inline-block;
+	vertical-align:top;
+    height: 42px;
+    line-height: 42px !important;
+}
+.smart #label_ciclo{
     border-bottom: 1px solid rgba(0,0,0,0.3);
     margin-top: -20px !important;
     margin-left: -20px;
@@ -1584,6 +1590,14 @@ body:not(.smart) #rgApplicaFiltri{
     line-height: 40px !important;
     height: 40px;
     background-position: 5px center;
+}
+.label_ciclo_cambia span{
+	cursor:pointer;
+	padding-right: 42px;
+    background-image:url(../img/frGiuB.png);
+	background-repeat:no-repeat;
+	background-position:right center;
+	background-size: auto 120% !important;
 }
 #stampa_prescr{
 	margin-bottom: -9px;

@@ -163,7 +163,7 @@ var SCHEDA = {
 		//if(SCHEDA.aggancio.tipo == 'sotto')SCHEDA.aggancio.sotto.y = tCoord(document.getElementById("scheda"),'y');
 		//if(SCHEDA.aggancio.tipo == 'libera')SCHEDA.verPosScheda();
 		SCHEDA.verRedim();
-		//SCHEDA.verPosScheda();
+		SCHEDA.verPosScheda();
 		SCHEDA.setMenuDim();
 		GUIDA.nasFumetto();
 		SCHEDA.riapriScheda();
