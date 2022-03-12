@@ -555,6 +555,7 @@ var MODELLO = {
 	},
 	slw: function( event, livello ){
 		
+		SLIDER.demolt = 2;
 		var sliderDest = document.getElementById('s_'+livello).getElementsByTagName('div')[0];
 		var modelloAperto = document.getElementById("pulsanti_modello").classList.contains("visSch");
 		if(!modelloAperto){
@@ -570,11 +571,11 @@ var MODELLO = {
 		var x = event.pageX;
 		//SLIDER.xIni = x;
 		var y = event.pageY;
-		var w = 210;
-		if(livello=='pelle')w = 240;
-		var posSlider = MENU.getOp(livello)*(w - 24);
-		var posCont = MENU.getOp(livello)*(w - 24) + 17;
-		document.getElementById("sliderAnatomia").style.width = (w+10) + 'px';
+		var w = 210 / SLIDER.demolt;
+		if(livello=='pelle')w = 240 / SLIDER.demolt;
+		var posSlider = MENU.getOp(livello)*(w - 12);
+		var posCont = MENU.getOp(livello)*(w - 12) + 17;
+		document.getElementById("sliderAnatomia").style.width = (w+22) + 'px';
 		document.getElementById("sliderAnatomia").classList.add("visSch");
 		
 		var sliderDiv = document.getElementById("sliderAnatomia").querySelector(".slider");
@@ -582,7 +583,7 @@ var MODELLO = {
 		
 		sliderBtn.style.marginLeft = posSlider + 'px';
 		document.getElementById("sliderAnatomia").style.left = (x - posCont) + 'px';
-		document.getElementById("sliderAnatomia").style.top = (y - 16) + 'px';;
+		document.getElementById("sliderAnatomia").style.top = (y - 16) + 'px';
 	},
 	filtraAnatomia: function(){
 		var vis = true;

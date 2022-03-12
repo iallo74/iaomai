@@ -646,6 +646,7 @@ var SLIDER = {
 	xIni: 0,
 	xAtt: 0,
 	maxVal: 0,
+	demolt: 1, // demoltiplicatore per il selettore rapido di anatomia
 	livelloSel: '',
 	slider: null,
 	slider_btn: null,
@@ -681,12 +682,14 @@ var SLIDER = {
 	moveSlider: function(event){
 		event.preventDefault();
 		SLIDER.xAtt = touchable ? event.touches[ 0 ].pageX : event.clientX;
-		var mL = (SLIDER.xAtt - SLIDER.xIni) + SLIDER.mIni;
+		var diffX = SLIDER.xAtt - SLIDER.xIni
+		var mL = SLIDER.mIni/SLIDER.demolt + diffX;
 		if(mL<0)mL = 0;
-		if(mL>SLIDER.maxVal)mL = SLIDER.maxVal;
-		SLIDER.slider_btn.style.marginLeft = mL+'px';
-		document.getElementById("sliderAnatomia").querySelector(".slider").getElementsByTagName("div")[0].style.marginLeft = mL+'px';
-		perc=mL/SLIDER.maxVal;
+		if(mL>SLIDER.maxVal/SLIDER.demolt)mL = SLIDER.maxVal/SLIDER.demolt;
+		SLIDER.slider_btn.style.marginLeft = (mL*SLIDER.demolt)+'px';
+		var btnSlideAnat = document.getElementById("sliderAnatomia").querySelector(".slider").getElementsByTagName("div")[0];
+		btnSlideAnat.style.marginLeft = (mL)+'px';
+		perc=(mL/SLIDER.maxVal)*SLIDER.demolt;
 		var l = SLIDER.livelloSel.substr(0,1).toUpperCase()+SLIDER.livelloSel.substr(1,SLIDER.livelloSel.length-1);
 		MODELLO.op(l,perc);
 		raycastDisable = true;
@@ -706,5 +709,6 @@ var SLIDER = {
 		SLIDER.slider_btn = null;
 		document.getElementById("pulsanti_modello").classList.remove("pLight");
 		raycastDisable = false;
+		SLIDER.demolt = 1;
 	}
 }
