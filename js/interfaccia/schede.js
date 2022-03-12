@@ -781,22 +781,21 @@ var SCHEDA = {
 				}catch(err){};
 			}
 		}
-		SCHEDA.verPosScheda();
 		SCHEDA.setMenuDim();
+		SCHEDA.verPosScheda();
 	},
 	setMenuDim: function(){
 		document.getElementById("scheda").classList.toggle("schRid", document.getElementById("elenchi").classList.contains("visSch"));
 	},
 	chiudiElenco: function(){
 		var aperto = document.getElementById("elenchi_cont").classList.contains("visSch");
-		//console.log(aperto)
 		document.getElementById("elenchi_cont").classList.remove("visSch");
 		document.getElementById("scheda").classList.remove("schOp");
 		document.getElementById("elenchi").classList.remove("visSch");
 		MENU.desIcona();
-		SCHEDA.setMenuDim(2);
+		SCHEDA.setMenuDim();
 		MENU.setTT();
-		//setTimeout(function(){verAnimate();},200);
+		SCHEDA.verPosScheda();
 	},
 	torna: function( daCarica ){
 		if(document.getElementById("scheda").className.indexOf("schedaRitorno") > -1){

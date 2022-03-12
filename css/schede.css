@@ -346,9 +346,9 @@ body:not(.smart) #scheda.minimized #xp{
 body:not(.smart)#ss{
     margin-left: calc(50% - 50px) !important;
 }
-.touch #scheda:not(.schRid) #ss{
+/*.touch #scheda:not(.schRid) #ss{
     margin-left: calc(50% - 85px) !important;
-}
+}*/
 #ss svg{
     height: 22px !important;
 }
