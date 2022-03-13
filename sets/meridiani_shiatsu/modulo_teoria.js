@@ -79,13 +79,14 @@ var MODULO_TEORIA = { // extend SET
 		
 		SCHEDA.caricaScheda( 	titolo,
 								html,
-								'SET.annullaEvidenziaTsubo();',
+								'SET.annullaEvidenziaTsubo();SET.spegniMeridiani(true);',
 								'scheda_teoria',
 								false,
 								true,
 								btn );
-		SET.evidenziaTsubo(html);
 		SET.convSigleScheda();
+		SET.evidenziaTsubo(html);
+		SET.evidenziaMeridiani(html);
 	},
 	caricaVideo: function( p, t, btn ){
 		// verifico le autorizzazioni
@@ -112,7 +113,7 @@ var MODULO_TEORIA = { // extend SET
 		
 		SCHEDA.caricaScheda( 	titolo,
 								html,
-								'SET.annullaEvidenziaTsubo();',
+								'SET.annullaEvidenziaTsubo();SET.spegniMeridiani(true);',
 								'scheda_video',
 								false,
 								true,

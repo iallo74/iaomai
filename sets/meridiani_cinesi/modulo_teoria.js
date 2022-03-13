@@ -83,13 +83,14 @@ var MODULO_TEORIA = { // extend SET
 		if(meridianiSecondari)espansa = false;
 		SCHEDA.caricaScheda( 	titolo,
 								html,
-								'SET.annullaEvidenziaTsubo();SET.spegniMeridianoSecondario(\'\',true);',
+								'SET.annullaEvidenziaTsubo();SET.spegniMeridiani(true);SET.spegniMeridianoSecondario(\'\',true);',
 								'scheda_teoria',
 								false,
 								espansa,
 								btn );
-		SET.evidenziaTsubo(html);
 		SET.convSigleScheda();
+		SET.evidenziaTsubo(html);
+		SET.evidenziaMeridiani(html);
 		
 		SET.spegniMeridianoSecondario();
 		setTimeout( function(meridianiSecondari){
@@ -126,7 +127,7 @@ var MODULO_TEORIA = { // extend SET
 		
 		SCHEDA.caricaScheda( 	titolo,
 								html,
-								'SET.annullaEvidenziaTsubo();',
+								'SET.annullaEvidenziaTsubo();SET.spegniMeridiani(true);',
 								'scheda_video',
 								false,
 								true,

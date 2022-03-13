@@ -302,13 +302,14 @@ var MODULO_PROCEDURE = { // extend SET
 			if(SCHEDA.btnSel && Q_resta)SCHEDA.btnSel=null;
 			SCHEDA.caricaScheda( 	NomeProcedura,
 									HTML,
-									'SET.annullaEvidenziaTsubo();',
+									'SET.annullaEvidenziaTsubo();SET.spegniMeridiani(true);',
 									'scheda_procedura',
 									false,
 									true,
 									btn );
-			SET.evidenziaTsubo(HTML);
 			SET.convSigleScheda();
+			SET.evidenziaTsubo(HTML);
+			SET.evidenziaMeridiani(HTML);
 			if(idProcedura)SET.car_commenti(idProcedura);
 			if(Q_resta){
 				if(btn){
@@ -542,6 +543,7 @@ var MODULO_PROCEDURE = { // extend SET
 	},
 	chiudiProcedura: function(){ // alla chiusura della modifica della procedura
 		SET.annullaEvidenziaTsubo();
+		SET.spegniMeridiani(true);
 		endChangeDetection();
 		SCHEDA.formModificato = false;
 	},
@@ -664,6 +666,7 @@ var MODULO_PROCEDURE = { // extend SET
 		var txareas = ''; // per il resize su tochable
 		var OrdineDettaglio = -1
 		var tsuboProvvisoriProc = [];
+		var meridianiProvvisoriProc = [];
 		for(p in SET.dettagliProvvisori){
 			var DT = SET.dettagliProvvisori[p];
 			OrdineDettaglio++;
@@ -806,6 +809,7 @@ var MODULO_PROCEDURE = { // extend SET
 				}
 				
 				if(TipoDettaglio=='M'){
+					meridianiProvvisoriProc.push( DescrizioneDettaglio );
 					HTML += 
 						'	<select name="mr_'+p+'"' +
 						'		    id="mr_'+p+'"' +
@@ -839,7 +843,10 @@ var MODULO_PROCEDURE = { // extend SET
 		}
 		if(!presente)HTML += '<div class="noResults" style="height:50px;">'+Lingua(TXT_NoRes)+'...</div>';
 		document.getElementById("dettagliCont").innerHTML=HTML;
-		try{ SET.evidenziaTsuboMod( tsuboProvvisoriProc ); }catch(err){}
+		try{
+			SET.evidenziaTsuboMod( tsuboProvvisoriProc );
+			SET.evidenziaMeridianiMod( meridianiProvvisoriProc );
+		}catch(err){}
 		if(eviUltimo){
 			if(TipoDettaglio=='P')eval("document.formMod.mr_"+p+".focus()");
 			else if(TipoDettaglio!='M')eval("document.formMod.de_"+p+".focus()");

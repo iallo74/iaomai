@@ -698,8 +698,9 @@ SET = {
 		this.coloraMeridiano(siglaMeridiano,'','Base');
 		MERIDIANI[siglaMeridiano].meridianoAcceso=false;
 	},
-	spegniMeridiani: function(){
-		if(SCHEDA.scheda2Aperta){
+	spegniMeridiani: function( forza ){
+		if(typeof(forza)=='undefined')var forza = false;
+		if(SCHEDA.scheda2Aperta || forza){
 			for(m in MERIDIANI){
 				if(MERIDIANI[m].meridianoAcceso){
 					var mer = m;
@@ -857,6 +858,15 @@ SET = {
 		}
 		SET.settaOverTsubo();
 	},
+	evidenziaMeridiani: function( html ){
+		SET.spegniMeridiani(true);
+		var re = /accendiMeridiano\([^\)]+\)/ig;
+		var result = html.match(re);
+		for(k in result){
+			var siglaMeridiano=result[k].split("'")[1];
+			SET.accendiMeridiano(siglaMeridiano,true);
+		}
+	},
 	evidenziaTsuboMod: function( elenco ){
 		SET.annullaEvidenziaTsubo();
 		for(k in elenco){
@@ -879,6 +889,12 @@ SET = {
 			SET.tsuboEvidenziati.push(elenco[k]);
 		}
 	},
+	evidenziaMeridianiMod: function( elenco ){
+		SET.spegniMeridiani(true);
+		for(k in elenco){
+			SET.accendiMeridiano(elenco[k],true);
+		}
+	},
 	annullaEvidenziaTsubo: function(){
 		if(SET.tsuboEvidenziati.length){
 			for(k in SET.tsuboEvidenziati){
@@ -899,8 +915,9 @@ SET = {
 	},
 	settaOverTsubo: function(){
 		if(!touchable){
+			console.log("OK")
 			var els = document.getElementById("scheda_testo").getElementsByClassName("pallinoPat");
-			for(e in els){
+			for(e=0;e<els.length;e++){
 				els[e].onmouseover = function(){
 					SET.overTsubo(this,true);
 				}
@@ -918,7 +935,7 @@ SET = {
 			var tot = els.length;
 			for(e=0;e<tot;e++){
 				var sl = els[e].getElementsByTagName("select");
-				var mer = sl[0].value;
+				var mer = SET.estraiSigla(sl[0].value);
 				var nTsubo = sl[1].value;
 				if(nTsubo.length == 1)nTsubo='0'+nTsubo;
 				elenco.push(nTsubo+"."+mer);
@@ -930,7 +947,7 @@ SET = {
 		if(el.classList.contains("dettPunto")){
 			var sl = el.getElementsByTagName("select");
 			if(!sl.length)return;
-			var mer = sl[0].value;
+			var mer = SET.estraiSigla(sl[0].value);
 			var nTsubo = sl[1].value;
 			if(typeof(DB.set.meridiani[mer])=='undefined')return;
 		}else{
@@ -943,16 +960,15 @@ SET = {
 				while(pT[1].indexOf("|")>-1)pT[1]=pT[1].replace("|",".");
 				var pP=pT[1].split(".");
 				var nTsubo=pP[0];
-				var mer=pP[1];
+				var mer=SET.estraiSigla(pP[1]);
 			}else{
 				result = html.match(re2);
 				var pT=result[0].split("'");
 				var pP=pT[1].split(".");
 				var nTsubo=pP[1];
-				var mer=pP[0];
+				var mer=SET.estraiSigla(pP[0]);
 			}
 		}
-		
 		if(nTsubo.length == 1)nTsubo = "0"+nTsubo;
 		if(over){
 			SET.addEviPalls(mer,nTsubo,'Over');
@@ -963,6 +979,14 @@ SET = {
 	convSigla: function( siglaMeridiano ){
 		if( localStorage.sistemaSigleMeridiani=='INT' || !__(DB.mtc.meridiani[siglaMeridiano]))return siglaMeridiano;
 		else return DB.mtc.meridiani[siglaMeridiano].sigle[localStorage.sistemaSigleMeridiani];
+	},
+	estraiSigla: function( siglaMeridiano ){
+		var siglaDef = siglaMeridiano;
+		if(localStorage.sistemaSigleMeridiani=='INT' || !localStorage.sistemaSigleMeridiani)return siglaMeridiano;
+		for(m in DB.mtc.meridiani){
+			if(siglaMeridiano == DB.mtc.meridiani[m].sigle[localStorage.sistemaSigleMeridiani])siglaDef = m;
+		}
+		return siglaDef;
 	},
 	convSigleScheda: function(){
 		if(localStorage.sistemaSigleMeridiani == 'INT' || 

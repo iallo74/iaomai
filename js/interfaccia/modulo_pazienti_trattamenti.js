@@ -891,6 +891,7 @@ var PAZIENTI_TRATTAMENTI = {
 	chiudiTrattamento: function(){ // funzione chiamata alla chiusura del trattamento
 		try{
 			SET.annullaEvidenziaTsubo();
+			SET.spegniMeridiani(true);
 		}catch(err){}
 		SCHEDA.formModificato = false;
 		PAZIENTI.trattOp = false;
@@ -1364,7 +1365,9 @@ var PAZIENTI_TRATTAMENTI = {
 		}
 		document.getElementById('totTsubo').innerHTML = totTsubo;
 		document.getElementById('puntiTsuboMap').innerHTML=HTML;
-		try{SET.evidenziaTsuboMod(elenco.substr(0,elenco.length-1).split("|"));}catch(err){}
+		try{
+			SET.evidenziaTsuboMod(elenco.substr(0,elenco.length-1).split("|"));
+		}catch(err){}
 		if(PAZIENTI.topAdd)document.getElementById("scheda_testo").scrollTo(0,document.getElementById("scheda_testo").scrollTop+(tCoord(document.getElementById("p_add_dett"),'y')-PAZIENTI.topAdd));
 		PAZIENTI.topAdd = null;
 	},
@@ -1893,8 +1896,10 @@ var PAZIENTI_TRATTAMENTI = {
 			modificabile = true;
 		}
 		var HTML = '';
+		var elenco = [];
 		if(PAZIENTI.meridianiProvvisori.length){
 			for(m in PAZIENTI.meridianiProvvisori){
+				elenco.push(PAZIENTI.meridianiProvvisori[m].siglaMeridiano);
 				var m2 = __(PAZIENTI.meridianiProvvisori[m].valEnergetica);
 				var descrizione = __(PAZIENTI.meridianiProvvisori[m].descrizione);
 				HTML += '<div class="rgProcMod ';
@@ -1976,7 +1981,9 @@ var PAZIENTI_TRATTAMENTI = {
 		}
 		document.getElementById('totMeridiani').innerHTML = PAZIENTI.meridianiProvvisori.length;
 		document.getElementById('meridianiTsuboMap').innerHTML=HTML;
-		
+		try{
+			SET.evidenziaMeridianiMod(elenco);
+		}catch(err){}
 		if(PAZIENTI.topAdd)document.getElementById("scheda_testo").scrollTo(0,document.getElementById("scheda_testo").scrollTop+(tCoord(document.getElementById("p_add_dett"),'y')-PAZIENTI.topAdd));
 		PAZIENTI.topAdd = null;
 	},

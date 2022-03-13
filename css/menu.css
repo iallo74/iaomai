@@ -364,6 +364,16 @@ body:not(.smart) #p_rifletti{
 	opacity:0.5 !important;
 }
 
+.smart #p_liv_muscoli,
+.smart #p_liv_ossa,
+.smart #p_liv_visceri,
+.smart #p_liv_pelle{
+	display:none !important;
+	position:fixed !important;
+	left:-500px !important;
+	height:0px !important;
+	width:0px !important;
+}
 
 
 body #p_impostazioniAM{

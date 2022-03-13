@@ -842,6 +842,15 @@ SET = {
 		}
 		SET.settaOverTsubo();
 	},
+	evidenziaMeridiani: function( html ){
+		SET.spegniMeridiani(true);
+		var re = /accendiMeridiano\([^\)]+\)/ig;
+		var result = html.match(re);
+		for(k in result){
+			var siglaMeridiano=result[k].split("'")[1];
+			SET.accendiMeridiano(siglaMeridiano,true);
+		}
+	},
 	evidenziaTsuboMod: function( elenco ){
 		SET.annullaEvidenziaTsubo();
 		for(k in elenco){
@@ -862,6 +871,12 @@ SET = {
 			if(ptCc)ptCc.material = mat;
 			
 			SET.tsuboEvidenziati.push(elenco[k]);
+		}
+	},
+	evidenziaMeridianiMod: function( elenco ){
+		SET.spegniMeridiani(true);
+		for(k in elenco){
+			SET.accendiMeridiano(elenco[k],true);
 		}
 	},
 	annullaEvidenziaTsubo: function(){
@@ -969,6 +984,12 @@ SET = {
 	convSigla: function( siglaMeridiano ){
 		if( localStorage.sistemaSigleMeridiani=='INT' || !__(DB.mtc.meridiani[siglaMeridiano]))return siglaMeridiano;
 		else return DB.mtc.meridiani[siglaMeridiano].sigle[localStorage.sistemaSigleMeridiani];
+	},
+	estraiSigla: function( siglaMeridiano ){
+		if(localStorage.sistemaSigleMeridiani=='INT' || !localStorage.sistemaSigleMeridiani)return siglaMeridiano;
+		for(m in DB.mtc.meridiani){
+			if(siglaMeridiano == DB.mtc.meridiani[m].sigle[localStorage.sistemaSigleMeridiani])return m;
+		}
 	},
 	convSigleScheda: function(){
 		if(localStorage.sistemaSigleMeridiani == 'INT' || 

@@ -46,13 +46,14 @@ var MODULO_PATOLOGIE = { // extend SET
 		
 		SCHEDA.caricaScheda(	titolo,
 								html,
-								'SET.annullaEvidenziaTsubo();',
+								'SET.annullaEvidenziaTsubo();SET.spegniMeridiani(true);',
 								'scheda_patologia',
 								false,
 								true,
 								btn );
-		SET.evidenziaTsubo(html);
 		SET.convSigleScheda();
+		SET.evidenziaTsubo(html);
+		SET.evidenziaMeridiani(html);
 	},
 	azRicercaPatologie: function( p ){
 		SCHEDA.apriElenco('set');
