@@ -254,7 +254,7 @@ var PAZIENTI_TRATTAMENTI = {
 				try{
 					SCHEDA.btnSel = document.getElementById(SCHEDA.btnSel.id);
 					SCHEDA.btnSel.classList.add("elencoSel");
-					SCHEDA.scaricaScheda(true);
+					//SCHEDA.scaricaScheda(true); // CHIUDE LA SCHEDA DOPO IL SALVATAGGIO
 					//SCHEDA.btnSel.click(); // riapre il trattamento dopo il salvataggio
 					if(typeof(Q_resta) == 'number' && Q_resta>-1)setTimeout(function(){ SCHEDA.msgSalvataggio(); }, 200 );
 				}catch(err){}
@@ -1034,6 +1034,7 @@ var PAZIENTI_TRATTAMENTI = {
 				localPouchDB.setItem(MD5("DB"+LOGIN._frv()+".pazienti"), IMPORTER.COMPR(DB.pazienti)).then(function(){ // salvo il DB
 					LOGIN.sincronizza(	'rimuoviLoading(document.querySelector(".listaTrattamenti"));'+
 										'rimuoviLoading(document.getElementById("scheda_testo"));'+
+										/*"PAZIENTI.car_trattamento("+pDef+", document.getElementById('btn_trattamento_"+pDef+"'), '"+addslashes(LabelCiclo)+"', '"+((TipoTrattamento=='A')?'true':'false')+"');" +*/
 										'PAZIENTI.pulisciGallery('+pDef+');' );
 					//SCHEDA.scaricaScheda();
 					
@@ -1609,18 +1610,20 @@ var PAZIENTI_TRATTAMENTI = {
 			EL.contenuto = [];
 			EL.livello = 2;
 			EL.parent = PAZIENTI.elencoGruppoPunti;
-						
+			
+			var PRS = clone(DB.procedure.data);
+			PRS.sort(sort_by("NomeProcedura", false));
 			var presenti=false;
-			for(p in DB.procedure.data){
-				if(!DB.procedure.data[p].Cancellato){
+			for(p in PRS){
+				if(!PRS[p].Cancellato){
 					EL2 = {};
-					EL2.titolo = DB.procedure.data[p].NomeProcedura;
+					EL2.titolo = PRS[p].NomeProcedura;
 					EL2.contenuto = [];
 					EL2.livello = 3;
 					EL2.parent = EL;
 					// scansiono i dettagli
-					for(i in DB.procedure.data[p].dettagliProcedura){
-						var DT = DB.procedure.data[p].dettagliProcedura[i];
+					for(i in PRS[p].dettagliProcedura){
+						var DT = PRS[p].dettagliProcedura[i];
 						if(DT.TipoDettaglio==PAZIENTI.tipoGruppo){
 							if(DT.DescrizioneDettaglio.length>1){
 								EL2.contenuto.push(DT.DescrizioneDettaglio);

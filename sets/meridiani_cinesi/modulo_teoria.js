@@ -81,11 +81,19 @@ var MODULO_TEORIA = { // extend SET
 		html += html_cont;
 		var espansa = true;
 		if(meridianiSecondari)espansa = false;
+		
+		var ritorno = false;
+		if(	document.getElementById("scheda").querySelector(".formBtn") &&
+			document.getElementById("scheda").classList.contains("visSch") &&
+			SCHEDA.verificaSchedaRet() )ritorno = "document.getElementById('scheda').classList.remove('scheda_teoria')";
+			
 		SCHEDA.caricaScheda( 	titolo,
 								html,
-								'SET.annullaEvidenziaTsubo();SET.spegniMeridiani(true);SET.spegniMeridianoSecondario(\'\',true);',
+								'SET.annullaEvidenziaTsubo();' +
+								'SET.spegniMeridiani(true);' +
+								'SET.spegniMeridianoSecondario(\'\',true);',
 								'scheda_teoria',
-								false,
+								ritorno,
 								espansa,
 								btn );
 		SET.convSigleScheda();

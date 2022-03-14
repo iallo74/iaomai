@@ -172,9 +172,9 @@
 body:not(.smart) #p_set{
 	background: url(img/logoMenu.png), linear-gradient(to bottom, #0f3a89 0%,#1546a1 5px,#1546a1 calc(100% - 5px),#0f3a89 100%);
 }
-body:not(.bodyStyled1):not(.bodyStyled2):not(.smart) #p_set{
+/*body:not(.bodyStyled1):not(.bodyStyled2):not(.smart) #p_set{
 	background-image: url(img/logoMenuN.png);
-}
+}*/
 /*body:not(.touch) */#p_set svg polygon{
 	fill: var(--menu-fondino);
 }

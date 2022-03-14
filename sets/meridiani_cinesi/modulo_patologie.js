@@ -44,11 +44,16 @@ var MODULO_PATOLOGIE = { // extend SET
 					'		class="ideogrammaTsubo">'+html;
 		}
 		
+		var ritorno = false;
+		if(	document.getElementById("scheda").querySelector(".formBtn") &&
+			document.getElementById("scheda").classList.contains("visSch") &&
+			SCHEDA.verificaSchedaRet() )ritorno = "document.getElementById('scheda').classList.remove('scheda_patologia')";
+			
 		SCHEDA.caricaScheda(	titolo,
 								html,
 								'SET.annullaEvidenziaTsubo();SET.spegniMeridiani(true);',
 								'scheda_patologia',
-								false,
+								ritorno,
 								true,
 								btn );
 		SET.convSigleScheda();

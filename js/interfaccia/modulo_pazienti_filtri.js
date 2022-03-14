@@ -869,7 +869,7 @@ var PAZIENTI_FILTRI = {
 			}
 			HTML += 
 			'	<div id="rgApplicaFiltri"' +
-			'		 class="formBtn noPrint">' +
+			'		 class="noPrint">' +
 			'		<div class="btn_invia"' +
 			'			 onClick="PAZIENTI.statsFiltra(true);">' +
 						htmlEntities(Lingua(TXT_ApplicaFiltri)) +
@@ -973,7 +973,6 @@ var PAZIENTI_FILTRI = {
 	},
 	cancellaFiltri: function( noCar ){
 		if(typeof(noCar)=='undefined')var noCar = false;
-		console.log(noCar)
 		PAZIENTI.pazientiFiltrati = [];
 		PAZIENTI.parametriFiltri = [];
 		document.getElementById("scheda_testo").scrollTo(0,0);
@@ -1188,11 +1187,11 @@ var PAZIENTI_FILTRI = {
 		HTML +=
 		'					<div class="submitBtn"' +
 		'						 onClick="PAZIENTI.anteprimaEmail();">' +
-								htmlEntities(Lingua(TXT_AnteprimaEmail)).toUpperCase() +
+								htmlEntities(Lingua(TXT_AnteprimaEmail)) +
 		'					</div>' +
 		'					<div class="submitBtn"' +
 		'						 onClick="PAZIENTI.salvaEmail();">' +
-								htmlEntities(Lingua(TXT_Salva)).toUpperCase() +
+								htmlEntities(Lingua(TXT_Salva)) +
 		'					</div>' +
 		'				</div>' +
 		'				<input type="hidden" name="idMessaggio" id="idMessaggio" value="'+msg.idMessaggio+'">' +

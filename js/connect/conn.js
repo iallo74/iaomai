@@ -1,6 +1,6 @@
 var CONN = {
 	VERSIONE: 1,
-	APIfolder: 'https://www.corpomentespirito.it/__stream/app/030_iaomai/__API/V1/',
+	APIfolder: 'https://www.corpomentespirito.it/__stream/app/030_iaomai/__API/V1.1/',
 	linkPrivacy: 'https://www.iaomai.app/privacy',
 	caricaUrl: function(url, qs, funzione){ // carica un URL
 		if(typeof(qs)=='undefined')var qs='';
@@ -34,6 +34,7 @@ var CONN = {
 				var tm = Number(new Date());
 				if(qs)qs+='&';
 				qs+="tm="+tm;
+				if(typeof(DB)!='undefined')qs+="&ui="+encodeURIComponent(window.btoa(__(localStorage.UniqueId)));
 				x.open("POST", CONN.APIfolder+url, true);
 				//console.log(CONN.APIfolder+url);
 				x.setRequestHeader("Content-type", "application/x-www-form-urlencoded;charset=uft-8;");

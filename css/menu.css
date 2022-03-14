@@ -205,8 +205,11 @@ body:not(.smart) #icone div:not(#btns_set):not(#cartella_set) i{
 	line-height: 48px;
 	font-size:15.4px;
 }
-body:not(.bodyStyled1):not(.bodyStyled2):not(.smart) #icone div:not(#btns_set):not(#cartella_set) i{
+body:not(.bodyStyled1):not(.bodyStyled2):not(.smart) #icone div:not(#btns_set):not(#cartella_set):not(#p_set) i{
 	color:#000;
+}
+body:not(.bodyStyled1):not(.bodyStyled2):not(.smart) #ico_cliente i{
+	color:#FFF !important;
 }
 body:not(.smart) #icone.iconeTrans div:not(#btns_set):not(#cartella_set) i{
 	transition: opacity 0.3s;

@@ -166,6 +166,9 @@ body:not(.touch) .schLato #ss{
 	text-align: center !important;
     border-top: 1px solid rgba(0,0,0,0.2);
 }
+.touch #btnsFixScheda{
+	display:none !important;
+}
 #btnsFixScheda span{
 	display:inline-block;
 	vertical-align:top;
@@ -173,9 +176,6 @@ body:not(.touch) .schLato #ss{
 	line-height:42px;
 	padding-left:10px;
 	padding-right:10px;
-}
-.touch #btnsFixScheda{
-	display:none;
 }
 #btnsFixScheda > div{
 	width:32px;
@@ -285,12 +285,17 @@ body:not(.smart) #scheda.minimized #xp{
 }
 #scheda.schLato #sc{
 	position: absolute;
-    top: 3px;
-    left: calc(100% - 27px);
+    top: 6px;
+    left: calc(100% - 2px);
     width: 25px !important;
     height: 31px;
     border-radius: 0px 5px 5px 0px;
+    background-color: rgba(0,0,0,0.5);
 }
+#scheda.schLato #sc:hover{
+    background-color: rgba(0,0,0,0.8) !important;
+}
+
 #scheda:not(.minimized) #xp{
 	display:none !important;
 }
@@ -361,7 +366,9 @@ body:not(.smart)#ss{
 .filled{
 	fill: var(--schede-icone) !important;
 }
-
+#btnsFixScheda .filled{
+	fill: transparent !important;
+}
 
 /* div della scheda */
 #scheda_cont{
@@ -373,10 +380,12 @@ body:not(.smart)#ss{
 body:not(.smart) #scheda_cont{
 	padding-top:3px;
 }
-body:not(.smart) #scheda.schForm:not(.schedaRitorno):not(.h150):not(.minimized):not(.tab_tsubo) #scheda_cont{
+/*body:not(.smart) #scheda.schForm:not(.schedaRitorno):not(.h150):not(.minimized):not(.tab_tsubo) #scheda_cont{
     padding-bottom: 53px;
-}
+}*/
 #scheda_titolo{
+	width: calc(100% - 29px);	
+	cursor:default !important;
 	margin-left:3px;
 	margin-right:3px;
 	margin-bottom:3px;
@@ -388,7 +397,7 @@ body:not(.smart) #scheda.schForm:not(.schedaRitorno):not(.h150):not(.minimized):
 	overflow:hidden;
 	text-overflow:ellipsis;
 	white-space:nowrap;
-	padding-left:20px;
+	padding-left:45px;
 	padding-right:20px;
     box-shadow: 0px 0px 3px rgba(0,0,0,0.5);
     background: #1d4eaa;
@@ -398,9 +407,9 @@ body:not(.smart) #scheda.schForm:not(.schedaRitorno):not(.h150):not(.minimized):
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1d4eaa', endColorstr='#0a3d96',GradientType=0 );
 	/*cursor:pointer;*/
 }
-.schLato #scheda_titolo{
-	width: calc(100% - 29px);	
-	cursor:default !important;
+
+body:not(.smart) #scheda.schForm:not(.schedaRitorno):not(.minimized):not(.tab_tsubo):not(.scheda_marketing) #scheda_titolo{
+	width: calc(100% - 179px) !important;
 }
 .smart #scheda_titolo{
 	width: calc(100% - 120px);
@@ -451,6 +460,7 @@ body:not(.smart) #scheda.schForm:not(.schedaRitorno):not(.h150):not(.minimized):
     height: 46px !important;
     z-index: 100;
     top: 0px;
+	background-color:var(--colore-grigio-scuro);
 }
 
 /* i pulsanti a destra dell'intestazione */
@@ -516,13 +526,13 @@ body:not(.smart) #scheda.schForm:not(.schedaRitorno):not(.h150):not(.minimized):
     line-height: 40px;
     font-weight: bold;
     border-radius: 5px;
-    box-shadow: 0px 0px 3px rgba(0,0,0,0.5);
 	cursor:pointer;
+    /*box-shadow: 0px 0px 3px rgba(0,0,0,0.5);
 	background: #eb9a00 !important;
     background: -moz-linear-gradient(top, #eb9a00 0%, #ce8707 100%) !important;
     background: -webkit-linear-gradient(top, #eb9a00 0%,#ce8707 100%) !important;
     background: linear-gradient(to bottom, #eb9a00 0%,#ce8707 100%) !important;
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#eb9a00', endColorstr='#ce8707',GradientType=0 ) !important;
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#eb9a00', endColorstr='#ce8707',GradientType=0 ) !important;*/
 	
     border-top-right-radius: 0px;
     border-bottom-right-radius: 0px;
@@ -545,13 +555,14 @@ body:not(.smart) #scheda.schForm:not(.schedaRitorno):not(.h150):not(.minimized):
     stroke:#FFF !important;
 }
 .schedaRitorno #scheda_titolo{
-	width: calc(100% - 130px);
+	width: calc(100% - 152px);
 	display: inline-block;
 	margin-left: 0px;
-	border-top-left-radius: 0px;
-	border-bottom-left-radius: 0px;
+	/*border-top-left-radius: 0px;
+	border-bottom-left-radius: 0px;*/
 	text-align: left;
-	padding-left: 30px;
+	padding-left: 45px;
+	margin-right: 25px;
 }
 
 body:not(.smart) .schedaRitorno #scheda_titolo{
@@ -647,6 +658,10 @@ body:not(.smart) .h150 #scheda_testo > div:not(#btnMenuScheda){
 	height:200px;
 	display:block;
 }
+body:not(.bodyStyled2) #scheda_testo,
+body:not(.bodyStyled2) #scheda_testo2{
+    border-top: 1px solid rgba(0,0,0,0.2);
+}
 #scheda.visSch_3{
 	height:calc(100% - 22px);
 }
@@ -690,38 +705,34 @@ body:not(.smart) .h150 #scheda_testo > div:not(#btnMenuScheda){
 
 /* il MENU degli strumenti della scheda (stampa e download) */
 #btnMenuScheda{
-	width: 27px;
+	width: 26px;
     height: 40px;
     padding: 0px !important;
     cursor: pointer;
-    margin-right: 1px;
-    margin-top: 1px;
-    border-radius: 4px;
     z-index: 1000;
     position: absolute;
     right: 8px;
+	margin-top: -43px;
+    margin-right: -8px;
+    overflow: hidden;
+    border-radius: 0px;
 }
-#scheda:not(.schLato) #btnMenuScheda:not(.btnFix):hover{
+#btnMenuScheda:hover{
 	background-color:rgba(0,0,0,0.1);
 }
-.schLato #btnMenuScheda{
-	margin-top: -28px;
-    margin-right: -10px;
-    overflow: hidden;
-    height: 24px;
+.bodyStyled2 #btnMenuScheda:hover{
+	background-color:rgba(255,255,255,0.1);
 }
+
 .smart #btnMenuScheda{
     margin-top: -43px;
     margin-right: -2px;
 }
-.schLato #btnMenuScheda svg circle,
 .smart #btnMenuScheda svg circle{
-	fill: var(--schede-icone) !important;
+	fill: #FFF !important;
 }
-/*.btnFix{
-	background-color:rgba(0,0,0,0.2);
-}*/
 #btnMenuScheda svg{
+	width: 28px;
 	opacity: 0.5;
     border-radius: 4px;
 }
@@ -730,7 +741,7 @@ body:not(.smart) .h150 #scheda_testo > div:not(#btnMenuScheda){
 	cx: 12px;
 	stroke: none;
 	stroke-width: 0px;
-	fill: #000;
+	fill: var(--schede-icone);
 }
 #menuScheda{
     background-color: #FFF;
@@ -743,8 +754,11 @@ body:not(.smart) .h150 #scheda_testo > div:not(#btnMenuScheda){
 	z-index:5;
 }
 .schLato #menuScheda,
-.smart.android #menuScheda{
+.smart #menuScheda{
     right: 0px !important;
+}
+.smart #menuScheda{
+	top: 47px !important;
 }
 #scheda:not(.schLato) #menuScheda{
 	top: 71px;

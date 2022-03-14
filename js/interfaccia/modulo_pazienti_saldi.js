@@ -21,7 +21,7 @@ var PAZIENTI_SALDI = {
 					if(!SA.Cancellato){
 						HTML += '<div class="base"' +
 								'	  id="btn_saldo_'+SA.p+'"' +
-								'	  onClick="PAZIENTI.car_saldo(\''+p+'\',this);">';
+								'	  onClick="PAZIENTI.car_saldo(\''+SA.p+'\',this);">';
 						if(SA.DataModifica*1>DB.pazienti.lastSync)HTML += H.imgSyncro();
 						HTML += getDataTS(SA.DataSaldo)+' - &euro; '+ArrotondaEuro(SA.ValoreSaldo) +
 								'</div>';
@@ -68,9 +68,9 @@ var PAZIENTI_SALDI = {
 						'	<i class="elMenu"' +
 						'	   title="'+htmlEntities(Lingua(TXT_AggiungiSaldo))+'"' +
 						'	   onclick="PAZIENTI.car_saldo();">' +
-						'		<img src="img/ico_saldiB_add.png"' +
+						/*'		<img src="img/ico_saldiB_add.png"' +
 						'			 class="noBG"' +
-						'			 align="absmiddle">' +
+						'			 align="absmiddle">' +*/
 						'		<span>'+htmlEntities(Lingua(TXT_AggiungiSaldo))+'</span>' +
 						'	</i>' +
 						'</p>';
@@ -92,7 +92,7 @@ var PAZIENTI_SALDI = {
 		}
 		return false;
 	},
-	car_saldo: function( Q_idSaldo, btn ){ // scheda del saldo
+	car_saldo: function( Q_idSaldo, btn, salvato ){ // scheda del saldo
 		CONFIRM.vis(	Lingua(TXT_UscireSenzaSalvare),
 						!SCHEDA.verificaSchedaRet(),
 						arguments ).then(function(pass){if(pass){
@@ -228,6 +228,7 @@ var PAZIENTI_SALDI = {
 			SCHEDA.formModificato = false;
 			if(mouseDetect)document.formMod.ValoreSaldo.focus();
 			PAZIENTI.saldoOp = true;
+			if(salvato)SCHEDA.msgSalvataggio();
 		}});
 	},
 	mod_saldo: function(){ // salva il saldo
@@ -270,7 +271,9 @@ var PAZIENTI_SALDI = {
 			localPouchDB.setItem(MD5("DB"+LOGIN._frv()+".pazienti"), IMPORTER.COMPR(DB.pazienti)).then(function(){ // salvo il DB
 				LOGIN.sincronizza( 	'rimuoviLoading(document.querySelector(".listaSaldi"));'+
 									'rimuoviLoading(document.getElementById("scheda_testo"));'+
-									'SCHEDA.scaricaScheda(true);'/* +
+									'PAZIENTI.car_saldo('+pDef+',document.getElementById("btn_saldo_'+pDef+'"),true);' +
+									/*'SCHEDA.scaricaScheda(true);'/* CHIUSURA DOPO SALVATAGGIO da PC*/
+									'if(smartMenu)SCHEDA.scaricaScheda(true);'/* CHIUSURA DOPO SALVATAGGIO da SMART*//* +
 									'PAZIENTI.caricaSaldi('+pDef+')'*/ );
 			});
 		}

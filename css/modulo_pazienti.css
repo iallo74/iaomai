@@ -177,6 +177,8 @@
 }
 #pazienti_head{
 	float:left;
+}
+body:not(.smart) #pazienti_head{
 	height: 120px;
 }
 #nomeCliente{
@@ -665,7 +667,8 @@ body:not(.smart) .trattTools i:not(.infoCiclo):not(.addTrattBtn):hover{
 body:not(.smart) #addPaziente,
 body:not(.smart) #addFornitore,
 body:not(.smart) #addServizio,
-body:not(.smart) #addProcedura{
+body:not(.smart) #addProcedura,
+body:not(.smart) #add_saldo .elMenu{
 	border-radius: 30px !important;
     width: 32px;
     height: 32px;
@@ -689,6 +692,9 @@ body:not(.smart) #addProcedura{
 body:not(.smart) #addProcedura{
     background-color: #e88e00;
 }
+body:not(.smart) #add_saldo .elMenu{
+    background-color: #7c65d8;
+}
 body:not(.smart) .addTrattBtn{
     margin-top: 0px !important;
 }
@@ -702,12 +708,13 @@ body:not(.smart) .addTrattBtn:hover,
 body:not(.smart) #addProcedura:hover{
     background-color: #eba029 !important;
 }
-
+body:not(.smart) #add_saldo .elMenu:hover{
+    background-color: #604ea7 !important;
+}ì
 .cartella:not(.cartellaSingoli) .trattElenco .noResults{
 	margin-top:32px;
 }
 .addTrattBtn span{
-	/*display:none;*/
 	font-style: italic;
     color: #FFF;
 	margin-right:5px;
@@ -738,7 +745,8 @@ body:not(.smart) #addProcedura:hover{
 .smart.android #add_saldo,
 .smart.android #sistemaMeridiani_p,
 .smart.android #add_proc, /* specifico di PROCEDURE */
-.smart.android #filtroCond{ /* specifico di PROCEDURE */
+.smart.android #filtroCond,
+.smart #add_saldo .elMenu{ /* specifico di PROCEDURE */
     height: 41px;
 }
 #add_paz,
@@ -782,7 +790,8 @@ body:not(.smart) #add_pat{
 .smart #addPaziente,
 .smart #addFornitore,
 .smart #addServizio,
-.smart #addProcedura{
+.smart #addProcedura,
+.smart #add_saldo .elMenu{
 	position: fixed;
     bottom: 70px;
     right: 12px;
@@ -800,7 +809,8 @@ body:not(.smart) #add_pat{
 .smart.android #addPaziente,
 .smart.android #addFornitore,
 .smart.android #addServizio,
-.smart.android #addProcedura{
+.smart.android #addProcedura,
+.smart #add_saldo .elMenu{
     border-radius: 30px !important;
     width: 60px !important;
     height: 60px !important;
@@ -814,6 +824,10 @@ body:not(.smart) #add_pat{
 }
 .smart #addProcedura{
 	background-color: #d38100;
+    background-image: url(../img/add.png);
+}
+.smart #add_saldo .elMenu{
+    background-color: #7c65d8;
     background-image: url(../img/add.png);
 }
 .smart #addServizioMenu{

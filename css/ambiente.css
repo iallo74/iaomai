@@ -340,7 +340,12 @@ body:not(.bodyModello) #logoSovra{
 	left:30px !important;
 	margin-left:0px !important;
     width: calc(100% - 60px) !important;
+}
+#scheda:not(.schLato) #scheda_testo #msgScheda{
 	top:100px !important;
+}
+.schLato #scheda_testo #msgScheda{
+	top:80px !important;
 }
 .selectable .scheda_stampa,
 .selectable .scheda_stampa *{

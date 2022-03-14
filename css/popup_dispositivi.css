@@ -1,0 +1,52 @@
+@charset "utf-8";
+/* CSS Document */
+
+/* COMMUNITY */
+#dispositivi{
+	width: 400px;
+    height: 420px;
+    margin-left: -200px;
+    margin-top: -210px;
+}
+#labelDispositivi{
+	background-image:url(../img/ico_connessioneB.png);
+	background-position:10px center;
+}
+
+#contDispositivi{
+	padding: 10px;
+	padding-top: 3px;
+}
+#contDispositivi > div > p{
+	background-color: #FC0;
+    margin: 0px;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 3px rgba(0,0,0,0.4);
+}
+
+.elsDispositivi{
+	text-align: left;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-left: 80px;
+    border-bottom: 1px solid rgba(0,0,0,0.2);
+    background-position: 16px 18px, left center;
+    background-repeat: no-repeat;
+    background-size: auto 34px, auto 70px;
+}
+
+.elsDispositivi .btn_logout_mini{
+	display: inline-block;
+	float:right;
+	margin-top:6px;
+	margin-right:4px;
+}
+.elsDispositivi img{
+	vertical-align: middle;
+    height: 20px;
+    margin-bottom: -5px;
+    margin-top: -5px;
+}

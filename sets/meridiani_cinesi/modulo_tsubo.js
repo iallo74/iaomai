@@ -155,7 +155,11 @@ var MODULO_TSUBO = { // extend SET
 		
 		var ptSel = SET.ptSel;
 		SET.ptSel = null;
-		SCHEDA.caricaScheda(titolo,HTML,"if(SET.ptSel)SET.chiudiTsubo()","tab_tsubo",ritorno);
+		SCHEDA.caricaScheda(	titolo,
+								HTML,
+								"if(SET.ptSel)SET.chiudiTsubo()",
+								"tab_tsubo",
+								ritorno );
 		SET.convSigleScheda();
 		SET.settaOverTsubo();
 		SET.ptSel = ptSel;

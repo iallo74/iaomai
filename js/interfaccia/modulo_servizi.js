@@ -196,7 +196,7 @@ var SERVIZI = {
 									'scheda_servizio',
 									false,
 									true,
-									'',
+									document.getElementById("servizio_"+Q_idServ),
 									btnAdd );
 									
 			initChangeDetection( "formMod" );
@@ -247,7 +247,8 @@ var SERVIZI = {
 			LOGIN.sincronizza(	'rimuoviLoading(document.getElementById("scheda_testo"));' +
 								'rimuoviLoading(document.getElementById("elenchi_lista"));' +
 								'SERVIZI.car_servizio('+Q_idServ+',true);' +
-								'SCHEDA.scaricaScheda(true);' +
+								/*'SCHEDA.scaricaScheda(true);' +/* CHIUSURA DOPO SALVATAGGIO da PC*/
+								'if(smartMenu)SCHEDA.scaricaScheda(true);' +/* CHIUSURA DOPO SALVATAGGIO da SMART*/
 								postAction/* +
 								'SERVIZI.caricaServizi();'*/ );
 		});

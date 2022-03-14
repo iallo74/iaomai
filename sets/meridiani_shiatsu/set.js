@@ -186,7 +186,7 @@ SET = {
 		
 		contBtns = '<div id="p_contrasto" class="p_noTxt" onClick="SET.swContrastMethod();"><i>'+htmlEntities(Lingua(TXT_ContrastoElevato))+'</i></div>';
 		
-		contIcona = '<div id="p_set" onClick="SCHEDA.apriElenco(\'set\');"><svg viewBox="0 0 12 48"><polygon points="5,24 12,13 12,35"></polygon></svg><i>'+htmlEntities(Lingua(TXT_ShiatsuMap))+'</i></div>';;
+		contIcona = '<div id="p_set" onClick="SCHEDA.apriElenco(\'set\',true);"><svg viewBox="0 0 12 48"><polygon points="5,24 12,13 12,35"></polygon></svg><i>'+htmlEntities(Lingua(TXT_ShiatsuMap))+'</i></div>';;
 		
 		var preElenco = SCHEDA.elencoSel;
 		SCHEDA.caricaElenco(globals.set.nome,contElenco);

@@ -55,23 +55,23 @@ var TXT_Modifica={
 	esp: "" };
 		
 var TXT_Salva={
-	ita: "SALVA",
-	eng: "SAVE",
+	ita: "Salva",
+	eng: "Save",
 	esp: "" };
 	
 var TXT_Annulla={
-	ita: "ANNULLA",
-	eng: "CANCEL",
+	ita: "Annulla",
+	eng: "Cancel",
 	esp: "" };
 	
 var TXT_Invia={
-	ita: "INVIA",
-	eng: "SEND",
+	ita: "Invia",
+	eng: "Send",
 	esp: "" };
 	
 var TXT_Conferma={
-	ita: "CONFERMA",
-	eng: "CONFIRM",
+	ita: "Conferma",
+	eng: "Confirm",
 	esp: "" };
 
 var TXT_Chiudi={
@@ -349,6 +349,16 @@ var TXT_ElementiSincronizzati={
 	ita: "Sono stati sincronizzati gli elementi modificati quando eri in assenza di connessione.",
 	eng: "Items that were changed when you were out of connection were synchronized.",
 	esp: "" };
+	
+	var TXT_MsgLogoutDevices={	
+		ita: "Il dispositivo è stato disconnesso",
+		eng: "The device as been disconnected",
+		esp: "" };
+	
+	var TXT_ErrLogoutDevices={	
+		ita: "Si è verificato un errore nel tentativo di disconnettere un dispositivo.",
+		eng: "Si è verificato un errore nel tentativo di disconnettere un dispositivo.",
+		esp: "" };
 
 
 // SCHEDA
@@ -425,7 +435,12 @@ var TXT_ChiudiSet={
 	ita: "Esci dalla mappa",
 	eng: "Leave the map",
 	esp: "" };
-	
+
+// DISPOSITIVI
+var TXT_Dispositivi={
+	ita: "Dispositivi connessi",
+	eng: "Connected devices",
+	esp: "" };
 	
 // NOTIFICHE
 var TXT_Notifiche={
@@ -729,6 +744,11 @@ var TXT_ConnessioneAssente={
 var TXT_ErroreUtenteNonConnesso={
 	ita: "Questa operazione non è consentita perché sei disconnesso dal server. Effettua il login e riprova.",
 	eng: "This operation is not allowed because you are disconnected from the server. Please login and try again.",
+	esp: "" };
+	
+var TXT_UltimaConnessione={
+	ita: "Ultima connessione",
+	eng: "Last connection",
 	esp: "" };
 
 

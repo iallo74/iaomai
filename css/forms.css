@@ -40,7 +40,6 @@ textarea{
 .submitBtn,
 .annullaBtn,
 .stampaBtn{
-	/*width: 100px;*/
 	min-width: 100px;
 	padding-left:15px;
 	padding-right:15px;
@@ -56,6 +55,20 @@ textarea{
 	text-align: center;
 	-webkit-appearance: none;
 	
+}
+body:not(.smart) #scheda.schForm .submitBtn,
+body:not(.smart) #scheda.schForm .annullaBtn{
+	padding-left:10px !important;
+	padding-right:10px !important;
+	height: 30px !important;
+	line-height: 30px !important;
+}
+body:not(.smart) #scheda.schForm .submitBtn{
+	min-width: 60px !important;
+}
+body:not(.smart) #scheda.schForm .annullaBtn{
+	min-width: 75px !important;
+	margin-left:0px !important;
 }
 .stampaBtn{
 	color: #FFF;
@@ -83,6 +96,13 @@ textarea{
 	background: linear-gradient(to bottom, #999 0%,#b0b0b0 100%);
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#999', endColorstr='#b0b0b0',GradientType=0 );
 }
+body:not(.smart) #scheda.schForm .annullaBtn{
+	color:#FFF !important;
+	background:rgba(255,255,255,0.1);
+}
+body:not(.smart) #scheda.schForm .annullaBtn:hover{
+	background:rgba(255,255,255,0.2) !important;
+}
 .smart #scheda.schForm .submitBtn{
 	position: fixed;
     z-index: 10000;
@@ -100,8 +120,8 @@ textarea{
     margin-left: 0px;
     background-color: #ff9100;
 }
-.smart #scheda.schForm .annullaBtn,
-.smart #scheda.schForm .p_paz_el{
+.smart #scheda.schForm .annullaBtn/*,
+.smart #scheda.schForm .p_paz_el*/{
 	display:none;
 }
 #scheda.schForm .p_paz_el_menu{
@@ -145,8 +165,19 @@ textarea{
 	opacity:0.5;
 	cursor:default;
 }
-
-body:not(.smart) #scheda:not(.h150) .formBtn{
+body:not(.smart) #scheda .formBtn{
+    position: absolute !important;
+    top: 0px;
+    right: 22px !important;
+    width: 150px !important;
+    padding: 8px 5px 0px 0px !important;
+    border-top: none !important;
+    margin: 0px !important;
+}
+body:not(.smart) #scheda:not(.schLato) .formBtn{
+    top: 25px !important;
+}
+/*body:not(.smart) #scheda:not(.h150) .formBtn{
     position: absolute !important;
     bottom: 0px;
     left: 0px !important;
@@ -156,7 +187,7 @@ body:not(.smart) #scheda:not(.h150) .formBtn{
     border-top: 1px solid rgba(0,0,0,0.3) !important;
     background-color: #444 !important;
     margin: 0px !important;
-}
+}*/
 /*.smart .formBtn{
 	position: fixed;
     z-index: 10000;
@@ -825,7 +856,7 @@ body:not(.smart) .stampaBtn{
     display: inline-block;
     float: right;
 }
-.p_paz_el{ /* PAZIENTI */
+/*.p_paz_el{
 	height: 25px;
     line-height: 25px;
     padding: 0px;
@@ -846,7 +877,7 @@ body:not(.smart) #scheda:not(.h150) .p_paz_el{
     margin-top: 4px;
 	color: #ff815a;
     background-image: url(../img/ico_cestinoA.png) !important;
-}
+}*/
 #puntiTsuboMap,
 #meridianiTsuboMap{ /* PAZIENTI */
 	height:auto !important;

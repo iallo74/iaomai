@@ -89,7 +89,8 @@ var MENU = {
 		if(n!="notifiche")document.getElementById("notifiche").classList.remove("visSch");
 		if(n!="backups")document.getElementById("backups").classList.remove("visSch");
 		if(n!="impset")document.getElementById("impset").classList.remove("visSch");
-		if(n!="community")document.getElementById("community").classList.remove("visSch")
+		if(n!="community")document.getElementById("community").classList.remove("visSch");
+		if(n!="dispositivi")document.getElementById("dispositivi").classList.remove("visSch");
 		if(n!="ag")document.getElementById("ag").classList.remove("visSch")
 		if( n=='pulsanti_modello' ||
 			n=='impostazioni' ||
@@ -189,7 +190,8 @@ var MENU = {
 	},
 	visSets: function(){
 		var daScheda = ((SCHEDA.classeAperta == 'scheda_A' ||
-						 SCHEDA.classeAperta == 'scheda_B') && !smartMenu);	
+						 SCHEDA.classeAperta == 'scheda_B') && !smartMenu);
+
 		if(!daScheda)MENU.chiudiMenu("sets");
 		else document.getElementById("p_cartella").classList.remove("p_sel");
 		//document.getElementById("elenchi_titolo").classList.remove("clientAtt");
@@ -200,6 +202,7 @@ var MENU = {
 		if(document.getElementById("sets").classList.contains("visSch")){
 			MENU.icoSelected = document.getElementById("p_sets");
 			MENU.icoSelected.classList.add("p_sel");
+			
 		}else MENU.desIcona();
 		MENU.comprimiIcone(true);
 		if(daScheda){
@@ -403,6 +406,12 @@ var MENU = {
 			}
 		}
 	},
+	visDispositivi: function( jsn ){
+		visLoader("");
+		document.getElementById("dispositivi").classList.add("visSch");
+		visLoader('');
+		DISPOSITIVI.carica(jsn);
+	},
 	visBackups: function(){
 		if(!LOGIN.logedin()){
 			ALERT(Lingua(TXT_ErroreUtenteNonConnesso), true);
@@ -579,7 +588,10 @@ var MENU = {
 	},
 	
 	espandiIcone: function(){
-		if(!MENU.icoSelected){
+		var schedaModificaLato = false;
+		if(	document.getElementById("scheda").classList.contains("schLato") &&
+			document.getElementById("scheda_testo").querySelector(".formBtn") )schedaModificaLato = true;
+		if(!MENU.icoSelected && !schedaModificaLato){
 			MENU.tmIcone = setTimeout( function(){
 				document.getElementById("icone").classList.add("iconeTrans");
 				document.getElementById("icone").classList.add("iconeEspanse");

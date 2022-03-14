@@ -61,6 +61,15 @@ var SCHEDA = {
 		ritorno: indica se ci deve essere un ritorno ad un altra scheda (scrive su scheda_testo2 e visualizza il pulsante di ritorno) [ può contenere la funzione di ritorno ]
 		espansa: apre la scheda non compressa
 		*/
+		
+		// forzo il ritorno se la scheda principale è una scheda di modifica
+		/*if(	document.getElementById("scheda_testo").querySelector(".formBtn") && 
+			SCHEDA.schedaAperta ){
+			ritorno = true;
+			funct = '';
+			
+		}*/
+			
 		try{
 			SET._caricaScheda({
 				"funct": funct,
@@ -119,6 +128,8 @@ var SCHEDA = {
 			SCHEDA.classeAperta = classe;
 			SCHEDA.torna();
 		}
+		
+		// inserisco il pulsante del menu (3 pallini)
 		if(classe != "scheda_agenda" && classe != "scheda_video"  && classe != "scheda_ricerche" ){
 			html =  '<div id="btnMenuScheda" onClick="SCHEDA.swMenuScheda();">' +
 					'	<svg viewBox="0 0 25 36"><circle cy="11"></circle><circle cy="18"></circle>' +
@@ -136,13 +147,16 @@ var SCHEDA = {
 		SCHEDA.schedaAperta = true;
 		document.getElementById("elenchi").classList.add("noTesta");
 		
-		if(!nScheda && funct){ // imposto la funzione alla chiusura della scheda
+		// imposto la funzione alla chiusura della scheda
+		if(!nScheda && funct){ 
 			document.getElementById("sc").dataset.funct=funct;
 		}
+		
+		// imposto l'altezza della scheda
 		if(smartMenu){
 			SCHEDA.hOpened = window.innerHeight - 45;
 			document.getElementById("scheda_testo").style.height = SCHEDA.hOpened+"px";
-			document.getElementById("scheda_testo2").style.height = (SCHEDA.hOpened+SCHEDA.getHbtns())+"px";
+			document.getElementById("scheda_testo2").style.height = SCHEDA.hOpened+"px";
 		}else if(espansa){
 			if(SCHEDA.aggancio.tipo == 'sotto'){
 				if(!SCHEDA.hOpened)SCHEDA.hOpened = 200;
@@ -154,6 +168,7 @@ var SCHEDA = {
 				document.getElementById("scheda_testo").scrollTop = '0px';
 			}
 		}
+		
 		if(btn && !ritorno){
 			SCHEDA.formModificato = false;
 			if(SCHEDA.btnSel)SCHEDA.btnSel.classList.remove("elencoSel");
@@ -267,7 +282,7 @@ var SCHEDA = {
 			document.getElementById("scheda").style.top = SCHEDA.aggancio.libera.y + "px";
 			document.getElementById("scheda").style.width = SCHEDA.aggancio.libera.w + "px";
 			document.getElementById("scheda_testo").style.height = (SCHEDA.aggancio.libera.h - SCHEDA.getMM()) + "px";
-			document.getElementById("scheda_testo2").style.height = (SCHEDA.aggancio.libera.h - SCHEDA.getMM() + SCHEDA.getHbtns()) + "px";
+			document.getElementById("scheda_testo2").style.height = (SCHEDA.aggancio.libera.h - SCHEDA.getMM()) + "px";
 			document.getElementById("scheda").classList.add("schLibera");
 			document.getElementById("scheda").classList.remove("schLato");
 			document.getElementById("elenchi").classList.remove("schLato");
@@ -284,7 +299,7 @@ var SCHEDA = {
 			
 			//document.getElementById("scheda").classList.remove("h150")
 			document.getElementById("scheda_testo").style.height = h + 'px';
-			document.getElementById("scheda_testo2").style.height = (h + SCHEDA.getHbtns()) + 'px';
+			document.getElementById("scheda_testo2").style.height = h + 'px';
 			document.getElementById("scheda").classList.remove("schLibera");
 			document.getElementById("scheda").classList.remove("schLato");
 			document.getElementById("elenchi").classList.remove("schLato");
@@ -295,7 +310,7 @@ var SCHEDA = {
 			if(SCHEDA.aggancio.lato.w == -1)SCHEDA.aggancio.lato.w = 500;
 			document.getElementById("scheda").style.top = "0px";
 			document.getElementById("scheda_testo").style.height = (HF() - SCHEDA.getMM()) + "px";
-			document.getElementById("scheda_testo2").style.height = (HF() - SCHEDA.getMM() + SCHEDA.getHbtns()) + "px";
+			document.getElementById("scheda_testo2").style.height = (HF() - SCHEDA.getMM()) + "px";
 			document.getElementById("scheda").style.width = SCHEDA.aggancio.lato.w + "px";
 			
 			document.getElementById("scheda").classList.remove("h150")
@@ -347,7 +362,6 @@ var SCHEDA = {
 		}
 		if(SCHEDA.aggancio.tipo == 'sotto'){
 			SCHEDA.tIni = parseInt("0"+document.getElementById("scheda_testo").style.height.replace("px","")+"");
-			if(document.getElementById("scheda").classList.contains("h150"))SCHEDA.tIni -= SCHEDA.getHbtns();
 		}
 		if(SCHEDA.aggancio.tipo == 'lato'){
 			SCHEDA.xIni = tCoord(document.getElementById("scheda"));
@@ -377,22 +391,19 @@ var SCHEDA = {
 		}
 		if(SCHEDA.aggancio.tipo == 'sotto'){
 			var h = SCHEDA.tIni-(SCHEDA.yMouseAtt - SCHEDA.yMouseIni);
-			if(h<0-SCHEDA.getHbtns())h = 0-SCHEDA.getHbtns();
 			var mm = SCHEDA.getMM()-SCHEDA.gapScheda;
 			if(h>HF()-mm)h = HF()-mm;
-			var h2 = 0;
 			if(document.getElementById("scheda").scrollHeight<=275){
 				document.getElementById("scheda").classList.add("h150");
-				h2 = SCHEDA.getHbtns();
 			}else{
 				document.getElementById("scheda").classList.remove("h150");
 			}
 			
-			if(h>5)SCHEDA.hOpened = h + SCHEDA.getHbtns()+h2;
+			if(h>5)SCHEDA.hOpened = h;
 			else SCHEDA.hOpened = 200;
-			document.getElementById("scheda_testo").style.height = (h + h2) +'px';
-			document.getElementById("scheda_testo2").style.height = (h + h2 + SCHEDA.getHbtns()) +'px';
-			SCHEDA.memHrit = ((h + h2)*1)+"px";
+			document.getElementById("scheda_testo").style.height = h +'px';
+			document.getElementById("scheda_testo2").style.height = h +'px';
+			SCHEDA.memHrit = h + "px";
 		}
 		if(SCHEDA.aggancio.tipo == 'lato'){
 			// non esiste
@@ -404,7 +415,7 @@ var SCHEDA = {
 		event.preventDefault();
 		var x = touchable ? SCHEDA.xMouseAtt : event.clientX;
 		var y = touchable ? SCHEDA.yMouseAtt : event.clientY;
-		noAnimate = false;
+		if(globals.modello.cartella)noAnimate = false;
 		animate();
 		controlsM._MM = true
 		if(SCHEDA.aggancio.tipo == 'libera'){
@@ -447,10 +458,10 @@ var SCHEDA = {
 		
 		if(SCHEDA.versoRedim.indexOf("l")>-1 || SCHEDA.versoRedim.indexOf("r")>-1)gapH = 5;
 		if(SCHEDA.versoRedim.indexOf("t")>-1 || SCHEDA.versoRedim.indexOf("b")>-1)gapV = 5;
-		/*if(SCHEDA.aggancio.tipo == 'lato'){
+		if(SCHEDA.aggancio.tipo == 'lato' && !isTablet){
 			stopOnResize = true;
 			gapH = 27;
-		}*/
+		}
 		
 		event.preventDefault();
 		
@@ -510,7 +521,7 @@ var SCHEDA = {
 		}
 		if(SCHEDA.versoRedim.indexOf("t")>-1 || SCHEDA.versoRedim.indexOf("b")>-1){
 			document.getElementById("scheda_testo").style.height = (h - (SCHEDA.getMM()-SCHEDA.gapScheda+9)) + 'px';
-			document.getElementById("scheda_testo2").style.height = (h - (SCHEDA.getMM()-SCHEDA.gapScheda+9+SCHEDA.getHbtns())) + 'px';
+			document.getElementById("scheda_testo2").style.height = (h - (SCHEDA.getMM()-SCHEDA.gapScheda+9)) + 'px';
 		}
 		if(SCHEDA.versoRedim.indexOf("l")>-1){
 			if(w>350){
@@ -570,11 +581,9 @@ var SCHEDA = {
 		var aperto = (document.getElementById("menuScheda").className.indexOf("visSch")!=-1);
 		if(!aperto || forza==true){
 			document.getElementById("menuScheda").classList.add("visSch");
-			document.getElementById("btnMenuScheda").classList.add("btnFix");
 		}
 		if(aperto || forza=='chiudi'){
 			document.getElementById("menuScheda").classList.remove("visSch");
-			document.getElementById("btnMenuScheda").classList.remove("btnFix");
 		}
 	},
 	stampaScheda: function( obj ){
@@ -736,7 +745,14 @@ var SCHEDA = {
 		SCHEDA.elencoSel = '';
 		SCHEDA.scaricaPulsanti();
 	},
-	apriElenco: function( tipo ){
+	apriElenco: function( tipo, daMenu ){
+		if(typeof(daMenu)=='undefined')var daMenu = false;
+		if(	daMenu &&
+			document.getElementById("elenchi_cont").classList.contains("visSch") &&
+			document.getElementById("elenchi").classList.contains("vis_"+tipo)){
+			SCHEDA.chiudiElenco();
+			return;
+		}
 		var visGuida = false;
 		if(	!document.getElementById("elenchi_cont").classList.contains("visSch") || 
 			!document.getElementById("elenchi").classList.contains("vis_"+tipo))visGuida=true;
@@ -783,6 +799,7 @@ var SCHEDA = {
 		}
 		SCHEDA.setMenuDim();
 		SCHEDA.verPosScheda();
+		if(tipo=='set' && document.getElementById("scheda").classList.contains("visSch"))document.getElementById("p_cartella").classList.remove("p_sel");
 	},
 	setMenuDim: function(){
 		document.getElementById("scheda").classList.toggle("schRid", document.getElementById("elenchi").classList.contains("visSch"));
@@ -949,15 +966,8 @@ var SCHEDA = {
 		while(!el.classList.contains("cartella"))el = el.parentElement;
 		return el;
 	},
-	getHbtns: function(){
-		if( document.getElementById("scheda").querySelector(".formBtn") &&
-			!SCHEDA.scheda2Aperta &&
-			/*!document.getElementById("scheda").classList.contains("h150") &&*/
-			!smartMenu )return 53;
-		else return 0;
-	},
 	getMM: function(){
-		var addForm = SCHEDA.getHbtns();
+		var addForm = 0;
 		var mm = 90 + addForm;
 		if(smartMenu)mm += 5 + document.getElementById("elenchi").scrollHeight + document.getElementById("icone").scrollHeight;
 		else if(SCHEDA.aggancio.tipo == 'sotto')mm+=20;
@@ -1014,14 +1024,14 @@ var SCHEDA = {
 				}else{
 					h = (HF()-(SCHEDA.aggancio.sotto.y-SCHEDA.gapScheda)-SCHEDA.getMM()+mm);
 				}
-				document.getElementById("scheda_testo").style.height = h+"px";
-				document.getElementById("scheda_testo2").style.height = (h + SCHEDA.getHbtns())+"px";
+				document.getElementById("scheda_testo").style.height = h + "px";
+				document.getElementById("scheda_testo2").style.height = h + "px";
 				SCHEDA.aggancio.sotto.y = tCoord(document.getElementById("scheda"),'y');
 				document.getElementById("scheda").classList.toggle("h150", (document.getElementById("scheda").scrollHeight<=275));
 			}
 			if(SCHEDA.aggancio.tipo == 'lato'){
-				document.getElementById("scheda_testo").style.height = (HF() - SCHEDA.getMM()) +"px";
-				document.getElementById("scheda_testo2").style.height = (HF() - SCHEDA.getMM() + SCHEDA.getHbtns()) +"px";
+				document.getElementById("scheda_testo").style.height = (HF() - SCHEDA.getMM()) + "px";
+				document.getElementById("scheda_testo2").style.height = (HF() - SCHEDA.getMM()) + "px";
 				var x = document.getElementById("elenchi_cont").scrollWidth;
 				if(!document.getElementById("elenchi_cont").classList.contains("visSch"))x = 0;
 				document.getElementById("scheda").style.left = (48 + x) + "px";
@@ -1052,7 +1062,7 @@ var SCHEDA = {
 	pulsantiForm: function( azElimina, azAnnulla, azSubmit ){
 		SCHEDA.comprimiElenco();
 		HTML = '<div class="formBtn noPrint">';
-		if(azElimina)HTML += '<div class="p_paz_el" onClick="'+azElimina+'">'+Lingua(TXT_Elimina)+'</div>';
+		//if(azElimina)HTML += '<div class="p_paz_el" onClick="'+azElimina+'">'+Lingua(TXT_Elimina)+'</div>';
 		HTML += '<span id="btn_annulla" class="annullaBtn" onclick="'+azAnnulla+'">'+Lingua(TXT_Annulla)+'</span><span class="submitBtn" onclick="if(verifica_form(document.formMod))'+azSubmit+'">'+Lingua(TXT_Salva)+'</span></div>'+H.chr10;	
 		return HTML;
 	}

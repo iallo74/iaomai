@@ -293,8 +293,8 @@ var FORNITORI = {
 									'scheda_fornitore',
 									false,
 									true,
-									'',
-									azElimina );
+									document.getElementById("fornitore_"+Q_idForn),
+									btnAdd );
 									
 			initChangeDetection( "formMod" );
 			
@@ -356,7 +356,8 @@ var FORNITORI = {
 			LOGIN.sincronizza(	'rimuoviLoading(document.getElementById("scheda_testo"));' +
 								'rimuoviLoading(document.getElementById("elenchi_lista"));' +
 								'FORNITORI.car_fornitore('+Q_idForn+',true);' +
-								'SCHEDA.scaricaScheda(true);' +
+								/*'SCHEDA.scaricaScheda(true);' +/* CHIUSURA DOPO SALVATAGGIO da PC*/
+								'if(smartMenu)SCHEDA.scaricaScheda(true);' +/* CHIUSURA DOPO SALVATAGGIO da SMART*/
 								postAction/* +
 								'FORNITORI.caricaFornitori();'*/ );
 		});

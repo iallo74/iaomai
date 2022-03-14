@@ -13,6 +13,11 @@ var LOGIN = {
 	tmAttesaLogin: null,
 	HTML: '',
 	daSync: false,
+	getUniqueId: function(){
+		var t = new Date().getTime()+"";
+		var r = (Math.floor(Math.random() * (9999 - 1000 + 1)) + 1000)+"";
+		return(r+"-"+t);
+	},
 	_init: function(){
 		DB.login={	"lastSync": 0,
 			"data": {
@@ -147,12 +152,64 @@ var LOGIN = {
 		if(typeof(idUtente)=='undefined')idUtente='';
 		return idUtente;
 	},
+	getOS: function() {
+		var userAgent = window.navigator.userAgent,
+		platform = window.navigator.platform,
+		macosPlatforms = ['Macintosh', 'MacIntel', 'MacPPC', 'Mac68K'],
+		windowsPlatforms = ['Win32', 'Win64', 'Windows', 'WinCE'],
+		iosPlatforms = ['iPhone', 'iPad', 'iPod'],
+		os = null;
+		
+		if (macosPlatforms.indexOf(platform) !== -1) {
+			os = 'Mac OS';
+		} else if (iosPlatforms.indexOf(platform) !== -1) {
+			os = 'iOS';
+		} else if (windowsPlatforms.indexOf(platform) !== -1) {
+			os = 'Windows';
+		} else if (/Android/.test(userAgent)) {
+			os = 'Android';
+		} else if (!os && /Linux/.test(platform)) {
+			os = 'Linux';
+		}
+		return os;
+	},
+	getDeviceInfo: function(){
+		var device = {};
+		if(!brw_firefox){
+			device.platform = navigator.userAgentData.platform;
+			if(navigator.userAgent.indexOf(device.platform)>-1){
+				var re = new RegExp(device.platform+"[^;]+;","g");
+				var matches = navigator.userAgent.match(re);
+				if(matches.length)device.platform = matches[0].substr(0,matches[0].length-1);
+			}
+		}else if(typeof(navigator.oscpu)!='undefined'){
+			device.platform = navigator.oscpu.split(";")[0];
+		}else{
+			device.platform = LOGIN.getOS();
+		}
+		
+		device.type = 'Computer';
+		device.appType = 'APP';
+		if(smartphone)device.type = 'Smartphone';
+		if(isTablet)device.type = 'Tablet';
+		if(onlineVersion)device.appType = 'ONLINE';
+		
+		if(brw_chrome)device.browser = 'Chrome';
+		if(brw_IE)device.browser = 'Explorer';
+		if(brw_OPERA)device.browser = 'Opera';
+		if(brw_edge)device.browser = 'Edge';
+		if(brw_firefox)device.browser = 'Firefox';
+		if(brw_safari)device.browser = 'Safari';
+		
+		return JSON.stringify(device);
+	},
 	getLogin: function(){
 		if(CONN.retNoConn() && document.getElementById("USR").value.trim()!='' && document.getElementById("PWD").value.trim()!=''){
 			document.getElementById("login").classList.add("popup_back");
 			CONN.caricaUrl(	"login.php",
 							"USR="+encodeURIComponent(document.loginFrom.USR.value)+
-							"&PWD="+encodeURIComponent(document.loginFrom.PWD.value),
+							"&PWD="+encodeURIComponent(document.loginFrom.PWD.value)+
+							"&DVI="+encodeURIComponent(window.btoa(LOGIN.getDeviceInfo())),
 							"LOGIN.setLogin");
 		}
 		return false;
@@ -172,6 +229,12 @@ var LOGIN = {
 			var jsn = JSON.parse(txt);
 			var Nuovo = jsn.data.Nuovo;
 			delete jsn.data.Nuovo;
+			if(__(jsn.errConn)){
+				MENU.chiudiMenu();
+				SCHEDA.scaricaScheda();
+				MENU.visDispositivi(JSON.stringify(jsn.data));
+				return;
+			}
 			txt = JSON.stringify(jsn);
 			DB._reset();
 			LOGIN.salvaToken(txt);
@@ -203,6 +266,7 @@ var LOGIN = {
 			loginProvv=IMPORTER.DECOMPR(dbCont);
 			if(loginProvv!=null){
 				DB.login=loginProvv;
+				localStorage.UniqueId = __(localStorage.UniqueId,LOGIN.getUniqueId());
 				var dateStored=DB.login.data.ExpDate*1;
 				var dateNow = new Date();
 				dateNow=dateNow.getTime()/1000;
@@ -389,6 +453,11 @@ var LOGIN = {
 		//localStorage.removeItem('DB.login');
 		
 		//inizializzaLogin();
+		
+		CONN.caricaUrl(	"logout.php",
+						"USR="+encodeURIComponent(DB.login.data.UsernameU),
+						"");
+						
 		clearInterval(LOGIN.tmVerT);
 		LOGIN.tmVerT = null;
 		DB.login.data.TOKEN = '';

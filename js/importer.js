@@ -16,14 +16,15 @@ var brw_IE = false;
 var brw_OPERA = false;
 var brw_edge = false;
 var brw_firefox = false;
+var brw_safari = false;
+var brw_chrome = false;
 var iPad = false;
 var iPhone = false;
 var mouseDetect = false;
 var onlineVersion=false;
 var isTablet = false;
 var globals = {};
-var verApp = '1.0.2';
-
+var verApp = '1.1.0';
 // IMPOSTAZIONI DI APP
 var nomeApp = 'Iáomai';
 var sloganApp = 'A new vision on health';
@@ -68,6 +69,7 @@ var IMPORTER = {
     	'css/popup_versione.css',
     	'css/popup_impset.css',
     	'css/popup_photo.css',
+    	'css/popup_dispositivi.css',
     	'css/schede.css',
     	'css/schede_touch.css',
     	'css/moduli.css',
@@ -120,6 +122,7 @@ var IMPORTER = {
         'js/interfaccia/modulo_catalogo.js',
         'js/interfaccia/modulo_photo.js',
         'js/interfaccia/modulo_community.js',
+        'js/interfaccia/modulo_dispositivi.js',
 		'js/utils/agenda.js',
         
 		'modelli/modello.js',
@@ -156,8 +159,8 @@ var IMPORTER = {
 		brw_IE = IMPORTER.detectIE();
 		brw_firefox=(typeof InstallTrigger !== 'undefined');
 		brw_edge=(!(document.documentMode) && window.StyleMedia)
-		android=(navigator.userAgent.indexOf("Android") != -1);
-		
+		brw_safari=window.safari !== undefined;
+		brw_chrome=(navigator.userAgent.indexOf("Chrome") != -1);
 		document.title = nomeApp+" - "+sloganApp;
 		
 		var el = document.getElementById('scripts');
@@ -178,8 +181,7 @@ var IMPORTER = {
 		if(!mouseDetect && this.WFINI()<=800 )smartMenu=true;
 		if(smartMenu)document.body.classList.add("smart");
 		if(isTablet)document.body.classList.add("tablet");
-
-
+	
 		localPouchDB.getItem(MD5("FILES")).then(function(dbCont){ // leggo il DB
 			if(typeof(dbCont)!='undefined'){
 				res=JSON.parse(IMPORTER.DECOMPR(dbCont));

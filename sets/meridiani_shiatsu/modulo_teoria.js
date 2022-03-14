@@ -77,11 +77,16 @@ var MODULO_TEORIA = { // extend SET
 		}
 		html += html_cont;
 		
+		var ritorno = false;
+		if(	document.getElementById("scheda").querySelector(".formBtn") &&
+			document.getElementById("scheda").classList.contains("visSch") &&
+			SCHEDA.verificaSchedaRet() )ritorno = "document.getElementById('scheda').classList.remove('scheda_teoria')";
+			
 		SCHEDA.caricaScheda( 	titolo,
 								html,
 								'SET.annullaEvidenziaTsubo();SET.spegniMeridiani(true);',
 								'scheda_teoria',
-								false,
+								ritorno,
 								true,
 								btn );
 		SET.convSigleScheda();

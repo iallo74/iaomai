@@ -491,6 +491,10 @@
                 &copy;&reg; <script language="javascript">d = new Date();document.write(d.getFullYear());</script> <b>{{[§]}}</b> - {{TXT_DirittiRiservati}}
                 </div>
             </div>
+            <div id="dispositivi" class="popup"> <!-- DISPOSITIVI CONNESSI -->
+            	<div id="labelDispositivi" class="popup_label">{{TXT_Dispositivi}}<div class="popup_chiudi" onClick="MENU.chiudiMenu();"></div></div>
+            	<div id="contDispositivi" class="popup_cont"></div>
+            </div>
            	<!---------------------------- fine popups ... -->
             
             
@@ -539,7 +543,7 @@
                 	<i>{{TXT_Mappe}}</i></div>
                 <div id="cartella_set"></div>
                 <span class="sepMenu"></span>
-                <div id="p_cartella" onClick="SCHEDA.apriElenco('base');">
+                <div id="p_cartella" onClick="SCHEDA.apriElenco('base',true);">
                 	<span id="ico_cliente"><i></i></span>
                 	<svg viewBox="0 0 12 48"><polygon points="5,24 12,13 12,35"></polygon></svg>
                     <i>{{TXT_ElGestionale}}</i></div>

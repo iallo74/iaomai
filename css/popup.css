@@ -53,7 +53,7 @@
 }
 .smart.android .popup_chiudi{
 	background-size: auto;
-	position:fixed;
+	position:absolute;
 	right:0px;
 }
 .popup_cont{
