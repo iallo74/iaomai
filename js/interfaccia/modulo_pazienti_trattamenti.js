@@ -791,7 +791,7 @@ var PAZIENTI_TRATTAMENTI = {
 			
 			SCHEDA.caricaScheda(	stripslashes(Lingua(titoloDef)),
 									HTML,
-									'PAZIENTI.chiudiTrattamento();',
+									'PAZIENTI.chiudiTrattamento('+idTrattamento+');',
 									'scheda_'+TipoTrattamento,
 									false,
 									true,
@@ -810,6 +810,10 @@ var PAZIENTI_TRATTAMENTI = {
 			PAZIENTI.trattOp = true;
 			initChangeDetection( "formMod" );
 			SCHEDA.formModificato = false;
+			
+			// verifico che non sia già aperta da qualcun altro e intanto la blocco
+			LOGIN.getOpened("trattamenti",idTrattamento);
+			
 		}});
 	},
 	caricaDettagliSet: function(){ // carica i dettagli trattamento dei singoli set
@@ -888,13 +892,16 @@ var PAZIENTI_TRATTAMENTI = {
 		document.getElementById("gruppoPunti_cont").classList.remove("cartelle");
 		rimuoviLoading(document.getElementById("scheda_testo"));
 	},
-	chiudiTrattamento: function(){ // funzione chiamata alla chiusura del trattamento
+	chiudiTrattamento: function( idTrattamento ){ // funzione chiamata alla chiusura del trattamento
 		try{
 			SET.annullaEvidenziaTsubo();
 			SET.spegniMeridiani(true);
 		}catch(err){}
 		SCHEDA.formModificato = false;
 		PAZIENTI.trattOp = false;
+			
+		// tolgo il blocco online dall'elemento
+		LOGIN.closeOpened("trattamenti",idTrattamento);
 	},
 	mod_trattamento: function(){ // salva il tratamento
 		if(PAZIENTI.idCL>-1){

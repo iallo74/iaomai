@@ -107,7 +107,8 @@ var MODULO_PROCEDURE = { // extend SET
 		if(parola)document.getElementById("proc_ricerca").classList.add("filtro_attivo");
 		else document.getElementById("proc_ricerca").classList.remove("filtro_attivo");
 	},
-	car_procedura: function( Q_idProc, Q_resta, Q_community, btn ){ // visualizza la scheda della procedura
+	car_procedura: function( Q_idProc, Q_resta, Q_community, btn ){
+		// visualizza la scheda della procedura
 		CONFIRM.vis(	Lingua(TXT_UscireSenzaSalvare),
 						!SCHEDA.verificaSchedaRet(), 
 						arguments ).then(function(pass){if(pass){
@@ -302,7 +303,8 @@ var MODULO_PROCEDURE = { // extend SET
 			if(SCHEDA.btnSel && Q_resta)SCHEDA.btnSel=null;
 			SCHEDA.caricaScheda( 	NomeProcedura,
 									HTML,
-									'SET.annullaEvidenziaTsubo();SET.spegniMeridiani(true);',
+									'SET.annullaEvidenziaTsubo();'+
+									'SET.spegniMeridiani(true);',
 									'scheda_procedura',
 									false,
 									true,
@@ -327,7 +329,8 @@ var MODULO_PROCEDURE = { // extend SET
 			}
 		}});
 	},
-	swCond: function( Q_idProc ){ // setta sì/no le condizioni della community
+	swCond: function( Q_idProc ){
+		// setta sì/no le condizioni della community
 		//if(!retNoFree())return false;
 		if(!COMMUNITY.verifica())return;
 		if(typeof(Q_idProc)=='undefined')var Q_idProc=-1;
@@ -341,7 +344,8 @@ var MODULO_PROCEDURE = { // extend SET
 								'SET.car_procedura('+Q_idProc+',1,0);');
 		});
 	},
-	swPref: function( Q_idProc, el ){ // setta sì/no come preferita una procedura della community
+	swPref: function( Q_idProc, el ){
+		// setta sì/no come preferita una procedura della community
 		if(typeof(Q_idProc)=='undefined')var Q_idProc='';
 		var Q_pref=0;
 		if(el.classList.contains("p_sch_pref"))Q_pref=1;
@@ -381,7 +385,8 @@ var MODULO_PROCEDURE = { // extend SET
 	confermaSwPref: function( txt ){
 		if(txt.substr(0,3)=='404')ALERT(Lingua(TXT_ProcedureErrore));
 	},
-	mod_procedura: function( Q_idProc, Q_pre ){ // scheda di modifica della procedura
+	mod_procedura: function( Q_idProc, Q_pre ){
+		// scheda di modifica della procedura
 		// verifico le autorizzazioni
 		if(typeof(Q_idProc)=='undefined')var Q_idProc=-1;
 		if(Q_idProc.toString()=='')Q_idProc=-1;
@@ -525,7 +530,7 @@ var MODULO_PROCEDURE = { // extend SET
 			
 			SCHEDA.caricaScheda(	titDef,
 									HTML, 
-									'SET.chiudiProcedura();', 
+									'SET.chiudiProcedura('+idProcedura+');', 
 									'scheda_procedura', 
 									false, 
 									true, 
@@ -539,15 +544,23 @@ var MODULO_PROCEDURE = { // extend SET
 			initChangeDetection( "formMod" ); // lasciare dopo caricaDettagli
 			
 			if(!touchable)document.formMod.NomeProcedura.focus();
+			
+			// verifico che non sia già aperta da qualcun altro e intanto la blocco
+			LOGIN.getOpened("procedure",idProcedura);
 		}});
 	},
-	chiudiProcedura: function(){ // alla chiusura della modifica della procedura
+	chiudiProcedura: function( idProcedura ){
+		// alla chiusura della modifica della procedura
 		SET.annullaEvidenziaTsubo();
 		SET.spegniMeridiani(true);
 		endChangeDetection();
 		SCHEDA.formModificato = false;
+			
+		// tolgo il blocco online dall'elemento
+		if(typeof(idProcedura)!='undefined')LOGIN.closeOpened("procedure",idProcedura);
 	},
-	salvaProcedura: function(){ // salva una procedura
+	salvaProcedura: function(){
+		// salva una procedura
 		SET.salvaDettagli();
 		var DataModifica = DB.procedure.lastSync+1;
 		if(!document.formMod.idProc.value*1>-1)DataCreazione=DataModifica;	
@@ -583,7 +596,8 @@ var MODULO_PROCEDURE = { // extend SET
 		});
 		return false;
 	},
-	el_procedura: function( Q_idProc ){ // elimina una procedura
+	el_procedura: function( Q_idProc ){
+		// elimina una procedura
 		CONFIRM.vis(	Lingua(TXT_VerElProc),
 						false,
 						arguments ).then(function(pass){if(pass){
@@ -623,7 +637,8 @@ var MODULO_PROCEDURE = { // extend SET
 		if(mr.options[0].value=='')mr.options[0]=null;
 		document.getElementById("ico_vis"+n).style.display="inline";
 	},
-	annullaProc: function(){ // annulla le modifiche alla procedura
+	annullaProc: function(){
+		// annulla le modifiche alla procedura
 		if(document.formMod.idProc.value.trim()*1>-1)SET.car_procedura(document.formMod.idProc.value.trim(),1,0,SCHEDA.btnSel);
 		else SCHEDA.scaricaScheda();
 	},
@@ -631,7 +646,8 @@ var MODULO_PROCEDURE = { // extend SET
 		if(document.formMod.az.value=='')return false;
 		else return true;
 	},
-	aggiungiGruppoProcedura: function( punti ){ // importa un gruppo di punti
+	aggiungiGruppoProcedura: function( punti ){
+		// importa un gruppo di punti
 		var pP=punti.split("|");			
 		for(var p=0;p<pP.length-1;p++)SET.aggiungiDettaglio(PAZIENTI.tipoGruppo,pP[p],0);
 		PAZIENTI.evidenziaAggiunti(document.getElementById('dettagliCont'),pP.length-1);
@@ -659,7 +675,8 @@ var MODULO_PROCEDURE = { // extend SET
 	},
 	
 	// DETTAGLI
-	caricaDettagli: function( eviUltimo ){ // carica i dettagli della procedura
+	caricaDettagli: function( eviUltimo ){
+		// carica i dettagli della procedura
 		var HTML = '';
 		var presente = false;
 		var nD = -1;
@@ -852,7 +869,8 @@ var MODULO_PROCEDURE = { // extend SET
 			else if(TipoDettaglio!='M')eval("document.formMod.de_"+p+".focus()");
 		}
 	},
-	salvaDettagli: function(){ // salva i dettagli della procedura
+	salvaDettagli: function(){
+		// salva i dettagli della procedura
 		if(SET.dettagliProvvisori.length){
 			var DataModifica = DB.procedure.lastSync+1;
 			SET.dettagliProvvisori.sort(sort_by('OrdineDettaglio', false, parseInt));
@@ -887,7 +905,8 @@ var MODULO_PROCEDURE = { // extend SET
 			}
 		}
 	},
-	aggiungiDettaglio: function( t, c, u ){ // aggiunge un dettaglio vuoto alla proceura
+	aggiungiDettaglio: function( t, c, u ){
+		// aggiunge un dettaglio vuoto alla proceura
 		if(typeof(c)=='undefined')var c='';
 		if(typeof(u)=='undefined')var u=1;
 		SET.topAdd = tCoord(document.getElementById("p_add_dett"),'y');
@@ -909,7 +928,8 @@ var MODULO_PROCEDURE = { // extend SET
 		if(SET.topAdd)document.getElementById("scheda_testo").scrollTo(0,document.getElementById("scheda_testo").scrollTop+(tCoord(document.getElementById("p_add_dett"),'y')-SET.topAdd));
 		SET.topAdd = null;
 	},
-	eliminaDettaglio: function( n ){ // elimina un dettaglio dalla procedura
+	eliminaDettaglio: function( n ){
+		// elimina un dettaglio dalla procedura
 		SET.salvaDettagli();
 		SET.dettagliProvvisori[n].Cancellato=1;
 		o=0;
@@ -920,7 +940,8 @@ var MODULO_PROCEDURE = { // extend SET
 		SET.caricaDettagli();
 		SCHEDA.formModificato = true;
 	},
-	spostaSuDettaglio: function( n ){ //  sposta su un dettaglio in una procedura
+	spostaSuDettaglio: function( n ){
+		//  sposta su un dettaglio in una procedura
 		SET.salvaDettagli();
 		v1=v2=-1;
 		for(p in SET.dettagliProvvisori){ // estraggo l'ultimo numero d'ordine
@@ -1051,7 +1072,8 @@ var MODULO_PROCEDURE = { // extend SET
 			document.getElementById("numeroCommenti").innerHTML = totComm;
 		}
 	},
-	ins_commento: function( idProcedura, idCommento, reply ){ // inserisce un commento ad una procedura condivisa
+	ins_commento: function( idProcedura, idCommento, reply ){
+		// inserisce un commento ad una procedura condivisa
 		if(typeof(idCommento) == 'undefined')var idCommento = 0;
 		if(typeof(reply) == 'undefined')var reply = 0;
 		//retNoFree();
@@ -1190,7 +1212,8 @@ var MODULO_PROCEDURE = { // extend SET
 							true,
 							SET.elProcCommOp);
 	},
-	caricaCommunity: function(){ // carica l'elenco delle procedure
+	caricaCommunity: function(){
+		// carica l'elenco delle procedure
 		if(CONN.getConn())applicaLoading(document.querySelector(".listaProcedure"));
 		SET.idProcCommOp=-1;
 		SET.elProcCommOp=null;
@@ -1217,7 +1240,8 @@ var MODULO_PROCEDURE = { // extend SET
 						"SET.confermaCommunity");
 		return false;
 	},
-	caricaProceduraCommunity: function( Q_idProc, k, el ){ // carica una procedura condivisa per la visualizzazione
+	caricaProceduraCommunity: function( Q_idProc, k, el ){
+		// carica una procedura condivisa per la visualizzazione
 		//retNoFree();
 		if(!LOGIN.logedin()){
 			ALERT(Lingua(TXT_ErroreUtenteNonConnesso), true);

@@ -82,9 +82,6 @@ var SERVIZI = {
 		if(parola)document.getElementById("serv_ricerca").classList.add("filtro_attivo");
 		else document.getElementById("serv_ricerca").classList.remove("filtro_attivo");
 	},
-	chiudiServizio: function(){ // chiude la scheda servizio
-		SCHEDA.formModificato = false;
-	},
 	car_servizio: function( Q_idServ, salvato ){ // carica la scheda del servizio
 		// verifico le autorizzazioni
 		if(__(Q_idServ,-1)==-1){
@@ -192,7 +189,7 @@ var SERVIZI = {
 			
 			SCHEDA.caricaScheda(	stripslashes(Lingua(titoloDef)),
 									HTML,
-									'SERVIZI.chiudiServizio();',
+									'SERVIZI.chiudiServizio('+idServizio+');',
 									'scheda_servizio',
 									false,
 									true,
@@ -206,7 +203,16 @@ var SERVIZI = {
 			SCHEDA.formModificato = false;
 			
 			if(salvato)SCHEDA.msgSalvataggio();
+			
+			// verifico che non sia già aperta da qualcun altro e intanto la blocco
+			LOGIN.getOpened("servizi",idServizio);
 		}});
+	},
+	chiudiServizio: function( idServizio ){ // chiude la scheda servizio
+		SCHEDA.formModificato = false;
+			
+		// tolgo il blocco online dall'elemento
+		if(typeof(idServizio)!='undefined')LOGIN.closeOpened("servizi",idServizio);
 	},
 	mod_servizio: function( Q_idServ ){ //salva il servizio
 		if(document.formMod.NumeroSedute.value*1==0 || document.formMod.NumeroSedute.value*1>20){
@@ -265,12 +271,13 @@ var SERVIZI = {
 				var DataModifica = DB.servizi.lastSync+1;
 				DB.servizi.data[Q_idServ].DataModifica=parseInt(DataModifica);
 				DB.servizi.data[Q_idServ].Cancellato=1;
+				idServizio = __(DB.servizi.data[Q_idServ].idServizio,0);
 			}
 			endChangeDetection();
 			SCHEDA.formModificato = false;
 			localPouchDB.setItem(MD5("DB"+LOGIN._frv()+".servizi"), IMPORTER.COMPR(DB.servizi)).then(function(){ // salvo il DB
 				LOGIN.sincronizza();
-				SERVIZI.chiudiServizio();
+				SERVIZI.chiudiServizio(idServizio);
 				SERVIZI.caricaServizi();
 				SCHEDA.scaricaScheda();
 			});

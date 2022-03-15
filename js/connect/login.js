@@ -540,7 +540,8 @@ var LOGIN = {
 		}
 		return txt;
 	},
-	cryptJSON: function(el){ // CRYPRT per la PRIVACY: carica i dati testuali criptati sul server
+	cryptJSON: function(el){
+		// CRYPRT per la PRIVACY: carica i dati testuali criptati sul server
 		var dbCAR=clone(el);
 		for(i in dbCAR){
 			if(typeof(dbCAR[i])!='object'){
@@ -565,6 +566,7 @@ var LOGIN = {
 	
 	// gestione UTENTE
 	registrazione: function(){
+		// registra l'utente su server
 		if(CONN.retNoConn()){
 			if(verifica_form(document.registrazioneForm)){
 
@@ -584,6 +586,7 @@ var LOGIN = {
 		}
 	},
 	retRegistrazione: function( txt ){
+		// risposta dalla registrazione utente sul server (registrazione)
 		console.log(txt)
 		if(typeof(txt)=='undefined' || txt=='404'){
 			// si è verificato un errore generico
@@ -603,6 +606,7 @@ var LOGIN = {
 		return;
 	},
 	modUtente: function(){
+		// scarica le modifiche dell'utente dal server
 		if(!LOGIN.logedin()){
 			ALERT(Lingua(TXT_ErroreUtenteNonConnesso), true);
 			return;
@@ -622,6 +626,10 @@ var LOGIN = {
 		}
 	},
 	car_utente: function( txt ){
+		/*
+		- risposta dallo scaricamento dati utente (modUtente)
+		- carica i dati dell'utente nella scheda
+		*/
 		if(typeof(txt)=='undefined')var txt = '';
 		if(txt.substr(0,3)=='404'){
 			
@@ -813,6 +821,7 @@ var LOGIN = {
 		}
 	},
 	mod_utente: function(){
+		// salva i dati dell'utente e li carica sul server
 		if(!verifica_form(document.getElementById("formMod")))return;
 		var postAction = '';
 		
@@ -876,6 +885,7 @@ var LOGIN = {
 		return false;
 	},
 	retModUtente: function( txt ){
+		// risposta dal caricamento dell'utente (mod_utente)
 		if(txt=='404'){
 			ALERT(Lingua(TXT_ErroreGenerico));
 			rimuoviLoading(document.getElementById("scheda_testo"));
@@ -898,21 +908,25 @@ var LOGIN = {
 		}
 	},
 	salvaAvatar: function( obj, n ){
+		// sostituisce l'avatar provvisorio nella scheda
 		if(typeof(n) == 'undefined')var n = 'avatarUtente';
 		obj = JSON.parse(obj);
 		document.getElementById(n).getElementsByTagName('div')[0].style.backgroundImage="url('"+obj.imgMini+"')";
 		SCHEDA.formModificato = true;
 	},
 	salvaLogo: function( obj ){
+		// sostituisce il logo aziendale provvisorio nella scheda
 		LOGIN.salvaAvatar( obj, 'logoAzienda');
 	},
 	deleteAvatar: function( n ){
+		// cancella l'avatar o il loso
 		document.getElementById(n).getElementsByTagName('div')[0].style.backgroundImage="";
 		SCHEDA.formModificato = true;
 	},
 				
 	// SINCRONIZZAZIONE
-	sincronizza: function(funct, bkp){ // sincronizza i DB locali con quelli remoti (quando modifico)
+	sincronizza: function(funct, bkp){
+		// sincronizza i DB locali con quelli remoti (quando modifico)
 		if(typeof(bkp)=='undefined')var bkp=false;
 		DB.verDbSize();
 		if(typeof(funct)!='undefined')LOGIN.afterFunct=funct;
@@ -926,7 +940,8 @@ var LOGIN = {
 			LOGIN.afterFunct = null;
 		}
 	},
-	globalSync: function(dwnl, bkp, Nuovo){ // sincro globale up e down
+	globalSync: function(dwnl, bkp, Nuovo){
+		// sincro globale up e down
 		if(typeof(dwnl)=='undefined')var dwnl=false;
 		if(typeof(bkp)=='undefined')var bkp=false;
 		if(typeof(Nuovo)=='undefined')var Nuovo=false;
@@ -1273,7 +1288,8 @@ var LOGIN = {
 			});
 		}
 	},
-	retGlobalSyncro: function(txt){ // chiamato da "globalSync" o da "ripristinaBackup"
+	retGlobalSyncro: function( txt ){
+		// chiamato da "globalSync" o da "ripristinaBackup"
 		//console.log("---retGlobalSyncro---  "+txt);
 		if(txt.substr(0,3)+""=='404'){
 			if(debug)console.log(txt);
@@ -1979,7 +1995,8 @@ var LOGIN = {
 		}else LOGIN.verSincro('pazienti');
 		LOGIN.daSync = false;
 	},
-	verSincro: function (txt){
+	verSincro: function ( txt ){
+		// verifica la sincronizzazione della tabella txt
 		nSinc++;
 		if(LOGIN.afterFunct && LOGIN.afterFunct.indexOf('/*noRic*/')==-1) {
 			switch(txt){
@@ -2023,7 +2040,8 @@ var LOGIN = {
 			DB.verDbSize();
 		}
 	},
-	pulisciTabelle: function(){ // elimina gli elementi "Cancellati"
+	pulisciTabelle: function(){
+		// elimina gli elementi "Cancellati"
 		if(!BACKUPS.bkpProvv){
 			PZS = DB.pazienti.data;
 			tot = PZS.length;
@@ -2129,7 +2147,7 @@ var LOGIN = {
 			});
 		});
 	},
-	download:function (filename, text) {
+	download:function ( filename, text ){
 		var element = document.createElement('a');
 		element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(text));
 		element.setAttribute('download', filename);	
@@ -2138,7 +2156,7 @@ var LOGIN = {
 		element.click();
 		document.body.removeChild(element);
 	},
-	slugify: function(s) {
+	slugify: function(s){
 		_slugify_strip_re = /[^\w\s-]/g;
 		_slugify_hyphenate_re = /[-\s]+/g;
 		s = s.replace(_slugify_strip_re, '').trim().toLowerCase();
@@ -2146,7 +2164,41 @@ var LOGIN = {
 		return s;
 	},
 	
+	// gestione aperture
+	getOpened: function( tab, n ){
+		/*
+		- Verifica se l'elemento "n" della tabella "tab" è già stato aperto da un altro dispositivo
+		- Se non è già aperto lo blocca
+		*/
+		if(n){
+			CONN.caricaUrl(	"verificaAperto.php",
+							"tab=" +tab+"&idEl="+n,
+							"LOGIN.manageOpened");
+		}
+	},
+	manageOpened: function( txt ){
+		console.log(txt)
+		/*
+		- Risposta al controllo se l'elemento è già aperto
+		- gestisce la chiusura della schda in caso sia già aperto
+		*/
+		if(txt == 'locked'){
+			ALERT(Lingua(TXT_ElementoGiaAperto));
+			SCHEDA.scaricaScheda();
+		}
+	},
+	closeOpened: function( tab, n ){
+		/*
+		- Chiude l'elemento "n" della tabella "tab" aperto sul server
+		*/
+		if(n){
+			CONN.caricaUrl(	"chiudiAperto.php",
+							"tab=" +tab+"&idEl="+n,
+							"__");
+		}
+	},
 	
+	// funzioni generiche
 	dataW: function(txt){
 		if(typeof(txt)=='string')txt=LOGIN.decryptPrivacy(txt);
 		return txt;

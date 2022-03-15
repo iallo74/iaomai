@@ -215,9 +215,12 @@ var PAZIENTI = {
 			//if(mouseDetect)document.getElementById("paz_ricerca").focus();
 		}});
 	},
-	chiudiPaziente: function(){ // chiude la scheda anagrafica
+	chiudiPaziente: function( idPaziente ){ // chiude la scheda anagrafica
 		SCHEDA.formModificato = false;
 		PAZIENTI.pazOp = false;
+			
+		// tolgo il blocco online dall'elemento
+		if(typeof(idPaziente)!='undefined')LOGIN.closeOpened("pazienti",idPaziente);
 	},
 	intestazionePaziente: function( tipo ){ // nome e pulsanti in alto quando il paziente e selezionato
 		var PZ = DB.pazienti.data[PAZIENTI.idCL];
@@ -778,7 +781,7 @@ var PAZIENTI = {
 			
 			SCHEDA.caricaScheda(	stripslashes(Lingua(titoloDef)),
 									HTML,
-									'',
+									'PAZIENTI.chiudiPaziente('+idPaziente+');',
 									'scheda_paziente',
 									false,
 									true,
@@ -812,6 +815,9 @@ var PAZIENTI = {
 			PAZIENTI.popolaElementi('interventi');
 			
 			if(salvato)SCHEDA.msgSalvataggio();
+			
+			// verifico che non sia già aperta da qualcun altro e intanto la blocco
+			LOGIN.getOpened("pazienti",idPaziente);
 		}});
 	},
 	vis_paziente: function( salvato ){ // carica la scheda anagrafica del paziente
@@ -1135,7 +1141,7 @@ var PAZIENTI = {
 					
 			SCHEDA.caricaScheda(	stripslashes(Lingua(TXT_Anagrafica)),
 									HTML,
-									'PAZIENTI.chiudiPaziente();',
+									'PAZIENTI.chiudiPaziente('+idPaziente+');',
 									'scheda_paziente',
 									false,
 									true );
@@ -1250,6 +1256,7 @@ var PAZIENTI = {
 				DB.pazienti.data[Q_idPaz].DataModifica=parseInt(DataModifica);
 				DB.pazienti.data[Q_idPaz].Cancellato=1;
 				DB.pazienti.data[Q_idPaz].md5='';
+				idPaziente = __(DB.pazienti.data[Q_idPaz].idPaziente,0);
 				PAZIENTI.pazSelMD5='';
 			}
 			
@@ -1264,7 +1271,7 @@ var PAZIENTI = {
 				LOGIN.sincronizza();
 				PAZIENTI.idCL = -1;
 				PAZIENTI.idPaziente = -1;
-				PAZIENTI.chiudiPaziente();
+				PAZIENTI.chiudiPaziente(idPaziente);
 				PAZIENTI.caricaPazienti();
 				SCHEDA.scaricaScheda();
 				try{

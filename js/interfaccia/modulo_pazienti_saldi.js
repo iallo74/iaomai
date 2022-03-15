@@ -1,7 +1,8 @@
 
 var PAZIENTI_SALDI = {
 	// SALDI
-	caricaSaldi: function( Q_resta ){ // elenco saldi del paziente
+	caricaSaldi: function( Q_resta ){
+		// elenco saldi del paziente
 		if(PAZIENTI.idCL>-1){
 			Q_resta = __(Q_resta,false); // prefefinito
 			
@@ -92,7 +93,8 @@ var PAZIENTI_SALDI = {
 		}
 		return false;
 	},
-	car_saldo: function( Q_idSaldo, btn, salvato ){ // scheda del saldo
+	car_saldo: function( Q_idSaldo, btn, salvato ){
+		// scheda del saldo
 		CONFIRM.vis(	Lingua(TXT_UscireSenzaSalvare),
 						!SCHEDA.verificaSchedaRet(),
 						arguments ).then(function(pass){if(pass){
@@ -217,7 +219,7 @@ var PAZIENTI_SALDI = {
 			
 			SCHEDA.caricaScheda(	stripslashes(Lingua(titoloDef)),
 									HTML, 
-									'PAZIENTI.chiudiSaldo();', 
+									'PAZIENTI.chiudiSaldo('+idSaldo+');', 
 									'scheda_saldo', 
 									false, 
 									true, 
@@ -229,9 +231,14 @@ var PAZIENTI_SALDI = {
 			if(mouseDetect)document.formMod.ValoreSaldo.focus();
 			PAZIENTI.saldoOp = true;
 			if(salvato)SCHEDA.msgSalvataggio();
+			
+			// verifico che non sia già aperta da qualcun altro e intanto la blocco
+			LOGIN.getOpened("saldi",idSaldo);
+			
 		}});
 	},
-	mod_saldo: function(){ // salva il saldo
+	mod_saldo: function(){
+		// salva il saldo
 		if(PAZIENTI.idCL>-1){
 			var PZ = DB.pazienti.data[PAZIENTI.idCL];
 			if(!ControllaNumero(document.formMod.ValoreSaldo,stripslashes(Lingua(TXT_ValoreSaldo))))return;
@@ -279,7 +286,8 @@ var PAZIENTI_SALDI = {
 		}
 		return false;
 	},
-	el_saldo: function( Q_idSaldo ){ // elimina il saldo
+	el_saldo: function( Q_idSaldo ){
+		// elimina il saldo
 		CONFIRM.vis(	Lingua(TXT_ChiediEliminaSaldo),
 						false,
 						arguments ).then(function(pass){if(pass){
@@ -300,8 +308,12 @@ var PAZIENTI_SALDI = {
 			});
 		}});
 	},
-	chiudiSaldo: function(){ // funzione richiamata alla chiusura del saldo
+	chiudiSaldo: function( idSaldo ){
+		// funzione richiamata alla chiusura del saldo
 		SCHEDA.formModificato = false;
 		PAZIENTI.saldoOp = false;
+			
+		// tolgo il blocco online dall'elemento
+		if(typeof(idSaldo)!='undefined')LOGIN.closeOpened("saldi",idSaldo);
 	}
 }

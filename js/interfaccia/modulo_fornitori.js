@@ -2,7 +2,8 @@
 var FORNITORI = {
 	fornOp: false,
 		
-	caricaFornitori: function(){ // carica l'elenco dei fornitori
+	caricaFornitori: function(){
+		// carica l'elenco dei fornitori
 		var HTML = '';
 		
 		// pulsante aggiungi fornitore
@@ -70,6 +71,7 @@ var FORNITORI = {
 		document.getElementById("lista_fornitori").innerHTML = HTML;
 	},
 	filtra: function( event ){
+		// filtra l'elenco dei fornitori
 		var parola = document.getElementById("forn_ricerca").value;
 		for(p in DB.fornitori.data){
 			if(!DB.fornitori.data[p].Cancellato*1){
@@ -83,11 +85,8 @@ var FORNITORI = {
 		if(parola)document.getElementById("forn_ricerca").classList.add("filtro_attivo");
 		else document.getElementById("forn_ricerca").classList.remove("filtro_attivo");
 	},
-	chiudiFornitore: function(){ // chiude la scheda anagrafica
-		SCHEDA.formModificato = false;
-		FORNITORI.fornOp = false;
-	},
-	car_fornitore: function( Q_idForn, salvato ){ // carica la scheda anagrafica del fornitore
+	car_fornitore: function( Q_idForn, salvato ){
+		// carica la scheda anagrafica del fornitore
 		// verifico le autorizzazioni
 		if(__(Q_idForn,-1)==-1){
 			var maxFornitori = 1;
@@ -289,7 +288,7 @@ var FORNITORI = {
 			
 			SCHEDA.caricaScheda(	stripslashes(Lingua(titoloDef)),
 									HTML,
-									'FORNITORI.chiudiFornitore();',
+									'FORNITORI.chiudiFornitore('+idFornitore+');',
 									'scheda_fornitore',
 									false,
 									true,
@@ -309,9 +308,22 @@ var FORNITORI = {
 			//H.caricaEtichette('aggiuntive');
 			
 			if(salvato)SCHEDA.msgSalvataggio();
+			
+			// verifico che non sia già aperta da qualcun altro e intanto la blocco
+			LOGIN.getOpened("fornitori",idFornitore);
+			
 		}});
 	},
-	mod_fornitore: function( Q_idForn ){ //salva l'anagrafica fornitore
+	chiudiFornitore: function( idFornitore ){
+		// chiude la scheda anagrafica
+		SCHEDA.formModificato = false;
+		FORNITORI.fornOp = false;
+			
+		// tolgo il blocco online dall'elemento
+		if(typeof(idFornitore)!='undefined')LOGIN.closeOpened("fornitori",idFornitore);
+	},
+	mod_fornitore: function( Q_idForn ){
+		//salva l'anagrafica fornitore
 		if(!verifica_form(document.getElementById("formMod")))return;
 		var DataModifica = DB.fornitori.lastSync+1;
 		if(document.formMod.idFornitore.value*1>-1)DataCreazione=DataModifica;
@@ -363,7 +375,8 @@ var FORNITORI = {
 		});
 		return false;
 	},
-	el_fornitore: function( Q_idForn ){ // elimina la scheda del fornitore
+	el_fornitore: function( Q_idForn ){
+		// elimina la scheda del fornitore
 		CONFIRM.vis(	Lingua(TXT_ChiediEliminaFornitore),
 						false,
 						arguments ).then(function(pass){if(pass){
@@ -374,18 +387,20 @@ var FORNITORI = {
 				var DataModifica = DB.fornitori.lastSync+1;
 				DB.fornitori.data[Q_idForn].DataModifica=parseInt(DataModifica);
 				DB.fornitori.data[Q_idForn].Cancellato=1;
+				idFornitore = __(DB.fornitori.data[Q_idForn].idFornitore,0);
 			}
 			endChangeDetection();
 			SCHEDA.formModificato = false;
 			localPouchDB.setItem(MD5("DB"+LOGIN._frv()+".fornitori"), IMPORTER.COMPR(DB.fornitori)).then(function(){ // salvo il DB
-				LOGIN.sincronizza( 	'FORNITORI.chiudiFornitore();' +
+				LOGIN.sincronizza( 	'FORNITORI.chiudiFornitore('+idFornitore+');' +
 									'FORNITORI.caricaFornitori();' );
 				
 				SCHEDA.scaricaScheda();
 			});
 		}});
 	},
-	azRicercaFornitori: function( p ){ // clic sul risultato della ricerca
+	azRicercaFornitori: function( p ){
+		// clic sul risultato della ricerca
 		FORNITORI.car_fornitore(p);
 		SCHEDA.apriElenco('base');
 		SCHEDA.selElenco('fornitori');

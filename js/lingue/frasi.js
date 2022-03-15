@@ -394,6 +394,11 @@ var TXT_PuntoSuccessivo={
 	ita: "Vai al punto successivo",
 	eng: "Next point",
 	esp: "" };
+	
+	var TXT_ElementoGiaAperto={
+		ita: "L'elemento che vuoi aprire risulta già aperto su un altro dispositivo. Chiudilo e riprova.",
+		eng: "L'elemento che vuoi aprire risulta già aperto su un altro dispositivo. Chiudilo e riprova.",
+		esp: "" };
 
 
 // RICERCHE
