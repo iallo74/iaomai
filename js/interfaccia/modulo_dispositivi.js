@@ -13,9 +13,9 @@ var DISPOSITIVI = {
 		if(parseInt(elenco.LastConn2))time2 = "<br><i>"+Lingua(TXT_UltimaConnessione)+"</i>: "+getDataTS(elenco.LastConn2);
 		
 		if(devs1.appType=='APP')type1 = 'APP';
-		else type1 = 'Online: <img src="img/ico_browser_'+devs1.browser+'.png"> '+devs1.browser;
+		else type1 = 'Online: <img src="img/ico_browser_'+devs1.browser.toLowerCase()+'.png"> '+devs1.browser;
 		if(devs2.appType=='APP')type2 = 'APP';
-		else type2 = 'Online: <img src="img/ico_browser_'+devs2.browser+'.png"> '+devs2.browser;
+		else type2 = 'Online: <img src="img/ico_browser_'+devs2.browser.toLowerCase()+'.png"> '+devs2.browser;
 		
 		if(devs1.platform.toLowerCase().replace(" ","").indexOf("android")>-1)plt1 = 'android';
 		if(devs1.platform.toLowerCase().replace(" ","").indexOf("macos")>-1)plt1 = 'macos';
