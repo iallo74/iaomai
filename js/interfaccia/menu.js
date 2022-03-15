@@ -422,11 +422,17 @@ var MENU = {
 			!__(MENU.no_info_features,false) &&
 			LOGIN.logedin() &&
 			maxDate>now) || forza ){
-			visLoader("");
-			if(forza)MENU.chiudiMenu("features");
-			visLoader("");
-			document.getElementById("features").classList.add("visSch");
-			setTimeout(function(){document.getElementById("features").style.opacity = 1;},200);
+			if(forza){
+				visLoader("");
+				MENU.chiudiMenu("features");
+			}
+			var tmRit = 2500;
+			if(forza)tmRit = 10;
+			setTimeout(function(){
+				visLoader("");
+				document.getElementById("features").classList.add("visSch");
+				setTimeout(function(){document.getElementById("features").style.opacity = 1;},200);
+			},tmRit);
 			MENU.no_info_features = true;
 		}
 	},
