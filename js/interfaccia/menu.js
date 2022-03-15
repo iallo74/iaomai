@@ -74,6 +74,10 @@ var MENU = {
 			}
 		}catch(err){}
 	},
+	verOp: function (){
+		//return (SCHEDA.classeAperta == 'scheda_A' ||SCHEDA.classeAperta == 'scheda_B');
+		return document.getElementById("scheda").classList.contains("visSch") && SCHEDA.aggancio.tipo=="lato";
+	},
 	chiudiMenu: function(n){
 		if(n!="pulsanti_modello")document.getElementById("pulsanti_modello").classList.remove("visSch");
 		if(n!="elencoSets")document.getElementById("elencoSets").classList.remove("visSch");
@@ -91,6 +95,7 @@ var MENU = {
 		if(n!="impset")document.getElementById("impset").classList.remove("visSch");
 		if(n!="community")document.getElementById("community").classList.remove("visSch");
 		if(n!="dispositivi")document.getElementById("dispositivi").classList.remove("visSch");
+		if(n!="features")document.getElementById("features").classList.remove("visSch");
 		if(n!="ag")document.getElementById("ag").classList.remove("visSch")
 		if( n=='pulsanti_modello' ||
 			n=='impostazioni' ||
@@ -112,8 +117,7 @@ var MENU = {
 		
 		
 		// recupero il focus sul pulsante degli archivi
-		if((SCHEDA.classeAperta == 'scheda_A' ||
-			SCHEDA.classeAperta == 'scheda_B') && 
+		if(	MENU.verOp() && 
 			!document.getElementById("p_cartella").classList.contains("p_sel") &&
 			!n &&
 			!smartMenu ){
@@ -125,8 +129,7 @@ var MENU = {
 	},
 	visModello: function( forza ){
 		if(typeof(forza) == 'undefined')var forza = false;
-		var daScheda = ((SCHEDA.classeAperta == 'scheda_A' ||
-						 SCHEDA.classeAperta == 'scheda_B') && !smartMenu);
+		var daScheda = (MENU.verOp() && !smartMenu);
 						
 		if(!daScheda){
 			if(!document.getElementById("pulsanti_modello").classList.contains("visSch") && !globals.modello.cartella){
@@ -189,8 +192,7 @@ var MENU = {
 		//verAnimate();
 	},
 	visSets: function(){
-		var daScheda = ((SCHEDA.classeAperta == 'scheda_A' ||
-						 SCHEDA.classeAperta == 'scheda_B') && !smartMenu);
+		var daScheda = (MENU.verOp() && !smartMenu);
 
 		if(!daScheda)MENU.chiudiMenu("sets");
 		else document.getElementById("p_cartella").classList.remove("p_sel");
@@ -411,6 +413,22 @@ var MENU = {
 		document.getElementById("dispositivi").classList.add("visSch");
 		visLoader('');
 		DISPOSITIVI.carica(jsn);
+	},
+	visFeatures: function( forza ){
+		if(typeof(forza)=='undefined')var forza = false;
+		var maxDate = new Date("2022-04-15").getTime();
+		var now = new Date().getTime();
+		if(	(!__(localStorage.no_info_features,'') &&
+			!__(MENU.no_info_features,false) &&
+			LOGIN.logedin() &&
+			maxDate>now) || forza ){
+			visLoader("");
+			if(forza)MENU.chiudiMenu("features");
+			visLoader("");
+			document.getElementById("features").classList.add("visSch");
+			setTimeout(function(){document.getElementById("features").style.opacity = 1;},200);
+			MENU.no_info_features = true;
+		}
 	},
 	visBackups: function(){
 		if(!LOGIN.logedin()){

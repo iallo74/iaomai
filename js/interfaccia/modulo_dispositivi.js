@@ -2,9 +2,8 @@
 var DISPOSITIVI = {
 
 	carica: function( txt ){
-		var HTML = '';
+		var HTML = '<div id="dispositivi_descr">'+htmlEntities(Lingua(TXT_MaxDispositiviConnessi))+'</div>';
 		var elenco = JSON.parse(txt);
-		console.log(elenco)
 		var devs1 = devs2 = type1 = type2 = time1 = time2 = plt1 = plt2 = '';
 		
 		if(elenco.DeviceInfo)devs1 = JSON.parse(window.atob(elenco.DeviceInfo));
@@ -20,13 +19,13 @@ var DISPOSITIVI = {
 		if(devs1.platform.toLowerCase().replace(" ","").indexOf("android")>-1)plt1 = 'android';
 		if(devs1.platform.toLowerCase().replace(" ","").indexOf("macos")>-1)plt1 = 'macos';
 		if(devs1.platform.toLowerCase().replace(" ","").indexOf("windows")>-1)plt1 = 'windows';
-		if(devs1.platform.toLowerCase().replace(" ","").indexOf("ios")>-1)plt1 = 'ios';
+		if(devs1.platform.toLowerCase().replace(" ","").indexOf("ios")>-1)plt1 = 'macos';//'ios';
 		if(devs1.platform.toLowerCase().replace(" ","").indexOf("linux")>-1)plt1 = 'linux';
 		
 		if(devs2.platform.toLowerCase().replace(" ","").indexOf("android")>-1)plt2 = 'android';
 		if(devs2.platform.toLowerCase().replace(" ","").indexOf("macos")>-1)plt2 = 'macos';
 		if(devs2.platform.toLowerCase().replace(" ","").indexOf("windows")>-1)plt2 = 'windows';
-		if(devs2.platform.toLowerCase().replace(" ","").indexOf("ios")>-1)plt2 = 'ios';
+		if(devs2.platform.toLowerCase().replace(" ","").indexOf("ios")>-1)plt2 = 'macos';//'ios';
 		if(devs2.platform.toLowerCase().replace(" ","").indexOf("linux")>-1)plt2 = 'linux';
 		
 		
@@ -47,7 +46,6 @@ var DISPOSITIVI = {
 	},
 	
 	disconnetti: function( UniqueId ){
-		console.log("disconnetti")
 		CONN.caricaUrl(	"logout_device.php",
 						"USR="+encodeURIComponent(DB.login.data.UsernameU) +
 						"&ui_dev="+encodeURIComponent(UniqueId),

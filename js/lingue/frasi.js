@@ -166,7 +166,15 @@ var TXT_Guide={
 	eng: "Show startup tutorial",
 	esp: "" };
 
-//popup VERSIONE		
+//popup NUOVA VERSIONE	
+
+	var TXT_NuoveCaratteristiche={
+		ita: "Nuove caratteristiche",
+		eng: "New features",
+		esp: "" };
+
+//popup VERSIONE
+	
 var TXT_Versione={
 	ita: "Info su [§]",
 	eng: "Info about [§]",
@@ -358,6 +366,11 @@ var TXT_ElementiSincronizzati={
 	var TXT_ErrLogoutDevices={	
 		ita: "Si è verificato un errore nel tentativo di disconnettere un dispositivo.",
 		eng: "Si è verificato un errore nel tentativo di disconnettere un dispositivo.",
+		esp: "" };
+		
+	var TXT_MaxDispositiviConnessi={	
+		ita: "Puoi connettere un massimo di 2 dispositivi per volta. Se vuoi connetterti con questo dispositivo devi disconnetterne uno di quelli connessi. Scegli quale, dall'elenco qui sotto.",
+		eng: "You can connect up to 2 devices at a time. If you want to connect with this device you have to disconnect one of the connected ones. Choose which one, from the list below.",
 		esp: "" };
 
 

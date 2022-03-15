@@ -160,6 +160,8 @@ var LOGIN = {
 		iosPlatforms = ['iPhone', 'iPad', 'iPod'],
 		os = null;
 		
+		if(!platform)platform = window.navigator.userAgentData.platform;
+		
 		if (macosPlatforms.indexOf(platform) !== -1) {
 			os = 'Mac OS';
 		} else if (iosPlatforms.indexOf(platform) !== -1) {
@@ -175,7 +177,7 @@ var LOGIN = {
 	},
 	getDeviceInfo: function(){
 		var device = {};
-		if(!brw_firefox){
+		/*if(!brw_firefox){
 			device.platform = navigator.userAgentData.platform;
 			if(navigator.userAgent.indexOf(device.platform)>-1){
 				var re = new RegExp(device.platform+"[^;]+;","g");
@@ -186,7 +188,13 @@ var LOGIN = {
 			device.platform = navigator.oscpu.split(";")[0];
 		}else{
 			device.platform = LOGIN.getOS();
-		}
+		}*/
+		device.platform = "Unknown OS";
+		if (navigator.userAgent.indexOf("Win") != -1) device.platform = "Windows";
+		if (navigator.userAgent.indexOf("Mac") != -1) device.platform = "Macintosh";
+		if (navigator.userAgent.indexOf("Linux") != -1) device.platform = "Linux";
+		if (navigator.userAgent.indexOf("Android") != -1) device.platform = "Android";
+		if (navigator.userAgent.indexOf("like Mac") != -1) device.platform = "iOS";
 		
 		device.type = 'Computer';
 		device.appType = 'APP';
@@ -228,6 +236,7 @@ var LOGIN = {
 		}else{
 			var jsn = JSON.parse(txt);
 			var Nuovo = jsn.data.Nuovo;
+			if(__(jsn.upgrade_info,false))MENU.visFeatures();
 			delete jsn.data.Nuovo;
 			if(__(jsn.errConn)){
 				MENU.chiudiMenu();
@@ -281,6 +290,7 @@ var LOGIN = {
 					}
 				}else{
 					LOGIN.getDB(true);
+					MENU.visFeatures();
 				}
 				LOGIN.scriviUtente();
 			}
@@ -431,6 +441,8 @@ var LOGIN = {
 			}else if(txt){
 				// se c'è una notifica la gestisco
 				elenco=JSON.parse(txt);
+				
+				if(__(elenco.upgrade_info,false))MENU.visFeatures();
 				//console.log(elenco)
 				NOTIFICHE.aggiornaIcona(elenco.notificheDaleggere*1);
 				if(LOGIN.connAssente){
