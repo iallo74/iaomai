@@ -233,7 +233,7 @@ var PAZIENTI_SALDI = {
 			if(salvato)SCHEDA.msgSalvataggio();
 			
 			// verifico che non sia già aperta da qualcun altro e intanto la blocco
-			LOGIN.getOpened("saldi",idSaldo);
+			LOGIN.verifyLocked("saldi",idSaldo);
 			
 		}});
 	},
@@ -314,6 +314,6 @@ var PAZIENTI_SALDI = {
 		PAZIENTI.saldoOp = false;
 			
 		// tolgo il blocco online dall'elemento
-		if(typeof(idSaldo)!='undefined')LOGIN.closeOpened("saldi",idSaldo);
+		if(typeof(idSaldo)!='undefined')LOGIN.closeLocked("saldi",idSaldo);
 	}
 }

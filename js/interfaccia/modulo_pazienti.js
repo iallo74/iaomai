@@ -220,7 +220,7 @@ var PAZIENTI = {
 		PAZIENTI.pazOp = false;
 			
 		// tolgo il blocco online dall'elemento
-		if(typeof(idPaziente)!='undefined')LOGIN.closeOpened("pazienti",idPaziente);
+		if(typeof(idPaziente)!='undefined')LOGIN.closeLocked("pazienti",idPaziente);
 	},
 	intestazionePaziente: function( tipo ){ // nome e pulsanti in alto quando il paziente e selezionato
 		var PZ = DB.pazienti.data[PAZIENTI.idCL];
@@ -817,7 +817,7 @@ var PAZIENTI = {
 			if(salvato)SCHEDA.msgSalvataggio();
 			
 			// verifico che non sia già aperta da qualcun altro e intanto la blocco
-			LOGIN.getOpened("pazienti",idPaziente);
+			LOGIN.verifyLocked("pazienti",idPaziente);
 		}});
 	},
 	vis_paziente: function( salvato ){ // carica la scheda anagrafica del paziente

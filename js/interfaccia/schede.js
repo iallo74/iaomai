@@ -14,6 +14,10 @@ var SCHEDA = {
 			w: -1
 		}
 	},
+	locked: { // oggetto che memorizza la scheda aperta, per il controllo multidevice
+		tab: '',
+		idEl: 0
+	},
 	xMouseIni: 0,
 	yMouseIni: 0,
 	xIni: 0,

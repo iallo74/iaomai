@@ -546,7 +546,7 @@ var MODULO_PROCEDURE = { // extend SET
 			if(!touchable)document.formMod.NomeProcedura.focus();
 			
 			// verifico che non sia già aperta da qualcun altro e intanto la blocco
-			LOGIN.getOpened("procedure",idProcedura);
+			LOGIN.verifyLocked("procedure",idProcedura);
 		}});
 	},
 	chiudiProcedura: function( idProcedura ){
@@ -557,7 +557,7 @@ var MODULO_PROCEDURE = { // extend SET
 		SCHEDA.formModificato = false;
 			
 		// tolgo il blocco online dall'elemento
-		if(typeof(idProcedura)!='undefined')LOGIN.closeOpened("procedure",idProcedura);
+		if(typeof(idProcedura)!='undefined')LOGIN.closeLocked("procedure",idProcedura);
 	},
 	salvaProcedura: function(){
 		// salva una procedura

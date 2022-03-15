@@ -310,7 +310,7 @@ var FORNITORI = {
 			if(salvato)SCHEDA.msgSalvataggio();
 			
 			// verifico che non sia già aperta da qualcun altro e intanto la blocco
-			LOGIN.getOpened("fornitori",idFornitore);
+			LOGIN.verifyLocked("fornitori",idFornitore);
 			
 		}});
 	},
@@ -320,7 +320,7 @@ var FORNITORI = {
 		FORNITORI.fornOp = false;
 			
 		// tolgo il blocco online dall'elemento
-		if(typeof(idFornitore)!='undefined')LOGIN.closeOpened("fornitori",idFornitore);
+		if(typeof(idFornitore)!='undefined')LOGIN.closeLocked("fornitori",idFornitore);
 	},
 	mod_fornitore: function( Q_idForn ){
 		//salva l'anagrafica fornitore

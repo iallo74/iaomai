@@ -812,7 +812,7 @@ var PAZIENTI_TRATTAMENTI = {
 			SCHEDA.formModificato = false;
 			
 			// verifico che non sia già aperta da qualcun altro e intanto la blocco
-			LOGIN.getOpened("trattamenti",idTrattamento);
+			LOGIN.verifyLocked("trattamenti",idTrattamento);
 			
 		}});
 	},
@@ -901,7 +901,7 @@ var PAZIENTI_TRATTAMENTI = {
 		PAZIENTI.trattOp = false;
 			
 		// tolgo il blocco online dall'elemento
-		LOGIN.closeOpened("trattamenti",idTrattamento);
+		LOGIN.closeLocked("trattamenti",idTrattamento);
 	},
 	mod_trattamento: function(){ // salva il tratamento
 		if(PAZIENTI.idCL>-1){

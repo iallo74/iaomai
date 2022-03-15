@@ -376,7 +376,9 @@ var LOGIN = {
 	verificaToken: function(){ // verifico il Token e le notifiche
 		if(CONN.getConn() && LOGIN.logedin()){ //<<<<<<<<< FRV
 			if(LOGIN.logedin())CONN.caricaUrl(	"vertoken.php",
-												"SL="+globals.siglaLingua.toUpperCase(),
+												"SL="+globals.siglaLingua.toUpperCase() +
+												"&tab="+SCHEDA.locked.tab +
+												"&idEl="+SCHEDA.locked.idEl,
 												"LOGIN.resToken");
 			return false;
 		}else{
@@ -2165,19 +2167,20 @@ var LOGIN = {
 	},
 	
 	// gestione aperture
-	getOpened: function( tab, n ){
+	verifyLocked: function( tab, n ){
 		/*
 		- Verifica se l'elemento "n" della tabella "tab" è già stato aperto da un altro dispositivo
 		- Se non è già aperto lo blocca
 		*/
 		if(n){
-			CONN.caricaUrl(	"verificaAperto.php",
+			SCHEDA.locked.tab = tab;
+			SCHEDA.locked.idEl = n;
+			CONN.caricaUrl(	"lockedVerifica.php",
 							"tab=" +tab+"&idEl="+n,
-							"LOGIN.manageOpened");
+							"LOGIN.manageLocked");
 		}
 	},
-	manageOpened: function( txt ){
-		console.log(txt)
+	manageLocked: function( txt ){
 		/*
 		- Risposta al controllo se l'elemento è già aperto
 		- gestisce la chiusura della schda in caso sia già aperto
@@ -2187,14 +2190,16 @@ var LOGIN = {
 			SCHEDA.scaricaScheda();
 		}
 	},
-	closeOpened: function( tab, n ){
+	closeLocked: function( tab, n ){
 		/*
 		- Chiude l'elemento "n" della tabella "tab" aperto sul server
 		*/
 		if(n){
-			CONN.caricaUrl(	"chiudiAperto.php",
+			CONN.caricaUrl(	"lockedChiudi.php",
 							"tab=" +tab+"&idEl="+n,
 							"__");
+			SCHEDA.locked.tab = '';
+			SCHEDA.locked.idEl = 0;
 		}
 	},
 	

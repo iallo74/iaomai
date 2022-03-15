@@ -205,14 +205,14 @@ var SERVIZI = {
 			if(salvato)SCHEDA.msgSalvataggio();
 			
 			// verifico che non sia già aperta da qualcun altro e intanto la blocco
-			LOGIN.getOpened("servizi",idServizio);
+			LOGIN.verifyLocked("servizi",idServizio);
 		}});
 	},
 	chiudiServizio: function( idServizio ){ // chiude la scheda servizio
 		SCHEDA.formModificato = false;
 			
 		// tolgo il blocco online dall'elemento
-		if(typeof(idServizio)!='undefined')LOGIN.closeOpened("servizi",idServizio);
+		if(typeof(idServizio)!='undefined')LOGIN.closeLocked("servizi",idServizio);
 	},
 	mod_servizio: function( Q_idServ ){ //salva il servizio
 		if(document.formMod.NumeroSedute.value*1==0 || document.formMod.NumeroSedute.value*1>20){
