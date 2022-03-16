@@ -374,16 +374,34 @@ var LOGIN = {
 		}else LOGIN.logout();
 	},
 	verificaToken: function(){ // verifico il Token e le notifiche
-		if(CONN.getConn() && LOGIN.logedin()){ //<<<<<<<<< FRV
+		// Verifico che il token sia valido
+		if(CONN.getConn() && LOGIN.logedin()){
+			// se c'è connessione e ho il TOKEN
+			
+			// invio di dati di sincro per verificare modifiche
+			var JSNPOST = {
+				"note": DB.note.lastSync,
+				"procedure": DB.procedure.lastSync,
+				"servizi": DB.servizi.lastSync,
+				"fornitori": DB.fornitori.lastSync,
+				"pazienti": DB.pazienti.lastSync,
+				"ricerche": DB.ricerche.lastSync,
+				//"cicli": DB.cicli.lastSync, // SERVE SOLO IN UPLOAD
+				"appuntamenti": DB.appuntamenti.lastSync,
+				"annotazioni": DB.annotazioni.lastSync
+			};
 			if(LOGIN.logedin())CONN.caricaUrl(	"vertoken.php",
 												"SL="+globals.siglaLingua.toUpperCase() +
 												"&tab="+SCHEDA.locked.tab +
-												"&idEl="+SCHEDA.locked.idEl,
+												"&idEl="+SCHEDA.locked.idEl +
+												"&JSNPOST="+window.btoa(encodeURIComponent(JSON.stringify(JSNPOST))),
 												"LOGIN.resToken");
 			return false;
 		}else{
+			// se non c'è connessione o non ho il token
 			LOGIN.connAssente=true;
 			// verifico se ci sono elementi da sincronizzare
+			//!!!!! POTREBBE ESSERE ESCLUSA LA FUNZIONE in quanto abbiamo tolto la visualizzazione del loghino
 			LOGIN.daSync=false;
 			for(p in DB.pazienti.data){
 				if(DB.pazienti.data[p].DataModifica>DB.pazienti.lastSync)LOGIN.daSync=true;
@@ -427,12 +445,12 @@ var LOGIN = {
 		}
 	},
 	avviaVerToken: function(){
+		// Avvia la verifica del TOKEN ogni 10 secondi
 		tmVerT=setInterval(function(){LOGIN.verificaToken()},10000); // verifico ogni 10 secondi
 	},
 	resToken: function(txt){
-		//console.log(LOGIN.connAssente)
-		//console.log(txt)
-		//if(typeof(txt) == 'undefined')var txt = '404';
+		// Risposta dalla verifica del TOKEN
+		console.log(txt)
 		if(typeof(txt) != 'undefined'){;
 			if(txt.substr(0,3)=='404'){
 				SCHEDA.scaricaScheda();
@@ -445,12 +463,16 @@ var LOGIN = {
 				elenco=JSON.parse(txt);
 				
 				if(__(elenco.upgrade_info,false))MENU.visFeatures();
-				//console.log(elenco)
 				NOTIFICHE.aggiornaIcona(elenco.notificheDaleggere*1);
 				if(LOGIN.connAssente){
 					LOGIN.connAssente=false;
 				}
 				if(LOGIN.daSync)LOGIN.globalSync();
+				
+				// re ci sono elementi modificati sincronizza
+				if(__(elenco.modificati,false)){
+					LOGIN.sincronizza()
+				}
 			}
 		}
 	},

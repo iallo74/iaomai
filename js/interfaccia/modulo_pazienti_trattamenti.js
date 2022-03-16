@@ -1059,9 +1059,13 @@ var PAZIENTI_TRATTAMENTI = {
 			}
 			DB.pazienti.data[PAZIENTI.idCL].trattamenti[pDef].gallery = JSON.stringify(PAZIENTI.galleryProvvisoria);
 			localPouchDB.setItem(MD5("DB"+LOGIN._frv()+".pazienti"), IMPORTER.COMPR(DB.pazienti)).then(function(){ // salvo il DB
-				PAZIENTI.caricaTrattamenti(pDef);
+				if(!smartMenu)PAZIENTI.caricaTrattamenti(pDef);
+				else SCHEDA.scaricaScheda(true);
 			});
-		}else PAZIENTI.caricaTrattamenti(pDef);
+		}else{
+			if(!smartMenu)PAZIENTI.caricaTrattamenti(pDef);
+			SCHEDA.scaricaScheda(true);
+		}
 	},
 	el_trattamento: function( Q_idTratt ){ // elimina il trattamento
 		var TXT_EL_AL=TXT_ChiediEliminaTrattamento;

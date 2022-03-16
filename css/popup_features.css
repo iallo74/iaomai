@@ -72,6 +72,12 @@
 	padding-bottom:10px;
 	border-top:1px solid rgba(0,0,0,0.1);
 }
+.smart.android #contFeatures > div,
+.smart.android #contFeatures > div *,
+.smart.android #contFeatures > p,
+.smart.android #contFeatures > p *{
+	font-size: 16px !important;
+}
 #contFeatures > div > div{
 	display:inline-block;
 	vertical-align:top;
