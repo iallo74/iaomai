@@ -41,7 +41,7 @@ var PAZIENTI_SALDI = {
 			}
 			var RIS=DaSaldare-Saldato;
 	
-			if(vuoto)HTML += '<p class="noResults">'+Lingua(TXT_NoResSaldi)+'...</div>';
+			if(vuoto)HTML += '<p class="noResults lista listaSaldi">'+Lingua(TXT_NoResSaldi)+'...</div>';
 			else{
 				var HTML_provv = '';
 				if(RIS>0){
@@ -240,6 +240,8 @@ var PAZIENTI_SALDI = {
 	mod_saldo: function(){
 		// salva il saldo
 		if(PAZIENTI.idCL>-1){
+			stopAnimate(true);
+			visLoader(Lingua(TXT_SalvataggioInCorso),'loadingLight');
 			var PZ = DB.pazienti.data[PAZIENTI.idCL];
 			if(!ControllaNumero(document.formMod.ValoreSaldo,stripslashes(Lingua(TXT_ValoreSaldo))))return;
 			var DataModifica = DB.pazienti.lastSync+1;
@@ -273,15 +275,17 @@ var PAZIENTI_SALDI = {
 			}
 			endChangeDetection();
 			SCHEDA.formModificato = false;
-			applicaLoading(document.querySelector(".listaSaldi"));
-			applicaLoading(document.getElementById("scheda_testo"));
+			/*applicaLoading(document.getElementById("elenchi_lista"));
+			applicaLoading(document.getElementById("scheda_testo"));*/
 			localPouchDB.setItem(MD5("DB"+LOGIN._frv()+".pazienti"), IMPORTER.COMPR(DB.pazienti)).then(function(){ // salvo il DB
-				LOGIN.sincronizza( 	'rimuoviLoading(document.querySelector(".listaSaldi"));'+
-									'rimuoviLoading(document.getElementById("scheda_testo"));'+
+				LOGIN.sincronizza( 	/*'rimuoviLoading(document.getElementById("elenchi_lista"));'+
+									'rimuoviLoading(document.getElementById("scheda_testo"));'+*/
 									'PAZIENTI.car_saldo('+pDef+',document.getElementById("btn_saldo_'+pDef+'"),true);' +
 									/*'SCHEDA.scaricaScheda(true);'/* CHIUSURA DOPO SALVATAGGIO da PC*/
-									'if(smartMenu)SCHEDA.scaricaScheda(true);'/* CHIUSURA DOPO SALVATAGGIO da SMART*//* +
-									'PAZIENTI.caricaSaldi('+pDef+')'*/ );
+									'if(smartMenu)SCHEDA.scaricaScheda(true);' +/* CHIUSURA DOPO SALVATAGGIO da SMART*//* +*/
+									'PAZIENTI.caricaSaldi('+pDef+');' +
+									'startAnimate();' +
+									'nasLoader();' );
 			});
 		}
 		return false;
@@ -293,6 +297,9 @@ var PAZIENTI_SALDI = {
 						arguments ).then(function(pass){if(pass){
 						var v = getParamNames(CONFIRM.args.callee.toString());
 						for(i in v)eval(getArguments(v,i));
+						
+			stopAnimate(true);
+			visLoader(Lingua(TXT_SalvataggioInCorso),'loadingLight');
 			
 			var PZ = DB.pazienti.data[PAZIENTI.idCL];
 			var DataModifica = DB.pazienti.lastSync+1;
@@ -301,10 +308,15 @@ var PAZIENTI_SALDI = {
 			PZ.saldi[Q_idSaldo].Cancellato=1;
 			endChangeDetection();
 			SCHEDA.formModificato = false;
-			applicaLoading(document.querySelector(".listaSaldi"));
-			applicaLoading(document.getElementById("scheda_testo"));
+			/*applicaLoading(document.getElementById("elenchi_lista"));
+			applicaLoading(document.getElementById("scheda_testo"));*/
 			localPouchDB.setItem(MD5("DB"+LOGIN._frv()+".pazienti"), IMPORTER.COMPR(DB.pazienti)).then(function(){ // salvo il DB
-				LOGIN.sincronizza( 'PAZIENTI.caricaSaldi();SCHEDA.scaricaScheda();' );
+				LOGIN.sincronizza( 	'PAZIENTI.caricaSaldi();' +
+									'SCHEDA.scaricaScheda();' +
+									/*'rimuoviLoading(document.getElementById("scheda_testo"));' +
+									'rimuoviLoading(document.getElementById("elenchi_lista"));' +*/
+									'nasLoader();' +
+									'startAnimate();' );
 			});
 		}});
 	},

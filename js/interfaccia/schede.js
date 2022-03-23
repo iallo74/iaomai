@@ -249,7 +249,7 @@ var SCHEDA = {
 		if(!document.getElementById('msgScheda'))el.appendChild(msg);
 		msg.innerHTML = Lingua(TXT_SchedaSalvata);
 		document.getElementById('msgScheda').addEventListener( "mouseup", function(){
-			el.removeChild(this);
+			try{el.removeChild(this);}catch(err){};
 		}, false, el);
 		setTimeout(function(){ msg.className = 'visMsg'; }, 200);
 		setTimeout(function(){ msg.className = ''; }, 4000);

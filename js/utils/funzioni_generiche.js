@@ -52,8 +52,11 @@ function nasToolTip(){
 	document.getElementById("tooltip").style.top='-500px';
 }
 
-function visLoader(txt){
+function visLoader( txt, cls ){
+	if(typeof(cls)=='undefined')var cls = '';
 	document.getElementById("loader").classList.remove("noLoader");
+	if(cls)document.getElementById("loader").classList.add(cls);
+	document.getElementById("loader").dataset.cls = cls;
 	document.getElementById("loader").getElementsByTagName("div")[0].innerHTML=txt;
 }
 
@@ -61,6 +64,10 @@ function nasLoader(){
 	document.getElementById("fotoBig").classList.add("noLoader");
 	document.getElementById("fotoBig").style.backgroundImage = '';
 	document.getElementById("loader").classList.add("noLoader");
+	if(document.getElementById("loader").dataset.cls){
+		document.getElementById("loader").classList.remove(document.getElementById("loader").dataset.cls);
+		document.getElementById("loader").dataset.cls = '';
+	}
 	document.getElementById("loader").getElementsByTagName("div")[0].innerHTML='';
 }
 function applicaLoading( el, style ){

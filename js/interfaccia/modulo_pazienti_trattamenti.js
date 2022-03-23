@@ -243,7 +243,7 @@ var PAZIENTI_TRATTAMENTI = {
 							'</div></div>';
 				}
 			}
-			if(vuoto)HTML += '<p class="noResults">'+Lingua(TXT_NoResTrattamento)+'...</div>';
+			if(vuoto)HTML += '<p class="noResults lista listaTrattamenti">'+Lingua(TXT_NoResTrattamento)+'...</div>';
 			HTML += '</div>';
 
 			document.getElementById("lista_pazienti").innerHTML = HTML;
@@ -820,6 +820,7 @@ var PAZIENTI_TRATTAMENTI = {
 		
 		// PUNTI
 		var HTML = '';
+		var html_caricaMeridiani = '<div class="labelModificaCon">'+htmlEntities(Lingua(TXT_ModificaCon))+'<br><span onClick="caricaSet(\'meridiani_cinesi\',this);"><img src="sets/meridiani_cinesi/img/logoNero.png" width="25" height="25"> TsuboMap</span> o <span onClick="caricaSet(\'meridiani_shiatsu\',this);"><img src="sets/meridiani_shiatsu/img/logoNero.png" width="25" height="25"> ShiatsuMap</span></div>';
 		if( globals.set.cartella == 'meridiani_cinesi' ||
 			globals.set.cartella == 'meridiani_shiatsu' ){
 			HTML+=
@@ -831,7 +832,7 @@ var PAZIENTI_TRATTAMENTI = {
 				'		</div>' +
 				'	</div>';
 		}else{
-			HTML += '<div class="labelModificaCon">'+htmlEntities(Lingua(TXT_ModificaCon))+'<br><span onClick="caricaSet(\'meridiani_cinesi\',this);"><img src="sets/meridiani_cinesi/img/logoNero.png" width="25" height="25"> TsuboMap</span> o <span onClick="caricaSet(\'meridiani_shiatsu\',this);"><img src="sets/meridiani_shiatsu/img/logoNero.png" width="25" height="25"> ShiatsuMap</span></div>';
+			HTML += html_caricaMeridiani;
 		}
 		document.getElementById("tratt_btns_punti").innerHTML = HTML;
 		PAZIENTI.caricaPuntiTrattamento();
@@ -849,7 +850,7 @@ var PAZIENTI_TRATTAMENTI = {
 				'		</div>' +
 				'	</div>';
 		}else{
-			HTML += '<div class="labelModificaCon">'+htmlEntities(Lingua(TXT_ModificaCon))+'<br><span onClick="caricaSet(\'meridiani_cinesi\',this);"><img src="sets/meridiani_cinesi/img/logoNero.png" width="25" height="25"> TsuboMap</span> o <span onClick="caricaSet(\'meridiani_cinesi\',this);"><img src="sets/meridiani_shiatsu/img/logoNero.png" width="25" height="25"> ShiatsuMap</span></div>';
+			HTML += html_caricaMeridiani;
 		}
 		document.getElementById("tratt_btns_meridiani").innerHTML = HTML;
 		PAZIENTI.caricaMeridianiTrattamento();
@@ -905,6 +906,8 @@ var PAZIENTI_TRATTAMENTI = {
 	},
 	mod_trattamento: function(){ // salva il tratamento
 		if(PAZIENTI.idCL>-1){
+			stopAnimate(true);
+			visLoader(Lingua(TXT_SalvataggioInCorso),'loadingLight');
 			if(!ControllaNumero(document.formMod.CostoTrattamento,stripslashes(Lingua(TXT_Costo))))return;
 			if(agenda.oraFine>-1)agenda.conferma();
 			LabelCiclo=document.formMod.LabelCiclo.value;
@@ -1036,11 +1039,13 @@ var PAZIENTI_TRATTAMENTI = {
 				}
 				endChangeDetection();
 				SCHEDA.formModificato = false;
-				applicaLoading(document.querySelector(".listaTrattamenti"));
-				applicaLoading(document.getElementById("scheda_testo"));
+				/*applicaLoading(document.getElementById("elenchi_lista"));
+				applicaLoading(document.getElementById("scheda_testo"));*/
 				localPouchDB.setItem(MD5("DB"+LOGIN._frv()+".pazienti"), IMPORTER.COMPR(DB.pazienti)).then(function(){ // salvo il DB
-					LOGIN.sincronizza(	'rimuoviLoading(document.querySelector(".listaTrattamenti"));'+
-										'rimuoviLoading(document.getElementById("scheda_testo"));'+
+					LOGIN.sincronizza(	/*'rimuoviLoading(document.getElementById("elenchi_lista"));'+
+										'rimuoviLoading(document.getElementById("scheda_testo"));'+*/
+										'startAnimate();' +
+										'nasLoader();' +
 										/*"PAZIENTI.car_trattamento("+pDef+", document.getElementById('btn_trattamento_"+pDef+"'), '"+addslashes(LabelCiclo)+"', '"+((TipoTrattamento=='A')?'true':'false')+"');" +*/
 										'PAZIENTI.pulisciGallery('+pDef+');' );
 					//SCHEDA.scaricaScheda();
@@ -1066,8 +1071,10 @@ var PAZIENTI_TRATTAMENTI = {
 			if(!smartMenu)PAZIENTI.caricaTrattamenti(pDef);
 			SCHEDA.scaricaScheda(true);
 		}
+		PAZIENTI.saving = false;
 	},
-	el_trattamento: function( Q_idTratt ){ // elimina il trattamento
+	el_trattamento: function( Q_idTratt ){
+		// elimina il trattamento
 		var TXT_EL_AL=TXT_ChiediEliminaTrattamento;
 		if(DB.pazienti.data[PAZIENTI.idCL].trattamenti[Q_idTratt].TipoTrattamento=='A'){
 			TXT_EL_AL=TXT_ChiediEliminaCiclo;
@@ -1077,7 +1084,9 @@ var PAZIENTI_TRATTAMENTI = {
 						arguments ).then(function(pass){if(pass){
 						var v = getParamNames(CONFIRM.args.callee.toString());
 						for(i in v)eval(getArguments(v,i));
-			
+
+			stopAnimate(true);
+			visLoader(Lingua(TXT_SalvataggioInCorso),'loadingLight');
 			var DataModifica = DB.pazienti.lastSync+1;
 			DB.pazienti.data[PAZIENTI.idCL].trattamenti[Q_idTratt].Cancellato=1;
 			DB.pazienti.data[PAZIENTI.idCL].trattamenti[Q_idTratt].md5='';
@@ -1097,10 +1106,14 @@ var PAZIENTI_TRATTAMENTI = {
 		
 			endChangeDetection();
 			SCHEDA.formModificato = false;
-			applicaLoading(document.querySelector(".listaTrattamenti"));
-			applicaLoading(document.getElementById("scheda_testo"));
+			/*applicaLoading(document.querySelector(".listaTrattamenti"));
+			applicaLoading(document.getElementById("scheda_testo"));*/
 			localPouchDB.setItem(MD5("DB"+LOGIN._frv()+".pazienti"), IMPORTER.COMPR(DB.pazienti)).then(function(){ // salvo il DB
-				LOGIN.sincronizza(	"PAZIENTI.caricaTrattamenti();SCHEDA.scaricaScheda();" );
+				LOGIN.sincronizza(	'PAZIENTI.caricaTrattamenti();' + 
+									/*'rimuoviLoading(document.querySelector(".listaTrattamenti"));' +
+									'rimuoviLoading(document.getElementById("scheda_testo"));' +*/
+									'nasLoader();' +
+									'SCHEDA.scaricaScheda();' );
 			});
 		}});
 	},
@@ -1446,12 +1459,13 @@ var PAZIENTI_TRATTAMENTI = {
 					var n = pP[p].split(".")[0]*1;
 					var siglaMeridiano = pP[p].split(".")[1];
 					var siglaTsubo = __(DB.set.meridiani[siglaMeridiano].tsubo[n-1].siglaTsubo, pP[p]);
+					var descrTsubo = __(DB.set.meridiani[siglaMeridiano].tsubo[n-1].ChiaviTsubo, '');
 					PAZIENTI.puntiProvvisori.push({
 						n: n,
 						m: siglaMeridiano,
 						e: '',
 						z: '',
-						t: '',
+						t: descrTsubo,
 						s: siglaTsubo
 					});
 					totAggiunti++;

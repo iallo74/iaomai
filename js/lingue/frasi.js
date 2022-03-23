@@ -104,6 +104,11 @@ var TXT_UscireSenzaSalvare={
 	eng: "Do you really want to exit without saving?",
 	esp: "" };
 	
+	var TXT_SalvataggioInCorso={
+		ita: "Salvataggio in corso...",
+		eng: "Saving...",
+		esp: "" };
+	
 var TXT_OK={
 	ita: "OK",
 	eng: "OK",
@@ -1398,8 +1403,8 @@ var TXT_NoResTrattamento={
 	esp: "" };
 
 var TXT_TrattamentiSingoli={
-	ita: "Trattamenti singoli",
-	eng: "Single treatments",
+	ita: "Sessioni singole",
+	eng: "Single sessions",
 	esp: "" };
 
 // scheda
@@ -2107,6 +2112,11 @@ var TXT_TornaAiClienti={
 	var TXT_GenericoAppSpiegazione={
 		ita: "Inserisci un testo qui ...",
 		eng: "Enter here some text ...",
+		esp: "" };
+	
+	var TXT_GenericoAppLabel={
+		ita: "Inserisci un'etichetta per il trattamento ...",
+		eng: "Enter here a label for the treatmen...",
 		esp: "" };
 	
 	var TXT_ClientiAppSpiegazione={

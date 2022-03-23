@@ -365,8 +365,6 @@ var H = {
 	
 	creaCombo: function( el, lista){
 		if(typeof(lista) == 'undefined')var lista = [];
-		console.log(lista)
-		console.log(lista.length)
 		if(lista.length){
 			
 			if(H.elCombo)H.rimuoviCombo();
@@ -383,7 +381,9 @@ var H = {
 			}
 			if(!HTML)return;
 			document.getElementById("combo").innerHTML = HTML;
-			sch.addEventListener("scroll", H.rimuoviCombo, false);
+			if(!touchable)sch.addEventListener("scroll", H.rimuoviCombo, false);
+			else sch.addEventListener("touchmove", H.rimuoviCombo, false);
+			
 			/*window.addEventListener("wheel", function(){
 				H.comboOver=false;
 				H.rimuoviCombo();
@@ -399,9 +399,11 @@ var H = {
 		}
 	},
 	rimuoviCombo: function(){
-		if(!H.comboOver){
+		if(!H.comboOver || touchable){
 			H.nasCombo();
-			document.getElementById("scheda_testo").removeEventListener("scroll", H.rimuoviCombo);
+			var sch = document.getElementById("scheda_testo");
+			if(!touchable)sch.removeEventListener("scroll", H.rimuoviCombo);
+			else sch.removeEventListener("touchmove", H.rimuoviCombo);
 			window.removeEventListener("wheel", H.rimuoviCombo);
 			window.removeEventListener("mouseup", H.rimuoviCombo);
 			H.elCombo.removeEventListener("mouseup", H.filtraCombo);

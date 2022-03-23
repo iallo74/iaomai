@@ -2,7 +2,7 @@
 var MODULO_MERIDIANI = { // extend SET
 	MERIDIANI_free: [ "LR" ],
 	caricaMeridiani: function(){
-		// meridiani
+		// carica i meridiani nell'elenco del menu
 		var contElencoMeridiani = contSmart = '';
 		var n = 0;
 		for(m in DB.set.meridiani){
@@ -54,13 +54,14 @@ var MODULO_MERIDIANI = { // extend SET
 		document.getElementById("lista_meridiani").innerHTML = '<div class="lista listaMeridiani">'+contElencoMeridiani+'</div>';
 		document.getElementById("meridianiSmart_cont").innerHTML = contSmart;
 	},
-	eviMeridiano: function(m,b){
+	eviMeridiano: function( m, b ){
 		if(!MERIDIANI[m].meridianoAcceso){
 			if(b)SET.coloraMeridiano(m,'Over','Over');
 			else SET.coloraMeridiano(m,'','Base');
 		}
 	},
-	swMeridianiSmart: function(){ // visualizza/nasconde il menu rapido dei meridiani (in alto a SX)
+	swMeridianiSmart: function(){
+		// visualizza/nasconde il menu rapido dei meridiani (in alto a SX)
 		document.getElementById("meridianiSmart_cont").classList.toggle("visSch");
 	},
 	swElencoPt: function( el, m ){

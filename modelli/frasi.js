@@ -195,6 +195,10 @@
 		ita: "CERVELLO",
 		eng: "BRAIN",
 		esp: "" };
+	TXT_Organo_MIDOLLO = {
+		ita: "MIDOLLO SPINALE",
+		eng: "SPINAL CORD",
+		esp: "" };
 
 
 // OSSA

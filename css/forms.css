@@ -96,12 +96,19 @@ body:not(.smart) #scheda.schForm .annullaBtn{
 	background: linear-gradient(to bottom, #999 0%,#b0b0b0 100%);
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#999', endColorstr='#b0b0b0',GradientType=0 );
 }
-body:not(.smart) #scheda.schForm .annullaBtn{
+body.bodyStyled2:not(.smart) #scheda.schForm .annullaBtn{
 	color:#FFF !important;
 	background:rgba(255,255,255,0.1);
 }
-body:not(.smart) #scheda.schForm .annullaBtn:hover{
+body:not(.bodyStyled2):not(.smart) #scheda.schForm .annullaBtn{
+	color:#000 !important;
+	background:rgba(0,0,0,0.1);
+}
+body.bodyStyled2:not(.smart) #scheda.schForm .annullaBtn:hover{
 	background:rgba(255,255,255,0.2) !important;
+}
+body:not(.bodyStyled2):not(.smart) #scheda.schForm .annullaBtn:hover{
+	background:rgba(0,0,0,0.2) !important;
 }
 .smart #scheda.schForm .submitBtn{
 	position: fixed;
@@ -124,7 +131,7 @@ body:not(.smart) #scheda.schForm .annullaBtn:hover{
 .smart #scheda.schForm .p_paz_el*/{
 	display:none;
 }
-#scheda.schForm .p_paz_el_menu{
+/*#scheda.schForm */.p_paz_el_menu{
     padding: 0px;
     cursor: pointer;
     padding-left: 37px;
@@ -1533,7 +1540,7 @@ body:not(.touch) #puntiTsuboMap .dettPunto:hover{
     border: 1px solid rgba(0,0,0,0.3);
     background: rgba(255,255,255,0.5) url(../img/inpbg4.png) no-repeat right bottom;
     padding-top: 0px;
- 	padding-left: 7px;
+ 	padding-left: 8px;
     padding-right: 13px;
     background-size: 15px;
 }
@@ -1541,7 +1548,7 @@ body:not(.touch) #puntiTsuboMap .dettPunto:hover{
 #dataTxt{
 	/*font-weight:bold;*/
 	line-height:30px;/* !important;*/
-	height:30px;
+	height:32px;
 }
 .smart.android #formMod select:not(.p_proc_gruppo):not(.p_paz_gruppo):not(.p_paz_meridiani):not(.p_proc_meridiani),
 .smart.android #dataTxt{
@@ -1574,7 +1581,8 @@ body:not(.touch) #puntiTsuboMap .dettPunto:hover{
 	color:#666 !important;
 	cursor:pointer;
 	border:none !important;
-	background:url(../img/ico_lingua.png) no-repeat left center, right center !important;
+ 	padding-left: 21px !important;
+	background:url(../img/ico_lingua.png) no-repeat 10px center, right center !important;
 }
 #divLinguaModProc{ /* procedura */
 	text-align:right;

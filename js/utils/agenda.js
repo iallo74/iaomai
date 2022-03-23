@@ -279,12 +279,14 @@ var agenda = {
 				}
 			}
 			document.getElementById("app_cliente").classList.remove( 'clienteScelto');
+			document.getElementById("TestoAppuntamento").placeholder = stripslashes(Lingua(TXT_GenericoAppSpiegazione));
 		}else{
 			HTML += '<div class="torna"' +
 					'	  onClick="agenda.popolaScelta();">' +
 						htmlEntities(DB.pazienti.data[Q_id].Nome+" "+DB.pazienti.data[Q_id].Cognome) +
 					'</div>';
 			document.getElementById("app_cliente").classList.add( 'clienteScelto');
+			document.getElementById("TestoAppuntamento").placeholder = stripslashes(Lingua(TXT_GenericoAppLabel));
 		}
 		document.getElementById("app_elenco").innerHTML = HTML;
 		document.getElementById("app_elenco").scrollTo(0,0);
@@ -352,7 +354,8 @@ var agenda = {
 		}
 	},
 	scegli: function(){
-		if(!document.getElementById("TestoAppuntamento").value.trim()){
+		if(	!document.getElementById("TestoAppuntamento").value.trim() && 
+			document.getElementById("idCli").value=='-1'){
 			ALERT(stripslashes(Lingua(TXT_ErroreTestoApp)));
 			return;
 		}
@@ -396,7 +399,6 @@ var agenda = {
 			// nuovo appuntamento
 			DB.appuntamenti.data.push(JSNPUSH);
 		}
-		
 		var postAction = 'MENU.visAgenda('+(agenda.DataPartenza*1)+',true);';
 		agenda.chiudiScelta();
 		applicaLoading(document.getElementById("scheda_testo"));
@@ -673,7 +675,7 @@ var agenda = {
 		agenda.chiudiCalendario();
 		if(valScroll)document.getElementById("agOr0").scrollTo(0,valScroll * 40 - 30);
 	},
-	annulla:function(mod){
+	annulla:function( mod ){
 		var dvs=document.getElementById("day_"+agenda.giornoInizio).getElementsByTagName("div");
 		for(k=agenda.oraInizio;k<=agenda.oraFine;k+=0.5){
 			if(dvs[(k-agenda.oraMin)*2+2].className.indexOf('timeFull')==-1){

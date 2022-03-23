@@ -94,6 +94,12 @@
 	color:#000;
 }
 
+html/*, body */{
+	overflow: hidden !important;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+}
 body{
 	color: #FFF;
 	/*font-family:Monospace;*/
@@ -275,6 +281,9 @@ body:not(.bodyModello) #logoSovra{
 }
 .noLoader{
 	display:none !important;
+}
+.loadingLight{
+	opacity:0.4 !important;
 }
 .loading{
    /* background: url(../img/loadingBlack.gif) no-repeat center 30px #000 !important;*/
@@ -464,4 +473,8 @@ body:not(.bodyModello) #logoSovra{
 }
 .smart .demoContinue{
 	opacity:0.8;
+}
+
+.hiddenElement{
+	display:none;
 }

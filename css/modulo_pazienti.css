@@ -504,7 +504,7 @@ body:not(.smart) #pazienti_head{
     padding-top: 13px;
 }
 .cartellaSingoli .trattTools{
-    height: 29px !important;
+    height: 34px !important;
 }
 .smart.android .trattTools{
 	height: 44px !important;
@@ -673,12 +673,11 @@ body:not(.smart) #add_saldo .elMenu{
     width: 32px;
     height: 32px;
 	background-color:#2669bc;
-    background-image: url(../img/add.png);
+    background-image: url(../img/add2.png);
     background-size: 57%;
     background-repeat: no-repeat;
     background-position: center center;
-    margin: 4px;
-    margin-top: 12px;
+    margin: 4px 3px 3px 3px;
     opacity: 1 !important;
     box-shadow: 0px 0px 5px rgb(0 0 0 / 30%);
     position: absolute;
@@ -696,7 +695,14 @@ body:not(.smart) #add_saldo .elMenu{
     background-color: #7c65d8;
 }
 body:not(.smart) .addTrattBtn{
-    margin-top: 0px !important;
+	width: 28px !important;
+    height: 28px !important;
+}
+body:not(.smart) .cartella:not(.cartellaSingoli) .addTrattBtn{
+   	margin: -1px 5px 0px 0px !important;
+}
+body:not(.smart) .cartellaSingoli .addTrattBtn{
+   	margin: 4px 5px 0px 0px !important;
 }
 
 body:not(.smart) #addPaziente:hover,
@@ -709,7 +715,7 @@ body:not(.smart) #addProcedura:hover{
     background-color: #eba029 !important;
 }
 body:not(.smart) #add_saldo .elMenu:hover{
-    background-color: #604ea7 !important;
+    background-color: #8d77e6 !important;
 }ì
 .cartella:not(.cartellaSingoli) .trattElenco .noResults{
 	margin-top:32px;
@@ -1370,6 +1376,7 @@ body:not(.smart) #rgApplicaFiltri{
 }
 #paz_ricerca{
 	width: calc(var(--menu-width) - 121px);
+	margin-right:-3px;
 }
 .smart #paz_ricerca{
 	width: calc(var(--menu-width) - 94px);

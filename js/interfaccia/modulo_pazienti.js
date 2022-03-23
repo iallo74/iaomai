@@ -1139,18 +1139,27 @@ var PAZIENTI = {
 						'<div class="l"></div>';
 			}
 					
+			var azElimina = PAZIENTI.idCL>-1 ? "PAZIENTI.el_paziente("+PAZIENTI.idCL+");":"";
+			var btnAdd = '';
+			if(azElimina){
+				btnAdd = '<div class="p_paz_el_menu" onClick="'+azElimina+'">'+Lingua(TXT_EliminaScheda)+'</div>';
+			}
 			SCHEDA.caricaScheda(	stripslashes(Lingua(TXT_Anagrafica)),
 									HTML,
 									'PAZIENTI.chiudiPaziente('+idPaziente+');',
 									'scheda_paziente',
 									false,
-									true );
+									true,
+									'',
+									btnAdd );
 			
 			if(salvato)SCHEDA.msgSalvataggio();
 		}});
 	},
 	mod_paziente: function(){ //salva l'anagrafica paziente
 		if(!verifica_form(document.getElementById("formMod")))return;
+		stopAnimate(true);
+		visLoader(Lingua(TXT_SalvataggioInCorso),'loadingLight');
 		if(document.formMod.Cellulare.value && !document.formMod.paeseCellulare.value){
 			ALERT(stripslashes(Lingua(TXT_ErrorePrefisso)));
 			return;
@@ -1234,12 +1243,14 @@ var PAZIENTI = {
 		
 		endChangeDetection();
 		SCHEDA.formModificato = false;
-		applicaLoading(document.getElementById("scheda_testo"));
-		applicaLoading(document.getElementById("elenchi_lista"));
+		/*applicaLoading(document.getElementById("scheda_testo"));
+		applicaLoading(document.getElementById("elenchi_lista"));*/
 		localPouchDB.setItem(MD5("DB"+LOGIN._frv()+".pazienti"), IMPORTER.COMPR(DB.pazienti)).then(function(){ // salvo il DB
-			LOGIN.sincronizza(	'rimuoviLoading(document.getElementById("scheda_testo"));' +
-								'rimuoviLoading(document.getElementById("elenchi_lista"));' +
+			LOGIN.sincronizza(	/*'rimuoviLoading(document.getElementById("scheda_testo"));' +
+								'rimuoviLoading(document.getElementById("elenchi_lista"));' +*/
 								'PAZIENTI.vis_paziente(true);' +
+								'startAnimate();' +
+								'nasLoader();' +
 								postAction );
 		});
 		return false;
@@ -1250,7 +1261,9 @@ var PAZIENTI = {
 						arguments ).then(function(pass){if(pass){
 						var v = getParamNames(CONFIRM.args.callee.toString());
 						for(i in v)eval(getArguments(v,i));
-			
+						
+			stopAnimate(true);
+			visLoader(Lingua(TXT_SalvataggioInCorso),'loadingLight');
 			if(Q_idPaz>-1){
 				var DataModifica = DB.pazienti.lastSync+1;
 				DB.pazienti.data[Q_idPaz].DataModifica=parseInt(DataModifica);
@@ -1268,7 +1281,8 @@ var PAZIENTI = {
 			endChangeDetection();
 			SCHEDA.formModificato = false;
 			localPouchDB.setItem(MD5("DB"+LOGIN._frv()+".pazienti"), IMPORTER.COMPR(DB.pazienti)).then(function(){ // salvo il DB
-				LOGIN.sincronizza();
+				LOGIN.sincronizza( 	'startAnimate();' +
+									'nasLoader();' );
 				PAZIENTI.idCL = -1;
 				PAZIENTI.idPaziente = -1;
 				PAZIENTI.chiudiPaziente(idPaziente);

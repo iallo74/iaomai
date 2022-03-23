@@ -1178,13 +1178,7 @@ var PAZIENTI_FILTRI = {
 						name: "MessaggioMarketing",
 						label: "",
 						value: msg.Messaggio}) +
-		'				<div id="btnInvioEmail">';
-		if(msg.idMessaggio)HTML +=
-		'					<div class="p_paz_el"' +
-		'						 onClick="PAZIENTI.eliminaEmail('+msg.idMessaggio+');">' +
-								htmlEntities(Lingua(TXT_Elimina)) +
-		'					</div>';
-		HTML +=
+		'				<div id="btnInvioEmail">' +
 		'					<div class="submitBtn"' +
 		'						 onClick="PAZIENTI.anteprimaEmail();">' +
 								htmlEntities(Lingua(TXT_AnteprimaEmail)) +
@@ -1201,12 +1195,18 @@ var PAZIENTI_FILTRI = {
 		'		</form>' +	
 		'	</div>' +	
 		'</div>';
+		
 		SCHEDA.caricaScheda(	titolo,
 								HTML,
 								'',
 								'scheda_marketing',
 								false,
-								true );
+								true,
+								'',
+								((msg.idMessaggio) ? '<div class="p_paz_el_menu"' +
+															'onClick="PAZIENTI.eliminaEmail('+msg.idMessaggio+');">' +
+																htmlEntities(Lingua(TXT_Elimina)) +
+															'</div>' : '' ));
 		initChangeDetection( "formMod" );
 		if(mouseDetect)document.formMod.OggettoMarketing.focus();
 	},
@@ -1409,17 +1409,21 @@ var PAZIENTI_FILTRI = {
 				ALERT(Lingua(TXT_MsgComponiEmail));
 				return;
 			}
+			stopAnimate(true);
+			visLoader(Lingua(TXT_SalvataggioInCorso),'loadingLight');
 			var JSNPOST = {
 				idMessaggio: document.formMod.idMessaggio.value,
 				Oggetto: document.formMod.OggettoMarketing.value,
 				Messaggio: document.formMod.MessaggioMarketing.value
 			}
 			
-			applicaLoading(document.getElementById("scheda_testo"))
+			//applicaLoading(document.getElementById("scheda_testo"))
 			CONN.caricaUrl(	"marketing_email_salva.php",
 							"b64=1&JSNPOST="+window.btoa(encodeURIComponent(JSON.stringify(JSNPOST))),
 							function(txt){
-								rimuoviLoading(document.getElementById("scheda_testo"));
+								startAnimate();
+								nasLoader();
+								//rimuoviLoading(document.getElementById("scheda_testo"));
 								SCHEDA.formModificato = false;
 								endChangeDetection();
 								if(txt.substr(0,3)!='404')PAZIENTI.dwnl_emails();
@@ -1431,6 +1435,8 @@ var PAZIENTI_FILTRI = {
 		if(document.getElementById("anteprimaInvia").classList.contains('btn_dis'))return;
 		if(CONN.retNoConn()){
 			CONFIRM.vis( Lingua(TXT_ChiediInvioEmail) ).then(function(pass){if(pass){
+				stopAnimate(true);
+				visLoader(Lingua(TXT_SalvataggioInCorso),'loadingLight');
 				var lista = [];
 				if(document.getElementById("tipoLista").value=='filtrati'){
 					for(e in PAZIENTI.pazientiFiltrati){
@@ -1460,11 +1466,13 @@ var PAZIENTI_FILTRI = {
 						Messaggio: document.formMod.MessaggioMarketing.value
 					}
 					
-				applicaLoading(document.getElementById("scheda_testo"))
+				//applicaLoading(document.getElementById("scheda_testo"))
 				CONN.caricaUrl(	"marketing_email_invia.php",
 								"b64=1&JSNPOST="+window.btoa(encodeURIComponent(JSON.stringify(JSNPOST))),
 								function(txt){
-									rimuoviLoading(document.getElementById("scheda_testo"))
+									startAnimate();
+									nasLoader();
+									//rimuoviLoading(document.getElementById("scheda_testo"))
 									SCHEDA.formModificato = false;
 									endChangeDetection();
 									if(txt.substr(0,3)!='404'){
@@ -1478,11 +1486,15 @@ var PAZIENTI_FILTRI = {
 	eliminaEmail: function( idMessaggio ){ // invia la mail
 		if(CONN.retNoConn()){
 			CONFIRM.vis( Lingua(TXT_ChiediEliminaEmail) ).then(function(pass){if(pass){
-				applicaLoading(document.getElementById("scheda_testo"))
+				stopAnimate(true);
+				visLoader(Lingua(TXT_SalvataggioInCorso),'loadingLight');
+				//applicaLoading(document.getElementById("scheda_testo"))
 				CONN.caricaUrl(	"marketing_email_elimina.php",
 								"b64=1&idMessaggio="+idMessaggio,
 								function(txt){
-									rimuoviLoading(document.getElementById("scheda_testo"))
+									startAnimate();
+									nasLoader();
+									//rimuoviLoading(document.getElementById("scheda_testo"))
 									SCHEDA.formModificato = false;
 									endChangeDetection();
 									if(txt.substr(0,3)!='404'){

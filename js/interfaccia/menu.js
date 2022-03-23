@@ -485,7 +485,7 @@ var MENU = {
 				MENU.chiudiMenu("ag");
 				endChangeDetection();
 				SCHEDA.scaricaScheda();	
-				setTimeout( function(){
+				setTimeout( function(data){
 					document.getElementById("ag").classList.add("visSch");
 					MENU.icoSelected = document.getElementById("p_agenda");
 					MENU.icoSelected.classList.add("p_sel");
@@ -503,7 +503,7 @@ var MENU = {
 					agenda.apri(data,document.getElementById("agendaPlaceHolder"),null,document.getElementById("agendaPlaceHolder"));
 					MENU.comprimiIcone(true);
 					rimuoviLoading(document.getElementById("ag"));
-				}, 10 );
+				}, 10, data );
 			}});
 		}else{
 			SWIPE.dismis();

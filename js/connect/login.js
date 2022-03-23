@@ -212,8 +212,10 @@ var LOGIN = {
 		return JSON.stringify(device);
 	},
 	getLogin: function(){
+		// avviato quando si preme il pulsante Accedi nel popup LOGIN
 		if(CONN.retNoConn() && document.getElementById("USR").value.trim()!='' && document.getElementById("PWD").value.trim()!=''){
 			document.getElementById("login").classList.add("popup_back");
+			document.loginFrom.PWD.blur();
 			CONN.caricaUrl(	"login.php",
 							"USR="+encodeURIComponent(document.loginFrom.USR.value)+
 							"&PWD="+encodeURIComponent(document.loginFrom.PWD.value)+
@@ -223,6 +225,7 @@ var LOGIN = {
 		return false;
 	},
 	setLogin: function(txt){
+		// la risposta di getLogin()
 		if(!txt || txt.substr(0,3)=='404'){
 			if(!LOGIN.logedout){
 				ALERT(Lingua(TXT_ErroreLogin));
@@ -450,7 +453,6 @@ var LOGIN = {
 	},
 	resToken: function(txt){
 		// Risposta dalla verifica del TOKEN
-		console.log(txt)
 		if(typeof(txt) != 'undefined'){;
 			if(txt.substr(0,3)=='404'){
 				SCHEDA.scaricaScheda();
@@ -510,7 +512,8 @@ var LOGIN = {
 		PAZIENTI.cancellaFiltri(true);
 		SCHEDA.scaricaScheda();
 	},
-	annullaUtente: function(){ // cancella tutti i dati utente in locale
+	annullaUtente: function(){
+		// cancella tutti i dati utente in locale
 		CONFIRM.vis(	Lingua(TXT_ChiediAnnullaUtente)+'<br>'+
 						Lingua(TXT_AttenzioneAnnullaUtente) ).then(function(pass){if(pass){
 		
@@ -588,7 +591,8 @@ var LOGIN = {
 		return dbCARstr;	
 	},
 	
-	// gestione UTENTE
+	
+	// GESTIONE UTENTE
 	registrazione: function(){
 		// registra l'utente su server
 		if(CONN.retNoConn()){
@@ -847,6 +851,8 @@ var LOGIN = {
 	mod_utente: function(){
 		// salva i dati dell'utente e li carica sul server
 		if(!verifica_form(document.getElementById("formMod")))return;
+		stopAnimate(true);
+		visLoader(Lingua(TXT_SalvataggioInCorso),'loadingLight');
 		var postAction = '';
 		
 		var imgAvatar = document.getElementById("avatarUtente").getElementsByTagName("div")[0].style.backgroundImage;
@@ -902,7 +908,7 @@ var LOGIN = {
 
 		endChangeDetection();
 		SCHEDA.formModificato = false;
-		applicaLoading(document.getElementById("scheda_testo"));
+		//applicaLoading(document.getElementById("scheda_testo"));
 		CONN.caricaUrl(	"utente_dati_up.php",
 						"b64=1&JSNPOST="+window.btoa(encodeURIComponent(JSON.stringify(JSNPOST))),
 						'LOGIN.retModUtente;'  );
@@ -912,10 +918,14 @@ var LOGIN = {
 		// risposta dal caricamento dell'utente (mod_utente)
 		if(txt=='404'){
 			ALERT(Lingua(TXT_ErroreGenerico));
-			rimuoviLoading(document.getElementById("scheda_testo"));
+			//rimuoviLoading(document.getElementById("scheda_testo"));
+			startAnimate();
+			nasLoader();
 		}else if(txt=='404-1'){
 			ALERT(Lingua(TXT_ErroreEmailDuplicato));
-			rimuoviLoading(document.getElementById("scheda_testo"));
+			//rimuoviLoading(document.getElementById("scheda_testo"));
+			startAnimate();
+			nasLoader();
 		}else{
 			var UT = JSON.parse(txt);
 			DB.login.data.Nominativo=UT.Nominativo;
@@ -925,7 +935,9 @@ var LOGIN = {
 			DB.login.data.imgAvatar=UT.imgAvatar;
 			DB.login.data.logoAzienda=UT.logoAzienda;
 			localPouchDB.setItem(MD5("DB.login"), IMPORTER.COMPR(DB.login)).then(function(){ // salvo il DB
-				rimuoviLoading(document.getElementById("scheda_testo"));
+				//rimuoviLoading(document.getElementById("scheda_testo"));
+				startAnimate();
+				nasLoader();
 				SCHEDA.noChiudi = false;
 				SCHEDA.msgSalvataggio();
 			});
@@ -947,6 +959,7 @@ var LOGIN = {
 		document.getElementById(n).getElementsByTagName('div')[0].style.backgroundImage="";
 		SCHEDA.formModificato = true;
 	},
+		
 				
 	// SINCRONIZZAZIONE
 	sincronizza: function(funct, bkp){
@@ -954,12 +967,11 @@ var LOGIN = {
 		if(typeof(bkp)=='undefined')var bkp=false;
 		DB.verDbSize();
 		if(typeof(funct)!='undefined')LOGIN.afterFunct=funct;
-		else LOGIN.afterFunct=null;
+		else if(!LOGIN.afterFunct)LOGIN.afterFunct=null;
 		
 		if(CONN.getConn() && LOGIN.logedin()!=''){
 			LOGIN.globalSync( false, bkp );
 		}else if(LOGIN.afterFunct){
-			console.log(LOGIN.afterFunct)
 			eval(LOGIN.afterFunct);
 			LOGIN.afterFunct = null;
 		}
@@ -972,35 +984,35 @@ var LOGIN = {
 		// da controllare all'avvio dell'app e ogni volta che riprende la connessione
 		// invio i lastSync delle tabelle
 		if(CONN.getConn() || dwnl){
-			totSinc = 0;
+			LOGIN.totSinc = 0;
 			localPouchDB.getItem(MD5("DB"+LOGIN._frv()+".note")).then(function(dbCont){ // leggo il DB NOTE
 				DB.note=IMPORTER.DECOMPR(dbCont);
-				totSinc++;
+				LOGIN.totSinc++;
 				localPouchDB.getItem(MD5("DB"+LOGIN._frv()+".procedure")).then(function(dbCont){ // leggo il DB PROCEDURE
 					DB.procedure=IMPORTER.DECOMPR(dbCont);
-					totSinc++;
+					LOGIN.totSinc++;
 					localPouchDB.getItem(MD5("DB"+LOGIN._frv()+".pazienti")).then(function(dbCont){ // leggo il DB PAZIENTI
 						DB.pazienti=IMPORTER.DECOMPR(dbCont);
-						totSinc++;
+						LOGIN.totSinc++;
 						localPouchDB.getItem(MD5("DB"+LOGIN._frv()+".fornitori")).then(function(dbCont){ // leggo il DB FORNITORI
 							DB.fornitori=IMPORTER.DECOMPR(dbCont);
-							totSinc++;
+							LOGIN.totSinc++;
 							localPouchDB.getItem(MD5("DB"+LOGIN._frv()+".servizi")).then(function(dbCont){ // leggo il DB SERVIZI
 								DB.servizi=IMPORTER.DECOMPR(dbCont);
-								totSinc++;
+								LOGIN.totSinc++;
 								localPouchDB.getItem(MD5("DB"+LOGIN._frv()+".appuntamenti")).then(function(dbCont){ // leggo il DB SERVIZI
 									DB.appuntamenti=IMPORTER.DECOMPR(dbCont);
-									totSinc++;
+									LOGIN.totSinc++;
 									localPouchDB.getItem(MD5("DB"+LOGIN._frv()+".annotazioni")).then(function(dbCont){ // leggo il DB SERVIZI
 										DB.annotazioni=IMPORTER.DECOMPR(dbCont);
-										totSinc++;
+										LOGIN.totSinc++;
 										localPouchDB.getItem(MD5("DB"+LOGIN._frv()+".ricerche")).then(function(dbCont){ // leggo il DB RICERCHE
 											DB.ricerche=IMPORTER.DECOMPR(dbCont);
-											totSinc++;
+											LOGIN.totSinc++;
 											localPouchDB.getItem(MD5("DB"+LOGIN._frv()+".foto")).then(function(dbCont){ // leggo il DB FOTO
 											
 												DB.foto=IMPORTER.DECOMPR(dbCont);
-												//totSinc++; /* le foto non contano perché sono solo in upload */
+												//LOGIN.totSinc++; /* le foto non contano perché sono solo in upload */
 												var elenco='';
 												
 												if(Nuovo){ // se è un account nuovo popolo i DB con quelli DEMO
@@ -1333,7 +1345,6 @@ var LOGIN = {
 		DB.pazienti.lastSync=lastSync;
 		DB.appuntamenti.lastSync=lastSync;
 		DB.annotazioni.lastSync=lastSync;
-		
 		
 		// RICERCHE
 		if(elenco.ricerche){
@@ -2059,7 +2070,7 @@ var LOGIN = {
 					
 			}
 		}
-		if(nSinc == totSinc){ // pazienti | procedure | note | ricerche
+		if(nSinc == LOGIN.totSinc){ // pazienti | procedure | note | ricerche
 			LOGIN.pulisciTabelle();
 			DB.verDbSize();
 		}
@@ -2188,7 +2199,8 @@ var LOGIN = {
 		return s;
 	},
 	
-	// gestione aperture
+	
+	// GESTORE APERTURE
 	verifyLocked: function( tab, n ){
 		/*
 		- Verifica se l'elemento "n" della tabella "tab" è già stato aperto da un altro dispositivo

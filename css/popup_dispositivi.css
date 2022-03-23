@@ -37,6 +37,9 @@
     background-repeat: no-repeat;
     background-size: auto 34px, auto 70px;
 }
+.dispMobile{
+    background-position: 16px 26px, left center !important;
+}
 
 .elsDispositivi .btn_logout_mini{
 	display: inline-block;

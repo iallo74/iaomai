@@ -21,13 +21,21 @@ var SWIPE = {
 		}
 	},
 	start: function(event){
-		var area = parseInt(WF()/3);
-		SWIPE.xIni = event.touches[ 0 ].pageX;
-		if(SWIPE.xIni<area || SWIPE.xIni>WF()-area){
-			document.addEventListener("touchmove", SWIPE.move, false );
-			document.addEventListener("touchend", SWIPE.end, false );
-			if(SWIPE.xIni<area)SWIPE.verso = 'R';
-			else SWIPE.verso = 'L';
+		var x = event.touches[ 0 ].pageX;
+		var el = document.getElementById(SWIPE.box);
+		var limitLeft = tCoord(el);
+		var limitRight = tCoord(el)+el.scrollWidth;
+		if(x>=limitLeft && x<=limitRight){
+			SWIPE.xIni = x;
+			//var W = WF();
+			var W = limitRight - limitLeft;
+			var area = parseInt(W/3);
+			if(SWIPE.xIni<area+limitLeft || SWIPE.xIni>(W-area)+limitLeft){
+				document.addEventListener("touchmove", SWIPE.move, false );
+				document.addEventListener("touchend", SWIPE.end, false );
+				if(SWIPE.xIni<area)SWIPE.verso = 'R';
+				else SWIPE.verso = 'L';
+			}
 		}
 	},
 	move: function(event){

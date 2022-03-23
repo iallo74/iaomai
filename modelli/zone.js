@@ -1,14 +1,15 @@
 var zone_organi = {
 	TESTA: [
-		"OCCHI"
+		"LINGUA",
+		"OCCHI",
+		"CERVELLO",
+		"MIDOLLO"
 	],
 	COLLO: [
-		"LINGUA",
 		"TIROIDE",
 		"LARINGE",
 		"ESOFAGO",
-		"BRONCHI",
-		"CERVELLO"
+		"BRONCHI"
 	],
 	TORSO: [
 		"POLMONI",

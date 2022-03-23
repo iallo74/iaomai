@@ -561,6 +561,8 @@ var MODULO_PROCEDURE = { // extend SET
 	},
 	salvaProcedura: function(){
 		// salva una procedura
+		stopAnimate(true);
+		visLoader(Lingua(TXT_SalvataggioInCorso),'loadingLight');
 		SET.salvaDettagli();
 		var DataModifica = DB.procedure.lastSync+1;
 		if(!document.formMod.idProc.value*1>-1)DataCreazione=DataModifica;	
@@ -586,11 +588,13 @@ var MODULO_PROCEDURE = { // extend SET
 		}
 		endChangeDetection()
 		SCHEDA.formModificato = false;
-		applicaLoading(document.querySelector(".listaProcedure"));
-		applicaLoading(document.getElementById("scheda_testo"));
+		/*applicaLoading(document.querySelector(".listaProcedure"));
+		applicaLoading(document.getElementById("scheda_testo"));*/
 		localPouchDB.setItem(MD5("DB"+LOGIN._frv()+".procedure"), IMPORTER.COMPR(DB.procedure)).then(function(){
 			// salvo il DB
-			LOGIN.sincronizza(	'rimuoviLoading(document.querySelector(".listaProcedure"));' +
+			LOGIN.sincronizza(	/*'rimuoviLoading(document.querySelector(".listaProcedure"));' +*/
+								'startAnimate();' +
+								'nasLoader();' +
 								'SET.car_procedura('+Q_idProc+',1,0);' );
 			
 		});
@@ -604,16 +608,20 @@ var MODULO_PROCEDURE = { // extend SET
 						var v = getParamNames(CONFIRM.args.callee.toString());
 						for(i in v)eval(getArguments(v,i));
 			
+			stopAnimate(true);
+			visLoader(Lingua(TXT_SalvataggioInCorso),'loadingLight');
 			var DataModifica = DB.procedure.lastSync+1;
 			DB.procedure.data[Q_idProc].DataModifica=parseInt(DataModifica);
 			DB.procedure.data[Q_idProc].Cancellato=1;
 			if(SET.tipoProc=='Tue')addT=1;
 			else addT=0;
 			SET.tipoProc='';
-			applicaLoading(document.querySelector(".listaProcedure"));
-			applicaLoading(document.getElementById("scheda_testo"));
+			/*applicaLoading(document.querySelector(".listaProcedure"));
+			applicaLoading(document.getElementById("scheda_testo"));*/
 			localPouchDB.setItem(MD5("DB"+LOGIN._frv()+".procedure"), IMPORTER.COMPR(DB.procedure)).then(function(){ // salvo il DB
-				LOGIN.sincronizza('SET.car_procedure(\''+addT+'\',1)');
+				LOGIN.sincronizza(	'startAnimate();' +
+									'nasLoader();' +
+									'SET.car_procedure(\''+addT+'\',1)'	);
 				SCHEDA.scaricaScheda();
 			});
 		}});
