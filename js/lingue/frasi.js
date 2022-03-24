@@ -89,6 +89,11 @@ var TXT_Elimina={
 		eng: "Delete file",
 		esp: "" };
 	
+	var TXT_EliminaCartella={
+		ita: "Elimina la cartella",
+		eng: "Delete folder",
+		esp: "" };
+	
 var TXT_NessunRisultato={
 	ita: "Nessun risultato",
 	eng: "No result",
@@ -1778,9 +1783,9 @@ var TXT_CicloPresente={
 	eng: "This folder name is already in use. You can't duplicate it.",
 	esp: "" };
 	
-var TXT_ChiediEliminaCiclo={
-	ita: "Vuoi davvero eliminare l'intera cartella?",
-	eng: "Do you really want to delete this folder?",
+	var TXT_ChiediEliminaCiclo={
+		ita: "Vuoi davvero eliminare l'intera cartella? N.B. Non sarà più possibile recuperarla. Inoltre verranno cancellati definitivamente anche tutti i trattamenti contenuti in essa.",
+		eng: "Do you really want to delete the entire folder? N.B. It will no longer be possible to recover it. Furthermore, all the treatments contained therein will also be permanently deleted.",
 	esp: "" };
 	
 var TXT_SchedaCiclo={

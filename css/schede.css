@@ -749,7 +749,8 @@ body:not(.bodyStyled2) #scheda_testo2{
 	stroke-width: 0px;
 	fill: var(--schede-icone);
 }
-#menuScheda{
+#menuScheda,
+#menuCiclo{
     background-color: #FFF;
     box-shadow: 0px 0px 5px rgb(0 0 0 / 50%);
     display: none;
@@ -773,7 +774,8 @@ body:not(.bodyStyled2) #scheda_testo2{
 	top: 46px;
 }
 #menuScheda > div:not(#addBtnMenu),
-#menuScheda #addBtnMenu > div{
+#menuScheda #addBtnMenu > div,
+#menuCiclo > div{
 	width:100%;
 	height: 42px;
     line-height: 42px !important;
@@ -785,7 +787,15 @@ body:not(.bodyStyled2) #scheda_testo2{
     border-left: 1px solid rgba(0,0,0,0.1);
 	cursor:pointer;
 }
-#menuScheda div:hover{
+.smart #menuCiclo{
+	margin-top: 17px;
+    margin-right: 95px;
+}
+#menuCiclo > div{
+	padding-right:10px;
+}
+#menuScheda div:hover,
+#menuCiclo > div:hover{
 	background-color:rgba(0,0,0,0.1);
 }
 #btnStampaScheda{

@@ -12,6 +12,8 @@ var PAZIENTI_TRATTAMENTI = {
 	elencoGruppoPunti: {},
 	elencoGruppoAtt: {},
 	tipoGruppo: '', // M (meridiani) o P (punti)
+	mn: null, // il menu contestuale dei cicli
+	mnOver: false, // il menu contestuale dei cicli
 	 
 	// TRATTAMENTI
 	vis_add: function( daPiu ){
@@ -225,6 +227,13 @@ var PAZIENTI_TRATTAMENTI = {
 							'		title="'+htmlEntities(Lingua(TXT_SchedaCiclo))+'"' +
 							'		onclick="PAZIENTI.car_ciclo(\''+addslashes(PAZIENTI.cicli[c].NomeCiclo)+'\',this);">' +
 							'		<span>'+htmlEntities(Lingua(TXT_SchedaCiclo))+'</span>' +
+							'	</i>' +
+							'	<i onclick="PAZIENTI.swMenuCiclo('+elAn+',this);" class="eliminaBtn elMenu">' +
+							'		<svg viewBox="0 0 24 32">' +
+							'			<circle cy="11"></circle>' +
+							'			<circle cy="18"></circle>' +
+							'			<circle cy="25"></circle>' +
+							'		</svg>' +
 							'	</i>';
 					}
 					HTML += '</div>';
@@ -770,7 +779,9 @@ var PAZIENTI_TRATTAMENTI = {
 			var azElimina = Q_idTratt>-1 ? 'PAZIENTI.el_trattamento('+Q_idTratt+')':"";
 			var btnAdd = '';
 			if(azElimina){
-				btnAdd = '<div class="p_paz_el_menu" onClick="'+azElimina+'">'+Lingua(TXT_EliminaScheda)+'</div>';
+				btnAdd = '<div class="p_paz_el_menu" onClick="'+azElimina+'">' +
+							((TipoTrattamento=='A') ? Lingua(TXT_EliminaCartella) : Lingua(TXT_EliminaScheda)) +
+					     '</div>';
 			}
 			
 			// pulsanti SALVA, ANNULLA e ELIMINA
@@ -1046,7 +1057,9 @@ var PAZIENTI_TRATTAMENTI = {
 										'rimuoviLoading(document.getElementById("scheda_testo"));'+*/
 										'startAnimate();' +
 										'nasLoader();' +
+										'PAZIENTI.caricaTrattamenti('+pDef+');' +
 										/*"PAZIENTI.car_trattamento("+pDef+", document.getElementById('btn_trattamento_"+pDef+"'), '"+addslashes(LabelCiclo)+"', '"+((TipoTrattamento=='A')?'true':'false')+"');" +*/
+										"PAZIENTI.car_trattamento("+pDef+", document.getElementById('btn_trattamento_"+pDef+"'));" +
 										'PAZIENTI.pulisciGallery('+pDef+');' );
 					//SCHEDA.scaricaScheda();
 					
@@ -1984,7 +1997,7 @@ var PAZIENTI_TRATTAMENTI = {
 						'		  	     align="absmiddle"' +
 						'		  	     title="'+ htmlEntities(Lingua(TXT_PVDett))+'"' +
 						'		  	     class="occhio valEn"> ' +
-						'  		 	<b>' +
+						'  		 	<b class="noPrint">' +
 										Lingua(eval("TXT_Valutazione"+m2)) +
 						'			</b>' +
 						'		</span>' +
@@ -2634,6 +2647,26 @@ var PAZIENTI_TRATTAMENTI = {
 			
 			SCHEDA.caricaScheda( stripslashes(Lingua(TXT_SchedaCiclo)), HTML, '', 'scheda_Riepi', false, true, btn );
 		}});
+	},
+	swMenuCiclo: function( idTrattQ, btn ){
+		if(typeof(idTrattQ)=='undefined' && typeof(btn)=='undefined')var forza = true;
+		if(PAZIENTI.mnOver)return;
+		if(!document.getElementById("menuCiclo") && !forza){
+			PAZIENTI.mnOver = false;
+			PAZIENTI.mn = document.createElement('div');
+			PAZIENTI.mn.id = "menuCiclo";
+			PAZIENTI.mn.style.top = (tCoord(btn,'y')-20) + 'px';
+			PAZIENTI.mn.className = "visSch";
+			PAZIENTI.mn.innerHTML = '<div class="p_paz_el_menu"' +
+									'	  onclick="PAZIENTI.el_trattamento('+idTrattQ+');"' +
+									'	  onMouseOver="PAZIENTI.mnOver = true;"' +
+									'	  onMouseOut="PAZIENTI.mnOver = false;">Elimina la cartella</div>';
+			document.getElementById("lista_pazienti").appendChild(PAZIENTI.mn);
+			window.addEventListener("mouseup", PAZIENTI.swMenuCiclo, false);
+		}else{
+			document.getElementById("lista_pazienti").removeChild(PAZIENTI.mn);
+			window.removeEventListener("mouseup", PAZIENTI.swMenuCiclo, false);
+		}
 	},
 	
 	// riepilogo

@@ -641,13 +641,13 @@ var SCHEDA = {
 		HTML_styles = HTML_styles.replace(/\?v=[\d]+"/g,'"').replace(/\ id="[^"]+"/g,'');
 		
 		var HTML = 
-				'<html>' +
+				'<html class="htmlStampa">' +
 				'	<head>' +
 				'		<script language="Javascript">' +
 				'			setTimeout(function(){' +
 				'				parent.document.getElementById("stampa").classList.toggle("visSch");' +
 				'				window.print();' +
-				'				window.close();' +
+				//'				window.close();' +
 				'			},2000);' +
 				'		</script>' +
 						HTML_styles +
@@ -655,7 +655,7 @@ var SCHEDA = {
 				'			'+TITOLO_PAGINA+'' +
 				'		</title>' +
 				'	</head>' +
-				'	<body style="background:#FFF;">';
+				'	<body style="background:#FFF;" class="bodyStampa">';
 		if(!cartaIntestata)HTML += 
 				'		<div style="margin-bottom:10px;' +
 				'					border-bottom:1px solid #DDD;' +

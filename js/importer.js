@@ -220,6 +220,7 @@ var IMPORTER = {
 		if(touchable)document.body.classList.add("touch");
 		if(android)document.body.classList.add("android");
 		if(mouseDetect)IMPORTER.files.push('css/scrollbars.css');
+		if(brw_safari)document.getElementById("btnStampaScheda").style.display = 'none';
 		IMPORTER.importaFiles( 0, IMPORTER.files, 'INIT();', document.head );
 	},
 	importaFiles: function( n, lista, funct, dest ){

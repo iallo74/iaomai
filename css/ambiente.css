@@ -94,7 +94,7 @@
 	color:#000;
 }
 
-html/*, body */{
+html:not(.htmlStampa)/*, body */{
 	overflow: hidden !important;
     position: fixed;
     width: 100%;

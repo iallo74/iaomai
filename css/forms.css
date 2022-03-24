@@ -930,6 +930,14 @@ body:not(.smart) #scheda:not(.h150) .p_paz_el{
 .smart.android .rgProcMod .meridModif{
     line-height: 41px !important;
 }
+/*@media only print{*/
+	.bodyStampa .dettMeridiano,
+	.bodyStampa .tsb,
+	.bodyStampa .valPunto,
+	.bodyStampa .valMerid{
+		border:1px solid #000 !important;
+	}
+/*}*/
 
 .p_sch_pref, /* procedura */
 .p_sch_no_pref, /* procedura */

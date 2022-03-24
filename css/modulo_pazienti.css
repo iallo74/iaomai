@@ -495,11 +495,10 @@ body:not(.smart) #pazienti_head{
     margin: 0px !important;
 }
 .trattTools{
-	/*padding-right:45px !important;*/
-	padding-right:40px !important;
+	padding-right:32px !important;
 }
 .cartella:not(.cartellaSingoli) .trattTools{
-	background:#FFF !important;/*#c88f1d !important; /*#789e33 !important;/*#999 !important;*/
+	background:#FFF !important;
     height: 42px !important;
     padding-top: 13px;
 }
@@ -509,16 +508,14 @@ body:not(.smart) #pazienti_head{
 .smart.android .trattTools{
 	height: 44px !important;
     padding-top: 0px !important;
+	padding-right: 50px !important;
 }
 .trattTools i{
 	cursor:pointer;
 	display: inline-block;
 	float:right;
-	/*border-radius: 4px;*/
 }
 .trattTools i:not(.addTrattBtn){
-	/*line-height: 27px !important;
-	height:27px !important;*/
 	line-height: 32px !important;
     height: 32px !important;
     margin-top: -3px;
@@ -555,7 +552,22 @@ body:not(.smart) .trattTools i:not(.infoCiclo):not(.addTrattBtn):hover{
 .riepilogoBtn{
 	background-image: url(../img/ico_statsT.png);
 }
-
+.eliminaBtn{
+	width: 32px !important;
+    border-right: 1px solid rgba(0,0,0,0.4);
+}
+.eliminaBtn svg{
+    margin-top: -2px;
+    width: 24px;
+    margin-left: 4px;
+}
+.eliminaBtn svg circle{
+	r: 2px;
+	cx: 12px;
+    stroke: none;
+    stroke-width: 0px;
+    fill: #000;
+}
 .anamnesiBtn{
 	background-image: url(../img/ico_anamnesi.png);
     padding-left: 36px;
@@ -564,12 +576,12 @@ body:not(.smart) .trattTools i:not(.infoCiclo):not(.addTrattBtn):hover{
     float: left;
     margin-left: 0px;
     border-radius: 0px !important;
-    width: calc(100% - 88px);
+    width: calc(100% - 110px);
     height: 32px !important;
     line-height: 32px !important;
     opacity: 1 !important;
     margin-top: -32px;
-    border-right: 1px solid rgba(0,0,0,0.2);
+    /*border-right: 1px solid rgba(0,0,0,0.2);*/
 }
 .smart.android .anamnesiBtn{
     height: 44px !important;
@@ -577,6 +589,7 @@ body:not(.smart) .trattTools i:not(.infoCiclo):not(.addTrattBtn):hover{
     background-position: 4px 2px, left center;
     padding-left: 42px;
 	margin-top: -44px;
+	width: calc(100% - 140px);
 }
 .anamnesiBtn:hover{
     background-color: #EEE !important;
