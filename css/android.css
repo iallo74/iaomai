@@ -28,3 +28,10 @@
 .android #CNF_btns button{
 	line-height:32px !important;
 }
+
+
+
+.android #sets_elenco div,
+.android #sets_elenco div span{
+	line-height:50px !important;
+}

@@ -277,9 +277,10 @@ var IMPORTER = {
 			if(!content)this.jss[n].src = file;
 		}
 		if(ext=='css'){
-			this.jss[n] 	= document.createElement('link');
+			if(!content)this.jss[n] = document.createElement('link');
+			else this.jss[n] = document.createElement('style');
 			this.jss[n].type 	= 'text/css';
-			this.jss[n].rel 	= 'stylesheet';
+			if(!content)this.jss[n].rel 	= 'stylesheet';
 			if(!content)this.jss[n].href = file;
 		}
 		this.jss[n].id 	= nomeFile;
