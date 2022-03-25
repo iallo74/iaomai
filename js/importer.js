@@ -203,9 +203,14 @@ var IMPORTER = {
 			while(JSNPOST.indexOf("/")>-1)JSNPOST=JSNPOST.replace("/","_");
 			while(JSNPOST.indexOf(".")>-1)JSNPOST=JSNPOST.replace(".","_");
 			console.log("Sto inviando: "+JSNPOST);
-			CONN.caricaUrl(	"verificaScripts.php",
-							'TK=D6G-w34rgV&b64=1&verApp='+verApp+'&JSNPOST='+window.btoa(encodeURIComponent(JSON.stringify(JSNPOST))), 
-							"IMPORTER.applicaAggiornamenti" );
+			localPouchDB.getItem(MD5("DB.login")).then(function(dbCont){
+				id=IMPORTER.DECOMPR(dbCont).data.idUtente;
+				if(typeof(id)=='undefined')id = '';
+				console.log(id)
+				CONN.caricaUrl(	"verificaScripts.php",
+								'TK=D6G-w34rgV&b64=1&idUtenteScript='+id+'&verApp='+verApp+'&JSNPOST='+window.btoa(encodeURIComponent(JSON.stringify(JSNPOST))), 
+								"IMPORTER.applicaAggiornamenti" );
+			});
 		}else IMPORTER.applicaAggiornamenti('');
 	},
 	applicaAggiornamenti: function( txt ){
