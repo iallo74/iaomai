@@ -78,6 +78,12 @@
 .smart.android #contFeatures > p *{
 	font-size: 16px !important;
 }
+.app_version.bug_font.smart.android #contFeatures > div,
+.app_version.bug_font.smart.android #contFeatures > div *,
+.app_version.bug_font.smart.android #contFeatures > p,
+.app_version.bug_font.smart.android #contFeatures > p *{
+	font-size: 14.48px !important;
+}
 #contFeatures > div > div{
 	display:inline-block;
 	vertical-align:top;

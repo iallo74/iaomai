@@ -191,6 +191,9 @@ body:not(.smart) #pazienti_head{
 .smart.android #nomeCliente{
 	font-size:17px;
 }
+.app_version.bug_font.smart.android #nomeCliente{
+	font-size:15.39px !important;
+}
 #esciCliente{
     width: 30px;
     background-image: url(../img/ico_logoutN.png);
@@ -591,6 +594,9 @@ body:not(.smart) .trattTools i:not(.infoCiclo):not(.addTrattBtn):hover{
 	margin-top: -44px;
 	width: calc(100% - 140px);
 }
+.app_version.bug_font.smart.android .anamnesiBtn{
+    line-height: 40.31px !important;
+}
 .anamnesiBtn:hover{
     background-color: #EEE !important;
 }
@@ -600,6 +606,9 @@ body:not(.smart) .trattTools i:not(.infoCiclo):not(.addTrattBtn):hover{
 }
 .smart.android .anamnesiBtn span{
 	font-size:17px;
+}
+.app_version.bug_font.smart.android .anamnesiBtn span{
+	font-size:15.39px !important;
 }
 .riepilogoBtn.elencoSel{
 	background-image: url(../img/ico_statsTB.png), linear-gradient(to bottom, #1d4eaa 0%,#0a3d96 100%) !important;
@@ -1379,6 +1388,14 @@ body:not(.smart) #rgApplicaFiltri{
     line-height: 32px;
     margin-top: 3px;
 	font-size:17px;
+}
+.app_version.bug_font.smart.android #paz_ricerca,
+.app_version.bug_font.smart.android #forn_ricerca,
+.app_version.bug_font.smart.android #serv_ricerca,
+.app_version.bug_font.smart.android #proc_ricerca,
+.app_version.bug_font.smart.android #pat_ricerca{
+    line-height: 29.32px !important;
+	font-size:15.39px !important;
 }
 #paz_ricerca,
 #forn_ricerca,

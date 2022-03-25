@@ -36,6 +36,9 @@ body:not(.smart) #sets{
 	background-repeat:no-repeat;
 	background-position:4px center;
 }
+.app_version.bug_font.smart.android #labelSets{
+	line-height:36.64px !important;
+}
 #sets_elenco{
   	border-top-right-radius:5px;
 	border-radius: 0px !important;
@@ -53,11 +56,19 @@ body:not(.smart) #sets{
 	border-bottom:1px solid rgba(0,0,0,0.1);
 	cursor:pointer;
 }
+
+.app_version.bug_font.smart.android #sets_elenco div{
+	line-height:45.80px !important;
+}
 #sets_elenco div span{
 	float:right;
 	font-size:11px !important;
 	padding-right:32px;
 	color: #ff5722;
+}
+.app_version.bug_font.smart.android #sets_elenco div span{
+	font-size:9.96px !important;
+	line-height:43.84px !important;
 }
 #sets_elenco div:last-child{
 	border-bottom: none !important;
@@ -68,6 +79,10 @@ body:not(.smart) #sets{
 .smart.android #sets_elenco div,
 .smart.android #labelSets{
 	font-size:17px !important;
+}
+.app_version.bug_font.smart.android #sets_elenco div,
+.app_version.bug_font.smart.android #labelSets{
+	font-size:15.39px !important;
 }
 .smart.android #labelSets{
 	margin-bottom: 10px;

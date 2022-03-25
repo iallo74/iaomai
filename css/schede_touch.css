@@ -51,6 +51,14 @@
 	line-height:42px !important;
 	font-size:17px !important;
 }
+.app_version.bug_font.smart.android input[type='text'],
+.app_version.bug_font.smart.android input[type='email'],
+.app_version.bug_font.smart.android input[type='password'],
+.app_version.bug_font.smart.android #formMod select:not(.p_proc_gruppo):not(.p_paz_gruppo):not(.p_paz_meridiani):not(#grpPt):not(#grpMrd),
+.app_version.bug_font.smart.android #dataTxt{
+	line-height:38.48px !important;
+	font-size:15.39px !important;
+}
 
 .smart:not(.android) input[type='text'],
 .smart:not(.android) input[type='email'],
@@ -58,6 +66,13 @@
 .smart:not(.android) #formMod select:not(.p_proc_gruppo):not(.p_paz_gruppo):not(.p_paz_meridiani):not(#grpPt):not(#grpMrd),
 .smart:not(.android) #dataTxt{
 	font-size:15px !important;
+}
+.app_version.bug_font.smart:not(.android) input[type='text'],
+.app_version.bug_font.smart:not(.android) input[type='email'],
+.app_version.bug_font.smart:not(.android) input[type='password'],
+.app_version.bug_font.smart:not(.android) #formMod select:not(.p_proc_gruppo):not(.p_paz_gruppo):not(.p_paz_meridiani):not(#grpPt):not(#grpMrd),
+.app_version.bug_font.smart:not(.android) #dataTxt{
+	font-size:13.58px !important;
 }
 
 .touch.android #el_visceri,

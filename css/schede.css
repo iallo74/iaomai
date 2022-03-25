@@ -413,7 +413,9 @@ body:not(.smart) #scheda_cont{
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1d4eaa', endColorstr='#0a3d96',GradientType=0 );
 	/*cursor:pointer;*/
 }
-
+.app_version.bug_font.smart.android #scheda_titolo{
+	line-height:36.64px !important;
+}
 body:not(.smart) #scheda.schForm:not(.schedaRitorno):not(.minimized):not(.tab_tsubo):not(.scheda_marketing) #scheda_titolo{
 	width: calc(100% - 179px) !important;
 }
@@ -636,6 +638,11 @@ body:not(.smart) .schedaRitorno #scheda_titolo{
 .android #scheda:not(.schForm) #scheda_testo2 *:not(h1):not(h2):not(.annullaBtn):not(.submitBtn):not(.stampaBtn){
 	font-size:16.5px;
 	line-height:20px;
+}
+.app_version.bug_font.android #scheda:not(.schForm) #scheda_testo *:not(h1):not(h2):not(.annullaBtn):not(.submitBtn):not(.stampaBtn),
+.app_version.bug_font.android #scheda:not(.schForm) #scheda_testo2 *:not(h1):not(h2):not(.annullaBtn):not(.submitBtn):not(.stampaBtn){
+	font-size:14.94px !important;
+	line-height:18.32px !important;
 }
 .bodyStyled2 #scheda_testo,
 .bodyStyled2 #scheda_testo2{

@@ -21,6 +21,9 @@ body:not(.smart) #btnCarMapMenu,
 .smart.android #elenchi #btnCarMapMenu{
 	margin-bottom: 20px;
 }
+.app_version.bug_font.smart.android #elenchi #btnCarMapMenu{
+	margin-bottom: 18.10px !important;
+}
 
 body:not(.smart) #btnCarMapMenu i span,
 .smart #elenchi #btnCarMapMenu i span{
@@ -100,6 +103,14 @@ body:not(.smart) #help_set,
 	font-weight:bold !important;
 	font-style: normal !important;
 }
+.app_version.bug_font.smart.android #elenchi #help_set,
+.app_version.bug_font.smart.android #fumetti_testo #help_set,
+.app_version.bug_font.smart.android #help_clienti,
+.app_version.bug_font.smart.android .help_sets,
+.app_version.bug_font.smart.android #help_set{
+    line-height: 15.57px !important;
+	font-size: 16.93px !important;
+}
 #help_clienti,
 .smart #help_set{
     margin-top: 6px;
@@ -126,6 +137,9 @@ body:not(.smart) #help_set,
 .smart.android .elMenu{
 	height:41px;
 	line-height:41px;
+}
+.app_version.bug_font.smart.android .elMenu{
+	line-height:37.56px !important;
 }
 body:not(.smart) .elMenu{
 	opacity:0.8;
@@ -285,6 +299,11 @@ body:not(.smart) #elenchi{
 .smart.android #btnCarMapMenu span{
 	font-size:28px !important;
 }
+.app_version.bug_font.smart.android #titolo_base,
+.app_version.bug_font.smart.android #elenchi_titolo,
+.app_version.bug_font.smart.android #btnCarMapMenu span{
+	font-size:25.35px !important;
+}
 .smart #titolo_base,
 .smart #btnCarMapMenu{
 	margin-top: 5px;
@@ -395,6 +414,11 @@ body:not(.bodyStyled2) #chiudiElenco{
     margin-right: 10px;
 	font-size:17px;
 }
+.app_version.bug_font.smart.android #pulsanti_base div,
+.app_version.bug_font.smart.android #pulsanti_set div{
+    line-height: 45.80px !important;
+	font-size:15.39px !important;
+}
 .smart #pulsanti_base div,
 .smart #pulsanti_set div{
 	font-weight: normal !important;
@@ -463,10 +487,16 @@ body:not(.bodyStyled2) #chiudiElenco{
     line-height: 50px;
 	margin: 5px;
 }
+.app_version.bug_font.smart.android .lista > div:not(.loading):not(.menuElenchi){
+    line-height: 45.8px !important;
+}
 .smart:not(.android) .lista > div:not(.loading):not(.menuElenchi){
 	height: 40px;
     line-height: 40px;
 	margin: 5px;
+}
+.app_version.bug_font.smart:not(.android) .lista > div:not(.loading):not(.menuElenchi){
+    line-height: 36.64px !important;
 }
 .smart .lista > div:not(.loading):not(.menuElenchi) b{
 	font-weight:normal !important;
@@ -475,9 +505,17 @@ body:not(.bodyStyled2) #chiudiElenco{
 .smart.android .lista > div:not(.loading):not(.menuElenchi) *{
 	font-size:17px;
 }
+.app_version.bug_font.smart.android .lista > div:not(.loading):not(.menuElenchi),
+.app_version.bug_font.smart.android .lista > div:not(.loading):not(.menuElenchi) *{
+	font-size:15.39px !important;
+}
 .smart:not(.android) .lista > div:not(.loading):not(.menuElenchi),
 .smart:not(.android) .lista > div:not(.loading):not(.menuElenchi) *{
 	font-size:15px;
+}
+.app_version.bug_font.smart:not(.android) .lista > div:not(.loading):not(.menuElenchi),
+.app_version.bug_font.smart:not(.android) .lista > div:not(.loading):not(.menuElenchi) *{
+	font-size:13.58px !important;
 }
 .elencoSel{
     box-shadow: 0px 0px 3px rgba(0,0,0,0.5);
@@ -565,9 +603,6 @@ body:not(.bodyStyled2) #chiudiElenco{
 .smart:not(.android) .cartella > span{
 	height:40px !important;
 }
-/*.smart.android .cartella > span b{
-	font-size:17px !important;
-}*/
 .cartella:not(.cartellaSingoli):not(.cartellaAperta) > span:hover{
 	background-image:url(../img/frGiuB.png), linear-gradient(to bottom, #EEE 0%,#DDD 100%) !important;
 }
@@ -668,6 +703,10 @@ body:not(.bodyStyled2) #chiudiElenco{
 .smart.android .cart_els,
 .smart.android .cart_els *{
 	font-size:17px !important;
+}
+.app_version.bug_font.smart.android .cart_els,
+.app_version.bug_font.smart.android .cart_els *{
+	font-size:15.39px !important;
 }
 .cart_els:not(.elencoSel):not(.lockedItem):hover{
 	background-color:#555 !important;

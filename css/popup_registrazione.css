@@ -70,6 +70,10 @@
 .smart.android #registrazioneForm input[type='submit']{
 	font-size:17px;
 }
+.app_version.bug_font.smart.android #registrazioneForm input[type='submit']{
+	font-size:15.39px !important;
+	line-height:36.64px !important;
+}
 #registrazioneForm input[type='submit']:hover{
 	background: #062865;
     background: -moz-linear-gradient(top, #144092 0%, #062865 100%);

@@ -173,6 +173,9 @@ body:not(.smart) #globalTesta{
 .smart.android #globalTesto > p:first-child > b{
 	font-size:17px !important;
 }
+.app_version.bug_font.smart.android #globalTesto > p:first-child > b{
+	font-size:15.39px !important;
+}
 .globalHistory{
     overflow-y: auto;
     height: 100%;

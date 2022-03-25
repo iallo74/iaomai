@@ -639,6 +639,9 @@ body:not(.smart) #labelModello{
 .smart.android #labelModello{
 	font-size:17px;
 }
+.app_version.bug_font.smart.android #labelModello{
+	font-size:15.39px !important;
+}
 #chiudi_modello{
 	background-image:url(../img/chMenu.png);
 	float:right;
@@ -1124,6 +1127,9 @@ body:not(.smart) #impostazioni{
 	font-size:18px !important;
 	margin-bottom:10px;
 }
+.app_version.bug_font.smart.android #labelImpostazioni{
+	font-size:16.29px !important;
+}
 #i1{
   	border-top-right-radius:5px;
 	border-radius: 0px !important;
@@ -1143,6 +1149,10 @@ body:not(.smart) #impostazioni{
 .smart.android #i1 div,
 .smart.android #nomeUtente{
     font-size:17px;
+}
+.app_version.bug_font.smart.android #i1 div,
+.app_version.bug_font.smart.android #nomeUtente{
+    font-size:15.39px !important;
 }
 #i1 div b{
 	color:var(--impostazioni-testo);
@@ -1247,6 +1257,9 @@ body:not(.bodyStyled2) #btn_modut{
 .smart.android #utDisc{
     margin-top: -34px !important;
     font-size:14.3px;
+}
+.app_version.bug_font.smart.android #utDisc{
+    font-size:12.94px !important;
 }
 #p_reg{
 	color: #FFF;

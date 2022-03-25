@@ -673,6 +673,9 @@ body:not(.smart) #ag{
 .smart.android #labelAg{
 	font-size:18px;
 }
+.app_version.bug_font.smart.android #labelAg{
+	font-size:16.29px !important;
+}
 #chiudi_ag{
 	height:40px;
 	background-image:url(../img/chMenu.png);

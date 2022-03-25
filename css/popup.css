@@ -39,6 +39,9 @@
     white-space: nowrap;
     text-overflow: ellipsis;
 }
+.app_version.bug_font.smart.android .popup_label{
+	font-size:16.29px !important;
+}
 .popup_chiudi{
 	width:40px;
 	height:40px;
@@ -112,6 +115,10 @@
     height: 34px !important;
     line-height: 34px !important;
 }
+.app_version.bug_font.smart.android .btn_annulla{
+	font-size:15.39px !important;
+    line-height: 31.15px !important;
+}
 .btn_invia{
 	display: inline-block;
     height: 30px !important;
@@ -129,6 +136,10 @@
 	font-size:17px;
     height: 34px !important;
     line-height: 34px !important;
+}
+.app_version.bug_font.smart.android .btn_invia{
+	font-size:15.39px !important;
+    line-height: 31.15px !important;
 }
 .btn_invia:not(.btn_logout_mini):not(.btn_login_mini):not(.btn_dis){
 	background: #0a3d96;
