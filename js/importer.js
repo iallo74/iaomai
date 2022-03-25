@@ -24,7 +24,7 @@ var mouseDetect = false;
 var onlineVersion=false;
 var isTablet = false;
 var globals = {};
-var verApp = '1.1.0';
+var verApp = '1.1.1';
 // IMPOSTAZIONI DI APP
 var nomeApp = 'Iáomai';
 var sloganApp = 'A new vision on health';
@@ -220,6 +220,18 @@ var IMPORTER = {
 		if(touchable)document.body.classList.add("touch");
 		if(android)document.body.classList.add("android");
 		if(window.hasOwnProperty("cordova"))document.body.classList.add("app_version");
+		
+		// inserito per bug sui fonts su app android smart
+		var dvf = document.createElement('p');
+		dvf.id = 'dvf';
+		dvf.style.margin = '0px';
+		dvf.style.lineHeight = '50px';
+		dvf.innerHTML = 'EEEEEEEEE';
+		document.body.appendChild(dvf);
+		if(document.getElementById("dvf").scrollHeight>50)document.body.classList.add("bug_font");
+		document.body.removeChild(dvf);
+		
+		
 		if(mouseDetect)IMPORTER.files.push('css/scrollbars.css');
 		if(brw_safari)document.getElementById("btnStampaScheda").style.display = 'none';
 		IMPORTER.importaFiles( 0, IMPORTER.files, 'INIT();', document.head );

@@ -74,7 +74,6 @@ var overChiudiProva = false;
 // OPERAZIONI AL CARICAMENTO DELLA PAGINA
 function INIT(){
 	
-	
 	// unisco i moduli
 	Object.assign(PAZIENTI, PAZIENTI_TRATTAMENTI);
 	Object.assign(PAZIENTI, PAZIENTI_SALDI);
@@ -144,36 +143,3 @@ function INIT(){
 	console.log('\n \n  .------------------------------------------.\n  |                                          |\n  |     SE STAI VEDENDO QUESTA SCHERMATA     |\n  |     PER MODIFICARE IL CODICE             |\n  |     VERRAI FULMINATO!!!!        ]o:      |\n  |                                          |\n  *------------------------------------------*\n  ');
 }
 window.addEventListener("load",function(){INIT();},false);
-
-/*var prss_Z = false;
-var prss_X = false;
-var prss_C = false;
-var prss_P = false;
-function tasti2(e){
-	if(window.event)tasto=window.event.keyCode;
-	else tasto=e.keyCode;
-	console.log(tasto)
-	if(tasto == 90)prss_Z=true;
-	if(tasto == 88)prss_X=true;
-	if(tasto == 67)prss_C=true;
-	if(tasto == 80)prss_P=true;
-	if(prss_Z && prss_X && prss_C && prss_P){ // CTRL + SHIFT + ALT + x
-		CONFIRM.vis(	"Vuoi davvero cancellare tutti i dati in memoria?" ).then(function(pass){if(pass){
-			localPouchDB.clear();
-			localStorage.clear();
-		}});
-	}
-}
-function tastiUp2(e){
-	if(window.event)tasto=window.event.keyCode;
-	else tasto=e.keyCode;
-	console.log(tasto)
-	if(tasto == 90)prss_Z=false;
-	if(tasto == 88)prss_X=false;
-	if(tasto == 67)prss_C=false;
-	if(tasto == 80)prss_P=false;
-}
-if(!touchable){	
-	window.addEventListener("keydown",function(){ tasti2(); }, false);
-	window.addEventListener("keyup",function(){ tastiUp2(); }, false);
-}*/

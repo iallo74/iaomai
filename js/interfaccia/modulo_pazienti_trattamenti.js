@@ -2501,15 +2501,29 @@ var PAZIENTI_TRATTAMENTI = {
 			if(LabelCiclo!='0')HTML0+='<h1>'+htmlEntities(LabelCiclo)+'</h1>';
 			else HTML0+='<h1>'+htmlEntities(Lingua(TXT_CicloSenzaNome))+'</h1>';
 			HTML0+='<p><i>Cliente:</i> '+htmlEntities(DB.pazienti.data[PAZIENTI.idCL].Nome+" "+DB.pazienti.data[PAZIENTI.idCL].Cognome)+'</p>';
-			// ELENCO I TRATTAMENTI DELLA CARTELA LabelCiclo
+			// ELENCO I TRATTAMENTI DELLA CARTELLA LabelCiclo
 			var n=-1;
-			var TRS = clone(DB.pazienti.data[PAZIENTI.idCL].trattamenti);
-			TRS.sort(sort_by("TipoTrattamento", false));
-			for(i in TRS){
-				TRS[i].p = i;
+			var TRS_clone = clone(DB.pazienti.data[PAZIENTI.idCL].trattamenti);
+			var TRS = [];			
+			for(i=TRS_clone.length-1;i>0;i--){
+				
+			   if(TRS_clone[i].LabelCiclo==LabelCiclo)TRS.push(TRS_clone[i]);
 			}
+			
+			TRS.sort(sort_by("TipoTrattamento", false));
+			var f = 0;
+			for(i in TRS){
+				if(TRS[i].TipoTrattamento=='A')TRS[i].p = f;
+			}
+			TRS.sort(sort_by("TimeTrattamento", true, parseInt));
+			for(i in TRS){
+				f++;
+				if(TRS[i].TipoTrattamento!='A')TRS[i].p = f;
+			}
+			TRS.sort(sort_by("p", false, parseInt));
 			for(i in TRS){
 				var TR = TRS[i];
+				console.log(TR.p)
 				if(TR.Cancellato==0 && TR.LabelCiclo==LabelCiclo){
 					n++;
 					idTrattamento=TR.idTrattamento*1;
