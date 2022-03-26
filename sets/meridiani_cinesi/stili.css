@@ -5,6 +5,9 @@
 .ideogrammaTsubo{
 	float:right;
 }
+.smart .ideogrammaTsubo{
+	margin-top: 20px;
+}
 
 .simboliTsubo{
     width: 45px;
