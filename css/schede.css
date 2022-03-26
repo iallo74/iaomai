@@ -481,11 +481,8 @@ body:not(.smart) #scheda.schForm:not(.schedaRitorno):not(.minimized):not(.tab_ts
 	display:none;
 }
 #frSch{
-    right: 7px;
-    width: 70px;
-}
-.schLato #frSch{
 	right: 28px;
+    width: 70px;
 }
 .frSu, .frGiu{
 	display:block !important;
