@@ -93,7 +93,7 @@ var MODULO_TSUBO = { // extend SET
 		var marginLeft = 0;
 		if(touchable && smartphone){
 			wCont = WF()-40;
-			marginLeft = 20;
+			//marginLeft = 20;
 		}
 		var rp = wCont/370;
 		if(coordZoom.length>1){
