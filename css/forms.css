@@ -1490,7 +1490,8 @@ body:not(.touch) #puntiTsuboMap .dettPunto:hover{
     border-right: 1px solid rgba(0,0,0,0.1);
 	text-align: center;
 }
-.rgMod .valPunto{
+.rgMod .valPunto,
+.rgMod .mezzoPunto{
 	background-image:url(../img/inpbg2p.png);
 	background-repeat:no-repeat;
 	background-position: calc(100% - 3px) calc(100% - 1px);
