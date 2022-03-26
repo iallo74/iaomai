@@ -63,7 +63,7 @@ var MODULO_TEORIA = { // extend SET
 		var html = "<h1>"+htmlEntities(titolo)+"</h1>";
 		var html_cont = SET.convPuntiScheda(DB.set.teoria[p].contenuti[t].TestoTeoria);
 
-		if(p==1){
+		/*if(p==1){
 			var mAtt=DB.set.teoria[1].contenuti[t].sigla;
 			var elencoTsubo='<b>Elenco degli tsubo</b>';
 			for(s in DB.set.meridiani[mAtt].tsubo){
@@ -74,7 +74,7 @@ var MODULO_TEORIA = { // extend SET
 						'<div class="col50 elencoTsubo">' +
 							elencoTsubo +
 						'</div>';
-		}
+		}*/
 		html += html_cont;
 		
 		var ritorno = false;
@@ -91,7 +91,7 @@ var MODULO_TEORIA = { // extend SET
 								btn );
 		SET.convSigleScheda();
 		SET.evidenziaTsubo(html);
-		SET.evidenziaMeridiani(html);
+		//SET.evidenziaMeridiani(html);
 	},
 	caricaVideo: function( p, t, btn ){
 		// verifico le autorizzazioni

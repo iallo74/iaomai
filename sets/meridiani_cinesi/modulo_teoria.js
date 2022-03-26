@@ -89,16 +89,17 @@ var MODULO_TEORIA = { // extend SET
 			
 		SCHEDA.caricaScheda( 	titolo,
 								html,
-								'SET.annullaEvidenziaTsubo();' +
-								'SET.spegniMeridiani(true);' +
-								'SET.spegniMeridianoSecondario(\'\',true);',
+								"SET.annullaEvidenziaTsubo();" +
+								"SET.spegniMeridiani(true);" +
+								"SET.spegniMeridianoSecondario('',true);" +
+								"SET.spegniMeridiani(true);",
 								'scheda_teoria',
 								ritorno,
 								espansa,
 								btn );
 		SET.convSigleScheda();
 		SET.evidenziaTsubo(html);
-		SET.evidenziaMeridiani(html);
+		//SET.evidenziaMeridiani(html);
 		
 		SET.spegniMeridianoSecondario();
 		setTimeout( function(meridianiSecondari){

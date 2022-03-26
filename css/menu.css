@@ -74,6 +74,8 @@ body:not(.smart) #icone.iconeEspanse{
 }
 #btns_set{
 	text-align:left;
+	display:inline-block;
+	width:auto !important;
 }
 .smart #icone div svg{
 	transform: rotate(-90deg);
@@ -86,6 +88,7 @@ body:not(.smart) #icone.iconeEspanse{
 	cursor:pointer;
 	text-align:left;
 }
+#contBtnModello div,
 #contBtnModello div{
 	background-repeat:no-repeat;
 	background-position:center center;

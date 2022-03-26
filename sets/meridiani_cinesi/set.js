@@ -184,7 +184,7 @@ SET = {
 		contPulsanti += '<div id="pulsante_teoria" class="frdx" onClick="SCHEDA.selElenco(\'teoria\');">'+Lingua(TXT_Approfondimenti)+'</div>';
 		contElenco += '<div id="lista_teoria"></div>';
 		
-		contBtns = '<div id="p_contrasto" class="p_noTxt" onClick="SET.swContrastMethod();"><i>'+htmlEntities(Lingua(TXT_ContrastoElevato))+'</i></div>';
+		contBtns = '<div id="p_contrasto" class="p_noTxt" onClick="SET.swContrastMethod();"></div>';
 		
 		contIcona = '<div id="p_set" onClick="SCHEDA.apriElenco(\'set\',true);"><svg viewBox="0 0 12 48"><polygon points="5,24 12,13 12,35"></polygon></svg><i>'+htmlEntities(Lingua(TXT_TsuboMap))+'</i></div>';;
 		
@@ -755,7 +755,7 @@ SET = {
 			SET.MAT.lineYin.depthTest = false;
 			SET.MAT.pointBase.depthTest = false;*/
 		}else{
-			if(!SET.meridianiSecondariAccesi.length || this.ptSel.userData.evidenziati){
+			if(!SET.meridianiSecondariAccesi.length || (this.ptSel && this.ptSel.userData.evidenziati)){
 				if(muscleView)MODELLO.swMuscle();
 				SET.MAT.lineYang.opacity = SET.MAT.opLine;
 				SET.MAT.lineYin.opacity = SET.MAT.opLine;
@@ -915,7 +915,6 @@ SET = {
 	},
 	settaOverTsubo: function(){
 		if(!touchable){
-			console.log("OK")
 			var els = document.getElementById("scheda_testo").getElementsByClassName("pallinoPat");
 			for(e=0;e<els.length;e++){
 				els[e].onmouseover = function(){
