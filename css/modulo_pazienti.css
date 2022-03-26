@@ -398,6 +398,7 @@ body:not(.smart) #pazienti_head{
 .grafico{
 	height:60px;
 	border-bottom:1px solid rgba(0,0,0,0.3);
+	clear:both;
 }
 .graficoDati{
 	width: calc(100% - 150px);

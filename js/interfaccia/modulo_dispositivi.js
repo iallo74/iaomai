@@ -13,11 +13,14 @@ var DISPOSITIVI = {
 		
 		if(devs1.appType=='APP')type1 = 'APP';
 		else if(devs1.browser)type1 = 'Online: <img src="img/ico_browser_'+devs1.browser.toLowerCase()+'.png"> '+devs1.browser;
+		else type1 = 'WEB APP';
 		if(devs2.appType=='APP')type2 = 'APP';
 		else if(devs2.browser)type2 = 'Online: <img src="img/ico_browser_'+devs2.browser.toLowerCase()+'.png"> '+devs2.browser;
+		else type2 = 'WEB APP';
 		if(devs1.platform){
 			if(devs1.platform.toLowerCase().replace(" ","").indexOf("android")>-1)plt1 = 'android';
 			if(devs1.platform.toLowerCase().replace(" ","").indexOf("macos")>-1)plt1 = 'macos';
+			if(devs1.platform.toLowerCase().replace(" ","").indexOf("macintosh")>-1)plt1 = 'macos';
 			if(devs1.platform.toLowerCase().replace(" ","").indexOf("windows")>-1)plt1 = 'windows';
 			if(devs1.platform.toLowerCase().replace(" ","").indexOf("ios")>-1)plt1 = 'macos';//'ios';
 			if(devs1.platform.toLowerCase().replace(" ","").indexOf("linux")>-1)plt1 = 'linux';
@@ -25,6 +28,7 @@ var DISPOSITIVI = {
 		if(devs2.platform){
 			if(devs2.platform.toLowerCase().replace(" ","").indexOf("android")>-1)plt2 = 'android';
 			if(devs2.platform.toLowerCase().replace(" ","").indexOf("macos")>-1)plt2 = 'macos';
+			if(devs2.platform.toLowerCase().replace(" ","").indexOf("macintosh")>-1)plt2 = 'macos';
 			if(devs2.platform.toLowerCase().replace(" ","").indexOf("windows")>-1)plt2 = 'windows';
 			if(devs2.platform.toLowerCase().replace(" ","").indexOf("ios")>-1)plt2 = 'macos';//'ios';
 			if(devs2.platform.toLowerCase().replace(" ","").indexOf("linux")>-1)plt2 = 'linux';

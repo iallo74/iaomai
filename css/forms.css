@@ -10,6 +10,13 @@ form{
 input::-moz-placeholder{
 	opacity:0;
 }
+input::-webkit-contacts-auto-fill-button {
+  visibility: hidden;
+  display: none !important;
+  pointer-events: none;
+  position: absolute;
+  right: 0;
+}
 input,
 textarea{
 	-webkit-user-select: text !important;

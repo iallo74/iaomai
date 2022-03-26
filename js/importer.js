@@ -180,6 +180,7 @@ var IMPORTER = {
 		if(location.host!='')onlineVersion=true;
 		if(this.WFINI()<510)smartphone=true;
 		if(!mouseDetect && this.WFINI()<=800 )smartMenu=true;
+		if(userAgent.indexOf("macintosh") && touchable && !smartMenu)isTablet = true;
 		if(smartMenu)document.body.classList.add("smart");
 		if(isTablet)document.body.classList.add("tablet");
 	
