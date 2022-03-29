@@ -74,6 +74,11 @@ var overChiudiProva = false;
 // OPERAZIONI AL CARICAMENTO DELLA PAGINA
 function INIT(){
 	
+	document.getElementById("schermo_nero").style.opacity = 0;
+	setTimeout(function(){
+		document.getElementById("schermo_nero").style.display = 'none';
+	},2000);
+
 	// unisco i moduli
 	Object.assign(PAZIENTI, PAZIENTI_TRATTAMENTI);
 	Object.assign(PAZIENTI, PAZIENTI_SALDI);
@@ -118,7 +123,6 @@ function INIT(){
 	window.addEventListener("resize",function(){
 		SCHEDA.verPosScheda();
 	},false);
-	
 	// DEMO
 	if(onlineVersion){
 		setTimeout( function(){
@@ -142,4 +146,4 @@ function INIT(){
 	
 	console.log('\n \n  .------------------------------------------.\n  |                                          |\n  |     SE STAI VEDENDO QUESTA SCHERMATA     |\n  |     PER MODIFICARE IL CODICE             |\n  |     VERRAI FULMINATO!!!!        ]o:      |\n  |                                          |\n  *------------------------------------------*\n  ');
 }
-window.addEventListener("load",function(){INIT();},false);
+//window.addEventListener("load",function(){INIT();},false);

@@ -2200,12 +2200,22 @@ body:not(.touch) #contGallery > div:not(.noResults) > div:hover img{
 	z-index:10000;
 }
 .sch_Max600 #combo{
-    width: calc(100% - 72px);
+    width: calc(100% - 73px);
     margin-left: 2px;
 }
+.touch .sch_Max600 #combo{
+    width: calc(100% - 64px) !important;
+}
 #scheda:not(.sch_Max600) #combo{
-    width: calc(100% - 164px);
+    width: calc(100% - 163px);
     margin-left: 93px;
+}
+.touch.android #scheda:not(.sch_Max600) #combo{
+    width: calc(100% - 135px) !important;
+}
+.touch:not(.android) #scheda:not(.sch_Max600) #combo{
+    width: calc(100% - 155px) !important;
+	margin-top:14px !important;
 }
 #combo{
 	display:none;

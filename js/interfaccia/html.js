@@ -365,7 +365,8 @@ var H = {
 	
 	creaCombo: function( el, lista){
 		if(typeof(lista) == 'undefined')var lista = [];
-		if(lista.length){
+		if(lista.length && !H.elCombo){
+			console.log(lista)
 			
 			if(H.elCombo)H.rimuoviCombo();
 			H.elCombo = el;
@@ -381,14 +382,17 @@ var H = {
 			}
 			if(!HTML)return;
 			document.getElementById("combo").innerHTML = HTML;
-			if(!touchable)sch.addEventListener("scroll", H.rimuoviCombo, false);
-			else sch.addEventListener("touchmove", H.rimuoviCombo, false);
-			
-			/*window.addEventListener("wheel", function(){
-				H.comboOver=false;
-				H.rimuoviCombo();
-			}, false);*/
-			window.addEventListener("mouseup", H.rimuoviCombo, false);
+			setTimeout( function(){
+				/*if(!touchable)sch.addEventListener("scroll", H.rimuoviCombo, false);// <<< DISATTIVATO
+				else sch.addEventListener("touchmove", H.rimuoviCombo, false);*/
+				sch.addEventListener("scroll", H.rimuoviCombo, false);
+				
+				/*window.addEventListener("wheel", function(){// <<< da togliere
+					H.comboOver=false;
+					H.rimuoviCombo();
+				}, false);*/
+				window.addEventListener("mouseup", H.rimuoviCombo, false);
+			},200);
 			H.elCombo.addEventListener("keyup", H.filtraCombo, false);
 			H.elCombo.addEventListener("mouseover", H.overCombo, false);
 			H.elCombo.addEventListener("mouseout", H.outCombo, false);
@@ -402,13 +406,15 @@ var H = {
 		if(!H.comboOver || touchable){
 			H.nasCombo();
 			var sch = document.getElementById("scheda_testo");
-			if(!touchable)sch.removeEventListener("scroll", H.rimuoviCombo);
-			else sch.removeEventListener("touchmove", H.rimuoviCombo);
-			window.removeEventListener("wheel", H.rimuoviCombo);
+			/*if(!touchable)sch.removeEventListener("scroll", H.rimuoviCombo);// <<< DISATTIVATO
+			else sch.removeEventListener("touchmove", H.rimuoviCombo);*/
+			sch.removeEventListener("scroll", H.rimuoviCombo);
+			//window.removeEventListener("wheel", H.rimuoviCombo); // <<< da togliere
 			window.removeEventListener("mouseup", H.rimuoviCombo);
-			H.elCombo.removeEventListener("mouseup", H.filtraCombo);
+			H.elCombo.removeEventListener("keyup", H.filtraCombo);
 			H.elCombo.removeEventListener("mouseover", H.overCombo, false);
 			H.elCombo.removeEventListener("mouseout", H.outCombo, false);
+			H.elCombo = null;
 		}
 	},
 	blurCombo: function(){
@@ -451,7 +457,7 @@ var H = {
 		H.elCombo.value = el.innerText;
 		H.elCombo.dispatchEvent(new KeyboardEvent('keyup',  {'keyCode':13}));
 		H.comboOver = false;
-		H.rimuoviCombo();
+		if(!touchable)H.rimuoviCombo();
 	},
 	overCombo: function( el ){
 		H.comboOver = true;

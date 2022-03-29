@@ -1227,13 +1227,15 @@ body:not(.smart) #modAnag{
     background-size: auto;
     background-color: #184aa5;
     background-image: url(../img/ico_modifica_anagB.png);
-    box-shadow: 0px 0px 20px;
+    box-shadow: 3px 3px 20px rgba(0,0,0,0.5);
     margin: 0px;
 	background-repeat:no-repeat;
 }
 #modAnag:hover{
 	background-color:rgba(0,51,159,0.2);
-	
+}
+.touch #modAnag:hover{
+    background-color: #184aa5 !important;
 }
 #pazienti_stats table{
 	width:100%;

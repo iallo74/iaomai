@@ -511,7 +511,7 @@ body:not(.bodyStyled2) #chiudiElenco{
 }
 .smart:not(.android) .lista > div:not(.loading):not(.menuElenchi),
 .smart:not(.android) .lista > div:not(.loading):not(.menuElenchi) *{
-	font-size:15px;
+	font-size:13.2px;
 }
 .app_version.bug_font.smart:not(.android) .lista > div:not(.loading):not(.menuElenchi),
 .app_version.bug_font.smart:not(.android) .lista > div:not(.loading):not(.menuElenchi) *{

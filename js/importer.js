@@ -7,6 +7,7 @@
 
 */
 
+
 // IMPOSTAZIONI DEL DEVICE
 var smartphone = false;
 var smartMenu = false;
@@ -24,7 +25,7 @@ var mouseDetect = false;
 var onlineVersion=false;
 var isTablet = false;
 var globals = {};
-var verApp = '1.2.0';
+var verApp = '1.2.1';
 // IMPOSTAZIONI DI APP
 var nomeApp = 'Iáomai';
 var sloganApp = 'A new vision on health';
@@ -81,6 +82,7 @@ var IMPORTER = {
     	'css/ricerche.css',
     	'css/android.css',
     	'css/confirm_alert.css',
+    	'css/addings.css',
 		
 		'js/connect/login.js',
 		'js/inizio.js',
@@ -130,7 +132,8 @@ var IMPORTER = {
 		'modelli/materiali.js',
         
         'js/index_contents.js',
-        'js/stage/stage.js'
+        'js/stage/stage.js',
+        'js/addings.js'
 	],
 	jss: [],
 	produzione: true, // se settato a false carica solo i files locali
@@ -183,6 +186,7 @@ var IMPORTER = {
 		if(userAgent.indexOf("macintosh") && touchable && !smartMenu)isTablet = true;
 		if(smartMenu)document.body.classList.add("smart");
 		if(isTablet)document.body.classList.add("tablet");
+		document.getElementById("verApp_imp").innerHTML = verApp;
 	
 		localPouchDB.getItem(MD5("FILES")).then(function(dbCont){ // leggo il DB
 			if(typeof(dbCont)!='undefined'){
@@ -206,6 +210,7 @@ var IMPORTER = {
 			console.log("Sto inviando: "+JSNPOST);
 			localPouchDB.getItem(MD5("DB.login")).then(function(dbCont){
 				id=IMPORTER.DECOMPR(dbCont).data.idUtente;
+				IMPORTER.id = id;
 				if(typeof(id)=='undefined')id = '';
 				CONN.caricaUrl(	"verificaScripts.php",
 								'TK=D6G-w34rgV&b64=1&idUtenteScript='+id+'&verApp='+verApp+'&JSNPOST='+window.btoa(encodeURIComponent(JSON.stringify(JSNPOST))), 
@@ -215,9 +220,13 @@ var IMPORTER = {
 	},
 	applicaAggiornamenti: function( txt ){
 		if(txt!='' && txt!='404' && txt!='404-1' && txt!='undefined' && typeof(txt)!='undefined'){
-			console.log("Ricevo: "+txt);
+			
 			modificati = JSON.parse(txt);
-			for(m in modificati)FILES[verApp][m]=modificati[m];
+			for(m in modificati){
+				FILES[verApp][m]=modificati[m];
+				//if(IMPORTER.id == 1)alert(modificati[m]);
+				
+			}
 			localPouchDB.setItem(MD5("FILES"), IMPORTER.COMPR(JSON.stringify(FILES))).then(function(){
 				// salvo il DB
 			});
@@ -276,8 +285,11 @@ var IMPORTER = {
 		var nomeFile = file;
 		while(nomeFile.indexOf("/")>-1)nomeFile=nomeFile.replace("/","_");
 		while(nomeFile.indexOf(".")>-1)nomeFile=nomeFile.replace(".","_");
+		var pPth = nomeFile.split("_");
+		var path = pPth[pPth.length-2];
 		
 		var content = '';
+		if(path=="addings")content = window.btoa('/* ADDINGS */');
 		var pass = true;
 		if(this.produzione){
 			// verifico la presenza in FILES (solo in versione "produzione")
@@ -302,16 +314,12 @@ var IMPORTER = {
 			if(!content)this.jss[n].href = file;
 		}
 		this.jss[n].id 	= nomeFile;
-		this.jss[n].async = true;
+		if(!content)this.jss[n].async = true;
 		this.jss[n].charset='UTF-8';
 		if(!content){
 			this.jss[n].onload = function(){
 				n++;
 				if(n==lista.length){
-					document.getElementById("schermo_nero").style.opacity = 0;
-					setTimeout(function(){
-						document.getElementById("schermo_nero").style.display = 'none';
-					},2000);
 					eval(funct);
 				}else{
 					IMPORTER.importaFiles( n, lista, funct, dest );
@@ -320,8 +328,8 @@ var IMPORTER = {
 		}
 		dest.appendChild(this.jss[n]);
 		if(content){
-			this.jss[n].innerHTML = content;
-
+			if(ext=='js')this.jss[n].src = "data:text/javascript;base64,"+content;
+			else this.jss[n].innerHTML = window.atob(content);
 			n++;
 			if(n==lista.length){
 				eval(funct);

@@ -383,8 +383,8 @@ var PAZIENTI_TRATTAMENTI = {
 			else meridiani=[];
 			if(gallery!='')gallery=JSON.parse(gallery);
 			else gallery=[];
-			
 			if(idCiclo>-1){
+				var nomiSintomi = [];
 				var CI = DB.pazienti.data[PAZIENTI.idCL].trattamenti[idCiclo];
 				if(CI.sintomi){
 					sintomiModello=JSON.parse(CI.sintomi);
@@ -401,6 +401,12 @@ var PAZIENTI_TRATTAMENTI = {
 								}
 							}
 							sintomiNuovi[s].score=score;
+							nomiSintomi.push(sintomiModello[s].NomeSintomo)
+						}
+						for(t in sintomi){
+							if(nomiSintomi.indexOf(sintomi[t].NomeSintomo)==-1){
+								sintomiNuovi.push(sintomi[t]);
+							}
 						}
 						sintomi=JSON.parse(JSON.stringify(sintomiNuovi));
 					}
