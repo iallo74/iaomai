@@ -979,6 +979,7 @@ var SCHEDA = {
 		return mm;
 	},
 	verPosScheda: function(){
+		// effettua i controlli quando si ridimensiona la scheda
 		if(document.getElementById("scheda").classList.contains("visSch") && !smartMenu){
 			if(SCHEDA.aggancio.tipo == 'libera'){
 				var limiteW = WF();
@@ -1039,12 +1040,22 @@ var SCHEDA = {
 				var x = document.getElementById("elenchi_cont").scrollWidth;
 				if(!document.getElementById("elenchi_cont").classList.contains("visSch"))x = 0;
 				document.getElementById("scheda").style.left = (48 + x) + "px";
+				
+				if(tCoord(document.getElementById("scheda")) + document.getElementById("scheda").scrollWidth > WF()){
+				var w = WF() - tCoord(document.getElementById("scheda"));
+				if(w < 350)w = 350;
+				document.getElementById("scheda").style.width = (w - 31) + "px";
+				
+				
+				
+				}
 			}
 			localStorage.schedaAggancio = JSON.stringify(SCHEDA.aggancio);
 		}
 		onWindowResize();
 	},
 	verRedim: function(){
+		// assegna le classi alla scheda in base alla larghezza (per i CSS)
 		var W = document.getElementById("scheda").scrollWidth;
 		if(	SCHEDA.classeAperta == 'scheda_agenda' || 
 			SCHEDA.classeAperta == 'scheda_A' || 

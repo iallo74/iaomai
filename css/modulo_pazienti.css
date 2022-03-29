@@ -10,17 +10,6 @@
 
 */
 
-
-/* layout SCHEDA */
-/*.scheda_A #scheda_titolo,
-.scheda_R #scheda_titolo{
-    background: #789e33 !important;
-    background: -moz-linear-gradient(top, #5b7925 0%, #789e33 100%) !important;
-    background: -webkit-linear-gradient(top, #5b7925 0%,#789e33 100%) !important;
-    background: linear-gradient(to bottom, #5b7925 0%,#789e33 100%) !important;
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#5b7925', endColorstr='#789e33',GradientType=0 ) !important;
-}*/
-
 .scheda_paziente #scheda_titolo{
 	background: #1d4eaa;
     background: url(../img/ico_utente.png), -moz-linear-gradient(top, #1d4eaa 0%, #0a3d96 100%);
@@ -30,15 +19,6 @@
 	background-position:left center, center center !important;
 	background-repeat:no-repeat !important;
 }
-/*.scheda_A #scheda_titolo{
-    background: #c78230 !important;
-    background: url(../sets/clients_full/img/logoMenu.png), -moz-linear-gradient(top, #e2a05f 0%, #c78230 100%) !important;
-    background: url(../sets/clients_full/img/logoMenu.png), -webkit-linear-gradient(top, #e2a05f 0%,#c78230 100%) !important;
-    background: url(../sets/clients_full/img/logoMenu.png), linear-gradient(to bottom, #e2a05f 0%,#c78230 100%) !important;
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e2a05f', endColorstr='#c78230',GradientType=0 ) !important;
-	background-position:3px 2px, center center !important;
-	background-repeat:no-repeat !important;	
-}*/
 .scheda_A #scheda_titolo{
     background: #FFF !important;
     background: url(../sets/clients_full/img/logoMenuN.png), -moz-linear-gradient(top, #FFF 0%, #d5d5d5 100%) !important;
@@ -68,15 +48,6 @@
 	background-position:5px center, center center !important;
 	background-repeat:no-repeat !important;
 }
-
-/*.scheda_A #scheda_titolo,
-.scheda_R #scheda_titolo{
-    background: #cca23d !important;
-    background: -moz-linear-gradient(top, #f9d269 0%, #cca23d 100%) !important;
-    background: -webkit-linear-gradient(top, #f9d269 0%,#cca23d 100%) !important;
-    background: linear-gradient(to bottom, #f9d269 0%,#cca23d 100%) !important;
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f9d269', endColorstr='#cca23d',GradientType=0 ) !important;
-}*/
 
 .scheda_Riepi #scheda_titolo{
     background: #cca23d !important;
@@ -132,10 +103,6 @@
 	background-position:5px center, center center !important;
 	background-repeat:no-repeat !important;
 }
-/*.scheda_A #scheda_testo,
-.scheda_R #scheda_testo{
-	background-color: #e4e4c8;
-}*/
 .scheda_A #scheda_testo,
 .scheda_R #scheda_testo,
 .scheda_B #scheda_testo{
@@ -145,7 +112,7 @@
 	background-color:#FFF;
 }
 .scheda_paziente #scheda_testo{
-	background-color:#f1efeb;/*#e3ecf3;*/
+	background-color:#f1efeb;
 }
 
 
@@ -206,7 +173,6 @@ body:not(.smart) #pazienti_head{
     background-image: url(../img/ico_anagrafici.png);
     background-position: center center;
     background-repeat: no-repeat;
-   /* border-right: 1px solid rgba(0,0,0,0.2);*/
     background-size: 27px;
 }
 .smart.android #btnAnagraficaCliente{
@@ -219,7 +185,6 @@ body:not(.smart) #pazienti_head{
     width: calc(100% - 77px);
 }
 .trattNomeCliente:not(.conAvatar) #nomeCliente{
-   /* margin-left: 38px;*/
     width: calc(100% - 39px);
 }
 
@@ -238,8 +203,8 @@ body:not(.smart) #pazienti_head{
     height: 200px !important;
 }
 .avatarMini{
-	width: 38px;
-    height: 38px;
+	width: 70px;
+    height: 70px;
     background-repeat: no-repeat;
     background-size: cover;
     border-radius: 4px;
@@ -249,24 +214,14 @@ body:not(.smart) #pazienti_head{
     margin-bottom: -40px;
 	cursor:pointer;
 }
-.smart .avatarMini{
-	width: 70px;
-    height: 70px;
-}
 @media (min-width:700px){
 	.trattNomeCliente{
 		overflow: visible !important;
-	}
-	body:not(.smart) .avatarMini{
-		width: 70px !important;
-		height: 70px !important;
 	}
 }
 .avatarList,
 .imgList{
 	float: left;
-    /*width: 37px;
-    height: 37px;*/
 	max-width: 37px;
 	max-height: 37px;
     vertical-align: middle;
@@ -434,26 +389,23 @@ body:not(.smart) #pazienti_head{
 	fill:#F00 !important;
 	r:5 !important;
 }
-/*@media (max-width: 600px){*/
-	.sch_Max600 .grafico{
-		height:120px !important;
-	}
-	.sch_Max600 .graficoInt{
-		display:none;
-	}
-	.sch_Max600 .graficoEtichetta{
-		line-height: 30px !important;
-		text-align: center !important;
-		width: 100% !important;
-		padding-top: 30px;
-		height: auto !important;
-	}
-	.sch_Max600 .graficoDati{
-		width:100% !important;
-	}
-/*}*/
-
-
+.sch_Max600 .grafico{
+	height:120px !important;
+}
+.sch_Max600 .graficoInt{
+	display:none;
+}
+.sch_Max600 .graficoEtichetta{
+	line-height: 30px !important;
+	text-align: center !important;
+	width: 100% !important;
+	padding-top: 30px;
+	height: auto !important;
+}
+.sch_Max600 .graficoDati{
+	width:100% !important;
+}
+	
 /* elenco PAZIENTI, TRATTAMENTI e SALDI */
 .trattNomeCliente{
     background-image: url(../img/ico_utente.png);
@@ -467,12 +419,10 @@ body:not(.smart) #pazienti_head{
     line-height: 34px;
     text-align: right;
     padding-right: 5px;
-    color: #2856af; /*#1d629c;*/
+    color: #2856af;
     font-weight: bold;
 	width: 100%;
-    /*overflow-x: hidden;*/
     white-space: nowrap;
-    /*text-overflow: ellipsis;*/
     padding-left: 51px;
 }
 .trattNomeCliente span:not(.avatarMini){
@@ -585,7 +535,6 @@ body:not(.smart) .trattTools i:not(.infoCiclo):not(.addTrattBtn):hover{
     line-height: 32px !important;
     opacity: 1 !important;
     margin-top: -32px;
-    /*border-right: 1px solid rgba(0,0,0,0.2);*/
 }
 .smart.android .anamnesiBtn{
     height: 44px !important;
@@ -650,10 +599,6 @@ body:not(.smart) .trattTools i:not(.infoCiclo):not(.addTrattBtn):hover{
 		width: calc(100% - 12px);
 		text-overflow: ellipsis;
 	}
-	body:not(.smart) .trattNomeCliente.conAvatar #nomeCliente{
-		margin-left: 5px !important;
-		width: calc(100% - 80px) !important;
-	}
 }
 .trattTools span:not(.elMenuTratt):hover{
 	background-color:rgba(255,255,255,0.1) !important;
@@ -681,9 +626,6 @@ body:not(.smart) .trattTools i:not(.infoCiclo):not(.addTrattBtn):hover{
 .trattBtns span:not(.selBtn):hover{
 	background-color: rgba(0,0,0,0.23) !important;
 }
-/*.addTrattBtn{
-	margin-left:11px;
-}*/
 
 
 .addTrattBtn,
@@ -956,34 +898,11 @@ body:not(.smart) #addServizioMenu{
 }
 #add_ciclo i:not(#addServizioMenu) span,
 .trattTools i span,
-/*#addProcedura span,
-#addServizio span,
-#addFornitore span,
-#addPaziente span,*/
 #add_saldo span,
 #marketingPazienti span,
 #marketingPazienti span{
 	display:none;
 }
-/*#addProcedura,
-#addPaziente,
-#addFornitore,
-#addServizio{
-	margin-left:-3px !important;
-	margin-right:2px !important;
-}*/
-/*#addPaziente{
-	background-image:url(../img/ico_clienti_add.png);
-}
-#addFornitore{
-	background-image:url(../img/ico_fornitori_add.png);
-}
-#addServizio{
-	background-image:url(../img/ico_servizi_add.png);
-}
-#addProcedura{
-	background-image:url(../img/ico_procedure_add.png);
-}*/
 #filtroPazienti{
 	background-image:url(../img/ico_statsN.png);
 	margin-left:3px !important;
@@ -998,9 +917,6 @@ body:not(.smart) #addServizioMenu{
 #marketingPazienti{
 	background-image:url(../img/ico_marketingN.png);
 }
-/*body:not(.smart) #addServizio,
-body:not(.smart) #addFornitore,
-body:not(.smart) #addPaziente,*/
 body:not(.smart) #filtroPazienti,
 body:not(.smart) #cambioSistemaMeridiani,
 body:not(.smart) #marketingPazienti{
@@ -1622,16 +1538,6 @@ body:not(.smart) #rgApplicaFiltri{
     width: calc(100% + 59px);
     background-color: #FFF;
     border-bottom: 1px solid rgba(0,0,0,0.2);
-	/*text-align: left;
-    background-image: url(../img/cartellaClinicaG.png);
-    background-position: left center;
-    background-repeat: no-repeat;
-    padding-left: 35px;
-    height: 30px;
-    line-height: 33px !important;
-    margin-left: -19px;
-    margin-top: -24px;
-    margin-bottom: 10px !important;*/
 }
 #label_ciclo span{
 	display:inline-block;
@@ -1736,7 +1642,6 @@ body:not(.smart) #rgApplicaFiltri{
 }
 #serv_titolo{
 	font-size:19.8px;
-    /*border-bottom: 1px solid rgba(0,0,0,0.2);*/
     padding: 10px;
     background: url(../img/ico_servizio.png) left 3px no-repeat;
     padding-left: 45px;
@@ -1782,10 +1687,6 @@ body:not(.smart) #rgApplicaFiltri{
 	background-color:rgba(0,0,0,0.1);
 }
 .tt_on{
-	/*background-color: rgb(255, 255, 255);
-    border-top-left-radius: 6px;
-    border-top-right-radius: 6px;
-    box-shadow: 0px 0px 2px #000;*/
 	background-color: rgba(255, 255, 255,0.3);
 }
 
@@ -1838,7 +1739,6 @@ body:not(.smart) #rgApplicaFiltri{
 	padding-left:15px;
 	padding-right:15px;
 	padding-bottom:10px;
-	/*height:35px;*/
 	line-height:35px;
 	text-align:center;
 }
