@@ -180,6 +180,12 @@ var IMPORTER = {
 			window.addEventListener("keydown", IMPORTER.startSelectable, false);
 			window.addEventListener("keyup", IMPORTER.stopSelectable, false);
 		}
+		if(touchable){
+			window.addEventListener('orientationchange', function(){
+				setTimeout( function(){ SCHEDA.verPosScheda(); }, 1000 );
+				setTimeout( function(){ SCHEDA.verPosScheda(); }, 2000 );
+			},false);
+		}
 		if(location.host!='')onlineVersion=true;
 		if(this.WFINI()<510)smartphone=true;
 		if(!mouseDetect && this.WFINI()<=800 )smartMenu=true;
