@@ -627,7 +627,11 @@ var LOGIN = {
 			ALERT(Lingua(TXT_ErroreUsernameDuplicato));
 		}else{
 			// ok
-			ALERT(Lingua(TXT_ConfermareRegistrazione));
+			//LERT(Lingua(TXT_ConfermareRegistrazione));
+			ALERT(Lingua(TXT_ConfermaRegistrazione));
+			document.loginFrom.USR.value = document.registrazioneForm.USR.value;
+			document.loginFrom.PWD.value = document.registrazioneForm.PWD.value;
+			LOGIN.getLogin();
 			MENU.chiudiMenu();
 		}
 		document.getElementById("registrazione").classList.remove("popup_back");

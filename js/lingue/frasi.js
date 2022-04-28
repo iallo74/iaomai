@@ -2411,6 +2411,11 @@ var TXT_ConfermareRegistrazione={
 	eng: "Registration successful. Log in to your email to certify your account and start using [§].",
 	esp: "" };
 	
+	var TXT_ConfermarRegistrazione={
+		ita: "Registrazione avvenuta correttamente. Inizia da subito ad utilizzare [§]!",
+		eng: "Registration successful. Start using [§] immediately!",
+		esp: "" };
+	
 	
 // CONTROLLI VERSIONI
 var TXT_MsgNoAnatomy={

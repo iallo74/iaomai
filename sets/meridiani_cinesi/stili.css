@@ -582,6 +582,13 @@ body:not(.smart) #meridianiSmart_cont div:not(.elencoSel):hover{
     border-radius: 20px !important;
     font-size: 11px !important;
 }
+@media (max-height: 700px){
+	.smart #meridianiSmart_cont div{
+		width: 37px !important;
+		height: 37px !important;
+		line-height: 37px !important;
+	}
+}
 .sm_legno{
 	border:1px solid #009900;
 }

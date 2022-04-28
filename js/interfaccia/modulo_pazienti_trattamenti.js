@@ -2511,17 +2511,15 @@ var PAZIENTI_TRATTAMENTI = {
 			var n=-1;
 			var TRS_clone = clone(DB.pazienti.data[PAZIENTI.idCL].trattamenti);
 			var TRS = [];			
-			for(i=TRS_clone.length-1;i>0;i--){
-				
+			for(i=TRS_clone.length-1;i>=0;i--){
 			   if(TRS_clone[i].LabelCiclo==LabelCiclo)TRS.push(TRS_clone[i]);
-			}
-			
+			} 
 			TRS.sort(sort_by("TipoTrattamento", false));
 			var f = 0;
 			for(i in TRS){
 				if(TRS[i].TipoTrattamento=='A')TRS[i].p = f;
 			}
-			TRS.sort(sort_by("TimeTrattamento", true, parseInt));
+			TRS.sort(sort_by("TimeTrattamento", false, parseInt));
 			for(i in TRS){
 				f++;
 				if(TRS[i].TipoTrattamento!='A')TRS[i].p = f;

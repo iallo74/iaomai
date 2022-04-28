@@ -92,6 +92,7 @@ function INIT(){
 	document.head.removeChild(document.getElementById("js_interfaccia_modulo_pazienti_saldi_js"));
 	document.head.removeChild(document.getElementById("js_interfaccia_modulo_pazienti_filtri_js"));
 	
+	
 	DB._reset(); // lasciare qui
 	LOGIN.verLogin();
 	
