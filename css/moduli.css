@@ -26,11 +26,6 @@
 	padding:0px !important;
 }
 
-/* scheda ANATOMIA */
-.tab_anatomia:not(.schLato) #btnMenuScheda svg circle{
-	fill: #FFF !important;
-}
-
 .scheda_utente #scheda_titolo{
     background: #383737 !important;
     background: -moz-linear-gradient(top, #6a6a6b 0%, #383737 100%) !important;
