@@ -430,6 +430,8 @@ function onWindowResize(){
 		if(document.getElementById("scheda").classList.contains("visSch"))s -= document.getElementById("scheda").scrollWidth;
 		traslStage =((w - s) / 2);
 		
+	}else{
+		traslStage = 0;
 	}
 	document.getElementById("container").getElementsByTagName("canvas")[0].style.marginLeft = traslStage + "px";
 	if(smartMenu && !document.body.classList.contains("nasSch"))h -= 54;
