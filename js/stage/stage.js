@@ -3,6 +3,7 @@ var camera, scene, renderer;
 var manichino, ANATOMIA, SETS;
 var SET = null;
 var obj_guide = null;
+var obj_guide_fisse = null;
 var mouse, raycaster;
 var manichinoCaricato=false;
 var clock = new THREE.Clock();
@@ -26,7 +27,6 @@ var inizio = true;
 
 
 function init() {
-	
 	if(!localStorage.colore)localStorage.colore = 2;
 	selCol(localStorage.colore);
 	// SCENE
@@ -130,8 +130,12 @@ function init() {
 	//if(typeof(localStorage.modello) == 'undefined')localStorage.modello = "donna"; // apertura automatica all'inizio
 	
 	document.getElementById("logo_inizio").style.display = 'none';
-	if(localStorage.modello && globals.memorizza)caricaModello(localStorage.modello);
-	else if(globals.open3d)caricaModello("donna");
+	
+	setTimeout( function(){
+	/*if(localStorage.modello && globals.memorizza)caricaModello(localStorage.modello);
+	else if(globals.open3d)caricaModello("donna");*/
+	if(localStorage.modello && globals.open3d)caricaModello(localStorage.modello);
+	//else if(globals.open3d)caricaModello("donna");
 	else if(globals.openMap && globals.mapOpened)caricaSet(globals.mapOpened);
 	else{
 		inizio = false;
@@ -153,6 +157,7 @@ function init() {
 		//}
 		}
 	}
+	},500);
 	onWindowResize();
 }
 
@@ -175,7 +180,8 @@ function caricaModello( cartella ){
 							imports, 
 							'MODELLO._init();MENU.aggiornaIconeModello();', 
 							document.getElementById("scripts") );
-
+	document.body.classList.add(globals.modello.cartella);
+	if(__(globals.modello.areaName,''))document.body.classList.add(__(globals.modello.areaName,''));
 	var els = document.getElementById("p1").getElementsByTagName("div");
 	for(var e=0;e<els.length;e++){
 		els[e].classList.remove("btnSel");
@@ -235,8 +241,9 @@ function scaricaModello( esci ){
 	
 	document.getElementById("pulsanti_modello").classList.remove('modelloScelto');
 	document.body.classList.remove('bodyModello');
-	
 	if(globals.modello.cartella){
+		document.body.classList.remove(globals.modello.cartella);
+		if(__(globals.modello.areaName,''))document.body.classList.remove(__(globals.modello.areaName,''));
 		document.getElementById("p_"+globals.modello.cartella).classList.remove("btnSel");
 		globals.initModello();
 		localStorage.modello = "";
@@ -268,11 +275,16 @@ function cambiaModello( cartella ){
 		if(chiedi){
 			scaricaSet();
 		}
-		if(cartella){			
+		if(cartella){		
 			if(cartella==globals.modello.cartella)return;
+			if(globals.modello.cartella){
+				document.body.classList.remove(globals.modello.cartella);	
+				if(__(globals.modello.areaName,''))document.body.classList.remove(__(globals.modello.areaName,''));	
+			}
 			MENU.chiudiAllSelected();
 			MENU.chEls();
-			if(muscleView)MODELLO.swMuscle(2);
+			//if(muscleView && globals.modello.livelli.indexOf("muscoli") == -1)MODELLO.swMuscle(2);
+			MODELLO.swMuscle(2);
 			MODELLO.removePrecarMuscle();
 			globals.modello.cartella=cartella;
 			caricaModello(globals.modello.cartella);
@@ -311,10 +323,10 @@ function caricaSet( cartella, el ){
 		globals.set.cartella = cartella;
 		globals.set.setSel = el;
 		var modelli = filtraModelli(cartella);
-		/*if(modelli.indexOf(globals.modello.cartella) == -1){
+		if(modelli.indexOf(globals.modello.cartella) == -1 && globals.modello.cartella){
 			caricaModello(modelli[0]);
 			return;
-		}*/
+		}
 		globals.set.imports.push(globals.siglaLingua+".js");
 		visLoader(globals.set.txtLoading);
 		var imports = clone(globals.set.imports);
@@ -641,8 +653,6 @@ function centro(){ // riporta al centro
 	camera.position.set(0,0,22);
 	camera.lookAt(camera.position);
 	MENU.disBtnCentro();
-	
-	//document.getElementById("logo_inizio").style.display = 'none'; // solo per la prima volta
 }
 function zoom(n){
 	var zoomAtt = Math.round(manichinoCont.position.z)+n*2;
@@ -653,7 +663,7 @@ function zoom(n){
 function Canvas2Img(){
 	return renderer.domElement.toDataURL();
 }
-function toScreenPosition(obj, camera){ // funzione per individuare la posizione sullo schermo di un oggetto
+function toScreenPosition( obj, camera ){ // funzione per individuare la posizione sullo schermo di un oggetto
     var vector = new THREE.Vector3();
 
     var widthHalf = 0.5*renderer.context.canvas.scrollWidth;
@@ -670,7 +680,7 @@ function toScreenPosition(obj, camera){ // funzione per individuare la posizione
         y: vector.y
     };
 }
-function toScreenPosition2(obj, n){ // il punto "n" della geometria nello schermo
+function toScreenPosition2( obj, n ){ // il punto "n" della geometria nello schermo
 	if(typeof(obj) == 'undefined')return;
 	var widthHalf = 0.5*renderer.context.canvas.scrollWidth;
 	var heightHalf = 0.5*renderer.context.canvas.scrollHeight;
@@ -703,7 +713,14 @@ function selCol(n){
 	MODELLO.MAT.materialVisceri.color = new THREE.Color( MODELLO.MAT.colsVisceri[localStorage.colore] );
 	MODELLO.MAT.materialPelle.color = new THREE.Color( MODELLO.MAT.colsPelle[localStorage.colore] );
 }
-
+function getCenterPoint( mesh ){ // trova il punto centrale di una mesh
+    var geometry = mesh.geometry;
+    geometry.computeBoundingBox();
+    var center = new THREE.Vector3();
+    geometry.boundingBox.getCenter( center );
+    //mesh.localToWorld( center );
+    return center;
+}
 
 
 	

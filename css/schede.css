@@ -716,6 +716,9 @@ body:not(.bodyStyled2) #scheda_testo2{
     min-width: 270px;
     width: 50%;
 }
+.smart .col50{
+    width: 100% !important;
+}
 
 /* il MENU degli strumenti della scheda (stampa e download) */
 #btnMenuScheda{

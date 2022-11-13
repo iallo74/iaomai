@@ -1669,6 +1669,13 @@ body:not(.smart) #rgApplicaFiltri{
     left: 19px;
 	overflow:hidden;
 }
+.smart.android #tt_mezzival{
+	width: 240px;
+    height: 78px;
+    white-space: normal;
+    text-align: left;
+    border-radius: 10px;
+}
 #tt_mezzival span{
     width:30px;
 	height:30px;
@@ -1679,6 +1686,11 @@ body:not(.smart) #rgApplicaFiltri{
 	background-position:center center;
 	margin-top: -1px;
     cursor: pointer;
+}
+.smart.android #tt_mezzival span{
+    width:40px !important;
+	height:40px !important;
+    border-bottom: 1px solid rgba(0,0,0,0.15);
 }
 #tt_mezzival span:first-child{
 	border:none;

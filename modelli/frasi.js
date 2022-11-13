@@ -15,6 +15,11 @@
 		eng: "Muscle",
 		esp: "" };
 		
+	TXT_Area = {
+		ita: "",
+		eng: "",
+		esp: "" };
+		
 	TXT_Osso = {
 		ita: "Osso",
 		eng: "Bone",
@@ -457,6 +462,11 @@
 			ita: "NAVICOLARE",
 			eng: "NAVICULAR",
 			esp: "" };	
+					
+	TXT_Osso_CARTILAGINE_AURICOLARE = {
+			ita: "Cartilagine",
+			eng: "Cartilage",
+			esp: "" };	
 			
 	TXT_Muscolo_GRAN_DORSALE = {
 			ita: "GRAN DORSALE",
@@ -865,6 +875,10 @@
 			ita: "Muscoli della testa",
 			eng: "Head's muscles",
 			esp: "" };
+	TXT_Zona_ORECCHIO = {
+			ita: "Aree dell'orecchio",
+			eng: "Ear's areas",
+			esp: "" };
 	TXT_Zona_COLLO = {
 			ita: "Muscoli del collo",
 			eng: "Neck's muscles",
@@ -880,5 +894,128 @@
 	TXT_Zona_ARTO_INFERIORE = {
 			ita: "Muscoli dell'arto inferiore",
 			eng: "Lower limb's muscles",
+			esp: "" };
+
+
+	// aree orecchio
+	TXT_Muscolo_TUBERCOLO_DI_DARWIN = {
+			ita: "TUBERCOLO DI DARWIN",
+			eng: "",
+			esp: "" },
+	TXT_Muscolo_CODA_DELL_ELICE = {
+			ita: "CODA DELL'ELICE",
+			eng: "",
+			esp: "" },
+	TXT_Muscolo_CORPO_DELL_ELICE = {
+			ita: "CORPO DELL'ELICE",
+			eng: "",
+			esp: "" },
+	TXT_Muscolo_BRANCA_MONTANTE_DELL_ELICE = {
+			ita: "BRANCA MONTANTE DELL'ELICE",
+			eng: "",
+			esp: "" },
+	TXT_Muscolo_GINOCCHIO_DELL_ELICE = {
+			ita: "GINOCCHIO DELL'ELICE",
+			eng: "",
+			esp: "" },
+	TXT_Muscolo_RADICE_DELL_ELICE = {
+			ita: "RADICE DELL'ELICE",
+			eng: "",
+			esp: "" },
+	TXT_Muscolo_DOCCIA_SCAFOIDE = {
+			ita: "DOCCIA SCAFOIDE",
+			eng: "",
+			esp: "" },
+	TXT_Muscolo_CRESTA_DELL_AURICOLA = {
+			ita: "CRESTA DELL'AURICOLA",
+			eng: "",
+			esp: "" },
+	TXT_Muscolo_FOSSETTA_TRIANGOLARE = {
+			ita: "FOSSETTA TRIANGOLARE",
+			eng: "",
+			esp: "" },
+	TXT_Muscolo_EMICONCA_SUPERIORE = {
+			ita: "EMICONCA SUPERIORE",
+			eng: "",
+			esp: "" },
+	TXT_Muscolo_EMICONCA_INFERIORE = {
+			ita: "EMICONCA INFERIORE",
+			eng: "",
+			esp: "" },
+	TXT_Muscolo_TRAGO = {
+			ita: "TRAGO",
+			eng: "",
+			esp: "" },
+	TXT_Muscolo_ANTITRAGO = {
+			ita: "ANTITRAGO",
+			eng: "",
+			esp: "" },
+	TXT_Muscolo_ANGOLO_ELICO_LOBULARE = {
+			ita: "ANGOLO ELICO-LOBULARE",
+			eng: "",
+			esp: "" },
+	TXT_Muscolo_LOBO = {
+			ita: "LOBO",
+			eng: "",
+			esp: "" },
+	TXT_Muscolo_SOLCO_PRELOBULARE = {
+			ita: "SOLCO PRE-LOBULARE",
+			eng: "",
+			esp: "" },
+	TXT_Muscolo_SOLCO_SOTTO_ANTITRAGALE = {
+			ita: "SOLCO SOTTO-ANTITRAGALE",
+			eng: "",
+			esp: "" },
+	TXT_Muscolo_FORO_ACUSTICO_ESTERNO = {
+			ita: "FORO ACUSTICO ESTERNO",
+			eng: "",
+			esp: "" },
+	TXT_Muscolo_EMINENZA_LOBOLARE = {
+			ita: "EMINENZA LOBULARE",
+			eng: "",
+			esp: "" },
+	TXT_Muscolo_FOSSA_RETROLOBULARE = {
+			ita: "FOSSA RETRO-LOBULARE",
+			eng: "",
+			esp: "" },
+	TXT_Muscolo_CONVESSITA_EMICONCA_INFERIORE = {
+			ita: "CONVESSITA' EMICONCA INFERIORE",
+			eng: "",
+			esp: "" },
+	TXT_Muscolo_CONVESSITA_EMICONCA_SUPERIORE = {
+			ita: "CONVESSITA' EMICONCA SUPERIORE",
+			eng: "",
+			esp: "" },
+	TXT_Muscolo_EMINENZA_ELICALE = {
+			ita: "EMINENZA ELICALE",
+			eng: "",
+			esp: "" },
+	TXT_Muscolo_CONVESSITA_FOSSETTA_TRIANGOLARE = {
+			ita: "CONVESSITA' FOSSA TRIANGOLARE",
+			eng: "",
+			esp: "" },
+	TXT_Muscolo_DOCCIATURA_ANTELICALE_POSTERIORE = {
+			ita: "DOCCIATURA ANTELICALE POSTERIORE",
+			eng: "",
+			esp: "" },
+	TXT_Muscolo_EMINENZA_CENTRALE = {
+			ita: "EMINENZA CENTRALE",
+			eng: "",
+			esp: "" },
+	TXT_Muscolo_FOSSETTA_CENTRALE_POSTERIORE = {
+			ita: "FOSSETTA CENTRALE POSTERIORE",
+			eng: "",
+			esp: "" },
+	TXT_Muscolo_ANTELICE = {
+			ita: "ANTELICE",
+			eng: "",
+			esp: "" },
+	TXT_Muscolo_RAMO_INFERIORE = {
+			ita: "RAMO INFERIORE",
+			eng: "",
+			esp: "" },
+	TXT_Muscolo_RAMO_SUPERIORE = {
+			ita: "RAMO SUPERIORE",
+			eng: "",
 			esp: "" };
 		

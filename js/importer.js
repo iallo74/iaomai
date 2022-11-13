@@ -113,6 +113,7 @@ var IMPORTER = {
         'js/interfaccia/schede.js',
         'js/interfaccia/modulo_pazienti.js',
         'js/interfaccia/modulo_pazienti_trattamenti.js',
+        'js/interfaccia/modulo_pazienti_sets.js',
         'js/interfaccia/modulo_pazienti_saldi.js',
         'js/interfaccia/modulo_pazienti_filtri.js',
         'js/interfaccia/modulo_fornitori.js',
@@ -136,7 +137,7 @@ var IMPORTER = {
         'js/addings.js'
 	],
 	jss: [],
-	produzione: true, // se settato a false carica solo i files locali
+	produzione: false, // se settato a false carica solo i files locali
 	lista: null,
 	funct: '',
 	dest: null,
@@ -403,7 +404,6 @@ function tasti(e){
 	if(tasto == 18)comb3=true; // ALT
 	if(tasto == 37 && comb3)return false; // FR SX
 	if(tasto == 39 && comb3)return false; // FR DX
-	if(tasto == 73 && comb1 && comb2)return false; // CTRL + SHIFT + i
 	if(tasto == 123)return false; // F12
 	if(tasto == 73 && comb1 && comb2)return false; // CTRL + SHIFT + i
 	if(tasto == 83 && comb1 && comb2)return false; // CTRL + SHIFT + s

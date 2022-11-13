@@ -49,7 +49,7 @@ MODELLO.MAT = {
 		color: new THREE.Color( 1, 1, 1 ),
 		flatShading:false,
 		transparent:true,
-		opacity:0.6,
+		opacity:1,//0.6,
 		roughness:1,
 		metalness: 0.4,
 		side: 3

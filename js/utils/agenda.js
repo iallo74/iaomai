@@ -309,6 +309,7 @@ var agenda = {
 						"TestoTrattamento": '',
 						"Prescrizione": '',
 						"puntiTsuboMap": "[]",
+						"puntiAuriculoMap": "[]",
 						"sintomi": "[]",
 						"meridiani": "[]",
 						"gallery": "[]",

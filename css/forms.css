@@ -886,24 +886,28 @@ body:not(.smart) .stampaBtn{
     float: right;
 }
 #puntiTsuboMap,
-#meridianiTsuboMap{ /* PAZIENTI */
+#meridianiTsuboMap,
+#puntiAuriculoMap{ /* PAZIENTI */
 	height:auto !important;
 	margin-top: 10px;
 }
 #puntiTsuboMap div,
-#meridianiTsuboMap div{ /* PAZIENTI */
+#meridianiTsuboMap div,
+#puntiAuriculoMap div{ /* PAZIENTI */
 	margin-top:0px !important;
 	border-bottom:none !important;
 	margin-bottom: 2px !important;
     border-radius: 6px;
 	background-color:rgba(0,0,0,0.05);
 }
-#puntiTsuboMap div{ /* PAZIENTI */
+#puntiTsuboMap div,
+#puntiAuriculoMap div{ /* PAZIENTI */
 	height:auto !important;
 	line-height:normal !important;
 }
 #puntiTsuboMap img.noMod
-#meridianiTsuboMap img.noMod{ /* PAZIENTI */
+#meridianiTsuboMap img.noMod,
+#puntiAuriculoMap img.noMod,{ /* PAZIENTI */
 	vertical-align: -webkit-baseline-middle;
 	margin-top: -9px;
 	height: 15px;
@@ -1371,7 +1375,8 @@ _:-webkit-full-screen,
 #scheda .p_fuoco_supplementare span{
 	color:#FFF !important;
 }
-body:not(.touch) #puntiTsuboMap .dettPunto:hover{
+body:not(.touch) #puntiTsuboMap .dettPunto:hover,
+body:not(.touch) #puntiAuriculoMap .dettPunto:hover{
 	background-color:rgba(0,0,0,0.1) !important;
 }
 #dettagliCont .dettPunto,

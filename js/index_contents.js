@@ -80,7 +80,7 @@ var sets = {
 		dims: [
 			65,
 			7,
-			8100,
+			4,
 			38,
 			12,
 			3,
@@ -99,6 +99,47 @@ var sets = {
 		opening: true,
 		dataPubblicazione: ''
 	},
+	auricologia: {
+		nome: Lingua(TXT_AuriculoMap),
+		sottotitolo: Lingua(TXT_AuriculoMapST),
+		descrizione: Lingua(TXT_AuriculoMapDESCR),
+		modelli: [
+			"orecchio"
+		],
+		imports: [
+			'frasi.js',
+			'geometrie.js',
+			'set.js',
+			'modulo_tsubo.js',
+			'modulo_patologie.js',
+			'modulo_punti.js',
+			'modulo_teoria.js',
+			'modulo_procedure.js',
+			'materiali.js',
+			'stili.css',
+			'stili_procedure.css',
+			'stili_tsubo.css'
+		],
+		dims: [
+			6,
+			8540,
+			38,
+			42,
+			12,
+			5,
+			4,
+			6,
+			52,
+			18,
+			7,
+			2
+		],
+		txtLoading: Lingua(TXT_CaricamentoMappe),
+		auth: false,
+		locked: false,
+		opening: true,
+		dataPubblicazione: ''
+	},
 	reflessologia_plantare: {
 		nome: Lingua(TXT_ReflessologiaPlantare),
 		sottotitolo: Lingua(TXT_ReflessologiaPlantareST),
@@ -113,23 +154,7 @@ var sets = {
 		auth: false,
 		locked: true,
 		opening: true,
-		dataPubblicazione: '2022-06'
-	},
-	auricologia: {
-		nome: Lingua(TXT_Auricologia),
-		sottotitolo: Lingua(TXT_AuricologiaST),
-		descrizione: Lingua(TXT_AuricologiaDESCR),
-		modelli: [
-			"orecchio"
-		],
-		imports: [
-		
-		],
-		txtLoading: Lingua(TXT_CaricamentoMappe),
-		auth: false,
-		locked: true,
-		opening: true,
-		dataPubblicazione: '2022-04'
+		dataPubblicazione: '2023-06'
 	},
 	trigger_points: {
 		nome: Lingua(TXT_TriggerPoints),
@@ -146,7 +171,7 @@ var sets = {
 		auth: false,
 		locked: true,
 		opening: true,
-		dataPubblicazione: '2022-10'
+		dataPubblicazione: '2023-10'
 	},
 	clients_full: {
 		nome: Lingua(TXT_MedicalFiles),
@@ -258,14 +283,25 @@ var modelli = {
 	orecchio: {
 		nome: Lingua(TXT_ModelloOrecchio),
 		imports: [
-			'pelle_compr.js'
+			'Areas_Ear.js',
+			'mappa_aree.js',
+			'pelle_compr.js',
+			'ossa_compr.js',
+			'guide_compr.js'
 		],
 		dims: [
-			67
+			251,
+			48,
+			2110,
+			937,
+			12
 		],
 		livelli: [
-			'pelle'
+			'pelle',
+			'ossa',
+			'muscoli' // usati come aree
 		],
+		areaName: 'Area',
 		rifletti: true,
 		txtLoading: Lingua(TXT_CaricamentoModelloOrecchio),
 		lastVer: 1

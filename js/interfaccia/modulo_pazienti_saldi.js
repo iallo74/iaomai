@@ -40,22 +40,19 @@ var PAZIENTI_SALDI = {
 				}
 			}
 			var RIS=DaSaldare-Saldato;
-	
-			if(vuoto)HTML += '<p class="noResults lista listaSaldi">'+Lingua(TXT_NoResSaldi)+'...</div>';
-			else{
-				var HTML_provv = '';
-				if(RIS>0){
-					HTML_provv += 	'<p id="totSaldi">' +
-									'	<i>'+htmlEntities(Lingua(TXT_AncoraSaldare))+':</i> ' +
-									'	<span';
-					if(RIS<0)HTML_provv += 	' style="background-color:#F00;' +
-									 		'		  padding-left:4px;' +
-									 		'		  padding-right:4px;' +
-									 		'		  border-radius:4px;"';
-					HTML_provv += 	'>&euro; '+ArrotondaEuro(RIS) +
-									'	</span>' +
-									'</p>';
-				}
+			var HTML_provv = 	'<p id="totSaldi">' +
+								'	<i>'+htmlEntities(Lingua(TXT_AncoraSaldare))+':</i> ' +
+								'	<span';
+			if(RIS<0)HTML_provv += 	' style="background-color:#F00;' +
+									'		  padding-left:4px;' +
+									'		  padding-right:4px;' +
+									'		  border-radius:4px;"';
+			HTML_provv += 	'>&euro; '+ArrotondaEuro(RIS) +
+							'	</span>' +
+							'</p>';
+			if(vuoto){
+				HTML += HTML_provv + '<p class="noResults lista listaSaldi">'+Lingua(TXT_NoResSaldi)+'...</div>';
+			}else{
 				HTML = '<div class="lista listaSaldi">' + HTML_provv + HTML + '</div>';
 			}
 			

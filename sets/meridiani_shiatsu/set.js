@@ -166,6 +166,7 @@ SET = {
 							'<i class="elMenu" id="help_set" onClick="GUIDA.visFumetto(\'guida_set\',true,true);">?</i></span>';
 		var contElenco = '';
 		
+		contPulsanti += '<div id="pulsante_modello" onClick="cambiaModello(\'donna\');">Apri il modello 3D</div>';
 		// meridiani
 		contPulsanti += '<div id="pulsante_meridiani" class="frdx" onClick="SCHEDA.selElenco(\'meridiani\');">'+Lingua(TXT_Meridiani)+'</div>';
 		contElenco += '<div id="lista_meridiani"></div>';

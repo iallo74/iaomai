@@ -1,6 +1,21 @@
 @charset "utf-8";
 /* CSS Document */
 
+#pulsante_modello{
+	background-image: url(../anatomy_full/img/logoMenuN.png) !important;
+    background-repeat: no-repeat !important;
+    background-position: calc(100% - 10px)center !important;
+    background-size: auto 32px!important;
+    padding-right: 47px !important;
+    background-color: transparent !important;
+    box-shadow: none !important;
+    text-align: right !important;
+    margin-bottom: 10px !important;
+}
+body.donna #pulsante_modello,
+body.uomo #pulsante_modello{
+	display:none;
+}
 
 .ideogrammaTsubo{
 	float:right;

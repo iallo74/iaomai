@@ -17,6 +17,7 @@ var MODELLO = {
 	opAtt: 1,
 	orOp: -1,
 	tipoPelle: '',
+	flip: false,
 	
 	_init: function(modello){
 				
@@ -27,6 +28,7 @@ var MODELLO = {
 		this.meshMuscoli = null;
 		this.meshOssa = null;
 		this.meshVisceri = null;
+		this.MAT.materialMuscoli = [];
 		
 		if(localStorage.tipoPelle)MODELLO.tipoPelle = localStorage.tipoPelle;
 		
@@ -59,7 +61,11 @@ var MODELLO = {
 				}
 				document.getElementById("p_visceri").classList.add("livelli_listed");
 			}
-			document.getElementById("el_visceri").innerHTML = htmlVisceri;
+			document.getElementById("el_visceri").innerHTML = __(htmlVisceri,'');
+		}else{
+			visceri = new THREE.Group();
+			visceri.name = 'VISCERI';
+			ANATOMIA.add( visceri );
 		}
 		
 		if(globals.modello.livelli.indexOf("ossa") > -1){
@@ -91,8 +97,12 @@ var MODELLO = {
 				}
 				document.getElementById("p_ossa").classList.add("livelli_listed");
 			}
-			document.getElementById("el_ossa").innerHTML = htmlOssa;
+			document.getElementById("el_ossa").innerHTML = __(htmlOssa,'');
 			
+		}else{
+			ossa = new THREE.Group();
+			ossa.name = 'OSSA';
+			ANATOMIA.add( ossa );
 		}
 		
 		if(globals.modello.livelli.indexOf("pelle") > -1){ // lasciare per ultima per le trasparenze
@@ -100,22 +110,25 @@ var MODELLO = {
 			
 			var loader = new THREE.ObjectLoader(); // PELLE
 			this.meshPelle = loader.parse( obj_pelle );
+			this.meshPelle.name = "PELLE";
 			for(var n=0;n<this.meshPelle.children.length;n++){
 				this.meshPelle.children[n].material = this.MAT["materialPelle"+MODELLO.tipoPelle];
 				this.imgsAtt[n] = null;
 			}
 			ANATOMIA.add( this.meshPelle );
 			MODELLO.op('Pelle',MENU.getOp('Pelle')); // ri-setto al cambio del modello
+
 			if(globals.modello.livelli.indexOf("muscoli") > -1){
 				this.MAT.mappaMuscoli();
 				if(muscleView){
 					muscleView = false;
-					MODELLO.swMuscle(true);
+					MODELLO.swMuscle(2);
 				}else{
 					MODELLO.precarMuscle();
 				}
 			}
 			/* elenco muscoli */
+			var arrayMuscoli_ORECCHIO = [];
 			var arrayMuscoli_TESTA = [];
 			var arrayMuscoli_COLLO = [];
 			var arrayMuscoli_TORSO = [];
@@ -130,6 +143,9 @@ var MODELLO = {
 				}
 				
 				// ordino alfabeticamente
+				arrayMuscoli_ORECCHIO.sort(function(a,b){
+					return a.nome.localeCompare(b.nome);
+				});
 				arrayMuscoli_TESTA.sort(function(a,b){
 					return a.nome.localeCompare(b.nome);
 				});
@@ -148,39 +164,51 @@ var MODELLO = {
 				
 				var htmlMuscoli = '';
 					
-				htmlMuscoli += '<i>'+stripslashes(Lingua(TXT_Zona_TESTA))+'</i><div onMouseLeave="MODELLO.isolaMuscolo(this,\'out\');">';
-				for(o in arrayMuscoli_TESTA){
-					htmlMuscoli += '<p id="Muscolo_'+arrayMuscoli_TESTA[o].muscolo+'" onClick="MODELLO.isolaMuscolo(this)" onMouseOver="MODELLO.isolaMuscolo(this,\'over\');">'+stripslashes(arrayMuscoli_TESTA[o].nome)+'</p>';
+				if(arrayMuscoli_TESTA.length){
+					htmlMuscoli += '<i>'+stripslashes(Lingua(TXT_Zona_TESTA))+'</i><div onMouseLeave="MODELLO.isolaMuscolo(this,\'out\');">';
+					for(o in arrayMuscoli_TESTA){
+						htmlMuscoli += '<p id="Muscolo_'+arrayMuscoli_TESTA[o].muscolo+'" onClick="MODELLO.isolaMuscolo(this)" onMouseOver="MODELLO.isolaMuscolo(this,\'over\');">'+stripslashes(arrayMuscoli_TESTA[o].nome)+'</p>';
+					}
+					htmlMuscoli += '</div>';
 				}
-				htmlMuscoli += '</div>';
-				
-				htmlMuscoli += '<i>'+stripslashes(Lingua(TXT_Zona_COLLO))+'</i><div onMouseLeave="MODELLO.isolaMuscolo(this,\'out\');">';
-				for(o in arrayMuscoli_COLLO){
-					htmlMuscoli += '<p id="Muscolo_'+arrayMuscoli_COLLO[o].muscolo+'" onClick="MODELLO.isolaMuscolo(this)" onMouseOver="MODELLO.isolaMuscolo(this,\'over\');">'+stripslashes(arrayMuscoli_COLLO[o].nome)+'</p>';
+				if(arrayMuscoli_ORECCHIO.length){
+					htmlMuscoli += '<i>'+stripslashes(Lingua(TXT_Zona_ORECCHIO))+'</i><div onMouseLeave="MODELLO.isolaMuscolo(this,\'out\');">';
+					for(o in arrayMuscoli_ORECCHIO){
+						htmlMuscoli += '<p id="Muscolo_'+arrayMuscoli_ORECCHIO[o].muscolo+'" onClick="MODELLO.isolaMuscolo(this)" onMouseOver="MODELLO.isolaMuscolo(this,\'over\');">'+stripslashes(arrayMuscoli_ORECCHIO[o].nome)+'</p>';
+					}
+					htmlMuscoli += '</div>';
 				}
-				htmlMuscoli += '</div>';
-				
-				htmlMuscoli += '<i>'+stripslashes(Lingua(TXT_Zona_TORSO))+'</i><div onMouseLeave="MODELLO.isolaMuscolo(this,\'out\');">';
-				for(o in arrayMuscoli_TORSO){
-					htmlMuscoli += '<p id="Muscolo_'+arrayMuscoli_TORSO[o].muscolo+'" onClick="MODELLO.isolaMuscolo(this)" onMouseOver="MODELLO.isolaMuscolo(this,\'over\');">'+stripslashes(arrayMuscoli_TORSO[o].nome)+'</p>';
+				if(arrayMuscoli_COLLO.length){
+					htmlMuscoli += '<i>'+stripslashes(Lingua(TXT_Zona_COLLO))+'</i><div onMouseLeave="MODELLO.isolaMuscolo(this,\'out\');">';
+					for(o in arrayMuscoli_COLLO){
+						htmlMuscoli += '<p id="Muscolo_'+arrayMuscoli_COLLO[o].muscolo+'" onClick="MODELLO.isolaMuscolo(this)" onMouseOver="MODELLO.isolaMuscolo(this,\'over\');">'+stripslashes(arrayMuscoli_COLLO[o].nome)+'</p>';
+					}
+					htmlMuscoli += '</div>';
 				}
-				htmlMuscoli += '</div>';
-				
-				htmlMuscoli += '<i>'+stripslashes(Lingua(TXT_Zona_ARTO_SUPERIORE))+'</i><div onMouseLeave="MODELLO.isolaMuscolo(this,\'out\');">';
-				for(o in arrayMuscoli_ARTO_SUPERIORE){
-					htmlMuscoli += '<p id="Muscolo_'+arrayMuscoli_ARTO_SUPERIORE[o].muscolo+'" onClick="MODELLO.isolaMuscolo(this)" onMouseOver="MODELLO.isolaMuscolo(this,\'over\');">'+stripslashes(arrayMuscoli_ARTO_SUPERIORE[o].nome)+'</p>';
+				if(arrayMuscoli_TORSO.length){
+					htmlMuscoli += '<i>'+stripslashes(Lingua(TXT_Zona_TORSO))+'</i><div onMouseLeave="MODELLO.isolaMuscolo(this,\'out\');">';
+					for(o in arrayMuscoli_TORSO){
+						htmlMuscoli += '<p id="Muscolo_'+arrayMuscoli_TORSO[o].muscolo+'" onClick="MODELLO.isolaMuscolo(this)" onMouseOver="MODELLO.isolaMuscolo(this,\'over\');">'+stripslashes(arrayMuscoli_TORSO[o].nome)+'</p>';
+					}
+					htmlMuscoli += '</div>';
 				}
-				htmlMuscoli += '</div>';
-				
-				htmlMuscoli += '<i>'+stripslashes(Lingua(TXT_Zona_ARTO_INFERIORE))+'</i><div onMouseLeave="MODELLO.isolaMuscolo(this,\'out\');">';
-				for(o in arrayMuscoli_ARTO_INFERIORE){
-					htmlMuscoli += '<p id="Muscolo_'+arrayMuscoli_ARTO_INFERIORE[o].muscolo+'" onClick="MODELLO.isolaMuscolo(this)" onMouseOver="MODELLO.isolaMuscolo(this,\'over\');">'+stripslashes(arrayMuscoli_ARTO_INFERIORE[o].nome)+'</p>';
+				if(TXT_Zona_ARTO_SUPERIORE.length){
+					htmlMuscoli += '<i>'+stripslashes(Lingua(TXT_Zona_ARTO_SUPERIORE))+'</i><div onMouseLeave="MODELLO.isolaMuscolo(this,\'out\');">';
+					for(o in arrayMuscoli_ARTO_SUPERIORE){
+						htmlMuscoli += '<p id="Muscolo_'+arrayMuscoli_ARTO_SUPERIORE[o].muscolo+'" onClick="MODELLO.isolaMuscolo(this)" onMouseOver="MODELLO.isolaMuscolo(this,\'over\');">'+stripslashes(arrayMuscoli_ARTO_SUPERIORE[o].nome)+'</p>';
+					}
+					htmlMuscoli += '</div>';
 				}
-				htmlMuscoli += '</div>';
-				
+				if(arrayMuscoli_ARTO_INFERIORE.length){
+					htmlMuscoli += '<i>'+stripslashes(Lingua(TXT_Zona_ARTO_INFERIORE))+'</i><div onMouseLeave="MODELLO.isolaMuscolo(this,\'out\');">';
+					for(o in arrayMuscoli_ARTO_INFERIORE){
+						htmlMuscoli += '<p id="Muscolo_'+arrayMuscoli_ARTO_INFERIORE[o].muscolo+'" onClick="MODELLO.isolaMuscolo(this)" onMouseOver="MODELLO.isolaMuscolo(this,\'over\');">'+stripslashes(arrayMuscoli_ARTO_INFERIORE[o].nome)+'</p>';
+					}
+					htmlMuscoli += '</div>';
+				}
 				document.getElementById("p_muscoli").classList.add("livelli_listed");
 			}
-			document.getElementById("el_muscoli").innerHTML = htmlMuscoli;
+			document.getElementById("el_muscoli").innerHTML = __(htmlMuscoli);
 		}else{
 			MODELLO.swMuscle(2);
 		}
@@ -200,6 +228,7 @@ var MODELLO = {
 				this.meshGuide.children[n].material = MODELLO.MAT.lineGuideSel;
 				this.meshGuide.children[n].visible = false;
 				if(this.meshGuide.children[n].name.indexOf("Muscolo_") > -1){
+						
 					var array = this.meshGuide.children[n].geometry.attributes.position.array;
 					
 					var geometry = new THREE.SphereGeometry( 0.05, 8, 8 );
@@ -219,10 +248,13 @@ var MODELLO = {
 			ANATOMIA.add( this.meshGuide );
 			document.getElementById("legende").classList.add("visSch");
 		}else{
+			pin = new THREE.Group();
+			pin.name = 'PIN';
+			ANATOMIA.add( pin );
 			document.getElementById("legende").classList.remove("visSch");
 		}
 		ANATOMIA.add( this.meshMuscoli ); 
-		
+		this.removePrecarMuscle();
 		
 		manichino.add( ANATOMIA );
 					
@@ -276,10 +308,13 @@ var MODELLO = {
 		raycastDisable=false;
 		if(inizio){
 			MODELLO.op('Pelle',1);
-			if(globals.openMap && globals.mapOpened && !globals.set.cartella)caricaSet(globals.mapOpened); // riapro il set al caricamento
-			if(localStorage.set && globals.memorizza){
+			if(globals.openMap && globals.mapOpened && !globals.set.cartella){
+				postApreSet = true;
+				caricaSet(globals.mapOpened,document.getElementById("p_"+globals.mapOpened)); // riapro il set al caricamento
+			}
+			/*if(localStorage.set && globals.memorizza){
 				caricaSet(localStorage.set,document.getElementById("p_"+localStorage.set));
-			}//else postApreSet = false;
+			}//else postApreSet = false;*/
 			//document.getElementById("logo_inizio").style.display = 'none';
 			if(getVar("demo")=='anatomymap'){
 				visLoader('');
@@ -367,9 +402,10 @@ var MODELLO = {
 						pN=nome.split("_(");
 						nome = pN[0];
 					}
-					addType=Lingua(TXT_Muscolo)+" ";
+					addType=Lingua(eval("TXT_"+__(globals.modello.areaName,'Muscolo')))+" ";
 					pass=true;
 				}
+				
 				txtTT = addType+stripslashes(Lingua(eval("TXT_"+nome)));
 				
 				// verifico le autorizzazioni
@@ -413,7 +449,11 @@ var MODELLO = {
 	
 	rifletti: function(){ // riflette il manichino
 		ANATOMIA.applyMatrix(new THREE.Matrix4().makeScale(-1, 1, 1));
+		if(SETS)SETS.applyMatrix(new THREE.Matrix4().makeScale(-1, 1, 1));
+		manichinoCont.rotation.y = 0 - manichinoCont.rotation.y;
 		document.getElementById("p_rifletti").classList.toggle("btnSel");
+		MODELLO.flip = !MODELLO.flip;
+		try{SET._rifletti();}catch(err){}
 	},
 	precarMuscle: function(){
 		for(m=0;m<MODELLO.MAT.materialMuscoli.length;m++){
@@ -421,6 +461,7 @@ var MODELLO = {
 			var g = new THREE.Mesh( gProvv, MODELLO.MAT.materialMuscoli[m]); 
 			g.material.opacity = 0;
 			g.name = 'preM'+m;
+			g.depthTest = false;
 			g.position.y = 1;
 			manichino.add( g );
 		}
@@ -554,7 +595,6 @@ var MODELLO = {
 		MENU.aggiornaIconeModello();
 	},
 	slw: function( event, livello ){
-		
 		SLIDER.demolt = 2;
 		var sliderDest = document.getElementById('s_'+livello).getElementsByTagName('div')[0];
 		var modelloAperto = document.getElementById("pulsanti_modello").classList.contains("visSch");
@@ -574,7 +614,7 @@ var MODELLO = {
 		var x = touchable ? event.touches[ 0 ].pageX : event.clientX;
 		var y = touchable ? event.touches[ 0 ].pageY : event.clientY;
 		var w = 210 / SLIDER.demolt;
-		if(livello=='pelle')w = 240 / SLIDER.demolt;
+		if(livello=='pelle' || !document.getElementById("el_"+livello).innerHTML)w = 240 / SLIDER.demolt;
 		var posSlider = MENU.getOp(livello)*(w - 12);
 		var posCont = MENU.getOp(livello)*(w - 12) + 17;
 		document.getElementById("sliderAnatomia").style.width = (w+22) + 'px';
@@ -586,6 +626,13 @@ var MODELLO = {
 		sliderBtn.style.marginLeft = posSlider + 'px';
 		document.getElementById("sliderAnatomia").style.left = (x - posCont) + 'px';
 		document.getElementById("sliderAnatomia").style.top = (y - 16) + 'px';
+		if(livello!='pelle' && livello!='muscoli'){
+			var l = 'Pelle';
+			if(muscleView)l = 'Muscoli';
+			if(MENU.getOp(l.toLowerCase()) > 0.6){
+				MODELLO.op(l,0.6);
+			}
+		}
 	},
 	filtraAnatomia: function(){
 		var vis = true;
@@ -728,13 +775,22 @@ var MODELLO = {
 		var id = leg.id.substr(4,leg.id.length-4);
 		if(id.substr(id.length-3,3)=='_SX' || id.substr(id.length-3,3)=='_DX')id=id.substr(0,id.length-3);
 		var p = '';
+		var noIsola = true;
+		try{
+			var els = MODELLO.MAT.masks[ id.substr(id.indexOf("_")+1,id.length-id.indexOf("_")-1) ].masks;
+			for(e=0;e<els.length;e++){
+				if(els[e] != '')noIsola=false;
+			}
+		}catch(error){
+			noIsola = false;
+		};
 		//console.log(id);
 		if(DB_anatomia[id])txt += '<div class="s" onClick="MODELLO.caricaAnatomia(\''+id+'\',true);">'+Lingua(eval("TXT_ApriScheda"))+'</div>';
 		txt += '<div class="c" onClick="MODELLO.centraAnatomia(\''+leg.dataset.idObj+'\');">'+Lingua(eval("TXT_CentraDaQui"))+'</div>';
 		var isola = 'MODELLO.isola'+pN[0]+'(document.getElementById(\''+n+'\'))';
 		txt += '<div class="d" onClick="'+isola+';">'+Lingua(eval("TXT_Deseleziona"))+'</div>';
 		if(globals.pezziSelezionati.length > 1)txt += '<div class="a" onClick="MENU.chiudiAllSelected();'+isola+';">'+Lingua(eval("TXT_DeselezionaAltri"))+'</div>';
-		if(MODELLO.isolamento == null)txt += '<div class="i" onClick="MENU.chiudiAllSelected();'+isola+';MODELLO.isolaAnatomia(\''+pN[0]+'\',\''+leg.dataset.idObj+'\');">'+Lingua(eval("TXT_Isola"))+'</div>';
+		if(MODELLO.isolamento == null && !noIsola)txt += '<div class="i" onClick="MENU.chiudiAllSelected();'+isola+';MODELLO.isolaAnatomia(\''+pN[0]+'\',\''+leg.dataset.idObj+'\');">'+Lingua(eval("TXT_Isola"))+'</div>';
 		var x = tCoord(leg);
 		document.getElementById("context_menu").classList.add("tooltipVis");
 		document.getElementById("context_menu").innerHTML=txt;
@@ -988,7 +1044,7 @@ var MODELLO = {
 			}
 		}
 		MODELLO.MAT.mask = [];
-		for(m=0;m<4;m++){
+		for(m=0;m<MODELLO.MAT.materialMuscoli.length;m++){
 			var IMG = '';
 			if(muscolo){
 				IMG = decomprA(MODELLO.MAT.masks[muscolo].masks[m]);
@@ -999,7 +1055,7 @@ var MODELLO = {
 			}
 			if(!IMG)IMG = decomprA(MODELLO.MAT.maskVuota);
 			IMG = 'data:image/jpeg;base64,' + IMG;
-			if(!modo)MODELLO.muscleBlock = 4;
+			if(!modo)MODELLO.muscleBlock = MODELLO.MAT.materialMuscoli.length;
 			if(!desel)MODELLO.mergeImages( m, IMG, modo, el );
 			else MODELLO.diffImages( m, IMG, modo, el );
 		}
@@ -1024,7 +1080,7 @@ var MODELLO = {
 		//if(!MODELLO.muscleSel)MODELLO.tuttiMuscoli();
 	},
 	tuttiMuscoli: function(){
-		for(m=0;m<4;m++){
+		for(m=0;m<MODELLO.MAT.materialMuscoli.length;m++){
 			MODELLO.MAT.materialMuscoli[m].alphaMap = null;
 			MODELLO.meshPelle.children[m].material.alphaMap = null;
 			MODELLO.meshPelle.children[m].material.needsUpdate = true;
@@ -1121,7 +1177,6 @@ var MODELLO = {
 			ctx.putImageData(imgData, 0, 0);
 			MODELLO.mergeImages( m, c.toDataURL("image/jpeg"), modo, el, 'multiply' );
 		}
-		
 	},
 	azRicercaAnatomia: function( ELEM, tipo, pin ){
 		if(tipo == 'osso')tipo = 'ossa';

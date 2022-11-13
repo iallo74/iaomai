@@ -589,7 +589,7 @@ DB.set= {
 					ChiaviTsubo: "", 
 				},
 				{
-					NomeTsubo: "21.GB. Ianjing (Pozzo della spalla)",
+					NomeTsubo: "21.GB. Jianjing (Pozzo della spalla)",
 					AzioniTsubo: "<p><b>M.T.C.</b><br><span>• </span>Punto d'incontro dei meridiani di <i>Cistifellea</i>, <i>Triplice riscaldatore</i>, <i>Stomaco</i> e <i>Yangweimai</i><br><span>•</span> Facilita e regola la circolazione del Qi nel canale<br><span>•</span> Allevia il dolore<br><span>•</span> Scioglie i noduli<br><span>•</span> Trasforma e abbassa il flegma<br><span>•</span> Riequilibra il Qi<br></p><p><b>Applicazioni</b><br><span>•</span> Giova al seno e sollecita il travaglio<br><span>•</span> Indicato in situazioni di parto difficoltoso<br><span>•</span> Ascesso mammario<br><span>•</span> Difficoltà di fuoriuscita del latte<br><span>•</span> Rigidità e dolore al collo e spalle, estesi a braccia e dorso. <br><span>•</span> Tratta il flegma<br><span>•</span> Perdita della parola dopo colpo apoplettico<br><span>•</span> Emiplegia<br><span>•</span> Gozzo<br><span>•</span> Scrofola<br><span>•</span> Ictus<br></p><p><b>Ago</b><br><span>•</span> 45° posteriore di 0.5-1 cun <span><br></span><span>• </span><span>Controindicato in gravidanza.</span><br><span>• </span>Precauzioni: l'inserimento perpendicolare (90°) <span>su soggetti magri può comportare rischio di pneumotorace.</span></p><p><b>Moxa</b><br><span>•</span> E' consigliata la moxa indiretta<br><span>•</span> Assolutamente controindicato in gravidanza<br></p><p><b>Ubicazione</b><br><span>•</span> Sulla cresta del muscolo trapezio nel punto più alto localizzato di solito nella zona più dolente<br><span>•</span> A metà strada tra 14.GV e l'apice dell' acromion. <br></p>",
 					ChiaviTsubo: "", 
 				},

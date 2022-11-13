@@ -273,7 +273,8 @@ var LOGIN = {
 									}, 500);
 		}
 	},
-	verLogin: function(){ // verifica se si è loggati
+	verLogin: function( funct ){ // verifica se si è loggati
+		if(typeof(funct) == 'undefined')var funct = '';
 		localPouchDB.getItem(MD5("DB.login")).then(function(dbCont){ // leggo il DB
 			loginProvv=IMPORTER.DECOMPR(dbCont);
 			if(loginProvv!=null){
@@ -296,6 +297,7 @@ var LOGIN = {
 					MENU.visFeatures();
 				}
 				LOGIN.scriviUtente();
+				if(funct)eval(funct);
 			}
 		});
 	},
@@ -615,7 +617,6 @@ var LOGIN = {
 	},
 	retRegistrazione: function( txt ){
 		// risposta dalla registrazione utente sul server (registrazione)
-		console.log(txt)
 		if(typeof(txt)=='undefined' || txt=='404'){
 			// si è verificato un errore generico
 			ALERT(Lingua(TXT_ErroreGenerico));
@@ -1029,7 +1030,9 @@ var LOGIN = {
 												
 												elencoFoto='';
 												for(k in DB.foto.data){
-													if(!__(DB.foto.data[k].frv))elencoFoto+=JSON.stringify(DB.foto.data[k])+", ";
+													if(DB.foto.data[k]){
+														if(!__(DB.foto.data[k].frv))elencoFoto+=JSON.stringify(DB.foto.data[k])+", ";
+													}
 												}
 												if(elencoFoto)elenco+='"foto": ['+elencoFoto.substr(0,elencoFoto.length-2)+'], ';
 												elencoRicerche='';
@@ -1278,7 +1281,6 @@ var LOGIN = {
 														// salvo il DB
 													});
 												}
-												
 												syncJSN='{';
 												if(BACKUPS.titleProvv)syncJSN += '"title":"'+BACKUPS.titleProvv.replace(/"/,'\"')+'",';
 												syncJSN += 	'"note":"'+DB.note.lastSync+'",' +
@@ -1330,7 +1332,6 @@ var LOGIN = {
 	},
 	retGlobalSyncro: function( txt ){
 		// chiamato da "globalSync" o da "ripristinaBackup"
-		//console.log("---retGlobalSyncro---  "+txt);
 		if(txt.substr(0,3)+""=='404'){
 			if(debug)console.log(txt);
 			return;
@@ -1349,7 +1350,7 @@ var LOGIN = {
 		DB.pazienti.lastSync=lastSync;
 		DB.appuntamenti.lastSync=lastSync;
 		DB.annotazioni.lastSync=lastSync;
-		
+		console.log(DB.annotazioni);
 		// RICERCHE
 		if(elenco.ricerche){
 			syncUp=true;
@@ -1386,15 +1387,16 @@ var LOGIN = {
 				if(BACKUPS.bkpProvv)elenco.note[p].DataModifica = lastSync*1;
 				JSNPUSH={	"TestoAnnotazione": LOGIN.decryptPrivacy(elenco.note[p].TestoAnnotazione),
 							"meridiano": elenco.note[p].meridiano,
-							"numeroTsubo": elenco.note[p].numeroTsubo*1,
+							"numeroTsubo": elenco.note[p].numeroTsubo+'',//*1,
 							"idPaziente": elenco.note[p].idPaziente*1,
 							"idCL": id_interno,
+							"app": __(elenco.note[p].app,''),
 							"DataModifica": elenco.note[p].DataModifica*1 };
 							
 				for(k in DB.note.data){
 					var NT = DB.note.data[k];
 					if(	NT.meridiano==elenco.note[p].meridiano && 
-						NT.numeroTsubo==elenco.note[p].numeroTsubo && 
+						NT.numeroTsubo+''==elenco.note[p].numeroTsubo+'' && 
 						NT.idPaziente==elenco.note[p].idPaziente){
 						// se esiste aggiorna
 						DB.note.data[k]=JSNPUSH;
@@ -1422,7 +1424,7 @@ var LOGIN = {
 							cancello l'elemento locale
 						*/
 						if(	NT.meridiano==elenco.note[p].meridiano && 
-							NT.numeroTsubo==elenco.note[p].numeroTsubo && 
+							NT.numeroTsubo+''==elenco.note[p].numeroTsubo+'' && 
 							NT.idPaziente==elenco.note[p].idPaziente){
 							trovato = true;
 						}
@@ -1452,6 +1454,7 @@ var LOGIN = {
 							"DataModifica": elenco.procedure[p].DataModifica*1,
 							"DataCreazione": elenco.procedure[p].DataCreazione*1,
 							"Condiviso": elenco.procedure[p].Condiviso*1,
+							"app": __(elenco.procedure[p].app,''),
 							"dettagliProcedura": elenco.procedure[p].dettagliProcedura,
 							"Cancellato": elenco.procedure[p].Cancellato*1,
 							"frv": false };
@@ -1870,6 +1873,7 @@ var LOGIN = {
 									"TestoTrattamento": LOGIN.decryptPrivacy(trattamenti[t].TestoTrattamento),
 									"Prescrizione": LOGIN.decryptPrivacy(trattamenti[t].Prescrizione),
 									"puntiTsuboMap": puntiTsuboMap,
+									"puntiAuriculoMap": LOGIN.decryptPrivacy(trattamenti[t].puntiAuriculoMap),
 									"meridiani": trattamenti[t].meridiani,
 									"sintomi": trattamenti[t].sintomi,
 									"gallery": trattamenti[t].gallery,
@@ -2369,6 +2373,23 @@ var LOGIN = {
 									else txtPunti+=siglaTsubo;
 									if(valutazione=='V')txtPunti+=' (vuoto)';
 									if(valutazione=='P')txtPunti+=' (pieno)';
+									if(valutazione=='D')txtPunti+=' (dolorante)';
+									if(mezzo)txtPunti+=' '+mezzo;
+									if(descrizione)txtPunti+=' '+descrizione;
+									txtPunti+=", ";
+								}
+								txtPunti=txtPunti.substr(0,txtPunti.length-2);
+								LOGIN.addHTML("<i>"+Lingua(TXT_PuntiTrattamento)+":</i> "+txtPunti+"<br>");
+							}
+							if(trattamenti[t].puntiAuriculoMap){
+								var punti=JSON.parse(LOGIN.dataW(trattamenti[t].puntiAuriculoMap));
+								var txtPunti='';
+								for(f in punti){
+									siglaTsubo=punti[f].s;
+									valutazione=__(punti[f].e);
+									mezzo=__(punti[f].z);
+									descrizione=__(punti[f].t);
+									if(valutazione=='D')txtPunti+=' (dolorante)';
 									if(mezzo)txtPunti+=' '+mezzo;
 									if(descrizione)txtPunti+=' '+descrizione;
 									txtPunti+=", ";

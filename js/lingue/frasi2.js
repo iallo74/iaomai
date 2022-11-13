@@ -20,8 +20,8 @@
 		esp: "" };	
 
 	var TXT_Anatomia3D={
-		ita: "Anatomia 3D",
-		eng: "3D Anatomy",
+		ita: "AnatomyMap",
+		eng: "AnatomyMap",
 		esp: "" };	
 
 // LE MAPPE		
@@ -69,17 +69,17 @@
 			esp: ""
 		};
 	
-	TXT_Auricologia = {
-		ita: "AuricologyMap",
-		eng: "AuricologyMap",
+	TXT_AuriculoMap = {
+		ita: "AuriculoMap",
+		eng: "AuriculoMap",
 		esp: ""
 	};
-	TXT_AuricologiaST = {
+	TXT_AuriculoMapST = {
 		ita: "Auricologia",
-		eng: "Auricolotherapy",
+		eng: "Auriculotherapy",
 		esp: ""
 	};
-		TXT_AuricologiaDESCR = {
+		TXT_AuriculoMapDESCR = {
 			ita: "Il set contiene la mappa dei punti dell'auricologia e il trattamento dei disturbi attraverso l'auricoloterapia."+chr10+chr10+"Il set include anche:"+chr10+"[anatomy_full]",
 			eng: "The set contains the map of points of auricology and the treatment of ailments through auriculotherapy.",
 			esp: ""
@@ -382,9 +382,14 @@
 		eng: "Isolate",
 		esp: "" };
 		
-	TXT_CercaMuscoli = {
+	/*TXT_CercaMuscoli = {
 		ita: "Filtra l'elenco MUSCOLI",
 		eng: "Filter MUSCLES list",
+		esp: "" };*/
+		
+	TXT_CercaMuscoli = {
+		ita: "Filtra l'elenco",
+		eng: "Filter list",
 		esp: "" };
 		
 	TXT_CercaOssa = {

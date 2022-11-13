@@ -662,6 +662,46 @@ var TXT_Tsubo={
 			ita: "Dito",
 			eng: "Dito",
 			esp: "" };
+
+		TXT_MezzoPauper={
+			ita: "Pauper",
+			eng: "Pauper",
+			esp: "" };
+
+		TXT_MezzoSemeVaccaria={
+			ita: "Seme di Vaccaria",
+			eng: "Vaccaria seed",
+			esp: "" };
+
+		TXT_MezzoSferettaMetallica={
+			ita: "Sferetta metallica",
+			eng: "Metal ball",
+			esp: "" };
+
+		TXT_MezzoElettroAgopuntura={
+			ita: "Elettro-agopuntura / Detezione elettrica",
+			eng: "Electro-acupuncture / Electrical detection",
+			esp: "" };
+
+		TXT_MezzoAgoSemipermanente={
+			ita: "Ago semipermanente",
+			eng: "Semi-permanent needle",
+			esp: "" };
+
+		TXT_MezzoCrio={
+			ita: "Crio-auricoloterapia",
+			eng: "Cryo-auriculotherapy",
+			esp: "" };
+
+		TXT_MezzoSalasso={
+			ita: "Microsalasso",
+			eng: "Bloodletting",
+			esp: "" };
+
+		TXT_MezzoInfiltrazione={
+			ita: "Infiltrazione",
+			eng: "Infiltration",
+			esp: "" };
 			
 		TXT_SpiegazionePuntoTratt={
 			ita: "Annotazioni sullo tsubo ...",
@@ -671,6 +711,23 @@ var TXT_Tsubo={
 		TXT_SpiegazioneMeridianoTratt={
 			ita: "Annotazioni sul meridiano ...",
 			eng: "Annotazioni sul meridiano ...",
+			esp: "" };
+			
+		TXT_SpiegazioneAuriculoTratt={
+			ita: "Annotazioni sullo punto ...",
+			eng: "Annotazioni sullo punto ...",
+			esp: "" };
+			
+			
+
+		TXT_AlertMezzoSalasso={
+			ita: "Attenzione!! Non utilizzare il salasso in pazienti sotto terapia anticoagulante. Potrebbe comportare rischio di sanguinamento incontrollato.",
+			eng: "Warning! Do not use bloodletting in patients on anticoagulant therapy. This may lead to the risk of uncontrolled bleeding",
+			esp: "" };
+
+		TXT_AlertMezzoElettroAgopuntura={
+			ita: "Attenzione!! Non utilizzare l'elettro-agopuntura o la detezione elettrica su pazienti sui quali è stato innestato un pacemaker. Potrebbe comportare rischio di malfunzionamento e morte del paziente.",
+			eng: "Attention!! Do not use electro-acupuncture or electrical detection on patients with a pacemaker. It could lead to the risk of malfunction and death of the patient.",
 			esp: "" };
 	
 var TXT_ANNOTAZIONI={
@@ -1489,6 +1546,11 @@ var TXT_MeridianiTrattamento={
 		eng: "Evaluation on meridians",
 		esp: "" };
 	
+	var TXT_PuntiAuriculo={
+		ita: "Punti auricolari",
+		eng: "Auricular points",
+		esp: "" };
+	
 var TXT_PuntiTrattamento={
 	ita: "Tsubo trattati",
 	eng: "Treated tsubo",
@@ -1505,8 +1567,8 @@ var TXT_AggiungiGruppo={
 	esp: "" };
 	
 	var TXT_AggiungiPunti={
-		ita: "Importa tsubo",
-		eng: "Import tsubo",
+		ita: "Aggiungi punto",
+		eng: "Add point",
 		esp: "" };
 		
 	var TXT_AggiungiMeridiani={
@@ -2411,7 +2473,7 @@ var TXT_ConfermareRegistrazione={
 	eng: "Registration successful. Log in to your email to certify your account and start using [§].",
 	esp: "" };
 	
-	var TXT_ConfermarRegistrazione={
+	var TXT_ConfermaRegistrazione={
 		ita: "Registrazione avvenuta correttamente. Inizia da subito ad utilizzare [§]!",
 		eng: "Registration successful. Start using [§] immediately!",
 		esp: "" };

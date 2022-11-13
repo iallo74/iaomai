@@ -13,18 +13,22 @@ var RICERCHE = {
 		RICERCHE.cSel = -1;
 		var nRis=0; // numero di risultati
 		var nRisBase=0;
-		/* 	nRisBase è il numero di risultati nei testi base dell'app7
+		/* 	nRisBase è il numero di risultati nei testi base dell'app
 			(importante per capire se dobbiamo inserire contenuti) */
 		parola=RICERCHE.pulisciTesto(parola);
 		
 		var HTML=HTML_index=HTML_list='';
 		var sezioni = 0;
 		
-		// CERCO negli TSUBO
-		var R_parz='';
-		var nRisParz = 0;
+		
+		
+		// TsuboMap e ShiatsuMap
 		if(	globals.set.cartella == 'meridiani_cinesi' ||
 			globals.set.cartella == 'meridiani_shiatsu' ){
+			var R_parz='';
+			var nRisParz = 0;
+			
+			// CERCO negli TSUBO e nei MERIDIANI
 			for (k in DB.set.meridiani) {
 				for (p in DB.set.meridiani[k].tsubo) {
 					var MER = DB.set.meridiani[k].tsubo[p];
@@ -56,44 +60,90 @@ var RICERCHE = {
 					}
 				}
 			}
+			if(R_parz){
+				sezioni++;
+				HTML_index+='<div class="labelGlobal" id="lb'+sezioni+'" onClick="RICERCHE.swCartGlob('+sezioni+');">'+Lingua(TXT_Punto)+' ('+nRisParz+')</div>';
+				HTML_list+='<div class="contRisGlob" id="cr'+sezioni+'">'+R_parz+'</div>';
+			}
+			
 		}
-		if(R_parz){
-			sezioni++;
-			HTML_index+='<div class="labelGlobal" id="lb'+sezioni+'" onClick="RICERCHE.swCartGlob('+sezioni+');">'+Lingua(TXT_Punto)+' ('+nRisParz+')</div>';
-			HTML_list+='<div class="contRisGlob" id="cr'+sezioni+'">'+R_parz+'</div>';
+		
+		
+		// AuriculoMap
+		if(	globals.set.cartella == 'auricologia' ){
+			var R_parz='';
+			var nRisParz = 0;
+			// CERCO nei PUNTI AURICOLARI
+			for (siglaTsubo in DB.set.punti) {
+				var PT = DB.set.punti[siglaTsubo];
+				var testo = PT.AzioniTsubo+" "+PT.NomeTsubo+" "+PT.ChiaviTsubo;
+					
+				testo = RICERCHE.pulisciTesto(testo);
+				
+				if(testo.toUpperCase().indexOf(parola.toUpperCase())>-1){
+					R_parz += RICERCHE.wR({
+						az: "SET.azRicercaTsubo('"+siglaTsubo+"');RICERCHE.nascondiGlobal();",
+						cont: '<b>'+htmlEntities(PT.NomeTsubo)+'</b>',
+						bull: '<font style="color:#FF0000;">&#8226;</font>' });
+					nRisParz++;
+					nRis++;
+					nRisBase++;
+				}
+			}
+			if(R_parz){
+				sezioni++;
+				HTML_index+='<div class="labelGlobal" id="lb'+sezioni+'" onClick="RICERCHE.swCartGlob('+sezioni+');">'+Lingua(TXT_Punto)+' ('+nRisParz+')</div>';
+				HTML_list+='<div class="contRisGlob" id="cr'+sezioni+'">'+R_parz+'</div>';
+			}
+			
 		}
+			
+			
 			
 		// CERCO nelle NOTE
 		var R_parz='';
 		var nRisParz = 0;
-		if(DB.note && (globals.set.cartella == 'meridiani_cinesi' || globals.set.cartella == 'meridiani_shiatsu') ){
+		if(DB.note && (	globals.set.cartella == 'meridiani_cinesi' || 
+						globals.set.cartella == 'meridiani_shiatsu' || 
+						globals.set.cartella == 'auricologia' ) ){
 			for (p in DB.note.data) {
 				var NT = DB.note.data[p];
 				var testo=NT.TestoAnnotazione;
+				var NomeTsubo = siglaTsubo = '';
 				testo=RICERCHE.pulisciTesto(testo);
-				if(testo.toUpperCase().indexOf(parola.toUpperCase())>-1 && NT.Cancellato!='1' && NT.numeroTsubo*1-1>-1){
+				var tsuboPass = (globals.set.cartella == 'auricologia') ? (NT.numeroTsubo) : (NT.numeroTsubo*1-1>-1);
+				if(testo.toUpperCase().indexOf(parola.toUpperCase())>-1 && NT.Cancellato!='1' && tsuboPass){
 					
-					NT = DB.set.meridiani[SET.leggiSiglaMeridiano(NT.meridiano)].tsubo[NT.numeroTsubo*1-1].NomeTsubo;
-					partiNT=NT.split(".");
-					NT='<b>'+htmlEntities(partiNT[0]+"."+partiNT[1])+"</b>";
-					for(n=2;n<partiNT.length;n++){
-						NT+=partiNT[n];
-						if(n<partiNT.length-1)NT+=".";
+					if(	( globals.set.cartella == 'meridiani_cinesi' || 
+						  globals.set.cartella == 'meridiani_shiatsu' ) && __(NT.app,'') == ''){
+						NomeTsubo = DB.set.meridiani[SET.leggiSiglaMeridiano(NT.meridiano)].tsubo[NT.numeroTsubo*1-1].NomeTsubo;
+						partiNT=NomeTsubo.split(".");
+						NomeTsubo='<b>'+htmlEntities(partiNT[0]+"."+partiNT[1])+"</b>";
+						for(n=2;n<partiNT.length;n++){
+							NomeTsubo+=partiNT[n];
+							if(n<partiNT.length-1)NomeTsubo+=".";
+						}
+						if(partiNT[0].length == 1)partiNT[0]='0'+partiNT[0];
+						siglaTsubo = partiNT[1]+"."+partiNT[0];
 					}
-					if(partiNT[0].length == 1)partiNT[0]='0'+partiNT[0];
+					if(	globals.set.cartella == 'auricologia' && __(NT.app,'') == 'AUR'){
+						NomeTsubo='<b>'+htmlEntities(DB.set.punti[NT.numeroTsubo].NomeTsubo)+"</b>";
+						siglaTsubo = "PT"+NT.numeroTsubo;
+					}
+					
 					var pass = true;
-					if(DB.note.data[p].idPaziente>-1){
+					if(DB.note.data[p].idPaziente>-1 && siglaTsubo){
 						pass = false;
 						for(paz in DB.pazienti.data){
 							if(	DB.pazienti.data[paz].idPaziente == DB.note.data[p].idPaziente){
-								NT += ' - '+DB.pazienti.data[paz].Nome+" "+DB.pazienti.data[paz].Cognome;
+								NomeTsubo += ' - '+DB.pazienti.data[paz].Nome+" "+DB.pazienti.data[paz].Cognome;
 								pass = true;
 							}
 						}
 					}
-					if(pass){
-						R_parz += RICERCHE.wR({ az: "SET.apriTsubo('"+partiNT[1]+"."+partiNT[0]+"');RICERCHE.nascondiGlobal();",
-												cont: NT,
+					if(pass && siglaTsubo){
+						R_parz += RICERCHE.wR({ az: "SET.apriTsubo('"+siglaTsubo+"');RICERCHE.nascondiGlobal();",
+												cont: NomeTsubo,
 												bull: '<font style="color:#FFCC00;">&#8226;</font>' });
 						nRisParz++;
 						nRis++;
@@ -106,12 +156,14 @@ var RICERCHE = {
 			HTML_index+='<div class="labelGlobal" id="lb'+sezioni+'" onClick="RICERCHE.swCartGlob('+sezioni+');">'+Lingua(TXT_ElAnnotazioni)+' ('+nRisParz+')</div>';
 			HTML_list+='<div class="contRisGlob" id="cr'+sezioni+'">'+R_parz+'</div>';
 		}
-			
+		
 		// CERCO nelle PATOLOGIE
 		var R_parz='';
 		var nRisParz = 0;
 		var kS=0;
-		if(DB.set.patologie && (globals.set.cartella == 'meridiani_cinesi' || globals.set.cartella == 'meridiani_shiatsu') ){
+		if(DB.set.patologie && (globals.set.cartella == 'meridiani_cinesi' || 
+								globals.set.cartella == 'meridiani_shiatsu' || 
+								globals.set.cartella == 'auricologia') ){
 			for (p in DB.set.patologie) {
 				var PT = DB.set.patologie[p];
 				var testo=PT.NomePatologia+" "+PT.TestoPatologia+" "+PT.chiaviPatologia;
@@ -137,7 +189,9 @@ var RICERCHE = {
 		var R_parz='';
 		var nRisParz = 0;
 		var kS=0;
-		if(DB.set.teoria && (globals.set.cartella == 'meridiani_cinesi' || globals.set.cartella == 'meridiani_shiatsu')){
+		if(DB.set.teoria && (	globals.set.cartella == 'meridiani_cinesi' || 
+								globals.set.cartella == 'meridiani_shiatsu' || 
+								globals.set.cartella == 'auricologia')){
 			for (i in DB.set.teoria) {
 				for (p in DB.set.teoria[i].contenuti) {
 					var TEO = DB.set.teoria[i].contenuti[p];
@@ -165,7 +219,9 @@ var RICERCHE = {
 		var R_parz='';
 		var nRisParz = 0;
 		var kS=-1;
-		if(DB.procedure && (globals.set.cartella == 'meridiani_cinesi' || globals.set.cartella == 'meridiani_shiatsu') ){
+		if(DB.procedure && (globals.set.cartella == 'meridiani_cinesi' || 
+							globals.set.cartella == 'meridiani_shiatsu' || 
+							globals.set.cartella == 'auricologia') ){
 			for (p in DB.procedure.data) {
 				var PR = DB.procedure.data[p]
 				var testo = PR.NomeProcedura;

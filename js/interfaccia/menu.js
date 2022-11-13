@@ -9,7 +9,7 @@ var MENU = {
 	init: function(){
 		MENU.setOp('Pelle',1);
 		MENU.setOp('Muscoli',1);
-		MENU.setOp('Ossa',0.6);
+		MENU.setOp('Ossa',1);
 		MENU.setOp('Visceri',0.8);
 		document.getElementById("pulsanti_modello").addEventListener( 'wheel', function(){
 			MENU.wheeling = true;
@@ -55,6 +55,8 @@ var MENU = {
 			}
 			var els = document.getElementById("livelli_cont").getElementsByTagName("div");
 			for(var e=0;e<els.length;e++){
+				var preVis = document.getElementById("pulsanti_modello").classList.contains("visSch");
+				if(!preVis)document.getElementById("pulsanti_modello").classList.add("visSch");
 				if(els[e].id.indexOf("p_")>-1){
 					var livello=els[e].id.replace("p_","");
 					if(globals.modello.livelli.indexOf(livello) > -1){
@@ -71,6 +73,7 @@ var MENU = {
 						document.getElementById("p_liv_"+livello).classList.remove("visBtn");
 					}
 				}
+				if(!preVis)document.getElementById("pulsanti_modello").classList.remove("visSch");
 			}
 		}catch(err){}
 	},

@@ -121,7 +121,8 @@ body:not(.smart) #icone.iconeEspanse{
     padding-top: 70px;
     border-bottom: 1px solid #444;
 }
-.smart #contBtnModello > div{
+.smart #contBtnModello > div:not(#btns_set),
+.smart #btns_set > div{
 	width: 48px !important;
     height: 48px !important;
 }
@@ -356,8 +357,11 @@ body:not(.smart) #p_rifletti{
 	display:none;
 	background-size:auto 70%;
 }
-#p_liv_muscoli{
+body:not(.Area) #p_liv_muscoli{
 	background-image:url(../img/p_muscoli.png);
+}
+.Area #p_liv_muscoli{
+	background-image:url(../img/p_aree2.png);
 }
 #p_liv_ossa{
 	background-image:url(../img/p_ossa.png);
@@ -739,8 +743,13 @@ body:not(.smart) #labelModello{
 	background-image:url(../img/p_visceriB.png);
 }
 #i_muscoli{
-	background-image:url(../img/p_muscoliB.png);
 	cursor:pointer;
+}
+body:not(.Area) #i_muscoli{
+	background-image:url(../img/p_muscoliB.png);
+}
+.Area #i_muscoli{
+	background-image:url(../img/p_aree2B.png);
 }
 #p_muscoli.disattLiv #i_muscoli:hover,
 #p_pelle.disattLiv #i_pelle:hover{
@@ -1052,8 +1061,11 @@ body:not(.smart) #labelSelected{
 	height:24px;
 	line-height:24px;
 }
-.selM{
+body:not(.Area) .selM{
 	background-image:url(../img/chMenu.png), url(../img/p_muscoli.png) !important;
+}
+.Area .selM{
+	background-image:url(../img/chMenu.png), url(../img/p_aree2.png) !important;
 }
 .selO{
 	background-image:url(../img/chMenu.png), url(../img/p_ossa.png) !important;
