@@ -25,6 +25,19 @@ SET = {
 	tmZone: null,
 	groupSel: '',
 	maskAtt: '',
+	groupSel: {
+		type: '',
+		val: '',
+		id: ''
+	},
+	frequenze: [	"1168",
+					"18688",
+					"9334",
+					"584",
+					"4672",
+					"2336",
+					"292" ],
+	phase: '',
 	
 	// FUNZIONI
 	_init: function(){
@@ -75,24 +88,50 @@ SET = {
 		if(LNS){
 			if(LNS.length){
 				var LN = new THREE.Group();
+				var LN2 = new THREE.Group();
+				var LN3 = new THREE.Group();
 				LN.name="LNs";
+				LN2.name="LNs2";
+				LN3.name="LNs3";
+				LN.visible=true;
+				LN2.visible=false;
+				LN3.visible=false;
 				for(l in LNS){ // aggiungo le guide
 					var loader = new THREE.ObjectLoader();
 					var mesh =  loader.parse(JSON.parse(LZString.decompressFromBase64(LNS[l].obj)));
 					
 					var name = mesh.name.split(" ")[0];
-					if(mesh.name.indexOf("(GRUPPO)")>-1){
+					var vis = true;
+					var PH = '';
+					if(	mesh.name.indexOf("AG")==0 ||
+						mesh.name.indexOf("(GRUPPO)")>-1){
 						mesh.visible = false;
-						mesh.material = this.MAT.lineGroup;
+						if(mesh.name.indexOf("AG")==0){
+							mesh.material = this.MAT.lineNeedle;
+							if(mesh.name.indexOf("PH2")>-1){
+								vis = false;
+								PH = '2';
+							}
+							if(mesh.name.indexOf("PH3")>-1){
+								vis = false;
+								PH = '3';
+							}
+							
+						}
+						if(mesh.name.indexOf("(GRUPPO)")>-1)mesh.material = this.MAT.lineGroup;
 						mesh.userData.gruppo = true;
 					}else{
 						mesh.material = this.MAT.line;
 					}
 					mesh.name = name;
-					LN.add( mesh );
+					//mesh.visible = vis;
+					mesh.PH = PH;
+					eval("LN"+PH+".add( mesh )");
 					
 				}
 				sysMesh.add( LN );
+				sysMesh.add( LN2 );
+				sysMesh.add( LN3 );
 			}
 		}
 		
@@ -101,13 +140,20 @@ SET = {
 		if(ARS){
 			var n=-1;
 			var AR = new THREE.Group();
+			var AR2 = new THREE.Group();
+			var AR3 = new THREE.Group();
 			AR.name="ARs";
+			AR2.name="ARs2";
+			AR3.name="ARs3";
 			AR.visible = true;
+			AR2.visible = false;
+			AR3.visible = false;
 			var area = GEOMETRIE.areaBase;
 			for(a in ARS){ // aggiungo le aree
 				var loader = new THREE.ObjectLoader();
 				var mesh = loader.parse(JSON.parse(LZString.decompressFromBase64(ARS[a].obj)));
 				var name = mesh.name.split("_")[0];
+				
 				
 				var system = "";
 				if(mesh.name.indexOf("EUR")>-1)system = "EUR";
@@ -116,15 +162,37 @@ SET = {
 				if(mesh.name.indexOf("SX")>-1)lato = "SX";
 				if(mesh.name.indexOf("DX")>-1)lato = "DX";
 				
+				//var vis = true;
+				var PH = '';
+				if(mesh.name.indexOf("PH2")>-1){
+					//vis = false;
+					PH = '2';
+				}
+				if(mesh.name.indexOf("PH3")>-1){
+					//vis = false;
+					PH = '3';
+				}
+				
 				var FN = false;
 				if(GEOMETRIE.gruppi.FN.punti.indexOf(name.substr(2,3))>-1)FN = true;
 				var master = (GEOMETRIE.gruppi.MASTER.punti.indexOf(name.substr(2,3))>-1);
+				//if(typeof(DB.set.punti[name.substr(2,3)])=='undefined')console.log(name.substr(2,3))
 				
-				var pF = mesh.name.split(" ");
-				var freq = pF[pF.length-1];
+				//var pF = mesh.name.split(" ");
+				
+				var freq = [];//pF[pF.length-1];
+				for(f in SET.frequenze){
+					if(mesh.name.indexOf("_"+SET.frequenze[f])>-1)freq.push( SET.frequenze[f] );
+				}
+				if(PH){
+					system = 'EUR';
+					DB.set.punti[name.substr(2,3)].PH = PH;
+				}
 				var mat = 'this.MAT.areaBase'+system;
-			
+				
 				mesh.material = cloneMAT(eval(mat));
+				mesh.name = name;
+				//mesh.visible = vis;
 				mesh.userData.area = area;
 				mesh.userData.system = system;
 				mesh.userData.freq = freq;
@@ -132,11 +200,13 @@ SET = {
 				mesh.userData.FN = FN;
 				mesh.userData.lato = lato;
 				mesh.userData.raycastable = true;
-				mesh.name = name;
 				mesh.userData.type = 'area';
-				AR.add( mesh );
+				mesh.userData.PH = PH;
+				eval("AR"+PH+".add( mesh )");
 			}
 			sysMesh.add( AR );
+			sysMesh.add( AR2 );
+			sysMesh.add( AR3 );
 		}
 		
 		// pins delle aree
@@ -163,8 +233,14 @@ SET = {
 		
 		// PUNTI
 		var PT = new THREE.Group();
+		var PT2 = new THREE.Group();
+		var PT3 = new THREE.Group();
 		PT.name="PTs";
+		PT2.name="PTs2";
+		PT3.name="PTs3";
 		PT.visible = true;
+		PT2.visible = false;
+		PT3.visible = false;
 		// carico i punti parametrizzati
 		var n=-1;
 		var PTS=GEOMETRIE.punti;
@@ -181,29 +257,53 @@ SET = {
 				var lato = "";
 				if(PTS[p].nome.indexOf("SX")>-1)lato = "SX";
 				if(PTS[p].nome.indexOf("DX")>-1)lato = "DX";
-				var pF = PTS[p].nome.split(" ");
-				var freq = pF[pF.length-1];
+				
+				//var vis = true;
+				var PH = '';
+				if(PTS[p].nome.indexOf("PH2")>-1){
+					//vis = false;
+					PH = '2';
+				}
+				if(PTS[p].nome.indexOf("PH3")>-1){
+					//vis = false;
+					PH = '3';
+				}
+				
+				//var pF = PTS[p].nome.split(" ");
+				var freq = [];//pF[pF.length-1];
+				for(f in SET.frequenze){
+					if(PTS[p].nome.indexOf(" "+SET.frequenze[f])>-1)freq.push( SET.frequenze[f] );
+				}
+				
 				
 				var FN = false;
 				if(GEOMETRIE.gruppi.FN.punti.indexOf(name.substr(2,3))>-1)FN = true;
 				var master = (GEOMETRIE.gruppi.MASTER.punti.indexOf(name.substr(2,3))>-1);
+				//if(typeof(DB.set.punti[name.substr(2,3)])=='undefined')console.log(name.substr(2,3))
 				
 				
 				// pallino colorato
 				n++;
 				/////var geometry = new THREE.SphereGeometry( 0.02, 6, 6 );
+				if(PH){
+					system = 'EUR';
+					DB.set.punti[name.substr(2,3)].PH = PH;
+				}
 				var mat = 'this.MAT.pointBase'+system;
 				
 				this.P[n] = new THREE.Mesh( this.geometryPallino, eval(mat) );
+				
 				this.P[n].position.set(x,y,z);
 				this.P[n].name=name;
+				//this.P[n].visible = vis;
 				this.P[n].userData.type = 'point';
 				this.P[n].userData.system = system;
 				this.P[n].userData.freq = freq;
 				this.P[n].userData.master = master;
 				this.P[n].userData.FN = FN;
 				this.P[n].userData.lato = lato;
-				PT.add( this.P[n] );
+				this.P[n].userData.PH = PH;
+				eval("PT"+PH+".add( this.P[n] )");
 					
 				// pallino trasparente
 				n++;
@@ -211,6 +311,7 @@ SET = {
 				this.P[n] = new THREE.Mesh( this.geometryPallinoTrasp, this.MAT.pointTrasp ); 
 				this.P[n].position.set(x,y,z);
 				this.P[n].name='_'+name;
+				//this.P[n].visible = vis;
 				this.P[n].userData.raycastable = true;
 				this.P[n].userData.nota = false;
 				this.P[n].userData.type = 'point';
@@ -219,10 +320,13 @@ SET = {
 				this.P[n].userData.master = master;
 				this.P[n].userData.FN = FN;
 				this.P[n].userData.lato = lato;
-				PT.add( this.P[n] );
+				this.P[n].userData.PH = PH;
+				eval("PT"+PH+".add( this.P[n] )");
 			}
 		}
 		sysMesh.add( PT );
+		sysMesh.add( PT2 );
+		sysMesh.add( PT3 );
 		SETS.add( sysMesh );
 		
 		SET.MAT.mappaAree(true);
@@ -312,6 +416,7 @@ SET = {
 		if(DB.procedure)SET.car_procedure(-1,1);
 		
 		SET.filtraSet();
+		SET.popolaFiltri();
 		
 		SET.leggiNote();
 		nasLoader();
@@ -334,8 +439,10 @@ SET = {
 		}
 		postApreSet = false;
 		
-		
-		//SET.iniPos();
+		/*
+		Attivare per settare con il pulsante "q" le rotazioni automatiche sui punti
+		*/
+		SET.iniPos();
 		
 	},
 	
@@ -360,6 +467,7 @@ SET = {
 				}
 				localStorage.POS = JSON.stringify(SET.POS);
 				console.log(SET.POS);
+				console.log(el);
 			}else{
 				console.log(el)
 			}
@@ -465,7 +573,7 @@ SET = {
 	},
 	setPulsePt: function( pt, pulse, op, mat ){
 		if(typeof(mat)=='undefined')var mat = '';
-		var els = scene.getObjectByName("PTs").children;
+		var els = scene.getObjectByName("PTs"+SET.phase).children;
 		for(e in els){
 			if(els[e].name.indexOf(pt.name)==0){
 				els[e].scale.set(pulse,pulse,pulse);
@@ -540,9 +648,10 @@ SET = {
 		document.getElementById("pt_"+name).classList.add("selElPt");
 		
 		var PT_name_first= null;
+		
 		var mat = this.MAT.pointSel;
 		if(PT.userData.nota)mat = this.MAT.pointSelNote;
-		var els = scene.getObjectByName("PTs").children;
+		var els = scene.getObjectByName("PTs"+SET.phase).children;
 		for(e in els){
 			if(els[e].name.indexOf("PT"+name)==0){
 				els[e].material=mat;
@@ -552,8 +661,16 @@ SET = {
 				}
 			}
 		}
+		
+		var els = scene.getObjectByName("LNs"+SET.phase).children;
+		for(e in els){
+			if(els[e].name.indexOf("AG"+name)==0){
+				els[e].visible=true;
+			}
+		}
+		
 		var mat = this.MAT.areaSel;
-		var els = scene.getObjectByName("ARs").children;
+		var els = scene.getObjectByName("ARs"+SET.phase).children;
 		for(e in els){
 			if(els[e].name.indexOf("AR"+name)==0)els[e].material=mat;
 		}
@@ -575,7 +692,7 @@ SET = {
 		}
 		panEnd = { x: 0, y: 0, z: 0 };
 		// posiziono
-		if(GEOMETRIE.posizioni[name]){
+		if(GEOMETRIE.posizioni[name] && !SET.phase){
 			var pos = GEOMETRIE.posizioni[name];
 			normalizeRotation();
 			rotateEnd = { x:pos.x, y: ((MODELLO.flip) ? 0-pos.y : pos.y), z:0 };
@@ -619,7 +736,7 @@ SET = {
 		// coloro tutti gli altri punti
 		var mat = eval("SET.MAT.pointBase"+this.ptSel.userData.system);
 		if(this.ptSel.userData.nota)mat=this.MAT.pointNote;
-		var els = scene.getObjectByName("PTs").children;
+		var els = scene.getObjectByName("PTs"+SET.phase).children;
 		for(e in els){
 			if(els[e].name.indexOf("PT"+this.ptSel.name.substr(2,3))==0){
 				els[e].material=mat;
@@ -627,7 +744,13 @@ SET = {
 				els[e].scale.set(1,1,1);
 			}
 		}
-		var els = scene.getObjectByName("ARs").children;
+		var els = scene.getObjectByName("LNs"+SET.phase).children;
+		for(e in els){
+			if(els[e].name.indexOf("AG")==0){
+				els[e].visible=false;
+			}
+		}
+		var els = scene.getObjectByName("ARs"+SET.phase).children;
 		for(e in els){
 			if(els[e].name.indexOf("AR"+this.ptSel.name.substr(2,3))==0){
 				system = els[e].userData.system;
@@ -814,7 +937,7 @@ SET = {
 		}
 	},
 	coloraPunti: function( PT_name, tipo ){
-		var els = scene.getObjectByName("PTs").children;
+		var els = scene.getObjectByName("PTs"+SET.phase).children;
 		for(e in els){
 			if(	els[e].name.indexOf("PT"+PT_name) == 0 && 
 				els[e].material.name.indexOf("SEL") == -1 && 
@@ -823,7 +946,7 @@ SET = {
 				els[e].material = eval("SET.MAT.point"+tipo+system);
 			}
 		}
-		var els = scene.getObjectByName("ARs").children;
+		var els = scene.getObjectByName("ARs"+SET.phase).children;
 		for(e in els){
 			if(	els[e].name.indexOf("AR"+PT_name) == 0 && 
 				els[e].material.name.indexOf("SEL") == -1 && 
@@ -842,7 +965,7 @@ SET = {
 		if(name.substr(0,1)=='_')name = name.substr(3,name.length-3);
 		else name = name.substr(2,name.length-2);
 		
-		var els = scene.getObjectByName("PTs").children;
+		var els = scene.getObjectByName("PTs"+SET.phase).children;
 		for(e in els){
 			if(els[e].name.indexOf("_PT"+name)==0 && els[e].material.name.indexOf("SEL")==-1){
 				if(over)SET.addEviPalls("_PT"+name,'Over');
@@ -850,7 +973,7 @@ SET = {
 			}
 		}
 		var tipo = (over) ? "Over" : "";
-		var els = scene.getObjectByName("ARs").children;
+		var els = scene.getObjectByName("ARs"+SET.phase).children;
 		for(e in els){
 			if(els[e].name.indexOf("AR"+name)==0 && els[e].material.name.indexOf("SEL")==-1){
 				system = els[e].userData.system;
@@ -928,7 +1051,7 @@ SET = {
 	},
 	
 	addEviPalls: function( PT_name, tipo ){
-		var els = scene.getObjectByName("PTs").children;
+		var els = scene.getObjectByName("PTs"+SET.phase).children;
 		for(e in els){
 			if(els[e].name.indexOf(PT_name)==0){
 				var name = ' point: '+els[e].name+"_"+e;
@@ -973,18 +1096,19 @@ SET = {
 	_rifletti: function(){
 		if(muscleView)SET.MAT.applicaMappa(localStorage.imgMappa);
 		var opposite = (MODELLO.flip) ? 'DX' : 'SX';
-		var els = scene.getObjectByName("PTs").children;
+		var els = scene.getObjectByName("PTs"+SET.phase).children;
 		for(e in els){
 			if(els[e].userData.lato == opposite){
 				els[e].visible = false;
 			}else if(!els[e].visible)els[e].visible = true;
 		}
-		var els = scene.getObjectByName("ARs").children;
+		var els = scene.getObjectByName("ARs"+SET.phase).children;
 		for(e in els){
 			if(els[e].userData.lato == opposite){
 				els[e].visible = false;
 			}else if(!els[e].visible)els[e].visible = true;
 		}
+		if(SET.groupSel.id)SET.filtraGruppo( SET.groupSel.type, SET.groupSel.val, SET.groupSel.id, true );
 	},
 	_caricaScheda: function( args ){
 		if( args.classe != 'tab_tsubo' && args.classe != SCHEDA.classeAperta)SET.pMod = '';

@@ -9,6 +9,11 @@
 			eng: "Map",
 			esp: "" };
 			
+		TXT_PhaseAttiva = {
+			ita: "Punti",
+			eng: "Points",
+			esp: "" };
+			
 		TXT_Legenda = {
 			ita: "Legenda",
 			eng: "Legend",
@@ -85,6 +90,21 @@
 			eng: "Innervation",
 			esp: "" };
 			
+			
+		TXT_Phase_ = {
+			ita: "Principali",
+			eng: "Main",
+			esp: "" };
+			
+		TXT_Phase_2 = {
+			ita: "Fase 2",
+			eng: "Phase 2",
+			esp: "" };
+			
+		TXT_Phase_3 = {
+			ita: "Fase 3",
+			eng: "Phase 3",
+			esp: "" };
 			
 // LEGENDE
 			
@@ -257,6 +277,31 @@
 			ita: "Nervo auricolotemporale, trigemino branca 3",
 			eng: "Auricolotemporal nerve, trigeminal branch 3",
 			esp: "" };
+			
+		TXT_FiltriSmart = {
+			ita: "Filtri rapidi",
+			eng: "Smart filters",
+			esp: "" };
+			
+		TXT_LabelSmart_Sistema = {
+			ita: "Sistema di riferimento",
+			eng: "Reference system",
+			esp: "" };
+			
+		TXT_LabelSmart_Tipologie = {
+			ita: "Tipologie di punti",
+			eng: "Types of points",
+			esp: "" };
+			
+		TXT_LabelSmart_Anatomia = {
+			ita: "Settori anatomici",
+			eng: "Anatomical sectors",
+			esp: "" };
+			
+		TXT_LabelSmart_Frequenze = {
+			ita: "Frequenze",
+			eng: "Frequencies",
+			esp: "" };
 		
 		
 // PATOLOGIE
@@ -316,6 +361,76 @@
 		TXT_Gruppi_NR = {
 			ita: "Punti neuroriflessi",
 			eng: "Neuroreflex points",
+			esp: "" };
+		
+		TXT_Gruppi_BACK_TORSO = {
+			ita: "Sist. muscolo-scheletrico - Schiena e busto",
+			eng: "Muscoloskeletal system - Back and torso",
+			esp: "" };
+		
+		TXT_Gruppi_HEAD_FACE = {
+			ita: "Sist. muscolo-scheletrico - Testa e viso",
+			eng: "Muscoloskeletal system - Head and face",
+			esp: "" };
+		
+		TXT_Gruppi_LOWER_LIMBS = {
+			ita: "Sist. muscolo-scheletrico - Arti inferiori",
+			eng: "Muscoloskeletal system - Lower limbs",
+			esp: "" };
+		
+		TXT_Gruppi_UPPER_LIMBS = {
+			ita: "Sist. muscolo-scheletrico - Arti superiori",
+			eng: "Muscoloskeletal system - Upper limbs",
+			esp: "" };
+			
+		TXT_Gruppi_SENSORY_ORGANS = {
+			ita: "Organi di senso",
+			eng: "Sensory organs",
+			esp: "" };
+			
+		TXT_Gruppi_DIGESTIVE_SYSTEM = {
+			ita: "Sistema digestivo",
+			eng: "Digestive system",
+			esp: "" };
+			
+		TXT_Gruppi_THORACIC_ORGANS = {
+			ita: "Organi del torace",
+			eng: "Thoracic organs",
+			esp: "" };
+			
+		TXT_Gruppi_ABDOMINAL_ORGANS = {
+			ita: "Organi dell'addome",
+			eng: "Abdominal organs",
+			esp: "" };
+			
+		TXT_Gruppi_UROGENITAL_ORGANS = {
+			ita: "Organi urogenitali",
+			eng: "Urogenital organs",
+			esp: "" };
+			
+		TXT_Gruppi_PERIPHERAL_ENDOCRINE_GLANDS = {
+			ita: "Ghiandole endocrne periferiche",
+			eng: "Peripheral endocrine glands",
+			esp: "" };
+			
+		TXT_Gruppi_CRANIAL_ENDOCRINE_GLANDS = {
+			ita: "Ghiandole endocrne craniali",
+			eng: "Cranial endocrine glands",
+			esp: "" };
+			
+		TXT_Gruppi_PERIPHERAL_NERVOUS_SYSTEM = {
+			ita: "Sistema nervoso periferico",
+			eng: "Peripheral nervous system",
+			esp: "" };
+			
+		TXT_Gruppi_BRAIN_SPINAL_CORD = {
+			ita: "Cervello e midollo spinale",
+			eng: "Brain and spinal cord",
+			esp: "" };
+			
+		TXT_Gruppi_CEREBRAL_CORTEX = {
+			ita: "Corteccia cerebrale",
+			eng: "Cerebral cortex",
 			esp: "" };
 		
 		TXT_Gruppi_Frequenza = {

@@ -59,9 +59,31 @@ var MODULO_PUNTI = { // extend SET
 							
 							'	<p id="f_NR"><a class="pallinoPat pallinoPatEsteso pallinoGroup" '+
 							'					onclick="SET.filtraGruppo(\'FN\',false,\'NR\');">'+
-							'			<i>'+htmlEntities(Lingua(TXT_Gruppi_NR))+'</i></a></p>' +
+							'			<i>'+htmlEntities(Lingua(TXT_Gruppi_NR))+'</i></a></p>';
 							
-							'	<p id="f_292"><a class="pallinoPat pallinoPatEsteso pallinoGroup" '+
+							
+			var groups = [	"BACK_TORSO",
+							"HEAD_FACE",
+							"LOWER_LIMBS",
+							"UPPER_LIMBS",
+							"SENSORY_ORGANS",
+							"DIGESTIVE_SYSTEM",
+							"THORACIC_ORGANS",
+							"ABDOMINAL_ORGANS",
+							"UROGENITAL_ORGANS",
+							"PERIPHERAL_ENDOCRINE_GLANDS",
+							"CRANIAL_ENDOCRINE_GLANDS",
+							"PERIPHERAL_NERVOUS_SYSTEM",
+							"BRAIN_SPINAL_CORD",
+							"CEREBRAL_CORTEX" ];
+			for(a in groups){
+				contFiltri +=	'	<p id="f_'+groups[a]+'"><a class="pallinoPat pallinoPatEsteso pallinoGroup" '+
+								'					onclick="SET.filtraGruppo(\'group\',\''+groups[a]+'\',\''+groups[a]+'\');">'+
+								'			<i>'+htmlEntities(Lingua(eval("TXT_Gruppi_"+groups[a])))+'</i></a></p>';
+			}
+							
+							
+			contFiltri +=	'	<p id="f_292"><a class="pallinoPat pallinoPatEsteso pallinoGroup" '+
 							'					onclick="SET.filtraGruppo(\'freq\',\'292\',\'292\');">'+
 							'			<i>'+htmlEntities(Lingua(TXT_Gruppi_Frequenza))+' '+htmlEntities(Lingua(TXT_Legenda_292))+'</i></a></p>' +
 							
@@ -103,13 +125,28 @@ var MODULO_PUNTI = { // extend SET
 							'<div id="elencoTsubo">' + elencoTsubo + '</div></span>';
 		}
 		
+		var legenda = [];	
 		var sceltaPuntiTag = 	'<div class="menuElenchi"' +
 								'	  onClick="MENU.visMM(\'sistemaPunti_p\');">' +
-								'</div>';
+								'</div><p id="sistemaPunti_p"><span id="selectCambioMappa">';
+			
+		//sceltaPuntiTag += 	'<i>'+htmlEntities(Lingua(TXT_PhaseAttiva))+':</i>';
+		
+		sceltaPuntiTag += 	'<select id="sceltaPhaseElenco" onChange="SET.setPhase(this.value);">';
+		var phases = [	"",
+						"2",
+						"3" ];
+		for(h in phases){
+			sceltaPuntiTag += 	'  <option value="'+phases[h]+'"';
+			if(SET.phase == phases[h])sceltaPuntiTag += ' SELECTED';
+			sceltaPuntiTag += 	'>'+htmlEntities(Lingua(eval("TXT_Phase_"+phases[h])))+'</option>';
+		}
+		sceltaPuntiTag += '</select>';
 				
-		var legenda = [];		
 		if(GEOMETRIE.mappe.length>1){		
-			sceltaPuntiTag += 	'<p id="sistemaPunti_p"><span id="selectCambioMappa"><i>'+htmlEntities(Lingua(TXT_MappaAttiva))+':</i><select id="sceltaMappaElenco" onChange="SET.cambiaMappa(this.value);">';
+			//sceltaPuntiTag += 	'<i>'+htmlEntities(Lingua(TXT_MappaAttiva))+':</i>';
+			
+			sceltaPuntiTag += 	'<select id="sceltaMappaElenco" onChange="SET.cambiaMappa(this.value);">';
 			for(m in GEOMETRIE.mappe){
 				var name = GEOMETRIE.mappe[m].name;
 				sceltaPuntiTag += 	'  <option value="'+name+'"';
@@ -121,6 +158,7 @@ var MODULO_PUNTI = { // extend SET
 			}
 			sceltaPuntiTag += 	'</select>';
 		}
+		sceltaPuntiTag += 	'</select>';
 		sceltaPuntiTag += 	'</span><i class="elMenu" id="cambioSistemaPunti" onClick="MENU.visImpset();"><span>'+htmlEntities(Lingua(TXT_SistemaPuntiEuropeo))+'</span></i></p>';
 		
 		
@@ -178,6 +216,7 @@ var MODULO_PUNTI = { // extend SET
 			}
 		}
 		if(!pass)document.getElementById("p_legenda").click();
+		if(SET.groupSel.id)SET.filtraGruppo( SET.groupSel.type, SET.groupSel.val, SET.groupSel.id, true );
 	},
 	swElencoPt: function( el, m ){
 		if(!document.getElementById("e_"+m).classList.contains("visElPt")){
@@ -191,7 +230,7 @@ var MODULO_PUNTI = { // extend SET
 		}
 	},
 	filtraPunti: function(){ // filtra i punti
-		if(SET.groupSel)SET.filtraGruppo();
+		if(SET.groupSel.id)SET.filtraGruppo();
 		var el = document.getElementById("punti_ricerca");
 		el.classList.toggle("filtro_attivo_bordo",(el.value.trim()!=''));
 		var els = document.getElementById("elencoTsubo").getElementsByTagName("p");
@@ -206,31 +245,41 @@ var MODULO_PUNTI = { // extend SET
 				DB.set.punti[siglaTsubo].ChiaviTsubo.toLowerCase().indexOf(el.value.toLowerCase())==-1 ){
 					pass = true;
 			}
+			if(__(DB.set.punti[siglaTsubo].PH) != SET.phase && document.getElementById("pt_"+siglaTsubo))pass = true;
 			els[e].classList.toggle("nasPT",pass);
 		}
 	},
-	filtraGruppo: function( type, val, id ){
+	filtraGruppo: function( type, val, id , forza){
 		if(typeof(type)=='undefined')var type = '';
 		if(typeof(val)=='undefined')var val = '';
 		if(typeof(id)=='undefined')var id = '';
+		if(typeof(forza)=='undefined')var forza = false;
 		if(document.getElementById("punti_ricerca").value.trim()!='' && id){
 			document.getElementById("punti_ricerca").value = '';
 			document.getElementById("punti_ricerca").classList.remove("filtro_attivo_bordo");
 		}
-		if(SET.groupSel == id){
+		if(SET.groupSel.id == id && !forza){
 			type = '';
 			val = '';
 			id = '';
 		}
-		var elenchi = ["PTs","ARs"];
+		var elenchi = ["PTs"+SET.phase,"ARs"+SET.phase];
 		for(a in elenchi){
 			var els = scene.getObjectByName(elenchi[a]).children;
 			for(e in els){
 				var name = els[e].name;
 				if(name.indexOf("_")==0)name = name.substr(3,3);
 				else name = name.substr(2,3);
-				var vis = (els[e].userData[type]==val || !type);
+				var vis = false;
+				if(type=='group'){
+					if(typeof(GEOMETRIE.gruppi[val])!='undefined')vis = GEOMETRIE.gruppi[val].punti.indexOf(name)>-1;
+				}else{
+					if(type=='freq')vis = (els[e].userData[type].indexOf(val)>-1);
+					else vis = (els[e].userData[type]==val);
+					if(!type)vis = true;
+				}
 				els[e].visible = vis;
+				//if(DB.set.punti[name].PH != SET.phase)vis = false;
 				if(document.getElementById("pt_"+name)){
 					document.getElementById("pt_"+name).parentElement.classList.toggle("nasPT",!vis);
 				}
@@ -247,10 +296,141 @@ var MODULO_PUNTI = { // extend SET
 				els[e].classList.remove("selected");
 			}
 		}
-		SET.groupSel = id;
+		SET.groupSel = {
+			"type": type,
+			"val": val,
+			"id": id
+		}
+		document.getElementById("e_punti").classList.toggle("searched",SET.groupSel.id);
+		var els = document.getElementById("filtriSmart_cont").getElementsByTagName("div");
+		for(e=0;e<els.length;e++){
+			els[e].classList.remove("selected");
+		}
+		if(SET.groupSel.id){
+			document.getElementById("sf_"+SET.groupSel.id).classList.add("selected");
+		}
+		document.getElementById("filtriSmart_ico").classList.toggle("filtered",(SET.groupSel.id));
+		if(!document.getElementById("p_filtri").classList.contains("op"))SET.swFiltri();
 	},
 	swFiltri: function(){
 		document.getElementById("p_filtri").classList.toggle("op");
 		document.getElementById("f_filtri").classList.toggle("visElPt");
+	},
+	popolaFiltri: function(){
+		// FILTRI
+		var contFiltri =	'<div id="filtriSmart_ico"'+
+							'	  onClick="SET.swFiltriSmart();"' +
+							'     title="'+htmlEntities(Lingua(TXT_FiltriSmart))+'"><span></span></div>' +
+							
+							'<div id="filtriSmart_cont">'+
+							
+							'<span>'+htmlEntities(Lingua(TXT_FiltriSmart)) + '</span>' +
+							
+							'<i>'+htmlEntities(Lingua(TXT_LabelSmart_Sistema)) + '</i>' +
+							
+							'	<div id="sf_INT" onClick="SET.filtraGruppo(\'system\',\'\',\'INT\');"'+
+							'		 style="background-image:url(sets/'+globals.set.cartella+'/img/sf_INT.png);"'+
+							'		 title="'+htmlEntities(Lingua(TXT_Gruppi_INT)) + '"></div>' +
+							
+							'	<div id="sf_EUR" onClick="SET.filtraGruppo(\'system\',\'EUR\',\'EUR\');"'+
+							'		 style="background-image:url(sets/'+globals.set.cartella+'/img/sf_EUR.png);"'+
+							'		 title="'+htmlEntities(Lingua(TXT_Gruppi_EUR)) + '"></div>' +
+							
+							'	<div id="sf_CIN" onClick="SET.filtraGruppo(\'system\',\'CIN\',\'CIN\');"'+
+							'		 style="background-image:url(sets/'+globals.set.cartella+'/img/sf_CIN.png);"'+
+							'		 title="'+htmlEntities(Lingua(TXT_Gruppi_CIN)) + '"></div>' +
+							
+							'<i>'+htmlEntities(Lingua(TXT_LabelSmart_Tipologie)) + '</i>' +
+							
+							'	<div id="sf_MASTER" onClick="SET.filtraGruppo(\'master\',true,\'MASTER\');"'+
+							'		 style="background-image:url(sets/'+globals.set.cartella+'/img/sf_MASTER.png);"'+
+							'		 title="'+htmlEntities(Lingua(TXT_Gruppi_MASTER)) + '"></div>' +
+							
+							'	<div id="sf_FN" onClick="SET.filtraGruppo(\'FN\',true,\'FN\');"'+
+							'		 style="background-image:url(sets/'+globals.set.cartella+'/img/sf_FN.png);"'+
+							'		 title="'+htmlEntities(Lingua(TXT_Gruppi_FN)) + '"></div>' +
+							
+							'	<div id="sf_NR" onClick="SET.filtraGruppo(\'FN\',false,\'NR\');"'+
+							'		 style="background-image:url(sets/'+globals.set.cartella+'/img/sf_NR.png);"'+
+							'		 title="'+htmlEntities(Lingua(TXT_Gruppi_NR)) + '"></div>' +
+							
+							'<i>'+htmlEntities(Lingua(TXT_LabelSmart_Anatomia)) + '</i>';
+							
+		var groups = [	"BACK_TORSO",
+						"HEAD_FACE",
+						"LOWER_LIMBS",
+						"UPPER_LIMBS",
+						"SENSORY_ORGANS",
+						"DIGESTIVE_SYSTEM",
+						"THORACIC_ORGANS",
+						"ABDOMINAL_ORGANS",
+						"UROGENITAL_ORGANS",
+						"PERIPHERAL_ENDOCRINE_GLANDS",
+						"CRANIAL_ENDOCRINE_GLANDS",
+						"PERIPHERAL_NERVOUS_SYSTEM",
+						"BRAIN_SPINAL_CORD",
+						"CEREBRAL_CORTEX" ];
+		for(a in groups){
+			contFiltri +=	'	<div id="sf_'+groups[a]+'" '+
+							'        onClick="SET.filtraGruppo(\'group\',\''+groups[a]+'\',\''+groups[a]+'\');"'+
+							'		 style="background-image:url(sets/'+globals.set.cartella+'/img/sf_'+groups[a]+'.png);"'+
+							'		 title="'+htmlEntities(Lingua(eval("TXT_Gruppi_"+groups[a]))) + '"></div>';
+		}
+						
+		contFiltri +=		'<i>'+htmlEntities(Lingua(TXT_LabelSmart_Frequenze)) + '</i>' +
+							
+							'	<div id="sf_292" onClick="SET.filtraGruppo(\'freq\',\'292\',\'292\');"'+
+							'		 style="background-image:url(sets/'+globals.set.cartella+'/img/sf_292.png);"'+
+							'		 title="'+htmlEntities(Lingua(TXT_Gruppi_Frequenza))+' '+htmlEntities(Lingua(TXT_Legenda_292)) + '"></div>' +
+							
+							'	<div id="sf_584" onClick="SET.filtraGruppo(\'freq\',\'584\',\'584\');"'+
+							'		 style="background-image:url(sets/'+globals.set.cartella+'/img/sf_584.png);"'+
+							'		 title="'+htmlEntities(Lingua(TXT_Gruppi_Frequenza))+' '+htmlEntities(Lingua(TXT_Legenda_584)) + '"></div>' +
+							
+							'	<div id="sf_1168" onClick="SET.filtraGruppo(\'freq\',\'1168\',\'1168\');"'+
+							'		 style="background-image:url(sets/'+globals.set.cartella+'/img/sf_1168.png);"'+
+							'		 title="'+htmlEntities(Lingua(TXT_Gruppi_Frequenza))+' '+htmlEntities(Lingua(TXT_Legenda_1168)) + '"></div>' +
+							
+							'	<div id="sf_2336" onClick="SET.filtraGruppo(\'freq\',\'2336\',\'2336\');"'+
+							'		 style="background-image:url(sets/'+globals.set.cartella+'/img/sf_2336.png);"'+
+							'		 title="'+htmlEntities(Lingua(TXT_Gruppi_Frequenza))+' '+htmlEntities(Lingua(TXT_Legenda_2336)) + '"></div>' +
+							
+							'	<div id="sf_4672" onClick="SET.filtraGruppo(\'freq\',\'4672\',\'4672\');"'+
+							'		 style="background-image:url(sets/'+globals.set.cartella+'/img/sf_4672.png);"'+
+							'		 title="'+htmlEntities(Lingua(TXT_Gruppi_Frequenza))+' '+htmlEntities(Lingua(TXT_Legenda_4672)) + '"></div>' +
+							
+							'	<div id="sf_9334" onClick="SET.filtraGruppo(\'freq\',\'9334\',\'9334\');"'+
+							'		 style="background-image:url(sets/'+globals.set.cartella+'/img/sf_9334.png);"'+
+							'		 title="'+htmlEntities(Lingua(TXT_Gruppi_Frequenza))+' '+htmlEntities(Lingua(TXT_Legenda_9334)) + '"></div>' +
+							
+							'	<div id="sf_18688" onClick="SET.filtraGruppo(\'freq\',\'18688\',\'18688\');"'+
+							'		 style="background-image:url(sets/'+globals.set.cartella+'/img/sf_18688.png);"'+
+							'		 title="'+htmlEntities(Lingua(TXT_Gruppi_Frequenza))+' '+htmlEntities(Lingua(TXT_Legenda_18688)) + '"></div>' +
+							
+							'</div>';
+		document.getElementById("divs").innerHTML = contFiltri;
+	},
+	
+	swFiltriSmart: function(){
+		// visualizza/nasconde il menu rapido dei filtri (in alto a SX)
+		document.getElementById("filtriSmart_cont").classList.toggle("visSch");
+	},
+	setPhase: function( ph ){
+		scene.getObjectByName("PTs").visible = false;
+		scene.getObjectByName("LNs").visible = false;
+		scene.getObjectByName("ARs").visible = false;
+		scene.getObjectByName("PTs2").visible = false;
+		scene.getObjectByName("LNs2").visible = false;
+		scene.getObjectByName("ARs2").visible = false;
+		scene.getObjectByName("PTs3").visible = false;
+		scene.getObjectByName("LNs3").visible = false;
+		scene.getObjectByName("ARs3").visible = false;
+		
+		scene.getObjectByName("PTs"+ph).visible = true;
+		scene.getObjectByName("LNs"+ph).visible = true;
+		scene.getObjectByName("ARs"+ph).visible = true;
+		
+		SET.phase = ph;
+		SET.filtraPunti();
 	}
 }

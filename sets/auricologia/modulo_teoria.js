@@ -54,6 +54,8 @@ var MODULO_TEORIA = { // extend SET
 		
 		SET.hideGroupLines();
 		if(gruppo){
+			document.getElementById("sceltaPhaseElenco").selectedIndex = 0;
+			SET.setPhase('');
 			var mAtt=DB.set.teoria[2].contenuti[t].sigla;
 			var elencoTsubo='<br><b>'+htmlEntities(Lingua(TXT_ElencoPunti))+'</b>';
 			for(g in GEOMETRIE.gruppi[gruppo].punti){
@@ -131,7 +133,7 @@ var MODULO_TEORIA = { // extend SET
 								btn );
 	},
 	hideGroupLines: function(){
-		var els = scene.getObjectByName("LNs").children;
+		var els = scene.getObjectByName("LNs"+SET.phase).children;
 		for(e in els){
 			if(__(els[e].userData.gruppo,false)){
 				els[e].visible = false;

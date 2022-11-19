@@ -1,8 +1,18 @@
 DB.set= {
     "punti": {
+        "100": {
+            "NomeTsubo": "Appendice",
+            "AzioniTsubo": "<p><b>Altri nomi</b><br>- xxx</p><p><b>Azione</b><br>xxx</p><p><b>Ubicazione</b><br>xxx</p>",
+            "ChiaviTsubo": ""
+        },
         "101": {
             "NomeTsubo": "Duodeno",
             "AzioniTsubo": "<p><b>Azione<br></b>Punto indicato per la sua efficacia nella riduzione dei disturbi correlati alla digestione, disturbi alimentari, diarrea e ulcere duodenali.</p><p><b>Ubicazione</b><br>SC1, nell'emiconca superiore, appena al di sopra della conca rigida</p><p></p>",
+            "ChiaviTsubo": ""
+        },
+        "103": {
+            "NomeTsubo": "Intossicazione da mercurio",
+            "AzioniTsubo": "<p><b>Altri nomi</b><br>- xxx</p><p><b>Azione</b><br>xxx</p><p><b>Ubicazione</b><br>xxx</p>",
             "ChiaviTsubo": ""
         },
         "104": {
@@ -30,9 +40,19 @@ DB.set= {
             "AzioniTsubo": "<p><b>Azione<br></b>Il Punto Uretra trova la sua efficacia in tutte le patologie correlate alle vie urinarie.</p><p><b>Ubicazione</b><br>SC4, nell'emiconca superiore in prossimità del punto di incontro tra l'elice e la radice inferiore dell'antelice.</p>",
             "ChiaviTsubo": ""
         },
+        "110": {
+            "NomeTsubo": "Palato",
+            "AzioniTsubo": "<p><b>Altri nomi</b><br>- xxx</p><p><b>Azione</b><br>xxx</p><p><b>Ubicazione</b><br>xxx</p>",
+            "ChiaviTsubo": ""
+        },
         "111": {
             "NomeTsubo": "Rene",
             "AzioniTsubo": "<p><b>Azione<br></b>Il punto Rene, viene utilizzato dalla Scuola Cinese, per la sua azione di riequilibrio sia sull’aspetto fisico che emotivo. E’ molto utile per ridurre i dolori e disturbi correlati ai reni in particolare all’apparato urinario. Viene inoltre indicato per il trattamento dello stress, astenia, depressione e acufeni.</p><p><b>Ubicazione</b><br>CS6-CW8, al confine tra emiconca superiore e avanmuro, nel punto in cui l'antelice si divide nei 2 rami.</p>",
+            "ChiaviTsubo": ""
+        },
+        "112": {
+            "NomeTsubo": "Ascite",
+            "AzioniTsubo": "<p><b>Altri nomi</b><br>- xxx</p><p><b>Azione</b><br>xxx</p><p><b>Ubicazione</b><br>xxx</p>",
             "ChiaviTsubo": ""
         },
         "114": {
@@ -56,8 +76,13 @@ DB.set= {
             "ChiaviTsubo": ""
         },
         "118": {
-            "NomeTsubo": "Ghiandola surrenale",
+            "NomeTsubo": "Ghiandola surrenale EUR",
             "AzioniTsubo": "<p><b>Altri nomi</b><br>- Surrene</p><p><b>Azione</b><br>Come suggerito dal nome, questo punto è indicato per trattare tutti i disturbi correlati alle ghiandole surrenali.</p><p><b>Ubicazione</b><br>CW7, nell'avanmuro, al confine con l'emiconca superiore, sulla verticale del punto [.001.]</p>",
+            "ChiaviTsubo": ""
+        },
+        "119": {
+            "NomeTsubo": "Ghiandola mammaria EUR",
+            "AzioniTsubo": "<p><b>Altri nomi</b><br>- xxx</p><p><b>Azione</b><br>xxx</p><p><b>Ubicazione</b><br>xxx</p>",
             "ChiaviTsubo": ""
         },
         "120": {
@@ -110,6 +135,11 @@ DB.set= {
             "AzioniTsubo": "<p><b>Altri nomi</b><br>- Visione</p><p><b>Azione</b><br>La Scuola Cinese distingue 3 diversi punti per indicare l'occhio. Vengono spesso combinati assieme ed hanno una forte azione per ridurre le patologie visive ed oculari.</p><p><b>Ubicazione</b><br>IT1-TG1, tra il trago e l'incisura intertragica<br>IT1-AT1, tra l'antitrago e l'incisura intertragica<br>IC6, nell'emiconca inferiore, in prossimità del foro uditivo esterno</p>",
             "ChiaviTsubo": ""
         },
+        "133": {
+            "NomeTsubo": "Gola EUR",
+            "AzioniTsubo": "<p><b>Altri nomi</b><br>- xxx</p><p><b>Azione</b><br>xxx</p><p><b>Ubicazione</b><br>xxx</p>",
+            "ChiaviTsubo": ""
+        },
         "134": {
             "NomeTsubo": "Trachea",
             "AzioniTsubo": "<p><b>Azione<br></b>Il Punto Trachea è indicato per trattare tutti quei soggetti affetti da disturbi alla trachea, trachea e bronchi.</p><p><b>Ubicazione</b><br>IC3, nell'emiconca inferiore, al centro, vicino al foro uditivo esterno.</p>",
@@ -120,9 +150,29 @@ DB.set= {
             "AzioniTsubo": "<p><b>Altri nomi</b><br>- X nervo cranico<br>- X NC</p><p><b>Azione</b><br>Questo punto ha una forte azione riequilibrante del parasimpatico, utilizzato in particolare per trattare casi di tachicardia con palpitazioni e ansia.</p><p><b>Ubicazione</b><br>IC3, nell'emiconca inferiore, al centro e verso il foro uditivo esterno</p>",
             "ChiaviTsubo": ""
         },
+        "136": {
+            "NomeTsubo": "Ghiandola pituitaria posteriore",
+            "AzioniTsubo": "<p><b>Altri nomi</b><br>- xxx</p><p><b>Azione</b><br>xxx</p><p><b>Ubicazione</b><br>xxx</p>",
+            "ChiaviTsubo": ""
+        },
         "137": {
             "NomeTsubo": "San Jiao",
             "AzioniTsubo": "<p><b>Altri nomi</b><br>- Triplo riscaldatore<br></p><p><b>Azione</b><br>Il Punto San Jiao ha una potente azione sia fisica che emotiva. E’ indicato nel riequilibrio dell’apparato respiratorio, digestivo, circolatorio e per il trattamento dell’ansia e della depressione.</p><p><b>Ubicazione</b><br>IC1, nell'emiconca inferiore, nella sua parte più bassa, all'incontro con l'incisura intertragica.</p>",
+            "ChiaviTsubo": ""
+        },
+        "138": {
+            "NomeTsubo": "Prolactina",
+            "AzioniTsubo": "<p><b>Altri nomi</b><br>- xxx</p><p><b>Azione</b><br>xxx</p><p><b>Ubicazione</b><br>xxx</p>",
+            "ChiaviTsubo": ""
+        },
+        "139": {
+            "NomeTsubo": "Ghiandola pituitaria anteriore",
+            "AzioniTsubo": "<p><b>Altri nomi</b><br>- xxx</p><p><b>Azione</b><br>xxx</p><p><b>Ubicazione</b><br>xxx</p>",
+            "ChiaviTsubo": ""
+        },
+        "140": {
+            "NomeTsubo": "Nervo craniale parasimpatico",
+            "AzioniTsubo": "<p><b>Altri nomi</b><br>- xxx</p><p><b>Azione</b><br>xxx</p><p><b>Ubicazione</b><br>xxx</p>",
             "ChiaviTsubo": ""
         },
         "142": {
@@ -136,8 +186,18 @@ DB.set= {
             "ChiaviTsubo": ""
         },
         "144": {
-            "NomeTsubo": "Tiroide",
+            "NomeTsubo": "Tiroide EUR",
             "AzioniTsubo": "<p><b>Altri nomi</b><br>- Ghiandola tiroidea</p><p><b>Azione</b><br>Come suggerito dal nome, questo punto è indicato per trattare tutti i disturbi correlati alla tiroide.</p><p><b>Ubicazione</b><br>CW4, nell'avanmuro, al confine con l'emiconca superiore, in corrispondenza dei riflessi delle vertebre C3 e C4</p>",
+            "ChiaviTsubo": ""
+        },
+        "145": {
+            "NomeTsubo": "Mal di denti",
+            "AzioniTsubo": "<p><b>Altri nomi</b><br>- xxx</p><p><b>Azione</b><br>xxx</p><p><b>Ubicazione</b><br>xxx</p>",
+            "ChiaviTsubo": ""
+        },
+        "146": {
+            "NomeTsubo": "Ghiandola paratiriode EUR",
+            "AzioniTsubo": "<p><b>Altri nomi</b><br>- xxx</p><p><b>Azione</b><br>xxx</p><p><b>Ubicazione</b><br>xxx</p>",
             "ChiaviTsubo": ""
         },
         "147": {
@@ -150,8 +210,13 @@ DB.set= {
             "AzioniTsubo": "<p><b>Altri nomi</b><br>- Punto vertigini</p><p><b>Azione</b><br>La scuola Francese indica questo punto per la sua efficacia nella riduzione dei disturbi neurologici della periferica dorsale e tutti i dolori neuropatici correlati all’arto superiore e del tronco.</p><p><b>Ubicazione</b><br>CW4, al confine tra l'avanmuro dell'antelice e dell'antitrago</p>",
             "ChiaviTsubo": ""
         },
+        "149": {
+            "NomeTsubo": "Vertigini",
+            "AzioniTsubo": "<p><b>Altri nomi</b><br>- xxx</p><p><b>Azione</b><br>xxx</p><p><b>Ubicazione</b><br>xxx</p>",
+            "ChiaviTsubo": ""
+        },
         "150": {
-            "NomeTsubo": "Midollo allungato",
+            "NomeTsubo": "Midollo allungato CIN",
             "AzioniTsubo": "<p><b>Altri nomi</b><br>- Brainstem</p><p><b>Azione</b><br>Secondo la scuola cinese, il punto Brainstem è indicato per tonificare la mente e regolare la respirazione, la temperatura ed il ritmo cardiaco. Risulta altresì efficace in caso di epilessia e convulsioni.</p><p><b>Ubicazione</b><br>CW4, nell'avanmuro in corrispondenza del confine tra antelice e antitrago</p>",
             "ChiaviTsubo": ""
         },
@@ -176,8 +241,23 @@ DB.set= {
             "ChiaviTsubo": ""
         },
         "159": {
-            "NomeTsubo": "Ghiandola sessuale",
+            "NomeTsubo": "Ghiandola sessuale CIN",
             "AzioniTsubo": "<p><b>Altri nomi</b><br>- Ovaio<br>- Testicolo<br>- Gonadi<br>- Genitali interni</p><p><b>Azione</b><br>Questo punto trova una grande applicazione per il trattamento ed il riequilibrio delle gonadi.</p><p><b>Ubicazione</b><br>CW1, nell'avanmuro dell'antitrago, vicino all'incisura intertragica</p>",
+            "ChiaviTsubo": ""
+        },
+        "160": {
+            "NomeTsubo": "Sistema circolatorio EUR",
+            "AzioniTsubo": "<p><b>Altri nomi</b><br>- xxx</p><p><b>Azione</b><br>xxx</p><p><b>Ubicazione</b><br>xxx</p>",
+            "ChiaviTsubo": ""
+        },
+        "161": {
+            "NomeTsubo": "Nervo pregangliare simpatico",
+            "AzioniTsubo": "<p><b>Altri nomi</b><br>- xxx</p><p><b>Azione</b><br>xxx</p><p><b>Ubicazione</b><br>xxx</p>",
+            "ChiaviTsubo": ""
+        },
+        "163": {
+            "NomeTsubo": "Tireotropine",
+            "AzioniTsubo": "<p><b>Altri nomi</b><br>- TSH</p><p><b>Azione</b><br>xxx</p><p><b>Ubicazione</b><br>xxx</p>",
             "ChiaviTsubo": ""
         },
         "164": {
@@ -195,6 +275,11 @@ DB.set= {
             "AzioniTsubo": "<p><b>Altri nomi</b><br>- Cavità nasali</p><p><b>Azione</b><br>La Scuola Cinese distingue i Punti Naso Esterno e Naso Interno per le loro diverse applicazioni terapiche. Questo punto è indicato per trattare tutti i disturbi nasali interni in particolare la sinusite, rinite, allergia e l’ostruzione nasale.</p><p><b>Ubicazione</b><br>ST2, nella faccia interna del trago, appena dietro alla sua protuberanza inferiore</p>",
             "ChiaviTsubo": ""
         },
+        "168": {
+            "NomeTsubo": "Formazione reticolare",
+            "AzioniTsubo": "<p><b>Altri nomi</b><br>- xxx</p><p><b>Azione</b><br>xxx</p><p><b>Ubicazione</b><br>xxx</p>",
+            "ChiaviTsubo": ""
+        },
         "169": {
             "NomeTsubo": "Orecchio interno",
             "AzioniTsubo": "<p><b>Altri nomi</b><br>- Nervo uditivo<br>- Coclea</p><p><b>Azione</b><br>La Scuola Francese distingue i Punti Orecchio Esterno e Orecchio Interno per le loro diverse proprietà curative. Questo Punto è indicato per ridurre i disturbi ed i dolori interni dell’orecchio. In particolare vertigini, acufeni.</p><p><b>Ubicazione</b><br>ST3, nella faccia interna del trago, vicino alla protuberanza inferiore</p>",
@@ -203,6 +288,16 @@ DB.set= {
         "170": {
             "NomeTsubo": "Oscillazione MASTER",
             "AzioniTsubo": "<p><b>Altri nomi</b><br>- Punto lateralità</p><p><b>Azione</b><br>Indicato per ridurre i disturbi posturali in particolare della lateralità.</p><p><b>Ubicazione</b><br>ST3, nella faccia nascosta del trago, al livello della protuberanza inferiore.</p>",
+            "ChiaviTsubo": ""
+        },
+        "171": {
+            "NomeTsubo": "Midollo lombosacrale",
+            "AzioniTsubo": "<p><b>Altri nomi</b><br>- xxx</p><p><b>Azione</b><br>xxx</p><p><b>Ubicazione</b><br>xxx</p>",
+            "ChiaviTsubo": ""
+        },
+        "172": {
+            "NomeTsubo": "Ghiandola salivare EUR",
+            "AzioniTsubo": "<p><b>Altri nomi</b><br>- xxx</p><p><b>Azione</b><br>xxx</p><p><b>Ubicazione</b><br>xxx</p>",
             "ChiaviTsubo": ""
         },
         "173": {
@@ -215,9 +310,24 @@ DB.set= {
             "AzioniTsubo": "<p><b>Altri nomi</b><br>- ATM<br>- Muscolo pterigoideo esterno</p><p><b>Azione</b><br>Trattare questo punto per ridurre il dolore legato ad una o entrambe le articolazioni esterne alla mascella. Efficace in caso di bruxismo.</p><p><b>Ubicazione</b><br>LO8, nel punto in qui la fossa scafoidea si divide a Y, all'inizio della sua branca anteriore</p>",
             "ChiaviTsubo": ""
         },
+        "175": {
+            "NomeTsubo": "Collo",
+            "AzioniTsubo": "<p><b>Altri nomi</b><br>- xxx</p><p><b>Azione</b><br>xxx</p><p><b>Ubicazione</b><br>xxx</p>",
+            "ChiaviTsubo": ""
+        },
+        "176": {
+            "NomeTsubo": "Midollo dorsale",
+            "AzioniTsubo": "<p><b>Altri nomi</b><br>- xxx</p><p><b>Azione</b><br>xxx</p><p><b>Ubicazione</b><br>xxx</p>",
+            "ChiaviTsubo": ""
+        },
         "177": {
             "NomeTsubo": "Occipite",
             "AzioniTsubo": "<p><b>Altri nomi</b><br>- Osso occipitale<br>- Muscolo occipitale<br>- Atlante</p><p><b>Azione</b><br>Questo Punto Internazionale viene adottato per trattare tutti i disturbi occipitali, in particolare le contratture muscolari occipitali, gli spasmi facciali, l’insonnia e le vertigini.</p><p><b>Ubicazione</b><br>AT3, sull'antitrago vicino al solco post-antitragale</p>",
+            "ChiaviTsubo": ""
+        },
+        "178": {
+            "NomeTsubo": "Corteccia occipitale",
+            "AzioniTsubo": "<p><b>Altri nomi</b><br>- xxx</p><p><b>Azione</b><br>xxx</p><p><b>Ubicazione</b><br>xxx</p>",
             "ChiaviTsubo": ""
         },
         "179": {
@@ -226,13 +336,23 @@ DB.set= {
             "ChiaviTsubo": ""
         },
         "180": {
-            "NomeTsubo": "Apice dell'antitrago",
-            "AzioniTsubo": "<b>Altri nomi</b><br>- Punto asma CIN<br>- Punto MASTER reticolare<br><p><b>Azione</b><br>Definito dalla scuola cinese “Punto Asma”, pertanto indicato per asma e forti emicranie. Spesso utilizzato in casi di dolore lieve, con soglie che non superano il VAS di livello 5.</p><p><b>Ubicazione</b><br>AT2, nel punto più alto dell'antitrago</p>",
+            "NomeTsubo": "Punto asma CIN",
+            "AzioniTsubo": "<b>Altri nomi</b><br>- Apice dell'antitrago<br>- Punto MASTER reticolare<br><p><b>Azione</b><br>Definito dalla scuola cinese “Punto Asma”, pertanto indicato per asma e forti emicranie. Spesso utilizzato in casi di dolore lieve, con soglie che non superano il VAS di livello 5.</p><p><b>Ubicazione</b><br>AT2, nel punto più alto dell'antitrago</p>",
+            "ChiaviTsubo": ""
+        },
+        "181": {
+            "NomeTsubo": "Midollo cervicale",
+            "AzioniTsubo": "<p><b>Altri nomi</b><br>- xxx</p><p><b>Azione</b><br>xxx</p><p><b>Ubicazione</b><br>xxx</p>",
             "ChiaviTsubo": ""
         },
         "182": {
             "NomeTsubo": "Orecchio esterno",
             "AzioniTsubo": "<p><b>Azione<br></b>La Scuola Francese distingue i Punti Orecchio Esterno e Orecchio Interno per le loro diverse proprietà curative. Questo Punto è indicato per ridurre i disturbi ed i dolori esterni dell’orecchio.</p><p><b>Ubicazione</b><br>TG5, sul trago vicino alla protuberanza superiore</p>",
+            "ChiaviTsubo": ""
+        },
+        "183": {
+            "NomeTsubo": "Punto della sete",
+            "AzioniTsubo": "<p><b>Altri nomi</b><br>- xxx</p><p><b>Azione</b><br>xxx</p><p><b>Ubicazione</b><br>xxx</p>",
             "ChiaviTsubo": ""
         },
         "184": {
@@ -245,6 +365,26 @@ DB.set= {
             "AzioniTsubo": "<p><b>Azione<br></b>La Scuola Cinese distingue i Punti Naso Esterno e Naso Interno per le loro diverse applicazioni terapiche. Questo punto è indicato per trattare tutti i disturbi nasali in particolare l’ostruzione nasale.</p><p><b>Ubicazione</b><br>TG3, al centro del trago in un area che va verso la guancia, vicino al punto [.254.]</p>",
             "ChiaviTsubo": ""
         },
+        "186": {
+            "NomeTsubo": "Corteccia parietale",
+            "AzioniTsubo": "<p><b>Altri nomi</b><br>- xxx</p><p><b>Azione</b><br>xxx</p><p><b>Ubicazione</b><br>xxx</p>",
+            "ChiaviTsubo": ""
+        },
+        "187": {
+            "NomeTsubo": "Corteccia frontale",
+            "AzioniTsubo": "<p><b>Altri nomi</b><br>- xxx</p><p><b>Azione</b><br>xxx</p><p><b>Ubicazione</b><br>xxx</p>",
+            "ChiaviTsubo": ""
+        },
+        "188": {
+            "NomeTsubo": "Corteccia prefrontale",
+            "AzioniTsubo": "<p><b>Altri nomi</b><br>- xxx</p><p><b>Azione</b><br>xxx</p><p><b>Ubicazione</b><br>xxx</p>",
+            "ChiaviTsubo": ""
+        },
+        "190": {
+            "NomeTsubo": "Ghiandola surrenale CIN",
+            "AzioniTsubo": "<p><b>Altri nomi</b><br>- xxx</p><p><b>Azione</b><br>xxx</p><p><b>Ubicazione</b><br>xxx</p>",
+            "ChiaviTsubo": ""
+        },
         "191": {
             "NomeTsubo": "Controllo dell'appetito",
             "AzioniTsubo": "<p><b>Altri nomi</b><br>- Controllo dell'appetito<br>- Hunger point</p><p><b>Azione</b><br>Questo punto viene sfruttato per la sua capacità di diminuire l’appetito.</p><p><b>Ubicazione</b><br>TG3, al centro della faccia esterna del trago</p>",
@@ -255,9 +395,19 @@ DB.set= {
             "AzioniTsubo": "<p><b>Altri nomi</b><br>- Punto Valium EUR<br>- Ipertensione CIN</p><p><b>Azione</b><br>Questo punto è riconosciuto per la sua efficacia per il trattamento di tutti i disturbi con componente ansia e stress. Ha una potente azione di riequilibrio psicofisico, favorisce il rilassamento in particolare in caso di insonnia.</p><p><b>Ubicazione.</b><br>TG2, sulla faccia anteriore del trago poco sotto la linea centrale. Il punto si trova in corrispondenza della cartilagine e non della guancia.</p>",
             "ChiaviTsubo": ""
         },
+        "193": {
+            "NomeTsubo": "Punto mania",
+            "AzioniTsubo": "<p><b>Altri nomi</b><br>- xxx</p><p><b>Azione</b><br>xxx</p><p><b>Ubicazione</b><br>xxx</p>",
+            "ChiaviTsubo": ""
+        },
         "195": {
             "NomeTsubo": "Ghiandola pineale",
             "AzioniTsubo": "<p><b>Altri nomi</b><br>- Epifisi</p><p><b>Azione</b><br>Punto utilizzato per il riequilibrio di tutti i bioritmi, in particolare per il trattamento di insonnia e depressione.</p><p><b>Ubicazione</b><br>TG1, al confine tra il trago e l'incisura intertragica</p>",
+            "ChiaviTsubo": ""
+        },
+        "196": {
+            "NomeTsubo": "Nucleo cingolato",
+            "AzioniTsubo": "<p><b>Altri nomi</b><br>- xxx</p><p><b>Azione</b><br>xxx</p><p><b>Ubicazione</b><br>xxx</p>",
             "ChiaviTsubo": ""
         },
         "198": {
@@ -270,14 +420,49 @@ DB.set= {
             "AzioniTsubo": "<b>Altri nomi</b><br>- Amigdala<br>- Irritabilità<p><b>Azione</b><br>Questo Punto Internazionale viene adottato per riequilibrare tutti gli stati emotivi legati all’irritabilità, aggressività rabbia e le azioni maniacali.</p><p><b>Ubicazione</b><br>LO2-AT1, nella fossetta che si trova sulla superficie laterale del lobo, al di sotto dell'incisura intertragica.</p>",
             "ChiaviTsubo": ""
         },
+        "200": {
+            "NomeTsubo": "Analgesico",
+            "AzioniTsubo": "<p><b>Altri nomi</b><br>- xxx</p><p><b>Azione</b><br>xxx</p><p><b>Ubicazione</b><br>xxx</p>",
+            "ChiaviTsubo": ""
+        },
+        "201": {
+            "NomeTsubo": "Ipnosi",
+            "AzioniTsubo": "<p><b>Altri nomi</b><br>- xxx</p><p><b>Azione</b><br>xxx</p><p><b>Ubicazione</b><br>xxx</p>",
+            "ChiaviTsubo": ""
+        },
         "202": {
             "NomeTsubo": "Fronte",
             "AzioniTsubo": "<p><b>Altri nomi</b><br>- Osso frontale</p><p><b>Azione</b><br>Il punto internazionale Fronte è indicato per trattare sia i disagi emotivi come insonnia, depressione ed ansia, sia i disturbi fisici quali dolore frontale, vertigini e sinusite.</p><p><b>Ubicazione</b><br>AT1, sull'antitrago in prossimità dell'incisura intertragica</p>",
             "ChiaviTsubo": ""
         },
+        "203": {
+            "NomeTsubo": "Memoria",
+            "AzioniTsubo": "<p><b>Altri nomi</b><br>- xxx</p><p><b>Azione</b><br>xxx</p><p><b>Ubicazione</b><br>xxx</p>",
+            "ChiaviTsubo": ""
+        },
+        "204": {
+            "NomeTsubo": "Nefrite",
+            "AzioniTsubo": "<p><b>Altri nomi</b><br>- xxx</p><p><b>Azione</b><br>xxx</p><p><b>Ubicazione</b><br>xxx</p>",
+            "ChiaviTsubo": ""
+        },
+        "205": {
+            "NomeTsubo": "Pancreatite",
+            "AzioniTsubo": "<p><b>Altri nomi</b><br>- xxx</p><p><b>Azione</b><br>xxx</p><p><b>Ubicazione</b><br>xxx</p>",
+            "ChiaviTsubo": ""
+        },
+        "206": {
+            "NomeTsubo": "Bronchite",
+            "AzioniTsubo": "<p><b>Altri nomi</b><br>- xxx</p><p><b>Azione</b><br>xxx</p><p><b>Ubicazione</b><br>xxx</p>",
+            "ChiaviTsubo": ""
+        },
         "207": {
             "NomeTsubo": "Corteccia temporale",
-            "AzioniTsubo": "<p><b>Altri nomi</b><br>- Lobo temporale<br>- Corteccia uditiva</p><p><b>Azione</b><br>Secondo la Scuola Francese, questo punto è indicato nel trattamento di tutte le patologie correlate all’udito.</p><p><b>Ubicazione</b><br>LO6, sul lobo, poco inferiormente e posteriormente all'antitrago, all'interno dell'area definita [.290.]</p>",
+            "AzioniTsubo": "<p><b>Altri nomi</b><br>- Lobo temporale<br>- Corteccia uditiva<br>- Linea dei suoni</p><p><b>Azione</b><br>Secondo la Scuola Francese, questo punto è indicato nel trattamento di tutte le patologie correlate all’udito e alla percezione di suoni.</p><p><b>Ubicazione</b><br>LO6, sul lobo, poco inferiormente e posteriormente all'antitrago, all'interno dell'area definita [.207.]</p>",
+            "ChiaviTsubo": ""
+        },
+        "208": {
+            "NomeTsubo": "Tubercolosi",
+            "AzioniTsubo": "<p><b>Altri nomi</b><br>- xxx</p><p><b>Azione</b><br>xxx</p><p><b>Ubicazione</b><br>xxx</p>",
             "ChiaviTsubo": ""
         },
         "209": {
@@ -285,14 +470,59 @@ DB.set= {
             "AzioniTsubo": "<p><b>Azione<br></b>Come indicato dal nome, questo punto è molto efficace nel trattamento di tutti i disturbi correlati alla lingua e del cavo orale.</p><p><b>Ubicazione</b><br>LO4, nel punto mediano tra l'apice del trago e il punto [.222.]</p>",
             "ChiaviTsubo": ""
         },
+        "210": {
+            "NomeTsubo": "Corpo striato",
+            "AzioniTsubo": "<p><b>Altri nomi</b><br>- xxx</p><p><b>Azione</b><br>xxx</p><p><b>Ubicazione</b><br>xxx</p>",
+            "ChiaviTsubo": ""
+        },
         "211": {
             "NomeTsubo": "Lingua EUR",
             "AzioniTsubo": "<p><b>Azione<br></b>Come indicato dal nome, questo punto è molto efficace nel trattamento di tutti i disturbi correlati alla lingua e del cavo orale.</p><p><b>Ubicazione</b><br>LO5, nel punto mediano tra il punto viso e il punto mascella superiore</p>",
             "ChiaviTsubo": ""
         },
+        "212": {
+            "NomeTsubo": "Punto starnuto",
+            "AzioniTsubo": "<p><b>Altri nomi</b><br>- xxx</p><p><b>Azione</b><br>xxx</p><p><b>Ubicazione</b><br>xxx</p>",
+            "ChiaviTsubo": ""
+        },
+        "213": {
+            "NomeTsubo": "Substantia nigra",
+            "AzioniTsubo": "<p><b>Altri nomi</b><br>- xxx</p><p><b>Azione</b><br>xxx</p><p><b>Ubicazione</b><br>xxx</p>",
+            "ChiaviTsubo": ""
+        },
+        "214": {
+            "NomeTsubo": "Nucleo rosso",
+            "AzioniTsubo": "<p><b>Altri nomi</b><br>- xxx</p><p><b>Azione</b><br>xxx</p><p><b>Ubicazione</b><br>xxx</p>",
+            "ChiaviTsubo": ""
+        },
         "215": {
             "NomeTsubo": "Viso",
             "AzioniTsubo": "<p><b>Altri nomi</b><br>- Faccia<br>- Guancia<br>- Muscoli facciali</p><p><b>Azione</b><br>Punto internazionale di auricoloterapia molto efficace per ridurre Tic nervosi, paralisi facciali, nevralgie; indicato inoltre per trattare gli spasmi facciali.</p><p><b>Ubicazione</b><br>LO5, sul logo, lateralmente, area piuttosto vasta al di sopra della cosiddetta [.283.]</p>",
+            "ChiaviTsubo": ""
+        },
+        "216": {
+            "NomeTsubo": "Tettuccio del mesencefalo",
+            "AzioniTsubo": "<p><b>Altri nomi</b><br>- xxx</p><p><b>Azione</b><br>xxx</p><p><b>Ubicazione</b><br>xxx</p>",
+            "ChiaviTsubo": ""
+        },
+        "217": {
+            "NomeTsubo": "Nuclei trigeminali",
+            "AzioniTsubo": "<p><b>Altri nomi</b><br>- xxx</p><p><b>Azione</b><br>xxx</p><p><b>Ubicazione</b><br>xxx</p>",
+            "ChiaviTsubo": ""
+        },
+        "218": {
+            "NomeTsubo": "Ponte di Varalio",
+            "AzioniTsubo": "<p><b>Altri nomi</b><br>- xxx</p><p><b>Azione</b><br>xxx</p><p><b>Ubicazione</b><br>xxx</p>",
+            "ChiaviTsubo": ""
+        },
+        "219": {
+            "NomeTsubo": "Plesso ipogastrico",
+            "AzioniTsubo": "<p><b>Altri nomi</b><br>- xxx</p><p><b>Azione</b><br>xxx</p><p><b>Ubicazione</b><br>xxx</p>",
+            "ChiaviTsubo": ""
+        },
+        "220": {
+            "NomeTsubo": "Nervo oculomotore",
+            "AzioniTsubo": "<p><b>Altri nomi</b><br>- xxx</p><p><b>Azione</b><br>xxx</p><p><b>Ubicazione</b><br>xxx</p>",
             "ChiaviTsubo": ""
         },
         "221": {
@@ -303,6 +533,31 @@ DB.set= {
         "222": {
             "NomeTsubo": "Sensoriale MASTER",
             "AzioniTsubo": "<p><b>Altri nomi</b><br>- Punto occhio<br>- PMSs</p><p><b>Azione</b><br>Punto Internazionale Master è correlato ai disturbi sia dell’occhio, sia dell’udito. Questo punto ha la capacità di riequilibrare le sensazioni uditive del lobo temporale e quelle visive del lobo occipitale. Il Punto Master Sensoriale è indicato per ridurre i disturbi correlati agli acufeni, all’irritabilità collegata ad odori o suoni ed infine a fenomeni di ipersensibilità.</p><p><b>Ubicazione</b><br>LO4, al centro della faccia laterale del lobo.</p>",
+            "ChiaviTsubo": ""
+        },
+        "223": {
+            "NomeTsubo": "Paratireotropine",
+            "AzioniTsubo": "<p><b>Altri nomi</b><br>- xxx</p><p><b>Azione</b><br>xxx</p><p><b>Ubicazione</b><br>xxx</p>",
+            "ChiaviTsubo": ""
+        },
+        "224": {
+            "NomeTsubo": "Cortisolo",
+            "AzioniTsubo": "<p><b>Altri nomi</b><br>- xxx</p><p><b>Azione</b><br>xxx</p><p><b>Ubicazione</b><br>xxx</p>",
+            "ChiaviTsubo": ""
+        },
+        "225": {
+            "NomeTsubo": "Laringe EUR",
+            "AzioniTsubo": "<p><b>Altri nomi</b><br>- xxx</p><p><b>Azione</b><br>xxx</p><p><b>Ubicazione</b><br>xxx</p>",
+            "ChiaviTsubo": ""
+        },
+        "226": {
+            "NomeTsubo": "Laringe CIN",
+            "AzioniTsubo": "<p><b>Altri nomi</b><br>- xxx</p><p><b>Azione</b><br>xxx</p><p><b>Ubicazione</b><br>xxx</p>",
+            "ChiaviTsubo": ""
+        },
+        "228": {
+            "NomeTsubo": "Cirrosi",
+            "AzioniTsubo": "<p><b>Altri nomi</b><br>- xxx</p><p><b>Azione</b><br>xxx</p><p><b>Ubicazione</b><br>xxx</p>",
             "ChiaviTsubo": ""
         },
         "229": {
@@ -323,6 +578,21 @@ DB.set= {
         "232": {
             "NomeTsubo": "Nervo olfattivo",
             "AzioniTsubo": "<p><b>Altri nomi</b><br>- I nervo cranico<br>- I NC</p><p><b>Azione</b><br>Questo punto viene impiegato per tutti i disturbi legati al nervo olfattivo.</p><p><b>Ubicazione</b><br>LO2, sul lobulo nella sua parte inferiore e anteriore, vicino all'attaccatura della guancia, poco sopra al punto&nbsp;[.230.] .</p>",
+            "ChiaviTsubo": ""
+        },
+        "233": {
+            "NomeTsubo": "Sistema limbico",
+            "AzioniTsubo": "<p><b>Altri nomi</b><br>- xxx</p><p><b>Azione</b><br>xxx</p><p><b>Ubicazione</b><br>xxx</p>",
+            "ChiaviTsubo": ""
+        },
+        "241": {
+            "NomeTsubo": "Gola CIN",
+            "AzioniTsubo": "<p><b>Altri nomi</b><br>- xxx</p><p><b>Azione</b><br>xxx</p><p><b>Ubicazione</b><br>xxx</p>",
+            "ChiaviTsubo": ""
+        },
+        "242": {
+            "NomeTsubo": "Clavicola EUR",
+            "AzioniTsubo": "<p><b>Altri nomi</b><br>- xxx</p><p><b>Azione</b><br>xxx</p><p><b>Ubicazione</b><br>xxx</p>",
             "ChiaviTsubo": ""
         },
         "243": {
@@ -381,8 +651,8 @@ DB.set= {
             "ChiaviTsubo": ""
         },
         "254": {
-            "NomeTsubo": "Zero primo",
-            "AzioniTsubo": "<p><b>Altri nomi</b><br>- Corpo calloso</p><p><b>Azione</b><br>Il Punto Zero Primo ha una potente azione di riequilibrio generale sul sistema cerebrale, favorendo la connessione tra i due emisferi, riequilibrando l’aspetto razionale ed emozionale del soggetto. Questo punto trova anche un’ottima applicazione per il rilassamento muscolare.</p><p><b>Ubicazione</b><br>TG2-TG4, area verticale che si estende parallelamente alla zona del trago, il cui punto centrale si trova all'altezza del centro del trago e a metà strada tra questo e la guancia.</p>",
+            "NomeTsubo": "Corpo calloso",
+            "AzioniTsubo": "<p><b>Altri nomi</b><br>- Zero primo</p><p><b>Azione</b><br>Il Punto Zero Primo ha una potente azione di riequilibrio generale sul sistema cerebrale, favorendo la connessione tra i due emisferi, riequilibrando l’aspetto razionale ed emozionale del soggetto. Questo punto trova anche un’ottima applicazione per il rilassamento muscolare.</p><p><b>Ubicazione</b><br>TG2-TG4, area verticale che si estende parallelamente alla zona del trago, il cui punto centrale si trova all'altezza del centro del trago e a metà strada tra questo e la guancia.</p>",
             "ChiaviTsubo": ""
         },
         "255": {
@@ -561,13 +831,83 @@ DB.set= {
             "ChiaviTsubo": ""
         },
         "290": {
-            "NomeTsubo": "Linea dei suoni",
-            "AzioniTsubo": "<p><b>Azione<br></b>Punto indicato per trattare tutte le patologie correlate alla percezione di suoni.</p><p><b>Ubicazione</b><br>LO4-LO6-LO8, sul lobo, in un'area logitudinale al di sotto dell'antitrago</p>",
+            "NomeTsubo": "Nucleus Accumbens",
+            "AzioniTsubo": "<p><b>Altri nomi</b><br>- xxx</p><p><b>Azione</b><br>xxx</p><p><b>Ubicazione</b><br>xxx</p>",
             "ChiaviTsubo": ""
         },
         "291": {
             "NomeTsubo": "Occipitale MASTER",
             "AzioniTsubo": "<p><b>Altri nomi</b><br>- Osso occipitale<br>- Atlante</p><p><b>Azione</b><br>Questo Punto Master è collegato direttamente allo spazio che intercorre tra l’osso occipitale e la prima vertebra cervicale. Ha una forte azione nel trattamento di vertigini, insonnia, cefalee tensive e nevralgie. E’ inoltre riconosciuto per le sue proprietà miorilassanti in particolare con componente tensivo-emozionale.</p><p><b>Ubicazione</b><br>AT3, nel solco antitragale.</p>",
+            "ChiaviTsubo": ""
+        },
+        "292": {
+            "NomeTsubo": "Mutismo",
+            "AzioniTsubo": "<p><b>Altri nomi</b><br>- xxx</p><p><b>Azione</b><br>xxx</p><p><b>Ubicazione</b><br>xxx</p>",
+            "ChiaviTsubo": ""
+        },
+        "293": {
+            "NomeTsubo": "Mento",
+            "AzioniTsubo": "<p><b>Altri nomi</b><br>- xxx</p><p><b>Azione</b><br>xxx</p><p><b>Ubicazione</b><br>xxx</p>",
+            "ChiaviTsubo": ""
+        },
+        "294": {
+            "NomeTsubo": "Vertice della testa",
+            "AzioniTsubo": "<p><b>Altri nomi</b><br>- xxx</p><p><b>Azione</b><br>xxx</p><p><b>Ubicazione</b><br>xxx</p>",
+            "ChiaviTsubo": ""
+        },
+        "295": {
+            "NomeTsubo": "Punto calore",
+            "AzioniTsubo": "<p><b>Altri nomi</b><br>- xxx</p><p><b>Azione</b><br>xxx</p><p><b>Ubicazione</b><br>xxx</p>",
+            "ChiaviTsubo": ""
+        },
+        "296": {
+            "NomeTsubo": "Tempo atmosferico",
+            "AzioniTsubo": "<p><b>Altri nomi</b><br>- xxx</p><p><b>Azione</b><br>xxx</p><p><b>Ubicazione</b><br>xxx</p>",
+            "ChiaviTsubo": ""
+        },
+        "297": {
+            "NomeTsubo": "Plesso solare",
+            "AzioniTsubo": "<p><b>Altri nomi</b><br>- xxx</p><p><b>Azione</b><br>xxx</p><p><b>Ubicazione</b><br>xxx</p>",
+            "ChiaviTsubo": ""
+        },
+        "298": {
+            "NomeTsubo": "Midollo allungato EUR",
+            "AzioniTsubo": "<p><b>Altri nomi</b><br>- xxx</p><p><b>Azione</b><br>xxx</p><p><b>Ubicazione</b><br>xxx</p>",
+            "ChiaviTsubo": ""
+        },
+        "299": {
+            "NomeTsubo": "Punto vigilanza",
+            "AzioniTsubo": "<p><b>Altri nomi</b><br>- xxx</p><p><b>Azione</b><br>xxx</p><p><b>Ubicazione</b><br>xxx</p>",
+            "ChiaviTsubo": ""
+        },
+        "300": {
+            "NomeTsubo": "Ghiandola salivare CIN",
+            "AzioniTsubo": "<p><b>Altri nomi</b><br>- xxx</p><p><b>Azione</b><br>xxx</p><p><b>Ubicazione</b><br>xxx</p>",
+            "ChiaviTsubo": ""
+        },
+        "301": {
+            "NomeTsubo": "Alcoolismo",
+            "AzioniTsubo": "<p><b>Altri nomi</b><br>- xxx</p><p><b>Azione</b><br>xxx</p><p><b>Ubicazione</b><br>xxx</p>",
+            "ChiaviTsubo": ""
+        },
+        "302": {
+            "NomeTsubo": "Orecchio interno CIN",
+            "AzioniTsubo": "<p><b>Altri nomi</b><br>- xxx</p><p><b>Azione</b><br>xxx</p><p><b>Ubicazione</b><br>xxx</p>",
+            "ChiaviTsubo": ""
+        },
+        "303": {
+            "NomeTsubo": "Ippocampo",
+            "AzioniTsubo": "<p><b>Altri nomi</b><br>- xxx</p><p><b>Azione</b><br>xxx</p><p><b>Ubicazione</b><br>xxx</p>",
+            "ChiaviTsubo": ""
+        },
+        "304": {
+            "NomeTsubo": "Analgesico dentale",
+            "AzioniTsubo": "<p><b>Altri nomi</b><br>- xxx</p><p><b>Azione</b><br>xxx</p><p><b>Ubicazione</b><br>xxx</p>",
+            "ChiaviTsubo": ""
+        },
+        "305": {
+            "NomeTsubo": "Naso esterno EUR",
+            "AzioniTsubo": "<p><b>Altri nomi</b><br>- xxx</p><p><b>Azione</b><br>xxx</p><p><b>Ubicazione</b><br>xxx</p>",
             "ChiaviTsubo": ""
         },
         "000": {
@@ -595,6 +935,16 @@ DB.set= {
             "AzioniTsubo": "<p><b>Altri nomi</b><br>- Punto psicoterapeutico<br>- Punto R.<br>- Punto di Bourdiol</p><p><b>Azione</b><br>La Scuola Francese utilizza questo punto per diminuire tutti i disturbi con componente psicosomatica; trova ottimi riscontri in psicoterapia e nei casi di soggetti affetti da psicosi.</p><p><b>Ubicazione</b><br>HX4-HX5, sull'elice all'altezza del punto un cui l'elice incontra l'antelice, in prossimità del punto [.039.].</p>",
             "ChiaviTsubo": ""
         },
+        "005": {
+            "NomeTsubo": "Apice del trago",
+            "AzioniTsubo": "<p><b>Altri nomi</b><br>- xxx</p><p><b>Azione</b><br>xxx</p><p><b>Ubicazione</b><br>xxx</p>",
+            "ChiaviTsubo": ""
+        },
+        "006": {
+            "NomeTsubo": "Punto nicotina",
+            "AzioniTsubo": "<p><b>Altri nomi</b><br>- xxx</p><p><b>Azione</b><br>xxx</p><p><b>Ubicazione</b><br>xxx</p>",
+            "ChiaviTsubo": ""
+        },
         "007": {
             "NomeTsubo": "Retto CIN",
             "AzioniTsubo": "<p><b>Azione<br></b>Il Punto Retto è molto utile per ridurre i sintomi da colon irritabile, dissenteria, emorroidi, diarrea, stipsi e dolori rettali.</p><p><b>Ubicazione</b><br>HX3, sul ginocchio dell'elice, al di sotto del punto in cui l'elice si incontra con radice inferiore dell'antelice.</p>",
@@ -608,6 +958,26 @@ DB.set= {
         "009": {
             "NomeTsubo": "Genitali esterni CIN",
             "AzioniTsubo": "<p><b>Altri nomi</b><br>- Pene<br>- Clitoride<br>- Punto di Bosch</p><p><b>Azione</b><br>Punto indicato dalla Scuola Francese per il trattamento di tutte le patologie scrotali e correlate agli organi genitali maschili e femminili. Molto efficace in caso di frigidità e impotenza.</p><p><b>Ubicazione</b><br>HX4, sul ginocchio dell'elice all'altezza della branca inferiore dell'antelice</p>",
+            "ChiaviTsubo": ""
+        },
+        "011": {
+            "NomeTsubo": "Tonsilla",
+            "AzioniTsubo": "<p><b>Altri nomi</b><br>- xxx</p><p><b>Azione</b><br>xxx</p><p><b>Ubicazione</b><br>xxx</p>",
+            "ChiaviTsubo": ""
+        },
+        "012": {
+            "NomeTsubo": "Vitamina E",
+            "AzioniTsubo": "<p><b>Altri nomi</b><br>- xxx</p><p><b>Azione</b><br>xxx</p><p><b>Ubicazione</b><br>xxx</p>",
+            "ChiaviTsubo": ""
+        },
+        "013": {
+            "NomeTsubo": "Fegato Yang",
+            "AzioniTsubo": "<p><b>Altri nomi</b><br>- xxx</p><p><b>Azione</b><br>xxx</p><p><b>Ubicazione</b><br>xxx</p>",
+            "ChiaviTsubo": ""
+        },
+        "015": {
+            "NomeTsubo": "Elice 1-6",
+            "AzioniTsubo": "<p><b>Altri nomi</b><br>- xxx</p><p><b>Azione</b><br>xxx</p><p><b>Ubicazione</b><br>xxx</p>",
             "ChiaviTsubo": ""
         },
         "017": {
@@ -660,6 +1030,16 @@ DB.set= {
             "AzioniTsubo": "<p><b>Altri nomi</b><br>- Articolazione del ginocchio<br>- Rotula</p><p><b>Azione</b><br>Come indicato dal nome, questo punto è molto efficace per ridurre tutti i disturbi correlati al ginocchio in particolare ai disturbi articolari dello stesso.</p><p><b>Ubicazione</b><br>TF3-TF4, nel centro della fossetta triangolare.</p>",
             "ChiaviTsubo": ""
         },
+        "034": {
+            "NomeTsubo": "Coscia",
+            "AzioniTsubo": "<p><b>Altri nomi</b><br>- xxx</p><p><b>Azione</b><br>xxx</p><p><b>Ubicazione</b><br>xxx</p>",
+            "ChiaviTsubo": ""
+        },
+        "036": {
+            "NomeTsubo": "Nervo sciatico",
+            "AzioniTsubo": "<p><b>Altri nomi</b><br>- xxx</p><p><b>Azione</b><br>xxx</p><p><b>Ubicazione</b><br>xxx</p>",
+            "ChiaviTsubo": ""
+        },
         "037": {
             "NomeTsubo": "Costipazione",
             "AzioniTsubo": "<p><b>Altri nomi</b><br>- Stipsi</p><p><b>Azione</b><br>Punto utilizzato dalla Scuola Cinese per la sua azione nel ridurre i disturbi da stipsi, regolando la motilità intestinale.</p><p><b>Ubicazione</b><br>TF3, a metà della fossetta triangolare, verso la radice inferiore dell'antelice.</p>",
@@ -680,9 +1060,24 @@ DB.set= {
             "AzioniTsubo": "<p><b>Azione<br></b>Questo punto viene adottato sia dalla Scuola Cinese sia dalla Scuola Francese per la sua azione nel contrasto dei disturbi e dolore al tallone.&nbsp;</p><p><b>Ubicazione</b><br>TF5, alla base della fossetta triangolare, vicino al punto di incontro tra l'elice e la radice inferiore dell'antelice. Il punto è nascosto dall'elice.</p>",
             "ChiaviTsubo": ""
         },
+        "041": {
+            "NomeTsubo": "Tiroide CIN",
+            "AzioniTsubo": "<p><b>Altri nomi</b><br>- xxx</p><p><b>Azione</b><br>xxx</p><p><b>Ubicazione</b><br>xxx</p>",
+            "ChiaviTsubo": ""
+        },
+        "042": {
+            "NomeTsubo": "Ghiandola mammaria CIN",
+            "AzioniTsubo": "<p><b>Altri nomi</b><br>- xxx</p><p><b>Azione</b><br>xxx</p><p><b>Ubicazione</b><br>xxx</p>",
+            "ChiaviTsubo": ""
+        },
         "043": {
             "NomeTsubo": "Torace",
             "AzioniTsubo": "<p><b>Altri nomi</b><br>- Petto<br>- Sterno<br>- Gabbia toracica<br>- Muscoli pettorali</p><p><b>Azione</b><br>Il Punto Torace ha un’azione di riequilibrio del dolore costale, toracico e nel trattamento di asma, tosse e disturbi circolatori.</p><p><b>Ubicazione</b><br>AH10, sul corpo dell'antelice all'altezza della conca rigida, verso la fossa scafoidea.</p>",
+            "ChiaviTsubo": ""
+        },
+        "044": {
+            "NomeTsubo": "Cervelletto",
+            "AzioniTsubo": "<p><b>Altri nomi</b><br>- xxx</p><p><b>Azione</b><br>xxx</p><p><b>Ubicazione</b><br>xxx</p>",
             "ChiaviTsubo": ""
         },
         "045": {
@@ -690,8 +1085,13 @@ DB.set= {
             "AzioniTsubo": "<p><b>Altri nomi</b><br>- Disturbi del sonno 1</p><p><b>Azione</b><br>La Scuola Francese distingue il trattamento dell’insonnia con due punti differenti. Il punto Insonnia 1 è indicato principalmente nei casi di continui risvegli notturni. Ottima efficacia nella riduzione di stress, depressione, nervosismo e come suggerito dal nome, per l’insonnia.</p><p><b>Ubicazione</b><br>SF5, nella fossa scafoidea, in alto</p>",
             "ChiaviTsubo": ""
         },
+        "046": {
+            "NomeTsubo": "Disturbi dell'appendice",
+            "AzioniTsubo": "<p><b>Altri nomi</b><br>- xxx</p><p><b>Azione</b><br>xxx</p><p><b>Ubicazione</b><br>xxx</p>",
+            "ChiaviTsubo": ""
+        },
         "047": {
-            "NomeTsubo": "Clavicola",
+            "NomeTsubo": "Clavicola CIN",
             "AzioniTsubo": "<p><b>Azione<br></b>Come indicato dal nome, questo punto è molto efficace per ridurre tutti i disturbi correlati alla clavicola. Trova inoltre efficacia nel trattamento del dolore alla scapola e del cingolo scapolare.</p><p><b>Ubicazione</b><br>SF4, nella fossa scafoidea, poco prima che questa si divida in un Y.</p>",
             "ChiaviTsubo": ""
         },
@@ -725,6 +1125,11 @@ DB.set= {
             "AzioniTsubo": "<p><b>Azione<br></b>Questo punto, secondo la Scuola Francese, è indicato per il trattamento delle patologie e disturbi cardiaci. E’ quindi consigliato trattare il punto Cuore in caso di dolore toracico, ipertensione e ipotensione, tachicardia ed aritmie di vario genere.</p><p><b>Ubicazione</b><br>AH3, sull'antelice al confine con l'avanmuro, all'altezza del [.000.]</p>",
             "ChiaviTsubo": ""
         },
+        "057": {
+            "NomeTsubo": "Lombalgia",
+            "AzioniTsubo": "<p><b>Altri nomi</b><br>- xxx</p><p><b>Azione</b><br>xxx</p><p><b>Ubicazione</b><br>xxx</p>",
+            "ChiaviTsubo": ""
+        },
         "058": {
             "NomeTsubo": "Gluteo",
             "AzioniTsubo": "<p><b>Altri nomi</b><br>- Grande gluteo<br>- Natiche</p><p><b>Azione</b><br>Questo punto ha una azione generale in caso di dolore al gluteo. E’ inoltre attivo per ridurre i dolori dell’anca, sciatica e della colonna lombare.</p><p><b>Ubicazione</b><br>AH5, nella radice inferiore dell'antelice, in prossimità dell'apice della fossetta triangolare.</p>",
@@ -738,6 +1143,11 @@ DB.set= {
         "061": {
             "NomeTsubo": "Bacino",
             "AzioniTsubo": "<p><b>Altri nomi</b><br>- Pelvi<br>- Cintura pelvica<br>- Inguine<br>- Osso pubico<br>- Cavità pelvica</p><p><b>Azione</b><br>Questo Punto Internazionale viene utilizzato per trattare tutte le patologie pelviche. Trova una buona efficacia nei casi di dolore lombare.</p><p><b>Ubicazione</b><br>TF1, all'apice della fossetta triangolare, verso il basso, sotto il punto [.001.]</p>",
+            "ChiaviTsubo": ""
+        },
+        "064": {
+            "NomeTsubo": "Labbra",
+            "AzioniTsubo": "<p><b>Altri nomi</b><br>- xxx</p><p><b>Azione</b><br>xxx</p><p><b>Ubicazione</b><br>xxx</p>",
             "ChiaviTsubo": ""
         },
         "065": {
@@ -795,6 +1205,11 @@ DB.set= {
             "AzioniTsubo": "<p><b>Azione<br></b>Il Punto Antistaminico viene adottato per trattare i disturbi legati ai polmoni, in particolare sintomi da raffreddamento, bronchiti, asma ed allergie.</p><p><b>Ubicazione</b><br>TF3-TF4, nel centro della fossa triangolare<span></span></p>",
             "ChiaviTsubo": ""
         },
+        "080": {
+            "NomeTsubo": "Epatite",
+            "AzioniTsubo": "<p><b>Altri nomi</b><br>- xxx</p><p><b>Azione</b><br>xxx</p><p><b>Ubicazione</b><br>xxx</p>",
+            "ChiaviTsubo": ""
+        },
         "081": {
             "NomeTsubo": "Caviglia CIN",
             "AzioniTsubo": "<p><b>Altri nomi</b><br>- Articolazione astragalo-tibiale<br>- Tendine d'Achille</p><p><b>Azione</b><br>Il punto caviglia viene utilizzato tutti i disturbi correlati alla caviglia, in particolare articolazioni, tendine d’Achille</p><p><b>Ubicazione</b><br>AH17, sulla radice superiore dell'elice nel suo terzo superiore</p>",
@@ -813,6 +1228,16 @@ DB.set= {
         "085": {
             "NomeTsubo": "Utero EUR",
             "AzioniTsubo": "<p><b>Azione<br></b>Il Punto Utero è riconosciuto sia dalla Scuola Cinese sia dalla Scuola Francese per la sua efficacia in tutte le patologie correlate alle vie urinarie, in particolare al sistema ginecologico e riproduttivo.</p><p><b>Ubicazione</b><br>IH3, sulla superficie nascosta dell'elice poco sotto il punto di incontro tra l'elice e la radice inferiore dell'antelice.</p>",
+            "ChiaviTsubo": ""
+        },
+        "087": {
+            "NomeTsubo": "Emorroidi",
+            "AzioniTsubo": "<p><b>Altri nomi</b><br>- xxx</p><p><b>Azione</b><br>xxx</p><p><b>Ubicazione</b><br>xxx</p>",
+            "ChiaviTsubo": ""
+        },
+        "088": {
+            "NomeTsubo": "Rene EUR",
+            "AzioniTsubo": "<p><b>Altri nomi</b><br>- xxx</p><p><b>Azione</b><br>xxx</p><p><b>Ubicazione</b><br>xxx</p>",
             "ChiaviTsubo": ""
         },
         "089": {
@@ -835,8 +1260,13 @@ DB.set= {
             "AzioniTsubo": "<p><b>Altri nomi</b><br>- Ano<br>- Emorroidi</p><p><b>Azione</b><br>Il Punto Retto è molto utile per ridurre i sintomi da colon irritabile, dissenteria, emorroidi, diarrea, stipsi e dolori rettali.</p><p><b>Ubicazione</b><br>IH1-SC4, al confine tra la parte nascosta della branca ascendente dell'elice e l'emiconca superiore.</p>",
             "ChiaviTsubo": ""
         },
+        "096": {
+            "NomeTsubo": "Prostata",
+            "AzioniTsubo": "<p><b>Altri nomi</b><br>- xxx</p><p><b>Azione</b><br>xxx</p><p><b>Ubicazione</b><br>xxx</p>",
+            "ChiaviTsubo": ""
+        },
         "097": {
-            "NomeTsubo": "Ghiandola sessuale",
+            "NomeTsubo": "Ghiandola sessuale EUR",
             "AzioniTsubo": "<p><b>Altri nomi</b><br>- Ovaio<br>- Testicolo<br>- Gonadi<br>- Genitali interni</p><p><b>Azione</b><br>Questo punto trova una grande applicazione per il trattamento ed il riequilibrio delle gonadi.</p><p><b>Ubicazione</b><br>IH1, sulla superficie nascosta della branca montante dell'elice.</p>",
             "ChiaviTsubo": ""
         },
