@@ -43,115 +43,117 @@ SET = {
 		this.geometryPallino = new THREE.SphereGeometry( 0.02, facce, facce );
 		this.geometryPallinoTrasp = new THREE.SphereGeometry( 0.07, facceTrasp, facceTrasp );
 		for(m in MERIDIANI){ // elenco i meridiani
-			this.LN[m] = new THREE.Group();
-			this.LN[m].name="LN_"+m;
-			var n=-1;
-			var LNS=MERIDIANI[m][modelloAperto].linee;
-			if(LNS){
-				for(l in LNS){ // aggiungo le linee
-					var loader = new THREE.ObjectLoader();
-					var mesh =  loader.parse(JSON.parse(LZString.decompressFromBase64(LNS[l].obj)));
-					var intAdd='';
-					if(LNS[l].interno)intAdd='Int';
-						
-					if(MERIDIANI[m].categoria != "" ){
-						mesh.visible=false;
-						var op = 1;
-						if(LNS[l].interno)op = 0.3;
-						mesh.material=cloneMAT(this.MAT.lineSel), {opacity: op};
-						if(!LNS[l].interno)mesh.material.depthFunc = 3;
-						mesh.material.opacity = op;
-						if(MERIDIANI[m].colore)mesh.material.color = new THREE.Color( eval("SET.COL.sel"+MERIDIANI[m].colore) );
-						if(m.indexOf("_MT")>-1){
-							mesh.material.color = new THREE.Color( SET.COL.selMT );
-							//if(!LNS[l].interno)mesh.material.depthFunc = 3;
-						}
-						mesh.computeLineDistances();
-					}else{
-						if(!MERIDIANI[m].yin){
-							mesh.material=eval("this.MAT.lineYang"+intAdd);
-						}else{
-							mesh.material=eval("this.MAT.lineYin"+intAdd);
-							mesh.computeLineDistances();
-						}
-					}
-					mesh.userData.interno=LNS[l].interno;
-					this.LN[m].add( mesh );
-				}
-			}
-			this.LN[m].userData.evidenziati=MERIDIANI[m].evidenziati;
-			SETS.add( this.LN[m] );
-			var n=-1;
-			var GDS=MERIDIANI[m][modelloAperto].guide;
-			if(GDS){
-				if(GDS.length){
-					this.GD[m] = new THREE.Group();
-					this.GD[m].name="GD_"+m;
-					for(l in GDS){ // aggiungo le guide
-						
+			if(m!='posizioni'){
+				this.LN[m] = new THREE.Group();
+				this.LN[m].name="LN_"+m;
+				var n=-1;
+				var LNS=MERIDIANI[m][modelloAperto].linee;
+				if(LNS){
+					for(l in LNS){ // aggiungo le linee
 						var loader = new THREE.ObjectLoader();
-						var mesh =  loader.parse(JSON.parse(LZString.decompressFromBase64(GDS[l].obj)));
-						mesh.material = this.MAT.lineGuide;
-						this.GD[m].add( mesh );
-						
+						var mesh =  loader.parse(JSON.parse(LZString.decompressFromBase64(LNS[l].obj)));
+						var intAdd='';
+						if(LNS[l].interno)intAdd='Int';
+							
+						if(MERIDIANI[m].categoria != "" ){
+							mesh.visible=false;
+							var op = 1;
+							if(LNS[l].interno)op = 0.3;
+							mesh.material=cloneMAT(this.MAT.lineSel), {opacity: op};
+							if(!LNS[l].interno)mesh.material.depthFunc = 3;
+							mesh.material.opacity = op;
+							if(MERIDIANI[m].colore)mesh.material.color = new THREE.Color( eval("SET.COL.sel"+MERIDIANI[m].colore) );
+							if(m.indexOf("_MT")>-1){
+								mesh.material.color = new THREE.Color( SET.COL.selMT );
+								//if(!LNS[l].interno)mesh.material.depthFunc = 3;
+							}
+							mesh.computeLineDistances();
+						}else{
+							if(!MERIDIANI[m].yin){
+								mesh.material=eval("this.MAT.lineYang"+intAdd);
+							}else{
+								mesh.material=eval("this.MAT.lineYin"+intAdd);
+								mesh.computeLineDistances();
+							}
+						}
+						mesh.userData.interno=LNS[l].interno;
+						this.LN[m].add( mesh );
 					}
-					SETS.add( this.GD[m] );
 				}
-			}
-			
-			this.PT[m] = new THREE.Group();
-			this.PT[m].name="PT_"+m;
-			// carico i punti parametrizzati
-			var n=-1;
-			var PTS=MERIDIANI[m][modelloAperto].punti;
-			var ptAdd = false;
-			
-			for(p in PTS){
-				if(PTS[p]!=''){
-					var x=PTS[p].array[0];
-					var y=PTS[p].array[1];
-					var z=PTS[p].array[2];
-					var interno=__(PTS[p].interno,false);
-					var evidenziati=__(PTS[p].evidenziati);
-					var pN = PTS[p].nome.split(".");
-					var N = pN[1];
-					var sigla = '';
-					if(PTS[p].or){ // se c'è una sigla (es EX)
-						sigla = PTS[p].or.split(".")[0];
+				this.LN[m].userData.evidenziati=MERIDIANI[m].evidenziati;
+				SETS.add( this.LN[m] );
+				var n=-1;
+				var GDS=MERIDIANI[m][modelloAperto].guide;
+				if(GDS){
+					if(GDS.length){
+						this.GD[m] = new THREE.Group();
+						this.GD[m].name="GD_"+m;
+						for(l in GDS){ // aggiungo le guide
+							
+							var loader = new THREE.ObjectLoader();
+							var mesh =  loader.parse(JSON.parse(LZString.decompressFromBase64(GDS[l].obj)));
+							mesh.material = this.MAT.lineGuide;
+							this.GD[m].add( mesh );
+							
+						}
+						SETS.add( this.GD[m] );
 					}
-						
-					// pallino colorato
-					n++;
-					/////var raggio = 0.02;
-					/////if(__(PTS[p].dupl))raggio = 0.018;
-					/////var geometry = new THREE.SphereGeometry( raggio, 6, 6 );
-					//var geometry = new THREE.BoxGeometry( 0.02, 0.02, 0.02 );
-					
-					
-					this.P[n] = new THREE.Mesh( this.geometryPallino, this.MAT.pointBase );
-					this.P[n].position.set(x,y,z);
-					
-					if(__(PTS[p].dupl))raggio = this.P[n].scale = 0.9;
-					this.P[n].name=PTS[p].nome;
-					if(sigla)this.P[n].userData.sigla = sigla;
-					if(interno)this.P[n].userData.interno = true;
-					if(evidenziati)this.P[n].userData.evidenziati = evidenziati;
-					this.PT[m].add( this.P[n] );
-						
-					// pallino trasparente
-					n++;
-					/////var geometryTrasp = new THREE.SphereGeometry( 0.07, 8, 8 );
-					this.P[n] = new THREE.Mesh( this.geometryPallinoTrasp, this.MAT.pointTrasp ); 
-					this.P[n].position.set(x,y,z);
-					this.P[n].name='_'+PTS[p].nome;
-					if(sigla)this.P[n].userData.sigla = sigla;
-					if(interno)this.P[n].userData.interno = true;
-					if(evidenziati)this.P[n].userData.evidenziati = evidenziati;
-					this.PT[m].add( this.P[n] );
-					ptAdd = true;
 				}
+				
+				this.PT[m] = new THREE.Group();
+				this.PT[m].name="PT_"+m;
+				// carico i punti parametrizzati
+				var n=-1;
+				var PTS=MERIDIANI[m][modelloAperto].punti;
+				var ptAdd = false;
+				
+				for(p in PTS){
+					if(PTS[p]!=''){
+						var x=PTS[p].array[0];
+						var y=PTS[p].array[1];
+						var z=PTS[p].array[2];
+						var interno=__(PTS[p].interno,false);
+						var evidenziati=__(PTS[p].evidenziati);
+						var pN = PTS[p].nome.split(".");
+						var N = pN[1];
+						var sigla = '';
+						if(PTS[p].or){ // se c'è una sigla (es EX)
+							sigla = PTS[p].or.split(".")[0];
+						}
+							
+						// pallino colorato
+						n++;
+						/////var raggio = 0.02;
+						/////if(__(PTS[p].dupl))raggio = 0.018;
+						/////var geometry = new THREE.SphereGeometry( raggio, 6, 6 );
+						//var geometry = new THREE.BoxGeometry( 0.02, 0.02, 0.02 );
+						
+						
+						this.P[n] = new THREE.Mesh( this.geometryPallino, this.MAT.pointBase );
+						this.P[n].position.set(x,y,z);
+						
+						if(__(PTS[p].dupl))raggio = this.P[n].scale = 0.9;
+						this.P[n].name=PTS[p].nome;
+						if(sigla)this.P[n].userData.sigla = sigla;
+						if(interno)this.P[n].userData.interno = true;
+						if(evidenziati)this.P[n].userData.evidenziati = evidenziati;
+						this.PT[m].add( this.P[n] );
+							
+						// pallino trasparente
+						n++;
+						/////var geometryTrasp = new THREE.SphereGeometry( 0.07, 8, 8 );
+						this.P[n] = new THREE.Mesh( this.geometryPallinoTrasp, this.MAT.pointTrasp ); 
+						this.P[n].position.set(x,y,z);
+						this.P[n].name='_'+PTS[p].nome;
+						if(sigla)this.P[n].userData.sigla = sigla;
+						if(interno)this.P[n].userData.interno = true;
+						if(evidenziati)this.P[n].userData.evidenziati = evidenziati;
+						this.PT[m].add( this.P[n] );
+						ptAdd = true;
+					}
+				}
+				if(ptAdd)SETS.add( this.PT[m] );
 			}
-			if(ptAdd)SETS.add( this.PT[m] );
 		}
 		
 		if(!localStorage.sistemaSigleMeridiani)localStorage.sistemaSigleMeridiani="INT";
@@ -167,9 +169,13 @@ SET = {
 		var contElenco = '';
 		
 		contPulsanti += '<div id="pulsante_modello" onClick="cambiaModello(\'donna\');">Apri il modello 3D</div>';
-		// meridiani
+		// mappa punti
 		contPulsanti += '<div id="pulsante_meridiani" class="frdx" onClick="SCHEDA.selElenco(\'meridiani\');">'+Lingua(TXT_MeridianiTradizionali)+'</div>';
 		contElenco += '<div id="lista_meridiani"></div>';
+		
+		// meridiani (da teoria)
+		contPulsanti += '<div id="pulsante_canali" class="frdx" onClick="SCHEDA.selElenco(\'canali\');">'+Lingua(TXT_Canali)+'</div>';
+		contElenco += '<div id="lista_canali"></div>';
 		
 		
 		// patologie
@@ -265,6 +271,61 @@ SET = {
 			}
 		}
 		postApreSet = false;
+		
+		//SET.iniPos();
+		
+	},
+	
+	iniPos: function( azzera ){
+		if(typeof(azzera)=='undefined')var azzera = false;
+		if(azzera)localStorage.POS = '{}';
+		SET.POS = JSON.parse(__(localStorage.POS,'{}'));
+		SET.hidePlaced();
+		document.addEventListener("keyup", SET.keyUpPos, false );
+	},
+	
+	keyUpPos: function(event){
+		if(event.keyCode==81){
+			normalizeRotation();
+			var el = {x: manichinoCont.rotation.x, y: manichinoCont.rotation.y };
+			if(SET.ptSel){
+				var name = SET.ptSel.name;
+				if(!SET.POS[name]){
+					
+					SET.POS[name] = el;
+					SET.ptSel.visible = false;
+				}
+				localStorage.POS = JSON.stringify(SET.POS);
+				console.log(SET.POS);
+				console.log(el);
+			}else{
+				console.log(el)
+			}
+		}
+	},
+	hidePlaced: function(){
+		for(i in MERIDIANI.posizioni){
+			if(scene.getObjectByName(i))scene.getObjectByName(i).visible = false;
+			if(scene.getObjectByName("_"+i))scene.getObjectByName("_"+i).visible = false;
+		}
+	},
+	makeUnique: function(){
+		var els = [];
+		var posizioni = {};
+		for(i in MERIDIANI.posizioni){
+			if(els.indexOf(i)==-1){
+				posizioni[i] = MERIDIANI.posizioni[i];
+				els.push(i);
+			}
+		}
+		const ordered = Object.keys(posizioni).sort().reduce(
+			(obj, key) => { 
+				obj[key] = posizioni[key]; 
+				return obj;
+			}, 
+			{}
+		);
+		console.log(ordered);
 	},
 	
 	// RENDER SET
@@ -489,6 +550,14 @@ SET = {
 		
 		panEndZero = { x: 0-this.ptSel.position.x, y: 0-this.ptSel.position.y, z: 0-this.ptSel.position.z };
 		panEnd = { x: 0, y: 0, z: 0 };
+		
+		// posiziono
+		if(MERIDIANI.posizioni[SET.ptSel.name]){
+			var pos = MERIDIANI.posizioni[SET.ptSel.name];
+			normalizeRotation();
+			rotateEnd = { x:pos.x, y:pos.y, z:0 };
+		}
+		
 		if(smothingView){
 			if(manichinoCont.position.z<15)zoomEnd = 15;
 			normalizeRotation();
@@ -1079,6 +1148,7 @@ SET = {
 	
 	
 	accendiMeridianoSecondario: function( sigla, mantieni ){
+		if(!globals.modello.cartella)return;
 		for(m in MERIDIANI){
 			if(MERIDIANI[m].categoria == "" ){
 				if(MERIDIANI[m].meridianoAcceso){
@@ -1120,6 +1190,7 @@ SET = {
 		}
 	},
 	spegniMeridianoSecondario: function( sigla, forza ){
+		if(!globals.modello.cartella)return;
 		if(typeof(sigla) == 'undefined')var sigla = '';
 		if(typeof(forza) == 'undefined')var forza = false;
 		var meridianoPrincipale = false;

@@ -1401,11 +1401,11 @@ body:not(.bodyStyled2) #btn_modut{
 }
 
 #p_features{
-	background-image:url(../img/ico_guidaN.png),url(../img/frDxB.png);
+	background-image:url(../img/ico_featuresN.png),url(../img/frDxB.png);
 	cursor:pointer;
 }
 .bodyStyled2 #p_features{
-	background-image:url(../img/ico_guida.png),url(../img/frDx.png);
+	background-image:url(../img/ico_features.png),url(../img/frDx.png);
 }
 #p_features:hover{
 	background-color:rgba(255,255,255,0.1);

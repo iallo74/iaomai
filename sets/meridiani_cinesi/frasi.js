@@ -84,6 +84,11 @@
 		ita: "Mappa dei punti",
 		eng: "Map of points",
 		esp: "" };
+		
+	TXT_Canali = {
+		ita: "Meridiani",
+		eng: "Meridians",
+		esp: "" };
 
 
 // APPROFONDIMENTI		

@@ -416,6 +416,9 @@ var MODULO_PUNTI = { // extend SET
 		document.getElementById("filtriSmart_cont").classList.toggle("visSch");
 	},
 	setPhase: function( ph ){
+		var PT_name = "";
+		if(SET.ptSel)PT_name = SET.ptSel.name;
+		SET.chiudiTsubo(true);
 		scene.getObjectByName("PTs").visible = false;
 		scene.getObjectByName("LNs").visible = false;
 		scene.getObjectByName("ARs").visible = false;
@@ -432,5 +435,10 @@ var MODULO_PUNTI = { // extend SET
 		
 		SET.phase = ph;
 		SET.filtraPunti();
+		if(PT_name){
+			setTimeout( function(){
+				SET.apriTsubo(PT_name);
+			}, 200, PT_name );
+		}
 	}
 }

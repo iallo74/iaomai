@@ -25,7 +25,7 @@ var mouseDetect = false;
 var onlineVersion=false;
 var isTablet = false;
 var globals = {};
-var verApp = '1.2.2';
+var verApp = '2.0';
 // IMPOSTAZIONI DI APP
 var nomeApp = 'Iáomai';
 var sloganApp = 'A new vision on health';
@@ -194,7 +194,22 @@ var IMPORTER = {
 		if(smartMenu)document.body.classList.add("smart");
 		if(isTablet)document.body.classList.add("tablet");
 		document.getElementById("verApp_imp").innerHTML = verApp;
-	
+		document.addEventListener('backbutton', function (e) {
+			//uscitaESC();
+			if (window.cordova && window.cordova.platformId !== 'windows')return;
+			if (window.location.href) {
+				//window.history.back();
+			}else{
+				throw new Error('Exit'); // This will suspend the app
+			}
+		  }, false);
+		/*if(!touchable){
+			history.pushState(null, document.title, location.href)
+			window.addEventListener('popstate', function (event){
+				uscitaESC();
+				history.pushState(null, document.title, location.href);
+			});
+		}*/
 		localPouchDB.getItem(MD5("FILES")).then(function(dbCont){ // leggo il DB
 			if(typeof(dbCont)!='undefined'){
 				res=JSON.parse(IMPORTER.DECOMPR(dbCont));

@@ -4,7 +4,7 @@ var manichino, ANATOMIA, SETS;
 var SET = null;
 var obj_guide = null;
 var obj_guide_fisse = null;
-var mouse, raycaster;
+var mouse, raycaster, mouse_lb;
 var manichinoCaricato=false;
 var clock = new THREE.Clock();
 var smothingView = true;
@@ -18,6 +18,7 @@ var rotateEnd=panEnd=panEndZero=zoomEnd=null;
 var rotateStart=panStart=panStartZero=zoomStart=null;
 var noAnimate = true;
 var postApreSet = false;
+var ctrl_pressed = false;
 /*var colori = [ 
 	"#333",
 	"#076baa",
@@ -159,8 +160,61 @@ function init() {
 	}
 	},500);
 	onWindowResize();
+	
+	if(mouseDetect){
+		window.addEventListener("keydown", 	keyDownStage, false);
+		window.addEventListener("keyup", 	keyUpStage, false);
+		window.addEventListener("mousemove", 	moveMouseStage, false);
+	}
 }
 
+function keyDownStage( event ){
+	if(event.keyCode==17){
+		ctrl_pressed = true;
+		if(	globals.set.cartella && 
+			globals.modello.cartella &&
+			(MODELLO.opAtt<1 || muscleView) ){
+			document.getElementById("lb_anatomy").style.opacity = 0.6;
+			window.addEventListener("mousemove", moveLB, false);
+			moveLB();
+			if(scene.getObjectByName('pins_muscoli') && muscleView){
+				scene.getObjectByName('pins_muscoli').visible = true;
+			}
+		}
+	}
+}
+function keyUpStage( event ){
+	if(event.keyCode==17){
+		ctrl_pressed = false;
+		if(	globals.set.cartella && 
+			globals.modello.cartella &&
+			(MODELLO.opAtt<1 || muscleView) ){
+			document.getElementById("lb_anatomy").style.opacity = 0;
+			document.getElementById("lb_anatomy").style.left = "-500px";
+			document.getElementById("lb_anatomy").style.top = "-500px";
+			window.removeEventListener("mousemove", moveLB, false);
+			if(scene.getObjectByName('pins_muscoli') && muscleView){
+				scene.getObjectByName('pins_muscoli').visible = false;
+			}
+		}
+	}
+}
+function moveMouseStage( event ){
+	mouse_lb = {
+		x: event.clientX,
+		y: event.clientY
+	};
+	if(overInterfaccia){
+		mouse_lb = {
+			x: -500,
+			y: -500
+		};
+	}
+}
+function moveLB(){
+	document.getElementById("lb_anatomy").style.left = (mouse_lb.x+9)+"px";
+	document.getElementById("lb_anatomy").style.top = (mouse_lb.y-7)+"px";
+}
 
 // CARICAMENTO DEI MODELLI
 function caricaModello( cartella ){
@@ -313,6 +367,7 @@ function caricaSet( cartella, el ){
 		if(	!daScheda )MENU.visSets();
 	}else{
 		// APRE un set
+		centro();
 		scaricaSet();
 		if(!daScheda){
 			if(!smartMenu)SCHEDA.chiudiElenco();
@@ -467,13 +522,18 @@ function onMouseMove( event ) {
 
 function render(forza) {
 	if(typeof(forza)=='undefined')var forza=false;
-	try{
-		make = SET._render();
-	}catch(err){
-		if(!SET){
-			make = true;
-			make = MODELLO._render();
+	if(globals.set.cartella && !ctrl_pressed){
+		try{
+			make = SET._render();
+		}catch(err){
+			if(!SET){
+				make = true;
+				make = MODELLO._render();
+			}
 		}
+	}else{
+		make = true;
+		make = MODELLO._render();
 	}
 	if(make || forza){
 		renderer.render( scene, camera );
@@ -637,11 +697,15 @@ function normalizeRotation(){
 	manichinoCont.rotation.set( newX, newY, 0 );
 }
 function onClick(){
-	try{
-		SET._onClick(event);
-	}catch(err){
-		if(SET)console.log(err)
-		else MODELLO._onClick(event);
+	if(globals.set.cartella && !ctrl_pressed){
+		try{
+			SET._onClick(event);
+		}catch(err){
+			if(SET)console.log(err)
+			else MODELLO._onClick(event);
+		}
+	}else{
+		MODELLO._onClick(event);
 	}
 }
 function centro(){ // riporta al centro

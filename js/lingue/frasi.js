@@ -159,6 +159,11 @@ var TXT_SchedaSalvata={
 		ita: "Inserisci qualche nota...",
 		eng: "Insert some annotation...",
 		esp: "" };
+		
+	var TXT_SelettoreAnatomia={
+		ita: "Selettore anatomia",
+		eng: "Anatomy selector",
+		esp: "" };
 
 // MENU IMPOSTAZIONI
 var TXT_Impostazioni={
@@ -2351,6 +2356,11 @@ var TXT_MessaggioBenvenuto={
 	
 	
 // GUIDE
+	var TXT_ReferenceGuide = {
+		ita: 'Guida in linea',
+		eng: 'Reference guide',
+		esp: "" };
+		
 var TXT_GuidaGenericaTit={
 	ita: 'Scopri cosa puoi fare',
 	eng: 'Discover the app',

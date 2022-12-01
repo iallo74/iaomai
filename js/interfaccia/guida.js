@@ -58,6 +58,21 @@ var GUIDA = {
 			if(!document.getElementById(n)){
 				document.getElementById('guida_def').className = 'fumetti '+n;
 				document.getElementById('fumetti_titolo').innerHTML = guide[n].titolo[globals.siglaLingua];
+				var cont = '';
+				if(typeof(guide[n].reference)!='undefined'){
+					if(guide[n].reference){
+						var reference = guide[n].reference;
+						if(globals.set.cartella)reference = reference.replace("[set]",globals.set.cartella);
+						document.getElementById("guida_def").querySelector(".btnReference").onclick = function(){
+							REF.open(reference);
+						}
+					}
+					document.getElementById("guida_def").querySelector(".btnReference").style.display = 'inline-block';
+				}else{
+					document.getElementById("guida_def").querySelector(".btnReference").style.display = 'none';
+				}
+				
+				
 				document.getElementById('fumetti_testo').innerHTML = guide[n].testo[globals.siglaLingua].replace(/\n/g, "<br>");
 				n='guida_def';
 			}
@@ -72,8 +87,9 @@ var GUIDA = {
 			document.getElementById("interfaccia").addEventListener("touchstart", GUIDA.nasFumetto, false);
 		}
 	},
-	nasFumetto: function(){
-		if(GUIDA.fumettoAperto && (!GUIDA.overFumetto || GUIDA.overChiudi)){
+	nasFumetto: function(forza){
+		if(typeof(forza)=='undefined')var forza = true;
+		if(GUIDA.fumettoAperto && (!GUIDA.overFumetto || GUIDA.overChiudi || forza)){
 			document.getElementById(GUIDA.fumettoAperto).classList.remove("vis");
 			document.getElementById(GUIDA.fumettoAperto).classList.remove("noFr");
 			GUIDA.tmFumetto = setTimeout( function(){
@@ -98,4 +114,135 @@ var GUIDA = {
 		document.getElementById(id).style.display = 'none';
 		document.getElementById("btn_"+id).style.display = 'inline-block';
 	},
+}
+
+
+
+var REF = {
+	level: null,
+	levelTxt: '',
+	elSel: null,
+	opened: false,
+	open: function( level ){
+		if(typeof(level)=='undefined')var level = 'overview';
+		document.getElementById("reference_cont").classList.add("visSch");
+		if(localStorage.fixTree=='1')document.getElementById("reference_cont").classList.add("fix");
+		document.getElementById("reference_cont").classList.remove("mini");
+		if(REF.opened){
+			REF.navigate(level);
+			return;
+		}
+		REF.levelTxt = level;
+		REF.opened = true;
+		if(!document.getElementById('js_lingue_reference_'+globals.siglaLingua+'_js')){
+			IMPORTER.importaFiles( 0, ['js/lingue/reference_'+globals.siglaLingua+'.js'], 'REF.tree();', document.head );	
+		}else REF.tree();
+	},
+	minify: function(){
+		document.getElementById("reference_cont").classList.add("mini");
+	},
+	magnify: function(){
+		document.getElementById("reference_cont").classList.remove("mini");
+	},
+	close: function(){
+		document.getElementById("reference_cont").classList.remove("visSch");
+		document.head.removeChild(document.getElementById('js_lingue_reference_'+globals.siglaLingua+'_js'));
+		REF.level = null;
+		REF.levelTxt = '';
+		REF.elSel = null;
+		REF.opened = false;
+	},
+	navigate: function( level ){
+		if(typeof(level)!='undefined')REF.levelTxt = level;
+		if(REF.elSel){
+			REF.elSel.classList.remove("refSel");
+			REF.elSel = null;
+		}
+		REF.explode();
+		var level = REF.levelTxt;
+		if(level.indexOf(".")>-1){
+			var pL = level.split(".");
+			level = '';
+			for(l in pL)level += ".cont."+pL[l];
+		}else{
+			if(level)level = '.cont.'+level;
+			else level = '.cont.overview';
+		}
+		REF.level = eval('DB.reference'+level);
+		var cont = REF.level.cont;
+		if(!cont)cont = '<i style="opacity:0.7;">'+Lingua(TXT_NoRes)+'</i>';
+		var nav = '';
+		if(REF.elSel){
+			var pL = REF.elSel.dataset.level.split(".");
+			var el = DB.reference.cont;
+			if(pL.length>1){
+				for(e=0;e<pL.length-1;e++){
+					nav += el[pL[e]].title;
+					if(e<pL.length-2)nav += ' &gt; ';
+					el = el[pL[e]].cont;
+				}
+				nav = '<div id="barra_nav">'+nav+'</div>';
+			}
+		}
+		document.getElementById("reference").innerHTML = nav+'<h2>'+REF.level.title+'</h2>'+cont;
+	},
+	cont: function( level, p ){
+		if(typeof(p)=='undefined')var p = '';
+		if(p)p += '.';
+		var html = '';
+		for(i in level.cont){
+			var l = p+i;
+			var pL = l.split(".");
+			if(typeof(level.cont[i].cont)=='object'){
+				html += '<div class="fr lv'+(pL.length-1)+'">' +
+						'	<a onClick="REF.sw(this);">'+level.cont[i].title+'</a>' +
+						'	<div class="cn">'+REF.cont(level.cont[i],l)+'</div>' +
+						'</div>';
+			}else{
+				html += '<div class="lk lv'+(pL.length-1)+'">' +
+						'	<a onClick="REF.navigate(\''+l+'\');"' +
+						'	   data-level="'+l+'"' +
+						'>'+level.cont[i].title+'</a>' +
+						'</div>';
+			}
+		}
+		return html;
+	},
+	tree: function(){
+		var html = '<div id="ref_tree">';
+		html += REF.cont(DB.reference)
+		html += '</div>';
+		document.getElementById("reference_tree").innerHTML = html;
+		document.getElementById("reference_cont").classList.remove("opTree");
+		REF.navigate();
+	},
+	sw: function( el ){
+		el.parentElement.classList.toggle("op");
+	},
+	explode: function(){
+		var els = document.getElementById("ref_tree").getElementsByTagName("a");
+		for(e in els){
+			if(els[e].dataset){
+				if(__(els[e].dataset.level) && els[e].dataset.level == REF.levelTxt){
+					els[e].classList.add("refSel");
+					REF.elSel = els[e];
+				}
+			}
+		}
+		if(!REF.elSel)return;
+		var el = REF.elSel;
+		while(el.parentElement.id!='ref_tree'){
+			el = el.parentElement;
+			if(el.classList.contains("fr"))el.classList.add("op");
+		}
+		GUIDA.nasFumetto(true);
+	},
+	swTree: function(){
+		document.getElementById("reference_cont").classList.toggle("opTree");
+	},
+	fixTree: function(){
+		if(__(localStorage.fixTree))localStorage.fixTree = '';
+		else localStorage.fixTree = '1';
+		document.getElementById("reference_cont").classList.toggle("fix", (localStorage.fixTree=='1'));
+	}
 }

@@ -442,7 +442,7 @@ SET = {
 		/*
 		Attivare per settare con il pulsante "q" le rotazioni automatiche sui punti
 		*/
-		SET.iniPos();
+		//SET.iniPos();
 		
 	},
 	
@@ -648,6 +648,7 @@ SET = {
 		document.getElementById("pt_"+name).classList.add("selElPt");
 		
 		var PT_name_first= null;
+		var AR_name_first= null;
 		
 		var mat = this.MAT.pointSel;
 		if(PT.userData.nota)mat = this.MAT.pointSelNote;
@@ -672,12 +673,19 @@ SET = {
 		var mat = this.MAT.areaSel;
 		var els = scene.getObjectByName("ARs"+SET.phase).children;
 		for(e in els){
-			if(els[e].name.indexOf("AR"+name)==0)els[e].material=mat;
+			if(els[e].name.indexOf("AR"+name)==0){
+				els[e].material=mat;
+				AR_name_first = "AR"+name;
+			}
 		}
 		
 		var elPin = this.ptSel;
 		if(typeof(el)!='undefined')elPin = el;
 		
+		if(!PT.parent.visible){
+			if(PT_name_first)PT = scene.getObjectByName(PT_name_first); 
+			if(AR_name_first)PT = scene.getObjectByName(AR_name_first); 
+		}
 		
 		if(PT.userData.type == 'area'){
 			elPin = scene.getObjectByName( "AR"+name );
@@ -770,21 +778,28 @@ SET = {
 			SCHEDA.scaricaScheda(); 
 		}
 		
-		if(exPt.geometry.type == "SphereGeometry"){
-			// ricentro il manichino
-			exPt.updateMatrixWorld();
+		// ricentro il manichino
+		exPt.updateMatrixWorld();
+		if(exPt.userData.type == 'area'){
+			var center = getCenterPoint(exPt);
+			var vector = new THREE.Vector3( ((MODELLO.flip) ? center.x*1 : 0-center.x*1), 0-center.y*1, 0-center.z*1 );
+		}else{
 			var vector = exPt.geometry.vertices[i].clone();
-			vector.applyMatrix4( exPt.matrixWorld );
-			manichino.position.set( 0, 0, 0 );
-			
-			render();
-			exPt.updateMatrixWorld();
-			var vector2 = exPt.geometry.vertices[i].clone();
-			vector2.applyMatrix4( exPt.matrixWorld );
-			manichinoCont.position.x = manichinoCont.position.x - (vector2.x-vector.x);
-			manichinoCont.position.y = manichinoCont.position.y - (vector2.y-vector.y);
-			manichinoCont.position.z = manichinoCont.position.z - (vector2.z-vector.z);
 		}
+		vector.applyMatrix4( exPt.matrixWorld );
+		manichino.position.set( 0, 0, 0 );
+		render();
+		exPt.updateMatrixWorld();
+		if(exPt.userData.type == 'area'){
+			var center = getCenterPoint(exPt);
+			var vector2 = new THREE.Vector3( ((MODELLO.flip) ? center.x*1 : 0-center.x*1), 0-center.y*1, 0-center.z*1 );
+		}else{
+			var vector2 = exPt.geometry.vertices[i].clone();
+		}
+		vector2.applyMatrix4( exPt.matrixWorld );
+		manichinoCont.position.x = manichinoCont.position.x - (vector2.x-vector.x);
+		manichinoCont.position.y = manichinoCont.position.y - (vector2.y-vector.y);
+		manichinoCont.position.z = manichinoCont.position.z - (vector2.z-vector.z);
 		controlsM._ZPR = false;
 		render();
 		SET.overTsubo( exPt.name, false );

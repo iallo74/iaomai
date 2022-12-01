@@ -854,6 +854,10 @@ body:not(.smart) .listaPunti .p_aria:not(.elencoSel) span:hover{
 #scheda:not(.sch_Max600) .textPuntoTratt{
 	margin-top: 0px !important;
 }
+
+.numPoints{
+    width: 107px !important;
+}
 .textPuntoTratt{
     width: calc(100% - 216px) !important;
 }
@@ -888,7 +892,7 @@ body:not(.smart) .listaPunti .p_aria:not(.elencoSel) span:hover{
 	margin-top: 0px !important;
 }
 .textPuntoTratt{
-    width: calc(100% - 216px) !important;
+    width: calc(100% - 276px) !important;
 }
 
 body:not(.bodyModello) #btns_set > div{

@@ -169,7 +169,12 @@ var MENU = {
 			if(document.getElementById("pulsanti_modello").classList.contains("visSch")){
 				applicaLoading( document.getElementById("elenchi_cont"));
 			}else{
-				SCHEDA.apriElenco('base');
+				var classList = document.getElementById("elenchi").classList;
+				if(classList.contains("visSch")){
+					if(classList.contains("vis_base"))SCHEDA.apriElenco('base');
+					if(classList.contains("vis_set"))SCHEDA.apriElenco('set');
+				}
+				rimuoviLoading( document.getElementById("elenchi_cont"));
 			}
 			document.getElementById("p_sets").classList.remove("p_sel");
 			document.getElementById("sets").classList.remove("visSch");
@@ -618,7 +623,7 @@ var MENU = {
 		var schedaModificaLato = false;
 		if(	document.getElementById("scheda").classList.contains("schLato") &&
 			document.getElementById("scheda_testo").querySelector(".formBtn") )schedaModificaLato = true;
-		if(!MENU.icoSelected && !schedaModificaLato){
+		if(!MENU.icoSelected && !schedaModificaLato && !document.getElementById("scheda").classList.contains("visSch")){
 			MENU.tmIcone = setTimeout( function(){
 				document.getElementById("icone").classList.add("iconeTrans");
 				document.getElementById("icone").classList.add("iconeEspanse");
@@ -647,7 +652,7 @@ var MENU = {
 		for(i=0;i<divs.length;i++){
 			var labels = divs[i].getElementsByTagName("i");
 			if(labels.length){
-				if(MENU.icoSelected && MENU.icoSelected!=divs[i]){
+				if((MENU.icoSelected || document.getElementById("scheda").classList.contains("visSch")) && MENU.icoSelected!=divs[i]){
 					divs[i].onmouseenter = function(){
 						MENU.visTT(this);
 					}
@@ -663,7 +668,7 @@ var MENU = {
 	},
 	visTT: function( el ){
 		if(touchable)return;
-		if(!MENU.icoSelected)return;
+		if(!MENU.icoSelected &&  !document.getElementById("scheda").classList.contains("visSch"))return;
 		txt = el.getElementsByTagName('i')[0].innerHTML;
 		if(!txt && el.getElementsByTagName('i'))txt = el.getElementsByTagName('i')[1].innerHTML;
 		document.getElementById("tooltipmenu_txt").innerHTML = txt;

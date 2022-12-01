@@ -627,7 +627,7 @@ DB.set= {
         },
         "249": {
             "NomeTsubo": "Polmone EUR",
-            "AzioniTsubo": "<p><b>Azione<br></b>Il Punto Polmone viene adottato sia dalla Scuola Cinese sia da quella Francese per la sua azione riequilibrante del sistema respiratorio, in particolare nei casi di bronchiti, enfisema e dolori al torace.</p><p><b>Ubicazione</b><br>IC2-IC4-IC5-IC7, ampia area nell'emiconca inferiore, verso l'avanmuro</p>",
+            "AzioniTsubo": "<p><b>Azione<br></b>Il Punto Polmone viene adottato sia dalla Scuola Cinese sia da quella Francese per la sua azione riequilibrante del sistema respiratorio, in particolare nei casi di bronchiti, enfisema e dolori al torace.</p><p><b>Ubicazione</b><br><i>Principale</i><br>IC2-IC4-IC5-IC7, ampia area nell'emiconca inferiore, verso l'avanmuro<br><br><i>Fase 2</i><br>LO8, sul lobo all'incontro con la fossa scafoidea<br><br><i>Fase 3</i><br>xxx<br></p>",
             "ChiaviTsubo": ""
         },
         "250": {

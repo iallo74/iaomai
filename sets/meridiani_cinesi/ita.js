@@ -3254,7 +3254,8 @@ DB.set= {
 					]
 				}
 			],
-			noList: true
+			noList: true,
+			meridiani: true
 		},
 		{
 			TitoloSezione: "Meridiani LUO",
@@ -3393,7 +3394,8 @@ DB.set= {
 					]
 				}
 			],
-			noList: true
+			noList: true,
+			meridiani: true
 		},
 		{
 			TitoloSezione: "Meridiani DISTINTI",
@@ -3500,7 +3502,8 @@ DB.set= {
 					]
 				}
 			],
-			noList: true
+			noList: true,
+			meridiani: true
 		},
 		{
 			TitoloSezione: "Meridiani STRAORDINARI",
@@ -3579,7 +3582,8 @@ DB.set= {
 					]
 				}
 			],
-			noList: true
+			noList: true,
+			meridiani: true
 		},
 		{
 			TitoloSezione: "Meridiani MUSCOLARI",
@@ -3698,7 +3702,8 @@ DB.set= {
 					]
 				}
 			],
-			noList: true
+			noList: true,
+			meridiani: true
 		},
 		{
 			TitoloSezione: "Punti particolari",

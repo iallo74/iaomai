@@ -109,7 +109,8 @@
         	<div id="navIn" onClick="zoom(1);"></div>
             <div id="navOut" onClick="zoom(-1);"></div>
         </div>
-            
+        
+		<div id="lb_anatomy"><span>{{TXT_SelettoreAnatomia}}</span></div> <!-- LABEL ANATOMIA () -->
 		<div id="tooltip"></div> <!-- TOOLTIP -->
 		<div id="tooltipmenu"><span id="tooltipmenu_txt"></span></div> <!-- TOOLTIP DEL MENU -->
         
@@ -117,7 +118,7 @@
         <div id="interfaccia"
         	 onMouseOver="
         
-      if(tipoApp == ''){
+       if(tipoApp == ''){
         	overInterfaccia=true;
 			MODELLO.INTERSECTED=null;
 			try{ SET.INTERSECTED=null; }catch(err){}
@@ -654,7 +655,7 @@
         
             <div id="cont_menu">
                 <div id="sets"> <!-- MENU SETS -->
-                    <div id="labelSets">{{TXT_Mappe}}<div id="chiudi_sets" onClick="MENU.visSets();"></div><i class="elMenu" id="help_set" style="margin-right: 38px;margin-top: 10px;margin-left: -45px;" onClick="MENU.visElencoSets();">?</i>
+                    <div id="labelSets">{{TXT_Mappe}}<div id="chiudi_sets" onClick="MENU.visSets();"></div><i class="elMenu" id="help_set" style="margin-right: 38px;margin-top: 10px;margin-left: -45px;" onClick="REF.open('sets.overview');">?</i>
                     </div>
                     <div id="sets_elenco">
                         <!-- da popolare -->
@@ -676,6 +677,7 @@
                         <div id="p_colori" onClick="MENU.visColori();">{{TXT_Colori}}</div>
                         <div id="p_download" onClick="MENU.visBackups();">{{TXT_Download}}</div>
                         <div id="p_feedback" onClick="MENU.visFeedback();">{{TXT_Feedback}}</div>
+                        <div id="p_guide" onClick="REF.open();MENU.visImpostazioni();">{{TXT_ReferenceGuide}}</div>
                         <div id="p_features" onClick="MENU.visFeatures(true);">{{TXT_NuoveCaratteristiche}}</div>
                         <div id="p_versione" onClick="MENU.visVersione();">{{TXT_Versione}}</div>
                     </div>
@@ -759,6 +761,7 @@
             	<div>
                 	<h1>{{TXT_GuidaGenericaTit}}</h1>
                     <p>{{TXT_MessaggioBenvenuto}}<br><br>{{TXT_GuidaGenericaTxt}}</p>
+                    <div class="btnReference" onClick="REF.open();">{{TXT_ReferenceGuide}}</div>
                 </div>
                 <div id="colSel">
                 	<p>{{TXT_ColoreAmbiente}}:</p>
@@ -785,12 +788,24 @@
                 	<h1 id="fumetti_titolo"></h1>
                     <p id="fumetti_testo"></p>
                 </div>
-        		<div class="noVisPiu">{{TXT_noVisPiu}} <input type="checkbox" id="no_guida" name="no_guida" value="1" onClick="GUIDA.noVis(this);"></div>
+        		<div class="noVisPiu"><div class="btnReference" onClick="REF.open();">{{TXT_ReferenceGuide}}</div>{{TXT_noVisPiu}} <input type="checkbox" id="no_guida" name="no_guida" value="1" onClick="GUIDA.noVis(this);"></div>
             </div>
             <div class="fumetti_freccia"></div>
         </div>
         
-        
+        <div id="reference_cont">
+        	<div id="reference_top">
+            	<div id="reference_ico" onClick="REF.magnify();"></div>
+            	<div id="reference_title">{{TXT_ReferenceGuide}}
+                	<span id="tree_btn" onClick="REF.swTree();"></span>
+                	<span id="tree_fix" onClick="REF.fixTree();"></span>
+                </div>
+            	<div id="reference_minify" onClick="REF.minify();"></div>
+            	<div id="reference_close" onClick="REF.close();"></div>
+            </div>
+        	<div id="reference_tree"></div>
+        	<div id="reference"></div>
+        </div>
         
         
         

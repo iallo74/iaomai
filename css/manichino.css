@@ -5,7 +5,9 @@
 		display:none;
 	}
 }
-#tooltip, #context_menu{
+#tooltip,
+#context_menu,
+#lb_anatomy{
 	position:fixed;
 	display:block;
 	top:-500px;
@@ -25,6 +27,43 @@
 }
 #context_menu{
 	width: fit-content;
+}
+#lb_anatomy{
+	position:fixed;
+	display:block;
+	top:-500px;
+	left:-500px;
+	opacity:0;
+	height:25px;
+	width:fit-content;
+	white-space:nowrap;
+	overflow:hidden;
+	background-color:transparent;
+	background-image:url(../img/lnfB.png);
+	background-position:left bottom;
+	background-repeat:no-repeat;
+	box-shadow:none;
+	border-radius:3px;
+	z-index:11;
+	font-size:11px;
+	padding-left:20px;
+	padding-bottom:10px;
+}
+
+.bodyStyled2 #lb_anatomy{
+	background-image:url(../img/lnf.png) !important;
+}
+
+#lb_anatomy span{
+	height:16px;
+	line-height:16px;
+	display:block;
+	border-bottom:1px solid rgba(255,255,255,0.8);
+	color:#FFF;
+}
+.bodyStyled2 #lb_anatomy span{
+	color:#000 !important;
+	border-bottom:1px solid rgba(0,0,0,0.8) !important;
 }
 .tooltipVis{
 	opacity:1 !important;

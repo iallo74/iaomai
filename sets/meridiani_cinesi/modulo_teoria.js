@@ -18,12 +18,14 @@ var MODULO_TEORIA = { // extend SET
 	],
 	caricaApprofondimenti: function(){
 		var contTeoria = '';
+		var contCanali = '';
 		for(p in DB.set.teoria){
-			contTeoria += 	'<div class="cartella" onTouchStart="SCHEDA.setCartella(this);">' +
-							'	<span id="btn_teoria_cart_'+p+'" onClick="SCHEDA.swCartella(this);">' +
-							 		DB.set.teoria[p].TitoloSezione +
-							'	</span>' +
-							'	<div>';
+			
+			var CONT = 	'<div class="cartella" onTouchStart="SCHEDA.setCartella(this);">' +
+						'	<span id="btn_teoria_cart_'+p+'" onClick="SCHEDA.swCartella(this);">' +
+								DB.set.teoria[p].TitoloSezione +
+						'	</span>' +
+						'	<div>';
 							
 			for(t in DB.set.teoria[p].contenuti){
 				
@@ -40,16 +42,23 @@ var MODULO_TEORIA = { // extend SET
 					funct = 'Video';
 					addClass = 'cart_video';
 				}
-				contTeoria += 	'<div id="btn_teoria_'+p+'_'+t+'"' +
-								'     class="cart_els '+addClass+addLock+'"' +
-								'     onClick="SET.carica'+funct+'('+p+','+t+',this);">' +
-									TitoloTeoria +
-								'</div>';
+				CONT += '<div id="btn_teoria_'+p+'_'+t+'"' +
+						'     class="cart_els '+addClass+addLock+'"' +
+						'     onClick="SET.carica'+funct+'('+p+','+t+',this);">' +
+							TitoloTeoria +
+						'</div>';
 			}
-			contTeoria += '</div></div>';
+			CONT += '</div></div>';
+			
+			if(!__(DB.set.teoria[p].meridiani))contTeoria += CONT;
+			else contCanali += CONT;
 		}
+		
 		document.getElementById("lista_teoria").innerHTML = '<div class="lista listaTeoria">' +
 																contTeoria +
+															'</div>';
+		document.getElementById("lista_canali").innerHTML = '<div class="lista listaTeoria">' +
+																contCanali +
 															'</div>';
 	},
 	caricaTeoria: function( p, t, btn ){

@@ -47,111 +47,113 @@ SET = {
 		this.geometryPallinoTrasp = new THREE.SphereGeometry( 0.07, facceTrasp, facceTrasp );
 		
 		for(m in MERIDIANI){ // elenco i meridiani
-			this.LN[m] = new THREE.Group();
-			this.LN[m].name="LN_"+m;
-			var n=-1;
-			
-			var categoria=__(MERIDIANI[m].categoria);
-			var vis = true;
-			if(categoria!=localStorage.sistemaMeridiani)vis = false;
-			this.LN[m].userData.categoria=categoria;
-			
-			var LNS=MERIDIANI[m][modelloAperto].linee;
-			if(LNS){
-				for(l in LNS){ // aggiungo le linee
-					var loader = new THREE.ObjectLoader();
-					var mesh =  loader.parse(JSON.parse(LZString.decompressFromBase64(LNS[l].obj)));
-					var intAdd='';
-					if(LNS[l].interno)intAdd='Int';
-					if(!MERIDIANI[m].yin){
-						mesh.material=eval("this.MAT.lineYang"+intAdd);
-					}else{
-						mesh.material=eval("this.MAT.lineYin"+intAdd);
-						mesh.computeLineDistances();
-					}
-					mesh.userData.interno=LNS[l].interno;
-					this.LN[m].add( mesh );
-				}
-			}
-			this.LN[m].visible = vis;
-			this.LN[m].userData.categoria = categoria;
-			SETS.add( this.LN[m] );
-			var ARS = MERIDIANI[m][modelloAperto].aree;
-			if(ARS){
+			if(m!='posizioni'){
+				this.LN[m] = new THREE.Group();
+				this.LN[m].name="LN_"+m;
 				var n=-1;
-				this.AR[m] = new THREE.Group();
-				this.AR[m].name="AR_"+m;
-				var elemento = MERIDIANI[m].elemento;
-				var col = SET.colsElementi[elemento];
-				for(a in ARS){ // aggiungo le aree
-					var loader = new THREE.ObjectLoader();
-					var mesh = loader.parse(JSON.parse(LZString.decompressFromBase64(ARS[a].obj)));
-					mesh.material = cloneMAT(this.MAT.areas);
-					mesh.material.emissive = new THREE.Color( col );
-					mesh.userData.raycastable = true;
-					this.AR[m].add( mesh );
-				}
-				this.AR[m].visible = vis;
-				this.AR[m].userData.categoria = categoria;
-				SETS.add( this.AR[m] );
-			}
-			
-			
-			var n=-1;
-			var GDS=MERIDIANI[m][modelloAperto].guide;
-			if(GDS){
-				if(GDS.length){
-					this.GD[m] = new THREE.Group();
-					this.GD[m].name="GD_"+m;
-					for(l in GDS){ // aggiungo le guide
-						
+				
+				var categoria=__(MERIDIANI[m].categoria);
+				var vis = true;
+				if(categoria!=localStorage.sistemaMeridiani)vis = false;
+				this.LN[m].userData.categoria=categoria;
+				
+				var LNS=MERIDIANI[m][modelloAperto].linee;
+				if(LNS){
+					for(l in LNS){ // aggiungo le linee
 						var loader = new THREE.ObjectLoader();
-						var mesh =  loader.parse(JSON.parse(LZString.decompressFromBase64(GDS[l].obj)));
-						mesh.material = this.MAT.lineGuide;
-						this.GD[m].add( mesh );
-						
+						var mesh =  loader.parse(JSON.parse(LZString.decompressFromBase64(LNS[l].obj)));
+						var intAdd='';
+						if(LNS[l].interno)intAdd='Int';
+						if(!MERIDIANI[m].yin){
+							mesh.material=eval("this.MAT.lineYang"+intAdd);
+						}else{
+							mesh.material=eval("this.MAT.lineYin"+intAdd);
+							mesh.computeLineDistances();
+						}
+						mesh.userData.interno=LNS[l].interno;
+						this.LN[m].add( mesh );
 					}
-					this.GD[m].visible = vis;
-					this.GD[m].userData.categoria = categoria;
-					SETS.add( this.GD[m] );
 				}
-			}
-			
-			this.PT[m] = new THREE.Group();
-			this.PT[m].name="PT_"+m;
-			// carico i punti parametrizzati
-			var n=-1;
-			var PTS=MERIDIANI[m][modelloAperto].punti;
-			
-			for(p in PTS){
-				if(PTS[p]!=''){
-					var x=PTS[p].array[0];
-					var y=PTS[p].array[1];
-					var z=PTS[p].array[2];
-					var pN = PTS[p].nome.split(".");
-					var N = pN[1];
-						
-					// pallino colorato
-					n++;
-					/////var geometry = new THREE.SphereGeometry( 0.02, 6, 6 );
-					this.P[n] = new THREE.Mesh( this.geometryPallino, this.MAT.pointBase );
-					this.P[n].position.set(x,y,z);
-					this.P[n].name=PTS[p].nome;
-					this.PT[m].add( this.P[n] );
-						
-					// pallino trasparente
-					n++;
-					////var geometryTrasp = new THREE.SphereGeometry( 0.07, 8, 8 );
-					this.P[n] = new THREE.Mesh( this.geometryPallinoTrasp, this.MAT.pointTrasp ); 
-					this.P[n].position.set(x,y,z);
-					this.P[n].name='_'+PTS[p].nome
-					this.P[n].userData.raycastable = true;
-					this.PT[m].add( this.P[n] );
+				this.LN[m].visible = vis;
+				this.LN[m].userData.categoria = categoria;
+				SETS.add( this.LN[m] );
+				var ARS = MERIDIANI[m][modelloAperto].aree;
+				if(ARS){
+					var n=-1;
+					this.AR[m] = new THREE.Group();
+					this.AR[m].name="AR_"+m;
+					var elemento = MERIDIANI[m].elemento;
+					var col = SET.colsElementi[elemento];
+					for(a in ARS){ // aggiungo le aree
+						var loader = new THREE.ObjectLoader();
+						var mesh = loader.parse(JSON.parse(LZString.decompressFromBase64(ARS[a].obj)));
+						mesh.material = cloneMAT(this.MAT.areas);
+						mesh.material.emissive = new THREE.Color( col );
+						mesh.userData.raycastable = true;
+						this.AR[m].add( mesh );
+					}
+					this.AR[m].visible = vis;
+					this.AR[m].userData.categoria = categoria;
+					SETS.add( this.AR[m] );
 				}
+				
+				
+				var n=-1;
+				var GDS=MERIDIANI[m][modelloAperto].guide;
+				if(GDS){
+					if(GDS.length){
+						this.GD[m] = new THREE.Group();
+						this.GD[m].name="GD_"+m;
+						for(l in GDS){ // aggiungo le guide
+							
+							var loader = new THREE.ObjectLoader();
+							var mesh =  loader.parse(JSON.parse(LZString.decompressFromBase64(GDS[l].obj)));
+							mesh.material = this.MAT.lineGuide;
+							this.GD[m].add( mesh );
+							
+						}
+						this.GD[m].visible = vis;
+						this.GD[m].userData.categoria = categoria;
+						SETS.add( this.GD[m] );
+					}
+				}
+				
+				this.PT[m] = new THREE.Group();
+				this.PT[m].name="PT_"+m;
+				// carico i punti parametrizzati
+				var n=-1;
+				var PTS=MERIDIANI[m][modelloAperto].punti;
+				
+				for(p in PTS){
+					if(PTS[p]!=''){
+						var x=PTS[p].array[0];
+						var y=PTS[p].array[1];
+						var z=PTS[p].array[2];
+						var pN = PTS[p].nome.split(".");
+						var N = pN[1];
+							
+						// pallino colorato
+						n++;
+						/////var geometry = new THREE.SphereGeometry( 0.02, 6, 6 );
+						this.P[n] = new THREE.Mesh( this.geometryPallino, this.MAT.pointBase );
+						this.P[n].position.set(x,y,z);
+						this.P[n].name=PTS[p].nome;
+						this.PT[m].add( this.P[n] );
+							
+						// pallino trasparente
+						n++;
+						////var geometryTrasp = new THREE.SphereGeometry( 0.07, 8, 8 );
+						this.P[n] = new THREE.Mesh( this.geometryPallinoTrasp, this.MAT.pointTrasp ); 
+						this.P[n].position.set(x,y,z);
+						this.P[n].name='_'+PTS[p].nome
+						this.P[n].userData.raycastable = true;
+						this.PT[m].add( this.P[n] );
+					}
+				}
+				this.PT[m].visible=vis;
+				this.PT[m].userData.categoria = categoria;
+				SETS.add( this.PT[m] );
 			}
-			this.PT[m].visible=vis;
-			this.PT[m].userData.categoria = categoria;
-			SETS.add( this.PT[m] );
 		}
 		
 		if(!localStorage.sistemaSigleMeridiani)localStorage.sistemaSigleMeridiani="INT";
@@ -292,8 +294,61 @@ SET = {
 			}
 		}
 		postApreSet = false;
+		//SET.iniPos();
+		
 	},
 	
+	iniPos: function( azzera ){
+		if(typeof(azzera)=='undefined')var azzera = false;
+		if(azzera)localStorage.POS = '{}';
+		SET.POS = JSON.parse(__(localStorage.POS,'{}'));
+		SET.hidePlaced();
+		document.addEventListener("keyup", SET.keyUpPos, false );
+	},
+	
+	keyUpPos: function(event){
+		if(event.keyCode==81){
+			normalizeRotation();
+			var el = {x: manichinoCont.rotation.x, y: manichinoCont.rotation.y };
+			if(SET.ptSel){
+				var name = SET.ptSel.name;
+				if(!SET.POS[name]){
+					
+					SET.POS[name] = el;
+					SET.ptSel.visible = false;
+				}
+				localStorage.POS = JSON.stringify(SET.POS);
+				console.log(SET.POS);
+				console.log(el);
+			}else{
+				console.log(el)
+			}
+		}
+	},
+	hidePlaced: function(){
+		for(i in MERIDIANI.posizioni){
+			if(scene.getObjectByName(i))scene.getObjectByName(i).visible = false;
+			if(scene.getObjectByName("_"+i))scene.getObjectByName("_"+i).visible = false;
+		}
+	},
+	makeUnique: function(){
+		var els = [];
+		var posizioni = {};
+		for(i in MERIDIANI.posizioni){
+			if(els.indexOf(i)==-1){
+				posizioni[i] = MERIDIANI.posizioni[i];
+				els.push(i);
+			}
+		}
+		const ordered = Object.keys(posizioni).sort().reduce(
+			(obj, key) => { 
+				obj[key] = posizioni[key]; 
+				return obj;
+			}, 
+			{}
+		);
+		console.log(ordered);
+	},
 	// RENDER SET
 	_render: function(){
 		var make=true;
@@ -518,6 +573,14 @@ SET = {
 		
 		panEndZero = { x: 0-this.ptSel.position.x, y: 0-this.ptSel.position.y, z: 0-this.ptSel.position.z };
 		panEnd = { x: 0, y: 0, z: 0 };
+		
+		// posiziono
+		if(MERIDIANI.posizioni[SET.ptSel.name]){
+			var pos = MERIDIANI.posizioni[SET.ptSel.name];
+			normalizeRotation();
+			rotateEnd = { x:pos.x, y:pos.y, z:0 };
+		}
+		
 		if(smothingView){
 			if(manichinoCont.position.z<15)zoomEnd = 15;
 			normalizeRotation();

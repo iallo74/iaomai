@@ -1,3 +1,256 @@
+#reference_cont{
+	display:none;
+	position:fixed;
+	bottom:10px;
+	right:10px;
+	width:520px;
+	height:640px;
+	z-index:1000;
+	border-radius:8px;
+	background-color:#FFF;
+	border-radius:6px;
+	box-shadow:0px 0px 20px rgba(0,0,0,0.8);
+	overflow:hidden;
+}
+#reference_cont.mini{
+	right:0px;
+	width:40px;
+	height:40px;
+	border-top-right-radius:0px;
+	border-bottom-right-radius:0px;
+	border-bottom-left-radius: 20px;
+    border-top-left-radius: 20px;
+	box-shadow:0px 0px 8px rgba(0,0,0,0.6);
+	
+}
+#reference_cont.mini *:not(#reference_ico):not(#reference_top){
+	display:none;
+}
+#reference_top{
+	height:40px;
+	background-color:rgba(0,0,0,0.1);
+	border-top-left-radius:6px;
+	border-top-right-radius:6px;
+}
+
+#reference_ico{
+	width:35px;
+	height:40px;
+	background-image:url(../img/ico_reference.png);
+	background-position:10px center;
+	background-repeat:no-repeat;
+	margin-right:-4px;
+}
+#reference_cont.mini #reference_top{
+	cursor:pointer;
+}
+#reference_top div{
+	display:inline-block;
+	height:40px;
+	line-height: 40px;
+    vertical-align: middle;
+    text-align: left;
+	margin-right:-4px;
+}
+#reference_close,
+#reference_minify{
+	cursor:pointer;
+	background-position:center center;
+	background-repeat:no-repeat;
+}
+#reference_close{
+	width:36px;
+	background-image:url(../img/chMenuB.png);
+	background-size:30px;
+	border-top-right-radius:6px;
+}
+#reference_minify{
+	width:30px;
+	background-image:url(../img/minify.png);
+	background-size:19px;
+}
+#reference_title{
+	width:calc(100% - 100px);
+	font-size:16.5px;
+}
+#reference_title span{
+	width:25px;
+	height:21px;
+	display:inline-block;
+	vertical-align:middle;
+	background-position:center center;
+	background-repeat:no-repeat;
+	background-size: contain;
+	cursor:pointer;
+}
+#reference_title span#tree_btn{
+	background-image:url(../img/ico_tree.png);
+	margin-left:5px
+}
+#reference_title span#tree_fix{
+	background-image:url(../img/puntina.png);
+}
+#reference_cont:not(.opTree):not(.fix) #reference_title span#tree_fix{
+	display:none;
+}
+#reference_cont.opTree #reference_title span#tree_btn{
+	background-image:url(../img/chMenuB.png) !important;
+}
+#reference_cont.fix #reference_title span#tree_btn{
+	display:none !important;
+}
+#reference_cont.fix #reference_title span#tree_fix{
+	background-image:url(../img/puntinaFix.png) !important;
+}
+#reference_close:hover,
+#reference_minify:hover{
+	background-color:rgba(0,0,0,0.1);
+}
+#reference{
+    height: calc(100% - 40px);	
+	border-bottom-left-radius:6px;
+	border-bottom-right-radius:6px;
+	overflow-x:hidden;
+	overflow-y:auto;
+	padding:20px;
+	text-align:justify;
+}
+#reference h2{
+	font-size:16.5px;
+	margin-top:0px;
+}
+#ref_tree{
+	text-align:left;
+}
+#ref_tree div{
+	line-height:30px;
+	cursor:pointer;
+}
+#ref_tree > div{
+	border-top:1px solid rgba(0,0,0,0.03);
+}
+#ref_tree div.fr{
+	background-image:url(../img/frGiuB.png);
+	background-position:right top;
+	background-repeat:no-repeat;
+	background-size:30px;
+	overflow:hidden;
+	height:30px;
+    border-top: 1px solid rgba(0,0,0,0.05);
+}
+#ref_tree div.fr.op{
+	height:auto !important;
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+}
+#ref_tree div.fr.op{
+	background-image:url(../img/frSuB.png) !important;
+}
+#ref_tree div.fr > a:hover,
+#ref_tree div.lk:hover{
+	background-color:rgba(0,0,0,0.02);
+}
+#ref_tree div a{
+	display:block;
+	height:30px;
+	line-height:30px;
+}
+#ref_tree div.lk{
+    background-image: url(../img/frDxB.png);
+    background-position: right center;
+    background-repeat: no-repeat;
+    background-size: 31px;
+}
+#ref_tree div.lk > a{
+	padding-left:10px;
+	color:#36C;
+}
+#ref_tree div.fr > a{
+	padding-left:10px;
+}
+#ref_tree div.lv1.lk > a{
+	padding-left:20px;
+}
+#ref_tree div.lv1.fr > a{
+	padding-left:20px;
+}
+#ref_tree div.lv2.lk > a{
+	padding-left:30px;
+}
+#ref_tree div.lv2.fr > a{
+	padding-left:30px;
+}
+#ref_tree div.lv3.lk > a{
+	padding-left:40px;
+}
+#ref_tree div.lv3.fr > a{
+	padding-left:40px;
+}
+#ref_tree div.lv4.lk > a{
+	padding-left:50px;
+}
+#ref_tree div.lv4.fr > a{
+	padding-left:50px;
+}
+#ref_tree div.lv5.lk > a{
+	padding-left:60px;
+}
+#ref_tree div.lv5.fr > a{
+	padding-left:60px;
+}
+.refSel{
+	background-color:rgba(0,102,255,0.2);
+}
+#reference_tree{
+	display:inline-block;
+	vertical-align:top;
+    width: 250px;
+    background-color: #e5e5e5;
+    height: calc(100% - 40px);
+    overflow-y: auto;
+	z-index: 100;
+}
+@media (min-width: 850px){	
+	#reference_cont.opTree:not(.mini),
+	#reference_cont.fix:not(.mini){
+		width:770px !important;
+	}
+}
+#reference_cont:not(.opTree):not(.fix) #reference_tree{
+    display: none !important;
+}
+#reference_cont.opTree #reference,
+#reference_cont.fix #reference{
+	display:inline-block;
+	vertical-align:top;
+    width: calc(100% - 250px) !important;
+	margin-left: -3px;
+}
+.btnReference{
+	display: inline-block;
+    background-image: url(../img/frDx.png);
+    background-size: auto 51px;
+    padding-right: 26px;
+    background-repeat: no-repeat;
+    background-position: calc(100% + 11px) center;
+    height: 30px;
+    line-height: 28px;
+    background-color: #454545;
+    border-radius: 5px;
+    padding-left: 10px;
+    color: #FFF;
+    margin-top: -7px;
+    cursor: pointer;
+    margin-bottom: -21px;
+    float: left;
+}
+#guida_generica .btnReference{
+    float: right !important;
+	opacity:0.6 !important;
+    margin-top: -10px !important;
+    margin-bottom: 0px !important;
+}
+
+
 #guida_cont{
 	display:none;
 	position:fixed;
