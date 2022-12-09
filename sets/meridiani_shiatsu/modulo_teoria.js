@@ -55,7 +55,7 @@ var MODULO_TEORIA = { // extend SET
 	caricaTeoria: function( p, t, btn ){
 		// verifico le autorizzazioni
 		if(SET.TEORIA_free.indexOf(p+"_"+t)==-1 && (DB.login.data.auths.indexOf(globals.set.cartella)==-1 || !LOGIN.logedin())){
-			ALERT(Lingua(TXT_MsgContSoloPay));
+			ALERT(TXT("MsgContSoloPay"));
 			return;
 		}
 		// --------------------------
@@ -83,7 +83,7 @@ var MODULO_TEORIA = { // extend SET
 			SCHEDA.verificaSchedaRet() )ritorno = "document.getElementById('scheda').classList.remove('scheda_teoria')";
 		
 		var btnAdd = 	'<div class="p_paz_ref_menu" onClick="REF.open(\'sets.meridiani_shiatsu.insights\')">' +
-							Lingua(TXT_ReferenceGuide) +
+							TXT("ReferenceGuide") +
 						'</div>';
 							
 		SCHEDA.caricaScheda( 	titolo,
@@ -101,12 +101,12 @@ var MODULO_TEORIA = { // extend SET
 	caricaVideo: function( p, t, btn ){
 		// verifico le autorizzazioni
 		if(SET.TEORIA_free.indexOf(p+"_"+t)==-1 && (DB.login.data.auths.indexOf(globals.set.cartella)==-1 || !LOGIN.logedin())){
-			ALERT(Lingua(TXT_MsgContSoloPay));
+			ALERT(TXT("MsgContSoloPay"));
 			return;
 		}
 		// --------------------------
 		if(!CONN.getConn()){
-			ALERT(Lingua(TXT_ConnessioneAssente));
+			ALERT(TXT("ConnessioneAssente"));
 			return;
 		}
 		var titolo = DB.set.teoria[p].contenuti[t].TitoloTeoria;
@@ -121,7 +121,7 @@ var MODULO_TEORIA = { // extend SET
 					'</video>';
 		
 		var btnAdd = 	'<div class="p_paz_ref_menu" onClick="REF.open(\'sets.meridiani_shiatsu.insights\')">' +
-							Lingua(TXT_ReferenceGuide) +
+							TXT("ReferenceGuide") +
 						'</div>';
 		
 		SCHEDA.caricaScheda( 	titolo,

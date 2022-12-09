@@ -33,29 +33,29 @@ var PAZIENTI = {
 				'	<input id="paz_ricerca"' +
 				'		   onKeyUp="PAZIENTI.filtra();"' +
 				'		   class="okPlaceHolder"' +
-				'		   placeholder="'+htmlEntities(Lingua(TXT_CercaCliente))+'"'+H.noAutoGen+'>' +
+				'		   placeholder="'+htmlEntities(TXT("CercaCliente"))+'"'+H.noAutoGen+'>' +
 				'	<i class="elMenu"' +
 				'	   id="filtroPazienti"' +
 				'	   onclick="PAZIENTI.car_filtri();">' +
-				'		<span>'+Lingua(TXT_FiltroPazienti)+'</span>' +
+				'		<span>'+TXT("FiltroPazienti")+'</span>' +
 				'	</i>' +
 				'	<i class="elMenu"' +
 				'	   id="marketingPazienti"' +
 				'	   onclick="PAZIENTI.car_marketing();">' +
-				'		<span>'+Lingua(TXT_StrumentiMarketing)+'</span>' +
+				'		<span>'+TXT("StrumentiMarketing")+'</span>' +
 				'	</i>' +
 				'	<i class="elMenu"' +
 				'	   id="addPaziente"' +
 				'	   onclick="PAZIENTI.car_paziente();"' +
-				'	   title="'+Lingua(TXT_AggiungiPaziente)+'">' +
-				/*'		<span>'+Lingua(TXT_AggiungiPaziente)+'</span>' +*/
+				'	   title="'+TXT("AggiungiPaziente")+'">' +
+				/*'		<span>'+TXT("AggiungiPaziente")+'</span>' +*/
 				'	</i>' +
 				'</p>' +
 				'<div class="lista listaPazienti">' +
 				'	<div id="paz_filtrati"' +
 						 (!PAZIENTI.pazientiFiltrati.length ? ' style="display:none;"' : '') + 
 				'		 onClick="PAZIENTI.car_filtri();">' +
-							htmlEntities(Lingua(TXT_PazientiFiltrati)) +
+							htmlEntities(TXT("PazientiFiltrati")) +
 				'	</div>';
 		var noPaz = true;
 		if(DB.pazienti.data.length){
@@ -106,7 +106,7 @@ var PAZIENTI = {
 				'	<span class="noResults"' +
 				'		  style="display:inline-block;' +
 				'				 vertical-align: top;">' +
-						Lingua(TXT_NoResPaziente) +
+						TXT("NoResPaziente") +
 				'	</span>';
 			if(smartMenu){
 				document.getElementById("scheda").classList.remove("triplo");
@@ -133,7 +133,7 @@ var PAZIENTI = {
 		else document.getElementById("paz_ricerca").classList.remove("filtro_attivo");
 	},
 	selPaziente: function( n ){ // seleziona il paziente su cui lavorare
-		CONFIRM.vis(	Lingua(TXT_UscireSenzaSalvare),
+		CONFIRM.vis(	TXT("UscireSenzaSalvare"),
 						!SCHEDA.verificaSchedaRet(),
 						arguments ).then(function(pass){if(pass){
 						var v = getParamNames(CONFIRM.args.callee.toString());
@@ -185,7 +185,7 @@ var PAZIENTI = {
 		}});
 	},
 	deselPaziente: function(){ // deseleziona il paziente su cui si sta lavorando
-		CONFIRM.vis(	Lingua(TXT_UscireSenzaSalvare),
+		CONFIRM.vis(	TXT("UscireSenzaSalvare"),
 						!SCHEDA.verificaSchedaRet(),
 						arguments ).then(function(pass){if(pass){
 						var v = getParamNames(CONFIRM.args.callee.toString());
@@ -207,7 +207,7 @@ var PAZIENTI = {
 			PAZIENTI.aperture = [];
 			document.getElementById("p_cartella").classList.remove("clientAtt");
 			//document.getElementById("elenchi_titolo").classList.remove("clientAtt");
-			document.getElementById("p_cartella").getElementsByTagName("i")[0].innerHTML = Lingua(TXT_ElGestionale);
+			document.getElementById("p_cartella").getElementsByTagName("i")[0].innerHTML = TXT("ElGestionale");
 			try{
 				SET.leggiNote();
 			}catch(err){}
@@ -231,12 +231,12 @@ var PAZIENTI = {
 		if(PZ.sesso){
 			HTML += ' style="background-image:url(img/ico_cliente_'+sessi[PZ.sesso]+'.png);"';
 		}
-		HTML += '><span id="nomeCliente" onClick="PAZIENTI.vis_paziente();" title="'+Lingua(TXT_Anagrafica)+'">'+htmlEntities(PZ.Nome)+"<br>"+htmlEntities(PZ.Cognome);
+		HTML += '><span id="nomeCliente" onClick="PAZIENTI.vis_paziente();" title="'+TXT("Anagrafica")+'">'+htmlEntities(PZ.Nome)+"<br>"+htmlEntities(PZ.Cognome);
 		if(PZ.DataModifica > DB.pazienti.lastSync)HTML += H.imgSyncro();
 		HTML += '</span>';
 		
-		HTML += '<span id="btnAnagraficaCliente" onClick="PAZIENTI.vis_paziente();" title="'+Lingua(TXT_Anagrafica)+'"></span>' +
-				'<span id="esciCliente" onClick="PAZIENTI.deselPaziente();" title="'+Lingua(TXT_Chiudi)+'"></span>';
+		HTML += '<span id="btnAnagraficaCliente" onClick="PAZIENTI.vis_paziente();" title="'+TXT("Anagrafica")+'"></span>' +
+				'<span id="esciCliente" onClick="PAZIENTI.deselPaziente();" title="'+TXT("Chiudi")+'"></span>';
 		if(PZ.avatar){
 			HTML += '<span onClick="PAZIENTI.vis_paziente();" class="avatarMini" style="background-image:url(\''+PZ.avatar+'\');"></span>';
 		}
@@ -246,10 +246,10 @@ var PAZIENTI = {
 		HTML += '<p class="trattBtns"><span id="pazBtnTratt" ';
 		if(tipo == 't')HTML += 'class="selBtn" ';
 		else HTML += 'onClick="PAZIENTI.caricaTrattamenti();"';
-		HTML += '>'+Lingua(TXT_ElTrattamenti).toUpperCase()+'</span> <span id="pazBtnSaldi" ';
+		HTML += '>'+TXT("ElTrattamenti").toUpperCase()+'</span> <span id="pazBtnSaldi" ';
 		if(tipo == 's')HTML += 'class="selBtn" ';
 		else HTML += 'onClick="PAZIENTI.caricaSaldi();"';
-		HTML += '>'+Lingua(TXT_ElSaldi).toUpperCase()+'</span></p>';
+		HTML += '>'+TXT("ElSaldi").toUpperCase()+'</span></p>';
 		
 		return HTML;
 	},
@@ -272,12 +272,12 @@ var PAZIENTI = {
 				if(DB.pazienti.data[c].Cancellato*1==0)tPaz++;
 			}
 			if(tPaz >= maxClienti){
-				ALERT(Lingua(eval("TXT_MsgMaxPazienti"+maxClienti)));
+				ALERT(TXT("MsgMaxPazienti"+maxClienti));
 				return;
 			}
 		}
 		// --------------------------
-		CONFIRM.vis(	Lingua(TXT_UscireSenzaSalvare),
+		CONFIRM.vis(	TXT("UscireSenzaSalvare"),
 						!SCHEDA.verificaSchedaRet(),
 						arguments ).then(function(pass){if(pass){
 						var v = getParamNames(CONFIRM.args.callee.toString());
@@ -391,7 +391,7 @@ var PAZIENTI = {
 					'				   id="avatarPaziente_FL"' +
 					'				   type="file"' +
 					'				   onchange="PH.encodeImageFileAsURL(this, true, false, \'PAZIENTI.salvaAvatar\');"' +
-					'				   title="'+htmlEntities(Lingua(TXT_CaricaImmagine))+'" />' +
+					'				   title="'+htmlEntities(TXT("CaricaImmagine"))+'" />' +
 					'			<div class="ico_del"' +
 					'			   	 id="delAvatarPaziente"' +
 					'			   	 onClick="PAZIENTI.deleteAvatar();"' +
@@ -420,8 +420,8 @@ var PAZIENTI = {
 			cont += H.r({	t: "s", 
 							name: "sesso",
 							value: sesso,
-							opts: { "m": Lingua(TXT_Maschio), "f": Lingua(TXT_Femmina), "a": Lingua(TXT_Altro) },
-							label: Lingua(TXT_Sesso),
+							opts: { "m": TXT("Maschio"), "f": TXT("Femmina"), "a": TXT("Altro") },
+							label: TXT("Sesso"),
 							id: "selectPaz",
 							classRiga: "labelSx",
 							onChange: 'PAZIENTI.riselSex();' });
@@ -434,7 +434,7 @@ var PAZIENTI = {
 			cont += H.r({	t: "r", name: "LuogoNascita",	value: LuogoNascita,	classCampo: 'styled' });
 							
 			HTML += H.sezione({
-				label: Lingua(TXT_LabelAnagrafici),
+				label: TXT("LabelAnagrafici"),
 				nome: 'anagrafici',
 				html: cont,
 				etichette: true
@@ -464,13 +464,13 @@ var PAZIENTI = {
 							name: "Stato",
 							value: Stato,
 							opts: elencaPaesi(),
-							label: Lingua(TXT_Stato),
+							label: TXT("Stato"),
 							classRiga: 'contStato',
 							classCampo: "selectLargo" });
 			cont += '</div>';
 							
 			HTML += H.sezione({
-				label: Lingua(TXT_LabelIndirizzo),
+				label: TXT("LabelIndirizzo"),
 				nome: 'indirizzo',
 				html: cont,
 				etichette: true
@@ -486,7 +486,7 @@ var PAZIENTI = {
 			
 			
 			cont += '		<div>' +
-					'			<i>'+htmlEntities(Lingua(TXT_Cellulare))+'</i>' +
+					'			<i>'+htmlEntities(TXT("Cellulare"))+'</i>' +
 					'			<select name="paeseCellulare"' +
 					'					id="paeseCellulare"' +
 					'					class="prefisso">' +
@@ -506,7 +506,7 @@ var PAZIENTI = {
 					'			<input  id="@|Cellulare|0|0|tel"' +
 					'					type="text"' +
 					'					name="Cellulare"' +
-					'					placeholder="'+htmlEntities(Lingua(TXT_Cellulare))+'"' +
+					'					placeholder="'+htmlEntities(TXT("Cellulare"))+'"' +
 					'					value="'+htmlEntities(Cellulare)+'"' +
 					'					data-pre-value="'+htmlEntities(Cellulare)+'"' +
 					'					onKeyUp="return H.keyTelefono(this,false);"' +
@@ -519,7 +519,7 @@ var PAZIENTI = {
 							classCampo: 'styled',
 							ver: '0|0|@' });
 			HTML += H.sezione({
-				label: Lingua(TXT_LabelContatti),
+				label: TXT("LabelContatti"),
 				nome: 'contatti',
 				html: cont,
 				etichette: true
@@ -532,14 +532,14 @@ var PAZIENTI = {
 							name: "Intestazione",
 							classCampo: "Intestazione",
 							value: Intestazione,
-							label: Lingua(TXT_IntestazioneSpiegazione),
+							label: TXT("IntestazioneSpiegazione"),
 							noLabel: true,
 							classCampo: "okPlaceHolder" });
 			cont += H.r({	t: "r", name: "CodiceFiscale",	value: CodiceFiscale,	classCampo: 'styled' });
 			cont += H.r({	t: "r", name: "PartitaIva",	value: PartitaIva,	classCampo: 'styled' });
 			
 			HTML += H.sezione({
-				label: Lingua(TXT_LabelFatturazione),
+				label: TXT("LabelFatturazione"),
 				nome: 'azienda',
 				html: cont,
 				etichette: true
@@ -571,7 +571,7 @@ var PAZIENTI = {
 							focusCampo: 'H.creaCombo(this,H.getElencoDB(DB.pazienti.data,this));' });
 							
 			HTML += H.sezione({
-				label: Lingua(TXT_LabelAggiuntive),
+				label: TXT("LabelAggiuntive"),
 				nome: 'aggiuntive',
 				html: cont,
 				etichette: true
@@ -584,7 +584,7 @@ var PAZIENTI = {
 					'		<div id="cont_tag_add">' +
 					'			<input type="text"' +
 					'				   id="tag_add"' +
-					'				   placeholder="'+htmlEntities(Lingua(TXT_TagsSpiegazione))+'"' +
+					'				   placeholder="'+htmlEntities(TXT("TagsSpiegazione"))+'"' +
 					'				   onKeyup="PAZIENTI.filtraTag(this);"'+H.noAutoGen+'/>' +
 					'			<span id="tag_col"' +
 					'				  onClick="PAZIENTI.cambiaColTag(this);"' +
@@ -593,11 +593,11 @@ var PAZIENTI = {
 					'			</span>' +
 					'			<div class="p_tag_ann"' +
 					'				 onClick="PAZIENTI.annullaTag();">' +
-									Lingua(TXT_Annulla) +
+									TXT("Annulla") +
 					'			</div>' +
 					'			<div class="p_tag_add"' +
 					'				 onClick="PAZIENTI.aggiungiTag(this);">' +
-									Lingua(TXT_Nuovo) +
+									TXT("Nuovo") +
 					'			</div>' +
 					'			<div id="elencoTags">' +
 					'			</div>' +
@@ -605,7 +605,7 @@ var PAZIENTI = {
 					'		</div>';
 			
 			HTML += H.sezione({
-				label: Lingua(TXT_Tags),
+				label: TXT("Tags"),
 				nome: 'tags',
 				html: cont
 						});	
@@ -623,7 +623,7 @@ var PAZIENTI = {
 			cont += H.r({	t: "r", name: "Peso",	value: Peso,	classCampo: 'styled', ver: '0|0|num' });
 							
 			HTML += H.sezione({
-				label: Lingua(TXT_LabelBiometrici),
+				label: TXT("LabelBiometrici"),
 				nome: 'biometrici',
 				html: cont,
 				etichette: true
@@ -636,22 +636,22 @@ var PAZIENTI = {
 					'		<div id="cont_medicina_add">' +
 					'			<input type="text"' +
 					'				   id="medicina_add"' +
-					'				   placeholder="'+htmlEntities(Lingua(TXT_MedicineSpiegazione))+'"' +
+					'				   placeholder="'+htmlEntities(TXT("MedicineSpiegazione"))+'"' +
 					'				   onKeyup="PAZIENTI.filtraElemento(\'medicine\',this);"'+H.noAutoGen+'/>' +
 					'			<div class="p_medicina_ann"' +
 					'				 onClick="PAZIENTI.annullaElemento(\'medicine\');">' +
-									Lingua(TXT_Annulla) +
+									TXT("Annulla") +
 					'			</div>' +
 					'			<div class="p_medicina_add"' +
 					'				 onClick="PAZIENTI.aggiungiElemento(\'medicine\',this);">' +
-									Lingua(TXT_Nuova) +
+									TXT("Nuova") +
 					'			</div>' +
 					'			<div id="elencoMedicine">' +
 					'			</div>' +
 					'			<div class="l"></div>' +
 					'		</div>';
 			HTML += H.sezione({
-				label: Lingua(TXT_Medicine),
+				label: TXT("Medicine"),
 				nome: 'medicine',
 				html: cont
 						});	
@@ -663,22 +663,22 @@ var PAZIENTI = {
 					'		<div id="cont_allergia_add">' +
 					'			<input type="text"' +
 					'				   id="allergia_add"' +
-					'				   placeholder="'+htmlEntities(Lingua(TXT_AllergieSpiegazione))+'"' +
+					'				   placeholder="'+htmlEntities(TXT("AllergieSpiegazione"))+'"' +
 					'				   onKeyup="PAZIENTI.filtraElemento(\'allergie\',this);"'+H.noAutoGen+'/>' +
 					'			<div class="p_allergia_ann"' +
 					'				 onClick="PAZIENTI.annullaElemento(\'allergie\');">' +
-									Lingua(TXT_Annulla) +
+									TXT("Annulla") +
 					'			</div>' +
 					'			<div class="p_allergia_add"' +
 					'				 onClick="PAZIENTI.aggiungiElemento(\'allergie\',this);">' +
-									Lingua(TXT_Nuova) +
+									TXT("Nuova") +
 					'			</div>' +
 					'			<div id="elencoAllergie">' +
 					'			</div>' +
 					'			<div class="l"></div>' +
 					'		</div>';
 			HTML += H.sezione({
-				label: Lingua(TXT_Allergie),
+				label: TXT("Allergie"),
 				nome: 'allergie',
 				html: cont
 						});	
@@ -690,22 +690,22 @@ var PAZIENTI = {
 					'		<div id="cont_patologia_add">' +
 					'			<input type="text"' +
 					'				   id="patologia_add"' +
-					'				   placeholder="'+htmlEntities(Lingua(TXT_PatologieSpiegazione))+'"' +
+					'				   placeholder="'+htmlEntities(TXT("PatologieSpiegazione"))+'"' +
 					'				   onKeyup="PAZIENTI.filtraElemento(\'patologie\',this);"'+H.noAutoGen+'/>' +
 					'			<div class="p_patologia_ann"' +
 					'				 onClick="PAZIENTI.amnnullaElemento(\'patologie\');">' +
-									Lingua(TXT_Annulla) +
+									TXT("Annulla") +
 					'			</div>' +
 					'			<div class="p_patologia_add"' +
 					'				 onClick="PAZIENTI.aggiungiElemento(\'patologie\',this);">' +
-									Lingua(TXT_Nuova) +
+									TXT("Nuova") +
 					'			</div>' +
 					'			<div id="elencoPatologie">' +
 					'			</div>' +
 					'			<div class="l"></div>' +
 					'		</div>';
 			HTML += H.sezione({
-				label: Lingua(TXT_Patologie),
+				label: TXT("Patologie"),
 				nome: 'patologie',
 				img: 'patologie2',
 				html: cont
@@ -718,22 +718,22 @@ var PAZIENTI = {
 					'		<div id="cont_intervento_add">' +
 					'			<input type="text"' +
 					'				   id="intervento_add"' +
-					'				   placeholder="'+htmlEntities(Lingua(TXT_InterventiSpiegazione))+'"' +
+					'				   placeholder="'+htmlEntities(TXT("InterventiSpiegazione"))+'"' +
 					'				   onKeyup="PAZIENTI.filtraElemento(\'interventi\',this);"'+H.noAutoGen+'/>' +
 					'			<div class="p_intervento_ann"' +
 					'				 onClick="PAZIENTI.annullaElemento(\'interventi\');">' +
-									Lingua(TXT_Annulla) +
+									TXT("Annulla") +
 					'			</div>' +
 					'			<div class="p_intervento_add"' +
 					'				 onClick="PAZIENTI.aggiungiElemento(\'interventi\',this);">' +
-									Lingua(TXT_Nuovo) +
+									TXT("Nuovo") +
 					'			</div>' +
 					'			<div id="elencoInterventi">' +
 					'			</div>' +
 					'			<div class="l"></div>' +
 					'		</div>';
 			HTML += H.sezione({
-				label: Lingua(TXT_Interventi),
+				label: TXT("Interventi"),
 				nome: 'interventi',
 				html: cont
 						});	
@@ -750,12 +750,12 @@ var PAZIENTI = {
 			cont += H.r({	t: "t", 
 							name: "NotePaziente",
 							value: NotePaziente,
-							label: Lingua(TXT_InserisciNote),
+							label: TXT("InserisciNote"),
 							noLabel: true,
 							classCampo: "okPlaceHolder" });
 					
 			HTML += H.sezione({
-				label: Lingua(TXT_LabelAnnotazioni),
+				label: TXT("LabelAnnotazioni"),
 				nome: 'annotazioni',
 				html: cont
 						});		
@@ -765,10 +765,10 @@ var PAZIENTI = {
 			var azElimina = PAZIENTI.idCL>-1 ? "PAZIENTI.el_paziente("+PAZIENTI.idCL+");":"";
 			var btnAdd = '';
 			if(azElimina){
-				btnAdd += '<div class="p_paz_el_menu" onClick="'+azElimina+'">'+Lingua(TXT_EliminaScheda)+'</div>';
+				btnAdd += '<div class="p_paz_el_menu" onClick="'+azElimina+'">'+TXT("EliminaScheda")+'</div>';
 			}
 			btnAdd += 	'<div class="p_paz_ref_menu" onClick="REF.open(\'archives.patients.data\')">' +
-							Lingua(TXT_ReferenceGuide) +
+							TXT("ReferenceGuide") +
 						'</div>';
 			
 			HTML += SCHEDA.pulsantiForm(
@@ -779,10 +779,10 @@ var PAZIENTI = {
 			HTML += '</form>';
 			
 			
-			var titoloDef=TXT_ModificaPaziente;
-			if(PAZIENTI.idCL==-1)titoloDef=TXT_CreaPaziente;
+			var titoloDef=TXT("ModificaPaziente");
+			if(PAZIENTI.idCL==-1)titoloDef=TXT("CreaPaziente");
 			
-			SCHEDA.caricaScheda(	stripslashes(Lingua(titoloDef)),
+			SCHEDA.caricaScheda(	stripslashes(titoloDef),
 									HTML,
 									'PAZIENTI.chiudiPaziente('+idPaziente+');',
 									'scheda_paziente',
@@ -824,7 +824,7 @@ var PAZIENTI = {
 		}});
 	},
 	vis_paziente: function( salvato ){ // carica la scheda anagrafica del paziente
-		CONFIRM.vis(	Lingua(TXT_UscireSenzaSalvare),
+		CONFIRM.vis(	TXT("UscireSenzaSalvare"),
 						!SCHEDA.verificaSchedaRet(),
 						arguments ).then(function(pass){if(pass){
 						var v = getParamNames(CONFIRM.args.callee.toString());
@@ -899,27 +899,27 @@ var PAZIENTI = {
 					'			<h1>'+htmlEntities(Nome+" "+Cognome)+'</h1>' +
 					'			<p>';
 			if(Telefono.trim()){
-				HTML += '			<i>'+htmlEntities(Lingua(TXT_Telefono))+':</i> ' +
+				HTML += '			<i>'+htmlEntities(TXT("Telefono"))+':</i> ' +
 									htmlEntities(Telefono)+'<br>';
 			}
 			if(Cellulare.trim()){
-				HTML += '			<i>'+htmlEntities(Lingua(TXT_Cellulare))+':</i> ' +
+				HTML += '			<i>'+htmlEntities(TXT("Cellulare"))+':</i> ' +
 									htmlEntities(paesi[paeseCellulare].prefisso + " " +Cellulare)+'<br>';
 			}
 			if(Email.trim()){
-				HTML += '			<i>'+htmlEntities(Lingua(TXT_Email))+':</i> ' +
+				HTML += '			<i>'+htmlEntities(TXT("Email"))+':</i> ' +
 									htmlEntities(Email)+'<br>';
 			}
 			if(DataNascita){
-				HTML += '			<i>'+htmlEntities(Lingua(TXT_Eta))+':</i> ' +
-									eta+' '+htmlEntities(Lingua(TXT_Anni))+'<br>';
+				HTML += '			<i>'+htmlEntities(TXT("Eta"))+':</i> ' +
+									eta+' '+htmlEntities(TXT("Anni"))+'<br>';
 			}
 			HTML += '			</p>' +
 					'		</div>' +
 					'		<span id="modAnag"' +
 					'			  onClick="PAZIENTI.car_paziente();"' +
 					'			  class="noPrint">' +
-								htmlEntities(Lingua(TXT_modifica)) +
+								htmlEntities(TXT("modifica")) +
 					'		</span>' +
 					'	</div>';
 			// TAGS	
@@ -976,10 +976,10 @@ var PAZIENTI = {
 			// ANAGRAFICA
 			var HTML_provv = '';
 			if(	DataNascita ){
-				HTML_provv += '<div><i>'+htmlEntities(Lingua(TXT_DataNascita))+':</i> ' + getDataTS(DataNascita*.001)+ '</div>';
+				HTML_provv += '<div><i>'+htmlEntities(TXT("DataNascita"))+':</i> ' + getDataTS(DataNascita*.001)+ '</div>';
 			}
 			if(LuogoNascita.trim()){
-				HTML_provv += '<div><i>'+htmlEntities(Lingua(TXT_LuogoNascita))+':</i> ' + htmlEntities(LuogoNascita) + '</div>';
+				HTML_provv += '<div><i>'+htmlEntities(TXT("LuogoNascita"))+':</i> ' + htmlEntities(LuogoNascita) + '</div>';
 			}
 			HTML_provv += H.scriviEtichette('anagrafici');
 			if(	HTML_provv )H__1 +=
@@ -1007,10 +1007,10 @@ var PAZIENTI = {
 				HTML_provv += '<div>' + htmlEntities(Intestazione).replace(/\n/g, '<br>')+ '</div>';
 			}
 			if(PartitaIva.trim()){
-				HTML_provv += '<div><i>'+htmlEntities(Lingua(TXT_PartitaIva))+':</i> ' + htmlEntities(PartitaIva) + '</div>';
+				HTML_provv += '<div><i>'+htmlEntities(TXT("PartitaIva"))+':</i> ' + htmlEntities(PartitaIva) + '</div>';
 			}
 			if(CodiceFiscale.trim()){
-				HTML_provv += '<div><i>'+htmlEntities(Lingua(TXT_CodiceFiscale))+':</i> ' + htmlEntities(CodiceFiscale) + '</div>';
+				HTML_provv += '<div><i>'+htmlEntities(TXT("CodiceFiscale"))+':</i> ' + htmlEntities(CodiceFiscale) + '</div>';
 			}
 			HTML_provv += H.scriviEtichette('azienda');
 			
@@ -1025,13 +1025,13 @@ var PAZIENTI = {
 			// AGGIUNTIVE
 			var HTML_provv = '';
 			if(Professione.trim()){
-				HTML_provv += '<div><i>'+htmlEntities(Lingua(TXT_Professione))+':</i> ' + htmlEntities(Professione) + '</div>';
+				HTML_provv += '<div><i>'+htmlEntities(TXT("Professione"))+':</i> ' + htmlEntities(Professione) + '</div>';
 			}
 			if(Provenienza.trim()){
-				HTML_provv += '<div><i>'+htmlEntities(Lingua(TXT_Provenienza))+':</i> ' + htmlEntities(Provenienza) + '</div>';
+				HTML_provv += '<div><i>'+htmlEntities(TXT("Provenienza"))+':</i> ' + htmlEntities(Provenienza) + '</div>';
 			}
 			if(Social.trim()){
-				HTML_provv += '<div><i>'+htmlEntities(Lingua(TXT_Social))+':</i> ' + htmlEntities(Social) + '</div>';
+				HTML_provv += '<div><i>'+htmlEntities(TXT("Social"))+':</i> ' + htmlEntities(Social) + '</div>';
 			}
 			HTML_provv += H.scriviEtichette('aggiuntive');
 			if(HTML_provv)H__1 +=
@@ -1048,17 +1048,17 @@ var PAZIENTI = {
 			// BIOMETRICI
 			var HTML_provv = '';
 			if(Altezza.trim()){
-				HTML_provv += '<div><i>'+htmlEntities(Lingua(TXT_Altezza))+':</i> ' + htmlEntities(Altezza) + '</div>';
+				HTML_provv += '<div><i>'+htmlEntities(TXT("Altezza"))+':</i> ' + htmlEntities(Altezza) + '</div>';
 			}
 			if(Peso.trim()){
-				HTML_provv += '<div><i>'+htmlEntities(Lingua(TXT_Peso))+':</i> ' + htmlEntities(Peso) + '</div>';
+				HTML_provv += '<div><i>'+htmlEntities(TXT("Peso"))+':</i> ' + htmlEntities(Peso) + '</div>';
 			}
 			HTML_provv += H.scriviEtichette('biometrici');
 			
 			
 			if(HTML_provv)H__2 +=
 					'	<div class="rgAnag rgBiometrici">' +
-					'		<div class="etRgAnag">' + htmlEntities(Lingua(TXT_LabelBiometrici)) + '</div>' +
+					'		<div class="etRgAnag">' + htmlEntities(TXT("LabelBiometrici")) + '</div>' +
 					'		<div style="padding-left:6px;padding-bottom:10px;">' +
 								HTML_provv +
 					'		</div>' +
@@ -1145,13 +1145,13 @@ var PAZIENTI = {
 			var azElimina = PAZIENTI.idCL>-1 ? "PAZIENTI.el_paziente("+PAZIENTI.idCL+");":"";
 			var btnAdd = '';
 			if(azElimina){
-				btnAdd += '<div class="p_paz_el_menu" onClick="'+azElimina+'">'+Lingua(TXT_EliminaScheda)+'</div>';
+				btnAdd += '<div class="p_paz_el_menu" onClick="'+azElimina+'">'+TXT("EliminaScheda")+'</div>';
 			}
 			btnAdd += 	'<div class="p_paz_ref_menu" onClick="REF.open(\'archives.patients.data\')">' +
-							Lingua(TXT_ReferenceGuide) +
+							TXT("ReferenceGuide") +
 						'</div>';
 			
-			SCHEDA.caricaScheda(	stripslashes(Lingua(TXT_Anagrafica)),
+			SCHEDA.caricaScheda(	stripslashes(TXT("Anagrafica")),
 									HTML,
 									'PAZIENTI.chiudiPaziente('+idPaziente+');',
 									'scheda_paziente',
@@ -1166,9 +1166,9 @@ var PAZIENTI = {
 	mod_paziente: function(){ //salva l'anagrafica paziente
 		if(!verifica_form(document.getElementById("formMod")))return;
 		stopAnimate(true);
-		visLoader(Lingua(TXT_SalvataggioInCorso),'loadingLight');
+		visLoader(TXT("SalvataggioInCorso"),'loadingLight');
 		if(document.formMod.Cellulare.value && !document.formMod.paeseCellulare.value){
-			ALERT(stripslashes(Lingua(TXT_ErrorePrefisso)));
+			ALERT(stripslashes(TXT("ErrorePrefisso")));
 			return;
 		}
 		var DataModifica = DB.pazienti.lastSync+1;
@@ -1263,14 +1263,14 @@ var PAZIENTI = {
 		return false;
 	},
 	el_paziente: function( Q_idPaz ){ // elimina la scheda del paziente
-		CONFIRM.vis(	Lingua(TXT_ChiediEliminaPaziente),
+		CONFIRM.vis(	TXT("ChiediEliminaPaziente"),
 						false,
 						arguments ).then(function(pass){if(pass){
 						var v = getParamNames(CONFIRM.args.callee.toString());
 						for(i in v)eval(getArguments(v,i));
 						
 			stopAnimate(true);
-			visLoader(Lingua(TXT_SalvataggioInCorso),'loadingLight');
+			visLoader(TXT("SalvataggioInCorso"),'loadingLight');
 			if(Q_idPaz>-1){
 				var DataModifica = DB.pazienti.lastSync+1;
 				DB.pazienti.data[Q_idPaz].DataModifica=parseInt(DataModifica);
@@ -1353,7 +1353,7 @@ var PAZIENTI = {
 						'		 		margin:11px;' +
 						'		 		cursor:pointer;' +
 						'		 		opacity:0.5;"' +
-						'		 title="'+Lingua(TXT_DelDett)+'"' +
+						'		 title="'+TXT("DelDett")+'"' +
 						'		 onClick="PAZIENTI.eliminaTag('+p+');"' +
 						'		 class="occhio">' +
 						'</div>';
@@ -1361,7 +1361,7 @@ var PAZIENTI = {
 		}else{
 			HTML += '<div class="noResults"' +
 					'	  style="padding-left:30px;">' +
-						Lingua(TXT_NoRes)+'...' +
+						TXT("NoRes")+'...' +
 					'</div>';
 		}
 		document.getElementById('contTags').innerHTML = HTML;
@@ -1391,7 +1391,7 @@ var PAZIENTI = {
 		if(!oldValue){
 			for(t in PAZIENTI.tagsProvvisori){
 				if(txt.trim() == PAZIENTI.tagsProvvisori[t]["NomeTag"]){
-					ALERT(Lingua(TXT_erroreDuplicazioneElemento))
+					ALERT(TXT("erroreDuplicazioneElemento"))
 					return;
 				}
 			}
@@ -1541,7 +1541,7 @@ var PAZIENTI = {
 		var pulsanteModifica = document.getElementById("cont_tag_add").getElementsByTagName("div")[1];
 		var pulsanteAnnulla = document.getElementById("cont_tag_add").getElementsByTagName("div")[0];
 		pulsanteModifica.dataset.oldName = pulsanteModifica.innerHTML;
-		pulsanteModifica.innerText = htmlEntities(Lingua(TXT_Modifica));
+		pulsanteModifica.innerText = htmlEntities(TXT("Modifica"));
 		document.getElementById("tag_col").style.backgroundColor = '#'+el.dataset.colore;
 		document.getElementById("tag_col").dataset.colore = el.dataset.colore;
 		document.getElementById("tag_col").dataset.oldColor = el.dataset.colore;
@@ -1644,7 +1644,7 @@ var PAZIENTI = {
 						'		 		margin:11px;' +
 						'		 		cursor:pointer;' +
 						'		 		opacity:0.5;"' +
-						'		 title="'+Lingua(TXT_DelDett)+'"' +
+						'		 title="'+TXT("DelDett")+'"' +
 						'		 onClick="PAZIENTI.eliminaElemento('+p+',\''+tipo+'\');"' +
 						'		 class="occhio">' +
 						'</div>';
@@ -1652,7 +1652,7 @@ var PAZIENTI = {
 		}else{
 			HTML += '<div class="noResults"' +
 					'	  style="padding-left:30px;">' +
-						Lingua(TXT_NoRes)+'...' +
+						TXT("NoRes")+'...' +
 					'</div>';
 		}
 		document.getElementById('cont'+obj.els).innerHTML = HTML;
@@ -1693,7 +1693,7 @@ var PAZIENTI = {
 			if(!oldValue){
 				for(e in EL){
 					if(txt.trim() == EL[e]["Nome"+obj.el]){
-						ALERT(Lingua(TXT_erroreDuplicazioneElemento))
+						ALERT(TXT("erroreDuplicazioneElemento"))
 						return;
 					}
 				}
@@ -1827,7 +1827,7 @@ var PAZIENTI = {
 		campo.value = valore;
 		campo.dataset.oldValue = valore;
 		pulsanteModifica.dataset.oldName = pulsanteModifica.innerHTML;
-		pulsanteModifica.innerHTML = htmlEntities(Lingua(TXT_Modifica));
+		pulsanteModifica.innerHTML = htmlEntities(TXT("Modifica"));
 		pulsanteAnnulla.classList.add("visBtn");
 		cont.classList.add("modEl");
 		campo.focus();
@@ -1895,7 +1895,7 @@ var PAZIENTI = {
 	
 		//data=oggi;
 		
-		SCHEDA.caricaScheda( stripslashes(Lingua(TXT_Agenda)), HTML, '', 'scheda_agenda', false, true );
+		SCHEDA.caricaScheda( stripslashes(TXT("Agenda")), HTML, '', 'scheda_agenda', false, true );
 		
 		agenda.apri(data,document.getElementById("agendaPlaceHolder"),null,document.getElementById("agendaPlaceHolder"));
 		MENU.comprimiIcone(true);

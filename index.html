@@ -674,7 +674,7 @@
                     <div id="labelImpostazioni">{{TXT_Impostazioni}}<div id="chiudi_impostazioni" onClick="MENU.visImpostazioni();"></div>
                     </div>
                     <div id="i1">
-                        <div id="p_login"><b id="nomeUtente">{{TXT_NessunUtente}}</b>  <span class="btn_invia" onClick="MENU.visLogin();" id="btn_login">LOGIN</span><span class="btn_invia" onClick="CONFIRM.vis(Lingua(TXT_VuoiLogout)).then(function(pass){if(pass){LOGIN.logout();}});" id="btn_logout">{{TXT_LOGOUT}}</span><span onClick="LOGIN.modUtente();" id="btn_modut"></span><i id="utDisc">{{TXT_UtenteDisconnesso}}</i></div>
+                        <div id="p_login"><b id="nomeUtente">{{TXT_NessunUtente}}</b>  <span class="btn_invia" onClick="MENU.visLogin();" id="btn_login">LOGIN</span><span class="btn_invia" onClick="CONFIRM.vis(TXT('VuoiLogout')).then(function(pass){if(pass){LOGIN.logout();}});" id="btn_logout">{{TXT_LOGOUT}}</span><span onClick="LOGIN.modUtente();" id="btn_modut"></span><i id="utDisc">{{TXT_UtenteDisconnesso}}</i></div>
                         <span id="p_reg"><span>{{TXT_TestoRegistrazione}}</span><span class="btn_invia" onClick="MENU.visRegistrazione();" id="btn_registrazione">{{TXT_Registrati}}</span></span>
                         <div id="p_lingua">{{TXT_Lingua}}<span><select id="lingueSelect" onChange="cambiaLingua(this.value);">
                                                             <option value="ita">Italiano</option>

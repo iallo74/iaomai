@@ -41,7 +41,7 @@ var PAZIENTI_SALDI = {
 			}
 			var RIS=DaSaldare-Saldato;
 			var HTML_provv = 	'<p id="totSaldi">' +
-								'	<i>'+htmlEntities(Lingua(TXT_AncoraSaldare))+':</i> ' +
+								'	<i>'+htmlEntities(TXT("AncoraSaldare"))+':</i> ' +
 								'	<span';
 			if(RIS<0)HTML_provv += 	' style="background-color:#F00;' +
 									'		  padding-left:4px;' +
@@ -51,7 +51,7 @@ var PAZIENTI_SALDI = {
 							'	</span>' +
 							'</p>';
 			if(vuoto){
-				HTML += HTML_provv + '<p class="noResults lista listaSaldi">'+Lingua(TXT_NoResSaldi)+'...</div>';
+				HTML += HTML_provv + '<p class="noResults lista listaSaldi">'+TXT("NoResSaldi")+'...</div>';
 			}else{
 				HTML = '<div class="lista listaSaldi">' + HTML_provv + HTML + '</div>';
 			}
@@ -64,12 +64,12 @@ var PAZIENTI_SALDI = {
 						'</div>' +
 						'<p id="add_saldo">' +
 						'	<i class="elMenu"' +
-						'	   title="'+htmlEntities(Lingua(TXT_AggiungiSaldo))+'"' +
+						'	   title="'+htmlEntities(TXT("AggiungiSaldo"))+'"' +
 						'	   onclick="PAZIENTI.car_saldo();">' +
 						/*'		<img src="img/ico_saldiB_add.png"' +
 						'			 class="noBG"' +
 						'			 align="absmiddle">' +*/
-						'		<span>'+htmlEntities(Lingua(TXT_AggiungiSaldo))+'</span>' +
+						'		<span>'+htmlEntities(TXT("AggiungiSaldo"))+'</span>' +
 						'	</i>' +
 						'</p>';
 			
@@ -92,7 +92,7 @@ var PAZIENTI_SALDI = {
 	},
 	car_saldo: function( Q_idSaldo, btn, salvato ){
 		// scheda del saldo
-		CONFIRM.vis(	Lingua(TXT_UscireSenzaSalvare),
+		CONFIRM.vis(	TXT("UscireSenzaSalvare"),
 						!SCHEDA.verificaSchedaRet(),
 						arguments ).then(function(pass){if(pass){
 						var v = getParamNames(CONFIRM.args.callee.toString());
@@ -146,7 +146,7 @@ var PAZIENTI_SALDI = {
 					'			   	 		    line-height:normal;' +
 					'			   	 		    font-style:italic;' +
 					'			   	 		    font-size:11px">' +
-									Lingua(TXT_per) + " " + IntestazioneCliente +
+									TXT("per") + " " + IntestazioneCliente +
 					'				</div>';
 			HTML += '			</div>' +
 					'		</div>' +
@@ -161,14 +161,14 @@ var PAZIENTI_SALDI = {
 			HTML += H.r({	t: "d",
 							name: "DataSaldo",
 							value: DataSaldo,
-							label: Lingua(TXT_Data),
+							label: TXT("Data"),
 							idRiga: 'dataSaldo' });
 			
 			
 			HTML += H.r({	t: "r",
 							name: "RicevutaSaldo",
 							value: RicevutaSaldo,
-							label: Lingua(TXT_RicevutaNumero),
+							label: TXT("RicevutaNumero"),
 							classCampo: "RicTrattDx",
 							styleRiga: "text-align:right;",
 							classRiga: "div_saldi" });
@@ -188,23 +188,23 @@ var PAZIENTI_SALDI = {
 			HTML += H.r({	t: "r",
 							name: "ValoreSaldo",
 							value: (ValoreSaldo) ? ArrotondaEuro(ValoreSaldo) : '',
-							label: Lingua(TXT_ValoreSaldo)+" €",
+							label: TXT("ValoreSaldo")+" €",
 							ver: "1|0|num",
 							classCampo: "CostoTrattDx",
 							keyupCampo: "H.keyPrezzo(this);",
 							styleRiga: "text-align:right;",
 							classRiga: "div_saldi" });
 							
-			HTML += '		<span id="btn_stampa" class="stampaBtn noPrint" onclick="SCHEDA.stampaScheda({});">'+Lingua(TXT_StampaRicevuta)+'</span>' +
+			HTML += '		<span id="btn_stampa" class="stampaBtn noPrint" onclick="SCHEDA.stampaScheda({});">'+TXT("StampaRicevuta")+'</span>' +
 					'	</div>';
 			
 			var azElimina = Q_idSaldo>-1 ? 'PAZIENTI.el_saldo('+Q_idSaldo+')':"";
 			var btnAdd = '';
 			if(azElimina){
-				btnAdd += '<div class="p_paz_el_menu" onClick="'+azElimina+'">'+Lingua(TXT_EliminaScheda)+'</div>';
+				btnAdd += '<div class="p_paz_el_menu" onClick="'+azElimina+'">'+TXT("EliminaScheda")+'</div>';
 			}
 			btnAdd += 	'<div class="p_paz_ref_menu" onClick="REF.open(\'archives.patients.receipts\')">' +
-							Lingua(TXT_ReferenceGuide) +
+							TXT("ReferenceGuide") +
 						'</div>';
 			// pulsanti SALVA, ANNULLA e ELIMINA
 			HTML += SCHEDA.pulsantiForm( 	Q_idSaldo>-1 ? 'PAZIENTI.el_saldo('+Q_idSaldo+')':"",
@@ -213,10 +213,10 @@ var PAZIENTI_SALDI = {
 			
 			HTML += '</form>';
 			
-			if(Q_idSaldo>-1)titoloDef=TXT_RicevutaSaldo;
-			else titoloDef=TXT_InserisciSaldo;
+			if(Q_idSaldo>-1)titoloDef=TXT("RicevutaSaldo");
+			else titoloDef=TXT("InserisciSaldo");
 			
-			SCHEDA.caricaScheda(	stripslashes(Lingua(titoloDef)),
+			SCHEDA.caricaScheda(	stripslashes(titoloDef),
 									HTML, 
 									'PAZIENTI.chiudiSaldo('+idSaldo+');', 
 									'scheda_saldo', 
@@ -240,9 +240,9 @@ var PAZIENTI_SALDI = {
 		// salva il saldo
 		if(PAZIENTI.idCL>-1){
 			stopAnimate(true);
-			visLoader(Lingua(TXT_SalvataggioInCorso),'loadingLight');
+			visLoader(TXT("SalvataggioInCorso"),'loadingLight');
 			var PZ = DB.pazienti.data[PAZIENTI.idCL];
-			if(!ControllaNumero(document.formMod.ValoreSaldo,stripslashes(Lingua(TXT_ValoreSaldo))))return;
+			if(!ControllaNumero(document.formMod.ValoreSaldo,stripslashes(TXT("ValoreSaldo"))))return;
 			var DataModifica = DB.pazienti.lastSync+1;
 			DataSaldo=new Date(	document.formMod.annoDataSaldo.value*1,
 								document.formMod.meseDataSaldo.value*1-1,
@@ -291,14 +291,14 @@ var PAZIENTI_SALDI = {
 	},
 	el_saldo: function( Q_idSaldo ){
 		// elimina il saldo
-		CONFIRM.vis(	Lingua(TXT_ChiediEliminaSaldo),
+		CONFIRM.vis(	TXT("ChiediEliminaSaldo"),
 						false,
 						arguments ).then(function(pass){if(pass){
 						var v = getParamNames(CONFIRM.args.callee.toString());
 						for(i in v)eval(getArguments(v,i));
 						
 			stopAnimate(true);
-			visLoader(Lingua(TXT_SalvataggioInCorso),'loadingLight');
+			visLoader(TXT("SalvataggioInCorso"),'loadingLight');
 			
 			var PZ = DB.pazienti.data[PAZIENTI.idCL];
 			var DataModifica = DB.pazienti.lastSync+1;

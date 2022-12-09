@@ -228,7 +228,7 @@ var LOGIN = {
 		// la risposta di getLogin()
 		if(!txt || txt.substr(0,3)=='404'){
 			if(!LOGIN.logedout){
-				ALERT(Lingua(TXT_ErroreLogin));
+				ALERT(TXT("ErroreLogin"));
 			}else{
 				LOGIN.logedout=false;
 			}
@@ -329,7 +329,7 @@ var LOGIN = {
 			}else{
 				document.getElementById("p_reg").style.display = 'block';
 				document.getElementById("utDisc").style.display = 'none';
-				NN=Lingua(TXT_NessunUtente);
+				NN=TXT("NessunUtente");
 				document.getElementById("btn_modut").style.display = 'none';
 				document.getElementById("loginGuida").style.display = 'block';
 			}
@@ -460,7 +460,7 @@ var LOGIN = {
 				SCHEDA.scaricaScheda();
 				LOGIN.logout();
 				setTimeout( function(){
-					ALERT(Lingua(TXT_MsgConnMultipla));
+					ALERT(TXT("MsgConnMultipla"));
 				}, 800 );
 			}else if(txt){
 				// se c'è una notifica la gestisco
@@ -516,8 +516,8 @@ var LOGIN = {
 	},
 	annullaUtente: function(){
 		// cancella tutti i dati utente in locale
-		CONFIRM.vis(	Lingua(TXT_ChiediAnnullaUtente)+'<br>'+
-						Lingua(TXT_AttenzioneAnnullaUtente) ).then(function(pass){if(pass){
+		CONFIRM.vis(	TXT("ChiediAnnullaUtente")+'<br>'+
+						TXT("AttenzioneAnnullaUtente") ).then(function(pass){if(pass){
 		
 			MENU.chiudiAllSelected();
 			//if(globals.set.cartella)caricaSet(globals.set.cartella,document.getElementById('p_'+globals.set.cartella));
@@ -619,17 +619,17 @@ var LOGIN = {
 		// risposta dalla registrazione utente sul server (registrazione)
 		if(typeof(txt)=='undefined' || txt=='404'){
 			// si è verificato un errore generico
-			ALERT(Lingua(TXT_ErroreGenerico));
+			ALERT(TXT("ErroreGenerico"));
 		}else if(txt=='404-1'){
 			// errore email duplicata
-			ALERT(Lingua(TXT_ErroreEmailDuplicato));
+			ALERT(TXT("ErroreEmailDuplicato"));
 		}else if(txt=='404-2'){
 			// errore username duplicata
-			ALERT(Lingua(TXT_ErroreUsernameDuplicato));
+			ALERT(TXT("ErroreUsernameDuplicato"));
 		}else{
 			// ok
-			//LERT(Lingua(TXT_ConfermareRegistrazione));
-			ALERT(Lingua(TXT_ConfermaRegistrazione));
+			//LERT(TXT("ConfermareRegistrazione"));
+			ALERT(TXT("ConfermaRegistrazione"));
 			document.loginFrom.USR.value = document.registrazioneForm.USR.value;
 			document.loginFrom.PWD.value = document.registrazioneForm.PWD.value;
 			LOGIN.getLogin();
@@ -641,16 +641,16 @@ var LOGIN = {
 	modUtente: function(){
 		// scarica le modifiche dell'utente dal server
 		if(!LOGIN.logedin()){
-			ALERT(Lingua(TXT_ErroreUtenteNonConnesso), true);
+			ALERT(TXT("ErroreUtenteNonConnesso"), true);
 			return;
 		}
 		if(CONN.retNoConn()){
 			
 			var btnAdd = 	'<div class="p_paz_ref_menu" onClick="REF.open(\'feature.login\')">' +
-								Lingua(TXT_ReferenceGuide) +
+								TXT("ReferenceGuide") +
 							'</div>';
 						
-			SCHEDA.caricaScheda(	stripslashes(Lingua(TXT_ModificaUtente)),
+			SCHEDA.caricaScheda(	stripslashes(TXT("ModificaUtente")),
 									'',
 									'',
 									'scheda_utente',
@@ -662,7 +662,7 @@ var LOGIN = {
 			MENU.chiudiMenu();
 			
 			var btnAdd = 	'<div class="p_paz_ref_menu" onClick="REF.open(\'feature.login\')">' +
-								Lingua(TXT_ReferenceGuide) +
+								TXT("ReferenceGuide") +
 							'</div>';
 							
 			CONN.caricaUrl(	"utente_dati.php",
@@ -684,7 +684,7 @@ var LOGIN = {
 		if(txt.substr(0,3)=='404'){
 			
 		}else{
-			CONFIRM.vis(	Lingua(TXT_UscireSenzaSalvare),
+			CONFIRM.vis(	TXT("UscireSenzaSalvare"),
 							!SCHEDA.verificaSchedaRet(),
 							arguments ).then(function(pass){if(pass){
 							var v = getParamNames(CONFIRM.args.callee.toString());
@@ -718,7 +718,7 @@ var LOGIN = {
 						'				   id="avatarUtente_FL"' +
 						'				   type="file"' +
 						'				   onchange="PH.encodeImageFileAsURL(this, true, false, \'LOGIN.salvaAvatar\');"' +
-						'				   title="'+htmlEntities(Lingua(TXT_CaricaImmagine))+'" />' +
+						'				   title="'+htmlEntities(TXT("CaricaImmagine"))+'" />' +
 						'			<div class="ico_del"' +
 						'			   	 onClick="LOGIN.deleteAvatar(\'avatarUtente\');"></div>' +
 						'		</div>' +
@@ -738,18 +738,18 @@ var LOGIN = {
 								name: "Stato",
 								value: UT.Stato,
 								opts: elencaPaesi(),
-								label: Lingua(TXT_Stato),
+								label: TXT("Stato"),
 								classCampo: "selectLargo" });	
 					
 				HTML += '	<div style="margin-top: 30px;' +
 						'	   			margin-left: 5px;">' +
-						'		<b>'+ htmlEntities(Lingua(TXT_LabelAnagrafica))+'</b>' +
+						'		<b>'+ htmlEntities(TXT("LabelAnagrafica"))+'</b>' +
 						'	</div>';
 				HTML += H.r({	t: "s", 
 								name: "Sesso",
 								value: UT.Sesso.toLowerCase(),
-								opts: { "":"", "m": Lingua(TXT_Maschio), "f": Lingua(TXT_Femmina) },
-								label: Lingua(TXT_Sesso),
+								opts: { "":"", "m": TXT("Maschio"), "f": TXT("Femmina") },
+								label: TXT("Sesso"),
 								id: "selectPaz",
 								classRiga: "labelSx" });
 							
@@ -763,7 +763,7 @@ var LOGIN = {
 					
 				HTML += '	<div style="margin-top: 30px;' +
 						'	   			margin-left: 5px;">' +
-						'	   	<b>'+ htmlEntities(Lingua(TXT_LabelContatti))+'</b>' +
+						'	   	<b>'+ htmlEntities(TXT("LabelContatti"))+'</b>' +
 						'	</div>';
 							
 				HTML += H.r({	t: "r",
@@ -780,7 +780,7 @@ var LOGIN = {
 								
 				HTML += '	<div style="margin-top: 30px;' +
 						'		   		margin-left: 5px;">' +
-						'	   	<b>'+htmlEntities(Lingua(TXT_LabelFatturazione))+'</b>' +
+						'	   	<b>'+htmlEntities(TXT("LabelFatturazione"))+'</b>' +
 						'	</div>';
 				
 				// logoAzienda
@@ -795,7 +795,7 @@ var LOGIN = {
 						'				   id="logoAzienda_FL"' +
 						'				   type="file"' +
 						'				   onchange="PH.encodeImageFileAsURL(this, true, false, \'LOGIN.salvaLogo\');"' +
-						'				   title="'+htmlEntities(Lingua(TXT_CaricaImmagine))+'" />' +
+						'				   title="'+htmlEntities(TXT("CaricaImmagine"))+'" />' +
 						'			<div class="ico_del"' +
 						'			   	 onClick="LOGIN.deleteAvatar(\'logoAzienda\');"></div>' +
 						'		</div>' +
@@ -809,7 +809,7 @@ var LOGIN = {
 					
 				HTML += '	<div style="margin-top: 30px;' +
 						'	   			margin-left: 5px;">' +
-						'		<b>'+ htmlEntities(Lingua(TXT_LabelPrefessione))+'</b>' +
+						'		<b>'+ htmlEntities(TXT("LabelPrefessione"))+'</b>' +
 						'	</div>';
 							
 				//HTML += H.r({	t: "r", name: "tags",			value: tags });
@@ -821,14 +821,14 @@ var LOGIN = {
 				HTML += H.r({	t: "t", 
 								name: "Curriculum",
 								value: UT.Curriculum,
-								label: Lingua(TXT_Curriculum) });
+								label: TXT("Curriculum") });
 								
 								
 	
 				if(LOGIN.getLS("Pseudonimo")=='' || LOGIN.getLS("CondizioniCommunity")!='1'){
 					HTML += '	<div style="margin-top: 30px;' +
 							'	   			margin-left: 5px;">' +
-							'		<b>'+ htmlEntities(Lingua(TXT_LabelImpostazioniCommunity))+'</b>' +
+							'		<b>'+ htmlEntities(TXT("LabelImpostazioniCommunity"))+'</b>' +
 							'	</div>';
 							
 					HTML += H.r({	t: "r", name: "Pseudonimo",	value: UT.Pseudonimo,	classCampo: 'styled' });
@@ -836,10 +836,10 @@ var LOGIN = {
 					HTML += H.r({	t: "c", 
 									name: "CondizioniCommunity",
 									value: UT.CondizioniCommunity,
-									label: Lingua(TXT_RegoleCommunityTxt) });	
+									label: TXT("RegoleCommunityTxt") });	
 									
 					HTML += '	<div id="regoleCommunity">' +
-									Lingua(TXT_TestoRegoleCommunity) +
+									TXT("TestoRegoleCommunity") +
 							'	</div>';
 				}else{
 					HTML += H.r({	t: "h", name: "Pseudonimo",	value: UT.Pseudonimo });
@@ -855,10 +855,10 @@ var LOGIN = {
 				HTML += '</form>';
 				
 				var btnAdd = 	'<div class="p_paz_ref_menu" onClick="REF.open(\'feature.login\')">' +
-									Lingua(TXT_ReferenceGuide) +
+									TXT("ReferenceGuide") +
 								'</div>';
 				
-				SCHEDA.caricaScheda(	stripslashes(Lingua(TXT_ModificaUtente)),
+				SCHEDA.caricaScheda(	stripslashes(TXT("ModificaUtente")),
 										HTML,
 										'',
 										'scheda_utente',
@@ -878,7 +878,7 @@ var LOGIN = {
 		// salva i dati dell'utente e li carica sul server
 		if(!verifica_form(document.getElementById("formMod")))return;
 		stopAnimate(true);
-		visLoader(Lingua(TXT_SalvataggioInCorso),'loadingLight');
+		visLoader(TXT("SalvataggioInCorso"),'loadingLight');
 		var postAction = '';
 		
 		var imgAvatar = document.getElementById("avatarUtente").getElementsByTagName("div")[0].style.backgroundImage;
@@ -943,12 +943,12 @@ var LOGIN = {
 	retModUtente: function( txt ){
 		// risposta dal caricamento dell'utente (mod_utente)
 		if(txt=='404'){
-			ALERT(Lingua(TXT_ErroreGenerico));
+			ALERT(TXT("ErroreGenerico"));
 			//rimuoviLoading(document.getElementById("scheda_testo"));
 			startAnimate();
 			nasLoader();
 		}else if(txt=='404-1'){
-			ALERT(Lingua(TXT_ErroreEmailDuplicato));
+			ALERT(TXT("ErroreEmailDuplicato"));
 			//rimuoviLoading(document.getElementById("scheda_testo"));
 			startAnimate();
 			nasLoader();
@@ -2249,7 +2249,7 @@ var LOGIN = {
 		- gestisce la chiusura della schda in caso sia già aperto
 		*/
 		if(txt == 'locked'){
-			ALERT(Lingua(TXT_ElementoGiaAperto));
+			ALERT(TXT("ElementoGiaAperto"));
 			SCHEDA.scaricaScheda();
 		}
 	},
@@ -2273,10 +2273,10 @@ var LOGIN = {
 	},
 	componi: function( backup, data ){
 		LOGIN.addHTML('<style type="text/css">*{font-family:Verdana, Geneva, sans-serif;font-size:12px;line-height:20px;}.rientro{padding-left:20px;}.tits{font-size:14px;}h1, h1 *{font-size:24px;}h2, h2 *{font-size:20px;}h3, h3 *{font-size:16px;}i{color:#999;}</style>')
-		LOGIN.addHTML(Lingua(TXT_Backup)+": <b>"+LOGIN.dataW(DB.login.data.Nominativo)+"</b><br>");
-		LOGIN.addHTML("<i>"+Lingua(TXT_DataCreazione)+":</i> <b>"+getFullDataTS(data)+" ore "+getOraTS(data)+"</b><hr>");
+		LOGIN.addHTML(TXT("Backup")+": <b>"+LOGIN.dataW(DB.login.data.Nominativo)+"</b><br>");
+		LOGIN.addHTML("<i>"+TXT("DataCreazione")+":</i> <b>"+getFullDataTS(data)+" ore "+getOraTS(data)+"</b><hr>");
 		
-		LOGIN.addHTML("<h1>"+Lingua(TXT_Pazienti).toUpperCase()+"</h1><div class=\"rientro\">");
+		LOGIN.addHTML("<h1>"+TXT("Pazienti").toUpperCase()+"</h1><div class=\"rientro\">");
 		for(p in backup.pazienti){
 			backup.pazienti[p].Nome=LOGIN.dataW(backup.pazienti[p].Nome);
 			backup.pazienti[p].Cognome=LOGIN.dataW(backup.pazienti[p].Cognome);
@@ -2288,21 +2288,21 @@ var LOGIN = {
 			if((backup.pazienti[p].Nome || backup.pazienti[p].Cognome) && backup.pazienti[p].Cancellato!='1'){
 				nr++;
 				LOGIN.addHTML("<h2>"+(nr)+") "+backup.pazienti[p].Nome+" "+backup.pazienti[p].Cognome+"</h2><p class=\"rientro\">");
-				LOGIN.addHTML("<i>"+Lingua(TXT_Indirizzo)+":</i> "+LOGIN.dataW(backup.pazienti[p].Indirizzo)+"<br>");
-				LOGIN.addHTML("<i>"+Lingua(TXT_CAP)+":</i> "+LOGIN.dataW(backup.pazienti[p].CAP)+"<br>");
-				LOGIN.addHTML("<i>"+Lingua(TXT_Provincia)+":</i> "+LOGIN.dataW(backup.pazienti[p].Provincia)+"<br>");
-				LOGIN.addHTML("<i>"+Lingua(TXT_Stato)+":</i> "+LOGIN.dataW(backup.pazienti[p].Stato)+"<br>");
-				LOGIN.addHTML("<i>"+Lingua(TXT_Telefono)+":</i> "+LOGIN.dataW(backup.pazienti[p].Telefono)+"<br>");
+				LOGIN.addHTML("<i>"+TXT("Indirizzo")+":</i> "+LOGIN.dataW(backup.pazienti[p].Indirizzo)+"<br>");
+				LOGIN.addHTML("<i>"+TXT("CAP")+":</i> "+LOGIN.dataW(backup.pazienti[p].CAP)+"<br>");
+				LOGIN.addHTML("<i>"+TXT("Provincia")+":</i> "+LOGIN.dataW(backup.pazienti[p].Provincia)+"<br>");
+				LOGIN.addHTML("<i>"+TXT("Stato")+":</i> "+LOGIN.dataW(backup.pazienti[p].Stato)+"<br>");
+				LOGIN.addHTML("<i>"+TXT("Telefono")+":</i> "+LOGIN.dataW(backup.pazienti[p].Telefono)+"<br>");
 				var prefisso = '';
 				if(backup.pazienti[p].paeseCellulare)prefisso = paesi[backup.pazienti[p].paeseCellulare].prefisso;
-				LOGIN.addHTML("<i>"+Lingua(TXT_Cellulare)+":</i> "+prefisso+LOGIN.dataW(backup.pazienti[p].Cellulare)+"<br>");
-				LOGIN.addHTML("<i>"+Lingua(TXT_Email)+":</i> "+LOGIN.dataW(backup.pazienti[p].Email)+"<br>");
-				LOGIN.addHTML("<i>"+Lingua(TXT_Sesso)+":</i> "+Lingua(eval("TXT_"+LOGIN.dataW(backup.pazienti[p].sesso)))+"<br>");
-				LOGIN.addHTML("<i>"+Lingua(TXT_Note)+":</i> "+LOGIN.dataW(backup.pazienti[p].NotePaziente)+"</p>");
+				LOGIN.addHTML("<i>"+TXT("Cellulare")+":</i> "+prefisso+LOGIN.dataW(backup.pazienti[p].Cellulare)+"<br>");
+				LOGIN.addHTML("<i>"+TXT("Email")+":</i> "+LOGIN.dataW(backup.pazienti[p].Email)+"<br>");
+				LOGIN.addHTML("<i>"+TXT("Sesso")+":</i> "+TXT(""+LOGIN.dataW(backup.pazienti[p].sesso))+"<br>");
+				LOGIN.addHTML("<i>"+TXT("Note")+":</i> "+LOGIN.dataW(backup.pazienti[p].NotePaziente)+"</p>");
 	
 	
 				if(backup.pazienti[p].trattamenti.length>0){
-					LOGIN.addHTML("<br><i>"+Lingua(TXT_CicloTrattamenti).toUpperCase()+":</i><br><div class=\"rientro\">");
+					LOGIN.addHTML("<br><i>"+TXT("CicloTrattamenti").toUpperCase()+":</i><br><div class=\"rientro\">");
 					
 					
 					var cicli=[];
@@ -2327,7 +2327,7 @@ var LOGIN = {
 						vuoto=false;
 						var noName=false;
 						NomeCiclo=cicli[c].NomeCiclo;
-						if(NomeCiclo=='0' || NomeCiclo=='')NomeCiclo=Lingua(TXT_CicloSenzaNome);
+						if(NomeCiclo=='0' || NomeCiclo=='')NomeCiclo=TXT("CicloSenzaNome");
 						
 						var trattamenti=[];
 						for(t in backup.pazienti[p].trattamenti){
@@ -2352,20 +2352,20 @@ var LOGIN = {
 									oF=pO[0]+":30";
 								}else oF+=":00";
 								orario=oI+"-"+oF;
-								txtOrario=Lingua(TXT_eOra);
+								txtOrario=TXT("eOra");
 							}
 							
-							LOGIN.addHTML("<b class=\"tits\"> "+Lingua(TXT_ModificaTrattamento)+" "+(t*1+1)+"</b><br>");
-							LOGIN.addHTML("<i>"+Lingua(TXT_Data)+txtOrario+": </i> "+getFullDataTS(LOGIN.dataW(trattamenti[t].TimeTrattamento))+" "+orario+"<br>");
-							LOGIN.addHTML("<i>"+Lingua(TXT_Titolo)+":</i> <b>"+LOGIN.dataW(trattamenti[t].TitoloTrattamento)+"</b><br>");
-							LOGIN.addHTML("<i>"+Lingua(TXT_Costo)+":</i> <b>"+ArrotondaEuro(trattamenti[t].CostoTrattamento)+"</b><br>");
+							LOGIN.addHTML("<b class=\"tits\"> "+TXT("ModificaTrattamento")+" "+(t*1+1)+"</b><br>");
+							LOGIN.addHTML("<i>"+TXT("Data")+txtOrario+": </i> "+getFullDataTS(LOGIN.dataW(trattamenti[t].TimeTrattamento))+" "+orario+"<br>");
+							LOGIN.addHTML("<i>"+TXT("Titolo")+":</i> <b>"+LOGIN.dataW(trattamenti[t].TitoloTrattamento)+"</b><br>");
+							LOGIN.addHTML("<i>"+TXT("Costo")+":</i> <b>"+ArrotondaEuro(trattamenti[t].CostoTrattamento)+"</b><br>");
 							var TT=LOGIN.dataW(trattamenti[t].TestoTrattamento);
 							if(LOGIN.dataW(trattamenti[t].TipoTrattamento)=='A'){
 							TT=JSON.parse(TT);
-								LOGIN.addHTML("<i>"+Lingua(TXT_AnamnesiMotivo)+":</i> "+TT.AnamnesiMotivo+"<br>");
-								LOGIN.addHTML("<i>"+Lingua(TXT_AnamnesiDiagnosiOccidentale)+":</i> "+TT.AnamnesiDiagnosiOccidentale+"<br>");
-								LOGIN.addHTML("<i>"+Lingua(TXT_AnamnesiDiagnosiMTC)+":</i> "+TT.AnamnesiDiagnosiMTC+"<br>");
-							}else LOGIN.addHTML("<i>"+Lingua(TXT_Descrizione)+":</i> "+TT.replace(/\n/gi,"<br>")+"<br>");
+								LOGIN.addHTML("<i>"+TXT("AnamnesiMotivo")+":</i> "+TT.AnamnesiMotivo+"<br>");
+								LOGIN.addHTML("<i>"+TXT("AnamnesiDiagnosiOccidentale")+":</i> "+TT.AnamnesiDiagnosiOccidentale+"<br>");
+								LOGIN.addHTML("<i>"+TXT("AnamnesiDiagnosiMTC")+":</i> "+TT.AnamnesiDiagnosiMTC+"<br>");
+							}else LOGIN.addHTML("<i>"+TXT("Descrizione")+":</i> "+TT.replace(/\n/gi,"<br>")+"<br>");
 							
 							sintomi=[];
 							if(trattamenti[t].sintomi)var sintomi=JSON.parse(trattamenti[t].sintomi);
@@ -2378,7 +2378,7 @@ var LOGIN = {
 									txtSintomi+=")</b>, ";
 								}
 								txtSintomi=txtSintomi.substr(0,txtSintomi.length-2);
-								LOGIN.addHTML("<i>"+Lingua(TXT_Sintomi)+":</i> "+txtSintomi+"<br>");
+								LOGIN.addHTML("<i>"+TXT("Sintomi")+":</i> "+txtSintomi+"<br>");
 							}
 							if(trattamenti[t].puntiTsuboMap){
 								var punti=JSON.parse(LOGIN.dataW(trattamenti[t].puntiTsuboMap));
@@ -2400,7 +2400,7 @@ var LOGIN = {
 									txtPunti+=", ";
 								}
 								txtPunti=txtPunti.substr(0,txtPunti.length-2);
-								LOGIN.addHTML("<i>"+Lingua(TXT_PuntiTrattamento)+":</i> "+txtPunti+"<br>");
+								LOGIN.addHTML("<i>"+TXT("PuntiTrattamento")+":</i> "+txtPunti+"<br>");
 							}
 							if(trattamenti[t].puntiAuriculoMap){
 								var punti=JSON.parse(LOGIN.dataW(trattamenti[t].puntiAuriculoMap));
@@ -2416,7 +2416,7 @@ var LOGIN = {
 									txtPunti+=", ";
 								}
 								txtPunti=txtPunti.substr(0,txtPunti.length-2);
-								LOGIN.addHTML("<i>"+Lingua(TXT_PuntiTrattamento)+":</i> "+txtPunti+"<br>");
+								LOGIN.addHTML("<i>"+TXT("PuntiTrattamento")+":</i> "+txtPunti+"<br>");
 							}
 							LOGIN.addHTML("<br>");
 						}
@@ -2428,7 +2428,7 @@ var LOGIN = {
 				
 				
 				if(backup.pazienti[p].saldi.length>0){
-					LOGIN.addHTML("<br><i>"+Lingua(TXT_ElSaldi).toUpperCase()+":</i><br><div class=\"rientro\">");
+					LOGIN.addHTML("<br><i>"+TXT("ElSaldi").toUpperCase()+":</i><br><div class=\"rientro\">");
 					var saldi=JSON.parse(JSON.stringify(backup.pazienti[p].saldi));
 					saldi.sort(sort_by("DataSaldo", true, parseInt ));
 					for(s in saldi){
@@ -2445,7 +2445,7 @@ var LOGIN = {
 				}
 				
 				if(note.length>0){
-					LOGIN.addHTML("<br><i>"+Lingua(TXT_ANNOTAZIONI)+":</i><br><div class=\"rientro\">");
+					LOGIN.addHTML("<br><i>"+TXT("ANNOTAZIONI")+":</i><br><div class=\"rientro\">");
 					for(n in note){
 						LOGIN.addHTML("<b>"+note[n].meridiano+" "+LOGIN.dataW(note[n].numeroTsubo)+"</b>: "+LOGIN.dataW(note[n].TestoAnnotazione.replace(/\n/gi,"<br>"))+"<br>");
 					}
@@ -2457,26 +2457,26 @@ var LOGIN = {
 			}
 		}
 		LOGIN.addHTML("</div>");
-		LOGIN.addHTML("<h1>"+Lingua(TXT_PROCEDURE)+"</h1><div class=\"rientro\">");
+		LOGIN.addHTML("<h1>"+TXT("PROCEDURE")+"</h1><div class=\"rientro\">");
 		
 		
 		for(n in backup.procedure){
 			if(backup.procedure[n].NomeProcedura && backup.procedure[n].Cancellato!='1'){
 				LOGIN.addHTML("<b class=\"tits\">"+backup.procedure[n].NomeProcedura+"</b><div class=\"rientro\">");
-				LOGIN.addHTML("<i>"+Lingua(TXT_Data)+": </i> "+getFullDataTS(backup.procedure[n].DataCreazione)+"<br>");
+				LOGIN.addHTML("<i>"+TXT("Data")+": </i> "+getFullDataTS(backup.procedure[n].DataCreazione)+"<br>");
 				for(d in backup.procedure[n].dettagliProcedura){
 					var TD=backup.procedure[n].dettagliProcedura[d].TipoDettaglio;
-					if(TD=='P')LOGIN.addHTML("<i>"+Lingua(TXT_Tsubo)+": </i>");
-					if(TD=='M')LOGIN.addHTML("<i>"+Lingua(TXT_AggiungiMeridiano)+": </i>");
+					if(TD=='P')LOGIN.addHTML("<i>"+TXT("Tsubo")+": </i>");
+					if(TD=='M')LOGIN.addHTML("<i>"+TXT("AggiungiMeridiano")+": </i>");
 					if(TD=='T' || TD=='P' || TD=='M')LOGIN.addHTML("<b>");
 					var descrizione = backup.procedure[n].dettagliProcedura[d].DescrizioneDettaglio.replace(/\n/gi,"<br>");
 					LOGIN.addHTML(descrizione);
 					if(TD=='T' || TD=='P' || TD=='M')LOGIN.addHTML("</b>");
 					LOGIN.addHTML("<br>");
 				}
-				LOGIN.addHTML("<i>"+Lingua(TXT_Condiviso)+": </i> ");
-				if(backup.procedure[n].Condiviso=='1')LOGIN.addHTML("<b>"+Lingua(TXT_si)+"</b>");
-				else LOGIN.addHTML("<b>"+Lingua(TXT_no)+"</b>");
+				LOGIN.addHTML("<i>"+TXT("Condiviso")+": </i> ");
+				if(backup.procedure[n].Condiviso=='1')LOGIN.addHTML("<b>"+TXT("si")+"</b>");
+				else LOGIN.addHTML("<b>"+TXT("no")+"</b>");
 				LOGIN.addHTML("<br>");
 				LOGIN.addHTML("</div>");
 				
@@ -2484,7 +2484,7 @@ var LOGIN = {
 			}
 		}
 		LOGIN.addHTML("</div>");
-		LOGIN.addHTML("<h1>"+Lingua(TXT_ANNOTAZIONI_GENERICO)+"</h1><div class=\"rientro\">");
+		LOGIN.addHTML("<h1>"+TXT("ANNOTAZIONI_GENERICO")+"</h1><div class=\"rientro\">");
 	
 		for(n in backup.note){
 			if(backup.note[n].TestoAnnotazione && backup.note[n].idPaziente==-1 && backup.note[n].Cancellato!='1'){

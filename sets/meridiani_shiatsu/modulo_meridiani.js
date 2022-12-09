@@ -38,7 +38,7 @@ var MODULO_MERIDIANI = { // extend SET
 			//if(m=='CV' || m=='GV')contElencoMeridiani +=	' noMAS';
 			contElencoMeridiani +=	'">' +
 									'	<span class="noMAS"' +
-									'		  title="'+htmlEntities(Lingua(TXT_AccendiMeridiano))+'"' +
+									'		  title="'+htmlEntities(TXT("AccendiMeridiano"))+'"' +
 									'		  onMouseOver="SET.onElencoPt=true;this.parentElement.classList.add(\'overLight\');"' +
 									'		  onMouseOut="SET.onElencoPt=false;this.parentElement.classList.remove(\'overLight\');"' +
 									'		  onClick="SET.accendiMeridiano(\''+m+'\',true);"></span>';
@@ -46,7 +46,7 @@ var MODULO_MERIDIANI = { // extend SET
 			contElencoMeridiani +=	'	<b>'+siglaPunto+'</b>' +
 										DB.set.meridiani[m].NomeMeridiano +
 									'	<span class="noCIN"></span>' +
-									'	<strong class="noMAS" title="'+htmlEntities(Lingua(TXT_ElencoPunti))+'"></strong>' +
+									'	<strong class="noMAS" title="'+htmlEntities(TXT("ElencoPunti"))+'"></strong>' +
 									'</div>' +
 									'<span id="e_'+m+'"' +
 									'	   class="noMAS elencoPunti '+addClassEl+'">'+elencoTsubo+'</span>';
@@ -61,14 +61,14 @@ var MODULO_MERIDIANI = { // extend SET
 		sceltaMeridianiTag = 	'<div class="menuElenchi"' +
 								'	  onClick="MENU.visMM(\'sistemaMeridiani_p\');">' +
 								'</div>' +		
-							 	'<p id="sistemaMeridiani_p"><span id="selectCambioMeridiani"><i>'+htmlEntities(Lingua(TXT_SistemaMeridiani))+':</i><select id="sceltaMeridianiElenco" onChange="SET.cambiaSistema(this.value,true);">'+
+							 	'<p id="sistemaMeridiani_p"><span id="selectCambioMeridiani"><i>'+htmlEntities(TXT("SistemaMeridiani"))+':</i><select id="sceltaMeridianiElenco" onChange="SET.cambiaSistema(this.value,true);">'+
 								'  <option value=""';
 		if(localStorage.sistemaMeridiani == '' || !__(localStorage.sistemaMeridiani) )sceltaMeridianiTag += ' SELECTED';
-		sceltaMeridianiTag += 	'>'+htmlEntities(Lingua(TXT_MeridianiCinesi))+'</option>' +
+		sceltaMeridianiTag += 	'>'+htmlEntities(TXT("MeridianiCinesi"))+'</option>' +
 								'  <option value="MAS"';
 		if(localStorage.sistemaMeridiani == 'MAS')sceltaMeridianiTag += ' SELECTED';
-		sceltaMeridianiTag += 	'>'+htmlEntities(Lingua(TXT_MeridianiGiapponesi))+'</option>' +
-								'</select></span><i class="elMenu" id="cambioSistemaMeridiani" onClick="MENU.visImpset();"><span>'+htmlEntities(Lingua(TXT_SistemaMeridiani2))+'</span></i></p>';
+		sceltaMeridianiTag += 	'>'+htmlEntities(TXT("MeridianiGiapponesi"))+'</option>' +
+								'</select></span><i class="elMenu" id="cambioSistemaMeridiani" onClick="MENU.visImpset();"><span>'+htmlEntities(TXT("SistemaMeridiani2"))+'</span></i></p>';
 		
 		document.getElementById("lista_meridiani").innerHTML = sceltaMeridianiTag+'<div class="lista listaMeridiani">'+contElencoMeridiani+'</div>';
 		document.getElementById("meridianiSmart_cont").innerHTML = contSmart;

@@ -2,14 +2,14 @@
 var DISPOSITIVI = {
 
 	carica: function( txt ){
-		var HTML = '<div id="dispositivi_descr">'+htmlEntities(Lingua(TXT_MaxDispositiviConnessi))+'</div>';
+		var HTML = '<div id="dispositivi_descr">'+htmlEntities(TXT("MaxDispositiviConnessi"))+'</div>';
 		var elenco = JSON.parse(txt);
 		var devs1 = devs2 = type1 = type2 = time1 = time2 = plt1 = plt2 = '';
 		console.log(elenco)
 		if(elenco.DeviceInfo)devs1 = JSON.parse(window.atob(elenco.DeviceInfo));
 		if(elenco.DeviceInfo2)devs2 = JSON.parse(window.atob(elenco.DeviceInfo2));
-		if(parseInt(elenco.LastConn))time1 = "<br><i>"+Lingua(TXT_UltimaConnessione)+"</i>: "+getDataTS(elenco.LastConn);
-		if(parseInt(elenco.LastConn2))time2 = "<br><i>"+Lingua(TXT_UltimaConnessione)+"</i>: "+getDataTS(elenco.LastConn2);
+		if(parseInt(elenco.LastConn))time1 = "<br><i>"+TXT("UltimaConnessione")+"</i>: "+getDataTS(elenco.LastConn);
+		if(parseInt(elenco.LastConn2))time2 = "<br><i>"+TXT("UltimaConnessione")+"</i>: "+getDataTS(elenco.LastConn2);
 		
 		if(devs1.appType=='APP')type1 = 'APP';
 		else if(devs1.browser)type1 = 'Online: <img src="img/ico_browser_'+devs1.browser.toLowerCase()+'.png"> '+devs1.browser;
@@ -59,11 +59,11 @@ var DISPOSITIVI = {
 	
 	ret_disconnetti: function( txt ){
 		if(txt == 'ok'){
-			ALERT(Lingua(TXT_MsgLogoutDevices));
+			ALERT(TXT("MsgLogoutDevices"));
 			MENU.chiudiMenu();
 			MENU.visLogin();
 		}else{
-			ALERT(Lingua(TXT_ErrLogoutDevices));
+			ALERT(TXT("ErrLogoutDevices"));
 		}
 	}
 	

@@ -25,7 +25,7 @@ var CONN = {
 				x.onreadystatechange=function(){
 					if(x.readyState===4){
 						if(x.response){
-							//if(x.response.substr(0,1)=='<')ALERT(Lingua(TXT_ErroreCaricamento));
+							//if(x.response.substr(0,1)=='<')ALERT(TXT("ErroreCaricamento"));
 							
 							eval(funzione)(x.response);
 						}
@@ -54,7 +54,7 @@ var CONN = {
 	},
 	retNoConn: function(){ // avvisa della connessione assente
 		if(!CONN.getConn()){
-			ALERT(Lingua(TXT_ConnessioneAssente));
+			ALERT(TXT("ConnessioneAssente"));
 			return false;
 		}else return true;
 	}

@@ -6,21 +6,21 @@ var PAZIENTI_SETS = {
 	*/
 	
 	mezzi: {
-		"": Lingua(TXT_Mezzo),
-		"ago": Lingua(TXT_MezzoAgo),
-		"moxa": Lingua(TXT_MezzoMoxa),
-		"coppetta": Lingua(TXT_MezzoCoppetta),
-		"diapason": Lingua(TXT_MezzoDiapason),
-		"luce": Lingua(TXT_MezzoLuce),
-		"dito": Lingua(TXT_MezzoDito),
-		"pauper": Lingua(TXT_MezzoPauper),
-		"seme_vaccaria": Lingua(TXT_MezzoSemeVaccaria),
-		"sferetta_metallicha": Lingua(TXT_MezzoSferettaMetallica),
-		"elettro_agopuntura": Lingua(TXT_MezzoElettroAgopuntura),
-		"ago_semipermanente": Lingua(TXT_MezzoAgoSemipermanente),
-		"crio": Lingua(TXT_MezzoCrio),
-		"salasso": Lingua(TXT_MezzoSalasso),
-		"infiltrazione": Lingua(TXT_MezzoInfiltrazione)
+		"": TXT("Mezzo"),
+		"ago": TXT("MezzoAgo"),
+		"moxa": TXT("MezzoMoxa"),
+		"coppetta": TXT("MezzoCoppetta"),
+		"diapason": TXT("MezzoDiapason"),
+		"luce": TXT("MezzoLuce"),
+		"dito": TXT("MezzoDito"),
+		"pauper": TXT("MezzoPauper"),
+		"seme_vaccaria": TXT("MezzoSemeVaccaria"),
+		"sferetta_metallicha": TXT("MezzoSferettaMetallica"),
+		"elettro_agopuntura": TXT("MezzoElettroAgopuntura"),
+		"ago_semipermanente": TXT("MezzoAgoSemipermanente"),
+		"crio": TXT("MezzoCrio"),
+		"salasso": TXT("MezzoSalasso"),
+		"infiltrazione": TXT("MezzoInfiltrazione")
 	},
 	elencoGruppoPunti: {},
 	elencoGruppoAtt: {},
@@ -119,7 +119,7 @@ var PAZIENTI_SETS = {
 							'		  		cursor:pointer;' +
 							'		  		opacity:0.5;' +
 							'		  		float:right;"' +
-							'		 title="'+Lingua(TXT_DelDett)+'"' +
+							'		 title="'+TXT("DelDett")+'"' +
 							'		 onClick="PAZIENTI.eliminaPuntoTrattamento('+p+')"' +
 							'		 class="occhio">';
 					
@@ -133,7 +133,7 @@ var PAZIENTI_SETS = {
 							'	  	     width="20"' +
 							'	  	     height="20"' +
 							'	  	     align="absmiddle"' +
-							'	  	     title="'+htmlEntities(Lingua(TXT_PZDett))+'"'+
+							'	  	     title="'+htmlEntities(TXT("PZDett"))+'"'+
 							'	  	     class="occhio valEn"> ' +
 							'	</span>';
 							
@@ -199,7 +199,7 @@ var PAZIENTI_SETS = {
 								'				margin-top: -4px;' +
 								'				cursor:pointer;"' +
 								'		 class="occhio"' +
-								'		 title="'+htmlEntities(Lingua(TXT_VisualizzaPunto))+'"' +
+								'		 title="'+htmlEntities(TXT("VisualizzaPunto"))+'"' +
 								'		 onClick="SET.selTsuboMod('+p+');">';
 					}
 					
@@ -214,7 +214,7 @@ var PAZIENTI_SETS = {
 							'	  	     width="16"' +
 							'	  	     height="16"' +
 							'	  	     align="absmiddle"' +
-							'	  	     title="'+htmlEntities(Lingua(TXT_PVDett))+'"' +
+							'	  	     title="'+htmlEntities(TXT("PVDett"))+'"' +
 							'	  	     class="occhio valEn"> ' +
 							'	</span>';
 					
@@ -222,7 +222,7 @@ var PAZIENTI_SETS = {
 							' 		name="de_'+p+'"' +
 							' 		class="textPuntoTratt okPlaceHolder"' +
 							' 		value="'+htmlEntities(descrizione)+'"' +
-							' 		placeholder="'+htmlEntities(Lingua(TXT_SpiegazionePuntoTratt))+'"' +
+							' 		placeholder="'+htmlEntities(TXT("SpiegazionePuntoTratt"))+'"' +
 							'		onBlur="PAZIENTI.modNumPunti(\'formMod\','+p+');"'+H.noAutoGen+'>';
 					HTML += '</div>';
 					elenco += PAZIENTI.puntiProvvisori[p].n+'.'+PAZIENTI.puntiProvvisori[p].m;
@@ -260,7 +260,7 @@ var PAZIENTI_SETS = {
 			
 			HTML +=	'<div class="noResults"' +
 					'	  style="padding-left:30px;">' +
-						Lingua(TXT_NoRes) +'...' +
+						TXT("NoRes") +'...' +
 					'</div>';
 		}
 		document.getElementById('totTsubo').innerHTML = totTsubo;
@@ -376,9 +376,9 @@ var PAZIENTI_SETS = {
 			}
 		}
 		if(presenti){
-			if(PAZIENTI.tipoGruppo=='P')ALERT(Lingua(TXT_PuntiPresenti));
-			if(PAZIENTI.tipoGruppo=='M')ALERT(Lingua(TXT_MeridianiPresenti));
-			if(PAZIENTI.tipoGruppo=='A')ALERT(Lingua(TXT_PuntiPresenti));
+			if(PAZIENTI.tipoGruppo=='P')ALERT(TXT("PuntiPresenti"));
+			if(PAZIENTI.tipoGruppo=='M')ALERT(TXT("MeridianiPresenti"));
+			if(PAZIENTI.tipoGruppo=='A')ALERT(TXT("PuntiPresenti"));
 		}
 		if(totAggiunti){
 			if(PAZIENTI.tipoGruppo=='P'){
@@ -430,7 +430,7 @@ var PAZIENTI_SETS = {
 		for(m=0;m<pvs.length;m++){
 			html += '<span style="background-image:url(img/ico_PV'+pvs[m]+'.png);"' +
 					'	   onClick="PAZIENTI.cambiaPV('+n+',\''+pvs[m]+'\');"' +
-					'	   title="'+htmlEntities(Lingua(eval("TXT_Valutazione"+pvs[m])))+'"></span>';
+					'	   title="'+htmlEntities(TXT("Valutazione"+pvs[m]))+'"></span>';
 		}
 		H.selTT(n,"ico_PV",html);
 	},
@@ -489,7 +489,7 @@ var PAZIENTI_SETS = {
 						'				opacity: 0.5;' +
 						'				float: right;' +
 						'				margin: 8px;"' +
-						'		 title="'+Lingua(TXT_DelDett)+'"' +
+						'		 title="'+TXT("DelDett")+'"' +
 						'		 onMouseOver="PAZIENTI.overCestino=true;"' +
 						'		 onMouseOut="PAZIENTI.overCestino=false;"' +
 						'		 onClick="PAZIENTI.eliminaMeridianoTrattamento('+m+')"' +
@@ -520,10 +520,10 @@ var PAZIENTI_SETS = {
 						'		  	     width="16"' +
 						'		  	     height="16"' +
 						'		  	     align="absmiddle"' +
-						'		  	     title="'+ htmlEntities(Lingua(TXT_PVDett))+'"' +
+						'		  	     title="'+ htmlEntities(TXT("PVDett"))+'"' +
 						'		  	     class="occhio valEn"> ' +
 						'  		 	<b class="noPrint">' +
-										Lingua(eval("TXT_Valutazione"+m2)) +
+										TXT("Valutazione"+m2) +
 						'			</b>' +
 						'		</span>' +
 						'	</span>';
@@ -533,7 +533,7 @@ var PAZIENTI_SETS = {
 							' 		name="dm_'+m+'"' +
 							' 		class="textMeridianoTratt okPlaceHolder"' +
 							' 		value="'+htmlEntities(descrizione)+'"' +
-							' 		placeholder="'+htmlEntities(Lingua(TXT_SpiegazioneMeridianoTratt))+'"' +
+							' 		placeholder="'+htmlEntities(TXT("SpiegazioneMeridianoTratt"))+'"' +
 							'		onBlur="PAZIENTI.meridianiProvvisori['+m+'].descrizione=this.value;"'+H.noAutoGen+'>';
 				
 				HTML += '</div>';
@@ -542,7 +542,7 @@ var PAZIENTI_SETS = {
 		}else{
 			HTML +=	'<div class="noResults"' +
 					'	  style="padding-left:30px;">' +
-						Lingua(TXT_NoRes) +'...' +
+						TXT("NoRes") +'...' +
 					'</div>';
 		}
 		document.getElementById('totMeridiani').innerHTML = PAZIENTI.meridianiProvvisori.length;
@@ -587,7 +587,7 @@ var PAZIENTI_SETS = {
 		for(m=0;m<pvs.length;m++){
 			html += '<span style="background-image:url(img/ico_PV'+pvs[m]+'.png);"' +
 					'	   onClick="PAZIENTI.cambiaMV('+n+',\''+pvs[m]+'\');"' +
-					'	   title="'+htmlEntities(Lingua(eval("TXT_Valutazione"+pvs[m])))+'"></span>';
+					'	   title="'+htmlEntities(TXT("Valutazione"+pvs[m]))+'"></span>';
 		}
 		H.selTT(n,"ico_MV",html);
 	},
@@ -660,7 +660,7 @@ var PAZIENTI_SETS = {
 							'		  		cursor:pointer;' +
 							'		  		opacity:0.5;' +
 							'		  		float:right;"' +
-							'		 title="'+Lingua(TXT_DelDett)+'"' +
+							'		 title="'+TXT("DelDett")+'"' +
 							'		 onClick="PAZIENTI.eliminaAuriculoTrattamento('+p+')"' +
 							'		 class="occhio">';
 					
@@ -674,7 +674,7 @@ var PAZIENTI_SETS = {
 							'	  	     width="20"' +
 							'	  	     height="20"' +
 							'	  	     align="absmiddle"' +
-							'	  	     title="'+htmlEntities(Lingua(TXT_PZDett))+'"'+
+							'	  	     title="'+htmlEntities(TXT("PZDett"))+'"'+
 							'	  	     class="occhio valEn"> ' +
 							'	</span>';
 							
@@ -715,7 +715,7 @@ var PAZIENTI_SETS = {
 								'				margin-top: -4px;' +
 								'				cursor:pointer;"' +
 								'		 class="occhio"' +
-								'		 title="'+htmlEntities(Lingua(TXT_VisualizzaPunto))+'"' +
+								'		 title="'+htmlEntities(TXT("VisualizzaPunto"))+'"' +
 								'		 onClick="SET.selTsuboMod(\''+siglaTsubo+'\','+p+');">';
 					}
 					
@@ -730,7 +730,7 @@ var PAZIENTI_SETS = {
 							'	  	     width="16"' +
 							'	  	     height="16"' +
 							'	  	     align="absmiddle"' +
-							'	  	     title="'+htmlEntities(Lingua(TXT_PVDett))+'"' +
+							'	  	     title="'+htmlEntities(TXT("PVDett"))+'"' +
 							'	  	     class="occhio valEn"> ' +
 							'	</span>';
 					
@@ -738,7 +738,7 @@ var PAZIENTI_SETS = {
 							' 		name="de_'+p+'"' +
 							' 		class="textPuntoTratt okPlaceHolder"' +
 							' 		value="'+htmlEntities(descrizione)+'"' +
-							' 		placeholder="'+htmlEntities(Lingua(TXT_SpiegazioneAuriculoTratt))+'"' +
+							' 		placeholder="'+htmlEntities(TXT("SpiegazioneAuriculoTratt"))+'"' +
 							'		'+H.noAutoGen+'>';
 					HTML += '</div>';
 				}
@@ -771,7 +771,7 @@ var PAZIENTI_SETS = {
 			
 			HTML +=	'<div class="noResults"' +
 					'	  style="padding-left:30px;">' +
-						Lingua(TXT_NoRes) +'...' +
+						TXT("NoRes") +'...' +
 					'</div>';
 		}
 		document.getElementById('totAuriculo').innerHTML = PAZIENTI.auriculoProvvisori.length;
@@ -806,7 +806,7 @@ var PAZIENTI_SETS = {
 		for(m=0;m<pvs.length;m++){
 			html += '<span style="background-image:url(img/ico_PV'+pvs[m]+'.png);"' +
 					'	   onClick="PAZIENTI.cambiaAV('+n+',\''+pvs[m]+'\');"' +
-					'	   title="'+htmlEntities(Lingua(eval("TXT_Valutazione"+pvs[m])))+'"></span>';
+					'	   title="'+htmlEntities(TXT("Valutazione"+pvs[m]))+'"></span>';
 		}
 		H.selTT(n,"ico_PV",html);
 	},
@@ -861,10 +861,10 @@ var PAZIENTI_SETS = {
 	// ALERT sui mezzi (anticoagulanti e pace-maker)
 	verMezzo: function( m ){
 		if(m=='salasso'){
-			ALERT(Lingua(TXT_AlertMezzoSalasso));
+			ALERT(TXT("AlertMezzoSalasso"));
 		}
 		if(m=='elettro_agopuntura'){
-			ALERT(Lingua(TXT_AlertMezzoElettroAgopuntura));
+			ALERT(TXT("AlertMezzoElettroAgopuntura"));
 		}
 	},
 	
@@ -890,7 +890,7 @@ var PAZIENTI_SETS = {
 		EL.parent = PAZIENTI.elencoGruppoPunti;
 		var n = -1;
 		if(PAZIENTI.tipoGruppo=='P' || PAZIENTI.tipoGruppo=='M'){
-			EL.titolo = Lingua(TXT_MeridianiTrattamento);
+			EL.titolo = TXT("MeridianiTrattamento");
 			for(i in DB.set.meridiani){
 				n++;
 				if(PAZIENTI.tipoGruppo=='P'){ // punti
@@ -924,7 +924,7 @@ var PAZIENTI_SETS = {
 			}
 			puntiElenco.sort(sort_by("NomeTsubo", false));
 			
-			EL.titolo = Lingua(TXT_PuntiAuriculo);
+			EL.titolo = TXT("PuntiAuriculo");
 			for(a in puntiElenco){
 				if(puntiElenco[a].NomeTsubo){
 					EL.contenuto.push(puntiElenco[a].siglaTsubo);
@@ -991,7 +991,7 @@ var PAZIENTI_SETS = {
 		// punti da PROCEDURE
 		if(DB.procedure){
 			EL = {};
-			EL.titolo = Lingua(TXT_Procedure);
+			EL.titolo = TXT("Procedure");
 			EL.contenuto = [];
 			EL.livello = 2;
 			EL.parent = PAZIENTI.elencoGruppoPunti;
@@ -1051,7 +1051,7 @@ var PAZIENTI_SETS = {
 				
 				
 				EL = {};
-				EL.titolo = Lingua(TXT_CommunityPreferiti);
+				EL.titolo = TXT("CommunityPreferiti");
 				EL.contenuto = [];
 				EL.livello = 2;
 				EL.parent = PAZIENTI.elencoGruppoPunti;
@@ -1083,7 +1083,7 @@ var PAZIENTI_SETS = {
 	},
 	caricaPuntiPatologie: function(){ // importa i punti delle schede patologie 
 		EL = {};
-		EL.titolo = Lingua(TXT_Patologie);
+		EL.titolo = TXT("Patologie");
 		EL.contenuto = [];
 		EL.livello = 2;
 		EL.parent = PAZIENTI.elencoGruppoPunti;
@@ -1140,8 +1140,8 @@ var PAZIENTI_SETS = {
 	},
 	popolaGruppoPunti: function(){ // popola il menu dei gruppi di punti in base al JSON creato
 		var HTML = '';
-		var txt = htmlEntities(Lingua(TXT_ImportaPunti));
-		if(PAZIENTI.tipoGruppo=='M')txt = htmlEntities(Lingua(TXT_ImportaMeridiani));
+		var txt = htmlEntities(TXT("ImportaPunti"));
+		if(PAZIENTI.tipoGruppo=='M')txt = htmlEntities(TXT("ImportaMeridiani"));
 		HTML += '<div class="gr_tit">' +
 					txt +
 				'	<span onClick="PAZIENTI.swGruppoPunti();">' +
@@ -1171,10 +1171,10 @@ var PAZIENTI_SETS = {
 		if(PAZIENTI.elencoGruppoAtt.livello==3){
 			HTML += '<div class="gr_imp">'+
 					'	<span onClick="PAZIENTI.ptGruppoSelAll(this);">' +
-							htmlEntities(Lingua(TXT_SelezionaTutti)) +
+							htmlEntities(TXT("SelezionaTutti")) +
 					'	</span>' +
 					'	<span onClick="PAZIENTI.ptGruppoImporta();">' +
-							htmlEntities(Lingua(TXT_Importa)) +
+							htmlEntities(TXT("Importa")) +
 					'	</span>' +
 					'</div>';
 		}
@@ -1256,7 +1256,7 @@ var PAZIENTI_SETS = {
 			}else SET.aggiungiGruppoProcedura(punti);
 			PAZIENTI.swGruppoPunti();
 			PAZIENTI.elencoGruppoAtt = PAZIENTI.elencoGruppoPunti;
-		}else ALERT(Lingua(TXT_ErroreImportaPunti));
+		}else ALERT(TXT("ErroreImportaPunti"));
 	},
 	evidenziaAggiunti: function( cont, n ){
 		var els = cont.getElementsByClassName("rgProcMod");

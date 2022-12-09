@@ -30,7 +30,7 @@ var verApp = '2.0';
 var nomeApp = 'Iáomai';
 var sloganApp = 'A new vision on health';
 var tipoApp = '';
-
+var chr10 = String.fromCharCode(10);
 if(location.search){
 	var vDef='';
 	str=location.search.substr(1,location.search.length-1);
@@ -97,10 +97,8 @@ var IMPORTER = {
         
         'js/lingue/etichette.js',
         'js/lingue/paesi.js',
-        'js/lingue/frasi.js',
-        'js/lingue/frasi2.js',
+        'js/lingue/TXT.js',
         'js/lingue/guide.js',
-        'modelli/frasi.js',
         'modelli/zone.js',
         'js/lingue/lingue.js',
             
@@ -167,13 +165,16 @@ var IMPORTER = {
 		brw_safari=window.safari !== undefined;
 		brw_chrome=(navigator.userAgent.indexOf("Chrome") != -1);
 		document.title = nomeApp+" - "+sloganApp;
-		
+		/*
 		var el = document.getElementById('scripts');
 		el.setAttribute('ontouchstart', 'return;');
 		if(typeof el.ontouchstart == "function"){
 			//if(iPad || iPhone || android)
 			touchable = true;
-		}
+		}*/
+		if(	('ontouchstart' in window) ||
+    		(navigator.maxTouchPoints > 0) ||
+     		(navigator.msMaxTouchPoints > 0) )touchable = true;
 		var userAgent = navigator.userAgent.toLowerCase();
 		isTablet = /(ipad|tablet|(android(?!.*mobile))|(windows(?!.*phone)(.*touch))|kindle|playbook|silk|(puffin(?!.*(IP|AP|WP))))/.test(userAgent);
 		mouseDetect = ('ontouchstart' in window ? false : true);

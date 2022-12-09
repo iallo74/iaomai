@@ -4,7 +4,7 @@ var MODULO_TSUBO = { // extend SET
 	caricaTsubo: function( siglaTsubo, ritorno ){
 		// verifico le autorizzazioni
 		if(SET.PUNTI_free.indexOf(siglaTsubo)==-1 && (DB.login.data.auths.indexOf(globals.set.cartella)==-1 || !LOGIN.logedin())){
-			ALERT(Lingua(TXT_MsgContSoloPay));
+			ALERT(TXT("MsgContSoloPay"));
 			SET.chiudiTsubo();
 			return;
 		}
@@ -42,35 +42,35 @@ var MODULO_TSUBO = { // extend SET
 		var HTML_setting_text = '';
 		var HTML_setting_symb = '';
 		if(type=='FN'){
-			HTML_setting_text += '- '+Lingua(TXT_Setting_FN)+"<br>";
+			HTML_setting_text += '- '+TXT("Setting_FN")+"<br>";
 			HTML_setting_symb += '<b>FN</b>';
 		}
 		if(type=='NR'){
-			HTML_setting_text += '- '+Lingua(TXT_Setting_NR)+"<br>";
+			HTML_setting_text += '- '+TXT("Setting_NR")+"<br>";
 			HTML_setting_symb += '<b>NR</b>';
 		}
 		if(lato=='SX'){
-			HTML_setting_text += '- '+Lingua(TXT_Setting_SX)+"<br>";
+			HTML_setting_text += '- '+TXT("Setting_SX")+"<br>";
 			HTML_setting_symb += '<b>SX</b>';
 		}
 		if(lato=='DX'){
-			HTML_setting_text += '- '+Lingua(TXT_Setting_DX)+"<br>";
+			HTML_setting_text += '- '+TXT("Setting_DX")+"<br>";
 			HTML_setting_symb += '<b>DX</b>';
 		}
 		if(system==''){
-			HTML_setting_text += '- '+Lingua(TXT_Setting_INT)+"<br>";
+			HTML_setting_text += '- '+TXT("Setting_INT")+"<br>";
 			HTML_setting_symb += '<b>INT</b>';
 		}
 		if(system=='EUR'){
-			HTML_setting_text += '- '+Lingua(TXT_Setting_EUR)+"<br>";
+			HTML_setting_text += '- '+TXT("Setting_EUR")+"<br>";
 			HTML_setting_symb += '<b>EUR</b>';
 		}
 		if(system=='CIN'){
-			HTML_setting_text += '- '+Lingua(TXT_Setting_CIN)+"<br>";
+			HTML_setting_text += '- '+TXT("Setting_CIN")+"<br>";
 			HTML_setting_symb += '<b>CIN</b>';
 		}
 		if(master){
-			HTML_setting_text += '- '+Lingua(TXT_Setting_MASTER)+"<br>";
+			HTML_setting_text += '- '+TXT("Setting_MASTER")+"<br>";
 			HTML_setting_symb += '<b>MASTER</b>';
 		}
 		
@@ -92,12 +92,12 @@ var MODULO_TSUBO = { // extend SET
 					if( SET.pMod == tsuboNuovo)stesso = true;
 					else{
 						// cambia il punto
-						txt = Lingua(TXT_SostituisciTsubo).replace("[t]",SET.pMod);
+						txt = TXT("SostituisciTsubo").replace("[t]",SET.pMod);
 						az = "SET.setTsuboFrm();";
 					}
 				}else{
 					// aggiungi il punto alla procedura
-					txt = Lingua(TXT_AggiungiTsuboProc);
+					txt = TXT("AggiungiTsuboProc");
 					az = "SET.aggiungiDettaglio('P','"+tsuboNuovo+"');SCHEDA.torna();";
 					cls = 'spAdd';
 				}
@@ -113,12 +113,12 @@ var MODULO_TSUBO = { // extend SET
 					if(tsuboOr == tsuboNuovo)stesso = true;
 					else{
 						// cambia il punto
-						txt = Lingua(TXT_SostituisciTsubo).replace("[t]",tsuboOr);
+						txt = TXT("SostituisciTsubo").replace("[t]",tsuboOr);
 						az = "SET.setTsuboFrm();";
 					}
 				}else{
 					// aggiungi il punto al trattamento
-					txt = Lingua(TXT_AggiungiTsuboTratt);
+					txt = TXT("AggiungiTsuboTratt");
 					az = "PAZIENTI.aggiungiPuntoTrattamento('"+tsuboNuovo+"');SCHEDA.torna();";
 					cls = 'spAdd';
 				}
@@ -129,7 +129,7 @@ var MODULO_TSUBO = { // extend SET
 										'</div>';
 										
 			else HTML_simboli += 	'<div id="spStesso">'+
-									htmlEntities(Lingua(TXT_TsuboSelezionato)) +
+									htmlEntities(TXT("TsuboSelezionato")) +
 									'</div>';
 		}
 		if(HTML_simboli)HTML += '<div>'+HTML_simboli+'</div>';
@@ -144,7 +144,7 @@ var MODULO_TSUBO = { // extend SET
 		if(SET.verificaNota(siglaTsubo)){
 			TestoAnnotazione += SET.leggiNota( cartella, siglaTsubo*1 );
 		}
-		HTML +=  '<p id="annotazioni_label"><b>'+htmlEntities(Lingua(TXT_Note))+'</b></p>';
+		HTML +=  '<p id="annotazioni_label"><b>'+htmlEntities(TXT("Note"))+'</b></p>';
 		if(!ritorno || !SCHEDA.formModificato){
 			// FORM
 			HTML += '<div id="annotazioni_cont">' +
@@ -154,20 +154,20 @@ var MODULO_TSUBO = { // extend SET
 					'		<textarea  	id="TestoAnnotazione"' +
 					'					name="TestoAnnotazione"' +
 					'					onKeyDown="document.getElementById(\'pulsantiAnnotazione\').style.display=\'block\';"' +
-					'					placeholder="'+Lingua(TXT_Annotazioni)+'">' + TestoAnnotazione + '</textarea>' +
+					'					placeholder="'+TXT("Annotazioni")+'">' + TestoAnnotazione + '</textarea>' +
 					'	</form>' +
 					'</div>' +
 					'<div id="pulsantiAnnotazione">' +
 					'	<div 	id="p_sch_salva"' +
 					'			onClick="if(verifica_form(document.formAnnotazioni))SET.mod_nota( \''+(siglaTsubo)+'\' );">' +
-						Lingua(TXT_Salva) +
+						TXT("Salva") +
 					'	</div>' +
 					'</div><div class="l"></div>';
 		}else{
 			if(TestoAnnotazione){
 				HTML += '<divstyle="padding:15px;background-color:#ecdea3;">'+ TestoAnnotazione+'</div>';
 			}else{
-				HTML += '<div class="noResults">'+ htmlEntities(Lingua(TXT_NessunaAnnotazione))+'</div>';
+				HTML += '<div class="noResults">'+ htmlEntities(TXT("NessunaAnnotazione"))+'</div>';
 			}
 		}
 		
@@ -176,7 +176,7 @@ var MODULO_TSUBO = { // extend SET
 		SET.ptSel = null;
 		
 		var btnAdd = 	'<div class="p_paz_ref_menu" onClick="REF.open(\'sets.auricologia.pointsmap\')">' +
-							Lingua(TXT_ReferenceGuide) +
+							TXT("ReferenceGuide") +
 						'</div>';
 						
 		SCHEDA.caricaScheda(	titolo,

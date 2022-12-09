@@ -21,10 +21,10 @@ var MODULO_PROCEDURE = { // extend SET
 		HTML += '<p class="trattBtns" style="margin-top:10px;"><span id="procBtnTue" ';
 		if(Q_tue)HTML += 'class="selBtn" ';
 		else HTML += 'onClick="SET.car_procedure(-1,1);"';
-		HTML += '>'+Lingua(TXT_Tue).toUpperCase()+'</span> <span id="procBtnComm" ';
+		HTML += '>'+TXT("Tue").toUpperCase()+'</span> <span id="procBtnComm" ';
 		if(!Q_tue)HTML += 'class="selBtn" ';
 		else HTML += 'onClick="SET.caricaCommunity();"';
-		HTML += '>'+Lingua(TXT_Community).toUpperCase()+'</span></p>';
+		HTML += '>'+TXT("Community").toUpperCase()+'</span></p>';
 		return HTML;
 	},
 	car_procedure: function( Q_idProc, Q_tue ){ // elenco delle procedure
@@ -72,7 +72,7 @@ var MODULO_PROCEDURE = { // extend SET
 				presente = true;
 			}
 		}
-		if(!presente)HTML='<div class="noResults">'+Lingua(TXT_NoResProcedure)+'...</div>';
+		if(!presente)HTML='<div class="noResults">'+TXT("NoResProcedure")+'...</div>';
 		HTML = '<div class="lista listaProcedure">'+HTML+'</div>';
 		
 		HTML = 	SET.intestazioneProcedure(Q_tue) +
@@ -83,12 +83,12 @@ var MODULO_PROCEDURE = { // extend SET
 				'	<input id="proc_ricerca"' +
 				'			onKeyUp="SET.filtraProcedure();"' +
 				'			class="okPlaceHolder"' +
-				'			placeholder="'+htmlEntities(Lingua(TXT_CercaProcedura))+'"'+H.noAutoGen+'>' +
+				'			placeholder="'+htmlEntities(TXT("CercaProcedura"))+'"'+H.noAutoGen+'>' +
 				'	<i class="elMenu"' +
 				'	   onclick="SET.mod_procedura();"' +
 				'	   id="addProcedura"' +
-				'	   title="'+Lingua(TXT_AggiungiProcedura)+'">' +
-				/*'		<span>'+Lingua(TXT_AggiungiProcedura)+'</span>' +*/
+				'	   title="'+TXT("AggiungiProcedura")+'">' +
+				/*'		<span>'+TXT("AggiungiProcedura")+'</span>' +*/
 				'	</i>' +
 				'</p>' + HTML;
 		
@@ -109,7 +109,7 @@ var MODULO_PROCEDURE = { // extend SET
 	},
 	car_procedura: function( Q_idProc, Q_resta, Q_community, btn ){
 		// visualizza la scheda della procedura
-		CONFIRM.vis(	Lingua(TXT_UscireSenzaSalvare),
+		CONFIRM.vis(	TXT("UscireSenzaSalvare"),
 						!SCHEDA.verificaSchedaRet(), 
 						arguments ).then(function(pass){if(pass){
 						var v = getParamNames(CONFIRM.args.callee.toString());
@@ -134,7 +134,7 @@ var MODULO_PROCEDURE = { // extend SET
 				if(Q_idProc>-1){
 					DB.procedure.data[Q_idProc].i_interno=Q_idProc;
 					idProcedura=DB.procedure.data[Q_idProc].idProcedura*1;
-					Autore=Lingua(TXT_Tu);
+					Autore=TXT("Tu");
 					idLinguaProcedura=DB.procedure.data[Q_idProc].idLinguaProcedura*1;
 					NomeProcedura=DB.procedure.data[Q_idProc].NomeProcedura;
 					dettagliProcedura=DB.procedure.data[Q_idProc].dettagliProcedura;
@@ -160,8 +160,8 @@ var MODULO_PROCEDURE = { // extend SET
 					}
 				}
 			}
-			if(Preferito*1==1)TXT_AggiungiPreferitiDEF=TXT_EliminaPreferiti;
-			else TXT_AggiungiPreferitiDEF=TXT_AggiungiPreferiti;
+			if(Preferito*1==1)TXT_AggiungiPreferitiDEF=TXT("EliminaPreferiti");
+			else TXT_AggiungiPreferitiDEF=TXT("AggiungiPreferiti");
 			
 			var HTML = '';
 			HTML += '<h1>'+htmlEntities(NomeProcedura)+'</h1>' +
@@ -181,20 +181,20 @@ var MODULO_PROCEDURE = { // extend SET
 			if(!Q_community){ // azioni se la procedura è dell'utente
 				// AZIONI
 				HTML += 
-					'		<div class="p_sch_label3">'+Lingua(TXT_Azioni)+'</div>' +
+					'		<div class="p_sch_label3">'+TXT("Azioni")+'</div>' +
 					'		<div class="p_sch_mod" onClick="SET.mod_procedura('+Q_idProc+');"' +
-					'			 title="'+Lingua(TXT_Modifica)+'"></div>' +
+					'			 title="'+TXT("Modifica")+'"></div>' +
 					'		<div class="p_sch_el" onClick="SET.el_procedura('+Q_idProc+');"' +
-					'			 title="'+Lingua(TXT_Elimina)+'"></div>' +
+					'			 title="'+TXT("Elimina")+'"></div>' +
 					'		<div class="p_sch_' + ((Condiviso!=1)? 'no_' : '') +'cond"' +
 					'			 onClick="SET.swCond('+Q_idProc+');"' +
-					'			 title="'+Lingua(TXT_Condividi)+'"></div>';
+					'			 title="'+TXT("Condividi")+'"></div>';
 			}else{
 				// PREFERITI
 				HTML += 
 					'		<div id="prefProcBtn" class="p_sch_' + ((Preferito!=1) ? 'no_' : '') + 'pref"' +
 					'		  	 onClick="SET.swPref('+Q_idProc+',this);"' +
-					'		  	 title="'+Lingua(TXT_AggiungiPreferitiDEF)+'">' +
+					'		  	 title="'+TXT("AggiungiPreferitiDEF")+'">' +
 					'		</div>';
 			}
 			HTML += '	</div>' +
@@ -258,7 +258,7 @@ var MODULO_PROCEDURE = { // extend SET
 			}
 			if(!presente){
 				HTML +=
-					'	<div class="noResults" style="height:100px;">'+Lingua(TXT_NoRes)+'...</div>';
+					'	<div class="noResults" style="height:100px;">'+TXT("NoRes")+'...</div>';
 			}
 			
 			
@@ -278,7 +278,7 @@ var MODULO_PROCEDURE = { // extend SET
 					'				class="labelMobile labelTrattamenti"' +
 					'				style="display:block;">' +
 					'				<img class="icoLabel" src="img/ico_commenti.png">' +
-								Lingua(TXT_Commenti)+' (<span id="numeroCommenti">...</span>)' +
+								TXT("Commenti")+' (<span id="numeroCommenti">...</span>)' +
 					'			</em>' +
 					'			<div id="elencoCommenti">' +
 					'				<div id="notificaCommenti"' +
@@ -288,7 +288,7 @@ var MODULO_PROCEDURE = { // extend SET
 					'				 	 class="placeholderCommento"></div>' +
 					'				<div id="p_add_comm"' +
 					'					 onClick="if(COMMUNITY.verifica())SET.attivaCommento('+idProcedura+');">' +
-									Lingua(TXT_AddCommento) +
+									TXT("AddCommento") +
 					'				</div>' +
 					'				<div style="clear:both;height:10px;"></div>' +
 									// ELENCO COMMENTI
@@ -303,7 +303,7 @@ var MODULO_PROCEDURE = { // extend SET
 			if(SCHEDA.btnSel && Q_resta)SCHEDA.btnSel=null;
 			
 			var btnAdd = 	'<div class="p_paz_ref_menu" onClick="REF.open(\'sets.meridiani_cinesi.procedures\')">' +
-								Lingua(TXT_ReferenceGuide) +
+								TXT("ReferenceGuide") +
 							'</div>';
 			SCHEDA.caricaScheda( 	NomeProcedura,
 									HTML,
@@ -388,7 +388,7 @@ var MODULO_PROCEDURE = { // extend SET
 		return false;
 	},
 	confermaSwPref: function( txt ){
-		if(txt.substr(0,3)=='404')ALERT(Lingua(TXT_ProcedureErrore));
+		if(txt.substr(0,3)=='404')ALERT(TXT("ProcedureErrore"));
 	},
 	mod_procedura: function( Q_idProc, Q_pre ){
 		// scheda di modifica della procedura
@@ -405,13 +405,13 @@ var MODULO_PROCEDURE = { // extend SET
 				if(DB.procedure.data[c].Cancellato*1==0)tProc++;
 			}
 			if(tProc >= maxProcedure){
-				ALERT(Lingua(eval("TXT_MsgMaxProcedure")));
+				ALERT(TXT("MsgMaxProcedure"));
 				return;
 			}
 		}
 		// --------------------------
 		
-		CONFIRM.vis(	Lingua(TXT_UscireSenzaSalvare),
+		CONFIRM.vis(	TXT("UscireSenzaSalvare"),
 						!SCHEDA.verificaSchedaRet(), 
 						arguments ).then(function(pass){if(pass){
 						var v = getParamNames(CONFIRM.args.callee.toString());
@@ -480,38 +480,38 @@ var MODULO_PROCEDURE = { // extend SET
 			
 			// segnaposto DETTAGLI
 			HTML += '	<div style="font-style:italic;padding-top:20px;padding-bottom:5px;">'+
-						Lingua(TXT_DettagliProcedura)+
+						TXT("DettagliProcedura")+
 						':</div>';
 			HTML += '	<div id="dettagliCont"></div>';
 			
 			// pulsanti di aggiunta opzioni
 			HTML += '	<div class="p_sch_label">' +
-							Lingua(TXT_Aggiungi)+':' +
+							TXT("Aggiungi")+':' +
 					'	</div>' +
 					'	<div id="p_add_dett">' +
 					'		<div>' +
 					'			<div class="p_sch_tit"' +
 					'				 onClick="SET.aggiungiDettaglio(\'T\');">' +
-									Lingua(TXT_Titoletto) +
+									TXT("Titoletto") +
 					'			</div>' +
 					'			<div class="p_sch_descr"' +
 					'				 onClick="SET.aggiungiDettaglio(\'D\');">' +
-									Lingua(TXT_Descrizione) +
+									TXT("Descrizione") +
 					'			</div>' +
 					
 					// tsubo
 					'			<div id="grpPt"' +
 					'			    class="p_proc_gruppo"' +
 					'			    onClick="PAZIENTI.gruppoPunti(\'P\');">' +
-									htmlEntities(Lingua(TXT_Punto)) +
+									htmlEntities(TXT("Punto")) +
 					'			</div>' +
 			
 					// meridiani
 					'			<div id="grpMrd"' +
 					'				 class="p_proc_meridiani"' +
 					'				 onClick="PAZIENTI.gruppoPunti(\'M\');">' +
-									htmlEntities(Lingua(TXT_AggiungiMeridiano)) +
-									/*SET.elencoMeridiani(Lingua(TXT_AggiungiMeridiano)) +*/
+									htmlEntities(TXT("AggiungiMeridiano")) +
+									/*SET.elencoMeridiani(TXT("AggiungiMeridiano")) +*/
 					'			</div>' +
 			
 					'		</div>' +
@@ -530,11 +530,11 @@ var MODULO_PROCEDURE = { // extend SET
 			HTML += '	<div class="l"></div>';
 			HTML += '</form>';
 			
-			var titDef=Lingua(TXT_ModificaProcedura);
-			if(Q_idProc==-1)titDef=Lingua(TXT_CreaProcedura);
+			var titDef=TXT("ModificaProcedura");
+			if(Q_idProc==-1)titDef=TXT("CreaProcedura");
 			
 			var btnAdd = 	'<div class="p_paz_ref_menu" onClick="REF.open(\'sets.meridiani_cinesi.procedures\')">' +
-								Lingua(TXT_ReferenceGuide) +
+								TXT("ReferenceGuide") +
 							'</div>';
 							
 			SCHEDA.caricaScheda(	titDef,
@@ -572,7 +572,7 @@ var MODULO_PROCEDURE = { // extend SET
 	salvaProcedura: function(){
 		// salva una procedura
 		stopAnimate(true);
-		visLoader(Lingua(TXT_SalvataggioInCorso),'loadingLight');
+		visLoader(TXT("SalvataggioInCorso"),'loadingLight');
 		SET.salvaDettagli();
 		var DataModifica = DB.procedure.lastSync+1;
 		if(!document.formMod.idProc.value*1>-1)DataCreazione=DataModifica;	
@@ -612,14 +612,14 @@ var MODULO_PROCEDURE = { // extend SET
 	},
 	el_procedura: function( Q_idProc ){
 		// elimina una procedura
-		CONFIRM.vis(	Lingua(TXT_VerElProc),
+		CONFIRM.vis(	TXT("VerElProc"),
 						false,
 						arguments ).then(function(pass){if(pass){
 						var v = getParamNames(CONFIRM.args.callee.toString());
 						for(i in v)eval(getArguments(v,i));
 			
 			stopAnimate(true);
-			visLoader(Lingua(TXT_SalvataggioInCorso),'loadingLight');
+			visLoader(TXT("SalvataggioInCorso"),'loadingLight');
 			var DataModifica = DB.procedure.lastSync+1;
 			DB.procedure.data[Q_idProc].DataModifica=parseInt(DataModifica);
 			DB.procedure.data[Q_idProc].Cancellato=1;
@@ -730,17 +730,17 @@ var MODULO_PROCEDURE = { // extend SET
 				// pulsantini gestione dettagli
 				HTML += '	<div class="delProcDett"' +
 						'	     onClick="SET.eliminaDettaglio(\''+p+'\');"' +
-						'	     title="'+Lingua(TXT_DelDett)+'">' +
+						'	     title="'+TXT("DelDett")+'">' +
 						'	</div>' +
 						'	<i '+(TipoDettaglio!='T' || TipoDettaglio!='D' ? ' class="iProc"' : '')+'style="float: left;margin-top: 2px;">' +
-						(TipoDettaglio=='T' ? Lingua(TXT_Titolo) : '') +
-						(TipoDettaglio=='D' ? Lingua(TXT_Descrizione) : '') +
+						(TipoDettaglio=='T' ? TXT("Titolo") : '') +
+						(TipoDettaglio=='D' ? TXT("Descrizione") : '') +
 						'	</i>';
 				
 				if(nD>0)HTML += 
 						'	<div class="spsuProcDett"' +
 						'		 onClick="SET.spostaSuDettaglio(\''+p+'\');"' +
-						'		 title="'+Lingua(TXT_SpSuDett)+'">' +
+						'		 title="'+TXT("SpSuDett")+'">' +
 						'	</div>';
 						
 				HTML += '	<input type="hidden"' +
@@ -799,7 +799,7 @@ var MODULO_PROCEDURE = { // extend SET
 						
 						var totPunti=0;
 						if(p1=='')HTML +=
-							'		<option value="">- '+Lingua(TXT_ScegliMeridiano)+' -</option>';
+							'		<option value="">- '+TXT("ScegliMeridiano")+' -</option>';
 							
 						for(k in DB.set.meridiani){
 							HTML += 
@@ -838,7 +838,7 @@ var MODULO_PROCEDURE = { // extend SET
 								'				margin-left:10px;' +
 								'				cursor:pointer;"' +
 								' 		 class="occhio"' +
-								' 		 title="'+Lingua(TXT_VisualizzaPunto)+'"' +
+								' 		 title="'+TXT("VisualizzaPunto")+'"' +
 								' 		 onClick="SET.selTsuboMod('+p+')">'; // ???????
 					}
 				}
@@ -876,7 +876,7 @@ var MODULO_PROCEDURE = { // extend SET
 				presente=true;
 			}
 		}
-		if(!presente)HTML += '<div class="noResults" style="height:50px;">'+Lingua(TXT_NoRes)+'...</div>';
+		if(!presente)HTML += '<div class="noResults" style="height:50px;">'+TXT("NoRes")+'...</div>';
 		document.getElementById("dettagliCont").innerHTML=HTML;
 		try{
 			SET.evidenziaTsuboMod( tsuboProvvisoriProc );
@@ -989,10 +989,10 @@ var MODULO_PROCEDURE = { // extend SET
 		if(notificabile != '404' && typeof(notificabile)!='undefined'){
 			var elNot = document.getElementById("notificaCommenti");
 			if(notificabile*1){
-				elNot.innerHTML = htmlEntities(Lingua(TXT_DisattivaNotificheProcedura));
+				elNot.innerHTML = htmlEntities(TXT("DisattivaNotificheProcedura"));
 				elNot.classList.remove("notificheDisattivate");
 			}else{
-				elNot.innerHTML = htmlEntities(Lingua(TXT_AttivaNotificheProcedura));
+				elNot.innerHTML = htmlEntities(TXT("AttivaNotificheProcedura"));
 				elNot.classList.add("notificheDisattivate");
 			}	
 		}
@@ -1038,15 +1038,15 @@ var MODULO_PROCEDURE = { // extend SET
 			
 		if(!reply)HTML_btns +=
 			'		<span onClick="SET.attivaCommento( '+el.idProcedura+', '+el.idCommento+', 1 );">' +
-						htmlEntities(Lingua(TXT_Rispondi)) +
+						htmlEntities(TXT("Rispondi")) +
 			'		</span>';
 		if(el.idUtente == DB.login.data.idUtente){
 			HTML_btns +=
 			'		<span onClick="SET.attivaCommento( '+el.idProcedura+', '+el.idCommento+' );">' +
-						htmlEntities(Lingua(TXT_Modifica)) +
+						htmlEntities(TXT("Modifica")) +
 			'		</span>' +
 			'		<span onClick="SET.el_commento('+el.idCommento+');">' +
-						htmlEntities(Lingua(TXT_Elimina)) +
+						htmlEntities(TXT("Elimina")) +
 			'		</span>';
 		}
 		
@@ -1054,7 +1054,7 @@ var MODULO_PROCEDURE = { // extend SET
 			
 		if(el.risposte){
 			if(el.risposte.length){
-				HTML += '<div class="commRS">'+htmlEntities(Lingua(TXT_Risposte))+':</div>';
+				HTML += '<div class="commRS">'+htmlEntities(TXT("Risposte"))+':</div>';
 				for(c in el.risposte){
 					HTML += SET.scrivi_commento(el.risposte[c],true);
 				}
@@ -1083,7 +1083,7 @@ var MODULO_PROCEDURE = { // extend SET
 		}
 		if(!presente){
 			HTML += 
-			'<div class="noResults" style="height:100px;">'+Lingua(TXT_NoComm)+'...</div>';
+			'<div class="noResults" style="height:100px;">'+TXT("NoComm")+'...</div>';
 		}
 		if(document.getElementById("commenti")){
 			document.getElementById("commenti").innerHTML = HTML;
@@ -1112,14 +1112,14 @@ var MODULO_PROCEDURE = { // extend SET
 	confermaCommentiProcedure: function( txt ){
 		elenco=JSON.parse(txt);
 		if(elenco.err=='1'){
-			ALERT(Lingua(TXT_ErrorePseudonimo));
+			ALERT(TXT("ErrorePseudonimo"));
 		}
 		SET.disattivaCommento();
 		SET.commSel = '';
 		SET.car_commenti(elenco.idProcedura);
 	},
 	el_commento: function( idCommento ){
-		CONFIRM.vis(	Lingua(TXT_ChiediEliminaCommento),
+		CONFIRM.vis(	TXT("ChiediEliminaCommento"),
 						false, 
 						arguments ).then(function(pass){if(pass){
 						var v = getParamNames(CONFIRM.args.callee.toString());
@@ -1146,14 +1146,14 @@ var MODULO_PROCEDURE = { // extend SET
 		if(typeof(idCommento) == 'undefined')var idCommento = '';
 		if(typeof(reply) == 'undefined')var reply = 0;
 		SET.disattivaCommento();
-		var TIT = TXT_AddCommento;
+		var TIT = TXT("AddCommento");
 		var classCommento = '';
 		if(idCommento){
 			if(reply){
-				TIT = TXT_ReplyCommento;
+				TIT = TXT("ReplyCommento");
 				classCommento = 'replyCommento';
 			}else{
-				TIT = TXT_ModCommento;
+				TIT = TXT("ModCommento");
 				classCommento = 'modCommento';
 			}
 		}
@@ -1164,7 +1164,7 @@ var MODULO_PROCEDURE = { // extend SET
 			'      method="post"' +
 			'      onSubmit="return false;">' +
 			'	<h2>' +
-					htmlEntities(Lingua(TIT)) +
+					htmlEntities(TIT) +
 			'	</h2>' +
 			'	<input name="idProcedura"' +
 			'	       type="hidden"' +
@@ -1178,7 +1178,7 @@ var MODULO_PROCEDURE = { // extend SET
 			'	       type="hidden"' +
 			'	       id="reply"' +
 			'	       value="'+reply+'" />' +
-			'	<textarea id="@|'+Lingua(TXT_TestoMessaggio)+'|1|0"' +
+			'	<textarea id="@|'+TXT("TestoMessaggio")+'|1|0"' +
 			'	          name="TestoCommento">';
 			if(idCommento && !reply)HTML += htmlEntities(document.getElementById("TestoCommento_"+idCommento).innerText.trim());
 		HTML +=
@@ -1187,11 +1187,11 @@ var MODULO_PROCEDURE = { // extend SET
 			'	<div id="pulsantiProcedura">' +
 			'		<div id="p_sch_salva"' +
 			'	         onClick="SET.ins_commento();">' +
-					Lingua(TXT_Invia) +
+					TXT("Invia") +
 			'		</div>' +
 			'		<div id="p_sch_annulla"' +
 			'	         onClick="SET.disattivaCommento();">' +
-						Lingua(TXT_Annulla) +
+						TXT("Annulla") +
 			'		</div>' +
 			'	</div>' +
 			'	<div class="l"></div>' +
@@ -1262,7 +1262,7 @@ var MODULO_PROCEDURE = { // extend SET
 		// carica una procedura condivisa per la visualizzazione
 		//retNoFree();
 		if(!LOGIN.logedin()){
-			ALERT(Lingua(TXT_ErroreUtenteNonConnesso), true);
+			ALERT(TXT("ErroreUtenteNonConnesso"), true);
 			return;
 		}
 		CONN.retNoConn();
@@ -1335,7 +1335,7 @@ var MODULO_PROCEDURE = { // extend SET
 					presente=true;
 				}
 			}
-			if(!presente)HTML = '<div class="noResults">'+Lingua(TXT_NoResProcedure)+'...</div>';
+			if(!presente)HTML = '<div class="noResults">'+TXT("NoResProcedure")+'...</div>';
 			HTML = '<div class="lista listaProcedure">'+HTML+'</div>';
 		
 			var HTML_pre =	SET.intestazioneProcedure(false) +
@@ -1354,10 +1354,10 @@ var MODULO_PROCEDURE = { // extend SET
 							'		  	   id="parolaRic"'+H.noAutoGen+'>' +
 							'		<div id="prefFiltroCond"' +
 							'		  	 onClick="SET.swRicPref();"' +
-							'		  	 title="'+Lingua(TXT_FiltroPreferiti)+'">' +
+							'		  	 title="'+TXT("FiltroPreferiti")+'">' +
 							'		</div>' +
 							'		<div id="lingueFiltroCond"' +
-							'		  	 title="'+Lingua(TXT_FiltroLingue)+'">' +
+							'		  	 title="'+TXT("FiltroLingue")+'">' +
 							'			<select name="idLinguaRic"' +
 							'		  	 	    id="idLinguaRic"' +
 							'		  	 	    onChange="SET.verLinguaRic();">' +
@@ -1408,9 +1408,9 @@ var MODULO_PROCEDURE = { // extend SET
 		if(err){
 			rimuoviLoading(document.querySelector(".listaProcedure"));
 			if(LOGIN.logedin()){
-				ALERT(Lingua(TXT_ProcedureErrore));
+				ALERT(TXT("ProcedureErrore"));
 			}else{
-				ALERT(Lingua(TXT_ErroreUtenteNonConnesso), true);
+				ALERT(TXT("ErroreUtenteNonConnesso"), true);
 			}
 		}
 		if(SET.idProcCommProvv > -1){ // per le ricerche dalle notifiche, carico la procedura

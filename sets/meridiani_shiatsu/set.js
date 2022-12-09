@@ -160,36 +160,36 @@ SET = {
 		var contPulsanti = 	'<span class="menuElenchi" onclick="MENU.visMM(\'btnCarMapMenu\');"></span>' +
 							'<span id="btnCarMapMenu" class="btn_meridiani_shiatsu titolo_set">' +
 							'<span>ShiatsuMap</span>' +
-							'<i class="elMenu" id="chiudiSet" onClick="chiudiSet();" title="'+htmlEntities(Lingua(TXT_ChiudiSet))+'"><span>' +
-								htmlEntities(Lingua(TXT_ChiudiSet)) +
-							'</span></i><i class="elMenu" id="impostazioniSet" onClick="MENU.visImpset();" title="'+htmlEntities(Lingua(TXT_ImpostazioniSet))+'"><span>' +
-								htmlEntities(Lingua(TXT_ImpostazioniSet)) +
+							'<i class="elMenu" id="chiudiSet" onClick="chiudiSet();" title="'+htmlEntities(TXT("ChiudiSet"))+'"><span>' +
+								htmlEntities(TXT("ChiudiSet")) +
+							'</span></i><i class="elMenu" id="impostazioniSet" onClick="MENU.visImpset();" title="'+htmlEntities(TXT("ImpostazioniSet"))+'"><span>' +
+								htmlEntities(TXT("ImpostazioniSet")) +
 							'</span></i>' +
 							'<i class="elMenu" id="help_set" onClick="GUIDA.visFumetto(\'guida_set\',true,true);">?</i></span>';
 		var contElenco = '';
 		
 		contPulsanti += '<div id="pulsante_modello" onClick="cambiaModello(\'donna\');">Apri il modello 3D</div>';
 		// meridiani
-		contPulsanti += '<div id="pulsante_meridiani" class="frdx" onClick="SCHEDA.selElenco(\'meridiani\');">'+Lingua(TXT_Meridiani)+'</div>';
+		contPulsanti += '<div id="pulsante_meridiani" class="frdx" onClick="SCHEDA.selElenco(\'meridiani\');">'+TXT("Meridiani")+'</div>';
 		contElenco += '<div id="lista_meridiani"></div>';
 		
 		
 		// patologie
-		contPulsanti += '<div id="pulsante_patologie" class="frdx" onClick="SCHEDA.selElenco(\'patologie\');">'+Lingua(TXT_Patologie)+'</div>';
+		contPulsanti += '<div id="pulsante_patologie" class="frdx" onClick="SCHEDA.selElenco(\'patologie\');">'+TXT("Patologie")+'</div>';
 		contElenco += '<div id="lista_patologie"></div>';
 		
 		// procedure personalizzare
 		var contProcedure = '';
-		contPulsanti += '<div id="pulsante_procedure" class="frdx" onClick="SCHEDA.selElenco(\'procedure\');">'+Lingua(TXT_Procedure)+'</div>';
+		contPulsanti += '<div id="pulsante_procedure" class="frdx" onClick="SCHEDA.selElenco(\'procedure\');">'+TXT("Procedure")+'</div>';
 		contElenco += '<div id="lista_procedure"></div>';
 		
 		// teoria
-		contPulsanti += '<div id="pulsante_teoria" class="frdx" onClick="SCHEDA.selElenco(\'teoria\');">'+Lingua(TXT_Approfondimenti)+'</div>';
+		contPulsanti += '<div id="pulsante_teoria" class="frdx" onClick="SCHEDA.selElenco(\'teoria\');">'+TXT("Approfondimenti")+'</div>';
 		contElenco += '<div id="lista_teoria"></div>';
 		
 		contBtns = '<div id="p_contrasto" class="p_noTxt" onClick="SET.swContrastMethod();"></div>';
 		
-		contIcona = '<div id="p_set" onClick="SCHEDA.apriElenco(\'set\',true);"><svg viewBox="0 0 12 48"><polygon points="5,24 12,13 12,35"></polygon></svg><i>'+htmlEntities(Lingua(TXT_ShiatsuMap))+'</i></div>';;
+		contIcona = '<div id="p_set" onClick="SCHEDA.apriElenco(\'set\',true);"><svg viewBox="0 0 12 48"><polygon points="5,24 12,13 12,35"></polygon></svg><i>'+htmlEntities(TXT("ShiatsuMap"))+'</i></div>';;
 		
 		var preElenco = SCHEDA.elencoSel;
 		SCHEDA.caricaElenco(globals.set.nome,contElenco);
@@ -200,19 +200,19 @@ SET = {
 		HTML_imp = '';
 		
 		// sistemi meridiani
-		HTML_imp += '<p><i>'+htmlEntities(Lingua(TXT_SistemaMeridiani))+':</i> ';
+		HTML_imp += '<p><i>'+htmlEntities(TXT("SistemaMeridiani"))+':</i> ';
 		HTML_imp += '<select id="sceltaMeridiani">';
 		HTML_imp += '  <option value=""';
 		if(localStorage.sistemaMeridiani == '' || !__(localStorage.sistemaMeridiani) )HTML_imp += ' SELECTED';
-		HTML_imp += '>'+htmlEntities(Lingua(TXT_MeridianiCinesi))+'</option>'+H.chr10;
+		HTML_imp += '>'+htmlEntities(TXT("MeridianiCinesi"))+'</option>'+H.chr10;
 		HTML_imp += '  <option value="MAS"';
 		if(localStorage.sistemaMeridiani == 'MAS')HTML_imp += ' SELECTED';
-		HTML_imp += '>'+htmlEntities(Lingua(TXT_MeridianiGiapponesi))+'</option>'+H.chr10;
+		HTML_imp += '>'+htmlEntities(TXT("MeridianiGiapponesi"))+'</option>'+H.chr10;
 		HTML_imp += '</select></p>'+H.chr10;
 		
 		
 		// sistemi sigle
-		HTML_imp += '<p><i>'+htmlEntities(Lingua(TXT_SistemaSigle))+':</i> ';
+		HTML_imp += '<p><i>'+htmlEntities(TXT("SistemaSigle"))+':</i> ';
 		HTML_imp += '<select id="sceltaSigle" onChange="SET.popolaImpSet();">';
 		for(k in DB.mtc.meridiani["BL"].sigle){
 			HTML_imp += '  <option value="'+k+'"';
@@ -223,10 +223,10 @@ SET = {
 		
 		HTML_imp += '<div id="tbSigleMeridiani"></div>';
 		
-		HTML_imp += '<div style="margin-top:30px;"><span class="annullaBtn" onclick="MENU.chiudiMenu();">'+Lingua(TXT_Annulla)+'</span><span class="submitBtn" onclick="SET.salvaImpostazioni();">'+Lingua(TXT_Salva)+'</span></div>';
+		HTML_imp += '<div style="margin-top:30px;"><span class="annullaBtn" onclick="MENU.chiudiMenu();">'+TXT("Annulla")+'</span><span class="submitBtn" onclick="SET.salvaImpostazioni();">'+TXT("Salva")+'</span></div>';
 		
 		document.getElementById("contImpset").innerHTML = HTML_imp;
-		document.getElementById("divs").innerHTML = '<div id="meridianiSmart_ico" onClick="SET.swMeridianiSmart();" title="'+htmlEntities(Lingua(TXT_MeridianiSmart))+'"></div><div id="meridianiSmart_cont"></div>';
+		document.getElementById("divs").innerHTML = '<div id="meridianiSmart_ico" onClick="SET.swMeridianiSmart();" title="'+htmlEntities(TXT("MeridianiSmart"))+'"></div><div id="meridianiSmart_cont"></div>';
 		
 		//SCHEDA.apriElenco();
 		if(preElenco)SCHEDA.selElenco(preElenco);
@@ -720,7 +720,7 @@ SET = {
 		// verifico le autorizzazioni
 		if(!globals.modello.cartella)return;
 		if(SET.MERIDIANI_free.indexOf(siglaMeridiano)==-1 && (DB.login.data.auths.indexOf(globals.set.cartella)==-1 || !LOGIN.logedin())){
-			ALERT(Lingua(TXT_MsgFunzioneSoloPay));
+			ALERT(TXT("MsgFunzioneSoloPay"));
 			controlsM._MM = true;
 			return;
 		}
@@ -859,7 +859,7 @@ SET = {
 		if(nTsubo.length == 1)nTsubo='0'+nTsubo;
 		// verifico le autorizzazioni
 		if(SET.MERIDIANI_free.indexOf(siglaMeridiano)==-1 && (DB.login.data.auths.indexOf(globals.set.cartella)==-1 || !LOGIN.logedin())){
-			ALERT(Lingua(TXT_MsgContSoloPay));
+			ALERT(TXT("MsgContSoloPay"));
 			return;
 		}
 		// --------------------------

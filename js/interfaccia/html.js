@@ -13,7 +13,7 @@ var H = {
 					'style="vertical-align: middle;' +
 					'		margin-top: -1px;' +
 					'		margin-right: 5px;"' +
-					'title="'+Lingua(TXT_ElementoNonSincronizzato)+'">';*/
+					'title="'+TXT("ElementoNonSincronizzato")+'">';*/
 		}
 		return HTML;
 	},
@@ -44,7 +44,7 @@ var H = {
 		// controllo i valori
 		if(	typeof(obj.label) == 'undefined' &&
 			obj.t != 'h' &&
-			obj.t != 'v' )obj.label = Lingua(eval("TXT_"+obj.name));
+			obj.t != 'v' )obj.label = TXT(""+obj.name);
 		if(typeof(obj.idRiga) == 'undefined')obj.idRiga = '';
 		if(typeof(obj.label) == 'undefined')obj.label = '';
 		if(typeof(obj.noLabel) == 'undefined')obj.noLabel = false;
@@ -309,7 +309,7 @@ var H = {
 		if(notNull)m = -1;
 		if(i>m && i<3){
 			// data non valida
-			ALERT(Lingua(TXT_dataNonCorretta).replace("[d]",Lingua(eval("TXT_"+id))));
+			ALERT(TXT("dataNonCorretta").replace("[d]",TXT(""+id)));
 			return false;
 		}else{
 			return true;
@@ -525,18 +525,18 @@ var H = {
 				'				<input type="text"' +
 				'					   id="label_add_'+obj.nome+'"' +
 				'					   class="label_add"' +
-				'					   placeholder="'+htmlEntities(stripslashes(Lingua(TXT_EtichettaSpiegazione)))+'"' +
+				'					   placeholder="'+htmlEntities(stripslashes(TXT("EtichettaSpiegazione")))+'"' +
 				'					   onKeyup="H.filtraEtichetta(\''+obj.nome+'\',this);"'+H.noAutoGen+'/>' +
 				'				<span id="label_close"' +
 				'					  onClick="H.nasAggiungiEtichetta(\''+obj.nome+'\');">' +
 				'				</span>' +
 				'				<div class="p_label_add"' +
 				'					 onClick="H.aggiungiEtichetta(\''+obj.nome+'\',this);">' +
-									Lingua(TXT_Nuovo) +
+									TXT("Nuovo") +
 				'				</div>' +
 				'				<div class="p_label_ann"' +
 				'					 onClick="H.annullaEtichetta(\''+obj.nome+'\');">' +
-									Lingua(TXT_Annulla) +
+									TXT("Annulla") +
 				'				</div>' +
 				'				<div class="elencoEtichette"' +
 				'					 id="elencoEtichette_'+obj.nome+'">' +
@@ -547,7 +547,7 @@ var H = {
 				'				<div id="p_paz_label_'+obj.nome+'"' +
 				'					 class="p_paz_label"' +
 				'					 onclick="H.visAggiungiEtichetta(\''+obj.nome+'\');">' +
-									htmlEntities(Lingua(TXT_EtichettaBtn)) +
+									htmlEntities(TXT("EtichettaBtn")) +
 				'				</div>'+
 				'			</div>';	
 		}
@@ -618,7 +618,7 @@ var H = {
 			for(e in H.etichetteProvvisorie){
 				if(	txt.trim() == H.etichetteProvvisorie[e]["NomeEtichetta"] && 
 					sezione == H.etichetteProvvisorie[e]["sezione"]){
-					ALERT(Lingua(TXT_erroreDuplicazioneElemento))
+					ALERT(TXT("erroreDuplicazioneElemento"))
 					return;
 				}
 			}
@@ -826,7 +826,7 @@ var H = {
 		campo.value = valore;
 		campo.dataset.oldValue = valore;
 		pulsanteModifica.dataset.oldName = pulsanteModifica.innerHTML;
-		pulsanteModifica.innerHTML = htmlEntities(Lingua(TXT_Modifica));
+		pulsanteModifica.innerHTML = htmlEntities(TXT("Modifica"));
 		pulsanteAnnulla.classList.add("visBtn");
 		cont.classList.add("modEl");
 		campo.focus();

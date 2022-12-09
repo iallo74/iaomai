@@ -5,8 +5,8 @@ var agenda = {
 	orarioDef:null,
 	elBut:null,
 	elCont:null,
-	msgContinua:'<i class="txtSel" style="margin-top:2px;">'+stripslashes(Lingua(TXT_FinoAlle))+'</i>',
-	btnConferma:'<button onClick="agenda.conferma();">'+stripslashes(Lingua(TXT_Conferma))+'</button><button onClick="agenda.annulla();">'+Lingua(TXT_Annulla)+'</button>',
+	msgContinua:'<i class="txtSel" style="margin-top:2px;">'+stripslashes(TXT("FinoAlle"))+'</i>',
+	btnConferma:'<button onClick="agenda.conferma();">'+stripslashes(TXT("Conferma"))+'</button><button onClick="agenda.annulla();">'+TXT("Annulla")+'</button>',
 	txtConferma:"",
 	imgSpunta:'<img src="img/f_spunta.png" width="20" height="20" align="right">',
 	elemento:null,
@@ -145,7 +145,7 @@ var agenda = {
 		
 		applicaLoading(document.getElementById("ag"));
 		document.getElementById("cont_sceltaAppuntamento").classList.add("visSch");
-		var HTML = '<p><b>'+Lingua(TXT_AggiungiAppuntamento)+'</b></p>';
+		var HTML = '<p><b>'+TXT("AggiungiAppuntamento")+'</b></p>';
 		oI=this.orarioDef.oraInizio+"";
 		if(oI.indexOf(".")>-1)oI=oI.substr(0,oI.indexOf("."))+":30";
 		else oI=oI+":00";
@@ -153,7 +153,7 @@ var agenda = {
 		oF=(this.orarioDef.oraFine)+"";
 		if(oF.indexOf(".")>-1)oF=oF.substr(0,oF.indexOf("."))+":30";
 		else oF=oF+":00";
-		var txtData = Lingua(TXT_AggiungiAppuntamentoDati);
+		var txtData = TXT("AggiungiAppuntamentoDati");
 		txtData = txtData.replace("[g]",getDataTS(this.orarioDef.data/1000));
 		txtData = txtData.replace("[1]",oI);
 		txtData = txtData.replace("[2]",oF);
@@ -165,7 +165,7 @@ var agenda = {
 				'			   name="TestoAppuntamento"' +
 				'			   class="okPlaceHolder"' +
 				'			   type="text"' +
-				'			   placeholder="'+htmlEntities(Lingua(TXT_GenericoAppSpiegazione)) +'"' +
+				'			   placeholder="'+htmlEntities(TXT("GenericoAppSpiegazione")) +'"' +
 				'			   value="'+htmlEntities(TestoAppuntamento)+'">' +
 				'		<input id="idApp"' +
 				'			   name="idApp"' +
@@ -201,7 +201,7 @@ var agenda = {
 				'	  class="visSch">' +
 				'	<span class="btnSw"' +
 				'		  onClick="agenda.swClientiApp();">' +
-						htmlEntities(Lingua(TXT_AppuntamentoCliente)) +
+						htmlEntities(TXT("AppuntamentoCliente")) +
 				'	</span>' +
 				'</p>' +
 				'<div id="app_cliente">' +
@@ -209,7 +209,7 @@ var agenda = {
 				'		<input id="app_ricerca_testo"' +
 				'			   class="okPlaceHolder"' +
 				'			   onKeyUp="agenda.filtraClienti();"' +
-				'			   placeholder="'+htmlEntities(Lingua(TXT_ClientiAppSpiegazione))+'">' +
+				'			   placeholder="'+htmlEntities(TXT("ClientiAppSpiegazione"))+'">' +
 				'		<img src="img/chMenu.png"' +
 				'			 class="chCliApp"' +
 				'			 onClick="agenda.swClientiApp();">' +
@@ -223,24 +223,24 @@ var agenda = {
 		if(idApp>-1)HTML +=
 				'	<div class="converti"' +
 				'		  onClick="agenda.convertiTrattamento();">' +
-						htmlEntities(Lingua(TXT_AppuntamentoConverti)) +
+						htmlEntities(TXT("AppuntamentoConverti")) +
 				'	</div>';
 		HTML += '</div>';
 		if(idApp>-1)HTML +=
 				'<p><span id="app_elimina" onClick="agenda.eliminaAppuntamento('+idApp+');">' +
-					htmlEntities(Lingua(TXT_EliminaAppuntamento)) +
+					htmlEntities(TXT("EliminaAppuntamento")) +
 				'</span></p>';
 		HTML += '<p style="text-align:right;margin-bottom: 0px;"><span class="submitBtn annullaBtn" onClick="agenda.chiudiScelta();">' +
-					htmlEntities(Lingua(TXT_Annulla)) +
+					htmlEntities(TXT("Annulla")) +
 				'</span><span class="submitBtn salvaBtn" onClick="agenda.scegli();">' +
-					htmlEntities(Lingua(TXT_Salva)) +
+					htmlEntities(TXT("Salva")) +
 				'</span></p>';
 		document.getElementById("cont_sceltaAppuntamento").innerHTML = HTML;
 		this.popolaScelta(idCli,idPaziente);
 		if(idCli>-1 || idPaziente>-1)agenda.swClientiApp();
 	},
 	eliminaAppuntamento: function( idApp ){
-		CONFIRM.vis(	Lingua(TXT_ChiediEliminaAppuntamento),
+		CONFIRM.vis(	TXT("ChiediEliminaAppuntamento"),
 						false,
 						arguments ).then(function(pass){if(pass){
 						var v = getParamNames(CONFIRM.args.callee.toString());
@@ -279,14 +279,14 @@ var agenda = {
 				}
 			}
 			document.getElementById("app_cliente").classList.remove( 'clienteScelto');
-			document.getElementById("TestoAppuntamento").placeholder = stripslashes(Lingua(TXT_GenericoAppSpiegazione));
+			document.getElementById("TestoAppuntamento").placeholder = stripslashes(TXT("GenericoAppSpiegazione"));
 		}else{
 			HTML += '<div class="torna"' +
 					'	  onClick="agenda.popolaScelta();">' +
 						htmlEntities(DB.pazienti.data[Q_id].Nome+" "+DB.pazienti.data[Q_id].Cognome) +
 					'</div>';
 			document.getElementById("app_cliente").classList.add( 'clienteScelto');
-			document.getElementById("TestoAppuntamento").placeholder = stripslashes(Lingua(TXT_GenericoAppLabel));
+			document.getElementById("TestoAppuntamento").placeholder = stripslashes(TXT("GenericoAppLabel"));
 		}
 		document.getElementById("app_elenco").innerHTML = HTML;
 		document.getElementById("app_elenco").scrollTo(0,0);
@@ -295,7 +295,7 @@ var agenda = {
 		document.getElementById("idPaziente").value = Q_idPaziente;
 	},
 	convertiTrattamento: function(){
-		CONFIRM.vis(	Lingua(TXT_ChiediConvertire),
+		CONFIRM.vis(	TXT("ChiediConvertire"),
 						false,
 						arguments ).then(function(pass){if(pass){
 						var v = getParamNames(CONFIRM.args.callee.toString());
@@ -357,7 +357,7 @@ var agenda = {
 	scegli: function(){
 		if(	!document.getElementById("TestoAppuntamento").value.trim() && 
 			document.getElementById("idCli").value=='-1'){
-			ALERT(stripslashes(Lingua(TXT_ErroreTestoApp)));
+			ALERT(stripslashes(TXT("ErroreTestoApp")));
 			return;
 		}
 		var DataModifica = DB.appuntamenti.lastSync+1;
@@ -456,7 +456,7 @@ var agenda = {
 			gg=g;
 			if(gg==7)gg=0;
 			HTML += '	<div' + ((g>5) ? ' class="festivo"' : '') + '>'+
-							nomiGiorni[globals.siglaLingua][gg].substr(0,3).toUpperCase() +
+							DB.TXT.base.nomiGiorni[globals.siglaLingua][gg].substr(0,3).toUpperCase() +
 					'	</div>';
 		}
 		HTML += '	</div>' +
@@ -547,7 +547,7 @@ var agenda = {
 				'		<div class="agendaInt'+(festivo ? ' agendaFestivo' : '')+'"' +
 				'			 onClick="agenda.popolaCalendario( agenda.DataPartenza.getFullYear(),' +
 				'											   agenda.DataPartenza.getMonth());">' +
-				'			<p>'+htmlEntities(nomiGiorni[globals.siglaLingua][nomeGiorno])+'</p>' +
+				'			<p>'+htmlEntities(DB.TXT.base.nomiGiorni[globals.siglaLingua][nomeGiorno])+'</p>' +
 				'			<p>' +
 								dd.replace(/%D/,'<span class="agendaGiorno">'+giorno+'</span>').replace(/%M/,mese).replace(/%Y/,anno) +
 								'<img src="img/frGiuB_mini.png">' +
@@ -576,7 +576,7 @@ var agenda = {
 						cnt=TestoAppuntamento;
 						/*if(this.appuntamenti[d*1][a].timeFine-this.appuntamenti[d*1][a].timeInizio == 0.5 || !cnt){
 							//cnt += ' <i class="nTAg">'+icoUtente+this.appuntamenti[d*1][a].Nominativo+'</i>';
-							cnt += ' <i class="nTAg">'+htmlEntities(Lingua(TXT_TrattamentoSenzaNome))+'</i>';
+							cnt += ' <i class="nTAg">'+htmlEntities(TXT("TrattamentoSenzaNome"))+'</i>';
 						}*/
 						if(this.appuntamenti[d*1][a].timeFine-this.appuntamenti[d*1][a].timeInizio == 0.5){
 							cnt += ' <i class="nTAg">'+icoUtente+this.appuntamenti[d*1][a].Nominativo+'</i>';
@@ -624,7 +624,7 @@ var agenda = {
 						cnt=TestoAppuntamento;
 						/*if(this.appuntamenti[d*1][a].timeFine-this.appuntamenti[d*1][a].timeInizio == 0.5 || !cnt){
 							//cnt += ' <i class="nTAg">'+icoUtente+this.appuntamenti[d*1][a].Nominativo+'</i>';
-							cnt += ' <i class="nTAg">'+htmlEntities(Lingua(TXT_TrattamentoSenzaNome))+'</i>';
+							cnt += ' <i class="nTAg">'+htmlEntities(TXT("TrattamentoSenzaNome"))+'</i>';
 						}*/
 						if(this.appuntamenti[d*1][a].timeFine-this.appuntamenti[d*1][a].timeInizio == 0.5){
 							cnt += ' <i class="nTAg">'+icoUtente+this.appuntamenti[d*1][a].Nominativo+'</i>';
@@ -694,13 +694,13 @@ var agenda = {
 	},
 	rollOver:function( h, d, el ){
 		var ro=true;
-		da_aT=Lingua(TXT_dalle)+" ";
+		da_aT=TXT("dalle")+" ";
 		var hT=h+"";
 		if(hT.indexOf(".")>-1)hT=parseInt(h)+":30";
 		else hT=h+":00";
 		if(this.oraInizio>-1 && this.oraFine==-1){
 			if(d*1==this.giornoInizio){
-				da_aT=Lingua(TXT_alle)+" ";
+				da_aT=TXT("alle")+" ";
 				hT=h+"";
 				if(hT.indexOf(".")>-1)hT=parseInt(h+1)+":00";
 				else hT=h+":30";

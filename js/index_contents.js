@@ -2,69 +2,24 @@
 
 var sets = {
 	anatomy_full: {
-		nome: Lingua(TXT_Anatomy),
-		sottotitolo: Lingua(TXT_AnatomyST),
-		descrizione: Lingua(TXT_AnatomyDESCR),
+		nome: TXT("Anatomy"),
+		sottotitolo: TXT("AnatomyST"),
+		descrizione: TXT("AnatomyDESCR"),
 		locked: false,
 		opening: false,
 		dataPubblicazione: ''
 	},
 	meridiani_cinesi: {
-		nome: Lingua(TXT_TsuboMap),
-		sottotitolo: Lingua(TXT_TsuboMapST),
-		descrizione: Lingua(TXT_TsuboMapDESCR),
+		nome: TXT("TsuboMap"),
+		sottotitolo: TXT("TsuboMapST"),
+		descrizione: TXT("TsuboMapDESCR"),
 		modelli: [
 			"donna",
 			"uomo"
 		],
 		imports: [
 			'sets/common/mtc/mtc.js',
-			'frasi.js',
-			'geometrie.js',
-			'set.js',
-			'modulo_tsubo.js',
-			'modulo_patologie.js',
-			'modulo_meridiani.js',
-			'modulo_teoria.js',
-			'modulo_procedure.js',
-			'materiali.js',
-			'stili.css',
-			'stili_procedure.css',
-			'stili_tsubo.css'
-		],
-		dims: [
-			65,
-			6,
-			8540,
-			40,
-			12,
-			3,
-			4,
-			5,
-			510,
-			8,
-			19,
-			8,
-			2
-		],
-		txtLoading: Lingua(TXT_CaricamentoMeridiani),
-		auth: false,
-		locked: false,
-		lastVer: 1,
-		opening: true,
-		dataPubblicazione: ''
-	},
-	meridiani_shiatsu: {
-		nome: Lingua(TXT_ShiatsuMap),
-		sottotitolo: Lingua(TXT_ShiatsuMapST),
-		descrizione: Lingua(TXT_ShiatsuMapDESCR),
-		modelli: [
-			"donna",
-			"uomo"
-		],
-		imports: [
-			'sets/common/mtc/mtc.js',
-			'frasi.js',
+			'TXT.js',
 			'geometrie.js',
 			'set.js',
 			'modulo_tsubo.js',
@@ -80,19 +35,64 @@ var sets = {
 		dims: [
 			65,
 			7,
-			4,
-			38,
+			8600,
+			44,
 			12,
-			3,
 			4,
 			4,
-			51,
-			9,
-			17,
+			6,
+			52,
+			8,
+			18,
 			8,
 			2
 		],
-		txtLoading: Lingua(TXT_CaricamentoMeridiani),
+		txtLoading: TXT("CaricamentoMeridiani"),
+		auth: false,
+		locked: false,
+		lastVer: 1,
+		opening: true,
+		dataPubblicazione: ''
+	},
+	meridiani_shiatsu: {
+		nome: TXT("ShiatsuMap"),
+		sottotitolo: TXT("ShiatsuMapST"),
+		descrizione: TXT("ShiatsuMapDESCR"),
+		modelli: [
+			"donna",
+			"uomo"
+		],
+		imports: [
+			'sets/common/mtc/mtc.js',
+			'TXT.js',
+			'geometrie.js',
+			'set.js',
+			'modulo_tsubo.js',
+			'modulo_patologie.js',
+			'modulo_meridiani.js',
+			'modulo_teoria.js',
+			'modulo_procedure.js',
+			'materiali.js',
+			'stili.css',
+			'stili_procedure.css',
+			'stili_tsubo.css'
+		],
+		dims: [
+			65,
+			7,
+			8160,
+			42,
+			12,
+			4,
+			5,
+			5,
+			52,
+			9,
+			20,
+			8,
+			2
+		],
+		txtLoading: TXT("CaricamentoMeridiani"),
 		auth: false,
 		locked: false,
 		lastVer: 1,
@@ -100,14 +100,14 @@ var sets = {
 		dataPubblicazione: ''
 	},
 	auricologia: {
-		nome: Lingua(TXT_AuriculoMap),
-		sottotitolo: Lingua(TXT_AuriculoMapST),
-		descrizione: Lingua(TXT_AuriculoMapDESCR),
+		nome: TXT("AuriculoMap"),
+		sottotitolo: TXT("AuriculoMapST"),
+		descrizione: TXT("AuriculoMapDESCR"),
 		modelli: [
 			"orecchio"
 		],
 		imports: [
-			'frasi.js',
+			'TXT.js',
 			'geometrie.js',
 			'set.js',
 			'modulo_tsubo.js',
@@ -121,45 +121,45 @@ var sets = {
 			'stili_tsubo.css'
 		],
 		dims: [
-			6,
-			8540,
-			38,
-			42,
-			12,
-			5,
+			16,
+			3950,
+			35,
+			11,
 			4,
+			20,
 			6,
-			52,
-			18,
-			7,
+			48,
+			10,
+			28,
+			8,
 			2
 		],
-		txtLoading: Lingua(TXT_CaricamentoMappe),
+		txtLoading: TXT("CaricamentoMappe"),
 		auth: false,
 		locked: false,
 		opening: true,
 		dataPubblicazione: ''
 	},
 	reflessologia_plantare: {
-		nome: Lingua(TXT_ReflessologiaPlantare),
-		sottotitolo: Lingua(TXT_ReflessologiaPlantareST),
-		descrizione: Lingua(TXT_ReflessologiaPlantareDESCR),
+		nome: TXT("ReflessologiaPlantare"),
+		sottotitolo: TXT("ReflessologiaPlantareST"),
+		descrizione: TXT("ReflessologiaPlantareDESCR"),
 		modelli: [
 			"piedi"
 		],
 		imports: [
 		
 		],
-		txtLoading: Lingua(TXT_CaricamentoMappe),
+		txtLoading: TXT("CaricamentoMappe"),
 		auth: false,
 		locked: true,
 		opening: true,
 		dataPubblicazione: '2023-06'
 	},
 	trigger_points: {
-		nome: Lingua(TXT_TriggerPoints),
-		sottotitolo: Lingua(TXT_TriggerPointsST),
-		descrizione: Lingua(TXT_TriggerPointsDESCR),
+		nome: TXT("TriggerPoints"),
+		sottotitolo: TXT("TriggerPointsST"),
+		descrizione: TXT("TriggerPointsDESCR"),
 		modelli: [
 			"donna",
 			"uomo"
@@ -167,16 +167,16 @@ var sets = {
 		imports: [
 		
 		],
-		txtLoading: Lingua(TXT_CaricamentoMappe),
+		txtLoading: TXT("CaricamentoMappe"),
 		auth: false,
 		locked: true,
 		opening: true,
 		dataPubblicazione: '2023-10'
 	},
 	clients_full: {
-		nome: Lingua(TXT_MedicalFiles),
-		sottotitolo: Lingua(TXT_MedicalFilesST),
-		descrizione: Lingua(TXT_MedicalFilesDESCR),
+		nome: TXT("MedicalFiles"),
+		sottotitolo: TXT("MedicalFilesST"),
+		descrizione: TXT("MedicalFilesDESCR"),
 		locked: false,
 		opening: false,
 		dataPubblicazione: ''
@@ -186,7 +186,7 @@ var sets = {
 
 var modelli = {
 	donna: {
-		nome: Lingua(TXT_ModelloDonna),
+		nome: TXT("ModelloDonna"),
 		imports: [
 			'Muscle_Head.js',
 			'Muscle_Head_bump.js',
@@ -210,7 +210,7 @@ var modelli = {
 			480,
 			2590,
 			908,
-			2590,
+			3180,
 			65
 		],
 		livelli: [
@@ -220,11 +220,11 @@ var modelli = {
 			'visceri'
 		],
 		rifletti: false,
-		txtLoading: Lingua(TXT_CaricamentoModelloDonna),
+		txtLoading: TXT("CaricamentoModelloDonna"),
 		lastVer: 1
 	},
 	uomo: {
-		nome: Lingua(TXT_ModelloUomo),
+		nome: TXT("ModelloUomo"),
 		imports: [
 			'Muscle_Head.js',
 			'Muscle_Head_bump.js',
@@ -248,7 +248,7 @@ var modelli = {
 			479,
 			2620,
 			1440,
-			1880,
+			2510,
 			65
 		],
 		livelli: [
@@ -258,11 +258,11 @@ var modelli = {
 			'visceri'
 		],
 		rifletti: false,
-		txtLoading: Lingua(TXT_CaricamentoModelloUomo),
+		txtLoading: TXT("CaricamentoModelloUomo"),
 		lastVer: 1
 	},
 	piedi: {
-		nome: Lingua(TXT_ModelloPiede),
+		nome: TXT("ModelloPiede"),
 		imports: [
 			'pelle_compr.js',
 			'ossa_compr.js',
@@ -277,11 +277,11 @@ var modelli = {
 			'ossa'
 		],
 		rifletti: false,
-		txtLoading: Lingua(TXT_CaricamentoModelloPiede),
+		txtLoading: TXT("CaricamentoModelloPiede"),
 		lastVer: 1
 	},
 	orecchio: {
-		nome: Lingua(TXT_ModelloOrecchio),
+		nome: TXT("ModelloOrecchio"),
 		imports: [
 			'Areas_Ear.js',
 			'mappa_aree.js',
@@ -290,9 +290,9 @@ var modelli = {
 			'guide_compr.js'
 		],
 		dims: [
-			251,
-			48,
-			2110,
+			69,
+			11,
+			2620,
 			937,
 			12
 		],
@@ -303,7 +303,7 @@ var modelli = {
 		],
 		areaName: 'Area',
 		rifletti: true,
-		txtLoading: Lingua(TXT_CaricamentoModelloOrecchio),
+		txtLoading: TXT("CaricamentoModelloOrecchio"),
 		lastVer: 1
 	}
 };

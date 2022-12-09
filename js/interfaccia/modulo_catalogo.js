@@ -19,7 +19,7 @@ var CATALOGO = {
 								addClass +
 								'	  onClick="'+linkSet+'">' +
 									htmlEntities(sets[cartella].nome) +
-									( (sets[cartella].locked) ? "<span>"+Lingua(TXT_PrestoInArrivo)+"</span>" : "" ) +
+									( (sets[cartella].locked) ? "<span>"+TXT("PrestoInArrivo")+"</span>" : "" ) +
 								'</div>';
 			}
 		}
@@ -44,28 +44,28 @@ var CATALOGO = {
 			HTML_cont += '">';
 			if(DB.login.data.auths.indexOf(cartella)>-1 && LOGIN.logedin()){
 				HTML_cont += '<span class="costoSet"><span class="btn_acquistato">' +
-							 	htmlEntities(Lingua(TXT_SetAcquistato)) +
+							 	htmlEntities(TXT("SetAcquistato")) +
 							 '</span></span>';
 			}
-			var ChiediInfo = htmlEntities(Lingua(TXT_ComeAttivare));
+			var ChiediInfo = htmlEntities(TXT("ComeAttivare"));
 			if(sets[cartella].locked && sets[cartella].dataPubblicazione){
 				var aaaa = sets[cartella].dataPubblicazione.split("-")[0]*1;
 				var mm = sets[cartella].dataPubblicazione.split("-")[1]*1;
 				HTML_cont += '<span class="pubblSet">' +
-							 '	<i>'+htmlEntities(Lingua(TXT_DataPubblicazione))+'</i><br>' +
-							 	nomiMesi[globals.siglaLingua][mm-1]+" "+aaaa +
+							 '	<i>'+htmlEntities(TXT("DataPubblicazione"))+'</i><br>' +
+							 	DB.TXT.base.nomiMesi[globals.siglaLingua][mm-1]+" "+aaaa +
 							 '</span>';
-				ChiediInfo = htmlEntities(Lingua(TXT_ChiediInfo));
+				ChiediInfo = htmlEntities(TXT("ChiediInfo"));
 			}
 			HTML_cont += '<span class="btnSet">';
 			if(	!sets[cartella].locked && globals.set.cartella != cartella &&
 				sets[cartella].opening ){
 				HTML_cont += '<span class="btn_invia"' +
 							 '		onClick="caricaSet(\''+cartella+'\',this);">';
-				if(DB.login.data.auths.indexOf(cartella)==-1 || !LOGIN.logedin())HTML_cont += htmlEntities(Lingua(TXT_ApriDemo).toUpperCase());
-				else HTML_cont += htmlEntities(Lingua(TXT_ApriSet).toUpperCase());
+				if(DB.login.data.auths.indexOf(cartella)==-1 || !LOGIN.logedin())HTML_cont += htmlEntities(TXT("ApriDemo").toUpperCase());
+				else HTML_cont += htmlEntities(TXT("ApriSet").toUpperCase());
 				HTML_cont += '</span>';
-			}else if(globals.set.cartella == cartella)HTML_cont += '<span class="setOpened">' + htmlEntities(Lingua(TXT_SetAperto).toUpperCase()) + '</span>';
+			}else if(globals.set.cartella == cartella)HTML_cont += '<span class="setOpened">' + htmlEntities(TXT("SetAperto").toUpperCase()) + '</span>';
 			HTML_cont += '	</span>';
 			if(DB.login.data.auths.indexOf(cartella)==-1 || !LOGIN.logedin()){
 				HTML_cont += '<span class="costoSet"><span class="btn_info"' +
@@ -95,10 +95,10 @@ var CATALOGO = {
 					 '	   style="display:none;">' +
 					 '	<div>' +
 					 '		<h2>' +
-					 			htmlEntities(stripslashes(Lingua(TXT_SpiegazioneSetsTit))) +
+					 			htmlEntities(stripslashes(TXT("SpiegazioneSetsTit"))) +
 					 '		</h2>' +
 					 '		<p>' +
-					 			htmlEntities(stripslashes(Lingua(TXT_SpiegazioneSetsTxt))) +
+					 			htmlEntities(stripslashes(TXT("SpiegazioneSetsTxt"))) +
 					 '		</p>' +
 					 '		<form name="attivazioneForm"' +
 					 '		  	  id="attivazioneForm"' +
@@ -110,16 +110,16 @@ var CATALOGO = {
 					 '				</p>' +
 					 '				<input type="text"' +
 					 '					   name="Nominativo"' +
-					 '					   id="@|'+htmlEntities(Lingua(TXT_Nominativo))+'|1|0"' +
-					 '					   placeholder="'+htmlEntities(Lingua(TXT_Nominativo))+'">' +
+					 '					   id="@|'+htmlEntities(TXT("Nominativo"))+'|1|0"' +
+					 '					   placeholder="'+htmlEntities(TXT("Nominativo"))+'">' +
 					 '				<input type="email"' +
 					 '					   name="Email"' +
-					 '					   id="@|'+htmlEntities(Lingua(TXT_Email))+'|1|0|@"' +
-					 '					   placeholder="'+htmlEntities(Lingua(TXT_Email))+'">' +
+					 '					   id="@|'+htmlEntities(TXT("Email"))+'|1|0|@"' +
+					 '					   placeholder="'+htmlEntities(TXT("Email"))+'">' +
 					 '				<div class="btns">' +
 					 '					<div class="btn_invia"' +
 					 '						 onClick="CATALOGO.inviaRichiesta();">' +
-					 						htmlEntities(Lingua(TXT_InviaRichiesta)) +
+					 						htmlEntities(TXT("InviaRichiesta")) +
 					 '					</div>' +
 					 '				</div>' +
 					 '			</div>' +
@@ -164,7 +164,7 @@ var CATALOGO = {
 			if(ims[i].classList.contains("imgSetSel"))pass=true;
 		}
 		if(!pass){
-			ALERT(Lingua(TXT_ErroreNessunSet))
+			ALERT(TXT("ErroreNessunSet"))
 			return;
 		}
 		if(verifica_form(document.getElementById("attivazioneForm"))){
@@ -188,14 +188,14 @@ var CATALOGO = {
 								if(txt.substr(0,3)!='404'){
 									var ris=JSON.parse(txt);
 									if(ris.Conferma=='1'){
-										ALERT(Lingua(TXT_FeedbackInviato));
+										ALERT(TXT("FeedbackInviato"));
 										document.feedbackForm.Nominativo.value = "";
 										document.feedbackForm.Email.value = "";
 										document.feedbackForm.Oggetto.value = "";
 										document.feedbackForm.Messaggio.value = "";
 									}else err=true;
 								}else err=true;
-								if(err)ALERT(Lingua(TXT_FeedbackErrore));
+								if(err)ALERT(TXT("FeedbackErrore"));
 							} );
 		}
 	}

@@ -195,7 +195,7 @@ var SCHEDA = {
 	},
 	scaricaScheda: function( salvato ){
 		if( SCHEDA.noChiudi )return;
-		CONFIRM.vis(	Lingua(TXT_UscireSenzaSalvare),
+		CONFIRM.vis(	TXT("UscireSenzaSalvare"),
 						!SCHEDA.verificaSchedaRet(),
 						arguments ).then(function(pass){if(pass){
 						var v = getParamNames(CONFIRM.args.callee.toString());
@@ -247,7 +247,7 @@ var SCHEDA = {
 		var msg = document.createElement("DIV");
 		msg.id='msgScheda';
 		if(!document.getElementById('msgScheda'))el.appendChild(msg);
-		msg.innerHTML = Lingua(TXT_SchedaSalvata);
+		msg.innerHTML = TXT("SchedaSalvata");
 		document.getElementById('msgScheda').addEventListener( "mouseup", function(){
 			try{el.removeChild(this);}catch(err){};
 		}, false, el);
@@ -596,7 +596,7 @@ var SCHEDA = {
 		// verifico le autorizzazioni
 		if(!DB.login.data.auths.length){
 			setTimeout(function(){
-				ALERT(Lingua(TXT_MsgFunzioneSoloPay));
+				ALERT(TXT("MsgFunzioneSoloPay"));
 			},100);
 			return;
 		}
@@ -612,10 +612,10 @@ var SCHEDA = {
 		}else{
 			cartaIntestata = true;
 			var titolo = '';
-			if(JSON.stringify(obj)!='{}')TITOLO_PAGINA = htmlEntities(obj.titolo)+" "+htmlEntities(Lingua(TXT_per))+" "+htmlEntities(obj.intestazione)
-			var dati = '<p>'+htmlEntities(Lingua(TXT_per))+' '+htmlEntities(obj.intestazione) + '</p>' + 
+			if(JSON.stringify(obj)!='{}')TITOLO_PAGINA = htmlEntities(obj.titolo)+" "+htmlEntities(TXT("per"))+" "+htmlEntities(obj.intestazione)
+			var dati = '<p>'+htmlEntities(TXT("per"))+' '+htmlEntities(obj.intestazione) + '</p>' + 
 						'<p>'+htmlEntities(obj.corpo) + '</p>' + 
-						'<p style="padding-left:50px;padding-top:50px;"><i>' + Lingua(TXT_Data) + ':</i> ' + getFullDataTS(d/1000) + '<br><br>' +
+						'<p style="padding-left:50px;padding-top:50px;"><i>' + TXT("Data") + ':</i> ' + getFullDataTS(d/1000) + '<br><br>' +
 						'<i style="font-size:15px;">' + DB.login.data.Nominativo + '</i></p>';
 						
 			if(JSON.stringify(obj)!='{}')var corpo = dati;
@@ -1077,8 +1077,8 @@ var SCHEDA = {
 	pulsantiForm: function( azElimina, azAnnulla, azSubmit ){
 		SCHEDA.comprimiElenco();
 		HTML = '<div class="formBtn noPrint">';
-		//if(azElimina)HTML += '<div class="p_paz_el" onClick="'+azElimina+'">'+Lingua(TXT_Elimina)+'</div>';
-		HTML += '<span id="btn_annulla" class="annullaBtn" onclick="'+azAnnulla+'">'+Lingua(TXT_Annulla)+'</span><span class="submitBtn" onclick="if(verifica_form(document.formMod))'+azSubmit+'">'+Lingua(TXT_Salva)+'</span></div>'+H.chr10;	
+		//if(azElimina)HTML += '<div class="p_paz_el" onClick="'+azElimina+'">'+TXT("Elimina")+'</div>';
+		HTML += '<span id="btn_annulla" class="annullaBtn" onclick="'+azAnnulla+'">'+TXT("Annulla")+'</span><span class="submitBtn" onclick="if(verifica_form(document.formMod))'+azSubmit+'">'+TXT("Salva")+'</span></div>'+H.chr10;	
 		return HTML;
 	}
 }

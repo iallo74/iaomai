@@ -178,7 +178,7 @@ var REF = {
 		}
 		REF.level = eval('DB.reference'+level);
 		var cont = REF.level.cont;
-		if(!cont)cont = '<i style="opacity:0.7;">'+Lingua(TXT_NoRes)+'</i>';
+		if(!cont)cont = '<i style="opacity:0.7;">'+TXT("NoRes")+'</i>';
 		var nav = '';
 		if(REF.elSel){
 			var pL = REF.elSel.dataset.level.split(".");

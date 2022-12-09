@@ -62,7 +62,7 @@ var RICERCHE = {
 			}
 			if(R_parz){
 				sezioni++;
-				HTML_index+='<div class="labelGlobal" id="lb'+sezioni+'" onClick="RICERCHE.swCartGlob('+sezioni+');">'+Lingua(TXT_Punto)+' ('+nRisParz+')</div>';
+				HTML_index+='<div class="labelGlobal" id="lb'+sezioni+'" onClick="RICERCHE.swCartGlob('+sezioni+');">'+TXT("Punto")+' ('+nRisParz+')</div>';
 				HTML_list+='<div class="contRisGlob" id="cr'+sezioni+'">'+R_parz+'</div>';
 			}
 			
@@ -92,7 +92,7 @@ var RICERCHE = {
 			}
 			if(R_parz){
 				sezioni++;
-				HTML_index+='<div class="labelGlobal" id="lb'+sezioni+'" onClick="RICERCHE.swCartGlob('+sezioni+');">'+Lingua(TXT_Punto)+' ('+nRisParz+')</div>';
+				HTML_index+='<div class="labelGlobal" id="lb'+sezioni+'" onClick="RICERCHE.swCartGlob('+sezioni+');">'+TXT("Punto")+' ('+nRisParz+')</div>';
 				HTML_list+='<div class="contRisGlob" id="cr'+sezioni+'">'+R_parz+'</div>';
 			}
 			
@@ -153,7 +153,7 @@ var RICERCHE = {
 		}
 		if(R_parz){
 			sezioni++;
-			HTML_index+='<div class="labelGlobal" id="lb'+sezioni+'" onClick="RICERCHE.swCartGlob('+sezioni+');">'+Lingua(TXT_ElAnnotazioni)+' ('+nRisParz+')</div>';
+			HTML_index+='<div class="labelGlobal" id="lb'+sezioni+'" onClick="RICERCHE.swCartGlob('+sezioni+');">'+TXT("ElAnnotazioni")+' ('+nRisParz+')</div>';
 			HTML_list+='<div class="contRisGlob" id="cr'+sezioni+'">'+R_parz+'</div>';
 		}
 		
@@ -181,7 +181,7 @@ var RICERCHE = {
 		}
 		if(R_parz){
 			sezioni++;
-			HTML_index+='<div class="labelGlobal" id="lb'+sezioni+'" onClick="RICERCHE.swCartGlob('+sezioni+');">'+Lingua(TXT_Patologie)+' ('+nRisParz+')</div>';
+			HTML_index+='<div class="labelGlobal" id="lb'+sezioni+'" onClick="RICERCHE.swCartGlob('+sezioni+');">'+TXT("Patologie")+' ('+nRisParz+')</div>';
 			HTML_list+='<div class="contRisGlob" id="cr'+sezioni+'">'+R_parz+'</div>';
 		}
 			
@@ -211,7 +211,7 @@ var RICERCHE = {
 		}
 		if(R_parz){
 			sezioni++;
-			HTML_index+='<div class="labelGlobal" id="lb'+sezioni+'" onClick="RICERCHE.swCartGlob('+sezioni+');">'+Lingua(TXT_Approfondimenti)+' ('+nRisParz+')</div>';
+			HTML_index+='<div class="labelGlobal" id="lb'+sezioni+'" onClick="RICERCHE.swCartGlob('+sezioni+');">'+TXT("Approfondimenti")+' ('+nRisParz+')</div>';
 			HTML_list+='<div class="contRisGlob" id="cr'+sezioni+'">'+R_parz+'</div>';
 		}
 			
@@ -240,7 +240,7 @@ var RICERCHE = {
 		}
 		if(R_parz){
 			sezioni++;
-			HTML_index+='<div class="labelGlobal" id="lb'+sezioni+'" onClick="RICERCHE.swCartGlob('+sezioni+');">'+Lingua(TXT_ElProcedure)+' ('+nRisParz+')</div>';
+			HTML_index+='<div class="labelGlobal" id="lb'+sezioni+'" onClick="RICERCHE.swCartGlob('+sezioni+');">'+TXT("ElProcedure")+' ('+nRisParz+')</div>';
 			HTML_list+='<div class="contRisGlob" id="cr'+sezioni+'">'+R_parz+'</div>';
 		}
 			
@@ -271,7 +271,7 @@ var RICERCHE = {
 					kS++;
 					if(testo.toUpperCase().indexOf(parola.toUpperCase())>-1 && TR.Cancellato!='1'){
 						Titolo = TR.TitoloTrattamento;
-						if(TR.TipoTrattamento == 'A')Titolo = TR.LabelCiclo+" ("+Lingua(TXT_Anamnesi)+")";
+						if(TR.TipoTrattamento == 'A')Titolo = TR.LabelCiclo+" ("+TXT("Anamnesi")+")";
 						R_parz += RICERCHE.wR({ az: "PAZIENTI.azRicercaTrattamenti("+p+","+d+");",
 												cont: htmlEntities(PZ.Nome+" "+PZ.Cognome)+' - '+htmlEntities(Titolo) });
 						nRisParz++;
@@ -282,7 +282,7 @@ var RICERCHE = {
 		}
 		if(R_parz){
 			sezioni++;
-			HTML_index+='<div class="labelGlobal" id="lb'+sezioni+'" onClick="RICERCHE.swCartGlob('+sezioni+');">'+Lingua(TXT_ElPazienti)+' ('+nRisParz+')</div>';
+			HTML_index+='<div class="labelGlobal" id="lb'+sezioni+'" onClick="RICERCHE.swCartGlob('+sezioni+');">'+TXT("ElPazienti")+' ('+nRisParz+')</div>';
 			HTML_list+='<div class="contRisGlob" id="cr'+sezioni+'">'+R_parz+'</div>';
 		}
 		
@@ -299,12 +299,12 @@ var RICERCHE = {
 				if(txt.substr(txt.length-1,1)=='_')txt = txt.substr(0,txt.length-1);
 				var pass = false;
 				var ELEM = txt; 
-				var testo = stripslashes(Lingua(eval("TXT_"+txt))).toLowerCase();
+				var testo = stripslashes(TXT(""+txt)).toLowerCase();
 				if(testo.indexOf(parola.toLowerCase()) > -1)pass = true;
 				if(pA[1]){
 					var txt = pA[1].replace(")","").replace("_SX","").replace("_DX","").split(".")[0];
 					if(txt.substr(txt.length-1,1)=='_')txt = txt.substr(0,txt.length-1);
-					var testo = stripslashes(Lingua(eval("TXT_"+txt))).toLowerCase();
+					var testo = stripslashes(TXT(""+txt)).toLowerCase();
 					if(testo.indexOf(parola.toLowerCase()) > -1)pass = true;
 				}
 				// cerco anche nelle schede di DB_anatomia
@@ -322,7 +322,7 @@ var RICERCHE = {
 					if(tipo == 'organo')iconaTipo = 'V';
 					if(tipo == 'muscolo')iconaTipo = 'M';
 					R_parz += RICERCHE.wR({ az: "MODELLO.azRicercaAnatomia('"+ELEM+"','"+tipo+"','"+ANATOMIA.children[3].children[p].name+"');",
-											cont: htmlEntities(stripslashes(Lingua(eval("TXT_"+ELEM)))),
+											cont: htmlEntities(stripslashes(TXT(""+ELEM))),
 											class: "sel"+iconaTipo,
 											style: "padding-left:30px;" });
 					nRisParz++;
@@ -331,13 +331,13 @@ var RICERCHE = {
 			}
 			if(R_parz){
 				sezioni++;
-				HTML_index+='<div class="labelGlobal" id="lb'+sezioni+'" onClick="RICERCHE.swCartGlob('+sezioni+');">'+Lingua(TXT_Anatomia)+' ('+nRisParz+')</div>';
+				HTML_index+='<div class="labelGlobal" id="lb'+sezioni+'" onClick="RICERCHE.swCartGlob('+sezioni+');">'+TXT("Anatomia")+' ('+nRisParz+')</div>';
 				HTML_list+='<div class="contRisGlob" id="cr'+sezioni+'">'+R_parz+'</div>';
 			}
 		}
 			
 			
-		if(!nRis)HTML='<div class="noResGlob" id="noResGlob">'+Lingua(TXT_NessunRisultato)+'</div>';
+		if(!nRis)HTML='<div class="noResGlob" id="noResGlob">'+TXT("NessunRisultato")+'</div>';
 		else{
 			HTML='<div id="divGlobal">';
 			HTML+='<div id="globalIndex">'+HTML_index+'</div>';
@@ -391,23 +391,23 @@ var RICERCHE = {
 		for(k in DB.ricerche.data){
 			RICERCHE.parolaProvv=DB.ricerche.data[k].TestoRicerca.replace(/\'/g, '\\\'');
 			if(DB.ricerche.data[k].Cancellato!=1){
-				if(smartphone)HTML+='<img src="img/chiusuraSmartPhoneBlack.png" align="right" title="'+stripslashes(Lingua(TXT_EliminaParola))+'" onClick="RICERCHE.eliminaRicerca('+k+');" class="imgDelRes"/>';
+				if(smartphone)HTML+='<img src="img/chiusuraSmartPhoneBlack.png" align="right" title="'+stripslashes(TXT("EliminaParola"))+'" onClick="RICERCHE.eliminaRicerca('+k+');" class="imgDelRes"/>';
 				HTML+='<div ';
 				if(smartphone)HTML+='style="margin-right:30px;"';
 				HTML+=' class="risGlob risLente" onClick="if(!RICERCHE.overElRis){document.getElementById(\'parolaGlobal\').value=\''+addslashes(htmlEntities(RICERCHE.parolaProvv))+'\';RICERCHE.globalSubmit();}';
 				if(!smartphone)HTML+='else{RICERCHE.eliminaRicerca('+k+');}';
 				HTML+='">';
-				if(!smartphone)HTML+='<img src="img/chiusuraSmartPhoneBlack.png" align="right" title="'+stripslashes(Lingua(TXT_EliminaParola))+'" onMouseOver="RICERCHE.overElRis=true;" onMouseOut="RICERCHE.overElRis=false;" />';
+				if(!smartphone)HTML+='<img src="img/chiusuraSmartPhoneBlack.png" align="right" title="'+stripslashes(TXT("EliminaParola"))+'" onMouseOver="RICERCHE.overElRis=true;" onMouseOut="RICERCHE.overElRis=false;" />';
 				HTML+=htmlEntities(DB.ricerche.data[k].TestoRicerca)+'</div>';
 			}
 		}
-		if(!HTML)HTML='<div class="noResGlob" id="noResGlob">'+Lingua(TXT_NessunRisultato)+'</div>';
-		else btnSvuota = '<span onClick="RICERCHE.clear_historyGlobal();">'+Lingua(TXT_SvuotaCronologia)+'</span>';
-		document.getElementById("globalTesto").innerHTML='<p id="titHistoryGlobal"><b>'+Lingua(TXT_TueRicerche)+'</b>'+btnSvuota+'</p>'+HTML;
+		if(!HTML)HTML='<div class="noResGlob" id="noResGlob">'+TXT("NessunRisultato")+'</div>';
+		else btnSvuota = '<span onClick="RICERCHE.clear_historyGlobal();">'+TXT("SvuotaCronologia")+'</span>';
+		document.getElementById("globalTesto").innerHTML='<p id="titHistoryGlobal"><b>'+TXT("TueRicerche")+'</b>'+btnSvuota+'</p>'+HTML;
 		document.getElementById("globalTesto").classList.add("globalHistory");
 	},
 	clear_historyGlobal: function(){
-		CONFIRM.vis(	Lingua(TXT_ConfSvuotaCronologia),
+		CONFIRM.vis(	TXT("ConfSvuotaCronologia"),
 						false,
 						arguments ).then(function(pass){if(pass){
 						var v = getParamNames(CONFIRM.args.callee.toString());

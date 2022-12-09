@@ -314,9 +314,9 @@ function cambiaModello( cartella ){
 	if(globals.set.cartella!='' && cartella){
 		if(sets[globals.set.cartella].modelli.indexOf(cartella)==-1){
 			if(!cartella){
-				ChiediUscitaSet = Lingua(TXT_ChiediUscitaSet1).replace("[NomeSet]",globals.set.nome);
+				ChiediUscitaSet = TXT("ChiediUscitaSet1").replace("[NomeSet]",globals.set.nome);
 			}else{
-				ChiediUscitaSet = Lingua(TXT_ChiediUscitaSet2).replace("[NomeSet]",globals.set.nome);
+				ChiediUscitaSet = TXT("ChiediUscitaSet2").replace("[NomeSet]",globals.set.nome);
 			}
 			chiedi = true;
 		}
@@ -434,6 +434,7 @@ function scaricaSet( notInit ){
 		SCHEDA.scaricaBtns();
 		SET = null;
 		DB.set = [];
+		DB.TXT.set = {};
 		globals.initSet();
 		if(smartMenu && !daScheda)SCHEDA.chiudiElenco();
 	}
@@ -452,7 +453,7 @@ function scaricaSet( notInit ){
 	localStorage.mapOpened = '';
 }
 function chiudiSet(){
-	CONFIRM.vis(	Lingua(TXT_ChiediEsciMappa).replace("[mappa]",globals.set.nome) ).then(function(pass){if(pass){
+	CONFIRM.vis(	TXT("ChiediEsciMappa").replace("[mappa]",globals.set.nome) ).then(function(pass){if(pass){
 		caricaSet(globals.set.cartella,document.getElementById('p_'+globals.set.cartella));
 	}});
 }
@@ -673,7 +674,7 @@ function stopAnimate( subito ){
 		document.getElementById("legende").classList.add("noAnimate");
 		document.getElementById("container").style.opacity = 0.4;
 		//document.getElementById("p_piuma").classList.add("piumaAtt");
-		//document.getElementById("p_piuma").getElementsByTagName("i")[0].innerHTML = htmlEntities(Lingua(TXT__3DinPausa));
+		//document.getElementById("p_piuma").getElementsByTagName("i")[0].innerHTML = htmlEntities(TXT("_3DinPausa"));
 	}
 }
 function startAnimate(){
@@ -684,7 +685,7 @@ function startAnimate(){
 		document.getElementById("legende").classList.remove("noAnimate");
 		document.getElementById("container").style.opacity = 1;
 		//document.getElementById("p_piuma").classList.remove("piumaAtt");
-		//document.getElementById("p_piuma").getElementsByTagName("i")[0].innerHTML = htmlEntities(Lingua(TXT_Pausa3D));
+		//document.getElementById("p_piuma").getElementsByTagName("i")[0].innerHTML = htmlEntities(TXT("Pausa3D"));
 	}
 }
 function normalizeRotation(){

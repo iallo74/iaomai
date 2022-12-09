@@ -2305,7 +2305,7 @@ DB.TXT = {
 			eng: "Community settings",
 			esp: ""
 		},
-		TXT_AssensoCommunity: {
+		AssensoCommunity: {
 			ita: "Assenso",
 			eng: "Consent",
 			esp: ""
@@ -2772,7 +2772,7 @@ DB.TXT = {
 			eng: "Set in use",
 			esp: ""
 		},
-		TXT_ApriSet: {
+		ApriSet: {
 			ita: "Apri il set",
 			eng: "Open set",
 			esp: "" 

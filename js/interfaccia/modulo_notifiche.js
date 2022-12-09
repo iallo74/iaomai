@@ -13,7 +13,7 @@ var NOTIFICHE = {
 	
 	dwnl_notifiche: function(){
 		if(!LOGIN.logedin()){
-			ALERT(Lingua(TXT_ErroreUtenteNonConnesso), true );
+			ALERT(TXT("ErroreUtenteNonConnesso"), true );
 			return;
 		}
 		if(CONN.retNoConn()){
@@ -36,14 +36,14 @@ var NOTIFICHE = {
 				HTML += htmlEntities(DB.notifiche[n].NomeNotifica);
 				HTML += '</div>';
 			}
-		}else HTML += '<div class="noResults">'+htmlEntities(Lingua(TXT_NotificheNessuna))+'</div>';
+		}else HTML += '<div class="noResults">'+htmlEntities(TXT("NotificheNessuna"))+'</div>';
 		document.getElementById("contNotifiche").innerHTML = HTML;
 		rimuoviLoading(document.getElementById("contNotifiche"));
 	},
 	
 	car_notifica: function( n ){
 		var HTML = 	'<span id="elNotifica"' +
-					'	   onClick="CONFIRM.vis( Lingua(TXT_EliminaNotifica) ).then(function(pass){' +
+					'	   onClick="CONFIRM.vis( TXT(\'EliminaNotifica\') ).then(function(pass){' +
 					'	   				if(pass){' +
 					'	   					NOTIFICHE.el_notifica('+n+');' +
 					'	   				}' +
@@ -51,7 +51,7 @@ var NOTIFICHE = {
 					'</span>' +
 					'<div onClick="NOTIFICHE.dwnl_notifiche();"' +
 					'	  id="notificheTorna">' +
-						htmlEntities(Lingua(TXT_NotificheTorna)) +
+						htmlEntities(TXT("NotificheTorna")) +
 					'</div>' +
 					'<div id="notificheMsg">' +
 					'	<h1>' +
@@ -68,7 +68,7 @@ var NOTIFICHE = {
 					'	  onClick="	MENU.chiudiMenu();' +
 					'	  			SET.azRicercaProcedure(-1,$2);"' +
 					'	  style="width:200px;">' +
-						htmlEntities(Lingua(TXT_ApriScheda)) + 
+						htmlEntities(TXT("ApriScheda")) + 
 					'</div>';
 		}
 		TestoNotifica = TestoNotifica.replace(pattern, sost);
@@ -81,7 +81,7 @@ var NOTIFICHE = {
 					'	  onClick="	MENU.chiudiMenu();' +
 					'	  			SET.azRicercaProcedure(-1,$2,true);"' +
 					'	  style="width:200px;">' +
-						htmlEntities(Lingua(TXT_ApriScheda)) + 
+						htmlEntities(TXT("ApriScheda")) + 
 					'</div>';
 		}
 		TestoNotifica = TestoNotifica.replace(pattern, sost);

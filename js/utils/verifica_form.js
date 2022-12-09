@@ -27,7 +27,7 @@ function ControllaMail(frmMail,NCampo){
 		Filtro = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-]{2,})+\.)+([a-zA-Z0-9]{2,})+$/;
 		if (Filtro.test(EmailAddr)) return true;
 		else{
-			ALERT(Lingua(TXT_ATTENZIONE)+"! "+Lingua(TXT_erroreFormatoEmail).replace("[1]"," '"+NCampo+"' "));
+			ALERT(TXT("ATTENZIONE")+"! "+TXT("erroreFormatoEmail").replace("[1]"," '"+NCampo+"' "));
 			frmMail.focus();
 			return false;
 		}
@@ -42,11 +42,11 @@ function ControllaNumero(frmNum,NCampo,nt){
 			add='';
 		}else{
 			Filtro = /[\d]+/;
-			add=" "+Lingua(TXT_numeriInteri);
+			add=" "+TXT("numeriInteri");
 		}
 		if (Filtro.test(NumVal)) return true;
 		else{
-			ALERT(Lingua(TXT_ATTENZIONE)+" "+Lingua(TXT_campoNumerici).replace("[1]"," '"+NCampo+"' ")+add);
+			ALERT(TXT("ATTENZIONE")+" "+TXT("campoNumerici").replace("[1]"," '"+NCampo+"' ")+add);
 			frmNum.focus();
 			return false;
 		}
@@ -58,10 +58,10 @@ function ControllaTelefono(frmNum,NCampo,cell){
 	if (frmNum.value.length>0){		
 		if(!cell)Filtro = /[\d\+\.\s]+/;
 		else Filtro = /\+[\d\.\s]*/;
-		add=" "+Lingua(TXT_numeriInteri);
+		add=" "+TXT("numeriInteri");
 		if (Filtro.test(NumVal)) return true;
 		else{
-			ALERT(Lingua(TXT_ATTENZIONE)+" "+Lingua(TXT_campoNumerici).replace("[1]"," '"+NCampo+"' ")+add);
+			ALERT(TXT("ATTENZIONE")+" "+TXT("campoNumerici").replace("[1]"," '"+NCampo+"' ")+add);
 			frmNum.focus();
 			return false;
 		}
@@ -114,27 +114,27 @@ function verifica_form(frm){
 		if (ver_contr){
 			if (ver_type=="text" || ver_type=="textarea" || ver_type=="hidden" || ver_type=="password"){ // se è un testo
 				if(ver_value.length<ver_lMin){
-					if(ver_lMin>1)ALERT(Lingua(TXT_lunghezzaMinCampo).replace("[1]","'"+ver_etichetta+"' ").replace("[2]"," "+ver_lMin).replace("[3]"," "+ver_value.length));
-					else ALERT(Lingua(TXT_inserireValore).replace("[1]"," '"+ver_etichetta+"' "));
+					if(ver_lMin>1)ALERT(TXT("lunghezzaMinCampo").replace("[1]","'"+ver_etichetta+"' ").replace("[2]"," "+ver_lMin).replace("[3]"," "+ver_value.length));
+					else ALERT(TXT("inserireValore").replace("[1]"," '"+ver_etichetta+"' "));
 					if (ver_type!="hidden")frm.elements[k].focus();
 					return false;
 				}
 				if(ver_value.length>ver_lMax && ver_lMax>0){
-					ALERT(Lingua(TXT_lunghezzaMaxCampo).replace("[1]","  '"+ver_etichetta+"'  ").replace("[2]"," "+ver_lMax+" ").replace("[3]","  "+ver_value.length));
+					ALERT(TXT("lunghezzaMaxCampo").replace("[1]","  '"+ver_etichetta+"'  ").replace("[2]"," "+ver_lMax+" ").replace("[3]","  "+ver_value.length));
 					frm.elements[k].focus();
 					return false;
 				}
 			}
 			if (ver_type=="select-one"){ // se è un testo
 				if(frm.elements[k].selectedIndex==0){
-					ALERT(Lingua(TXT_selezionareValore).replace("[1]"," '"+ver_etichetta+"' "));
+					ALERT(TXT("selezionareValore").replace("[1]"," '"+ver_etichetta+"' "));
 					frm.elements[k].focus();
 					return false;
 				}
 			}
 			if (ver_type=="checkbox"){ // se è un testo
 				if(!frm.elements[k].checked){
-					ALERT(Lingua(TXT_selezionareCasella).replace("[1]"," '"+ver_etichetta+"' "));
+					ALERT(TXT("selezionareCasella").replace("[1]"," '"+ver_etichetta+"' "));
 					frm.elements[k].focus();
 					return false;
 				}

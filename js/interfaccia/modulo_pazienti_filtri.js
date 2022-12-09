@@ -8,7 +8,7 @@ var PAZIENTI_FILTRI = {
 	
 	// FILTRI E STATISTICHE
 	car_filtri: function(){
-		CONFIRM.vis(	Lingua(TXT_UscireSenzaSalvare),
+		CONFIRM.vis(	TXT("UscireSenzaSalvare"),
 						!SCHEDA.verificaSchedaRet(),
 						arguments ).then(function(pass){if(pass){
 						var v = getParamNames(CONFIRM.args.callee.toString());
@@ -235,14 +235,14 @@ var PAZIENTI_FILTRI = {
 			stats.interventi = sortObject(stats.interventi);
 			stats.sintomi = sortObject(stats.sintomi);
 			//console.log(stats)
-			var titolo = stripslashes(Lingua(TXT_FiltroPazienti));	
+			var titolo = stripslashes(TXT("FiltroPazienti"));	
 			var HTML = '';
 			var noRes = '...';
 			HTML += '<div id="pazienti_stats">' +
 					'	<h1>'+htmlEntities(titolo)+'</h1>';	
 			
 			if(!totPazienti){
-				HTML += '<div class="noResults">'+htmlEntities(Lingua(TXT_NoResPaziente))+'</div>';
+				HTML += '<div class="noResults">'+htmlEntities(TXT("NoResPaziente"))+'</div>';
 			}else{
 				
 				HTML += 
@@ -250,18 +250,18 @@ var PAZIENTI_FILTRI = {
 						  (PAZIENTI.pazientiFiltrati.length ? '' : ' style="display:none;"') +
 					'>' +
 					'	<div>' +
-							/*htmlEntities(Lingua(TXT_PazientiFiltrati)) +*/
+							/*htmlEntities(TXT("PazientiFiltrati")) +*/
 					'		<div class="btn_invia" onClick="this.blur();PAZIENTI.cancellaFiltri();">' +
-								htmlEntities(Lingua(TXT_AnnullaFiltri)) +
+								htmlEntities(TXT("AnnullaFiltri")) +
 					'		</div>' +
 					'		<div class="btn_frdx"' +
 					'			 style="float:right;"' +
 					'			 onClick="PAZIENTI.car_marketing();">' +
-								htmlEntities(Lingua(TXT_StrumentiMarketing)) +
+								htmlEntities(TXT("StrumentiMarketing")) +
 					'		</div>' +
 					'	</div>' +	
 					'	<div id="parametri_filtri">' +
-					'<h2>'+htmlEntities(Lingua(TXT_FiltriApplicati))+'</h2>';
+					'<h2>'+htmlEntities(TXT("FiltriApplicati"))+'</h2>';
 				var htmlParametri = '';
 				if(PAZIENTI.parametriFiltri.length){	
 					for(p in PAZIENTI.parametriFiltri){
@@ -279,10 +279,10 @@ var PAZIENTI_FILTRI = {
 				
 				// FILTRI
 				HTML += '<div id="contStats">' +
-						'	<p>'+htmlEntities(Lingua(TXT_TotalePazienti))+': <b>'+totPazienti+'</b></p>' +
+						'	<p>'+htmlEntities(TXT("TotalePazienti"))+': <b>'+totPazienti+'</b></p>' +
 						'	<div class="rgStats">' +
 						'		<div class="etStats">' +
-						'			<i>'+htmlEntities(Lingua(TXT_FasceEta))+':</i> ';
+						'			<i>'+htmlEntities(TXT("FasceEta"))+':</i> ';
 				if(!PAZIENTI.pazientiFiltrati.length)HTML +=
 						'			<span><input type="checkbox"' +
 						'							   onClick="PAZIENTI.statsSelAll(this);"' +
@@ -317,7 +317,7 @@ var PAZIENTI_FILTRI = {
 							'			<td><input type="checkbox"' +
 							'					   onClick="PAZIENTI.statsFiltra();"' +
 							'					   value="'+JSON.stringify(stats.fasce_eta[f])+'"' +
-							'					   data-cat="'+Lingua(TXT_FasceEta)+'"' +
+							'					   data-cat="'+TXT("FasceEta")+'"' +
 							'					   data-elem="'+label+'"></td>';
 					HTML += '		</tr>';
 				}
@@ -328,7 +328,7 @@ var PAZIENTI_FILTRI = {
 						// generi
 						'<div class="rgStats">' +
 						'	<div class="etStats">' +
-						'		<i>'+htmlEntities(Lingua(TXT_Generi))+':</i> ';
+						'		<i>'+htmlEntities(TXT("Generi"))+':</i> ';
 				if(!PAZIENTI.pazientiFiltrati.length)HTML +=
 						'			<span><input type="checkbox"' +
 						'							   onClick="PAZIENTI.statsSelAll(this);"' +
@@ -358,7 +358,7 @@ var PAZIENTI_FILTRI = {
 							'			<td><input type="checkbox"' +
 							'					   onClick="PAZIENTI.statsFiltra();"' +
 							'					   value="'+JSON.stringify(stats.generi[g])+'"' +
-							'					   data-cat="'+Lingua(TXT_Generi)+'"' +
+							'					   data-cat="'+TXT("Generi")+'"' +
 							'					   data-elem="'+label+'"></td>';
 					HTML += '		</tr>';
 				}
@@ -369,7 +369,7 @@ var PAZIENTI_FILTRI = {
 						// professioni
 						'<div class="rgStats">' +
 						'	<div class="etStats">' +
-						'		<i>'+htmlEntities(Lingua(TXT_Professioni))+':</i> ';
+						'		<i>'+htmlEntities(TXT("Professioni"))+':</i> ';
 				if(!PAZIENTI.pazientiFiltrati.length)HTML +=
 						'			<span><input type="checkbox"' +
 						'							   onClick="PAZIENTI.statsSelAll(this);"' +
@@ -400,7 +400,7 @@ var PAZIENTI_FILTRI = {
 							'			<td><input type="checkbox"' +
 							'					   onClick="PAZIENTI.statsFiltra();"' +
 							'					   value="'+JSON.stringify(stats.professioni[p])+'"' +
-							'					   data-cat="'+Lingua(TXT_Professioni)+'"' +
+							'					   data-cat="'+TXT("Professioni")+'"' +
 							'					   data-elem="'+label+'"></td>';
 					HTML += '		</tr>';
 				}
@@ -411,7 +411,7 @@ var PAZIENTI_FILTRI = {
 						// provenienze
 						'<div class="rgStats">' +
 						'	<div class="etStats">' +
-						'		<i>'+htmlEntities(Lingua(TXT_Provenienze))+':</i> ';
+						'		<i>'+htmlEntities(TXT("Provenienze"))+':</i> ';
 				if(!PAZIENTI.pazientiFiltrati.length)HTML +=
 						'			<span><input type="checkbox"' +
 						'							   onClick="PAZIENTI.statsSelAll(this);"' +
@@ -442,7 +442,7 @@ var PAZIENTI_FILTRI = {
 							'			<td><input type="checkbox"' +
 							'					   onClick="PAZIENTI.statsFiltra();"' +
 							'					   value="'+JSON.stringify(stats.provenienze[p])+'"' +
-							'					   data-cat="'+Lingua(TXT_Provenienze)+'"' +
+							'					   data-cat="'+TXT("Provenienze")+'"' +
 							'					   data-elem="'+label+'"></td>';
 					HTML += '		</tr>';
 				}
@@ -453,7 +453,7 @@ var PAZIENTI_FILTRI = {
 						// province
 						'<div class="rgStats">' +
 						'	<div class="etStats">' +
-						'		<i>'+htmlEntities(Lingua(TXT_Province))+':</i> ';
+						'		<i>'+htmlEntities(TXT("Province"))+':</i> ';
 				if(!PAZIENTI.pazientiFiltrati.length)HTML +=
 						'			<span><input type="checkbox"' +
 						'							   onClick="PAZIENTI.statsSelAll(this);"' +
@@ -483,7 +483,7 @@ var PAZIENTI_FILTRI = {
 							'			<td><input type="checkbox"' +
 							'					   onClick="PAZIENTI.statsFiltra();"' +
 							'					   value="'+JSON.stringify(stats.province[p])+'"' +
-							'					   data-cat="'+Lingua(TXT_Province)+'"' +
+							'					   data-cat="'+TXT("Province")+'"' +
 							'					   data-elem="'+label+'"></td>';
 					HTML +=	'		</tr>';
 				}
@@ -494,7 +494,7 @@ var PAZIENTI_FILTRI = {
 						// socials
 						'<div class="rgStats">' +
 						'	<div class="etStats">' +
-						'		<i>'+htmlEntities(Lingua(TXT_Social))+':</i> ';
+						'		<i>'+htmlEntities(TXT("Social"))+':</i> ';
 				if(!PAZIENTI.pazientiFiltrati.length)HTML +=
 						'			<span><input type="checkbox"' +
 						'							   onClick="PAZIENTI.statsSelAll(this);"' +
@@ -526,7 +526,7 @@ var PAZIENTI_FILTRI = {
 							'			<td><input type="checkbox"' +
 							'					   onClick="PAZIENTI.statsFiltra();"' +
 							'					   value="'+JSON.stringify(stats.socials[p])+'"' +
-							'					   data-cat="'+Lingua(TXT_Social)+'"' +
+							'					   data-cat="'+TXT("Social")+'"' +
 							'					   data-elem="'+label+'"></td>';
 					HTML += '		</tr>';
 				}
@@ -592,7 +592,7 @@ var PAZIENTI_FILTRI = {
 				if(stats.tags && JSON.stringify(stats.tags)!='{}'){
 					HTML += '	<div class="rgStats">' +
 							'		<div class="etStats">' +
-							'			<i>'+htmlEntities(Lingua(TXT_Tags))+':</i> ';
+							'			<i>'+htmlEntities(TXT("Tags"))+':</i> ';
 					if(!PAZIENTI.pazientiFiltrati.length)HTML +=
 							'			<span><input type="checkbox"' +
 							'							   onClick="PAZIENTI.statsSelAll(this);"' +
@@ -623,7 +623,7 @@ var PAZIENTI_FILTRI = {
 						'						<td><input type="checkbox"' +
 						'								   onClick="PAZIENTI.statsFiltra();"' +
 						'								   value="'+JSON.stringify(stats.tags[p])+'"' +
-						'								   data-cat="'+Lingua(TXT_Tags)+'"' +
+						'								   data-cat="'+TXT("Tags")+'"' +
 						'								   data-elem="'+label+'"></td>';
 						HTML += 
 						'					</tr>';
@@ -638,7 +638,7 @@ var PAZIENTI_FILTRI = {
 				if(stats.medicine && JSON.stringify(stats.medicine)!='{}'){
 					HTML += '	<div class="rgStats">' +
 							'		<div class="etStats">' +
-							'			<i>'+htmlEntities(Lingua(TXT_Medicine))+':</i> ';
+							'			<i>'+htmlEntities(TXT("Medicine"))+':</i> ';
 					if(!PAZIENTI.pazientiFiltrati.length)HTML +=
 							'			<span><input type="checkbox"' +
 							'							   onClick="PAZIENTI.statsSelAll(this);"' +
@@ -669,7 +669,7 @@ var PAZIENTI_FILTRI = {
 						'						<td><input type="checkbox"' +
 						'								   onClick="PAZIENTI.statsFiltra();"' +
 						'								   value="'+JSON.stringify(stats.medicine[p])+'"' +
-						'								   data-cat="'+Lingua(TXT_Medicine)+'"' +
+						'								   data-cat="'+TXT("Medicine")+'"' +
 						'								   data-elem="'+label+'"></td>';
 						HTML += 
 						'					</tr>';
@@ -685,7 +685,7 @@ var PAZIENTI_FILTRI = {
 				if(stats.allergie && JSON.stringify(stats.allergie)!='{}'){
 					HTML += '	<div class="rgStats">' +
 							'		<div class="etStats">' +
-							'			<i>'+htmlEntities(Lingua(TXT_Allergie))+':</i> ';
+							'			<i>'+htmlEntities(TXT("Allergie"))+':</i> ';
 					if(!PAZIENTI.pazientiFiltrati.length)HTML +=
 							'			<span><input type="checkbox"' +
 							'							   onClick="PAZIENTI.statsSelAll(this);"' +
@@ -716,7 +716,7 @@ var PAZIENTI_FILTRI = {
 						'						<td><input type="checkbox"' +
 						'								   onClick="PAZIENTI.statsFiltra();"' +
 						'								   value="'+JSON.stringify(stats.allergie[p])+'"' +
-						'								   data-cat="'+Lingua(TXT_Allergie)+'"' +
+						'								   data-cat="'+TXT("Allergie")+'"' +
 						'								   data-elem="'+label+'"></td>';
 						HTML += 
 						'					</tr>';
@@ -731,7 +731,7 @@ var PAZIENTI_FILTRI = {
 				if(stats.patologie && JSON.stringify(stats.patologie)!='{}'){
 					HTML += '	<div class="rgStats">' +
 							'		<div class="etStats">' +
-							'			<i>'+htmlEntities(Lingua(TXT_Patologie))+':</i> ';
+							'			<i>'+htmlEntities(TXT("Patologie"))+':</i> ';
 					if(!PAZIENTI.pazientiFiltrati.length)HTML +=
 							'			<span><input type="checkbox"' +
 							'							   onClick="PAZIENTI.statsSelAll(this);"' +
@@ -762,7 +762,7 @@ var PAZIENTI_FILTRI = {
 						'						<td><input type="checkbox"' +
 						'								   onClick="PAZIENTI.statsFiltra();"' +
 						'								   value="'+JSON.stringify(stats.patologie[p])+'"' +
-						'								   data-cat="'+Lingua(TXT_Patologie)+'"' +
+						'								   data-cat="'+TXT("Patologie")+'"' +
 						'								   data-elem="'+label+'"></td>';
 						HTML += 
 						'					</tr>';
@@ -777,7 +777,7 @@ var PAZIENTI_FILTRI = {
 				if(stats.interventi && JSON.stringify(stats.interventi)!='{}'){
 					HTML += '	<div class="rgStats">' +
 							'		<div class="etStats">' +
-							'			<i>'+htmlEntities(Lingua(TXT_Interventi))+':</i> ';
+							'			<i>'+htmlEntities(TXT("Interventi"))+':</i> ';
 					if(!PAZIENTI.pazientiFiltrati.length)HTML +=
 							'			<span><input type="checkbox"' +
 							'							   onClick="PAZIENTI.statsSelAll(this);"' +
@@ -808,7 +808,7 @@ var PAZIENTI_FILTRI = {
 						'						<td><input type="checkbox"' +
 						'								   onClick="PAZIENTI.statsFiltra();"' +
 						'								   value="'+JSON.stringify(stats.interventi[p])+'"' +
-						'								   data-cat="'+Lingua(TXT_Interventi)+'"' +
+						'								   data-cat="'+TXT("Interventi")+'"' +
 						'								   data-elem="'+label+'"></td>';
 						HTML += 
 						'					</tr>';
@@ -823,7 +823,7 @@ var PAZIENTI_FILTRI = {
 				if(stats.sintomi && JSON.stringify(stats.sintomi)!='{}'){
 					HTML +=	'		<div class="rgStats">' +
 							'			<div class="etStats">' +
-							'				<i>'+htmlEntities(Lingua(TXT_Sintomi))+':</i> ';
+							'				<i>'+htmlEntities(TXT("Sintomi"))+':</i> ';
 					if(!PAZIENTI.pazientiFiltrati.length)HTML +=
 							'			<span><input type="checkbox"' +
 							'							   onClick="PAZIENTI.statsSelAll(this);"' +
@@ -854,7 +854,7 @@ var PAZIENTI_FILTRI = {
 						'						<td><input type="checkbox"' +
 						'								   onClick="PAZIENTI.statsFiltra();"' +
 						'								   value="'+JSON.stringify(stats.sintomi[p])+'"' +
-						'								   data-cat="'+Lingua(TXT_Sintomi)+'"' +
+						'								   data-cat="'+TXT("Sintomi")+'"' +
 						'								   data-elem="'+label+'"></td>';
 						HTML += 
 						'					</tr>';	
@@ -872,7 +872,7 @@ var PAZIENTI_FILTRI = {
 			'		 class="noPrint">' +
 			'		<div class="btn_invia"' +
 			'			 onClick="PAZIENTI.statsFiltra(true);">' +
-						htmlEntities(Lingua(TXT_ApplicaFiltri)) +
+						htmlEntities(TXT("ApplicaFiltri")) +
 			'		</div>' +
 			'	</div>' +
 			'	<div id="marketingTools_btns"' +
@@ -881,13 +881,13 @@ var PAZIENTI_FILTRI = {
 			'		<div style="text-align:right;">' +
 			'			<div class="btn_frdx"' +
 			'				 onClick="PAZIENTI.car_marketing();">' +
-							htmlEntities(Lingua(TXT_StrumentiMarketing)) +
+							htmlEntities(TXT("StrumentiMarketing")) +
 			'			</div>' +
 			'		</div>' +
 			'	</div>';
 			
 			var btnAdd = 	'<div class="p_paz_ref_menu" onClick="REF.open(\'archives.patients.filters\')">' +
-								Lingua(TXT_ReferenceGuide) +
+								TXT("ReferenceGuide") +
 							'</div>';
 						
 			SCHEDA.caricaScheda(	titolo,
@@ -995,46 +995,46 @@ var PAZIENTI_FILTRI = {
 	
 	// STRUMENTI di MARKETING
 	car_marketing: function(){ // index strumenti di marketing
-		CONFIRM.vis(	Lingua(TXT_UscireSenzaSalvare),
+		CONFIRM.vis(	TXT("UscireSenzaSalvare"),
 						!SCHEDA.verificaSchedaRet(),
 						arguments ).then(function(pass){if(pass){
 						var v = getParamNames(CONFIRM.args.callee.toString());
 						for(i in v)eval(getArguments(v,i));
 						
 			MENU.nasMM();
-			var titolo = Lingua(TXT_StrumentiMarketing);
+			var titolo = TXT("StrumentiMarketing");
 			var HTML =
 			'<div>' +
 			'	<h1>'+htmlEntities(titolo)+'</h1>' +
 			'	<div style="padding-bottom:20px;">' +
-					htmlEntities(Lingua(TXT_MarketingSpiegazione)) +
+					htmlEntities(TXT("MarketingSpiegazione")) +
 			'	</div>' +
 			'	<div id="marketingTools_btns"' +
 			'		 class="visSch">' +
 			'		<div>' +
 			'			<div class="btn_invia"' +
 			'				 onClick="PAZIENTI.dwnl_emails();">' +
-							htmlEntities(Lingua(TXT_InviaEmailPazienti)) +
+							htmlEntities(TXT("InviaEmailPazienti")) +
 			'			</div>' +
 			'		</div>' +
 			'		<div>' +
 			'			<div class="btn_invia btn_dis"' +
 			//'				 onClick="PAZIENTI.componiSms();"'+
 			'>' +
-							htmlEntities(Lingua(TXT_InviaSmsPazienti)) +
+							htmlEntities(TXT("InviaSmsPazienti")) +
 			'			</div>' +
 			'		</div>' +
 			'		<div style="text-align:right;">' +
 			'			<div class="btn_frdx"' +
 			'				 onClick="PAZIENTI.car_filtri();">' +
-							htmlEntities(Lingua(TXT_FiltroPazienti)) +
+							htmlEntities(TXT("FiltroPazienti")) +
 			'			</div>' +
 			'		</div>' +
 			'	</div>' +
 			'</div>';
 			
 			var btnAdd = 	'<div class="p_paz_ref_menu" onClick="REF.open(\'archives.patients.marketing\')">' +
-								Lingua(TXT_ReferenceGuide) +
+								TXT("ReferenceGuide") +
 							'</div>';
 						
 			SCHEDA.caricaScheda(	titolo,
@@ -1050,15 +1050,15 @@ var PAZIENTI_FILTRI = {
 	
 	dwnl_emails: function(){ // scarica le email dal server
 		if(DB.login.data.auths.indexOf("clients_full")==-1 || !LOGIN.logedin()){
-			ALERT(Lingua(TXT_MsgFunzioneSoloPay));
+			ALERT(TXT("MsgFunzioneSoloPay"));
 			return;
 		}
 		if(!LOGIN.logedin()){
-			ALERT(Lingua(TXT_ErroreUtenteNonConnesso), true);
+			ALERT(TXT("ErroreUtenteNonConnesso"), true);
 			return;
 		}
 		if(CONN.retNoConn()){
-			CONFIRM.vis(	Lingua(TXT_UscireSenzaSalvare),
+			CONFIRM.vis(	TXT("UscireSenzaSalvare"),
 							!SCHEDA.verificaSchedaRet(),
 							arguments ).then(function(pass){if(pass){
 							var v = getParamNames(CONFIRM.args.callee.toString());
@@ -1072,19 +1072,19 @@ var PAZIENTI_FILTRI = {
 	},
 	car_emails: function( txt ){ // carica elenco emails
 		if(txt == '404'){
-			ALERT(Lingua(TXT_ErroreGenerico));
+			ALERT(TXT("ErroreGenerico"));
 		}else{
 			var msgs = JSON.parse(txt);
 			var elencoMsg = msgs.messaggi;
 			PAZIENTI.coda = msgs.coda*1;
 			PAZIENTI.inviiMensili = msgs.inviiMensili*1;
 			elencoMsg.sort(sort_by("DataInvio",true,parseInt));
-			var titolo = Lingua(TXT_EmailPazienti);
+			var titolo = TXT("EmailPazienti");
 			var HTML = 
 			'<div>' +
 			'	<div class="btn_frsx menuMarketing"' +
 			'		 onClick="PAZIENTI.car_marketing();">' +
-					htmlEntities(Lingua(TXT_StrumentiMarketing)) +
+					htmlEntities(TXT("StrumentiMarketing")) +
 			'	</div>' +
 			'	<h1>' +
 					htmlEntities(titolo) +
@@ -1094,15 +1094,15 @@ var PAZIENTI_FILTRI = {
 			'		<div id="marketingElenchi_btns">' +
 			'			<div class="btn_invia"' +
 			'				 onClick="PAZIENTI.componiEmail();">' +
-							htmlEntities(Lingua(TXT_Componi).toUpperCase()) +
+							htmlEntities(TXT("Componi").toUpperCase()) +
 			'			</div>' +
 			'		</div>' +
 			'		<div id="marketingElenchi_head">' +
 			'			<div>' +
-							htmlEntities(Lingua(TXT_Oggetto)) +
+							htmlEntities(TXT("Oggetto")) +
 			'			</div>' +
 			'			<div>' +
-							htmlEntities(Lingua(TXT_DataInvio)) +
+							htmlEntities(TXT("DataInvio")) +
 			'			</div>' +
 			'		</div>' +
 			'		<div id="marketingElenchi_list">';
@@ -1127,14 +1127,14 @@ var PAZIENTI_FILTRI = {
 				}
 			}else{
 				HTML +=	'<div class="noResults">' +
-							htmlEntities(Lingua(TXT_NoRes)) +
+							htmlEntities(TXT("NoRes")) +
 						'</div>';
 			}
 			HTML +=	'</div>';
 			'	</div>';
 			
 			var btnAdd = 	'<div class="p_paz_ref_menu" onClick="REF.open(\'archives.services.marketing\')">' +
-								Lingua(TXT_ReferenceGuide) +
+								TXT("ReferenceGuide") +
 							'</div>';
 						
 			SCHEDA.caricaScheda(	titolo,
@@ -1172,12 +1172,12 @@ var PAZIENTI_FILTRI = {
 			PAZIENTI.vis_email(JSON.stringify(msg));
 			return;
 		}
-		var titolo = Lingua(TXT_ComponiEmailPazienti);
+		var titolo = TXT("ComponiEmailPazienti");
 		var HTML =
 		'	<div id="marketingEmail_cnt">' +
 		'		<div class="btn_frsx menuMarketing"' +
 		'			 onClick="PAZIENTI.dwnl_emails();">' +
-					htmlEntities(Lingua(TXT_EmailPazienti)) +
+					htmlEntities(TXT("EmailPazienti")) +
 		'		</div>' +
 		'		<h1 id="marketingEmail_tit">' +
 					htmlEntities(titolo) +
@@ -1190,7 +1190,7 @@ var PAZIENTI_FILTRI = {
 		'				   onSubmit="return false;">' +
 				H.r({	t: "r",
 						name: "OggettoMarketing",
-						label: Lingua(TXT_Oggetto),
+						label: TXT("Oggetto"),
 						classCampo: 'styled',
 						value: msg.Oggetto }) +
 				H.r({	t: "t", 
@@ -1200,11 +1200,11 @@ var PAZIENTI_FILTRI = {
 		'				<div id="btnInvioEmail">' +
 		'					<div class="submitBtn"' +
 		'						 onClick="PAZIENTI.anteprimaEmail();">' +
-								htmlEntities(Lingua(TXT_AnteprimaEmail)) +
+								htmlEntities(TXT("AnteprimaEmail")) +
 		'					</div>' +
 		'					<div class="submitBtn"' +
 		'						 onClick="PAZIENTI.salvaEmail();">' +
-								htmlEntities(Lingua(TXT_Salva)) +
+								htmlEntities(TXT("Salva")) +
 		'					</div>' +
 		'				</div>' +
 		'				<input type="hidden" name="idMessaggio" id="idMessaggio" value="'+msg.idMessaggio+'">' +
@@ -1216,11 +1216,11 @@ var PAZIENTI_FILTRI = {
 		'</div>';
 		
 		var btnAdd =	'<div class="p_paz_ref_menu" onClick="REF.open(\'archives.patients.marketing\')">' +
-							Lingua(TXT_ReferenceGuide) +
+							TXT("ReferenceGuide") +
 						'</div>';
 		if(msg.idMessaggio) btnAdd += 	'<div class="p_paz_el_menu"' +
 									  	' 	onClick="PAZIENTI.eliminaEmail('+msg.idMessaggio+');">' +
-											htmlEntities(Lingua(TXT_Elimina)) +
+											htmlEntities(TXT("Elimina")) +
 										'</div>';
 										
 		SCHEDA.caricaScheda(	titolo,
@@ -1236,7 +1236,7 @@ var PAZIENTI_FILTRI = {
 	},
 	anteprimaEmail: function(){ // visualizza l'anteprima della mail
 		if(!document.formMod.OggettoMarketing.value.trim() || !document.formMod.MessaggioMarketing.value.trim()){
-			ALERT(Lingua(TXT_MsgComponiEmail));
+			ALERT(TXT("MsgComponiEmail"));
 			return;
 		}
 		var HTML = '';
@@ -1244,7 +1244,7 @@ var PAZIENTI_FILTRI = {
 		var nPaz = PAZIENTI.get_nEmail(); // numero delle mail nei pazientifiltrati
 		HTML += '<div>' +
 				'	<div id="anteprimaOggetto">' +
-						'<i>'+htmlEntities(Lingua(TXT_Oggetto))+'</i>: <b>'+htmlEntities(document.formMod.OggettoMarketing.value)+'</b>' +
+						'<i>'+htmlEntities(TXT("Oggetto"))+'</i>: <b>'+htmlEntities(document.formMod.OggettoMarketing.value)+'</b>' +
 				'	</div>' +
 				'	<div id="anteprimaCorpo"' +
 				'		 class="divEspansa">' +
@@ -1257,14 +1257,14 @@ var PAZIENTI_FILTRI = {
 				'		</div>' +
 				'	</div>' +
 				'	<div id="marketingEmail_dests">' +
-				'		<i class="vis">'+htmlEntities(Lingua(TXT_Destinatari))+'</i>: ' +
+				'		<i class="vis">'+htmlEntities(TXT("Destinatari"))+'</i>: ' +
 				'		<select id="tipoLista"' +
 				'				onChange="PAZIENTI.calcCoda();PAZIENTI.verTotDest();">' +
 				'			<option value="tutti">' +
-								htmlEntities(Lingua(TXT_DestinatariTutti))+' ('+nPaz+')' +
+								htmlEntities(TXT("DestinatariTutti"))+' ('+nPaz+')' +
 							'</option>' +
 				'			<option value="filtrati"'+(nEmail ? '' : ' disabled')+'>'+
-								htmlEntities(Lingua(TXT_DestinatariFiltrati))+' ('+nEmail+')' +
+								htmlEntities(TXT("DestinatariFiltrati"))+' ('+nEmail+')' +
 							'</option>' +
 				'		</select>' +
 				'	</div>' +
@@ -1273,16 +1273,16 @@ var PAZIENTI_FILTRI = {
 				'	<div id="anteprimaBtns">' +
 				'		<div class="submitBtn annullaBtn"' +
 				'			 onClick="PAZIENTI.tornaEmail();">' +
-							htmlEntities(Lingua(TXT_Annulla)).toUpperCase() +
+							htmlEntities(TXT("Annulla")).toUpperCase() +
 				'		</div>' +
 				'		<div class="submitBtn"' +
 				'			 id="anteprimaInvia"' +
 				'			 onClick="PAZIENTI.inviaEmail();">' +
-							htmlEntities(Lingua(TXT_Invia)).toUpperCase() +
+							htmlEntities(TXT("Invia")).toUpperCase() +
 				'		</div>' +
 				'		<div class="submitBtn"' +
 				'			 onClick="PAZIENTI.salvaEmail();">' +
-							htmlEntities(Lingua(TXT_Salva)).toUpperCase() +
+							htmlEntities(TXT("Salva")).toUpperCase() +
 				'		</div>' +
 				'	</div>' +
 				'</div>';
@@ -1290,7 +1290,7 @@ var PAZIENTI_FILTRI = {
 		document.getElementById("marketingEmail_anteprima").classList.add("visSch");
 		document.getElementById("marketingEmail_componi").classList.remove("visSch");
 		document.getElementById("scheda").classList.remove("schForm");
-		document.getElementById("marketingEmail_tit").innerHTML = htmlEntities(Lingua(TXT_AnteprimaEmailPazienti));
+		document.getElementById("marketingEmail_tit").innerHTML = htmlEntities(TXT("AnteprimaEmailPazienti"));
 		PAZIENTI.calcCoda();
 		PAZIENTI.verTotDest();
 	},
@@ -1307,17 +1307,17 @@ var PAZIENTI_FILTRI = {
 		var txtAttenzione = '';
 		if(timeCoda > (3600 * 24)){
 			// attesa magggiore di 1 giorno
-			txtAttenzione = Lingua(TXT_AlertCodaGiorno);
+			txtAttenzione = TXT("AlertCodaGiorno");
 		}else if(timeCoda > 7200){
 			// attesa maggiore di x ore
 			var x = parseInt(timeCoda/3600);
-			txtAttenzione = Lingua(TXT_AlertCodaOre).replace(/\[n\]/g,x);
+			txtAttenzione = TXT("AlertCodaOre").replace(/\[n\]/g,x);
 		}else if(timeCoda > 3600){
 			// attesa maggiore di 1 ora
-			txtAttenzione = Lingua(TXT_AlertCodaOra);
+			txtAttenzione = TXT("AlertCodaOra");
 		}else if(timeCoda > 1200){
 			// attesa maggiore di 20 minuti
-			txtAttenzione = Lingua(TXT_AlertCoda20min);
+			txtAttenzione = TXT("AlertCoda20min");
 		}
 		if(txtAttenzione)document.getElementById("alertCoda").style.display = 'block';
 		else document.getElementById("alertCoda").style.display = 'none';
@@ -1333,11 +1333,11 @@ var PAZIENTI_FILTRI = {
 		var disattivaInvio = false;
 		if(n > PAZIENTI.maxInvii){
 			disattivaInvio = true;
-			txtAttenzione = Lingua(TXT_AlertMaxMsgVolta).replace(/\[n\]/g,PAZIENTI.maxInvii);
+			txtAttenzione = TXT("AlertMaxMsgVolta").replace(/\[n\]/g,PAZIENTI.maxInvii);
 		}
 		if(PAZIENTI.inviiMensili > PAZIENTI.maxInviiMese){
 			disattivaInvio = true;
-			txtAttenzione = Lingua(TXT_AlertMaxMsgMese).replace(/\[n\]/g,PAZIENTI.maxInviiMese);
+			txtAttenzione = TXT("AlertMaxMsgMese").replace(/\[n\]/g,PAZIENTI.maxInviiMese);
 		}
 		if(disattivaInvio)document.getElementById("anteprimaInvia").classList.add('btn_dis');
 		else document.getElementById("anteprimaInvia").classList.remove('btn_dis');
@@ -1347,12 +1347,12 @@ var PAZIENTI_FILTRI = {
 	},
 	vis_email: function( msg ){ // carica elenco emails
 		var msg = JSON.parse(msg);
-		var titolo = Lingua(TXT_EmailPazienti);
+		var titolo = TXT("EmailPazienti");
 		var HTML = 
 		'<div>' +
 		'	<div class="btn_frsx menuMarketing"' +
 		'		 onClick="PAZIENTI.dwnl_emails();">' +
-				htmlEntities(Lingua(TXT_EmailPazienti)) +
+				htmlEntities(TXT("EmailPazienti")) +
 		'	</div>' +
 		'	<h1>' +
 				htmlEntities(msg.Oggetto) +
@@ -1369,7 +1369,7 @@ var PAZIENTI_FILTRI = {
 		'	</div>' +
 		'	<div id="destinatari"' +
 		'		 class="divEspansa">' +
-		'		<i>'+htmlEntities(Lingua(TXT_DataInvio))+':</i> '+getFullDataTS(msg.DataInvio*1)+" ("+getOraTS(msg.DataInvio*1)+")" +
+		'		<i>'+htmlEntities(TXT("DataInvio"))+':</i> '+getFullDataTS(msg.DataInvio*1)+" ("+getOraTS(msg.DataInvio*1)+")" +
 		'		</div>' +
 		'	</div>' +
 		
@@ -1382,7 +1382,7 @@ var PAZIENTI_FILTRI = {
 		'			onClick="parentElement.classList.toggle(\'sezioneChiusa\');">' +
 		'			<img class="icoLabel"' +
 		'			     src="img/ico_communityN.png">' +
-					Lingua(TXT_Destinatari)+' ('+msg.lista.length+')' +
+					TXT("Destinatari")+' ('+msg.lista.length+')' +
 		'		</em>' +
 		'		<div id="contDests">';
 		for(d in msg.lista){
@@ -1394,12 +1394,12 @@ var PAZIENTI_FILTRI = {
 		'	<div class="p_paz_el"' +
 		'		 style="margin-top:10px;"' +
 		'		 onClick="PAZIENTI.eliminaEmail('+msg.idMessaggio+');">' +
-				htmlEntities(Lingua(TXT_Elimina)) +
+				htmlEntities(TXT("Elimina")) +
 		'	</div>' +
 		'</div>';
 		
 		var btnAdd = 	'<div class="p_paz_ref_menu" onClick="REF.open(\'archives.patients.marketing\')">' +
-							Lingua(TXT_ReferenceGuide) +
+							TXT("ReferenceGuide") +
 						'</div>';
 		
 		SCHEDA.caricaScheda(	titolo,
@@ -1431,16 +1431,16 @@ var PAZIENTI_FILTRI = {
 		document.getElementById("marketingEmail_anteprima").classList.remove("visSch");
 		document.getElementById("marketingEmail_componi").classList.add("visSch");
 		document.getElementById("scheda").classList.add("schForm");
-		document.getElementById("marketingEmail_tit").innerHTML = htmlEntities(Lingua(TXT_ComponiEmailPazienti));
+		document.getElementById("marketingEmail_tit").innerHTML = htmlEntities(TXT("ComponiEmailPazienti"));
 	},
 	salvaEmail: function(){ // invia la mail
 		if(CONN.retNoConn()){
 			if(!document.formMod.OggettoMarketing.value.trim() || !document.formMod.MessaggioMarketing.value.trim()){
-				ALERT(Lingua(TXT_MsgComponiEmail));
+				ALERT(TXT("MsgComponiEmail"));
 				return;
 			}
 			stopAnimate(true);
-			visLoader(Lingua(TXT_SalvataggioInCorso),'loadingLight');
+			visLoader(TXT("SalvataggioInCorso"),'loadingLight');
 			var JSNPOST = {
 				idMessaggio: document.formMod.idMessaggio.value,
 				Oggetto: document.formMod.OggettoMarketing.value,
@@ -1457,16 +1457,16 @@ var PAZIENTI_FILTRI = {
 								SCHEDA.formModificato = false;
 								endChangeDetection();
 								if(txt.substr(0,3)!='404')PAZIENTI.dwnl_emails();
-								else ALERT(Lingua(TXT_EmailErroreS));
+								else ALERT(TXT("EmailErroreS"));
 							} );
 		}
 	},
 	inviaEmail: function(){ // invia la mail
 		if(document.getElementById("anteprimaInvia").classList.contains('btn_dis'))return;
 		if(CONN.retNoConn()){
-			CONFIRM.vis( Lingua(TXT_ChiediInvioEmail) ).then(function(pass){if(pass){
+			CONFIRM.vis( TXT("ChiediInvioEmail") ).then(function(pass){if(pass){
 				stopAnimate(true);
-				visLoader(Lingua(TXT_SalvataggioInCorso),'loadingLight');
+				visLoader(TXT("SalvataggioInCorso"),'loadingLight');
 				var lista = [];
 				if(document.getElementById("tipoLista").value=='filtrati'){
 					for(e in PAZIENTI.pazientiFiltrati){
@@ -1506,18 +1506,18 @@ var PAZIENTI_FILTRI = {
 									SCHEDA.formModificato = false;
 									endChangeDetection();
 									if(txt.substr(0,3)!='404'){
-										ALERT(Lingua(TXT_EmailInviata));
+										ALERT(TXT("EmailInviata"));
 										PAZIENTI.dwnl_emails();
-									}else ALERT(Lingua(TXT_EmailErrore));
+									}else ALERT(TXT("EmailErrore"));
 								} );
 			}});
 		}
 	},
 	eliminaEmail: function( idMessaggio ){ // invia la mail
 		if(CONN.retNoConn()){
-			CONFIRM.vis( Lingua(TXT_ChiediEliminaEmail) ).then(function(pass){if(pass){
+			CONFIRM.vis( TXT("ChiediEliminaEmail") ).then(function(pass){if(pass){
 				stopAnimate(true);
-				visLoader(Lingua(TXT_SalvataggioInCorso),'loadingLight');
+				visLoader(TXT("SalvataggioInCorso"),'loadingLight');
 				//applicaLoading(document.getElementById("scheda_testo"))
 				CONN.caricaUrl(	"marketing_email_elimina.php",
 								"b64=1&idMessaggio="+idMessaggio,
@@ -1529,8 +1529,8 @@ var PAZIENTI_FILTRI = {
 									endChangeDetection();
 									if(txt.substr(0,3)!='404'){
 										PAZIENTI.dwnl_emails();
-										//ALERT(Lingua(TXT_EmailEliminata));
-									}else ALERT(Lingua(TXT_EmailErrore));
+										//ALERT(TXT("EmailEliminata"));
+									}else ALERT(TXT("EmailErrore"));
 								} );
 			}});
 		}

@@ -20,7 +20,7 @@ var FEEDBACK = {
 									if(txt.substr(0,3)!='404'){
 										var ris=JSON.parse(txt);
 										if(ris.Conferma=='1'){
-											ALERT(Lingua(TXT_FeedbackInviato));
+											ALERT(TXT("FeedbackInviato"));
 											document.feedbackForm.Nominativo.value = "";
 											document.feedbackForm.Email.value = "";
 											document.feedbackForm.Oggetto.value = "";
@@ -28,7 +28,7 @@ var FEEDBACK = {
 											MENU.chiudiMenu();
 										}else err=true;
 									}else err=true;
-									if(err)ALERT(Lingua(TXT_FeedbackErrore));
+									if(err)ALERT(TXT("FeedbackErrore"));
 								} );
 				
 			}

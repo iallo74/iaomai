@@ -11,12 +11,12 @@ var SERVIZI = {
 				'	<input id="serv_ricerca"' +
 				'		   onKeyUp="SERVIZI.filtra();"' +
 				'		   class="okPlaceHolder"' +
-				'		   placeholder="'+htmlEntities(Lingua(TXT_CercaCliente))+'"'+H.noAutoGen+'>' +
+				'		   placeholder="'+htmlEntities(TXT("CercaCliente"))+'"'+H.noAutoGen+'>' +
 				'	<i class="elMenu"' +
 				'	   onclick="SERVIZI.car_servizio();"' +
 				'	   id="addServizio"' +
-				'	   title="'+Lingua(TXT_AggiungiServizio)+'">' +
-				/*'		<span>'+Lingua(TXT_AggiungiServizio)+'</span>' +
+				'	   title="'+TXT("AggiungiServizio")+'">' +
+				/*'		<span>'+TXT("AggiungiServizio")+'</span>' +
 				'		<img src="img/piu.png" align="absmiddle">' +*/
 				'	</i>' +
 				'</p>' +
@@ -61,7 +61,7 @@ var SERVIZI = {
 				'	<span class="noResults"' +
 				'		  style="display:inline-block;' +
 				'				 vertical-align: top;">' +
-						Lingua(TXT_NoResServizio) +
+						TXT("NoResServizio") +
 				'	</span>';
 		}
 		HTML += '</div>';
@@ -96,13 +96,13 @@ var SERVIZI = {
 					if(DB.servizi.data[c].Cancellato*1==0)tServ++;
 				}
 				if(tServ >= maxServizi){
-					ALERT(Lingua(eval("TXT_MsgMaxServizi"+maxServizi)));
+					ALERT(TXT("MsgMaxServizi"+maxServizi));
 					return;
 				}
 			}
 		}
 		// --------------------------
-		CONFIRM.vis(	Lingua(TXT_UscireSenzaSalvare),
+		CONFIRM.vis(	TXT("UscireSenzaSalvare"),
 						!SCHEDA.verificaSchedaRet(),
 						arguments ).then(function(pass){if(pass){
 						var v = getParamNames(CONFIRM.args.callee.toString());
@@ -145,14 +145,14 @@ var SERVIZI = {
 							name: "DescrizioneServizio",
 							value: DescrizioneServizio,
 							noLabel: true,
-							label: Lingua(TXT_DescrizioneServizio),
+							label: TXT("DescrizioneServizio"),
 							classCampo: 'okPlaceHolder' });
 							
 			HTML += H.r({	t: "r",	
 								name: "CostoServizio",	
 								value: (CostoServizio) ? ArrotondaEuro(CostoServizio) : '',
 								ver: '1|0|num',
-								label: Lingua(TXT_CostoServizio)+' €',
+								label: TXT("CostoServizio")+' €',
 								keyupCampo: "H.keyPrezzo(this);",
 								classCampo: 'CostoTrattDx prezzi',
 								classRiga: "labelSx",
@@ -162,7 +162,7 @@ var SERVIZI = {
 								name: "NumeroSedute",	
 								value: NumeroSedute,
 								ver: '1|2|int',
-								label: Lingua(TXT_NumeroSedute),
+								label: TXT("NumeroSedute"),
 								keyupCampo: "H.keyIntero(this);",
 								maxChars: 2,
 								classCampo: 'CostoTrattDx prezzi numSedute',
@@ -173,10 +173,10 @@ var SERVIZI = {
 			var azElimina = Q_idServ>-1 ? "SERVIZI.el_servizio("+Q_idServ+");":"";
 			var btnAdd = '';
 			if(azElimina){
-				btnAdd += '<div class="p_paz_el_menu" onClick="'+azElimina+'">'+Lingua(TXT_EliminaScheda)+'</div>';
+				btnAdd += '<div class="p_paz_el_menu" onClick="'+azElimina+'">'+TXT("EliminaScheda")+'</div>';
 			}
 			btnAdd += 	'<div class="p_paz_ref_menu" onClick="REF.open(\'archives.services.overview\')">' +
-							Lingua(TXT_ReferenceGuide) +
+							TXT("ReferenceGuide") +
 						'</div>';
 								
 			HTML += SCHEDA.pulsantiForm(
@@ -187,10 +187,10 @@ var SERVIZI = {
 			HTML += '</form>';
 			
 			
-			var titoloDef=TXT_ModificaServizio;
-			if(Q_idServ==-1)titoloDef=TXT_CreaServizio;
+			var titoloDef=TXT("ModificaServizio");
+			if(Q_idServ==-1)titoloDef=TXT("CreaServizio");
 			
-			SCHEDA.caricaScheda(	stripslashes(Lingua(titoloDef)),
+			SCHEDA.caricaScheda(	stripslashes(titoloDef),
 									HTML,
 									'SERVIZI.chiudiServizio('+idServizio+');',
 									'scheda_servizio',
@@ -219,7 +219,7 @@ var SERVIZI = {
 	},
 	mod_servizio: function( Q_idServ ){ //salva il servizio
 		if(document.formMod.NumeroSedute.value*1==0 || document.formMod.NumeroSedute.value*1>20){
-			ALERT(stripslashes(Lingua(TXT_ErroreNumeroSedute)))
+			ALERT(stripslashes(TXT("ErroreNumeroSedute")))
 			return;
 		}
 		if(!verifica_form(document.getElementById("formMod")))return;
@@ -264,7 +264,7 @@ var SERVIZI = {
 		return false;
 	},
 	el_servizio: function( Q_idServ ){ // elimina la scheda del serizio
-		CONFIRM.vis(	Lingua(TXT_ChiediEliminaServizio),
+		CONFIRM.vis(	TXT("ChiediEliminaServizio"),
 						false,
 						arguments ).then(function(pass){if(pass){
 						var v = getParamNames(CONFIRM.args.callee.toString());
@@ -288,7 +288,7 @@ var SERVIZI = {
 	},
 	
 	sel_servizi: function(){
-		CONFIRM.vis(	Lingua(TXT_UscireSenzaSalvare),
+		CONFIRM.vis(	TXT("UscireSenzaSalvare"),
 						!SCHEDA.verificaSchedaRet(),
 						arguments ).then(function(pass){if(pass){
 						var v = getParamNames(CONFIRM.args.callee.toString());
@@ -296,7 +296,7 @@ var SERVIZI = {
 		
 			var HTML = '';
 			HTML += '<div id="serv_spiegazione">' +
-						htmlEntities(Lingua(TXT_AddServiziSpiegazione1)+" "+DB.pazienti.data[PAZIENTI.idCL].Nome+" "+DB.pazienti.data[PAZIENTI.idCL].Cognome) +
+						htmlEntities(TXT("AddServiziSpiegazione1")+" "+DB.pazienti.data[PAZIENTI.idCL].Nome+" "+DB.pazienti.data[PAZIENTI.idCL].Cognome) +
 					'</div>' +
 					'<div id="app_elenco"' +
 					'	  class="serv_elenco">';
@@ -317,12 +317,12 @@ var SERVIZI = {
 					'		  style="display:inline-block;' +
 					'				 vertical-align: top;' +
 					'				 padding-left: 30px;">' +
-							Lingua(TXT_NoResServizio) +
+							TXT("NoResServizio") +
 							'<br><br>' +
 							'<span style="cursor:pointer;"' +
 							'	   onClick="SCHEDA.selElenco(\'servizi\');SERVIZI.car_servizio();">' +
 							'<img src="img/frDxB.png" style="width:30px;vertical-align:middle;">' +
-								Lingua(TXT_AggiungiServizio) +
+								TXT("AggiungiServizio") +
 							'</span>' +
 					'	</span>';
 			}
@@ -330,7 +330,7 @@ var SERVIZI = {
 			
 			SCHEDA.formModificato = false;
 			endChangeDetection();
-			SCHEDA.caricaScheda(	stripslashes(Lingua(TXT_ScegliServizio)),
+			SCHEDA.caricaScheda(	stripslashes(TXT("ScegliServizio")),
 									HTML,
 									'',
 									'scheda_servizio',
@@ -341,11 +341,11 @@ var SERVIZI = {
 	sel_cartella: function( p ){
 		var HTML = '';
 		HTML += '<div id="serv_spiegazione">' +
-					htmlEntities(Lingua(TXT_AddServiziSpiegazione2)) +
+					htmlEntities(TXT("AddServiziSpiegazione2")) +
 				'</div>' +
 				'<div id="serv_torna"' +
 				'	  onClick="SERVIZI.sel_servizi();">' +
-					htmlEntities(Lingua(TXT_TornaServizi)) +
+					htmlEntities(TXT("TornaServizi")) +
 				'</div>' +
 				'<div id="serv_titolo">' +
 					htmlEntities(DB.servizi.data[p].NomeServizio) +
@@ -355,8 +355,8 @@ var SERVIZI = {
 					htmlEntities(DB.servizi.data[p].DescrizioneServizio) +
 				'</div>';
 		HTML += '<div id="serv_sedute">';
-		if(DB.servizi.data[p].NumeroSedute==1)HTML += htmlEntities(Lingua(TXT_SedutaSingola));
-		else HTML += DB.servizi.data[p].NumeroSedute+' '+htmlEntities(Lingua(TXT_sedute));
+		if(DB.servizi.data[p].NumeroSedute==1)HTML += htmlEntities(TXT("SedutaSingola"));
+		else HTML += DB.servizi.data[p].NumeroSedute+' '+htmlEntities(TXT("sedute"));
 		HTML += '</div>' +
 				'<div id="app_elenco"' +
 				'	  class="serv_elenco">';
@@ -367,22 +367,22 @@ var SERVIZI = {
 							htmlEntities(DB.pazienti.data[PAZIENTI.idCL].trattamenti[t].LabelCiclo) +
 						'<span class="btn_invia"' +
 						'	   onClick="SERVIZI.aggiungi('+p+','+t+');">' +
-					htmlEntities(Lingua(TXT_Aggiungi_a))+"..." +
+					htmlEntities(TXT("Aggiungi_a"))+"..." +
 				'</span></div>';
 			}
 		}
 		HTML += '	<div class="app_cart">' +
-						htmlEntities(Lingua(TXT_TrattamentiSingoli)) +
+						htmlEntities(TXT("TrattamentiSingoli")) +
 				'		<span class="btn_invia"' +
 				'		  	  onClick="SERVIZI.aggiungi('+p+',-'+((DB.servizi.data[p].NumeroSedute>1)?'1':'2')+');">' +
-							htmlEntities(Lingua(TXT_Aggiungi_a))+"..." +
+							htmlEntities(TXT("Aggiungi_a"))+"..." +
 				'		</span>' +
 				'	</div>' +
 				'</div>';
 		
 		
 		
-		SCHEDA.caricaScheda(	stripslashes(Lingua(TXT_ScegliServizio)),
+		SCHEDA.caricaScheda(	stripslashes(TXT("ScegliServizio")),
 								HTML,
 								'',
 								'scheda_servizio',
@@ -390,8 +390,8 @@ var SERVIZI = {
 								true );
 	},
 	aggiungi: function( p, t ){
-		var ConfermaAddServizio = Lingua(TXT_ConfermaAddServizio1);
-		if(DB.servizi.data[p].NumeroSedute>1)ConfermaAddServizio = Lingua(TXT_ConfermaAddServizio2).replace("[n]",DB.servizi.data[p].NumeroSedute);
+		var ConfermaAddServizio = TXT("ConfermaAddServizio1");
+		if(DB.servizi.data[p].NumeroSedute>1)ConfermaAddServizio = TXT("ConfermaAddServizio2").replace("[n]",DB.servizi.data[p].NumeroSedute);
 		CONFIRM.vis(	ConfermaAddServizio,
 						false,
 						arguments ).then(function(pass){if(pass){
@@ -401,7 +401,7 @@ var SERVIZI = {
 			var NomeServizio = DB.servizi.data[p].NomeServizio;
 			var CostoServizio = DB.servizi.data[p].CostoServizio;
 			var DataModifica = DB.pazienti.lastSync+1;
-			var NomeSeduta = Lingua(TXT_Seduta);
+			var NomeSeduta = TXT("Seduta");
 			
 			if(t<0){ // se creo una cartella nuova
 				
@@ -410,13 +410,13 @@ var SERVIZI = {
 					for(t in DB.pazienti.data[PAZIENTI.idCL].trattamenti){
 						if(DB.pazienti.data[PAZIENTI.idCL].trattamenti[t].TipoTrattamento == 'A'){
 							if(DB.pazienti.data[PAZIENTI.idCL].trattamenti[t].LabelCiclo == NomeServizio){
-								NomeServizio = Lingua(TXT_CopiaDi)+' '+NomeServizio;
+								NomeServizio = TXT("CopiaDi")+' '+NomeServizio;
 							}
 						}
 					}
 				
 					JSNPUSH={	"idTrattamento": 0,
-								"TitoloTrattamento": Lingua(TXT_Anamnesi),
+								"TitoloTrattamento": TXT("Anamnesi"),
 								"TimeTrattamento": new Date(oggi/1000),
 								"oraInizio": -1,
 								"oraFine": -1,

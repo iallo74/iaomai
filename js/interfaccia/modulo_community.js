@@ -28,7 +28,7 @@ var COMMUNITY = {
 		console.log(txt)
 		elenco=JSON.parse(txt);
 		if(elenco.err=='1'){
-			ALERT(Lingua(TXT_ErrorePseudonimo));
+			ALERT(TXT("ErrorePseudonimo"));
 		}else{
 			if(elenco.okRegComm=='1')LOGIN.setLS("CondizioniCommunity","1");
 			if(elenco.PseudonimoN!='')LOGIN.setLS("Pseudonimo",elenco.PseudonimoN);

@@ -33,13 +33,13 @@ var MODULO_MERIDIANI = { // extend SET
 									'	  id="p'+m+'"' +
 									'     class="p_'+MERIDIANI[m].elemento+addClass+addLock+'">';
 			if(m!='EX')contElencoMeridiani +=
-									'	<span title="'+htmlEntities(Lingua(TXT_AccendiMeridiano))+'"' +
+									'	<span title="'+htmlEntities(TXT("AccendiMeridiano"))+'"' +
 									'		  onMouseOver="SET.onElencoPt=true;this.parentElement.classList.add(\'overLight\');"' +
 									'		  onMouseOut="SET.onElencoPt=false;this.parentElement.classList.remove(\'overLight\');"' +
 									'		  onClick="SET.accendiMeridiano(\''+m+'\',true);"></span>';
 			contElencoMeridiani +=	'	<b>'+siglaPunto+'</b>' +
 										DB.set.meridiani[m].NomeMeridiano +
-										' <strong title="'+htmlEntities(Lingua(TXT_ElencoPunti))+'"></strong>' +
+										' <strong title="'+htmlEntities(TXT("ElencoPunti"))+'"></strong>' +
 									'</div>' +
 									'<span id="e_'+m+'"' +
 									'	   class="elencoPunti '+addClassEl+'">'+elencoTsubo+'</span>';

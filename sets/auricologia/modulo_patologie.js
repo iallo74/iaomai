@@ -7,7 +7,7 @@ var MODULO_PATOLOGIE = { // extend SET
 						'	<input id="pat_ricerca"' +
 						'		   onKeyUp="SET.filtraPatologie();"' +
 						'		   class="okPlaceHolder"' +
-						'		   placeholder="'+htmlEntities(Lingua(TXT_CercaPatologia))+'"'+H.noAutoGen+'>' +
+						'		   placeholder="'+htmlEntities(TXT("CercaPatologia"))+'"'+H.noAutoGen+'>' +
 						'</div>' +
 						'<div class="lista listaPatologie">';
 		for(p in DB.set.patologie){
@@ -29,7 +29,7 @@ var MODULO_PATOLOGIE = { // extend SET
 	apriPatologia: function( n, btn ){
 		// verifico le autorizzazioni
 		if(SET.PATOLOGIE_free.indexOf(n*1)==-1 && (DB.login.data.auths.indexOf(globals.set.cartella)==-1 || !LOGIN.logedin())){
-			ALERT(Lingua(TXT_MsgContSoloPay));
+			ALERT(TXT("MsgContSoloPay"));
 			return;
 		}
 		// --------------------------
@@ -50,7 +50,7 @@ var MODULO_PATOLOGIE = { // extend SET
 			SCHEDA.verificaSchedaRet() )ritorno = "document.getElementById('scheda').classList.remove('scheda_patologia')";
 		
 		var btnAdd = 	'<div class="p_paz_ref_menu" onClick="REF.open(\'sets.auricologia.pathologies\')">' +
-							Lingua(TXT_ReferenceGuide) +
+							TXT("ReferenceGuide") +
 						'</div>';
 						
 		SCHEDA.caricaScheda(	titolo,

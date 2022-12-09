@@ -14,12 +14,12 @@ var FORNITORI = {
 				'	<input id="forn_ricerca"' +
 				'		   onKeyUp="FORNITORI.filtra();"' +
 				'		   class="okPlaceHolder"' +
-				'		   placeholder="'+htmlEntities(Lingua(TXT_CercaFornitore))+'"'+H.noAutoGen+'>' +
+				'		   placeholder="'+htmlEntities(TXT("CercaFornitore"))+'"'+H.noAutoGen+'>' +
 				'	<i class="elMenu"' +
 				'	   id="addFornitore"' +
-				'	   title="'+Lingua(TXT_AggiungiFornitore)+'"' +
+				'	   title="'+TXT("AggiungiFornitore")+'"' +
 				'	   onclick="FORNITORI.car_fornitore();">' +
-				/*'		<span>'+Lingua(TXT_AggiungiFornitore)+'</span>' +*/
+				/*'		<span>'+TXT("AggiungiFornitore")+'</span>' +*/
 				'	</i>' +
 				'</p>' +
 				'<div class="lista listaFornitori">';
@@ -63,7 +63,7 @@ var FORNITORI = {
 				'	<span class="noResults"' +
 				'		  style="display:inline-block;' +
 				'				 vertical-align: top;">' +
-						Lingua(TXT_NoResFornitore) +
+						TXT("NoResFornitore") +
 				'	</span>';
 		}
 		HTML += '</div>';
@@ -100,13 +100,13 @@ var FORNITORI = {
 					if(DB.fornitori.data[c].Cancellato*1==0)tForn++;
 				}
 				if(tForn >= maxFornitori){
-					ALERT(Lingua(eval("TXT_MsgMaxFornitori"+maxFornitori)));
+					ALERT(TXT("MsgMaxFornitori"+maxFornitori));
 					return;
 				}
 			}
 		}
 		// --------------------------
-		CONFIRM.vis(	Lingua(TXT_UscireSenzaSalvare),
+		CONFIRM.vis(	TXT("UscireSenzaSalvare"),
 						!SCHEDA.verificaSchedaRet(),
 						arguments ).then(function(pass){if(pass){
 						var v = getParamNames(CONFIRM.args.callee.toString());
@@ -165,7 +165,7 @@ var FORNITORI = {
 							name: "RagioneSociale",
 							value: RagioneSociale,
 							noLabel: true,
-							label: Lingua(TXT_RagioneSociale),
+							label: TXT("RagioneSociale"),
 							classCampo: "okPlaceHolder",
 							ver: "1|0" });
 					
@@ -200,13 +200,13 @@ var FORNITORI = {
 							name: "Stato",
 							value: Stato,
 							opts: elencaPaesi(),
-							label: Lingua(TXT_Stato),
+							label: TXT("Stato"),
 							classRiga: 'contStato',
 							classCampo: "selectLargo" });
 			cont += '</div>';
 							
 			HTML += H.sezione({
-				label: Lingua(TXT_LabelIndirizzo),
+				label: TXT("LabelIndirizzo"),
 				nome: 'indirizzo',
 				html: cont,
 				etichette: true
@@ -226,7 +226,7 @@ var FORNITORI = {
 							classCampo: 'styled',
 							ver: '0|0|@' });
 			HTML += H.sezione({
-				label: Lingua(TXT_LabelContatti),
+				label: TXT("LabelContatti"),
 				nome: 'contatti',
 				html: cont,
 				etichette: true
@@ -239,14 +239,14 @@ var FORNITORI = {
 							name: "Intestazione",
 							classCampo: "Intestazione",
 							value: Intestazione,
-							label: Lingua(TXT_IntestazioneSpiegazione),
+							label: TXT("IntestazioneSpiegazione"),
 							noLabel: true,
 							classCampo: "okPlaceHolder" });
 			cont += H.r({	t: "r", name: "CodiceFiscale",	value: CodiceFiscale,	classCampo: 'styled' });
 			cont += H.r({	t: "r", name: "PartitaIva",	value: PartitaIva,	classCampo: 'styled' });
 			
 			HTML += H.sezione({
-				label: Lingua(TXT_LabelFatturazione),
+				label: TXT("LabelFatturazione"),
 				nome: 'azienda',
 				html: cont,
 				etichette: true
@@ -257,12 +257,12 @@ var FORNITORI = {
 			cont += H.r({	t: "t", 
 							name: "NoteFornitore",
 							value: NoteFornitore,
-							label: Lingua(TXT_InserisciNote),
+							label: TXT("InserisciNote"),
 							noLabel: true,
 							classCampo: "okPlaceHolder" });
 					
 			HTML += H.sezione({
-				label: Lingua(TXT_LabelAnnotazioni),
+				label: TXT("LabelAnnotazioni"),
 				nome: 'annotazioni',
 				html: cont
 						});	
@@ -272,10 +272,10 @@ var FORNITORI = {
 			var azElimina = Q_idForn>-1 ? "FORNITORI.el_fornitore("+Q_idForn+");":"";
 			var btnAdd = '';
 			if(azElimina){
-				btnAdd += '<div class="p_paz_el_menu" onClick="'+azElimina+'">'+Lingua(TXT_EliminaScheda)+'</div>';
+				btnAdd += '<div class="p_paz_el_menu" onClick="'+azElimina+'">'+TXT("EliminaScheda")+'</div>';
 			}
 			btnAdd += 	'<div class="p_paz_ref_menu" onClick="REF.open(\'archives.suppliers.overview\')">' +
-							Lingua(TXT_ReferenceGuide) +
+							TXT("ReferenceGuide") +
 						'</div>';
 			
 			HTML += SCHEDA.pulsantiForm(
@@ -286,10 +286,10 @@ var FORNITORI = {
 			HTML += '</form>';
 			
 			
-			var titoloDef=TXT_ModificaFornitore;
-			if(Q_idForn==-1)titoloDef=TXT_CreaFornitore;
+			var titoloDef=TXT("ModificaFornitore");
+			if(Q_idForn==-1)titoloDef=TXT("CreaFornitore");
 			
-			SCHEDA.caricaScheda(	stripslashes(Lingua(titoloDef)),
+			SCHEDA.caricaScheda(	stripslashes(titoloDef),
 									HTML,
 									'FORNITORI.chiudiFornitore('+idFornitore+');',
 									'scheda_fornitore',
@@ -380,7 +380,7 @@ var FORNITORI = {
 	},
 	el_fornitore: function( Q_idForn ){
 		// elimina la scheda del fornitore
-		CONFIRM.vis(	Lingua(TXT_ChiediEliminaFornitore),
+		CONFIRM.vis(	TXT("ChiediEliminaFornitore"),
 						false,
 						arguments ).then(function(pass){if(pass){
 						var v = getParamNames(CONFIRM.args.callee.toString());

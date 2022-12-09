@@ -40,7 +40,7 @@ var BACKUPS = {
 					if(title)HTML += " ("+htmlEntities(title)+")";
 					HTML += '</div>';
 				}
-			}else HTML += '<div class="noResults">'+htmlEntities(Lingua(TXT_BackupsNessuno))+'</div>';
+			}else HTML += '<div class="noResults">'+htmlEntities(TXT("BackupsNessuno"))+'</div>';
 		}else{
 			document.getElementById("contBackups").classList.add("noConn");
 		}
@@ -72,10 +72,10 @@ var BACKUPS = {
 				'<div>' +
 				'	<div class="btn_annulla" onClick="BACKUPS.el_backup();">' +
 				'		<img src="img/ico_cestino.png" style="vertical-align:middle;"> ' +
-						htmlEntities(Lingua(TXT_EliminaBackup)) +
+						htmlEntities(TXT("EliminaBackup")) +
 				'	</div>' +
 				'	<div class="btn_invia" onClick="BACKUPS.ripristinaBackup_pre();">' +
-						htmlEntities(Lingua(TXT_RipristinaBackup)) +
+						htmlEntities(TXT("RipristinaBackup")) +
 				'	</div>' +
 				'</div>';
 		
@@ -84,18 +84,18 @@ var BACKUPS = {
 	},
 	conf_backup: function( txt ){
 		if(txt.substr(0,3) == '404'){
-			ALERT(Lingua(TXT_BackupErrore));
+			ALERT(TXT("BackupErrore"));
 			return false;
 		}else{
 			//console.log(txt)
-			ALERT(Lingua(TXT_BackupCreato));
+			ALERT(TXT("BackupCreato"));
 			BACKUPS.car_backups();
 		}
 	},
 	
 	creaBackup: function(){
 		if(BACKUPS.totBackups >= BACKUPS.maxBackups){
-			ALERT(Lingua(TXT_maxBackups).replace("[n]",BACKUPS.maxBackups));
+			ALERT(TXT("maxBackups").replace("[n]",BACKUPS.maxBackups));
 			return;
 		}
 		if(CONN.retNoConn()){
@@ -105,16 +105,16 @@ var BACKUPS = {
 			document.getElementById("titBackups").style.display = 'block';
 			
 			var HTML = '';
-			HTML += '<h1>'+htmlEntities(Lingua(TXT_CreaBackup))+'</h1>' +
+			HTML += '<h1>'+htmlEntities(TXT("CreaBackup"))+'</h1>' +
 					'<div>' +
 					'	<div>' +
 					'		<input type="text"' +
 					'			   name="nomeBackup"' +
 					'			   id="nomeBackup"' +
-					'			   placeholder="'+htmlEntities(Lingua(TXT_NomeBackup))+'">' +
+					'			   placeholder="'+htmlEntities(TXT("NomeBackup"))+'">' +
 					'	</div>' +
 					'	<div class="btn_invia" onClick="BACKUPS.inviaBackup();">' +
-							htmlEntities(Lingua(TXT_CreaBackup)) +
+							htmlEntities(TXT("CreaBackup")) +
 					'	</div>' +
 					'</div>';
 			
@@ -136,7 +136,7 @@ var BACKUPS = {
 	},
 	
 	el_backup: function(){
-		CONFIRM.vis( Lingua(TXT_ChiediEliminaBackup) ).then(function(pass){if(pass){
+		CONFIRM.vis( TXT("ChiediEliminaBackup") ).then(function(pass){if(pass){
 			applicaLoading(document.getElementById("contBackups"));
 			if(CONN.retNoConn()){
 				CONN.caricaUrl(	"sincro_backups_elimina.php",
@@ -147,9 +147,9 @@ var BACKUPS = {
 	},
 	
 	ripristinaBackup_pre: function(){
-		CONFIRM.vis(	Lingua(TXT_ChiediRipristinaBackup) ).then(function(pass){if(pass){
+		CONFIRM.vis(	TXT("ChiediRipristinaBackup") ).then(function(pass){if(pass){
 			setTimeout( function(){
-				CONFIRM.vis(	Lingua(TXT_SicuroRipristinaBackup) ).then(function(pass){if(pass){
+				CONFIRM.vis(	TXT("SicuroRipristinaBackup") ).then(function(pass){if(pass){
 					// prima di ripristinare il backup sincronizzo con il server per verificare l'ultimo lastSync e salvare la versione attuale
 					applicaLoading(document.getElementById("contBackups"));
 					LOGIN.sincronizza(	'BACKUPS.ripristinaBackup()' );
@@ -174,7 +174,7 @@ var BACKUPS = {
 				SET.leggiNote();
 			}catch(err){}
 			MENU.chiudiMenu();
-			ALERT(Lingua(TXT_BackupRipristinato));
+			ALERT(TXT("BackupRipristinato"));
 		});
 	}
 	

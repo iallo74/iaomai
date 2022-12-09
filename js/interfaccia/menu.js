@@ -295,7 +295,7 @@ var MENU = {
 	addSelected: function(el,C){
 		globals.pezziSelezionati.push(el.id);
 		var html = document.getElementById("contSelected").innerHTML;
-		html += '<p id="SEL_'+el.id+'" class="sel'+C+'" onClick="document.getElementById(\''+el.id+'\').click();">'+stripslashes(Lingua(eval("TXT_"+el.id)))+'</p>';
+		html += '<p id="SEL_'+el.id+'" class="sel'+C+'" onClick="document.getElementById(\''+el.id+'\').click();">'+stripslashes(TXT(""+el.id))+'</p>';
 		document.getElementById("contSelected").innerHTML = html;
 	},
 	removeSelected: function(el){
@@ -408,7 +408,7 @@ var MENU = {
 	},
 	visNotifiche: function(){
 		if(!LOGIN.logedin()){
-			ALERT(Lingua(TXT_ErroreUtenteNonConnesso), true);
+			ALERT(TXT("ErroreUtenteNonConnesso"), true);
 			return false;
 		}else{
 			MENU.chiudiMenu("notifiche");
@@ -452,7 +452,7 @@ var MENU = {
 	},
 	visBackups: function(){
 		if(!LOGIN.logedin()){
-			ALERT(Lingua(TXT_ErroreUtenteNonConnesso), true);
+			ALERT(TXT("ErroreUtenteNonConnesso"), true);
 			return false;
 		}else{
 			MENU.chiudiMenu("backups");
@@ -470,7 +470,7 @@ var MENU = {
 	},
 	visCommunity: function(){
 		if(!LOGIN.logedin()){
-			ALERT(Lingua(TXT_ErroreUtenteNonConnesso), true);
+			ALERT(TXT("ErroreUtenteNonConnesso"), true);
 			return false;
 		}else{
 			MENU.chiudiMenu("community");
@@ -488,7 +488,7 @@ var MENU = {
 		
 		var mod = SCHEDA.verificaSchedaRet();
 		if(!document.getElementById("ag").classList.contains("visSch") || mantieni){
-			CONFIRM.vis(	Lingua(TXT_UscireSenzaSalvare),
+			CONFIRM.vis(	TXT("UscireSenzaSalvare"),
 						!mod,
 						arguments ).then(function(pass){if(pass){
 						var v = getParamNames(CONFIRM.args.callee.toString());
@@ -581,7 +581,7 @@ var MENU = {
 	stampaStage: function(){
 		if(!DB.login.data.auths.length){
 			setTimeout(function(){
-				ALERT(Lingua(TXT_MsgFunzioneSoloPay));
+				ALERT(TXT("MsgFunzioneSoloPay"));
 			},100);
 			return;
 		}

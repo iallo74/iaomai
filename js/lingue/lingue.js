@@ -45,7 +45,14 @@ var LINGUE = {
 		if(element.title.substr(0,6)=='{{TXT_'){
 			txt=eval(element.title);
 			if(debug)console.log(txt);
-			var testo = eval(txt.substr(2,txt.length-4)+"['"+globals.siglaLingua+"']");
+			
+			var testo = '';
+			var strBase = __(DB.TXT.base[txt.substr(6,txt.length-8)],'');
+			var strSet = __(DB.TXT.set[txt.substr(6,txt.length-8)],'');
+			if(strBase)testo = strBase[globals.siglaLingua];
+			if(strSet)testo = strSet[globals.siglaLingua];
+			
+			//var testo = eval(txt.substr(2,txt.length-4)+"['"+globals.siglaLingua+"']");
 			element.title=txt.replace(/\{\{TXT_[^\}\}]+\}\}/i, testo);
 		}
 	},
@@ -55,7 +62,15 @@ var LINGUE = {
 			var txt='';
 			while(txt=/\{\{TXT_[^\}\}]+\}\}/.exec(str)){
 				txt=txt+"";
-				var testo = eval(txt.substr(2,txt.length-4)+"['"+globals.siglaLingua+"']");
+				var testo = '';
+				
+				var strBase = __(DB.TXT.base[txt.substr(6,txt.length-8)],'');
+				var strSet = __(DB.TXT.set[txt.substr(6,txt.length-8)],'');
+				if(strBase)testo = strBase[globals.siglaLingua];
+				if(strSet)testo = strSet[globals.siglaLingua];
+				
+				//var testo = eval(txt.substr(2,txt.length-4)+"['"+globals.siglaLingua+"']");
+				
 				testo = testo.replace(/\n/g,"<br>");
 				testo = testo.replace(/\[#\]/g,'<img src="img/spunta.png" height="16" style="vertical-align:middle;margin-left:5px;margin-top:-1px;margin-bottom:2px;">');
 				testo = testo.replace(/\[§\]/g,nomeApp);
@@ -105,6 +120,15 @@ function htmlRev(str) {
 }
 function Lingua(txt){
 	return addslashes(txt[globals.siglaLingua].replace(/\[§\]/g,nomeApp));
+}
+function TXT(txt){
+	var str = '';
+	var strBase = __(DB.TXT.base[txt],'');
+	var strSet = __(DB.TXT.set[txt],'');
+	if(strBase)str = strBase[globals.siglaLingua];
+	if(strSet)str = strSet[globals.siglaLingua];
+	return addslashes(str.replace(/\[§\]/g,nomeApp))
+	//return addslashes(txt[globals.siglaLingua].replace(/\[§\]/g,nomeApp));
 }
 
 function doHighlight( html, parola, cls ){

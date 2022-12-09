@@ -49,7 +49,7 @@ var MODELLO = {
 				for(o in MODELLO.meshVisceri.children){
 					arrayVisceri.push({
 						organo: MODELLO.meshVisceri.children[o].name,
-						nome: Lingua(eval("TXT_Organo_"+MODELLO.meshVisceri.children[o].name))
+						nome: TXT("Organo_"+MODELLO.meshVisceri.children[o].name)
 					});
 				}
 				arrayVisceri.sort(function(a,b){
@@ -86,7 +86,7 @@ var MODELLO = {
 					
 					arrayOssa.push({
 						osso: MODELLO.meshOssa.children[o].name,
-						nome: Lingua(eval("TXT_Osso_"+MODELLO.meshOssa.children[o].name))
+						nome: TXT("Osso_"+MODELLO.meshOssa.children[o].name)
 					});
 				}
 				arrayOssa.sort(function(a,b){
@@ -139,7 +139,7 @@ var MODELLO = {
 				for(o in MODELLO.MAT.masks){
 					eval("arrayMuscoli_"+MODELLO.MAT.masks[o].zona).push({
 						muscolo: o,
-						nome: Lingua(eval("TXT_Muscolo_"+o))
+						nome: TXT("Muscolo_"+o)
 					});
 				}
 				
@@ -166,42 +166,42 @@ var MODELLO = {
 				var htmlMuscoli = '';
 					
 				if(arrayMuscoli_TESTA.length){
-					htmlMuscoli += '<i>'+stripslashes(Lingua(TXT_Zona_TESTA))+'</i><div onMouseLeave="MODELLO.isolaMuscolo(this,\'out\');">';
+					htmlMuscoli += '<i>'+stripslashes(TXT("Zona_TESTA"))+'</i><div onMouseLeave="MODELLO.isolaMuscolo(this,\'out\');">';
 					for(o in arrayMuscoli_TESTA){
 						htmlMuscoli += '<p id="Muscolo_'+arrayMuscoli_TESTA[o].muscolo+'" onClick="MODELLO.isolaMuscolo(this)" onMouseOver="MODELLO.isolaMuscolo(this,\'over\');">'+stripslashes(arrayMuscoli_TESTA[o].nome)+'</p>';
 					}
 					htmlMuscoli += '</div>';
 				}
 				if(arrayMuscoli_ORECCHIO.length){
-					htmlMuscoli += '<i>'+stripslashes(Lingua(TXT_Zona_ORECCHIO))+'</i><div onMouseLeave="MODELLO.isolaMuscolo(this,\'out\');">';
+					htmlMuscoli += '<i>'+stripslashes(TXT("Zona_ORECCHIO"))+'</i><div onMouseLeave="MODELLO.isolaMuscolo(this,\'out\');">';
 					for(o in arrayMuscoli_ORECCHIO){
 						htmlMuscoli += '<p id="Muscolo_'+arrayMuscoli_ORECCHIO[o].muscolo+'" onClick="MODELLO.isolaMuscolo(this)" onMouseOver="MODELLO.isolaMuscolo(this,\'over\');">'+stripslashes(arrayMuscoli_ORECCHIO[o].nome)+'</p>';
 					}
 					htmlMuscoli += '</div>';
 				}
 				if(arrayMuscoli_COLLO.length){
-					htmlMuscoli += '<i>'+stripslashes(Lingua(TXT_Zona_COLLO))+'</i><div onMouseLeave="MODELLO.isolaMuscolo(this,\'out\');">';
+					htmlMuscoli += '<i>'+stripslashes(TXT("Zona_COLLO"))+'</i><div onMouseLeave="MODELLO.isolaMuscolo(this,\'out\');">';
 					for(o in arrayMuscoli_COLLO){
 						htmlMuscoli += '<p id="Muscolo_'+arrayMuscoli_COLLO[o].muscolo+'" onClick="MODELLO.isolaMuscolo(this)" onMouseOver="MODELLO.isolaMuscolo(this,\'over\');">'+stripslashes(arrayMuscoli_COLLO[o].nome)+'</p>';
 					}
 					htmlMuscoli += '</div>';
 				}
 				if(arrayMuscoli_TORSO.length){
-					htmlMuscoli += '<i>'+stripslashes(Lingua(TXT_Zona_TORSO))+'</i><div onMouseLeave="MODELLO.isolaMuscolo(this,\'out\');">';
+					htmlMuscoli += '<i>'+stripslashes(TXT("Zona_TORSO"))+'</i><div onMouseLeave="MODELLO.isolaMuscolo(this,\'out\');">';
 					for(o in arrayMuscoli_TORSO){
 						htmlMuscoli += '<p id="Muscolo_'+arrayMuscoli_TORSO[o].muscolo+'" onClick="MODELLO.isolaMuscolo(this)" onMouseOver="MODELLO.isolaMuscolo(this,\'over\');">'+stripslashes(arrayMuscoli_TORSO[o].nome)+'</p>';
 					}
 					htmlMuscoli += '</div>';
 				}
 				if(TXT_Zona_ARTO_SUPERIORE.length){
-					htmlMuscoli += '<i>'+stripslashes(Lingua(TXT_Zona_ARTO_SUPERIORE))+'</i><div onMouseLeave="MODELLO.isolaMuscolo(this,\'out\');">';
+					htmlMuscoli += '<i>'+stripslashes(TXT("Zona_ARTO_SUPERIORE"))+'</i><div onMouseLeave="MODELLO.isolaMuscolo(this,\'out\');">';
 					for(o in arrayMuscoli_ARTO_SUPERIORE){
 						htmlMuscoli += '<p id="Muscolo_'+arrayMuscoli_ARTO_SUPERIORE[o].muscolo+'" onClick="MODELLO.isolaMuscolo(this)" onMouseOver="MODELLO.isolaMuscolo(this,\'over\');">'+stripslashes(arrayMuscoli_ARTO_SUPERIORE[o].nome)+'</p>';
 					}
 					htmlMuscoli += '</div>';
 				}
 				if(arrayMuscoli_ARTO_INFERIORE.length){
-					htmlMuscoli += '<i>'+stripslashes(Lingua(TXT_Zona_ARTO_INFERIORE))+'</i><div onMouseLeave="MODELLO.isolaMuscolo(this,\'out\');">';
+					htmlMuscoli += '<i>'+stripslashes(TXT("Zona_ARTO_INFERIORE"))+'</i><div onMouseLeave="MODELLO.isolaMuscolo(this,\'out\');">';
 					for(o in arrayMuscoli_ARTO_INFERIORE){
 						htmlMuscoli += '<p id="Muscolo_'+arrayMuscoli_ARTO_INFERIORE[o].muscolo+'" onClick="MODELLO.isolaMuscolo(this)" onMouseOver="MODELLO.isolaMuscolo(this,\'over\');">'+stripslashes(arrayMuscoli_ARTO_INFERIORE[o].nome)+'</p>';
 					}
@@ -403,11 +403,11 @@ var MODELLO = {
 						pN=nome.split("_(");
 						nome = pN[0];
 					}
-					addType=Lingua(eval("TXT_"+__(globals.modello.areaName,'Muscolo')))+" ";
+					addType=TXT(""+__(globals.modello.areaName,'Muscolo'))+" ";
 					pass=true;
 				}
 				
-				txtTT = addType+stripslashes(Lingua(eval("TXT_"+nome)));
+				txtTT = addType+stripslashes(TXT(""+nome));
 				
 				// verifico le autorizzazioni
 				if((DB.login.data.auths.indexOf("anatomy_full")==-1 || !LOGIN.logedin()) && !globals.AnatomyFREE){
@@ -745,8 +745,8 @@ var MODELLO = {
 							txt = txt.replace("_DX","");
 							//addTxt = 'DX';
 						}
-						var html = Lingua(eval("TXT_"+txt));
-						if(addTxt)html += " ("+Lingua(eval("TXT_"+addTxt))+")";
+						var html = TXT(""+txt);
+						if(addTxt)html += " ("+TXT(""+addTxt)+")";
 						leg.innerHTML = stripslashes(html);
 						leg.onclick = function(){
 							MODELLO.visContextMenu(n,this);
@@ -786,12 +786,12 @@ var MODELLO = {
 			noIsola = false;
 		};
 		//console.log(id);
-		if(DB_anatomia[id])txt += '<div class="s" onClick="MODELLO.caricaAnatomia(\''+id+'\',true);">'+Lingua(eval("TXT_ApriScheda"))+'</div>';
-		txt += '<div class="c" onClick="MODELLO.centraAnatomia(\''+leg.dataset.idObj+'\');">'+Lingua(eval("TXT_CentraDaQui"))+'</div>';
+		if(DB_anatomia[id])txt += '<div class="s" onClick="MODELLO.caricaAnatomia(\''+id+'\',true);">'+TXT("ApriScheda")+'</div>';
+		txt += '<div class="c" onClick="MODELLO.centraAnatomia(\''+leg.dataset.idObj+'\');">'+TXT("CentraDaQui")+'</div>';
 		var isola = 'MODELLO.isola'+pN[0]+'(document.getElementById(\''+n+'\'))';
-		txt += '<div class="d" onClick="'+isola+';">'+Lingua(eval("TXT_Deseleziona"))+'</div>';
-		if(globals.pezziSelezionati.length > 1)txt += '<div class="a" onClick="MENU.chiudiAllSelected();'+isola+';">'+Lingua(eval("TXT_DeselezionaAltri"))+'</div>';
-		if(MODELLO.isolamento == null && !noIsola)txt += '<div class="i" onClick="MENU.chiudiAllSelected();'+isola+';MODELLO.isolaAnatomia(\''+pN[0]+'\',\''+leg.dataset.idObj+'\');">'+Lingua(eval("TXT_Isola"))+'</div>';
+		txt += '<div class="d" onClick="'+isola+';">'+TXT("Deseleziona")+'</div>';
+		if(globals.pezziSelezionati.length > 1)txt += '<div class="a" onClick="MENU.chiudiAllSelected();'+isola+';">'+TXT("DeselezionaAltri")+'</div>';
+		if(MODELLO.isolamento == null && !noIsola)txt += '<div class="i" onClick="MENU.chiudiAllSelected();'+isola+';MODELLO.isolaAnatomia(\''+pN[0]+'\',\''+leg.dataset.idObj+'\');">'+TXT("Isola")+'</div>';
 		var x = tCoord(leg);
 		document.getElementById("context_menu").classList.add("tooltipVis");
 		document.getElementById("context_menu").innerHTML=txt;
@@ -832,7 +832,7 @@ var MODELLO = {
 		raycastDisable = false;
 		
 		var btnAdd = 	'<div class="p_paz_ref_menu" onClick="REF.open(\'models.anatomy\')">' +
-							Lingua(TXT_ReferenceGuide) +
+							TXT("ReferenceGuide") +
 						'</div>';
 						
 		SCHEDA.caricaScheda(	titolo,
@@ -941,7 +941,7 @@ var MODELLO = {
 		// verifico le autorizzazioni
 		if((DB.login.data.auths.indexOf("anatomy_full")==-1 || !LOGIN.logedin()) && !globals.AnatomyFREE){
 			if(	organo != 'CUORE' ){
-				if(!modo)ALERT(Lingua(TXT_MsgNoAnatomy));
+				if(!modo)ALERT(TXT("MsgNoAnatomy"));
 				return;
 			}
 		}
@@ -1043,7 +1043,7 @@ var MODELLO = {
 		// verifico le autorizzazioni
 		if((DB.login.data.auths.indexOf("anatomy_full")==-1 || !LOGIN.logedin()) && !globals.AnatomyFREE){
 			if(	muscolo != 'PETTORALE' ){
-				if(!modo)ALERT(Lingua(TXT_MsgNoAnatomy));
+				if(!modo)ALERT(TXT("MsgNoAnatomy"));
 				nasLoader();
 				return;
 			}

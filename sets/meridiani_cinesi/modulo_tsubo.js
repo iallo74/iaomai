@@ -4,7 +4,7 @@ var MODULO_TSUBO = { // extend SET
 	caricaTsubo: function( siglaMeridiano, nTsubo, ritorno ){
 		// verifico le autorizzazioni
 		if(SET.MERIDIANI_free.indexOf(siglaMeridiano)==-1 && (DB.login.data.auths.indexOf(globals.set.cartella)==-1 || !LOGIN.logedin())){
-			ALERT(Lingua(TXT_MsgContSoloPay));
+			ALERT(TXT("MsgContSoloPay"));
 			return;
 		}
 		// --------------------------
@@ -46,12 +46,12 @@ var MODULO_TSUBO = { // extend SET
 					if( tsuboOr == tsuboNuovo)stesso = true;
 					else{
 						// cambia il punto
-						txt = Lingua(TXT_SostituisciTsubo).replace("[t]",tsuboOr);
+						txt = TXT("SostituisciTsubo").replace("[t]",tsuboOr);
 						az = "SET.setTsuboFrm();";
 					}
 				}else{
 					// aggiungi il punto alla procedura
-					txt = Lingua(TXT_AggiungiTsuboProc);
+					txt = TXT("AggiungiTsuboProc");
 					az = "SET.aggiungiDettaglio('P','"+tsuboNuovo+"');SCHEDA.torna();";
 					cls = 'spAdd';
 				}
@@ -63,12 +63,12 @@ var MODULO_TSUBO = { // extend SET
 					if(tsuboOr == tsuboNuovo)stesso = true;
 					else{
 						// cambia il punto
-						txt = Lingua(TXT_SostituisciTsubo).replace("[t]",tsuboOr);
+						txt = TXT("SostituisciTsubo").replace("[t]",tsuboOr);
 						az = "SET.setTsuboFrm();";
 					}
 				}else{
 					// aggiungi il punto al trattamento
-					txt = Lingua(TXT_AggiungiTsuboTratt);
+					txt = TXT("AggiungiTsuboTratt");
 					az = "PAZIENTI.aggiungiPuntoTrattamento('"+tsuboNuovo+"');SCHEDA.torna();";
 					cls = 'spAdd';
 				}
@@ -79,7 +79,7 @@ var MODULO_TSUBO = { // extend SET
 										'</div>';
 										
 			else HTML_simboli += 	'<div id="spStesso">'+
-									htmlEntities(Lingua(TXT_TsuboSelezionato)) +
+									htmlEntities(TXT("TsuboSelezionato")) +
 									'</div>';
 		}
 		if(HTML_simboli)HTML += '<div>'+HTML_simboli+'</div>';
@@ -118,7 +118,7 @@ var MODULO_TSUBO = { // extend SET
 		if(SET.verificaNota(siglaMeridiano+"."+nTsubo2)){
 			TestoAnnotazione += SET.leggiNota( cartella, nTsubo2 );
 		}
-		HTML +=  '<p id="annotazioni_label"><b>'+htmlEntities(Lingua(TXT_Note))+'</b></p>';
+		HTML +=  '<p id="annotazioni_label"><b>'+htmlEntities(TXT("Note"))+'</b></p>';
 		if(!ritorno || !SCHEDA.formModificato){
 			// FORM
 			HTML += '<div id="annotazioni_cont">' +
@@ -129,20 +129,20 @@ var MODULO_TSUBO = { // extend SET
 					'		<textarea  	id="TestoAnnotazione"' +
 					'					name="TestoAnnotazione"' +
 					'					onKeyDown="document.getElementById(\'pulsantiAnnotazione\').style.display=\'block\';"' +
-					'					placeholder="'+Lingua(TXT_Annotazioni)+'">' + TestoAnnotazione + '</textarea>' +
+					'					placeholder="'+TXT("Annotazioni")+'">' + TestoAnnotazione + '</textarea>' +
 					'	</form>' +
 					'</div>' +
 					'<div id="pulsantiAnnotazione">' +
 					'	<div 	id="p_sch_salva"' +
 					'			onClick="if(verifica_form(document.formAnnotazioni))SET.mod_nota( \''+cartella+'\', \''+(nTsubo+1)+'\' );">' +
-						Lingua(TXT_Salva) +
+						TXT("Salva") +
 					'	</div>' +
 					'</div><div class="l"></div>';
 		}else{
 			if(TestoAnnotazione){
 				HTML += '<divstyle="padding:15px;background-color:#ecdea3;">'+ TestoAnnotazione+'</div>';
 			}else{
-				HTML += '<div class="noResults">'+ htmlEntities(Lingua(TXT_NessunaAnnotazione))+'</div>';
+				HTML += '<div class="noResults">'+ htmlEntities(TXT("NessunaAnnotazione"))+'</div>';
 			}
 		}
 		
@@ -157,7 +157,7 @@ var MODULO_TSUBO = { // extend SET
 		SET.ptSel = null;
 		
 		var btnAdd = 	'<div class="p_paz_ref_menu" onClick="REF.open(\'sets.meridiani_cinesi.pointsmap\')">' +
-							Lingua(TXT_ReferenceGuide) +
+							TXT("ReferenceGuide") +
 						'</div>';
 							
 		SCHEDA.caricaScheda(	titolo,

@@ -42,7 +42,7 @@ var MODULO_TEORIA = { // extend SET
 	caricaTeoria: function( p, t, btn ){
 		// verifico le autorizzazioni
 		if(SET.TEORIA_free.indexOf(p+"_"+t)==-1 && (DB.login.data.auths.indexOf(globals.set.cartella)==-1 || !LOGIN.logedin())){
-			ALERT(Lingua(TXT_MsgContSoloPay));
+			ALERT(TXT("MsgContSoloPay"));
 			return;
 		}
 		// --------------------------
@@ -57,11 +57,11 @@ var MODULO_TEORIA = { // extend SET
 			document.getElementById("sceltaPhaseElenco").selectedIndex = 0;
 			SET.setPhase('');
 			var mAtt=DB.set.teoria[2].contenuti[t].sigla;
-			var elencoTsubo='<br><b>'+htmlEntities(Lingua(TXT_ElencoPunti))+'</b>';
+			var elencoTsubo='<br><b>'+htmlEntities(TXT("ElencoPunti"))+'</b>';
 			for(g in GEOMETRIE.gruppi[gruppo].punti){
 				var TS = GEOMETRIE.gruppi[gruppo].punti[g];
 				if(TS.length==3)elencoTsubo+='<p>[.'+TS+'.]</p>';
-				else elencoTsubo+='<p><span class="pallinoNul"><span class="pNUL"></span>'+htmlEntities(Lingua(eval("TXT_"+TS)))+'</span></p>';
+				else elencoTsubo+='<p><span class="pallinoNul"><span class="pNUL"></span>'+htmlEntities(TXT(""+TS))+'</span></p>';
 			}
 			html_cont = '<div class="col50">'+html_cont+'</div>' +
 						'<div class="col50 elencoTsubo">' +
@@ -92,7 +92,7 @@ var MODULO_TEORIA = { // extend SET
 			SCHEDA.verificaSchedaRet() )ritorno = "document.getElementById('scheda').classList.remove('scheda_teoria')";
 			
 		var btnAdd = 	'<div class="p_paz_ref_menu" onClick="REF.open(\'sets.auricologia.insights\')">' +
-							Lingua(TXT_ReferenceGuide) +
+							TXT("ReferenceGuide") +
 						'</div>';
 							
 		SCHEDA.caricaScheda( 	titolo,
@@ -108,12 +108,12 @@ var MODULO_TEORIA = { // extend SET
 	caricaVideo: function( p, t, btn ){
 		// verifico le autorizzazioni
 		if(SET.TEORIA_free.indexOf(p+"_"+t)==-1 && (DB.login.data.auths.indexOf(globals.set.cartella)==-1 || !LOGIN.logedin())){
-			ALERT(Lingua(TXT_MsgContSoloPay));
+			ALERT(TXT("MsgContSoloPay"));
 			return;
 		}
 		// --------------------------
 		if(!CONN.getConn()){
-			ALERT(Lingua(TXT_ConnessioneAssente));
+			ALERT(TXT("ConnessioneAssente"));
 			return;
 		}
 		var titolo = DB.set.teoria[p].contenuti[t].TitoloTeoria;
@@ -128,7 +128,7 @@ var MODULO_TEORIA = { // extend SET
 					'</video>';
 					
 		var btnAdd = 	'<div class="p_paz_ref_menu" onClick="REF.open(\'sets.auricologia.insights\')">' +
-							Lingua(TXT_ReferenceGuide) +
+							TXT("ReferenceGuide") +
 						'</div>';
 		
 		SCHEDA.caricaScheda( 	titolo,
