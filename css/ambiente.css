@@ -38,6 +38,38 @@
 	--anatomia-fondino:var(--colore-avorio2);
 	--fondino-icone: rgba(255,245,224,0.60);
 	--fondino-icone-over: rgba(255,245,224,0.77);
+	
+	
+	/* FONT SIZES */
+	--font-9-96: 9.96px;
+	--font-10: 10px;
+	--font-11: 11px;
+	--font-12: 12px;
+	--font-12-1: 12.1px;
+	--font-12-94: 12.94px;
+	--font-13-2: 13.2px;
+	--font-13-58: 13.58px;
+	--font-13-94: 13.94px;
+	--font-14-3: 14.3px;
+	--font-14-48: 14.48px;
+	--font-14-94: 14.94px;
+	--font-15-39: 15.39px;
+	--font-16: 16px;
+	--font-16-29: 16.29px;
+	--font-16-5: 16.5px;
+	--font-16-93: 16.93px;
+	--font-17-6: 17.6px;
+	--font-18: 18px;
+	--font-18-7: 18.7px;
+	--font-19-8: 19.8px;
+	--font-20-5: 20.5px;
+	--font-23-1: 23.1px;
+	--font-24-2: 24.2px;
+	--font-25: 25px;
+	--font-25-35: 25.35px;
+	--font-28: 28px;
+	--font-28-6: 28.6px;
+	--font-30-9: 30.9px;
 }
 :root .bodyStyled1{
 	--fondino-icone: rgba(0,0,0,0.35);
@@ -61,6 +93,72 @@
 	--impostazioni-divisorio:1px solid rgba(255,255,255,0.1);
 	--fondino-icone: rgba(0,0,0,0.35);
 	--fondino-icone-over: rgba(0,0,0,0.45);
+}
+
+
+:root .fontMID{
+	/* FONT SIZES */
+	--font-9-96: 10.96px;
+	--font-10: 11px;
+	--font-11: 12px;
+	--font-12: 13px;
+	--font-12-1: 13.1px;
+	--font-12-94: 13.94px;
+	--font-13-2: 14.2px;
+	--font-13-58: 14.58px;
+	--font-13-94: 14.94px;
+	--font-14-3: 15.3px;
+	--font-14-48: 15.48px;
+	--font-14-94: 15.94px;
+	--font-15-39: 16.39px;
+	--font-16: 17px;
+	--font-16-29: 17.29px;
+	--font-16-5: 17.5px;
+	--font-16-93: 17.93px;
+	--font-17-6: 18.6px;
+	--font-18: 19px;
+	--font-18-7: 19.7px;
+	--font-19-8: 20.8px;
+	--font-20-5: 21.5px;
+	--font-23-1: 24.1px;
+	--font-24-2: 25.2px;
+	--font-25: 26px;
+	--font-25-35: 26.35px;
+	--font-28: 29px;
+	--font-28-6: 29.6px;
+	--font-30-9: 31.9px;
+}
+:root .fontBIG{
+	/* FONT SIZES */
+	--font-9-96: 11.96px;
+	--font-10: 12px;
+	--font-11: 13px;
+	--font-12: 14px;
+	--font-12-1: 14.1px;
+	--font-12-94: 14.94px;
+	--font-13-2: 15.2px;
+	--font-13-58: 15.58px;
+	--font-13-94: 15.94px;
+	--font-14-3: 16.3px;
+	--font-14-48: 16.48px;
+	--font-14-94: 16.94px;
+	--font-15-39: 17.39px;
+	--font-16: 18px;
+	--font-16-29: 18.29px;
+	--font-16-5: 18.5px;
+	--font-16-93: 18.93px;
+	--font-17-6: 19.6px;
+	--font-18: 20px;
+	--font-18-7: 20.7px;
+	--font-19-8: 21.8px;
+	--font-20-5: 22.5px;
+	--font-23-1: 25.1px;
+	--font-24-2: 26.2px;
+	--font-25: 27px;
+	--font-25-35: 27.35px;
+	--font-28: 30px;
+	--font-28-6: 30.6px;
+	--font-30-9: 32.9px;
 }
 
 /*@media (max-width: 699px){
@@ -90,7 +188,7 @@
 	
 	/*font-family:Verdana, Geneva, sans-serif;*/
 	font-family:'SF Pro Display', Verdana, Geneva, sans-serif;
-	font-size: 13.2px;
+	font-size: var(--font-13-2);/*13.2px;*/
 	color:#000;
 }
 
@@ -103,7 +201,7 @@ html:not(.htmlStampa)/*, body */{
 body{
 	color: #FFF;
 	/*font-family:Monospace;*/
-	font-size:14.3px;
+	font-size:var(--font-14-3);/*14.3px;*/
 	text-align:center;
 	background-color: #333;
 	margin: 0px;

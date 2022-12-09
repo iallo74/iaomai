@@ -278,13 +278,19 @@ var MODULO_PROCEDURE = { // extend SET
 			HTML += '</div>';
 			HTML = SET.convPuntiScheda(HTML);
 			if(SCHEDA.btnSel && Q_resta)SCHEDA.btnSel=null;
+			
+			var btnAdd = 	'<div class="p_paz_ref_menu" onClick="REF.open(\'sets.auricologia.procedures\')">' +
+							Lingua(TXT_ReferenceGuide) +
+						'</div>';
+							
 			SCHEDA.caricaScheda( 	NomeProcedura,
 									HTML,
 									'SET.annullaEvidenziaTsubo();',
 									'scheda_procedura',
 									false,
 									true,
-									btn );
+									btn,
+									btnAdd );
 			SET.evidenziaTsubo(HTML);
 			if(idProcedura)SET.car_commenti(idProcedura);
 			if(Q_resta){
@@ -490,13 +496,18 @@ var MODULO_PROCEDURE = { // extend SET
 			var titDef=Lingua(TXT_ModificaProcedura);
 			if(Q_idProc==-1)titDef=Lingua(TXT_CreaProcedura);
 			
+			var btnAdd = 	'<div class="p_paz_ref_menu" onClick="REF.open(\'sets.auricologia.procedures\')">' +
+							Lingua(TXT_ReferenceGuide) +
+						'</div>';
+						
 			SCHEDA.caricaScheda(	titDef,
 									HTML, 
 									'SET.chiudiProcedura('+idProcedura+');', 
 									'scheda_procedura', 
 									false, 
 									true, 
-									SCHEDA.btnSel );
+									SCHEDA.btnSel,
+									btnAdd );
 			
 			if(typeof(DB.procedure.data.dettagliProcedura)!='undefined'){
 				SET.dettagliProvvisori=JSON.parse(JSON.stringify(DB.procedure.data.dettagliProcedura));

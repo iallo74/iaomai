@@ -885,13 +885,19 @@ var PAZIENTI_FILTRI = {
 			'			</div>' +
 			'		</div>' +
 			'	</div>';
-				
+			
+			var btnAdd = 	'<div class="p_paz_ref_menu" onClick="REF.open(\'archives.patients.filters\')">' +
+								Lingua(TXT_ReferenceGuide) +
+							'</div>';
+						
 			SCHEDA.caricaScheda(	titolo,
 									HTML,
 									'PAZIENTI.annullaFiltri();',
 									'scheda_stats',
 									false,
-									true );
+									true,
+									'',
+									btnAdd );
 			
 			document.getElementById("paz_ricerca").value = '';
 			PAZIENTI.filtra();
@@ -1026,12 +1032,19 @@ var PAZIENTI_FILTRI = {
 			'		</div>' +
 			'	</div>' +
 			'</div>';
+			
+			var btnAdd = 	'<div class="p_paz_ref_menu" onClick="REF.open(\'archives.patients.marketing\')">' +
+								Lingua(TXT_ReferenceGuide) +
+							'</div>';
+						
 			SCHEDA.caricaScheda(	titolo,
 									HTML,
 									'',
 									'scheda_marketing',
 									false,
-									true );
+									true,
+									'',
+									btnAdd );
 		}});
 	},
 	
@@ -1120,12 +1133,18 @@ var PAZIENTI_FILTRI = {
 			HTML +=	'</div>';
 			'	</div>';
 			
+			var btnAdd = 	'<div class="p_paz_ref_menu" onClick="REF.open(\'archives.services.marketing\')">' +
+								Lingua(TXT_ReferenceGuide) +
+							'</div>';
+						
 			SCHEDA.caricaScheda(	titolo,
 									HTML,
 									'',
 									'scheda_marketing',
 									false,
-									true );
+									true,
+									'',
+									btnAdd );
 		}
 	},
 	dwnl_email: function( idMessaggio ){ // scarica le email dal server
@@ -1196,6 +1215,14 @@ var PAZIENTI_FILTRI = {
 		'	</div>' +	
 		'</div>';
 		
+		var btnAdd =	'<div class="p_paz_ref_menu" onClick="REF.open(\'archives.patients.marketing\')">' +
+							Lingua(TXT_ReferenceGuide) +
+						'</div>';
+		if(msg.idMessaggio) btnAdd += 	'<div class="p_paz_el_menu"' +
+									  	' 	onClick="PAZIENTI.eliminaEmail('+msg.idMessaggio+');">' +
+											htmlEntities(Lingua(TXT_Elimina)) +
+										'</div>';
+										
 		SCHEDA.caricaScheda(	titolo,
 								HTML,
 								'',
@@ -1203,10 +1230,7 @@ var PAZIENTI_FILTRI = {
 								false,
 								true,
 								'',
-								((msg.idMessaggio) ? '<div class="p_paz_el_menu"' +
-															'onClick="PAZIENTI.eliminaEmail('+msg.idMessaggio+');">' +
-																htmlEntities(Lingua(TXT_Elimina)) +
-															'</div>' : '' ));
+								btnAdd );
 		initChangeDetection( "formMod" );
 		if(mouseDetect)document.formMod.OggettoMarketing.focus();
 	},
@@ -1374,12 +1398,18 @@ var PAZIENTI_FILTRI = {
 		'	</div>' +
 		'</div>';
 		
+		var btnAdd = 	'<div class="p_paz_ref_menu" onClick="REF.open(\'archives.patients.marketing\')">' +
+							Lingua(TXT_ReferenceGuide) +
+						'</div>';
+		
 		SCHEDA.caricaScheda(	titolo,
 								HTML,
 								'',
 								'scheda_marketing',
 								false,
-								true );
+								true,
+								'',
+								btnAdd );
 	},
 	get_nEmail: function( lista ){
 		if(typeof(lista) == 'undefined')var lista = '';

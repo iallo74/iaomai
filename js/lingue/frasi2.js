@@ -418,7 +418,7 @@
 				eng: "Metti in pausa il 3D",
 				esp: "" };
 
-		TXT_3DinPausa = {
+		TXT__3DinPausa = {
 				ita: "3D in pausa: riavvia",
 				eng: "3D in pausa: riavvia",
 				esp: "" };

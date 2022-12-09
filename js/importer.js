@@ -210,6 +210,14 @@ var IMPORTER = {
 				history.pushState(null, document.title, location.href);
 			});
 		}*/
+		
+		// EVITO LO ZOOM IN TOUCHPAD
+		window.addEventListener('wheel', (e) => {
+          if(e.ctrlKey)e.preventDefault();
+        }, {
+            "passive": false
+        });
+		
 		localPouchDB.getItem(MD5("FILES")).then(function(dbCont){ // leggo il DB
 			if(typeof(dbCont)!='undefined'){
 				res=JSON.parse(IMPORTER.DECOMPR(dbCont));

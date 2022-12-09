@@ -381,7 +381,7 @@ var MENU = {
 		document.getElementById("colori").classList.toggle("visSch");
 		var els = document.getElementById("colSel").getElementsByTagName("span");
 		for(i = 0; i<els.length; i++){
-			if(i == localStorage.colore)els[i].classList.add("cSel");
+			if(localStorage.colore == 2-i)els[i].classList.add("cSel");
 			else els[i].classList.remove("cSel");
 		}
 		var els = document.getElementById("skinSel").getElementsByTagName("span");
@@ -391,6 +391,12 @@ var MENU = {
 		if(localStorage.tipoPelle == '')els[0].classList.add("cSel");
 		if(localStorage.tipoPelle == '_mulatta')els[1].classList.add("cSel");
 		if(localStorage.tipoPelle == '_nera')els[2].classList.add("cSel");
+		
+		var els = document.getElementById("sizeSel").getElementsByTagName("b");
+		for(i = 0; i<els.length; i++){
+			if(localStorage.textSize == els[i].dataset.value)els[i].classList.add("a_SEL");
+			else els[i].classList.remove("a_SEL");
+		}
 		
 		if(document.getElementById("colori").className.indexOf("visSch") > -1){
 			visLoader('');

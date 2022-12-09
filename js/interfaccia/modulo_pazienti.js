@@ -765,8 +765,11 @@ var PAZIENTI = {
 			var azElimina = PAZIENTI.idCL>-1 ? "PAZIENTI.el_paziente("+PAZIENTI.idCL+");":"";
 			var btnAdd = '';
 			if(azElimina){
-				btnAdd = '<div class="p_paz_el_menu" onClick="'+azElimina+'">'+Lingua(TXT_EliminaScheda)+'</div>';
+				btnAdd += '<div class="p_paz_el_menu" onClick="'+azElimina+'">'+Lingua(TXT_EliminaScheda)+'</div>';
 			}
+			btnAdd += 	'<div class="p_paz_ref_menu" onClick="REF.open(\'archives.patients.data\')">' +
+							Lingua(TXT_ReferenceGuide) +
+						'</div>';
 			
 			HTML += SCHEDA.pulsantiForm(
 									azElimina,
@@ -1142,8 +1145,12 @@ var PAZIENTI = {
 			var azElimina = PAZIENTI.idCL>-1 ? "PAZIENTI.el_paziente("+PAZIENTI.idCL+");":"";
 			var btnAdd = '';
 			if(azElimina){
-				btnAdd = '<div class="p_paz_el_menu" onClick="'+azElimina+'">'+Lingua(TXT_EliminaScheda)+'</div>';
+				btnAdd += '<div class="p_paz_el_menu" onClick="'+azElimina+'">'+Lingua(TXT_EliminaScheda)+'</div>';
 			}
+			btnAdd += 	'<div class="p_paz_ref_menu" onClick="REF.open(\'archives.patients.data\')">' +
+							Lingua(TXT_ReferenceGuide) +
+						'</div>';
+			
 			SCHEDA.caricaScheda(	stripslashes(Lingua(TXT_Anagrafica)),
 									HTML,
 									'PAZIENTI.chiudiPaziente('+idPaziente+');',

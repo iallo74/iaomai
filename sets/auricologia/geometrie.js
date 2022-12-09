@@ -1678,6 +1678,21 @@ var GEOMETRIE = {
 				"187",
 				"188"
 			]
+		},
+		"ENDODERMA": {
+			punti: [
+			
+			]
+		},
+		"MESODERMA": {
+			punti: [
+			
+			]
+		},
+		"ECTODERMA": {
+			punti: [
+			
+			]
 		}
 		/*"": {
 			punti: [

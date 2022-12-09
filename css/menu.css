@@ -199,7 +199,7 @@ body:not(.smart) #icone.iconeTrans div:not(#btns_set):not(#cartella_set){
 	display:block !important;
 	color:#FFF;
 	font-style:normal;
-	font-size:12.1px;
+	font-size: var(--font-12-1);
 }
 body:not(.smart) #icone div:not(#btns_set):not(#cartella_set) i{
 	opacity:0;
@@ -207,7 +207,7 @@ body:not(.smart) #icone div:not(#btns_set):not(#cartella_set) i{
 	font-style:normal;
 	width: 132px;
 	line-height: 48px;
-	font-size:15.4px;
+	font-size: var(--font-15-39);
 }
 body:not(.bodyStyled1):not(.bodyStyled2):not(.smart) #icone div:not(#btns_set):not(#cartella_set):not(#p_set) i{
 	color:#000;
@@ -265,7 +265,7 @@ body:not(.bodyStyled1):not(.bodyStyled2):not(.smart) #p_sets{
 	display:none;
 	z-index:3;
 	position:fixed;
-	bottom:8px;
+	bottom:60px;
 	right:0px;
 	width:24px;
 	height:48px;
@@ -634,7 +634,7 @@ body:not(.smart) #labelModello{
 	color: rgba(255,255,255,0.7) !important;
     text-align: left;
     padding-left: 20px;
-    font-size:18.7px;
+    font-size: var(--font-18-7);
 }
 .smart #labelModello{
 	color: #FFF !important;
@@ -644,10 +644,10 @@ body:not(.smart) #labelModello{
     background-image: url(../sets/anatomy_full/img/logoMenu.png);
 }
 .smart.android #labelModello{
-	font-size:17px;
+	font-size: var(--font-16-93);
 }
 .app_version.bug_font.smart.android #labelModello{
-	font-size:15.39px !important;
+	font-size: var(--font-15-39) !important;
 }
 #chiudi_modello{
 	background-image:url(../img/chMenu.png);
@@ -669,7 +669,7 @@ body:not(.smart) #labelModello{
     margin-top: 10px;
     border: 2px solid rgba(255,255,255,0.5);
 	cursor:pointer;
-	font-size: 18.7px !important;
+	font-size: var(--font-18-7) !important;
 	font-weight:bold;
 }
 .modelloScelto #livelli_cont{
@@ -881,7 +881,7 @@ body:not(.Area) #i_muscoli{
 #el_visceri p,
 #el_ossa p,
 #el_muscoli p{
-	font-size:12.1px;
+	font-size: var(--font-12-1);
     cursor: pointer;
     margin-top: 0px;
     margin: 5px;
@@ -903,7 +903,7 @@ body:not(.Area) #i_muscoli{
 }
 @media (max-width: 600px){
 	#el_visceri p, #el_ossa p, #el_muscoli p{
-		font-size:14.3px !important;
+		font-size: var(--font-14-3) !important;
 		height:30px !important;
 		line-height:30px !important;
 		border-radius:15px !important;
@@ -969,7 +969,7 @@ body:not(.Area) #i_muscoli{
 #memorizzaOpen3d,
 #memorizzaOpenMap{
 	margin-bottom: 6px;
-    font-size: 12px;
+    font-size: var(--font-12);
     text-align: right;
     padding-right: 7px;
 	padding-top: 6px;
@@ -1052,7 +1052,7 @@ body:not(.smart) #labelSelected{
 	background-color:#F09;
 	background-repeat:no-repeat;
 	color:#FFF;
-	font-size:12.1px;
+	font-size: var(--font-12-1);
     cursor: pointer;
     margin-top: 0px;
     margin-bottom: 5px;
@@ -1074,7 +1074,7 @@ body:not(.Area) .selM{
 	background-image:url(../img/chMenu.png), url(../img/p_visceri.png) !important;
 }
 #chiudiTuttiSelected{
-	font-size:12.1px;
+	font-size: var(--font-12-1);
     cursor: pointer;
     margin-top: 0px;
     margin-bottom: 5px;
@@ -1139,11 +1139,11 @@ body:not(.smart) #impostazioni{
 	background-position:4px center;
 }
 .smart.android #labelImpostazioni{
-	font-size:18px !important;
+	font-size: var(--font-18) !important;
 	margin-bottom:10px;
 }
 .app_version.bug_font.smart.android #labelImpostazioni{
-	font-size:16.29px !important;
+	font-size: var(--font-16-29) !important;
 }
 #i1{
   	border-top-right-radius:5px;
@@ -1163,11 +1163,11 @@ body:not(.smart) #impostazioni{
 }
 .smart.android #i1 div,
 .smart.android #nomeUtente{
-    font-size:17px;
+    font-size: var(--font-16-93);
 }
 .app_version.bug_font.smart.android #i1 div,
 .app_version.bug_font.smart.android #nomeUtente{
-    font-size:15.39px !important;
+    font-size: var(--font-15-39) !important;
 }
 #i1 div b{
 	color:var(--impostazioni-testo);
@@ -1266,15 +1266,15 @@ body:not(.bodyStyled2) #btn_modut{
 #utDisc{
     margin-top: -38px !important;
     display: none;
-    font-size: 12px;
+    font-size: var(--font-12);
     color: #6e9aec;
 }
 .smart.android #utDisc{
     margin-top: -34px !important;
-    font-size:14.3px;
+    font-size: var(--font-14-3);
 }
 .app_version.bug_font.smart.android #utDisc{
-    font-size:12.94px !important;
+    font-size: var(--font-12-94) !important;
 }
 #p_reg{
 	color: #FFF;
@@ -1283,7 +1283,7 @@ body:not(.bodyStyled2) #btn_modut{
     border-radius: 4px;
     margin: 10px;
     padding: 10px;
-    font-size:12.1px;
+    font-size: var(--font-12-1);
 }
 
 .bodyStyled0 #p_reg,
@@ -1485,7 +1485,7 @@ body:not(.smart) #loginGuida{
 	box-shadow:0px 0px 3px rgba(0,0,0,0.5);
 	width:fit-content;
 	padding:10px;
-	font-size:12.1px;
+	font-size: var(--font-12-1);
 }
 .tooltipmenuVis{
 	opacity: 1 !important;

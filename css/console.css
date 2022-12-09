@@ -38,7 +38,7 @@
 	display:inline-block;
 	float:left;
 	height:30px;
-	font-size:11px;
+	font-size: var(--font-11);
 	color:#000 !important;
 }
 .consoleOpened #console_tit{
@@ -52,7 +52,7 @@
 	border-left:1px solid #CCC;
 	padding-right:10px;
 	font-weight:normal !important;
-	font-size:11px !important;
+	font-size: var(--font-11) !important;
 	color:#FFF !important;
 	background-color:#999;
 }
@@ -64,12 +64,12 @@
 	padding-right:15px;
 	border-left:1px solid #CCC;
 	font-weight:normal !important;
-	font-size:11px !important;
+	font-size: var(--font-11) !important;
 	color:#000 !important;
 	background-color:rgba(200,200,200,0.9);
 }
 #console_log{
-	font-size:11px !important;
+	font-size: var(--font-11) !important;
 	padding:10px;
 	overflow-y:auto !important;
 	text-align:left !important;
@@ -83,7 +83,7 @@
 }
 #command{
 	width:100%;
-	font-size:12.1px !important;
+	font-size: var(--font-12-1) !important;
 	font-weight:normal !important;
 	color:#000;
 	height:30px !important;
@@ -97,5 +97,5 @@
 }
 #console_log b{
 	color:#09C;
-	font-size:11px !important;
+	font-size: var(--font-11) !important;
 }

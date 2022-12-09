@@ -347,7 +347,7 @@ body:not(.touch) .listaPunti .spazioDopo{
     height: 32px;
     line-height: 32px;
     margin-top: 3px;
-    font-size: 17px;
+    font-size: var(--font-16-93);
 }
 #e_legenda p{
 	color:#FFF;
@@ -379,7 +379,7 @@ body:not(.touch) .listaPunti .spazioDopo{
 	box-shadow:0px 0px 3px #000;
 	margin-right: 5px;
     margin-top: -1px;
-    font-size: 11px;
+    font-size: var(--font-11);
     line-height: 17px;
     text-align: center;
     padding-left: 2px;
@@ -390,7 +390,7 @@ body:not(.touch) .listaPunti .spazioDopo{
     line-height: 28px !important;
     min-width: 36px;
     margin-right: 10px;
-    font-size: 15px !important;
+    font-size: var(--font-14-94) !important;
     margin-top: -1px;
 }
 .legendaDida{
@@ -497,7 +497,7 @@ body:not(.touch) .listaPunti .spazioDopo{
 	padding-right:4px;
 	border-radius:3px;
 	margin-right: 4px;
-	font-size:12px;
+	font-size: var(--font-12);
 	color:#FFF;
 	background-color:#646567;
 }
@@ -536,7 +536,7 @@ body:not(.touch) .listaPunti .spazioDopo{
 .smart.android .elencoFiltri p *,
 .smart.android .elencoGruppi p *{
 	line-height: 37px;
-    font-size: 16px !important;
+    font-size: var(--font-16) !important;
 	background-position: 5px 14px !important;
 }
 
@@ -561,7 +561,7 @@ body:not(.touch) .listaPunti .spazioDopo{
 .smart.android .listaPunti p{
 	height:41px;
 	border-bottom: 1px solid rgba(0,0,0,0.2);
-	font-size: 15px;
+	font-size: var(--font-14-94);
     line-height: 32px !important;
 }
 .smart.android .listaPunti p:last-child{
@@ -569,12 +569,12 @@ body:not(.touch) .listaPunti .spazioDopo{
 }
 .smart.android .listaPunti p *{
 	line-height: 37px;
-    font-size: 16px !important;
+    font-size: var(--font-16) !important;
 	background-position: 5px 14px !important;
 }
 .app_version.bug_font.smart.android .listaPunti p *{
 	line-height: 33.9px !important;
-    font-size: 14.48px !important;
+    font-size: var(--font-14-48) !important;
 }
 .visElPt{
 	display:block !important;
@@ -596,12 +596,12 @@ body:not(.touch) .listaPunti .spazioDopo{
 body:not(.smart) .listaPunti a,
 body:not(.smart) .listaPunti a *{
 	color: #FFF !important;
-	font-size:12px !important;
+	font-size: var(--font-12) !important;
 }
 .smart .listaPunti a,
 .smart .listaPunti a *{
 	color: #FFF !important;
-	font-size:13px !important;
+	font-size: var(--font-12-94) !important;
 }
 body:not(.smart) .selElPt{
 	background-color:rgba(0,0,0,0.3) !important;
@@ -625,7 +625,7 @@ body:not(.smart) .selElPt{
     height: 40px;
     line-height: 40px;
 	padding-left:15px;
-	font-size: 15px !important;
+	font-size: var(--font-14-94) !important;
 }
 #p_filtri.op{
     background-color: #c3c2bf !important;
@@ -954,7 +954,7 @@ body:not(.bodyModello) #btns_set > div{
 	height:48px;
 }
 .smart.android #sistemaPunti_p *{
-	font-size: 15px;
+	font-size: var(--font-14-94);
     height: 36px;
     line-height: 36px;
 }
@@ -1070,7 +1070,7 @@ body:not(.bodyModello) #btns_set{
     height: 30px;
     line-height: 30px;
     border-radius: 5px;
-    font-size: 11px;
+    font-size: var(--font-11);
     margin: 1px;
     cursor: pointer;
 	background-color: rgba(0,0,0,0.1);
@@ -1092,7 +1092,7 @@ body:not(.smart) #filtriSmart_cont div:not(.elencoSel):not(.selected):hover{
     height: 40px !important;
     line-height: 40px !important;
     border-radius: 20px !important;
-    font-size: 11px !important;
+    font-size: var(--font-11) !important;
 }
 @media (max-height: 700px){
 	.smart #filtriSmart_cont div{
@@ -1112,11 +1112,11 @@ body:not(.smart) #filtriSmart_cont div:not(.elencoSel):not(.selected):hover{
 	/*display: block;
     text-align: center;
     padding: 10px;
-	font-size:20px;*/
+	font-size: var(--font-19-8);*/
 	display: block;
     text-align: center;
     padding: 10px;
-    font-size: 25px;
+    font-size: var(--font-25);
     color: #FFF;
     text-shadow: 0px 0px 3px #000;
 }

@@ -796,10 +796,13 @@ var PAZIENTI_TRATTAMENTI = {
 			var azElimina = Q_idTratt>-1 ? 'PAZIENTI.el_trattamento('+Q_idTratt+')':"";
 			var btnAdd = '';
 			if(azElimina){
-				btnAdd = '<div class="p_paz_el_menu" onClick="'+azElimina+'">' +
-							((TipoTrattamento=='A') ? Lingua(TXT_EliminaCartella) : Lingua(TXT_EliminaScheda)) +
-					     '</div>';
+				btnAdd += 	'<div class="p_paz_el_menu" onClick="'+azElimina+'">' +
+								((TipoTrattamento=='A') ? Lingua(TXT_EliminaCartella) : Lingua(TXT_EliminaScheda)) +
+					     	'</div>';
 			}
+			btnAdd += 	'<div class="p_paz_ref_menu" onClick="REF.open(\'archives.patients.treatments\')">' +
+							Lingua(TXT_ReferenceGuide) +
+					    '</div>';
 			
 			// pulsanti SALVA, ANNULLA e ELIMINA
 			HTML += SCHEDA.pulsantiForm( 	Q_idTratt>-1 ? 'PAZIENTI.el_trattamento('+Q_idTratt+')':"",
@@ -1787,7 +1790,9 @@ var PAZIENTI_TRATTAMENTI = {
 			PAZIENTI.mn.innerHTML = '<div class="p_paz_el_menu"' +
 									'	  onclick="PAZIENTI.el_trattamento('+idTrattQ+');"' +
 									'	  onMouseOver="PAZIENTI.mnOver = true;"' +
-									'	  onMouseOut="PAZIENTI.mnOver = false;">Elimina la cartella</div>';
+									'	  onMouseOut="PAZIENTI.mnOver = false;">' +
+										Lingua(TXT_EliminaCartella) +
+									'</div>';
 			document.getElementById("lista_pazienti").appendChild(PAZIENTI.mn);
 			window.addEventListener("mouseup", PAZIENTI.swMenuCiclo, false);
 		}else{

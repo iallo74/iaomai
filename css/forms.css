@@ -137,26 +137,32 @@ body:not(.bodyStyled2):not(.smart) #scheda.schForm .annullaBtn:hover{
 .smart #scheda.schForm .annullaBtn{
 	display:none;
 }
-.p_paz_el_menu{
+.p_paz_el_menu,
+.p_paz_ref_menu{
     padding: 0px;
     cursor: pointer;
-    padding-left: 37px;
-    background-image: url(../img/ico_cestinoR.png);
+    padding-left: 38px;
     background-repeat: no-repeat;
-    background-position: 8px center;
     background-size: auto auto;
     border-bottom: 1px solid rgba(0,0,0,0.2);
+}
+.p_paz_el_menu{
+    background-position: 8px center !important;
+    background-image: url(../img/ico_cestinoR.png);
+}
+.p_paz_ref_menu{
+    background-image: url(../img/ico_guidaN.png);
 }
 	
 .smart.android .submitBtn,
 .smart.android .annullaBtn,
 .smart.android .stampaBtn{
-	font-size:17px;
+	font-size: var(--font-16-93);
 }
 .app_version.bug_font.smart.android .submitBtn,
 .app_version.bug_font.smart.android .annullaBtn,
 .app_version.bug_font.smart.android .stampaBtn{
-	font-size:15.39px !important;
+	font-size: var(--font-15-39) !important;
 }
 .stampaBtn:not(.disBtn):hover{
 	background: #3b3b3b;
@@ -248,7 +254,7 @@ body:not(.smart) .stampaBtn{
 #cont_patologia_add, /* PAZIENTI */
 #cont_intervento_add, /* PAZIENTI */
 .cont_label_add{ /* PAZIENTI */
-	font-size:12.1px !important;
+	font-size: var(--font-12-1) !important;
 	border-radius:4px;
 	box-shadow:0px 0px 3px #000;
 	display: inline-block;
@@ -362,10 +368,10 @@ body:not(.smart) .stampaBtn{
     line-height: 43.97px !important;
 }
 .smart.android #contSintomi div:not(.noResults) span{ /* PAZIENTI */
-	font-size: 15px !important;
+	font-size: var(--font-14-94) !important;
 }
 .app_version.bug_font.smart.android #contSintomi div:not(.noResults) span{ /* PAZIENTI */
-	font-size: 13.58px !important;
+	font-size: var(--font-13-58) !important;
 }
 .smart.android .scoreSelect{
 	margin-top:3px !important;
@@ -445,7 +451,7 @@ body:not(.smart) .stampaBtn{
 .smart.android .p_label_ann{
     height: 42px !important;
     line-height: 42px !important;
-	font-size:16px;
+	font-size: var(--font-16);
 }
 .app_version.bug_font.smart.android .sch_Max450 .p_paz_add,
 .app_version.bug_font.smart.android .p_tag_add,
@@ -461,7 +467,7 @@ body:not(.smart) .stampaBtn{
 .app_version.bug_font.smart.android .p_intervento_ann,
 .app_version.bug_font.smart.android .p_label_ann{
     line-height: 38.48px !important;
-	font-size:14.48px !important;
+	font-size: var(--font-14-48) !important;
 }
 .sch_Max450 .p_paz_add,
 .p_tag_add,
@@ -554,7 +560,7 @@ body:not(.smart) .stampaBtn{
 .smart.android .allergia,
 .smart.android .patologia,
 .smart.android .intervento{
-	font-size: 16px;
+	font-size: var(--font-16);
 }
 .app_version.bug_font.smart.android .tsb,
 .app_version.bug_font.smart.android .tag,
@@ -562,7 +568,7 @@ body:not(.smart) .stampaBtn{
 .app_version.bug_font.smart.android .allergia,
 .app_version.bug_font.smart.android .patologia,
 .app_version.bug_font.smart.android .intervento{
-	font-size: 14.48px !important;
+	font-size: var(--font-14-48) !important;
 }
 #scheda:not(.schForm) .tsb,
 #scheda:not(.schForm) .tag,
@@ -636,7 +642,7 @@ body:not(.smart) .stampaBtn{
 .smart.android #elencoSintomi > div > div:not(.noResults){
 	height:42px !important;
 	line-height:33px !important;
-	font-size:16px !important;
+	font-size: var(--font-16) !important;
 }
 .app_version.bug_font.smart.android #elencoTags > div > div:not(.noResults),
 .app_version.bug_font.smart.android #elencoMedicine > div > div:not(.noResults),
@@ -646,7 +652,7 @@ body:not(.smart) .stampaBtn{
 .app_version.bug_font.smart.android .elencoEtichette > div > div:not(.noResults),
 .app_version.bug_font.smart.android #elencoSintomi > div > div:not(.noResults){
 	line-height:30.23px !important;
-	font-size:14.48px !important;
+	font-size: var(--font-14-48) !important;
 }
 .elMod{
 	width: 30px !important;
@@ -699,7 +705,7 @@ body:not(.smart) .stampaBtn{
     padding-bottom: 5px;
 	padding-left: 10px;
 	text-align:left !important;
-	font-size: 14px;
+	font-size: var(--font-13-94);
 }
 .tagElenco:hover,
 .medicineElenco:hover,
@@ -749,7 +755,7 @@ body:not(.smart) .stampaBtn{
 	min-width:70px !important;
 	text-wrap:none !important;
 	background-position:5px center;
-	font-size:13.2px !important;
+	font-size: var(--font-13-2) !important;
 	padding-left:20px !important;
 }
 .smart.android .p_paz_punto,
@@ -757,7 +763,7 @@ body:not(.smart) .stampaBtn{
 .smart.android .p_paz_label{ /* PAZIENTI */
 	height:42px !important;
 	line-height:42px !important;
-	font-size:15px !important;
+	font-size: var(--font-14-94) !important;
 	background-position:8px center !important;
 	padding-left:30px !important;
 }
@@ -765,13 +771,13 @@ body:not(.smart) .stampaBtn{
 .app_version.bug_font.smart.android .p_paz_foto,
 .app_version.bug_font.smart.android .p_paz_label{ /* PAZIENTI */
 	line-height:38.48px !important;
-	font-size:13.58px !important;
+	font-size: var(--font-13-58) !important;
 }
 .smart.android .p_paz_gruppo,
 .smart.android .p_paz_meridiani{ /* PAZIENTI */
 	height:42px !important;
 	line-height:42px !important;
-	font-size:15px !important;
+	font-size: var(--font-14-94) !important;
 	background-position:8px center, right !important;
 	padding-left:41px !important;
 	padding-right: 37px !important;
@@ -779,7 +785,7 @@ body:not(.smart) .stampaBtn{
 .app_version.bug_font.smart.android .p_paz_gruppo,
 .app_version.bug_font.smart.android .p_paz_meridiani{ /* PAZIENTI */
 	line-height:38.48px !important;
-	font-size:13.58px !important;
+	font-size: var(--font-13-58) !important;
 }
 .p_paz_punto,
 .p_paz_label{
@@ -868,7 +874,7 @@ body:not(.smart) .stampaBtn{
 	font-weight:bold;
 }
 .p_sch_label{ /* procedura */
-	font-size:12.1px !important;
+	font-size: var(--font-12-1) !important;
     min-width: 60px;
     padding: 4px;
     margin-top: 17px;
@@ -1107,11 +1113,11 @@ body:not(.smart) .stampaBtn{
 }
 .smart.android .sch_Max600 #formMod i,
 .smart.android .sch_Max600 #formMod em:not(.labelTrattamenti) {
-    font-size: 15px;
+    font-size: var(--font-14-94);
 }
 .app_version.bug_font.smart.android .sch_Max600 #formMod i,
 .app_version.bug_font.smart.android .sch_Max600 #formMod em:not(.labelTrattamenti) {
-    font-size: 13.58px !important;
+    font-size: var(--font-13-58) !important;
 }
 .smart.android .labelSx{
 	margin-top:5px;
@@ -1202,7 +1208,7 @@ _:-webkit-full-screen,
 .smart.android #allergia_add::placeholder,
 .smart.android #patologia_add::placeholder,
 .smart.android #intervento_add::placeholder{
-	font-size:17px !important;
+	font-size: var(--font-16-93) !important;
 }
 .app_version.bug_font.smart.android #paz_add::placeholder,
 .app_version.bug_font.smart.android .label_add::placeholder,
@@ -1212,7 +1218,7 @@ _:-webkit-full-screen,
 .app_version.bug_font.smart.android #allergia_add::placeholder,
 .app_version.bug_font.smart.android #patologia_add::placeholder,
 .app_version.bug_font.smart.android #intervento_add::placeholder{
-	font-size:15.39px !important;
+	font-size: var(--font-15-39) !important;
 }
 .okPlaceHolder::placeholder{
 	opacity:1 !important;
@@ -1319,7 +1325,7 @@ _:-webkit-full-screen,
 }
 #NomeProcedura{ /* procedura */
 	width:100% !important;
-	font-size:15.4px !important;
+	font-size: var(--font-15-39) !important;
 }
 .dettPunto{ /* procedura + PAZIENTI */
 	padding-left:4px !important;
@@ -1340,11 +1346,11 @@ _:-webkit-full-screen,
 	padding-left:28px !important;
   	width: 100%;
 	background-color: rgba(0,0,0,0.08);
-	font-size: 15px;
+	font-size: var(--font-14-94);
 }
 .app_version.bug_font.smart.android #scheda:not(.scheda_procedura) .dettMeridiano span:not(.valPunto):not(.mezzoPunto){ /* PAZIENTI */
     line-height: 38.48px !important;
-	font-size: 13.58px !important;
+	font-size: var(--font-13-58) !important;
 }
 .scheda_procedura .dettMeridiano span{ /* PAZIENTI */
     line-height: 24px !important;
@@ -1602,7 +1608,7 @@ body:not(.touch) #puntiAuriculoMap .dettPunto:hover{
 	margin-left:7px;
 	margin-top:17px;
 	cursor:pointer;
-	font-size:13.2px !important;
+	font-size: var(--font-13-2) !important;
 }
 #p_sch_salva{
 	color:#000;
@@ -1965,10 +1971,10 @@ body:not(.touch) .sezioneChiusa:hover{
 	font-style:normal !important;
 }
 .smart.android .sezioneTrattamenti > .labelTrattamenti{
-	font-size: 16px;
+	font-size: var(--font-16);
 }
 .app_version.bug_font.smart.android .sezioneTrattamenti > .labelTrattamenti{
-	font-size: 14.48px !important;
+	font-size: var(--font-14-48) !important;
 }
 .smart.android .sezioneTrattamenti:not(sezioneChiusa) > .labelTrattamenti{
 	margin-bottom: 15px;

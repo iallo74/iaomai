@@ -48,14 +48,18 @@ var MODULO_PATOLOGIE = { // extend SET
 		if(	document.getElementById("scheda").querySelector(".formBtn") &&
 			document.getElementById("scheda").classList.contains("visSch") &&
 			SCHEDA.verificaSchedaRet() )ritorno = "document.getElementById('scheda').classList.remove('scheda_patologia')";
-			
+		
+		var btnAdd = 	'<div class="p_paz_ref_menu" onClick="REF.open(\'sets.meridiani_cinesi.pathologies\')">' +
+							Lingua(TXT_ReferenceGuide) +
+						'</div>';
 		SCHEDA.caricaScheda(	titolo,
 								html,
 								'SET.annullaEvidenziaTsubo();SET.spegniMeridiani(true);',
 								'scheda_patologia',
 								ritorno,
 								true,
-								btn );
+								btn,
+								btnAdd );
 		SET.convSigleScheda();
 		SET.evidenziaTsubo(html);
 		SET.evidenziaMeridiani(html);

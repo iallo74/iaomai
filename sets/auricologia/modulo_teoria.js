@@ -91,14 +91,18 @@ var MODULO_TEORIA = { // extend SET
 			document.getElementById("scheda").classList.contains("visSch") &&
 			SCHEDA.verificaSchedaRet() )ritorno = "document.getElementById('scheda').classList.remove('scheda_teoria')";
 			
-			
+		var btnAdd = 	'<div class="p_paz_ref_menu" onClick="REF.open(\'sets.auricologia.insights\')">' +
+							Lingua(TXT_ReferenceGuide) +
+						'</div>';
+							
 		SCHEDA.caricaScheda( 	titolo,
 								html,
 								'SET.annullaEvidenziaTsubo();'+addClose,
 								'scheda_teoria',
 								ritorno,
 								true,
-								btn );
+								btn,
+								btnAdd );
 		SET.evidenziaTsubo(html);
 	},
 	caricaVideo: function( p, t, btn ){
@@ -122,7 +126,10 @@ var MODULO_TEORIA = { // extend SET
 					'       id="VideoID"' +
 					'       src="https://www.tsubomap.com/app/video/'+video+'.mp4">' +
 					'</video>';
-		
+					
+		var btnAdd = 	'<div class="p_paz_ref_menu" onClick="REF.open(\'sets.auricologia.insights\')">' +
+							Lingua(TXT_ReferenceGuide) +
+						'</div>';
 		
 		SCHEDA.caricaScheda( 	titolo,
 								html,
@@ -130,7 +137,8 @@ var MODULO_TEORIA = { // extend SET
 								'scheda_video',
 								false,
 								true,
-								btn );
+								btn,
+								btnAdd );
 	},
 	hideGroupLines: function(){
 		var els = scene.getObjectByName("LNs"+SET.phase).children;

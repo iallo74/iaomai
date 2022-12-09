@@ -155,3 +155,16 @@ function evidenziaParola( el, parola ){
 	el.innerHTML = html;
 	return true;
 }
+function setTextSize( n ){
+	localStorage.textSize = n;
+	document.body.classList.remove("fontMID");
+	document.body.classList.remove("fontBIG");
+	if(n)document.body.classList.add("font"+n);
+	if(document.getElementById("a_"+n)){
+		var els = document.getElementById("sizeSel").getElementsByTagName("b");
+		for(i = 0; i<els.length; i++){
+			if(localStorage.textSize == els[i].dataset.value)els[i].classList.add("a_SEL");
+			else els[i].classList.remove("a_SEL");
+		}
+	}
+}

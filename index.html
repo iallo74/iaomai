@@ -302,17 +302,25 @@
             <div id="colori" class="popup"> <!-- COLORI DELL'APP -->
             	<div id="labelColori" class="popup_label"><div class="popup_chiudi" onClick="MENU.chiudiMenu();"></div></div>
             	<div id="contColori" class="popup_cont">
-               <p>{{TXT_ScegliColore}}:</p>
                <p id="colSel">
-                   <span class="c0" onClick="selCol(0);"></span>
-                   <span class="c1" onClick="selCol(1);"></span>
+                   <i>{{TXT_ColoreAmbiente}}:</i>
                    <span class="c2" onClick="selCol(2);"></span>
+                   <span class="c1" onClick="selCol(1);"></span>
+                   <span class="c0" onClick="selCol(0);"></span>
                </p>
-               <p style="margin-top:20px;">{{TXT_ScegliPelle}}:</p>
                <p id="skinSel">
+                   <i>{{TXT_ScegliPelle}}:</i>
                    <span class="p0" onClick="MODELLO.cambiaTipoPelle('');"></span>
                    <span class="p1" onClick="MODELLO.cambiaTipoPelle('_mulatta');"></span>
                    <span class="p2" onClick="MODELLO.cambiaTipoPelle('_nera');"></span>
+               </p>
+               <p id="sizeSel">
+                   <i>{{TXT_DimTxt}}:</i>
+                   <span>
+                   		<b id="a_" data-value="" onClick="setTextSize('');">A</b>
+                   		<b id="a_MID" data-value="MID" onClick="setTextSize('MID');">A</b>
+                   		<b id="a_BIG" data-value="BIG" onClick="setTextSize('BIG');">A</b>
+                   </span>
                </p>
                 </div>
             </div>
@@ -321,7 +329,7 @@
             	<div id="contNotifiche" class="popup_cont"></div>
             </div>
             <div id="backups" class="popup"> <!-- BACKUPS -->
-            	<div id="labelBackups" class="popup_label">{{TXT_Download}}<div class="popup_chiudi" onClick="MENU.chiudiMenu();"></div></div>
+            	<div id="labelBackups" class="popup_label">{{TXT_Download}}<div class="popup_chiudi" onClick="MENU.chiudiMenu();"></div><div class="popup_help" onClick="REF.open('feature.backup');">?</div></div>
                 <div id="toolsBackups">
                 	<div id="creaBackup_btn" onClick="BACKUPS.creaBackup();">{{TXT_CreaBackup}}</div>
                 	<span></span>
@@ -701,6 +709,7 @@
             
             <div id="ag">  <!-- AGENDA GENERICA -->
             	<div id="labelAg">{{TXT_Agenda}}<div id="chiudi_ag" onClick="MENU.visAgenda();"></div>
+                <div class="popup_help help_white" onClick="REF.open('feature.agenda');">?</div>
                 </div>
                 <div id="agCont" class="SCH sch_Max600">
                   <div id="agTesto">
@@ -720,6 +729,22 @@
                     </div>
                 </div>
             </div>
+            
+        
+            <div id="reference_cont"> <!-- REFERENCE GUIDE -->
+                <div id="reference_top">
+                    <div id="reference_ico" onClick="REF.magnify();"></div>
+                    <div id="reference_title">{{TXT_ReferenceGuide}}
+                        <span id="tree_btn" onClick="REF.swTree();"></span>
+                        <span id="tree_fix" onClick="REF.fixTree();"></span>
+                    </div>
+                    <div id="reference_minify" onClick="REF.minify();"></div>
+                    <div id="reference_close" onClick="REF.close();"></div>
+                </div>
+                <div id="reference_tree"></div>
+                <div id="reference"></div>
+            </div>
+            
         </div>
         
         
@@ -791,20 +816,6 @@
         		<div class="noVisPiu"><div class="btnReference" onClick="REF.open();">{{TXT_ReferenceGuide}}</div>{{TXT_noVisPiu}} <input type="checkbox" id="no_guida" name="no_guida" value="1" onClick="GUIDA.noVis(this);"></div>
             </div>
             <div class="fumetti_freccia"></div>
-        </div>
-        
-        <div id="reference_cont">
-        	<div id="reference_top">
-            	<div id="reference_ico" onClick="REF.magnify();"></div>
-            	<div id="reference_title">{{TXT_ReferenceGuide}}
-                	<span id="tree_btn" onClick="REF.swTree();"></span>
-                	<span id="tree_fix" onClick="REF.fixTree();"></span>
-                </div>
-            	<div id="reference_minify" onClick="REF.minify();"></div>
-            	<div id="reference_close" onClick="REF.close();"></div>
-            </div>
-        	<div id="reference_tree"></div>
-        	<div id="reference"></div>
         </div>
         
         

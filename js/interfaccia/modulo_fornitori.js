@@ -272,8 +272,11 @@ var FORNITORI = {
 			var azElimina = Q_idForn>-1 ? "FORNITORI.el_fornitore("+Q_idForn+");":"";
 			var btnAdd = '';
 			if(azElimina){
-				btnAdd = '<div class="p_paz_el_menu" onClick="'+azElimina+'">'+Lingua(TXT_EliminaScheda)+'</div>';
+				btnAdd += '<div class="p_paz_el_menu" onClick="'+azElimina+'">'+Lingua(TXT_EliminaScheda)+'</div>';
 			}
+			btnAdd += 	'<div class="p_paz_ref_menu" onClick="REF.open(\'archives.suppliers.overview\')">' +
+							Lingua(TXT_ReferenceGuide) +
+						'</div>';
 			
 			HTML += SCHEDA.pulsantiForm(
 									Q_idForn>-1 ? "FORNITORI.el_fornitore("+Q_idForn+");":"",

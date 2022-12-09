@@ -318,12 +318,12 @@ body:not(.touch) .listaMeridiani .spazioDopo{
 }
 .smart.android .elencoPunti p *{
 	line-height: 37px !important;
-    font-size: 16px !important;
+    font-size: var(--font-16) !important;
 	background-position: 5px 14px !important;
 }
 .app_version.bug_font.smart.android .elencoPunti p *{
 	line-height: 33.9px !important;
-    font-size: 14.48px !important;
+    font-size: var(--font-14-48) !important;
 }
 .visElPt{
 	display:block !important;
@@ -341,12 +341,12 @@ body:not(.touch) .listaMeridiani .spazioDopo{
 body:not(.smart) .elencoPunti a,
 body:not(.smart) .elencoPunti a *{
 	color: #FFF !important;
-	font-size:12px !important;
+	font-size: var(--font-12) !important;
 }
 .smart .elencoPunti a,
 .smart .elencoPunti a *{
 	color: #FFF !important;
-	font-size:13px !important;
+	font-size: var(--font-12-94) !important;
 }
 body:not(.smart) .selElPt{
 	background-color:rgba(0,0,0,0.3) !important;
@@ -637,7 +637,7 @@ body:not(.bodyModello) #btns_set > div{
     line-height: 28px;
     border-radius: 15px;
     text-align: center;
-    font-size: 11px;
+    font-size: var(--font-11);
     margin: 2px;
     cursor: pointer;
     background-color: rgba(255,255,255,0.2);
@@ -650,7 +650,7 @@ body:not(.smart) #meridianiSmart_cont div:not(.elencoSel):hover{
     height: 40px !important;
     line-height: 40px !important;
     border-radius: 20px !important;
-    font-size: 11px !important;
+    font-size: var(--font-11) !important;
 }
 .sm_legno{
 	border:1px solid #009900;
@@ -712,7 +712,7 @@ body:not(.smart) #meridianiSmart_cont div:not(.elencoSel):hover{
     margin-bottom: 10px;
 }
 .smart.android #sistemaMeridiani_p *{
-	font-size: 15px;
+	font-size: var(--font-14-94);
     height: 36px;
     line-height: 36px;
 }

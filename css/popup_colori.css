@@ -16,9 +16,28 @@
 #skinSel{
 	text-align:center;
 }
+#contColori > p i{
+	display: inline-block;
+    vertical-align: middle;
+    margin-right: 12px;
+    font-weight: normal;
+	width:150px;
+}
+#contColori > p{
+	text-align: left !important;
+    border-top: 1px solid rgba(0,0,0,0.05);
+    min-height: 50px;
+    margin-top: 4px;
+    margin-bottom: 4px;
+}
+#contColori > p:first-child{
+    border-top: none !important;
+}
+
 #colSel span,
 #skinSel span{
 	display:inline-block;
+    vertical-align: middle;
 	width:40px;
 	height:40px;
 	margin:5px;
@@ -42,7 +61,7 @@ body:not(.smart) #guida_generica #colSel{
 	margin-bottom: 3px;
     font-style: italic;
     opacity: 0.6;
-    font-size: 11px;
+    font-size: var(--font-11);
     padding-left: 3px;
 }
 #guida_generica #colSel span{
@@ -51,6 +70,40 @@ body:not(.smart) #guida_generica #colSel{
 	box-shadow:0px 0px 2px #000;
 	border-radius:3px;
 	margin:3px;
+}
+#sizeSel > span{
+	display:inline-block;
+    vertical-align: middle;
+	height: 50px;
+    line-height: 50px;
+}
+#sizeSel > span b{
+	display: inline-block;
+    vertical-align: middle;
+    width: 36px;
+    height: 36px;
+    line-height: 34px;
+    border-radius: 18px;
+    background-color: rgba(0,0,0,0.1);
+    border: 1px solid rgba(0,0,0,0.1);
+    text-align: center;
+    cursor: pointer;
+    margin: 3px;
+}
+.a_SEL{
+	background-color:rgba(0,0,0,0.7) !important;
+	color:#FFF;
+    border: 1px solid #FFF !important;
+    box-shadow: 0px 0px 5px #000;
+}
+#a_{
+	font-size:12px !important;
+}
+#a_MID{
+	font-size:15.5px !important;
+}
+#a_BIG{
+	font-size:19px !important;
 }
 .cSel{
 	border:1px solid #FFF;

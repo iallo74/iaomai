@@ -645,17 +645,34 @@ var LOGIN = {
 			return;
 		}
 		if(CONN.retNoConn()){
+			
+			var btnAdd = 	'<div class="p_paz_ref_menu" onClick="REF.open(\'feature.login\')">' +
+								Lingua(TXT_ReferenceGuide) +
+							'</div>';
+						
 			SCHEDA.caricaScheda(	stripslashes(Lingua(TXT_ModificaUtente)),
 									'',
 									'',
 									'scheda_utente',
 									false,
-									true );
+									true,
+									'',
+									btnAdd );
 			applicaLoading(document.getElementById("scheda_testo"));
 			MENU.chiudiMenu();
+			
+			var btnAdd = 	'<div class="p_paz_ref_menu" onClick="REF.open(\'feature.login\')">' +
+								Lingua(TXT_ReferenceGuide) +
+							'</div>';
+							
 			CONN.caricaUrl(	"utente_dati.php",
 							"b64=1",
-							"LOGIN.car_utente");
+							"LOGIN.car_utente",
+							'',
+							'',
+							'',
+							'',
+							btnAdd );
 		}
 	},
 	car_utente: function( txt ){
@@ -837,13 +854,17 @@ var LOGIN = {
 				
 				HTML += '</form>';
 				
+				var btnAdd = 	'<div class="p_paz_ref_menu" onClick="REF.open(\'feature.login\')">' +
+									Lingua(TXT_ReferenceGuide) +
+								'</div>';
 				
 				SCHEDA.caricaScheda(	stripslashes(Lingua(TXT_ModificaUtente)),
 										HTML,
 										'',
 										'scheda_utente',
 										false,
-										true );
+										true,'',
+										btnAdd );
 										
 				initChangeDetection( "formMod" );
 				

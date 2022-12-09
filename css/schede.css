@@ -637,12 +637,12 @@ body:not(.smart) .schedaRitorno #scheda_titolo{
 }
 .android #scheda:not(.schForm) #scheda_testo *:not(h1):not(h2):not(.annullaBtn):not(.submitBtn):not(.stampaBtn),
 .android #scheda:not(.schForm) #scheda_testo2 *:not(h1):not(h2):not(.annullaBtn):not(.submitBtn):not(.stampaBtn){
-	font-size:16.5px;
+	font-size: var(--font-16-5);
 	line-height:20px;
 }
 .app_version.bug_font.android #scheda:not(.schForm) #scheda_testo *:not(h1):not(h2):not(.annullaBtn):not(.submitBtn):not(.stampaBtn),
 .app_version.bug_font.android #scheda:not(.schForm) #scheda_testo2 *:not(h1):not(h2):not(.annullaBtn):not(.submitBtn):not(.stampaBtn){
-	font-size:14.94px !important;
+	font-size: var(--font-14-94) !important;
 	line-height:18.32px !important;
 }
 .bodyStyled2 #scheda_testo,
@@ -693,7 +693,7 @@ body:not(.bodyStyled2) #scheda_testo2{
 
 /* stili del CONTENUTO della scheda */
 #scheda h1{
-	font-size:30.9px;
+	font-size: var(--font-30-9);
     font-weight: normal;
     margin-top: 0px;
 	line-height: normal !important;
@@ -702,7 +702,7 @@ body:not(.bodyStyled2) #scheda_testo2{
 	margin-top:10px;
 }
 #scheda h1 *{
-	font-size:30.9px;
+	font-size: var(--font-30-9);
     font-weight: normal;
 }
 .tdScuro{

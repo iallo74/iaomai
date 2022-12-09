@@ -63,7 +63,7 @@
 	text-align:left;
 }
 #contFeatures h2{
-	font-size:24px;
+	font-size: var(--font-24-2);
 	margin:0px;
 }
 #contFeatures > div{
@@ -76,13 +76,13 @@
 .smart.android #contFeatures > div *,
 .smart.android #contFeatures > p,
 .smart.android #contFeatures > p *{
-	font-size: 16px !important;
+	font-size: var(--font-16) !important;
 }
 .app_version.bug_font.smart.android #contFeatures > div,
 .app_version.bug_font.smart.android #contFeatures > div *,
 .app_version.bug_font.smart.android #contFeatures > p,
 .app_version.bug_font.smart.android #contFeatures > p *{
-	font-size: 14.48px !important;
+	font-size: var(--font-14-48) !important;
 }
 #contFeatures > div > div{
 	display:inline-block;

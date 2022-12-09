@@ -252,8 +252,8 @@ var TXT_DirittiRiservati={
 	
 // popup COLORI	
 var TXT_Colori={
-	ita: "Colori",
-	eng: "Colors",
+	ita: "Colori e testi",
+	eng: "Colors and texts",
 	esp: "" };
 	
 var TXT_ScegliColore={
@@ -267,9 +267,29 @@ var TXT_ColoreAmbiente={
 	esp: "" };
 	
 var TXT_ScegliPelle={
-	ita: "Scegli il tipo di pelle",
-	eng: "Choose the skin type",
+	ita: "Tipo di pelle",
+	eng: "Skin type",
 	esp: "" };
+	
+	var TXT_DimTxt={
+		ita: "Dimensione testi",
+		eng: "Texts size",
+		esp: "" };
+	
+	var TXT_TxtSML={
+		ita: "Piccolo",
+		eng: "Small",
+		esp: "" };
+	
+	var TXT_TxtMID={
+		ita: "Medio",
+		eng: "Middle",
+		esp: "" };
+	
+	var TXT_TxtBIG={
+		ita: "Grande",
+		eng: "Big",
+		esp: "" };
 	
 
 // CARICAMENTO, LOGIN e SINCRONIZZAZIONE

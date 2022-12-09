@@ -43,7 +43,7 @@
 .procedureButEvi span{
 	font-style:italic;
 	color:#666;
-	font-size:10px !important;
+	font-size: var(--font-10) !important;
 }
 
 .frPrec,
@@ -114,7 +114,7 @@
 }
 #notificaCommenti{
 	cursor:pointer;
-	font-size:10px;
+	font-size: var(--font-10);
 	padding-left:24px;
 	height:24px;
 	line-height:24px;
@@ -177,24 +177,24 @@
 }
 .commSX{
 	color:#000;
-	font-size:11px !important;
+	font-size: var(--font-11) !important;
 	padding:8px;
 	overflow:hidden;
 	padding-bottom:3px;
 }
 .commSX *{
-	font-size:11px !important;
+	font-size: var(--font-11) !important;
 	color:#000;
 }
 .commSX, .commSX *{
 	line-height: normal !important;
 }
 .commSX span{
-	font-size:10px !important;
+	font-size: var(--font-10) !important;
 }
 .commDX{
 	padding:8px;
-	font-size:12px !important;
+	font-size: var(--font-12) !important;
 	color:#000;
 	padding-top:3px;
 }
@@ -205,7 +205,7 @@
     height: 25px;
 }
 .commTL span{
-	font-size: 11px !important;
+	font-size: var(--font-11) !important;
     cursor: pointer;
     background-color: rgba(0,0,0,0.2);
     display: inline-block;
@@ -223,7 +223,7 @@
     font-style: italic;
     padding-bottom: 3px;
     padding-left: 32px;
-    font-size: 11px;
+    font-size: var(--font-11);
     background-image: url(../../img/ico_replyNsw.png);
     background-size: 20px;
     background-repeat: no-repeat;

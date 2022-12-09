@@ -25,11 +25,11 @@
 	padding-right:30px;
 }
 #contRegistrazione, #contRegistrazione p{
-	font-size:13.2px;
+	font-size: var(--font-13-2);
 	color:rgba(0,0,0,0.5);
 }
 #labelRegistrazione{
-	font-size:19.8px;
+	font-size: var(--font-19-8);
 	color:#000;
 }
 
@@ -68,10 +68,10 @@
 	-webkit-appearance: none;
 }
 .smart.android #registrazioneForm input[type='submit']{
-	font-size:17px;
+	font-size: var(--font-16-93);
 }
 .app_version.bug_font.smart.android #registrazioneForm input[type='submit']{
-	font-size:15.39px !important;
+	font-size: var(--font-15-39) !important;
 	line-height:36.64px !important;
 }
 #registrazioneForm input[type='submit']:hover{
@@ -82,5 +82,5 @@
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#144092', endColorstr='#062865',GradientType=0 );
 }
 #divTrattamentoDati *{
-	font-size:12.1px;
+	font-size: var(--font-12-1);
 }

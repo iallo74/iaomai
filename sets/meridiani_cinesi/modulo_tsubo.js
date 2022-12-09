@@ -155,11 +155,19 @@ var MODULO_TSUBO = { // extend SET
 		
 		var ptSel = SET.ptSel;
 		SET.ptSel = null;
+		
+		var btnAdd = 	'<div class="p_paz_ref_menu" onClick="REF.open(\'sets.meridiani_cinesi.pointsmap\')">' +
+							Lingua(TXT_ReferenceGuide) +
+						'</div>';
+							
 		SCHEDA.caricaScheda(	titolo,
 								HTML,
 								"if(SET.ptSel)SET.chiudiTsubo()",
 								"tab_tsubo",
-								ritorno );
+								ritorno,
+								false,
+								'',
+								btnAdd );
 		SET.convSigleScheda();
 		SET.settaOverTsubo();
 		SET.ptSel = ptSel;

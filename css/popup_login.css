@@ -12,11 +12,11 @@
 	padding-right:30px;
 }
 #contLogin, #contLogin p{
-	font-size:13.2px;
+	font-size: var(--font-13-2);
 	color:rgba(0,0,0,0.5);
 }
 #labelLogin{
-	font-size:19.8px;
+	font-size: var(--font-19-8);
 	color:#000;
 }
 
@@ -48,10 +48,10 @@
 }
 
 .smart.android #loginFrom input[type='submit']{
-	font-size:17px;
+	font-size: var(--font-16-93);
 }
 .app_version.bug_font.smart.android #loginFrom input[type='submit']{
-	font-size:15.39px !important;
+	font-size: var(--font-15-39) !important;
 	line-height:36.64px !important;
 }
 #loginFrom input[type='submit']:hover{
@@ -71,7 +71,7 @@
 }
 #USRlabel span{
     padding-top: 5px;
-    font-size:18.7px;
+    font-size: var(--font-18-7);
     line-height: 30px;
     height: 30px;
 }
@@ -89,12 +89,12 @@
 	line-height: 30px;
 	cursor:pointer;
 	font-weight:normal !important;
-	font-size:12.1px !important;
+	font-size: var(--font-12-1) !important;
 	box-sizing:border-box;
 }
 .smart.android #btnRecupero{
-	font-size:15.4px !important;
+	font-size: var(--font-15-39) !important;
 }
 .app_version.bug_font.smart.android #btnRecupero{
-	font-size:13.94px !important;
+	font-size: var(--font-13-94) !important;
 }

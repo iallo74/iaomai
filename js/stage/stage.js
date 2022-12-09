@@ -673,7 +673,7 @@ function stopAnimate( subito ){
 		document.getElementById("legende").classList.add("noAnimate");
 		document.getElementById("container").style.opacity = 0.4;
 		//document.getElementById("p_piuma").classList.add("piumaAtt");
-		//document.getElementById("p_piuma").getElementsByTagName("i")[0].innerHTML = htmlEntities(Lingua(TXT_3DinPausa));
+		//document.getElementById("p_piuma").getElementsByTagName("i")[0].innerHTML = htmlEntities(Lingua(TXT__3DinPausa));
 	}
 }
 function startAnimate(){
@@ -770,7 +770,7 @@ function selCol(n){
 	localStorage.colore = n;
 	var els = document.getElementById("colSel").getElementsByTagName("span");
 	for(i = 0; i<els.length; i++){
-		if(i == localStorage.colore)els[i].classList.add("cSel");
+		if(localStorage.colore == 2-i)els[i].classList.add("cSel");
 		else els[i].classList.remove("cSel");
 	}
 	document.body.classList.add('bodyStyled'+localStorage.colore);

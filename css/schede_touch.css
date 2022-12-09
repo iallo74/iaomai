@@ -22,14 +22,14 @@
 .touch:not(.android) #dataTxt{
 	/*height:30px !important;
 	line-height:30px !important;
-	font-size:15.4px !important;*/
+	font-size: var(--font-15-39) !important;*/
 }
 .touch:not(.android) #dataTxt *{
 	line-height:30px !important;
-	font-size:15.4px !important;
+	font-size: var(--font-15-39) !important;
 }
 .touch:not(.android) textarea{
-	font-size:15.4px !important;
+	font-size: var(--font-15-39) !important;
 	padding:15px !important;
 }
 .touch.android:not(.smart) input[type='text'],
@@ -39,7 +39,7 @@
 .touch.android:not(.smart) #dataTxt{
 	height:32px !important;
 	line-height:32px !important;
-	font-size:17.6px !important;
+	font-size: var(--font-17-6) !important;
 	padding-left:8px;
 }
 .smart.android input[type='text'],
@@ -49,7 +49,7 @@
 .smart.android #dataTxt{
 	height:42px !important;
 	line-height:42px !important;
-	font-size:17px !important;
+	font-size: var(--font-16-93) !important;
 }
 .app_version.bug_font.smart.android input[type='text'],
 .app_version.bug_font.smart.android input[type='email'],
@@ -57,7 +57,7 @@
 .app_version.bug_font.smart.android #formMod select:not(.p_proc_gruppo):not(.p_paz_gruppo):not(.p_paz_meridiani):not(#grpPt):not(#grpMrd),
 .app_version.bug_font.smart.android #dataTxt{
 	line-height:38.48px !important;
-	font-size:15.39px !important;
+	font-size: var(--font-15-39) !important;
 }
 
 .smart:not(.android) input[type='text'],
@@ -65,14 +65,14 @@
 .smart:not(.android) input[type='password'],
 .smart:not(.android) #formMod select:not(.p_proc_gruppo):not(.p_paz_gruppo):not(.p_paz_meridiani):not(#grpPt):not(#grpMrd),
 .smart:not(.android) #dataTxt{
-	font-size:15px !important;
+	font-size: var(--font-14-94) !important;
 }
 .app_version.bug_font.smart:not(.android) input[type='text'],
 .app_version.bug_font.smart:not(.android) input[type='email'],
 .app_version.bug_font.smart:not(.android) input[type='password'],
 .app_version.bug_font.smart:not(.android) #formMod select:not(.p_proc_gruppo):not(.p_paz_gruppo):not(.p_paz_meridiani):not(#grpPt):not(#grpMrd),
 .app_version.bug_font.smart:not(.android) #dataTxt{
-	font-size:13.58px !important;
+	font-size: var(--font-13-58) !important;
 }
 
 .touch.android #el_visceri,
@@ -100,11 +100,11 @@
 }
 .touch.android #dataTxt *{
 	line-height:32px !important;
-	font-size:17.6px !important;
+	font-size: var(--font-17-6) !important;
 	font-weight:normal !important;
 }
 .touch.android textarea{
-	font-size:17.6px !important;
+	font-size: var(--font-17-6) !important;
 	padding:15px !important;
 }
 .touch .p_sch_punto,
@@ -170,13 +170,13 @@ body.touch:not(.smart) .visSch #sc{
 	height: calc(100% - 79px);
 }
 .smart .trattNomeCliente span{
-	font-size:14.3px;
+	font-size: var(--font-14-3);
 }
 .smart #elenchi .trattNomeCliente{
 	overflow-x: visible !important;
 }
 .smart .trattNomeCliente{
-	font-size:16.5px !important;
+	font-size: var(--font-16-5) !important;
 }
 
 .smart #elenchi.compresso{
@@ -285,7 +285,7 @@ body.touch:not(.smart) .visSch #sc{
 }
 .smart.nasSch #riapriTit{
 	width: 100%;
-    font-size:12.1px;
+    font-size: var(--font-12-1);
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;

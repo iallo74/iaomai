@@ -34,7 +34,7 @@ body:not(.smart) #btnCarMapMenu i span,
 }
 #btnCarMapMenu,
 #btnCarMapMenu > span{
-    font-size:23.1px !important;
+    font-size: var(--font-23-1) !important;
     color: rgba(0,0,0,0.6);
 }
 body:not(.smart) #chiudiSet,
@@ -86,6 +86,7 @@ body:not(.smart) #help_set,
 .smart #elenchi #help_set,
 #fumetti_testo #help_set,
 #help_clienti,
+.popup_help,
 .help_sets,
 .smart #help_set{
 	border-radius: 10px;
@@ -99,17 +100,27 @@ body:not(.smart) #help_set,
 	cursor:pointer;
     margin-top: 7px;
     margin-right: 4px;
-	font-size: 18.7px !important;
+	font-size: var(--font-18-7) !important;
 	font-weight:bold !important;
 	font-style: normal !important;
+}
+.popup_help{
+	margin-right: 36px;
+    margin-top: 10px;
+    margin-left: -56px;
+}
+.help_white{
+	border-color:#FFF !important;
+	color: #FFF !important;
 }
 .app_version.bug_font.smart.android #elenchi #help_set,
 .app_version.bug_font.smart.android #fumetti_testo #help_set,
 .app_version.bug_font.smart.android #help_clienti,
+.app_version.bug_font.smart.android .popup_help,
 .app_version.bug_font.smart.android .help_sets,
 .app_version.bug_font.smart.android #help_set{
     line-height: 15.57px !important;
-	font-size: 16.93px !important;
+	font-size: var(--font-16-93) !important;
 }
 #help_clienti,
 .smart #help_set{
@@ -265,7 +276,7 @@ body:not(.smart) #elenchi{
     overflow-x: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
-    font-size:23.1px;
+    font-size: var(--font-23-1);
     color: rgba(0,0,0,0.6);
 }
 /*#elenchi_titolo.clientAtt{
@@ -289,7 +300,7 @@ body:not(.smart) #elenchi{
     overflow-x: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
-    font-size:23.1px;
+    font-size: var(--font-23-1);
     color: rgba(0,0,0,0.6);
     display: block;
     padding-right: 20px;
@@ -297,12 +308,12 @@ body:not(.smart) #elenchi{
 .smart.android #titolo_base,
 .smart.android #elenchi_titolo,
 .smart.android #btnCarMapMenu span{
-	font-size:28px !important;
+	font-size: var(--font-28) !important;
 }
 .app_version.bug_font.smart.android #titolo_base,
 .app_version.bug_font.smart.android #elenchi_titolo,
 .app_version.bug_font.smart.android #btnCarMapMenu span{
-	font-size:25.35px !important;
+	font-size: var(--font-25-35) !important;
 }
 .smart #titolo_base,
 .smart #btnCarMapMenu{
@@ -314,7 +325,7 @@ body:not(.smart) #elenchi{
     padding-left: 15px;
     padding-right: 15px;
     padding-bottom: 15px;
-	font-size:12.1px;
+	font-size: var(--font-12-1);
 	color: rgba(0,0,0,0.6);
     display: block;
 }
@@ -412,12 +423,12 @@ body:not(.bodyStyled2) #chiudiElenco{
 	margin: 5px;
 	margin-left: 10px;
     margin-right: 10px;
-	font-size:17px;
+	font-size: var(--font-16-93);
 }
 .app_version.bug_font.smart.android #pulsanti_base div,
 .app_version.bug_font.smart.android #pulsanti_set div{
     line-height: 45.80px !important;
-	font-size:15.39px !important;
+	font-size: var(--font-15-39) !important;
 }
 .smart #pulsanti_base div,
 .smart #pulsanti_set div{
@@ -503,19 +514,19 @@ body:not(.bodyStyled2) #chiudiElenco{
 }
 .smart.android .lista > div:not(.loading):not(.menuElenchi),
 .smart.android .lista > div:not(.loading):not(.menuElenchi) *{
-	font-size:17px;
+	font-size: var(--font-16-93);
 }
 .app_version.bug_font.smart.android .lista > div:not(.loading):not(.menuElenchi),
 .app_version.bug_font.smart.android .lista > div:not(.loading):not(.menuElenchi) *{
-	font-size:15.39px !important;
+	font-size: var(--font-15-39) !important;
 }
 .smart:not(.android) .lista > div:not(.loading):not(.menuElenchi),
 .smart:not(.android) .lista > div:not(.loading):not(.menuElenchi) *{
-	font-size:13.2px;
+	font-size: var(--font-13-2);
 }
 .app_version.bug_font.smart:not(.android) .lista > div:not(.loading):not(.menuElenchi),
 .app_version.bug_font.smart:not(.android) .lista > div:not(.loading):not(.menuElenchi) *{
-	font-size:13.58px !important;
+	font-size: var(--font-13-58) !important;
 }
 .elencoSel{
     box-shadow: 0px 0px 3px rgba(0,0,0,0.5);
@@ -702,11 +713,11 @@ body:not(.bodyStyled2) #chiudiElenco{
 
 .smart.android .cart_els,
 .smart.android .cart_els *{
-	font-size:17px !important;
+	font-size: var(--font-16-93) !important;
 }
 .app_version.bug_font.smart.android .cart_els,
 .app_version.bug_font.smart.android .cart_els *{
-	font-size:15.39px !important;
+	font-size: var(--font-15-39) !important;
 }
 .cart_els:not(.elencoSel):not(.lockedItem):hover{
 	background-color:#555 !important;
@@ -843,7 +854,7 @@ body:not(.touch) .frdxtratt{
 	padding-bottom: 12px;
 }
 .cnmty span{
-	font-size:11px;
+	font-size: var(--font-11);
 	opacity:0.8;
 }
 .procCond{

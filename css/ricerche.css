@@ -25,19 +25,19 @@ body:not(.smart) #parolaGlobal{
 }
 body:not(.smart) #parolaGlobal::-webkit-input-placeholder{
 	font-weight:normal !important;
-	font-size:11px !important;
+	font-size: var(--font-11) !important;
 	padding-left:2px;
 }
 .smart #parolaGlobal::-webkit-input-placeholder{
 	font-weight:normal !important;
-	font-size:16.5px !important;
+	font-size: var(--font-16-5) !important;
 	padding-left:2px;
 }
 #parolaGlobal::-moz-placeholder{
 	opacity:0.5 !important;
 	font-weight:normal !important;
 	/*text-align:center !important;*/
-	font-size:11px !important;
+	font-size: var(--font-11) !important;
 	padding-left:2px;
 }
 #cerca_btn{
@@ -134,7 +134,7 @@ body:not(.smart) #schedaGlobal{
 	}
 }
 #globalTitolo{
-	font-size:14.3px !important;
+	font-size: var(--font-14-3) !important;
     font-weight: bold;
     width: calc(100% - 38px);
     height: 30px;
@@ -171,10 +171,10 @@ body:not(.smart) #globalTesta{
 	box-sizing:border-box;
 }
 .smart.android #globalTesto > p:first-child > b{
-	font-size:17px !important;
+	font-size: var(--font-16-93) !important;
 }
 .app_version.bug_font.smart.android #globalTesto > p:first-child > b{
-	font-size:15.39px !important;
+	font-size: var(--font-15-39) !important;
 }
 .globalHistory{
     overflow-y: auto;
@@ -187,7 +187,7 @@ body:not(.smart) #globalTesta{
 	float:left;
 	cursor:pointer;
 	margin-left:14px;
-	font-size:18px;
+	font-size: var(--font-18);
 }
 #titHistoryGlobal span{
 	display:block;
@@ -224,7 +224,7 @@ body:not(.smart) #globalTesta{
 	height: calc(100% + 2px) !important;
 }
 .risGlob{
-    font-size:13.2px !important;
+    font-size: var(--font-13-2) !important;
 	padding:7px;
 	overflow:hidden;
 	white-space:nowrap;
@@ -262,7 +262,7 @@ body:not(.smart) #globalTesta{
 .noResGlob{
 	color:#666;
 	font-style:italic;
-	font-size:13.2px !important;
+	font-size: var(--font-13-2) !important;
 	padding:7px;
 	overflow:hidden;
 	white-space:nowrap;

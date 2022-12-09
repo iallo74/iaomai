@@ -203,7 +203,16 @@ THREE.ObjectControls = function ( object, domElement ) {
 	scope.domElement.addEventListener( 'mousedown', onMouseDown2, false );
 	scope.domElement.addEventListener( 'mouseup', onMouseUp2, false );
 	scope.domElement.addEventListener( 'mousemove', onMouseMove2, false );
-	scope.domElement.addEventListener( 'wheel', onMouseWheel, false );
+	//scope.domElement.addEventListener( 'wheel', onMouseWheel, false );
+	scope.domElement.addEventListener( 'wheel', (e) => {
+          if(e.ctrlKey){
+			  e.preventDefault();
+		  }else{
+			  onMouseWheel( e );
+		  }
+        }, {
+            "passive": false
+        });
 
 
 		

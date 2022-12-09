@@ -150,16 +150,16 @@ body:not(.smart) #pazienti_head{
 }
 #nomeCliente{
     color: #2076d8;
-    font-size:15.4px;
+    font-size: var(--font-15-39);
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
 }
 .smart.android #nomeCliente{
-	font-size:17px;
+	font-size: var(--font-16-93);
 }
 .app_version.bug_font.smart.android #nomeCliente{
-	font-size:15.39px !important;
+	font-size: var(--font-15-39) !important;
 }
 #esciCliente{
     width: 30px;
@@ -274,11 +274,11 @@ body:not(.smart) #pazienti_head{
 	overflow:hidden;
 }
 #schedaCiclo h1{
-	font-size:19.8px !important;
+	font-size: var(--font-19-8) !important;
 	margin-bottom:0px !important;
 }
 #schedaCiclo h3{
-	font-size:16.5px !important;
+	font-size: var(--font-16-5) !important;
 	margin-bottom:0px !important;
 }
 #schedaCiclo i{
@@ -299,7 +299,7 @@ body:not(.smart) #pazienti_head{
 	border:1px solid rgba(0,0,0,0.3);
 	padding:6px;
 	background-color:rgba(0,0,0,0.1);
-	font-size:12.1px;
+	font-size: var(--font-12-1);
 }
 #totSaldi{
 	background-color: #ffe3a4 !important;
@@ -378,7 +378,7 @@ body:not(.smart) #pazienti_head{
 }
 .graficoInt div div{
 	font-style:italic;
-	font-size:12.1px;
+	font-size: var(--font-12-1);
 	width:60px;
 	margin-left:-13px;
 	text-align:center;
@@ -437,7 +437,7 @@ body:not(.smart) #pazienti_head{
 .trattNomeCliente span i{
 	font-style:normal !important;
     text-decoration: underline;
-    font-size:12.1px;
+    font-size: var(--font-12-1);
 	cursor:pointer;
 }
 .trattTools{
@@ -555,10 +555,10 @@ body:not(.smart) .trattTools i:not(.infoCiclo):not(.addTrattBtn):hover{
     font-style: normal;
 }
 .smart.android .anamnesiBtn span{
-	font-size:17px;
+	font-size: var(--font-16-93);
 }
 .app_version.bug_font.smart.android .anamnesiBtn span{
-	font-size:15.39px !important;
+	font-size: var(--font-15-39) !important;
 }
 .riepilogoBtn.elencoSel{
 	background-image: url(../img/ico_statsTB.png), linear-gradient(to bottom, #1d4eaa 0%,#0a3d96 100%) !important;
@@ -575,7 +575,7 @@ body:not(.smart) .trattTools i:not(.infoCiclo):not(.addTrattBtn):hover{
 	float: left !important;
 	margin-top: 0px;
 	padding-left: 13px;
-	font-size:12.1px;
+	font-size: var(--font-12-1);
 	line-height: normal;
 	cursor:default !important;
 }
@@ -689,7 +689,7 @@ body:not(.smart) #add_saldo .elMenu:hover{
 	font-style: italic;
     color: #FFF;
 	margin-right:5px;
-	font-size:12.1px;
+	font-size: var(--font-12-1);
 }
 .selBtn{
 	background-color: #525252 !important;
@@ -743,7 +743,7 @@ body:not(.smart) #add_pat{
 	margin-left: -11px;
     padding-right: 8px;
     cursor: pointer;
-    font-size:12.1px;
+    font-size: var(--font-12-1);
     color: #c6c5c3;
 }
 .smart #add_ciclo i,
@@ -808,14 +808,14 @@ body:not(.smart) #add_pat{
 #add_ciclo i span,
 #add_saldo i span,
 #add_proc i span{ /* specifico di PROCEDURE */
-    font-size:12.1px;
+    font-size: var(--font-12-1);
     color: #FFF;
 }
 #add_paz i span,
 #sistemaMeridiani_p i span,
 #add_forn i span,
 #add_serv i span{
-    font-size:12.1px;
+    font-size: var(--font-12-1);
     color: #525252;
 }
 #add_ciclo,
@@ -972,7 +972,7 @@ body:not(.smart) .listaProcedure{
 #pazienti_vis h1{
 	color: #154e9c;
     margin-bottom: 10px;
-    font-size:28.6px;
+    font-size: var(--font-28-6);
     margin-top: 0px;
 }
 #pazienti_vis i{
@@ -980,7 +980,7 @@ body:not(.smart) .listaProcedure{
 }
 
 #pazienti_vis .rgAnag i{
-	font-size: 13.2px;
+	font-size: var(--font-13-2);
 }
 #pazienti_vis p{
 	line-height:20px !important;
@@ -1224,7 +1224,7 @@ body:not(.smart) #modAnag{
 	margin-top:20px;
 }
 .etStats{
-	font-size:19.8px;
+	font-size: var(--font-19-8);
 	padding:5px;
 }
 .etStats span{
@@ -1306,7 +1306,7 @@ body:not(.smart) #rgApplicaFiltri{
     height: 32px;
     line-height: 32px;
     margin-top: 3px;
-	font-size:17px;
+	font-size: var(--font-16-93);
 }
 .app_version.bug_font.smart.android #paz_ricerca,
 .app_version.bug_font.smart.android #forn_ricerca,
@@ -1314,7 +1314,7 @@ body:not(.smart) #rgApplicaFiltri{
 .app_version.bug_font.smart.android #proc_ricerca,
 .app_version.bug_font.smart.android #pat_ricerca{
     line-height: 29.32px !important;
-	font-size:15.39px !important;
+	font-size: var(--font-15-39) !important;
 }
 #paz_ricerca,
 #forn_ricerca,
@@ -1511,7 +1511,7 @@ body:not(.smart) #rgApplicaFiltri{
 	padding-bottom:10px;
 }
 #alertCoda{
-	font-size:12.1px;
+	font-size: var(--font-12-1);
     text-align: right;
     line-height: 16px;
     height: 16px;
@@ -1641,7 +1641,7 @@ body:not(.smart) #rgApplicaFiltri{
    	margin-bottom: 10px;
 }
 #serv_titolo{
-	font-size:19.8px;
+	font-size: var(--font-19-8);
     padding: 10px;
     background: url(../img/ico_servizio.png) left 3px no-repeat;
     padding-left: 45px;
@@ -1743,7 +1743,7 @@ body:not(.smart) #rgApplicaFiltri{
 
 .labelModificaCon{
 	margin-bottom: 20px;
-	font-size:12.1px;
+	font-size: var(--font-12-1);
 	font-style:italic;
 	color:rgba(0,0,0,0.6);
 	background-color:rgba(0,0,0,0.05);

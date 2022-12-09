@@ -22,7 +22,7 @@
 	border-top: 1px solid rgba(0,0,0,0.2);
 	border-bottom: 1px solid rgba(0,0,0,0.2);
     background-color: rgba(255,255,255,0.3);
-    font-size:12.1px;
+    font-size: var(--font-12-1);
     text-align: left;
     margin-left: -20px;
     margin-right: -20px;
@@ -32,7 +32,7 @@
 #flagCommunity *{
 	line-height:30px;
 	text-align:left;
-	font-size:12.1px;
+	font-size: var(--font-12-1);
 }
 #flagCommunity input{
 	margin-top:2px;

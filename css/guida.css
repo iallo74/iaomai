@@ -4,13 +4,24 @@
 	bottom:10px;
 	right:10px;
 	width:520px;
-	height:640px;
-	z-index:1000;
-	border-radius:8px;
+	height: calc(100% - 150px);
+	z-index:1000002;
 	background-color:#FFF;
 	border-radius:6px;
 	box-shadow:0px 0px 20px rgba(0,0,0,0.8);
 	overflow:hidden;
+}
+@media (max-width: 539px){	
+	#reference_cont:not(.mini){
+		bottom:auto !important;
+		right:auto !important;
+		top:0px;
+		left:0px;
+		width:100% !important;
+		height:100% !important;
+		border-radius:0px !important;
+		box-shadow:none !important;
+	}
 }
 #reference_cont.mini{
 	right:0px;
@@ -71,7 +82,7 @@
 }
 #reference_title{
 	width:calc(100% - 100px);
-	font-size:16.5px;
+	font-size: var(--font-16-5);
 }
 #reference_title span{
 	width:25px;
@@ -96,11 +107,20 @@
 #reference_cont.opTree #reference_title span#tree_btn{
 	background-image:url(../img/chMenuB.png) !important;
 }
-#reference_cont.fix #reference_title span#tree_btn{
-	display:none !important;
+
+@media (min-width: 540px){
+	#reference_cont.fix #reference_title span#tree_btn{
+		display:none !important;
+	}
 }
 #reference_cont.fix #reference_title span#tree_fix{
 	background-image:url(../img/puntinaFix.png) !important;
+}
+
+@media (max-width: 539px){
+	#reference_cont.fix #reference_title span#tree_fix{
+		display:none !important;
+	}
 }
 #reference_close:hover,
 #reference_minify:hover{
@@ -116,8 +136,21 @@
 	text-align:justify;
 }
 #reference h2{
-	font-size:16.5px;
+	font-size: var(--font-20-5);
 	margin-top:0px;
+	font-weight:normal;
+}
+#reference p.listIcon{
+	min-height: 40px;
+}
+#reference p.listIcon img{
+	vertical-align:middle;
+}
+#reference a{
+	color: #36C;
+}
+#reference img{
+	max-width:100%;
 }
 #ref_tree{
 	text-align:left;
@@ -141,6 +174,9 @@
 #ref_tree div.fr.op{
 	height:auto !important;
     border-bottom: 1px solid rgba(0,0,0,0.05);
+}
+#ref_tree div.fr.frSel{
+	border-left: 1px solid #3067f2;
 }
 #ref_tree div.fr.op{
 	background-image:url(../img/frSuB.png) !important;
@@ -215,15 +251,32 @@
 		width:770px !important;
 	}
 }
-#reference_cont:not(.opTree):not(.fix) #reference_tree{
-    display: none !important;
+@media (min-width: 540px){
+	#reference_cont:not(.opTree):not(.fix) #reference_tree{
+		display: none !important;
+	}
+	#reference_cont.opTree #reference,
+	#reference_cont.fix #reference{
+		display:inline-block;
+		vertical-align:top;
+		width: calc(100% - 250px) !important;
+		margin-left: -3px;
+	}
+	.fontBIG #reference_cont.fix #reference{
+		margin-left: -4px !important;
+	}
 }
-#reference_cont.opTree #reference,
-#reference_cont.fix #reference{
-	display:inline-block;
-	vertical-align:top;
-    width: calc(100% - 250px) !important;
-	margin-left: -3px;
+@media (max-width: 539px){
+	#reference_cont:not(.opTree) #reference_tree{
+		display: none !important;
+	}
+	#reference_cont.opTree #reference_tree{
+		display: block !important;
+	}
+	#reference_cont.opTree #reference{
+		display:block;
+		width: 100% !important;
+	}
 }
 .btnReference{
 	display: inline-block;
@@ -322,7 +375,7 @@
     right: -20px;
 }
 .guidaSpegni{
-	font-size:11px;
+	font-size: var(--font-11);
 	opacity:0.5;
 	margin-top:10px;
 	display:block !important;
@@ -451,7 +504,7 @@
 	margin-right:-28px;
 	margin-bottom:-28px;
 	margin-top:20px;
-	font-size:12.1px;
+	font-size: var(--font-12-1);
 }
 #guida_generica .noVisPiu{
     width: 200px;
@@ -474,7 +527,7 @@
 }
 .fumetti_cont h1{
     font-style: italic;
-    font-size:19.8px;
+    font-size: var(--font-19-8);
     font-weight: normal;
     text-align: left;
     margin-top: 0px !important;
@@ -566,7 +619,7 @@ body:not(.smart) #guida_generica .fumetti_freccia:last-child{
 	margin-bottom:-18px;
 }
 #guida_generica .fumetti_cont h1{
-	font-size:24.2px !important;
+	font-size: var(--font-24-2) !important;
     font-style: normal !important;
     color: #156cc5 !important;
 }
@@ -599,7 +652,7 @@ body:not(.smart) #guida_generica .fumetti_freccia:last-child{
 }
 .guide_scheda h2{
 	font-weight:normal;
-	font-size:19.8px;
+	font-size: var(--font-19-8);
 	margin-top:0px;
 }
 .guide_scheda p{

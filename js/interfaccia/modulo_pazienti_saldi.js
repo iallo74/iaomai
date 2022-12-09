@@ -201,9 +201,11 @@ var PAZIENTI_SALDI = {
 			var azElimina = Q_idSaldo>-1 ? 'PAZIENTI.el_saldo('+Q_idSaldo+')':"";
 			var btnAdd = '';
 			if(azElimina){
-				btnAdd = '<div class="p_paz_el_menu" onClick="'+azElimina+'">'+Lingua(TXT_EliminaScheda)+'</div>';
+				btnAdd += '<div class="p_paz_el_menu" onClick="'+azElimina+'">'+Lingua(TXT_EliminaScheda)+'</div>';
 			}
-			
+			btnAdd += 	'<div class="p_paz_ref_menu" onClick="REF.open(\'archives.patients.receipts\')">' +
+							Lingua(TXT_ReferenceGuide) +
+						'</div>';
 			// pulsanti SALVA, ANNULLA e ELIMINA
 			HTML += SCHEDA.pulsantiForm( 	Q_idSaldo>-1 ? 'PAZIENTI.el_saldo('+Q_idSaldo+')':"",
 											"SCHEDA.scaricaScheda();", 

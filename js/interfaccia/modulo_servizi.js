@@ -173,8 +173,11 @@ var SERVIZI = {
 			var azElimina = Q_idServ>-1 ? "SERVIZI.el_servizio("+Q_idServ+");":"";
 			var btnAdd = '';
 			if(azElimina){
-				btnAdd = '<div class="p_paz_el_menu" onClick="'+azElimina+'">'+Lingua(TXT_EliminaScheda)+'</div>';
+				btnAdd += '<div class="p_paz_el_menu" onClick="'+azElimina+'">'+Lingua(TXT_EliminaScheda)+'</div>';
 			}
+			btnAdd += 	'<div class="p_paz_ref_menu" onClick="REF.open(\'archives.services.overview\')">' +
+							Lingua(TXT_ReferenceGuide) +
+						'</div>';
 								
 			HTML += SCHEDA.pulsantiForm(
 									Q_idServ>-1 ? "SERVIZI.el_servizio("+Q_idServ+");":"",

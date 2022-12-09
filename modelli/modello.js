@@ -45,7 +45,7 @@ var MODELLO = {
 			
 			/* elenco organi */
 			var arrayVisceri = [];
-			if(this.meshVisceri.children.length > 1){
+			if(this.meshVisceri.children.length > 0){
 				for(o in MODELLO.meshVisceri.children){
 					arrayVisceri.push({
 						organo: MODELLO.meshVisceri.children[o].name,
@@ -81,8 +81,9 @@ var MODELLO = {
 			
 			/* elenco ossa */
 			var arrayOssa = [];
-			if(this.meshOssa.children.length > 1){
+			if(this.meshOssa.children.length > 0){
 				for(o in MODELLO.meshOssa.children){
+					
 					arrayOssa.push({
 						osso: MODELLO.meshOssa.children[o].name,
 						nome: Lingua(eval("TXT_Osso_"+MODELLO.meshOssa.children[o].name))
@@ -829,7 +830,19 @@ var MODELLO = {
 			html += '<div class="dettaglioAnatomia" style="background-image:url(img/anatomia/'+im+'.jpg)"><img src="img/anatomia/'+n+'.jpg"></div>';
 		}
 		raycastDisable = false;
-		SCHEDA.caricaScheda(titolo,html,"","tab_anatomia", false, espansa);
+		
+		var btnAdd = 	'<div class="p_paz_ref_menu" onClick="REF.open(\'models.anatomy\')">' +
+							Lingua(TXT_ReferenceGuide) +
+						'</div>';
+						
+		SCHEDA.caricaScheda(	titolo,
+								html,
+								"",
+								"tab_anatomia", 
+								false, 
+								espansa,
+								'',
+								btnAdd );
 		MODELLO.schSel = n;
 	},
 	centraAnatomia: function(name){
@@ -1201,8 +1214,10 @@ var MODELLO = {
 		if(localStorage.tipoPelle == '')els[0].classList.add("cSel");
 		if(localStorage.tipoPelle == '_mulatta')els[1].classList.add("cSel");
 		if(localStorage.tipoPelle == '_nera')els[2].classList.add("cSel");
-		for(p in ANATOMIA.children[2].children){
-			ANATOMIA.children[2].children[p].material = MODELLO.MAT["materialPelle"+MODELLO.tipoPelle];
+		if(globals.modello.cartella){
+			for(p in ANATOMIA.children[2].children){
+				ANATOMIA.children[2].children[p].material = MODELLO.MAT["materialPelle"+MODELLO.tipoPelle];
+			}
 		}
 	}
 	

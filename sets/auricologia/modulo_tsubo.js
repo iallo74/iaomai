@@ -174,7 +174,19 @@ var MODULO_TSUBO = { // extend SET
 		
 		var ptSel = SET.ptSel;
 		SET.ptSel = null;
-		SCHEDA.caricaScheda(titolo,HTML,"if(SET.ptSel)SET.chiudiTsubo()","tab_tsubo",ritorno);
+		
+		var btnAdd = 	'<div class="p_paz_ref_menu" onClick="REF.open(\'sets.auricologia.pointsmap\')">' +
+							Lingua(TXT_ReferenceGuide) +
+						'</div>';
+						
+		SCHEDA.caricaScheda(	titolo,
+								HTML,
+								"if(SET.ptSel)SET.chiudiTsubo()",
+								"tab_tsubo",
+								ritorno,
+								false,
+								'',
+								btnAdd);
 		SET.settaOverTsubo();
 		SET.ptSel = ptSel;
 		if(!ritorno || !SCHEDA.formModificato)initChangeDetection( "formAnnotazioni" );

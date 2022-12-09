@@ -122,8 +122,10 @@ var REF = {
 	level: null,
 	levelTxt: '',
 	elSel: null,
+	frSel: [],
 	opened: false,
 	open: function( level ){
+		if(typeof(localStorage.fixTree)=='undefined')localStorage.fixTree = '1'; // setto FIX di default
 		if(typeof(level)=='undefined')var level = 'overview';
 		document.getElementById("reference_cont").classList.add("visSch");
 		if(localStorage.fixTree=='1')document.getElementById("reference_cont").classList.add("fix");
@@ -150,13 +152,19 @@ var REF = {
 		REF.level = null;
 		REF.levelTxt = '';
 		REF.elSel = null;
+		REF.frSel = [];
 		REF.opened = false;
 	},
 	navigate: function( level ){
+		if(REF.levelTxt == level && REF.level)return;
 		if(typeof(level)!='undefined')REF.levelTxt = level;
 		if(REF.elSel){
 			REF.elSel.classList.remove("refSel");
 			REF.elSel = null;
+		}
+		if(REF.frSel!=[]){
+			for(f in REF.frSel)REF.frSel[f].classList.remove("frSel");
+			REF.frSel = [];
 		}
 		REF.explode();
 		var level = REF.levelTxt;
@@ -185,6 +193,10 @@ var REF = {
 			}
 		}
 		document.getElementById("reference").innerHTML = nav+'<h2>'+REF.level.title+'</h2>'+cont;
+		document.getElementById("reference").scrollTo(0,0);
+		if(WF()<540)document.getElementById("reference_cont").classList.remove("opTree");
+		if(!__(localStorage.fixTree))document.getElementById("reference_cont").classList.remove("opTree");
+		
 	},
 	cont: function( level, p ){
 		if(typeof(p)=='undefined')var p = '';
@@ -233,7 +245,11 @@ var REF = {
 		var el = REF.elSel;
 		while(el.parentElement.id!='ref_tree'){
 			el = el.parentElement;
-			if(el.classList.contains("fr"))el.classList.add("op");
+			if(el.classList.contains("fr")){
+				REF.frSel.push(el);
+				el.classList.add("op");
+				el.classList.add("frSel");
+			}
 		}
 		GUIDA.nasFumetto(true);
 	},

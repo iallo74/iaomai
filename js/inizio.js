@@ -91,8 +91,8 @@ function INIT(){
 	// elimino gli scripts
 	document.head.removeChild(document.getElementById("js_interfaccia_modulo_pazienti_trattamenti_js"));
 	document.head.removeChild(document.getElementById("js_interfaccia_modulo_pazienti_saldi_js"));
-	document.head.removeChild(document.getElementById("js_interfaccia_modulo_pazienti_filtri_js"));
-	
+
+	if(__(localStorage.textSize))setTextSize(localStorage.textSize);
 	
 	DB._reset(); // lasciare qui
 	LOGIN.verLogin();

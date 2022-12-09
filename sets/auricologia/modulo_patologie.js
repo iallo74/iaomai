@@ -48,14 +48,19 @@ var MODULO_PATOLOGIE = { // extend SET
 		if(	document.getElementById("scheda").querySelector(".formBtn") &&
 			document.getElementById("scheda").classList.contains("visSch") &&
 			SCHEDA.verificaSchedaRet() )ritorno = "document.getElementById('scheda').classList.remove('scheda_patologia')";
-			
+		
+		var btnAdd = 	'<div class="p_paz_ref_menu" onClick="REF.open(\'sets.auricologia.pathologies\')">' +
+							Lingua(TXT_ReferenceGuide) +
+						'</div>';
+						
 		SCHEDA.caricaScheda(	titolo,
 								html,
 								'SET.annullaEvidenziaTsubo();',
 								'scheda_patologia',
 								ritorno,
 								true,
-								btn );
+								btn,
+								btnAdd );
 		SET.evidenziaTsubo(html);
 	},
 	azRicercaPatologie: function( p ){

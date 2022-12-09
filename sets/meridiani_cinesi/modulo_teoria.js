@@ -95,7 +95,11 @@ var MODULO_TEORIA = { // extend SET
 		if(	document.getElementById("scheda").querySelector(".formBtn") &&
 			document.getElementById("scheda").classList.contains("visSch") &&
 			SCHEDA.verificaSchedaRet() )ritorno = "document.getElementById('scheda').classList.remove('scheda_teoria')";
-			
+		
+		var btnAdd = 	'<div class="p_paz_ref_menu" onClick="REF.open(\'sets.meridiani_cinesi.insights\')">' +
+								Lingua(TXT_ReferenceGuide) +
+							'</div>';
+							
 		SCHEDA.caricaScheda( 	titolo,
 								html,
 								"SET.annullaEvidenziaTsubo();" +
@@ -105,7 +109,8 @@ var MODULO_TEORIA = { // extend SET
 								'scheda_teoria',
 								ritorno,
 								espansa,
-								btn );
+								btn,
+								btnAdd );
 		SET.convSigleScheda();
 		SET.evidenziaTsubo(html);
 		//SET.evidenziaMeridiani(html);
@@ -141,7 +146,10 @@ var MODULO_TEORIA = { // extend SET
 					'       id="VideoID"' +
 					'       src="https://www.tsubomap.com/app/video/'+video+'.mp4">' +
 					'</video>';
-		
+					
+		var btnAdd = 	'<div class="p_paz_ref_menu" onClick="REF.open(\'sets.meridiani_cinesi.insights\')">' +
+							Lingua(TXT_ReferenceGuide) +
+						'</div>';
 		
 		SCHEDA.caricaScheda( 	titolo,
 								html,
@@ -149,7 +157,8 @@ var MODULO_TEORIA = { // extend SET
 								'scheda_video',
 								false,
 								true,
-								btn );
+								btn,
+								btnAdd );
 	},
 	azRicercaTeoria: function( i, p ){
 		SCHEDA.swCartella( document.getElementById('btn_teoria_cart_'+i),true);
