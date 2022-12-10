@@ -398,6 +398,21 @@ var MENU = {
 			else els[i].classList.remove("a_SEL");
 		}
 		
+		var els = document.getElementById("pointerSel").getElementsByTagName("b");
+		for(i = 0; i<els.length; i++){
+			els[i].classList.remove("a_SEL");
+			els[i].classList.remove("t_DES");
+		}
+		if(!mouseDetect)els[0].classList.add("t_DES");
+		if(!touchDetect)els[1].classList.add("t_DES");
+		if(mouseDetect && touchDetect){
+			if(__(localStorage.pointerType,'') == 'MOUSE')els[0].classList.add("a_SEL");
+			else els[1].classList.add("a_SEL");
+		}else{
+			if(mouseDetect)els[0].classList.add("a_SEL");
+			else els[1].classList.add("a_SEL");
+		}
+		
 		if(document.getElementById("colori").className.indexOf("visSch") > -1){
 			visLoader('');
 			//document.getElementById("loader").addEventListener("mouseup",MENU.visColori,false);

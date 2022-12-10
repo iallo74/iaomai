@@ -4,9 +4,9 @@
 /* COLORI */
 #colori{
 	width:400px;
-	height:280px;
+	height:290px;
 	margin-left:-200px;
-	margin-top:-140px;
+	margin-top:-145px;
 }
 #labelColori{
 	background-image:url(../img/ico_coloriN.png);
@@ -71,30 +71,39 @@ body:not(.smart) #guida_generica #colSel{
 	border-radius:3px;
 	margin:3px;
 }
-#sizeSel > span{
+#sizeSel > span,
+#pointerSel > span{
 	display:inline-block;
     vertical-align: middle;
 	height: 50px;
     line-height: 50px;
 }
-#sizeSel > span b{
+
+
+
+#sizeSel > span b,
+#pointerSel > span b{
 	display: inline-block;
     vertical-align: middle;
     width: 36px;
     height: 36px;
     line-height: 34px;
-    border-radius: 18px;
+    border-radius: 6px;
     background-color: rgba(0,0,0,0.1);
     border: 1px solid rgba(0,0,0,0.1);
     text-align: center;
     cursor: pointer;
     margin: 3px;
+	background-size:30px;
+	background-repeat:no-repeat;
+	background-position:center center;
 }
 .a_SEL{
 	background-color:rgba(0,0,0,0.7) !important;
 	color:#FFF;
     border: 1px solid #FFF !important;
     box-shadow: 0px 0px 5px #000;
+	cursor:default !important;
 }
 #a_{
 	font-size:12px !important;
@@ -105,9 +114,26 @@ body:not(.smart) #guida_generica #colSel{
 #a_BIG{
 	font-size:19px !important;
 }
+
+#t_MOUSE{
+	background-image:url(../img/ico_mouse.png);
+}
+#t_TOUCH{
+	background-image:url(../img/ico_touch.png);
+}
+#t_MOUSE.a_SEL{
+	background-image:url(../img/ico_mouseW.png) !important;
+}
+#t_TOUCH.a_SEL{
+	background-image:url(../img/ico_touchW.png) !important;
+}
+.t_DES{
+	opacity:0.3;
+	cursor:default !important;
+}
 .cSel{
 	border:1px solid #FFF;
-	cursor:default;
+	cursor:default !important;
 }
 .c0{
 	background-color:#333;

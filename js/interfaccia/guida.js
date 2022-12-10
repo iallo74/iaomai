@@ -127,6 +127,7 @@ var REF = {
 	open: function( level ){
 		if(typeof(localStorage.fixTree)=='undefined')localStorage.fixTree = '1'; // setto FIX di default
 		if(typeof(level)=='undefined')var level = 'overview';
+		if(document.getElementById("menuScheda").className.indexOf("visSch")>-1)SCHEDA.swMenuScheda();
 		document.getElementById("reference_cont").classList.add("visSch");
 		if(localStorage.fixTree=='1')document.getElementById("reference_cont").classList.add("fix");
 		document.getElementById("reference_cont").classList.remove("mini");

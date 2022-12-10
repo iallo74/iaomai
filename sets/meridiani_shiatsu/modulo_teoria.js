@@ -82,9 +82,7 @@ var MODULO_TEORIA = { // extend SET
 			document.getElementById("scheda").classList.contains("visSch") &&
 			SCHEDA.verificaSchedaRet() )ritorno = "document.getElementById('scheda').classList.remove('scheda_teoria')";
 		
-		var btnAdd = 	'<div class="p_paz_ref_menu" onClick="REF.open(\'sets.meridiani_shiatsu.insights\')">' +
-							TXT("ReferenceGuide") +
-						'</div>';
+		var btnAdd = 	'';
 							
 		SCHEDA.caricaScheda( 	titolo,
 								html,
@@ -120,9 +118,7 @@ var MODULO_TEORIA = { // extend SET
 					'       src="https://www.tsubomap.com/app/video/'+video+'.mp4">' +
 					'</video>';
 		
-		var btnAdd = 	'<div class="p_paz_ref_menu" onClick="REF.open(\'sets.meridiani_shiatsu.insights\')">' +
-							TXT("ReferenceGuide") +
-						'</div>';
+		var btnAdd = 	'';
 		
 		SCHEDA.caricaScheda( 	titolo,
 								html,

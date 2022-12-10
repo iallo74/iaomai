@@ -299,8 +299,8 @@
                      </form>
                 </div>
             </div>
-            <div id="colori" class="popup"> <!-- COLORI DELL'APP -->
-            	<div id="labelColori" class="popup_label"><div class="popup_chiudi" onClick="MENU.chiudiMenu();"></div></div>
+            <div id="colori" class="popup"> <!-- PERSONALIZZAZIONE -->
+            	<div id="labelColori" class="popup_label">{{TXT_Personalizzazione}}<div class="popup_chiudi" onClick="MENU.chiudiMenu();"></div></div>
             	<div id="contColori" class="popup_cont">
                <p id="colSel">
                    <i>{{TXT_ColoreAmbiente}}:</i>
@@ -320,6 +320,13 @@
                    		<b id="a_" data-value="" onClick="setTextSize('');">A</b>
                    		<b id="a_MID" data-value="MID" onClick="setTextSize('MID');">A</b>
                    		<b id="a_BIG" data-value="BIG" onClick="setTextSize('BIG');">A</b>
+                   </span>
+               </p>
+               <p id="pointerSel">
+                   <i>{{TXT_PointerType}}:</i>
+                   <span>
+                   		<b id="t_MOUSE" data-value="MOUSE" onClick="setPointerType('MOUSE');"></b>
+                   		<b id="t_TOUCH" data-value="TOUCH" onClick="setPointerType('TOUCH');"></b>
                    </span>
                </p>
                 </div>
@@ -682,7 +689,7 @@
                                                          </select></span></div>
                         <div id="p_stampa" onClick="MENU.stampaStage();">{{TXT_StampaStage}}</div>
                         <div id="p_notifiche" onClick="MENU.visNotifiche();"><span id="notificaMenu"></span>{{TXT_Notifiche}}</div>
-                        <div id="p_colori" onClick="MENU.visColori();">{{TXT_Colori}}</div>
+                        <div id="p_colori" onClick="MENU.visColori();">{{TXT_Personalizzazione}}</div>
                         <div id="p_download" onClick="MENU.visBackups();">{{TXT_Download}}</div>
                         <div id="p_feedback" onClick="MENU.visFeedback();">{{TXT_Feedback}}</div>
                         <div id="p_guide" onClick="REF.open();MENU.visImpostazioni();">{{TXT_ReferenceGuide}}</div>

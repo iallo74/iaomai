@@ -155,6 +155,11 @@ function init() {
 			setTimeout( function(){
 				GUIDA.visFumetto("guida_generica");
 			}, 1000 );
+			if(mouseDetect && touchDetect && !__(localStorage.pointerType,"")){
+				setTimeout( function(){
+					ALERT(TXT("PointerTypeAlert")+"\n\n"+TXT("noVisPiu")+'<input type="checkbox" id="no_guida" name="no_guida" value="1" onclick="setPointerType((this.checked) ? \'TOUCH\' : \'\' );">' );
+				}, 3000 );
+			}
 		//}
 		}
 	}
@@ -788,7 +793,24 @@ function getCenterPoint( mesh ){ // trova il punto centrale di una mesh
 }
 
 
-	
+function setPointerType( type ){
+	if(	(type == 'MOUSE' && !mouseDetect) || 
+		(type == 'TOUCH' && !touchDetect) || 
+		!(mouseDetect && touchDetect) )return;
+	localStorage.pointerType = type;
+	var els = document.getElementById("pointerSel").getElementsByTagName("b");
+	els[0].classList.remove("a_SEL");
+	els[1].classList.remove("a_SEL");
+	if(__(localStorage.pointerType,'') == 'MOUSE'){
+		els[0].classList.add("a_SEL");
+		touchable = false;
+		document.body.classList.remove("touch");
+	}else{
+		els[1].classList.add("a_SEL");
+		touchable = true;
+		document.body.classList.add("touch");
+	}
+}
 	
 function get_memOpen3d(){
 	document.getElementById("mem_open3d").checked = globals.open3d;

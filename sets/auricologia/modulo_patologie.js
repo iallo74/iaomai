@@ -49,9 +49,9 @@ var MODULO_PATOLOGIE = { // extend SET
 			document.getElementById("scheda").classList.contains("visSch") &&
 			SCHEDA.verificaSchedaRet() )ritorno = "document.getElementById('scheda').classList.remove('scheda_patologia')";
 		
-		var btnAdd = 	'<div class="p_paz_ref_menu" onClick="REF.open(\'sets.auricologia.pathologies\')">' +
+		var btnAdd = 	'';/*'<div class="p_paz_ref_menu" onClick="REF.open(\'sets.auricologia.pathologies\')">' +
 							TXT("ReferenceGuide") +
-						'</div>';
+						'</div>';*/
 						
 		SCHEDA.caricaScheda(	titolo,
 								html,

@@ -12,6 +12,7 @@
 var smartphone = false;
 var smartMenu = false;
 var touchable = false;
+var touchDetect = false;
 var android = false;
 var brw_IE = false;
 var brw_OPERA = false;
@@ -175,6 +176,7 @@ var IMPORTER = {
 		if(	('ontouchstart' in window) ||
     		(navigator.maxTouchPoints > 0) ||
      		(navigator.msMaxTouchPoints > 0) )touchable = true;
+		touchDetect = touchable;
 		var userAgent = navigator.userAgent.toLowerCase();
 		isTablet = /(ipad|tablet|(android(?!.*mobile))|(windows(?!.*phone)(.*touch))|kindle|playbook|silk|(puffin(?!.*(IP|AP|WP))))/.test(userAgent);
 		mouseDetect = ('ontouchstart' in window ? false : true);

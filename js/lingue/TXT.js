@@ -312,6 +312,11 @@ DB.TXT = {
 			eng: "Colors and texts",
 			esp: ""
 		},
+		Personalizzazione: {
+			ita: "Personalizzazione",
+			eng: "Customization",
+			esp: ""
+		},
 		ScegliColore: {
 			ita: "Scegli il colore dell'app",
 			eng: "Choose the app color",
@@ -345,6 +350,16 @@ DB.TXT = {
 		TxtBIG: {
 			ita: "Grande",
 			eng: "Big",
+			esp: ""
+		},
+		PointerType: {
+			ita: "Tipo di puntatore",
+			eng: "Pointer type",
+			esp: ""
+		},
+		PointerTypeAlert: {
+			ita: "E' stato individuato un dispositivo che ha in contemporanea mouse e schermo touch. Per impostazione di default viene utilizzato il sistema TOUCH. Se vuoi cambiarlo accedi a Impostazioni > Personalizzazione e cambia il tipo di puntatore.",
+			eng: "A device has been identified that has both mouse and touch screen at the same time. TOUCH is used by default. If you want to change it, go to Settings > Customization and change the type of pointer.",
 			esp: ""
 		},
 		
