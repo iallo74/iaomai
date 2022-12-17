@@ -895,19 +895,27 @@ body:not(.smart) .stampaBtn{
 #meridianiTsuboMap,
 #puntiAuriculoMap{ /* PAZIENTI */
 	height:auto !important;
-	margin-top: 10px;
+	padding-top: 12px;
 }
-#puntiTsuboMap div,
-#meridianiTsuboMap div,
-#puntiAuriculoMap div{ /* PAZIENTI */
-	margin-top:0px !important;
+#puntiTsuboMap > div,
+#meridianiTsuboMap > div,
+#puntiAuriculoMap > div{ /* PAZIENTI */
 	border-bottom:none !important;
-	margin-bottom: 2px !important;
     border-radius: 6px;
 	background-color:rgba(0,0,0,0.05);
 }
-#puntiTsuboMap div,
-#puntiAuriculoMap div{ /* PAZIENTI */
+#puntiTsuboMap > div:not(.pushDrag_before),
+#meridianiTsuboMap > div:not(.pushDrag_before),
+#puntiAuriculoMap > div:not(.pushDrag_before){ /* PAZIENTI */
+	margin-top:0px !important;
+}
+#puntiTsuboMap > div:not(.pushDrag_after),
+#meridianiTsuboMap > div:not(.pushDrag_after),
+#puntiAuriculoMap > div:not(.pushDrag_after){ /* PAZIENTI */
+	margin-bottom: 2px !important;
+}
+#puntiTsuboMap > div,
+#puntiAuriculoMap > div{ /* PAZIENTI */
 	height:auto !important;
 	line-height:normal !important;
 }
@@ -921,7 +929,47 @@ body:not(.smart) .stampaBtn{
 	margin-left: 1px;
 }
 
-
+.grabElement{
+	display:block;
+	/*padding-right:16px;
+	min-height:32px;
+	cursor:move;
+	background-image:url(../img/grab.png);
+	background-repeat:no-repeat;
+	background-position:right center;*/
+}
+.grabBtn{
+	float:right;
+	width:16px;
+	height:36px;
+	cursor:move;
+	background-image:url(../img/grab.png);
+	background-repeat:no-repeat;
+	background-position:right center;
+	margin: -3px;
+}
+.smart .grabBtn{
+	width:32px !important;
+	height:44px !important;
+	background-image:url(../img/grabMobile.png) !important;
+	margin: 0px 0px -1px 0px !important;
+}
+.touch:not(.smart) .grabBtn{
+	width:32px !important;
+	background-image:url(../img/grabMobile.png) !important;
+}
+.smart #dettagliCont .grabBtn{
+	margin: -5px -5px -1px 0px !important;
+}
+.smart #dettagliCont .grabElement:not(.rgLabel) .grabBtn{
+	height: 52px !important;
+}
+/*.smart .grabElement{
+	background-image:url(../img/grabMobile.png) !important;
+}*/
+/*body:not(.touch) .grabElement:hover{
+	background-image:url(../img/grabOn.png) !important;
+}*/
 .smart.android .dettMeridiano > img{
 	margin-top: 13px !important;
 }
@@ -935,7 +983,7 @@ body:not(.smart) .stampaBtn{
 }
 .smart.android .rgProcMod input{
 	margin-bottom: 0px !important;
-    vertical-align: top;
+   /* vertical-align: top;*/
 }
 .smart.android .rgProcMod .meridModif{
     line-height: 41px !important;
@@ -1016,12 +1064,17 @@ body:not(.smart) .stampaBtn{
 	box-shadow: 0px 0px 3px #93C !important;
 }
 #dettagliCont .rgProcMod{ /* procedura */
-	margin-bottom: 9px;
+	margin-bottom: 5px;
     border-radius: 4px;
     background-color: #b9ccfd;
-    padding: 1px;
+   /* padding: 1px;*/
     box-shadow: 0px 0px 2px rgba(0,0,0,0.6);
-    padding-top: 7px;
+    /*padding-top: 7px;*/
+}
+#dettagliCont .rgProcMod .rgLabel{
+	/*padding-top:7px;*/
+	background-position:right top !important;
+	/*padding-right:0px !important;*/
 }
 #dettagliCont .rgProcMod:hover {
     background-color: #a5baec;
@@ -1070,6 +1123,13 @@ body:not(.smart) .stampaBtn{
     padding-left: 30px;
     padding-bottom: 20px;	
 	margin-top: 10px;
+	width: 100%;
+}
+.smart #p_add_dett{
+    margin-left: -20px !important;
+    margin-right: -20px !important;
+	width: calc(100% + 40px) !important;
+	padding-left:20px !important;
 }
 .noBR {
 	margin-bottom: -7px !important;
@@ -1082,6 +1142,17 @@ body:not(.smart) .stampaBtn{
 	font-style:italic;
 	color:#000;
 	display: block;
+}
+.iProc{
+	float: left;
+	padding-right: 0px !important;
+}
+.smart .iProc{
+	margin-top: 13px !important;
+}
+body:not(.smart) .iProc{
+	margin-top: 8px !important;
+	margin-bottom: 12px !important;
 }
 #scheda:not(.sch_Max600) #formMod i:not(.iProc){  /* PAZIENTI */
 	margin-bottom: -29px;
@@ -1328,8 +1399,11 @@ _:-webkit-full-screen,
 	font-size: var(--font-15-39) !important;
 }
 .dettPunto{ /* procedura + PAZIENTI */
-	padding-left:4px !important;
+	/*padding-left:4px !important;*/
 	border-bottom:1px solid #CCC;
+}
+#formMod .grabElement{
+	padding:4px !important;
 }
 #scheda:not(.scheda_procedura) .dettMeridiano span:not(.valPunto):not(.mezzoPunto){ /* PAZIENTI */
     line-height: 34px !important;
@@ -1338,6 +1412,9 @@ _:-webkit-full-screen,
 	padding-left:28px !important;
   	width: 100%;
 	background-color: rgba(0,0,0,0.08);
+}
+body:not(.smert) #scheda:not(.scheda_procedura) .dettMeridiano span:not(.valPunto):not(.mezzoPunto){
+	margin: -2px;
 }
 .smart.android #scheda:not(.scheda_procedura) .dettMeridiano span:not(.valPunto):not(.mezzoPunto){ /* PAZIENTI */
     line-height: 42px !important;
@@ -1370,6 +1447,9 @@ _:-webkit-full-screen,
 }
 .meridModif{ /* procedura + PAZIENTI */
 	width:200px !important;
+}
+.sch_Max450 .meridModif{
+	width: calc(100% - 65px) !important;
 }
 .dettMeridiano span:not(.valModif):not(.meridModif):not(.meridProc){
 	cursor:default !important;
@@ -1404,6 +1484,30 @@ body:not(.touch) #puntiAuriculoMap .dettPunto:hover{
     overflow: hidden;
     border-right: 1px solid rgba(0,0,0,0.1);
 	text-align: center;
+}
+.sch_Max450 .mezzoPunto,
+.sch_Max450 .valPunto{
+    width: 38px !important;
+}
+#puntiTsuboMap .cestino,
+#meridianiTsuboMap .cestino,
+#puntiAuriculoMap .cestino{
+	margin:7px 10px 7px 10px;
+	margin-left:0px;
+	cursor:pointer !important;
+	opacity:0.5;
+	float:right;
+}
+.smart #puntiTsuboMap .cestino,
+.smart #meridianiTsuboMap .cestino,
+.smart #puntiAuriculoMap .cestino{
+	margin: 13px 9px 12px 0px !important;
+}
+
+
+.smart #puntiTsuboMap .valPunto,
+.smart #puntiTsuboMap .mezzoPunto{
+    margin-top: -6px !important;
 }
 .rgMod .valPunto,
 .rgMod .mezzoPunto{
@@ -1547,8 +1651,8 @@ body:not(.touch) #puntiAuriculoMap .dettPunto:hover{
 }
 #formMod select:not(.p_proc_gruppo):not(.p_paz_gruppo):not(.p_paz_meridiani):not(.p_proc_meridiani), /* PAZIENTI */
 #dataTxt{
-	line-height:30px;/* !important;*/
-	height:32px;
+	line-height:28px;/* !important;*/
+	height:30px;
 }
 .smart.android #formMod select:not(.p_proc_gruppo):not(.p_paz_gruppo):not(.p_paz_meridiani):not(.p_proc_meridiani),
 .smart.android #dataTxt{
@@ -1569,8 +1673,8 @@ body:not(.touch) #puntiAuriculoMap .dettPunto:hover{
 	background-position: calc(100% - -4px) calc(100% - 3px) !important;
 }
 #formMod select:not(.p_proc_gruppo):not(.p_paz_gruppo):not(.p_paz_meridiani):not(.p_proc_meridiani):not(.mezzoPuntoTratt){ /* PAZIENTI */
-	margin-top:3px;
-	margin-bottom: 3px;
+	/*margin-top:3px;
+	margin-bottom: 3px;*/
 }
 .smart.android #formMod select:not(.scoreSelect):not(.p_proc_gruppo):not(.p_paz_gruppo):not(.p_paz_meridiani):not(.p_proc_meridiani):not(.mezzoPuntoTratt){ /* PAZIENTI */
 	margin-top:0px !important;
@@ -1642,9 +1746,23 @@ body:not(.touch) #puntiAuriculoMap .dettPunto:hover{
 .smart .selectTratt{
 	text-align-last: center;
 }
+.smart #puntiTsuboMap .numPoints,
+.smart #puntiTsuboMap .selectTratt{
+	width:64px !important;
+	text-align:center !important;
+}
+.sch_Max450 .dettAuriculo .numPoints{
+	width:130px !important;
+}
 #dettagliCont .selectTratt:not(.numPoints){
 	width: 140px;
     margin-left: -6px;
+}
+.sch_Max450 .selectTratt:not(.numPoints){
+	width:80px !important;
+}
+.smart #dettagliCont .numPoints{
+	text-align:center !important;
 }
 .ptNo{
 	display: inline-block;
@@ -1662,8 +1780,7 @@ body:not(.touch) #puntiAuriculoMap .dettPunto:hover{
     white-space: nowrap;
     text-align: center;
 }
-.delProcDett, /* procedura */
-.spsuProcDett{ /* procedura */
+.delProcDett{ /* procedura */
 	float:right;
 	width:16px;
 	height:16px;
@@ -1675,20 +1792,17 @@ body:not(.touch) #puntiAuriculoMap .dettPunto:hover{
 }
 .delProcDett{ /* procedura */
 	background-image:url(../img/ico_cestino.png);
-    margin-right: 8px;
+    margin: 6px 10px 7px 10px;
 }
-.spsuProcDett{ /* procedura */
-	background-image:url(../img/ico_frSu.png);
+.smart .rgLabel .delProcDett{
+	margin: 8px 9px 8px 10px;
 }
-.delProcDett:hover, /* procedura */
-.spsuProcDett:hover{ /* procedura */
+.smart .grabElement:not(.rgLabel) .delProcDett{
+	margin: 12px 9px 12px 10px;
+}
+
+.delProcDett:hover{ /* procedura */
 	opacity:1;
-}
-.dettPunto .delProcDett,
-.dettPunto .spsuProcDett,
-.dettMeridiano .delProcDett,
-.dettMeridiano .spsuProcDett{
-	margin-top: 11px;
 }
 
 

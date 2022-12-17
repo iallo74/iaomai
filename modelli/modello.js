@@ -193,7 +193,7 @@ var MODELLO = {
 					}
 					htmlMuscoli += '</div>';
 				}
-				if(TXT_Zona_ARTO_SUPERIORE.length){
+				if(TXT("Zona_ARTO_SUPERIORE").length){
 					htmlMuscoli += '<i>'+stripslashes(TXT("Zona_ARTO_SUPERIORE"))+'</i><div onMouseLeave="MODELLO.isolaMuscolo(this,\'out\');">';
 					for(o in arrayMuscoli_ARTO_SUPERIORE){
 						htmlMuscoli += '<p id="Muscolo_'+arrayMuscoli_ARTO_SUPERIORE[o].muscolo+'" onClick="MODELLO.isolaMuscolo(this)" onMouseOver="MODELLO.isolaMuscolo(this,\'over\');">'+stripslashes(arrayMuscoli_ARTO_SUPERIORE[o].nome)+'</p>';
@@ -332,6 +332,39 @@ var MODELLO = {
 				setTimeout( function(){
 					GUIDA.visFumetto("guida_generica");
 				}, 1000 );
+				
+				
+				if(!__(localStorage.firstAccess)){
+					localStorage.firstAccess = 'true';
+					
+					localStorage.muscleView = '1';
+					localStorage.modelPosition = JSON.stringify({ x: 0, y: -0.7, z: 0 });
+					localStorage.modelRotation = JSON.stringify({ x: -0.1, y: 0.9, z: 0 });
+					localStorage.modelZoom = '10.5';
+					localStorage.opPelle = MENU.getOp("Pelle");
+					localStorage.opOssa = MENU.getOp("Ossa");
+					localStorage.opVisceri = MENU.getOp("Visceri");
+				}
+				var position = JSON.parse(localStorage.modelPosition);
+				var rotation = JSON.parse(localStorage.modelRotation);
+				var zoom = parseFloat(localStorage.modelZoom);
+				if( (localStorage.muscleView == '1' && !muscleView) || 
+					(localStorage.muscleView != '1' && muscleView))MODELLO.swMuscle();
+				var opPelle = parseFloat(localStorage.opPelle);
+				var opOssa = parseFloat(localStorage.opOssa);
+				var opVisceri = parseFloat(localStorage.opVisceri);
+				
+				panEndZero = { x: 0, y: 0, z: 0 };
+				panEnd = position;
+				normalizeRotation();
+				rotateEnd = rotation;
+				zoomEnd = zoom;
+				camera.position.set(0,0,22);
+				camera.lookAt(camera.position);
+				MENU.disBtnCentro();
+				MODELLO.op("Pelle",opPelle);
+				MODELLO.op("Ossa",opOssa);
+				MODELLO.op("Visceri",opVisceri);
 			}
 		}
 		document.getElementById("pulsanti_modello").classList.add('modelloScelto');
@@ -477,6 +510,7 @@ var MODELLO = {
 		if((forza == '1' && muscleView) || (forza == '2' && !muscleView))return;
 		MODELLO.removePrecarMuscle();
 		muscleView=!muscleView;
+		localStorage.muscleView = (muscleView) ? '1' : '';
 		if(MODELLO.meshPelle.children[0].material.name.indexOf('pelle') > -1 || forza == true){
 			for(n=0;n<MODELLO.meshPelle.children.length;n++){
 				MODELLO.meshPelle.children[n].material = MODELLO.MAT.materialMuscoli[n];
@@ -550,7 +584,7 @@ var MODELLO = {
 				}catch(err){if(SET) console.log(err) }
 			}*/
 			MENU.setOp(t2, o);
-			
+			localStorage["op"+t]=o;
 			// gestisco i pins
 			if(globals.pezziSelezionati.length){
 				var els = document.getElementById("legende").getElementsByTagName("div");

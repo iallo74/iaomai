@@ -187,6 +187,7 @@ THREE.ObjectControls = function ( object, domElement ) {
 		var preY = manichinoCont.position.y;
 		var preZ = manichinoCont.position.z;
 		var newZ = preZ + diff;
+		localStorage.modelZoom = newZ;
 		manichinoCont.position.set( preX , preY ,newZ );
 		zoomEnd = null;
 		zoomStart = null;

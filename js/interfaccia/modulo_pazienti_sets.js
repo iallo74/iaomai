@@ -88,7 +88,7 @@ var PAZIENTI_SETS = {
 		document.getElementById('puntiTsuboMap').style.display = 'block';
 		document.getElementById('label_puntiTsuboMap').style.display = 'block';
 		var elenco = '';
-		var HTML = '';
+		var HTML = '<div></div>'; // serve lasciarlo per il drag&drop
 		var totTsubo = 0;
 		if( globals.set.cartella == 'meridiani_cinesi' || 
 			globals.set.cartella == 'meridiani_shiatsu' ){
@@ -108,20 +108,23 @@ var PAZIENTI_SETS = {
 							'	  id="rg_'+p+'"';
 					if(mouseDetect)HTML += 	' onMouseOver="SET.overTsubo(this,true);"' +
 											' onMouseOut="SET.overTsubo(this,false);"';
-					HTML += '>' +
+					HTML += '><div class="grabElement"' +
+							'	   data-drag-class="lbTsubo"' +
+							'	   data-drag-family="tsubo"' +
+							'	   data-drag-type="move">' +
+							
+							'	<div class="grabBtn"' +
+							'	     onMouseDown="DRAGGER.startDrag(this.parentElement,\'PAZIENTI.spostaTsubo\');"' +
+							'	     onTouchStart="DRAGGER.startDrag(this.parentElement,\'PAZIENTI.spostaTsubo\');"></div>' +
+							
 							'	<img src="img/ico_cestino.png"' +
 							'		 width="16"' +
 							'		 height="16"' +
 							'		 align="absmiddle"' +
 							'		 id="ico_vis'+p+'"' +
-							'		 style="margin:10px;' +
-							'		  		margin-left:0px;' +
-							'		  		cursor:pointer;' +
-							'		  		opacity:0.5;' +
-							'		  		float:right;"' +
 							'		 title="'+TXT("DelDett")+'"' +
 							'		 onClick="PAZIENTI.eliminaPuntoTrattamento('+p+')"' +
-							'		 class="occhio">';
+							'		 class="cestino">';
 					
 					// mezzo
 					var addMezzoTit = '';
@@ -224,7 +227,7 @@ var PAZIENTI_SETS = {
 							' 		value="'+htmlEntities(descrizione)+'"' +
 							' 		placeholder="'+htmlEntities(TXT("SpiegazionePuntoTratt"))+'"' +
 							'		onBlur="PAZIENTI.modNumPunti(\'formMod\','+p+');"'+H.noAutoGen+'>';
-					HTML += '</div>';
+					HTML += '</div></div>';
 					elenco += PAZIENTI.puntiProvvisori[p].n+'.'+PAZIENTI.puntiProvvisori[p].m;
 					if(PAZIENTI.puntiProvvisori[p].e)elenco += '.'+PAZIENTI.puntiProvvisori[p].e;
 					elenco += '|';
@@ -415,11 +418,11 @@ var PAZIENTI_SETS = {
 	cambiaPZ: function( n, m ){ // cambia il mezzo su un punto
 		var el = document.getElementById("ico_PZ"+n);
 		el.getElementsByTagName("img")[0].src='img/mezzo_'+m+'.png';
-		SET.overTsubo(document.getElementById("pt_"+n).parentElement,false);
+		if(globals.modello.cartella)SET.overTsubo(document.getElementById("pt_"+n).parentElement,false);
 		PAZIENTI.puntiProvvisori[n].z = m;
 		SCHEDA.formModificato = true;
 		PAZIENTI.ricGroup("formMod",n);
-		SET.overTsubo(document.getElementById("pt_"+n).parentElement,true);
+		if(globals.modello.cartella)SET.overTsubo(document.getElementById("pt_"+n).parentElement,true);
 		document.getElementById("tt_mezzival").dataset.on='0';
 		H.removeTT();
 		PAZIENTI.verMezzo(m);
@@ -451,6 +454,18 @@ var PAZIENTI_SETS = {
 		}
 		H.selTT(n,"ico_PZ",html);
 	},
+	spostaTsubo: function( elMove, elTarget ){
+		if(	!elTarget ||
+			elMove.parentElement==elTarget)return;
+		var fromIndex = parseInt(elMove.parentElement.id.split("_")[1]);
+		var toIndex = parseInt(elTarget.id.split("_")[1]);
+		if(DRAGGER.pushPos=='after')toIndex++;
+		if(toIndex>fromIndex)toIndex--;
+		var arr2 = PAZIENTI.puntiProvvisori.splice(fromIndex, 1)[0];
+		PAZIENTI.puntiProvvisori.splice(toIndex,0,arr2);
+		PAZIENTI.caricaPuntiTrattamento();
+		SCHEDA.formModificato = true;
+	},
 	
 	// meridiani
 	caricaMeridianiTrattamento: function(){ // carica i punti del trattamento
@@ -461,10 +476,12 @@ var PAZIENTI_SETS = {
 			globals.set.cartella == 'meridiani_shiatsu' ){
 			modificabile = true;
 		}
-		var HTML = '';
+		var HTML = '<div></div>'; // serve lasciarlo per il drag&drop
 		var elenco = [];
 		if(PAZIENTI.meridianiProvvisori.length){
+			var p = -1;
 			for(m in PAZIENTI.meridianiProvvisori){
+				p++;
 				elenco.push(PAZIENTI.meridianiProvvisori[m].siglaMeridiano);
 				var m2 = __(PAZIENTI.meridianiProvvisori[m].valEnergetica);
 				var descrizione = __(PAZIENTI.meridianiProvvisori[m].descrizione);
@@ -479,21 +496,26 @@ var PAZIENTI_SETS = {
 				HTML += '" id="tr_p'+PAZIENTI.meridianiProvvisori[m].siglaMeridiano+'">';
 				if(modificabile){
 					HTML +=
+						'<div class="grabElement"' +
+						'	   data-drag-class="lbMeridiano"' +
+						'	   data-drag-family="meridiano"' +
+						'	   data-drag-type="move"' +
+						'	   data-drag-el="'+p+'">' +
 						
+						'	<div class="grabBtn"' +
+						'	     onMouseDown="DRAGGER.startDrag(this.parentElement,\'PAZIENTI.spostaMeridiano\');"' +
+						'	     onTouchStart="DRAGGER.startDrag(this.parentElement,\'PAZIENTI.spostaMeridiano\');"></div>' +
+							
 						'	<img src="img/ico_cestino.png"' +
 						'		 width="16"' +
 						'		 height="16"' +
 						'		 align="absmiddle"' +
 						'		 id="ico_vis'+m+'"' +
-						'		 style="cursor: pointer !important;' +
-						'				opacity: 0.5;' +
-						'				float: right;' +
-						'				margin: 8px;"' +
 						'		 title="'+TXT("DelDett")+'"' +
 						'		 onMouseOver="PAZIENTI.overCestino=true;"' +
 						'		 onMouseOut="PAZIENTI.overCestino=false;"' +
 						'		 onClick="PAZIENTI.eliminaMeridianoTrattamento('+m+')"' +
-						'		 class="occhio">';
+						'		 class="cestino">';
 				}
 				HTML += '	<span';
 				if(modificabile){
@@ -529,12 +551,13 @@ var PAZIENTI_SETS = {
 						'	</span>';
 					
 				if(modificabile)HTML +=
-							'<input id="dm_'+m+'"' +
-							' 		name="dm_'+m+'"' +
-							' 		class="textMeridianoTratt okPlaceHolder"' +
-							' 		value="'+htmlEntities(descrizione)+'"' +
-							' 		placeholder="'+htmlEntities(TXT("SpiegazioneMeridianoTratt"))+'"' +
-							'		onBlur="PAZIENTI.meridianiProvvisori['+m+'].descrizione=this.value;"'+H.noAutoGen+'>';
+						'	<input id="dm_'+m+'"' +
+						'	 		name="dm_'+m+'"' +
+						'	 		class="textMeridianoTratt okPlaceHolder"' +
+						'	 		value="'+htmlEntities(descrizione)+'"' +
+						'	 		placeholder="'+htmlEntities(TXT("SpiegazioneMeridianoTratt"))+'"' +
+						'			onBlur="PAZIENTI.meridianiProvvisori['+m+'].descrizione=this.value;"'+H.noAutoGen+'>' +
+						'</div>';
 				
 				HTML += '</div>';
 			}
@@ -591,6 +614,18 @@ var PAZIENTI_SETS = {
 		}
 		H.selTT(n,"ico_MV",html);
 	},
+	spostaMeridiano: function( elMove, elTarget ){
+		if(	!elTarget ||
+			elMove.parentElement==elTarget)return;
+		var fromIndex = parseInt(elMove.dataset.dragEl);
+		var toIndex = parseInt(elTarget.getElementsByTagName("div")[0].dataset.dragEl);
+		if(DRAGGER.pushPos=='after')toIndex++;
+		if(toIndex>fromIndex)toIndex--;
+		var arr2 = PAZIENTI.meridianiProvvisori.splice(fromIndex, 1)[0];
+		PAZIENTI.meridianiProvvisori.splice(toIndex,0,arr2);
+		PAZIENTI.caricaMeridianiTrattamento();
+		SCHEDA.formModificato = true;
+	},
 	
 	// auriculo-punti
 	ricAuriculo: function( frm, n ){
@@ -617,7 +652,7 @@ var PAZIENTI_SETS = {
 			modificabile = true;
 		}
 		
-		var HTML = '';
+		var HTML = '<div></div>'; // serve lasciarlo per il drag&drop
 		var totTsubo = 0;
 		var elenco = [];
 		if( globals.set.cartella == 'auricologia' ){
@@ -643,26 +678,30 @@ var PAZIENTI_SETS = {
 					nomeTsubo=__(PAZIENTI.auriculoProvvisori[p].n);
 					elenco.push(siglaTsubo);
 					
-					HTML += '<div class="rgProcMod rgMod"' +
+					HTML += '<div class="rgProcMod rgMod dettAuriculo"' +
 							'	  id="rg_'+p+'"';
 					if(mouseDetect && siglaTsubo){
 						HTML += 	' onMouseOver="SET.overTsubo(\'PT'+siglaTsubo+'\',true);"' +
 									' onMouseOut="SET.overTsubo(\'PT'+siglaTsubo+'\',false);"';
 					}
-					HTML += '>' +
+					HTML += '><div class="grabElement"' +
+							'	   data-drag-class="lbAuriculo"' +
+							'	   data-drag-family="auriculo"' +
+							'	   data-drag-type="move">' +
+							
+							'	<div class="grabBtn"' +
+							'	     onMouseDown="DRAGGER.startDrag(this.parentElement,\'PAZIENTI.spostaAuriculo\');"' +
+							'	     onTouchStart="DRAGGER.startDrag(this.parentElement,\'PAZIENTI.spostaAuriculo\');"></div>' +
+						
+						
 							'	<img src="img/ico_cestino.png"' +
 							'		 width="16"' +
 							'		 height="16"' +
 							'		 align="absmiddle"' +
 							'		 id="ico_vis'+p+'"' +
-							'		 style="margin:10px;' +
-							'		  		margin-left:0px;' +
-							'		  		cursor:pointer;' +
-							'		  		opacity:0.5;' +
-							'		  		float:right;"' +
 							'		 title="'+TXT("DelDett")+'"' +
 							'		 onClick="PAZIENTI.eliminaAuriculoTrattamento('+p+')"' +
-							'		 class="occhio">';
+							'		 class="cestino">';
 					
 					// mezzo
 					var addMezzoTit = '';
@@ -739,8 +778,9 @@ var PAZIENTI_SETS = {
 							' 		class="textPuntoTratt okPlaceHolder"' +
 							' 		value="'+htmlEntities(descrizione)+'"' +
 							' 		placeholder="'+htmlEntities(TXT("SpiegazioneAuriculoTratt"))+'"' +
+							'		onBlur="PAZIENTI.auriculoProvvisori['+p+'].t=this.value"' +
 							'		'+H.noAutoGen+'>';
-					HTML += '</div>';
+					HTML += '</div></div>';
 				}
 				HTML +=	'<div style="clear:both;height:1px;"></div>';
 				
@@ -847,14 +887,26 @@ var PAZIENTI_SETS = {
 	cambiaAZ: function( n, m ){ // cambia il mezzo su un punto
 		var el = document.getElementById("ico_PZ"+n);
 		el.getElementsByTagName("img")[0].src='img/mezzo_'+m+'.png';
-		//SET.overTsubo(document.getElementById("pt_"+n).parentElement,false);
+		//if(globals.modello.cartella)SET.overTsubo(document.getElementById("pt_"+n).parentElement,false);
 		PAZIENTI.auriculoProvvisori[n].z = m;
 		SCHEDA.formModificato = true;
 		//PAZIENTI.ricGroup("formMod",n);
-		//SET.overTsubo(document.getElementById("pt_"+n).parentElement,true);
+		//if(globals.modello.cartella)SET.overTsubo(document.getElementById("pt_"+n).parentElement,true);
 		document.getElementById("tt_mezzival").dataset.on='0';
 		H.removeTT();
 		PAZIENTI.verMezzo(m);
+	},
+	spostaAuriculo: function( elMove, elTarget ){
+		if(	!elTarget ||
+			elMove.parentElement==elTarget)return;
+		var fromIndex = parseInt(elMove.parentElement.id.split("_")[1]);
+		var toIndex = parseInt(elTarget.id.split("_")[1]);
+		if(DRAGGER.pushPos=='after')toIndex++;
+		if(toIndex>fromIndex)toIndex--;
+		var arr2 = PAZIENTI.auriculoProvvisori.splice(fromIndex, 1)[0];
+		PAZIENTI.auriculoProvvisori.splice(toIndex,0,arr2);
+		PAZIENTI.caricaAuriculoTrattamento();
+		SCHEDA.formModificato = true;
 	},
 	
 	

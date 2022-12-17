@@ -197,7 +197,6 @@ var REF = {
 		document.getElementById("reference").scrollTo(0,0);
 		if(WF()<540)document.getElementById("reference_cont").classList.remove("opTree");
 		if(!__(localStorage.fixTree))document.getElementById("reference_cont").classList.remove("opTree");
-		
 	},
 	cont: function( level, p ){
 		if(typeof(p)=='undefined')var p = '';

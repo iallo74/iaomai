@@ -606,7 +606,11 @@ var SCHEDA = {
 		var annoAtt=d.getFullYear();
 		var cartaIntestata = false;
 		var TITOLO_PAGINA = htmlEntities(nomeApp)+'&#8482; - '+htmlEntities(sloganApp);
-		if(typeof(obj)=='undefined'){
+		var sch = document.getElementById("scheda");
+		if(	sch.classList.contains("scheda_A") || 
+			sch.classList.contains("scheda_B") || 
+			sch.classList.contains("scheda_Riepi") )obj = {};
+		if(	typeof(obj)=='undefined'){
 			var titolo = document.getElementById("scheda_titolo").innerHTML;
 			var corpo = document.getElementById("scheda_testo").querySelector(".scheda_stampa").outerHTML;
 		}else{

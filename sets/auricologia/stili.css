@@ -851,6 +851,13 @@ body:not(.smart) .listaPunti .p_aria:not(.elencoSel) span:hover{
     margin-bottom: 6px;
 	font-style:italic;
 }
+.sch_Max450 .textPuntoTratt{
+    width: 100% !important;
+    background-color: rgba(255,255,255,0.4) !important;
+    border-radius: 4px !important;
+	margin-top:4px !important;
+	margin-bottom:0px !important;
+}
 #scheda:not(.sch_Max600) .textPuntoTratt{
 	margin-top: 0px !important;
 }
@@ -860,6 +867,12 @@ body:not(.smart) .listaPunti .p_aria:not(.elencoSel) span:hover{
 }
 .textPuntoTratt{
     width: calc(100% - 216px) !important;
+}
+.smart #scheda:not(.sch_Max450) .textPuntoTratt{
+	width: calc(100% - 285px) !important;
+}
+.touch:not(.smart) #scheda:not(.sch_Max450) .textPuntoTratt{
+	width: calc(100% - 301px) !important;
 }
 
 .mezzoPuntoTratt{
@@ -885,14 +898,14 @@ body:not(.smart) .listaPunti .p_aria:not(.elencoSel) span:hover{
     background: transparent !important;
     border-radius: 0px !important;
 	height: 24px !important;
-    margin-bottom: 6px;
+    margin-bottom: 3px;
 	font-style:italic;
 }
 #scheda:not(.sch_Max600) .textPuntoTratt{
 	margin-top: 0px !important;
 }
 .textPuntoTratt{
-    width: calc(100% - 276px) !important;
+    width: calc(100% - 238px) !important;
 }
 
 body:not(.bodyModello) #btns_set > div{

@@ -1004,12 +1004,15 @@ SET = {
 			var tot = els.length;
 			for(e=0;e<tot;e++){
 				var sl = els[e].getElementsByTagName("select");
-				var mer = SET.estraiSigla(sl[0].value);
-				var nTsubo = sl[1].value;
-				if(nTsubo.length == 1)nTsubo='0'+nTsubo;
-				elenco.push(nTsubo+"."+mer);
+				if(sl.length){
+					var mer = SET.estraiSigla(sl[0].value);
+					var nTsubo = sl[1].value;
+					if(nTsubo.length == 1)nTsubo='0'+nTsubo;
+					elenco.push(nTsubo+"."+mer);
+				}
 			}
 			SET.evidenziaTsuboMod(elenco);
+			SET.aggiornaDettaglio(document.getElementById("pt_"+p));
 		}
 	},
 	overTsubo: function( el, over ){

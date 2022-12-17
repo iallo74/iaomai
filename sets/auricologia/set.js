@@ -938,8 +938,9 @@ SET = {
 			}
 		}
 	},
-	ritOverTsubo: function( id, siglaTsubo ){
+	ritOverTsubo: function( id, p ){
 		if(!touchable){
+			var siglaTsubo = document.getElementById("pt_"+p).value;
 			SET.overTsubo(siglaTsubo,false);
 			var elenco = [];
 			var els = document.getElementById(id).getElementsByClassName("dettPunto");
@@ -949,6 +950,7 @@ SET = {
 				elenco.push(sl[0].value);
 			}
 			SET.evidenziaTsuboMod(elenco);
+			SET.aggiornaDettaglio(document.getElementById("pt_"+p));
 		}
 	},
 	coloraPunti: function( PT_name, tipo ){

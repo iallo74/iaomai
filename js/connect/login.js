@@ -561,6 +561,7 @@ var LOGIN = {
 			i!='avatar' && 
 			i!='gallery' && 
 			i!='p' && 
+			i!='ordine' && 
 			i!='Stato' && 
 			i!='DataNascita' && 
 			i!='paeseCellulare' &&
@@ -1318,7 +1319,6 @@ var LOGIN = {
 												else syncJSN += '"'+window.btoa(encodeURIComponent(elenco))+'"';
 												
 												syncJSN += '}';
-												
 												if(!dwnl){
 													CONN.caricaUrl(	"sincro_globale_2_6.php",
 																	"b64=1&JSNPOST="+window.btoa(encodeURIComponent(syncJSN)), 
@@ -1905,6 +1905,7 @@ var LOGIN = {
 									"LabelCiclo": LOGIN.decryptPrivacy(trattamenti[t].LabelCiclo),
 									"TipoTrattamento": LOGIN.decryptPrivacy(trattamenti[t].TipoTrattamento),
 									"CostoTrattamento": trattamenti[t].CostoTrattamento*1,
+									"ordine": trattamenti[t].ordine*1,
 									"Cancellato": trattamenti[t].Cancellato*1,
 									"frv": false };		
 									

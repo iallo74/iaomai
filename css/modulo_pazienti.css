@@ -1148,7 +1148,7 @@ body:not(.smart) #modAnag{
 	background-repeat:no-repeat;
 }
 #modAnag:hover{
-	background-color:rgba(0,51,159,0.2);
+	background-color:rgba(0,51,159,0.2) !important;
 }
 .touch #modAnag:hover{
     background-color: #184aa5 !important;

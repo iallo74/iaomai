@@ -28,7 +28,10 @@ var inizio = true;
 
 
 function init() {
-	if(!localStorage.colore)localStorage.colore = 2;
+	if(typeof(localStorage.colore)=='undefined')localStorage.colore = 2;
+	if(typeof(localStorage.textSize)=='undefined')localStorage.textSize = '';
+	if(typeof(localStorage.tipoPelle)=='undefined')localStorage.tipoPelle = '';
+
 	selCol(localStorage.colore);
 	// SCENE
 	scene = new THREE.Scene();
@@ -133,36 +136,42 @@ function init() {
 	document.getElementById("logo_inizio").style.display = 'none';
 	
 	setTimeout( function(){
-	/*if(localStorage.modello && globals.memorizza)caricaModello(localStorage.modello);
-	else if(globals.open3d)caricaModello("donna");*/
-	if(localStorage.modello && globals.open3d)caricaModello(localStorage.modello);
-	//else if(globals.open3d)caricaModello("donna");
-	else if(globals.openMap && globals.mapOpened)caricaSet(globals.mapOpened);
-	else{
-		inizio = false;
-		scaricaModello();
-		if(getVar("demo")){
-			if(getVar("demo")=='anatomymap')cambiaModello('donna');
-			if(getVar("demo")=='tsubomap')caricaSet('meridiani_cinesi');
-			if(getVar("demo")=='shiatsumap')caricaSet('meridiani_shiatsu');
-			if(getVar("demo")=='pazienti'){
-				setTimeout(function(){
-					SCHEDA.apriElenco('base');
-				},1000);
-			}
-		}else{
-		//if(!smartMenu){
-			setTimeout( function(){
-				GUIDA.visFumetto("guida_generica");
-			}, 1000 );
-			if(mouseDetect && touchDetect && !__(localStorage.pointerType,"")){
-				setTimeout( function(){
-					ALERT(TXT("PointerTypeAlert")+"\n\n"+TXT("noVisPiu")+'<input type="checkbox" id="no_guida" name="no_guida" value="1" onclick="setPointerType((this.checked) ? \'TOUCH\' : \'\' );">' );
-				}, 3000 );
-			}
-		//}
+		/*if(localStorage.modello && globals.memorizza)caricaModello(localStorage.modello);
+		else if(globals.open3d)caricaModello("donna");*/
+		
+		if(!__(localStorage.firstAccess)){
+			localStorage.modello = 'donna';
+			localStorage.open3d = 'true';
 		}
-	}
+		
+		if(localStorage.modello && globals.open3d)caricaModello(localStorage.modello);
+		//else if(globals.open3d)caricaModello("donna");
+		else if(globals.openMap && globals.mapOpened)caricaSet(globals.mapOpened);
+		else{
+			inizio = false;
+			scaricaModello();
+			if(getVar("demo")){
+				if(getVar("demo")=='anatomymap')cambiaModello('donna');
+				if(getVar("demo")=='tsubomap')caricaSet('meridiani_cinesi');
+				if(getVar("demo")=='shiatsumap')caricaSet('meridiani_shiatsu');
+				if(getVar("demo")=='pazienti'){
+					setTimeout(function(){
+						SCHEDA.apriElenco('base');
+					},1000);
+				}
+			}else{
+			//if(!smartMenu){
+				setTimeout( function(){
+					GUIDA.visFumetto("guida_generica");
+				}, 1000 );
+				if(mouseDetect && touchDetect && !__(localStorage.pointerType,"")){
+					setTimeout( function(){
+						ALERT(TXT("PointerTypeAlert")+"\n\n"+TXT("noVisPiu")+'<input type="checkbox" id="no_guida" name="no_guida" value="1" onclick="setPointerType((this.checked) ? \'TOUCH\' : \'\' );">' );
+					}, 3000 );
+				}
+			//}
+			}
+		}
 	},500);
 	onWindowResize();
 	
@@ -359,7 +368,7 @@ function cambiaModello( cartella ){
 function caricaSet( cartella, el ){
 	//if(DB.login.data.auths.indexOf(cartella) == -1)return;
 	var daScheda = (SCHEDA.classeAperta == 'scheda_A' || SCHEDA.classeAperta == 'scheda_B' );
-	startAnimate();
+	if(globals.modello.cartella)startAnimate();
 	if(el)postApreSet = true;
 	if(cartella == globals.set.cartella){
 		// CHIUDE il set aperto
@@ -566,6 +575,7 @@ function animate() {
 				if(!controlsM._premuto){
 					controlsM._ZPR=false;
 					controlsM._inMovimento=false;
+					localStorage.modelRotation = JSON.stringify({x: manichinoCont.rotation.x, y: manichinoCont.rotation.y, z: manichinoCont.rotation.z});
 				}
 			}
 		}
@@ -576,7 +586,7 @@ function animate() {
 			var diffX = (panEnd.x-manichinoCont.position.x)*coeff;
 			var diffY = (panEnd.y-manichinoCont.position.y)*coeff;
 			var diffZ = (panEnd.z-manichinoCont.position.z)*coeff;
-			manichinoCont.position.set( manichinoCont.position.x+diffX, manichinoCont.position.y+diffY, manichinoCont.position.z );
+			manichinoCont.position.set(manichinoCont.position.x+diffX, manichinoCont.position.y+diffY, manichinoCont.position.z);
 			if(diffX<0.001 && diffX>-0.001 && diffY<0.001 && diffY>-0.001){
 				panEnd=null;
 				var end = Date.now();
@@ -585,6 +595,7 @@ function animate() {
 				if(!controlsM._premuto){
 					controlsM._ZPR = false;
 					controlsM._inMovimento = false;
+					localStorage.modelPosition = JSON.stringify({x:manichinoCont.position.x,y:manichinoCont.position.y,z:manichinoCont.position.z});
 				}
 			}
 		}
@@ -604,6 +615,7 @@ function animate() {
 				if(!controlsM._premuto){
 					controlsM._ZPR = false;
 					controlsM._inMovimento = false;
+					localStorage.modelPosition = JSON.stringify({x:manichinoCont.position.x,y:manichinoCont.position.y,z:manichinoCont.position.z});
 				}
 			}
 		}
@@ -624,6 +636,7 @@ function animate() {
 				zoomStart=null;
 				controlsM._ZPR=false;
 				controlsM._inMovimento = false;
+				localStorage.modelZoom = manichinoCont.position.z;
 			}
 		}
 		render();
@@ -729,6 +742,7 @@ function zoom(n){
 	if(zoomAtt<controlsM.minZoom)zoomAtt=controlsM.minZoom;
 	if(zoomAtt>controlsM.maxZoom)zoomAtt=controlsM.maxZoom;
 	zoomEnd = zoomAtt;
+	localStorage.modelZoom = zoomEnd;
 }
 function Canvas2Img(){
 	return renderer.domElement.toDataURL();

@@ -1549,6 +1549,11 @@ DB.TXT = {
 			eng: "Single sessions",
 			esp: ""
 		},
+		ChiediSpostaTrattamento: {
+			ita: "Vuoi davvero spostare il trattamento in [cartella]?",
+			eng: "Do you really want to move the treatment [cartella]?",
+			esp: ""
+		},
 		
 		// scheda
 		ChiediEliminaTrattamento: {
@@ -1770,9 +1775,29 @@ DB.TXT = {
 		},
 		
 		// sintomi
+		AggiungiSintomoA: {
+			ita: "Aggiungi sintomo al ciclo",
+			eng: "Add a symptom to the cycle",
+			esp: ""
+		},
 		AggiungiSintomo: {
 			ita: "Aggiungi sintomo",
 			eng: "Add a symptom",
+			esp: ""
+		},
+		ChiediEliminaSintomo: {
+			ita: "Vuoi davvero eliminare il sintomo dal trattamento?",
+			eng: "Do you really want to remove the symptom from the treatment?",
+			esp: ""
+		},
+		ChiediEliminaSintomoA: {
+			ita: "Il sintomo che vuoi eliminare verrà rimosso dai trattamenti. Vuoi davvero eliminarlo?",
+			eng: "The symptom you want to remove will also be erased from the treatments. Do you really want to remove it?",
+			esp: ""
+		},
+		ChiediEliminaSintomoB: {
+			ita: "Il sintomo che vuoi eliminare verrà rimosso anche dalla scheda di anamnesi e dagli altri trattamenti. Vuoi davvero eliminarlo?",
+			eng: "The symptom you want to remove will also be erased from your medical history and other treatments. Do you really want to remove it?",
 			esp: ""
 		},
 		Diagnosi: {

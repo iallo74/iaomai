@@ -635,6 +635,11 @@ body:not(.smart) .schedaRitorno #scheda_titolo{
 	background-color: rgb(238, 238, 238);
     /*border-top: 1px solid rgba(0, 0, 0, 0.4);*/
 }
+#scheda_testo.noScroll,
+#scheda_testo2.noScroll{
+	overflow-y:hidden !important;
+}
+
 .android #scheda:not(.schForm) #scheda_testo *:not(h1):not(h2):not(.annullaBtn):not(.submitBtn):not(.stampaBtn),
 .android #scheda:not(.schForm) #scheda_testo2 *:not(h1):not(h2):not(.annullaBtn):not(.submitBtn):not(.stampaBtn){
 	font-size: var(--font-16-5);
@@ -722,7 +727,7 @@ body:not(.bodyStyled2) #scheda_testo2{
 
 /* il MENU degli strumenti della scheda (stampa e download) */
 #btnMenuScheda{
-	width: 26px;
+	width: 23px;
     height: 40px;
     padding: 0px !important;
     cursor: pointer;
@@ -730,9 +735,9 @@ body:not(.bodyStyled2) #scheda_testo2{
     position: absolute;
     right: 8px;
 	margin-top: -43px;
-    margin-right: -8px;
+    margin-right: -7px;
     overflow: hidden;
-    border-radius: 0px;
+    border-radius: 4px;
 }
 #btnMenuScheda:hover{
 	background-color:rgba(0,0,0,0.1);
@@ -752,6 +757,7 @@ body:not(.bodyStyled2) #scheda_testo2{
 	width: 28px;
 	opacity: 0.5;
     border-radius: 4px;
+	margin-left:-2px;
 }
 #btnMenuScheda svg circle{
 	r: 2px;

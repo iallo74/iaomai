@@ -10,6 +10,7 @@ var PAZIENTI = {
 	aperture: [],
 	puntiProvvisori: "",
 	sintomiProvvisori: [],
+	sintomiEliminati: [],
 	meridianiProvvisori: [],
 	tagsProvvisori: [],
 	medicineProvvisorie: [],

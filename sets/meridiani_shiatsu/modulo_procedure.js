@@ -697,7 +697,7 @@ var MODULO_PROCEDURE = { // extend SET
 	// DETTAGLI
 	caricaDettagli: function( eviUltimo ){
 		// carica i dettagli della procedura
-		var HTML = '';
+		var HTML = '<div class="rgProcMod"></div>'; // serve lasciarlo per il drag&drop
 		var presente = false;
 		var nD = -1;
 		var txareas = ''; // per il resize su tochable
@@ -727,23 +727,24 @@ var MODULO_PROCEDURE = { // extend SET
 						'	  onMouseOver="SET.eviMeridiano(document.getElementById(\'mr_'+p+'\').value,true);"'+
 						'	  onMouseOut="SET.eviMeridiano(document.getElementById(\'mr_'+p+'\').value,false);"';
 				}
-				HTML += '>';
+				HTML += '><div class="grabElement'+((TipoDettaglio=='T' || TipoDettaglio=='D') ? ' rgLabel' : '')+'"' +
+						'	   data-drag-class="lbProc"' +
+						'	   data-drag-family="proc"' +
+						'	   data-drag-type="move">' +
+				
+						'	<div class="grabBtn"' +
+						'	     onMouseDown="DRAGGER.startDrag(this.parentElement,\'SET.spostaDettaglio\');"' +
+						'	     onTouchStart="DRAGGER.startDrag(this.parentElement,\'SET.spostaDettaglio\');"></div>';
 				
 				// pulsantini gestione dettagli
 				HTML += '	<div class="delProcDett"' +
 						'	     onClick="SET.eliminaDettaglio(\''+p+'\');"' +
 						'	     title="'+TXT("DelDett")+'">' +
 						'	</div>' +
-						'	<i '+(TipoDettaglio!='T' || TipoDettaglio!='D' ? ' class="iProc"' : '')+'style="float: left;margin-top: 2px;">' +
+						'	<i '+(TipoDettaglio!='T' || TipoDettaglio!='D' ? ' class="iProc"' : '')+'>' +
 						(TipoDettaglio=='T' ? TXT("Titolo") : '') +
 						(TipoDettaglio=='D' ? TXT("Descrizione") : '') +
 						'	</i>';
-				
-				if(nD>0)HTML += 
-						'	<div class="spsuProcDett"' +
-						'		 onClick="SET.spostaSuDettaglio(\''+p+'\');"' +
-						'		 title="'+TXT("SpSuDett")+'">' +
-						'	</div>';
 						
 				HTML += '	<input type="hidden"' +
 						'		   id="or_'+p+'"' +
@@ -762,12 +763,14 @@ var MODULO_PROCEDURE = { // extend SET
 						'		   class="dettProcText"' +
 						'		   id="de_'+p+'"' +
 						'		   name="de_'+p+'"' +
+						'		   onKeyUp="SET.aggiornaDettaglio(this);"' +
 						'		   value="';
 				
 				if(TipoDettaglio=='D')
 					HTML += 
 						'	<textarea id="de_'+p+'"' +
-						'		 name="de_'+p+'">';
+						'		 	  name="de_'+p+'"' +
+						'		   	  onKeyUp="SET.aggiornaDettaglio(this);">';
 						txareas+=p+'|';
 						
 				if(TipoDettaglio=='T' || TipoDettaglio=='D')
@@ -838,7 +841,8 @@ var MODULO_PROCEDURE = { // extend SET
 								' 		 id="ico_vis'+p+'"' +
 								' 		 style="' + ((p1=='') ? 'display:none;':'') +
 								'				margin-left:10px;' +
-								'				cursor:pointer;"' +
+								'				cursor:pointer;' +
+								'				margin-top: -5px;"' +
 								' 		 class="occhio"' +
 								' 		 title="'+TXT("VisualizzaPunto")+'"' +
 								' 		 onClick="SET.selTsuboMod('+p+')">'; // ???????
@@ -851,6 +855,7 @@ var MODULO_PROCEDURE = { // extend SET
 						'	<select name="mr_'+p+'"' +
 						'		    id="mr_'+p+'"' +
 						'			class="selectTratt"' +
+						'		    onChange="SET.aggiornaDettaglio(this);"' +
 						'			onClick="SET.eviMeridiano(this.value,false);">';
 					
 					var totPunti=0;
@@ -872,9 +877,9 @@ var MODULO_PROCEDURE = { // extend SET
 				}
 				
 				
-				if(TipoDettaglio=='T')HTML += '"></span>';
-				if(TipoDettaglio=='D')HTML += '</textarea></span>';
-				HTML += 	'</div>';
+				if(TipoDettaglio=='T')HTML += '">';
+				if(TipoDettaglio=='D')HTML += '</textarea>';
+				HTML +='</div></div>';
 				presente=true;
 			}
 		}
@@ -960,21 +965,25 @@ var MODULO_PROCEDURE = { // extend SET
 		SET.caricaDettagli();
 		SCHEDA.formModificato = true;
 	},
-	spostaSuDettaglio: function( n ){
-		//  sposta su un dettaglio in una procedura
-		SET.salvaDettagli();
-		v1=v2=-1;
-		for(p in SET.dettagliProvvisori){ // estraggo l'ultimo numero d'ordine
-			if(p==n && SET.dettagliProvvisori[p].Cancellato*1==0)v2=p;
-			if(v2==-1 && SET.dettagliProvvisori[p].Cancellato*1==0)v1=p;
-		}
-		o1=SET.dettagliProvvisori[v1].OrdineDettaglio;
-		o2=SET.dettagliProvvisori[v2].OrdineDettaglio;
-		SET.dettagliProvvisori[v1]={ "TipoDettaglio": SET.dettagliProvvisori[v1].TipoDettaglio, "DescrizioneDettaglio": SET.dettagliProvvisori[v1].DescrizioneDettaglio, "DataModifica": SET.dettagliProvvisori[v1].DataModifica, "Cancellato": SET.dettagliProvvisori[v1].Cancellato, "OrdineDettaglio": o2 };
-		SET.dettagliProvvisori[v2]={ "TipoDettaglio": SET.dettagliProvvisori[v2].TipoDettaglio, "DescrizioneDettaglio": SET.dettagliProvvisori[v2].DescrizioneDettaglio, "DataModifica": SET.dettagliProvvisori[v2].DataModifica, "Cancellato": SET.dettagliProvvisori[v2].Cancellato, "OrdineDettaglio": o1 };
-		SET.dettagliProvvisori.sort(sort_by('OrdineDettaglio', false, parseInt));
+	spostaDettaglio: function( elMove, elTarget ){
+		if(	!elTarget ||
+			elMove.parentElement==elTarget)return;
+		var fromIndex = parseInt(elMove.parentElement.id.split("rg")[1]);
+		var toIndex = parseInt(elTarget.id.split("rg")[1]);
+		var arr2 = SET.dettagliProvvisori.splice(fromIndex, 1)[0];
+		SET.dettagliProvvisori.splice(toIndex,0,arr2);
 		SET.caricaDettagli();
-		SCHEDA.formModificato = true;
+	},
+	aggiornaDettaglio: function( el ){
+		var pId = el.id.split("_");
+		var val = el.value;
+		if(pId[0]=='pt'){
+			var mer = document.getElementById("mr_"+pId[1]).value;
+			var nTsubo = document.getElementById("pt_"+pId[1]).value;
+			if(nTsubo.length == 1)nTsubo='0'+nTsubo;
+			val = nTsubo+"."+mer;
+		}
+		SET.dettagliProvvisori[parseInt(pId[1])].DescrizioneDettaglio = val;
 	},
 	
 	// COMMUNITY

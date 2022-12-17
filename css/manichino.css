@@ -50,6 +50,94 @@
 	padding-bottom:10px;
 }
 
+#lb_placeholder{
+	position:fixed;
+	display:none;
+	top:-500px;
+	left:-500px;
+	z-index:1111;
+	background-color:#06F;
+	opacity:0.5;
+	height:10px;
+}
+#lb_move{
+	position:fixed;
+	display:none;
+	top:-500px;
+	left:-500px;
+	width:70px;
+	height:70px;
+	background-color:rgba(0,0,0,0.4);
+	box-shadow:0px 0px 3px rgba(0,0,0,0.7);
+	border:1px solid rgba(255,255,255,0.6);
+	border-radius:6px;
+	z-index:1121;
+	background-position:center center;
+	background-repeat:no-repeat;
+	cursor:move !important;
+	text-align:left;
+}
+.touch #lb_move{
+	width:110px;
+	height:110px;
+}
+#lb_move span{
+	display:none;
+	width:40px;
+	height:40px;
+	background-image: url(../img/ico_moveB.png);
+	background-position:center center;
+	background-repeat:no-repeat;
+	background-size:30px 30px;
+	opacity:0.8;
+}
+.touch #lb_move span{
+	display:inline-block;
+}
+.touch #lb_move.lbTsubo span,
+.touch #lb_move.lbProc span,
+.touch #lb_move.lbMeridiano span,
+.touch #lb_move.lbAuriculo span{
+	background-image: url(../img/ico_move.png) !important;
+	margin-left:30px;
+}
+.lbTrattamento{
+	background-image: url(../img/ico_trattamenti2B.png);
+}
+.lbCiclo{
+	background-image:url(../img/cartellaClinicaG.png);
+}
+
+.lbAuriculo,
+.lbTsubo,
+.lbProc{
+	background-image:url(../img/ico_tsubo.png);
+	background-position:left center !important;
+	background-color:rgba(255,255,255,0.4) !important;
+	height:36px !important;
+	margin-top:30px;
+	margin-left:-25px;
+}
+.lbMeridiano{
+	background-image:url(../img/ico_meridiani.png);
+	background-position:left center !important;
+	background-color:rgba(255,255,255,0.4) !important;
+	height:36px !important;
+	margin-top:30px;
+	margin-left:-25px;
+}
+.touch #lb_move.lbTsubo,
+.touch #lb_move.lbProc,
+.touch #lb_move.lbMeridiano,
+.touch #lb_move.lbAuriculo{
+	margin-top:70px !important;
+	margin-left:-30px !important;
+}
+
+#lb_move *{
+	color:#FFF !important;
+}
+
 .bodyStyled2 #lb_anatomy{
 	background-image:url(../img/lnf.png) !important;
 }

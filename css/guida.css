@@ -47,9 +47,10 @@
 #reference_ico{
 	width:35px;
 	height:40px;
-	background-image:url(../img/ico_reference.png);
-	background-position:10px center;
+	background-image:url(../img/m_referenceN.png);
+	background-position:-2px center;
 	background-repeat:no-repeat;
+	background-size: 36px;
 	margin-right:-4px;
 }
 #reference_cont.mini #reference_top{
