@@ -941,8 +941,8 @@ SET = {
 	},
 	ritOverTsubo: function( id, p ){
 		if(!touchable){
-			var siglaTsubo = document.getElementById("ts_"+p).value;
-			SET.overTsubo(siglaTsubo,false);
+			var siglaTsubo = document.getElementById("rg"+p).value;
+			SET.overTsubo("PT"+siglaTsubo,false);
 			var elenco = [];
 			var els = document.getElementById(id).getElementsByClassName("dettPunto");
 			var tot = els.length;
@@ -951,7 +951,10 @@ SET = {
 				elenco.push(sl[0].value);
 			}
 			SET.evidenziaTsuboMod(elenco);
-			SET.aggiornaDettaglio(document.getElementById("ts_"+p));
+			if(SET.siglaProc()=='AUR')el = document.getElementById("ts_"+siglaTsubo);
+			else el = document.getElementById("pt_"+p);
+			console.log(el)
+			SET.aggiornaDettaglio(el);
 		}
 	},
 	coloraPunti: function( PT_name, tipo ){

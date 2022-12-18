@@ -4,14 +4,12 @@
 #parolaGlobal{
 	width: calc(100% - 86px);
     background-color: #FFF;
-    /*text-align: center;*/
     color: #000;
     text-overflow: ellipsis;
     border: 3px solid #2f2e2b;
     margin-left: -10px;
     margin-right: -7px;
     margin-top: -3px;
-   /* font-weight: bold;*/
 	padding-left:10px;
 }
 body:not(.smart) #parolaGlobal{
@@ -36,7 +34,6 @@ body:not(.smart) #parolaGlobal::-webkit-input-placeholder{
 #parolaGlobal::-moz-placeholder{
 	opacity:0.5 !important;
 	font-weight:normal !important;
-	/*text-align:center !important;*/
 	font-size: var(--font-11) !important;
 	padding-left:2px;
 }

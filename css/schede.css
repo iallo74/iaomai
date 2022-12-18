@@ -161,7 +161,6 @@ body:not(.touch) .schLato #ss{
 
 
 /* linguette delle schede */
-
 #btnsFixScheda{
 	text-align: center !important;
     border-top: 1px solid rgba(0,0,0,0.2);
@@ -357,9 +356,6 @@ body:not(.bodyStyled2) #scheda.schLato #sc:hover{
 body:not(.smart)#ss{
     margin-left: calc(50% - 50px) !important;
 }
-/*.touch #scheda:not(.schRid) #ss{
-    margin-left: calc(50% - 85px) !important;
-}*/
 #ss svg{
     height: 22px !important;
 }
@@ -386,9 +382,6 @@ body:not(.smart)#ss{
 body:not(.smart) #scheda_cont{
 	padding-top:3px;
 }
-/*body:not(.smart) #scheda.schForm:not(.schedaRitorno):not(.h150):not(.minimized):not(.tab_tsubo) #scheda_cont{
-    padding-bottom: 53px;
-}*/
 #scheda_titolo{
 	width: calc(100% - 29px);	
 	cursor:default !important;
@@ -411,7 +404,6 @@ body:not(.smart) #scheda_cont{
     background: -webkit-linear-gradient(top, #1d4eaa 0%,#0a3d96 100%);
     background: linear-gradient(to bottom, #1d4eaa 0%,#0a3d96 100%);
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1d4eaa', endColorstr='#0a3d96',GradientType=0 );
-	/*cursor:pointer;*/
 }
 .app_version.bug_font.smart.android #scheda_titolo{
 	line-height:36.64px !important;
@@ -449,7 +441,6 @@ body:not(.smart) #scheda.schForm:not(.schedaRitorno):not(.minimized):not(.tab_ts
 	margin-right: 4px !important;
 }
 .smart #scheda_modello{
-   /* background-image: url(../sets/anatomy_full/img/logoMenu.png);*/
     background-image: url(../img/ico_occhio.png);
 	background-size:auto 30px;
 	margin-left: 7px;
@@ -536,13 +527,6 @@ body:not(.smart) .frSu #frSchSu:hover{
     font-weight: bold;
     border-radius: 5px;
 	cursor:pointer;
-    /*box-shadow: 0px 0px 3px rgba(0,0,0,0.5);
-	background: #eb9a00 !important;
-    background: -moz-linear-gradient(top, #eb9a00 0%, #ce8707 100%) !important;
-    background: -webkit-linear-gradient(top, #eb9a00 0%,#ce8707 100%) !important;
-    background: linear-gradient(to bottom, #eb9a00 0%,#ce8707 100%) !important;
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#eb9a00', endColorstr='#ce8707',GradientType=0 ) !important;*/
-	
     border-top-right-radius: 0px;
     border-bottom-right-radius: 0px;
     margin-left: 3px;
@@ -567,8 +551,6 @@ body:not(.smart) .frSu #frSchSu:hover{
 	width: calc(100% - 152px);
 	display: inline-block;
 	margin-left: 0px;
-	/*border-top-left-radius: 0px;
-	border-bottom-left-radius: 0px;*/
 	text-align: left;
 	padding-left: 45px;
 	margin-right: 25px;
@@ -592,8 +574,6 @@ body:not(.smart) .schedaRitorno #scheda_titolo{
 	margin-top: 3px;
 }
 .smart #scheda.visSch.schForm:not(.tab_tsubo) #scheda_titolo{
-	/*width: calc(100% - 167px) !important;
-    margin-left: 43px !important;*/
 	width: calc(100% - 172px) !important;
     margin-left: 48px !important;
     padding-left: 20px !important;
@@ -633,7 +613,6 @@ body:not(.smart) .schedaRitorno #scheda_titolo{
 	overflow-y:scroll;
 	width:100%;
 	background-color: rgb(238, 238, 238);
-    /*border-top: 1px solid rgba(0, 0, 0, 0.4);*/
 }
 #scheda_testo.noScroll,
 #scheda_testo2.noScroll{
@@ -652,7 +631,7 @@ body:not(.smart) .schedaRitorno #scheda_titolo{
 }
 .bodyStyled2 #scheda_testo,
 .bodyStyled2 #scheda_testo2{
-	background-color: #eae8e3;/*#f5f4f2;*/
+	background-color: #eae8e3;
 }
 #scheda_testo > div,
 #scheda_testo2 > div{
@@ -797,7 +776,6 @@ body:not(.bodyStyled2) #scheda_testo2{
 	height: 42px;
     line-height: 42px !important;
     text-align: left;
-    /*background-size: auto 30px;*/
     background-repeat: no-repeat;
     background-position: 5px center;
     display: block;

@@ -402,17 +402,15 @@
 	right:68px;
 	top:121px;
 }
-/*@media (max-width: 800px){*/
-	.touch .guida1{
-		background-position: calc(100% - 1290px) calc(100% - 1008px)!important;
-	}
-	.touch .guida1 #guida_1{
-		display:block !important;
-		right:68px;
-		top:auto !important;
-		bottom: 51px;
-	}
-/*}*/
+.touch .guida1{
+	background-position: calc(100% - 1290px) calc(100% - 1008px)!important;
+}
+.touch .guida1 #guida_1{
+	display:block !important;
+	right:68px;
+	top:auto !important;
+	bottom: 51px;
+}
 
 .guida2{
 	background-position: calc(18px - 1250px) calc(100% - 1015px)!important;
@@ -423,11 +421,9 @@
 	bottom:43px;
 	width:220px !important;
 }
-/*@media (max-width: 800px){*/
-	.touchguida2{
-		background-position: calc(18px - 1250px) calc(100% - 1045px)!important;
-	}
-/*}*/
+.touchguida2{
+	background-position: calc(18px - 1250px) calc(100% - 1045px)!important;
+}
 
 .guida3{
 	background:rgba(0,0,0,0.8) !important;
@@ -448,7 +444,6 @@
 
 
 .guida_modello0{
-	/*background-position: calc(84px - 1250px) calc(63px - 1000px)!important;*/
 	background-image:url(../img/buco_fascia.png) !important;
 	background-position: calc(150px - 1250px) calc(63px - 1000px)!important;
 }
@@ -640,7 +635,7 @@ body:not(.smart) #guida_generica .fumetti_freccia:last-child{
     cursor: pointer;
 }
 .guide_scheda{
-	background-color:#3376bd;/*#373737;*/
+	background-color:#3376bd;
 	background-image:url(../img/f_help.png);
 	background-position:right top;
 	background-repeat:no-repeat;
@@ -839,21 +834,16 @@ body:not(.smart) .guida_set .fumetti_freccia:last-child{
 	.smart .guida_anatomia{
 		left:20px !important;
 		margin-left:0px !important;
-		/*top:280px;/* VECCHIA VERSIONE */
-		/*margin-top:50px;/* VECCHIA VERSIONE */
-		/*-webkit-transition: margin-top 0.3s, opacity 0.3 !important;/* VECCHIA VERSIONE */
-		/*transition: margin-top 0.3s, opacity 0.3s !important;/* VECCHIA VERSIONE */
-		top:auto !important;/* NUOVA VERSIONE */
-		bottom:320px;/* NUOVA VERSIONE */
-		margin-top:0px !important;/* NUOVA VERSIONE */
-		margin-bottom:50px;/* NUOVA VERSIONE */
-		-webkit-transition: margin-bottom 0.3s, opacity 0.3 !important;/* NUOVA VERSIONE */
-		transition: margin-bottom 0.3s, opacity 0.3s !important;/* NUOVA VERSIONE */
+		top:auto !important;
+		bottom:320px;
+		margin-top:0px !important;
+		margin-bottom:50px;
+		-webkit-transition: margin-bottom 0.3s, opacity 0.3 !important;
+		transition: margin-bottom 0.3s, opacity 0.3s !important;
 	}
 	.smart .guida_anatomia.vis{
-		/*margin-top:0px !important;/* VECCHIA VERSIONE */
-		margin-bottom:0px !important;/* NUOVA VERSIONE */
-		z-index: 1601 !important;/* NUOVA VERSIONE */
+		margin-bottom:0px !important;
+		z-index: 1601 !important;
 	}
 	.smart .guida_anatomia .fumetti_freccia:first-child{
 		display:none !important;

@@ -26,10 +26,10 @@ var sets = {
 			'modulo_patologie.js',
 			'modulo_meridiani.js',
 			'modulo_teoria.js',
-			'modulo_procedure.js',
+			'sets/common/modulo_procedure.js',
 			'materiali.js',
 			'stili.css',
-			'stili_procedure.css',
+			'sets/common/stili_procedure.css',
 			'stili_tsubo.css'
 		],
 		dims: [
@@ -41,7 +41,7 @@ var sets = {
 			4,
 			4,
 			6,
-			52,
+			53,
 			8,
 			18,
 			8,
@@ -71,10 +71,10 @@ var sets = {
 			'modulo_patologie.js',
 			'modulo_meridiani.js',
 			'modulo_teoria.js',
-			'modulo_procedure.js',
+			'sets/common/modulo_procedure.js',
 			'materiali.js',
 			'stili.css',
-			'stili_procedure.css',
+			'sets/common/stili_procedure.css',
 			'stili_tsubo.css'
 		],
 		dims: [
@@ -86,7 +86,7 @@ var sets = {
 			4,
 			5,
 			5,
-			52,
+			53,
 			9,
 			20,
 			8,
@@ -114,10 +114,10 @@ var sets = {
 			'modulo_patologie.js',
 			'modulo_punti.js',
 			'modulo_teoria.js',
-			'modulo_procedure.js',
+			'sets/common/modulo_procedure.js',
 			'materiali.js',
 			'stili.css',
-			'stili_procedure.css',
+			'sets/common/stili_procedure.css',
 			'stili_tsubo.css'
 		],
 		dims: [

@@ -279,14 +279,6 @@ body:not(.smart) #elenchi{
     font-size: var(--font-23-1);
     color: rgba(0,0,0,0.6);
 }
-/*#elenchi_titolo.clientAtt{
-    background-image: url(../img/ico_quit4.png) !important;
-	background-size:auto 32px !important;
-	background-position:8px 7px !important;
-}
-#elenchi_titolo.clientAtt:hover{
-    background-image: url(../img/ico_quit4Over.png) !important;
-}*/
 #elenchi_icona{
 	vertical-align: middle;
     margin-left: 10px;
@@ -359,12 +351,6 @@ body.bodyStyled0 .schLato #chiudiElenco{
 	background-color:var(--colore-beige);
     background-image: url(../img/frSxB.png) !important;
 }
-/*body.bodyStyled2 .schLato #chiudiElenco{
-    background-image: url(../img/frSx.png) !important;
-}
-body:not(.bodyStyled2) .schLato #chiudiElenco{
-    background-image: url(../img/frSxB.png) !important;
-}*/
 .smart #chiudiElenco{
 	padding: 0px;
     height: 27px;
@@ -583,9 +569,6 @@ body:not(.bodyStyled2) #chiudiElenco{
 	padding-bottom: 1px !important;
 }
 .cartella.overDrag{
-/*	box-shadow:	0px 0px 3px #F60, 0px 0px 3px #F60 !important;
-}
-.smart .cartella.overDrag{*/
 	box-shadow:	0px 0px 7px #F60, 0px 0px 7px #F60 !important;
 }
 .pushDrag_before{
@@ -608,7 +591,6 @@ body:not(.bodyStyled2) #chiudiElenco{
 	padding-left:15px;
 	padding-right:35px;
 	background-repeat:no-repeat, repeat-x;
-	/*background-position:right center, center center;*/
 	background-position:right top, center center;
 	background-size:auto 36px, auto;
 }
@@ -685,7 +667,6 @@ body:not(.bodyStyled2) #chiudiElenco{
 	white-space:nowrap;
 	width: 100%;
     overflow: hidden;
-	/*background: url(../img/frDx.png) right center no-repeat;*/
     background-size: contain, auto 100%;
 	background-position: right center;
 	background-repeat: no-repeat;
@@ -694,7 +675,6 @@ body:not(.bodyStyled2) #chiudiElenco{
 	color:#FFF;
 }
 .trattElenco .cart_els:not(.timer):not(.timerNo){
-	/*background-image:url(../img/ico_trattamenti2B.png), url(../img/frDx.png);*/
 	background-image:url(../img/ico_trattamenti2B.png);
 	background-position: 4px center, right center !important;
 	background-size: 26px, contain, auto 100%;
@@ -712,11 +692,9 @@ body:not(.bodyStyled2) #chiudiElenco{
 	background-size: auto, contain, auto 100%;
 }
 .trattElenco .timer{
-	/*background-image:url(../img/ico_timer.png), url(../img/frDx.png);*/
 	background-image:url(../img/ico_timer.png);
 }
 .trattElenco .timerNo{
-	/*background-image:url(../img/ico_timerNo.png), url(../img/frDx.png);*/
 	background-image:url(../img/ico_timerNo.png);
 }
 .cart_els:not(.elencoSel){
@@ -735,12 +713,10 @@ body:not(.bodyStyled2) #chiudiElenco{
 	background-color:#555 !important;
 }
 .trattElenco .cart_els.elencoSel:not(.timer):not(.timerNo){
-	/*background-image:url(../img/ico_trattamenti2B.png), url(../img/frDx.png), linear-gradient(to bottom, #1d4eaa 0%,#0a3d96 100%) !important;*/
 	background-image:url(../img/ico_trattamenti2B.png), none, linear-gradient(to bottom, #1d4eaa 0%,#0a3d96 100%) !important;
 	background-position: 4px center, right center, center center !important;
 }
 .trattElenco .cart_els.timer.elencoSel{
-	/*background-image:url(../img/ico_timer.png), url(../img/frDx.png), linear-gradient(to bottom, #1d4eaa 0%,#0a3d96 100%) !important;*/
 	background-image:url(../img/ico_timer.png), none, linear-gradient(to bottom, #1d4eaa 0%,#0a3d96 100%) !important;
 	background-position: 9px center, right center, center center !important;
 }
@@ -799,7 +775,6 @@ body:not(.bodyStyled2) #chiudiElenco{
 	background-position: right center;
 }
 .frdxtratt{
-	/*background-image: url(../img/ico_trattamenti2.png), url(../img/frDxB.png), linear-gradient(to bottom, #FFF 0%,#EEE 100%);*/
 	background-image: url(../img/ico_trattamenti2.png), none, linear-gradient(to bottom, #FFF 0%,#EEE 100%);
 	background-size: 26px, contain, auto 100%;
 	background-position: 8px center, right center, center center !important;
@@ -815,23 +790,7 @@ body:not(.bodyStyled2) #chiudiElenco{
 	padding-left:8px !important;
 	color:#FFF !important;
 	padding-right: 35px !important;
-	/*border:1px solid #FFF;
-	line-height:37px;*/
 }
-/*.timeTratt{
-	display: inline-block;
-    vertical-align: middle;
-    background: linear-gradient(to bottom, #FFF 0%,#EEE 100%);
-    margin-left: -8px;
-    padding-left: 8px;
-    padding-right: 8px;
-    height: 39px;
-    margin-right: 6px;
-    font-family: Arial;
-    width: 52px;
-    text-align: center;
-    overflow: hidden;
-}*/
 body:not(.touch) .frdx,
 body:not(.touch) .frdxtratt{
 	padding-right:28px !important;
@@ -843,7 +802,6 @@ body:not(.touch) .frdxtratt{
 	background-image: url(../img/frDxB.png), linear-gradient(to bottom, #EEE 0%,#DDD 100%) !important;
 }
 .frdxtratt:not(.elencoSel):hover{
-	/*background-image: url(../img/ico_trattamenti2.png), url(../img/frDxB.png), linear-gradient(to bottom, #EEE 0%,#DDD 100%) !important;*/
 	background-image: url(../img/ico_trattamenti2.png), none, linear-gradient(to bottom, #EEE 0%,#DDD 100%) !important;
 }
 .frdxblack:not(.elencoSel):hover{

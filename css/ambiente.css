@@ -15,20 +15,15 @@
 	--colore-avorio: #ece5d7;
 	--colore-avorio2: #fbf9f5;
 	
-	
-	/*--menu-fondino:var(--colore-avorio);
-	--menu-fondino-chiaro:var(--colore-grigio-chiaro2);*/
 	--menu-fondino:var(--colore-beige);
 	--menu-fondino-chiaro:var(--colore-avorio);
 	--menu-linguette:var(--colore-grigio-chiaro);
 	--menu-linguette-ombra: 0px 0px 6px rgb(0 0 0 / 50%);
 	--menu-anatomia:var(--colore-grigio-chiaro2);
 	--menu-lista-f:rgba(0,0,0,0.3);
-	/*--schede-fondino:var(--colore-avorio);*/
 	--schede-fondino:var(--colore-avorio);
 	--schede-icone:var(--colore-nero);
 	--schede-icone-over:var(--colore-blu);
-	/*--ricerche-fondino:var(--colore-grigio-chiaro2);*/
 	--ricerche-fondino:var(--colore-beige);
 	--impostazioni-fondino:var(--colore-beige);
 	--impostazioni-fondino-smart:var(--colore-beige);
@@ -76,11 +71,8 @@
 	--fondino-icone-over: rgba(0,0,0,0.45);
 }
 :root .bodyStyled2{
-	/*--ricerche-fondino:var(--colore-avorio);*/
 	--menu-linguette:var(--colore-grigio-topo);
 	--menu-linguette-ombra: none;
-	/*--menu-fondino:var(--colore-beige);
-	--menu-fondino-chiaro:var(--colore-avorio);*/
 	--menu-anatomia:var(--colore-avorio);
 	--menu-lista-f:rgba(0,0,0,0.4);
 	--schede-fondino:var(--colore-grigio-topo);
@@ -160,12 +152,6 @@
 	--font-28-6: 30.6px;
 	--font-30-9: 32.9px;
 }
-
-/*@media (max-width: 699px){
-	:root {
-    	--menu-width: 220px;
-	}
-}*/
 @media (max-width: 699px){
 	:root .smart{
     	--menu-width: 100%;
@@ -186,7 +172,6 @@
 	-ms-user-select: none;
 	user-select: none;
 	
-	/*font-family:Verdana, Geneva, sans-serif;*/
 	font-family:'SF Pro Display', Verdana, Geneva, sans-serif;
 	font-size: var(--font-13-2);/*13.2px;*/
 	color:#000;
@@ -200,7 +185,6 @@ html:not(.htmlStampa)/*, body */{
 }
 body{
 	color: #FFF;
-	/*font-family:Monospace;*/
 	font-size:var(--font-14-3);/*14.3px;*/
 	text-align:center;
 	background-color: #333;
@@ -212,7 +196,6 @@ body{
 }
 .smart{
 	background-size: 350px, 100% 100%, 800px;
-	/*background-position:center center, center center, right bottom;*/
 	background-position: center 85px, center center, right bottom;
 }
 .bodyModello{
@@ -235,7 +218,7 @@ body:not(.bodyModello).bodyStyled2{
 	background-color: #076baa;
 }
 .bodyStyled2{
-	background-color: #ffebd6; /*#f1dfcb;/*#eae3d3;*/
+	background-color: #ffebd6;
 }
 
 
@@ -303,7 +286,6 @@ body:not(.bodyModello) #logoSovra{
 	width:100%;
 	height:230px;
 	padding-top:160px;
-	/*margin-top:-130px;*/
 	margin-top:-50px;
 	background-image:url(../img/logo_iaomai.png);
 	background-position:center center;
@@ -323,13 +305,10 @@ body:not(.bodyModello) #logoSovra{
 	mix-blend-mode: lighten;
 	margin-top:20px;
 }
-
-/*@media (max-width: 800px){*/
-	#car_inizio{
-		background-blend-mode: lighten;
-		background-color: #0054a7;
-	}
-/*}*/
+#car_inizio{
+	background-blend-mode: lighten;
+	background-color: #0054a7;
+}
 
 
 #loader, #fotoBig{
@@ -384,7 +363,6 @@ body:not(.bodyModello) #logoSovra{
 	opacity:0.4 !important;
 }
 .loading{
-   /* background: url(../img/loadingBlack.gif) no-repeat center 30px #000 !important;*/
     background-size: 50px !important;
     opacity: 0.65 !important;
     position: absolute !important;
@@ -527,7 +505,6 @@ body:not(.bodyModello) #logoSovra{
     background-repeat: no-repeat;
     background-color: #aa4b1d;
     background-position: calc(100% - 10px) center;
-    /* border-top-left-radius: 8px; */
     cursor: pointer;
     color: #FFF;
     right: 0px;

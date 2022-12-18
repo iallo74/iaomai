@@ -7,7 +7,6 @@
 	height:280px;
 	margin-left:-200px;
 	margin-top:-140px;
-	/*background-color: #0963a2;*/
 	background-color: #154e9c;
 }
 .smart.android #versione .popup_chiudi{
@@ -25,7 +24,7 @@ body #contVersione img{
 	padding-right:30px;
 }
 #contVersione, #contVersione *{
-	font-size: 11px;/*var(--font-11);*/
+	font-size: 11px;
 	color:rgba(255,255,255,0.5);
 }
 #logoVersione{

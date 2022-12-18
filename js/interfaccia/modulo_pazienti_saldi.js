@@ -66,9 +66,6 @@ var PAZIENTI_SALDI = {
 						'	<i class="elMenu"' +
 						'	   title="'+htmlEntities(TXT("AggiungiSaldo"))+'"' +
 						'	   onclick="PAZIENTI.car_saldo();">' +
-						/*'		<img src="img/ico_saldiB_add.png"' +
-						'			 class="noBG"' +
-						'			 align="absmiddle">' +*/
 						'		<span>'+htmlEntities(TXT("AggiungiSaldo"))+'</span>' +
 						'	</i>' +
 						'</p>';
@@ -274,13 +271,8 @@ var PAZIENTI_SALDI = {
 			}
 			endChangeDetection();
 			SCHEDA.formModificato = false;
-			/*applicaLoading(document.getElementById("elenchi_lista"));
-			applicaLoading(document.getElementById("scheda_testo"));*/
 			localPouchDB.setItem(MD5("DB"+LOGIN._frv()+".pazienti"), IMPORTER.COMPR(DB.pazienti)).then(function(){ // salvo il DB
-				LOGIN.sincronizza( 	/*'rimuoviLoading(document.getElementById("elenchi_lista"));'+
-									'rimuoviLoading(document.getElementById("scheda_testo"));'+*/
-									'PAZIENTI.car_saldo('+pDef+',document.getElementById("btn_saldo_'+pDef+'"),true);' +
-									/*'SCHEDA.scaricaScheda(true);'/* CHIUSURA DOPO SALVATAGGIO da PC*/
+				LOGIN.sincronizza( 	'PAZIENTI.car_saldo('+pDef+',document.getElementById("btn_saldo_'+pDef+'"),true);' +
 									'if(smartMenu)SCHEDA.scaricaScheda(true);' +/* CHIUSURA DOPO SALVATAGGIO da SMART*//* +*/
 									'PAZIENTI.caricaSaldi('+pDef+');' +
 									'startAnimate();' +
@@ -307,13 +299,9 @@ var PAZIENTI_SALDI = {
 			PZ.saldi[Q_idSaldo].Cancellato=1;
 			endChangeDetection();
 			SCHEDA.formModificato = false;
-			/*applicaLoading(document.getElementById("elenchi_lista"));
-			applicaLoading(document.getElementById("scheda_testo"));*/
 			localPouchDB.setItem(MD5("DB"+LOGIN._frv()+".pazienti"), IMPORTER.COMPR(DB.pazienti)).then(function(){ // salvo il DB
 				LOGIN.sincronizza( 	'PAZIENTI.caricaSaldi();' +
 									'SCHEDA.scaricaScheda();' +
-									/*'rimuoviLoading(document.getElementById("scheda_testo"));' +
-									'rimuoviLoading(document.getElementById("elenchi_lista"));' +*/
 									'nasLoader();' +
 									'startAnimate();' );
 			});

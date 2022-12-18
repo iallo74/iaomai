@@ -66,12 +66,6 @@
 .popup_back{
 	z-index:10000 !important;
 }
-@media (max-width: 480px){
-	/*.popup{
-		padding-top:10px;
-		padding-bottom:10px;
-	}*/
-}
 
 .popup input[type='text'],
 .popup input[type='email'],

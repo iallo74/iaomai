@@ -6,23 +6,11 @@
 
 
 */
-/*.tablet #scheda:not(.h150) .formBtn {
-	bottom:53px !important;
-}*/
 .touch .noTouch{
 	display:none !important;
 }
 .smart .noSmart{
 	display:none !important;
-}
-.touch:not(.android) input[type='text'],
-.touch:not(.android) input[type='email'],
-.touch:not(.android) input[type='password'],
-.touch:not(.android) #formMod select:not(.p_proc_gruppo):not(#grpPt):not(#grpMrd),
-.touch:not(.android) #dataTxt{
-	/*height:30px !important;
-	line-height:30px !important;
-	font-size: var(--font-15-39) !important;*/
 }
 .touch:not(.android) #dataTxt *{
 	line-height:30px !important;
@@ -117,10 +105,7 @@
 }
 
 /* SCHEDA */
-/*body.touch:not(.smart) .visSch #ss,
-body.touch:not(.smart) .visSch #sc{
-	display:inline-block !important;
-}*/
+
 /* ELENCHI */
 .smart #elenchi{
 	width:100%;
@@ -252,7 +237,6 @@ body.touch:not(.smart) .visSch #sc{
 	display:none !important;
 }
 .smart #scheda_linguette{
-	/*height:29px;*/
 	display: none;
 }
 .smart #scheda_linguette div{

@@ -1217,12 +1217,8 @@ var PAZIENTI_TRATTAMENTI = {
 		
 			endChangeDetection();
 			SCHEDA.formModificato = false;
-			/*applicaLoading(document.querySelector(".listaTrattamenti"));
-			applicaLoading(document.getElementById("scheda_testo"));*/
 			localPouchDB.setItem(MD5("DB"+LOGIN._frv()+".pazienti"), IMPORTER.COMPR(DB.pazienti)).then(function(){ // salvo il DB
 				LOGIN.sincronizza(	'PAZIENTI.caricaTrattamenti();' + 
-									/*'rimuoviLoading(document.querySelector(".listaTrattamenti"));' +
-									'rimuoviLoading(document.getElementById("scheda_testo"));' +*/
 									'nasLoader();' +
 									'SCHEDA.scaricaScheda();' );
 			});
@@ -1397,8 +1393,7 @@ var PAZIENTI_TRATTAMENTI = {
 							applicaLoading(document.getElementById("scheda_testo"));
 							applicaLoading(document.getElementById("elenchi_lista"));
 							localPouchDB.setItem(MD5("DB"+LOGIN._frv()+".pazienti"), IMPORTER.COMPR(DB.pazienti)).then(function(){ // salvo il DB
-								LOGIN.sincronizza(	'/*noRic*/' +
-													'rimuoviLoading(document.getElementById("scheda_testo"));' +
+								LOGIN.sincronizza(	'rimuoviLoading(document.getElementById("scheda_testo"));' +
 													'rimuoviLoading(document.getElementById("elenchi_lista"));' );
 							});
 						}

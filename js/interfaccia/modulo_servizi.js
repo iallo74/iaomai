@@ -16,8 +16,6 @@ var SERVIZI = {
 				'	   onclick="SERVIZI.car_servizio();"' +
 				'	   id="addServizio"' +
 				'	   title="'+TXT("AggiungiServizio")+'">' +
-				/*'		<span>'+TXT("AggiungiServizio")+'</span>' +
-				'		<img src="img/piu.png" align="absmiddle">' +*/
 				'	</i>' +
 				'</p>' +
 				'<div class="lista listaServizi">';
@@ -33,18 +31,11 @@ var SERVIZI = {
 				
 				if(!SR.Cancellato){
 					noServ = false;
-					/*HTML +=
-					'	<div class="frdx"' +
-					'		 id="servizio_'+SR.p+'"' +
-					'		 onClick="SERVIZI.car_servizio('+SR.p+');">';*/
 					HTML +=
 					'	<div class="base"' +
 					'		 id="servizio_'+SR.p+'"' +
 					'		 onClick="SERVIZI.car_servizio('+SR.p+');">';
 					
-							/*HTML += 
-					'		<img src="img/ico_servizio.png"' +
-					'			 class="imgList">';*/
 					// verifico se è stato modificato e non sincronizzato
 					var mdT=false;
 					if(SR.DataModifica > DB.servizi.lastSync)mdT=true;
@@ -256,10 +247,8 @@ var SERVIZI = {
 			LOGIN.sincronizza(	'rimuoviLoading(document.getElementById("scheda_testo"));' +
 								'rimuoviLoading(document.getElementById("elenchi_lista"));' +
 								'SERVIZI.car_servizio('+Q_idServ+',true);' +
-								/*'SCHEDA.scaricaScheda(true);' +/* CHIUSURA DOPO SALVATAGGIO da PC*/
 								'if(smartMenu)SCHEDA.scaricaScheda(true);' +/* CHIUSURA DOPO SALVATAGGIO da SMART*/
-								postAction/* +
-								'SERVIZI.caricaServizi();'*/ );
+								postAction );
 		});
 		return false;
 	},

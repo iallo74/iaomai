@@ -383,14 +383,7 @@ var H = {
 			if(!HTML)return;
 			document.getElementById("combo").innerHTML = HTML;
 			setTimeout( function(){
-				/*if(!touchable)sch.addEventListener("scroll", H.rimuoviCombo, false);// <<< DISATTIVATO
-				else sch.addEventListener("touchmove", H.rimuoviCombo, false);*/
 				sch.addEventListener("scroll", H.rimuoviCombo, false);
-				
-				/*window.addEventListener("wheel", function(){// <<< da togliere
-					H.comboOver=false;
-					H.rimuoviCombo();
-				}, false);*/
 				window.addEventListener("mouseup", H.rimuoviCombo, false);
 			},200);
 			H.elCombo.addEventListener("keyup", H.filtraCombo, false);
@@ -406,10 +399,7 @@ var H = {
 		if(!H.comboOver || touchable){
 			H.nasCombo();
 			var sch = document.getElementById("scheda_testo");
-			/*if(!touchable)sch.removeEventListener("scroll", H.rimuoviCombo);// <<< DISATTIVATO
-			else sch.removeEventListener("touchmove", H.rimuoviCombo);*/
 			sch.removeEventListener("scroll", H.rimuoviCombo);
-			//window.removeEventListener("wheel", H.rimuoviCombo); // <<< da togliere
 			window.removeEventListener("mouseup", H.rimuoviCombo);
 			H.elCombo.removeEventListener("keyup", H.filtraCombo);
 			H.elCombo.removeEventListener("mouseover", H.overCombo, false);
@@ -673,8 +663,7 @@ var H = {
 						applicaLoading(document.getElementById("elenchi_lista"));
 						localPouchDB.setItem(MD5("DB"+LOGIN._frv()+".pazienti"), IMPORTER.COMPR(DB.pazienti)).then(function(){ // salvo il DB
 							localPouchDB.setItem(MD5("DB"+LOGIN._frv()+".fornitori"), IMPORTER.COMPR(DB.fornitori)).then(function(){ // salvo il DB
-								LOGIN.sincronizza(	'/*noRic*/' +
-													'rimuoviLoading(document.getElementById("scheda_testo"));' +
+								LOGIN.sincronizza(	'rimuoviLoading(document.getElementById("scheda_testo"));' +
 													'rimuoviLoading(document.getElementById("elenchi_lista"));' );
 							});
 						});

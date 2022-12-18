@@ -35,18 +35,11 @@ var FORNITORI = {
 				
 				if(!FR.Cancellato){
 					noForn = false;
-					/*HTML +=
-					'	<div class="frdx"' +
-					'		 id="fornitore_'+FR.p+'"' +
-					'		 onClick="FORNITORI.car_fornitore('+FR.p+');">';*/
 					HTML +=
 					'	<div class="base"' +
 					'		 id="fornitore_'+FR.p+'"' +
 					'		 onClick="FORNITORI.car_fornitore('+FR.p+');">';
 					
-							/*HTML += 
-					'		<img src="img/ico_fornitore.png"' +
-					'			 class="imgList">';*/
 					// verifico se è stato modificato e non sincronizzato
 					var mdT=false;
 					if(FR.DataModifica > DB.fornitori.lastSync)mdT=true;
@@ -373,8 +366,7 @@ var FORNITORI = {
 								'FORNITORI.car_fornitore('+Q_idForn+',true);' +
 								/*'SCHEDA.scaricaScheda(true);' +/* CHIUSURA DOPO SALVATAGGIO da PC*/
 								'if(smartMenu)SCHEDA.scaricaScheda(true);' +/* CHIUSURA DOPO SALVATAGGIO da SMART*/
-								postAction/* +
-								'FORNITORI.caricaFornitori();'*/ );
+								postAction );
 		});
 		return false;
 	},

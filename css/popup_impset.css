@@ -12,11 +12,6 @@
 	background-image:url(../img/ico_coloriN.png);
 	background-position:10px center;
 }
-
-#contImpset p{
-	/*text-align:left;
-	margin-left:10px;*/
-}
 #contImpset select{
 	display: inline-block;
     height: 30px;

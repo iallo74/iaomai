@@ -1,10 +1,10 @@
 @charset "utf-8";
 /* CSS Document */
 
-.dettPunto .numPoints{
+#dettagliCont .dettPunto .numPoints{
 	width: calc(100% - 100px) !important;
 }
-.dettPunto .iProc{
+#dettagliCont .dettPunto .iProc{
 	display:none !important;
 }
 #procTue{
@@ -75,7 +75,6 @@
 	background-color:rgba(0,0,0,0.075) !important;
 }
 #formCommenti{
-	/*display:none;*/
 	padding-bottom:0px;
 }
 .placeholderCommento{
@@ -167,10 +166,6 @@
 	display: inline-block;
 	vertical-align:top;
 	border:none !important;
-	/*background-image:url(../../img/ico_reply.png);
-	background-size:20px;
-	background-repeat:no-repeat;
-	background-position:right top;*/
 	border-radius: 4px;
 }
 .commReply .commSX,

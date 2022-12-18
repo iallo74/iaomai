@@ -931,12 +931,6 @@ body:not(.smart) .stampaBtn{
 
 .grabElement{
 	display:block;
-	/*padding-right:16px;
-	min-height:32px;
-	cursor:move;
-	background-image:url(../img/grab.png);
-	background-repeat:no-repeat;
-	background-position:right center;*/
 }
 .grabBtn{
 	float:right;
@@ -964,12 +958,6 @@ body:not(.smart) .stampaBtn{
 .smart #dettagliCont .grabElement:not(.rgLabel) .grabBtn{
 	height: 52px !important;
 }
-/*.smart .grabElement{
-	background-image:url(../img/grabMobile.png) !important;
-}*/
-/*body:not(.touch) .grabElement:hover{
-	background-image:url(../img/grabOn.png) !important;
-}*/
 .smart.android .dettMeridiano > img{
 	margin-top: 13px !important;
 }
@@ -1067,14 +1055,10 @@ body:not(.smart) .stampaBtn{
 	margin-bottom: 5px;
     border-radius: 4px;
     background-color: #b9ccfd;
-   /* padding: 1px;*/
     box-shadow: 0px 0px 2px rgba(0,0,0,0.6);
-    /*padding-top: 7px;*/
 }
 #dettagliCont .rgProcMod .rgLabel{
-	/*padding-top:7px;*/
 	background-position:right top !important;
-	/*padding-right:0px !important;*/
 }
 #dettagliCont .rgProcMod:hover {
     background-color: #a5baec;
@@ -1168,9 +1152,6 @@ body:not(.smart) .iProc{
 	margin-top: 0px !important;
 }
 
-#scheda:not(.sch_Max600) #formMod div.labelSx > select{  /* PAZIENTI */
-	/*margin-bottom: 0px !important;*/
-}
 #formMod i{
 	margin-top: 12px;
 	margin-bottom: 4px;
@@ -1399,7 +1380,6 @@ _:-webkit-full-screen,
 	font-size: var(--font-15-39) !important;
 }
 .dettPunto{ /* procedura + PAZIENTI */
-	/*padding-left:4px !important;*/
 	border-bottom:1px solid #CCC;
 }
 #formMod .grabElement{
@@ -1671,10 +1651,6 @@ body:not(.touch) #puntiAuriculoMap .dettPunto:hover{
 .dataOp{
 	background-image:url(../img/inpbgOp.png) !important;
 	background-position: calc(100% - -4px) calc(100% - 3px) !important;
-}
-#formMod select:not(.p_proc_gruppo):not(.p_paz_gruppo):not(.p_paz_meridiani):not(.p_proc_meridiani):not(.mezzoPuntoTratt){ /* PAZIENTI */
-	/*margin-top:3px;
-	margin-bottom: 3px;*/
 }
 .smart.android #formMod select:not(.scoreSelect):not(.p_proc_gruppo):not(.p_paz_gruppo):not(.p_paz_meridiani):not(.p_proc_meridiani):not(.mezzoPuntoTratt){ /* PAZIENTI */
 	margin-top:0px !important;

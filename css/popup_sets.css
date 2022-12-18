@@ -62,7 +62,6 @@ body:not(.smart) #sets{
 }
 #sets_elenco div span{
 	float:right;
-	/*font-size: var(--font-11) !important;*/
 	font-size: 11px !important;
 	padding-right:32px;
 	color: #ff5722;

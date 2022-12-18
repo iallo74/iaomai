@@ -125,7 +125,6 @@ body:not(.smart) .agendaOre div span{
 	line-height:20px !important;
 	height:20px !important;
 }
-/*body:not(.smart) .agendaOre div,*/
 body:not(.smart) .agendaOre div span:last-child{
 	cursor:pointer;
 }

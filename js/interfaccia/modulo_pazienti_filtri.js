@@ -250,7 +250,6 @@ var PAZIENTI_FILTRI = {
 						  (PAZIENTI.pazientiFiltrati.length ? '' : ' style="display:none;"') +
 					'>' +
 					'	<div>' +
-							/*htmlEntities(TXT("PazientiFiltrati")) +*/
 					'		<div class="btn_invia" onClick="this.blur();PAZIENTI.cancellaFiltri();">' +
 								htmlEntities(TXT("AnnullaFiltri")) +
 					'		</div>' +

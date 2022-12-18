@@ -164,11 +164,6 @@ var SCHEDA = {
 		}else if(espansa){
 			if(SCHEDA.aggancio.tipo == 'sotto'){
 				if(!SCHEDA.hOpened)SCHEDA.hOpened = 200;
-				//if(classe.indexOf("scheda_")==-1 || smartMenu){
-					//document.getElementById("scheda_testo").style.height = SCHEDA.hOpened+"px";
-				/*}else{
-					document.getElementById("scheda_testo").style.height = (HF()-SCHEDA.getMM()+SCHEDA.gapScheda)+"px";
-				}*/
 				document.getElementById("scheda_testo").scrollTop = '0px';
 			}
 		}
@@ -179,8 +174,6 @@ var SCHEDA = {
 			SCHEDA.btnSel=btn;
 			btn.classList.add("elencoSel");	
 		}
-		//if(SCHEDA.aggancio.tipo == 'sotto')SCHEDA.aggancio.sotto.y = tCoord(document.getElementById("scheda"),'y');
-		//if(SCHEDA.aggancio.tipo == 'libera')SCHEDA.verPosScheda();
 		SCHEDA.verRedim();
 		SCHEDA.verPosScheda();
 		SCHEDA.setMenuDim();

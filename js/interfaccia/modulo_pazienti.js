@@ -49,7 +49,6 @@ var PAZIENTI = {
 				'	   id="addPaziente"' +
 				'	   onclick="PAZIENTI.car_paziente();"' +
 				'	   title="'+TXT("AggiungiPaziente")+'">' +
-				/*'		<span>'+TXT("AggiungiPaziente")+'</span>' +*/
 				'	</i>' +
 				'</p>' +
 				'<div class="lista listaPazienti">' +
@@ -892,8 +891,7 @@ var PAZIENTI = {
 					'		   	 class="avatar"'+
 					'			 style="background-image:url(img/avatar_'+sessoAvatar+'.jpg);">' +
 					'			<div style="background-image:url(\''+avatar+'\')">';
-			/*if(sesso)HTML += '		<img src="img/p_'+sessi[sesso]+'.png"' +
-							 '			 style="margin-top: 5px;">';*/
+					
 			HTML += '			</div>' +
 					'		</div>' +
 					'		<div id="pazienti_head">' +
@@ -1251,12 +1249,8 @@ var PAZIENTI = {
 		
 		endChangeDetection();
 		SCHEDA.formModificato = false;
-		/*applicaLoading(document.getElementById("scheda_testo"));
-		applicaLoading(document.getElementById("elenchi_lista"));*/
 		localPouchDB.setItem(MD5("DB"+LOGIN._frv()+".pazienti"), IMPORTER.COMPR(DB.pazienti)).then(function(){ // salvo il DB
-			LOGIN.sincronizza(	/*'rimuoviLoading(document.getElementById("scheda_testo"));' +
-								'rimuoviLoading(document.getElementById("elenchi_lista"));' +*/
-								'PAZIENTI.vis_paziente(true);' +
+			LOGIN.sincronizza(	'PAZIENTI.vis_paziente(true);' +
 								'startAnimate();' +
 								'nasLoader();' +
 								postAction );
@@ -1443,8 +1437,7 @@ var PAZIENTI = {
 						applicaLoading(document.getElementById("scheda_testo"));
 						applicaLoading(document.getElementById("elenchi_lista"));
 						localPouchDB.setItem(MD5("DB"+LOGIN._frv()+".pazienti"), IMPORTER.COMPR(DB.pazienti)).then(function(){ // salvo il DB
-							LOGIN.sincronizza(	'/*noRic*/' +
-												'rimuoviLoading(document.getElementById("scheda_testo"));' +
+							LOGIN.sincronizza(	'rimuoviLoading(document.getElementById("scheda_testo"));' +
 												'rimuoviLoading(document.getElementById("elenchi_lista"));' );
 						});
 					}
@@ -1737,8 +1730,7 @@ var PAZIENTI = {
 						applicaLoading(document.getElementById("scheda_testo"));
 						applicaLoading(document.getElementById("elenchi_lista"));
 						localPouchDB.setItem(MD5("DB"+LOGIN._frv()+".pazienti"), IMPORTER.COMPR(DB.pazienti)).then(function(){ // salvo il DB
-							LOGIN.sincronizza(	'/*noRic*/' +
-												'rimuoviLoading(document.getElementById("scheda_testo"));' +
+							LOGIN.sincronizza(	'rimuoviLoading(document.getElementById("scheda_testo"));' +
 												'rimuoviLoading(document.getElementById("elenchi_lista"));' );
 						});
 					}
