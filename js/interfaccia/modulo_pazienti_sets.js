@@ -84,7 +84,8 @@ var PAZIENTI_SETS = {
 			//stopAnimate(true);
 		}catch(err){}
 	},
-	caricaPuntiTrattamento: function(){ // carica i punti del trattamento
+	caricaPuntiTrattamento: function( evi ){ // carica i punti del trattamento
+		if(typeof(evi)=='undefined')var evi = -1;
 		document.getElementById('puntiTsuboMap').style.display = 'block';
 		document.getElementById('label_puntiTsuboMap').style.display = 'block';
 		var elenco = '';
@@ -104,7 +105,7 @@ var PAZIENTI_SETS = {
 					if(!siglaTsubo)siglaTsubo = nTsubo+'.'+siglaMeridiano;
 					
 					totPunti=0;
-					HTML += '<div class="rgProcMod rgMod dettPunto"' +
+					HTML += '<div class="rgProcMod rgMod dettPunto'+((evi==p)?' eviPunto':'')+'"' +
 							'	  id="rg_'+p+'"';
 					if(mouseDetect)HTML += 	' onMouseOver="SET.overTsubo(this,true);"' +
 											' onMouseOut="SET.overTsubo(this,false);"';
@@ -270,7 +271,9 @@ var PAZIENTI_SETS = {
 		document.getElementById('puntiTsuboMap').innerHTML=HTML;
 		
 		
-		
+		if(evi>-1){
+			setTimeout(function(){document.getElementById("rg_"+evi).classList.remove("eviPunto")},2000);
+		}
 		
 		try{
 			SET.evidenziaTsuboMod(elenco.substr(0,elenco.length-1).split("|"));
@@ -463,12 +466,13 @@ var PAZIENTI_SETS = {
 		if(toIndex>fromIndex)toIndex--;
 		var arr2 = PAZIENTI.puntiProvvisori.splice(fromIndex, 1)[0];
 		PAZIENTI.puntiProvvisori.splice(toIndex,0,arr2);
-		PAZIENTI.caricaPuntiTrattamento();
+		PAZIENTI.caricaPuntiTrattamento(toIndex);
 		SCHEDA.formModificato = true;
 	},
 	
 	// meridiani
-	caricaMeridianiTrattamento: function(){ // carica i punti del trattamento
+	caricaMeridianiTrattamento: function( evi ){ // carica i punti del trattamento
+		if(typeof(evi)=='undefined')var evi = -1;
 		document.getElementById('meridianiTsuboMap').style.display = 'block';
 		document.getElementById('label_meridianiTsuboMap').style.display = 'block';
 		var modificabile = false;
@@ -487,13 +491,14 @@ var PAZIENTI_SETS = {
 				var descrizione = __(PAZIENTI.meridianiProvvisori[m].descrizione);
 				HTML += '<div class="rgProcMod ';
 				if(modificabile)HTML += 'rgMod ';
-				HTML += 'dettMeridiano';
+				HTML += 'dettMeridiano'+((evi==m)?' eviPunto':'');
 				if(typeof(MERIDIANI) != 'undefined'){
 					if(MERIDIANI[PAZIENTI.meridianiProvvisori[m].siglaMeridiano].meridianoAcceso){
 						HTML += ' p_'+MERIDIANI[PAZIENTI.meridianiProvvisori[m].siglaMeridiano].elemento;
 					}
 				}
-				HTML += '" id="tr_p'+PAZIENTI.meridianiProvvisori[m].siglaMeridiano+'">';
+				//HTML += '" id="tr_p'+PAZIENTI.meridianiProvvisori[m].siglaMeridiano+'">';
+				HTML += '" id="tr_p'+m+'">';
 				if(modificabile){
 					HTML +=
 						'<div class="grabElement"' +
@@ -535,7 +540,8 @@ var PAZIENTI_SETS = {
 				if(modificabile)HTML +=
 						'			  onMouseOver="PAZIENTI.overCestino=true;"' +
 						'			  onMouseOut="PAZIENTI.overCestino=false;"' +
-						'		      onClick="PAZIENTI.selMV('+m+',\'tr_p'+PAZIENTI.meridianiProvvisori[m].siglaMeridiano+'\');"';
+						'		      onClick="PAZIENTI.selMV('+m+',\'tr_p'+m+'\');"';
+						//'		      onClick="PAZIENTI.selMV('+m+',\'tr_p'+PAZIENTI.meridianiProvvisori[m].siglaMeridiano+'\');"';
 				else HTML += '		  style="cursor:default !important;"';
 				HTML += '>' +
 						'			<img src="img/ico_PV'+m2+'.png"' +
@@ -570,6 +576,11 @@ var PAZIENTI_SETS = {
 		}
 		document.getElementById('totMeridiani').innerHTML = PAZIENTI.meridianiProvvisori.length;
 		document.getElementById('meridianiTsuboMap').innerHTML=HTML;
+		
+		if(evi>-1){
+			setTimeout(function(){document.getElementById("tr_p"+evi).classList.remove("eviPunto")},2000);
+		}
+		
 		try{
 			SET.evidenziaMeridianiMod(elenco);
 		}catch(err){}
@@ -623,7 +634,7 @@ var PAZIENTI_SETS = {
 		if(toIndex>fromIndex)toIndex--;
 		var arr2 = PAZIENTI.meridianiProvvisori.splice(fromIndex, 1)[0];
 		PAZIENTI.meridianiProvvisori.splice(toIndex,0,arr2);
-		PAZIENTI.caricaMeridianiTrattamento();
+		PAZIENTI.caricaMeridianiTrattamento(toIndex);
 		SCHEDA.formModificato = true;
 	},
 	
@@ -644,7 +655,8 @@ var PAZIENTI_SETS = {
 			SET.evidenziaTsuboMod(elenco.substr(0,elenco.length-1).split("|"));
 		}catch(err){}
 	},
-	caricaAuriculoTrattamento: function(){ // carica i punti del trattamento
+	caricaAuriculoTrattamento: function( evi ){ // carica i punti del trattamento
+		if(typeof(evi)=='undefined')var evi = -1;
 		document.getElementById('puntiAuriculoMap').style.display = 'block';
 		document.getElementById('label_puntiAuriculoMap').style.display = 'block';
 		var modificabile = false;
@@ -678,7 +690,7 @@ var PAZIENTI_SETS = {
 					nomeTsubo=__(PAZIENTI.auriculoProvvisori[p].n);
 					elenco.push(siglaTsubo);
 					
-					HTML += '<div class="rgProcMod rgMod dettAuriculo"' +
+					HTML += '<div class="rgProcMod rgMod dettAuriculo'+((evi==p)?' eviPunto':'')+'"' +
 							'	  id="rg_'+p+'"';
 					if(mouseDetect && siglaTsubo){
 						HTML += 	' onMouseOver="SET.overTsubo(\'PT'+siglaTsubo+'\',true);"' +
@@ -816,6 +828,11 @@ var PAZIENTI_SETS = {
 		}
 		document.getElementById('totAuriculo').innerHTML = PAZIENTI.auriculoProvvisori.length;
 		document.getElementById('puntiAuriculoMap').innerHTML=HTML;
+		
+		if(evi>-1){
+			setTimeout(function(){document.getElementById("rg_"+evi).classList.remove("eviPunto")},2000);
+		}
+		
 		try{
 			SET.evidenziaTsuboMod(elenco);
 		}catch(err){}
@@ -905,7 +922,7 @@ var PAZIENTI_SETS = {
 		if(toIndex>fromIndex)toIndex--;
 		var arr2 = PAZIENTI.auriculoProvvisori.splice(fromIndex, 1)[0];
 		PAZIENTI.auriculoProvvisori.splice(toIndex,0,arr2);
-		PAZIENTI.caricaAuriculoTrattamento();
+		PAZIENTI.caricaAuriculoTrattamento(toIndex);
 		SCHEDA.formModificato = true;
 	},
 	

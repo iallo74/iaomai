@@ -488,7 +488,7 @@ var MODULO_PROCEDURE = { // extend SET
 			HTML += '	<div style="font-style:italic;padding-top:20px;padding-bottom:5px;">'+
 						TXT("DettagliProcedura")+
 						':</div>';
-			HTML += '	<div id="dettagliCont"></div>';
+			HTML += '	<div id="dettagliCont" class="'+SET.siglaProc()+'"></div>';
 			
 			// pulsanti di aggiunta opzioni
 			HTML += '	<div class="p_sch_label">' +

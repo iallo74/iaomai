@@ -793,7 +793,7 @@ var DRAGGER = {
 			}
 		}catch(error){ return; }
 		if(DRAGGER.elDrag.dataset.dragType=='child')DRAGGER.elDrag.style.opacity = 0.5;
-		if(DRAGGER.elDrag.dataset.dragType=='move')DRAGGER.elDrag.parentElement.style.opacity = 0.5;
+		if(DRAGGER.elDrag.dataset.dragType=='move')DRAGGER.elDrag.parentElement.classList.add("grabed");
 		DRAGGER.moved = true;
 		DRAGGER.outDrag();
 		target = document.elementFromPoint(DRAGGER.posAtt.x,DRAGGER.posAtt.y);
@@ -875,7 +875,7 @@ var DRAGGER = {
 		document.getElementById("lb_move").style.left = '-500px';
 		document.getElementById("lb_move").style.top = '-500px';
 		if(DRAGGER.elDrag.dataset.dragType=='child')DRAGGER.elDrag.style.opacity = 1;
-		if(DRAGGER.elDrag.dataset.dragType=='move')DRAGGER.elDrag.parentElement.style.opacity = 1;
+		if(DRAGGER.elDrag.dataset.dragType=='move')DRAGGER.elDrag.parentElement.classList.remove("grabed");
 		clearTimeout(DRAGGER.tmAtt);
 		DRAGGER.tmAtt = null;
 		if(DRAGGER.moved){

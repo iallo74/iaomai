@@ -1,10 +1,10 @@
 @charset "utf-8";
 /* CSS Document */
 
-#dettagliCont .dettPunto .numPoints{
+#dettagliCont.AUR .dettPunto .numPoints{
 	width: calc(100% - 100px) !important;
 }
-#dettagliCont .dettPunto .iProc{
+#dettagliCont.AUR .dettPunto .iProc{
 	display:none !important;
 }
 #procTue{
