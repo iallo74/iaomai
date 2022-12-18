@@ -638,14 +638,14 @@ SET = {
 			var mat = eval("SET.MAT.pointBase"+system);
 			if(this.ptSel.userData.nota)mat=this.MAT.pointNote;
 			SET.setPulsePt( this.ptSel, 1, 1, mat );
-			document.getElementById("pt_"+this.ptSel.name.substr(2,3)).classList.remove("selElPt");
+			document.getElementById("ts_"+this.ptSel.name.substr(2,3)).classList.remove("selElPt");
 			SET.chiudiTsubo(true);
 		}
 		
 		
 		this.ptSel=PT;
 		
-		document.getElementById("pt_"+name).classList.add("selElPt");
+		document.getElementById("ts_"+name).classList.add("selElPt");
 		
 		var PT_name_first= null;
 		var AR_name_first= null;
@@ -722,7 +722,7 @@ SET = {
 		if(!this.ptSel)return;
 		document.getElementById("scheda").classList.remove("tab_tsubo");
 		document.getElementById("scheda").classList.remove("schForm");
-		document.getElementById("pt_"+this.ptSel.name.substr(2,3)).classList.remove("selElPt");
+		document.getElementById("ts_"+this.ptSel.name.substr(2,3)).classList.remove("selElPt");
 		if(!globals.modello.cartella)return;
 		if(!nonChiudereScheda){
 			endChangeDetection();
@@ -820,6 +820,7 @@ SET = {
 		var html = '<a class="pallinoPat';
 		if(esteso)html += ' pallinoPatEsteso';
 		if(col)html += ' noPall';
+		if(__(EL.userData.locked,false))html+=' lockedItem';
 		var ret = '';
 		if(!noRet)ret = SET.chiudiTsubo(true);
 		html += '"';
@@ -827,7 +828,7 @@ SET = {
 		html+= ' onClick="SET.apriTsubo(\''+EL.name+'\',\''+ret+'\');"';
 		if(noRet)html += '  onMouseOver="SET.overTsubo(\''+EL.name+'\',true);"' +
 						 '  onMouseOut="SET.overTsubo(\''+EL.name+'\',false);"' +
-						 '	id="pt_'+siglaTsubo.replace('.','_')+'"';
+						 '	id="ts_'+siglaTsubo.replace('.','_')+'"';
 		html += '>';
 		var system = EL.userData.system;
 		if(!system)system = 'INT';
@@ -940,7 +941,7 @@ SET = {
 	},
 	ritOverTsubo: function( id, p ){
 		if(!touchable){
-			var siglaTsubo = document.getElementById("pt_"+p).value;
+			var siglaTsubo = document.getElementById("ts_"+p).value;
 			SET.overTsubo(siglaTsubo,false);
 			var elenco = [];
 			var els = document.getElementById(id).getElementsByClassName("dettPunto");
@@ -950,7 +951,7 @@ SET = {
 				elenco.push(sl[0].value);
 			}
 			SET.evidenziaTsuboMod(elenco);
-			SET.aggiornaDettaglio(document.getElementById("pt_"+p));
+			SET.aggiornaDettaglio(document.getElementById("ts_"+p));
 		}
 	},
 	coloraPunti: function( PT_name, tipo ){
@@ -1036,24 +1037,6 @@ SET = {
 	popolaImpSet: function(){
 		//
 	},
-	filtraSet: function( togliLoader ){
-		if(typeof(togliLoader)=='undefined')var togliLoader = false;
-		var vis = true;
-		if(	DB.login.data.auths.indexOf(globals.set.cartella)==-1 || !LOGIN.logedin())vis = false;
-		var PT = document.getElementById("lista_punti").getElementsByClassName("listaPunti")[0].getElementsByTagName("div");
-		for(p in PT){
-			if(PT[p].id){
-				if(!vis && PT[p].id!='pLR'){
-					PT[p].classList.add("lockedItem");
-				}else{
-					PT[p].classList.remove("lockedItem");
-				}
-			}
-		}
-		if(togliLoader){
-			nasLoader();
-		}
-	},
 	cambiaMappa: function( name, loader ){
 		if(SET.maskAtt){
 			SET.MAT.setAlphaMap( SET.maskAtt, 'clic' );
@@ -1117,13 +1100,13 @@ SET = {
 		for(e in els){
 			if(els[e].userData.lato == opposite){
 				els[e].visible = false;
-			}else if(!els[e].visible)els[e].visible = true;
+			}else if(!els[e].visible && !__(els[e].userData.locked,false))els[e].visible = true;
 		}
 		var els = scene.getObjectByName("ARs"+SET.phase).children;
 		for(e in els){
 			if(els[e].userData.lato == opposite){
 				els[e].visible = false;
-			}else if(!els[e].visible)els[e].visible = true;
+			}else if(!els[e].visible && !__(els[e].userData.locked,false))els[e].visible = true;
 		}
 		if(SET.groupSel.id)SET.filtraGruppo( SET.groupSel.type, SET.groupSel.val, SET.groupSel.id, true );
 	},
@@ -1140,5 +1123,27 @@ SET = {
 	},
 	_torna: function( args ){
 		if(typeof(args.daCarica) == 'undefined')SET.pMod = '';
+	},
+	filtraSet: function( togliLoader ){
+		if(typeof(togliLoader)=='undefined')var togliLoader = false;
+		var vis = true;
+		if(	DB.login.data.auths.indexOf(globals.set.cartella)==-1 || !LOGIN.logedin())vis = false;
+		for(c in SETS.children[0].children){
+			var gruppo = SETS.children[0].children[c].children;
+			for(g in gruppo){
+				var name = gruppo[g].name.replace("_","");
+				if(	SET.PUNTI_free.indexOf(name.substr(2,3))==-1 && // verifico le autorizzazioni
+					(DB.login.data.auths.indexOf(globals.set.cartella)==-1 || !LOGIN.logedin())){
+					gruppo[g].visible = vis;
+					gruppo[g].userData.locked = true;
+					if(document.getElementById("ts_"+name.substr(2,3)))document.getElementById("ts_"+name.substr(2,3)).classList.toggle("lockedItem",!vis);
+				}else{
+					gruppo[g].userData.locked = false;
+				}
+			}
+		}
+		if(togliLoader){
+			nasLoader();
+		}
 	}
 }

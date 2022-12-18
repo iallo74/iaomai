@@ -549,7 +549,7 @@ var MODELLO = {
 	
 	
 	op: function(t,o){ // opacità del livello
-		if(manichinoCaricato){
+		if(manichinoCaricato && eval("MODELLO.mesh"+t)){
 			if(MODELLO.isolamento != null)MODELLO.isolamento = null;
 			var t2 = t;
 			if(t == 'Pelle' || t == 'Muscoli')MODELLO.opAtt = o;

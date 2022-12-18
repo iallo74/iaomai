@@ -668,5 +668,10 @@ DB.TXT.set = {
         ita: "Cerca una procedura...",
         eng: "Search a procedure...",
         esp: ""
-    }
+    },
+	alertApriModello: {
+        ita: "Per utiliare questa funzione devi caricare il modello 3D",
+        eng: "To use this function you need to load the 3D model",
+        esp: ""
+	}
 }

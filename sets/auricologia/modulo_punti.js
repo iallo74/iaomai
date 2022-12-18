@@ -1,6 +1,6 @@
 
 var MODULO_PUNTI = { // extend SET
-	PUNTI_free: [ "000","001","002","003","004" ],
+	PUNTI_free: [ "000","001","254","003","291","192","165","067","177","060","054","018","093","056","121","111","117","261","151" ],
 	caricaPunti: function(){
 		var n = 0;
 		var contElenco = '';
@@ -146,7 +146,11 @@ var MODULO_PUNTI = { // extend SET
 		if(GEOMETRIE.mappe.length>1){		
 			//sceltaPuntiTag += 	'<i>'+htmlEntities(TXT("MappaAttiva"))+':</i>';
 			
-			sceltaPuntiTag += 	'<select id="sceltaMappaElenco" onChange="SET.cambiaMappa(this.value);">';
+			sceltaPuntiTag += 	'<select id="sceltaMappaElenco"';
+			if(!globals.modello.cartella)sceltaPuntiTag +=
+								'		 onClick="ALERT(TXT(\'alertApriModello\'));return;"' +
+								'		 style="opacity:0.5;"';
+			sceltaPuntiTag += 	'		 onChange="SET.cambiaMappa(this.value);">';
 			for(m in GEOMETRIE.mappe){
 				var name = GEOMETRIE.mappe[m].name;
 				sceltaPuntiTag += 	'  <option value="'+name+'"';
@@ -196,13 +200,19 @@ var MODULO_PUNTI = { // extend SET
 						'<br><span class="pEUR"></span>' + htmlEntities(TXT("Legenda_DidaPunti_EUR")) + 
 						'<br><span class="pCIN"></span>' + htmlEntities(TXT("Legenda_DidaPunti_CIN")) + 
 						'</p>';
-		if(elencoLegenda)contElenco +=	'<div onClick="SET.swElencoPt(this,\'legenda\');"' +
-										'     id="p_legenda"' +
-										'     class="p_punti">'+htmlEntities(TXT("Legenda"))+'<strong></strong></div>' +
-										'<span id="e_legenda"' +
-										'	   class="elencoPunti">'+
-										elencoLegenda +
-										'</span>';
+		if(elencoLegenda){
+			contElenco +=	'<div id="p_legenda"';
+			if(!globals.modello.cartella)contElenco +=	
+							'	  onClick="ALERT(TXT(\'alertApriModello\'));return;"' +
+							'	  style="opacity:0.5;"';
+			else contElenco +=	
+							'	  onClick="SET.swElencoPt(this,\'legenda\');"';
+			contElenco +=	'     class="p_punti">'+htmlEntities(TXT("Legenda"))+'<strong></strong></div>' +
+							'<span id="e_legenda"' +
+							'	   class="elencoPunti">'+
+							elencoLegenda +
+							'</span>';
+		}
 		
 		document.getElementById("lista_punti").innerHTML = sceltaPuntiTag+'<div class="lista listaPunti">'+contElenco+'</div>';
 		
@@ -237,7 +247,7 @@ var MODULO_PUNTI = { // extend SET
 		for(e=0;e<els.length;e++){
 			var i = els[e].getElementsByTagName("i")[0];
 			var a = els[e].getElementsByTagName("a")[0];
-			var siglaTsubo = a.id.replace("pt_","");
+			var siglaTsubo = a.id.replace("ts_","");
 			var pass = false;
 			//if(i.innerHTML.toLowerCase().indexOf(el.value.toLowerCase())==-1)pass = true;
 			if(	DB.set.punti[siglaTsubo].NomeTsubo.toLowerCase().indexOf(el.value.toLowerCase())==-1 &&
@@ -245,7 +255,7 @@ var MODULO_PUNTI = { // extend SET
 				DB.set.punti[siglaTsubo].ChiaviTsubo.toLowerCase().indexOf(el.value.toLowerCase())==-1 ){
 					pass = true;
 			}
-			if(__(DB.set.punti[siglaTsubo].PH) != SET.phase && document.getElementById("pt_"+siglaTsubo))pass = true;
+			if(__(DB.set.punti[siglaTsubo].PH) != SET.phase && document.getElementById("ts_"+siglaTsubo))pass = true;
 			els[e].classList.toggle("nasPT",pass);
 		}
 	},
@@ -278,10 +288,11 @@ var MODULO_PUNTI = { // extend SET
 					else vis = (els[e].userData[type]==val);
 					if(!type)vis = true;
 				}
-				els[e].visible = vis;
-				//if(DB.set.punti[name].PH != SET.phase)vis = false;
-				if(document.getElementById("pt_"+name)){
-					document.getElementById("pt_"+name).parentElement.classList.toggle("nasPT",!vis);
+				var visEl = vis;
+				if(__(els[e].userData.locked,false))visEl = false;
+				els[e].visible = visEl;
+				if(document.getElementById("ts_"+name)){
+					document.getElementById("ts_"+name).parentElement.classList.toggle("nasPT",!vis);
 				}
 			}
 		}

@@ -292,13 +292,18 @@ body:not(.bodyStyled1):not(.bodyStyled2):not(.smart) #p_set{
 .onlyCIN .noCIN{
 	display:none !important;
 }*/
-.listaPunti > div.lockedItem {
+#elencoTsubo > p > a.lockedItem{
     cursor: default !important;
-	background-image: url(../../img/lock.png) !important;
-    background-size: auto 50% !important;
-    background-position: calc(100% - 68px) 5px !important;
+	background-image: url(../../img/lockB.png) !important;
+    background-size: auto 70% !important;
+    background-position: right 5px !important;
 	cursor:default !important;
-	opacity: 0.6 !important;
+}
+#elencoTsubo > p > a.lockedItem i{
+	color: rgba(255,255,255,0.2) !important;
+}
+#elencoTsubo > p > a.lockedItem span{
+	opacity: 0.3 !important;
 }
 body:not(.smart) .listaPunti,
 body.smart #elenchi .listaPunti{
@@ -816,7 +821,7 @@ body:not(.smart) .listaPunti .p_aria:not(.elencoSel) span:hover{
 	.touch #elenchi #lista_punti div > div span{
 		height: 50px;
 	}
-	body:not(.smart) .listaPunti > div.lockedItem b {
+	body:not(.smart) #elencoTsubo > p > a.lockedItem b {
 		margin-left: 14px;
 	}
 	.smart .listaPunti > div b {
