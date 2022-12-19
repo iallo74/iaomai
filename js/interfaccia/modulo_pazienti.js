@@ -24,6 +24,7 @@ var PAZIENTI = {
 	maxFoto: 15,
 		
 	caricaPazienti: function(){ // carica l'elenco dei pazienti
+		if(PAZIENTI.pazientiFiltrati.length)PAZIENTI.car_filtri(true); // per i cambi di filtri
 		var HTML = '';
 		
 		// pulsante aggiungi paziente

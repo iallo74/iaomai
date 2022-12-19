@@ -597,6 +597,7 @@ body:not(.smart) .listaMeridiani .p_aria:not(.elencoSel) span:hover{
 	cursor:pointer;
 	border-radius:6px;
 	background-color: rgba(0,0,0,0.2);
+	z-index:11;
 }
 /*body.bodyStyled2:not(.smart) #meridianiSmart_ico{
 	background-image:url(../../img/ico_meridiani.png);
@@ -619,6 +620,8 @@ body:not(.smart) .listaMeridiani .p_aria:not(.elencoSel) span:hover{
     right: 6px;
     display: none;
     padding: 2px;
+	max-height: calc(100% - 48px);
+    overflow-y: auto;
 }
 
 body:not(.bodyModello) #meridianiSmart_cont,
@@ -627,8 +630,11 @@ body:not(.bodyModello) #btns_set > div{
 	display:none !important;
 }
 .smart #meridianiSmart_cont{
-    top: 50px !important;
+    top: 36px !important;
     right: 0px !important;
+	max-height: calc(100% - 103px) !important;
+	z-index: 10;
+	padding-top:19px;
 }
 #meridianiSmart_cont div{
 	width: 30px;

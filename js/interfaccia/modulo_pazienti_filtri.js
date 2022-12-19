@@ -7,7 +7,7 @@ var PAZIENTI_FILTRI = {
 	parametriFiltri:[],
 	
 	// FILTRI E STATISTICHE
-	car_filtri: function(){
+	car_filtri: function( aggiorna ){
 		CONFIRM.vis(	TXT("UscireSenzaSalvare"),
 						!SCHEDA.verificaSchedaRet(),
 						arguments ).then(function(pass){if(pass){
@@ -15,6 +15,7 @@ var PAZIENTI_FILTRI = {
 						for(i in v)eval(getArguments(v,i));
 						
 			if(typeof(salvato) == 'undefined')var salvato = false;
+			if(typeof(aggiorna) == 'undefined')var aggiorna = false;
 			endChangeDetection( "formMod" );
 			SCHEDA.formModificato = false;
 			
@@ -235,672 +236,714 @@ var PAZIENTI_FILTRI = {
 			stats.interventi = sortObject(stats.interventi);
 			stats.sintomi = sortObject(stats.sintomi);
 			//console.log(stats)
-			var titolo = stripslashes(TXT("FiltroPazienti"));	
-			var HTML = '';
-			var noRes = '...';
-			HTML += '<div id="pazienti_stats">' +
-					'	<h1>'+htmlEntities(titolo)+'</h1>';	
-			
-			if(!totPazienti){
-				HTML += '<div class="noResults">'+htmlEntities(TXT("NoResPaziente"))+'</div>';
-			}else{
+			if(!aggiorna){
+				// se SCRIVO LA LISTA
+				var titolo = stripslashes(TXT("FiltroPazienti"));	
+				var HTML = '';
+				var noRes = '...';
+				HTML += '<div id="pazienti_stats">' +
+						'	<h1>'+htmlEntities(titolo)+'</h1>';	
 				
-				HTML += 
-					'<div id="toolsStats"' +
-						  (PAZIENTI.pazientiFiltrati.length ? '' : ' style="display:none;"') +
-					'>' +
-					'	<div>' +
-					'		<div class="btn_invia" onClick="this.blur();PAZIENTI.cancellaFiltri();">' +
-								htmlEntities(TXT("AnnullaFiltri")) +
-					'		</div>' +
-					'		<div class="btn_frdx"' +
-					'			 style="float:right;"' +
-					'			 onClick="PAZIENTI.car_marketing();">' +
-								htmlEntities(TXT("StrumentiMarketing")) +
-					'		</div>' +
-					'	</div>' +	
-					'	<div id="parametri_filtri">' +
-					'<h2>'+htmlEntities(TXT("FiltriApplicati"))+'</h2>';
-				var htmlParametri = '';
-				if(PAZIENTI.parametriFiltri.length){	
-					for(p in PAZIENTI.parametriFiltri){
-						htmlParametri += '<p><i>'+PAZIENTI.parametriFiltri[p].cat+':</i><span>';
-						for(e in PAZIENTI.parametriFiltri[p].elems){
-							htmlParametri += '<u>'+PAZIENTI.parametriFiltri[p].elems[e]+'</u>';
-						}
-						htmlParametri += '</span></p>';
-					}
-				}
-				HTML += htmlParametri;
-				HTML +=
-					'	</div>' +	
-					'</div>';
-				
-				// FILTRI
-				HTML += '<div id="contStats">' +
-						'	<p>'+htmlEntities(TXT("TotalePazienti"))+': <b>'+totPazienti+'</b></p>' +
-						'	<div class="rgStats">' +
-						'		<div class="etStats">' +
-						'			<i>'+htmlEntities(TXT("FasceEta"))+':</i> ';
-				if(!PAZIENTI.pazientiFiltrati.length)HTML +=
-						'			<span><input type="checkbox"' +
-						'							   onClick="PAZIENTI.statsSelAll(this);"' +
-						'							   data-dis="true"></span> ';
-				HTML +=	'		</div>' +
-						'		<div>' +
-						'			<table>';
-				var tot = 0;
-				for(f in stats.fasce_eta){
-					tot += stats.fasce_eta[f].length;
-				}
-				
-				for(f in stats.fasce_eta){
-					var label = (f*10)+'-'+((f*1+1)*10-1);
-					var cls = 'statsBarre';
-					if(f==-1){
-						label = noRes;
-						cls += ' statsVuoto';
-					}
-					if(!label){
-						label = noRes;
-						cls += ' statsVuoto';
-					}
-					var perc = (stats.fasce_eta[f].length*100) / totPazienti;
-					HTML += '		<tr>' +
-							'			<td><div>'+label+'</div></td>' +
-							'			<td class="'+cls+'">' +
-							'				<span style="width:'+perc+'%;"></span>' +
-							'			</td>' +
-							'			<td class="nPazStats"><b>'+stats.fasce_eta[f].length+'</b></td>';
-					if(!PAZIENTI.pazientiFiltrati.length)HTML += 
-							'			<td><input type="checkbox"' +
-							'					   onClick="PAZIENTI.statsFiltra();"' +
-							'					   value="'+JSON.stringify(stats.fasce_eta[f])+'"' +
-							'					   data-cat="'+TXT("FasceEta")+'"' +
-							'					   data-elem="'+label+'"></td>';
-					HTML += '		</tr>';
-				}
-				HTML += '		</table>' +
-						'	</div>' +
-						'</div>' +
-				
-						// generi
-						'<div class="rgStats">' +
-						'	<div class="etStats">' +
-						'		<i>'+htmlEntities(TXT("Generi"))+':</i> ';
-				if(!PAZIENTI.pazientiFiltrati.length)HTML +=
-						'			<span><input type="checkbox"' +
-						'							   onClick="PAZIENTI.statsSelAll(this);"' +
-						'							   data-dis="true"></span> ';
-				HTML +=	'	</div>' +
-						'	<div>' +
-						'		<table>';
-				var tot = 0;
-				for(g in stats.generi){
-					tot += stats.generi[g].length;
-				}
-				for(g in stats.generi){
-					var label = sessi[g];
-					var cls = 'statsBarre';
-					if(!label){
-						label = noRes;
-						cls += ' statsVuoto';
-					}
-					var perc = (stats.generi[g].length*100) / tot;
-					HTML += 	'	<tr>' +
-							'			<td><div>'+label+'</div></td>' +
-							'			<td class="'+cls+'">' +
-							'				<span style="width:'+perc+'%;"></span>' +
-							'			</td>' +
-							'			<td class="nPazStats"><b>'+stats.generi[g].length+'</b></td>';
-					if(!PAZIENTI.pazientiFiltrati.length)HTML += 
-							'			<td><input type="checkbox"' +
-							'					   onClick="PAZIENTI.statsFiltra();"' +
-							'					   value="'+JSON.stringify(stats.generi[g])+'"' +
-							'					   data-cat="'+TXT("Generi")+'"' +
-							'					   data-elem="'+label+'"></td>';
-					HTML += '		</tr>';
-				}
-				HTML += '		</table>' +
-						'	</div>' +
-						'</div>' +
-				
-						// professioni
-						'<div class="rgStats">' +
-						'	<div class="etStats">' +
-						'		<i>'+htmlEntities(TXT("Professioni"))+':</i> ';
-				if(!PAZIENTI.pazientiFiltrati.length)HTML +=
-						'			<span><input type="checkbox"' +
-						'							   onClick="PAZIENTI.statsSelAll(this);"' +
-						'							   data-dis="true"></span> ';
-				HTML +=	'	</div>' +
-						'	<div>' +
-						'		<table>';
-				
-				var tot = 0;
-				for(p in stats.professioni){
-					tot += stats.professioni[p].length;
-				}
-				for(p in stats.professioni){
-					var label = p;
-					var cls = 'statsBarre';
-					if(!label){
-						label = noRes;
-						cls += ' statsVuoto';
-					}
-					var perc = (stats.professioni[p].length*100) / tot;
-					HTML += '		<tr>' +
-							'			<td><div>'+label+'</div></td>' +
-							'			<td class="'+cls+'">' +
-							'				<span style="width:'+perc+'%;"></span>' +
-							'			</td>' +
-							'			<td class="nPazStats"><b>'+stats.professioni[p].length+'</b></td>';
-					if(!PAZIENTI.pazientiFiltrati.length)HTML += 
-							'			<td><input type="checkbox"' +
-							'					   onClick="PAZIENTI.statsFiltra();"' +
-							'					   value="'+JSON.stringify(stats.professioni[p])+'"' +
-							'					   data-cat="'+TXT("Professioni")+'"' +
-							'					   data-elem="'+label+'"></td>';
-					HTML += '		</tr>';
-				}
-				HTML += '		</table>' +
-						'	</div>' +
-						'</div>' +
-				
-						// provenienze
-						'<div class="rgStats">' +
-						'	<div class="etStats">' +
-						'		<i>'+htmlEntities(TXT("Provenienze"))+':</i> ';
-				if(!PAZIENTI.pazientiFiltrati.length)HTML +=
-						'			<span><input type="checkbox"' +
-						'							   onClick="PAZIENTI.statsSelAll(this);"' +
-						'							   data-dis="true"></span> ';
-				HTML +=	'	</div>' +
-						'	<div>' +
-						'		<table>';
-				
-				var tot = 0;
-				for(p in stats.provenienze){
-					tot += stats.provenienze[p].length;
-				}
-				for(p in stats.provenienze){
-					var label = p;
-					var cls = 'statsBarre';
-					if(!label){
-						label = noRes;
-						cls += ' statsVuoto';
-					}
-					var perc = (stats.provenienze[p].length*100) / tot;
-					HTML += '		<tr>' +
-							'			<td><div>'+label+'</div></td>' +
-							'			<td class="'+cls+'">' +
-							'				<span style="width:'+perc+'%;"></span>' +
-							'			</td>' +
-							'			<td class="nPazStats"><b>'+stats.provenienze[p].length+'</b></td>';
-					if(!PAZIENTI.pazientiFiltrati.length)HTML += 
-							'			<td><input type="checkbox"' +
-							'					   onClick="PAZIENTI.statsFiltra();"' +
-							'					   value="'+JSON.stringify(stats.provenienze[p])+'"' +
-							'					   data-cat="'+TXT("Provenienze")+'"' +
-							'					   data-elem="'+label+'"></td>';
-					HTML += '		</tr>';
-				}
-				HTML += '		</table>' +
-						'	</div>' +
-						'</div>' +
-				
-						// province
-						'<div class="rgStats">' +
-						'	<div class="etStats">' +
-						'		<i>'+htmlEntities(TXT("Province"))+':</i> ';
-				if(!PAZIENTI.pazientiFiltrati.length)HTML +=
-						'			<span><input type="checkbox"' +
-						'							   onClick="PAZIENTI.statsSelAll(this);"' +
-						'							   data-dis="true"></span> ';
-				HTML +=	'	</div>' +
-						'	<div>' +
-						'		<table>';
-				var tot = 0;
-				for(p in stats.province){
-					tot += stats.province[p].length;
-				}
-				for(p in stats.province){
-					var label = p;
-					var cls = 'statsBarre';
-					if(!label){
-						label = noRes;
-						cls += ' statsVuoto';
-					}
-					var perc = (stats.province[p].length*100) / tot;
-					HTML += '		<tr>' +
-							'			<td><div>'+label+'</div></td>' +
-							'			<td class="'+cls+'">' +
-							'				<span style="width:'+perc+'%;"></span>' +
-							'			</td>' +
-							'			<td class="nPazStats"><b>'+stats.province[p].length+'</b></td>';
-					if(!PAZIENTI.pazientiFiltrati.length)HTML += 
-							'			<td><input type="checkbox"' +
-							'					   onClick="PAZIENTI.statsFiltra();"' +
-							'					   value="'+JSON.stringify(stats.province[p])+'"' +
-							'					   data-cat="'+TXT("Province")+'"' +
-							'					   data-elem="'+label+'"></td>';
-					HTML +=	'		</tr>';
-				}
-				HTML += '		</table>' +
-						'	</div>' +
-						'</div>' +
-				
-						// socials
-						'<div class="rgStats">' +
-						'	<div class="etStats">' +
-						'		<i>'+htmlEntities(TXT("Social"))+':</i> ';
-				if(!PAZIENTI.pazientiFiltrati.length)HTML +=
-						'			<span><input type="checkbox"' +
-						'							   onClick="PAZIENTI.statsSelAll(this);"' +
-						'							   data-dis="true"></span> ';
-				HTML += '	</div>' +
-						'	<div>' +
-						'		<table>';
-						
-						
-				var tot = 0;
-				for(p in stats.socials){
-					tot += stats.socials[p].length;
-				}
-				for(p in stats.socials){
-					var label = p;
-					var cls = 'statsBarre';
-					if(!label){
-						label = noRes;
-						cls += ' statsVuoto';
-					}
-					var perc = (stats.socials[p].length*100) / tot;
-					HTML += '		<tr>' +
-							'			<td><div>'+label+'</div></td>' +
-							'			<td class="'+cls+'">' +
-							'				<span style="width:'+perc+'%;"></span>' +
-							'			</td>' +
-							'			<td class="nPazStats"><b>'+stats.socials[p].length+'</b></td>';
-					if(!PAZIENTI.pazientiFiltrati.length)HTML += 
-							'			<td><input type="checkbox"' +
-							'					   onClick="PAZIENTI.statsFiltra();"' +
-							'					   value="'+JSON.stringify(stats.socials[p])+'"' +
-							'					   data-cat="'+TXT("Social")+'"' +
-							'					   data-elem="'+label+'"></td>';
-					HTML += '		</tr>';
-				}
-				HTML += '		</table>' +
-						'	</div>' +
-						'</div>';
-				
-				for(e in stats.etichette){
-					var HTML_provv = '';
-					HTML_provv += 	'<div class="rgStats">' +
-									'	<div class="etStats">' +
-									'		<i>'+htmlEntities(e)+':</i> ';
-					if(!PAZIENTI.pazientiFiltrati.length)HTML_provv +=
-									'			<span><input type="checkbox"' +
-									'							   onClick="PAZIENTI.statsSelAll(this);"' +
-									'							   data-dis="true"></span> ';
-					HTML_provv +=	'	</div>' +
-									'	<div>' +
-									'		<table>';
-					var tot = 0;
-					for(p in stats.etichette[e]){
-						tot += stats.etichette[e][p].length;
-					}
-					//stats.etichette[e][""] = totPazienti - tot;
-							
-					stats.etichette[e] = sortObject(stats.etichette[e]);
-					var totEt = 0;
-					for(p in stats.etichette[e]){
-						totEt++;
-						var label = p;
-						var cls = 'statsBarre';
-						if(p==-1){
-							label = noRes;
-							cls += ' statsVuoto';
-						}
-						if(!label){
-							label = noRes;
-							cls += ' statsVuoto';
-						}
-						var perc = (stats.etichette[e][p].length*100) / totPazienti;
-						HTML_provv += 	'		<tr>' +
-										'			<td><div>'+label+'</div></td>' +
-										'			<td class="'+cls+'">' +
-										'				<span style="width:'+perc+'%;"></span>' +
-										'			</td>' +
-										'			<td class="nPazStats"><b>'+stats.etichette[e][p].length+'</b></td>';
-						if(!PAZIENTI.pazientiFiltrati.length)HTML_provv += 
-										'			<td><input type="checkbox"' +
-										'					   onClick="PAZIENTI.statsFiltra();"' +
-										'					   value="'+JSON.stringify(stats.etichette[e][p])+'"' +
-										'					   data-cat="'+htmlEntities(e)+'"' +
-										'					   data-elem="'+label+'"></td>';
-						HTML_provv += 	'		</tr>';
-					}
-					HTML_provv += 	'		</table>' +
-									'	</div>' +
-									'</div>';		
-					if(totEt>1 || label != noRes)HTML += HTML_provv;
-				}
-				
-				
-						// tags
-				if(stats.tags && JSON.stringify(stats.tags)!='{}'){
-					HTML += '	<div class="rgStats">' +
-							'		<div class="etStats">' +
-							'			<i>'+htmlEntities(TXT("Tags"))+':</i> ';
-					if(!PAZIENTI.pazientiFiltrati.length)HTML +=
-							'			<span><input type="checkbox"' +
-							'							   onClick="PAZIENTI.statsSelAll(this);"' +
-							'							   data-dis="true"></span> ';
-					HTML += '		</div>' +
-							'		<div>' +
-							'			<table>';
-					var tot = 0;
-					for(p in stats.tags){
-						tot += stats.tags[p].length;
-					}
-					for(p in stats.tags){
-						var label = p;
-						var cls = 'statsBarre';
-						if(!label){
-							label = noRes;
-							cls += ' statsVuoto';
-						}
-						var perc = (stats.tags[p].length*100) / totPazienti;
-						HTML += 
-						'					<tr>' +
-						'						<td><div>'+label+'</div></td>' +
-						'						<td class="'+cls+'">' +
-						'							<span style="width:'+perc+'%;"></span>' +
-						'							</td>' +
-						'						<td class="nPazStats"><b>'+stats.tags[p].length+'</b></td>';
-						if(!PAZIENTI.pazientiFiltrati.length)HTML += 
-						'						<td><input type="checkbox"' +
-						'								   onClick="PAZIENTI.statsFiltra();"' +
-						'								   value="'+JSON.stringify(stats.tags[p])+'"' +
-						'								   data-cat="'+TXT("Tags")+'"' +
-						'								   data-elem="'+label+'"></td>';
-						HTML += 
-						'					</tr>';
-					}
-					HTML +=	
-						'				</table>' +
-						'			</div>' +
-						'		</div>';
-				}
-				
-						// medicine
-				if(stats.medicine && JSON.stringify(stats.medicine)!='{}'){
-					HTML += '	<div class="rgStats">' +
-							'		<div class="etStats">' +
-							'			<i>'+htmlEntities(TXT("Medicine"))+':</i> ';
-					if(!PAZIENTI.pazientiFiltrati.length)HTML +=
-							'			<span><input type="checkbox"' +
-							'							   onClick="PAZIENTI.statsSelAll(this);"' +
-							'							   data-dis="true"></span> ';
-					HTML += '		</div>' +
-							'		<div>' +
-							'			<table>';
-					var tot = 0;
-					for(p in stats.medicine){
-						tot += stats.medicine[p].length;
-					}
-					for(p in stats.medicine){
-						var label = p;
-						var cls = 'statsBarre';
-						if(!label){
-							label = noRes;
-							cls += ' statsVuoto';
-						}
-						var perc = (stats.medicine[p].length*100) / totPazienti;
-						HTML += 
-						'					<tr>' +
-						'						<td><div>'+label+'</div></td>' +
-						'						<td class="'+cls+'">' +
-						'							<span style="width:'+perc+'%;"></span>' +
-						'							</td>' +
-						'						<td class="nPazStats"><b>'+stats.medicine[p].length+'</b></td>';
-						if(!PAZIENTI.pazientiFiltrati.length)HTML += 
-						'						<td><input type="checkbox"' +
-						'								   onClick="PAZIENTI.statsFiltra();"' +
-						'								   value="'+JSON.stringify(stats.medicine[p])+'"' +
-						'								   data-cat="'+TXT("Medicine")+'"' +
-						'								   data-elem="'+label+'"></td>';
-						HTML += 
-						'					</tr>';
-					}
-					HTML +=	
-						'				</table>' +
-						'			</div>' +
-						'		</div>';
-				}
-				
-				
-						// allergie
-				if(stats.allergie && JSON.stringify(stats.allergie)!='{}'){
-					HTML += '	<div class="rgStats">' +
-							'		<div class="etStats">' +
-							'			<i>'+htmlEntities(TXT("Allergie"))+':</i> ';
-					if(!PAZIENTI.pazientiFiltrati.length)HTML +=
-							'			<span><input type="checkbox"' +
-							'							   onClick="PAZIENTI.statsSelAll(this);"' +
-							'							   data-dis="true"></span> ';
-					HTML += '		</div>' +
-							'		<div>' +
-							'			<table>';
-					var tot = 0;
-					for(p in stats.allergie){
-						tot += stats.allergie[p].length;
-					}
-					for(p in stats.allergie){
-						var label = p;
-						var cls = 'statsBarre';
-						if(!label){
-							label = noRes;
-							cls += ' statsVuoto';
-						}
-						var perc = (stats.allergie[p].length*100) / totPazienti;
-						HTML += 
-						'					<tr>' +
-						'						<td><div>'+label+'</div></td>' +
-						'						<td class="'+cls+'">' +
-						'							<span style="width:'+perc+'%;"></span>' +
-						'							</td>' +
-						'						<td class="nPazStats"><b>'+stats.allergie[p].length+'</b></td>';
-						if(!PAZIENTI.pazientiFiltrati.length)HTML += 
-						'						<td><input type="checkbox"' +
-						'								   onClick="PAZIENTI.statsFiltra();"' +
-						'								   value="'+JSON.stringify(stats.allergie[p])+'"' +
-						'								   data-cat="'+TXT("Allergie")+'"' +
-						'								   data-elem="'+label+'"></td>';
-						HTML += 
-						'					</tr>';
-					}
-					HTML +=	
-						'				</table>' +
-						'			</div>' +
-						'		</div>';
-				}
-				
-						// patologie
-				if(stats.patologie && JSON.stringify(stats.patologie)!='{}'){
-					HTML += '	<div class="rgStats">' +
-							'		<div class="etStats">' +
-							'			<i>'+htmlEntities(TXT("Patologie"))+':</i> ';
-					if(!PAZIENTI.pazientiFiltrati.length)HTML +=
-							'			<span><input type="checkbox"' +
-							'							   onClick="PAZIENTI.statsSelAll(this);"' +
-							'							   data-dis="true"></span> ';
-					HTML +=	'		</div>' +
-							'		<div>' +
-							'			<table>';
-					var tot = 0;
-					for(p in stats.patologie){
-						tot += stats.patologie[p].length;
-					}
-					for(p in stats.patologie){
-						var label = p;
-						var cls = 'statsBarre';
-						if(!label){
-							label = noRes;
-							cls += ' statsVuoto';
-						}
-						var perc = (stats.patologie[p].length*100) / totPazienti;
-						HTML += 
-						'					<tr>' +
-						'						<td><div>'+label+'</div></td>' +
-						'						<td class="'+cls+'">' +
-						'							<span style="width:'+perc+'%;"></span>' +
-						'							</td>' +
-						'						<td class="nPazStats"><b>'+stats.patologie[p].length+'</b></td>';
-						if(!PAZIENTI.pazientiFiltrati.length)HTML += 
-						'						<td><input type="checkbox"' +
-						'								   onClick="PAZIENTI.statsFiltra();"' +
-						'								   value="'+JSON.stringify(stats.patologie[p])+'"' +
-						'								   data-cat="'+TXT("Patologie")+'"' +
-						'								   data-elem="'+label+'"></td>';
-						HTML += 
-						'					</tr>';
-					}
-					HTML +=	
-						'				</table>' +
-						'			</div>' +
-						'		</div>';
-				}
-				
-						// interventi
-				if(stats.interventi && JSON.stringify(stats.interventi)!='{}'){
-					HTML += '	<div class="rgStats">' +
-							'		<div class="etStats">' +
-							'			<i>'+htmlEntities(TXT("Interventi"))+':</i> ';
-					if(!PAZIENTI.pazientiFiltrati.length)HTML +=
-							'			<span><input type="checkbox"' +
-							'							   onClick="PAZIENTI.statsSelAll(this);"' +
-							'							   data-dis="true"></span> ';
-					HTML += '		</div>' +
-							'		<div>' +
-							'			<table>';
-					var tot = 0;
-					for(p in stats.interventi){
-						tot += stats.interventi[p].length;
-					}
-					for(p in stats.interventi){
-						var label = p;
-						var cls = 'statsBarre';
-						if(!label){
-							label = noRes;
-							cls += ' statsVuoto';
-						}
-						var perc = (stats.interventi[p].length*100) / totPazienti;
-						HTML += 
-						'					<tr>' +
-						'						<td><div>'+label+'</div></td>' +
-						'						<td class="'+cls+'">' +
-						'							<span style="width:'+perc+'%;"></span>' +
-						'							</td>' +
-						'						<td class="nPazStats"><b>'+stats.interventi[p].length+'</b></td>';
-						if(!PAZIENTI.pazientiFiltrati.length)HTML += 
-						'						<td><input type="checkbox"' +
-						'								   onClick="PAZIENTI.statsFiltra();"' +
-						'								   value="'+JSON.stringify(stats.interventi[p])+'"' +
-						'								   data-cat="'+TXT("Interventi")+'"' +
-						'								   data-elem="'+label+'"></td>';
-						HTML += 
-						'					</tr>';
-					}
-					HTML +=	
-						'				</table>' +
-						'			</div>' +
-						'		</div>';
-				}
+				if(!totPazienti){
+					HTML += '<div class="noResults">'+htmlEntities(TXT("NoResPaziente"))+'</div>';
+				}else{
 					
-						// sintomi
-				if(stats.sintomi && JSON.stringify(stats.sintomi)!='{}'){
-					HTML +=	'		<div class="rgStats">' +
-							'			<div class="etStats">' +
-							'				<i>'+htmlEntities(TXT("Sintomi"))+':</i> ';
+					HTML += 
+						'<div id="toolsStats"' +
+							  (PAZIENTI.pazientiFiltrati.length ? '' : ' style="display:none;"') +
+						'>' +
+						'	<div>' +
+						'		<div class="btn_invia" onClick="this.blur();PAZIENTI.cancellaFiltri();">' +
+									htmlEntities(TXT("AnnullaFiltri")) +
+						'		</div>' +
+						'		<div class="btn_frdx"' +
+						'			 style="float:right;"' +
+						'			 onClick="PAZIENTI.car_marketing();">' +
+									htmlEntities(TXT("StrumentiMarketing")) +
+						'		</div>' +
+						'	</div>' +	
+						'	<div id="parametri_filtri">' +
+						'<h2>'+htmlEntities(TXT("FiltriApplicati"))+'</h2>';
+					var htmlParametri = '';
+					if(PAZIENTI.parametriFiltri.length){	
+						for(p in PAZIENTI.parametriFiltri){
+							htmlParametri += '<p><i>'+PAZIENTI.parametriFiltri[p].cat+':</i><span>';
+							for(e in PAZIENTI.parametriFiltri[p].elems){
+								htmlParametri += '<u>'+PAZIENTI.parametriFiltri[p].elems[e]+'</u>';
+							}
+							htmlParametri += '</span></p>';
+						}
+					}
+					HTML += htmlParametri;
+					HTML +=
+						'	</div>' +	
+						'</div>';
+					
+					// FILTRI
+					HTML += '<div id="contStats">' +
+							'	<p>'+htmlEntities(TXT("TotalePazienti"))+': <b>'+totPazienti+'</b></p>' +
+							'	<div class="rgStats">' +
+							'		<div class="etStats">' +
+							'			<i>'+htmlEntities(TXT("FasceEta"))+':</i> ';
 					if(!PAZIENTI.pazientiFiltrati.length)HTML +=
 							'			<span><input type="checkbox"' +
 							'							   onClick="PAZIENTI.statsSelAll(this);"' +
 							'							   data-dis="true"></span> ';
 					HTML +=	'		</div>' +
-							'			<div>' +
-							'				<table>';
+							'		<div>' +
+							'			<table>';
 					var tot = 0;
-					for(p in stats.sintomi){
-						tot += stats.sintomi[p].length;
+					for(f in stats.fasce_eta){
+						tot += stats.fasce_eta[f].length;
 					}
-					for(p in stats.sintomi){
+					
+					for(f in stats.fasce_eta){
+						var label = (f*10)+'-'+((f*1+1)*10-1);
+						var cls = 'statsBarre';
+						if(f==-1){
+							label = noRes;
+							cls += ' statsVuoto';
+						}
+						if(!label){
+							label = noRes;
+							cls += ' statsVuoto';
+						}
+						var perc = (stats.fasce_eta[f].length*100) / totPazienti;
+						HTML += '		<tr>' +
+								'			<td><div>'+label+'</div></td>' +
+								'			<td class="'+cls+'">' +
+								'				<span style="width:'+perc+'%;"></span>' +
+								'			</td>' +
+								'			<td class="nPazStats"><b>'+stats.fasce_eta[f].length+'</b></td>';
+						if(!PAZIENTI.pazientiFiltrati.length)HTML += 
+								'			<td><input type="checkbox"' +
+								'					   onClick="PAZIENTI.statsFiltra();"' +
+								'					   value="'+JSON.stringify(stats.fasce_eta[f])+'"' +
+								'					   data-et="fasce_eta"' +
+								'					   data-cat="'+TXT("FasceEta")+'"' +
+								'					   data-elem="'+label+'"></td>';
+						HTML += '		</tr>';
+					}
+					HTML += '		</table>' +
+							'	</div>' +
+							'</div>' +
+					
+							// generi
+							'<div class="rgStats">' +
+							'	<div class="etStats">' +
+							'		<i>'+htmlEntities(TXT("Generi"))+':</i> ';
+					if(!PAZIENTI.pazientiFiltrati.length)HTML +=
+							'			<span><input type="checkbox"' +
+							'							   onClick="PAZIENTI.statsSelAll(this);"' +
+							'							   data-dis="true"></span> ';
+					HTML +=	'	</div>' +
+							'	<div>' +
+							'		<table>';
+					var tot = 0;
+					for(g in stats.generi){
+						tot += stats.generi[g].length;
+					}
+					for(g in stats.generi){
+						var label = sessi[g];
+						var cls = 'statsBarre';
+						if(!label){
+							label = noRes;
+							cls += ' statsVuoto';
+						}
+						var perc = (stats.generi[g].length*100) / tot;
+						HTML += 	'	<tr>' +
+								'			<td><div>'+label+'</div></td>' +
+								'			<td class="'+cls+'">' +
+								'				<span style="width:'+perc+'%;"></span>' +
+								'			</td>' +
+								'			<td class="nPazStats"><b>'+stats.generi[g].length+'</b></td>';
+						if(!PAZIENTI.pazientiFiltrati.length)HTML += 
+								'			<td><input type="checkbox"' +
+								'					   onClick="PAZIENTI.statsFiltra();"' +
+								'					   value="'+JSON.stringify(stats.generi[g])+'"' +
+								'					   data-et="generi"' +
+								'					   data-cat="'+TXT("Generi")+'"' +
+								'					   data-elem="'+label+'"></td>';
+						HTML += '		</tr>';
+					}
+					HTML += '		</table>' +
+							'	</div>' +
+							'</div>' +
+					
+							// professioni
+							'<div class="rgStats">' +
+							'	<div class="etStats">' +
+							'		<i>'+htmlEntities(TXT("Professioni"))+':</i> ';
+					if(!PAZIENTI.pazientiFiltrati.length)HTML +=
+							'			<span><input type="checkbox"' +
+							'							   onClick="PAZIENTI.statsSelAll(this);"' +
+							'							   data-dis="true"></span> ';
+					HTML +=	'	</div>' +
+							'	<div>' +
+							'		<table>';
+					
+					var tot = 0;
+					for(p in stats.professioni){
+						tot += stats.professioni[p].length;
+					}
+					for(p in stats.professioni){
 						var label = p;
 						var cls = 'statsBarre';
 						if(!label){
 							label = noRes;
 							cls += ' statsVuoto';
 						}
-						var perc = (stats.sintomi[p].length*100) / totPazienti;
-						HTML += 
-						'					<tr>' +
-						'						<td><div>'+label+'</div></td>' +
-						'						<td class="'+cls+'">' +
-						'							<span style="width:'+perc+'%;"></span>' +
-						'							</td>' +
-						'						<td class="nPazStats"><b>'+stats.sintomi[p].length+'</b></td>';
+						var perc = (stats.professioni[p].length*100) / tot;
+						HTML += '		<tr>' +
+								'			<td><div>'+label+'</div></td>' +
+								'			<td class="'+cls+'">' +
+								'				<span style="width:'+perc+'%;"></span>' +
+								'			</td>' +
+								'			<td class="nPazStats"><b>'+stats.professioni[p].length+'</b></td>';
 						if(!PAZIENTI.pazientiFiltrati.length)HTML += 
-						'						<td><input type="checkbox"' +
-						'								   onClick="PAZIENTI.statsFiltra();"' +
-						'								   value="'+JSON.stringify(stats.sintomi[p])+'"' +
-						'								   data-cat="'+TXT("Sintomi")+'"' +
-						'								   data-elem="'+label+'"></td>';
-						HTML += 
-						'					</tr>';	
+								'			<td><input type="checkbox"' +
+								'					   onClick="PAZIENTI.statsFiltra();"' +
+								'					   value="'+JSON.stringify(stats.professioni[p])+'"' +
+								'					   data-et="professioni"' +
+								'					   data-cat="'+TXT("Professioni")+'"' +
+								'					   data-elem="'+label+'"></td>';
+						HTML += '		</tr>';
 					}
-					HTML +=	
-						'				</table>' +
-						'			</div>' +
-						'		</div>' +
-						'	</div>' + 
-						'</div>';
+					HTML += '		</table>' +
+							'	</div>' +
+							'</div>' +
+					
+							// provenienze
+							'<div class="rgStats">' +
+							'	<div class="etStats">' +
+							'		<i>'+htmlEntities(TXT("Provenienze"))+':</i> ';
+					if(!PAZIENTI.pazientiFiltrati.length)HTML +=
+							'			<span><input type="checkbox"' +
+							'							   onClick="PAZIENTI.statsSelAll(this);"' +
+							'							   data-dis="true"></span> ';
+					HTML +=	'	</div>' +
+							'	<div>' +
+							'		<table>';
+					
+					var tot = 0;
+					for(p in stats.provenienze){
+						tot += stats.provenienze[p].length;
+					}
+					for(p in stats.provenienze){
+						var label = p;
+						var cls = 'statsBarre';
+						if(!label){
+							label = noRes;
+							cls += ' statsVuoto';
+						}
+						var perc = (stats.provenienze[p].length*100) / tot;
+						HTML += '		<tr>' +
+								'			<td><div>'+label+'</div></td>' +
+								'			<td class="'+cls+'">' +
+								'				<span style="width:'+perc+'%;"></span>' +
+								'			</td>' +
+								'			<td class="nPazStats"><b>'+stats.provenienze[p].length+'</b></td>';
+						if(!PAZIENTI.pazientiFiltrati.length)HTML += 
+								'			<td><input type="checkbox"' +
+								'					   onClick="PAZIENTI.statsFiltra();"' +
+								'					   value="'+JSON.stringify(stats.provenienze[p])+'"' +
+								'					   data-et="provenienze"' +
+								'					   data-cat="'+TXT("Provenienze")+'"' +
+								'					   data-elem="'+label+'"></td>';
+						HTML += '		</tr>';
+					}
+					HTML += '		</table>' +
+							'	</div>' +
+							'</div>' +
+					
+							// province
+							'<div class="rgStats">' +
+							'	<div class="etStats">' +
+							'		<i>'+htmlEntities(TXT("Province"))+':</i> ';
+					if(!PAZIENTI.pazientiFiltrati.length)HTML +=
+							'			<span><input type="checkbox"' +
+							'							   onClick="PAZIENTI.statsSelAll(this);"' +
+							'							   data-dis="true"></span> ';
+					HTML +=	'	</div>' +
+							'	<div>' +
+							'		<table>';
+					var tot = 0;
+					for(p in stats.province){
+						tot += stats.province[p].length;
+					}
+					for(p in stats.province){
+						var label = p;
+						var cls = 'statsBarre';
+						if(!label){
+							label = noRes;
+							cls += ' statsVuoto';
+						}
+						var perc = (stats.province[p].length*100) / tot;
+						HTML += '		<tr>' +
+								'			<td><div>'+label+'</div></td>' +
+								'			<td class="'+cls+'">' +
+								'				<span style="width:'+perc+'%;"></span>' +
+								'			</td>' +
+								'			<td class="nPazStats"><b>'+stats.province[p].length+'</b></td>';
+						if(!PAZIENTI.pazientiFiltrati.length)HTML += 
+								'			<td><input type="checkbox"' +
+								'					   onClick="PAZIENTI.statsFiltra();"' +
+								'					   value="'+JSON.stringify(stats.province[p])+'"' +
+								'					   data-et="province"' +
+								'					   data-cat="'+TXT("Province")+'"' +
+								'					   data-elem="'+label+'"></td>';
+						HTML +=	'		</tr>';
+					}
+					HTML += '		</table>' +
+							'	</div>' +
+							'</div>' +
+					
+							// socials
+							'<div class="rgStats">' +
+							'	<div class="etStats">' +
+							'		<i>'+htmlEntities(TXT("Social"))+':</i> ';
+					if(!PAZIENTI.pazientiFiltrati.length)HTML +=
+							'			<span><input type="checkbox"' +
+							'							   onClick="PAZIENTI.statsSelAll(this);"' +
+							'							   data-dis="true"></span> ';
+					HTML += '	</div>' +
+							'	<div>' +
+							'		<table>';
+							
+							
+					var tot = 0;
+					for(p in stats.socials){
+						tot += stats.socials[p].length;
+					}
+					for(p in stats.socials){
+						var label = p;
+						var cls = 'statsBarre';
+						if(!label){
+							label = noRes;
+							cls += ' statsVuoto';
+						}
+						var perc = (stats.socials[p].length*100) / tot;
+						HTML += '		<tr>' +
+								'			<td><div>'+label+'</div></td>' +
+								'			<td class="'+cls+'">' +
+								'				<span style="width:'+perc+'%;"></span>' +
+								'			</td>' +
+								'			<td class="nPazStats"><b>'+stats.socials[p].length+'</b></td>';
+						if(!PAZIENTI.pazientiFiltrati.length)HTML += 
+								'			<td><input type="checkbox"' +
+								'					   onClick="PAZIENTI.statsFiltra();"' +
+								'					   value="'+JSON.stringify(stats.socials[p])+'"' +
+								'					   data-et="socials"' +
+								'					   data-cat="'+TXT("Social")+'"' +
+								'					   data-elem="'+label+'"></td>';
+						HTML += '		</tr>';
+					}
+					HTML += '		</table>' +
+							'	</div>' +
+							'</div>';
+					
+					for(e in stats.etichette){
+						var HTML_provv = '';
+						HTML_provv += 	'<div class="rgStats">' +
+										'	<div class="etStats">' +
+										'		<i>'+htmlEntities(e)+':</i> ';
+						if(!PAZIENTI.pazientiFiltrati.length)HTML_provv +=
+										'			<span><input type="checkbox"' +
+										'							   onClick="PAZIENTI.statsSelAll(this);"' +
+										'							   data-dis="true"></span> ';
+						HTML_provv +=	'	</div>' +
+										'	<div>' +
+										'		<table>';
+						var tot = 0;
+						for(p in stats.etichette[e]){
+							tot += stats.etichette[e][p].length;
+						}
+						//stats.etichette[e][""] = totPazienti - tot;
+								
+						stats.etichette[e] = sortObject(stats.etichette[e]);
+						var totEt = 0;
+						for(p in stats.etichette[e]){
+							totEt++;
+							var label = p;
+							var cls = 'statsBarre';
+							if(p==-1){
+								label = noRes;
+								cls += ' statsVuoto';
+							}
+							if(!label){
+								label = noRes;
+								cls += ' statsVuoto';
+							}
+							var perc = (stats.etichette[e][p].length*100) / totPazienti;
+							HTML_provv += 	'		<tr>' +
+											'			<td><div>'+label+'</div></td>' +
+											'			<td class="'+cls+'">' +
+											'				<span style="width:'+perc+'%;"></span>' +
+											'			</td>' +
+											'			<td class="nPazStats"><b>'+stats.etichette[e][p].length+'</b></td>';
+							if(!PAZIENTI.pazientiFiltrati.length)HTML_provv += 
+											'			<td><input type="checkbox"' +
+											'					   onClick="PAZIENTI.statsFiltra();"' +
+											'					   value="'+JSON.stringify(stats.etichette[e][p])+'"' +
+											'					   data-et="etichette"' +
+											'					   data-cat="'+htmlEntities(e)+'"' +
+											'					   data-elem="'+label+'"></td>';
+							HTML_provv += 	'		</tr>';
+						}
+						HTML_provv += 	'		</table>' +
+										'	</div>' +
+										'</div>';		
+						if(totEt>1 || label != noRes)HTML += HTML_provv;
+					}
+					
+					
+							// tags
+					if(stats.tags && JSON.stringify(stats.tags)!='{}'){
+						HTML += '	<div class="rgStats">' +
+								'		<div class="etStats">' +
+								'			<i>'+htmlEntities(TXT("Tags"))+':</i> ';
+						if(!PAZIENTI.pazientiFiltrati.length)HTML +=
+								'			<span><input type="checkbox"' +
+								'							   onClick="PAZIENTI.statsSelAll(this);"' +
+								'							   data-dis="true"></span> ';
+						HTML += '		</div>' +
+								'		<div>' +
+								'			<table>';
+						var tot = 0;
+						for(p in stats.tags){
+							tot += stats.tags[p].length;
+						}
+						for(p in stats.tags){
+							var label = p;
+							var cls = 'statsBarre';
+							if(!label){
+								label = noRes;
+								cls += ' statsVuoto';
+							}
+							var perc = (stats.tags[p].length*100) / totPazienti;
+							HTML += 
+							'					<tr>' +
+							'						<td><div>'+label+'</div></td>' +
+							'						<td class="'+cls+'">' +
+							'							<span style="width:'+perc+'%;"></span>' +
+							'							</td>' +
+							'						<td class="nPazStats"><b>'+stats.tags[p].length+'</b></td>';
+							if(!PAZIENTI.pazientiFiltrati.length)HTML += 
+							'						<td><input type="checkbox"' +
+							'								   onClick="PAZIENTI.statsFiltra();"' +
+							'								   value="'+JSON.stringify(stats.tags[p])+'"' +
+							'								   data-et="tags"' +
+							'								   data-cat="'+TXT("Tags")+'"' +
+							'								   data-elem="'+label+'"></td>';
+							HTML += 
+							'					</tr>';
+						}
+						HTML +=	
+							'				</table>' +
+							'			</div>' +
+							'		</div>';
+					}
+					
+							// medicine
+					if(stats.medicine && JSON.stringify(stats.medicine)!='{}'){
+						HTML += '	<div class="rgStats">' +
+								'		<div class="etStats">' +
+								'			<i>'+htmlEntities(TXT("Medicine"))+':</i> ';
+						if(!PAZIENTI.pazientiFiltrati.length)HTML +=
+								'			<span><input type="checkbox"' +
+								'							   onClick="PAZIENTI.statsSelAll(this);"' +
+								'							   data-dis="true"></span> ';
+						HTML += '		</div>' +
+								'		<div>' +
+								'			<table>';
+						var tot = 0;
+						for(p in stats.medicine){
+							tot += stats.medicine[p].length;
+						}
+						for(p in stats.medicine){
+							var label = p;
+							var cls = 'statsBarre';
+							if(!label){
+								label = noRes;
+								cls += ' statsVuoto';
+							}
+							var perc = (stats.medicine[p].length*100) / totPazienti;
+							HTML += 
+							'					<tr>' +
+							'						<td><div>'+label+'</div></td>' +
+							'						<td class="'+cls+'">' +
+							'							<span style="width:'+perc+'%;"></span>' +
+							'							</td>' +
+							'						<td class="nPazStats"><b>'+stats.medicine[p].length+'</b></td>';
+							if(!PAZIENTI.pazientiFiltrati.length)HTML += 
+							'						<td><input type="checkbox"' +
+							'								   onClick="PAZIENTI.statsFiltra();"' +
+							'								   value="'+JSON.stringify(stats.medicine[p])+'"' +
+							'								   data-et="medicine"' +
+							'								   data-cat="'+TXT("Medicine")+'"' +
+							'								   data-elem="'+label+'"></td>';
+							HTML += 
+							'					</tr>';
+						}
+						HTML +=	
+							'				</table>' +
+							'			</div>' +
+							'		</div>';
+					}
+					
+					
+							// allergie
+					if(stats.allergie && JSON.stringify(stats.allergie)!='{}'){
+						HTML += '	<div class="rgStats">' +
+								'		<div class="etStats">' +
+								'			<i>'+htmlEntities(TXT("Allergie"))+':</i> ';
+						if(!PAZIENTI.pazientiFiltrati.length)HTML +=
+								'			<span><input type="checkbox"' +
+								'							   onClick="PAZIENTI.statsSelAll(this);"' +
+								'							   data-dis="true"></span> ';
+						HTML += '		</div>' +
+								'		<div>' +
+								'			<table>';
+						var tot = 0;
+						for(p in stats.allergie){
+							tot += stats.allergie[p].length;
+						}
+						for(p in stats.allergie){
+							var label = p;
+							var cls = 'statsBarre';
+							if(!label){
+								label = noRes;
+								cls += ' statsVuoto';
+							}
+							var perc = (stats.allergie[p].length*100) / totPazienti;
+							HTML += 
+							'					<tr>' +
+							'						<td><div>'+label+'</div></td>' +
+							'						<td class="'+cls+'">' +
+							'							<span style="width:'+perc+'%;"></span>' +
+							'							</td>' +
+							'						<td class="nPazStats"><b>'+stats.allergie[p].length+'</b></td>';
+							if(!PAZIENTI.pazientiFiltrati.length)HTML += 
+							'						<td><input type="checkbox"' +
+							'								   onClick="PAZIENTI.statsFiltra();"' +
+							'								   value="'+JSON.stringify(stats.allergie[p])+'"' +
+							'								   data-et="allergie"' +
+							'								   data-cat="'+TXT("Allergie")+'"' +
+							'								   data-elem="'+label+'"></td>';
+							HTML += 
+							'					</tr>';
+						}
+						HTML +=	
+							'				</table>' +
+							'			</div>' +
+							'		</div>';
+					}
+					
+							// patologie
+					if(stats.patologie && JSON.stringify(stats.patologie)!='{}'){
+						HTML += '	<div class="rgStats">' +
+								'		<div class="etStats">' +
+								'			<i>'+htmlEntities(TXT("Patologie"))+':</i> ';
+						if(!PAZIENTI.pazientiFiltrati.length)HTML +=
+								'			<span><input type="checkbox"' +
+								'							   onClick="PAZIENTI.statsSelAll(this);"' +
+								'							   data-dis="true"></span> ';
+						HTML +=	'		</div>' +
+								'		<div>' +
+								'			<table>';
+						var tot = 0;
+						for(p in stats.patologie){
+							tot += stats.patologie[p].length;
+						}
+						for(p in stats.patologie){
+							var label = p;
+							var cls = 'statsBarre';
+							if(!label){
+								label = noRes;
+								cls += ' statsVuoto';
+							}
+							var perc = (stats.patologie[p].length*100) / totPazienti;
+							HTML += 
+							'					<tr>' +
+							'						<td><div>'+label+'</div></td>' +
+							'						<td class="'+cls+'">' +
+							'							<span style="width:'+perc+'%;"></span>' +
+							'							</td>' +
+							'						<td class="nPazStats"><b>'+stats.patologie[p].length+'</b></td>';
+							if(!PAZIENTI.pazientiFiltrati.length)HTML += 
+							'						<td><input type="checkbox"' +
+							'								   onClick="PAZIENTI.statsFiltra();"' +
+							'								   value="'+JSON.stringify(stats.patologie[p])+'"' +
+							'								   data-et="patologie"' +
+							'								   data-cat="'+TXT("Patologie")+'"' +
+							'								   data-elem="'+label+'"></td>';
+							HTML += 
+							'					</tr>';
+						}
+						HTML +=	
+							'				</table>' +
+							'			</div>' +
+							'		</div>';
+					}
+					
+							// interventi
+					if(stats.interventi && JSON.stringify(stats.interventi)!='{}'){
+						HTML += '	<div class="rgStats">' +
+								'		<div class="etStats">' +
+								'			<i>'+htmlEntities(TXT("Interventi"))+':</i> ';
+						if(!PAZIENTI.pazientiFiltrati.length)HTML +=
+								'			<span><input type="checkbox"' +
+								'							   onClick="PAZIENTI.statsSelAll(this);"' +
+								'							   data-dis="true"></span> ';
+						HTML += '		</div>' +
+								'		<div>' +
+								'			<table>';
+						var tot = 0;
+						for(p in stats.interventi){
+							tot += stats.interventi[p].length;
+						}
+						for(p in stats.interventi){
+							var label = p;
+							var cls = 'statsBarre';
+							if(!label){
+								label = noRes;
+								cls += ' statsVuoto';
+							}
+							var perc = (stats.interventi[p].length*100) / totPazienti;
+							HTML += 
+							'					<tr>' +
+							'						<td><div>'+label+'</div></td>' +
+							'						<td class="'+cls+'">' +
+							'							<span style="width:'+perc+'%;"></span>' +
+							'							</td>' +
+							'						<td class="nPazStats"><b>'+stats.interventi[p].length+'</b></td>';
+							if(!PAZIENTI.pazientiFiltrati.length)HTML += 
+							'						<td><input type="checkbox"' +
+							'								   onClick="PAZIENTI.statsFiltra();"' +
+							'								   value="'+JSON.stringify(stats.interventi[p])+'"' +
+							'								   data-et="interventi"' +
+							'								   data-cat="'+TXT("Interventi")+'"' +
+							'								   data-elem="'+label+'"></td>';
+							HTML += 
+							'					</tr>';
+						}
+						HTML +=	
+							'				</table>' +
+							'			</div>' +
+							'		</div>';
+					}
+						
+							// sintomi
+					if(stats.sintomi && JSON.stringify(stats.sintomi)!='{}'){
+						HTML +=	'		<div class="rgStats">' +
+								'			<div class="etStats">' +
+								'				<i>'+htmlEntities(TXT("Sintomi"))+':</i> ';
+						if(!PAZIENTI.pazientiFiltrati.length)HTML +=
+								'			<span><input type="checkbox"' +
+								'							   onClick="PAZIENTI.statsSelAll(this);"' +
+								'							   data-dis="true"></span> ';
+						HTML +=	'		</div>' +
+								'			<div>' +
+								'				<table>';
+						var tot = 0;
+						for(p in stats.sintomi){
+							tot += stats.sintomi[p].length;
+						}
+						for(p in stats.sintomi){
+							var label = p;
+							var cls = 'statsBarre';
+							if(!label){
+								label = noRes;
+								cls += ' statsVuoto';
+							}
+							var perc = (stats.sintomi[p].length*100) / totPazienti;
+							HTML += 
+							'					<tr>' +
+							'						<td><div>'+label+'</div></td>' +
+							'						<td class="'+cls+'">' +
+							'							<span style="width:'+perc+'%;"></span>' +
+							'							</td>' +
+							'						<td class="nPazStats"><b>'+stats.sintomi[p].length+'</b></td>';
+							if(!PAZIENTI.pazientiFiltrati.length)HTML += 
+							'						<td><input type="checkbox"' +
+							'								   onClick="PAZIENTI.statsFiltra();"' +
+							'								   value="'+JSON.stringify(stats.sintomi[p])+'"' +
+							'								   data-et="sintomi"' +
+							'								   data-cat="'+TXT("Sintomi")+'"' +
+							'								   data-elem="'+label+'"></td>';
+							HTML += 
+							'					</tr>';	
+						}
+						HTML +=	
+							'				</table>' +
+							'			</div>' +
+							'		</div>' +
+							'	</div>' + 
+							'</div>';
+					}
+				}
+				HTML += 
+				'	<div id="rgApplicaFiltri"' +
+				'		 class="noPrint">' +
+				'		<div class="btn_invia"' +
+				'			 onClick="PAZIENTI.statsFiltra(true);">' +
+							htmlEntities(TXT("ApplicaFiltri")) +
+				'		</div>' +
+				'	</div>' +
+				'	<div id="marketingTools_btns"' +
+				'		 class="visSch">' +
+				'		<div style="height:30px;"></div>' +
+				'		<div style="text-align:right;">' +
+				'			<div class="btn_frdx"' +
+				'				 onClick="PAZIENTI.car_marketing();">' +
+								htmlEntities(TXT("StrumentiMarketing")) +
+				'			</div>' +
+				'		</div>' +
+				'	</div>';
+				
+				var btnAdd = 	'<div class="p_paz_ref_menu" onClick="REF.open(\'archives.patients.filters\')">' +
+									TXT("ReferenceGuide") +
+								'</div>';
+							
+				SCHEDA.caricaScheda(	titolo,
+										HTML,
+										'PAZIENTI.annullaFiltri();',
+										'scheda_stats',
+										false,
+										true,
+										'',
+										btnAdd );
+				
+				document.getElementById("paz_ricerca").value = '';
+				PAZIENTI.filtra();
+				document.getElementById("scheda_testo").scrollTo(0,0);
+			}else{
+				// se AGGIORNO
+				var elenco = [];
+				for(p in PAZIENTI.parametriFiltri){
+					for(e in PAZIENTI.parametriFiltri[p].elems){
+						var pazProvv = [];
+						var elem = PAZIENTI.parametriFiltri[p].elems[e];
+						var pazienti = stats[PAZIENTI.parametriFiltri[p].et][elem];
+						for(z in pazienti){
+							if(elenco.indexOf(pazienti[z])==-1)elenco.push(pazienti[z]);
+							if(pazProvv.indexOf(pazienti[z])==-1)pazProvv.push(pazienti[z]);
+						}
+						PAZIENTI.parametriFiltri[p].pazienti = pazProvv;
+					}
+				}
+				PAZIENTI.pazientiFiltrati = elenco;
+				for(p in DB.pazienti.data){
+					if(!DB.pazienti.data[p].Cancellato*1){
+						document.getElementById("paziente_"+p).classList.add("nasPaz");
+					}
+				}
+				if(elenco.length){
+					for(e in elenco){
+						document.getElementById("paziente_"+elenco[e]).classList.remove("nasPaz");
+					}
 				}
 			}
-			HTML += 
-			'	<div id="rgApplicaFiltri"' +
-			'		 class="noPrint">' +
-			'		<div class="btn_invia"' +
-			'			 onClick="PAZIENTI.statsFiltra(true);">' +
-						htmlEntities(TXT("ApplicaFiltri")) +
-			'		</div>' +
-			'	</div>' +
-			'	<div id="marketingTools_btns"' +
-			'		 class="visSch">' +
-			'		<div style="height:30px;"></div>' +
-			'		<div style="text-align:right;">' +
-			'			<div class="btn_frdx"' +
-			'				 onClick="PAZIENTI.car_marketing();">' +
-							htmlEntities(TXT("StrumentiMarketing")) +
-			'			</div>' +
-			'		</div>' +
-			'	</div>';
-			
-			var btnAdd = 	'<div class="p_paz_ref_menu" onClick="REF.open(\'archives.patients.filters\')">' +
-								TXT("ReferenceGuide") +
-							'</div>';
-						
-			SCHEDA.caricaScheda(	titolo,
-									HTML,
-									'PAZIENTI.annullaFiltri();',
-									'scheda_stats',
-									false,
-									true,
-									'',
-									btnAdd );
-			
-			document.getElementById("paz_ricerca").value = '';
-			PAZIENTI.filtra();
-			document.getElementById("scheda_testo").scrollTo(0,0)		
 		}});
 	},
 	statsFiltra: function( applica ){
@@ -919,7 +962,7 @@ var PAZIENTI_FILTRI = {
 					for(p in PAZIENTI.parametriFiltri){
 						if(PAZIENTI.parametriFiltri[p].cat==els[e].dataset.cat)presente = p;
 					}
-					if(presente==-1)PAZIENTI.parametriFiltri.push({"cat": els[e].dataset.cat, "elems": [ els[e].dataset.elem ] });
+					if(presente==-1)PAZIENTI.parametriFiltri.push({"cat": els[e].dataset.cat, "et": els[e].dataset.et, "elems": [ els[e].dataset.elem ], "pazienti": elencoLoc });
 					else PAZIENTI.parametriFiltri[p].elems.push(els[e].dataset.elem);
 					for(f in elencoLoc){
 						if(elenco.indexOf(elencoLoc[f])==-1)elenco.push(elencoLoc[f])
@@ -931,7 +974,6 @@ var PAZIENTI_FILTRI = {
 		else document.getElementById("rgApplicaFiltri").classList.remove("visSch");
 		var cls = "op50";
 		if(applica)cls = "nasPaz";
-		
 		for(p in DB.pazienti.data){
 			if(!DB.pazienti.data[p].Cancellato*1){
 				document.getElementById("paziente_"+p).classList.add(cls);
@@ -953,9 +995,9 @@ var PAZIENTI_FILTRI = {
 		if(applica){
 			SCHEDA.espandiElenco();
 			PAZIENTI.pazientiFiltrati = elenco;
-			localPouchDB.setItem(MD5("DB"+LOGIN._frv()+".pazienti"), IMPORTER.COMPR(DB.pazienti)).then(function(){
+			/*localPouchDB.setItem(MD5("DB"+LOGIN._frv()+".pazienti"), IMPORTER.COMPR(DB.pazienti)).then(function(){
 				// salvo il DB
-			});
+			});*/
 			document.getElementById("paz_filtrati").style.display = 'inline-block';
 			document.getElementById("scheda_testo").scrollTo(0,0)
 			PAZIENTI.car_filtri();

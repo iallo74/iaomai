@@ -26,9 +26,10 @@ var PAZIENTI_TRATTAMENTI = {
 			btn.classList.remove('anaVis');
 		}
 	},
-	caricaTrattamenti: function( Q_resta ){ // elenco trattamenti
+	caricaTrattamenti: function( Q_resta, evi ){ // elenco trattamenti
 		if(PAZIENTI.idCL>-1){
 			if(typeof(Q_resta) == 'undefined')var Q_resta = false;
+			if(typeof(evi) == 'undefined')var evi = -1;
 			var PZ = DB.pazienti.data[PAZIENTI.idCL];
 			var cloneTRATTAMENTI = clone(PZ.trattamenti);
 			for(p in cloneTRATTAMENTI){
@@ -176,7 +177,7 @@ var PAZIENTI_TRATTAMENTI = {
 						}
 					}
 					
-					HTML+='<div class="cartella';
+					HTML+='<div class="cartella'+((evi==c)?' eviCiclo':'');
 					if(PAZIENTI.cicli[c].Tipo == 'V')HTML += ' cartellaSingoli';
 					var cartAperta = this.aperture[NomeCiclo];
 					if(typeof(cartAperta)=='undefined')cartAperta=false;
@@ -184,7 +185,7 @@ var PAZIENTI_TRATTAMENTI = {
 					HTML+='" onTouchStart="SCHEDA.setCartella(this);"' +
 							'	   data-drag-family="trattamento"' +
 							'	   data-drag-type="cont"><div class="menuElenchi"' +
-							'	  onClick="MENU.visMM(\'trattTools_'+elAn+'\');">' +
+							'	   onClick="MENU.visMM(\'trattTools_'+elAn+'\');">' +
 							'</div><span id="cl_'+c+'"' +
 							'      onClick="SCHEDA.swCartella(this);' +
 							'      			PAZIENTI.setCartOp(this);"';
@@ -264,6 +265,10 @@ var PAZIENTI_TRATTAMENTI = {
 			HTML += '</div>';
 
 			document.getElementById("lista_pazienti").innerHTML = HTML;
+			
+			if(evi>-1){
+				setTimeout(function(){document.getElementById("cl_"+evi).parentElement.classList.remove("eviCiclo")},2000);
+			}
 			
 			if(cartOpened)document.querySelector(".listaTrattamenti").classList.add("cont_cartellaAperta");
 			if(typeof(Q_resta) == 'number')SCHEDA.btnSel = document.getElementById("btn_trattamento_"+Q_resta);
@@ -1002,7 +1007,6 @@ var PAZIENTI_TRATTAMENTI = {
 		var PZ =  DB.pazienti.data[PAZIENTI.idCL];
 		var TRS =PZ.trattamenti;
 		var DataModifica = DB.pazienti.lastSync+1;
-		console.log(DRAGGER.pushPos)
 		for(c in PAZIENTI.cicli){
 			if(PAZIENTI.cicli[c].Tipo == 'C' && parseInt(c)!=elMoved){
 				if(parseInt(c)!=elMoved){
@@ -1026,9 +1030,9 @@ var PAZIENTI_TRATTAMENTI = {
 			}
 		}
 		PZ.DataModifica = DataModifica;
-		PAZIENTI.caricaTrattamenti();
+		PAZIENTI.caricaTrattamenti(false,elTarget);
 		localPouchDB.setItem(MD5("DB"+LOGIN._frv()+".pazienti"), IMPORTER.COMPR(DB.pazienti)).then(function(){ // salvo il DB
-			LOGIN.sincronizza();
+			LOGIN.sincronizza('PAZIENTI.caricaTrattamenti(false,'+elTarget+');');
 			
 		});
 	},

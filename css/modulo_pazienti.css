@@ -1238,13 +1238,12 @@ body:not(.smart) #modAnag{
     border-top-right-radius: 5px;
 }
 #rgApplicaFiltri{
-	text-align:right;
-	padding-top:5px;
-	padding-right:40px;
-	background-image:url(../img/frStats.png);
-	background-repeat:no-repeat;
-	background-position:right top;
-	display:none;
+	text-align: right;
+    padding: 19px;
+    display: none;
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
 }
 
 body:not(.smart) #rgApplicaFiltri{

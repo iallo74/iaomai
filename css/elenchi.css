@@ -567,6 +567,8 @@ body:not(.bodyStyled2) #chiudiElenco{
 .cartella{
 	padding:0px !important;
 	padding-bottom: 1px !important;
+	-webkit-transition: box-shadow 0.5s;
+	transition: box-shadow 0.5s;
 }
 .cartella.overDrag{
 	box-shadow:	0px 0px 7px #F60, 0px 0px 7px #F60 !important;

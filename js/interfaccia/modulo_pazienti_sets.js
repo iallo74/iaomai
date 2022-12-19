@@ -90,153 +90,147 @@ var PAZIENTI_SETS = {
 		document.getElementById('label_puntiTsuboMap').style.display = 'block';
 		var elenco = '';
 		var HTML = '<div></div>'; // serve lasciarlo per il drag&drop
-		var totTsubo = 0;
-		if( globals.set.cartella == 'meridiani_cinesi' || 
-			globals.set.cartella == 'meridiani_shiatsu' ){
-			if(PAZIENTI.puntiProvvisori.length){
-				for(p in PAZIENTI.puntiProvvisori){
-					totTsubo++;
-					nTsubo=PAZIENTI.puntiProvvisori[p].n*1;
-					siglaMeridiano=PAZIENTI.puntiProvvisori[p].m;
-					valutazione=__(PAZIENTI.puntiProvvisori[p].e);
-					mezzo=__(PAZIENTI.puntiProvvisori[p].z);
-					descrizione=__(PAZIENTI.puntiProvvisori[p].t);
-					siglaTsubo=__(PAZIENTI.puntiProvvisori[p].s);
-					if(!siglaTsubo)siglaTsubo = nTsubo+'.'+siglaMeridiano;
-					
-					totPunti=0;
-					HTML += '<div class="rgProcMod rgMod dettPunto'+((evi==p)?' eviPunto':'')+'"' +
-							'	  id="rg_'+p+'"';
-					if(mouseDetect)HTML += 	' onMouseOver="SET.overTsubo(this,true);"' +
-											' onMouseOut="SET.overTsubo(this,false);"';
-					HTML += '><div class="grabElement"' +
-							'	   data-drag-class="lbTsubo"' +
-							'	   data-drag-family="tsubo"' +
-							'	   data-drag-type="move">' +
-							
-							'	<div class="grabBtn"' +
-							'	     onMouseDown="DRAGGER.startDrag(this.parentElement,\'PAZIENTI.spostaTsubo\');"' +
-							'	     onTouchStart="DRAGGER.startDrag(this.parentElement,\'PAZIENTI.spostaTsubo\');"></div>' +
-							
-							'	<img src="img/ico_cestino.png"' +
-							'		 width="16"' +
-							'		 height="16"' +
-							'		 align="absmiddle"' +
-							'		 id="ico_vis'+p+'"' +
-							'		 title="'+TXT("DelDett")+'"' +
-							'		 onClick="PAZIENTI.eliminaPuntoTrattamento('+p+')"' +
-							'		 class="cestino">';
-					
-					// mezzo
-					var addMezzoTit = '';
-					if(mezzo)addMezzoTit = ': '+PAZIENTI.mezzi[mezzo];
-					HTML += '	<span id="ico_PZ'+p+'"' +
-							'	      class="mezzoPunto"' +
-							'	      onClick="PAZIENTI.selPZ('+p+');">' +
-							'		<img src="img/mezzo_'+mezzo+'.png"' +
-							'	  	     width="20"' +
-							'	  	     height="20"' +
-							'	  	     align="absmiddle"' +
-							'	  	     title="'+htmlEntities(TXT("PZDett"))+'"'+
-							'	  	     class="occhio valEn"> ' +
-							'	</span>';
-							
-					
-					
-					// siglaTsubo (.s in puntiProvvisori)
-					HTML += '<input type="hidden" id="hd_'+p+'" name="hd_'+p+'" value="'+siglaTsubo+'">';
-					
-					// verifico che esista il meridiano (es. EX su ShiatsuMap)
-					if(typeof(DB.set.meridiani[siglaMeridiano])=='undefined'){
-						HTML += '<span class="ptNo">'+siglaTsubo+'</span>' +
-								'<input type="hidden" id="mr_'+p+'" name="mr_'+p+'" value="'+siglaMeridiano+'">' +
-								'<input type="hidden" id="pt_'+p+'" name="pt_'+p+'" value="'+nTsubo+'">';
-					}else{
-						// meridiano
-						HTML += '	<select name="mr_'+p+'"' +
-								'	     	 id="mr_'+p+'"' +
-								'	     	 onChange="this.blur();' +
-								'	     	 		   PAZIENTI.modNumPunti(\'formMod\','+p+');"' +
-								'	     	 class="selectTratt">' +
-								'<option value="">' +
-								'</option>';
-						for(k in DB.set.meridiani){
-							HTML+='<option value="'+k+'"';
-							if(siglaMeridiano==k){
-								HTML+=' SELECTED';
-								totPunti=DB.set.meridiani[k].tsubo.length;
-							}
-							HTML+=	'>'+SET.convSigla(k) +
-									'</option>';
-						}
-						HTML += '	</select>';
+		if(PAZIENTI.puntiProvvisori.length){
+			if( globals.set.cartella == 'meridiani_cinesi' || 
+				globals.set.cartella == 'meridiani_shiatsu' ){
+				nTsubo=PAZIENTI.puntiProvvisori[p].n*1;
+				siglaMeridiano=PAZIENTI.puntiProvvisori[p].m;
+				valutazione=__(PAZIENTI.puntiProvvisori[p].e);
+				mezzo=__(PAZIENTI.puntiProvvisori[p].z);
+				descrizione=__(PAZIENTI.puntiProvvisori[p].t);
+				siglaTsubo=__(PAZIENTI.puntiProvvisori[p].s);
+				if(!siglaTsubo)siglaTsubo = nTsubo+'.'+siglaMeridiano;
+				
+				totPunti=0;
+				HTML += '<div class="rgProcMod rgMod dettPunto'+((evi==p)?' eviPunto':'')+'"' +
+						'	  id="rg_'+p+'"';
+				if(mouseDetect)HTML += 	' onMouseOver="SET.overTsubo(this,true);"' +
+										' onMouseOut="SET.overTsubo(this,false);"';
+				HTML += '><div class="grabElement"' +
+						'	   data-drag-class="lbTsubo"' +
+						'	   data-drag-family="tsubo"' +
+						'	   data-drag-type="move">' +
 						
-						// punto
-						HTML +=	'	<select class="numPoints"' +
-								'	     	 name="pt_'+p+'"' +
-								'	     	 id="pt_'+p+'"' +
-								'	     	 onChange="this.blur();' +
-								'	     	 		   SCHEDA.formModificato=true;' +
-								'	     	 		   PAZIENTI.ricGroup(\'formMod\','+p+');">';
-						for(n=1;n<=totPunti;n++){
-							var siglaTsubo = n;
-							if(DB.set.meridiani[siglaMeridiano].tsubo[n-1].siglaTsubo){
-								siglaTsubo = DB.set.meridiani[siglaMeridiano].tsubo[n-1].siglaTsubo;
-								siglaTsubo = siglaTsubo.substr(3,siglaTsubo.length-3);
-							}
-							HTML += '<option value="'+n+'"';
-							if(nTsubo==n)HTML += ' SELECTED';
-							HTML += '>'+siglaTsubo+'</option>';
+						'	<div class="grabBtn"' +
+						'	     onMouseDown="DRAGGER.startDrag(this.parentElement,\'PAZIENTI.spostaTsubo\');"' +
+						'	     onTouchStart="DRAGGER.startDrag(this.parentElement,\'PAZIENTI.spostaTsubo\');"></div>' +
+						
+						'	<img src="img/ico_cestino.png"' +
+						'		 width="16"' +
+						'		 height="16"' +
+						'		 align="absmiddle"' +
+						'		 id="ico_vis'+p+'"' +
+						'		 title="'+TXT("DelDett")+'"' +
+						'		 onClick="PAZIENTI.eliminaPuntoTrattamento('+p+')"' +
+						'		 class="cestino">';
+				
+				// mezzo
+				var addMezzoTit = '';
+				if(mezzo)addMezzoTit = ': '+PAZIENTI.mezzi[mezzo];
+				HTML += '	<span id="ico_PZ'+p+'"' +
+						'	      class="mezzoPunto"' +
+						'	      onClick="PAZIENTI.selPZ('+p+');">' +
+						'		<img src="img/mezzo_'+mezzo+'.png"' +
+						'	  	     width="20"' +
+						'	  	     height="20"' +
+						'	  	     align="absmiddle"' +
+						'	  	     title="'+htmlEntities(TXT("PZDett"))+'"'+
+						'	  	     class="occhio valEn"> ' +
+						'	</span>';
+						
+				
+				
+				// siglaTsubo (.s in puntiProvvisori)
+				HTML += '<input type="hidden" id="hd_'+p+'" name="hd_'+p+'" value="'+siglaTsubo+'">';
+				
+				// verifico che esista il meridiano (es. EX su ShiatsuMap)
+				if(typeof(DB.set.meridiani[siglaMeridiano])=='undefined'){
+					HTML += '<span class="ptNo">'+siglaTsubo+'</span>' +
+							'<input type="hidden" id="mr_'+p+'" name="mr_'+p+'" value="'+siglaMeridiano+'">' +
+							'<input type="hidden" id="pt_'+p+'" name="pt_'+p+'" value="'+nTsubo+'">';
+				}else{
+					// meridiano
+					HTML += '	<select name="mr_'+p+'"' +
+							'	     	 id="mr_'+p+'"' +
+							'	     	 onChange="this.blur();' +
+							'	     	 		   PAZIENTI.modNumPunti(\'formMod\','+p+');"' +
+							'	     	 class="selectTratt">' +
+							'<option value="">' +
+							'</option>';
+					for(k in DB.set.meridiani){
+						HTML+='<option value="'+k+'"';
+						if(siglaMeridiano==k){
+							HTML+=' SELECTED';
+							totPunti=DB.set.meridiani[k].tsubo.length;
 						}
-						HTML += '	</select>';
-					
-						// icona visualizzazione
-						HTML += '	<img src="img/ico_vedi.png"' +
-								'	     width="16"' +
-								'	     height="16"' +
-								'	     align="absmiddle"' +
-								'	     id="ico_vis'+p+'"' +
-								'	     style="';
-						if(siglaMeridiano=='')HTML += '		display:none;';
-						HTML += '				margin-left:5px;' +
-								'				margin-right:7px;' +
-								'				margin-top: -4px;' +
-								'				cursor:pointer;"' +
-								'		 class="occhio"' +
-								'		 title="'+htmlEntities(TXT("VisualizzaPunto"))+'"' +
-								'		 onClick="SET.selTsuboMod('+p+');">';
+						HTML+=	'>'+SET.convSigla(k) +
+								'</option>';
 					}
+					HTML += '	</select>';
 					
-					
-					
-					
-					// valutazione energetica
-					HTML += '	<span id="ico_PV'+p+'"' +
-							'	      class="valPunto"' +
-							'	      onClick="PAZIENTI.selPV('+p+');">'+
-							'		<img src="img/ico_PV'+valutazione+'.png"' +
-							'	  	     width="16"' +
-							'	  	     height="16"' +
-							'	  	     align="absmiddle"' +
-							'	  	     title="'+htmlEntities(TXT("PVDett"))+'"' +
-							'	  	     class="occhio valEn"> ' +
-							'	</span>';
-					
-					HTML += '<input id="de_'+p+'"' +
-							' 		name="de_'+p+'"' +
-							' 		class="textPuntoTratt okPlaceHolder"' +
-							' 		value="'+htmlEntities(descrizione)+'"' +
-							' 		placeholder="'+htmlEntities(TXT("SpiegazionePuntoTratt"))+'"' +
-							'		onBlur="PAZIENTI.modNumPunti(\'formMod\','+p+');"'+H.noAutoGen+'>';
-					HTML += '</div></div>';
-					elenco += PAZIENTI.puntiProvvisori[p].n+'.'+PAZIENTI.puntiProvvisori[p].m;
-					if(PAZIENTI.puntiProvvisori[p].e)elenco += '.'+PAZIENTI.puntiProvvisori[p].e;
-					elenco += '|';
+					// punto
+					HTML +=	'	<select class="numPoints"' +
+							'	     	 name="pt_'+p+'"' +
+							'	     	 id="pt_'+p+'"' +
+							'	     	 onChange="this.blur();' +
+							'	     	 		   SCHEDA.formModificato=true;' +
+							'	     	 		   PAZIENTI.ricGroup(\'formMod\','+p+');">';
+					for(n=1;n<=totPunti;n++){
+						var siglaTsubo = n;
+						if(DB.set.meridiani[siglaMeridiano].tsubo[n-1].siglaTsubo){
+							siglaTsubo = DB.set.meridiani[siglaMeridiano].tsubo[n-1].siglaTsubo;
+							siglaTsubo = siglaTsubo.substr(3,siglaTsubo.length-3);
+						}
+						HTML += '<option value="'+n+'"';
+						if(nTsubo==n)HTML += ' SELECTED';
+						HTML += '>'+siglaTsubo+'</option>';
+					}
+					HTML += '	</select>';
+				
+					// icona visualizzazione
+					HTML += '	<img src="img/ico_vedi.png"' +
+							'	     width="16"' +
+							'	     height="16"' +
+							'	     align="absmiddle"' +
+							'	     id="ico_vis'+p+'"' +
+							'	     style="';
+					if(siglaMeridiano=='')HTML += '		display:none;';
+					HTML += '				margin-left:5px;' +
+							'				margin-right:7px;' +
+							'				margin-top: -4px;' +
+							'				cursor:pointer;"' +
+							'		 class="occhio"' +
+							'		 title="'+htmlEntities(TXT("VisualizzaPunto"))+'"' +
+							'		 onClick="SET.selTsuboMod('+p+');">';
 				}
+				
+				
+				
+				
+				// valutazione energetica
+				HTML += '	<span id="ico_PV'+p+'"' +
+						'	      class="valPunto"' +
+						'	      onClick="PAZIENTI.selPV('+p+');">'+
+						'		<img src="img/ico_PV'+valutazione+'.png"' +
+						'	  	     width="16"' +
+						'	  	     height="16"' +
+						'	  	     align="absmiddle"' +
+						'	  	     title="'+htmlEntities(TXT("PVDett"))+'"' +
+						'	  	     class="occhio valEn"> ' +
+						'	</span>';
+				
+				HTML += '<input id="de_'+p+'"' +
+						' 		name="de_'+p+'"' +
+						' 		class="textPuntoTratt okPlaceHolder"' +
+						' 		value="'+htmlEntities(descrizione)+'"' +
+						' 		placeholder="'+htmlEntities(TXT("SpiegazionePuntoTratt"))+'"' +
+						'		onBlur="PAZIENTI.modNumPunti(\'formMod\','+p+');"'+H.noAutoGen+'>';
+				HTML += '</div></div>';
+				elenco += PAZIENTI.puntiProvvisori[p].n+'.'+PAZIENTI.puntiProvvisori[p].m;
+				if(PAZIENTI.puntiProvvisori[p].e)elenco += '.'+PAZIENTI.puntiProvvisori[p].e;
+				elenco += '|';
 				HTML +=	'<div style="clear:both;height:1px;"></div>';
-			}
-		}else{
-			if( PAZIENTI.puntiProvvisori.length ){
+			}else{
 				var HTML_noMod = '';
 				for(p in PAZIENTI.puntiProvvisori){
 					nTsubo=PAZIENTI.puntiProvvisori[p].n*1;
@@ -246,7 +240,7 @@ var PAZIENTI_SETS = {
 					descrizione=__(PAZIENTI.puntiProvvisori[p].t);
 					siglaTsubo=__(PAZIENTI.puntiProvvisori[p].s);
 					if(!siglaTsubo)siglaTsubo = nTsubo+'.'+siglaMeridiano;
-					HTML_noMod += '<span class="tsb"><img src="img/mezzo_'+mezzo+'.png" class="noMod" style="vertical-align: middle;margin-top: -2px;margin-right: -2px;"> ';
+					HTML_noMod += '<span class="tsb"><img src="img/mezzo_'+mezzo+'.png" class="noMod" style="vertical-align: middle;margin-top: -3px;margin-right: -2px;"> ';
 					HTML_noMod += '<b>'+siglaTsubo+'</b>';
 					if(valutazione)HTML_noMod += '<img src="img/ico_PV'+valutazione+'.png" class="noMod" style="vertical-align: middle;margin-top: -3px;">';
 					if(descrizione)HTML_noMod += ' <span style="font-style:italic;">'+htmlEntities(descrizione)+'</span>';
@@ -255,19 +249,15 @@ var PAZIENTI_SETS = {
 					if(valutazione)elenco += '.'+valutazione;
 					elenco += '|';
 				}
-				totTsubo = PAZIENTI.puntiProvvisori.length;
 				HTML = '<span style="margin-bottom: 15px;display: inline-block;">'+HTML_noMod+'</span>';
 			}
-		}
-		if(!totTsubo){
-			totTsubo=0;
-			
+		}else{
 			HTML +=	'<div class="noResults"' +
 					'	  style="padding-left:30px;">' +
 						TXT("NoRes") +'...' +
 					'</div>';
 		}
-		document.getElementById('totTsubo').innerHTML = totTsubo;
+		document.getElementById('totTsubo').innerHTML = PAZIENTI.puntiProvvisori.length;
 		document.getElementById('puntiTsuboMap').innerHTML=HTML;
 		
 		
@@ -475,99 +465,96 @@ var PAZIENTI_SETS = {
 		if(typeof(evi)=='undefined')var evi = -1;
 		document.getElementById('meridianiTsuboMap').style.display = 'block';
 		document.getElementById('label_meridianiTsuboMap').style.display = 'block';
-		var modificabile = false;
-		if( globals.set.cartella == 'meridiani_cinesi' ||
-			globals.set.cartella == 'meridiani_shiatsu' ){
-			modificabile = true;
-		}
 		var HTML = '<div></div>'; // serve lasciarlo per il drag&drop
 		var elenco = [];
-		if(PAZIENTI.meridianiProvvisori.length){
-			var p = -1;
-			for(m in PAZIENTI.meridianiProvvisori){
-				p++;
-				elenco.push(PAZIENTI.meridianiProvvisori[m].siglaMeridiano);
-				var m2 = __(PAZIENTI.meridianiProvvisori[m].valEnergetica);
-				var descrizione = __(PAZIENTI.meridianiProvvisori[m].descrizione);
-				HTML += '<div class="rgProcMod ';
-				if(modificabile)HTML += 'rgMod ';
-				HTML += 'dettMeridiano'+((evi==m)?' eviPunto':'');
-				if(typeof(MERIDIANI) != 'undefined'){
-					if(MERIDIANI[PAZIENTI.meridianiProvvisori[m].siglaMeridiano].meridianoAcceso){
-						HTML += ' p_'+MERIDIANI[PAZIENTI.meridianiProvvisori[m].siglaMeridiano].elemento;
+		
+		if( PAZIENTI.meridianiProvvisori.length ){
+			if( globals.set.cartella == 'meridiani_cinesi' || 
+				globals.set.cartella == 'meridiani_shiatsu' ){
+				var p = -1;
+				for(m in PAZIENTI.meridianiProvvisori){
+					p++;
+					elenco.push(PAZIENTI.meridianiProvvisori[m].siglaMeridiano);
+					var m2 = __(PAZIENTI.meridianiProvvisori[m].valEnergetica);
+					var descrizione = __(PAZIENTI.meridianiProvvisori[m].descrizione);
+					HTML += '<div class="rgProcMod rgMod dettMeridiano'+((evi==m)?' eviPunto':'');
+					if(typeof(MERIDIANI) != 'undefined'){
+						if(MERIDIANI[PAZIENTI.meridianiProvvisori[m].siglaMeridiano].meridianoAcceso){
+							HTML += ' p_'+MERIDIANI[PAZIENTI.meridianiProvvisori[m].siglaMeridiano].elemento;
+						}
 					}
-				}
-				//HTML += '" id="tr_p'+PAZIENTI.meridianiProvvisori[m].siglaMeridiano+'">';
-				HTML += '" id="tr_p'+m+'">';
-				if(modificabile){
-					HTML +=
-						'<div class="grabElement"' +
-						'	   data-drag-class="lbMeridiano"' +
-						'	   data-drag-family="meridiano"' +
-						'	   data-drag-type="move"' +
-						'	   data-drag-el="'+p+'">' +
-						
-						'	<div class="grabBtn"' +
-						'	     onMouseDown="DRAGGER.startDrag(this.parentElement,\'PAZIENTI.spostaMeridiano\');"' +
-						'	     onTouchStart="DRAGGER.startDrag(this.parentElement,\'PAZIENTI.spostaMeridiano\');"></div>' +
+					//HTML += '" id="tr_p'+PAZIENTI.meridianiProvvisori[m].siglaMeridiano+'">';
+					HTML += '" id="tr_p'+m+'">' +
+							'<div class="grabElement"' +
+							'	   data-drag-class="lbMeridiano"' +
+							'	   data-drag-family="meridiano"' +
+							'	   data-drag-type="move"' +
+							'	   data-drag-el="'+p+'">' +
 							
-						'	<img src="img/ico_cestino.png"' +
-						'		 width="16"' +
-						'		 height="16"' +
-						'		 align="absmiddle"' +
-						'		 id="ico_vis'+m+'"' +
-						'		 title="'+TXT("DelDett")+'"' +
-						'		 onMouseOver="PAZIENTI.overCestino=true;"' +
-						'		 onMouseOut="PAZIENTI.overCestino=false;"' +
-						'		 onClick="PAZIENTI.eliminaMeridianoTrattamento('+m+')"' +
-						'		 class="cestino">';
-				}
-				HTML += '	<span';
-				if(modificabile){
-					HTML += ' class="meridModif"' +
+							'	<div class="grabBtn"' +
+							'	     onMouseDown="DRAGGER.startDrag(this.parentElement,\'PAZIENTI.spostaMeridiano\');"' +
+							'	     onTouchStart="DRAGGER.startDrag(this.parentElement,\'PAZIENTI.spostaMeridiano\');"></div>' +
+								
+							'	<img src="img/ico_cestino.png"' +
+							'		 width="16"' +
+							'		 height="16"' +
+							'		 align="absmiddle"' +
+							'		 id="ico_vis'+m+'"' +
+							'		 title="'+TXT("DelDett")+'"' +
+							'		 onMouseOver="PAZIENTI.overCestino=true;"' +
+							'		 onMouseOut="PAZIENTI.overCestino=false;"' +
+							'		 onClick="PAZIENTI.eliminaMeridianoTrattamento('+m+')"' +
+							'		 class="cestino">' +
+							'	<span';
+							' class="meridModif"' +
 							' style="cursor:pointer;"' +
 							' onClick="if(!PAZIENTI.overCestino)SET.accendiMeridiano(\''+PAZIENTI.meridianiProvvisori[m].siglaMeridiano+'\',true);"';
-					if(mouseDetect){
-						HTML += ' onMouseOver="SET.eviMeridiano(\''+PAZIENTI.meridianiProvvisori[m].siglaMeridiano+'\',true);"' +
-								' onMouseOut="SET.eviMeridiano(\''+PAZIENTI.meridianiProvvisori[m].siglaMeridiano+'\',false);"';
-					}
+					if(mouseDetect)HTML += 
+							' onMouseOver="SET.eviMeridiano(\''+PAZIENTI.meridianiProvvisori[m].siglaMeridiano+'\',true);"' +
+							' onMouseOut="SET.eviMeridiano(\''+PAZIENTI.meridianiProvvisori[m].siglaMeridiano+'\',false);"';
+					HTML += '>' +
+							PAZIENTI.meridianiProvvisori[m].NomeMeridiano +
+							'		<span id="ico_MV'+m+'"' +
+							'		      class="valPunto valMerid"' +
+							'			  onMouseOver="PAZIENTI.overCestino=true;"' +
+							'			  onMouseOut="PAZIENTI.overCestino=false;"' +
+							'		      onClick="PAZIENTI.selMV('+m+',\'tr_p'+m+'\');">' +
+							'			<img src="img/ico_PV'+m2+'.png"' +
+							'		  	     width="16"' +
+							'		  	     height="16"' +
+							'		  	     align="absmiddle"' +
+							'		  	     title="'+ htmlEntities(TXT("PVDett"))+'"' +
+							'		  	     class="occhio valEn"> ' +
+							'  		 	<b class="noPrint">' +
+											TXT("Valutazione"+m2) +
+							'			</b>' +
+							'		</span>' +
+							'	</span>' +
+							'	<input id="dm_'+m+'"' +
+							'	 		name="dm_'+m+'"' +
+							'	 		class="textMeridianoTratt okPlaceHolder"' +
+							'	 		value="'+htmlEntities(descrizione)+'"' +
+							'	 		placeholder="'+htmlEntities(TXT("SpiegazioneMeridianoTratt"))+'"' +
+							'			onBlur="PAZIENTI.meridianiProvvisori['+m+'].descrizione=this.value;"'+H.noAutoGen+'>' +
+							'</div>' +
+							'</div>';
 				}
-				HTML += '>' +
-								PAZIENTI.meridianiProvvisori[m].NomeMeridiano;
-				if(descrizione && !modificabile)HTML += ', <font style="font-style:italic;">'+htmlEntities(descrizione)+'</font>';
-				HTML += '		<span id="ico_MV'+m+'"' +
-						'		      class="valPunto valMerid"';
-				if(modificabile)HTML +=
-						'			  onMouseOver="PAZIENTI.overCestino=true;"' +
-						'			  onMouseOut="PAZIENTI.overCestino=false;"' +
-						'		      onClick="PAZIENTI.selMV('+m+',\'tr_p'+m+'\');"';
-						//'		      onClick="PAZIENTI.selMV('+m+',\'tr_p'+PAZIENTI.meridianiProvvisori[m].siglaMeridiano+'\');"';
-				else HTML += '		  style="cursor:default !important;"';
-				HTML += '>' +
-						'			<img src="img/ico_PV'+m2+'.png"' +
-						'		  	     width="16"' +
-						'		  	     height="16"' +
-						'		  	     align="absmiddle"' +
-						'		  	     title="'+ htmlEntities(TXT("PVDett"))+'"' +
-						'		  	     class="occhio valEn"> ' +
-						'  		 	<b class="noPrint">' +
-										TXT("Valutazione"+m2) +
-						'			</b>' +
-						'		</span>' +
-						'	</span>';
-					
-				if(modificabile)HTML +=
-						'	<input id="dm_'+m+'"' +
-						'	 		name="dm_'+m+'"' +
-						'	 		class="textMeridianoTratt okPlaceHolder"' +
-						'	 		value="'+htmlEntities(descrizione)+'"' +
-						'	 		placeholder="'+htmlEntities(TXT("SpiegazioneMeridianoTratt"))+'"' +
-						'			onBlur="PAZIENTI.meridianiProvvisori['+m+'].descrizione=this.value;"'+H.noAutoGen+'>' +
-						'</div>';
-				
-				HTML += '</div>';
+				HTML +='<p style="height:5px;"></p>';
+			}else{
+				var HTML_noMod = '';
+				for(m in PAZIENTI.meridianiProvvisori){
+					NomeMeridiano=PAZIENTI.meridianiProvvisori[m].NomeMeridiano;
+					siglaMeridiano=PAZIENTI.meridianiProvvisori[m].siglaMeridiano;
+					m2 = __(PAZIENTI.meridianiProvvisori[m].valEnergetica);
+					descrizione = __(PAZIENTI.meridianiProvvisori[m].descrizione);
+					HTML_noMod += '<span class="tsb"><img src="img/lineaPat.png" class="noMod" style="vertical-align: middle;margin: -3px 2px 0px 3px;"> ';
+					HTML_noMod += '<b>'+NomeMeridiano+'</b>';
+					if(valutazione)HTML_noMod += '<img src="img/ico_PV'+m2+'.png" class="noMod" style="vertical-align: middle;margin-top: -3px;">';
+					if(descrizione)HTML_noMod += ' <span style="font-style:italic;">'+htmlEntities(descrizione)+'</span>';
+					HTML_noMod += '</span> ';
+				}
+				HTML = '<span style="margin-bottom: 15px;display: inline-block;">'+HTML_noMod+'</span>';
 			}
-			if(!modificabile)HTML +='<p style="height:5px;"></p>';
 		}else{
 			HTML +=	'<div class="noResults"' +
 					'	  style="padding-left:30px;">' +
@@ -659,29 +646,23 @@ var PAZIENTI_SETS = {
 		if(typeof(evi)=='undefined')var evi = -1;
 		document.getElementById('puntiAuriculoMap').style.display = 'block';
 		document.getElementById('label_puntiAuriculoMap').style.display = 'block';
-		var modificabile = false;
-		if( globals.set.cartella == 'auricologia' ){
-			modificabile = true;
-		}
 		
 		var HTML = '<div></div>'; // serve lasciarlo per il drag&drop
-		var totTsubo = 0;
 		var elenco = [];
-		if( globals.set.cartella == 'auricologia' ){
-			var puntiElenco = [];
-			for(siglaTsubo in DB.set.punti){
-				if(__(DB.set.punti[siglaTsubo])){
-					puntiElenco.push({
-						siglaTsubo: siglaTsubo,
-						NomeTsubo: DB.set.punti[siglaTsubo].NomeTsubo
-					});
+		
+		if(PAZIENTI.auriculoProvvisori.length){
+			if( globals.set.cartella == 'auricologia' ){
+				var puntiElenco = [];
+				for(siglaTsubo in DB.set.punti){
+					if(__(DB.set.punti[siglaTsubo])){
+						puntiElenco.push({
+							siglaTsubo: siglaTsubo,
+							NomeTsubo: DB.set.punti[siglaTsubo].NomeTsubo
+						});
+					}
 				}
-			}
-			puntiElenco.sort(sort_by("NomeTsubo", false));
-			
-			if(PAZIENTI.auriculoProvvisori.length){
+				puntiElenco.sort(sort_by("NomeTsubo", false));
 				for(p in PAZIENTI.auriculoProvvisori){
-					totTsubo++;
 					
 					valutazione=__(PAZIENTI.auriculoProvvisori[p].e);
 					mezzo=__(PAZIENTI.auriculoProvvisori[p].z);
@@ -795,10 +776,7 @@ var PAZIENTI_SETS = {
 					HTML += '</div></div>';
 				}
 				HTML +=	'<div style="clear:both;height:1px;"></div>';
-				
-			}
-		}else{
-			if( PAZIENTI.auriculoProvvisori.length ){
+			}else{
 				var HTML_noMod = '';
 				for(p in PAZIENTI.auriculoProvvisori){
 					valutazione=__(PAZIENTI.auriculoProvvisori[p].e);
@@ -813,14 +791,9 @@ var PAZIENTI_SETS = {
 					HTML_noMod += '</span> ';
 					elenco.push(siglaTsubo);
 				}
-				totTsubo = PAZIENTI.auriculoProvvisori.length;
 				HTML = '<span style="margin-bottom: 15px;display: inline-block;">'+HTML_noMod+'</span>';
 			}
-		}
-		
-		if(!totTsubo){
-			totTsubo=0;
-			
+		}else{
 			HTML +=	'<div class="noResults"' +
 					'	  style="padding-left:30px;">' +
 						TXT("NoRes") +'...' +

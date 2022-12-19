@@ -366,7 +366,6 @@ var H = {
 	creaCombo: function( el, lista){
 		if(typeof(lista) == 'undefined')var lista = [];
 		if(lista.length && !H.elCombo){
-			console.log(lista)
 			
 			if(H.elCombo)H.rimuoviCombo();
 			H.elCombo = el;
@@ -401,10 +400,12 @@ var H = {
 			var sch = document.getElementById("scheda_testo");
 			sch.removeEventListener("scroll", H.rimuoviCombo);
 			window.removeEventListener("mouseup", H.rimuoviCombo);
-			H.elCombo.removeEventListener("keyup", H.filtraCombo);
-			H.elCombo.removeEventListener("mouseover", H.overCombo, false);
-			H.elCombo.removeEventListener("mouseout", H.outCombo, false);
-			H.elCombo = null;
+			if(H.elCombo){
+				H.elCombo.removeEventListener("keyup", H.filtraCombo);
+				H.elCombo.removeEventListener("mouseover", H.overCombo, false);
+				H.elCombo.removeEventListener("mouseout", H.outCombo, false);
+				H.elCombo = null;
+			}
 		}
 	},
 	blurCombo: function(){
