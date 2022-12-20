@@ -362,6 +362,11 @@ DB.TXT = {
 			eng: "A device has been identified that has both mouse and touch screen at the same time. TOUCH is used by default. If you want to change it, go to Settings > Customization and change the type of pointer.",
 			esp: ""
 		},
+		PatientType: {
+			ita: "Tipo di utilizzo",
+			eng: "Type of use",
+			esp: ""
+		},
 		
 		// CARICAMENTO, LOGIN e SINCRONIZZAZIONE
 		Caricamento: {
@@ -1052,8 +1057,8 @@ DB.TXT = {
 			esp: ""
 		},
 		AddServiziSpiegazione1: {
-			ita: "Seleziona un servizio o un pacchetto da aggiungere al cliente",
-			eng: "Select a service or package to add to the customer",
+			ita: "Seleziona un servizio o un pacchetto da aggiungere al paziente",
+			eng: "Select a service or package to add to the patient",
 			esp: ""
 		},
 		AddServiziSpiegazione2: {
@@ -1067,13 +1072,13 @@ DB.TXT = {
 			esp: ""
 		},
 		ConfermaAddServizio1: {
-			ita: "Vuoi davvero aggiungere il servizio al cliente?",
-			eng: "Vuoi davvero aggiungere il servizio al cliente?",
+			ita: "Vuoi davvero aggiungere il servizio al paziente?",
+			eng: "Do you really want to add the service to the patient?",
 			esp: ""
 		},
 		ConfermaAddServizio2: {
-			ita: "Vuoi davvero aggiungere il servizio composto di [n] sedute al cliente?",
-			eng: "Vuoi davvero aggiungere il servizio composto di [n] sedute al cliente?",
+			ita: "Vuoi davvero aggiungere il servizio composto di [n] sedute al paziente?",
+			eng: "Do you really want to add the composite service of [n] sessions to the patient?",
 			esp: ""
 		},
 		CopiaDi: {
@@ -1122,23 +1127,23 @@ DB.TXT = {
 		// PAZIENTI
 		// menu
 		Pazienti: {
-			ita: "I tuoi clienti",
-			eng: "Your clients",
+			ita: "I tuoi pazienti",
+			eng: "Your patients",
 			esp: ""
 		},
 		NoResPaziente: {
-			ita: "Nessun cliente",
-			eng: "No client",
+			ita: "Nessun paziente",
+			eng: "No patient",
 			esp: ""
 		},
 		ChiediEliminaPaziente: {
-			ita: "Vuoi davvero eliminare il cliente? N.B. Non sarà più possibile recuperarlo. Inoltre verranno cancellate definitivamente anche tutte le note associate al manichino.",
-			eng: "Do you really want to delete the client? Please note! It will no longer be recovered. Besides every notes referring to the model will be permanently deleted.",
+			ita: "Vuoi davvero eliminare il paziente? N.B. Non sarà più possibile recuperarlo. Inoltre verranno cancellate definitivamente anche tutte le note associate al manichino.",
+			eng: "Do you really want to delete the patient? Please note! It will no longer be recovered. Besides every notes referring to the model will be permanently deleted.",
 			esp: ""
 		},
 		AggiungiPaziente: {
-			ita: "Aggiungi un cliente",
-			eng: "Add a client",
+			ita: "Aggiungi un paziente",
+			eng: "Add a patient",
 			esp: ""
 		},
 		FiltroPazienti: {
@@ -1152,13 +1157,13 @@ DB.TXT = {
 			esp: ""
 		},
 		ModificaPaziente: {
-			ita: "Anagrafica cliente",
-			eng: "Client file",
+			ita: "Anagrafica paziente",
+			eng: "Patient file",
 			esp: ""
 		},
 		CreaPaziente: {
-			ita: "Nuovo cliente",
-			eng: "New client",
+			ita: "Nuovo paziente",
+			eng: "New patient",
 			esp: ""
 		},
 		Anagrafica: {
@@ -1512,8 +1517,8 @@ DB.TXT = {
 			esp: ""
 		},
 		CercaCliente: {
-			ita: "Cerca un cliente...",
-			eng: "Search a client...",
+			ita: "Cerca un paziente...",
+			eng: "Search a patient...",
 			esp: ""
 		},
 		
@@ -1535,8 +1540,8 @@ DB.TXT = {
 			esp: ""
 		},
 		InserisciTrattamento: {
-			ita: "Inserisci un trattamento nel ciclo",
-			eng: "Insert a treatment in the cycle",
+			ita: "Inserisci un trattamento nella cartella clinica",
+			eng: "Insert a treatment in the medical file",
 			esp: ""
 		},
 		NoResTrattamento: {
@@ -1602,8 +1607,8 @@ DB.TXT = {
 			esp: ""
 		},
 		AnamnesiMotivo: {
-			ita: "Motivo per il quale si prescrive il ciclo ...",
-			eng: "Motivo per il quale si prescrive il ciclo ...",
+			ita: "Motivo per il quale si prescrive ...",
+			eng: "Why do you prescribe ...",
 			esp: ""
 		},
 		AnamnesiDiagnosiOccidentale: {
@@ -1776,8 +1781,8 @@ DB.TXT = {
 		
 		// sintomi
 		AggiungiSintomoA: {
-			ita: "Aggiungi sintomo al ciclo",
-			eng: "Add a symptom to the cycle",
+			ita: "Aggiungi sintomo alla cartella clinica",
+			eng: "Add a symptom to the medical file",
 			esp: ""
 		},
 		AggiungiSintomo: {
@@ -1846,13 +1851,13 @@ DB.TXT = {
 			esp: ""
 		},
 		DestinatariTutti: {
-			ita: "Tutti i clienti",
-			eng: "All clients",
+			ita: "Tutti i pazienti",
+			eng: "All patients",
 			esp: ""
 		},
 		DestinatariFiltrati: {
-			ita: "Clienti filtrati",
-			eng: "Filtered clients",
+			ita: "Pazienti filtrati",
+			eng: "Filtered patients",
 			esp: ""
 		},
 		SpostaTrattamento: {
@@ -1877,6 +1882,16 @@ DB.TXT = {
 			eng: "Do you really want to delete the pic?",
 			esp: ""
 		},
+		AlertImgLow: {
+			ita: "Immagine di bassa qualità",
+			eng: "Low quality image",
+			esp: ""
+		},
+		AlertImgLowNoConn:{
+			ita: "Immagine di bassa qualità a causa dell'assenza di connessione",
+			eng: "Low quality image due to no connection",
+			esp: ""
+		},
 		
 		// cartella clinica
 		Cartelle: {
@@ -1890,13 +1905,13 @@ DB.TXT = {
 			esp: ""
 		},
 		CicloTrattamenti: {
-			ita: "Ciclo di trattamenti",
-			eng: "Treatment cycle",
+			ita: "Cartella clinica",
+			eng: "Medical file",
 			esp: ""
 		},
 		ModificaCiclo: {
-			ita: "Modifica ciclo",
-			eng: "Edit cycle",
+			ita: "Modifica cartella clinica",
+			eng: "Edit medical file",
 			esp: ""
 		},
 		SchedaAnamnesi: {
@@ -1905,28 +1920,28 @@ DB.TXT = {
 			esp: ""
 		},
 		AggiungiCiclo: {
-			ita: "Aggiungi un ciclo",
-			eng: "New a cycle",
+			ita: "Aggiungi una cartella",
+			eng: "New a folder",
 			esp: ""
 		},
 		Ciclo: {
-			ita: "Nome ciclo",
-			eng: "Cycle name",
+			ita: "Nome della cartella",
+			eng: "Folder name",
 			esp: ""
 		},
 		CreaCiclo: {
-			ita: "Nuovo ciclo",
-			eng: "New cycle",
+			ita: "Nuova cartella",
+			eng: "New folder",
 			esp: ""
 		},
 		GuidaCicloTit: {
-			ita: "Cos'è un ciclo di trattamenti",
-			eng: "Cos'è un ciclo di trattamenti",
+			ita: "Cos'è una cartella clinica",
+			eng: "What is a medical file",
 			esp: ""
 		},
 		GuidaCiclo: {
-			ita: "Creando un ciclo di trattamenti aggiungerai una cartella nella quale potrai inserire una serie di trattamenti raggruppati secondo uno specifico obiettivo terapeutico (es. Trattamento dell'insonnia).\nNella scheda del ciclo puoi gestire alcuni parametri che non sono presenti nei trattamenti singoli, come ad esempio la diagnosi.\nI sintomi indicati in questa scheda potranno essere monitorati e aggiornati nel corso di tutto il ciclo di trattamenti e infine potrai visualizzare e stampare la scheda riepoligativa del ciclo completo.",
-			eng: "Creando un ciclo di trattamenti aggiungerai una cartella nella quale potrai inserire una serie di trattamenti raggruppati secondo uno specifico obiettivo terapeutico (es. Trattamento dell'insonnia).\nNella scheda del ciclo puoi gestire alcuni parametri che non sono presenti nei trattamenti singoli, come ad esempio la diagnosi.\nI sintomi indicati in questa scheda potranno essere monitorati e aggiornati nel corso di tutto il ciclo di trattamenti e infine potrai visualizzare e stampare la scheda riepoligativa del ciclo completo.",
+			ita: "È una cartella dove è possibile inserire una serie di trattamenti raggruppati in base ad uno specifico obiettivo terapeutico (es. Trattamento dell'insonnia). Nella scheda di anamnesi è possibile gestire alcuni parametri che non sono presenti in singoli trattamenti, come la diagnosi. I sintomi indicati in questa scheda possono essere monitorati e aggiornati durante tutti i trattamenti e infine è possibile visualizzare e stampare la scheda riepoligativa.",
+			eng: "It is a folder where you can place a series of treatments grouped according to a specific therapeutic goal (e.g. Treatment of insomnia). In the history sheet you can manage some parameters that are not present in individual treatments, such as diagnosis. The symptoms indicated in this card can be monitored and updated throughout the course of treatments and finally you can view and print the fact sheet.",
 			esp: ""
 		},
 		CicloSenzaNome: {
@@ -2049,8 +2064,8 @@ DB.TXT = {
 			esp: ""
 		},
 		TotalePazienti: {
-			ita: "Totale clienti",
-			eng: "Number of clients",
+			ita: "Totale pazienti",
+			eng: "Number of patients",
 			esp: ""
 		},
 		ApplicaFiltri: {
@@ -2059,8 +2074,8 @@ DB.TXT = {
 			esp: ""
 		},
 		PazientiFiltrati: {
-			ita: "Clienti filtrati",
-			eng: "Clients filtered",
+			ita: "Pazienti filtrati",
+			eng: "Patients filtered",
 			esp: ""
 		},
 		StrumentiMarketing: {
@@ -2099,8 +2114,8 @@ DB.TXT = {
 			esp: ""
 		},
 		ErroreNumeroEmail: {
-			ita: "Nessuno dei clienti filtrati ha registrato un indirizzo email",
-			eng: "None of the filtered clients registered an email address",
+			ita: "Nessuno dei pazienti filtrati ha registrato un indirizzo email",
+			eng: "None of the filtered patients registered an email address",
 			esp: ""
 		},
 		NumeroEmail1: {
@@ -2154,7 +2169,7 @@ DB.TXT = {
 			esp: ""
 		},
 		MarketingSpiegazione: {
-			ita: "Utilizza gli strumenti di marketing per inviare comunicazioni mirate ai tuoi clienti. Con gli strumenti qui sotto, incrociati con i filtri, sarai in grado di inviare messaggi a pazienti precedentemente selezionati con il fine di pubblicizzare i tuoi servizi o le promozioni del momento.",
+			ita: "Utilizza gli strumenti di marketing per inviare comunicazioni mirate ai tuoi pazienti. Con gli strumenti qui sotto, incrociati con i filtri, sarai in grado di inviare messaggi a pazienti precedentemente selezionati con il fine di pubblicizzare i tuoi servizi o le promozioni del momento.",
 			eng: "Use marketing tools to send targeted communications to your customers. With the tools below, crossed with the filters, you will be able to send messages to previously selected patients in order to advertise your services or current promotions.",
 			esp: ""
 		},
@@ -2191,6 +2206,11 @@ DB.TXT = {
 		AlertMaxMsgMese: {
 			ita: "La tua quota mensile di [n] messaggi è stata superata",
 			eng: "Your monthly [n] message quota has been exceeded",
+			esp: ""
+		},
+		AlertNecessarioRiavvio: {
+			ita: "Attenzione! Per rendere effettiva questa modifica è necessario riavviare l'app",
+			eng: "Please note! To make this change effective you need to restart the app",
 			esp: ""
 		},
 		
@@ -2258,13 +2278,13 @@ DB.TXT = {
 			esp: ""
 		},
 		TornaAiClienti: {
-			ita: "Torna ai clienti",
-			eng: "Back to clients",
+			ita: "Torna ai pazienti",
+			eng: "Back to patients",
 			esp: ""
 		},
 		AggiungiCartella: {
-			ita: "Crea un ciclo e aggiungi",
-			eng: "Create a cycle and add",
+			ita: "Crea una cartella clinica e aggiungi",
+			eng: "Create a medical file and add",
 			esp: ""
 		},
 		GenericoAppSpiegazione: {
@@ -2278,13 +2298,13 @@ DB.TXT = {
 			esp: ""
 		},
 		ClientiAppSpiegazione: {
-			ita: "Seleziona un cliente o scrivi qui il suo nome ...",
-			eng: "Select a client or write his name here ...",
+			ita: "Seleziona un paziente o scrivi qui il suo nome ...",
+			eng: "Select a patient or write his name here ...",
 			esp: ""
 		},
 		AppuntamentoCliente: {
-			ita: "Scegli un cliente",
-			eng: "Select a client",
+			ita: "Scegli un paziente",
+			eng: "Select a patient",
 			esp: ""
 		},
 		AppuntamentoConverti: {
@@ -2335,8 +2355,8 @@ DB.TXT = {
 			esp: ""
 		},
 		TestoRegoleCommunity: {
-			ita: "- Sono a conoscenza che tutte le informazioni condivise ivi compreso lo pseudonimo sopra indicato saranno visibili dagli altri utenti della Community<br>- Mi impegno a non divulgare agli altri utenti della Community dati sensibili relativi ai miei clienti, in particolare quelli relativi al loro stato di salute, e mi assumo ogni responsabilit&agrave; riguardo a eventuali fuoriuscite di informazioni.",
-			eng: "- I'm aware that every shared informations, included the nickname used above, could be seen by other Community users<br>- I subscribe not to make visible to other Community users any sensitive data about my clients, particularly the ones related to their health, and I accept full responsibility in case of leak of this kind of informations.",
+			ita: "- Sono a conoscenza che tutte le informazioni condivise ivi compreso lo pseudonimo sopra indicato saranno visibili dagli altri utenti della Community<br>- Mi impegno a non divulgare agli altri utenti della Community dati sensibili relativi ai miei pazienti, in particolare quelli relativi al loro stato di salute, e mi assumo ogni responsabilit&agrave; riguardo a eventuali fuoriuscite di informazioni.",
+			eng: "- I'm aware that every shared informations, included the nickname used above, could be seen by other Community users<br>- I subscribe not to make visible to other Community users any sensitive data about my patients, particularly the ones related to their health, and I accept full responsibility in case of leak of this kind of informations.",
 			esp: ""
 		},
 		
@@ -2378,8 +2398,8 @@ DB.TXT = {
 			esp: ""
 		},
 		ElPazienti: {
-			ita: "Clienti",
-			eng: "Clients",
+			ita: "Pazienti",
+			eng: "Patients",
 			esp: ""
 		},
 		ElFornitori: {
@@ -2544,7 +2564,7 @@ DB.TXT = {
 			esp: ""
 		},
 		TestoRegistrazioneEspanso: {
-			ita: "Con la registrazione gratuita a [§] avrai {30 giorni di prova gratuita di tutte le app} e allo scadere potrai usufruire di  di tutte le funzionalità di base dell'app:\n\n[#] Fino a 20 clienti\n[#] Backup dei dati\n[#] Accesso multipiattaforma\n[#] Funzionalità della community\n[#] 10% di sconto su un prodotto [IAOMAI]",
+			ita: "Con la registrazione gratuita a [§] avrai {30 giorni di prova gratuita di tutte le app} e allo scadere potrai usufruire di  di tutte le funzionalità di base dell'app:\n\n[#] Fino a 20 pazienti\n[#] Backup dei dati\n[#] Accesso multipiattaforma\n[#] Funzionalità della community\n[#] 10% di sconto su un prodotto [IAOMAI]",
 			eng: "With the free registration to [§] you will have {30-day free trial of all apps} and upon expiry you will be able to use all the basic functions of the app:\n\n[#] Up to 20 customers\n[#] Data backup\n[#] Cross-platform access\n[#] Community functionality\n[#] Tutte le app gratis per 30 giorni\n[#] 10% discount on [IAOMAI] product",
 			esp: ""
 		},
@@ -2581,33 +2601,33 @@ DB.TXT = {
 			esp: ""
 		},
 		MsgMaxPazienti1: {
-			ita: "Con la versione gratuita puoi gestire un solo cliente. Registrati gratuitamente per gestire fino a 15 pazienti o acquista un pacchetto Clients Full con cartelle cliniche illimitate!.",
-			eng: "With the free version you can manage only one client. Register for free to manage up to 15 clients or purchase a Clients Full package with unlimited medical files!",
+			ita: "Con la versione gratuita puoi gestire un solo paziente. Registrati gratuitamente per gestire fino a 15 pazienti o acquista un pacchetto Patients Full con cartelle cliniche illimitate!.",
+			eng: "With the free version you can manage only one patient. Register for free to manage up to 15 patients or purchase a Patients Full package with unlimited medical files!",
 			esp: ""
 		},
 		MsgMaxPazienti15: {
-			ita: "Con la registrazione gratuita puoi gestire fino a 15 clienti. Acquista un pacchetto Clients Full per cartelle cliniche illimitate!.",
-			eng: "With the free registration you can manage up to 15 clients. Purchase a Clients Full package for unlimited medical files!",
+			ita: "Con la registrazione gratuita puoi gestire fino a 15 pazienti. Acquista un pacchetto Patients Full per cartelle cliniche illimitate!.",
+			eng: "With the free registration you can manage up to 15 patients. Purchase a Patients Full package for unlimited medical files!",
 			esp: ""
 		},
 		MsgMaxFornitori1: {
-			ita: "Con la versione gratuita puoi gestire un solo fornitore. Registrati gratuitamente per gestire fino a 5 fornitori o acquista un pacchetto Clients Full con archivi illimitati!.",
-			eng: "With the free version you can manage only one supplier. Register for free to manage up to 5 suppliers or purchase a Clients Full package with unlimited files!",
+			ita: "Con la versione gratuita puoi gestire un solo fornitore. Registrati gratuitamente per gestire fino a 5 fornitori o acquista un pacchetto Patients Full con archivi illimitati!.",
+			eng: "With the free version you can manage only one supplier. Register for free to manage up to 5 suppliers or purchase a Patients Full package with unlimited files!",
 			esp: ""
 		},
 		MsgMaxFornitori5: {
-			ita: "Con la registrazione gratuita puoi gestire fino a 5 fornitori. Acquista un pacchetto Clients Full per archivi illimitati!.",
-			eng: "With the free registration you can manage up to 5 suppliers. Purchase a Clients Full package for unlimited files!",
+			ita: "Con la registrazione gratuita puoi gestire fino a 5 fornitori. Acquista un pacchetto Patients Full per archivi illimitati!.",
+			eng: "With the free registration you can manage up to 5 suppliers. Purchase a Patients Full package for unlimited files!",
 			esp: ""
 		},
 		MsgMaxServizi1: {
-			ita: "Con la versione gratuita puoi gestire un solo servizio. Registrati gratuitamente per gestire fino a 5 servizi o acquista un pacchetto Clients Full con archivi illimitati!.",
-			eng: "With the free version you can manage only one service. Register for free to manage up to 5 services or purchase a Clients Full package with unlimited files!",
+			ita: "Con la versione gratuita puoi gestire un solo servizio. Registrati gratuitamente per gestire fino a 5 servizi o acquista un pacchetto Patients Full con archivi illimitati!.",
+			eng: "With the free version you can manage only one service. Register for free to manage up to 5 services or purchase a Patients Full package with unlimited files!",
 			esp: ""
 		},
 		MsgMaxServizi5: {
-			ita: "Con la registrazione gratuita puoi gestire fino a 5 servizi. Acquista un pacchetto Clients Full per archivi illimitati!.",
-			eng: "With the free registration you can manage up to 5 services. Purchase a Clients Full package for unlimited files!",
+			ita: "Con la registrazione gratuita puoi gestire fino a 5 servizi. Acquista un pacchetto Patients Full per archivi illimitati!.",
+			eng: "With the free registration you can manage up to 5 services. Purchase a Patients Full package for unlimited files!",
 			esp: ""
 		},
 		MsgMaxProcedure: {
@@ -2616,8 +2636,8 @@ DB.TXT = {
 			esp: ""
 		},
 		MsgMaxCicli: {
-			ita: "Con la versione gratuita puoi gestire una sola cartella clinica per cliente. Acquista un pacchetto Clients Full con cartelle cliniche illimitate!.",
-			eng: "With the free version you can manage only one medical file per client. Buy a Clients Full package with unlimited medical files!",
+			ita: "Con la versione gratuita puoi gestire una sola cartella clinica per paziente. Acquista un pacchetto Patients Full con cartelle cliniche illimitate!.",
+			eng: "With the free version you can manage only one medical file per patient. Buy a Patients Full package with unlimited medical files!",
 			esp: ""
 		},
 		MsgFunzioneSoloPay: {
@@ -4337,6 +4357,102 @@ DB.TXT = {
 		Muscolo_RAMO_SUPERIORE: {
 			ita: "RAMO SUPERIORE",
 			eng: "",
+			esp: ""
+		},
+		_Cliente_C: {
+			ita: "Cliente",
+			eng: "Client",
+			esp: ""
+		},
+		_Clienti_C: {
+			ita: "Clienti",
+			eng: "Clients",
+			esp: ""
+		},
+		_cliente_C: {
+			ita: "cliente",
+			eng: "client",
+			esp: ""
+		},
+		_clienti_C: {
+			ita: "clienti",
+			eng: "clients",
+			esp: ""
+		},
+		_Cliente_P: {
+			ita: "Paziente",
+			eng: "Client",
+			esp: ""
+		},
+		_Clienti_P: {
+			ita: "Pazienti",
+			eng: "Patients",
+			esp: ""
+		},
+		_cliente_P: {
+			ita: "paziente",
+			eng: "patient",
+			esp: ""
+		},
+		_clienti_P: {
+			ita: "pazienti",
+			eng: "patients",
+			esp: ""
+		},
+		
+		_ciclo_C: {
+			ita: "ciclo",
+			eng: "cycle",
+			esp: ""
+		},
+		_un_ciclo_C: {
+			ita: "un ciclo di trattamenti",
+			eng: "a treatment cycle",
+			esp: ""
+		},
+		_il_ciclo_C: {
+			ita: " ciclo di trattamenti",
+			eng: " treatment cycle",
+			esp: ""
+		},
+		_Ciclo_C: {
+			ita: "Ciclo di trattamenti",
+			eng: "Treatment cycle",
+			esp: ""
+		},
+		
+		_ciclo_P: {
+			ita: "cartella clinica",
+			eng: "medical file",
+			esp: ""
+		},
+		_un_ciclo_P: {
+			ita: "una cartella clinica",
+			eng: "a medical file",
+			esp: ""
+		},
+		_il_ciclo_P: {
+			ita: "la cartella clinica",
+			eng: " medical file",
+			esp: ""
+		},
+		_Ciclo_P: {
+			ita: "Cartella clinica",
+			eng: "Medical file",
+			esp: ""
+		},
+		
+		
+		
+		
+		_UTILIZZO_P: {
+			ita: "MEDICO",
+			eng: "MEDICAL",
+			esp: ""
+		},
+		_UTILIZZO_C: {
+			ita: "OLISTICO",
+			eng: "HOLISTIC",
 			esp: ""
 		}
 	},

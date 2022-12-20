@@ -52,6 +52,8 @@ var LINGUE = {
 			if(strBase)testo = strBase[globals.siglaLingua];
 			if(strSet)testo = strSet[globals.siglaLingua];
 			
+			testo = LINGUE.convPaziente(testo);
+			
 			//var testo = eval(txt.substr(2,txt.length-4)+"['"+globals.siglaLingua+"']");
 			element.title=txt.replace(/\{\{TXT_[^\}\}]+\}\}/i, testo);
 		}
@@ -78,6 +80,7 @@ var LINGUE = {
 				testo = testo.replace(/(iáomai)/g,"<b>iáomai</b>");
 				testo = testo.replace('[IAOMAI]','<img src="img/logo_iaomai_mini.png" style="display:inline-block;vertical-align:middle;width:80px;">');
 				testo = testo.replace(/\{/g,"<b>").replace(/\}/g,"</b>")
+				testo = LINGUE.convPaziente(testo);
 				element.innerHTML = str.replace(/\{\{TXT_[^\}\}]+\}\}/i, testo);
 				str = element.innerHTML;
 			}
@@ -93,6 +96,36 @@ var LINGUE = {
 		/*if (navigator.userLanguage)  l_lang = navigator.userLanguage;
 		else if (navigator.language)  l_lang = navigator.language;*/
 		return l_lang.substring(0,2);
+	},
+	convPaziente: function( str ){
+		if(__(localStorage.noMedico)){
+			
+			
+			var re = new RegExp(DB.TXT.base["_Cliente_P"][globals.siglaLingua], 'g');
+			str = str.replace(re,DB.TXT.base["_Cliente_C"][globals.siglaLingua]);
+			
+			var re = new RegExp(DB.TXT.base["_Clienti_P"][globals.siglaLingua], 'g');
+			str = str.replace(re,DB.TXT.base["_Clienti_C"][globals.siglaLingua]);
+			
+			var re = new RegExp(DB.TXT.base["_cliente_P"][globals.siglaLingua], 'g');
+			str = str.replace(re,DB.TXT.base["_cliente_C"][globals.siglaLingua]);
+			
+			var re = new RegExp(DB.TXT.base["_clienti_P"][globals.siglaLingua], 'g');
+			str = str.replace(re,DB.TXT.base["_clienti_C"][globals.siglaLingua]);
+			
+			var re = new RegExp(DB.TXT.base["_un_ciclo_P"][globals.siglaLingua], 'g');
+			str = str.replace(re,DB.TXT.base["_un_ciclo_C"][globals.siglaLingua]);
+			
+			var re = new RegExp(DB.TXT.base["_il_ciclo_P"][globals.siglaLingua], 'g');
+			str = str.replace(re,DB.TXT.base["_il_ciclo_C"][globals.siglaLingua]);
+			
+			var re = new RegExp(DB.TXT.base["_Ciclo_P"][globals.siglaLingua], 'g');
+			str = str.replace(re,DB.TXT.base["_Ciclo_C"][globals.siglaLingua]);
+			
+			var re = new RegExp(DB.TXT.base["_ciclo_P"][globals.siglaLingua], 'g');
+			str = str.replace(re,DB.TXT.base["_ciclo_C"][globals.siglaLingua]);
+		}
+		return str;
 	}
 };
 
@@ -127,8 +160,9 @@ function TXT(txt){
 	var strSet = __(DB.TXT.set[txt],'');
 	if(strBase)str = strBase[globals.siglaLingua];
 	if(strSet)str = strSet[globals.siglaLingua];
-	return addslashes(str.replace(/\[§\]/g,nomeApp))
-	//return addslashes(txt[globals.siglaLingua].replace(/\[§\]/g,nomeApp));
+	str = addslashes(str.replace(/\[§\]/g,nomeApp));
+	str = LINGUE.convPaziente(str);
+	return str;
 }
 
 function doHighlight( html, parola, cls ){

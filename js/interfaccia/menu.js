@@ -413,6 +413,17 @@ var MENU = {
 			else els[1].classList.add("a_SEL");
 		}
 		
+		document.getElementById("patientSel").dataset.val = __(localStorage.noMedico);
+		var els = document.getElementById("patientSel").getElementsByTagName("b");
+		for(i = 0; i<els.length; i++){
+			els[i].classList.remove("a_SEL");
+		}
+		if(__(localStorage.noMedico)){
+			document.getElementById("t_OLISTICO").classList.add("a_SEL");
+		}else{
+			document.getElementById("t_MEDICO").classList.add("a_SEL");
+		}
+		
 		if(document.getElementById("colori").className.indexOf("visSch") > -1){
 			visLoader('');
 			//document.getElementById("loader").addEventListener("mouseup",MENU.visColori,false);

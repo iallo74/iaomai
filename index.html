@@ -331,6 +331,13 @@
                    		<b id="t_TOUCH" data-value="TOUCH" onClick="setPointerType('TOUCH');"></b>
                    </span>
                </p>
+               <p id="patientSel">
+                   <i>{{TXT_PatientType}}:</i>
+                   <span>
+                   		<b id="t_MEDICO" onClick="PAZIENTI.setPatientType('M');">{{TXT__UTILIZZO_P}}</b>
+                   		<b id="t_OLISTICO" onClick="PAZIENTI.setPatientType('O');">{{TXT__UTILIZZO_C}}</b>
+                   </span>
+               </p>
                 </div>
             </div>
             <div id="notifiche" class="popup"> <!-- NOTIFICHE -->
@@ -833,7 +840,7 @@
 		<div id="loader" class="noLoader" onMouseOver="if(!touchable)overInterfaccia=true;" onMouseOut="if(!touchable)overInterfaccia=false;"><div>{{TXT_CaricamentoImpostazioni}}</div></div>
         
         <!-- ZOOM FOTO -->
-		<div id="fotoBig" class="noLoader" onMouseOver="if(!touchable)overInterfaccia=true;" onMouseOut="if(!touchable)overInterfaccia=false;"><div id="chiudiFotoBig" onClick="nasLoader();"></div></div>
+		<div id="fotoBig" class="noLoader" onMouseOver="if(!touchable)overInterfaccia=true;" onMouseOut="if(!touchable)overInterfaccia=false;"><div id="chiudiFotoBig" onClick="nasLoader();"></div><div id="foto_alert"></div></div>
         
         <!-- LEGENDE DELL'ANATOMIA -->
         <div id="legende" onMouseEnter="

@@ -307,6 +307,7 @@ var PAZIENTI = {
 			var allergie=[];
 			var patologie=[];
 			var interventi=[];
+			var gallery='[]';
 			var Provenienza='';
 			var Professione='';
 			var Social='';
@@ -342,6 +343,7 @@ var PAZIENTI = {
 				allergie = toJson(PZ.allergie);
 				patologie = toJson(PZ.patologie);
 				interventi = toJson(PZ.interventi);
+				gallery=__(PZ.gallery,'[]');
 				Provenienza = PZ.Provenienza;
 				Professione = PZ.Professione;
 				Social = PZ.Social;
@@ -366,6 +368,9 @@ var PAZIENTI = {
 			PAZIENTI.allergieProvvisorie = clone(allergie);
 			PAZIENTI.patologieProvvisorie = clone(patologie);
 			PAZIENTI.interventiProvvisori = clone(interventi);
+			if(!gallery)gallery='[]';
+			gallery=JSON.parse(gallery);
+			PAZIENTI.galleryProvvisoria=gallery;
 			
 			var HTML = '';
 			HTML += '<form id="formMod"' +
@@ -746,6 +751,34 @@ var PAZIENTI = {
 					'	  padding: 0px;' +
 					'	  background-color: rgba(0,0,0,0.15);"></div>';
 					
+			
+			
+			
+			
+			
+			// GALLERY
+			var cont = '	<div id="contGallery"' +
+						'		 class="divEspansa">' +
+						'	</div>' +
+						'	<div id="p_add_dett"' +
+						'		 style="margin-top: 0px;">' +
+						'		<input type="file"' +
+						'			   id="fotoProvv_FL"' +
+						'			   class="p_paz_foto"' +
+						'		       onChange="PAZIENTI.selezionaFoto(this);">' +
+						'		<span id="addFoto">' +
+									TXT("AggiungiFoto") +
+						'		</span>' +
+						'	</div>';
+					
+			HTML += H.r({	t: "h", name: "totFoto",	value: "0" });
+			HTML += H.sezione({
+				label: TXT("Gallery"),
+				nome: 'foto',
+				html: cont
+						});	
+			
+			
 			// sezione ANNOTAZIONI
 			var cont = '';
 			cont += H.r({	t: "t", 
@@ -817,6 +850,7 @@ var PAZIENTI = {
 			PAZIENTI.popolaElementi('patologie');
 			PAZIENTI.caricaElementi('interventi');
 			PAZIENTI.popolaElementi('interventi');
+			PAZIENTI.caricaGalleryTrattamento();
 			
 			if(salvato)SCHEDA.msgSalvataggio();
 			
@@ -862,6 +896,7 @@ var PAZIENTI = {
 			allergie = toJson(PZ.allergie);
 			patologie = toJson(PZ.patologie);
 			interventi = toJson(PZ.interventi);
+			gallery=__(PZ.gallery,'[]');
 			Provenienza = PZ.Provenienza;
 			Professione = PZ.Professione;
 			Social = PZ.Social;
@@ -876,6 +911,9 @@ var PAZIENTI = {
 			PAZIENTI.allergieProvvisorie = clone(allergie);
 			PAZIENTI.patologieProvvisorie = clone(patologie);
 			PAZIENTI.interventiProvvisori = clone(interventi);
+			if(!gallery)gallery='[]';
+			gallery=JSON.parse(gallery);
+			PAZIENTI.galleryProvvisoria=gallery;
 		
 			var eta = '';
 			if(DataNascita)eta = oggi.getFullYear() - DataNascita.getFullYear();
@@ -1129,6 +1167,8 @@ var PAZIENTI = {
 						'	</div>';
 			}
 				
+			
+			
 					
 				
 			HTML +=	'<div class="schSx">';	
@@ -1142,6 +1182,11 @@ var PAZIENTI = {
 						'<div class="l"></div>';
 			}
 					
+			
+			// GALLERY
+			HTML += '<div id="contGallery"></div>';
+			
+			
 			var azElimina = PAZIENTI.idCL>-1 ? "PAZIENTI.el_paziente("+PAZIENTI.idCL+");":"";
 			var btnAdd = '';
 			if(azElimina){
@@ -1159,6 +1204,7 @@ var PAZIENTI = {
 									true,
 									'',
 									btnAdd );
+			PAZIENTI.caricaGalleryTrattamento(true);
 			
 			if(salvato)SCHEDA.msgSalvataggio();
 		}});
@@ -1187,74 +1233,101 @@ var PAZIENTI = {
 			DataNascita=AnnoNascita+"-"+MeseNascita+"-"+GiornoNascita;
 		}
 		
-		JSNPUSH={ 	"idPaziente": document.formMod.idPaziente.value*1,
-					"Nome": document.formMod.Nome.value.trim(),
-					"Cognome": document.formMod.Cognome.value.trim(),
-					"Indirizzo": document.formMod.Indirizzo.value.trim(),
-					"CAP": document.formMod.CAP.value.trim(),
-					"Citta": document.formMod.Citta.value.trim(),
-					"Provincia": document.formMod.Provincia.value.trim(),
-					"Stato": document.formMod.Stato.value.trim(),
-					"Telefono": document.formMod.Telefono.value.trim(),
-					"Cellulare": document.formMod.Cellulare.value.trim(),
-					"paeseCellulare": document.formMod.paeseCellulare.value,
-					"Email": document.formMod.Email.value.trim(),
-					"sesso": document.formMod.sesso.value,
-					"NotePaziente": document.formMod.NotePaziente.value,
-					
-					"DataNascita": DataNascita,
-					"LuogoNascita": document.formMod.LuogoNascita.value.trim(),
-					"tags": PAZIENTI.tagsProvvisori,
-					"etichette": H.etichetteProvvisorie,
-					"medicine": PAZIENTI.medicineProvvisorie,
-					"allergie": PAZIENTI.allergieProvvisorie,
-					"patologie": PAZIENTI.patologieProvvisorie,
-					"interventi": PAZIENTI.interventiProvvisori,
-					"Provenienza": document.formMod.Provenienza.value.trim(),
-					"Professione": document.formMod.Professione.value.trim(),
-					"Social": document.formMod.Social.value.trim(),
-					"Intestazione": document.formMod.Intestazione.value,
-					"avatar": avatar,
-					
-					"CodiceFiscale": document.formMod.CodiceFiscale.value.trim(),
-					"PartitaIva": document.formMod.PartitaIva.value.trim(),
-					"Altezza": document.formMod.Altezza.value.trim(),
-					"Peso": document.formMod.Peso.value.trim(),
-					
-					"DataModifica": parseInt(DataModifica),
-					"md5": md5,
-					"trattamenti": [],
-					"saldi": [],
-					"selected": true,
-					"Cancellato": 0,
-					"frv": (LOGIN._frv()!='') };
-			
-		if(PAZIENTI.idCL>-1)document.getElementById("nomeCliente").innerHTML = 	htmlEntities(document.formMod.Nome.value)+"<br>" + 
-																				htmlEntities(document.formMod.Cognome.value)		
-		if(PAZIENTI.idCL*1>-1){
-			// paziente esistente
-			trattamentiProvvisori=DB.pazienti.data[PAZIENTI.idCL].trattamenti;
-			saldiProvvisori=DB.pazienti.data[PAZIENTI.idCL].saldi;
-			DB.pazienti.data[PAZIENTI.idCL]=JSNPUSH;
-			DB.pazienti.data[PAZIENTI.idCL].trattamenti=trattamentiProvvisori;
-			DB.pazienti.data[PAZIENTI.idCL].saldi=saldiProvvisori;
-		}else{
-			// nuovo paziente
-			DB.pazienti.data.push(JSNPUSH);
-			for(p in DB.pazienti.data){
-				DB.pazienti.data[p].id_interno=p;
-				if(md5==DB.pazienti.data[p].md5)PAZIENTI.idCL=p;
+		
+		// salvo le immagini
+		//var f = 0;
+		var GA = PAZIENTI.galleryProvvisoria;
+		for(i in GA){
+			if(typeof(GA[i].imgMini) != 'undefined' && GA[i]!=null && GA[i].imgMini!=null){
+				
+				// salvo l'immagine nel DB locale
+				DB.foto.data.push({
+					idFoto: GA[i].idFoto,
+					imgMini: GA[i].imgMini,
+					imgBig: GA[i].imgBig,
+					frv: (LOGIN._frv()!='')
+				});
+				var NG = {
+					idFoto: GA[i].idFoto
+				}
+				GA[i] = NG;
+				//f++;
 			}
-			postAction = 'PAZIENTI.selPaziente('+p+');';
 		}
 		
-		endChangeDetection();
-		SCHEDA.formModificato = false;
-		localPouchDB.setItem(MD5("DB"+LOGIN._frv()+".pazienti"), IMPORTER.COMPR(DB.pazienti)).then(function(){ // salvo il DB
-			LOGIN.sincronizza(	'PAZIENTI.vis_paziente(true);' +
-								'startAnimate();' +
-								'nasLoader();' +
-								postAction );
+		
+		localPouchDB.setItem(MD5("DB"+LOGIN._frv()+".foto"), IMPORTER.COMPR(DB.foto)).then(function(){
+			JSNPUSH={ 	"idPaziente": document.formMod.idPaziente.value*1,
+						"Nome": document.formMod.Nome.value.trim(),
+						"Cognome": document.formMod.Cognome.value.trim(),
+						"Indirizzo": document.formMod.Indirizzo.value.trim(),
+						"CAP": document.formMod.CAP.value.trim(),
+						"Citta": document.formMod.Citta.value.trim(),
+						"Provincia": document.formMod.Provincia.value.trim(),
+						"Stato": document.formMod.Stato.value.trim(),
+						"Telefono": document.formMod.Telefono.value.trim(),
+						"Cellulare": document.formMod.Cellulare.value.trim(),
+						"paeseCellulare": document.formMod.paeseCellulare.value,
+						"Email": document.formMod.Email.value.trim(),
+						"sesso": document.formMod.sesso.value,
+						"NotePaziente": document.formMod.NotePaziente.value,
+						
+						"DataNascita": DataNascita,
+						"LuogoNascita": document.formMod.LuogoNascita.value.trim(),
+						"tags": PAZIENTI.tagsProvvisori,
+						"etichette": H.etichetteProvvisorie,
+						"medicine": PAZIENTI.medicineProvvisorie,
+						"allergie": PAZIENTI.allergieProvvisorie,
+						"patologie": PAZIENTI.patologieProvvisorie,
+						"interventi": PAZIENTI.interventiProvvisori,
+						"Provenienza": document.formMod.Provenienza.value.trim(),
+						"Professione": document.formMod.Professione.value.trim(),
+						"Social": document.formMod.Social.value.trim(),
+						"Intestazione": document.formMod.Intestazione.value,
+						"avatar": avatar,
+						"gallery": JSON.stringify(GA),
+						
+						"CodiceFiscale": document.formMod.CodiceFiscale.value.trim(),
+						"PartitaIva": document.formMod.PartitaIva.value.trim(),
+						"Altezza": document.formMod.Altezza.value.trim(),
+						"Peso": document.formMod.Peso.value.trim(),
+						
+						"DataModifica": parseInt(DataModifica),
+						"md5": md5,
+						"trattamenti": [],
+						"saldi": [],
+						"selected": true,
+						"Cancellato": 0,
+						"frv": (LOGIN._frv()!='') };
+				
+			if(PAZIENTI.idCL>-1)document.getElementById("nomeCliente").innerHTML = 	htmlEntities(document.formMod.Nome.value)+"<br>" + 
+																					htmlEntities(document.formMod.Cognome.value)		
+			if(PAZIENTI.idCL*1>-1){
+				// paziente esistente
+				trattamentiProvvisori=DB.pazienti.data[PAZIENTI.idCL].trattamenti;
+				saldiProvvisori=DB.pazienti.data[PAZIENTI.idCL].saldi;
+				DB.pazienti.data[PAZIENTI.idCL]=JSNPUSH;
+				DB.pazienti.data[PAZIENTI.idCL].trattamenti=trattamentiProvvisori;
+				DB.pazienti.data[PAZIENTI.idCL].saldi=saldiProvvisori;
+			}else{
+				// nuovo paziente
+				DB.pazienti.data.push(JSNPUSH);
+				for(p in DB.pazienti.data){
+					DB.pazienti.data[p].id_interno=p;
+					if(md5==DB.pazienti.data[p].md5)PAZIENTI.idCL=p;
+				}
+				postAction = 'PAZIENTI.selPaziente('+p+');';
+			}
+			
+			endChangeDetection();
+			SCHEDA.formModificato = false;
+			localPouchDB.setItem(MD5("DB"+LOGIN._frv()+".pazienti"), IMPORTER.COMPR(DB.pazienti)).then(function(){ // salvo il DB
+				LOGIN.sincronizza(	'PAZIENTI.vis_paziente(true);' +
+									'startAnimate();' +
+									'nasLoader();' +
+									'LOGIN.pulisciGallery();' +
+									postAction );
+			});
 		});
 		return false;
 	},
@@ -1297,6 +1370,7 @@ var PAZIENTI = {
 						// salvo il DB
 					});
 				}catch(err){}
+				LOGIN.pulisciGallery();
 			});
 		}});
 	},
@@ -1867,6 +1941,19 @@ var PAZIENTI = {
 				else elenco.style.display = 'none';
 			}
 		}
+	},
+	
+	setPatientType: function( type ){
+		if(type=='O'){
+			localStorage.noMedico = true;
+			document.getElementById("t_OLISTICO").classList.add("a_SEL");
+			document.getElementById("t_MEDICO").classList.remove("a_SEL");
+		}else{
+			localStorage.noMedico = '';
+			document.getElementById("t_OLISTICO").classList.remove("a_SEL");
+			document.getElementById("t_MEDICO").classList.add("a_SEL");
+		}
+		if(document.getElementById("patientSel").dataset.val!=localStorage.noMedico)ALERT(TXT("AlertNecessarioRiavvio"));
 	},
 	
 	// AGENDA GENERICA

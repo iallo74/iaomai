@@ -4,9 +4,9 @@
 /* COLORI */
 #colori{
 	width:400px;
-	height:290px;
+	height:340px;
 	margin-left:-200px;
-	margin-top:-145px;
+	margin-top:-170px;
 }
 #labelColori{
 	background-image:url(../img/ico_coloriN.png);
@@ -72,7 +72,8 @@ body:not(.smart) #guida_generica #colSel{
 	margin:3px;
 }
 #sizeSel > span,
-#pointerSel > span{
+#pointerSel > span,
+#patientSel > span{
 	display:inline-block;
     vertical-align: middle;
 	height: 50px;
@@ -82,10 +83,10 @@ body:not(.smart) #guida_generica #colSel{
 
 
 #sizeSel > span b,
-#pointerSel > span b{
+#pointerSel > span b,
+#patientSel > span b{
 	display: inline-block;
     vertical-align: middle;
-    width: 36px;
     height: 36px;
     line-height: 34px;
     border-radius: 6px;
@@ -97,6 +98,15 @@ body:not(.smart) #guida_generica #colSel{
 	background-size:30px;
 	background-repeat:no-repeat;
 	background-position:center center;
+}
+#sizeSel > span b,
+#pointerSel > span b{
+    width: 36px;
+}
+#patientSel > span b{
+	font-weight:normal !important;
+	padding-left:10px;
+	padding-right:10px;
 }
 .a_SEL{
 	background-color:rgba(0,0,0,0.7) !important;

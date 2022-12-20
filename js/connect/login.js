@@ -79,8 +79,7 @@ var LOGIN = {
 										
 										localPouchDB.getItem(MD5("DB"+LOGIN._frv()+".foto")).then(function(dbCont){
 											DB.foto=IMPORTER.DECOMPR(dbCont);
-										
-											/*localPouchDB.getItem(MD5("DB"+LOGIN._frv()+".appuntamenti")).then(function(dbCont){
+												/*localPouchDB.getItem(MD5("DB"+LOGIN._frv()+".appuntamenti")).then(function(dbCont){
 												DB.appuntamenti=IMPORTER.DECOMPR(dbCont);
 											
 												localPouchDB.getItem(MD5("DB"+LOGIN._frv()+".annotazioni")).then(function(dbCont){
@@ -1049,14 +1048,18 @@ var LOGIN = {
 													DB.foto.data = DB.pulisciFRV(archiviDemo.foto);
 												}
 												
-												
 												elencoFoto='';
 												for(k in DB.foto.data){
 													if(DB.foto.data[k]){
-														if(!__(DB.foto.data[k].frv))elencoFoto+=JSON.stringify(DB.foto.data[k])+", ";
+														if(	!__(DB.foto.data[k].frv) && 
+															__(DB.foto.data[k].imgBig) && 
+															DB.foto.data[k].imgBig!='404'){
+																elencoFoto+=JSON.stringify(DB.foto.data[k])+", ";
+															}
 													}
 												}
 												if(elencoFoto)elenco+='"foto": ['+elencoFoto.substr(0,elencoFoto.length-2)+'], ';
+												
 												elencoRicerche='';
 												for(k in DB.ricerche.data){
 													if(DB.ricerche.data[k].DataModifica*1>DB.ricerche.lastSync*1 || dwnl || bkp){
@@ -1196,6 +1199,7 @@ var LOGIN = {
 																"allergie": JSON.stringify(DB.pazienti.data[k].allergie),
 																"patologie": JSON.stringify(DB.pazienti.data[k].patologie),
 																"interventi": JSON.stringify(DB.pazienti.data[k].interventi),
+																"gallery": DB.pazienti.data[k].gallery,
 																"Provenienza": DB.pazienti.data[k].Provenienza,
 																"Professione": DB.pazienti.data[k].Professione,
 																"Intestazione": DB.pazienti.data[k].Intestazione,
@@ -1292,7 +1296,7 @@ var LOGIN = {
 												}
 												if(typeof(DB.foto)=='undefined'){
 													DB.foto=[];
-													localPouchDB.setItem(MD5("DB"+LOGIN._frv()+".foto"), JSON.stringify(DB.foto)).then(function(){
+													localPouchDB.setItem(MD5("DB"+LOGIN._frv()+".foto"), IMPORTER.COMPR(DB.foto)).then(function(){
 														// salvo il DB
 													});
 												}	
@@ -1371,7 +1375,8 @@ var LOGIN = {
 		DB.pazienti.lastSync=lastSync;
 		DB.appuntamenti.lastSync=lastSync;
 		DB.annotazioni.lastSync=lastSync;
-		console.log(DB.annotazioni);
+		//console.log(DB.annotazioni);
+		
 		// RICERCHE
 		if(elenco.ricerche){
 			syncUp=true;
@@ -1818,6 +1823,7 @@ var LOGIN = {
 							"allergie": toJson(LOGIN.decryptPrivacy(elenco.pazienti[p].allergie)),
 							"patologie": toJson(LOGIN.decryptPrivacy(elenco.pazienti[p].patologie)),
 							"interventi": toJson(LOGIN.decryptPrivacy(elenco.pazienti[p].interventi)),
+							"gallery": elenco.pazienti[p].gallery,
 							"Provenienza": LOGIN.decryptPrivacy(elenco.pazienti[p].Provenienza),
 							"Professione": LOGIN.decryptPrivacy(elenco.pazienti[p].Professione),
 							"Intestazione": LOGIN.decryptPrivacy(elenco.pazienti[p].Intestazione),
@@ -2169,8 +2175,11 @@ var LOGIN = {
 					localPouchDB.setItem(MD5("DB"+LOGIN._frv()+".annotazioni"), IMPORTER.COMPR(DB.annotazioni)).then(function(){ // salvo il DB
 						localPouchDB.setItem(MD5("DB"+LOGIN._frv()+".appuntamenti"), IMPORTER.COMPR(DB.appuntamenti)).then(function(){ // salvo il DB
 							localPouchDB.setItem(MD5("DB"+LOGIN._frv()+".procedure"), IMPORTER.COMPR(DB.procedure)).then(function(){ // salvo il DB
-								DB.foto = { data: [], lastSync: 0 };
-								localPouchDB.setItem(MD5("DB"+LOGIN._frv()+".foto"), JSON.stringify(DB.foto)).then(function(){ // salvo il DB
+								//DB.foto = { data: [], lastSync: 0 };
+								for(f in DB.foto.data){
+									DB.foto.data[f].imgBig = '';
+								}
+								localPouchDB.setItem(MD5("DB"+LOGIN._frv()+".foto"), IMPORTER.COMPR(DB.foto)).then(function(){ // salvo il DB
 									if(LOGIN.afterFunct){
 										eval(LOGIN.afterFunct);
 										if(LOGIN.afterFunct && LOGIN.afterFunct.indexOf('/*noRic*/')>=-1){
@@ -2204,6 +2213,7 @@ var LOGIN = {
 											PAZIENTI.deselPaziente();
 										}
 									}
+									if(DB.sizeDb<40*1000*1000)LOGIN.updateGallery(); // limite a 40MB (circa 1000 foto)
 								});
 							});
 						});
@@ -2227,6 +2237,93 @@ var LOGIN = {
 		s = s.replace(_slugify_strip_re, '').trim().toLowerCase();
 		s = s.replace(_slugify_hyphenate_re, '-');
 		return s;
+	},
+	updateGallery: function(){
+		if(CONN.getConn() && LOGIN.logedin()!=''){
+			var elenco = [];
+			for(p in DB.pazienti.data){
+				// verifico nel paziente
+				var gallery =  __(DB.pazienti.data[p].gallery,'[]');
+                if(!gallery)gallery='[]';
+                gallery = JSON.parse(gallery);
+				if(gallery.length){
+					for(g in gallery){
+						if(!__(gallery[g].imgMini)){
+							var add = true;
+							for(f in DB.foto.data){
+								if(DB.foto.data[f].idFoto==gallery[g].idFoto && __(DB.foto.data[f].imgMini))add = false;
+							}
+							if(add)elenco.push(gallery[g].idFoto);
+						}
+					}
+				}
+				// verifico nei trattamenti
+				for(t in DB.pazienti.data[p].trattamenti){
+					if(DB.pazienti.data[p].trattamenti[t].gallery){
+						var gallery =  JSON.parse(DB.pazienti.data[p].trattamenti[t].gallery);
+						if(gallery.length){
+							for(g in gallery){
+								if(!__(gallery[g].imgMini)){
+									var add = true;
+									for(f in DB.foto.data){
+										if(DB.foto.data[f].idFoto==gallery[g].idFoto && __(DB.foto.data[f].imgMini))add = false;
+									}
+									if(add)elenco.push(gallery[g].idFoto);
+								}
+							}
+						}
+					}
+				}
+			}
+			CONN.caricaUrl(	'getImgGallery_GLOBAL.php','b64=1&iU='+DB.login.data.idUtente+'&JSNPOST='+window.btoa(encodeURIComponent(JSON.stringify(elenco))),'LOGIN.updateGallery_save');
+		}
+	},
+	updateGallery_save: function( res ){
+		if(res){
+			var foto = JSON.parse(res);
+			for(f in foto){
+				var presente = false;
+				for(g in DB.foto.data){
+					if(DB.foto.data[g].idFoto == foto[f].idFoto){
+						DB.foto.data[g].imgMini = foto[f].imgMini;
+						presente = true;
+					}
+				}
+				if(!presente)DB.foto.data.push(foto[f]);
+			}
+			localPouchDB.setItem(MD5("DB"+LOGIN._frv()+".foto"), IMPORTER.COMPR(DB.foto)).then(function(){ // salvo il DB
+			});
+		}
+	},
+	pulisciGallery: function(){
+		for(f=DB.foto.data.length-1;f>=0;f--){
+			presente = false;
+			for(p in DB.pazienti.data){
+				// verifico nel paziente
+				var gallery =  __(DB.pazienti.data[p].gallery,'[]');
+                if(!gallery)gallery='[]';
+                gallery = JSON.parse(gallery);
+				if(gallery.length){
+					for(g in gallery){
+						if(DB.foto.data[f].idFoto == gallery[g].idFoto)presente = true;
+					}
+				}
+				// verifico nei trattamenti
+				for(t in DB.pazienti.data[p].trattamenti){
+					if(DB.pazienti.data[p].trattamenti[t].gallery){
+						var gallery =  JSON.parse(DB.pazienti.data[p].trattamenti[t].gallery);
+						if(gallery.length){
+							for(g in gallery){
+								if(DB.foto.data[f].idFoto == gallery[g].idFoto)presente = true;
+							}
+						}
+					}
+				}
+			}
+			if(!presente)DB.foto.data.splice(f,1);
+		}
+		localPouchDB.setItem(MD5("DB"+LOGIN._frv()+".foto"), IMPORTER.COMPR(DB.foto)).then(function(){ // salvo il DB
+		});
 	},
 	
 	

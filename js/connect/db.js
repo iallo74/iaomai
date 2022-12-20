@@ -145,7 +145,7 @@ var DB = {
 	resDbSize: function(){
 		// controllo l'occupazione dello spazio del DB al di sopra dei 45MB
 		console.log("Totale spazio DB: "+DB.sizeDb);
-		if(DB.sizeDb>4500){
+		if(DB.sizeDb>45*1000*1000){
 		   // invio un alert a noi
 		}
 	},

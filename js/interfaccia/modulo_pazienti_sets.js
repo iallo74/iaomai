@@ -549,7 +549,7 @@ var PAZIENTI_SETS = {
 					descrizione = __(PAZIENTI.meridianiProvvisori[m].descrizione);
 					HTML_noMod += '<span class="tsb"><img src="img/lineaPat.png" class="noMod" style="vertical-align: middle;margin: -3px 2px 0px 3px;"> ';
 					HTML_noMod += '<b>'+NomeMeridiano+'</b>';
-					if(valutazione)HTML_noMod += '<img src="img/ico_PV'+m2+'.png" class="noMod" style="vertical-align: middle;margin-top: -3px;">';
+					if(m2)HTML_noMod += '<img src="img/ico_PV'+m2+'.png" class="noMod" style="vertical-align: middle;margin-top: -3px;">';
 					if(descrizione)HTML_noMod += ' <span style="font-style:italic;">'+htmlEntities(descrizione)+'</span>';
 					HTML_noMod += '</span> ';
 				}

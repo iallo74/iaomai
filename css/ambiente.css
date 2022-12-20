@@ -311,7 +311,8 @@ body:not(.bodyModello) #logoSovra{
 }
 
 
-#loader, #fotoBig{
+#loader,
+#fotoBig{
 	display:block;
 	position:fixed;
 	top:0px;
@@ -346,6 +347,24 @@ body:not(.bodyModello) #logoSovra{
 }
 #chiudiFotoBig:hover{
 	background-color:rgba(255,255,255,0.8) !important;
+}
+#foto_alert{
+	display:none;
+	position:fixed;
+	bottom:5px;
+	left:5px;
+	height:30px;
+	line-height:30px;
+	background-image:url(../img/alertmini.png);
+	background-position:left center;
+	background-repeat:no-repeat;
+	background-size:25px;
+	padding-left:30px;
+	padding-right:10px;
+	z-index:1000002;
+	color:#FFF;
+	background-color:rgba(0,0,0,0.6);
+	border-radius:15px;
 }
 #loader div{
 	position:absolute;
