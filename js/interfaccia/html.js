@@ -230,6 +230,11 @@ var H = {
 		}
 	},
 	
+	auto_height: function( elem ){ // ridimensiona un elemento textarea dinamicamente
+		elem.style.height = "1px";
+		elem.style.height = (elem.scrollHeight)+"px";
+	},
+	
 	keyData: function( event, el ){
 		var id = el.parentElement.id;
 		var giorno=document.getElementById("giorno" + id).value;
@@ -498,7 +503,9 @@ var H = {
 		HTML += '<div id="sez_cont_'+obj.nome+'"' +
 				'	  class="sezioneTrattamenti divEspansa'+(!__(obj.aperta) ? ' sezioneChiusa' : '' )+'">' +	
 				'	<em class="labelMobile labelTrattamenti"' +
-				'  		onClick="H.swSezione(this);">' +
+				'  		onClick="H.swSezione(this);';
+		if(obj.nome == 'foto')HTML += 'PAZIENTI.resizeDida();';
+		HTML += '">' +
 				'		<img class="icoLabel"' +
 				'			 src="img/ico_'+img+'.png">' +
 						obj.label +

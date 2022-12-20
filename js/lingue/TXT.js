@@ -1780,13 +1780,8 @@ DB.TXT = {
 		},
 		
 		// sintomi
-		AggiungiSintomoA: {
-			ita: "Aggiungi sintomo alla cartella clinica",
-			eng: "Add a symptom to the medical file",
-			esp: ""
-		},
 		AggiungiSintomo: {
-			ita: "Aggiungi sintomo",
+			ita: "Aggiungi un sintomo",
 			eng: "Add a symptom",
 			esp: ""
 		},

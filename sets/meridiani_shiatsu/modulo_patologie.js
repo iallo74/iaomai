@@ -1,7 +1,10 @@
 
 var MODULO_PATOLOGIE = { // extend SET
+
 	PATOLOGIE_free: [ 12, 18, 26, 46, 104 ],
+	
 	caricaPatologie: function(){
+		// carica la lista delle patologie
 		var contPatologie = 
 						'<div id="add_pat">'+
 						'	<input id="pat_ricerca"' +
@@ -27,6 +30,7 @@ var MODULO_PATOLOGIE = { // extend SET
 		document.getElementById("lista_patologie").innerHTML = contPatologie;
 	},
 	apriPatologia: function( n, btn ){
+		// apre la scheda della patologia
 		// verifico le autorizzazioni
 		if(SET.PATOLOGIE_free.indexOf(n*1)==-1 && (DB.login.data.auths.indexOf(globals.set.cartella)==-1 || !LOGIN.logedin())){
 			ALERT(TXT("MsgContSoloPay"));
@@ -65,15 +69,8 @@ var MODULO_PATOLOGIE = { // extend SET
 		SET.evidenziaTsubo(html);
 		SET.evidenziaMeridiani(html);
 	},
-	azRicercaPatologie: function( p ){
-		SCHEDA.apriElenco('set');
-		SET.apriPatologia( p, document.getElementById('btn_patologia_'+p));
-		SCHEDA.selElenco('patologie');
-		evidenziaParola();
-		RICERCHE.nascondiGlobal();
-		SCHEDA.individuaElemento( "btn_patologia_"+p, "listaPatologie" );
-	},
 	filtraPatologie: function( event ){
+		// filtra le patologie con il campo testuale
 		var parola = document.getElementById("pat_ricerca").value.trim();
 		for(p in DB.set.patologie){
 			if(DB.set.patologie[p].NomePatologia.toLowerCase().indexOf(parola.toLowerCase()) == -1){
@@ -84,5 +81,14 @@ var MODULO_PATOLOGIE = { // extend SET
 		}
 		if(parola)document.getElementById("pat_ricerca").classList.add("filtro_attivo");
 		else document.getElementById("pat_ricerca").classList.remove("filtro_attivo");
+	},
+	azRicercaPatologie: function( p ){
+		// apre una patologia della ricerca globale
+		SCHEDA.apriElenco('set');
+		SET.apriPatologia( p, document.getElementById('btn_patologia_'+p));
+		SCHEDA.selElenco('patologie');
+		evidenziaParola();
+		RICERCHE.nascondiGlobal();
+		SCHEDA.individuaElemento( "btn_patologia_"+p, "listaPatologie" );
 	}
 }

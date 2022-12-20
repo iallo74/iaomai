@@ -148,7 +148,7 @@ var MODULO_PUNTI = { // extend SET
 			
 			sceltaPuntiTag += 	'<select id="sceltaMappaElenco"';
 			if(!globals.modello.cartella)sceltaPuntiTag +=
-								'		 onClick="ALERT(TXT(\'alertApriModello\'));return;"' +
+								'		 onClick="this.blur();ALERT(TXT(\'alertApriModello\'));return;"' +
 								'		 style="opacity:0.5;"';
 			sceltaPuntiTag += 	'		 onChange="SET.cambiaMappa(this.value);">';
 			for(m in GEOMETRIE.mappe){
@@ -220,12 +220,12 @@ var MODULO_PUNTI = { // extend SET
 		for(e in localStorage){
 			if(typeof(e)!='undefined'){
 				if(e.indexOf("auricolo_mn_")==0){
-					if(localStorage[e]!='')document.getElementById("p_"+e.replace("auricolo_mn_","")).click();
+					if(localStorage[e]!='' && globals.modello.cartella)document.getElementById("p_"+e.replace("auricolo_mn_","")).click();
 					pass = true;
 				}
 			}
 		}
-		if(!pass)document.getElementById("p_legenda").click();
+		if(!pass && globals.modello.cartella)document.getElementById("p_legenda").click();
 		if(SET.groupSel.id)SET.filtraGruppo( SET.groupSel.type, SET.groupSel.val, SET.groupSel.id, true );
 	},
 	swElencoPt: function( el, m ){

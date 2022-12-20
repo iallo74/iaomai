@@ -1,8 +1,10 @@
 
 var MODULO_MERIDIANI = { // extend SET
+	
 	MERIDIANI_free: [ "LR" ],
+	
 	caricaMeridiani: function(){
-		// meridiani
+		// carica la lista dei meridiani
 		var contElencoMeridiani = contSmart = '';
 		var n = 0;
 		for(m in DB.set.meridiani){
@@ -27,7 +29,6 @@ var MODULO_MERIDIANI = { // extend SET
 			}
 			var siglaPunto = m;
 			if(m!='EX')siglaPunto = SET.convSigla(m);
-			//else siglaPunto = m;
 			
 			contElencoMeridiani +=	'<div onMouseOver="SET.eviMeridiano(\''+m+'\',true);"' +
 									'     onMouseOut="SET.eviMeridiano(\''+m+'\',false);"' +
@@ -35,7 +36,6 @@ var MODULO_MERIDIANI = { // extend SET
 									'     id="p'+m+'"' +
 									'     class="p_'+MERIDIANI[m].elemento+addClass+addLock;
 									
-			//if(m=='CV' || m=='GV')contElencoMeridiani +=	' noMAS';
 			contElencoMeridiani +=	'">' +
 									'	<span class="noMAS"' +
 									'		  title="'+htmlEntities(TXT("AccendiMeridiano"))+'"' +
@@ -75,15 +75,18 @@ var MODULO_MERIDIANI = { // extend SET
 		SET.filtraMeridiani();
 	},
 	eviMeridiano: function( m, b ){
+		// evidenzia il meridiano al passaggio
 		if(!MERIDIANI[m+localStorage.sistemaMeridianiAdd].meridianoAcceso){
 			if(b)SET.coloraMeridiano(m,'Over','Over');
 			else SET.coloraMeridiano(m,'','Base');
 		}
 	},
-	swMeridianiSmart: function(){ // visualizza/nasconde il menu rapido dei meridiani (in alto a SX)
+	swMeridianiSmart: function(){
+		// visualizza/nasconde il menu rapido dei meridiani (in alto a SX)
 		document.getElementById("meridianiSmart_cont").classList.toggle("visSch");
 	},
 	swElencoPt: function( el, m ){
+		// mostra/nasconde l'elenco dei punti di un meridiano
 		if(!document.getElementById("e_"+m).classList.contains("visElPt")){
 			document.getElementById("e_"+m).classList.add("visElPt");
 			el.classList.add("frSw");
@@ -92,7 +95,8 @@ var MODULO_MERIDIANI = { // extend SET
 			el.classList.remove("frSw");
 		}
 	},
-	filtraMeridiani: function(){ // filtra i meridiani negli elenchi (per masunaga che non ha CV e GV)
+	filtraMeridiani: function(){
+		// filtra i meridiani negli elenchi (per masunaga che non ha CV e GV)
 		var vis = 'none';
 		if(!localStorage.sistemaMeridiani)vis = 'block';
 		
@@ -100,6 +104,7 @@ var MODULO_MERIDIANI = { // extend SET
 		document.getElementById("meridianiSmart_cont").classList.toggle("onlyCIN", (!localStorage.sistemaMeridiani));
 	},
 	clickMeridiano: function( m, el ){
+		//
 		if(localStorage.sistemaMeridiani == 'MAS'){
 			SET.accendiMeridiano(m,true);
 		}else{

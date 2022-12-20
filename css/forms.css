@@ -2120,33 +2120,65 @@ body:not(.touch) .sezioneChiusa:hover{
 	overflow-y: hidden;
     overflow-x: auto;
     padding: 10px;
-    white-space: nowrap;	
+    white-space: nowrap;
+    text-align: center;
+}	
+#pazienti_vis #contGallery{
+    margin-left: -30px;
+    margin-right: -30px;
 }
 .galleryFull{
-    height: 180px;
+    min-height: 180px;
 }
-#contGallery > div:not(.noResults),
-#contGallery > div:not(.noResults) > div {
+#contGallery > div > div:not(.DidaFoto),
+#contGallery > div > div > div {
     width: 150px;
     height: 150px;
 }
 #contGallery > div:not(.noResults) {
     border-radius: 5px;
-    margin: 5px;
-    box-shadow: 0px 0px 3px rgb(0 0 0 / 50%);
+	display:inline-block;
+	vertical-align:top;
+}
+#contGallery > div > div:not(.DidaFoto) {
+    border-radius: 8px;
+    margin: 2px 7px 2px 7px;
+    box-shadow: 0px 0px 3px rgba(0,0,0,0.5);
 	background-image:url(../img/loadingBlack.gif);
 	background-color:#000;
 	background-size:50px;
 	background-position:center center;
     background-repeat: no-repeat;
-	display:inline-block;
-	vertical-align:top;
 	overflow:hidden;
 }
-#contGallery > div:not(.noResults) > div {
+#contGallery > div > p{
+    margin: 5px;
+    text-align: center;
+    white-space: normal;
+    line-height: 15px !important;
+	width: 154px;
+}
+#contGallery > div > div:not(.DidaFoto) > div {
 	background-size:cover;
 	background-position:center center;
 	cursor: pointer;
+}
+.DidaFoto{
+	padding-top:5px;
+	width: 159px;
+	margin: 0px 3px;
+}
+.DidaFoto textarea{
+	padding: 5px !important;
+    line-height: 15px !important;
+    border: none !important;
+    background-color: transparent !important;
+    text-align: center;
+}
+.DidaFoto textarea::placeholder{
+	opacity:0.5 !important;
+	text-align:center !important;
+	font-style:italic;
 }
 .noConn{
 	background-image: url(../img/noConn2.png) !important;

@@ -1,7 +1,10 @@
 
 var MODULO_TSUBO = { // extend SET
+
 	note: [],
+	
 	caricaTsubo: function( siglaMeridiano, nTsubo, ritorno ){
+		// apre la scheda di uno tsubo
 		// verifico le autorizzazioni
 		if(SET.MERIDIANI_free.indexOf(siglaMeridiano)==-1 && (DB.login.data.auths.indexOf(globals.set.cartella)==-1 || !LOGIN.logedin())){
 			ALERT(TXT("MsgContSoloPay"));
@@ -86,6 +89,27 @@ var MODULO_TSUBO = { // extend SET
 		
 		HTML += SET.convPuntiScheda(DB.set.meridiani[siglaMeridiano].tsubo[nTsubo].AzioniTsubo,true);
 		
+		// elenco le patolige incluse
+		var elenco = [];
+		for(p in DB.set.patologie){
+			var regexp = /[\s>\(\.\,]{0,1}[0-9]{1,2}\.[A-Z]{2}[\s<\.,\)]{1}/ig;
+			var pts = DB.set.patologie[p].TestoPatologia.match(regexp);
+			for(i in pts){
+				if(pts[i]=='.'+(nTsubo+1)+'.'+siglaMeridiano+'.'){
+					var JSNPUSH = {"p": p, "NomePatologia": DB.set.patologie[p].NomePatologia} 
+					
+					if(elenco.indexOf(JSNPUSH)==-1)elenco.push(JSNPUSH);
+				}
+			}
+		}
+		if(elenco.length){
+			HTML += '<div id="patologieTsubo">' +
+					'	<div onClick="this.parentElement.classList.toggle(\'vis\');">'+TXT("Patologie")+'</div>';
+			for(e in elenco){
+				HTML += '<p onClick="SET.apriPatologia(\''+elenco[e].p+'\',document.getElementById(\'btn_patologia_'+elenco[e].p+'\'));"><span>• '+elenco[e].NomePatologia+'</span></p>';
+			}
+			HTML += '</div>';
+		}
 		
 		imgDettaglio='';
 		posPunti='';
@@ -146,6 +170,8 @@ var MODULO_TSUBO = { // extend SET
 			}
 		}
 		
+		
+		
 		if(SCHEDA.classeAperta == 'scheda_meridiano'){
 			// verifico che il meridiano aperto sia lo stesso altrimenti cambio la scheda secondaria
 			if(SET.mAtt != siglaMeridiano){
@@ -172,8 +198,6 @@ var MODULO_TSUBO = { // extend SET
 		SET.settaOverTsubo();
 		SET.ptSel = ptSel;
 		if(!ritorno || !SCHEDA.formModificato)initChangeDetection( "formAnnotazioni" );
-		
-		//if(ritorno && !SCHEDA.libera.stato)SCHEDA.nasScheda(); // <<<< CANCELLARE
 		if(ritorno && !SCHEDA.aggancio.tipo == 'libera')SCHEDA.nasScheda();
 		
 		document.getElementById("frSchSu").onclick = '';
@@ -204,7 +228,9 @@ var MODULO_TSUBO = { // extend SET
 		}
 		document.getElementById("frSch").className = classFr;
 	},
-	mod_nota: function( Q_nome_meridiano, Q_p ){	 // salva la nota di uno tsubo
+	
+	mod_nota: function( Q_nome_meridiano, Q_p ){
+		// salva la nota di uno tsubo
 		var nota_salvata=false;
 		var DataModifica = DB.note.lastSync+1;
 		var pDef=-1;
@@ -242,6 +268,7 @@ var MODULO_TSUBO = { // extend SET
 		});
 	},
 	verNotaCli: function( p ){
+		// verifica che ci sia una nota per il cliente attivo
 		var pass=true;
 		if(PAZIENTI.idCL>-1){
 			pass=false;
@@ -254,6 +281,7 @@ var MODULO_TSUBO = { // extend SET
 		return pass;
 	},
 	leggiNota: function( mr, pt ){
+		// restituisce il testo della nota
 		var TestoAnnotazione = '';
 		for(n in DB.note.data){
 			var pass =false;
@@ -271,6 +299,7 @@ var MODULO_TSUBO = { // extend SET
 		return TestoAnnotazione;
 	},
 	leggiNote: function(){
+		// crea l'elenco delle note e le evidenzia dul modello
 		SET.evidenziaNote(false);
 		SET.note = [];
 		if(DB.note){
@@ -293,6 +322,7 @@ var MODULO_TSUBO = { // extend SET
 		SET.evidenziaNote(true);
 	},
 	evidenziaNote: function( az ){
+		// evidenzia le note sul manichino
 		for(n in SET.note){
 			var pP = SET.note[n].split(".");
 			for(m in SETS.children){
@@ -316,14 +346,17 @@ var MODULO_TSUBO = { // extend SET
 		}
 	},
 	verificaNota: function( n ){
+		// verifica che ci sia una nota sullo tsubo
 		return SET.note.indexOf(n)>-1;
 	},
 	leggiSiglaMeridiano: function( cartella ){
+		// restituisce la sigla del meridiano
 		for(k in DB.set.meridiani){
 			if(DB.mtc.meridiani[k].cartella == cartella)return k;
 		}
 	},
 	azRicercaTsubo: function( pt ){
+		// apre la scheda dello tsubo dalla ricerca globale
 		SET.apriTsubo(pt);
 		evidenziaParola();
 	}

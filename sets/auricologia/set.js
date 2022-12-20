@@ -709,7 +709,7 @@ SET = {
 			if(manichinoCont.position.z!=15)zoomEnd = 15;
 			normalizeRotation();
 		}
-		if(PT_name_first){
+		if(PT_name_first && globals.modello.cartella){
 			SET.addEviPalls(PT_name_first,'Select');
 			this.pulse = 1;
 		}
@@ -723,7 +723,7 @@ SET = {
 		document.getElementById("scheda").classList.remove("tab_tsubo");
 		document.getElementById("scheda").classList.remove("schForm");
 		document.getElementById("ts_"+this.ptSel.name.substr(2,3)).classList.remove("selElPt");
-		if(!globals.modello.cartella)return;
+		//if(!globals.modello.cartella)return;
 		if(!nonChiudereScheda){
 			endChangeDetection();
 			SCHEDA.formModificato = false;

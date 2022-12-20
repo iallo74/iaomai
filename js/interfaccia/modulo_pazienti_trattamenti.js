@@ -716,7 +716,7 @@ var PAZIENTI_TRATTAMENTI = {
 					'	<div class="p_paz_label"' +
 					'		 id="p_paz_label_sintomi"' +
 					'			 onclick="PAZIENTI.visAggiungiSintomo();">' +
-							htmlEntities(TXT("AggiungiSintomo" + ((idCiclo!=-1 || TipoTrattamento=='A')?'A':''))) +
+							htmlEntities(TXT("AggiungiSintomo")) +
 					'	</div>'+
 					'</div>' +
 
@@ -783,7 +783,7 @@ var PAZIENTI_TRATTAMENTI = {
 						((localStorage.getItem("op_gallery")) ? '' : 'sezioneChiusa') +
 						'">' +
 					'	<em class="labelMobile labelTrattamenti"' +
-					'		onClick="H.swSezione(this);">' +
+					'		onClick="H.swSezione(this);PAZIENTI.resizeDida();">' +
 					'		<img class="icoLabel"' +
 					'		     src="img/ico_foto.png">' +
 							TXT("Gallery")+' (<span id="totFoto"></span>)' +
@@ -850,8 +850,8 @@ var PAZIENTI_TRATTAMENTI = {
 			if(TipoTrattamento=='A' || !LabelCiclo)PAZIENTI.popolaSintomi();
 			PAZIENTI.caricaDettagliSet(); // carico le schede dei singoli sets (TsuboMap, ShiatsuMap, ecc)
 			PAZIENTI.caricaSintomi();
-			//PAZIENTI.caricaGalleryTrattamento( Q_idTratt );
-			PAZIENTI.caricaGalleryTrattamento();
+			//PAZIENTI.caricaGallery( Q_idTratt );
+			PAZIENTI.caricaGallery();
 			PAZIENTI.trattOp = true;
 			initChangeDetection( "formMod" );
 			SCHEDA.formModificato = false;
@@ -1105,6 +1105,7 @@ var PAZIENTI_TRATTAMENTI = {
 			//var f = 0;
 			var GA = PAZIENTI.galleryProvvisoria;
 			for(i in GA){
+				GA[i].Dida = document.getElementById("Dida"+i).value;
 				if(typeof(GA[i].imgMini) != 'undefined' && GA[i]!=null && GA[i].imgMini!=null){
 					
 					// salvo l'immagine nel DB locale
@@ -1164,7 +1165,7 @@ var PAZIENTI_TRATTAMENTI = {
 										'nasLoader();' +
 										'PAZIENTI.caricaTrattamenti('+pDef+');' +
 										"PAZIENTI.car_trattamento("+pDef+", document.getElementById('btn_trattamento_"+pDef+"'));" +
-										'PAZIENTI.pulisciGallery('+pDef+');' +
+										/*'PAZIENTI.pulisciGallery('+pDef+');' +*/
 										'LOGIN.pulisciGallery();' );
 					
 				});
@@ -1172,7 +1173,7 @@ var PAZIENTI_TRATTAMENTI = {
 		}
 		return false;
 	},
-	pulisciGallery: function( pDef ){
+	/*pulisciGallery: function( pDef ){
 		if(CONN.getConn() && LOGIN.logedin()){
 			for(i in PAZIENTI.galleryProvvisoria){
 				PAZIENTI.galleryProvvisoria[i].imgBig = '';
@@ -1192,7 +1193,7 @@ var PAZIENTI_TRATTAMENTI = {
 			else SCHEDA.scaricaScheda(true);
 		}
 		PAZIENTI.saving = false;
-	},
+	},*/
 	el_trattamento: function( Q_idTratt ){
 		// elimina il trattamento
 		var TXT_EL_AL=TXT("ChiediEliminaTrattamento");
@@ -1579,19 +1580,19 @@ var PAZIENTI_TRATTAMENTI = {
 	
 	
 	// gallery
-	caricaGalleryTrattamento: function( vis ){
-		if(typeof(vis)=='undefined')var vis = false;
+	caricaGallery: function( vis ){ // carica la gallery del trattamento
+		/*if(typeof(vis)=='undefined')var vis = false;
 		if(typeof(DB.foto) == 'undefined'){
 			localPouchDB.getItem(MD5("DB"+LOGIN._frv()+".foto")).then(function(dbCont){ // leggo il DB NOTE
 				//DB.foto = JSON.parse(dbCont);
 				DB.foto = IMPORTER.DECOMPR(dbCont);
-				PAZIENTI.caricaGalleryTrattamento_post(vis);
+				PAZIENTI.caricaGallery_post(vis);
 			});
 		}else{
-			PAZIENTI.caricaGalleryTrattamento_post(vis);
+			PAZIENTI.caricaGallery_post(vis);
 		}
 	},
-	caricaGalleryTrattamento_post: function( vis ){ // carica i punti del trattamento
+	caricaGallery_post: function( vis ){*/
 		var HTML='';
 		var totFoto = 0;
 		var afterFunct = '';
@@ -1624,26 +1625,43 @@ var PAZIENTI_TRATTAMENTI = {
 						cls='noConn';
 					}
 				}
-				HTML += '<div id="gall_'+i+'"' +
-						'	  class="' +
-							  ((cls) ? cls : '') +
-						  	  ((locale) ? 'fotoLocale' : '') + '">' +
-						'	<div' +
-								((src) ? ' style="background-image:url(\''+src+'\');"' : '') +
-						' 		  onClick="if(!PAZIENTI.overCestino)PAZIENTI.fullFoto('+i+','+locale+');">' +
-						'		<img class="gall_full"' +
-						'		 	 src="img/ico_fullscreen.png">';
+				HTML += '<div>' +
+						'	<div id="gall_'+i+'"' +
+						'		  class="' +
+								  ((cls) ? cls : '') +
+							  	  ((locale) ? 'fotoLocale' : '') + '">' +
+						'		<div' +
+									((src) ? ' style="background-image:url(\''+src+'\');"' : '') +
+						'	 		  onClick="if(!PAZIENTI.overCestino)PAZIENTI.fullFoto('+i+','+locale+');">' +
+						'			<img class="gall_full"' +
+						'			 	 src="img/ico_fullscreen.png">';
 				if(!vis)HTML += 
-						'		<img class="gall_del"' +
-						'		 	 src="img/ico_cestinoB.png"' +
-						'		 	 onMouseOver="PAZIENTI.overCestino=true;"' +
-						'		 	 onMouseOut="PAZIENTI.overCestino=false;"' +
-						'		 	 onClick="PAZIENTI.eliminaFoto('+i+');">';
-				HTML += '	</div>' +
-						'</div>';
+						'			<img class="gall_del"' +
+						'			 	 src="img/ico_cestinoB.png"' +
+						'			 	 onMouseOver="PAZIENTI.overCestino=true;"' +
+						'			 	 onMouseOut="PAZIENTI.overCestino=false;"' +
+						'			 	 onClick="PAZIENTI.eliminaFoto('+i+');">';
+				HTML += '		</div>' +
+						'	</div>';
+				var Dida = __(PAZIENTI.galleryProvvisoria[i].Dida);
+				if(vis && Dida)HTML +='	<p>'+Dida+'</p>';
+				if(!vis)HTML += H.r({	t: "t",	
+								name: "Dida"+i,	
+								value: Dida,
+								classRiga: "DidaFoto",
+								classCampo: 'TitTrattDx',
+								label: 'Inserisci una dida...',
+								noLabel: true,
+								keyupCampo: 'H.auto_height(this);' });
+				HTML += '</div>';
 			}
 			document.getElementById('contGallery').classList.add("galleryFull");
 			document.getElementById('contGallery').innerHTML = HTML;
+			if(!vis){
+				setTimeout( function(){
+					PAZIENTI.resizeDida();
+				}, 500);
+			}
 		}
 		if(!totFoto){
 			document.getElementById('contGallery').classList.remove("galleryFull");
@@ -1667,6 +1685,11 @@ var PAZIENTI_TRATTAMENTI = {
 		}
 		document.getElementById('contGallery').innerHTML = HTML;
 		if(afterFunct)eval(afterFunct);
+	},
+	resizeDida: function(){
+		for(i in PAZIENTI.galleryProvvisoria){
+			H.auto_height(document.getElementById('Dida'+i));
+		}
 	},
 	scriviFoto: function( res ){
 		res = JSON.parse( res );
@@ -1703,7 +1726,7 @@ var PAZIENTI_TRATTAMENTI = {
 						imgBig: obj.imgBig,
 						nuova: true }
 		PAZIENTI.galleryProvvisoria.push(JSNPUSH);
-		PAZIENTI.caricaGalleryTrattamento();
+		PAZIENTI.caricaGallery();
 		SCHEDA.formModificato = true;
 	},
 	eliminaFoto: function( f ){
@@ -1715,7 +1738,7 @@ var PAZIENTI_TRATTAMENTI = {
 
 			PAZIENTI.galleryProvvisoria.splice(f,1);
 			
-			PAZIENTI.caricaGalleryTrattamento();
+			PAZIENTI.caricaGallery();
 			SCHEDA.formModificato = true;
 		}});
 	},

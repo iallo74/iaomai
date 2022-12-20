@@ -272,7 +272,7 @@ SET = {
 		}
 		postApreSet = false;
 		
-		//SET.iniPos();
+		//SET.iniPos(); // se decommentato server per salvare in localSorage.POS la posizione del manichino
 		
 	},
 	
@@ -331,8 +331,7 @@ SET = {
 	// RENDER SET
 	_render: function(){
 		var make=true;
-		//console.log(manichinoCaricato && !raycastDisable && !controlsM._ZPR && controlsM._MM)
-	 	if(manichinoCaricato && !raycastDisable && !controlsM._ZPR && !controlsM._premuto){//} && controlsM._MM){ // roll-over sui punti
+	 	if(manichinoCaricato && !raycastDisable && !controlsM._ZPR && !controlsM._premuto){ // roll-over sui punti
 			
 			camera.updateMatrixWorld();
 			raycaster.setFromCamera( mouse, camera );
@@ -428,22 +427,6 @@ SET = {
 	setPulsePt: function( pt, pulse, op, mat ){
 		if(typeof(mat)=='undefined')var mat = '';
 		var pP = pt.name.split(".");
-		/*var ptCc = manichino.getObjectByName(pP[0]+"."+pP[1]);
-		var ptSx = manichino.getObjectByName(pP[0]+"."+pP[1]+".SX");
-		var ptDx = manichino.getObjectByName(pP[0]+"."+pP[1]+".DX");
-		if(ptCc){
-			ptCc.scale.set(pulse,pulse,pulse);
-			if(mat)ptCc.material=mat;
-		}
-		if(ptSx){
-			ptSx.scale.set(pulse,pulse,pulse);
-			if(mat)ptSx.material=mat;
-		}
-		if(ptDx){
-			ptDx.scale.set(pulse,pulse,pulse);
-			if(mat)ptDx.material=mat;
-		}*/
-		
 		var els = scene.getObjectByName("PT_"+pP[0]).children;
 		for(e in els){
 			if(els[e].name.indexOf(pP[0]+"."+pP[1]+".")==0){
@@ -451,7 +434,6 @@ SET = {
 				if(mat)els[e].material=mat;
 			}
 		}
-		
 		SET.MAT.pointSel.setValues( { opacity: op } );
 	},
 	desIntersected: function(){
@@ -487,9 +469,7 @@ SET = {
 	_onClick: function(e){
 		var btn=0;
 		if(!touchable)btn=e.button;
-		//console.log("!"+btn+" && !"+raycastDisable+" && (("+controlsM.xIni+"=="+controlsM.xEnd+" && "+controlsM.yIni+"=="+controlsM.yEnd+") || "+touchable+")");
 		if(!btn && !raycastDisable && ((controlsM.xIni==controlsM.xEnd && controlsM.yIni==controlsM.yEnd) || touchable)){
-			//console.log(this.INTERSECTED)
 			if(this.INTERSECTED){
 				if(!touchable){
 					controlsM._inMovimento=true;
@@ -572,7 +552,6 @@ SET = {
 		if(this.ptSel.userData.interno){
 			this.preCM = SET.COL.contrastMethod;
 			this.swContrastMethod(false);
-			//this.ptSel.material.depthFunc = 1;
 			
 			var evidenziati = this.ptSel.userData.evidenziati;
 			if(evidenziati){
@@ -597,7 +576,6 @@ SET = {
 			SCHEDA.formModificato = false;
 		}
 		if(this.ptSel){
-			//this.ptSel.material.depthFunc = 3;
 			if(this.ptSel.userData.interno){
 				this.preCM = false;
 				this.swContrastMethod(true);
@@ -821,9 +799,6 @@ SET = {
 				SET.MAT.lineGuide.opacity = 0.15;
 				SET.MAT.pointBase.opacity = 0.15;
 			}
-			/*SET.MAT.lineYang.depthTest = false;
-			SET.MAT.lineYin.depthTest = false;
-			SET.MAT.pointBase.depthTest = false;*/
 		}else{
 			if(!SET.meridianiSecondariAccesi.length || (this.ptSel && this.ptSel.userData.evidenziati)){
 				if(muscleView)MODELLO.swMuscle();
@@ -839,9 +814,6 @@ SET = {
 				SET.MAT.lineYin.opacity = 0.6;
 				SET.MAT.pointBase.opacity = 1;
 				SET.MAT.lineGuide.opacity = 0.6;
-				/*SET.MAT.lineYang.depthTest = true;
-				SET.MAT.lineYin.depthTest = true;
-				SET.MAT.pointBase.depthTest = true;*/
 			}
 		}
 		SET._setLineMaterials();
@@ -1160,9 +1132,6 @@ SET = {
 			}	
 		}
 		if(typeof(mantieni) == 'undefined')var mantieni = false;
-		/*if(SET.meridianiSecondariAccesi.length && !mantieni){
-			SET.spegniMeridianoSecondario();
-		}*/
 		SET.meridianiSecondariAccesi.push(sigla);
 		
 		var meridiano = scene.getObjectByName( "LN_"+sigla );
@@ -1189,7 +1158,6 @@ SET = {
 			SET.MAT.lineYang.visible = false;
 			SET.MAT.lineYin.visible = false;
 			MODELLO.MAT.materialVisceri.visible = false;
-			/*MODELLO.MAT.materialOssa.visible = false;*/
 		}
 	},
 	spegniMeridianoSecondario: function( sigla, forza ){
@@ -1203,7 +1171,6 @@ SET = {
 				if(SET.meridianiSecondariAccesi[m].indexOf("_")==-1){
 					var mer = SET.meridianiSecondariAccesi[m];
 					setTimeout(function(mer){SET.eviMeridiano(mer,false);},200,mer);
-					//if(SET.meridianiSecondariAccesi[m]!='CV' && SET.meridianiSecondariAccesi[m] != 'GV')
 					if(forza)SET.accendiMeridiano(SET.meridianiSecondariAccesi[m],true,true);
 					meridianoPrincipale = true;
 				}else{
@@ -1236,7 +1203,6 @@ SET = {
 			SET.MAT.lineYang.visible = true;
 			SET.MAT.lineYin.visible = true;
 			MODELLO.MAT.materialVisceri.visible = true;
-			/*MODELLO.MAT.materialOssa.visible = true;*/
 		}
 	},
 	

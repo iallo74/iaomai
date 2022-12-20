@@ -850,7 +850,7 @@ var PAZIENTI = {
 			PAZIENTI.popolaElementi('patologie');
 			PAZIENTI.caricaElementi('interventi');
 			PAZIENTI.popolaElementi('interventi');
-			PAZIENTI.caricaGalleryTrattamento();
+			PAZIENTI.caricaGallery();
 			
 			if(salvato)SCHEDA.msgSalvataggio();
 			
@@ -1204,7 +1204,7 @@ var PAZIENTI = {
 									true,
 									'',
 									btnAdd );
-			PAZIENTI.caricaGalleryTrattamento(true);
+			PAZIENTI.caricaGallery(true);
 			
 			if(salvato)SCHEDA.msgSalvataggio();
 		}});
@@ -1238,6 +1238,7 @@ var PAZIENTI = {
 		//var f = 0;
 		var GA = PAZIENTI.galleryProvvisoria;
 		for(i in GA){
+			GA[i].Dida = document.getElementById("Dida"+i).value;
 			if(typeof(GA[i].imgMini) != 'undefined' && GA[i]!=null && GA[i].imgMini!=null){
 				
 				// salvo l'immagine nel DB locale

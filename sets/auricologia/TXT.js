@@ -670,7 +670,7 @@ DB.TXT.set = {
         esp: ""
     },
 	alertApriModello: {
-        ita: "Per utiliare questa funzione devi caricare il modello 3D",
+        ita: "Per utilizzare questa funzione devi caricare il modello 3D",
         eng: "To use this function you need to load the 3D model",
         esp: ""
 	}

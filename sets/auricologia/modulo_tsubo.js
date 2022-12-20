@@ -136,6 +136,28 @@ var MODULO_TSUBO = { // extend SET
 		
 		HTML += SET.convPuntiScheda(DB.set.punti[siglaTsubo].AzioniTsubo,true);
 		
+		// elenco le patolige incluse
+		var elenco = [];
+		for(p in DB.set.patologie){
+			var regexp = /\[\.[^\]]+\.\]/ig;
+			var pts = DB.set.patologie[p].TestoPatologia.match(regexp);
+			for(i in pts){
+				if(pts[i]=='[.'+siglaTsubo+'.]'){
+					var JSNPUSH = {"p": p, "NomePatologia": DB.set.patologie[p].NomePatologia} 
+					
+					if(elenco.indexOf(JSNPUSH)==-1)elenco.push(JSNPUSH);
+				}
+			}
+		}
+		if(elenco.length){
+			HTML += '<div id="patologieTsubo">' +
+					'	<div onClick="this.parentElement.classList.toggle(\'vis\');">'+TXT("Patologie")+'</div>';
+			for(e in elenco){
+				HTML += '<p onClick="SET.apriPatologia(\''+elenco[e].p+'\',document.getElementById(\'btn_patologia_'+elenco[e].p+'\'));"><span>• '+elenco[e].NomePatologia+'</span></p>';
+			}
+			HTML += '</div>';
+		}
+		
 		
 		
 		// annotazione
