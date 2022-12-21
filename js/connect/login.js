@@ -2277,6 +2277,23 @@ var LOGIN = {
 					}
 				}
 			}
+			for(p in DB.procedure.data){
+				// verifico nella procedura
+				var gallery =  __(DB.procedure.data[p].gallery,'[]');
+                if(!gallery)gallery='[]';
+                gallery = JSON.parse(gallery);
+				if(gallery.length){
+					for(g in gallery){
+						if(!__(gallery[g].imgMini)){
+							var add = true;
+							for(f in DB.foto.data){
+								if(DB.foto.data[f].idFoto==gallery[g].idFoto && __(DB.foto.data[f].imgMini))add = false;
+							}
+							if(add)elenco.push(gallery[g].idFoto);
+						}
+					}
+				}
+			}
 			CONN.caricaUrl(	'getImgGallery_GLOBAL.php','b64=1&iU='+DB.login.data.idUtente+'&JSNPOST='+window.btoa(encodeURIComponent(JSON.stringify(elenco))),'LOGIN.updateGallery_save');
 		}
 	},
@@ -2319,6 +2336,17 @@ var LOGIN = {
 								if(DB.foto.data[f].idFoto == gallery[g].idFoto)presente = true;
 							}
 						}
+					}
+				}
+			}
+			for(p in DB.procedure.data){
+				// verifico nella procedura
+				var gallery =  __(DB.procedure.data[p].gallery,'[]');
+                if(!gallery)gallery='[]';
+                gallery = JSON.parse(gallery);
+				if(gallery.length){
+					for(g in gallery){
+						if(DB.foto.data[f].idFoto == gallery[g].idFoto)presente = true;
 					}
 				}
 			}

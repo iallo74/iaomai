@@ -1917,6 +1917,21 @@ DB.TXT = {
 			eng: "No place found...",
 			esp: ""
 		},
+		EtClienteGallery: {
+			ita: "Paziente",
+			eng: "Patient",
+			esp: ""
+		},
+		EtTrattamentoGallery: {
+			ita: "Trattamento",
+			eng: "Treatment",
+			esp: ""
+		},
+		EtProceduraGallery: {
+			ita: "Procedura",
+			eng: "Procedure",
+			esp: ""
+		},
 		AlertImgLow: {
 			ita: "Immagine di bassa qualità",
 			eng: "Low quality image",

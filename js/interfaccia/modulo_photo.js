@@ -407,7 +407,7 @@ var PH = {
 								keyupCampo: 'H.auto_height(this);' });
 				if(dett){
 					HTML += '<div class="dettagliFoto"><b>'+TXT("DettagliGallery")+'</b><br>' +
-							TXT("DimensioniGallery")+': <span id="dim'+i+'">...</span><br>' +
+							TXT("DimensioniGallery")+': <span id="dim'+i+'">...</span><br><br>' +
 							TXT("UbicazioneGallery")+': <span id="ub'+i+'">...</span><br>' +
 							'</div>';
 				}
@@ -441,7 +441,7 @@ var PH = {
 							gallery = JSON.parse(gallery);
 							if(gallery.length){
 								for(g in gallery){
-									if(DB.foto.data[f].idFoto == gallery[g].idFoto)ubicazione += DB.pazienti.data[p].Nome+" "+DB.pazienti.data[p].Cognome + '<br>';
+									if(DB.foto.data[f].idFoto == gallery[g].idFoto)ubicazione += "<i>"+TXT("EtClienteGallery")+"</i><br>"+DB.pazienti.data[p].Nome+" "+DB.pazienti.data[p].Cognome + '<br>';
 								}
 							}
 							// verifico nei trattamenti
@@ -450,14 +450,25 @@ var PH = {
 									var gallery =  JSON.parse(DB.pazienti.data[p].trattamenti[t].gallery);
 									if(gallery.length){
 										for(g in gallery){
-											if(DB.foto.data[f].idFoto == gallery[g].idFoto)ubicazione += DB.pazienti.data[p].Nome+" "+DB.pazienti.data[p].Cognome + ' &gt; ' + DB.pazienti.data[p].trattamenti[t].TitoloTrattamento + '<br>';
+											if(DB.foto.data[f].idFoto == gallery[g].idFoto)ubicazione += "<i>"+TXT("EtTrattamentoGallery")+"</i><br>"+DB.pazienti.data[p].Nome+" "+DB.pazienti.data[p].Cognome + ' &gt; ' + DB.pazienti.data[p].trattamenti[t].TitoloTrattamento + '<br>';
 										}
 									}
 								}
 							}
 						}
+						for(p in DB.procedure.data){
+							// verifico nella procedura
+							var gallery =  __(DB.procedure.data[p].gallery,'[]');
+							if(!gallery)gallery='[]';
+							gallery = JSON.parse(gallery);
+							if(gallery.length){
+								for(g in gallery){
+									if(DB.foto.data[f].idFoto == gallery[g].idFoto)ubicazione += "<i>"+TXT("EtProceduraGallery")+"</i><br>"+DB.procedure.data[p].NomeProcedura + '<br>';
+								}
+							}
+						}
 						if(!ubicazione)ubicazione = TXT("NoUbGallery");
-						document.getElementById('ub'+f).innerHTML = ubicazione;
+						document.getElementById('ub'+f).innerHTML = '<br>'+ubicazione;
 					}
 				}, 500);
 			}
