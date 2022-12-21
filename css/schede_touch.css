@@ -91,7 +91,7 @@
 	font-size: var(--font-17-6) !important;
 	font-weight:normal !important;
 }
-.touch.android textarea{
+.touch.android textarea:not(.noDefault){
 	font-size: var(--font-17-6) !important;
 	padding:15px !important;
 }

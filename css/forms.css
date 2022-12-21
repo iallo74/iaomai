@@ -1004,6 +1004,7 @@ body:not(.smart) .stampaBtn{
 .p_sch_cond, /* procedura */
 .p_sch_no_cond{ /* procedura */
 	display: inline-block;
+	vertical-align:middle;
 	width:30px;
 	height:22px;
 	padding:5px;
@@ -1047,10 +1048,12 @@ body:not(.smart) .stampaBtn{
 .p_sch_cond{ /* procedura */
 	background-position:10px center;
 	background-image:url(../img/ico_cond.png);
+	border-left:none !important;
 }
 .p_sch_no_cond{ /* procedura */
 	background-position:10px center;
 	background-image:url(../img/ico_not_cond.png);
+	border-left:none !important;
 }
 .rgProc_T{ /* procedura */
 	margin-top:15px;
@@ -2121,26 +2124,57 @@ body:not(.touch) .sezioneChiusa:hover{
     overflow-x: auto;
     padding: 10px;
     white-space: nowrap;
-    text-align: center;
 }	
-#pazienti_vis #contGallery{
+#pazienti_vis #contGallery,
+.scheda_procedura #contGallery,
+.scheda_gallery #contGallery{
+    margin-top: 20px;
     margin-left: -30px;
     margin-right: -30px;
+	padding-left:25px;
+	padding-right:25px;
+}
+.scheda_gallery #contGallery{
+	overflow-x: auto !important;
+    white-space: normal !important;
+}
+.scheda_gallery #contGallery > div{
+	margin-top: 11px;
+    display: block !important;
+    border-top: 1px solid rgba(0,0,0,0.2);
+    padding-top: 8px;
+}
+.scheda_gallery #contGallery > div:first-child{
+    border-top: none !important;
+}
+.scheda_gallery #perc_cont{
+	background-color: #8ba7c3;
+    border: 1px solid #333;
+    border-radius: 3px;
+    width: 100%;
+    height: 12px;
+    overflow: hidden;
+    margin-top: 4px;
+    padding: 1px;
+}
+.scheda_gallery #perc_cont > div{
+	background-color:#2d5cb8;
+	height:8px;
+    border-radius: 3px;
 }
 .galleryFull{
     min-height: 180px;
 }
-#contGallery > div > div:not(.DidaFoto),
+#contGallery > div > div:not(.DidaFoto):not(.dettagliFoto),
 #contGallery > div > div > div {
     width: 150px;
     height: 150px;
 }
 #contGallery > div:not(.noResults) {
-    border-radius: 5px;
 	display:inline-block;
 	vertical-align:top;
 }
-#contGallery > div > div:not(.DidaFoto) {
+#contGallery > div > div:not(.DidaFoto):not(.dettagliFoto){
     border-radius: 8px;
     margin: 2px 7px 2px 7px;
     box-shadow: 0px 0px 3px rgba(0,0,0,0.5);
@@ -2150,6 +2184,13 @@ body:not(.touch) .sezioneChiusa:hover{
 	background-position:center center;
     background-repeat: no-repeat;
 	overflow:hidden;
+	display: inline-block;
+    vertical-align: top;
+}
+.dettagliFoto{
+	display: inline-block;
+    vertical-align: top;
+	padding: 10px;
 }
 #contGallery > div > p{
     margin: 5px;
@@ -2158,7 +2199,7 @@ body:not(.touch) .sezioneChiusa:hover{
     line-height: 15px !important;
 	width: 154px;
 }
-#contGallery > div > div:not(.DidaFoto) > div {
+#contGallery > div > div:not(.DidaFoto):not(.dettagliFoto) > div {
 	background-size:cover;
 	background-position:center center;
 	cursor: pointer;

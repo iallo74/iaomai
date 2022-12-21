@@ -15,13 +15,10 @@ var PAZIENTI = {
 	tagsProvvisori: [],
 	medicineProvvisorie: [],
 	allergieProvvisorie: [],
-	galleryProvvisoria: [],
 	sintomiModello: [],
 	pazSelMD5: '',
-	overCestino: false,
 	mnMobileOpened: null,
 	pazientiFiltrati: [],
-	maxFoto: 15,
 		
 	caricaPazienti: function(){ // carica l'elenco dei pazienti
 		if(PAZIENTI.pazientiFiltrati.length)PAZIENTI.car_filtri(true); // per i cambi di filtri
@@ -370,7 +367,7 @@ var PAZIENTI = {
 			PAZIENTI.interventiProvvisori = clone(interventi);
 			if(!gallery)gallery='[]';
 			gallery=JSON.parse(gallery);
-			PAZIENTI.galleryProvvisoria=gallery;
+			PH.galleryProvvisoria=gallery;
 			
 			var HTML = '';
 			HTML += '<form id="formMod"' +
@@ -765,7 +762,7 @@ var PAZIENTI = {
 						'		<input type="file"' +
 						'			   id="fotoProvv_FL"' +
 						'			   class="p_paz_foto"' +
-						'		       onChange="PAZIENTI.selezionaFoto(this);">' +
+						'		       onChange="PH.selezionaFoto(this);">' +
 						'		<span id="addFoto">' +
 									TXT("AggiungiFoto") +
 						'		</span>' +
@@ -850,7 +847,7 @@ var PAZIENTI = {
 			PAZIENTI.popolaElementi('patologie');
 			PAZIENTI.caricaElementi('interventi');
 			PAZIENTI.popolaElementi('interventi');
-			PAZIENTI.caricaGallery();
+			PH.caricaGallery();
 			
 			if(salvato)SCHEDA.msgSalvataggio();
 			
@@ -913,7 +910,7 @@ var PAZIENTI = {
 			PAZIENTI.interventiProvvisori = clone(interventi);
 			if(!gallery)gallery='[]';
 			gallery=JSON.parse(gallery);
-			PAZIENTI.galleryProvvisoria=gallery;
+			PH.galleryProvvisoria=gallery;
 		
 			var eta = '';
 			if(DataNascita)eta = oggi.getFullYear() - DataNascita.getFullYear();
@@ -1204,7 +1201,7 @@ var PAZIENTI = {
 									true,
 									'',
 									btnAdd );
-			PAZIENTI.caricaGallery(true);
+			PH.caricaGallery(true);
 			
 			if(salvato)SCHEDA.msgSalvataggio();
 		}});
@@ -1236,7 +1233,7 @@ var PAZIENTI = {
 		
 		// salvo le immagini
 		//var f = 0;
-		var GA = PAZIENTI.galleryProvvisoria;
+		var GA = PH.galleryProvvisoria;
 		for(i in GA){
 			GA[i].Dida = document.getElementById("Dida"+i).value;
 			if(typeof(GA[i].imgMini) != 'undefined' && GA[i]!=null && GA[i].imgMini!=null){

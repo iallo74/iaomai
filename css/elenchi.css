@@ -402,6 +402,14 @@ body:not(.bodyStyled2) #chiudiElenco{
 	padding-right: 40px;
 	cursor:pointer;
 }
+.separatorePulsanti{
+	display: block;
+    width: calc(100% - 14px);
+    height: 2px;
+    margin: 7px;
+    background-color: rgba(0,0,0,0.2);
+    border-bottom: 1px solid rgba(255,255,2555,0.8);
+}
 .smart.android #pulsanti_base div,
 .smart.android #pulsanti_set div{
 	height: 50px !important;

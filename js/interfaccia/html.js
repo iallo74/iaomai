@@ -504,7 +504,7 @@ var H = {
 				'	  class="sezioneTrattamenti divEspansa'+(!__(obj.aperta) ? ' sezioneChiusa' : '' )+'">' +	
 				'	<em class="labelMobile labelTrattamenti"' +
 				'  		onClick="H.swSezione(this);';
-		if(obj.nome == 'foto')HTML += 'PAZIENTI.resizeDida();';
+		if(obj.nome == 'foto')HTML += 'PH.resizeDida();';
 		HTML += '">' +
 				'		<img class="icoLabel"' +
 				'			 src="img/ico_'+img+'.png">' +

@@ -1,5 +1,5 @@
 var PH = {
-	// resize img con canvas
+	
 	nImg: '',
 	makeBig: false,
 	file: null,
@@ -19,6 +19,11 @@ var PH = {
 	img_hOr: 0,
 	functPH: null,
 	isResizing: false,
+	galleryProvvisoria: [],
+	overCestino: false,
+	maxFoto: 15,
+	idU: -1,
+	
 	encodeImageFileAsURL: function( element, resizable, makeBig, functPH ) {
 		if(typeof(functPH) == 'undefined')var functPH = '';
 		if(typeof(resizable) == 'undefined')var resizable = false;
@@ -327,7 +332,319 @@ var PH = {
 		if(!isBig)ctx.drawImage(oc, PH.res.left, PH.res.top, PH.res.dim, PH.res.dim, 0, 0, 200, 200 );
 		else ctx.drawImage(oc, 0, 0, oc.width, oc.height, 0, 0, oc.width, oc.height );
 		
-		base64 = canvas.toDataURL('image/jpeg', 60);
+		var quality = .3;
+		if(isBig)quality = .8;
+		base64 = canvas.toDataURL('image/jpeg', quality);
 		return base64;
+	},
+	
+	
+	// gallery
+	caricaGallery: function( vis, idU, dett ){ // carica la gallery
+		var HTML='';
+		var totFoto = 0;
+		var afterFunct = '';
+		if(typeof(vis)=='undefined')var vis = false;
+		if(typeof(dett)=='undefined')var dett = false;
+		if(typeof(idU)=='undefined')var idU = '';
+		if(!idU)idU = DB.login.data.idUtente;
+		PH.idU = idU;
+		if(PH.galleryProvvisoria.length){
+			for(i in PH.galleryProvvisoria){
+				totFoto++;
+				var src = '';
+				var cls = '';
+				var locale = false;
+				if(__(PH.galleryProvvisoria[i].nuova)){
+					locale = true;
+					src = PH.galleryProvvisoria[i].imgMini;
+				}
+				if(!locale){
+					for(f in DB.foto.data){
+						if(DB.foto.data[f].idFoto == PH.galleryProvvisoria[i].idFoto){
+							if(DB.foto.data[f].imgMini){
+								locale = true;
+								src = DB.foto.data[f].imgMini;
+							}
+						}
+					}
+				}
+				if(!locale){
+					if(CONN.getConn()){
+						// se connesso a internet la scarico
+						afterFunct += "CONN.caricaUrl(	'getImgGallery.php','n="+i+"&iU="+PH.idU+"&idFoto="+PH.galleryProvvisoria[i].idFoto+"','PH.scriviFoto');";
+					}else{
+						cls='noConn';
+					}
+				}
+				HTML += '<div>' +
+						'	<div id="gall_'+i+'"' +
+						'		  class="' +
+								  ((cls) ? cls : '') +
+							  	  ((locale) ? 'fotoLocale' : '') + '">' +
+						'		<div' +
+									((src) ? ' style="background-image:url(\''+src+'\');"' : '') +
+						'	 		  onClick="if(!PH.overCestino)PH.fullFoto('+i+','+locale+');">' +
+						'			<img class="gall_full"' +
+						'			 	 src="img/ico_fullscreen.png">';
+				if(!vis)HTML += 
+						'			<img class="gall_del"' +
+						'			 	 src="img/ico_cestinoB.png"' +
+						'			 	 onMouseOver="PH.overCestino=true;"' +
+						'			 	 onMouseOut="PH.overCestino=false;"' +
+						'			 	 onClick="PH.eliminaFoto('+i+');">';
+				HTML += '		</div>' +
+						'	</div>';
+				var Dida = __(PH.galleryProvvisoria[i].Dida);
+				if(vis && Dida)HTML +='	<p class="noDefault">'+Dida+'</p>';
+				if(!vis)HTML += H.r({	t: "t",	
+								name: "Dida"+i,	
+								value: Dida,
+								classRiga: "DidaFoto",
+								classCampo: 'TitTrattDx noDefault',
+								label: TXT("InserisciDida"),
+								noLabel: true,
+								keyupCampo: 'H.auto_height(this);' });
+				if(dett){
+					HTML += '<div class="dettagliFoto"><b>'+TXT("DettagliGallery")+'</b><br>' +
+							TXT("DimensioniGallery")+': <span id="dim'+i+'">...</span><br>' +
+							TXT("UbicazioneGallery")+': <span id="ub'+i+'">...</span><br>' +
+							'</div>';
+				}
+				HTML += '</div>';
+			}
+			document.getElementById('contGallery').classList.add("galleryFull");
+			document.getElementById('contGallery').innerHTML = HTML;
+			if(!vis){
+				setTimeout( function(){
+					PH.resizeDida();
+				}, 500);
+			}
+			if(dett){
+				setTimeout( function(){
+					for(f in DB.foto.data){
+						
+						var dim = DB.getStringMemorySize(IMPORTER.COMPR(DB.foto.data[f].imgMini));
+						if(dim<1000*1000){
+							dimTxt = parseInt(dim/(1000))+"KB";
+						}else{
+							dimTxt = ArrotondaEuro(dim/(1000*1000))+"MB";
+						}
+						document.getElementById('dim'+f).innerHTML = dimTxt;
+						
+						
+						var ubicazione = "";
+						for(p in DB.pazienti.data){
+							// verifico nel paziente
+							var gallery =  __(DB.pazienti.data[p].gallery,'[]');
+							if(!gallery)gallery='[]';
+							gallery = JSON.parse(gallery);
+							if(gallery.length){
+								for(g in gallery){
+									if(DB.foto.data[f].idFoto == gallery[g].idFoto)ubicazione += DB.pazienti.data[p].Nome+" "+DB.pazienti.data[p].Cognome + '<br>';
+								}
+							}
+							// verifico nei trattamenti
+							for(t in DB.pazienti.data[p].trattamenti){
+								if(DB.pazienti.data[p].trattamenti[t].gallery){
+									var gallery =  JSON.parse(DB.pazienti.data[p].trattamenti[t].gallery);
+									if(gallery.length){
+										for(g in gallery){
+											if(DB.foto.data[f].idFoto == gallery[g].idFoto)ubicazione += DB.pazienti.data[p].Nome+" "+DB.pazienti.data[p].Cognome + ' &gt; ' + DB.pazienti.data[p].trattamenti[t].TitoloTrattamento + '<br>';
+										}
+									}
+								}
+							}
+						}
+						if(!ubicazione)ubicazione = TXT("NoUbGallery");
+						document.getElementById('ub'+f).innerHTML = ubicazione;
+					}
+				}, 500);
+			}
+		}
+		if(!totFoto){
+			document.getElementById('contGallery').classList.remove("galleryFull");
+			HTML += '<div class="noResults"' +
+					'	  style="padding-left:30px;">' +
+						TXT("NoRes")+'...' +
+					'</div>';
+		}else{
+			setTimeout( function(){
+				if(__(DB.foto.update,false)){
+					localPouchDB.setItem(MD5("DB"+LOGIN._frv()+".foto"), IMPORTER.COMPR(DB.foto)).then(function(){ // salvo il DB
+						DB.foto.update = false;
+					});
+				}
+			}, 5000);
+		}
+		if(!vis){
+			if(totFoto < PH.maxFoto)document.getElementById('p_add_dett').style.display = 'block';
+			else document.getElementById('p_add_dett').style.display = 'none';
+			document.getElementById('totFoto').innerHTML = totFoto;
+		}
+		document.getElementById('contGallery').innerHTML = HTML;
+		if(afterFunct)eval(afterFunct);
+	},
+	resizeDida: function(){
+		for(i in PH.galleryProvvisoria){
+			H.auto_height(document.getElementById('Dida'+i));
+		}
+	},
+	scriviFoto: function( res ){
+		res = JSON.parse( res );
+		var presente = false;
+		for(f in DB.foto.data){
+			if(res.idFoto == DB.foto.data[f].idFoto){
+				presente = f;
+			}
+		}
+		if(!presente){
+			DB.foto.data.push({
+				idFoto: res.idFoto,
+				imgMini: res.imgMini
+			});
+			DB.foto.update = true;
+		}else{
+			if(!__(DB.foto.data[presente].imgMini)){
+				DB.foto.data[presente].imgMini = res.imgMini;
+				DB.foto.update = true;
+			}
+		}
+		if(document.getElementById("gall_"+res.n)){
+			if(res.imgMini)document.getElementById("gall_"+res.n).getElementsByTagName('div')[0].style.backgroundImage='url(\''+res.imgMini+'\')';
+		}
+	},
+	selezionaFoto: function( element ){
+		PH.encodeImageFileAsURL( element, false, true, 'PH.aggiungiFoto' );
+	},
+	aggiungiFoto: function( obj ){
+		obj = JSON.parse(obj);
+		var d = new Date()*1
+		var JSNPUSH = {	idFoto: "foto_"+d,
+						imgMini: obj.imgMini,
+						imgBig: obj.imgBig,
+						nuova: true }
+		PH.galleryProvvisoria.push(JSNPUSH);
+		PH.caricaGallery();
+		SCHEDA.formModificato = true;
+	},
+	eliminaFoto: function( f ){
+		CONFIRM.vis(	TXT("ChiediEliminaFoto"),
+						false,
+						arguments ).then(function(pass){if(pass){
+						var v = getParamNames(CONFIRM.args.callee.toString());
+						for(i in v)eval(getArguments(v,i));
+
+			PH.galleryProvvisoria.splice(f,1);
+			
+			PH.caricaGallery();
+			SCHEDA.formModificato = true;
+		}});
+	},
+	fullFoto: function( i, locale ){
+		var locale = false;
+		if(__(PH.galleryProvvisoria[i].nuova)){
+			locale = true;
+			src = PH.galleryProvvisoria[i].imgBig;
+		}
+		if(!locale){
+			for(f in DB.foto.data){
+				if(DB.foto.data[f].idFoto == PH.galleryProvvisoria[i].idFoto){
+					if(DB.foto.data[f].imgBig){
+						locale = true;
+						src = DB.foto.data[f].imgBig;
+					}
+				}
+			}
+		}
+		var pass = true;
+		//if(!locale)pass = CONN.retNoConn();
+		if(pass){
+			visLoader("");
+			if(!locale && CONN.getConn()){
+				CONN.caricaUrl(	'getImgGallery.php',
+								'big=1&n='+i+'&iU='+PH.idU+'&idFoto='+PH.galleryProvvisoria[i].idFoto,
+								'PH.scriviFotoBig');
+			}else{
+				var locale = false;
+				if(PH.galleryProvvisoria[i].nuova){
+					locale = true;
+					src = PH.galleryProvvisoria[i].imgBig;
+				}
+				if(!locale){
+					for(f in DB.foto.data){
+						if(DB.foto.data[f].idFoto == PH.galleryProvvisoria[i].idFoto){
+							foto = DB.foto.data[f];
+						}
+					}
+				}
+				PH.scriviFotoBig( JSON.stringify(foto) );
+			}
+		}
+	},
+	scriviFotoBig: function( res ){
+		res = JSON.parse( res );
+		var lowRes = false;
+		var urlImg = res.imgBig;
+		if(!urlImg || urlImg=='404'){
+			for(f in DB.foto.data){
+				if(DB.foto.data[f].idFoto == res.idFoto){
+					urlImg = DB.foto.data[f].imgMini;
+					lowRes = true;
+				}
+			}
+		}
+		document.getElementById("foto_alert").classList.remove("visSch");
+		document.getElementById("fotoBig").classList.remove("noLoader");
+		document.getElementById("fotoBig").style.backgroundImage='url(\''+urlImg+'\')';
+		if(lowRes){
+			if(!CONN.getConn())msg = TXT("AlertImgLowNoConn");
+			else msg = TXT("AlertImgLow");
+			document.getElementById("foto_alert").classList.add("visSch");
+			document.getElementById("foto_alert").innerHTML = stripslashes(msg);
+		}
+	},
+	
+	car_gallery: function(){
+		var space = DB.getStringMemorySize(IMPORTER.COMPR(DB.foto));
+		var spaceAvail = (45*1000*1000 - DB.sizeDb);
+		var perc = (space*100) / spaceAvail;
+		var spaceTxt = '<b>';
+		if(space<1000*1000){
+			spaceTxt += parseInt(space/(1000))+"KB";
+		}else{
+			spaceTxt += ArrotondaEuro(space/(1000*1000))+"MB";
+		}
+		spaceTxt += '</b> ('+parseInt(perc)+'%)'
+		
+		var number = DB.foto.data.length;
+		var HTML = 	'<p>'+htmlEntities(TXT("SpiegazioneGallery"))+'</p>' +
+					'<div>'+htmlEntities(TXT("NumberGallery"))+': <b>'+number+'</b><br>' +
+					htmlEntities(TXT("SpaceGallery"))+': '+spaceTxt+'</div>' +
+					'<div id="perc_cont"><div style="width:'+perc+'%"></div></div>';
+		
+		PH.galleryProvvisoria = [];
+		for(f in DB.foto.data){
+			PH.galleryProvvisoria.push({ idFoto: DB.foto.data[f].idFoto, Dida: '' });
+		}
+		
+		var btnAdd = '';
+		btnAdd += 	'<div class="p_paz_ref_menu" onClick="REF.open(\'archives.suppliers.overview\')">' +
+						TXT("ReferenceGuide") +
+					'</div>';
+		
+		// GALLERY
+		HTML += '<div id="contGallery"></div>';
+		
+		SCHEDA.caricaScheda(	stripslashes(TXT("ElFoto")),
+								HTML,
+								'PH.chiudiGallery();',
+								'scheda_gallery',
+								false,
+								true,
+								false,
+								btnAdd );
+								
+		PH.caricaGallery(true,'',true);
 	}
 }

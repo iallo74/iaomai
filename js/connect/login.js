@@ -1476,6 +1476,7 @@ var LOGIN = {
 				if(BACKUPS.bkpProvv)elenco.procedure[p].DataModifica = lastSync*1;
 				JSNPUSH={	"idProcedura": elenco.procedure[p].idProcedura*1,
 							"idLinguaProcedura": elenco.procedure[p].idLinguaProcedura*1,
+							"gallery": elenco.procedure[p].gallery,
 							"NomeProcedura": elenco.procedure[p].NomeProcedura,
 							"DataModifica": elenco.procedure[p].DataModifica*1,
 							"DataCreazione": elenco.procedure[p].DataCreazione*1,
@@ -2097,7 +2098,8 @@ var LOGIN = {
 					break;
 				
 				case "procedure":
-					if(globals.set.cartella == 'meridiani_cinesi'){
+					//if(globals.set.cartella == 'meridiani_cinesi'){
+					if(globals.set.cartella){
 						try{
 							SET.car_procedure('',true);
 						}catch(err){}

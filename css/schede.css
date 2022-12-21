@@ -619,8 +619,8 @@ body:not(.smart) .schedaRitorno #scheda_titolo{
 	overflow-y:hidden !important;
 }
 
-.android #scheda:not(.schForm) #scheda_testo *:not(h1):not(h2):not(.annullaBtn):not(.submitBtn):not(.stampaBtn),
-.android #scheda:not(.schForm) #scheda_testo2 *:not(h1):not(h2):not(.annullaBtn):not(.submitBtn):not(.stampaBtn){
+.android #scheda:not(.schForm) #scheda_testo *:not(h1):not(h2):not(.annullaBtn):not(.submitBtn):not(.stampaBtn):not(.noDefault),
+.android #scheda:not(.schForm) #scheda_testo2 *:not(h1):not(h2):not(.annullaBtn):not(.submitBtn):not(.stampaBtn):not(.noDefault){
 	font-size: var(--font-16-5);
 	line-height:20px;
 }

@@ -27,8 +27,7 @@ var MODULO_PROCEDURE = { // extend SET
 		HTML += '>'+TXT("Community").toUpperCase()+'</span></p>';
 		return HTML;
 	},
-	car_procedure: function( Q_idProc, Q_tue ){
-		// elenco delle procedure
+	car_procedure: function( Q_idProc, Q_tue ){ // elenco delle procedure
 		if(typeof(Q_idProc)=='undefined')var Q_idProc='';
 		if(typeof(Q_tue)=='undefined')var Q_tue='';
 		if(Q_idProc+''=='')Q_idProc=-1;
@@ -108,8 +107,7 @@ var MODULO_PROCEDURE = { // extend SET
 		if(parola)document.getElementById("proc_ricerca").classList.add("filtro_attivo");
 		else document.getElementById("proc_ricerca").classList.remove("filtro_attivo");
 	},
-	car_procedura: function( Q_idProc, Q_resta, Q_community, btn ){
-		// visualizza la scheda della procedura
+	car_procedura: function( Q_idProc, Q_resta, Q_community, btn ){ // visualizza la scheda della procedura
 		CONFIRM.vis(	TXT("UscireSenzaSalvare"),
 						!SCHEDA.verificaSchedaRet(), 
 						arguments ).then(function(pass){if(pass){
@@ -131,36 +129,43 @@ var MODULO_PROCEDURE = { // extend SET
 			var DataModifica=0;
 			var Preferito=0; // solo community
 			var Condiviso=0;
+			var gallery='[]';
 			if(!Q_community){
 				if(Q_idProc>-1){
-					DB.procedure.data[Q_idProc].i_interno=Q_idProc;
-					idProcedura=DB.procedure.data[Q_idProc].idProcedura*1;
+					var PR = DB.procedure.data[Q_idProc];
+					PR.i_interno=Q_idProc;
+					idProcedura=PR.idProcedura*1;
 					Autore=TXT("Tu");
-					idLinguaProcedura=DB.procedure.data[Q_idProc].idLinguaProcedura*1;
-					NomeProcedura=DB.procedure.data[Q_idProc].NomeProcedura;
-					dettagliProcedura=DB.procedure.data[Q_idProc].dettagliProcedura;
-					DataCreazione=DB.procedure.data[Q_idProc].DataCreazione*1;
-					DataModifica=DB.procedure.data[Q_idProc].DataModifica*1;
-					Condiviso=DB.procedure.data[Q_idProc].Condiviso*1;
+					idLinguaProcedura=PR.idLinguaProcedura*1;
+					NomeProcedura=PR.NomeProcedura;
+					dettagliProcedura=PR.dettagliProcedura;
+					DataCreazione=PR.DataCreazione*1;
+					DataModifica=PR.DataModifica*1;
+					Condiviso=PR.Condiviso*1;
 					idUtenteProcedura = DB.login.data.idUtente*1;
+					gallery=__(PR.gallery,'[]');
 				}
 			}else{
 				for(p in SET.community_elenco){
 					if(SET.community_elenco[p].idProcedura*1==Q_idProc*1){
-						idProcedura=SET.community_elenco[p].idProcedura*1;
-						idUtenteProcedura=SET.community_elenco[p].idUtenteProcedura*1;
-						Autore=SET.community_elenco[p].Pseudonimo;
-						idLinguaProcedura=SET.community_elenco[p].idLinguaProcedura*1;
-						NomeProcedura=SET.community_elenco[p].NomeProcedura;
-						dettagliProcedura=SET.community_elenco[p].dettagliProcedura;
-						//commentiProcedura=SET.community_elenco[p].commentiProcedura;
-						DataCreazione=SET.community_elenco[p].DataCreazione*1;
-						DataModifica=SET.community_elenco[p].DataModifica*1;
-						Preferito=SET.community_elenco[p].Preferito*1;
-						Condiviso=SET.community_elenco[p].Condiviso*1;
+						var PR = SET.community_elenco[p];
+						idProcedura=PR.idProcedura*1;
+						idUtenteProcedura=PR.idUtenteProcedura*1;
+						Autore=PR.Pseudonimo;
+						idLinguaProcedura=PR.idLinguaProcedura*1;
+						NomeProcedura=PR.NomeProcedura;
+						dettagliProcedura=PR.dettagliProcedura;
+						DataCreazione=PR.DataCreazione*1;
+						DataModifica=PR.DataModifica*1;
+						Preferito=PR.Preferito*1;
+						Condiviso=PR.Condiviso*1;
+						gallery=__(PR.gallery,'[]');
 					}
 				}
 			}
+			if(!gallery)gallery='[]';
+			gallery=JSON.parse(gallery);
+			PH.galleryProvvisoria=gallery;
 			if(Preferito*1==1)TXT_AggiungiPreferitiDEF=TXT("EliminaPreferiti");
 			else TXT_AggiungiPreferitiDEF=TXT("AggiungiPreferiti");
 			
@@ -182,11 +187,11 @@ var MODULO_PROCEDURE = { // extend SET
 			if(!Q_community){ // azioni se la procedura è dell'utente
 				// AZIONI
 				HTML += 
-					'		<div class="p_sch_label3">'+TXT("Azioni")+'</div>' +
-					'		<div class="p_sch_mod" onClick="SET.mod_procedura('+Q_idProc+');"' +
-					'			 title="'+TXT("Modifica")+'"></div>' +
-					'		<div class="p_sch_el" onClick="SET.el_procedura('+Q_idProc+');"' +
-					'			 title="'+TXT("Elimina")+'"></div>' +
+					'		<span id="modProc"' +
+					'			  onClick="SET.mod_procedura('+Q_idProc+');""' +
+					'			  class="noPrint">' +
+								htmlEntities(TXT("modifica")) +
+					'		</span>' +
 					'		<div class="p_sch_' + ((Condiviso!=1)? 'no_' : '') +'cond"' +
 					'			 onClick="SET.swCond('+Q_idProc+');"' +
 					'			 title="'+TXT("Condividi")+'"></div>';
@@ -266,6 +271,8 @@ var MODULO_PROCEDURE = { // extend SET
 				HTML +=
 					'	<div class="noResults" style="height:100px;">'+TXT("NoRes")+'...</div>';
 			}
+			// GALLERY
+			HTML += '<div id="contGallery"></div>';
 			
 			
 			// COMMENTI
@@ -307,10 +314,14 @@ var MODULO_PROCEDURE = { // extend SET
 			HTML += '</div>';
 			if(SET.siglaProc()=='AUR')HTML = SET.convPuntiScheda(HTML); // <<<<<<<<<<< VERIFICARE
 			if(SCHEDA.btnSel && Q_resta)SCHEDA.btnSel=null;
-			
-			var btnAdd = 	'<div class="p_paz_ref_menu" onClick="REF.open(\'sets.procedures\')">' +
-								TXT("ReferenceGuide") +
-							'</div>';
+			var btnAdd = '';
+			var azElimina = (Q_idProc>-1 && !Q_community) ? 'SET.el_procedura('+Q_idProc+');':'';
+			if(azElimina){
+				btnAdd += '<div class="p_paz_el_menu" onClick="'+azElimina+'">'+TXT("EliminaScheda")+'</div>';
+			}
+			btnAdd += 	'<div class="p_paz_ref_menu" onClick="REF.open(\'sets.procedures\')">' +
+							TXT("ReferenceGuide") +
+						'</div>';
 			SCHEDA.caricaScheda( 	NomeProcedura,
 									HTML,
 									'SET.annullaEvidenziaTsubo();' +
@@ -320,6 +331,7 @@ var MODULO_PROCEDURE = { // extend SET
 									true,
 									btn,
 									btnAdd );
+			PH.caricaGallery(true,idUtenteProcedura);
 			if(!SET.siglaProc())SET.convSigleScheda();
 			SET.evidenziaTsubo(HTML);
 			if(!SET.siglaProc())SET.evidenziaMeridiani(HTML);
@@ -340,8 +352,7 @@ var MODULO_PROCEDURE = { // extend SET
 			}
 		}});
 	},
-	swCond: function( Q_idProc ){
-		// setta sì/no le condizioni della community
+	swCond: function( Q_idProc ){ // setta sì/no le condizioni della community
 		//if(!retNoFree())return false;
 		if(!COMMUNITY.verifica())return;
 		if(typeof(Q_idProc)=='undefined')var Q_idProc=-1;
@@ -355,8 +366,7 @@ var MODULO_PROCEDURE = { // extend SET
 								'SET.car_procedura('+Q_idProc+',1,0);');
 		});
 	},
-	swPref: function( Q_idProc, el ){
-		// setta sì/no come preferita una procedura della community
+	swPref: function( Q_idProc, el ){ // setta sì/no come preferita una procedura della community
 		if(typeof(Q_idProc)=='undefined')var Q_idProc='';
 		var Q_pref=0;
 		if(el.classList.contains("p_sch_pref"))Q_pref=1;
@@ -396,8 +406,7 @@ var MODULO_PROCEDURE = { // extend SET
 	confermaSwPref: function( txt ){
 		if(txt.substr(0,3)=='404')ALERT(TXT("ProcedureErrore"));
 	},
-	mod_procedura: function( Q_idProc, Q_pre ){
-		// scheda di modifica della procedura
+	mod_procedura: function( Q_idProc, Q_pre ){ // scheda di modifica della procedura
 		// verifico le autorizzazioni
 		if(typeof(Q_idProc)=='undefined')var Q_idProc=-1;
 		if(Q_idProc.toString()=='')Q_idProc=-1;
@@ -433,19 +442,25 @@ var MODULO_PROCEDURE = { // extend SET
 			var NomeProcedura='';
 			var dettagliProcedura='';
 			var Condiviso=0;
+			var gallery='[]';
 		
 			if(Q_idProc>-1){
-				idProcedura=DB.procedure.data[Q_idProc].idProcedura*1;
-				idLinguaProcedura=DB.procedure.data[Q_idProc].idLinguaProcedura*1;
-				NomeProcedura=DB.procedure.data[Q_idProc].NomeProcedura;
-				dettagliProcedura=DB.procedure.data[Q_idProc].dettagliProcedura;
-				Condiviso=DB.procedure.data[Q_idProc].Condiviso*1;
+				var PR = DB.procedure.data[Q_idProc];
+				idProcedura=PR.idProcedura*1;
+				idLinguaProcedura=PR.idLinguaProcedura*1;
+				NomeProcedura=PR.NomeProcedura;
+				dettagliProcedura=PR.dettagliProcedura;
+				Condiviso=PR.Condiviso*1;
+				gallery=__(PR.gallery,'[]');
 			}
 			
 			if(!dettagliProcedura)dettagliProcedura=[];
 			SET.dettagliProvvisori=JSON.parse(JSON.stringify(dettagliProcedura));
 			var siglaLinguaProcedura='';
 			if(idLinguaProcedura)siglaLinguaProcedura=DB.lingueProcedure[idLinguaProcedura];
+			if(!gallery)gallery='[]';
+			gallery=JSON.parse(gallery);
+			PH.galleryProvvisoria=gallery;
 			
 			var HTML = '';
 			// intestazione se la procedura è dell'utente
@@ -535,6 +550,30 @@ var MODULO_PROCEDURE = { // extend SET
 							/*PAZIENTI.gruppoPunti() +*/
 					'	</div>';
 			
+			// GALLERY
+			var cont = '	<div id="contGallery"' +
+						'		 class="divEspansa">' +
+						'	</div>' +
+						'	<div id="p_add_dett"' +
+						'		 style="margin-top: 0px;">' +
+						'		<input type="file"' +
+						'			   id="fotoProvv_FL"' +
+						'			   class="p_paz_foto"' +
+						'		       onChange="PH.selezionaFoto(this);">' +
+						'		<span id="addFoto">' +
+									TXT("AggiungiFoto") +
+						'		</span>' +
+						'	</div>';
+					
+			HTML += H.r({	t: "h", name: "totFoto",	value: "0" });
+			HTML += H.sezione({
+				label: TXT("Gallery"),
+				nome: 'foto',
+				html: cont
+						});	
+						
+						
+			
 			// pulsanti SALVA e ANNULLA
 			HTML += SCHEDA.pulsantiForm( 	"",
 											"SET.annullaProc();", 
@@ -546,9 +585,14 @@ var MODULO_PROCEDURE = { // extend SET
 			var titDef=TXT("ModificaProcedura");
 			if(Q_idProc==-1)titDef=TXT("CreaProcedura");
 			
-			var btnAdd = 	'<div class="p_paz_ref_menu" onClick="REF.open(\'sets.procedures\')">' +
-								TXT("ReferenceGuide") +
-							'</div>';
+			var btnAdd = '';
+			var azElimina = (Q_idProc>-1) ? 'SET.el_procedura('+Q_idProc+');':'';
+			if(azElimina){
+				btnAdd += '<div class="p_paz_el_menu" onClick="'+azElimina+'">'+TXT("EliminaScheda")+'</div>';
+			}
+			btnAdd += 	'<div class="p_paz_ref_menu" onClick="REF.open(\'sets.procedures\')">' +
+							TXT("ReferenceGuide") +
+						'</div>';
 							
 			SCHEDA.caricaScheda(	titDef,
 									HTML, 
@@ -563,6 +607,7 @@ var MODULO_PROCEDURE = { // extend SET
 				SET.dettagliProvvisori=JSON.parse(JSON.stringify(DB.procedure.data.dettagliProcedura));
 			}
 			SET.caricaDettagli();
+			PH.caricaGallery();
 			
 			initChangeDetection( "formMod" ); // lasciare dopo caricaDettagli
 			
@@ -572,8 +617,7 @@ var MODULO_PROCEDURE = { // extend SET
 			LOGIN.verifyLocked("procedure",idProcedura);
 		}});
 	},
-	chiudiProcedura: function( idProcedura ){
-		// alla chiusura della modifica della procedura
+	chiudiProcedura: function( idProcedura ){ // alla chiusura della modifica della procedura
 		SET.annullaEvidenziaTsubo();
 		if(!SET.siglaProc())SET.spegniMeridiani(true);
 		endChangeDetection();
@@ -582,50 +626,75 @@ var MODULO_PROCEDURE = { // extend SET
 		// tolgo il blocco online dall'elemento
 		if(typeof(idProcedura)!='undefined')LOGIN.closeLocked("procedure",idProcedura);
 	},
-	salvaProcedura: function(){
-		// salva una procedura
+	salvaProcedura: function(){ // salva una procedura
 		stopAnimate(true);
 		visLoader(TXT("SalvataggioInCorso"),'loadingLight');
 		SET.salvaDettagli();
 		var DataModifica = DB.procedure.lastSync+1;
 		if(!document.formMod.idProc.value*1>-1)DataCreazione=DataModifica;	
-		JSNPUSH={	"idProcedura": document.formMod.idProcedura.value*1,
-					"idLinguaProcedura": document.formMod.idLinguaProcedura.value*1,
-					"NomeProcedura": document.formMod.NomeProcedura.value,
-					"dettagliProcedura": SET.dettagliProvvisori,
-					"DataModifica": parseInt(DataModifica),
-					"DataCreazione": parseInt(DataCreazione),
-					"app": SET.siglaProc(),
-					"Condiviso": document.formMod.Condiviso.value*1,
-					"Cancellato": 0,
-					"frv": (LOGIN._frv()!='') };
-					
-		if(document.formMod.idProc.value*1>-1){
-			DB.procedure.data[document.formMod.idProc.value*1]=JSNPUSH;
-			Q_idProc=document.formMod.idProc.value*1;
-		}else{
-			DB.procedure.data.push(JSNPUSH);
-			//DB.procedure.data.sort(sort_by("NomeProcedura", false));
-			for(k in DB.procedure.data){
-				if(DB.procedure.data[k].DataCreazione==DataModifica)Q_idProc=k;
+		
+		// salvo le immagini
+		//var f = 0;
+		var GA = PH.galleryProvvisoria;
+		for(i in GA){
+			GA[i].Dida = document.getElementById("Dida"+i).value;
+			if(typeof(GA[i].imgMini) != 'undefined' && GA[i]!=null && GA[i].imgMini!=null){
+				
+				// salvo l'immagine nel DB locale
+				DB.foto.data.push({
+					idFoto: GA[i].idFoto,
+					imgMini: GA[i].imgMini,
+					imgBig: GA[i].imgBig,
+					frv: (LOGIN._frv()!='')
+				});
+				var NG = {
+					idFoto: GA[i].idFoto
+				}
+				GA[i] = NG;
+				//f++;
 			}
 		}
-		endChangeDetection()
-		SCHEDA.formModificato = false;
-		/*applicaLoading(document.querySelector(".listaProcedure"));
-		applicaLoading(document.getElementById("scheda_testo"));*/
-		localPouchDB.setItem(MD5("DB"+LOGIN._frv()+".procedure"), IMPORTER.COMPR(DB.procedure)).then(function(){
-			// salvo il DB
-			LOGIN.sincronizza(	/*'rimuoviLoading(document.querySelector(".listaProcedure"));' +*/
-								'startAnimate();' +
-								'nasLoader();' +
-								'SET.car_procedura('+Q_idProc+',1,0);' );
-			
+		
+		
+		localPouchDB.setItem(MD5("DB"+LOGIN._frv()+".foto"), IMPORTER.COMPR(DB.foto)).then(function(){
+			JSNPUSH={	"idProcedura": document.formMod.idProcedura.value*1,
+						"idLinguaProcedura": document.formMod.idLinguaProcedura.value*1,
+						"NomeProcedura": document.formMod.NomeProcedura.value,
+						"gallery": JSON.stringify(GA),
+						"dettagliProcedura": SET.dettagliProvvisori,
+						"DataModifica": parseInt(DataModifica),
+						"DataCreazione": parseInt(DataCreazione),
+						"app": SET.siglaProc(),
+						"Condiviso": document.formMod.Condiviso.value*1,
+						"Cancellato": 0,
+						"frv": (LOGIN._frv()!='') };
+						
+			if(document.formMod.idProc.value*1>-1){
+				DB.procedure.data[document.formMod.idProc.value*1]=JSNPUSH;
+				Q_idProc=document.formMod.idProc.value*1;
+			}else{
+				DB.procedure.data.push(JSNPUSH);
+				//DB.procedure.data.sort(sort_by("NomeProcedura", false));
+				for(k in DB.procedure.data){
+					if(DB.procedure.data[k].DataCreazione==DataModifica)Q_idProc=k;
+				}
+			}
+			endChangeDetection()
+			SCHEDA.formModificato = false;
+			/*applicaLoading(document.querySelector(".listaProcedure"));
+			applicaLoading(document.getElementById("scheda_testo"));*/
+			localPouchDB.setItem(MD5("DB"+LOGIN._frv()+".procedure"), IMPORTER.COMPR(DB.procedure)).then(function(){
+				// salvo il DB
+				LOGIN.sincronizza(	/*'rimuoviLoading(document.querySelector(".listaProcedure"));' +*/
+									'startAnimate();' +
+									'nasLoader();' +
+									'SET.car_procedura('+Q_idProc+',1,0);' );
+				
+			});
 		});
 		return false;
 	},
-	el_procedura: function( Q_idProc ){
-		// elimina una procedura
+	el_procedura: function( Q_idProc ){ // elimina una procedura
 		CONFIRM.vis(	TXT("VerElProc"),
 						false,
 						arguments ).then(function(pass){if(pass){
@@ -669,8 +738,7 @@ var MODULO_PROCEDURE = { // extend SET
 		if(mr.options[0].value=='')mr.options[0]=null;
 		document.getElementById("ico_vis"+n).style.display="inline";
 	},
-	annullaProc: function(){
-		// annulla le modifiche alla procedura
+	annullaProc: function(){ // annulla le modifiche alla procedura
 		if(document.formMod.idProc.value.trim()*1>-1)SET.car_procedura(document.formMod.idProc.value.trim(),1,0,SCHEDA.btnSel);
 		else SCHEDA.scaricaScheda();
 	},
@@ -678,8 +746,7 @@ var MODULO_PROCEDURE = { // extend SET
 		if(document.formMod.az.value=='')return false;
 		else return true;
 	},
-	aggiungiGruppoProcedura: function( punti ){
-		// importa un gruppo di punti
+	aggiungiGruppoProcedura: function( punti ){ // importa un gruppo di punti
 		var pP=punti.split("|");			
 		for(var p=0;p<pP.length-1;p++)SET.aggiungiDettaglio(PAZIENTI.tipoGruppo,pP[p],0);
 		PAZIENTI.evidenziaAggiunti(document.getElementById('dettagliCont'),pP.length-1);
@@ -707,8 +774,7 @@ var MODULO_PROCEDURE = { // extend SET
 	},
 	
 	// DETTAGLI
-	caricaDettagli: function( eviUltimo ){
-		// carica i dettagli della procedura
+	caricaDettagli: function( eviUltimo ){ // carica i dettagli della procedura
 		var HTML = '<div class="rgProcMod"></div>'; // serve lasciarlo per il drag&drop
 		var presente = false;
 		var nD = -1;
@@ -953,8 +1019,7 @@ var MODULO_PROCEDURE = { // extend SET
 			else if(TipoDettaglio!='M')eval("document.formMod.de_"+p+".focus()");
 		}
 	},
-	salvaDettagli: function(){
-		// salva i dettagli della procedura
+	salvaDettagli: function(){ // salva i dettagli della procedura
 		if(SET.dettagliProvvisori.length){
 			var DataModifica = DB.procedure.lastSync+1;
 			SET.dettagliProvvisori.sort(sort_by('OrdineDettaglio', false, parseInt));
@@ -992,8 +1057,7 @@ var MODULO_PROCEDURE = { // extend SET
 			}
 		}
 	},
-	aggiungiDettaglio: function( t, c, u ){
-		// aggiunge un dettaglio vuoto alla proceura
+	aggiungiDettaglio: function( t, c, u ){ // aggiunge un dettaglio vuoto alla proceura
 		if(typeof(c)=='undefined')var c='';
 		if(typeof(u)=='undefined')var u=1;
 		SET.topAdd = tCoord(document.getElementById("p_add_dett"),'y');
@@ -1015,8 +1079,7 @@ var MODULO_PROCEDURE = { // extend SET
 		if(SET.topAdd)document.getElementById("scheda_testo").scrollTo(0,document.getElementById("scheda_testo").scrollTop+(tCoord(document.getElementById("p_add_dett"),'y')-SET.topAdd));
 		SET.topAdd = null;
 	},
-	eliminaDettaglio: function( n ){
-		// elimina un dettaglio dalla procedura
+	eliminaDettaglio: function( n ){ // elimina un dettaglio dalla procedura
 		SET.salvaDettagli();
 		SET.dettagliProvvisori[n].Cancellato=1;
 		o=0;
@@ -1167,8 +1230,7 @@ var MODULO_PROCEDURE = { // extend SET
 			document.getElementById("numeroCommenti").innerHTML = totComm;
 		}
 	},
-	ins_commento: function( idProcedura, idCommento, reply ){
-		// inserisce un commento ad una procedura condivisa
+	ins_commento: function( idProcedura, idCommento, reply ){ // inserisce un commento ad una procedura condivisa
 		if(typeof(idCommento) == 'undefined')var idCommento = 0;
 		if(typeof(reply) == 'undefined')var reply = 0;
 		//retNoFree();
@@ -1307,8 +1369,7 @@ var MODULO_PROCEDURE = { // extend SET
 							true,
 							SET.elProcCommOp);
 	},
-	caricaCommunity: function(){
-		// carica l'elenco delle procedure
+	caricaCommunity: function(){ // carica l'elenco delle procedure
 		if(CONN.getConn())applicaLoading(document.querySelector(".listaProcedure"));
 		SET.idProcCommOp=-1;
 		SET.elProcCommOp=null;
@@ -1337,8 +1398,7 @@ var MODULO_PROCEDURE = { // extend SET
 						"SET.confermaCommunity");
 		return false;
 	},
-	caricaProceduraCommunity: function( Q_idProc, k, el ){
-		// carica una procedura condivisa per la visualizzazione
+	caricaProceduraCommunity: function( Q_idProc, k, el ){ // carica una procedura condivisa per la visualizzazione
 		//retNoFree();
 		if(!LOGIN.logedin()){
 			ALERT(TXT("ErroreUtenteNonConnesso"), true);

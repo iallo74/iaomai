@@ -1877,6 +1877,46 @@ DB.TXT = {
 			eng: "Do you really want to delete the pic?",
 			esp: ""
 		},
+		InserisciDida: {
+			ita: "Inserisci una dida...",
+			eng: "Enter a caption...",
+			esp: ""
+		},
+		SpiegazioneGallery: {
+			ita: "In questa pagina sono visualizzate tutte le fotografie salvate sul tuo dispositivo.",
+			eng: "This page displays all the photos saved on your device.",
+			esp: ""
+		},
+		SpaceGallery: {
+			ita: "Spazio occupato",
+			eng: "Occupied space",
+			esp: ""
+		},
+		NumberGallery: {
+			ita: "Totale foto",
+			eng: "Total pics",
+			esp: ""
+		},
+		DettagliGallery: {
+			ita: "Dettagli",
+			eng: "Details",
+			esp: ""
+		},
+		DimensioniGallery: {
+			ita: "Dimensioni",
+			eng: "Size",
+			esp: ""
+		},
+		UbicazioneGallery: {
+			ita: "Posizione",
+			eng: "Place",
+			esp: ""
+		},
+		NoUbGallery: {
+			ita: "Nessuna posizione trovata...",
+			eng: "No place found...",
+			esp: ""
+		},
 		AlertImgLow: {
 			ita: "Immagine di bassa qualità",
 			eng: "Low quality image",
@@ -2405,6 +2445,11 @@ DB.TXT = {
 		ElServizi: {
 			ita: "Servizi",
 			eng: "Services",
+			esp: ""
+		},
+		ElFoto: {
+			ita: "Fotografie",
+			eng: "Pics",
 			esp: ""
 		},
 		ElGestionale: {

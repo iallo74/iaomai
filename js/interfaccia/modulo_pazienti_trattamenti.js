@@ -430,7 +430,7 @@ var PAZIENTI_TRATTAMENTI = {
 			PAZIENTI.auriculoProvvisori=puntiAuriculoMap;
 			PAZIENTI.sintomiProvvisori=sintomi;
 			PAZIENTI.meridianiProvvisori=meridiani;
-			PAZIENTI.galleryProvvisoria=gallery;
+			PH.galleryProvvisoria=gallery;
 			var HTML='';
 			
 			// GUIDA
@@ -783,7 +783,7 @@ var PAZIENTI_TRATTAMENTI = {
 						((localStorage.getItem("op_gallery")) ? '' : 'sezioneChiusa') +
 						'">' +
 					'	<em class="labelMobile labelTrattamenti"' +
-					'		onClick="H.swSezione(this);PAZIENTI.resizeDida();">' +
+					'		onClick="H.swSezione(this);PH.resizeDida();">' +
 					'		<img class="icoLabel"' +
 					'		     src="img/ico_foto.png">' +
 							TXT("Gallery")+' (<span id="totFoto"></span>)' +
@@ -796,7 +796,7 @@ var PAZIENTI_TRATTAMENTI = {
 					'		<input type="file"' +
 					'			   id="fotoProvv_FL"' +
 					'			   class="p_paz_foto"' +
-					'		       onChange="PAZIENTI.selezionaFoto(this);">' +
+					'		       onChange="PH.selezionaFoto(this);">' +
 					'		<span id="addFoto">' +
 								TXT("AggiungiFoto") +
 					'		</span>' +
@@ -850,8 +850,8 @@ var PAZIENTI_TRATTAMENTI = {
 			if(TipoTrattamento=='A' || !LabelCiclo)PAZIENTI.popolaSintomi();
 			PAZIENTI.caricaDettagliSet(); // carico le schede dei singoli sets (TsuboMap, ShiatsuMap, ecc)
 			PAZIENTI.caricaSintomi();
-			//PAZIENTI.caricaGallery( Q_idTratt );
-			PAZIENTI.caricaGallery();
+			//PH.caricaGallery( Q_idTratt );
+			PH.caricaGallery();
 			PAZIENTI.trattOp = true;
 			initChangeDetection( "formMod" );
 			SCHEDA.formModificato = false;
@@ -1103,7 +1103,7 @@ var PAZIENTI_TRATTAMENTI = {
 
 			// salvo le immagini
 			//var f = 0;
-			var GA = PAZIENTI.galleryProvvisoria;
+			var GA = PH.galleryProvvisoria;
 			for(i in GA){
 				GA[i].Dida = document.getElementById("Dida"+i).value;
 				if(typeof(GA[i].imgMini) != 'undefined' && GA[i]!=null && GA[i].imgMini!=null){
@@ -1165,7 +1165,6 @@ var PAZIENTI_TRATTAMENTI = {
 										'nasLoader();' +
 										'PAZIENTI.caricaTrattamenti('+pDef+');' +
 										"PAZIENTI.car_trattamento("+pDef+", document.getElementById('btn_trattamento_"+pDef+"'));" +
-										/*'PAZIENTI.pulisciGallery('+pDef+');' +*/
 										'LOGIN.pulisciGallery();' );
 					
 				});
@@ -1173,27 +1172,6 @@ var PAZIENTI_TRATTAMENTI = {
 		}
 		return false;
 	},
-	/*pulisciGallery: function( pDef ){
-		if(CONN.getConn() && LOGIN.logedin()){
-			for(i in PAZIENTI.galleryProvvisoria){
-				PAZIENTI.galleryProvvisoria[i].imgBig = '';
-				//PAZIENTI.galleryProvvisoria[i].imgMini = '';
-				PAZIENTI.galleryProvvisoria[i].online = true;
-			}
-			for(f in DB.foto.data){
-				DB.foto.data[f].imgBig = '';
-			}
-			DB.pazienti.data[PAZIENTI.idCL].trattamenti[pDef].gallery = JSON.stringify(PAZIENTI.galleryProvvisoria);
-			localPouchDB.setItem(MD5("DB"+LOGIN._frv()+".pazienti"), IMPORTER.COMPR(DB.pazienti)).then(function(){ // salvo il DB
-				if(!smartMenu)PAZIENTI.caricaTrattamenti(pDef);
-				else SCHEDA.scaricaScheda(true);
-			});
-		}else{
-			if(!smartMenu)PAZIENTI.caricaTrattamenti(pDef);
-			else SCHEDA.scaricaScheda(true);
-		}
-		PAZIENTI.saving = false;
-	},*/
 	el_trattamento: function( Q_idTratt ){
 		// elimina il trattamento
 		var TXT_EL_AL=TXT("ChiediEliminaTrattamento");
@@ -1575,234 +1553,6 @@ var PAZIENTI_TRATTAMENTI = {
 					}
 				}
 			}
-		}
-	},
-	
-	
-	// gallery
-	caricaGallery: function( vis ){ // carica la gallery del trattamento
-		/*if(typeof(vis)=='undefined')var vis = false;
-		if(typeof(DB.foto) == 'undefined'){
-			localPouchDB.getItem(MD5("DB"+LOGIN._frv()+".foto")).then(function(dbCont){ // leggo il DB NOTE
-				//DB.foto = JSON.parse(dbCont);
-				DB.foto = IMPORTER.DECOMPR(dbCont);
-				PAZIENTI.caricaGallery_post(vis);
-			});
-		}else{
-			PAZIENTI.caricaGallery_post(vis);
-		}
-	},
-	caricaGallery_post: function( vis ){*/
-		var HTML='';
-		var totFoto = 0;
-		var afterFunct = '';
-		if(typeof(vis)=='undefined')var vis = false;
-		if(PAZIENTI.galleryProvvisoria.length){
-			for(i in PAZIENTI.galleryProvvisoria){
-				totFoto++;
-				var src = '';
-				var cls = '';
-				var locale = false;
-				if(__(PAZIENTI.galleryProvvisoria[i].nuova)){
-					locale = true;
-					src = PAZIENTI.galleryProvvisoria[i].imgMini;
-				}
-				if(!locale){
-					for(f in DB.foto.data){
-						if(DB.foto.data[f].idFoto == PAZIENTI.galleryProvvisoria[i].idFoto){
-							if(DB.foto.data[f].imgMini){
-								locale = true;
-								src = DB.foto.data[f].imgMini;
-							}
-						}
-					}
-				}
-				if(!locale){
-					if(CONN.getConn()){
-						// se connesso a internet la scarico
-						afterFunct += "CONN.caricaUrl(	'getImgGallery.php','n="+i+"&iU="+DB.login.data.idUtente+"&idFoto="+PAZIENTI.galleryProvvisoria[i].idFoto+"','PAZIENTI.scriviFoto');";
-					}else{
-						cls='noConn';
-					}
-				}
-				HTML += '<div>' +
-						'	<div id="gall_'+i+'"' +
-						'		  class="' +
-								  ((cls) ? cls : '') +
-							  	  ((locale) ? 'fotoLocale' : '') + '">' +
-						'		<div' +
-									((src) ? ' style="background-image:url(\''+src+'\');"' : '') +
-						'	 		  onClick="if(!PAZIENTI.overCestino)PAZIENTI.fullFoto('+i+','+locale+');">' +
-						'			<img class="gall_full"' +
-						'			 	 src="img/ico_fullscreen.png">';
-				if(!vis)HTML += 
-						'			<img class="gall_del"' +
-						'			 	 src="img/ico_cestinoB.png"' +
-						'			 	 onMouseOver="PAZIENTI.overCestino=true;"' +
-						'			 	 onMouseOut="PAZIENTI.overCestino=false;"' +
-						'			 	 onClick="PAZIENTI.eliminaFoto('+i+');">';
-				HTML += '		</div>' +
-						'	</div>';
-				var Dida = __(PAZIENTI.galleryProvvisoria[i].Dida);
-				if(vis && Dida)HTML +='	<p>'+Dida+'</p>';
-				if(!vis)HTML += H.r({	t: "t",	
-								name: "Dida"+i,	
-								value: Dida,
-								classRiga: "DidaFoto",
-								classCampo: 'TitTrattDx',
-								label: 'Inserisci una dida...',
-								noLabel: true,
-								keyupCampo: 'H.auto_height(this);' });
-				HTML += '</div>';
-			}
-			document.getElementById('contGallery').classList.add("galleryFull");
-			document.getElementById('contGallery').innerHTML = HTML;
-			if(!vis){
-				setTimeout( function(){
-					PAZIENTI.resizeDida();
-				}, 500);
-			}
-		}
-		if(!totFoto){
-			document.getElementById('contGallery').classList.remove("galleryFull");
-			HTML += '<div class="noResults"' +
-					'	  style="padding-left:30px;">' +
-						TXT("NoRes")+'...' +
-					'</div>';
-		}else{
-			setTimeout( function(){
-				if(__(DB.foto.update,false)){
-					localPouchDB.setItem(MD5("DB"+LOGIN._frv()+".foto"), IMPORTER.COMPR(DB.foto)).then(function(){ // salvo il DB
-						DB.foto.update = false;
-					});
-				}
-			}, 5000);
-		}
-		if(!vis){
-			if(totFoto < PAZIENTI.maxFoto)document.getElementById('p_add_dett').style.display = 'block';
-			else document.getElementById('p_add_dett').style.display = 'none';
-			document.getElementById('totFoto').innerHTML = totFoto;
-		}
-		document.getElementById('contGallery').innerHTML = HTML;
-		if(afterFunct)eval(afterFunct);
-	},
-	resizeDida: function(){
-		for(i in PAZIENTI.galleryProvvisoria){
-			H.auto_height(document.getElementById('Dida'+i));
-		}
-	},
-	scriviFoto: function( res ){
-		res = JSON.parse( res );
-		var presente = false;
-		for(f in DB.foto.data){
-			if(res.idFoto == DB.foto.data[f].idFoto){
-				presente = f;
-			}
-		}
-		if(!presente){
-			DB.foto.data.push({
-				idFoto: res.idFoto,
-				imgMini: res.imgMini
-			});
-			DB.foto.update = true;
-		}else{
-			if(!__(DB.foto.data[presente].imgMini)){
-				DB.foto.data[presente].imgMini = res.imgMini;
-				DB.foto.update = true;
-			}
-		}
-		if(document.getElementById("gall_"+res.n)){
-			if(res.imgMini)document.getElementById("gall_"+res.n).getElementsByTagName('div')[0].style.backgroundImage='url(\''+res.imgMini+'\')';
-		}
-	},
-	selezionaFoto: function( element ){
-		PH.encodeImageFileAsURL( element, false, true, 'PAZIENTI.aggiungiFoto' );
-	},
-	aggiungiFoto: function( obj ){
-		obj = JSON.parse(obj);
-		var d = new Date()*1
-		var JSNPUSH = {	idFoto: "foto_"+d,
-						imgMini: obj.imgMini,
-						imgBig: obj.imgBig,
-						nuova: true }
-		PAZIENTI.galleryProvvisoria.push(JSNPUSH);
-		PAZIENTI.caricaGallery();
-		SCHEDA.formModificato = true;
-	},
-	eliminaFoto: function( f ){
-		CONFIRM.vis(	TXT("ChiediEliminaFoto"),
-						false,
-						arguments ).then(function(pass){if(pass){
-						var v = getParamNames(CONFIRM.args.callee.toString());
-						for(i in v)eval(getArguments(v,i));
-
-			PAZIENTI.galleryProvvisoria.splice(f,1);
-			
-			PAZIENTI.caricaGallery();
-			SCHEDA.formModificato = true;
-		}});
-	},
-	fullFoto: function( i, locale ){
-		var locale = false;
-		if(__(PAZIENTI.galleryProvvisoria[i].nuova)){
-			locale = true;
-			src = PAZIENTI.galleryProvvisoria[i].imgBig;
-		}
-		if(!locale){
-			for(f in DB.foto.data){
-				if(DB.foto.data[f].idFoto == PAZIENTI.galleryProvvisoria[i].idFoto){
-					if(DB.foto.data[f].imgBig){
-						locale = true;
-						src = DB.foto.data[f].imgBig;
-					}
-				}
-			}
-		}
-		var pass = true;
-		//if(!locale)pass = CONN.retNoConn();
-		if(pass){
-			visLoader("");
-			if(!locale && CONN.getConn()){
-				CONN.caricaUrl(	'getImgGallery.php',
-								'big=1&n='+i+'&iU='+DB.login.data.idUtente+'&idFoto='+PAZIENTI.galleryProvvisoria[i].idFoto,
-								'PAZIENTI.scriviFotoBig');
-			}else{
-				var locale = false;
-				if(PAZIENTI.galleryProvvisoria[i].nuova){
-					locale = true;
-					src = PAZIENTI.galleryProvvisoria[i].imgBig;
-				}
-				if(!locale){
-					for(f in DB.foto.data){
-						if(DB.foto.data[f].idFoto == PAZIENTI.galleryProvvisoria[i].idFoto){
-							foto = DB.foto.data[f];
-						}
-					}
-				}
-				PAZIENTI.scriviFotoBig( JSON.stringify(foto) );
-			}
-		}
-	},
-	scriviFotoBig: function( res ){
-		res = JSON.parse( res );
-		var lowRes = false;
-		var urlImg = res.imgBig;
-		if(!urlImg || urlImg=='404'){
-			for(f in DB.foto.data){
-				if(DB.foto.data[f].idFoto == res.idFoto){
-					urlImg = DB.foto.data[f].imgMini;
-					lowRes = true;
-				}
-			}
-		}
-		document.getElementById("foto_alert").classList.remove("visSch");
-		document.getElementById("fotoBig").classList.remove("noLoader");
-		document.getElementById("fotoBig").style.backgroundImage='url(\''+urlImg+'\')';
-		if(lowRes){
-			if(!CONN.getConn())msg = TXT("AlertImgLowNoConn");
-			else msg = TXT("AlertImgLow");
-			document.getElementById("foto_alert").classList.add("visSch");
-			document.getElementById("foto_alert").innerHTML = stripslashes(msg);
 		}
 	},
 	
