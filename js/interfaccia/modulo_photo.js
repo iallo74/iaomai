@@ -422,6 +422,15 @@ var PH = {
 			}
 			if(dett){
 				setTimeout( function(){
+					var procs = [];
+					for(s in sets){
+						var siglaProc = sets[s].siglaProc;
+						var nome = sets[s].nome;
+						if(!procs[siglaProc] && typeof(siglaProc)!='undefined')procs[siglaProc] = [];
+						if(typeof(procs[siglaProc])!='undefined'){
+							if(procs[siglaProc].indexOf(nome)==-1)procs[siglaProc].push(nome);
+						}
+					}
 					for(f in DB.foto.data){
 						
 						var dim = DB.getStringMemorySize(IMPORTER.COMPR(DB.foto.data[f].imgMini));
@@ -463,7 +472,7 @@ var PH = {
 							gallery = JSON.parse(gallery);
 							if(gallery.length){
 								for(g in gallery){
-									if(DB.foto.data[f].idFoto == gallery[g].idFoto)ubicazione += "<i>"+TXT("EtProceduraGallery")+"</i><br>"+DB.procedure.data[p].NomeProcedura + '<br>';
+									if(DB.foto.data[f].idFoto == gallery[g].idFoto)ubicazione += "<i>"+TXT("EtProceduraGallery")+" ("+procs[DB.procedure.data[p].app]+")</i><br>"+DB.procedure.data[p].NomeProcedura + '<br>';
 								}
 							}
 						}
@@ -657,5 +666,8 @@ var PH = {
 								btnAdd );
 								
 		PH.caricaGallery(true,'',true);
+	},
+	chiudiGallery: function(){
+		PH.galleryProvvisoria = [];
 	}
 }

@@ -52,7 +52,8 @@ var sets = {
 		locked: false,
 		lastVer: 1,
 		opening: true,
-		dataPubblicazione: ''
+		dataPubblicazione: '',
+		siglaProc: ''
 	},
 	meridiani_shiatsu: {
 		nome: TXT("ShiatsuMap"),
@@ -97,7 +98,8 @@ var sets = {
 		locked: false,
 		lastVer: 1,
 		opening: true,
-		dataPubblicazione: ''
+		dataPubblicazione: '',
+		siglaProc: ''
 	},
 	auricologia: {
 		nome: TXT("AuriculoMap"),
@@ -138,7 +140,8 @@ var sets = {
 		auth: false,
 		locked: false,
 		opening: true,
-		dataPubblicazione: ''
+		dataPubblicazione: '',
+		siglaProc: 'AUR'
 	},
 	reflessologia_plantare: {
 		nome: TXT("ReflessologiaPlantare"),
@@ -154,7 +157,8 @@ var sets = {
 		auth: false,
 		locked: true,
 		opening: true,
-		dataPubblicazione: '2023-06'
+		dataPubblicazione: '2023-06',
+		siglaProc: 'RLF'
 	},
 	trigger_points: {
 		nome: TXT("TriggerPoints"),
@@ -171,7 +175,8 @@ var sets = {
 		auth: false,
 		locked: true,
 		opening: true,
-		dataPubblicazione: '2023-10'
+		dataPubblicazione: '2023-10',
+		siglaProc: 'TRP'
 	},
 	clients_full: {
 		nome: TXT("MedicalFiles"),
