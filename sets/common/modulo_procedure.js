@@ -272,7 +272,7 @@ var MODULO_PROCEDURE = { // extend SET
 					'	<div class="noResults" style="height:100px;">'+TXT("NoRes")+'...</div>';
 			}
 			// GALLERY
-			HTML += '<div id="contGallery"></div>';
+			HTML += '<div id="contGallery" class="contGallery"></div>';
 			
 			
 			// COMMENTI
@@ -552,7 +552,7 @@ var MODULO_PROCEDURE = { // extend SET
 			
 			// GALLERY
 			var cont = '	<div id="contGallery"' +
-						'		 class="divEspansa">' +
+						'		 class="divEspansa contGallery">' +
 						'	</div>' +
 						'	<div id="p_add_dett"' +
 						'		 style="margin-top: 0px;">' +
@@ -562,6 +562,11 @@ var MODULO_PROCEDURE = { // extend SET
 						'		       onChange="PH.selezionaFoto(this);">' +
 						'		<span id="addFoto">' +
 									TXT("AggiungiFoto") +
+						'		</span>' +
+						'		<span class="p_paz_choose"' +
+						'		      onClick="MENU.visArchives();"></span>' +
+						'		<span id="chooFoto">' +
+									TXT("ScegliFoto") +
 						'		</span>' +
 						'	</div>';
 					

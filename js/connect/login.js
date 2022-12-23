@@ -501,6 +501,7 @@ var LOGIN = {
 		LOGIN.tmVerT = null;
 		DB.login.data.TOKEN = '';
 		DB.login.data.ExpDate = 0;
+		DB.login.data.auths = [];
 			
 		LOGIN.scriviUtente();
 		
@@ -2299,6 +2300,7 @@ var LOGIN = {
 	},
 	updateGallery_save: function( res ){
 		if(res){
+			var modificato = false;
 			var foto = JSON.parse(res);
 			for(f in foto){
 				var presente = false;
@@ -2308,10 +2310,15 @@ var LOGIN = {
 						presente = true;
 					}
 				}
-				if(!presente)DB.foto.data.push(foto[f]);
+				if(!presente){
+					DB.foto.data.push(foto[f]);
+					modificato = true;
+				}
 			}
-			localPouchDB.setItem(MD5("DB"+LOGIN._frv()+".foto"), IMPORTER.COMPR(DB.foto)).then(function(){ // salvo il DB
-			});
+			if(modificato){
+				localPouchDB.setItem(MD5("DB"+LOGIN._frv()+".foto"), IMPORTER.COMPR(DB.foto)).then(function(){ // salvo il DB
+				});
+			}
 		}
 	},
 	pulisciGallery: function(){

@@ -246,6 +246,7 @@ body:not(.smart) .stampaBtn{
 #p_add_comm, /* procedura */
 .p_paz_punto, /* PAZIENTI */
 .p_paz_foto, /* PAZIENTI */
+.p_paz_choose, /* PAZIENTI */
 .p_paz_label, /* PAZIENTI */
 #cont_paz_add, /* PAZIENTI */
 #cont_tag_add, /* PAZIENTI */
@@ -268,7 +269,8 @@ body:not(.smart) .stampaBtn{
 .p_sch_tit, /* procedura */
 .p_sch_descr, /* procedura */
 .p_paz_punto, /* PAZIENTI */
-.p_paz_foto{ /* PAZIENTI */
+.p_paz_foto, /* PAZIENTI */
+.p_paz_choose{ /* PAZIENTI */
 	cursor:pointer;
 }
 .p_sch_punto:hover, /* procedura */
@@ -276,7 +278,8 @@ body:not(.smart) .stampaBtn{
 .p_sch_descr:hover, /* procedura */
 .p_paz_punto:hover, /* PAZIENTI */
 .p_paz_label:hover, /* PAZIENTI */
-.p_paz_foto:hover{ /* PAZIENTI */
+.p_paz_foto:hover, /* PAZIENTI */
+.p_paz_choose:hover{ /* PAZIENTI */
 	background-color:#ffd8af !important
 }
 .sch_Max450 #cont_paz_add,
@@ -299,6 +302,7 @@ body:not(.smart) .stampaBtn{
 .p_sch_descr, /* procedura */
 #p_add_comm, /* procedura */
 .p_paz_foto, /* PAZIENTI */
+.p_paz_choose, /* PAZIENTI */
 .p_paz_punto, /* PAZIENTI */
 .p_paz_label{ /* PAZIENTI */
 	padding-left: 10px;
@@ -747,19 +751,28 @@ body:not(.smart) .stampaBtn{
 }
 .p_paz_punto,
 .p_paz_foto,
+.p_paz_choose,
 .p_paz_label{ /* PAZIENTI */
 	background-repeat:no-repeat;
 	padding-right:10px !important;
 	text-align:left !important;
 	width:auto !important;
-	min-width:70px !important;
 	text-wrap:none !important;
-	background-position:5px center;
 	font-size: var(--font-13-2) !important;
-	padding-left:20px !important;
+	padding-left:29px !important;
+}
+.p_paz_punto,
+.p_paz_label{ /* PAZIENTI */
+	min-width:70px !important;
+	background-position:5px center;
+}
+.p_paz_foto,
+.p_paz_choose{ /* PAZIENTI */
+	background-position:center center !important;
 }
 .smart.android .p_paz_punto,
 .smart.android .p_paz_foto,
+.smart.android .p_paz_choose,
 .smart.android .p_paz_label{ /* PAZIENTI */
 	height:42px !important;
 	line-height:42px !important;
@@ -769,6 +782,7 @@ body:not(.smart) .stampaBtn{
 }
 .app_version.bug_font.smart.android .p_paz_punto,
 .app_version.bug_font.smart.android .p_paz_foto,
+.app_version.bug_font.smart.android .p_paz_choose,
 .app_version.bug_font.smart.android .p_paz_label{ /* PAZIENTI */
 	line-height:38.48px !important;
 	font-size: var(--font-13-58) !important;
@@ -801,7 +815,7 @@ body:not(.smart) .stampaBtn{
 .p_paz_label{
 	background-image:url(../img/zoom+.png);
 	background-size: 23px;
-    background-position: left center;
+    background-position: 3px center;
 	margin-top:5px !important;
 }
 ,cont_p_paz_label{
@@ -813,9 +827,15 @@ body:not(.smart) .stampaBtn{
 	padding-top: 10px !important;
 }
 .p_paz_foto{
-	background-image: url(../img/ico_foto.png);
-    background-size: auto 21px;
+	background-image: url(../img/ico_upload.png);
+    background-size: auto 28px;
     padding-left: 30px !important;
+}
+.p_paz_choose{
+	background-image: url(../img/ico_choose.png);
+    background-size: auto 28px;
+	margin-left:15px;
+	padding-right: 3px !important;
 }
 .p_paz_gruppo, /* PAZIENTI */
 .p_paz_meridiani, /* PAZIENTI */
@@ -1408,10 +1428,13 @@ _:-webkit-full-screen,
     height: 34px !important;
 	background:url(../img/lineaPat.png) no-repeat 6px center;
 	padding-left:28px !important;
-  	width: 100%;
+	width: 205px;
 	background-color: rgba(0,0,0,0.08);
 }
-body:not(.smert) #scheda:not(.scheda_procedura) .dettMeridiano span:not(.valPunto):not(.mezzoPunto){
+#scheda.sch_Max450:not(.scheda_procedura) .dettMeridiano span:not(.valPunto):not(.mezzoPunto){
+	width: calc(100% - 45px) !important;
+}
+body:not(.smart) #scheda:not(.scheda_procedura) .dettMeridiano span:not(.valPunto):not(.mezzoPunto){
 	margin: -2px;
 }
 .smart.android #scheda:not(.scheda_procedura) .dettMeridiano span:not(.valPunto):not(.mezzoPunto){ /* PAZIENTI */
@@ -1731,6 +1754,7 @@ body:not(.touch) #puntiAuriculoMap .dettPunto:hover{
 .scoreSelect{
 	width:40px;
 	padding-left: 3px !important;
+	margin-top: 3px;
 }
 .numPoints{
 	width:47px;
@@ -2074,6 +2098,7 @@ body:not(.touch) .sezioneChiusa:hover{
 	cursor:pointer;
 	background:url(../img/frSuB.png) no-repeat right center;
 	background-size:auto 170%;
+	    line-height: 24px;
 }
 .smart .sezioneTrattamenti > .labelTrattamenti{
 	font-style:normal !important;
@@ -2098,7 +2123,8 @@ body:not(.touch) .sezioneChiusa:hover{
 	margin-right:10px;
 	margin-top:-5px;
 }
-#addFoto{
+#addFoto,
+#chooFoto{
     display: inline-block;
     margin-top: 17px;
     height: 32px;
@@ -2119,32 +2145,57 @@ body:not(.touch) .sezioneChiusa:hover{
 	background-position: center center !important;
     background-size: auto;
 }
-#contGallery{
+.contGallery{
 	overflow-y: hidden;
     overflow-x: auto;
     padding: 10px;
     white-space: nowrap;
-}	
-#pazienti_vis #contGallery,
-.scheda_procedura #contGallery,
-.scheda_gallery #contGallery{
+}
+#archives .contGallery{
+	padding:20px 0px !important;
+}
+.scheda_gallery .divEspansa{
+	width: calc(100% + 50px);
+    margin-left: -25px;
+    margin-right: -25px;
+    padding-left: 25px;
+    padding-right: 25px;
+}
+#pazienti_vis .contGallery,
+.scheda_procedura .contGallery,
+.scheda_gallery .contGallery{
     margin-top: 20px;
     margin-left: -30px;
     margin-right: -30px;
 	padding-left:25px;
 	padding-right:25px;
 }
-.scheda_gallery #contGallery{
+.scheda_gallery .contGallery,
+#archives .contGallery{
 	overflow-x: auto !important;
     white-space: normal !important;
 }
-.scheda_gallery #contGallery > div{
+#archives .contGallery > div > div{
+	margin:5px !important;
+}
+#archives .contGallery > div > div > div.sel{
+	border:2px solid #03C;
+	border-radius: 7px;
+	text-align:right;
+}
+#archives .contGallery > div > div > div:not(.sel) img{
+	display:none;
+}
+#archives .contGallery > div > div > div.sel img{
+	opacity:1 !important;
+}
+.scheda_gallery .contGallery > div:not(.fotoMini){
 	margin-top: 11px;
     display: block !important;
     border-top: 1px solid rgba(0,0,0,0.2);
     padding-top: 8px;
 }
-.scheda_gallery #contGallery > div:first-child{
+.scheda_gallery .contGallery > div:first-child{
     border-top: none !important;
 }
 .scheda_gallery #perc_cont{
@@ -2165,16 +2216,58 @@ body:not(.touch) .sezioneChiusa:hover{
 .galleryFull{
     min-height: 180px;
 }
-#contGallery > div > div:not(.DidaFoto):not(.dettagliFoto),
-#contGallery > div > div > div {
+.contGallery > div > div:not(.DidaFoto):not(.dettagliFoto),
+.contGallery > div > div > div {
     width: 150px;
     height: 150px;
 }
-#contGallery > div:not(.noResults) {
+.contGallery > div.fotoMini > div:not(.DidaFoto):not(.dettagliFoto),
+.contGallery > div.fotoMini > div{
+	margin: 5px;
+}
+.contGallery > div.fotoMini > div:not(.DidaFoto):not(.dettagliFoto),
+.contGallery > div.fotoMini > div > div {
+    width: 80px;
+    height: 80px;
+}
+
+.contGallery .fotoMini{
+	padding: 5px !important;
+}
+#scheda:not(.sch_Max450):not(.sch_Max600):not(.sch_Max800) .contGallery .fotoMini{
+	width: calc(((100% - 60px) / 6) + 10px) !important;
+}
+#scheda:not(.sch_Max450):not(.sch_Max600) .contGallery .fotoMini{
+	width: calc(((100% - 50px) / 5) + 10px) !important;
+}
+#scheda:not(.sch_Max450) .contGallery .fotoMini{
+	width: calc(((100% - 40px) / 4) + 10px) !important;
+}
+.sch_Max450 .contGallery .fotoMini{
+	width: calc(((100% - 40px) / 3) + 10px) !important;
+}
+.contGallery .fotoMini > div{
+	width: 100% !important;
+	margin: 0px !important;
+    height: auto !important;
+}
+.contGallery .fotoMini > div > div{
+	width: 100% !important;
+	height: auto !important;
+	padding-bottom: 100% !important;
+}
+
+#GalleryCestinate{
+	margin-top:20px;
+	padding-top:20px;
+	padding-bottom:10px;
+	border-top:1px solid rgba(0,0,0,0.2);
+}
+.contGallery > div:not(.noResults) {
 	display:inline-block;
 	vertical-align:top;
 }
-#contGallery > div > div:not(.DidaFoto):not(.dettagliFoto){
+.contGallery > div > div:not(.DidaFoto):not(.dettagliFoto){
     border-radius: 8px;
     margin: 2px 7px 2px 7px;
     box-shadow: 0px 0px 3px rgba(0,0,0,0.5);
@@ -2192,22 +2285,32 @@ body:not(.touch) .sezioneChiusa:hover{
     vertical-align: top;
 	padding: 10px;
 }
-#contGallery > div > p{
+.dettagliFoto p{
+	margin:0px;
+	border-top:1px solid rgba(0,0,0,0.1);
+	padding-top:2px;
+	padding-bottom:2px;
+}
+.contGallery > div > p{
     margin: 5px;
     text-align: center;
     white-space: normal;
     line-height: 15px !important;
 	width: 154px;
 }
-#contGallery > div > div:not(.DidaFoto):not(.dettagliFoto) > div {
+.contGallery > div > div:not(.DidaFoto):not(.dettagliFoto) > div {
 	background-size:cover;
 	background-position:center center;
 	cursor: pointer;
 }
 .DidaFoto{
-	padding-top:5px;
-	width: 159px;
-	margin: 0px 3px;
+	padding-top: 5px;
+    width: 159px;
+    margin: 0px 3px;
+    line-height: 15px !important;
+    display: block;
+    white-space: normal;
+    text-align: center;
 }
 .DidaFoto textarea{
 	padding: 5px !important;
@@ -2246,10 +2349,10 @@ body:not(.touch) .sezioneChiusa:hover{
 	margin-top: 121px;
 	cursor:pointer;
 }
-body:not(.touch) #contGallery > div:not(.noResults) > div img{
+body:not(.touch) .contGallery > div:not(.noResults) > div img{
 	opacity:0.2;
 }
-body:not(.touch) #contGallery > div:not(.noResults) > div:hover img{
+body:not(.touch) .contGallery > div:not(.noResults) > div:hover img{
 	opacity:1 !important;
 }
 

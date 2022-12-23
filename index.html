@@ -286,6 +286,17 @@
             	<div id="labelSets" class="popup_label">{{TXT_Mappe}}<div class="popup_chiudi" onClick="MENU.visElencoSets();"></div></div>
             	<div id="contSets" class="popup_cont"></div>
             </div>
+            <div id="archives" class="popup"> <!-- ARCHIVI IMMAGINI E FILES -->
+            	<div id="labelArchives" class="popup_label">{{TXT_Gallery}}<div class="popup_chiudi" onClick="MENU.visArchives();"></div></div>
+            	<div id="contArchives" class="popup_cont">
+                	<div id="btnArchives">
+                    	<div onClick="PH.selArchive(false);" id="btnArLocal">{{TXT_ArInUso}}</div>
+                    	<div onClick="PH.selArchive(true);" id="btnArOnline">{{TXT_ArEliminate}}</div>
+                    	<div onClick="PH.importaFoto();" id="btnArImport">{{TXT_ArImporta}} (<span></span>)</div>
+                    </div>
+                    <div id="listsArchives"></div>
+                </div>
+            </div>
             <div id="feedback" class="popup"> <!-- FEEDBACK -->
             	<div id="labelFeedback" class="popup_label">{{TXT_Feedback}}<div class="popup_chiudi" onClick="MENU.chiudiMenu();"></div></div>
             	<div id="contFeedback" class="popup_cont">

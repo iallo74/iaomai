@@ -1,0 +1,105 @@
+@charset "utf-8";
+/* CSS Document */
+
+
+/* ARCHIVI IMMAGINI E FILES */
+#archives{
+	width:540px;
+	margin-left:-270px;
+	height:540px;
+	margin-top:-270px;
+}
+#labelArchives{
+	background-image:url(../img/ico_foto.png);
+	background-position: 5px center !important;
+}
+#contArchives{
+	overflow:hidden;
+}
+#btnArchives{
+	height:60px;
+	padding:8px 8px 0px 8px;
+	text-align:left;
+	border-bottom:1px solid rgba(0,0,0,0.3);
+}
+#btnArchives > div{
+	display:inline-block;
+	vertical-align:middle;
+	background-color:rgba(0,0,0,0.2);
+	height:40px;
+	line-height:40px;
+	padding:0px 15px;
+	cursor:pointer;
+	border-radius:3px;
+	margin:2px;
+}
+#btnArchives > div:not(#btnArImport){
+	margin-top: 11px;
+    border-radius: 8px 8px 0px 0px;
+}
+#contArchives{
+	padding:0px !important;
+}
+#contArchives:not(.online) #btnArLocal,
+#contArchives.online #btnArOnline{
+	background-color:rgba(0,0,0,0.8) !important;
+	color:#FFF;
+}
+#contArchives:not(.online) #btnArOnline:hover,
+#contArchives.online #btnArLocal:hover{
+	background-color:rgba(0,0,0,0.3) !important;
+}
+#btnArImport{
+	float:right;
+	background-color:rgba(0,0,0,0.1);
+	color:#999;
+}
+#btnArImport:not(.act){
+	cursor:default;
+}
+#btnArImport *{
+	color:#999;
+}
+#btnArImport.act{
+	background-color:#03C !important;
+	color:#FFF !important;
+}
+#btnArImport.act *{
+	color:#FFF;
+}
+#btnArImport.act:hover{
+	background-color:#0032CB !important;
+}
+
+
+#listsArchives{
+	height:calc(100% - 60px);
+	background-color:#FFF;
+}
+#listsArchives .contGallery{
+	width: 100%;
+	height:calc(100%);
+	overflow-y:scroll;
+	display:none;
+}
+#contArchives:not(.online) #contGalleryAr,
+#contArchives.online #contGalleryArOnline{
+	display:block !important;
+}
+@media (min-width: 541px){
+	#contArchives{
+		padding-top: 25px;
+		padding-bottom: 35px;
+		padding-right: 35px;
+		padding-left: 25px;
+		height: 500px;
+	}
+}
+@media (max-width: 540px){
+	#contArchives{
+		height: calc(100% - 40px);
+	}
+}
+#contArchives > div{
+    
+}

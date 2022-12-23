@@ -1868,8 +1868,13 @@ DB.TXT = {
 		
 		// gallery
 		AggiungiFoto: {
-			ita: "Aggiungi foto",
-			eng: "Add pic",
+			ita: "Carica una foto",
+			eng: "Upload a pic",
+			esp: ""
+		},
+		ScegliFoto: {
+			ita: "Scegli una foto",
+			eng: "Choose a pic",
 			esp: ""
 		},
 		ChiediEliminaFoto: {
@@ -1907,6 +1912,11 @@ DB.TXT = {
 			eng: "Size",
 			esp: ""
 		},
+		DataGallery: {
+			ita: "Data di caricamento",
+			eng: "Upload date",
+			esp: ""
+		},
 		UbicazioneGallery: {
 			ita: "Posizione",
 			eng: "Place",
@@ -1932,6 +1942,11 @@ DB.TXT = {
 			eng: "Procedure",
 			esp: ""
 		},
+		GalleryCestinate: {
+			ita: "Foto inutilizate",
+			eng: "Unused pics",
+			esp: ""
+		},
 		AlertImgLow: {
 			ita: "Immagine di bassa qualità",
 			eng: "Low quality image",
@@ -1940,6 +1955,21 @@ DB.TXT = {
 		AlertImgLowNoConn:{
 			ita: "Immagine di bassa qualità a causa dell'assenza di connessione",
 			eng: "Low quality image due to no connection",
+			esp: ""
+		},
+		ArInUso: {
+			ita: "IN USO",
+			eng: "IN USE",
+			esp: ""
+		},
+		ArEliminate: {
+			ita: "ELIMINATE",
+			eng: "DELETED",
+			esp: ""
+		},
+		ArImporta: {
+			ita: "IMPORTA",
+			eng: "IMPORT",
 			esp: ""
 		},
 		

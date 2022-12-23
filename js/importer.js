@@ -71,6 +71,7 @@ var IMPORTER = {
     	'css/popup_versione.css',
     	'css/popup_impset.css',
     	'css/popup_photo.css',
+    	'css/popup_archives.css',
     	'css/popup_dispositivi.css',
     	'css/popup_features.css',
     	'css/schede.css',

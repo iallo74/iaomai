@@ -789,7 +789,7 @@ var PAZIENTI_TRATTAMENTI = {
 							TXT("Gallery")+' (<span id="totFoto"></span>)' +
 					'	</em>' +
 					'	<div id="contGallery"' +
-					'		 class="divEspansa">' +
+					'		 class="divEspansa contGallery">' +
 					'	</div>' +
 					'	<div id="p_add_dett"' +
 					'		 style="margin-top: 0px;">' +
@@ -799,6 +799,11 @@ var PAZIENTI_TRATTAMENTI = {
 					'		       onChange="PH.selezionaFoto(this);">' +
 					'		<span id="addFoto">' +
 								TXT("AggiungiFoto") +
+					'		</span>' +
+					'		<span class="p_paz_choose"' +
+					'		      onClick="MENU.visArchives();"></span>' +
+					'		<span id="chooFoto">' +
+								TXT("ScegliFoto") +
 					'		</span>' +
 					'	</div>' +
 					'</div>';

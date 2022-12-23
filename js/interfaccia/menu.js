@@ -99,6 +99,7 @@ var MENU = {
 		if(n!="community")document.getElementById("community").classList.remove("visSch");
 		if(n!="dispositivi")document.getElementById("dispositivi").classList.remove("visSch");
 		if(n!="features")document.getElementById("features").classList.remove("visSch");
+		if(n!="archives")document.getElementById("archives").classList.remove("visSch");
 		if(n!="ag")document.getElementById("ag").classList.remove("visSch")
 		if( n=='pulsanti_modello' ||
 			n=='impostazioni' ||
@@ -604,6 +605,27 @@ var MENU = {
 		document.getElementById("impset").classList.toggle("visSch");
 		try{ SET.popolaImpSet(); }catch(err){}
 	},
+	visArchives: function(){
+		// verifico le autorizzazioni
+		if(!DB.login.data.auths.length){
+			setTimeout(function(){
+				ALERT(TXT("MsgFunzioneSoloPay"));
+			},100);
+			return;
+		}
+		// --------------------------
+		MENU.chiudiMenu("archives");
+		visLoader("");
+		document.getElementById("archives").classList.toggle("visSch");
+		if(document.getElementById("archives").className.indexOf("visSch") > -1){
+			visLoader('');
+			PH.apriArchives();
+		}else{
+			PH.chiudiArchives();
+			nasLoader();
+		}
+	},
+	
 	stampaStage: function(){
 		if(!DB.login.data.auths.length){
 			setTimeout(function(){
@@ -613,19 +635,16 @@ var MENU = {
 		}
 		// --------------------------
 		MENU.visStampa();
-		//scene.background = scene.userData.BGcolorPrint;
 		document.body.classList.add("bodyStampa");
-	  	//var bg = getPropCSS(document.body,"background-color");
-		//document.body.style.backgroundColor = '#FFF';
 		var rapp = window.innerWidth / window.innerHeight;
-		var bw = 27;
+		var bw = 28;
 		var bh = 21;
 		if(rapp > bw/bh ){
 			var w = window.innerWidth;
-			var h = (window.innerWidth * bh ) / bw;
+			var h = (window.innerWidth * bh ) / (bw+2);
 		}else{
-			var h = window.innerHeight;
-			var w = (window.innerHeight * bw ) / bh;
+			var h = window.innerHeight+210;
+			var w = (window.innerHeight * (bw+10) ) / bh;
 		}
 		camera.aspect =  w / h;
 		camera.updateProjectionMatrix();
@@ -633,12 +652,11 @@ var MENU = {
 		render();
 		setTimeout(function(){
 			//console.log(Canvas2Img());
+			document.getElementById("container").getElementsByTagName("canvas")[0].style.marginLeft = '-400px';;
 			document.documentElement.style.position = 'relative'; // aggiunto per MAC
 			window.print();
 			document.documentElement.style.position = 'fixed';
-			//scene.background = scene.userData.BGcolorScreen;
 			document.body.classList.remove("bodyStampa");
-			//document.body.style.backgroundColor = bg;
 			onWindowResize();
 			setTimeout(function(){MENU.chiudiMenu();},500);
 		},500);

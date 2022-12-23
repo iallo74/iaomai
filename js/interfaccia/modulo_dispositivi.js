@@ -5,7 +5,7 @@ var DISPOSITIVI = {
 		var HTML = '<div id="dispositivi_descr">'+htmlEntities(TXT("MaxDispositiviConnessi"))+'</div>';
 		var elenco = JSON.parse(txt);
 		var devs1 = devs2 = type1 = type2 = time1 = time2 = plt1 = plt2 = '';
-		console.log(elenco)
+		//console.log(elenco)
 		if(elenco.DeviceInfo)devs1 = JSON.parse(window.atob(elenco.DeviceInfo));
 		if(elenco.DeviceInfo2)devs2 = JSON.parse(window.atob(elenco.DeviceInfo2));
 		if(parseInt(elenco.LastConn))time1 = "<br><i>"+TXT("UltimaConnessione")+"</i>: "+getDataTS(elenco.LastConn);

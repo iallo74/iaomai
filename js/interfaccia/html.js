@@ -494,6 +494,7 @@ var H = {
 			- img (string)
 			- html (string)
 			- etichette (boolean)
+			- addFunct (string)
 		
 		*/
 		if( localStorage.getItem("op_"+obj.nome) )obj.aperta = true;
@@ -504,7 +505,7 @@ var H = {
 				'	  class="sezioneTrattamenti divEspansa'+(!__(obj.aperta) ? ' sezioneChiusa' : '' )+'">' +	
 				'	<em class="labelMobile labelTrattamenti"' +
 				'  		onClick="H.swSezione(this);';
-		if(obj.nome == 'foto')HTML += 'PH.resizeDida();';
+		if(obj.addFunct)HTML += obj.addFunct;
 		HTML += '">' +
 				'		<img class="icoLabel"' +
 				'			 src="img/ico_'+img+'.png">' +

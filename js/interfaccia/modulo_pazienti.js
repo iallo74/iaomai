@@ -755,7 +755,7 @@ var PAZIENTI = {
 			
 			// GALLERY
 			var cont = '	<div id="contGallery"' +
-						'		 class="divEspansa">' +
+						'		 class="divEspansa contGallery">' +
 						'	</div>' +
 						'	<div id="p_add_dett"' +
 						'		 style="margin-top: 0px;">' +
@@ -766,12 +766,18 @@ var PAZIENTI = {
 						'		<span id="addFoto">' +
 									TXT("AggiungiFoto") +
 						'		</span>' +
+						'		<span class="p_paz_choose"' +
+						'		      onClick="MENU.visArchives();"></span>' +
+						'		<span id="chooFoto">' +
+									TXT("ScegliFoto") +
+						'		</span>' +
 						'	</div>';
 					
 			HTML += H.r({	t: "h", name: "totFoto",	value: "0" });
 			HTML += H.sezione({
 				label: TXT("Gallery"),
 				nome: 'foto',
+				addFunct: 'PH.resizeDida();',
 				html: cont
 						});	
 			
@@ -1181,7 +1187,7 @@ var PAZIENTI = {
 					
 			
 			// GALLERY
-			HTML += '<div id="contGallery"></div>';
+			HTML += '<div id="contGallery" class="contGallery"></div>';
 			
 			
 			var azElimina = PAZIENTI.idCL>-1 ? "PAZIENTI.el_paziente("+PAZIENTI.idCL+");":"";

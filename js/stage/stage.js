@@ -391,6 +391,7 @@ function caricaSet( cartella, el ){
 		globals.set=JSON.parse(JSON.stringify(sets[cartella]));
 		globals.set.cartella = cartella;
 		globals.set.setSel = el;
+		if(muscleView)MODELLO.swMuscle();
 		var modelli = filtraModelli(cartella);
 		if(modelli.indexOf(globals.modello.cartella) == -1 && globals.modello.cartella){
 			caricaModello(modelli[0]);
