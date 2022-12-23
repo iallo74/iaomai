@@ -212,6 +212,18 @@ SET = {
 		
 		HTML_imp += '<div id="tbSigleMeridiani"></div>';
 		
+		var mzs = PAZIENTI.mezziSet.P;
+		HTML_imp += '	<span class="separatorePulsanti"></span><div><i>'+htmlEntities(TXT("MezzoDefault"))+':</i></div><div id="tt_mezzival2">';
+		for(m in mzs){
+			HTML_imp += '<span style="background-image:url(img/mezzo_'+mzs[m]+'.png);"' +
+					'	   onClick="PAZIENTI.cambiaGZ(\''+mzs[m]+'\',true);"' +
+					'	   data-mezzo="'+mzs[m]+'"';
+			if(!__(localStorage["mezzoDefault"+globals.set.cartella]) && m==0)HTML_imp += ' class="mzSel"';
+			if(localStorage["mezzoDefault"+globals.set.cartella]==mzs[m])HTML_imp += ' class="mzSel"';
+			HTML_imp += '	   title="'+htmlEntities(PAZIENTI.mezzi[mzs[m]])+'"></span>';
+		}
+		HTML_imp += '</div>';
+		
 		HTML_imp += '<div style="margin-top:30px;"><span class="annullaBtn" onclick="MENU.chiudiMenu();">'+TXT("Annulla")+'</span><span class="submitBtn" onclick="SET.salvaImpostazioni();">'+TXT("Salva")+'</span></div>';
 		
 		document.getElementById("contImpset").innerHTML = HTML_imp;
@@ -889,13 +901,11 @@ SET = {
 			var pP=pT[1].split(".");
 			var nTsubo=pP[0];
 			if(nTsubo.length == 1)nTsubo = "0"+nTsubo;
-			var ptSx = scene.getObjectByName("_"+pP[1]+"."+nTsubo+".SX");
-			var ptDx = scene.getObjectByName("_"+pP[1]+"."+nTsubo+".DX");
-			var ptCc = scene.getObjectByName("_"+pP[1]+"."+nTsubo+".");
-			if(ptSx)ptSx.material=SET.MAT.pointEvi;
-			if(ptDx)ptDx.material=SET.MAT.pointEvi;
-			if(ptCc)ptCc.material=SET.MAT.pointEvi;
-			
+			siglaMeridiano = pP[1];
+			var els = scene.getObjectByName("PT_"+siglaMeridiano).children;
+			for(e in els){
+				if(els[e].name.indexOf("_"+siglaMeridiano+"."+nTsubo+".")==0)els[e].material=SET.MAT.pointEvi;
+			}
 			SET.tsuboEvidenziati.push(pT[1]);
 		}
 		SET.settaOverTsubo();
@@ -921,13 +931,11 @@ SET = {
 				if(pP[2]=='P')mat = SET.MAT.pointPieno;
 				if(pP[2]=='D')mat = SET.MAT.pointDolore;
 			}
-			var ptSx = scene.getObjectByName("_"+pP[1]+"."+nTsubo+".SX");
-			var ptDx = scene.getObjectByName("_"+pP[1]+"."+nTsubo+".DX");
-			var ptCc = scene.getObjectByName("_"+pP[1]+"."+nTsubo+".");
-			if(ptSx)ptSx.material = mat;
-			if(ptDx)ptDx.material = mat;
-			if(ptCc)ptCc.material = mat;
-			
+			siglaMeridiano = pP[1];
+			var els = scene.getObjectByName("PT_"+siglaMeridiano).children;
+			for(e in els){
+				if(els[e].name.indexOf("_"+siglaMeridiano+"."+nTsubo+".")==0)els[e].material=mat;
+			}
 			SET.tsuboEvidenziati.push(elenco[k]);
 		}
 	},
@@ -944,13 +952,11 @@ SET = {
 				var pP=pT.split(".");
 				var nTsubo=pP[0];
 				if(nTsubo.length == 1)nTsubo = "0"+nTsubo;
-				var ptSx = scene.getObjectByName("_"+pP[1]+"."+nTsubo+".SX");
-				var ptDx = scene.getObjectByName("_"+pP[1]+"."+nTsubo+".DX");
-				var ptCc = scene.getObjectByName("_"+pP[1]+"."+nTsubo+".");
-				if(ptSx)ptSx.material=SET.MAT.pointTrasp;
-				if(ptDx)ptDx.material=SET.MAT.pointTrasp;
-				if(ptCc)ptCc.material=SET.MAT.pointTrasp;
-				
+				siglaMeridiano = pP[1];
+				var els = scene.getObjectByName("PT_"+siglaMeridiano).children;
+				for(e in els){
+					if(els[e].name.indexOf("_"+siglaMeridiano+"."+nTsubo+".")==0)els[e].material=SET.MAT.pointTrasp;
+				}
 			}
 			SET.tsuboEvidenziati = [];
 		}

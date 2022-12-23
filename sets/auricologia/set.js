@@ -338,9 +338,9 @@ SET = {
 							'<i class="elMenu" id="chiudiSet" onClick="chiudiSet();" title="'+htmlEntities(TXT("ChiudiSet"))+'"><span>' +
 								htmlEntities(TXT("ChiudiSet")) +
 							'</span></i>' +
-							/*'<i class="elMenu" id="impostazioniSet" onClick="MENU.visImpset();" title="'+htmlEntities(TXT("ImpostazioniSet"))+'"><span>' +
+							'<i class="elMenu" id="impostazioniSet" onClick="MENU.visImpset();" title="'+htmlEntities(TXT("ImpostazioniSet"))+'"><span>' +
 								htmlEntities(TXT("ImpostazioniSet")) +
-							'</span></i>' +*/
+							'</span></i>' +
 							'<i class="elMenu" id="help_set" onClick="GUIDA.visFumetto(\'guida_set\',true,true);">?</i></span>';
 		var contElenco = '';
 		contPulsanti += '<div id="pulsante_modello" onClick="cambiaModello(\'orecchio\');">Apri il modello 3D</div>';
@@ -372,6 +372,20 @@ SET = {
 		SCHEDA.swPulsanti(true);
 		
 		HTML_imp = ''; // IMPOSTAZIONI DEL SET
+		
+		var mzs = PAZIENTI.mezziSet.A;
+		HTML_imp += '<div><i>'+htmlEntities(TXT("MezzoDefault"))+':</i></div><div id="tt_mezzival2">';
+		for(m in mzs){
+			HTML_imp += '<span style="background-image:url(img/mezzo_'+mzs[m]+'.png);"' +
+					'	   onClick="PAZIENTI.cambiaGZ(\''+mzs[m]+'\',true);"' +
+					'	   data-mezzo="'+mzs[m]+'"';
+			if(!__(localStorage["mezzoDefault"+globals.set.cartella]) && m==0)HTML_imp += ' class="mzSel"';
+			if(localStorage["mezzoDefault"+globals.set.cartella]==mzs[m])HTML_imp += ' class="mzSel"';
+			HTML_imp += '	   title="'+htmlEntities(PAZIENTI.mezzi[mzs[m]])+'"></span>';
+		}
+		HTML_imp += '</div>';
+		
+		HTML_imp += '<div style="margin-top:30px;"><span class="annullaBtn" onclick="MENU.chiudiMenu();">'+TXT("Annulla")+'</span><span class="submitBtn" onclick="SET.salvaImpostazioni();">'+TXT("Salva")+'</span></div>';
 		document.getElementById("contImpset").innerHTML = HTML_imp;
 		
 		//SCHEDA.apriElenco();
@@ -874,13 +888,17 @@ SET = {
 		for(k in result){
 			var pT=result[k].split("'");
 			var siglaTsubo = pT[1];
-			var ptCc = scene.getObjectByName("_PT"+siglaTsubo);
-			if(typeof(ptCc)!='undefined'){
-				ptCc.material = SET.MAT.pointEvi;
+			var els = scene.getObjectByName("PTs"+SET.phase).children;
+			for(e in els){
+				if(els[e].name.indexOf("_PT"+siglaTsubo)==0){
+					els[e].material=SET.MAT.pointEvi;
+				}
 			}
-			var arCc = scene.getObjectByName("AR"+siglaTsubo);
-			if(typeof(arCc)!='undefined'){
-				arCc.material = SET.MAT.areaEvi;
+			var els = scene.getObjectByName("ARs"+SET.phase).children;
+			for(e in els){
+				if(els[e].name.indexOf("AR"+siglaTsubo)==0){
+					els[e].material=SET.MAT.areaEvi;
+				}
 			}
 			SET.tsuboEvidenziati.push(siglaTsubo);
 		}
@@ -889,14 +907,18 @@ SET = {
 	evidenziaTsuboMod: function( elenco ){
 		SET.annullaEvidenziaTsubo();
 		for(k in elenco){
-			siglaTsubo = elenco[k];
-			var ptCc = scene.getObjectByName("_PT"+siglaTsubo);
-			if(typeof(ptCc)!='undefined'){
-				ptCc.material = SET.MAT.pointEvi;
+			siglaTsubo = elenco[k].split(".")[0];
+			var els = scene.getObjectByName("PTs"+SET.phase).children;
+			for(e in els){
+				if(els[e].name.indexOf("_PT"+siglaTsubo)==0){
+					els[e].material=SET.MAT.pointEvi;
+				}
 			}
-			var arCc = scene.getObjectByName("AR"+siglaTsubo);
-			if(typeof(arCc)!='undefined'){
-				arCc.material = SET.MAT.areaEvi;
+			var els = scene.getObjectByName("ARs"+SET.phase).children;
+			for(e in els){
+				if(els[e].name.indexOf("AR"+siglaTsubo)==0){
+					els[e].material=SET.MAT.areaEvi;
+				}
 			}
 			SET.tsuboEvidenziati.push(siglaTsubo);
 		}
@@ -905,13 +927,18 @@ SET = {
 		if(SET.tsuboEvidenziati.length){
 			for(k in SET.tsuboEvidenziati){
 				var siglaTsubo=SET.tsuboEvidenziati[k];
-				var ptCc = scene.getObjectByName("_PT"+siglaTsubo);
-				if(typeof(ptCc)!='undefined'){
-					ptCc.material = SET.MAT.pointTrasp;
+				
+				var els = scene.getObjectByName("PTs"+SET.phase).children;
+				for(e in els){
+					if(els[e].name.indexOf("_PT"+siglaTsubo)==0){
+						els[e].material=SET.MAT.pointTrasp;
+					}
 				}
-				var arCc = scene.getObjectByName("AR"+siglaTsubo);
-				if(typeof(arCc)!='undefined'){
-					arCc.material = SET.MAT.areaBase;
+				var els = scene.getObjectByName("ARs"+SET.phase).children;
+				for(e in els){
+					if(els[e].name.indexOf("AR"+siglaTsubo)==0){
+						els[e].material=SET.MAT.areaBase;
+					}
 				}
 			}
 			SET.tsuboEvidenziati = [];
@@ -939,7 +966,8 @@ SET = {
 	},
 	ritOverTsubo: function( id, p ){
 		if(!touchable){
-			var siglaTsubo = document.getElementById("rg"+p).value;
+			var el = document.getElementById("pt_"+p);
+			var siglaTsubo = el.value;
 			SET.overTsubo("PT"+siglaTsubo,false);
 			var elenco = [];
 			var els = document.getElementById(id).getElementsByClassName("dettPunto");
@@ -949,9 +977,6 @@ SET = {
 				elenco.push(sl[0].value);
 			}
 			SET.evidenziaTsuboMod(elenco);
-			if(SET.siglaProc()=='AUR')el = document.getElementById("ts_"+siglaTsubo);
-			else el = document.getElementById("pt_"+p);
-			console.log(el)
 			SET.aggiornaDettaglio(el);
 		}
 	},

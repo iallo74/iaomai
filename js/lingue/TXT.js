@@ -728,12 +728,12 @@ DB.TXT = {
 		},
 		Mezzo: {
 			ita: "- mezzo -",
-			eng: "- mezzo -",
+			eng: "- mean -",
 			esp: ""
 		},
 		MezzoAgo: {
 			ita: "Ago",
-			eng: "Ago",
+			eng: "Needle",
 			esp: ""
 		},
 		MezzoMoxa: {
@@ -743,22 +743,22 @@ DB.TXT = {
 		},
 		MezzoCoppetta: {
 			ita: "Coppetta",
-			eng: "Coppetta",
+			eng: "Cup",
 			esp: ""
 		},
 		MezzoDiapason: {
-			ita: "Diapason",
-			eng: "Diapason",
+			ita: "Diaphason",
+			eng: "Diaphason",
 			esp: ""
 		},
 		MezzoLuce: {
 			ita: "Luce",
-			eng: "Luce",
+			eng: "Light",
 			esp: ""
 		},
 		MezzoDito: {
 			ita: "Dito",
-			eng: "Dito",
+			eng: "Finger",
 			esp: ""
 		},
 		MezzoPauper: {
@@ -799,6 +799,11 @@ DB.TXT = {
 		MezzoInfiltrazione: {
 			ita: "Infiltrazione",
 			eng: "Infiltration",
+			esp: ""
+		},
+		MezzoDefault: {
+			ita: "Mezzo di default",
+			eng: "Default mean",
 			esp: ""
 		},
 		SpiegazionePuntoTratt: {

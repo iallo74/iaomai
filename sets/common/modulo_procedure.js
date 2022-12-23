@@ -176,7 +176,8 @@ var MODULO_PROCEDURE = { // extend SET
 					// AUTORE E DATA
 					'	<div class="p_sch_label2">' +
 					'	<span class="commAvatar';
-			if(CONN.getConn() && idUtenteProcedura)HTML += '" style="background-image:url(\'' + CONN.APIfolder+'../../__files_utenti/immagini/'+idUtenteProcedura+'/__avatarMicro.jpg\');';
+			var dt = new Date().getTime();
+			if(CONN.getConn() && idUtenteProcedura)HTML += '" style="background-image:url(' + CONN.APIfolder+'getAvatarMini.php?idU='+idUtenteProcedura+'&t='+dt+');';
 			else HTML += ' commNoAvatar"';
 			HTML +=	'"></span>' +
 					'		<b>' + Autore + '</b> ('+getDataTS(DataModifica)+')' +
@@ -218,6 +219,33 @@ var MODULO_PROCEDURE = { // extend SET
 					TipoDettaglio=dettagliProcedura[p].TipoDettaglio;
 					DescrizioneDettaglio=dettagliProcedura[p].DescrizioneDettaglio;
 					OrdineDettaglio=dettagliProcedura[p].OrdineDettaglio*1;
+					
+					
+					var nTsubo='';
+					var siglaMeridiano='';
+					var siglaTsubo='';
+					var mezzo='';
+					if(TipoDettaglio=='P' || TipoDettaglio=='A'){	
+						if(DescrizioneDettaglio){
+							if(DescrizioneDettaglio.indexOf(".")>-1){
+								pP=DescrizioneDettaglio.split(".");
+								if(TipoDettaglio=='P'){
+									nTsubo=pP[0];
+									siglaMeridiano=pP[1];
+									siglaTsubo=__(pP[2]);
+									mezzo=__(pP[3]);
+								}
+								if(TipoDettaglio=='A'){
+									siglaTsubo=pP[0];
+									mezzo=__(pP[1]);
+								}
+							}else{
+								if(TipoDettaglio=='P')nTsubo=DescrizioneDettaglio;
+								if(TipoDettaglio=='A')siglaTsubo=DescrizioneDettaglio;
+							}
+						}
+					}
+					
 					HTML += '<div class="rgProc_'+TipoDettaglio+'"';
 					if(!n && (TipoDettaglio=='P' || TipoDettaglio=='A'))HTML += ' style="margin-top:15px;"';
 					HTML += '>';
@@ -229,18 +257,13 @@ var MODULO_PROCEDURE = { // extend SET
 						HTML+=DescrizioneDettaglio;
 					}
 					if(TipoDettaglio=='P'){
-						pD=DescrizioneDettaglio.split(".");
-						var pt = pD[0];
-						var mr = pD[1];
-						var s = __(pD[2]);
-						var sg = pt+'.'+mr;
-						if(s)sg = s;
-						if(pt && mr){
+						if(!siglaTsubo)siglaTsubo = nTsubo+"."+siglaMeridiano;
+						if(nTsubo && siglaMeridiano){
 							HTML += '<span class="pallinoPat';
-							if(typeof(DB.set.meridiani[mr])=='undefined')HTML += ' ptNoSel';
+							if(typeof(DB.set.meridiani[siglaMeridiano])=='undefined')HTML += ' ptNoSel';
 							HTML += '"';
-							if(typeof(DB.set.meridiani[mr])!='undefined')HTML += ' onClick="SET.selTsubo(\''+pt+"|"+mr+'\')"';
-							HTML += '>'+sg+'</span>';
+							if(typeof(DB.set.meridiani[siglaMeridiano])!='undefined')HTML += ' onClick="SET.selTsubo(\''+nTsubo+"|"+siglaMeridiano+'\')"';
+							HTML += '>'+siglaTsubo+'</span>';
 						}
 					}
 					if(TipoDettaglio=='M'){
@@ -258,10 +281,10 @@ var MODULO_PROCEDURE = { // extend SET
 								'</span>';
 					}
 					if(TipoDettaglio=='A'){
-						var siglaTsubo = DescrizioneDettaglio;
 						var NomeTsubo = DB.set.punti[siglaTsubo].NomeTsubo;
 						HTML += '[.'+siglaTsubo+'.]';
 					}
+					if(mezzo)HTML += '<img src="img/mezzo_'+mezzo+'.png" class="noMod" style="vertical-align: middle;margin-top: -3px;margin-left: 5px;">';
 					if(TipoDettaglio=='T')HTML += '</b>';
 					HTML += '</div>';
 					presente=true;
@@ -634,12 +657,10 @@ var MODULO_PROCEDURE = { // extend SET
 	salvaProcedura: function(){ // salva una procedura
 		stopAnimate(true);
 		visLoader(TXT("SalvataggioInCorso"),'loadingLight');
-		SET.salvaDettagli();
 		var DataModifica = DB.procedure.lastSync+1;
 		if(!document.formMod.idProc.value*1>-1)DataCreazione=DataModifica;	
 		
 		// salvo le immagini
-		//var f = 0;
 		var GA = PH.galleryProvvisoria;
 		for(i in GA){
 			GA[i].Dida = document.getElementById("Dida"+i).value;
@@ -656,7 +677,6 @@ var MODULO_PROCEDURE = { // extend SET
 					idFoto: GA[i].idFoto
 				}
 				GA[i] = NG;
-				//f++;
 			}
 		}
 		
@@ -679,19 +699,15 @@ var MODULO_PROCEDURE = { // extend SET
 				Q_idProc=document.formMod.idProc.value*1;
 			}else{
 				DB.procedure.data.push(JSNPUSH);
-				//DB.procedure.data.sort(sort_by("NomeProcedura", false));
 				for(k in DB.procedure.data){
 					if(DB.procedure.data[k].DataCreazione==DataModifica)Q_idProc=k;
 				}
 			}
 			endChangeDetection()
 			SCHEDA.formModificato = false;
-			/*applicaLoading(document.querySelector(".listaProcedure"));
-			applicaLoading(document.getElementById("scheda_testo"));*/
 			localPouchDB.setItem(MD5("DB"+LOGIN._frv()+".procedure"), IMPORTER.COMPR(DB.procedure)).then(function(){
 				// salvo il DB
-				LOGIN.sincronizza(	/*'rimuoviLoading(document.querySelector(".listaProcedure"));' +*/
-									'startAnimate();' +
+				LOGIN.sincronizza(	'startAnimate();' +
 									'nasLoader();' +
 									'SET.car_procedura('+Q_idProc+',1,0);' );
 				
@@ -756,7 +772,7 @@ var MODULO_PROCEDURE = { // extend SET
 		for(var p=0;p<pP.length-1;p++)SET.aggiungiDettaglio(PAZIENTI.tipoGruppo,pP[p],0);
 		PAZIENTI.evidenziaAggiunti(document.getElementById('dettagliCont'),pP.length-1);
 	},
-	azRicercaProcedure: function( p, id, comm ){
+	azRicercaProcedure: function( p, id, comm ){ // apre la scheda della procedura dalla ricerca globale
 		if(typeof(id) == 'undefined')var id = -1;
 		if(typeof(comm) == 'undefined')var comm = false;
 		if(p == -1 && id > -1){
@@ -843,10 +859,11 @@ var MODULO_PROCEDURE = { // extend SET
 				HTML += '	<div class="delProcDett"' +
 						'	     onClick="SET.eliminaDettaglio(\''+p+'\');"' +
 						'	     title="'+TXT("DelDett")+'">' +
-						'	</div>' +
-						'	<i '+(TipoDettaglio!='T' || TipoDettaglio!='D' ? ' class="iProc"' : '')+'>' +
-						(TipoDettaglio=='T' ? TXT("Titolo") : '') +
-						(TipoDettaglio=='D' ? TXT("Descrizione") : '') +
+						'	</div>';
+				if(TipoDettaglio=='T' || TipoDettaglio=='D')
+				HTML += '	<i>' +
+							(TipoDettaglio=='T' ? TXT("Titolo") : '') +
+							(TipoDettaglio=='D' ? TXT("Descrizione") : '') +
 						'	</i>';
 						
 				HTML += '	<input type="hidden"' +
@@ -858,6 +875,50 @@ var MODULO_PROCEDURE = { // extend SET
 						'		   id="ti_'+p+'"' +
 						'		   name="ti_'+p+'"' +
 						'		   value="'+TipoDettaglio+'" />';
+				
+				
+				
+				if(TipoDettaglio=='P' || TipoDettaglio=='A'){	
+				
+					var nTsubo='';
+					var siglaMeridiano='';
+					var siglaTsubo='';
+					var mezzo='';
+					if(DescrizioneDettaglio){
+						if(DescrizioneDettaglio.indexOf(".")>-1){
+							pP=DescrizioneDettaglio.split(".");
+							if(TipoDettaglio=='P'){
+								nTsubo=pP[0]*1;
+								siglaMeridiano=pP[1];
+								siglaTsubo=__(pP[2]);
+								mezzo=__(pP[3]);
+							}
+							if(TipoDettaglio=='A'){
+								siglaTsubo=pP[0];
+								mezzo=__(pP[1]);
+							}
+						}else{
+							if(TipoDettaglio=='P')nTsubo=DescrizioneDettaglio;
+							if(TipoDettaglio=='A')siglaTsubo=DescrizioneDettaglio;
+						}
+					}
+				
+					
+					// mezzo
+					var addMezzoTit = '';
+					if(mezzo)addMezzoTit = ': '+PAZIENTI.mezzi[mezzo];
+					HTML += '	<span id="ico_PZ'+p+'"' +
+							'	      class="mezzoPunto"' +
+							'	      onClick="PAZIENTI.selMezzo('+p+',\''+TipoDettaglio+'\',true);">' +
+							'		<img src="img/mezzo_'+mezzo+'.png"' +
+							'	  	     width="20"' +
+							'	  	     height="20"' +
+							'	  	     align="absmiddle"' +
+							'	  	     title="'+htmlEntities(TXT("PZDett"))+'"'+
+							'	  	     class="occhio valEn"> ' +
+							'	</span>';
+				}
+				
 						
 				// dettagli
 				if(TipoDettaglio=='T')
@@ -881,23 +942,9 @@ var MODULO_PROCEDURE = { // extend SET
 					
 				if(TipoDettaglio=='P'){
 					tsuboProvvisoriProc.push( DescrizioneDettaglio );
-					if(DescrizioneDettaglio){
-						pP=DescrizioneDettaglio.split(".");
-						p0=pP[0]*1;
-						p1=pP[1];
-						p2=__(pP[2]);
-					}else{
-						p0=0;
-						p1='';
-						p2='';
-					}
-					
-					if(typeof(DB.set.meridiani[p1])=='undefined'){
-						var siglaTsubo = __(p2, p0+"."+p1);
-						HTML += '<span class="ptNo">'+siglaTsubo+'</span>' +
-								'<input type="hidden" id="mr_'+p+'" name="mr_'+p+'" value="'+p1+'">' +
-								'<input type="hidden" id="pt_'+p+'" name="pt_'+p+'" value="'+p0+'">' +
-								'<input type="hidden" id="sg_'+p+'" name="sg_'+p+'" value="'+p2+'">';
+					if(typeof(DB.set.meridiani[siglaMeridiano])=='undefined'){
+						var siglaTsubo = __(siglaTsubo, nTsubo+"."+siglaMeridiano);
+						HTML += '<span class="ptNo">'+siglaTsubo+'</span>';
 					}else{
 						HTML += 
 							'	<select name="mr_'+p+'"' +
@@ -906,13 +953,13 @@ var MODULO_PROCEDURE = { // extend SET
 							'		    		  SET.ritOverTsubo(\'dettagliCont\','+p+');" class="selectTratt">';
 						
 						var totPunti=0;
-						if(p1=='')HTML +=
+						if(siglaMeridiano=='')HTML +=
 							'		<option value="">- '+TXT("ScegliMeridiano")+' -</option>';
 							
 						for(k in DB.set.meridiani){
 							HTML += 
 							'		<option value="'+k+'"';
-							if(p1==k){
+							if(siglaMeridiano==k){
 								HTML += ' SELECTED';
 								totPunti=DB.set.meridiani[k].tsubo.length;
 							}
@@ -928,12 +975,12 @@ var MODULO_PROCEDURE = { // extend SET
 						
 						for(n=1;n<=totPunti;n++){
 							var siglaTsubo = n;
-							if(__(DB.set.meridiani[p1].tsubo[n-1].siglaTsubo)){
-								siglaTsubo = __(DB.set.meridiani[p1].tsubo[n-1].siglaTsubo);
+							if(__(DB.set.meridiani[siglaMeridiano].tsubo[n-1].siglaTsubo)){
+								siglaTsubo = __(DB.set.meridiani[siglaMeridiano].tsubo[n-1].siglaTsubo);
 								siglaTsubo = siglaTsubo.substr(3,siglaTsubo.length-3);
 							}
 							HTML += '	<option value="'+n+'"';
-							if(p0==n)HTML += ' SELECTED';
+							if(nTsubo==n)HTML += ' SELECTED';
 							HTML += '>'+siglaTsubo+'</option>';
 						}
 						HTML += '	</select>';
@@ -942,7 +989,7 @@ var MODULO_PROCEDURE = { // extend SET
 								' 		 height="16"' +
 								' 		 align="absmiddle"' +
 								' 		 id="ico_vis'+p+'"' +
-								' 		 style="' + ((p1=='') ? 'display:none;':'') +
+								' 		 style="' + ((siglaMeridiano=='') ? 'display:none;':'') +
 								'				margin-left:10px;' +
 								'				cursor:pointer;' +
 								'				margin-top: -5px;""' +
@@ -987,7 +1034,7 @@ var MODULO_PROCEDURE = { // extend SET
 					
 					for(a=0;a<puntiElenco.length;a++){
 						HTML += '	<option value="'+puntiElenco[a].siglaTsubo+'"';
-						if(DescrizioneDettaglio==puntiElenco[a].siglaTsubo)HTML += ' SELECTED';
+						if(siglaTsubo==puntiElenco[a].siglaTsubo)HTML += ' SELECTED';
 						HTML += '>'+puntiElenco[a].NomeTsubo+'</option>';
 					}
 					HTML += '	</select>' +
@@ -1001,10 +1048,8 @@ var MODULO_PROCEDURE = { // extend SET
 							'				margin-top: -5px;""' +
 							' 		 class="occhio"' +
 							' 		 title="'+TXT("VisualizzaPunto")+'"' +
-							' 		 onClick="SET.selTsuboMod(document.getElementById(\'pt_'+p+'\').value,'+p+')">'; // ???????
+							' 		 onClick="SET.selTsuboMod(document.getElementById(\'pt_'+p+'\').value,'+p+')">'; 
 				}
-				
-				
 				
 				if(TipoDettaglio=='T')HTML += '">';
 				if(TipoDettaglio=='D')HTML += '</textarea>';
@@ -1024,49 +1069,13 @@ var MODULO_PROCEDURE = { // extend SET
 			else if(TipoDettaglio!='M')eval("document.formMod.de_"+p+".focus()");
 		}
 	},
-	salvaDettagli: function(){ // salva i dettagli della procedura
-		if(SET.dettagliProvvisori.length){
-			var DataModifica = DB.procedure.lastSync+1;
-			SET.dettagliProvvisori.sort(sort_by('OrdineDettaglio', false, parseInt));
-			for(p in SET.dettagliProvvisori){ // estraggo l'ultimo numero d'ordine
-				if(!SET.dettagliProvvisori[p].Cancellato){
-					TipoDettaglio=eval("document.formMod.ti_"+p+".value");
-					if(TipoDettaglio=='P'){
-						var pt = eval("document.formMod.pt_"+p+".value");
-						var mr = eval("document.formMod.mr_"+p+".value");
-						var siglaTsubo = pt+"."+mr;
-						if(typeof(DB.set.meridiani[mr])!='undefined'){
-							if(__(DB.set.meridiani[mr].tsubo[pt*1-1].siglaTsubo)){
-								siglaTsubo += "."+__(DB.set.meridiani[mr].tsubo[pt*1-1].siglaTsubo);
-							}
-						}else{
-							var sg = eval("document.formMod.sg_"+p+".value");
-							if(sg)siglaTsubo += "."+sg;
-						}
-						DescrizioneDettaglio = siglaTsubo;
-					}
-					else if(TipoDettaglio=='A'){
-						DescrizioneDettaglio = eval("document.formMod.pt_"+p+".value");
-					}
-					else if(TipoDettaglio!='M')DescrizioneDettaglio=eval("document.formMod.de_"+p+".value");
-					else DescrizioneDettaglio=eval("document.formMod.mr_"+p+".value");
-					
-					OrdineDettaglio=eval("document.formMod.or_"+p+".value")*1;
-					SET.dettagliProvvisori[p]={ "TipoDettaglio": TipoDettaglio,
-												"DescrizioneDettaglio": DescrizioneDettaglio,
-												"DataModifica": DataModifica*1,
-												"OrdineDettaglio": OrdineDettaglio*1,
-												"Cancellato": 0,
-												"frv": (LOGIN._frv()!='') };
-				}
-			}
-		}
-	},
 	aggiungiDettaglio: function( t, c, u ){ // aggiunge un dettaglio vuoto alla proceura
 		if(typeof(c)=='undefined')var c='';
 		if(typeof(u)=='undefined')var u=1;
+		
+		PAZIENTI.mezzoProvvisorio
 		SET.topAdd = tCoord(document.getElementById("p_add_dett"),'y');
-		SET.salvaDettagli();
+		//SET.salvaDettagli();
 		var maxOrd=0;
 		var DataModifica = DB.procedure.lastSync+1;
 		for(p in SET.dettagliProvvisori){
@@ -1085,7 +1094,6 @@ var MODULO_PROCEDURE = { // extend SET
 		SET.topAdd = null;
 	},
 	eliminaDettaglio: function( n ){ // elimina un dettaglio dalla procedura
-		SET.salvaDettagli();
 		SET.dettagliProvvisori[n].Cancellato=1;
 		o=0;
 		for(p in SET.dettagliProvvisori){
@@ -1102,19 +1110,32 @@ var MODULO_PROCEDURE = { // extend SET
 		var toIndex = parseInt(elTarget.id.split("rg")[1]);
 		var arr2 = SET.dettagliProvvisori.splice(fromIndex, 1)[0];
 		SET.dettagliProvvisori.splice(toIndex,0,arr2);
+		for(d in SET.dettagliProvvisori){
+			SET.dettagliProvvisori[d].OrdineDettaglio = d;
+		}
 		SET.caricaDettagli();
 		SCHEDA.formModificato = true;
 	},
 	aggiornaDettaglio: function( el ){
 		var pId = el.id.split("_");
+		var n = pId[1];
+		var DP = SET.dettagliProvvisori[n].DescrizioneDettaglio.split(".");
 		var val = el.value;
 		if(!globals.set.siglaProc){
-			if(pId[0]=='pt'){
-				var mer = document.getElementById("mr_"+pId[1]).value;
-				var nTsubo = document.getElementById("pt_"+pId[1]).value;
+			if(document.getElementById("pt_"+n)){
+				var mer = document.getElementById("mr_"+n).value;
+				var nTsubo = document.getElementById("pt_"+n).value;
 				if(nTsubo.length == 1)nTsubo='0'+nTsubo;
 				val = nTsubo+"."+mer;
+				var sg = val.replace(/\./g,"-");
+				if(__(DB.set.meridiani[mer].tsubo[nTsubo*1-1].siglaTsubo)){
+					sg = __(DB.set.meridiani[mer].tsubo[nTsubo*1-1].siglaTsubo);
+				}
+				val += "."+sg+"."+DP[2]+"."+DP[3];
 			}
+		}
+		if(globals.set.siglaProc=='AUR'){
+			val = document.getElementById("pt_"+n).value+"."+DP[1];
 		}
 		SET.dettagliProvvisori[parseInt(pId[1])].DescrizioneDettaglio = val;
 		SCHEDA.formModificato = true;
@@ -1162,8 +1183,8 @@ var MODULO_PROCEDURE = { // extend SET
 			'" id="comm_'+el.idCommento+'">' +
 			'	<div class="commSX">' +
 			'	<span class="commAvatar';
-		if(el.avatar && CONN.getConn()){
-			HTML += '" style="background-image:url(\'' + CONN.APIfolder+el.avatar+'\');';
+		if(el.avatar){// && CONN.getConn()){
+			HTML += '" style="background-image:url(\'' + el.avatar+'\');';
 		}else HTML += ' commNoAvatar"';
 		HTML +=
 			'"></span>' +
@@ -1221,7 +1242,6 @@ var MODULO_PROCEDURE = { // extend SET
 		commentiProcedura.sort(sort_by("DataCommento", true, parseInt));
 		var totComm = commentiProcedura.length;
 		for(p in commentiProcedura){
-			//console.log(commentiProcedura[p])
 			HTML += SET.scrivi_commento(commentiProcedura[p]);
 			if(commentiProcedura[p].risposte)totComm += commentiProcedura[p].risposte.length;
 			presente=true;

@@ -103,39 +103,6 @@ var MODULO_TEORIA = { // extend SET
 								btnAdd );
 		SET.evidenziaTsubo(html);
 	},
-	caricaVideo: function( p, t, btn ){ // apre la scheda del video
-		// verifico le autorizzazioni
-		if(SET.TEORIA_free.indexOf(p+"_"+t)==-1 && (DB.login.data.auths.indexOf(globals.set.cartella)==-1 || !LOGIN.logedin())){
-			ALERT(TXT("MsgContSoloPay"));
-			return;
-		}
-		// --------------------------
-		if(!CONN.getConn()){
-			ALERT(TXT("ConnessioneAssente"));
-			return;
-		}
-		var titolo = DB.set.teoria[p].contenuti[t].TitoloTeoria;
-		var pT = titolo.split("[video]");
-		titolo = pT[0];
-		video = pT[1];
-		var html = 	'<video controls="controls"' +
-					'       width="100%"' +
-					'       height="100%"' +
-					'       id="VideoID"' +
-					'       src="https://www.tsubomap.com/app/video/'+video+'.mp4">' +
-					'</video>';
-					
-		var btnAdd = 	'';
-		
-		SCHEDA.caricaScheda( 	titolo,
-								html,
-								'SET.annullaEvidenziaTsubo();',
-								'scheda_video',
-								false,
-								true,
-								btn,
-								btnAdd );
-	},
 	hideGroupLines: function(){ // nasconde le linee guida dei gruppi
 		var els = scene.getObjectByName("LNs"+SET.phase).children;
 		for(e in els){

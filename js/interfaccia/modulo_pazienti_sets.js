@@ -15,7 +15,7 @@ var PAZIENTI_SETS = {
 		"dito": TXT("MezzoDito"),
 		"pauper": TXT("MezzoPauper"),
 		"seme_vaccaria": TXT("MezzoSemeVaccaria"),
-		"sferetta_metallicha": TXT("MezzoSferettaMetallica"),
+		"sferetta_metallica": TXT("MezzoSferettaMetallica"),
 		"elettro_agopuntura": TXT("MezzoElettroAgopuntura"),
 		"ago_semipermanente": TXT("MezzoAgoSemipermanente"),
 		"crio": TXT("MezzoCrio"),
@@ -44,6 +44,7 @@ var PAZIENTI_SETS = {
 			"salasso",
 			"infiltrazione" ]
 	},
+	mezzoProvvisorio: '',
 	elencoGruppoPunti: {},
 	elencoGruppoAtt: {},
 	tipoGruppo: '', // M (meridiani) - P (punti) - A (auricolo-punti)
@@ -106,6 +107,18 @@ var PAZIENTI_SETS = {
 			//stopAnimate(true);
 		}catch(err){}
 	},
+	selMezzo: function( n, tipo, isProc ){
+		if(typeof(isProc)=='undefined')var isProc = false;
+		var html = '';
+		var mzs = PAZIENTI.mezziSet[tipo];
+		for(m in mzs){
+			html += '<span style="background-image:url(img/mezzo_'+mzs[m]+'.png);"' +
+					'	   onClick="PAZIENTI.cambia'+tipo+'Z('+n+',\''+mzs[m]+'\','+isProc+');"' +
+					'	   title="'+htmlEntities(PAZIENTI.mezzi[mzs[m]])+'"></span>';
+		}
+		H.selTT(n,"ico_PZ",html);
+	},
+	
 	caricaPuntiTrattamento: function( evi ){ // carica i punti del trattamento
 		if(typeof(evi)=='undefined')var evi = -1;
 		document.getElementById('puntiTsuboMap').style.display = 'block';
@@ -156,7 +169,7 @@ var PAZIENTI_SETS = {
 					if(mezzo)addMezzoTit = ': '+PAZIENTI.mezzi[mezzo];
 					HTML += '	<span id="ico_PZ'+p+'"' +
 							'	      class="mezzoPunto"' +
-							'	      onClick="PAZIENTI.selPZ('+p+');">' +
+							'	      onClick="PAZIENTI.selMezzo('+p+',\'P\');">' +
 							'		<img src="img/mezzo_'+mezzo+'.png"' +
 							'	  	     width="20"' +
 							'	  	     height="20"' +
@@ -367,7 +380,7 @@ var PAZIENTI_SETS = {
 						n: n,
 						m: siglaMeridiano,
 						e: '',
-						z: __(localStorage["mezzoDefault"+PAZIENTI.tipoGruppo]),
+						z: PAZIENTI.mezzoProvvisorio,
 						t: descrTsubo,
 						s: siglaTsubo
 					});
@@ -436,14 +449,24 @@ var PAZIENTI_SETS = {
 		document.getElementById("tt_mezzival").dataset.on='0';
 		H.removeTT();
 	},
-	cambiaPZ: function( n, m ){ // cambia il mezzo su un punto
+	cambiaPZ: function( n, m, isProc ){ // cambia il mezzo su un punto
+		if(typeof(isProc)=='undefined')var isProc = false;
 		var el = document.getElementById("ico_PZ"+n);
 		el.getElementsByTagName("img")[0].src='img/mezzo_'+m+'.png';
-		if(globals.modello.cartella)SET.overTsubo(document.getElementById("pt_"+n).parentElement,false);
-		PAZIENTI.puntiProvvisori[n].z = m;
+		if(globals.modello.cartella)SET.overTsubo(document.getElementById("pt_"+n).parentElement.parentElement,false);
+		if(!isProc){
+			PAZIENTI.puntiProvvisori[n].z = m;
+			PAZIENTI.ricGroup("formMod",n);
+		}else{
+			var pD = SET.dettagliProvvisori[n].DescrizioneDettaglio.split(".");
+			SET.dettagliProvvisori[n].DescrizioneDettaglio = __(pD[0])+"."+__(pD[1])+"."+__(pD[2])+"."+m;
+			//var mz = eval("document.formMod.mz_"+n);
+			//mz.value = m;
+			//SET.salvaDettagli();
+			SET.caricaDettagli();
+		}
 		SCHEDA.formModificato = true;
-		PAZIENTI.ricGroup("formMod",n);
-		if(globals.modello.cartella)SET.overTsubo(document.getElementById("pt_"+n).parentElement,true);
+		if(globals.modello.cartella)SET.overTsubo(document.getElementById("pt_"+n).parentElement.parentElement,true);
 		document.getElementById("tt_mezzival").dataset.on='0';
 		H.removeTT();
 		PAZIENTI.verMezzo(m);
@@ -457,16 +480,6 @@ var PAZIENTI_SETS = {
 					'	   title="'+htmlEntities(TXT("Valutazione"+pvs[m]))+'"></span>';
 		}
 		H.selTT(n,"ico_PV",html);
-	},
-	selPZ: function( n ){
-		var html = '';
-		var mzs = PAZIENTI.mezziSet.P;
-		for(m in mzs){
-			html += '<span style="background-image:url(img/mezzo_'+mzs[m]+'.png);"' +
-					'	   onClick="PAZIENTI.cambiaPZ('+n+',\''+mzs[m]+'\');"' +
-					'	   title="'+htmlEntities(PAZIENTI.mezzi[mzs[m]])+'"></span>';
-		}
-		H.selTT(n,"ico_PZ",html);
 	},
 	spostaTsubo: function( elMove, elTarget ){
 		if(	!elTarget ||
@@ -722,7 +735,7 @@ var PAZIENTI_SETS = {
 					if(mezzo)addMezzoTit = ': '+PAZIENTI.mezzi[mezzo];
 					HTML += '	<span id="ico_PZ'+p+'"' +
 							'	      class="mezzoPunto"' +
-							'	      onClick="PAZIENTI.selAZ('+p+');">' +
+							'	      onClick="PAZIENTI.selMezzo('+p+',\'A\');">' +
 							'		<img src="img/mezzo_'+mezzo+'.png"' +
 							'	  	     width="20"' +
 							'	  	     height="20"' +
@@ -837,7 +850,7 @@ var PAZIENTI_SETS = {
 		JSNPUSH = {
 			s: PT,
 			n: DB.set.punti[PT].NomeTsubo,
-			z: "",
+			z: PAZIENTI.mezzoProvvisorio,
 			e: "",
 			t: ""
 		}
@@ -872,24 +885,20 @@ var PAZIENTI_SETS = {
 		//document.getElementById("tt_mezzival").dataset.on='0';
 		H.removeTT();
 	},
-	selAZ: function( n ){
-		var html = '';
-		var mzs = PAZIENTI.mezziSet.A;
-		for(m in mzs){
-			html += '<span style="background-image:url(img/mezzo_'+mzs[m]+'.png);"' +
-					'	   onClick="PAZIENTI.cambiaAZ('+n+',\''+mzs[m]+'\');"' +
-					'	   title="'+htmlEntities(PAZIENTI.mezzi[mzs[m]])+'"></span>';
-		}
-		H.selTT(n,"ico_PZ",html);
-	},
-	cambiaAZ: function( n, m ){ // cambia il mezzo su un punto
+	cambiaAZ: function( n, m, isProc ){ // cambia il mezzo su un punto
+		if(typeof(isProc)=='undefined')var isProc = false;
 		var el = document.getElementById("ico_PZ"+n);
 		el.getElementsByTagName("img")[0].src='img/mezzo_'+m+'.png';
-		//if(globals.modello.cartella)SET.overTsubo(document.getElementById("pt_"+n).parentElement,false);
-		PAZIENTI.auriculoProvvisori[n].z = m;
+		if(globals.modello.cartella)SET.overTsubo(document.getElementById("pt_"+n).parentElement.parentElement,false);
+		if(!isProc){
+			PAZIENTI.puntiProvvisori[n].z = m;
+		}else{
+			var pD = SET.dettagliProvvisori[n].DescrizioneDettaglio.split(".");
+			SET.dettagliProvvisori[n].DescrizioneDettaglio = __(pD[0])+"."+m;
+			SET.caricaDettagli();
+		}
 		SCHEDA.formModificato = true;
-		//PAZIENTI.ricGroup("formMod",n);
-		//if(globals.modello.cartella)SET.overTsubo(document.getElementById("pt_"+n).parentElement,true);
+		if(globals.modello.cartella)SET.overTsubo(document.getElementById("pt_"+n).parentElement.parentElement,true);
 		document.getElementById("tt_mezzival").dataset.on='0';
 		H.removeTT();
 		PAZIENTI.verMezzo(m);
@@ -1227,18 +1236,21 @@ var PAZIENTI_SETS = {
 							htmlEntities(TXT("Importa")) +
 					'	</span>';
 			var mzs = [];
-			if(PAZIENTI.tipoGruppo=='P')mzs = PAZIENTI.mezziSet.P;
-			if(PAZIENTI.tipoGruppo=='A')mzs = PAZIENTI.mezziSet.A;
+			if( globals.set.cartella=='meridiani_cinesi' || 
+				globals.set.cartella=='meridiani_shiatsu' )mzs = PAZIENTI.mezziSet.P;
+			if(globals.set.cartella=='auricologia')mzs = PAZIENTI.mezziSet.A;
 			if(mzs.length){
 				HTML += '	<span class="separatorePulsanti"></span><div id="tt_mezzival2">';
 				for(m in mzs){
 					HTML += '<span style="background-image:url(img/mezzo_'+mzs[m]+'.png);"' +
 							'	   onClick="PAZIENTI.cambiaGZ(\''+mzs[m]+'\');"' +
 							'	   data-mezzo="'+mzs[m]+'"';
-					if(localStorage["mezzoDefault"+PAZIENTI.tipoGruppo]==mzs[m])HTML += ' class="mzSel"';
+					if(!__(localStorage["mezzoDefault"+globals.set.cartella]) && m==0)HTML += ' class="mzSel"';
+					if(localStorage["mezzoDefault"+globals.set.cartella]==mzs[m])HTML += ' class="mzSel"';
 					HTML += '	   title="'+htmlEntities(PAZIENTI.mezzi[mzs[m]])+'"></span>';
 				}
 				HTML += '</div>';
+				if(__(localStorage["mezzoDefault"+globals.set.cartella]))PAZIENTI.mezzoProvvisorio = __(localStorage["mezzoDefault"+globals.set.cartella]);
 			}
 			HTML += '</div>';
 		}
@@ -1310,15 +1322,20 @@ var PAZIENTI_SETS = {
 		}
 	},
 	ptGruppoImporta: function(){ // importa il gruppo dei punti nel trattamento
+		var isProc = (document.getElementById("scheda").classList.contains("scheda_procedura"));
 		var els = document.getElementById("gruppoPunti_cont").getElementsByTagName("input");
 		var punti = '';
 		for(e in els){
-			if(els[e].checked && els[e].type=='checkbox')punti += els[e].value+"|";
+			if(els[e].checked && els[e].type=='checkbox'){
+				punti += els[e].value;
+				if(	globals.set.cartella == 'meridiani_cinesi' ||
+					globals.set.cartella == 'meridiani_shiatsu' )punti += ".";
+				punti += "."+PAZIENTI.mezzoProvvisorio+"|";
+			}
 		}
 		if(punti){
-			if(!document.getElementById("scheda").classList.contains("scheda_procedura")){
-				PAZIENTI.aggiungiGruppoTrattamento(punti);
-			}else SET.aggiungiGruppoProcedura(punti);
+			if(!isProc)PAZIENTI.aggiungiGruppoTrattamento(punti);
+			else SET.aggiungiGruppoProcedura(punti);
 			PAZIENTI.swGruppoPunti();
 			PAZIENTI.elencoGruppoAtt = PAZIENTI.elencoGruppoPunti;
 		}else ALERT(TXT("ErroreImportaPunti"));
@@ -1340,11 +1357,14 @@ var PAZIENTI_SETS = {
 			}
 		},4000,cont);
 	},
-	cambiaGZ: function( mezzo ){ // cambia il mezzo sui punti aggiunti da popup
-		localStorage["mezzoDefault"+PAZIENTI.tipoGruppo] = mezzo;
+	cambiaGZ: function( mezzo, setDefault ){ // cambia il mezzo sui punti aggiunti da popup
+		if(typeof(setDefault)=='undefined')var setDefault = false;
+		if(setDefault)localStorage["mezzoDefault"+globals.set.cartella] = mezzo;
+		else PAZIENTI.mezzoProvvisorio = mezzo;
 		var els = document.getElementById("tt_mezzival2").getElementsByTagName("span");
 		for(e=0;e<els.length;e++){
-			els[e].classList.toggle("mzSel",(els[e].dataset.mezzo == localStorage["mezzoDefault"+PAZIENTI.tipoGruppo]));
+			els[e].classList.toggle("mzSel",(els[e].dataset.mezzo == mezzo));
 		}
+		PAZIENTI.verMezzo(mezzo);
 	},
 }

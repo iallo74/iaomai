@@ -410,6 +410,9 @@ body:not(.bodyStyled2) #chiudiElenco{
     background-color: rgba(0,0,0,0.2);
     border-bottom: 1px solid rgba(255,255,2555,0.8);
 }
+#contImpset .separatorePulsanti{
+    margin-top: -1px !important;	
+}
 .smart.android #pulsanti_base div,
 .smart.android #pulsanti_set div{
 	height: 50px !important;

@@ -223,6 +223,18 @@ SET = {
 		
 		HTML_imp += '<div id="tbSigleMeridiani"></div>';
 		
+		var mzs = PAZIENTI.mezziSet.P;
+		HTML_imp += '	<span class="separatorePulsanti"></span><div><i>'+htmlEntities(TXT("MezzoDefault"))+':</i></div><div id="tt_mezzival2">';
+		for(m in mzs){
+			HTML_imp += '<span style="background-image:url(img/mezzo_'+mzs[m]+'.png);"' +
+					'	   onClick="PAZIENTI.cambiaGZ(\''+mzs[m]+'\',true);"' +
+					'	   data-mezzo="'+mzs[m]+'"';
+			if(!__(localStorage["mezzoDefault"+globals.set.cartella]) && m==0)HTML_imp += ' class="mzSel"';
+			if(localStorage["mezzoDefault"+globals.set.cartella]==mzs[m])HTML_imp += ' class="mzSel"';
+			HTML_imp += '	   title="'+htmlEntities(PAZIENTI.mezzi[mzs[m]])+'"></span>';
+		}
+		HTML_imp += '</div>';
+		
 		HTML_imp += '<div style="margin-top:30px;"><span class="annullaBtn" onclick="MENU.chiudiMenu();">'+TXT("Annulla")+'</span><span class="submitBtn" onclick="SET.salvaImpostazioni();">'+TXT("Salva")+'</span></div>';
 		
 		document.getElementById("contImpset").innerHTML = HTML_imp;
@@ -352,8 +364,7 @@ SET = {
 	// RENDER SET
 	_render: function(){
 		var make=true;
-		//console.log(manichinoCaricato && !raycastDisable && !controlsM._ZPR && controlsM._MM)
-		if(manichinoCaricato && !raycastDisable && !controlsM._ZPR && !controlsM._premuto){//} && controlsM._MM){ // roll-over sui punti
+		if(manichinoCaricato && !raycastDisable && !controlsM._ZPR && !controlsM._premuto){// roll-over sui punti
 			SET.meridianiOn = true;
 			camera.updateMatrixWorld();
 			raycaster.setFromCamera( mouse, camera );
@@ -501,7 +512,6 @@ SET = {
 	_onClick: function( e ){
 		var btn=0;
 		if(!touchable)btn=e.button;
-		//console.log("!"+btn+" && !"+raycastDisable+" && (("+controlsM.xIni+"=="+controlsM.xEnd+" && "+controlsM.yIni+"=="+controlsM.yEnd+") || "+touchable+")");
 		if(!btn && !raycastDisable && ((controlsM.xIni==controlsM.xEnd && controlsM.yIni==controlsM.yEnd) || touchable)){
 			//console.log(this.INTERSECTED)
 			if(this.INTERSECTED){
@@ -998,9 +1008,11 @@ SET = {
 			var sl = el.getElementsByTagName("select");
 			if(!sl.length)return;
 			var mer = sl[0].value;
+			if(!__(DB.set.meridiani[mer]))return; // in caso di EX
 			var nTsubo = sl[1].value;
 			if(typeof(DB.set.meridiani[mer])=='undefined')return;
 		}else{
+			if(!el.onclick)return; // in caso di EX
 			var re = /selTsubo\([^\)]+\)/ig;
 			var re2 = /apriTsubo\([^\,]+\,/ig;
 			var html = el.onclick.toString();
@@ -1155,13 +1167,11 @@ SET = {
 		var vis = true;
 		if(	DB.login.data.auths.indexOf(globals.set.cartella)==-1 || !LOGIN.logedin())vis = false;
 		for(m in SETS.children){
-			//if(SETS.children[m].name.indexOf("Selected")==-1){
-				var visMer = vis;
-				if(	SET.MERIDIANI_free.indexOf(SETS.children[m].name.split("_")[1])!=-1 )visMer = true;
-				if( SETS.children[m].userData.categoria != localStorage.sistemaMeridiani )visMer = false;
-				if(SETS.children[m].name.substr(0,2)=='AR' && localStorage.sistemaMeridiani=='MAS')visMer = true;
-				SETS.children[m].visible = visMer;
-			//}
+			var visMer = vis;
+			if(	SET.MERIDIANI_free.indexOf(SETS.children[m].name.split("_")[1])!=-1 )visMer = true;
+			if( SETS.children[m].userData.categoria != localStorage.sistemaMeridiani )visMer = false;
+			if(SETS.children[m].name.substr(0,2)=='AR' && localStorage.sistemaMeridiani=='MAS')visMer = true;
+			SETS.children[m].visible = visMer;
 		}
 		var ME = document.getElementById("lista_meridiani").getElementsByClassName("listaMeridiani")[0].getElementsByTagName("div");
 		for(m in ME){
