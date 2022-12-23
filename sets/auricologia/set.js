@@ -74,6 +74,7 @@ SET = {
 				for(l in GDS){ // aggiungo le guide
 					
 					var loader = new THREE.ObjectLoader();
+					
 					var mesh =  loader.parse(JSON.parse(LZString.decompressFromBase64(GDS[l].obj)));
 					mesh.material = this.MAT.lineGuide;
 					GD.add( mesh );
@@ -482,8 +483,7 @@ SET = {
 	// RENDER SET
 	_render: function(){
 		var make=true;
-		//console.log(manichinoCaricato && !raycastDisable && !controlsM._ZPR && controlsM._MM)
-		if(manichinoCaricato && !raycastDisable && !controlsM._ZPR && !controlsM._premuto){//} && controlsM._MM){ // roll-over sui punti
+		if(manichinoCaricato && !raycastDisable && !controlsM._ZPR && !controlsM._premuto){
 			camera.updateMatrixWorld();
 			raycaster.setFromCamera( mouse, camera );
 			raycaster.params.Points.threshold = 20;
@@ -600,9 +600,7 @@ SET = {
 	_onClick: function( e ){
 		var btn=0;
 		if(!touchable)btn=e.button;
-		//console.log("!"+btn+" && !"+raycastDisable+" && (("+controlsM.xIni+"=="+controlsM.xEnd+" && "+controlsM.yIni+"=="+controlsM.yEnd+") || "+touchable+")");
 		if(!btn && !raycastDisable && ((controlsM.xIni==controlsM.xEnd && controlsM.yIni==controlsM.yEnd) || touchable)){
-			//console.log(this.INTERSECTED)
 			if(this.INTERSECTED){
 				if(!touchable && this.INTERSECTED.userData.type == 'point'){
 					controlsM._inMovimento=true;
@@ -723,7 +721,7 @@ SET = {
 		document.getElementById("scheda").classList.remove("tab_tsubo");
 		document.getElementById("scheda").classList.remove("schForm");
 		document.getElementById("ts_"+this.ptSel.name.substr(2,3)).classList.remove("selElPt");
-		//if(!globals.modello.cartella)return;
+		
 		if(!nonChiudereScheda){
 			endChangeDetection();
 			SCHEDA.formModificato = false;
@@ -1048,9 +1046,6 @@ SET = {
 		localStorage.imgMappa = name;
 		SET.MAT.mappaAree( true );
 		SET.caricaPunti();
-	},
-	cambiaSistema: function( sistema, loader ){
-		//
 	},
 	
 	addEviPalls: function( PT_name, tipo ){

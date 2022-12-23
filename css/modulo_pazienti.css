@@ -1670,33 +1670,49 @@ body:not(.smart) #rgApplicaFiltri{
     left: 19px;
 	overflow:hidden;
 }
-.smart.android #tt_mezzival{
+#tt_mezzival2{
+	margin-top: -3px !important;
+}
+.mzSel{
+	background-color:#8db0ee;
+}
+.smart.android #tt_mezzival,
+.smart.android #tt_mezzival2{
 	width: 240px;
     height: 78px;
     white-space: normal;
     text-align: left;
     border-radius: 10px;
 }
-#tt_mezzival span{
+#tt_mezzival span,
+#tt_mezzival2 span{
     width:30px;
 	height:30px;
 	display:inline-block;
 	vertical-align:middle;
-    border-left: 1px solid rgba(0,0,0,0.15);
 	background-repeat:no-repeat;
 	background-position:center center;
 	margin-top: -1px;
     cursor: pointer;
 }
-.smart.android #tt_mezzival span{
+#tt_mezzival span{
+    border-left: 1px solid rgba(0,0,0,0.15);
+}
+#tt_mezzival2 span{
+    border-radius: 6px;
+}
+.smart.android #tt_mezzival span,
+.smart.android #tt_mezzival2 span{
     width:40px !important;
 	height:40px !important;
     border-bottom: 1px solid rgba(0,0,0,0.15);
 }
-#tt_mezzival span:first-child{
+#tt_mezzival span:first-child,
+#tt_mezzival2 span:first-child{
 	border:none;
 }
-#tt_mezzival span:hover{
+#tt_mezzival span:hover,
+#tt_mezzival2 span:not(.mzSel):hover{
 	background-color:rgba(0,0,0,0.1);
 }
 .tt_on{

@@ -1,7 +1,9 @@
 
 var MODULO_PUNTI = { // extend SET
+	
 	PUNTI_free: [ "000","001","254","003","291","192","165","067","177","060","054","018","093","056","121","111","117","261","151" ],
-	caricaPunti: function(){
+	
+	caricaPunti: function(){ // carica l'elenco dei punti e delle aree
 		var n = 0;
 		var contElenco = '';
 		var elencoTsubo = '';
@@ -228,7 +230,7 @@ var MODULO_PUNTI = { // extend SET
 		if(!pass && globals.modello.cartella)document.getElementById("p_legenda").click();
 		if(SET.groupSel.id)SET.filtraGruppo( SET.groupSel.type, SET.groupSel.val, SET.groupSel.id, true );
 	},
-	swElencoPt: function( el, m ){
+	swElencoPt: function( el, m ){ // mostra/nasconde un elenco (punti e aree, legenda, ecc...)
 		if(!document.getElementById("e_"+m).classList.contains("visElPt")){
 			document.getElementById("e_"+m).classList.add("visElPt");
 			el.classList.add("frSw");
@@ -239,7 +241,7 @@ var MODULO_PUNTI = { // extend SET
 			localStorage["auricolo_mn_"+m] = '';
 		}
 	},
-	filtraPunti: function(){ // filtra i punti
+	filtraPunti: function(){ // filtra i punti per testo
 		if(SET.groupSel.id)SET.filtraGruppo();
 		var el = document.getElementById("punti_ricerca");
 		el.classList.toggle("filtro_attivo_bordo",(el.value.trim()!=''));
@@ -259,7 +261,7 @@ var MODULO_PUNTI = { // extend SET
 			els[e].classList.toggle("nasPT",pass);
 		}
 	},
-	filtraGruppo: function( type, val, id , forza){
+	filtraGruppo: function( type, val, id , forza){ // filtra i punti pruppo
 		if(typeof(type)=='undefined')var type = '';
 		if(typeof(val)=='undefined')var val = '';
 		if(typeof(id)=='undefined')var id = '';
@@ -323,12 +325,11 @@ var MODULO_PUNTI = { // extend SET
 		document.getElementById("filtriSmart_ico").classList.toggle("filtered",(SET.groupSel.id));
 		if(!document.getElementById("p_filtri").classList.contains("op"))SET.swFiltri();
 	},
-	swFiltri: function(){
+	swFiltri: function(){ // mostra/nasconde i filtri
 		document.getElementById("p_filtri").classList.toggle("op");
 		document.getElementById("f_filtri").classList.toggle("visElPt");
 	},
-	popolaFiltri: function(){
-		// FILTRI
+	popolaFiltri: function(){ // popola il menu rapido dei filtri (in alto a SX)
 		var contFiltri =	'<div id="filtriSmart_ico"'+
 							'	  onClick="SET.swFiltriSmart();"' +
 							'     title="'+htmlEntities(TXT("FiltriSmart"))+'"><span></span></div>' +
@@ -422,11 +423,10 @@ var MODULO_PUNTI = { // extend SET
 		document.getElementById("divs").innerHTML = contFiltri;
 	},
 	
-	swFiltriSmart: function(){
-		// visualizza/nasconde il menu rapido dei filtri (in alto a SX)
+	swFiltriSmart: function(){ // visualizza/nasconde il menu rapido dei filtri (in alto a SX)
 		document.getElementById("filtriSmart_cont").classList.toggle("visSch");
 	},
-	setPhase: function( ph ){
+	setPhase: function( ph ){ // seleziona la fase di Nogier
 		var PT_name = "";
 		if(SET.ptSel)PT_name = SET.ptSel.name;
 		SET.chiudiTsubo(true);

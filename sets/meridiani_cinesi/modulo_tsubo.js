@@ -3,8 +3,7 @@ var MODULO_TSUBO = { // extend SET
 
 	note: [],
 	
-	caricaTsubo: function( siglaMeridiano, nTsubo, ritorno ){
-		// apre la scheda di uno tsubo
+	caricaTsubo: function( siglaMeridiano, nTsubo, ritorno ){ // apre la scheda di uno tsubo
 		// verifico le autorizzazioni
 		if(SET.MERIDIANI_free.indexOf(siglaMeridiano)==-1 && (DB.login.data.auths.indexOf(globals.set.cartella)==-1 || !LOGIN.logedin())){
 			ALERT(TXT("MsgContSoloPay"));
@@ -229,8 +228,7 @@ var MODULO_TSUBO = { // extend SET
 		document.getElementById("frSch").className = classFr;
 	},
 	
-	mod_nota: function( Q_nome_meridiano, Q_p ){
-		// salva la nota di uno tsubo
+	mod_nota: function( Q_nome_meridiano, Q_p ){ // salva la nota di uno tsubo
 		var nota_salvata=false;
 		var DataModifica = DB.note.lastSync+1;
 		var pDef=-1;
@@ -267,8 +265,7 @@ var MODULO_TSUBO = { // extend SET
 			SET.leggiNote();
 		});
 	},
-	verNotaCli: function( p ){
-		// verifica che ci sia una nota per il cliente attivo
+	verNotaCli: function( p ){ // verifica che ci sia una nota per il cliente attivo
 		var pass=true;
 		if(PAZIENTI.idCL>-1){
 			pass=false;
@@ -280,8 +277,7 @@ var MODULO_TSUBO = { // extend SET
 		}else pass=(DB.note.data[p].idPaziente*1==-1);
 		return pass;
 	},
-	leggiNota: function( mr, pt ){
-		// restituisce il testo della nota
+	leggiNota: function( mr, pt ){ // restituisce il testo della nota
 		var TestoAnnotazione = '';
 		for(n in DB.note.data){
 			var pass =false;
@@ -298,8 +294,7 @@ var MODULO_TSUBO = { // extend SET
 		}	
 		return TestoAnnotazione;
 	},
-	leggiNote: function(){
-		// crea l'elenco delle note e le evidenzia dul modello
+	leggiNote: function(){ // crea l'elenco delle note e le evidenzia dul modello
 		SET.evidenziaNote(false);
 		SET.note = [];
 		if(DB.note){
@@ -321,8 +316,7 @@ var MODULO_TSUBO = { // extend SET
 		}
 		SET.evidenziaNote(true);
 	},
-	evidenziaNote: function( az ){
-		// evidenzia le note sul manichino
+	evidenziaNote: function( az ){ // evidenzia le note sul manichino
 		for(n in SET.note){
 			var pP = SET.note[n].split(".");
 			for(m in SETS.children){
@@ -345,18 +339,15 @@ var MODULO_TSUBO = { // extend SET
 			}
 		}
 	},
-	verificaNota: function( n ){
-		// verifica che ci sia una nota sullo tsubo
+	verificaNota: function( n ){ // verifica che ci sia una nota sullo tsubo
 		return SET.note.indexOf(n)>-1;
 	},
-	leggiSiglaMeridiano: function( cartella ){
-		// restituisce la sigla del meridiano
+	leggiSiglaMeridiano: function( cartella ){ // restituisce la sigla del meridiano
 		for(k in DB.set.meridiani){
 			if(DB.mtc.meridiani[k].cartella == cartella)return k;
 		}
 	},
-	azRicercaTsubo: function( pt ){
-		// apre la scheda dello tsubo dalla ricerca globale
+	azRicercaTsubo: function( pt ){ // apre la scheda dello tsubo dalla ricerca globale
 		SET.apriTsubo(pt);
 		evidenziaParola();
 	}

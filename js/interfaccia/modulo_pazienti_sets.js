@@ -22,6 +22,28 @@ var PAZIENTI_SETS = {
 		"salasso": TXT("MezzoSalasso"),
 		"infiltrazione": TXT("MezzoInfiltrazione")
 	},
+	mezziSet: {
+		P: ['', 
+			'ago', 
+			'moxa', 
+			'coppetta', 
+			'diapason', 
+			'luce', 
+			'dito' ],
+		A: ["",
+			"ago",
+			"moxa",
+			"luce",
+			"dito",
+			"pauper",
+			"seme_vaccaria",
+			"sferetta_metallica",
+			"elettro_agopuntura",
+			"ago_semipermanente",
+			"crio",
+			"salasso",
+			"infiltrazione" ]
+	},
 	elencoGruppoPunti: {},
 	elencoGruppoAtt: {},
 	tipoGruppo: '', // M (meridiani) - P (punti) - A (auricolo-punti)
@@ -345,7 +367,7 @@ var PAZIENTI_SETS = {
 						n: n,
 						m: siglaMeridiano,
 						e: '',
-						z: '',
+						z: __(localStorage["mezzoDefault"+PAZIENTI.tipoGruppo]),
 						t: descrTsubo,
 						s: siglaTsubo
 					});
@@ -438,14 +460,7 @@ var PAZIENTI_SETS = {
 	},
 	selPZ: function( n ){
 		var html = '';
-		var mzs = [ 
-			'', 
-			'ago', 
-			'moxa', 
-			'coppetta', 
-			'diapason', 
-			'luce', 
-			'dito' ];
+		var mzs = PAZIENTI.mezziSet.P;
 		for(m in mzs){
 			html += '<span style="background-image:url(img/mezzo_'+mzs[m]+'.png);"' +
 					'	   onClick="PAZIENTI.cambiaPZ('+n+',\''+mzs[m]+'\');"' +
@@ -859,20 +874,7 @@ var PAZIENTI_SETS = {
 	},
 	selAZ: function( n ){
 		var html = '';
-		var mzs = [
-			"",
-			"ago",
-			"moxa",
-			"luce",
-			"dito",
-			"pauper",
-			"seme_vaccaria",
-			"sferetta_metallica",
-			"elettro_agopuntura",
-			"ago_semipermanente",
-			"crio",
-			"salasso",
-			"infiltrazione" ];
+		var mzs = PAZIENTI.mezziSet.A;
 		for(m in mzs){
 			html += '<span style="background-image:url(img/mezzo_'+mzs[m]+'.png);"' +
 					'	   onClick="PAZIENTI.cambiaAZ('+n+',\''+mzs[m]+'\');"' +
@@ -1218,15 +1220,30 @@ var PAZIENTI_SETS = {
 		HTML += '</div>';
 		if(PAZIENTI.elencoGruppoAtt.livello==3){
 			HTML += '<div class="gr_imp">'+
-					'	<span onClick="PAZIENTI.ptGruppoSelAll(this);">' +
+					'	<span id="grSelAll" onClick="PAZIENTI.ptGruppoSelAll(this);">' +
 							htmlEntities(TXT("SelezionaTutti")) +
 					'	</span>' +
-					'	<span onClick="PAZIENTI.ptGruppoImporta();">' +
+					'	<span id="grImporta" onClick="PAZIENTI.ptGruppoImporta();">' +
 							htmlEntities(TXT("Importa")) +
-					'	</span>' +
-					'</div>';
+					'	</span>';
+			var mzs = [];
+			if(PAZIENTI.tipoGruppo=='P')mzs = PAZIENTI.mezziSet.P;
+			if(PAZIENTI.tipoGruppo=='A')mzs = PAZIENTI.mezziSet.A;
+			if(mzs.length){
+				HTML += '	<span class="separatorePulsanti"></span><div id="tt_mezzival2">';
+				for(m in mzs){
+					HTML += '<span style="background-image:url(img/mezzo_'+mzs[m]+'.png);"' +
+							'	   onClick="PAZIENTI.cambiaGZ(\''+mzs[m]+'\');"' +
+							'	   data-mezzo="'+mzs[m]+'"';
+					if(localStorage["mezzoDefault"+PAZIENTI.tipoGruppo]==mzs[m])HTML += ' class="mzSel"';
+					HTML += '	   title="'+htmlEntities(PAZIENTI.mezzi[mzs[m]])+'"></span>';
+				}
+				HTML += '</div>';
+			}
+			HTML += '</div>';
 		}
 		document.getElementById("gruppoPunti_cont").innerHTML = HTML;
+		document.getElementById("gruppoPunti_cont").classList.toggle("addOpts",(PAZIENTI.tipoGruppo!='M'));
 		document.getElementById("gruppoPunti_cont").scrollTo(0,0);
 		if(document.getElementById("gr_ret_ric"))document.getElementById("gr_ret_ric").focus();
 	},
@@ -1322,5 +1339,12 @@ var PAZIENTI_SETS = {
 				}
 			}
 		},4000,cont);
-	}
+	},
+	cambiaGZ: function( mezzo ){ // cambia il mezzo sui punti aggiunti da popup
+		localStorage["mezzoDefault"+PAZIENTI.tipoGruppo] = mezzo;
+		var els = document.getElementById("tt_mezzival2").getElementsByTagName("span");
+		for(e=0;e<els.length;e++){
+			els[e].classList.toggle("mzSel",(els[e].dataset.mezzo == localStorage["mezzoDefault"+PAZIENTI.tipoGruppo]));
+		}
+	},
 }

@@ -1831,7 +1831,7 @@ body:not(.touch) #puntiAuriculoMap .dettPunto:hover{
     margin-bottom: 20px;
     display: none;
     border-radius: 4px;
-    height: 232px;	
+    height: 272px;	
     z-index: 1210;
     position: absolute;
 	box-shadow: 0px 0px 10px #000;
@@ -1843,13 +1843,16 @@ body:not(.touch) #puntiAuriculoMap .dettPunto:hover{
 	background-color: #fff;
 }
 .gr_0{
-    height: 199px;
+    height: 239px;
 }
 .gr_1{
-    height:167px;
+    height:207px;
 }
 .gr_2{
     height:129px;
+}
+#gruppoPunti_cont:not(.addOpts) .gr_2{
+    height:169px !important;
 }
 .gr_3{
 	cursor:pointer;
@@ -1964,7 +1967,10 @@ body:not(.touch) #puntiAuriculoMap .dettPunto:hover{
     border-bottom-left-radius: 4px;
     border-bottom-right-radius: 4px;
 }
-.gr_imp span:first-child{
+.addOpts .gr_imp{
+    height:79px !important;
+}
+#grSelAll{
 	font-weight: normal !important;
     display: inline-block;
     margin-bottom: 0px;
@@ -1977,10 +1983,10 @@ body:not(.touch) #puntiAuriculoMap .dettPunto:hover{
     margin: 3px;
 	background:url(../img/frSelectAll.png) no-repeat left center;
 }
-.gr_imp span:first-child:hover{
+#grSelAll:hover{
     color: #2c3fa8 !important;
 }
-.gr_imp span:last-child{
+#grImporta{
 	width:50%;
 	height: 32px;
     line-height: 32px;
@@ -1999,7 +2005,7 @@ body:not(.touch) #puntiAuriculoMap .dettPunto:hover{
 	box-shadow: 0px 0px 2px #000;
 	float: right;
 }
-.gr_imp span:hover:last-child{
+#grImporta:hover{
     background: #0b2d73;
 	background: -moz-linear-gradient(top, #133f98 0%, #0b2d73 100%);
 	background: -webkit-linear-gradient(top, #133f98 0%,#0b2d73 100%);

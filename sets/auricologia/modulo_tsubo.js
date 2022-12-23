@@ -1,7 +1,9 @@
 
 var MODULO_TSUBO = { // extend SET
+
 	note: [],
-	caricaTsubo: function( siglaTsubo, ritorno ){
+	
+	caricaTsubo: function( siglaTsubo, ritorno ){ //  carica la scheda del punto
 		// verifico le autorizzazioni
 		if(SET.PUNTI_free.indexOf(siglaTsubo)==-1 && (DB.login.data.auths.indexOf(globals.set.cartella)==-1 || !LOGIN.logedin())){
 			ALERT(TXT("MsgContSoloPay"));
@@ -105,15 +107,17 @@ var MODULO_TSUBO = { // extend SET
 			if( SCHEDA.classeAperta == 'scheda_A' || SCHEDA.classeAperta == 'scheda_B' ){
 				if(SET.pMod > -1){
 					var tsuboOr = '';
+					var tsuboOrNome = '';
 					for(a in PAZIENTI.auriculoProvvisori){
 						if(PAZIENTI.auriculoProvvisori[a].s = SET.pMod){
-							tsuboOr = PAZIENTI.auriculoProvvisori[a];
+							tsuboOr = PAZIENTI.auriculoProvvisori[a].s;
+							tsuboOrNome = PAZIENTI.auriculoProvvisori[a].n;
 						}
 					}
 					if(tsuboOr == tsuboNuovo)stesso = true;
 					else{
 						// cambia il punto
-						txt = TXT("SostituisciTsubo").replace("[t]",tsuboOr);
+						txt = TXT("SostituisciTsubo").replace("[t]",tsuboOrNome);
 						az = "SET.setTsuboFrm();";
 					}
 				}else{
@@ -215,8 +219,7 @@ var MODULO_TSUBO = { // extend SET
 		
 		if(ritorno && !SCHEDA.aggancio.tipo == 'libera')SCHEDA.nasScheda();
 	},
-	mod_nota: function( siglaTsubo ){
-		// salva la nota di uno tsubo
+	mod_nota: function( siglaTsubo ){ // salva la nota di uno tsubo
 		var nota_salvata=false;
 		var DataModifica = DB.note.lastSync+1;
 		var pDef=-1;
@@ -253,11 +256,10 @@ var MODULO_TSUBO = { // extend SET
 			SET.leggiNote();
 		});
 	},
-	swSettingPoint: function(){
-		// switcha la scheda di spiegazione delle sigle (EUR, CIN, INT, ecc)
+	swSettingPoint: function(){ // switcha la scheda di spiegazione delle sigle (EUR, CIN, INT, ecc)
 		document.getElementById("setting_point").classList.toggle("vis");
 	},
-	verNotaCli: function( p ){
+	verNotaCli: function( p ){ // verifica che ci sia una nota per il cliente attivo
 		var pass=true;
 		if(PAZIENTI.idCL>-1){
 			pass=false;
@@ -269,7 +271,7 @@ var MODULO_TSUBO = { // extend SET
 		}else pass=(DB.note.data[p].idPaziente*1==-1);
 		return pass;
 	},
-	leggiNota: function( mr, pt ){
+	leggiNota: function( mr, pt ){ // legge la nota sul cliente
 		var TestoAnnotazione = '';
 		for(n in DB.note.data){
 			var pass =false;
@@ -286,7 +288,7 @@ var MODULO_TSUBO = { // extend SET
 		}	
 		return TestoAnnotazione;
 	},
-	leggiNote: function(){
+	leggiNote: function(){ // estrae l'elenco delle note
 		SET.evidenziaNote(false);
 		SET.note = [];
 		if(DB.note){
@@ -308,7 +310,7 @@ var MODULO_TSUBO = { // extend SET
 		}
 		SET.evidenziaNote(true);
 	},
-	evidenziaNote: function( az ){
+	evidenziaNote: function( az ){ // evidenzia le note con il colore giallo sul modello 3D
 		for(n in SET.note){
 			var PT = __(manichino.getObjectByName("PT"+SET.note[n]),null);
 			if(PT && typeof(PT)!='undefined'){
@@ -323,10 +325,10 @@ var MODULO_TSUBO = { // extend SET
 			}
 		}
 	},
-	verificaNota: function( siglaTsubo ){
+	verificaNota: function( siglaTsubo ){ // verifica l'esistenza di una nota sul punto
 		return SET.note.indexOf(siglaTsubo)>-1;
 	},
-	azRicercaTsubo: function( pt ){
+	azRicercaTsubo: function( pt ){ // apre la scheda dello tsubo dalla ricerca globale
 		SET.apriTsubo("PT"+pt);
 		evidenziaParola();
 	}

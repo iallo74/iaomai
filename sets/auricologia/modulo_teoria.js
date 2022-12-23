@@ -1,9 +1,9 @@
 
 var MODULO_TEORIA = { // extend SET
-	TEORIA_free: [
-		"0_0"
-	],
-	caricaApprofondimenti: function(){
+	
+	TEORIA_free: [ "0_0" ],
+	
+	caricaApprofondimenti: function(){ // carica la lista degli approfondimenti
 		var contTeoria = '';
 		for(p in DB.set.teoria){
 			contTeoria += 	'<div class="cartella" onTouchStart="SCHEDA.setCartella(this);">' +
@@ -39,7 +39,7 @@ var MODULO_TEORIA = { // extend SET
 																contTeoria +
 															'</div>';
 	},
-	caricaTeoria: function( p, t, btn ){
+	caricaTeoria: function( p, t, btn ){ // apre la scheda della teoria
 		// verifico le autorizzazioni
 		if(SET.TEORIA_free.indexOf(p+"_"+t)==-1 && (DB.login.data.auths.indexOf(globals.set.cartella)==-1 || !LOGIN.logedin())){
 			ALERT(TXT("MsgContSoloPay"));
@@ -103,7 +103,7 @@ var MODULO_TEORIA = { // extend SET
 								btnAdd );
 		SET.evidenziaTsubo(html);
 	},
-	caricaVideo: function( p, t, btn ){
+	caricaVideo: function( p, t, btn ){ // apre la scheda del video
 		// verifico le autorizzazioni
 		if(SET.TEORIA_free.indexOf(p+"_"+t)==-1 && (DB.login.data.auths.indexOf(globals.set.cartella)==-1 || !LOGIN.logedin())){
 			ALERT(TXT("MsgContSoloPay"));
@@ -136,7 +136,7 @@ var MODULO_TEORIA = { // extend SET
 								btn,
 								btnAdd );
 	},
-	hideGroupLines: function(){
+	hideGroupLines: function(){ // nasconde le linee guida dei gruppi
 		var els = scene.getObjectByName("LNs"+SET.phase).children;
 		for(e in els){
 			if(__(els[e].userData.gruppo,false)){
@@ -144,7 +144,7 @@ var MODULO_TEORIA = { // extend SET
 			}
 		}
 	},
-	azRicercaTeoria: function( i, p ){
+	azRicercaTeoria: function( i, p ){  // apre la scheda della teoria dalla ricerca globale
 		SCHEDA.swCartella( document.getElementById('btn_teoria_cart_'+i),true);
 		SCHEDA.selElenco('teoria');
 		SET.caricaTeoria( i, p, document.getElementById('btn_teoria_'+i+'_'+p));
