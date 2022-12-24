@@ -205,7 +205,6 @@ var MENU = {
 
 		if(!daScheda)MENU.chiudiMenu("sets");
 		else document.getElementById("p_cartella").classList.remove("p_sel");
-		//document.getElementById("elenchi_titolo").classList.remove("clientAtt");
 		document.getElementById("sets").classList.toggle("visSch");
 		if(document.getElementById("sets").classList.contains("visSch")){
 			CATALOGO.scriviListaSets();
@@ -227,7 +226,6 @@ var MENU = {
 		}
 		MENU.nasTT();
 		get_memOpenMap();
-		//verAnimate();
 	},
 	
 	desIcona: function(){

@@ -81,7 +81,8 @@ function applicaLoading( el, style ){
 }
 function rimuoviLoading( el ){
 	var id='LL'+el.className;
-	if(document.getElementById(id))document.getElementById(id).remove(); 	
+	if(document.getElementById(id))document.getElementById(id).remove();
+	if(document.getElementById("LL"))document.getElementById("LL").remove();
 }
 
 function getVar(n){ // legge una variabile nella querystring

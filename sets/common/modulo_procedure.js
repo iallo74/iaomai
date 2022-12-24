@@ -1121,8 +1121,8 @@ var MODULO_PROCEDURE = { // extend SET
 		var n = pId[1];
 		var DP = SET.dettagliProvvisori[n].DescrizioneDettaglio.split(".");
 		var val = el.value;
-		if(!globals.set.siglaProc){
 			if(document.getElementById("pt_"+n)){
+			if(!globals.set.siglaProc){
 				var mer = document.getElementById("mr_"+n).value;
 				var nTsubo = document.getElementById("pt_"+n).value;
 				if(nTsubo.length == 1)nTsubo='0'+nTsubo;
@@ -1133,9 +1133,9 @@ var MODULO_PROCEDURE = { // extend SET
 				}
 				val += "."+sg+"."+DP[2]+"."+DP[3];
 			}
-		}
-		if(globals.set.siglaProc=='AUR'){
-			val = document.getElementById("pt_"+n).value+"."+DP[1];
+			if(globals.set.siglaProc=='AUR'){
+				val = document.getElementById("pt_"+n).value+"."+DP[1];
+			}
 		}
 		SET.dettagliProvvisori[parseInt(pId[1])].DescrizioneDettaglio = val;
 		SCHEDA.formModificato = true;

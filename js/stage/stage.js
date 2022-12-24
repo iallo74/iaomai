@@ -108,10 +108,6 @@ function init() {
 	manichinoCont.scale.set(0.5,0.5,0.5 );
 	manichinoCont.position.set(0,0.7,0);
 	scene.add( manichinoCont );
-
-	//manichinoCaricato=true;
-	
-	// inserisco i controlli sul manichino (pan e rotate)
 	//controlsM = new THREE.ObjectControls( camera, renderer.domElement );
 	controlsM = new THREE.ObjectControls( manichinoCont, renderer.domElement );
 
@@ -127,25 +123,15 @@ function init() {
 		}
 	}
 	nasLoader();
-	//var modello = 'donna';
-	//if(localStorage.modello)modello = localStorage.modello;
-
-	// setto la donna al primo accesso
-	//if(typeof(localStorage.modello) == 'undefined')localStorage.modello = "donna"; // apertura automatica all'inizio
-	
 	document.getElementById("logo_inizio").style.display = 'none';
 	
 	setTimeout( function(){
-		/*if(localStorage.modello && globals.memorizza)caricaModello(localStorage.modello);
-		else if(globals.open3d)caricaModello("donna");*/
-		
 		if(!__(localStorage.firstAccess)){
 			localStorage.modello = 'donna';
 			localStorage.open3d = 'true';
 		}
 		
 		if(localStorage.modello && globals.open3d)caricaModello(localStorage.modello);
-		//else if(globals.open3d)caricaModello("donna");
 		else if(globals.openMap && globals.mapOpened)caricaSet(globals.mapOpened);
 		else{
 			inizio = false;
@@ -160,7 +146,6 @@ function init() {
 					},1000);
 				}
 			}else{
-			//if(!smartMenu){
 				setTimeout( function(){
 					GUIDA.visFumetto("guida_generica");
 				}, 1000 );
@@ -169,7 +154,6 @@ function init() {
 						ALERT(TXT("PointerTypeAlert")+"\n\n"+TXT("noVisPiu")+'<input type="checkbox" id="no_guida" name="no_guida" value="1" onclick="setPointerType((this.checked) ? \'TOUCH\' : \'\' );">' );
 					}, 3000 );
 				}
-			//}
 			}
 		}
 	},500);
@@ -366,7 +350,6 @@ function cambiaModello( cartella ){
 
 // CARICAMENTO DEI SETS
 function caricaSet( cartella, el ){
-	//if(DB.login.data.auths.indexOf(cartella) == -1)return;
 	var daScheda = (SCHEDA.classeAperta == 'scheda_A' || SCHEDA.classeAperta == 'scheda_B' );
 	if(globals.modello.cartella)startAnimate();
 	if(el)postApreSet = true;
@@ -374,10 +357,6 @@ function caricaSet( cartella, el ){
 		// CHIUDE il set aperto
 		if(globals.set.setSel)globals.set.setSel.classList.remove("btnSetSel");
 		scaricaSet();
-		/*localStorage.set = '';
-		document.getElementById("pulsanti_set").classList.remove("setAperto");
-		if(!smartMenu)SCHEDA.chiudiElenco();
-		document.getElementById("p_sets").classList.add("visSch");*/
 		if(	!daScheda )MENU.visSets();
 	}else{
 		// APRE un set
@@ -412,7 +391,6 @@ function caricaSet( cartella, el ){
 			MODELLO.meshMuscoli.visible = false;
 			document.getElementById("pulsanti_modello").classList.add('modelloScelto');
 		}
-		//centro();
 		localStorage.set = globals.set.cartella;
 		document.getElementById("pulsanti_set").classList.add("setAperto");
 		
@@ -468,8 +446,24 @@ function scaricaSet( notInit ){
 	localStorage.mapOpened = '';
 }
 function chiudiSet(){
+	var procOp = document.getElementById("scheda").classList.contains("scheda_procedura");
 	CONFIRM.vis(	TXT("ChiediEsciMappa").replace("[mappa]",globals.set.nome) ).then(function(pass){if(pass){
-		caricaSet(globals.set.cartella,document.getElementById('p_'+globals.set.cartella));
+		CONFIRM.vis(	TXT("UscireSenzaSalvare"),
+						!SCHEDA.verificaSchedaRet() && !procOp, 
+						arguments ).then(function(pass){if(pass){
+						var v = getParamNames(CONFIRM.args.callee.toString());
+						for(i in v)eval(getArguments(v,i));
+			if(procOp){
+				SCHEDA.formModificato = false;
+				endChangeDetection();
+			}
+			if(globals.set.cartella=='auricologia' && muscleView)MODELLO.swMuscle();
+			caricaSet(globals.set.cartella,document.getElementById('p_'+globals.set.cartella));
+			if(procOp)setTimeout(function(){
+				SCHEDA.scaricaScheda()
+				document.getElementById("sc").dataset.funct = '';
+			},500);
+		}});
 	}});
 }
 

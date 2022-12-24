@@ -90,12 +90,12 @@ var SCHEDA = {
 		document.getElementById("scheda").classList.remove("schForm");
 		
 		if(document.getElementById("sc").dataset.funct != funct && !ritorno){ // eseguo la funzione salvata
+			SCHEDA.noChiudi = true;
 			try{
-				SCHEDA.noChiudi = true;
 				eval(document.getElementById("sc").dataset.funct);
 				document.getElementById("sc").dataset.funct = '';
-				SCHEDA.noChiudi = false;
-			}catch(err){};
+			}catch(err){console.log(err);};
+			SCHEDA.noChiudi = false;
 		}
 		
 		if(typeof(funct)=='undefined')var funct = '';
@@ -227,7 +227,6 @@ var SCHEDA = {
 			SCHEDA.espandiElenco();
 			livello = 3;
 			SCHEDA.setMenuDim();
-			//verAnimate();
 		}});
 	},
 	nasScheda: function(){
