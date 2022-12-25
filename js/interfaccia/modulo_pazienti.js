@@ -1385,13 +1385,13 @@ var PAZIENTI = {
 		SCHEDA.selElenco('pazienti');
 		RICERCHE.nascondiGlobal();
 	},
-	salvaAvatar: function( obj ){
+	salvaAvatar: function( obj ){ // salva l'avatar nell'immagine
 		obj = JSON.parse(obj);
 		document.getElementById('avatarPaziente').getElementsByTagName('div')[0].style.backgroundImage="url('"+obj.imgMini+"')";
 		document.getElementById('delAvatarPaziente').style.display = 'block';
 		SCHEDA.formModificato = true;
 	},
-	deleteAvatar: function(){
+	deleteAvatar: function(){ // cancella l'avatar dall'immagine
 		document.getElementById('avatarPaziente').getElementsByTagName('div')[0].style.backgroundImage="";
 		document.getElementById('delAvatarPaziente').style.display = 'none';
 		SCHEDA.formModificato = true;

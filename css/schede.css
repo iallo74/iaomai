@@ -801,6 +801,27 @@ body:not(.bodyStyled2) #scheda_testo2{
 #btnDownloadScheda{
 	background-image:url(../img/ico_downloadN.png);
 }
+
+
+.p_paz_el_menu,
+.p_paz_ref_menu{
+    padding: 0px;
+    cursor: pointer;
+    padding-left: 38px;
+    background-repeat: no-repeat;
+    background-size: auto auto;
+    border-bottom: 1px solid rgba(0,0,0,0.2);
+}
+.p_paz_el_menu{
+    background-position: 8px center !important;
+    background-image: url(../img/ico_cestinoR.png);
+}
+.p_paz_ref_menu{
+    background-image: url(../img/ico_guidaN.png);
+}
+
+
+
 .divEspansa{
 	width:calc(100% + 60px);
 	margin-left:-30px;

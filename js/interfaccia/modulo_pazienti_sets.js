@@ -129,10 +129,9 @@ var PAZIENTI_SETS = {
 		
 		
 		if(PAZIENTI.puntiProvvisori.length){
-			for(p in PAZIENTI.puntiProvvisori){
-				if( globals.set.cartella == 'meridiani_cinesi' || 
-					globals.set.cartella == 'meridiani_shiatsu' ){
-						
+			if( globals.set.cartella == 'meridiani_cinesi' || 
+				globals.set.cartella == 'meridiani_shiatsu' ){
+				for(p in PAZIENTI.puntiProvvisori){
 					nTsubo=PAZIENTI.puntiProvvisori[p].n*1;
 					siglaMeridiano=PAZIENTI.puntiProvvisori[p].m;
 					valutazione=__(PAZIENTI.puntiProvvisori[p].e);
@@ -269,28 +268,27 @@ var PAZIENTI_SETS = {
 					elenco += PAZIENTI.puntiProvvisori[p].n+'.'+PAZIENTI.puntiProvvisori[p].m;
 					if(PAZIENTI.puntiProvvisori[p].e)elenco += '.'+PAZIENTI.puntiProvvisori[p].e;
 					elenco += '|';
-					HTML +=	'<div style="clear:both;height:1px;"></div>';
-				
-				}else{
-					for(p in PAZIENTI.puntiProvvisori){
-						nTsubo=PAZIENTI.puntiProvvisori[p].n*1;
-						siglaMeridiano=PAZIENTI.puntiProvvisori[p].m;
-						valutazione=__(PAZIENTI.puntiProvvisori[p].e);
-						mezzo=__(PAZIENTI.puntiProvvisori[p].z);
-						descrizione=__(PAZIENTI.puntiProvvisori[p].t);
-						siglaTsubo=__(PAZIENTI.puntiProvvisori[p].s);
-						if(!siglaTsubo)siglaTsubo = nTsubo+'.'+siglaMeridiano;
-						HTML_noMod += '<span class="tsb"><img src="img/mezzo_'+mezzo+'.png" class="noMod" style="vertical-align: middle;margin-top: -3px;margin-right: -2px;"> ';
-						HTML_noMod += '<b>'+siglaTsubo+'</b>';
-						if(valutazione)HTML_noMod += '<img src="img/ico_PV'+valutazione+'.png" class="noMod" style="vertical-align: middle;margin-top: -3px;">';
-						if(descrizione)HTML_noMod += ' <span style="font-style:italic;">'+htmlEntities(descrizione)+'</span>';
-						HTML_noMod += '</span> ';
-						elenco += nTsubo+'.'+siglaMeridiano;
-						if(valutazione)elenco += '.'+valutazione;
-						elenco += '|';
-					}
-					HTML = '<span style="margin-bottom: 15px;display: inline-block;">'+HTML_noMod+'</span>';
 				}
+				HTML +=	'<div style="clear:both;height:1px;"></div>';
+			}else{
+				for(p in PAZIENTI.puntiProvvisori){
+					nTsubo=PAZIENTI.puntiProvvisori[p].n*1;
+					siglaMeridiano=PAZIENTI.puntiProvvisori[p].m;
+					valutazione=__(PAZIENTI.puntiProvvisori[p].e);
+					mezzo=__(PAZIENTI.puntiProvvisori[p].z);
+					descrizione=__(PAZIENTI.puntiProvvisori[p].t);
+					siglaTsubo=__(PAZIENTI.puntiProvvisori[p].s);
+					if(!siglaTsubo)siglaTsubo = nTsubo+'.'+siglaMeridiano;
+					HTML_noMod += '<span class="tsb"><img src="img/mezzo_'+mezzo+'.png" class="noMod" style="vertical-align: middle;margin-top: -3px;margin-right: -2px;"> ';
+					HTML_noMod += '<b>'+siglaTsubo+'</b>';
+					if(valutazione)HTML_noMod += '<img src="img/ico_PV'+valutazione+'.png" class="noMod" style="vertical-align: middle;margin-top: -3px;">';
+					if(descrizione)HTML_noMod += ' <span style="font-style:italic;">'+htmlEntities(descrizione)+'</span>';
+					HTML_noMod += '</span> ';
+					elenco += nTsubo+'.'+siglaMeridiano;
+					if(valutazione)elenco += '.'+valutazione;
+					elenco += '|';
+				}
+				HTML = '<span style="margin-bottom: 15px;display: inline-block;">'+HTML_noMod+'</span>';
 			}
 		}else{
 			HTML +=	'<div class="noResults"' +
@@ -460,9 +458,6 @@ var PAZIENTI_SETS = {
 		}else{
 			var pD = SET.dettagliProvvisori[n].DescrizioneDettaglio.split(".");
 			SET.dettagliProvvisori[n].DescrizioneDettaglio = __(pD[0])+"."+__(pD[1])+"."+__(pD[2])+"."+m;
-			//var mz = eval("document.formMod.mz_"+n);
-			//mz.value = m;
-			//SET.salvaDettagli();
 			SET.caricaDettagli();
 		}
 		SCHEDA.formModificato = true;

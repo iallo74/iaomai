@@ -2,8 +2,7 @@
 var FORNITORI = {
 	fornOp: false,
 		
-	caricaFornitori: function(){
-		// carica l'elenco dei fornitori
+	caricaFornitori: function(){ // carica l'elenco dei fornitori
 		var HTML = '';
 		
 		// pulsante aggiungi fornitore
@@ -63,8 +62,7 @@ var FORNITORI = {
 		// scrivo l'elenco
 		document.getElementById("lista_fornitori").innerHTML = HTML;
 	},
-	filtra: function( event ){
-		// filtra l'elenco dei fornitori
+	filtra: function( event ){ // filtra l'elenco dei fornitori
 		var parola = document.getElementById("forn_ricerca").value;
 		for(p in DB.fornitori.data){
 			if(!DB.fornitori.data[p].Cancellato*1){
@@ -78,8 +76,7 @@ var FORNITORI = {
 		if(parola)document.getElementById("forn_ricerca").classList.add("filtro_attivo");
 		else document.getElementById("forn_ricerca").classList.remove("filtro_attivo");
 	},
-	car_fornitore: function( Q_idForn, salvato ){
-		// carica la scheda anagrafica del fornitore
+	car_fornitore: function( Q_idForn, salvato ){ // carica la scheda anagrafica del fornitore
 		// verifico le autorizzazioni
 		if(__(Q_idForn,-1)==-1){
 			var maxFornitori = 1;
@@ -310,16 +307,14 @@ var FORNITORI = {
 			
 		}});
 	},
-	chiudiFornitore: function( idFornitore ){
-		// chiude la scheda anagrafica
+	chiudiFornitore: function( idFornitore ){ // chiude la scheda anagrafica
 		SCHEDA.formModificato = false;
 		FORNITORI.fornOp = false;
 			
 		// tolgo il blocco online dall'elemento
 		if(typeof(idFornitore)!='undefined')LOGIN.closeLocked("fornitori",idFornitore);
 	},
-	mod_fornitore: function( Q_idForn ){
-		//salva l'anagrafica fornitore
+	mod_fornitore: function( Q_idForn ){ //salva l'anagrafica fornitore
 		if(!verifica_form(document.getElementById("formMod")))return;
 		var DataModifica = DB.fornitori.lastSync+1;
 		if(document.formMod.idFornitore.value*1>-1)DataCreazione=DataModifica;
@@ -370,8 +365,7 @@ var FORNITORI = {
 		});
 		return false;
 	},
-	el_fornitore: function( Q_idForn ){
-		// elimina la scheda del fornitore
+	el_fornitore: function( Q_idForn ){ // elimina la scheda del fornitore
 		CONFIRM.vis(	TXT("ChiediEliminaFornitore"),
 						false,
 						arguments ).then(function(pass){if(pass){
@@ -394,8 +388,7 @@ var FORNITORI = {
 			});
 		}});
 	},
-	azRicercaFornitori: function( p ){
-		// clic sul risultato della ricerca
+	azRicercaFornitori: function( p ){ // clic sul risultato della ricerca
 		FORNITORI.car_fornitore(p);
 		SCHEDA.apriElenco('base');
 		SCHEDA.selElenco('fornitori');

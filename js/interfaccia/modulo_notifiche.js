@@ -1,7 +1,7 @@
 
 var NOTIFICHE = {
 
-	aggiornaIcona: function( daleggere){
+	aggiornaIcona: function( daleggere ){ // aggiorna l'icona delle notifiche
 		if(daleggere){
 			document.getElementById("notificaGenerale").classList.add("pallinoNotifica");
 			document.getElementById("notificaMenu").classList.add("pallinoNotifica");
@@ -11,7 +11,7 @@ var NOTIFICHE = {
 		}
 	},
 	
-	dwnl_notifiche: function(){
+	dwnl_notifiche: function(){ // scarica le notifiche
 		if(!LOGIN.logedin()){
 			ALERT(TXT("ErroreUtenteNonConnesso"), true );
 			return;
@@ -23,7 +23,7 @@ var NOTIFICHE = {
 							"NOTIFICHE.car_notifiche");
 		}
 	},
-	car_notifiche: function( txt ){
+	car_notifiche: function( txt ){ // carica la lista delle notifiche
 		if(txt)DB.notifiche = JSON.parse(txt).notifiche;
 		var HTML = '';
 		if(!DB.notifiche)DB.notifiche = [];
@@ -41,7 +41,7 @@ var NOTIFICHE = {
 		rimuoviLoading(document.getElementById("contNotifiche"));
 	},
 	
-	car_notifica: function( n ){
+	car_notifica: function( n ){ // apre una notifica
 		var HTML = 	'<span id="elNotifica"' +
 					'	   onClick="CONFIRM.vis( TXT(\'EliminaNotifica\') ).then(function(pass){' +
 					'	   				if(pass){' +
@@ -97,7 +97,7 @@ var NOTIFICHE = {
 						"NOTIFICHE.aggiornaIcona");
 	},
 	
-	el_notifica: function( n ){
+	el_notifica: function( n ){ // elimina una notifica
 		applicaLoading(document.getElementById("contNotifiche"));
 		CONN.caricaUrl(	"sincro_notifiche_elimina.php",
 						"idNotifica="+DB.notifiche[n].idNotifica,

@@ -1977,6 +1977,11 @@ DB.TXT = {
 			eng: "IMPORT",
 			esp: ""
 		},
+		FileNonConsentito: {
+			ita: "Tipo di file non consentito. N.B. Puoi caricare solo immagini [listaEstensioni].",
+			eng: "File type not allowed. N.B. You can only upload [listaEstensioni] images.",
+			esp: ""
+		},
 		
 		// cartella clinica
 		Cartelle: {

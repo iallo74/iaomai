@@ -137,22 +137,6 @@ body:not(.bodyStyled2):not(.smart) #scheda.schForm .annullaBtn:hover{
 .smart #scheda.schForm .annullaBtn{
 	display:none;
 }
-.p_paz_el_menu,
-.p_paz_ref_menu{
-    padding: 0px;
-    cursor: pointer;
-    padding-left: 38px;
-    background-repeat: no-repeat;
-    background-size: auto auto;
-    border-bottom: 1px solid rgba(0,0,0,0.2);
-}
-.p_paz_el_menu{
-    background-position: 8px center !important;
-    background-image: url(../img/ico_cestinoR.png);
-}
-.p_paz_ref_menu{
-    background-image: url(../img/ico_guidaN.png);
-}
 	
 .smart.android .submitBtn,
 .smart.android .annullaBtn,
@@ -218,6 +202,9 @@ body:not(.smart) .stampaBtn{
 #btn_stampa{
 	margin-top:30px !important;
 }
+
+
+
 
 
 
@@ -517,7 +504,7 @@ body:not(.smart) .stampaBtn{
     margin: 1px;
 }
 #tag_col{
-	    display: inline-block;
+	display: inline-block;
     vertical-align: middle;
     width: 26px;
     height: 26px;
@@ -960,6 +947,9 @@ body:not(.smart) .stampaBtn{
 				0px 0px 4px #186ab1,
 				0px 0px 3px #186ab1 !important;
 }
+
+
+/* DRAG&DROP */
 .grabElement{
 	display:block;
 }
@@ -989,6 +979,10 @@ body:not(.smart) .stampaBtn{
 .smart #dettagliCont .grabElement:not(.rgLabel) .grabBtn{
 	height: 52px !important;
 }
+
+
+
+
 .smart.android .dettMeridiano > img{
 	margin-top: 13px !important;
 }
@@ -1002,7 +996,6 @@ body:not(.smart) .stampaBtn{
 }
 .smart.android .rgProcMod input{
 	margin-bottom: 0px !important;
-   /* vertical-align: top;*/
 }
 .smart.android .rgProcMod .meridModif{
     line-height: 41px !important;
