@@ -1968,8 +1968,8 @@ DB.TXT = {
 			esp: ""
 		},
 		ArEliminate: {
-			ita: "ELIMINATE",
-			eng: "DELETED",
+			ita: "INUTILIZZATE",
+			eng: "UNUSED",
 			esp: ""
 		},
 		ArImporta: {
@@ -1980,6 +1980,11 @@ DB.TXT = {
 		FileNonConsentito: {
 			ita: "Tipo di file non consentito. N.B. Puoi caricare solo immagini [listaEstensioni].",
 			eng: "File type not allowed. N.B. You can only upload [listaEstensioni] images.",
+			esp: ""
+		},
+		DimensioneNonConsentita: {
+			ita: "Non è consentito caricare file di dimensioni superiori ai 5 MB. Il file che stai cercando di caricare è [size]MB.",
+			eng: "Uploading files larger than 5 MB is not allowed. The file you are trying to upload is [size]MB.",
 			esp: ""
 		},
 		

@@ -27,14 +27,19 @@ var PH = {
 	idU: -1,
 	actionClick: '',
 	selected: [],
+	maxFileSize: 5*1000*1000, // 5MB
 	
 	encodeImageFileAsURL: function( element, resizable, makeBig, functPH, listaEstensioni ) { // trasforma l'immagine in base64
+		var verSize = false;
 		if(typeof(functPH) == 'undefined')var functPH = '';
 		if(typeof(resizable) == 'undefined')var resizable = false;
 		if(typeof(makeBig) == 'undefined')var makeBig = false;
 		if(typeof(listaConsentiti) == 'undefined')var listaEstensioni = [	"image/jpeg",
 																			"image/png",
 																			"image/webp" ];
+		else{
+			verSize = true; // controllo le dimensioni per i files che non sono immagini
+		}
 		var ext = "";
 		for(e in listaEstensioni){
 			ext += listaEstensioni[e].toUpperCase().split("/")[1]+", ";
@@ -46,6 +51,10 @@ var PH = {
 		file = element.files[0];
 		if(listaEstensioni.indexOf(file.type)==-1){
 			ALERT(TXT("FileNonConsentito").replace("[listaEstensioni]",ext));
+			return;
+		}
+		if(file.size > PH.maxFileSize && verSize){
+			ALERT(TXT("DimensioneNonConsentita").replace("[size]",ArrotondaEuro(file.size/1000000)));
 			return;
 		}
 		var reader = new FileReader();
