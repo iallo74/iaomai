@@ -28,14 +28,26 @@ var PH = {
 	actionClick: '',
 	selected: [],
 	
-	encodeImageFileAsURL: function( element, resizable, makeBig, functPH ) { // trasforma l'immagine in base64
+	encodeImageFileAsURL: function( element, resizable, makeBig, functPH, listaEstensioni ) { // trasforma l'immagine in base64
 		if(typeof(functPH) == 'undefined')var functPH = '';
 		if(typeof(resizable) == 'undefined')var resizable = false;
 		if(typeof(makeBig) == 'undefined')var makeBig = false;
+		if(typeof(listaConsentiti) == 'undefined')var listaEstensioni = [	"image/jpeg",
+																			"image/png",
+																			"image/webp" ];
+		var ext = "";
+		for(e in listaEstensioni){
+			ext += listaEstensioni[e].toUpperCase().split("/")[1]+", ";
+		}
+		ext = ext.substr(0,ext.length-2);
 		PH.functPH = functPH;
 		PH.makeBig = makeBig;
 		PH.file = element;
 		file = element.files[0];
+		if(listaEstensioni.indexOf(file.type)==-1){
+			ALERT(TXT("FileNonConsentito").replace("[listaEstensioni]",ext));
+			return;
+		}
 		var reader = new FileReader();
 		reader.onloadend = function() {
 			PH.img = document.getElementById("img_PH");
@@ -338,7 +350,7 @@ var PH = {
 		
 		var quality = .3;
 		if(isBig)quality = .8;
-		base64 = canvas.toDataURL('image/jpeg', quality);
+		base64 = canvas.toDataURL('image/jpeg', quality); // converto tutto in JPG
 		return base64;
 	},
 	
@@ -622,7 +634,7 @@ var PH = {
 				var locale = false;
 				if(__(elenco[i].nuova)){
 					locale = true;
-					src = elenco[i].imgBig;
+					foto = elenco[i];
 				}
 				if(!locale){
 					for(f in DB.foto.data){
@@ -785,7 +797,7 @@ var PH = {
 		PH.actionClick = '';
 	},
 	
-	apriArchives: function(){
+	apriArchives: function(){ // apre il popup degli archivi
 		PH.oldGallery = PH.galleryProvvisoria;
 		document.getElementById("listsArchives").innerHTML = 
 			'<div id="contGalleryAr" class="contGallery vis">'+TXT("Caricamento")+'</div>' +
@@ -796,7 +808,7 @@ var PH = {
 		PH.car_gallery_local();
 		PH.car_gallery_online();
 	},
-	chiudiArchives: function(){
+	chiudiArchives: function(){ // richiamato alla chiusura del popup degli archivi
 		PH.actionClick = '';
 		document.getElementById("listsArchives").innerHTML = '';
 		if(PH.oldGallery.length){
