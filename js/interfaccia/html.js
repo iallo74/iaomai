@@ -506,14 +506,16 @@ var H = {
 				'	<em class="labelMobile labelTrattamenti"' +
 				'  		onClick="H.swSezione(this);';
 		if(obj.addFunct)HTML += obj.addFunct;
-		HTML += '">' +
+		HTML += '">';
+		if(obj.img !== null)HTML += 
 				'		<img class="icoLabel"' +
-				'			 src="img/ico_'+img+'.png">' +
-						obj.label +
+				'			 src="img/ico_'+img+'.png">';
+		HTML += 		obj.label +
 				'	</em>' +	
 				'	<div id="cont_'+obj.nome+'">' +
-				'		<div class="l"></div>' +
-							obj.html;
+				'		<div class="l"></div>';
+		if(obj.html)HTML += obj.html;
+		else HTML += '<i style="opacity:0.7;padding:20px;display: block;">'+TXT("NoRes")+'</i>';
 		if(obj.etichette){
 			// sezione ETICHETTE
 			HTML +=

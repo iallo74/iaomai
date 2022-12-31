@@ -257,7 +257,9 @@ var MODULO_PUNTI = { // extend SET
 				DB.set.punti[siglaTsubo].ChiaviTsubo.toLowerCase().indexOf(el.value.toLowerCase())==-1 ){
 					pass = true;
 			}
-			if(__(DB.set.punti[siglaTsubo].PH) != SET.phase && document.getElementById("ts_"+siglaTsubo))pass = true;
+			//if(__(DB.set.punti[siglaTsubo].PH) != SET.phase && document.getElementById("ts_"+siglaTsubo))pass = true;
+			if(	__(DB.set.punti[siglaTsubo]["PH"+SET.phase],false) ||
+				!document.getElementById("ts_"+siglaTsubo) )pass = false;
 			els[e].classList.toggle("nasPT",pass);
 		}
 	},

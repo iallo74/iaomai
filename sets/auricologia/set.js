@@ -25,6 +25,9 @@ SET = {
 	tmZone: null,
 	groupSel: '',
 	maskAtt: '',
+	lmVis: false,
+	patOp: -1,
+	schEvi: null,
 	groupSel: {
 		type: '',
 		val: '',
@@ -91,19 +94,24 @@ SET = {
 				var LN = new THREE.Group();
 				var LN2 = new THREE.Group();
 				var LN3 = new THREE.Group();
+				var LM = new THREE.Group();
 				LN.name="LNs";
 				LN2.name="LNs2";
 				LN3.name="LNs3";
+				LM.name="LMs";
 				LN.visible=true;
 				LN2.visible=false;
 				LN3.visible=false;
+				LM.visible=false;
 				for(l in LNS){ // aggiungo le guide
 					var loader = new THREE.ObjectLoader();
 					var mesh =  loader.parse(JSON.parse(LZString.decompressFromBase64(LNS[l].obj)));
 					
 					var name = mesh.name.split(" ")[0];
+					mesh.name = name;
 					var vis = true;
 					var PH = '';
+					var type = '';
 					if(	mesh.name.indexOf("AG")==0 ||
 						mesh.name.indexOf("(GRUPPO)")>-1){
 						mesh.visible = false;
@@ -121,18 +129,19 @@ SET = {
 						}
 						if(mesh.name.indexOf("(GRUPPO)")>-1)mesh.material = this.MAT.lineGroup;
 						mesh.userData.gruppo = true;
+						mesh.PH = PH;
+						eval("LN"+PH+".add( mesh )");
+					}else if(	mesh.name.indexOf("LM")==0 ){
+						mesh.material = this.MAT.lineLM;
+						LM.add( mesh );
 					}else{
 						mesh.material = this.MAT.line;
 					}
-					mesh.name = name;
-					//mesh.visible = vis;
-					mesh.PH = PH;
-					eval("LN"+PH+".add( mesh )");
-					
 				}
 				sysMesh.add( LN );
 				sysMesh.add( LN2 );
 				sysMesh.add( LN3 );
+				sysMesh.add( LM );
 			}
 		}
 		
@@ -187,7 +196,8 @@ SET = {
 				}
 				if(PH){
 					system = 'EUR';
-					DB.set.punti[name.substr(2,3)].PH = PH;
+					if(PH=='2')DB.set.punti[name.substr(2,3)].PH2 = true;
+					if(PH=='3')DB.set.punti[name.substr(2,3)].PH3 = true;
 				}
 				var mat = 'this.MAT.areaBase'+system;
 				
@@ -288,11 +298,13 @@ SET = {
 				/////var geometry = new THREE.SphereGeometry( 0.02, 6, 6 );
 				if(PH){
 					system = 'EUR';
-					DB.set.punti[name.substr(2,3)].PH = PH;
+					if(PH=='2')DB.set.punti[name.substr(2,3)].PH2 = true;
+					if(PH=='3')DB.set.punti[name.substr(2,3)].PH3 = true;
 				}
 				var mat = 'this.MAT.pointBase'+system;
 				
-				this.P[n] = new THREE.Mesh( this.geometryPallino, eval(mat) );
+				this.P[n] = new THREE.Mesh( this.geometryPallino, cloneMAT(eval(mat)) );
+				//this.P[n] = new THREE.Mesh( this.geometryPallino, eval(mat) );
 				
 				this.P[n].position.set(x,y,z);
 				this.P[n].name=name;
@@ -361,7 +373,8 @@ SET = {
 		contPulsanti += '<div id="pulsante_teoria" class="frdx" onClick="SCHEDA.selElenco(\'teoria\');">'+TXT("Approfondimenti")+'</div>';
 		contElenco += '<div id="lista_teoria"></div>';
 		
-		contBtns = '<div id="p_contrasto" class="p_noTxt" onClick="SET.swContrastMethod();"></div>';
+		contBtns = 	'<div id="p_contrasto" class="p_noTxt" onClick="SET.swContrastMethod();"></div>' +
+					'<div id="p_lms" class="p_noTxt" onClick="SET.swLM();" title="'+htmlEntities(TXT("MostraLM"))+'"></div>';
 		
 		contIcona = '<div id="p_set" onClick="SCHEDA.apriElenco(\'set\',true);"><svg viewBox="0 0 12 48"><polygon points="5,24 12,13 12,35"></polygon></svg><i>'+htmlEntities(TXT("AuriculoMap"))+'</i></div>';;
 		
@@ -453,7 +466,9 @@ SET = {
 			}
 		}
 		postApreSet = false;
-		
+		if(scene.getObjectByName('pins_muscoli') && muscleView){
+			scene.getObjectByName('pins_muscoli').visible = false;
+		}
 		/*
 		Attivare per settare con il pulsante "q" le rotazioni automatiche sui punti
 		*/
@@ -583,15 +598,35 @@ SET = {
 				make=true;
 			}
 		}
+		
+		if(SET.lmVis){
+			// mostro/nascondo i landmarks
+			var nascosto = (manichinoCont.rotation.x>1.5 || 
+							manichinoCont.rotation.x<-1.5 || 
+							manichinoCont.rotation.y>1.3 || 
+							manichinoCont.rotation.y<-1.8 );
+			if(nascosto && !document.getElementById("legende").classList.contains("noLms")){ // nascondo
+				document.getElementById("legende").classList.add("noLms");
+				scene.getObjectByName("LMs").visible = false;
+			}
+			if(!nascosto && document.getElementById("legende").classList.contains("noLms")){ // mostro
+				document.getElementById("legende").classList.remove("noLms");
+				scene.getObjectByName("LMs").visible = true;
+			}
+		}
+		
 		return make;
 	},
 	setPulsePt: function( pt, pulse, op, mat ){
 		if(typeof(mat)=='undefined')var mat = '';
-		var els = scene.getObjectByName("PTs"+SET.phase).children;
-		for(e in els){
-			if(els[e].name.indexOf(pt.name)==0){
-				els[e].scale.set(pulse,pulse,pulse);
-				if(mat)els[e].material=mat;
+		var phs = ["","2","3"];
+		for(ph in phs){
+			var els = scene.getObjectByName("PTs"+phs[ph]).children;
+			for(e in els){
+				if(els[e].name.indexOf(pt.name)==0){
+					els[e].scale.set(pulse,pulse,pulse);
+					if(mat)els[e].material=mat;
+				}
 			}
 		}
 		SET.MAT.pointSel.setValues( { opacity: op } );
@@ -654,7 +689,6 @@ SET = {
 			SET.chiudiTsubo(true);
 		}
 		
-		
 		this.ptSel=PT;
 		
 		document.getElementById("ts_"+name).classList.add("selElPt");
@@ -664,30 +698,31 @@ SET = {
 		
 		var mat = this.MAT.pointSel;
 		if(PT.userData.nota)mat = this.MAT.pointSelNote;
-		var els = scene.getObjectByName("PTs"+SET.phase).children;
-		for(e in els){
-			if(els[e].name.indexOf("PT"+name)==0){
-				els[e].material=mat;
-				if(!PT_name_first){
-					PT_name_first = "PT"+name;
-					this.ptSel = els[e];
+		var phs = ["","2","3"];
+		for(ph in phs){
+			var els = scene.getObjectByName("PTs"+phs[ph]).children;
+			for(e in els){
+				if(els[e].name.indexOf("PT"+name)==0){
+					els[e].material=mat;
+					if(!PT_name_first){
+						PT_name_first = "PT"+name;
+						this.ptSel = els[e];
+					}
 				}
 			}
-		}
-		
-		var els = scene.getObjectByName("LNs"+SET.phase).children;
-		for(e in els){
-			if(els[e].name.indexOf("AG"+name)==0){
-				els[e].visible=true;
+			var els = scene.getObjectByName("LNs"+phs[ph]).children;
+			for(e in els){
+				if(els[e].name.indexOf("AG"+name)==0){
+					els[e].visible=true;
+				}
 			}
-		}
-		
-		var mat = this.MAT.areaSel;
-		var els = scene.getObjectByName("ARs"+SET.phase).children;
-		for(e in els){
-			if(els[e].name.indexOf("AR"+name)==0){
-				els[e].material=mat;
-				AR_name_first = "AR"+name;
+			var mat = this.MAT.areaSel;
+			var els = scene.getObjectByName("ARs"+phs[ph]).children;
+			for(e in els){
+				if(els[e].name.indexOf("AR"+name)==0){
+					els[e].material=mat;
+					AR_name_first = "AR"+name;
+				}
 			}
 		}
 		
@@ -711,6 +746,7 @@ SET = {
 			panEndZero = { x: ((MODELLO.flip) ? elPin.position.x : 0-elPin.position.x), y: 0-elPin.position.y, z: 0-elPin.position.z };
 		}
 		panEnd = { x: 0, y: 0, z: 0 };
+		
 		// posiziono
 		if(GEOMETRIE.posizioni[name] && !SET.phase){
 			var pos = GEOMETRIE.posizioni[name];
@@ -725,6 +761,7 @@ SET = {
 			SET.addEviPalls(PT_name_first,'Select');
 			this.pulse = 1;
 		}
+		
 		
 		
 		SET.caricaTsubo( name, ritorno );
@@ -756,31 +793,35 @@ SET = {
 		// coloro tutti gli altri punti
 		var mat = eval("SET.MAT.pointBase"+this.ptSel.userData.system);
 		if(this.ptSel.userData.nota)mat=this.MAT.pointNote;
-		var els = scene.getObjectByName("PTs"+SET.phase).children;
-		for(e in els){
-			if(els[e].name.indexOf("PT"+this.ptSel.name.substr(2,3))==0){
-				els[e].material=mat;
-				els[e].material.opacity=1;
-				els[e].scale.set(1,1,1);
+		var phs = ["","2","3"];
+		for(ph in phs){
+			var els = scene.getObjectByName("PTs"+phs[ph]).children;
+			for(e in els){
+				if(els[e].name.indexOf("PT"+this.ptSel.name.substr(2,3))==0){
+					els[e].material=mat;
+					els[e].material.opacity = 1;
+					els[e].scale.set(1,1,1);
+				}
+			}
+			var els = scene.getObjectByName("LNs"+phs[ph]).children;
+			for(e in els){
+				if(els[e].name.indexOf("AG")==0){
+					els[e].visible=false;
+				}
+			}
+			var els = scene.getObjectByName("ARs"+phs[ph]).children;
+			for(e in els){
+				if(els[e].name.indexOf("AR"+this.ptSel.name.substr(2,3))==0){
+					system = els[e].userData.system;
+					if(SET.tsuboEvidenziati.indexOf(this.ptSel.name.substr(2,3))>-1){
+						system = 'Evi';
+						tipo='';
+					}else tipo='Base';
+					els[e].material = eval("SET.MAT.area"+tipo+system);
+				}
 			}
 		}
-		var els = scene.getObjectByName("LNs"+SET.phase).children;
-		for(e in els){
-			if(els[e].name.indexOf("AG")==0){
-				els[e].visible=false;
-			}
-		}
-		var els = scene.getObjectByName("ARs"+SET.phase).children;
-		for(e in els){
-			if(els[e].name.indexOf("AR"+this.ptSel.name.substr(2,3))==0){
-				system = els[e].userData.system;
-				if(SET.tsuboEvidenziati.indexOf(this.ptSel.name.substr(2,3))>-1){
-					system = 'Evi';
-					tipo='';
-				}else tipo='Base';
-				els[e].material = eval("SET.MAT.area"+tipo+system);
-			}
-		}
+		if(SET.schEvi)SET.eviPointsPat(SET.schEvi);
 		this.ptSel=null;
 		if(SCHEDA.scheda2Aperta){
 			nonChiudereScheda=true;
@@ -888,16 +929,19 @@ SET = {
 		for(k in result){
 			var pT=result[k].split("'");
 			var siglaTsubo = pT[1];
-			var els = scene.getObjectByName("PTs"+SET.phase).children;
-			for(e in els){
-				if(els[e].name.indexOf("_PT"+siglaTsubo)==0){
-					els[e].material=SET.MAT.pointEvi;
+			var phs = ["","2","3"];
+			for(ph in phs){
+				var els = scene.getObjectByName("PTs"+phs[ph]).children;
+				for(e in els){
+					if(els[e].name.indexOf("_PT"+siglaTsubo)==0){
+						els[e].material=SET.MAT.pointEvi;
+					}
 				}
-			}
-			var els = scene.getObjectByName("ARs"+SET.phase).children;
-			for(e in els){
-				if(els[e].name.indexOf("AR"+siglaTsubo)==0){
-					els[e].material=SET.MAT.areaEvi;
+				var els = scene.getObjectByName("ARs"+phs[ph]).children;
+				for(e in els){
+					if(els[e].name.indexOf("AR"+siglaTsubo)==0){
+						els[e].material=SET.MAT.areaEvi;
+					}
 				}
 			}
 			SET.tsuboEvidenziati.push(siglaTsubo);
@@ -908,16 +952,19 @@ SET = {
 		SET.annullaEvidenziaTsubo();
 		for(k in elenco){
 			siglaTsubo = elenco[k].split(".")[0];
-			var els = scene.getObjectByName("PTs"+SET.phase).children;
-			for(e in els){
-				if(els[e].name.indexOf("_PT"+siglaTsubo)==0){
-					els[e].material=SET.MAT.pointEvi;
+			var phs = ["","2","3"];
+			for(ph in phs){
+				var els = scene.getObjectByName("PTs"+phs[ph]).children;
+				for(e in els){
+					if(els[e].name.indexOf("_PT"+siglaTsubo)==0){
+						els[e].material=SET.MAT.pointEvi;
+					}
 				}
-			}
-			var els = scene.getObjectByName("ARs"+SET.phase).children;
-			for(e in els){
-				if(els[e].name.indexOf("AR"+siglaTsubo)==0){
-					els[e].material=SET.MAT.areaEvi;
+				var els = scene.getObjectByName("ARs"+phs[ph]).children;
+				for(e in els){
+					if(els[e].name.indexOf("AR"+siglaTsubo)==0){
+						els[e].material=SET.MAT.areaEvi;
+					}
 				}
 			}
 			SET.tsuboEvidenziati.push(siglaTsubo);
@@ -927,17 +974,19 @@ SET = {
 		if(SET.tsuboEvidenziati.length){
 			for(k in SET.tsuboEvidenziati){
 				var siglaTsubo=SET.tsuboEvidenziati[k];
-				
-				var els = scene.getObjectByName("PTs"+SET.phase).children;
-				for(e in els){
-					if(els[e].name.indexOf("_PT"+siglaTsubo)==0){
-						els[e].material=SET.MAT.pointTrasp;
+				var phs = ["","2","3"];
+				for(ph in phs){
+					var els = scene.getObjectByName("PTs"+phs[ph]).children;
+					for(e in els){
+						if(els[e].name.indexOf("_PT"+siglaTsubo)==0){
+							els[e].material=SET.MAT.pointTrasp;
+						}
 					}
-				}
-				var els = scene.getObjectByName("ARs"+SET.phase).children;
-				for(e in els){
-					if(els[e].name.indexOf("AR"+siglaTsubo)==0){
-						els[e].material=SET.MAT.areaBase;
+					var els = scene.getObjectByName("ARs"+phs[ph]).children;
+					for(e in els){
+						if(els[e].name.indexOf("AR"+siglaTsubo)==0){
+							els[e].material=SET.MAT.areaBase;
+						}
 					}
 				}
 			}
@@ -981,26 +1030,29 @@ SET = {
 		}
 	},
 	coloraPunti: function( PT_name, tipo ){
-		var els = scene.getObjectByName("PTs"+SET.phase).children;
-		for(e in els){
-			if(	els[e].name.indexOf("PT"+PT_name) == 0 && 
-				els[e].material.name.indexOf("SEL") == -1 && 
-				SET.note.indexOf(PT_name) == -1 ){
-				system = els[e].userData.system;
-				els[e].material = eval("SET.MAT.point"+tipo+system);
-			}
-		}
-		var els = scene.getObjectByName("ARs"+SET.phase).children;
-		for(e in els){
-			if(	els[e].name.indexOf("AR"+PT_name) == 0 && 
-				els[e].material.name.indexOf("SEL") == -1 && 
-				SET.note.indexOf(PT_name) == -1  ){
-				system = els[e].userData.system;
-				if(els[e].material.name.indexOf('EVI')>-1){
-					system = 'Evi';
-					if(tipo=='Base')tipo='';
+		var phs = ["","2","3"];
+		for(ph in phs){
+			var els = scene.getObjectByName("PTs"+phs[ph]).children;
+			for(e in els){
+				if(	els[e].name.indexOf("PT"+PT_name) == 0 && 
+					els[e].material.name.indexOf("SEL") == -1 && 
+					SET.note.indexOf(PT_name) == -1 ){
+					system = els[e].userData.system;
+					els[e].material = eval("SET.MAT.point"+tipo+system);
 				}
-				els[e].material = eval("SET.MAT.area"+tipo+system);
+			}
+			var els = scene.getObjectByName("ARs"+phs[ph]).children;
+			for(e in els){
+				if(	els[e].name.indexOf("AR"+PT_name) == 0 && 
+					els[e].material.name.indexOf("SEL") == -1 && 
+					SET.note.indexOf(PT_name) == -1  ){
+					system = els[e].userData.system;
+					if(els[e].material.name.indexOf('EVI')>-1){
+						system = 'Evi';
+						if(tipo=='Base')tipo='';
+					}
+					els[e].material = eval("SET.MAT.area"+tipo+system);
+				}
 			}
 		}
 	},
@@ -1008,26 +1060,28 @@ SET = {
 		var name = PT_name;
 		if(name.substr(0,1)=='_')name = name.substr(3,name.length-3);
 		else name = name.substr(2,name.length-2);
-		
-		var els = scene.getObjectByName("PTs"+SET.phase).children;
-		for(e in els){
-			if(els[e].name.indexOf("_PT"+name)==0 && els[e].material.name.indexOf("SEL")==-1){
-				if(over)SET.addEviPalls("_PT"+name,'Over');
-				else SET.delEviPalls("_PT"+name,'Over');
-			}
-		}
-		var tipo = (over) ? "Over" : "";
-		var els = scene.getObjectByName("ARs"+SET.phase).children;
-		for(e in els){
-			if(els[e].name.indexOf("AR"+name)==0 && els[e].material.name.indexOf("SEL")==-1){
-				system = els[e].userData.system;
-				if(els[e].material.name.indexOf('EVI')>-1){
-					system = 'Evi';
-					tipo = (over) ? "Over" : "";
-				}else{
-					tipo = (over) ? "Over" : "Base";
+		var phs = ["","2","3"];
+		for(ph in phs){
+			var els = scene.getObjectByName("PTs"+phs[ph]).children;
+			for(e in els){
+				if(els[e].name.indexOf("_PT"+name)==0 && els[e].material.name.indexOf("SEL")==-1){
+					if(over)SET.addEviPalls("_PT"+name,'Over');
+					else SET.delEviPalls("_PT"+name,'Over');
 				}
-				els[e].material = eval("SET.MAT.area"+tipo+system);
+			}
+			var tipo = (over) ? "Over" : "";
+			var els = scene.getObjectByName("ARs"+phs[ph]).children;
+			for(e in els){
+				if(els[e].name.indexOf("AR"+name)==0 && els[e].material.name.indexOf("SEL")==-1){
+					system = els[e].userData.system;
+					if(els[e].material.name.indexOf('EVI')>-1){
+						system = 'Evi';
+						tipo = (over) ? "Over" : "";
+					}else{
+						tipo = (over) ? "Over" : "Base";
+					}
+					els[e].material = eval("SET.MAT.area"+tipo+system);
+				}
 			}
 		}
 	},
@@ -1074,18 +1128,21 @@ SET = {
 	},
 	
 	addEviPalls: function( PT_name, tipo ){
-		var els = scene.getObjectByName("PTs"+SET.phase).children;
-		for(e in els){
-			if(els[e].name.indexOf(PT_name)==0){
-				var name = ' point: '+els[e].name+"_"+e;
-				if(!scene.getObjectByName(tipo+name)){
-					var geoPoint =  new THREE.SphereGeometry( 0.11, 16, 16 );
-					var eviPoint;
-					eviPoint =  new THREE.Mesh( geoPoint, this.MAT.pointSel2.clone() );
-					eviPoint.name=tipo+name;
-					eviPoint.material.visible=true;
-					eviPoint.position.set( els[e].position.x, els[e].position.y, els[e].position.z );
-					SETS.add( eviPoint );
+		var phs = ["","2","3"];
+		for(ph in phs){
+			var els = scene.getObjectByName("PTs"+phs[ph]).children;
+			for(e in els){
+				if(els[e].name.indexOf(PT_name)==0){
+					var name = ' point: '+els[e].name+"_"+e;
+					if(!scene.getObjectByName(tipo+name)){
+						var geoPoint =  new THREE.SphereGeometry( 0.11, 16, 16 );
+						var eviPoint;
+						eviPoint =  new THREE.Mesh( geoPoint, this.MAT.pointSel2.clone() );
+						eviPoint.name=tipo+name;
+						eviPoint.material.visible=true;
+						eviPoint.position.set( els[e].position.x, els[e].position.y, els[e].position.z );
+						SETS.add( eviPoint );
+					}
 				}
 			}
 		}
@@ -1097,6 +1154,40 @@ SET = {
 				SETS.remove( els[e] );
 			}
 		}
+	},
+	
+	// LM
+	swLM: function(){ // mostra/nasconde i landmarks
+		if(SET.lmVis)SET.nasLM();
+		else SET.visLM();
+	},
+	visLM: function(){ // mostra i landmarks
+		document.getElementById("p_lms").classList.add("btnSel");
+		var lms = scene.getObjectByName("LMs");
+		for(l in lms.children){
+			var leg = document.createElement('div');
+			leg.id = 'LM'+l;
+			leg.dataset.idObj = leg.id;
+			leg.className = "noFr";
+			leg.style.cursor = "pointer";
+			leg.innerHTML = leg.id;
+			leg.onclick = function(){
+				SET.caricaTeoria(1,1,document.getElementById("btn_teoria_1_1"));
+			}
+			document.getElementById("legende").appendChild(leg);
+		}
+		lms.visible = true;
+		SET.lmVis = true;
+	},
+	nasLM: function(){ // nasconde i landmarks
+		document.getElementById("p_lms").classList.remove("btnSel");
+		var lms = scene.getObjectByName("LMs");
+		for(l in lms.children){
+			document.getElementById("legende").removeChild(document.getElementById('LM'+l));
+		}
+		document.getElementById("legende").classList.remove("noLms");
+		lms.visible = false;
+		SET.lmVis = false;
 	},
 	
 	
@@ -1119,17 +1210,20 @@ SET = {
 	_rifletti: function(){
 		if(muscleView)SET.MAT.applicaMappa(localStorage.imgMappa);
 		var opposite = (MODELLO.flip) ? 'DX' : 'SX';
-		var els = scene.getObjectByName("PTs"+SET.phase).children;
-		for(e in els){
-			if(els[e].userData.lato == opposite){
-				els[e].visible = false;
-			}else if(!els[e].visible && !__(els[e].userData.locked,false))els[e].visible = true;
-		}
-		var els = scene.getObjectByName("ARs"+SET.phase).children;
-		for(e in els){
-			if(els[e].userData.lato == opposite){
-				els[e].visible = false;
-			}else if(!els[e].visible && !__(els[e].userData.locked,false))els[e].visible = true;
+		var phs = ["","2","3"];
+		for(ph in phs){
+			var els = scene.getObjectByName("PTs"+phs[ph]).children;
+			for(e in els){
+				if(els[e].userData.lato == opposite){
+					els[e].visible = false;
+				}else if(!els[e].visible && !__(els[e].userData.locked,false))els[e].visible = true;
+			}
+			var els = scene.getObjectByName("ARs"+phs[ph]).children;
+			for(e in els){
+				if(els[e].userData.lato == opposite){
+					els[e].visible = false;
+				}else if(!els[e].visible && !__(els[e].userData.locked,false))els[e].visible = true;
+			}
 		}
 		if(SET.groupSel.id)SET.filtraGruppo( SET.groupSel.type, SET.groupSel.val, SET.groupSel.id, true );
 	},
@@ -1143,6 +1237,7 @@ SET = {
 		// risetto la mappa dei muscoli
 		MODELLO.MAT.mappaMuscoli();
 		if(muscleView)MODELLO.meshPelle.children[0].material = MODELLO.MAT.materialMuscoli[0];
+		SET.nasLM(); //  nascondo i landmarks
 	},
 	_torna: function( args ){
 		if(typeof(args.daCarica) == 'undefined')SET.pMod = '';

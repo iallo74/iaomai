@@ -53,6 +53,13 @@ body.orecchio #pulsante_modello{
 	background-image:url(img/p_contrasto_sel.png) !important;
 	display:none;
 }
+#p_lms{
+	background-image:url(../../img/p_lms.png);
+	display:inline-block;
+}
+#p_lms.btnSel{
+	background-image:url(../../img/p_lms_sel.png) !important;
+}
 /*.smart .btn_meridiani_cinesi{
 	background-image:url(img/logoBlu.png) !important;
 }*/
@@ -108,14 +115,14 @@ body.orecchio #pulsante_modello{
 	line-height:16px;
 	vertical-align:middle;
 	cursor:pointer;
-	/*font-weight:bold;*/
 	text-overflow:ellipsis;
 	overflow:hidden;
+    white-space: nowrap;
+	width: calc(100%);
 }
 .pallinoPat:not(.noPall){
 	padding-left: 7px;
     padding-right: 7px;
-    /* background-image: url(img/pallinoPat.png); */
     background-position: left center;
     background-repeat: no-repeat;
     height: 22px;
@@ -1142,4 +1149,172 @@ body:not(.smart) #filtriSmart_cont div:not(.elencoSel):not(.selected):hover{
     font-size: var(--font-25);
     color: #FFF;
     text-shadow: 0px 0px 3px #000;
+}
+
+
+#add_pat{
+	padding-right:4px !important;
+}
+#pat_ricerca,
+#labelApparati{
+    width: calc(var(--menu-width) - 44px);
+}
+#labelApparati{
+	display: inline-block;
+    vertical-align: middle;
+    height: 26px;
+    line-height: 26px;
+    font-size: var(--font-17-6);
+    text-align: left;
+    padding-left: 6px;
+}
+#categoryBtn{
+    width: 28px;
+    height: 28px;
+	margin:1px;
+	display:inline-block;
+	vertical-align:middle;
+	cursor:pointer;
+	border-left:1px solid rgba(0,0,0,0.2);
+	background-position:center center;
+	background-repeat:no-repeat;
+}
+#add_pat.category #categoryBtn{
+	background-image:url(../../img/ico_list.png);
+}
+#add_pat:not(.category) #categoryBtn{
+	background-image:url(../../img/ico_category.png);
+}
+
+/* SHEDA TERAPEUTICA IN PATOLOGIA */
+#schedaTerapeutica{
+    background-color: rgba(0,0,0,0.05);
+    padding: 13px 10px;
+    border-radius: 5px;
+}
+#schedaTerapeutica > p:first-child{
+    text-align: center;
+    margin-top: 0px;	
+}
+#schedaTerapeutica > div{
+	display:inline-block;
+	margin-right:-4px;
+	width:50%;
+	vertical-align:top;
+	border-right:1px solid rgba(0,0,0,0.2);
+}
+.sch_Max450 #schedaTerapeutica > div{
+	display:block !important;
+	margin-right:0px !important;
+	width:100% !important;
+	border-bottom:1px solid rgba(0,0,0,0.2);
+	border-right:none !important;
+	margin-bottom:10px;
+	padding-bottom:10px;
+	padding-left:0px !important;
+}
+#padNoDom{
+	padding-left:20px;
+	border-right:none !important;
+	border-bottom:none !important;
+}
+.schedaSpecifica{
+    background-color: rgba(0,0,0,0.05);
+    padding: 7px 7px;
+    border-radius: 5px;
+	margin-top:15px;
+}
+.schedaSpecifica > p:first-child{
+    font-weight: bold;
+    border-bottom: 1px solid rgba(0,0,0,0.2);
+    margin: 0px 0px 5px 0px;
+    padding: 5px 0px 10px 5px;
+	font-size: var(--font-14-94);
+}
+#causeSpecifiche > p:first-child{
+    text-align: center;
+    margin: 0px;
+}
+#schedaTerapeutica .schDescr{
+	margin-bottom:0px;
+	border-top: 1px solid rgba(0,0,0,0.1);
+    padding-top: 7px;
+}
+.lineaSu{
+	border-top:1px solid rgba(0,0,0,0.2);
+    margin-top: 20px;
+    padding-top: 20px;
+}
+.etPoints{
+	padding: 4px 10px 0px 7px;
+    display: inline-block;
+    min-height: 22px;
+}
+.etTri{
+	padding-top: 5px;
+}
+.sepPoints{
+	width:100%;
+	height:5px;
+    display: block;
+}
+.ptLk{
+	margin: 0px 0px 0px -10px;
+    padding-left: 10px;
+    background-image: url(../../img/ptLk.png);
+    background-repeat: no-repeat;
+    background-position: left center;
+    background-size: 20px 100%;
+}
+.ptTr > div{
+	display: inline-block;
+	vertical-align: middle;
+}
+.ptTr > div:first-child{
+	background-image:url(../../img/graffa.png);
+	background-position:right center;
+	background-repeat:no-repeat;
+	background-size: 7px calc(100% - 6px);
+	padding-right: 10px;
+}
+.ptTr > div:last-child{
+	padding-left: 10px;
+}
+.sch_Max450 .ptTr > div:first-child{
+	width:70%;
+}
+.sch_Max450 .ptTr > div:last-child{
+	width:calc(30% - 4px);
+}
+.eviPtsBtn{
+	display:inline-block;
+	float:right;
+	width:26px;
+	height:26px;
+	border-radius:13px;
+	cursor:pointer;
+	background-image:url(../../img/ico_vedi.png);
+	background-position:center center;
+	background-repeat:no-repeat;
+	margin-top: -5px;
+	opacity:0.4;
+}
+.eviPtsBtn:hover{
+	opacity:1;
+}
+.eviPoints .eviPtsBtn{
+	background-color:#8eb3ff;
+	opacity:1;
+}
+body:not(.orecchio) .eviPtsBtn{
+	display:none;
+}
+body.orecchio .eviPoints{
+    background-color: rgba(0,0,0,0.1) !important;
+    box-shadow: 0px 0px 2px #89aeff,
+				0px 0px 3px #89aeff,
+				0px 0px 5px rgba(0,0,0,0.3);
+}
+body:not(.orecchio) #schedaTerapeutica{
+	background-color: rgba(0,0,0,0.1) !important;
 }

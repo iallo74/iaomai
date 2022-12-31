@@ -11,6 +11,7 @@ var MODULO_TSUBO = { // extend SET
 			return;
 		}
 		// --------------------------
+		
 		var titolo = DB.set.punti[siglaTsubo].NomeTsubo;
 		for(a in DB.set.aree){
 			if(DB.set.aree[a].siglaTsubo == siglaTsubo)titolo = siglaTsubo+". "+titolo;
@@ -26,19 +27,22 @@ var MODULO_TSUBO = { // extend SET
 		if(GEOMETRIE.gruppi.FN.punti.indexOf(siglaTsubo)>-1)type = 'FN';
 		else type = 'NR';
 		if(GEOMETRIE.gruppi.MASTER.punti.indexOf(siglaTsubo)>-1)master = true;
-			
-		var els = scene.getObjectByName("PTs"+SET.phase).children;
-		for(e in els){
-			if(els[e].name == "PT"+siglaTsubo){
-				lato = els[e].userData.lato;
-				system = els[e].userData.system;
+		
+		var phs = ["","2","3"];
+		for(ph in phs){
+			var els = scene.getObjectByName("PTs"+phs[ph]).children;
+			for(e in els){
+				if(els[e].name == "PT"+siglaTsubo){
+					lato = els[e].userData.lato;
+					system = els[e].userData.system;
+				}
 			}
-		}
-		var els = scene.getObjectByName("ARs"+SET.phase).children;
-		for(e in els){
-			if(els[e].name == "AR"+siglaTsubo){
-				lato = els[e].userData.lato;
-				system = els[e].userData.system;
+			var els = scene.getObjectByName("ARs"+phs[ph]).children;
+			for(e in els){
+				if(els[e].name == "AR"+siglaTsubo){
+					lato = els[e].userData.lato;
+					system = els[e].userData.system;
+				}
 			}
 		}
 		var HTML_setting_text = '';
@@ -140,19 +144,43 @@ var MODULO_TSUBO = { // extend SET
 		
 		HTML += SET.convPuntiScheda(DB.set.punti[siglaTsubo].AzioniTsubo,true);
 		
+		
+		
 		// elenco le patolige incluse
 		var elenco = [];
-		for(p in DB.set.patologie){
-			var regexp = /\[\.[^\]]+\.\]/ig;
-			var pts = DB.set.patologie[p].TestoPatologia.match(regexp);
-			for(i in pts){
-				if(pts[i]=='[.'+siglaTsubo+'.]'){
-					var JSNPUSH = {"p": p, "NomePatologia": DB.set.patologie[p].NomePatologia} 
-					
-					if(elenco.indexOf(JSNPUSH)==-1)elenco.push(JSNPUSH);
+		for(x1 in DB.set.schede){
+			for(x2 in DB.set.schede[x1]){
+				for(x3 in DB.set.schede[x1][x2]){
+					for(x4 in DB.set.schede[x1][x2][x3].p){
+						var el = DB.set.schede[x1][x2][x3].p[x4];
+						if(typeof(el)=='string'){
+							if(DB.set.schede[x1][x2][x3].p[x4].indexOf(siglaTsubo) >- 1){
+								for(p in DB.set.patologie){
+									if(DB.set.patologie[p].scheda == x1){
+										var JSNPUSH = {"p": p, "NomePatologia": DB.set.patologie[p].NomePatologia}
+										if(elenco.indexOf(JSNPUSH)==-1)elenco.push(JSNPUSH);
+									}
+								}
+							}
+						}else{
+							if(typeof(el.length)=='undefined')el = el.p;
+							for(x5 in el){
+								for(p in DB.set.patologie){
+									if(DB.set.patologie[p].scheda == el[x5]){
+										var JSNPUSH = {"p": p, "NomePatologia": DB.set.patologie[p].NomePatologia}
+										if(elenco.indexOf(JSNPUSH)==-1)elenco.push(JSNPUSH);
+									}
+								}
+							}
+						}
+					}
 				}
 			}
 		}
+		
+		
+		
+		
 		if(elenco.length){
 			HTML += '<div id="patologieTsubo">' +
 					'	<div onClick="this.parentElement.classList.toggle(\'vis\');">'+TXT("Patologie")+'</div>';

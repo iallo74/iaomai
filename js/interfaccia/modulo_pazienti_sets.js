@@ -405,7 +405,7 @@ var PAZIENTI_SETS = {
 					}
 				}
 				if(pass){
-					PAZIENTI.aggiungiAuriculoTrattamento(pP[p]);
+					PAZIENTI.aggiungiAuriculoTrattamento(pP[p].split(".")[0]);
 					totAggiunti++;
 				}
 			}
@@ -883,17 +883,18 @@ var PAZIENTI_SETS = {
 	cambiaAZ: function( n, m, isProc ){ // cambia il mezzo su un punto
 		if(typeof(isProc)=='undefined')var isProc = false;
 		var el = document.getElementById("ico_PZ"+n);
+		console.log(document.getElementById("pt_"+n).parentElement.parentElement)
 		el.getElementsByTagName("img")[0].src='img/mezzo_'+m+'.png';
-		if(globals.modello.cartella)SET.overTsubo(document.getElementById("pt_"+n).parentElement.parentElement,false);
+		if(globals.modello.cartella)SET.overTsubo("_PT"+m,false);
 		if(!isProc){
-			PAZIENTI.puntiProvvisori[n].z = m;
+			PAZIENTI.auriculoProvvisori[n].z = m;
 		}else{
 			var pD = SET.dettagliProvvisori[n].DescrizioneDettaglio.split(".");
 			SET.dettagliProvvisori[n].DescrizioneDettaglio = __(pD[0])+"."+m;
 			SET.caricaDettagli();
 		}
 		SCHEDA.formModificato = true;
-		if(globals.modello.cartella)SET.overTsubo(document.getElementById("pt_"+n).parentElement.parentElement,true);
+		if(globals.modello.cartella)SET.overTsubo("_PT"+m,true);
 		document.getElementById("tt_mezzival").dataset.on='0';
 		H.removeTT();
 		PAZIENTI.verMezzo(m);

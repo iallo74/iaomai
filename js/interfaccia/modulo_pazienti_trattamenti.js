@@ -1582,8 +1582,8 @@ var PAZIENTI_TRATTAMENTI = {
 			var TRS_clone = clone(DB.pazienti.data[PAZIENTI.idCL].trattamenti);
 			var TRS = [];			
 			for(i=TRS_clone.length-1;i>=0;i--){
-			   if(TRS_clone[i].LabelCiclo==LabelCiclo && TRS_clone[i].TimeTrattamento>0)TRS.push(TRS_clone[i]);
-			} 
+			   if(TRS_clone[i].LabelCiclo==LabelCiclo && (TRS_clone[i].TimeTrattamento>0 || TRS_clone[i].TipoTrattamento=='A'))TRS.push(TRS_clone[i]);
+			}
 			TRS.sort(sort_by("TipoTrattamento", false));
 			var f = 0;
 			for(i in TRS){
@@ -1596,6 +1596,10 @@ var PAZIENTI_TRATTAMENTI = {
 			}
 			TRS.sort(sort_by("p", false, parseInt));
 			var sintomiCiclo = PAZIENTI.getSintomiCiclo(LabelCiclo);
+			for(s in sintomiCiclo){
+				valori[s]=[];
+				valori[s].NomeSintomo=sintomiCiclo[s].NomeSintomo;
+			}
 			for(i in TRS){
 				var TR = TRS[i];
 				if(TR.Cancellato==0 && TR.LabelCiclo==LabelCiclo){
@@ -1644,16 +1648,6 @@ var PAZIENTI_TRATTAMENTI = {
 						if(AnamnesiDiagnosiMTC)HTML+='<p><i>'+htmlEntities(TXT("AnamnesiDiagnosiMTC"))+':</i><br>'+htmlEntities(AnamnesiDiagnosiMTC).replace(/\n/g, '<br>')+'</i></p>';
 						var TXT_P=TXT("PuntiAnamnesi");
 						var TXT_M=TXT("MeridianiAnamnesi");
-						for(s in sintomiCiclo){
-							valori[s]=[];
-							valori[s].NomeSintomo=sintomiCiclo[s].NomeSintomo;
-							var score = -1;
-							valori[s][i]={
-								"p": TR.p,
-								"Data": Data,
-								"score": score
-							};
-						}
 					}
 					for(v in valori){
 						var score = -1;
@@ -1692,23 +1686,22 @@ var PAZIENTI_TRATTAMENTI = {
 						for(m in meridiani){
 							NomeMeridiano=meridiani[m].NomeMeridiano;
 							siglaMeridiano=meridiani[m].siglaMeridiano;
-							valEnergetica=__(meridiani[m].valEnergetica);
+							valutazione=__(meridiani[m].valEnergetica);
 							descrizione=__(meridiani[m].descrizione);
 							
 							HTML += 	'<span class="tsb">' +
 										'<b>'+NomeMeridiano+'</b>';
+							if(valutazione)HTML += '<img src="img/ico_PV'+valutazione+'.png" class="noMod" style="vertical-align: middle;margin-top: -3px;">';
 							if(descrizione)HTML += ' '+descrizione;
 							HTML += '</span>'+chr10;
 						}
 						HTML+='</div>';
 					}
 				}
-				
 			}
 			HTML2=HTML;
 			HTML='';
 			if(valori.length>0){
-				if(debug)console.log(valori)
 				HTML+='<hr><h2>'+htmlEntities(TXT("ScoresSintomi"))+'</h2>';
 				HTML+='<div id="graficoCont">';
 				var tot=0;
@@ -1719,7 +1712,6 @@ var PAZIENTI_TRATTAMENTI = {
 				var Wg=WF()-505;
 				if(WF()<1024)Wg=WF()-120;
 				if(WF()<510)Wg=WF()-80;
-				if(debug)console.log(Wg);
 				var Hg=50;
 				var step=Wg/tot;
 				for(v in valori){
@@ -1730,7 +1722,6 @@ var PAZIENTI_TRATTAMENTI = {
 				HTML+='</div><div class="l"></div>';
 			}
 			HTML=HTML0+HTML+HTML2+'</div>';
-			
 			SCHEDA.caricaScheda( stripslashes(TXT("SchedaCiclo")), HTML, '', 'scheda_Riepi', false, true, btn );
 		}});
 	},

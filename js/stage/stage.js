@@ -567,6 +567,7 @@ function animate() {
 				var end = Date.now();
 				if(end-rotateStart>5000)smothingView=false;
 				rotateStart=null;
+				normalizeRotation();
 				if(!controlsM._premuto){
 					controlsM._ZPR=false;
 					controlsM._inMovimento=false;

@@ -115,32 +115,32 @@ DB.TXT.set = {
         esp: ""
     },
     Legenda_TF: {
-        ita: "Fossetta triangolare",
+        ita: "Fossa triangolare",
         eng: "Triangular fossa",
         esp: ""
     },
     Legenda_SF: {
-        ita: "Fossetta scafoide",
+        ita: "Fossa scafoide",
         eng: "Scafoid fossa",
         esp: ""
     },
     Legenda_IH: {
-        ita: "Parte nascosta dell'elice",
+        ita: "Superficie interna dell'elice",
         eng: "Hidden side of helix",
         esp: ""
     },
     Legenda_SC: {
-        ita: "Conca superiore",
+        ita: "Emiconca superiore",
         eng: "Superior concha",
         esp: ""
     },
     Legenda_IC: {
-        ita: "Conca inferiore",
+        ita: "Emiconca inferiore",
         eng: "Inferior concha",
         esp: ""
     },
     Legenda_IT: {
-        ita: "Fessura intertragale",
+        ita: "Incisura intertragica",
         eng: "Intertragic notch",
         esp: ""
     },
@@ -165,17 +165,17 @@ DB.TXT.set = {
         esp: ""
     },
     Legenda_ST: {
-        ita: "Parte nascosta del trago",
-        eng: "Hidden side of tragus",
+        ita: "Superficie interna del trago",
+        eng: "Subtragus",
         esp: ""
     },
     Legenda_LO: {
-        ita: "Lobo",
+        ita: "Lobulo",
         eng: "Lobe",
         esp: ""
     },
     Legenda_PL: {
-        ita: "Lobo posteriore",
+        ita: "Lobulo posteriore",
         eng: "Posterior lobe",
         esp: ""
     },
@@ -190,8 +190,8 @@ DB.TXT.set = {
         esp: ""
     },
     Legenda_PT: {
-        ita: "Fossetta triangolare posteriore",
-        eng: "Posterior triangular fossa",
+        ita: "Eminenza triangolare posteriore",
+        eng: "Posterior triangular eminence",
         esp: ""
     },
     Legenda_PC: {
@@ -300,13 +300,53 @@ DB.TXT.set = {
         esp: ""
     },
     Patologie: {
-        ita: "Patologie",
-        eng: "Pathologies",
+        ita: "Patologie e protocolli",
+        eng: "Pathologies and protocols",
         esp: ""
     },
     CercaPatologia: {
         ita: "Cerca una patologia...",
         eng: "Search a pathology...",
+        esp: ""
+    },
+    DescrizionePatologia: {
+        ita: "Descrizione patologia",
+        eng: "Pathology description",
+        esp: ""
+    },
+    SchedaTerapeutica: {
+        ita: "Protocollo terapeutico",
+        eng: "Therapeutic protocol",
+        esp: ""
+    },
+	TrattamentoGenerico:  {
+        ita: "TRATTAMENTO GENERICO",
+        eng: "GENERIC TREATMENT",
+        esp: ""
+    },
+	PadiglioneDominante:  {
+        ita: "Padiglione dominante",
+        eng: "Dominant auricle",
+        esp: ""
+    },
+	PadiglioneNonDominante:  {
+        ita: "Padiglione non dominante",
+        eng: "Not dominant auricle",
+        esp: ""
+    },
+	CauseSpecifiche:  {
+        ita: "CAUSE SPECIFICHE",
+        eng: "SPECIFIC CAUSES",
+        esp: ""
+    },
+	AltrePatologie: {
+        ita: "ALTRE PATOLOGIE CHE UTILIZZANO IL PROTOCOLLO",
+        eng: "OTHER DISEASES USING THE PROTOCOL",
+        esp: ""
+    },
+	Apparati: {
+        ita: "Apparati",
+        eng: "Apparatus",
         esp: ""
     },
     Mappa: {

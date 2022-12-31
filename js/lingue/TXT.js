@@ -3177,6 +3177,11 @@ DB.TXT = {
 			eng: "Centra il modello",
 			esp: ""
 		},
+		MostraLM: {
+			ita: "Mostra/nascondi i punti di repere",
+			eng: "Show/hide landmarks",
+			esp: ""
+		},
 		ElementiSelezionati: {
 			ita: "Elementi selezionati",
 			eng: "Elementi selezionati",

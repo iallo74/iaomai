@@ -200,18 +200,31 @@
 	opacity:0.8;
 	padding-left:5px;
 	padding-right:5px;
-	
-		width:calc(fit-content + 30px) !important;
-		background-color:rgba(0,0,0,0.7);
-		border-radius:10px;
-		padding-left:10px !important;
-		padding-right:20px !important;
-		background-image:url(../img/frGiu.png);
-		background-repeat:no-repeat;
-		background-position:right center;
-		background-size:auto 130%;
 }
-#legende:not(.noAnimate) div{
+#legende div:not(.noFr){
+	width:calc(fit-content + 30px) !important;
+	background-color:rgba(0,0,0,0.7);
+	border-radius:10px;
+	padding-left:10px !important;
+	padding-right:20px !important;
+	background-image:url(../img/frGiu.png);
+	background-repeat:no-repeat;
+	background-position:right center;
+	background-size:auto 130%;
+}
+#legende div.noFr{
+	background-color:#7bcd66;
+	color:#000 !important;
+	font-weight:bold;
+}
+#legende.noLms div.noFr{
+	display:none;
+}
+
+#legende.nasPins div:not(.noFr){
+	display:none !important;
+}
+#legende:not(.noAnimate) div:not(.noFr){
 	cursor:pointer;	
 }
 #legende.noAnimate{

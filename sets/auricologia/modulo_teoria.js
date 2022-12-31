@@ -55,7 +55,7 @@ var MODULO_TEORIA = { // extend SET
 		SET.hideGroupLines();
 		if(gruppo){
 			document.getElementById("sceltaPhaseElenco").selectedIndex = 0;
-			SET.setPhase('');
+			if(SET.phase)setTimeout(function(){SET.setPhase('');},500);
 			var mAtt=DB.set.teoria[2].contenuti[t].sigla;
 			var elencoTsubo='<br><b>'+htmlEntities(TXT("ElencoPunti"))+'</b>';
 			for(g in GEOMETRIE.gruppi[gruppo].punti){

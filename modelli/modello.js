@@ -961,7 +961,8 @@ var MODELLO = {
 		}
 	},
 	swPins: function(){
-		document.getElementById("legende").classList.toggle("visSch");
+		//document.getElementById("legende").classList.toggle("visSch");
+		document.getElementById("legende").classList.toggle("nasPins");
 		document.getElementById("p_pins").classList.toggle("pinsNo");
 		MODELLO.meshGuide.visible = !MODELLO.meshGuide.visible;
 	},

@@ -43,6 +43,7 @@ SET.COL = {
 	gialloPT: 0xFFCC00,
 	guide: 0xFFFFFF,
 	group: 0x0066BF,
+	LM: 0x008800,//0x0066BF,
 	needle: 0xFFFFFF,
 	note: 0xFFAA00,
 	schNeutro: 0x0000FF,
@@ -76,6 +77,11 @@ SET.MAT = {
 	} ),
 	lineGroup: new THREE.LineBasicMaterial( {
 		color: SET.COL.group,
+		transparent: false,
+		opacity:0.5
+	} ),
+	lineLM: new THREE.LineBasicMaterial( {
+		color: SET.COL.LM,
 		transparent: false,
 		opacity:0.5
 	} ),
