@@ -865,11 +865,23 @@ DB.set= {
             "AzioniTsubo": "<p><b>Altri nomi</b><br>- Pene<br>- Clitoride</p><p><b>Azione</b><br>Punto indicato dalla Scuola Cinese per il trattamento di tutte le patologie scrotali e correlate agli organi genitali maschili e femminili. Molto efficace in caso di frigidità e impotenza.</p><p><b>Ubicazione</b><br>HX4, sul ginocchio dell'elice all'altezza della branca inferiore dell'antelice</p>",
             "ChiaviTsubo": ""
         },
+        "013": {
+            "NomeTsubo": "Ansia di Romoli",
+            "AzioniTsubo": "<p><b>Azione</b><br>Particolarmente sensibile ed efficace negli attacchi di panico, unitamente al punto Bocca</p><p><b>Ubicazione</b><br>IC5-IC8, codificata da A. Lovato, descritta da Marco Romoli in diverse esposizioni, relazioni e congressi, identificata in una zona dell'emiconca inferiore, vicino al punto Meraviglioso di Nogier.</p>",
+            "ChiaviTsubo": "",
+			"hidden": true
+        },
+        "014": {
+            "NomeTsubo": "Area dell'emicrania",
+            "AzioniTsubo": "<p><b>Azione</b><br>Riduce una crisi emicranica, attraverso il test di contatto con l'ago (NTC). La detezione avviene attraverso il pauper nero e con il pauper verticale nelle aree IT1, AT1 e CW1.</p><p><b>Ubicazione</b><br>IT1-AT1-CW1-LO4, codificata da A. Lovato determinata per la prima volta da Romoli attraverso il test da contatto (NTC).</p>",
+            "ChiaviTsubo": "",
+			"hidden": true
+        },
         "015": {
             "NomeTsubo": "Elice 1-7",
             "AzioniTsubo": "<p><b>Azione</b><br>Punti specifici del protocollo antitabacco classico di P. Nogier e del programma antitabacco di G. Rossato.</p><p><b>Ubicazione</b><br>Per trovare i 7 punti si devono innanzitutto ricavare i 2 estremi. Il punto inferiore lo si reperisce tracciando il raggio che dal Punto Zero interseca la rappresentazione della prima vertebra cervicale. Il punto superiore lo si ottiene tracciando il raggio che dal Punto Zero interseca il Tubercolo di Darwin. I 5 punti intermedi sono rilevati mediante il regolo di Nogier.</p>",
             "ChiaviTsubo": "",
-			"hide": true
+			"hidden": true
         },
         "017": {
             "NomeTsubo": "Dita delle mani",
@@ -1182,7 +1194,7 @@ DB.set= {
 				},
 				"ds": {
 					"p": [
-						"005"
+						"180"
 					]
 				},
 				"np": {
@@ -1209,7 +1221,8 @@ DB.set= {
 								"003",
 								"165",
 								"039"
-							]
+							],
+							l: "TAN"
 						}
 					]
 				},
@@ -1228,7 +1241,8 @@ DB.set= {
 								"001",
 								"222",
 								"254"
-							]
+							],
+							l: "TRE"
 						},
 						"137",
 						{
@@ -1237,7 +1251,8 @@ DB.set= {
 								"230",
 								"104",
 								"003"
-							]
+							],
+							l: "LIN_OMEG"
 						}
 					]
 				},
@@ -1440,7 +1455,8 @@ DB.set= {
 								"003",
 								"165",
 								"039"
-							]
+							],
+							l: "TAN"
 						}
 					]
 				},
@@ -1453,7 +1469,8 @@ DB.set= {
 								"001",
 								"222",
 								"254"
-							]
+							],
+							l: "TRE"
 						},
 						"137",
 						{
@@ -1462,7 +1479,8 @@ DB.set= {
 								"230",
 								"104",
 								"003"
-							]
+							],
+							l: "LIN_OMEG"
 						}
 					]
 				},
@@ -1636,7 +1654,7 @@ DB.set= {
 					"p": [
 						"000",
 						"003",
-						"057",
+						"067",
 						"287",
 						"282",
 						"124",
@@ -1662,7 +1680,8 @@ DB.set= {
 								"003",
 								"165",
 								"039"
-							]
+							],
+							l: "TAN"
 						}
 					]
 				}
@@ -1762,7 +1781,8 @@ DB.set= {
 								"003",
 								"165",
 								"039"
-							]
+							],
+							l: "TAN"
 						}
 					]
 				},
@@ -1775,7 +1795,8 @@ DB.set= {
 								"001",
 								"222",
 								"254"
-							]
+							],
+							l: "TRE"
 						},
 						"137",
 						{
@@ -1784,7 +1805,8 @@ DB.set= {
 								"230",
 								"104",
 								"003"
-							]
+							],
+							l: "LIN_OMEG"
 						}
 					]
 				}
@@ -1844,7 +1866,8 @@ DB.set= {
 								"003",
 								"165",
 								"039"
-							]
+							],
+							l: "TAN"
 						}
 					]
 				},
@@ -1857,7 +1880,8 @@ DB.set= {
 								"001",
 								"222",
 								"254"
-							]
+							],
+							l: "TRE"
 						},
 						"137",
 						"192",
@@ -1867,7 +1891,8 @@ DB.set= {
 								"230",
 								"104",
 								"003"
-							]
+							],
+							l: "LIN_OMEG"
 						}
 					]
 				},
@@ -1939,7 +1964,8 @@ DB.set= {
 								"003",
 								"165",
 								"039"
-							]
+							],
+							l: "TAN"
 						}
 					]
 				},
@@ -1952,7 +1978,8 @@ DB.set= {
 								"001",
 								"222",
 								"254"
-							]
+							],
+							l: "TRE"
 						},
 						"137",
 						{
@@ -1961,7 +1988,8 @@ DB.set= {
 								"230",
 								"104",
 								"003"
-							]
+							],
+							l: "LIN_OMEG"
 						}
 					]
 				}
@@ -2023,7 +2051,8 @@ DB.set= {
 								"003",
 								"165",
 								"039"
-							]
+							],
+							l: "TAN"
 						}
 					]
 				},
@@ -2036,7 +2065,8 @@ DB.set= {
 								"001",
 								"222",
 								"254"
-							]
+							],
+							l: "TRE"
 						},
 						"137",
 						{
@@ -2045,7 +2075,8 @@ DB.set= {
 								"230",
 								"104",
 								"003"
-							]
+							],
+							l: "LIN_OMEG"
 						}
 					]
 				}
@@ -2103,7 +2134,8 @@ DB.set= {
 								"003",
 								"165",
 								"039"
-							]
+							],
+							l: "TAN"
 						}
 					]
 				},
@@ -2123,7 +2155,8 @@ DB.set= {
 								"001",
 								"222",
 								"254"
-							]
+							],
+							l: "TRE"
 						},
 						"137",
 						{
@@ -2132,7 +2165,8 @@ DB.set= {
 								"230",
 								"104",
 								"003"
-							]
+							],
+							l: "LIN_OMEG"
 						}
 					]
 				}
@@ -2190,7 +2224,8 @@ DB.set= {
 								"003",
 								"165",
 								"039"
-							]
+							],
+							l: "TAN"
 						}
 					]
 				},
@@ -2210,7 +2245,8 @@ DB.set= {
 								"001",
 								"222",
 								"254"
-							]
+							],
+							l: "TRE"
 						},
 						"137",
 						{
@@ -2219,7 +2255,8 @@ DB.set= {
 								"230",
 								"104",
 								"003"
-							]
+							],
+							l: "LIN_OMEG"
 						}
 					]
 				}
@@ -2280,7 +2317,8 @@ DB.set= {
 								"003",
 								"165",
 								"039"
-							]
+							],
+							l: "TAN"
 						}
 					]
 				},
@@ -2299,7 +2337,8 @@ DB.set= {
 								"001",
 								"222",
 								"254"
-							]
+							],
+							l: "TRE"
 						},
 						"137",
 						{
@@ -2308,7 +2347,8 @@ DB.set= {
 								"230",
 								"104",
 								"003"
-							]
+							],
+							l: "LIN_OMEG"
 						}
 					]
 				}
@@ -2374,7 +2414,8 @@ DB.set= {
 								"003",
 								"165",
 								"039"
-							]
+							],
+							l: "TAN"
 						}
 					]
 				},
@@ -2395,7 +2436,8 @@ DB.set= {
 								"001",
 								"222",
 								"254"
-							]
+							],
+							l: "TRE"
 						},
 						"137",
 						{
@@ -2404,7 +2446,8 @@ DB.set= {
 								"230",
 								"104",
 								"003"
-							]
+							],
+							l: "LIN_OMEG"
 						}
 					]
 				},
@@ -2476,7 +2519,8 @@ DB.set= {
 								"003",
 								"165",
 								"039"
-							]
+							],
+							l: "TAN"
 						}
 					]
 				},
@@ -2489,7 +2533,8 @@ DB.set= {
 								"001",
 								"222",
 								"254"
-							]
+							],
+							l: "TRE"
 						},
 						"137",
 						{
@@ -2498,7 +2543,8 @@ DB.set= {
 								"230",
 								"104",
 								"003"
-							]
+							],
+							l: "LIN_OMEG"
 						}
 					]
 				}
@@ -2567,7 +2613,8 @@ DB.set= {
 								"003",
 								"165",
 								"039"
-							]
+							],
+							l: "TAN"
 						}
 					]
 				},
@@ -2588,7 +2635,8 @@ DB.set= {
 								"001",
 								"222",
 								"254"
-							]
+							],
+							l: "TRE"
 						},
 						"137",
 						{
@@ -2597,7 +2645,8 @@ DB.set= {
 								"230",
 								"104",
 								"003"
-							]
+							],
+							l: "LIN_OMEG"
 						}
 					]
 				},
@@ -2660,7 +2709,8 @@ DB.set= {
 								"003",
 								"165",
 								"039"
-							]
+							],
+							l: "TAN"
 						}
 					]
 				},
@@ -2680,7 +2730,8 @@ DB.set= {
 								"001",
 								"222",
 								"254"
-							]
+							],
+							l: "TRE"
 						},
 						"137",
 						"192",
@@ -2690,7 +2741,8 @@ DB.set= {
 								"230",
 								"104",
 								"003"
-							]
+							],
+							l: "LIN_OMEG"
 						}
 					]
 				},
@@ -2762,7 +2814,8 @@ DB.set= {
 								"003",
 								"165",
 								"039"
-							]
+							],
+							l: "TAN"
 						}
 					]
 				},
@@ -2783,7 +2836,8 @@ DB.set= {
 								"222",
 								"000",
 								"254"
-							]
+							],
+							l: "RIL_NEUR"
 						},
 						{
 							t: "Triade di relax",
@@ -2791,7 +2845,8 @@ DB.set= {
 								"001",
 								"222",
 								"254"
-							]
+							],
+							l: "TRE"
 						}
 					]
 				},
@@ -2872,7 +2927,8 @@ DB.set= {
 								"001",
 								"222",
 								"254"
-							]
+							],
+							l: "TRE"
 						}
 					]
 				},
@@ -2898,7 +2954,7 @@ DB.set= {
 					"p": [
 						"001",
 						"003",
-						"[]Area dell'emicrania",
+						"014",
 						"A seconda della localizzazione del dolore:",
 						"179",
 						"202",
@@ -2944,7 +3000,8 @@ DB.set= {
 								"001",
 								"222",
 								"254"
-							]
+							],
+							l: "TRE"
 						},
 						{
 							t: "Linea degli omega",
@@ -2952,7 +3009,8 @@ DB.set= {
 								"230",
 								"104",
 								"003"
-							]
+							],
+							l: "LIN_OMEG"
 						},
 						"199"
 					]
@@ -2981,7 +3039,7 @@ DB.set= {
 						"165",
 						"003",
 						"283",
-						"[]Area dell'emicrania",
+						"014",
 						"A seconda della localizzazione del dolore:",
 						"179",
 						"202",
@@ -3013,7 +3071,8 @@ DB.set= {
 								"001",
 								"222",
 								"254"
-							]
+							],
+							l: "TRE"
 						},
 						{
 							t: "Linea degli omega",
@@ -3021,7 +3080,8 @@ DB.set= {
 								"230",
 								"104",
 								"003"
-							]
+							],
+							l: "LIN_OMEG"
 						},
 						"004"
 					]
@@ -3078,7 +3138,8 @@ DB.set= {
 								"001",
 								"222",
 								"254"
-							]
+							],
+							l: "TRE"
 						},
 						{
 							t: "Linea degli omega",
@@ -3086,7 +3147,8 @@ DB.set= {
 								"230",
 								"104",
 								"003"
-							]
+							],
+							l: "LIN_OMEG"
 						}
 					]
 				}
@@ -3225,7 +3287,8 @@ DB.set= {
 								"222",
 								"000",
 								"254"
-							]
+							],
+							l: "RIL_NEUR"
 						},
 						"001",
 						"222",
@@ -3274,7 +3337,8 @@ DB.set= {
 								"230",
 								"104",
 								"003"
-							]
+							],
+							l: "LIN_OMEG"
 						},
 						"045",
 						"245",
@@ -3382,7 +3446,8 @@ DB.set= {
 								"230",
 								"104",
 								"003"
-							]
+							],
+							l: "LIN_OMEG"
 						}
 					]
 				},
@@ -3453,7 +3518,8 @@ DB.set= {
 								"001",
 								"222",
 								"254"
-							]
+							],
+							l: "TRE"
 						}
 					]
 				},
@@ -3572,7 +3638,8 @@ DB.set= {
 								"001",
 								"222",
 								"254"
-							]
+							],
+							l: "TRE"
 						},
 						{
 							t: "Linea degli omega",
@@ -3580,7 +3647,8 @@ DB.set= {
 								"230",
 								"104",
 								"003"
-							]
+							],
+							l: "LIN_OMEG"
 						},
 						{
 							t: "Rilassamento neurovegetativo bilaterale",
@@ -3589,7 +3657,8 @@ DB.set= {
 								"222",
 								"000",
 								"254"
-							]
+							],
+							l: "RIL_NEUR"
 						}
 					]
 				}
@@ -3645,7 +3714,8 @@ DB.set= {
 								"230",
 								"104",
 								"003"
-							]
+							],
+							l: "LIN_OMEG"
 						}
 					]
 				},
@@ -3710,7 +3780,8 @@ DB.set= {
 								"230",
 								"104",
 								"003"
-							]
+							],
+							l: "LIN_OMEG"
 						}
 					]
 				},
@@ -3774,7 +3845,8 @@ DB.set= {
 								"001",
 								"222",
 								"254"
-							]
+							],
+							l: "TRE"
 						},
 						{
 							t: "Triade modificata",
@@ -3846,7 +3918,8 @@ DB.set= {
 								"001",
 								"222",
 								"254"
-							]
+							],
+							l: "TRE"
 						},
 						"192",
 						{
@@ -3856,7 +3929,8 @@ DB.set= {
 								"222",
 								"000",
 								"254"
-							]
+							],
+							l: "RIL_NEUR"
 						}
 					]
 				},
@@ -3923,7 +3997,8 @@ DB.set= {
 								"001",
 								"222",
 								"254"
-							]
+							],
+							l: "TRE"
 						}
 					]
 				},
@@ -4011,7 +4086,8 @@ DB.set= {
 								"230",
 								"104",
 								"003"
-							]
+							],
+							l: "LIN_OMEG"
 						}
 					]
 				},
@@ -4034,7 +4110,8 @@ DB.set= {
 								"222",
 								"000",
 								"254"
-							]
+							],
+							l: "RIL_NEUR"
 						}
 					]
 				},
@@ -4179,7 +4256,8 @@ DB.set= {
 								"001",
 								"222",
 								"254"
-							]
+							],
+							l: "TRE"
 						},
 						{
 							t: "Linea degli omega",
@@ -4187,7 +4265,8 @@ DB.set= {
 								"230",
 								"104",
 								"003"
-							]
+							],
+							l: "LIN_OMEG"
 						}
 					]
 				}
@@ -4220,7 +4299,7 @@ DB.set= {
 				"ns": {
 					"p": [
 						"001",
-						"[]Ansia di Romoli",
+						"013",
 						"129"
 					]
 				}
@@ -4236,7 +4315,8 @@ DB.set= {
 								"001",
 								"222",
 								"254"
-							]
+							],
+							l: "TRE"
 						}
 					]
 				},
@@ -4272,7 +4352,7 @@ DB.set= {
 					"p": [
 						"030",
 						"000",
-						"[]Ansia di Romoli"
+						"013"
 					]
 				},
 				"ns": {
@@ -4300,7 +4380,8 @@ DB.set= {
 								"230",
 								"104",
 								"003"
-							]
+							],
+							l: "LIN_OMEG"
 						},
 						{
 							t: "Triade di relax",
@@ -4308,7 +4389,8 @@ DB.set= {
 								"001",
 								"222",
 								"254"
-							]
+							],
+							l: "TRE"
 						},
 						{
 							t: "Rilassamento neurovegetativo",
@@ -4317,7 +4399,8 @@ DB.set= {
 								"222",
 								"000",
 								"254"
-							]
+							],
+							l: "RIL_NEUR"
 						}
 					]
 				}
@@ -4328,7 +4411,7 @@ DB.set= {
 				"dp": {
 					"p": [
 						"030",
-						"[]Ansia di Romoli",
+						"013",
 						"184"
 					]
 				},
@@ -4387,7 +4470,7 @@ DB.set= {
 				"dp": {
 					"p": [
 						"003",
-						"[]Ansia di Romoli",
+						"013",
 						"230"
 					]
 				},
@@ -4435,7 +4518,8 @@ DB.set= {
 								"230",
 								"104",
 								"003"
-							]
+							],
+							l: "LIN_OMEG"
 						},
 						"150",
 						{
@@ -4444,7 +4528,8 @@ DB.set= {
 								"001",
 								"222",
 								"254"
-							]
+							],
+							l: "TRE"
 						},
 						{
 							t: "Rilassamento neurovegetativo",
@@ -4453,7 +4538,8 @@ DB.set= {
 								"222",
 								"000",
 								"254"
-							]
+							],
+							l: "RIL_NEUR"
 						}
 					]
 				}
@@ -4500,7 +4586,7 @@ DB.set= {
 					"t": "Disturbo da attacchi di panico (DAP)",
 					"p": [
 						"129",
-						"[]Ansia di Romoli"
+						"013"
 					]
 				},
 				{
@@ -4513,7 +4599,8 @@ DB.set= {
 								"001",
 								"222",
 								"254"
-							]
+							],
+							l: "TRE"
 						},
 						{
 							t: "Rilassamento neurovegetativo",
@@ -4522,7 +4609,8 @@ DB.set= {
 								"222",
 								"000",
 								"254"
-							]
+							],
+							l: "RIL_NEUR"
 						},
 						{
 							t: "Linea degli omega",
@@ -4530,7 +4618,8 @@ DB.set= {
 								"230",
 								"104",
 								"003"
-							]
+							],
+							l: "LIN_OMEG"
 						}
 					]
 				}
@@ -4583,7 +4672,8 @@ DB.set= {
 								"230",
 								"104",
 								"003"
-							]
+							],
+							l: "LIN_OMEG"
 						},
 						{
 							t: "Triade di relax",
@@ -4591,7 +4681,8 @@ DB.set= {
 								"001",
 								"222",
 								"254"
-							]
+							],
+							l: "TRE"
 						},
 						"137"
 					]
@@ -4642,7 +4733,8 @@ DB.set= {
 								"230",
 								"104",
 								"003"
-							]
+							],
+							l: "LIN_OMEG"
 						}
 					]
 				},
@@ -4702,7 +4794,7 @@ DB.set= {
 					"t": "Componente ansiosa e stress",
 					"d": "Sul lato non dominante",
 					"p": [
-						"[]Ansia di Romoli",
+						"013",
 						"030",
 						{
 							t: "Rilassamento neurovegetativo",
@@ -4711,7 +4803,8 @@ DB.set= {
 								"222",
 								"000",
 								"254"
-							]
+							],
+							l: "RIL_NEUR"
 						}
 					]
 				},
@@ -4771,14 +4864,15 @@ DB.set= {
 					"p": [
 						"173",
 						"030",
-						"[]Ansia di Romoli",
+						"013",
 						{
 							t: "Linea degli omega",
 							p: [
 								"230",
 								"104",
 								"003"
-							]
+							],
+							l: "LIN_OMEG"
 						}
 					]
 				},
@@ -4977,7 +5071,7 @@ DB.set= {
 					"d": "Sul lato non dominante",
 					"p": [
 						"199",
-						"[]Ansia di Romoli",
+						"013",
 						"192"
 					]
 				},
@@ -5015,7 +5109,7 @@ DB.set= {
 				"ns": {
 					"p": [
 						"001",
-						"[]Ansia di Romoli"
+						"013"
 					]
 				}
 			},
@@ -5046,7 +5140,8 @@ DB.set= {
 								"222",
 								"000",
 								"254"
-							]
+							],
+							l: "RIL_NEUR"
 						},
 						"039",
 						{
@@ -5055,7 +5150,8 @@ DB.set= {
 								"001",
 								"222",
 								"254"
-							]
+							],
+							l: "TRE"
 						},
 						{
 							t: "Linea degli omega",
@@ -5063,7 +5159,8 @@ DB.set= {
 								"230",
 								"104",
 								"003"
-							]
+							],
+							l: "LIN_OMEG"
 						}
 					]
 				}
@@ -5114,7 +5211,7 @@ DB.set= {
 					"d": "Sul lato non dominante",
 					"p": [
 						"030",
-						"[]Ansia di Romoli"
+						"013"
 					]
 				},
 				{
@@ -5150,7 +5247,7 @@ DB.set= {
 					"p": [
 						"001",
 						"039",
-						"[]Ansia di Romoli"
+						"013"
 					]
 				},
 				"ns": {
@@ -5178,7 +5275,8 @@ DB.set= {
 								"230",
 								"104",
 								"003"
-							]
+							],
+							l: "LIN_OMEG"
 						},
 						{
 							t: "Triade modificata",
@@ -5289,7 +5387,8 @@ DB.set= {
 								"001",
 								"222",
 								"254"
-							]
+							],
+							l: "TRE"
 						},
 						{
 							t: "Triade adattata",
@@ -5307,7 +5406,8 @@ DB.set= {
 								"222",
 								"000",
 								"254"
-							]
+							],
+							l: "RIL_NEUR"
 						}
 					]
 				},
@@ -5358,7 +5458,7 @@ DB.set= {
 					"t": "Componente ansiosa e stress",
 					"d": "Sul lato non dominante",
 					"p": [
-						"[]Ansia di Romoli",
+						"013",
 						"129",
 						"199"
 					]
@@ -5418,14 +5518,15 @@ DB.set= {
 					"p": [
 						"137",
 						"030",
-						"[]Ansia di Romoli",
+						"013",
 						{
 							t: "Triade di relax",
 							p: [
 								"001",
 								"222",
 								"254"
-							]
+							],
+							l: "TRE"
 						},
 						{
 							t: "Linea degli omega",
@@ -5433,7 +5534,8 @@ DB.set= {
 								"230",
 								"104",
 								"003"
-							]
+							],
+							l: "LIN_OMEG"
 						}
 					]
 				}
@@ -5532,7 +5634,7 @@ DB.set= {
 					"p": [
 						"137",
 						"192",
-						"[]Ansia di Romoli",
+						"013",
 						{
 							t: "Rilassamento neurovegetativo",
 							p: [
@@ -5540,7 +5642,8 @@ DB.set= {
 								"222",
 								"000",
 								"254"
-							]
+							],
+							l: "RIL_NEUR"
 						}
 					]
 				},
@@ -5596,7 +5699,7 @@ DB.set= {
 						"030",
 						"137",
 						"192",
-						"[]Ansia di Romoli"
+						"013"
 					]
 				},
 				{
@@ -5654,7 +5757,7 @@ DB.set= {
 					"d": "Sul lato non dominante",
 					"p": [
 						"137",
-						"[]Ansia di Romoli"
+						"013"
 					]
 				},
 				{
@@ -5714,7 +5817,7 @@ DB.set= {
 					"p": [
 						"030",
 						"137",
-						"[]Ansia di Romoli"
+						"013"
 					]
 				},
 				{
@@ -5779,7 +5882,8 @@ DB.set= {
 								"222",
 								"000",
 								"254"
-							]
+							],
+							l: "RIL_NEUR"
 						},
 						"135"
 					]
@@ -5871,7 +5975,7 @@ DB.set= {
 					"p": [
 						"000",
 						"004",
-						"[]Ansia di Romoli",
+						"013",
 						"093"
 					]
 				}
@@ -5953,7 +6057,7 @@ DB.set= {
 					"p": [
 						"137",
 						"030",
-						"[]Ansia di Romoli",
+						"013",
 						"004"
 					]
 				}
@@ -5989,7 +6093,8 @@ DB.set= {
 								"230",
 								"104",
 								"003"
-							]
+							],
+							l: "LIN_OMEG"
 						}
 					]
 				},
@@ -6007,7 +6112,7 @@ DB.set= {
 					"d": "Sul lato non dominante",
 					"p": [
 						"192",
-						"[]Ansia di Romoli",
+						"013",
 						"030",
 						"199"
 					]
@@ -6059,7 +6164,7 @@ DB.set= {
 					"p": [
 						"199",
 						"137",
-						"[]Ansia di Romoli",
+						"013",
 						"192"
 					]
 				}
@@ -6104,7 +6209,7 @@ DB.set= {
 					"d": "Sul lato non dominante",
 					"p": [
 						"004",
-						"[]Ansia di Romoli"
+						"013"
 					]
 				},
 				{
@@ -6118,7 +6223,8 @@ DB.set= {
 								"230",
 								"104",
 								"003"
-							]
+							],
+							l: "LIN_OMEG"
 						}
 					]
 				}
@@ -6162,7 +6268,7 @@ DB.set= {
 					"t": "Componente ansiosa e stress",
 					"d": "Sul lato non dominante",
 					"p": [
-						"[]Ansia di Romoli",
+						"013",
 						"199",
 						"004"
 					]
@@ -6178,7 +6284,8 @@ DB.set= {
 								"230",
 								"104",
 								"003"
-							]
+							],
+							l: "LIN_OMEG"
 						}
 					]
 				}
@@ -6223,7 +6330,7 @@ DB.set= {
 					"d": "Sul lato non dominante",
 					"p": [
 						"030",
-						"[]Ansia di Romoli",
+						"013",
 						"121"
 					]
 				},
@@ -6238,7 +6345,8 @@ DB.set= {
 								"230",
 								"104",
 								"003"
-							]
+							],
+							l: "LIN_OMEG"
 						}
 					]
 				}
@@ -6284,14 +6392,15 @@ DB.set= {
 					"p": [
 						"137",
 						"199",
-						"[]Ansia di Romoli",
+						"013",
 						{
 							t: "Triade di relax",
 							p: [
 								"001",
 								"222",
 								"254"
-							]
+							],
+							l: "TRE"
 						}
 					]
 				},
@@ -6355,7 +6464,8 @@ DB.set= {
 								"230",
 								"104",
 								"003"
-							]
+							],
+							l: "LIN_OMEG"
 						}
 					]
 				},
@@ -6469,7 +6579,7 @@ DB.set= {
 					"p": [
 						"030",
 						"192",
-						"[]Ansia di Romoli"
+						"013"
 					]
 				},
 				{
@@ -6482,7 +6592,8 @@ DB.set= {
 								"222",
 								"000",
 								"254"
-							]
+							],
+							l: "RIL_NEUR"
 						},
 						"165",
 						"026"
@@ -6510,7 +6621,7 @@ DB.set= {
 				"np": {
 					"p": [
 						"001",
-						"[]Ansia di Romoli",
+						"013",
 						"230"
 					]
 				},
@@ -6528,7 +6639,7 @@ DB.set= {
 					"d": "Sul lato non dominante",
 					"p": [
 						"137",
-						"[]Ansia di Romoli",
+						"013",
 						"199",
 						{
 							t: "Triade di relax",
@@ -6536,7 +6647,8 @@ DB.set= {
 								"001",
 								"222",
 								"254"
-							]
+							],
+							l: "TRE"
 						}
 					]
 				},
@@ -6597,7 +6709,7 @@ DB.set= {
 					"d": "Sul lato non dominante",
 					"p": [
 						"030",
-						"[]Ansia di Romoli",
+						"013",
 						{
 							t: "Triade modificata",
 							p: [
@@ -6760,7 +6872,7 @@ DB.set= {
 					"p": [
 						"192",
 						"199",
-						"[]Ansia di Romoli",
+						"013",
 						{
 							t: "Rilassamento neurovegetativo",
 							p: [
@@ -6768,7 +6880,8 @@ DB.set= {
 								"222",
 								"000",
 								"254"
-							]
+							],
+							l: "RIL_NEUR"
 						}
 					]
 				},
@@ -6932,7 +7045,8 @@ DB.set= {
 								"001",
 								"222",
 								"254"
-							]
+							],
+							l: "TRE"
 						}
 					]
 				},
@@ -7045,7 +7159,8 @@ DB.set= {
 								"222",
 								"000",
 								"254"
-							]
+							],
+							l: "RIL_NEUR"
 						},
 						{
 							t: "Triade di relax",
@@ -7053,7 +7168,8 @@ DB.set= {
 								"001",
 								"222",
 								"254"
-							]
+							],
+							l: "TRE"
 						}
 					]
 				},
@@ -7106,7 +7222,8 @@ DB.set= {
 								"230",
 								"104",
 								"003"
-							]
+							],
+							l: "LIN_OMEG"
 						}
 					]
 				},
@@ -7120,7 +7237,8 @@ DB.set= {
 								"003",
 								"165",
 								"039"
-							]
+							],
+							l: "TAN"
 						}
 					]
 				}
@@ -7185,7 +7303,8 @@ DB.set= {
 								"003",
 								"165",
 								"039"
-							]
+							],
+							l: "TAN"
 						}
 					]
 				},
@@ -7238,7 +7357,8 @@ DB.set= {
 								"001",
 								"222",
 								"254"
-							]
+							],
+							l: "TRE"
 						},
 						{
 							t: "Rilassamento neurovegetativo",
@@ -7247,7 +7367,8 @@ DB.set= {
 								"222",
 								"000",
 								"254"
-							]
+							],
+							l: "RIL_NEUR"
 						}
 					]
 				},
@@ -7324,7 +7445,8 @@ DB.set= {
 								"003",
 								"165",
 								"039"
-							]
+							],
+							l: "TAN"
 						}
 					]
 				},
@@ -7378,7 +7500,8 @@ DB.set= {
 								"001",
 								"222",
 								"254"
-							]
+							],
+							l: "TRE"
 						},
 						{
 							t: "Triade modificata",
@@ -7396,7 +7519,8 @@ DB.set= {
 								"230",
 								"104",
 								"003"
-							]
+							],
+							l: "LIN_OMEG"
 						}
 					]
 				},
@@ -7411,7 +7535,8 @@ DB.set= {
 								"003",
 								"165",
 								"039"
-							]
+							],
+							l: "TAN"
 						}
 					]
 				},
@@ -7464,7 +7589,8 @@ DB.set= {
 								"001",
 								"222",
 								"254"
-							]
+							],
+							l: "TRE"
 						},
 						{
 							t: "Rilassamento neurovegetativo",
@@ -7473,7 +7599,8 @@ DB.set= {
 								"222",
 								"000",
 								"254"
-							]
+							],
+							l: "RIL_NEUR"
 						}
 					]
 				},
@@ -7529,7 +7656,8 @@ DB.set= {
 								"230",
 								"104",
 								"003"
-							]
+							],
+							l: "LIN_OMEG"
 						}
 					]
 				}
@@ -7582,7 +7710,8 @@ DB.set= {
 								"230",
 								"104",
 								"003"
-							]
+							],
+							l: "LIN_OMEG"
 						}
 					]
 				},
@@ -7634,7 +7763,7 @@ DB.set= {
 					"d": "Sul lato non dominante",
 					"p": [
 						"137",
-						"[]Ansia di Romoli"
+						"013"
 					]
 				},
 				{
@@ -7687,7 +7816,8 @@ DB.set= {
 								"230",
 								"104",
 								"003"
-							]
+							],
+							l: "LIN_OMEG"
 						},
 						{
 							t: "Rilassamento neurovegetativo",
@@ -7696,7 +7826,8 @@ DB.set= {
 								"222",
 								"000",
 								"254"
-							]
+							],
+							l: "RIL_NEUR"
 						}
 					]
 				},
@@ -7729,10 +7860,7 @@ DB.set= {
 				}
 			},
 			"d": "Per valutare il grado di intensità e il tipo di terapia antifumo, effettuare i due test che si trovano negli approfondimenti: ",
-			"t": true,
-			"hiddenPoints": [
-				"015"
-			]
+			"t": true
 		},
 		101: { // programma antitabacco di Rossato
 			"tit": "TRATTAMENTO",
@@ -7753,10 +7881,7 @@ DB.set= {
 				"d": "PUNTO EXTRA: Ai punti auricolari, va aggiunto il punto dell'agopuntura somatica Tim Mee, punto extra meridiano posizionato lateralmente al punto LU.7, dove è palpabile una cresta ossea.<br><br><b>Sequenza di infissione</b><br>I punti vengono infissi seguendo uno schema predefinito e secondo una modalità di stimolazione.<br><b>D</b> dispersione, con ago in inspirazione e rotazione in senso antiorario.<br><b>T</b> tonificazione, con ago in espirazione e rotazione in senso orario.<br><br>- <b>Tin Mee (D)</b>: bilaterale<br>- <b>P1 e P2 (D)</b>: pungere verso il lobo<br>- <b>P3</b>: indifferente<br>- <b>P4, P5, P6 e P7 (T)</b>: pungere verso l'alto<br>- <b>Aggressività (D)</b><br>- <b>Epifisi (D)</b><br>- <b>Punto Zero (D)</b>: lato dominante<br>- <b>Punto Zero (T)</b>: lato non dominante<br><br><b>Elettrostimolazione</b><br>Quando gli agi sono infissi, vanno elettrostimolati a 15Hz per 30 minuti, aumentando l'intensità ogni 5 minuti, per consentire l'adattamento del paziente. L'elettrostimolazione va effettuata in quattro coppie:<br>1(-) Punto Zero dominante<br>1(+) Punto Zero non dominante<br>2(-)Aggressività<br>2(+)Epifisi<br>3(-)P7<br>3(+)P4<br>4(-)P2<br>4(+)P1<br><br><b>Prescrizioni extra trattamento</b><br>- Vitamina C come disintossicante<br>- Bere 2-3 litri d'acua al giorno<br>- Bastoncini di liquirizia per compensazione orale<br>- Polvere di peperoncino integrale come condimento agli alimenti<br>- Il medico può consigliare un ansiolitico all'occorrenza"//- Alprazolam 0,25mg, 2 volte al giorno<br>N.B. Alprazolam deve essere preso solo sotto prescrizione medica e solo se non è controindicato."
 			},
 			"d": "Per valutare il grado di intensità e il tipo di terapia antifumo, effettuare i due test che si trovano negli approfondimenti: ",
-			"t": true,
-			"hiddenPoints": [
-				"015"
-			]
+			"t": true
 		},
 		102: { // programma antitabacco Lovato
 			"tit": "RIDUZIONE GRADUALE",

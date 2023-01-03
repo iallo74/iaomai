@@ -142,6 +142,10 @@ SET = {
 							
 						}
 						if(orName.indexOf("(GRUPPO)")>-1)mesh.material = this.MAT.lineGroup;
+						if(orName.indexOf("HIDE")>-1){
+							mesh.visible = false;
+							mesh.userData.hidden = true;
+						}
 						mesh.userData.gruppo = true;
 						mesh.PH = PH;
 						eval("LN"+PH+".add( mesh )");
@@ -216,8 +220,12 @@ SET = {
 				var mat = 'this.MAT.areaBase'+system;
 				
 				mesh.material = cloneMAT(eval(mat));
-				mesh.name = name;
 				//mesh.visible = vis;
+				if(mesh.name.indexOf("HIDE")>-1){
+					mesh.visible = false;
+					mesh.userData.hidden = true;
+				}
+				mesh.name = name;
 				mesh.userData.area = area;
 				mesh.userData.system = system;
 				mesh.userData.freq = freq;
@@ -326,7 +334,7 @@ SET = {
 				//this.P[n].visible = vis;
 				if(PTS[p].nome.indexOf("HIDE")>-1){
 					this.P[n].visible = false;
-					this.P[n].hide = true;
+					this.P[n].userData.hidden = true;
 				}
 				this.P[n].userData.type = 'point';
 				this.P[n].userData.system = system;
@@ -346,7 +354,7 @@ SET = {
 				//this.P[n].visible = vis;
 				if(PTS[p].nome.indexOf("HIDE")>-1){
 					this.P[n].visible = false;
-					this.P[n].hide = true;
+					this.P[n].userData.hidden = true;
 				}
 				this.P[n].userData.raycastable = true;
 				this.P[n].userData.nota = false;
@@ -967,11 +975,22 @@ SET = {
 				for(e in els){
 					if(els[e].name.indexOf("AR"+siglaTsubo)==0){
 						els[e].material=SET.MAT.areaEvi;
+						console.log(els[e].material.opacity);
 					}
 				}
 			}
 			SET.tsuboEvidenziati.push(siglaTsubo);
 		}
+		/*SET.hideGroupLines();
+		var re = /data-tri="[^"]+"/ig;
+		var result = html.match(re);
+		for(k in result){
+			var pT=result[k].split('"');
+			var gruppo = pT[1];
+			if(scene.getObjectByName(gruppo)){
+				scene.getObjectByName(gruppo).visible = true;
+			}
+		}*/
 		SET.settaOverTsubo();
 	},
 	evidenziaTsuboMod: function( elenco ){
@@ -1056,34 +1075,32 @@ SET = {
 		}
 	},
 	coloraPunti: function( PT_name, tipo ){
-		var phs = ["","2","3"];
-		for(ph in phs){
-			var els = scene.getObjectByName("PTs"+phs[ph]).children;
-			for(e in els){
-				if(	els[e].name.indexOf("PT"+PT_name) == 0 && 
-					els[e].material.name.indexOf("SEL") == -1 && 
-					SET.note.indexOf(PT_name) == -1 ){
-					system = els[e].userData.system;
-					els[e].material = eval("SET.MAT.point"+tipo+system);
-					if(SET.tsuboEvidenziati.length && SET.tsuboEvidenziati.indexOf(PT_name)>-1){
-						els[e].material.opacity = 0.5;
-					}
+		var els = scene.getObjectByName("PTs"+SET.phase).children;
+		for(var e in els){
+			if(	els[e].name.indexOf("PT"+PT_name) == 0 && 
+				els[e].material.name.indexOf("SEL") == -1 && 
+				SET.note.indexOf(PT_name) == -1 ){
+				system = els[e].userData.system;
+				els[e].material = eval("SET.MAT.point"+tipo+system);
+				if(SET.tsuboEvidenziati.length && SET.tsuboEvidenziati.indexOf(PT_name)==-1){
+					els[e].material.opacity = 0.5;
 				}
 			}
-			var els = scene.getObjectByName("ARs"+phs[ph]).children;
-			for(e in els){
-				if(	els[e].name.indexOf("AR"+PT_name) == 0 && 
-					els[e].material.name.indexOf("SEL") == -1 && 
-					SET.note.indexOf(PT_name) == -1  ){
-					system = els[e].userData.system;
-					if(els[e].material.name.indexOf('EVI')>-1){
-						system = 'Evi';
-						if(tipo=='Base')tipo='';
-					}
-					els[e].material = eval("SET.MAT.area"+tipo+system);
-					if(SET.tsuboEvidenziati.length && SET.tsuboEvidenziati.indexOf(PT_name)>-1){
-						els[e].material.opacity = 0.5;
-					}
+		}
+		var els = scene.getObjectByName("ARs"+SET.phase).children;
+		for(var e in els){
+			if(	els[e].name.indexOf("AR"+PT_name) == 0 && 
+				els[e].material.name.indexOf("SEL") == -1 && 
+				SET.note.indexOf(PT_name) == -1  ){
+				system = els[e].userData.system;
+				if(els[e].material.name.indexOf('EVI')>-1){
+					system = 'Evi';
+					if(tipo=='Base')tipo='';
+				}
+				els[e].material = eval("SET.MAT.area"+tipo+system);
+				if(SET.tsuboEvidenziati.length){
+					if(SET.tsuboEvidenziati.indexOf(PT_name)>-1)els[e].material.opacity = 0.7;
+					else els[e].material.opacity = 0.2;
 				}
 			}
 		}

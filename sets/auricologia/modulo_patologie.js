@@ -82,23 +82,31 @@ var MODULO_PATOLOGIE = { // extend SET
 		var ST = '';
 		if(typeof(el)=='object'){
 			if(typeof(el.length)=='undefined'){
-				ST += '<div class="ptTr"><div>';
+				ST += '<div class="ptTr" data-tri="'+el.l+'"><div>';
 				for(j=0;j<el.p.length;j++){
-					if(el.p[j].length==3)ST += '[.'+el.p[j]+'.]';
-					else ST += '<span class="etPoints">'+el.p[j].replace('[]','<span class="pNUL"></span>')+'</span>';
+					if(el.p[j].length==3){
+						ST += '[.'+el.p[j]+'.]';
+						if(DB.set.punti[el.p[j]].hidden)SET.hiddenPoints.push(el.p[j]);
+					}else ST += '<span class="etPoints">'+el.p[j].replace('[]','<span class="pNUL"></span>')+'</span>';
 					if(j<el.p.length-1)ST += '<br>';
 				}
 				ST += '</div><div>'+el.t+'</div></div>';
+				
+			
+			
 			}else{
 				ST += '<p class="ptLk">';
 				for(j=0;j<el.length;j++){
 					ST += '[.'+el[j]+'.]';
+					if(DB.set.punti[el[j]].hidden)SET.hiddenPoints.push(el[j]);
 					if(j<el.length-1)ST += '<br>';
 				}
 				ST += '</p>';
 			}
-		}else if(el.length==3)ST += '[.'+el+'.]<br>';
-		else if(el)ST += '<span class="etPoints">'+el.replace('[]','<span class="pNUL"></span>')+'</span><br>';
+		}else if(el.length==3){
+			ST += '[.'+el+'.]<br>';
+			if(DB.set.punti[el].hidden)SET.hiddenPoints.push(el);
+		}else if(el)ST += '<span class="etPoints">'+el.replace('[]','<span class="pNUL"></span>')+'</span><br>';
 		else ST += '<span class="sepPoints"></span>';
 		return ST;
 	},
@@ -244,14 +252,16 @@ var MODULO_PATOLOGIE = { // extend SET
 						'</div>';*/
 		var addClose = '';
 		
-		if(__(objTer.hiddenPoints,[])){
-			SET.showHiddenPoints(objTer.hiddenPoints);
+		if(SET.hiddenPoints){
+			SET.showHiddenPoints();
 			addClose = 'SET.hideHiddenPoints();';
 		}
 						
 		SCHEDA.caricaScheda(	titolo,
 								html,
-								'SET.chiudiPatologia();SET.annullaEvidenziaTsubo();'+addClose,
+								'SET.chiudiPatologia();' +
+								'SET.annullaEvidenziaTsubo();' +
+								'SET.hideGroupLines();'+addClose,
 								'scheda_patologia',
 								ritorno,
 								true,
@@ -298,12 +308,11 @@ var MODULO_PATOLOGIE = { // extend SET
 			var pts = scene.getObjectByName("ARs"+phs[ph]).children;
 			for(p in pts){
 				if(SET.tsuboEvidenziati.indexOf(pts[p].name.substr(2,3))==-1)pts[p].material.opacity = 0.2;
-				else if(pts[p].material.opacity != 0.4)pts[p].material.opacity = 0.4;
+				else if(pts[p].material.opacity != 0.4)pts[p].material.opacity = 0.7;
 			}
 		}
 	},
-	showHiddenPoints: function( elenco ){
-		SET.hiddenPoints = elenco;
+	showHiddenPoints: function(){
 		if(!elenco)return;
 		var phs = ["","2","3"];
 		for(ph in phs){

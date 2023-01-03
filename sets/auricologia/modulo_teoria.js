@@ -75,7 +75,6 @@ var MODULO_TEORIA = { // extend SET
 				normalizeRotation();
 				rotateEnd = { x:pos.x, y: ((MODELLO.flip) ? 0-pos.y : pos.y), z:0 };
 			}
-				console.log(gruppo)
 			if(scene.getObjectByName(gruppo)){
 				elPin = scene.getObjectByName(gruppo);
 				elPin.visible = true;
@@ -359,7 +358,7 @@ var MODULO_TEORIA = { // extend SET
 			}
 		};
 		
-		return '<a onClick="SET.apriPatologia('+p+',\'btn_patologia_'+p+'\');">'+protocolli[protocollo].t+'</a>';
+		return '<a onClick="SET.apriPatologia('+p+',document.getElementById(\'btn_patologia_'+p+'\'));">'+protocolli[protocollo].t+'</a>';
 	},
 	
 	hideGroupLines: function(){ // nasconde le linee guida dei gruppi

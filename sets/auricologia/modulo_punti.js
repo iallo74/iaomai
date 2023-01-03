@@ -10,7 +10,7 @@ var MODULO_PUNTI = { // extend SET
 		var puntiElenco = [];
 		for(siglaTsubo in DB.set.punti){
 			if(__(DB.set.punti[siglaTsubo])){
-				if(!__(DB.set.punti[siglaTsubo].hide,false)){
+				if(!__(DB.set.punti[siglaTsubo].hidden,false)){
 					puntiElenco.push({
 						siglaTsubo: siglaTsubo,
 						NomeTsubo: DB.set.punti[siglaTsubo].NomeTsubo
