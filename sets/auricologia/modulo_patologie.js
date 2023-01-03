@@ -197,7 +197,7 @@ var MODULO_PATOLOGIE = { // extend SET
 			if(__(objTer.d))ST += '<br><div>'+htmlEntities(objTer.d)+'</div>';
 			if(__(objTer.t)){
 				ST += '<div id="patologieTests"><div>' +
-					  '<p onClick="SET.caricaTest(0);"><span>&raquo; '+htmlEntities(DB.set.teoria[3].TitoloSezione)+'</span></p>' +
+					  '<p onClick="SET.caricaTest(0);"><span>&raquo; '+htmlEntities(DB.set.teoria[4].TitoloSezione)+'</span></p>' +
 					  '</div></div>';
 			}
 		}
@@ -313,7 +313,7 @@ var MODULO_PATOLOGIE = { // extend SET
 		}
 	},
 	showHiddenPoints: function(){
-		if(!elenco)return;
+		if(!SET.hiddenPoints)return;
 		var phs = ["","2","3"];
 		for(ph in phs){
 			var pts = scene.getObjectByName("PTs"+phs[ph]).children;

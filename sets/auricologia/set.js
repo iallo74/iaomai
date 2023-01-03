@@ -975,7 +975,6 @@ SET = {
 				for(e in els){
 					if(els[e].name.indexOf("AR"+siglaTsubo)==0){
 						els[e].material=SET.MAT.areaEvi;
-						console.log(els[e].material.opacity);
 					}
 				}
 			}

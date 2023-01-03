@@ -66,8 +66,10 @@ var MODULO_TEORIA = { // extend SET
 				if(TS.length==3)elencoTsubo+='<p>[.'+TS+'.]</p>';
 				else elencoTsubo+='<p><span class="pallinoNul"><span class="pNUL"></span>'+htmlEntities(TXT(""+TS))+'</span></p>';
 			}
-			html_cont = '<div class="col50">'+html_cont+'</div>' +
-						'<div class="col50 elencoTsubo">' +
+			/*html_cont = '<div class="col50">'+html_cont+'</div>' +
+						'<div class="col50 elencoTsubo">' +*/
+			html_cont = '<div>'+html_cont+'</div>' +
+						'<div class="elencoTsubo">' +
 							SET.convPuntiScheda(elencoTsubo) +
 						'</div>';
 			if(GEOMETRIE.gruppi[gruppo].posizione){
@@ -142,9 +144,9 @@ var MODULO_TEORIA = { // extend SET
 	},
 	
 	caricaTest: function( n ){
-		SET.caricaTeoria(3,n,document.getElementById("btn_teoria_3_"+n));
+		SET.caricaTeoria(4,n,document.getElementById("btn_teoria_4_"+n));
 		SCHEDA.selElenco("teoria");
-		SCHEDA.swCartella(document.getElementById("btn_teoria_cart_3"),true);
+		SCHEDA.swCartella(document.getElementById("btn_teoria_cart_4"),true);
 	},
 	scriviTest: function( test ){
 		SET.testTOT = 0;
@@ -171,7 +173,7 @@ var MODULO_TEORIA = { // extend SET
 				'		<span>'+TXT("TestRisultati")+'</span>' +
 				'		<span id="test_int"></span>' +
 				'	</div>' +
-				'	<div id="test_save" class="btns"><div class="btn_annulla'+((SET.risTest[test]==-1)?' noVis':'')+'" onClick="SET.azzeraTest();">'+TXT("Azzera")+'</div> <div class="btn_invia" onClick="SET.salvaTest();">'+TXT("SalvaProsegui")+'</div></div>';
+				'	<div id="test_save" class="btns"><div class="btn_annulla btn_dis" onClick="SET.azzeraTest();">'+TXT("Azzera")+'</div> <div class="btn_invia btn_dis" onClick="SET.salvaTest();">'+TXT("SalvaProsegui")+'</div></div>';
 				
 		html += '</div>';
 		return html;
@@ -186,18 +188,21 @@ var MODULO_TEORIA = { // extend SET
 			if(els[e].selectedIndex<1)pass = false;
 		}
 		if(pass){
-			document.getElementById("test_ris").classList.add("vis");
+			document.getElementById("test_cont").classList.add("full");
 			for(r in DB.set.tests[SET.test].ris){
 				if(SET.testTOT>r)document.getElementById("test_int").innerHTML = DB.set.tests[SET.test].ris[r];
 			}
-			document.getElementById("test_save").classList.add("vis");
+			document.getElementById("test_save").getElementsByTagName("div")[0].classList.remove("btn_dis");
+			document.getElementById("test_save").getElementsByTagName("div")[1].classList.remove("btn_dis");
 		}else{
-			document.getElementById("test_ris").classList.remove("vis");
+			document.getElementById("test_cont").classList.remove("full");
 			document.getElementById("test_int").innerHTML = '';
-			document.getElementById("test_save").classList.remove("vis");
+			document.getElementById("test_save").getElementsByTagName("div")[0].classList.add("btn_dis");
+			document.getElementById("test_save").getElementsByTagName("div")[1].classList.add("btn_dis");
 		}
 	},
 	salvaTest: function(){
+		if(!document.getElementById("test_cont").classList.contains("full"))return;
 		var valori = {};
 		var els = document.getElementById("test_cont").getElementsByTagName("select");
 		for(e=0;e<els.length;e++){
@@ -210,6 +215,7 @@ var MODULO_TEORIA = { // extend SET
 		else if(SET.test=='dipendenza')SET.caricaTeoria(3,3,document.getElementById("btn_teoria_3_3"));
 	},
 	azzeraTest: function(){
+		if(!document.getElementById("test_cont").classList.contains("full"))return;
 		SET.testTOT = -1;
 		SET.risTest[SET.test].vals = {};
 		SET.risTest[SET.test].tot = SET.testTOT;

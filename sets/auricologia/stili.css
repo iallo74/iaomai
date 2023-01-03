@@ -175,6 +175,10 @@ body.orecchio #pulsante_modello{
 	line-height:30px;
 	margin:0px;
 }
+#scheda_testo .elencoTsubo p{
+	height:25px;
+	line-height:25px;
+}
 .smart.android .elencoTsubo p{
 	height:40px !important;
 	line-height:40px !important;
@@ -1393,8 +1397,11 @@ body:not(.orecchio) #schedaTerapeutica{
 #test_ris{
 	text-align:right;
 	margin:1px 0px;
-	display:none;
-	background-color: #ff0086;
+	/*display:none;*/
+	background-color: #CCC;
+}
+#test_cont.full #test_ris{
+	background-color: #ff0086 !important;
 }
 #test_ris > span{
 	display:inline-block;
@@ -1423,17 +1430,26 @@ body:not(.orecchio) #schedaTerapeutica{
 	font-weight:bold;
 }
 #test_cont .btn_annulla{
-	color: #000 !important;
     margin-right: 10px !important;
+}
+#test_cont .btn_annulla:not(.btn_dis){
+	color: #000 !important;
 }
 
 #test_int{
 	font-weight: bold;
 }
 #test_save{
-	display:none;
+	/*display:none;*/
 	text-align:right;
 }
+
+/*#test_cont:not(.full) #test_save .btn_invia,
+#test_cont:not(.full) #test_save .btn_annulla{
+	background-color: #CCC !important;
+	color:#999 !important;
+	cursor:default;
+}*/
 #test_cont *.vis{
 	display:block !important;
 }

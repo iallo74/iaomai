@@ -9871,7 +9871,7 @@ DB.set= {
 		}
 	],
     "teoria": [
-        {
+        { //  metodo
             "TitoloSezione": "Metodo",
             "contenuti": [
                 {
@@ -9883,37 +9883,132 @@ DB.set= {
                     "TestoTeoria": "xxx"
                 },
                 {
-                    "TitoloTeoria": "Terminologia",
+                    "TitoloTeoria": "Nomenclatura",
                     "TestoTeoria": "xxx"
                 }
             ],
             "noList": true
         },
-        {
-            "TitoloSezione": "Anatomia dell'orecchio",
+        { // anatomia dell'orecchio
+            "TitoloSezione": "Anatomia del padigione auricolare",
             "contenuti": [
                 {
-                    "TitoloTeoria": "Struttura dell'orecchio",
+                    "TitoloTeoria": "Strutture anatomiche",
                     "TestoTeoria": "xxx"
                 },
                 {
                     "TitoloTeoria": "Punti di repere",
                     "TestoTeoria": "xxx"
-                }
+                },
+				{
+					"TitoloTeoria": "Zone di frequenza",
+					"TestoTeoria": "xxx"
+				},
+				{
+					"TitoloTeoria": "Innervazione",
+					"TestoTeoria": "xxx"
+				},
+				{
+					"TitoloTeoria": "Derivazione embriologica",
+					"TestoTeoria": "xxx"
+				}
             ],
             "noList": true
         },
         {
-            "TitoloSezione": "Teoria dell'auricoterapia",
+            "TitoloSezione": "Concetti di auricolo terapia",
             "contenuti": [
                 {
-                    "TitoloTeoria": "Capitolo 1",
+                    "TitoloTeoria": "Introduzione",
+                    "TestoTeoria": "xxx"
+                },
+                {
+                    "TitoloTeoria": "Dominanza e lateralità",
+                    "TestoTeoria": "xxx"
+                },
+                {
+                    "TitoloTeoria": "Diagnosi auricolare",
+                    "TestoTeoria": "xxx"
+                },
+                {
+                    "TitoloTeoria": "Scelta dei punti",
+                    "TestoTeoria": "xxx"
+                },
+                {
+                    "TitoloTeoria": "Svolgimento della seduta",
+                    "TestoTeoria": "xxx"
+                },
+                {
+                    "TitoloTeoria": "Tecnice di stimolazione e strumenti",
+                    "TestoTeoria": "xxx"
+                },
+                {
+                    "TitoloTeoria": "Precauzioni e deontologia",
                     "TestoTeoria": "xxx"
                 }
             ],
             "noList": true
         },
-        {
+        { // categorie di punti
+            "TitoloSezione": "Categorie di punti",
+            "contenuti": [
+                {
+                    "TitoloTeoria": "Punti MASTER",
+                    "TestoTeoria": "I punti MASTER sono così nominati perché normalmente attivi nella maggior parte dei pazienti e sono utili per il trattamento di una varietà di disturbi della salute. Generalmente, si deve prima stimolare i punti corrispondenti appropriati per un dato organo anatomico, e in seguito stimolare anche i punti MASTER indicati per il disturbo. I punti Master sono 10.",
+                    "gruppo": "MASTER"
+                },
+                {
+                    "TitoloTeoria": "Punti funzionali",
+                    "TestoTeoria": "I punti funzionali sono punti che non hanno un collegamento diretto con strutture anatomiche e hanno un'azione generale.<br>Sono indicati nelle schede con la sigla FN.",
+                    "gruppo": "FN"
+                },
+                {
+                    "TitoloTeoria": "Punti neuroriflessi",
+                    "TestoTeoria": "I neuroriflessi sono sono punti che hanno un collegamento direttao con strutture anatomiche e ne sono appunto il riflesso. A seconda delle scuole posso essere posizionati zone molto diverse del padiglione.<br>Sono indicati nelle schede con la sigla NR.",
+                    "gruppo": "NR"
+                },
+                {
+                    "TitoloTeoria": "Triade di relax",
+                    "TestoTeoria": "<p>La triade di relax (o Triade del rilassamento) è un gruppo di 3 punti che contribuiscono produrre i seguenti benefici:<br>- tranquillizare la mente, grazie all'azione modulatrice sull'ortosimpatico;<br>- modulare la percezione dell'ambiente circostante attraverso le sensazioni;<br>- equilibrare i 2 emisferi cerebrali (emozionale e razionale);<br>- indurre il riequilirbio muscolare e posturale.<br>E' spesso utilizzata nella prima seduta con lo scopo di riequilibrare e valutare la risposta del paziente, e in base a questa costruire schemi di trattamento personalizzati.<br>La T. di Relax stata proposta per la prima volta da René J.H. Kovacs, allievo di P. Nogier.</p><p><b>Triade modificata</b><br>La triade modificata è una variante della triade di relax che consiste nella sostituzione del secondo dei 3 punti (il Master Sensoriale) con un altro punto, variabile, che viene individuato in base ad uno specifico disturbo. In sostanza, l'azione riequlibrante e modulatrice della T. di Relax viene applicata in modo preciso all'organo o alla funzione interessata.</p><p><b>Triade adattata</b><br>La triade adattata (o indirizzata) è un'ulteriore variante che include l'aggiunta (anziché la sostituzione come avviene invece nella T. modificata) di un punto specifico indirizzato al disturbo.<br>Il concetto di \"adattato\" è da intendersi come uniformato (biologicamente o spiritualmente) a determinate condizioni dell'ambiente, in modo da ridurre man mano le resistenze all'ambiente stesso.<br>Ad esempio, lo stress (condizione di reazione all'ambiente) induce modifiche ad apparati e organi (che quindi si ammalano) producendo disturbi e talvolta patologie. In questo caso la triade adattata viene utilizzata per colpire l'organo al fine di curare la reazione individuale all'ambiente, inducendo l'individuo a reagire diversamente.</p>",
+                    "gruppo": "TRE"
+                },
+                {
+                    "TitoloTeoria": "Triade antinfiammatoria",
+                    "TestoTeoria": "Il trattamento con la T. antinfiammatoria ha lo scopo, come dice il nome, di ridurre un processo flogistico. Può essere molto utile usato bilateralmente come terapia iniziale nelle patologie infiammatorie, come ad esempio l'artrite reumatoide, oppure unilateralmente nelle sedute successive, coadiuvato ad uno schema controlaterale adeguato.",
+                    "gruppo": "TAN"
+                },
+                {
+                    "TitoloTeoria": "Rilassamento neurovegetativo",
+                    "TestoTeoria": "Quando il sistema nervoso autonomo si trova in distonia, ovvero una mancanza del normale equilibro del tono tra sistema simpatico e parasimpatico, si può ossarvare  una serie di disturbi clinici generalizzati quali ad esempio i disturbi del sonno, l'instabilità emotiva, i disturbi viscerali, la variazione della pressione arteriosa, ecc...<br>Questo trattamento è volto per l'appunto a riequilibrare questa distonia.",
+                    "gruppo": "RIL_NEUR"
+                },
+                {
+                    "TitoloTeoria": "Linea delle vertigini",
+                    "TestoTeoria": "Serie di 3 punti, sensibili alla detezione, efficaci per il trattamento delle vertigini.",
+                    "gruppo": "LIN_VERT"
+                },
+                {
+                    "TitoloTeoria": "Linea degli omega",
+                    "TestoTeoria": "I punti Omega (anche detti punti maestri embriogenetici) implicano tutti i tessuti e gli organi derivanti da un determinato tessuto embrionale.<br>Il trattamento dei 3 punti Omega è molto efficace per ridurre lo stress e per ottenere una \"rimodulazione\" (in termini energetici) degli organi alla loro derivazione embrionale.<br>L'ordine di infissione degli aghi dovrà seguire l'ordine di importanza della derivazione che vogliamo trattare, dal più importante al meno importante. In particolare, la scuola Francese associa al punto Omega lo stress psichico (endoderma), al punto Omega 1 (il punto Zero) lo stress viscerale (ectoderma) e il punto Omega 2 (Apice del padiglione auricolare) allo stress somatico (mesoderma).",
+                    "gruppo": "LIN_OMEG"
+                },
+                /*{
+                    "TitoloTeoria": "Linea delle commessure",
+                    "TestoTeoria": "...",
+                    "gruppo": "LIN_COMM"
+                },*/
+                {
+                    "TitoloTeoria": "Ruota vascolare",
+                    "TestoTeoria": "Schema proposto da D. Alimi e reinterpretato da A. Lovato e utile per riequilibrare tutte le patologie cerebrovascolari.<br>Si utilizzano solo aghi estemporanei senza un ordine preciso per trafiggere i 4 punti e infine viene applicato un ago in doppia trafissione nel loro centro.",
+                    "gruppo": "RUO_VASC"
+                },
+                {
+                    "TitoloTeoria": "Le fasi di Nogier",
+                    "TestoTeoria": "xxx"
+                }
+            ]
+        },
+        { // test antitabacco
             "TitoloSezione": "Test antitabacco",
             "contenuti": [
                 {
@@ -9937,61 +10032,6 @@ DB.set= {
                 }
             ],
             "noList": true
-        },
-        {
-            "TitoloSezione": "Categorie di punti",
-            "contenuti": [
-                {
-                    "TitoloTeoria": "Punti MASTER",
-                    "TestoTeoria": "I punti MASTER sono ...",
-                    "gruppo": "MASTER"
-                },
-                {
-                    "TitoloTeoria": "Punti funzionali",
-                    "TestoTeoria": "I punti funzionali sono ...",
-                    "gruppo": "FN"
-                },
-                {
-                    "TitoloTeoria": "Punti neuroriflessi",
-                    "TestoTeoria": "I neuroriflessi sono ...",
-                    "gruppo": "NR"
-                },
-                {
-                    "TitoloTeoria": "Triade di relax",
-                    "TestoTeoria": "<p>La triade di relax è...</p><p><b>Triade modificata</b><br>La triade modificata è una variante della triade modificata ...</p><p><b>Triade adattata</b><br>La triade adattata è un'ulteriore variante...</p>",
-                    "gruppo": "TRE"
-                },
-                {
-                    "TitoloTeoria": "Triade antinfiammatoria",
-                    "TestoTeoria": "...",
-                    "gruppo": "TAN"
-                },
-                {
-                    "TitoloTeoria": "Rilassamento neurovegetativo",
-                    "TestoTeoria": "...",
-                    "gruppo": "RIL_NEUR"
-                },
-                {
-                    "TitoloTeoria": "Linea delle vertigini",
-                    "TestoTeoria": "...",
-                    "gruppo": "LIN_VERT"
-                },
-                {
-                    "TitoloTeoria": "Linea degli omega",
-                    "TestoTeoria": "...",
-                    "gruppo": "LIN_OMEG"
-                },
-                {
-                    "TitoloTeoria": "Linea delle commessure",
-                    "TestoTeoria": "...",
-                    "gruppo": "LIN_COMM"
-                },
-                {
-                    "TitoloTeoria": "Ruota vascolare",
-                    "TestoTeoria": "...",
-                    "gruppo": "RUO_VASC"
-                }
-            ]
         }
     ],
 	"tests": {
