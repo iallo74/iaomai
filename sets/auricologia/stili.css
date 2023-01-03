@@ -636,16 +636,21 @@ body:not(.smart) .selElPt{
     margin-top: 5px;
 }
 #btnFiltri{
-	background-image: url(../../img/frGiuB.png);
-    background-position: right center;
+	background-image: url(img/filter2N.png);
+    background-position: center center;
     background-repeat: no-repeat;
-    background-size: contain;
+    background-size: 17px;
     cursor: pointer;
     width: 30px;
     height: 30px;
     display: inline-block;
     vertical-align: top;
     margin-left: -3px;
+	border-radius:5px;
+}
+
+#btnFiltri:hover{
+	background-color:rgba(255,255,255,0.1) !important;
 }
 .smart.android #p_filtri{
     height: 40px;
@@ -657,11 +662,13 @@ body:not(.smart) .selElPt{
     background-color: #c3c2bf !important;
 	border-bottom-left-radius: 0px !important;
     border-bottom-right-radius: 0px !important;
+    background-size: 17px;
 	z-index: 1;
     position: relative;
 }
 #p_filtri.op #btnFiltri{
-	background-image:url(../../img/frSuB.png) !important;
+	background-image:url(../../img/chMenuB.png) !important;
+    background-size: 25px !important;
 }
 #f_filtri{
 	border-bottom-left-radius: 5px;
