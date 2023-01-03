@@ -109,41 +109,72 @@ var MODULO_PATOLOGIE = { // extend SET
 			return;
 		}
 		// --------------------------
+		
+		SET.hideHiddenPoints();
+		
 		SET.patOp = n;
 		SET.schEvi = null;
 		
 		var objTer = DB.set.schede[DB.set.patologie[n].scheda];
 		var ST = '';
 		if(Object.keys(objTer).length){
+			var titGen = TXT("TrattamentoGenerico");
+			if(__(objTer.tit))titGen = htmlEntities(objTer.tit)
 			ST +=
 			'<br>' +
 			'<div id="schedaTerapeutica">' +
-			'	<p><span class="eviPtsBtn" onClick="SET.eviPointsPat(this.parentElement.parentElement);"></span><b>'+TXT("TrattamentoGenerico")+'</b>' +
-			'	<div id="padDom"><strong>Padiglione dominante</strong><br><br><em>Punti principali</em>';
-			for(p in objTer.g.dp.p){
-				ST += SET.getPointPat(objTer.g.dp.p[p]);
+			'	<p><span class="eviPtsBtn" onClick="SET.eviPointsPat(this.parentElement.parentElement);"></span><b>'+titGen+'</b>' +
+			'<div id="padDom">';
+			
+			if(!__(objTer.g.sx,'')){
+				ST += '	<strong>'+TXT("PadiglioneDominante")+'</strong><br><br>';
+				if(__(objTer.g.ds))ST += '<em>'+TXT("PuntiPrincipali")+'</em>';
+				for(p in objTer.g.dp.p){
+					ST += SET.getPointPat(objTer.g.dp.p[p]);
+				}
+				if(__(objTer.g.dp.a))ST += ''+objTer.g.dp.a+'<br>';
+				if(__(objTer.g.ds)){
+					ST += '<br><em>'+TXT("PuntiSecondari")+'</em>';
+					for(p in objTer.g.ds.p){
+						ST += SET.getPointPat(objTer.g.ds.p[p]);
+					}
+					if(__(objTer.g.ds.a))ST += ''+objTer.g.ds.a+'<br>';
+				}
+			}else{
+				ST += '	<strong>'+TXT("PadiglioneSinistro")+'</strong><br><br>';
+				for(p in objTer.g.sx.p){
+					ST += SET.getPointPat(objTer.g.sx.p[p]);
+				}
+				if(__(objTer.g.sx.a))ST += ''+objTer.g.sx.a+'<br>';
 			}
-			if(__(objTer.g.dp.a))ST += ''+objTer.g.dp.a+'<br>';
-			ST += '<br><em>Punti secondari</em>';
-			for(p in objTer.g.ds.p){
-				ST += SET.getPointPat(objTer.g.ds.p[p]);
+			ST += '</div><div id="padNoDom">';
+			if(!__(objTer.g.dx,'')){
+				ST += '<strong>'+TXT("PadiglioneNonDominante")+'</strong><br><br>';
+				if(__(objTer.g.ns))ST += '<em>'+TXT("PuntiPrincipali")+'</em>';
+				for(p in objTer.g.np.p){
+					ST += SET.getPointPat(objTer.g.np.p[p]);
+				}
+				if(__(objTer.g.np.a))ST += ''+objTer.g.np.a+'<br>';
+				if(__(objTer.g.ns)){
+					ST += '<br><em>'+TXT("PuntiSecondari")+'</em>';
+					for(p in objTer.g.ns.p){
+						ST += SET.getPointPat(objTer.g.ns.p[p]);
+					}
+					if(__(objTer.g.ns.a))ST += ''+objTer.g.ns.a+'<br>';
+				}
+			}else{
+				ST +=
+				'	<strong>'+TXT("PadiglioneDestro")+'</strong><br><br>';
+				for(p in objTer.g.dx.p){
+					ST += SET.getPointPat(objTer.g.dx.p[p]);
+				}
+				if(__(objTer.g.dx.a))ST += ''+objTer.g.dx.a+'<br>';
 			}
-			if(__(objTer.g.ds.a))ST += ''+objTer.g.ds.a+'<br>';
-			ST += '</div><div id="padNoDom"><strong>Padiglione non dominante</strong><br><br><em>Punti principali</em>';
-			for(p in objTer.g.np.p){
-				ST += SET.getPointPat(objTer.g.np.p[p]);
-			}
-			if(__(objTer.g.np.a))ST += ''+objTer.g.np.a+'<br>';
-			ST += '<br><em>Punti secondari</em>';
-			for(p in objTer.g.ns.p){
-				ST += SET.getPointPat(objTer.g.ns.p[p]);
-			}
-			if(__(objTer.g.ns.a))ST += ''+objTer.g.ns.a+'<br>';
 			ST += '</div>';
 			if(__(objTer.g.d))ST += '<p class="schDescr">'+objTer.g.d+'</p>';
 			ST += '</div>';
 			if(__(objTer.s,[]).length){
-				ST += '<div class="lineaSu" id="causeSpecifiche"><p><b>'+TXT("CauseSpecifiche")+'</b></p>';
+				if(!__(objTer.tit))ST += '<div class="lineaSu" id="causeSpecifiche"><p><b>'+TXT("CauseSpecifiche")+'</b></p>';
 				for(s in objTer.s){
 					ST += '<div class="schedaSpecifica"><p><span class="eviPtsBtn" onClick="SET.eviPointsPat(this.parentElement.parentElement);"></span>'+objTer.s[s].t+'</p>';
 					if(__(objTer.s[s].d))ST += ''+objTer.s[s].d+'<br>';
@@ -154,6 +185,12 @@ var MODULO_PATOLOGIE = { // extend SET
 					ST += '</div>';
 				}
 				ST += '</div>';
+			}
+			if(__(objTer.d))ST += '<br><div>'+htmlEntities(objTer.d)+'</div>';
+			if(__(objTer.t)){
+				ST += '<div id="patologieTests"><div>' +
+					  '<p onClick="SET.caricaTest(0);"><span>&raquo; '+htmlEntities(DB.set.teoria[3].TitoloSezione)+'</span></p>' +
+					  '</div></div>';
 			}
 		}
 		var elencoAltre = '';
@@ -173,8 +210,10 @@ var MODULO_PATOLOGIE = { // extend SET
 		if(typeof(localStorage.op_descrizione)!='undefined')op_descrizione = (__(localStorage.op_descrizione)=='1');
 		var op_protocollo = true;
 		if(typeof(localStorage.op_protocollo)!='undefined')op_protocollo = (__(localStorage.op_protocollo)=='1');
+		var labelDescrizione = TXT("DescrizionePatologia");
+		if(DB.set.patologie[n].apparato==11)labelDescrizione = TXT("DescrizioneProtocollo");
 		var TestoPatologia = H.sezione({
-			label: TXT("DescrizionePatologia"),
+			label: labelDescrizione,
 			nome: 'descrizione',
 			aperta: op_descrizione,
 			html: "<br>"+SET.convPuntiScheda(DB.set.patologie[n].TestoPatologia)
@@ -203,10 +242,16 @@ var MODULO_PATOLOGIE = { // extend SET
 		var btnAdd = 	'';/*'<div class="p_paz_ref_menu" onClick="REF.open(\'sets.auricologia.pathologies\')">' +
 							TXT("ReferenceGuide") +
 						'</div>';*/
+		var addClose = '';
+		
+		if(__(objTer.hiddenPoints,[])){
+			SET.showHiddenPoints(objTer.hiddenPoints);
+			addClose = 'SET.hideHiddenPoints();';
+		}
 						
 		SCHEDA.caricaScheda(	titolo,
 								html,
-								'SET.chiudiPatologia();SET.annullaEvidenziaTsubo();',
+								'SET.chiudiPatologia();SET.annullaEvidenziaTsubo();'+addClose,
 								'scheda_patologia',
 								ritorno,
 								true,
@@ -214,6 +259,11 @@ var MODULO_PATOLOGIE = { // extend SET
 								btnAdd );
 		//SET.evidenziaTsubo(html);
 		SET.eviPointsPat(document.getElementById("schedaTerapeutica"));
+	},
+	getPatFromScheda: function( scheda ){
+		for(p in DB.set.patologie){
+			if(DB.set.patologie[p].scheda == scheda)return p;
+		}
 	},
 	chiudiPatologia: function(){
 		var phs = ["","2","3"];
@@ -251,6 +301,44 @@ var MODULO_PATOLOGIE = { // extend SET
 				else if(pts[p].material.opacity != 0.4)pts[p].material.opacity = 0.4;
 			}
 		}
+	},
+	showHiddenPoints: function( elenco ){
+		SET.hiddenPoints = elenco;
+		if(!elenco)return;
+		var phs = ["","2","3"];
+		for(ph in phs){
+			var pts = scene.getObjectByName("PTs"+phs[ph]).children;
+			for(p in pts){
+				if(SET.hiddenPoints.indexOf(pts[p].name.replace("_","").substr(2,3))==0){
+					pts[p].visible = true;
+				}
+			}
+			var pts = scene.getObjectByName("ARs"+phs[ph]).children;
+			for(p in pts){
+				if(SET.hiddenPoints.indexOf(pts[p].name.substr(2,3))==0){
+					pts[p].visible = true;
+				}
+			}
+		}
+	},
+	hideHiddenPoints: function(){
+		if(!SET.hiddenPoints)return;
+		var phs = ["","2","3"];
+		for(ph in phs){
+			var pts = scene.getObjectByName("PTs"+phs[ph]).children;
+			for(p in pts){
+				if(SET.hiddenPoints.indexOf(pts[p].name.replace("_","").substr(2,3))==0){
+					pts[p].visible = false;
+				}
+			}
+			var pts = scene.getObjectByName("ARs"+phs[ph]).children;
+			for(p in pts){
+				if(SET.hiddenPoints.indexOf(pts[p].name.substr(2,3))==0){
+					pts[p].visible = false;
+				}
+			}
+		}
+		SET.hiddenPoints = [];
 	},
 	filtraPatologie: function( event ){ // filtra le patologie tramite campo di testo
 		var parola = document.getElementById("pat_ricerca").value.trim();

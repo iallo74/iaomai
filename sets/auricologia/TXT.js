@@ -314,6 +314,11 @@ DB.TXT.set = {
         eng: "Pathology description",
         esp: ""
     },
+    DescrizioneProtocollo: {
+        ita: "Descrizione protocollo",
+        eng: "Protocol description",
+        esp: ""
+    },
     SchedaTerapeutica: {
         ita: "Protocollo terapeutico",
         eng: "Therapeutic protocol",
@@ -334,6 +339,26 @@ DB.TXT.set = {
         eng: "Not dominant auricle",
         esp: ""
     },
+	PadiglioneSinistro:  {
+        ita: "Padiglione sinistro",
+        eng: "Left auricle",
+        esp: ""
+    },
+	PadiglioneDestro:  {
+        ita: "Padiglione destro",
+        eng: "Right auricle",
+        esp: ""
+    },
+	PuntiPrincipali:  {
+        ita: "Punti principali",
+        eng: "Main points",
+        esp: ""
+    },
+	PuntiSecondari:  {
+        ita: "Punti secondari",
+        eng: "Minor points",
+        esp: ""
+    },
 	CauseSpecifiche:  {
         ita: "CAUSE SPECIFICHE",
         eng: "SPECIFIC CAUSES",
@@ -344,9 +369,69 @@ DB.TXT.set = {
         eng: "OTHER DISEASES USING THE PROTOCOL",
         esp: ""
     },
+	Obiettivo: {
+        ita: "Obiettivo",
+        eng: "Goal",
+        esp: ""
+    },
+	SmettereDiFumare: {
+        ita: "Smettere di fumare",
+        eng: "Stop smoking",
+        esp: ""
+    },
+	Dipendenza: {
+        ita: "Dipendenza",
+        eng: "Addiction",
+        esp: ""
+    },
+	Motivazione: {
+        ita: "Motivazione",
+        eng: "Motivation",
+        esp: ""
+    },
+	ProposteTerapeutiche: {
+        ita: "Proposte terapeutiche",
+        eng: "Therapeutic proposals",
+        esp: ""
+    },
+	ProtocolloLovatoG: {
+        ita: "Protocollo per la riduzione graduale di Lovato",
+        eng: "Protocol for the gradual reduction of Lovato",
+        esp: ""
+    },
+	ProtocolloLovatoI: {
+        ita: "Protocollo per smettere improvvisamente di Lovato",
+        eng: "Protocol to suddenly stop Lovato",
+        esp: ""
+    },
+	ProtocolloRossato: {
+        ita: "Protocollo antitabacco di Rossato",
+        eng: "Protocol tobacco control of Rossato",
+        esp: ""
+    },
+	ProtocolloNada: {
+        ita: "Protocollo NADA",
+        eng: "NADA protocol",
+        esp: ""
+    },
+	ProtocolloNogier: {
+        ita: "Programma antitabacco classico di Nogier",
+        eng: "Nogier's classic tobacco control program",
+        esp: ""
+    },
+	SalvaProsegui: {
+        ita: "SALVA E PROSEGUI",
+        eng: "SAVE AND CONTINUE",
+        esp: ""
+	},
+	Azzera: {
+        ita: "Azzera",
+        eng: "Reset",
+        esp: ""
+	},
 	Apparati: {
-        ita: "Apparati",
-        eng: "Apparatus",
+        ita: "Categorie",
+        eng: "Categories",
         esp: ""
     },
     Mappa: {
@@ -712,6 +797,12 @@ DB.TXT.set = {
 	alertApriModello: {
         ita: "Per utilizzare questa funzione devi caricare il modello 3D",
         eng: "To use this function you need to load the 3D model",
+        esp: ""
+	},
+	
+	TestRisultati: {
+        ita: "Risultato del test",
+        eng: "Test result",
         esp: ""
 	}
 }

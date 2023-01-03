@@ -82,7 +82,7 @@ DB.set= {
         },
         "119": {
             "NomeTsubo": "Ghiandola mammaria EUR",
-            "AzioniTsubo": "<p><b>Altri nomi</b><br>- xxx</p><p><b>Azione</b><br>xxx</p><p><b>Ubicazione</b><br>xxx</p>",
+            "AzioniTsubo": "<p><b>Altri nomi</b><br>- Mammella</p><p><b>Azione</b><br>Patologie della mammella, mastodinia.</p><p><b>Ubicazione</b><br>CW6, al confine tra avanmuro ed emiconca superiore all’altezza della rappresentazione della 4-6 vertebra toracica.</p>",
             "ChiaviTsubo": ""
         },
         "120": {
@@ -130,9 +130,19 @@ DB.set= {
             "AzioniTsubo": "<p><b>Altri nomi</b><br>- Fauci<br>- Palato molle</p><p><b>Azione</b><br>Il punto bocca è utilizzato per i suoi benefici sul cavo orale, in particolare per tutte quelle patologie correlate alla lingua ed alle mucose. Risulta molto efficace anche per il trattamento di ansia e attacchi di panico.</p><p><b>Ubicazione</b><br>IC6, nell'emiconca inferiore, vicino al meato uditivo esterno eterno, poco sotto la branca montante dell'elice<span></span></p>",
             "ChiaviTsubo": ""
         },
+        "130": {
+            "NomeTsubo": "Occhio 2",
+            "AzioniTsubo": "<p><b>Altri nomi</b><br>- Visione 2</p><p><b>Azione</b><br>La Scuola Cinese distingue 3 diversi punti per indicare l'occhio. Vengono spesso combinati assieme ed hanno una forte azione per ridurre le patologie visive ed oculari.</p><p><b>Ubicazione</b><br>IT1-TG1, tra il trago e l'incisura intertragica<br>IT1-AT1, tra l'antitrago e l'incisura intertragica<br>IC6, nell'emiconca inferiore, in prossimità del meato uditivo esterno</p>",
+            "ChiaviTsubo": ""
+        },
+        "131": {
+            "NomeTsubo": "Occhio 3",
+            "AzioniTsubo": "<p><b>Altri nomi</b><br>- Visione 3</p><p><b>Azione</b><br>La Scuola Cinese distingue 3 diversi punti per indicare l'occhio. Vengono spesso combinati assieme ed hanno una forte azione per ridurre le patologie visive ed oculari.</p><p><b>Ubicazione</b><br>IT1-TG1, tra il trago e l'incisura intertragica<br>IT1-AT1, tra l'antitrago e l'incisura intertragica<br>IC6, nell'emiconca inferiore, in prossimità del meato uditivo esterno</p>",
+            "ChiaviTsubo": ""
+        },
         "132": {
-            "NomeTsubo": "Occhio",
-            "AzioniTsubo": "<p><b>Altri nomi</b><br>- Visione</p><p><b>Azione</b><br>La Scuola Cinese distingue 3 diversi punti per indicare l'occhio. Vengono spesso combinati assieme ed hanno una forte azione per ridurre le patologie visive ed oculari.</p><p><b>Ubicazione</b><br>IT1-TG1, tra il trago e l'incisura intertragica<br>IT1-AT1, tra l'antitrago e l'incisura intertragica<br>IC6, nell'emiconca inferiore, in prossimità del meato uditivo esterno</p>",
+            "NomeTsubo": "Occhio 1",
+            "AzioniTsubo": "<p><b>Altri nomi</b><br>- Visione 1</p><p><b>Azione</b><br>La Scuola Cinese distingue 3 diversi punti per indicare l'occhio. Vengono spesso combinati assieme ed hanno una forte azione per ridurre le patologie visive ed oculari.</p><p><b>Ubicazione</b><br>IT1-TG1, tra il trago e l'incisura intertragica<br>IT1-AT1, tra l'antitrago e l'incisura intertragica<br>IC6, nell'emiconca inferiore, in prossimità del meato uditivo esterno</p>",
             "ChiaviTsubo": ""
         },
         "133": {
@@ -187,22 +197,12 @@ DB.set= {
         },
         "144": {
             "NomeTsubo": "Tiroide EUR",
-            "AzioniTsubo": "<p><b>Altri nomi</b><br>- Ghiandola tiroidea</p><p><b>Azione</b><br>Come suggerito dal nome, questo punto è indicato per trattare tutti i disturbi correlati alla tiroide.</p><p><b>Ubicazione</b><br>CW4, nell'avanmuro, al confine con l'emiconca superiore, in corrispondenza dei riflessi delle vertebre C3 e C4</p>",
-            "ChiaviTsubo": ""
-        },
-        "145": {
-            "NomeTsubo": "Mal di denti",
-            "AzioniTsubo": "<p><b>Altri nomi</b><br>- xxx</p><p><b>Azione</b><br>xxx</p><p><b>Ubicazione</b><br>xxx</p>",
-            "ChiaviTsubo": ""
-        },
-        "146": {
-            "NomeTsubo": "Ghiandola paratiriode EUR",
-            "AzioniTsubo": "<p><b>Altri nomi</b><br>- xxx</p><p><b>Azione</b><br>xxx</p><p><b>Ubicazione</b><br>xxx</p>",
+            "AzioniTsubo": "<p><b>Altri nomi</b><br>- Ghiandola tiroidea<br>- Ghiandola paratiroide EUR</p><p><b>Azione</b><br>Come suggerito dal nome, questo punto è indicato per trattare tutti i disturbi correlati alla tiroide.</p><p><b>Ubicazione</b><br>CW4, al confine tra avanmuro ed emi-conca inferiore, all’altezza della rappresentazione delle vertebre C3-4.</p>",
             "ChiaviTsubo": ""
         },
         "147": {
             "NomeTsubo": "Ganglio cervicale medio",
-            "AzioniTsubo": "<p><b>Altri nomi</b><br>- Punto meraviglioso di Nogier</p><p><b>Azione</b><br>La scuola Francese indica questo punto per la sua efficacia nella riduzione dei disturbi neurologici della periferica dorsale e tutti i dolori neuropatici correlati all’arto superiore e del tronco.</p><p><b>Ubicazione</b><br>CW4, nell'avanmuro in prossimità dei riflessi delle vertebre C5 e C6</p>",
+            "AzioniTsubo": "<p><b>Altri nomi</b><br>- Punto meraviglioso di Nogier</p><p><b>Azione</b><br>La scuola Francese indica questo punto per la sua efficacia nella riduzione dei disturbi neurologici della periferica dorsale e tutti i dolori neuropatici correlati all’arto superiore e del tronco.</p><p><b>Ubicazione</b><br>CW4, a metà altezza dell’avanmuro a livello della rappresentazione delle vertebre di C3-4.</p>",
             "ChiaviTsubo": ""
         },
         "148": {
@@ -210,14 +210,9 @@ DB.set= {
             "AzioniTsubo": "<p><b>Altri nomi</b><br>- Punto vertigini</p><p><b>Azione</b><br>La scuola Francese indica questo punto per la sua efficacia nella riduzione dei disturbi neurologici della periferica dorsale e tutti i dolori neuropatici correlati all’arto superiore e del tronco.</p><p><b>Ubicazione</b><br>CW4, al confine tra l'avanmuro dell'antelice e dell'antitrago</p>",
             "ChiaviTsubo": ""
         },
-        "149": {
-            "NomeTsubo": "Vertigini",
-            "AzioniTsubo": "<p><b>Altri nomi</b><br>- xxx</p><p><b>Azione</b><br>xxx</p><p><b>Ubicazione</b><br>xxx</p>",
-            "ChiaviTsubo": ""
-        },
         "150": {
-            "NomeTsubo": "Midollo allungato CIN",
-            "AzioniTsubo": "<p><b>Altri nomi</b><br>- Brainstem</p><p><b>Azione</b><br>Secondo la scuola cinese, il punto Brainstem è indicato per tonificare la mente e regolare la respirazione, la temperatura ed il ritmo cardiaco. Risulta altresì efficace in caso di epilessia e convulsioni.</p><p><b>Ubicazione</b><br>CW4, nell'avanmuro in corrispondenza del confine tra antelice e antitrago</p>",
+            "NomeTsubo": "Brainstem",
+            "AzioniTsubo": "<p><b>Altri nomi</b><br>- Midollo allungato CIN</p><p><b>Azione</b><br>Secondo la scuola cinese, il punto Brainstem è indicato per tonificare la mente e regolare la respirazione, la temperatura ed il ritmo cardiaco. Risulta altresì efficace in caso di epilessia e convulsioni.</p><p><b>Ubicazione</b><br>CW4, nell'avanmuro in corrispondenza del confine tra antelice e antitrago</p>",
             "ChiaviTsubo": ""
         },
         "151": {
@@ -226,8 +221,8 @@ DB.set= {
             "ChiaviTsubo": ""
         },
         "154": {
-            "NomeTsubo": "Eccitazione",
-            "AzioniTsubo": "<p><b>Altri nomi</b><br>- Subcortex</p><p><b>Azione</b><br>Questo punto viene utilizzato per il trattamento delle patologie neurologiche acute e croniche. E’ inoltre indicato per ridurre i sintomi da depressione, ansia e disturbi circolatori.</p><p><b>Ubicazione</b><br>CW2, al centro dell'avanmuro dell'antitrago.</p>",
+            "NomeTsubo": "Subcortex",
+            "AzioniTsubo": "<p><b>Altri nomi</b><br>- Eccitazione<br>- Punto epiplessia<br>- Ghiandole salivari</p><p><b>Azione</b><br>Questo punto viene utilizzato per il trattamento delle patologie neurologiche acute e croniche. E’ inoltre indicato per ridurre i sintomi da depressione, ansia e disturbi circolatori.</p><p><b>Ubicazione</b><br>CW2, al centro dell'avanmuro dell'antitrago.</p>",
             "ChiaviTsubo": ""
         },
         "155": {
@@ -241,28 +236,18 @@ DB.set= {
             "ChiaviTsubo": ""
         },
         "159": {
-            "NomeTsubo": "Ghiandola sessuale CIN",
-            "AzioniTsubo": "<p><b>Altri nomi</b><br>- Ovaio<br>- Testicolo<br>- Gonadi<br>- Genitali interni</p><p><b>Azione</b><br>Questo punto trova una grande applicazione per il trattamento ed il riequilibrio delle gonadi.</p><p><b>Ubicazione</b><br>CW1, nell'avanmuro dell'antitrago, vicino all'incisura intertragica</p>",
-            "ChiaviTsubo": ""
-        },
-        "160": {
-            "NomeTsubo": "Sistema circolatorio EUR",
-            "AzioniTsubo": "<p><b>Altri nomi</b><br>- xxx</p><p><b>Azione</b><br>xxx</p><p><b>Ubicazione</b><br>xxx</p>",
+            "NomeTsubo": "Ovaio-Testicoli CIN",
+            "AzioniTsubo": "<p><b>Altri nomi</b><br>- Ovaio<br>- Testicolo<br>- Gonadi<br>- Ghiandola sessuale CIN<br>- Genitali interni</p><p><b>Azione</b><br>Questo punto trova una grande applicazione per il trattamento ed il riequilibrio delle gonadi.</p><p><b>Ubicazione</b><br>CW1, nell'avanmuro dell'antitrago, vicino all'incisura intertragica</p>",
             "ChiaviTsubo": ""
         },
         "161": {
-            "NomeTsubo": "Nervo pregangliare simpatico",
-            "AzioniTsubo": "<p><b>Altri nomi</b><br>- xxx</p><p><b>Azione</b><br>xxx</p><p><b>Ubicazione</b><br>xxx</p>",
-            "ChiaviTsubo": ""
-        },
-        "163": {
-            "NomeTsubo": "Tireotropine",
-            "AzioniTsubo": "<p><b>Altri nomi</b><br>- TSH</p><p><b>Azione</b><br>xxx</p><p><b>Ubicazione</b><br>xxx</p>",
+            "NomeTsubo": "Nuclei Simpatici Intramidollari",
+            "AzioniTsubo": "<p><b>Altri nomi</b><br>- Catena Simpatica Intramidollare</p><p><b>Azione</b><br>Azione di riequilibrio del sistema ortosimpatico.</p><p><b>Ubicazione</b><br>Sul margine antero-laterale dell’elice. Sono una serie di punti che si proiettano da D1 a D11</p>",
             "ChiaviTsubo": ""
         },
         "164": {
             "NomeTsubo": "Endocrino MASTER",
-            "AzioniTsubo": "<p><b>Altri nomi</b><br>- Ghiandola pituitaria<br>- Secrezioni interne</p><p><b>Azione</b><br>Questo Punto Master è riconosciuto a livello internazionale per la sua capacità di riequilibrio delle ghiandole endocrine. Viene inoltre utilizzato per ridurre i disturbi derivati da ipotiroidismo, ipertiroidismo, disfunzioni ginecologiche e disturbi con substrato infiammatorio.</p><p><b>Ubicazione</b><br>IT2, al confine tra l'incisura intertragica e l'emiconca inferiore.</p>",
+            "AzioniTsubo": "<p><b>Altri nomi</b><br>- Ghiandola pituitaria<br>- Secrezioni interne<br>- TSH<br>- Tireotropina<br>- Paratireotropine</p><p><b>Azione</b><br>Questo Punto Master è riconosciuto a livello internazionale per la sua capacità di riequilibrio delle ghiandole endocrine. Viene inoltre utilizzato per ridurre i disturbi derivati da ipotiroidismo, ipertiroidismo, disfunzioni ginecologiche e disturbi con substrato infiammatorio.</p><p><b>Ubicazione</b><br>IT2, al confine tra l'incisura intertragica e l'emiconca inferiore.</p>",
             "ChiaviTsubo": ""
         },
         "165": {
@@ -275,14 +260,9 @@ DB.set= {
             "AzioniTsubo": "<p><b>Altri nomi</b><br>- Cavità nasali</p><p><b>Azione</b><br>La Scuola Cinese distingue i Punti Naso Esterno e Naso Interno per le loro diverse applicazioni terapiche. Questo punto è indicato per trattare tutti i disturbi nasali interni in particolare la sinusite, rinite, allergia e l’ostruzione nasale.</p><p><b>Ubicazione</b><br>ST2, nella faccia interna del trago, appena dietro alla sua protuberanza inferiore</p>",
             "ChiaviTsubo": ""
         },
-        "168": {
-            "NomeTsubo": "Formazione reticolare",
-            "AzioniTsubo": "<p><b>Altri nomi</b><br>- xxx</p><p><b>Azione</b><br>xxx</p><p><b>Ubicazione</b><br>xxx</p>",
-            "ChiaviTsubo": ""
-        },
         "169": {
             "NomeTsubo": "Orecchio interno",
-            "AzioniTsubo": "<p><b>Altri nomi</b><br>- Nervo uditivo<br>- Coclea</p><p><b>Azione</b><br>La Scuola Francese distingue i Punti Orecchio Esterno e Orecchio Interno per le loro diverse proprietà curative. Questo Punto è indicato per ridurre i disturbi ed i dolori interni dell’orecchio. In particolare vertigini, acufeni.</p><p><b>Ubicazione</b><br>ST3, nella faccia interna del trago, vicino alla protuberanza inferiore</p>",
+            "AzioniTsubo": "<p><b>Altri nomi</b><br>- Nervo uditivo<br>- Coclea<br>- VIII Nervo Cranico<br>- Punto faringe-laringe<br>- Punto faringe<br>- Punto laringe</p><p><b>Azione</b><br>La Scuola Francese distingue i Punti Orecchio Esterno e Orecchio Interno per le loro diverse proprietà curative. Questo Punto è indicato per ridurre i disturbi ed i dolori interni dell’orecchio. In particolare vertigini, acufeni.</p><p><b>Ubicazione</b><br>ST3, nella faccia interna del trago, vicino alla protuberanza inferiore</p>",
             "ChiaviTsubo": ""
         },
         "170": {
@@ -291,18 +271,13 @@ DB.set= {
             "ChiaviTsubo": ""
         },
         "171": {
-            "NomeTsubo": "Midollo lombosacrale",
-            "AzioniTsubo": "<p><b>Altri nomi</b><br>- xxx</p><p><b>Azione</b><br>xxx</p><p><b>Ubicazione</b><br>xxx</p>",
-            "ChiaviTsubo": ""
-        },
-        "172": {
-            "NomeTsubo": "Ghiandola salivare EUR",
-            "AzioniTsubo": "<p><b>Altri nomi</b><br>- xxx</p><p><b>Azione</b><br>xxx</p><p><b>Ubicazione</b><br>xxx</p>",
+            "NomeTsubo": "Midollo spinale lombosacrale",
+            "AzioniTsubo": "<p><b>Altri nomi</b><br>- Midollo lombosacrale</p><p><b>Azione</b><br>Patologie midollari lombosacrali</p><p><b>Ubicazione</b><br>Nel margine posteriore dell’elice, interposto tra l’area di rappresentazione della radice sensitiva e motoria, subito sotto al T di Darwin, nel terzo superiore della branca discendente dell’elice.</p>",
             "ChiaviTsubo": ""
         },
         "173": {
             "NomeTsubo": "Antidepressivo",
-            "AzioniTsubo": "<p><b>Altri nomi</b><br>- Gioia di vivere</p><p><b>Azione</b><br>Questo Punto è molto efficace nel riequilibrio emotivo in particolare nei casi di depressione.</p><p><b>Ubicazione</b><br>LO8, sul lobo, al termine della fossa scafoidea, dove essa si divide a Y, nel suo ramo posteriore.</p>",
+            "AzioniTsubo": "<p><b>Altri nomi</b><br>- Gioia di vivere</p><p><b>Azione</b><br>Questo Punto è molto efficace nel riequilibrio emotivo in particolare nei casi di depressione.</p><p><b>Ubicazione</b><br>LO8, sul lobulo, al termine della fossa scafoidea, dove essa si divide a Y, nel suo ramo posteriore.</p>",
             "ChiaviTsubo": ""
         },
         "174": {
@@ -316,8 +291,8 @@ DB.set= {
             "ChiaviTsubo": ""
         },
         "176": {
-            "NomeTsubo": "Midollo dorsale",
-            "AzioniTsubo": "<p><b>Altri nomi</b><br>- xxx</p><p><b>Azione</b><br>xxx</p><p><b>Ubicazione</b><br>xxx</p>",
+            "NomeTsubo": "Midollo spinale dorsale",
+            "AzioniTsubo": "<p><b>Altri nomi</b><br>- Midollo dorsale</p><p><b>Azione</b><br>Patologie midollari dorsali</p><p><b>Ubicazione</b><br>Nel margine posteriore dell’elice, interposto tra l’area di rappresentazione della radice sensitiva e motoria, all’incirca nel terzo medio della branca discendente dell’elice.</p>",
             "ChiaviTsubo": ""
         },
         "177": {
@@ -331,38 +306,38 @@ DB.set= {
             "ChiaviTsubo": ""
         },
         "179": {
-            "NomeTsubo": "Tempie",
-            "AzioniTsubo": "<p><b>Altri nomi</b><br>- Osso temporale<br>- Osso parietale</p><p><b>Azione</b><br>Il Punto Tempia è utile per il trattamento del dolore alla tempia e ridurre i sintomi da emicrania e acufeni.</p><p><b>Ubicazione</b><br>AT2, al centro della superficie esterna dell'antitrago.</p>",
+            "NomeTsubo": "Tempia",
+            "AzioniTsubo": "<p><b>Altri nomi</b><br>- Osso temporale<br>- Osso parietale</p><p><b>Azione</b><br>Il Punto Tempia è utile per il trattamento del dolore alla tempia e ridurre i sintomi da emicrania e acufeni.</p><p><b>Ubicazione</b><br>AT2, sulla superficie esterna dell’antitrago. Inferiormente all’apice dell’antitrago ed a LM13.</p>",
             "ChiaviTsubo": ""
         },
         "180": {
-            "NomeTsubo": "Punto asma CIN",
-            "AzioniTsubo": "<b>Altri nomi</b><br>- Apice dell'antitrago<br>- Punto MASTER reticolare<br><p><b>Azione</b><br>Definito dalla scuola cinese “Punto Asma”, pertanto indicato per asma e forti emicranie. Spesso utilizzato in casi di dolore lieve, con soglie che non superano il VAS di livello 5.</p><p><b>Ubicazione</b><br>AT2, nel punto più alto dell'antitrago</p>",
+            "NomeTsubo": "Apice dell'antitrago",
+            "AzioniTsubo": "<b>Altri nomi</b><br>- Punto asma CIN<br>- Formazione reticolare<br>- Punto MASTER reticolare<br><p><b>Azione</b><br>Definito dalla scuola cinese “Punto Asma”, pertanto indicato per asma e forti emicranie. Spesso utilizzato in casi di dolore lieve, con soglie che non superano il VAS di livello 5.</p><p><b>Ubicazione</b><br>AT2, nel punto più alto dell'antitrago. Corrisponde a LM13.</p>",
             "ChiaviTsubo": ""
         },
         "181": {
-            "NomeTsubo": "Midollo cervicale",
-            "AzioniTsubo": "<p><b>Altri nomi</b><br>- xxx</p><p><b>Azione</b><br>xxx</p><p><b>Ubicazione</b><br>xxx</p>",
+            "NomeTsubo": "Midollo spinale cervicale",
+            "AzioniTsubo": "<p><b>Altri nomi</b><br>- Midollo cervicale</p><p><b>Azione</b><br>Patologie midollari cervicali</p><p><b>Ubicazione</b><br>Nel margine posteriore dell’elice, interposto tra l’area di rappresentazione della radice sensitiva e motoria, all’incirca nel terzo inferiore della branca discendente dell’elice.</p>",
             "ChiaviTsubo": ""
         },
         "182": {
             "NomeTsubo": "Orecchio esterno",
-            "AzioniTsubo": "<p><b>Azione<br></b>La Scuola Francese distingue i Punti Orecchio Esterno e Orecchio Interno per le loro diverse proprietà curative. Questo Punto è indicato per ridurre i disturbi ed i dolori esterni dell’orecchio.</p><p><b>Ubicazione</b><br>TG5, sul trago vicino alla protuberanza superiore</p>",
+            "AzioniTsubo": "<p><b>Azione<br></b>La Scuola Francese distingue i Punti Orecchio Esterno e Orecchio Interno per le loro diverse proprietà curative. Questo Punto è indicato per ridurre i disturbi ed i dolori esterni dell’orecchio.</p><p><b>Ubicazione</b><br>TG5, al centro del trago subito sopra ad una linea immaginaria orizzontale passante per LM11.</p>",
             "ChiaviTsubo": ""
         },
         "183": {
             "NomeTsubo": "Punto della sete",
-            "AzioniTsubo": "<p><b>Altri nomi</b><br>- xxx</p><p><b>Azione</b><br>xxx</p><p><b>Ubicazione</b><br>xxx</p>",
+            "AzioniTsubo": "<p><b>Azione</b><br>Polidipsia specie su base psicosomatica.</p><p><b>Ubicazione</b><br>A metà distanza tra LM11 ed il punto del Naso Esterno ovvero LM23</p>",
             "ChiaviTsubo": ""
         },
         "184": {
-            "NomeTsubo": "Vitalità",
-            "AzioniTsubo": "<p><b>Altri nomi</b><br>- Vitality point</p><p><b>Azione<br></b>La Scuola Francese indica questo punto per la sua potente azione energetica, psicologica e fisica. Trova la sua applicazione tonificante per tutti i casi con la componente di apatia, scarsa attitudine fisica e depressione.</p><p><b>Ubicazione</b><br>TG4, al centro metà superiore della faccia esterna del trago.</p>",
+            "NomeTsubo": "Vitality point",
+            "AzioniTsubo": "<p><b>Altri nomi</b><br>- Punto della vitalità<br>- Punto della frustrazione<br>- Punto interferone<br>- Punto cardiaco</p><p><b>Azione<br></b>La Scuola Francese indica questo punto per la sua potente azione energetica, psicologica e fisica. Trova la sua applicazione tonificante per tutti i casi con la componente di apatia, scarsa attitudine fisica e depressione.</p><p><b>Ubicazione</b><br>TG4, al centro del trago subito anteriormente a LM11.</p>",
             "ChiaviTsubo": ""
         },
         "185": {
             "NomeTsubo": "Naso esterno",
-            "AzioniTsubo": "<p><b>Azione<br></b>La Scuola Cinese distingue i Punti Naso Esterno e Naso Interno per le loro diverse applicazioni terapiche. Questo punto è indicato per trattare tutti i disturbi nasali in particolare l’ostruzione nasale.</p><p><b>Ubicazione</b><br>TG3, al centro del trago in un area che va verso la guancia, vicino al punto [.254.]</p>",
+            "AzioniTsubo": "<p><b>Azione<br></b>La Scuola Cinese distingue i Punti Naso Esterno e Naso Interno per le loro diverse applicazioni terapiche. Questo punto è indicato per trattare tutti i disturbi nasali in particolare l’ostruzione nasale.</p><p><b>Ubicazione</b><br>TG3, nella linea di confine tra il Trago e la guancia a metà distanza tra la protuberanza superiore ed inferiore del Trago ovvero LM10 ed LM11. Corrisponde a LM23</p>",
             "ChiaviTsubo": ""
         },
         "186": {
@@ -380,34 +355,19 @@ DB.set= {
             "AzioniTsubo": "<p><b>Altri nomi</b><br>- xxx</p><p><b>Azione</b><br>xxx</p><p><b>Ubicazione</b><br>xxx</p>",
             "ChiaviTsubo": ""
         },
-        "190": {
-            "NomeTsubo": "Ghiandola surrenale CIN",
-            "AzioniTsubo": "<p><b>Altri nomi</b><br>- xxx</p><p><b>Azione</b><br>xxx</p><p><b>Ubicazione</b><br>xxx</p>",
-            "ChiaviTsubo": ""
-        },
         "191": {
             "NomeTsubo": "Controllo dell'appetito",
-            "AzioniTsubo": "<p><b>Altri nomi</b><br>- Controllo dell'appetito<br>- Hunger point</p><p><b>Azione</b><br>Questo punto viene sfruttato per la sua capacità di diminuire l’appetito.</p><p><b>Ubicazione</b><br>TG3, al centro della faccia esterna del trago</p>",
+            "AzioniTsubo": "<p><b>Altri nomi</b><br>- Punto della Fame<br>- Hunger point</p><p><b>Azione</b><br>Questo punto viene sfruttato per la sua capacità di diminuire l’appetito.</p><p><b>Ubicazione</b><br>TG3, a metà distanza tra apice della protuberanza inferiore del Trago (LM10) ed un punto intermedio tra apice della protuberanza superiore ed inferiore del Trago nella linea di confine tra questo e la guancia (LM23).</p>",
             "ChiaviTsubo": ""
         },
         "192": {
-            "NomeTsubo": "Tranquillizzante MASTER",
-            "AzioniTsubo": "<p><b>Altri nomi</b><br>- Punto Valium EUR<br>- Ipertensione CIN</p><p><b>Azione</b><br>Questo punto è riconosciuto per la sua efficacia per il trattamento di tutti i disturbi con componente ansia e stress. Ha una potente azione di riequilibrio psicofisico, favorisce il rilassamento in particolare in caso di insonnia.</p><p><b>Ubicazione.</b><br>TG2, sulla faccia anteriore del trago poco sotto la linea centrale. Il punto si trova in corrispondenza della cartilagine e non della guancia.</p>",
-            "ChiaviTsubo": ""
-        },
-        "193": {
-            "NomeTsubo": "Punto mania",
-            "AzioniTsubo": "<p><b>Altri nomi</b><br>- xxx</p><p><b>Azione</b><br>xxx</p><p><b>Ubicazione</b><br>xxx</p>",
+            "NomeTsubo": "Tranquilizer Point",
+            "AzioniTsubo": "<p><b>Altri nomi</b><br>- Punto Valium EUR<br>- Ipertensione 2 CIN<br>- Punto della mania<br>- Punto della nicotina</p><p><b>Azione</b><br>Questo punto è riconosciuto per la sua efficacia per il trattamento di tutti i disturbi con componente ansia e stress. Ha una potente azione di riequilibrio psicofisico, favorisce il rilassamento in particolare in caso di insonnia.</p><p><b>Ubicazione.</b><br>TG2, nella parete centrale verso la zona posteriore cartilaginea. A metà distanza tra LM9 ed LM10</p>",
             "ChiaviTsubo": ""
         },
         "195": {
-            "NomeTsubo": "Ghiandola pineale",
-            "AzioniTsubo": "<p><b>Altri nomi</b><br>- Epifisi</p><p><b>Azione</b><br>Punto utilizzato per il riequilibrio di tutti i bioritmi, in particolare per il trattamento di insonnia e depressione.</p><p><b>Ubicazione</b><br>TG1, al confine tra il trago e l'incisura intertragica</p>",
-            "ChiaviTsubo": ""
-        },
-        "196": {
-            "NomeTsubo": "Nucleo cingolato",
-            "AzioniTsubo": "<p><b>Altri nomi</b><br>- xxx</p><p><b>Azione</b><br>xxx</p><p><b>Ubicazione</b><br>xxx</p>",
+            "NomeTsubo": "Epifisi",
+            "AzioniTsubo": "<p><b>Altri nomi</b><br>- Ghiandola pineale<br>- Punto E</p><p><b>Azione</b><br>Punto utilizzato per il riequilibrio di tutti i bioritmi, in particolare per il trattamento di insonnia e depressione.</p><p><b>Ubicazione</b><br>TG1. Corrisponde a LM9. Diametralmente opposto all’incisura intertragica nella zona di passaggio tra TG1 e Guancia</p>",
             "ChiaviTsubo": ""
         },
         "198": {
@@ -417,16 +377,11 @@ DB.set= {
         },
         "199": {
             "NomeTsubo": "Aggressività",
-            "AzioniTsubo": "<b>Altri nomi</b><br>- Amigdala<br>- Irritabilità<p><b>Azione</b><br>Questo Punto Internazionale viene adottato per riequilibrare tutti gli stati emotivi legati all’irritabilità, aggressività rabbia e le azioni maniacali.</p><p><b>Ubicazione</b><br>LO2-AT1, nella fossetta che si trova sulla superficie laterale del lobo, al di sotto dell'incisura intertragica.</p>",
+            "AzioniTsubo": "<b>Altri nomi</b><br>- Amigdala<br>- Irritabilità<p><b>Azione</b><br>Questo Punto Internazionale viene adottato per riequilibrare tutti gli stati emotivi legati all’irritabilità, aggressività rabbia e le azioni maniacali.</p><p><b>Ubicazione</b><br>LO2-AT1, nella fossetta che si trova sulla superficie laterale del lobulo, al di sotto dell'incisura intertragica.</p>",
             "ChiaviTsubo": ""
         },
         "200": {
             "NomeTsubo": "Analgesico",
-            "AzioniTsubo": "<p><b>Altri nomi</b><br>- xxx</p><p><b>Azione</b><br>xxx</p><p><b>Ubicazione</b><br>xxx</p>",
-            "ChiaviTsubo": ""
-        },
-        "201": {
-            "NomeTsubo": "Ipnosi",
             "AzioniTsubo": "<p><b>Altri nomi</b><br>- xxx</p><p><b>Azione</b><br>xxx</p><p><b>Ubicazione</b><br>xxx</p>",
             "ChiaviTsubo": ""
         },
@@ -437,11 +392,6 @@ DB.set= {
         },
         "203": {
             "NomeTsubo": "Memoria",
-            "AzioniTsubo": "<p><b>Altri nomi</b><br>- xxx</p><p><b>Azione</b><br>xxx</p><p><b>Ubicazione</b><br>xxx</p>",
-            "ChiaviTsubo": ""
-        },
-        "204": {
-            "NomeTsubo": "Nefrite",
             "AzioniTsubo": "<p><b>Altri nomi</b><br>- xxx</p><p><b>Azione</b><br>xxx</p><p><b>Ubicazione</b><br>xxx</p>",
             "ChiaviTsubo": ""
         },
@@ -457,7 +407,7 @@ DB.set= {
         },
         "207": {
             "NomeTsubo": "Corteccia temporale",
-            "AzioniTsubo": "<p><b>Altri nomi</b><br>- Lobo temporale<br>- Corteccia uditiva<br>- Linea dei suoni</p><p><b>Azione</b><br>Secondo la Scuola Francese, questo punto è indicato nel trattamento di tutte le patologie correlate all’udito e alla percezione di suoni.</p><p><b>Ubicazione</b><br>LO6, sul lobo, poco inferiormente e posteriormente all'antitrago, all'interno dell'area definita [.207.]</p>",
+            "AzioniTsubo": "<p><b>Altri nomi</b><br>- Lobo temporale<br>- Corteccia uditiva<br>- Linea dei suoni</p><p><b>Azione</b><br>Secondo la Scuola Francese, questo punto è indicato nel trattamento di tutte le patologie correlate all’udito e alla percezione di suoni.</p><p><b>Ubicazione</b><br>LO6, sul lobulo, poco inferiormente e posteriormente all'antitrago, all'interno dell'area definita [.207.]</p>",
             "ChiaviTsubo": ""
         },
         "208": {
@@ -527,22 +477,17 @@ DB.set= {
         },
         "221": {
             "NomeTsubo": "Vomito",
-            "AzioniTsubo": "<p><b>Azione<br></b>Il Punto Riflesso del Vomito, come indicato dal nome, ha una forte azione di contrasto della nausea e del vomito.</p><p><b>Ubicazione</b><br>LO7, sulla faccia latero-posteriore del lobo, vicino alla coda dell'elice.</p>",
+            "AzioniTsubo": "<p><b>Azione<br></b>Il Punto Riflesso del Vomito, come indicato dal nome, ha una forte azione di contrasto della nausea e del vomito.</p><p><b>Ubicazione</b><br>LO7, sulla faccia latero-posteriore del lobulo, vicino alla coda dell'elice.</p>",
             "ChiaviTsubo": ""
         },
         "222": {
             "NomeTsubo": "Sensoriale MASTER",
-            "AzioniTsubo": "<p><b>Altri nomi</b><br>- Punto occhio<br>- PMSs</p><p><b>Azione</b><br>Punto Internazionale Master è correlato ai disturbi sia dell’occhio, sia dell’udito. Questo punto ha la capacità di riequilibrare le sensazioni uditive del lobo temporale e quelle visive del lobo occipitale. Il Punto Master Sensoriale è indicato per ridurre i disturbi correlati agli acufeni, all’irritabilità collegata ad odori o suoni ed infine a fenomeni di ipersensibilità.</p><p><b>Ubicazione</b><br>LO4, al centro della faccia laterale del lobo.</p>",
-            "ChiaviTsubo": ""
-        },
-        "223": {
-            "NomeTsubo": "Paratireotropine",
-            "AzioniTsubo": "<p><b>Altri nomi</b><br>- xxx</p><p><b>Azione</b><br>xxx</p><p><b>Ubicazione</b><br>xxx</p>",
+            "AzioniTsubo": "<p><b>Altri nomi</b><br>- Punto occhio<br>- PMSs</p><p><b>Azione</b><br>Punto Internazionale Master è correlato ai disturbi sia dell’occhio, sia dell’udito. Questo punto ha la capacità di riequilibrare le sensazioni uditive del lobo temporale e quelle visive del lobo occipitale. Il Punto Master Sensoriale è indicato per ridurre i disturbi correlati agli acufeni, all’irritabilità collegata ad odori o suoni ed infine a fenomeni di ipersensibilità.</p><p><b>Ubicazione</b><br>LO4, al centro della faccia laterale del lobulo.</p>",
             "ChiaviTsubo": ""
         },
         "224": {
-            "NomeTsubo": "Cortisolo",
-            "AzioniTsubo": "<p><b>Altri nomi</b><br>- xxx</p><p><b>Azione</b><br>xxx</p><p><b>Ubicazione</b><br>xxx</p>",
+            "NomeTsubo": "Ghiandola surrenale CIN",
+            "AzioniTsubo": "<p><b>Altri nomi</b><br>- Cortisolo</p><p><b>Azione</b><br>Riequilibrio funzionale delle ghiandole surrenali. Ha un’azione antinfiammatoria.</p><p><b>Ubicazione</b><br>All'apice della protuberanza inferiore del Trago. Corrisponde a LM10</p>",
             "ChiaviTsubo": ""
         },
         "225": {
@@ -567,7 +512,7 @@ DB.set= {
         },
         "230": {
             "NomeTsubo": "Cerebrale MASTER",
-            "AzioniTsubo": "<p><b>Altri nomi</b><br>- Omega<br>- Nervosismo<br>- Preoccupazione</p><p><b>Azione</b><br>Punto Master Internazionale correlato ai disturbi del lobo prefrontale definito anche cervello esecutivo. Questo importante Punto è indicato per ridurre ed equilibrare tutti quei disturbi cronici legati ad una componente psicosomatica. Indicato inoltre per trattare disturbi del sonno, stati di ansia e nervosismo.</p><p><b>Ubicazione</b><br>LO1, al confine tra il lobo e la guancia</p>",
+            "AzioniTsubo": "<p><b>Altri nomi</b><br>- Omega<br>- Nervosismo<br>- Preoccupazione</p><p><b>Azione</b><br>Punto Master Internazionale correlato ai disturbi del lobo prefrontale definito anche cervello esecutivo. Questo importante Punto è indicato per ridurre ed equilibrare tutti quei disturbi cronici legati ad una componente psicosomatica. Indicato inoltre per trattare disturbi del sonno, stati di ansia e nervosismo.</p><p><b>Ubicazione</b><br>LO1, al confine tra il lobulo e la guancia</p>",
             "ChiaviTsubo": ""
         },
         "231": {
@@ -585,16 +530,6 @@ DB.set= {
             "AzioniTsubo": "<p><b>Altri nomi</b><br>- xxx</p><p><b>Azione</b><br>xxx</p><p><b>Ubicazione</b><br>xxx</p>",
             "ChiaviTsubo": ""
         },
-        "241": {
-            "NomeTsubo": "Gola CIN",
-            "AzioniTsubo": "<p><b>Altri nomi</b><br>- xxx</p><p><b>Azione</b><br>xxx</p><p><b>Ubicazione</b><br>xxx</p>",
-            "ChiaviTsubo": ""
-        },
-        "242": {
-            "NomeTsubo": "Clavicola EUR",
-            "AzioniTsubo": "<p><b>Altri nomi</b><br>- xxx</p><p><b>Azione</b><br>xxx</p><p><b>Ubicazione</b><br>xxx</p>",
-            "ChiaviTsubo": ""
-        },
         "243": {
             "NomeTsubo": "Ipertensione 3",
             "AzioniTsubo": "<p><b>Azione<br></b>La Scuola Cinese distingue il trattamento dell’Ipertensione con tre punti differenti. Il Punto Ipertensione 3 è indicato per il trattamento dell’ipertensione e ridurre ansia e stress.</p><p><b>Ubicazione</b><br>PG4-PG8, area ampia nel solco longitudinale posteriore, nel punto in cui questo di divide a Y e verso la sua branca superiore.</p>",
@@ -607,7 +542,7 @@ DB.set= {
         },
         "245": {
             "NomeTsubo": "Insonnia 2",
-            "AzioniTsubo": "<p><b>Altri nomi</b><br>- Disturbi del sonno 2</p><p><b>Azione</b><br>La Scuola Francese distingue il trattamento dell’insonnia con due punti differenti. Il punto Insonnia 2 è indicato principalmente nei casi di difficoltà di addormentamento. Ottima efficacia nella riduzione di stress, nervosismo e come suggerito dal nome, per l’insonnia.</p><p><b>Ubicazione</b><br>SF1, nella fossa scafoidea, in basso</p>",
+            "AzioniTsubo": "<p><b>Altri nomi</b><br>- Disturbi del sonno 2</p><p><b>Azione</b><br>La Scuola Francese distingue il trattamento dell’insonnia con due punti differenti. Il punto Insonnia 2 è indicato principalmente nei casi di difficoltà di addormentamento. Ottima efficacia nella riduzione di stress, nervosismo e come suggerito dal nome, per l’insonnia.</p><p><b>Ubicazione</b><br>SF1, nella parte inferiore della fossa Scapha, quasi al confine con l’elice.</p>",
             "ChiaviTsubo": ""
         },
         "246": {
@@ -627,7 +562,7 @@ DB.set= {
         },
         "249": {
             "NomeTsubo": "Polmone EUR",
-            "AzioniTsubo": "<p><b>Azione<br></b>Il Punto Polmone viene adottato sia dalla Scuola Cinese sia da quella Francese per la sua azione riequilibrante del sistema respiratorio, in particolare nei casi di bronchiti, enfisema e dolori al torace.</p><p><b>Ubicazione</b><br><i>Principale</i><br>IC2-IC4-IC5-IC7, ampia area nell'emiconca inferiore, verso l'avanmuro<br><br><i>Fase 2</i><br>LO8, sul lobo all'incontro con la fossa scafoidea<br><br><i>Fase 3</i><br>xxx<br></p>",
+            "AzioniTsubo": "<p><b>Azione<br></b>Il Punto Polmone viene adottato sia dalla Scuola Cinese sia da quella Francese per la sua azione riequilibrante del sistema respiratorio, in particolare nei casi di bronchiti, enfisema e dolori al torace.</p><p><b>Ubicazione</b><br><i>Principale</i><br>IC2-IC4-IC5-IC7, ampia area nell'emiconca inferiore, verso l'avanmuro<br><br><i>Fase 2</i><br>LO8, sul lobulo all'incontro con la fossa scafoidea<br><br><i>Fase 3</i><br>xxx<br></p>",
             "ChiaviTsubo": ""
         },
         "250": {
@@ -642,7 +577,7 @@ DB.set= {
         },
         "252": {
             "NomeTsubo": "Punto maestro della pelle",
-            "AzioniTsubo": "<p><b>Azione<br></b>La Scuola Francese indica questo punto Master per il riequilibrio ed il trattamento di tutti i disturbi legati alla cute.</p><p><b>Ubicazione</b><br>ST2-ST3, alla base della parte nascosta del trago, dove il trago incontra l'incisura intertragica.</p>",
+            "AzioniTsubo": "<p><b>Azione<br></b>La Scuola Francese indica questo punto Master per il riequilibrio ed il trattamento di tutti i disturbi legati alla cute.</p><p><b>Ubicazione</b><br>ST2-ST3 nella superficie interna del Trago, in un’area posta a metà distanza tra LM10 ed incisura intertragica.</p>",
             "ChiaviTsubo": ""
         },
         "253": {
@@ -652,7 +587,7 @@ DB.set= {
         },
         "254": {
             "NomeTsubo": "Corpo calloso",
-            "AzioniTsubo": "<p><b>Altri nomi</b><br>- Zero primo</p><p><b>Azione</b><br>Il Punto Zero Primo ha una potente azione di riequilibrio generale sul sistema cerebrale, favorendo la connessione tra i due emisferi, riequilibrando l’aspetto razionale ed emozionale del soggetto. Questo punto trova anche un’ottima applicazione per il rilassamento muscolare.</p><p><b>Ubicazione</b><br>TG2-TG4, area verticale che si estende parallelamente alla zona del trago, il cui punto centrale si trova all'altezza del centro del trago e a metà strada tra questo e la guancia.</p>",
+            "AzioniTsubo": "<p><b>Altri nomi</b><br>- Zero primo</p><p><b>Azione</b><br>Il Punto Zero Primo ha una potente azione di riequilibrio generale sul sistema cerebrale, favorendo la connessione tra i due emisferi, riequilibrando l’aspetto razionale ed emozionale del soggetto. Questo punto trova anche un’ottima applicazione per il rilassamento muscolare.</p><p><b>Ubicazione</b><br>TG2-TG4, area verticale che si estende parallelamente alla zona del trago, il cui punto centrale si trova all’altezza della protuberanza inferiore del trago tra questo e la guancia.</p>",
             "ChiaviTsubo": ""
         },
         "255": {
@@ -692,12 +627,12 @@ DB.set= {
         },
         "262": {
             "NomeTsubo": "Gonadotropine",
-            "AzioniTsubo": "<p><b>Altri nomi</b><br>- Area ginecologica</p><p><b>Azione</b><br>La Scuola Francese indica l’efficacia di questo punto per il trattamento di tutte le patologie correlate alle alterazioni della secrezione delle gonadotropine e del ciclo mestruale. Utilizzato inoltre in caso di infertilità e per ridurre i disturbi legati alla sindrome climaterica, menopausa e squilibri ormonali.</p><p><b>Ubicazione</b><br>CW1-LO4, nell'area tra l'avanmuro dell'antitrago e il la parte superiore del lobo, passando per l'antitrago, inprossimità dell'incisura intertragica.</p>",
+            "AzioniTsubo": "<p><b>Altri nomi</b><br>- Area ginecologica<br>- FSH (ormone follico stimolante)<br>-LH (ormone luteinizzante)</p><p><b>Azione</b><br>La Scuola Francese indica l’efficacia di questo punto per il trattamento di tutte le patologie correlate alle alterazioni della secrezione delle gonadotropine e del ciclo mestruale. Utilizzato inoltre in caso di infertilità e per ridurre i disturbi legati alla sindrome climaterica, menopausa e squilibri ormonali.</p><p><b>Ubicazione</b><br>CW1-LO4, nel terzo anteriore della superficie esterna dell’antitrago. Alcuni Autori lo descrivono sulla superficie interna. </p>",
             "ChiaviTsubo": ""
         },
         "263": {
             "NomeTsubo": "Locus Coeruleus",
-            "AzioniTsubo": "<p><b>Altri nomi</b><br>- Locus Caeruleus<br>- Locus Ceruleus<br>- Punto blu</p><p><b>Azione</b><br>Questo Punto indicato dalla Scuola Francese tonifica e riequilibra il sonno REM, riducendo inoltre lo stress.</p><p><b>Ubicazione</b><br>L3-L5, nella parte bassa del lobo, poco sopra la linea trigeminale</p>",
+            "AzioniTsubo": "<p><b>Altri nomi</b><br>- Locus Caeruleus<br>- Locus Ceruleus<br>- Punto blu</p><p><b>Azione</b><br>Questo Punto indicato dalla Scuola Francese tonifica e riequilibra il sonno REM, riducendo inoltre lo stress.</p><p><b>Ubicazione</b><br>L3-L5, nella parte bassa del lobulo, poco sopra la linea trigeminale</p>",
             "ChiaviTsubo": ""
         },
         "264": {
@@ -712,22 +647,22 @@ DB.set= {
         },
         "266": {
             "NomeTsubo": "Nervo facciale",
-            "AzioniTsubo": "<p><b>Altri nomi</b><br>- VII nervo cranico<br>- Nucleo del nervo facciale<br>- Nucleo del tratto solitario</p><p><b>Azione</b><br>Questo punto ha un’ottima azione per ridurre gli spasmi facciali, le paresi del VII nervo cranico e tutti i dolori neuropatici.</p><p><b>Ubicazione</b><br>PL6, sul lobo nella parte mediana, posteriormente.</p>",
+            "AzioniTsubo": "<p><b>Altri nomi</b><br>- VII nervo cranico<br>- Nucleo del nervo facciale<br>- Nucleo del tratto solitario</p><p><b>Azione</b><br>Questo punto ha un’ottima azione per ridurre gli spasmi facciali, le paresi del VII nervo cranico e tutti i dolori neuropatici.</p><p><b>Ubicazione</b><br>PL6, sul lobulo nella parte mediana, posteriormente.</p>",
             "ChiaviTsubo": ""
         },
         "267": {
-            "NomeTsubo": "Craving",
-            "AzioniTsubo": "<p><b>Azione<br></b>Questo punto ha la proprietà di ridurre gli effetti del craving, ovvero il desiderio persistente e irresistibile per una determinata sostanza o per sostanze a effetti simili. Il craving può essere definito anche come la sensazione crescente di tensione che precede l’inizio dell’assunzione della sostanza o della messa in atto del comportamento di dipendenza.</p><p><b>Ubicazione</b><br>HX15, al confine tra la parte finale dell'elice e il lobo.</p>",
+            "NomeTsubo": "Punto del Craving",
+            "AzioniTsubo": "<p><b>Altri nomi</b><br>- Craving</p><p><b>Azione<br></b>Questo punto ha la proprietà di ridurre gli effetti del craving, ovvero il desiderio persistente e irresistibile per una determinata sostanza o per sostanze a effetti simili. Il craving può essere definito anche come la sensazione crescente di tensione che precede l’inizio dell’assunzione della sostanza o della messa in atto del comportamento di dipendenza.</p><p><b>Ubicazione</b><br>HX15-LO7, al confine tra coda dell’elice e lobulo sul margine posteriore.</p>",
             "ChiaviTsubo": ""
         },
         "268": {
             "NomeTsubo": "Punto di sintesi",
-            "AzioniTsubo": "<p><b>Azione<br></b>Questo punto è molto attivo nelle patologie degenerative, stimolando e riequilibrando la sintesi. Viene inoltre suggerito durante i trattamenti dei disturbi neoplastici.</p><p><b>Ubicazione</b><br>PC1-PG1, dietro il lobo, all'attaccatura con la guancia.</p>",
+            "AzioniTsubo": "<p><b>Azione<br></b>Questo punto è molto attivo nelle patologie degenerative, stimolando e riequilibrando la sintesi. Viene inoltre suggerito durante i trattamenti dei disturbi neoplastici.</p><p><b>Ubicazione</b><br>PC1-PG1, dietro il lobulo, all'attaccatura con la guancia.</p>",
             "ChiaviTsubo": ""
         },
         "269": {
             "NomeTsubo": "Radice motoria C2",
-            "AzioniTsubo": "<p><b>Altri nomi</b><br>- Radice maestra motoria del plesso cervicale</p><p><b>Azione</b><br>Questo punto trova applicazione per il trattamento e la diminuzione di tutti i dolori e disturbi correlati alla motricità del plesso cervicale.</p><p><b>Ubicazione</b><br>PP2, nella parte mediale-posteriore dell'elice, in prossimità del lobo.</p>",
+            "AzioniTsubo": "<p><b>Altri nomi</b><br>- Radice maestra motoria del plesso cervicale</p><p><b>Azione</b><br>Questo punto trova applicazione per il trattamento e la diminuzione di tutti i dolori e disturbi correlati alla motricità del plesso cervicale.</p><p><b>Ubicazione</b><br>PP2, nella parte mediale-posteriore dell'elice, in prossimità del lobulo.</p>",
             "ChiaviTsubo": ""
         },
         "270": {
@@ -742,12 +677,12 @@ DB.set= {
         },
         "272": {
             "NomeTsubo": "Radice sensitiva C2",
-            "AzioniTsubo": "<p><b>Altri nomi</b><br>- Radice maestra sensitiva plesso cervicale</p><p><b>Azione</b><br>Questo punto trova applicazione per il trattamento e la diminuzione di tutti i dolori e disturbi correlati alla sensibilità del plesso cervicale.</p><p><b>Ubicazione</b><br>HX15, sulla coda dell'elice, al confine con il lobo.</p>",
+            "AzioniTsubo": "<p><b>Altri nomi</b><br>- Radice maestra sensitiva plesso cervicale</p><p><b>Azione</b><br>Questo punto trova applicazione per il trattamento e la diminuzione di tutti i dolori e disturbi correlati alla sensibilità del plesso cervicale.</p><p><b>Ubicazione</b><br>HX15, sul bordo esterno dell’elice, sulla sua coda, in una zona identificata mediante una retta passante per il punto Zero ed il solco post-antitragale.</p>",
             "ChiaviTsubo": ""
         },
         "273": {
             "NomeTsubo": "Radice sensitiva C7",
-            "AzioniTsubo": "<p><b>Altri nomi</b><br>- Radice maestra sensitiva plesso brachiale</p><p><b>Azione</b><br>Questo punto trova applicazione per il trattamento e la diminuzione di tutti i dolori e disturbi correlati alla sensibilità del plesso brachiale.</p><p><b>Ubicazione</b><br>HX14,&nbsp;sull'elice, al livello della conca rigida.</p>",
+            "AzioniTsubo": "<p><b>Altri nomi</b><br>- Radice maestra sensitiva plesso brachiale</p><p><b>Azione</b><br>Questo punto trova applicazione per il trattamento e la diminuzione di tutti i dolori e disturbi correlati alla sensibilità del plesso brachiale.</p><p><b>Ubicazione</b><br>HX14, sul bordo esterno dell’elice all’altezza del terzo medio della branca discendente dell’elice, in un’area di proiezione del passaggio cervico-dorsale.</p>",
             "ChiaviTsubo": ""
         },
         "274": {
@@ -757,7 +692,7 @@ DB.set= {
         },
         "275": {
             "NomeTsubo": "Seni frontali",
-            "AzioniTsubo": "<p><b>Altri nomi</b><br>- Seni mascellari</p><p><b>Azione</b><br>Questo punto è indicato per ridurre i sintomi da rinite e sinusite.</p><p><b>Ubicazione</b><br>LO4, al centro del lobo, in alto, verso l'antitrago, in prossimità del punto [.202.]</p>",
+            "AzioniTsubo": "<p><b>Altri nomi</b><br>- Seni mascellari</p><p><b>Azione</b><br>Questo punto è indicato per ridurre i sintomi da rinite e sinusite.</p><p><b>Ubicazione</b><br>LO4, al centro del lobulo, in alto, verso l'antitrago, in prossimità del punto [.202.]</p>",
             "ChiaviTsubo": ""
         },
         "276": {
@@ -777,7 +712,7 @@ DB.set= {
         },
         "279": {
             "NomeTsubo": "Vertebre lombari CIN",
-            "AzioniTsubo": "<p><b>Azione<br></b>Il Punto Vertebre Lombari è riconosciuto sia dalla Scuola Cinese sia dalla Scuola Francese per la sua efficacia in tutte le patologie correlate alle vertebre lombari.</p><p><b>Ubicazione</b><br>AH1, sulla cresta dell'antelice nel punto in cui il corpo si divide a Y in radice inferiore e superiore.</p>",
+            "AzioniTsubo": "<p><b>Azione<br></b>Il Punto Vertebre Lombari è riconosciuto sia dalla Scuola Cinese sia dalla Scuola Francese per la sua efficacia in tutte le patologie correlate alle vertebre lombari.</p><p><b>Ubicazione</b><br>AH1, nella parte superiore del corpo dell’antelice, prima che questo si divida in radice superiore ed inferiore dell’antelice.</p>",
             "ChiaviTsubo": ""
         },
         "280": {
@@ -797,7 +732,7 @@ DB.set= {
         },
         "283": {
             "NomeTsubo": "Linea trigeminale",
-            "AzioniTsubo": "<p><b>Altri nomi</b><br>- Quinto nervo cranico<br>- Nuclei trigeminali</p><p><b>Azione</b><br>Come indicato dal nome, questo punto è molto efficace nel trattamento di tutti i disturbi correlati al dolore facciale, trigeminale, neuropatico. Indicato inoltre per ridurre gli spasmi facciali.</p><p><b>Ubicazione</b><br>LO1-LO3-LO5, lungo il bordo inferiore del lobo, si tratta di una serie di punti allineati.</p>",
+            "AzioniTsubo": "<p><b>Altri nomi</b><br>- Quinto nervo cranico<br>- Nuclei trigeminali</p><p><b>Azione</b><br>Come indicato dal nome, questo punto è molto efficace nel trattamento di tutti i disturbi correlati al dolore facciale, trigeminale, neuropatico. Indicato inoltre per ridurre gli spasmi facciali.</p><p><b>Ubicazione</b><br>LO1-LO3-LO5, lungo il bordo inferiore del lobulo, si tratta di una serie di punti allineati.</p>",
             "ChiaviTsubo": ""
         },
         "284": {
@@ -812,7 +747,7 @@ DB.set= {
         },
         "286": {
             "NomeTsubo": "Muscolatura paravertebrale dorsale",
-            "AzioniTsubo": "<p><b>Azione<br></b>Questo punto, secondo la Scuola Francese, viene impiegato per la sua funzione miorilassante paravertebrale.&nbsp;</p><p><b>Ubicazione</b><br>AH10-AH11, nei due terzi superiori del corpo principale dell'antelice, prima che si biforchi nelle 2 branche, sul lato verso la fossa scafoidea.</p>",
+            "AzioniTsubo": "<p><b>Azione<br></b>Questo punto, secondo la Scuola Francese, viene impiegato per la sua funzione miorilassante paravertebrale.&nbsp;</p><p><b>Ubicazione</b><br>AH10-AH11, nei due terzi superiori del corpo dell'antelice, prima che si biforchi nelle 2 branche, sul lato verso la fossa scafoidea.</p>",
             "ChiaviTsubo": ""
         },
         "287": {
@@ -836,8 +771,8 @@ DB.set= {
             "ChiaviTsubo": ""
         },
         "291": {
-            "NomeTsubo": "Occipitale MASTER",
-            "AzioniTsubo": "<p><b>Altri nomi</b><br>- Osso occipitale<br>- Atlante</p><p><b>Azione</b><br>Questo Punto Master è collegato direttamente allo spazio che intercorre tra l’osso occipitale e la prima vertebra cervicale. Ha una forte azione nel trattamento di vertigini, insonnia, cefalee tensive e nevralgie. E’ inoltre riconosciuto per le sue proprietà miorilassanti in particolare con componente tensivo-emozionale.</p><p><b>Ubicazione</b><br>AT3, nel solco antitragale.</p>",
+            "NomeTsubo": "Punto Maestro Occipitale",
+            "AzioniTsubo": "<p><b>Altri nomi</b><br>- Osso occipitale<br>- Atlante</p><p><b>Azione</b><br>Questo Punto Master è collegato direttamente allo spazio che intercorre tra l’osso occipitale e la prima vertebra cervicale. Ha una forte azione nel trattamento di vertigini, insonnia, cefalee tensive e nevralgie. E’ inoltre riconosciuto per le sue proprietà miorilassanti in particolare con componente tensivo-emozionale.</p><p><b>Ubicazione</b><br>AT3, Nel solco antelico-antitragale o post-antitragale.</p>",
             "ChiaviTsubo": ""
         },
         "292": {
@@ -855,33 +790,13 @@ DB.set= {
             "AzioniTsubo": "<p><b>Altri nomi</b><br>- xxx</p><p><b>Azione</b><br>xxx</p><p><b>Ubicazione</b><br>xxx</p>",
             "ChiaviTsubo": ""
         },
-        "295": {
-            "NomeTsubo": "Punto calore",
-            "AzioniTsubo": "<p><b>Altri nomi</b><br>- xxx</p><p><b>Azione</b><br>xxx</p><p><b>Ubicazione</b><br>xxx</p>",
-            "ChiaviTsubo": ""
-        },
-        "296": {
-            "NomeTsubo": "Tempo atmosferico",
-            "AzioniTsubo": "<p><b>Altri nomi</b><br>- xxx</p><p><b>Azione</b><br>xxx</p><p><b>Ubicazione</b><br>xxx</p>",
-            "ChiaviTsubo": ""
-        },
-        "297": {
-            "NomeTsubo": "Plesso solare",
-            "AzioniTsubo": "<p><b>Altri nomi</b><br>- xxx</p><p><b>Azione</b><br>xxx</p><p><b>Ubicazione</b><br>xxx</p>",
-            "ChiaviTsubo": ""
-        },
         "298": {
             "NomeTsubo": "Midollo allungato EUR",
-            "AzioniTsubo": "<p><b>Altri nomi</b><br>- xxx</p><p><b>Azione</b><br>xxx</p><p><b>Ubicazione</b><br>xxx</p>",
+            "AzioniTsubo": "<b>Azione</b><br>Patologia neurologica cervicale alta. Modulazione del dolore neuropatico cervicale. Controllo del tono muscolare.</p><p><b>Ubicazione</b><br>Sul bordo anteriore dell’elice nella sua coda, in un’area di passaggio verso il Lobulo auricolare</p>",
             "ChiaviTsubo": ""
         },
         "299": {
             "NomeTsubo": "Punto vigilanza",
-            "AzioniTsubo": "<p><b>Altri nomi</b><br>- xxx</p><p><b>Azione</b><br>xxx</p><p><b>Ubicazione</b><br>xxx</p>",
-            "ChiaviTsubo": ""
-        },
-        "300": {
-            "NomeTsubo": "Ghiandola salivare CIN",
             "AzioniTsubo": "<p><b>Altri nomi</b><br>- xxx</p><p><b>Azione</b><br>xxx</p><p><b>Ubicazione</b><br>xxx</p>",
             "ChiaviTsubo": ""
         },
@@ -892,7 +807,7 @@ DB.set= {
         },
         "302": {
             "NomeTsubo": "Orecchio interno CIN",
-            "AzioniTsubo": "<p><b>Altri nomi</b><br>- xxx</p><p><b>Azione</b><br>xxx</p><p><b>Ubicazione</b><br>xxx</p>",
+            "AzioniTsubo": "<p><b>Azione</b><br>xxx</p><p><b>Ubicazione</b><br>xxx</p>",
             "ChiaviTsubo": ""
         },
         "303": {
@@ -912,37 +827,27 @@ DB.set= {
         },
         "000": {
             "NomeTsubo": "Punto Zero",
-            "AzioniTsubo": "<p><b>Altri nomi</b><br>- Centro dell'orecchio<br>- Punto di supporto<br>- Plesso solare<br>- Ombelico<br>- Punto Maestro anti-infiammatorio</p><p><b>Azione</b><br>Considerato molto importante per la scuola francese, secondo Paul Nogier rappresenta un centro fisiologico e geometrico. La stimolazione di questo punto veniva usato da Nogier in condizioni di fatica e tensioni nervose riequilibrando uno stato di calma generale. Il Punto Zero ha una potente azione di riequilibrio generale sul sistema energetico, psicologico e fisico.&nbsp;</p><p><b>Ubicazione</b><br>HX1-CR1, alla radice dell'elice al confine con la conca rigida.</p>",
+            "AzioniTsubo": "<p><b>Altri nomi</b><br>- Centro dell'orecchio<br>- Punto di supporto<br>- Plesso solare<br>- Ombelico</p><p><b>Azione</b><br>Considerato molto importante per la scuola francese, secondo Paul Nogier rappresenta un centro fisiologico e geometrico. La stimolazione di questo punto veniva usato da Nogier in condizioni di fatica e tensioni nervose riequilibrando uno stato di calma generale. Il Punto Zero ha una potente azione di riequilibrio generale sul sistema energetico, psicologico e fisico.&nbsp;</p><p><b>Ubicazione</b><br>HX1-CR1, alla radice dell'elice al confine con la conca rigida. In un solco ortogonale alla radice dell’elice.</p>",
             "ChiaviTsubo": ""
         },
         "001": {
             "NomeTsubo": "ShenMen",
-            "AzioniTsubo": "<p><b>Altri nomi</b><br>- Porta dello spirito<br>- Porta divina<br>- Punto Maestro anti-infiammatorio</p><p><b>Azione</b><br>Shen Men è un potente punto riconosciuto a livello internazionale per le sue numerose proprietà energetiche, emotive e fisiche. Viene utilizzato per tonificare la mente e facilitare la circolazione del Qi riequilibrando armonia e serenità. E’ indicato per il trattamento di ansia, stress, depressione, insonnia; trova un ottimo riscontro per dissuadere dall’utilizzo assiduo di alcol, droghe, fumo, ecc. Il trattamento di questo punto permette di ridurre i sintomi correlati all’ipertensione e l’epilessia.</p><p><b>Ubicazione</b><br>TF2, nella punta della fossa triangolare.</p>",
+            "AzioniTsubo": "<p><b>Altri nomi</b><br>- Shen Men<br>- Porta dello spirito<br>- Porta divina</p><p><b>Azione</b><br>Shen Men è un potente punto riconosciuto a livello internazionale per le sue numerose proprietà energetiche, emotive e fisiche. Viene utilizzato per tonificare la mente e facilitare la circolazione del Qi riequilibrando armonia e serenità. E’ indicato per il trattamento di ansia, stress, depressione, insonnia; trova un ottimo riscontro per dissuadere dall’utilizzo assiduo di alcol, droghe, fumo, ecc. Il trattamento di questo punto permette di ridurre i sintomi correlati all’ipertensione e l’epilessia.</p><p><b>Ubicazione</b><br>TF2, in prossimità dell’apice della fossa triangolare in un’area visino alla radice superiore dell’antelice.</p>",
             "ChiaviTsubo": "punto funzionale primo livello"
         },
         "002": {
-            "NomeTsubo": "Allergia 2",
-            "AzioniTsubo": "<p><b>Azione</b><br>Questo Punto è molto efficace per ridurre gli effetti di allergie e infiammazioni.</p><p><b>Ubicazione</b><br>IH7-iH8, nella faccia nascosta dell'elice, è un'area longilinea</p>",
+            "NomeTsubo": "Punto Allergia 2",
+            "AzioniTsubo": "<p><b>Altri nomi</b><br>- Allergia 2</p><p><b>Azione</b><br>Questo Punto è molto efficace per ridurre gli effetti di allergie e infiammazioni.</p><p><b>Ubicazione</b><br>IH7-iH8, nella faccia nascosta dell'elice, è un'area longilinea</p>",
             "ChiaviTsubo": "azione antiflogistica"
         },
         "003": {
-            "NomeTsubo": "Apice dell'orecchio",
-            "AzioniTsubo": "<p><b>Altri nomi</b><br>- Punto allergia 1 CIN<br>- Omega 2 EUR<br>- Punto Maestro anti-infiammatorio</p><p><b>Azione</b><br>Secondo la filosofia della scuola Francese, si tratta di un punto auricolare molto efficace nei casi di allergia, ipertensione ed edema. Utilizzato invece dalla scuola Cinese per le sue proprietà antipiretiche, antalgiche e antinfiammatorie. Spesso utilizzato in patologie osteoarticolari.<br><br>Particolarmente indicato nelle patologie infiammatorie croniche.</p><p><b>Ubicazioness</b><br>HX7-HX8, sull'apice del padiglione auricolare</p>",
+            "NomeTsubo": "Apice del padiglione auricolare",
+            "AzioniTsubo": "<p><b>Altri nomi</b><br>- Punto allergia 1<br>- Omega 2 EUR<br>- Punto Maestro anti-infiammatorio</p><p><b>Azione</b><br>Secondo la filosofia della scuola Francese, si tratta di un punto auricolare molto efficace nei casi di allergia, ipertensione ed edema. Utilizzato invece dalla scuola Cinese per le sue proprietà antipiretiche, antalgiche e antinfiammatorie. Spesso utilizzato in patologie osteoarticolari.<br><br>Particolarmente indicato nelle patologie infiammatorie croniche.</p><p><b>Ubicazioness</b><br>HX7-HX8, sull'apice del padiglione auricolare. Corrisponde a LM2.</p>",
             "ChiaviTsubo": ""
         },
         "004": {
-            "NomeTsubo": "Reazioni psicosomatiche",
-            "AzioniTsubo": "<p><b>Altri nomi</b><br>- Punto psicoterapeutico<br>- Punto R.<br>- Punto di Bourdiol</p><p><b>Azione</b><br>La Scuola Francese utilizza questo punto per diminuire tutti i disturbi con componente psicosomatica; trova ottimi riscontri in psicoterapia e nei casi di soggetti affetti da psicosi.</p><p><b>Ubicazione</b><br>HX4-HX5, sull'elice all'altezza del punto un cui l'elice incontra l'antelice, in prossimità del punto [.039.].</p>",
-            "ChiaviTsubo": ""
-        },
-        "005": {
-            "NomeTsubo": "Apice del trago",
-            "AzioniTsubo": "<p><b>Altri nomi</b><br>- xxx</p><p><b>Azione</b><br>xxx</p><p><b>Ubicazione</b><br>xxx</p>",
-            "ChiaviTsubo": ""
-        },
-        "006": {
-            "NomeTsubo": "Punto nicotina",
-            "AzioniTsubo": "<p><b>Altri nomi</b><br>- xxx</p><p><b>Azione</b><br>xxx</p><p><b>Ubicazione</b><br>xxx</p>",
+            "NomeTsubo": "Punto psicosomatico",
+            "AzioniTsubo": "<p><b>Altri nomi</b><br>- Punto psicoterapeutico<br>- Punto R.<br>- Punto di Bourdiol<br>- Reazioni psicosomatiche</p><p><b>Azione</b><br>La Scuola Francese utilizza questo punto per diminuire tutti i disturbi con componente psicosomatica; trova ottimi riscontri in psicoterapia e nei casi di soggetti affetti da psicosi.</p><p><b>Ubicazione</b><br>HX4-HX5. Al confine tra ginocchio dell’elice e la tempia. Corrisponde ad LM1, suulla superficie esterna rispetto al [.039.] ed a LM18 .</p>",
             "ChiaviTsubo": ""
         },
         "007": {
@@ -957,47 +862,33 @@ DB.set= {
         },
         "009": {
             "NomeTsubo": "Genitali esterni CIN",
-            "AzioniTsubo": "<p><b>Altri nomi</b><br>- Pene<br>- Clitoride<br>- Punto di Bosch</p><p><b>Azione</b><br>Punto indicato dalla Scuola Francese per il trattamento di tutte le patologie scrotali e correlate agli organi genitali maschili e femminili. Molto efficace in caso di frigidità e impotenza.</p><p><b>Ubicazione</b><br>HX4, sul ginocchio dell'elice all'altezza della branca inferiore dell'antelice</p>",
-            "ChiaviTsubo": ""
-        },
-        "011": {
-            "NomeTsubo": "Tonsilla",
-            "AzioniTsubo": "<p><b>Altri nomi</b><br>- xxx</p><p><b>Azione</b><br>xxx</p><p><b>Ubicazione</b><br>xxx</p>",
-            "ChiaviTsubo": ""
-        },
-        "012": {
-            "NomeTsubo": "Vitamina E",
-            "AzioniTsubo": "<p><b>Altri nomi</b><br>- xxx</p><p><b>Azione</b><br>xxx</p><p><b>Ubicazione</b><br>xxx</p>",
-            "ChiaviTsubo": ""
-        },
-        "013": {
-            "NomeTsubo": "Fegato Yang",
-            "AzioniTsubo": "<p><b>Altri nomi</b><br>- xxx</p><p><b>Azione</b><br>xxx</p><p><b>Ubicazione</b><br>xxx</p>",
+            "AzioniTsubo": "<p><b>Altri nomi</b><br>- Pene<br>- Clitoride</p><p><b>Azione</b><br>Punto indicato dalla Scuola Cinese per il trattamento di tutte le patologie scrotali e correlate agli organi genitali maschili e femminili. Molto efficace in caso di frigidità e impotenza.</p><p><b>Ubicazione</b><br>HX4, sul ginocchio dell'elice all'altezza della branca inferiore dell'antelice</p>",
             "ChiaviTsubo": ""
         },
         "015": {
-            "NomeTsubo": "Elice 1-6",
-            "AzioniTsubo": "<p><b>Altri nomi</b><br>- xxx</p><p><b>Azione</b><br>xxx</p><p><b>Ubicazione</b><br>xxx</p>",
-            "ChiaviTsubo": ""
+            "NomeTsubo": "Elice 1-7",
+            "AzioniTsubo": "<p><b>Azione</b><br>Punti specifici del protocollo antitabacco classico di P. Nogier e del programma antitabacco di G. Rossato.</p><p><b>Ubicazione</b><br>Per trovare i 7 punti si devono innanzitutto ricavare i 2 estremi. Il punto inferiore lo si reperisce tracciando il raggio che dal Punto Zero interseca la rappresentazione della prima vertebra cervicale. Il punto superiore lo si ottiene tracciando il raggio che dal Punto Zero interseca il Tubercolo di Darwin. I 5 punti intermedi sono rilevati mediante il regolo di Nogier.</p>",
+            "ChiaviTsubo": "",
+			"hide": true
         },
         "017": {
             "NomeTsubo": "Dita delle mani",
-            "AzioniTsubo": "<p><b>Altri nomi</b><br>- Falangi</p><p><b>Azione</b><br>Questo punto internazionale è indicato per contrastare tutti i disturbi legati alle dita, in particolare per il trattamento dei disturbi del carpo e dell’osso metacarpale.</p><p><b>Ubicazione</b><br>SF6, nella fossa scafoidea, al di sopra del tubercolo di Darwin.</p>",
+            "AzioniTsubo": "<p><b>Altri nomi</b><br>- Falangi</p><p><b>Azione</b><br>Questo punto internazionale è indicato per contrastare tutti i disturbi legati alle dita, in particolare per il trattamento dei disturbi del carpo e dell’osso metacarpale.</p><p><b>Ubicazione</b><br>SF6, in una ampia area tra l’elice e la radice superiore dell’antelice, al di sopra del tubercolo di Darwin.</p>",
             "ChiaviTsubo": ""
         },
         "018": {
-            "NomeTsubo": "Disturbi della pelle EUR",
-            "AzioniTsubo": "<p><b>Altri nomi</b><br>- Dermatite<br>- Orticaria<br>- Eczema<br><span style=\"color: rgb(0, 0, 0);\">- Patologie dermatologiche<br>- Midollo EUR</span></p><p><b>Azione</b><br>Come suggerito dal nome, questo punto viene utilizzato per trattare tutte le principali patologie dermatologiche quali ad esempio dermatite, acne, eczema e orticaria.</p><p><b>Ubicazione</b><br>HX12-HX15, un'area longilinea collocata sul bordo posteriore dell'elice.&nbsp;</p>",
+            "NomeTsubo": "Dermatite EUR",
+            "AzioniTsubo": "<p><b>Altri nomi</b><br>- Disturbi della pelle EUR<br>- Orticaria<br>- Eczema<br><span style=\"color: rgb(0, 0, 0);\">- Patologie dermatologiche<br>- Midollo EUR</span></p><p><b>Azione</b><br>Come suggerito dal nome, questo punto viene utilizzato per trattare tutte le principali patologie dermatologiche quali ad esempio dermatite, acne, eczema e orticaria.</p><p><b>Ubicazione</b><br>HX12-HX15 sul bordo dell’elice. È anche la sede di rappresentazione midollare. Il trattamento e la rappresentazione patologica segue la logica dermatomerica.</p>",
             "ChiaviTsubo": ""
         },
         "023": {
-            "NomeTsubo": "Compulsioni sessuali",
-            "AzioniTsubo": "<p><b>Altri nomi</b><br>- Punto Jerome<br>- Inibizione del desiderio sessuale</p><p><b>Azione</b><br>Il Punto di Jerome viene sfruttato per inibire la libido e per regolare tutti i disturbi compulsivi sessuali.</p><p><b>Ubicazione</b><br>HX15, nella parte inferiore dell'elice, al confine con il lobo e la fossa scafoidea.</p>",
+            "NomeTsubo": "Punto Jerome",
+            "AzioniTsubo": "<p><b>Altri nomi</b><br>- Compulsioni sessuali<br>- Inibizione del desiderio sessuale</p><p><b>Azione</b><br>Il Punto di Jerome viene sfruttato per inibire la libido e per regolare tutti i disturbi compulsivi sessuali.</p><p><b>Ubicazione</b><br>HX15, nella parte inferiore dell'elice, al confine con il lobulo e la fossa scafoidea.</p>",
             "ChiaviTsubo": ""
         },
         "026": {
-            "NomeTsubo": "Nervo piccolo occipitale",
-            "AzioniTsubo": "<p><b>Altri nomi</b><br>- Windstream<br>- Colpo di vento</p><p><b>Azione</b><br>Secondo la Scuola Cinese questo punto è collegato alla ghiandola surrenale. E’ indicato per favorire la risposta del sistema immunitario, trova una particolare azione per tutti i disturbi in fase acuta.</p><p><b>Ubicazione</b><br>IH1, nella superficie nascosta dell'elice, sotto il tubercolo di Darwin.</p>",
+            "NomeTsubo": "Windstream",
+            "AzioniTsubo": "<p><b>Altri nomi</b><br>- Nervo piccolo occipitale<br>- Colpo di vento</p><p><b>Azione</b><br>Secondo la Scuola Cinese questo punto è collegato alla ghiandola surrenale. E’ indicato per favorire la risposta del sistema immunitario, trova una particolare azione per tutti i disturbi in fase acuta.</p><p><b>Ubicazione</b><br>IH1, nella superficie nascosta dell'elice, sotto il tubercolo di Darwin.</p>",
             "ChiaviTsubo": ""
         },
         "028": {
@@ -1007,7 +898,7 @@ DB.set= {
         },
         "029": {
             "NomeTsubo": "Tallone CIN",
-            "AzioniTsubo": "<p><b>Azione<br></b>Questo punto viene adottato sia dalla Scuola Cinese sia dalla Scuola Francese per la sua azione nel contrasto dei disturbi e dolore al tallone.&nbsp;</p><p><b>Ubicazione</b><br>AH17, sulla radice superiore dell'antelice, vicino al suo incontro con l'elice. Il punto è nascosto dall'elice.</p>",
+            "AzioniTsubo": "<p><b>Altri nomi</b><br>- Punto del tallone</p><p><b>Azione<br></b>Questo punto viene adottato sia dalla Scuola Cinese sia dalla Scuola Francese per la sua azione nel contrasto dei disturbi e dolore al tallone.&nbsp;</p><p><b>Ubicazione</b><br>AH17, nel terzo superiore della radice superiore dell'antelice, in un'area nascosta dal bordo dell’elice ed in prossimità con la fossa triangolare.</p>",
             "ChiaviTsubo": ""
         },
         "030": {
@@ -1017,12 +908,12 @@ DB.set= {
         },
         "031": {
             "NomeTsubo": "Utero CIN",
-            "AzioniTsubo": "<p><b>Azione<br></b>Il Punto Utero è riconosciuto sia dalla Scuola Cinese sia dalla Scuola Francese per la sua efficacia in tutte le patologie correlate alle vie urinarie, in particolare al sistema ginecologico e riproduttivo.</p><p><b>Ubicazione</b><br>TF5-TF6, al centro della base della fossa triangolare.</p>",
+            "AzioniTsubo": "<p><b>Azione<br></b>Disturbi dolorosi e funzionali dell’apparato riproduttivo. In particolare dismenorrea e polimenorrea</p><p><b>Ubicazione</b><br>TF5-TF6, vasta area nel terzo anteriore della fossa Triangolare, in parte nascosta dal bordo dell’elice.</p>",
             "ChiaviTsubo": ""
         },
         "032": {
             "NomeTsubo": "Caviglia EUR",
-            "AzioniTsubo": "<p><b>Altri nomi</b><br>- Articolazione astragalo-tibiale<br>- Tendine d'Achille</p><p><b>Azione</b><br>Il punto caviglia viene utilizzato tutti i disturbi correlati alla caviglia, in particolare articolazioni, tendine d’Achille</p><p><b>Ubicazione</b><br>TF5-TF6, al centro della fossa triangolare un po' spostato verso la sua radice</p>",
+            "AzioniTsubo": "<p><b>Altri nomi</b><br>- Articolazione astragalo-tibiale<br>- Tendine d'Achille</p><p><b>Azione</b><br>Il punto caviglia viene utilizzato tutti i disturbi correlati alla caviglia, in particolare articolazioni, tendine d’Achille</p><p><b>Ubicazione</b><br>TF5-TF6 lungo la bisettrice della fossa triangolare, nel terzo prossimale al ginocchio dell'elice.</p>",
             "ChiaviTsubo": ""
         },
         "033": {
@@ -1032,17 +923,17 @@ DB.set= {
         },
         "034": {
             "NomeTsubo": "Coscia",
-            "AzioniTsubo": "<p><b>Altri nomi</b><br>- xxx</p><p><b>Azione</b><br>xxx</p><p><b>Ubicazione</b><br>xxx</p>",
+            "AzioniTsubo": "<p><b>Azione</b><br>Patologie dolorose della coscia.</p><p><b>Ubicazione</b><br>Situato circa a metà distanza tra la bisettrice della fossa triangolare e la radice inferiore dell’antelice e circa a metà distanza tra apice della fossa triangolare e punto centrale della stessa.</p>",
             "ChiaviTsubo": ""
         },
         "036": {
             "NomeTsubo": "Nervo sciatico",
-            "AzioniTsubo": "<p><b>Altri nomi</b><br>- xxx</p><p><b>Azione</b><br>xxx</p><p><b>Ubicazione</b><br>xxx</p>",
+            "AzioniTsubo": "<p><b>Altri nomi</b><br>- Sciatico</p><p><b>Azione</b><br>E' il punto un cui P. Nogier faceva la cauterizzazione per trattare il dolore da sciatalgia.</p><p><b>Ubicazione</b><br>Circa a metà della radice inferiore dell’antelice, poco prima che questa incroci il bordo posteriore del ginocchio dell’elice.</p>",
             "ChiaviTsubo": ""
         },
         "037": {
-            "NomeTsubo": "Costipazione",
-            "AzioniTsubo": "<p><b>Altri nomi</b><br>- Stipsi</p><p><b>Azione</b><br>Punto utilizzato dalla Scuola Cinese per la sua azione nel ridurre i disturbi da stipsi, regolando la motilità intestinale.</p><p><b>Ubicazione</b><br>TF3, a metà della fossa triangolare, verso la radice inferiore dell'antelice.</p>",
+            "NomeTsubo": "Stipsi",
+            "AzioniTsubo": "<p><b>Altri nomi</b><br>- Costipazione</p><p><b>Azione</b><br>Punto utilizzato dalla Scuola Cinese per la sua azione nel ridurre i disturbi da stipsi, regolando la motilità intestinale.</p><p><b>Ubicazione</b><br>TF3, a metà distanza tra il centro della fossa Triangolare e la radice inferiore dell’antelice.</p>",
             "ChiaviTsubo": ""
         },
         "038": {
@@ -1051,13 +942,13 @@ DB.set= {
             "ChiaviTsubo": ""
         },
         "039": {
-            "NomeTsubo": "Sistema simpatico MASTER",
-            "AzioniTsubo": "<p><b>Altri nomi</b><br>- Ortosimpatico</p><p><b>Azione</b><br>Questo Punto viene riconosciuto a livello internazionale per le sue capacità antalgiche. Viene inoltre indicato per la sua azione sul sistema nervoso autonomo e sul parasimpatico-tonico.</p><p><b>Ubicazione</b><br>AH7-IH4, sulla radice inferiore dell'antelice, al suo incontro con l'elice. Il punto è nascosto dall'elice.</p>",
+            "NomeTsubo": "Punto Ortosimpatico",
+            "AzioniTsubo": "<p><b>Altri nomi</b><br>- Punto del Simpatico<br>- Punto del Simpatico Autonomico</p><p><b>Azione</b><br>Questo Punto viene riconosciuto a livello internazionale per le sue capacità antalgiche in particolare quella sui visceri. Viene inoltre indicato per la sua azione sul sistema nervoso autonomo e sul parasimpatico-tonico.</p><p><b>Ubicazione</b><br>AH7-IH4, sulla radice inferiore dell'antelice, al suo incontro con l'elice. Il punto è nascosto dall'elice. Corrisponde a LM18.</p>",
             "ChiaviTsubo": ""
         },
         "040": {
             "NomeTsubo": "Tallone EUR",
-            "AzioniTsubo": "<p><b>Azione<br></b>Questo punto viene adottato sia dalla Scuola Cinese sia dalla Scuola Francese per la sua azione nel contrasto dei disturbi e dolore al tallone.&nbsp;</p><p><b>Ubicazione</b><br>TF5, alla base della fossa triangolare, vicino al punto di incontro tra l'elice e la radice inferiore dell'antelice. Il punto è nascosto dall'elice.</p>",
+            "AzioniTsubo": "<p><b>Azione<br></b>Patologie dolorose e disfunzionali del tallone e del retro-piede</p><p><b>Ubicazione</b><br>TF5, alla base della fossa triangolare, vicino al punto di incontro tra l'elice e la radice inferiore dell'antelice. Il punto è nascosto dall'elice.</p>",
             "ChiaviTsubo": ""
         },
         "041": {
@@ -1067,7 +958,7 @@ DB.set= {
         },
         "042": {
             "NomeTsubo": "Ghiandola mammaria CIN",
-            "AzioniTsubo": "<p><b>Altri nomi</b><br>- xxx</p><p><b>Azione</b><br>xxx</p><p><b>Ubicazione</b><br>xxx</p>",
+            "AzioniTsubo": "<p><b>Altri nomi</b><br>- Mammella</p><p><b>Azione</b><br>Patologie della mammella, mastodinia. </p><p><b>Ubicazione</b><br>AH3-AH10, al centro del corpo dell’antelice a livello della zona di rappresentazione della IV-V vertebra toracica.</p>",
             "ChiaviTsubo": ""
         },
         "043": {
@@ -1077,17 +968,12 @@ DB.set= {
         },
         "044": {
             "NomeTsubo": "Cervelletto",
-            "AzioniTsubo": "<p><b>Altri nomi</b><br>- xxx</p><p><b>Azione</b><br>xxx</p><p><b>Ubicazione</b><br>xxx</p>",
+            "AzioniTsubo": "<p><b>Azione</b><br>Disturbi dell’equilibrio e della coordinazione motoria.</p><p><b>Ubicazione</b><br>Nella parte inferiore del corpo dell’antelice, subito sopra il solco post-antitragale.</p>",
             "ChiaviTsubo": ""
         },
         "045": {
             "NomeTsubo": "Insonnia 1",
             "AzioniTsubo": "<p><b>Altri nomi</b><br>- Disturbi del sonno 1</p><p><b>Azione</b><br>La Scuola Francese distingue il trattamento dell’insonnia con due punti differenti. Il punto Insonnia 1 è indicato principalmente nei casi di continui risvegli notturni. Ottima efficacia nella riduzione di stress, depressione, nervosismo e come suggerito dal nome, per l’insonnia.</p><p><b>Ubicazione</b><br>SF5, nella fossa scafoidea, in alto</p>",
-            "ChiaviTsubo": ""
-        },
-        "046": {
-            "NomeTsubo": "Disturbi dell'appendice",
-            "AzioniTsubo": "<p><b>Altri nomi</b><br>- xxx</p><p><b>Azione</b><br>xxx</p><p><b>Ubicazione</b><br>xxx</p>",
             "ChiaviTsubo": ""
         },
         "047": {
@@ -1096,28 +982,28 @@ DB.set= {
             "ChiaviTsubo": ""
         },
         "048": {
-            "NomeTsubo": "Spalla MASTER",
-            "AzioniTsubo": "<p><b>Altri nomi</b><br>- Articolazione della spalla<br>- Scapola<br>- Muscolo trapezio</p><p><b>Azione</b><br>Secondo la Scuola Francese, questo Punto trova un’ottima applicazione per tutti i disturbi legati alla spalla, in particolare alla cuffia della spalla, dolori articolari, alla scapola ed al trapezio.</p><p><b>Ubicazione</b><br>SF1, nella fossa scafoidea, all'altezza dei riflessi delle vertebre C4 e C5</p>",
+            "NomeTsubo": "Punto articolazione della spalla",
+            "AzioniTsubo": "<p><b>Altri nomi</b><br>- Articolazione della spalla<br>- Scapola<br>- Muscolo trapezio</p><p><b>Azione</b><br>Secondo la Scuola Francese, questo Punto trova un’ottima applicazione per tutti i disturbi legati alla spalla, in particolare alla cuffia della spalla, dolori articolari, alla scapola ed al trapezio.</p><p><b>Ubicazione</b><br>SF1 al centro della fossa scafa, a livello della rappresentazione di C4-5.</p>",
             "ChiaviTsubo": ""
         },
         "049": {
             "NomeTsubo": "Spalla",
-            "AzioniTsubo": "<p><b>Altri nomi</b><br>- Cingolo scapolare<br>- Muscolo deltoide</p><p><b>Azione</b><br>Il Punto della Spalla è molto attivo per ridurre i disturbi della spalla con componente artrosica e artritica. E’ inoltre efficace nei casi di disturbi muscolo-tendinei della spalla.</p><p><b>Ubicazione</b><br>SF2, nella fossa scafoide, al livello dei riflessi delle vertebre C7 e T1.</p>",
+            "AzioniTsubo": "<p><b>Altri nomi</b><br>- Cingolo scapolare<br>- Muscolo deltoide</p><p><b>Azione</b><br>Il Punto della Spalla è molto attivo per ridurre i disturbi della spalla con componente artrosica e artritica. E’ inoltre efficace nei casi di disturbi muscolo-tendinei della spalla.</p><p><b>Ubicazione</b><br>SF2, al centro della fossa scafoidea, a livello della rappresentazione del passaggio della colonna cervico-dorsale Francese</p>",
             "ChiaviTsubo": ""
         },
         "053": {
             "NomeTsubo": "Braccio",
-            "AzioniTsubo": "<p><b>Altri nomi</b><br>- Omero<br>- Muscolo bicipite<br>- Muscolo tricipite</p><p><b>Azione</b><br>Come indicato dal nome, questo punto è molto efficace per ridurre tutti i disturbi correlati ai disturbi del braccio.</p><p><b>Ubicazione</b><br>SF3, nella fossa scafoidea, tra il punto [.054.] e il punto [.049.]</p>",
+            "AzioniTsubo": "<p><b>Altri nomi</b><br>- Punto del braccio<br>- Omero<br>- Muscolo bicipite<br>- Muscolo tricipite</p><p><b>Azione</b><br>Come indicato dal nome, questo punto è molto efficace per ridurre tutti i disturbi correlati ai disturbi del braccio.</p><p><b>Ubicazione</b><br>SF3, nella fossa scafoidea, tra il punto [.054.] e il punto [.049.]</p>",
             "ChiaviTsubo": ""
         },
         "054": {
             "NomeTsubo": "Gomito",
-            "AzioniTsubo": "<p><b>Altri nomi</b><br>- Articolazione del gomito</p><p><b>Azione</b><br>Come indicato dal nome, questo punto è molto efficace per ridurre tutti i disturbi correlati al gomito.</p><p><b>Ubicazione</b><br>SF4, nella fossa scafoidea, al livello del punto [.001.]</p>",
+            "AzioniTsubo": "<p><b>Altri nomi</b><br>- Punto del gomito<br>- Articolazione del gomito</p><p><b>Azione</b><br>Come indicato dal nome, questo punto è molto efficace per ridurre tutti i disturbi correlati al gomito.</p><p><b>Ubicazione</b><br>SF4, nella fossa scafoidea, al livello del punto [.001.]</p>",
             "ChiaviTsubo": ""
         },
         "055": {
             "NomeTsubo": "Avambraccio",
-            "AzioniTsubo": "<p><b>Altri nomi</b><br>- Radio<br>- Ulna<br>- Muscolo brachioradiale</p><p><b>Azione</b><br>Come indicato dal nome, questo punto è molto efficace per ridurre tutti i disturbi correlati all’avambraccio.</p><p><b>Ubicazione</b><br>SF4, nella fossa scafoidea, al livello del punto [.001.]</p>",
+            "AzioniTsubo": "<p><b>Altri nomi</b><br>- Punto avambraccio<br>- Radio<br>- Ulna<br>- Muscolo brachioradiale</p><p><b>Azione</b><br>Come indicato dal nome, questo punto è molto efficace per ridurre tutti i disturbi correlati all’avambraccio.</p><p><b>Ubicazione</b><br>SF4, nella fossa scafoidea, al livello del punto [.001.]</p>",
             "ChiaviTsubo": ""
         },
         "056": {
@@ -1125,14 +1011,9 @@ DB.set= {
             "AzioniTsubo": "<p><b>Azione<br></b>Questo punto, secondo la Scuola Francese, è indicato per il trattamento delle patologie e disturbi cardiaci. E’ quindi consigliato trattare il punto Cuore in caso di dolore toracico, ipertensione e ipotensione, tachicardia ed aritmie di vario genere.</p><p><b>Ubicazione</b><br>AH3, sull'antelice al confine con l'avanmuro, all'altezza del [.000.]</p>",
             "ChiaviTsubo": ""
         },
-        "057": {
-            "NomeTsubo": "Lombalgia",
-            "AzioniTsubo": "<p><b>Altri nomi</b><br>- xxx</p><p><b>Azione</b><br>xxx</p><p><b>Ubicazione</b><br>xxx</p>",
-            "ChiaviTsubo": ""
-        },
         "058": {
-            "NomeTsubo": "Gluteo",
-            "AzioniTsubo": "<p><b>Altri nomi</b><br>- Grande gluteo<br>- Natiche</p><p><b>Azione</b><br>Questo punto ha una azione generale in caso di dolore al gluteo. E’ inoltre attivo per ridurre i dolori dell’anca, sciatica e della colonna lombare.</p><p><b>Ubicazione</b><br>AH5, nella radice inferiore dell'antelice, in prossimità dell'apice della fossa triangolare.</p>",
+            "NomeTsubo": "Punto gluteo",
+            "AzioniTsubo": "<p><b>Altri nomi</b><br>- Punto grande gluteo<br>- Punto natiche</p><p><b>Azione</b><br>Dolore all’anca, al gluteo e dolore nella pseudo-sciatica.</p><p><b>Ubicazione</b><br>AH5, subito sopra LM16 nel terso posteriore della radice inferiore dell’antelice.</p>",
             "ChiaviTsubo": ""
         },
         "060": {
@@ -1141,8 +1022,8 @@ DB.set= {
             "ChiaviTsubo": ""
         },
         "061": {
-            "NomeTsubo": "Bacino",
-            "AzioniTsubo": "<p><b>Altri nomi</b><br>- Pelvi<br>- Cintura pelvica<br>- Inguine<br>- Osso pubico<br>- Cavità pelvica</p><p><b>Azione</b><br>Questo Punto Internazionale viene utilizzato per trattare tutte le patologie pelviche. Trova una buona efficacia nei casi di dolore lombare.</p><p><b>Ubicazione</b><br>TF1, all'apice della fossa triangolare, verso il basso, sotto il punto [.001.]</p>",
+            "NomeTsubo": "Pelvi",
+            "AzioniTsubo": "<p><b>Altri nomi</b><br>- Bacino<br>- Cintura pelvica<br>- Inguine<br>- Osso pubico<br>- Cavità pelvica</p><p><b>Azione</b><br>Questo Punto Internazionale viene utilizzato per trattare tutte le patologie pelviche. Trova una buona efficacia nei casi di dolore lombare.</p><p><b>Ubicazione</b><br>TF1, all'apice della fossa triangolare, verso il basso, sotto il punto [.001.]</p>",
             "ChiaviTsubo": ""
         },
         "064": {
@@ -1152,27 +1033,27 @@ DB.set= {
         },
         "065": {
             "NomeTsubo": "Polso",
-            "AzioniTsubo": "<p><b>Altri nomi</b><br>- Articolazione del polso</p><p><b>Azione</b><br>Come indicato dal nome, questo punto è molto efficace per ridurre tutti i disturbi correlati al polso, in particolare ai disturbi osteoarticolari dello stesso.</p><p><b>Ubicazione</b><br>SF5, nella fossa scafoidea, poco sopra il livello del punto [.001.]</p>",
+            "AzioniTsubo": "<p><b>Altri nomi</b><br>- Punto del polso<br>- Articolazione del polso</p><p><b>Azione</b><br>Come indicato dal nome, questo punto è molto efficace per ridurre tutti i disturbi correlati al polso, in particolare ai disturbi osteoarticolari dello stesso.</p><p><b>Ubicazione</b><br>SF5, nella fossa scafoidea, poco sopra il livello del punto [.001.]</p>",
             "ChiaviTsubo": ""
         },
         "067": {
             "NomeTsubo": "Addome",
-            "AzioniTsubo": "<p><b>Altri nomi</b><br>- Lombalgia<br>- Muscoli addominali</p><p><b>Azione</b><br>Il Punto Addome ha una forte azione nel ridurre i dolori addominali e nel trattamento della Lombalgia.</p><p><b>Ubicazione</b><br>AH11-AH12, vicino al punto di biforcazione dell'antelice in radice superiore e inferiore</p>",
+            "AzioniTsubo": "<p><b>Altri nomi</b><br>- Punto addome<br>- Lombalgia<br>- Muscoli addominali</p><p><b>Azione</b><br>Il Punto Addome ha una forte azione nel ridurre i dolori addominali e nel trattamento della Lombalgia.</p><p><b>Ubicazione</b><br>AH11-AH12, vicino al punto di biforcazione dell'antelice in radice superiore e inferiore</p>",
             "ChiaviTsubo": ""
         },
         "068": {
             "NomeTsubo": "Ginocchio CIN",
-            "AzioniTsubo": "<p><b>Altri nomi</b><br>- Articolazione del ginocchio<br>- Rotula</p><p><b>Azione</b><br>Come indicato dal nome, questo punto è molto efficace per ridurre tutti i disturbi correlati al ginocchio in particolare ai disturbi articolari dello stesso.</p><p><b>Ubicazione</b><br>TF3-TF4, al centro della radice superiore dell'antelice.</p>",
+            "AzioniTsubo": "<p><b>Altri nomi</b><br>- Punto del ginocchio<br>- Articolazione del ginocchio<br>- Rotula</p><p><b>Azione</b><br>Come indicato dal nome, questo punto è molto efficace per ridurre tutti i disturbi correlati al ginocchio in particolare ai disturbi articolari dello stesso.</p><p><b>Ubicazione</b><br>AH15, al centro della radice superiore dell'antelice</p>",
             "ChiaviTsubo": ""
         },
         "069": {
             "NomeTsubo": "Vertebre cervicali EUR",
-            "AzioniTsubo": "<p><b>Azione<br></b>Il Punto Vertebre Cervicali è riconosciuto sia dalla Scuola Cinese sia dalla Scuola Francese per la sua efficacia in tutte le patologie correlate alle vertebre cervicali.</p><p><b>Ubicazione</b><br>AH1-AH2, sulla cresta del corpo dell'antelice nella sua metà più bassa.</p>",
+            "AzioniTsubo": "<p><b>Azione<br></b>Il Punto Vertebre Cervicali è riconosciuto sia dalla Scuola Cinese sia dalla Scuola Francese per la sua efficacia in tutte le patologie correlate alle vertebre cervicali.</p><p><b>Ubicazione</b><br>AH1-AH2, nella cresta dell’antelice, si estende per circa la metà inferiore del corpo dell’antelice.</p>",
             "ChiaviTsubo": ""
         },
         "070": {
             "NomeTsubo": "Vertebre dorsali EUR",
-            "AzioniTsubo": "<p><b>Azione<br></b>Il Punto Vertebre Cervicali è riconosciuto sia dalla Scuola Cinese sia dalla Scuola Francese per la sua efficacia in tutte le patologie correlate alle vertebre dorsali.</p><p><b>Ubicazione</b><br>AH3-AH4, sulla cresta del corpo dell'antelice nella sua metà più alta.</p>",
+            "AzioniTsubo": "<p><b>Azione<br></b>Il Punto Vertebre Dorsali è riconosciuto sia dalla Scuola Cinese sia dalla Scuola Francese per la sua efficacia in tutte le patologie correlate alle vertebre dorsali.</p><p><b>Ubicazione</b><br>AH3-AH4, sulla cresta del corpo dell'antelice nella sua metà più alta.</p>",
             "ChiaviTsubo": ""
         },
         "071": {
@@ -1181,43 +1062,43 @@ DB.set= {
             "ChiaviTsubo": ""
         },
         "072": {
-            "NomeTsubo": "Vertebre sacrali e coccige",
+            "NomeTsubo": "Vertebre sacrali e coccigee",
             "AzioniTsubo": "<p><b>Azione<br></b>Questo punto è riconosciuto dalla Scuola Francese per la sua efficacia nel trattamento di disturbi correlati alle vertebre sacrali e al coccige.</p><p><b>Ubicazione</b><br>AH7, sulla cresta della radice inferiore dell'antelice, nella sua porzione in parte nascosta dall'elice, nella quale la radice incontra l'elice.</p>",
             "ChiaviTsubo": ""
         },
         "073": {
             "NomeTsubo": "Mano",
-            "AzioniTsubo": "<p><b>Altri nomi</b><br>- Palmo<br>- Ossa carpali<br>- Ossa metacarpali</p><p><b>Azione</b><br>Il trattamento di questo punto è indicato per tutti i disturbi osteoarticolari della mano e patologie legate all’intrappolamento del polso.</p><p><b>Ubicazione</b><br>SF5-AH14, nella fossa scafoidea al livello del tubercolo di Darwin.</p>",
+            "AzioniTsubo": "<p><b>Altri nomi</b><br>- Punto della mano<br>- Palmo<br>- Ossa carpali<br>- Ossa metacarpali</p><p><b>Azione</b><br>Il trattamento di questo punto è indicato per tutti i disturbi osteoarticolari della mano e patologie legate all’intrappolamento del polso.</p><p><b>Ubicazione</b><br>SF5-AH14, nella fossa scafoidea al livello del tubercolo di Darwin.</p>",
             "ChiaviTsubo": ""
         },
         "074": {
-            "NomeTsubo": "Disturbi della pelle CIN",
-            "AzioniTsubo": "<p><b>Altri nomi</b><br>- Dermatite<br>- Orticaria</p><p><b>Azione</b><br>Questo Punto è molto indicato per trattare tutte le patologie legate alla pelle, in particolare acne, eczema, orticaria e dermatite.</p><p><b>Ubicazione</b><br>SF5-IH11, area ampia che comprende parte della fossa scafoide e parte della superficie nascosta dell'elice, all'altezza del tubercolo di Darwin</p>",
+            "NomeTsubo": "Orticaria",
+            "AzioniTsubo": "<p><b>Altri nomi</b><br>- Dermatite<br>- Disturbi della pelle CIN</p><p><b>Azione</b><br>Questo Punto è molto indicato per trattare tutte le patologie legate alla pelle, in particolare acne, eczema, orticaria e dermatite.</p><p><b>Ubicazione</b><br>SF5-IH11, area ampia che comprende parte della fossa scafoide e parte della superficie nascosta dell'elice, all'altezza del tubercolo di Darwin</p>",
             "ChiaviTsubo": ""
         },
         "075": {
             "NomeTsubo": "Anca CIN",
-            "AzioniTsubo": "<b>Altri nomi</b><br>- Articolazione coxofemorale<br><p><b>Azione</b><br>Questo Punto è adottato sia dalla Scuola Cinese sia dalla Scuola Francese ma in diverse localizzazioni. In comune hanno l’applicazione per il trattamento dei disturbi legati all’anca e del cingolo pelvico.</p><p><b>Ubicazione</b><br>AH13, nel terzo inferiore della branca superiore dell'antelice, verso la fossa triangolare<span></span></p>",
+            "AzioniTsubo": "<b>Altri nomi</b><br>- Punto anca<br>- Articolazione coxofemorale<br><p><b>Azione</b><br>Questo Punto è adottato sia dalla Scuola Cinese sia dalla Scuola Francese ma in diverse localizzazioni. In comune hanno l’applicazione per il trattamento dei disturbi legati all’anca e del cingolo pelvico.</p><p><b>Ubicazione</b><br>AH13, nel terzo inferiore della branca superiore dell'antelice, verso la fossa triangolare<span></span></p>",
             "ChiaviTsubo": ""
         },
         "078": {
-            "NomeTsubo": "Anti istamina",
+            "NomeTsubo": "Punto Antistaminico",
             "AzioniTsubo": "<p><b>Azione<br></b>Il Punto Antistaminico viene adottato per trattare i disturbi legati ai polmoni, in particolare sintomi da raffreddamento, bronchiti, asma ed allergie.</p><p><b>Ubicazione</b><br>TF3-TF4, nel centro della fossa triangolare<span></span></p>",
             "ChiaviTsubo": ""
         },
         "080": {
             "NomeTsubo": "Epatite",
-            "AzioniTsubo": "<p><b>Altri nomi</b><br>- xxx</p><p><b>Azione</b><br>xxx</p><p><b>Ubicazione</b><br>xxx</p>",
+            "AzioniTsubo": "<p><b>Azione</b><br>Epatopatia e dispepsia funzionale.</p><p><b>Ubicazione</b><br>Nella fossa triangolare. In un’area delimitata in basso dal centro della fossa triangolare ed in altro dalla radice superiore dell’antelice.</p>",
             "ChiaviTsubo": ""
         },
         "081": {
             "NomeTsubo": "Caviglia CIN",
-            "AzioniTsubo": "<p><b>Altri nomi</b><br>- Articolazione astragalo-tibiale<br>- Tendine d'Achille</p><p><b>Azione</b><br>Il punto caviglia viene utilizzato tutti i disturbi correlati alla caviglia, in particolare articolazioni, tendine d’Achille</p><p><b>Ubicazione</b><br>AH17, sulla radice superiore dell'elice nel suo terzo superiore</p>",
+            "AzioniTsubo": "<p><b>Altri nomi</b><br>- Punto della caviglia<br>- Articolazione astragalo-tibiale<br>- Tendine d'Achille</p><p><b>Azione</b><br>Il punto caviglia viene utilizzato tutti i disturbi correlati alla caviglia, e in particolare al tendine d’Achille</p><p><b>Ubicazione</b><br>AH17, sulla radice superiore dell'elice nel suo terzo superiore</p>",
             "ChiaviTsubo": ""
         },
         "083": {
             "NomeTsubo": "Pollice EUR",
-            "AzioniTsubo": "<p><b>Azione<br></b>Come indicato dal nome, questo punto è molto efficace per ridurre tutti i disturbi correlati al pollice in particolare alle patologie legate al primo raggio metacarpale.</p><p><b>Ubicazione</b><br>AH14-AH16-AH18, ampia area nella radice superiore dell'antelice</p>",
+            "AzioniTsubo": "<p><b>Altri nomi</b><br>- Punto del pollice</p><p><b>Azione<br></b>Come indicato dal nome, questo punto è molto efficace per ridurre tutti i disturbi correlati al pollice in particolare alle patologie legate al primo raggio metacarpale.</p><p><b>Ubicazione</b><br>AH14-AH16-AH18, ampia area nella radice superiore dell'antelice</p>",
             "ChiaviTsubo": ""
         },
         "084": {
@@ -1231,13 +1112,13 @@ DB.set= {
             "ChiaviTsubo": ""
         },
         "087": {
-            "NomeTsubo": "Emorroidi",
-            "AzioniTsubo": "<p><b>Altri nomi</b><br>- xxx</p><p><b>Azione</b><br>xxx</p><p><b>Ubicazione</b><br>xxx</p>",
+            "NomeTsubo": "Emorroidi CIN",
+            "AzioniTsubo": "<p><b>Azione</b><br>Patologia ano-rettale specie quella disfunzionale e vascolare.</p><p><b>Ubicazione</b><br>IH5. Superficie interna dell’elice al di sopra del suo incrocio con la radice inferiore dell’antelice.</p>",
             "ChiaviTsubo": ""
         },
         "088": {
             "NomeTsubo": "Rene EUR",
-            "AzioniTsubo": "<p><b>Altri nomi</b><br>- xxx</p><p><b>Azione</b><br>xxx</p><p><b>Ubicazione</b><br>xxx</p>",
+            "AzioniTsubo": "<p><b>Azione</b><br>Disturbi urinari, litiasi renale e disturbi dell’apparato urinario.</p><p><b>Ubicazione</b><br>IH5. Superficie interna dell’elice al di sopra del suo incrocio con la radice inferiore dell’antelice.</p>",
             "ChiaviTsubo": ""
         },
         "089": {
@@ -1257,17 +1138,12 @@ DB.set= {
         },
         "095": {
             "NomeTsubo": "Retto EUR",
-            "AzioniTsubo": "<p><b>Altri nomi</b><br>- Ano<br>- Emorroidi</p><p><b>Azione</b><br>Il Punto Retto è molto utile per ridurre i sintomi da colon irritabile, dissenteria, emorroidi, diarrea, stipsi e dolori rettali.</p><p><b>Ubicazione</b><br>IH1-SC4, al confine tra la parte nascosta della branca ascendente dell'elice e l'emiconca superiore.</p>",
-            "ChiaviTsubo": ""
-        },
-        "096": {
-            "NomeTsubo": "Prostata",
-            "AzioniTsubo": "<p><b>Altri nomi</b><br>- xxx</p><p><b>Azione</b><br>xxx</p><p><b>Ubicazione</b><br>xxx</p>",
+            "AzioniTsubo": "<p><b>Altri nomi</b><br>- Ano<br>- Emorroidi<br>- Prostata</p><p><b>Azione</b><br>Il Punto Retto è molto utile per ridurre i sintomi da colon irritabile, dissenteria, emorroidi, diarrea, stipsi e dolori rettali. Utile nella sdr delle basse vie urinarie. LUTS (Lower Urinary Tract Symptoms).</p><p><b>Ubicazione</b><br>IH1-SC4, al confine tra la parte nascosta della branca ascendente dell'elice e l'emiconca superiore.</p>",
             "ChiaviTsubo": ""
         },
         "097": {
-            "NomeTsubo": "Ghiandola sessuale EUR",
-            "AzioniTsubo": "<p><b>Altri nomi</b><br>- Ovaio<br>- Testicolo<br>- Gonadi<br>- Genitali interni</p><p><b>Azione</b><br>Questo punto trova una grande applicazione per il trattamento ed il riequilibrio delle gonadi.</p><p><b>Ubicazione</b><br>IH1, sulla superficie nascosta della branca montante dell'elice.</p>",
+            "NomeTsubo": "Ovaio-Testicoli EUR",
+            "AzioniTsubo": "<p><b>Altri nomi</b><br>- Ovaio<br>- Testicolo<br>- Gonadi<br>- Genitali interni<br>- Ghiandola sessuale EUR</p><p><b>Azione</b><br>Questo punto trova una grande applicazione per il trattamento ed il riequilibrio delle gonadi.</p><p><b>Ubicazione</b><br>IH1, sulla superficie nascosta della branca montante dell'elice.</p>",
             "ChiaviTsubo": ""
         },
         "098": {
@@ -1288,12 +1164,11 @@ DB.set= {
 		4: "Clinica psichiatrica",
 		5: "Clinica endocrinologica e apparato urogenitale",
 		6: "Clinica gastroenterologica",
-		7: "Apparato cardiocircolatorio",
+		7: "Apparato cardiocircolatorio e linfatico",
 		8: "Apparato respiratorio, fonetico e otovestibolare",
 		9: "Clinica dermatologica",
 		10: "Clinica oculistica",
-		11: "Dipendenze",
-		12: "Dolore neuropatico"
+		11: "Dipendenze"
 	},
 	"schede": {
 		1: {
@@ -3735,7 +3610,7 @@ DB.set= {
 						"165",
 						"232",
 						"166",
-						["185","305"]
+						"185"
 					]
 				},
 				"np": {
@@ -4016,7 +3891,7 @@ DB.set= {
 					"p": [
 						"154",
 						"207",
-						["142","056"],
+						"142",
 						"291",
 						"151"
 					]
@@ -4223,7 +4098,7 @@ DB.set= {
 				},
 				"ns": {
 					"p": [
-						["142","056"]
+						"142"
 					]
 				}
 			},
@@ -4235,7 +4110,7 @@ DB.set= {
 						"030",
 						"192",
 						"243",
-						["142","056"]
+						"056"
 					]
 				},
 				{
@@ -4248,8 +4123,6 @@ DB.set= {
 								"001",
 								"222",
 								"254",
-								"Uno dei due punti seguenti:",
-								"142",
 								"056"
 							]
 						}
@@ -4268,9 +4141,9 @@ DB.set= {
 				},
 				"ds": {
 					"p": [
-						["142","056"],
+						"142",
 						"199",
-						["111","088"],
+						"111",
 						"003"
 					]
 				},
@@ -4413,7 +4286,7 @@ DB.set= {
 					"t": "Componente depressiva",
 					"d": "Sul lato dominante",
 					"p": [
-						["111","088"],
+						"111",
 						"173"
 					]
 				},
@@ -4464,7 +4337,7 @@ DB.set= {
 						"230",
 						"195",
 						"137",
-						["111","088"],
+						"111",
 						"121",
 						"150"
 					]
@@ -4532,7 +4405,7 @@ DB.set= {
 					"p": [
 						"001",
 						"195",
-						["142","056"]
+						"142"
 					]
 				},
 				"ns": {
@@ -4586,50 +4459,2673 @@ DB.set= {
 				}
 			]
 		},
-		47: {},
-		48: {},
-		49: {},
-		50: {},
-		51: {},
-		52: {},
-		53: {},
-		54: {},
-		55: {},
-		56: {},
-		57: {},
-		58: {},
-		59: {},
-		60: {},
-		61: {},
-		62: {},
-		63: {},
-		64: {},
-		65: {},
-		66: {},
-		67: {},
-		68: {},
-		69: {},
-		70: {},
-		71: {},
-		72: {},
-		73: {},
-		74: {},
-		75: {},
-		76: {},
-		77: {},
-		78: {},
-		79: {},
-		80: {},
-		81: {},
-		82: {},
-		83: {},
-		84: {},
-		85: {},
-		86: {},
-		87: {},
-		88: {},
-		89: {},
-		90: {},
+		47: {
+			"g": {
+				"dp": {
+					"p": [
+						"230",
+						"137",
+						"267"
+					]
+				},
+				"ds": {
+					"p": [
+						"192",
+						"142"
+					]
+				},
+				"np": {
+					"p": [
+						"000",
+						"001",
+						"030"
+					]
+				},
+				"ns": {
+					"p": [
+						"191"
+					]
+				}
+			},
+			"s": [
+				{
+					"t": "Componente depressiva",
+					"p": [
+						"173",
+						"184",
+						"111"
+					]
+				},
+				{
+					"t": "Disturbo da attacchi di panico (DAP)",
+					"p": [
+						"129",
+						"[]Ansia di Romoli"
+					]
+				},
+				{
+					"t": "Somatizzazione dell'ansia",
+					"p": [
+						"004",
+						{
+							t: "Triade di relax",
+							p: [
+								"001",
+								"222",
+								"254"
+							]
+						},
+						{
+							t: "Rilassamento neurovegetativo",
+							p: [
+								"001",
+								"222",
+								"000",
+								"254"
+							]
+						},
+						{
+							t: "Linea degli omega",
+							p: [
+								"230",
+								"104",
+								"003"
+							]
+						}
+					]
+				}
+			]
+		},
+		48: {
+			"g": {
+				"dp": {
+					"p": [
+						"104",
+						"144",
+						"164"
+					]
+				},
+				"ds": {
+					"p": [
+						"039",
+						"135",
+						"142"
+					]
+				},
+				"np": {
+					"p": [
+						"144",
+						"000"
+					]
+				},
+				"ns": {
+					"p": [
+						"001",
+						"230"
+					]
+				}
+			},
+			"s": [
+				{
+					"t": "Ipotiroidismo",
+					"p": [
+						"268",
+						"154"
+					]
+				},
+				{
+					"t": "Componente ansiosa e stress",
+					"d": "Sul lato non dominante",
+					"p": [
+						{
+							t: "Linea degli omega",
+							p: [
+								"230",
+								"104",
+								"003"
+							]
+						},
+						{
+							t: "Triade di relax",
+							p: [
+								"001",
+								"222",
+								"254"
+							]
+						},
+						"137"
+					]
+				}
+			]
+		},
+		49: {
+			"g": {
+				"dp": {
+					"p": [
+						"230",
+						"215",
+						"195"
+					]
+				},
+				"ds": {
+					"p": [
+						"104",
+						"164",
+						"165",
+						"144",
+						"159",
+						"097"
+					]
+				},
+				"np": {
+					"p": [
+						"000",
+						"001"
+					]
+				},
+				"ns": {
+					"p": [
+						"039",
+						"230"
+					]
+				}
+			},
+			"s": [
+				{
+					"t": "Componente ansiosa e stress",
+					"d": "Sul lato non dominante",
+					"p": [
+						"137",
+						{
+							t: "Linea degli omega",
+							p: [
+								"230",
+								"104",
+								"003"
+							]
+						}
+					]
+				},
+				{
+					"t": "Miscellanea",
+					"p": [
+						"039",
+						"157",
+						"143"
+					]
+				}
+			]
+		},
+		50: {
+			"g": {
+				"dp": {
+					"p": [
+						"230",
+						"061",
+						"155"
+					]
+				},
+				"ds": {
+					"p": [
+						"003",
+						"104",
+						"039",
+						"222",
+						"067",
+						"108",
+						["031","085"],
+						"106"
+					]
+				},
+				"np": {
+					"p": [
+						"000",
+						"001"
+					]
+				},
+				"ns": {
+					"p": [
+						"180",
+						"039"
+					]
+				}
+			},
+			"s": [
+				{
+					"t": "Contrattura muscolare",
+					"d": "Sul lato dominante",
+					"p": [
+						"124"
+					]
+				},
+				{
+					"t": "Componente ansiosa e stress",
+					"d": "Sul lato non dominante",
+					"p": [
+						"[]Ansia di Romoli",
+						"030",
+						{
+							t: "Rilassamento neurovegetativo",
+							p: [
+								"001",
+								"222",
+								"000",
+								"254"
+							]
+						}
+					]
+				},
+				{
+					"t": "Miscellanea",
+					"p": [
+						"165",
+						"222"
+					]
+				}
+			]
+		},
+		51: {
+			"g": {
+				"dp": {
+					"p": [
+						"000",
+						"003",
+						"164"
+					]
+				},
+				"ds": {
+					"p": [
+						"155",
+						"039",
+						"180",
+						["031","085"],
+						"262",
+						"159",
+						"097"
+					]
+				},
+				"np": {
+					"p": [
+						"001",
+						"104"
+					]
+				},
+				"ns": {
+					"p": [
+						"000",
+						"039"
+					]
+				}
+			},
+			"s": [
+				{
+					"t": "Contrattura muscolare",
+					"d": "Sul lato dominante",
+					"p": [
+						"124"
+					]
+				},
+				{
+					"t": "Componente ansiosa e stress",
+					"d": "Sul lato non dominante",
+					"p": [
+						"173",
+						"030",
+						"[]Ansia di Romoli",
+						{
+							t: "Linea degli omega",
+							p: [
+								"230",
+								"104",
+								"003"
+							]
+						}
+					]
+				},
+				{
+					"t": "Miscellanea",
+					"p": [
+						"165",
+						"195"
+					]
+				}
+			]
+		},
+		52: {
+			"g": {
+				"dp": {
+					"p": [
+						"003",
+						"039",
+						"157"
+					]
+				},
+				"ds": {
+					"p": [
+						"164",
+						"039",
+						"230",
+						"104",
+						"262",
+						"159",
+						"097",
+						"031",
+						"085"
+					]
+				},
+				"np": {
+					"p": [
+						{
+							t: "Triade modificata",
+							p: [
+								"001",
+								"262",
+								"254"
+							]
+						}
+					]
+				},
+				"ns": {
+					"p": [
+						"000",
+						"039",
+						"199"
+					]
+				}
+			},
+			"s": [
+				{
+					"t": "Contrattura muscolare",
+					"d": "Sul lato dominante",
+					"p": [
+						"124"
+					]
+				},
+				{
+					"t": "Componente ansiosa e stress",
+					"d": "Sul lato non dominante",
+					"p": [
+						"199",
+						"030",
+						"137"
+					]
+				},
+				{
+					"t": "Miscellanea",
+					"p": [
+						"143",
+						"157",
+						"195",
+						"045",
+						"245"
+					]
+				}
+			]
+		},
+		53: {
+			"g": {
+				"dp": {
+					"p": [
+						"104",
+						"159",
+						"097",
+						"155"
+					]
+				},
+				"ds": {
+					"p": [
+						"164",
+						"039",
+						"230",
+						"004",
+						"031",
+						"085",
+						"159",
+						"097"
+					]
+				},
+				"np": {
+					"p": [
+						"000",
+						"001",
+						"164"
+					]
+				},
+				"ns": {
+					"p": [
+						"104",
+						"262"
+					]
+				}
+			},
+			"s": [
+				{
+					"t": "Contrattura muscolare",
+					"d": "Sul lato dominante",
+					"p": [
+						"124",
+						"067"
+					]
+				},
+				{
+					"t": "Componente ansiosa e stress",
+					"d": "Sul lato non dominante",
+					"p": [
+						"199",
+						"137",
+						"192",
+						"151"
+					]
+				},
+				{
+					"t": "Miscellanea",
+					"p": [
+						"262",
+						"195"
+					]
+				}
+			]
+		},
+		54: {
+			"g": {
+				"dp": {
+					"p": [
+						"000",
+						"030",
+						"155"
+					]
+				},
+				"ds": {
+					"p": [
+						"164",
+						"039",
+						"004",
+						"031",
+						"085",
+						"159",
+						"097",
+						"009",
+						"089",
+						"061"
+					]
+				},
+				"np": {
+					"p": [
+						"001",
+						"104",
+						"180"
+					]
+				},
+				"ns": {
+					"p": [
+						"000",
+						"222"
+					]
+				}
+			},
+			"s": [
+				{
+					"t": "Contrattura muscolare",
+					"d": "Sul lato dominante",
+					"p": [
+						"124",
+						"067"
+					]
+				},
+				{
+					"t": "Componente ansiosa e stress",
+					"d": "Sul lato non dominante",
+					"p": [
+						"199",
+						"[]Ansia di Romoli",
+						"192"
+					]
+				},
+				{
+					"t": "Miscellanea",
+					"p": [
+						"262",
+						"195",
+						"229"
+					]
+				}
+			]
+		},
+		55: {
+			"g": {
+				"dp": {
+					"p": [
+						"000",
+						"093"
+					]
+				},
+				"ds": {
+					"p": [
+						"221",
+						"170",
+						["092","123"]
+					]
+				},
+				"np": {
+					"p": [
+						"000",
+						"093"
+					]
+				},
+				"ns": {
+					"p": [
+						"001",
+						"[]Ansia di Romoli"
+					]
+				}
+			},
+			"s": [
+				{
+					"t": "Contrattura muscolare",
+					"d": "Sul lato dominante",
+					"p": [
+						"124"
+					]
+				},
+				{
+					"t": "Componente ansiosa e stress",
+					"d": "Sul lato non dominante",
+					"p": [
+						"199",
+						"137",
+						"192"
+					]
+				},
+				{
+					"t": "Miscellanea",
+					"p": [
+						{
+							t: "Rilassamento neurovegetativo",
+							p: [
+								"001",
+								"222",
+								"000",
+								"254"
+							]
+						},
+						"039",
+						{
+							t: "Triade di relax",
+							p: [
+								"001",
+								"222",
+								"254"
+							]
+						},
+						{
+							t: "Linea degli omega",
+							p: [
+								"230",
+								"104",
+								"003"
+							]
+						}
+					]
+				}
+			]
+		},
+		56: {
+			"g": {
+				"dp": {
+					"p": [
+						"000",
+						"061"
+					]
+				},
+				"ds": {
+					"p": [
+						"039",
+						"155",
+						"195",
+						"164",
+						"031",
+						"085"
+					]
+				},
+				"np": {
+					"p": [
+						"001",
+						"124"
+					]
+				},
+				"ns": {
+					"p": [
+						"000",
+						"155",
+						"222"
+					]
+				}
+			},
+			"s": [
+				{
+					"t": "Contrattura muscolare",
+					"d": "Sul lato dominante",
+					"p": [
+						"067"
+					]
+				},
+				{
+					"t": "Componente ansiosa e stress",
+					"d": "Sul lato non dominante",
+					"p": [
+						"030",
+						"[]Ansia di Romoli"
+					]
+				},
+				{
+					"t": "Miscellanea",
+					"p": [
+						"003",
+						"262",
+						"229"
+					]
+				}
+			]
+		},
+		57: {
+			"g": {
+				"dp": {
+					"p": [
+						"104",
+						"164",
+						"230"
+					]
+				},
+				"ds": {
+					"p": [
+						"003",
+						"004",
+						"031",
+						"085",
+						"159",
+						"097"
+					]
+				},
+				"np": {
+					"p": [
+						"001",
+						"039",
+						"[]Ansia di Romoli"
+					]
+				},
+				"ns": {
+					"p": [
+						"000"
+					]
+				}
+			},
+			"s": [
+				{
+					"t": "Componente ansiosa e stress",
+					"d": "Sul lato non dominante",
+					"p": [
+						"137",
+						"199",
+						"192"
+					]
+				},
+				{
+					"t": "Miscellanea",
+					"p": [
+						{
+							t: "Linea degli omega",
+							p: [
+								"230",
+								"104",
+								"003"
+							]
+						},
+						{
+							t: "Triade modificata",
+							p: [
+								"001",
+								"159",
+								"097",
+								"254"
+							]
+						}
+					]
+				}
+			]
+		},
+		58: {
+			"g": {
+				"dp": {
+					"p": [
+						"000",
+						"089"
+					]
+				},
+				"ds": {
+					"p": [
+						"164",
+						"230",
+						"039",
+						"155",
+						"009",
+						"159",
+						"097",
+						"031",
+						"085"
+					]
+				},
+				"np": {
+					"p": [
+						"001",
+						"089",
+						"137"
+					]
+				},
+				"ns": {
+					"p": [
+						"000"
+					]
+				}
+			},
+			"s": [
+				{
+					"t": "Componente ansiosa e stress",
+					"d": "Sul lato non dominante",
+					"p": [
+						"199"
+					]
+				},
+				{
+					"t": "Miscellanea",
+					"p": [
+						"154",
+						"151",
+						"262"
+					]
+				}
+			]
+		},
+		59: {
+			"g": {
+				"dp": {
+					"p": [
+						"155",
+						"222",
+						"230"
+					]
+				},
+				"ds": {
+					"p": [
+						"164",
+						"023",
+						"159",
+						"097",
+						"009",
+						"089"
+					]
+				},
+				"np": {
+					"p": [
+						"030",
+						"137",
+						"192"
+					]
+				},
+				"ns": {
+					"p": [
+						"001",
+						"000"
+					]
+				}
+			},
+			"s": [
+				{
+					"t": "Componente ansiosa e stress",
+					"d": "Sul lato non dominante",
+					"p": [
+						{
+							t: "Triade di relax",
+							p: [
+								"001",
+								"222",
+								"254"
+							]
+						},
+						{
+							t: "Triade adattata",
+							p: [
+								"001",
+								"009",
+								"089",
+								"254"
+							]
+						},
+						{
+							t: "Rilassamento neurovegetativo",
+							p: [
+								"001",
+								"222",
+								"000",
+								"254"
+							]
+						}
+					]
+				},
+				{
+					"t": "Miscellanea",
+					"p": [
+						"262"
+					]
+				}
+			]
+		},
+		60: {
+			"g": {
+				"dp": {
+					"p": [
+						"001",
+						"106",
+						"180"
+					]
+				},
+				"ds": {
+					"p": [
+						"039",
+						"111",
+						"104",
+						"008",
+						"109",
+						"251",
+						"105"
+					]
+				},
+				"np": {
+					"p": [
+						"000",
+						"030",
+						"117"
+					]
+				},
+				"ns": {
+					"p": [
+						"003",
+						"180"
+					]
+				}
+			},
+			"s": [
+				{
+					"t": "Componente ansiosa e stress",
+					"d": "Sul lato non dominante",
+					"p": [
+						"[]Ansia di Romoli",
+						"129",
+						"199"
+					]
+				},
+				{
+					"t": "Miscellanea",
+					"p": [
+						"165",
+						"262",
+						"004"
+					]
+				}
+			]
+		},
+		61: {
+			"g": {
+				"dp": {
+					"p": [
+						"003",
+						"111",
+						"155"
+					]
+				},
+				"ds": {
+					"p": [
+						"039",
+						"104",
+						"251",
+						"105",
+						"061"
+					]
+				},
+				"np": {
+					"p": [
+						"001",
+						"111",
+						"124"
+					]
+				},
+				"ns": {
+					"p": [
+						"000"
+					]
+				}
+			},
+			"s": [
+				{
+					"t": "Contrattura muscolare",
+					"d": "Sul lato dominante",
+					"p": [
+						"067"
+					]
+				},
+				{
+					"t": "Componente ansiosa e stress",
+					"d": "Sul lato non dominante",
+					"p": [
+						"137",
+						"030",
+						"[]Ansia di Romoli",
+						{
+							t: "Triade di relax",
+							p: [
+								"001",
+								"222",
+								"254"
+							]
+						},
+						{
+							t: "Linea degli omega",
+							p: [
+								"230",
+								"104",
+								"003"
+							]
+						}
+					]
+				}
+			]
+		},
+		62: {
+			"g": {
+				"dp": {
+					"p": [
+						"003",
+						"106",
+						"039"
+					]
+				},
+				"ds": {
+					"p": [
+						"104",
+						"157",
+						"143",
+						"230",
+						"008",
+						"109"
+					]
+				},
+				"np": {
+					"p": [
+						"030",
+						"106",
+						"222"
+					]
+				},
+				"ns": {
+					"p": [
+						"001",
+						"000",
+						"155"
+					]
+				}
+			},
+			"s": [
+				{
+					"t": "Componente ansiosa e stress",
+					"d": "Sul lato non dominante",
+					"p": [
+						"030",
+						"137",
+						"192"
+					]
+				},
+				{
+					"t": "Miscellanea",
+					"p": [
+						"061",
+						"039"
+					]
+				}
+			]
+		},
+		63: {
+			"g": {
+				"dp": {
+					"p": [
+						"003",
+						"230",
+						"106"
+					]
+				},
+				"ds": {
+					"p": [
+						"039",
+						"030",
+						"108",
+						"008",
+						"109"
+					]
+				},
+				"np": {
+					"p": [
+						"230",
+						"030",
+						"106"
+					]
+				},
+				"ns": {
+					"p": [
+						"001",
+						"000",
+						"039"
+					]
+				}
+			},
+			"s": [
+				{
+					"t": "Componente ansiosa e stress",
+					"d": "Sul lato non dominante",
+					"p": [
+						"137",
+						"192",
+						"[]Ansia di Romoli",
+						{
+							t: "Rilassamento neurovegetativo",
+							p: [
+								"001",
+								"222",
+								"000",
+								"254"
+							]
+						}
+					]
+				},
+				{
+					"t": "Miscellanea",
+					"p": [
+						"262",
+						"157",
+						"143"
+					]
+				}
+			]
+		},
+		64: {
+			"g": {
+				"dp": {
+					"p": [
+						"001",
+						"108",
+						"155"
+					]
+				},
+				"ds": {
+					"p": [
+						"164",
+						"104",
+						"061",
+						"008",
+						"109",
+						"106"
+					]
+				},
+				"np": {
+					"p": [
+						"000",
+						"003",
+						"061"
+					]
+				},
+				"ns": {
+					"p": [
+						"001",
+						"222",
+						"180"
+					]
+				}
+			},
+			"s": [
+				{
+					"t": "Componente ansiosa e stress",
+					"d": "Sul lato non dominante",
+					"p": [
+						"030",
+						"137",
+						"192",
+						"[]Ansia di Romoli"
+					]
+				},
+				{
+					"t": "Miscellanea",
+					"p": [
+						"165",
+						"262",
+						"039"
+					]
+				}
+			]
+		},
+		65: {
+			"g": {
+				"dp": {
+					"p": [
+						"104",
+						"093",
+						"039"
+					]
+				},
+				"ds": {
+					"p": [
+						"154",
+						"222",
+						"127",
+						"101",
+						"121"
+					]
+				},
+				"np": {
+					"p": [
+						"001",
+						"000",
+						"137"
+					]
+				},
+				"ns": {
+					"p": [
+						"192",
+						"093"
+					]
+				}
+			},
+			"s": [
+				{
+					"t": "Contrattura muscolare",
+					"d": "Sul lato dominante",
+					"p": [
+						"067"
+					]
+				},
+				{
+					"t": "Componente ansiosa e stress",
+					"d": "Sul lato non dominante",
+					"p": [
+						"137",
+						"[]Ansia di Romoli"
+					]
+				},
+				{
+					"t": "Miscellanea",
+					"p": [
+						"026",
+						"098",
+						"114",
+						"135"
+					]
+				}
+			]
+		},
+		66: {
+			"g": {
+				"dp": {
+					"p": [
+						"104",
+						"127",
+						"039"
+					]
+				},
+				"ds": {
+					"p": [
+						"004",
+						"180",
+						"093",
+						"099",
+						"101"
+					]
+				},
+				"np": {
+					"p": [
+						"001",
+						"000",
+						"135"
+					]
+				},
+				"ns": {
+					"p": [
+						"154",
+						"192"
+					]
+				}
+			},
+			"s": [
+				{
+					"t": "Contrattura muscolare",
+					"d": "Sul lato dominante",
+					"p": [
+						"067"
+					]
+				},
+				{
+					"t": "Componente ansiosa e stress",
+					"d": "Sul lato non dominante",
+					"p": [
+						"030",
+						"137",
+						"[]Ansia di Romoli"
+					]
+				},
+				{
+					"t": "Miscellanea",
+					"p": [
+						"135",
+						"116",
+						"121"
+					]
+				}
+			]
+		},
+		67: {
+			"g": {
+				"dp": {
+					"p": [
+						"104",
+						"127",
+						"039"
+					]
+				},
+				"ds": {
+					"p": [
+						"000",
+						"003",
+						"093",
+						"128"
+					]
+				},
+				"np": {
+					"p": [
+						"001",
+						"000",
+						"128"
+					]
+				},
+				"ns": {
+					"p": [
+						"154",
+						"195"
+					]
+				}
+			},
+			"s": [
+				{
+					"t": "Componente ansiosa e stress",
+					"d": "Sul lato non dominante",
+					"p": [
+						"192",
+						"030",
+						"137",
+						"173"
+					]
+				},
+				{
+					"t": "Miscellanea",
+					"p": [
+						{
+							t: "Rilassamento neurovegetativo",
+							p: [
+								"001",
+								"222",
+								"000",
+								"254"
+							]
+						},
+						"135"
+					]
+				}
+			]
+		},
+		68: {
+			"g": {
+				"dp": {
+					"p": [
+						"230",
+						"093",
+						"104"
+					]
+				},
+				"ds": {
+					"p": [
+						"039",
+						"000",
+						"221",
+						"127",
+						"128",
+						"114"
+					]
+				},
+				"np": {
+					"p": [
+						"000",
+						"030",
+						"221"
+					]
+				},
+				"ns": {
+					"p": [
+						"039",
+						"001",
+						"154"
+					]
+				}
+			},
+			"s": [
+				{
+					"t": "Componente ansiosa e stress",
+					"d": "Sul lato non dominante",
+					"p": [
+						"030",
+						"137",
+						"192"
+					]
+				},
+				{
+					"t": "Miscellanea",
+					"p": [
+						"121",
+						"291"
+					]
+				}
+			]
+		},
+		69: {
+			"g": {
+				"dp": {
+					"p": [
+						"000",
+						"098",
+						"154"
+					]
+				},
+				"ds": {
+					"p": [
+						"104",
+						"039",
+						"037",
+						"157",
+						"143",
+						"093",
+						"007",
+						"095"
+					]
+				},
+				"np": {
+					"p": [
+						"001",
+						"098",
+						"137"
+					]
+				},
+				"ns": {
+					"p": [
+						"000",
+						"004",
+						"[]Ansia di Romoli",
+						"093"
+					]
+				}
+			},
+			"s": [
+				{
+					"t": "Contrattura muscolare",
+					"d": "Sul lato dominante",
+					"p": [
+						"067"
+					]
+				},
+				{
+					"t": "Componente ansiosa e stress",
+					"d": "Sul lato non dominante",
+					"p": [
+						"137",
+						"173",
+						"030",
+						"199"
+					]
+				},
+				{
+					"t": "Miscellanea",
+					"p": [
+						"155",
+						"222",
+						"195"
+					]
+				}
+			]
+		},
+		70: {
+			"g": {
+				"dp": {
+					"p": [
+						"003",
+						"037",
+						["007","095"]
+					]
+				},
+				"ds": {
+					"p": [
+						"104",
+						"039",
+						"122",
+						"195",
+						"098",
+						"121",
+						"115"
+					]
+				},
+				"np": {
+					"p": [
+						"230",
+						"001",
+						"098"
+					]
+				},
+				"ns": {
+					"p": [
+						"000",
+						"154",
+						"037"
+					]
+				}
+			},
+			"s": [
+				{
+					"t": "Contrattura muscolare",
+					"d": "Sul lato dominante",
+					"p": [
+						"067"
+					]
+				},
+				{
+					"t": "Componente ansiosa e stress",
+					"d": "Sul lato non dominante",
+					"p": [
+						"137",
+						"030",
+						"[]Ansia di Romoli",
+						"004"
+					]
+				}
+			]
+		},
+		71: {
+			"g": {
+				"dp": {
+					"p": [
+						"001",
+						"098",
+						"154"
+					]
+				},
+				"ds": {
+					"p": [
+						"000",
+						"039",
+						"104",
+						"004",
+						"121",
+						"114",
+						"115",
+						"007",
+						"095"
+					]
+				},
+				"np": {
+					"p": [
+						{
+							t: "Linea degli omega",
+							p: [
+								"230",
+								"104",
+								"003"
+							]
+						}
+					]
+				},
+				"ns": {
+					"p": [
+						"001",
+						"154",
+						"137"
+					]
+				}
+			},
+			"s": [
+				{
+					"t": "Componente ansiosa e stress",
+					"d": "Sul lato non dominante",
+					"p": [
+						"192",
+						"[]Ansia di Romoli",
+						"030",
+						"199"
+					]
+				},
+				{
+					"t": "Miscellanea",
+					"p": [
+						"195"
+					]
+				}
+			]
+		},
+		72: {
+			"g": {
+				"dp": {
+					"p": [
+						"003",
+						"165",
+						["007","095"]
+					]
+				},
+				"ds": {
+					"p": [
+						"039",
+						"037",
+						"098",
+						"121",
+						"115"
+					]
+				},
+				"np": {
+					"p": [
+						"003",
+						"037",
+						"000"
+					]
+				},
+				"ns": {
+					"p": [
+						"001",
+						"230"
+					]
+				}
+			},
+			"s": [
+				{
+					"t": "Componente ansiosa e stress",
+					"d": "Sul lato non dominante",
+					"p": [
+						"199",
+						"137",
+						"[]Ansia di Romoli",
+						"192"
+					]
+				}
+			]
+		},
+		73: {
+			"g": {
+				"dp": {
+					"p": [
+						"001",
+						"003",
+						"192"
+					]
+				},
+				"ds": {
+					"p": [
+						"039",
+						"030",
+						"192",
+						"243",
+						"056",
+						"147"
+					]
+				},
+				"np": {
+					"p": [
+						"030",
+						"000",
+						"137"
+					]
+				},
+				"ns": {
+					"p": [
+						"001",
+						"142"
+					]
+				}
+			},
+			"s": [
+				{
+					"t": "Componente ansiosa e stress",
+					"d": "Sul lato non dominante",
+					"p": [
+						"004",
+						"[]Ansia di Romoli"
+					]
+				},
+				{
+					"t": "Miscellanea",
+					"p": [
+						"135",
+						"002",
+						{
+							t: "Linea degli omega",
+							p: [
+								"230",
+								"104",
+								"003"
+							]
+						}
+					]
+				}
+			]
+		},
+		74: {
+			"g": {
+				"dp": {
+					"p": [
+						"000",
+						"003",
+						"165"
+					]
+				},
+				"ds": {
+					"p": [
+						"198",
+						"147",
+						"039",
+						"056",
+						"143",
+						"157"
+					]
+				},
+				"np": {
+					"p": [
+						"003",
+						"039",
+						"137"
+					]
+				},
+				"ns": {
+					"p": [
+						"000",
+						"001"
+					]
+				}
+			},
+			"s": [
+				{
+					"t": "Componente ansiosa e stress",
+					"d": "Sul lato non dominante",
+					"p": [
+						"[]Ansia di Romoli",
+						"199",
+						"004"
+					]
+				},
+				{
+					"t": "Miscellanea",
+					"p": [
+						"135",
+						"026",
+						{
+							t: "Linea degli omega",
+							p: [
+								"230",
+								"104",
+								"003"
+							]
+						}
+					]
+				}
+			]
+		},
+		75: {
+			"g": {
+				"dp": {
+					"p": [
+						"230",
+						"039",
+						"056"
+					]
+				},
+				"ds": {
+					"p": [
+						"195",
+						"135",
+						"043",
+						"120",
+						"157",
+						"143"
+					]
+				},
+				"np": {
+					"p": [
+						"000",
+						"030",
+						"142"
+					]
+				},
+				"ns": {
+					"p": [
+						"001",
+						"137"
+					]
+				}
+			},
+			"s": [
+				{
+					"t": "Componente ansiosa e stress",
+					"d": "Sul lato non dominante",
+					"p": [
+						"030",
+						"[]Ansia di Romoli",
+						"121"
+					]
+				},
+				{
+					"t": "Miscellanea",
+					"p": [
+						"148",
+						"147",
+						{
+							t: "Linea degli omega",
+							p: [
+								"230",
+								"104",
+								"003"
+							]
+						}
+					]
+				}
+			]
+		},
+		76: {
+			"g": {
+				"dp": {
+					"p": [
+						"039",
+						"056",
+						"195"
+					]
+				},
+				"ds": {
+					"p": [
+						"043",
+						"104",
+						"030",
+						"120",
+						"157",
+						"143"
+					]
+				},
+				"np": {
+					"p": [
+						"000",
+						"030",
+						"142"
+					]
+				},
+				"ns": {
+					"p": [
+						"001",
+						"195"
+					]
+				}
+			},
+			"s": [
+				{
+					"t": "Componente ansiosa e stress",
+					"d": "Sul lato non dominante",
+					"p": [
+						"137",
+						"199",
+						"[]Ansia di Romoli",
+						{
+							t: "Triade di relax",
+							p: [
+								"001",
+								"222",
+								"254"
+							]
+						}
+					]
+				},
+				{
+					"t": "Miscellanea",
+					"p": [
+						{
+							t: "Triade modificata",
+							p: [
+								"001",
+								"056",
+								"254"
+							]
+						}
+					]
+				}
+			]
+		},
+		77: {
+			"g": {
+				"dp": {
+					"p": [
+						"001",
+						"056",
+						"111"
+					]
+				},
+				"ds": {
+					"p": [
+						"003",
+						"039",
+						"184",
+						"268",
+						"117",
+						"122",
+						"115"
+					]
+				},
+				"np": {
+					"p": [
+						"003",
+						"000",
+						"154"
+					]
+				},
+				"ns": {
+					"p": [
+						"001",
+						"111"
+					]
+				}
+			},
+			"s": [
+				{
+					"t": "Componente ansiosa e stress",
+					"d": "Sul lato non dominante",
+					"p": [
+						{
+							t: "Linea degli omega",
+							p: [
+								"230",
+								"104",
+								"003"
+							]
+						}
+					]
+				},
+				{
+					"t": "Miscellanea",
+					"p": [
+						"165",
+						"026"
+					]
+				}
+			]
+		},
+		78: {
+			"g": {
+				"dp": {
+					"p": [
+						"003",
+						"056",
+						"154"
+					]
+				},
+				"ds": {
+					"p": [
+						"039",
+						"230",
+						"268",
+						"143",
+						"157",
+						"120",
+						"043"
+					]
+				},
+				"np": {
+					"p": [
+						"000",
+						"142",
+						"111"
+					]
+				},
+				"ns": {
+					"p": [
+						"001"
+					]
+				}
+			},
+			"s": [
+				{
+					"t": "Componente ansiosa e stress",
+					"d": "Sul lato non dominante",
+					"p": [
+						"030",
+						"137",
+						"192"
+					]
+				},
+				{
+					"t": "Miscellanea",
+					"p": [
+						"165",
+						"195"
+					]
+				}
+			]
+		},
+		79: {
+			"g": {
+				"dp": {
+					"p": [
+						"000",
+						"002",
+						"253",
+						"207"
+					]
+				},
+				"ds": {
+					"p": [
+						"039",
+						"111",
+						"154",
+						"182",
+						"169"
+					]
+				},
+				"np": {
+					"p": [
+						"001",
+						"137",
+						"207"
+					]
+				},
+				"ns": {
+					"p": [
+						"222",
+						"230"
+					]
+				},
+				"d": "N.B. La Linea dei suoni (o Corteccia temporale) va eseguita sul padigione omolaterale al problema. In caso di problema bilaterale può essere eseguita su entrambi i padiglioni o su quello maggiormente interessato."
+			},
+			"s": [
+				{
+					"t": "Contrattura muscolare",
+					"d": "Sul lato dominante",
+					"p": [
+						"285",
+						"288"
+					]
+				},
+				{
+					"t": "Componente ansiosa e stress",
+					"d": "Sul lato non dominante",
+					"p": [
+						"030",
+						"192",
+						"[]Ansia di Romoli"
+					]
+				},
+				{
+					"t": "Miscellanea",
+					"p": [
+						{
+							t: "Rilassamento neurovegetativo",
+							p: [
+								"001",
+								"222",
+								"000",
+								"254"
+							]
+						},
+						"165",
+						"026"
+					]
+				}
+			]
+		},
+		80: {
+			"g": {
+				"dp": {
+					"p": [
+						"030",
+						"207"
+					]
+				},
+				"ds": {
+					"p": [
+						"230",
+						"039",
+						"291",
+						"169",
+						"147"
+					]
+				},
+				"np": {
+					"p": [
+						"001",
+						"[]Ansia di Romoli",
+						"230"
+					]
+				},
+				"ns": {
+					"p": [
+						"000",
+						"150",
+						"004"
+					]
+				}
+			},
+			"s": [
+				{
+					"t": "Componente ansiosa e stress",
+					"d": "Sul lato non dominante",
+					"p": [
+						"137",
+						"[]Ansia di Romoli",
+						"199",
+						{
+							t: "Triade di relax",
+							p: [
+								"001",
+								"222",
+								"254"
+							]
+						}
+					]
+				},
+				{
+					"t": "Miscellanea",
+					"p": [
+						"222"
+					]
+				}
+			]
+		},
+		81: {
+			"g": {
+				"dp": {
+					"p": [
+						"001",
+						"169",
+						"207"
+					]
+				},
+				"ds": {
+					"p": [
+						"170",
+						"003",
+						"111",
+						"291",
+						"120",
+						"182"
+					]
+				},
+				"np": {
+					"p": [
+						"000",
+						"003",
+						"111"
+					]
+				},
+				"ns": {
+					"p": [
+						"039",
+						"002",
+						"253",
+						"137"
+					]
+				}
+			},
+			"s": [
+				{
+					"t": "Contrattura muscolare",
+					"d": "Sul lato dominante",
+					"p": [
+						"285",
+						"288"
+					]
+				},
+				{
+					"t": "Componente ansiosa e stress",
+					"d": "Sul lato non dominante",
+					"p": [
+						"030",
+						"[]Ansia di Romoli",
+						{
+							t: "Triade modificata",
+							p: [
+								"001",
+								"169",
+								"254"
+							]
+						}
+					]
+				},
+				{
+					"t": "Miscellanea",
+					"p": [
+						"148"
+					]
+				}
+			]
+		},
+		82: {
+			"g": {
+				"dp": {
+					"p": [
+						"230",
+						"211",
+						"170"
+					]
+				},
+				"ds": {
+					"p": [
+						"254",
+						"195",
+						"003",
+						"129"
+					]
+				},
+				"np": {
+					"p": [
+						"001",
+						"137",
+						"173"
+					]
+				},
+				"ns": {
+					"p": [
+						"000",
+						"230",
+						"222"
+					]
+				}
+			},
+			"s": [
+				{
+					"t": "Componente ansiosa e stress",
+					"d": "Sul lato non dominante",
+					"p": [
+						"030",
+						"137",
+						"199"
+					]
+				},
+				{
+					"t": "Miscellanea",
+					"p": [
+						"254",
+						"207"
+					]
+				}
+			]
+		},
+		83: {
+			"g": {
+				"dp": {
+					"p": [
+						"002",
+						"165",
+						"104"
+					]
+				},
+				"ds": {
+					"p": [
+						"003",
+						"078",
+						"039",
+						"166",
+						"185"
+					]
+				},
+				"np": {
+					"p": [
+						"000",
+						"003",
+						"166"
+					]
+				},
+				"ns": {
+					"p": [
+						"001",
+						"026"
+					]
+				}
+			},
+			"s": [
+				{
+					"t": "Componente ansiosa e stress",
+					"d": "Sul lato non dominante",
+					"p": [
+						"137"
+					]
+				},
+				{
+					"t": "Miscellanea",
+					"p": [
+						"026",
+						"157",
+						"143"
+					]
+				}
+			]
+		},
+		84: {
+			"g": {
+				"dp": {
+					"p": [
+						"001",
+						"104",
+						"185"
+					]
+				},
+				"ds": {
+					"p": [
+						"003",
+						"039",
+						"165",
+						"104",
+						"157",
+						"164",
+						"166",
+						"143"
+					]
+				},
+				"np": {
+					"p": [
+						"000",
+						"166",
+						"165"
+					]
+				},
+				"ns": {
+					"p": [
+						"001",
+						"137",
+						"199"
+					]
+				}
+			},
+			"s": [
+				{
+					"t": "Componente ansiosa e stress",
+					"d": "Sul lato non dominante",
+					"p": [
+						"192",
+						"199",
+						"[]Ansia di Romoli",
+						{
+							t: "Rilassamento neurovegetativo",
+							p: [
+								"001",
+								"222",
+								"000",
+								"254"
+							]
+						}
+					]
+				},
+				{
+					"t": "Miscellanea",
+					"p": [
+						"026",
+						"078"
+					]
+				}
+			]
+		},
+		85: {
+			"g": {
+				"dp": {
+					"p": [
+						"001",
+						"002",
+						"249"
+					]
+				},
+				"ds": {
+					"p": [
+						"003",
+						"039",
+						"180",
+						"078",
+						"244",
+						"126",
+						"134"
+					]
+				},
+				"np": {
+					"p": [
+						"000",
+						"003",
+						"135"
+					]
+				},
+				"ns": {
+					"p": [
+						"002",
+						"001",
+						"192"
+					]
+				}
+			},
+			"s": [
+				{
+					"t": "Componente ansiosa e stress",
+					"d": "Sul lato non dominante",
+					"p": [
+						"004",
+						"173",
+						"192"
+					]
+				},
+				{
+					"t": "Miscellanea",
+					"p": [
+						"043",
+						"026"
+					]
+				}
+			]
+		},
+		86: {
+			"g": {
+				"dp": {
+					"p": [
+						"104",
+						"002",
+						"126"
+					]
+				},
+				"ds": {
+					"p": [
+						"039",
+						"180",
+						"078",
+						"134",
+						"249",
+						"244"
+					]
+				},
+				"np": {
+					"p": [
+						"000",
+						"003",
+						"134"
+					]
+				},
+				"ns": {
+					"p": [
+						"001",
+						"165"
+					]
+				}
+			},
+			"s": [
+				{
+					"t": "Componente ansiosa e stress",
+					"d": "Sul lato non dominante",
+					"p": [
+						"030",
+						"199",
+						"173"
+					]
+				},
+				{
+					"t": "Miscellanea",
+					"p": [
+						"026",
+						"118",
+						"184"
+					]
+				}
+			]
+		},
+		87: {
+			"g": {
+				"dp": {
+					"p": [
+						"230",
+						"268",
+						"039"
+					]
+				},
+				"ds": {
+					"p": [
+						"078",
+						"249",
+						"244",
+						"126",
+						"134"
+					]
+				},
+				"np": {
+					"p": [
+						"000",
+						"001",
+						"195"
+					]
+				},
+				"ns": {
+					"p": [
+						"180"
+					]
+				}
+			},
+			"s": [
+				{
+					"t": "Componente ansiosa e stress",
+					"d": "Sul lato non dominante",
+					"p": [
+						"030",
+						"199",
+						{
+							t: "Triade di relax",
+							p: [
+								"001",
+								"222",
+								"254"
+							]
+						}
+					]
+				},
+				{
+					"t": "Miscellanea",
+					"p": [
+						"043",
+						"026",
+						"165"
+					]
+				}
+			]
+		},
+		88: {
+			"g": {
+				"dp": {
+					"p": [
+						"164",
+						"074",
+						"215"
+					]
+				},
+				"ds": {
+					"p": [
+						"039",
+						"262",
+						"018",
+						"159",
+						"097",
+						"009",
+						"089"
+					]
+				},
+				"np": {
+					"p": [
+						"000",
+						"001",
+						"230"
+					]
+				},
+				"ns": {
+					"p": [
+						"165"
+					]
+				}
+			},
+			"s": [
+				{
+					"t": "Componente ansiosa e stress",
+					"d": "Sul lato non dominante",
+					"p": [
+						"137",
+						"192",
+						"199"
+					]
+				},
+				{
+					"t": "Miscellanea",
+					"p": [
+						"121",
+						"098"
+					]
+				}
+			]
+		},
+		89: {
+			"g": {
+				"dp": {
+					"p": [
+						"230",
+						"177",
+						"179",
+						"202",
+						"268"
+					]
+				},
+				"ds": {
+					"p": [
+						"039",
+						"157",
+						"143",
+						"159",
+						"097",
+						"262"
+					]
+				},
+				"np": {
+					"p": [
+						"000",
+						"001",
+						"164"
+					]
+				},
+				"ns": {
+					"p": [
+						"004"
+					]
+				},
+				"d": "Tra Occipite, Tempia e Fronte, scegliere 1-2 punti più sensibili"
+			},
+			"s": [
+				{
+					"t": "Componente ansiosa e stress",
+					"d": "Sul lato non dominante",
+					"p": [
+						{
+							t: "Rilassamento neurovegetativo",
+							p: [
+								"001",
+								"222",
+								"000",
+								"254"
+							]
+						},
+						{
+							t: "Triade di relax",
+							p: [
+								"001",
+								"222",
+								"254"
+							]
+						}
+					]
+				},
+				{
+					"t": "Miscellanea",
+					"p": [
+						"114"
+					]
+				}
+			]
+		},
+		90: {
+			"g": {
+				"dp": {
+					"p": [
+						"230",
+						"039",
+						"165"
+					]
+				},
+				"ds": {
+					"p": [
+						"026",
+						"004",
+						"[]Area somatotopica nel padiglione corrispondente alla zona interessata o maggiormente interessata."
+					]
+				},
+				"np": {
+					"p": [
+						"000",
+						"001",
+						"074"
+					]
+				},
+				"ns": {
+					"p": [
+						"252"
+					]
+				},
+				"d": "N.B. Tra Occipite, Tempia e Fronte, scegliere 1-2 punti più sensibili"
+			},
+			"s": [
+				{
+					"t": "Componente ansiosa e stress",
+					"d": "Sul lato non dominante",
+					"p": [
+						{
+							t: "Linea degli omega",
+							p: [
+								"230",
+								"104",
+								"003"
+							]
+						}
+					]
+				},
+				{
+					"t": "Infiammazione cronica",
+					"p": [
+						"118",
+						{
+							t: "Triade antinfiammatoria",
+							p: [
+								"003",
+								"165",
+								"039"
+							]
+						}
+					]
+				}
+			]
+		},
 		91: {
 			"g": {
 				"dp": {
@@ -4644,7 +7140,7 @@ DB.set= {
 					"p": [
 						"164",
 						"018",
-						"Area somatotopica nel padiglione corrispondente alla zona interessata."
+						"[]Area somatotopica nel padiglione corrispondente alla zona interessata."
 					]
 				},
 				"np": {
@@ -4701,16 +7197,631 @@ DB.set= {
 				}
 			]
 		},
-		92: {},
-		93: {},
-		94: {},
-		95: {},
-		96: {},
-		97: {},
-		98: {},
-		99: {},
-		100: {},
-		101: {}
+		92: {
+			"g": {
+				"dp": {
+					"p": [
+						"230",
+						"003",
+						"026"
+					]
+				},
+				"ds": {
+					"p": [
+						"078",
+						"039",
+						"118",
+						"018"
+					]
+				},
+				"np": {
+					"p": [
+						"000",
+						"001",
+						"074"
+					]
+				},
+				"ns": {
+					"p": [
+						"165"
+					]
+				}
+			},
+			"s": [
+				{
+					"t": "Componente ansiosa e stress",
+					"d": "Sul lato non dominante",
+					"p": [
+						{
+							t: "Triade di relax",
+							p: [
+								"001",
+								"222",
+								"254"
+							]
+						},
+						{
+							t: "Rilassamento neurovegetativo",
+							p: [
+								"001",
+								"222",
+								"000",
+								"254"
+							]
+						}
+					]
+				},
+				{
+					"t": "Allergia",
+					"p": [
+						"078",
+						"003",
+						"002"
+					],
+					"a": "Apice del padiglione auricolare e il punto Allergia 2 vanno punti in transfissione."
+				}
+			]
+		},
+		93: {
+			"g": {
+				"dp": {
+					"p": [
+						"003",
+						"165",
+						"230"
+					]
+				},
+				"ds": {
+					"p": [
+						"026",
+						"074",
+						"018",
+						"[]Area somatotopica nel padiglione corrispondente alla zona interessata."
+					]
+				},
+				"np": {
+					"p": [
+						"000",
+						"001",
+						"004"
+					]
+				},
+				"ns": {
+					"p": [
+						"252"
+					]
+				}
+			},
+			"s": [
+				{
+					"t": "Ipotrofia cutanea",
+					"p": [
+						"268"
+					]
+				},
+				{
+					"t": "Componente ansiosa e stress",
+					"d": "Sul lato non dominante",
+					"p": [
+						"030",
+						"137",
+						{
+							t: "Triade modificata",
+							p: [
+								"001",
+								"018",
+								"254"
+							]
+						}
+					]
+				},
+				{
+					"t": "Infiammazione",
+					"p": [
+						{
+							t: "Triade antinfiammatoria",
+							p: [
+								"003",
+								"165",
+								"039"
+							]
+						}
+					]
+				},
+				{
+					"t": "Artrite psorisiaca",
+					"p": [
+						"[]Articolazione interessata dal dolore"
+					]
+				}
+			]
+		},
+		94: {
+			"g": {
+				"dp": {
+					"p": [
+						"230",
+						"215",
+						"165"
+					]
+				},
+				"ds": {
+					"p": [
+						"039",
+						"157",
+						"003",
+						"185"
+					]
+				},
+				"np": {
+					"p": [
+						"000",
+						"001",
+						"252"
+					]
+				},
+				"ns": {
+					"p": [
+						"074"
+					]
+				}
+			},
+			"s": [
+				{
+					"t": "Componente ansiosa e stress",
+					"d": "Sul lato non dominante",
+					"p": [
+						"137",
+						{
+							t: "Triade di relax",
+							p: [
+								"001",
+								"222",
+								"254"
+							]
+						},
+						{
+							t: "Triade modificata",
+							p: [
+								"001",
+								"Uno dei seguenti 2 punti:",
+								"215",
+								"185",
+								"254"
+							]
+						},
+						{
+							t: "Linea degli omega",
+							p: [
+								"230",
+								"104",
+								"003"
+							]
+						}
+					]
+				},
+				{
+					"t": "Infiammazione",
+					"p": [
+						"026",
+						"118",
+						{
+							t: "Triade antinfiammatoria",
+							p: [
+								"003",
+								"165",
+								"039"
+							]
+						}
+					]
+				},
+				{
+					"t": "Dismetabolismo",
+					"p": [
+						"121"
+					]
+				}
+			]
+		},
+		95: {
+			"g": {
+				"dp": {
+					"p": [
+						"222",
+						"111",
+						"003"
+					]
+				},
+				"ds": {
+					"p": [
+						"121",
+						"291",
+						"132",
+						"231"
+					]
+				},
+				"np": {
+					"p": [
+						"000",
+						"001",
+						"039"
+					]
+				},
+				"ns": {
+					"p": [
+						"268"
+					]
+				}
+			},
+			"s": [
+				{
+					"t": "Componente ansiosa e stress",
+					"d": "Sul lato non dominante",
+					"p": [
+						{
+							t: "Triade di relax",
+							p: [
+								"001",
+								"222",
+								"254"
+							]
+						},
+						{
+							t: "Rilassamento neurovegetativo",
+							p: [
+								"001",
+								"222",
+								"000",
+								"254"
+							]
+						}
+					]
+				},
+				{
+					"t": "Miscellanea",
+					"p": [
+						"148",
+						"157",
+						"143"
+					]
+				}
+			]
+		},
+		96: {
+			"g": {
+				"dp": {
+					"p": [
+						"104",
+						"222",
+						"268"
+					]
+				},
+				"ds": {
+					"p": [
+						"003",
+						"164",
+						"118",
+						"132",
+						"231"
+					]
+				},
+				"np": {
+					"p": [
+						"000",
+						"001",
+						"268"
+					]
+				},
+				"ns": {
+					"p": [
+						"154"
+					]
+				}
+			},
+			"s": [
+				{
+					"t": "Componente ansiosa e stress",
+					"d": "Sul lato non dominante",
+					"p": [
+						{
+							t: "Linea degli omega",
+							p: [
+								"230",
+								"104",
+								"003"
+							]
+						}
+					]
+				}
+			]
+		},
+		97: {
+			"g": {
+				"dp": {
+					"p": [
+						"104",
+						"118",
+						"117"
+					]
+				},
+				"ds": {
+					"p": [
+						"164",
+						"222",
+						"132"
+					]
+				},
+				"np": {
+					"p": [
+						"000",
+						"001",
+						"026"
+					]
+				},
+				"ns": {
+					"p": [
+						"154"
+					]
+				}
+			},
+			"s": [
+				{
+					"t": "Infiammazione",
+					"d": "Sul lato dominante",
+					"p": [
+						"165"
+					]
+				},
+				{
+					"t": "Componente ansiosa e stress",
+					"d": "Sul lato non dominante",
+					"p": [
+						{
+							t: "Linea degli omega",
+							p: [
+								"230",
+								"104",
+								"003"
+							]
+						}
+					]
+				},
+				{
+					"t": "Allergia",
+					"p": [
+						"078",
+						"003",
+						"002"
+					]
+				}
+			]
+		},
+		98: {
+			"g": {
+				"dp": {
+					"p": [
+						"222",
+						"111",
+						"002",
+						"253"
+					]
+				},
+				"ds": {
+					"p": [
+						"154",
+						"148",
+						"132",
+						"231"
+					]
+				},
+				"np": {
+					"p": [
+						"000",
+						"001",
+						"002",
+						"253"
+					]
+				},
+				"ns": {
+					"p": [
+						"192"
+					]
+				}
+			},
+			"s": [
+				{
+					"t": "Componente ansiosa e stress",
+					"d": "Sul lato non dominante",
+					"p": [
+						"137",
+						"[]Ansia di Romoli"
+					]
+				},
+				{
+					"t": "Miscellanea",
+					"p": [
+						"030",
+						"192",
+						"243"
+					]
+				}
+			]
+		},
+		99: {
+			"g": {
+				"dp": {
+					"p": [
+						"039",
+						"222",
+						"154"
+					]
+				},
+				"ds": {
+					"p": [
+						"104",
+						"231",
+						"132"
+					]
+				},
+				"np": {
+					"p": [
+						"000",
+						"001",
+						"003"
+					]
+				},
+				"ns": {
+					"p": [
+						"230"
+					]
+				}
+			},
+			"s": [
+				{
+					"t": "Componente ansiosa e stress",
+					"d": "Sul lato non dominante",
+					"p": [
+						{
+							t: "Linea degli omega",
+							p: [
+								"230",
+								"104",
+								"003"
+							]
+						},
+						{
+							t: "Rilassamento neurovegetativo",
+							p: [
+								"001",
+								"222",
+								"000",
+								"254"
+							]
+						}
+					]
+				},
+				{
+					"t": "Miscellanea",
+					"p": [
+						"121",
+						"122",
+						"157",
+						"143"
+					]
+				}
+			]
+		},
+		100: { // programma antitabacco classico di Nogier
+			"tit": "TRATTAMENTO",
+			"g": {
+				"dp": {
+					"p": [
+						"015",
+						"000",
+						"199",
+						"195"
+					]
+				},
+				"np": {
+					"p": [
+						"000"
+					]
+				}
+			},
+			"d": "Per valutare il grado di intensità e il tipo di terapia antifumo, effettuare i due test che si trovano negli approfondimenti: ",
+			"t": true,
+			"hiddenPoints": [
+				"015"
+			]
+		},
+		101: { // programma antitabacco di Rossato
+			"tit": "TRATTAMENTO",
+			"g": {
+				"dp": {
+					"p": [
+						"015",
+						"000",
+						"199",
+						"195"
+					]
+				},
+				"np": {
+					"p": [
+						"000"
+					]
+				},
+				"d": "PUNTO EXTRA: Ai punti auricolari, va aggiunto il punto dell'agopuntura somatica Tim Mee, punto extra meridiano posizionato lateralmente al punto LU.7, dove è palpabile una cresta ossea.<br><br><b>Sequenza di infissione</b><br>I punti vengono infissi seguendo uno schema predefinito e secondo una modalità di stimolazione.<br><b>D</b> dispersione, con ago in inspirazione e rotazione in senso antiorario.<br><b>T</b> tonificazione, con ago in espirazione e rotazione in senso orario.<br><br>- <b>Tin Mee (D)</b>: bilaterale<br>- <b>P1 e P2 (D)</b>: pungere verso il lobo<br>- <b>P3</b>: indifferente<br>- <b>P4, P5, P6 e P7 (T)</b>: pungere verso l'alto<br>- <b>Aggressività (D)</b><br>- <b>Epifisi (D)</b><br>- <b>Punto Zero (D)</b>: lato dominante<br>- <b>Punto Zero (T)</b>: lato non dominante<br><br><b>Elettrostimolazione</b><br>Quando gli agi sono infissi, vanno elettrostimolati a 15Hz per 30 minuti, aumentando l'intensità ogni 5 minuti, per consentire l'adattamento del paziente. L'elettrostimolazione va effettuata in quattro coppie:<br>1(-) Punto Zero dominante<br>1(+) Punto Zero non dominante<br>2(-)Aggressività<br>2(+)Epifisi<br>3(-)P7<br>3(+)P4<br>4(-)P2<br>4(+)P1<br><br><b>Prescrizioni extra trattamento</b><br>- Vitamina C come disintossicante<br>- Bere 2-3 litri d'acua al giorno<br>- Bastoncini di liquirizia per compensazione orale<br>- Polvere di peperoncino integrale come condimento agli alimenti<br>- Il medico può consigliare un ansiolitico all'occorrenza"//- Alprazolam 0,25mg, 2 volte al giorno<br>N.B. Alprazolam deve essere preso solo sotto prescrizione medica e solo se non è controindicato."
+			},
+			"d": "Per valutare il grado di intensità e il tipo di terapia antifumo, effettuare i due test che si trovano negli approfondimenti: ",
+			"t": true,
+			"hiddenPoints": [
+				"015"
+			]
+		},
+		102: { // programma antitabacco Lovato
+			"tit": "RIDUZIONE GRADUALE",
+			"g": {
+				"sx": {
+					"p": [
+						"001",
+						"137",
+						"030",
+						"267",
+						"230"
+					]
+				},
+				"dx": {
+					"p": [
+						"000",
+						"004",
+						"192",
+						"267"
+					]
+				},
+				"d": "Il protocollo va eseguito una volta a settimana con diminuzione di 3 sigarette a seduta. Si utilizzano di aghi estemporanei.<br><br><b>Trattamento pazienti ansiosi</b><br>Su pazienti particolarmente ansiosi si consiglia di applicare una Triade di relax sul padiglione sinistro per 5 giorni con <i>aghi a semipermanenza</i>. Tali aghi vanno rimossi 2 giorni prima della seduta successiva, nella quale può venire applicata nuovamente la Triade di relax o in alternanza con la Linea degli Omega."
+			},
+			"s": [
+				{
+					"t": "Sospensione improvvisa",
+					"d": "Su entrambi i padiglioni",
+					"p": [
+						"000",
+						"267",
+						"230",
+						"137"
+					],
+					"a": "Per la sospensione improvvisa del fumo è richiesta un'astinenza di almeno 12 ore prima della seduta. In caso il paziente non riesca a rispettare l'astinenza, evitare di applicare il protocollo perché da una parte ciò vuol dire che non è motivato e dall'altra i punti saranno meno sensibili al trattamento.<br><br><b>Modalità di esecuzione</b><br>Eseguire l'elettroagopuntura in seduta unica seguendo lo scheda indicato, con una frequenza di 15Hz e per 25 minuti, in particolare San Jiao e il punto del Craving.<br><br><b>Recidiva e difficoltà a smettere</b><br>In caso di recidiva o difficoltà a mantenere l'astinenza è possibile ripetere la seduta ad una settimana di distanza.<br><br><b>Integrazione con il protocollo di riduzione graduale</b><br>Questo protocollo è indicato anche per i soggetti che abbiamo effettuato la riduzione graduale e abbiamo difficoltà a togliere le ultime 2-3 sigarette."
+				}
+			],
+			"d": "Per valutare il grado di intensità e il tipo di terapia antifumo, effettuare i due test che si trovano negli approfondimenti: ",
+			"t": true
+		},
+		103: { // protocollo NADA
+			"tit": "TRATTAMENTO",
+			"g": {
+				"sx": {
+					"p": [
+						"001",
+						"039",
+						"111",
+						"121",
+						"244"
+					]
+				},
+				"dx": {
+					"p": [
+						"001",
+						"039",
+						"111",
+						"121",
+						"244"
+					]
+				},
+				"d": "<b>ALCOLISMO</b><br><b>Fase 1</b>: trattare ogni giorno, per 5 giorni alla settimana più 2 (weekend) con i semi di vaccaria, per 2 settimane. Fase adatta a curare i sintomi di astinenza.<br><b>Fase 2</b>: trattaere 3 volte a settimana, per 2 settimane, per curare sintomi di origine psicologica, ansia, insonnia e desiderio di alcol o droga.<br><b>Fase 3</b>: una volta stabilizata la sobrietà, si eseguono 2 sedute alla settimana, per una settimana o più, per continuare e consolidare la sensazione di benessere e controllo.<br><br><b>TABAGISMO</b><br><b>Fase 1</b>: trattare ogni giorno, per 5 giorni alla settimana più 2 (weekend) con i semi di vaccaria, per 2 settimane. Fase adatta a contrastare i sintomi di astinenza da tabacco.<br><b>Fase 2</b>: quando il consumo di sigarette si riduce a zero (o quasi), si eseguono 3 sedute a settimana per 2 settimane. Questa fase contrasta i sintomi psicologici, ansia, insonnia e desiderio di tabacco.<br><b>Follow-up</b>: a 15 giorni, 3 mesi e 6 mesi.<br><br><b>RICADUTE</b><br>In qualsiasi momento lo desideri, il paziente può decidere di usufruire della fase 1 di qualsiasi protocollo con il fine di arrestare repentinamente le ricadure. Acudetox è risultato particolarmente efficace in questa fase dove altre terapie hanno fallito." 
+			},
+			"d": "Per valutare il grado di intensità e il tipo di terapia antifumo, effettuare i due test che si trovano negli approfondimenti: ",
+			"t": true
+		}
 	},
 	"patologie": [
 		{
@@ -4719,7 +7830,7 @@ DB.set= {
 			"sessoPatologia": "",
 			"chiaviPatologia": "",
 			"scheda": 88,
-			"apparato": 8
+			"apparato": 9
 		},
 		{
 			"NomePatologia": "Acufeni/tinnitus",
@@ -4747,19 +7858,11 @@ DB.set= {
 		},
 		{
 			"NomePatologia": "Ageusia",
-			"TestoPatologia": "<div>L'ageusia è un disturbo che provoca la perdita del gusto.&nbsp;</div><div>Può essere causata da infezioni delle vie respiratorie superiori, ferite alla testa e in alcuni casi in seguito&nbsp; a malattie che possono essere associate alla perdita dell'olfatto.</div><div><br></div><div>Per il trattamento di Auricoloterapia è consigliata con stimolazione del lobo (dove sono rappresentati cervello e organi di senso) attraverso tecniche di&nbsp; automassaggio, aghi pulce o elettrostimolazione.</div><div><br></div><div><b>M.T.C.</b></div><div>L’ageusia può essere la manifestazione di un deficit di yin da parte di Stomaco e Milza. Spesso abbinato a Lingua senza patina ed un polso Superficiale-Vuoto, specialmente nella Barriera di destra.</div>",
+			"TestoPatologia": "<div>L'ageusia è un disturbo che provoca la perdita del gusto.&nbsp;</div><div>Può essere causata da infezioni delle vie respiratorie superiori, ferite alla testa e in alcuni casi in seguito&nbsp; a malattie che possono essere associate alla perdita dell'olfatto.</div><div><br></div><div>Per il trattamento di Auricoloterapia è consigliata con stimolazione del lobulo (dove sono rappresentati cervello e organi di senso) attraverso tecniche di&nbsp; automassaggio, aghi pulce o elettrostimolazione.</div><div><br></div><div><b>M.T.C.</b></div><div>L’ageusia può essere la manifestazione di un deficit di yin da parte di Stomaco e Milza. Spesso abbinato a Lingua senza patina ed un polso Superficiale-Vuoto, specialmente nella Barriera di destra.</div>",
 			"sessoPatologia": "",
 			"chiaviPatologia": "",
 			"scheda": 33,
 			"apparato": 3
-		},
-		{
-			"NomePatologia": "Agopuntura auricolare nelle dipendenze",
-			"TestoPatologia": "",
-			"sessoPatologia": "",
-			"chiaviPatologia": "",
-			"scheda": 100,
-			"apparato": 11
 		},
 		{
 			"NomePatologia": "Algie pelviche femminili",
@@ -5218,14 +8321,6 @@ DB.set= {
 			"apparato": 6
 		},
 		{
-			"NomePatologia": "Dipendenze e agopuntura auricolare",
-			"TestoPatologia": "",
-			"sessoPatologia": "",
-			"chiaviPatologia": "",
-			"scheda": 100,
-			"apparato": 11
-		},
-		{
 			"NomePatologia": "Disartria funzionale",
 			"TestoPatologia": "<div>La disartria è una condizione caratterizzata da debolezza, difficoltà nel controllare o coordinare i muscoli usati per parlare.</div><div>Spesso caratterizzato da linguaggio e comprensione confusi o lenti, il disturbo può essere causato da alcuni farmaci o problemi con il sistema nervoso.</div>",
 			"sessoPatologia": "",
@@ -5432,14 +8527,6 @@ DB.set= {
 			"chiaviPatologia": "",
 			"scheda": 5,
 			"apparato": 1
-		},
-		{
-			"NomePatologia": "Dolore neuropatico - Nevralgia",
-			"TestoPatologia": "<div>La nevralgia, chiamata anche neuropatia, dolore neuropatico o dolore neurogeno, è una condizione che provoca un forte dolore a causa dell’irritazione di un nervo danneggiato.&nbsp;</div><div>L'infiammazione può verificarsi in un punto qualsiasi del corpo, ma le tre nevralgie più comuni sono la nevralgia del trigemino, che colpisce il volto, la nevralgia intercostale, che causa dolore tra le costole, e la sciatica, che colpisce la parte inferiore della schiena e le gambe.</div><div>Il dolore si diffonde lungo tutto il percorso del nervo, su una delle radici che lo connettono al sistema nervoso centrale (SNC) o in tutto ciò che risponde ai suoi impulsi e può essere momentaneo o cronico.</div><div>Questa condizione è più comune negli anziani, ma può colpire a qualsiasi età.</div>",
-			"sessoPatologia": "",
-			"chiaviPatologia": "",
-			"scheda": 101,
-			"apparato": 12
 		},
 		{
 			"NomePatologia": "Dorsalgia su base artrosica",
@@ -6218,6 +9305,38 @@ DB.set= {
 			"apparato": 5
 		},
 		{
+			"NomePatologia": "Programma antitabacco classico di Nogier",
+			"TestoPatologia": "<div>L'agopuntura è efficace nell'interrompere la dipendenza da nicotina.</div><div>Il trattamento si basa sull'analisi completa dei sintomi di astinenza e mira a bilanciare le energie del corpo per migliorare la salute.</div><div>L’agopuntura può aiutare chi desidera smettere di fumare, riducendo il desiderio della sigaretta, l’ansia e la necessità del rituale associato alla sigaretta. Il trattamento permette di determinare una sensazione di disgusto del sapore e dell’odore della sigaretta.</div><div>Se il soggetto è intenzionato a smettere di fumare, già al terzo o quarto trattamento si vedono gli effetti benefici.</div><br><div>Il protocollo classico, messo a punto da P. Nogier è della durata di 15-20 minuti in un'unica seduta e richiede l'astinenza di almeno 6 ore prima del trattamento.</div>",
+			"sessoPatologia": "",
+			"chiaviPatologia": "",
+			"scheda": 100,
+			"apparato": 11
+		},
+		{
+			"NomePatologia": "Programma antitabacco di G. Rossato",
+			"TestoPatologia": "Il programma messo a punto dal dr. Giacomo Rossato, è un adattamento del classico programma antitabacco di Nogier al quale viene aggiunto un punto dell'agopuntura somatica: il punto extrameridiano Tin Mee. Questo programma prevede una sola seduta e richiede l'astinenza dal tabacco per le 12 ore precedenti al trattamento ed è indicato per quei pazienti che rispondono bene al tutto o niente. In caso di recidiva o di difficoltà a smettere, è possibile ripeterla dopo 5-8 giorni.",
+			"sessoPatologia": "",
+			"chiaviPatologia": "",
+			"scheda": 101,
+			"apparato": 11
+		},
+		{
+			"NomePatologia": "Programma antitabacco di A. Lovato",
+			"TestoPatologia": "<div>Si tratta di due protocolli messi a punto dal dr. A. Lovato e che prevedono rispettivamente una riduzione graduale e un'interruzione improvvisa della dipendenza.<br>La scelta di quale protocollo terapeutico seguire è dettata da alcune valutazioni e si cerca im ogni caso di andare incontro alle naturali tendenze del paziente:<br>- <b>Grado di dipendenza</b>: se la dipendenza è alta (vedi test di Fagerström) si devo optare unicamente per la riduzione graduale, mentre in caso di media entità si può invece valutare il protocollo interruzione improvvisa. In caso di dipendenza medio-bassa è possibile applicare il protocollo in un'unica seduta eseguendo l'elettroaagopuntura.<br>- <b>Aspetto psicologico</b>: se la tendenza del paziente è quella del tutto o niente va scelto di preferena il protocollo di interruzione improvvisa e viceversa.<br>- <b>Motivazione</b>: non si deve tentare una terapiù antifumo in un paziente poco motivato a smettere in quanto non avrà quasi sicuramente efficacia.<br>- <b>Informazione</b>: informare opportunamente il paziente sull'utilità dell'agopuntura auricolare per la riduzione della dipendenza.</div><br><div><b>Risultati della terapia</b><br>La percentuale di efficacia del protocollo antifumo si aggira attorno al 50%, con variazione in base al grado di motivazione del paziente. Essa è infatti più altà nei soggetti che si sottopongono al protocollo di sospensione improvvisa, a causa dell'entità generalmente medio-bassa della dipendenza e del fatto che generalmente se si ha intenzione di smettere improvvisamente vuol dire che si è più motivati. Mentre risulta più ricca di insuccessi la scelta della riduzione graduale, in quanto chi si sottopone a tale programma manifesta inconsapevolmente una difficoltà nell'abbandonare il fumo.</div>",
+			"sessoPatologia": "",
+			"chiaviPatologia": "",
+			"scheda": 102,
+			"apparato": 11
+		},
+		{
+			"NomePatologia": "Protocollo NADA per le dipendenze",
+			"TestoPatologia": "NADA è l'acronimo di National Acupuncture Detoxification Association, associazione fondata nel 1985 negli USA, con lo scopo di diffondere il protocollo Antidetox basato sul trattamento con aghi senza elettrostimolazione, pratica invece utilizzata fino ad allora per il trattamento delle tossicodipendenze al Lincon Hospital nel South Bronx (NY).<br><br><b>AMBITI DI APPLICAZIONE</b><br><b>1. Tossicodipendenza</b><br>Il protocollo per le tossicodipendenze si affianca alla normale terapia farmacologica in un'ottica di trattamento integrato e si rivolge a soggetti con una anche minima volontà di disintossicazione. Nel programma Acudetox l'agopuntura aiuta i pazienti a conseguire velocemente uno stato di equilibrio fisiologico e psicologico consentendo loro una maggiore partecipazione al programma di recupero. Diversi studi hanno dimostrato l'efficacia dell'agopuntura nel trattamento dei sintomi della sindrome di astinenza da droghe in tutte le fasi (acuta, postacuta e ricadute).<br><br><b>2. Alcolismo</b><br>Utilizzata con funzione di l'anticraving come sostegno alle terapie psicologiche e negli interventi di riabilitazione sociale.  Anche in questo caso sono stati riscontrati risultati positivi nel trattamento dei sintomi della sindrome di astinenza.<br><br><b>3. Tabagismo</b><br>Su soggetti sufficientemente motivati, il protocollo NADA, se eseguito correttamente, consente di interrompere rapidamente la dipendenza da nicotina. In questo caso la terapia risulta molto efficace (circa il 70% dei successi).",
+			"sessoPatologia": "",
+			"chiaviPatologia": "",
+			"scheda": 103,
+			"apparato": 11
+		},
+		{
 			"NomePatologia": "Psoriasi",
 			"TestoPatologia": "<div>La psoriasi è una patologia infiammatoria cronica della pelle, caratterizzata da&nbsp; aree ispessite (placche eritematose e rotondeggianti, chiaramente delimitate ai bordi), ricoperte di squame di un colore biancastro che sfuma nel grigio-argenteo. In alcuni casi, queste lesioni possono provocare prurito.</div><div>Spesso i fattori scatenanti comprendono i traumi, le infezioni e alcuni farmaci. I sintomi sono di solito minimi, ma può essere presente prurito da lieve a intenso. Alcuni soggetti possono sviluppare una malattia grave con coinvolgimento articolare (artrite psoriasica). La diagnosi si basa sull'aspetto e sulla distribuzione delle lesioni. Il trattamento può comprendere trattamenti topici (p. es., emollienti, analoghi della vitamina D3, retinoidi, catrame di petrolio, antralina, corticosteroidi), fototerapia e, nelle forme gravi, farmaci sistemici (p. es., metotrexato, retinoidi orali, ciclosporina, agenti immunomodulatori [biologici]).</div><div>L'età di insorgenza è bimodale, di solito verso 16-22 anni o 57-60 anni, ma la patologia può insorgere a qualsiasi età.</div><div>La psoriasi si manifesta in varie forme. Le principali sono: in placche, guttata pustolosa,eritrodermica, seborroica, amiantacea,</div><div>Le sedi più interessate sono: i gomiti, le ginocchia, la zona sacrale, la zona periombelicale.</div>",
 			"sessoPatologia": "",
@@ -6255,7 +9374,7 @@ DB.set= {
 			"sessoPatologia": "",
 			"chiaviPatologia": "",
 			"scheda": 37,
-			"apparato": 2
+			"apparato": 3
 		},
 		{
 			"NomePatologia": "Rinite acuta",
@@ -6450,14 +9569,6 @@ DB.set= {
 			"apparato": 2
 		},
 		{
-			"NomePatologia": "Smettere di fumare",
-			"TestoPatologia": "<div>L'agopuntura è efficace nell'interrompere la dipendenza da nicotina.</div><div>Il trattamento si basa sull'analisi completa dei sintomi di astinenza e mira a bilanciare le energie del corpo per migliorare la salute.</div><div>L’agopuntura può aiutare chi desidera smettere di fumare, riducendo il desiderio della sigaretta, l’ansia e la necessità del rituale associato alla sigaretta. Il trattamento permette di determinare una sensazione di disgusto del sapore e dell’odore della sigaretta.</div><div>Se il soggetto è intenzionato a smettere di fumare, già al terzo o quarto trattamento si vedono gli effetti benefici.</div>",
-			"sessoPatologia": "",
-			"chiaviPatologia": "",
-			"scheda": 100,
-			"apparato": 11
-		},
-		{
 			"NomePatologia": "Sovrappeso/obesità e disturbi alimentari.",
 			"TestoPatologia": "<div>L'obesità è una malattia che si caratterizza per un accumulo patologico di grasso corporeo con conseguenze anche importanti per lo stato di salute e la qualità di vita.&nbsp;</div><div>Può essere la causa dell'insorgenza di pressione alta, diabete mellito, apnee notturne e patologie cardiovascolari.</div><div>Generalmente è la causa di un’alimentazione scorretta e di una vita sedentaria. Alimentazione e attività fisica sono comportamenti fortemente influenzati dalle condizioni sociali, economiche e culturali.&nbsp;</div><div>A livello psicologico, l’obesità può stravolgere completamente la vita di una persona: chi è obeso spesso viene isolato e sottoposto a una vera e propria stigmatizzazione sociale, che rende difficile qualunque tipo di socialità. In particolare, i bambini in sovrappeso tendono a sviluppare un rapporto difficile con il proprio corpo e con i propri coetanei, con conseguente isolamento, che spesso si traduce in ulteriori abitudini sedentarie.</div><div>Una prima valutazione del peso corporeo si può effettuare mediante l’indice di massa corporea (BMI) che mette in relazione peso e altezza (si ricava dividendo il peso in kg per il quadrato dell’altezza espressa in metri).&nbsp;</div>",
 			"sessoPatologia": "",
@@ -6506,6 +9617,14 @@ DB.set= {
 			"apparato": 6
 		},
 		{
+			"NomePatologia": "Sterilità di coppia",
+			"TestoPatologia": "...",
+			"sessoPatologia": "",
+			"chiaviPatologia": "",
+			"scheda": 57,
+			"apparato": 5
+		},
+		{
 			"NomePatologia": "Stress",
 			"TestoPatologia": "",
 			"sessoPatologia": "",
@@ -6520,14 +9639,6 @@ DB.set= {
 			"chiaviPatologia": "",
 			"scheda": 41,
 			"apparato": 3
-		},
-		{
-			"NomePatologia": "Tabagismo",
-			"TestoPatologia": "<div>L'agopuntura è efficace nell'interrompere la dipendenza da nicotina.</div><div>Il trattamento si basa sull'analisi completa dei sintomi di astinenza e mira a bilanciare le energie del corpo per migliorare la salute.</div><div>L’agopuntura può aiutare chi desidera smettere di fumare, riducendo il desiderio della sigaretta, l’ansia e la necessità del rituale associato alla sigaretta. Il trattamento permette di determinare una sensazione di disgusto del sapore e dell’odore della sigaretta.</div><div>Se il soggetto è intenzionato a smettere di fumare, già al terzo o quarto trattamento si vedono gli effetti benefici.</div>",
-			"sessoPatologia": "",
-			"chiaviPatologia": "",
-			"scheda": 100,
-			"apparato": 11
 		},
 		{
 			"NomePatologia": "Tachicardia, bradicardia e cardiopalmo",
@@ -6678,6 +9789,31 @@ DB.set= {
             "noList": true
         },
         {
+            "TitoloSezione": "Test antitabacco",
+            "contenuti": [
+                {
+                    "TitoloTeoria": "Introduzione",
+                    "TestoTeoria": "Questo test serve per valutare il grado di motivazione e il livello di dipendenza del paziente ed è finalizzato alla creazione di una proposta terapeutica per smettere di fumare. Affettuare i test nell'ordine indicato e leggere le proposte indicate nella terza e ultima scheda.<div style=\"padding-left:15px;\" id=\"patologieTests\"><p>1. Test di Mondor (motivazione)</p><p>2. Test di Fagerström (dipendenza)</p><p>3. Proposta terapeutica</p></div><div class=\"btns\" style=\"text-align:left;\"><div class=\"btn_invia\" onClick=\"SET.caricaTest(1);\">INIZIA IL TEST</div></div>"
+                },
+                {
+                    "TitoloTeoria": "1. Test di Mondor (motivazione)",
+                    "TestoTeoria": "Questo test è utile a valutare il livello di motivazione a smettere di fumare.",
+					"test": "motivazione"
+                },
+                {
+                    "TitoloTeoria": "2. Test di Fagerström (dipendenza)",
+                    "TestoTeoria": "Questo test è necessario per definire il grado di dipendenza dal fumo.",
+					"test": "dipendenza"
+                },
+                {
+                    "TitoloTeoria": "3. Proposta terapeutica",
+                    "TestoTeoria": "Da eseguire a seguito dei test di Mondor e di Fagerström.<br>Gli step 2 e 3 si intendono riespettivamente di seconda e terza scelta se i protocolli precedenti non sono stati efficaci o non sono stati eseguiti per varie motivazioni.",
+					"flowchart": true
+                }
+            ],
+            "noList": true
+        },
+        {
             "TitoloSezione": "Categorie di punti",
             "contenuti": [
                 {
@@ -6732,5 +9868,178 @@ DB.set= {
                 }
             ]
         }
-    ]
+    ],
+	"tests": {
+		"motivazione": {
+			"q": [
+				{
+					"d": "Ho deciso di presentarmi spontaneamente",
+					"r": [
+						{ t: "Sì", v: 2},
+						{ t: "No", v: 0}
+					]
+				},
+				{
+					"d": "Ho già smesso di fumare per più di una settimana",
+					"r": [
+						{ t: "Sì", v: 1},
+						{ t: "No", v: 0}
+					]
+				},
+				{
+					"d": "Attualmente non ho problemi sul lavoro",
+					"r": [
+						{ t: "Sì", v: 1},
+						{ t: "No", v: 0}
+					]
+				},
+				{
+					"d": "Attualmente non ho problemi sul piano familiare",
+					"r": [
+						{ t: "Sì", v: 1},
+						{ t: "No", v: 0}
+					]
+				},
+				{
+					"d": "Mi voglio liberare da questa schiavitù",
+					"r": [
+						{ t: "Sì", v: 2},
+						{ t: "No", v: 0}
+					]
+				},
+				{
+					"d": "Pratico dello sport/hi intenzione di praticarlo",
+					"r": [
+						{ t: "Sì", v: 1},
+						{ t: "No", v: 0}
+					]
+				},
+				{
+					"d": "Voglio raggiungere una forma fisica migliore",
+					"r": [
+						{ t: "Sì", v: 1},
+						{ t: "No", v: 0}
+					]
+				},
+				{
+					"d": "Voglio curare il mio aspetto fisico",
+					"r": [
+						{ t: "Sì", v: 1},
+						{ t: "No", v: 0}
+					]
+				},
+				{
+					"d": "Sono incinta/Mia moglie è incinta",
+					"r": [
+						{ t: "Sì", v: 1},
+						{ t: "No", v: 0}
+					]
+				},
+				{
+					"d": "Ho dei bambini piccoli",
+					"r": [
+						{ t: "Sì", v: 2},
+						{ t: "No", v: 0}
+					]
+				},
+				{
+					"d": "Attualmente sono di buon umore",
+					"r": [
+						{ t: "Sì", v: 2},
+						{ t: "No", v: 0}
+					]
+				},
+				{
+					"d": "Di solito porto a termine quello che intraprendo",
+					"r": [
+						{ t: "Sì", v: 1},
+						{ t: "No", v: 0}
+					]
+				},
+				{
+					"d": "Sono di temperamento calmo e disteso",
+					"r": [
+						{ t: "Sì", v: 1},
+						{ t: "No", v: 0}
+					]
+				},
+				{
+					"d": "Il mio peso è abitualmente stabile",
+					"r": [
+						{ t: "Sì", v: 1},
+						{ t: "No", v: 0}
+					]
+				},
+				{
+					"d": "Voglio migliorare la qualità della mia vita",
+					"r": [
+						{ t: "Sì", v: 1},
+						{ t: "No", v: 0}
+					]
+				}
+			],
+			"ris": {
+				0: "Scarsa motivazione",
+				6: "Discreta motivazione",
+				12: "Buona motivazione",
+				16: "Alta motivazione"
+			}
+		},
+		"dipendenza": {
+			"q": [
+				{
+					"d": "Quanto tempo dopo il risveglio accende la prima sigaretta?",
+					"r": [
+						{ t: "Entro 5 minuti", v: 3},
+						{ t: "Dopo 6-30 minuti", v: 2},
+						{ t: "Dopo 31-60 minuti", v: 1},
+						{ t: "Dopo 60 minuti", v: 0}
+					]
+				},
+				{
+					"d": "Fa fatica a non fumare nei luoghi in cui è proibito?",
+					"r": [
+						{ t: "Sì", v: 1},
+						{ t: "No", v: 0}
+					]
+				},
+				{
+					"d": "A quale sigaretta le costa di più rinunciare?",
+					"r": [
+						{ t: "La prima del mattino", v: 1},
+						{ t: "Tutte le altre", v: 0}
+					]
+				},
+				{
+					"d": "Quante sigarette fuma al giorno?",
+					"r": [
+						{ t: "10 o meno", v: 0},
+						{ t: "Da 11 a 20", v: 1},
+						{ t: "Da 21 a 30", v: 2},
+						{ t: "31 o più", v: 3}
+					]
+				},
+				{
+					"d": "Fuma più frequentemente durante la prima ora dal risveglio che durante il resto del giorno?",
+					"r": [
+						{ t: "Sì", v: 1},
+						{ t: "No", v: 0}
+					]
+				},
+				{
+					"d": "Fuma anche quando è così malato da passare a letto la maggior parte del giorno?",
+					"r": [
+						{ t: "Sì", v: 1},
+						{ t: "No", v: 0}
+					]
+				}
+			],
+			"ris": {
+				0: "Dipendenza bassa",
+				3: "Dipendenza media",
+				6: "Dipendenza alta",
+				8: "Dipendenza molto alta"
+			}
+		}
+	}
 }

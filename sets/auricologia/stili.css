@@ -118,6 +118,8 @@ body.orecchio #pulsante_modello{
 	text-overflow:ellipsis;
 	overflow:hidden;
     white-space: nowrap;
+}
+#cont_protocollo .pallinoPat{
 	width: calc(100%);
 }
 .pallinoPat:not(.noPall){
@@ -346,20 +348,20 @@ body:not(.touch) .listaPunti .spazioDopo{
 }
 .elencoFiltri input,
 .elencoPunti input{
-	width: calc(100% - 8px);
+	width: calc(100% - 30px);
     border: 1px solid rgba(255,255,255,0.4);
     border-radius: 3px;
     background-color: rgba(255,255,255,0.3);
     height: 26px;
     line-height: 26px;
     text-align: center;
-    margin: 5px 4px;
+   /* margin: 5px 4px;*/
     background-image: url(../../img/lente.png);
     background-repeat: no-repeat;
     background-position: left center;
     background-size: auto 90%;
 }
-.smart.android .elencoFiltri input,
+/*.smart.android .elencoFiltri input,*/
 .smart.android .elencoPunti input{
     height: 32px;
     line-height: 32px;
@@ -626,17 +628,24 @@ body:not(.smart) .selElPt{
 
 
 #p_filtri{
-	background-image:url(../../img/frGiuB.png);
-	background-position:right center;
-	background-repeat:no-repeat;
-	background-size:contain;
-	cursor:pointer;
 	background-color: rgba(255,255,255,0.32);
     border-radius: 5px;
-    padding-left: 10px;
+    padding-left: 2px;
     height: 30px;
     line-height: 30px;
     margin-top: 5px;
+}
+#btnFiltri{
+	background-image: url(../../img/frGiuB.png);
+    background-position: right center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+    display: inline-block;
+    vertical-align: top;
+    margin-left: -3px;
 }
 .smart.android #p_filtri{
     height: 40px;
@@ -646,11 +655,13 @@ body:not(.smart) .selElPt{
 }
 #p_filtri.op{
     background-color: #c3c2bf !important;
-	background-image:url(../../img/frSuB.png) !important;
 	border-bottom-left-radius: 0px !important;
     border-bottom-right-radius: 0px !important;
 	z-index: 1;
     position: relative;
+}
+#p_filtri.op #btnFiltri{
+	background-image:url(../../img/frSuB.png) !important;
 }
 #f_filtri{
 	border-bottom-left-radius: 5px;
@@ -1266,6 +1277,10 @@ body:not(.smart) #filtriSmart_cont div:not(.elencoSel):not(.selected):hover{
     background-position: left center;
     background-size: 20px 100%;
 }
+.ptTr{
+	overflow-x: hidden;
+    white-space: nowrap;
+}
 .ptTr > div{
 	display: inline-block;
 	vertical-align: middle;
@@ -1317,4 +1332,215 @@ body.orecchio .eviPoints{
 }
 body:not(.orecchio) #schedaTerapeutica{
 	background-color: rgba(0,0,0,0.1) !important;
+}
+
+
+
+/* TESTS */
+#test_cont{
+	margin-top:20px;
+	border-top:1px solid rgba(0,0,0,0.3);
+	padding-top:20px;
+}
+#test_cont > div:not(#test_ris):not(#test_save){
+	border-bottom:1px solid rgba(0,0,0,0.2);
+}
+#test_cont > div:not(#test_ris):not(#test_int):not(#test_save):hover{
+	background-color:rgba(0,0,0,0.03);
+}
+#test_cont > div:not(#test_ris).checked{
+	background-image:url(../../img/p_selected.png);
+	background-position:left top;
+	background-repeat:no-repeat;
+	padding-left:30px;
+}
+.test_d{
+	padding-left:7px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+.test_q{
+	padding:4px 0px;
+}
+.test_q  select{
+	display: inline-block;
+    height: 30px;
+    line-height: 30px;
+	border-radius:6px;
+	padding-left:10px;	
+	padding-right:30px;	
+	margin-left: 10px;
+	background-image:url(../../img/frGiuB.png);
+	background-size:auto 100%;
+	background-repeat:no-repeat;
+	background-position:right center;
+	background-color:#FFF;
+	appearance:none;
+	-webkit-appearance:none;
+	border:none;
+	box-shadow:0px 0px 3px rgba(0,0,0,0.5);
+	cursor:pointer;
+	float:right;
+}
+
+#test_ris{
+	text-align:right;
+	margin:1px 0px;
+	display:none;
+	background-color: #ff0086;
+}
+#test_ris > span{
+	display:inline-block;
+	vertical-align:top;
+	height:30px;
+	line-height:30px;
+	padding:0px 10px;
+	margin-left:-4px;
+	text-align:right;
+	margin-top:1px;
+	color:#FFF;
+}
+.test_v:not(.valSel):hover{
+	background-color:rgba(0,0,0,0.2) !important;
+}
+.test_l{
+	width:30px;
+	text-align:center;
+}
+#test_ris{
+    border-radius: 6px;
+    margin-top: 5px;
+    padding-right: 1px;
+}
+#test_TOT{
+	font-weight:bold;
+}
+#test_cont .btn_annulla{
+	color: #000 !important;
+    margin-right: 10px !important;
+}
+
+#test_int{
+	font-weight: bold;
+}
+#test_save{
+	display:none;
+	text-align:right;
+}
+#test_cont *.vis{
+	display:block !important;
+}
+#test_cont *.noVis{
+	display:none !important;
+}
+
+/* FLOW CHART */
+#flowchart_cont{
+	
+}
+#flowchart_cont > div:not(#flowchart_prop){
+	border-bottom:1px solid rgba(0,0,0,0.2);
+}
+#flowchart_cont > div > span{
+	display:inline-block;
+	vertical-align:top;
+	height:36px;
+	line-height:36px;
+	padding-left:10px;
+	margin-right:-4px;
+}
+#flowchart_cont > div > span:first-child{
+	width:150px;
+}
+#flowchart_cont > div > span:last-child{
+	width:calc(100% - 150px);
+}
+#flowchart_cont > div > span:last-child select{
+	display: inline-block;
+    height: 30px;
+    line-height: 30px;
+	border-radius:6px;
+	padding-left:10px;	
+	padding-right:30px;	
+	margin-top:3px;
+	background-image:url(../../img/frGiuB.png);
+	background-size:auto 100%;
+	background-repeat:no-repeat;
+	background-position:right center;
+	background-color:#FFF;
+	appearance:none;
+	-webkit-appearance:none;
+	border:none;
+	box-shadow:0px 0px 3px rgba(0,0,0,0.5);
+	cursor:pointer;
+	width:100%;
+}
+#flowchart_prop{
+	padding-top:20px;
+}
+#flowchart_prop > p{
+	text-align:center;
+}
+#props_nocont{
+	text-align:center;
+}
+
+#props_labels > div,
+.props_cont > div{
+	display:inline-block;
+	vertical-align:middle;
+	margin-right:-4px;
+	width:calc(100% / 3 );
+	text-align:center;
+}
+#props_labels{
+	margin-top:20px;
+}
+#props_labels > div{
+	font-weight:bold;
+}
+#flowchart_prop > div > div:not(#props_nocont){
+	display:none;
+}
+#flowchart_prop *.vis{
+	display:block !important;
+}
+#flowchart_prop *.noVis{
+	display:none !important;
+}
+
+.props_cont > div > a{
+	display:block;
+	margin:5px;
+	border-radius:8px;
+	padding:5px 8px;
+	text-align:center;
+	cursor:pointer;
+}
+
+.props_cont > div:nth-child(1) a{
+    background-color: #e5b47d;
+}
+.props_cont > div:nth-child(1) a:hover{
+    background-color: #dfa35f !important;
+}
+
+.props_cont > div:nth-child(2) a{
+    background-color: #9bcce1;
+}
+.props_cont > div:nth-child(2) a:hover{
+	background-color: #85c2db !important;
+}
+
+.props_cont > div:nth-child(3) a{
+    background-color: rgba(0,0,0,0.1);
+}
+.props_cont > div:nth-child(3) a:hover{
+	background-color: rgba(0,0,0,0.2) !important;
+}
+
+#flowchart_prop > div > div > p{
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+    margin-bottom: 0px;
+    line-height: 22px;
 }

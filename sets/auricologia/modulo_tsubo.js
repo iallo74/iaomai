@@ -28,23 +28,21 @@ var MODULO_TSUBO = { // extend SET
 		else type = 'NR';
 		if(GEOMETRIE.gruppi.MASTER.punti.indexOf(siglaTsubo)>-1)master = true;
 		
-		var phs = ["","2","3"];
-		for(ph in phs){
-			var els = scene.getObjectByName("PTs"+phs[ph]).children;
-			for(e in els){
-				if(els[e].name == "PT"+siglaTsubo){
-					lato = els[e].userData.lato;
-					system = els[e].userData.system;
-				}
-			}
-			var els = scene.getObjectByName("ARs"+phs[ph]).children;
-			for(e in els){
-				if(els[e].name == "AR"+siglaTsubo){
-					lato = els[e].userData.lato;
-					system = els[e].userData.system;
-				}
+		var els = scene.getObjectByName("PTs"+SET.phase).children;
+		for(e in els){
+			if(els[e].name == "PT"+siglaTsubo){
+				lato = els[e].userData.lato;
+				system = els[e].userData.system;
 			}
 		}
+		var els = scene.getObjectByName("ARs"+SET.phase).children;
+		for(e in els){
+			if(els[e].name == "AR"+siglaTsubo){
+				lato = els[e].userData.lato;
+				system = els[e].userData.system;
+			}
+		}
+		
 		var HTML_setting_text = '';
 		var HTML_setting_symb = '';
 		if(type=='FN'){

@@ -28,6 +28,18 @@ SET = {
 	lmVis: false,
 	patOp: -1,
 	schEvi: null,
+	testTOT: 0,
+	risTest:{
+		dipendenza: {
+			tot: -1,
+			vals: {}
+		},
+		motivazione: {
+			tot: -1,
+			vals: {}
+		}
+	},
+	test: '',
 	groupSel: {
 		type: '',
 		val: '',
@@ -41,6 +53,7 @@ SET = {
 					"2336",
 					"292" ],
 	phase: '',
+	hiddenPoints: [],
 	
 	// FUNZIONI
 	_init: function(){
@@ -265,6 +278,7 @@ SET = {
 				var system = "";
 				if(PTS[p].nome.indexOf("EUR")>-1)system = "EUR";
 				if(PTS[p].nome.indexOf("CIN")>-1)system = "CIN";
+				if(PTS[p].nome.indexOf("INT")>-1)system = "";
 				var lato = "";
 				if(PTS[p].nome.indexOf("SX")>-1)lato = "SX";
 				if(PTS[p].nome.indexOf("DX")>-1)lato = "DX";
@@ -309,6 +323,10 @@ SET = {
 				this.P[n].position.set(x,y,z);
 				this.P[n].name=name;
 				//this.P[n].visible = vis;
+				if(PTS[p].nome.indexOf("HIDE")>-1){
+					this.P[n].visible = false;
+					this.P[n].hide = true;
+				}
 				this.P[n].userData.type = 'point';
 				this.P[n].userData.system = system;
 				this.P[n].userData.freq = freq;
@@ -325,6 +343,10 @@ SET = {
 				this.P[n].position.set(x,y,z);
 				this.P[n].name='_'+name;
 				//this.P[n].visible = vis;
+				if(PTS[p].nome.indexOf("HIDE")>-1){
+					this.P[n].visible = false;
+					this.P[n].hide = true;
+				}
 				this.P[n].userData.raycastable = true;
 				this.P[n].userData.nota = false;
 				this.P[n].userData.type = 'point';
@@ -469,6 +491,7 @@ SET = {
 		if(scene.getObjectByName('pins_muscoli') && muscleView){
 			scene.getObjectByName('pins_muscoli').visible = false;
 		}
+		if(__(localStorage.risTest))SET.risTest = JSON.parse(localStorage.risTest);
 		/*
 		Attivare per settare con il pulsante "q" le rotazioni automatiche sui punti
 		*/
@@ -674,6 +697,7 @@ SET = {
 	
 	apriTsubo: function( PT_name, ritorno, el ){
 		var PT=scene.getObjectByName( PT_name );
+		if(typeof(PT)=='undefined')PT = scene.getObjectByName( PT_name.replace("PT","AR") );
 		var type = (PT.userData.type == 'point')?"punti":"aree";
 		name = PT_name.substr(PT_name.length-3,3);
 		
@@ -691,7 +715,7 @@ SET = {
 		
 		this.ptSel=PT;
 		
-		document.getElementById("ts_"+name).classList.add("selElPt");
+		if(document.getElementById("ts_"+name))document.getElementById("ts_"+name).classList.add("selElPt");
 		
 		var PT_name_first= null;
 		var AR_name_first= null;
@@ -771,7 +795,8 @@ SET = {
 		if(!this.ptSel)return;
 		document.getElementById("scheda").classList.remove("tab_tsubo");
 		document.getElementById("scheda").classList.remove("schForm");
-		document.getElementById("ts_"+this.ptSel.name.substr(2,3)).classList.remove("selElPt");
+		if(document.getElementById("ts_"+this.ptSel.name.substr(2,3)))
+			document.getElementById("ts_"+this.ptSel.name.substr(2,3)).classList.remove("selElPt");
 		
 		if(!nonChiudereScheda){
 			endChangeDetection();
@@ -1039,6 +1064,9 @@ SET = {
 					SET.note.indexOf(PT_name) == -1 ){
 					system = els[e].userData.system;
 					els[e].material = eval("SET.MAT.point"+tipo+system);
+					if(SET.tsuboEvidenziati.length && SET.tsuboEvidenziati.indexOf(PT_name)>-1){
+						els[e].material.opacity = 0.5;
+					}
 				}
 			}
 			var els = scene.getObjectByName("ARs"+phs[ph]).children;
@@ -1052,6 +1080,9 @@ SET = {
 						if(tipo=='Base')tipo='';
 					}
 					els[e].material = eval("SET.MAT.area"+tipo+system);
+					if(SET.tsuboEvidenziati.length && SET.tsuboEvidenziati.indexOf(PT_name)>-1){
+						els[e].material.opacity = 0.5;
+					}
 				}
 			}
 		}
@@ -1128,21 +1159,18 @@ SET = {
 	},
 	
 	addEviPalls: function( PT_name, tipo ){
-		var phs = ["","2","3"];
-		for(ph in phs){
-			var els = scene.getObjectByName("PTs"+phs[ph]).children;
-			for(e in els){
-				if(els[e].name.indexOf(PT_name)==0){
-					var name = ' point: '+els[e].name+"_"+e;
-					if(!scene.getObjectByName(tipo+name)){
-						var geoPoint =  new THREE.SphereGeometry( 0.11, 16, 16 );
-						var eviPoint;
-						eviPoint =  new THREE.Mesh( geoPoint, this.MAT.pointSel2.clone() );
-						eviPoint.name=tipo+name;
-						eviPoint.material.visible=true;
-						eviPoint.position.set( els[e].position.x, els[e].position.y, els[e].position.z );
-						SETS.add( eviPoint );
-					}
+		var els = scene.getObjectByName("PTs"+SET.phase).children;
+		for(e in els){
+			if(els[e].name.indexOf(PT_name)==0){
+				var name = ' point: '+els[e].name+"_"+e;
+				if(!scene.getObjectByName(tipo+name)){
+					var geoPoint =  new THREE.SphereGeometry( 0.11, 16, 16 );
+					var eviPoint;
+					eviPoint =  new THREE.Mesh( geoPoint, this.MAT.pointSel2.clone() );
+					eviPoint.name=tipo+name;
+					eviPoint.material.visible=true;
+					eviPoint.position.set( els[e].position.x, els[e].position.y, els[e].position.z );
+					SETS.add( eviPoint );
 				}
 			}
 		}

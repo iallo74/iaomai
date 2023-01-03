@@ -10,10 +10,12 @@ var MODULO_PUNTI = { // extend SET
 		var puntiElenco = [];
 		for(siglaTsubo in DB.set.punti){
 			if(__(DB.set.punti[siglaTsubo])){
-				puntiElenco.push({
-					siglaTsubo: siglaTsubo,
-					NomeTsubo: DB.set.punti[siglaTsubo].NomeTsubo
-				});
+				if(!__(DB.set.punti[siglaTsubo].hide,false)){
+					puntiElenco.push({
+						siglaTsubo: siglaTsubo,
+						NomeTsubo: DB.set.punti[siglaTsubo].NomeTsubo
+					});
+				}
 			}
 		}
 		puntiElenco.sort(sort_by("NomeTsubo", false));
@@ -29,14 +31,16 @@ var MODULO_PUNTI = { // extend SET
 		}
 		
 		// FILTRI
-		var contFiltri =	'<div onClick="SET.swFiltri();"' +
-							'     id="p_filtri">'+htmlEntities(TXT("Filtri"))+'</div>' +
-							'<span id="f_filtri"' +
-							'	   class="elencoFiltri">'+
+		var contFiltri =	'<div id="p_filtri">' +//+htmlEntities(TXT("Filtri"))+
 							'	<input id="punti_ricerca"' +
 							'		   onKeyUp="SET.filtraPunti();"' +
 							'		   class="okPlaceHolder"' +
 							'		   placeholder="'+htmlEntities(TXT("CercaPunti"))+'"'+H.noAutoGen+'>' +
+							'	<span id="btnFiltri"' +
+							'		  onClick="SET.swFiltri();"></span>' +
+							'</div>' +
+							'<span id="f_filtri"' +
+							'	   class="elencoFiltri">'+
 							'	<div id="groupsList">' +
 							
 							'	<p id="f_INT"><a class="pallinoPat pallinoPatEsteso pallinoGroup" '+
@@ -251,15 +255,13 @@ var MODULO_PUNTI = { // extend SET
 			var a = els[e].getElementsByTagName("a")[0];
 			var siglaTsubo = a.id.replace("ts_","");
 			var pass = false;
-			//if(i.innerHTML.toLowerCase().indexOf(el.value.toLowerCase())==-1)pass = true;
 			if(	DB.set.punti[siglaTsubo].NomeTsubo.toLowerCase().indexOf(el.value.toLowerCase())==-1 &&
 				DB.set.punti[siglaTsubo].AzioniTsubo.toLowerCase().indexOf(el.value.toLowerCase())==-1 &&
 				DB.set.punti[siglaTsubo].ChiaviTsubo.toLowerCase().indexOf(el.value.toLowerCase())==-1 ){
 					pass = true;
 			}
-			//if(__(DB.set.punti[siglaTsubo].PH) != SET.phase && document.getElementById("ts_"+siglaTsubo))pass = true;
-			if(	__(DB.set.punti[siglaTsubo]["PH"+SET.phase],false) ||
-				!document.getElementById("ts_"+siglaTsubo) )pass = false;
+			if(!__(DB.set.punti[siglaTsubo]["PH"+SET.phase],false) && SET.phase)pass = true;
+			if(!document.getElementById("ts_"+siglaTsubo))pass = true;
 			els[e].classList.toggle("nasPT",pass);
 		}
 	},
