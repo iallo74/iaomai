@@ -121,12 +121,13 @@ SET = {
 					var mesh =  loader.parse(JSON.parse(LZString.decompressFromBase64(LNS[l].obj)));
 					
 					var name = mesh.name.split(" ")[0];
+					var orName = mesh.name;
 					mesh.name = name;
 					var vis = true;
 					var PH = '';
 					var type = '';
-					if(	mesh.name.indexOf("AG")==0 ||
-						mesh.name.indexOf("(GRUPPO)")>-1){
+					if(	orName.indexOf("AG")==0 ||
+						orName.indexOf("(GRUPPO)")>-1){
 						mesh.visible = false;
 						if(mesh.name.indexOf("AG")==0){
 							mesh.material = this.MAT.lineNeedle;
@@ -140,11 +141,11 @@ SET = {
 							}
 							
 						}
-						if(mesh.name.indexOf("(GRUPPO)")>-1)mesh.material = this.MAT.lineGroup;
+						if(orName.indexOf("(GRUPPO)")>-1)mesh.material = this.MAT.lineGroup;
 						mesh.userData.gruppo = true;
 						mesh.PH = PH;
 						eval("LN"+PH+".add( mesh )");
-					}else if(	mesh.name.indexOf("LM")==0 ){
+					}else if( orName.indexOf("LM")==0 ){
 						mesh.material = this.MAT.lineLM;
 						LM.add( mesh );
 					}else{

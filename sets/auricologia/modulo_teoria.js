@@ -75,6 +75,7 @@ var MODULO_TEORIA = { // extend SET
 				normalizeRotation();
 				rotateEnd = { x:pos.x, y: ((MODELLO.flip) ? 0-pos.y : pos.y), z:0 };
 			}
+				console.log(gruppo)
 			if(scene.getObjectByName(gruppo)){
 				elPin = scene.getObjectByName(gruppo);
 				elPin.visible = true;
