@@ -295,6 +295,7 @@ var MODULO_PUNTI = { // extend SET
 					if(!type)vis = true;
 				}
 				var visEl = vis;
+				if(DB.set.punti[name].hidden)visEl = false;
 				if(__(els[e].userData.locked,false))visEl = false;
 				els[e].visible = visEl;
 				if(document.getElementById("ts_"+name)){

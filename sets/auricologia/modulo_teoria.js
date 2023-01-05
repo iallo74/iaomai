@@ -1,7 +1,7 @@
 
 var MODULO_TEORIA = { // extend SET
 	
-	TEORIA_free: [ "0_0" ],
+	TEORIA_free: [ "0_0", "0_1" ],
 	
 	caricaApprofondimenti: function(){ // carica la lista degli approfondimenti
 		var contTeoria = '';
@@ -59,7 +59,7 @@ var MODULO_TEORIA = { // extend SET
 		if(gruppo){
 			document.getElementById("sceltaPhaseElenco").selectedIndex = 0;
 			if(SET.phase)setTimeout(function(){SET.setPhase('');},500);
-			var mAtt=DB.set.teoria[4].contenuti[t].sigla;
+			var mAtt=DB.set.teoria[SET.idTeoCategorie].contenuti[t].sigla;
 			var elencoTsubo='<br><b>'+htmlEntities(TXT("ElencoPunti"))+'</b>';
 			for(g in GEOMETRIE.gruppi[gruppo].punti){
 				var TS = GEOMETRIE.gruppi[gruppo].punti[g];
@@ -88,7 +88,7 @@ var MODULO_TEORIA = { // extend SET
 			}
 			addClose = "SET.hideGroupLines();";
 		}
-		
+
 		html += html_cont;
 		if(test)html += SET.scriviTest(test);
 		if(flowchart)html += SET.scriviFlowChart();

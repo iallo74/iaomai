@@ -55,9 +55,15 @@ SET = {
 	phase: '',
 	hiddenPoints: [],
 	
+	idTeoAnatomia: 0,
+	idTeoConcetti: '0_1',
+	idTeoCategorie: 2,
+	idTeoTests: 3,
+	
 	// FUNZIONI
 	_init: function(){
 		if(!__(localStorage.imgMappa))localStorage.imgMappa = 'BN';
+		if(!__(localStorage.listPatType))localStorage.listPatType = 'category';
 		
 		SETS = new THREE.Group();
 		SETS.name = "SETS";
@@ -190,25 +196,15 @@ SET = {
 				if(mesh.name.indexOf("SX")>-1)lato = "SX";
 				if(mesh.name.indexOf("DX")>-1)lato = "DX";
 				
-				//var vis = true;
 				var PH = '';
-				if(mesh.name.indexOf("PH2")>-1){
-					//vis = false;
-					PH = '2';
-				}
-				if(mesh.name.indexOf("PH3")>-1){
-					//vis = false;
-					PH = '3';
-				}
+				if(mesh.name.indexOf("PH2")>-1)PH = '2';
+				if(mesh.name.indexOf("PH3")>-1)PH = '3';
 				
 				var FN = false;
 				if(GEOMETRIE.gruppi.FN.punti.indexOf(name.substr(2,3))>-1)FN = true;
 				var master = (GEOMETRIE.gruppi.MASTER.punti.indexOf(name.substr(2,3))>-1);
-				//if(typeof(DB.set.punti[name.substr(2,3)])=='undefined')console.log(name.substr(2,3))
 				
-				//var pF = mesh.name.split(" ");
-				
-				var freq = [];//pF[pF.length-1];
+				var freq = [];
 				for(f in SET.frequenze){
 					if(mesh.name.indexOf("_"+SET.frequenze[f])>-1)freq.push( SET.frequenze[f] );
 				}
@@ -220,7 +216,6 @@ SET = {
 				var mat = 'this.MAT.areaBase'+system;
 				
 				mesh.material = cloneMAT(eval(mat));
-				//mesh.visible = vis;
 				if(mesh.name.indexOf("HIDE")>-1){
 					mesh.visible = false;
 					mesh.userData.hidden = true;
@@ -292,19 +287,11 @@ SET = {
 				if(PTS[p].nome.indexOf("SX")>-1)lato = "SX";
 				if(PTS[p].nome.indexOf("DX")>-1)lato = "DX";
 				
-				//var vis = true;
 				var PH = '';
-				if(PTS[p].nome.indexOf("PH2")>-1){
-					//vis = false;
-					PH = '2';
-				}
-				if(PTS[p].nome.indexOf("PH3")>-1){
-					//vis = false;
-					PH = '3';
-				}
+				if(PTS[p].nome.indexOf("PH2")>-1)PH = '2';
+				if(PTS[p].nome.indexOf("PH3")>-1)PH = '3';
 				
-				//var pF = PTS[p].nome.split(" ");
-				var freq = [];//pF[pF.length-1];
+				var freq = [];
 				for(f in SET.frequenze){
 					if(PTS[p].nome.indexOf(" "+SET.frequenze[f])>-1)freq.push( SET.frequenze[f] );
 				}
@@ -313,12 +300,10 @@ SET = {
 				var FN = false;
 				if(GEOMETRIE.gruppi.FN.punti.indexOf(name.substr(2,3))>-1)FN = true;
 				var master = (GEOMETRIE.gruppi.MASTER.punti.indexOf(name.substr(2,3))>-1);
-				//if(typeof(DB.set.punti[name.substr(2,3)])=='undefined')console.log(name.substr(2,3))
 				
 				
 				// pallino colorato
 				n++;
-				/////var geometry = new THREE.SphereGeometry( 0.02, 6, 6 );
 				if(PH){
 					system = 'EUR';
 					if(PH=='2')DB.set.punti[name.substr(2,3)].PH2 = true;
@@ -327,11 +312,9 @@ SET = {
 				var mat = 'this.MAT.pointBase'+system;
 				
 				this.P[n] = new THREE.Mesh( this.geometryPallino, cloneMAT(eval(mat)) );
-				//this.P[n] = new THREE.Mesh( this.geometryPallino, eval(mat) );
 				
 				this.P[n].position.set(x,y,z);
 				this.P[n].name=name;
-				//this.P[n].visible = vis;
 				if(PTS[p].nome.indexOf("HIDE")>-1){
 					this.P[n].visible = false;
 					this.P[n].userData.hidden = true;
@@ -347,11 +330,9 @@ SET = {
 					
 				// pallino trasparente
 				n++;
-				////var geometryTrasp = new THREE.SphereGeometry( 0.07, 8, 8 );
 				this.P[n] = new THREE.Mesh( this.geometryPallinoTrasp, this.MAT.pointTrasp ); 
 				this.P[n].position.set(x,y,z);
 				this.P[n].name='_'+name;
-				//this.P[n].visible = vis;
 				if(PTS[p].nome.indexOf("HIDE")>-1){
 					this.P[n].visible = false;
 					this.P[n].userData.hidden = true;
@@ -432,7 +413,6 @@ SET = {
 		HTML_imp += '<div style="margin-top:30px;"><span class="annullaBtn" onclick="MENU.chiudiMenu();">'+TXT("Annulla")+'</span><span class="submitBtn" onclick="SET.salvaImpostazioni();">'+TXT("Salva")+'</span></div>';
 		document.getElementById("contImpset").innerHTML = HTML_imp;
 		
-		//SCHEDA.apriElenco();
 		if(preElenco)SCHEDA.selElenco(preElenco);
 		
 		// pallini di evidenza
@@ -559,7 +539,8 @@ SET = {
 							if(	SETS.children[i].children[ii].visible &&
 								SETS.children[i].children[ii].isGroup &&
 								SETS.children[i].children[ii].name.substr(0,2)!='LN' &&
-								SETS.children[i].children[ii].name.substr(0,2)!='GD'){
+								SETS.children[i].children[ii].name.substr(0,2)!='GD' &&
+								SETS.children[i].children[ii].name.substr(0,2)!='LM'){
 								var intersects = raycaster.intersectObjects( SETS.children[i].children[ii].children );
 								if ( intersects.length > 0 ) { // roll-over
 									for(l in intersects)ints.push(intersects[l]);
@@ -963,23 +944,9 @@ SET = {
 		for(k in result){
 			var pT=result[k].split("'");
 			var siglaTsubo = pT[1];
-			var phs = ["","2","3"];
-			for(ph in phs){
-				var els = scene.getObjectByName("PTs"+phs[ph]).children;
-				for(e in els){
-					if(els[e].name.indexOf("_PT"+siglaTsubo)==0){
-						els[e].material=SET.MAT.pointEvi;
-					}
-				}
-				var els = scene.getObjectByName("ARs"+phs[ph]).children;
-				for(e in els){
-					if(els[e].name.indexOf("AR"+siglaTsubo)==0){
-						els[e].material=SET.MAT.areaEvi;
-					}
-				}
-			}
 			SET.tsuboEvidenziati.push(siglaTsubo);
 		}
+		SET.applicaEvidenziaTsubo();
 		/*SET.hideGroupLines();
 		var re = /data-tri="[^"]+"/ig;
 		var result = html.match(re);
@@ -996,22 +963,33 @@ SET = {
 		SET.annullaEvidenziaTsubo();
 		for(k in elenco){
 			siglaTsubo = elenco[k].split(".")[0];
-			var phs = ["","2","3"];
-			for(ph in phs){
-				var els = scene.getObjectByName("PTs"+phs[ph]).children;
-				for(e in els){
-					if(els[e].name.indexOf("_PT"+siglaTsubo)==0){
-						els[e].material=SET.MAT.pointEvi;
-					}
-				}
-				var els = scene.getObjectByName("ARs"+phs[ph]).children;
-				for(e in els){
-					if(els[e].name.indexOf("AR"+siglaTsubo)==0){
-						els[e].material=SET.MAT.areaEvi;
-					}
+			SET.tsuboEvidenziati.push(siglaTsubo);
+		}
+		SET.applicaEvidenziaTsubo();
+	},
+	applicaEvidenziaTsubo: function(){
+		var phs = ["","2","3"];
+		for(ph in phs){
+			var els = scene.getObjectByName("PTs"+phs[ph]).children;
+			for(e in els){
+				var siglaTsubo = els[e].name.replace("_","").substr(2,3);
+				if(SET.tsuboEvidenziati.indexOf(siglaTsubo)>-1){
+					if(els[e].name.substr(0,1)=='_')els[e].material=SET.MAT.pointEvi;
+					else els[e].material.opacity = 1;
+				}else{
+					if(els[e].name.substr(0,1)!='_')els[e].material.opacity = 0.5;
 				}
 			}
-			SET.tsuboEvidenziati.push(siglaTsubo);
+			var els = scene.getObjectByName("ARs"+phs[ph]).children;
+			for(e in els){
+				var siglaTsubo = els[e].name.substr(2,3);
+				if(SET.tsuboEvidenziati.indexOf(siglaTsubo)>-1){
+					els[e].material=SET.MAT.areaEvi;
+					els[e].material.opacity = 0.7;
+				}else{
+					els[e].material.opacity = 0.2;
+				}
+			}
 		}
 	},
 	annullaEvidenziaTsubo: function(){
@@ -1025,12 +1003,16 @@ SET = {
 						if(els[e].name.indexOf("_PT"+siglaTsubo)==0){
 							els[e].material=SET.MAT.pointTrasp;
 						}
+						if(els[e].name.substr(0,1)!='_'){
+							els[e].material.opacity = 1;
+						}
 					}
 					var els = scene.getObjectByName("ARs"+phs[ph]).children;
 					for(e in els){
 						if(els[e].name.indexOf("AR"+siglaTsubo)==0){
-							els[e].material=SET.MAT.areaBase;
+							els[e].material=eval("SET.MAT.areaBase"+els[e].userData.system);
 						}
+						els[e].material.opacity = 0.4;
 					}
 				}
 			}
@@ -1083,7 +1065,7 @@ SET = {
 				els[e].material = eval("SET.MAT.point"+tipo+system);
 				if(SET.tsuboEvidenziati.length && SET.tsuboEvidenziati.indexOf(PT_name)==-1){
 					els[e].material.opacity = 0.5;
-				}
+				}else els[e].material.opacity = 1;
 			}
 		}
 		var els = scene.getObjectByName("ARs"+SET.phase).children;
@@ -1217,7 +1199,9 @@ SET = {
 			leg.style.cursor = "pointer";
 			leg.innerHTML = leg.id;
 			leg.onclick = function(){
-				SET.caricaTeoria(1,1,document.getElementById("btn_teoria_1_1"));
+				SET.caricaTeoria(	parseInt(SET.idTeoConcetti.split("_")[0]),
+									parseInt(SET.idTeoConcetti.split("_")[1]),
+									document.getElementById("btn_teoria_"+SET.idTeoConcetti));
 			}
 			document.getElementById("legende").appendChild(leg);
 		}
@@ -1259,15 +1243,17 @@ SET = {
 		for(ph in phs){
 			var els = scene.getObjectByName("PTs"+phs[ph]).children;
 			for(e in els){
-				if(els[e].userData.lato == opposite){
-					els[e].visible = false;
-				}else if(!els[e].visible && !__(els[e].userData.locked,false))els[e].visible = true;
+				var name = els[e].name.replace("_","").substr(2,3);
+				if(DB.set.punti[name].hidden)els[e].visible = false;
+				else if(els[e].userData.lato == opposite)els[e].visible = false;
+				else if(!els[e].visible && !__(els[e].userData.locked,false))els[e].visible = true;
 			}
 			var els = scene.getObjectByName("ARs"+phs[ph]).children;
 			for(e in els){
-				if(els[e].userData.lato == opposite){
-					els[e].visible = false;
-				}else if(!els[e].visible && !__(els[e].userData.locked,false))els[e].visible = true;
+				var name = els[e].name.replace("_","").substr(2,3);
+				if(DB.set.punti[name].hidden)els[e].visible = false;
+				else if(els[e].userData.lato == opposite)els[e].visible = false;
+				else if(!els[e].visible && !__(els[e].userData.locked,false))els[e].visible = true;
 			}
 		}
 		if(SET.groupSel.id)SET.filtraGruppo( SET.groupSel.type, SET.groupSel.val, SET.groupSel.id, true );
@@ -1282,6 +1268,9 @@ SET = {
 		// risetto la mappa dei muscoli
 		MODELLO.MAT.mappaMuscoli();
 		if(muscleView)MODELLO.meshPelle.children[0].material = MODELLO.MAT.materialMuscoli[0];
+		SET.nasLM(); //  nascondo i landmarks
+	},
+	_scaricaModello: function(){
 		SET.nasLM(); //  nascondo i landmarks
 	},
 	_torna: function( args ){

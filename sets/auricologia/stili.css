@@ -1345,7 +1345,9 @@ body:not(.orecchio) #schedaTerapeutica{
 	background-color: rgba(0,0,0,0.1) !important;
 }
 
-
+.lmLabel{
+	background-color: #7bcd66;
+}
 
 /* TESTS */
 #test_cont{

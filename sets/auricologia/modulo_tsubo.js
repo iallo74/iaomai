@@ -155,18 +155,18 @@ var MODULO_TSUBO = { // extend SET
 							if(DB.set.schede[x1][x2][x3].p[x4].indexOf(siglaTsubo) >- 1){
 								for(p in DB.set.patologie){
 									if(DB.set.patologie[p].scheda == x1){
-										var JSNPUSH = {"p": p, "NomePatologia": DB.set.patologie[p].NomePatologia}
-										if(elenco.indexOf(JSNPUSH)==-1)elenco.push(JSNPUSH);
+										if(elenco.indexOf(p)==-1)elenco.push(p);
 									}
 								}
 							}
 						}else{
 							if(typeof(el.length)=='undefined')el = el.p;
 							for(x5 in el){
-								for(p in DB.set.patologie){
-									if(DB.set.patologie[p].scheda == el[x5]){
-										var JSNPUSH = {"p": p, "NomePatologia": DB.set.patologie[p].NomePatologia}
-										if(elenco.indexOf(JSNPUSH)==-1)elenco.push(JSNPUSH);
+								if(el[x5].indexOf(siglaTsubo) >- 1){
+									for(p in DB.set.patologie){
+										if(DB.set.patologie[p].scheda == x1){
+											if(elenco.indexOf(p)==-1)elenco.push(p);
+										}
 									}
 								}
 							}
@@ -183,7 +183,7 @@ var MODULO_TSUBO = { // extend SET
 			HTML += '<div id="patologieTsubo">' +
 					'	<div onClick="this.parentElement.classList.toggle(\'vis\');">'+TXT("Patologie")+'</div>';
 			for(e in elenco){
-				HTML += '<p onClick="SET.apriPatologia(\''+elenco[e].p+'\',document.getElementById(\'btn_patologia_'+elenco[e].p+'\'));"><span>• '+elenco[e].NomePatologia+'</span></p>';
+				HTML += '<p onClick="SET.apriPatologia(\''+elenco[e]+'\',document.getElementById(\'btn_patologia_'+elenco[e]+'\'));"><span>• '+DB.set.patologie[elenco[e]].NomePatologia+'</span></p>';
 			}
 			HTML += '</div>';
 		}

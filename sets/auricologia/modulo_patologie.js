@@ -197,7 +197,7 @@ var MODULO_PATOLOGIE = { // extend SET
 			if(__(objTer.d))ST += '<br><div>'+htmlEntities(objTer.d)+'</div>';
 			if(__(objTer.t)){
 				ST += '<div id="patologieTests"><div>' +
-					  '<p onClick="SET.caricaTest(0);"><span>&raquo; '+htmlEntities(DB.set.teoria[4].TitoloSezione)+'</span></p>' +
+					  '<p onClick="SET.caricaTest(0);"><span>&raquo; '+htmlEntities(DB.set.teoria[SET.idTeoTests].TitoloSezione)+'</span></p>' +
 					  '</div></div>';
 			}
 		}
@@ -267,7 +267,6 @@ var MODULO_PATOLOGIE = { // extend SET
 								true,
 								btn,
 								btnAdd );
-		//SET.evidenziaTsubo(html);
 		SET.eviPointsPat(document.getElementById("schedaTerapeutica"));
 	},
 	getPatFromScheda: function( scheda ){
@@ -276,17 +275,6 @@ var MODULO_PATOLOGIE = { // extend SET
 		}
 	},
 	chiudiPatologia: function(){
-		var phs = ["","2","3"];
-		for(ph in phs){
-			var pts = scene.getObjectByName("PTs"+phs[ph]).children;
-			for(p in pts){
-				if(pts[p].name.substr(0,1)!='_')pts[p].material.opacity = 1;
-			}
-			var pts = scene.getObjectByName("ARs"+phs[ph]).children;
-			for(p in pts){
-				pts[p].material.opacity = 0.4;
-			}
-		}
 		SET.patOp = -1;
 		SET.schEvi = null;
 	},
@@ -296,21 +284,6 @@ var MODULO_PATOLOGIE = { // extend SET
 		if(SET.schEvi)SET.schEvi.classList.remove("eviPoints");
 		el.classList.add("eviPoints");
 		SET.schEvi = el;
-		var phs = ["","2","3"];
-		for(ph in phs){
-			var pts = scene.getObjectByName("PTs"+phs[ph]).children;
-			for(p in pts){
-				if(pts[p].name.substr(0,1)!='_'){
-					if(SET.tsuboEvidenziati.indexOf(pts[p].name.substr(2,3))==-1)pts[p].material.opacity = 0.5;
-					else if(pts[p].material.opacity != 1)pts[p].material.opacity = 1;
-				}
-			}
-			var pts = scene.getObjectByName("ARs"+phs[ph]).children;
-			for(p in pts){
-				if(SET.tsuboEvidenziati.indexOf(pts[p].name.substr(2,3))==-1)pts[p].material.opacity = 0.2;
-				else if(pts[p].material.opacity != 0.4)pts[p].material.opacity = 0.7;
-			}
-		}
 	},
 	showHiddenPoints: function(){
 		if(!SET.hiddenPoints)return;

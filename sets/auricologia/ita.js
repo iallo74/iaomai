@@ -7951,7 +7951,7 @@ DB.set= {
 	"patologie": [
 		{
 			"NomePatologia": "Acne",
-			"TestoPatologia": "<div>Infiammazione dell’unità pilo sebacea con comparsa di punti bianchi, punti neri e papule, e nei casi più avanzati con cisti, pustole, noduli e cicatrici ipertrofiche.</div><div>L’acne giovanile colpisce la fascia di età tra i 10 e i 14 anni nella donna e tra i 13 e i 20 nell’uomo: oltre questa fascia si può parlare di acne tardiva.</div><div>Di solito l’uomo è più colpito rispetto alla donna.</div><div>Vi è una forte predisposizione ereditaria</div><div>L’infiammazione è causata di solito da stafilococchi</div><div><br></div><div><b>M.T.C.</b></div><div>Provocata da Calore estremo degli organi quali Rene e Fegato, Polmone e Stomaco a causa di consumo eccessivo di cibi grassi e a ristagno del Qi di sangue</div>",
+			"TestoPatologia": "<div>Infiammazione dell’unità pilo sebacea con comparsa di punti bianchi, punti neri e papule, e nei casi più avanzati con cisti, pustole, noduli e cicatrici ipertrofiche.</div><div>L’acne giovanile colpisce la fascia di età tra i 10 e i 14 anni nella donna e tra i 13 e i 20 nell’uomo: oltre questa fascia si può parlare di acne tardiva.</div><div>Di solito l’uomo è più colpito rispetto alla donna.</div><div>Vi è una forte predisposizione ereditaria</div><div>L’infiammazione è causata di solito da stafilococchi</div><div><br></div>",
 			"sessoPatologia": "",
 			"chiaviPatologia": "",
 			"scheda": 88,
@@ -7959,7 +7959,7 @@ DB.set= {
 		},
 		{
 			"NomePatologia": "Acufeni/tinnitus",
-			"TestoPatologia": "<div>Può essere percepito come un ronzio continuo o a intervalli, a volte come un sibilo molto fastidioso,a volte più intenso a volte completamente assente, può ritornare e poi scomparire per periodi che vanno da pochi giorni a mesi.</div><div>In ogni caso consultare un medico poiché molteplici possono essere le cause e alcune delle quali possono determinare la perdita improvvisa dell’udito.</div><div><br></div><div><b>M.T.C.</b></div><div>Eccesso di Qi nei meridiani di Fegato e del Mastro</div>",
+			"TestoPatologia": "<div>Può essere percepito come un ronzio continuo o a intervalli, a volte come un sibilo molto fastidioso,a volte più intenso a volte completamente assente, può ritornare e poi scomparire per periodi che vanno da pochi giorni a mesi.</div><div>In ogni caso consultare un medico poiché molteplici possono essere le cause e alcune delle quali possono determinare la perdita improvvisa dell’udito.</div><div><br></div>",
 			"sessoPatologia": "",
 			"chiaviPatologia": "",
 			"scheda": 79,
@@ -7983,7 +7983,7 @@ DB.set= {
 		},
 		{
 			"NomePatologia": "Ageusia",
-			"TestoPatologia": "<div>L'ageusia è un disturbo che provoca la perdita del gusto.&nbsp;</div><div>Può essere causata da infezioni delle vie respiratorie superiori, ferite alla testa e in alcuni casi in seguito&nbsp; a malattie che possono essere associate alla perdita dell'olfatto.</div><div><br></div><div>Per il trattamento di Auricoloterapia è consigliata con stimolazione del lobulo (dove sono rappresentati cervello e organi di senso) attraverso tecniche di&nbsp; automassaggio, aghi pulce o elettrostimolazione.</div><div><br></div><div><b>M.T.C.</b></div><div>L’ageusia può essere la manifestazione di un deficit di yin da parte di Stomaco e Milza. Spesso abbinato a Lingua senza patina ed un polso Superficiale-Vuoto, specialmente nella Barriera di destra.</div>",
+			"TestoPatologia": "<div>L'ageusia è un disturbo che provoca la perdita del gusto.&nbsp;</div><div>Può essere causata da infezioni delle vie respiratorie superiori, ferite alla testa e in alcuni casi in seguito&nbsp; a malattie che possono essere associate alla perdita dell'olfatto.</div><div><br></div><div>Per il trattamento di Auricoloterapia è consigliata con stimolazione del lobulo (dove sono rappresentati cervello e organi di senso) attraverso tecniche di&nbsp; automassaggio, aghi pulce o elettrostimolazione.</div><div><br></div>",
 			"sessoPatologia": "",
 			"chiaviPatologia": "",
 			"scheda": 33,
@@ -8007,7 +8007,7 @@ DB.set= {
 		},
 		{
 			"NomePatologia": "Alopecia",
-			"TestoPatologia": "<div>L’ alopecia è una disfunzione caratterizzata dalla comparsa di chiazze evidenti prive di peli in qualsiasi parte del corpo. Quando questo comprende il cuoio capelluto viene generalmente definita calvizia. Questo disturbo comporta un disagio nel paziente dal punto di vista psicologico ma anche estetico.</div><div>Può essere causata da una serie di fattori tra i quali patologie ormonali, carenze nutrizionali, farmaci (in particolare la chemioterapia), stress fisici o psicologici e traumi di vario genere.</div><div><br></div><div><b>M.T.C.</b></div><div>Definita Ban Tou (letteralmente “testa rasata dai fantasmi”).&nbsp;</div><div>Il sintomo della caduta dei capelli generalmente è sempre abbinato ad un deficit di Jing di Rene, in particolare nei casi di malattie croniche, stress o traumi o semplicemente in età avanzata.</div><div>Se il soggetto non rientra nelle precedenti sintomatologie occorre valutare il vuoto di Qi di Milza, Polmone, Stomaco e Rene.</div>",
+			"TestoPatologia": "<div>L’ alopecia è una disfunzione caratterizzata dalla comparsa di chiazze evidenti prive di peli in qualsiasi parte del corpo. Quando questo comprende il cuoio capelluto viene generalmente definita calvizia. Questo disturbo comporta un disagio nel paziente dal punto di vista psicologico ma anche estetico.</div><div>Può essere causata da una serie di fattori tra i quali patologie ormonali, carenze nutrizionali, farmaci (in particolare la chemioterapia), stress fisici o psicologici e traumi di vario genere.</div><div><br></div>",
 			"sessoPatologia": "",
 			"chiaviPatologia": "",
 			"scheda": 89,
@@ -8015,7 +8015,7 @@ DB.set= {
 		},
 		{
 			"NomePatologia": "Anoressia",
-			"TestoPatologia": "<div>Il termine anoressia indica il disagio che si verifica con il controllo ossessivo delle calorie e del peso.</div><div>Il corpo è percepito come \"eccessivamente grasso\" anche quando la magrezza ha assunto caratteristiche che danneggiano la persona, con gravi conseguenze. Per questo motivo, la persona anoressica impone una dieta spesso abusando di diuretici e lassativi per cercare di vedere i cambiamenti desiderati nel suo corpo.</div><div><br></div><div><b>M.T.C.</b></div><div>La medicina cinese considera l'anoressia un problema di Shen così come una carenza di fuoco allo stomaco.</div><div>Il polmone è legato al perfezionismo e all'irritabilità e svolge un ruolo speciale, non solo nella respirazione ma anche nell'organizzazione del corpo</div>",
+			"TestoPatologia": "<div>Il termine anoressia indica il disagio che si verifica con il controllo ossessivo delle calorie e del peso.</div><div>Il corpo è percepito come \"eccessivamente grasso\" anche quando la magrezza ha assunto caratteristiche che danneggiano la persona, con gravi conseguenze. Per questo motivo, la persona anoressica impone una dieta spesso abusando di diuretici e lassativi per cercare di vedere i cambiamenti desiderati nel suo corpo.</div><div><br></div>",
 			"sessoPatologia": "",
 			"chiaviPatologia": "",
 			"scheda": 47,
@@ -8023,7 +8023,7 @@ DB.set= {
 		},
 		{
 			"NomePatologia": "Anosmia",
-			"TestoPatologia": "",
+			"TestoPatologia": "L'anosmia è un distrurbo caratterizzato dalla perdita dell'olfatto. Può trattarsi di un problema parziale definito “iposmia” o, in casi molto rari, completo. Inoltre può trattarsi sia di un disturbo temporaneo che di un problema permanente e definitivo: tutto dipende dalle sue cause, ma è raro che si tratti del sintomo di un problema grave. Solitamente, l'anosmia è conseguenza di un'ostruzione intranasale, che impedisce agli odori di raggiungere l'area olfattiva; tuttavia, può derivare anche dalla distruzione del neuroepitelio olfattivo o dalla compromissione a qualsiasi livello del nervo olfattivo.",
 			"sessoPatologia": "",
 			"chiaviPatologia": "",
 			"scheda": 34,
@@ -8031,7 +8031,7 @@ DB.set= {
 		},
 		{
 			"NomePatologia": "Ansia",
-			"TestoPatologia": "<div>L’emotività di ogni persona&nbsp; è soggettiva e si manifesta nei modi più inverosimili, una scarsa autostima di fondo può indurre una persona a pensare di non farcela a superare prove che la vita ci pone davanti. Uno stress accentuato che va a ledere la nostra calma e ci può portare ad andare in \"tilt\" ed ecco apparire l’ansia, la paura, il famoso attacco di panico. Come sintomo in fase acuta si possono avere tachicardia, respirazione affannosa, paura con conseguente scarica di adrenalina, una sensazione molto sgradevole anche perché le crisi a volte arrivano improvvise, senza preavviso, e chi ne è colpito vive nel terrore di entrare nella fase di \" Terrore\".</div><div>Se lo stato di angoscia è profondo, grave e permanente allora necessita dell’intervento di uno specialista.</div><div><br></div><div><b>M.T.C.</b></div><div>Ansia, paura, angoscia e iperemotività sono considerati un eccesso di Qi nei meridiani di Cuore e del Mastro del cuore, che deve regolare il tono del plesso cardiaco.&nbsp;</div><div>Se la patologia è cronica può essere in relazione anche con altri meridiani.</div>",
+			"TestoPatologia": "<div>L’emotività di ogni persona&nbsp; è soggettiva e si manifesta nei modi più inverosimili, una scarsa autostima di fondo può indurre una persona a pensare di non farcela a superare prove che la vita ci pone davanti. Uno stress accentuato che va a ledere la nostra calma e ci può portare ad andare in \"tilt\" ed ecco apparire l’ansia, la paura, il famoso attacco di panico. Come sintomo in fase acuta si possono avere tachicardia, respirazione affannosa, paura con conseguente scarica di adrenalina, una sensazione molto sgradevole anche perché le crisi a volte arrivano improvvise, senza preavviso, e chi ne è colpito vive nel terrore di entrare nella fase di \" Terrore\".</div><div>Se lo stato di angoscia è profondo, grave e permanente allora necessita dell’intervento di uno specialista.</div><div><br></div>",
 			"sessoPatologia": "",
 			"chiaviPatologia": "",
 			"scheda": 42,
@@ -8063,7 +8063,7 @@ DB.set= {
 		},
 		{
 			"NomePatologia": "Artrite reumatoide",
-			"TestoPatologia": "<div>Malattia infiammatoria sistemica del connettivo, progressiva, cronica.</div><div>Interessa una fascia di età tra i 35 e 55 anni.</div><div>Trasmissibile geneticamente può insorgere per fattori scatenanti quali esposizione al freddo, traumi, menopausa, infezioni aspecifiche.</div><div><br></div><div><b>M.T.C.</b></div><div>Ostruzione delle articolazioni da parte del Vento-freddo-Umido</div><div>Insufficienza dello Yin di Fegato e Rene.</div>",
+			"TestoPatologia": "<div>Malattia infiammatoria sistemica del connettivo, progressiva, cronica.</div><div>Interessa una fascia di età tra i 35 e 55 anni.</div><div>Trasmissibile geneticamente può insorgere per fattori scatenanti quali esposizione al freddo, traumi, menopausa, infezioni aspecifiche.</div><div><br></div>",
 			"sessoPatologia": "",
 			"chiaviPatologia": "",
 			"scheda": 20,
@@ -8071,7 +8071,7 @@ DB.set= {
 		},
 		{
 			"NomePatologia": "Artrosi - Schema generale",
-			"TestoPatologia": "<div>È una malattia degenerativa della cartilagine articolare e delle epifisi ossee.</div><div>Può interessare una o più articolazioni con consumo e scomparsa della cartilagine nella zona di massimo sfregamento, e rimanente presenza di cartilagine rimaneggiata ai lati e alla periferia.</div><div><br></div><div><b>M.T.C.</b></div><div>Sindrome da ostruzione dei meridiani</div><div>Stasi del Qi e del sangue</div><div>Aggressione di fattori patogeni esterni quali il Vento, Il Freddo, l’umidità e il Calore.</div>",
+			"TestoPatologia": "<div>È una malattia degenerativa della cartilagine articolare e delle epifisi ossee.</div><div>Può interessare una o più articolazioni con consumo e scomparsa della cartilagine nella zona di massimo sfregamento, e rimanente presenza di cartilagine rimaneggiata ai lati e alla periferia.</div><div><br></div>",
 			"sessoPatologia": "",
 			"chiaviPatologia": "",
 			"scheda": 1,
@@ -8079,7 +8079,7 @@ DB.set= {
 		},
 		{
 			"NomePatologia": "Artrosi del ginocchio",
-			"TestoPatologia": "<div>È una malattia degenerativa della cartilagine articolare e delle epifisi ossee.</div><div>Può interessare una o più articolazioni con consumo e scomparsa della cartilagine nella zona di massimo sfregamento, e rimanente presenza di cartilagine rimaneggiata ai lati e alla periferia.</div><div><br></div><div><b>M.T.C.</b></div><div>Sindrome da ostruzione dei meridiani</div><div>Stasi del Qi e del sangue</div><div>Aggressione di fattori patogeni esterni quali il Vento, Il Freddo, l’umidità e il Calore.</div>",
+			"TestoPatologia": "<div>È una malattia degenerativa della cartilagine articolare e delle epifisi ossee.</div><div>Può interessare una o più articolazioni con consumo e scomparsa della cartilagine nella zona di massimo sfregamento, e rimanente presenza di cartilagine rimaneggiata ai lati e alla periferia.</div><div><br></div>",
 			"sessoPatologia": "",
 			"chiaviPatologia": "",
 			"scheda": 15,
@@ -8087,7 +8087,7 @@ DB.set= {
 		},
 		{
 			"NomePatologia": "Artrosi del gomito",
-			"TestoPatologia": "<div>È una malattia degenerativa della cartilagine articolare e delle epifisi ossee.</div><div>Può interessare una o più articolazioni con consumo e scomparsa della cartilagine nella zona di massimo sfregamento, e rimanente presenza di cartilagine rimaneggiata ai lati e alla periferia.</div><div><br></div><div><b>M.T.C.</b></div><div>Sindrome da ostruzione dei meridiani</div><div>Stasi del Qi e del sangue</div><div>Aggressione di fattori patogeni esterni quali il Vento, Il Freddo, l’umidità e il Calore.</div>",
+			"TestoPatologia": "<div>È una malattia degenerativa della cartilagine articolare e delle epifisi ossee.</div><div>Può interessare una o più articolazioni con consumo e scomparsa della cartilagine nella zona di massimo sfregamento, e rimanente presenza di cartilagine rimaneggiata ai lati e alla periferia.</div><div><br></div>",
 			"sessoPatologia": "",
 			"chiaviPatologia": "",
 			"scheda": 12,
@@ -8095,7 +8095,7 @@ DB.set= {
 		},
 		{
 			"NomePatologia": "Artrosi della caviglia",
-			"TestoPatologia": "<div>È una malattia degenerativa della cartilagine articolare e delle epifisi ossee.</div><div>Può interessare una o più articolazioni con consumo e scomparsa della cartilagine nella zona di massimo sfregamento, e rimanente presenza di cartilagine rimaneggiata ai lati e alla periferia.</div><div><br></div><div><b>M.T.C.</b></div><div>Sindrome da ostruzione dei meridiani</div><div>Stasi del Qi e del sangue</div><div>Aggressione di fattori patogeni esterni quali il Vento, Il Freddo, l’umidità e il Calore.</div>",
+			"TestoPatologia": "<div>È una malattia degenerativa della cartilagine articolare e delle epifisi ossee.</div><div>Può interessare una o più articolazioni con consumo e scomparsa della cartilagine nella zona di massimo sfregamento, e rimanente presenza di cartilagine rimaneggiata ai lati e alla periferia.</div><div><br></div>",
 			"sessoPatologia": "",
 			"chiaviPatologia": "",
 			"scheda": 16,
@@ -8103,7 +8103,7 @@ DB.set= {
 		},
 		{
 			"NomePatologia": "Artrosi della colonna cervicale",
-			"TestoPatologia": "<div>È una malattia degenerativa della cartilagine articolare e delle epifisi ossee.</div><div>Può interessare una o più articolazioni con consumo e scomparsa della cartilagine nella zona di massimo sfregamento, e rimanente presenza di cartilagine rimaneggiata ai lati e alla periferia.</div><div><br></div><div><b>M.T.C.</b></div><div>Sindrome da ostruzione dei meridiani</div><div>Stasi del Qi e del sangue</div><div>Aggressione di fattori patogeni esterni quali il Vento, Il Freddo, l’umidità e il Calore.</div>",
+			"TestoPatologia": "<div>È una malattia degenerativa della cartilagine articolare e delle epifisi ossee.</div><div>Può interessare una o più articolazioni con consumo e scomparsa della cartilagine nella zona di massimo sfregamento, e rimanente presenza di cartilagine rimaneggiata ai lati e alla periferia.</div><div><br></div>",
 			"sessoPatologia": "",
 			"chiaviPatologia": "",
 			"scheda": 2,
@@ -8151,7 +8151,7 @@ DB.set= {
 		},
 		{
 			"NomePatologia": "Asma bronchiale",
-			"TestoPatologia": "<div>Ostruzione delle vie aeree per iperattività con riduzione dei flussi polmonari caratterizzata da episodi di dispnea intervallati a periodi di remissione parziale o completa.</div><div><br></div><div><b>M.T.C.</b></div><div>Causata da flegma nel Polmone per deficit di Milza e insufficienza del Rene nel ricevere il Qi.</div><div>La via del Qi è ostruita da attacco di Vento e dal Freddo patogeni, oppure un disturbo emotivo che impedisce la funzione di ascesa-discesa del Polmone.</div>",
+			"TestoPatologia": "<div>Ostruzione delle vie aeree per iperattività con riduzione dei flussi polmonari caratterizzata da episodi di dispnea intervallati a periodi di remissione parziale o completa.</div><div><br></div>",
 			"sessoPatologia": "",
 			"chiaviPatologia": "",
 			"scheda": 85,
@@ -8247,7 +8247,7 @@ DB.set= {
 		},
 		{
 			"NomePatologia": "Cefalea a grappolo",
-			"TestoPatologia": "<div>Patologia molto diffusa, comprende tutti i dolori della parte superiore del capo, tra l'occipite e la fronte.</div><div>Può essere vascolare, funzionale, traumatica, da ipertensione o essere causata da&nbsp; disturbi alle orecchie, disturbi oculari, dentali o nasali, a volte anche semplicemente da stress o da affaticamento.&nbsp;</div><div>&nbsp;</div><div><b>M.T.C.</b></div><div>Attacco da Vento-Freddo</div><div>Flegma</div><div>Risalita di Calore al Fegato e allo Stomaco</div><div>Stasi di Qi e Sangue</div><div>Accumulo di Umidità</div>",
+			"TestoPatologia": "<div>Patologia molto diffusa, comprende tutti i dolori della parte superiore del capo, tra l'occipite e la fronte.</div><div>Può essere vascolare, funzionale, traumatica, da ipertensione o essere causata da&nbsp; disturbi alle orecchie, disturbi oculari, dentali o nasali, a volte anche semplicemente da stress o da affaticamento.&nbsp;</div><div>&nbsp;</div>",
 			"sessoPatologia": "",
 			"chiaviPatologia": "",
 			"scheda": 24,
@@ -8319,7 +8319,7 @@ DB.set= {
 		},
 		{
 			"NomePatologia": "Coccigodinia",
-			"TestoPatologia": "",
+			"TestoPatologia": "La coccigodinia è una sindrome dolorosa che interessa il bacino, in particolare il coccige o l'area circostante ed è provocata da un processo infiammatorio di tipo cronico.La maggior parte dei casi è correlata ad un'anomala mobilità del coccige, che innesca un processo infiammatorio cronico responsabile di dolore e degenerazione dei tessuti limitrofi. Questo tipo di sindrome è molto comune nelle donne, ma può colpire anche gli uomini e l'età media di insorgenza è di 40 anni.",
 			"sessoPatologia": "",
 			"chiaviPatologia": "",
 			"scheda": 10,
@@ -8351,7 +8351,7 @@ DB.set= {
 		},
 		{
 			"NomePatologia": "Congiuntivite",
-			"TestoPatologia": "<div>Infiammazione della membrana mucosa che riveste il bulbo oculare.</div><div>Se causata da micosi, virus, batteri, è infettiva.</div><div>Se causata da allergia, materiali tossici, alterazioni fisiche,o da alterata secrezione lacrimale non è infettiva.</div><div>Si manifesta con lacrimazione, senso di corpo estraneo nell’occhio, bruciore, prurito, fotofobia, difficoltà ad aprire gli occhi al mattino.</div><div><br></div><div><b>M.T.C.</b></div><div>Attacco da Caldo-Umido alla Milza e Stomaco</div><div>Attacco da Vento-Calore del Polmone</div><div>Attacco da Caldo-Umido del Fegato e Cistifellea</div><div>Attacco da Caldo-tossico del Polmone e Milza</div>",
+			"TestoPatologia": "<div>Infiammazione della membrana mucosa che riveste il bulbo oculare.</div><div>Se causata da micosi, virus, batteri, è infettiva.</div><div>Se causata da allergia, materiali tossici, alterazioni fisiche,o da alterata secrezione lacrimale non è infettiva.</div><div>Si manifesta con lacrimazione, senso di corpo estraneo nell’occhio, bruciore, prurito, fotofobia, difficoltà ad aprire gli occhi al mattino.</div><div><br></div>",
 			"sessoPatologia": "",
 			"chiaviPatologia": "",
 			"scheda": 97,
@@ -8383,7 +8383,7 @@ DB.set= {
 		},
 		{
 			"NomePatologia": "Corioblastoma dell'utero",
-			"TestoPatologia": "<br>",
+			"TestoPatologia": "Corioblastoma  è un tumore che si può formare nell'utero. I tumori ginecologici colpiscono l’apparato riproduttivo femminile e si dividono in tumori dell’utero (tumori dell’endometrio e tumori della cervice uterina) e tumori delle ovaie. Il tumore dell’utero più raro è il sarcoma (5%), mentre il più frequente è quello dell’endometrio (80%) con quasi 9.000 casi all’anno, specie a seguito della menopausa tra i 50 e i 70 anni, mentre quello della cervice uterina (o collo dell’utero), la parte inferiore dell’utero, è la terza neoplasia ginecologica più frequente, il quinto tumore più frequente al mondo, con un’età media alla diagnosi di 50 anni, ma può presentarsi anche in giovane età. Il cancro della cervice rappresenta la prima causa di morte per tumore ginecologico nel mondo; tuttavia, grazie agli screening, il tumore della cervice si può prevenire e curare quando intercettato nelle fasi iniziali, aumentando la probabilità di sopravvivenza e di prognosi alla diagnosi.",
 			"sessoPatologia": "",
 			"chiaviPatologia": "",
 			"scheda": 51,
@@ -8415,7 +8415,7 @@ DB.set= {
 		},
 		{
 			"NomePatologia": "Depressione",
-			"TestoPatologia": "<div>Caratterizzata da disturbi psichici di natura funzionale senza alterazioni del sistema Nervoso Centrale che mettono a disagio chi ne è affetto con sofferenza psichica ad affrontare i problemi della vita.</div><div>Le manifestazioni più evidenti sono ansia, ipocondria (il soggetto si crede sempre fisicamente malato), psicosomaticamente soffre di disturbi gastroenterici, disturbi nella sfera sessuale, e disturbi vegetativi tipo palpitazioni, sudorazioni, tremori, vertigini etc.</div><div>Altre manifestazioni sono: tristezza, sensi di colpa, pessimismo,&nbsp; complesso di inferiorità o di persecuzione, irritabilità e insonnia.</div><div>In persone molto sofferenti non è da sottovalutare il pericolo di suicidio.</div><div><br></div><div><b>M.T.C.</b></div><div>Stasi di Energia nel Fegato</div><div>Pieno di Calore-Fuoco nel Fegato e Stomaco</div><div>Vuoto di Sangue che non può nutrire lo Shen</div>",
+			"TestoPatologia": "<div>Caratterizzata da disturbi psichici di natura funzionale senza alterazioni del sistema Nervoso Centrale che mettono a disagio chi ne è affetto con sofferenza psichica ad affrontare i problemi della vita.</div><div>Le manifestazioni più evidenti sono ansia, ipocondria (il soggetto si crede sempre fisicamente malato), psicosomaticamente soffre di disturbi gastroenterici, disturbi nella sfera sessuale, e disturbi vegetativi tipo palpitazioni, sudorazioni, tremori, vertigini etc.</div><div>Altre manifestazioni sono: tristezza, sensi di colpa, pessimismo,&nbsp; complesso di inferiorità o di persecuzione, irritabilità e insonnia.</div><div>In persone molto sofferenti non è da sottovalutare il pericolo di suicidio.</div><div><br></div>",
 			"sessoPatologia": "",
 			"chiaviPatologia": "",
 			"scheda": 45,
@@ -8423,7 +8423,7 @@ DB.set= {
 		},
 		{
 			"NomePatologia": "Dermatite",
-			"TestoPatologia": "<div>Si tratta di una epidermodermite non contagiosa causata da particolare reattività a stimoli interni o esterni, alcuni dei quali sconosciuti.</div><div>I fattori scatenanti possono essere di diversa natura: chimica, micotica, proteica, batterica, oppure per reazione allergica.</div><div>Si manifesta con pruriti più o meno marcati, a volte con vescicole o squame con aspetti crostosi e lichenificati.</div><div>L’eczema può essere psicosomatico, ereditario, costituzionale, da contatto, da allergia, seborroico, atopico.</div><div><br></div><div><b>M.T.C.</b></div><div>Attacco del Vento-Calore-Umidità</div><div>Attacco del Vento-Calore-Secchezza</div><div>Deficit di Sangue</div>",
+			"TestoPatologia": "<div>Si tratta di una epidermodermite non contagiosa causata da particolare reattività a stimoli interni o esterni, alcuni dei quali sconosciuti.</div><div>I fattori scatenanti possono essere di diversa natura: chimica, micotica, proteica, batterica, oppure per reazione allergica.</div><div>Si manifesta con pruriti più o meno marcati, a volte con vescicole o squame con aspetti crostosi e lichenificati.</div><div>L’eczema può essere psicosomatico, ereditario, costituzionale, da contatto, da allergia, seborroico, atopico.</div><div><br></div>",
 			"sessoPatologia": "",
 			"chiaviPatologia": "",
 			"scheda": 90,
@@ -8431,7 +8431,7 @@ DB.set= {
 		},
 		{
 			"NomePatologia": "Diarrea",
-			"TestoPatologia": "<div>Si manifesta con evacuazione frequente di feci acquose o molto liquide.</div><div>Può essere causata da eccessi alimentari, o da intolleranza.</div><div>Può essere da causa virale, batterica (salmonella) da parassiti (ameba, giardia).</div><div>In questi casi è infettiva.</div><div>Può avere cause tossiche da tossine (stafilococco, vibrio cholerae).</div><div>Si possono avere da poche scariche a 25 e più scariche giornaliere con possibili associazioni a stati febbrili, disidratazione, coliche addominali, ipotensione, tutte complicanza della diarrea acuta.</div><div>La fase acuta si risolve dai 2 ai 5 gg.&nbsp;&nbsp;</div><div>Le forme parassitarie necessitano di terapia specifica fino alla totale eliminazione dell’agente infestante.</div><div><br></div><div><b>M.T.C.</b></div><div>Attacco esterno da Freddo-Umidità</div><div>Disarmonia tra Fegato e Milza</div><div>Deficit di Milza</div><div>Deficit dello Yang di Milza e Rene</div>",
+			"TestoPatologia": "<div>Si manifesta con evacuazione frequente di feci acquose o molto liquide.</div><div>Può essere causata da eccessi alimentari, o da intolleranza.</div><div>Può essere da causa virale, batterica (salmonella) da parassiti (ameba, giardia).</div><div>In questi casi è infettiva.</div><div>Può avere cause tossiche da tossine (stafilococco, vibrio cholerae).</div><div>Si possono avere da poche scariche a 25 e più scariche giornaliere con possibili associazioni a stati febbrili, disidratazione, coliche addominali, ipotensione, tutte complicanza della diarrea acuta.</div><div>La fase acuta si risolve dai 2 ai 5 gg.&nbsp;&nbsp;</div><div>Le forme parassitarie necessitano di terapia specifica fino alla totale eliminazione dell’agente infestante.</div><div><br></div>",
 			"sessoPatologia": "",
 			"chiaviPatologia": "",
 			"scheda": 71,
@@ -8471,7 +8471,7 @@ DB.set= {
 		},
 		{
 			"NomePatologia": "Dismenorrea primaria",
-			"TestoPatologia": "<div>Si manifesta con dolori addominali di tipo colico&nbsp; in zona pelvica durante le mestruazioni.</div><div>Tra gli altri sintomi riscontriamo nausea, vomito, diarrea.</div><div>A volte il dolore è così intenso da causare lipotimia.</div><div><br></div><div><b>M.T.C.</b></div><div>Attacco da Freddo esterno durante le mestruazioni.</div><div>Stasi di Sangue nell’utero.</div><div>Deficit di Sangue.</div><div>Deficit di Qi.</div>",
+			"TestoPatologia": "<div>Si manifesta con dolori addominali di tipo colico&nbsp; in zona pelvica durante le mestruazioni.</div><div>Tra gli altri sintomi riscontriamo nausea, vomito, diarrea.</div><div>A volte il dolore è così intenso da causare lipotimia.</div><div><br></div>",
 			"sessoPatologia": "",
 			"chiaviPatologia": "",
 			"scheda": 54,
@@ -8479,7 +8479,7 @@ DB.set= {
 		},
 		{
 			"NomePatologia": "Dispepsia gastrica",
-			"TestoPatologia": "<div>Patologia assai diffusa si manifesta dopo il pasto con senso di pesantezza di stomaco, sonnolenza, dilatazione addominale, nausea.</div><div>Le cause possono essere di origine nervosa o legate alla funzionalità degli organi secretori. Es. lo stomaco secerne troppo o troppo poco acido cloridrico, la cistifellea è ostruita e la bile non è sufficiente, il pancreas non produce abbastanza enzimi, etc.</div><div>Se questi sintomi sono frequenti consultare un medico perché potrebbero essere causati da patologie gravi quali ulcere o gastrite.</div><div>Per una comune dispepsia la moxa apporta ottimi risultati, anche come profilassi.&nbsp;&nbsp;</div><div><br></div><div><b>M.T.C.</b></div><div>Deficit di Qi di Milza e Stomaco.</div><div>Ristagno di Freddo nello Stomaco.</div><div>Stasi di Qi nel fegato.</div>",
+			"TestoPatologia": "<div>Patologia assai diffusa si manifesta dopo il pasto con senso di pesantezza di stomaco, sonnolenza, dilatazione addominale, nausea.</div><div>Le cause possono essere di origine nervosa o legate alla funzionalità degli organi secretori. Es. lo stomaco secerne troppo o troppo poco acido cloridrico, la cistifellea è ostruita e la bile non è sufficiente, il pancreas non produce abbastanza enzimi, etc.</div><div>Se questi sintomi sono frequenti consultare un medico perché potrebbero essere causati da patologie gravi quali ulcere o gastrite.</div><div>Per una comune dispepsia la moxa apporta ottimi risultati, anche come profilassi.&nbsp;&nbsp;</div><div><br></div>",
 			"sessoPatologia": "",
 			"chiaviPatologia": "",
 			"scheda": 66,
@@ -8679,7 +8679,7 @@ DB.set= {
 		},
 		{
 			"NomePatologia": "Eczema",
-			"TestoPatologia": "<div>Si tratta di una epidermodermite non contagiosa causata da particolare reattività a stimoli interni o esterni, alcuni dei quali sconosciuti.</div><div>I fattori scatenanti possono essere di diversa natura: chimica, micotica, proteica, batterica, oppure per reazione allergica.</div><div>Si manifesta con pruriti più o meno marcati, a volte con vescicole o squame con aspetti crostosi e lichenificati.</div><div>L’eczema può essere psicosomatico, ereditario, costituzionale, da contatto, da allergia, seborroico, atopico.</div><div><br></div><div><b>M.T.C.</b></div><div>Attacco del Vento-Calore-Umidità.</div><div>Attacco del Vento-Calore-Secchezza.</div><div>Deficit di Sangue.</div>",
+			"TestoPatologia": "<div>Si tratta di una epidermodermite non contagiosa causata da particolare reattività a stimoli interni o esterni, alcuni dei quali sconosciuti.</div><div>I fattori scatenanti possono essere di diversa natura: chimica, micotica, proteica, batterica, oppure per reazione allergica.</div><div>Si manifesta con pruriti più o meno marcati, a volte con vescicole o squame con aspetti crostosi e lichenificati.</div><div>L’eczema può essere psicosomatico, ereditario, costituzionale, da contatto, da allergia, seborroico, atopico.</div><div><br></div>",
 			"sessoPatologia": "",
 			"chiaviPatologia": "",
 			"scheda": 91,
@@ -8687,7 +8687,7 @@ DB.set= {
 		},
 		{
 			"NomePatologia": "Eiaculazione precoce",
-			"TestoPatologia": "<div>Si intende l’emissione seminale dello sperma prima di avere il rapporto, generalmente prima della penetrazione del pene in vagina.</div><div><br></div><div><b>M.T.C.</b></div><div>Insufficienza del Fuoco del Mingmen</div><div>Discesa dell’Umidità-Calore</div><div>Deficit di Qi del Rene</div><div>Disarmonia tra Cuore e Rene</div><div>Turbe dello Shen da paura o terrore</div>",
+			"TestoPatologia": "<div>Si intende l’emissione seminale dello sperma prima di avere il rapporto, generalmente prima della penetrazione del pene in vagina.</div><div><br></div>",
 			"sessoPatologia": "",
 			"chiaviPatologia": "",
 			"scheda": 59,
@@ -8703,7 +8703,7 @@ DB.set= {
 		},
 		{
 			"NomePatologia": "Emicrania",
-			"TestoPatologia": "<div>Patologia molto diffusa, comprende tutti i dolori della parte superiore del capo, tra l’occipite e la fronte.</div><div>Può essere vascolare, funzionale, traumatica, da ipertensione o essere causata da&nbsp; disturbi alle orecchie, disturbi oculari, dentali o nasali, a volte anche semplicemente da stress o da affaticamento.</div><div><br></div><div><div><b>M.T.C.</b></div><div>Attacco da Vento-Freddo.</div><div>Flegma.</div><div>Risalita di Calore al Fegato e allo Stomaco.</div><div>Stasi di Qi e Sangue.</div><div>Accumulo di Umidità.</div></div>",
+			"TestoPatologia": "<div>Patologia molto diffusa, comprende tutti i dolori della parte superiore del capo, tra l’occipite e la fronte.</div><div>Può essere vascolare, funzionale, traumatica, da ipertensione o essere causata da&nbsp; disturbi alle orecchie, disturbi oculari, dentali o nasali, a volte anche semplicemente da stress o da affaticamento.</div><div><br></div><div>",
 			"sessoPatologia": "",
 			"chiaviPatologia": "",
 			"scheda": 23,
@@ -8735,7 +8735,7 @@ DB.set= {
 		},
 		{
 			"NomePatologia": "Emorragia cerebrale",
-			"TestoPatologia": "...",
+			"TestoPatologia": "I sintomi non sono strettamente specifici: mal di testa lancinante, nausea, vomito, difficoltà linguistiche e motorie possono comparire in maniera improvvisa in una persona colpita da un'emorragia cerebrale. L'emorragia cerebrale è una condizione neurologica acuta grave, provocata dalla rottura di un vaso sanguigno cerebrale con conseguente fuoriuscita di sangue all’interno della teca cranica. La comparsa è del tutto improvvisa e le cause possono essere molteplici: la rottura di un aneurisma congenito, un trauma violento o un forte sbalzo pressorio.Le emorragie cerebrali possono essere post-traumatiche, le quali si sviluppano dopo un grave trauma cranico (incidenti stradali, precipitazioni, colluttazione o aggressione); oppure spontanee: si verificano senza trauma cranico, per diverse cause inizialmente non conosciute. I principali sintomi si presentano con un forte mal di testa, che non risponde ai normali farmaci antidolorifici, nausea e vomito, deficit motori o visivi, crisi epilettiche e perdita di coscienza ed in alcuni casi coma.",
 			"sessoPatologia": "",
 			"chiaviPatologia": "",
 			"scheda": 41,
@@ -8743,7 +8743,7 @@ DB.set= {
 		},
 		{
 			"NomePatologia": "Emorroidi",
-			"TestoPatologia": "<div>Si tratta di ectasie venose dovute ad aumentata pressione idrostatica nel plesso venoso emorroidario.</div><div>Possono essere interne, esterne, acute, trombizzate o sanguinolente.</div><div>Molto comuni hanno come fattori predisponenti la stipsi, l’ipertensione, la gravidanza.</div><div>Fastidiose possono provocare prurito o dolore.</div><div>In caso di sanguinamento abbondante consultare un medico.</div><div><br></div><div><b>M.T.C.</b></div><div>Accumulo di Umidità-Calore.</div><div>Deficit di Yin.</div><div>Calore nel Sangue.</div><div>Deficit di Qi.</div><div>Attacco da Calore-tossico.</div>",
+			"TestoPatologia": "<div>Si tratta di ectasie venose dovute ad aumentata pressione idrostatica nel plesso venoso emorroidario.</div><div>Possono essere interne, esterne, acute, trombizzate o sanguinolente.</div><div>Molto comuni hanno come fattori predisponenti la stipsi, l’ipertensione, la gravidanza.</div><div>Fastidiose possono provocare prurito o dolore.</div><div>In caso di sanguinamento abbondante consultare un medico.</div><div><br></div>",
 			"sessoPatologia": "",
 			"chiaviPatologia": "",
 			"scheda": 72,
@@ -8751,7 +8751,7 @@ DB.set= {
 		},
 		{
 			"NomePatologia": "Endometrioma",
-			"TestoPatologia": "",
+			"TestoPatologia": "La cisti endometriosica, nota anche come endometrioma vulvare è una rara ciste dolorosa che deriva dall'impianto extrauterino di tessuto endometriale (endometriosi). Le cisti endometriosiche sono sacche ripiene di sangue \"vecchio\", di origine endometriale; di norma, misurano tra i 2 e i 5 centimetri di diametro, ma, in alcune rare circostanze, possono raggiungere anche i 10-20 centimetri. I soggetti affetti da una generica cisti endometriosica accusano crampi addominali, dolore pelvico e mestruazioni dolorose. La rottura di un endometrioma provoca: forti dolori pelvici, perdita di sangue dalla vagina, febbre, nausea e vomito. Il trattamento può essere farmacologico oppure chirurgico, a seconda di quanto grave è la cisti endometriosica presente: in genere, le cisti piccole richiedono la terapia farmacologica, mentre le cisti grandi rendono indispensabile la chirurgia.",
 			"sessoPatologia": "",
 			"chiaviPatologia": "",
 			"scheda": 51,
@@ -8759,7 +8759,7 @@ DB.set= {
 		},
 		{
 			"NomePatologia": "Endometriosi",
-			"TestoPatologia": "",
+			"TestoPatologia": "L'endometriosi è una patologia caratterizzata da un'infiammazione cronica benigna degli organi genitali femminili e del peritoneo pelvico, contraddistinto dalla presenza anomala, in questi organi, di cellule endometriali che, in condizioni normali, si trovano solo all'interno dell'utero. Questa patologia coinvolge globalmente la salute della donna, con conseguenti effetti psicofisici, spesso marcatamente debilitanti.",
 			"sessoPatologia": "",
 			"chiaviPatologia": "",
 			"scheda": 51,
@@ -8767,7 +8767,7 @@ DB.set= {
 		},
 		{
 			"NomePatologia": "Enfisema polmonare",
-			"TestoPatologia": "",
+			"TestoPatologia": "L'enfisema polmonare è un grave patologia a carico dell’apparato respiratorio, provocata da un progressivo deterioramento con ingrandimento e riduzione del letto alveolare. La causa più comune risiede nell'inalazione di sostanze irritanti, contenute per esempio nel fumo di sigaretta, nell'aria inquinata o nelle esalazioni di certi impianti industriali, che non solo sono potenziale causa di enfisema polmonare, ma anche di formazione di tumori polmonari. Il sintomo più importante nel paziente affetto da enfisema polmonare è la dispnea che si accompagna negli anni a modificazioni importanti ed evidenti della gabbia toracica, dandole una conformazione definita “a botte” che fa assumere al paziente la classica postura a spalle sollevate per aiutare la respirazione, rumorosa e sibilante. Inoltre: tosse secca e grande affaticabilità. Con il tempo e con l’aggravarsi della malattia possono presentarsi cianosi delle labbra e del letto ungueale tali da imporre la somministrazione di ossigenoterapia, poiché sintomi di un deficit di ossigenazione sanguigna. Quando questa sintomatologia persiste e il paziente verte in una situazione di forte distress respiratorio con grave desaturazione, si rendono necessari interventi urgenti poiché la compromissione di altri organi, come cuore e cervello, diviene imminente.",
 			"sessoPatologia": "",
 			"chiaviPatologia": "",
 			"scheda": 87,
@@ -8775,7 +8775,7 @@ DB.set= {
 		},
 		{
 			"NomePatologia": "Enuresi",
-			"TestoPatologia": "<div>Si manifesta come incontinenza urinaria notturna.</div><div>La fascia interessata è comunque dopo i 3 anni di età fino alla pubertà, raramente colpisce gli adulti.&nbsp;</div><div>La causa può essere un’alterazione del sistema urinario o ad un problema di ritardato sviluppo del sistema nervoso del controllo dell’area della minzione.</div><div>Altre cause possono essere la denutrizione, la debilitazione fisica oppure cause psicologiche.</div><div><br></div><div><b>M.T.C.</b></div><div>Deficit del Qi del Rene.</div><div>Freddo nel Triplo inferiore.</div><div>Deficit di Qi di Milza e Polmone.</div><div>Calore-Umidità nel meridiano del Fegato.</div>",
+			"TestoPatologia": "<div>Si manifesta come incontinenza urinaria notturna.</div><div>La fascia interessata è comunque dopo i 3 anni di età fino alla pubertà, raramente colpisce gli adulti.&nbsp;</div><div>La causa può essere un’alterazione del sistema urinario o ad un problema di ritardato sviluppo del sistema nervoso del controllo dell’area della minzione.</div><div>Altre cause possono essere la denutrizione, la debilitazione fisica oppure cause psicologiche.</div><div><br></div>",
 			"sessoPatologia": "",
 			"chiaviPatologia": "",
 			"scheda": 62,
@@ -8791,7 +8791,7 @@ DB.set= {
 		},
 		{
 			"NomePatologia": "Epilessia",
-			"TestoPatologia": "<div>Si manifesta con crisi convulsive accompagnate da&nbsp; sintomatologia motorio-sensitiva e neurovegetativa psichica.</div><div>Le crisi sono improvvise con perdita di coscienza e attività motoria scoordinata</div><div><br></div><div><b>M.T.C.</b></div><div>Deficit di Rene e di Fegato.</div><div>Deficit del Qi primario.</div><div>Alzamento del Vento di Fegato.</div><div>Flegma</div>",
+			"TestoPatologia": "<div>Si manifesta con crisi convulsive accompagnate da&nbsp; sintomatologia motorio-sensitiva e neurovegetativa psichica.</div><div>Le crisi sono improvvise con perdita di coscienza e attività motoria scoordinata</div><div><br></div>",
 			"sessoPatologia": "",
 			"chiaviPatologia": "",
 			"scheda": 38,
@@ -8815,7 +8815,7 @@ DB.set= {
 		},
 		{
 			"NomePatologia": "Ernia discale della colonna lombosacrale",
-			"TestoPatologia": "<div>Detta anche algia lombosacrale, può essere acuta o cronica, è considerata patologia sociale in quanto molto diffusa con costi elevati alla società per l’assenteismo che procura sul lavoro.</div><div>Si manifesta con dolori alla muscolatura paraspinale che provocano limitazione del movimento con irradiazione del dolore alle gambe e all’inguine.</div><div>Spesso la causa è una protrusione o l'ernia discale.&nbsp;</div><div><br></div><div><b>M.T.C.</b></div><div>Stasi di Qi e Sangue.</div><div>Deficit di Rene.</div><div>Accumulo di Umidità e Freddo.</div>",
+			"TestoPatologia": "<div>Detta anche algia lombosacrale, può essere acuta o cronica, è considerata patologia sociale in quanto molto diffusa con costi elevati alla società per l’assenteismo che procura sul lavoro.</div><div>Si manifesta con dolori alla muscolatura paraspinale che provocano limitazione del movimento con irradiazione del dolore alle gambe e all’inguine.</div><div>Spesso la causa è una protrusione o l'ernia discale.&nbsp;</div><div><br></div>",
 			"sessoPatologia": "",
 			"chiaviPatologia": "",
 			"scheda": 19,
@@ -8831,7 +8831,7 @@ DB.set= {
 		},
 		{
 			"NomePatologia": "Gastrite ",
-			"TestoPatologia": "<div>Nella gastrite acuta il dolore è continuo, e localizzato nella parte alta dell’addome, si manifesta con vomito, nausea, diarrea e febbre.</div><div>Se la fase acuta non è curata in tempo si instaura la fase cronica con sintomi quali distensione addominale, dolore sordo epigastrico, nausea,&nbsp; vomito e rigurgiti acidi.</div><div><br></div><div><b>M.T.C.</b></div><div>Invasione di Freddo nello Stomaco.</div><div>Qi di Fegato che invade lo Stomaco.</div><div>Assunzione di cibi che danneggiano Milza e Stomaco.</div>",
+			"TestoPatologia": "<div>Nella gastrite acuta il dolore è continuo, e localizzato nella parte alta dell’addome, si manifesta con vomito, nausea, diarrea e febbre.</div><div>Se la fase acuta non è curata in tempo si instaura la fase cronica con sintomi quali distensione addominale, dolore sordo epigastrico, nausea,&nbsp; vomito e rigurgiti acidi.</div><div><br></div>",
 			"sessoPatologia": "",
 			"chiaviPatologia": "",
 			"scheda": 65,
@@ -8887,7 +8887,7 @@ DB.set= {
 		},
 		{
 			"NomePatologia": "Ictus cerebrale",
-			"TestoPatologia": "<div>L’apoplessia o Ictus è caratterizzata da sintomi quali la deviazione della bocca&nbsp; (paralisi facciale), perdita della sensibilità cutanea, afasia, emiplegia, parziali disfunzioni motorie, perdita di coscienza.</div><div>Le cause possono essere la trombosi, l’emorragia cerebrale, l’emorragia subaracnoidea, l’embolia cerebrale, lo spasmo cerebrovascolare.</div><div><br></div><div>L’Apoplessia colpisce soprattutto soggetti in età avanzata ed ha mortalità elevata. In attacco acuto si somministrano terapia di emergenza della medicina occidentale.</div><div>Le cure possono essere affiancate dalla Medicina Tradizionale Cinese, la Moxa è utile soprattutto per il trattamento sintomatico.</div><div><br></div><div><b>M.T.C.</b></div><div>Determinata da deficit di Qi e Sangue.</div><div>Squilibrio tra i meridiani di Cuore, Rene e Fegato.</div><div>Insufficienza dello Yin del Fegato.</div><div>Insufficienza dello Yin del Rene.</div><div>Iperattività dello Yang di Fegato.</div><div>Iperattività dello Yang del Cuore.</div><div>Flegma e Calore interno.</div>",
+			"TestoPatologia": "<div>L’apoplessia o Ictus è caratterizzata da sintomi quali la deviazione della bocca&nbsp; (paralisi facciale), perdita della sensibilità cutanea, afasia, emiplegia, parziali disfunzioni motorie, perdita di coscienza.</div><div>Le cause possono essere la trombosi, l’emorragia cerebrale, l’emorragia subaracnoidea, l’embolia cerebrale, lo spasmo cerebrovascolare.</div><div><br></div><div>L’Apoplessia colpisce soprattutto soggetti in età avanzata ed ha mortalità elevata. In attacco acuto si somministrano terapia di emergenza della medicina occidentale.</div><div>Le cure possono essere affiancate dalla Medicina Tradizionale Cinese, la Moxa è utile soprattutto per il trattamento sintomatico.</div><div><br></div>",
 			"sessoPatologia": "",
 			"chiaviPatologia": "",
 			"scheda": 41,
@@ -8895,7 +8895,7 @@ DB.set= {
 		},
 		{
 			"NomePatologia": "Impotenza/frigidità",
-			"TestoPatologia": "Si intende l’impossibilità ad avere o mantenere una erezione in grado di avere un rapporto sessuale; può essere di origine organica&nbsp; &nbsp;(normalmente vascolare) o psichica.<br><br><div><b>M.T.C.</b></div><div>Insufficienza del Fuoco del Mingmen</div><div>Discesa dell’Umidità-Calore</div><div>Deficit di Qi del Rene</div><div>Disarmonia tra Cuore e Rene</div><div>Turbe dello Shen da paura o terrore</div>",
+			"TestoPatologia": "Si intende l’impossibilità ad avere o mantenere una erezione in grado di avere un rapporto sessuale; può essere di origine organica&nbsp; &nbsp;(normalmente vascolare) o psichica.<br><br>",
 			"sessoPatologia": "",
 			"chiaviPatologia": "",
 			"scheda": 58,
@@ -8903,7 +8903,7 @@ DB.set= {
 		},
 		{
 			"NomePatologia": "Impotenza sessuale",
-			"TestoPatologia": "<span style=\"color: rgb(0, 0, 0);\">Si intende l’impossibilità ad avere o mantenere una erezione in grado di avere un rapporto sessuale; può essere di origine organica&nbsp; &nbsp;(normalmente vascolare) o psichica.</span><br><br><div><b>M.T.C.</b></div><div>Insufficienza del Fuoco del Mingmen</div><div>Discesa dell’Umidità-Calore</div><div>Deficit di Qi del Rene</div><div>Disarmonia tra Cuore e Rene</div><div>Turbe dello Shen da paura o terrore</div>",
+			"TestoPatologia": "<span style=\"color: rgb(0, 0, 0);\">Si intende l’impossibilità ad avere o mantenere una erezione in grado di avere un rapporto sessuale; può essere di origine organica&nbsp; &nbsp;(normalmente vascolare) o psichica.</span><br><br>",
 			"sessoPatologia": "",
 			"chiaviPatologia": "",
 			"scheda": 58,
@@ -8911,7 +8911,7 @@ DB.set= {
 		},
 		{
 			"NomePatologia": "Incontinenza da sforzo",
-			"TestoPatologia": "<div>Si manifesta come incontinenza urinaria notturna.</div><div>La fascia interessata è comunque dopo i 3 anni di età fino alla pubertà, raramente colpisce gli adulti.&nbsp;</div><div>La causa può essere un'alterazione del sistema urinario o ad un problema di ritardato sviluppo del sistema nervoso del controllo dell'area della minzione.</div><div>Altre cause possono essere la denutrizione, la debilitazione fisica oppure cause psicologiche.</div><div><br></div><div><b>M.T.C.</b></div><div>Deficit del Qi del Rene.</div><div>Freddo nel Triplo inferiore.</div><div>Deficit di Qi di Milza e Polmone.</div><div>Calore-Umidità nel meridiano del Fegato.</div>",
+			"TestoPatologia": "<div>Si manifesta come incontinenza urinaria notturna.</div><div>La fascia interessata è comunque dopo i 3 anni di età fino alla pubertà, raramente colpisce gli adulti.&nbsp;</div><div>La causa può essere un'alterazione del sistema urinario o ad un problema di ritardato sviluppo del sistema nervoso del controllo dell'area della minzione.</div><div>Altre cause possono essere la denutrizione, la debilitazione fisica oppure cause psicologiche.</div><div><br></div>",
 			"sessoPatologia": "",
 			"chiaviPatologia": "",
 			"scheda": 62,
@@ -8919,15 +8919,15 @@ DB.set= {
 		},
 		{
 			"NomePatologia": "Incontinenza urinaria",
-			"TestoPatologia": "<div>Si manifesta come incontinenza urinaria notturna.</div><div>La fascia interessata è comunque dopo i 3 anni di età fino alla pubertà, raramente colpisce gli adulti.&nbsp;</div><div>La causa può essere un'alterazione del sistema urinario o ad un problema di ritardato sviluppo del sistema nervoso del controllo dell'area della minzione.</div><div>Altre cause possono essere la denutrizione, la debilitazione fisica oppure cause psicologiche.</div><div><br></div><div><b>M.T.C.</b></div><div>Deficit del Qi del Rene.</div><div>Freddo nel Triplo inferiore.</div><div>Deficit di Qi di Milza e Polmone.</div><div>Calore-Umidità nel meridiano del Fegato.</div>",
+			"TestoPatologia": "<div>Si manifesta come incontinenza urinaria notturna.</div><div>La fascia interessata è comunque dopo i 3 anni di età fino alla pubertà, raramente colpisce gli adulti.&nbsp;</div><div>La causa può essere un'alterazione del sistema urinario o ad un problema di ritardato sviluppo del sistema nervoso del controllo dell'area della minzione.</div><div>Altre cause possono essere la denutrizione, la debilitazione fisica oppure cause psicologiche.</div><div><br></div>",
 			"sessoPatologia": "",
 			"chiaviPatologia": "",
 			"scheda": 62,
 			"apparato": 5
 		},
 		{
-			"NomePatologia": "Infezione delle vie urinarie (IVUI)",
-			"TestoPatologia": "",
+			"NomePatologia": "Infezione delle vie urinarie (IVU)",
+			"TestoPatologia": "Le infezioni delle vie urinarie, note anche con la sigla -IVU-, si verificano quando i batteri, penetrando attraverso l'uretra (il condotto che trasporta l'urina dalla vescica all'esterno) proliferano e si moltiplicano nelle vie urinarie. Tra i responsabili troviamo l’Escherichia coli, lo Staphylococcus saprophyticus, la Klebsiella, lo Pseudomonas e l’Enterococcus fecalis. Sono disturbi piuttosto frequenti. Le IVU sono generalmente classificate come infezioni del tratto inferiore che coinvolgono la vescica (cistite) oppure infezioni del tratto superiore che interessano infezioni dei reni (pielonefrite). Alcuni medici considerano anche le infezioni dell’uretra (uretrite) e della prostata (prostatite) come infezioni del tratto inferiore. Negli organi doppi, come i reni, l’infezione può colpire uno o entrambi gli organi. Le infezioni delle vie urinarie possono colpire tutte le persone, senza distinzioni di sesso ed età, tuttavia interessano più spesso le donne, in particolare quelle di età compresa tra i 16 e i 35 anni. Il sesso femminile, la gravidanza, l’utilizzo di anticoncezionali come spermicidi e diaframma, la stipsi e l’utilizzo di alcuni farmaci sono tra i maggiori fattori di rischio. I soggetti affetti da IVU accusano sintomi come febbre, dolore alla parte superiore della schiena, ai fianchi o alla pelvi, così come malessere generale, sangue nelle urine e minzione dolorosa. La diagnosi di infezione delle vie urinarie si pone attraverso l’anamnesi, l’esame obiettivo ed esami come quello delle urine, l’urinocoltura e in alcuni casi anche indagini radiologiche. La terapia è fondamentalmente di tipo antibiotico e molto importante è anche la prevenzione; la prognosi in caso di diagnosi tempestiva e trattamento adeguato è buona.",
 			"sessoPatologia": "",
 			"chiaviPatologia": "",
 			"scheda": 60,
@@ -8935,7 +8935,7 @@ DB.set= {
 		},
 		{
 			"NomePatologia": "Insonnia",
-			"TestoPatologia": "<div>Si manifesta con disturbi o assenza&nbsp; del sonno per cause fisiologiche, psicologiche, patologiche o iatrogene.</div><div>La più frequente è per cause psicologiche, ed è la più facilmente curabile con le discipline complementari.</div><div><br></div><div><b>M.T.C.</b></div><div>Deficit di Qi.</div><div>Deficit di Sangue.</div><div>Debolezza di Rene.</div><div>Deficit di Yin.</div><div>Eccesso di Fuoco.</div><div>Disarmonia tra Cuore e Rene.</div>",
+			"TestoPatologia": "<div>Si manifesta con disturbi o assenza&nbsp; del sonno per cause fisiologiche, psicologiche, patologiche o iatrogene.</div><div>La più frequente è per cause psicologiche, ed è la più facilmente curabile con le discipline complementari.</div><div><br></div>",
 			"sessoPatologia": "",
 			"chiaviPatologia": "",
 			"scheda": 46,
@@ -9271,7 +9271,7 @@ DB.set= {
 		},
 		{
 			"NomePatologia": "Otolitopatia",
-			"TestoPatologia": "",
+			"TestoPatologia": "Gli otoliti sono dei piccolissimi agglomerati di ossalato e carbonato di calcio, inglobati in una matrice gelatinosa localizzata nell'orecchio interno. Queste formazioni contribuiscono a mantenere l'equilibrio e, in funzione dello spostamento della testa, trasmettono agli organi otolitici del sistema vestibolare (cioè utricolo e sacculo), il senso di accelerazione. Essendo più pesanti della matrice che li contiene, infatti, gli otoliti stimolano le cellule ciliate sensoriali dell'orecchio quando si cambia posizione o viene iniziato un movimento. A loro volta, quest'ultime inviano dei segnali al cervello, informandolo delle variazioni del corpo nello spazio. L'otolitopatia è causata da un distacco anomalo che porta alcuni otoliti fuori dalla loro sede naturale. Questi si depositano sul fondo dell'ampolla tra i recettori sensoriali e, finché restiamo in posizione verticale, non causano alcun disturbo. Ma ogni volta che ci sdraia o ci si alza, gli otoliti si muovono dentro l'ampolla causando un violento impulso ai sensori, che a loro volta inviano al cervello un improvviso segnale di rotazione. Questo causa fastidiosi giramenti di testa, che si manifestano soprattutto con dei capogiri a letto. Il nome scientifico del disturbo è vertigine posizionale parossistica benigna e gli episodi si ripetono ogni volta che la testa cambia posizione, soprattutto quando ci si sdraia o ci si gira sul fianco, soprattutto la notte. Invece in piedi, durante il giorno, persiste solo un vago senso di instabilità, senza capogiro.",
 			"sessoPatologia": "",
 			"chiaviPatologia": "",
 			"scheda": 81,
@@ -9647,7 +9647,7 @@ DB.set= {
 		},
 		{
 			"NomePatologia": "Sindrome depressiva",
-			"TestoPatologia": "<div>Caratterizzata da disturbi psichici di natura funzionale senza alterazioni del sistema Nervoso Centrale che mettono a disagio chi ne è affetto con sofferenza psichica ad affrontare i problemi della vita.</div><div>Le manifestazioni più evidenti sono ansia, ipocondria (il soggetto si crede sempre fisicamente malato), psicosomaticamente soffre di disturbi gastroenterici, disturbi nella sfera sessuale, e disturbi vegetativi tipo palpitazioni, sudorazioni, tremori, vertigini etc.</div><div>Altre manifestazioni sono: tristezza, sensi di colpa, pessimismo, complesso di inferiorità o di persecuzione, irritabilità e insonnia.</div><div>In persone molto sofferenti non è da sottovalutare il pericolo suicidario.</div><div><br></div><div><b>M.T.C.</b></div><div>Stasi di Energia nel Fegato.</div><div>Pieno di Calore-Fuoco nel Fegato e Stomaco.</div><div>Vuoto di Sangue che non può nutrire lo Shen.</div>",
+			"TestoPatologia": "<div>Caratterizzata da disturbi psichici di natura funzionale senza alterazioni del sistema Nervoso Centrale che mettono a disagio chi ne è affetto con sofferenza psichica ad affrontare i problemi della vita.</div><div>Le manifestazioni più evidenti sono ansia, ipocondria (il soggetto si crede sempre fisicamente malato), psicosomaticamente soffre di disturbi gastroenterici, disturbi nella sfera sessuale, e disturbi vegetativi tipo palpitazioni, sudorazioni, tremori, vertigini etc.</div><div>Altre manifestazioni sono: tristezza, sensi di colpa, pessimismo, complesso di inferiorità o di persecuzione, irritabilità e insonnia.</div><div>In persone molto sofferenti non è da sottovalutare il pericolo suicidario.</div><div><br></div>",
 			"sessoPatologia": "",
 			"chiaviPatologia": "",
 			"scheda": 45,
@@ -9687,7 +9687,7 @@ DB.set= {
 		},
 		{
 			"NomePatologia": "Sinusite",
-			"TestoPatologia": "<div>Processo infiammatorio che colpisce una o più cavità paranasali.</div><div>Fattori predisponenti sono: Alterazioni nasali, riduzione della pervietà nasale, deviazione del setto nasale, ipertrofia dei turbinati, riniti allergiche con infezione dell’etmoide e di qui alle altre cavità paranasali, traumi con o senza frattura.</div><div><br></div><div><b>M.T.C.</b></div><div>Attacco da Vento-Calore al meridiano del Polmone.</div><div>Eccesso di Fuoco del meridiano della Cistifellea.</div><div>Attacco da Calore-Umidità del meridiano della Milza.</div>",
+			"TestoPatologia": "<div>Processo infiammatorio che colpisce una o più cavità paranasali.</div><div>Fattori predisponenti sono: Alterazioni nasali, riduzione della pervietà nasale, deviazione del setto nasale, ipertrofia dei turbinati, riniti allergiche con infezione dell’etmoide e di qui alle altre cavità paranasali, traumi con o senza frattura.</div><div><br></div>",
 			"sessoPatologia": "",
 			"chiaviPatologia": "",
 			"scheda": 26,
@@ -9727,7 +9727,7 @@ DB.set= {
 		},
 		{
 			"NomePatologia": "Stato d'ansia",
-			"TestoPatologia": "<div>L’emotività di ogni persona&nbsp; è soggettiva e si manifesta nei modi più inverosimili, una scarsa autostima di fondo può indurre una persona a pensare di non farcela a superare prove che la vita ci pone davanti. Uno stress accentuato che va a ledere la nostra calma e ci può portare ad andare in \"tilt\" ed ecco apparire l’ansia, la paura, il famoso attacco di panico. Come sintomo in fase acuta si possono avere tachicardia, respirazione affannosa, paura con conseguente scarica di adrenalina, una sensazione molto sgradevole anche perché le crisi a volte arrivano improvvise, senza preavviso, e chi ne è colpito vive nel terrore di entrare nella fase di \" Terrore\".</div><div>Se lo stato di angoscia è profondo, grave e permanente allora necessita dell’intervento di uno specialista.</div><div><br></div><div><b>M.T.C.</b></div><div>Ansia, paura, angoscia e iperemotività sono considerati un eccesso di Qi nei meridiani di Cuore e del Mastro del cuore, che deve regolare il tono del plesso cardiaco.&nbsp;</div>",
+			"TestoPatologia": "<div>L’emotività di ogni persona&nbsp; è soggettiva e si manifesta nei modi più inverosimili, una scarsa autostima di fondo può indurre una persona a pensare di non farcela a superare prove che la vita ci pone davanti. Uno stress accentuato che va a ledere la nostra calma e ci può portare ad andare in \"tilt\" ed ecco apparire l’ansia, la paura, il famoso attacco di panico. Come sintomo in fase acuta si possono avere tachicardia, respirazione affannosa, paura con conseguente scarica di adrenalina, una sensazione molto sgradevole anche perché le crisi a volte arrivano improvvise, senza preavviso, e chi ne è colpito vive nel terrore di entrare nella fase di \" Terrore\".</div><div>Se lo stato di angoscia è profondo, grave e permanente allora necessita dell’intervento di uno specialista.</div><div><br></div>",
 			"sessoPatologia": "",
 			"chiaviPatologia": "",
 			"scheda": 42,
@@ -9735,7 +9735,7 @@ DB.set= {
 		},
 		{
 			"NomePatologia": "Stipsi",
-			"TestoPatologia": "<div>Viene definita tale l’evacuazione difficoltosa e non frequente delle feci che hanno comunque assunto una densità notevole, secche e dure.</div><div>L’evoluzione cronica può portare a diverticoli, e può aumentare la percentuale di rischio tumorale del colon. L’abuso prolungato di lassativi può favorire la comparsa del \"colon a cicatrici\" con grave inerzia dell’intestino crasso.&nbsp;</div><div><br></div><div><b>M.T.C.</b></div><div>Calore e Stasi del Qi di Fegato.</div><div>Deficit di Qi e Sangue.</div><div>Deficit di Yin e di Yang.</div><div>Condensazione di Freddo.</div>",
+			"TestoPatologia": "<div>Viene definita tale l’evacuazione difficoltosa e non frequente delle feci che hanno comunque assunto una densità notevole, secche e dure.</div><div>L’evoluzione cronica può portare a diverticoli, e può aumentare la percentuale di rischio tumorale del colon. L’abuso prolungato di lassativi può favorire la comparsa del \"colon a cicatrici\" con grave inerzia dell’intestino crasso.&nbsp;</div><div><br></div>",
 			"sessoPatologia": "",
 			"chiaviPatologia": "",
 			"scheda": 70,
@@ -9743,7 +9743,7 @@ DB.set= {
 		},
 		{
 			"NomePatologia": "Sterilità di coppia",
-			"TestoPatologia": "...",
+			"TestoPatologia": "L'auricoloterapia abbinata all’agopuntura è un valido supporto per l'infertilità sia maschile che femminile. E' una terapia naturale, non vi sono interazioni con i farmaci assunti durante la stimolazione. Si è dimostrato scientificamente essere efficace per aumentare il numero di gravidanze, e ridurre gli aborti. E’ importante ricordare che non solo la donna è causa della mancata gravidanza, dato che a livello internazionale le percentuali di infertilità sono del 35% nell’uomo e del 55% nella donna e solo nel 10% dei casi l’origine di questa problematica è chiara. Esistono una serie di fattori che influenzano questo disturbo; nella donna, le disfunzioni ormonali, malformazioni delle tube e dell’utero, endometriosi o infezioni pelviche, prima fra tutte la Clamidia; invece nell’uomo, alterazioni degli spermatozoi e fattori ambientali, come fumo, alcool ed esposizione agli inquinanti, ma anche l’utilizzo di certe tipologie di farmaci. In media l’infertilità è un problema per il 15% delle coppie e nel 2017 più di 78 mila coppie si sono rivolte ai centri per la procreazione medicalmente assistita per avere un bambino; nel 41% dei casi si trattava di infertilità femminile, nel 23,6% di infertilità maschile e nel 18,9% di infertilità di entrambi i partner. Il trattamento prevede, secondo tempi e modi ben precisi, la stimolazione di aree del corpo ricche di recettori che quando attivati meccanicamente inducono risposta afferente cerebrale con aumento o diminuzione della produzione di importanti mediatori chimici, come ad esempio Serotonina, endorfine, oppioidi endogeni,che impattano sul tono dell’umore e sullo stress percepito, ma anche migliorare il corretto rilascio di ormoni come LH, FSH e PRL legati al ciclo ovarico ed uterino. Da secoli in Cina si usa una combinazione di agopuntura, fitoterapia e indicazioni dietetiche capaci di diminuire le difficoltà che molte coppie sperimentano nel cercare di avere figli e oggi questa tecnica è sempre più utilizzata anche in Italia.",
 			"sessoPatologia": "",
 			"chiaviPatologia": "",
 			"scheda": 57,
@@ -9751,7 +9751,7 @@ DB.set= {
 		},
 		{
 			"NomePatologia": "Stress",
-			"TestoPatologia": "",
+			"TestoPatologia": "Lo stress è la risposta psicologica e fisiologica che l'organismo mette in atto nei confronti di compiti, difficoltà o eventi della vita valutati come eccessivi o pericolosi.&nbsp;<br>La sensazione che si prova in una situazione di stress è di essere di fronte ad una forte pressione mentale ed emotiva apparentemente insormontabile.<br>Il termine stress fu impiegato per la prima volta nel 1936 da Hans Selye. Questi lo definì come &ldquo;risposta aspecifica dell'organismo ad ogni richiesta effettuata su di esso&rdquo;. In base al modello di Selye, il processo stressogeno si compone di tre fasi distinte:<br>– fase di allarme: il soggetto segnala l'esubero di doveri e mette in moto le risorse per adempierli;<br>– fase di resistenza: il soggetto stabilizza le sue condizioni e si adatta al nuovo tenore di richieste;<br>– fase di esaurimento: in questa fase si registra la caduta delle difese e la successiva comparsa di sintomi fisici, fisiologici ed emotivi.<br /><br>La durata dell'evento stressante porta a distinguere lo stress in due categorie. Quello acuto e quello cronico. Il primo si verifica una sola volta e in un lasso di tempo limitato; mentre nel secondo, lo stimolo è di lunga durata.<br />Lo stress può essere imputato ad eventi della vita sia piacevoli che spiacevoli (ad esempio: matrimonio, nascita di un figlio, morte di una persona cara, divorzio, pensionamento, problemi sessuali); cause fisiche: il freddo o il caldo intenso, abuso di fumo e di alcol, gravi limitazioni nei movimenti; fattori ambientali: la mancanza di un'abitazione, ambienti rumorosi, inquinati sono fattori determinanti di un certo stato di stress oppure malattie organiche: infatti, quando il nostro corpo è affetto da una malattia, l'intero organismo, nel tentativo di difendersi, si pone in uno stato di tensione che, nella maggior parte dei casi, per le scarse difese in grado di apportare, sfocia in una condizione di stress.<br>I soggetti affetti da stress accusano generalmente mal di testa, dolori muscolari in particolare alla schiena al collo ed alle spalle, dolore allo stomaco, tachicardia, agitazione e irrequietezza, problemi di sonno, stanchezza, perdita di appetito, problemi sessuali ed acufeni (tintinni, fischi) nelle orecchie.<br>La risposta comportamentale più diffusa è quella di digrignare i denti, ma in alcuni casi emerge una certa attitudine alla prepotenza, l'aumento dell'uso di alcolici, e la fame nervosa.<br>In base al livello di stress, la persona può andare incontro a crisi di pianto, rabbia, sensazione di solitudine ed impotente ad affrontare il cambiamento, tensione ed infelicità senza un valido motivo.<br>I disturbi psicosomatici correlati allo stress sono: il disturbo post traumatico da stress, disturbo acuto da stress, disturbi psicosomatici (asma bronchiale, ipertensione arteriosa, colite, eczema cutaneo, alopecia psicogena, ulcera gastro-duodenale), fibromialgia, depressione, disturbo bipolare, disturbi d'ansia, disturbi della sfera sessuale, disturbi dell'alimentazione (anoressia, bulimia).<br>Sebbene non ci sia una vera e propria soluzione che possa risolvere questo disturbo, è ormai certo che facendo ricorso a tecniche di rilassamento, meditazione mindfulness, neurofeedback, e soprattutto alla psicoterapia cognitivo comportamentale si riescono ad ottenere ottimi risultati.",
 			"sessoPatologia": "",
 			"chiaviPatologia": "",
 			"scheda": 44,
@@ -9767,7 +9767,7 @@ DB.set= {
 		},
 		{
 			"NomePatologia": "Tachicardia, bradicardia e cardiopalmo",
-			"TestoPatologia": "<div>Con questo termine si definisce la somatizzazione a livello cardiaco di disturbi di natura psichica. Generalmente si tratta di sindromi ansiose o ipocondriache.</div><div>Si manifesta con cardiopalmo, dispnea e/o dispnea sospirosa, precordialgia.</div><div>Normalmente non crea complicanze, gli attacchi seguono le condizioni psichiche dell’individuo oppure l’influenza di stress ambientale.</div><div>Il paziente avverte un eccessivo battito cardiaco con oggettiva accelerazione del ritmo.</div><div><br></div><div><b>M.T.C.</b></div><div>Turbe dello Shen.</div><div>Deficit di Qi e di Sangue.</div><div>Deficit dello Yin con presenza di Fuoco.</div>",
+			"TestoPatologia": "<div>Con questo termine si definisce la somatizzazione a livello cardiaco di disturbi di natura psichica. Generalmente si tratta di sindromi ansiose o ipocondriache.</div><div>Si manifesta con cardiopalmo, dispnea e/o dispnea sospirosa, precordialgia.</div><div>Normalmente non crea complicanze, gli attacchi seguono le condizioni psichiche dell’individuo oppure l’influenza di stress ambientale.</div><div>Il paziente avverte un eccessivo battito cardiaco con oggettiva accelerazione del ritmo.</div><div><br></div>",
 			"sessoPatologia": "",
 			"chiaviPatologia": "",
 			"scheda": 76,
@@ -9791,7 +9791,7 @@ DB.set= {
 		},
 		{
 			"NomePatologia": "Tinnitus",
-			"TestoPatologia": "<div>Ronzio auricolare con sensazione fastidiosa soggettiva di rumore o suono.</div><div>Può essere dovuta a disturbi del condotto uditivo o del nervo relativo, o ad un problema dei centri uditivi. A volte si può determinare una sordità improvvisa.</div><div><br></div><div><b>M.T.C.</b></div><div>Deficit di Qi del Rene.</div><div>Qi ribelle del Fegato e Cistifellea.</div>",
+			"TestoPatologia": "<div>Ronzio auricolare con sensazione fastidiosa soggettiva di rumore o suono.</div><div>Può essere dovuta a disturbi del condotto uditivo o del nervo relativo, o ad un problema dei centri uditivi. A volte si può determinare una sordità improvvisa.</div><div><br></div>",
 			"sessoPatologia": "",
 			"chiaviPatologia": "",
 			"scheda": 79,
@@ -9807,7 +9807,7 @@ DB.set= {
 		},
 		{
 			"NomePatologia": "Tiroidite autoimmune",
-			"TestoPatologia": "<div>Detta anche tiroidite cronica linfatica, si presenta come processo infiammatorio cronico di natura autoimmune che si può presentare in concomitanza ad altre patologie autoimmuni.</div><div>Si manifesta prima come ipofunzione tiroidea con aumento del TSH, poi si riduce il T4 sierico e insorge l’ipotiroidismo.</div><div><br></div><div><b>M.T.C.</b></div><div>Stasi di Qi e Sangue.</div><div>Deficit di Yang di Milza e Rene.</div>",
+			"TestoPatologia": "<div>Detta anche tiroidite cronica linfatica, si presenta come processo infiammatorio cronico di natura autoimmune che si può presentare in concomitanza ad altre patologie autoimmuni.</div><div>Si manifesta prima come ipofunzione tiroidea con aumento del TSH, poi si riduce il T4 sierico e insorge l’ipotiroidismo.</div><div><br></div>",
 			"sessoPatologia": "",
 			"chiaviPatologia": "",
 			"scheda": 48,
@@ -9815,7 +9815,7 @@ DB.set= {
 		},
 		{
 			"NomePatologia": "Tiroidite di Hashimoto",
-			"TestoPatologia": "<div>Detta anche tiroidite cronica linfatica, si presenta come processo infiammatorio cronico di natura autoimmune che si può presentare in concomitanza ad altre patologie autoimmuni.</div><div>Si manifesta prima come ipofunzione tiroidea con aumento del TSH, poi si riduce il T4 sierico e insorge l’ipotiroidismo.</div><div><br></div><div><b>M.T.C.</b></div><div>Stasi di Qi e Sangue.</div><div>Deficit di Yang di Milza e Rene.</div>",
+			"TestoPatologia": "<div>Detta anche tiroidite cronica linfatica, si presenta come processo infiammatorio cronico di natura autoimmune che si può presentare in concomitanza ad altre patologie autoimmuni.</div><div>Si manifesta prima come ipofunzione tiroidea con aumento del TSH, poi si riduce il T4 sierico e insorge l’ipotiroidismo.</div><div><br></div>",
 			"sessoPatologia": "",
 			"chiaviPatologia": "",
 			"scheda": 48,
@@ -9871,24 +9871,6 @@ DB.set= {
 		}
 	],
     "teoria": [
-        { //  metodo
-            "TitoloSezione": "Metodo",
-            "contenuti": [
-                {
-                    "TitoloTeoria": "La mappa",
-                    "TestoTeoria": "xxx"
-                },
-                {
-                    "TitoloTeoria": "Le schede terapeutiche",
-                    "TestoTeoria": "xxx"
-                },
-                {
-                    "TitoloTeoria": "Nomenclatura",
-                    "TestoTeoria": "xxx"
-                }
-            ],
-            "noList": true
-        },
         { // anatomia dell'orecchio
             "TitoloSezione": "Anatomia del padigione auricolare",
             "contenuti": [
@@ -9898,11 +9880,11 @@ DB.set= {
                 },
                 {
                     "TitoloTeoria": "Punti di repere",
-                    "TestoTeoria": "xxx"
+                    "TestoTeoria": "Per identificare la stessa regione del padiglione auricolare da una persona all'altra è necessario individuare dei punti di riferimento.  Mentre le dimensioni e la forma dell'orecchio possono variare notevolmente tra diversi individui, i punti di riferimento auricolari sono abbastanza coerenti nella maggior parte dei pazienti. Questi punti di riferimento  si distinguono per l'inizio o la fine delle diverse sottosezioni del padiglione auricolare. Il nome e la numerazione dei 18 punti di riferimento inizia con LM 0 perché si trova nella stessa posizione di un punto  principale primario sul padiglione auricolare, il Punto Zero, e prosegue fino a LM 17..<br><br> <b><span class=\"lmLabel\">LM 0</span> - Centro dell'orecchio:</b> una tacca distinta si trova nella posizione più centrale dell'orecchio, dove la conca rigida incontra la radice dellelice. Può essere rilevato facilmente con un'unghia o una sonda  metallica. LM 0 è il punto di riferimento più comune per fare riferimento ad altre regioni anatomiche del padiglione auricolare. I punti reattivi dell'orecchio sul bordo esterno dell'elice si trovano  spesso a 30° da una linea che collega LM 0 al punto auricolare che corrisponde all'area della patologia corporea. Questa regione della radice elicoidale rappresenta il plesso solare autonomo e il cordone ombelicale,  portando qualsiasi disfunzione del corpo verso uno stato di equilibrio.<br><br> <b><span class=\"lmLabel\">LM 1</span> - Inserzione dellelice:</b> La regione dell'orecchio in cui la radice elicoidale si separa dalla faccia e attraversa a radice inferiore dell'antielice. La radice dellelice, che si estende da LM 0 a LM 1, rappresenta gli organi  genitali. I genitali esterni si trovano sulla superficie esterna della radice dell'elice e gli organi genitali interni si trovano lungo la superficie nascosta della radice dellelice. <br><br> <b><span class=\"lmLabel\">LM 2</span> - Apice dell'elice: </b>Il punto più superiore del padiglione aricolare è chiamato apice e si trova  lungo una linea che è verticalmente sopra LM 0. Questo punto rappresenta il controllo funzionale delle allergie ed è il punto di puntura per il salasso per dissipare l'energia tossica. <br><br> <b><span class=\"lmLabel\">LM 3</span> - Margine superiore del Tubercolo di Darwin:</b> La tacca immediatamente superiore al tubercolo auricolare, che separa il tubercolo di Darwin dall'elice superiore. Questa regione ha punti per il trattamento delle reazioni antinfiammatorie e delle tonsilliti.<br><br> <b><span class=\"lmLabel\">LM 4</span> - Margine inferiore del Tubercolo di Darwin:</b> La tacca immediatamente inferiore al tubercolo auricolare, che divide il tubercolo di Darwin dalla coda dellelice. Sulla superficie più periferica di questo punto di riferimento sporgente, c'è  una fessura nella cartilagine che separa l'elice superiore dalla coda dellelice. La coda dellelice si estende da LM 4 fino a LM 5, che rappresenta il midollo spinale. <br><br> <b><span class=\"lmLabel\">LM 5</span> - Curva  dellelice: </b>La coda dellelice curva centralmente ed inferiormente verso il lobulo. Quest'area rappresenta il midollo spinale cervicale.<br><br> <b><span class=\"lmLabel\">LM 6</span> - Incisura elico-lobulare: </b>una sottile tacca dove il tessuto cartilagineo della coda inferiore dellelice incontra il tessuto morbido e carnoso del lobuloo. Quest'area rappresenta il midollo allungato.<br><br> <b><span class=\"lmLabel\">LM 7</span> - Base del lobulo:</b> Il punto più basso del lobulo si trova verticalmente sotto una linea retta che passa attraverso  LM 2, LM 0 e LM 7. Rappresenta problemi infiammatori.<br><br> <b><span class=\"lmLabel\">LM 8</span> - Inserzione lobulare: </b>Il punto più inferiore del lobulo che si attacca alla mandibola. La posizione di questo  punto di riferimento varia considerevolmente. In alcune persone, LM 8 è inferiore a LM 7, mentre in altri individui, LM 8 è superiore a LM 7. Questa regione rappresenta il sistema limbico e la corteccia cerebrale.  Colpisce nervosismo, preoccupazione, ansia e nevrastenia.<br><br> <b><span class=\"lmLabel\">LM 9</span> - Incisura intertragica: </b>L'incisura che divide il trago dall'antitrago. Rappresenta il controllo ipofisario degli ormoni rilasciati da altre ghiandole endocrine.<br><br> <b><span class=\"lmLabel\">LM 10</span> - Protuberanza inferiore del trago:</b> Il tubercolo sporgente sulla parte inferiore del trago, di fronte alla parte superiore dell'antitrago. Rappresenta le ghiandole surrenali ed è utilizzato nel trattamento di vari disturbi legati allo  stress. <br><br> <b><span class=\"lmLabel\">LM 11</span> - Protuberanza superiore del trago: </b>Il tuberbolo sporgente sulla parte superiore del trago, opposta alla radice elicoidale. Influisce sulla regolazione della sete e dell'acqua. <br><br> <b><span class=\"lmLabel\">LM 12</span> - Protuberanza dellantitrago: </b>Il tubercolo sporgente alla base della cresta ricurva dell'antitrago, superiore al lobulo. Rappresenta la fronte ed è usata per il trattamento delle cefalee.<br><br> <b><span class=\"lmLabel\">LM 13</span> - Apice dell'antitrago: </b>Il tubercolo sporgente in cima alla cresta ricurva dell'antitrago, opposta a LM 12. Rappresenta le tempie del cranio e viene utilizzato per il trattamento dell'emicrania e per l'asma. <br><br> <b><span class=\"lmLabel\">LM 14</span> - Base di antelice:</b> Una protuberanza rotonda alla base della coda dellantielice, che si eleva sopra la scanalatura  antielice-antitragale. Questa scanalatura divide l'antitraguo esterno dalla coda dell'antielice. La protuberanza LM 14 rappresenta le vertebre cervicali superiori vicino al cranio. La coda dellantielice, che  si estente da LM 14 fino a LM 15, rappresenta tutte e sette le vertebre cervicali ed è utilizzata nel trattamento del dolore cervicale.<br><br> <b><span class=\"lmLabel\">LM 15</span> - Curva dellantielice:</b> Una tacca che divide il corpo centrale antielice dalla coda. Questo punto di riferimento si trova al di sopra della conca rigida, orizzontalmente di fronte LM 0, e divide le vertebre cervicali inferiori dalle  vertebre toraciche superiori. Il corpo dellantielice, che si estende da LM 15 fino a LM 16, rappresenta tutte le 12 vertebre toraciche e viene utilizzato per il trattamento del dolore alla parte superiore della schiena.<br><br> <b><span class=\"lmLabel\">LM 16</span> - Incisura dellantelice:</b> Una tacca distinta che divide la sporgenza curva piatta del ramo inferiore dellantielice dal corpo. Questa tacca divide la rappresentazione somatotopica delle vertebre toraciche inferiori dalle vertebre lombari  superiori. Il ramo inferiore dellantelice è utilizzato per il trattamento del mal di schiena.<br><br> <b><span class=\"lmLabel\">LM 17</span> - Punto mediano del ramo inferiore dellantelice:</b> Punto sulla superficie superiore del ramo inferiore dellantelice che lo divide in 2 metà. Questa tacca separa le vertebre lombari inferiori dalle vertebre sacrali superiori. Questo punto di riferimento  era il punto di orecchio utilizzato per il trattamento della sciatica, identificato per la prima volta dal P. Nogier e, che ha portato alla scoperta della mappa somatotopica del feto invertito sull'orecchio."
                 },
 				{
 					"TitoloTeoria": "Zone di frequenza",
-					"TestoTeoria": "xxx"
+					"TestoTeoria": "P. Nogier ha identificato  7 regioni specifiche del corpo che risuonano con sette frequenze di base. Tali regioni del corpo sono state differenziate con le lettere da A a G. Ogni lettera indica anche alcuni tipi di condizioni di salute che erano legate al tipo di tessuto  di quella regione d'organo.<br />I singoli colori hanno  diverse frequenze di fotoni oscillanti di luce, che passano dalla più bassa frequenza del rosso a frequenze progressivamente più alte del prisma. Gli effetti di lunghezze  d'onda progressivamente più corte di diversi filtri luminosi colorati sul tessuto corporeo possono essere trovati anche con frequenze progressivamente più alte di luce lampeggiante (frequenze più  veloci di impulsi elettrici o frequenze più elevate di stimolazione laser).<br><br><br><b>Zona A - Vitalità cellulare<br /></b><i>Colore: </i><span style=\"color:#e3a15d;\">Arancio</span><br /><i>Frequenza elettrica: </i>2.3Hz<br> <i>Fraquenza laser: </i>292Hz<br /><br>Questa zona percorre la linea mediana del corpo fisico come i meridiani dell'agopuntura Caso Concezione e del Vaso Governatore nella M.T.C. Colpisce l'energia reticolare  primitiva e le forze primordiali che influenzano l'organizzazione cellulare. Questa frequenza si ritrova spesso dove sono presenti cicatrici e disturbi dei tessuti e si riferisce all'organizzazione embrionale del tessuto  cellulare. E' usato per trattare l'iperattività cellulare, la proliferazione cellulare, i trattamenti infiammatori o i processi neoplastici,o.<br><br><br><b>Zona B - Metabolismo nutrizionale<br /></b><i>Colore: </i><span style=\"color:#da554d;\">Rosso</span><br /><i>Frequenza elettrica: </i>5.0Hz<br> <i>Fraquenza laser: </i>584Hz<br><br>Questa zona riguarda gli organi interni. La frequenza di 5Hz è la velocità ottimale per stimolare i punti nella conca del padiglione auricolare ed è usata per trattare  disturbi nutrizionali, disturbi dell'assimilazione, malnutrizione dei tessuti, disfunzioni neurovegetative, allergie organiche, disfunzioni costituzionali e squilibrio parasimpatico, o nel trattamento endodermico di organi  viscerali correlati la seconda e terza fase Nogier. <br><br><br><b>Zona C - Movimenti cinetici<br /></b><i>Colore: </i><span style=\"color:#dfbc4e;\">Giallo</span><br /><i>Frequenza elettrica: </i>10.0Hz<br> <i>Fraquenza laser: </i>1168Hz<br><br>Questa zona influenza la propriocezione, cioè i movimenti cinetici dell'apparato corpo muscolo-scheletrico. La frequenza di risonanza per la zona è di 10 Hz, che è  la frequenza utilizzata per trattare i punti auricolari sull'antielice e le aree circostanti del padiglione auricolare, come la fossa scafoide e la fossa triangolare. Questa zona riguarda il dolore miofasciale, l'eccitazione  del sistema nervoso simpatico, i disturbi della somatizzazione, le allergie cutanee, gli spasmi motori, le patologie muscolari e qualsiasi disturbo aggravato dal movimento cinetico, o i muscolo-scheletrici mesodermici relativi  alla seconda e terza fase di Nogier.<br><br><br><b>Zona D - Coordinamento globale<br /></b><i>Colore: </i><span style=\"color:#df8b5c;\">Rosso-arancio</span><br /><i>Frequenza elettrica: </i>20.0Hz<br> <i>Fraquenza laser: </i>2336Hz<br><br>Questa zona rappresenta il corpo calloso e la commissura anteriore che coordinano le associazioni tra i due lati del cervello. E' rappresentato sul trago esterno del padiglione auricolare.  Corrisponde a disfunzioni trasversali, problemi di simmetria cerebrale contro divergenza, mancanza di coordinazione dei due lati del corpo, disfunzioni simmetricamente bilaterali o problemi di dolore della linea mediana. Questa  frequenza riguarda problemi di dolore simmetricamente bilaterali e problemi di dolore rigorosamente mediani. In una persona destrorsa, il trago destro corrisponde al Vaso Concezione e il trago sinistro corrisponde al Vaso  Governatore della M.T.C. e viceversa per un soggetto mancino.<br><br><br><b>Zona E - Interazioni neurologiche</b><br> <i>Colore: </i><span style=\"color:#86a050;\">Verde</span><br /><i>Frequenza elettrica: </i>40.0Hz<br> <i>Fraquenza laser: </i>4672Hz<br><br>Questa zona rappresenta il midollo spinale e i nervi periferici e corrisponde alla coda elicoidale del padiglione auricolare. Viene utilizzata per disturbi spinali, disturbi della pelle,  dermatiti, cicatrici cutanee, neuropatie, nevralgie e herpes zoster.<br><br><br><b>Zona F - Reazioni emotive</b><br><i>Colore: </i><span style=\"color:#a287b0;\">Blu</span><br /><i>Frequenza elettrica: </i>80.0Hz<br><i>Fraquenza laser: </i>9334Hz<br><br>Questa zona rappresenta il tronco cerebrale, il talamo, il sistema limbico e lo striato ed è rappresentata sul lobo periferico dell'auricolare. Corrisponde a problemi legati  a posture inconsce, riflessi condizionati, tic, spasmi muscolari, balbuzie, mal di testa, dolore facciale, sensazioni eccessivamente sensibili, depressione clinica e disturbi emotivi, onel  trattamento dei punti neuroendocrini  ectodermici relativi alla seconda e terza fase di Nogier. <br><br><br><b>Zona G - Organizzazione intellettuale</b><br><i>Colore: </i><span style=\"color:#bb5eae;\">Viola</span><br /><i>Frequenza elettrica: </i>160.0Hz<br> <i>Fraquenza laser: </i>18688Hz<br><br>Questa zona rappresenta le funzioni psicologiche affette dalla corteccia frontale che sono rappresentate sulla parte mediale del lobulo. Viene utilizzata per disfunzioni del sistema piramidale,  disturbi della memoria, disfunzioni intellettuali, reazioni psicosomatiche, nervosismo ossessivo, preoccupazione cronica, riflessi condizionati malfunzionanti e psicopatologia profonda, o nel trattamento dei punti della corteccia  cerebrale ectodermica legati alla seconda e terza fase di Nogier."
 				},
 				{
 					"TitoloTeoria": "Innervazione",
@@ -9939,7 +9921,7 @@ DB.set= {
                     "TestoTeoria": "xxx"
                 },
                 {
-                    "TitoloTeoria": "Tecnice di stimolazione e strumenti",
+                    "TitoloTeoria": "Tecniche di stimolazione e strumenti",
                     "TestoTeoria": "xxx"
                 },
                 {
@@ -9950,8 +9932,12 @@ DB.set= {
             "noList": true
         },
         { // categorie di punti
-            "TitoloSezione": "Categorie di punti",
+            "TitoloSezione": "Catalogazione dei punti",
             "contenuti": [
+                {
+                    "TitoloTeoria": "La mappa e le aree",
+                    "TestoTeoria": ""
+                },
                 {
                     "TitoloTeoria": "Punti MASTER",
                     "TestoTeoria": "I punti MASTER sono così nominati perché normalmente attivi nella maggior parte dei pazienti e sono utili per il trattamento di una varietà di disturbi della salute. Generalmente, si deve prima stimolare i punti corrispondenti appropriati per un dato organo anatomico, e in seguito stimolare anche i punti MASTER indicati per il disturbo. I punti Master sono 10.",

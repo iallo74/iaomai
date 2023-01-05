@@ -247,6 +247,7 @@ function caricaModello( cartella ){
 	if(mouseDetect)document.getElementById("nav").classList.add("visBtn");
 }
 function scaricaModello( esci ){
+	try{SET._scaricaModello();}catch(err){};
 	var elencoSel = SCHEDA.elencoSel;
 	/*var notInit = false;
 	if(globals.set.cartella)notInit = true;

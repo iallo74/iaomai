@@ -1221,6 +1221,9 @@ SET = {
 	_scaricaSet: function(){
 		//
 	},
+	_scaricaModello: function(){
+		//
+	},
 	_torna: function( args ){
 		if(typeof(args.daCarica) == 'undefined')SET.pMod = -1;
 	}

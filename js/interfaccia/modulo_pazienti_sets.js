@@ -303,9 +303,8 @@ var PAZIENTI_SETS = {
 		if(evi>-1){
 			setTimeout(function(){document.getElementById("rg_"+evi).classList.remove("eviPunto")},2000);
 		}
-		
 		try{
-			SET.evidenziaTsuboMod(elenco.substr(0,elenco.length-1).split("|"));
+			if(elenco)SET.evidenziaTsuboMod(elenco.substr(0,elenco.length-1).split("|"));
 		}catch(err){}
 		if(PAZIENTI.topAdd)document.getElementById("scheda_testo").scrollTo(0,document.getElementById("scheda_testo").scrollTop+(tCoord(document.getElementById("p_add_dett"),'y')-PAZIENTI.topAdd));
 		PAZIENTI.topAdd = null;
@@ -675,10 +674,8 @@ var PAZIENTI_SETS = {
 		if(typeof(evi)=='undefined')var evi = -1;
 		document.getElementById('puntiAuriculoMap').style.display = 'block';
 		document.getElementById('label_puntiAuriculoMap').style.display = 'block';
-		
 		var HTML = '<div></div>'; // serve lasciarlo per il drag&drop
 		var elenco = [];
-		
 		if(PAZIENTI.auriculoProvvisori.length){
 			if( globals.set.cartella == 'auricologia' ){
 				var puntiElenco = [];
@@ -834,10 +831,10 @@ var PAZIENTI_SETS = {
 		if(evi>-1){
 			setTimeout(function(){document.getElementById("rg_"+evi).classList.remove("eviPunto")},2000);
 		}
-		
 		try{
 			SET.evidenziaTsuboMod(elenco);
 		}catch(err){}
+		
 		if(PAZIENTI.topAdd)document.getElementById("scheda_testo").scrollTo(0,document.getElementById("scheda_testo").scrollTop+(tCoord(document.getElementById("p_add_dett"),'y')-PAZIENTI.topAdd));
 		PAZIENTI.topAdd = null;
 	},
