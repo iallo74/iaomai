@@ -134,7 +134,13 @@ var MODULO_PUNTI = { // extend SET
 		var legenda = [];	
 		var sceltaPuntiTag = 	'<div class="menuElenchi"' +
 								'	  onClick="MENU.visMM(\'sistemaPunti_p\');">' +
-								'</div><p id="sistemaPunti_p"><span id="selectCambioMappa">';
+								'</div><p id="sistemaPunti_p"';
+								
+		if(!SET.PH2_full && !SET.PH3_full){
+			sceltaPuntiTag += 	'	  class="noPH"';
+			SET.phase = '';
+		}
+		sceltaPuntiTag += 		'><span id="selectCambioMappa">';
 			
 		//sceltaPuntiTag += 	'<i>'+htmlEntities(TXT("PhaseAttiva"))+':</i>';
 		

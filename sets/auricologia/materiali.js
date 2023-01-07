@@ -19,10 +19,10 @@ SET.COL = {
 	notePTemissive: 0x333300,
 	
 	selAR: 0xFF0000,
-	baseAR: 0x666666,
+	baseAR: 0x333333,
 	baseAR_CIN: 0x7e5726,
 	baseAR_EUR: 0x0a6da0,
-	overAR: 0x999999,
+	overAR: 0x666666,
 	overAR_CIN: 0x9c784a,
 	overAR_EUR: 0x428fb7,
 	
@@ -100,42 +100,50 @@ SET.MAT = {
 	
 	// PUNTI
 	pointBase: new THREE.MeshStandardMaterial( {
+		name: "Point Base",
 		color: SET.COL.basePT,
 		roughness:1,
 		transparent: true
 	}),
 	pointBaseCIN: new THREE.MeshStandardMaterial( {
+		name: "Point Base CIN",
 		color: SET.COL.basePT_CIN,
 		roughness:1,
 		transparent: true
 	}),
 	pointBaseEUR: new THREE.MeshStandardMaterial( {
+		name: "Point Base EUR",
 		color: SET.COL.basePT_EUR,
 		roughness:1,
 		transparent: true
 	}),
 	pointOver: new THREE.MeshStandardMaterial( {
+		name: "Point Over",
 		color: SET.COL.overPT,
 		roughness:1,
 		transparent: true
 	}),
 	pointOverCIN: new THREE.MeshStandardMaterial( {
+		name: "Point Over CIN",
 		color: SET.COL.overPT_CIN,
 		roughness:1,
 		transparent: true
 	}),
 	pointOverEUR: new THREE.MeshStandardMaterial( {
+		name: "Point Over EUR",
 		color: SET.COL.overPT_EUR,
 		roughness:1,
 		transparent: true
 	}),
 	pointNote: new THREE.MeshStandardMaterial( {
+		name: "Point Note",
 		color: SET.COL.notePT,
 		emissive: SET.COL.notePTemissive,
 		roughness:1,
 		transparent: true
 	}),
 	pointTrasp: new THREE.MeshStandardMaterial( {
+		name: "Point Trasp",
 		roughness:1, 
 		premultipliedAlpha: true, // per visualizzare il colore sul fondo scuro
 		side: 2, // per visualizzare il colore sul fondo scuro
@@ -146,6 +154,7 @@ SET.MAT = {
 		depthWrite: false // !!!! per le trasparenze del pulse (senza i pallini vengono tagliati
 	} ),
 	pointOn: new THREE.MeshStandardMaterial( {
+		name: "Point On",
 		color: SET.COL.sel,
 		roughness:1,
 		transparent: true

@@ -655,19 +655,14 @@ var PAZIENTI_SETS = {
 	
 	// auriculo-punti
 	ricAuriculo: function( frm, n ){
+		SET.overTsubo("PT"+PAZIENTI.auriculoProvvisori[n].s,false);
 		var siglaTsubo=eval("document."+frm+".pt_"+n+".value");
 		var de=eval("document."+frm+".de_"+n+".value");
-		var elenco = [];
-		for(p in PAZIENTI.auriculoProvvisori){
-			if(p*1 == n*1){
-				PAZIENTI.auriculoProvvisori[p].s = siglaTsubo;
-				PAZIENTI.auriculoProvvisori[p].n = DB.set.punti[siglaTsubo].NomeTsubo;
-				PAZIENTI.auriculoProvvisori[p].t = de;
-			}
-			elenco.push(siglaTsubo);
-		}
+		PAZIENTI.auriculoProvvisori[n].s = siglaTsubo;
+		PAZIENTI.auriculoProvvisori[n].n = DB.set.punti[siglaTsubo].NomeTsubo;
+		PAZIENTI.auriculoProvvisori[n].t = de;
 		try{
-			SET.evidenziaTsuboMod(elenco.substr(0,elenco.length-1).split("|"));
+			PAZIENTI.caricaAuriculoTrattamento();
 		}catch(err){}
 	},
 	caricaAuriculoTrattamento: function( evi ){ // carica i punti del trattamento
@@ -852,6 +847,7 @@ var PAZIENTI_SETS = {
 		document.getElementById("grpAur").selectedIndex = 0;
 	},
 	eliminaAuriculoTrattamento: function( n ){ // elimina un punto del trattamento
+		SET.overTsubo("PT"+PAZIENTI.auriculoProvvisori[n].s,false);
 		PAZIENTI.auriculoProvvisori.splice(n, 1); 
 		PAZIENTI.caricaAuriculoTrattamento();
 		SCHEDA.formModificato = true;

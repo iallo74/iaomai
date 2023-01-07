@@ -84,10 +84,8 @@ var MODULO_PATOLOGIE = { // extend SET
 			if(typeof(el.length)=='undefined'){
 				ST += '<div class="ptTr" data-tri="'+el.l+'"><div>';
 				for(j=0;j<el.p.length;j++){
-					if(el.p[j].length==3){
-						ST += '[.'+el.p[j]+'.]';
-						if(DB.set.punti[el.p[j]].hidden)SET.hiddenPoints.push(el.p[j]);
-					}else ST += '<span class="etPoints">'+el.p[j].replace('[]','<span class="pNUL"></span>')+'</span>';
+					if(el.p[j].length==3)ST += '[.'+el.p[j]+'.]';
+					else ST += '<span class="etPoints">'+el.p[j].replace('[]','<span class="pNUL"></span>')+'</span>';
 					if(j<el.p.length-1)ST += '<br>';
 				}
 				ST += '</div><div>'+el.t+'</div></div>';
@@ -98,15 +96,12 @@ var MODULO_PATOLOGIE = { // extend SET
 				ST += '<p class="ptLk">';
 				for(j=0;j<el.length;j++){
 					ST += '[.'+el[j]+'.]';
-					if(DB.set.punti[el[j]].hidden)SET.hiddenPoints.push(el[j]);
 					if(j<el.length-1)ST += '<br>';
 				}
 				ST += '</p>';
 			}
-		}else if(el.length==3){
-			ST += '[.'+el+'.]<br>';
-			if(DB.set.punti[el].hidden)SET.hiddenPoints.push(el);
-		}else if(el)ST += '<span class="etPoints">'+el.replace('[]','<span class="pNUL"></span>')+'</span><br>';
+		}else if(el.length==3)ST += '[.'+el+'.]<br>';
+		else if(el)ST += '<span class="etPoints">'+el.replace('[]','<span class="pNUL"></span>')+'</span><br>';
 		else ST += '<span class="sepPoints"></span>';
 		return ST;
 	},
@@ -117,8 +112,6 @@ var MODULO_PATOLOGIE = { // extend SET
 			return;
 		}
 		// --------------------------
-		
-		SET.hideHiddenPoints();
 		
 		SET.patOp = n;
 		SET.schEvi = null;
@@ -251,12 +244,7 @@ var MODULO_PATOLOGIE = { // extend SET
 							TXT("ReferenceGuide") +
 						'</div>';*/
 		var addClose = '';
-		
-		if(SET.hiddenPoints){
-			SET.showHiddenPoints();
-			addClose = 'SET.hideHiddenPoints();';
-		}
-						
+			
 		SCHEDA.caricaScheda(	titolo,
 								html,
 								'SET.chiudiPatologia();' +
@@ -284,43 +272,6 @@ var MODULO_PATOLOGIE = { // extend SET
 		if(SET.schEvi)SET.schEvi.classList.remove("eviPoints");
 		el.classList.add("eviPoints");
 		SET.schEvi = el;
-	},
-	showHiddenPoints: function(){
-		if(!SET.hiddenPoints)return;
-		var phs = ["","2","3"];
-		for(ph in phs){
-			var pts = scene.getObjectByName("PTs"+phs[ph]).children;
-			for(p in pts){
-				if(SET.hiddenPoints.indexOf(pts[p].name.replace("_","").substr(2,3))==0){
-					pts[p].visible = true;
-				}
-			}
-			var pts = scene.getObjectByName("ARs"+phs[ph]).children;
-			for(p in pts){
-				if(SET.hiddenPoints.indexOf(pts[p].name.substr(2,3))==0){
-					pts[p].visible = true;
-				}
-			}
-		}
-	},
-	hideHiddenPoints: function(){
-		if(!SET.hiddenPoints)return;
-		var phs = ["","2","3"];
-		for(ph in phs){
-			var pts = scene.getObjectByName("PTs"+phs[ph]).children;
-			for(p in pts){
-				if(SET.hiddenPoints.indexOf(pts[p].name.replace("_","").substr(2,3))==0){
-					pts[p].visible = false;
-				}
-			}
-			var pts = scene.getObjectByName("ARs"+phs[ph]).children;
-			for(p in pts){
-				if(SET.hiddenPoints.indexOf(pts[p].name.substr(2,3))==0){
-					pts[p].visible = false;
-				}
-			}
-		}
-		SET.hiddenPoints = [];
 	},
 	filtraPatologie: function( event ){ // filtra le patologie tramite campo di testo
 		var parola = document.getElementById("pat_ricerca").value.trim();

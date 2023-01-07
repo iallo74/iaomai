@@ -1035,6 +1035,12 @@ body:not(.bodyModello) #btns_set > div{
 	cursor:pointer;
 }
 
+.noPH #sceltaPhaseElenco{
+	display:none;
+}
+.noPH #sceltaMappaElenco{
+	width:calc(100% - 30px) !important;
+}
 #sceltaMappaElenco{
 	background-image:url(../../img/frGiuB.png), url(../../img/p_aree2B.png);
 }
