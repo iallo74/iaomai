@@ -76,7 +76,8 @@ body:not(.smart) #icone.iconeEspanse{
 	text-align:left;
 	display:inline-block;
 	width:auto !important;
-	/*height:auto !important;*/
+	height:auto !important;
+	max-height: 40px;
 }
 .smart #icone div svg{
 	transform: rotate(-90deg);

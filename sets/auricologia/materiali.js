@@ -7,12 +7,12 @@ SET.COL = {
 	sel: 0xFF0000,
 	musc: 0x33FF00, // 0x000000;
 	basePT: 0x666666,//0x8899AA,
-	basePT_CIN: 0xbe8842,
+	basePT_CIN: 0xc97c30,//0xbe8842,
 	basePT_EUR: 0x5c8fa8,
 	base: 0x637281,
 	over: 0xFFFFFF,
 	overPT: 0x999999,//0xAABBCC,
-	overPT_CIN: 0xdfb57f,
+	overPT_CIN: 0xda9f67,//0xdfb57f,
 	overPT_EUR: 0x99BBCC,
 	notePT: 0xffd000,
 	notePTSel: 0xff9900,
@@ -20,10 +20,10 @@ SET.COL = {
 	
 	selAR: 0xFF0000,
 	baseAR: 0x333333,
-	baseAR_CIN: 0x7e5726,
+	baseAR_CIN: 0xab551b,//0x7e5726,
 	baseAR_EUR: 0x0a6da0,
 	overAR: 0x666666,
-	overAR_CIN: 0x9c784a,
+	overAR_CIN: 0xa7663b,//0x9c784a,
 	overAR_EUR: 0x428fb7,
 	
 	eviAR: 0x5ba4e4,

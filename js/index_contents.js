@@ -306,6 +306,11 @@ var modelli = {
 			'ossa',
 			'muscoli' // usati come aree
 		],
+		centro: {
+			x: -0.005833541848817953,
+			y: -0.0013587267383341226,
+			z: 7.394938985463911
+		},
 		areaName: 'Area',
 		rifletti: true,
 		txtLoading: TXT("CaricamentoModelloOrecchio"),

@@ -4,6 +4,9 @@ form{
 	margin:0px;
 	padding:0px;
 }
+.smart #formMod{
+	padding-bottom: 20px;
+}
 ::-webkit-input-placeholder{
 	opacity:0;
 }
@@ -41,8 +44,20 @@ textarea{
 	margin-top:50px;
 	height:auto !important;
 }
-.smart .formBtn{
+/*.smart .formBtn{
 	text-align:center;
+}*/
+.smart .formBtn {
+ 	text-align: center;
+    position: fixed;
+    bottom: 5px;
+    background-color: #333;
+    left: 5px;
+    width: calc(100% - 10px);
+    padding-bottom: 10px;
+    margin-bottom: 0px !important;
+    box-shadow: 0px 0px 5px;
+    border-radius: 8px;
 }
 .submitBtn,
 .annullaBtn,
@@ -118,7 +133,7 @@ body:not(.bodyStyled2):not(.smart) #scheda.schForm .annullaBtn:hover{
 	background:rgba(0,0,0,0.2) !important;
 }
 .smart #scheda.schForm .submitBtn{
-	position: fixed;
+	/*position: fixed;
     z-index: 10000;
     top: -4px;
     left: 38px;
@@ -132,10 +147,16 @@ body:not(.bodyStyled2):not(.smart) #scheda.schForm .annullaBtn:hover{
     background-position: center center;
     margin-top: 0px !important;
     margin-left: 0px;
-    background-color: #ff9100;
+    background-color: #ff9100;*/
+	margin-left: 14px;
 }
 .smart #scheda.schForm .annullaBtn{
-	display:none;
+	/*display:none;*/
+	margin-left:0px !important;
+}
+.smart #scheda.schForm .annullaBtn,
+.smart #scheda.schForm .submitBtn{
+	width: calc(50% - 20px);
 }
 	
 .smart.android .submitBtn,
@@ -1221,7 +1242,7 @@ _:-webkit-full-screen,
 	line-height:15px;
 	font-weight:normal !important;
 }
-.smart.android #formMod input:not([type=checkbox]):not([type=file]):not(#paz_add):not(#tag_add):not(#medicina_add):not(#allergia_add):not(#patologia_add):not(#intervento_add):not(.label_add){ /* PAZIENTI */
+.smart.android #formMod input:not([type=checkbox]):not([type=file]):not(#paz_add):not(#tag_add):not(#medicina_add):not(#allergia_add):not(#patologia_add):not(#intervento_add):not(.label_add):not(#gr_ret_ric){ /* PAZIENTI */
 	height:42px !important;
 	line-height:20px !important;
 }
@@ -1814,7 +1835,8 @@ body:not(.touch) #puntiAuriculoMap .dettPunto:hover{
     margin-bottom: 20px;
     display: none;
     border-radius: 4px;
-    height: 272px;	
+    min-height: 272px;
+	height: fit-content;	
     z-index: 1210;
     position: absolute;
 	box-shadow: 0px 0px 10px #000;
@@ -1951,7 +1973,8 @@ body:not(.touch) #puntiAuriculoMap .dettPunto:hover{
     border-bottom-right-radius: 4px;
 }
 .addOpts .gr_imp{
-    height:79px !important;
+    min-height:79px !important;
+	height: fit-content;
 }
 #grSelAll{
 	font-weight: normal !important;
@@ -2128,7 +2151,8 @@ body:not(.touch) .sezioneChiusa:hover{
     min-width: auto !important;
     display: inline-block;
 }
-.smart.android #fotoProvv_FL{
+.smart.android #fotoProvv_FL,
+.smart.android .p_paz_choose{
     padding-left: 42px !important;
     width: 42px !important;
 	background-position: center center !important;

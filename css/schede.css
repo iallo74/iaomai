@@ -574,7 +574,7 @@ body:not(.smart) .schedaRitorno #scheda_titolo{
 	margin-top: 3px;
 }
 .smart #scheda.visSch.schForm:not(.tab_tsubo) #scheda_titolo{
-	width: calc(100% - 172px) !important;
+	/*width: calc(100% - 172px) !important;
     margin-left: 48px !important;
     padding-left: 20px !important;
 	background: #FFF !important;
@@ -585,7 +585,7 @@ body:not(.smart) .schedaRitorno #scheda_titolo{
 	background-position:center center !important;
 	background-repeat:no-repeat !important;	
     background-size: auto !important;
-	color:#000 !important;
+	color:#000 !important;*/
 }
 
 

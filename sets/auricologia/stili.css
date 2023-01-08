@@ -119,6 +119,9 @@ body.orecchio #pulsante_modello{
 	overflow:hidden;
     white-space: nowrap;
 }
+.LMtxt{
+	color:#093;
+}
 #cont_protocollo .pallinoPat{
 	width: calc(100%);
 }
@@ -367,6 +370,7 @@ body:not(.touch) .listaPunti .spazioDopo{
 }
 /*.smart.android .elencoFiltri input,*/
 .smart.android .elencoPunti input{
+	width: calc(100% - 42px);
     height: 32px;
     line-height: 32px;
     margin-top: 3px;
@@ -652,7 +656,10 @@ body:not(.smart) .selElPt{
     margin-left: -3px;
 	border-radius:5px;
 }
-
+.smart #btnFiltri{
+    width: 40px;
+    height: 40px;
+}
 #btnFiltri:hover{
 	background-color:rgba(255,255,255,0.1) !important;
 }
@@ -1108,6 +1115,7 @@ body:not(.bodyModello) #btns_set{
 	display:none !important;
 }
 #filtriSmart_cont{
+	z-index: 10;
 	width:230px;
 	position: fixed;
     top: 48px;
@@ -1121,6 +1129,9 @@ body:not(.bodyModello) #btns_set{
 .smart #filtriSmart_cont{
     top: 50px !important;
     right: 0px !important;
+	width:350px;
+    padding:10px;
+	background-color: rgba(187,187,187,0.8);
 }
 #filtriSmart_cont div{
 	display:inline-block;
@@ -1136,6 +1147,10 @@ body:not(.bodyModello) #btns_set{
     border: 1px solid rgba(0,0,0,0.2);*/
     background-position: center center;
     background-repeat: no-repeat;
+}
+.smart #filtriSmart_cont div{
+	
+    margin: 3px;
 }
 #filtriSmart_cont div.selected{
 	background-color: rgba(255,255,255,0.6);

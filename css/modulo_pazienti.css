@@ -1130,7 +1130,8 @@ body:not(.smart) #modAnag{
 body:not(.smart) #modProc{
 	vertical-align:middle;
 }
-.smart #modAnag{
+.smart #modAnag,
+.smart #modProc{
     position: fixed;
     bottom: 15px;
     right: 15px;
@@ -1152,7 +1153,8 @@ body:not(.smart) #modProc{
 #modAnag:hover{
 	background-color:rgba(0,51,159,0.2) !important;
 }
-.touch #modAnag:hover{
+.touch #modAnag:hover,
+.touch #modProc:hover{
     background-color: #184aa5 !important;
 }
 #pazienti_stats table{
@@ -1683,7 +1685,7 @@ body:not(.smart) #rgApplicaFiltri{
 }
 .smart.android #tt_mezzival,
 .smart.android #tt_mezzival2{
-	width: 240px;
+	/*width: 240px;*/
     height: 78px;
     white-space: normal;
     text-align: left;
@@ -1710,7 +1712,10 @@ body:not(.smart) #rgApplicaFiltri{
 .smart.android #tt_mezzival2 span{
     width:40px !important;
 	height:40px !important;
-    border-bottom: 1px solid rgba(0,0,0,0.15);
+   /* border-bottom: 1px solid rgba(0,0,0,0.15);*/
+}
+.smart.android #tt_mezzival span{
+	border-bottom: 1px solid rgba(0,0,0,0.15);
 }
 #tt_mezzival span:first-child,
 #tt_mezzival2 span:first-child{

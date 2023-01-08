@@ -841,6 +841,8 @@ var PAZIENTI_SETS = {
 			e: "",
 			t: ""
 		}
+		console.log(PT)
+		console.log(JSNPUSH)
 		PAZIENTI.auriculoProvvisori.push(JSNPUSH);
 		SCHEDA.formModificato = true;
 		PAZIENTI.caricaAuriculoTrattamento();
@@ -876,18 +878,17 @@ var PAZIENTI_SETS = {
 	cambiaAZ: function( n, m, isProc ){ // cambia il mezzo su un punto
 		if(typeof(isProc)=='undefined')var isProc = false;
 		var el = document.getElementById("ico_PZ"+n);
-		console.log(document.getElementById("pt_"+n).parentElement.parentElement)
 		el.getElementsByTagName("img")[0].src='img/mezzo_'+m+'.png';
 		if(globals.modello.cartella)SET.overTsubo("_PT"+m,false);
 		if(!isProc){
 			PAZIENTI.auriculoProvvisori[n].z = m;
 		}else{
 			var pD = SET.dettagliProvvisori[n].DescrizioneDettaglio.split(".");
-			SET.dettagliProvvisori[n].DescrizioneDettaglio = __(pD[0])+"."+m;
+			SET.dettagliProvvisori[n].DescrizioneDettaglio = __(pD[0])+"."+__(m);
 			SET.caricaDettagli();
 		}
 		SCHEDA.formModificato = true;
-		if(globals.modello.cartella)SET.overTsubo("_PT"+m,true);
+		if(globals.modello.cartella)SET.overTsubo("_PT"+pD[0],true);
 		document.getElementById("tt_mezzival").dataset.on='0';
 		H.removeTT();
 		PAZIENTI.verMezzo(m);

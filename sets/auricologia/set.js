@@ -58,7 +58,7 @@ SET = {
 	PH3_full: false,
 	
 	idTeoAnatomia: 0,
-	idTeoConcetti: '0_1',
+	idTeoLM: '0_2',
 	idTeoCategorie: 2,
 	idTeoTests: 3,
 	
@@ -965,7 +965,9 @@ SET = {
 			SET.tsuboEvidenziati.push(siglaTsubo);
 		}
 		SET.applicaEvidenziaTsubo();
-		/*SET.hideGroupLines();
+		
+		//-------------------- MOSTRA LINEE
+		SET.hideGroupLines();
 		var re = /data-tri="[^"]+"/ig;
 		var result = html.match(re);
 		for(k in result){
@@ -974,7 +976,8 @@ SET = {
 			if(scene.getObjectByName(gruppo)){
 				scene.getObjectByName(gruppo).visible = true;
 			}
-		}*/
+		}
+		//----------------
 		SET.settaOverTsubo();
 	},
 	evidenziaTsuboMod: function( elenco ){
@@ -1018,29 +1021,31 @@ SET = {
 		if(SET.tsuboEvidenziati.length){
 			for(k in SET.tsuboEvidenziati){
 				var siglaTsubo=SET.tsuboEvidenziati[k];
-				var vis = !__(DB.set.punti[siglaTsubo].hidden,false);
-				var phs = ["","2","3"];
-				for(ph in phs){
-					var els = scene.getObjectByName("PTs"+phs[ph]).children;
-					for(e in els){
-						if(els[e].name.indexOf("_PT"+siglaTsubo)==0){
-							els[e].material=SET.MAT.pointTrasp;
-							els[e].visible = vis;
+				if(siglaTsubo){
+					var vis = !__(DB.set.punti[siglaTsubo].hidden,false);
+					var phs = ["","2","3"];
+					for(ph in phs){
+						var els = scene.getObjectByName("PTs"+phs[ph]).children;
+						for(e in els){
+							if(els[e].name.indexOf("_PT"+siglaTsubo)==0){
+								els[e].material=SET.MAT.pointTrasp;
+								els[e].visible = vis;
+							}
+							if(els[e].name.indexOf("PT"+siglaTsubo)==0){
+								els[e].visible = vis;
+							}
+							if(els[e].name.substr(0,1)!='_'){
+								els[e].material.opacity = 1;
+							}
 						}
-						if(els[e].name.indexOf("PT"+siglaTsubo)==0){
-							els[e].visible = vis;
+						var els = scene.getObjectByName("ARs"+phs[ph]).children;
+						for(e in els){
+							if(els[e].name.indexOf("AR"+siglaTsubo)==0){
+								els[e].material=cloneMAT(eval("SET.MAT.areaBase"+els[e].userData.system));
+								els[e].visible = vis;
+							}
+							els[e].material.opacity = 0.4;
 						}
-						if(els[e].name.substr(0,1)!='_'){
-							els[e].material.opacity = 1;
-						}
-					}
-					var els = scene.getObjectByName("ARs"+phs[ph]).children;
-					for(e in els){
-						if(els[e].name.indexOf("AR"+siglaTsubo)==0){
-							els[e].material=cloneMAT(eval("SET.MAT.areaBase"+els[e].userData.system));
-							els[e].visible = vis;
-						}
-						els[e].material.opacity = 0.4;
 					}
 				}
 			}
@@ -1068,22 +1073,21 @@ SET = {
 		}
 	},
 	ritOverTsubo: function( id, p ){
-		if(!touchable){
-			var el = document.getElementById("pt_"+p);
-			var siglaTsubo = el.value;
-			SET.overTsubo("PT"+siglaTsubo,false);
-			var elenco = [];
-			var els = document.getElementById(id).getElementsByClassName("dettPunto");
-			var tot = els.length;
-			for(e=0;e<tot;e++){
-				var sl = els[e].getElementsByTagName("select");
-				elenco.push(sl[0].value);
-			}
-			SET.evidenziaTsuboMod(elenco);
-			SET.aggiornaDettaglio(el);
+		var el = document.getElementById("pt_"+p);
+		var siglaTsubo = el.value;
+		SET.overTsubo("PT"+siglaTsubo,false);
+		var elenco = [];
+		var els = document.getElementById(id).getElementsByClassName("dettPunto");
+		var tot = els.length;
+		for(e=0;e<tot;e++){
+			var sl = els[e].getElementsByTagName("select");
+			elenco.push(sl[0].value);
 		}
+		SET.evidenziaTsuboMod(elenco);
+		SET.aggiornaDettaglio(el);
 	},
 	coloraPunti: function( PT_name, tipo ){
+		if(touchable)return;
 		var els = scene.getObjectByName("PTs"+SET.phase).children;
 		for(var e in els){
 			if(	els[e].name.indexOf("PT"+PT_name) == 0 && 
@@ -1119,7 +1123,8 @@ SET = {
 		}
 	},
 	overTsubo: function( PT_name, over ){
-		var name = PT_name;
+		if(touchable)return;
+		var name = PT_name.split(".")[0];
 		if(name.substr(0,1)=='_')name = name.substr(3,name.length-3);
 		else name = name.substr(2,name.length-2);
 		var phs = ["","2","3"];
@@ -1225,15 +1230,17 @@ SET = {
 		var lms = scene.getObjectByName("LMs");
 		for(l in lms.children){
 			var leg = document.createElement('div');
+			var l = l.toString();
+			if(l.length==1)l="0"+l;
 			leg.id = 'LM'+l;
 			leg.dataset.idObj = leg.id;
 			leg.className = "noFr";
 			leg.style.cursor = "pointer";
 			leg.innerHTML = leg.id;
 			leg.onclick = function(){
-				SET.caricaTeoria(	parseInt(SET.idTeoConcetti.split("_")[0]),
-									parseInt(SET.idTeoConcetti.split("_")[1]),
-									document.getElementById("btn_teoria_"+SET.idTeoConcetti));
+				SET.caricaTeoria(	parseInt(SET.idTeoLM.split("_")[0]),
+									parseInt(SET.idTeoLM.split("_")[1]),
+									document.getElementById("btn_teoria_"+SET.idTeoLM));
 			}
 			document.getElementById("legende").appendChild(leg);
 		}
@@ -1244,6 +1251,8 @@ SET = {
 		document.getElementById("p_lms").classList.remove("btnSel");
 		var lms = scene.getObjectByName("LMs");
 		for(l in lms.children){
+			var l = l.toString();
+			if(l.length==1)l="0"+l;
 			document.getElementById("legende").removeChild(document.getElementById('LM'+l));
 		}
 		document.getElementById("legende").classList.remove("noLms");

@@ -92,42 +92,20 @@ var MODULO_TSUBO = { // extend SET
 			var stesso = false;
 			var tsuboNuovo = siglaTsubo;
 			if( SCHEDA.classeAperta == 'scheda_procedura' ){
-				if(SET.pMod != ''){
-					if( SET.pMod == tsuboNuovo)stesso = true;
-					else{
-						// cambia il punto
-						txt = TXT("SostituisciTsubo").replace("[t]",SET.pMod);
-						az = "SET.setTsuboFrm();";
-					}
-				}else{
+				if(SET.tsuboEvidenziati.indexOf(tsuboNuovo)==-1){
 					// aggiungi il punto alla procedura
 					txt = TXT("AggiungiTsuboProc");
-					az = "SET.aggiungiDettaglio('P','"+tsuboNuovo+"');SCHEDA.torna();";
+					az = "SET.aggiungiDettaglio('A','"+tsuboNuovo+"');SCHEDA.torna();";
 					cls = 'spAdd';
-				}
+				}else stesso = true;
 			}
 			if( SCHEDA.classeAperta == 'scheda_A' || SCHEDA.classeAperta == 'scheda_B' ){
-				if(SET.pMod > -1){
-					var tsuboOr = '';
-					var tsuboOrNome = '';
-					for(a in PAZIENTI.auriculoProvvisori){
-						if(PAZIENTI.auriculoProvvisori[a].s = SET.pMod){
-							tsuboOr = PAZIENTI.auriculoProvvisori[a].s;
-							tsuboOrNome = PAZIENTI.auriculoProvvisori[a].n;
-						}
-					}
-					if(tsuboOr == tsuboNuovo)stesso = true;
-					else{
-						// cambia il punto
-						txt = TXT("SostituisciTsubo").replace("[t]",tsuboOrNome);
-						az = "SET.setTsuboFrm();";
-					}
-				}else{
+				if(SET.tsuboEvidenziati.indexOf(tsuboNuovo)==-1){
 					// aggiungi il punto al trattamento
 					txt = TXT("AggiungiTsuboTratt");
-					az = "PAZIENTI.aggiungiPuntoTrattamento('"+tsuboNuovo+"');SCHEDA.torna();";
+					az = "PAZIENTI.aggiungiAuriculoTrattamento('"+tsuboNuovo+"');SCHEDA.torna();";
 					cls = 'spAdd';
-				}
+				}else stesso = true;
 			}
 			
 			if(!stesso)HTML_simboli += 	'<div id="spSch" class="'+cls+'" onClick="'+az+'">' +

@@ -52,7 +52,7 @@ DB.set= {
         },
         "117": {
             "NomeTsubo": "Ghiandola timica",
-            "AzioniTsubo": "<p><b>Altri nomi</b><br>- Timo</p><p><b>Azione</b><br>Tonifica le difese immunitarie, azione antinfiammatoria e anti-reumatica.</p><p><b>Ubicazione</b><br>CW6, subito sopra la conca rigida tra avanmuro ed emiconca superiore.</p>",
+            "AzioniTsubo": "<p><b>Altri nomi</b><br>- Timo</p><p><b>Azione</b><br>Tonifica le difese immunitarie, azione antinfiammatoria e anti-reumatica.</p><p><b>Ubicazione</b><br>CW6-SC8, subito sopra la conca rigida tra avanmuro ed emiconca superiore.</p>",
             "ChiaviTsubo": ""
         },
         "118": {
@@ -62,7 +62,7 @@ DB.set= {
         },
         "119": {
             "NomeTsubo": "Ghiandola mammaria EUR",
-            "AzioniTsubo": "<p><b>Altri nomi</b><br>- Mammella</p><p><b>Azione</b><br>Patologie della mammella, mastodinia.</p><p><b>Ubicazione</b><br>CW6, al confine tra avanmuro ed emiconca superiore all'altezza della rappresentazione della 4-6 vertebra toracica.</p>",
+            "AzioniTsubo": "<p><b>Altri nomi</b><br>- Mammella</p><p><b>Azione</b><br>Patologie della mammella, mastodinia.</p><p><b>Ubicazione</b><br>CW6, al confine tra avanmuro ed emiconca superiore all'altezza della rappresentazione della IV-VI vertebra toracica.</p>",
             "ChiaviTsubo": ""
         },
         "120": {
@@ -142,7 +142,7 @@ DB.set= {
         },
         "138": {
             "NomeTsubo": "Prolactina",
-            "AzioniTsubo": "<p><b>Azione</b><br>Regola la produzione del latte, regola il ciclo mestruale. Utile anche nell'uomo in caso di ginecomastia, impotenza e calo della libido.</p><p><b>Ubicazione</b><br>IC1, nell'emiconca inferiore, in un'area che si trova inferiormente alla linea immaginaria che collega LM13 con LM10 verso la parte anteriore.</p>",
+            "AzioniTsubo": "<p><b>Azione</b><br>Regola la produzione del latte, regola il ciclo mestruale. Utile anche nell'uomo in caso di ginecomastia, impotenza e calo della libido.</p><p><b>Ubicazione</b><br>IC1, nell'emiconca inferiore, in un'area che si trova inferiormente alla linea immaginaria che collega <span class='LMtxt'>LM13</span> con <span class='LMtxt'>LM10</span> verso la parte anteriore.</p>",
             "ChiaviTsubo": ""
         },
         "142": {
@@ -232,7 +232,7 @@ DB.set= {
         },
         "171": {
             "NomeTsubo": "Midollo spinale lombosacrale",
-            "AzioniTsubo": "<p><b>Altri nomi</b><br>- Midollo lombosacrale</p><p><b>Azione</b><br>Patologie midollari lombosacrali</p><p><b>Ubicazione</b><br>HX12, nel margine posteriore dell'elice, interposto tra l'area di rappresentazione della radice sensitiva e motoria, subito sotto al T di Darwin, nel terzo superiore della branca discendente dell'elice.</p>",
+            "AzioniTsubo": "<p><b>Altri nomi</b><br>- Midollo lombosacrale</p><p><b>Azione</b><br>Patologie midollari lombosacrali</p><p><b>Ubicazione</b><br>HX12, nel margine posteriore dell'elice, interposto tra l'area di rappresentazione della radice sensitiva e motoria, subito sotto al tubercolo di Darwin, nel terzo superiore della branca discendente dell'elice.</p>",
             "ChiaviTsubo": ""
         },
         "173": {
@@ -262,12 +262,12 @@ DB.set= {
         },
         "179": {
             "NomeTsubo": "Tempia",
-            "AzioniTsubo": "<p><b>Altri nomi</b><br>- Osso temporale<br>- Osso parietale</p><p><b>Azione</b><br>Il Punto Tempia è utile per il trattamento del dolore alla tempia e ridurre i sintomi da emicrania e acufeni.</p><p><b>Ubicazione</b><br>AT2, sulla superficie esterna dell'antitrago. Inferiormente all'apice dell'antitrago ed a LM13.</p>",
+            "AzioniTsubo": "<p><b>Altri nomi</b><br>- Osso temporale<br>- Osso parietale</p><p><b>Azione</b><br>Il Punto Tempia è utile per il trattamento del dolore alla tempia e ridurre i sintomi da emicrania e acufeni.</p><p><b>Ubicazione</b><br>AT2, sulla superficie esterna dell'antitrago. Inferiormente all'apice dell'antitrago ed a <span class='LMtxt'>LM13</span>.</p>",
             "ChiaviTsubo": ""
         },
         "180": {
             "NomeTsubo": "Apice dell'antitrago",
-            "AzioniTsubo": "<b>Altri nomi</b><br>- Punto asma CIN<br>- Formazione reticolare<br>- Punto MASTER reticolare<br><p><b>Azione</b><br>Definito dalla scuola cinese “Punto Asma”, pertanto indicato per asma e forti emicranie. Spesso utilizzato in casi di dolore lieve, con soglie che non superano il VAS di livello 5.</p><p><b>Ubicazione</b><br>AT2-AT3, nel punto più alto dell'antitrago. Corrisponde a LM13.</p>",
+            "AzioniTsubo": "<b>Altri nomi</b><br>- Punto asma CIN<br>- Formazione reticolare<br>- Punto MASTER reticolare<br><p><b>Azione</b><br>Definito dalla scuola cinese “Punto Asma”, pertanto indicato per asma e forti emicranie. Spesso utilizzato in casi di dolore lieve, con soglie che non superano il VAS di livello 5.</p><p><b>Ubicazione</b><br>AT2-AT3, nel punto più alto dell'antitrago. Corrisponde a <span class='LMtxt'>LM13</span>.</p>",
             "ChiaviTsubo": ""
         },
         "181": {
@@ -277,22 +277,22 @@ DB.set= {
         },
         "182": {
             "NomeTsubo": "Orecchio esterno",
-            "AzioniTsubo": "<p><b>Azione<br></b>La Scuola Francese distingue i Punti Orecchio Esterno e Orecchio Interno per le loro diverse proprietà curative. Questo Punto è indicato per ridurre i disturbi ed i dolori esterni dell'orecchio.</p><p><b>Ubicazione</b><br>TG5, al centro del trago subito sopra ad una linea immaginaria orizzontale passante per LM11.</p>",
+            "AzioniTsubo": "<p><b>Azione<br></b>La Scuola Francese distingue i Punti Orecchio Esterno e Orecchio Interno per le loro diverse proprietà curative. Questo Punto è indicato per ridurre i disturbi ed i dolori esterni dell'orecchio.</p><p><b>Ubicazione</b><br>TG5, al centro del trago subito sopra ad una linea immaginaria orizzontale passante per <span class='LMtxt'>LM11</span>.</p>",
             "ChiaviTsubo": ""
         },
         "183": {
             "NomeTsubo": "Punto della sete",
-            "AzioniTsubo": "<p><b>Azione</b><br>Polidipsia specie su base psicosomatica.</p><p><b>Ubicazione</b><br>TG4, a metà distanza tra LM11 ed il punto del Naso Esterno ovvero LM23</p>",
+            "AzioniTsubo": "<p><b>Azione</b><br>Polidipsia specie su base psicosomatica.</p><p><b>Ubicazione</b><br>TG4, a metà distanza tra <span class='LMtxt'>LM11</span> ed il punto del Naso Esterno ovvero <span class='LMtxt'>LM23</span></p>",
             "ChiaviTsubo": ""
         },
         "184": {
             "NomeTsubo": "Vitality point",
-            "AzioniTsubo": "<p><b>Altri nomi</b><br>- Punto della vitalità<br>- Punto della frustrazione<br>- Punto interferone<br>- Punto cardiaco</p><p><b>Azione<br></b>La Scuola Francese indica questo punto per la sua potente azione energetica, psicologica e fisica. Trova la sua applicazione tonificante per tutti i casi con la componente di apatia, scarsa attitudine fisica e depressione.</p><p><b>Ubicazione</b><br>TG4, al centro del trago subito anteriormente a LM11.</p>",
+            "AzioniTsubo": "<p><b>Altri nomi</b><br>- Punto della vitalità<br>- Punto della frustrazione<br>- Punto interferone<br>- Punto cardiaco</p><p><b>Azione<br></b>La Scuola Francese indica questo punto per la sua potente azione energetica, psicologica e fisica. Trova la sua applicazione tonificante per tutti i casi con la componente di apatia, scarsa attitudine fisica e depressione.</p><p><b>Ubicazione</b><br>TG4, al centro del trago subito anteriormente a <span class='LMtxt'>LM11</span>.</p>",
             "ChiaviTsubo": ""
         },
         "185": {
             "NomeTsubo": "Naso esterno CIN",
-            "AzioniTsubo": "<p><b>Azione<br></b>La Scuola Cinese distingue i Punti Naso Esterno e Naso Interno per le loro diverse applicazioni terapiche. Questo punto è indicato per trattare tutti i disturbi nasali in particolare l'ostruzione nasale.</p><p><b>Ubicazione</b><br>TG3, nella linea di confine tra il Trago e la guancia a metà distanza tra la protuberanza superiore ed inferiore del Trago ovvero LM10 ed LM11. Corrisponde a LM23</p>",
+            "AzioniTsubo": "<p><b>Azione<br></b>La Scuola Cinese distingue i Punti Naso Esterno e Naso Interno per le loro diverse applicazioni terapiche. Questo punto è indicato per trattare tutti i disturbi nasali in particolare l'ostruzione nasale.</p><p><b>Ubicazione</b><br>TG3, nella linea di confine tra il Trago e la guancia a metà distanza tra la protuberanza superiore ed inferiore del Trago ovvero <span class='LMtxt'>LM10</span> ed <span class='LMtxt'>LM11</span>. Corrisponde a <span class='LMtxt'>LM23</span></p>",
             "ChiaviTsubo": ""
         },
         "186": {
@@ -312,17 +312,17 @@ DB.set= {
         },
         "191": {
             "NomeTsubo": "Controllo dell'appetito",
-            "AzioniTsubo": "<p><b>Altri nomi</b><br>- Punto della Fame<br>- Hunger point</p><p><b>Azione</b><br>Questo punto viene sfruttato per la sua capacità di diminuire l'appetito.</p><p><b>Ubicazione</b><br>TG3, a metà distanza tra apice della protuberanza inferiore del Trago (LM10) ed un punto intermedio tra apice della protuberanza superiore ed inferiore del Trago nella linea di confine tra questo e la guancia (LM23).</p>",
+            "AzioniTsubo": "<p><b>Altri nomi</b><br>- Punto della Fame<br>- Hunger point</p><p><b>Azione</b><br>Questo punto viene sfruttato per la sua capacità di diminuire l'appetito.</p><p><b>Ubicazione</b><br>TG3, a metà distanza tra apice della protuberanza inferiore del Trago (<span class='LMtxt'>LM10</span>) ed un punto intermedio tra apice della protuberanza superiore ed inferiore del Trago nella linea di confine tra questo e la guancia (<span class='LMtxt'>LM23</span>).</p>",
             "ChiaviTsubo": ""
         },
         "192": {
             "NomeTsubo": "Tranquilizer Point",
-            "AzioniTsubo": "<p><b>Altri nomi</b><br>- Punto Valium EUR<br>- Ipertensione 2 CIN<br>- Punto della mania<br>- Punto della nicotina</p><p><b>Azione</b><br>Questo punto è riconosciuto per la sua efficacia per il trattamento di tutti i disturbi con componente ansia e stress. Ha una potente azione di riequilibrio psicofisico, favorisce il rilassamento in particolare in caso di insonnia.</p><p><b>Ubicazione.</b><br>TG2, nella parete centrale verso la zona posteriore cartilaginea. A metà distanza tra LM9 ed LM10</p>",
+            "AzioniTsubo": "<p><b>Altri nomi</b><br>- Punto Valium EUR<br>- Ipertensione 2 CIN<br>- Punto della mania<br>- Punto della nicotina</p><p><b>Azione</b><br>Questo punto è riconosciuto per la sua efficacia per il trattamento di tutti i disturbi con componente ansia e stress. Ha una potente azione di riequilibrio psicofisico, favorisce il rilassamento in particolare in caso di insonnia.</p><p><b>Ubicazione.</b><br>TG2, nella parete centrale verso la zona posteriore cartilaginea. A metà distanza tra <span class='LMtxt'>LM9</span> ed <span class='LMtxt'>LM10</span></p>",
             "ChiaviTsubo": ""
         },
         "195": {
             "NomeTsubo": "Epifisi",
-            "AzioniTsubo": "<p><b>Altri nomi</b><br>- Ghiandola pineale<br>- Punto E</p><p><b>Azione</b><br>Punto utilizzato per il riequilibrio di tutti i bioritmi, in particolare per il trattamento di insonnia e depressione.</p><p><b>Ubicazione</b><br>TG1. Corrisponde a LM9. Diametralmente opposto all'incisura intertragica nella zona di passaggio tra TG1 e Guancia</p>",
+            "AzioniTsubo": "<p><b>Altri nomi</b><br>- Ghiandola pineale<br>- Punto E</p><p><b>Azione</b><br>Punto utilizzato per il riequilibrio di tutti i bioritmi, in particolare per il trattamento di insonnia e depressione.</p><p><b>Ubicazione</b><br>TG1. Corrisponde a <span class='LMtxt'>LM9</span>. Diametralmente opposto all'incisura intertragica nella zona di passaggio tra TG1 e Guancia</p>",
             "ChiaviTsubo": ""
         },
         "198": {
@@ -342,7 +342,7 @@ DB.set= {
         },
         "207": {
             "NomeTsubo": "Corteccia temporale",
-            "AzioniTsubo": "<p><b>Altri nomi</b><br>- Lobo temporale<br>- Corteccia uditiva<br>- Linea dei suoni</p><p><b>Azione</b><br>Secondo la Scuola Francese, questo punto è indicato nel trattamento di tutte le patologie correlate all'udito e alla percezione di suoni.</p><p><b>Ubicazione</b><br>LO6, sul lobulo, poco inferiormente e posteriormente all'antitrago, all'interno dell'area definita [.207.]</p>",
+            "AzioniTsubo": "<p><b>Altri nomi</b><br>- Lobo temporale<br>- Corteccia uditiva<br>- Linea dei suoni</p><p><b>Azione</b><br>Secondo la Scuola Francese, questo punto è indicato nel trattamento di tutte le patologie correlate all'udito e alla percezione di suoni.</p><p><b>Ubicazione</b><br>LO6-LO8, sul lobulo, poco inferiormente e posteriormente all'antitrago.</p>",
             "ChiaviTsubo": ""
         },
         "209": {
@@ -362,7 +362,7 @@ DB.set= {
         },
         "215": {
             "NomeTsubo": "Faccia",
-            "AzioniTsubo": "<p><b>Altri nomi</b><br>- Viso<br>- Guancia<br>- Muscoli facciali</p><p><b>Azione</b><br>Punto internazionale di auricoloterapia molto efficace per ridurre Tic nervosi, paralisi facciali, nevralgie; indicato inoltre per trattare gli spasmi facciali.</p><p><b>Ubicazione</b><br>LO5-PL6, sul logo, lateralmente, area piuttosto vasta al di sopra della cosiddetta [.283.]</p>",
+            "AzioniTsubo": "<p><b>Altri nomi</b><br>- Viso<br>- Guancia<br>- Muscoli facciali</p><p><b>Azione</b><br>Punto internazionale di auricoloterapia molto efficace per ridurre Tic nervosi, paralisi facciali, nevralgie; indicato inoltre per trattare gli spasmi facciali.</p><p><b>Ubicazione</b><br>LO5-PL6, sul lobulo, lateralmente, area piuttosto vasta al di sopra della cosiddetta [.283.]</p>",
             "ChiaviTsubo": ""
         },
         "221": {
@@ -372,12 +372,12 @@ DB.set= {
         },
         "222": {
             "NomeTsubo": "Punto Maestro Sensoriale",
-            "AzioniTsubo": "<p><b>Altri nomi</b><br>- Punto occhio<br>- PMSs</p><p><b>Azione</b><br>Punto Internazionale Master è correlato ai disturbi sia dell'occhio, sia dell'udito. Questo punto ha la capacità di riequilibrare le sensazioni uditive del lobo temporale e quelle visive del lobo occipitale. Il Punto Master Sensoriale è indicato per ridurre i disturbi correlati agli acufeni, all'irritabilità collegata ad odori o suoni ed infine a fenomeni di ipersensibilità.</p><p><b>Ubicazione</b><br>LO4, circa a metà distanza tra LM13 ed LM7, al centro del lobulo.</p>",
+            "AzioniTsubo": "<p><b>Altri nomi</b><br>- Punto occhio<br>- PMSs</p><p><b>Azione</b><br>Punto Internazionale Master è correlato ai disturbi sia dell'occhio, sia dell'udito. Questo punto ha la capacità di riequilibrare le sensazioni uditive del lobo temporale e quelle visive del lobo occipitale. Il Punto Master Sensoriale è indicato per ridurre i disturbi correlati agli acufeni, all'irritabilità collegata ad odori o suoni ed infine a fenomeni di ipersensibilità.</p><p><b>Ubicazione</b><br>LO4, circa a metà distanza tra <span class='LMtxt'>LM13</span> ed <span class='LMtxt'>LM7</span>, al centro del lobulo.</p>",
             "ChiaviTsubo": ""
         },
         "224": {
             "NomeTsubo": "Ghiandola surrenale CIN",
-            "AzioniTsubo": "<p><b>Altri nomi</b><br>- Cortisolo</p><p><b>Azione</b><br>Riequilibrio funzionale delle ghiandole surrenali. Ha un'azione antinfiammatoria.</p><p><b>Ubicazione</b><br>TR2, all'apice della protuberanza inferiore del Trago. Corrisponde a LM10</p>",
+            "AzioniTsubo": "<p><b>Altri nomi</b><br>- Cortisolo</p><p><b>Azione</b><br>Riequilibrio funzionale delle ghiandole surrenali. Ha un'azione antinfiammatoria.</p><p><b>Ubicazione</b><br>TG3, all'apice della protuberanza inferiore del Trago. Corrisponde a <span class='LMtxt'>LM10</span></p>",
             "ChiaviTsubo": ""
         },
         "226": {
@@ -387,22 +387,22 @@ DB.set= {
         },
         "229": {
             "NomeTsubo": "Prostaglandine",
-            "AzioniTsubo": "<p><b>Azione<br></b>Il Punto della Prostaglandine è indicato per il trattamento dei casi con componente infiammatoria e di dolore.</p><p><b>Ubicazione</b><br>PL1-LO1, sulla superficie mediale del lobulo, in prossimità di LM8.</p>",
+            "AzioniTsubo": "<p><b>Azione<br></b>Il Punto della Prostaglandine è indicato per il trattamento dei casi con componente infiammatoria e di dolore.</p><p><b>Ubicazione</b><br>PL1-LO1, sulla superficie mediale del lobulo, in prossimità di <span class='LMtxt'>LM8</span>.</p>",
             "ChiaviTsubo": ""
         },
         "230": {
             "NomeTsubo": "Master Cerebral Point",
-            "AzioniTsubo": "<p><b>Altri nomi</b><br>- Omega<br>- Nervosismo<br>- Preoccupazione</p><p><b>Azione</b><br>Per la Scuola Francese, punto Omega, è il Punto Maestro del tessuto Ectodermico. Rappresenta il Lobo prefrontale. E’ indicato nell’asia, nervosismo e nei disturbi del sonno.</p><p><b>Ubicazione</b><br>LO2, a metà distanza tra LM8 ed LM9 a 2 mm circa dal confine con la guancia.</p>",
+            "AzioniTsubo": "<p><b>Altri nomi</b><br>- Omega<br>- Nervosismo<br>- Preoccupazione</p><p><b>Azione</b><br>Per la Scuola Francese, punto Omega, è il Punto Maestro del tessuto Ectodermico. Rappresenta il Lobo prefrontale. E’ indicato nell’asia, nervosismo e nei disturbi del sonno.</p><p><b>Ubicazione</b><br>LO2, a metà distanza tra <span class='LMtxt'>LM8</span> ed <span class='LMtxt'>LM9</span> a 2 mm circa dal confine con la guancia.</p>",
             "ChiaviTsubo": ""
         },
         "231": {
             "NomeTsubo": "Nervo ottico",
-            "AzioniTsubo": "<p><b>Altri nomi</b><br>- II nervo cranico<br>- II NC</p><p><b>Azione</b><br>Questo punto viene impiegato per tutti i disturbi legati al nervo ottico in particolare per ridurre i disturbi oculari e visivi.</p><p><b>Ubicazione</b><br>LO1, sotto del punto Master Cerebral Point, in prossimità di LM8.</p>",
+            "AzioniTsubo": "<p><b>Altri nomi</b><br>- II nervo cranico<br>- II NC</p><p><b>Azione</b><br>Questo punto viene impiegato per tutti i disturbi legati al nervo ottico in particolare per ridurre i disturbi oculari e visivi.</p><p><b>Ubicazione</b><br>LO1, sotto del [.230.], in prossimità di <span class='LMtxt'>LM8</span>.</p>",
             "ChiaviTsubo": ""
         },
         "232": {
             "NomeTsubo": "Nervo olfattivo",
-            "AzioniTsubo": "<p><b>Altri nomi</b><br>- Naso Interno EUR<br>- I nervo cranico<br>- I NC</p><p><b>Azione</b><br>Questo punto viene impiegato per tutti i disturbi legati al nervo olfattivo.</p><p><b>Ubicazione</b><br>LO2, subito sopra al Punto Master Cerebral Point. Lo si trova tracciando una retta tra LM9 ed LM8 circa tra i 1/3 superiore ed i 2/3 inferiori di questa distanza</p>",
+            "AzioniTsubo": "<p><b>Altri nomi</b><br>- Naso Interno EUR<br>- I nervo cranico<br>- I NC</p><p><b>Azione</b><br>Questo punto viene impiegato per tutti i disturbi legati al nervo olfattivo.</p><p><b>Ubicazione</b><br>LO2, subito sopra al [.230.]. Lo si trova tracciando una retta tra <span class='LMtxt'>LM9</span> ed <span class='LMtxt'>LM8</span> circa tra i 1/3 superiore ed i 2/3 inferiori di questa distanza</p>",
             "ChiaviTsubo": ""
         },
         "243": {
@@ -417,7 +417,7 @@ DB.set= {
         },
         "245": {
             "NomeTsubo": "Insonnia 2",
-            "AzioniTsubo": "<p><b>Altri nomi</b><br>- Disturbi del sonno 2</p><p><b>Azione</b><br>La Scuola Francese distingue il trattamento dell'insonnia con due punti differenti. Il punto Insonnia 2 è indicato principalmente nei casi di difficoltà di addormentamento. Ottima efficacia nella riduzione di stress, nervosismo e come suggerito dal nome, per l'insonnia.</p><p><b>Ubicazione</b><br>SF1, nella parte inferiore della fossa Scapha, quasi al confine con l'elice.</p>",
+            "AzioniTsubo": "<p><b>Altri nomi</b><br>- Disturbi del sonno 2</p><p><b>Azione</b><br>La Scuola Francese distingue il trattamento dell'insonnia con due punti differenti. Il punto Insonnia 2 è indicato principalmente nei casi di difficoltà di addormentamento. Ottima efficacia nella riduzione di stress, nervosismo e come suggerito dal nome, per l'insonnia.</p><p><b>Ubicazione</b><br>SF1, nella parte inferiore della fossa scafoidea, quasi al confine con l'elice.</p>",
             "ChiaviTsubo": ""
         },
         "246": {
@@ -437,7 +437,7 @@ DB.set= {
         },
         "249": {
             "NomeTsubo": "Polmone EUR",
-            "AzioniTsubo": "<p><b>Azione<br></b>Il Punto Polmone viene adottato sia dalla Scuola Cinese sia da quella Francese per la sua azione riequilibrante del sistema respiratorio, in particolare nei casi di bronchiti, enfisema e dolori al torace.</p><p><b>Ubicazione</b><br><i>Principale</i><br>IC2-IC4-IC5-IC7, ampia area nell'emiconca inferiore, verso l'avanmuro<br><br><i>Fase 2</i><br>LO8, sul lobulo all'incontro con la fossa scafoidea<br><br><i>Fase 3</i><br>xxx<br></p>",
+            "AzioniTsubo": "<p><b>Azione<br></b>Il Punto Polmone viene adottato sia dalla Scuola Cinese sia da quella Francese per la sua azione riequilibrante del sistema respiratorio, in particolare nei casi di bronchiti, enfisema e dolori al torace.</p><p><b>Ubicazione</b><br>IC2-IC4-IC5-IC7, ampia area nell'emiconca inferiore, verso l'avanmuro</p>",
             "ChiaviTsubo": ""
         },
         "251": {
@@ -447,12 +447,12 @@ DB.set= {
         },
         "252": {
             "NomeTsubo": "Punto maestro della pelle",
-            "AzioniTsubo": "<p><b>Azione<br></b>La Scuola Francese indica questo punto Master per il riequilibrio ed il trattamento di tutti i disturbi legati alla cute.</p><p><b>Ubicazione</b><br>ST2-ST3, nella superficie interna del Trago, in un'area posta a metà distanza tra LM10 ed incisura intertragica.</p>",
+            "AzioniTsubo": "<p><b>Azione<br></b>La Scuola Francese indica questo punto Master per il riequilibrio ed il trattamento di tutti i disturbi legati alla cute.</p><p><b>Ubicazione</b><br>ST2-ST3, nella superficie interna del Trago, in un'area posta a metà distanza tra <span class='LMtxt'>LM10</span> ed incisura intertragica.</p>",
             "ChiaviTsubo": ""
         },
         "253": {
             "NomeTsubo": "Mesonefro",
-            "AzioniTsubo": "<p><b>Azione<br></b>Il Punto Mesonefro ha la proprietà di ridurre gli effetti degli edemi di varia natura.</p><p><b>Ubicazione</b><br>IH4-IH5-IH6-IH7, ampia area longilinea situata nella parte nascosta dell'elice e che va dall'apice dell'orecchio fino alla radice inferiore dell'antelice.</p>",
+            "AzioniTsubo": "<p><b>Azione<br></b>Il Punto Mesonefro ha la proprietà di ridurre gli effetti degli edemi di varia natura.</p><p><b>Ubicazione</b><br>IH5-IH6-IH7-IH8, ampia area longilinea situata nella parte nascosta dell'elice e che va dall'apice dell'orecchio fino alla radice inferiore dell'antelice.</p>",
             "ChiaviTsubo": ""
         },
         "254": {
@@ -462,12 +462,12 @@ DB.set= {
         },
         "255": {
             "NomeTsubo": "Muscoli e tendini del ginocchio EUR",
-            "AzioniTsubo": "<p><b>Altri nomi</b><br>- Legamenti del ginocchio EUR</p><p><b>Azione</b><br>Questo punto viene impiegato sia dalla Scuola Francese che Cinese per le sue proprietà nel trattare i disturbi muscolo-tendinei del ginocchio.</p><p><b>Ubicazione</b><br>PT2, al centro dell'eminenza triangolare</p>",
+            "AzioniTsubo": "<p><b>Altri nomi</b><br>- Legamenti del ginocchio EUR</p><p><b>Azione</b><br>Questo punto viene impiegato sia dalla Scuola Francese che Cinese per le sue proprietà nel trattare i disturbi muscolo-tendinei del ginocchio.</p><p><b>Ubicazione</b><br>PP9, nella parte posteriore dell'antelice, nel suo terzo superiore</p>",
             "ChiaviTsubo": ""
         },
         "256": {
             "NomeTsubo": "Muscoli e tendini del ginocchio CIN",
-            "AzioniTsubo": "<p><b>Altri nomi</b><br>- Legamenti del ginocchio CIN</p><p><b>Azione</b><br>Questo punto viene impiegato sia dalla Scuola Francese che Cinese per le sue proprietà nel trattare i disturbi muscolo-tendinei del ginocchio.</p><p><b>Ubicazione</b><br>PP9, nella parte posteriore dell'antelice, nel suo terzo superiore</p>",
+            "AzioniTsubo": "<p><b>Altri nomi</b><br>- Legamenti del ginocchio CIN</p><p><b>Azione</b><br>Questo punto viene impiegato sia dalla Scuola Francese che Cinese per le sue proprietà nel trattare i disturbi muscolo-tendinei del ginocchio.</p><p><b>Ubicazione</b><br>PT2, al centro dell'eminenza triangolare</p>",
             "ChiaviTsubo": ""
         },
         "257": {
@@ -497,7 +497,7 @@ DB.set= {
         },
         "262": {
             "NomeTsubo": "Gonadotropine",
-            "AzioniTsubo": "<p><b>Altri nomi</b><br>- Area ginecologica<br>- FSH (ormone follico stimolante)<br>-LH (ormone luteinizzante)</p><p><b>Azione</b><br>La Scuola Francese indica l'efficacia di questo punto per il trattamento di tutte le patologie correlate alle alterazioni della secrezione delle gonadotropine e del ciclo mestruale. Utilizzato inoltre in caso di infertilità e per ridurre i disturbi legati alla sindrome climaterica, menopausa e squilibri ormonali.</p><p><b>Ubicazione</b><br>CW1-LO4, nel terzo anteriore della superficie esterna dell'antitrago. Alcuni Autori lo descrivono sulla superficie interna. </p>",
+            "AzioniTsubo": "<p><b>Altri nomi</b><br>- Area ginecologica<br><br>- Punto ginecologico<br>- FSH (ormone follico stimolante)<br>- LH (ormone luteinizzante)</p><p><b>Azione</b><br>La Scuola Francese indica l'efficacia di questo punto per il trattamento di tutte le patologie correlate alle alterazioni della secrezione delle gonadotropine e del ciclo mestruale. Utilizzato inoltre in caso di infertilità e per ridurre i disturbi legati alla sindrome climaterica, menopausa e squilibri ormonali.</p><p><b>Ubicazione</b><br>CW1-AT1-LO4, nel terzo anteriore della superficie esterna dell'antitrago. Alcuni Autori lo descrivono sulla superficie interna. </p>",
             "ChiaviTsubo": ""
         },
         "263": {
@@ -517,7 +517,7 @@ DB.set= {
         },
         "266": {
             "NomeTsubo": "Nervo facciale",
-            "AzioniTsubo": "<p><b>Altri nomi</b><br>- VII nervo cranico<br>- Nucleo del nervo facciale<br>- Nucleo del tratto solitario</p><p><b>Azione</b><br>Questo punto ha un'ottima azione per ridurre gli spasmi facciali, le paresi del VII nervo cranico e tutti i dolori neuropatici.</p><p><b>Ubicazione</b><br>PL6, nella parte superiore della superficie mediale del lobulo, in un'area compresa tra solco longitudinale posteriore e superficie posteriore dell'elice.</p>",
+            "AzioniTsubo": "<p><b>Altri nomi</b><br>- VII nervo cranico<br>- Nucleo del nervo facciale<br>- Nucleo del tratto solitario</p><p><b>Azione</b><br>Questo punto ha un'ottima azione per ridurre gli spasmi facciali, le paresi del VII nervo cranico e tutti i dolori neuropatici.</p><p><b>Ubicazione</b><br>PL6-PL4, nella parte superiore della superficie mediale del lobulo, in un'area compresa tra solco longitudinale posteriore e superficie posteriore dell'elice.</p>",
             "ChiaviTsubo": ""
         },
         "267": {
@@ -537,17 +537,17 @@ DB.set= {
         },
         "270": {
             "NomeTsubo": "Radice motoria C7",
-            "AzioniTsubo": "<p><b>Altri nomi</b><br>- Radice maestra motoria del plesso brachiale</p><p><b>Azione</b><br>Questo punto trova applicazione per il trattamento e la diminuzione di tutti i dolori e disturbi correlati alla motricità del plesso brachiale.</p><p><b>Ubicazione</b><br>PP4, nella parte mediale-posteriore dell'elice, nel suo terzo inferiore, all'altezza della rappresentazione del passaggio vertebrale Cervico-Dorsale.</p>",
+            "AzioniTsubo": "<p><b>Altri nomi</b><br>- Radice maestra motoria del plesso brachiale</p><p><b>Azione</b><br>Questo punto trova applicazione per il trattamento e la diminuzione di tutti i dolori e disturbi correlati alla motricità del plesso brachiale.</p><p><b>Ubicazione</b><br>PP4, nella parte mediale-posteriore dell'elice, nel suo terzo inferiore, all'altezza della rappresentazione del passaggio vertebrale cervico-dorsale.</p>",
             "ChiaviTsubo": ""
         },
         "271": {
             "NomeTsubo": "Radice motoria plesso lombare",
-            "AzioniTsubo": "<p><b>Altri nomi</b><br>- Radice maestra motoria plesso lombare</p><p><b>Azione</b><br>Questo punto trova applicazione per il trattamento e la diminuzione di tutti i dolori e disturbi correlati alla motricità del plesso lombare.</p><p><b>Ubicazione</b><br>PP8, nella parte mediale-posteriore dell'elice, nel suo terzo superiore, al di sopra del Tubercolo di Darwin.</p>",
+            "AzioniTsubo": "<p><b>Altri nomi</b><br>- Radice maestra motoria plesso lombare</p><p><b>Azione</b><br>Questo punto trova applicazione per il trattamento e la diminuzione di tutti i dolori e disturbi correlati alla motricità del plesso lombare.</p><p><b>Ubicazione</b><br>PP8, nella parte mediale-posteriore dell'elice, nel suo terzo superiore, al di sopra del tubercolo di Darwin.</p>",
             "ChiaviTsubo": ""
         },
         "272": {
             "NomeTsubo": "Radice sensitiva C2",
-            "AzioniTsubo": "<p><b>Altri nomi</b><br>- Radice maestra sensitiva plesso cervicale</p><p><b>Azione</b><br>Questo punto trova applicazione per il trattamento e la diminuzione di tutti i dolori e disturbi correlati alla sensibilità del plesso cervicale.</p><p><b>Ubicazione</b><br>HX15, sul bordo esterno dell'elice, sulla sua coda, in una zona identificata mediante una retta passante per il punto Zero ed il solco post-antitragale.</p>",
+            "AzioniTsubo": "<p><b>Altri nomi</b><br>- Radice maestra sensitiva plesso cervicale</p><p><b>Azione</b><br>Questo punto trova applicazione per il trattamento e la diminuzione di tutti i dolori e disturbi correlati alla sensibilità del plesso cervicale.</p><p><b>Ubicazione</b><br>HX15, sul bordo esterno dell'elice, sulla sua coda, in una zona identificata mediante una retta passante per il [.000.] ed il solco post-antitragale.</p>",
             "ChiaviTsubo": ""
         },
         "273": {
@@ -597,12 +597,12 @@ DB.set= {
         },
         "282": {
             "NomeTsubo": "Muscoli lombosacrali",
-            "AzioniTsubo": "<p><b>Azione<br></b>Questo punto internazionale viene impiegato per la sua funzione rilassante dei muscoli lombari e sacrali.</p><p><b>Ubicazione</b><br>PG5-PG6-PG7, nel solco longitudinale posteriore, nella branca inferiore-mediale</p>",
+            "AzioniTsubo": "<p><b>Azione<br></b>Questo punto internazionale viene impiegato per la sua funzione rilassante dei muscoli lombari e sacrali.</p><p><b>Ubicazione</b><br>PG5-PG6, nel solco longitudinale posteriore, nella branca inferiore-mediale</p>",
             "ChiaviTsubo": ""
         },
         "283": {
             "NomeTsubo": "Linea trigeminale",
-            "AzioniTsubo": "<p><b>Altri nomi</b><br>- Quinto nervo cranico</p><p><b>Azione</b><br>Come indicato dal nome, questi punti sono molto efficace nel trattamento di tutti i disturbi correlati al dolore facciale, trigeminale, neuropatico. Indicato inoltre per ridurre gli spasmi facciali.</p><p><b>Ubicazione</b><br>LO1-LO3, lungo il margine inferiore del lobulo, lateralmente delimitata da V1 e posteriormente da V3. V1 lo troviamo tracciando una retta dal Punto Zero ed il Punto Ginecologico (Fsh/Lh); V3 tracciando una linea dal Punto Zero e passante per il solco post-antitragale.</p>",
+            "AzioniTsubo": "<p><b>Altri nomi</b><br>- Quinto nervo cranico</p><p><b>Azione</b><br>Come indicato dal nome, questi punti sono molto efficace nel trattamento di tutti i disturbi correlati al dolore facciale, trigeminale, neuropatico. Indicato inoltre per ridurre gli spasmi facciali.</p><p><b>Ubicazione</b><br>LO1-LO3, lungo il margine inferiore del lobulo, lateralmente delimitata da V1 e posteriormente da V3. V1 lo troviamo tracciando una retta dal [.000.] ed il punto [.262.] (Fsh/Lh); V3 tracciando una linea dal [.000.] e passante per il solco post-antitragale.</p>",
             "ChiaviTsubo": ""
         },
         "284": {
@@ -612,12 +612,12 @@ DB.set= {
         },
         "285": {
             "NomeTsubo": "Muscolatura paravertebrale cervicale",
-            "AzioniTsubo": "<p><b>Azione<br></b>Questo punto internazionale viene impiegato per la sua funzione miorilassante paravertebrale.</p><p><b>Ubicazione</b><br>AH8, nel terzo inferiore dell'antelice sul lato verso la fossa scafoidea.</p>",
+            "AzioniTsubo": "<p><b>Azione<br></b>Questo punto internazionale viene impiegato per la sua funzione miorilassante paravertebrale.</p><p><b>Ubicazione</b><br>AH1, nel terzo inferiore dell'antelice sul lato verso la cresta.</p>",
             "ChiaviTsubo": ""
         },
         "286": {
             "NomeTsubo": "Muscolatura paravertebrale dorsale",
-            "AzioniTsubo": "<p><b>Azione<br></b>Questo punto, secondo la Scuola Francese, viene impiegato per la sua funzione miorilassante paravertebrale.&nbsp;</p><p><b>Ubicazione</b><br>AH10-AH11, nei due terzi superiori del corpo dell'antelice, prima che si biforchi nelle 2 branche, sul lato verso la fossa scafoidea.</p>",
+            "AzioniTsubo": "<p><b>Azione<br></b>Questo punto, secondo la Scuola Francese, viene impiegato per la sua funzione miorilassante paravertebrale.&nbsp;</p><p><b>Ubicazione</b><br>AH3-AH4, nei due terzi superiori del corpo dell'antelice, prima che si biforchi nelle 2 branche, sul lato verso la fossa scafoidea.</p>",
             "ChiaviTsubo": ""
         },
         "287": {
@@ -627,12 +627,12 @@ DB.set= {
         },
         "288": {
             "NomeTsubo": "Muscoli del collo",
-            "AzioniTsubo": "<p><b>Azione<br></b>Questo punto internazionale viene impiegato per la sua funzione rilassante sui muscoli del collo.</p><p><b>Ubicazione</b><br>PP1-PP3, tra l'eminenza scafoidea e il solco longitudinale posteriore</p>",
+            "AzioniTsubo": "<p><b>Azione<br></b>Questo punto internazionale viene impiegato per la sua funzione rilassante sui muscoli del collo.</p><p><b>Ubicazione</b><br>PP3-PG3, tra l'eminenza scafoidea e il solco longitudinale posteriore</p>",
             "ChiaviTsubo": ""
         },
         "289": {
             "NomeTsubo": "Muscoli del dorso",
-            "AzioniTsubo": "<p><b>Azione<br></b>Punto utilizzato dalla Scuola Francese per la sua azione rilassante sui muscoli dorsali.</p><p><b>Ubicazione</b><br>PP3-PP5,&nbsp;tra l'eminenza scafoidea e il solco longitudinale posteriore</p>",
+            "AzioniTsubo": "<p><b>Azione<br></b>Punto utilizzato dalla Scuola Francese per la sua azione rilassante sui muscoli dorsali.</p><p><b>Ubicazione</b><br>PP3-PP5-PG3-PG4-PG5, tra l'eminenza scafoidea e il solco longitudinale posteriore</p>",
             "ChiaviTsubo": ""
         },
         "291": {
@@ -642,12 +642,12 @@ DB.set= {
         },
         "293": {
             "NomeTsubo": "Mento",
-            "AzioniTsubo": "<p><b>Azione</b><br>Patologie del mento, dermatiti del mento.</p><p><b>Ubicazione</b><br>LO7, alla periferia del lobulo nelle prossimità di LM6.</p>",
+            "AzioniTsubo": "<p><b>Azione</b><br>Patologie del mento, dermatiti del mento.</p><p><b>Ubicazione</b><br>LO7, alla periferia del lobulo nelle prossimità di <span class='LMtxt'>LM6</span>.</p>",
             "ChiaviTsubo": ""
         },
         "294": {
             "NomeTsubo": "Vertice della testa",
-            "AzioniTsubo": "<p><b>Altri nomi</b><br>- Apice della Testa<br>- Corona della Testa</p><p><b>Azione</b><br>Riduce il dolore della testa.</p><p><b>Ubicazione</b><br>LO6, nella parte superiore del lobulo posteriormente alla linea passante tra LM13 ed LM7</p>",
+            "AzioniTsubo": "<p><b>Altri nomi</b><br>- Apice della Testa<br>- Corona della Testa</p><p><b>Azione</b><br>Riduce il dolore della testa.</p><p><b>Ubicazione</b><br>LO6, nella parte superiore del lobulo posteriormente alla linea passante tra <span class='LMtxt'>LM13</span> ed <span class='LMtxt'>LM7</span></p>",
             "ChiaviTsubo": ""
         },
         "298": {
@@ -667,7 +667,7 @@ DB.set= {
         },
         "304": {
             "NomeTsubo": "Analgesia dentale",
-            "AzioniTsubo": "<p><b>Altri nomi</b><br>- Denti</p><p><b>Azione</b><br>Utile nel dolore dentario specie quanto acuto ed in atto.</p><p><b>Ubicazione</b><br>LO1-LO2, in un’area anteriore del lobulo, circa a 2-3 mm dalla guancia tra i due terzi superiori ed inferiore della distanza tra LM9 ed LM8</p>",
+            "AzioniTsubo": "<p><b>Altri nomi</b><br>- Denti</p><p><b>Azione</b><br>Utile nel dolore dentario specie quanto acuto ed in atto.</p><p><b>Ubicazione</b><br>LO1-LO2, in un’area anteriore del lobulo, circa a 2-3 mm dalla guancia tra i due terzi superiori ed inferiore della distanza tra <span class='LMtxt'>LM9</span> ed <span class='LMtxt'>LM8</span></p>",
             "ChiaviTsubo": ""
         },
         "305": {
@@ -692,12 +692,12 @@ DB.set= {
         },
         "003": {
             "NomeTsubo": "Apice del padiglione auricolare",
-            "AzioniTsubo": "<p><b>Altri nomi</b><br>- Punto allergia 1<br>- Omega 2 EUR<br>- Punto Maestro anti-infiammatorio</p><p><b>Azione</b><br>Secondo la filosofia della scuola Francese, si tratta di un punto auricolare molto efficace nei casi di allergia, ipertensione ed edema. Utilizzato invece dalla scuola Cinese per le sue proprietà antipiretiche, antalgiche e antinfiammatorie. Spesso utilizzato in patologie osteoarticolari.<br><br>Particolarmente indicato nelle patologie infiammatorie croniche.</p><p><b>Ubicazioness</b><br>HX7-HX8, sull'apice del padiglione auricolare. Corrisponde a LM2.</p>",
+            "AzioniTsubo": "<p><b>Altri nomi</b><br>- Punto allergia 1<br>- Omega 2 EUR<br>- Punto Maestro anti-infiammatorio</p><p><b>Azione</b><br>Secondo la filosofia della scuola Francese, si tratta di un punto auricolare molto efficace nei casi di allergia, ipertensione ed edema. Utilizzato invece dalla scuola Cinese per le sue proprietà antipiretiche, antalgiche e antinfiammatorie. Spesso utilizzato in patologie osteoarticolari.<br><br>Particolarmente indicato nelle patologie infiammatorie croniche.</p><p><b>Ubicazioness</b><br>HX7-HX8, sull'apice del padiglione auricolare. Corrisponde a <span class='LMtxt'>LM2</span>.</p>",
             "ChiaviTsubo": ""
         },
         "004": {
             "NomeTsubo": "Punto psicosomatico",
-            "AzioniTsubo": "<p><b>Altri nomi</b><br>- Punto psicoterapeutico<br>- Punto R.<br>- Punto di Bourdiol<br>- Reazioni psicosomatiche</p><p><b>Azione</b><br>La Scuola Francese utilizza questo punto per diminuire tutti i disturbi con componente psicosomatica; trova ottimi riscontri in psicoterapia e nei casi di soggetti affetti da psicosi.</p><p><b>Ubicazione</b><br>HX4-HX5, al confine tra ginocchio dell'elice e la tempia. Corrisponde ad LM1, suulla superficie esterna rispetto al [.039.] ed a LM18 .</p>",
+            "AzioniTsubo": "<p><b>Altri nomi</b><br>- Punto psicoterapeutico<br>- Punto R.<br>- Punto di Bourdiol<br>- Reazioni psicosomatiche</p><p><b>Azione</b><br>La Scuola Francese utilizza questo punto per diminuire tutti i disturbi con componente psicosomatica; trova ottimi riscontri in psicoterapia e nei casi di soggetti affetti da psicosi.</p><p><b>Ubicazione</b><br>HX4-HX5, al confine tra ginocchio dell'elice e la tempia. Corrisponde ad <span class='LMtxt'>LM1</span>, suulla superficie esterna rispetto al [.039.] ed a <span class='LMtxt'>LM18</span> .</p>",
             "ChiaviTsubo": ""
         },
         "007": {
@@ -729,7 +729,7 @@ DB.set= {
         },
         "015": {
             "NomeTsubo": "Elice 1-7",
-            "AzioniTsubo": "<p><b>Azione</b><br>Punti specifici del protocollo antitabacco classico di P. Nogier e del programma antitabacco di G. Rossato.</p><p><b>Ubicazione</b><br>Per trovare i 7 punti si devono innanzitutto ricavare i 2 estremi. Il punto inferiore lo si reperisce tracciando il raggio che dal Punto Zero interseca la rappresentazione della prima vertebra cervicale. Il punto superiore lo si ottiene tracciando il raggio che dal Punto Zero interseca il Tubercolo di Darwin. I 5 punti intermedi sono rilevati mediante il regolo di Nogier.</p>",
+            "AzioniTsubo": "<p><b>Azione</b><br>Punti specifici del protocollo antitabacco classico di P. Nogier e del programma antitabacco di G. Rossato.</p><p><b>Ubicazione</b><br>Per trovare i 7 punti si devono innanzitutto ricavare i 2 estremi. Il punto inferiore lo si reperisce tracciando il raggio che dal Punto Zero interseca la rappresentazione della prima vertebra cervicale. Il punto superiore lo si ottiene tracciando il raggio che dal Punto Zero interseca il tubercolo di Darwin. I 5 punti intermedi sono rilevati mediante il regolo di Nogier.</p>",
             "ChiaviTsubo": "",
 			"hidden": true
         },
@@ -740,7 +740,7 @@ DB.set= {
         },
         "018": {
             "NomeTsubo": "Dermatite",
-            "AzioniTsubo": "<p><b>Altri nomi</b><br>- Disturbi della pelle EUR<br>- Orticaria<br>- Eczema<br><span style='color: rgb(0, 0, 0);'>- Patologie dermatologiche<br>- Midollo EUR</span></p><p><b>Azione</b><br>Come suggerito dal nome, questo punto viene utilizzato per trattare tutte le principali patologie dermatologiche quali ad esempio dermatite, acne, eczema e orticaria.</p><p><b>Ubicazione</b><br>HX12-HX15 sul bordo dell'elice. È anche la sede di rappresentazione midollare. Il trattamento e la rappresentazione patologica segue la logica dermatomerica.</p>",
+            "AzioniTsubo": "<p><b>Altri nomi</b><br>- Disturbi della pelle EUR<br>- Orticaria<br>- Eczema<br><span style='color: rgb(0, 0, 0);'>- Patologie dermatologiche<br>- Midollo EUR</span></p><p><b>Azione</b><br>Come suggerito dal nome, questo punto viene utilizzato per trattare tutte le principali patologie dermatologiche quali ad esempio dermatite, acne, eczema e orticaria.</p><p><b>Ubicazione</b><br>HX12-HX13-HX14-HX15 sul bordo dell'elice. È anche la sede di rappresentazione midollare. Il trattamento e la rappresentazione patologica segue la logica dermatomerica.</p>",
             "ChiaviTsubo": ""
         },
         "023": {
@@ -770,7 +770,7 @@ DB.set= {
         },
         "031": {
             "NomeTsubo": "Utero CIN",
-            "AzioniTsubo": "<p><b>Azione<br></b>Disturbi dolorosi e funzionali dell'apparato riproduttivo. In particolare dismenorrea e polimenorrea</p><p><b>Ubicazione</b><br>TF5-TF6, vasta area nel terzo anteriore della fossa Triangolare, in parte nascosta dal bordo dell'elice.</p>",
+            "AzioniTsubo": "<p><b>Azione<br></b>Disturbi dolorosi e funzionali dell'apparato riproduttivo. In particolare dismenorrea e polimenorrea</p><p><b>Ubicazione</b><br>TF5-TF6, vasta area nel terzo anteriore della fossa triangolare, in parte nascosta dal bordo dell'elice.</p>",
             "ChiaviTsubo": ""
         },
         "032": {
@@ -795,17 +795,17 @@ DB.set= {
         },
         "037": {
             "NomeTsubo": "Stipsi",
-            "AzioniTsubo": "<p><b>Altri nomi</b><br>- Costipazione</p><p><b>Azione</b><br>Punto utilizzato dalla Scuola Cinese per la sua azione nel ridurre i disturbi da stipsi, regolando la motilità intestinale.</p><p><b>Ubicazione</b><br>TF3, a metà distanza tra il centro della fossa Triangolare e la radice inferiore dell'antelice.</p>",
+            "AzioniTsubo": "<p><b>Altri nomi</b><br>- Costipazione</p><p><b>Azione</b><br>Punto utilizzato dalla Scuola Cinese per la sua azione nel ridurre i disturbi da stipsi, regolando la motilità intestinale.</p><p><b>Ubicazione</b><br>TF3, a metà distanza tra il centro della fossa triangolare e la radice inferiore dell'antelice.</p>",
             "ChiaviTsubo": ""
         },
         "038": {
             "NomeTsubo": "Avampiede EUR",
-            "AzioniTsubo": "<p><b>Altri nomi</b><br>- Metatarso</p><p><b>Azione</b><br>Punto auricolare indicato per il trattamento di disturbi e dolori legati all'avampiede</p><p><b>Ubicazione</b><br>TF5-TF6-PP11, alla base della fossa triangolare, nascosto dal bordo dell'elice</p>",
+            "AzioniTsubo": "<p><b>Altri nomi</b><br>- Metatarso</p><p><b>Azione</b><br>Punto auricolare indicato per il trattamento di disturbi e dolori legati all'avampiede</p><p><b>Ubicazione</b><br>TF5-TF6-PT3, alla base della fossa triangolare, nascosto dal bordo dell'elice</p>",
             "ChiaviTsubo": ""
         },
         "039": {
             "NomeTsubo": "Punto Ortosimpatico",
-            "AzioniTsubo": "<p><b>Altri nomi</b><br>- Punto del Simpatico<br>- Punto del Simpatico Autonomico</p><p><b>Azione</b><br>Questo Punto viene riconosciuto a livello internazionale per le sue capacità antalgiche in particolare quella sui visceri. Viene inoltre indicato per la sua azione sul sistema nervoso autonomo e sul parasimpatico-tonico.</p><p><b>Ubicazione</b><br>AH7-IH4, sulla radice inferiore dell'antelice, al suo incontro con l'elice. Il punto è nascosto dall'elice. Corrisponde a LM18.</p>",
+            "AzioniTsubo": "<p><b>Altri nomi</b><br>- Punto del Simpatico<br>- Punto del Simpatico Autonomico</p><p><b>Azione</b><br>Questo Punto viene riconosciuto a livello internazionale per le sue capacità antalgiche in particolare quella sui visceri. Viene inoltre indicato per la sua azione sul sistema nervoso autonomo e sul parasimpatico-tonico.</p><p><b>Ubicazione</b><br>AH7-IH4, sulla radice inferiore dell'antelice, al suo incontro con l'elice. Il punto è nascosto dall'elice. Corrisponde a <span class='LMtxt'>LM18</span>.</p>",
             "ChiaviTsubo": ""
         },
         "040": {
@@ -820,7 +820,7 @@ DB.set= {
         },
         "042": {
             "NomeTsubo": "Ghiandola mammaria CIN",
-            "AzioniTsubo": "<p><b>Altri nomi</b><br>- Mammella</p><p><b>Azione</b><br>Patologie della mammella, mastodinia. </p><p><b>Ubicazione</b><br>AH3-AH10, al centro del corpo dell'antelice a livello della zona di rappresentazione della IV-V vertebra toracica.</p>",
+            "AzioniTsubo": "<p><b>Altri nomi</b><br>- Mammella</p><p><b>Azione</b><br>Patologie della mammella, mastodinia. </p><p><b>Ubicazione</b><br>AH3, al centro del corpo dell'antelice a livello della zona di rappresentazione della IV-V vertebra toracica.</p>",
             "ChiaviTsubo": ""
         },
         "043": {
@@ -845,7 +845,7 @@ DB.set= {
         },
         "048": {
             "NomeTsubo": "Punto articolazione della spalla",
-            "AzioniTsubo": "<p><b>Altri nomi</b><br>- Articolazione della spalla<br>- Scapola<br>- Muscolo trapezio</p><p><b>Azione</b><br>Secondo la Scuola Francese, questo Punto trova un'ottima applicazione per tutti i disturbi legati alla spalla, in particolare alla cuffia della spalla, dolori articolari, alla scapola ed al trapezio.</p><p><b>Ubicazione</b><br>SF1-PP3, al centro della fossa scafa, a livello della rappresentazione di C4-5.</p>",
+            "AzioniTsubo": "<p><b>Altri nomi</b><br>- Articolazione della spalla<br>- Scapola<br>- Muscolo trapezio</p><p><b>Azione</b><br>Secondo la Scuola Francese, questo Punto trova un'ottima applicazione per tutti i disturbi legati alla spalla, in particolare alla cuffia della spalla, dolori articolari, alla scapola ed al trapezio.</p><p><b>Ubicazione</b><br>SF1-PP3, al centro della fossa scafoide, a livello della rappresentazione di C4-5.</p>",
             "ChiaviTsubo": ""
         },
         "049": {
@@ -875,7 +875,7 @@ DB.set= {
         },
         "058": {
             "NomeTsubo": "Punto gluteo",
-            "AzioniTsubo": "<p><b>Altri nomi</b><br>- Punto grande gluteo<br>- Punto natiche</p><p><b>Azione</b><br>Dolore all'anca, al gluteo e dolore nella pseudo-sciatica.</p><p><b>Ubicazione</b><br>AH5-PG5, subito sopra LM16 nel terso posteriore della radice inferiore dell'antelice.</p>",
+            "AzioniTsubo": "<p><b>Altri nomi</b><br>- Punto grande gluteo<br>- Punto natiche</p><p><b>Azione</b><br>Dolore all'anca, al gluteo e dolore nella pseudo-sciatica.</p><p><b>Ubicazione</b><br>AH5-PG5, subito sopra <span class='LMtxt'>LM16</span> nel terso posteriore della radice inferiore dell'antelice.</p>",
             "ChiaviTsubo": ""
         },
         "060": {
@@ -900,7 +900,7 @@ DB.set= {
         },
         "068": {
             "NomeTsubo": "Ginocchio CIN",
-            "AzioniTsubo": "<p><b>Altri nomi</b><br>- Punto del ginocchio<br>- Articolazione del ginocchio<br>- Rotula</p><p><b>Azione</b><br>Come indicato dal nome, questo punto è molto efficace per ridurre tutti i disturbi correlati al ginocchio in particolare ai disturbi articolari dello stesso.</p><p><b>Ubicazione</b><br>AH15, al centro della radice superiore dell'antelice</p>",
+            "AzioniTsubo": "<p><b>Altri nomi</b><br>- Punto del ginocchio<br>- Articolazione del ginocchio<br>- Rotula</p><p><b>Azione</b><br>Come indicato dal nome, questo punto è molto efficace per ridurre tutti i disturbi correlati al ginocchio in particolare ai disturbi articolari dello stesso.</p><p><b>Ubicazione</b><br>AH14-AH15, al centro della radice superiore dell'antelice</p>",
             "ChiaviTsubo": ""
         },
         "069": {
@@ -910,7 +910,7 @@ DB.set= {
         },
         "070": {
             "NomeTsubo": "Vertebre dorsali EUR",
-            "AzioniTsubo": "<p><b>Azione<br></b>I punti Vertebre Dorsali è riconosciuto sia dalla Scuola Cinese sia dalla Scuola Francese per la sua efficacia in tutte le patologie correlate alle vertebre dorsali.</p><p><b>Ubicazione</b><br>AH3-AH4, sulla cresta del corpo dell'antelice nella sua metà più alta.</p>",
+            "AzioniTsubo": "<p><b>Azione<br></b>I punti Vertebre Dorsali è riconosciuto sia dalla Scuola Cinese sia dalla Scuola Francese per la sua efficacia in tutte le patologie correlate alle vertebre dorsali.</p><p><b>Ubicazione</b><br>AH3-AH4-AH5, sulla cresta del corpo dell'antelice nella sua metà più alta.</p>",
             "ChiaviTsubo": ""
         },
         "071": {
@@ -920,7 +920,7 @@ DB.set= {
         },
         "072": {
             "NomeTsubo": "Vertebre sacrali e coccigee",
-            "AzioniTsubo": "<p><b>Azione<br></b>Questo punto è riconosciuto dalla Scuola Francese per la sua efficacia nel trattamento di disturbi correlati alle vertebre sacrali e al coccige.</p><p><b>Ubicazione</b><br>AH7, sulla cresta della radice inferiore dell'antelice, nella sua porzione in parte nascosta dall'elice, nella quale la radice incontra l'elice.</p>",
+            "AzioniTsubo": "<p><b>Azione<br></b>Questo punto è riconosciuto dalla Scuola Francese per la sua efficacia nel trattamento di disturbi correlati alle vertebre sacrali e al coccige.</p><p><b>Ubicazione</b><br>AH6-AH7, sulla cresta della radice inferiore dell'antelice, nella sua porzione in parte nascosta dall'elice, nella quale la radice incontra l'elice.</p>",
             "ChiaviTsubo": ""
         },
         "073": {
@@ -975,7 +975,7 @@ DB.set= {
         },
         "088": {
             "NomeTsubo": "Rene EUR",
-            "AzioniTsubo": "<p><b>Azione</b><br>Disturbi urinari, litiasi renale e disturbi dell'apparato urinario.</p><p><b>Ubicazione</b><br>IH5, superficie interna dell'elice al di sopra del suo incrocio con la radice inferiore dell'antelice.</p>",
+            "AzioniTsubo": "<p><b>Azione</b><br>Disturbi urinari, litiasi renale e disturbi dell'apparato urinario.</p><p><b>Ubicazione</b><br>IH6, superficie interna dell'elice al di sopra del suo incrocio con la radice inferiore dell'antelice.</p>",
             "ChiaviTsubo": ""
         },
         "089": {
@@ -985,7 +985,7 @@ DB.set= {
         },
         "092": {
             "NomeTsubo": "Diaframma CIN",
-            "AzioniTsubo": "<p><b>Azione<br></b>La Scuola Cinese suggerisce il trattamento di questo punto per ridurre il vomito, dolori e spasmi diaframmatici ed il singhiozzo.</p><p><b>Ubicazione</b><br>HX2, alla radice dell'elice, anteriormente al [.000.]</p>",
+            "AzioniTsubo": "<p><b>Azione<br></b>La Scuola Cinese suggerisce il trattamento di questo punto per ridurre il vomito, dolori e spasmi diaframmatici ed il singhiozzo.</p><p><b>Ubicazione</b><br>HX1-HX2, alla radice dell'elice, anteriormente al [.000.]</p>",
             "ChiaviTsubo": ""
         },
         "093": {
@@ -1005,7 +1005,7 @@ DB.set= {
         },
         "098": {
             "NomeTsubo": "Grosso intestino",
-            "AzioniTsubo": "<p><b>Altri nomi</b><br>- Intestino crasso<br>- Colon</p><p><b>Azione</b><br>Come suggerito dal nome, questo punto è indicato per trattare tutti i disturbi correlati alla funzionalità del grosso intestino.</p><p><b>Ubicazione</b><br>SC3-SC4-PC4, nell'emiconca superiore, in prossimità della branca superiore dell'elice.</p>",
+            "AzioniTsubo": "<p><b>Altri nomi</b><br>- Intestino crasso<br>- Colon</p><p><b>Azione</b><br>Come suggerito dal nome, questo punto è indicato per trattare tutti i disturbi correlati alla funzionalità del grosso intestino.</p><p><b>Ubicazione</b><br>SC4-SC5-PC4, nell'emiconca superiore, in prossimità della branca superiore dell'elice.</p>",
             "ChiaviTsubo": ""
         },
         "099": {
@@ -1133,7 +1133,7 @@ DB.set= {
 				},
 				"ns": {
 					"p": [
-						"002"
+						"192"
 					]
 				},
 			},
@@ -1392,10 +1392,15 @@ DB.set= {
 				{
 					"t": "Sindrome vertiginosa",
 					"p": [
-						"148",
-						"000",
-						"148",
-						"272"
+						{
+							t: "Linea delle vertigini",
+							p: [
+								"148",
+								"000",
+								"272"
+							],
+							l: "LIN_VERT"
+						}
 					]
 				},
 				{
@@ -9324,7 +9329,7 @@ DB.set= {
 		},
 		{
 			"NomePatologia": "Radicolopatia lombosacrale",
-			"TestoPatologia": "La radicolopatia lombare o radicolopatia lombosacrale o indicata con il nome del livello coinvolto (radicolopatia L5, S1 ecc..), è un dolore che si irradia in direzione prossimo-distale, dalla zona lombare all'arto inferiore, descritto dal paziente come un dolore urente, una scossa elettrica o una sensazione di intorpidimento.&nbsp;<div>allo stesso modo della cervicale, è un sintomo causato dalla compressione o irritazione del segnale nervoso con sintomi quali formicolio, dolore irradiato, intorpidimento, parestesie e occasionalmente dolore invalidante.<br><br>Affinché possa definirsi radicolopatia, oltre al dolore il paziente deve presentare deficit di forza, alterazione dei riflessi o della sensibilità lungo il decorso del nervo interessato. Se, invece, è presente solamente il sintomo dolore in assenza di alterazioni della conduzione nervosa, lo chiameremo semplicemente dolore radicolare.<br><br>Uno dei primi fattori di rischio è l'età, che porta ad un fisiologico processo degenerativo della colonna vertebrale. I sintomi iniziano tipicamente tra i 50 e i 60 anni, ma è possibile riscontrarla anche in soggetti più giovani intorno ai 30 anni di età. Le cause primarie di radicolopatia lombare sono le spondiloartropatie degenerative e le ernie discali.<br><br>Nel complesso, la radicolopatia lombosacrale è un disturbo straordinariamente comune osservato nella pratica clinica e comprende un'ampia percentuale di visite mediche annuali. La stragrande maggioranza dei casi è benigna e si risolverà spontaneamente, quindi la gestione conservativa è il primo passo più appropriato in assenza di sintomi clinici da bandiera rossa( tumori,infezioni,traumi).",
+			"TestoPatologia": "La radicolopatia lombare o radicolopatia lombosacrale o indicata con il nome del livello coinvolto (radicolopatia L5, S1 ecc..), è un dolore che si irradia in direzione prossimo-distale, dalla zona lombare all'arto inferiore, descritto dal paziente come un dolore urente, una scossa elettrica o una sensazione di intorpidimento. allo stesso modo della cervicale, è un sintomo causato dalla compressione o irritazione del segnale nervoso con sintomi quali formicolio, dolore irradiato, intorpidimento, parestesie e occasionalmente dolore invalidante.<br><br>Affinché possa definirsi radicolopatia, oltre al dolore il paziente deve presentare deficit di forza, alterazione dei riflessi o della sensibilità lungo il decorso del nervo interessato. Se, invece, è presente solamente il sintomo dolore in assenza di alterazioni della conduzione nervosa, lo chiameremo semplicemente dolore radicolare.<br><br>Uno dei primi fattori di rischio è l'età, che porta ad un fisiologico processo degenerativo della colonna vertebrale. I sintomi iniziano tipicamente tra i 50 e i 60 anni, ma è possibile riscontrarla anche in soggetti più giovani intorno ai 30 anni di età. Le cause primarie di radicolopatia lombare sono le spondiloartropatie degenerative e le ernie discali.<br><br>Nel complesso, la radicolopatia lombosacrale è un disturbo straordinariamente comune osservato nella pratica clinica e comprende un'ampia percentuale di visite mediche annuali. La stragrande maggioranza dei casi è benigna e si risolverà spontaneamente, quindi la gestione conservativa è il primo passo più appropriato in assenza di sintomi clinici da bandiera rossa( tumori,infezioni,traumi).",
 			"sessoPatologia": "",
 			"chiaviPatologia": "",
 			"scheda": 19,
@@ -9725,11 +9730,11 @@ DB.set= {
                 },
                 {
                     "TitoloTeoria": "Mappa e aree",
-                    "TestoTeoria": "xxx"
+                    "TestoTeoria": "Il miscrosistema di riferimento che abbiamo scelto di utilizzare per la mappatura del padiglione auricolare e per la nomenclatura delle aree è quello proposto da Terry Oleson nel 1983 e sancito come ufficiale nella riunione del WHO di Pechino nel 2010. Alcune aree, come ad esempio la faccia mediale del padiglione auricolare hanno peraltro subuto delle modifiche in conformità con la reale visione anatomica 3D del padiglione, e di conseguenza anche alcuni riferimenti dei punti laterali in tranfissione.<br><br><b>La nomenclatura delle aree</b><br>Il padiglione auricolare è stato diviso in 19 aree, indicate qui di seguito con i rispettivi codici tra parentesi:<br>- Elice (HX)- Superficie interna dell'elice (IH)<br>- Fossa triangolare (TF)<br>- Antelice (AH)<br>- Fossa scafoide (SF)<br>- Avanmuro (CW)<br>- Emiconca superiore (SC)<br>- Emiconca inferiore (IC)<br>- Conca rigida (CR)<br>- Trago (TG)<br>- Superficie interna del trago (ST)<br>- Incisura intertragica (IT)<br>- Antitrago (AT)<br>- Lobulo (LO)<br>- Elice posteriore (PP)<br>- Solco longitudinale posteriore (PG)<br>- Eminenza triangolare posteriore (PT)<br>- Conca posteriore (PC)<br>- Lobulo posteriore (PL)<br><br>Ogni area è a sua volta divisa in settori numerati in progressione caudo-craniale e antero-posteriore.<br><br>Nella scheda di ogni punto o area, sotto la voce 'ubicazione', è indicato un codice che rappresenta il l'area e il settore di uno punto (es. AH1)."
                 },
                 {
                     "TitoloTeoria": "Punti di repere",
-                    "TestoTeoria": "Per identificare la stessa regione del padiglione auricolare da una persona all'altra è necessario individuare dei punti di riferimento.  Mentre le dimensioni e la forma dell'orecchio possono variare notevolmente tra diversi individui, i punti di riferimento auricolari sono abbastanza coerenti nella maggior parte dei pazienti. Questi punti di riferimento  si distinguono per l'inizio o la fine delle diverse sottosezioni del padiglione auricolare. Il nome e la numerazione dei 18 punti di riferimento inizia con LM 0 perché si trova nella stessa posizione di un punto  principale primario sul padiglione auricolare, il Punto Zero, e prosegue fino a LM 17..<br><br> <b><span class='lmLabel'>LM 0</span> - Centro dell'orecchio:</b> una tacca distinta si trova nella posizione più centrale dell'orecchio, dove la conca rigida incontra la radice dellelice. Può essere rilevato facilmente con un'unghia o una sonda  metallica. LM 0 è il punto di riferimento più comune per fare riferimento ad altre regioni anatomiche del padiglione auricolare. I punti reattivi dell'orecchio sul bordo esterno dell'elice si trovano  spesso a 30° da una linea che collega LM 0 al punto auricolare che corrisponde all'area della patologia corporea. Questa regione della radice elicoidale rappresenta il plesso solare autonomo e il cordone ombelicale,  portando qualsiasi disfunzione del corpo verso uno stato di equilibrio.<br><br> <b><span class='lmLabel'>LM 1</span> - Inserzione dellelice:</b> La regione dell'orecchio in cui la radice elicoidale si separa dalla faccia e attraversa a radice inferiore dell'antielice. La radice dellelice, che si estende da LM 0 a LM 1, rappresenta gli organi  genitali. I genitali esterni si trovano sulla superficie esterna della radice dell'elice e gli organi genitali interni si trovano lungo la superficie nascosta della radice dellelice. <br><br> <b><span class='lmLabel'>LM 2</span> - Apice dell'elice: </b>Il punto più superiore del padiglione aricolare è chiamato apice e si trova  lungo una linea che è verticalmente sopra LM 0. Questo punto rappresenta il controllo funzionale delle allergie ed è il punto di puntura per il salasso per dissipare l'energia tossica. <br><br> <b><span class='lmLabel'>LM 3</span> - Margine superiore del Tubercolo di Darwin:</b> La tacca immediatamente superiore al tubercolo auricolare, che separa il tubercolo di Darwin dall'elice superiore. Questa regione ha punti per il trattamento delle reazioni antinfiammatorie e delle tonsilliti.<br><br> <b><span class='lmLabel'>LM 4</span> - Margine inferiore del Tubercolo di Darwin:</b> La tacca immediatamente inferiore al tubercolo auricolare, che divide il tubercolo di Darwin dalla coda dellelice. Sulla superficie più periferica di questo punto di riferimento sporgente, c'è  una fessura nella cartilagine che separa l'elice superiore dalla coda dellelice. La coda dellelice si estende da LM 4 fino a LM 5, che rappresenta il midollo spinale. <br><br> <b><span class='lmLabel'>LM 5</span> - Curva  dellelice: </b>La coda dellelice curva centralmente ed inferiormente verso il lobulo. Quest'area rappresenta il midollo spinale cervicale.<br><br> <b><span class='lmLabel'>LM 6</span> - Incisura elico-lobulare: </b>una sottile tacca dove il tessuto cartilagineo della coda inferiore dellelice incontra il tessuto morbido e carnoso del lobuloo. Quest'area rappresenta il midollo allungato.<br><br> <b><span class='lmLabel'>LM 7</span> - Base del lobulo:</b> Il punto più basso del lobulo si trova verticalmente sotto una linea retta che passa attraverso  LM 2, LM 0 e LM 7. Rappresenta problemi infiammatori.<br><br> <b><span class='lmLabel'>LM 8</span> - Inserzione lobulare: </b>Il punto più inferiore del lobulo che si attacca alla mandibola. La posizione di questo  punto di riferimento varia considerevolmente. In alcune persone, LM 8 è inferiore a LM 7, mentre in altri individui, LM 8 è superiore a LM 7. Questa regione rappresenta il sistema limbico e la corteccia cerebrale.  Colpisce nervosismo, preoccupazione, ansia e nevrastenia.<br><br> <b><span class='lmLabel'>LM 9</span> - Incisura intertragica: </b>L'incisura che divide il trago dall'antitrago. Rappresenta il controllo ipofisario degli ormoni rilasciati da altre ghiandole endocrine.<br><br> <b><span class='lmLabel'>LM 10</span> - Protuberanza inferiore del trago:</b> Il tubercolo sporgente sulla parte inferiore del trago, di fronte alla parte superiore dell'antitrago. Rappresenta le ghiandole surrenali ed è utilizzato nel trattamento di vari disturbi legati allo  stress. <br><br> <b><span class='lmLabel'>LM 11</span> - Protuberanza superiore del trago: </b>Il tuberbolo sporgente sulla parte superiore del trago, opposta alla radice elicoidale. Influisce sulla regolazione della sete e dell'acqua. <br><br> <b><span class='lmLabel'>LM 12</span> - Protuberanza dellantitrago: </b>Il tubercolo sporgente alla base della cresta ricurva dell'antitrago, superiore al lobulo. Rappresenta la fronte ed è usata per il trattamento delle cefalee.<br><br> <b><span class='lmLabel'>LM 13</span> - Apice dell'antitrago: </b>Il tubercolo sporgente in cima alla cresta ricurva dell'antitrago, opposta a LM 12. Rappresenta le tempie del cranio e viene utilizzato per il trattamento dell'emicrania e per l'asma. <br><br> <b><span class='lmLabel'>LM 14</span> - Base di antelice:</b> Una protuberanza rotonda alla base della coda dellantielice, che si eleva sopra la scanalatura  antielice-antitragale. Questa scanalatura divide l'antitraguo esterno dalla coda dell'antielice. La protuberanza LM 14 rappresenta le vertebre cervicali superiori vicino al cranio. La coda dellantielice, che  si estente da LM 14 fino a LM 15, rappresenta tutte e sette le vertebre cervicali ed è utilizzata nel trattamento del dolore cervicale.<br><br> <b><span class='lmLabel'>LM 15</span> - Curva dellantielice:</b> Una tacca che divide il corpo centrale antielice dalla coda. Questo punto di riferimento si trova al di sopra della conca rigida, orizzontalmente di fronte LM 0, e divide le vertebre cervicali inferiori dalle  vertebre toraciche superiori. Il corpo dellantielice, che si estende da LM 15 fino a LM 16, rappresenta tutte le 12 vertebre toraciche e viene utilizzato per il trattamento del dolore alla parte superiore della schiena.<br><br> <b><span class='lmLabel'>LM 16</span> - Incisura dellantelice:</b> Una tacca distinta che divide la sporgenza curva piatta del ramo inferiore dellantielice dal corpo. Questa tacca divide la rappresentazione somatotopica delle vertebre toraciche inferiori dalle vertebre lombari  superiori. Il ramo inferiore dellantelice è utilizzato per il trattamento del mal di schiena.<br><br> <b><span class='lmLabel'>LM 17</span> - Punto mediano del ramo inferiore dellantelice:</b> Punto sulla superficie superiore del ramo inferiore dellantelice che lo divide in 2 metà. Questa tacca separa le vertebre lombari inferiori dalle vertebre sacrali superiori. Questo punto di riferimento  era il punto di orecchio utilizzato per il trattamento della sciatica, identificato per la prima volta dal P. Nogier e, che ha portato alla scoperta della mappa somatotopica del feto invertito sull'orecchio."
+                    "TestoTeoria": "Per identificare la stessa regione del padiglione auricolare da una persona all'altra è necessario individuare dei punti di riferimento.  Mentre le dimensioni e la forma dell'orecchio possono variare notevolmente tra diversi individui, i punti di riferimento auricolari sono abbastanza coerenti nella maggior parte dei pazienti. Questi punti di riferimento  si distinguono per l'inizio o la fine delle diverse sottosezioni del padiglione auricolare. Il nome e la numerazione dei 18 punti di riferimento inizia con LM 0 perché si trova nella stessa posizione di un punto  principale primario sul padiglione auricolare, il Punto Zero, e prosegue fino a LM 17..<br><br> <b><span class='lmLabel'>LM 0</span> - Centro dell'orecchio:</b> una tacca distinta si trova nella posizione più centrale dell'orecchio, dove la conca rigida incontra la radice dellelice. Può essere rilevato facilmente con un'unghia o una sonda  metallica. LM 0 è il punto di riferimento più comune per fare riferimento ad altre regioni anatomiche del padiglione auricolare. I punti reattivi dell'orecchio sul bordo esterno dell'elice si trovano  spesso a 30° da una linea che collega LM 0 al punto auricolare che corrisponde all'area della patologia corporea. Questa regione della radice elicoidale rappresenta il plesso solare autonomo e il cordone ombelicale,  portando qualsiasi disfunzione del corpo verso uno stato di equilibrio.<br><br> <b><span class='lmLabel'>LM 1</span> - Inserzione dellelice:</b> La regione dell'orecchio in cui la radice elicoidale si separa dalla faccia e attraversa a radice inferiore dell'antielice. La radice dellelice, che si estende da LM 0 a LM 1, rappresenta gli organi  genitali. I genitali esterni si trovano sulla superficie esterna della radice dell'elice e gli organi genitali interni si trovano lungo la superficie nascosta della radice dellelice. <br><br> <b><span class='lmLabel'>LM 2</span> - Apice dell'elice: </b>Il punto più superiore del padiglione aricolare è chiamato apice e si trova  lungo una linea che è verticalmente sopra LM 0. Questo punto rappresenta il controllo funzionale delle allergie ed è il punto di puntura per il salasso per dissipare l'energia tossica. <br><br> <b><span class='lmLabel'>LM 3</span> - Margine superiore del tubercolo di Darwin:</b> La tacca immediatamente superiore al tubercolo auricolare, che separa il tubercolo di Darwin dall'elice superiore. Questa regione ha punti per il trattamento delle reazioni antinfiammatorie e delle tonsilliti.<br><br> <b><span class='lmLabel'>LM 4</span> - Margine inferiore del tubercolo di Darwin:</b> La tacca immediatamente inferiore al tubercolo auricolare, che divide il tubercolo di Darwin dalla coda dellelice. Sulla superficie più periferica di questo punto di riferimento sporgente, c'è  una fessura nella cartilagine che separa l'elice superiore dalla coda dellelice. La coda dellelice si estende da LM 4 fino a LM 5, che rappresenta il midollo spinale. <br><br> <b><span class='lmLabel'>LM 5</span> - Curva  dellelice: </b>La coda dellelice curva centralmente ed inferiormente verso il lobulo. Quest'area rappresenta il midollo spinale cervicale.<br><br> <b><span class='lmLabel'>LM 6</span> - Incisura elico-lobulare: </b>una sottile tacca dove il tessuto cartilagineo della coda inferiore dellelice incontra il tessuto morbido e carnoso del lobuloo. Quest'area rappresenta il midollo allungato.<br><br> <b><span class='lmLabel'>LM 7</span> - Base del lobulo:</b> Il punto più basso del lobulo si trova verticalmente sotto una linea retta che passa attraverso  LM 2, LM 0 e LM 7. Rappresenta problemi infiammatori.<br><br> <b><span class='lmLabel'>LM 8</span> - Inserzione lobulare: </b>Il punto più inferiore del lobulo che si attacca alla mandibola. La posizione di questo  punto di riferimento varia considerevolmente. In alcune persone, LM 8 è inferiore a LM 7, mentre in altri individui, LM 8 è superiore a LM 7. Questa regione rappresenta il sistema limbico e la corteccia cerebrale.  Colpisce nervosismo, preoccupazione, ansia e nevrastenia.<br><br> <b><span class='lmLabel'>LM 9</span> - Incisura intertragica: </b>L'incisura che divide il trago dall'antitrago. Rappresenta il controllo ipofisario degli ormoni rilasciati da altre ghiandole endocrine.<br><br> <b><span class='lmLabel'>LM 10</span> - Protuberanza inferiore del trago:</b> Il tubercolo sporgente sulla parte inferiore del trago, di fronte alla parte superiore dell'antitrago. Rappresenta le ghiandole surrenali ed è utilizzato nel trattamento di vari disturbi legati allo  stress. <br><br> <b><span class='lmLabel'>LM 11</span> - Protuberanza superiore del trago: </b>Il tuberbolo sporgente sulla parte superiore del trago, opposta alla radice elicoidale. Influisce sulla regolazione della sete e dell'acqua. <br><br> <b><span class='lmLabel'>LM 12</span> - Protuberanza dellantitrago: </b>Il tubercolo sporgente alla base della cresta ricurva dell'antitrago, superiore al lobulo. Rappresenta la fronte ed è usata per il trattamento delle cefalee.<br><br> <b><span class='lmLabel'>LM 13</span> - Apice dell'antitrago: </b>Il tubercolo sporgente in cima alla cresta ricurva dell'antitrago, opposta a LM 12. Rappresenta le tempie del cranio e viene utilizzato per il trattamento dell'emicrania e per l'asma. <br><br> <b><span class='lmLabel'>LM 14</span> - Base di antelice:</b> Una protuberanza rotonda alla base della coda dellantielice, che si eleva sopra la scanalatura  antielice-antitragale. Questa scanalatura divide l'antitraguo esterno dalla coda dell'antielice. La protuberanza LM 14 rappresenta le vertebre cervicali superiori vicino al cranio. La coda dellantielice, che  si estente da LM 14 fino a LM 15, rappresenta tutte e sette le vertebre cervicali ed è utilizzata nel trattamento del dolore cervicale.<br><br> <b><span class='lmLabel'>LM 15</span> - Curva dellantielice:</b> Una tacca che divide il corpo centrale antielice dalla coda. Questo punto di riferimento si trova al di sopra della conca rigida, orizzontalmente di fronte LM 0, e divide le vertebre cervicali inferiori dalle  vertebre toraciche superiori. Il corpo dellantielice, che si estende da LM 15 fino a LM 16, rappresenta tutte le 12 vertebre toraciche e viene utilizzato per il trattamento del dolore alla parte superiore della schiena.<br><br> <b><span class='lmLabel'>LM 16</span> - Incisura dellantelice:</b> Una tacca distinta che divide la sporgenza curva piatta del ramo inferiore dellantielice dal corpo. Questa tacca divide la rappresentazione somatotopica delle vertebre toraciche inferiori dalle vertebre lombari  superiori. Il ramo inferiore dellantelice è utilizzato per il trattamento del mal di schiena.<br><br><b><span class='lmLabel'>LM 17</span> - Punto mediano del ramo inferiore dell'antelice:</b> Punto sulla superficie superiore del ramo inferiore dellantelice che lo divide in 2 metà. Questa tacca separa le vertebre lombari inferiori dalle vertebre sacrali superiori. Questo punto di riferimento  era il punto di orecchio utilizzato per il trattamento della sciatica, identificato per la prima volta dal P. Nogier e, che ha portato alla scoperta della mappa somatotopica del feto invertito sull'orecchio.<br><br><b><span class='lmLabel'>LM 18</span> - Inserzione interna dell'elice:</b> localizzato immediatamente sotto al punto LM1, all'incontro tra la parte ascendente dell'elice e la radice inferiore dell'antelice.<br><br><b><span class='lmLabel'>LM 19</span> - Punto mediano della conca rigida:</b> localizzato nel punto centrale della conca rigida.<br><br><b><span class='lmLabel'>LM 20</span> - Antelice-Conca rigida:</b> subito sotto a LM5, tra la conca rigida e il suo incontro con l'antelice.</b><br><br><b><span class='lmLabel'>LM 21</span> - Antitrago-Emiconca inferiore:</b> punto localizzato al confine tra l'avanmuro dell'antitrago e l'emiconca inferiore, in corrispondenza dell'apice dell'antitrago.<br><br><b><span class='lmLabel'>LM 22</span> - Incisura intertragica:</b> localizzato mediante la staffa posteriormente e al di sopra a LM9, nel punto intermedio tra trago e antitrago.<br><br><b><span class='lmLabel'>LM 23</span> - Punto mediano del trago:</b> e metà strada tra LM10  e LM11, nel punto in cui il trago si congiunge con la faccia."
                 },
 				{
 					"TitoloTeoria": "Zone di frequenza",
@@ -9742,11 +9747,7 @@ DB.set= {
 				{
 					"TitoloTeoria": "Derivazione embriologica",
 					"TestoTeoria": "Tutti gli organismi vertebrati iniziano come l'unione di un singolo ovulo e di un singolo sperma. Immediatamente questa prima cellula inzia a dividersi per diventare un organismo multicellulare.  La sfera che si sviluppa infine si ripiega su se stessa e si differenzia nei tre strati differenti di tessuto embriologico. È da questi tre tipi fondamentali di tessuto che si formano tutti gli altri organi. Gli organi  derivati da questi strati embrionali sono proiettati su diverse regioni del padiglione auricolare.<br><br> <b>Tessuto endodermico</b><br>L'endoderma diventa il tratto digestivo gastrointestinale, il sistema respiratorio e gli organi addominali  come il fegato, il pancreas, l'uretra e la vescica. Questa parte dell'embrione egualmente genera le parti del sistema endocrino, compreso la ghiandola tiroidea, la ghiandola paratiroide e la ghiandola del timo. Sul  padoglione auricolare, il tessuto embrionale profondo è rappresentato dalla conca, la valle centrale dell'orecchio. La stimolazione di questa area dell'orecchio influenza le attivit&agrave; metaboliche e i disturbi  nutritivi degli organi interni che provengono dallo strato endodermico dell'embrione. I disturbi negli organi interni creano un ostacolo al successo dei trattamenti medici, quindi questi disturbi metabolici devono essere  corretti prima che possa verificarsi una completa guarigione.<br><br> <b>Tessuto mesodermico</b><br>Il mesoderma diventa muscoli scheletrici, muscoli cardiaci, muscoli lisci, tessuto connettivo, articolazioni,  ossa, cellule del sangue dal midollo osseo, il sistema circolatorio, il sistema linfatico, la corteccia surrenale e gli organi urogenitali. L'equilibrio muscolo-scheletrico è regolato dal controllo del feedback  negativo dei riflessi somatosensoriali. Il tessuto embrionale medio è rappresentato sull'antielice, sulla fossa scafoide, sulla fossa triangolare e sulle parti dell'elice. La mobilitazione dei meccanismi di  difesa del corpo è possibile solo se la regione dello strato intermedio funziona normalmente.<br><br> <b>Tessuto ectodermico</b><br>lo strato superficiale proviene dall'ectoderma dell'embrione. L'ectoderma diventa la pelle esterna,  cornea, cristallino, epitelio nasale, denti, nervi periferici, midollo spinale, cervello e ghiandole endocrine del midollo pituitario, pineale e surrenale. Questo tessuto embrionale è rappresentato sul lobo dell'orecchio  e sulla coda dell'elice. Lo strato embriologico superficiale influisce sulla capacit&agrave; di adattamento e contatto con l'ambiente. Rivela reazioni di resistenza psicologica non solo dalla mente cosciente, ma anche  dalla psiche profonda inconscia. Questo livello integra informazioni istintive innate con esperienze individuali apprese."
-				},
-                {
-                    "TitoloTeoria": "Le fasi di Nogier",
-                    "TestoTeoria": "xxx"
-                }
+				}
             ],
             "noList": true
         },

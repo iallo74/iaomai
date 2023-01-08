@@ -568,7 +568,7 @@ function animate() {
 				var end = Date.now();
 				if(end-rotateStart>5000)smothingView=false;
 				rotateStart=null;
-				normalizeRotation();
+				if(!controlsM._premuto)normalizeRotation();
 				if(!controlsM._premuto){
 					controlsM._ZPR=false;
 					controlsM._inMovimento=false;
@@ -725,11 +725,14 @@ function onClick(){
 	}
 }
 function centro(){ // riporta al centro
+	var centro = __(globals.modello.centro,{ x: 0, y: 0.7, z: 0 });
+	var zoom = centro.z;
+	if(!centro.z)zoom = 0.5;
 	panEndZero = { x: 0, y: 0, z: 0 };
-	panEnd = { x: 0, y: 0.7, z: 0 };
+	panEnd = centro;
 	normalizeRotation();
 	rotateEnd = { x: 0, y: 0, z: 0 };
-	zoomEnd = 0.5;
+	zoomEnd = zoom;
 	camera.position.set(0,0,22);
 	camera.lookAt(camera.position);
 	MENU.disBtnCentro();

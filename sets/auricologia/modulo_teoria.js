@@ -144,9 +144,9 @@ var MODULO_TEORIA = { // extend SET
 	},
 	
 	caricaTest: function( n ){
-		SET.caricaTeoria(4,n,document.getElementById("btn_teoria_4_"+n));
+		SET.caricaTeoria(SET.idTeoTests,n,document.getElementById("btn_teoria_"+SET.idTeoTests+"_"+n));
 		SCHEDA.selElenco("teoria");
-		SCHEDA.swCartella(document.getElementById("btn_teoria_cart_4"),true);
+		SCHEDA.swCartella(document.getElementById("btn_teoria_cart_"+SET.idTeoTests),true);
 	},
 	scriviTest: function( test ){
 		SET.testTOT = 0;

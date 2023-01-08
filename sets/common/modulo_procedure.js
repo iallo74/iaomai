@@ -280,7 +280,7 @@ var MODULO_PROCEDURE = { // extend SET
 								'	</span>'
 								'</span>';
 					}
-					if(TipoDettaglio=='A'){
+					if(TipoDettaglio=='A' && siglaTsubo){
 						var NomeTsubo = DB.set.punti[siglaTsubo].NomeTsubo;
 						HTML += '[.'+siglaTsubo+'.]';
 					}
@@ -902,7 +902,7 @@ var MODULO_PROCEDURE = { // extend SET
 							if(TipoDettaglio=='A')siglaTsubo=DescrizioneDettaglio;
 						}
 					}
-				
+					
 					
 					// mezzo
 					var addMezzoTit = '';
@@ -1131,10 +1131,10 @@ var MODULO_PROCEDURE = { // extend SET
 				if(__(DB.set.meridiani[mer].tsubo[nTsubo*1-1].siglaTsubo)){
 					sg = __(DB.set.meridiani[mer].tsubo[nTsubo*1-1].siglaTsubo);
 				}
-				val += "."+sg+"."+DP[2]+"."+DP[3];
+				val += "."+sg+"."+__(DP[2])+"."+__(DP[3]);
 			}
 			if(globals.set.siglaProc=='AUR'){
-				val = document.getElementById("pt_"+n).value+"."+DP[1];
+				val = document.getElementById("pt_"+n).value+"."+__(DP[1]);
 			}
 		}
 		SET.dettagliProvvisori[parseInt(pId[1])].DescrizioneDettaglio = val;

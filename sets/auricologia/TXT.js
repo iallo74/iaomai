@@ -655,8 +655,8 @@ DB.TXT.set = {
         esp: ""
     },
     Punto: {
-        ita: "Tsubo",
-        eng: "Tsubo",
+        ita: "Punto",
+        eng: "Point",
         esp: ""
     },
     Titoletto: {
