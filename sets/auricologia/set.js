@@ -707,6 +707,13 @@ SET = {
 		var type = (PT.userData.type == 'point')?"punti":"aree";
 		name = PT_name.substr(PT_name.length-3,3);
 		
+		// verifico le autorizzazioni
+		if(!SET.verFreePunti(name)){
+			ALERT(TXT("MsgContSoloPay"));
+			return;
+		}
+		// --------------------------
+		
 		if(typeof(ritorno) == 'undefined')var ritorno = '';
 
 		if(this.ptSel){
@@ -925,7 +932,7 @@ SET = {
 	},
 	selTsubo: function( PT ){
 		// verifico le autorizzazioni
-		if(SET.PUNTI_free.indexOf(PT)==-1 && (DB.login.data.auths.indexOf(globals.set.cartella)==-1 || !LOGIN.logedin())){
+		if(!SET.verFreePunti(PT)){
 			ALERT(TXT("MsgContSoloPay"));
 			return;
 		}
@@ -962,12 +969,17 @@ SET = {
 		for(k in result){
 			var pT=result[k].split("'");
 			var siglaTsubo = pT[1];
-			SET.tsuboEvidenziati.push(siglaTsubo);
+			
+			// verifico le autorizzazioni
+			if(!SET.verFreePunti(siglaTsubo)){
+				SET.tsuboEvidenziati.push(siglaTsubo);
+			}
+			// --------------------------
 		}
 		SET.applicaEvidenziaTsubo();
 		
 		//-------------------- MOSTRA LINEE
-		SET.hideGroupLines();
+		//SET.hideGroupLines();
 		var re = /data-tri="[^"]+"/ig;
 		var result = html.match(re);
 		for(k in result){
@@ -1123,10 +1135,17 @@ SET = {
 		}
 	},
 	overTsubo: function( PT_name, over ){
-		if(touchable)return;
 		var name = PT_name.split(".")[0];
 		if(name.substr(0,1)=='_')name = name.substr(3,name.length-3);
 		else name = name.substr(2,name.length-2);
+		if(touchable || !name)return;
+		
+		// verifico le autorizzazioni
+		if(!SET.verFreePunti(name)){
+			return;
+		}
+		// --------------------------
+		
 		var phs = ["","2","3"];
 		for(ph in phs){
 			var els = scene.getObjectByName("PTs"+phs[ph]).children;
@@ -1226,6 +1245,12 @@ SET = {
 		else SET.visLM();
 	},
 	visLM: function(){ // mostra i landmarks
+		// verifico le autorizzazioni
+		if(!SET.verFreePatologia(n*1)){
+			ALERT(TXT("MsgContSoloPay"));
+			return;
+		}
+		// --------------------------
 		document.getElementById("p_lms").classList.add("btnSel");
 		var lms = scene.getObjectByName("LMs");
 		for(l in lms.children){
@@ -1334,8 +1359,8 @@ SET = {
 			var gruppo = SETS.children[0].children[c].children;
 			for(g in gruppo){
 				var name = gruppo[g].name.replace("_","");
-				if(	SET.PUNTI_free.indexOf(name.substr(2,3))==-1 && // verifico le autorizzazioni
-					(DB.login.data.auths.indexOf(globals.set.cartella)==-1 || !LOGIN.logedin())){
+				// verifico le autorizzazioni
+				if(	!SET.verFreePunti(name.substr(2,3))){
 					gruppo[g].visible = vis;
 					gruppo[g].userData.locked = true;
 					if(document.getElementById("ts_"+name.substr(2,3)))document.getElementById("ts_"+name.substr(2,3)).classList.toggle("lockedItem",!vis);

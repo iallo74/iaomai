@@ -394,6 +394,7 @@ function caricaSet( cartella, el ){
 		}
 		localStorage.set = globals.set.cartella;
 		document.getElementById("pulsanti_set").classList.add("setAperto");
+		document.getElementById("btns_set").classList.add("visBtn");
 		
 	}
 	try{
@@ -436,6 +437,7 @@ function scaricaSet( notInit ){
 	MENU.aggiornaIconeModello();
 	localStorage.set = '';
 	document.getElementById("pulsanti_set").classList.remove("setAperto");
+		document.getElementById("btns_set").classList.remove("visBtn");
 	if(!smartMenu && !daScheda)SCHEDA.chiudiElenco();
 	document.getElementById("p_sets").classList.add("visSch");
 	GUIDA.nasFumetto();

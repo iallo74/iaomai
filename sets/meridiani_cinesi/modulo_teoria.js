@@ -33,8 +33,7 @@ var MODULO_TEORIA = { // extend SET
 			for(t in DB.set.teoria[p].contenuti){
 				
 				// verifico le autorizzazioni
-				var addLock = 	SET.TEORIA_free.indexOf(p+"_"+t)==-1 && 
-								(DB.login.data.auths.indexOf(globals.set.cartella)==-1 || !LOGIN.logedin())? ' lockedItem' : '';
+				var addLock = 	(!SET.verFreeTeoria(p+"_"+t))? ' lockedItem' : '';
 				// --------------------------
 				TitoloTeoria = DB.set.teoria[p].contenuti[t].TitoloTeoria;
 				funct = 'Teoria';
@@ -67,7 +66,7 @@ var MODULO_TEORIA = { // extend SET
 	caricaTeoria: function( p, t, btn ){
 		// apre la scheda di un approfondimento
 		// verifico le autorizzazioni
-		if(SET.TEORIA_free.indexOf(p+"_"+t)==-1 && (DB.login.data.auths.indexOf(globals.set.cartella)==-1 || !LOGIN.logedin())){
+		if(!SET.verFreeTeoria(p+"_"+t)){
 			ALERT(TXT("MsgContSoloPay"));
 			return;
 		}
@@ -131,7 +130,7 @@ var MODULO_TEORIA = { // extend SET
 	caricaVideo: function( p, t, btn ){
 		// carica un approfondimento video
 		// verifico le autorizzazioni
-		if(SET.TEORIA_free.indexOf(p+"_"+t)==-1 && (DB.login.data.auths.indexOf(globals.set.cartella)==-1 || !LOGIN.logedin())){
+		if(!SET.verFreeTeoria(p+"_"+t)){
 			ALERT(TXT("MsgContSoloPay"));
 			return;
 		}
@@ -170,5 +169,8 @@ var MODULO_TEORIA = { // extend SET
 		evidenziaParola();
 		RICERCHE.nascondiGlobal();	
 		SCHEDA.individuaElemento( 'btn_teoria_cart_'+i, "listaTeoria" );
+	},
+	verFreeTeoria: function( t ){
+		return !(SET.TEORIA_free.indexOf(t)==-1 && (DB.login.data.auths.indexOf(globals.set.cartella)==-1 || !LOGIN.logedin()));
 	}
 }

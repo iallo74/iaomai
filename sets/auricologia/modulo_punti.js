@@ -24,8 +24,7 @@ var MODULO_PUNTI = { // extend SET
 			n++;
 			
 			// verifico le autorizzazioni
-			var addLock =	SET.PUNTI_free.indexOf(p)==-1 && 
-							(DB.login.data.auths.indexOf(globals.set.cartella)==-1 || !LOGIN.logedin()) ? ' lockedItem' : '';
+			var addLock =	(!SET.verFreePunti(p)) ? ' lockedItem' : '';
 			// --------------------------
 			elencoTsubo+='<p>'+this.scriviTsubo(siglaTsubo,true,true,'')+'</p>';
 		}
@@ -462,5 +461,8 @@ var MODULO_PUNTI = { // extend SET
 				SET.apriTsubo(PT_name);
 			}, 200, PT_name );
 		}
+	},
+	verFreePunti: function( siglaTsubo ){
+		return !(SET.PUNTI_free.indexOf(siglaTsubo)==-1 && (DB.login.data.auths.indexOf(globals.set.cartella)==-1 || !LOGIN.logedin()));
 	}
 }

@@ -180,7 +180,7 @@ var MODULO_PROCEDURE = { // extend SET
 			if(CONN.getConn() && idUtenteProcedura)HTML += '" style="background-image:url(' + CONN.APIfolder+'getAvatarMini.php?idU='+idUtenteProcedura+'&t='+dt+');';
 			else HTML += ' commNoAvatar"';
 			HTML +=	'"></span>' +
-					'		<b>' + Autore + '</b> ('+getDataTS(DataModifica)+')' +
+					'		<b>' + Autore + '</b>'+((DataModifica>1)?' ('+getDataTS(DataModifica)+')':'') +
 					'	</div>' +
 					'	<div class="p_sch_tools">';
 			
@@ -267,16 +267,17 @@ var MODULO_PROCEDURE = { // extend SET
 						}
 					}
 					if(TipoDettaglio=='M'){
+						var siglaMeridiano = DescrizioneDettaglio.split(".")[0]
 						HTML += '<span class="rgProcMod dettMeridiano' +
-								(MERIDIANI[DescrizioneDettaglio].meridianoAcceso ? ' p_'+MERIDIANI[DescrizioneDettaglio].elemento : '') +
+								(MERIDIANI[siglaMeridiano].meridianoAcceso ? ' p_'+MERIDIANI[DescrizioneDettaglio].elemento : '') +
 								'"' +
-								'	   id="tr_p'+DescrizioneDettaglio+'"' +
+								'	   id="tr_p'+siglaMeridiano+'"' +
 								'	   style="cursor:pointer;"' +
-								'	   onMouseOver="SET.eviMeridiano(\''+DescrizioneDettaglio+'\',true)"' +
-								'	   onMouseOut="SET.eviMeridiano(\''+DescrizioneDettaglio+'\',false)"' +
-								'	   onClick="SET.accendiMeridiano(\''+DescrizioneDettaglio+'\',true)">'+
+								'	   onMouseOver="SET.eviMeridiano(\''+siglaMeridiano+'\',true)"' +
+								'	   onMouseOut="SET.eviMeridiano(\''+siglaMeridiano+'\',false)"' +
+								'	   onClick="SET.accendiMeridiano(\''+siglaMeridiano+'\',true)">'+
 								'	<span class="meridProc">' +
-										DB.set.meridiani[DescrizioneDettaglio].NomeMeridiano +
+										DB.set.meridiani[siglaMeridiano].NomeMeridiano +
 								'	</span>'
 								'</span>';
 					}
@@ -376,7 +377,10 @@ var MODULO_PROCEDURE = { // extend SET
 		}});
 	},
 	swCond: function( Q_idProc ){ // setta sì/no le condizioni della community
-		//if(!retNoFree())return false;
+		if((DB.login.data.auths.indexOf(globals.set.cartella)==-1 || !LOGIN.logedin())){
+			ALERT(TXT("MsgFunzioneSoloPay"));
+			return false;
+		}
 		if(!COMMUNITY.verifica())return;
 		if(typeof(Q_idProc)=='undefined')var Q_idProc=-1;
 		var DataModifica = DB.procedure.lastSync+1;
@@ -439,8 +443,10 @@ var MODULO_PROCEDURE = { // extend SET
 		}
 		if(maxProcedure>-1 && Q_idProc==-1){
 			var tProc = 0;
+			var app = '';
+			if(globals.set.cartella=='auricologia')app = 'AUR';
 			for(c in DB.procedure.data){
-				if(DB.procedure.data[c].Cancellato*1==0)tProc++;
+				if(DB.procedure.data[c].Cancellato*1==0 && DB.procedure.data[c].app == app)tProc++;
 			}
 			if(tProc >= maxProcedure){
 				ALERT(TXT("MsgMaxProcedure"));
@@ -957,15 +963,20 @@ var MODULO_PROCEDURE = { // extend SET
 							'		<option value="">- '+TXT("ScegliMeridiano")+' -</option>';
 							
 						for(k in DB.set.meridiani){
-							HTML += 
-							'		<option value="'+k+'"';
-							if(siglaMeridiano==k){
-								HTML += ' SELECTED';
-								totPunti=DB.set.meridiani[k].tsubo.length;
+							
+							// verifico le autorizzazioni
+							if(SET.verFreeMeridiani(k)){
+								HTML += 
+								'		<option value="'+k+'"';
+								if(siglaMeridiano==k){
+									HTML += ' SELECTED';
+									totPunti=DB.set.meridiani[k].tsubo.length;
+								}
+								HTML += '>'+SET.convSigla(k);
+								if(WF()>=509)HTML += ' &nbsp; ('+DB.set.meridiani[k].NomeMeridiano+')';
+								HTML += '</option>';
 							}
-							HTML += '>'+SET.convSigla(k);
-							if(WF()>=509)HTML += ' &nbsp; ('+DB.set.meridiani[k].NomeMeridiano+')';
-							HTML += '</option>';
+							// --------------------------
 						}
 						HTML += '	</select>';
 						HTML += '	<select class="numPoints"' +
@@ -1011,17 +1022,21 @@ var MODULO_PROCEDURE = { // extend SET
 					var totPunti=0;
 						
 					for(k in DB.set.meridiani){
-						if(k!='EX'){
-							HTML += 
-							'		<option value="'+k+'"';
-							if(DescrizioneDettaglio==k){
-								HTML += ' SELECTED';
-								totPunti=DB.set.meridiani[k].tsubo.length;
+						// verifico le autorizzazioni
+						if(SET.verFreeMeridiani(k)){
+							if(k!='EX'){
+								HTML += 
+								'		<option value="'+k+'"';
+								if(DescrizioneDettaglio==k){
+									HTML += ' SELECTED';
+									totPunti=DB.set.meridiani[k].tsubo.length;
+								}
+								HTML += '>'+SET.convSigla(k);
+								if(WF()>=509)HTML += ' &nbsp; ('+DB.set.meridiani[k].NomeMeridiano+')';
+								HTML += '</option>';
 							}
-							HTML += '>'+SET.convSigla(k);
-							if(WF()>=509)HTML += ' &nbsp; ('+DB.set.meridiani[k].NomeMeridiano+')';
-							HTML += '</option>';
 						}
+						// --------------------------
 					}
 					HTML += '	</select>';
 				}
@@ -1033,9 +1048,13 @@ var MODULO_PROCEDURE = { // extend SET
 							' 			onChange="SET.ritOverTsubo(\'dettagliCont\','+p+');this.blur();"><option></option>';
 					
 					for(a=0;a<puntiElenco.length;a++){
-						HTML += '	<option value="'+puntiElenco[a].siglaTsubo+'"';
-						if(siglaTsubo==puntiElenco[a].siglaTsubo)HTML += ' SELECTED';
-						HTML += '>'+puntiElenco[a].NomeTsubo+'</option>';
+						// verifico le autorizzazioni
+						if(SET.verFreePunti(puntiElenco[a].siglaTsubo)){
+							HTML += '	<option value="'+puntiElenco[a].siglaTsubo+'"';
+							if(siglaTsubo==puntiElenco[a].siglaTsubo)HTML += ' SELECTED';
+							HTML += '>'+puntiElenco[a].NomeTsubo+'</option>';
+						}
+						// --------------------------
 					}
 					HTML += '	</select>' +
 							'	<img src="img/ico_vedi.png"' +

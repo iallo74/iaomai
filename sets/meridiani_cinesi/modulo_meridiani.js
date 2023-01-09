@@ -12,8 +12,7 @@ var MODULO_MERIDIANI = { // extend SET
 			var addClass = addClassEl = '';
 			
 			// verifico le autorizzazioni
-			var addLock =	SET.MERIDIANI_free.indexOf(m)==-1 && 
-							(DB.login.data.auths.indexOf(globals.set.cartella)==-1 || !LOGIN.logedin()) ? ' lockedItem' : '';
+			var addLock =	(!SET.verFreeMeridiani(m)) ? ' lockedItem' : '';
 			// --------------------------
 			
 			if(n==2 || n==4 || n==6 || n==8 || n==10 || n==12 || n==14){
@@ -78,6 +77,13 @@ var MODULO_MERIDIANI = { // extend SET
 			document.getElementById("e_"+m).classList.remove("visElPt")
 			el.classList.remove("frSw");
 		}
+	},
+	verFreeMeridiani: function( m ){
+		return !(SET.MERIDIANI_free.indexOf(m)==-1 && (DB.login.data.auths.indexOf(globals.set.cartella)==-1 || !LOGIN.logedin()));
+	},
+	verFreePunti: function( siglaTsubo ){
+		var siglaMeridiano = siglaTsubo.split(".")[1];
+		return SET.verFreeMeridiani(siglaMeridiano);
 	}
 	
 }

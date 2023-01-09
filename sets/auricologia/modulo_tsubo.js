@@ -5,7 +5,7 @@ var MODULO_TSUBO = { // extend SET
 	
 	caricaTsubo: function( siglaTsubo, ritorno ){ //  carica la scheda del punto
 		// verifico le autorizzazioni
-		if(SET.PUNTI_free.indexOf(siglaTsubo)==-1 && (DB.login.data.auths.indexOf(globals.set.cartella)==-1 || !LOGIN.logedin())){
+		if(!SET.verFreePunti(siglaTsubo)){
 			ALERT(TXT("MsgContSoloPay"));
 			SET.chiudiTsubo();
 			return;

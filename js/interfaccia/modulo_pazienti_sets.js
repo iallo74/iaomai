@@ -750,9 +750,13 @@ var PAZIENTI_SETS = {
 								'	     	 		   SCHEDA.formModificato=true;">' +
 								'		<option></option>';
 						for(n in puntiElenco){
-							HTML += '<option value="'+puntiElenco[n].siglaTsubo+'"';
-							if(siglaTsubo==puntiElenco[n].siglaTsubo)HTML += ' SELECTED';
-							HTML += '>'+puntiElenco[n].NomeTsubo+'</option>';
+							// verifico le autorizzazioni
+							if(SET.verFreePunti(puntiElenco[n].siglaTsubo)){
+								HTML += '<option value="'+puntiElenco[n].siglaTsubo+'"';
+								if(siglaTsubo==puntiElenco[n].siglaTsubo)HTML += ' SELECTED';
+								HTML += '>'+puntiElenco[n].NomeTsubo+'</option>';
+							}
+							// --------------------------
 						}
 						HTML += '	</select>';
 					
@@ -841,8 +845,6 @@ var PAZIENTI_SETS = {
 			e: "",
 			t: ""
 		}
-		console.log(PT)
-		console.log(JSNPUSH)
 		PAZIENTI.auriculoProvvisori.push(JSNPUSH);
 		SCHEDA.formModificato = true;
 		PAZIENTI.caricaAuriculoTrattamento();
@@ -941,35 +943,43 @@ var PAZIENTI_SETS = {
 		if(PAZIENTI.tipoGruppo=='P' || PAZIENTI.tipoGruppo=='M'){
 			EL.titolo = TXT("MeridianiTrattamento");
 			for(i in DB.set.meridiani){
-				n++;
-				if(PAZIENTI.tipoGruppo=='P'){ // punti
-					EL.contenuto[n] = {};
-					EL.contenuto[n].titolo = DB.set.meridiani[i].NomeMeridiano;
-					EL.contenuto[n].contenuto = [];
-					EL.contenuto[n].livello = 3;
-					EL.contenuto[n].parent = EL;
-					for(pm in DB.set.meridiani[i].tsubo){
-						if(DB.set.meridiani[i].tsubo[pm].NomeTsubo){
-							var pP=DB.set.meridiani[i].tsubo[pm].NomeTsubo.split(". ");
-							EL.contenuto[n].contenuto.push(pP[0]);
-						}
-					}	
+				// verifico le autorizzazioni
+				if(SET.verFreeMeridiani(i)){
+					n++;
+					if(PAZIENTI.tipoGruppo=='P'){ // punti
+						EL.contenuto[n] = {};
+						EL.contenuto[n].titolo = DB.set.meridiani[i].NomeMeridiano;
+						EL.contenuto[n].contenuto = [];
+						EL.contenuto[n].livello = 3;
+						EL.contenuto[n].parent = EL;
+						for(pm in DB.set.meridiani[i].tsubo){
+							if(DB.set.meridiani[i].tsubo[pm].NomeTsubo){
+								var pP=DB.set.meridiani[i].tsubo[pm].NomeTsubo.split(". ");
+								EL.contenuto[n].contenuto.push(pP[0]);
+							}
+						}	
+					}
+					if(PAZIENTI.tipoGruppo=='M'){ // meridiani
+						if(i!='EX')EL.contenuto.push(i);
+					}
 				}
-				if(PAZIENTI.tipoGruppo=='M'){ // meridiani
-					if(i!='EX')EL.contenuto.push(i);
-				}
+				// --------------------------
 			}
 		}
 		if(PAZIENTI.tipoGruppo=='A'){ // auricolo-punti
 		
 			var puntiElenco = [];
 			for(siglaTsubo in DB.set.punti){
-				if(__(DB.set.punti[siglaTsubo])){
-					puntiElenco.push({
-						siglaTsubo: siglaTsubo,
-						NomeTsubo: DB.set.punti[siglaTsubo].NomeTsubo
-					});
+				// verifico le autorizzazioni
+				if(SET.verFreePunti(siglaTsubo)){ // verifico le autorizzazioni
+					if(__(DB.set.punti[siglaTsubo])){
+						puntiElenco.push({
+							siglaTsubo: siglaTsubo,
+							NomeTsubo: DB.set.punti[siglaTsubo].NomeTsubo
+						});
+					}
 				}
+				// --------------------------
 			}
 			puntiElenco.sort(sort_by("NomeTsubo", false));
 			
@@ -1008,8 +1018,17 @@ var PAZIENTI_SETS = {
 						PT=pP[1];
 						if(PAZIENTI.tipoGruppo=='P')PT += '.'+pP[2];
 						if(EL2.contenuto.indexOf(PT)===-1){
-							EL2.contenuto.push(PT);
-							presenti = true;
+							var pass = true;
+							
+							// verifico le autorizzazioni
+							if(PAZIENTI.tipoGruppo=='M')pass = SET.verFreeMeridiani(PT)
+							else pass = SET.verFreePunti(PT);
+							// --------------------------
+							
+							if(pass){
+								EL2.contenuto.push(PT);
+								presenti = true;
+							}
 						}
 					}
 					if(PAZIENTI.tipoGruppo=='A'){
@@ -1018,10 +1037,14 @@ var PAZIENTI_SETS = {
 							var punti = GEOMETRIE.gruppi[gr].punti;
 							for(k in punti){
 								var PT = punti[k];
-								if(EL2.contenuto.indexOf(PT)===-1){
-									EL2.contenuto.push(PT);
-									presenti = true;
+								// verifico le autorizzazioni
+								if(SET.verFreePunti(PT)){
+									if(EL2.contenuto.indexOf(PT)===-1){
+										EL2.contenuto.push(PT);
+										presenti = true;
+									}
 								}
+								// --------------------------
 							}
 						}
 					}
@@ -1075,7 +1098,7 @@ var PAZIENTI_SETS = {
 			}
 		}
 		setTimeout(function(){
-			if(CONN.getConn()){
+			if(CONN.getConn() && (DB.login.data.auths.indexOf(globals.set.cartella)==-1 || !LOGIN.logedin())){
 				// carico i preferiti della community
 				var JSNPOST={	"idLinguaRic": 0,
 								"parolaRic": "",
@@ -1137,28 +1160,47 @@ var PAZIENTI_SETS = {
 		EL.livello = 2;
 		EL.parent = PAZIENTI.elencoGruppoPunti;
 		for(i in DB.set.patologie){
-			EL2 = {};
-			EL2.titolo = DB.set.patologie[i].NomePatologia;
-			EL2.contenuto = [];
-			EL2.livello = 3;
-			EL2.parent = EL;
-			// scansiono il testo
-			var txtPat=DB.set.patologie[i].TestoPatologia;
-			if(PAZIENTI.tipoGruppo=='P')re = /\[\.[0-9]{1,2}\.[A-Z]{2}\.\]/ig;
-			if(PAZIENTI.tipoGruppo=='M')re = /\[\.[A-Z]{2}\.\]/ig;
-			if(PAZIENTI.tipoGruppo=='A')re = /\[\.[0-9]{3}\.\]/ig;
-			var result = txtPat.match(re);
-			for(k in result){
-				var pP = result[k].split(".");
-				PT = pP[1];
-				if(PAZIENTI.tipoGruppo=='P')PT += '.'+pP[2];
-				if(EL2.contenuto.indexOf(PT)==-1){
-					EL2.contenuto.push(PT);
+			// verifico le autorizzazioni
+			if(SET.verFreePatologia(i)){
+				EL2 = {};
+				EL2.titolo = DB.set.patologie[i].NomePatologia;
+				EL2.contenuto = [];
+				EL2.livello = 3;
+				EL2.parent = EL;
+				// scansiono il testo
+				var txtPat=DB.set.patologie[i].TestoPatologia;
+				if(PAZIENTI.tipoGruppo=='P')re = /\[\.[0-9]{1,2}\.[A-Z]{2}\.\]/ig;
+				if(PAZIENTI.tipoGruppo=='M')re = /\[\.[A-Z]{2}\.\]/ig;
+				if(PAZIENTI.tipoGruppo=='A'){
+					var list = SET.getListPointPat(i);
+					for(l in list){
+						if(SET.verFreePunti(list[l])){ // verifico le autorizzazioni
+							EL2.contenuto.push(list[l]);
+						}
+					}
+					re = /\[\.[0-9]{3}\.\]/ig;
+				}
+				var result = txtPat.match(re);
+				for(k in result){
+					var pP = result[k].split(".");
+					PT = pP[1];
+					if(PAZIENTI.tipoGruppo=='P')PT += '.'+pP[2];
+					if(EL2.contenuto.indexOf(PT)==-1){
+						var pass = true;
+						
+						// verifico le autorizzazioni
+						if(PAZIENTI.tipoGruppo=='M')pass = SET.verFreeMeridiani(PT)
+						else pass = SET.verFreePunti(PT);
+						// --------------------------
+							
+						if(pass)EL2.contenuto.push(PT);
+					}
+				}
+				if(EL2.contenuto.length){
+					EL.contenuto[i] = EL2; 
 				}
 			}
-			if(EL2.contenuto.length){
-				EL.contenuto[i] = EL2; 
-			}
+			// ---------------------------
 		}
 		PAZIENTI.elencoGruppoPunti.contenuto.push(EL);
 		PAZIENTI.elencoGruppoAtt = PAZIENTI.elencoGruppoPunti;
@@ -1276,24 +1318,26 @@ var PAZIENTI_SETS = {
 	},
 	ptGruppo: function( PT, n ){ // scrive la riga del punto da selezionare nel menu dei gruppi di punti
 		var pP = PT.split(".");
-		var HTML = 	
-				'<label class="gr_3"' +
-				'		for="'+n+'">' +
-				'	<input type="checkbox"' +
-				'		   id="'+n+'"' +
-				'		   value="'+PT+'">';
-		if(PAZIENTI.tipoGruppo=='P'){
-			var siglaPT = __(DB.set.meridiani[pP[1]].tsubo[pP[0]*1-1].siglaTsubo,pP[0]+"."+SET.convSigla(pP[1]));
-			HTML +=	'<b>'+siglaPT+'.</b>' +
-					'<i>'+DB.set.meridiani[pP[1]].tsubo[pP[0]*1-1].NomeTsubo.replace(PT+".","")+'</i>';
+		var HTML = '';
+		if(pP[0]){
+			HTML += '<label class="gr_3"' +
+					'		for="'+n+'">' +
+					'	<input type="checkbox"' +
+					'		   id="'+n+'"' +
+					'		   value="'+PT+'">';
+			if(PAZIENTI.tipoGruppo=='P'){
+				var siglaPT = __(DB.set.meridiani[pP[1]].tsubo[pP[0]*1-1].siglaTsubo,pP[0]+"."+SET.convSigla(pP[1]));
+				HTML +=	'<b>'+siglaPT+'.</b>' +
+						'<i>'+DB.set.meridiani[pP[1]].tsubo[pP[0]*1-1].NomeTsubo.replace(PT+".","")+'</i>';
+			}
+			if(PAZIENTI.tipoGruppo=='M'){
+				HTML +=	DB.set.meridiani[PT].NomeMeridiano;
+			}
+			if(PAZIENTI.tipoGruppo=='A'){
+				HTML +=	DB.set.punti[pP[0]].NomeTsubo;
+			}
+			HTML +=	'</label>';
 		}
-		if(PAZIENTI.tipoGruppo=='M'){
-			HTML +=	DB.set.meridiani[PT].NomeMeridiano;
-		}
-		if(PAZIENTI.tipoGruppo=='A'){
-			HTML +=	DB.set.punti[PT].NomeTsubo;
-		}
-		HTML +=	'</label>';
 		return HTML;
 	},
 	ptGruppoSelAll: function( el ){ // seleziona tutti i punti visualizzati del menu dei gruppi di punti

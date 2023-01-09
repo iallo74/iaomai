@@ -1963,7 +1963,7 @@ body:not(.touch) #puntiAuriculoMap .dettPunto:hover{
 	background-size: contain;
 }
 .gr_imp{
-	height: 39px;
+	min-height: 39px;
     font-weight: bold;
     cursor: pointer;
     background-color: #d9d9d9;

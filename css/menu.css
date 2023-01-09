@@ -74,7 +74,8 @@ body:not(.smart) #icone.iconeEspanse{
 }
 #btns_set{
 	text-align:left;
-	display:inline-block;
+	display:none;
+	/*display:inline-block;*/
 	width:auto !important;
 	height:auto !important;
 	max-height: 40px;

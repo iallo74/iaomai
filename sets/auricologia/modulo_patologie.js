@@ -36,8 +36,7 @@ var MODULO_PATOLOGIE = { // extend SET
 					
 					if(DB.set.patologie[p].apparato == a){
 						// verifico le autorizzazioni
-						var addLock =	SET.PATOLOGIE_free.indexOf(p*1)==-1 && 
-										(DB.login.data.auths.indexOf(globals.set.cartella)==-1 || !LOGIN.logedin()) ? ' lockedItem' : '';
+						var addLock =	(!SET.verFreePatologia(p*1)) ? ' lockedItem' : '';
 						// --------------------------
 						
 						var addClass = '';
@@ -59,8 +58,7 @@ var MODULO_PATOLOGIE = { // extend SET
 			for(p in DB.set.patologie){
 				
 				// verifico le autorizzazioni
-				var addLock =	SET.PATOLOGIE_free.indexOf(p*1)==-1 && 
-								(DB.login.data.auths.indexOf(globals.set.cartella)==-1 || !LOGIN.logedin()) ? ' lockedItem' : '';
+				var addLock =	(!SET.verFreePatologia(p*1)) ? ' lockedItem' : '';
 				// --------------------------
 							
 				contPatologie +=	'<div id="btn_patologia_'+p+'"' +
@@ -105,9 +103,24 @@ var MODULO_PATOLOGIE = { // extend SET
 		else ST += '<span class="sepPoints"></span>';
 		return ST;
 	},
+	getListPointPat: function( n ){
+		var EL = [];
+		function getPT( obj ){
+			for(var o in obj){
+				if(typeof(obj[o])=='object'){
+					getPT(obj[o]);
+				}else if(obj[0]){
+					var re = /[0-9]{3}/ig;
+					if(obj[o].match(re) && EL.indexOf(obj[o])==-1)EL.push(obj[o]);
+				}
+			}
+		}
+		getPT(DB.set.schede[DB.set.patologie[n].scheda]);
+		return EL;
+	},
 	apriPatologia: function( n, btn ){ // apre la scheda della patologia
 		// verifico le autorizzazioni
-		if(SET.PATOLOGIE_free.indexOf(n*1)==-1 && (DB.login.data.auths.indexOf(globals.set.cartella)==-1 || !LOGIN.logedin())){
+		if(!SET.verFreePatologia(n*1)){
 			ALERT(TXT("MsgContSoloPay"));
 			return;
 		}
@@ -115,6 +128,7 @@ var MODULO_PATOLOGIE = { // extend SET
 		
 		SET.patOp = n;
 		SET.schEvi = null;
+		SET.hideGroupLines();
 		
 		var objTer = DB.set.schede[DB.set.patologie[n].scheda];
 		var ST = '';
@@ -220,7 +234,7 @@ var MODULO_PATOLOGIE = { // extend SET
 			html: "<br>"+SET.convPuntiScheda(DB.set.patologie[n].TestoPatologia)
 					}) +
 			H.sezione({
-			label: "SCHEDA "+DB.set.patologie[n].scheda+"<br>"+TXT("SchedaTerapeutica"),
+			label: TXT("SchedaTerapeutica")+"<br>"+"SCHEDA "+DB.set.patologie[n].scheda,
 			nome: 'protocollo',
 			aperta: op_protocollo,
 			html: SET.convPuntiScheda(ST)
@@ -268,6 +282,7 @@ var MODULO_PATOLOGIE = { // extend SET
 	},
 	eviPointsPat: function( el ){
 		if(!el.innerHTML)return;
+		SET.hideGroupLines();
 		SET.evidenziaTsubo(el.innerHTML);
 		if(SET.schEvi)SET.schEvi.classList.remove("eviPoints");
 		el.classList.add("eviPoints");
@@ -297,5 +312,8 @@ var MODULO_PATOLOGIE = { // extend SET
 		evidenziaParola();
 		RICERCHE.nascondiGlobal();
 		SCHEDA.individuaElemento( "btn_patologia_"+p, "listaPatologie" );
+	},
+	verFreePatologia: function( p ){
+		return !(SET.PATOLOGIE_free.indexOf(parseInt(p))==-1 && (DB.login.data.auths.indexOf(globals.set.cartella)==-1 || !LOGIN.logedin()));
 	}
 }

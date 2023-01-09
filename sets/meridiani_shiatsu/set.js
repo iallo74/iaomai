@@ -729,7 +729,7 @@ SET = {
 	accendiMeridiano: function( siglaMeridiano, g ){
 		// verifico le autorizzazioni
 		if(!globals.modello.cartella)return;
-		if(SET.MERIDIANI_free.indexOf(siglaMeridiano)==-1 && (DB.login.data.auths.indexOf(globals.set.cartella)==-1 || !LOGIN.logedin())){
+		if(!SET.verFreeMeridiani(siglaMeridiano)){
 			ALERT(TXT("MsgFunzioneSoloPay"));
 			controlsM._MM = true;
 			return;
@@ -868,7 +868,7 @@ SET = {
 		var nTsubo = pP[0];
 		if(nTsubo.length == 1)nTsubo='0'+nTsubo;
 		// verifico le autorizzazioni
-		if(SET.MERIDIANI_free.indexOf(siglaMeridiano)==-1 && (DB.login.data.auths.indexOf(globals.set.cartella)==-1 || !LOGIN.logedin())){
+		if(!SET.verFreeMeridiani(siglaMeridiano)){
 			ALERT(TXT("MsgContSoloPay"));
 			return;
 		}
