@@ -292,6 +292,7 @@ var modelli = {
 			'mappa_aree.js',
 			'pelle_compr.js',
 			'ossa_compr.js',
+			'visceri_compr.js',
 			'guide_compr.js'
 		],
 		dims: [
@@ -299,12 +300,14 @@ var modelli = {
 			11,
 			2620,
 			937,
+			227,
 			12
 		],
 		livelli: [
 			'pelle',
 			'ossa',
-			'muscoli' // usati come aree
+			'muscoli', // usati come aree
+			'visceri' // usati come nervi
 		],
 		centro: {
 			x: -0.005833541848817953,

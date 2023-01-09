@@ -3456,6 +3456,21 @@ DB.TXT = {
 			eng: "SPINAL CORD",
 			esp: ""
 		},
+		Organo_NERVO_TRIGEMINO: {
+			ita: "NERVO TRIGEMINO",
+			eng: "TRIGEMINAL NERVE",
+			esp: ""
+		},
+		Organo_NERVO_VAGO: {
+			ita: "NERVO VAGO",
+			eng: "VAGUS NERVE",
+			esp: ""
+		},
+		Organo_NERVO_OCCIPITALE: {
+			ita: "NERVO PICCOLO OCCIPITALE",
+			eng: "MINOR OCCIPITALIS NERVE",
+			esp: ""
+		},
 		
 		// OSSA
 		Osso_BACINO: {

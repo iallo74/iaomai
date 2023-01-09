@@ -34,10 +34,15 @@ var MODELLO = {
 		
 		if(globals.modello.livelli.indexOf("visceri") > -1){
 			obj_visceri = JSON.parse(LZString.decompressFromBase64(obj_visceri));
+			
 			var loader = new THREE.ObjectLoader(); // VISCERI
 			this.meshVisceri = loader.parse( obj_visceri );
 			for(var n=0;n<this.meshVisceri.children.length;n++){
-				this.meshVisceri.children[n].material = MODELLO.MAT.materialVisceri;
+				var mat = MODELLO.MAT.materialVisceri;
+				if(eval("MODELLO.MAT.material"+this.meshVisceri.children[n].name)){
+					mat = eval("MODELLO.MAT.material"+this.meshVisceri.children[n].name);
+				}
+				this.meshVisceri.children[n].material = mat;
 			}
 			this.meshVisceri.name = 'Visceri';
 			ANATOMIA.add( this.meshVisceri );
@@ -402,7 +407,11 @@ var MODELLO = {
 							for(g in ANATOMIA.children[i].children){
 								var intersects = raycaster.intersectObject( ANATOMIA.children[i].children[g] );
 								if ( intersects.length > 0 ){
-									for(l in intersects)ints.push(intersects[l]);
+									for(l in intersects){
+										if(intersects[l].object.name.indexOf("NERVO")==-1){
+											ints.push(intersects[l]);
+										}
+									}
 								}
 							}
 						}
@@ -988,7 +997,11 @@ var MODELLO = {
 					if(modo == 'over'){
 						MODELLO.meshVisceri.children[n].material = MODELLO.MAT.materialVisceriOver;
 					}else if(modo == 'out'){
-						MODELLO.meshVisceri.children[n].material = MODELLO.MAT.materialVisceri;
+						var mat = MODELLO.MAT.materialVisceri;
+						if(eval("MODELLO.MAT.material"+MODELLO.meshVisceri.children[n].name)){
+							mat = eval("MODELLO.MAT.material"+MODELLO.meshVisceri.children[n].name);
+						}
+						MODELLO.meshVisceri.children[n].material = mat;
 					}else{
 						MODELLO.meshVisceri.children[n].material = MODELLO.MAT.materialOrganoSel;
 						var t = 'Pelle';
@@ -1006,10 +1019,15 @@ var MODELLO = {
 						}*/
 					}
 				}else if(!modo){
-					MODELLO.meshVisceri.children[n].material = MODELLO.MAT.materialVisceri;
+					var mat = MODELLO.MAT.materialVisceri;
+					if(eval("MODELLO.MAT.material"+MODELLO.meshVisceri.children[n].name)){
+						mat = eval("MODELLO.MAT.material"+MODELLO.meshVisceri.children[n].name);
+					}
+					MODELLO.meshVisceri.children[n].material = mat;
 					MENU.removeSelected(el);
 					MODELLO.swGuide("Organo_"+organo,false);
 					if(el.id == MODELLO.schSel)SCHEDA.scaricaScheda();
+					overInterfaccia = false;
 				}
 			}
 		}

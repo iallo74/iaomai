@@ -71,6 +71,30 @@ MODELLO.MAT = {
 		roughness:1,
 		side: 3
 	} ),
+	
+	
+	
+	materialNERVO_TRIGEMINO: new THREE.LineBasicMaterial( {
+		color: new THREE.Color( 1, 0.6, 0 ),
+		depthFunc: 3,
+		transparent: true,
+		opacity:0.3
+	} ),
+	materialNERVO_VAGO: new THREE.LineBasicMaterial( {
+		color: new THREE.Color( 0, 0.45, 0.8 ),
+		depthFunc: 3,
+		transparent: true,
+		opacity:0.3
+	} ),
+	materialNERVO_OCCIPITALE: new THREE.LineBasicMaterial( {
+		color: new THREE.Color( 0.9, 0.2, 0 ),
+		depthFunc: 3,
+		transparent: true,
+		opacity:0.3
+	} ),
+	
+	
+	
 	materialVisceriEvi: new THREE.MeshStandardMaterial( { // VISCERI EVI
 		name: "materiale visceri evi",
 		color: new THREE.Color( 0.52, 0.66, 0.99 ),
