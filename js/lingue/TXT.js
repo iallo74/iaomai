@@ -3467,8 +3467,8 @@ DB.TXT = {
 			esp: ""
 		},
 		Organo_NERVO_TRIGEMINO: {
-			ita: "NERVO TRIGEMINO",
-			eng: "TRIGEMINAL NERVE",
+			ita: "NERVO AURICOLOTEMPORALE",
+			eng: "AURICULOTEMPORAL NERVE",
 			esp: ""
 		},
 		Organo_NERVO_VAGO: {
@@ -3476,9 +3476,14 @@ DB.TXT = {
 			eng: "VAGUS NERVE",
 			esp: ""
 		},
-		Organo_NERVO_OCCIPITALE: {
-			ita: "NERVO PICCOLO OCCIPITALE",
+		Organo_NERVO_OCCIPITALE_MINORE: {
+			ita: "NERVO OCCIPITALE MINORE",
 			eng: "MINOR OCCIPITALIS NERVE",
+			esp: ""
+		},
+		Organo_NERVO_GRANDE_AURICOLARE: {
+			ita: "NERVO GRANDE AURICOLARE",
+			eng: "GREAT AURICOLAR NERVE",
 			esp: ""
 		},
 		

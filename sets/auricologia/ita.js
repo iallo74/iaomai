@@ -307,7 +307,7 @@ DB.set= {
         },
         "188": {
             "NomeTsubo": "Corteccia prefrontale",
-            "AzioniTsubo": "<p><b>Altri nomi</b><br>- Cervello esecutivo</p><p><b>Azione</b><br>Facilita la concentrazione e le decisioni, ricuce l’ossessione e la preoccupazione.</p><p><b>Ubicazione</b><br>LO1-LO2, ampia area anteriore del lobulo che si estende dal Master Cerebral Pont sino al margine inferiore del Lobulo</p>",
+            "AzioniTsubo": "<p><b>Altri nomi</b><br>- Cervello esecutivo</p><p><b>Azione</b><br>Facilita la concentrazione e le decisioni, riduce l’ossessione e la preoccupazione.</p><p><b>Ubicazione</b><br>LO1-LO2, ampia area anteriore del lobulo che si estende dal Master Cerebral Pont sino al margine inferiore del Lobulo</p>",
             "ChiaviTsubo": ""
         },
         "191": {

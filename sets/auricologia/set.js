@@ -559,7 +559,11 @@ SET = {
 								SETS.children[i].children[ii].name.substr(0,2)!='LM'){
 								var intersects = raycaster.intersectObjects( SETS.children[i].children[ii].children );
 								if ( intersects.length > 0 ) { // roll-over
-									for(l in intersects)ints.push(intersects[l]);
+									for(l in intersects){
+										if(intersects[l].object.name.indexOf("NERVO")==-1){
+											ints.push(intersects[l]);
+										}
+									}
 									objOver=intersects[ 0 ].object;
 								}
 							}
@@ -580,7 +584,11 @@ SET = {
 							for(g in ANATOMIA.children[i].children){
 								var intersects = raycaster.intersectObject( ANATOMIA.children[i].children[g] );
 								if ( intersects.length > 0 ){
-									for(l in intersects)ints.push(intersects[l]);
+									for(l in intersects){
+										if(intersects[l].object.name.indexOf("NERVO")==-1){
+											ints.push(intersects[l]);
+										}
+									}
 								}
 							}
 						}
@@ -971,13 +979,13 @@ SET = {
 			var siglaTsubo = pT[1];
 			
 			// verifico le autorizzazioni
-			if(!SET.verFreePunti(siglaTsubo)){
+			if(SET.verFreePunti(siglaTsubo)){
 				SET.tsuboEvidenziati.push(siglaTsubo);
 			}
 			// --------------------------
 		}
 		SET.applicaEvidenziaTsubo();
-		
+		/*
 		//-------------------- MOSTRA LINEE
 		//SET.hideGroupLines();
 		var re = /data-tri="[^"]+"/ig;
@@ -989,7 +997,7 @@ SET = {
 				scene.getObjectByName(gruppo).visible = true;
 			}
 		}
-		//----------------
+		//----------------*/
 		SET.settaOverTsubo();
 	},
 	evidenziaTsuboMod: function( elenco ){

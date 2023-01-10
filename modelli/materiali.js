@@ -86,8 +86,14 @@ MODELLO.MAT = {
 		transparent: true,
 		opacity:0.3
 	} ),
-	materialNERVO_OCCIPITALE: new THREE.LineBasicMaterial( {
+	materialNERVO_OCCIPITALE_MINORE: new THREE.LineBasicMaterial( {
 		color: new THREE.Color( 0.9, 0.2, 0 ),
+		depthFunc: 3,
+		transparent: true,
+		opacity:0.3
+	} ),
+	materialNERVO_GRANDE_AURICOLARE: new THREE.LineBasicMaterial( {
+		color: new THREE.Color( 0, 0.7, 0.3 ),
 		depthFunc: 3,
 		transparent: true,
 		opacity:0.3

@@ -359,7 +359,11 @@ SET = {
 						SETS.children[i].name.substr(0,2)!='GD'){
 						var intersects = raycaster.intersectObjects( SETS.children[i].children );
 						if ( intersects.length > 0 ) { // roll-over
-							for(l in intersects)ints.push(intersects[l]);
+							for(l in intersects){
+								if(intersects[l].object.name.indexOf("NERVO")==-1){
+									ints.push(intersects[l]);
+								}
+							}
 							objOver=intersects[ 0 ].object;
 						}
 					}
@@ -378,7 +382,11 @@ SET = {
 							for(g in ANATOMIA.children[i].children){
 								var intersects = raycaster.intersectObject( ANATOMIA.children[i].children[g] );
 								if ( intersects.length > 0 ){
-									for(l in intersects)ints.push(intersects[l]);
+									for(l in intersects){
+										if(intersects[l].object.name.indexOf("NERVO")==-1){
+											ints.push(intersects[l]);
+										}
+									}
 								}
 							}
 						}
