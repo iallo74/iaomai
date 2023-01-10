@@ -198,7 +198,7 @@ var MODELLO = {
 					}
 					htmlMuscoli += '</div>';
 				}
-				if(TXT("Zona_ARTO_SUPERIORE").length){
+				if(arrayMuscoli_ARTO_SUPERIORE.length){
 					htmlMuscoli += '<i>'+stripslashes(TXT("Zona_ARTO_SUPERIORE"))+'</i><div onMouseLeave="MODELLO.isolaMuscolo(this,\'out\');">';
 					for(o in arrayMuscoli_ARTO_SUPERIORE){
 						htmlMuscoli += '<p id="Muscolo_'+arrayMuscoli_ARTO_SUPERIORE[o].muscolo+'" onClick="MODELLO.isolaMuscolo(this)" onMouseOver="MODELLO.isolaMuscolo(this,\'over\');">'+stripslashes(arrayMuscoli_ARTO_SUPERIORE[o].nome)+'</p>';

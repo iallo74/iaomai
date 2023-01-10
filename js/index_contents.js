@@ -315,6 +315,7 @@ var modelli = {
 			z: 7.394938985463911
 		},
 		areaName: 'Area',
+		viscName: 'Nerve',
 		rifletti: true,
 		txtLoading: TXT("CaricamentoModelloOrecchio"),
 		lastVer: 1

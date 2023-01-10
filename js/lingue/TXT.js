@@ -3142,14 +3142,24 @@ DB.TXT = {
 			eng: "Filter list",
 			esp: ""
 		},
-		CercaOssa: {
+		/*CercaOssa: {
 			ita: "Filtra l'elenco OSSA",
 			eng: "Filter BONES list",
 			esp: ""
+		},*/
+		CercaOssa: {
+			ita: "Filtra l'elenco",
+			eng: "Filter list",
+			esp: ""
 		},
-		CercaVisceri: {
+		/*CercaVisceri: {
 			ita: "Filtra l'elenco ORGANI e VISCERI",
 			eng: "Filter ORGANS and BOWELS list",
+			esp: ""
+		},*/
+		CercaVisceri: {
+			ita: "Filtra l'elenco",
+			eng: "Filter list",
 			esp: ""
 		},
 		LivelliPrecar: {

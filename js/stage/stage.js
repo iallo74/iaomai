@@ -234,6 +234,7 @@ function caricaModello( cartella ){
 							document.getElementById("scripts") );
 	document.body.classList.add(globals.modello.cartella);
 	if(__(globals.modello.areaName,''))document.body.classList.add(__(globals.modello.areaName,''));
+	if(__(globals.modello.viscName,''))document.body.classList.add(__(globals.modello.viscName,''));
 	var els = document.getElementById("p1").getElementsByTagName("div");
 	for(var e=0;e<els.length;e++){
 		els[e].classList.remove("btnSel");

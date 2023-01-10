@@ -367,8 +367,11 @@ body:not(.Area) #p_liv_muscoli{
 #p_liv_ossa{
 	background-image:url(../img/p_ossa.png);
 }
-#p_liv_visceri{
+body:not(.Nerve) #p_liv_visceri{
 	background-image:url(../img/p_visceri.png);
+}
+.Nerve #p_liv_visceri{
+	background-image:url(../img/p_nerve.png);
 }
 #p_liv_pelle.disattLiv,
 #p_liv_muscoli.disattLiv{
@@ -740,8 +743,11 @@ body:not(.smart) #labelModello{
 #i_ossa{
 	background-image:url(../img/p_ossaB.png);
 }
-#i_visceri{
+body:not(.Nerve) #i_visceri{
 	background-image:url(../img/p_visceriB.png);
+}
+.Nerve #i_visceri{
+	background-image:url(../img/p_nerve2B.png);
 }
 #i_muscoli{
 	cursor:pointer;
@@ -1071,8 +1077,11 @@ body:not(.Area) .selM{
 .selO{
 	background-image:url(../img/chMenu.png), url(../img/p_ossa.png) !important;
 }
-.selV{
+body:not(.Nerve) .selV{
 	background-image:url(../img/chMenu.png), url(../img/p_visceri.png) !important;
+}
+.Nerve .selV{
+	background-image:url(../img/chMenu.png), url(../img/p_nerve.png) !important;
 }
 #chiudiTuttiSelected{
 	font-size: var(--font-12-1);
