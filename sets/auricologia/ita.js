@@ -461,13 +461,13 @@ DB.set= {
             "ChiaviTsubo": ""
         },
         "255": {
-            "NomeTsubo": "Muscoli e tendini del ginocchio EUR",
-            "AzioniTsubo": "<p><b>Altri nomi</b><br>- Legamenti del ginocchio EUR</p><p><b>Azione</b><br>Questo punto viene impiegato sia dalla Scuola Francese che Cinese per le sue proprietà nel trattare i disturbi muscolo-tendinei del ginocchio.</p><p><b>Ubicazione</b><br>PP9, nella parte posteriore dell'antelice, nel suo terzo superiore</p>",
+            "NomeTsubo": "Muscoli e tendini del ginocchio CIN",
+            "AzioniTsubo": "<p><b>Altri nomi</b><br>- Legamenti del ginocchio EUR</p><p><b>Azione</b><br>Patologie muscolo-tendinee del ginocchio.</p><p><b>Ubicazione</b><br>PP9, nella parte posteriore dell'antelice, nel suo terzo superiore</p>",
             "ChiaviTsubo": ""
         },
         "256": {
-            "NomeTsubo": "Muscoli e tendini del ginocchio CIN",
-            "AzioniTsubo": "<p><b>Altri nomi</b><br>- Legamenti del ginocchio CIN</p><p><b>Azione</b><br>Questo punto viene impiegato sia dalla Scuola Francese che Cinese per le sue proprietà nel trattare i disturbi muscolo-tendinei del ginocchio.</p><p><b>Ubicazione</b><br>PT2, al centro dell'eminenza triangolare</p>",
+            "NomeTsubo": "Muscoli e tendini del ginocchio EUR",
+            "AzioniTsubo": "<p><b>Altri nomi</b><br>- Legamenti del ginocchio CIN</p><p><b>Azione</b><br>Patologie muscolo-tendinee del ginocchio.</p><p><b>Ubicazione</b><br>PT2, al centro dell'eminenza triangolare</p>",
             "ChiaviTsubo": ""
         },
         "257": {
@@ -506,12 +506,12 @@ DB.set= {
             "ChiaviTsubo": ""
         },
         "264": {
-            "NomeTsubo": "Muscoli e tendini dell'anca EUR",
+            "NomeTsubo": "Muscoli e tendini dell'anca CIN",
             "AzioniTsubo": "<p><b>Altri nomi</b><br>- Muscoli del cingolo pelvico</p><p><b>Azione</b><br>Questo punto viene impiegato sia dalla Scuola Francese che Cinese per le sue proprietà nel trattare i disturbi muscolo tendinei e del cingolo pelvico.</p><p><b>Ubicazione</b><br>PT1, vicino all'apice dell'eminenza triangolare</p>",
             "ChiaviTsubo": ""
         },
         "265": {
-            "NomeTsubo": "Muscoli e tendini dell'anca CIN",
+            "NomeTsubo": "Muscoli e tendini dell'anca EUR",
             "AzioniTsubo": "<p><b>Altri nomi</b><br>- Muscoli del cingolo pelvico</p><p><b>Azione</b><br>Questo punto viene impiegato sia dalla Scuola Francese che Cinese per le sue proprietà nel trattare i disturbi muscolo tendinei e del cingolo pelvico.</p><p><b>Ubicazione</b><br>PP7, sulla parte posteriore dell'elice, nel suo terzo superiore.</p>",
             "ChiaviTsubo": ""
         },
