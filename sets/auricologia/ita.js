@@ -506,13 +506,13 @@ DB.set= {
             "ChiaviTsubo": ""
         },
         "264": {
-            "NomeTsubo": "Muscoli e tendini dell'anca CIN",
+            "NomeTsubo": "Muscoli e tendini dell'anca EUR",
             "AzioniTsubo": "<p><b>Altri nomi</b><br>- Muscoli del cingolo pelvico</p><p><b>Azione</b><br>Questo punto viene impiegato sia dalla Scuola Francese che Cinese per le sue proprietà nel trattare i disturbi muscolo tendinei e del cingolo pelvico.</p><p><b>Ubicazione</b><br>PT1, vicino all'apice dell'eminenza triangolare</p>",
             "ChiaviTsubo": ""
         },
         "265": {
-            "NomeTsubo": "Muscoli e tendini dell'anca EUR",
-            "AzioniTsubo": "<p><b>Altri nomi</b><br>- Muscoli del cingolo pelvico</p><p><b>Azione</b><br>Questo punto viene impiegato sia dalla Scuola Francese che Cinese per le sue proprietà nel trattare i disturbi muscolo tendinei e del cingolo pelvico.</p><p><b>Ubicazione</b><br>PP7, sulla parte posteriore dell'elice, nel suo terzo superiore.</p>",
+            "NomeTsubo": "Muscoli e tendini dell'anca CIN",
+            "AzioniTsubo": "<p><b>Altri nomi</b><br>- Muscoli del cingolo pelvico</p><p><b>Azione</b><br>Questo punto viene impiegato sia dalla Scuola Francese che Cinese per le sue proprietà nel trattare i disturbi muscolo tendinei e del cingolo pelvico.</p><p><b>Ubicazione</b><br>PG8, sulla parte posteriore dell'elice, nel suo terzo superiore.</p>",
             "ChiaviTsubo": ""
         },
         "266": {
@@ -780,7 +780,7 @@ DB.set= {
         },
         "033": {
             "NomeTsubo": "Ginocchio EUR",
-            "AzioniTsubo": "<p><b>Altri nomi</b><br>- Articolazione del ginocchio<br>- Rotula</p><p><b>Azione</b><br>Come indicato dal nome, questo punto è molto efficace per ridurre tutti i disturbi correlati al ginocchio in particolare ai disturbi articolari dello stesso.</p><p><b>Ubicazione</b><br>TF3-TF4, nel centro della fossa triangolare.</p>",
+            "AzioniTsubo": "<p><b>Altri nomi</b><br>- Articolazione del ginocchio<br>- Rotula</p><p><b>Azione</b><br>Come indicato dal nome, questo punto è molto efficace per ridurre tutti i disturbi correlati al ginocchio in particolare ai disturbi articolari dello stesso.</p><p><b>Ubicazione</b><br>TF3-TF4-PT2, nel centro della fossa triangolare.</p>",
             "ChiaviTsubo": ""
         },
         "034": {
@@ -880,7 +880,7 @@ DB.set= {
         },
         "060": {
             "NomeTsubo": "Anca EUR",
-            "AzioniTsubo": "<p><b>Altri nomi</b><br><span style='color: rgb(0, 0, 0);'>- Articolazione coxofemorale</span><br></p><p><b>Azione</b><br>Questo Punto è adottato sia dalla Scuola Cinese sia dalla Scuola Francese ma in diverse localizzazioni. In comune hanno l'applicazione per il trattamento dei disturbi legati all'anca e del cingolo pelvico.</p><p><b>Ubicazione</b><br>TF1-PG5, all'apice della fossa triangolare</p>",
+            "AzioniTsubo": "<p><b>Altri nomi</b><br><span style='color: rgb(0, 0, 0);'>- Articolazione coxofemorale</span><br></p><p><b>Azione</b><br>Questo Punto è adottato sia dalla Scuola Cinese sia dalla Scuola Francese ma in diverse localizzazioni. In comune hanno l'applicazione per il trattamento dei disturbi legati all'anca e del cingolo pelvico.</p><p><b>Ubicazione</b><br>TF1-PT1, all'apice della fossa triangolare</p>",
             "ChiaviTsubo": ""
         },
         "061": {
@@ -935,7 +935,7 @@ DB.set= {
         },
         "075": {
             "NomeTsubo": "Anca CIN",
-            "AzioniTsubo": "<b>Altri nomi</b><br>- Punto anca<br>- Articolazione coxofemorale<br><p><b>Azione</b><br>Questo Punto è adottato sia dalla Scuola Cinese sia dalla Scuola Francese ma in diverse localizzazioni. In comune hanno l'applicazione per il trattamento dei disturbi legati all'anca e del cingolo pelvico.</p><p><b>Ubicazione</b><br>AH13-PT1, nel terzo inferiore della branca superiore dell'antelice, verso la fossa triangolare<span></span></p>",
+            "AzioniTsubo": "<b>Altri nomi</b><br>- Punto anca<br>- Articolazione coxofemorale<br><p><b>Azione</b><br>Questo Punto è adottato sia dalla Scuola Cinese sia dalla Scuola Francese ma in diverse localizzazioni. In comune hanno l'applicazione per il trattamento dei disturbi legati all'anca e del cingolo pelvico.</p><p><b>Ubicazione</b><br>AH13-PG8, nel terzo inferiore della branca superiore dell'antelice, verso la fossa triangolare<span></span></p>",
             "ChiaviTsubo": ""
         },
         "078": {
