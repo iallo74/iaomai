@@ -198,6 +198,7 @@ SET = {
 				var system = "";
 				if(mesh.name.indexOf("EUR")>-1)system = "EUR";
 				if(mesh.name.indexOf("CIN")>-1)system = "CIN";
+				if(mesh.name.indexOf("INT")>-1)system = "";
 				var lato = "";
 				if(mesh.name.indexOf("SX")>-1)lato = "SX";
 				if(mesh.name.indexOf("DX")>-1)lato = "DX";

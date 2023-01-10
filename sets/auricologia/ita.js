@@ -2905,7 +2905,7 @@ DB.set= {
 				"ns": {
 					"p": [
 						"039",
-						"262"
+						"199"
 					]
 				},
 			},
@@ -3210,7 +3210,10 @@ DB.set= {
 					"p": [
 						"004",
 						"030",
-						"039"
+						"039",
+						"266",
+						"283",
+						"213"
 					]
 				},
 				"np": {
@@ -3744,7 +3747,6 @@ DB.set= {
 				"ns": {
 					"p": [
 						"001",
-						"184",
 						"137",
 						"170"
 					]
@@ -3842,14 +3844,15 @@ DB.set= {
 					"d": "Sul lato non dominante",
 					"p": [
 						{
-							t: "Triade di relax bilaterale",
+							t: "Triade modificata bilaterale",
 							p: [
 								"001",
-								"222",
+								"[]Punto sensibile *",
 								"254"
 							],
 							l: "TRE"
-						}
+						},
+						"* Ispezionare tutta l’area e individuare quella più sensibile"
 					]
 				},
 				{
@@ -4311,7 +4314,7 @@ DB.set= {
 							]
 						}
 					],
-					a: "Inventato da Antonello Lovato, si tratta di un semplice schema molto utile per controllare l'ansia sia di stato sia di tratto e migliora l'umore. Dopo qualche seduta su entrambi i lati è possibile mantenere gli effetti trattando un solo lato, per lasciare spazio ad altri aspetti terapeutici. In alternativa lo si può ripetere a sedute alterne in maniera bilaterale."
+					a: "Proposto da Antonello Lovato, si tratta di un semplice schema molto utile per controllare l'ansia sia di stato sia di tratto e migliora l'umore. Dopo qualche seduta su entrambi i lati è possibile mantenere gli effetti trattando un solo lato, per lasciare spazio ad altri aspetti terapeutici. In alternativa lo si può ripetere a sedute alterne in maniera bilaterale."
 				}
 			]
 		},
@@ -4345,8 +4348,7 @@ DB.set= {
 					"p": [
 						"000",
 						"030",
-						"245",
-						"179"
+						"245"
 					]
 				}
 			},
@@ -9810,7 +9812,7 @@ DB.set= {
                 },
                 {
                     "TitoloTeoria": "Triade antinfiammatoria",
-                    "TestoTeoria": "Il trattamento con la T. antinfiammatoria ha lo scopo, come dice il nome, di ridurre un processo flogistico. Può essere molto utile usato bilateralmente come terapia iniziale nelle patologie infiammatorie, come ad esempio l'artrite reumatoide, oppure unilateralmente nelle sedute successive, coadiuvato ad uno schema controlaterale adeguato.",
+                    "TestoTeoria": "Il trattamento con la T. antinfiammatoria, proposta da A. Lovato, ha lo scopo di ridurre un processo flogistico. Può essere molto utile usato bilateralmente come terapia iniziale nelle patologie infiammatorie, come ad esempio l'artrite reumatoide, oppure unilateralmente nelle sedute successive, coadiuvato ad uno schema controlaterale adeguato.",
                     "gruppo": "TAN"
                 },
                 {
