@@ -10,7 +10,8 @@ var CATALOGO = {
 				var linkSet = 'caricaSet(\''+cartella+'\',this);MENU.visSets();';
 				if(cartella == globals.set.cartella)linkSet = 'SCHEDA.apriElenco(\'set\')';
 				if(sets[cartella].locked){
-					linkSet = 'MENU.visElencoSets(\''+cartella+'\');';
+					//linkSet = 'MENU.visElencoSets(\''+cartella+'\');';
+					linkSet = '';
 					addClass = ' class="lockedMap"';
 				}
 
@@ -135,69 +136,5 @@ var CATALOGO = {
 														'</div>';
 		if(!set)set = 'anatomy_full';
 		CATALOGO.selSet(document.getElementById("e_"+set));
-	},
-	selSet: function( el ){
-		if(CATALOGO.setSel){
-			var cartella = CATALOGO.setSel.id.substr(2,CATALOGO.setSel.id.length-2);
-			CATALOGO.setSel.style.backgroundImage = 'url(sets/'+cartella+'/img/logoNero.png)';
-			CATALOGO.setSel.classList.remove("setSel");
-			document.getElementById("p_"+cartella).style.display = 'none';
-		}
-		var cartella = el.id.substr(2,el.id.length-2);
-		el.style.backgroundImage = 'url(sets/'+cartella+'/img/logoBlu.png)';
-		el.classList.add("setSel");
-		document.getElementById("p_"+cartella).style.display = 'block';
-		CATALOGO.setSel = el;
-	},
-	infoSet: function( cartella ){
-		var ims = document.getElementById("imgsSets").getElementsByTagName("img");
-		for(i=0;i<ims.length;i++){
-			ims[i].classList.remove("imgSetSel");
-		}
-		document.getElementById("i_"+cartella).classList.add("imgSetSel");
-		CATALOGO.selSet(document.getElementById("e_info"));
-	},
-	inviaRichiesta: function(){
-		var pass = false;
-		var ims = document.getElementById("imgsSets").getElementsByTagName("img");
-		for(i=0;i<ims.length;i++){
-			if(ims[i].classList.contains("imgSetSel"))pass=true;
-		}
-		if(!pass){
-			ALERT(TXT("ErroreNessunSet"))
-			return;
-		}
-		if(verifica_form(document.getElementById("attivazioneForm"))){
-			var sets = " - ";
-			var ims = document.getElementById("imgsSets").getElementsByTagName("img");
-			for(i=0;i<ims.length;i++){
-				if(ims[i].classList.contains("imgSetSel"))sets += ims[i].id.replace("i_","")+" - ";
-			}
-			applicaLoading(document.getElementById("p_info"))
-			var JSNPOST={	"Oggetto": "Richiesta attivazione set ("+globals.siglaLingua+")",
-							"Messaggio": "Vorrei informazioni sui set: "+sets,
-							"Nominativo": document.attivazioneForm.Nominativo.value,
-							"Email": document.attivazioneForm.Email.value };
-
-			CONN.caricaUrl(	"feedback.php",
-							"b64=1&JSNPOST="+window.btoa(encodeURIComponent(JSON.stringify(JSNPOST))),
-							function(txt){
-								// conferma l'invio di un feedback
-								rimuoviLoading(document.getElementById("p_info"))
-								var err=false;
-								if(txt.substr(0,3)!='404'){
-									var ris=JSON.parse(txt);
-									if(ris.Conferma=='1'){
-										ALERT(TXT("FeedbackInviato"));
-										document.feedbackForm.Nominativo.value = "";
-										document.feedbackForm.Email.value = "";
-										document.feedbackForm.Oggetto.value = "";
-										document.feedbackForm.Messaggio.value = "";
-									}else err=true;
-								}else err=true;
-								if(err)ALERT(TXT("FeedbackErrore"));
-							} );
-		}
 	}
-
 }

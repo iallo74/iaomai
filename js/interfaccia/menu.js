@@ -84,7 +84,6 @@ var MENU = {
 	},
 	chiudiMenu: function(n){
 		if(n!="pulsanti_modello")document.getElementById("pulsanti_modello").classList.remove("visSch");
-		if(n!="elencoSets")document.getElementById("elencoSets").classList.remove("visSch");
 		if(n!="sets")document.getElementById("sets").classList.remove("visSch");
 		if(n!="elencoSelected")document.getElementById("elencoSelected").classList.remove("visSch");
 		if(n!="impostazioni")document.getElementById("impostazioni").classList.remove("visSch");
@@ -183,23 +182,6 @@ var MENU = {
 		}
 		get_memOpen3d();
 		MENU.nasTT();
-	},
-	visElencoSets: function( set ){
-		if(typeof(set) == 'undefined')var set = '';
-		MENU.chiudiMenu("elencoSets");
-		CATALOGO.scriviElencoSets( set );
-		SCHEDA.chiudiElenco();
-		document.getElementById("elencoSets").classList.toggle("visSch");
-		document.getElementById("elencoSets").style.marginTop = '-'+( document.getElementById("elencoSets").scrollHeight / 2 )+'px';
-		if(document.getElementById("elencoSets").className.indexOf("visSch") > -1){
-			visLoader('');
-			//document.getElementById("loader").addEventListener("mouseup",MENU.visElencoSets,false);
-		}else{
-			nasLoader();
-			//document.getElementById("loader").removeEventListener("mouseup",MENU.visElencoSets,false);
-		}
-		MENU.comprimiIcone(true);
-		//verAnimate();
 	},
 	visSets: function(){
 		var daScheda = (MENU.verOp() && !smartMenu);

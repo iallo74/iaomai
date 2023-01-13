@@ -963,8 +963,8 @@ DB.TXT = {
 		
 		// FEEDBACK	
 		Feedback: {
-			ita: "Feedback, consigli e segnalazioni",
-			eng: "Feedback and advices",
+			ita: "Assistenza",
+			eng: "Support",
 			esp: ""
 		},
 		InviaFeedback: {
