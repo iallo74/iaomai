@@ -840,7 +840,15 @@ var SCHEDA = {
 		//if(elenco == 'teoria')iconaAdd='<img src="img/ico_teoria2.png" id="elenchi_icona">';
 		//if(elenco == 'patologie')iconaAdd='<img src="img/ico_patologie2.png" id="elenchi_icona">';
 		//if(elenco == 'procedure')iconaAdd='<img src="img/ico_prescrizione.png" id="elenchi_icona">';
-
+		
+		document.getElementById("lista_base").classList.remove("noPwd");
+		if(elenco == 'pazienti' && LOGIN.logedin() && __(localStorage.patientPwd)){
+			// verifico se serve la password
+			if(!MENU.pwdOK){
+				document.getElementById("lista_base").classList.add("noPwd");
+			}
+		}
+		
 		if(typeof(el) == 'undefined')var el = document.getElementById('pulsante_'+elenco);
 		document.getElementById("elenchi_lista").classList.remove("triplo");
 		document.getElementById("scheda").classList.remove("triplo");

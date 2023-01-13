@@ -262,13 +262,20 @@
                         	<div id="lista_pazienti"></div>
                         	<div id="lista_fornitori"></div>
                         	<div id="lista_servizi"></div>
+                        	<div id="requestPwd">
+                            	<span>{{TXT_PatientPwdConfirm}}</span>
+                                <input type="password" id="patientPwdRequest">
+                                <div class="btn_invia" onclick="MENU.patientPwdConf();">Invia</div>
+                            </div>
                         </div>
                         <div id="lista_set"></div>
                     </div>
 					<div id="elenchi_pulsanti">
                         <div id="pulsanti_set"></div>
                     	<div id="pulsanti_base">
-                        	<span id="titolo_base"><span id="help_clienti" onClick="GUIDA.visFumetto('guida_archivi',true,true);">?</span>{{TXT_ElGestionale}}</span>
+                        	<span id="titolo_base">
+                            	<span class="elMenu" id="impostazioniArchivi" onClick="MENU.visImpset(true);" title="{{TXT_ImpostazioniArchivi}}"></span>
+                                <span id="help_clienti" onClick="GUIDA.visFumetto('guida_archivi',true,true);">?</span>{{TXT_ElGestionale}}</span>
                             <span id="descrizione_base">{{TXT_GuidaPazientiTxt}}</span>
                         	<div id="pulsante_pazienti" class="frdx" onClick="SCHEDA.selElenco('pazienti');">{{TXT_ElPazienti}}</div>
                         	<div id="pulsante_fornitori" class="frdx" onClick="SCHEDA.selElenco('fornitori');">{{TXT_ElFornitori}}</div>
@@ -342,13 +349,6 @@
                    <span>
                    		<b id="t_MOUSE" data-value="MOUSE" onClick="setPointerType('MOUSE');"></b>
                    		<b id="t_TOUCH" data-value="TOUCH" onClick="setPointerType('TOUCH');"></b>
-                   </span>
-               </p>
-               <p id="patientSel">
-                   <i>{{TXT_PatientType}}:</i>
-                   <span>
-                   		<b id="t_MEDICO" onClick="PAZIENTI.setPatientType('M');">{{TXT__UTILIZZO_P}}</b>
-                   		<b id="t_OLISTICO" onClick="PAZIENTI.setPatientType('O');">{{TXT__UTILIZZO_C}}</b>
                    </span>
                </p>
                 </div>
@@ -492,7 +492,7 @@
                 </div>
             </div>
             <div id="impset" class="popup"> <!-- IMPOSTAZIONI DEL SET -->
-            	<div id="labelLogin" class="popup_label">{{TXT_ImpostazioniSet}}<div class="popup_chiudi" onClick="MENU.chiudiMenu();"></div></div>
+            	<div id="labelImpset" class="popup_label"><div class="popup_chiudi" onClick="MENU.chiudiMenu();"></div></div>
             	<div id="contImpset" class="popup_cont">
     				<!-- da popolare -->
                 </div>

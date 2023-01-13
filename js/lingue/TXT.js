@@ -367,6 +367,31 @@ DB.TXT = {
 			eng: "Type of use",
 			esp: ""
 		},
+		PatientPwd: {
+			ita: "Richiedi password",
+			eng: "Require password",
+			esp: ""
+		},
+		PatientPwdTxt: {
+			ita: "Indica che si deve inserire la password ad ogni sessione per accedere all'archivio pazienti",
+			eng: "Indicates that you must enter the password at each session to access the patient archive",
+			esp: ""
+		},
+		PatientPwdAlert: {
+			ita: "Devi inserire la password per confermare le modifiche.",
+			eng: "You must enter your password to confirm the changes.",
+			esp: ""
+		},
+		PatientPwdError: {
+			ita: "La password è errata",
+			eng: "The password is incorrect",
+			esp: ""
+		},
+		PatientPwdConfirm: {
+			ita: "Devi inserire la password per poter accedere ai tuoi pazienti.",
+			eng: "You need to enter your password to access your patients",
+			esp: ""
+		},
 		
 		// CARICAMENTO, LOGIN e SINCRONIZZAZIONE
 		Caricamento: {
@@ -558,6 +583,11 @@ DB.TXT = {
 		ImpostazioniSet: {
 			ita: "Impostazioni del set",
 			eng: "Set settings",
+			esp: ""
+		},
+		ImpostazioniArchivi: {
+			ita: "Impostazioni degli archivi",
+			eng: "Archives settings",
 			esp: ""
 		},
 		ChiudiSet: {

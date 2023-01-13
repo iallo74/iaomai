@@ -1947,19 +1947,6 @@ var PAZIENTI = {
 		}
 	},
 	
-	setPatientType: function( type ){
-		if(type=='O'){
-			localStorage.noMedico = true;
-			document.getElementById("t_OLISTICO").classList.add("a_SEL");
-			document.getElementById("t_MEDICO").classList.remove("a_SEL");
-		}else{
-			localStorage.noMedico = '';
-			document.getElementById("t_OLISTICO").classList.remove("a_SEL");
-			document.getElementById("t_MEDICO").classList.add("a_SEL");
-		}
-		if(document.getElementById("patientSel").dataset.val!=localStorage.noMedico)ALERT(TXT("AlertNecessarioRiavvio"));
-	},
-	
 	// AGENDA GENERICA
 	car_agenda: function( data ){ // scheda dell'agenda
 		if(smartMenu){

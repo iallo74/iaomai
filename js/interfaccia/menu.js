@@ -6,6 +6,7 @@ var MENU = {
 	icoSelected: null,
 	tmIcone: null,
 	inizio: true,
+	pwdOK: false,
 	init: function(){
 		MENU.setOp('Pelle',1);
 		MENU.setOp('Muscoli',1);
@@ -412,24 +413,8 @@ var MENU = {
 			else els[1].classList.add("a_SEL");
 		}
 		
-		document.getElementById("patientSel").dataset.val = __(localStorage.noMedico);
-		var els = document.getElementById("patientSel").getElementsByTagName("b");
-		for(i = 0; i<els.length; i++){
-			els[i].classList.remove("a_SEL");
-		}
-		if(__(localStorage.noMedico)){
-			document.getElementById("t_OLISTICO").classList.add("a_SEL");
-		}else{
-			document.getElementById("t_MEDICO").classList.add("a_SEL");
-		}
-		
-		if(document.getElementById("colori").className.indexOf("visSch") > -1){
-			visLoader('');
-			//document.getElementById("loader").addEventListener("mouseup",MENU.visColori,false);
-		}else{
-			nasLoader();
-			//document.getElementById("loader").removeEventListener("mouseup",MENU.visColori,false);
-		}
+		if(document.getElementById("colori").className.indexOf("visSch") > -1)visLoader('');
+		else nasLoader();
 	},
 	visNotifiche: function(){
 		if(!LOGIN.logedin()){
@@ -597,12 +582,108 @@ var MENU = {
 		A.target = H.target;
 		if(mouseDetect && !touchable)document.registrazioneForm.Nominativo.focus();
 	},
-	visImpset: function(){
+	visImpset: function( archivi ){
+		if(typeof(archivi)=='undefined')var archivi = false;
 		MENU.chiudiMenu("impset");
 		visLoader("");
 		document.getElementById("impset").classList.toggle("visSch");
-		try{ SET.popolaImpSet(); }catch(err){}
+		if(!archivi){
+			try{ SET.popolaImpSet(); }catch(err){}
+		}else{
+			MENU.popolaImpSet();
+		}
 	},
+	salvaImpSet: function(){
+		var pass = true;
+		if(LOGIN.logedin()){
+			// se NON è una versione FREE
+			var pwd = document.getElementById("patientPwdField");
+			if(pwd.classList.contains("visSch")){ // se è presente il campo PWD
+				if(!pwd.value.trim()){ // se è vuota
+					ALERT(TXT("PatientPwdAlert"));
+					return;
+				}
+				if(MD5(pwd.value)!=DB.login.data.PasswordU){ // verifico che la password corrisponda
+					ALERT(TXT("PatientPwdError"));
+					return;
+				}
+			}
+		}
+		// confirm per salvare
+		localStorage.patientPwd = '';
+		if(document.getElementById("patientPwdCheck").checked)localStorage.patientPwd = 'true';
+		localStorage.noMedico = '';
+		if(document.getElementById("t_OLISTICO").classList.contains("a_SEL"))localStorage.noMedico = 'true';
+		MENU.chiudiImpSet();
+	},
+	chiudiImpSet: function(){
+		document.getElementById("contImpset").innerHTML = '';
+		document.getElementById("labelImpset").innerHTML = '';
+		MENU.chiudiMenu();
+	},
+	popolaImpSet: function(){
+		var HTML_imp = 
+			'<p id="patientSel">' +
+            '	<i>'+TXT("PatientType")+':</i>' +
+            '	<span>' +
+            '		<b id="t_MEDICO" onClick="MENU.setPatientType(\'M\');"' +
+			((!__(localStorage.noMedico))?' class="a_SEL"':'') +
+			'>'+TXT("_UTILIZZO_P")+'</b>' +
+            '		<b id="t_OLISTICO" onClick="MENU.setPatientType(\'O\');"' +
+			((__(localStorage.noMedico))?' class="a_SEL"':'') +
+			'>'+TXT("_UTILIZZO_C")+'</b>' +
+            '	</span>' +
+            '</p>';
+		if(LOGIN.logedin() && DB.login.data.PasswordU)HTML_imp += 
+			'<p id="patientPwd">' +
+            '	<i>'+TXT("PatientPwd")+':</i>' +
+            '	<span>' +
+            '		<input type="checkbox" id="patientPwdCheck" onClick="MENU.checkPatientPwd(this);"' +
+			((__(localStorage.patientPwd))?' checked':'') +
+			'> '+ stripslashes(TXT("PatientPwdTxt"))+
+            '		<input type="password" id="patientPwdField">' +
+            '	</span>' +
+            '</p>';
+		HTML_imp += 
+			'<div style="margin-top:30px;">' +
+			'	<span class="annullaBtn" onclick="MENU.chiudiImpSet();">'+TXT("Annulla")+'</span>' +
+			'	<span class="submitBtn" onclick="MENU.salvaImpSet();">'+TXT("Salva")+'</span>' +
+			'</div>';
+		document.getElementById("labelImpset").innerHTML = TXT("ImpostazioniArchivi");
+		document.getElementById("contImpset").innerHTML = HTML_imp;
+	},
+	checkPatientPwd: function( el ){
+		if(el.checked != (__(localStorage.patientPwd)!='')){
+			document.getElementById("patientPwdField").classList.add("visSch");
+			document.getElementById("patientPwdField").focus();
+		}else{
+			document.getElementById("patientPwdField").classList.remove("visSch");
+		}
+	},
+	setPatientType: function( type ){
+		if(type=='O'){
+			document.getElementById("t_OLISTICO").classList.add("a_SEL");
+			document.getElementById("t_MEDICO").classList.remove("a_SEL");
+		}else{
+			document.getElementById("t_OLISTICO").classList.remove("a_SEL");
+			document.getElementById("t_MEDICO").classList.add("a_SEL");
+		}
+		if((__(localStorage.noMedico)!='') != (type=='O'))ALERT(TXT("AlertNecessarioRiavvio"));
+	},
+	patientPwdConf: function(){
+		var pwd = document.getElementById("patientPwdRequest");
+		if(!pwd.value.trim()){ // se è vuota
+			ALERT(TXT("PatientPwdAlert"));
+			return;
+		}
+		if(MD5(pwd.value)!=DB.login.data.PasswordU){ // verifico che la password corrisponda
+			ALERT(TXT("PatientPwdError"));
+			return;
+		}
+		MENU.pwdOK = true;
+		document.getElementById("lista_base").classList.remove("noPwd");
+	},
+	
 	visArchives: function(){
 		// verifico le autorizzazioni
 		if(!DB.login.data.auths.length){

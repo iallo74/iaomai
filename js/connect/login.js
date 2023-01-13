@@ -24,6 +24,7 @@ var LOGIN = {
 				"idUtente": 0,
 				"Nominativo": "",
 				"UsernameU": "",
+				"PasswordU:": "",
 				"Pseudonimo": "",
 				"Intestazione": "",
 				"Stato": "",

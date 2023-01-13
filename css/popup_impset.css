@@ -9,7 +9,7 @@
     margin-top: -245px;
 }
 #labelImpset{
-	background-image:url(../img/ico_coloriN.png);
+	background-image:url(../img/p_impostazioniN.png);
 	background-position:10px center;
 }
 #contImpset select{
@@ -34,4 +34,10 @@
 }
 #contImpset p:first-child{
 	margin-top:0px;
+}
+
+#patientPwdField{
+	width: calc(100% - 20px);
+    margin-top: 10px;
+	display:none;
 }

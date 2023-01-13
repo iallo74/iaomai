@@ -412,7 +412,7 @@ SET = {
 		SCHEDA.caricaBtns(contBtns,contIcona);
 		SCHEDA.swPulsanti(true);
 		
-		HTML_imp = ''; // IMPOSTAZIONI DEL SET
+		/*HTML_imp = ''; // IMPOSTAZIONI DEL SET
 		
 		var mzs = PAZIENTI.mezziSet.A;
 		HTML_imp += '<div><i>'+htmlEntities(TXT("MezzoDefault"))+':</i></div><div id="tt_mezzival2">';
@@ -427,7 +427,7 @@ SET = {
 		HTML_imp += '</div>';
 		
 		HTML_imp += '<div style="margin-top:30px;"><span class="annullaBtn" onclick="MENU.chiudiMenu();">'+TXT("Annulla")+'</span><span class="submitBtn" onclick="SET.salvaImpostazioni();">'+TXT("Salva")+'</span></div>';
-		document.getElementById("contImpset").innerHTML = HTML_imp;
+		document.getElementById("contImpset").innerHTML = HTML_imp;*/
 		
 		if(preElenco)SCHEDA.selElenco(preElenco);
 		
@@ -731,7 +731,7 @@ SET = {
 			var mat = eval("SET.MAT.pointBase"+system);
 			if(this.ptSel.userData.nota)mat=this.MAT.pointNote;
 			SET.setPulsePt( this.ptSel, 1, 1, mat );
-			document.getElementById("ts_"+this.ptSel.name.substr(2,3)).classList.remove("selElPt");
+			if(document.getElementById("ts_"+this.ptSel.name.substr(2,3)))document.getElementById("ts_"+this.ptSel.name.substr(2,3)).classList.remove("selElPt");
 			SET.chiudiTsubo(true);
 		}
 		
@@ -1205,12 +1205,30 @@ SET = {
 		
 		return html;
 	},
-	salvaImpostazioni: function(){
-		//
-		MENU.chiudiMenu();
+	salvaImpSet: function(){
+		PAZIENTI.cambiaGZ(PAZIENTI.mezzoProvvisorio,true);
+		MENU.chiudiImpSet();
 	},
 	popolaImpSet: function(){
-		//
+		var mzs = PAZIENTI.mezziSet.A;
+		var HTML_imp = 
+			'<div><i>'+htmlEntities(TXT("MezzoDefault"))+':</i></div><div id="tt_mezzival2">';
+		for(m in mzs){
+			HTML_imp += '<span style="background-image:url(img/mezzo_'+mzs[m]+'.png);"' +
+					'	   onClick="PAZIENTI.cambiaGZ(\''+mzs[m]+'\',false);"' +
+					'	   data-mezzo="'+mzs[m]+'"';
+			if(!__(localStorage["mezzoDefault"+globals.set.cartella]) && m==0)HTML_imp += ' class="mzSel"';
+			if(localStorage["mezzoDefault"+globals.set.cartella]==mzs[m])HTML_imp += ' class="mzSel"';
+			HTML_imp += '	   title="'+htmlEntities(PAZIENTI.mezzi[mzs[m]])+'"></span>';
+		}
+		HTML_imp += 
+			'</div>' +
+			'<div style="margin-top:30px;">' +
+			'	<span class="annullaBtn" onclick="MENU.chiudiImpSet();">'+TXT("Annulla")+'</span>' +
+			'	<span class="submitBtn" onclick="SET.salvaImpSet();">'+TXT("Salva")+'</span>' +
+			'</div>';
+		document.getElementById("labelImpset").innerHTML = TXT("ImpostazioniSet");
+		document.getElementById("contImpset").innerHTML = HTML_imp;
 	},
 	cambiaMappa: function( name, loader ){
 		if(SET.maskAtt){

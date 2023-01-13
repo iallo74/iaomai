@@ -65,7 +65,6 @@ SET = {
 							if(MERIDIANI[m].colore)mesh.material.color = new THREE.Color( eval("SET.COL.sel"+MERIDIANI[m].colore) );
 							if(m.indexOf("_MT")>-1){
 								mesh.material.color = new THREE.Color( SET.COL.selMT );
-								//if(!LNS[l].interno)mesh.material.depthFunc = 3;
 							}
 							mesh.computeLineDistances();
 						}else{
@@ -123,15 +122,8 @@ SET = {
 							
 						// pallino colorato
 						n++;
-						/////var raggio = 0.02;
-						/////if(__(PTS[p].dupl))raggio = 0.018;
-						/////var geometry = new THREE.SphereGeometry( raggio, 6, 6 );
-						//var geometry = new THREE.BoxGeometry( 0.02, 0.02, 0.02 );
-						
-						
 						this.P[n] = new THREE.Mesh( this.geometryPallino, this.MAT.pointBase );
 						this.P[n].position.set(x,y,z);
-						
 						if(__(PTS[p].dupl))raggio = this.P[n].scale = 0.9;
 						this.P[n].name=PTS[p].nome;
 						if(sigla)this.P[n].userData.sigla = sigla;
@@ -141,7 +133,6 @@ SET = {
 							
 						// pallino trasparente
 						n++;
-						/////var geometryTrasp = new THREE.SphereGeometry( 0.07, 8, 8 );
 						this.P[n] = new THREE.Mesh( this.geometryPallinoTrasp, this.MAT.pointTrasp ); 
 						this.P[n].position.set(x,y,z);
 						this.P[n].name='_'+PTS[p].nome;
@@ -201,32 +192,6 @@ SET = {
 		SCHEDA.caricaBtns(contBtns,contIcona);
 		SCHEDA.swPulsanti(true);
 		
-		HTML_imp = '<p><i>'+htmlEntities(TXT("SistemaSigle"))+':</i> ';
-		HTML_imp += '<select id="sceltaSigle" onChange="SET.popolaImpSet();">';
-		for(k in DB.mtc.meridiani["BL"].sigle){
-			HTML_imp += '  <option value="'+k+'"';
-			if(localStorage.sistemaSigleMeridiani == k)HTML_imp += ' SELECTED';
-			HTML_imp += '>'+k+'</option>'+H.chr10;
-		}
-		HTML_imp += '</select></p>'+H.chr10;
-		
-		HTML_imp += '<div id="tbSigleMeridiani"></div>';
-		
-		var mzs = PAZIENTI.mezziSet.P;
-		HTML_imp += '	<span class="separatorePulsanti"></span><div><i>'+htmlEntities(TXT("MezzoDefault"))+':</i></div><div id="tt_mezzival2">';
-		for(m in mzs){
-			HTML_imp += '<span style="background-image:url(img/mezzo_'+mzs[m]+'.png);"' +
-					'	   onClick="PAZIENTI.cambiaGZ(\''+mzs[m]+'\',true);"' +
-					'	   data-mezzo="'+mzs[m]+'"';
-			if(!__(localStorage["mezzoDefault"+globals.set.cartella]) && m==0)HTML_imp += ' class="mzSel"';
-			if(localStorage["mezzoDefault"+globals.set.cartella]==mzs[m])HTML_imp += ' class="mzSel"';
-			HTML_imp += '	   title="'+htmlEntities(PAZIENTI.mezzi[mzs[m]])+'"></span>';
-		}
-		HTML_imp += '</div>';
-		
-		HTML_imp += '<div style="margin-top:30px;"><span class="annullaBtn" onclick="MENU.chiudiMenu();">'+TXT("Annulla")+'</span><span class="submitBtn" onclick="SET.salvaImpostazioni();">'+TXT("Salva")+'</span></div>';
-		
-		document.getElementById("contImpset").innerHTML = HTML_imp;
 		document.getElementById("divs").innerHTML = '<div id="meridianiSmart_ico" onClick="SET.swMeridianiSmart();" title="'+htmlEntities(TXT("MeridianiSmart"))+'"></div><div id="meridianiSmart_cont"></div>';
 		//SCHEDA.apriElenco();
 		if(preElenco)SCHEDA.selElenco(preElenco);
@@ -1104,12 +1069,45 @@ SET = {
 		}
 		return html;
 	},
-	salvaImpostazioni: function(){
+	salvaImpSet: function(){
 		localStorage.sistemaSigleMeridiani = document.getElementById("sceltaSigle").value;
 		SET.caricaMeridiani();
-		MENU.chiudiMenu();
+		PAZIENTI.cambiaGZ(PAZIENTI.mezzoProvvisorio,true);
+		MENU.chiudiImpSet();
 	},
 	popolaImpSet: function(){
+		var mzs = PAZIENTI.mezziSet.P;
+		var HTML_imp = 
+			'<p><i>'+htmlEntities(TXT("SistemaSigle"))+':</i> ' +
+			'<select id="sceltaSigle" onChange="SET.popolaSigle();">';
+		for(k in DB.mtc.meridiani["BL"].sigle){
+			HTML_imp += '  <option value="'+k+'"';
+			if(localStorage.sistemaSigleMeridiani == k)HTML_imp += ' SELECTED';
+			HTML_imp += '>'+k+'</option>'+H.chr10;
+		}
+		HTML_imp += 
+			'</select></p>'+H.chr10 +
+			'<div id="tbSigleMeridiani"></div>' +
+			'	<span class="separatorePulsanti"></span><div><i>'+htmlEntities(TXT("MezzoDefault"))+':</i></div><div id="tt_mezzival2">';
+		for(m in mzs){
+			HTML_imp += '<span style="background-image:url(img/mezzo_'+mzs[m]+'.png);"' +
+					'	   onClick="PAZIENTI.cambiaGZ(\''+mzs[m]+'\',false);"' +
+					'	   data-mezzo="'+mzs[m]+'"';
+			if(!__(localStorage["mezzoDefault"+globals.set.cartella]) && m==0)HTML_imp += ' class="mzSel"';
+			if(localStorage["mezzoDefault"+globals.set.cartella]==mzs[m])HTML_imp += ' class="mzSel"';
+			HTML_imp += '	   title="'+htmlEntities(PAZIENTI.mezzi[mzs[m]])+'"></span>';
+		}
+		HTML_imp += 
+			'</div>' +
+			'<div style="margin-top:30px;">' +
+			'	<span class="annullaBtn" onclick="MENU.chiudiImpSet();">'+TXT("Annulla")+'</span>' +
+			'	<span class="submitBtn" onclick="SET.salvaImpSet();">'+TXT("Salva")+'</span>' +
+			'</div>';
+		document.getElementById("labelImpset").innerHTML = TXT("ImpostazioniSet");
+		document.getElementById("contImpset").innerHTML = HTML_imp;
+		SET.popolaSigle();
+	},
+	popolaSigle: function(){
 		var s = document.getElementById("sceltaSigle").value;
 		if(s == '')s='INT';
 		var HTML = '';
