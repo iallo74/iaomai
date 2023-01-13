@@ -57,5 +57,9 @@ var CONN = {
 			ALERT(TXT("ConnessioneAssente"));
 			return false;
 		}else return true;
+	},
+	openUrl: function( url ){
+		if(window.cordova && window.cordova.platformId !== 'windows')window.open(url,'_system');
+		else window.open(url,'_blank');
 	}
 };

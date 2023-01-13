@@ -724,7 +724,7 @@ var PH = {
 	},
 	openFile: function( i ){ // apro il file online
 		if(!CONN.retNoConn())return;
-		window.open(CONN.APIfolder+"getFile.php?c="+DB.login.data.TOKEN+localStorage.UniqueId+PH.galleryProvvisoria[i].idFoto.replace("foto_","")+DB.login.data.idUtente,"_blank");
+		CONN.openUrl(CONN.APIfolder+"getFile.php?c="+DB.login.data.TOKEN+localStorage.UniqueId+PH.galleryProvvisoria[i].idFoto.replace("foto_","")+DB.login.data.idUtente);
 	},
 	scriviFotoBig: function( res ){ // scrive la foto BIG
 		res = JSON.parse( res );

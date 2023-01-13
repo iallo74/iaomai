@@ -221,6 +221,11 @@ body:not(.bodyModello).bodyStyled2{
 	background-color: #ffebd6;
 }
 
+.ext_link{
+	text-decoration:underline;
+	cursor:pointer;
+	color: #1975b8;
+}
 
 .btns{
 	text-align:center;
