@@ -602,7 +602,7 @@ var MODULO_PROCEDURE = { // extend SET
 			HTML += H.r({	t: "h", name: "totFoto",	value: "0" });
 			HTML += H.sezione({
 				label: TXT("Gallery"),
-				nome: 'foto',
+				nome: 'files',
 				html: cont
 						});	
 						
@@ -680,10 +680,12 @@ var MODULO_PROCEDURE = { // extend SET
 					frv: (LOGIN._frv()!='')
 				});
 				var NG = {
-					idFoto: GA[i].idFoto
+					idFoto: GA[i].idFoto,
+					Dida: GA[i].Dida
 				}
 				GA[i] = NG;
 			}
+			delete(GA[i].imported);
 		}
 		
 		

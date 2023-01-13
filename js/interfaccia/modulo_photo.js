@@ -27,17 +27,21 @@ var PH = {
 	idU: -1,
 	actionClick: '',
 	selected: [],
-	maxFileSize: 5*1000*1000, // 5MB
+	listaEstensioni: [	"image/jpeg",
+						"image/png",
+						"image/webp" ],
+	listaEstensioniFiles: [	"application/pdf" ],
+	maxFileSize: 20*1000*1000, // 20MB
 	
 	encodeImageFileAsURL: function( element, resizable, makeBig, functPH, listaEstensioni ) { // trasforma l'immagine in base64
 		var verSize = false;
 		if(typeof(functPH) == 'undefined')var functPH = '';
 		if(typeof(resizable) == 'undefined')var resizable = false;
 		if(typeof(makeBig) == 'undefined')var makeBig = false;
-		if(typeof(listaConsentiti) == 'undefined')var listaEstensioni = [	"image/jpeg",
-																			"image/png",
-																			"image/webp" ];
-		else{
+		if(typeof(listaConsentiti) == 'undefined'){
+			var listaEstensioni = PH.listaEstensioni;
+			if(LOGIN.logedin())listaEstensioni = listaEstensioni.concat(PH.listaEstensioniFiles);
+		}else{
 			verSize = true; // controllo le dimensioni per i files che non sono immagini
 		}
 		var ext = "";
@@ -49,6 +53,7 @@ var PH = {
 		PH.makeBig = makeBig;
 		PH.file = element;
 		file = element.files[0];
+		
 		if(listaEstensioni.indexOf(file.type)==-1){
 			ALERT(TXT("FileNonConsentito").replace("[listaEstensioni]",ext));
 			return;
@@ -58,31 +63,53 @@ var PH = {
 			return;
 		}
 		var reader = new FileReader();
-		reader.onloadend = function() {
-			PH.img = document.getElementById("img_PH");
-			PH.img.style.width = '';
-			PH.img.style.height = '';
-			PH.img.onload = function(){
-				if(resizable){
-					PH.res = null;
-					PH.modify();
-					visLoader();
-					window.addEventListener("resize", PH.resizeW, false);
-					if(mouseDetect){
-						document.getElementById("img_man").addEventListener("mousedown", PH.inizioResizeCrop, false);
-						document.getElementById("img_resizer").addEventListener("mousedown", PH.inizioMoveCrop, false);
+		if(PH.listaEstensioniFiles.indexOf(file.type)==-1){
+			// se è un'immagine
+			reader.onloadend = function() {
+				PH.img = document.getElementById("img_PH");
+				PH.img.style.width = '';
+				PH.img.style.height = '';
+				PH.img.onload = function(){
+					if(resizable){
+						PH.res = null;
+						PH.modify();
+						visLoader();
+						window.addEventListener("resize", PH.resizeW, false);
+						if(mouseDetect){
+							document.getElementById("img_man").addEventListener("mousedown", PH.inizioResizeCrop, false);
+							document.getElementById("img_resizer").addEventListener("mousedown", PH.inizioMoveCrop, false);
+						}else{
+							document.getElementById("img_man").addEventListener("touchstart", PH.inizioResizeCrop, false);
+							document.getElementById("img_resizer").addEventListener("touchstart", PH.inizioMoveCrop, false);
+						}
+						document.getElementById("photo").classList.add("visPHop");
 					}else{
-						document.getElementById("img_man").addEventListener("touchstart", PH.inizioResizeCrop, false);
-						document.getElementById("img_resizer").addEventListener("touchstart", PH.inizioMoveCrop, false);
+						PH.salva();
 					}
-					document.getElementById("photo").classList.add("visPHop");
-				}else{
-					PH.salva();
+				};
+				PH.img.src = reader.result;
+			}
+			reader.readAsDataURL(file);
+		}else{
+			// se è un file diverso
+			if(CONN.retNoConn()){
+				// se c'è connessione
+				reader.onloadend = function() {
+					// carico il file sul server
+					var d = new Date()*1
+					
+					CONN.caricaUrl(	"putFile.php",
+									"b64=1&JSNPOST="+encodeURIComponent(window.btoa(JSON.stringify({
+										idFoto: d,
+										e: file.type.split("/")[1], // pdf
+										F: reader.result,
+										n: file.name
+									}))),
+									"PH.salvaFile");
 				}
-			};
-			PH.img.src = reader.result;
+				reader.readAsDataURL(file);
+			}else return;
 		}
-		reader.readAsDataURL(file);
 		if(!resizable)document.getElementById("photo").classList.add("nasPH");
 		document.getElementById("photo").classList.add("visPH");
 	},
@@ -301,9 +328,9 @@ var PH = {
 		document.getElementById("photo").classList.remove("visPH");
 		document.getElementById("photo").classList.remove("visPH2");
 		document.getElementById("photo").classList.remove("nasPH");
-		PH.img.src="";
+		if(PH.img)PH.img.src="";
 		PH.res = null;
-		PH.img.onload = null;
+		if(PH.img)PH.img.onload = null;
 		PH.file.value = '';
 		PH.file = null;
 		PH.functPH = null;
@@ -312,10 +339,17 @@ var PH = {
 	},
 	salva: function(){ // salva l'immagine che si sta caricando (e nel caso ritaliando)
 		if(!PH.res)PH.modify(); // se non ridimensiono
+		var imgMini = PH.returnImageConverted();
 		var obj = {
-			imgMini: PH.returnImageConverted(),
-			imgBig: (PH.makeBig) ? PH.returnImageConverted( true ) : ''
+			imgMini: imgMini,
+			imgBig: (PH.makeBig) ? PH.returnImageConverted( true ) : '',
+			fileType: imgMini.split("data:")[1].split(";")[0]
 		};
+		eval(PH.functPH+"('"+JSON.stringify(obj)+"')");
+		PH.chiudi();
+	},
+	salvaFile: function( txt ){
+		var obj = JSON.parse(txt);
 		eval(PH.functPH+"('"+JSON.stringify(obj)+"')");
 		PH.chiudi();
 	},
@@ -379,6 +413,7 @@ var PH = {
 				totFoto++;
 				var src = '';
 				var cls = '';
+				var name = '';
 				var locale = false;
 				if(__(PH.galleryProvvisoria[i].nuova)){
 					locale = true;
@@ -390,9 +425,18 @@ var PH = {
 							if(DB.foto.data[f].imgMini){
 								locale = true;
 								src = DB.foto.data[f].imgMini;
+								name = __(DB.foto.data[f].name);
 							}
 						}
 					}
+				}
+				if(__(PH.galleryProvvisoria[i].imgMini)){
+					if(!src && PH.galleryProvvisoria[i].imgMini.indexOf("data:")!=0)src = PH.galleryProvvisoria[i].imgMini;
+				}
+				var isFile = false;
+				if(src && src.indexOf("data:")!=0){
+					isFile = true;
+					src = 'img/ext/'+src+'Big.jpg';
 				}
 				if(!locale){
 					if(CONN.getConn()){
@@ -402,6 +446,7 @@ var PH = {
 						cls='noConn';
 					}
 				}
+				
 				HTML += '<div>' +
 						'	<div id="gall_'+i+'"' +
 						'		  class="' +
@@ -411,14 +456,23 @@ var PH = {
 						'			 data-id="'+PH.galleryProvvisoria[i].idFoto+'"' +
 									 ((src) ? ' style="background-image:url(\''+src+'\');"' : '') +
 						'			 onClick="';
-									
-				if(!PH.actionClick)HTML += 'if(!PH.overCestino)PH.fullFoto('+i+','+locale+');';
-				else HTML += PH.actionClick;
-				HTML += '">';
-				if(!PH.actionClick)HTML += 
+						
+				if(!PH.actionClick){
+					HTML += 'if(!PH.overCestino)';
+					if(!isFile)HTML += 'PH.fullFoto('+i+','+locale+');';
+					else HTML += 'PH.openFile('+i+');';
+				}else HTML += PH.actionClick;
+				HTML += '"';
+				if(name)HTML += ' title="'+htmlEntities(name)+'"';
+				HTML += '>';
+				if(!PH.actionClick){
+					HTML += 
 						'			<img class="gall_full"' +
-						'			 	 src="img/ico_fullscreen.png">';
-				else HTML += '<img src="img/spuntaB.png"/>';
+						'			 	 src="img/ico_';
+					if(!isFile)HTML += 'fullscreen';
+					else HTML += 'dwnl';
+					HTML += '.png">';
+				}else HTML += '<img src="img/spuntaB.png"/>';
 				if(!vis)HTML += 
 						'			<img class="gall_del"' +
 						'			 	 src="img/ico_cestinoB.png"' +
@@ -569,11 +623,18 @@ var PH = {
 				presente = f;
 			}
 		}
+		for(f in PH.galleryProvvisoria){
+			if(res.idFoto == PH.galleryProvvisoria[f].idFoto && __(PH.galleryProvvisoria[f].imported,false)){
+				presente = f;
+				console.log("OK")
+			}
+		}
 		if(!presente){
 			if(PH.galleryOnline.indexOf(res.idFoto)==-1){
 				DB.foto.data.push({
 					idFoto: res.idFoto,
-					imgMini: res.imgMini
+					imgMini: res.imgMini,
+					name: res.name
 				});
 				DB.foto.update = true;
 			}
@@ -592,11 +653,16 @@ var PH = {
 	},
 	aggiungiFoto: function( obj ){ // carica una nuova foto nella gallery
 		obj = JSON.parse(obj);
-		var d = new Date()*1
+		var d = new Date()*1;
+		var nuova = true;
+		if(__(obj.idFoto)){
+			d = obj.idFoto;
+		}
 		var JSNPUSH = {	idFoto: "foto_"+d,
 						imgMini: obj.imgMini,
 						imgBig: obj.imgBig,
 						nuova: true }
+						console.log(JSNPUSH)
 		PH.galleryProvvisoria.push(JSNPUSH);
 		PH.caricaGallery();
 		SCHEDA.formModificato = true;
@@ -656,6 +722,10 @@ var PH = {
 			}
 		}
 	},
+	openFile: function( i ){ // apro il file online
+		if(!CONN.retNoConn())return;
+		window.open(CONN.APIfolder+"getFile.php?c="+DB.login.data.TOKEN+localStorage.UniqueId+PH.galleryProvvisoria[i].idFoto.replace("foto_","")+DB.login.data.idUtente,"_blank");
+	},
 	scriviFotoBig: function( res ){ // scrive la foto BIG
 		res = JSON.parse( res );
 		var lowRes = false;
@@ -677,7 +747,7 @@ var PH = {
 			document.getElementById("foto_alert").classList.add("visSch");
 			document.getElementById("foto_alert").innerHTML = stripslashes(msg);
 		}
-	},
+	},	
 	
 	car_gallery: function(){ // carica la scheda delle fotografie del menu ARCHIVI
 		// verifico le autorizzazioni
@@ -770,20 +840,37 @@ var PH = {
 		}
 		if(PH.galleryOnline.length){
 			for(f in PH.galleryOnline){
-
+				var src = PH.galleryOnline[f].imgMini;
+				var isFile = false;
+				var type = '';
+				if(src && src.indexOf("data:")!=0){
+					isFile = true;
+					type = src;
+					src = 'img/ext/'+src+'Big.jpg';
+				}
 				HTML += '<div ' + ((!PH.actionClick)?'class="fotoMini"':'')+'>' +
 						'	<div id="gall_'+f+'">' +
 						'		<div class="imgEl"' +
 						'			 data-id="'+PH.galleryOnline[f].idFoto+'"' +
-						'			 style="background-image:url(\''+PH.galleryOnline[f].imgMini+'\');"' +
+						'			 data-type="'+type+'"' +
+						'			 style="background-image:url(\''+src+'\');"' +
 						'	 		 onClick="';
-				if(!PH.actionClick)HTML += 'if(!PH.overCestino)PH.fullFoto('+f+',false,PH.galleryOnline);';
-				else HTML += PH.actionClick;
-				HTML += '">';
-				if(!PH.actionClick)HTML += 
+				if(!PH.actionClick){
+					HTML += 'if(!PH.overCestino)';
+					if(!isFile)HTML += 'PH.fullFoto('+f+',false,PH.galleryOnline);';
+					else HTML += 'PH.openFile('+i+');';
+				}else HTML += PH.actionClick;
+				HTML += '"';
+				if(__(PH.galleryOnline[f].name))HTML += ' title="'+htmlEntities(PH.galleryOnline[f].name)+'"';
+				HTML += '>';
+				if(!PH.actionClick){
+					HTML += 
 						'			<img class="gall_full"' +
-						'			 	 src="img/ico_fullscreen.png">';
-				else HTML += '<img src="img/spuntaB.png"/>';
+						'			 	 src="img/ico_';
+					if(!isFile)HTML += 'fullscreen';
+					else HTML += 'dwnl';
+					HTML += '.png">';
+				}else HTML += '<img src="img/spuntaB.png"/>';
 				HTML += '		</div>' +
 						'	</div>' +
 						'</div>';
@@ -821,7 +908,7 @@ var PH = {
 		PH.actionClick = '';
 		document.getElementById("listsArchives").innerHTML = '';
 		if(PH.oldGallery.length){
-			PH.galleryProvvisoria = [];
+			PH.galleryProvvisoria = PH.oldGallery;
 			PH.oldGallery = [];
 		}
 	},
@@ -839,7 +926,12 @@ var PH = {
 		if(!els.length)return;
 		newGallery = PH.oldGallery;
 		for(e=0;e<els.length;e++){
-			newGallery.push({	idFoto: els[e].dataset.id });
+			var JSNPUSH = {	
+				idFoto: els[e].dataset.id,
+				imported: true
+			};
+			if(els[e].dataset.type)JSNPUSH.imgMini = els[e].dataset.type;
+			newGallery.push(JSNPUSH);
 		}
 		MENU.visArchives();
 		PH.galleryProvvisoria = newGallery;

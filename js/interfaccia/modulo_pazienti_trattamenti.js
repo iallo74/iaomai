@@ -785,7 +785,7 @@ var PAZIENTI_TRATTAMENTI = {
 					'	<em class="labelMobile labelTrattamenti"' +
 					'		onClick="H.swSezione(this);PH.resizeDida();">' +
 					'		<img class="icoLabel"' +
-					'		     src="img/ico_foto.png">' +
+					'		     src="img/ico_files.png">' +
 							TXT("Gallery")+' (<span id="totFoto"></span>)' +
 					'	</em>' +
 					'	<div id="contGallery"' +
@@ -1121,11 +1121,13 @@ var PAZIENTI_TRATTAMENTI = {
 						frv: (LOGIN._frv()!='')
 					});
 					var NG = {
-						idFoto: GA[i].idFoto
+						idFoto: GA[i].idFoto,
+						Dida: GA[i].Dida
 					}
 					GA[i] = NG;
 					//f++;
 				}
+				delete(GA[i].imported);
 			}
 			localPouchDB.setItem(MD5("DB"+LOGIN._frv()+".foto"), IMPORTER.COMPR(DB.foto)).then(function(){
 				PAZIENTI.ricPuntiTratt();

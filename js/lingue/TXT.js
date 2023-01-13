@@ -1846,8 +1846,8 @@ DB.TXT = {
 			esp: ""
 		},
 		Gallery: {
-			ita: "Fotografie",
-			eng: "Pics",
+			ita: "Foto e documenti",
+			eng: "Pics and documents",
 			esp: ""
 		},
 		ScoresSintomi: {
@@ -1903,13 +1903,18 @@ DB.TXT = {
 		
 		// gallery
 		AggiungiFoto: {
-			ita: "Carica una foto",
-			eng: "Upload a pic",
+			ita: "Carica un file",
+			eng: "Upload a file",
 			esp: ""
 		},
 		ScegliFoto: {
-			ita: "Scegli una foto",
-			eng: "Choose a pic",
+			ita: "Scegli un file",
+			eng: "Choose a file",
+			esp: ""
+		},
+		FormatiConsentiti: {
+			ita: "Formati consentiti",
+			eng: "Allowed formats",
 			esp: ""
 		},
 		ChiediEliminaFoto: {
@@ -1998,7 +2003,7 @@ DB.TXT = {
 			esp: ""
 		},
 		ArEliminate: {
-			ita: "INUTILIZZATE",
+			ita: "INUTILIZZATI",
 			eng: "UNUSED",
 			esp: ""
 		},
@@ -2538,8 +2543,8 @@ DB.TXT = {
 			esp: ""
 		},
 		ElFoto: {
-			ita: "Fotografie",
-			eng: "Pics",
+			ita: "Foto e documenti",
+			eng: "Pics and documents",
 			esp: ""
 		},
 		ElGestionale: {

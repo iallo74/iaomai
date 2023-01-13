@@ -754,6 +754,13 @@ var PAZIENTI = {
 			
 			
 			// GALLERY
+			var ext = "";
+			var listaEstensioni = PH.listaEstensioni;
+			if(LOGIN.logedin())listaEstensioni = listaEstensioni.concat(PH.listaEstensioniFiles);
+			for(e in listaEstensioni){
+				ext += listaEstensioni[e].toUpperCase().split("/")[1]+", ";
+			}
+			ext = ext.substr(0,ext.length-2);
 			var cont = '	<div id="contGallery"' +
 						'		 class="divEspansa contGallery">' +
 						'	</div>' +
@@ -771,12 +778,13 @@ var PAZIENTI = {
 						'		<span id="chooFoto">' +
 									TXT("ScegliFoto") +
 						'		</span>' +
-						'	</div>';
+						'	</div>' +
+						'	<div class="allowedFormats">* '+TXT("FormatiConsentiti")+": "+ext+'</div>';
 					
 			HTML += H.r({	t: "h", name: "totFoto",	value: "0" });
 			HTML += H.sezione({
 				label: TXT("Gallery"),
-				nome: 'foto',
+				nome: 'files',
 				addFunct: 'PH.resizeDida();',
 				html: cont
 						});	
@@ -1252,13 +1260,14 @@ var PAZIENTI = {
 					frv: (LOGIN._frv()!='')
 				});
 				var NG = {
-					idFoto: GA[i].idFoto
+					idFoto: GA[i].idFoto,
+					Dida: GA[i].Dida
 				}
 				GA[i] = NG;
 				//f++;
 			}
+			delete(GA[i].imported);
 		}
-		
 		
 		localPouchDB.setItem(MD5("DB"+LOGIN._frv()+".foto"), IMPORTER.COMPR(DB.foto)).then(function(){
 			JSNPUSH={ 	"idPaziente": document.formMod.idPaziente.value*1,

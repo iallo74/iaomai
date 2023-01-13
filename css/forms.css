@@ -2243,7 +2243,10 @@ body:not(.touch) .sezioneChiusa:hover{
     width: 80px;
     height: 80px;
 }
-
+.allowedFormats{
+	margin-top: -13px;
+	font-size: var(--font-12);
+}
 .contGallery .fotoMini{
 	padding: 5px !important;
 }
