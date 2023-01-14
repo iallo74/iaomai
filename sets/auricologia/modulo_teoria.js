@@ -62,11 +62,11 @@ var MODULO_TEORIA = { // extend SET
 			var elencoTsubo='<br><b>'+htmlEntities(TXT("ElencoPunti"))+'</b>';
 			for(g in GEOMETRIE.gruppi[gruppo].punti){
 				var TS = GEOMETRIE.gruppi[gruppo].punti[g];
-				if(TS.length==3)elencoTsubo+='<p>[.'+TS+'.]</p>';
+				if(TS.length==3){
+					if(!__(DB.set.punti[TS].hidden,false))elencoTsubo+='<p>[.'+TS+'.]</p>';
+				}
 				else elencoTsubo+='<p><span class="pallinoNul"><span class="pNUL"></span>'+htmlEntities(TXT(""+TS))+'</span></p>';
 			}
-			/*html_cont = '<div class="col50">'+html_cont+'</div>' +
-						'<div class="col50 elencoTsubo">' +*/
 			html_cont = '<div>'+html_cont+'</div>' +
 						'<div class="elencoTsubo">' +
 							SET.convPuntiScheda(elencoTsubo) +

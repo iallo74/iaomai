@@ -1227,7 +1227,7 @@ SET = {
 			'	<span class="annullaBtn" onclick="MENU.chiudiImpSet();">'+TXT("Annulla")+'</span>' +
 			'	<span class="submitBtn" onclick="SET.salvaImpSet();">'+TXT("Salva")+'</span>' +
 			'</div>';
-		document.getElementById("labelImpset").innerHTML = TXT("ImpostazioniSet");
+		document.getElementById("labelImpset").getElementsByTagName("b")[0].innerHTML = TXT("ImpostazioniSet");
 		document.getElementById("contImpset").innerHTML = HTML_imp;
 	},
 	cambiaMappa: function( name, loader ){

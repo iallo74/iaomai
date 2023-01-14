@@ -600,7 +600,7 @@ var MENU = {
 	},
 	chiudiImpSet: function(){
 		document.getElementById("contImpset").innerHTML = '';
-		document.getElementById("labelImpset").innerHTML = '';
+		document.getElementById("labelImpset").getElementsByTagName("b")[0].innerHTML = '';
 		MENU.chiudiMenu();
 	},
 	popolaImpSet: function(){
@@ -631,7 +631,7 @@ var MENU = {
 			'	<span class="annullaBtn" onclick="MENU.chiudiImpSet();">'+TXT("Annulla")+'</span>' +
 			'	<span class="submitBtn" onclick="MENU.salvaImpSet();">'+TXT("Salva")+'</span>' +
 			'</div>';
-		document.getElementById("labelImpset").innerHTML = TXT("ImpostazioniArchivi");
+		document.getElementById("labelImpset").getElementsByTagName("b")[0].innerHTML = TXT("ImpostazioniArchivi");
 		document.getElementById("contImpset").innerHTML = HTML_imp;
 	},
 	checkPatientPwd: function( el ){

@@ -257,7 +257,7 @@ DB.set= {
         },
         "178": {
             "NomeTsubo": "Corteccia occipitale",
-            "AzioniTsubo": "<p><b>Altri nomi</b><br>- Lobo Occipitale<br>- Corteccia visiva</p><p><b>Azione</b><br>Disturbi neurologici della visione</p><p><b>Ubicazione</b><br>AT2-AT3, area localizzata nel terzo posteriore dell’antitrago, al confine con la parte superiore del lobulo.</p>",
+            "AzioniTsubo": "<p><b>Altri nomi</b><br>- Lobo Occipitale<br>- Corteccia visiva</p><p><b>Azione</b><br>Disturbi neurologici della visione</p><p><b>Ubicazione</b><br>AT2-AT3, area localizzata nel terzo posteriore dell'antitrago, al confine con la parte superiore del lobulo.</p>",
             "ChiaviTsubo": ""
         },
         "179": {
@@ -276,8 +276,8 @@ DB.set= {
             "ChiaviTsubo": ""
         },
         "182": {
-            "NomeTsubo": "Orecchio esterno",
-            "AzioniTsubo": "<p><b>Azione<br></b>La Scuola Francese distingue i Punti Orecchio Esterno e Orecchio Interno per le loro diverse proprietà curative. Questo Punto è indicato per ridurre i disturbi ed i dolori esterni dell'orecchio.</p><p><b>Ubicazione</b><br>TG5, al centro del trago subito sopra ad una linea immaginaria orizzontale passante per <span class='LMtxt'>LM11</span>.</p>",
+            "NomeTsubo": "Orecchio esterno CIN",
+            "AzioniTsubo": "<p><b>Azione<br></b>Questo Punto è indicato per ridurre i disturbi ed i dolori esterni dell'orecchio.</p><p><b>Ubicazione</b><br>TG5, al centro del trago subito sopra ad una linea immaginaria orizzontale passante per <span class='LMtxt'>LM11</span>.</p>",
             "ChiaviTsubo": ""
         },
         "183": {
@@ -302,12 +302,12 @@ DB.set= {
         },
         "187": {
             "NomeTsubo": "Corteccia frontale",
-            "AzioniTsubo": "<p><b>Azione</b><br>Facilita l’azione motoria, riduce i disturbi motori legati alla paralisi.</p><p><b>Ubicazione</b><br>LO1-LO2-LO3-LO4, ampia area del lobulo inferiore in una zona delimitato in alto da Punto Maestro Sensoriale ed in basso dalla linea trigeminale</p>",
+            "AzioniTsubo": "<p><b>Azione</b><br>Facilita l'azione motoria, riduce i disturbi motori legati alla paralisi.</p><p><b>Ubicazione</b><br>LO1-LO2-LO3-LO4, ampia area del lobulo inferiore in una zona delimitato in alto da Punto Maestro Sensoriale ed in basso dalla linea trigeminale</p>",
             "ChiaviTsubo": ""
         },
         "188": {
             "NomeTsubo": "Corteccia prefrontale",
-            "AzioniTsubo": "<p><b>Altri nomi</b><br>- Cervello esecutivo</p><p><b>Azione</b><br>Facilita la concentrazione e le decisioni, riduce l’ossessione e la preoccupazione.</p><p><b>Ubicazione</b><br>LO1-LO2, ampia area anteriore del lobulo che si estende dal Master Cerebral Pont sino al margine inferiore del Lobulo</p>",
+            "AzioniTsubo": "<p><b>Altri nomi</b><br>- Cervello esecutivo</p><p><b>Azione</b><br>Facilita la concentrazione e le decisioni, riduce l'ossessione e la preoccupazione.</p><p><b>Ubicazione</b><br>LO1-LO2, ampia area anteriore del lobulo che si estende dal Master Cerebral Pont sino al margine inferiore del Lobulo</p>",
             "ChiaviTsubo": ""
         },
         "191": {
@@ -392,7 +392,7 @@ DB.set= {
         },
         "230": {
             "NomeTsubo": "Master Cerebral Point",
-            "AzioniTsubo": "<p><b>Altri nomi</b><br>- Omega<br>- Nervosismo<br>- Preoccupazione</p><p><b>Azione</b><br>Per la Scuola Francese, punto Omega, è il Punto Maestro del tessuto Ectodermico. Rappresenta il Lobo prefrontale. E’ indicato nell’asia, nervosismo e nei disturbi del sonno.</p><p><b>Ubicazione</b><br>LO2, a metà distanza tra <span class='LMtxt'>LM8</span> ed <span class='LMtxt'>LM9</span> a 2 mm circa dal confine con la guancia.</p>",
+            "AzioniTsubo": "<p><b>Altri nomi</b><br>- Omega<br>- Nervosismo<br>- Preoccupazione</p><p><b>Azione</b><br>Per la Scuola Francese, punto Omega, è il Punto Maestro del tessuto Ectodermico. Rappresenta il Lobo prefrontale. E' indicato nell'asia, nervosismo e nei disturbi del sonno.</p><p><b>Ubicazione</b><br>LO2, a metà distanza tra <span class='LMtxt'>LM8</span> ed <span class='LMtxt'>LM9</span> a 2 mm circa dal confine con la guancia.</p>",
             "ChiaviTsubo": ""
         },
         "231": {
@@ -527,7 +527,7 @@ DB.set= {
         },
         "268": {
             "NomeTsubo": "Punto di sintesi",
-            "AzioniTsubo": "<p><b>Azione<br></b>Questo punto è molto attivo nelle patologie degenerative, stimolando e riequilibrando la sintesi. Viene sconsigliato il suo utilizzo nei pazienti neoplastici.</p><p><b>Ubicazione</b><br>PC1-PG1, localizzato nella parte inferiore della superficie mediale nel punto in inserzione della parte inferiore del solco cofalo-auricolare con il solco longitudinale dell’antelice.</p>",
+            "AzioniTsubo": "<p><b>Azione<br></b>Questo punto è molto attivo nelle patologie degenerative, stimolando e riequilibrando la sintesi. Viene sconsigliato il suo utilizzo nei pazienti neoplastici.</p><p><b>Ubicazione</b><br>PC1-PG1, localizzato nella parte inferiore della superficie mediale nel punto in inserzione della parte inferiore del solco cofalo-auricolare con il solco longitudinale dell'antelice.</p>",
             "ChiaviTsubo": ""
         },
         "269": {
@@ -662,17 +662,17 @@ DB.set= {
         },
         "303": {
             "NomeTsubo": "Ippocampo",
-            "AzioniTsubo": "<p><b>Altri nomi</b><br>- Memoria<br>- Cervello della memoria<br>- Fornice</p><p><b>Azione</b><br>Disturbi della memoria, amnesia e dell’attenzione.</p><p><b>Ubicazione</b><br>LO6, nella parte superiore del lobulo, subito sotto la linea di confine con l'antitrago.</p>",
+            "AzioniTsubo": "<p><b>Altri nomi</b><br>- Memoria<br>- Cervello della memoria<br>- Fornice</p><p><b>Azione</b><br>Disturbi della memoria, amnesia e dell'attenzione.</p><p><b>Ubicazione</b><br>LO6, nella parte superiore del lobulo, subito sotto la linea di confine con l'antitrago.</p>",
             "ChiaviTsubo": ""
         },
         "304": {
             "NomeTsubo": "Analgesia dentale",
-            "AzioniTsubo": "<p><b>Altri nomi</b><br>- Denti</p><p><b>Azione</b><br>Utile nel dolore dentario specie quanto acuto ed in atto.</p><p><b>Ubicazione</b><br>LO1-LO2, in un’area anteriore del lobulo, circa a 2-3 mm dalla guancia tra i due terzi superiori ed inferiore della distanza tra <span class='LMtxt'>LM9</span> ed <span class='LMtxt'>LM8</span></p>",
+            "AzioniTsubo": "<p><b>Altri nomi</b><br>- Denti</p><p><b>Azione</b><br>Utile nel dolore dentario specie quanto acuto ed in atto.</p><p><b>Ubicazione</b><br>LO1-LO2, in un'area anteriore del lobulo, circa a 2-3 mm dalla guancia tra i due terzi superiori ed inferiore della distanza tra <span class='LMtxt'>LM9</span> ed <span class='LMtxt'>LM8</span></p>",
             "ChiaviTsubo": ""
         },
         "305": {
             "NomeTsubo": "Naso esterno EUR",
-            "AzioniTsubo": "<p><b>Altri nomi</b><br>- Seni Paranasali</p><p><b>Azione</b><br>Rinite, sinusite, ostruzione nasale e tutti i disturbi delle alte vie respiratorie.</p><p><b>Ubicazione</b><br>LO2, area localizzata nella parte superiore del lobulo, subito anteriormente rispetto ad una linea verticale passante per il margine anteriore dell’incisura intertragica.</p>",
+            "AzioniTsubo": "<p><b>Altri nomi</b><br>- Seni Paranasali</p><p><b>Azione</b><br>Rinite, sinusite, ostruzione nasale e tutti i disturbi delle alte vie respiratorie.</p><p><b>Ubicazione</b><br>LO2, area localizzata nella parte superiore del lobulo, subito anteriormente rispetto ad una linea verticale passante per il margine anteriore dell'incisura intertragica.</p>",
             "ChiaviTsubo": ""
         },
         "000": {
@@ -3852,7 +3852,7 @@ DB.set= {
 							],
 							l: "TRE"
 						},
-						"* Ispezionare tutta l’area e individuare quella più sensibile"
+						"* Ispezionare tutta l'area e individuare quella più sensibile"
 					]
 				},
 				{
@@ -6398,6 +6398,7 @@ DB.set= {
 						"111",
 						"154",
 						"182",
+						"302",
 						"169"
 					]
 				},
@@ -6458,7 +6459,15 @@ DB.set= {
 				"dp": {
 					"p": [
 						"030",
-						"207"
+						{
+							t: "Linea delle vertigini",
+							p: [
+								"000",
+								"148",
+								"272"
+							],
+							l: "LIN_VERT"
+						}
 					]
 				},
 				"ds": {
@@ -6518,7 +6527,15 @@ DB.set= {
 					"p": [
 						"001",
 						"169",
-						"207"
+						{
+							t: "Linea delle vertigini",
+							p: [
+								"000",
+								"148",
+								"272"
+							],
+							l: "LIN_VERT"
+						}
 					]
 				},
 				"ds": {
@@ -6566,7 +6583,7 @@ DB.set= {
 							t: "Triade modificata",
 							p: [
 								"001",
-								"169",
+								"302",
 								"254"
 							]
 						}
@@ -6594,7 +6611,8 @@ DB.set= {
 						"254",
 						"195",
 						"003",
-						"129"
+						"129",
+						"209"
 					]
 				},
 				"np": {
@@ -6741,7 +6759,8 @@ DB.set= {
 					"t": "Miscellanea",
 					"p": [
 						"026",
-						"078"
+						"078",
+						"305"
 					]
 				}
 			]
@@ -6997,7 +7016,7 @@ DB.set= {
 						"004"
 					]
 				},
-				"d": "Tra Occipite, Tempia e Fronte, scegliere 1-2 punti più sensibili"
+				"d": "N.B. Tra Occipite, Tempia e Fronte, scegliere 1-2 punti più sensibili"
 			},
 			"s": [
 				{
@@ -7060,8 +7079,7 @@ DB.set= {
 					"p": [
 						"252"
 					]
-				},
-				"d": "N.B. Tra Occipite, Tempia e Fronte, scegliere 1-2 punti più sensibili"
+				}
 			},
 			"s": [
 				{
@@ -7414,6 +7432,8 @@ DB.set= {
 						"121",
 						"291",
 						"132",
+						"130",
+						"131",
 						"231"
 					]
 				},
@@ -7481,6 +7501,8 @@ DB.set= {
 						"164",
 						"118",
 						"132",
+						"130",
+						"131",
 						"231"
 					]
 				},
@@ -7528,7 +7550,9 @@ DB.set= {
 					"p": [
 						"164",
 						"222",
-						"132"
+						"132",
+						"130",
+						"131"
 					]
 				},
 				"np": {
@@ -7592,6 +7616,8 @@ DB.set= {
 						"154",
 						"148",
 						"132",
+						"130",
+						"131",
 						"231"
 					]
 				},
@@ -7641,7 +7667,9 @@ DB.set= {
 					"p": [
 						"104",
 						"231",
-						"132"
+						"132",
+						"130",
+						"131"
 					]
 				},
 				"np": {
@@ -9611,7 +9639,7 @@ DB.set= {
 		},
 		{
 			"NomePatologia": "Stress",
-			"TestoPatologia": "Lo stress è la risposta psicologica e fisiologica che l'organismo mette in atto nei confronti di compiti, difficoltà o eventi della vita valutati come eccessivi o pericolosi.<br>La sensazione che si prova in una situazione di stress è di essere di fronte ad una forte pressione mentale ed emotiva apparentemente insormontabile.<br>Il termine stress fu impiegato per la prima volta nel 1936 da Hans Selye. Questi lo definì come &ldquo;risposta aspecifica dell'organismo ad ogni richiesta effettuata su di esso&rdquo;. In base al modello di Selye, il processo stressogeno si compone di tre fasi distinte:<br>– fase di allarme: il soggetto segnala l'esubero di doveri e mette in moto le risorse per adempierli;<br>– fase di resistenza: il soggetto stabilizza le sue condizioni e si adatta al nuovo tenore di richieste;<br>– fase di esaurimento: in questa fase si registra la caduta delle difese e la successiva comparsa di sintomi fisici, fisiologici ed emotivi.<br /><br>La durata dell'evento stressante porta a distinguere lo stress in due categorie. Quello acuto e quello cronico. Il primo si verifica una sola volta e in un lasso di tempo limitato; mentre nel secondo, lo stimolo è di lunga durata.<br />Lo stress può essere imputato ad eventi della vita sia piacevoli che spiacevoli (ad esempio: matrimonio, nascita di un figlio, morte di una persona cara, divorzio, pensionamento, problemi sessuali); cause fisiche: il freddo o il caldo intenso, abuso di fumo e di alcol, gravi limitazioni nei movimenti; fattori ambientali: la mancanza di un'abitazione, ambienti rumorosi, inquinati sono fattori determinanti di un certo stato di stress oppure malattie organiche: infatti, quando il nostro corpo è affetto da una malattia, l'intero organismo, nel tentativo di difendersi, si pone in uno stato di tensione che, nella maggior parte dei casi, per le scarse difese in grado di apportare, sfocia in una condizione di stress.<br>I soggetti affetti da stress accusano generalmente mal di testa, dolori muscolari in particolare alla schiena al collo ed alle spalle, dolore allo stomaco, tachicardia, agitazione e irrequietezza, problemi di sonno, stanchezza, perdita di appetito, problemi sessuali ed acufeni (tintinni, fischi) nelle orecchie.<br>La risposta comportamentale più diffusa è quella di digrignare i denti, ma in alcuni casi emerge una certa attitudine alla prepotenza, l'aumento dell'uso di alcolici, e la fame nervosa.<br>In base al livello di stress, la persona può andare incontro a crisi di pianto, rabbia, sensazione di solitudine ed impotente ad affrontare il cambiamento, tensione ed infelicità senza un valido motivo.<br>I disturbi psicosomatici correlati allo stress sono: il disturbo post traumatico da stress, disturbo acuto da stress, disturbi psicosomatici (asma bronchiale, ipertensione arteriosa, colite, eczema cutaneo, alopecia psicogena, ulcera gastro-duodenale), fibromialgia, depressione, disturbo bipolare, disturbi d'ansia, disturbi della sfera sessuale, disturbi dell'alimentazione (anoressia, bulimia).<br>Sebbene non ci sia una vera e propria soluzione che possa risolvere questo disturbo, è ormai certo che facendo ricorso a tecniche di rilassamento, meditazione mindfulness, neurofeedback, e soprattutto alla psicoterapia cognitivo comportamentale si riescono ad ottenere ottimi risultati.",
+			"TestoPatologia": "Lo stress è la risposta psicologica e fisiologica che l'organismo mette in atto nei confronti di compiti, difficoltà o eventi della vita valutati come eccessivi o pericolosi.<br>La sensazione che si prova in una situazione di stress è di essere di fronte ad una forte pressione mentale ed emotiva apparentemente insormontabile.<br>Il termine stress fu impiegato per la prima volta nel 1936 da Hans Selye. Questi lo definì come &ldquo;risposta aspecifica dell'organismo ad ogni richiesta effettuata su di esso&rdquo;. In base al modello di Selye, il processo stressogeno si compone di tre fasi distinte:<br>– fase di allarme: il soggetto segnala l'esubero di doveri e mette in moto le risorse per adempierli;<br>– fase di resistenza: il soggetto stabilizza le sue condizioni e si adatta al nuovo tenore di richieste;<br>– fase di esaurimento: in questa fase si registra la caduta delle difese e la successiva comparsa di sintomi fisici, fisiologici ed emotivi.<br><br>La durata dell'evento stressante porta a distinguere lo stress in due categorie. Quello acuto e quello cronico. Il primo si verifica una sola volta e in un lasso di tempo limitato; mentre nel secondo, lo stimolo è di lunga durata.<br>Lo stress può essere imputato ad eventi della vita sia piacevoli che spiacevoli (ad esempio: matrimonio, nascita di un figlio, morte di una persona cara, divorzio, pensionamento, problemi sessuali); cause fisiche: il freddo o il caldo intenso, abuso di fumo e di alcol, gravi limitazioni nei movimenti; fattori ambientali: la mancanza di un'abitazione, ambienti rumorosi, inquinati sono fattori determinanti di un certo stato di stress oppure malattie organiche: infatti, quando il nostro corpo è affetto da una malattia, l'intero organismo, nel tentativo di difendersi, si pone in uno stato di tensione che, nella maggior parte dei casi, per le scarse difese in grado di apportare, sfocia in una condizione di stress.<br>I soggetti affetti da stress accusano generalmente mal di testa, dolori muscolari in particolare alla schiena al collo ed alle spalle, dolore allo stomaco, tachicardia, agitazione e irrequietezza, problemi di sonno, stanchezza, perdita di appetito, problemi sessuali ed acufeni (tintinni, fischi) nelle orecchie.<br>La risposta comportamentale più diffusa è quella di digrignare i denti, ma in alcuni casi emerge una certa attitudine alla prepotenza, l'aumento dell'uso di alcolici, e la fame nervosa.<br>In base al livello di stress, la persona può andare incontro a crisi di pianto, rabbia, sensazione di solitudine ed impotente ad affrontare il cambiamento, tensione ed infelicità senza un valido motivo.<br>I disturbi psicosomatici correlati allo stress sono: il disturbo post traumatico da stress, disturbo acuto da stress, disturbi psicosomatici (asma bronchiale, ipertensione arteriosa, colite, eczema cutaneo, alopecia psicogena, ulcera gastro-duodenale), fibromialgia, depressione, disturbo bipolare, disturbi d'ansia, disturbi della sfera sessuale, disturbi dell'alimentazione (anoressia, bulimia).<br>Sebbene non ci sia una vera e propria soluzione che possa risolvere questo disturbo, è ormai certo che facendo ricorso a tecniche di rilassamento, meditazione mindfulness, neurofeedback, e soprattutto alla psicoterapia cognitivo comportamentale si riescono ad ottenere ottimi risultati.",
 			"sessoPatologia": "",
 			"chiaviPatologia": "",
 			"scheda": 44,
@@ -9619,7 +9647,7 @@ DB.set= {
 		},
 		{
 			"NomePatologia": "Stroke",
-			"TestoPatologia": "...",
+			"TestoPatologia": "L'ictus cerebrale o STROKE è una patologia causata dall'improvvisa riduzione o interruzione dell'arrivo di sangue a specifiche zone del cervello, che pertanto non ricevono più ossigeno e nutrienti in misura sufficiente a sopravvivere. La conseguenza finale è la morte del tessuto cerebrale interessato.<br>I sintomi che hanno portato il paziente all'osservazione del medico dipendono dal fatto che le zone del cervello danneggiate non sono più in grado di assolvere la loro funzione, che pertanto viene meno. Si hanno così, con inizio improvviso, varie manifestazioni, come ad esempio: difficoltà o impossibilità a muovere un braccio o una gamba, deviazione della bocca, difficoltà ad articolare le parole (sensazione di “bocca impastata”), disturbi del linguaggio, sia della produzione (difficoltà a trovare le parole, parole prive di senso) che della comprensione e deviazione dello sguardo e riduzione o perdita di sensibilità e/o di mobilità di una metà del corpo.<br><br>L'ictus cerebrale viene classificato in:<br>- ictus cerebrale ischemico o ischemia cerebrale,  cioè l'infarto del cervello, che corrisponde a quanto avviene nel cuore, e che è causato dall'occlusione di un'arteria all'interno del cervello in conseguenza di diversi processi<br>- ictus cerebrale emorragico, che è causato invece dalla rottura di un'arteria all'interno del cervello e dal conseguente accumulo di sangue nel tessuto cerebrale, che comprime le zone vicine e ne induce la sofferenza.<br><br>Esistono diverse cause dell'insorgenza di un ictus ischemico, tra le principali emerge:<br>- la presenza di stenosi serrata, cioè di marcato restringimento del lume dell'a. carotide o dell'a. vertebrale, cioè la presenza di un restringimento del calibro delle arterie che portano il sangue al cervello a causa dell'accumulo sulla parete di materiale e detriti di origine lipidica (cioè “grassi” circolanti) e infiammatoria<br>- la presenza di aritmie del cuore, come la fibrillazione atriale, che può essere persistente oppure ricorrente, cosiddetta parossistica<br>- la presenza di malattie cardiache, come la cardiopatia dilatativa, spesso conseguenza di un infarto del miocardio, in particolare se condiziona una dilatazione delle camere cardiache. Queste ultime due condizioni predispongono alla formazione di trombi nelle camere cardiache, i cui frammenti possono distaccarsi ed essere trasportati dal circolo fino ad occludere le arterie del cervello. Cause rare di ictus cerebrale ischemico, soprattutto in giovane età, sono per esempio le dissecazioni delle arterie extra- e intracraniche e alcune malattie genetiche.",
 			"sessoPatologia": "",
 			"chiaviPatologia": "",
 			"scheda": 41,
@@ -9736,7 +9764,7 @@ DB.set= {
             "contenuti": [
                 {
                     "TitoloTeoria": "Strutture anatomiche",
-                    "TestoTeoria": "xxx"
+                    "TestoTeoria": "La struttura del padiglione auricolare comprende:<br><br><b>La lamina cartillaginea</b><br>E' costituita da una fibrocartilagine elastica presentando un rivestimento cutaneo, la superficie ha delle depressioni e rilevatezze, la lamina cartilaginea è connessa con parti circostanti da legamenti e muscoli.<br><br><b>I egamenti</b><br>L'orecchio è unito all'osso temporale dal legamento anteriore dal trago alla spina dell'elice, alla radice del processo zigomatico dell'osso temporale; dal legamento posteriore che unisce la superficie posteriore della conca alla superficie laterale del processo mastoideo.<br><br><b>Muscoli estrinseci</b><br>Sono l'auricolare superiore e posteriore innervati dai rami del facciale.<br><br><b>Muscoli intrinseci</b><br> sono il muscolo grande e piccolo dell'elice, del trago, antitrago, (posti sulla superficie laterale dell'orecchio esterno) i muscoli trasverso e obliquo del padiglione(situati sulla superficie mastoidea). Sono innervati da i rami del nervo facciale.<br><br><b>Vascolarizzazione</b><br>Rappresentata da rami dell'arteria auricolare posteriore e dell'arteria temporale superficiale che originano dalla carotide esterna. Le vene dell'orecchio si dividono come le arterie anteriori e posteriori che confluiscono nella vena giugulare interna.<br><br><b>La cute</b><br>La cute del padiglione auricolare è più sottile, regolare e liscia."
                 },
                 {
                     "TitoloTeoria": "Mappa e aree",
@@ -9748,11 +9776,11 @@ DB.set= {
                 },
 				{
 					"TitoloTeoria": "Zone di frequenza",
-					"TestoTeoria": "Come sosteneva Paul Nogier, esistono sette regioni distinte del corpo, che risuonano con altrettante frequenze di base e che sono state classificate con le lettere da A a G. Le lettere indicano anche alcune condizioni di salute legate al tipo di tessuto di una specifica regione d'organo.<br>Ogni colore corrisponde a una frequenza di fotoni oscillanti di luce: si va dalla più bassa frequenza del rosso a frequenze gradualmente più elevate del prisma. Gli stessi effetti prodotti dalle lunghezze d'onda progressivamente più corte, di diversi filtri luminosi colorati sul tessuto corporeo, si possono riscontrare anche con frequenze gradualmente più alte di luce lampeggiante (frequenze più veloci di impulsi elettrici o frequenze più alte di stimolazione laser).<br><br><br><b>Zona A - Vitalità cellulare<br /></b><i>Colore: </i><span style='color:#e3a15d;'>Arancio</span><br /><i>Frequenza elettrica: </i>2.3Hz<br> <i>Fraquenza laser: </i>292Hz<br /><br>Questa zona corrisponde alla linea mediana del corpo fisico, come avviene nella M.T.C. per i meridiani dell'agopuntura Vaso Concezione e Vaso Governatore, e influisce sull'energia reticolare primitiva e le forze primordiali che condizionano l'organizzazione cellulare.<br>Tale frequenza è spesso individuabile sui tessuti segnati da cicatrici o disturbi e riguarda l'organizzazione embrionale del tessuto cellulare. Viene utilizzata per trattare l'iperattività e la proliferazione cellulare, le infiammazioni o i processi neoplastici.<br><br><br><b>Zona B - Metabolismo nutrizionale<br /></b><i>Colore: </i><span style='color:#da554d;'>Rosso</span><br /><i>Frequenza elettrica: </i>5.0Hz<br> <i>Fraquenza laser: </i>584Hz<br><br>Questa zona corrisponde agli organi interni. La velocità ideale per stimolare i punti nel padiglione auricolare è la frequenza di 5Hz: è utilizzata per trattare disturbi nutrizionali e dell'assimilazione, malnutrizione dei tessuti, disfunzioni neurovegetative, allergie organiche, anomalie costituzionali, squilibrio parasimpatico, nel trattamento endodermico di organi viscerali collegati con la seconda e terza fase Nogier.<br><br><br><b>Zona C - Movimenti cinetici<br /></b><i>Colore: </i><span style='color:#dfbc4e;'>Giallo</span><br /><i>Frequenza elettrica: </i>10.0Hz<br> <i>Fraquenza laser: </i>1168Hz<br><br>Questa zona riguarda la propriocezione, ovvero i movimenti cinetici dell'apparato muscolo-scheletrico. La frequenza è di 10 Hz, utilizzata per trattare i punti auricolari sull'antielice e le aree circostanti del padiglione, come la fossa scafoide e la fossa triangolare, quando si presentano dolore miofasciale, eccitazione del sistema nervoso simpatico, disturbi della somatizzazione, allergie cutanee, spasmi motori, patologie muscolari e qualsiasi problema aggravato dal movimento cinetico o nei trattamenti muscolo-scheletrici mesodermici legati alla seconda e terza fase di Nogier.<br><br><br><b>Zona D - Coordinamento globale<br /></b><i>Colore: </i><span style='color:#df8b5c;'>Rosso-arancio</span><br /><i>Frequenza elettrica: </i>20.0Hz<br> <i>Fraquenza laser: </i>2336Hz<br><br>Questa zona corrisponde al corpo calloso e le commessure anteriori, che connettono le associazioni tra i due lati del cervello, e si trova sul trago esterno del padiglione auricolare. La frequenza è utilizzata in casi di disfunzioni trasversali, problemi di simmetria cerebrale, contro divergenza, disturbi di coordinazione dei due lati del corpo, disfunzioni bilaterali, dolori mediani.<br>In un individuo destrorso, il trago destro corrisponde al Vaso Concezione e il trago sinistro al Vaso Governatore della M.T.C. e viceversa in un mancino.<br><br><br><b>Zona E - Interazioni neurologiche</b><br> <i>Colore: </i><span style='color:#86a050;'>Verde</span><br /><i>Frequenza elettrica: </i>40.0Hz<br> <i>Fraquenza laser: </i>4672Hz<br><br>Questa zona corrisponde al midollo spinale e ai nervi periferici e si colloca sulla coda elicoidale del padiglione auricolare.<br>La frequenza viene utilizzata in caso di disturbi spinali, della pelle, dermatiti, cicatrici cutanee, neuropatie, nevralgie, herpes zoster.<br><br><br><b>Zona F - Reazioni emotive</b><br><i>Colore: </i><span style='color:#a287b0;'>Blu</span><br /><i>Frequenza elettrica: </i>80.0Hz<br><i>Fraquenza laser: </i>9334Hz<br><br>Questa zona è collegata al tronco cerebrale, al talamo, al sistema limbico e allo striato e si trova sul lobo periferico del padiglione auricolare. <br>La frequenza viene utilizzata per trattare problematiche legate a posture inconsce, riflessi incondizionati, tic, spasmi muscolari, balbuzie, mal di testa, dolore facciale, depressione clinica e disturbi emotivi, nella terapia ai punti neuroendocrini ectodermici, collegati alla seconda e terza fase di Nogier.<br><br><br><b>Zona G - Organizzazione intellettuale</b><br><i>Colore: </i><span style='color:#bb5eae;'>Viola</span><br /><i>Frequenza elettrica: </i>160.0Hz<br> <i>Fraquenza laser: </i>18688Hz<br><br>Questa zona corrisponde alle funzioni psicologiche correlate alla corteccia frontale. Si trova sulla parte mediale del lobulo.<br>La frequenza viene usata per disturbi del sistema piramidale, disturbi della memoria, disfunzioni intellettuali, reazioni psicosomatiche, nervosismo ossessivo, preoccupazione cronica, riflessi condizionati malfunzionanti, psicopatologia profonda, nel trattamento dei punti della corteccia cerebrale ectodermica correlati alla seconda e terza fase di Nogier."
+					"TestoTeoria": "Come sosteneva Paul Nogier, esistono sette regioni distinte del corpo, che risuonano con altrettante frequenze di base e che sono state classificate con le lettere da A a G. Le lettere indicano anche alcune condizioni di salute legate al tipo di tessuto di una specifica regione d'organo.<br>Ogni colore corrisponde a una frequenza di fotoni oscillanti di luce: si va dalla più bassa frequenza del rosso a frequenze gradualmente più elevate del prisma. Gli stessi effetti prodotti dalle lunghezze d'onda progressivamente più corte, di diversi filtri luminosi colorati sul tessuto corporeo, si possono riscontrare anche con frequenze gradualmente più alte di luce lampeggiante (frequenze più veloci di impulsi elettrici o frequenze più alte di stimolazione laser).<br><br><br><b>Zona A - Vitalità cellulare<br></b><i>Colore: </i><span style='color:#e3a15d;'>Arancio</span><br><i>Frequenza elettrica: </i>2.3Hz<br> <i>Fraquenza laser: </i>292Hz<br><br>Questa zona corrisponde alla linea mediana del corpo fisico, come avviene nella M.T.C. per i meridiani dell'agopuntura Vaso Concezione e Vaso Governatore, e influisce sull'energia reticolare primitiva e le forze primordiali che condizionano l'organizzazione cellulare.<br>Tale frequenza è spesso individuabile sui tessuti segnati da cicatrici o disturbi e riguarda l'organizzazione embrionale del tessuto cellulare. Viene utilizzata per trattare l'iperattività e la proliferazione cellulare, le infiammazioni o i processi neoplastici.<br><br><br><b>Zona B - Metabolismo nutrizionale<br></b><i>Colore: </i><span style='color:#da554d;'>Rosso</span><br><i>Frequenza elettrica: </i>5.0Hz<br> <i>Fraquenza laser: </i>584Hz<br><br>Questa zona corrisponde agli organi interni. La velocità ideale per stimolare i punti nel padiglione auricolare è la frequenza di 5Hz: è utilizzata per trattare disturbi nutrizionali e dell'assimilazione, malnutrizione dei tessuti, disfunzioni neurovegetative, allergie organiche, anomalie costituzionali, squilibrio parasimpatico, nel trattamento endodermico di organi viscerali collegati con la seconda e terza fase Nogier.<br><br><br><b>Zona C - Movimenti cinetici<br></b><i>Colore: </i><span style='color:#dfbc4e;'>Giallo</span><br><i>Frequenza elettrica: </i>10.0Hz<br> <i>Fraquenza laser: </i>1168Hz<br><br>Questa zona riguarda la propriocezione, ovvero i movimenti cinetici dell'apparato muscolo-scheletrico. La frequenza è di 10 Hz, utilizzata per trattare i punti auricolari sull'antielice e le aree circostanti del padiglione, come la fossa scafoide e la fossa triangolare, quando si presentano dolore miofasciale, eccitazione del sistema nervoso simpatico, disturbi della somatizzazione, allergie cutanee, spasmi motori, patologie muscolari e qualsiasi problema aggravato dal movimento cinetico o nei trattamenti muscolo-scheletrici mesodermici legati alla seconda e terza fase di Nogier.<br><br><br><b>Zona D - Coordinamento globale<br></b><i>Colore: </i><span style='color:#df8b5c;'>Rosso-arancio</span><br><i>Frequenza elettrica: </i>20.0Hz<br> <i>Fraquenza laser: </i>2336Hz<br><br>Questa zona corrisponde al corpo calloso e le commessure anteriori, che connettono le associazioni tra i due lati del cervello, e si trova sul trago esterno del padiglione auricolare. La frequenza è utilizzata in casi di disfunzioni trasversali, problemi di simmetria cerebrale, contro divergenza, disturbi di coordinazione dei due lati del corpo, disfunzioni bilaterali, dolori mediani.<br>In un individuo destrorso, il trago destro corrisponde al Vaso Concezione e il trago sinistro al Vaso Governatore della M.T.C. e viceversa in un mancino.<br><br><br><b>Zona E - Interazioni neurologiche</b><br> <i>Colore: </i><span style='color:#86a050;'>Verde</span><br><i>Frequenza elettrica: </i>40.0Hz<br> <i>Fraquenza laser: </i>4672Hz<br><br>Questa zona corrisponde al midollo spinale e ai nervi periferici e si colloca sulla coda elicoidale del padiglione auricolare.<br>La frequenza viene utilizzata in caso di disturbi spinali, della pelle, dermatiti, cicatrici cutanee, neuropatie, nevralgie, herpes zoster.<br><br><br><b>Zona F - Reazioni emotive</b><br><i>Colore: </i><span style='color:#a287b0;'>Blu</span><br><i>Frequenza elettrica: </i>80.0Hz<br><i>Fraquenza laser: </i>9334Hz<br><br>Questa zona è collegata al tronco cerebrale, al talamo, al sistema limbico e allo striato e si trova sul lobo periferico del padiglione auricolare. <br>La frequenza viene utilizzata per trattare problematiche legate a posture inconsce, riflessi incondizionati, tic, spasmi muscolari, balbuzie, mal di testa, dolore facciale, depressione clinica e disturbi emotivi, nella terapia ai punti neuroendocrini ectodermici, collegati alla seconda e terza fase di Nogier.<br><br><br><b>Zona G - Organizzazione intellettuale</b><br><i>Colore: </i><span style='color:#bb5eae;'>Viola</span><br><i>Frequenza elettrica: </i>160.0Hz<br> <i>Fraquenza laser: </i>18688Hz<br><br>Questa zona corrisponde alle funzioni psicologiche correlate alla corteccia frontale. Si trova sulla parte mediale del lobulo.<br>La frequenza viene usata per disturbi del sistema piramidale, disturbi della memoria, disfunzioni intellettuali, reazioni psicosomatiche, nervosismo ossessivo, preoccupazione cronica, riflessi condizionati malfunzionanti, psicopatologia profonda, nel trattamento dei punti della corteccia cerebrale ectodermica correlati alla seconda e terza fase di Nogier."
 				},
 				{
 					"TitoloTeoria": "Innervazione",
-					"TestoTeoria": "Nell’auricolopuntura è molto importante conoscere l’innervazione del padiglione auricolare: esso, infatti, è un organo ricco di nervi e si stima la presenza di circa 10000 recettori sensoriali, localizzati tra epidermide e derma. I rami motori, che giungono al padiglione auricolare e alla sua muscolatura intrinseca, provengono dal VII nervo facciale o faciale. Almeno quattro nervi del padiglione auricolare, inoltre, giungono da nervi cranici e spinali.<br>Il padiglione auricolare è interamente coperto da un sottile strato cutaneo che contiene una fitta ramificazione di nervi, motivo per cui le aree anatomiche dell’orecchio esterno sono in parte collegate al tessuto ectodermico.<br>Il padiglione auricolare non è innervato in modo netto, come potrebbe sembrare dalla descrizione che segue, ma è costituita da un denso intreccio di fibre nervose.<br /><br /><b>Nervo auricolotemporale</b><br />Il nervo auricolotemporale è un ramo del nervo mandibolare del trigemino e innerva soprattutto il trago, una parte dell’antitrago, la radice e il ginocchio dell’elice, l’apice del padiglione auricolare, la fossa triangolare, la radice inferiore e una parte della radice superiore dell’antelice.<br>Tale zona auricolare corrisponde al tessuto nervoso somatosensoriale legato agli organi mesodermici.<br /><br /><b>Ramo auricolare del nervo vago</b><br />Il ramo auricolare del nervo vago (ABVN – Auricular Branch of Vagus Nerve), o branca auricolare, è l’unica innervazione cutanea da parte del nervo vago. Si occupa principalmente del funzionamento della conca, sia inferiore sia superiore, e di parte del trago e dell’antitrago. La zona rappresenta i neuroni collegati al tessuto endodermico.<br /><br /><b>Nervo occipitale minore</b><br />Il nervo occipitale minore giunge dal plesso cervicale superficiale (PCS, C2-C3) ed è responsabile dell’innervazione del corpo dell’antelice, della sua radice superiore, della fossa scafoidea, dell’area dell’elice, che va dall’apice del padiglione alla coda dell’elice, e della fossa triangolare.<br /><br /><b>Il grande nervo auricolare</b><br>Come il nervo occipitale minore, anche il grande nervo auricolare deriva dal plesso cervicale superficiale (PCS, C2-C3) e innerva principalmente il lobulo e una parte del corpo dell’antelice.<br />Il plesso solare innerva le regioni auricolari che rappresentano il tessuto ectodermico."
+					"TestoTeoria": "Nell'auricolopuntura è molto importante conoscere l'innervazione del padiglione auricolare: esso, infatti, è un organo ricco di nervi e si stima la presenza di circa 10000 recettori sensoriali, localizzati tra epidermide e derma. I rami motori, che giungono al padiglione auricolare e alla sua muscolatura intrinseca, provengono dal VII nervo facciale o faciale. Almeno quattro nervi del padiglione auricolare, inoltre, giungono da nervi cranici e spinali.<br>Il padiglione auricolare è interamente coperto da un sottile strato cutaneo che contiene una fitta ramificazione di nervi, motivo per cui le aree anatomiche dell'orecchio esterno sono in parte collegate al tessuto ectodermico.<br>Il padiglione auricolare non è innervato in modo netto, come potrebbe sembrare dalla descrizione che segue, ma è costituita da un denso intreccio di fibre nervose.<br><br><b>Nervo auricolotemporale</b><br>Il nervo auricolotemporale è un ramo del nervo mandibolare del trigemino e innerva soprattutto il trago, una parte dell'antitrago, la radice e il ginocchio dell'elice, l'apice del padiglione auricolare, la fossa triangolare, la radice inferiore e una parte della radice superiore dell'antelice.<br>Tale zona auricolare corrisponde al tessuto nervoso somatosensoriale legato agli organi mesodermici.<br><br><b>Ramo auricolare del nervo vago</b><br>Il ramo auricolare del nervo vago (ABVN – Auricular Branch of Vagus Nerve), o branca auricolare, è l'unica innervazione cutanea da parte del nervo vago. Si occupa principalmente del funzionamento della conca, sia inferiore sia superiore, e di parte del trago e dell'antitrago. La zona rappresenta i neuroni collegati al tessuto endodermico.<br><br><b>Nervo occipitale minore</b><br>Il nervo occipitale minore giunge dal plesso cervicale superficiale (PCS, C2-C3) ed è responsabile dell'innervazione del corpo dell'antelice, della sua radice superiore, della fossa scafoidea, dell'area dell'elice, che va dall'apice del padiglione alla coda dell'elice, e della fossa triangolare.<br><br><b>Il grande nervo auricolare</b><br>Come il nervo occipitale minore, anche il grande nervo auricolare deriva dal plesso cervicale superficiale (PCS, C2-C3) e innerva principalmente il lobulo e una parte del corpo dell'antelice.<br>Il plesso solare innerva le regioni auricolari che rappresentano il tessuto ectodermico."
 				},
 				{
 					"TitoloTeoria": "Derivazione embriologica",
@@ -9762,11 +9790,15 @@ DB.set= {
             "noList": true
         },
         {
-            "TitoloSezione": "Concetti terapia auricolare",
+            "TitoloSezione": "Concetti di terapia auricolare",
             "contenuti": [
                 {
                     "TitoloTeoria": "Introduzione",
                     "TestoTeoria": "xxx"
+                },
+                {
+                    "TitoloTeoria": "Cenni storici",
+                    "TestoTeoria": "Le prime nozioni di riflessologia, basata sulla corrispondenza tra alcune aree dell'orecchio e determinate regioni del corpo umano, si trovano già nel “Huang Di Nei Jing”, il “Libro di medicina interna dell'Imperatore Giallo”, ovvero l'opera fondamentale della medicina cinese, compilata presumibilmente attorno al 200 a.C.<br>Ippocrate stesso ha descritto delle tecniche di puntura dell' orecchio per curare molte malattie, in particolare l'impotenza e per aiutare l'espletamento del parto. I Turchi, nel XIII° sec., insegnavano una pratica dell'Auricoloterapia sia con dei bastoncini per il massaggio sia con piccole cauterizzazioni per il trattamento di numerose patologie.<br>Nel XIV° sec. Jerome Bosch, pittore fiammingo, dipinse il celebre Giardino delle Delizie, nel quale si riconosce distintamente l'impiego di tecniche di auricoloterapia per il trattamento dell' impotenza e della frigidità con un punto che da lui prese il nome. <br>Nel XV° sec. i corsari avevano notato che ponendo un anello d'oro al centro del lobulo dell'orecchio dominante si migliorava l'acuità visiva ed infatti quando lo si stimola in R.M.F. (Risonanza Magnetica Funzionale) si ottiene un'eccitazione delle zone cerebrali occipitali che notoriamente rappresentano una delle 7 aree visive del nostro cervello. <br>Il medico italiano Antonio Valsalva nel 1717 riportava notizie sulla cauterizzazione (trattamento eseguito con un ferro rovente) dell'orecchio per la cura del mal di denti. In particolare descrisse un punto, detto H, che la R.M.F. ha dimostrato corrispondere al legamento odonto-alveolare che comprende una guaina che, se edemizzata, provoca dolore: pungendo il punto H si risolve l'edema e quindi il dolore.<br><br><b>Le intuizioni di Paul Nogier</b><br>La storia moderna dell'Auricoloterapia e Agopuntura auricolare è strettamente legata al nome di Paul Nogier, medico francese di Lione che, partendo dall'osservazione di come alcuni suoi pazienti affetti da sciatalgia fossero guariti grazie a una curiosa pratica terapeutica che prevedeva la cauterizzazione dell'orecchio esterno, si avvicinò a questa metodo, iniziando egli stesso a cauterizzare e poi stimolare con aghi il padiglione auricolare. <br>Nel 1956 Nogier ipotizzò che a livello dell'antelice esistesse la rappresentazione del rachide e più in generale che ci fosse una corrispondenza tra i punti auricolari e le diverse parti del corpo, nel padiglione si poteva riconoscere l'immagine di un feto rovesciato. <br><br>Nella sua mappa il corpo umano era proiettato nel padiglione, con una forma di feto capovolto, facendo cosi' il Dottor Nogier, fece una prima sistematizzazione del sistema auricolare che fu chiamata &ldquo; terapia di auricolo-agopuntura&rdquo; <br>Da questa scoperta Nogier inizio uno studio sistematico, trattando differenti patologie e usando varie combinazioni di punti, individuò con precisione le localizzazioni, comprendendo il meccanismo d'azione del nuovo metodo terapeutico.<br><br><b>L'incontro con l'Oriente e la Scuola Cinese</b><br>Nel 1957 Paul Nogier propone la prima mappa contenente 40 punti, pubblicando i suoi lavori dapprima su una rivista in lingua tedesca, per poi essere successivamente tradotti in diverse lingue tra cui il cinese. <br>La mappa di Nogier viene introdotta molto presto in Cina, dove conosce un notevole sviluppo. <br>Già nel 1959 il Prof. Xu Zuolin pubblica un lavoro su 255 casi di applicazione clinica in auricoloterapia. <br>Negli anni seguenti la mappa viene arricchita di oltre 100 punti e intorno agli anni 70 si raggiunge l'apice con diverse centinaia di agopunti auricolari, diffondendosi in modo rapido e capillare, tra i primi a praticarla furono i medici militari dell'Armata Popolare di Nanchino che pubblicarono una guida tascabile sull'Agopuntura Auricolare, comprensiva di una semplice mappa auricolare, chiaramente derivata da quella elaborata da Nogier. <br>Da quel momento francesi e cinesi hanno percorso strade differenti, la scuola francese è sfociata nell'Auricolomedicina, di contro la scuola cinese ha sviluppato quegli aspetti della MTC (Medicina Nel tempo le due principali scuole di Auricoloterapia, francese e cinese, hanno sviluppato mappe che per alcune localizzazioni divergono anche in maniera sostanziale, con una contemporanea crescita tumultuosa del numero degli agopunti auricolari sui cui nomi non esiste piena concordanza. <br>Per ovviare a questi problemi, il WHO ha creato una commissione di esperti con il compito di raggiungere la standardizzazione nella nomenclatura dei punti e proporre infine una mappa condivisa. Dopo anni di lavoro i risultati raggiunti dalla commissione sono meno che modesti, principalmente a causa delle tensioni esistenti tra i membri delle due scuole. Nella riunione di Seoul del 1987 su 90 punti proposti dalla scuola cinese solo per 43 si è raggiunto il consenso su tre criteri (punti conosciuti a livello internazionale, efficacia terapeutica, sede generalmente accettata), per altri 36 si è ottenuto il consenso solo sui primi due requisiti. Ai primi 43 punti è stato assegnato un numero di codice, un nome in Pinyin, un carattere cinese e un nome in inglese. <br><br><b>Standardizzazione e metodo</b><br>Dalla riunione del 1990 in poi non ci sono stati rilevanti progressi nella standardizzazione e classificazione dei punti auricolari. Attualmente oltre alla scuola Francese e Cinese sono attive altre scuole sviluppatesi in Germania, Russia, USA, Italia, scuole che hanno<br>portato nuovi contributi sia alla ricerca di base che a quella clinica, favorendo l'ulteriore diffusione di questa metodica in tutto il mondo.<br>Il merito di Nogier rimane quello di essere stato il primo a riconoscere nell'orecchio una somatotopia che ha cercato di sistematizzare; non ha certo inventato l'auricoloterapia, ma è stato il primo ad immaginare un feto rappresentato sull' orecchio, da cui dedusse una somatotopia che cercò di sistematizzare dando corpo ad una pratica vecchia di 3000 anni.  <br>I mezzi di ricerca più moderni hanno permesso poi di sottoporre a verifica quanto Nogier aveva intuito, di correggere ciò che non era perfetto e di stabilire scientificamente i criteri di una nuova neuro-agopuntura dell'orecchio.<ul><li>1963 J.Boyer, agopuntore, descrive le proprietà elettriche dei punti di agopuntura, compresi quelli dei meridiani che passano per l'orecchio.</li><li>1969 R. Jarricot, studiando i metameri, osserva la corrispondenza tra aree metameriche e localizzazioni dei punti auricolari.</li><li>1972 Jean Begue, elettrofisiologo, studia i dermo-potenziali e lavorando sull'orecchio dimostra che esiste una d.d.p. tra un punto e l'alto di circa 8mV.</li><li>1975 J.Bossy, neuroanatomico di Montpellier, studia l'orecchio da un punto di vista neuroanatomico.</li><li>1972-1983 R.Bourdiol lavora sulla spiegazione neuroscientifica dei punto dell'orecchio.</li><li>1980 Pierre Rabichong, neurochirurgo del midollo, lavora sulle caratteristiche fisiche dei punti dell'orecchio.</li><li>1979 Robert Covertat conferma i lavori di Rabichong </li><li>1980-85 René Kovacs lavora sulla neurologia dell'orecchio ponendo le basi neurofisiologiche per lo studio dell'auricoloterapia.</li><li>1980 Tourignan conferma numerosi punti auricolari e Kruger lavora in medicina veterinaria sul cavallo e sul cane.</li><li>1985 odine Hausach, istologo a Montpellier, presenta un lavoro sull'istologia dei punti dell'orecchio.</li><li>1986 L'O.M.S. riconosce l'efficacia dell'auricoloterapia.</li><li>1990 Si stabilisce la prima nomenclatura internazionale dei punti auricolari.</li><li>1994 Si svolge a Lione il I° Congresso Internazionale di Auricoloterapia.</li><li>1994 David Alimì, neurofisiologo, dimostra che le variazioni del campo elettrico dei punti dell'orecchio seguono il ritmo circadiano del cortisolo con un picco alle ore 8 seguito da una discesa ed un nuovo picco alle ore 17, seguito da una nuova discesa; la secrezione di cortisolo è praticamente assente durante la notte, per riprendere un'ora circa prima del risveglio, con un seguente picco verso le ore 8.</li><li>1997 Michel Marignan, posturologo allievo di P.Nogier, dimostra che attivando termicamente dei punti sull'avambraccio si ottenevano variazioni termiche a livello di punti precisi dell'orecchio e viceversa.</li><li>1997 David Alimì dimostra l'efficacia dell'auricoloterapia nel trattamento del dolore nocicettivo e neuropatico oncologico resistente a terapia, dimostrandone la supremazia rispetto alla terapia farmacologica.</li><li>2002 David Alimì con R.M.F. dimostra la corrispondenza tra la cartografia cerebrale e quella auricolare. </li><li>2003 David Alimì conferma l'efficacia dell'auricoloterapia nei dolori oncologici in doppio cieco con doppio placebo.</li></ul><br><br><b>Auricoloterapia e Università</b><br>La Facoltà di Medicina di Parigi 13 Bobigny, nata nel 1068, istituì nel 1982 grazie al Prof. Carnillot, il Diploma Universitario in Medicina Naturale comprendente l'Agopuntura,la Fitoterapia, la Mesoterapia, l'Osteopatia, l'Omeopatia e l'Auricolo-terapia (aggiunta all' ultimo momento all'elenco delle Medicine Naturali. <br>Nel 1992 Carnillot, biochimico di formazione, propose di istituire il Diploma Universitario di Auricoloterapia e nel 1995 ci furono 2 iscritti! <br>Attualmente si è costituito il Dipartimento Universitario di Medicina Naturale (D.U.ME.NAT.), diretto da Antoine Lazarus, nel cui ambito si attua il Diploma Inter- Universitario di Auricoloterapia (D.I.U.) <br>Il solo modo per sopravvivere era di iniziare una ricerca seria sull'Auricoloterapia e si cominciò nel 2000 con il lavoro pubblicato due anni dopo, nel 2002, sulla corrispondenza tra la cartografia auricolare e quella cerebrale. I primi esperimenti furono fatti sul pollice in quanto, unitamente alle labbra e agli organi genitali, sono le strutture che hanno una più ampia rappresentazione corticale; si evidenziò una corrispondenza perfetta tra la stimolazione diretta del pollice e la stimolazione del punto auricolare corrispondente al pollice che eccitano la medesima area corticale con una precisione millimetrica. Nel 15% degli individui la rappresentazione corticale è bilaterale (pollice dx nell'emisfero sx e anche dx e viceversa per il pollice sx) il che si spiega agevolmente conoscendo il ruolo del corpo calloso che ha il compito di smistare i segnali che gli arrivano tra i due emisferi.<br>Oggi, grazie ai lavori di R.M.F. di perfusione si sa che il corpo calloso funge da direttore tra dx e sx del traffico delle stimolazioni che gli afferiscono. Tutto ciò è molto importante in quanto spiega il motivo per cui in alcune strategie terapeutiche risulterà di grande utilità la stimolazione del corpo calloso. Il ruolo del corpo calloso spiega anche il perché abbiamo la predisposizione ad essere ambidestri pur essendo noto che la bidestria neurologicamente non esiste: o si è destri o si è mancini! <br>Nei cosiddetti ambidestri i circuiti del corpo calloso sono deviati per cui queste persone hanno facilità ad utilizzare più o meno entrambe le mani. Nella rieducazione post-ictus è utile indurre i pazienti ad utilizzare la mano non dominante al fine di attivare tali deviazioni che possono aiutare le rieducazione e la ripresa motoria. La cartografia auricolare e corticale sono omotetiche (omotesia cartografica).<br>L'auricoloterapia è quindi un microsistema, cioè un'area ristretta del corpo dove si proiettano e riflettono funzioni e strutture del corpo. <br>La teoria sui microsistemi è anche alla base della:<br>- Medicina Tradizionale Cinese, <br>- del Modello Riflesso-neurofisiologico attraverso i foglietti embrionali, <br>- del Modello olografico ( chiamato anche ECIWO), secondo cui ogni parte relativamente indipendente del corpo, esempio gli organi zang-fu, gli arti, le ossa, le orecchie il naso etc etc contiene le informazioni dell'intero organismo come ne fosse una sua miniatura; da ciò si deduce che un microsistema può ricevere e/o inviare segnali al resto dell'organismo. <br>- del Modello Neuroendocrino, per cui la risposta viscere- agopunto auricolare risenta dell'azione combinata svolta dal sistema simpatico e dalle ghiandole surrenali. <br>L'auricoloterapia va utilizzata in supporto al Tuina e all'agopuntura, anche se è importante dire che spesso per le patologie acute, l'auricoloterapia è un ottimo e validissimo metodo di cura, mentre per i problemi che si sono cronicizzati è molto più incisivo e risolutivo il massaggio Tuina o l'agopuntura."
                 },
                 {
                     "TitoloTeoria": "Dominanza e lateralità",
@@ -9880,11 +9912,11 @@ DB.set= {
             "contenuti": [
                 {
                     "TitoloTeoria": "Curatore scientifico",
-                    "TestoTeoria": "<img class='autore' src='sets/auricologia/img/autore_antonello_lovato.jpg'><b>Antonello Lovato</b><br>Medico chirurgo Direttore del corso di Agopuntura Auricolare presso l'A.I.R.A.S. di Padova. Nel 2001 si diploma alla Matteo Ricci in Agopuntura Auricolare nel corso diretto dal dott. Romoli che conosce già dal 1998, Nel 2012 consegue il Diploma Interuniversitario di Auricoloterapia presso l'Università di Parigi, diretto del Prof. Alimi, Nel 2018 consegue il Master di II livello presso l'Università di Sassari in Neuromodulazione Auricolare-Auricoloterapia. Consigliere nazionale, delegato regionale per il veneto F.I.S.A.<br><br><b>Pubblicazioni</b><br>- Agopuntura Auricolare. Teoria e Clinica<br>ed. NOI Edizioni<br>Anno 2019<br><b>&raquo;</b> <a class='ext_link' onClick=\"CONN.openUrl('https://www.noiedizioni.com/prodotto/agopuntura-auricolare/');\">https://www.noiedizioni.com/prodotto/agopuntura-auricolare/</a><br><br>- The Medial Surface of che Auriche: Historical and Recent Maps. What Are the Possible Expectation of the 'Thumb-Index Technique'.<br><i>Lovato, Ceccherelli, Gagliardi, Postiglione.</i><br>Anno 2022<br><b>&raquo;</b> <a class='ext_link' onClick=\"CONN.openUrl('https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8879682/' );\">https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8879682/</a><br><br>- Acupuncture in the treatment of Dry Eye Syndrome with anxiety symptoms. A case report.<br><i>Pesavento, Lovato, Cappello, Postiglione.</i><br>Anno 2022<br><b>&raquo;</b> <a class='ext_link' onClick=\"CONN.openUrl('https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9295179/');\">https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9295179/</a>"
+                    "TestoTeoria": "<img class='autore' src='sets/auricologia/img/autore_antonello_lovato.jpg'><b>Antonello Lovato</b><br>Medico chirurgo Direttore del corso di Agopuntura Auricolare presso l'A.I.R.A.S. di Padova. Nel 2001 si diploma alla Matteo Ricci in Agopuntura Auricolare nel corso diretto dal dott. Romoli che conosce già dal 1998. Nel 2012 consegue il Diploma Interuniversitario di Auricoloterapia presso l'Università di Parigi, diretto del Prof. Alimi. Nel 2018 consegue il Master di II livello presso l'Università di Sassari in Neuromodulazione Auricolare-Auricoloterapia. Consigliere nazionale, delegato regionale per il veneto F.I.S.A.<br><br><b>Pubblicazioni</b><br>- Agopuntura Auricolare. Teoria e Clinica<br>ed. NOI Edizioni<br>Anno 2019<br><b>&raquo;</b> <a class='ext_link' onClick=\"CONN.openUrl('https://www.noiedizioni.com/prodotto/agopuntura-auricolare/');\">https://www.noiedizioni.com/prodotto/agopuntura-auricolare/</a><br><br>- The Medial Surface of che Auriche: Historical and Recent Maps. What Are the Possible Expectation of the 'Thumb-Index Technique'.<br><i>Lovato, Ceccherelli, Gagliardi, Postiglione.</i><br>Anno 2022<br><b>&raquo;</b> <a class='ext_link' onClick=\"CONN.openUrl('https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8879682/' );\">https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8879682/</a><br><br>- Acupuncture in the treatment of Dry Eye Syndrome with anxiety symptoms. A case report.<br><i>Pesavento, Lovato, Cappello, Postiglione.</i><br>Anno 2022<br><b>&raquo;</b> <a class='ext_link' onClick=\"CONN.openUrl('https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9295179/');\">https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9295179/</a>"
                 },
                 {
                     "TitoloTeoria": "Riferimenti bibliografici",
-                    "TestoTeoria": "<p class='cont_libri'><img class='libro' src='sets/auricologia/img/libro_antonello_lovato.png'><b>1. Agopuntura Auricolare. Teoria e Clinica</b><br><i>di Antonello Lovato</i><br>ed. NOI Edizioni<br>Anno 2019<br><b>&raquo;</b> <a class='ext_link' onClick=\"CONN.openUrl('https://www.noiedizioni.com/prodotto/agopuntura-auricolare/');\">SCORPI DI PIU'</a><br><br>Il testo si propone come guida teorica e pratica dell’agopuntura auricolare. Descrive la nascita e l’evoluzione dell’agopuntura auricolare in Francia ed in Oriente, analizza le varie aree del padiglione auricolare alla luce delle intuizioni di P. Nogier, confronta e analizza le mappe Francesi e Cinesi e le inserisce nella mappa di T. Oleson. L’anima del libro sono le 99 schede terapeutiche. ll testo si dimostra esaustivo, flessibile e funzionale, adattandosi sia a medici neofiti che esperti.<span style='display: block;' class='l'></span></p><p class='cont_libri'><b>2. Auriculotherapy Manual, Chinese and Western Systems or Ear Acupuncture</b><br><i>di Terry Oleson</i><br>ed. Elsevier<br>Anno 2003</p><p><b>3. Auricular Acupuncture Diagnosis</b><br><i>di Marco Romoli</i><br>ed. Elsevier<br>Anno 2010</p>"
+                    "TestoTeoria": "<p class='cont_libri'><img class='libro' src='sets/auricologia/img/libro_antonello_lovato.png'><b>1. Agopuntura Auricolare. Teoria e Clinica</b><br><i>di Antonello Lovato</i><br>ed. NOI Edizioni<br>Anno 2019<br><b>&raquo;</b> <a class='ext_link' onClick=\"CONN.openUrl('https://www.noiedizioni.com/prodotto/agopuntura-auricolare/');\">SCORPI DI PIU'</a><br><br>Il testo si propone come guida teorica e pratica dell'agopuntura auricolare. Descrive la nascita e l'evoluzione dell'agopuntura auricolare in Francia ed in Oriente, analizza le varie aree del padiglione auricolare alla luce delle intuizioni di P. Nogier, confronta e analizza le mappe Francesi e Cinesi e le inserisce nella mappa di T. Oleson. L'anima del libro sono le 99 schede terapeutiche. ll testo si dimostra esaustivo, flessibile e funzionale, adattandosi sia a medici neofiti che esperti.<span style='display: block;' class='l'></span></p><p class='cont_libri'><b>2. Auriculotherapy Manual, Chinese and Western Systems or Ear Acupuncture</b><br><i>di Terry Oleson</i><br>ed. Elsevier<br>Anno 2003</p><p><b>3. Auricular Acupuncture Diagnosis</b><br><i>di Marco Romoli</i><br>ed. Elsevier<br>Anno 2010</p><p class='cont_libri'><b>4. Auriculotherapy</b><br><i>di Raphael Nogier, MD</i><br>ed. Thiemme<br>Anno 2008</p><p><b>5. Nozioni di Auricoloterapia</b><br><i>di Alfredo Gatto</i><br>ed. Libreria Cortina Torino</p>"
                 }
             ],
             "noList": true
