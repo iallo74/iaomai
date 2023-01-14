@@ -234,7 +234,7 @@ var MODULO_PATOLOGIE = { // extend SET
 			html: "<br>"+SET.convPuntiScheda(DB.set.patologie[n].TestoPatologia)
 					}) +
 			H.sezione({
-			label: TXT("SchedaTerapeutica")+"<br>"+"SCHEDA "+DB.set.patologie[n].scheda,
+			label: TXT("SchedaTerapeutica"),
 			nome: 'protocollo',
 			aperta: op_protocollo,
 			html: SET.convPuntiScheda(ST)

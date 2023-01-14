@@ -50,6 +50,7 @@ var MODULO_TEORIA = { // extend SET
 		var test = __(DB.set.teoria[p].contenuti[t].test);
 		var flowchart = __(DB.set.teoria[p].contenuti[t].flowchart);
 		var gruppo = __(DB.set.teoria[p].contenuti[t].gruppo);
+		var forzaHidden = __(DB.set.teoria[p].contenuti[t].forzaHidden);
 		var html = "<h1>"+htmlEntities(titolo)+"</h1>";
 		var html_cont = SET.convPuntiScheda(DB.set.teoria[p].contenuti[t].TestoTeoria);
 		SET.test = '';
@@ -63,7 +64,7 @@ var MODULO_TEORIA = { // extend SET
 			for(g in GEOMETRIE.gruppi[gruppo].punti){
 				var TS = GEOMETRIE.gruppi[gruppo].punti[g];
 				if(TS.length==3){
-					if(!__(DB.set.punti[TS].hidden,false))elencoTsubo+='<p>[.'+TS+'.]</p>';
+					if(!__(DB.set.punti[TS].hidden,false) || forzaHidden)elencoTsubo+='<p>[.'+TS+'.]</p>';
 				}
 				else elencoTsubo+='<p><span class="pallinoNul"><span class="pNUL"></span>'+htmlEntities(TXT(""+TS))+'</span></p>';
 			}
