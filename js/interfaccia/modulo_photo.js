@@ -681,6 +681,18 @@ var PH = {
 			SCHEDA.formModificato = true;
 		}});
 	},
+	eliminaFotoOnline: function( idFoto ){ // elimina la foto dalla gallery
+		CONFIRM.vis(	TXT("ChiediEliminaFoto"),
+						false,
+						arguments ).then(function(pass){if(pass){
+						var v = getParamNames(CONFIRM.args.callee.toString());
+						for(i in v)eval(getArguments(v,i));
+			CONN.caricaUrl(	'delImgGallery.php',
+							'iU='+PH.idU+'&idFoto='+idFoto,
+							'PH.car_gallery_online');
+			
+		}});
+	},
 	fullFoto: function( i, locale, elenco ){ // elabora la richiesta di mostrare la foto BIG
 		if(typeof(elenco)=='undefined')var elenco = PH.galleryProvvisoria;
 		var locale = false;
@@ -879,6 +891,14 @@ var PH = {
 					else HTML += 'dwnl';
 					HTML += '.png">';
 				}else HTML += '<img src="img/spuntaB.png"/>';
+				
+				HTML += 
+						'			<img class="gall_del"' +
+						'			 	 src="img/ico_cestinoB.png"' +
+						'			 	 onMouseOver="PH.overCestino=true;"' +
+						'			 	 onMouseOut="PH.overCestino=false;"' +
+						'			 	 onClick="PH.eliminaFotoOnline(\''+PH.galleryOnline[f].idFoto+'\');">';
+						
 				HTML += '		</div>' +
 						'	</div>' +
 						'</div>';
