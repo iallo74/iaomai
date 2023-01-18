@@ -2003,8 +2003,8 @@ DB.TXT = {
 			esp: ""
 		},
 		ArEliminate: {
-			ita: "INUTILIZZATI",
-			eng: "UNUSED",
+			ita: "CANCELLATI",
+			eng: "DELETED",
 			esp: ""
 		},
 		ArImporta: {

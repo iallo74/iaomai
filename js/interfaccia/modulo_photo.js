@@ -436,6 +436,7 @@ var PH = {
 				var isFile = false;
 				if(src && src.indexOf("data:")!=0){
 					isFile = true;
+					type = src;
 					src = 'img/ext/'+src+'Big.jpg';
 				}
 				if(!locale){
@@ -460,7 +461,7 @@ var PH = {
 				if(!PH.actionClick){
 					HTML += 'if(!PH.overCestino)';
 					if(!isFile)HTML += 'PH.fullFoto('+i+','+locale+');';
-					else HTML += 'PH.openFile('+i+');';
+					else HTML += 'PH.openFile('+i+',\'\',type);';
 				}else HTML += PH.actionClick;
 				HTML += '"';
 				if(name)HTML += ' title="'+htmlEntities(name)+'"';
@@ -722,10 +723,12 @@ var PH = {
 			}
 		}
 	},
-	openFile: function( i, elenco ){ // apro il file online
+	openFile: function( i, elenco, fileType ){ // apro il file online
 		if(!CONN.retNoConn())return;
 		if(typeof(elenco)=='undefined')var elenco = PH.galleryProvvisoria;
-		CONN.openUrl(CONN.APIfolder+"getFile.php?c="+DB.login.data.TOKEN+localStorage.UniqueId+elenco[i].idFoto.replace("foto_","")+DB.login.data.idUtente);
+		if(!elenco)elenco = PH.galleryProvvisoria;	
+		if(fileType=='pdf' && !android)PH.visPdfBig(CONN.APIfolder+"getFile.php?inline=1&c="+DB.login.data.TOKEN+localStorage.UniqueId+elenco[i].idFoto.replace("foto_","")+DB.login.data.idUtente);
+		else CONN.openUrl(CONN.APIfolder+"getFile.php?c="+DB.login.data.TOKEN+localStorage.UniqueId+elenco[i].idFoto.replace("foto_","")+DB.login.data.idUtente);
 	},
 	scriviFotoBig: function( res ){ // scrive la foto BIG
 		res = JSON.parse( res );
@@ -748,6 +751,10 @@ var PH = {
 			document.getElementById("foto_alert").classList.add("visSch");
 			document.getElementById("foto_alert").innerHTML = stripslashes(msg);
 		}
+	},	
+	visPdfBig: function( url ){ // visualizza il PDF in iframe
+		document.getElementById("pdfBig").classList.remove("noLoader");
+		document.getElementById("frPdf").src = url;
 	},	
 	
 	car_gallery: function(){ // carica la scheda delle fotografie del menu ARCHIVI
@@ -859,7 +866,7 @@ var PH = {
 				if(!PH.actionClick){
 					HTML += 'if(!PH.overCestino)';
 					if(!isFile)HTML += 'PH.fullFoto('+f+',false,PH.galleryOnline);';
-					else HTML += 'PH.openFile('+f+',PH.galleryOnline);';
+					else HTML += 'PH.openFile('+f+',PH.galleryOnline,type);';
 				}else HTML += PH.actionClick;
 				HTML += '"';
 				if(__(PH.galleryOnline[f].name))HTML += ' title="'+htmlEntities(PH.galleryOnline[f].name)+'"';
