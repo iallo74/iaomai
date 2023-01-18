@@ -38,11 +38,11 @@ var PH = {
 		if(typeof(functPH) == 'undefined')var functPH = '';
 		if(typeof(resizable) == 'undefined')var resizable = false;
 		if(typeof(makeBig) == 'undefined')var makeBig = false;
-		if(typeof(listaConsentiti) == 'undefined'){
+		if(typeof(listaEstensioni) == 'undefined'){
 			var listaEstensioni = PH.listaEstensioni;
-			if(LOGIN.logedin())listaEstensioni = listaEstensioni.concat(PH.listaEstensioniFiles);
-		}else{
-			verSize = true; // controllo le dimensioni per i files che non sono immagini
+			if(LOGIN.logedin() && !resizable){
+				listaEstensioni = listaEstensioni.concat(PH.listaEstensioniFiles);
+			}
 		}
 		var ext = "";
 		for(e in listaEstensioni){
@@ -58,8 +58,8 @@ var PH = {
 			ALERT(TXT("FileNonConsentito").replace("[listaEstensioni]",ext));
 			return;
 		}
-		if(file.size > PH.maxFileSize && verSize){
-			ALERT(TXT("DimensioneNonConsentita").replace("[size]",ArrotondaEuro(file.size/1000000)));
+		if(file.size > PH.maxFileSize && PH.listaEstensioniFiles.indexOf(file.type)>-1){
+			ALERT(TXT("DimensioneNonConsentita").replace("[maxSize]",PH.maxFileSize*.000001).replace("[size]",ArrotondaEuro(file.size*.000001)));
 			return;
 		}
 		var reader = new FileReader();
@@ -441,7 +441,7 @@ var PH = {
 				if(!locale){
 					if(CONN.getConn()){
 						// se connesso a internet la scarico
-						afterFunct += "CONN.caricaUrl(	'getImgGallery.php','n="+i+"&iU="+PH.idU+"&idFoto="+PH.galleryProvvisoria[i].idFoto+"','PH.scriviFoto');";
+						afterFunct += "CONN.caricaUrl(	'"+"getImgGallery.php','n="+i+"&iU="+PH.idU+"&idFoto="+PH.galleryProvvisoria[i].idFoto+"','PH.scriviFoto');";
 					}else{
 						cls='noConn';
 					}
@@ -722,9 +722,10 @@ var PH = {
 			}
 		}
 	},
-	openFile: function( i ){ // apro il file online
+	openFile: function( i, elenco ){ // apro il file online
 		if(!CONN.retNoConn())return;
-		CONN.openUrl(CONN.APIfolder+"getFile.php?c="+DB.login.data.TOKEN+localStorage.UniqueId+PH.galleryProvvisoria[i].idFoto.replace("foto_","")+DB.login.data.idUtente);
+		if(typeof(elenco)=='undefined')var elenco = PH.galleryProvvisoria;
+		CONN.openUrl(CONN.APIfolder+"getFile.php?c="+DB.login.data.TOKEN+localStorage.UniqueId+elenco[i].idFoto.replace("foto_","")+DB.login.data.idUtente);
 	},
 	scriviFotoBig: function( res ){ // scrive la foto BIG
 		res = JSON.parse( res );
@@ -858,7 +859,7 @@ var PH = {
 				if(!PH.actionClick){
 					HTML += 'if(!PH.overCestino)';
 					if(!isFile)HTML += 'PH.fullFoto('+f+',false,PH.galleryOnline);';
-					else HTML += 'PH.openFile('+i+');';
+					else HTML += 'PH.openFile('+f+',PH.galleryOnline);';
 				}else HTML += PH.actionClick;
 				HTML += '"';
 				if(__(PH.galleryOnline[f].name))HTML += ' title="'+htmlEntities(PH.galleryOnline[f].name)+'"';

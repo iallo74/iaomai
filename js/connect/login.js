@@ -693,9 +693,8 @@ var LOGIN = {
 							for(i in v)eval(getArguments(v,i));
 							
 				rimuoviLoading(document.getElementById("scheda_testo"));
-				
 				var UT = JSON.parse(txt);
-					
+				
 				var DataNascita = 0;
 				if(UT.DataNascita!='0000-00-00')DataNascita = new Date(UT.DataNascita);
 				
@@ -785,6 +784,7 @@ var LOGIN = {
 						'	   	<b>'+htmlEntities(TXT("LabelFatturazione"))+'</b>' +
 						'	</div>';
 				
+					console.log(UT.logoAzienda)
 				// logoAzienda
 				HTML += '	<div>' +
 						'		<div onClick="this.classList.toggle(\'avatarBig\');"' +
@@ -884,11 +884,11 @@ var LOGIN = {
 		var postAction = '';
 		
 		var imgAvatar = document.getElementById("avatarUtente").getElementsByTagName("div")[0].style.backgroundImage;
-		imgAvatar = imgAvatar.split(imgAvatar[4])[1].replace(location.origin+location.pathname,'');
+		if(imgAvatar)imgAvatar = imgAvatar.split(imgAvatar[4])[1].replace(location.origin+location.pathname,'');
 		if(typeof(imgAvatar) == 'undefined')imgAvatar = '';
 		
 		var logoAzienda = document.getElementById("logoAzienda").getElementsByTagName("div")[0].style.backgroundImage;
-		logoAzienda = logoAzienda.split(logoAzienda[4])[1];
+		if(logoAzienda)logoAzienda = logoAzienda.split(logoAzienda[4])[1];
 		if(typeof(logoAzienda) == 'undefined')logoAzienda = '';
 		
 		var aaaa = document.formMod.annoDataNascita.value;

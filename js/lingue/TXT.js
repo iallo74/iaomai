@@ -1983,8 +1983,8 @@ DB.TXT = {
 			esp: ""
 		},
 		GalleryCestinate: {
-			ita: "Foto inutilizate",
-			eng: "Unused pics",
+			ita: "Files cancellati",
+			eng: "Deleted files",
 			esp: ""
 		},
 		AlertImgLow: {
@@ -2018,8 +2018,8 @@ DB.TXT = {
 			esp: ""
 		},
 		DimensioneNonConsentita: {
-			ita: "Non è consentito caricare file di dimensioni superiori ai 5 MB. Il file che stai cercando di caricare è [size]MB.",
-			eng: "Uploading files larger than 5 MB is not allowed. The file you are trying to upload is [size]MB.",
+			ita: "Non è consentito caricare file di dimensioni superiori ai [maxSize] MB. Il file che stai cercando di caricare è [size]MB.",
+			eng: "Uploading files larger than [maxSize] MB is not allowed. The file you are trying to upload is [size]MB.",
 			esp: ""
 		},
 		

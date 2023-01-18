@@ -28,7 +28,9 @@ var PAZIENTI_SETS = {
 			'moxa', 
 			'coppetta', 
 			'diapason', 
-			'luce', 
+			'luce', ,
+			"elettro_agopuntura",
+			"infiltrazione",
 			'dito' ],
 		A: ["",
 			"ago",
@@ -42,7 +44,8 @@ var PAZIENTI_SETS = {
 			"ago_semipermanente",
 			"crio",
 			"salasso",
-			"infiltrazione" ]
+			"infiltrazione" ],
+		M: []
 	},
 	mezzoProvvisorio: '',
 	elencoGruppoPunti: {},
@@ -304,7 +307,9 @@ var PAZIENTI_SETS = {
 			setTimeout(function(){document.getElementById("rg_"+evi).classList.remove("eviPunto")},2000);
 		}
 		try{
-			if(elenco)SET.evidenziaTsuboMod(elenco.substr(0,elenco.length-1).split("|"));
+			if( (globals.set.cartella == 'meridiani_cinesi' || 
+				globals.set.cartella == 'meridiani_shiatsu') && 
+				elenco)SET.evidenziaTsuboMod(elenco.substr(0,elenco.length-1).split("|"));
 		}catch(err){}
 		if(PAZIENTI.topAdd)document.getElementById("scheda_testo").scrollTo(0,document.getElementById("scheda_testo").scrollTop+(tCoord(document.getElementById("p_add_dett"),'y')-PAZIENTI.topAdd));
 		PAZIENTI.topAdd = null;
@@ -361,16 +366,16 @@ var PAZIENTI_SETS = {
 			// verifico che non ci sia già
 			pass=true;
 			if(PAZIENTI.tipoGruppo=='P'){
+				var n = pP[p].split(".")[0]*1;
+				var siglaMeridiano = pP[p].split(".")[1];
 				for(k in PAZIENTI.puntiProvvisori){
-					if(	PAZIENTI.puntiProvvisori[k].n == pP[p].split(".")[0]*1 && 
-						PAZIENTI.puntiProvvisori[k].m == pP[p].split(".")[1]){
+					if(	PAZIENTI.puntiProvvisori[k].n == n && 
+						PAZIENTI.puntiProvvisori[k].m == siglaMeridiano){
 						pass=false;
 						presenti=true;
 					}
 				}
 				if(pass){
-					var n = pP[p].split(".")[0]*1;
-					var siglaMeridiano = pP[p].split(".")[1];
 					var siglaTsubo = __(DB.set.meridiani[siglaMeridiano].tsubo[n-1].siglaTsubo, pP[p]);
 					var descrTsubo = __(DB.set.meridiani[siglaMeridiano].tsubo[n-1].ChiaviTsubo, '');
 					PAZIENTI.puntiProvvisori.push({
@@ -385,26 +390,28 @@ var PAZIENTI_SETS = {
 				}
 			}
 			if(PAZIENTI.tipoGruppo=='M'){
+				var siglaMeridiano = pP[p].split(".")[0];
 				for(k in PAZIENTI.meridianiProvvisori){
-					if(PAZIENTI.meridianiProvvisori[k].siglaMeridiano == pP[p]){
+					if(PAZIENTI.meridianiProvvisori[k].siglaMeridiano == siglaMeridiano){
 						pass=false;
 						presenti=true;
 					}
 				}
 				if(pass){
-					PAZIENTI.aggiungiMeridianoTrattamento(pP[p]);
+					PAZIENTI.aggiungiMeridianoTrattamento(siglaMeridiano);
 					totAggiunti++;
 				}
 			}
 			if(PAZIENTI.tipoGruppo=='A'){
+				var siglaTsubo = pP[p].split(".")[0];
 				for(k in PAZIENTI.auriculoProvvisori){
-					if(PAZIENTI.auriculoProvvisori[k].siglaMeridiano == pP[p]){
+					if(PAZIENTI.auriculoProvvisori[k].siglaMeridiano == siglaTsubo){
 						pass=false;
 						presenti=true;
 					}
 				}
 				if(pass){
-					PAZIENTI.aggiungiAuriculoTrattamento(pP[p].split(".")[0]);
+					PAZIENTI.aggiungiAuriculoTrattamento(siglaTsubo);
 					totAggiunti++;
 				}
 			}
@@ -831,7 +838,7 @@ var PAZIENTI_SETS = {
 			setTimeout(function(){document.getElementById("rg_"+evi).classList.remove("eviPunto")},2000);
 		}
 		try{
-			SET.evidenziaTsuboMod(elenco);
+			if( globals.set.cartella == 'auricologia' )SET.evidenziaTsuboMod(elenco);
 		}catch(err){}
 		
 		if(PAZIENTI.topAdd)document.getElementById("scheda_testo").scrollTo(0,document.getElementById("scheda_testo").scrollTop+(tCoord(document.getElementById("p_add_dett"),'y')-PAZIENTI.topAdd));
@@ -1271,7 +1278,7 @@ var PAZIENTI_SETS = {
 			if( globals.set.cartella=='meridiani_cinesi' || 
 				globals.set.cartella=='meridiani_shiatsu' )mzs = PAZIENTI.mezziSet.P;
 			if(globals.set.cartella=='auricologia')mzs = PAZIENTI.mezziSet.A;
-			if(mzs.length){
+			if(mzs.length && PAZIENTI.mezziSet[PAZIENTI.tipoGruppo].length){
 				HTML += '	<span class="separatorePulsanti"></span><div id="tt_mezzival2">';
 				for(m in mzs){
 					HTML += '<span style="background-image:url(img/mezzo_'+mzs[m]+'.png);"' +

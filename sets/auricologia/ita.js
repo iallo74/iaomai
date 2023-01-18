@@ -9914,7 +9914,7 @@ DB.set= {
             "contenuti": [
                 {
                     "TitoloTeoria": "Introduzione",
-                    "TestoTeoria": "Questo test serve per valutare il grado di motivazione e il livello di dipendenza del paziente ed è finalizzato alla creazione di una proposta terapeutica per smettere di fumare. Affettuare i test nell'ordine indicato e leggere le proposte indicate nella terza e ultima scheda.<div style='padding-left:15px;' id='patologieTests'><p>1. Test di Mondor (motivazione)</p><p>2. Test di Fagerström (dipendenza)</p><p>3. Proposta terapeutica</p></div><div class='btns' style='text-align:left;'><div class='btn_invia' onClick='SET.caricaTest(1);'>INIZIA IL TEST</div></div>"
+                    "TestoTeoria": "Questo test serve per valutare il grado di motivazione e il livello di dipendenza del paziente ed è finalizzato alla creazione di una proposta terapeutica per smettere di fumare. Affettuare i test nell'ordine indicato e leggere le proposte indicate nella terza e ultima scheda.<div style='padding-left:15px;' id='patologieTests'><p>1. Test di Mondor (motivazione)</p><p>2. Test di Fagerström (dipendenza)</p><p>3. Proposta terapeutica</p></div><div class='btns' style='text-align:left;'><div class='btn_invia' onClick='SET.caricaTest(1,true);'>INIZIA IL TEST</div></div>"
                 },
                 {
                     "TitoloTeoria": "1. Test di Mondor (motivazione)",

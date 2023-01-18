@@ -177,7 +177,8 @@ var MODULO_PROCEDURE = { // extend SET
 					'	<div class="p_sch_label2">' +
 					'	<span class="commAvatar';
 			var dt = new Date().getTime();
-			if(CONN.getConn() && idUtenteProcedura)HTML += '" style="background-image:url(' + CONN.APIfolder+'getAvatarMini.php?idU='+idUtenteProcedura+'&t='+dt+');';
+			//if(CONN.getConn() && idUtenteProcedura)HTML += '" style="background-image:url(' + CONN.APIfolder+'getAvatarMini.php?idU='+idUtenteProcedura+'&t='+dt+');';
+			if(CONN.getConn())HTML += '" style="background-image:url(' + CONN.APIfolder+'getAvatarMini.php?idU='+idUtenteProcedura+'&t='+dt+');';
 			else HTML += ' commNoAvatar"';
 			HTML +=	'"></span>' +
 					'		<b>' + Autore + '</b>'+((DataModifica>1)?' ('+getDataTS(DataModifica)+')':'') +
@@ -1204,8 +1205,12 @@ var MODULO_PROCEDURE = { // extend SET
 			'" id="comm_'+el.idCommento+'">' +
 			'	<div class="commSX">' +
 			'	<span class="commAvatar';
-		if(el.avatar){// && CONN.getConn()){
-			HTML += '" style="background-image:url(\'' + el.avatar+'\');';
+		/*if(el.avatar){// && CONN.getConn()){
+			HTML += '" style="background-image:url(\'' + el.avatar+'\');';*/
+			
+		var dt = new Date().getTime();
+		if(CONN.getConn()){
+			HTML += '" style="background-image:url(' + CONN.APIfolder+'getAvatarMini.php?idU='+el.idUtente+'&t='+dt+');';
 		}else HTML += ' commNoAvatar"';
 		HTML +=
 			'"></span>' +

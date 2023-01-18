@@ -539,6 +539,12 @@ body:not(.smart) .frSu #frSchSu:hover{
     overflow: hidden;
     white-space: nowrap;	
 }
+body:not(.bodyStyled2) .schedaRitorno #scheda_ritorno div{
+    color: #000 !important;
+}
+body:not(.bodyStyled2) .schedaRitorno #scheda_ritorno svg line{
+    stroke: #000 !important;
+}
 .schedaRitorno #scheda_ritorno svg{
     width:36px;
     height:40px;

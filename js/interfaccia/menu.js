@@ -124,7 +124,8 @@ var MENU = {
 			!document.getElementById("p_cartella").classList.contains("p_sel") &&
 			!document.getElementById("scheda").classList.contains("scheda_utente") &&
 			!n &&
-			!smartMenu ){
+			!smartMenu &&
+			document.getElementById("elenchi_cont").classList.contains("visSch")){
 			MENU.icoSelected = document.getElementById("p_cartella");
 			MENU.icoSelected.classList.add("p_sel");
 			MENU.comprimiIcone(true);

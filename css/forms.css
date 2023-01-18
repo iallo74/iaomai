@@ -1656,7 +1656,7 @@ body:not(.touch) #puntiAuriculoMap .dettPunto:hover{
 	height:200px;
 }
 #Intestazione{
-	height:60px;
+	min-height:60px;
 	margin-bottom: -7px;
 }
 #formMod select:not(.p_proc_gruppo):not(.p_paz_gruppo):not(.p_paz_meridiani):not(.p_proc_meridiani), /* PAZIENTI */
@@ -2159,9 +2159,11 @@ body:not(.touch) .sezioneChiusa:hover{
     background-size: auto;
 }
 .contGallery{
+    padding: 10px;
+}
+html:not(.htmlStampa) .contGallery{
 	overflow-y: hidden;
     overflow-x: auto;
-    padding: 10px;
     white-space: nowrap;
 }
 #archives .contGallery{

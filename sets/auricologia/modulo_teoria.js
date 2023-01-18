@@ -143,7 +143,21 @@ var MODULO_TEORIA = { // extend SET
 		}
 	},
 	
-	caricaTest: function( n ){
+	caricaTest: function( n, azzera ){
+		if(typeof(azzera)=='undefined')var azzera = false;
+		if(azzera){
+			SET.risTest = {
+				dipendenza: {
+					tot: -1,
+					vals: {}
+				},
+				motivazione: {
+					tot: -1,
+					vals: {}
+				}
+			}
+			delete(localStorage.risTest);
+		}
 		SET.caricaTeoria(SET.idTeoTests,n,document.getElementById("btn_teoria_"+SET.idTeoTests+"_"+n));
 		SCHEDA.selElenco("teoria");
 		SCHEDA.swCartella(document.getElementById("btn_teoria_cart_"+SET.idTeoTests),true);

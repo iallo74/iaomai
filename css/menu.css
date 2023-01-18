@@ -267,7 +267,7 @@ body:not(.bodyStyled1):not(.bodyStyled2):not(.smart) #p_sets{
 	display:none;
 	z-index:3;
 	position:fixed;
-	bottom:60px;
+	bottom:78px;
 	right:0px;
 	width:24px;
 	height:48px;
@@ -371,7 +371,7 @@ body:not(.Nerve) #p_liv_visceri{
 	background-image:url(../img/p_visceri.png);
 }
 .Nerve #p_liv_visceri{
-	background-image:url(../img/p_nerve.png);
+	background-image:url(../img/p_nerve3.png);
 }
 #p_liv_pelle.disattLiv,
 #p_liv_muscoli.disattLiv{
@@ -747,7 +747,7 @@ body:not(.Nerve) #i_visceri{
 	background-image:url(../img/p_visceriB.png);
 }
 .Nerve #i_visceri{
-	background-image:url(../img/p_nerve2B.png);
+	background-image:url(../img/p_nerve3B.png);
 }
 #i_muscoli{
 	cursor:pointer;
@@ -1081,7 +1081,7 @@ body:not(.Nerve) .selV{
 	background-image:url(../img/chMenu.png), url(../img/p_visceri.png) !important;
 }
 .Nerve .selV{
-	background-image:url(../img/chMenu.png), url(../img/p_nerve.png) !important;
+	background-image:url(../img/chMenu.png), url(../img/p_nerve3.png) !important;
 }
 #chiudiTuttiSelected{
 	font-size: var(--font-12-1);

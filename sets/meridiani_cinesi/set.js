@@ -892,7 +892,7 @@ SET = {
 			SET.accendiMeridiano(siglaMeridiano,true);
 		}
 	},
-	evidenziaTsuboMod: function( elenco ){
+	evidenziaTsuboMod: function( elenco ){ 
 		SET.annullaEvidenziaTsubo();
 		for(k in elenco){
 			var pP=elenco[k].split(".");
