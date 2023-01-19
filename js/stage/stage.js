@@ -253,7 +253,7 @@ function scaricaModello( esci ){
 	/*var notInit = false;
 	if(globals.set.cartella)notInit = true;
 	scaricaSet(notInit);*/
-	
+	if(globals.modello.cartella && MODELLO.flip)MODELLO.rifletti();
 	obj_guide = null;
 	MENU.chiudiAllSelected();
 	manichino.remove(ANATOMIA);
