@@ -156,6 +156,7 @@ THREE.ObjectControls = function ( object, domElement ) {
 		if(!scope.domElement._inMovimento)scope._ZPR=false;
 		if(scope.domElement.ROTATE)scope.domElement.ROTATE=false;	
 		if(scope.domElement.PAN)scope.domElement.PAN=false;
+		saveRotationPosition();
 	}
 	function onMouseWheel( event ) {
 		if ( this.PAN || this.ROTATE || overInterfaccia || noAnimate)return;
@@ -314,6 +315,7 @@ THREE.ObjectControls = function ( object, domElement ) {
 		if( Math.abs(this.xAtt-this.xIni) < 10 && Math.abs(this.yAtt-this.yIni) < 10 ){
 			onClick();
 		}
+		saveRotationPosition();
 	}
 	function onTouchStart( event ) {
 		if(noAnimate)return;

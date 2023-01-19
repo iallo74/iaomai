@@ -575,7 +575,8 @@ function animate() {
 				if(!controlsM._premuto){
 					controlsM._ZPR=false;
 					controlsM._inMovimento=false;
-					localStorage.modelRotation = JSON.stringify({x: manichinoCont.rotation.x, y: manichinoCont.rotation.y, z: manichinoCont.rotation.z});
+					saveRotationPosition();
+					//localStorage.modelRotation = JSON.stringify({x: manichinoCont.rotation.x, y: manichinoCont.rotation.y, z: manichinoCont.rotation.z});
 				}
 			}
 		}
@@ -595,7 +596,8 @@ function animate() {
 				if(!controlsM._premuto){
 					controlsM._ZPR = false;
 					controlsM._inMovimento = false;
-					localStorage.modelPosition = JSON.stringify({x:manichinoCont.position.x,y:manichinoCont.position.y,z:manichinoCont.position.z});
+					saveRotationPosition();
+					//localStorage.modelPosition = JSON.stringify({x:manichinoCont.position.x,y:manichinoCont.position.y,z:manichinoCont.position.z});
 				}
 			}
 		}
@@ -615,7 +617,8 @@ function animate() {
 				if(!controlsM._premuto){
 					controlsM._ZPR = false;
 					controlsM._inMovimento = false;
-					localStorage.modelPosition = JSON.stringify({x:manichinoCont.position.x,y:manichinoCont.position.y,z:manichinoCont.position.z});
+					saveRotationPosition();
+					//localStorage.modelPosition = JSON.stringify({x:manichinoCont.position.x,y:manichinoCont.position.y,z:manichinoCont.position.z});
 				}
 			}
 		}
@@ -641,6 +644,16 @@ function animate() {
 		}
 		render();
 	}
+}
+function saveRotationPosition(){
+	localStorage.modelRotation = JSON.stringify({
+		x: manichinoCont.rotation.x,
+		y: manichinoCont.rotation.y,
+		z: manichinoCont.rotation.z });
+	localStorage.modelPosition = JSON.stringify({
+		x:manichinoCont.position.x,
+		y:manichinoCont.position.y,
+		z:manichinoCont.position.z} );
 }
 var tmaNoAn = null;
 function swAnimate(){

@@ -275,12 +275,18 @@ var modelli = {
 		],
 		dims: [
 			404,
-			87
+			87,
+			15
 		],
 		livelli: [
 			'pelle',
 			'ossa'
 		],
+		centro: {
+			"x": 0.15168973204903138,
+			"y": -0.2381679067910409,
+			"z": 10.835390371711297
+		},
 		rifletti: false,
 		txtLoading: TXT("CaricamentoModelloPiede"),
 		lastVer: 1
