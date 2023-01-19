@@ -125,7 +125,7 @@ var MENU = {
 			!document.getElementById("scheda").classList.contains("scheda_utente") &&
 			!n &&
 			!smartMenu &&
-			document.getElementById("elenchi_cont").classList.contains("visSch")){
+			document.getElementById("elenchi").classList.contains("vis_base")){
 			MENU.icoSelected = document.getElementById("p_cartella");
 			MENU.icoSelected.classList.add("p_sel");
 			MENU.comprimiIcone(true);
@@ -715,9 +715,9 @@ var MENU = {
 		setTimeout(function(){
 			//console.log(Canvas2Img());
 			document.getElementById("container").getElementsByTagName("canvas")[0].style.marginLeft = '-400px';;
-			document.documentElement.style.position = 'relative'; // aggiunto per MAC
+			if(isMac)document.documentElement.style.position = 'relative'; // aggiunto per MAC
 			window.print();
-			document.documentElement.style.position = 'fixed';
+			if(isMac)document.documentElement.style.position = 'fixed';
 			document.body.classList.remove("bodyStampa");
 			onWindowResize();
 			setTimeout(function(){MENU.chiudiMenu();},500);

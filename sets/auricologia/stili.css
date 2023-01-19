@@ -1082,6 +1082,9 @@ body.smart #elenchi #cambioMappaPunti{
 	background-color: rgba(0,0,0,0.2);
 	text-align: right;
 }
+.bodyStampa #filtriSmart_ico{
+	display:none !important;
+}
 #filtriSmart_ico span{
 	display:inline-block;
 	width: 8px;

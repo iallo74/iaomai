@@ -22,6 +22,7 @@ var brw_safari = false;
 var brw_chrome = false;
 var iPad = false;
 var iPhone = false;
+var isMac = false;
 var mouseDetect = false;
 var onlineVersion=false;
 var isTablet = false;
@@ -166,6 +167,7 @@ var IMPORTER = {
 		brw_edge=(!(document.documentMode) && window.StyleMedia)
 		brw_safari=window.safari !== undefined;
 		brw_chrome=(navigator.userAgent.indexOf("Chrome") != -1);
+		isMac = navigator.platform.toUpperCase().indexOf('MAC')>=0;
 		document.title = nomeApp+" - "+sloganApp;
 		/*
 		var el = document.getElementById('scripts');

@@ -3814,7 +3814,11 @@ DB.set= {
 				{
 					TitoloTeoria: "Riferimenti bibliografici",
 					TestoTeoria: "<ol><li><b> I fondamenti della Medicina Tradizionale Cinese</b><br />    di Giovanni Maciocia<br />    ed. Casa editrice Ambrosiana<br />    Anno 1996</li>  <li><b> I canali di agopuntura</b><br />    di Giovanni Maciocia<br />    ed. Edra<br />    Anno 2008</li><li> <b>Manuale di Agopuntura</b><br />    <i>di Peter Deedman e Mazin Al-Khafaji con Kevin Baker</i><br />    ed. Casa Editrice Ambrosiana<br />    Anno 2000</li><li><b> Atlas of acupuncture</b><br />    di Claudia Focks<br />    ed. Churchill Livingstone<br />    Anno 2008</li><li> <b>Agopuntura Tradizionale, la legge dei 5 elementi</b><br />    <i>di Dianne M. Connely</i><br />    ed. RED<br />    Anno 2014</li><li><b>Medicina Tradizionale Cinese per lo Shiatsu e il TuiNa</b><br />    <i>di Maurizio Corradini, Carlo di Stanislao e Maurizio Porimi</i><br />    ed. Casa editrice Ambrosiana VOL I e II<br />    Anno 2001</li></ol>" 	
-				}
+				},
+                {
+                    TitoloTeoria: "Crediti",
+                    TestoTeoria: "Ringraziamo per il prezioso contributo allo sviluppo dell'applicazione:<br>- Roberto Federico Crispo<br>- Vittorio Piacenza<br>- Carmelo Perlongo<br>- dr. Giorgio Eugenio Bertani<br>- dott.ssa Peirone Grossi Ilaria"
+                }
 			],
 			noList: true
 		}

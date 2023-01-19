@@ -280,6 +280,13 @@ body:not(.bodyModello).bodyStyled2{
 	opacity:0;
 	/*display:none;*/
 }
+.bodyStampa #logoSovra{
+    bottom:auto !important;
+	top:10px !important;
+}
+.bodyStampa #conteiner{
+	border:1px solid rgba(0,0,0,0.1);
+}
 body.bodyStyled2 #logoSovra{
     background-image: url(../img/logo_iaomai_Fondino2.png) !important;
 }
