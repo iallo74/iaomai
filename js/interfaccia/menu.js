@@ -815,6 +815,10 @@ var DRAGGER = {
 	pushPos: '',
 	overPH: false,
 	startDrag: function( el, funct, cont ){
+		if(DRAGGER.elDrag){
+			DRAGGER.elDrag = null;
+			return;
+		}
 		DRAGGER.posIni.x = touchable ? event.touches[ 0 ].pageX : event.clientX;
 		DRAGGER.posIni.y = touchable ? event.touches[ 0 ].pageY : event.clientY;
 		var target = el;
@@ -851,7 +855,6 @@ var DRAGGER = {
 				document.getElementById("scheda_testo").classList.add("noScroll");
 			},1000);
 		}else DRAGGER.att = true;
-		
 		DRAGGER.elDrag = el;
 		DRAGGER.funct = funct;
 		DRAGGER.elCont = cont;
@@ -861,9 +864,8 @@ var DRAGGER = {
 			if(!touchable)return;
 			else{
 				clearTimeout(DRAGGER.tmAtt);
-				DRAGGER.att = true;
-				DRAGGER.posLB();
-				document.getElementById("scheda_testo").classList.add("noScroll");
+				DRAGGER.stopDrag();
+				return;
 			}
 		}
 		if(typeof(event)!='undefined'){
@@ -947,9 +949,11 @@ var DRAGGER = {
 		e.preventDefault();
 	},
 	stopDrag: function( event ){
-		DRAGGER.posAtt = {
-			x: touchable ? event.changedTouches[ 0 ].pageX : event.clientX,
-			y: touchable ? event.changedTouches[ 0 ].pageY : event.clientY
+		if(DRAGGER.att){
+			DRAGGER.posAtt = {
+				x: touchable ? event.changedTouches[ 0 ].pageX : event.clientX,
+				y: touchable ? event.changedTouches[ 0 ].pageY : event.clientY
+			}
 		}
 		if(!touchable){
 			window.removeEventListener("mouseup", DRAGGER.stopDrag ,false);

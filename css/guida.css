@@ -11,6 +11,9 @@
 	box-shadow:0px 0px 20px rgba(0,0,0,0.8);
 	overflow:hidden;
 }
+.smart #reference_cont{
+	bottom:60px !important;
+}
 @media (max-width: 539px){	
 	#reference_cont:not(.mini){
 		bottom:auto !important;

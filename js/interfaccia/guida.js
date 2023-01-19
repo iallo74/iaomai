@@ -46,7 +46,8 @@ var GUIDA = {
 	visFumetto: function( n, forza, noFr ){
 		if(typeof(forza)=='undefined')var forza = false;
 		if(typeof(noFr)=='undefined')var noFr = false;
-		if(localStorage.getItem("no_"+n) != 'true' || forza){
+		var noGuida = eval(__(localStorage.getItem("no_"+n),"false"));
+		if(!noGuida || forza){
 			if(GUIDA.fumettoAperto){
 				document.getElementById(GUIDA.fumettoAperto).classList.remove("vis");
 				document.getElementById(GUIDA.fumettoAperto).classList.remove("visSch");
@@ -54,7 +55,7 @@ var GUIDA = {
 			}
 			clearTimeout(GUIDA.tmFumetto);
 			document.getElementById("no_guida").dataset.name = "no_"+n;
-			document.getElementById("no_guida").checked = (localStorage.getItem("no_"+n));
+			document.getElementById("no_guida").checked = noGuida;
 			if(!document.getElementById(n)){
 				document.getElementById('guida_def').className = 'fumetti '+n;
 				document.getElementById('fumetti_titolo').innerHTML = guide[n].titolo[globals.siglaLingua];

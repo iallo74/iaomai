@@ -85,9 +85,13 @@ body:not(.smart) #impostazioniArchivi,
 	opacity:0.8;
 	margin-right:3px;
 }
-#elenchi #impostazioniArchivi{
+body:not(.smart) #elenchi #impostazioniArchivi{
     margin-top: 4px;
    	margin-right: -16px;
+}
+.smart #elenchi #impostazioniArchivi{
+    margin-top: -2px;
+   	margin-right: 0px !important;
 }
 body:not(.smart) #help_set,
 .smart #elenchi #help_set,
@@ -133,6 +137,9 @@ body:not(.smart) #help_set,
 .smart #help_set{
     margin-top: 11px;
     /*margin-right: -13px;*/
+}
+.smart #help_clienti{
+    margin-top: 5px;
 }
 .help_sets{
     margin-top: 0px;
@@ -303,6 +310,9 @@ body:not(.smart) #elenchi{
     color: rgba(0,0,0,0.6);
     display: block;
     padding-right: 20px;
+}
+.smart.android #titolo_base{
+    padding-right: 0px;
 }
 .smart.android #titolo_base,
 .smart.android #elenchi_titolo,
