@@ -498,6 +498,7 @@ SET = {
 		}
 		if(__(localStorage.risTest))SET.risTest = JSON.parse(localStorage.risTest);
 
+		if(smartMenu)overInterfaccia=true;
 		/*
 		Attivare per settare con il pulsante "q" le rotazioni automatiche sui punti
 		*/

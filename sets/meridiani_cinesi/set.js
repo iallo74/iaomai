@@ -248,7 +248,7 @@ SET = {
 			}
 		}
 		postApreSet = false;
-		
+		if(smartMenu)overInterfaccia=true;
 		//SET.iniPos(); // se decommentato server per salvare in localSorage.POS la posizione del manichino
 		
 	},

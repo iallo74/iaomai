@@ -264,6 +264,7 @@ SET = {
 			}
 		}
 		postApreSet = false;
+		if(smartMenu)overInterfaccia=true;
 		//SET.iniPos();
 		
 	},
