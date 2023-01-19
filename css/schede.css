@@ -847,6 +847,15 @@ body:not(.bodyStyled2) #scheda_testo2{
 	border-radius:8px;
 	box-shadow:0px 0px 3px;
 }
+.autore_mini{
+	float: left;
+    margin-right: 12px;
+    margin-top: 5px;
+    margin-bottom: 16px;
+    width: 60px;
+    border-radius: 30px;
+    box-shadow: 0px 0px 3px;
+}
 .libro{
 	width:150px;
 }

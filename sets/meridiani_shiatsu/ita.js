@@ -3061,7 +3061,7 @@ DB.set= {
 				},
                 {
                     TitoloTeoria: "Crediti",
-                    TestoTeoria: "Ringraziamo per il prezioso contributo allo sviluppo dell'applicazione:<br>- Roberto Federico Crispo<br>- Carmelo Perlongo<br>- Vittorio Piacenza"
+                    TestoTeoria: "Ringraziamo per il prezioso contributo allo sviluppo dell'applicazione, sia sotto il profilo contenutistico, nelle loro specifiche competenze, sia per quel che riguarda l'ottimizzazione e il funzionamento:<br><br><img class='autore_mini' src='sets/meridiani_shiatsu/img/autore_vittorio_piacenza.jpg'><br><b>Vittorio Piacenza</b><br>maestro di Shiatsu e discipline olistiche.<div class='l'></div><img class='autore_mini' src='sets/meridiani_shiatsu/img/autore_federico_crispo.jpg'><br><b>Roberto Federico Crispo</b><br>xxx"
                 }
 			],
 			noList: true
