@@ -510,7 +510,7 @@ var agenda = {
 		else rimuoviLoading(document.getElementById("ag"),'vuoto');
 		this.elemento.querySelector(".contCal").classList.remove("visSch");
 		this.elemento.querySelector(".contCal").innerHTML = '';
-		SWIPE.init('agendaPlaceHolder','document.getElementById(\'agendaPre\').click();','document.getElementById(\'agendaNext\').click();')
+		SWIPE.init('agendaPlaceHolder','document.getElementById(\'agendaPre\').click();','document.getElementById(\'agendaNext\').click();');
 	},
 	popolaAgenda:function( DataPartenza, elemento ){
 		var icoUtente = '<img src="img/ico_utenteN.png" style="width: 16px;vertical-align: middle;margin-top: -3px;">';

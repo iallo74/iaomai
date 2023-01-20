@@ -33,7 +33,7 @@ var SWIPE = {
 			if(SWIPE.xIni<area+limitLeft || SWIPE.xIni>(W-area)+limitLeft){
 				document.addEventListener("touchmove", SWIPE.move, false );
 				document.addEventListener("touchend", SWIPE.end, false );
-				if(SWIPE.xIni<area)SWIPE.verso = 'R';
+				if(SWIPE.xIni>=limitLeft && SWIPE.xIni<limitLeft+area)SWIPE.verso = 'R';
 				else SWIPE.verso = 'L';
 			}
 		}
