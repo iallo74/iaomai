@@ -566,7 +566,9 @@ var LOGIN = {
 			i!='Stato' && 
 			i!='DataNascita' && 
 			i!='paeseCellulare' &&
-			i!='id_interno'){
+			i!='id_interno' &&
+			i!='numeroTsubo' &&
+			i!='app'){
 			if(typeof(txt)=='string' && txt!='')txt='[@]'+LZString.compressToUTF16(txt);
 		}
 		return txt;
@@ -1405,6 +1407,7 @@ var LOGIN = {
 			});
 		}else LOGIN.verSincro('ricerche');
 	
+					console.log("SINCRO")	
 		// NOTE
 		if(elenco.note){
 			syncUp=true;
@@ -1420,7 +1423,7 @@ var LOGIN = {
 							"idCL": id_interno,
 							"app": __(elenco.note[p].app,''),
 							"DataModifica": elenco.note[p].DataModifica*1 };
-							
+					console.log(JSNPUSH)		
 				for(k in DB.note.data){
 					var NT = DB.note.data[k];
 					if(	NT.meridiano==elenco.note[p].meridiano && 
@@ -2492,7 +2495,7 @@ var LOGIN = {
 							}
 							
 							LOGIN.addHTML("<b class=\"tits\"> "+TXT("ModificaTrattamento")+" "+(t*1+1)+"</b><br>");
-							LOGIN.addHTML("<i>"+TXT("Data")+txtOrario+": </i> "+getFullDataTS(LOGIN.dataW(trattamenti[t].TimeTrattamento))+" "+orario+"<br>");
+							if(LOGIN.dataW(trattamenti[t].TimeTrattamento))LOGIN.addHTML("<i>"+TXT("Data")+txtOrario+": </i> "+getFullDataTS(LOGIN.dataW(trattamenti[t].TimeTrattamento))+" "+orario+"<br>");
 							LOGIN.addHTML("<i>"+TXT("Titolo")+":</i> <b>"+LOGIN.dataW(trattamenti[t].TitoloTrattamento)+"</b><br>");
 							LOGIN.addHTML("<i>"+TXT("Costo")+":</i> <b>"+ArrotondaEuro(trattamenti[t].CostoTrattamento)+"</b><br>");
 							var TT=LOGIN.dataW(trattamenti[t].TestoTrattamento);
@@ -2536,7 +2539,25 @@ var LOGIN = {
 									txtPunti+=", ";
 								}
 								txtPunti=txtPunti.substr(0,txtPunti.length-2);
-								LOGIN.addHTML("<i>"+TXT("PuntiTrattamento")+":</i> "+txtPunti+"<br>");
+								if(txtPunti)LOGIN.addHTML("<i>"+TXT("PuntiTrattamento")+":</i> "+txtPunti+"<br>");
+							}
+							if(trattamenti[t].meridiani){
+								var meridiani=JSON.parse(LOGIN.dataW(trattamenti[t].meridiani));
+								var txtMeridiani='';
+								for(m in meridiani){
+									siglaMeridiano=meridiani[m].siglaMeridiano;
+									NomeMeridiano=__(meridiani[m].NomeMeridiano);
+									valEnergetica=__(meridiani[m].valEnergetica);
+									descrizione=__(meridiani[m].descrizione);
+									txtMeridiani+=NomeMeridiano;
+									if(valEnergetica=='V')txtMeridiani+=' (vuoto)';
+									if(valEnergetica=='P')txtMeridiani+=' (pieno)';
+									if(valEnergetica=='D')txtMeridiani+=' (dolorante)';
+									if(descrizione)txtMeridiani+=' '+descrizione;
+									txtMeridiani+=", ";
+								}
+								txtMeridiani=txtMeridiani.substr(0,txtMeridiani.length-2);
+								if(txtMeridiani)LOGIN.addHTML("<i>"+TXT("MeridianiTrattamento")+":</i> "+txtMeridiani+"<br>");
 							}
 							if(trattamenti[t].puntiAuriculoMap){
 								var punti=JSON.parse(LOGIN.dataW(trattamenti[t].puntiAuriculoMap));
@@ -2546,13 +2567,14 @@ var LOGIN = {
 									valutazione=__(punti[f].e);
 									mezzo=__(punti[f].z);
 									descrizione=__(punti[f].t);
+									txtPunti+=punti[f].n;
 									if(valutazione=='D')txtPunti+=' (dolorante)';
 									if(mezzo)txtPunti+=' '+mezzo;
 									if(descrizione)txtPunti+=' '+descrizione;
 									txtPunti+=", ";
 								}
 								txtPunti=txtPunti.substr(0,txtPunti.length-2);
-								LOGIN.addHTML("<i>"+TXT("PuntiTrattamento")+":</i> "+txtPunti+"<br>");
+								if(txtPunti)LOGIN.addHTML("<i>"+TXT("PuntiAuriculo")+":</i> "+txtPunti+"<br>");
 							}
 							LOGIN.addHTML("<br>");
 						}
@@ -2583,7 +2605,7 @@ var LOGIN = {
 				if(note.length>0){
 					LOGIN.addHTML("<br><i>"+TXT("ANNOTAZIONI")+":</i><br><div class=\"rientro\">");
 					for(n in note){
-						LOGIN.addHTML("<b>"+note[n].meridiano+" "+LOGIN.dataW(note[n].numeroTsubo)+"</b>: "+LOGIN.dataW(note[n].TestoAnnotazione.replace(/\n/gi,"<br>"))+"<br>");
+						LOGIN.addHTML("<b>"+note[n].meridiano+" "+LOGIN.decryptPrivacy(LOGIN.decryptPrivacy(LOGIN.dataW(note[n].numeroTsubo)))+"</b>: "+LOGIN.dataW(note[n].TestoAnnotazione.replace(/\n/gi,"<br>"))+"<br>");
 					}
 					LOGIN.addHTML("</div>");
 				}

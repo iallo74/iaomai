@@ -245,7 +245,6 @@ var MODULO_TSUBO = { // extend SET
 		if(!nota_salvata && Q_TestoAnnotazione.trim()!=''){
 			var idPaziente=-1;
 			if(PAZIENTI.idCL>-1)idPaziente=PAZIENTI.idPaziente;
-			console.log(idPaziente)
 			JSNPUSH={	"TestoAnnotazione": Q_TestoAnnotazione,
 						"meridiano": Q_nome_meridiano,
 						"numeroTsubo": Q_p*1,
