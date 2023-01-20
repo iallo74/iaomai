@@ -603,23 +603,27 @@ var SCHEDA = {
 		var cartaIntestata = false;
 		var TITOLO_PAGINA = htmlEntities(nomeApp)+'&#8482; - '+htmlEntities(sloganApp);
 		var sch = document.getElementById("scheda");
-		if(	sch.classList.contains("scheda_A") || 
+		/*if(	sch.classList.contains("scheda_A") || 
 			sch.classList.contains("scheda_B") || 
-			sch.classList.contains("scheda_Riepi") )obj = {};
+			sch.classList.contains("scheda_Riepi") )obj = {};*/
 		if(	typeof(obj)=='undefined'){
 			var titolo = document.getElementById("scheda_titolo").innerHTML;
 			var corpo = document.getElementById("scheda_testo").querySelector(".scheda_stampa").outerHTML;
 		}else{
 			cartaIntestata = true;
 			var titolo = '';
-			if(JSON.stringify(obj)!='{}')TITOLO_PAGINA = htmlEntities(obj.titolo)+" "+htmlEntities(TXT("per"))+" "+htmlEntities(obj.intestazione)
+			console.log(obj)
+			if(JSON.stringify(obj)!='{}')TITOLO_PAGINA = htmlEntities(obj.titolo)+" "+htmlEntities(TXT("per"))+" "+htmlEntities(obj.intestazione);
+			console.log(TITOLO_PAGINA);
 			var dati = '<p>'+htmlEntities(TXT("per"))+' '+htmlEntities(obj.intestazione) + '</p>' + 
 						'<p>'+htmlEntities(obj.corpo) + '</p>' + 
 						'<p style="padding-left:50px;padding-top:50px;"><i>' + TXT("Data") + ':</i> ' + getFullDataTS(d/1000) + '<br><br>' +
 						'<i style="font-size:15px;">' + DB.login.data.Nominativo + '</i></p>';
 						
-			if(JSON.stringify(obj)!='{}')var corpo = dati;
-			else{
+			if(JSON.stringify(obj)!='{}'){
+				var titolo = TITOLO_PAGINA;
+				var corpo = dati;
+			}else{
 				var titolo = document.getElementById("scheda_titolo").innerHTML;
 				var corpo = document.getElementById("scheda_testo").querySelector(".scheda_stampa").outerHTML;
 			}

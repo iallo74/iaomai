@@ -34,11 +34,16 @@ textarea{
 .contStampa input[type='text'],
 .contStampa input[type='email'],
 .contStampa textarea,
-.contStampa .date{
+.contStampa .date,
+.contStampa #dataTxt{
 	border-top:none !important;
 	border-left:none !important;
 	border-right:none !important;
 	border-radius:0px !important;
+}
+.contStampa #dataTxt{
+    background: none !important;
+    padding-right: 0px;
 }
 
 /* PULSANTI IN FONDO AI FORMS */
@@ -397,6 +402,12 @@ body:not(.smart) .stampaBtn{
 .scoreSelect{
 	float:right;
 	margin-right:4px;
+}
+.contStampa .scoreSelect{
+	background: none !important;
+	border:none !important;
+	text-align:right !important;
+	padding-right:5px !important;
 }
 .sintomiTratt img{ /* PAZIENTI */
 	display:none;
@@ -1169,6 +1180,9 @@ body:not(.smart) .stampaBtn{
     margin-right: -20px !important;
 	width: calc(100% + 40px) !important;
 	padding-left:20px !important;
+}
+.contStampa #p_add_dett{
+	display:none !important;
 }
 .noBR {
 	margin-bottom: -7px !important;

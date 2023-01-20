@@ -32,7 +32,7 @@ body:not(.smart) #scheda{
 .smart #scheda{
 	width: 100%;
 }
-body:not(.smart) #scheda{
+body:not(.smart).not(.htmlStampa) #scheda{
 	width: calc(100% - 48px);
 }
 .schRid:not(.schOp):not(.schLibera):not(.schLato){
@@ -646,6 +646,11 @@ body:not(.smart) .schedaRitorno #scheda_titolo{
 #scheda_testo2 > div{
 	text-align:left;
 	padding:30px;
+}
+.contStampa #scheda_testo > div,
+.contStampa #scheda_testo2 > div{
+	padding-left:0px !important;
+	padding-right:0px !important;
 }
 body:not(.smart) .h150 #scheda_testo > div:not(#btnMenuScheda){
 	padding-bottom:80px !important;

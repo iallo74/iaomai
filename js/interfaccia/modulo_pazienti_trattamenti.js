@@ -666,6 +666,7 @@ var PAZIENTI_TRATTAMENTI = {
 				'	</em>' +	
 				'	<img src="img/ico_stampa.png"' +
 				'		 id="stampa_prescr"' +
+				'		 class="noPrint"' +
 				'		 onClick="SCHEDA.stampaScheda({\'titolo\':\''+addslashes(htmlEntities(TXT("Prescrizione")))+'\',\'corpo\':document.formMod.Prescrizione.value,\'intestazione\':DB.pazienti.data[PAZIENTI.idCL].Nome+\' \'+DB.pazienti.data[PAZIENTI.idCL].Cognome});">' +	
 				'	<div id="contPrescrizione">'+
 				H.r({	t: "t",	
@@ -712,7 +713,7 @@ var PAZIENTI_TRATTAMENTI = {
 					'	</div>' +
 					'	<div class="l"></div>' +
 					'</div>' +
-					'<div class="cont_p_paz_label">' +
+					'<div class="cont_p_paz_label noPrint">' +
 					'	<div class="p_paz_label"' +
 					'		 id="p_paz_label_sintomi"' +
 					'			 onclick="PAZIENTI.visAggiungiSintomo();">' +
@@ -740,7 +741,8 @@ var PAZIENTI_TRATTAMENTI = {
 					'	</em>' +
 					'	<div id="puntiTsuboMap">' +
 					'	</div>' +
-					'	<div id="tratt_btns_punti"></div>' +
+					'	<div id="tratt_btns_punti"' +
+					'		 class="noPrint"></div>' +
 					'</div>' +
 			
 			// MERIDIANI
@@ -757,7 +759,8 @@ var PAZIENTI_TRATTAMENTI = {
 					'	</em>' +
 					'	<div id="meridianiTsuboMap">' +
 					'	</div>' +
-					'	<div id="tratt_btns_meridiani"></div>' +
+					'	<div id="tratt_btns_meridiani"' +
+					'		 class="noPrint"></div>' +
 					'</div>' +
 			
 			// AURICULO
@@ -774,7 +777,8 @@ var PAZIENTI_TRATTAMENTI = {
 					'	</em>' +
 					'	<div id="puntiAuriculoMap">' +
 					'	</div>' +
-					'	<div id="tratt_btns_auriculo"></div>' +
+					'	<div id="tratt_btns_auriculo"' +
+					'		 class="noPrint"></div>' +
 					'</div>' +
 			
 			// GALLERY
@@ -792,6 +796,7 @@ var PAZIENTI_TRATTAMENTI = {
 					'		 class="divEspansa contGallery">' +
 					'	</div>' +
 					'	<div id="p_add_dett"' +
+					'		 class="noPrint"' +
 					'		 style="margin-top: 0px;">' +
 					'		<input type="file"' +
 					'			   id="fotoProvv_FL"' +
@@ -873,7 +878,8 @@ var PAZIENTI_TRATTAMENTI = {
 		if( globals.set.cartella == 'meridiani_cinesi' ||
 			globals.set.cartella == 'meridiani_shiatsu' ){
 			HTML+=
-				'	<div id="p_add_dett">' +
+				'	<div id="p_add_dett"' +
+				'		 class="noPrint">' +
 				'		<div id="grpPt"' +
 				'		    class="p_paz_gruppo"' +
 				'		    onClick="PAZIENTI.gruppoPunti(\'P\');">' +
@@ -908,7 +914,8 @@ var PAZIENTI_TRATTAMENTI = {
 		var HTML = '';
 		if( globals.set.cartella == 'auricologia' ){
 			HTML+=
-				'	<div id="p_add_dett">' +
+				'	<div id="p_add_dett"' +
+				'		 class="noPrint">' +
 				'		<div id="grpAur"' +
 				'		    class="p_paz_gruppo"' +
 				'		    onClick="PAZIENTI.gruppoPunti(\'A\');">' +
@@ -1281,14 +1288,14 @@ var PAZIENTI_TRATTAMENTI = {
 						'	<span>' +
 								htmlEntities(PAZIENTI.sintomiProvvisori[p].NomeSintomo) +
 						'		<img src="img/ico_modifica_anag.png"' +
-						'			 class="ico_mod_label"' +
+						'			 class="ico_mod_label noPrint"' +
 						'			 data-value="'+htmlEntities(PAZIENTI.sintomiProvvisori[p].NomeSintomo)+'"' +
 						'		 	 onClick="PAZIENTI.modificaSintomo(this);">' +
 						'	</span>' +
 						'	<img src="img/ico_cestino.png"' +
 						'		 title="'+TXT("DelDett")+'"' +
 						'		 onClick="PAZIENTI.eliminaSintomo('+p+');"' +
-						'		 class="occhio">' +
+						'		 class="occhio noPrint">' +
 							selectScoreHTML.replace('value="'+PAZIENTI.sintomiProvvisori[p].score+'"',
 													'value="'+PAZIENTI.sintomiProvvisori[p].score+'" SELECTED').replace("[p]",p) +
 						'</div>';

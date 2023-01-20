@@ -1223,11 +1223,11 @@ var PAZIENTI = {
 	mod_paziente: function(){ //salva l'anagrafica paziente
 		if(!verifica_form(document.getElementById("formMod")))return;
 		stopAnimate(true);
-		visLoader(TXT("SalvataggioInCorso"),'loadingLight');
 		if(document.formMod.Cellulare.value && !document.formMod.paeseCellulare.value){
 			ALERT(stripslashes(TXT("ErrorePrefisso")));
 			return;
 		}
+		visLoader(TXT("SalvataggioInCorso"),'loadingLight');
 		var DataModifica = DB.pazienti.lastSync+1;
 		var d=new Date();
 		var md5=MD5("P"+d);
