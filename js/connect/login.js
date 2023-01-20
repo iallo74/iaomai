@@ -1407,7 +1407,6 @@ var LOGIN = {
 			});
 		}else LOGIN.verSincro('ricerche');
 	
-					console.log("SINCRO")	
 		// NOTE
 		if(elenco.note){
 			syncUp=true;

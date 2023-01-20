@@ -425,8 +425,8 @@ var MENU = {
 		if(typeof(forza)=='undefined')var forza = false;
 		var maxDate = new Date("2023-03-01").getTime();
 		var now = new Date().getTime();
-		if(	(!__(localStorage.no_info_features_1_3,'') &&
-			!__(MENU.no_info_features_1_3,false) &&
+		if(	(!__(localStorage["no_info_features_"+verApp.replace(".","_")],'') &&
+			!__(MENU["no_info_features_"+verApp.replace(".","_")],false) &&
 			LOGIN.logedin() &&
 			maxDate>now) || forza ){
 			if(forza){
@@ -440,7 +440,7 @@ var MENU = {
 				document.getElementById("features").classList.add("visSch");
 				setTimeout(function(){document.getElementById("features").style.opacity = 1;},200);
 			},tmRit);
-			MENU.no_info_features_1_3 = true;
+			MENU["no_info_features_"+verApp.replace(".","_")] = true;
 		}
 	},
 	visBackups: function(){
