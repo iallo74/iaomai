@@ -199,6 +199,7 @@ var IMPORTER = {
 		if(userAgent.indexOf("macintosh") && touchable && !smartMenu)isTablet = true;
 		if(smartMenu)document.body.classList.add("smart");
 		if(isTablet)document.body.classList.add("tablet");
+		if(onlineVersion)document.body.classList.add("onlineVersion");
 		document.getElementById("verApp_imp").innerHTML = verApp;
 		document.addEventListener('backbutton', function (e) {
 			//uscitaESC();
