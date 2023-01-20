@@ -7,6 +7,9 @@ form{
 .smart #formMod{
 	padding-bottom: 20px;
 }
+.smart.android #formMod{
+	padding-bottom: 270px;
+}
 ::-webkit-input-placeholder{
 	opacity:0;
 }
