@@ -15,7 +15,12 @@ var MODULO_TEORIA = { // extend SET
 		"0_10",
 		"1_3",
 		"2_0",
-		"3_0"
+		"3_0",
+		"4_0",
+		"4_1",
+		"4_2",
+		"4_3",
+		"4_4"
 	],
 	
 	caricaApprofondimenti: function(){

@@ -1,7 +1,7 @@
 
 var MODULO_TEORIA = { // extend SET
 	
-	TEORIA_free: [ "0_0", "0_1" ],
+	TEORIA_free: [ "0_0", "0_1", "4_0", "4_1", "4_2" ],
 	
 	caricaApprofondimenti: function(){ // carica la lista degli approfondimenti
 		var contTeoria = '';

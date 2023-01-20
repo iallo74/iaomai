@@ -412,10 +412,13 @@ body:not(.smart) #scheda.schForm:not(.schedaRitorno):not(.minimized):not(.tab_ts
 	width: calc(100% - 179px) !important;
 }
 .smart #scheda_titolo{
-	width: calc(100% - 120px);
+	width: calc(100% - 75px);
     cursor: default !important;
     text-align: center;
 	padding-left: 44px !important;
+}
+.smart.bodyModello #scheda_titolo{
+	width: calc(100% - 120px) !important;
 }
 #scheda_modello,
 #scheda_back{
@@ -440,7 +443,7 @@ body:not(.smart) #scheda.schForm:not(.schedaRitorno):not(.minimized):not(.tab_ts
 	background-size:auto 60px;
 	margin-right: 4px !important;
 }
-.smart #scheda_modello{
+.smart.bodyModello #scheda_modello{
     background-image: url(../img/ico_occhio.png);
 	background-size:auto 30px;
 	margin-left: 7px;

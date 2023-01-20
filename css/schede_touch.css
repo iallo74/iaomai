@@ -257,14 +257,14 @@
 .smart.nasSch #riapriSch {
     display: block !important;
     position: fixed;
-    bottom: 0;
+    top: 0;
     left: 50%;
     width: 180px;
     margin-left: -90px;
     height: 46px;
     background-color: #1546a1;
     text-align: center;
-    border-radius: 6px 6px 0px 0px;
+    border-radius: 0px 0px 6px 6px;
     box-shadow: 0px 0px 3px rgba(0,0,0,0.5);
 }
 .smart.nasSch #riapriTit{
@@ -282,13 +282,13 @@
     font-style: italic;
 	padding-left: 10px;
     padding-right: 10px;
-	border-radius: 6px 6px 0px 0px;
 }
 .smart.nasSch #riapriBtn{
     height: 27px;
     line-height: 27px;
 	width:100%;
 	color:#FFF;
+	border-radius: 6px 6px 0px 0px;
 }
 .smart #ss{
 	height: 29px !important;
