@@ -178,9 +178,12 @@ body.orecchio #pulsante_modello{
 	line-height:30px;
 	margin:0px;
 }
-#scheda_testo .elencoTsubo p{
+#scheda_testo .elencoTsubo p:not(.categoriaGruppo){
 	height:25px;
 	line-height:25px;
+}
+#scheda_testo .elencoTsubo p.categoriaGruppo{
+	margin-top:10px !important;
 }
 .smart.android .elencoTsubo p{
 	height:40px !important;
@@ -467,7 +470,7 @@ body:not(.touch) .listaPunti .spazioDopo{
 	background-color:#06C;
 }
 .pCIN{
-	background-color:#960;
+	background-color:#8f3500;/*#960;*/
 }
 
 

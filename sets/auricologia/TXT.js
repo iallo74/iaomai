@@ -474,6 +474,16 @@ DB.TXT.set = {
         eng: "Functional points",
         esp: ""
     },
+    Gruppi_FN1: {
+        ita: "Punti funzionali I livello",
+        eng: "I level functional points",
+        esp: ""
+    },
+    Gruppi_FN2: {
+        ita: "Punti funzionali II livello",
+        eng: "II level functional points",
+        esp: ""
+    },
     Gruppi_NR: {
         ita: "Punti neuroriflessi",
         eng: "Neuroreflex points",

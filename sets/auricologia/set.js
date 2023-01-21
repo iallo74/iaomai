@@ -207,8 +207,7 @@ SET = {
 				if(mesh.name.indexOf("PH2")>-1)PH = '2';
 				if(mesh.name.indexOf("PH3")>-1)PH = '3';
 				
-				var FN = false;
-				if(GEOMETRIE.gruppi.FN.punti.indexOf(name.substr(2,3))>-1)FN = true;
+				var FN = (GEOMETRIE.gruppi.FN.punti.indexOf(name.substr(2,3))>-1);
 				var master = (GEOMETRIE.gruppi.MASTER.punti.indexOf(name.substr(2,3))>-1);
 				
 				var freq = [];
@@ -307,8 +306,7 @@ SET = {
 				}
 				
 				
-				var FN = false;
-				if(GEOMETRIE.gruppi.FN.punti.indexOf(name.substr(2,3))>-1)FN = true;
+				var FN = (GEOMETRIE.gruppi.FN.punti.indexOf(name.substr(2,3))>-1);
 				var master = (GEOMETRIE.gruppi.MASTER.punti.indexOf(name.substr(2,3))>-1);
 				
 				

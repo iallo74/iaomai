@@ -61,13 +61,49 @@ var MODULO_TEORIA = { // extend SET
 			if(SET.phase)setTimeout(function(){SET.setPhase('');},500);
 			var mAtt=DB.set.teoria[SET.idTeoCategorie].contenuti[t].sigla;
 			var elencoTsubo='<br><b>'+htmlEntities(TXT("ElencoPunti"))+'</b>';
+			var priority = __(GEOMETRIE.gruppi[gruppo].priority,false);
+			
+			var puntiElenco = [];
 			for(g in GEOMETRIE.gruppi[gruppo].punti){
-				var TS = GEOMETRIE.gruppi[gruppo].punti[g];
+				var siglaTsubo = GEOMETRIE.gruppi[gruppo].punti[g];
+				if(siglaTsubo.length==3){
+					if(!__(DB.set.punti[siglaTsubo].hidden,false) || forzaHidden){
+						var NomeTsubo = siglaTsubo;
+						if(siglaTsubo.length==3)NomeTsubo = DB.set.punti[siglaTsubo].NomeTsubo;
+						var ordine = NomeTsubo;
+						var categoria = '';
+						if(priority){
+							if(priority.punti.indexOf(siglaTsubo)>-1){
+								ordine = siglaTsubo + ": " + ordine;
+								categoria = priority.tipoOn;
+							}else{
+								categoria = priority.tipoOff;
+							}
+						}
+						puntiElenco.push({
+							ordine: ordine,
+							siglaTsubo: siglaTsubo,
+							NomeTsubo: NomeTsubo,
+							categoria: categoria
+						});
+					}
+				}
+			}
+			if(__(GEOMETRIE.gruppi[gruppo].ordine)=='alfabetico')puntiElenco.sort(sort_by("ordine", false));
+
+			var catV = categoria = '';
+			for(g in puntiElenco){
+				if(puntiElenco[g].categoria && puntiElenco[g].categoria != catV){
+					elencoTsubo+='<p class="categoriaGruppo"><i>'+TXT("Gruppi_"+puntiElenco[g].categoria)+'</i></p>';
+				}
+				catV = puntiElenco[g].categoria;
+				var TS = puntiElenco[g].siglaTsubo;
 				if(TS.length==3){
-					if(!__(DB.set.punti[TS].hidden,false) || forzaHidden)elencoTsubo+='<p>[.'+TS+'.]</p>';
+					elencoTsubo+='<p>[.'+TS+'.]</p>';
 				}
 				else elencoTsubo+='<p><span class="pallinoNul"><span class="pNUL"></span>'+htmlEntities(TXT(""+TS))+'</span></p>';
 			}
+			
 			html_cont = '<div>'+html_cont+'</div>' +
 						'<div class="elencoTsubo">' +
 							SET.convPuntiScheda(elencoTsubo) +
@@ -378,7 +414,7 @@ var MODULO_TEORIA = { // extend SET
 			}
 		};
 		
-		return '<a onClick="SET.apriPatologia('+p+',document.getElementById(\'btn_patologia_'+p+'\'));">'+protocolli[protocollo].t+'</a>';
+		return '<a onClick="SET.apriPatologia('+protocolli[protocollo].p+',document.getElementById(\'btn_patologia_'+protocolli[protocollo].p+'\'));">'+protocolli[protocollo].t+'</a>';
 	},
 	
 	hideGroupLines: function(){ // nasconde le linee guida dei gruppi
