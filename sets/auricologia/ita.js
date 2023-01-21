@@ -9943,7 +9943,7 @@ DB.set= {
                 },
                 {
                     "TitoloTeoria": "Crediti",
-                    "TestoTeoria": "Ringraziamo per il prezioso contributo allo sviluppo dell'applicazione, sia sotto il profilo contenutistico, nelle loro specifiche competenze, sia per quel che riguarda l'ottimizzazione e il funzionamento:<br><br><img class='autore_mini' src='sets/auricologia/img/autore_zion_levy.jpg'><br><b>dr. Zion Levy</b><br>xxx<div class='l'></div><img class='autore_mini' src='sets/auricologia/img/autore_giorgio_bertani.jpg'><br><b>dr. Giorgio Eugenio Bertani</b><br>xxx<div class='l'></div><img class='autore_mini' src='sets/auricologia/img/autore_ilaria_peirone.jpg'><br><b>dott.ssa Peirone Grossi Ilaria</b><br>xxx"
+                    "TestoTeoria": "Ringraziamo per il prezioso contributo allo sviluppo dell'applicazione, sia sotto il profilo contenutistico, nelle loro specifiche competenze, sia per quel che riguarda l'ottimizzazione e il funzionamento:<br><br><img class='autore_mini' src='sets/auricologia/img/autore_zion_levy.jpg'><b>dr. Zion Levy</b><br>Medico specializzato in anestesia e rianimazione, Agopuntore, Auricolopuntore e referente per la medicina complementare presso l'ospedale di Siena<div class='l separatorePulsanti'></div><img class='autore_mini' src='sets/auricologia/img/autore_giorgio_bertani.jpg'><b>dr. Giorgio Eugenio Bertani</b><br>Medico di medicina integrata, Agopuntore, Fitoterapeuta, Omeopata, Sessuologo, Ipnologo e operatore del riequilibrio Cranio Sacrale.<div class='l separatorePulsanti''></div><img class='autore_mini' src='sets/auricologia/img/autore_ilaria_peirone.jpg'><b>dott.ssa Peirone Grossi Ilaria</b><br>xxx"
                 }
             ],
             "noList": true
