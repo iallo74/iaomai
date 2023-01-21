@@ -3061,7 +3061,7 @@ DB.set= {
 				},
                 {
                     TitoloTeoria: "Crediti",
-                    TestoTeoria: "Ringraziamo per il prezioso contributo allo sviluppo dell'applicazione, sia sotto il profilo contenutistico, nelle loro specifiche competenze, sia per quel che riguarda l'ottimizzazione e il funzionamento:<br><br><img class='autore_mini' src='sets/meridiani_shiatsu/img/autore_vittorio_piacenza.jpg'><b>Vittorio Piacenza</b><br>Dottore in Scienze Motorie, Maestro di Shiatsu, Massofisioterapeuta e Insegnante di discipline olistiche.<div class='l separatorePulsanti'></div><img class='autore_mini' src='sets/meridiani_shiatsu/img/autore_federico_crispo.jpg'><b>Roberto Federico Crispo</b><br>xxx"
+                    TestoTeoria: "Ringraziamo per il prezioso contributo allo sviluppo dell'applicazione, sia sotto il profilo contenutistico, nelle loro specifiche competenze, sia per quel che riguarda l'ottimizzazione e il funzionamento:<br><br><img class='autore_mini' src='sets/meridiani_shiatsu/img/autore_vittorio_piacenza.jpg'><b>Vittorio Piacenza</b><br>Dottore in Scienze Motorie, Maestro di Shiatsu, Massofisioterapeuta e Insegnante di discipline olistiche.<div class='l separatorePulsanti'></div><img class='autore_mini' src='sets/meridiani_shiatsu/img/autore_federico_crispo.jpg'><b>Roberto Federico Crispo</b><br>Operatore Shiatsu, Spa therapist, Massoterapeuta, Tecnico di posturologia in ambito sportivo"
                 }
 			],
 			noList: true
