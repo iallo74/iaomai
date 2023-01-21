@@ -699,6 +699,15 @@ body:not(.bodyStyled2) #scheda_testo2{
 #scheda li{
 	margin-top:10px;
 }
+#scheda.scheda_teoria ul,
+#scheda.scheda_teoria ol{
+	padding-left: 24px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+#scheda.scheda_teoria li{
+	margin: 4px 0px !important;
+}
 #scheda h1 *{
 	font-size: var(--font-30-9);
     font-weight: normal;

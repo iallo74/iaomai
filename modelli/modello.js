@@ -372,6 +372,9 @@ var MODELLO = {
 				MODELLO.op("Visceri",opVisceri);
 			}
 		}
+		if(globals.modello.cartella == 'orecchio' && MODELLO.tipoPelle){
+			MODELLO.cambiaTipoPelle(''); // metto la pelle chiare se si tratta dell'orecchio
+		}
 		document.getElementById("pulsanti_modello").classList.add('modelloScelto');
 		inizio = false;
 	},
@@ -1258,6 +1261,10 @@ var MODELLO = {
 		RICERCHE.nascondiGlobal();
 	},
 	cambiaTipoPelle: function( tipo ){
+		if(globals.modello.cartella == 'orecchio' && tipo){
+			ALERT(TXT("NoCambioPelle"));
+			return;
+		}
 		MODELLO.tipoPelle = tipo;
 		localStorage.tipoPelle = tipo;
 		var els = document.getElementById("skinSel").getElementsByTagName("span");

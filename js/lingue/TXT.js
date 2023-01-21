@@ -332,6 +332,11 @@ DB.TXT = {
 			eng: "Skin type",
 			esp: ""
 		},
+		NoCambioPelle: {
+			ita: "Con questo modello non è possibile scegliere il tipo di pelle",
+			eng: "With this model you can not choose skin type",
+			esp: ""
+		},
 		DimTxt: {
 			ita: "Dimensione testi",
 			eng: "Texts size",

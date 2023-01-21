@@ -53,6 +53,23 @@ var MODULO_TEORIA = { // extend SET
 		var forzaHidden = __(DB.set.teoria[p].contenuti[t].forzaHidden);
 		var html = "<h1>"+htmlEntities(titolo)+"</h1>";
 		var html_cont = SET.convPuntiScheda(DB.set.teoria[p].contenuti[t].TestoTeoria);
+		var anatomia = __(DB.set.teoria[p].contenuti[t].anatomia,'');
+		var mappa = __(DB.set.teoria[p].contenuti[t].mappa,'');
+		var lm = __(DB.set.teoria[p].contenuti[t].lm,'');
+		if(SET.forzaDissolve){
+			MODELLO.op("Pelle",SET.forzaDissolve.Pelle);
+			MODELLO.op("Ossa",SET.forzaDissolve.Ossa);
+			MODELLO.op("Visceri",SET.forzaDissolve.Visceri);
+			SET.forzaDissolve = false;
+		}
+		if(SET.mappaOr){
+			SET.cambiaMappa(SET.mappaOr);
+			SET.mappaOr = '';
+		}
+		if(SET.lmOr!==''){
+			if(SET.lmVis != SET.lmOr && globals.modello.cartella)SET.swLM();
+			SET.lmOr = '';
+		}
 		SET.test = '';
 		
 		SET.hideGroupLines();
@@ -66,7 +83,7 @@ var MODULO_TEORIA = { // extend SET
 			var puntiElenco = [];
 			for(g in GEOMETRIE.gruppi[gruppo].punti){
 				var siglaTsubo = GEOMETRIE.gruppi[gruppo].punti[g];
-				if(siglaTsubo.length==3){
+				if(siglaTsubo.length==3 && DB.set.punti[siglaTsubo]){
 					if(!__(DB.set.punti[siglaTsubo].hidden,false) || forzaHidden){
 						var NomeTsubo = siglaTsubo;
 						if(siglaTsubo.length==3)NomeTsubo = DB.set.punti[siglaTsubo].NomeTsubo;
@@ -138,13 +155,13 @@ var MODULO_TEORIA = { // extend SET
 							
 		SCHEDA.caricaScheda( 	titolo,
 								html,
-								'SET.annullaEvidenziaTsubo();'+addClose,
+								'SET.annullaEvidenziaTsubo(true);'+addClose,
 								'scheda_teoria',
 								ritorno,
 								true,
 								btn,
 								btnAdd );
-		SET.evidenziaTsubo(html);
+		SET.evidenziaTsubo(html,anatomia,mappa,lm);
 		if(flowchart){
 			if(SET.risTest.dipendenza.tot > -1){
 				for(o=0;o<document.getElementById("dipendenze").options.length;o++){

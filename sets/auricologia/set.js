@@ -29,6 +29,9 @@ SET = {
 	patOp: -1,
 	schEvi: null,
 	testTOT: 0,
+	forzaDissolve: false,
+	mappaOr: '',
+	lmOr: '',
 	risTest:{
 		dipendenza: {
 			tot: -1,
@@ -970,8 +973,11 @@ SET = {
 		SCHEDA.torna();
 		SCHEDA.formModificato = true;
 	},
-	evidenziaTsubo: function( html ){
-		SET.annullaEvidenziaTsubo();
+	evidenziaTsubo: function( html, anatomia, mappa, lm ){
+		if(typeof(anatomia) == 'undefined')var anatomia = '';
+		if(typeof(mappa) == 'undefined')var mappa = '';
+		if(typeof(lm) == 'undefined')var lm = '';
+		SET.annullaEvidenziaTsubo(true);
 		var re = /selTsubo\([^\)]+\)/ig;
 		var result = html.match(re);
 		for(k in result){
@@ -984,7 +990,7 @@ SET = {
 			}
 			// --------------------------
 		}
-		SET.applicaEvidenziaTsubo();
+		SET.applicaEvidenziaTsubo(anatomia,mappa,lm);
 		/*
 		//-------------------- MOSTRA LINEE
 		//SET.hideGroupLines();
@@ -1008,8 +1014,8 @@ SET = {
 		}
 		SET.applicaEvidenziaTsubo();
 	},
-	applicaEvidenziaTsubo: function(){
-		if(SET.tsuboEvidenziati.length){
+	applicaEvidenziaTsubo: function( anatomia, mappa, lm ){
+		if(SET.tsuboEvidenziati.length || anatomia){
 			var phs = ["","2","3"];
 			for(ph in phs){
 				var els = scene.getObjectByName("PTs"+phs[ph]).children;
@@ -1036,41 +1042,86 @@ SET = {
 				}
 			}
 		}
+		if(anatomia){
+			setTimeout( function(){
+				SET.forzaDissolve = {
+					"Pelle": localStorage.opPelle,
+					"Ossa": localStorage.opOssa,
+					"Visceri": localStorage.opVisceri
+				};
+				MODELLO.op("Pelle",parseFloat(anatomia.Pelle));
+				MODELLO.op("Ossa",parseFloat(anatomia.Ossa));
+				MODELLO.op("Visceri",parseFloat(anatomia.Visceri));
+				SET.tsuboEvidenziati.push("999"); // evita l'illuminazione dei punti al passaggio del mouse
+			}, 200, anatomia);
+		}
+		if(mappa){
+			setTimeout( function(){
+				SET.mappaOr = localStorage.imgMappa;
+				SET.cambiaMappa(mappa);
+			}, 200, mappa);
+		}
+		if(lm!==''){
+			setTimeout( function(){
+				SET.lmOr = SET.lmVis;
+				if(SET.lmVis != lm && globals.modello.cartella)SET.swLM();
+			}, 200, lm);
+		}
 	},
-	annullaEvidenziaTsubo: function(){
-		if(SET.tsuboEvidenziati.length){
-			for(k in SET.tsuboEvidenziati){
-				var siglaTsubo=SET.tsuboEvidenziati[k];
-				if(siglaTsubo){
+	annullaEvidenziaTsubo: function( forzaDissolve ){
+		if(typeof(forzaDissolve)=='undefined')var forzaDissolve = false;
+		if(SET.tsuboEvidenziati.length || forzaDissolve){
+			var phs = ["","2","3"];
+			for(ph in phs){
+				
+				var els = scene.getObjectByName("PTs"+phs[ph]).children;
+				for(e in els){
+					var siglaTsubo = els[e].name.replace("_","").substr(2,3);
 					var vis = !__(DB.set.punti[siglaTsubo].hidden,false);
-					var phs = ["","2","3"];
-					for(ph in phs){
-						var els = scene.getObjectByName("PTs"+phs[ph]).children;
-						for(e in els){
-							if(els[e].name.indexOf("_PT"+siglaTsubo)==0){
-								els[e].material=SET.MAT.pointTrasp;
-								els[e].visible = vis;
-							}
-							if(els[e].name.indexOf("PT"+siglaTsubo)==0){
-								els[e].visible = vis;
-							}
-							if(els[e].name.substr(0,1)!='_'){
-								els[e].material.opacity = 1;
-							}
+					if(SET.tsuboEvidenziati.indexOf(siglaTsubo)>-1){
+						if(els[e].name.indexOf("_PT"+siglaTsubo)==0){
+							els[e].material=SET.MAT.pointTrasp;
+							els[e].visible = vis;
 						}
-						var els = scene.getObjectByName("ARs"+phs[ph]).children;
-						for(e in els){
-							if(els[e].name.indexOf("AR"+siglaTsubo)==0){
-								els[e].material=cloneMAT(eval("SET.MAT.areaBase"+els[e].userData.system));
-								els[e].visible = vis;
-							}
-							els[e].material.opacity = 0.4;
+						if(els[e].name.indexOf("PT"+siglaTsubo)==0){
+							els[e].visible = vis;
 						}
 					}
+					if(els[e].name.substr(0,1)!='_'){
+						els[e].material.opacity = 1;
+					}
+				}
+				var els = scene.getObjectByName("ARs"+phs[ph]).children;
+				for(e in els){
+					var siglaTsubo = els[e].name.substr(2,3);
+					var vis = !__(DB.set.punti[siglaTsubo].hidden,false);
+					if(SET.tsuboEvidenziati.indexOf(siglaTsubo)>-1){
+						if(els[e].name.indexOf("AR"+siglaTsubo)==0){
+							els[e].material=cloneMAT(eval("SET.MAT.areaBase"+els[e].userData.system));
+							els[e].visible = vis;
+						}
+					}
+					els[e].material.opacity = 0.4;
 				}
 			}
-			SET.tsuboEvidenziati = [];
 		}
+		if(forzaDissolve){
+			if(SET.forzaDissolve){
+				MODELLO.op("Pelle",SET.forzaDissolve.Pelle);
+				MODELLO.op("Ossa",SET.forzaDissolve.Ossa);
+				MODELLO.op("Visceri",SET.forzaDissolve.Visceri);
+				SET.forzaDissolve = false;
+			}
+			if(SET.mappaOr){
+				SET.cambiaMappa(SET.mappaOr);
+				SET.mappaOr = '';
+			}
+			if(SET.lmOr!==''){
+				if(SET.lmVis != SET.lmOr && globals.modello.cartella)SET.swLM();
+				SET.lmOr = '';
+			}
+		}
+		SET.tsuboEvidenziati = [];
 	},
 	settaOverTsubo: function(){
 		if(!touchable){
