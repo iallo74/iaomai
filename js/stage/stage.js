@@ -298,6 +298,7 @@ function scaricaModello( esci ){
 	if(globals.modello.cartella){
 		document.body.classList.remove(globals.modello.cartella);
 		if(__(globals.modello.areaName,''))document.body.classList.remove(__(globals.modello.areaName,''));
+		if(__(globals.modello.viscName,''))document.body.classList.remove(__(globals.modello.viscName,''));
 		document.getElementById("p_"+globals.modello.cartella).classList.remove("btnSel");
 		globals.initModello();
 		localStorage.modello = "";
@@ -334,6 +335,7 @@ function cambiaModello( cartella ){
 			if(globals.modello.cartella){
 				document.body.classList.remove(globals.modello.cartella);	
 				if(__(globals.modello.areaName,''))document.body.classList.remove(__(globals.modello.areaName,''));	
+				if(__(globals.modello.viscName,''))document.body.classList.remove(__(globals.modello.viscName,''));	
 			}
 			MENU.chiudiAllSelected();
 			MENU.chEls();
