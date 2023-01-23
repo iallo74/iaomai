@@ -1161,6 +1161,7 @@ var PAZIENTI_SETS = {
 		PAZIENTI.caricaPuntiPatologie();
 	},
 	caricaPuntiPatologie: function(){ // importa i punti delle schede patologie 
+		var totPatologie = 0;
 		EL = {};
 		EL.titolo = TXT("Patologie");
 		EL.contenuto = [];
@@ -1205,11 +1206,12 @@ var PAZIENTI_SETS = {
 				}
 				if(EL2.contenuto.length){
 					EL.contenuto[i] = EL2; 
+					totPatologie += EL2.contenuto.length;
 				}
 			}
 			// ---------------------------
 		}
-		PAZIENTI.elencoGruppoPunti.contenuto.push(EL);
+		if(totPatologie)PAZIENTI.elencoGruppoPunti.contenuto.push(EL);
 		PAZIENTI.elencoGruppoAtt = PAZIENTI.elencoGruppoPunti;
 		PAZIENTI.swGruppoPunti();
 	},

@@ -1453,15 +1453,17 @@ var PAZIENTI_TRATTAMENTI = {
 	getSintomiCiclo: function( cartella ){
 		var SINTOMI = [];
 		var nomiSintomi = [];
-		for(t in DB.pazienti.data[PAZIENTI.idCL].trattamenti){
-			if(cartella == DB.pazienti.data[PAZIENTI.idCL].trattamenti[t].LabelCiclo){
-				var ss = JSON.parse(DB.pazienti.data[PAZIENTI.idCL].trattamenti[t].sintomi);
-				for(s in ss){
-					if(nomiSintomi.indexOf(ss[s].NomeSintomo)==-1){
-						var sintomo = ss[s];
-						sintomo.score = -1;
-						SINTOMI.push(sintomo);
-						nomiSintomi.push(sintomo.NomeSintomo);
+		if(cartella){
+			for(t in DB.pazienti.data[PAZIENTI.idCL].trattamenti){
+				if(cartella == DB.pazienti.data[PAZIENTI.idCL].trattamenti[t].LabelCiclo){
+					var ss = JSON.parse(DB.pazienti.data[PAZIENTI.idCL].trattamenti[t].sintomi);
+					for(s in ss){
+						if(nomiSintomi.indexOf(ss[s].NomeSintomo)==-1){
+							var sintomo = ss[s];
+							sintomo.score = -1;
+							SINTOMI.push(sintomo);
+							nomiSintomi.push(sintomo.NomeSintomo);
+						}
 					}
 				}
 			}
@@ -1617,11 +1619,21 @@ var PAZIENTI_TRATTAMENTI = {
 					TitoloTrattamento=TR.TitoloTrattamento;
 					TestoTrattamento=TR.TestoTrattamento;
 					Prescrizione=__(TR.Prescrizione);
-					puntiTsuboMap=JSON.parse(__(TR.puntiTsuboMap,"[]"));
-					sintomi=JSON.parse(__(TR.sintomi,"{}"));
-					meridiani = TR.meridiani;
+					puntiTsuboMap=__(TR.puntiTsuboMap,"[]");
+					puntiAuriculoMap=__(TR.puntiAuriculoMap,"[]");
+					meridiani = __(TR.meridiani,"{}");
+					sintomi=__(TR.sintomi,"{}");
+					
 					if(!meridiani)meridiani = "{}";
-					meridiani=JSON.parse(__(meridiani,"{}"));
+					if(!sintomi)sintomi = "{}";
+					if(!puntiTsuboMap)puntiTsuboMap = "[]";
+					if(!puntiAuriculoMap)puntiAuriculoMap = "[]";
+					
+					puntiTsuboMap=JSON.parse(puntiTsuboMap);
+					puntiAuriculoMap=JSON.parse(puntiAuriculoMap);
+					sintomi=JSON.parse(sintomi);
+					meridiani=JSON.parse(meridiani);
+					
 					TipoTrattamento=TR.TipoTrattamento;
 					if(debug)console.log(i+" - "+TipoTrattamento+" - "+TitoloTrattamento)
 					TimeTrattamento=TR.TimeTrattamento*1;
@@ -1683,6 +1695,23 @@ var PAZIENTI_TRATTAMENTI = {
 							
 							HTML += '<span class="tsb"><img src="img/mezzo_'+mezzo+'.png" class="noMod" style="vertical-align: middle;margin-top: -2px;margin-right: -2px;"> ';
 							HTML += '<b>'+siglaTsubo+'</b>';
+							if(valutazione)HTML += '<img src="img/ico_PV'+valutazione+'.png" class="noMod" style="vertical-align: middle;margin-top: -3px;">';
+							if(descrizione)HTML += ' <span style="font-style:italic;">'+htmlEntities(descrizione)+'</span>';
+							HTML += '</span> '+chr10;
+						}
+						HTML+='</div>';
+					}
+					if(puntiAuriculoMap.length){
+						HTML+='<i>'+TXT_P+':</i> ';
+						HTML+='<div id="puntiCiclo">';
+						for(p in puntiAuriculoMap){
+							nomeTsubo=puntiAuriculoMap[p].n;
+							valutazione=__(puntiAuriculoMap[p].e);
+							mezzo=__(puntiAuriculoMap[p].z);
+							descrizione=__(puntiAuriculoMap[p].t);
+							
+							HTML += '<span class="tsb"><img src="img/mezzo_'+mezzo+'.png" class="noMod" style="vertical-align: middle;margin-top: -2px;margin-right: -2px;"> ';
+							HTML += '<b>'+nomeTsubo+'</b>';
 							if(valutazione)HTML += '<img src="img/ico_PV'+valutazione+'.png" class="noMod" style="vertical-align: middle;margin-top: -3px;">';
 							if(descrizione)HTML += ' <span style="font-style:italic;">'+htmlEntities(descrizione)+'</span>';
 							HTML += '</span> '+chr10;
