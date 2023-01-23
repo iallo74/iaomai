@@ -7,7 +7,6 @@
 
 */
 
-
 // IMPOSTAZIONI DEL DEVICE
 var smartphone = false;
 var smartMenu = false;
@@ -467,3 +466,21 @@ if(!touchable){
 }
 document.ondragstart = new Function("return false;");
 document.oncontextmenu = new Function("return false;");
+
+
+/*window.onerror = (message, source, lineno, colno, error) => {
+	if(error==null)var error = '';
+	var maxErrors = 10;
+	var errori = JSON.parse(__(localStorage.errors,"[]"));
+	if(errori.length>=maxErrors)errori.splice(0,errori.length-maxErrors+1);
+	d = new Date();
+	errori.push({
+		message: message,
+		source: source,
+		lineno: lineno,
+		colno: colno,
+		error: error.toString(),
+		date: d.getTime()
+	});
+	localStorage.errors = JSON.stringify(errori);
+};*/
