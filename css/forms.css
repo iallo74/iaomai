@@ -1196,6 +1196,9 @@ body:not(.smart) .stampaBtn{
 	color:#000;
 	display: block;
 }
+#rgProcMod #formMod i{
+    width: fit-content;
+}
 
 #scheda:not(.sch_Max600) #formMod i{  /* PAZIENTI */
 	margin-bottom: -29px;
@@ -1306,7 +1309,8 @@ _:-webkit-full-screen,
 #medicina_add::placeholder,
 #allergia_add::placeholder,
 #patologia_add::placeholder,
-#intervento_add::placeholder{
+#intervento_add::placeholder,
+#MotivoSaldo::placeholder{
 	opacity:1 !important;
 	font-style:italic !important;
 }
@@ -1318,7 +1322,8 @@ _:-webkit-full-screen,
 .smart.android #medicina_add::placeholder,
 .smart.android #allergia_add::placeholder,
 .smart.android #patologia_add::placeholder,
-.smart.android #intervento_add::placeholder{
+.smart.android #intervento_add::placeholder,
+.smart.android #MotivoSaldo::placeholder{
 	font-size: var(--font-16-93) !important;
 }
 .app_version.bug_font.smart.android #paz_add::placeholder,
@@ -1328,7 +1333,8 @@ _:-webkit-full-screen,
 .app_version.bug_font.smart.android #medicina_add::placeholder,
 .app_version.bug_font.smart.android #allergia_add::placeholder,
 .app_version.bug_font.smart.android #patologia_add::placeholder,
-.app_version.bug_font.smart.android #intervento_add::placeholder{
+.app_version.bug_font.smart.android #intervento_add::placeholder,
+.app_version.bug_font.smart.android #MotivoSaldo::placeholder{
 	font-size: var(--font-15-39) !important;
 }
 .okPlaceHolder::placeholder{
