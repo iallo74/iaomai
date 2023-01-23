@@ -1913,8 +1913,8 @@ DB.TXT = {
 			esp: ""
 		},
 		ScegliFoto: {
-			ita: "Scegli un file",
-			eng: "Choose a file",
+			ita: "Archivio file",
+			eng: "File archive",
 			esp: ""
 		},
 		FormatiConsentiti: {
