@@ -665,6 +665,7 @@ var MENU = {
 		}
 		MENU.pwdOK = true;
 		document.getElementById("lista_base").classList.remove("noPwd");
+		document.getElementById("patientPwdRequest").type = 'text';
 	},
 	
 	visArchives: function(){

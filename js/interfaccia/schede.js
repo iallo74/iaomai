@@ -850,10 +850,14 @@ var SCHEDA = {
 		//if(elenco == 'procedure')iconaAdd='<img src="img/ico_prescrizione.png" id="elenchi_icona">';
 		
 		document.getElementById("lista_base").classList.remove("noPwd");
+		document.getElementById("patientPwdRequest").type = 'text';
+		document.getElementById("patientPwdRequest").value = '';
+		console.log("PASSA")
 		if(elenco == 'pazienti' && LOGIN.logedin() && __(localStorage.patientPwd)){
 			// verifico se serve la password
 			if(!MENU.pwdOK){
 				document.getElementById("lista_base").classList.add("noPwd");
+				document.getElementById("patientPwdRequest").type = 'password';
 			}
 		}
 		
@@ -933,6 +937,9 @@ var SCHEDA = {
 				document.getElementById("scheda").classList.remove("triplo");
 				SCHEDA.elencoSel = '';
 				if(SCHEDA.classeAperta=='scheda_fornitore' || SCHEDA.classeAperta=='scheda_servizio')SCHEDA.scaricaScheda();
+				
+				document.getElementById("lista_base").classList.remove("noPwd");
+				document.getElementById("patientPwdRequest").type = 'text';
 			}else{
 				// LISTA
 				document.getElementById("scheda").classList.add("LISTE");
