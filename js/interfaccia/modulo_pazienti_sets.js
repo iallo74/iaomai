@@ -445,11 +445,11 @@ var PAZIENTI_SETS = {
 	cambiaPV: function( n, m ){ // cambia la valutazione energetica su un punto
 		var el = document.getElementById("ico_PV"+n);
 		el.getElementsByTagName("img")[0].src='img/ico_PV'+m+'.png';
-		SET.overTsubo(document.getElementById("pt_"+n).parentElement,false);
+		if(globals.modello.cartella)SET.overTsubo(document.getElementById("pt_"+n).parentElement,false);
 		PAZIENTI.puntiProvvisori[n].e = m;
 		SCHEDA.formModificato = true;
 		PAZIENTI.ricGroup("formMod",n);
-		SET.overTsubo(document.getElementById("pt_"+n).parentElement,true);
+		if(globals.modello.cartella)SET.overTsubo(document.getElementById("pt_"+n).parentElement,true);
 		document.getElementById("tt_mezzival").dataset.on='0';
 		H.removeTT();
 	},
@@ -881,7 +881,7 @@ var PAZIENTI_SETS = {
 		SCHEDA.formModificato = true;
 		//PAZIENTI.ricGroup("formMod",n);
 		//SET.overTsubo(document.getElementById("pt_"+n).parentElement,true);
-		//document.getElementById("tt_mezzival").dataset.on='0';
+		document.getElementById("tt_mezzival").dataset.on='0';
 		H.removeTT();
 	},
 	cambiaAZ: function( n, m, isProc ){ // cambia il mezzo su un punto
