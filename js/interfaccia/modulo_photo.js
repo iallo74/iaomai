@@ -715,8 +715,10 @@ var PH = {
 		if(pass){
 			visLoader("");
 			if(!locale && CONN.getConn()){
+				idU = PH.idU;
+				if(LOGIN._frv())idU = 'frv';
 				CONN.caricaUrl(	'getImgGallery.php',
-								'big=1&n='+i+'&iU='+PH.idU+'&idFoto='+elenco[i].idFoto,
+								'big=1&n='+i+'&iU='+idU+'&idFoto='+elenco[i].idFoto,
 								'PH.scriviFotoBig');
 			}else{
 				var locale = false;
