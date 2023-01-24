@@ -229,7 +229,7 @@ DB.set= {
         },
         "165": {
             "NomeTsubo": "ACTH",
-            "AzioniTsubo": "<b>Altri nomi</b><br>- Ormone Adrenocorticotropo<br>- Punto di controllo della ghiandola surrenale<p><b>Azione</b><br>Indicato in caso di patologie croniche infiammatorie, prolungate da un tempo superiore ai sei mesi. Riequilibra le funzioni dell'ACTH e di conseguenza le funzioni surrenali. Molto efficace nelle situazione di forte stress.</p><p><b>Ubicazione</b><br>ST1, al confine con l'incisura intergragica un po' verso l'esterno<span></span></p>",
+            "AzioniTsubo": "<p><b>Altri nomi</b><br>- Ormone Adrenocorticotropo<br>- Punto di controllo della ghiandola surrenale<p><b>Azione</b><br>Indicato in caso di patologie croniche infiammatorie, prolungate da un tempo superiore ai sei mesi. Riequilibra le funzioni dell'ACTH e di conseguenza le funzioni surrenali. Molto efficace nelle situazione di forte stress.</p><p><b>Ubicazione</b><br>ST1, al confine con l'incisura intergragica un po' verso l'esterno<span></span></p>",
             "ChiaviTsubo": ""
         },
         "166": {
@@ -284,7 +284,7 @@ DB.set= {
         },
         "180": {
             "NomeTsubo": "Apice dell'antitrago",
-            "AzioniTsubo": "<b>Altri nomi</b><br>- Punto asma CIN<br>- Formazione reticolare<br>- Punto MASTER reticolare<br><p><b>Azione</b><br>Definito dalla scuola cinese “Punto Asma”, pertanto indicato per asma e forti emicranie. Spesso utilizzato in casi di dolore lieve, con soglie che non superano il VAS di livello 5.</p><p><b>Ubicazione</b><br>AT2-AT3, nel punto più alto dell'antitrago. Corrisponde a <span class='LMtxt'>LM13</span>.</p>",
+            "AzioniTsubo": "<p><b>Altri nomi</b><br>- Punto asma CIN<br>- Formazione reticolare<br>- Punto MASTER reticolare</p><p><b>Azione</b><br>Definito dalla scuola cinese “Punto Asma”, pertanto indicato per asma e forti emicranie. Spesso utilizzato in casi di dolore lieve, con soglie che non superano il VAS di livello 5.</p><p><b>Ubicazione</b><br>AT2-AT3, nel punto più alto dell'antitrago. Corrisponde a <span class='LMtxt'>LM13</span>.</p>",
             "ChiaviTsubo": ""
         },
         "181": {
@@ -349,7 +349,7 @@ DB.set= {
         },
         "199": {
             "NomeTsubo": "Aggressività",
-            "AzioniTsubo": "<b>Altri nomi</b><br>- Amigdala<br>- Irritabilità<p><b>Azione</b><br>Questo Punto Internazionale viene adottato per riequilibrare tutti gli stati emotivi legati all'irritabilità, aggressività rabbia e le azioni maniacali.</p><p><b>Ubicazione</b><br>LO2-AT1, nella fossetta che si trova sulla superficie laterale del lobulo, al di sotto dell'incisura intertragica.</p>",
+            "AzioniTsubo": "<p><b>Altri nomi</b><br>- Amigdala<br>- Irritabilità<p><b>Azione</b><br><p>Questo Punto Internazionale viene adottato per riequilibrare tutti gli stati emotivi legati all'irritabilità, aggressività rabbia e le azioni maniacali.</p><p><b>Ubicazione</b><br>LO2-AT1, nella fossetta che si trova sulla superficie laterale del lobulo, al di sotto dell'incisura intertragica.</p>",
             "ChiaviTsubo": ""
         },
         "202": {
@@ -669,7 +669,7 @@ DB.set= {
         },
         "298": {
             "NomeTsubo": "Midollo allungato EUR",
-            "AzioniTsubo": "<b>Azione</b><br>Patologia neurologica cervicale alta. Modulazione del dolore neuropatico cervicale. Controllo del tono muscolare.</p><p><b>Ubicazione</b><br>HX15, sul bordo anteriore dell'elice nella sua coda, in un'area di passaggio verso il Lobulo auricolare</p>",
+            "AzioniTsubo": "<p><b>Azione</b><br>Patologia neurologica cervicale alta. Modulazione del dolore neuropatico cervicale. Controllo del tono muscolare.</p><p><b>Ubicazione</b><br>HX15, sul bordo anteriore dell'elice nella sua coda, in un'area di passaggio verso il Lobulo auricolare</p>",
             "ChiaviTsubo": ""
         },
         "302": {
@@ -952,7 +952,7 @@ DB.set= {
         },
         "075": {
             "NomeTsubo": "Anca CIN",
-            "AzioniTsubo": "<b>Altri nomi</b><br>- Punto anca<br>- Articolazione coxofemorale<br><p><b>Azione</b><br>Questo Punto è adottato sia dalla Scuola Cinese sia dalla Scuola Francese ma in diverse localizzazioni. In comune hanno l'applicazione per il trattamento dei disturbi legati all'anca e del cingolo pelvico.</p><p><b>Ubicazione</b><br>AH13-PG8, nel terzo inferiore della branca superiore dell'antelice, verso la fossa triangolare<span></span></p>",
+            "AzioniTsubo": "<p><b>Altri nomi</b><br>- Punto anca<br>- Articolazione coxofemorale</p><p><b>Azione</b><br>Questo Punto è adottato sia dalla Scuola Cinese sia dalla Scuola Francese ma in diverse localizzazioni. In comune hanno l'applicazione per il trattamento dei disturbi legati all'anca e del cingolo pelvico.</p><p><b>Ubicazione</b><br>AH13-PG8, nel terzo inferiore della branca superiore dell'antelice, verso la fossa triangolare<span></span></p>",
             "ChiaviTsubo": ""
         },
         "078": {

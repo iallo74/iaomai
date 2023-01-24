@@ -100,7 +100,6 @@ var LINGUE = {
 	convPaziente: function( str ){
 		if(__(localStorage.noMedico)){
 			
-			
 			var re = new RegExp(DB.TXT.base["_Cliente_P"][globals.siglaLingua], 'g');
 			str = str.replace(re,DB.TXT.base["_Cliente_C"][globals.siglaLingua]);
 			
@@ -124,6 +123,10 @@ var LINGUE = {
 			
 			var re = new RegExp(DB.TXT.base["_ciclo_P"][globals.siglaLingua], 'g');
 			str = str.replace(re,DB.TXT.base["_ciclo_C"][globals.siglaLingua]);
+			
+			var re = new RegExp(DB.TXT.base["_cicli_P"][globals.siglaLingua], 'g');
+			str = str.replace(re,DB.TXT.base["_cicli_C"][globals.siglaLingua]);
+			
 		}
 		return str;
 	}

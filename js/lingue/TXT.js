@@ -2776,8 +2776,8 @@ DB.TXT = {
 			esp: ""
 		},
 		MsgMaxCicli: {
-			ita: "Con la versione gratuita puoi gestire una sola cartella clinica per paziente. Acquista un pacchetto Patients Full con cartelle cliniche illimitate!.",
-			eng: "With the free version you can manage only one medical file per patient. Buy a Patients Full package with unlimited medical files!",
+			ita: "Con la versione gratuita puoi gestire al massimo 3 cartelle per paziente. Acquista un pacchetto Patients Full con cartelle illimitate!.",
+			eng: "With the free version you can manage maximum 3 folders per patient. Buy a Patients Full package with unlimited folders!",
 			esp: ""
 		},
 		MsgFunzioneSoloPay: {
@@ -4580,6 +4580,11 @@ DB.TXT = {
 			eng: "cycle",
 			esp: ""
 		},
+		_cicli_C: {
+			ita: "cicli",
+			eng: "cycles",
+			esp: ""
+		},
 		_un_ciclo_C: {
 			ita: "un ciclo di trattamenti",
 			eng: "a treatment cycle",
@@ -4599,6 +4604,11 @@ DB.TXT = {
 		_ciclo_P: {
 			ita: "cartella clinica",
 			eng: "medical file",
+			esp: ""
+		},
+		_cicli_P: {
+			ita: "cartelle cliniche",
+			eng: "medical files",
 			esp: ""
 		},
 		_un_ciclo_P: {
