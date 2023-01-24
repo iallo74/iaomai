@@ -296,7 +296,7 @@ var PAZIENTI_TRATTAMENTI = {
 			for(c in PAZIENTI.cicli){
 				if(PAZIENTI.cicli[c].Tipo == 'C')cicliTot++;
 			}
-			var maxCicli = 1;
+			var maxCicli = 3;
 			if(LOGIN.reg() && LOGIN.logedin()){
 				if(DB.login.data.auths.indexOf("clients_full")>-1)maxCicli = -1;
 			}
