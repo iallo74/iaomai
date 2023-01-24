@@ -852,7 +852,6 @@ var SCHEDA = {
 		document.getElementById("lista_base").classList.remove("noPwd");
 		document.getElementById("patientPwdRequest").type = 'text';
 		document.getElementById("patientPwdRequest").value = '';
-		console.log("PASSA")
 		if(elenco == 'pazienti' && LOGIN.logedin() && __(localStorage.patientPwd)){
 			// verifico se serve la password
 			if(!MENU.pwdOK){

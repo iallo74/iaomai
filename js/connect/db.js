@@ -76,11 +76,11 @@ var DB = {
 			lastSync: 0,
 			data: fotoBase
 		};
-		if(fotoBase.length){
+		/*if(fotoBase.length){
 			for(f in DB.foto.data){
 				DB.foto.data[f].imgBig = DB.foto.data[f].imgMini;
 			}
-		}
+		}*/
 		DB.ricerche = {
 			lastSync: 0,
 			data: []
