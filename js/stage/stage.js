@@ -255,6 +255,7 @@ function scaricaModello( esci ){
 	scaricaSet(notInit);*/
 	if(globals.modello.cartella && MODELLO.flip)MODELLO.rifletti();
 	obj_guide = null;
+	manichinoCaricato = false;
 	MENU.chiudiAllSelected();
 	manichino.remove(ANATOMIA);
 	document.getElementById("p_stampa").style.display = 'none';
