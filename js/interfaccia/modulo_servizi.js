@@ -107,7 +107,6 @@ var SERVIZI = {
 			var CostoServizio=0;
 			var NumeroSedute=1;
 			var DescrizioneServizio='';
-			console.log(Q_idServ)
 			if(Q_idServ>-1){
 				var SR = DB.servizi.data[Q_idServ];
 				idServizio = SR.idServizio;
