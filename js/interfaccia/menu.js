@@ -593,8 +593,10 @@ var MENU = {
 			}
 		}
 		// confirm per salvare
-		localStorage.patientPwd = '';
-		if(document.getElementById("patientPwdCheck").checked)localStorage.patientPwd = 'true';
+		if(!LOGIN._frv()){
+			localStorage.patientPwd = '';
+			if(document.getElementById("patientPwdCheck").checked)localStorage.patientPwd = 'true';
+		}
 		localStorage.noMedico = '';
 		if(document.getElementById("t_OLISTICO").classList.contains("a_SEL"))localStorage.noMedico = 'true';
 		MENU.chiudiImpSet();
