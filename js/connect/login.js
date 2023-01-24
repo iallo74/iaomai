@@ -1422,7 +1422,7 @@ var LOGIN = {
 							"idCL": id_interno,
 							"app": __(elenco.note[p].app,''),
 							"DataModifica": elenco.note[p].DataModifica*1 };
-					console.log(JSNPUSH)		
+							
 				for(k in DB.note.data){
 					var NT = DB.note.data[k];
 					if(	NT.meridiano==elenco.note[p].meridiano && 
