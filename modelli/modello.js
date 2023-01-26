@@ -312,8 +312,8 @@ var MODELLO = {
 		
 		manichinoCaricato=true;
 		raycastDisable=false;
+		MODELLO.op('Pelle',1);
 		if(inizio){
-			MODELLO.op('Pelle',1);
 			if(globals.openMap && globals.mapOpened && !globals.set.cartella){
 				postApreSet = true;
 				caricaSet(globals.mapOpened,document.getElementById("p_"+globals.mapOpened)); // riapro il set al caricamento
@@ -337,7 +337,6 @@ var MODELLO = {
 				setTimeout( function(){
 					GUIDA.visFumetto("guida_generica");
 				}, 1000 );
-				
 				
 				if(!__(localStorage.firstAccess)){
 					localStorage.firstAccess = 'true';
