@@ -1289,7 +1289,7 @@ var PAZIENTI_FILTRI = {
 				'	</div>' +
 				'	<div id="anteprimaCorpo"' +
 				'		 class="divEspansa">' +
-						htmlEntities(document.formMod.MessaggioMarketing.value).replace(/\n/g, "<br>").replace(/\s/g,"&nbsp;") +
+						htmlEntities(document.formMod.MessaggioMarketing.value).replace(/\n/g, "<br>").replace(/\s/g," ") +
 				'		<div id="anteprimaPiede">' +
 				'			<div style="background-image:url(\'' + CONN.APIfolder+'../../__files_utenti/immagini/'+DB.login.data.idUtente+'/__avatar.jpg\');">' +
 				'			</div>' +
