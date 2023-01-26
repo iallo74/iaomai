@@ -164,15 +164,15 @@ DB.reference = {
                 },
                 "suppliers": {
                     "title": "Fornitori",
-                    "cont": "L'archivio dei fornitori è un elenco di anagrafiche.<br>Da qui è possibile inserire, modificare e cancellare gli elementi e filtrare per parola.<br><br>La scheda del fornitore è suddivisa in varie sezioni, similmente a come avviene per la scheda anagrafica del paziente (vedi sezione del menu Archivi &gt; Pazienti &gt; Anagrafica) ed è possibile aggiungere campi personalizzati per completare le informazioni.<br><br><br>"
+                    "cont": "L'archivio dei fornitori è un elenco di anagrafiche.<br>Da qui è possibile inserire, modificare e cancellare gli elementi e filtrare per parola.<br><br>La scheda del fornitore è suddivisa in varie sezioni, similmente a come avviene per la scheda anagrafica del paziente (vedi sezione del menu Archivi &gt; Pazienti &gt; Anagrafica) ed è possibile aggiungere campi personalizzati per completare le informazioni.<br><br><img src=\"img/reference/ita/fornitori.jpg\"><br>"
                 },
                 "services": {
                     "title": "Pacchetti di sedute",
-                    "cont": "I pacchetti di sedute sono dei modelli di trattamento o ciclo di trattamenti che possono essere importati nelle cartelle cliniche dei pazienti.&nbsp;<br><br>La scheda del pacchetto consente di inserire alcuni elementi utili per lo scopo:<br>- titolo<br>- descrizione<br>- numero di sedute<br>- costo di ogni seduta<br>Quando la scheda è salvata, dall'archivio dei trattamenti di un paziente è possibile importare il pacchetto di sedute (vedi sezione del menu Archivi &gt; Pazienti &gt; Trattamenti).<br><br><br>"
+                    "cont": "I pacchetti di sedute sono dei modelli di trattamento o ciclo di trattamenti che possono essere importati nelle cartelle cliniche dei pazienti.&nbsp;<br><br>La scheda del pacchetto consente di inserire alcuni elementi utili per lo scopo:<br>- titolo<br>- descrizione<br>- numero di sedute<br>- costo di ogni seduta<br>Quando la scheda è salvata, dall'archivio dei trattamenti di un paziente è possibile importare il pacchetto di sedute (vedi sezione del menu Archivi &gt; Pazienti &gt; Trattamenti).<br><br><img src=\"img/reference/ita/pacchetti.jpg\"><br>"
                 },
                 "fkiles": {
                     "title": "Foto e documenti",
-                    "cont": ""
+                    "cont": "La gestione delle foto e dei documenti è uno strumento utile per capire dove si trovano e quanti sono i files importati. Nella prima parte della scheda vengono mostrati i files utilizzati, la lor dimensione sul dispositivo, la data di caricamento e la loro posizione nelle varie schede. Più in basso, in una sezione a comparsa, si possono trovare, se ce ne sono, i files cancellati e presenti solo sul cloud.<br><br><img src=\"img/reference/ita/files.jpg\"><br>"
                 }
             }
         },
@@ -181,35 +181,23 @@ DB.reference = {
             "cont": {
                 "agenda": {
                     "title": "Agenda",
-                    "cont": ""
+                    "cont": "Nell'agenda trovano posto tutti i trattamenti inseriti nelle schede dei pazienti, ma è possibile inserire anche degli eventi anonimi, come appuntamenti di altro tipo, e promemoria, in modo da indicare che una determinata fascia oraria non è disponibile. L'agenda è codivisa infatti da tutti gli strumenti dell'app.<br><br><b>Inserire un appuntamento</b><br>Per inserire un appuntamento in agenda si deve cliccare sulla mezz'ora di inizio e in seguito sulla mezz'ora di fine (<b>1</b>).<br>Nella scheda di modifica di un appuntamento, oltre all'etichetta, è possibile indicare a quale paziente si riferisce (<b>2</b>).<br><br><img src=\"img/reference/ita/agenda_add.jpg\"><br><br>Se si clicca sul pulsante \"Scegli un paziente\" (<b>2</b>) compare una lista che consente di scegliere il paziente.<br><br><img src=\"img/reference/ita/agenda_paziente_choose.jpg\"><br><br>Clicando su una voce in elenco la scheda dell'appuntamento viene collegata al paziente scelto e compare su fondino arancione subito sotto all'etichetta (<b>3</b>). E' possibile anche convertire un appuntamento generico in trattamento, premendo sul pulsante \"Converti in trattamento\" (<b>4</b>).<br><br><img src=\"img/reference/ita/agenda_paziente_selected.jpg\"><br><br><br><b>Colori degli appuntamenti</b><br>Gli appuntamenti generici e i trattamenti, in agenda, sono distinti attraverso il colore:<br>- azzurro per i trattamenti<br>- verde per gli appuntamenti generici<br><br><img src=\"img/reference/ita/agenda_colori.jpg\"><br>"
                 },
                 "search": {
                     "title": "Ricerche",
-                    "cont": ""
+                    "cont": "Iáomai consente di effettuare ricerche su tutti i contenuti presenti nell'ambiente di lavoro in quel momento. Questo significa che per poter effettuare una ricerca in una mappa tematica, essa deve essere aperta e se si vuole cercare un termine anatomico si deve aprire il modello 3D.<br><br>Una volta inseriti i termini da trovare e cliccato su cerca, i risultati vengono mostrati divisi per sezioni. Cliccando sulle sezioni, i risultati di quella sezione vengono visualizzati nell'elenco. Cliccando su un risultato si apre la scheda di riferimento.<br><br><img src=\"img/reference/ita/ricerche.jpg\"><br><br>Per annullare una ricerca si deve premere sulla piccola x sulla destra nel campo di ricerca.<br><span style=\"color: rgb(0, 0, 0);\">Iáomai tiene traccia di tutte le ricerche effettuate, pertanto quando si ritorna annulla una ricerca o si entra nell'applicazione il menu della ricerca presenta la cronologia delle ricerche (svuotabile attraverso il pulsante \"Svuota cronologia\"). Se si vuole cancellare una sola voce dalla cronologia è sufficiente cliccare sulla piccola x che si trova sulla destra di ogni riga.&nbsp;</span><span style=\"color: rgb(0, 0, 0);\">&nbsp;Cliccando invece su una voce in cronologia, viene effettuata nuovamente quella specifica ricerca.<br></span><br><img src=\"img/reference/ita/ricerche_cronologia.jpg\"><br>"
                 },
                 "customization": {
                     "title": "Personalizzazione",
-                    "cont": ""
+                    "cont": "E' possibile personalizzare diversi aspetti dell'ambiente e delle funzionalità di Iáomai. La scheda di personalizzazione (<img src=\"img/ico_coloriN.png\" style=\"height: 24px; vertical-align: middle;\">) si trova nel menu delle impostazioni.<br><br>Da qui è possibile impostare:<br>- Il colore dell'app<br>- Il tipo di pelle<br>- Le dimensioni dei testi<br>- Il tipo di puntatore (mouse o dito)<br>Quest'ultima opzione è utile in caso in cui si stia lavorando su un dispositivo che consente la compresenza di mouse e touchscreen.<br><br><img src=\"img/reference/ita/personalizzazione.jpg\"><br>"
                 },
                 "login": {
                     "title": "Login e dati personali",
-                    "cont": ""
+                    "cont": "Per effettuare il login con i propri dati si deve accedere al menu delle impostazioni. Il LOGIN è la prima voce in alto.<br><br><img src=\"img/reference/ita/login.jpg\"><br><br><b>Login e logout</b><br>Cliccando sul pulsante \"LOGIN\" si apre il popup dove è possibile trovare inserire le proprie credenziali di accesso.<br>Ad accesso avvenuto il menu cambia aspetto e al posto del pulsante di login si viene a trovare il nome e cognome dell'utente connesso, il pulsante per modificarne i dati (<b>1</b>) e il pulsante per effettuare il logout (<b>2</b>).<br>Con Iáomai è possibile connettere fino a due dispositivi contemporaneamente, nel caso di un terzo dispositivo verrà richiesto quale di quelli precedentemente connessi scollegare.<br><br><img src=\"img/reference/ita/login_on.jpg\"><br><br><b>Logout completo</b><br>Quando si effettua il logout ci si disconnette ma i dati restano in memoria. Per cancellare completamente i dati e l'ìutente dal dispositivo si deve cliccare sulla piccola x che si trova di fianco all'username nella scheda di login (<b>3</b>).<br><br><img src=\"img/reference/ita/login_panel.jpg\"><br><br><b>Modifica dei dati personali</b><br>Cliccando sull'icona della matita si accede alla modifica dei propri dati, dove è possibile inserire le informazioni personali e aziendali, avatar e logo dello studio.<br><br><img src=\"img/reference/ita/utente_dati.jpg\"><br>"
                 },
                 "backup": {
                     "title": "Backup e sincrionizzazione",
-                    "cont": ""
-                },
-                "security": {
-                    "title": "Sicurezza e crittografia",
-                    "cont": ""
-                },
-                "shortcuts": {
-                    "title": "Scorciatoie da tastiera",
-                    "cont": ""
-                },
-                "printing": {
-                    "title": "Stampe",
-                    "cont": ""
+                    "cont": "Lo strumento di backup consente di creare delle copie di tutte le informazioni inserite nell'app. Il backup viene conservato sul server ed è possibile recuperarlo in seguito in caso di errori.<br><br>Per creare un backup nuovo si deve cliccare sul pulsante \"Crea un backup\", mentre se si vuole solo scaricare un documento html con i dati si deve premere su \"Scarica scheda dati\".<br><br><img src=\"img/reference/ita/backup.jpg\"><br><br>Quando si crea un nuovo backup è possibile indicare un nome per poterlo riconoscere, anche se tutti i backup hanno comunque una data e un orario che li contraddistingue.<br><br><img src=\"img/reference/ita/backup_crea.jpg\"><br><br><b>Recuperare un backup esistente</b><br>Recuperare un backup esistente vuol dire <b>sostituire definitivamente</b>&nbsp;tutti i dati nel proprio archivio con quelli presenti nel backup. Pertanto lo si deve fare solo se se ne ha la consapevolezza e l'intenzione.&nbsp;<br>Cliccando su un backup nella lista (se ce ne sono) viene apertauna scheda nella quale viene mostrato il nome del backup. Poco sotto si può trovare il pulsante per eliminare il backup dal server. Anche quest'ultima operazione è definitiva e va effettuata con cognizione di causa.<br>Cliccando sul pulsante \"Ripristina questo backup\" si avvia il processo di sostituzione delle informazioni, dopo due messaggi di richiesta di autorizzazione. Una volta conclusa la sostituzione si viene avvisati con un messaggio di conferma e i dati sono stati modificati.<br><br><img src=\"img/reference/ita/backup_recupera.jpg\"><br>"
                 }
             }
         }

@@ -1647,8 +1647,8 @@ DB.TXT = {
 			esp: ""
 		},
 		AnamnesiMotivo: {
-			ita: "Motivo per il quale si prescrive ...",
-			eng: "Why do you prescribe ...",
+			ita: "Anamnesi...",
+			eng: "Anamnesis...",
 			esp: ""
 		},
 		AnamnesiDiagnosiOccidentale: {
