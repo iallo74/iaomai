@@ -1027,43 +1027,43 @@ DB.TXT = {
 		
 		// SERVIZI
 		NoResServizio: {
-			ita: "Nessun servizio",
-			eng: "No services",
+			ita: "Nessun pacchetto",
+			eng: "No packs",
 			esp: ""
 		},
 		ChiediEliminaServizio: {
-			ita: "Vuoi davvero eliminare il servizio? N.B. Non sarà più possibile recuperarlo.",
-			eng: "Do you really want to delete the service? Please note! It will no longer be recovered.",
+			ita: "Vuoi davvero eliminare il pacchetto? N.B. Non sarà più possibile recuperarlo.",
+			eng: "Do you really want to delete the pack? Please note! It will no longer be recovered.",
 			esp: ""
 		},
 		ScegliServizio: {
-			ita: "Servizi",
-			eng: "Services",
+			ita: "Pacchetti di sedute",
+			eng: "Session packages",
 			esp: ""
 		},
 		AggiungiServizio: {
-			ita: "Aggiungi un servizio",
-			eng: "Add a service",
+			ita: "Aggiungi un pacchetto di sedute",
+			eng: "Add a session package",
 			esp: ""
 		},
 		ModificaServizio: {
-			ita: "Scheda servizio",
-			eng: "Service file",
+			ita: "Scheda pacchetto di sedute",
+			eng: "Session package file",
 			esp: ""
 		},
 		CreaServizio: {
-			ita: "Nuovo servizio",
-			eng: "New service",
+			ita: "Nuovo pacchetto di sedute",
+			eng: "New session package",
 			esp: ""
 		},
 		NomeServizio: {
-			ita: "Nome del servizio",
-			eng: "Service name",
+			ita: "Nome del pacchetto di sedute",
+			eng: "Session package name",
 			esp: ""
 		},
 		DescrizioneServizio: {
-			ita: "Scrivi qualche parola per descrivere il servizio offerto ...",
-			eng: "Write a few words to describe the service offered ...",
+			ita: "Scrivi qualche parola per descrivere il pacchetto di sedute ...",
+			eng: "Write a few words to describe the session package offered ...",
 			esp: ""
 		},
 		CostoServizio: {
@@ -1097,28 +1097,28 @@ DB.TXT = {
 			esp: ""
 		},
 		AddServiziSpiegazione1: {
-			ita: "Seleziona un servizio o un pacchetto da aggiungere al paziente",
-			eng: "Select a service or package to add to the patient",
+			ita: "Seleziona un pacchetto di sedute da aggiungere al paziente",
+			eng: "Select a session package to add to the patient",
 			esp: ""
 		},
 		AddServiziSpiegazione2: {
-			ita: "Seleziona o aggiungi la cartella in cui inserire il servizio",
-			eng: "Select or add the folder in which to place the service",
+			ita: "Seleziona o aggiungi la cartella in cui inserire il pacchetto di sedute",
+			eng: "Select or add the folder in which to place the session package",
 			esp: ""
 		},
 		TornaServizi: {
-			ita: "Torna ai servizi",
-			eng: "Back to services",
+			ita: "Torna ai pacchetti di sedute",
+			eng: "Back to session packages",
 			esp: ""
 		},
 		ConfermaAddServizio1: {
-			ita: "Vuoi davvero aggiungere il servizio al paziente?",
-			eng: "Do you really want to add the service to the patient?",
+			ita: "Vuoi davvero aggiungere il pacchetto di sedute al paziente?",
+			eng: "Do you really want to add the session package to the patient?",
 			esp: ""
 		},
 		ConfermaAddServizio2: {
-			ita: "Vuoi davvero aggiungere il servizio composto di [n] sedute al paziente?",
-			eng: "Do you really want to add the composite service of [n] sessions to the patient?",
+			ita: "Vuoi davvero aggiungere il pacchetto composto di [n] sedute al paziente?",
+			eng: "Do you really want to add the composite package of [n] sessions to the patient?",
 			esp: ""
 		},
 		CopiaDi: {
@@ -1127,8 +1127,8 @@ DB.TXT = {
 			esp: ""
 		},
 		CercaServizio: {
-			ita: "Cerca un servizio...",
-			eng: "Search a service...",
+			ita: "Cerca un pacchetto ...",
+			eng: "Search a package ...",
 			esp: ""
 		},
 		
@@ -2543,8 +2543,8 @@ DB.TXT = {
 			esp: ""
 		},
 		ElServizi: {
-			ita: "Servizi",
-			eng: "Services",
+			ita: "Pacchetti di sedute",
+			eng: "Session packages",
 			esp: ""
 		},
 		ElFoto: {
@@ -2761,13 +2761,13 @@ DB.TXT = {
 			esp: ""
 		},
 		MsgMaxServizi1: {
-			ita: "Con la versione gratuita puoi gestire un solo servizio. Registrati gratuitamente per gestire fino a 5 servizi o acquista un pacchetto Patients Full con archivi illimitati!.",
-			eng: "With the free version you can manage only one service. Register for free to manage up to 5 services or purchase a Patients Full package with unlimited files!",
+			ita: "Con la versione gratuita puoi gestire un solo pacchetto. Registrati gratuitamente per gestire fino a 5 pacchetti o acquista il modulo Schedario Pazienti con archivi illimitati!.",
+			eng: "With the free version you can manage only one pack. Register for free to manage up to 5 packs or purchase Medical File module with unlimited files!",
 			esp: ""
 		},
 		MsgMaxServizi5: {
-			ita: "Con la registrazione gratuita puoi gestire fino a 5 servizi. Acquista un pacchetto Patients Full per archivi illimitati!.",
-			eng: "With the free registration you can manage up to 5 services. Purchase a Patients Full package for unlimited files!",
+			ita: "Con la registrazione gratuita puoi gestire fino a 5 pacchetti. Acquista il modulo Schedario Pazienti per archivi illimitati!.",
+			eng: "With the free registration you can manage up to 5 packs. Purchase Medical File module for unlimited files!",
 			esp: ""
 		},
 		MsgMaxProcedure: {
