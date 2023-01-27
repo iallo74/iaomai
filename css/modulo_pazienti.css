@@ -1771,7 +1771,7 @@ body:not(.smart) #rgApplicaFiltri{
     display: inline-block;
     background-size: auto 40px;
 	margin: 20px;
-    float: right;
+    /*float: right;*/
 }
 .anaVis{
 	background-image: url(../img/frSuB.png) !important;
