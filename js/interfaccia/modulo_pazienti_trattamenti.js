@@ -527,9 +527,8 @@ var PAZIENTI_TRATTAMENTI = {
 						H.r({	t: "h",
 								name: "TitoloTrattamento",
 								value: TXT("Anamnesi") });
-						
 				if(nuovoCiclo){
-					HTML +=  	'<div><div id="anamnesi_btn"' +
+					HTML +=  	'<div style="text-align:right;"><div id="anamnesi_btn"' +
 								'		   onClick="PAZIENTI.vis_anamnesi();">'+htmlEntities(TXT("Anamnesi_e_Diagnosi"))+'</div></div>' +
 								'<div style="display:none;"' +
 								'	  id="anamnesi_cont">'; // nascondo tutto se è un nuovo ciclo
@@ -538,7 +537,7 @@ var PAZIENTI_TRATTAMENTI = {
 								name: "AnamnesiMotivo",	
 								value: AnamnesiMotivo,
 								noLabel: true,
-								classCampo: "okPlaceHolder" });
+								classCampo: "okPlaceHolder" });		
 			}
 			var TXT_DT=TXT("Data");
 			if(TimeTrattamento*1>(oggi*1)/1000)TXT_DT=TXT("DataProgrammata");
