@@ -413,23 +413,6 @@ SET = {
 		SCHEDA.caricaBtns(contBtns,contIcona);
 		SCHEDA.swPulsanti(true);
 		
-		/*HTML_imp = ''; // IMPOSTAZIONI DEL SET
-		
-		var mzs = PAZIENTI.mezziSet.A;
-		HTML_imp += '<div><i>'+htmlEntities(TXT("MezzoDefault"))+':</i></div><div id="tt_mezzival2">';
-		for(m in mzs){
-			HTML_imp += '<span style="background-image:url(img/mezzo_'+mzs[m]+'.png);"' +
-					'	   onClick="PAZIENTI.cambiaGZ(\''+mzs[m]+'\',true);"' +
-					'	   data-mezzo="'+mzs[m]+'"';
-			if(!__(localStorage["mezzoDefault"+globals.set.cartella]) && m==0)HTML_imp += ' class="mzSel"';
-			if(localStorage["mezzoDefault"+globals.set.cartella]==mzs[m])HTML_imp += ' class="mzSel"';
-			HTML_imp += '	   title="'+htmlEntities(PAZIENTI.mezzi[mzs[m]])+'"></span>';
-		}
-		HTML_imp += '</div>';
-		
-		HTML_imp += '<div style="margin-top:30px;"><span class="annullaBtn" onclick="MENU.chiudiMenu();">'+TXT("Annulla")+'</span><span class="submitBtn" onclick="SET.salvaImpostazioni();">'+TXT("Salva")+'</span></div>';
-		document.getElementById("contImpset").innerHTML = HTML_imp;*/
-		
 		if(preElenco)SCHEDA.selElenco(preElenco);
 		
 		// pallini di evidenza
@@ -713,6 +696,7 @@ SET = {
 	
 	
 	apriTsubo: function( PT_name, ritorno, el ){
+		if(typeof(el) == 'undefined')var el = '';
 		var PT=scene.getObjectByName( PT_name );
 		if(typeof(PT)=='undefined')PT = scene.getObjectByName( PT_name.replace("PT","AR") );
 		var type = (PT.userData.type == 'point')?"punti":"aree";
@@ -781,19 +765,43 @@ SET = {
 			if(PT_name_first)PT = scene.getObjectByName(PT_name_first); 
 			if(AR_name_first)PT = scene.getObjectByName(AR_name_first); 
 		}
-		
+		var vx = manichinoCont.position.x;
+		var vy = manichinoCont.position.y;
+		var x2 = 0;
+		var y2 = 0;
+		var z2 = 0;
+		var vector = null;
 		if(PT.userData.type == 'area'){
 			elPin = scene.getObjectByName( "AR"+name );
 			var center = getCenterPoint(elPin);
 			this.diffX = center.x*1;
 			this.diffY = center.y*1;
-			panEndZero = { x: ((MODELLO.flip) ? center.x*1 : 0-center.x*1), y: 0-center.y*1, z: 0-center.z*1 };
+			x2 = ((MODELLO.flip) ? center.x*1 : 0-center.x*1);
+			y2 = 0-center.y*1;
+			z2 = 0-center.z*1;
+			elPin.updateMatrixWorld();
+			vector = center;
+			vector.applyMatrix4( elPin.matrixWorld );
 		}else{
 			this.diffX = elPin.position.x*1;
 			this.diffY = elPin.position.y*1;
-			panEndZero = { x: ((MODELLO.flip) ? elPin.position.x : 0-elPin.position.x), y: 0-elPin.position.y, z: 0-elPin.position.z };
+			x2 = ((MODELLO.flip) ? elPin.position.x : 0-elPin.position.x);
+			y2 = 0-elPin.position.y;
+			z2 = 0-elPin.position.z;
+			elPin.updateMatrixWorld();
+			var vector = elPin.geometry.vertices[i].clone();
+			vector.applyMatrix4( elPin.matrixWorld );
 		}
-		panEnd = { x: 0, y: 0, z: 0 };
+		panEndZero = { x: x2, y: y2, z: z2 };
+		
+		// panEnd muove manichinoCont
+		// panEndZero muove manichino
+		
+		if(SCHEDA.aggancio.tipo=='libera'){
+			panEnd = { x: vector.x, y: vector.y, z: vector.z };
+		}else panEnd = { x: 0, y: 0, z: 0 };
+		
+		
 		
 		if(!el){
 			// posiziono

@@ -491,7 +491,7 @@ SET = {
 					var n=this.INTERSECTED.name.split("_");
 					var ritorno = '';
 					if(SCHEDA.classeAperta && SCHEDA.classeAperta!='tab_tsubo')ritorno = 'SET.chiudiTsubo(true)';
-					SET.apriTsubo(n[1],ritorno);
+					SET.apriTsubo(n[1],ritorno, this.INTERSECTED);
 				}
 				if(this.INTERSECTED.name.substr(2,4)=='_mas'){
 					var n1 = this.INTERSECTED.name.substr(0,2);
@@ -505,13 +505,14 @@ SET = {
 		controlsM.yIni=-1;
 		controlsM.yEnd=-1;
 	},
-	apriTsubo: function( PT_name, ritorno ){
+	apriTsubo: function( PT_name, ritorno, el ){
 		if(localStorage.sistemaMeridiani!=''){
 			SET.cambiaSistema('',true);
 			localStorage.sistemaMeridiani = '';
 			localStorage.sistemaMeridianiAdd = '';
 		}
 		if(typeof(ritorno) == 'undefined')var ritorno = '';
+		if(typeof(el) == 'undefined')var el = '';
 		if(this.ptSel){
 			var mat=this.MAT.pointOn;
 			if(this.ptSel.userData.nota)mat=this.MAT.pointNote;
@@ -547,20 +548,37 @@ SET = {
 		this.diffX = this.ptSel.position.x*1;
 		this.diffY = this.ptSel.position.y*1;
 		document.getElementById("pt_"+(nTsubo+1)+"_"+siglaMeridiano).classList.add("selElPt");
+
+		var vx = manichinoCont.position.x;
+		var vy = manichinoCont.position.y;
+		var vz = manichinoCont.position.z;
+		var x2 = 0-this.ptSel.position.x;
+		var y2 = 0-this.ptSel.position.y;
+		var z2 = 0-this.ptSel.position.z;
+		panEndZero = { x: x2, y: y2, z: z2 };
 		
-		panEndZero = { x: 0-this.ptSel.position.x, y: 0-this.ptSel.position.y, z: 0-this.ptSel.position.z };
-		panEnd = { x: 0, y: 0, z: 0 };
+		// panEnd muove manichinoCont
+		// panEndZero muove manichino
 		
-		// posiziono
-		if(MERIDIANI.posizioni[SET.ptSel.name]){
-			var pos = MERIDIANI.posizioni[SET.ptSel.name];
-			normalizeRotation();
-			rotateEnd = { x:pos.x, y:pos.y, z:0 };
-		}
+		if(SCHEDA.aggancio.tipo=='libera'){
+			this.ptSel.updateMatrixWorld();
+			var vector = this.ptSel.geometry.vertices[i].clone();
+			vector.applyMatrix4( this.ptSel.matrixWorld );
+			panEnd = { x: vector.x, y: vector.y, z: vector.z };
+		}else panEnd = { x: 0, y: 0, z: 0 };
 		
-		if(smothingView){
-			if(manichinoCont.position.z<15)zoomEnd = 15;
-			normalizeRotation();
+		
+		if(!el){
+			// posiziono
+			if(MERIDIANI.posizioni[SET.ptSel.name]){
+				var pos = MERIDIANI.posizioni[SET.ptSel.name];
+				normalizeRotation();
+				rotateEnd = { x:pos.x, y:pos.y, z:0 };
+			}
+			if(smothingView){
+				if(manichinoCont.position.z<15)zoomEnd = 15;
+				normalizeRotation();
+			}
 		}
 		
 		if(ptCc){
