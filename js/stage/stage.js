@@ -140,6 +140,7 @@ function init() {
 				if(getVar("demo")=='anatomymap')cambiaModello('donna');
 				if(getVar("demo")=='tsubomap')caricaSet('meridiani_cinesi');
 				if(getVar("demo")=='shiatsumap')caricaSet('meridiani_shiatsu');
+				if(getVar("demo")=='auriculomap')caricaSet('auricologia');
 				if(getVar("demo")=='pazienti'){
 					setTimeout(function(){
 						SCHEDA.apriElenco('base');
