@@ -897,7 +897,7 @@ var PAZIENTI_SETS = {
 			SET.caricaDettagli();
 		}
 		SCHEDA.formModificato = true;
-		if(globals.modello.cartella)SET.overTsubo("_PT"+pD[0],true);
+		if(globals.modello.cartella)SET.overTsubo("_PT"+m,true);
 		document.getElementById("tt_mezzival").dataset.on='0';
 		H.removeTT();
 		PAZIENTI.verMezzo(m);
