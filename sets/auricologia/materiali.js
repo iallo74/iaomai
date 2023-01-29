@@ -375,9 +375,9 @@ SET.MAT = {
 				})(els[e]);
 			}
 		}
-		if(ini)SET.MAT.applicaMappa(localStorage.imgMappa);
+		if(ini)SET.MAT.applicaMappa(localStorage.imgMappa,ini);
 	},
-	applicaMappa: function( id ){
+	applicaMappa: function( id, ini ){
 		if(!globals.modello.cartella)return;
 		var el = SET.MAT.mappe[id];
 		if(MODELLO.flip){
@@ -386,6 +386,7 @@ SET.MAT = {
 		el.needsUpdate = true;
 		MODELLO.MAT.materialMuscoli[0].map = el;
 		MODELLO.swMuscle(1);
+		if(globals.modello.cartella && ini)setTimeout(function(){MODELLO.op('Pelle',1);},500);
 	},
 	setAlphaMap: function( zona, act ){
 		var pass = false;

@@ -20,7 +20,7 @@ var MODELLO = {
 	flip: false,
 	
 	_init: function(modello){
-				
+		
 		ANATOMIA = new THREE.Group();
 		ANATOMIA.name="MODELLO";
 		
@@ -297,7 +297,6 @@ var MODELLO = {
 			MENU.visModello();
 		}
 		
-		
 		if(globals.set.cartella){
 			if(SET)SET._init();
 			else{
@@ -312,6 +311,7 @@ var MODELLO = {
 		
 		manichinoCaricato=true;
 		raycastDisable=false;
+		
 		MODELLO.op('Pelle',1);
 		if(inizio){
 			if(globals.openMap && globals.mapOpened && !globals.set.cartella){
@@ -374,6 +374,7 @@ var MODELLO = {
 		if(globals.modello.cartella == 'orecchio' && MODELLO.tipoPelle){
 			MODELLO.cambiaTipoPelle(''); // metto la pelle chiare se si tratta dell'orecchio
 		}
+		
 		document.getElementById("pulsanti_modello").classList.add('modelloScelto');
 		inizio = false;
 	},
