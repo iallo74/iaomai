@@ -1015,6 +1015,7 @@ SET = {
 		SET.applicaEvidenziaTsubo();
 	},
 	applicaEvidenziaTsubo: function( anatomia, mappa, lm ){
+		if(typeof(lm) == 'undefined')var lm = '';
 		if(SET.tsuboEvidenziati.length || anatomia){
 			var phs = ["","2","3"];
 			for(ph in phs){
