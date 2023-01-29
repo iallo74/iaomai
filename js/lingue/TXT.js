@@ -2704,8 +2704,8 @@ DB.TXT = {
 			esp: ""
 		},
 		TestoRegistrazioneEspanso: {
-			ita: "Con la registrazione gratuita a [§] avrai {30 giorni di prova gratuita di tutte le app} e allo scadere potrai usufruire di  di tutte le funzionalità di base dell'app:\n\n[#] Fino a 20 pazienti\n[#] Backup dei dati\n[#] Accesso multipiattaforma\n[#] Funzionalità della community\n[#] 10% di sconto su un prodotto [IAOMAI]",
-			eng: "With the free registration to [§] you will have {30-day free trial of all apps} and upon expiry you will be able to use all the basic functions of the app:\n\n[#] Up to 20 customers\n[#] Data backup\n[#] Cross-platform access\n[#] Community functionality\n[#] Tutte le app gratis per 30 giorni\n[#] 10% discount on [IAOMAI] product",
+			ita: "Con la registrazione a [§] avrai {10 giorni di prova gratuita di tutte le app} e allo scadere potrai usufruire di  di tutte le funzionalità di base dell'app:\n\n[#] Fino a 15 pazienti\n[#] Backup dei dati\n[#] Accesso multipiattaforma\n[#] Funzionalità della community\n[#] 10% di sconto su un prodotto [IAOMAI]",
+			eng: "With the registration to [§] you will have {10-day free trial of all apps} and upon expiry you will be able to use all the basic functions of the app:\n\n[#] Up to 15 patients\n[#] Data backup\n[#] Cross-platform access\n[#] Community functionality\n[#] 10% discount on [IAOMAI] product",
 			esp: ""
 		},
 		ErroreGenerico: {
