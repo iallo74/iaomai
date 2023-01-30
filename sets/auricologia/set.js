@@ -797,7 +797,7 @@ SET = {
 		// panEnd muove manichinoCont
 		// panEndZero muove manichino
 		
-		if(SCHEDA.aggancio.tipo=='libera'){
+		if(SCHEDA.aggancio.tipo=='libera' && el){
 			panEnd = { x: vector.x, y: vector.y, z: vector.z };
 		}else panEnd = { x: 0, y: 0, z: 0 };
 		

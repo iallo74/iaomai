@@ -526,7 +526,7 @@ SET = {
 		// panEnd muove manichinoCont
 		// panEndZero muove manichino
 		
-		if(SCHEDA.aggancio.tipo=='libera'){
+		if(SCHEDA.aggancio.tipo=='libera' && el){
 			this.ptSel.updateMatrixWorld();
 			var vector = this.ptSel.geometry.vertices[i].clone();
 			vector.applyMatrix4( this.ptSel.matrixWorld );
