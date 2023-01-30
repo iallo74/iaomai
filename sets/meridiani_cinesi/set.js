@@ -515,9 +515,6 @@ SET = {
 		}
 		
 		
-		var vx = manichinoCont.position.x;
-		var vy = manichinoCont.position.y;
-		var vz = manichinoCont.position.z;
 		var x2 = 0-this.ptSel.position.x;
 		var y2 = 0-this.ptSel.position.y;
 		var z2 = 0-this.ptSel.position.z;

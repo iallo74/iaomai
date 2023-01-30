@@ -549,9 +549,6 @@ SET = {
 		this.diffY = this.ptSel.position.y*1;
 		document.getElementById("pt_"+(nTsubo+1)+"_"+siglaMeridiano).classList.add("selElPt");
 
-		var vx = manichinoCont.position.x;
-		var vy = manichinoCont.position.y;
-		var vz = manichinoCont.position.z;
 		var x2 = 0-this.ptSel.position.x;
 		var y2 = 0-this.ptSel.position.y;
 		var z2 = 0-this.ptSel.position.z;
