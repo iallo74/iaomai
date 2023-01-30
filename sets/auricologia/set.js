@@ -765,8 +765,7 @@ SET = {
 			if(PT_name_first)PT = scene.getObjectByName(PT_name_first); 
 			if(AR_name_first)PT = scene.getObjectByName(AR_name_first); 
 		}
-		var vx = manichinoCont.position.x;
-		var vy = manichinoCont.position.y;
+		
 		var x2 = 0;
 		var y2 = 0;
 		var z2 = 0;
