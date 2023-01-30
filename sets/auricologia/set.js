@@ -759,7 +759,7 @@ SET = {
 		}
 		
 		var elPin = this.ptSel;
-		if(typeof(el)!='undefined')elPin = el;
+		if(el)elPin = el;
 		
 		if(!PT.parent.visible){
 			if(PT_name_first)PT = scene.getObjectByName(PT_name_first); 
