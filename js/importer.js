@@ -85,6 +85,7 @@ var IMPORTER = {
     	'css/android.css',
     	'css/confirm_alert.css',
     	'css/addings.css',
+    	'css/console.css',
 		
 		'js/connect/login.js',
 		'js/inizio.js',
