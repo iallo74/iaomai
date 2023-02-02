@@ -328,7 +328,7 @@ var LOGIN = {
 				document.getElementById("loginGuida").style.display = 'none';
 			}else{
 				
-				if(!(!onlineVersion && (iPad || iPhone)))document.getElementById("p_reg").style.display = 'block';
+				if(!(!onlineVersion && (iPad || iPhone || isMacUA)))document.getElementById("p_reg").style.display = 'block';
 				document.getElementById("utDisc").style.display = 'none';
 				NN=TXT("NessunUtente");
 				document.getElementById("btn_modut").style.display = 'none';

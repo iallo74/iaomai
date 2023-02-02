@@ -22,6 +22,7 @@ var brw_chrome = false;
 var iPad = false;
 var iPhone = false;
 var isMac = false;
+var isMacUA = false;
 var mouseDetect = false;
 var onlineVersion=false;
 var isTablet = false;
@@ -160,6 +161,7 @@ var IMPORTER = {
 		var UA=navigator.userAgent;
 		if(UA.toLowerCase().indexOf("ipad")>-1)iPad=1;
 		if(UA.toLowerCase().indexOf("iphone")>-1)iPhone=1;
+		if(UA.toLowerCase().indexOf("MAC")>-1)isMacUA=1;
 		if(UA.toLowerCase().indexOf("android")>-1)android=1;
 		brw_OPERA=(navigator.userAgent.indexOf("Opera") != -1);
 		brw_IE = IMPORTER.detectIE();

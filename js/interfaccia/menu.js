@@ -557,6 +557,7 @@ var MENU = {
 		if(!USRprovv.trim() && mouseDetect && !touchable)document.getElementById("USR").focus();
 	},
 	visRegistrazione: function(){
+		if(!onlineVersion && (iPad || iPhone))return;
 		MENU.chiudiMenu("registrazione");
 		visLoader("");
 		document.getElementById("registrazione").classList.toggle("visSch");
