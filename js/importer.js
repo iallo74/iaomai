@@ -161,7 +161,7 @@ var IMPORTER = {
 		var UA=navigator.userAgent;
 		if(UA.toLowerCase().indexOf("ipad")>-1)iPad=1;
 		if(UA.toLowerCase().indexOf("iphone")>-1)iPhone=1;
-		if(UA.toLowerCase().indexOf("MAC")>-1)isMacUA=1;
+		if(UA.toLowerCase().indexOf("mac")>-1)isMacUA=1;
 		if(UA.toLowerCase().indexOf("android")>-1)android=1;
 		brw_OPERA=(navigator.userAgent.indexOf("Opera") != -1);
 		brw_IE = IMPORTER.detectIE();
