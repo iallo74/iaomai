@@ -86,7 +86,7 @@ var SERVIZI = {
 				for(c in DB.servizi.data){
 					if(DB.servizi.data[c].Cancellato*1==0)tServ++;
 				}
-				if(tServ >= maxServizi){
+				if(tServ >= maxServizi && !document.body.classList.contains("pplhd")){
 					ALERT(TXT("MsgMaxServizi"+maxServizi));
 					return;
 				}

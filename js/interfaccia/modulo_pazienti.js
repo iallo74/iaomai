@@ -269,7 +269,7 @@ var PAZIENTI = {
 			for(c in DB.pazienti.data){
 				if(DB.pazienti.data[c].Cancellato*1==0)tPaz++;
 			}
-			if(tPaz >= maxClienti){
+			if(tPaz >= maxClienti && !document.body.classList.contains("pplhd")){
 				ALERT(TXT("MsgMaxPazienti"+maxClienti));
 				return;
 			}

@@ -145,6 +145,19 @@ function INIT(){
 			}
 		},2000);
 	}
+		
+				
+	/*
+	---------------- aggiunto per problemi con Apple
+	abbiamo inserito un iframe che richiama la versione online e nella richiesta abbiamo messo il parametro fromApp per controllare la connessione e gestirla
+	*/
+	/*if(location.search.indexOf("fromApp")>-1 && onlineVersion){// && (iPad || iPhone || isMacUA)){
+		setInterval(async () => {
+			const result = await checkOnlineStatus();
+			document.getElementById("noConnDiv").classList.toggle("visNoConnDiv",!result);
+		}, 5000);
+	}*/
+	// ------------------------------------------------------
 	
 	console.log('\n \n  .------------------------------------------.\n  |                                          |\n  |     SE STAI VEDENDO QUESTA SCHERMATA     |\n  |     PER MODIFICARE IL CODICE             |\n  |     VERRAI FULMINATO!!!!        ]o:      |\n  |                                          |\n  *------------------------------------------*\n  ');
 }

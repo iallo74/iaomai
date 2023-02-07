@@ -89,7 +89,7 @@ var FORNITORI = {
 				for(c in DB.fornitori.data){
 					if(DB.fornitori.data[c].Cancellato*1==0)tForn++;
 				}
-				if(tForn >= maxFornitori){
+				if(tForn >= maxFornitori && !document.body.classList.contains("pplhd")){
 					ALERT(TXT("MsgMaxFornitori"+maxFornitori));
 					return;
 				}

@@ -301,7 +301,7 @@ var PAZIENTI_TRATTAMENTI = {
 				if(DB.login.data.auths.indexOf("clients_full")>-1)maxCicli = -1;
 			}
 			if(maxCicli>-1){
-				if(cicliTot >= maxCicli){
+				if(cicliTot >= maxCicli && !document.body.classList.contains("pplhd")){
 					ALERT(TXT("MsgMaxCicli"));
 					return;
 				}
@@ -1681,6 +1681,7 @@ var PAZIENTI_TRATTAMENTI = {
 						}
 					}
 					if(puntiTsuboMap.length){
+						HTML+='<div class="app_report_sch"> ';
 						HTML+='<i>'+TXT_P+':</i> ';
 						HTML+='<div id="puntiCiclo">';
 						for(p in puntiTsuboMap){
@@ -1699,8 +1700,10 @@ var PAZIENTI_TRATTAMENTI = {
 							HTML += '</span> '+chr10;
 						}
 						HTML+='</div>';
+						HTML+='</div>';
 					}
 					if(puntiAuriculoMap.length){
+						HTML+='<div class="app_report_sch"> ';
 						HTML+='<i>'+TXT_P+':</i> ';
 						HTML+='<div id="puntiCiclo">';
 						for(p in puntiAuriculoMap){
@@ -1716,8 +1719,10 @@ var PAZIENTI_TRATTAMENTI = {
 							HTML += '</span> '+chr10;
 						}
 						HTML+='</div>';
+						HTML+='</div>';
 					}
 					if(meridiani.length){
+						HTML+='<div class="app_report_sch"> ';
 						HTML+='<br><i>'+TXT_M+':</i> ';
 						HTML+='<div id="meridianiCiclo">';
 						for(m in meridiani){
@@ -1732,6 +1737,7 @@ var PAZIENTI_TRATTAMENTI = {
 							if(descrizione)HTML += ' '+descrizione;
 							HTML += '</span>'+chr10;
 						}
+						HTML+='</div>';
 						HTML+='</div>';
 					}
 				}

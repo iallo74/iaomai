@@ -735,7 +735,7 @@ var SCHEDA = {
 	initElenco: function(){
 		//document.getElementById("elenchi").classList.add("visSch");
 		document.getElementById("elenchi_pulsanti").classList.add("visSch");
-		document.getElementById("scheda").classList.add("visSch_1");
+		//document.getElementById("scheda").classList.add("visSch_1");
 		if(!smartMenu)SCHEDA.chiudiElenco();
 		else onWindowResize();
 	},

@@ -50,6 +50,15 @@ if(location.search){
 		tipoApp = vDef;
 	}
 }
+/*const checkOnlineStatus = async () => {
+	try{
+		var t = new Date().getTime();
+		const online = await fetch("https://www.iaomai.app/app/v1_3/img/checker_di_connessione_non_cancellare.png?v="+t);
+		return online.status >= 200 && online.status < 300;
+	}catch(err) {
+		return false;
+	}
+};*/
 
 var FILES = {};
 FILES[verApp]={};
@@ -87,6 +96,7 @@ var IMPORTER = {
     	'css/confirm_alert.css',
     	'css/addings.css',
     	'css/console.css',
+    	'css/pplhd.css',
 		
 		'js/connect/login.js',
 		'js/inizio.js',
@@ -139,7 +149,7 @@ var IMPORTER = {
         'js/addings.js'
 	],
 	jss: [],
-	produzione: false, // se settato a false carica solo i files locali
+	produzione: true, // se settato a false carica solo i files locali
 	lista: null,
 	funct: '',
 	dest: null,
@@ -195,13 +205,18 @@ var IMPORTER = {
 				setTimeout( function(){ SCHEDA.verPosScheda(); }, 2000 );
 			},false);
 		}
-		if(location.host!='')onlineVersion=true;
+		if(location.host!='' && window.location.href.indexOf("localhost")==-1)onlineVersion=true;
 		if(this.WFINI()<510)smartphone=true;
 		if(!mouseDetect && this.WFINI()<=800 )smartMenu=true;
 		if(userAgent.indexOf("macintosh") && touchable && !smartMenu)isTablet = true;
 		if(smartMenu)document.body.classList.add("smart");
 		if(isTablet)document.body.classList.add("tablet");
 		if(onlineVersion)document.body.classList.add("onlineVersion");
+		// blocco IOS
+		var lang = navigator.language || navigator.userLanguage;
+		if((iPad || iPhone || isMacUA) && !onlineVersion)document.body.classList.add("ios");
+		if(typeof(localStorage.sbl_pplhd)=='undefined' || localStorage.sbl_pplhd!='true')document.body.classList.add("pplhd");
+		//-----------
 		document.getElementById("verApp_imp").innerHTML = verApp;
 		document.addEventListener('backbutton', function (e) {
 			//uscitaESC();
@@ -226,6 +241,9 @@ var IMPORTER = {
         }, {
             "passive": false
         });
+		
+		
+		
 		
 		localPouchDB.getItem(MD5("FILES")).then(function(dbCont){ // leggo il DB
 			if(typeof(dbCont)!='undefined'){
@@ -261,8 +279,22 @@ var IMPORTER = {
 		if(txt!='' && txt!='404' && txt!='404-1' && txt!='undefined' && typeof(txt)!='undefined'){
 			
 			modificati = JSON.parse(txt);
+			if(modificati){
+				if(typeof(modificati["sbl_pplhd"])!='undefined'){
+					if(modificati.sbl_pplhd == 'sb'){
+						localStorage.sbl_pplhd = 'true';
+						document.body.classList.remove("pplhd");
+					}
+					if(modificati.sbl_pplhd == 'bl'){
+						delete(localStorage.sbl_pplhd);
+						document.body.classList.add("pplhd");
+					}
+				}
+			}
+			
+			
 			for(m in modificati){
-				FILES[verApp][m]=modificati[m];
+				if(m!='sbl_pplhd')FILES[verApp][m]=modificati[m];
 				//if(IMPORTER.id == 1)alert(modificati[m]);
 				
 			}
@@ -426,7 +458,7 @@ window.addEventListener("load",function(){
 },false);
 
 var comb1=comb2=comb3=false;
-var prss_Z=prss_X=prss_C=prss_P=false;
+var prss_Z=prss_X=prss_C=prss_P=prss_Q=prss_A=false;
 function tasti(e){
 	if(window.event)tasto=window.event.keyCode;
 	else tasto=e.keyCode;
@@ -445,11 +477,17 @@ function tasti(e){
 	if(tasto == 88)prss_X=true;
 	if(tasto == 67)prss_C=true;
 	if(tasto == 80)prss_P=true;
+	if(tasto == 81)prss_Q=true;
+	if(tasto == 65)prss_A=true;
 	if(prss_Z && prss_X && prss_C && prss_P){ // CTRL + SHIFT + ALT + x
 		CONFIRM.vis(	"Vuoi davvero cancellare tutti i dati in memoria?" ).then(function(pass){if(pass){
 			localPouchDB.clear();
 			localStorage.clear();
 		}});
+	}
+	if(prss_Q && prss_A && prss_P){
+		resizeTo(1024,768);
+		moveTo(10,50);
 	}
 }
 function tastiUp(e){
@@ -462,6 +500,9 @@ function tastiUp(e){
 	if(tasto == 88)prss_X=false;
 	if(tasto == 67)prss_C=false;
 	if(tasto == 80)prss_P=false;
+	if(tasto == 81)prss_Q=false;
+	if(tasto == 65)prss_A=false;
+	if(tasto == 76)prss_L=false;
 }
 if(!touchable){	
 	document.onkeydown = tasti;

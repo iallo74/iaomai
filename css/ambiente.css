@@ -615,3 +615,20 @@ body:not(.bodyModello) #logoSovra{
 .hiddenElement{
 	display:none;
 }
+
+#noConnDiv{
+    display: none;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    z-index: 50000000000000;
+	background-image: url(../img/noConn2.png);
+    background-color: #666;
+	background-position: center center;
+    background-repeat: no-repeat;	
+}
+.visNoConnDiv{
+    display: block !important;
+}

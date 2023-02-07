@@ -256,7 +256,8 @@ var PAZIENTI_FILTRI = {
 						'		<div class="btn_invia" onClick="this.blur();PAZIENTI.cancellaFiltri();">' +
 									htmlEntities(TXT("AnnullaFiltri")) +
 						'		</div>' +
-						'		<div class="btn_frdx"' +
+						'		<div id="marketingTools_btns_in"' +
+						'			 class="btn_frdx"' +
 						'			 style="float:right;"' +
 						'			 onClick="PAZIENTI.car_marketing();">' +
 									htmlEntities(TXT("StrumentiMarketing")) +
