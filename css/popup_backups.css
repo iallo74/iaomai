@@ -65,7 +65,8 @@
     vertical-align: middle;
 }
 #creaBackup_btn,
-#creaDownload_btn{
+#creaDownload_btn,
+#debug_btn{
 	display:inline-block;
 	vertical-align:middle;
 	margin:3px;
@@ -87,6 +88,13 @@
 }
 #creaDownload_btn{
 	background-image:url(../img/ico_download.png);
+}
+#debug_btn{
+	width:32px;
+	color:#FFF;
+	background-color:rgba(0,0,0,0.3) !important;
+	padding-left:0px !important;
+	padding-right:0px !important;
 }
 
 .elsBackups{

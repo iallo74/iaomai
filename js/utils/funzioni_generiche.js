@@ -226,3 +226,25 @@ function hexToRgb(hex) {
     b: parseInt(result[3], 16)
   } : null;
 }
+
+var debugTimes = 0;
+function incrDebug(){
+	debugTimes++;
+	setTimeout(function(){debugTimes--;},3000);
+	if(debugTimes>=5)visDebug();
+}
+function visDebug(){
+	MENU.chiudiMenu();
+	document.getElementById("cont_debug_db_cont").classList.add("visSch");
+	document.getElementById("cont_debug_db").classList.add("loading");
+	setTimeout(function(){
+		var JSNTXT = JSON.stringify(DB);
+		//console.log(JSNTXT);
+		document.getElementById("cont_debug_db").innerHTML = JSNTXT;
+		document.getElementById("cont_debug_db").classList.remove("loading");
+	},800);
+}
+function nasDebug(){
+	document.getElementById("cont_debug_db_cont").classList.remove("visSch");
+	document.getElementById("cont_debug_db").innerHTML = "";
+}

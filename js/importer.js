@@ -215,6 +215,7 @@ var IMPORTER = {
 		// blocco IOS
 		var lang = navigator.language || navigator.userLanguage;
 		if((iPad || iPhone || isMacUA) && !onlineVersion)document.body.classList.add("ios");
+		if(typeof(localStorage.sbl_pplhd)=='undefined')localStorage.sbl_pplhd = 'true';
 		if(typeof(localStorage.sbl_pplhd)=='undefined' || localStorage.sbl_pplhd!='true')document.body.classList.add("pplhd");
 		//-----------
 		document.getElementById("verApp_imp").innerHTML = verApp;

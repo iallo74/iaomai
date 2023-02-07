@@ -26,10 +26,9 @@
         <meta name="msapplication-TileColor" content="#333333">
         <meta name="msapplication-TileImage" content="icons/ms-icon-144x144.png">
         <meta name="theme-color" content="#333333">
-        <link id="favicon" rel="icon" href="icons/faviconB.ico?v=1" />
+        <meta id="metaSCP" http-equiv="Content-Security-Policy" content="default-src * 'self' data: gap: 'unsafe-inline' 'unsafe-eval';style-src * 'self' 'unsafe-inline' 'unsafe-eval' gap:;script-src * 'self' 'unsafe-inline' 'unsafe-eval' gap:;">
         
-       <!--<link rel="preload" href="fonts/SFProDisplay-Regular.woff2" as="font" type="font/woff2" crossorigin>
-        <link rel="preload" href="fonts/SFProDisplay-Bold.woff2" as="font" type="font/woff2" crossorigin>-->
+        <link id="favicon" rel="icon" href="icons/faviconB.ico?v=1" />
 		<link href="fonts/stylesheet.css" rel="stylesheet">
         
         <style type="text/css">
@@ -359,6 +358,8 @@
                 	<div id="creaBackup_btn" onClick="BACKUPS.creaBackup();">{{TXT_CreaBackup}}</div>
                 	<span></span>
                     <div id="creaDownload_btn" onClick="LOGIN.globalSync('locale');">{{TXT_DownloadDati}}</div>
+                	<span></span>
+                    <div id="debug_btn" onClick="incrDebug();">{ }</div>
                 </div>
                 <div id="titBackups">
                 	<div onClick="BACKUPS.car_backups();" id="backupsTorna">{{TXT_BackupsTorna}}</div>
@@ -877,7 +878,18 @@
         
         <!-- FRAME DI STAMPA -->
         <iframe name="stampaFrame" id="stampaFrame" frameborder="0" style="width:0px;height:0px;display:none;"></iframe>
-<script src="sw_install.js"></script>
+        
+        
+        <!-- GESTORE DI DEBUG -->
+        <div id="cont_debug_db_cont">
+        	<div id="chiudiDebugBig" onClick="nasDebug();"></div>
+        	<textarea id="cont_debug_db"></textarea>
+        </div>
+        
+        
+        
+        <!-- GESTORE DEL SERVICE WORKER (SOLO PER WEB APP) tolto da GIT -->
+		<script src="sw_install.js"></script>
 
 	</body>
 </html>
