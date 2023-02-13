@@ -48,10 +48,9 @@ var MODULO_PROCEDURE = { // extend SET
 			}
 			clonePROCEDURE.sort(sort_by("NomeProcedura", false));
 		}else clonePROCEDURE = [];
-		
 		for (p in clonePROCEDURE) {
 			PR = clonePROCEDURE[p];
-			if(!PR.Cancellato && PR.app==globals.set.siglaProc){
+			if(!PR.Cancellato && __(PR.app)==globals.set.siglaProc){
 				HTML += '<div id="btn_procedura_'+PR.p+'" class="base';
 				if(Q_idProc*1==PR.p*1)HTML += ' elencoSel';
 				if(Q_tue){
