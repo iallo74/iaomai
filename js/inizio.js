@@ -139,7 +139,7 @@ function INIT(){
 				boxProva.innerHTML = 
 							'	<div onMouseOver="overChiudiProva=true;"' +
 							'		 onMouseOut="overChiudiProva=false;"></div>' +
-							'	<b>Prova GRATUITA di tutte le app per 30 giorni.</b><br>Clicca qui per registrarti e iniziare subito!';
+							'	<b>Prova GRATUITA di tutte le app per 10 giorni.</b><br>Clicca qui per registrarti e iniziare subito!';
 				document.body.appendChild(boxProva);
 				
 			}
