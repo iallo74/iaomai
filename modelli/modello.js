@@ -313,7 +313,8 @@ var MODELLO = {
 		raycastDisable=false;
 		
 		MODELLO.op('Pelle',1);
-		if(inizio){
+		
+		if(inizio || getVar("demo")){
 			if(globals.openMap && globals.mapOpened && !globals.set.cartella){
 				postApreSet = true;
 				caricaSet(globals.mapOpened,document.getElementById("p_"+globals.mapOpened)); // riapro il set al caricamento
@@ -333,6 +334,11 @@ var MODELLO = {
 					
 					
 				},300);
+			}else if(getVar("demo")){
+				console.log(getVar("demo"))
+				if(getVar("demo")=='tsubomap')caricaSet('meridiani_cinesi');
+				if(getVar("demo")=='shiatsumap')caricaSet('meridiani_shiatsu');
+				if(getVar("demo")=='auriculomap')caricaSet('auricologia');
 			}else{
 				setTimeout( function(){
 					GUIDA.visFumetto("guida_generica");
