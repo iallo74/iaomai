@@ -212,6 +212,10 @@ var IMPORTER = {
 		if(smartMenu)document.body.classList.add("smart");
 		if(isTablet)document.body.classList.add("tablet");
 		if(onlineVersion)document.body.classList.add("onlineVersion");
+		if(onlineVersion && mouseDetect){
+			window.moveTo(0,0);
+			window.resizeTo(screen.availWidth,screen.availHeight);
+		}
 		// blocco IOS
 		var lang = navigator.language || navigator.userLanguage;
 		if((iPad || iPhone || isMacUA) && !onlineVersion)document.body.classList.add("ios");
