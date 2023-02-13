@@ -446,7 +446,7 @@ var MODULO_PROCEDURE = { // extend SET
 			var app = '';
 			if(globals.set.cartella=='auricologia')app = 'AUR';
 			for(c in DB.procedure.data){
-				if(DB.procedure.data[c].Cancellato*1==0 && DB.procedure.data[c].app == app)tProc++;
+				if(DB.procedure.data[c].Cancellato*1==0 && __(DB.procedure.data[c].app) == app)tProc++;
 			}
 			if(tProc >= maxProcedure){
 				ALERT(TXT("MsgMaxProcedure"));
