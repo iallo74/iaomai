@@ -27,7 +27,7 @@ var mouseDetect = false;
 var onlineVersion=false;
 var isTablet = false;
 var globals = {};
-var verApp = '1.3';
+var verApp = '1.4';
 // IMPOSTAZIONI DI APP
 var nomeApp = 'Iáomai';
 var sloganApp = 'A new vision on health';
@@ -140,6 +140,7 @@ var IMPORTER = {
         'js/interfaccia/modulo_community.js',
         'js/interfaccia/modulo_dispositivi.js',
 		'js/utils/agenda.js',
+		/*'js/stores/ios_inapp_puschase.js',*/
         
 		'modelli/modello.js',
 		'modelli/materiali.js',
