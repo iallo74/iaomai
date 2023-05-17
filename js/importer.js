@@ -140,7 +140,7 @@ var IMPORTER = {
         'js/interfaccia/modulo_community.js',
         'js/interfaccia/modulo_dispositivi.js',
 		'js/utils/agenda.js',
-		/*'js/stores/ios_inapp_puschase.js',*/
+		'js/stores/ios_inapp_puschase.js',
         
 		'modelli/modello.js',
 		'modelli/materiali.js',

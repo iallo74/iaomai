@@ -33,16 +33,16 @@ function initStore() {
 
 */
 	
-function refreshProductUI( product ) {
-	const info = product.loaded // controlla se il prodotto è stato caricato
-		? `title: ${product.title}<br/>` +
-		  `desc: ${product.description}<br/>` +
-		  `price: ${product.price}<br/>`
+function refreshProductUI(product){
+	var info = product.loaded // controlla se il prodotto è stato caricato
+		? 'title: '+product.title+'<br/>' +
+		  'desc: '+product.description+'<br/>' +
+		  'price: '+product.price+'<br/>'
 		: 'Retrieving info...';
-	const button = product.canPurchase // aggiunge il pulsante BUY NOW
-		 ? '<button onclick="purchase('+${product.id}+')">Buy Now!</button>'
+	var button = product.canPurchase // aggiunge il pulsante BUY NOW
+		 ? '<button onclick="purchase('+product.id+')">Buy Now!</button>'
 		 : '';
-	const el = document.getElementById(${product.id}+'-purchase');
+	var el = document.getElementById(product.id+'-purchase');
 	el.htmlContent = info + button;
 }
 
