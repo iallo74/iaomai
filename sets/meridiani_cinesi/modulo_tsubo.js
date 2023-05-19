@@ -6,7 +6,7 @@ var MODULO_TSUBO = { // extend SET
 	caricaTsubo: function( siglaMeridiano, nTsubo, ritorno ){ // apre la scheda di uno tsubo
 		// verifico le autorizzazioni
 		if(!SET.verFreeMeridiani(siglaMeridiano)){
-			ALERT(TXT("MsgContSoloPay"));
+			ALERT(TXT("MsgContSoloPay"),true,true);
 			return;
 		}
 		// --------------------------

@@ -76,7 +76,7 @@ var MODULO_TEORIA = { // extend SET
 		// apre la scheda di un approfondimento
 		// verifico le autorizzazioni
 		if(!SET.verFreeTeoria(p+"_"+t)){
-			ALERT(TXT("MsgContSoloPay"));
+			ALERT(TXT("MsgContSoloPay"),true,true);
 			return;
 		}
 		// --------------------------
@@ -140,7 +140,7 @@ var MODULO_TEORIA = { // extend SET
 		// carica un approfondimento video
 		// verifico le autorizzazioni
 		if(!SET.verFreeTeoria(p+"_"+t)){
-			ALERT(TXT("MsgContSoloPay"));
+			ALERT(TXT("MsgContSoloPay"),true,true);
 			return;
 		}
 		// --------------------------

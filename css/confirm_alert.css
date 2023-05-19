@@ -52,14 +52,35 @@
     color: #FFF;
     border: 1px solid #9fbde6;
 }
+#CNF_lg,
+#CNF_pr{
+	background-size: auto 24px;
+	background-position:4px center;
+	background-repeat:no-repeat;
+    padding-left:30px;
+    padding-right:10px;
+}
+#CNF_pr{
+	background-image: url(../img/ico_purchases.png);
+	background-color: #000;
+	color:#FFF;
+    border: 1px solid #000;
+}
+#CNF_lg{
+	background-image: url(../img/ico_utente.png);
+}
 #CNF_si:hover,
 #CNF_ok:hover,
 #CNF_lg:hover{
 	background-color: #1857af;
 }
+#CNF_pr:hover{
+	background-color: #333;
+}
 .alert #CNF_si,
 .alert #CNF_no,
 .alert #CNF_lg,
+.alert #CNF_pr,
 .alert #CNF_an{
 	display:none;
 }
@@ -77,10 +98,12 @@
 	display:none;
 }
 #CNF:not(.CNF_login) #CNF_lg,
+#CNF:not(.CNF_login) #CNF_pr,
 #CNF:not(.CNF_login) #CNF_an{
 	display:none;
 }
 .CNF_login #CNF_lg,
+.CNF_login #CNF_pr,
 .CNF_login #CNF_an{
 	display: inline-block !important;
 }

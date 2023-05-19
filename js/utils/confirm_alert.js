@@ -76,12 +76,14 @@ var CONFIRM = {
 		}
 	}
 }
-function ALERT( msg, login ){
+function ALERT( msg, login, purchase ){
 	if(typeof(login) == 'undefined')var login = false;
+	if(typeof(purchase) == 'undefined')var purchase = false;
 	CONFIRM.type = 'alert';
 	document.getElementById("CNF_titolo").innerHTML = stripslashes(msg.replace(/\n/g,"<br>"));
 	document.getElementById("CNF").classList.add("visCNF");
 	if(login)document.getElementById("CNF").classList.add("CNF_login");
+	if(purchase)document.getElementById("CNF").classList.add("CNF_purchase");
 	setTimeout(function(){
 		document.getElementById("CNF_dialog").classList.add("visCNF_dialog");
 		document.getElementById("CNF").classList.add("opCNF");

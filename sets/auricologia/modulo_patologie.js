@@ -121,7 +121,7 @@ var MODULO_PATOLOGIE = { // extend SET
 	apriPatologia: function( n, btn ){ // apre la scheda della patologia
 		// verifico le autorizzazioni
 		if(!SET.verFreePatologia(n*1)){
-			ALERT(TXT("MsgContSoloPay"));
+			ALERT(TXT("MsgContSoloPay"),true,true);
 			return;
 		}
 		// --------------------------

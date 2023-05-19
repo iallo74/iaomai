@@ -84,6 +84,7 @@ var IMPORTER = {
     	'css/popup_archives.css',
     	'css/popup_dispositivi.css',
     	'css/popup_features.css',
+    	'css/popup_purchases.css',
     	'css/schede.css',
     	'css/schede_touch.css',
     	'css/moduli.css',
@@ -139,8 +140,8 @@ var IMPORTER = {
         'js/interfaccia/modulo_photo.js',
         'js/interfaccia/modulo_community.js',
         'js/interfaccia/modulo_dispositivi.js',
+		'js/interfaccia/modulo_purchases.js',
 		'js/utils/agenda.js',
-		/*'js/stores/ios_inapp_puschase.js',*/
         
 		'modelli/modello.js',
 		'modelli/materiali.js',
@@ -516,7 +517,13 @@ if(!touchable){
 }
 document.ondragstart = new Function("return false;");
 document.oncontextmenu = new Function("return false;");
-
+function bringBackDefault(event) {
+  event.returnValue = true; 
+  (typeof event.stopPropagation === 'function') && 
+  event.stopPropagation(); 
+  (typeof event.cancelBubble === 'function') && 
+  event.cancelBubble(); 
+} 
 
 /*window.onerror = (message, source, lineno, colno, error) => {
 	if(error==null)var error = '';

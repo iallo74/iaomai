@@ -121,6 +121,8 @@ function INIT(){
 	
 	//DB._reset();
 	LOGIN.avviaVerToken();
+	setTimeout( function(){PURCHASES.init();},3000);
+	document.getElementById("cont_debug_db").addEventListener("contextmenu", bringBackDefault, true);
 	document.getElementById("logoSovra").style.opacity = 1;
 	window.addEventListener("resize",function(){
 		SCHEDA.verPosScheda();

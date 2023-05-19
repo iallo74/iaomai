@@ -154,7 +154,7 @@ Date.prototype.addDays = function(days) { // aggiunge una funzione per sommare u
 var sort_by = function(field, reverse, primer){ // ordina un elenco
    var key = primer ? 
        function(x) {return primer(x[field])} : 
-       function(x) {return x[field].toUpperCase()};
+       function(x) {return x[field].toUpperCase();};
 
    reverse = !reverse ? 1 : -1;
 

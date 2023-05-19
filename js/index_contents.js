@@ -7,7 +7,9 @@ var sets = {
 		descrizione: TXT("AnatomyDESCR"),
 		locked: false,
 		opening: false,
-		dataPubblicazione: ''
+		dataPubblicazione: '',
+		idApple: '',
+		idGoogle: ''
 	},
 	meridiani_cinesi: {
 		nome: TXT("TsuboMap"),
@@ -53,7 +55,10 @@ var sets = {
 		lastVer: 1,
 		opening: true,
 		dataPubblicazione: '',
-		siglaProc: ''
+		siglaProc: '',
+		idApple: 'TM22',
+		idGoogle: 'tm22',
+		pageStore: 'tsubomap'
 	},
 	meridiani_shiatsu: {
 		nome: TXT("ShiatsuMap"),
@@ -99,7 +104,10 @@ var sets = {
 		lastVer: 1,
 		opening: true,
 		dataPubblicazione: '',
-		siglaProc: ''
+		siglaProc: '',
+		idApple: 'SM22',
+		idGoogle: 'sm22',
+		pageStore: 'shiatsumap'
 	},
 	auricologia: {
 		nome: TXT("AuriculoMap"),
@@ -141,7 +149,10 @@ var sets = {
 		locked: false,
 		opening: true,
 		dataPubblicazione: '',
-		siglaProc: 'AUR'
+		siglaProc: 'AUR',
+		idApple: 'AU23',
+		idGoogle: 'au23',
+		pageStore: 'auriculomap'
 	},
 	reflessologia_plantare: {
 		nome: TXT("ReflessologiaPlantare"),
@@ -158,7 +169,10 @@ var sets = {
 		locked: true,
 		opening: true,
 		dataPubblicazione: '2023-06',
-		siglaProc: 'RLF'
+		siglaProc: 'RLF',
+		idApple: '',
+		idGoogle: '',
+		pageStore: 'reflexologymap'
 	},
 	trigger_points: {
 		nome: TXT("TriggerPoints"),
@@ -176,7 +190,10 @@ var sets = {
 		locked: true,
 		opening: true,
 		dataPubblicazione: '2023-10',
-		siglaProc: 'TRP'
+		siglaProc: 'TRP',
+		idApple: '',
+		idGoogle: '',
+		pageStore: 'triggerpointsmap'
 	},
 	clients_full: {
 		nome: TXT("MedicalFiles"),
@@ -184,7 +201,10 @@ var sets = {
 		descrizione: TXT("MedicalFilesDESCR"),
 		locked: false,
 		opening: false,
-		dataPubblicazione: ''
+		dataPubblicazione: '',
+		idApple: 'SP22',
+		idGoogle: 'sp22',
+		pageStore: 'medicalfile'
 	}
 };
 

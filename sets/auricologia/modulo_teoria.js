@@ -41,7 +41,7 @@ var MODULO_TEORIA = { // extend SET
 	caricaTeoria: function( p, t, btn ){ // apre la scheda della teoria
 		// verifico le autorizzazioni
 		if(!SET.verFreeTeoria(p+"_"+t)){
-			ALERT(TXT("MsgContSoloPay"));
+			ALERT(TXT("MsgContSoloPay"),true,true);
 			return;
 		}
 		// --------------------------

@@ -100,6 +100,7 @@ var MENU = {
 		if(n!="dispositivi")document.getElementById("dispositivi").classList.remove("visSch");
 		if(n!="features")document.getElementById("features").classList.remove("visSch");
 		if(n!="archives")document.getElementById("archives").classList.remove("visSch");
+		if(n!="purchases")document.getElementById("purchases").classList.remove("visSch");
 		if(n!="ag")document.getElementById("ag").classList.remove("visSch")
 		if( n=='pulsanti_modello' ||
 			n=='impostazioni' ||
@@ -352,10 +353,8 @@ var MENU = {
 				document.feedbackForm.Email.value = DB.login.data.Email;
 			}
 			visLoader('');
-			//document.getElementById("loader").addEventListener("mouseup",MENU.visFeedback,false);
 		}else{
 			nasLoader();
-			//document.getElementById("loader").removeEventListener("mouseup",MENU.visFeedback,false);
 		}
 	},
 	visColori: function(){
@@ -453,11 +452,9 @@ var MENU = {
 			document.getElementById("backups").classList.toggle("visSch");
 			if(document.getElementById("backups").className.indexOf("visSch") > -1){
 				visLoader('');
-				//document.getElementById("loader").addEventListener("mouseup",MENU.visNotifiche,false);
 				BACKUPS.car_backups();
 			}else{
 				nasLoader();
-				//document.getElementById("loader").removeEventListener("mouseup",MENU.visNotifiche,false);
 			}
 		}
 	},
@@ -688,6 +685,17 @@ var MENU = {
 			PH.apriArchives();
 		}else{
 			PH.chiudiArchives();
+			nasLoader();
+		}
+	},
+	
+	visPurchases: function(){
+		MENU.chiudiMenu("purchases");
+		visLoader("");
+		document.getElementById("purchases").classList.toggle("visSch");
+		if(document.getElementById("purchases").className.indexOf("visSch") > -1){
+			visLoader('');
+		}else{
 			nasLoader();
 		}
 	},

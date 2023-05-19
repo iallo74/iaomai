@@ -5,7 +5,7 @@
 		<meta charset="utf-8">
         
         <!-- META PER L'IN-APP PURCHASE -->
-        <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self' 'unsafe-inline'" /> -->
+        <!--<meta http-equiv="Content-Security-Policy" content="default-src 'self' 'unsafe-inline'" />-->
       
       
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">        
@@ -586,6 +586,10 @@
                 
                 <div class="noVisPiu">Non visualizzare più <input type="checkbox" id="no_info_features" name="no_info_features_1_3" value="1" onclick="localStorage.setItem(this.dataset.name,this.checked);" data-name="no_info_features_1_3"></div>
             </div>
+            <div id="purchases" class="popup"> <!-- ACQUISTI -->
+            	<div id="labelPurchases" class="popup_label">{{TXT_AcquistaLicenza}}<div class="popup_chiudi" onClick="MENU.chiudiMenu();"></div></div>
+            	<div id="contPurchases" class="popup_cont ini"></div>
+            </div>
            	<!---------------------------- fine popups ... -->
             
             
@@ -719,6 +723,7 @@
                         <div id="p_download" onClick="MENU.visBackups();">{{TXT_Download}}</div>
                         <div id="p_feedback" onClick="MENU.visFeedback();">{{TXT_Feedback}}</div>
                         <div id="p_guide" onClick="REF.open();MENU.visImpostazioni();">{{TXT_ReferenceGuide}}</div>
+                        <div id="p_purchases" onClick="MENU.visPurchases(true);">{{TXT_AcquistaLicenza}}</div>
                         <div id="p_features" onClick="MENU.visFeatures(true);">{{TXT_NuoveCaratteristiche}}</div>
                         <div id="p_versione" onClick="MENU.visVersione();">{{TXT_Versione}}</div>
                     </div>
@@ -758,6 +763,7 @@
                         <button id="CNF_no" onClick="CONFIRM.reject();">{{TXT_no}}</button>
                         <button id="CNF_ok" onClick="CONFIRM.nascondi();">{{TXT_OK}}</button>
                         <button id="CNF_lg" onClick="CONFIRM.nascondi();MENU.visLogin();">{{TXT_ACCEDI}}</button>
+                        <button id="CNF_pr" onClick="CONFIRM.nascondi();MENU.visPurchases();">{{TXT_ACQUISTA}}</button>
                         <button id="CNF_an" onClick="CONFIRM.nascondi();">{{TXT_Annulla}}</button>
                     </div>
                 </div>

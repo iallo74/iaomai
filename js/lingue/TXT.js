@@ -464,6 +464,11 @@ DB.TXT = {
 			eng: "LOGOUT",
 			esp: ""
 		},
+		ACQUISTA: {
+			ita: "ACQUISTA",
+			eng: "BUY",
+			esp: "COMPRA"
+		},
 		MsgConnMultipla: {
 			ita: "ATTENZIONE!\nSei stato disconnesso perché qualcun altro è entrato sul sistema con la tua password.\nSe non sei stato tu ti consigliamo di modificarla al più presto.",
 			eng: "WARNING!\nYou're being disconnected because someone else logged in using your and password.\nIf it's not you, we recommend to change it as soon as possible.",
@@ -3258,6 +3263,58 @@ DB.TXT = {
 			esp: ""
 		},
 		
+		// PROCESSO DI ACQUISTO
+		AcquistaLicenza: {
+			ita: "Acquista una licenza",
+			eng: "Purchase a license",
+			esp: "Comprar una licencia"
+		},
+		LicenzaIllimitata: {
+			ita: "Licenza illimitata",
+			eng: "Unlimited license",
+			esp: "Licencia illimitada"
+		},
+		LicenzeIllimitate: {
+			ita: "Licenze illimitate",
+			eng: "Unlimited licenses",
+			esp: "Licencias illimitadas"
+		},
+		DescrPurchase: {
+			ita: "Acquista una licenza illimitata ad una mappa tematica, e avrai per sempre tutte le funzionalità a tua disposizione su tutti i tuoi dispositivi.",
+			eng: "Buy an unlimited license to a thematic map, and you'll always have all the features at your disposal on all your devices.",
+			esp: "Compra una licencia ilimitada a un mapa temático, y tendrás para siempre todas las funcionalidades a tu disposición en todos tus dispositivos."
+		},
+		AlertNoLogPuchase: {
+			ita: "Per poter acquistare una licenza devi essere loggato. Esegui il login o registrati gratuitamente.",
+			eng: "You must be logged in to purchase a license. Login or register for free.",
+			esp: "Para poder comprar una licencia debe iniciar sesión. Inicie sesión o regístrese de forma gratuita."
+		},
+		AccediAlloStore: {
+			ita: "Accedi allo store online",
+			eng: "Access the online store",
+			esp: "Accede a la tienda online"
+		},
+		ListaMappe: {
+			ita: "Lista prodotti",
+			eng: "Products list",
+			esp: "Lista de productos"
+		},
+		CompraOra: {
+			ita: "COMPRA ORA",
+			eng: "BUY NOW",
+			esp: "COMPRA AHORA"
+		},
+		CaricamentoAcquisto: {
+			ita: "Caricamento dell'acquisto",
+			eng: "Loading of the purchase",
+			esp: "Carga de la compra"
+		},
+		Acquistato: {
+			ita: "Acquistato",
+			eng: "Bought",
+			esp: "Adquirido"
+		},
+				
 		// PARTI ANATOMICHE
 		DX: {
 			ita: "DESTRA",

@@ -704,7 +704,7 @@ SET = {
 		
 		// verifico le autorizzazioni
 		if(!SET.verFreePunti(name)){
-			ALERT(TXT("MsgContSoloPay"));
+			ALERT(TXT("MsgContSoloPay"),true,true);
 			return;
 		}
 		// --------------------------
@@ -951,7 +951,7 @@ SET = {
 	selTsubo: function( PT ){
 		// verifico le autorizzazioni
 		if(!SET.verFreePunti(PT)){
-			ALERT(TXT("MsgContSoloPay"));
+			ALERT(TXT("MsgContSoloPay"),true,true);
 			return;
 		}
 		// --------------------------
@@ -1332,7 +1332,7 @@ SET = {
 	visLM: function(){ // mostra i landmarks
 		// verifico le autorizzazioni
 		if(!SET.verFreePatologia(n*1)){
-			ALERT(TXT("MsgContSoloPay"));
+			ALERT(TXT("MsgContSoloPay"),true,true);
 			return;
 		}
 		// --------------------------

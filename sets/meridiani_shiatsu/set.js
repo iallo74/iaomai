@@ -851,7 +851,7 @@ SET = {
 		if(nTsubo.length == 1)nTsubo='0'+nTsubo;
 		// verifico le autorizzazioni
 		if(!SET.verFreeMeridiani(siglaMeridiano)){
-			ALERT(TXT("MsgContSoloPay"));
+			ALERT(TXT("MsgContSoloPay"),true,true);
 			return;
 		}
 		// --------------------------
