@@ -821,6 +821,9 @@ body:not(.bodyStyled2) #scheda_testo2{
     padding-right: 10px;
 	background-image:url(../img/ico_stampaN.png);
 }
+.app_version #btnStampaScheda{
+	display:none !important;
+}
 #btnDownloadScheda{
 	background-image:url(../img/ico_downloadN.png);
 }

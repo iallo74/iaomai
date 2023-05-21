@@ -167,6 +167,14 @@ function TXT(txt){
 	str = LINGUE.convPaziente(str);
 	return str;
 }
+function convLangPath( path ){
+	var langs = {
+		"ita": "it",
+		"eng": "en",
+		"esp": "es"
+	};
+	return path.replace("[lang]",langs[globals.siglaLingua]);
+}
 
 function doHighlight( html, parola, cls ){
 	var t1 = '<font class="'+cls+'">';

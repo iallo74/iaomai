@@ -1385,6 +1385,9 @@ body:not(.bodyStyled2) #btn_modut{
 #p_stampa:hover{
 	background-color:rgba(255,255,255,0.1);
 }
+.app_version #p_stampa{
+	display:none !important;
+}
 #stampa{
 	display:none;
 	position:fixed;

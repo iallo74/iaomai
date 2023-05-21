@@ -481,12 +481,18 @@ var LOGIN = {
 				
 				// se ci sono autorizzazioni nuove
 				if(__(elenco.auths,false)){
+					if(elenco.auths.indexOf("anatomy_full")==-1)elenco.auths.push("anatomy_full");
 					for(var e in elenco.auths){
 						if(DB.login.data.auths.indexOf(elenco.auths[e])==-1){
 							DB.login.data.auths.push(elenco.auths[e]);
-							PURCHASES.updateProducts();
 						}
 					}
+					for(var e in DB.login.data.auths){
+						if(elenco.auths.indexOf(DB.login.data.auths[e])==-1){
+							DB.login.data.auths.splice(DB.login.data.auths.indexOf(elenco.auths[e]), 1);
+						}
+					}
+					PURCHASES.updateProducts();
 				}
 			}
 		}

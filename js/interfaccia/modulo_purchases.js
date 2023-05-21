@@ -72,7 +72,7 @@ var PURCHASES  = {
 		else{
 			var tk = encodeURIComponent(window.btoa(LOGIN.logedin() + MD5(DB.login.data.idUtente)));
 			var fl = encodeURIComponent(window.btoa(PURCHASES.getProdById(PURCHASES.productId).folder));
-			CONN.openUrl(CONN.urlStore.replace("[lang]",globals.siglaLingua.substr(0,2))+"in_app_purchase?tk="+tk+"&mp="+fl);
+			CONN.openUrl(convLangPath(CONN.urlStore)+"in_app_purchase?tk="+tk+"&mp="+fl);
 			
 		}
 	},
