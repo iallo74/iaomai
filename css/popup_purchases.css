@@ -74,11 +74,6 @@
 }
 #prList > div.acqOk{
 	width: 100%;
-    /*background-image: url(../img/frDxB.png),url(../img/carrelloBig.png);
-    background-repeat: no-repeat;
-    background-position: calc(100% + 13px) center, calc(100% - 20px) 6px;
-    background-size: 60px, 40px;*/
-    cursor: pointer;
 }
 #prList > div.acqOk:hover{
     background-color:rgba(0,0,0,0.05);
@@ -127,6 +122,8 @@
     width:66px;
     text-align:right;
 	height:32px;
+	line-height: 32px;
+    padding-right: 10px;
 }
 
 #prList > div > div.buy{
@@ -138,6 +135,7 @@
     height: 32px !important;
     line-height: 32px !important;
     padding: 0 10px;
+    cursor: pointer;
 }
 
 

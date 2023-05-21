@@ -1,18 +1,12 @@
 var PURCHASES  = {
 	
-	
 	productId: '',
 	product_list: [],
 	list_view: true,
+	initiated: false,
 	
 	init: function(){
-		/*
-		
-		NOTE
-		- Gestire la conferma di acquisto
-		
-		*/
-		
+		// inizializza il catalogo
 		for(s in sets){
 			if((!android && sets[s].idApple) || (android && sets[s].idGoogle)){
 				if(android)idStore = sets[s].idGoogle;
@@ -29,21 +23,30 @@ var PURCHASES  = {
 			}
 		}
 		PURCHASES.initStore();
-		//document.addEventListener('deviceready', PURCHASES.initStore);
 	},
 	
+	updateProducts: function(){
+		if(PURCHASES.product_list.length){
+			for(var p in PURCHASES.product_list){
+				if(PURCHASES.product_list[p].folder == elenco.auths[e])PURCHASES.product_list[p].owned;
+			}
+			PURCHASES.productList();
+		}
+	},
 	initStore: function(){
+		// inizializza l'acquisto
+		PURCHASES.initiated = true;
 		if(window.store){
 			store.error(function(error) {
 				console.log('ERROR ' + error.code + ': ' + error.message);
 			});
-			for(let id in PURCHASES.product_list){
+			for(var id in PURCHASES.product_list){
 				store.register({
 					id:    PURCHASES.product_list[id].idStore,
 					type:  store.NON_CONSUMABLE
 				});
 				store.when(PURCHASES.product_list[id].idStore).loaded(PURCHASES.makeProductList);
-				store.when(PURCHASES.product_list[id].idStore).updated(PURCHASES.refreshProductUI);
+				store.when(PURCHASES.product_list[id].idStore).updated(PURCHASES.viewProduct);
 				store.when(PURCHASES.product_list[id].idStore).approved(function(p) {
 					p.verify();
 				});
@@ -51,32 +54,50 @@ var PURCHASES  = {
 			}
 			store.refresh();
 		}else{
-			PURCHASES.productList();
+			PURCHASES.getPrices();
 		}
 	},
 	showProduct: function( id ){
+		// mostra il prodotto
 		PURCHASES.list_view = false;
 		PURCHASES.productId = id;
 		var p;
 		if(window.store)p = store.get(PURCHASES.productId);
 		else p = PURCHASES.getProdById(PURCHASES.productId);
-		PURCHASES.refreshProductUI(p);
+		PURCHASES.viewProduct(p);
 	},
 	purchaseLicense: function(){
+		// acquista la licenza
 		if(window.store)store.order(PURCHASES.productId);
 		else{
-			CONN.openUrl(CONN.urlStore.replace("[lang]",globals.siglaLingua.substr(0,2))+"overview_"+PURCHASES.getProdById(PURCHASES.productId).pageStore+".php");
+			var tk = encodeURIComponent(window.btoa(LOGIN.logedin() + MD5(DB.login.data.idUtente)));
+			var fl = encodeURIComponent(window.btoa(PURCHASES.getProdById(PURCHASES.productId).folder));
+			CONN.openUrl(CONN.urlStore.replace("[lang]",globals.siglaLingua.substr(0,2))+"in_app_purchase?tk="+tk+"&mp="+fl);
+			
 		}
 	},
-	finishPurchase:function(p) {
+	finishPurchase:function(p){
 		p.finish();
-		
-		// GESTIRE LA CONFERMA
-		
-		
-		
+		if(p.state == 'approved' || p.state == 'owned'){
+			var pr = getProdById(p.id);
+			CONN.caricaUrl(	"purchases_activate.php",
+							"folder="+pr.folder+"&price="+pr.price+"&siglaLingua="+globals.siglaLingua,
+							"PURCHASES.ret_activate");
+			
+		}
 	},
-	refreshProductUI: function( product ){
+	ret_activate: function( txt ){
+		if(txt!='404'){
+			ALERT("An error has occurred");
+		}else{
+			DB.login.data.auths.push(txt);
+			PURCHASES.productList();
+		}
+	},
+	
+	// visualizzazioni
+	viewProduct: function( product ){
+		// scrive la scheda del prodotto
 		if(PURCHASES.list_view)return;
 		if(!LOGIN.logedin()){
 			ALERT(TXT("AlertNoLogPuchase"));
@@ -87,7 +108,8 @@ var PURCHASES  = {
 		var canPurchase = true;
 		var owned = false;
 		var loadingPurchase = false;
-		var price = TXT("AccediAlloStore");
+		var price = product.price;
+		if(!price)TXT("AccediAlloStore");
 		if(window.store){
 			if(product.state == 'requested' || product.state == 'initiated')visRet = false;
 			loaded = product.loaded;
@@ -97,8 +119,7 @@ var PURCHASES  = {
 			if(product.price)price = product.price;
 		}
 		if(!owned)owned = (DB.login.data.auths.indexOf(product.folder)>-1) ? true : false;
-		var info = '';
-		info += '<div id="copertinaPurchase" style="background-image:url(sets/'+product.folder+'/img/copertina.png);"></div>';
+		var info = '<div id="copertinaPurchase" style="background-image:url(sets/'+product.folder+'/img/copertina.png);"></div>';
 		var button = '...';
 		if(loaded){
 			info += '<b id="titLicenze"><img src="sets/'+product.folder+'/img/logoMenuN.png"> '+product.title+'</b><br/>' +
@@ -108,8 +129,8 @@ var PURCHASES  = {
 		var button = '';
 		if(canPurchase){
 			button = '';
-			if(visRet)button += '<div class="ann" onCLick="PURCHASES.productList();">'+TXT("Annulla")+'</div> ';
-			button += '<div class="btn" onclick="PURCHASES.purchaseLicense()">'+TXT("CompraOra")+'</div>';
+			if(visRet)button += '<div class="ann" onClick="PURCHASES.productList();">'+TXT("Annulla")+'</div> ';
+			button += '<div class="btn" onClick="PURCHASES.purchaseLicense()">'+TXT("CompraOra")+'</div>';
 		}else if(owned){
 			button = '<div>'+TXT("Acquistato")+'</div>';
 		}else if(loadingPurchase){
@@ -120,13 +141,15 @@ var PURCHASES  = {
 		el.innerHTML = info + '<div class="btn_cont">' + button + '</div>';
 	},
 	getProdById: function( idStore ){
+		// ottiene un prodotto tramite ID
 		var el = null;
-		for(let id in PURCHASES.product_list){
+		for(var id in PURCHASES.product_list){
 			if(PURCHASES.product_list[id].idStore == idStore)el = PURCHASES.product_list[id];
 		}
 		return el;
 	},
 	makeProductList: function( product ){
+		// crea la lista prodotti (solo per Cordova)
 		if(!PURCHASES.list_view)return;
 		var el = PURCHASES.getProdById(product.id);
 		el.title = product.title;
@@ -135,13 +158,14 @@ var PURCHASES  = {
 		PURCHASES.productList();
 	},
 	productList: function(){
+		// elenco i prodotti
 		PURCHASES.list_view = true;
 		var html =  '<div id="descrLicenze">' +
 					TXT("DescrPurchase") +
 					'</div><div><img src="img/storesSystems.png"></div><div id="prList">';
 	    var html_ok = '';
 	    var html_no = '';
-		for(let id in PURCHASES.product_list){
+		for(var id in PURCHASES.product_list){
 			if(PURCHASES.product_list[id].title && PURCHASES.product_list[id].title!='undefined'){
 				var html_provv = '';
 				var idStore = PURCHASES.product_list[id].idStore;
@@ -151,14 +175,14 @@ var PURCHASES  = {
 				var owned = PURCHASES.product_list[id].owned;
 				if(!owned && LOGIN.logedin()!='')owned = (DB.login.data.auths.indexOf(folder)>-1) ? true : false;
 				html_provv += '<div';
-				if(!owned)html_provv += ' class="acqOk" onClick="PURCHASES.showProduct(\''+idStore+'\');"';
+				if(!owned)html_provv += ' class="acqOk"';
 				html_provv += '><div class="tit">';
 				html_provv += '<img src="sets/'+folder+'/img/logoNero.png">';
 				html_provv += title + '</div><div class="price">';
 				if(!owned)html_provv += price;
 				html_provv += '</div>';
 				if(owned)html_provv += '<span>'+TXT("Acquistato")+'</span>';
-				else html_provv += '<div class="btn buy">'+TXT("ACQUISTA")+'</div>';
+				else html_provv += '<div class="btn buy" onClick="PURCHASES.showProduct(\''+idStore+'\');">'+TXT("ACQUISTA")+'</div>';
 				html_provv += '</div>';
 				if(owned)html_ok += html_provv;
 				else html_no += html_provv;
@@ -169,6 +193,26 @@ var PURCHASES  = {
 		var el = document.getElementById('contPurchases');
 		el.classList.remove("ini");
 		el.innerHTML = html;
+	},
+	
+	// reperimento prezzi da DB
+	getPrices: function(){
+		CONN.caricaUrl(	"purchases_getprices.php",
+						"",
+						"PURCHASES.ret_getPrices");
+	},
+	ret_getPrices: function( txt ){
+		if(txt=='404'){
+			ALERT("An error has occurred");
+		}else{
+			var prices = JSON.parse( txt );
+			for(p in PURCHASES.product_list){
+				for(e in prices){
+					if(PURCHASES.product_list[p].folder == e)PURCHASES.product_list[p].price =  prices[e]+"€";
+				}
+			}
+			PURCHASES.productList();
+		}
 	}
 	
 }

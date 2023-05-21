@@ -690,6 +690,7 @@ var MENU = {
 	},
 	
 	visPurchases: function(){
+		if(!PURCHASES.initiated)PURCHASES.init();
 		MENU.chiudiMenu("purchases");
 		visLoader("");
 		document.getElementById("purchases").classList.toggle("visSch");

@@ -3314,6 +3314,11 @@ DB.TXT = {
 			eng: "Bought",
 			esp: "Adquirido"
 		},
+		PagaOra: {
+			ita: "PAGA ORA",
+			eng: "PAY NOW",
+			esp: "PAGA AHORA"
+		},
 				
 		// PARTI ANATOMICHE
 		DX: {

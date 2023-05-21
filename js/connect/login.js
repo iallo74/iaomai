@@ -474,9 +474,19 @@ var LOGIN = {
 				}
 				if(LOGIN.daSync)LOGIN.globalSync();
 				
-				// re ci sono elementi modificati sincronizza
+				// se ci sono elementi modificati sincronizza
 				if(__(elenco.modificati,false)){
 					LOGIN.sincronizza()
+				}
+				
+				// se ci sono autorizzazioni nuove
+				if(__(elenco.auths,false)){
+					for(var e in elenco.auths){
+						if(DB.login.data.auths.indexOf(elenco.auths[e])==-1){
+							DB.login.data.auths.push(elenco.auths[e]);
+							PURCHASES.updateProducts();
+						}
+					}
 				}
 			}
 		}
