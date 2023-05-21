@@ -109,6 +109,7 @@ var PURCHASES  = {
 		var owned = false;
 		var loadingPurchase = false;
 		var price = product.price;
+		var folder = PURCHASES.getProdById(product.id).folder;
 		if(!price)TXT("AccediAlloStore");
 		if(window.store){
 			if(product.state == 'requested' || product.state == 'initiated')visRet = false;
@@ -118,11 +119,11 @@ var PURCHASES  = {
 			if(product.state == 'requested' || product.state == 'initiated')loadingPurchase = true;
 			if(product.price)price = product.price;
 		}
-		if(!owned)owned = (DB.login.data.auths.indexOf(product.folder)>-1) ? true : false;
-		var info = '<div id="copertinaPurchase" style="background-image:url(sets/'+product.folder+'/img/copertina.png);"></div>';
+		if(!owned)owned = (DB.login.data.auths.indexOf(folder)>-1) ? true : false;
+		var info = '<div id="copertinaPurchase" style="background-image:url(sets/'+folder+'/img/copertina.png);"></div>';
 		var button = '...';
 		if(loaded){
-			info += '<b id="titLicenze"><img src="sets/'+product.folder+'/img/logoMenuN.png"> '+product.title+'</b><br/>' +
+			info += '<b id="titLicenze"><img src="sets/'+folder+'/img/logoMenuN.png"> '+product.title+'</b><br/>' +
 					product.description+'<br/>' +
 					price+'<br/>';
 		}

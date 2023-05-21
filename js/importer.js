@@ -151,7 +151,7 @@ var IMPORTER = {
         'js/addings.js'
 	],
 	jss: [],
-	produzione: false, // se settato a false carica solo i files locali
+	produzione: true, // se settato a false carica solo i files locali
 	lista: null,
 	funct: '',
 	dest: null,
