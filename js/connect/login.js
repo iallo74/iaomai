@@ -481,18 +481,21 @@ var LOGIN = {
 				
 				// se ci sono autorizzazioni nuove
 				if(__(elenco.auths,false)){
+					var modified = false;
 					if(elenco.auths.indexOf("anatomy_full")==-1)elenco.auths.push("anatomy_full");
 					for(var e in elenco.auths){
 						if(DB.login.data.auths.indexOf(elenco.auths[e])==-1){
 							DB.login.data.auths.push(elenco.auths[e]);
+							modified = true;
 						}
 					}
 					for(var e in DB.login.data.auths){
 						if(elenco.auths.indexOf(DB.login.data.auths[e])==-1){
 							DB.login.data.auths.splice(DB.login.data.auths.indexOf(elenco.auths[e]), 1);
+							modified = true;
 						}
 					}
-					PURCHASES.updateProducts();
+					if(modified)PURCHASES.updateProducts();
 				}
 			}
 		}
