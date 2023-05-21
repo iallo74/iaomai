@@ -151,7 +151,7 @@ var IMPORTER = {
         'js/addings.js'
 	],
 	jss: [],
-	produzione: true, // se settato a false carica solo i files locali
+	produzione: true, // se settato a false carica solo i files locali (esclusi stores)
 	lista: null,
 	funct: '',
 	dest: null,
@@ -169,7 +169,7 @@ var IMPORTER = {
 		}
 	},
 	init: function(){
-		
+		if(window.cordova)this.produzione = true;
 		var UA=navigator.userAgent;
 		if(UA.toLowerCase().indexOf("ipad")>-1)iPad=1;
 		if(UA.toLowerCase().indexOf("iphone")>-1)iPhone=1;
