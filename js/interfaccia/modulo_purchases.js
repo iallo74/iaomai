@@ -4,6 +4,7 @@ var PURCHASES  = {
 	product_list: [],
 	list_view: true,
 	initiated: false,
+	orderState: '',
 	
 	init: function(){
 		// inizializza il catalogo
@@ -78,16 +79,16 @@ var PURCHASES  = {
 	},
 	finishPurchase:function(p){
 		p.finish();
-		if(p.state == 'approved' || p.state == 'owned'){
-			var pr = getProdById(p.id);
+		//if(p.state == 'approved' || p.state == 'owned'){
+			var pr = PURCHASES.getProdById(p.id);
 			CONN.caricaUrl(	"purchases_activate.php",
 							"folder="+pr.folder+"&price="+pr.price+"&siglaLingua="+globals.siglaLingua,
 							"PURCHASES.ret_activate");
 			
-		}
+		//}
 	},
 	ret_activate: function( txt ){
-		if(txt!='404'){
+		if(txt=='404'){
 			ALERT("An error has occurred");
 		}else{
 			DB.login.data.auths.push(txt);
@@ -98,6 +99,13 @@ var PURCHASES  = {
 	// visualizzazioni
 	viewProduct: function( product ){
 		// scrive la scheda del prodotto
+		if(window.store){	
+			if(product.state=='requested')PURCHASES.orderState = 'requested';
+			if(PURCHASES.orderState == 'requested' && product.state=='approved'){
+				PURCHASES.orderState = '';
+    			PURCHASES.finishPurchase( product );
+			}
+		}
 		if(PURCHASES.list_view)return;
 		if(!LOGIN.logedin()){
 			ALERT(TXT("AlertNoLogPuchase"));
@@ -109,7 +117,7 @@ var PURCHASES  = {
 		var owned = false;
 		var loadingPurchase = false;
 		var price = product.price;
-		var folder = PURCHASES.getProdById(product.id).folder;
+		var folder = '';
 		if(!price)TXT("AccediAlloStore");
 		if(window.store){
 			if(product.state == 'requested' || product.state == 'initiated')visRet = false;
@@ -118,6 +126,9 @@ var PURCHASES  = {
 			if(!owned)owned = product.owned;
 			if(product.state == 'requested' || product.state == 'initiated')loadingPurchase = true;
 			if(product.price)price = product.price;
+			folder = PURCHASES.getProdById(product.id).folder;
+		}else{
+			folder = product.folder;
 		}
 		if(!owned)owned = (DB.login.data.auths.indexOf(folder)>-1) ? true : false;
 		var info = '<div id="copertinaPurchase" style="background-image:url(sets/'+folder+'/img/copertina.png);"></div>';
@@ -203,6 +214,7 @@ var PURCHASES  = {
 						"PURCHASES.ret_getPrices");
 	},
 	ret_getPrices: function( txt ){
+		console.log(txt)
 		if(txt=='404'){
 			ALERT("An error has occurred");
 		}else{
@@ -217,3 +229,4 @@ var PURCHASES  = {
 	}
 	
 }
+
