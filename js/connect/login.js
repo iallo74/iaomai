@@ -659,7 +659,7 @@ var LOGIN = {
 	modUtente: function(){
 		// scarica le modifiche dell'utente dal server
 		if(!LOGIN.logedin()){
-			ALERT(TXT("ErroreUtenteNonConnesso"), true);
+			ALERT(TXT("ErroreUtenteNonConnesso"));
 			return;
 		}
 		if(CONN.retNoConn()){

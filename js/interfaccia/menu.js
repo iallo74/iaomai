@@ -400,7 +400,7 @@ var MENU = {
 	},
 	visNotifiche: function(){
 		if(!LOGIN.logedin()){
-			ALERT(TXT("ErroreUtenteNonConnesso"), true);
+			ALERT(TXT("ErroreUtenteNonConnesso"));
 			return false;
 		}else{
 			MENU.chiudiMenu("notifiche");
@@ -444,7 +444,7 @@ var MENU = {
 	},
 	visBackups: function(){
 		if(!LOGIN.logedin()){
-			ALERT(TXT("ErroreUtenteNonConnesso"), true);
+			ALERT(TXT("ErroreUtenteNonConnesso"));
 			return false;
 		}else{
 			MENU.chiudiMenu("backups");
@@ -460,7 +460,7 @@ var MENU = {
 	},
 	visCommunity: function(){
 		if(!LOGIN.logedin()){
-			ALERT(TXT("ErroreUtenteNonConnesso"), true);
+			ALERT(TXT("ErroreUtenteNonConnesso"));
 			return false;
 		}else{
 			MENU.chiudiMenu("community");

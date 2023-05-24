@@ -1686,7 +1686,7 @@ body:not(.smart) #rgApplicaFiltri{
 }
 #contImpset #tt_mezzival2{
 	margin-top: 12px !important;
-    width: 228px;
+    /*width: 228px;*/
     margin: 0 auto;
 }
 .mzSel{

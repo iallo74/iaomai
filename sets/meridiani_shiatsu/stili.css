@@ -1,6 +1,11 @@
 @charset "utf-8";
 /* CSS Document */
 
+#impset{
+    height: 510px;
+    margin-top: -255px;
+}
+
 #pulsante_modello{
 	background-image: url(../anatomy_full/img/logoMenuN.png) !important;
     background-repeat: no-repeat !important;
