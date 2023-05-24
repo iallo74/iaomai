@@ -434,6 +434,26 @@ DB.TXT = {
 			eng: "No user logged in",
 			esp: ""
 		},
+		EliminaAccount: {
+			ita: "Elimina l'account",
+			eng: "Delete your account",
+			esp: ""
+		},
+		ChiediEliminaAccount: {
+			ita: "ATTENZIONE! Hai richiesto di eliminare il tuo account. Questa operazione comporta la perdita totale di tutti i dati e di tutti i tuoi servizi. Vuoi davvero procedere con l'eliminazione del tuo account?",
+			eng: "PLEASE NOTE!  You have requested to delete your account. This operation results in the total loss of all your data and services. Do you really want to delete your account?",
+			esp: ""
+		},
+		ConfermaEliminaAccount: {
+			ita: "OPERAZIONE IRREVERSIVILE! Ti chiediamo ancora una volta se davverò vuoi procedere con l'eliminazione definitiva del tuo account.",
+			eng: "TRANSACTION IRREVERSIBLE! We ask you once again if I will give you want to proceed with the permanent deletion of your account.",
+			esp: ""
+		},
+		MsgEliminaAccount: {
+			ita: "Ti è stato inviato un messaggio sulla casella di posta elettronica contenente un link che ti consentirà di eliminare l'account. Aprilo per procedere.",
+			eng: "You have been sent a message on the email box containing a link that will allow you to delete the account. Open it to proceed.",
+			esp: ""
+		},
 		NonLoggato: {
 			ita: "ATTENZIONE! Stai utilizzando la versione demo dell'app. Clicca per effettuare il login.",
 			eng: "PLEASE NOTE! You are using the demo version of the app. Click to login.",
@@ -2806,8 +2826,8 @@ DB.TXT = {
 			esp: ""
 		},
 		ApriMappa: {
-			ita: "Memorizza la scelta",
-			eng: "Memorize your choice",
+			ita: "Mantieni la mappa aperta",
+			eng: "Keep the map open",
 			esp: ""
 		},
 		
@@ -3013,7 +3033,7 @@ DB.TXT = {
 			esp: ""
 		},
 		PrestoInArrivo: {
-			ita: "PRESTO IN ARRIVO",
+			ita: "IN SVILUPPO",
 			eng: "COMING SOON",
 			esp: ""
 		},

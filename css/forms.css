@@ -231,7 +231,10 @@ body:not(.smart) .stampaBtn{
 #btn_stampa{
 	margin-top:30px !important;
 }
-
+.link_del{
+	color:#F00;
+	cursor:pointer;
+}
 
 
 

@@ -328,7 +328,8 @@ var LOGIN = {
 				document.getElementById("loginGuida").style.display = 'none';
 			}else{
 				
-				if(!(!onlineVersion && (iPad || iPhone || isMacUA)))document.getElementById("p_reg").style.display = 'block';
+				//if(!(!onlineVersion && (iPad || iPhone || isMacUA)))
+				document.getElementById("p_reg").style.display = 'block';
 				document.getElementById("utDisc").style.display = 'none';
 				NN=TXT("NessunUtente");
 				document.getElementById("btn_modut").style.display = 'none';
@@ -862,7 +863,11 @@ var LOGIN = {
 					HTML += H.r({	t: "h", name: "Pseudonimo",	value: UT.Pseudonimo });
 					HTML += H.r({	t: "h", name: "CondizioniCommunity",	value: UT.CondizioniCommunity });
 				}
-				HTML += '	<div class="l"></div>';
+				
+				HTML += '	<div style="text-align:right;padding-top:30px;">' +
+						'		<div class="link_del" onClick="LOGIN.el_utente();">'+stripslashes(TXT("EliminaAccount"))+'</div>' +
+						'	</div>' +
+						'	<div class="l"></div>';
 				
 				HTML += SCHEDA.pulsantiForm(
 										"",
@@ -889,6 +894,23 @@ var LOGIN = {
 		
 				SCHEDA.formModificato = false;
 			}});
+		}
+	},
+	el_utente: function(){
+		CONFIRM.vis(	TXT("ChiediEliminaAccount"), false, arguments, "warning" ).then(function(pass){if(pass){
+			CONFIRM.vis(	TXT("ConfermaEliminaAccount"), false, arguments, "warning", TXT("EliminaAccount") ).then(function(pass){if(pass){
+				CONN.caricaUrl(	"utente_elimina.php",
+								"siglaLingua="+globals.siglaLingua,
+								'LOGIN.retElUtente;'  );
+			}});			
+		}});
+	},
+	retElUtente: function( txt ){
+		// risposta dal caricamento dell'utente (mod_utente)
+		if(txt=='404'){
+			ALERT(TXT("ErroreGenerico"));
+		}else{
+			ALERT(TXT("MsgEliminaAccount"));
 		}
 	},
 	mod_utente: function(){

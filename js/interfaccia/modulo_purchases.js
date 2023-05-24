@@ -172,9 +172,10 @@ var PURCHASES  = {
 	productList: function(){
 		// elenco i prodotti
 		PURCHASES.list_view = true;
+		var addApple = (!onlineVersion && (iPad || iPhone || isMacUA)) ? 'Apple' : '';
 		var html =  '<div id="descrLicenze">' +
 					TXT("DescrPurchase") +
-					'</div><div><img src="img/storesSystems.png"></div><div id="prList">';
+					'</div><div><img src="img/storesSystems'+addApple+'.png"></div><div id="prList">';
 	    var html_ok = '';
 	    var html_no = '';
 		for(var id in PURCHASES.product_list){

@@ -29,10 +29,10 @@ body:not(.smart) #sets{
 #labelSets{
 	height:40px;
 	line-height:40px;
-	color:#000) !important;
+	color:#000 !important;
 	font-weight:bold;
   	border-top-right-radius:5px;
-	background-image:url(../img/p_impostazioni.png);
+	background-image:url(../img/ico_mappa.png);/*url(../img/p_impostazioni.png);*/
 	background-repeat:no-repeat;
 	background-position:4px center;
 }

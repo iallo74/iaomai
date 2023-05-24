@@ -2,9 +2,11 @@ var CONFIRM = {
 	conferma: null,
     interval: null,
 	bypass: false,
+	style: '',
+	txtBtnConf: '',
 	args: '',
 	type: '',
-    vis: function ( domanda, bypass, args ) {
+    vis: function ( domanda, bypass, args, style, txtBtnConf ) {
 		// azzero prima di avviare
 		clearInterval(CONFIRM.interval);
 		CONFIRM.conferma = null;
@@ -12,12 +14,19 @@ var CONFIRM = {
 		
 		if(typeof(bypass) == 'undefined')var bypass = false;
 		if(typeof(args) == 'undefined')var args = false;
+		if(typeof(style) == 'undefined')var style = false;
+		if(typeof(txtBtnConf ) == 'undefined')var txtBtnConf =TXT("si");
       	this.bypass = bypass;
 		this.args = args;
 		if(!this.bypass){
 			CONFIRM.type = 'confirm';
 			document.getElementById("CNF_titolo").innerHTML = stripslashes(domanda).replace(/\n/g,"<br>");
 			document.getElementById("CNF").classList.add("visCNF");
+			if(style){
+				document.getElementById("CNF").classList.add(style);
+				CONFIRM.style = style;
+			}
+			document.getElementById("CNF_si").innerHTML =  stripslashes(txtBtnConf);
 			setTimeout(function(){
 				document.getElementById("CNF_dialog").classList.add("visCNF_dialog");
 				document.getElementById("CNF").classList.add("opCNF");
@@ -56,6 +65,10 @@ var CONFIRM = {
 		if(bypass)return;
 		document.getElementById("CNF_dialog").classList.remove("visCNF_dialog");
 		document.getElementById("CNF").classList.remove("opCNF");
+		if(CONFIRM.style){
+			document.getElementById("CNF").classList.remove(CONFIRM.style);
+			CONFIRM.style = '';
+		}
 		setTimeout(function(){
 			if(!CONFIRM.type){
 				document.getElementById("CNF").classList.remove("visCNF");

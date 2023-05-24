@@ -117,3 +117,16 @@
 	opacity:1 !important;
 	top:15px !important;
 }
+
+#CNF.warning #CNF_dialog{
+	background-color: #ce1212 !important;
+}
+#CNF.warning #CNF_titolo{
+	color: #FFF !important;
+}
+#CNF.warning #CNF_si{
+	background-color: #FC0 !important;
+	border-color:#000 !important;
+	color:#000!important;
+	font-weight:bold !important;
+}
