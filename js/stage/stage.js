@@ -232,7 +232,7 @@ function caricaModello( cartella ){
 	visLoader(globals.modello.txtLoading);
 	var imports = clone(globals.modello.imports);
 	for(i in imports)imports[i]='modelli/'+cartella+'/'+imports[i];
-	imports.push("modelli/"+globals.siglaLingua+".js");
+	imports.push("modelli/lang_"+LINGUE.getLinguaCont('anatomy_full')+".js");
 	IMPORTER.importaFiles( 	0, 
 							imports, 
 							'MODELLO._init();MENU.aggiornaIconeModello();', 
@@ -386,7 +386,7 @@ function caricaSet( cartella, el ){
 			caricaModello(modelli[0]);
 			return;
 		}
-		globals.set.imports.push(globals.siglaLingua+".js");
+		globals.set.imports.push("lang_"+LINGUE.getLinguaCont(cartella)+".js");
 		visLoader(globals.set.txtLoading);
 		var imports = clone(globals.set.imports);
 		for(i in imports){
@@ -483,8 +483,9 @@ function cambiaLingua(nLingua){
 	var l = location.href;
 	var urlPagina=l.substr(l.lastIndexOf("/")+1).split(/[?#]/)[0];
 	var FL=''
-	if(forzalogin)FL='1';
-	location.replace(urlPagina+"?idNL="+nLingua+"&FL="+FL);
+	if(forzalogin)FL='?FL=1';
+	localStorage.siglaLingua = nLingua
+	location.replace(urlPagina);
 }
 
 

@@ -9,7 +9,12 @@ var sets = {
 		opening: false,
 		dataPubblicazione: '',
 		idApple: '',
-		idGoogle: ''
+		idGoogle: '',
+		lingueCont: [
+			"ita",
+			"eng",
+			"esp"
+		]
 	},
 	meridiani_cinesi: {
 		nome: TXT("TsuboMap"),
@@ -49,7 +54,7 @@ var sets = {
 			8,
 			2
 		],
-		txtLoading: TXT("CaricamentoMeridiani"),
+		txtLoading: stripslashes(TXT("CaricamentoMeridiani")),
 		auth: false,
 		locked: false,
 		lastVer: 1,
@@ -58,7 +63,12 @@ var sets = {
 		siglaProc: '',
 		idApple: 'TM22',
 		idGoogle: 'tm22',
-		pageStore: 'tsubomap'
+		pageStore: 'tsubomap',
+		lingueCont: [
+			"ita",
+			"eng",
+			"esp"
+		]
 	},
 	meridiani_shiatsu: {
 		nome: TXT("ShiatsuMap"),
@@ -98,7 +108,7 @@ var sets = {
 			8,
 			2
 		],
-		txtLoading: TXT("CaricamentoMeridiani"),
+		txtLoading: stripslashes(TXT("CaricamentoMeridiani")),
 		auth: false,
 		locked: false,
 		lastVer: 1,
@@ -107,7 +117,10 @@ var sets = {
 		siglaProc: '',
 		idApple: 'SM22',
 		idGoogle: 'sm22',
-		pageStore: 'shiatsumap'
+		pageStore: 'shiatsumap',
+		lingueCont: [
+			"ita"
+		]
 	},
 	auricologia: {
 		nome: TXT("AuriculoMap"),
@@ -144,7 +157,7 @@ var sets = {
 			8,
 			3
 		],
-		txtLoading: TXT("CaricamentoMappe"),
+		txtLoading: stripslashes(TXT("CaricamentoMappe")),
 		auth: false,
 		locked: false,
 		opening: true,
@@ -152,7 +165,12 @@ var sets = {
 		siglaProc: 'AUR',
 		idApple: 'AU23',
 		idGoogle: 'au23',
-		pageStore: 'auriculomap'
+		pageStore: 'auriculomap',
+		lingueCont: [
+			"ita",
+			"eng",
+			"esp"
+		]
 	},
 	reflessologia_plantare: {
 		nome: TXT("ReflessologiaPlantare"),
@@ -164,7 +182,7 @@ var sets = {
 		imports: [
 		
 		],
-		txtLoading: TXT("CaricamentoMappe"),
+		txtLoading: stripslashes(TXT("CaricamentoMappe")),
 		auth: false,
 		locked: true,
 		opening: true,
@@ -172,7 +190,10 @@ var sets = {
 		siglaProc: 'RLF',
 		idApple: '',
 		idGoogle: '',
-		pageStore: 'reflexologymap'
+		pageStore: 'reflexologymap',
+		lingueCont: [
+			
+		]
 	},
 	trigger_points: {
 		nome: TXT("TriggerPoints"),
@@ -185,7 +206,7 @@ var sets = {
 		imports: [
 		
 		],
-		txtLoading: TXT("CaricamentoMappe"),
+		txtLoading: stripslashes(TXT("CaricamentoMappe")),
 		auth: false,
 		locked: true,
 		opening: true,
@@ -193,7 +214,10 @@ var sets = {
 		siglaProc: 'TRP',
 		idApple: '',
 		idGoogle: '',
-		pageStore: 'triggerpointsmap'
+		pageStore: 'triggerpointsmap',
+		lingueCont: [
+			
+		]
 	},
 	clients_full: {
 		nome: TXT("MedicalFiles"),
@@ -245,7 +269,7 @@ var modelli = {
 			'visceri'
 		],
 		rifletti: false,
-		txtLoading: TXT("CaricamentoModelloDonna"),
+		txtLoading: stripslashes(TXT("CaricamentoModelloDonna")),
 		lastVer: 1
 	},
 	uomo: {
@@ -283,7 +307,7 @@ var modelli = {
 			'visceri'
 		],
 		rifletti: false,
-		txtLoading: TXT("CaricamentoModelloUomo"),
+		txtLoading: stripslashes(TXT("CaricamentoModelloUomo")),
 		lastVer: 1
 	},
 	piedi: {
@@ -308,7 +332,7 @@ var modelli = {
 			"z": 10.835390371711297
 		},
 		rifletti: false,
-		txtLoading: TXT("CaricamentoModelloPiede"),
+		txtLoading: stripslashes(TXT("CaricamentoModelloPiede")),
 		lastVer: 1
 	},
 	orecchio: {
@@ -343,7 +367,7 @@ var modelli = {
 		areaName: 'Area',
 		viscName: 'Nerve',
 		rifletti: true,
-		txtLoading: TXT("CaricamentoModelloOrecchio"),
+		txtLoading: stripslashes(TXT("CaricamentoModelloOrecchio")),
 		lastVer: 1
 	}
 };

@@ -590,6 +590,11 @@
             	<div id="labelPurchases" class="popup_label">{{TXT_AcquistaLicenza}}<div class="popup_chiudi" onClick="MENU.chiudiMenu();"></div></div>
             	<div id="contPurchases" class="popup_cont ini"></div>
             </div>
+            
+            <div id="infolingue" class="popup"> <!-- INFO LINGUE -->
+            	<div id="labelInfolingue" class="popup_label">{{TXT_InfoLingue}}<div class="popup_chiudi" onClick="MENU.chiudiMenu();"></div></div>
+            	<div id="contInfolingue" class="popup_cont"></div>
+            </div>
            	<!---------------------------- fine popups ... -->
             
             
@@ -713,10 +718,7 @@
                     <div id="i1">
                         <div id="p_login"><b id="nomeUtente">{{TXT_NessunUtente}}</b>  <span class="btn_invia" onClick="MENU.visLogin();" id="btn_login">LOGIN</span><span class="btn_invia" onClick="CONFIRM.vis(TXT('VuoiLogout')).then(function(pass){if(pass){LOGIN.logout();}});" id="btn_logout">{{TXT_LOGOUT}}</span><span onClick="LOGIN.modUtente();" id="btn_modut"></span><i id="utDisc">{{TXT_UtenteDisconnesso}}</i></div>
                         <span id="p_reg"><span>{{TXT_TestoRegistrazione}}</span><span class="btn_invia" onClick="MENU.visRegistrazione();" id="btn_registrazione">{{TXT_Registrati}}</span></span>
-                        <div id="p_lingua">{{TXT_Lingua}}<span><select id="lingueSelect" onChange="cambiaLingua(this.value);">
-                                                            <option value="ita">Italiano</option>
-                                                            <option value="eng">English</option>
-                                                         </select></span></div>
+                        <div id="p_lingua">{{TXT_Lingua}}<span><i id="ico_infolingue" onClick="MENU.visInfolingue();">i</i><select id="lingueSelect" onChange="cambiaLingua(this.value);"></select></span></div>
                         <div id="p_stampa" onClick="MENU.stampaStage();">{{TXT_StampaStage}}</div>
                         <div id="p_notifiche" onClick="MENU.visNotifiche();"><span id="notificaMenu"></span>{{TXT_Notifiche}}</div>
                         <div id="p_colori" onClick="MENU.visColori();">{{TXT_Personalizzazione}}</div>

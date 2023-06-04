@@ -209,13 +209,12 @@ var PURCHASES  = {
 	},
 	
 	// reperimento prezzi da DB
-	getPrices: function(){
+	getPrices: function(){	
 		CONN.caricaUrl(	"purchases_getprices.php",
 						"",
 						"PURCHASES.ret_getPrices");
 	},
 	ret_getPrices: function( txt ){
-		console.log(txt)
 		if(txt=='404'){
 			ALERT("An error has occurred");
 		}else{

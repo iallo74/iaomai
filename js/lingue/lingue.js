@@ -2,29 +2,49 @@ var LINGUE = {
 
 	newInst: false,
 	formatDate: '',
+	NLS: {
+		"1": {
+			sigla: "ita",
+			text: "Italiano"
+		},
+		"2": {
+			sigla: "eng",
+			text: "English",
+			ai: true
+		},
+		"3": {
+			sigla: "esp",
+			text: "Español",
+			ai: true
+		},
+		"4": {
+			sigla: "fra",
+			text: "Français",
+			ai: true
+		},
+		"5": {
+			sigla: "por",
+			text: "Português",
+			ai: true
+		},
+		"6": {
+			sigla: "deu" ,
+			text: "Deutsch",
+			ai: true
+		}
+	},
 	init: function(){
 		if(typeof(localStorage.siglaLingua)=='undefined')this.newInst=true;
-		var NLS={
-			"1":"ita",
-			"2":"eng",
-			"3":"esp" };
 		globals.siglaLingua='eng';
 		if(!localStorage.getItem("siglaLingua")){ // OK localStorage
-			for(p in NLS){
-				if(this.linguaBrowser()==NLS[p].substring(0,2)){
-					localStorage.setItem("siglaLingua",NLS[p]);
+			for(p in LINGUE.NLS){
+				if(this.linguaBrowser()==LINGUE.NLS[p].sigla.substring(0,2)){
+					localStorage.setItem("siglaLingua",LINGUE.NLS[p].sigla);
 				}
 			}
 		}
 		var gC=localStorage.getItem("siglaLingua"); // OK localStorage
 		if(typeof(gC)!='undefined' && gC!='')globals.siglaLingua=gC;
-		
-		
-		var lDef=getVar('idNL');
-		if(lDef){
-			globals.siglaLingua=lDef;
-			localStorage.setItem("siglaLingua",globals.siglaLingua); // OK localStorage
-		}
 		
 		
 		this.formatDate='%D/%M/%Y';
@@ -40,6 +60,58 @@ var LINGUE = {
 		}
 		coll=document.getElementsByTagName("input");
 		for(k=0; k<coll.length;k++)this.convTitle(coll[k]);
+		
+		// POPOLO in popup info-lingue e il menu delle lingue
+		var aiPres = false;
+			htmlInt = '',
+			htmlSel = '',
+			htmlNote = '',
+			html = 	'<div id="tabLingue">' +
+					'<div><div></div>';
+		for(var l in LINGUE.NLS){
+			html += '<div>'+LINGUE.NLS[l].sigla+'</div>';
+			htmlInt += '<div>';
+			if(__(LINGUE.NLS[l].ai)){
+				htmlInt += '<b class="ai">*</b>';
+				aiPres = true;
+			}
+			htmlInt += '</div>';
+			htmlSel += '<option value="'+LINGUE.NLS[l].sigla+'"';
+			if(LINGUE.NLS[l].sigla == globals.siglaLingua)htmlSel += ' SELECTED';
+			htmlSel += '>'+LINGUE.NLS[l].text+'</option>';
+		}
+		html += 	'</div>' +
+					'<div id="lInt">' +
+					'    <div>Interfaccia</div>' + htmlInt +
+					'</div>' +
+					'<i class="tdLabel">'+TXT("contenuti")+'</i>';
+		for(var s in sets){
+			if(__(sets[s].lingueCont,[]).length){
+				html += '<div><div>'+sets[s].nome+'</div>';
+				for(var l in LINGUE.NLS){
+					html += '<div';
+					if(sets[s].lingueCont.indexOf(LINGUE.NLS[l].sigla)>-1)html += ' class="lok"';
+					html += '>';
+					if(sets[s].lingueCont.indexOf(LINGUE.NLS[l].sigla)>-1 && LINGUE.NLS[l].sigla != 'ita'){
+						html += '<b class="ai">*</b>';
+						aiPres = true;
+					}
+					html += '</div>';
+				}
+				html += '</div>';	
+			}
+		}
+		if(aiPres){
+			htmlNote += '<b class="ai">*</b> '+TXT("noteAi");
+		}
+		if(htmlNote)html += 	'	<div class="noteInfoLingua">'+htmlNote+'</div>';
+		html += 	'	<div class="selectInfoLingua"><select onChange="cambiaLingua(this.value);">'+
+						htmlSel +
+					'	</div>' +
+					'</div>';
+		document.getElementById("contInfolingue").innerHTML = html;
+		document.getElementById("lingueSelect").innerHTML = htmlSel;
+		
 	},
 	convTitle: function(element){
 		if(element.title.substr(0,6)=='{{TXT_'){
@@ -49,8 +121,14 @@ var LINGUE = {
 			var testo = '';
 			var strBase = __(DB.TXT.base[txt.substr(6,txt.length-8)],'');
 			var strSet = __(DB.TXT.set[txt.substr(6,txt.length-8)],'');
-			if(strBase)testo = strBase[globals.siglaLingua];
-			if(strSet)testo = strSet[globals.siglaLingua];
+			if(strBase){
+				testo = strBase[globals.siglaLingua];
+				if(!testo)testo = strBase["eng"];
+			}
+			if(strSet){
+				testo = strSet[globals.siglaLingua];
+				if(!testo)testo = strSet["eng"];
+			}
 			
 			testo = LINGUE.convPaziente(testo);
 			
@@ -68,8 +146,14 @@ var LINGUE = {
 				
 				var strBase = __(DB.TXT.base[txt.substr(6,txt.length-8)],'');
 				var strSet = __(DB.TXT.set[txt.substr(6,txt.length-8)],'');
-				if(strBase)testo = strBase[globals.siglaLingua];
-				if(strSet)testo = strSet[globals.siglaLingua];
+				if(strBase){
+					testo = strBase[globals.siglaLingua];
+					if(!testo)testo = strBase["eng"];
+				}
+				if(strSet){
+					testo = strSet[globals.siglaLingua];
+					if(!testo)testo = strSet["eng"];
+				}
 				
 				//var testo = eval(txt.substr(2,txt.length-4)+"['"+globals.siglaLingua+"']");
 				
@@ -83,7 +167,7 @@ var LINGUE = {
 				testo = LINGUE.convPaziente(testo);
 				element.innerHTML = str.replace(/\{\{TXT_[^\}\}]+\}\}/i, testo);
 				str = element.innerHTML;
-			}
+			}	
 		}
 		if(element.innerHTML == '{{[§]}}')element.innerHTML = nomeApp;
 	},
@@ -93,8 +177,8 @@ var LINGUE = {
 		
 		// Sospesa momentaneamente perché siam pronti col solo italiano
 		
-		/*if (navigator.userLanguage)  l_lang = navigator.userLanguage;
-		else if (navigator.language)  l_lang = navigator.language;*/
+		if (navigator.userLanguage)  l_lang = navigator.userLanguage;
+		else if (navigator.language)  l_lang = navigator.language;
 		return l_lang.substring(0,2);
 	},
 	convPaziente: function( str ){
@@ -129,7 +213,15 @@ var LINGUE = {
 			
 		}
 		return str;
-	}
+	},
+	getLinguaCont: function( folder ){
+		var linguaRet = globals.siglaLingua;
+		if(sets[folder].lingueCont.indexOf(globals.siglaLingua)==-1){
+			if(sets[folder].lingueCont.indexOf('eng')==-1)linguaRet = 'ita';
+			else linguaRet = 'eng';
+		}
+		return linguaRet;
+	},
 };
 
 function addslashes(str) {
@@ -155,14 +247,22 @@ function htmlRev(str) {
 	return String(str).replace('&amp;', '&').replace('&lt;', '<').replace('&gt;', '>').replace('&quot;', '"');
 }
 function Lingua(txt){
-	return addslashes(txt[globals.siglaLingua].replace(/\[§\]/g,nomeApp));
+	var str = txt[globals.siglaLingua];
+	if(!str)str = txt["eng"];
+	return addslashes(str.replace(/\[§\]/g,nomeApp));
 }
 function TXT(txt){
 	var str = '';
 	var strBase = __(DB.TXT.base[txt],'');
 	var strSet = __(DB.TXT.set[txt],'');
-	if(strBase)str = strBase[globals.siglaLingua];
-	if(strSet)str = strSet[globals.siglaLingua];
+	if(strBase){
+		str = strBase[localStorage.siglaLingua];
+		if(!str)str = strBase["eng"];
+	}
+	if(strSet){
+		str = strSet[localStorage.siglaLingua];
+		if(!str)str = strSet["eng"];
+	}
 	str = addslashes(str.replace(/\[§\]/g,nomeApp));
 	str = LINGUE.convPaziente(str);
 	return str;

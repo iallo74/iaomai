@@ -95,7 +95,7 @@ var archiviDemo = {
 				},
 				{
 					"idPatologia": 0,
-					"NomePatologia": "Protuzione  L4-L5"
+					"NomePatologia": "Protusione  L4-L5"
 				}
 			],
 			"interventi": [

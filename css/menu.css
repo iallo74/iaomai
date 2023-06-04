@@ -1327,7 +1327,7 @@ body:not(.bodyStyled2) #btn_modut{
 }
 
 #p_lingua{
-	display: none !important; /* tolto momentaneamente perché pronto solo ITA */
+	/*display: none !important; /* tolto momentaneamente perché pronto solo ITA */
 	background-image:url(../img/ico_linguaprefN.png);
 }
 .bodyStyled2 #p_lingua{
@@ -1339,20 +1339,52 @@ body:not(.bodyStyled2) #btn_modut{
     line-height: 30px;
     margin-right: 13px;
     margin-top: 5px;
-	border-radius:6px;
-	padding-left:10px;	
-	padding-right:30px;	
-	background-image:url(../img/frGiuB.png);
-	background-size:auto 100%;
-	background-repeat:no-repeat;
-	background-position:right center;
-	background-color:#FFF;
-	appearance:none;
-	-webkit-appearance:none;
-	border:none;
-	box-shadow:0px 0px 3px rgba(0,0,0,0.5);
-	cursor:pointer;
+    border-radius: 6px;
+    padding-left: 10px;
+    padding-right: 30px;
+    background-image: url(../img/frGiuB.png);
+    background-size: auto 100%;
+    background-repeat: no-repeat;
+    background-position: right center;
+    background-color: #a9a59b;
+    appearance: none;
+    -webkit-appearance: none;
+    border: none;
+    cursor: pointer;
+    color: #000;
 }
+#lingueSelect option{
+    color: #000;
+}
+.bodyStyled2 #lingueSelect{
+    background-image: url(../img/frGiu.png) !important;
+    background-color: #464444 !important;
+    color: #FFF !important;
+}
+.bodyStyled2 #lingueSelect option{
+    color: #FFF;
+}
+#ico_infolingue{
+	width: 22px;
+    height: 22px;
+    text-align: center;
+    line-height: 22px;
+    border-radius: 22px;
+    display: inline-block;
+    vertical-align: middle;
+    background-color: rgba(0,0,0,0.2);
+    color: #000;
+    font-weight: bold;
+    cursor: pointer;
+    margin: -3px 6px 0px 0px;
+}
+.bodyStyled2 #ico_infolingue{
+    background-color: rgba(255,255,255,0.2);
+    color: #fff;
+	
+}
+
+
 #p_guide{
 	background-image:url(../img/m_referenceN.png),url(../img/frDxB.png);
 	cursor:pointer;

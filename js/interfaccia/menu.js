@@ -101,6 +101,7 @@ var MENU = {
 		if(n!="features")document.getElementById("features").classList.remove("visSch");
 		if(n!="archives")document.getElementById("archives").classList.remove("visSch");
 		if(n!="purchases")document.getElementById("purchases").classList.remove("visSch");
+		if(n!="infolingue")document.getElementById("infolingue").classList.remove("visSch");
 		if(n!="ag")document.getElementById("ag").classList.remove("visSch")
 		if( n=='pulsanti_modello' ||
 			n=='impostazioni' ||
@@ -329,12 +330,22 @@ var MENU = {
 		if(smartMenu)SCHEDA.chiudiElenco();
 		MENU.chiudiMenu("impostazioni");
 		document.getElementById("impostazioni").classList.toggle("visSch");
-		document.getElementById("lingueSelect").value = globals.siglaLingua;
+		//document.getElementById("lingueSelect").value = globals.siglaLingua;
 		if(document.getElementById("impostazioni").classList.contains("visSch")){
 			MENU.icoSelected = document.getElementById("p_impostazioni");
 			MENU.icoSelected.classList.add("p_sel");
 		}else MENU.desIcona();
 		MENU.comprimiIcone(true);
+	},
+	visInfolingue: function(){
+		MENU.chiudiMenu("infolingue");
+		visLoader("");
+		document.getElementById("infolingue").classList.toggle("visSch");
+		if(document.getElementById("infolingue").className.indexOf("visSch") > -1){
+			visLoader('');
+		}else{
+			nasLoader();
+		}
 	},
 	visStampa: function(){
 		MENU.chiudiMenu("stampa");

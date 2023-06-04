@@ -879,7 +879,7 @@ var MODELLO = {
 		if(__(DB_anatomia[n].baseImg,false)){
 			var im = n;
 			if(typeof(DB_anatomia[n].baseImg)=='string')im = DB_anatomia[n].baseImg;
-			html += '<div class="dettaglioAnatomia" style="background-image:url(img/anatomia/'+im+'.jpg)"><img src="img/anatomia/'+n+'.jpg"></div>';
+			html += '<div class="dettaglioAnatomia" style="background-image:url(img/anatomia/'+im+'.jpg)"><img src="img/anatomia/'+im+'.jpg"></div>';
 		}
 		raycastDisable = false;
 		

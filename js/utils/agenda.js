@@ -442,7 +442,8 @@ var agenda = {
 				'		<svg><polyline points="20.875,31.75 9.125,20 20.875,8.25 "/></svg>' +
 				'	</div>' +
 				'		<div class="calMese">' +
-							d.toLocaleDateString(s,{month:"long"}).toUpperCase()+" "+d.getFullYear() +
+							DB.TXT.base.nomiMesi[globals.siglaLingua][d.getMonth()].toUpperCase()+" "+d.getFullYear() +
+							//d.toLocaleDateString(s,{month:"long"}).toUpperCase()+" "+d.getFullYear() +
 				'		</div>' +
 				'	<div id="calNext"' +
 				'		  onClick="agenda.popolaCalendario('+Y1+','+M1+')">' +
@@ -530,7 +531,7 @@ var agenda = {
 		var d=DataPartenza;
 		giorno=d.getDate();
 		var s=globals.siglaLingua.substr(0,2)+"-"+globals.siglaLingua.substr(0,2).toUpperCase();
-		mese=d.toLocaleString(s, { month: 'long' });
+		mese=DB.TXT.base.nomiMesi[globals.siglaLingua][d.getMonth()].toLowerCase();//d.toLocaleString(s, { month: 'long' });
 		anno=d.getFullYear();
 		nomeGiorno=d.getDay();
 		festivo=false;

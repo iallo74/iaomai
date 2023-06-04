@@ -80,6 +80,7 @@ var IMPORTER = {
     	'css/popup_sets.css',
     	'css/popup_versione.css',
     	'css/popup_impset.css',
+    	'css/popup_infolingue.css',
     	'css/popup_photo.css',
     	'css/popup_archives.css',
     	'css/popup_dispositivi.css',
@@ -156,7 +157,6 @@ var IMPORTER = {
 	funct: '',
 	dest: null,
 	dimProgr: 0,
-	
 
 	startSelectable: function(){
 		if(event.keyCode==17){

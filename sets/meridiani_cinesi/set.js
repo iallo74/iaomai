@@ -159,7 +159,7 @@ SET = {
 							'<i class="elMenu" id="help_set" onClick="GUIDA.visFumetto(\'guida_set\',true,true);">?</i></span>';
 		var contElenco = '';
 		
-		contPulsanti += '<div id="pulsante_modello" onClick="cambiaModello(\'donna\');">Apri il modello 3D</div>';
+		contPulsanti += '<div id="pulsante_modello" onClick="cambiaModello(\'donna\');">'+TXT("ApriModello3D")+'</div>';
 		// mappa punti
 		contPulsanti += '<div id="pulsante_meridiani" class="frdx" onClick="SCHEDA.selElenco(\'meridiani\');">'+TXT("MeridianiTradizionali")+'</div>';
 		contElenco += '<div id="lista_meridiani"></div>';
@@ -220,6 +220,9 @@ SET = {
 		MODULO_TSUBO = null;
 		MODULO_TEORIA = null;
 		MODULO_PROCEDURE = null;
+		
+		
+		DB.set.patologie.sort(sort_by("NomePatologia"));
 		
 		manichinoCaricato = true;
 		SET.caricaMeridiani();

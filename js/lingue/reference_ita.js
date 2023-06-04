@@ -42,7 +42,7 @@ DB.reference = {
         },
         "models": {
           "title": "Gestione del modello",
-          "cont": "Le immagini seguenti spiegano come fare per spostare, ruotare, ingrandire e ridurre un modello anatomico nello stage. La gestione è differente a seconda che si tratti di un dispositivo con il mouse oppure con touchscreen.<br><br><img src=\"img/reference/ita/guida-mouse-ita.png\"> <img src=\"img/reference/ita/guida-gesture-ita.png\"><br>"
+          "cont": "Le immagini seguenti spiegano come fare per spostare, ruotare, ingrandire e ridurre un modello anatomico nello stage. La gestione è differente a seconda che si tratti di un dispositivo con il mouse oppure con touchscreen.<br><br><img src=\"img/reference/ita/guida-mouse.png\"> <img src=\"img/reference/ita/guida-gesture.png\"><br>"
         },
         "anatomy": {
           "title": "Livelli e parti anatomiche",
@@ -170,7 +170,7 @@ DB.reference = {
           "title": "Pacchetti di sedute",
           "cont": "I pacchetti di sedute sono dei modelli di trattamento o ciclo di trattamenti che possono essere importati nelle cartelle cliniche dei pazienti. <br><br>La scheda del pacchetto consente di inserire alcuni elementi utili per lo scopo:<br>- titolo<br>- descrizione<br>- numero di sedute<br>- costo di ogni seduta<br>Quando la scheda è salvata, dall'archivio dei trattamenti di un paziente è possibile importare il pacchetto di sedute (vedi sezione del menu <a onclick=\"REF.open('archives.patients.treatments');\" style=\"cursor:pointer;\">Archivi &gt; Pazienti &gt; Trattamenti</a>).<br><br><img src=\"img/reference/ita/pacchetti.jpg\"><br>"
         },
-        "fkiles": {
+        "files": {
           "title": "Foto e documenti",
           "cont": "La gestione delle foto e dei documenti è uno strumento utile per capire dove si trovano e quanti sono i files importati. Nella prima parte della scheda vengono mostrati i files utilizzati, la lor dimensione sul dispositivo, la data di caricamento e la loro posizione nelle varie schede. Più in basso, in una sezione a comparsa, si possono trovare e gestire, se ce ne sono, i files cancellati e presenti solo sul cloud.<br><br><img src=\"img/reference/ita/files.jpg\"><br>"
         }

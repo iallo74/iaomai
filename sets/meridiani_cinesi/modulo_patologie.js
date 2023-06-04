@@ -1,7 +1,7 @@
 
 var MODULO_PATOLOGIE = { // extend SET
 
-	PATOLOGIE_free: [ 12, 18, 26, 46, 104 ],
+	PATOLOGIE_free: [ "12", "18", "26", "46", "104" ],
 	
 	caricaPatologie: function(){
 		// carica la lista delle patologie
@@ -16,7 +16,7 @@ var MODULO_PATOLOGIE = { // extend SET
 		for(p in DB.set.patologie){
 			
 			// verifico le autorizzazioni
-			var addLock =	(!SET.verFreePatologia(p*1)) ? ' lockedItem' : '';
+			var addLock =	(!SET.verFreePatologia(DB.set.patologie[p].siglaPatologia)) ? ' lockedItem' : '';
 			// --------------------------
 						
 			contPatologie +=	'<div id="btn_patologia_'+p+'"' +
@@ -31,7 +31,7 @@ var MODULO_PATOLOGIE = { // extend SET
 	apriPatologia: function( n, btn ){
 		// apre la scheda della patologia
 		// verifico le autorizzazioni
-		if(!SET.verFreePatologia(n*1)){
+		if(!SET.verFreePatologia(DB.set.patologie[n].siglaPatologia)){
 			ALERT(TXT("MsgContSoloPay"),true,true);
 			return;
 		}
@@ -90,6 +90,12 @@ var MODULO_PATOLOGIE = { // extend SET
 		SCHEDA.individuaElemento( "btn_patologia_"+p, "listaPatologie" );
 	},
 	verFreePatologia: function( p ){
-		return !(SET.PATOLOGIE_free.indexOf(parseInt(p))==-1 && (DB.login.data.auths.indexOf(globals.set.cartella)==-1 || !LOGIN.logedin()));
+		var pass = true;
+		for(t in DB.set.patologie){
+			if(DB.set.patologie[t].siglaPatologia == p){
+				pass = SET.PATOLOGIE_free.indexOf(DB.set.patologie[t].siglaPatologia)==-1;
+			}
+		}
+		return !(pass && (DB.login.data.auths.indexOf(globals.set.cartella)==-1 || !LOGIN.logedin()));
 	}
 }

@@ -384,7 +384,7 @@ SET = {
 							'</span></i>' +
 							'<i class="elMenu" id="help_set" onClick="GUIDA.visFumetto(\'guida_set\',true,true);">?</i></span>';
 		var contElenco = '';
-		contPulsanti += '<div id="pulsante_modello" onClick="cambiaModello(\'orecchio\');">Apri il modello 3D</div>';
+		contPulsanti += '<div id="pulsante_modello" onClick="cambiaModello(\'orecchio\');">'+TXT("ApriModello3D")+'</div>';
 		// punti
 		contPulsanti += '<div id="pulsante_punti" class="frdx" onClick="SCHEDA.selElenco(\'punti\');">'+TXT("Mappa")+'</div>';
 		contElenco += '<div id="lista_punti"></div>';
@@ -447,6 +447,9 @@ SET = {
 		MODULO_TSUBO = null;
 		MODULO_TEORIA = null;
 		MODULO_PROCEDURE = null;
+		
+		
+		DB.set.patologie.sort(sort_by("NomePatologia"));	
 		
 		manichinoCaricato = true;
 		SET.caricaPunti();
