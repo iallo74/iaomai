@@ -20,15 +20,28 @@ var MODULO_MERIDIANI = { // extend SET
 				addClass = ' spazioDopo';
 				addClassEl = ' spazioPrima';
 			}
-			if(m=='CV' || m=='GV')addClass +=	' noMAS';
+			
 			var elencoTsubo = '';
+			if(m=='CV' || m=='GV' || m=='NK')addClass +=	' noMAS';
+			if(m!='NK')addClass +=	' noNMK';
+			else{
+				addClass +=	' NMK';
+				elencoTsubo += '<p id="titNMK">Zone anatomiche</p>';
+			}
 			for(s in DB.set.meridiani[m].tsubo){
 				var TS = DB.set.meridiani[m].tsubo[s];
-				elencoTsubo+='<p>'+this.scriviTsubo(TS.NomeTsubo,true,true,__(TS.siglaTsubo))+'</p>';
+				var addNMK = (m=='NK')? (s*1+1)+'.NK. ' : '';
+				var elemento = (!__(DB.set.meridiani[m].tsubo[s].nascosto,false)) ? '<p>'+this.scriviTsubo(addNMK+TS.NomeTsubo,true,true,__(TS.siglaTsubo),m)+'</p>' : "";
+				if(m=='NK')DB.set.apparati[TS.apparato].html += elemento;
+				else elencoTsubo += elemento;
+			}
+			if(m=='NK'){
+				for(a in DB.set.apparati){
+					elencoTsubo += '<div class="apparati_nmk" id="apr_'+a+'"><p class="labelApparato" onClick="SET.swApparati(this);">'+DB.set.apparati[a].tit+'</p>'+DB.set.apparati[a].html+'</div>';
+				}
 			}
 			var siglaPunto = m;
-			if(m!='EX')siglaPunto = SET.convSigla(m);
-			
+			//if(m!='EX')siglaPunto = SET.convSigla(m);
 			contElencoMeridiani +=	'<div onMouseOver="SET.eviMeridiano(\''+m+'\',true);"' +
 									'     onMouseOut="SET.eviMeridiano(\''+m+'\',false);"' +
 									'     onClick="SET.clickMeridiano(\''+m+'\',this);"' +
@@ -48,7 +61,10 @@ var MODULO_MERIDIANI = { // extend SET
 									'	<strong class="noMAS" title="'+htmlEntities(TXT("ElencoPunti"))+'"></strong>' +
 									'</div>' +
 									'<span id="e_'+m+'"' +
-									'	   class="noMAS elencoPunti '+addClassEl+'">'+elencoTsubo+'</span>';
+									'	   class="';
+			if(m!='NK')contElencoMeridiani +=	'noMAS';	
+			else contElencoMeridiani +=	'NMK visElPt';	
+			contElencoMeridiani +=	' elencoPunti '+addClassEl+'">'+elencoTsubo+'</span>';
 
 									
 			contSmart += '<div onMouseOver="SET.eviMeridiano(\''+m+'\',true);"' +
@@ -57,19 +73,22 @@ var MODULO_MERIDIANI = { // extend SET
 						 '	   id="sm'+m+'"' +
 						 '     class="sm_'+MERIDIANI[m].elemento+addClass+addLock+'">'+SET.convSigla(m)+'</div>';
 		}
-		sceltaMeridianiTag = 	'<div class="menuElenchi"' +
+		sceltaSistemaTag = 	'<div class="menuElenchi"' +
 								'	  onClick="MENU.visMM(\'sistemaMeridiani_p\');">' +
 								'</div>' +		
 							 	'<p id="sistemaMeridiani_p"><span id="selectCambioMeridiani"><i>'+htmlEntities(TXT("SistemaMeridiani"))+':</i><select id="sceltaMeridianiElenco" onChange="SET.cambiaSistema(this.value,true);">'+
 								'  <option value=""';
-		if(localStorage.sistemaMeridiani == '' || !__(localStorage.sistemaMeridiani) )sceltaMeridianiTag += ' SELECTED';
-		sceltaMeridianiTag += 	'>'+htmlEntities(TXT("MeridianiCinesi"))+'</option>' +
+		if(localStorage.sistemaMeridiani == '' || !__(localStorage.sistemaMeridiani) )sceltaSistemaTag += ' SELECTED';
+		sceltaSistemaTag += 	'>'+htmlEntities(TXT("MeridianiCinesi"))+'</option>' +
 								'  <option value="MAS"';
-		if(localStorage.sistemaMeridiani == 'MAS')sceltaMeridianiTag += ' SELECTED';
-		sceltaMeridianiTag += 	'>'+htmlEntities(TXT("MeridianiGiapponesi"))+'</option>' +
+		if(localStorage.sistemaMeridiani == 'MAS')sceltaSistemaTag += ' SELECTED';
+		sceltaSistemaTag += 	'>'+htmlEntities(TXT("MeridianiGiapponesi"))+'</option>' +
+								'  <option value="NMK"';
+		if(localStorage.sistemaMeridiani == 'NMK')sceltaSistemaTag += ' SELECTED';
+		sceltaSistemaTag += 	'>'+htmlEntities(TXT("SistemaNamikoshi"))+'</option>' +
 								'</select></span><i class="elMenu" id="cambioSistemaMeridiani" onClick="MENU.visImpset();"><span>'+htmlEntities(TXT("SistemaMeridiani2"))+'</span></i></p>';
 		
-		document.getElementById("lista_meridiani").innerHTML = sceltaMeridianiTag+'<div class="lista listaMeridiani">'+contElencoMeridiani+'</div>';
+		document.getElementById("lista_meridiani").innerHTML = sceltaSistemaTag+'<div class="lista listaMeridiani">'+contElencoMeridiani+'</div>';
 		document.getElementById("meridianiSmart_cont").innerHTML = contSmart;
 		SET.filtraMeridiani();
 	},
@@ -94,6 +113,9 @@ var MODULO_MERIDIANI = { // extend SET
 			el.classList.remove("frSw");
 		}
 	},
+	swApparati: function( el ){
+		el.parentElement.classList.toggle("vis_apparati");
+	},
 	filtraMeridiani: function(){
 		// filtra i meridiani negli elenchi (per masunaga che non ha CV e GV)
 		var vis = 'none';
@@ -101,6 +123,10 @@ var MODULO_MERIDIANI = { // extend SET
 		
 		document.querySelector(".listaMeridiani").classList.toggle("onlyCIN", (!localStorage.sistemaMeridiani));
 		document.getElementById("meridianiSmart_cont").classList.toggle("onlyCIN", (!localStorage.sistemaMeridiani));
+		
+		document.querySelector(".listaMeridiani").classList.toggle("onlyNMK", (localStorage.sistemaMeridiani=='NMK'));
+		document.getElementById("meridianiSmart_cont").classList.toggle("onlyNMK", (localStorage.sistemaMeridiani=='NMK'));
+		document.getElementById("meridianiSmart_ico").classList.toggle("onlyNMK", (localStorage.sistemaMeridiani=='NMK'));
 	},
 	clickMeridiano: function( m, el ){
 		//

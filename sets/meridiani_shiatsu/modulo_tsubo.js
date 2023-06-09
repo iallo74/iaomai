@@ -15,19 +15,31 @@ var MODULO_TSUBO = { // extend SET
 		if(nTsubo2.length == 1)nTsubo2 = "0"+nTsubo2;
 		var titolo = DB.set.meridiani[siglaMeridiano].tsubo[nTsubo].NomeTsubo;
 		var meridiano = DB.set.meridiani[siglaMeridiano];
-		var coordZoom = __(DB.mtc.meridiani[siglaMeridiano].tsubo[nTsubo].coordZoom);
-		var imgZoom = __(DB.mtc.meridiani[siglaMeridiano].tsubo[nTsubo].imgZoom);
+		
+		
+		var coordZoom = [];
+		var cartella = __(DB.mtc.meridiani[siglaMeridiano].cartella,'');
+		var imgZoom = "";
+		var noMoxa = "";
+		var noGravidanza = "";
+		
+		if(__(DB.mtc.meridiani[siglaMeridiano].tsubo)){
+			coordZoom = __(DB.mtc.meridiani[siglaMeridiano].tsubo[nTsubo].coordZoom);
+			imgZoom = __(DB.mtc.meridiani[siglaMeridiano].tsubo[nTsubo].imgZoom);
+			noMoxa = __(DB.mtc.meridiani[siglaMeridiano].tsubo[nTsubo].noMoxa,'');
+			noGravidanza = __(DB.mtc.meridiani[siglaMeridiano].tsubo[nTsubo].noGravidanza,'');
+		}
+		
 		var TS = meridiano.tsubo[nTsubo];
-		var cartella = DB.mtc.meridiani[siglaMeridiano].cartella;
 		var HTML = "<h1>"+htmlEntities(titolo)+"</h1>";
 		var HTML_simboli = '';
 		
 		// noMoxa
-		if(DB.mtc.meridiani[siglaMeridiano].tsubo[nTsubo].noMoxa)HTML_simboli += 	'<div style="background-image:url(sets/meridiani_shiatsu/img/nomoxa.png);"' +
+		if(noMoxa)HTML_simboli += 	'<div style="background-image:url(sets/meridiani_shiatsu/img/nomoxa.png);"' +
 										'	  class="simboliTsubo"></div>';
 		
 		// noGravidanza
-		if(DB.mtc.meridiani[siglaMeridiano].tsubo[nTsubo].noGravidanza && globals.modello.cartella == 'donna')HTML_simboli += '<div style="background-image:url(sets/meridiani_shiatsu/img/nogravidanza.png);" class="simboliTsubo"></div>';
+		if(noGravidanza && globals.modello.cartella == 'donna')HTML_simboli += '<div style="background-image:url(sets/meridiani_shiatsu/img/nogravidanza.png);" class="simboliTsubo"></div>';
 		
 		
 		if( ritorno && 
@@ -130,8 +142,10 @@ var MODULO_TSUBO = { // extend SET
 		
 		
 		// ideogramma
-		HTML = 	'<img 	src="sets/common/mtc/img/txt_meridiani/'+siglaMeridiano+'/tsubo_'+nTsubo2+'.png"' +
-				'		class="ideogrammaTsubo">'+HTML+imgDettaglio;
+		if(siglaMeridiano!='NK'){
+			HTML = 	'<img 	src="sets/common/mtc/img/txt_meridiani/'+siglaMeridiano+'/tsubo_'+nTsubo2+'.png"' +
+					'		class="ideogrammaTsubo">'+HTML+imgDettaglio;
+		}
 		
 		
 		
@@ -181,7 +195,7 @@ var MODULO_TSUBO = { // extend SET
 		var btnAdd = 	'<div class="p_paz_ref_menu" onClick="REF.open(\'sets.meridiani_shiatsu.meridians\')">' +
 							TXT("ReferenceGuide") +
 						'</div>';
-						
+							
 		SCHEDA.caricaScheda(	titolo,
 								HTML,
 								"if(SET.ptSel)SET.chiudiTsubo()",

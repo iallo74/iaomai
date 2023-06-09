@@ -96,8 +96,8 @@
         
         <!-- CONTENITORE 3D - THREEJS -->
 		<div id="container"
-        	onMouseDown="MENU.chiudiMenu();if(touchable)overInterfaccia=false;"
-        	onTouchStart="MENU.chiudiMenu();if(touchable)overInterfaccia=false;"
+        	onMouseDown="MENU.chiudiMenu('',true);if(touchable)overInterfaccia=false;"
+        	onTouchStart="MENU.chiudiMenu('',true);if(touchable)overInterfaccia=false;"
             onMouseEnter="/*startAnimate();*/"
             onMouseLeave="/*stopAnimate();*/"
             style="text-align: right;"
@@ -129,7 +129,7 @@
 			nasToolTip();
 			renderer.domElement.style.cursor='default';
        }
-       try{SET.scoloraMeridiani();}catch(err){};
+       /*try{SET.scoloraMeridiani();}catch(err){};*/
         
         " onMouseOut="if(!touchable){overInterfaccia=false;}">
         	

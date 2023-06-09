@@ -3031,6 +3031,16 @@ DB.mtc= {
 					noGravidanza: false	
 				}
 			]
+		},
+		"NK": {
+			cartella: "namikoshi",
+			sigle: {
+				"INT": "NK",
+				"OMS": "NK",
+				"ITA": "NK",
+				"FRA": "NK",
+				"VOL": "NK"
+			},
 		}
 	}
 };

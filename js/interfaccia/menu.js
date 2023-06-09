@@ -82,7 +82,9 @@ var MENU = {
 		//return (SCHEDA.classeAperta == 'scheda_A' ||SCHEDA.classeAperta == 'scheda_B');
 		return document.getElementById("scheda").classList.contains("visSch") && SCHEDA.aggancio.tipo=="lato";
 	},
-	chiudiMenu: function(n){
+	chiudiMenu: function( n, stage ){
+		if(typeof(stage)=='undefined')var stage = false;
+		if(stage && !CONN.online)return;
 		if(n!="pulsanti_modello")document.getElementById("pulsanti_modello").classList.remove("visSch");
 		if(n!="sets")document.getElementById("sets").classList.remove("visSch");
 		if(n!="elencoSelected")document.getElementById("elencoSelected").classList.remove("visSch");
@@ -102,7 +104,7 @@ var MENU = {
 		if(n!="archives")document.getElementById("archives").classList.remove("visSch");
 		if(n!="purchases")document.getElementById("purchases").classList.remove("visSch");
 		if(n!="infolingue")document.getElementById("infolingue").classList.remove("visSch");
-		if(n!="ag")document.getElementById("ag").classList.remove("visSch")
+		if(n!="ag")document.getElementById("ag").classList.remove("visSch");
 		if( n=='pulsanti_modello' ||
 			n=='impostazioni' ||
 			n=='sets' ||

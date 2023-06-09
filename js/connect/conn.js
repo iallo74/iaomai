@@ -3,6 +3,7 @@ var CONN = {
 	APIfolder: 'https://www.corpomentespirito.it/__stream/app/030_iaomai/__API/V1.4/',
 	urlStore: 'https://www.iaomai.app/[lang]/iaomai/',
 	linkPrivacy: 'https://www.iaomai.app/privacy',
+	online: true,
 	caricaUrl: function(url, qs, funzione){ // carica un URL
 		if(typeof(qs)=='undefined')var qs='';
 		if(CONN.getConn()){
@@ -27,7 +28,7 @@ var CONN = {
 					if(x.readyState===4){
 						if(x.response){
 							//if(x.response.substr(0,1)=='<')ALERT(TXT("ErroreCaricamento"));
-							
+							CONN.online = true;
 							eval(funzione)(x.response);
 						}
 					}
@@ -43,6 +44,7 @@ var CONN = {
 				if(qs.indexOf("TK=D6G-w34rgV")==-1)x.setRequestHeader("Authorization", LOGIN.getLS('TOKEN'));
 				x.onerror = function () {
 					console.log("Non più connesso");
+					CONN.online = false;
 					eval(funzione)();
 				};
 				x.send(qs);

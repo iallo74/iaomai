@@ -548,6 +548,7 @@ SET = {
 			}
 		}
 		
+		SET.delEviPalls(siglaMeridiano,pP[1],'Over');
 		SET.addEviPalls(siglaMeridiano,pP[1],'Select');
 		this.pulse = 1;
 		
@@ -895,9 +896,11 @@ SET = {
 			var nTsubo=pP[0];
 			if(nTsubo.length == 1)nTsubo = "0"+nTsubo;
 			siglaMeridiano = pP[1];
-			var els = scene.getObjectByName("PT_"+siglaMeridiano).children;
-			for(e in els){
-				if(els[e].name.indexOf("_"+siglaMeridiano+"."+nTsubo+".")==0)els[e].material=SET.MAT.pointEvi;
+			var el = scene.getObjectByName("PT_"+siglaMeridiano)
+			if(el){
+				for(e in el.children){
+					if(el.children[e].name.indexOf("_"+siglaMeridiano+"."+nTsubo+".")==0)el.children[e].material=pointEvi;
+				}
 			}
 			SET.tsuboEvidenziati.push(pT[1]);
 		}
@@ -946,9 +949,12 @@ SET = {
 				var nTsubo=pP[0];
 				if(nTsubo.length == 1)nTsubo = "0"+nTsubo;
 				siglaMeridiano = pP[1];
-				var els = scene.getObjectByName("PT_"+siglaMeridiano).children;
-				for(e in els){
-					if(els[e].name.indexOf("_"+siglaMeridiano+"."+nTsubo+".")==0)els[e].material=SET.MAT.pointTrasp;
+				
+				var el = scene.getObjectByName("PT_"+siglaMeridiano)
+				if(el){
+					for(e in el.children){
+						if(el.children[e].name.indexOf("_"+siglaMeridiano+"."+nTsubo+".")==0)el.children[e].material=SET.MAT.pointTrasp;
+					}
 				}
 			}
 			SET.tsuboEvidenziati = [];
@@ -1247,8 +1253,11 @@ SET = {
 				eviPoint =  new THREE.Mesh( geoPoint, this.MAT.pointSel2.clone() );
 				eviPoint.name=tipo+' point: '+els[e].name;
 				eviPoint.material.visible=true;
-				eviPoint.position.set( els[e].position.x, els[e].position.y, els[e].position.z )
-				SETS.add( eviPoint );
+				eviPoint.position.set( els[e].position.x, els[e].position.y, els[e].position.z );
+				if(	tipo=='Select' || 
+					(tipo=='Over' && !scene.getObjectByName('Select point: '+els[e].name))){
+						SETS.add( eviPoint );
+				}
 			}
 		}
 	},

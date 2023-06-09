@@ -961,13 +961,17 @@ var PAZIENTI_SETS = {
 						EL.contenuto[n].parent = EL;
 						for(pm in DB.set.meridiani[i].tsubo){
 							if(DB.set.meridiani[i].tsubo[pm].NomeTsubo){
-								var pP=DB.set.meridiani[i].tsubo[pm].NomeTsubo.split(". ");
-								EL.contenuto[n].contenuto.push(pP[0]);
+								var pt = DB.set.meridiani[i].tsubo[pm].NomeTsubo.split(". ")[0];
+								if(i=='NK'){
+									var pP = DB.set.meridiani[i].tsubo[pm].siglaTsubo.split("-");
+									pt = pP[1]+"."+pP[0];
+								}
+								EL.contenuto[n].contenuto.push(pt);
 							}
 						}	
 					}
 					if(PAZIENTI.tipoGruppo=='M'){ // meridiani
-						if(i!='EX')EL.contenuto.push(i);
+						if(i!='EX' && i!='NK')EL.contenuto.push(i);
 					}
 				}
 				// --------------------------

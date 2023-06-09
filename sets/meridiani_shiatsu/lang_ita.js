@@ -1879,6 +1879,563 @@ DB.set= {
 					ChiaviTsubo: "",
 				}
 			]
+		},
+		"NK": {
+			NomeMeridiano: "Namikoshi",
+			tsubo: [
+				{ // 01
+					siglaTsubo: "NK-01",
+					NomeTsubo: "Calotta cranica",
+					AzioniTsubo: "xxx",
+					ChiaviTsubo: "",
+					apparato: 0
+				},
+				{ // 02
+					siglaTsubo: "NK-02",
+					NomeTsubo: "Punti occipitali",
+					AzioniTsubo: "xxx",
+					ChiaviTsubo: "",
+					apparato: 0
+				},
+				{ // 03
+					siglaTsubo: "NK-03",
+					NomeTsubo: "Fronte",
+					AzioniTsubo: "xxx",
+					ChiaviTsubo: "",
+					apparato: 0
+				},
+				{ // 04
+					siglaTsubo: "NK-04",
+					NomeTsubo: "Tempie",
+					AzioniTsubo: "xxx",
+					ChiaviTsubo: "",
+					apparato: 0
+				},
+				{ // 05
+					siglaTsubo: "NK-05",
+					NomeTsubo: "Contorno occhi",
+					AzioniTsubo: "xxx",
+					ChiaviTsubo: "",
+					apparato: 0
+				},
+				{ // 06
+					siglaTsubo: "NK-06",
+					NomeTsubo: "Lato del naso",
+					AzioniTsubo: "xxx",
+					ChiaviTsubo: "",
+					apparato: 0
+				},
+				{ // 07
+					siglaTsubo: "NK-07",
+					NomeTsubo: "Zigomi",
+					AzioniTsubo: "xxx",
+					ChiaviTsubo: "",
+					apparato: 0
+				},
+				{ // 08
+					siglaTsubo: "NK-08",
+					NomeTsubo: "Midollo allungato",
+					AzioniTsubo: "xxx",
+					ChiaviTsubo: "",
+					apparato: 0
+				},
+				{ // 09
+					siglaTsubo: "NK-09",
+					NomeTsubo: "Carotide",
+					AzioniTsubo: "xxx",
+					ChiaviTsubo: "",
+					apparato: 0
+				},
+				{ // 10
+					siglaTsubo: "NK-10",
+					NomeTsubo: "Nuca",
+					AzioniTsubo: "xxx",
+					ChiaviTsubo: "",
+					apparato: 0
+				},
+				{ // 11
+					siglaTsubo: "NK-11",
+					NomeTsubo: "Collo - Faccia posteriore",
+					AzioniTsubo: "xxx",
+					ChiaviTsubo: "",
+					apparato: 0
+				},
+				{ // 12
+					siglaTsubo: "NK-12",
+					NomeTsubo: "Collo - Faccia laterale",
+					AzioniTsubo: "xxx",
+					ChiaviTsubo: "",
+					apparato: 0
+				},
+				{ // 13
+					siglaTsubo: "NK-13",
+					NomeTsubo: "Collo - Faccia anteriore",
+					AzioniTsubo: "xxx",
+					ChiaviTsubo: "",
+					apparato: 0
+				},
+				{ // 14
+					siglaTsubo: "NK-14",
+					NomeTsubo: "Sterno",
+					AzioniTsubo: "xxx",
+					ChiaviTsubo: "",
+					apparato: 1
+				},
+				{ // 15
+					siglaTsubo: "NK-15",
+					NomeTsubo: "Spazi intercostali",
+					AzioniTsubo: "xxx",
+					ChiaviTsubo: "",
+					apparato: 1
+				},
+				{ // 16
+					siglaTsubo: "NK-16",
+					NomeTsubo: "Zona tra pettorale e deltoide",
+					AzioniTsubo: "xxx",
+					ChiaviTsubo: "",
+					apparato: 1
+				},
+				{ // 17
+					siglaTsubo: "NK-17",
+					NomeTsubo: "Regione interscapolare",
+					AzioniTsubo: "xxx",
+					ChiaviTsubo: "",
+					apparato: 2
+				},
+				{ // 18
+					siglaTsubo: "NK-18",
+					NomeTsubo: "Rachide - Parte inferiore",
+					AzioniTsubo: "xxx",
+					ChiaviTsubo: "",
+					apparato: 2
+				},
+				{ // 19
+					siglaTsubo: "NK-19",
+					NomeTsubo: "Osso sacro",
+					AzioniTsubo: "xxx",
+					ChiaviTsubo: "",
+					apparato: 2
+				},
+				{ // 20
+					siglaTsubo: "NK-20",
+					NomeTsubo: "Cresta iliaca anteriore",
+					AzioniTsubo: "xxx",
+					ChiaviTsubo: "",
+					apparato: 3
+				},
+				{ // 21
+					siglaTsubo: "NK-21",
+					NomeTsubo: "Cresta iliaca posteriore",
+					AzioniTsubo: "xxx",
+					ChiaviTsubo: "",
+					apparato: 2
+				},
+				{ // 22
+					siglaTsubo: "NK-22",
+					NomeTsubo: "Glutei",
+					AzioniTsubo: "xxx",
+					ChiaviTsubo: "",
+					apparato: 5
+				},
+				{ // 23
+					siglaTsubo: "NK-23",
+					NomeTsubo: "Punto Namikoshi",
+					AzioniTsubo: "xxx",
+					ChiaviTsubo: "",
+					apparato: 5
+				},
+				{ // 24
+					siglaTsubo: "NK-24",
+					NomeTsubo: "Trapezio - Parte alta della spalla",
+					AzioniTsubo: "xxx",
+					ChiaviTsubo: "",
+					apparato: 4
+				},
+				{ // 25NO
+					NomeTsubo: "",
+					AzioniTsubo: "",
+					ChiaviTsubo: "",
+					apparato: 4,
+					nascosto: true
+				},
+				{ // 26
+					siglaTsubo: "NK-26",
+					NomeTsubo: "Deltoide",
+					AzioniTsubo: "xxx",
+					ChiaviTsubo: "",
+					apparato: 4
+				},
+				{ // 27
+					siglaTsubo: "NK-27",
+					NomeTsubo: "Braccio - Faccia mediale",
+					AzioniTsubo: "xxx",
+					ChiaviTsubo: "",
+					apparato: 4
+				},
+				{ // 28
+					siglaTsubo: "NK-28",
+					NomeTsubo: "Braccio - Faccia laterale",
+					AzioniTsubo: "xxx",
+					ChiaviTsubo: "",
+					apparato: 4
+				},
+				{ // 29
+					siglaTsubo: "NK-29",
+					NomeTsubo: "Avambraccio - Faccia palmare",
+					AzioniTsubo: "xxx",
+					ChiaviTsubo: "",
+					apparato: 4
+				},
+				{ // 30
+					siglaTsubo: "NK-30",
+					NomeTsubo: "Avambraccio - Faccia dorsale",
+					AzioniTsubo: "xxx",
+					ChiaviTsubo: "",
+					apparato: 4
+				},
+				{ // 31
+					siglaTsubo: "NK-31",
+					NomeTsubo: "Palmo della mano",
+					AzioniTsubo: "xxx",
+					ChiaviTsubo: "",
+					apparato: 4
+				},
+				{ // 32
+					siglaTsubo: "NK-32",
+					NomeTsubo: "Dorso dell amano",
+					AzioniTsubo: "xxx",
+					ChiaviTsubo: "",
+					apparato: 4
+				},
+				{ // 33
+					siglaTsubo: "NK-33",
+					NomeTsubo: "Dita della mano",
+					AzioniTsubo: "xxx",
+					ChiaviTsubo: "",
+					apparato: 4
+				},
+				{ // 34
+					siglaTsubo: "NK-34",
+					NomeTsubo: "Coscia - Faccia posteriore",
+					AzioniTsubo: "xxx",
+					ChiaviTsubo: "",
+					apparato: 5
+				},
+				{ // 35
+					siglaTsubo: "NK-35",
+					NomeTsubo: "Coscia - Faccia laterale",
+					AzioniTsubo: "xxx",
+					ChiaviTsubo: "",
+					apparato: 5
+				},
+				{ // 36
+					siglaTsubo: "NK-36",
+					NomeTsubo: "Coscia - Faccia mediale",
+					AzioniTsubo: "xxx",
+					ChiaviTsubo: "",
+					apparato: 5
+				},
+				{ // 37
+					siglaTsubo: "NK-37",
+					NomeTsubo: "Coscia - Faccia anteriore",
+					AzioniTsubo: "xxx",
+					ChiaviTsubo: "",
+					apparato: 5
+				},
+				{ // 38
+					siglaTsubo: "NK-38",
+					NomeTsubo: "Ginocchio",
+					AzioniTsubo: "xxx",
+					ChiaviTsubo: "",
+					apparato: 5
+				},
+				{ // 39
+					siglaTsubo: "NK-39",
+					NomeTsubo: "Cavo popliteo",
+					AzioniTsubo: "xxx",
+					ChiaviTsubo: "",
+					apparato: 5
+				},
+				{ // 40
+					siglaTsubo: "NK-40",
+					NomeTsubo: "Polpaccio",
+					AzioniTsubo: "xxx",
+					ChiaviTsubo: "",
+					apparato: 5
+				},
+				{ // 41NO
+					NomeTsubo: "",
+					AzioniTsubo: "",
+					ChiaviTsubo: "",
+					apparato: 5,
+					nascosto: true
+				},
+				{ // 42
+					siglaTsubo: "NK-42",
+					NomeTsubo: "Gamba - Faccia laterale",
+					AzioniTsubo: "xxx",
+					ChiaviTsubo: "",
+					apparato: 5
+				},
+				{ // 43
+					siglaTsubo: "NK-43",
+					NomeTsubo: "Caviglia",
+					AzioniTsubo: "xxx",
+					ChiaviTsubo: "",
+					apparato: 5
+				},
+				{ // 44
+					siglaTsubo: "NK-44",
+					NomeTsubo: "Tallone",
+					AzioniTsubo: "xxx",
+					ChiaviTsubo: "",
+					apparato: 5
+				},
+				{ // 45
+					siglaTsubo: "NK-45",
+					NomeTsubo: "Dorso del piede",
+					AzioniTsubo: "xxx",
+					ChiaviTsubo: "",
+					apparato: 5
+				},
+				{ // 46
+					siglaTsubo: "NK-46",
+					NomeTsubo: "Pianta del piede",
+					AzioniTsubo: "xxx",
+					ChiaviTsubo: "",
+					apparato: 5
+				},
+				{ // 47
+					siglaTsubo: "NK-47",
+					NomeTsubo: "Dita del piede",
+					AzioniTsubo: "xxx",
+					ChiaviTsubo: "",
+					apparato: 5
+				},
+				{ // 48
+					siglaTsubo: "NK-48",
+					NomeTsubo: "Bocca dello stomaco",
+					AzioniTsubo: "xxx",
+					ChiaviTsubo: "",
+					apparato: 3
+				},
+				{ // 49
+					siglaTsubo: "NK-49",
+					NomeTsubo: "Intestino tenue",
+					AzioniTsubo: "xxx",
+					ChiaviTsubo: "",
+					apparato: 3
+				},
+				{ // 50
+					siglaTsubo: "NK-50",
+					NomeTsubo: "Vescica",
+					AzioniTsubo: "xxx",
+					ChiaviTsubo: "",
+					apparato: 3
+				},
+				{ // 51
+					siglaTsubo: "NK-51",
+					NomeTsubo: "Appendice",
+					AzioniTsubo: "xxx",
+					ChiaviTsubo: "",
+					apparato: 3
+				},
+				{ // 52
+					siglaTsubo: "NK-52",
+					NomeTsubo: "Fegato",
+					AzioniTsubo: "xxx",
+					ChiaviTsubo: "",
+					apparato: 3
+				},
+				{ // 53
+					siglaTsubo: "NK-53",
+					NomeTsubo: "Milza",
+					AzioniTsubo: "xxx",
+					ChiaviTsubo: "",
+					apparato: 3
+				},
+				{ // 54
+					siglaTsubo: "NK-54",
+					NomeTsubo: "Colon discendente - Alto",
+					AzioniTsubo: "xxx",
+					ChiaviTsubo: "",
+					apparato: 3
+				},
+				{ // 55
+					siglaTsubo: "NK-55",
+					NomeTsubo: "Colon discendente - Medio",
+					AzioniTsubo: "xxx",
+					ChiaviTsubo: "",
+					apparato: 3
+				},
+				{ // 56
+					siglaTsubo: "NK-56",
+					NomeTsubo: "Colon discendente - Basso",
+					AzioniTsubo: "xxx",
+					ChiaviTsubo: "",
+					apparato: 3
+				},
+				{ // 57
+					siglaTsubo: "NK-57",
+					NomeTsubo: "Retto",
+					AzioniTsubo: "xxx",
+					ChiaviTsubo: "",
+					apparato: 3
+				},
+				{ // 58
+					siglaTsubo: "NK-58",
+					NomeTsubo: "Colon ascendente",
+					AzioniTsubo: "xxx",
+					ChiaviTsubo: "",
+					apparato: 3
+				},
+				{ // 59
+					siglaTsubo: "NK-59",
+					NomeTsubo: "Flessura sigmoidea",
+					AzioniTsubo: "xxx",
+					ChiaviTsubo: "",
+					apparato: 3
+				},
+				{ // 60
+					siglaTsubo: "NK-60",
+					NomeTsubo: "Intestino tenue",
+					AzioniTsubo: "xxx",
+					ChiaviTsubo: "",
+					apparato: 3
+				},
+				{ // 61
+					siglaTsubo: "NK-61",
+					NomeTsubo: "Intestino tenue",
+					AzioniTsubo: "xxx",
+					ChiaviTsubo: "",
+					apparato: 3
+				},
+				{ // 62
+					siglaTsubo: "NK-62",
+					NomeTsubo: "Intestino tenue",
+					AzioniTsubo: "xxx",
+					ChiaviTsubo: "",
+					apparato: 3
+				},
+				{ // 63
+					siglaTsubo: "NK-63",
+					NomeTsubo: "Intestino tenue",
+					AzioniTsubo: "xxx",
+					ChiaviTsubo: "",
+					apparato: 3
+				},
+				{ // 64
+					siglaTsubo: "NK-64",
+					NomeTsubo: "Intestino tenue",
+					AzioniTsubo: "xxx",
+					ChiaviTsubo: "",
+					apparato: 3
+				},
+				{ // 65
+					siglaTsubo: "NK-65",
+					NomeTsubo: "Intestino tenue",
+					AzioniTsubo: "xxx",
+					ChiaviTsubo: "",
+					apparato: 3
+				},
+				{ // 66
+					siglaTsubo: "NK-66",
+					NomeTsubo: "Intestino tenue",
+					AzioniTsubo: "xxx",
+					ChiaviTsubo: "",
+					apparato: 3
+				},
+				{ // 67
+					siglaTsubo: "NK-67",
+					NomeTsubo: "Intestino tenue",
+					AzioniTsubo: "xxx",
+					ChiaviTsubo: "",
+					apparato: 3
+				},
+				{ // 68
+					siglaTsubo: "NK-68",
+					NomeTsubo: "Intestino tenue",
+					AzioniTsubo: "xxx",
+					ChiaviTsubo: "",
+					apparato: 3
+				},
+				{ // 69
+					siglaTsubo: "NK-69",
+					NomeTsubo: "Ghiandole surrenali",
+					AzioniTsubo: "xxx",
+					ChiaviTsubo: "",
+					apparato: 2
+				},
+				{ // 70
+					siglaTsubo: "NK-70",
+					NomeTsubo: "Scapola",
+					AzioniTsubo: "xxx",
+					ChiaviTsubo: "",
+					apparato: 2
+				},
+				{ // 71
+					siglaTsubo: "NK-71",
+					NomeTsubo: "Tiroide",
+					AzioniTsubo: "xxx",
+					ChiaviTsubo: "",
+					apparato: 0
+				},
+				{ // 72
+					siglaTsubo: "NK-72",
+					NomeTsubo: "Ghiandole endocrine",
+					AzioniTsubo: "xxx",
+					ChiaviTsubo: "",
+					apparato: 1
+				},
+				{ // 73
+					siglaTsubo: "NK-73",
+					NomeTsubo: "Punto anti diarrea",
+					AzioniTsubo: "xxx",
+					ChiaviTsubo: "",
+					apparato: 5
+				},
+				{ // 74
+					siglaTsubo: "NK-74",
+					NomeTsubo: "Tempia - Punto mal di denti",
+					AzioniTsubo: "xxx",
+					ChiaviTsubo: "",
+					apparato: 0
+				},
+				{ // 75
+					siglaTsubo: "NK-75",
+					NomeTsubo: "Processo mastoideo - Punto mal di movimento",
+					AzioniTsubo: "xxx",
+					ChiaviTsubo: "",
+					apparato: 0
+				}
+			]
+		}
+	},
+	
+	apparati: {
+		0: {
+			tit: "Testa e collo",
+			html: ''
+		},
+		1: {
+			tit: "Torace",
+			html: ''
+		},
+		2: {
+			tit: "Schiena",
+			html: ''
+		},
+		3: {
+			tit: "Addome",
+			html: ''
+		},
+		4: {
+			tit: "Arti superiori",
+			html: ''
+		},
+		5: {
+			tit: "Arti inferiori",
+			html: ''
 		}
 	},
 		

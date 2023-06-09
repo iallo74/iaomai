@@ -94,7 +94,7 @@ SET.MAT = {
 		transparent: false,
 		opacity:0.5
 	} ),
-	lineGuide: new THREE.LineBasicMaterial( { // meridiani YANG
+	lineGuide: new THREE.LineBasicMaterial( {
 		color: SET.COL.guide,
 		transparent: true,
 		opacity:0.6

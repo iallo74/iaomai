@@ -4875,6 +4875,14 @@ DB.TXT = {
             por: "Carregando conjunto de meridianos",
             deu: "Laden des Meridian-Sets"
         },
+        CaricamentoMappa: {
+            ita: "Caricamento set",
+            eng: "Loading set",
+            esp: "Cargando conjunto",
+            fra: "Chargement de l'ensemble",
+            por: "Carregando conjunto",
+            deu: "Laden der Set"
+        },
         CaricamentoMappe: {
             ita: "Caricamento sets",
             eng: "Loading sets",

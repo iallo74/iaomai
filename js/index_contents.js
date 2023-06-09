@@ -108,7 +108,7 @@ var sets = {
 			8,
 			2
 		],
-		txtLoading: stripslashes(TXT("CaricamentoMeridiani")),
+		txtLoading: stripslashes(TXT("CaricamentoMappa")),
 		auth: false,
 		locked: false,
 		lastVer: 1,

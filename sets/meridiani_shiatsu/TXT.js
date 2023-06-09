@@ -120,20 +120,20 @@ DB.TXT.set = {
 		deu: "Meridiane-System"
 	},
 	Patologie: {
-		ita: "Patologie",
-		eng: "Pathologies",
-		esp: "Patologías",
-		fra: "Pathologies",
-		por: "Patologias",
-		deu: "Pathologien"
+		ita: "Protocolli Shiatsu",
+		eng: "Shiatsu protocols",
+		esp: "Protocolos Shiatsu",
+		fra: "Protocoles Shiatsu",
+		por: "Protocolos shiatsu",
+		deu: "Protocol Shiatsu"
 	},
 	CercaPatologia: {
-		ita: "Cerca una patologia...",
-		eng: "Search a pathology...",
-		esp: "Buscar una patología...",
-		fra: "Rechercher une pathologie...",
-		por: "Pesquisar uma patologia...",
-		deu: "Suche eine Pathologie..."
+		ita: "Cerca un protocollo...",
+		eng: "Search a protocol...",
+		esp: "Buscar una protocolo...",
+		fra: "Rechercher un protocol...",
+		por: "Pesquisar uma protocolo...",
+		deu: "Suche eine protocol..."
 	},
 	Meridiani: {
 		ita: "Meridiani",
@@ -142,6 +142,14 @@ DB.TXT.set = {
 		fra: "Méridiens",
 		por: "Meridianos",
 		deu: "Meridiane"
+	},
+	MappaPunti: {
+		ita: "Mappa dei punti",
+		eng: "Points map",
+		esp: "Mapa de puntos",
+		fra: "Carte des points",
+		por: "Mapa de pontos",
+		deu: "Karte der Punkte"
 	},
 	MeridianiCinesi: {
 		ita: "Meridiani cinesi",
@@ -158,6 +166,14 @@ DB.TXT.set = {
 		fra: "Extensions de Masunaga",
 		por: "Extensões de Masunaga",
 		deu: "Masunaga-Erweiterungen"
+	},
+	SistemaNamikoshi: {
+		ita: "Sistema Namikoshi",
+		eng: "Namikoshi system",
+		esp: "Sistema Namikoshi",
+		fra: "Système Namikoshi",
+		por: "Sistema Namikoshi",
+		deu: "System Namikoshi"
 	},
 	Approfondimenti: {
 		ita: "Approfondimenti",

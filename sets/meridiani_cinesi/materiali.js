@@ -4,7 +4,9 @@
 SET.COL = {
 	sel: 0xFF0000,
 	musc: 0x33FF00, // 0x000000;
-	basePT: 0x8899AA,
+	lineMusc: 0x99B2CC,
+	basePT: 0x7F7F7F, // 0x8899AA (vecchio)	
+	basePTmusc: 0xFFFFFF,
 	base: 0x637281,
 	over: 0xFFFFFF,
 	overPT: 0xAABBCC,
@@ -246,6 +248,16 @@ SET._setLineMaterials = function(){
 			if(!muscleView)col =  SET.COL.sel;
 			else col =  SET.COL.musc;
 		}
+		var col3 = SET.COL.basePT;
+		var col4 = SET.COL.base;
+		if(muscleView){
+			col3 = SET.COL.basePTmusc;
+			col4 = SET.COL.lineMusc;
+		}
+		
+		SET.MAT.pointBase.color.setHex(col3);
+		SET.MAT.lineYang.color.setHex(col4);
+		SET.MAT.lineYin.color.setHex(col4);
 		depthFunc = 3;
 		if(MODELLO.opAtt<1)depthFunc = 1;
 		SET.MAT.lineOn[elemento] = new THREE.ShaderMaterial( {
