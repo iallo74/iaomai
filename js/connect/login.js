@@ -659,11 +659,12 @@ var LOGIN = {
 							btnAdd );
 		}
 	},
-	car_utente: function( txt='' ){
+	car_utente: function( txt ){
 		/*
 		- risposta dallo scaricamento dati utente (modUtente)
 		- carica i dati dell'utente nella scheda
 		*/
+		if(typeof(txt)=='undefined')var txt = '';
 		if(txt.substr(0,3)=='404'){
 			
 		}else{

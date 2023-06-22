@@ -696,13 +696,13 @@ SET = {
 		
 		// ricentro il manichino
 		exPt.updateMatrixWorld();
-		var vector = exPt.geometry.vertices[i].clone();
+		var vector = exPt.geometry.vertices[0].clone();
 		vector.applyMatrix4( exPt.matrixWorld );
 		manichino.position.set( 0, 0, 0 );
 		
 		render();
 		exPt.updateMatrixWorld();
-		var vector2 = exPt.geometry.vertices[i].clone();
+		var vector2 = exPt.geometry.vertices[0].clone();
 		vector2.applyMatrix4( exPt.matrixWorld );
 		manichinoCont.position.x = manichinoCont.position.x - (vector2.x-vector.x);
 		manichinoCont.position.y = manichinoCont.position.y - (vector2.y-vector.y);

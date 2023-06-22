@@ -788,7 +788,7 @@ SET = {
 			y2 = 0-elPin.position.y;
 			z2 = 0-elPin.position.z;
 			elPin.updateMatrixWorld();
-			var vector = elPin.geometry.vertices[i].clone();
+			var vector = elPin.geometry.vertices[0].clone();
 			vector.applyMatrix4( elPin.matrixWorld );
 		}
 		panEndZero = { x: x2, y: y2, z: z2 };
@@ -894,7 +894,7 @@ SET = {
 			var center = getCenterPoint(exPt);
 			var vector = new THREE.Vector3( ((MODELLO.flip) ? center.x*1 : 0-center.x*1), 0-center.y*1, 0-center.z*1 );
 		}else{
-			var vector = exPt.geometry.vertices[i].clone();
+			var vector = exPt.geometry.vertices[0].clone();
 		}
 		vector.applyMatrix4( exPt.matrixWorld );
 		manichino.position.set( 0, 0, 0 );
@@ -904,7 +904,7 @@ SET = {
 			var center = getCenterPoint(exPt);
 			var vector2 = new THREE.Vector3( ((MODELLO.flip) ? center.x*1 : 0-center.x*1), 0-center.y*1, 0-center.z*1 );
 		}else{
-			var vector2 = exPt.geometry.vertices[i].clone();
+			var vector2 = exPt.geometry.vertices[0].clone();
 		}
 		vector2.applyMatrix4( exPt.matrixWorld );
 		manichinoCont.position.x = manichinoCont.position.x - (vector2.x-vector.x);
@@ -1321,8 +1321,14 @@ SET = {
 	},
 	visLM: function(){ // mostra i landmarks
 		// verifico le autorizzazioni
-		if(!SET.verFreePatologia(n*1)){
+		/*if(!SET.verFreePatologia(n*1)){
 			ALERT(TXT("MsgContSoloPay"),true,true);
+			return;
+		}*/
+		// --------------------------
+		// verifico le autorizzazioni
+		if(!DB.login.data.auths.indexOf("auricologia")==-1){
+			ALERT(TXT("MsgFunzioneSoloPay"));
 			return;
 		}
 		// --------------------------

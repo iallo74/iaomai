@@ -280,8 +280,12 @@ var PAZIENTI_TRATTAMENTI = {
 			}
 		}
 	},
-	car_trattamento: function( Q_idTratt=-1, btn, LabelCiclo='', an=false, idCiclo, trasforma=false ){ // scheda del trattamento
+	car_trattamento: function( Q_idTratt, btn, LabelCiclo, an, idCiclo, trasforma ){ // scheda del trattamento
 		if(DRAGGER.moved)return;
+		if(typeof(Q_idTratt)=='undefined')var Q_idTratt=-1;
+		if(typeof(LabelCiclo)=='undefined')var LabelCiclo='';
+		if(typeof(an)=='undefined')var an=false;
+		if(typeof(trasforma)=='undefined')var trasforma=false;
 
 		// verifico le autorizzazioni
 		if(Q_idTratt==-1 && !LabelCiclo){ // solo se è anamnesi

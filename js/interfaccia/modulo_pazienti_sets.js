@@ -488,7 +488,7 @@ var PAZIENTI_SETS = {
 		H.removeTT();
 		PAZIENTI.verMezzo(m);
 	},
-	selPV: function( n ){
+	selPV: function( n ){ // cambia la valutazione energetica
 		var html = '';
 		var pvs = [ '', 'V', 'P', 'D' ];
 		for(let m=0;m<pvs.length;m++){
@@ -498,7 +498,7 @@ var PAZIENTI_SETS = {
 		}
 		H.selTT(n,"ico_PV",html);
 	},
-	spostaTsubo: function( elMove, elTarget ){
+	spostaTsubo: function( elMove, elTarget ){ // sposta dopo il drag&drop
 		if(	!elTarget ||
 			elMove.parentElement==elTarget)return;
 		var fromIndex = parseInt(elMove.parentElement.id.split("_")[1]);
@@ -652,7 +652,7 @@ var PAZIENTI_SETS = {
 		document.getElementById("tt_mezzival").dataset.on='0';
 		H.removeTT();
 	},
-	selMV: function( n ){
+	selMV: function( n ){ // cambia la valutazione energetica
 		var html = '';
 		var pvs = [ '', 'V', 'P', 'D' ];
 		for(let m=0;m<pvs.length;m++){
@@ -662,7 +662,7 @@ var PAZIENTI_SETS = {
 		}
 		H.selTT(n,"ico_MV",html);
 	},
-	spostaMeridiano: function( elMove, elTarget ){
+	spostaMeridiano: function( elMove, elTarget ){ // sposta dopo il drag&drop
 		if(	!elTarget ||
 			elMove.parentElement==elTarget)return;
 		var fromIndex = parseInt(elMove.dataset.dragEl);
@@ -676,7 +676,7 @@ var PAZIENTI_SETS = {
 	},
 	
 	// auriculo-punti
-	ricAuriculo: function( frm, n ){
+	ricAuriculo: function( frm, n ){ // ricarica tutti i punti
 		SET.overTsubo("PT"+PAZIENTI.auriculoProvvisori[n].s,false);
 		PAZIENTI.auriculoProvvisori[n].s = eval("document."+frm+".pt_"+n+".value");
 		PAZIENTI.auriculoProvvisori[n].n = DB.set.punti[siglaTsubo].NomeTsubo;
@@ -875,7 +875,7 @@ var PAZIENTI_SETS = {
 		PAZIENTI.caricaAuriculoTrattamento();
 		SCHEDA.formModificato = true;
 	},
-	selAV: function( n ){
+	selAV: function( n ){ // cambia la valutazione energetica
 		var html = '';
 		var pvs = [ '', 'D' ];
 		for(let m=0;m<pvs.length;m++){
@@ -913,7 +913,7 @@ var PAZIENTI_SETS = {
 		H.removeTT();
 		PAZIENTI.verMezzo(m);
 	},
-	spostaAuriculo: function( elMove, elTarget ){
+	spostaAuriculo: function( elMove, elTarget ){ // sposta dopo il drag&drop
 		if(	!elTarget ||
 			elMove.parentElement==elTarget)return;
 		var fromIndex = parseInt(elMove.parentElement.id.split("_")[1]);
@@ -928,7 +928,7 @@ var PAZIENTI_SETS = {
 	
 	
 	// punti namikoshi
-	ricNamikoshi: function( frm, n ){
+	ricNamikoshi: function( frm, n ){ // ricarica tutti i punti
 		//SET.overTsubo(document.getElementById("n-rg_"+n),false);
 		PAZIENTI.namikoshiProvvisori[n].n = eval("document."+frm+"['n-pt_"+n+"'].value");
 		PAZIENTI.namikoshiProvvisori[n].s = DB.set.meridiani.NK.tsubo[siglaTsubo].NomeTsubo;
@@ -962,12 +962,13 @@ var PAZIENTI_SETS = {
 					valutazione=__(PAZIENTI.namikoshiProvvisori[p].e);
 					mezzo=__(PAZIENTI.namikoshiProvvisori[p].z);
 					descrizione=__(PAZIENTI.namikoshiProvvisori[p].t);
+					siglaTsubo=__(PAZIENTI.namikoshiProvvisori[p].s);
 					nTsubo=__(PAZIENTI.namikoshiProvvisori[p].n);
 					elenco.push(nTsubo+".NK."+valutazione);
 					
 					HTML += '<div class="rgProcMod rgMod dettPunto dettNamikoshi'+((evi==p)?' eviPunto':'')+'"' +
 							'	  id="n-rg_'+p+'"';
-					if(mouseDetect && siglaTsubo){
+					if(mouseDetect && nTsubo){
 						HTML += 	' onMouseOver="SET.overTsubo(this,true);"' +
 									' onMouseOut="SET.overTsubo(this,false);"';
 					}
@@ -1133,7 +1134,7 @@ var PAZIENTI_SETS = {
 		PAZIENTI.caricaNamikoshiTrattamento();
 		SCHEDA.formModificato = true;
 	},
-	selNV: function( n ){
+	selNV: function( n ){ // cambia la valutazione energetica
 		var html = '';
 		var pvs = [ '', 'D' ];
 		for(let m=0;m<pvs.length;m++){
@@ -1171,7 +1172,7 @@ var PAZIENTI_SETS = {
 		H.removeTT();
 		PAZIENTI.verMezzo(m);
 	},
-	spostaNamikoshi: function( elMove, elTarget ){
+	spostaNamikoshi: function( elMove, elTarget ){ // sposta dopo il drag&drop
 		if(	!elTarget ||
 			elMove.parentElement==elTarget)return;
 		var fromIndex = parseInt(elMove.parentElement.id.split("_")[1]);
@@ -1675,7 +1676,7 @@ var PAZIENTI_SETS = {
 			PAZIENTI.elencoGruppoAtt = PAZIENTI.elencoGruppoPunti;
 		}else ALERT(TXT("ErroreImportaPunti"));
 	},
-	evidenziaAggiunti: function( cont, n ){
+	evidenziaAggiunti: function( cont, n ){ // evidenzia in blu i punti aggiunti
 		var els = cont.getElementsByClassName("rgProcMod");
 		for(e=els.length-1;e>=0;e--){
 			if(n>0){

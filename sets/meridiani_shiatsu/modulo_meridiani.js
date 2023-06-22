@@ -29,6 +29,11 @@ var MODULO_MERIDIANI = { // extend SET
 				elencoTsubo += '<p id="titNMK">Zone anatomiche</p>';
 			}
 			for(let s in DB.set.meridiani[m].tsubo){
+				if(!DB.set.meridiani[m].tsubo[s].siglaTsubo){
+					let n = DB.set.meridiani[m].tsubo[s].NomeTsubo.split(".")[0]+"";
+					if(n.length==1)n = '0'+n;
+					DB.set.meridiani[m].tsubo[s].siglaTsubo = m+"."+n;
+				}
 				var TS = DB.set.meridiani[m].tsubo[s];
 				if(m!='NK' || __(TS.apparato,-1)>-1){
 					var addNMK = (m=='NK')? (s*1+1)+'.NK. ' : '';

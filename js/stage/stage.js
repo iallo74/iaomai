@@ -314,7 +314,7 @@ function scaricaModello( esci ){
 	render( true );
 	if(smartMenu && elencoSel && !globals.set.cartella)SCHEDA.apriElenco('base');
 }
-function cambiaModello( cartella='' ){
+function cambiaModello( cartella ){
 	var chiedi = false;
 	var ChiediUscitaSet = ''
 	if(globals.set.cartella!='' && cartella){
@@ -332,6 +332,7 @@ function cambiaModello( cartella='' ){
 					arguments ).then(function(pass){if(pass){
 					var v = getParamNames(CONFIRM.args.callee.toString());
 					for(let i in v)eval(getArguments(v,i));
+		if(typeof(cartella)=='undefined')var cartella ='';
 		if(chiedi){
 			scaricaSet();
 		}

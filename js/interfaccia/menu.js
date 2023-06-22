@@ -483,7 +483,8 @@ var MENU = {
 			}
 		}
 	},
-	visAgenda: function( data, mantieni=false ){
+	visAgenda: function( data, mantieni ){
+		if(typeof(mantieni) == 'undefined')var mantieni = false;
 		var mod = SCHEDA.verificaSchedaRet();
 		if(!document.getElementById("ag").classList.contains("visSch") || mantieni){
 			CONFIRM.vis(	TXT("UscireSenzaSalvare"),

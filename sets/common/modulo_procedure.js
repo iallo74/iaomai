@@ -434,9 +434,10 @@ var MODULO_PROCEDURE = { // extend SET
 	confermaSwPref: function( txt ){
 		if(txt.substr(0,3)=='404')ALERT(TXT("ProcedureErrore"));
 	},
-	mod_procedura: function( Q_idProc=-1, Q_pre ){ // scheda di modifica della procedura
-		// verifico le autorizzazioni
+	mod_procedura: function( Q_idProc, Q_pre ){ // scheda di modifica della procedura
+		if(typeof(Q_idProc)=='undefined')var Q_idProc=-1;
 		if(Q_idProc.toString()=='')Q_idProc=-1;
+		// verifico le autorizzazioni
 		var maxProcedure = 1;
 		if(LOGIN.reg() && LOGIN.logedin()){
 			if(DB.login.data.auths.indexOf(globals.set.cartella)>-1)maxProcedure = -1;

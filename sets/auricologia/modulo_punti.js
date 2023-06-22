@@ -24,7 +24,7 @@ var MODULO_PUNTI = { // extend SET
 			n++;
 			
 			// verifico le autorizzazioni
-			var addLock =	(!SET.verFreePunti(p)) ? ' lockedItem' : '';
+			var addLock =	(!SET.verFreePunti(siglaTsubo)) ? ' lockedItem' : '';
 			// --------------------------
 			elencoTsubo+='<p>'+this.scriviTsubo(siglaTsubo,true,true,'')+'</p>';
 		}
