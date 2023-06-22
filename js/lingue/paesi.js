@@ -1173,7 +1173,7 @@ var paesi = {
 function elencaPaesi( prefissi ){
 	var prefissi = __(prefissi);
 	var elenco = {"":""};
-	for(p in paesi){
+	for(let p in paesi){
 		var paese = paesi[p][globals.siglaLingua];
 		if(prefissi)paese += ' ('+paesi[p].prefisso+')';
 		elenco[p] = paese;

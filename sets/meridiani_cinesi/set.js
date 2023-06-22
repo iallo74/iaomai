@@ -24,6 +24,7 @@ SET = {
 	eviPalls: [],
 	geometryPallino: null,
 	geometryPallinoTrasp: null,
+	idTeoMeridiani: 1,
 	
 	// FUNZIONI
 	_init: function(){
@@ -42,7 +43,7 @@ SET = {
 		if(!modelloAperto)modelloAperto='donna';
 		this.geometryPallino = new THREE.SphereGeometry( 0.02, facce, facce );
 		this.geometryPallinoTrasp = new THREE.SphereGeometry( 0.07, facceTrasp, facceTrasp );
-		for(m in MERIDIANI){ // elenco i meridiani
+		for(let m in MERIDIANI){ // elenco i meridiani
 			if(m!='posizioni'){
 				this.LN[m] = new THREE.Group();
 				this.LN[m].name="LN_"+m;
@@ -106,7 +107,7 @@ SET = {
 				var PTS=MERIDIANI[m][modelloAperto].punti;
 				var ptAdd = false;
 				
-				for(p in PTS){
+				for(let p in PTS){
 					if(PTS[p]!=''){
 						var x=PTS[p].array[0];
 						var y=PTS[p].array[1];
@@ -192,7 +193,7 @@ SET = {
 		SCHEDA.caricaBtns(contBtns,contIcona);
 		SCHEDA.swPulsanti(true);
 		
-		document.getElementById("divs").innerHTML = '<div id="meridianiSmart_ico" onClick="SET.swMeridianiSmart();" title="'+htmlEntities(TXT("MeridianiSmart"))+'"></div><div id="meridianiSmart_cont"></div>';
+		document.getElementById("divs").innerHTML = '<div id="meridianiSmart_ico" class="noPrint" onClick="SET.swMeridianiSmart();" title="'+htmlEntities(TXT("MeridianiSmart"))+'"></div><div id="meridianiSmart_cont" class="noPrint"></div>';
 		//SCHEDA.apriElenco();
 		if(preElenco)SCHEDA.selElenco(preElenco);
 		
@@ -252,12 +253,16 @@ SET = {
 		}
 		postApreSet = false;
 		if(smartMenu)overInterfaccia=true;
-		//SET.iniPos(); // se decommentato server per salvare in localSorage.POS la posizione del manichino
+		
+		/*
+		Decommentare per salvare in localSorage.POS la posizione del manichino
+		Per settare le rotazioni automatiche sui un punto premere il pulsante "q"
+		*/
+		//SET.iniPos();
 		
 	},
 	
-	iniPos: function( azzera ){
-		if(typeof(azzera)=='undefined')var azzera = false;
+	iniPos: function( azzera=false ){
 		if(azzera)localStorage.POS = '{}';
 		SET.POS = JSON.parse(__(localStorage.POS,'{}'));
 		SET.hidePlaced();
@@ -284,7 +289,7 @@ SET = {
 		}
 	},
 	hidePlaced: function(){
-		for(i in MERIDIANI.posizioni){
+		for(let i in MERIDIANI.posizioni){
 			if(scene.getObjectByName(i))scene.getObjectByName(i).visible = false;
 			if(scene.getObjectByName("_"+i))scene.getObjectByName("_"+i).visible = false;
 		}
@@ -292,7 +297,7 @@ SET = {
 	makeUnique: function(){
 		var els = [];
 		var posizioni = {};
-		for(i in MERIDIANI.posizioni){
+		for(let i in MERIDIANI.posizioni){
 			if(els.indexOf(i)==-1){
 				posizioni[i] = MERIDIANI.posizioni[i];
 				els.push(i);
@@ -320,7 +325,7 @@ SET = {
 			var objOver='';
 			var ints = [];
 			if(SETS){
-				for(i in SETS.children){
+				for(let i in SETS.children){
 					if(	SETS.children[i].visible &&
 						SETS.children[i].isGroup && 
 						SETS.children[i].name.substr(0,2)!='LN' && 
@@ -338,7 +343,7 @@ SET = {
 				}
 			}
 			if(ANATOMIA){
-				for(i in ANATOMIA.children){
+				for(let i in ANATOMIA.children){
 					if(	ANATOMIA.children[i].name.toLowerCase()=='pelle' ||
 						ANATOMIA.children[i].name.toLowerCase()=='ossa' ||
 						ANATOMIA.children[i].name.toLowerCase()=='visceri' ){
@@ -347,7 +352,7 @@ SET = {
 							for(l in intersects)ints.push(intersects[l]);
 						}
 						if(ANATOMIA.children[i].type=='Group'){
-							for(g in ANATOMIA.children[i].children){
+							for(let g in ANATOMIA.children[i].children){
 								var intersects = raycaster.intersectObject( ANATOMIA.children[i].children[g] );
 								if ( intersects.length > 0 ){
 									for(l in intersects){
@@ -412,8 +417,7 @@ SET = {
 		}
 		return make;
 	},
-	setPulsePt: function( pt, pulse, op, mat ){
-		if(typeof(mat)=='undefined')var mat = '';
+	setPulsePt: function( pt, pulse, op, mat='' ){
 		var pP = pt.name.split(".");
 		var els = scene.getObjectByName("PT_"+pP[0]).children;
 		for(e in els){
@@ -436,7 +440,7 @@ SET = {
 	// ANIMATE SET
 	_animate: function(){
 		if(typeof(MERIDIANI)!='undefined'){
-			for(m in MERIDIANI){
+			for(let m in MERIDIANI){
 				if(MERIDIANI[m].meridianoAcceso){
 					var els = this.LN[m].children;
 					for(v in els){
@@ -475,9 +479,7 @@ SET = {
 		controlsM.yIni=-1;
 		controlsM.yEnd=-1;
 	},
-	apriTsubo: function( PT_name, ritorno, el ){
-		if(typeof(ritorno) == 'undefined')var ritorno = '';
-		if(typeof(el) == 'undefined')var el = '';
+	apriTsubo: function( PT_name, ritorno='', el='' ){
 		if(this.ptSel){
 			var mat=this.MAT.pointOn;
 			if(this.ptSel.userData.nota)mat=this.MAT.pointNote;
@@ -562,7 +564,7 @@ SET = {
 			var evidenziati = this.ptSel.userData.evidenziati;
 			if(evidenziati){
 				for(e in evidenziati){
-					for(i in evidenziati[e]){
+					for(let i in evidenziati[e]){
 						scene.getObjectByName( evidenziati[e][i] ).material = MODELLO.MAT.materialVisceriEvi;
 					}
 				}
@@ -571,12 +573,10 @@ SET = {
 		// ---------------------
 		SET.caricaTsubo( siglaMeridiano, nTsubo, ritorno );
 	},
-	chiudiTsubo: function( nonChiudereScheda, cambiaPunto ){
+	chiudiTsubo: function( nonChiudereScheda=false, cambiaPunto=false ){
 		document.getElementById("scheda").classList.remove("tab_tsubo");
 		document.getElementById("scheda").classList.remove("schForm");
 		if(!globals.modello.cartella)return;
-		if(typeof(nonChiudereScheda)=='undefined')nonChiudereScheda=false;
-		if(typeof(cambiaPunto)=='undefined')cambiaPunto=false;
 		if(!nonChiudereScheda){
 			endChangeDetection();
 			SCHEDA.formModificato = false;
@@ -588,7 +588,7 @@ SET = {
 				var evidenziati = this.ptSel.userData.evidenziati;
 				if(evidenziati){
 					for(e in evidenziati){
-						for(i in evidenziati[e]){
+						for(let i in evidenziati[e]){
 							var tipo = scene.getObjectByName( evidenziati[e][i] ).parent.name;
 							scene.getObjectByName( evidenziati[e][i] ).material = eval("MODELLO.MAT.material"+tipo);
 						}
@@ -644,15 +644,15 @@ SET = {
 		render();
 		SET.spegniMeridiani();
 	},
-	coloraMeridiano: function( siglaMeridiano, matLine, matPoint, forza ){
-		if(typeof(forza) == 'undefined')var forza = false;
+	coloraMeridiano: function( siglaMeridiano, matLine, matPoint, forza=false ){
 		if(siglaMeridiano=='EX' && !matLine && matPoint=='Base' && SET.ptSel)return;
 		if(matPoint=='Base' && SET.ptSel && MERIDIANI[siglaMeridiano].meridianoAcceso && !forza)return;
 		if(SET.meridianiSecondariAccesi.length && matLine.indexOf("On")==-1)return;
 		if(controlsM._premuto && !forza)return;
 		var els = this.PT[siglaMeridiano].children;
 		for(v in els){
-			if(els[v].name.substr(0,1)!='_'){
+			if(	els[v].name.substr(0,1)!='_' && 
+				(!SET.ptSel || els[v].name.substr(0,5)!=SET.ptSel.name.substr(0,5))){
 				var mat = matPoint;
 				try{
 					if(els[v].userData.nota)mat="Note";
@@ -674,13 +674,13 @@ SET = {
 		}
 	},
 	scoloraMeridiani: function(){
-		for(m in MERIDIANI){
+		for(let m in MERIDIANI){
 			if(!__(MERIDIANI[m].meridianoAcceso,false) && m.indexOf("_")==-1){
 				this.coloraMeridiano(m,'','Base');
 			}
 		}
 	},
-	accendiMeridiano: function( siglaMeridiano, g, noSw ){
+	accendiMeridiano: function( siglaMeridiano, g=false, noSw=false ){
 		if(!globals.modello.cartella)return;
 		// verifico le autorizzazioni
 		if(!SET.verFreeMeridiani(siglaMeridiano)){
@@ -691,10 +691,8 @@ SET = {
 		if(SET.meridianiSecondariAccesi.length){
 			SCHEDA.scaricaScheda();
 		}
-		if(typeof(noSw) == 'undefined')var noSw = false;
-		if(typeof(g)=='undefined')var g = false;
 		if(!g || (g && this.ptSel)){
-			for(m in MERIDIANI){
+			for(let m in MERIDIANI){
 				if(MERIDIANI[m].categoria == "" ){
 					var pass=true;
 					if(g && this.ptSel){
@@ -732,7 +730,7 @@ SET = {
 		if(g){
 			var nAccesi=0;
 			this.mAtt='';
-			for(var m in MERIDIANI){
+			for(let m in MERIDIANI){
 				if(MERIDIANI[m].meridianoAcceso){
 					nAccesi++;
 					this.mAtt=m;
@@ -752,10 +750,9 @@ SET = {
 		this.coloraMeridiano(siglaMeridiano,'','Base');
 		MERIDIANI[siglaMeridiano].meridianoAcceso=false;
 	},
-	spegniMeridiani: function( forza ){
-		if(typeof(forza)=='undefined')var forza = false;
+	spegniMeridiani: function( forza=false ){
 		if(SCHEDA.scheda2Aperta || forza){
-			for(m in MERIDIANI){
+			for(let m in MERIDIANI){
 				if(MERIDIANI[m].meridianoAcceso){
 					var mer = m;
 					SET.accendiMeridiano(m,true);
@@ -765,14 +762,13 @@ SET = {
 		}
 	},
 	_applyLineMethod: function(){
-		for(m in MERIDIANI){
+		for(let m in MERIDIANI){
 			if(MERIDIANI[m].meridianoAcceso){
 				this.coloraMeridiano(m,'On["'+MERIDIANI[m].elemento+'"]','On');
 			}
 		}
 	},
-	swContrastMethod: function(n){
-		if(typeof(n)=='undefined')var n=SET.COL.contrastMethod;
+	swContrastMethod: function(n=SET.COL.contrastMethod){
 		SET.COL.contrastMethod=n ? false : true;
 		if(SET.COL.contrastMethod){
 			SET.MAT.lineYang.opacity = SET.MAT.opLineContr;
@@ -828,10 +824,7 @@ SET = {
 		if(SET.COL.contrastMethod)document.getElementById("p_contrasto").classList.add("btnSel");
 		else document.getElementById("p_contrasto").classList.remove("btnSel");
 	},
-	scriviTsubo: function( tsubo, esteso, noRet, sigla ){
-		if(typeof(esteso)=='undefined')var esteso = false;
-		if(typeof(noRet)=='undefined')var noRet = false;
-		if(typeof(sigla)=='undefined')var sigla = false;
+	scriviTsubo: function( tsubo, esteso=false, noRet=false, sigla=false ){
 		var pT = tsubo.split(".");
 		var siglaTsubo = pT[0]+"."+pT[1];
 		var siglaTsuboOr = siglaTsubo;
@@ -889,7 +882,7 @@ SET = {
 		SET.annullaEvidenziaTsubo();
 		var re = /selTsubo\([^\)]+\)/ig;
 		var result = html.match(re);
-		for(k in result){
+		for(let k in result){
 			var pT=result[k].split("'");
 			while(pT[1].indexOf("|")>-1)pT[1]=pT[1].replace("|",".");
 			var pP=pT[1].split(".");
@@ -899,7 +892,7 @@ SET = {
 			var el = scene.getObjectByName("PT_"+siglaMeridiano)
 			if(el){
 				for(e in el.children){
-					if(el.children[e].name.indexOf("_"+siglaMeridiano+"."+nTsubo+".")==0)el.children[e].material=pointEvi;
+					if(el.children[e].name.indexOf("_"+siglaMeridiano+"."+nTsubo+".")==0)el.children[e].material=SET.MAT.pointEvi;
 				}
 			}
 			SET.tsuboEvidenziati.push(pT[1]);
@@ -910,14 +903,14 @@ SET = {
 		SET.spegniMeridiani(true);
 		var re = /accendiMeridiano\([^\)]+\)/ig;
 		var result = html.match(re);
-		for(k in result){
+		for(let k in result){
 			var siglaMeridiano=result[k].split("'")[1];
 			SET.accendiMeridiano(siglaMeridiano,true);
 		}
 	},
 	evidenziaTsuboMod: function( elenco ){ 
 		SET.annullaEvidenziaTsubo();
-		for(k in elenco){
+		for(let k in elenco){
 			var pP=elenco[k].split(".");
 			var nTsubo=pP[0];
 			if(nTsubo.length == 1)nTsubo = "0"+nTsubo;
@@ -937,13 +930,13 @@ SET = {
 	},
 	evidenziaMeridianiMod: function( elenco ){
 		SET.spegniMeridiani(true);
-		for(k in elenco){
+		for(let k in elenco){
 			SET.accendiMeridiano(elenco[k],true);
 		}
 	},
 	annullaEvidenziaTsubo: function(){
 		if(SET.tsuboEvidenziati.length){
-			for(k in SET.tsuboEvidenziati){
+			for(let k in SET.tsuboEvidenziati){
 				var pT=SET.tsuboEvidenziati[k];
 				var pP=pT.split(".");
 				var nTsubo=pP[0];
@@ -1032,7 +1025,7 @@ SET = {
 	estraiSigla: function( siglaMeridiano ){
 		var siglaDef = siglaMeridiano;
 		if(localStorage.sistemaSigleMeridiani=='INT' || !localStorage.sistemaSigleMeridiani)return siglaMeridiano;
-		for(m in DB.mtc.meridiani){
+		for(let m in DB.mtc.meridiani){
 			if(siglaMeridiano == DB.mtc.meridiani[m].sigle[localStorage.sistemaSigleMeridiani])siglaDef = m;
 		}
 		return siglaDef;
@@ -1046,7 +1039,7 @@ SET = {
 		var regexp = /[\s>\(\.\,]{0,1}[0-9]{1,2}\.[A-Z]{2}[\s<\.,\)]{1}/ig;
 		var str = document.getElementById("scheda_testo"+nScheda).innerHTML;
 		var pts = str.match(regexp);
-		for(p in pts){
+		for(let p in pts){
 			var pP = pts[p].split(".");
 			str = str.replace(pts[p], pP[0]+"."+SET.convSigla(pP[1].substr(0,2))+pP[1].substr(2,1));
 		}
@@ -1054,22 +1047,21 @@ SET = {
 		if(!nScheda){
 			var str = document.getElementById("scheda_titolo"+nScheda).innerHTML;
 			var pts = str.match(regexp);
-			for(p in pts){
+			for(let p in pts){
 				var pP = pts[p].split(".");
 				str = str.replace(pts[p], pP[0]+"."+SET.convSigla(pP[1].substr(0,2))+pP[1].substr(2,1));
 			}
 			document.getElementById("scheda_titolo"+nScheda).innerHTML = str;
 		}
 	},
-	convPuntiScheda: function( html, noPall ){
-		if(typeof(noPall)=='undefined')var noPall = false;
+	convPuntiScheda: function( html, noPall=false ){
 		var pallClass = 'pallinoPat';
 		if(noPall)pallClass += ' pallinoTsubo';
 		var nScheda = '';
 		if(SCHEDA.scheda2Aperta)nScheda='2';
 		var regexp = /\[\.[0-9]{1,2}\.[A-Z]{2}\.\]/ig;
 		var pts = html.match(regexp);
-		for(p in pts){
+		for(let p in pts){
 			var pP = pts[p].split(".");
 			var n_P = pP[1];
 			var siglaMeridiano = pP[2].substr(0,2);
@@ -1080,13 +1072,13 @@ SET = {
 		}
 		var regexp = /\[\.[A-Z]{2}\.\]/ig;
 		var pts = html.match(regexp);
-		for(p in pts){
+		for(let p in pts){
 			var pP = pts[p].split(".");
 			var siglaMeridiano = pP[1].substr(0,2);
 			var n_M = SET.convSigla(siglaMeridiano)+pP[1].substr(2,1);
 			var nome = '';
-			for(m in DB.set.teoria[1].contenuti){
-				if(m && DB.set.teoria[1].contenuti[m].sigla == siglaMeridiano)nome = DB.set.teoria[1].contenuti[m].TitoloTeoria;
+			for(let m in DB.set.teoria[SET.idTeoMeridiani].contenuti){
+				if(m && DB.set.teoria[SET.idTeoMeridiani].contenuti[m].sigla == siglaMeridiano)nome = DB.set.teoria[SET.idTeoMeridiani].contenuti[m].TitoloTeoria;
 			}
 			html = html.replace(pts[p], '<span class="meridianoPat"' +
 										'	   onClick="SET.accendiMeridiano(\''+siglaMeridiano+'\',true);"' +
@@ -1106,7 +1098,7 @@ SET = {
 		var HTML_imp = 
 			'<p><i>'+htmlEntities(TXT("SistemaSigle"))+':</i> ' +
 			'<select id="sceltaSigle" onChange="SET.popolaSigle();">';
-		for(k in DB.mtc.meridiani["BL"].sigle){
+		for(let k in DB.mtc.meridiani["BL"].sigle){
 			HTML_imp += '  <option value="'+k+'"';
 			if(localStorage.sistemaSigleMeridiani == k)HTML_imp += ' SELECTED';
 			HTML_imp += '>'+k+'</option>'+H.chr10;
@@ -1115,7 +1107,7 @@ SET = {
 			'</select></p>'+H.chr10 +
 			'<div id="tbSigleMeridiani"></div>' +
 			'	<span class="separatorePulsanti"></span><div><i>'+htmlEntities(TXT("MezzoDefault"))+':</i></div><div id="tt_mezzival2">';
-		for(m in mzs){
+		for(let m in mzs){
 			HTML_imp += '<span style="background-image:url(img/mezzo_'+mzs[m]+'.png);"' +
 					'	   onClick="PAZIENTI.cambiaGZ(\''+mzs[m]+'\',false);"' +
 					'	   data-mezzo="'+mzs[m]+'"';
@@ -1139,7 +1131,7 @@ SET = {
 		var HTML = '';
 		HTML += '<table cellpadding="5" cellspacing="0" border="0" id="tbSigleMeridiani_tab">';
 		var disp = true;
-		for(m in DB.set.meridiani){
+		for(let m in DB.set.meridiani){
 			
 			if(disp)HTML +=
 					'	<tr>';
@@ -1160,21 +1152,20 @@ SET = {
 	},
 	
 	
-	accendiMeridianoSecondario: function( sigla, mantieni ){
+	accendiMeridianoSecondario: function( sigla, mantieni=false ){
 		if(!globals.modello.cartella)return;
-		for(m in MERIDIANI){
+		for(let m in MERIDIANI){
 			if(MERIDIANI[m].categoria == "" ){
 				if(MERIDIANI[m].meridianoAcceso){
 					if(m!=sigla)SET.spegniMeridiano(m);
 				}
 			}	
 		}
-		if(typeof(mantieni) == 'undefined')var mantieni = false;
 		SET.meridianiSecondariAccesi.push(sigla);
 		
 		var meridiano = scene.getObjectByName( "LN_"+sigla );
 		var percorsoInterno = false;
-		for(c in meridiano.children){
+		for(let c in meridiano.children){
 			if( __(meridiano.children[c].userData.interno) )percorsoInterno = true;
 		}
 		if(!SET.COL.contrastMethod)SET.swContrastMethod();
@@ -1186,7 +1177,7 @@ SET = {
 		var evidenziati = meridiano.userData.evidenziati;
 		if(meridiano.userData.evidenziati){
 			for(e in evidenziati){
-				for(i in evidenziati[e]){
+				for(let i in evidenziati[e]){
 					scene.getObjectByName( evidenziati[e][i] ).material = MODELLO.MAT.materialVisceriEvi;
 				}
 			}
@@ -1198,12 +1189,10 @@ SET = {
 			MODELLO.MAT.materialVisceri.visible = false;
 		}
 	},
-	spegniMeridianoSecondario: function( sigla, forza ){
+	spegniMeridianoSecondario: function( sigla='', forza=false ){
 		if(!globals.modello.cartella)return;
-		if(typeof(sigla) == 'undefined')var sigla = '';
-		if(typeof(forza) == 'undefined')var forza = false;
 		var meridianoPrincipale = false;
-		for(m=SET.meridianiSecondariAccesi.length-1;m>-1;m--){
+		for(let m=SET.meridianiSecondariAccesi.length-1;m>-1;m--){
 			if(SET.meridianiSecondariAccesi[m] == sigla || !sigla){
 				var meridiano = scene.getObjectByName( "LN_"+SET.meridianiSecondariAccesi[m] );
 				if(SET.meridianiSecondariAccesi[m].indexOf("_")==-1){
@@ -1221,7 +1210,7 @@ SET = {
 				var evidenziati = meridiano.userData.evidenziati;
 				if(evidenziati){
 					for(e in evidenziati){
-						for(i in evidenziati[e]){
+						for(let i in evidenziati[e]){
 							var tipo = scene.getObjectByName( evidenziati[e][i] ).parent.name;
 							scene.getObjectByName( evidenziati[e][i] ).material = eval("MODELLO.MAT.material"+tipo);
 						}
@@ -1289,11 +1278,11 @@ SET = {
 	filtraSet: function(){
 		var vis = true;
 		if(DB.login.data.auths.indexOf(globals.set.cartella)==-1 || !LOGIN.logedin())vis = false;
-		for(m in SETS.children){
+		for(let m in SETS.children){
 			if(SET.MERIDIANI_free.indexOf(SETS.children[m].name.split("_")[1])==-1)SETS.children[m].visible = vis;
 		}
 		var ME = document.getElementById("lista_meridiani").getElementsByClassName("listaMeridiani")[0].getElementsByTagName("div");
-		for(m in ME){
+		for(let m in ME){
 			if(ME[m].id){
 				if(!vis && ME[m].id!='pLR'){
 					ME[m].classList.add("lockedItem");

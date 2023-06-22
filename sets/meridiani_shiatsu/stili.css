@@ -108,9 +108,16 @@ body.uomo #pulsante_modello{
 .pallinoPat.ptNoSel{
 	cursor:default !important;
 }
-.pallinoPat:not(.ptNoSel):hover{
+.pallinoPat:not(.ptNoSel):not(.lockedItem):hover{
 	background-color:rgba(255,255,255,0.3);
 	border-radius:3px;
+}
+.pallinoPat.lockedItem {
+	background-image: url(img/pallinoPat.png), url(../../img/lock.png) !important;
+    background-position: 5px 9px, calc(100% - 3px) 5px !important;
+    background-size: auto, auto 59% !important;
+    cursor: default !important;
+    opacity: 0.6 !important;
 }
 .pallinoPatEsteso{
 	text-overflow: ellipsis;
@@ -303,8 +310,9 @@ body:not(.bodyStyled1):not(.bodyStyled2):not(.smart) #p_set{
 	margin-left:5px;
 }
 #meridianiSmart_cont:not(.onlyCIN) .noMAS,
-#meridianiSmart_cont.onlyNMK,
-#meridianiSmart_ico.onlyNMK,
+/*#meridianiSmart_cont.onlyNMK,
+#meridianiSmart_ico.onlyNMK,*/
+#meridianiSmart_cont.onlyNMK > .noNMK,
 .listaMeridiani:not(.onlyCIN) .noMAS,
 .listaMeridiani.onlyNMK .noNMK,
 .listaMeridiani:not(.onlyNMK) .NMK{
@@ -474,11 +482,11 @@ body:not(.smart) .listaMeridiani .p_aria:not(.elencoSel) span:hover{
 	background-image:url(../../img/frSu.png) !important;
 }
 
-.p_none.elencoSelnot(.overLight):hover strong,
-.p_acqua.elencoSelnot(.overLight):hover strong,
-.p_legno.elencoSelnot(.overLight):hover strong,
-.p_fuoco.elencoSelnot(.overLight):hover strong,
-.p_fuoco_supplementare.elencoSelnot(.overLight):hover strong{
+.p_none.elencoSel:not(.overLight):hover strong,
+.p_acqua.elencoSel:not(.overLight):hover strong,
+.p_legno.elencoSel:not(.overLight):hover strong,
+.p_fuoco.elencoSel:not(.overLight):hover strong,
+.p_fuoco_supplementare.elencoSel:not(.overLight):hover strong{
 	background-color:rgba(255,255,255,0.3) !important;
 }
 .p_none span:not(.valMerid),
@@ -707,6 +715,7 @@ body:not(.bodyModello) #btns_set > div{
     margin: 2px;
     cursor: pointer;
     background-color: rgba(255,255,255,0.2);
+	margin-left: 128px;
 }
 body:not(.smart) #meridianiSmart_cont div:not(.elencoSel):hover{
 	background-color: rgba(255,255,255,0.3) !important;
@@ -782,7 +791,8 @@ body:not(.smart) #meridianiSmart_cont div:not(.elencoSel):hover{
     height: 36px;
     line-height: 36px;
 }
-#sceltaMeridianiElenco{
+#sceltaMeridianiElenco,
+#sceltaMeridianiElenco_smart{
 	display: inline-block;
     height: 30px;
     line-height: 30px;
@@ -803,8 +813,145 @@ body:not(.smart) #meridianiSmart_cont div:not(.elencoSel):hover{
 	box-shadow:0px 0px 3px rgba(0,0,0,0.5);
 	cursor:pointer;
 }
-
+#sceltaMeridianiElenco_smart{
+    margin-right: 0px;
+    margin-left: 0px;
+    width: 160px;
+    margin-bottom: 5px;
+    margin-top: 0px;
+    padding-right: 35px !important;
+    box-shadow: none;
+    background-color: transparent;
+    color: #FFF;
+    background-image: url(../../img/frGiu.png);
+    background-size: 40px;
+    background-position: calc(100% - -3px) center;
+    text-align: right;
+}
 body:not(.smart) #cambioSistemaMeridiani,
-body.smart #elenchi #cambioSistemaMeridiani{
+body.smart #elenchi #cambioSistemaMeridiani/*,
+.listaPatologie:not(.onlyNMK) > div.patsNMK,
+.listaPatologie.onlyNMK > div:not(.patsNMK)*/{
+	display:none !important;
+}
+
+.listaPatologie > div > span.pallSYS{
+	float: right;
+    border-radius: 10px;
+    width: 8px;
+    height: 8px;
+    vertical-align: middle;
+    background-color: #039;
+    opacity: .5;
+    margin-right: -10px;
+    margin-top: 5px;
 	display:none;
+}
+
+
+/*.listaPatologie:not(.onlyNMK) > div.patsNMK > span.pallNMK,*/
+/*.listaPatologie:not(.onlyNMK) > div > span.pallSYS,
+.listaPatologie.onlyNMK > div:not(.patsNMK) > span.pallSYS,
+.listaPatologie:not(.onlyMAS) > div > span.pallSYS,
+.listaPatologie.onlyMAS > div:not(.patsMAS) > span.pallSYS{
+}*/
+
+.listaPatologie.onlyNMK > div.patsNMK > span.pallSYS,
+.listaPatologie.onlyMAS > div.patsMAS > span.pallSYS,
+.listaPatologie.onlyCIN > div.patsCIN > span.pallSYS{
+	display:inline-block !important;
+}
+
+.patEvi:not(.lockedItem){
+    margin-top: 10px !important;
+    margin-bottom: 10px !important;
+}
+.patEvi:not(.lockedItem):not(.elencoSel){
+    background: #efe0a2 !important;
+}
+.patEvi:not(.lockedItem):not(.elencoSel):hover{
+    background: #ffdd89 !important;
+}
+
+
+body.donna .eviPoints,
+body.uomo .eviPoints{
+    background-color: rgba(0,0,0,0.1) !important;
+    box-shadow: 0px 0px 2px #89aeff, 0px 0px 3px #89aeff, 0px 0px 5px rgba(0,0,0,0.3);
+}
+.schedaSpecifica {
+    background-color: rgba(0,0,0,0.05);
+    padding: 7px 7px;
+    border-radius: 5px;
+    margin-top: 15px;
+}
+.schedaSpecifica > p:first-child {
+    font-weight: bold;
+    border-bottom: 1px solid rgba(0,0,0,0.2);
+    margin: 0px 0px 5px 0px;
+    padding: 5px 0px 10px 5px;
+    font-size: var(--font-14-94);
+}
+.eviPtsBtn {
+    display: inline-block;
+    float: right;
+    width: 26px;
+    height: 26px;
+    border-radius: 13px;
+    cursor: pointer;
+    background-image: url(../../img/ico_vedi.png);
+    background-position: center center;
+    background-repeat: no-repeat;
+    margin-top: -5px;
+    opacity: 0.4;
+}
+.eviPoints .eviPtsBtn {
+    background-color: #8eb3ff;
+    opacity: 1;
+}
+.swSistema{
+	padding-top: 10px;
+    margin-top: 10px;
+    border-top: 1px solid rgba(0,0,0,.2);
+    text-align: right;
+    padding-right: 8px;
+    padding-bottom: 5px;
+}
+.schedaSpecifica:not(.eviPoints) .swSistema{
+	display:none;
+}
+.swSistema span{
+	cursor:pointer;
+	/*text-decoration:underline;*/
+}
+
+
+/* NAMIKOSHI */
+.dettNamikoshi .numPoints{
+    width: 107px !important;
+}
+.dettNamikoshi .textPuntoTratt{
+    width: calc(100% - 216px) !important;
+}
+.smart #scheda:not(.sch_Max450) .dettNamikoshi .textPuntoTratt{
+	width: calc(100% - 285px) !important;
+}
+.touch:not(.smart) #scheda:not(.sch_Max450) .dettNamikoshi .textPuntoTratt{
+	width: calc(100% - 301px) !important;
+}
+
+.dettNamikoshi .textPuntoTratt{
+	margin-top: 0px !important;
+    border: none !important;
+    background: transparent !important;
+    border-radius: 0px !important;
+	height: 24px !important;
+    margin-bottom: 3px;
+	font-style:italic;
+}
+#scheda:not(.sch_Max600) .dettNamikoshi .textPuntoTratt{
+	margin-top: 0px !important;
+}
+.dettNamikoshi .textPuntoTratt{
+    width: calc(100% - 238px) !important;
 }

@@ -30,7 +30,7 @@ var NOTIFICHE = {
 		//console.log(DB.notifiche);
 		if(DB.notifiche.length){
 			DB.notifiche.sort(sort_by("DataModifica", true, parseInt));
-			for(n in DB.notifiche){
+			for(let n in DB.notifiche){
 				HTML += '<div class="elsNotifiche" onClick="NOTIFICHE.car_notifica('+n+');">';
 				if(DB.notifiche[n].letta*1 == 0)HTML += '<span class="pallinoNotifica"></span>';
 				HTML += htmlEntities(DB.notifiche[n].NomeNotifica);

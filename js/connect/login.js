@@ -14,11 +14,13 @@ var LOGIN = {
 	HTML: '',
 	daSync: false,
 	getUniqueId: function(){
+		// restituisce un ID unico come 1234-1234567890123
 		var t = new Date().getTime()+"";
 		var r = (Math.floor(Math.random() * (9999 - 1000 + 1)) + 1000)+"";
 		return(r+"-"+t);
 	},
 	_init: function(){
+		// inizializza il DB.login
 		DB.login={	"lastSync": 0,
 			"data": {
 				"idUtente": 0,
@@ -38,87 +40,58 @@ var LOGIN = {
 				"auths": []
 			}
 		};
-		localPouchDB.setItem(MD5("DB.login"), IMPORTER.COMPR(DB.login)).then(function(){ // salvo il DB
-			//
-		});
+		localPouchDB.setItem(MD5("DB.login"), IMPORTER.COMPR(DB.login));
 	},
 	
 	_frv: function(){
+		// restituisce 'frv' se non si è loggati
 		var str = '';
 		if(!LOGIN.logedin())str = 'frv';
 		return str;
 	},
-	getDB: function( syncro ){
-		if(typeof(syncro) == 'undefined')var syncro = false;
-		localPouchDB.getItem(MD5("DB"+LOGIN._frv()+".procedure")).then(function(dbCont){
-			DB.procedure=IMPORTER.DECOMPR(dbCont);
+	getDB: function( syncro=false ){
+		// carica i DB da pouch
+		Promise.all([
+			localPouchDB.getItem(MD5("DB"+LOGIN._frv()+".procedure")),
+			localPouchDB.getItem(MD5("DB"+LOGIN._frv()+".note")),
+			localPouchDB.getItem(MD5("DB"+LOGIN._frv()+".pazienti")),
+			localPouchDB.getItem(MD5("DB"+LOGIN._frv()+".fornitori")),
+			localPouchDB.getItem(MD5("DB"+LOGIN._frv()+".servizi")),
+			localPouchDB.getItem(MD5("DB"+LOGIN._frv()+".appuntamenti")),
+			localPouchDB.getItem(MD5("DB"+LOGIN._frv()+".annotazioni")),
+			localPouchDB.getItem(MD5("DB"+LOGIN._frv()+".ricerche")),
+			localPouchDB.getItem(MD5("DB"+LOGIN._frv()+".foto"))
+		]).then(function( dbs ){
+			DB.procedure=IMPORTER.DECOMPR(dbs[0]);
+			DB.note=IMPORTER.DECOMPR(dbs[1]);
+			DB.pazienti=IMPORTER.DECOMPR(dbs[2]);
+			DB.fornitori=IMPORTER.DECOMPR(dbs[3]);
+			DB.servizi=IMPORTER.DECOMPR(dbs[4]);
+			DB.appuntamenti=IMPORTER.DECOMPR(dbs[5]);
+			DB.annotazioni=IMPORTER.DECOMPR(dbs[6]);
+			DB.ricerche=IMPORTER.DECOMPR(dbs[7]);
+			DB.foto=IMPORTER.DECOMPR(dbs[8]);
 			
-			localPouchDB.getItem(MD5("DB"+LOGIN._frv()+".note")).then(function(dbCont){
-				DB.note=IMPORTER.DECOMPR(dbCont);
-				
-				localPouchDB.getItem(MD5("DB"+LOGIN._frv()+".pazienti")).then(function(dbCont){
-					DB.pazienti=IMPORTER.DECOMPR(dbCont);
-					if(PAZIENTI.idCL == -1)PAZIENTI.caricaPazienti();
-				
-					localPouchDB.getItem(MD5("DB"+LOGIN._frv()+".fornitori")).then(function(dbCont){
-						DB.fornitori=IMPORTER.DECOMPR(dbCont);
-						FORNITORI.caricaFornitori();
-				
-						localPouchDB.getItem(MD5("DB"+LOGIN._frv()+".servizi")).then(function(dbCont){
-							DB.servizi=IMPORTER.DECOMPR(dbCont);
-							SERVIZI.caricaServizi();
-				
-							localPouchDB.getItem(MD5("DB"+LOGIN._frv()+".appuntamenti")).then(function(dbCont){
-								DB.appuntamenti=IMPORTER.DECOMPR(dbCont);
-					
-								localPouchDB.getItem(MD5("DB"+LOGIN._frv()+".annotazioni")).then(function(dbCont){
-									DB.annotazioni=IMPORTER.DECOMPR(dbCont);
-									ANNOTAZIONI.caricaAnnotazioni();
-						
-									localPouchDB.getItem(MD5("DB"+LOGIN._frv()+".ricerche")).then(function(dbCont){
-										DB.ricerche=IMPORTER.DECOMPR(dbCont);
-										
-										localPouchDB.getItem(MD5("DB"+LOGIN._frv()+".foto")).then(function(dbCont){
-											DB.foto=IMPORTER.DECOMPR(dbCont);
-												/*localPouchDB.getItem(MD5("DB"+LOGIN._frv()+".appuntamenti")).then(function(dbCont){
-												DB.appuntamenti=IMPORTER.DECOMPR(dbCont);
-											
-												localPouchDB.getItem(MD5("DB"+LOGIN._frv()+".annotazioni")).then(function(dbCont){
-													DB.annotazioni=IMPORTER.DECOMPR(dbCont);*/
-													if(syncro){
-														if(CONN.getConn())LOGIN.aggiornaToken(true);
-														else LOGIN.globalSync();
-													}
-												/*});
-											});*/
-										});
-									});
-								});
-							});
-						});
-					});
-				});
-			});
+			if(PAZIENTI.idCL == -1)PAZIENTI.caricaPazienti();
+			FORNITORI.caricaFornitori();
+			SERVIZI.caricaServizi();
+			ANNOTAZIONI.caricaAnnotazioni();
+			if(syncro){
+				if(CONN.getConn())LOGIN.aggiornaToken(true);
+				else LOGIN.globalSync();
+			}
 		});
 	},
 	resetDB: function(){
-		localPouchDB.setItem(MD5("DB.procedure"), IMPORTER.COMPR(DB.procedure)).then(function(){ // salvo il DB
-			localPouchDB.setItem(MD5("DB.note"), IMPORTER.COMPR(DB.note)).then(function(){ // salvo il DB
-				localPouchDB.setItem(MD5("DB.pazienti"), IMPORTER.COMPR(DB.pazienti)).then(function(){ // salvo il DB
-					localPouchDB.setItem(MD5("DB.fornitori"), IMPORTER.COMPR(DB.fornitori)).then(function(){ // salvo il DB
-						localPouchDB.setItem(MD5("DB.servizi"), IMPORTER.COMPR(DB.servizi)).then(function(){ // salvo il DB
-							localPouchDB.setItem(MD5("DB.appuntamenti"), IMPORTER.COMPR(DB.appuntamenti)).then(function(){ // salvo il DB
-								localPouchDB.setItem(MD5("DB.ricerche"), IMPORTER.COMPR(DB.ricerche)).then(function(){ // salvo il DB
-									localPouchDB.setItem(MD5("DB.foto"), IMPORTER.COMPR(DB.foto)).then(function(){ // salvo il DB
-									
-									});
-								});
-							});
-						});
-					});
-				});
-			});
-		});
+		//salva tutto il DB locale in pouchDB
+		localPouchDB.setItem(MD5("DB.procedure"), IMPORTER.COMPR(DB.procedure));
+		localPouchDB.setItem(MD5("DB.note"), IMPORTER.COMPR(DB.note));
+		localPouchDB.setItem(MD5("DB.pazienti"), IMPORTER.COMPR(DB.pazienti));
+		localPouchDB.setItem(MD5("DB.fornitori"), IMPORTER.COMPR(DB.fornitori));
+		localPouchDB.setItem(MD5("DB.servizi"), IMPORTER.COMPR(DB.servizi));
+		localPouchDB.setItem(MD5("DB.appuntamenti"), IMPORTER.COMPR(DB.appuntamenti));
+		localPouchDB.setItem(MD5("DB.ricerche"), IMPORTER.COMPR(DB.ricerche));
+		localPouchDB.setItem(MD5("DB.foto"), IMPORTER.COMPR(DB.foto));
 	},
 	
 	
@@ -131,28 +104,31 @@ var LOGIN = {
 		}else return DB.login.data[k];
 	},
 	setLS: function(k,v){
+		// salva il valore v nell'elemento k di DB.login
 		DB.login.data[k]=v;
-		localPouchDB.setItem(MD5("DB.login"), IMPORTER.COMPR(DB.login)).then(function(){ // salvo il DB
-			//
-		});
+		localPouchDB.setItem(MD5("DB.login"), IMPORTER.COMPR(DB.login));
 		return;
 	},
 	recuperaPwd: function(){
+		// apre il link di recuper password (INSERIRE NELL'APP)
 		var url='https://www.iaomai.app/account/requestpassword.php?l='+globals.siglaLingua.toLowerCase()+"&app="+tipoApp;
 		if(window.cordova && window.cordova.platformId !== 'windows')window.open(url,'_system');
 		else window.open(url,'_blank');
 	},
 	logedin: function(){
+		// restituisce il TOKEN, indicando che si è connessi
 		var TOKEN=DB.login.data.TOKEN;
 		if(typeof(TOKEN)=='undefined')TOKEN='';
 		return TOKEN;
 	},
 	reg: function(){
+		// restituisce l'idUtente
 		var idUtente=DB.login.data.idUtente;
 		if(typeof(idUtente)=='undefined')idUtente='';
 		return idUtente;
 	},
 	getOS: function() {
+		// restituisce il sistema operativo
 		var userAgent = window.navigator.userAgent,
 		platform = window.navigator.platform,
 		macosPlatforms = ['Macintosh', 'MacIntel', 'MacPPC', 'Mac68K'],
@@ -176,19 +152,8 @@ var LOGIN = {
 		return os;
 	},
 	getDeviceInfo: function(){
+		// restituisce un array con le caratteristiche del dispositivo
 		var device = {};
-		/*if(!brw_firefox){
-			device.platform = navigator.userAgentData.platform;
-			if(navigator.userAgent.indexOf(device.platform)>-1){
-				var re = new RegExp(device.platform+"[^;]+;","g");
-				var matches = navigator.userAgent.match(re);
-				if(matches.length)device.platform = matches[0].substr(0,matches[0].length-1);
-			}
-		}else if(typeof(navigator.oscpu)!='undefined'){
-			device.platform = navigator.oscpu.split(";")[0];
-		}else{
-			device.platform = LOGIN.getOS();
-		}*/
 		device.platform = "Unknown OS";
 		if (navigator.userAgent.indexOf("Win") != -1) device.platform = "Windows";
 		if (navigator.userAgent.indexOf("Mac") != -1) device.platform = "Macintosh";
@@ -273,8 +238,8 @@ var LOGIN = {
 									}, 500);
 		}
 	},
-	verLogin: function( funct ){ // verifica se si è loggati
-		if(typeof(funct) == 'undefined')var funct = '';
+	verLogin: function( funct='' ){
+		// verifica se si è loggati
 		localPouchDB.getItem(MD5("DB.login")).then(function(dbCont){ // leggo il DB
 			loginProvv=IMPORTER.DECOMPR(dbCont);
 			if(loginProvv!=null){
@@ -301,11 +266,11 @@ var LOGIN = {
 			}
 		});
 	},
-	scriviUtente: function(){ // scrive il nome utente nel menu impostazioni
+	scriviUtente: function(){
+		// scrive il nome utente nel menu impostazioni
 		var NN=LOGIN.getLS("Nominativo");
 		var EE=LOGIN.getLS("Email");
 		if(typeof(NN)=='undefined')NN='';
-		
 		document.getElementById("p_reg").style.display = 'none';
 		document.getElementById("btn_login").classList.remove("btn_login_mini");
 		document.getElementById("btn_logout").classList.remove("btn_logout_mini");
@@ -327,8 +292,6 @@ var LOGIN = {
 				document.getElementById("btn_login").title='LOGIN';
 				document.getElementById("loginGuida").style.display = 'none';
 			}else{
-				
-				//if(!(!onlineVersion && (iPad || iPhone || isMacUA)))
 				document.getElementById("p_reg").style.display = 'block';
 				document.getElementById("utDisc").style.display = 'none';
 				NN=TXT("NessunUtente");
@@ -342,8 +305,9 @@ var LOGIN = {
 		}
 		document.getElementById("nomeUtente").innerHTML=NN;
 	},
-	attivaX: function(){ // attiva il pulsante X nel login
-		var USRprovv=DB.login.data.UsernameU;
+	attivaX: function(){
+		// attiva il pulsante X nel login
+		var USRprovv = DB.login.data.UsernameU;
 		if(typeof(USRprovv)=='undefined')USRprovv='';
 		if(USRprovv.trim()!=''){
 			document.getElementById("USR").type='hidden';
@@ -357,6 +321,7 @@ var LOGIN = {
 		}
 	},
 	aggiornaToken: function(ret){
+		// richiama l'url per aggiornare il token
 		LOGIN.retIni=ret;
 		if(CONN.getConn()){
 			CONN.caricaUrl(	"testauth.php",
@@ -366,9 +331,9 @@ var LOGIN = {
 		}
 	},
 	salvaToken: function(txt){
+		// salva il TOKEN in DB.login
 		if(txt.substr(0,3)!='404'){
 			localPouchDB.setItem(MD5("DB.login"), IMPORTER.COMPR(JSON.parse(txt))).then(function(){ // salvo il DB
-				//
 				DB.login=JSON.parse(txt);
 				MODELLO.filtraAnatomia();
 				try{ SET.filtraSet(); }catch(err){}
@@ -380,7 +345,7 @@ var LOGIN = {
 			});
 		}else LOGIN.logout();
 	},
-	verificaToken: function(){ // verifico il Token e le notifiche
+	verificaToken: function(){
 		// Verifico che il token sia valido
 		if(CONN.getConn() && LOGIN.logedin()){
 			// se c'è connessione e ho il TOKEN
@@ -410,7 +375,7 @@ var LOGIN = {
 			// verifico se ci sono elementi da sincronizzare
 			//!!!!! POTREBBE ESSERE ESCLUSA LA FUNZIONE in quanto abbiamo tolto la visualizzazione del loghino
 			LOGIN.daSync=false;
-			for(p in DB.pazienti.data){
+			for(let p in DB.pazienti.data){
 				if(DB.pazienti.data[p].DataModifica>DB.pazienti.lastSync)LOGIN.daSync=true;
 				for(t in DB.pazienti.data[p].trattamenti){
 					if(DB.pazienti.data[p].trattamenti[t].DataModifica>DB.pazienti.lastSync)LOGIN.daSync=true;
@@ -420,36 +385,37 @@ var LOGIN = {
 				}
 			}
 			if(DB.fornitori){
-				for(p in DB.fornitori.data){
+				for(let p in DB.fornitori.data){
 					if(DB.fornitori.data[p].DataModifica>DB.fornitori.lastSync)LOGIN.daSync=true;
 				}
 			}
 			if(DB.servizi){
-				for(p in DB.servizi.data){
+				for(let p in DB.servizi.data){
 					if(DB.servizi.data[p].DataModifica>DB.servizi.lastSync)LOGIN.daSync=true;
 				}
 			}
 			if(DB.appuntamenti){
-				for(p in DB.appuntamenti.data){
+				for(let p in DB.appuntamenti.data){
 					if(DB.appuntamenti.data[p].DataModifica>DB.appuntamenti.lastSync)LOGIN.daSync=true;
 				}
 			}
 			if(DB.annotazioni){
-				for(p in DB.annotazioni.data){
+				for(let p in DB.annotazioni.data){
 					if(DB.annotazioni.data[p].DataModifica>DB.annotazioni.lastSync)LOGIN.daSync=true;
 				}
 			}
 			if(DB.procedure){
-				for(p in DB.procedure.data){
+				for(let p in DB.procedure.data){
 					if(DB.procedure.data[p].DataModifica>DB.procedure.lastSync)LOGIN.daSync=true;
 				}
 			}
 			if(DB.note){
-				for(p in DB.note.data){
+				for(let p in DB.note.data){
 					if(DB.note.data[p].DataModifica>DB.note.lastSync)LOGIN.daSync=true;
 				}
 			}
 		}
+		LINGUE.getGoogleLanguages();
 	},
 	avviaVerToken: function(){
 		// Avvia la verifica del TOKEN ogni 10 secondi
@@ -538,9 +504,7 @@ var LOGIN = {
 			//if(globals.set.cartella)caricaSet(globals.set.cartella,document.getElementById('p_'+globals.set.cartella));
 			//localPouchDB.clear();
 			setTimeout( function(){
-				localPouchDB.setItem(MD5("FILES"), IMPORTER.COMPR(JSON.stringify(FILES))).then(function(){
-					// salvo il DB
-				});
+				localPouchDB.setItem(MD5("FILES"), IMPORTER.COMPR(JSON.stringify(FILES)));
 			},500);
 			DB._reset();
 			LOGIN.resetDB(); // lasciare dopo DB._reset();
@@ -559,10 +523,12 @@ var LOGIN = {
 		}});
 	},
 	decryptPrivacy: function(txt){		
-		if(txt.substr(0,3)=='[@]')txt=LZString.decompressFromUTF16(txt.substr(3,txt.length-3));
+		// decripta una stringa se inizia [@]
+		if(txt.substr(0,3)=='[@]')txt = LZString.decompressFromUTF16(txt.substr(3,txt.length-3));
 		return txt;
 	},
-	cryptPrivacy: function(txt,i){		
+	cryptPrivacy: function(txt,i){
+		// cripta una stringa	
 		if(	i!='meridiano' && 
 			i!='TipoDettaglio' && 
 			i!='TipoTrattamento' && 
@@ -590,15 +556,15 @@ var LOGIN = {
 	cryptJSON: function(el){
 		// CRYPRT per la PRIVACY: carica i dati testuali criptati sul server
 		var dbCAR=clone(el);
-		for(i in dbCAR){
+		for(let i in dbCAR){
 			if(typeof(dbCAR[i])!='object'){
 				dbCAR[i]=LOGIN.cryptPrivacy(dbCAR[i],i);
 			}else{
-				for(i2 in dbCAR[i]){
+				for(let i2 in dbCAR[i]){
 					if(typeof(dbCAR[i][i2])!='object'){
 						dbCAR[i][i2]=LOGIN.cryptPrivacy(dbCAR[i][i2],i2);
 					}else{
-						for(i3 in dbCAR[i][i2]){
+						for(let i3 in dbCAR[i][i2]){
 							dbCAR[i][i2][i3]=LOGIN.cryptPrivacy(dbCAR[i][i2][i3],i3);
 						}
 					}
@@ -693,12 +659,11 @@ var LOGIN = {
 							btnAdd );
 		}
 	},
-	car_utente: function( txt ){
+	car_utente: function( txt='' ){
 		/*
 		- risposta dallo scaricamento dati utente (modUtente)
 		- carica i dati dell'utente nella scheda
 		*/
-		if(typeof(txt)=='undefined')var txt = '';
 		if(txt.substr(0,3)=='404'){
 			
 		}else{
@@ -706,7 +671,7 @@ var LOGIN = {
 							!SCHEDA.verificaSchedaRet(),
 							arguments ).then(function(pass){if(pass){
 							var v = getParamNames(CONFIRM.args.callee.toString());
-							for(i in v)eval(getArguments(v,i));
+							for(let i in v)eval(getArguments(v,i));
 							
 				rimuoviLoading(document.getElementById("scheda_testo"));
 				var UT = JSON.parse(txt);
@@ -933,15 +898,15 @@ var LOGIN = {
 		var gg = document.formMod.giornoDataNascita.value;
 		if(aaaa.length<4){
 			var l = aaaa.length;
-			for(n=l;n<4;n++)aaaa='0'+aaaa;
+			for(let n=l;n<4;n++)aaaa='0'+aaaa;
 		}
 		if(mm.length<2){
 			var l = mm.length;
-			for(n=l;n<2;n++)mm='0'+mm;
+			for(let n=l;n<2;n++)mm='0'+mm;
 		}
 		if(gg.length<2){
 			var l = gg.length;
-			for(n=l;n<2;n++)gg='0'+gg;
+			for(let n=l;n<2;n++)gg='0'+gg;
 		}
 		DataNascita = aaaa+"-"+mm+"-"+gg;
 		
@@ -1008,9 +973,8 @@ var LOGIN = {
 			});
 		}
 	},
-	salvaAvatar: function( obj, n ){
+	salvaAvatar: function( obj, n = 'avatarUtente' ){
 		// sostituisce l'avatar provvisorio nella scheda
-		if(typeof(n) == 'undefined')var n = 'avatarUtente';
 		obj = JSON.parse(obj);
 		document.getElementById(n).getElementsByTagName('div')[0].style.backgroundImage="url('"+obj.imgMini+"')";
 		SCHEDA.formModificato = true;
@@ -1027,9 +991,8 @@ var LOGIN = {
 		
 				
 	// SINCRONIZZAZIONE
-	sincronizza: function(funct, bkp){
+	sincronizza: function(funct, bkp=false){
 		// sincronizza i DB locali con quelli remoti (quando modifico)
-		if(typeof(bkp)=='undefined')var bkp=false;
 		DB.verDbSize();
 		if(typeof(funct)!='undefined')LOGIN.afterFunct=funct;
 		else if(!LOGIN.afterFunct)LOGIN.afterFunct=null;
@@ -1041,356 +1004,329 @@ var LOGIN = {
 			LOGIN.afterFunct = null;
 		}
 	},
-	globalSync: function(dwnl, bkp, Nuovo){
+	globalSync: function(dwnl=false, bkp=false, Nuovo=false){
 		// sincro globale up e down
-		if(typeof(dwnl)=='undefined')var dwnl=false;
-		if(typeof(bkp)=='undefined')var bkp=false;
-		if(typeof(Nuovo)=='undefined')var Nuovo=false;
 		// da controllare all'avvio dell'app e ogni volta che riprende la connessione
 		// invio i lastSync delle tabelle
 		if(CONN.getConn() || dwnl){
 			LOGIN.totSinc = 0;
-			localPouchDB.getItem(MD5("DB"+LOGIN._frv()+".note")).then(function(dbCont){ // leggo il DB NOTE
-				DB.note=IMPORTER.DECOMPR(dbCont);
-				LOGIN.totSinc++;
-				localPouchDB.getItem(MD5("DB"+LOGIN._frv()+".procedure")).then(function(dbCont){ // leggo il DB PROCEDURE
-					DB.procedure=IMPORTER.DECOMPR(dbCont);
-					LOGIN.totSinc++;
-					localPouchDB.getItem(MD5("DB"+LOGIN._frv()+".pazienti")).then(function(dbCont){ // leggo il DB PAZIENTI
-						DB.pazienti=IMPORTER.DECOMPR(dbCont);
-						LOGIN.totSinc++;
-						localPouchDB.getItem(MD5("DB"+LOGIN._frv()+".fornitori")).then(function(dbCont){ // leggo il DB FORNITORI
-							DB.fornitori=IMPORTER.DECOMPR(dbCont);
-							LOGIN.totSinc++;
-							localPouchDB.getItem(MD5("DB"+LOGIN._frv()+".servizi")).then(function(dbCont){ // leggo il DB SERVIZI
-								DB.servizi=IMPORTER.DECOMPR(dbCont);
-								LOGIN.totSinc++;
-								localPouchDB.getItem(MD5("DB"+LOGIN._frv()+".appuntamenti")).then(function(dbCont){ // leggo il DB SERVIZI
-									DB.appuntamenti=IMPORTER.DECOMPR(dbCont);
-									LOGIN.totSinc++;
-									localPouchDB.getItem(MD5("DB"+LOGIN._frv()+".annotazioni")).then(function(dbCont){ // leggo il DB SERVIZI
-										DB.annotazioni=IMPORTER.DECOMPR(dbCont);
-										LOGIN.totSinc++;
-										localPouchDB.getItem(MD5("DB"+LOGIN._frv()+".ricerche")).then(function(dbCont){ // leggo il DB RICERCHE
-											DB.ricerche=IMPORTER.DECOMPR(dbCont);
-											LOGIN.totSinc++;
-											localPouchDB.getItem(MD5("DB"+LOGIN._frv()+".foto")).then(function(dbCont){ // leggo il DB FOTO
-											
-												DB.foto=IMPORTER.DECOMPR(dbCont);
-												//LOGIN.totSinc++; /* le foto non contano perché sono solo in upload */
-												var elenco='';
-												
-												if(Nuovo){ // se è un account nuovo popolo i DB con quelli DEMO
-													DB.pazienti.data = DB.pulisciFRV(archiviDemo.pazienti);
-													DB.fornitori.data = DB.pulisciFRV(archiviDemo.fornitori);
-													DB.servizi.data = DB.pulisciFRV(archiviDemo.servizi);
-													DB.foto.data = DB.pulisciFRV(archiviDemo.foto);
-												}
-												
-												elencoFoto='';
-												for(k in DB.foto.data){
-													if(DB.foto.data[k]){
-														if(	!__(DB.foto.data[k].frv) && 
-															__(DB.foto.data[k].imgBig) && 
-															DB.foto.data[k].imgBig!='404'){
-																elencoFoto+=JSON.stringify(DB.foto.data[k])+", ";
-															}
-													}
-												}
-												if(elencoFoto)elenco+='"foto": ['+elencoFoto.substr(0,elencoFoto.length-2)+'], ';
-												
-												elencoRicerche='';
-												for(k in DB.ricerche.data){
-													if(DB.ricerche.data[k].DataModifica*1>DB.ricerche.lastSync*1 || dwnl || bkp){
-														elencoRicerche+=JSON.stringify(DB.ricerche.data[k])+", ";
-													}
-												}
-												if(elencoRicerche)elenco+='"ricerche": ['+elencoRicerche.substr(0,elencoRicerche.length-2)+'], ';
-												elencoNote='';
-												for(k in DB.note.data){
-													if(DB.note.data[k].DataModifica*1>DB.note.lastSync*1 || dwnl || bkp){
-														elencoNote+=LOGIN.cryptJSON(DB.note.data[k])+", ";
-													}
-												}
-												if(elencoNote)elenco+='"note": ['+elencoNote.substr(0,elencoNote.length-2)+'], ';		
-												elencoProcedure='';
-												for(k in DB.procedure.data){
-													if(DB.procedure.data[k].DataModifica*1>DB.procedure.lastSync*1 || dwnl || bkp){
-														DB.procedure.data[k].id_interno=k;
-														elencoProcedure+=JSON.stringify(DB.procedure.data[k])+", ";
-													}
-												}
-												if(elencoProcedure)elenco+='"procedure": ['+elencoProcedure.substr(0,elencoProcedure.length-2)+'], ';
-												
-												
-												
-												
-												elencoAppuntamenti='';
-												for(k in DB.appuntamenti.data){
-													var db={ 	"idAppuntamento": DB.appuntamenti.data[k].idAppuntamento*1,
-																"TestoAppuntamento": DB.appuntamenti.data[k].TestoAppuntamento,
-																"TimeAppuntamento": DB.appuntamenti.data[k].TimeAppuntamento*1,
-																"oraInizio": DB.appuntamenti.data[k].oraInizio*1,
-																"oraFine": DB.appuntamenti.data[k].oraFine*1,
-																"idPaziente": DB.appuntamenti.data[k].idPaziente*1,
-																"idCli": DB.appuntamenti.data[k].idCli*1,
-																"DataModifica":DB.appuntamenti.data[k].DataModifica*1,
-																"DataCreazione":DB.appuntamenti.data[k].DataCreazione*1,
-																"Cancellato": DB.appuntamenti.data[k].Cancellato*1 };
-																
-													var aggiungere=false;
-													
-													if((DB.appuntamenti.data[k].DataModifica*1>DB.appuntamenti.lastSync*1 || dwnl || bkp) && !__(DB.appuntamenti.data[k].frv))aggiungere=true;
-													if(aggiungere){
-														elencoAppuntamenti+=LOGIN.cryptJSON(db)+", ";
-													}
-												}
-												if(elencoAppuntamenti)elenco+='"appuntamenti": ['+elencoAppuntamenti.substr(0,elencoAppuntamenti.length-2)+'], ';
-												
-												elencoAnnotazioni='';
-												for(k in DB.annotazioni.data){
-													var db={ 	"idAnnotazione": DB.annotazioni.data[k].idAnnotazione*1,
-																"TitoloAnnotazione": DB.annotazioni.data[k].TitoloAnnotazione,
-																"TestoAnnotazione": DB.annotazioni.data[k].TestoAnnotazione,
-																"DataModifica":DB.annotazioni.data[k].DataModifica*1,
-																"DataCreazione":DB.annotazioni.data[k].DataCreazione*1,
-																"Cancellato": DB.annotazioni.data[k].Cancellato*1 };
-													
-													var aggiungere=false;
-													
-													if((DB.annotazioni.data[k].DataModifica*1>DB.annotazioni.lastSync*1 || dwnl || bkp) && !__(DB.annotazioni.data[k].frv))aggiungere=true;
-													if(aggiungere){
-														elencoAnnotazioni+=LOGIN.cryptJSON(db)+", ";
-													}
-												}
-												if(elencoAnnotazioni)elenco+='"annotazioni": ['+elencoAnnotazioni.substr(0,elencoAnnotazioni.length-2)+'], ';
-												
-												elencoServizi='';
-												for(k in DB.servizi.data){
-													var db={ 	"idServizio": DB.servizi.data[k].idServizio*1,
-																"NomeServizio": DB.servizi.data[k].NomeServizio,
-																"DescrizioneServizio": DB.servizi.data[k].DescrizioneServizio,
-																"CostoServizio": DB.servizi.data[k].CostoServizio*1,
-																"NumeroSedute": DB.servizi.data[k].NumeroSedute*1,
-																"DataModifica":DB.servizi.data[k].DataModifica*1,
-																"DataCreazione":DB.servizi.data[k].DataCreazione*1,
-																"Cancellato": DB.servizi.data[k].Cancellato*1 };
-													
-													var aggiungere=false;
-													
-													if((DB.servizi.data[k].DataModifica*1>DB.servizi.lastSync*1 || dwnl || bkp) && !__(DB.servizi.data[k].frv))aggiungere=true;
-													if(aggiungere){
-														elencoServizi+=LOGIN.cryptJSON(db)+", ";
-													}
-												}
-												if(elencoServizi)elenco+='"servizi": ['+elencoServizi.substr(0,elencoServizi.length-2)+'], ';
-												
-												
-												elencoFornitori='';
-												for(k in DB.fornitori.data){
-													var db={ 	"idFornitore": DB.fornitori.data[k].idFornitore*1,
-																"RagioneSociale": DB.fornitori.data[k].RagioneSociale,
-																"Intestazione": DB.fornitori.data[k].Intestazione,
-																"PartitaIva": DB.fornitori.data[k].PartitaIva,
-																"CodiceFiscale": DB.fornitori.data[k].CodiceFiscale,
-																"Indirizzo": DB.fornitori.data[k].Indirizzo,
-																"CAP": DB.fornitori.data[k].CAP,
-																"Citta": DB.fornitori.data[k].Citta,
-																"Provincia": DB.fornitori.data[k].Provincia,
-																"Stato": DB.fornitori.data[k].Stato,
-																"Telefono": DB.fornitori.data[k].Telefono,
-																"Email": DB.fornitori.data[k].Email,
-																"NoteFornitore": DB.fornitori.data[k].NoteFornitore,
-																"etichette": JSON.stringify(DB.fornitori.data[k].etichette),
-																"DataModifica":DB.fornitori.data[k].DataModifica*1,
-																"DataCreazione":DB.fornitori.data[k].DataCreazione*1,
-																"Cancellato": DB.fornitori.data[k].Cancellato*1 };
-													
-													var aggiungere=false;
-													
-													if((DB.fornitori.data[k].DataModifica*1>DB.fornitori.lastSync*1 || dwnl || bkp) && !__(DB.fornitori.data[k].frv))aggiungere=true;
-													if(aggiungere){
-														elencoFornitori+=LOGIN.cryptJSON(db)+", ";
-													}
-												}
-												if(elencoFornitori)elenco+='"fornitori": ['+elencoFornitori.substr(0,elencoFornitori.length-2)+'], ';
-												elencoPazienti='';
-												for(k in DB.pazienti.data){
-													var db={ 	"idPaziente": DB.pazienti.data[k].idPaziente*1,
-																"Nome": DB.pazienti.data[k].Nome,
-																"Cognome": DB.pazienti.data[k].Cognome,
-																"Indirizzo": DB.pazienti.data[k].Indirizzo,
-																"CAP": DB.pazienti.data[k].CAP,
-																"Citta": DB.pazienti.data[k].Citta,
-																"Provincia": DB.pazienti.data[k].Provincia,
-																"Stato": DB.pazienti.data[k].Stato,
-																"Telefono": DB.pazienti.data[k].Telefono,
-																"Cellulare": DB.pazienti.data[k].Cellulare,
-																"paeseCellulare": DB.pazienti.data[k].paeseCellulare,
-																"Email": DB.pazienti.data[k].Email,
-																"sesso": DB.pazienti.data[k].sesso,
-																"NotePaziente": DB.pazienti.data[k].NotePaziente,
-																"DataNascita": DB.pazienti.data[k].DataNascita,
-																"LuogoNascita": DB.pazienti.data[k].LuogoNascita,
-																"tags": JSON.stringify(DB.pazienti.data[k].tags),
-																"etichette": JSON.stringify(DB.pazienti.data[k].etichette),
-																"medicine": JSON.stringify(DB.pazienti.data[k].medicine),
-																"allergie": JSON.stringify(DB.pazienti.data[k].allergie),
-																"patologie": JSON.stringify(DB.pazienti.data[k].patologie),
-																"interventi": JSON.stringify(DB.pazienti.data[k].interventi),
-																"gallery": DB.pazienti.data[k].gallery,
-																"Provenienza": DB.pazienti.data[k].Provenienza,
-																"Professione": DB.pazienti.data[k].Professione,
-																"Intestazione": DB.pazienti.data[k].Intestazione,
-																"CodiceFiscale": DB.pazienti.data[k].CodiceFiscale,
-																"PartitaIva": DB.pazienti.data[k].PartitaIva,
-																"Social": DB.pazienti.data[k].Social,
-																"avatar": DB.pazienti.data[k].avatar,
-																"Altezza": DB.pazienti.data[k].Altezza,
-																"Peso": DB.pazienti.data[k].Peso,
-																"DataModifica":DB.pazienti.data[k].DataModifica*1,
-																"trattamenti": [],
-																"saldi": [],
-																"Cancellato": DB.pazienti.data[k].Cancellato*1,
-																"id_interno": k*1 };
-													
-													var aggiungere=false;
-													
-													db.trattamenti=[];
-													var n=-1;
-													var aggiungereTrattamenti=false;
-													var elencoTrattamenti=[];
-													for(t in DB.pazienti.data[k].trattamenti){
-														if(DB.pazienti.data[k].trattamenti[t].DataModifica*1>DB.pazienti.lastSync*1 || dwnl || bkp){
-															DB.pazienti.data[k].trattamenti[t].id_interno=t*1;
-															n++;elencoTrattamenti[n]=DB.pazienti.data[k].trattamenti[t];
-															aggiungereTrattamenti=true;
-														}
-													}
-													if(aggiungereTrattamenti && !__(DB.pazienti.data[k].frv)){
-														db.trattamenti=elencoTrattamenti;
-														aggiungere=true;
-													}
-													
-													db.saldi=[];
-													var n=-1;
-													var aggiungereSaldi=false;
-													var elencoSaldi=[];
-													for(t in DB.pazienti.data[k].saldi){
-														if(DB.pazienti.data[k].saldi[t].DataModifica*1>DB.pazienti.lastSync*1 || dwnl || bkp){
-															DB.pazienti.data[k].saldi[t].id_interno=t*1;
-															n++;elencoSaldi[n]=DB.pazienti.data[k].saldi[t];
-															aggiungereSaldi=true;
-														}
-													}
-													if(aggiungereSaldi && !__(DB.pazienti.data[k].frv)){
-														db.saldi=elencoSaldi;
-														aggiungere=true;
-													}
-													
-													
-													if((DB.pazienti.data[k].DataModifica*1>DB.pazienti.lastSync*1 || dwnl || bkp) && !__(DB.pazienti.data[k].frv))aggiungere=true;
-													if(aggiungere){
-														elencoPazienti+=LOGIN.cryptJSON(db)+", ";
-													}
-												}
-												if(elencoPazienti)elenco+='"pazienti": ['+elencoPazienti.substr(0,elencoPazienti.length-2)+'], ';
-												if(elenco)elenco='{'+elenco.substr(0,elenco.length-2)+'}';	
-											
-												if(typeof(DB.note)=='undefined'){
-													DB.note=[];
-													localPouchDB.setItem(MD5("DB"+LOGIN._frv()+".note"), IMPORTER.COMPR(DB.note)).then(function(){
-														// salvo il DB
-													});
-												}
-												if(typeof(DB.procedure)=='undefined'){
-													DB.procedure=[];
-													localPouchDB.setItem(MD5("DB"+LOGIN._frv()+".procedure"), IMPORTER.COMPR(DB.procedure)).then(function(){
-														// salvo il DB
-													});
-												}
-												if(typeof(DB.servizi)=='undefined'){
-													DB.servizi=[];
-													localPouchDB.setItem(MD5("DB"+LOGIN._frv()+".servizi"), IMPORTER.COMPR(DB.servizi)).then(function(){
-														// salvo il DB
-													});
-												}	
-												if(typeof(DB.fornitori)=='undefined'){
-													DB.fornitori=[];
-													localPouchDB.setItem(MD5("DB"+LOGIN._frv()+".fornitori"), IMPORTER.COMPR(DB.fornitori)).then(function(){
-														// salvo il DB
-													});
-												}	
-												if(typeof(DB.pazienti)=='undefined'){
-													DB.pazienti=[];
-													localPouchDB.setItem(MD5("DB"+LOGIN._frv()+".pazienti"), IMPORTER.COMPR(DB.pazienti)).then(function(){
-														// salvo il DB
-													});
-												}	
-												if(typeof(DB.ricerche)=='undefined'){
-													DB.ricerche=[];
-													localPouchDB.setItem(MD5("DB"+LOGIN._frv()+".ricerche"), IMPORTER.COMPR(DB.ricerche)).then(function(){
-														// salvo il DB
-													});
-												}
-												if(typeof(DB.foto)=='undefined'){
-													DB.foto=[];
-													localPouchDB.setItem(MD5("DB"+LOGIN._frv()+".foto"), IMPORTER.COMPR(DB.foto)).then(function(){
-														// salvo il DB
-													});
-												}	
-												if(typeof(DB.cicli)=='undefined'){
-													DB.cicli=[];
-													DB.cicli.lastSync=0;
-													localPouchDB.setItem(MD5("DB"+LOGIN._frv()+".cicli"), IMPORTER.COMPR(DB.cicli)).then(function(){
-														// salvo il DB
-													});
-												}
-												syncJSN='{';
-												if(BACKUPS.titleProvv)syncJSN += '"title":"'+BACKUPS.titleProvv.replace(/"/,'\"')+'",';
-												syncJSN += 	'"note":"'+DB.note.lastSync+'",' +
-															'"procedure":"'+DB.procedure.lastSync+'",' +
-															'"servizi":"'+DB.servizi.lastSync+'",' +
-															'"fornitori":"'+DB.fornitori.lastSync+'",' +
-															'"pazienti":"'+DB.pazienti.lastSync+'",' +
-															'"ricerche":"'+DB.ricerche.lastSync+'",' +
-															'"cicli":"'+DB.cicli.lastSync+'",' +
-															'"appuntamenti":"'+DB.appuntamenti.lastSync+'",' +
-															'"annotazioni":"'+DB.annotazioni.lastSync+'",' +
-															'"JSNPOST":';
-												if(!BACKUPS.titleProvv)syncJSN += elenco;
-												else syncJSN += '"'+window.btoa(encodeURIComponent(elenco))+'"';
-												
-												syncJSN += '}';
-												if(!dwnl){
-													CONN.caricaUrl(	"sincro_globale_2_6.php",
-																	"b64=1&JSNPOST="+window.btoa(encodeURIComponent(syncJSN)), 
-																	"LOGIN.retGlobalSyncro");
-												}else{
-													var dateNow = new Date();
-													dateNow=dateNow.getTime()/1000;
-													dateNow=parseInt(dateNow);
-													
-													if(dwnl == 'locale')LOGIN.componi(JSON.parse(elenco), dateNow);
-													else{
-														if(CONN.retNoConn()){
-															
-															CONN.caricaUrl(	"sincro_backups_crea.php",
-																			"b64=1&JSNPOST="+window.btoa(encodeURIComponent(syncJSN)),
-																			"BACKUPS.conf_backup"
-																			);
-														}
-														return false;
-													}
-												}
-											});
-										});
-									});
-								});
-							});
-						});
-					});
-				});
+			Promise.all([
+				localPouchDB.getItem(MD5("DB"+LOGIN._frv()+".procedure")),
+				localPouchDB.getItem(MD5("DB"+LOGIN._frv()+".note")),
+				localPouchDB.getItem(MD5("DB"+LOGIN._frv()+".pazienti")),
+				localPouchDB.getItem(MD5("DB"+LOGIN._frv()+".fornitori")),
+				localPouchDB.getItem(MD5("DB"+LOGIN._frv()+".servizi")),
+				localPouchDB.getItem(MD5("DB"+LOGIN._frv()+".appuntamenti")),
+				localPouchDB.getItem(MD5("DB"+LOGIN._frv()+".annotazioni")),
+				localPouchDB.getItem(MD5("DB"+LOGIN._frv()+".ricerche")),
+				localPouchDB.getItem(MD5("DB"+LOGIN._frv()+".foto"))
+			]).then(function( dbs ){
+				DB.procedure=IMPORTER.DECOMPR(dbs[0]);
+				DB.note=IMPORTER.DECOMPR(dbs[1]);
+				DB.pazienti=IMPORTER.DECOMPR(dbs[2]);
+				DB.fornitori=IMPORTER.DECOMPR(dbs[3]);
+				DB.servizi=IMPORTER.DECOMPR(dbs[4]);
+				DB.appuntamenti=IMPORTER.DECOMPR(dbs[5]);
+				DB.annotazioni=IMPORTER.DECOMPR(dbs[6]);
+				DB.ricerche=IMPORTER.DECOMPR(dbs[7]);
+				DB.foto=IMPORTER.DECOMPR(dbs[8]);
+				
+				LOGIN.totSinc = dbs.length-1; /* le foto non contano perché sono solo in upload */
+				
+				var elenco='';				
+				if(Nuovo){ // se è un account nuovo popolo i DB con quelli DEMO
+					DB.pazienti.data = DB.pulisciFRV(archiviDemo.pazienti);
+					DB.fornitori.data = DB.pulisciFRV(archiviDemo.fornitori);
+					DB.servizi.data = DB.pulisciFRV(archiviDemo.servizi);
+					DB.foto.data = DB.pulisciFRV(archiviDemo.foto);
+				}
+				
+				elencoFoto='';
+				for(let k in DB.foto.data){
+					if(DB.foto.data[k]){
+						if(	!__(DB.foto.data[k].frv) && 
+							__(DB.foto.data[k].imgBig) && 
+							DB.foto.data[k].imgBig!='404'){
+								elencoFoto+=JSON.stringify(DB.foto.data[k])+", ";
+							}
+					}
+				}
+				if(elencoFoto)elenco+='"foto": ['+elencoFoto.substr(0,elencoFoto.length-2)+'], ';
+				
+				elencoRicerche='';
+				for(let k in DB.ricerche.data){
+					if(DB.ricerche.data[k].DataModifica*1>DB.ricerche.lastSync*1 || dwnl || bkp){
+						elencoRicerche+=JSON.stringify(DB.ricerche.data[k])+", ";
+					}
+				}
+				if(elencoRicerche)elenco+='"ricerche": ['+elencoRicerche.substr(0,elencoRicerche.length-2)+'], ';
+				elencoNote='';
+				for(let k in DB.note.data){
+					if(DB.note.data[k].DataModifica*1>DB.note.lastSync*1 || dwnl || bkp){
+						//elencoNote+=LOGIN.cryptJSON(DB.note.data[k])+", ";
+						elencoNote+=JSON.stringify(DB.note.data[k])+", ";
+					}
+				}
+				if(elencoNote)elenco+='"note": ['+elencoNote.substr(0,elencoNote.length-2)+'], ';		
+				elencoProcedure='';
+				for(let k in DB.procedure.data){
+					if(DB.procedure.data[k].DataModifica*1>DB.procedure.lastSync*1 || dwnl || bkp){
+						DB.procedure.data[k].id_interno=k;
+						elencoProcedure+=JSON.stringify(DB.procedure.data[k])+", ";
+					}
+				}
+				if(elencoProcedure)elenco+='"procedure": ['+elencoProcedure.substr(0,elencoProcedure.length-2)+'], ';
+				
+				
+				
+				
+				elencoAppuntamenti='';
+				for(let k in DB.appuntamenti.data){
+					var db={ 	"idAppuntamento": DB.appuntamenti.data[k].idAppuntamento*1,
+								"TestoAppuntamento": DB.appuntamenti.data[k].TestoAppuntamento,
+								"TimeAppuntamento": DB.appuntamenti.data[k].TimeAppuntamento*1,
+								"oraInizio": DB.appuntamenti.data[k].oraInizio*1,
+								"oraFine": DB.appuntamenti.data[k].oraFine*1,
+								"idPaziente": DB.appuntamenti.data[k].idPaziente*1,
+								"idCli": DB.appuntamenti.data[k].idCli*1,
+								"DataModifica":DB.appuntamenti.data[k].DataModifica*1,
+								"DataCreazione":DB.appuntamenti.data[k].DataCreazione*1,
+								"Cancellato": DB.appuntamenti.data[k].Cancellato*1 };
+								
+					var aggiungere=false;
+					
+					if((DB.appuntamenti.data[k].DataModifica*1>DB.appuntamenti.lastSync*1 || dwnl || bkp) && !__(DB.appuntamenti.data[k].frv))aggiungere=true;
+					if(aggiungere){
+						//elencoAppuntamenti+=LOGIN.cryptJSON(db)+", ";
+						elencoAppuntamenti+=JSON.stringify(db)+", ";
+					}
+				}
+				if(elencoAppuntamenti)elenco+='"appuntamenti": ['+elencoAppuntamenti.substr(0,elencoAppuntamenti.length-2)+'], ';
+				
+				elencoAnnotazioni='';
+				for(let k in DB.annotazioni.data){
+					var db={ 	"idAnnotazione": DB.annotazioni.data[k].idAnnotazione*1,
+								"TitoloAnnotazione": DB.annotazioni.data[k].TitoloAnnotazione,
+								"TestoAnnotazione": DB.annotazioni.data[k].TestoAnnotazione,
+								"DataModifica":DB.annotazioni.data[k].DataModifica*1,
+								"DataCreazione":DB.annotazioni.data[k].DataCreazione*1,
+								"Cancellato": DB.annotazioni.data[k].Cancellato*1 };
+					
+					var aggiungere=false;
+					
+					if((DB.annotazioni.data[k].DataModifica*1>DB.annotazioni.lastSync*1 || dwnl || bkp) && !__(DB.annotazioni.data[k].frv))aggiungere=true;
+					if(aggiungere){
+						//elencoAnnotazioni+=LOGIN.cryptJSON(db)+", ";
+						elencoAnnotazioni+=JSON.stringify(db)+", ";
+					}
+				}
+				if(elencoAnnotazioni)elenco+='"annotazioni": ['+elencoAnnotazioni.substr(0,elencoAnnotazioni.length-2)+'], ';
+				
+				elencoServizi='';
+				for(let k in DB.servizi.data){
+					var db={ 	"idServizio": DB.servizi.data[k].idServizio*1,
+								"NomeServizio": DB.servizi.data[k].NomeServizio,
+								"DescrizioneServizio": DB.servizi.data[k].DescrizioneServizio,
+								"CostoServizio": DB.servizi.data[k].CostoServizio*1,
+								"NumeroSedute": DB.servizi.data[k].NumeroSedute*1,
+								"DataModifica":DB.servizi.data[k].DataModifica*1,
+								"DataCreazione":DB.servizi.data[k].DataCreazione*1,
+								"Cancellato": DB.servizi.data[k].Cancellato*1 };
+					
+					var aggiungere=false;
+					
+					if((DB.servizi.data[k].DataModifica*1>DB.servizi.lastSync*1 || dwnl || bkp) && !__(DB.servizi.data[k].frv))aggiungere=true;
+					if(aggiungere){
+						//elencoServizi+=LOGIN.cryptJSON(db)+", ";
+						elencoServizi+=JSON.stringify(db)+", ";
+					}
+				}
+				if(elencoServizi)elenco+='"servizi": ['+elencoServizi.substr(0,elencoServizi.length-2)+'], ';
+				
+				
+				elencoFornitori='';
+				for(let k in DB.fornitori.data){
+					var db={ 	"idFornitore": DB.fornitori.data[k].idFornitore*1,
+								"RagioneSociale": DB.fornitori.data[k].RagioneSociale,
+								"Intestazione": DB.fornitori.data[k].Intestazione,
+								"PartitaIva": DB.fornitori.data[k].PartitaIva,
+								"CodiceFiscale": DB.fornitori.data[k].CodiceFiscale,
+								"Indirizzo": DB.fornitori.data[k].Indirizzo,
+								"CAP": DB.fornitori.data[k].CAP,
+								"Citta": DB.fornitori.data[k].Citta,
+								"Provincia": DB.fornitori.data[k].Provincia,
+								"Stato": DB.fornitori.data[k].Stato,
+								"Telefono": DB.fornitori.data[k].Telefono,
+								"Email": DB.fornitori.data[k].Email,
+								"NoteFornitore": DB.fornitori.data[k].NoteFornitore,
+								"etichette": JSON.stringify(DB.fornitori.data[k].etichette),
+								"DataModifica":DB.fornitori.data[k].DataModifica*1,
+								"DataCreazione":DB.fornitori.data[k].DataCreazione*1,
+								"Cancellato": DB.fornitori.data[k].Cancellato*1 };
+					
+					var aggiungere=false;
+					
+					if((DB.fornitori.data[k].DataModifica*1>DB.fornitori.lastSync*1 || dwnl || bkp) && !__(DB.fornitori.data[k].frv))aggiungere=true;
+					if(aggiungere){
+						//elencoFornitori+=LOGIN.cryptJSON(db)+", ";
+						elencoFornitori+=JSON.stringify(db)+", ";
+					}
+				}
+				if(elencoFornitori)elenco+='"fornitori": ['+elencoFornitori.substr(0,elencoFornitori.length-2)+'], ';
+				elencoPazienti='';
+				for(let k in DB.pazienti.data){
+					var db={ 	"idPaziente": DB.pazienti.data[k].idPaziente*1,
+								"Nome": DB.pazienti.data[k].Nome,
+								"Cognome": DB.pazienti.data[k].Cognome,
+								"Indirizzo": DB.pazienti.data[k].Indirizzo,
+								"CAP": DB.pazienti.data[k].CAP,
+								"Citta": DB.pazienti.data[k].Citta,
+								"Provincia": DB.pazienti.data[k].Provincia,
+								"Stato": DB.pazienti.data[k].Stato,
+								"Telefono": DB.pazienti.data[k].Telefono,
+								"Cellulare": DB.pazienti.data[k].Cellulare,
+								"paeseCellulare": DB.pazienti.data[k].paeseCellulare,
+								"Email": DB.pazienti.data[k].Email,
+								"sesso": DB.pazienti.data[k].sesso,
+								"NotePaziente": DB.pazienti.data[k].NotePaziente,
+								"DataNascita": DB.pazienti.data[k].DataNascita,
+								"LuogoNascita": DB.pazienti.data[k].LuogoNascita,
+								"tags": JSON.stringify(DB.pazienti.data[k].tags),
+								"etichette": JSON.stringify(DB.pazienti.data[k].etichette),
+								"medicine": JSON.stringify(DB.pazienti.data[k].medicine),
+								"allergie": JSON.stringify(DB.pazienti.data[k].allergie),
+								"patologie": JSON.stringify(DB.pazienti.data[k].patologie),
+								"interventi": JSON.stringify(DB.pazienti.data[k].interventi),
+								"gallery": DB.pazienti.data[k].gallery,
+								"Provenienza": DB.pazienti.data[k].Provenienza,
+								"Professione": DB.pazienti.data[k].Professione,
+								"Intestazione": DB.pazienti.data[k].Intestazione,
+								"CodiceFiscale": DB.pazienti.data[k].CodiceFiscale,
+								"PartitaIva": DB.pazienti.data[k].PartitaIva,
+								"Social": DB.pazienti.data[k].Social,
+								"avatar": DB.pazienti.data[k].avatar,
+								"Altezza": DB.pazienti.data[k].Altezza,
+								"Peso": DB.pazienti.data[k].Peso,
+								"DataModifica":DB.pazienti.data[k].DataModifica*1,
+								"trattamenti": [],
+								"saldi": [],
+								"Cancellato": DB.pazienti.data[k].Cancellato*1,
+								"id_interno": k*1 };
+					
+					var aggiungere=false;
+					
+					db.trattamenti=[];
+					var n=-1;
+					var aggiungereTrattamenti=false;
+					var elencoTrattamenti=[];
+					for(t in DB.pazienti.data[k].trattamenti){
+						if(DB.pazienti.data[k].trattamenti[t].DataModifica*1>DB.pazienti.lastSync*1 || dwnl || bkp){
+							DB.pazienti.data[k].trattamenti[t].id_interno=t*1;
+							n++;elencoTrattamenti[n]=DB.pazienti.data[k].trattamenti[t];
+							aggiungereTrattamenti=true;
+						}
+					}
+					if(aggiungereTrattamenti && !__(DB.pazienti.data[k].frv)){
+						db.trattamenti=elencoTrattamenti;
+						aggiungere=true;
+					}
+					
+					db.saldi=[];
+					var n=-1;
+					var aggiungereSaldi=false;
+					var elencoSaldi=[];
+					for(t in DB.pazienti.data[k].saldi){
+						if(DB.pazienti.data[k].saldi[t].DataModifica*1>DB.pazienti.lastSync*1 || dwnl || bkp){
+							DB.pazienti.data[k].saldi[t].id_interno=t*1;
+							n++;elencoSaldi[n]=DB.pazienti.data[k].saldi[t];
+							aggiungereSaldi=true;
+						}
+					}
+					if(aggiungereSaldi && !__(DB.pazienti.data[k].frv)){
+						db.saldi=elencoSaldi;
+						aggiungere=true;
+					}
+					
+					
+					if((DB.pazienti.data[k].DataModifica*1>DB.pazienti.lastSync*1 || dwnl || bkp) && !__(DB.pazienti.data[k].frv))aggiungere=true;
+					if(aggiungere){
+						//elencoPazienti+=LOGIN.cryptJSON(db)+", ";
+						elencoPazienti+=JSON.stringify(db)+", ";
+					}
+				}
+				if(elencoPazienti)elenco+='"pazienti": ['+elencoPazienti.substr(0,elencoPazienti.length-2)+'], ';
+				if(elenco)elenco='{'+elenco.substr(0,elenco.length-2)+'}';	
+			
+				if(typeof(DB.note)=='undefined'){
+					DB.note=[];
+					localPouchDB.setItem(MD5("DB"+LOGIN._frv()+".note"), IMPORTER.COMPR(DB.note));
+				}
+				if(typeof(DB.procedure)=='undefined'){
+					DB.procedure=[];
+					localPouchDB.setItem(MD5("DB"+LOGIN._frv()+".procedure"), IMPORTER.COMPR(DB.procedure));
+				}
+				if(typeof(DB.servizi)=='undefined'){
+					DB.servizi=[];
+					localPouchDB.setItem(MD5("DB"+LOGIN._frv()+".servizi"), IMPORTER.COMPR(DB.servizi));
+				}	
+				if(typeof(DB.fornitori)=='undefined'){
+					DB.fornitori=[];
+					localPouchDB.setItem(MD5("DB"+LOGIN._frv()+".fornitori"), IMPORTER.COMPR(DB.fornitori));
+				}	
+				if(typeof(DB.pazienti)=='undefined'){
+					DB.pazienti=[];
+					localPouchDB.setItem(MD5("DB"+LOGIN._frv()+".pazienti"), IMPORTER.COMPR(DB.pazienti));
+				}	
+				if(typeof(DB.ricerche)=='undefined'){
+					DB.ricerche=[];
+					localPouchDB.setItem(MD5("DB"+LOGIN._frv()+".ricerche"), IMPORTER.COMPR(DB.ricerche));
+				}
+				if(typeof(DB.foto)=='undefined'){
+					DB.foto=[];
+					localPouchDB.setItem(MD5("DB"+LOGIN._frv()+".foto"), IMPORTER.COMPR(DB.foto));
+				}	
+				if(typeof(DB.cicli)=='undefined'){
+					DB.cicli=[];
+					DB.cicli.lastSync=0;
+					localPouchDB.setItem(MD5("DB"+LOGIN._frv()+".cicli"), IMPORTER.COMPR(DB.cicli));
+				}
+				syncJSN='{';
+				if(BACKUPS.titleProvv)syncJSN += '"title":"'+BACKUPS.titleProvv.replace(/"/,'\"')+'",';
+				syncJSN += 	'"note":"'+DB.note.lastSync+'",' +
+							'"procedure":"'+DB.procedure.lastSync+'",' +
+							'"servizi":"'+DB.servizi.lastSync+'",' +
+							'"fornitori":"'+DB.fornitori.lastSync+'",' +
+							'"pazienti":"'+DB.pazienti.lastSync+'",' +
+							'"ricerche":"'+DB.ricerche.lastSync+'",' +
+							'"cicli":"'+DB.cicli.lastSync+'",' +
+							'"appuntamenti":"'+DB.appuntamenti.lastSync+'",' +
+							'"annotazioni":"'+DB.annotazioni.lastSync+'",' +
+							'"JSNPOST":';
+				if(!BACKUPS.titleProvv)syncJSN += elenco;
+				else syncJSN += '"'+window.btoa(encodeURIComponent(elenco))+'"';
+				
+				syncJSN += '}';
+				if(!dwnl){
+					CONN.caricaUrl(	"sincro_globale_2_6.php",
+									"b64=1&JSNPOST="+window.btoa(encodeURIComponent(syncJSN)), 
+									"LOGIN.retGlobalSyncro");
+				}else{
+					var dateNow = new Date();
+					dateNow=dateNow.getTime()/1000;
+					dateNow=parseInt(dateNow);
+					
+					if(dwnl == 'locale')LOGIN.componi(JSON.parse(elenco), dateNow);
+					else{
+						if(CONN.retNoConn()){
+							
+							CONN.caricaUrl(	"sincro_backups_crea.php",
+											"b64=1&JSNPOST="+window.btoa(encodeURIComponent(syncJSN)),
+											"BACKUPS.conf_backup"
+											);
+						}
+						return false;
+					}
+				}
 			});
 		}
 	},
@@ -1419,12 +1355,12 @@ var LOGIN = {
 		// RICERCHE
 		if(elenco.ricerche){
 			syncUp=true;
-			for(p in elenco.ricerche){
+			for(let p in elenco.ricerche){
 				// per ogni novità verifico l'esistenza
 				esiste=false;
 				JSNPUSH={	"TestoRicerca": elenco.ricerche[p].TestoRicerca,
 							"DataModifica": elenco.ricerche[p].DataModifica*1 };
-				for(k in DB.ricerche.data){
+				for(let k in DB.ricerche.data){
 					if(DB.ricerche.data[k].TestoRicerca==elenco.ricerche[p].TestoRicerca){
 						// se esiste non lo inserisco
 						esiste=true;
@@ -1445,7 +1381,7 @@ var LOGIN = {
 		// NOTE
 		if(elenco.note){
 			syncUp=true;
-			for(p in elenco.note){
+			for(let p in elenco.note){
 				// per ogni novità verifico l'esistenza
 				passato=false;
 				var id_interno=-1;
@@ -1458,7 +1394,7 @@ var LOGIN = {
 							"app": __(elenco.note[p].app,''),
 							"DataModifica": elenco.note[p].DataModifica*1 };
 							
-				for(k in DB.note.data){
+				for(let k in DB.note.data){
 					var NT = DB.note.data[k];
 					if(	NT.meridiano==elenco.note[p].meridiano && 
 						NT.numeroTsubo+''==elenco.note[p].numeroTsubo+'' && 
@@ -1478,10 +1414,10 @@ var LOGIN = {
 			DB.note.lastSync=lastSync;
 			
 			if(BACKUPS.bkpProvv){ // <<<<<<< per il backup
-				for(k in DB.note.data){
+				for(let k in DB.note.data){
 					var trovato = false;
 					var NT = DB.note.data[k];
-					for(p in elenco.note){
+					for(let p in elenco.note){
 						/*
 							se sto ripristinando un backup
 							se non trovo l'elemento del DB locale nel DB backuppato
@@ -1509,7 +1445,7 @@ var LOGIN = {
 		// PROCEDURE
 		if(elenco.procedure){
 			syncUp=true;
-			for(p in elenco.procedure){
+			for(let p in elenco.procedure){
 				// per ogni novità verifico l'esistenza
 				passato=false;
 				if(BACKUPS.bkpProvv)elenco.procedure[p].DataModifica = lastSync*1;
@@ -1525,13 +1461,13 @@ var LOGIN = {
 							"Cancellato": elenco.procedure[p].Cancellato*1,
 							"frv": false };
 				
-				for(k in elenco.procedure[p].dettagliProcedura){
+				for(let k in elenco.procedure[p].dettagliProcedura){
 					elenco.procedure[p].dettagliProcedura[k].DataModifica*=1;
 					elenco.procedure[p].dettagliProcedura[k].OrdineDettaglio*=1;
 					elenco.procedure[p].dettagliProcedura[k].Cancellato*=1;
 				}
 				
-				for(k in DB.procedure.data){
+				for(let k in DB.procedure.data){
 					var PR = DB.procedure.data[k];
 					if(	( PR.idProcedura*1>0 && PR.idProcedura*1==elenco.procedure[p].idProcedura*1 ) || 
 						(	PR.idProcedura*1==0 &&
@@ -1548,10 +1484,10 @@ var LOGIN = {
 			}
 			
 			if(BACKUPS.bkpProvv){ // <<<<<<< per il backup
-				for(k in DB.procedure.data){
+				for(let k in DB.procedure.data){
 					var trovato = false;
 					var PR = DB.procedure.data[k];
-					for(p in elenco.procedure){
+					for(let p in elenco.procedure){
 						/*
 							se sto ripristinando un backup
 							se non trovo l'elemento del DB locale nel DB backuppato
@@ -1579,7 +1515,7 @@ var LOGIN = {
 		// SERVIZI
 		if(elenco.servizi){
 			syncUp=true;
-			for(p in elenco.servizi){
+			for(let p in elenco.servizi){
 				// per ogni novità verifico l'esistenza
 				passato=false;
 				if(BACKUPS.bkpProvv)elenco.servizi[p].DataModifica = lastSync*1;
@@ -1593,7 +1529,7 @@ var LOGIN = {
 							"Cancellato": elenco.servizi[p].Cancellato*1,
 							"frv": false };
 				
-				for(k in DB.servizi.data){
+				for(let k in DB.servizi.data){
 					var SR = DB.servizi.data[k];
 					if(	( SR.idServizio*1>0 && SR.idServizio*1==elenco.servizi[p].idServizio*1 ) || 
 						(	SR.idServizio*1==0 &&
@@ -1610,10 +1546,10 @@ var LOGIN = {
 			}
 			
 			if(BACKUPS.bkpProvv){ // <<<<<<< per il backup
-				for(k in DB.servizi.data){
+				for(let k in DB.servizi.data){
 					var trovato = false;
 					var SR = DB.servizi.data[k];
-					for(p in elenco.servizi){
+					for(let p in elenco.servizi){
 						/*
 							se sto ripristinando un backup
 							se non trovo l'elemento del DB locale nel DB backuppato
@@ -1641,7 +1577,7 @@ var LOGIN = {
 		// FORNITORI
 		if(elenco.fornitori){
 			syncUp=true;
-			for(p in elenco.fornitori){
+			for(let p in elenco.fornitori){
 				// per ogni novità verifico l'esistenza
 				passato=false;
 				if(BACKUPS.bkpProvv)elenco.fornitori[p].DataModifica = lastSync*1;
@@ -1664,7 +1600,7 @@ var LOGIN = {
 							"Cancellato": elenco.fornitori[p].Cancellato*1,
 							"frv": false };
 				
-				for(k in DB.fornitori.data){
+				for(let k in DB.fornitori.data){
 					var FR = DB.fornitori.data[k];
 					if(	( FR.idFornitore*1>0 && FR.idFornitore*1==elenco.fornitori[p].idFornitore*1 ) || 
 						(	FR.idFornitore*1==0 &&
@@ -1681,10 +1617,10 @@ var LOGIN = {
 			}
 			
 			if(BACKUPS.bkpProvv){ // <<<<<<< per il backup
-				for(k in DB.fornitori.data){
+				for(let k in DB.fornitori.data){
 					var trovato = false;
 					var FR = DB.fornitori.data[k];
-					for(p in elenco.fornitori){
+					for(let p in elenco.fornitori){
 						/*
 							se sto ripristinando un backup
 							se non trovo l'elemento del DB locale nel DB backuppato
@@ -1712,7 +1648,7 @@ var LOGIN = {
 		// APPUNTAMENTI
 		if(elenco.appuntamenti){
 			syncUp=true;
-			for(p in elenco.appuntamenti){
+			for(let p in elenco.appuntamenti){
 				// per ogni novità verifico l'esistenza
 				passato=false;
 				if(BACKUPS.bkpProvv)elenco.appuntamenti[p].DataModifica = lastSync*1;
@@ -1727,7 +1663,7 @@ var LOGIN = {
 							"Cancellato": elenco.appuntamenti[p].Cancellato*1,
 							"frv": false };
 				
-				for(k in DB.appuntamenti.data){
+				for(let k in DB.appuntamenti.data){
 					var AP = DB.appuntamenti.data[k];
 					if(	( AP.idAppuntamento*1>-1 && AP.idAppuntamento*1==elenco.appuntamenti[p].idAppuntamento*1 ) || 
 						(	AP.idAppuntamento*1==-1 &&
@@ -1744,10 +1680,10 @@ var LOGIN = {
 			}
 			
 			if(BACKUPS.bkpProvv){ // <<<<<<< per il backup
-				for(k in DB.appuntamenti.data){
+				for(let k in DB.appuntamenti.data){
 					var trovato = false;
 					var AP = DB.appuntamenti.data[k];
-					for(p in elenco.appuntamenti){
+					for(let p in elenco.appuntamenti){
 						/*
 							se sto ripristinando un backup
 							se non trovo l'elemento del DB locale nel DB backuppato
@@ -1776,7 +1712,7 @@ var LOGIN = {
 		// ANNOTAZIONI
 		if(elenco.annotazioni){
 			syncUp=true;
-			for(p in elenco.annotazioni){
+			for(let p in elenco.annotazioni){
 				// per ogni novità verifico l'esistenza
 				passato=false;
 				if(BACKUPS.bkpProvv)elenco.annotazioni[p].DataModifica = lastSync*1;
@@ -1788,7 +1724,7 @@ var LOGIN = {
 							"Cancellato": elenco.annotazioni[p].Cancellato*1,
 							"frv": false };
 				
-				for(k in DB.annotazioni.data){
+				for(let k in DB.annotazioni.data){
 					var AN = DB.annotazioni.data[k];
 					if(	( AN.idAnnotazione*1>0 && AN.idAnnotazione*1==elenco.annotazioni[p].idAnnotazione*1 ) || 
 						(	AN.idAnnotazione*1==0 &&
@@ -1805,10 +1741,10 @@ var LOGIN = {
 			}
 			
 			if(BACKUPS.bkpProvv){ // <<<<<<< per il backup
-				for(k in DB.annotazioni.data){
+				for(let k in DB.annotazioni.data){
 					var trovato = false;
 					var AN = DB.annotazioni.data[k];
-					for(p in elenco.annotazioni){
+					for(let p in elenco.annotazioni){
 						/*
 							se sto ripristinando un backup
 							se non trovo l'elemento del DB locale nel DB backuppato
@@ -1836,7 +1772,7 @@ var LOGIN = {
 		// PAZIENTI
 		if(elenco.pazienti){
 			syncUp=true;
-			for(p in elenco.pazienti){
+			for(let p in elenco.pazienti){
 				// per ogni novità verifico l'esistenza
 				passato=false;
 				if(BACKUPS.bkpProvv)elenco.pazienti[p].DataModifica = lastSync*1;
@@ -1882,7 +1818,7 @@ var LOGIN = {
 				var trattamentiProvvisori=[];
 				var saldiProvvisori=[];
 				kDef=-1; // il paziente di riferimento su cui lavorare per i trattamenti
-				for(k in DB.pazienti.data){
+				for(let k in DB.pazienti.data){
 					PZ = DB.pazienti.data[k];
 					if( ( PZ.idPaziente*1>0 && PZ.idPaziente*1==elenco.pazienti[p].idPaziente*1 ) || 
 						( PZ.idPaziente*1==0 && PZ.Nome==elenco.pazienti[p].Nome && PZ.Cognome==elenco.pazienti[p].Cognome ) || 
@@ -1921,7 +1857,7 @@ var LOGIN = {
 							if(puntiTsuboMap.indexOf(".")>-1){
 								var puntiProvvisori = [];
 								var parti=puntiTsuboMap.split("|");
-								for(pt in parti){
+								for(let pt in parti){
 									var ppp = parti[pt].split(".");
 									puntiProvvisori.push({
 										n: ppp[0],
@@ -1941,6 +1877,7 @@ var LOGIN = {
 									"Prescrizione": LOGIN.decryptPrivacy(trattamenti[t].Prescrizione),
 									"puntiTsuboMap": puntiTsuboMap,
 									"puntiAuriculoMap": LOGIN.decryptPrivacy(trattamenti[t].puntiAuriculoMap),
+									"puntiNamikoshi": LOGIN.decryptPrivacy(trattamenti[t].puntiNamikoshi),
 									"meridiani": trattamenti[t].meridiani,
 									"sintomi": trattamenti[t].sintomi,
 									"gallery": trattamenti[t].gallery,
@@ -1955,7 +1892,7 @@ var LOGIN = {
 									"Cancellato": trattamenti[t].Cancellato*1,
 									"frv": false };		
 									
-						for(g in trattamentiProvvisori){ // in quelli esistenti ...
+						for(let g in trattamentiProvvisori){ // in quelli esistenti ...
 							var TR = trattamentiProvvisori[g];
 							var md5='';
 							if(typeof(trattamentiProvvisori[g].md5)!='undefined')md5=trattamentiProvvisori[g].md5;
@@ -1975,7 +1912,7 @@ var LOGIN = {
 					}
 					
 					if(BACKUPS.bkpProvv){ // <<<<<<< per il backup
-						for(g in trattamentiProvvisori){ 
+						for(let g in trattamentiProvvisori){ 
 							var trovato = false;
 							var TR = trattamentiProvvisori[g];
 							for(t in trattamenti){
@@ -2018,7 +1955,7 @@ var LOGIN = {
 									"frv": false };		
 									
 						if(debug)console.log(JSNPUSH);
-						for(g in saldiProvvisori){ // in quelli esistenti ...
+						for(let g in saldiProvvisori){ // in quelli esistenti ...
 							var SL = saldiProvvisori[g];
 							if(	( SL.idSaldo*1>0 && SL.idSaldo*1==saldi[t].idSaldo*1) ||
 								  SL.id_interno*1==saldi[t].p*1 ){ // verifico l'esistenza
@@ -2038,7 +1975,7 @@ var LOGIN = {
 					}
 					
 					if(BACKUPS.bkpProvv){ // <<<<<<< per il backup
-						for(g in saldiProvvisori){ 
+						for(let g in saldiProvvisori){ 
 							var trovato = false;
 							var SA = saldiProvvisori[g];
 							for(t in saldi){
@@ -2070,10 +2007,10 @@ var LOGIN = {
 			
 			
 			if(BACKUPS.bkpProvv){ // <<<<<<< per il backup
-				for(k in DB.pazienti.data){
+				for(let k in DB.pazienti.data){
 					var trovato = false;
 					var PZ = DB.pazienti.data[k];
-					for(p in elenco.pazienti){
+					for(let p in elenco.pazienti){
 						/*
 							se sto ripristinando un backup
 							se non trovo l'elemento del DB locale nel DB backuppato
@@ -2094,7 +2031,7 @@ var LOGIN = {
 			
 			
 			// elimino i pazienti con idPaziente = 0 dopo la sincronizzazione
-			for(p in DB.pazienti.data){
+			for(let p in DB.pazienti.data){
 				if(DB.pazienti.data[p].idPaziente*1==0){
 					if(p>0)DB.pazienti.data.splice(p,1);
 					else DB.pazienti.data.shift();
@@ -2105,6 +2042,7 @@ var LOGIN = {
 			});
 		}else LOGIN.verSincro('pazienti');
 		LOGIN.daSync = false;
+		LINGUE.getGoogleLanguages();
 	},
 	verSincro: function ( txt ){
 		// verifica la sincronizzazione della tabella txt
@@ -2157,110 +2095,104 @@ var LOGIN = {
 		if(!BACKUPS.bkpProvv){
 			PZS = DB.pazienti.data;
 			tot = PZS.length;
-			for(p=tot-1;p>=0;p--){
+			for(let p=tot-1;p>=0;p--){
 				if(PZS[p].Cancellato=='1' || __(PZS[p].frv))PZS.splice(p, 1)
 			}
 			tot = PZS.length;
-			for(p=tot-1;p>=0;p--){
+			for(let p=tot-1;p>=0;p--){
 				TRS = DB.pazienti.data[p].trattamenti;
 				tot2 = TRS.length;
 				for(t=tot2-1;t>=0;t--){
 					if(TRS[t].Cancellato=='1' || __(TRS[t].frv))TRS.splice(t, 1);
 				}
 			}
-			for(p=tot-1;p>=0;p--){
+			for(let p=tot-1;p>=0;p--){
 				SAS = DB.pazienti.data[p].saldi;
 				tot2 = SAS.length;
-				for(s=tot2-1;s>=0;s--){
+				for(let s=tot2-1;s>=0;s--){
 					if(SAS[s].Cancellato=='1' || __(SAS[s].frv))SAS.splice(s, 1);
 				}
 			}
 			FRS = DB.fornitori.data;
 			tot = FRS.length;
-			for(p=tot-1;p>=0;p--){
+			for(let p=tot-1;p>=0;p--){
 				if(FRS[p].Cancellato=='1' || __(FRS[p].frv))FRS.splice(p, 1)
 			}
 			SRS = DB.servizi.data;
 			tot = SRS.length;
-			for(p=tot-1;p>=0;p--){
+			for(let p=tot-1;p>=0;p--){
 				if(SRS[p].Cancellato=='1' || __(SRS[p].frv))SRS.splice(p, 1)
 			}
 			APS = DB.appuntamenti.data;
 			tot = APS.length;
-			for(p=tot-1;p>=0;p--){
+			for(let p=tot-1;p>=0;p--){
 				if(APS[p].Cancellato=='1' || __(APS[p].frv))APS.splice(p, 1)
 			}
 			ANS = DB.annotazioni.data;
 			tot = ANS.length;
-			for(p=tot-1;p>=0;p--){
+			for(let p=tot-1;p>=0;p--){
 				if(ANS[p].Cancellato=='1' || __(ANS[p].frv))ANS.splice(p, 1)
 			}
 			PRS = DB.procedure.data;
 			tot = PRS.length;
-			for(p=tot-1;p>=0;p--){
+			for(let p=tot-1;p>=0;p--){
 				if(PRS[p].Cancellato=='1' || __(PRS[p].frv))PRS.splice(p, 1)
 			}
 			PRS = DB.procedure.data;
 			tot = PRS.length;
-			for(p=tot-1;p>=0;p--){
+			for(let p=tot-1;p>=0;p--){
 				DTS = DB.procedure.data[p].dettagliProcedura;
 				tot2 = DTS.length;
-				for(d=tot2-1;d>=0;d--){
+				for(let d=tot2-1;d>=0;d--){
 					if(DTS[d].Cancellato=='1' || __(DTS[d].frv))DTS.splice(d, 1);
 				}
 			}
 		}
-		localPouchDB.setItem(MD5("DB"+LOGIN._frv()+".pazienti"), IMPORTER.COMPR(DB.pazienti)).then(function(){ // salvo il DB
-			localPouchDB.setItem(MD5("DB"+LOGIN._frv()+".fornitori"), IMPORTER.COMPR(DB.fornitori)).then(function(){ // salvo il DB
-				localPouchDB.setItem(MD5("DB"+LOGIN._frv()+".servizi"), IMPORTER.COMPR(DB.servizi)).then(function(){ // salvo il DB
-					localPouchDB.setItem(MD5("DB"+LOGIN._frv()+".annotazioni"), IMPORTER.COMPR(DB.annotazioni)).then(function(){ // salvo il DB
-						localPouchDB.setItem(MD5("DB"+LOGIN._frv()+".appuntamenti"), IMPORTER.COMPR(DB.appuntamenti)).then(function(){ // salvo il DB
-							localPouchDB.setItem(MD5("DB"+LOGIN._frv()+".procedure"), IMPORTER.COMPR(DB.procedure)).then(function(){ // salvo il DB
-								//DB.foto = { data: [], lastSync: 0 };
-								for(f in DB.foto.data){
-									DB.foto.data[f].imgBig = '';
-								}
-								localPouchDB.setItem(MD5("DB"+LOGIN._frv()+".foto"), IMPORTER.COMPR(DB.foto)).then(function(){ // salvo il DB
-									if(LOGIN.afterFunct){
-										eval(LOGIN.afterFunct);
-										if(LOGIN.afterFunct && LOGIN.afterFunct.indexOf('/*noRic*/')>=-1){
-											LOGIN.afterFunct = null;
-											return;
-										}
-										LOGIN.afterFunct = null;
-									}else{
-										try{SET.car_procedure(-1,1);}catch(err){}
-									}
-									if(PAZIENTI.idCL == -1)PAZIENTI.caricaPazienti();
-									else{
-										try{document.getElementById("lista_pazienti").querySelector(".alertMini").style.display='none';}catch(err){}
-									}
-									FORNITORI.caricaFornitori();
-									SERVIZI.caricaServizi();
-									ANNOTAZIONI.caricaAnnotazioni();
-									if(	SCHEDA.elencoSel == 'pazienti'){	
-										var lista = document.getElementById("lista_pazienti").querySelector(".lista");
-										if(lista.classList.contains("listaTrattamenti"))PAZIENTI.caricaTrattamenti( true ); // true serve per ...
-										if(lista.classList.contains("listaSaldi"))PAZIENTI.caricaSaldi( true ); //    ... riaccendere il pulsante
-									}
-										//try{SET.car_procedure(-1,1);}catch(err){}
-									//}
-									if(BACKUPS.bkpProvv){
-										BACKUPS.bkpProvv = null;
-										LOGIN.sincronizza( 'BACKUPS.ripristinoTerminato();', true );
-										visLoader("");
-										SCHEDA.scaricaScheda();
-										if(PAZIENTI.idCL > -1){
-											PAZIENTI.deselPaziente();
-										}
-									}
-									if(DB.sizeDb<40*1000*1000)LOGIN.updateGallery(); // limite a 40MB (circa 1000 foto)
-								});
-							});
-						});
-					});
-				});
-			});
+		//DB.foto = { data: [], lastSync: 0 };
+		for(let f in DB.foto.data){
+			DB.foto.data[f].imgBig = '';
+		}
+		Promise.all([
+			localPouchDB.setItem(MD5("DB"+LOGIN._frv()+".pazienti"), IMPORTER.COMPR(DB.pazienti)),
+			localPouchDB.setItem(MD5("DB"+LOGIN._frv()+".fornitori"), IMPORTER.COMPR(DB.fornitori)),
+			localPouchDB.setItem(MD5("DB"+LOGIN._frv()+".servizi"), IMPORTER.COMPR(DB.servizi)),
+			localPouchDB.setItem(MD5("DB"+LOGIN._frv()+".annotazioni"), IMPORTER.COMPR(DB.annotazioni)),
+			localPouchDB.setItem(MD5("DB"+LOGIN._frv()+".appuntamenti"), IMPORTER.COMPR(DB.appuntamenti)),
+			localPouchDB.setItem(MD5("DB"+LOGIN._frv()+".procedure"), IMPORTER.COMPR(DB.procedure)),
+			localPouchDB.setItem(MD5("DB"+LOGIN._frv()+".foto"), IMPORTER.COMPR(DB.foto))
+		]).then(function( dbs ){
+			if(LOGIN.afterFunct){
+				eval(LOGIN.afterFunct);
+				if(LOGIN.afterFunct && LOGIN.afterFunct.indexOf('/*noRic*/')>=-1){
+					LOGIN.afterFunct = null;
+					return;
+				}
+				LOGIN.afterFunct = null;
+			}else{
+				try{SET.car_procedure(-1,1);}catch(err){}
+			}
+			if(PAZIENTI.idCL == -1)PAZIENTI.caricaPazienti();
+			else{
+				try{document.getElementById("lista_pazienti").querySelector(".alertMini").style.display='none';}catch(err){}
+			}
+			FORNITORI.caricaFornitori();
+			SERVIZI.caricaServizi();
+			ANNOTAZIONI.caricaAnnotazioni();
+			if(	SCHEDA.elencoSel == 'pazienti'){	
+				var lista = document.getElementById("lista_pazienti").querySelector(".lista");
+				if(lista.classList.contains("listaTrattamenti"))PAZIENTI.caricaTrattamenti( true ); // true serve per ...
+				if(lista.classList.contains("listaSaldi"))PAZIENTI.caricaSaldi( true ); //    ... riaccendere il pulsante
+			}
+			if(BACKUPS.bkpProvv){
+				BACKUPS.bkpProvv = null;
+				LOGIN.sincronizza( 'BACKUPS.ripristinoTerminato();', true );
+				visLoader("");
+				SCHEDA.scaricaScheda();
+				if(PAZIENTI.idCL > -1){
+					PAZIENTI.deselPaziente();
+				}
+			}
+			if(DB.sizeDb<40*1000*1000)LOGIN.updateGallery(); // limite a 40MB (circa 1000 foto)
 		});
 	},
 	download:function ( filename, text ){
@@ -2282,16 +2214,16 @@ var LOGIN = {
 	updateGallery: function(){
 		if(CONN.getConn() && LOGIN.logedin()!=''){
 			var elenco = [];
-			for(p in DB.pazienti.data){
+			for(let p in DB.pazienti.data){
 				// verifico nel paziente
 				var gallery =  __(DB.pazienti.data[p].gallery,'[]');
                 if(!gallery)gallery='[]';
                 gallery = JSON.parse(gallery);
 				if(gallery.length){
-					for(g in gallery){
+					for(let g in gallery){
 						if(!__(gallery[g].imgMini)){
 							var add = true;
-							for(f in DB.foto.data){
+							for(let f in DB.foto.data){
 								if(DB.foto.data[f].idFoto==gallery[g].idFoto && __(DB.foto.data[f].imgMini))add = false;
 							}
 							if(add)elenco.push(gallery[g].idFoto);
@@ -2303,10 +2235,10 @@ var LOGIN = {
 					if(DB.pazienti.data[p].trattamenti[t].gallery){
 						var gallery =  JSON.parse(DB.pazienti.data[p].trattamenti[t].gallery);
 						if(gallery.length){
-							for(g in gallery){
+							for(let g in gallery){
 								if(!__(gallery[g].imgMini)){
 									var add = true;
-									for(f in DB.foto.data){
+									for(let f in DB.foto.data){
 										if(DB.foto.data[f].idFoto==gallery[g].idFoto && __(DB.foto.data[f].imgMini))add = false;
 									}
 									if(add)elenco.push(gallery[g].idFoto);
@@ -2316,16 +2248,16 @@ var LOGIN = {
 					}
 				}
 			}
-			for(p in DB.procedure.data){
+			for(let p in DB.procedure.data){
 				// verifico nella procedura
 				var gallery =  __(DB.procedure.data[p].gallery,'[]');
                 if(!gallery)gallery='[]';
                 gallery = JSON.parse(gallery);
 				if(gallery.length){
-					for(g in gallery){
+					for(let g in gallery){
 						if(!__(gallery[g].imgMini)){
 							var add = true;
-							for(f in DB.foto.data){
+							for(let f in DB.foto.data){
 								if(DB.foto.data[f].idFoto==gallery[g].idFoto && __(DB.foto.data[f].imgMini))add = false;
 							}
 							if(add)elenco.push(gallery[g].idFoto);
@@ -2340,9 +2272,9 @@ var LOGIN = {
 		if(res){
 			var modificato = false;
 			var foto = JSON.parse(res);
-			for(f in foto){
+			for(let f in foto){
 				var presente = false;
-				for(g in DB.foto.data){
+				for(let g in DB.foto.data){
 					if(DB.foto.data[g].idFoto == foto[f].idFoto){
 						DB.foto.data[g].imgMini = foto[f].imgMini;
 						presente = true;
@@ -2354,21 +2286,20 @@ var LOGIN = {
 				}
 			}
 			if(modificato){
-				localPouchDB.setItem(MD5("DB"+LOGIN._frv()+".foto"), IMPORTER.COMPR(DB.foto)).then(function(){ // salvo il DB
-				});
+				localPouchDB.setItem(MD5("DB"+LOGIN._frv()+".foto"), IMPORTER.COMPR(DB.foto));
 			}
 		}
 	},
 	pulisciGallery: function(){
-		for(f=DB.foto.data.length-1;f>=0;f--){
+		for(let f=DB.foto.data.length-1;f>=0;f--){
 			presente = false;
-			for(p in DB.pazienti.data){
+			for(let p in DB.pazienti.data){
 				// verifico nel paziente
 				var gallery =  __(DB.pazienti.data[p].gallery,'[]');
                 if(!gallery)gallery='[]';
                 gallery = JSON.parse(gallery);
 				if(gallery.length){
-					for(g in gallery){
+					for(let g in gallery){
 						if(DB.foto.data[f].idFoto == gallery[g].idFoto)presente = true;
 					}
 				}
@@ -2377,28 +2308,27 @@ var LOGIN = {
 					if(DB.pazienti.data[p].trattamenti[t].gallery){
 						var gallery =  JSON.parse(DB.pazienti.data[p].trattamenti[t].gallery);
 						if(gallery.length){
-							for(g in gallery){
+							for(let g in gallery){
 								if(DB.foto.data[f].idFoto == gallery[g].idFoto)presente = true;
 							}
 						}
 					}
 				}
 			}
-			for(p in DB.procedure.data){
+			for(let p in DB.procedure.data){
 				// verifico nella procedura
 				var gallery =  __(DB.procedure.data[p].gallery,'[]');
                 if(!gallery)gallery='[]';
                 gallery = JSON.parse(gallery);
 				if(gallery.length){
-					for(g in gallery){
+					for(let g in gallery){
 						if(DB.foto.data[f].idFoto == gallery[g].idFoto)presente = true;
 					}
 				}
 			}
 			if(!presente)DB.foto.data.splice(f,1);
 		}
-		localPouchDB.setItem(MD5("DB"+LOGIN._frv()+".foto"), IMPORTER.COMPR(DB.foto)).then(function(){ // salvo il DB
-		});
+		localPouchDB.setItem(MD5("DB"+LOGIN._frv()+".foto"), IMPORTER.COMPR(DB.foto));
 	},
 	
 	
@@ -2450,14 +2380,14 @@ var LOGIN = {
 		LOGIN.addHTML("<i>"+TXT("DataCreazione")+":</i> <b>"+getFullDataTS(data)+" ore "+getOraTS(data)+"</b><hr>");
 		
 		LOGIN.addHTML("<h1>"+TXT("Pazienti").toUpperCase()+"</h1><div class=\"rientro\">");
-		for(p in backup.pazienti){
+		for(let p in backup.pazienti){
 			backup.pazienti[p].Nome=LOGIN.dataW(backup.pazienti[p].Nome);
 			backup.pazienti[p].Cognome=LOGIN.dataW(backup.pazienti[p].Cognome);
 		}
 		backup.pazienti.sort(sort_by("Nome" ));
 		backup.pazienti.sort(sort_by("Cognome" ));
 		var nr = 0;
-		for(p in backup.pazienti){
+		for(let p in backup.pazienti){
 			if((backup.pazienti[p].Nome || backup.pazienti[p].Cognome) && backup.pazienti[p].Cancellato!='1'){
 				nr++;
 				LOGIN.addHTML("<h2>"+(nr)+") "+backup.pazienti[p].Nome+" "+backup.pazienti[p].Cognome+"</h2><p class=\"rientro\">");
@@ -2480,15 +2410,15 @@ var LOGIN = {
 					
 					var cicli=[];
 					var n=0;
-					for(i in backup.pazienti[p].trattamenti){
+					for(let i in backup.pazienti[p].trattamenti){
 						esiste=false;
-						for(c in cicli){
+						for(let c in cicli){
 							if(cicli[c].NomeCiclo==backup.pazienti[p].trattamenti[i].LabelCiclo)esiste=true;
 						}
 						if(!esiste)cicli[n++]={"NomeCiclo": backup.pazienti[p].trattamenti[i].LabelCiclo, "UltimaModifica": backup.pazienti[p].trattamenti[i].TimeTrattamento*1, "p": i*1 };
 					}
-					for(c in cicli){
-						for(i in backup.pazienti[p].trattamenti){
+					for(let c in cicli){
+						for(let i in backup.pazienti[p].trattamenti){
 							if(backup.pazienti[p].trattamenti[i].TimeTrattamento*1>cicli[c].UltimaModifica*1){
 								cicli[c].UltimaModifica=backup.pazienti[p].trattamenti[i].TimeTrattamento*1;
 							}
@@ -2496,7 +2426,7 @@ var LOGIN = {
 					}
 					cicli.sort(sort_by("UltimaModifica", true, parseInt));
 					var vuoto=true;
-					for(c in cicli){
+					for(let c in cicli){
 						vuoto=false;
 						var noName=false;
 						NomeCiclo=cicli[c].NomeCiclo;
@@ -2544,7 +2474,7 @@ var LOGIN = {
 							if(trattamenti[t].sintomi)var sintomi=JSON.parse(trattamenti[t].sintomi);
 							if(sintomi.length>0){
 								var txtSintomi='';
-								for(s in sintomi){
+								for(let s in sintomi){
 									txtSintomi+=sintomi[s].NomeSintomo+" <b>(";
 									if(sintomi[s].score>-1)txtSintomi+=sintomi[s].score;
 									else txtSintomi+='-';
@@ -2556,7 +2486,7 @@ var LOGIN = {
 							if(trattamenti[t].puntiTsuboMap){
 								var punti=JSON.parse(LOGIN.dataW(trattamenti[t].puntiTsuboMap));
 								var txtPunti='';
-								for(f in punti){
+								for(let f in punti){
 									nTsubo=punti[f].n*1;
 									siglaMeridiano=punti[f].m;
 									valutazione=__(punti[f].e);
@@ -2575,10 +2505,27 @@ var LOGIN = {
 								txtPunti=txtPunti.substr(0,txtPunti.length-2);
 								if(txtPunti)LOGIN.addHTML("<i>"+TXT("PuntiTrattamento")+":</i> "+txtPunti+"<br>");
 							}
+							if(trattamenti[t].puntiNamikoshi){
+								var punti=JSON.parse(LOGIN.dataW(trattamenti[t].puntiNamikoshi));
+								var txtPunti='';
+								for(let f in punti){
+									siglaTsubo=punti[f].s;
+									valutazione=__(punti[f].e);
+									mezzo=__(punti[f].z);
+									descrizione=__(punti[f].t);
+									txtPunti+=punti[f].n;
+									if(valutazione=='D')txtPunti+=' (dolorante)';
+									if(mezzo)txtPunti+=' '+mezzo;
+									if(descrizione)txtPunti+=' '+descrizione;
+									txtPunti+=", ";
+								}
+								txtPunti=txtPunti.substr(0,txtPunti.length-2);
+								if(txtPunti)LOGIN.addHTML("<i>"+TXT("PuntiNamikoshi")+":</i> "+txtPunti+"<br>");
+							}
 							if(trattamenti[t].meridiani){
 								var meridiani=JSON.parse(LOGIN.dataW(trattamenti[t].meridiani));
 								var txtMeridiani='';
-								for(m in meridiani){
+								for(let m in meridiani){
 									siglaMeridiano=meridiani[m].siglaMeridiano;
 									NomeMeridiano=__(meridiani[m].NomeMeridiano);
 									valEnergetica=__(meridiani[m].valEnergetica);
@@ -2596,7 +2543,7 @@ var LOGIN = {
 							if(trattamenti[t].puntiAuriculoMap){
 								var punti=JSON.parse(LOGIN.dataW(trattamenti[t].puntiAuriculoMap));
 								var txtPunti='';
-								for(f in punti){
+								for(let f in punti){
 									siglaTsubo=punti[f].s;
 									valutazione=__(punti[f].e);
 									mezzo=__(punti[f].z);
@@ -2623,14 +2570,14 @@ var LOGIN = {
 					LOGIN.addHTML("<br><i>"+TXT("ElSaldi").toUpperCase()+":</i><br><div class=\"rientro\">");
 					var saldi=JSON.parse(JSON.stringify(backup.pazienti[p].saldi));
 					saldi.sort(sort_by("DataSaldo", true, parseInt ));
-					for(s in saldi){
+					for(let s in saldi){
 						if(saldi[s].Cancellato!='1')LOGIN.addHTML("<i>"+getFullDataTS(LOGIN.dataW(saldi[s].DataSaldo))+"</i>: <b>&euro; "+ArrotondaEuro(saldi[s].ValoreSaldo)+"</b><br>");
 					}
 					LOGIN.addHTML("</div>");
 				}
 				
 				var note=[];
-				for(n in backup.note){
+				for(let n in backup.note){
 					if(backup.note[n].TestoAnnotazione && backup.note[n].idPaziente==backup.pazienti[p].idPaziente && backup.note[n].Cancellato!='1'){
 						note.push(backup.note[n]);
 					}
@@ -2638,7 +2585,7 @@ var LOGIN = {
 				
 				if(note.length>0){
 					LOGIN.addHTML("<br><i>"+TXT("ANNOTAZIONI")+":</i><br><div class=\"rientro\">");
-					for(n in note){
+					for(let n in note){
 						LOGIN.addHTML("<b>"+note[n].meridiano+" "+LOGIN.decryptPrivacy(LOGIN.decryptPrivacy(LOGIN.dataW(note[n].numeroTsubo)))+"</b>: "+LOGIN.dataW(note[n].TestoAnnotazione.replace(/\n/gi,"<br>"))+"<br>");
 					}
 					LOGIN.addHTML("</div>");
@@ -2652,13 +2599,13 @@ var LOGIN = {
 		LOGIN.addHTML("<h1>"+TXT("PROCEDURE")+"</h1><div class=\"rientro\">");
 		
 		
-		for(n in backup.procedure){
+		for(let n in backup.procedure){
 			if(backup.procedure[n].NomeProcedura && backup.procedure[n].Cancellato!='1'){
 				LOGIN.addHTML("<b class=\"tits\">"+backup.procedure[n].NomeProcedura+"</b><div class=\"rientro\">");
 				LOGIN.addHTML("<i>"+TXT("Data")+": </i> "+getFullDataTS(backup.procedure[n].DataCreazione)+"<br>");
-				for(d in backup.procedure[n].dettagliProcedura){
+				for(let d in backup.procedure[n].dettagliProcedura){
 					var TD=backup.procedure[n].dettagliProcedura[d].TipoDettaglio;
-					if(TD=='P')LOGIN.addHTML("<i>"+TXT("Tsubo")+": </i>");
+					if(TD=='P')LOGIN.addHTML("<i>"+TXT("Punti")+": </i>");
 					if(TD=='M')LOGIN.addHTML("<i>"+TXT("AggiungiMeridiano")+": </i>");
 					if(TD=='T' || TD=='P' || TD=='M')LOGIN.addHTML("<b>");
 					var descrizione = backup.procedure[n].dettagliProcedura[d].DescrizioneDettaglio.replace(/\n/gi,"<br>");
@@ -2678,7 +2625,7 @@ var LOGIN = {
 		LOGIN.addHTML("</div>");
 		LOGIN.addHTML("<h1>"+TXT("ANNOTAZIONI_GENERICO")+"</h1><div class=\"rientro\">");
 	
-		for(n in backup.note){
+		for(let n in backup.note){
 			if(backup.note[n].TestoAnnotazione && backup.note[n].idPaziente==-1 && backup.note[n].Cancellato!='1'){
 				LOGIN.addHTML("<b class=\"tits\">"+LOGIN.dataW(backup.note[n].meridiano)+" "+LOGIN.dataW(backup.note[n].numeroTsubo)+"</b>: "+ LOGIN.dataW(backup.note[n].TestoAnnotazione.replace(/\n/gi,"<br>"))+"<br>");
 				

@@ -7,7 +7,7 @@ var MODULO_MERIDIANI = { // extend SET
 		// carica i meridiani nell'elenco del menu
 		var contElencoMeridiani = contSmart = '';
 		var n = 0;
-		for(m in DB.set.meridiani){
+		for(let m in DB.set.meridiani){
 			n++;
 			var addClass = addClassEl = '';
 			
@@ -20,7 +20,7 @@ var MODULO_MERIDIANI = { // extend SET
 				addClassEl = ' spazioPrima';
 			}
 			var elencoTsubo = '';
-			for(s in DB.set.meridiani[m].tsubo){
+			for(let s in DB.set.meridiani[m].tsubo){
 				var TS = DB.set.meridiani[m].tsubo[s];
 				elencoTsubo+='<p>'+this.scriviTsubo(TS.NomeTsubo,true,true,__(TS.siglaTsubo))+'</p>';
 			}

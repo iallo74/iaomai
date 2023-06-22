@@ -38,11 +38,11 @@ var DB = {
 	
 	// i metodi
 	pulisciFRV: function( jsn ){
-		for( i in jsn){
+		for(let i in jsn){
 			if(jsn[i].frv)delete jsn[i].frv;
-			for( l in jsn[i]){
+			for(let  l in jsn[i]){
 				if(typeof(jsn[i][l])=='object'){
-					for(u in jsn[i][l]){
+					for(let u in jsn[i][l]){
 						if(jsn[i][l][u].frv)jsn[i][l][u].frv=false;
 					}
 				}
@@ -77,7 +77,7 @@ var DB = {
 			data: fotoBase
 		};
 		/*if(fotoBase.length){
-			for(f in DB.foto.data){
+			for(let f in DB.foto.data){
 				DB.foto.data[f].imgBig = DB.foto.data[f].imgMini;
 			}
 		}*/
@@ -107,20 +107,15 @@ var DB = {
 		};
 		
 		if(typeof(localStorage.dbInizializzato) == 'undefined'){
-			localPouchDB.setItem(MD5("DBfrv.pazienti"), IMPORTER.COMPR(DB.pazienti)).then(function(){ // salvo il DB
-				//
-				localPouchDB.setItem(MD5("DBfrv.foto"), IMPORTER.COMPR(DB.foto)).then(function(){ // salvo il DB
-					//
-					localPouchDB.setItem(MD5("DBfrv.fornitori"), IMPORTER.COMPR(DB.fornitori)).then(function(){ // salvo il DB
-							//
-						localPouchDB.setItem(MD5("DBfrv.servizi"), IMPORTER.COMPR(DB.servizi)).then(function(){ // salvo il DB
-						//
-							PAZIENTI.caricaPazienti();
-							FORNITORI.caricaFornitori();
-							SERVIZI.caricaServizi();
-						});
-					});
-				});
+			Promise.all([
+				localPouchDB.setItem(MD5("DBfrv.pazienti"), IMPORTER.COMPR(DB.pazienti)),
+				localPouchDB.setItem(MD5("DBfrv.foto"), IMPORTER.COMPR(DB.foto)),
+				localPouchDB.setItem(MD5("DBfrv.fornitori"), IMPORTER.COMPR(DB.fornitori)),
+				localPouchDB.setItem(MD5("DBfrv.servizi"), IMPORTER.COMPR(DB.servizi))
+			]).then(function(){
+				PAZIENTI.caricaPazienti();
+				FORNITORI.caricaFornitori();
+				SERVIZI.caricaServizi();
 			});
 		}else{
 			PAZIENTI.caricaPazienti();
@@ -132,7 +127,7 @@ var DB = {
 	verDbSize: function(){
 		DB.nDb = 0;
 		DB.sizeDb = 0;
-		for(d=0;d<DB.dbs.length;d++){
+		for(let d=0;d<DB.dbs.length;d++){
 			localPouchDB.getItem(MD5(DB.dbs[d])).then(function(dbCont){
 				if(typeof(dbCont) != 'undefined')DB.sizeDb += DB.getStringMemorySize(dbCont);
 				DB.nDb++;

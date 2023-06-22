@@ -6,8 +6,7 @@ var RICERCHE = {
 	globOp: false,
 	cSel: -1,
 	
-	car_global: function( parola ){ // ricerca una parola
-		if(typeof(parola)=='undefined')var parola=document.getElementById("parolaGlobal").value;
+	car_global: function( parola=document.getElementById("parolaGlobal").value ){ // ricerca una parola
 	
 		var parolaOr=parola;
 		RICERCHE.cSel = -1;
@@ -45,7 +44,7 @@ var RICERCHE = {
 							if(__(MER.siglaTsubo))nomeTsubo = MER.siglaTsubo;
 						}
 						NT = '<b>'+htmlEntities(nomeTsubo)+'</b>';
-						for(n=2;n<partiNT.length;n++){
+						for(let n=2;n<partiNT.length;n++){
 							NT+=partiNT[n];
 							if(n<partiNT.length-1)NT+=".";
 						}
@@ -119,7 +118,7 @@ var RICERCHE = {
 						NomeTsubo = DB.set.meridiani[SET.leggiSiglaMeridiano(NT.meridiano)].tsubo[NT.numeroTsubo*1-1].NomeTsubo;
 						partiNT=NomeTsubo.split(".");
 						NomeTsubo='<b>'+htmlEntities(partiNT[0]+"."+partiNT[1])+"</b>";
-						for(n=2;n<partiNT.length;n++){
+						for(let n=2;n<partiNT.length;n++){
 							NomeTsubo+=partiNT[n];
 							if(n<partiNT.length-1)NomeTsubo+=".";
 						}
@@ -134,7 +133,7 @@ var RICERCHE = {
 					var pass = true;
 					if(DB.note.data[p].idPaziente>-1 && siglaTsubo){
 						pass = false;
-						for(paz in DB.pazienti.data){
+						for(let paz in DB.pazienti.data){
 							if(	DB.pazienti.data[paz].idPaziente == DB.note.data[p].idPaziente){
 								NomeTsubo += ' - '+DB.pazienti.data[paz].Nome+" "+DB.pazienti.data[paz].Cognome;
 								pass = true;
@@ -388,7 +387,7 @@ var RICERCHE = {
 		RICERCHE.parolaProvv='';
 		DB.ricerche.data.sort(sort_by("DataModifica", true, parseInt));
 		var btnSvuota = '';
-		for(k in DB.ricerche.data){
+		for(let k in DB.ricerche.data){
 			RICERCHE.parolaProvv=DB.ricerche.data[k].TestoRicerca.replace(/\'/g, '\\\'');
 			if(DB.ricerche.data[k].Cancellato!=1){
 				if(smartphone)HTML+='<img src="img/chiusuraSmartPhoneBlack.png" align="right" title="'+stripslashes(TXT("EliminaParola"))+'" onClick="RICERCHE.eliminaRicerca('+k+');" class="imgDelRes"/>';
@@ -411,7 +410,7 @@ var RICERCHE = {
 						false,
 						arguments ).then(function(pass){if(pass){
 						var v = getParamNames(CONFIRM.args.callee.toString());
-						for(i in v)eval(getArguments(v,i));
+						for(let i in v)eval(getArguments(v,i));
 			DB.ricerche.data=[];
 			localPouchDB.setItem(MD5("DB"+LOGIN._frv()+".ricerche"), IMPORTER.COMPR(DB.ricerche)).then(function(){ // salvo il DB
 				LOGIN.sincronizza();
@@ -434,7 +433,7 @@ var RICERCHE = {
 	salvaRicerca: function( parola, nRis, nRisBase ){ // salva una ricerca
 		// verifico che la parola non esista già
 		var nPres=false;
-		for(k in DB.ricerche.data){
+		for(let k in DB.ricerche.data){
 			if(DB.ricerche.data[k].TestoRicerca==parola)nPres=k;
 		}
 		
@@ -479,8 +478,7 @@ var RICERCHE = {
 		}
 		if(smartMenu && document.getElementById("scheda").classList.contains("scheda_agenda"))SCHEDA.scaricaScheda();
 	},
-	globalSubmit: function( passa ){
-		if(typeof(passa)=='undefined')var passa=false;
+	globalSubmit: function( passa=false ){
 		var parola=document.formGlobal.parolaGlobal.value;
 		if(parola.length>=3 || passa){
 			RICERCHE.apriGlobal(passa);
@@ -496,9 +494,8 @@ var RICERCHE = {
 			return false;
 		}else return false;
 	},
-	apriGlobal: function( passa ){
+	apriGlobal: function( passa=false ){
 		MENU.chiudiMenu("ricerche");
-		if(typeof(passa)=='undefined')var passa=false;
 		document.getElementById("schedaGlobal").classList.add("visSch");
 		if(!passa){
 			if(!touchable)document.getElementById("globalTesto").style.marginTop='0px';
@@ -508,8 +505,7 @@ var RICERCHE = {
 		MENU.icoSelected.classList.add("p_sel");
 		MENU.comprimiIcone(true);
 	},
-	nascondiGlobal: function( forza ){
-		if(typeof(forza) == 'undefined')var forza = false;
+	nascondiGlobal: function( forza=false ){
 		if(forza)MENU.desIcona();
 		document.getElementById("schedaGlobal").classList.remove("visSch");
 		RICERCHE.globOp=false;

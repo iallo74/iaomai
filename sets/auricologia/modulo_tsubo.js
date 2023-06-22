@@ -124,14 +124,14 @@ var MODULO_TSUBO = { // extend SET
 		
 		// elenco le patolige incluse
 		var elenco = [];
-		for(x1 in DB.set.schede){
-			for(x2 in DB.set.schede[x1]){
-				for(x3 in DB.set.schede[x1][x2]){
-					for(x4 in DB.set.schede[x1][x2][x3].p){
+		for(let x1 in DB.set.schede){
+			for(let x2 in DB.set.schede[x1]){
+				for(let x3 in DB.set.schede[x1][x2]){
+					for(let x4 in DB.set.schede[x1][x2][x3].p){
 						var el = DB.set.schede[x1][x2][x3].p[x4];
 						if(typeof(el)=='string'){
 							if(DB.set.schede[x1][x2][x3].p[x4].indexOf(siglaTsubo) >- 1){
-								for(p in DB.set.patologie){
+								for(let p in DB.set.patologie){
 									if(DB.set.patologie[p].scheda == x1){
 										if(elenco.indexOf(p)==-1)elenco.push(p);
 									}
@@ -139,9 +139,9 @@ var MODULO_TSUBO = { // extend SET
 							}
 						}else{
 							if(typeof(el.length)=='undefined')el = el.p;
-							for(x5 in el){
+							for(let x5 in el){
 								if(el[x5].indexOf(siglaTsubo) >- 1){
-									for(p in DB.set.patologie){
+									for(let p in DB.set.patologie){
 										if(DB.set.patologie[p].scheda == x1){
 											if(elenco.indexOf(p)==-1)elenco.push(p);
 										}
@@ -166,6 +166,7 @@ var MODULO_TSUBO = { // extend SET
 			HTML += '</div>';
 		}
 		
+		HTML = '<div class="translatable">'+HTML+'</div>';
 		
 		
 		// annotazione
@@ -195,7 +196,7 @@ var MODULO_TSUBO = { // extend SET
 					'</div><div class="l"></div>';
 		}else{
 			if(TestoAnnotazione){
-				HTML += '<divstyle="padding:15px;background-color:#ecdea3;">'+ TestoAnnotazione+'</div>';
+				HTML += '<div style="padding:15px;background-color:#ecdea3;">'+ TestoAnnotazione+'</div>';
 			}else{
 				HTML += '<div class="noResults">'+ htmlEntities(TXT("NessunaAnnotazione"))+'</div>';
 			}
@@ -208,6 +209,9 @@ var MODULO_TSUBO = { // extend SET
 		var btnAdd = 	'<div class="p_paz_ref_menu" onClick="REF.open(\'sets.auricologia.pointsmap\')">' +
 							TXT("ReferenceGuide") +
 						'</div>';
+		
+		var finalFunct = '';
+		if(!ritorno || !SCHEDA.formModificato)finalFunct += 'initChangeDetection( "formAnnotazioni");';
 						
 		SCHEDA.caricaScheda(	titolo,
 								HTML,
@@ -216,7 +220,9 @@ var MODULO_TSUBO = { // extend SET
 								ritorno,
 								false,
 								'',
-								btnAdd);
+								btnAdd,
+								globals.set.cartella+'_punti_'+"_"+siglaTsubo,
+								finalFunct );
 		SET.settaOverTsubo();
 		SET.ptSel = ptSel;
 		if(!ritorno || !SCHEDA.formModificato)initChangeDetection( "formAnnotazioni" );
@@ -277,7 +283,7 @@ var MODULO_TSUBO = { // extend SET
 	},
 	leggiNota: function( mr, pt ){ // legge la nota sul cliente
 		var TestoAnnotazione = '';
-		for(n in DB.note.data){
+		for(let n in DB.note.data){
 			var pass =false;
 			if(DB.note.data[n].idPaziente > -1){
 				if(DB.note.data[n].idPaziente == PAZIENTI.idPaziente)pass=true;
@@ -296,7 +302,7 @@ var MODULO_TSUBO = { // extend SET
 		SET.evidenziaNote(false);
 		SET.note = [];
 		if(DB.note){
-			for(n in DB.note.data){
+			for(let n in DB.note.data){
 				if(DB.note.data[n].app=='AUR'){
 					var pass =false;
 					if(DB.note.data[n].idPaziente > -1){
@@ -315,7 +321,7 @@ var MODULO_TSUBO = { // extend SET
 		SET.evidenziaNote(true);
 	},
 	evidenziaNote: function( az ){ // evidenzia le note con il colore giallo sul modello 3D
-		for(n in SET.note){
+		for(let n in SET.note){
 			var PT = __(manichino.getObjectByName("PT"+SET.note[n]),null);
 			if(PT && typeof(PT)!='undefined'){
 				var mat = SET.MAT.pointBase;

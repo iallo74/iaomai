@@ -1,4 +1,3 @@
-<!--
 var agendaOp=false;
 var agenda = {
 	appuntamenti:[],
@@ -33,7 +32,7 @@ var agenda = {
 				if(agenda.oraInizio>-1 && agenda.oraFine==-1){
 					var dvs=document.getElementById("day_"+agenda.giornoInizio).getElementsByTagName("div");
 					var st=false;
-					for(k=agenda.oraInizio;k<=agenda.lastSel;k+=0.5){
+					for(let k=agenda.oraInizio;k<=agenda.lastSel;k+=0.5){
 						if( dvs[(k-agenda.oraMin)*2+2].className.indexOf('timeFull')>-1)st=true;
 						if(!st){
 							dvs[(k-agenda.oraMin)*2+2].className='';
@@ -54,7 +53,7 @@ var agenda = {
 				if(document.getElementById("day_"+this.giornoInizio) && this.oraInizio>=this.oraMin && this.oraInizio<=this.oraMax){
 					document.getElementById("day_"+this.giornoInizio).getElementsByTagName("div")[(this.oraInizio-this.oraMin)*2+2].getElementsByTagName("span")[1].innerHTML='';
 					document.getElementById("day_"+this.giornoInizio).getElementsByTagName("div")[(this.oraFine-this.oraMin)*2+2].getElementsByTagName("span")[1].innerHTML='';
-					for(k=this.oraInizio;k<=this.oraFine;k+=0.5){
+					for(let k=this.oraInizio;k<=this.oraFine;k+=0.5){
 						document.getElementById("day_"+this.giornoInizio).getElementsByTagName("div")[(k-this.oraMin)*2+2].className='';
 					}
 				}
@@ -81,7 +80,7 @@ var agenda = {
 					this.conferma();
 				}else{
 					pass=true;
-					for(k=this.oraInizio;k<=this.oraFine;k+=0.5){
+					for(let k=this.oraInizio;k<=this.oraFine;k+=0.5){
 						var row = document.getElementById("day_"+g).getElementsByTagName("div")[(k-this.oraMin)*2+2];
 						if(row.className.indexOf('timeFull')>-1){
 							if(pass)this.oraFine=k-0.5;
@@ -244,7 +243,7 @@ var agenda = {
 						false,
 						arguments ).then(function(pass){if(pass){
 						var v = getParamNames(CONFIRM.args.callee.toString());
-						for(i in v)eval(getArguments(v,i));
+						for(let i in v)eval(getArguments(v,i));
 			DB.appuntamenti.data[idApp].Cancellato = 1;
 			DB.appuntamenti.data[idApp].DataModifica = DB.appuntamenti.lastSync+1;
 			var postAction = 'MENU.visAgenda('+(agenda.DataPartenza*1)+',true);';
@@ -260,18 +259,16 @@ var agenda = {
 		document.getElementById("app_cliente").classList.toggle("visSch");
 		document.getElementById("app_cliente_btn").classList.toggle("visSch");
 	},
-	popolaScelta: function( Q_id, Q_idPaziente ){
-		if(typeof(Q_id) == 'undefined')var Q_id = -1;
-		if(typeof(Q_idPaziente) == 'undefined')var Q_idPaziente = -1;
+	popolaScelta: function( Q_id=-1, Q_idPaziente=-1 ){
 		if(Q_idPaziente){
-			for(p in DB.pazienti.data){
+			for(let p in DB.pazienti.data){
 				if(DB.pazienti.data[p].idPaziente*1==Q_idPaziente*1)Q_id=p*1;
 			}
 		}
 		var HTML = '';
 		if(Q_id == -1){
 					'<div class="app_top"></div>';
-			for(p in DB.pazienti.data){
+			for(let p in DB.pazienti.data){
 				if(DB.pazienti.data[p].Cancellato*1!=1){
 					HTML += '<div onClick="agenda.popolaScelta('+p+','+DB.pazienti.data[p].idPaziente+');">' +
 								htmlEntities(DB.pazienti.data[p].Nome+" "+DB.pazienti.data[p].Cognome) +
@@ -299,7 +296,7 @@ var agenda = {
 						false,
 						arguments ).then(function(pass){if(pass){
 						var v = getParamNames(CONFIRM.args.callee.toString());
-						for(i in v)eval(getArguments(v,i));
+						for(let i in v)eval(getArguments(v,i));
 			var DataModifica = DB.pazienti.lastSync+1;
 			JSNPUSH={	"idTrattamento": 0,
 						"TitoloTrattamento": document.getElementById("TestoAppuntamento").value,
@@ -310,6 +307,7 @@ var agenda = {
 						"Prescrizione": '',
 						"puntiTsuboMap": "[]",
 						"puntiAuriculoMap": "[]",
+						"puntiNamikoshi": "[]",
 						"sintomi": "[]",
 						"meridiani": "[]",
 						"gallery": "[]",
@@ -333,11 +331,12 @@ var agenda = {
 								'},200)';
 								
 			document.getElementById("cont_sceltaAppuntamento").style.opacity = 0;
-			localPouchDB.setItem(MD5("DB"+LOGIN._frv()+".pazienti"), IMPORTER.COMPR(DB.pazienti)).then(function(){ // salvo il DB
-				localPouchDB.setItem(MD5("DB"+LOGIN._frv()+".appuntamenti"), IMPORTER.COMPR(DB.appuntamenti)).then(function(){ // salvo il DB
-					LOGIN.sincronizza(	'MENU.visAgenda();' +
-										postAction );
-				});
+			Promise.all([
+				localPouchDB.setItem(MD5("DB"+LOGIN._frv()+".pazienti"), IMPORTER.COMPR(DB.pazienti)),
+				localPouchDB.setItem(MD5("DB"+LOGIN._frv()+".appuntamenti"), IMPORTER.COMPR(DB.appuntamenti))
+			]).then(function(){
+				LOGIN.sincronizza(	'MENU.visAgenda();' +
+									postAction );
 			});
 		}});
 	},
@@ -389,7 +388,7 @@ var agenda = {
 					
 		if(document.getElementById("idApp").value!='-1'){
 			// appuntamento esistente
-			for(p in DB.appuntamenti.data){
+			for(let p in DB.appuntamenti.data){
 				if(	TimeAppuntamento == DB.appuntamenti.data[p].TimeAppuntamento && 
 					oraInizio == DB.appuntamenti.data[p].oraInizio &&
 					oraFine == DB.appuntamenti.data[p].oraFine ){
@@ -453,7 +452,7 @@ var agenda = {
 		var s=globals.siglaLingua.substr(0,2)+"-"+globals.siglaLingua.substr(0,2).toUpperCase();
 		HTML += '<div class="calCont">'	+
 				'	<div class="calInt">';
-		for(g=1;g<=7;g++){
+		for(let g=1;g<=7;g++){
 			gg=g;
 			if(gg==7)gg=0;
 			HTML += '	<div' + ((g>5) ? ' class="festivo"' : '') + '>'+
@@ -463,7 +462,7 @@ var agenda = {
 		HTML += '	</div>' +
 				'	<div class="calGiorni">';
 		var gT=0;
-		for(var t = d.getMonth(); d.getMonth() === t; ){
+		for(let t = d.getMonth(); d.getMonth() === t; ){
 			if(d.getDate()==1){
 				var dd=d.getDay();
 				if(dd==0)dd=7;
@@ -476,7 +475,7 @@ var agenda = {
 			if(d*1==this.giornoInizio*1)HTML+=' class="hSel"';
 			
 			var pieno=0;
-			for(h=16;h<44;h++){
+			for(let h=16;h<44;h++){
 				for(a in this.appuntamenti[d*1]){
 					if(	h*0.5>=this.appuntamenti[d*1][a].timeInizio && 
 						h*0.5<this.appuntamenti[d*1][a].timeFine){
@@ -564,7 +563,7 @@ var agenda = {
 				'	<div></div>' +
 				'	<div class="agendaOre"' +
 				'		 id="agOr0">';
-		for(h=this.oraMin;h<this.oraMax;h++){
+		for(let h=this.oraMin;h<this.oraMax;h++){
 			act='onClick="agenda.selOra('+h+','+(d*1)+');"';
 			cnt='';
 			cls='';
@@ -679,7 +678,7 @@ var agenda = {
 	},
 	annulla:function( mod ){
 		var dvs=document.getElementById("day_"+agenda.giornoInizio).getElementsByTagName("div");
-		for(k=agenda.oraInizio;k<=agenda.oraFine;k+=0.5){
+		for(let k=agenda.oraInizio;k<=agenda.oraFine;k+=0.5){
 			if(dvs[(k-agenda.oraMin)*2+2].className.indexOf('timeFull')==-1){
 				dvs[(k-agenda.oraMin)*2+2].className='';
 				dvs[(k-agenda.oraMin)*2+2].getElementsByTagName("span")[1].innerHTML='';
@@ -710,7 +709,7 @@ var agenda = {
 			if(d==this.giornoInizio){
 				var dvs=document.getElementById("day_"+d).getElementsByTagName("div");
 				var st=false;
-				for(k=this.oraInizio;k<=h;k+=0.5){
+				for(let k=this.oraInizio;k<=h;k+=0.5){
 					if(dvs[(k-this.oraMin)*2+2].className.indexOf('timeFull')>-1){
 						st=true;
 						ro=false;
@@ -734,7 +733,7 @@ var agenda = {
 			if(this.oraInizio>-1 && this.oraFine==-1){
 				var dvs=document.getElementById("day_"+this.giornoInizio).getElementsByTagName("div");
 				var st=false;
-				for(k=this.oraInizio+0.5;k<=this.lastSel;k+=0.5){
+				for(let k=this.oraInizio+0.5;k<=this.lastSel;k+=0.5){
 					if(dvs[(k-this.oraMin)*2+2].className.indexOf('timeFull')>-1)st=true;
 					if(!st)dvs[(k-this.oraMin)*2+2].className='';
 				}
@@ -763,7 +762,7 @@ var agenda = {
 			this.oFor=this.oraFine;
 			this.gIor=this.giornoInizio;
 		}
-		for(i in DB.pazienti.data){
+		for(let i in DB.pazienti.data){
 			for(t in DB.pazienti.data[i].trattamenti){
 				if(!DB.pazienti.data[i].trattamenti[t].Cancellato){
 					if(!this.appuntamenti[DB.pazienti.data[i].trattamenti[t].TimeTrattamento*1000])this.appuntamenti[DB.pazienti.data[i].trattamenti[t].TimeTrattamento*1000]=[];
@@ -783,7 +782,7 @@ var agenda = {
 				}
 			}
 		}
-		for(i in DB.appuntamenti.data){
+		for(let i in DB.appuntamenti.data){
 			if(!DB.appuntamenti.data[i].Cancellato){
 				if(!this.appuntamenti[DB.appuntamenti.data[i].TimeTrattamento])this.appuntamenti[DB.appuntamenti.data[i].TimeTrattamento]=[];
 				if(typeof(DB.appuntamenti.data[i].oraInizio)!='undefined')oraInizio=DB.appuntamenti.data[i].oraInizio;
@@ -793,7 +792,7 @@ var agenda = {
 				var idCli = DB.appuntamenti.data[i].idCli;
 				var Nominativo = '';
 				if(!idCli){
-					for(p in DB.pazienti.data){
+					for(let p in DB.pazienti.data){
 						if(DB.pazienti.data[p].idPaziente*1==DB.appuntamenti.data[i].idPaziente*1)idCli = p;
 					}
 				}
@@ -847,4 +846,3 @@ var agenda = {
 		}
 	}
 }
-//-->

@@ -395,13 +395,9 @@ var DB_anatomia = {
         "Descrizione": "<i>Origen: </i>espina ilíaca antero-superior<br /><i>Inserción:</i> tibia, cara medial de la diáfisis proximal<br /><i>Acción: </i>aducción y rotación medial del muslo, flexión de la pierna<br /><i>Inervación: </i>nervio femoral L2-L3<br /><i>Vascularización: </i>arteria femoral profunda y arteria genicular descendente, rama safena",
         "baseImg": true
     },
-    /*"Muscolo_QUADRICIPITE_FEMORALE": {
-    "Titolo": "Muscolo Quadricipite femorale",
-    "Descrizione": "<i>Origine (retto): </i>Spina iliaca antero-superiore e acetabolo<br /><i>Origine (vasto laterale): </i>femore, grande trocantere e linea aspra<br /><i>Origine (vasto intermedio): </i>femore, facce anteriore e laterale<br /><i>Origine (vasto mediale): </i>femore, linea aspra e linea intertrocanterica <br /><i>Inserzione (retto e vasto intermedio): </i>tendine comune del quadricipite contenentre la rotula che si inserisce nella tuberosità della tibia<br /><i>Inserzione (vasto laterale e vasto mediale): </i>rotula, tramite il tendine comune del quadricipite, che si inserisce nella tuberosità della tibia<br /><i>Azione (retto): </i>estensione della gamba e flessione dell'anca<br /><i>Azione (vasto laterale, vasto intermedio e vasto mediale): </i>estensione della gamba<br /><i>Innervazione: </i>nervo femorale L2-L4<br /><i>Vascolarizzazione: </i>ateria femorale circonflessa laterale"
-    },*/
     "Muscolo_RETTO": {
         "Titolo": "Músculo Recto del fémur (Cuádriceps femoral)",
-        "Descrizione": "<p><i>Origen:</i> se origina en la E.I.A.I. (espina ilíaca anteroinferior) <br />  Inserción: se inserta en la rugosidad tibial (junto con los otros tres fascículos del cuádriceps femoral).<br />    <i>Acción: </i>se utiliza para flexionar el muslo en la cadera y extender la pierna en el muslo, su acción es fundamental para la marcha y para mantener la postura erecta. Es un músculo extensor. <br />    <i>Inervación: </i>inervado por el nervio femoral (L2, L4). <br />    <i>Vascularización:</i> alimentado por la arteria femoral.</p>",
+        "Descrizione": "<p><i>Origen:</i> se origina en la E.I.A.I. (espina ilíaca anteroinferior) <br /><i>Inserción</i>: se inserta en la rugosidad tibial (junto con los otros tres fascículos del cuádriceps femoral).<br />    <i>Acción: </i>se utiliza para flexionar el muslo en la cadera y extender la pierna en el muslo, su acción es fundamental para la marcha y para mantener la postura erecta. Es un músculo extensor. <br />    <i>Inervación: </i>inervado por el nervio femoral (L2, L4). <br />    <i>Vascularización:</i> alimentado por la arteria femoral.</p>",
         "baseImg": "Muscolo_QUADRICIPITE_FEMORALE"
     },
     "Muscolo_VASTO_LATERALE": {
@@ -525,7 +521,7 @@ var DB_anatomia = {
         "Descrizione": "<p><i>Origen:</i> se origina en la parte inferior de la cara externa del cuerpo de la mandíbula y se dirige hacia arriba y medialmente hasta fusionarse con el orbicular de la boca.<br /><i>Inserción:</i> en la piel del labio superior.<br /><i>Acción:</i> su función es bajar el labio inferior y la comisura labial.<br /><i>Inervación:</i> está inervado por el nervio facial.<br /><i>Vascularización:</i> recibe irrigación sanguínea a través de la arteria facial.</p>"
     },
     "Muscolo_DEPRESSORE_LABBRO": {
-        "Titolo": "Músculo Depresor del Labio",
+        "Titolo": "Músculo Depresor del Labio inferior",
         "Descrizione": "<p><i>Origen:</i> se origina en la parte inferior de la cara externa del cuerpo de la mandíbula y se dirige hacia arriba y medialmente hasta fusionarse con el orbicular de la boca.<br /><i>Inserción:</i> se inserta en la piel del labio superior.<br /><i>Acción:</i> su función es bajar y evertir el labio inferior.<br /><i>Inervación:</i> está inervado por la rama bucal del nervio facial.<br /><i>Vascularización:</i> recibe irrigación sanguínea a través de la arteria facial.</p>"
     },
     "Muscolo_ORBICOLARE_BOCCA": {
@@ -557,7 +553,7 @@ var DB_anatomia = {
         "Descrizione": "<p> <i>Origen:</i> se divide en tres porciones: zigomática, infraorbitaria y angular. El músculo se origina en la cara del hueso cigomático.<br /> <i>Inserción:</i> se inserta en la fascia temporal. El margen posteroinferior, o zigomático, es delgado, liso y recto. <br /> <i>Acción:</i> músculo masticatorio y expresor. <br /> <i>Inervación:</i> está inervado por la rama zigomática y la rama bucal del nervio facial.<br /> <i>Vascularización:</i> se alimenta de la arteria facial.</p>"
     },
     "Muscolo_ELEVATORE_DEL_LABBRO": {
-        "Titolo": "Músculo Elevador del Labio",
+        "Titolo": "Músculo Elevador del Labio superior",
         "Descrizione": "<p> <i>Origen e Inserción:</i> consta de tres porciones: zigomática, infraorbitaria y angular. La parte zigomática se origina en la cara lateral del hueso cigomático y se inserta en la piel del labio superior, por encima de la comisura. La parte infraorbitaria se origina en el margen infraorbitario y se inserta en la piel del labio superior, en el lado medial de la terminación de la parte zigomática. La parte angular se origina en el proceso frontal del hueso maxilar y el hueso nasal, y se inserta en la piel del ala de la nariz y el labio superior.<br /> <i>Acción:</i> al contraer el músculo elevador del labio, se produce un levantamiento del labio superior y del ala de la nariz.<br /> <i>Inervación:</i> está inervado por la rama bucal del nervio facial. <br /> <i>Vascularización:</i> se alimenta de la arteria facial.</p>"
     },
     "Muscolo_RISORIO": {
@@ -680,7 +676,7 @@ var DB_anatomia = {
     },*/
 
     "Organo_UTERO": {
-        "Titolo": "Uterus",
+        "Titolo": "Útero",
         "Descrizione": "<p><i>Ubicación: </i>el útero tiene su origen en el desembocadura de las trompas de Falopio y se abre hacia abajo en la cavidad vaginal.<br> <i>Función: </i>es el órgano encargado de recibir el óvulo fecundado, permitir su desarrollo y expulsar al feto cuando el embarazo llega a término. El útero experimenta muchos cambios en función de las diferentes etapas del desarrollo sexual de la mujer (prepubertad, pubertad, madurez sexual, menopausia), durante el embarazo y a lo largo del ciclo menstrual.</p>"
     },
     "Organo_TUBE": {
@@ -696,7 +692,7 @@ var DB_anatomia = {
         "Descrizione": "<p><i>Ubicación: </i>los ovarios, en número de dos y con forma similar a un frijol, se encuentran en la pelvis, a la derecha y a la izquierda del útero, en una región llamada fosa ovárica por los anatomistas. <br> <i>Función: </i>su función es secretar óvulos, que son las células sexuales femeninas, y las hormonas sexuales propias de la mujer: estrógenos y progesterona.</p>"
     },
     "Organo_DOTTI_DEFERENTI": {
-        "Titolo": "conductos deferentes",
+        "Titolo": "Conductos deferentes",
         "Descrizione": "<p><i>Ubicación: </i>los conductos deferentes comienzan en la cola del epidídimo y terminan, después de atravesar el canal inguinal y recorrer la cavidad pélvica, en la base de la próstata, donde se unen con la vesícula seminal ipsilateral para formar el conducto eyaculador.<br> <i>Función: </i>conectan el epidídimo con la uretra para el transporte del líquido seminal desde los testículos hasta el pene.</p>"
     },
     "Organo_PROSTATA": {

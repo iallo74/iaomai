@@ -152,6 +152,38 @@
 	--font-28-6: 30.6px;
 	--font-30-9: 32.9px;
 }
+:root .fontMAG{
+	/* FONT SIZES */
+	--font-9-96: 12.96px;
+	--font-10: 13px;
+	--font-11: 14px;
+	--font-12: 15px;
+	--font-12-1: 15.1px;
+	--font-12-94: 15.94px;
+	--font-13-2: 17.2px;
+	--font-13-58: 17.58px;
+	--font-13-94: 17.94px;
+	--font-14-3: 18.3px;
+	--font-14-48: 18.48px;
+	--font-14-94: 18.94px;
+	--font-15-39: 19.39px;
+	--font-16: 20px;
+	--font-16-29: 20.29px;
+	--font-16-5: 20.5px;
+	--font-16-93: 20.93px;
+	--font-17-6: 21.6px;
+	--font-18: 22px;
+	--font-18-7: 23.7px;
+	--font-19-8: 23.8px;
+	--font-20-5: 24.5px;
+	--font-23-1: 27.1px;
+	--font-24-2: 28.2px;
+	--font-25: 29px;
+	--font-25-35: 29.35px;
+	--font-28: 32px;
+	--font-28-6: 32.6px;
+	--font-30-9: 33.9px;
+}
 @media (max-width: 699px){
 	:root .smart{
     	--menu-width: 100%;

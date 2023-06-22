@@ -5,39 +5,47 @@ var LINGUE = {
 	NLS: {
 		"1": {
 			sigla: "ita",
+			sigla2: "it",
 			text: "Italiano"
 		},
 		"2": {
 			sigla: "eng",
+			sigla2: "en",
 			text: "English",
 			ai: true
 		},
 		"3": {
 			sigla: "esp",
+			sigla2: "es",
 			text: "Español",
 			ai: true
 		},
 		"4": {
 			sigla: "fra",
+			sigla2: "fr",
 			text: "Français",
 			ai: true
 		},
 		"5": {
 			sigla: "por",
+			sigla2: "pt",
 			text: "Português",
 			ai: true
 		},
 		"6": {
 			sigla: "deu" ,
+			sigla2: "de" ,
 			text: "Deutsch",
 			ai: true
 		}
 	},
+	googleLangSel: '',
+	googleLanguages: [],
 	init: function(){
 		if(typeof(localStorage.siglaLingua)=='undefined')this.newInst=true;
 		globals.siglaLingua='eng';
 		if(!localStorage.getItem("siglaLingua")){ // OK localStorage
-			for(p in LINGUE.NLS){
+			for(let p in LINGUE.NLS){
 				if(this.linguaBrowser()==LINGUE.NLS[p].sigla.substring(0,2)){
 					localStorage.setItem("siglaLingua",LINGUE.NLS[p].sigla);
 				}
@@ -53,13 +61,13 @@ var LINGUE = {
 		var tags=["td","table","p","span","div","b","font","li","ul","strong","em","u","span"];
 		for(tg=0;tg<tags.length;tg++){
 			var coll=document.getElementsByTagName(tags[tg]);
-			for(k=0; k<coll.length;k++){
+			for(let k=0; k<coll.length;k++){
 				this.convTitle(coll[k]);
 				this.convHTML(coll[k]);
 			}
 		}
 		coll=document.getElementsByTagName("input");
-		for(k=0; k<coll.length;k++)this.convTitle(coll[k]);
+		for(let k=0; k<coll.length;k++)this.convTitle(coll[k]);
 		
 		// POPOLO in popup info-lingue e il menu delle lingue
 		var aiPres = false;
@@ -68,7 +76,7 @@ var LINGUE = {
 			htmlNote = '',
 			html = 	'<div id="tabLingue">' +
 					'<div><div></div>';
-		for(var l in LINGUE.NLS){
+		for(let l in LINGUE.NLS){
 			html += '<div>'+LINGUE.NLS[l].sigla+'</div>';
 			htmlInt += '<div>';
 			if(__(LINGUE.NLS[l].ai)){
@@ -85,10 +93,10 @@ var LINGUE = {
 					'    <div>Interfaccia</div>' + htmlInt +
 					'</div>' +
 					'<i class="tdLabel">'+TXT("contenuti")+'</i>';
-		for(var s in sets){
+		for(let s in sets){
 			if(__(sets[s].lingueCont,[]).length){
 				html += '<div><div>'+sets[s].nome+'</div>';
-				for(var l in LINGUE.NLS){
+				for(let l in LINGUE.NLS){
 					html += '<div';
 					if(sets[s].lingueCont.indexOf(LINGUE.NLS[l].sigla)>-1)html += ' class="lok"';
 					html += '>';
@@ -111,7 +119,6 @@ var LINGUE = {
 					'</div>';
 		document.getElementById("contInfolingue").innerHTML = html;
 		document.getElementById("lingueSelect").innerHTML = htmlSel;
-		
 	},
 	convTitle: function(element){
 		if(element.title.substr(0,6)=='{{TXT_'){
@@ -182,34 +189,39 @@ var LINGUE = {
 		return l_lang.substring(0,2);
 	},
 	convPaziente: function( str ){
-		if(__(localStorage.noMedico)){
+		var cartOp = '';
+		if(__(globals.set))cartOp = __(globals.set.cartella);
+		if(__(localStorage.noMedico) || cartOp=='meridiani_shiatsu'){
+			//var dest = (__(localStorage.noMedico)=='shiatsu')?"S":"C";
+			var dest = (__(localStorage.noMedico)=='shiatsu' || 
+						cartOp=='meridiani_shiatsu' ) ? "S" : "C";
 			
 			var re = new RegExp(DB.TXT.base["_Cliente_P"][globals.siglaLingua], 'g');
-			str = str.replace(re,DB.TXT.base["_Cliente_C"][globals.siglaLingua]);
+			str = str.replace(re,DB.TXT.base["_Cliente_"+dest][globals.siglaLingua]);
 			
 			var re = new RegExp(DB.TXT.base["_Clienti_P"][globals.siglaLingua], 'g');
-			str = str.replace(re,DB.TXT.base["_Clienti_C"][globals.siglaLingua]);
+			str = str.replace(re,DB.TXT.base["_Clienti_"+dest][globals.siglaLingua]);
 			
 			var re = new RegExp(DB.TXT.base["_cliente_P"][globals.siglaLingua], 'g');
-			str = str.replace(re,DB.TXT.base["_cliente_C"][globals.siglaLingua]);
+			str = str.replace(re,DB.TXT.base["_cliente_"+dest][globals.siglaLingua]);
 			
 			var re = new RegExp(DB.TXT.base["_clienti_P"][globals.siglaLingua], 'g');
-			str = str.replace(re,DB.TXT.base["_clienti_C"][globals.siglaLingua]);
+			str = str.replace(re,DB.TXT.base["_clienti_"+dest][globals.siglaLingua]);
 			
 			var re = new RegExp(DB.TXT.base["_un_ciclo_P"][globals.siglaLingua], 'g');
-			str = str.replace(re,DB.TXT.base["_un_ciclo_C"][globals.siglaLingua]);
+			str = str.replace(re,DB.TXT.base["_un_ciclo_"+dest][globals.siglaLingua]);
 			
 			var re = new RegExp(DB.TXT.base["_il_ciclo_P"][globals.siglaLingua], 'g');
-			str = str.replace(re,DB.TXT.base["_il_ciclo_C"][globals.siglaLingua]);
+			str = str.replace(re,DB.TXT.base["_il_ciclo_"+dest][globals.siglaLingua]);
 			
 			var re = new RegExp(DB.TXT.base["_Ciclo_P"][globals.siglaLingua], 'g');
-			str = str.replace(re,DB.TXT.base["_Ciclo_C"][globals.siglaLingua]);
+			str = str.replace(re,DB.TXT.base["_Ciclo_"+dest][globals.siglaLingua]);
 			
 			var re = new RegExp(DB.TXT.base["_ciclo_P"][globals.siglaLingua], 'g');
-			str = str.replace(re,DB.TXT.base["_ciclo_C"][globals.siglaLingua]);
+			str = str.replace(re,DB.TXT.base["_ciclo_"+dest][globals.siglaLingua]);
 			
 			var re = new RegExp(DB.TXT.base["_cicli_P"][globals.siglaLingua], 'g');
-			str = str.replace(re,DB.TXT.base["_cicli_C"][globals.siglaLingua]);
+			str = str.replace(re,DB.TXT.base["_cicli_"+dest][globals.siglaLingua]);
 			
 		}
 		return str;
@@ -222,6 +234,95 @@ var LINGUE = {
 		}
 		return linguaRet;
 	},
+	getSigla2: function(){
+		for(let n in LINGUE.NLS){
+			if(LINGUE.NLS[n].sigla == localStorage.siglaLingua)return LINGUE.NLS[n].sigla2;
+		}
+	},
+	getGoogleLanguages: function(){
+		if(!CONN.getConn() || !LOGIN.logedin())return;
+		if(!LINGUE.googleLanguages.length){
+			CONN.caricaUrl(	"translate_languages.php",
+							"lang_or="+LINGUE.getSigla2(), //encodeURIComponent(
+							"LINGUE.resGoogleLanguages");
+		}
+	},
+	resGoogleLanguages: function( txt ){
+		if(txt!='404'){
+			var languages = JSON.parse( txt );
+			for(let l in languages){
+				var addAlph = '2_';
+				for(let n in LINGUE.NLS){
+					if(LINGUE.NLS[n].sigla2 == l){
+						if(!__(LINGUE.NLS[n].ai))addAlph = '0_';
+						else addAlph = '1_';
+					}
+				}
+				var json = {
+					sigla: l,
+					alph: addAlph + languages[l],
+					name: languages[l]
+				}
+				if(LINGUE.googleLanguages.indexOf(json)==-1)LINGUE.googleLanguages.push(json);
+			}
+			LINGUE.googleLanguages.sort(sort_by("alph"));
+		}
+	},
+	googleTranslate: function( lang, codice ){
+		if(!CONN.retNoConn()){
+			LINGUE.resetGoogleTranslate();
+			return;
+		}
+		if(!LOGIN.logedin()){
+			
+			return;
+		}
+		var elText = document.getElementById("scheda_testo"),
+			txt = SCHEDA.htmlOr;
+		if(SCHEDA.scheda2Aperta){
+			txt = SCHEDA.htmlOr2;
+			elText = document.getElementById("scheda_testo2");
+		}
+		applicaLoading( elText );
+		JSNPOST = {
+			codice: codice,
+			lang_or: LINGUE.getSigla2(),
+			lang_dest: lang,
+			text: txt
+		}
+		LINGUE.googleLangSel = lang;
+		
+		CONN.caricaUrl(	"translate.php",
+						"JSNPOST="+window.btoa(encodeURIComponent(JSON.stringify(JSNPOST))),
+						"LINGUE.resGoogleTranslate");
+	},
+	resGoogleTranslate: function( txt ){
+		if(txt.substr(0,3)!='404'){
+			var jsn = JSON.parse(txt);
+			var elText = document.getElementById("scheda_testo");
+			if(SCHEDA.scheda2Aperta)elText = document.getElementById("scheda_testo2");
+			//elText.classList.add("translated");
+			elText.querySelector(".translatable").innerHTML = '<div class="translate_note">'+jsn.txt_note+'<span onClick="LINGUE.annGoogleTranslate();">'+jsn.txt_cancel+'</span></div>' + jsn.txt_dest;
+			rimuoviLoading( elText );
+			eval(SCHEDA.addFunct);
+			SCHEDA.addFunct = null;
+			elText.querySelector(".scheda_stampa").style.opacity = 1;
+		}
+	},
+	annGoogleTranslate: function(){
+		LINGUE.googleLangSel = '';
+		document.getElementById("scheda_testo").querySelector(".translatable").innerHTML = SCHEDA.htmlOr;
+		if(document.getElementById("scheda_testo2").querySelector(".translatable"))document.getElementById("scheda_testo2").querySelector(".translatable").innerHTML = SCHEDA.htmlOr2;
+		LINGUE.resetGoogleTranslate();
+	},
+	resetGoogleTranslate: function(){
+		var langsEl = document.getElementById("languages").options;
+		for(let e=0;e<langsEl.length;e++){
+			if(langsEl[e].value==LINGUE.getSigla2()){
+				document.getElementById("languages").selectedIndex=e;
+			}
+		}
+	}
 };
 
 function addslashes(str) {
@@ -302,9 +403,7 @@ function doHighlight( html, parola, cls ){
 	}
 	return txt;
 }
-function evidenziaParola( el, parola ){
-	if(typeof(el) == 'undefined')var el = document.getElementById("scheda_testo");
-	if(typeof(parola) == 'undefined')var parola = document.getElementById("parolaGlobal").value;
+function evidenziaParola( el = document.getElementById("scheda_testo"), parola = document.getElementById("parolaGlobal").value ){
 	parola = htmlEntities( parola );
 	if(typeof(frase)=='undefined')var frase = false;
 	var searchArray = [];
@@ -328,10 +427,11 @@ function setTextSize( n ){
 	localStorage.textSize = n;
 	document.body.classList.remove("fontMID");
 	document.body.classList.remove("fontBIG");
+	document.body.classList.remove("fontMAG");
 	if(n)document.body.classList.add("font"+n);
 	if(document.getElementById("a_"+n)){
 		var els = document.getElementById("sizeSel").getElementsByTagName("b");
-		for(i = 0; i<els.length; i++){
+		for(let i = 0; i<els.length; i++){
 			if(localStorage.textSize == els[i].dataset.value)els[i].classList.add("a_SEL");
 			else els[i].classList.remove("a_SEL");
 		}

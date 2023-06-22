@@ -214,7 +214,7 @@ SET = {
 				var master = (GEOMETRIE.gruppi.MASTER.punti.indexOf(name.substr(2,3))>-1);
 				
 				var freq = [];
-				for(f in SET.frequenze){
+				for(let f in SET.frequenze){
 					if(mesh.name.indexOf("_"+SET.frequenze[f])>-1)freq.push( SET.frequenze[f] );
 				}
 				if(PH){
@@ -254,7 +254,7 @@ SET = {
 		PN.name="PNs";
 		var n=-1;
 		var PNS=GEOMETRIE.pins;
-		for(p in PNS){
+		for(let p in PNS){
 			if(PNS[p]!=''){
 				var x=PNS[p].array[0];
 				var y=PNS[p].array[1];
@@ -284,7 +284,7 @@ SET = {
 		// carico i punti parametrizzati
 		var n=-1;
 		var PTS=GEOMETRIE.punti;
-		for(p in PTS){
+		for(let p in PTS){
 			if(PTS[p]!=''){
 				var x=PTS[p].array[0];
 				var y=PTS[p].array[1];
@@ -304,7 +304,7 @@ SET = {
 				if(PTS[p].nome.indexOf("PH3")>-1)PH = '3';
 				
 				var freq = [];
-				for(f in SET.frequenze){
+				for(let f in SET.frequenze){
 					if(PTS[p].nome.indexOf(" "+SET.frequenze[f])>-1)freq.push( SET.frequenze[f] );
 				}
 				
@@ -486,8 +486,10 @@ SET = {
 		if(__(localStorage.risTest))SET.risTest = JSON.parse(localStorage.risTest);
 
 		if(smartMenu)overInterfaccia=true;
+		
 		/*
-		Attivare per settare con il pulsante "q" le rotazioni automatiche sui punti
+		Decommentare per salvare in localSorage.POS la posizione del manichino
+		Per settare le rotazioni automatiche sui un punto premere il pulsante "q"
 		*/
 		//SET.iniPos();
 		
@@ -500,7 +502,6 @@ SET = {
 		}
 		document.addEventListener("keyup", SET.keyUpPos, false );
 	},
-	
 	keyUpPos: function(event){
 		if(event.keyCode==81){
 			normalizeRotation();
@@ -537,10 +538,10 @@ SET = {
 			var objOver='';
 			var ints = [];
 			if(SETS){
-				for(i in SETS.children){
+				for(let i in SETS.children){
 					if(	SETS.children[i].visible &&
 						SETS.children[i].name.length==3 ){
-						for(ii in SETS.children[i].children){
+						for(let ii in SETS.children[i].children){
 							if(	SETS.children[i].children[ii].visible &&
 								SETS.children[i].children[ii].isGroup &&
 								SETS.children[i].children[ii].name.substr(0,2)!='LN' &&
@@ -561,7 +562,7 @@ SET = {
 				}
 			}
 			if(ANATOMIA){
-				for(i in ANATOMIA.children){
+				for(let i in ANATOMIA.children){
 					if(	ANATOMIA.children[i].name.toLowerCase()=='pelle' ||
 						ANATOMIA.children[i].name.toLowerCase()=='ossa' ||
 						ANATOMIA.children[i].name.toLowerCase()=='visceri' ){
@@ -570,7 +571,7 @@ SET = {
 							for(l in intersects)ints.push(intersects[l]);
 						}
 						if(ANATOMIA.children[i].type=='Group'){
-							for(g in ANATOMIA.children[i].children){
+							for(let g in ANATOMIA.children[i].children){
 								var intersects = raycaster.intersectObject( ANATOMIA.children[i].children[g] );
 								if ( intersects.length > 0 ){
 									for(l in intersects){
@@ -643,10 +644,9 @@ SET = {
 		
 		return make;
 	},
-	setPulsePt: function( pt, pulse, op, mat ){
-		if(typeof(mat)=='undefined')var mat = '';
+	setPulsePt: function( pt, pulse, op, mat='' ){
 		var phs = ["","2","3"];
-		for(ph in phs){
+		for(let ph in phs){
 			var els = scene.getObjectByName("PTs"+phs[ph]).children;
 			for(e in els){
 				if(els[e].name.indexOf(pt.name)==0){
@@ -698,8 +698,7 @@ SET = {
 	},
 	
 	
-	apriTsubo: function( PT_name, ritorno, el ){
-		if(typeof(el) == 'undefined')var el = '';
+	apriTsubo: function( PT_name, ritorno='', el='' ){
 		var PT=scene.getObjectByName( PT_name );
 		if(typeof(PT)=='undefined')PT = scene.getObjectByName( PT_name.replace("PT","AR") );
 		var type = (PT.userData.type == 'point')?"punti":"aree";
@@ -711,8 +710,6 @@ SET = {
 			return;
 		}
 		// --------------------------
-		
-		if(typeof(ritorno) == 'undefined')var ritorno = '';
 
 		if(this.ptSel){
 			if(name == this.ptSel.name.substr(2,3))return;
@@ -734,7 +731,7 @@ SET = {
 		var mat = this.MAT.pointSel;
 		if(PT.userData.nota)mat = this.MAT.pointSelNote;
 		var phs = ["","2","3"];
-		for(ph in phs){
+		for(let ph in phs){
 			var els = scene.getObjectByName("PTs"+phs[ph]).children;
 			for(e in els){
 				if(els[e].name.indexOf("PT"+name)==0){
@@ -826,8 +823,7 @@ SET = {
 		
 		SET.caricaTsubo( name, ritorno );
 	},
-	chiudiTsubo: function( nonChiudereScheda ){
-		if(typeof(nonChiudereScheda)=='undefined')nonChiudereScheda=false;
+	chiudiTsubo: function( nonChiudereScheda=false ){
 		if(!this.ptSel)return;
 		document.getElementById("scheda").classList.remove("tab_tsubo");
 		document.getElementById("scheda").classList.remove("schForm");
@@ -855,7 +851,7 @@ SET = {
 		var mat = cloneMAT(eval("SET.MAT.pointBase"+this.ptSel.userData.system));
 		if(this.ptSel.userData.nota)mat=this.MAT.pointNote;
 		var phs = ["","2","3"];
-		for(ph in phs){
+		for(let ph in phs){
 			var els = scene.getObjectByName("PTs"+phs[ph]).children;
 			for(e in els){
 				if(els[e].name.indexOf("PT"+this.ptSel.name.substr(2,3))==0){
@@ -921,10 +917,7 @@ SET = {
 	_applyLineMethod: function(){
 		//
 	},
-	scriviTsubo: function( siglaTsubo, esteso, noRet, col ){
-		if(typeof(esteso)=='undefined')var esteso = false;
-		if(typeof(noRet)=='undefined')var noRet = false;
-		if(typeof(sigla)=='undefined')var sigla = false;
+	scriviTsubo: function( siglaTsubo, esteso=false, noRet=false, col ){
 		
 		var nomeTsubo = DB.set.punti[siglaTsubo].NomeTsubo;
 		var EL = null;
@@ -983,14 +976,11 @@ SET = {
 		SCHEDA.torna();
 		SCHEDA.formModificato = true;
 	},
-	evidenziaTsubo: function( html, anatomia, mappa, lm ){
-		if(typeof(anatomia) == 'undefined')var anatomia = '';
-		if(typeof(mappa) == 'undefined')var mappa = '';
-		if(typeof(lm) == 'undefined')var lm = '';
+	evidenziaTsubo: function( html, anatomia='', mappa='', lm='' ){
 		SET.annullaEvidenziaTsubo(true);
 		var re = /selTsubo\([^\)]+\)/ig;
 		var result = html.match(re);
-		for(k in result){
+		for(let k in result){
 			var pT=result[k].split("'");
 			var siglaTsubo = pT[1];
 			
@@ -1006,7 +996,7 @@ SET = {
 		//SET.hideGroupLines();
 		var re = /data-tri="[^"]+"/ig;
 		var result = html.match(re);
-		for(k in result){
+		for(let k in result){
 			var pT=result[k].split('"');
 			var gruppo = pT[1];
 			if(scene.getObjectByName(gruppo)){
@@ -1018,17 +1008,16 @@ SET = {
 	},
 	evidenziaTsuboMod: function( elenco ){
 		SET.annullaEvidenziaTsubo();
-		for(k in elenco){
+		for(let k in elenco){
 			siglaTsubo = elenco[k].split(".")[0];
 			SET.tsuboEvidenziati.push(siglaTsubo);
 		}
 		SET.applicaEvidenziaTsubo();
 	},
-	applicaEvidenziaTsubo: function( anatomia, mappa, lm ){
-		if(typeof(lm) == 'undefined')var lm = '';
+	applicaEvidenziaTsubo: function( anatomia, mappa, lm='' ){
 		if(SET.tsuboEvidenziati.length || anatomia){
 			var phs = ["","2","3"];
-			for(ph in phs){
+			for(let ph in phs){
 				var els = scene.getObjectByName("PTs"+phs[ph]).children;
 				for(e in els){
 					var siglaTsubo = els[e].name.replace("_","").substr(2,3);
@@ -1079,11 +1068,10 @@ SET = {
 			}, 200, lm);
 		}
 	},
-	annullaEvidenziaTsubo: function( forzaDissolve ){
-		if(typeof(forzaDissolve)=='undefined')var forzaDissolve = false;
+	annullaEvidenziaTsubo: function( forzaDissolve=false ){
 		if(SET.tsuboEvidenziati.length || forzaDissolve){
 			var phs = ["","2","3"];
-			for(ph in phs){
+			for(let ph in phs){
 				
 				var els = scene.getObjectByName("PTs"+phs[ph]).children;
 				for(e in els){
@@ -1171,7 +1159,7 @@ SET = {
 	coloraPunti: function( PT_name, tipo ){
 		if(touchable)return;
 		var els = scene.getObjectByName("PTs"+SET.phase).children;
-		for(var e in els){
+		for(let e in els){
 			if(	els[e].name.indexOf("PT"+PT_name) == 0 && 
 				els[e].material.name.indexOf("SEL") == -1 && 
 				SET.note.indexOf(PT_name) == -1 ){
@@ -1185,7 +1173,7 @@ SET = {
 			}
 		}
 		var els = scene.getObjectByName("ARs"+SET.phase).children;
-		for(var e in els){
+		for(let e in els){
 			if(	els[e].name.indexOf("AR"+PT_name) == 0 && 
 				els[e].material.name.indexOf("SEL") == -1 && 
 				SET.note.indexOf(PT_name) == -1  ){
@@ -1217,7 +1205,7 @@ SET = {
 		// --------------------------
 		
 		var phs = ["","2","3"];
-		for(ph in phs){
+		for(let ph in phs){
 			var els = scene.getObjectByName("PTs"+phs[ph]).children;
 			for(e in els){
 				if(els[e].name.indexOf("_PT"+name)==0 && els[e].material.name.indexOf("SEL")==-1){
@@ -1241,13 +1229,12 @@ SET = {
 			}
 		}
 	},
-	convPuntiScheda: function( html, noPall ){
-		if(typeof(noPall)=='undefined')var noPall = false;
+	convPuntiScheda: function( html, noPall=false ){
 		var nScheda = '';
 		if(SCHEDA.scheda2Aperta)nScheda='2';
 		var regexp = /\[\.[^\]]+\.\]/ig;
 		var pts = html.match(regexp);
-		for(p in pts){
+		for(let p in pts){
 			siglaTsubo = pts[p].split(".")[1];
 			NomeTsubo = DB.set.punti[siglaTsubo].NomeTsubo;
 			var EL = null;
@@ -1274,7 +1261,7 @@ SET = {
 		var mzs = PAZIENTI.mezziSet.A;
 		var HTML_imp = 
 			'<div><i>'+htmlEntities(TXT("MezzoDefault"))+':</i></div><div id="tt_mezzival2">';
-		for(m in mzs){
+		for(let m in mzs){
 			HTML_imp += '<span style="background-image:url(img/mezzo_'+mzs[m]+'.png);"' +
 					'	   onClick="PAZIENTI.cambiaGZ(\''+mzs[m]+'\',false);"' +
 					'	   data-mezzo="'+mzs[m]+'"';
@@ -1394,7 +1381,7 @@ SET = {
 		if(muscleView)SET.MAT.applicaMappa(localStorage.imgMappa);
 		var opposite = (MODELLO.flip) ? 'DX' : 'SX';
 		var phs = ["","2","3"];
-		for(ph in phs){
+		for(let ph in phs){
 			var els = scene.getObjectByName("PTs"+phs[ph]).children;
 			for(e in els){
 				var name = els[e].name.replace("_","").substr(2,3);
@@ -1439,13 +1426,12 @@ SET = {
 	_torna: function( args ){
 		if(typeof(args.daCarica) == 'undefined')SET.pMod = '';
 	},
-	filtraSet: function( togliLoader ){
-		if(typeof(togliLoader)=='undefined')var togliLoader = false;
+	filtraSet: function( togliLoader=false ){
 		var vis = true;
 		if(	DB.login.data.auths.indexOf(globals.set.cartella)==-1 || !LOGIN.logedin())vis = false;
-		for(c in SETS.children[0].children){
+		for(let c in SETS.children[0].children){
 			var gruppo = SETS.children[0].children[c].children;
-			for(g in gruppo){
+			for(let g in gruppo){
 				var name = gruppo[g].name.replace("_","");
 				// verifico le autorizzazioni
 				if(	!SET.verFreePunti(name.substr(2,3))){

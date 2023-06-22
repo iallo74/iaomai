@@ -812,7 +812,7 @@ body:not(.bodyStyled2) #scheda_testo2{
 #menuCiclo > div{
 	padding-right:10px;
 }
-#menuScheda div:hover,
+#menuScheda div:not(#addBtnMenu):hover,
 #menuCiclo > div:hover{
 	background-color:rgba(0,0,0,0.1);
 }
@@ -883,4 +883,51 @@ body:not(.bodyStyled2) #scheda_testo2{
 	border-bottom:1px solid rgba(0,0,0,0.2);
 	padding-bottom:15px;
 	margin-bottom:15px;
+}
+.p_translate{
+	padding-left:32px;
+	background-image: url(../img/ico_translate2N.png);
+	background-position: 3px center !important;
+    background-size: auto;
+    border-bottom: 1px solid rgba(0,0,0,0.2);
+}
+.p_translate select{
+	display: inline-block;
+    height: 30px;
+    line-height: 30px;
+    margin-right: 5px;
+    margin-top: 5px;
+	margin-left: 6px;
+	border-radius:6px;
+	padding-left:10px;	
+	padding-right:30px;	
+	background-image:url(../img/frGiuB.png);
+	background-size:auto 100%;
+	background-repeat:no-repeat;
+	background-position:right center;
+	background-color:#FFF;
+	appearance:none;
+	-webkit-appearance:none;
+	border:none;
+	/*box-shadow:0px 0px 3px rgba(0,0,0,0.5);*/
+	cursor:pointer;
+}
+.translate_note{
+	background-color: #c4eeff;
+    line-height: 33px;
+    margin: -10px -10px 20px -10px;
+    border-radius: 8px;
+    padding-left: 32px;
+    padding-right: 15px;
+    background-image: url(../img/ico_translate2N.png);
+    background-repeat: no-repeat;
+    background-position: 3px center;
+    background-size: auto 91%;
+    box-shadow: 0px 0px 3px rgba(0,0,0,0.4);
+}
+.translate_note span{
+	cursor:pointer;
+	text-decoration: underline;
+	display:inline-block;
+	float:right;
 }

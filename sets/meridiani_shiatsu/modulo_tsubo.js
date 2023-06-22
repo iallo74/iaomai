@@ -1,18 +1,24 @@
 
 var MODULO_TSUBO = { // extend SET
 
+	TSUBO_free: [ "NK.01","NK.12","NK.13","NK.27","NK.60",
+				  "LR.01","LR.02","LR.03","LR.04","LR.05","LR.06","LR.07",
+				  "LR.08","LR.09","LR.10","LR.11","LR.12","LR.13","LR.14" ],
+	
 	note: [],
 	
 	caricaTsubo: function( siglaMeridiano, nTsubo, ritorno ){
 		// apre la scheda di uno tsubo
+		var nTsubo2 = (nTsubo+1)+"";
+		if(nTsubo2.length == 1)nTsubo2 = "0"+nTsubo2;
 		// verifico le autorizzazioni
-		if(!SET.verFreeMeridiani(siglaMeridiano)){
+		//if(!SET.verFreeMeridiani(siglaMeridiano)){
+		if(!SET.verFreePunti(siglaMeridiano+"."+nTsubo2)){
 			ALERT(TXT("MsgContSoloPay"),true,true);
+			SET.chiudiTsubo();
 			return;
 		}
 		// --------------------------
-		var nTsubo2 = (nTsubo+1)+"";
-		if(nTsubo2.length == 1)nTsubo2 = "0"+nTsubo2;
 		var titolo = DB.set.meridiani[siglaMeridiano].tsubo[nTsubo].NomeTsubo;
 		var meridiano = DB.set.meridiani[siglaMeridiano];
 		
@@ -68,9 +74,10 @@ var MODULO_TSUBO = { // extend SET
 					cls = 'spAdd';
 				}
 			}
-			if( SCHEDA.classeAperta == 'scheda_A' || SCHEDA.classeAperta == 'scheda_B' ){
+			if( (SCHEDA.classeAperta == 'scheda_A' || SCHEDA.classeAperta == 'scheda_B')/* && siglaMeridiano!='NK'*/){
 				if(SET.pMod > -1){
-					var pP = PAZIENTI.puntiProvvisori[SET.pMod];
+					if(siglaMeridiano!='NK')pP = PAZIENTI.puntiProvvisori[SET.pMod];
+					else pP = PAZIENTI.namikoshiProvvisori[SET.pMod];
 					var tsuboOr = pP.n+"."+pP.m;
 					if(tsuboOr == tsuboNuovo)stesso = true;
 					else{
@@ -81,7 +88,8 @@ var MODULO_TSUBO = { // extend SET
 				}else{
 					// aggiungi il punto al trattamento
 					txt = TXT("AggiungiTsuboTratt");
-					az = "PAZIENTI.aggiungiPuntoTrattamento('"+tsuboNuovo+"');SCHEDA.torna();";
+					if(siglaMeridiano!='NK')az = "PAZIENTI.aggiungiPuntoTrattamento('"+tsuboNuovo+"');SCHEDA.torna();";
+					else az = "PAZIENTI.aggiungiNamikoshiTrattamento('"+(nTsubo*1+1)+"');SCHEDA.torna();";
 					cls = 'spAdd';
 				}
 			}
@@ -100,10 +108,10 @@ var MODULO_TSUBO = { // extend SET
 		
 		// elenco le patolige incluse
 		var elenco = [];
-		for(p in DB.set.patologie){
+		for(let p in DB.set.patologie){
 			var regexp = /[\s>\(\.\,]{0,1}[0-9]{1,2}\.[A-Z]{2}[\s<\.,\)]{1}/ig;
 			var pts = DB.set.patologie[p].TestoPatologia.match(regexp);
-			for(i in pts){
+			for(let i in pts){
 				if(pts[i]=='.'+(nTsubo+1)+'.'+siglaMeridiano+'.'){
 					var JSNPUSH = {"p": p, "NomePatologia": DB.set.patologie[p].NomePatologia} 
 					
@@ -132,7 +140,7 @@ var MODULO_TSUBO = { // extend SET
 		var rp = wCont/370;
 		if(coordZoom.length>1){
 			var pC=coordZoom.split("|");
-			for(pu in pC){
+			for(let pu in pC){
 				pC2=pC[pu].split(",");
 				posPunti+='<img src="sets/common/mtc/img/zoom/punto.png" width="'+parseInt(43*rp)+'" height="'+parseInt(40*rp)+'" style="position:absolute;left:'+parseInt((pC2[0]-7)*rp-marginLeft)+'px;top:'+parseInt((pC2[1]-7)*rp)+'px;">';
 			}
@@ -144,10 +152,12 @@ var MODULO_TSUBO = { // extend SET
 		// ideogramma
 		if(siglaMeridiano!='NK'){
 			HTML = 	'<img 	src="sets/common/mtc/img/txt_meridiani/'+siglaMeridiano+'/tsubo_'+nTsubo2+'.png"' +
-					'		class="ideogrammaTsubo">'+HTML+imgDettaglio;
+					'		class="ideogrammaTsubo">'+HTML;
 		}
 		
+		HTML = '<div class="translatable">'+HTML+'</div>';
 		
+		if(siglaMeridiano!='NK')HTML += imgDettaglio;
 		
 		// annotazione
 		var TestoAnnotazione = '';
@@ -176,9 +186,9 @@ var MODULO_TSUBO = { // extend SET
 					'</div><div class="l"></div>';
 		}else{
 			if(TestoAnnotazione){
-				HTML += '<divstyle="padding:15px;background-color:#ecdea3;">'+ TestoAnnotazione+'</div>';
+				HTML += '<div id="nTsubo" style="padding:15px;background-color:#ecdea3;">'+ TestoAnnotazione+'</div>';
 			}else{
-				HTML += '<div class="noResults">'+ htmlEntities(TXT("NessunaAnnotazione"))+'</div>';
+				HTML += '<div id="nTsubo" class="noResults">'+ htmlEntities(TXT("NessunaAnnotazione"))+'</div>';
 			}
 		}
 		
@@ -195,7 +205,10 @@ var MODULO_TSUBO = { // extend SET
 		var btnAdd = 	'<div class="p_paz_ref_menu" onClick="REF.open(\'sets.meridiani_shiatsu.meridians\')">' +
 							TXT("ReferenceGuide") +
 						'</div>';
-							
+		
+		var finalFunct = '';
+		if(!ritorno || !SCHEDA.formModificato)finalFunct += 'initChangeDetection( "formAnnotazioni");';
+
 		SCHEDA.caricaScheda(	titolo,
 								HTML,
 								"if(SET.ptSel)SET.chiudiTsubo()",
@@ -203,11 +216,12 @@ var MODULO_TSUBO = { // extend SET
 								ritorno,
 								false,
 								'',
-								btnAdd );
+								btnAdd,
+								globals.set.cartella+'_meridiani_'+siglaMeridiano+"_"+nTsubo,
+								finalFunct );
 		SET.convSigleScheda();
 		SET.settaOverTsubo();
 		SET.ptSel = ptSel;
-		if(!ritorno || !SCHEDA.formModificato)initChangeDetection( "formAnnotazioni" );
 		if(ritorno && !SCHEDA.aggancio.tipo == 'libera')SCHEDA.nasScheda();
 		
 		document.getElementById("frSchSu").onclick = '';
@@ -291,7 +305,7 @@ var MODULO_TSUBO = { // extend SET
 	leggiNota: function( mr, pt ){
 		// restituisce il testo della nota
 		var TestoAnnotazione = '';
-		for(n in DB.note.data){
+		for(let n in DB.note.data){
 			var pass =false;
 			if(DB.note.data[n].idPaziente > -1){
 				if(DB.note.data[n].idPaziente == PAZIENTI.idPaziente)pass=true;
@@ -311,7 +325,7 @@ var MODULO_TSUBO = { // extend SET
 		SET.evidenziaNote(false);
 		SET.note = [];
 		if(DB.note){
-			for(n in DB.note.data){
+			for(let n in DB.note.data){
 				var pass =false;
 				if(DB.note.data[n].idPaziente > -1){
 					if(DB.note.data[n].idPaziente == PAZIENTI.idPaziente)pass=true;
@@ -331,11 +345,11 @@ var MODULO_TSUBO = { // extend SET
 	},
 	evidenziaNote: function( az ){
 		// evidenzia le note sul manichino
-		for(n in SET.note){
+		for(let n in SET.note){
 			var pP = SET.note[n].split(".");
-			for(m in SETS.children){
+			for(let m in SETS.children){
 				if(SETS.children[m].name.substr(0,5) == 'PT_'+pP[0]){
-					for(p in SETS.children[m].children){
+					for(let p in SETS.children[m].children){
 						if(SETS.children[m].children[p].name.substr(0,5)==SET.note[n]){
 							var mr = SETS.children[m].children[p].name.substr(0,2);
 							var mat = SET.MAT.pointBase;
@@ -359,7 +373,7 @@ var MODULO_TSUBO = { // extend SET
 	},
 	leggiSiglaMeridiano: function( cartella ){
 		// restituisce la sigla del meridiano
-		for(k in DB.set.meridiani){
+		for(let k in DB.set.meridiani){
 			if(DB.mtc.meridiani[k].cartella == cartella)return k;
 		}
 	},

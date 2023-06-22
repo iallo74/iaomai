@@ -3,7 +3,7 @@ var CATALOGO = {
 	//
 	scriviListaSets: function(){
 		var HTML_elenco = 	'';
-		for(cartella in sets){
+		for(let cartella in sets){
 			if(	cartella != 'anatomy_full' &&
 				cartella != 'clients_full'){
 				var addClass = '';
@@ -30,7 +30,7 @@ var CATALOGO = {
 		var HTML_elenco = 	'';
 		var HTML_cont = '';
 		var HTML_imgs = '';
-		for(cartella in sets){
+		for(let cartella in sets){
 			HTML_elenco += 	'<div id="e_'+cartella+'"' +
 							' 	  style="background-image:url(sets/'+cartella+'/img/logoNero.png);"' +
 							' 	  onClick="CATALOGO.selSet(this);">' +

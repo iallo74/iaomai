@@ -25,6 +25,8 @@ var SCHEDA = {
 	wIni: 0,
 	hIni: 0,
 	tIni: 0,
+	htmlOr: '',
+	htmlOr2: '',
 	moving: false,
 	xMouseAtt: 0,
 	yMouseAtt: 0,
@@ -45,7 +47,7 @@ var SCHEDA = {
 	versoRedim: '',
 	gapScheda: 16, /* 17 */
 	ultimaCartella: '', // l'id della sottocartella aperta quando si clicca su una scheda (per smartMenu)
-	
+	finalFunct: null,
 	initScheda: function(){
 		if(!localStorage.schedaAggancio && !isTablet){
 			SCHEDA.aggancio.tipo = 'lato';
@@ -60,16 +62,19 @@ var SCHEDA = {
 			SCHEDA.verRedim();
 		}, false);
 	},
-	caricaScheda: function( titolo, html, funct, classe, ritorno, espansa, btn, btnAdd ){
+	caricaScheda: function( titolo,  		// titolo della scheda
+							html, 	 		// contenuto della scheda
+							funct, 	 		// funzione da eseguire alla chiusura della scheda
+							classe,  		// la classe della scheda (es. per il colore del titolo)
+							ritorno, 		// indica se ci deve essere un ritorno ad un altra scheda (scrive su scheda_testo2 e visualizza il pulsante di ritorno) [ può contenere la funzione di ritorno ]
+							espansa, 		// apre la scheda non compressa
+							btn,     		// pulsante da accendere in caso di menu a elenco
+							btnAdd,  		// aggiunte al pulsante
+							codiceTranslate, // codice per il db traduzioni che visualizza il pulsante di google translate
+							finalFunct		// funzione da eseguire alla fine
+						   ){
+							   
 		/*
-		titolo: titolo della scheda
-		html: contenuto della scheda
-		funct: funzione da eseguire alla chiusura della scheda
-		classe: la classe della scheda (es. per il colore del titolo)
-		ritorno: indica se ci deve essere un ritorno ad un altra scheda (scrive su scheda_testo2 e visualizza il pulsante di ritorno) [ può contenere la funzione di ritorno ]
-		espansa: apre la scheda non compressa
-		*/
-		
 		// forzo il ritorno se la scheda principale è una scheda di modifica
 		/*if(	document.getElementById("scheda_testo").querySelector(".formBtn") && 
 			SCHEDA.schedaAperta ){
@@ -77,7 +82,6 @@ var SCHEDA = {
 			funct = '';
 			
 		}*/
-			
 		try{
 			SET._caricaScheda({
 				"funct": funct,
@@ -108,13 +112,14 @@ var SCHEDA = {
 		if(typeof(espansa)=='undefined')var espansa = false;
 		if(typeof(btn)=='undefined')var btn = null;
 		if(typeof(btnAdd)=='undefined')var btnAdd = '';
+		if(typeof(codiceTranslate)=='undefined')var codiceTranslate = '';
+		if(typeof(finalFunct)!='undefined')SCHEDA.finalFunct = finalFunct;
 		
 		if(SCHEDA.btnSel && !ritorno){
 			SCHEDA.btnSel.classList.remove("elencoSel");
 			SCHEDA.btnSel = null;
 		}
 		
-		if(html)html='<div class="scheda_stampa">'+html+'</div>';
 		var nScheda='';
 		if(ritorno){ // se è una scheda derivata
 			
@@ -137,6 +142,26 @@ var SCHEDA = {
 			SCHEDA.torna();
 		}
 		
+		if(html){
+			if(html.indexOf(' class="translatable"')==-1)html = '<div class="translatable">'+html+'</div>';
+			html = '<div class="scheda_stampa">'+html+'</div>';
+		}
+		
+		if(codiceTranslate && LINGUE.googleLanguages.length && CONN.getConn()){
+			var html_langs =
+							'<div class="p_translate">' +
+							'	<select id="languages" name="languages" onChange="LINGUE.googleTranslate(this.value,\''+codiceTranslate+'\');SCHEDA.swMenuScheda();">';
+			var valSel = (LINGUE.googleLangSel)?LINGUE.googleLangSel:LINGUE.getSigla2();
+			for(let l in LINGUE.googleLanguages){
+				html_langs +=	'<option value="'+LINGUE.googleLanguages[l].sigla+'"';
+				if(LINGUE.googleLanguages[l].sigla==valSel)html_langs += ' SELECTED';
+				html_langs += '>'+LINGUE.googleLanguages[l].name+'</option>';
+			}
+			html_langs +=	'</select>' +
+							'</div>';
+			btnAdd = html_langs + btnAdd;
+		}
+		
 		// inserisco il pulsante del menu (3 pallini)
 		if(classe != "scheda_agenda" && classe != "scheda_video"  && classe != "scheda_ricerche" ){
 			html =  '<div id="btnMenuScheda" onClick="SCHEDA.swMenuScheda();">' +
@@ -145,9 +170,16 @@ var SCHEDA = {
 					'</div>' + html;
 			document.getElementById("addBtnMenu").innerHTML = btnAdd;
 		}
-					
+		
 		document.getElementById("scheda_titolo").innerHTML=htmlEntities(titolo);
 		document.getElementById("scheda_testo"+nScheda).innerHTML=html;
+		//document.getElementById("scheda_testo"+nScheda).classList.remove("translated");
+		
+		var html_to_translate = '';
+		if(trans_el = document.getElementById("scheda_testo"+nScheda).querySelector(".translatable")){
+			trans_el.innerHTML
+			eval('SCHEDA.htmlOr'+nScheda+' = html_to_translate');
+		}
 		
 		document.getElementById("scheda").classList.add("visSch");
 		document.getElementById("scheda_cont").classList.add("visSch");
@@ -185,6 +217,13 @@ var SCHEDA = {
 		SCHEDA.riapriScheda();
 		SCHEDA.swMenuScheda('chiudi');
 		if(!ritorno)document.getElementById("scheda_testo").scrollTo(0,0);
+		if(codiceTranslate && LINGUE.googleLangSel && LINGUE.googleLangSel!=LINGUE.getSigla2()){
+			LINGUE.googleTranslate(LINGUE.googleLangSel,codiceTranslate);
+			document.getElementById("scheda_testo"+nScheda).querySelector(".scheda_stampa").style.opacity = 0;
+		}else{
+			eval(SCHEDA.addFunct);
+			SCHEDA.finalFunct = null;
+		}
 	},
 	verificaSchedaRet: function(){
 		formHasChanges();
@@ -196,7 +235,7 @@ var SCHEDA = {
 						!SCHEDA.verificaSchedaRet(),
 						arguments ).then(function(pass){if(pass){
 						var v = getParamNames(CONFIRM.args.callee.toString());
-						for(i in v)eval(getArguments(v,i));
+						for(let i in v)eval(getArguments(v,i));
 						
 			try{
 				SET._scaricaScheda();
@@ -237,9 +276,8 @@ var SCHEDA = {
 		document.getElementById("scheda_testo").style.height = '0px';
 		document.getElementById("scheda_testo2").style.height = '0px';
 	},
-	msgSalvataggio: function( generico ){
+	msgSalvataggio: function( generico = document.getElementById("scheda_testo") ){
 		var el = document.body;
-		if(typeof(generico) == 'undefined')el = document.getElementById("scheda_testo");
 		var msg = document.createElement("DIV");
 		msg.id='msgScheda';
 		if(!document.getElementById('msgScheda'))el.appendChild(msg);
@@ -342,8 +380,7 @@ var SCHEDA = {
 	},
 	
 	
-	iniziaMoveScheda: function( event, onTitle ){ // sposta la scheda libera o ridimansina quella sotto
-		if(typeof(onTitle)=='undefined')var onTitle = false;
+	iniziaMoveScheda: function( event, onTitle=false ){ // sposta la scheda libera o ridimansina quella sotto
 		if(SCHEDA.aggancio.tipo == 'lato' && !onTitle)SCHEDA.iniziaRedimScheda( event, 'r', true )
 		if(SCHEDA.aggancio.tipo == 'lato' || (SCHEDA.aggancio.tipo == 'sotto' && onTitle) || smartMenu)return;
 		event.preventDefault();
@@ -449,8 +486,7 @@ var SCHEDA = {
 		}
 	},
 	
-	iniziaRedimScheda: function( event, verso, fromMove ){
-		if(typeof(fromMove)=='undefined')var fromMove = false;
+	iniziaRedimScheda: function( event, verso, fromMove=false ){
 		if(SCHEDA.aggancio.tipo == 'lato')stopOnResize = true;
 		SCHEDA.versoRedim = verso;
 		var gapH = 0;
@@ -575,9 +611,8 @@ var SCHEDA = {
 	
 	
 	
-	swMenuScheda: function( forza ){
+	swMenuScheda: function( forza=false ){
 		if(!document.getElementById("btnMenuScheda"))return;
-		if(typeof(forza)=='undefined')var forza = false;
 		var aperto = (document.getElementById("menuScheda").className.indexOf("visSch")!=-1);
 		if(!aperto || forza==true){
 			document.getElementById("menuScheda").classList.add("visSch");
@@ -753,8 +788,7 @@ var SCHEDA = {
 		SCHEDA.elencoSel = '';
 		SCHEDA.scaricaPulsanti();
 	},
-	apriElenco: function( tipo, daMenu ){
-		if(typeof(daMenu)=='undefined')var daMenu = false;
+	apriElenco: function( tipo=false, daMenu=false ){
 		if(	daMenu &&
 			document.getElementById("elenchi_cont").classList.contains("visSch") &&
 			document.getElementById("elenchi").classList.contains("vis_"+tipo)){
@@ -770,7 +804,6 @@ var SCHEDA = {
 		MENU.chiudiMenu();
 		SCHEDA.setMenuDim();
 		if(typeof(expanded)=='undefined')var expanded = false;
-		if(typeof(tipo)=='undefined')var tipo = false;
 		if(tipo){
 			document.getElementById("elenchi").classList.remove("vis_base");
 			document.getElementById("elenchi").classList.remove("vis_set");
@@ -956,8 +989,7 @@ var SCHEDA = {
 	scaricaPulsanti: function(){
 		document.getElementById("pulsanti_set").innerHTML='';
 	},
-	swCartella: function( el, forza ){
-		if(typeof(forza) == 'undefined')var forza = false;
+	swCartella: function( el, forza=false ){
 		MENU.nasMM();
 		if(!forza){
 			if(el.parentElement.classList.contains("cartellaAperta")){

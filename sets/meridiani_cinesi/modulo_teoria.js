@@ -31,7 +31,7 @@ var MODULO_TEORIA = { // extend SET
 		// carica la lista degli approfondimenti
 		var contTeoria = '';
 		var contCanali = '';
-		for(p in DB.set.teoria){
+		for(let p in DB.set.teoria){
 			
 			var CONT = 	'<div class="cartella" onTouchStart="SCHEDA.setCartella(this);">' +
 						'	<span id="btn_teoria_cart_'+p+'" onClick="SCHEDA.swCartella(this);">' +
@@ -90,9 +90,9 @@ var MODULO_TEORIA = { // extend SET
 		/*
 		// SCRIVE L'ELENCO DEGLI TSUBO DEL MERIDIANO
 		if(p==1 || meridianiSecondari.indexOf("CV")>-1 || meridianiSecondari.indexOf("GV")>-1){
-			var mAtt=DB.set.teoria[1].contenuti[t].sigla;
+			var mAtt=DB.set.teoria[SET.idTeoMeridiani].contenuti[t].sigla;
 			var elencoTsubo='<b>Elenco degli tsubo</b>';
-			for(s in DB.set.meridiani[mAtt].tsubo){
+			for(let s in DB.set.meridiani[mAtt].tsubo){
 				var TS = DB.set.meridiani[mAtt].tsubo[s];
 				elencoTsubo+='<p>'+this.scriviTsubo(TS.NomeTsubo,true)+'</p>';
 			}
@@ -122,14 +122,15 @@ var MODULO_TEORIA = { // extend SET
 								ritorno,
 								espansa,
 								btn,
-								btnAdd );
+								btnAdd,
+								globals.set.cartella+'_teoria_'+p+"_"+t );
 		SET.convSigleScheda();
 		SET.evidenziaTsubo(html);
 		
 		SET.spegniMeridianoSecondario();
 		setTimeout( function(meridianiSecondari){
 			if(meridianiSecondari){
-				for(m in meridianiSecondari){
+				for(let m in meridianiSecondari){
 					if(meridianiSecondari[m].indexOf("_")==-1)SET.accendiMeridiano(meridianiSecondari[m],false,true);
 					SET.accendiMeridianoSecondario(meridianiSecondari[m],true);
 				}

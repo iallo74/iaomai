@@ -158,6 +158,10 @@ body:not(.smart) #contBtnModello{
     border-radius: 6px;
     background-color: rgba(0,0,0,0.15);
 }
+body:not(.donna):not(.uomo):not(.piedi):not(.orecchio) #contBtnModello{
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+}
 body:not(.smart) #contBtnModello > div{
 	vertical-align:top;
 }
@@ -239,6 +243,13 @@ body.bodyStyled1:not(.smart) #icone div:not(#btns_set):not(#cartella_set):not(#p
 }
 body:not(.smart) #icone.iconeEspanse div{
 	width: 180px !important;
+}
+body:not(.smart) #icone.iconeEspanse div i{
+	width: calc(100% - 10px) !important;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    display: inline-block;
 }
 #p_sets{
 	background-image:url(../img/ico_mappaB.png);
@@ -447,7 +458,7 @@ body:not(.smart) .sepMenu{
 }
 .smart.sepMenu{
 	display:inline-block;
-	width:1px%;
+	width:1px;
 	height:40px;
 	background-color: rgba(255,255,255,0.1);
 }

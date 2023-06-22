@@ -266,7 +266,8 @@
 		width: calc(100% - 250px) !important;
 		margin-left: -3px;
 	}
-	.fontBIG #reference_cont.fix #reference{
+	.fontBIG #reference_cont.fix #reference,
+	.fontMAG #reference_cont.fix #reference{
 		margin-left: -4px !important;
 	}
 }
@@ -866,13 +867,13 @@ body:not(.smart) .guida_set .fumetti_freccia:last-child{
 		top:auto !important;
 		bottom:150px !important;
 		margin-bottom:50px;
-		-webkit-transition: margin-bottom 0.3s, opacity 0.3 !importants;
+		-webkit-transition: margin-bottom 0.3s, opacity 0.3 !important;
 		transition: margin-bottom 0.3s, opacity 0.3s !important;
 	}
 	.smart .guida_set_mini{
 		bottom:90px;
 		margin-bottom:50px;
-		-webkit-transition: margin-bottom 0.3s, opacity 0.3 !importants;
+		-webkit-transition: margin-bottom 0.3s, opacity 0.3 !important;
 		transition: margin-bottom 0.3s, opacity 0.3s !important;
 	}
 	.smart .guida_archivi.vis,

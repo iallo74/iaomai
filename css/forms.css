@@ -843,7 +843,7 @@ body:not(.smart) .stampaBtn{
     background-position: 3px center;
 	margin-top:5px !important;
 }
-,cont_p_paz_label{
+cont_p_paz_label{
 	height: 35px;
 	padding-top: 5px;
 }
@@ -937,12 +937,14 @@ body:not(.smart) .stampaBtn{
     float: right;
 }
 #puntiTsuboMap,
+#puntiNamikoshi,
 #meridianiTsuboMap,
 #puntiAuriculoMap{ /* PAZIENTI */
 	height:auto !important;
 	padding-top: 12px;
 }
 #puntiTsuboMap > div,
+#puntiNamikoshi > div,
 #meridianiTsuboMap > div,
 #puntiAuriculoMap > div{ /* PAZIENTI */
 	border-bottom:none !important;
@@ -950,23 +952,27 @@ body:not(.smart) .stampaBtn{
 	background-color:rgba(0,0,0,0.05);
 }
 #puntiTsuboMap > div:not(.pushDrag_before),
+#puntiNamikoshi > div:not(.pushDrag_before),
 #meridianiTsuboMap > div:not(.pushDrag_before),
 #puntiAuriculoMap > div:not(.pushDrag_before){ /* PAZIENTI */
 	margin-top:0px !important;
 }
 #puntiTsuboMap > div:not(.pushDrag_after),
+#puntiNamikoshi > div:not(.pushDrag_after),
 #meridianiTsuboMap > div:not(.pushDrag_after),
 #puntiAuriculoMap > div:not(.pushDrag_after){ /* PAZIENTI */
 	margin-bottom: 2px !important;
 }
 #puntiTsuboMap > div,
+#puntiNamikoshi > div,
 #puntiAuriculoMap > div{ /* PAZIENTI */
 	height:auto !important;
 	line-height:normal !important;
 }
-#puntiTsuboMap img.noMod
+#puntiTsuboMap img.noMod,
+#puntiNamikoshi img.noMod,
 #meridianiTsuboMap img.noMod,
-#puntiAuriculoMap img.noMod,{ /* PAZIENTI */
+#puntiAuriculoMap img.noMod{ /* PAZIENTI */
 	vertical-align: -webkit-baseline-middle;
 	margin-top: -9px;
 	height: 15px;
@@ -1279,7 +1285,7 @@ _:-webkit-full-screen,
 #scheda:not(.sch_Max600) .styled{
 	padding-left:100px !important;
 }
-#dettagliCont input:not([type=checkbox]):not([type=file])){
+#dettagliCont input:not([type=checkbox]):not([type=file]){
 	padding-left:6px !important;
 }
 
@@ -1513,6 +1519,7 @@ body:not(.smart) #scheda:not(.scheda_procedura) .dettMeridiano span:not(.valPunt
 	color:#FFF !important;
 }
 body:not(.touch) #puntiTsuboMap .dettPunto:hover,
+body:not(.touch) #puntiNamikoshi .dettPunto:hover,
 body:not(.touch) #puntiAuriculoMap .dettPunto:hover{
 	background-color:rgba(0,0,0,0.1) !important;
 }
@@ -1541,6 +1548,7 @@ body:not(.touch) #puntiAuriculoMap .dettPunto:hover{
     width: 38px !important;
 }
 #puntiTsuboMap .cestino,
+#puntiNamikoshi .cestino,
 #meridianiTsuboMap .cestino,
 #puntiAuriculoMap .cestino{
 	margin:7px 10px 7px 10px;
@@ -1550,6 +1558,7 @@ body:not(.touch) #puntiAuriculoMap .dettPunto:hover{
 	float:right;
 }
 .smart #puntiTsuboMap .cestino,
+.smart #puntiNamikoshi .cestino,
 .smart #meridianiTsuboMap .cestino,
 .smart #puntiAuriculoMap .cestino{
 	margin: 13px 9px 12px 0px !important;
@@ -1799,6 +1808,7 @@ body:not(.touch) #puntiAuriculoMap .dettPunto:hover{
 	width:64px !important;
 	text-align:center !important;
 }
+.sch_Max450 .dettNamikoshi .numPoints
 .sch_Max450 .dettAuriculo .numPoints{
 	width:130px !important;
 }

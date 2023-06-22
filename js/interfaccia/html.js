@@ -134,7 +134,7 @@ var H = {
 				html += '<select name="'+obj.name+'" id="'+id+'"';
 				if(obj.onChange)html += ' onChange="SCHEDA.formModificato=true;'+obj.onChange+'"';
 				html += addCampo+'>'+H.chr10;
-				for(o in obj.opts){
+				for(let o in obj.opts){
 					html+='<option value="'+o+'"';
 					if(obj.value==o)html+=' SELECTED';
 					html+=">"+htmlEntities(obj.opts[o])+'</option>';
@@ -301,8 +301,7 @@ var H = {
 			}
 		}
 	},
-	verData: function( id, notNull ){ 
-		if(typeof(notNull) == 'undefined')var notNull = false;
+	verData: function( id, notNull=false ){ 
 		var giorno=document.getElementById("giorno" + id).value;
 		var mese=document.getElementById("mese" + id).value;
 		var anno=document.getElementById("anno" + id).value;
@@ -368,8 +367,7 @@ var H = {
 		el.dataset.preValue = el.value;
 	},
 	
-	creaCombo: function( el, lista){
-		if(typeof(lista) == 'undefined')var lista = [];
+	creaCombo: function( el, lista=[]){
 		if(lista.length && !H.elCombo){
 			
 			if(H.elCombo)H.rimuoviCombo();
@@ -469,7 +467,7 @@ var H = {
 	},
 	getElencoDB: function( db, campo ){
 		var EL = [];	
-		for(p in db){
+		for(let p in db){
 			if( db[p][campo.name].trim() &&
 				EL.indexOf(db[p][campo.name]) == -1 &&
 				db[p].Cancellato*1 != 1)EL.push(db[p][campo.name]);
@@ -567,7 +565,7 @@ var H = {
 	caricaEtichette: function( sezione ){ // carica le etichette personalizzate del paziente
 		var HTML='';
 		if(H.etichetteProvvisorie.length>0){
-			for(p in H.etichetteProvvisorie){
+			for(let p in H.etichetteProvvisorie){
 				if(H.etichetteProvvisorie[p].sezione == sezione){
 					HTML += H.r({	t: "r", 
 									name: "CSTMZ_"+H.etichetteProvvisorie[p].NomeEtichetta,
@@ -642,8 +640,8 @@ var H = {
 					var modificato = false;
 					var DataModifica = DB.pazienti.lastSync+1;
 					var PZ = [ DB.pazienti.data, DB.fornitori.data];
-					for(d in PZ){
-						for(p in PZ[d]){
+					for(let d in PZ){
+						for(let p in PZ[d]){
 							var etichette = toJson(PZ[d][p].etichette);
 							var etMod = false;
 							if(etichette.length){
@@ -662,7 +660,7 @@ var H = {
 							}
 						}
 					}
-					for(p in H.etichetteProvvisorie){
+					for(let p in H.etichetteProvvisorie){
 						if(H.etichetteProvvisorie[p].NomeEtichetta == oldValue){
 							H.etichetteProvvisorie[p].NomeEtichetta = txt;
 						}
@@ -672,11 +670,12 @@ var H = {
 					if(modificato){
 						applicaLoading(document.getElementById("scheda_testo"));
 						applicaLoading(document.getElementById("elenchi_lista"));
-						localPouchDB.setItem(MD5("DB"+LOGIN._frv()+".pazienti"), IMPORTER.COMPR(DB.pazienti)).then(function(){ // salvo il DB
-							localPouchDB.setItem(MD5("DB"+LOGIN._frv()+".fornitori"), IMPORTER.COMPR(DB.fornitori)).then(function(){ // salvo il DB
-								LOGIN.sincronizza(	'rimuoviLoading(document.getElementById("scheda_testo"));' +
-													'rimuoviLoading(document.getElementById("elenchi_lista"));' );
-							});
+						Promise.all([
+							localPouchDB.setItem(MD5("DB"+LOGIN._frv()+".pazienti"), IMPORTER.COMPR(DB.pazienti)),
+							localPouchDB.setItem(MD5("DB"+LOGIN._frv()+".fornitori"), IMPORTER.COMPR(DB.fornitori))
+						]).then(function(){
+							LOGIN.sincronizza(	'rimuoviLoading(document.getElementById("scheda_testo"));' +
+												'rimuoviLoading(document.getElementById("elenchi_lista"));' );
 						});
 					}
 				}
@@ -710,8 +709,8 @@ var H = {
 		var elenchi = __(elenchi,[ DB.pazienti.data, DB.fornitori.data]); 
 		var ETICHETTE = [];
 		var PZ = elenchi;
-		for(d in PZ){
-			for(p in PZ[d]){
+		for(let d in PZ){
+			for(let p in PZ[d]){
 				var etichette = toJson(__(PZ[d][p].etichette,[]));
 				if(etichette.length){
 					for(t in etichette){
@@ -783,8 +782,8 @@ var H = {
 		var etichetta = campo.name.replace("CSTMZ_","");
 		var VALORI = [];
 		var PZ = [ DB.pazienti.data, DB.fornitori.data ];
-		for(d in PZ){
-			for(p in PZ[d]){
+		for(let d in PZ){
+			for(let p in PZ[d]){
 				var etichette = toJson(__(PZ[d][p].etichette,[]));
 				if(typeof(etichette)=='string')etichette = JSON.parse(etichette)
 				if(etichette.length){
@@ -809,7 +808,7 @@ var H = {
 	},
 	scriviEtichette: function( sezione ){
 		var HTML = '';
-		for(p in etichette){
+		for(let p in etichette){
 			if(etichette[p].sezione == sezione){
 				HTML += '<div><i>'+htmlEntities(etichette[p].NomeEtichetta)+':</i> ' + htmlEntities(etichette[p].ValoreEtichetta)+'</div>';
 			}

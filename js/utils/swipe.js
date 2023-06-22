@@ -1,4 +1,3 @@
-<!--
 var SWIPE = {
 	xIni: -1,
 	xAtt: -1,
@@ -55,4 +54,3 @@ var SWIPE = {
 		SWIPE.verso = '';
 	}
 }
-//-->

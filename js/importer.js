@@ -8,31 +8,33 @@
 */
 
 // IMPOSTAZIONI DEL DEVICE
-var smartphone = false;
-var smartMenu = false;
-var touchable = false;
-var touchDetect = false;
-var android = false;
-var brw_IE = false;
-var brw_OPERA = false;
-var brw_edge = false;
-var brw_firefox = false;
-var brw_safari = false;
-var brw_chrome = false;
-var iPad = false;
-var iPhone = false;
-var isMac = false;
-var isMacUA = false;
-var mouseDetect = false;
-var onlineVersion=false;
-var isTablet = false;
-var globals = {};
-var verApp = '1.4';
-// IMPOSTAZIONI DI APP
-var nomeApp = 'Iáomai';
-var sloganApp = 'A new vision on health';
-var tipoApp = '';
-var chr10 = String.fromCharCode(10);
+var	smartphone = false,
+	smartMenu = false,
+	touchable = false,
+	touchDetect = false,
+	android = false,
+	brw_IE = false,
+	brw_OPERA = false,
+	brw_edge = false,
+	brw_firefox = false,
+	brw_safari = false,
+	brw_chrome = false,
+	iPad = false,
+	iPhone = false,
+	isMac = false,
+	isMacUA = false,
+	mouseDetect = false,
+	onlineVersion=false,
+	isTablet = false,
+	globals = {},
+	verApp = '1.4',
+	
+	// IMPOSTAZIONI DI APP
+	nomeApp = 'Iáomai',
+	sloganApp = 'A new vision on health',
+	tipoApp = '',
+	chr10 = String.fromCharCode(10);
+	
 if(location.search){
 	var vDef='';
 	str=location.search.substr(1,location.search.length-1);
@@ -183,6 +185,8 @@ var IMPORTER = {
 		brw_chrome=(navigator.userAgent.indexOf("Chrome") != -1);
 		isMac = navigator.platform.toUpperCase().indexOf('MAC')>=0;
 		document.title = nomeApp+" - "+sloganApp;
+		document.getElementById("no_info_features").name = 'no_info_features_'+verApp.replace(".","_");
+		document.getElementById("no_info_features").dataset.name = 'no_info_features_'+verApp.replace(".","_");
 		/*
 		var el = document.getElementById('scripts');
 		el.setAttribute('ontouchstart', 'return;');
@@ -265,7 +269,7 @@ var IMPORTER = {
 			// verifico la presenza di aggiornamenti di versione (solo in "produzione")
 			var versioni = {};
 			if(!FILES[verApp])FILES[verApp]={};
-			for(f in FILES[verApp]){
+			for(let f in FILES[verApp]){
 				versioni[f] = FILES[verApp][f].lastVer;
 			}
 			var JSNPOST = JSON.stringify( versioni );
@@ -300,14 +304,12 @@ var IMPORTER = {
 			}
 			
 			
-			for(m in modificati){
+			for(let m in modificati){
 				if(m!='sbl_pplhd')FILES[verApp][m]=modificati[m];
 				//if(IMPORTER.id == 1)alert(modificati[m]);
 				
 			}
-			localPouchDB.setItem(MD5("FILES"), IMPORTER.COMPR(JSON.stringify(FILES))).then(function(){
-				// salvo il DB
-			});
+			localPouchDB.setItem(MD5("FILES"), IMPORTER.COMPR(JSON.stringify(FILES)));
 		}
 		if(touchable)document.body.classList.add("touch");
 		if(android)document.body.classList.add("android");
@@ -328,8 +330,7 @@ var IMPORTER = {
 		//if(brw_safari)document.getElementById("btnStampaScheda").style.display = 'none';
 		IMPORTER.importaFiles( 0, IMPORTER.files, 'INIT();', document.head );
 	},
-	importaFiles: function( n, lista, funct, dest ){
-		if(typeof(n) == 'undefined')var n = 0;
+	importaFiles: function( n=0, lista, funct, dest ){
 		var file = lista[n];
 		
 		var isModello = (file.indexOf("modelli/")==0 && typeof(modelli)!='undefined');
@@ -416,8 +417,7 @@ var IMPORTER = {
 			}
 		}
 	},
-	dbArray: function(txt){
-		if(typeof(txt)=='undefined')txt='';
+	dbArray: function(txt = txt){
 		if(txt=='' || txt==null)txt='{"lastSync": 0, "data": []}';
 		return JSON.parse(txt);
 	},

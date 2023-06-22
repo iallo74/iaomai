@@ -47,6 +47,30 @@ DB.TXT.set = {
 		por: "Substitua [t] por este Tsubo",
 		deu: "Ersetze [t] durch diesen Tsubo"
 	},
+	CambiaMeridiani: {
+		ita: "Cambia sistema di meridiani ( cinesi / masunaga )",
+		eng: "Change meridian system (Chinese/Masunaga)",
+		esp: "Cambiar sistema de meridianos (chinos/Masunaga)",
+		fra: "Changer de système de méridiens (chinois/Masunaga)",
+		por: "Mudar o sistema de meridianos (chinês/Masunaga)",
+		deu: "Ändere Meridiansystem (chinesisch/Masunaga)"
+	},
+	MTC: {
+		ita: "M.T.C.",
+		eng: "T.C.M.",
+		esp: "M.T.C.",
+		fra: "M.T.C.",
+		por: "M.T.C.",
+		deu: "T.C.M."
+	},
+	ProtocolloNamikoshi: {
+		ita: "Protocollo Namikoshi",
+		eng: "Namikoshi Protocol",
+		esp: "Protocolo Namikoshi",
+		fra: "Protocole Namikoshi",
+		por: "Protocolo Namikoshi",
+		deu: "Namikoshi-Protokoll"
+	},
 	AggiungiTsuboProc: {
 		ita: "Aggiungi alla procedura",
 		eng: "Add to procedure",

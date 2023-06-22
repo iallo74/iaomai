@@ -782,11 +782,11 @@ body:not(.smart) .listaPunti .p_aria:not(.elencoSel) span:hover{
 	background-image:url(../../img/frSu.png) !important;
 }
 
-.p_none.elencoSelnot(.overLight):hover strong,
-.p_acqua.elencoSelnot(.overLight):hover strong,
-.p_legno.elencoSelnot(.overLight):hover strong,
-.p_fuoco.elencoSelnot(.overLight):hover strong,
-.p_fuoco_supplementare.elencoSelnot(.overLight):hover strong{
+.p_none.elencoSel:not(.overLight):hover strong,
+.p_acqua.elencoSel:not(.overLight):hover strong,
+.p_legno.elencoSel:not(.overLight):hover strong,
+.p_fuoco.elencoSel:not(.overLight):hover strong,
+.p_fuoco_supplementare.elencoSel:not(.overLight):hover strong{
 	background-color:rgba(255,255,255,0.3) !important;
 }
 .p_none span:not(.valMerid),

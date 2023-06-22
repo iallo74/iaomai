@@ -27,9 +27,7 @@ var MODULO_PROCEDURE = { // extend SET
 		HTML += '>'+TXT("Community").toUpperCase()+'</span></p>';
 		return HTML;
 	},
-	car_procedure: function( Q_idProc, Q_tue ){ // elenco delle procedure
-		if(typeof(Q_idProc)=='undefined')var Q_idProc='';
-		if(typeof(Q_tue)=='undefined')var Q_tue='';
+	car_procedure: function( Q_idProc='', Q_tue='' ){ // elenco delle procedure
 		if(Q_idProc+''=='')Q_idProc=-1;
 		if(Q_tue*1==0){
 			SET.caricaCommunity();
@@ -96,7 +94,7 @@ var MODULO_PROCEDURE = { // extend SET
 	},
 	filtraProcedure: function( event ){
 		var parola = document.getElementById("proc_ricerca").value.trim();
-		for(p in DB.procedure.data){
+		for(let p in DB.procedure.data){
 			if(DB.procedure.data[p].NomeProcedura.toLowerCase().indexOf(parola.toLowerCase()) == -1){
 				document.getElementById("btn_procedura_"+p).classList.add("nasPazRic");
 			}else{
@@ -111,7 +109,7 @@ var MODULO_PROCEDURE = { // extend SET
 						!SCHEDA.verificaSchedaRet(), 
 						arguments ).then(function(pass){if(pass){
 						var v = getParamNames(CONFIRM.args.callee.toString());
-						for(i in v)eval(getArguments(v,i));
+						for(let i in v)eval(getArguments(v,i));
 			
 			if(typeof(Q_idProc)=='undefined')var Q_idProc=-1;
 			if(typeof(Q_resta)=='undefined')var Q_resta=false;
@@ -145,7 +143,7 @@ var MODULO_PROCEDURE = { // extend SET
 					gallery=__(PR.gallery,'[]');
 				}
 			}else{
-				for(p in SET.community_elenco){
+				for(let p in SET.community_elenco){
 					if(SET.community_elenco[p].idProcedura*1==Q_idProc*1){
 						var PR = SET.community_elenco[p];
 						idProcedura=PR.idProcedura*1;
@@ -213,7 +211,8 @@ var MODULO_PROCEDURE = { // extend SET
 			// elenco dei dettagli procedura
 			var presente=false;
 			var n = -1;
-			for(p in dettagliProcedura){
+			
+			for(let p in dettagliProcedura){
 				if(!dettagliProcedura[p].Cancellato){
 					n++;
 					TipoDettaglio=dettagliProcedura[p].TipoDettaglio;
@@ -263,7 +262,11 @@ var MODULO_PROCEDURE = { // extend SET
 							if(typeof(DB.set.meridiani[siglaMeridiano])=='undefined')HTML += ' ptNoSel';
 							HTML += '"';
 							if(typeof(DB.set.meridiani[siglaMeridiano])!='undefined')HTML += ' onClick="SET.selTsubo(\''+nTsubo+"|"+siglaMeridiano+'\')"';
-							HTML += '>'+siglaTsubo+'</span>';
+							
+							var txt = siglaTsubo;
+							if(siglaMeridiano=='NK')txt = DB.set.meridiani.NK.tsubo[nTsubo*1-1].NomeTsubo
+							
+							HTML += '>'+txt+'</span>';
 						}
 					}
 					if(TipoDettaglio=='M'){
@@ -376,13 +379,12 @@ var MODULO_PROCEDURE = { // extend SET
 			}
 		}});
 	},
-	swCond: function( Q_idProc ){ // setta sì/no le condizioni della community
+	swCond: function( Q_idProc=-1 ){ // setta sì/no le condizioni della community
 		if((DB.login.data.auths.indexOf(globals.set.cartella)==-1 || !LOGIN.logedin())){
 			ALERT(TXT("MsgFunzioneSoloPay"));
 			return false;
 		}
 		if(!COMMUNITY.verifica())return;
-		if(typeof(Q_idProc)=='undefined')var Q_idProc=-1;
 		var DataModifica = DB.procedure.lastSync+1;
 		if(DB.procedure.data[Q_idProc].Condiviso==1)DB.procedure.data[Q_idProc].Condiviso=0;
 		else DB.procedure.data[Q_idProc].Condiviso=1;
@@ -393,8 +395,7 @@ var MODULO_PROCEDURE = { // extend SET
 								'SET.car_procedura('+Q_idProc+',1,0);');
 		});
 	},
-	swPref: function( Q_idProc, el ){ // setta sì/no come preferita una procedura della community
-		if(typeof(Q_idProc)=='undefined')var Q_idProc='';
+	swPref: function( Q_idProc='', el ){ // setta sì/no come preferita una procedura della community
 		var Q_pref=0;
 		if(el.classList.contains("p_sch_pref"))Q_pref=1;
 		
@@ -422,7 +423,7 @@ var MODULO_PROCEDURE = { // extend SET
 			document.getElementById("prefProcBtn").classList.remove("p_sch_no_pref");
 			document.getElementById("prefProcBtn").classList.add("p_sch_pref");
 		}
-		for(f in SET.community_elenco){
+		for(let f in SET.community_elenco){
 			if(SET.community_elenco[i].idProcedura == Q_idProc){
 				if(Q_pref=='1')SET.community_elenco[i].Preferito = '0';
 				else SET.community_elenco[i].Preferito = '1';
@@ -433,9 +434,8 @@ var MODULO_PROCEDURE = { // extend SET
 	confermaSwPref: function( txt ){
 		if(txt.substr(0,3)=='404')ALERT(TXT("ProcedureErrore"));
 	},
-	mod_procedura: function( Q_idProc, Q_pre ){ // scheda di modifica della procedura
+	mod_procedura: function( Q_idProc=-1, Q_pre ){ // scheda di modifica della procedura
 		// verifico le autorizzazioni
-		if(typeof(Q_idProc)=='undefined')var Q_idProc=-1;
 		if(Q_idProc.toString()=='')Q_idProc=-1;
 		var maxProcedure = 1;
 		if(LOGIN.reg() && LOGIN.logedin()){
@@ -445,7 +445,7 @@ var MODULO_PROCEDURE = { // extend SET
 			var tProc = 0;
 			var app = '';
 			if(globals.set.cartella=='auricologia')app = 'AUR';
-			for(c in DB.procedure.data){
+			for(let c in DB.procedure.data){
 				if(DB.procedure.data[c].Cancellato*1==0 && __(DB.procedure.data[c].app) == app)tProc++;
 			}
 			if(tProc >= maxProcedure){
@@ -459,7 +459,7 @@ var MODULO_PROCEDURE = { // extend SET
 						!SCHEDA.verificaSchedaRet(), 
 						arguments ).then(function(pass){if(pass){
 						var v = getParamNames(CONFIRM.args.callee.toString());
-						for(i in v)eval(getArguments(v,i));
+						for(let i in v)eval(getArguments(v,i));
 			if(typeof(Q_idProc)=='undefined')var Q_idProc=-1;
 			if(Q_idProc.toString()=='')Q_idProc=-1;
 			if(typeof(Q_pre)=='undefined')var Q_pre=0; // <<<< FORSE DA TOGLIERE
@@ -502,7 +502,7 @@ var MODULO_PROCEDURE = { // extend SET
 					'			<select name="idLinguaProcedura"' +
 					'				    id="idLinguaProcedura"' +
 					'		  			onChange="this.blur();">';
-			for(p in DB.lingueProcedure){
+			for(let p in DB.lingueProcedure){
 				HTML += 
 						'			<option value="'+p+'"';
 									if(siglaLinguaProcedura==DB.lingueProcedure[p])HTML+=' SELECTED';
@@ -668,7 +668,7 @@ var MODULO_PROCEDURE = { // extend SET
 		
 		// salvo le immagini
 		var GA = PH.galleryProvvisoria;
-		for(i in GA){
+		for(let i in GA){
 			GA[i].Dida = document.getElementById("Dida"+i).value;
 			if(typeof(GA[i].imgMini) != 'undefined' && GA[i]!=null && GA[i].imgMini!=null){
 				
@@ -707,7 +707,7 @@ var MODULO_PROCEDURE = { // extend SET
 				Q_idProc=document.formMod.idProc.value*1;
 			}else{
 				DB.procedure.data.push(JSNPUSH);
-				for(k in DB.procedure.data){
+				for(let k in DB.procedure.data){
 					if(DB.procedure.data[k].DataCreazione==DataModifica)Q_idProc=k;
 				}
 			}
@@ -728,7 +728,7 @@ var MODULO_PROCEDURE = { // extend SET
 						false,
 						arguments ).then(function(pass){if(pass){
 						var v = getParamNames(CONFIRM.args.callee.toString());
-						for(i in v)eval(getArguments(v,i));
+						for(let i in v)eval(getArguments(v,i));
 			
 			stopAnimate(true);
 			visLoader(TXT("SalvataggioInCorso"),'loadingLight');
@@ -756,7 +756,7 @@ var MODULO_PROCEDURE = { // extend SET
 			punto.options[a]=null;
 		}
 		var mrProc=new Array();
-		for(k in DB.set.meridiani){
+		for(let k in DB.set.meridiani){
 			mrProc[k]=DB.set.meridiani[k].tsubo.length;
 		}
 		for(a=mrProc[mr.value];a>=1;a--){
@@ -777,14 +777,12 @@ var MODULO_PROCEDURE = { // extend SET
 	},
 	aggiungiGruppoProcedura: function( punti ){ // importa un gruppo di punti
 		var pP=punti.split("|");			
-		for(var p=0;p<pP.length-1;p++)SET.aggiungiDettaglio(PAZIENTI.tipoGruppo,pP[p],0);
+		for(let p=0;p<pP.length-1;p++)SET.aggiungiDettaglio(PAZIENTI.tipoGruppo,pP[p],0);
 		PAZIENTI.evidenziaAggiunti(document.getElementById('dettagliCont'),pP.length-1);
 	},
-	azRicercaProcedure: function( p, id, comm ){ // apre la scheda della procedura dalla ricerca globale
-		if(typeof(id) == 'undefined')var id = -1;
-		if(typeof(comm) == 'undefined')var comm = false;
+	azRicercaProcedure: function( p, id=-1, comm=false ){ // apre la scheda della procedura dalla ricerca globale
 		if(p == -1 && id > -1){
-			for(d in DB.procedure.data){
+			for(let d in DB.procedure.data){
 				if(id*1 == DB.procedure.data[d].idProcedura)p = d;
 			}
 		}
@@ -814,7 +812,7 @@ var MODULO_PROCEDURE = { // extend SET
 		
 		if(globals.set.siglaProc=='AUR'){
 			var puntiElenco = [];
-			for(siglaTsubo in DB.set.punti){
+			for(let siglaTsubo in DB.set.punti){
 				if(__(DB.set.punti[siglaTsubo])){
 					puntiElenco.push({
 						siglaTsubo: siglaTsubo,
@@ -825,7 +823,7 @@ var MODULO_PROCEDURE = { // extend SET
 			puntiElenco.sort(sort_by("NomeTsubo", false));
 		}
 		
-		for(p in SET.dettagliProvvisori){
+		for(let p in SET.dettagliProvvisori){
 			var DT = SET.dettagliProvvisori[p];
 			OrdineDettaglio++;
 			if(!DT.Cancellato){
@@ -964,7 +962,7 @@ var MODULO_PROCEDURE = { // extend SET
 						if(siglaMeridiano=='')HTML +=
 							'		<option value="">- '+TXT("ScegliMeridiano")+' -</option>';
 							
-						for(k in DB.set.meridiani){
+						for(let k in DB.set.meridiani){
 							
 							// verifico le autorizzazioni
 							if(SET.verFreeMeridiani(k)){
@@ -986,7 +984,7 @@ var MODULO_PROCEDURE = { // extend SET
 								' 			id="pt_'+p+'"' +
 								' 			onChange="SET.ritOverTsubo(\'dettagliCont\','+p+');this.blur();">';
 						
-						for(n=1;n<=totPunti;n++){
+						for(let n=1;n<=totPunti;n++){
 							var siglaTsubo = n;
 							if(__(DB.set.meridiani[siglaMeridiano].tsubo[n-1].siglaTsubo)){
 								siglaTsubo = __(DB.set.meridiani[siglaMeridiano].tsubo[n-1].siglaTsubo);
@@ -1023,7 +1021,7 @@ var MODULO_PROCEDURE = { // extend SET
 					
 					var totPunti=0;
 						
-					for(k in DB.set.meridiani){
+					for(let k in DB.set.meridiani){
 						// verifico le autorizzazioni
 						if(SET.verFreeMeridiani(k)){
 							if(k!='EX'){
@@ -1090,16 +1088,13 @@ var MODULO_PROCEDURE = { // extend SET
 			else if(TipoDettaglio!='M')eval("document.formMod.de_"+p+".focus()");
 		}
 	},
-	aggiungiDettaglio: function( t, c, u ){ // aggiunge un dettaglio vuoto alla proceura
-		if(typeof(c)=='undefined')var c='';
-		if(typeof(u)=='undefined')var u=1;
-		
+	aggiungiDettaglio: function( t, c='', u=1 ){ // aggiunge un dettaglio vuoto alla proceura
 		PAZIENTI.mezzoProvvisorio
 		SET.topAdd = tCoord(document.getElementById("p_add_dett"),'y');
 		//SET.salvaDettagli();
 		var maxOrd=0;
 		var DataModifica = DB.procedure.lastSync+1;
-		for(p in SET.dettagliProvvisori){
+		for(let p in SET.dettagliProvvisori){
 			if(SET.dettagliProvvisori[p].OrdineDettaglio>maxOrd)maxOrd=SET.dettagliProvvisori[p].OrdineDettaglio;
 		}
 		JSNPUSH={ 	"TipoDettaglio": t,
@@ -1117,7 +1112,7 @@ var MODULO_PROCEDURE = { // extend SET
 	eliminaDettaglio: function( n ){ // elimina un dettaglio dalla procedura
 		SET.dettagliProvvisori[n].Cancellato=1;
 		o=0;
-		for(p in SET.dettagliProvvisori){
+		for(let p in SET.dettagliProvvisori){
 			SET.dettagliProvvisori[p].OrdineDettaglio=o;
 			o++;
 		}
@@ -1131,7 +1126,7 @@ var MODULO_PROCEDURE = { // extend SET
 		var toIndex = parseInt(elTarget.id.split("rg")[1]);
 		var arr2 = SET.dettagliProvvisori.splice(fromIndex, 1)[0];
 		SET.dettagliProvvisori.splice(toIndex,0,arr2);
-		for(d in SET.dettagliProvvisori){
+		for(let d in SET.dettagliProvvisori){
 			SET.dettagliProvvisori[d].OrdineDettaglio = d;
 		}
 		SET.caricaDettagli();
@@ -1195,8 +1190,7 @@ var MODULO_PROCEDURE = { // extend SET
 			document.getElementById("contCommenti").style.display='none';
 		}
 	},
-	scrivi_commento: function( el, reply ){
-		if(typeof(reply) == 'undefined')var reply = false;
+	scrivi_commento: function( el, reply=false ){
 		var HTML = 
 			'<div class="commRG';
 		if(reply)HTML += ' commReply'
@@ -1246,7 +1240,7 @@ var MODULO_PROCEDURE = { // extend SET
 		if(el.risposte){
 			if(el.risposte.length){
 				HTML += '<div class="commRS">'+htmlEntities(TXT("Risposte"))+':</div>';
-				for(c in el.risposte){
+				for(let c in el.risposte){
 					HTML += SET.scrivi_commento(el.risposte[c],true);
 				}
 			}
@@ -1266,7 +1260,7 @@ var MODULO_PROCEDURE = { // extend SET
 		var HTML = '';
 		commentiProcedura.sort(sort_by("DataCommento", true, parseInt));
 		var totComm = commentiProcedura.length;
-		for(p in commentiProcedura){
+		for(let p in commentiProcedura){
 			HTML += SET.scrivi_commento(commentiProcedura[p]);
 			if(commentiProcedura[p].risposte)totComm += commentiProcedura[p].risposte.length;
 			presente=true;
@@ -1280,9 +1274,7 @@ var MODULO_PROCEDURE = { // extend SET
 			document.getElementById("numeroCommenti").innerHTML = totComm;
 		}
 	},
-	ins_commento: function( idProcedura, idCommento, reply ){ // inserisce un commento ad una procedura condivisa
-		if(typeof(idCommento) == 'undefined')var idCommento = 0;
-		if(typeof(reply) == 'undefined')var reply = 0;
+	ins_commento: function( idProcedura, idCommento=0, reply=0 ){ // inserisce un commento ad una procedura condivisa
 		//retNoFree();
 		if(CONN.retNoConn() && LOGIN.logedin() && verifica_form(document.formCommenti)){
 			var JSNPOST={	"idProcedura": document.formCommenti.idProcedura.value*1,
@@ -1312,7 +1304,7 @@ var MODULO_PROCEDURE = { // extend SET
 						false, 
 						arguments ).then(function(pass){if(pass){
 						var v = getParamNames(CONFIRM.args.callee.toString());
-						for(i in v)eval(getArguments(v,i));
+						for(let i in v)eval(getArguments(v,i));
 			if(CONN.getConn()){
 				var JSNPOST={	"idCommento": idCommento*1 };
 				
@@ -1331,9 +1323,7 @@ var MODULO_PROCEDURE = { // extend SET
 			document.getElementById("comm_"+res.idCommento).remove();	
 		}
 	},
-	attivaCommento: function( idProcedura, idCommento, reply ){
-		if(typeof(idCommento) == 'undefined')var idCommento = '';
-		if(typeof(reply) == 'undefined')var reply = 0;
+	attivaCommento: function( idProcedura, idCommento='', reply=0 ){
 		SET.disattivaCommento();
 		var TIT = TXT("AddCommento");
 		var classCommento = '';
@@ -1492,7 +1482,7 @@ var MODULO_PROCEDURE = { // extend SET
 								'     onClick="document.formRicProc.record.value=\''+(record-record_vis)+'\';' +
 								'	     	   SET.caricaCommunity();"></span>';
 					
-					for(k in SET.community_elenco){
+					for(let k in SET.community_elenco){
 						idProcedura=SET.community_elenco[k].idProcedura*1;
 						Condiviso=SET.community_elenco[k].Condiviso*1;
 						NomeProcedura=SET.community_elenco[k].NomeProcedura;
@@ -1551,7 +1541,7 @@ var MODULO_PROCEDURE = { // extend SET
 							'		  	 	    id="idLinguaRic"' +
 							'		  	 	    onChange="SET.verLinguaRic();">' +
 							'		  		<option></option>';
-			for(p in DB.lingueProcedure){
+			for(let p in DB.lingueProcedure){
 				HTML_pre += '				<option value="'+p+'">'+DB.lingueProcedure[p]+'</option>';
 			}
 			HTML_pre += 	'			</select>' +

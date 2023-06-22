@@ -5,7 +5,7 @@ var MODULO_TEORIA = { // extend SET
 	
 	caricaApprofondimenti: function(){ // carica la lista degli approfondimenti
 		var contTeoria = '';
-		for(p in DB.set.teoria){
+		for(let p in DB.set.teoria){
 			contTeoria += 	'<div class="cartella" onTouchStart="SCHEDA.setCartella(this);">' +
 							'	<span id="btn_teoria_cart_'+p+'" onClick="SCHEDA.swCartella(this);">' +
 							 		DB.set.teoria[p].TitoloSezione +
@@ -81,7 +81,7 @@ var MODULO_TEORIA = { // extend SET
 			var priority = __(GEOMETRIE.gruppi[gruppo].priority,false);
 			
 			var puntiElenco = [];
-			for(g in GEOMETRIE.gruppi[gruppo].punti){
+			for(let g in GEOMETRIE.gruppi[gruppo].punti){
 				var siglaTsubo = GEOMETRIE.gruppi[gruppo].punti[g];
 				if(siglaTsubo.length==3 && DB.set.punti[siglaTsubo]){
 					if(!__(DB.set.punti[siglaTsubo].hidden,false) || forzaHidden){
@@ -109,7 +109,7 @@ var MODULO_TEORIA = { // extend SET
 			if(__(GEOMETRIE.gruppi[gruppo].ordine)=='alfabetico')puntiElenco.sort(sort_by("ordine", false));
 
 			var catV = categoria = '';
-			for(g in puntiElenco){
+			for(let g in puntiElenco){
 				if(puntiElenco[g].categoria && puntiElenco[g].categoria != catV){
 					elencoTsubo+='<p class="categoriaGruppo"><i>'+TXT("Gruppi_"+puntiElenco[g].categoria)+'</i></p>';
 				}
@@ -160,18 +160,19 @@ var MODULO_TEORIA = { // extend SET
 								ritorno,
 								true,
 								btn,
-								btnAdd );
+								btnAdd,
+								globals.set.cartella+'_teoria_'+p+"_"+t );
 		SET.evidenziaTsubo(html,anatomia,mappa,lm);
 		if(flowchart){
 			if(SET.risTest.dipendenza.tot > -1){
-				for(o=0;o<document.getElementById("dipendenze").options.length;o++){
+				for(let o=0;o<document.getElementById("dipendenze").options.length;o++){
 					if(SET.risTest.dipendenza.tot>=parseInt("0"+document.getElementById("dipendenze").options[o].value)){
 						document.getElementById("dipendenze").selectedIndex = o;
 					}
 				}
 			}
 			if(SET.risTest.motivazione.tot > -1){
-				for(o=0;o<document.getElementById("motivazioni").options.length;o++){
+				for(let o=0;o<document.getElementById("motivazioni").options.length;o++){
 					if(SET.risTest.motivazione.tot>=parseInt("0"+document.getElementById("motivazioni").options[o].value)){
 						document.getElementById("motivazioni").selectedIndex = o;
 					}
@@ -182,7 +183,7 @@ var MODULO_TEORIA = { // extend SET
 		if(test){
 			if(SET.risTest[test].tot > -1){
 				var els = document.getElementById("test_cont").getElementsByTagName("select");
-				for(var e=0;e<els.length;e++){
+				for(let e=0;e<els.length;e++){
 					var vals = els[e].options;
 					for(v=0;v<vals.length;v++){
 						if(SET.risTest[test].vals[e] == parseInt("0"+vals[v].value)){
@@ -196,8 +197,7 @@ var MODULO_TEORIA = { // extend SET
 		}
 	},
 	
-	caricaTest: function( n, azzera ){
-		if(typeof(azzera)=='undefined')var azzera = false;
+	caricaTest: function( n, azzera=false ){
 		if(azzera){
 			SET.risTest = {
 				dipendenza: {
@@ -221,7 +221,7 @@ var MODULO_TEORIA = { // extend SET
 		var obj = DB.set.tests[test];
 		var html = '<div id="test_cont">';
 		
-		for(q in obj.q){
+		for(let q in obj.q){
 			html += '<div class="test_q">'	+
 					'	<select onChange="SET.setTestVal(this);">' +
 					'		<option></option>';
@@ -250,7 +250,7 @@ var MODULO_TEORIA = { // extend SET
 		var pass = true;
 		SET.testTOT = 0;
 		var els = document.getElementById("test_cont").getElementsByTagName("select");
-		for(var e=0;e<els.length;e++){
+		for(let e=0;e<els.length;e++){
 			SET.testTOT += parseInt("0"+els[e].value);
 			if(els[e].selectedIndex<1)pass = false;
 		}
@@ -293,12 +293,12 @@ var MODULO_TEORIA = { // extend SET
 	
 	scriviFlowChart: function(){
 		var dipendenze = '';
-		for(d in DB.set.tests["dipendenza"].ris){
+		for(let d in DB.set.tests["dipendenza"].ris){
 			dipendenze += '<option value="'+d+'">'+htmlEntities(DB.set.tests["dipendenza"].ris[d])+'</option>';
 		}
 		
 		var motivazioni = '';
-		for(d in DB.set.tests["motivazione"].ris){
+		for(let d in DB.set.tests["motivazione"].ris){
 			motivazioni += '<option value="'+d+'">'+htmlEntities(DB.set.tests["motivazione"].ris[d])+'</option>';
 		}
 		var html =

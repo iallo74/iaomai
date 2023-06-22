@@ -4,8 +4,7 @@ var CONN = {
 	urlStore: 'https://www.iaomai.app/[lang]/iaomai/',
 	linkPrivacy: 'https://www.iaomai.app/privacy',
 	online: true,
-	caricaUrl: function(url, qs, funzione){ // carica un URL
-		if(typeof(qs)=='undefined')var qs='';
+	caricaUrl: function(url, qs='', funzione){ // carica un URL
 		if(CONN.getConn()){
 			var x;
 			if(typeof XMLHttpRequest!="undefined"){

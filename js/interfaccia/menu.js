@@ -30,7 +30,7 @@ var MENU = {
 	},
 	aggiornaIconeModello: function(){
 		var els = document.getElementById("p1").getElementsByTagName("div");
-		for(var e=0;e<els.length;e++){
+		for(let e=0;e<els.length;e++){
 			var pass = true;
 			if(globals.set.cartella){
 				modello = els[e].id.replace("p_","");
@@ -55,7 +55,7 @@ var MENU = {
 				document.getElementById("p_rifletti").classList.remove("visBtn");
 			}
 			var els = document.getElementById("livelli_cont").getElementsByTagName("div");
-			for(var e=0;e<els.length;e++){
+			for(let e=0;e<els.length;e++){
 				var preVis = document.getElementById("pulsanti_modello").classList.contains("visSch");
 				if(!preVis)document.getElementById("pulsanti_modello").classList.add("visSch");
 				if(els[e].id.indexOf("p_")>-1){
@@ -82,8 +82,7 @@ var MENU = {
 		//return (SCHEDA.classeAperta == 'scheda_A' ||SCHEDA.classeAperta == 'scheda_B');
 		return document.getElementById("scheda").classList.contains("visSch") && SCHEDA.aggancio.tipo=="lato";
 	},
-	chiudiMenu: function( n, stage ){
-		if(typeof(stage)=='undefined')var stage = false;
+	chiudiMenu: function( n, stage=false ){
 		if(stage && !CONN.online)return;
 		if(n!="pulsanti_modello")document.getElementById("pulsanti_modello").classList.remove("visSch");
 		if(n!="sets")document.getElementById("sets").classList.remove("visSch");
@@ -136,8 +135,7 @@ var MENU = {
 		}
 		//verAnimate();
 	},
-	visModello: function( forza ){
-		if(typeof(forza) == 'undefined')var forza = false;
+	visModello: function( forza=false ){
 		var daScheda = (MENU.verOp() && !smartMenu);
 						
 		if(!daScheda){
@@ -155,7 +153,7 @@ var MENU = {
 		if(!globals.modello.cartella && document.getElementById("pulsanti_modello").classList.contains("visSch")){
 			var mods = ['donna','uomo','piedi','orecchio'];
 			var vel = 3.5;
-			for(m=0;m<mods.length;m++){
+			for(let m=0;m<mods.length;m++){
 				setTimeout( function(g) {
 					document.getElementById("p_"+mods[g]).classList.add("pModsEvi");
 				}, (m+1)*2 * 100, m );
@@ -247,8 +245,7 @@ var MENU = {
 		document.getElementById("fr_visceri").classList.toggle("frOpened");
 		document.getElementById("el_visceri_cont").classList.toggle("elOpened");
 	},
-	swElMuscoli: function(forza){
-		if(typeof(forza) == 'undefined')var forza = false;
+	swElMuscoli: function(forza=false){
 		if(!muscleView && !forza)MODELLO.swMuscle(1);
 		this.chEls('muscoli');
 		document.getElementById("fr_muscoli").classList.toggle("frOpened");
@@ -267,7 +264,7 @@ var MENU = {
 		var d = el.value.trim().toLowerCase();
 		var els = document.getElementById("el_"+t).getElementsByTagName("p");
 		
-		for(p=0;p<els.length;p++){
+		for(let p=0;p<els.length;p++){
 			if(els[p].innerText.toLowerCase().indexOf(d)>-1 || d=='')els[p].classList.remove("elNasc");
 			else els[p].classList.add("elNasc");
 		}
@@ -309,7 +306,7 @@ var MENU = {
 		var els = document.getElementById("elencoSelected").getElementsByTagName("p");
 		var tot = els.length;
 		var e = 0;
-		for(p=0;p<tot;p++){
+		for(let p=0;p<tot;p++){
 			if(els[e].id.indexOf("SEL_Muscolo_") == -1)document.getElementById(els[e].id).click();
 			else{
 				document.getElementById(els[e].id.replace("SEL_","")).classList.remove("p_viscSel");
@@ -375,12 +372,12 @@ var MENU = {
 		visLoader("");
 		document.getElementById("colori").classList.toggle("visSch");
 		var els = document.getElementById("colSel").getElementsByTagName("span");
-		for(i = 0; i<els.length; i++){
+		for(let i = 0; i<els.length; i++){
 			if(localStorage.colore == 2-i)els[i].classList.add("cSel");
 			else els[i].classList.remove("cSel");
 		}
 		var els = document.getElementById("skinSel").getElementsByTagName("span");
-		for(i = 0; i<els.length; i++){
+		for(let i = 0; i<els.length; i++){
 			els[i].classList.remove("cSel");
 		}
 		if(localStorage.tipoPelle == '')els[0].classList.add("cSel");
@@ -388,13 +385,13 @@ var MENU = {
 		if(localStorage.tipoPelle == '_nera')els[2].classList.add("cSel");
 		
 		var els = document.getElementById("sizeSel").getElementsByTagName("b");
-		for(i = 0; i<els.length; i++){
+		for(let i = 0; i<els.length; i++){
 			if(localStorage.textSize == els[i].dataset.value)els[i].classList.add("a_SEL");
 			else els[i].classList.remove("a_SEL");
 		}
 		
 		var els = document.getElementById("pointerSel").getElementsByTagName("b");
-		for(i = 0; i<els.length; i++){
+		for(let i = 0; i<els.length; i++){
 			els[i].classList.remove("a_SEL");
 			els[i].classList.remove("t_DES");
 		}
@@ -433,19 +430,19 @@ var MENU = {
 		visLoader('');
 		DISPOSITIVI.carica(jsn);
 	},
-	visFeatures: function( forza ){
-		if(typeof(forza)=='undefined')var forza = false;
-		var maxDate = new Date("2023-03-01").getTime();
+	visFeatures: function( forza=false ){
+		var maxDate = new Date("2023-09-01").getTime();
 		var now = new Date().getTime();
 		if(	(!__(localStorage["no_info_features_"+verApp.replace(".","_")],'') &&
 			!__(MENU["no_info_features_"+verApp.replace(".","_")],false) &&
 			LOGIN.logedin() &&
 			maxDate>now) || forza ){
+			document.getElementById("contFeatures").innerHTML = stripslashes(TXT("features"));
 			if(forza){
 				visLoader("");
 				MENU.chiudiMenu("features");
 			}
-			var tmRit = 2500;
+			var tmRit = 6500;
 			if(forza)tmRit = 10;
 			setTimeout(function(){
 				visLoader("");
@@ -486,16 +483,14 @@ var MENU = {
 			}
 		}
 	},
-	visAgenda: function( data, mantieni ){
-		if(typeof(mantieni) == 'undefined')var mantieni = false;
-		
+	visAgenda: function( data, mantieni=false ){
 		var mod = SCHEDA.verificaSchedaRet();
 		if(!document.getElementById("ag").classList.contains("visSch") || mantieni){
 			CONFIRM.vis(	TXT("UscireSenzaSalvare"),
 						!mod,
 						arguments ).then(function(pass){if(pass){
 						var v = getParamNames(CONFIRM.args.callee.toString());
-						for(i in v)eval(getArguments(v,i));
+						for(let i in v)eval(getArguments(v,i));
 				var tm=10;
 				if(mod)tm=200;
 				if(smartMenu)SCHEDA.chiudiElenco();
@@ -576,8 +571,7 @@ var MENU = {
 		A.target = H.target;
 		if(mouseDetect && !touchable)document.registrazioneForm.Nominativo.focus();
 	},
-	visImpset: function( archivi ){
-		if(typeof(archivi)=='undefined')var archivi = false;
+	visImpset: function( archivi=false ){
 		MENU.chiudiMenu("impset");
 		visLoader("");
 		document.getElementById("impset").classList.toggle("visSch");
@@ -608,9 +602,16 @@ var MENU = {
 			localStorage.patientPwd = '';
 			if(document.getElementById("patientPwdCheck").checked)localStorage.patientPwd = 'true';
 		}
-		localStorage.noMedico = '';
-		if(document.getElementById("t_OLISTICO").classList.contains("a_SEL"))localStorage.noMedico = 'true';
+		var naming = '';
+		if(document.getElementById("t_OLISTICO").classList.contains("a_SEL"))naming = 'true';
+		if(document.getElementById("t_SHIATSU").classList.contains("a_SEL"))naming = 'shiatsu';
+		localStorage.noMedico = naming;
+		MENU.updateNaming();
 		MENU.chiudiImpSet();
+	},
+	updateNaming: function(){
+		document.getElementById("pulsante_pazienti").innerHTML = LINGUE.convPaziente(TXT("ElPazienti"));
+		PAZIENTI.caricaPazienti();
 	},
 	chiudiImpSet: function(){
 		document.getElementById("contImpset").innerHTML = '';
@@ -626,8 +627,11 @@ var MENU = {
 			((!__(localStorage.noMedico))?' class="a_SEL"':'') +
 			'>'+TXT("_UTILIZZO_P")+'</b>' +
             '		<b id="t_OLISTICO" onClick="MENU.setPatientType(\'O\');"' +
-			((__(localStorage.noMedico))?' class="a_SEL"':'') +
+			((__(localStorage.noMedico=='true'))?' class="a_SEL"':'') +
 			'>'+TXT("_UTILIZZO_C")+'</b>' +
+            '		<b id="t_SHIATSU" onClick="MENU.setPatientType(\'S\');"' +
+			((__(localStorage.noMedico=='shiatsu'))?' class="a_SEL"':'') +
+			'>'+TXT("_UTILIZZO_S")+'</b>' +
             '	</span>' +
             '</p>';
 		if(LOGIN.logedin() && DB.login.data.PasswordU)HTML_imp += 
@@ -657,14 +661,26 @@ var MENU = {
 		}
 	},
 	setPatientType: function( type ){
+		var contr = '';
+		if(type=='M'){
+			document.getElementById("t_OLISTICO").classList.remove("a_SEL");
+			document.getElementById("t_MEDICO").classList.add("a_SEL");
+			document.getElementById("t_SHIATSU").classList.remove("a_SEL");
+			contr = '';
+		}
 		if(type=='O'){
 			document.getElementById("t_OLISTICO").classList.add("a_SEL");
 			document.getElementById("t_MEDICO").classList.remove("a_SEL");
-		}else{
-			document.getElementById("t_OLISTICO").classList.remove("a_SEL");
-			document.getElementById("t_MEDICO").classList.add("a_SEL");
+			document.getElementById("t_SHIATSU").classList.remove("a_SEL");
+			contr = 'true';
 		}
-		if((__(localStorage.noMedico)!='') != (type=='O'))ALERT(TXT("AlertNecessarioRiavvio"));
+		if(type=='S'){
+			document.getElementById("t_OLISTICO").classList.remove("a_SEL");
+			document.getElementById("t_MEDICO").classList.remove("a_SEL");
+			document.getElementById("t_SHIATSU").classList.add("a_SEL");
+			contr = 'shiatsu';
+		}
+		//if(__(localStorage.noMedico) != contr)ALERT(TXT("AlertNecessarioRiavvio"));
 	},
 	patientPwdConf: function(){
 		var pwd = document.getElementById("patientPwdRequest");
@@ -770,8 +786,7 @@ var MENU = {
 			}, 700 );
 		}
 	},
-	comprimiIcone: function( netto ){
-		if(typeof(netto) == 'undefined')var netto = false;
+	comprimiIcone: function( netto=false ){
 		if(netto){
 			MENU.inizio = false;
 			MENU.setTT();
@@ -789,7 +804,7 @@ var MENU = {
 	setTT: function(){
 		// verifico i tooltips del menu
 		var divs = document.getElementById("icone").getElementsByTagName("div");
-		for(i=0;i<divs.length;i++){
+		for(let i=0;i<divs.length;i++){
 			var labels = divs[i].getElementsByTagName("i");
 			if(labels.length){
 				if((MENU.icoSelected || document.getElementById("scheda").classList.contains("visSch")) && MENU.icoSelected!=divs[i]){

@@ -5,7 +5,7 @@ var GUIDA = {
 	tmFumetto: null,
 	init: function( n ){
 		var els = document.getElementById("guida"+n).getElementsByClassName("guida_el");
-		for(n=0;n<els.length;n++){
+		for(let n=0;n<els.length;n++){
 			var nav = document.createElement('div');
 			nav.className = 'guida_nav';
 			var html = '<span class="guida_btn_';
@@ -38,20 +38,16 @@ var GUIDA = {
 	},
 	vai: function( g ){
 		var els = document.getElementById("guida"+GUIDA.nGuida).getElementsByClassName("guida_el");
-		for(n=0;n<els.length;n++){
+		for(let n=0;n<els.length;n++){
 			document.getElementById("guida_cont").classList.remove("guida"+GUIDA.nGuida+n);
 		}
 		document.getElementById("guida_cont").classList.add("guida"+GUIDA.nGuida+g);
 	},
-	visFumetto: function( n, forza, noFr ){
-		if(typeof(forza)=='undefined')var forza = false;
-		if(typeof(noFr)=='undefined')var noFr = false;
+	visFumetto: function( n, forza=false, noFr=false ){
 		var noGuida = eval(__(localStorage.getItem("no_"+n),"false"));
 		if(!noGuida || forza){
 			if(GUIDA.fumettoAperto){
-				document.getElementById(GUIDA.fumettoAperto).classList.remove("vis");
-				document.getElementById(GUIDA.fumettoAperto).classList.remove("visSch");
-				document.getElementById(GUIDA.fumettoAperto).classList.remove("noFr");
+				document.getElementById(GUIDA.fumettoAperto).classList.remove("vis","visSch","noFr");
 			}
 			clearTimeout(GUIDA.tmFumetto);
 			document.getElementById("no_guida").dataset.name = "no_"+n;
@@ -88,8 +84,7 @@ var GUIDA = {
 			document.getElementById("interfaccia").addEventListener("touchstart", GUIDA.nasFumetto, false);
 		}
 	},
-	nasFumetto: function(forza){
-		if(typeof(forza)=='undefined')var forza = true;
+	nasFumetto: function(forza=true){
 		if(GUIDA.fumettoAperto && (!GUIDA.overFumetto || GUIDA.overChiudi || forza)){
 			document.getElementById(GUIDA.fumettoAperto).classList.remove("vis");
 			document.getElementById(GUIDA.fumettoAperto).classList.remove("noFr");
@@ -125,9 +120,8 @@ var REF = {
 	elSel: null,
 	frSel: [],
 	opened: false,
-	open: function( level ){
+	open: function( level = 'overview' ){
 		if(typeof(localStorage.fixTree)=='undefined')localStorage.fixTree = '1'; // setto FIX di default
-		if(typeof(level)=='undefined')var level = 'overview';
 		if(document.getElementById("menuScheda").className.indexOf("visSch")>-1)SCHEDA.swMenuScheda();
 		document.getElementById("reference_cont").classList.add("visSch");
 		if(localStorage.fixTree=='1')document.getElementById("reference_cont").classList.add("fix");
@@ -165,7 +159,7 @@ var REF = {
 			REF.elSel = null;
 		}
 		if(REF.frSel!=[]){
-			for(f in REF.frSel)REF.frSel[f].classList.remove("frSel");
+			for(let f in REF.frSel)REF.frSel[f].classList.remove("frSel");
 			REF.frSel = [];
 		}
 		REF.explode();
@@ -199,11 +193,10 @@ var REF = {
 		if(WF()<540)document.getElementById("reference_cont").classList.remove("opTree");
 		if(!__(localStorage.fixTree))document.getElementById("reference_cont").classList.remove("opTree");
 	},
-	cont: function( level, p ){
-		if(typeof(p)=='undefined')var p = '';
+	cont: function( level, p='' ){
 		if(p)p += '.';
 		var html = '';
-		for(i in level.cont){
+		for(let i in level.cont){
 			var l = p+i;
 			var pL = l.split(".");
 			if(typeof(level.cont[i].cont)=='object'){

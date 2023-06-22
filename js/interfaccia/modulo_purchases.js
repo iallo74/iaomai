@@ -8,7 +8,7 @@ var PURCHASES  = {
 	
 	init: function(){
 		// inizializza il catalogo
-		for(s in sets){
+		for(let s in sets){
 			if((!android && sets[s].idApple) || (android && sets[s].idGoogle)){
 				if(android)idStore = sets[s].idGoogle;
 				else idStore = sets[s].idApple;
@@ -28,7 +28,7 @@ var PURCHASES  = {
 	
 	updateProducts: function(){
 		if(PURCHASES.product_list.length){
-			for(var p in PURCHASES.product_list){
+			for(let p in PURCHASES.product_list){
 				if(PURCHASES.product_list[p].folder == elenco.auths[e])PURCHASES.product_list[p].owned;
 			}
 			PURCHASES.productList();
@@ -41,7 +41,7 @@ var PURCHASES  = {
 			store.error(function(error) {
 				console.log('ERROR ' + error.code + ': ' + error.message);
 			});
-			for(var id in PURCHASES.product_list){
+			for(let id in PURCHASES.product_list){
 				store.register({
 					id:    PURCHASES.product_list[id].idStore,
 					type:  store.NON_CONSUMABLE
@@ -155,7 +155,7 @@ var PURCHASES  = {
 	getProdById: function( idStore ){
 		// ottiene un prodotto tramite ID
 		var el = null;
-		for(var id in PURCHASES.product_list){
+		for(let id in PURCHASES.product_list){
 			if(PURCHASES.product_list[id].idStore == idStore)el = PURCHASES.product_list[id];
 		}
 		return el;
@@ -178,7 +178,7 @@ var PURCHASES  = {
 					'</div><div><img src="img/storesSystems'+addApple+'.png"></div><div id="prList">';
 	    var html_ok = '';
 	    var html_no = '';
-		for(var id in PURCHASES.product_list){
+		for(let id in PURCHASES.product_list){
 			if(PURCHASES.product_list[id].title && PURCHASES.product_list[id].title!='undefined'){
 				var html_provv = '';
 				var idStore = PURCHASES.product_list[id].idStore;
@@ -219,7 +219,7 @@ var PURCHASES  = {
 			ALERT("An error has occurred");
 		}else{
 			var prices = JSON.parse( txt );
-			for(p in PURCHASES.product_list){
+			for(let p in PURCHASES.product_list){
 				for(e in prices){
 					if(PURCHASES.product_list[p].folder == e)PURCHASES.product_list[p].price =  prices[e]+"€";
 				}

@@ -1,5 +1,5 @@
 MODELLO.MAT.mappaMuscoli = function(){
-	for(m=0;m<4;m++){
+	for(let m=0;m<4;m++){
 		MODELLO.MAT.materialMuscoli[m] = new THREE.MeshStandardMaterial( { // MUSCOLI
 			flatShading:false,
 			color: new THREE.Color( 1, 1, 1 ),

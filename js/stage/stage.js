@@ -231,7 +231,7 @@ function caricaModello( cartella ){
 	globals.modello.cartella=cartella;
 	visLoader(globals.modello.txtLoading);
 	var imports = clone(globals.modello.imports);
-	for(i in imports)imports[i]='modelli/'+cartella+'/'+imports[i];
+	for(let i in imports)imports[i]='modelli/'+cartella+'/'+imports[i];
 	imports.push("modelli/lang_"+LINGUE.getLinguaCont('anatomy_full')+".js");
 	IMPORTER.importaFiles( 	0, 
 							imports, 
@@ -241,7 +241,7 @@ function caricaModello( cartella ){
 	if(__(globals.modello.areaName,''))document.body.classList.add(__(globals.modello.areaName,''));
 	if(__(globals.modello.viscName,''))document.body.classList.add(__(globals.modello.viscName,''));
 	var els = document.getElementById("p1").getElementsByTagName("div");
-	for(var e=0;e<els.length;e++){
+	for(let e=0;e<els.length;e++){
 		els[e].classList.remove("btnSel");
 	}
 	document.getElementById("p_stampa").style.display = 'block';
@@ -314,8 +314,7 @@ function scaricaModello( esci ){
 	render( true );
 	if(smartMenu && elencoSel && !globals.set.cartella)SCHEDA.apriElenco('base');
 }
-function cambiaModello( cartella ){
-	if(typeof(cartella) == 'undefined')var cartella='';
+function cambiaModello( cartella='' ){
 	var chiedi = false;
 	var ChiediUscitaSet = ''
 	if(globals.set.cartella!='' && cartella){
@@ -332,7 +331,7 @@ function cambiaModello( cartella ){
 					!chiedi,
 					arguments ).then(function(pass){if(pass){
 					var v = getParamNames(CONFIRM.args.callee.toString());
-					for(i in v)eval(getArguments(v,i));
+					for(let i in v)eval(getArguments(v,i));
 		if(chiedi){
 			scaricaSet();
 		}
@@ -389,7 +388,7 @@ function caricaSet( cartella, el ){
 		globals.set.imports.push("lang_"+LINGUE.getLinguaCont(cartella)+".js");
 		visLoader(globals.set.txtLoading);
 		var imports = clone(globals.set.imports);
-		for(i in imports){
+		for(let i in imports){
 			if(imports[i].indexOf("/")==-1)imports[i]='sets/'+cartella+'/'+imports[i];
 		}
 		IMPORTER.importaFiles(	0,
@@ -413,8 +412,9 @@ function caricaSet( cartella, el ){
 		globals.mapOpened = globals.set.cartella;
 		localStorage.mapOpened = globals.set.cartella;
 	}
+	MENU.updateNaming();
 }
-function scaricaSet( notInit ){
+function scaricaSet( notInit=false ){
 	var daScheda = (SCHEDA.classeAperta == 'scheda_A' ||
 					SCHEDA.classeAperta == 'scheda_B');
 	try{SET._scaricaSet();}catch(err){};
@@ -423,7 +423,6 @@ function scaricaSet( notInit ){
 	overInterfaccia=false;
 	render( true );
 	if(	!daScheda )SCHEDA.scaricaScheda();
-	if(typeof(notInit) == 'undefined')var notInit = false;
 	if(!notInit){
 		if(SETS){
 			var els = document.getElementById("scripts").getElementsByTagName("script");
@@ -456,6 +455,7 @@ function scaricaSet( notInit ){
 	}
 	globals.mapOpened = '';
 	localStorage.mapOpened = '';
+	MENU.updateNaming();
 }
 function chiudiSet(){
 	var procOp = document.getElementById("scheda").classList.contains("scheda_procedura");
@@ -464,7 +464,7 @@ function chiudiSet(){
 						!SCHEDA.verificaSchedaRet() && !procOp, 
 						arguments ).then(function(pass){if(pass){
 						var v = getParamNames(CONFIRM.args.callee.toString());
-						for(i in v)eval(getArguments(v,i));
+						for(let i in v)eval(getArguments(v,i));
 			if(procOp){
 				SCHEDA.formModificato = false;
 				endChangeDetection();
@@ -492,7 +492,7 @@ function cambiaLingua(nLingua){
 // FILTRI SET
 function filtraSets(modello){
 	var res = []
-	for(s in sets){
+	for(let s in sets){
 		if(sets[s].modelli.indexOf(modello) != -1)res.push(s);
 	}
 	return res;
@@ -543,8 +543,7 @@ function onMouseMove( event ) {
 	}
 }
 
-function render(forza) {
-	if(typeof(forza)=='undefined')var forza=false;
+function render(forza=false) {
 	if(globals.set.cartella && !ctrl_pressed){
 		try{
 			make = SET._render();
@@ -814,7 +813,7 @@ function selCol(n){
 	if(localStorage.colore)document.body.classList.remove('bodyStyled'+localStorage.colore);
 	localStorage.colore = n;
 	var els = document.getElementById("colSel").getElementsByTagName("span");
-	for(i = 0; i<els.length; i++){
+	for(let i = 0; i<els.length; i++){
 		if(localStorage.colore == 2-i)els[i].classList.add("cSel");
 		else els[i].classList.remove("cSel");
 	}

@@ -13,7 +13,7 @@ var MODULO_PATOLOGIE = { // extend SET
 			'		   placeholder="'+htmlEntities(TXT("CercaPatologia"))+'"'+H.noAutoGen+'>' +
 			'</div>' +
 			'<div class="lista listaPatologie">';
-		for(p in DB.set.patologie){
+		for(let p in DB.set.patologie){
 			
 			// verifico le autorizzazioni
 			var addLock =	(!SET.verFreePatologia(DB.set.patologie[p].siglaPatologia)) ? ' lockedItem' : '';
@@ -30,8 +30,9 @@ var MODULO_PATOLOGIE = { // extend SET
 	},
 	apriPatologia: function( n, btn ){
 		// apre la scheda della patologia
+		var siglaPatologia = DB.set.patologie[n].siglaPatologia;
 		// verifico le autorizzazioni
-		if(!SET.verFreePatologia(DB.set.patologie[n].siglaPatologia)){
+		if(!SET.verFreePatologia(siglaPatologia)){
 			ALERT(TXT("MsgContSoloPay"),true,true);
 			return;
 		}
@@ -62,7 +63,8 @@ var MODULO_PATOLOGIE = { // extend SET
 								ritorno,
 								true,
 								btn,
-								btnAdd );
+								btnAdd,
+								globals.set.cartella+'_patologie_'+siglaPatologia );
 		SET.convSigleScheda();
 		SET.evidenziaTsubo(html);
 		SET.evidenziaMeridiani(html);
@@ -70,7 +72,7 @@ var MODULO_PATOLOGIE = { // extend SET
 	filtraPatologie: function( event ){
 		// filtra le patologie con il campo testuale
 		var parola = document.getElementById("pat_ricerca").value.trim();
-		for(p in DB.set.patologie){
+		for(let p in DB.set.patologie){
 			if(DB.set.patologie[p].NomePatologia.toLowerCase().indexOf(parola.toLowerCase()) == -1){
 				document.getElementById("btn_patologia_"+p).classList.add("nasPazRic");
 			}else{

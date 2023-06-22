@@ -618,6 +618,14 @@ body:not(.bodyStyled2) #chiudiElenco{
     background-size: contain;
 	cursor:pointer;
 }
+.labelCartella{
+	padding-left: 12px;
+    padding-top: 11px;
+    color: rgba(255,255,255,0.6);
+    text-align: left;
+    margin: 5px 0;
+    font-style: italic;
+}
 .cartella{
 	padding:0px !important;
 	padding-bottom: 1px !important;

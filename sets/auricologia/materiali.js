@@ -352,9 +352,8 @@ SET.MAT = {
 		bumpScale: 0.006
 	} ),
 	mappe: {},
-	mappaAree: function( ini ){
+	mappaAree: function( ini=false ){
 		// carico tutte le mappe
-		if(typeof(ini)=='undefined')var ini = false;
 		nImg = 0;
 		var els = GEOMETRIE.mappe;
 		for(e=0;e<els.length;e++){

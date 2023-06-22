@@ -21,9 +21,8 @@ var CONSOLE = {
 		this.creata=true;
 		//this.apriConsole();
 	},
-	_log: function(msg,fromCMD){
+	_log: function( msg, fromCMD=false ){
 		if(this.creata){
-			if(typeof(fromCMD)=='undefined')var fromCMD=false;
 			var logHTML='';
 			logHTML+='<b';
 			if(!fromCMD)logHTML+=' style="opacity:0;"';

@@ -37,7 +37,7 @@ var MODELLO = {
 			
 			var loader = new THREE.ObjectLoader(); // VISCERI
 			this.meshVisceri = loader.parse( obj_visceri );
-			for(var n=0;n<this.meshVisceri.children.length;n++){
+			for(let n=0;n<this.meshVisceri.children.length;n++){
 				var mat = MODELLO.MAT.materialVisceri;
 				if(eval("MODELLO.MAT.material"+this.meshVisceri.children[n].name)){
 					mat = eval("MODELLO.MAT.material"+this.meshVisceri.children[n].name);
@@ -51,7 +51,7 @@ var MODELLO = {
 			/* elenco organi */
 			var arrayVisceri = [];
 			if(this.meshVisceri.children.length > 0){
-				for(o in MODELLO.meshVisceri.children){
+				for(let o in MODELLO.meshVisceri.children){
 					arrayVisceri.push({
 						organo: MODELLO.meshVisceri.children[o].name,
 						nome: TXT("Organo_"+MODELLO.meshVisceri.children[o].name)
@@ -61,7 +61,7 @@ var MODELLO = {
 					return a.nome.localeCompare(b.nome);
 				})
 				var htmlVisceri = '';
-				for(o in arrayVisceri){
+				for(let o in arrayVisceri){
 					htmlVisceri += '<p id="Organo_'+arrayVisceri[o].organo+'" onMouseOver="MODELLO.isolaOrgano(this,\'over\');" onMouseOut="MODELLO.isolaOrgano(this,\'out\');" onClick="MODELLO.isolaOrgano(this)">'+stripslashes(arrayVisceri[o].nome)+'</p>';
 				}
 				document.getElementById("p_visceri").classList.add("livelli_listed");
@@ -77,7 +77,7 @@ var MODELLO = {
 			obj_ossa = JSON.parse(LZString.decompressFromBase64(obj_ossa));
 			var loader = new THREE.ObjectLoader(); // OSSA
 			this.meshOssa = loader.parse( obj_ossa );
-			for(var n=0;n<this.meshOssa.children.length;n++){
+			for(let n=0;n<this.meshOssa.children.length;n++){
 				this.meshOssa.children[n].material = this.MAT.materialOssa;
 			}
 			this.meshOssa.name = 'Ossa';
@@ -87,7 +87,7 @@ var MODELLO = {
 			/* elenco ossa */
 			var arrayOssa = [];
 			if(this.meshOssa.children.length > 0){
-				for(o in MODELLO.meshOssa.children){
+				for(let o in MODELLO.meshOssa.children){
 					
 					arrayOssa.push({
 						osso: MODELLO.meshOssa.children[o].name,
@@ -98,7 +98,7 @@ var MODELLO = {
 					return a.nome.localeCompare(b.nome);
 				})
 				var htmlOssa = '';
-				for(o in arrayOssa){
+				for(let o in arrayOssa){
 					htmlOssa += '<p id="Osso_'+arrayOssa[o].osso+'" onMouseOver="MODELLO.isolaOsso(this,\'over\');" onMouseOut="MODELLO.isolaOsso(this,\'out\');" onClick="MODELLO.isolaOsso(this);">'+stripslashes(arrayOssa[o].nome)+'</p>';
 				}
 				document.getElementById("p_ossa").classList.add("livelli_listed");
@@ -117,7 +117,7 @@ var MODELLO = {
 			var loader = new THREE.ObjectLoader(); // PELLE
 			this.meshPelle = loader.parse( obj_pelle );
 			this.meshPelle.name = "PELLE";
-			for(var n=0;n<this.meshPelle.children.length;n++){
+			for(let n=0;n<this.meshPelle.children.length;n++){
 				this.meshPelle.children[n].material = this.MAT["materialPelle"+MODELLO.tipoPelle];
 				this.imgsAtt[n] = null;
 			}
@@ -141,7 +141,7 @@ var MODELLO = {
 			var arrayMuscoli_ARTO_SUPERIORE = [];
 			var arrayMuscoli_ARTO_INFERIORE = [];
 			if(MODELLO.MAT.masks != null){
-				for(o in MODELLO.MAT.masks){
+				for(let o in MODELLO.MAT.masks){
 					eval("arrayMuscoli_"+MODELLO.MAT.masks[o].zona).push({
 						muscolo: o,
 						nome: TXT("Muscolo_"+o)
@@ -172,42 +172,42 @@ var MODELLO = {
 					
 				if(arrayMuscoli_TESTA.length){
 					htmlMuscoli += '<i>'+stripslashes(TXT("Zona_TESTA"))+'</i><div onMouseLeave="MODELLO.isolaMuscolo(this,\'out\');">';
-					for(o in arrayMuscoli_TESTA){
+					for(let o in arrayMuscoli_TESTA){
 						htmlMuscoli += '<p id="Muscolo_'+arrayMuscoli_TESTA[o].muscolo+'" onClick="MODELLO.isolaMuscolo(this)" onMouseOver="MODELLO.isolaMuscolo(this,\'over\');">'+stripslashes(arrayMuscoli_TESTA[o].nome)+'</p>';
 					}
 					htmlMuscoli += '</div>';
 				}
 				if(arrayMuscoli_ORECCHIO.length){
 					htmlMuscoli += '<i>'+stripslashes(TXT("Zona_ORECCHIO"))+'</i><div onMouseLeave="MODELLO.isolaMuscolo(this,\'out\');">';
-					for(o in arrayMuscoli_ORECCHIO){
+					for(let o in arrayMuscoli_ORECCHIO){
 						htmlMuscoli += '<p id="Muscolo_'+arrayMuscoli_ORECCHIO[o].muscolo+'" onClick="MODELLO.isolaMuscolo(this)" onMouseOver="MODELLO.isolaMuscolo(this,\'over\');">'+stripslashes(arrayMuscoli_ORECCHIO[o].nome)+'</p>';
 					}
 					htmlMuscoli += '</div>';
 				}
 				if(arrayMuscoli_COLLO.length){
 					htmlMuscoli += '<i>'+stripslashes(TXT("Zona_COLLO"))+'</i><div onMouseLeave="MODELLO.isolaMuscolo(this,\'out\');">';
-					for(o in arrayMuscoli_COLLO){
+					for(let o in arrayMuscoli_COLLO){
 						htmlMuscoli += '<p id="Muscolo_'+arrayMuscoli_COLLO[o].muscolo+'" onClick="MODELLO.isolaMuscolo(this)" onMouseOver="MODELLO.isolaMuscolo(this,\'over\');">'+stripslashes(arrayMuscoli_COLLO[o].nome)+'</p>';
 					}
 					htmlMuscoli += '</div>';
 				}
 				if(arrayMuscoli_TORSO.length){
 					htmlMuscoli += '<i>'+stripslashes(TXT("Zona_TORSO"))+'</i><div onMouseLeave="MODELLO.isolaMuscolo(this,\'out\');">';
-					for(o in arrayMuscoli_TORSO){
+					for(let o in arrayMuscoli_TORSO){
 						htmlMuscoli += '<p id="Muscolo_'+arrayMuscoli_TORSO[o].muscolo+'" onClick="MODELLO.isolaMuscolo(this)" onMouseOver="MODELLO.isolaMuscolo(this,\'over\');">'+stripslashes(arrayMuscoli_TORSO[o].nome)+'</p>';
 					}
 					htmlMuscoli += '</div>';
 				}
 				if(arrayMuscoli_ARTO_SUPERIORE.length){
 					htmlMuscoli += '<i>'+stripslashes(TXT("Zona_ARTO_SUPERIORE"))+'</i><div onMouseLeave="MODELLO.isolaMuscolo(this,\'out\');">';
-					for(o in arrayMuscoli_ARTO_SUPERIORE){
+					for(let o in arrayMuscoli_ARTO_SUPERIORE){
 						htmlMuscoli += '<p id="Muscolo_'+arrayMuscoli_ARTO_SUPERIORE[o].muscolo+'" onClick="MODELLO.isolaMuscolo(this)" onMouseOver="MODELLO.isolaMuscolo(this,\'over\');">'+stripslashes(arrayMuscoli_ARTO_SUPERIORE[o].nome)+'</p>';
 					}
 					htmlMuscoli += '</div>';
 				}
 				if(arrayMuscoli_ARTO_INFERIORE.length){
 					htmlMuscoli += '<i>'+stripslashes(TXT("Zona_ARTO_INFERIORE"))+'</i><div onMouseLeave="MODELLO.isolaMuscolo(this,\'out\');">';
-					for(o in arrayMuscoli_ARTO_INFERIORE){
+					for(let o in arrayMuscoli_ARTO_INFERIORE){
 						htmlMuscoli += '<p id="Muscolo_'+arrayMuscoli_ARTO_INFERIORE[o].muscolo+'" onClick="MODELLO.isolaMuscolo(this)" onMouseOver="MODELLO.isolaMuscolo(this,\'over\');">'+stripslashes(arrayMuscoli_ARTO_INFERIORE[o].nome)+'</p>';
 					}
 					htmlMuscoli += '</div>';
@@ -230,7 +230,7 @@ var MODELLO = {
 			var loader = new THREE.ObjectLoader();
 			this.meshGuide =  loader.parse( obj_guide );
 			this.meshGuide.name = 'GUIDE';
-			for(var n=0;n<this.meshGuide.children.length;n++){
+			for(let n=0;n<this.meshGuide.children.length;n++){
 				this.meshGuide.children[n].material = MODELLO.MAT.lineGuideSel;
 				this.meshGuide.children[n].visible = false;
 				if(this.meshGuide.children[n].name.indexOf("Muscolo_") > -1){
@@ -271,7 +271,7 @@ var MODELLO = {
 		Muscle_Head='';
 		Muscle_Limbs='';
 		Muscle_Torso='';
-		for(n=0;n<globals.modello.imports.length;n++){
+		for(let n=0;n<globals.modello.imports.length;n++){
 			document.getElementById("scripts").removeChild(IMPORTER.jss[n]);
 		}
 		
@@ -398,7 +398,7 @@ var MODELLO = {
 			var objOver='';
 			var ints = [];
 			if(ANATOMIA){
-				for(i in ANATOMIA.children){
+				for(let i in ANATOMIA.children){
 					var pass= 0;
 					if(MENU.getOp("Ossa") > 0 && ANATOMIA.children[i].name.toLowerCase()=='ossa')pass++;
 					if(MENU.getOp("Visceri") > 0 && ANATOMIA.children[i].name.toLowerCase()=='visceri')pass++;
@@ -413,7 +413,7 @@ var MODELLO = {
 							for(l in intersects)ints.push(intersects[l]);
 						}
 						if(ANATOMIA.children[i].type=='Group'){
-							for(g in ANATOMIA.children[i].children){
+							for(let g in ANATOMIA.children[i].children){
 								var intersects = raycaster.intersectObject( ANATOMIA.children[i].children[g] );
 								if ( intersects.length > 0 ){
 									for(l in intersects){
@@ -508,7 +508,7 @@ var MODELLO = {
 		try{SET._rifletti();}catch(err){}
 	},
 	precarMuscle: function(){
-		for(m=0;m<MODELLO.MAT.materialMuscoli.length;m++){
+		for(let m=0;m<MODELLO.MAT.materialMuscoli.length;m++){
 			var gProvv = new THREE.SphereGeometry( 0.01, 0, 0 );
 			var g = new THREE.Mesh( gProvv, MODELLO.MAT.materialMuscoli[m]); 
 			g.material.opacity = 0;
@@ -519,18 +519,17 @@ var MODELLO = {
 		}
 	},
 	removePrecarMuscle: function(){
-		for(m=0;m<MODELLO.MAT.materialMuscoli.length;m++){
+		for(let m=0;m<MODELLO.MAT.materialMuscoli.length;m++){
 			manichino.remove( manichino.getObjectByName('preM'+m) );
 		}
 	},
-	swMuscle: function(forza){ // cambia la visione pelle/muscoli
-		if(typeof(forza) == 'undefined')var forza = false;
+	swMuscle: function( forza=false ){ // cambia la visione pelle/muscoli
 		if((forza == '1' && muscleView) || (forza == '2' && !muscleView))return;
 		MODELLO.removePrecarMuscle();
 		muscleView=!muscleView;
 		localStorage.muscleView = (muscleView) ? '1' : '';
 		if(MODELLO.meshPelle.children[0].material.name.indexOf('pelle') > -1 || forza == true){
-			for(n=0;n<MODELLO.meshPelle.children.length;n++){
+			for(let n=0;n<MODELLO.meshPelle.children.length;n++){
 				MODELLO.meshPelle.children[n].material = MODELLO.MAT.materialMuscoli[n];
 			}
 			document.getElementById("i_muscoli").classList.add("btnSel");
@@ -543,7 +542,7 @@ var MODELLO = {
 			MODELLO.op("Muscoli",MENU.getOp('Muscoli'));
 			if(!SET)this.meshMuscoli.visible = true;
 		}else{
-			for(n=0;n<MODELLO.meshPelle.children.length;n++){
+			for(let n=0;n<MODELLO.meshPelle.children.length;n++){
 				MODELLO.meshPelle.children[n].material = MODELLO.MAT["materialPelle"+MODELLO.tipoPelle];
 			}
 			document.getElementById("i_muscoli").classList.remove("btnSel");
@@ -580,7 +579,7 @@ var MODELLO = {
 			var v='true';
 			if(o==0)v='false';
 			eval("MODELLO.mesh"+t+".visible="+v);
-			for(var n=0;n<eval("MODELLO.mesh"+t+".children.length");n++){
+			for(let n=0;n<eval("MODELLO.mesh"+t+".children.length");n++){
 				if( eval("MODELLO.mesh"+t+".children["+n+"].material.name")!='materiale visceri evi' &&
 					eval("MODELLO.mesh"+t+".children["+n+"].material.name")!='organoSel' &&
 					eval("MODELLO.mesh"+t+".children["+n+"].material.name")!='organoDis' )eval("MODELLO.mesh"+t+".children[n].material.opacity = o");
@@ -697,14 +696,14 @@ var MODELLO = {
 		
 		if(ANATOMIA){
 			if(MODELLO.meshVisceri){
-				for(o in MODELLO.meshVisceri.children){
+				for(let o in MODELLO.meshVisceri.children){
 					if(MODELLO.meshVisceri.children[o].name != 'CUORE'){
 						MODELLO.meshVisceri.children[o].visible = vis;
 					}
 				}
 			}
 			if(ANATOMIA.children[4]){
-				for(m in ANATOMIA.children[4].children){
+				for(let m in ANATOMIA.children[4].children){
 					if(ANATOMIA.children[4].children[m].name){
 						if(ANATOMIA.children[4].children[m].name.indexOf("PETTORALE")==-1){
 							ANATOMIA.children[4].children[m].visible = vis;
@@ -717,7 +716,7 @@ var MODELLO = {
 			}
 		}
 		var VI = document.getElementById("el_visceri").getElementsByTagName("p");
-		for(i in VI){
+		for(let i in VI){
 			if(VI[i].id){
 				if(!vis && VI[i].id!='Organo_CUORE'){
 					VI[i].classList.add("lockedItem");
@@ -727,7 +726,7 @@ var MODELLO = {
 			}
 		}
 		var MU = document.getElementById("el_muscoli").getElementsByTagName("p");
-		for(m in MU){
+		for(let m in MU){
 			if(MU[m].id){
 				if(!vis && MU[m].id!='Muscolo_PETTORALE'){
 					MU[m].classList.add("lockedItem");
@@ -764,10 +763,9 @@ var MODELLO = {
 			els[e].style.top = parseInt(y) + 'px';
 		}
 	},
-	swGuide: function( n, vis, noCentra ){
-		if(typeof(noCentra) == 'undefined')var noCentra = false;
+	swGuide: function( n, vis, noCentra=false ){
 		if(MODELLO.meshGuide){
-			for(g in MODELLO.meshGuide.children){
+			for(let g in MODELLO.meshGuide.children){
 				if(MODELLO.meshGuide.children[g].name.indexOf(n) == 0){
 					MODELLO.meshGuide.children[g].visible = vis;
 					var array = MODELLO.meshGuide.children[g].geometry.attributes.position.array;
@@ -894,7 +892,8 @@ var MODELLO = {
 								false, 
 								espansa,
 								'',
-								btnAdd );
+								btnAdd,
+								'anatomy_'+n );
 		MODELLO.schSel = n;
 	},
 	centraAnatomia: function(name){
@@ -960,7 +959,7 @@ var MODELLO = {
 		MODELLO.op('Pelle', opPelle);
 	},
 	eviPin: function( n, vis ){
-		for(g in MODELLO.meshGuide.children){
+		for(let g in MODELLO.meshGuide.children){
 			if(MODELLO.meshGuide.children[g].name.indexOf(n) == 0){
 				MODELLO.meshGuide.children[g].visible = vis;
 				var array = MODELLO.meshGuide.children[g].geometry.attributes.position.array;
@@ -985,9 +984,7 @@ var MODELLO = {
 		MODELLO.meshGuide.visible = !MODELLO.meshGuide.visible;
 	},
 	
-	isolaOrgano: function( el, modo, noCentra ){
-		if(typeof(modo) == 'undefined')var modo = '';
-		if(typeof(noCentra) == 'undefined')var noCentra = false;
+	isolaOrgano: function( el, modo='', noCentra=false ){
 		if(!modo)MODELLO.annullaIsolamento();
 		var organo = el.id.replace("Organo_","");
 		
@@ -1000,7 +997,7 @@ var MODELLO = {
 		}
 		// --------------------------
 		
-		for(var n=0;n<MODELLO.meshVisceri.children.length;n++){
+		for(let n=0;n<MODELLO.meshVisceri.children.length;n++){
 			if(MODELLO.meshVisceri.children[n].name == organo){
 				if(MODELLO.meshVisceri.children[n].material.name != 'organoSel'){
 					if(modo == 'over'){
@@ -1044,13 +1041,11 @@ var MODELLO = {
 		MENU.verSelected();
 	},
 	
-	isolaOsso: function( el, modo, noCentra ){
-		if(typeof(modo) == 'undefined')var modo = '';
-		if(typeof(noCentra) == 'undefined')var noCentra = false;
+	isolaOsso: function( el, modo='', noCentra=false ){
 		if(!modo)MODELLO.annullaIsolamento();
 		var osso = el.id.replace("Osso_","");
 		
-		for(var n=0;n<MODELLO.meshOssa.children.length;n++){
+		for(let n=0;n<MODELLO.meshOssa.children.length;n++){
 			if(MODELLO.meshOssa.children[n].name == osso){
 				if(MODELLO.meshOssa.children[n].material.name != 'organoSel'){
 					if(modo == 'over'){
@@ -1085,11 +1080,9 @@ var MODELLO = {
 		MENU.verSelected();
 	},
 	
-	isolaMuscolo: function( el, modo, noCentra ){
+	isolaMuscolo: function( el, modo='', noCentra=false ){
 		if(!muscleView || MENU.wheeling || this.muscleBlock)return;
 		MODELLO.muscleAtt = el;
-		if(typeof(modo) == 'undefined')var modo = '';
-		if(typeof(noCentra) == 'undefined')var noCentra = false;
 		if(!modo)MODELLO.annullaIsolamento();
 		if(!modo)visLoader('');
 		if(modo == 'out'){
@@ -1119,7 +1112,7 @@ var MODELLO = {
 			}
 		}
 		MODELLO.MAT.mask = [];
-		for(m=0;m<MODELLO.MAT.materialMuscoli.length;m++){
+		for(let m=0;m<MODELLO.MAT.materialMuscoli.length;m++){
 			var IMG = '';
 			if(muscolo){
 				IMG = decomprA(MODELLO.MAT.masks[muscolo].masks[m]);
@@ -1146,7 +1139,7 @@ var MODELLO = {
 				if(el.id == MODELLO.schSel)SCHEDA.scaricaScheda();
 			}
 			MODELLO.muscleSel = false;
-			for(m in globals.pezziSelezionati){
+			for(let m in globals.pezziSelezionati){
 				if(globals.pezziSelezionati[m].indexOf("Muscolo_") > -1)MODELLO.muscleSel = true;
 			}
 		}
@@ -1155,7 +1148,7 @@ var MODELLO = {
 		//if(!MODELLO.muscleSel)MODELLO.tuttiMuscoli();
 	},
 	tuttiMuscoli: function(){
-		for(m=0;m<MODELLO.MAT.materialMuscoli.length;m++){
+		for(let m=0;m<MODELLO.MAT.materialMuscoli.length;m++){
 			MODELLO.MAT.materialMuscoli[m].alphaMap = null;
 			MODELLO.meshPelle.children[m].material.alphaMap = null;
 			MODELLO.meshPelle.children[m].material.needsUpdate = true;
@@ -1164,7 +1157,7 @@ var MODELLO = {
 		if(MODELLO.muscleSel){
 			var tot = globals.pezziSelezionati.length;
 			var n=-1;
-			for(m=0;m<tot;m++){
+			for(let m=0;m<tot;m++){
 				n++;
 				if(globals.pezziSelezionati[0].indexOf("Muscolo_") > -1){
 					MODELLO.swGuide(globals.pezziSelezionati[n],false);
@@ -1178,8 +1171,7 @@ var MODELLO = {
 		}
 		MENU.verSelected();
 	},
-	mergeImages: function( m, IMG, modo, el, globalCompositeOperation ){
-		if(typeof(globalCompositeOperation) == 'undefined')var globalCompositeOperation = 'lighten';
+	mergeImages: function( m, IMG, modo, el, globalCompositeOperation = 'lighten' ){
 		var selected = el.className.indexOf("p_viscSel")
 		var i2 = MODELLO.imgsAtt[m];
 		if(!i2)MODELLO.setAlphaMap( m, IMG, modo ); // se non c'era ancora alphaMap
@@ -1274,14 +1266,14 @@ var MODELLO = {
 		MODELLO.tipoPelle = tipo;
 		localStorage.tipoPelle = tipo;
 		var els = document.getElementById("skinSel").getElementsByTagName("span");
-		for(i = 0; i<els.length; i++){
+		for(let i = 0; i<els.length; i++){
 			els[i].classList.remove("cSel");
 		}
 		if(localStorage.tipoPelle == '')els[0].classList.add("cSel");
 		if(localStorage.tipoPelle == '_mulatta')els[1].classList.add("cSel");
 		if(localStorage.tipoPelle == '_nera')els[2].classList.add("cSel");
 		if(globals.modello.cartella){
-			for(p in ANATOMIA.children[2].children){
+			for(let p in ANATOMIA.children[2].children){
 				ANATOMIA.children[2].children[p].material = MODELLO.MAT["materialPelle"+MODELLO.tipoPelle];
 			}
 		}

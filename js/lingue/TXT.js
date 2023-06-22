@@ -1,6 +1,7 @@
 DB.TXT = {
     base: {
-        // GENERICHE
+ 
+       // GENERICHE
         nomiGiorni: {
             ita: [
                 "Domenica",
@@ -274,7 +275,7 @@ DB.TXT = {
         NessunRisultato: {
             ita: "Nessun risultato",
             eng: "No result",
-            esp: "Sin resultados",
+            esp: "Ningun resultado",
             fra: "Aucun résultat",
             por: "Sem resultado",
             deu: "Kein Ergebnis"
@@ -383,6 +384,7 @@ DB.TXT = {
             por: "Seletor de anatomia",
             deu: "Anatomieauswahl"
         },
+
         // MENU IMPOSTAZIONI
         Impostazioni: {
             ita: "Impostazioni",
@@ -411,7 +413,7 @@ DB.TXT = {
         contenuti: {
             ita: "contenuti",
             eng: "content",
-            esp: "contenido",
+            esp: "contenidos",
             fra: "contenu",
             por: "conteúdo",
             deu: "inhalte"
@@ -419,7 +421,7 @@ DB.TXT = {
 		noteAi: {
 			ita: "Tradotto con intelligenza artificiale",
             eng: "Translated with artificial intelligence",
-            esp: "Traducido con la inteligencia artificial",
+            esp: "Traducido con inteligencia artificial",
             fra: "Traduit par intelligence artificielle",
             por: "Traduzido com inteligência artificial	",
             deu: "Übersetzt mit künstlicher Intelligenz"
@@ -432,6 +434,7 @@ DB.TXT = {
             por: "Mostrar tutorial de inicialização",
             deu: "Start-Tutorial anzeigen"
         },
+
         //popup NUOVA VERSIONE
         NuoveCaratteristiche: {
             ita: "Nuove caratteristiche",
@@ -441,6 +444,7 @@ DB.TXT = {
             por: "Novas características",
             deu: "Neue Funktionen"
         },
+
         //popup VERSIONE
         Versione: {
             ita: "Info su [§]",
@@ -530,6 +534,7 @@ DB.TXT = {
             por: "Todos os direitos reservados",
             deu: "Alle Rechte vorbehalten"
         },
+
         // popup COLORI
         Colori: {
             ita: "Colori e testi",
@@ -622,9 +627,9 @@ DB.TXT = {
         PointerTypeAlert: {
             ita: "E' stato individuato un dispositivo che ha in contemporanea mouse e schermo touch. Per impostazione di default viene utilizzato il sistema TOUCH. Se vuoi cambiarlo accedi a Impostazioni > Personalizzazione e cambia il tipo di puntatore.",
             eng: "A device has been identified that has both mouse and touch screen at the same time. TOUCH is used by default. If you want to change it, go to Settings > Customization and change the type of pointer.",
-            esp: "Se ha detectado un dispositivo que tiene tanto mouse como pantalla táctil al mismo tiempo. Por defecto se utiliza el sistema TOQUE. Si deseas cambiarlo, ve a Configuración > Personalización y cambia el tipo de puntero.",
-            fra: "Un dispositif a été identifié comme possédant à la fois une souris et un écran tactile en même temps. Par défaut, le système TOUCHE est utilisé. Si vous souhaitez le changer, allez dans Paramètres > Personnalisation et modifiez le type de pointeur.",
-            por: "Foi identificado um dispositivo que possui tanto mouse quanto tela sensível ao toque ao mesmo tempo. O TOQUE é usado por padrão. Se você quiser alterá-lo, vá para Configurações > Personalização e altere o tipo de ponteiro.",
+            esp: "Se ha detectado un dispositivo que contemporaneamente tiene mouse como pantalla táctil al mismo tiempo. Por defecto se utiliza el sistema TOUCH. Si deseas cambiarlo, ve a Configuración > Personalización y cambia el tipo de puntero.",
+            fra: "Un dispositif a été identifié comme possédant à la fois une souris et un écran tactile en même temps. Par défaut, le système TOUCH est utilisé. Si vous souhaitez le changer, allez dans Paramètres > Personnalisation et modifiez le type de pointeur.",
+            por: "Foi identificado um dispositivo que possui tanto mouse quanto tela sensível ao toque ao mesmo tempo. O TOUCH é usado por padrão. Se você quiser alterá-lo, vá para Configurações > Personalização e altere o tipo de ponteiro.",
             deu: "Es wurde ein Gerät identifiziert, das sowohl eine Maus als auch einen Touchscreen gleichzeitig hat. STANDARDMÄSSIG wird TOUCH verwendet. Wenn Sie es ändern möchten, gehen Sie zu Einstellungen > Anpassung und ändern Sie den Typ des Zeigers."
         },
         PatientType: {
@@ -638,7 +643,7 @@ DB.TXT = {
         PatientPwd: {
             ita: "Richiedi password",
             eng: "Require password",
-            esp: "Requerir contraseña",
+            esp: "Requiere contraseña",
             fra: "Exiger un mot de passe",
             por: "Exigir senha",
             deu: "Passwort erforderlich"
@@ -675,6 +680,7 @@ DB.TXT = {
             por: "Você precisa inserir sua senha para acessar seus pacientes",
             deu: "Sie müssen Ihr Passwort eingeben, um auf Ihre Patienten zuzugreifen."
         },
+
         // CARICAMENTO, LOGIN e SINCRONIZZAZIONE
         Caricamento: {
             ita: "Caricamento...",
@@ -743,7 +749,7 @@ DB.TXT = {
         ChiediEliminaAccount: {
             ita: "ATTENZIONE! Hai richiesto di eliminare il tuo account. Questa operazione comporta la perdita totale di tutti i dati e di tutti i tuoi servizi. Vuoi davvero procedere con l'eliminazione del tuo account?",
             eng: "PLEASE NOTE! You have requested to delete your account. This operation results in the total loss of all your data and services. Do you really want to delete your account?",
-            esp: "¡TEN EN CUENTA! Has solicitado eliminar tu cuenta. Esta operación resulta en la pérdida total de todos tus datos y servicios. ¿Realmente deseas eliminar tu cuenta?",
+            esp: "¡ATENCIÓN! Has solicitado eliminar tu cuenta. Esta operación resulta en la pérdida total de todos tus datos y servicios. ¿Realmente deseas eliminar tu cuenta?",
             fra: "NOTE! Vous avez demandé la suppression de votre compte. Cette opération entraîne la perte totale de toutes vos données et services. Voulez-vous vraiment supprimer votre compte ?",
             por: "ATENÇÃO! Você solicitou a exclusão da sua conta. Essa operação resulta na perda total de todos os seus dados e serviços. Você realmente deseja excluir sua conta?",
             deu: "BITTE BEACHTEN SIE! Sie haben beantragt, Ihr Konto zu löschen. Dieser Vorgang führt zum vollständigen Verlust aller Ihrer Daten und Dienste. Möchten Sie Ihr Konto wirklich löschen?"
@@ -767,7 +773,7 @@ DB.TXT = {
         NonLoggato: {
             ita: "ATTENZIONE! Stai utilizzando la versione demo dell'app. Clicca per effettuare il login.",
             eng: "PLEASE NOTE! You are using the demo version of the app. Click to login.",
-            esp: "¡TEN EN CUENTA! Estás usando la versión de demostración de la aplicación. Haz clic para iniciar sesión.",
+            esp: "¡ATENCIÓN! Estás usando la versión de demostración de la aplicación. Haz clic para iniciar sesión.",
             fra: "NOTE! Vous utilisez la version de démonstration de l'application. Cliquez pour vous connecter.",
             por: "ATENÇÃO! Você está usando a versão de demonstração do aplicativo. Clique para fazer login.",
             deu: "BITTE BEACHTEN SIE! Sie verwenden die Demo-Version der App. Klicken Sie hier, um sich anzumelden."
@@ -847,7 +853,7 @@ DB.TXT = {
         ErroreCaricamento: {
             ita: "ATTENZIONE! Si e' verificato un errore nel caricamento sul server. Le modifiche che hai effettuato potrebbero non essere sincronizzate con gli altri dispositivi.",
             eng: "PLEASE NOTE! An error occurred while uploading to the server. The changes you made may not sync with your other devices.",
-            esp: "¡TEN EN CUENTA! Se produjo un error al cargar en el servidor. Es posible que los cambios que hayas realizado no se sincronicen con tus otros dispositivos.",
+            esp: "¡ATENCIÓN! Se produjo un error al cargar en el servidor. Es posible que los cambios que hayas realizado no se sincronicen con tus otros dispositivos.",
             fra: "NOTE ! Une erreur s'est produite lors du chargement sur le serveur. Les modifications que vous avez apportées peuvent ne pas être synchronisées avec vos autres appareils.",
             por: "ATENÇÃO! Ocorreu um erro ao fazer o upload para o servidor. As alterações que você fez podem não ser sincronizadas com seus outros dispositivos.",
             deu: "BITTE BEACHTEN SIE! Beim Hochladen auf den Server ist ein Fehler aufgetreten. Die von Ihnen vorgenommenen Änderungen werden möglicherweise nicht mit Ihren anderen Geräten synchronisiert."
@@ -900,6 +906,7 @@ DB.TXT = {
             por: "Você pode conectar no máximo 2 dispositivos de cada vez. Se deseja conectar-se com este dispositivo, é necessário desconectar um dos dispositivos conectados. Escolha qual da lista abaixo.",
             deu: "Sie können maximal 2 Geräte gleichzeitig verbinden. Wenn Sie sich mit diesem Gerät verbinden möchten, müssen Sie eines der verbundenen Geräte trennen. Wählen Sie eins aus der unten stehenden Liste aus."
         },
+
         // SCHEDA
         ChiudiScheda: {
             ita: "Chiudi la scheda",
@@ -941,6 +948,7 @@ DB.TXT = {
             por: "O item que você deseja abrir já está aberto em outro dispositivo. Feche-o e tente novamente.",
             deu: "Der Artikel, den Sie öffnen möchten, ist bereits auf einem anderen Gerät geöffnet. Schließen Sie ihn und versuchen Sie es erneut."
         },
+
         // RICERCHE
         GuidaRicerca: {
             ita: "Inserisci i termini da ricercare e premi il tasto INVIO (minimo 3 lettere)",
@@ -1006,11 +1014,12 @@ DB.TXT = {
             por: "Excluir item",
             deu: "Element löschen"
         },
+
         // MENU SET
         ImpostazioniSet: {
             ita: "Impostazioni del set",
             eng: "Set settings",
-            esp: "Configuración del conjunto",
+            esp: "Configuración del set",
             fra: "Paramètres du set",
             por: "Configurações do conjunto",
             deu: "Set-Einstellungen"
@@ -1073,6 +1082,7 @@ DB.TXT = {
             por: "Nenhuma notificação",
             deu: "Keine Benachrichtigungen"
         },
+
         // DOWNLOAD e STAMPA
         Download: {
             ita: "Backup dei dati",
@@ -1282,6 +1292,14 @@ DB.TXT = {
             por: "Tsubo",
             deu: "Tsubo"
         },
+        Punti: {
+            ita: "Punti",
+            eng: "Points",
+			esp: "Puntos",
+			fra: "Points",
+			por: "Pontos",
+			deu: "Punkte"
+        },
         Mezzo: {
             ita: "- mezzo -",
             eng: "- mean -",
@@ -1341,9 +1359,9 @@ DB.TXT = {
         MezzoPauper: {
             ita: "Pauper",
             eng: "Pauper",
-            esp: "Pobre",
+            esp: "Pauper",
             fra: "Pauper",
-            por: "Pobre",
+            por: "Pauper",
             deu: "Pauper"
         },
         MezzoSemeVaccaria: {
@@ -1389,7 +1407,7 @@ DB.TXT = {
         MezzoSalasso: {
             ita: "Microsalasso",
             eng: "Bloodletting",
-            esp: "Sangría",
+            esp: "Sangrado",
             fra: "Saignée",
             por: "Sangria",
             deu: "Blutentnahme"
@@ -1410,26 +1428,34 @@ DB.TXT = {
             por: "Média padrão",
             deu: "Standardmittel"
         },
-        SpiegazionePuntoTratt: {
+        SpiegazioneTsuboTratt: {
             ita: "Annotazioni sullo tsubo ...",
-            eng: "Annotations on the tsubo ...",
-            esp: "Comentarios sobre el tsubo ...",
-            fra: "Annotations sur le tsubo...",
-            por: "Anotações sobre o tsubo...",
-            deu: "Anmerkungen zum Tsubo..."
+			eng: "Annotations on the tsubo...",
+			esp: "Anotaciones sobre el tsubo...",
+			fra: "Annotations sur le tsubo...",
+			por: "Anotações sobre o tsubo...",
+			deu: "Anmerkungen zum tsubo..."
+        },
+        SpiegazionePuntoTratt: {
+            ita: "Annotazioni sul punto ...",
+			eng: "Annotations on the point...",
+			esp: "Anotaciones sobre el punto...",
+			fra: "Annotations sur le point...",
+			por: "Anotações sobre o ponto...",
+			deu: "Anmerkungen zum Punkt..."
         },
         SpiegazioneMeridianoTratt: {
             ita: "Annotazioni sul meridiano ...",
             eng: "Annotations on the meridian ...",
-            esp: "Comentarios sobre el meridiano ...",
+            esp: "Anotaciones sobre el meridiano ...",
             fra: "Annotations sur le méridien...",
             por: "Anotações sobre o meridiano...",
             deu: "Anmerkungen zum Meridian..."
         },
         SpiegazioneAuriculoTratt: {
-            ita: "Annotazioni sullo punto ...",
+            ita: "Annotazioni sul punto ...",
             eng: "Annotations on the point ...",
-            esp: "Comentarios sobre el punto ...",
+            esp: "Anotaciones sobre el punto ...",
             fra: "Annotations sur le point...",
             por: "Anotações sobre o ponto...",
             deu: "Anmerkungen zum Punkt..."
@@ -1437,7 +1463,7 @@ DB.TXT = {
         AlertMezzoSalasso: {
             ita: "Attenzione!! Non utilizzare il salasso in pazienti sotto terapia anticoagulante. Potrebbe comportare rischio di sanguinamento incontrollato.",
             eng: "Warning! Do not use bloodletting in patients on anticoagulant therapy. This may lead to the risk of uncontrolled bleeding.",
-            esp: "¡Advertencia! No utilice la sangría en pacientes bajo terapia anticoagulante. Esto podría llevar al riesgo de sangrado incontrolado.",
+            esp: "¡Advertencia! No utilice el sangrado en pacientes bajo terapia anticoagulante. Esto podría llevar al riesgo de sangrado incontrolado.",
             fra: "Attention ! N'utilisez pas la saignée chez les patients sous traitement anticoagulant. Cela peut entraîner un risque de saignement incontrôlé.",
             por: "Atenção! Não utilize sangria em pacientes em terapia anticoagulante. Isso pode levar ao risco de sangramento incontrolável.",
             deu: "Achtung! Verwenden Sie keine Aderlass bei Patienten unter antikoagulanter Therapie. Dies kann zu unkontrollierter Blutung führen."
@@ -1451,12 +1477,12 @@ DB.TXT = {
             deu: "Achtung! Verwenden Sie keine Elektroakupunktur oder elektrische Detektion bei Patienten mit einem Herzschrittmacher. Dies könnte zu Fehlfunktionen und zum Tod des Patienten führen."
         },
         ANNOTAZIONI: {
-            ita: "ANNOTAZIONI SUGLI TSUBO",
-            eng: "COMMENTS ON TSUBOS",
-            esp: "COMENTARIOS SOBRE TSUBOS",
-            fra: "COMMENTAIRES SUR LES TSUBOS",
-            por: "COMENTÁRIOS SOBRE TSUBOS",
-            deu: "KOMMENTARE ZU TSUBOS"
+            ita: "ANNOTAZIONI SUI PUNTI",
+			eng: "POINT ANNOTATIONS",
+			esp: "ANOTACIONES SOBRE LOS PUNTOS",
+			fra: "ANNOTATIONS SUR LES POINTS",
+			por: "ANOTAÇÕES NOS PONTOS",
+			deu: "PUNKTANMERKUNGEN"
         },
         PROCEDURE: {
             ita: "PROCEDURE PERSONALIZZATE",
@@ -1485,7 +1511,7 @@ DB.TXT = {
         m: {
             ita: "maschio",
             eng: "male",
-            esp: "macho",
+            esp: "masculino",
             fra: "homme",
             por: "masculino",
             deu: "männlich"
@@ -1493,7 +1519,7 @@ DB.TXT = {
         f: {
             ita: "femmina",
             eng: "female",
-            esp: "hembra",
+            esp: "femenino",
             fra: "femme",
             por: "feminino",
             deu: "weiblich"
@@ -1506,6 +1532,7 @@ DB.TXT = {
             por: "Tratamento sem nome",
             deu: "Behandlung ohne Namen"
         },
+
         // per il file "verifica_form.js"
         ATTENZIONE: {
             ita: "ATTENZIONE",
@@ -1558,16 +1585,15 @@ DB.TXT = {
         inserireValore: {
             ita: "Devi inserire un valore per il campo [1]",
             eng: "You must indicate the [1]",
-            esp: "Debes indicar el/la [1]",
+            esp: "Debes indicar el campo [1]",
             fra: "Vous devez indiquer [1]",
-
             por: "Você deve indicar o(a) [1]",
             deu: "Sie müssen [1] angeben"
         },
         selezionareValore: {
             ita: "Devi selezionare un valore per il campo [1]",
             eng: "You must indicate the [1]",
-            esp: "Debes indicar el/la [1]",
+            esp: "Debes seleccionar el campo [1]",
             fra: "Vous devez indiquer [1]",
             por: "Você deve indicar o(a) [1]",
             deu: "Sie müssen [1] angeben"
@@ -1580,6 +1606,7 @@ DB.TXT = {
             por: "Você deve selecionar a caixa de seleção [1]",
             deu: "Sie müssen das Kontrollkästchen [1] auswählen"
         },
+
         // CONNESSIONE
         ConnessioneAssente: {
             ita: "Connessione assente! Per questa funzione è necessaria la connessione a internet.",
@@ -1605,6 +1632,7 @@ DB.TXT = {
             por: "Última conexão",
             deu: "Letzte Verbindung"
         },
+
         // FEEDBACK
         Feedback: {
             ita: "Assistenza",
@@ -1670,6 +1698,7 @@ DB.TXT = {
             por: "Texto da mensagem",
             deu: "Nachrichtentext"
         },
+
         // BACKUP
         BackupInviato: {
             ita: "Il backup è stato inviato alla tua casella di posta elettronica.",
@@ -1695,6 +1724,7 @@ DB.TXT = {
             por: "Desculpe, ocorreu um erro com o seu login. Verifique se seus dados estão corretos.",
             deu: "Es tut uns leid, es gab einen Fehler bei Ihrer Anmeldung. Bitte überprüfen Sie, ob Ihre Daten korrekt sind."
         },
+
         // SERVIZI
         NoResServizio: {
             ita: "Nessun pacchetto",
@@ -1864,11 +1894,12 @@ DB.TXT = {
             por: "Buscar um pacote ...",
             deu: "Nach einem Paket suchen ..."
         },
+
         // FORNITORI
         NoResFornitore: {
             ita: "Nessun fornitore",
             eng: "No supplier",
-            esp: "Sin proveedor",
+            esp: "Ningun proveedor",
             fra: "Aucun fournisseur",
             por: "Sem fornecedor",
             deu: "Kein Lieferant"
@@ -1913,6 +1944,7 @@ DB.TXT = {
             por: "Buscar um fornecedor...",
             deu: "Lieferanten suchen..."
         },
+
         // PAZIENTI
         // menu
         Pazienti: {
@@ -1926,7 +1958,7 @@ DB.TXT = {
         NoResPaziente: {
             ita: "Nessun paziente",
             eng: "No patient",
-            esp: "Sin paciente",
+            esp: "Ningun paciente",
             fra: "Aucun patient",
             por: "Sem paciente",
             deu: "Kein Patient"
@@ -2094,7 +2126,7 @@ DB.TXT = {
         Email: {
             ita: "Email",
             eng: "Email",
-            esp: "Correo electrónico",
+            esp: "Email",
             fra: "Email",
             por: "Email",
             deu: "E-Mail"
@@ -2110,7 +2142,7 @@ DB.TXT = {
         Maschio: {
             ita: "Maschio",
             eng: "Male",
-            esp: "Hombre",
+            esp: "Masculino",
             fra: "Homme",
             por: "Masculino",
             deu: "Männlich"
@@ -2118,7 +2150,7 @@ DB.TXT = {
         Femmina: {
             ita: "Femmina",
             eng: "Female",
-            esp: "Mujer",
+            esp: "Femenino",
             fra: "Femme",
             por: "Feminino",
             deu: "Weiblich"
@@ -2547,12 +2579,13 @@ DB.TXT = {
             por: "Pesquisar um paciente...",
             deu: "Suche einen Patienten..."
         },
+
         // TRATTAMENTI
         // elenco
         Anamnesi: {
             ita: "Anamnesi",
             eng: "Anamnesis",
-            esp: "Anamnesis",
+            esp: "Antecedente",
             fra: "Anamnèse",
             por: "Anamnese",
             deu: "Anamnese"
@@ -2560,7 +2593,7 @@ DB.TXT = {
         Anamnesi_e_Diagnosi: {
             ita: "Anamnesi e diagnosi",
             eng: "Anamnesis and diagnosis",
-            esp: "Anamnesis y diagnóstico",
+            esp: "Antecedente y diagnóstico",
             fra: "Anamnèse et diagnostic",
             por: "Anamnese e diagnóstico",
             deu: "Anamnese und Diagnose"
@@ -2584,7 +2617,7 @@ DB.TXT = {
         NoResTrattamento: {
             ita: "Nessun trattamento",
             eng: "No treatment",
-            esp: "Sin tratamiento",
+            esp: "Ningun tratamiento",
             fra: "Aucun traitement",
             por: "Sem tratamento",
             deu: "Keine Behandlung"
@@ -2605,6 +2638,7 @@ DB.TXT = {
             por: "Você realmente deseja mover o tratamento para [cartella]?",
             deu: "Möchten Sie die Behandlung wirklich in [cartella] verschieben?"
         },
+
         // scheda
         ChiediEliminaTrattamento: {
             ita: "Vuoi davvero eliminare il trattamento?",
@@ -2681,7 +2715,7 @@ DB.TXT = {
         AnamnesiMotivo: {
             ita: "Anamnesi...",
             eng: "Anamnesis...",
-            esp: "Anamnesis...",
+            esp: "Antecedente...",
             fra: "Anamnèse...",
             por: "Anamnese...",
             deu: "Anamnese..."
@@ -2710,6 +2744,7 @@ DB.TXT = {
             por: "Prescrição",
             deu: "Verschreibung"
         },
+
         // tsubo e valutazione
         MeridianiTrattamento: {
             ita: "Meridiani",
@@ -2718,6 +2753,14 @@ DB.TXT = {
             fra: "Méridiens",
             por: "Meridianos",
             deu: "Meridiane"
+        },
+        PuntiNamikoshi: {
+            ita: "Punti Namikoshi",
+            eng: "Namikoshi Points",
+            esp: "Puntos Namikoshi",
+            fra: "Points Namikoshi",
+            por: "Pontos Namikoshi",
+            deu: "Namikoshi-Punkte"
         },
         MeridianiAnamnesi: {
             ita: "Valutazione sui meridiani",
@@ -2736,20 +2779,20 @@ DB.TXT = {
             deu: "Aurikuläre Punkte"
         },
         PuntiTrattamento: {
-            ita: "Tsubo trattati",
-            eng: "Treated tsubo",
-            esp: "Tsubo tratado",
-            fra: "Tsubo traité",
-            por: "Tsubo tratado",
-            deu: "Behandelte Tsubo"
+            ita: "Punti trattati",
+			eng: "Treated points",
+			esp: "Puntos tratados",
+			fra: "Points traités",
+			por: "Pontos tratados",
+			deu: "Behandelte Punkte"
         },
         PuntiDaTrattare: {
-            ita: "Tsubo da trattare",
-            eng: "Tsubo to be treated",
-            esp: "Tsubo por tratar",
-            fra: "Tsubo à traiter",
-            por: "Tsubo a ser tratado",
-            deu: "Zu behandelnder Tsubo"
+            ita: "Punti da trattare",
+			eng: "Points to be treated",
+			esp: "Puntos por tratar",
+			fra: "Points à traiter",
+			por: "Pontos a serem tratados",
+			deu: "Zu behandelnde Punkte"
         },
         AggiungiGruppo: {
             ita: "Importa gruppo",
@@ -2768,12 +2811,12 @@ DB.TXT = {
             deu: "Punkt hinzufügen"
         },
         AggiungiMeridiani: {
-            ita: "Importa meridiani",
-            eng: "Import meridiani",
-            esp: "Importar meridianos",
-            fra: "Importer des méridiens",
-            por: "Importar meridianos",
-            deu: "Meridiane importieren"
+            ita: "Aggiungi meridiani",
+            eng: "Add meridians",
+            esp: "Agregar meridianos",
+            fra: "Ajouter des méridiens",
+            por: "Adicionar meridianos",
+            deu: "Meridiane hinzufügen"
         },
         ImportaPunto: {
             ita: "Punto",
@@ -2784,12 +2827,12 @@ DB.TXT = {
             deu: "Punkt"
         },
         ImportaPunti: {
-            ita: "Importa tsubo da...",
-            eng: "Import tsubo from...",
-            esp: "Importar tsubo desde...",
-            fra: "Importer un tsubo depuis...",
-            por: "Importar tsubo de...",
-            deu: "Tsubo importieren aus..."
+            ita: "Importa punto da...",
+			eng: "Import point from...",
+			esp: "Importar punto desde...",
+			fra: "Importer le point depuis...",
+			por: "Importar ponto de...",
+			deu: "Punkt importieren von..."
         },
         ImportaMeridiani: {
             ita: "Importa meridiani da...",
@@ -2809,11 +2852,11 @@ DB.TXT = {
         },
         PuntiAnamnesi: {
             ita: "Valutazione sugli tsubo",
-            eng: "Evaluation on tsubo",
-            esp: "Evaluación de tsubo",
-            fra: "Évaluation des tsubo",
-            por: "Avaliação nos tsubo",
-            deu: "Bewertung des Tsubo"
+			eng: "Evaluation on the tsubo",
+			esp: "Evaluación de los tsubo",
+			fra: "Évaluation des tsubo",
+			por: "Avaliação nos tsubo",
+			deu: "Bewertung der tsubo"
         },
         PuntiPresenti: {
             ita: "Alcuni punti risultano già presenti, quindi non sono stati aggiunti",
@@ -2906,7 +2949,7 @@ DB.TXT = {
         ValutazioneP: {
             ita: "PIENO",
             eng: "FULL",
-            esp: "COMPLETO",
+            esp: "LLENO",
             fra: "PLEIN",
             por: "CHEIO",
             deu: "VOLL"
@@ -2951,6 +2994,7 @@ DB.TXT = {
             por: "Você deve selecionar um ponto",
             deu: "Sie müssen einen Punkt auswählen"
         },
+
         // sintomi
         AggiungiSintomo: {
             ita: "Aggiungi un sintomo",
@@ -3035,7 +3079,7 @@ DB.TXT = {
         erroreDuplicazioneElemento: {
             ita: "Attenzione! L'elemento è già presente in elenco.",
             eng: "Please note! The item is already in the list.",
-            esp: "¡Ten en cuenta! El elemento ya está en la lista.",
+            esp: "¡Atención! El elemento ya está en la lista.",
             fra: "Veuillez noter ! L'élément est déjà dans la liste.",
             por: "Por favor, observe! O item já está na lista.",
             deu: "Bitte beachten Sie! Der Artikel befindet sich bereits in der Liste."
@@ -3088,6 +3132,7 @@ DB.TXT = {
             por: "Você deve preencher todos os campos.",
             deu: "Sie müssen alle Felder ausfüllen."
         },
+
         // gallery
         AggiungiFoto: {
             ita: "Carica un file",
@@ -3276,11 +3321,12 @@ DB.TXT = {
         DimensioneNonConsentita: {
             ita: "Non è consentito caricare file di dimensioni superiori ai [maxSize] MB. Il file che stai cercando di caricare è [size]MB.",
             eng: "Uploading files larger than [maxSize] MB is not allowed. The file you are trying to upload is [size]MB.",
-            esp: "No se permite cargar archivos de tamaño mayor a [maxSize] MB. El archivo que estás intentando cargar es de [size]MB.",
+            esp: "No se permite cargar archivos de tamaño mayor a [maxSize]MB. El archivo que estás intentando cargar es de [size]MB.",
             fra: "Le chargement de fichiers de plus de [maxSize] Mo n'est pas autorisé. Le fichier que vous essayez de charger fait [size] Mo.",
             por: "Não é permitido enviar arquivos maiores que [maxSize] MB. O arquivo que você está tentando enviar tem [size] MB.",
             deu: "Das Hochladen von Dateien, die größer als [maxSize] MB sind, ist nicht erlaubt. Die Datei, die du hochladen möchtest, ist [size] MB groß."
         },
+
         // cartella clinica
         Cartelle: {
             ita: "Cartelle",
@@ -3317,7 +3363,7 @@ DB.TXT = {
         SchedaAnamnesi: {
             ita: "Scheda di anamnesi",
             eng: "Anamnesis file",
-            esp: "Ficha de anamnesis",
+            esp: "Ficha de antecedente",
             fra: "Dossier d'anamnèse",
             por: "Ficha de anamnese",
             deu: "Anamnese-Akte"
@@ -3357,7 +3403,7 @@ DB.TXT = {
         GuidaCiclo: {
             ita: "È una cartella dove è possibile inserire una serie di trattamenti raggruppati in base a uno specifico obiettivo terapeutico (es. Trattamento dell'insonnia). Nella scheda di anamnesi è possibile gestire alcuni parametri che non sono presenti nei singoli trattamenti, come la diagnosi. I sintomi indicati in questa scheda possono essere monitorati e aggiornati durante tutti i trattamenti e infine è possibile visualizzare e stampare la scheda riepilogativa.",
             eng: "It is a folder where you can place a series of treatments grouped according to a specific therapeutic goal (e.g. Treatment of insomnia). In the anamnesis sheet, you can manage some parameters that are not present in individual treatments, such as diagnosis. The symptoms indicated in this sheet can be monitored and updated throughout all the treatments, and finally, you can view and print the summary sheet.",
-            esp: "Es una carpeta donde puedes colocar una serie de tratamientos agrupados según un objetivo terapéutico específico (por ejemplo, Tratamiento del insomnio). En la ficha de anamnesis, puedes gestionar algunos parámetros que no están presentes en los tratamientos individuales, como el diagnóstico. Los síntomas indicados en esta ficha se pueden monitorear y actualizar durante todos los tratamientos y, finalmente, puedes ver e imprimir la ficha resumen.",
+            esp: "Es una carpeta donde puedes colocar una serie de tratamientos agrupados según un objetivo terapéutico específico (por ejemplo, Tratamiento del insomnio). En la ficha de antecedente, puedes gestionar algunos parámetros que no están presentes en los tratamientos individuales, como el diagnóstico. Los síntomas indicados en esta ficha se pueden monitorear y actualizar durante todos los tratamientos y, finalmente, puedes ver e imprimir la ficha resumen.",
             fra: "Il s'agit d'un dossier dans lequel vous pouvez placer une série de traitements regroupés selon un objectif thérapeutique spécifique (par exemple, traitement de l'insomnie). Dans la fiche d'anamnèse, vous pouvez gérer certains paramètres qui ne sont pas présents dans les traitements individuels, comme le diagnostic. Les symptômes indiqués dans cette fiche peuvent être surveillés et mis à jour tout au long des traitements et enfin, vous pouvez consulter et imprimer la fiche récapitulative.",
             por: "É uma pasta onde você pode colocar uma série de tratamentos agrupados de acordo com um objetivo terapêutico específico (por exemplo, Tratamento da insônia). Na ficha de anamnese, você pode gerenciar alguns parâmetros que não estão presentes nos tratamentos individuais, como o diagnóstico. Os sintomas indicados nesta ficha podem ser monitorados e atualizados durante todos os tratamentos e, finalmente, você pode visualizar e imprimir a ficha resumo.",
             deu: "Es ist ein Ordner, in dem Sie eine Reihe von Behandlungen entsprechend einem spezifischen therapeutischen Ziel (z. B. Behandlung von Schlaflosigkeit) platzieren können. In der Anamnese-Bogen können Sie einige Parameter verwalten, die in einzelnen Behandlungen nicht vorhanden sind, wie z. B. die Diagnose. Die in diesem Bogen angegebenen Symptome können während aller Behandlungen überwacht und aktualisiert werden und schließlich können Sie den Zusammenfassungsbogen anzeigen und drucken."
@@ -3394,6 +3440,7 @@ DB.TXT = {
             por: "Visão geral",
             deu: "Übersicht"
         },
+
         // scheda SALDI
         ElSaldi: {
             ita: "Incassi",
@@ -3478,7 +3525,7 @@ DB.TXT = {
         NoResSaldi: {
             ita: "Nessun incasso",
             eng: "No payment",
-            esp: "Sin pagos",
+            esp: "Ningun pago",
             fra: "Aucun paiement",
             por: "Sem pagamento",
             deu: "Keine Zahlung"
@@ -3494,7 +3541,7 @@ DB.TXT = {
         IntestazioneSpiegazione: {
             ita: "Intestazione dell'azienda...",
             eng: "Header of the company...",
-            esp: "Encabezado de la empresa...",
+            esp: "Encabezado de documentos...",
             fra: "En-tête de l'entreprise...",
             por: "Cabeçalho da empresa...",
             deu: "Header des Unternehmens..."
@@ -3536,10 +3583,10 @@ DB.TXT = {
         Provenienze: {
             ita: "Canali",
             eng: "Channels",
-            esp: "Orígenes",
-            fra: "Origines",
-            por: "Origens",
-            deu: "Herkünfte"
+            esp: "Canales",
+            fra: "Canals",
+            por: "Canais",
+            deu: "Kanälen"
         },
         Nessuno: {
             ita: "Nessuno",
@@ -3784,11 +3831,12 @@ DB.TXT = {
         AlertNecessarioRiavvio: {
             ita: "Attenzione! Per rendere effettiva questa modifica è necessario riavviare l'app",
             eng: "Please note! To make this change effective you need to restart the app",
-            esp: "¡Ten en cuenta! Para que este cambio surta efecto, debes reiniciar la aplicación",
+            esp: "¡Ten en cuenta! Para que este cambio sea efectivo, debes reiniciar la aplicación",
             fra: "Veuillez noter ! Pour que cette modification soit effective, vous devez redémarrer l'application",
             por: "Por favor, observe! Para que essa alteração tenha efeito, você precisa reiniciar o aplicativo",
             deu: "Bitte beachten Sie! Um diese Änderung wirksam zu machen, müssen Sie die App neu starten"
         },
+
         // Generiche backup
         Descrizione: {
             ita: "Descrizione",
@@ -3827,7 +3875,7 @@ DB.TXT = {
         dalle: {
             ita: "dalle",
             eng: "from",
-            esp: "desde",
+            esp: "desde las",
             fra: "de",
             por: "de",
             deu: "von"
@@ -3835,7 +3883,7 @@ DB.TXT = {
         alle: {
             ita: "alle",
             eng: "to",
-            esp: "hasta",
+            esp: "hasta las",
             fra: "à",
             por: "até",
             deu: "bis"
@@ -3899,7 +3947,7 @@ DB.TXT = {
         AggiungiCartella: {
             ita: "Crea una cartella clinica e aggiungi",
             eng: "Create a medical file and add",
-            esp: "Crear un expediente médico y agregar",
+            esp: "Crear un historial médico y agregar",
             fra: "Créer un dossier médical et ajouter",
             por: "Criar um arquivo médico e adicionar",
             deu: "Erstelle eine medizinische Akte und füge hinzu"
@@ -3939,7 +3987,7 @@ DB.TXT = {
         AppuntamentoConverti: {
             ita: "Converti in trattamento",
             eng: "Convert to treatment",
-            esp: "Convertir a tratamiento",
+            esp: "Convertir en tratamiento",
             fra: "Convertir en traitement",
             por: "Converter em tratamento",
             deu: "In Behandlung umwandeln"
@@ -3968,6 +4016,7 @@ DB.TXT = {
             por: "Você deve inserir algum texto para o compromisso",
             deu: "Du musst einen Text für den Termin eingeben"
         },
+
         // COMMUNITY
         Pseudonimo: {
             ita: "Pseudonimo",
@@ -3980,7 +4029,7 @@ DB.TXT = {
         NoteCommunity: {
             ita: "Attenzione! Non hai ancora completato il tuo profilo, necessario per condividere i tuoi contenuti nella Community. Una volta memorizzato non sarà più possibile modificarlo",
             eng: "Please note! Your profile, necessary to share your personal contents in the Community, is not complete yet. Once saved it will no longer be editable.",
-            esp: "¡Ten en cuenta! Tu perfil, necesario para compartir tus contenidos personales en la Comunidad, aún no está completo. Una vez guardado, no se podrá editar.",
+            esp: "¡Atención! Tu perfil no está completo, es necesario para compartir tus contenidos personales en la Comunidad. Una vez guardado, no se podrá editar.",
             fra: "Veuillez noter ! Votre profil, nécessaire pour partager vos contenus personnels dans la communauté, n'est pas encore complet. Une fois enregistré, il ne sera plus modifiable.",
             por: "Atenção! Seu perfil, necessário para compartilhar seus conteúdos pessoais na comunidade, ainda não está completo. Uma vez salvo, não será mais possível editá-lo.",
             deu: "Bitte beachten Sie! Ihr Profil, das erforderlich ist, um Ihre persönlichen Inhalte in der Community zu teilen, ist noch nicht vollständig. Sobald es gespeichert wurde, kann es nicht mehr bearbeitet werden."
@@ -4017,22 +4066,7 @@ DB.TXT = {
             por: "- Estou ciente de que todas as informações compartilhadas, incluindo o apelido mencionado acima, serão visíveis para outros usuários da comunidade<br>- Comprometo-me a não divulgar a outros usuários da comunidade dados sensíveis sobre meus pacientes, especialmente os relacionados à saúde deles, e assumo total responsabilidade por qualquer vazamento de informações.",
             deu: "- Mir ist bewusst, dass alle geteilten Informationen, einschließlich des oben genannten Spitznamens, für andere Benutzer der Community sichtbar sein werden<br>- Ich verpflichte mich, sensible Daten meiner Patienten nicht an andere Benutzer der Community weiterzugeben, insbesondere solche, die ihre Gesundheit betreffen, und übernehme die volle Verantwortung für etwaige Informationslecks."
         },
-        /*ImpostazioniCommunity: {
-        ita: "Impostazioni Community",
-        eng: "Community settings",
-        esp: "",
-        fra: "",
-        por: "",
-        deu: ""
-        },
-        AssensoCommunity: {
-        ita: "Assenso",
-        eng: "Consent",
-        esp: "",
-        fra: "",
-        por: "",
-        deu: ""
-        },*/
+		
         // STATS
         SpazioUtilizzato: {
             ita: "Spazio utilizzato",
@@ -4158,7 +4192,7 @@ DB.TXT = {
             ita: "Scadenza token",
             eng: "Token expiry",
             esp: "Vencimiento de token",
-            fra: "Expiration du jeton",
+            fra: "Expiration du token",
             por: "Expiração do token",
             deu: "Ablauf des Tokens"
         },
@@ -4180,6 +4214,7 @@ DB.TXT = {
             por: "Não mostrar mais",
             deu: "Nicht mehr anzeigen"
         },
+
         // GUIDE
         ReferenceGuide: {
             ita: "Guida in linea",
@@ -4208,7 +4243,7 @@ DB.TXT = {
         GuidaPazientiTxt: {
             ita: "Da questo menu puoi gestire il tuo lavoro. Accedi ad una delle sezioni qui sotto per visualizzare, aggiungere e gestire le anagrafiche e le cartelle cliniche.",
             eng: "From this menu you can manage your work. Access one of the sections below to view, add and manage personal data and medical records.",
-            esp: "Desde este menú puedes gestionar tu trabajo. Accede a una de las secciones a continuación para ver, agregar y gestionar datos personales y registros médicos.",
+            esp: "Desde este menú puedes gestionar tu trabajo. Accede a una de las secciones a continuación para ver, agregar y gestionar datos personales y historiales médicos.",
             fra: "À partir de ce menu, vous pouvez gérer votre travail. Accédez à l'une des sections ci-dessous pour afficher, ajouter et gérer les données personnelles et les dossiers médicaux.",
             por: "A partir deste menu, você pode gerenciar seu trabalho. Acesse uma das seções abaixo para visualizar, adicionar e gerenciar dados pessoais e prontuários médicos.",
             deu: "Über dieses Menü können Sie Ihre Arbeit verwalten. Greifen Sie auf einen der folgenden Abschnitte zu, um personenbezogene Daten und medizinische Aufzeichnungen anzuzeigen, hinzuzufügen und zu verwalten."
@@ -4229,6 +4264,7 @@ DB.TXT = {
             por: "Você já possui uma licença?",
             deu: "Hast du bereits eine Lizenz?"
         },
+
         // UTENTE
         Web: {
             ita: "Sito web",
@@ -4342,11 +4378,12 @@ DB.TXT = {
             por: "Cadastre-se para usar todos os recursos da versão gratuita.",
             deu: "Registrieren Sie sich, um alle Funktionen der kostenlosen Version nutzen zu können."
         },
+
         // UTENTE
         TestoRegistrazioneEspanso: {
             ita: "Con la registrazione a [§] avrai {10 giorni di prova gratuita di tutte le app} e allo scadere potrai usufruire di tutte le funzionalità di base dell'app:\n\n[#] Fino a 15 pazienti\n[#] Backup dei dati\n[#] Accesso multipiattaforma\n[#] Funzionalità della community\n[#] 10% di sconto su un prodotto [IAOMAI]",
             eng: "With the registration to [§] you will have {10-day free trial of all apps} and upon expiry you will be able to use all the basic functions of the app:\n\n[#] Up to 15 patients\n[#] Data backup\n[#] Cross-platform access\n[#] Community functionality\n[#] 10% discount on [IAOMAI] product",
-            esp: "Al registrarte en [§], obtendrás {10 días de prueba gratuita de todas las aplicaciones} y al vencimiento podrás utilizar todas las funciones básicas de la aplicación:\n\n[#] Hasta 15 pacientes\n[#] Respaldo de datos\n[#] Acceso multiplataforma\n[#] Funcionalidad de comunidad\n[#] 10% de descuento en un producto [IAOMAI]",
+            esp: "Al registrarte en [§], obtendrás {10 días de prueba gratuita de todas las aplicaciones} y al vencimiento podrás utilizar todas las funciones básicas de la aplicación:\n\n[#] Hasta 15 pacientes\n[#] Respaldo de datos\n[#] Acceso multiplataforma\n[#] Funciones de la comunidad\n[#] 10% de descuento en un producto [IAOMAI]",
             fra: "Avec l'inscription à [§], vous bénéficierez de {10 jours d'essai gratuit pour toutes les applications} et à l'expiration, vous pourrez utiliser toutes les fonctions de base de l'application:\n\n[#] Jusqu'à 15 patients\n[#] Sauvegarde des données\n[#] Accès multiplateforme\n[#] Fonctionnalité de communauté\n[#] 10% de réduction sur un produit [IAOMAI]",
             por: "Ao se registrar em [§], você terá {10 dias de teste gratuito de todos os aplicativos} e, ao expirar, poderá usar todas as funções básicas do aplicativo:\n\n[#] Até 15 pacientes\n[#] Backup de dados\n[#] Acesso multiplataforma\n[#] Funcionalidade da comunidade\n[#] Desconto de 10% em um produto [IAOMAI]",
             deu: "Mit der Registrierung bei [§] erhalten Sie {10 Tage kostenlose Testversion aller Apps} und nach Ablauf können Sie alle grundlegenden Funktionen der App nutzen:\n\n[#] Bis zu 15 Patienten\n[#] Datensicherung\n[#] Cross-Plattform-Zugriff\n[#] Community-Funktionalität\n[#] 10% Rabatt auf ein [IAOMAI] Produkt"
@@ -4391,6 +4428,7 @@ DB.TXT = {
             por: "Registro concluído com sucesso. Comece a usar [§] imediatamente!",
             deu: "Registrierung erfolgreich. Beginnen Sie sofort mit der Nutzung von [§]!"
         },
+
         // CONTROLLI VERSIONI
         MsgNoAnatomy: {
             ita: "Con la versione gratuita è possibile visualizzare solo i dettagli anatomici Ossa, cuore e muscolo pettorale.",
@@ -4403,7 +4441,7 @@ DB.TXT = {
         MsgMaxPazienti1: {
             ita: "Con la versione gratuita puoi gestire un solo paziente. Registrati gratuitamente per gestire fino a 15 pazienti o acquista un pacchetto Patients Full con cartelle cliniche illimitate!.",
             eng: "With the free version you can manage only one patient. Register for free to manage up to 15 patients or purchase a Patients Full package with unlimited medical files!",
-            esp: "Con la versión gratuita solo puedes gestionar un paciente. ¡Regístrate gratis para gestionar hasta 15 pacientes o compra un paquete Patients Full con archivos médicos ilimitados!",
+            esp: "Con la versión gratuita solo puedes gestionar un paciente. ¡Regístrate gratis para gestionar hasta 15 pacientes o compra un paquete Patients Full con historiales médicos ilimitados!",
             fra: "Avec la version gratuite, vous ne pouvez gérer qu'un seul patient. Inscrivez-vous gratuitement pour gérer jusqu'à 15 patients ou achetez un package Patients Full avec des dossiers médicaux illimités !",
             por: "Com a versão gratuita, você só pode gerenciar um paciente. Cadastre-se gratuitamente para gerenciar até 15 pacientes ou adquira um pacote Patients Full com arquivos médicos ilimitados!",
             deu: "Mit der kostenlosen Version können Sie nur einen Patienten verwalten. Registrieren Sie sich kostenlos, um bis zu 15 Patienten zu verwalten oder erwerben Sie ein Patients Full-Paket mit unbegrenzten medizinischen Akten!"
@@ -4411,7 +4449,7 @@ DB.TXT = {
         MsgMaxPazienti15: {
             ita: "Con la registrazione gratuita puoi gestire fino a 15 pazienti. Acquista un pacchetto Patients Full per cartelle cliniche illimitate!.",
             eng: "With the free registration you can manage up to 15 patients. Purchase a Patients Full package for unlimited medical files!",
-            esp: "Con el registro gratuito puedes gestionar hasta 15 pacientes. ¡Adquiere un paquete Patients Full para archivos médicos ilimitados!",
+            esp: "Con el registro gratuito puedes gestionar hasta 15 pacientes. ¡Adquiere un paquete Patients Full para historiales médicos ilimitados!",
             fra: "Avec l'inscription gratuite, vous pouvez gérer jusqu'à 15 patients. Achetez un package Patients Full pour des dossiers médicaux illimités !",
             por: "Com o registro gratuito, você pode gerenciar até 15 pacientes. Adquira um pacote Patients Full para arquivos médicos ilimitados!",
             deu: "Mit der kostenlosen Registrierung können Sie bis zu 15 Patienten verwalten. Kaufen Sie ein Patients Full-Paket für unbegrenzte medizinische Akten!"
@@ -4504,6 +4542,7 @@ DB.TXT = {
             por: "Mantenha o mapa aberto",
             deu: "Halte die Karte geöffnet"
         },
+
         // ANATOMIA
         Pelle: {
             ita: "Visualizza la pelle",
@@ -4545,6 +4584,7 @@ DB.TXT = {
             por: "AnatomyMap",
             deu: "AnatomyMap"
         },
+
         // LE MAPPE
         TsuboMap: {
             ita: "TsuboMap",
@@ -4565,7 +4605,7 @@ DB.TXT = {
         TsuboMapDESCR: {
             ita: "TsuboMap è il set che ti consente di studiare i concetti della Medicina Tradizionale Cinese applicati ai punti agopuntura (gli tsubo) e i meridiani energetici. Oltre all'anatomia completa e la gestione dei pazienti, è a tua disposizione un elenco di più di 130 patologie preconfigurate e il relativo trattamento secondo la MTC. Potrai inoltre elaborare procedure di trattamento personalizzate e condividerle nella Community.\n\nIl set include anche:\n[anatomy_full]",
             eng: "TsuboMap is the set that allows you to study the concepts of Traditional Chinese Medicine applied to acupuncture points (tsubo) and energy meridians. In addition to complete anatomy and patient management, a list of more than 130 preconfigured pathologies and their treatment according to TCM is available to you. You will also be able to develop customized treatment procedures and share them in the Community.",
-            esp: "TsuboMap es el conjunto que te permite estudiar los conceptos de la Medicina Tradicional China aplicados a los puntos de acupuntura (tsubo) y meridianos de energía. Además de la anatomía completa y la gestión de pacientes, tendrás a tu disposición una lista de más de 130 patologías preconfiguradas y su tratamiento según la MTC. También podrás desarrollar procedimientos de tratamiento personalizados y compartirlos en la comunidad.",
+            esp: "TsuboMap es el set que te permite estudiar los conceptos de la Medicina Tradicional China aplicados a los puntos de acupuntura (tsubo) y meridianos de energía. Además de la anatomía completa y la gestión de pacientes, tendrás a tu disposición una lista de más de 130 patologías preconfiguradas y su tratamiento según la MTC. También podrás desarrollar procedimientos de tratamiento personalizados y compartirlos en la comunidad.",
             fra: "TsuboMap est l'ensemble qui vous permet d'étudier les concepts de la médecine traditionnelle chinoise appliqués aux points d'acupuncture (tsubo) et aux méridiens d'énergie. En plus de l'anatomie complète et de la gestion des patients, une liste de plus de 130 pathologies préconfigurées et leur traitement selon la MTC est à votre disposition. Vous pourrez également développer des procédures de traitement personnalisées et les partager dans la communauté.",
             por: "TsuboMap é o conjunto que permite estudar os conceitos da Medicina Tradicional Chinesa aplicados aos pontos de acupuntura (tsubo) e meridianos de energia. Além da anatomia completa e do gerenciamento de pacientes, você terá acesso a uma lista com mais de 130 patologias preconfiguradas e seus respectivos tratamentos de acordo com a MTC. Você também poderá desenvolver procedimentos de tratamento personalizados e compartilhá-los na Comunidade.",
             deu: "TsuboMap ist das Set, das es Ihnen ermöglicht, die Konzepte der Traditionellen Chinesischen Medizin zu studieren, die auf Akupunkturpunkte (Tsubo) und Energie-Meridiane angewendet werden. Neben der vollständigen Anatomie und der Patientenverwaltung steht Ihnen eine Liste mit über 130 vorkonfigurierten Pathologien und deren Behandlung nach der TCM zur Verfügung. Sie können auch maßgeschneiderte Behandlungsverfahren entwickeln und sie in der Community teilen."
@@ -4589,7 +4629,7 @@ DB.TXT = {
         ShiatsuMapDESCR: {
             ita: "Il set contiene i percorsi dei meridiani Shiatsu secondo la teoria di Shizuto Masunaga e le informazioni teoriche sugli elementi.\n\nIl set include anche:\n[anatomy_full]",
             eng: "The set contains the paths of the Shiatsu meridians according to the theory of Shizuto Masunaga and the theoretical information on the elements.",
-            esp: "El conjunto contiene los recorridos de los meridianos de Shiatsu según la teoría de Shizuto Masunaga y la información teórica sobre los elementos.",
+            esp: "El set contiene los recorridos de los meridianos de Shiatsu según la teoría de Shizuto Masunaga y la información teórica sobre los elementos.",
             fra: "L'ensemble contient les parcours des méridiens de Shiatsu selon la théorie de Shizuto Masunaga et les informations théoriques sur les éléments.",
             por: "O conjunto contém os percursos dos meridianos de Shiatsu de acordo com a teoria de Shizuto Masunaga e as informações teóricas sobre os elementos.",
             deu: "Das Set enthält die Pfade der Shiatsu-Meridiane nach der Theorie von Shizuto Masunaga und die theoretischen Informationen über die Elemente."
@@ -4637,7 +4677,7 @@ DB.TXT = {
         AuriculoMapDESCR: {
             ita: "Il set contiene la mappa dei punti dell'auricologia e il trattamento dei disturbi attraverso l'auricoloterapia.\n\nIl set include anche:\n[anatomy_full]",
             eng: "The set contains the map of points of auricology and the treatment of ailments through auriculotherapy.",
-            esp: "El conjunto contiene el mapa de puntos de auriculología y el tratamiento de dolencias a través de la auriculoterapia.",
+            esp: "El set contiene el mapa de puntos de auriculología y el tratamiento de dolencias a través de la auriculoterapia.",
             fra: "L'ensemble contient la carte des points d'auriculothérapie et le traitement des affections par l'auriculothérapie.",
             por: "O conjunto contém o mapa de pontos de auriculoterapia e o tratamento de doenças por meio da auriculoterapia.",
             deu: "Das Set enthält die Karte der Aurikulologiepunkte und die Behandlung von Beschwerden durch Aurikulotherapie.\n\nDas Set enthält auch:\n[anatomy_full]"
@@ -4701,7 +4741,7 @@ DB.TXT = {
         MedicalFilesST: {
             ita: "Anagrafiche e cartelle cliniche",
             eng: "Personal data and medical files",
-            esp: "Datos personales y archivos médicos",
+            esp: "Datos personales y historiales médicos",
             fra: "Données personnelles et dossiers médicaux",
             por: "Dados pessoais e arquivos médicos",
             deu: "Persönliche Daten und medizinische Akten"
@@ -4709,27 +4749,11 @@ DB.TXT = {
         MedicalFilesDESCR: {
             ita: "Gestione completa dei tuoi pazienti con cartelle cliniche, trattamenti, saldi e agenda appuntamenti",
             eng: "Complete management of your patients with medical records, treatments, balances and appointment diary",
-            esp: "Gestión completa de tus pacientes con registros médicos, tratamientos, balances y agenda de citas",
+            esp: "Gestión completa de tus pacientes con historiales médicos, tratamientos, balances y agenda de citas",
             fra: "Gestion complète de vos patients avec dossiers médicaux, traitements, soldes et agenda des rendez-vous",
             por: "Gestão completa dos seus pacientes com prontuários médicos, tratamentos, saldos e agenda de consultas",
             deu: "Vollständige Verwaltung Ihrer Patienten mit medizinischen Aufzeichnungen, Behandlungen, Salden und Terminplanung"
         },
-        /*CaricaMappa: {
-        ita: "Carica un set",
-        eng: "Load a set",
-        esp: "",
-        fra: "",
-        por: "",
-        deu: ""
-        },
-        Mappe: {
-        ita: "Set aggiuntivi",
-        eng: "Additional sets",
-        esp: "",
-        fra: "",
-        por: "",
-        deu: ""
-        },*/
         CaricaMappa: {
             ita: "Carica una mappa",
             eng: "Load a map",
@@ -4754,23 +4778,8 @@ DB.TXT = {
             por: "Você realmente deseja sair de [mappa]?",
             deu: "Möchten Sie wirklich [mappa] verlassen?"
         },
+
         // popup SETS
-        /*SetAperto: {
-        ita: "Set in uso",
-        eng: "Set in use",
-        esp: "",
-        fra: "",
-        por: "",
-        deu: ""
-        },
-        ApriSet: {
-        ita: "Apri il set",
-        eng: "Open set",
-        esp: "",
-        fra: "",
-        por: "",
-        deu: ""
-        },*/
         SetAperto: {
             ita: "Mappa in uso",
             eng: "Map in use",
@@ -4838,7 +4847,7 @@ DB.TXT = {
         SpiegazioneSetsTit: {
             ita: "Come attivare un set aggiuntivo",
             eng: "How to activate an additional set",
-            esp: "Cómo activar un conjunto adicional",
+            esp: "Cómo activar un set adicional",
             fra: "Comment activer un ensemble supplémentaire",
             por: "Como ativar um conjunto adicional",
             deu: "So aktivieren Sie ein zusätzliches Set"
@@ -4862,7 +4871,7 @@ DB.TXT = {
         ErroreNessunSet: {
             ita: "Devi selezionare almeno un set",
             eng: "You must select at least one set",
-            esp: "Debes seleccionar al menos un conjunto",
+            esp: "Debes seleccionar al menos un set",
             fra: "Vous devez sélectionner au moins un ensemble",
             por: "Você deve selecionar pelo menos um conjunto",
             deu: "Sie müssen mindestens einen Satz auswählen"
@@ -4870,7 +4879,7 @@ DB.TXT = {
         CaricamentoMeridiani: {
             ita: "Caricamento set di meridiani",
             eng: "Loading meridian's set",
-            esp: "Cargando conjunto de meridianos",
+            esp: "Cargando set de meridianos",
             fra: "Chargement de l'ensemble des méridiens",
             por: "Carregando conjunto de meridianos",
             deu: "Laden des Meridian-Sets"
@@ -4878,7 +4887,7 @@ DB.TXT = {
         CaricamentoMappa: {
             ita: "Caricamento set",
             eng: "Loading set",
-            esp: "Cargando conjunto",
+            esp: "Cargando set",
             fra: "Chargement de l'ensemble",
             por: "Carregando conjunto",
             deu: "Laden der Set"
@@ -4886,7 +4895,7 @@ DB.TXT = {
         CaricamentoMappe: {
             ita: "Caricamento sets",
             eng: "Loading sets",
-            esp: "Cargando conjuntos",
+            esp: "Cargando sets",
             fra: "Chargement des ensembles",
             por: "Carregando conjuntos",
             deu: "Laden der Sets"
@@ -5078,7 +5087,7 @@ DB.TXT = {
         Deseleziona: {
             ita: "Deseleziona",
             eng: "Deselect",
-            esp: "Desseleccionar",
+            esp: "Deseleccionar",
             fra: "Désélectionner",
             por: "Desmarcar",
             deu: "Abwählen"
@@ -5086,7 +5095,7 @@ DB.TXT = {
         DeselezionaAltri: {
             ita: "Deseleziona gli altri",
             eng: "Deselect others",
-            esp: "Desseleccionar otros",
+            esp: "Deseleccionar otros",
             fra: "Désélectionner les autres",
             por: "Desmarcar outros",
             deu: "Andere abwählen"
@@ -5099,14 +5108,6 @@ DB.TXT = {
             por: "Isolar",
             deu: "Isolieren"
         },
-        /*CercaMuscoli: {
-        ita: "Filtra l'elenco MUSCOLI",
-        eng: "Filter MUSCLES list",
-        esp: "",
-        fra: "",
-        por: "",
-        deu: ""
-        },*/
         CercaMuscoli: {
             ita: "Filtra l'elenco",
             eng: "Filter list",
@@ -5115,14 +5116,6 @@ DB.TXT = {
             por: "Filtrar lista",
             deu: "Liste filtern"
         },
-        /*CercaOssa: {
-        ita: "Filtra l'elenco OSSA",
-        eng: "Filter BONES list",
-        esp: "",
-        fra: "",
-        por: "",
-        deu: ""
-        },*/
         CercaOssa: {
             ita: "Filtra l'elenco",
             eng: "Filter list",
@@ -5131,14 +5124,6 @@ DB.TXT = {
             por: "Filtrar lista",
             deu: "Liste filtern"
         },
-        /*CercaVisceri: {
-        ita: "Filtra l'elenco ORGANI e VISCERI",
-        eng: "Filter ORGANS and BOWELS list",
-        esp: "",
-        fra: "",
-        por: "",
-        deu: ""
-        },*/
         CercaVisceri: {
             ita: "Filtra l'elenco",
             eng: "Filter list",
@@ -5206,7 +5191,7 @@ DB.TXT = {
         MostraPin: {
             ita: "Mostra/nascondi pins",
             eng: "Show/hide pins",
-            esp: "Mostrar/ocultar pines",
+            esp: "Mostrar/ocultar nombres",
             fra: "Afficher/masquer les épingles",
             por: "Mostrar/ocultar pinos",
             deu: "Zeige/verstecke Pins"
@@ -5235,6 +5220,7 @@ DB.TXT = {
             por: "Ao selecionar este modelo, você sairá de [NomeSet]. Deseja continuar mesmo assim?",
             deu: "Wenn Sie dieses Modell auswählen, verlassen Sie [NomeSet]. Möchten Sie dennoch fortfahren?"
         },
+
         // PROCESSO DI ACQUISTO
         AcquistaLicenza: {
             ita: "Acquista una licenza",
@@ -5324,6 +5310,7 @@ DB.TXT = {
             por: "PAGAR AGORA",
             deu: "JETZT BEZAHLEN"
         },
+
         // PARTI ANATOMICHE
         DX: {
             ita: "DESTRA",
@@ -5373,6 +5360,7 @@ DB.TXT = {
             por: "Órgão",
             deu: "Organ"
         },
+
         // ORGANI E VISCERI
         Organo_OCCHI: {
             ita: "OCCHIO",
@@ -5750,6 +5738,7 @@ DB.TXT = {
             por: "NERVO AURICULAR GRANDE",
             deu: "GROSSER OHRNERVER"
         },
+
         // OSSA
         Osso_BACINO: {
             ita: "BACINO",
@@ -6207,62 +6196,63 @@ DB.TXT = {
             por: "FALANGE DISTAL DO QUINTO DEDO",
             deu: "DISTALE PHALANGE DES 5. ZEHENS"
         },
-        Osso_METATARSO_1: {
+		Osso_METATARSO_1: {
             ita: "1° METATARSO",
             eng: "1° METATARSAL",
             esp: "METATARSO 1",
-            fra: "",
-            por: "",
-            deu: ""
+            fra: "1er MÉTATARSE",
+            por: "1° METATARSO",
+            deu: "1. METATARSAL"
         },
         Osso_METATARSO_2: {
             ita: "2° METATARSO",
             eng: "2° METATARSAL",
             esp: "METATARSO 2",
-            fra: "",
-            por: "",
-            deu: ""
+            fra: "2e MÉTATARSE",
+            por: "2° METATARSO",
+            deu: "2. METATARSAL"
         },
         Osso_METATARSO_3: {
             ita: "3° METATARSO",
             eng: "3° METATARSAL",
             esp: "METATARSO 3",
-            fra: "",
-            por: "",
-            deu: ""
+            fra: "3e MÉTATARSE",
+            por: "3° METATARSO",
+            deu: "3. METATARSAL"
         },
         Osso_METATARSO_4: {
             ita: "4° METATARSO",
             eng: "4° METATARSAL",
             esp: "METATARSO 4",
-            fra: "",
-            por: "",
-            deu: ""
+            fra: "4e MÉTATARSE",
+            por: "4° METATARSO",
+            deu: "4. METATARSAL"
         },
         Osso_METATARSO_5: {
             ita: "5° METATARSO",
             eng: "5° METATARSAL",
             esp: "METATARSO 5",
-            fra: "",
-            por: "",
-            deu: ""
+            fra: "5e MÉTATARSE",
+            por: "5° METATARSO",
+            deu: "5. METATARSAL"
         },
         Osso_SCAFOIDE: {
             ita: "NAVICOLARE",
             eng: "NAVICULAR",
             esp: "ESCAFOIDES",
-            fra: "",
-            por: "",
-            deu: ""
+            fra: "SCAPHOÏDE",
+            por: "ESCAFOIDE",
+            deu: "SKAPHOID"
         },
         Osso_CARTILAGINE_AURICOLARE: {
             ita: "Cartilagine",
             eng: "Cartilage",
             esp: "Cartílago",
-            fra: "",
-            por: "",
-            deu: ""
+            fra: "Cartilage",
+            por: "Cartilagem",
+            deu: "Knorpel"
         },
+
         // MUSCOLI
         Muscolo_GRAN_DORSALE: {
             ita: "GRAN DORSALE",
@@ -6563,7 +6553,7 @@ DB.TXT = {
         Muscolo_TIROIDEO: {
             ita: "TIROIDEO",
             eng: "THYROHYOID",
-            esp: "TIROHIOIDEO",
+            esp: "TIROIDES",
             fra: "MUSCLE THYRO-HYOÏDIEN",
             por: "TIROHIOIDEO",
             deu: "MUSKEL THYROHYOIDEUS"
@@ -6580,7 +6570,7 @@ DB.TXT = {
         Muscolo_SPLENIO_DELLA_TESTA: {
             ita: "SPLENIO DELLA TESTA",
             eng: "SPLENIUS CAPITIS",
-            esp: "SPLENIOS DE LA CABEZA",
+            esp: "ESPLENIO DE LA CABEZA",
             fra: "SPLENIUS DE LA TÊTE",
             por: "SPLENIUS DA CABEÇA",
             deu: "MUSKEL SPLENIUS CAPITIS"
@@ -6745,7 +6735,6 @@ DB.TXT = {
             por: "BRAQUIAL",
             deu: "MUSKEL BRACHIALIS"
         },
-
         Muscolo_ANCONEO: {
             ita: "ANCONEO",
             eng: "ANCONEUS",
@@ -7066,6 +7055,7 @@ DB.TXT = {
             por: "FLEXOR DO MÍNIMO",
             deu: "FINGERBEUGER DES KLEINFINGERS"
         },
+
         // zone anatomiche
         Zona_TESTA: {
             ita: "Muscoli della testa",
@@ -7167,11 +7157,11 @@ DB.TXT = {
         },
         Muscolo_DOCCIA_SCAFOIDE: {
             ita: "DOCCIA SCAFOIDE",
-            eng: "SCAPHOID SHOWER",
-            esp: "REGADERA ESCAFOIDES",
-            fra: "DOUCHE SCAPHOÏDE",
-            por: "DUCHA DO ESCAFÓIDE",
-            deu: "SCHAUFELDUSCHE"
+            eng: "SCAPHOID FOSSA",
+			esp: "FOSA ESCAFOIDEA",
+			fra: "FOSSA DU SCAPHOÏDE",
+			por: "FOSSA ESCAFÓIDEA",
+			deu: "SKAPHOID-GRUBE"
         },
         Muscolo_CRESTA_DELL_AURICOLA: {
             ita: "CRESTA DELL'AURICOLA",
@@ -7230,11 +7220,11 @@ DB.TXT = {
             deu: "HELIX-LOPENWINKEL"
         },
         Muscolo_LOBO: {
-            ita: "LOBO",
+            ita: "LOBULO",
             eng: "LOBE",
-            esp: "LOBO",
-            fra: "LOBE",
-            por: "LOBO",
+            esp: "LÓBULO",
+            fra: "LOBULE",
+            por: "LÓBULO",
             deu: "LOBUS"
         },
         Muscolo_SOLCO_PRELOBULARE: {
@@ -7311,11 +7301,11 @@ DB.TXT = {
         },
         Muscolo_DOCCIATURA_ANTELICALE_POSTERIORE: {
             ita: "DOCCIATURA ANTELICALE POSTERIORE",
-            eng: "POSTERIOR DIPPING OF ANTEHELIX",
-            esp: "BAÑO POSTERIOR DE LA ANTÉLICE",
-            fra: "PLONGEON POSTÉRIEUR DE L'ANTÉLICE",
-            por: "MERGULHO POSTERIOR DA ANTEHELIX",
-            deu: "HINTERER EINTAUCHEN DER ANTEHELIX"
+            eng: "POSTERIOR ANTECUBITAL GROOVE",
+			esp: "RANURA ANTECUBITAL POSTERIOR",
+			fra: "RAINURE ANTECUBITALE POSTÉRIEURE",
+			por: "RANHURA ANTECUBITAL POSTERIOR",
+			deu: "HINTERER ELLBOGENGRUBEN-SCHLITZ"
         },
         Muscolo_EMINENZA_CENTRALE: {
             ita: "EMINENZA CENTRALE",
@@ -7422,6 +7412,38 @@ DB.TXT = {
             por: "pacientes",
             deu: "Patienten"
         },
+		_Cliente_S: {
+            ita: "Ricevente - Uke",
+            eng: "Receivers - Uke",
+            esp: "Receptor - Uke",
+            fra: "Receveur - Uke",
+            por: "Receptor - Uke",
+            deu: "Empfangenden- Uke"
+        },
+        _Clienti_S: {
+            ita: "Riceventi - Uke",
+            eng: "Receivers - Uke",
+            esp: "Receptores - Uke",
+            fra: "Receveurs - Uke",
+            por: "Receptores - Uke",
+            deu: "Empfangenden - Uke"
+        },
+        _cliente_S: {
+            ita: "ricevente",
+            eng: "receiver",
+            esp: "receptor",
+            fra: "receveur",
+            por: "receptor",
+            deu: "empfangende"
+        },
+        _clienti_S: {
+            ita: "riceventi",
+            eng: "receivers",
+            esp: "receptores",
+            fra: "receveurs",
+            por: "receptores",
+            deu: "empfangenden"
+        },
         _ciclo_C: {
             ita: "ciclo",
             eng: "cycle",
@@ -7465,7 +7487,7 @@ DB.TXT = {
         _ciclo_P: {
             ita: "cartella clinica",
             eng: "medical file",
-            esp: "expediente médico",
+            esp: "historial médico",
             fra: "dossier médical",
             por: "ficha médica",
             deu: "medizinische Akte"
@@ -7473,7 +7495,7 @@ DB.TXT = {
         _cicli_P: {
             ita: "cartelle cliniche",
             eng: "medical files",
-            esp: "expedientes médicos",
+            esp: "historiales médicos",
             fra: "dossiers médicaux",
             por: "fichas médicas",
             deu: "medizinische Akten"
@@ -7481,7 +7503,7 @@ DB.TXT = {
         _un_ciclo_P: {
             ita: "una cartella clinica",
             eng: "a medical file",
-            esp: "un expediente médico",
+            esp: "un historial médico",
             fra: "un dossier médical",
             por: "um ficha médica",
             deu: "eine medizinische Akte"
@@ -7489,7 +7511,7 @@ DB.TXT = {
         _il_ciclo_P: {
             ita: "la cartella clinica",
             eng: "medical file",
-            esp: "el expediente médico",
+            esp: "el historial médico",
             fra: "le dossier médical",
             por: "o ficha médica",
             deu: "die medizinische Akte"
@@ -7497,11 +7519,53 @@ DB.TXT = {
         _Ciclo_P: {
             ita: "Cartella clinica",
             eng: "Medical file",
-            esp: "Expediente médico",
+            esp: "Historial médico",
             fra: "Dossier médical",
             por: "Ficha médica",
             deu: "Medizinische Akte"
         },
+		
+		_ciclo_S: {
+            ita: "ciclo",
+            eng: "cycle",
+            esp: "ciclo",
+            fra: "cycle",
+            por: "ciclo",
+            deu: "Zyklus"
+        },
+        _cicli_S: {
+            ita: "cicli",
+            eng: "cycles",
+            esp: "ciclos",
+            fra: "cycles",
+            por: "ciclos",
+            deu: "Zyklen"
+        },
+        _un_ciclo_S: {
+            ita: "un ciclo di trattamenti",
+            eng: "a treatment cycle",
+            esp: "un ciclo de tratamiento",
+            fra: "un cycle de traitement",
+            por: "um ciclo de tratamento",
+            deu: "ein Behandlungszyklus"
+        },
+        _il_ciclo_S: {
+            ita: " ciclo di trattamenti",
+            eng: " treatment cycle",
+            esp: " ciclo de tratamiento",
+            fra: " cycle de traitement",
+            por: " ciclo de tratamento",
+            deu: " Behandlungszyklus"
+        },
+        _Ciclo_S: {
+            ita: "Ciclo di trattamenti",
+            eng: "Treatment cycle",
+            esp: "Ciclo de tratamiento",
+            fra: "Cycle de traitement",
+            por: "Ciclo de tratamento",
+            deu: "Behandlungszyklus"
+        },
+		
         _UTILIZZO_P: {
             ita: "MEDICO",
             eng: "MEDICAL",
@@ -7517,7 +7581,24 @@ DB.TXT = {
             fra: "HOLISTIQUE",
             por: "HOLÍSTICO",
             deu: "GANZHEITLICH"
-        }
+        },
+        _UTILIZZO_S: {
+            ita: "SHIATSU",
+            eng: "SHIATSU",
+            esp: "SHIATSU",
+            fra: "SHIATSU",
+            por: "SHIATSU",
+            deu: "SHIATSU"
+        },
+		
+		features: {
+			ita: "<h2>Benvenuto nella versione 1.4</h2><p class=\"descr\">Abbiamo cambiato alcune caratteristiche dell'applicazione al fine di renderla sempre più ricca di contenuto, facile e intuitiva da usare e veloce.</p><div><div><img src=\"sets/meridiani_shiatsu/img/logoNero.png\" width=\"50\" height=\"50\"></div><div><b>ShiatsuMap</b><br>Abbiamo aggiunto le mappe e i protocolli di Namikoshi e ristrutturato i contenuti col fine di rendere ShiatsuMap uno strumento sempre più ricco.</div></div><div><div><img src=\"img/ico_linguaprefN.png\" width=\"32\" height=\"36\" style=\"margin-left:9px;\"></div><div><b>Supporto per le lingue</b><br>Da questa versione l'interfaccia è disponibile in 6 lingue e i contenuti sono stati tradotti in 3 lingue. E' stato aggiunto inoltre uno strumento di traduzione automatica con intelligenza artificiale per 135 idiomi.</div></div><div><div><img src=\"img/spunta.png\" width=\"40\" height=\"40\" style=\"margin-left:4px;\"></div><div><b>Personalizzazione e fruibilità</b><br>- Aggiunta una dimensioni di testo &quot;grandissima&quot;<br>- Aggiunta la nomenclatura &quot;Shiatsu&quot; per archivi e contenuti (es. Uke al posto di Cliente)</div></div><div><div><img src=\"img/ico_purchasesN.png\" width=\"32\" height=\"36\" style=\"margin-left:9px;\"></div><div><b>Acquisti in app</b><br>Da questa versione è possibile acquistare le licenze direttamente dall'app, cliccando sulla sezione &quot;Acquista una licenza&quot; nel menu impostazioni.</div></div><div><div><img src=\"img/p_impostazioniN.png\" width=\"32\" height=\"36\" style=\"margin:6px 6px 6px 11px;\"></div><div><b>Miglioramenti</b><br>Sono stati effettuati miglioramenti di vario genere e corretti alcuni bugs presenti nella versione precedente.</div></div>",
+			eng: "<h2>Welcome to version 1.4</h2><p class=\"descr\">We have made some changes to the application to make it richer in content, easy and intuitive to use, and fast.</p><div><div><img src=\"sets/meridiani_shiatsu/img/logoNero.png\" width=\"50\" height=\"50\"></div><div><b>ShiatsuMap</b><br>We have added Namikoshi maps and protocols and restructured the content to make ShiatsuMap an even richer tool.</div></div><div><div><img src=\"img/ico_linguaprefN.png\" width=\"32\" height=\"36\" style=\"margin-left:9px;\"></div><div><b>Language Support</b><br>From this version, the interface is available in 6 languages, and the content has been translated into 3 languages. Additionally, an artificial intelligence-powered automatic translation tool for 135 languages has been added.</div></div><div><div><img src=\"img/spunta.png\" width=\"40\" height=\"40\" style=\"margin-left:4px;\"></div><div><b>Customization and Usability</b><br>- Added a \"very large\" text size<br>- Added the naming of \"Shiatsu\" for archives and content (e.g., Uke instead of Client)</div></div><div><div><img src=\"img/ico_purchasesN.png\" width=\"32\" height=\"36\" style=\"margin-left:9px;\"></div><div><b>In-App Purchases</b><br>From this version, you can directly purchase licenses from the app by clicking on the \"Buy a License\" section in the settings menu.</div></div><div><div><img src=\"img/p_impostazioniN.png\" width=\"32\" height=\"36\" style=\"margin:6px 6px 6px 11px;\"></div><div><b>Improvements</b><br>We have made various improvements and fixed some bugs present in the previous version.</div></div>",
+			esp: "<h2>Bienvenido a la versión 1.4</h2><p class=\"descr\">Hemos realizado algunos cambios en la aplicación para hacerla más rica en contenido, fácil e intuitiva de usar, y rápida.</p><div><div><img src=\"sets/meridiani_shiatsu/img/logoNero.png\" width=\"50\" height=\"50\"></div><div><b>ShiatsuMap</b><br>Hemos agregado mapas y protocolos de Namikoshi y reestructurado el contenido para hacer de ShiatsuMap una herramienta aún más completa.</div></div><div><div><img src=\"img/ico_linguaprefN.png\" width=\"32\" height=\"36\" style=\"margin-left:9px;\"></div><div><b>Soporte de idiomas</b><br>Desde esta versión, la interfaz está disponible en 6 idiomas y el contenido se ha traducido a 3 idiomas. Además, se ha añadido una herramienta de traducción automática basada en inteligencia artificial para 135 idiomas.</div></div><div><div><img src=\"img/spunta.png\" width=\"40\" height=\"40\" style=\"margin-left:4px;\"></div><div><b>Personalización y usabilidad</b><br>- Se ha añadido un tamaño de texto \"muy grande\"<br>- Se ha añadido la denominación \"Shiatsu\" para archivos y contenido (por ejemplo, Uke en lugar de Cliente)</div></div><div><div><img src=\"img/ico_purchasesN.png\" width=\"32\" height=\"36\" style=\"margin-left:9px;\"></div><div><b>Compras dentro de la aplicación</b><br>Desde esta versión, puedes adquirir licencias directamente desde la aplicación haciendo clic en la sección \"Comprar una licencia\" en el menú de configuración.</div></div><div><div><img src=\"img/p_impostazioniN.png\" width=\"32\" height=\"36\" style=\"margin:6px 6px 6px 11px;\"></div><div><b>Mejoras</b><br>Hemos realizado diversas mejoras y corregido algunos errores presentes en la versión anterior.</div></div>",
+			fra: "<h2>Bienvenue à la version 1.4</h2><p class=\"descr\">Nous avons apporté quelques modifications à l'application pour la rendre encore plus riche en contenu, facile et intuitive à utiliser, et rapide.</p><div><div><img src=\"sets/meridiani_shiatsu/img/logoNero.png\" width=\"50\" height=\"50\"></div><div><b>ShiatsuMap</b><br>Nous avons ajouté des cartes et des protocoles de Namikoshi et restructuré le contenu pour faire de ShiatsuMap un outil encore plus complet.</div></div><div><div><img src=\"img/ico_linguaprefN.png\" width=\"32\" height=\"36\" style=\"margin-left:9px;\"></div><div><b>Prise en charge des langues</b><br>À partir de cette version, l'interface est disponible en 6 langues et le contenu a été traduit en 3 langues. De plus, un outil de traduction automatique basé sur l'intelligence artificielle pour 135 langues a été ajouté.</div></div><div><div><img src=\"img/spunta.png\" width=\"40\" height=\"40\" style=\"margin-left:4px;\"></div><div><b>Personnalisation et facilité d'utilisation</b><br>- Ajout d'une taille de texte \"très grande\"<br>- Ajout de la dénomination \"Shiatsu\" pour les archives et le contenu (par exemple, Uke au lieu de Client)</div></div><div><div><img src=\"img/ico_purchasesN.png\" width=\"32\" height=\"36\" style=\"margin-left:9px;\"></div><div><b>Achats intégrés</b><br>À partir de cette version, vous pouvez acheter des licences directement depuis l'application en cliquant sur la section \"Acheter une licence\" dans le menu des paramètres.</div></div><div><div><img src=\"img/p_impostazioniN.png\" width=\"32\" height=\"36\" style=\"margin:6px 6px 6px 11px;\"></div><div><b>Améliorations</b><br>Nous avons apporté diverses améliorations et corrigé certains bugs présents dans la version précédente.</div></div>",
+			por: "<h2>Bem-vindo à versão 1.4</h2><p class=\"descr\">Fizemos algumas alterações no aplicativo para torná-lo mais rico em conteúdo, fácil e intuitivo de usar, e rápido.</p><div><div><img src=\"sets/meridiani_shiatsu/img/logoNero.png\" width=\"50\" height=\"50\"></div><div><b>ShiatsuMap</b><br>Adicionamos mapas e protocolos de Namikoshi e reestruturamos o conteúdo para tornar o ShiatsuMap uma ferramenta ainda mais completa.</div></div><div><div><img src=\"img/ico_linguaprefN.png\" width=\"32\" height=\"36\" style=\"margin-left:9px;\"></div><div><b>Suporte de idiomas</b><br>A partir desta versão, a interface está disponível em 6 idiomas e o conteúdo foi traduzido para 3 idiomas. Além disso, foi adicionada uma ferramenta de tradução automática com inteligência artificial para 135 idiomas.</div></div><div><div><img src=\"img/spunta.png\" width=\"40\" height=\"40\" style=\"margin-left:4px;\"></div><div><b>Personalização e usabilidade</b><br>- Adicionado um tamanho de texto \"muito grande\"<br>- Adicionada a nomenclatura \"Shiatsu\" para arquivos e conteúdos (por exemplo, Uke em vez de Cliente)</div></div><div><div><img src=\"img/ico_purchasesN.png\" width=\"32\" height=\"36\" style=\"margin-left:9px;\"></div><div><b>Compras no aplicativo</b><br>A partir desta versão, você pode comprar licenças diretamente pelo aplicativo, clicando na seção \"Comprar uma licença\" no menu de configurações.</div></div><div><div><img src=\"img/p_impostazioniN.png\" width=\"32\" height=\"36\" style=\"margin:6px 6px 6px 11px;\"></div><div><b>Melhorias</b><br>Fizemos várias melhorias e corrigimos alguns bugs presentes na versão anterior.</div></div>",
+			deu: "<h2>Willkommen zur Version 1.4</h2><p class=\"descr\">Wir haben einige Änderungen an der Anwendung vorgenommen, um sie noch inhaltsreicher, benutzerfreundlicher und schneller zu gestalten.</p><div><div><img src=\"sets/meridiani_shiatsu/img/logoNero.png\" width=\"50\" height=\"50\"></div><div><b>ShiatsuMap</b><br>Wir haben Namikoshi-Karten und -Protokolle hinzugefügt und den Inhalt umstrukturiert, um ShiatsuMap zu einem noch umfassenderen Werkzeug zu machen.</div></div><div><div><img src=\"img/ico_linguaprefN.png\" width=\"32\" height=\"36\" style=\"margin-left:9px;\"></div><div><b>Sprachunterstützung</b><br>Ab dieser Version ist die Benutzeroberfläche in 6 Sprachen verfügbar und der Inhalt wurde in 3 Sprachen übersetzt. Darüber hinaus wurde ein KI-gesteuertes automatisches Übersetzungstool für 135 Sprachen hinzugefügt.</div></div><div><div><img src=\"img/spunta.png\" width=\"40\" height=\"40\" style=\"margin-left:4px;\"></div><div><b>Anpassung und Benutzerfreundlichkeit</b><br>- Hinzufügen einer \"sehr großen\" Textgröße<br>- Hinzufügen der Bezeichnung \"Shiatsu\" für Archive und Inhalte (z. B. Uke anstelle von Kunde)</div></div><div><div><img src=\"img/ico_purchasesN.png\" width=\"32\" height=\"36\" style=\"margin-left:9px;\"></div><div><b>In-App-Käufe</b><br>Ab dieser Version können Sie Lizenzen direkt über die App erwerben, indem Sie auf den Abschnitt \"Eine Lizenz kaufen\" im Einstellungsmenü klicken.</div></div><div><div><img src=\"img/p_impostazioniN.png\" width=\"32\" height=\"36\" style=\"margin:6px 6px 6px 11px;\"></div><div><b>Verbesserungen</b><br>Wir haben verschiedene Verbesserungen vorgenommen und einige Fehler der vorherigen Version behoben.</div></div>"
+		}
     },
     set: {}
 }

@@ -25,11 +25,11 @@ var FORNITORI = {
 		var noForn = true;
 		if(DB.fornitori.data.length){
 			var cloneFORNITORI = clone(DB.fornitori.data);
-			for(p in cloneFORNITORI){
+			for(let p in cloneFORNITORI){
 				cloneFORNITORI[p].p = p;
 			}
 			cloneFORNITORI.sort(sort_by("RagioneSociale", false));
-			for(p in cloneFORNITORI){
+			for(let p in cloneFORNITORI){
 				var FR = cloneFORNITORI[p];
 				
 				if(!FR.Cancellato){
@@ -64,7 +64,7 @@ var FORNITORI = {
 	},
 	filtra: function( event ){ // filtra l'elenco dei fornitori
 		var parola = document.getElementById("forn_ricerca").value;
-		for(p in DB.fornitori.data){
+		for(let p in DB.fornitori.data){
 			if(!DB.fornitori.data[p].Cancellato*1){
 				if(DB.fornitori.data[p].RagioneSociale.toLowerCase().indexOf(parola.toLowerCase()) == -1){
 					document.getElementById("fornitore_"+p).classList.add("nasPazRic");
@@ -86,7 +86,7 @@ var FORNITORI = {
 			}
 			if(maxFornitori>-1){
 				var tForn = 0;
-				for(c in DB.fornitori.data){
+				for(let c in DB.fornitori.data){
 					if(DB.fornitori.data[c].Cancellato*1==0)tForn++;
 				}
 				if(tForn >= maxFornitori && !document.body.classList.contains("pplhd")){
@@ -100,7 +100,7 @@ var FORNITORI = {
 						!SCHEDA.verificaSchedaRet(),
 						arguments ).then(function(pass){if(pass){
 						var v = getParamNames(CONFIRM.args.callee.toString());
-						for(i in v)eval(getArguments(v,i));
+						for(let i in v)eval(getArguments(v,i));
 			
 			var Q_idForn = __(Q_idForn, -1);
 			var salvato = __(salvato, false);
@@ -370,7 +370,7 @@ var FORNITORI = {
 						false,
 						arguments ).then(function(pass){if(pass){
 						var v = getParamNames(CONFIRM.args.callee.toString());
-						for(i in v)eval(getArguments(v,i));
+						for(let i in v)eval(getArguments(v,i));
 			
 			if(Q_idForn>-1){
 				var DataModifica = DB.fornitori.lastSync+1;

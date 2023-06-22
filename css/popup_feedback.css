@@ -52,7 +52,7 @@
 	body:not(.smart) #feedback{
 		left:0px;
 		width:100%;
-		height:auto !importan;/*344px;*/
+		height:auto !important;/*344px;*/
 		margin-top:-172px;
 		border-radius:0px;
 	}

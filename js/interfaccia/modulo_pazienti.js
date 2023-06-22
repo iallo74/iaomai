@@ -58,12 +58,12 @@ var PAZIENTI = {
 		var noPaz = true;
 		if(DB.pazienti.data.length){
 			var clonePAZIENTI = clone(DB.pazienti.data);
-			for(p in clonePAZIENTI){
+			for(let p in clonePAZIENTI){
 				clonePAZIENTI[p].p = p;
 			}
 			clonePAZIENTI.sort(sort_by("Cognome", false));
 			clonePAZIENTI.sort(sort_by("Nome", false));
-			for(p in clonePAZIENTI){
+			for(let p in clonePAZIENTI){
 				var PZ = clonePAZIENTI[p];
 				
 				if(!PZ.Cancellato){
@@ -117,7 +117,7 @@ var PAZIENTI = {
 	},
 	filtra: function( event ){
 		var parola = document.getElementById("paz_ricerca").value;
-		for(p in DB.pazienti.data){
+		for(let p in DB.pazienti.data){
 			if(!DB.pazienti.data[p].Cancellato*1){
 				if(	DB.pazienti.data[p].Nome.toLowerCase().indexOf(parola.toLowerCase()) == -1 && 
 					DB.pazienti.data[p].Cognome.toLowerCase().indexOf(parola.toLowerCase()) == -1){
@@ -135,7 +135,7 @@ var PAZIENTI = {
 						!SCHEDA.verificaSchedaRet(),
 						arguments ).then(function(pass){if(pass){
 						var v = getParamNames(CONFIRM.args.callee.toString());
-						for(i in v)eval(getArguments(v,i));
+						for(let i in v)eval(getArguments(v,i));
 				
 			if(SCHEDA.formModificato){
 				SCHEDA.formModificato = false;
@@ -187,7 +187,7 @@ var PAZIENTI = {
 						!SCHEDA.verificaSchedaRet(),
 						arguments ).then(function(pass){if(pass){
 						var v = getParamNames(CONFIRM.args.callee.toString());
-						for(i in v)eval(getArguments(v,i));
+						for(let i in v)eval(getArguments(v,i));
 			
 			endChangeDetection();
 			if( SCHEDA.classeAperta == 'scheda_A' ||
@@ -266,7 +266,7 @@ var PAZIENTI = {
 		}
 		if(maxClienti>-1 && PAZIENTI.idCL==-1){
 			var tPaz = 0;
-			for(c in DB.pazienti.data){
+			for(let c in DB.pazienti.data){
 				if(DB.pazienti.data[c].Cancellato*1==0)tPaz++;
 			}
 			if(tPaz >= maxClienti && !document.body.classList.contains("pplhd")){
@@ -279,7 +279,7 @@ var PAZIENTI = {
 						!SCHEDA.verificaSchedaRet(),
 						arguments ).then(function(pass){if(pass){
 						var v = getParamNames(CONFIRM.args.callee.toString());
-						for(i in v)eval(getArguments(v,i));
+						for(let i in v)eval(getArguments(v,i));
 			
 			MENU.nasMM();
 			var idPaziente=0;
@@ -495,7 +495,7 @@ var PAZIENTI = {
 					'					class="prefisso">' +
 					'				<option></option>';
 					
-				for(p in paesi){
+				for(let p in paesi){
 					var isSelected = '';
 					if(paeseCellulare == p)isSelected = ' SELECTED';
 					cont += '		<option'+isSelected +
@@ -874,7 +874,7 @@ var PAZIENTI = {
 						!SCHEDA.verificaSchedaRet(),
 						arguments ).then(function(pass){if(pass){
 						var v = getParamNames(CONFIRM.args.callee.toString());
-						for(i in v)eval(getArguments(v,i));
+						for(let i in v)eval(getArguments(v,i));
 						
 			SCHEDA.espandiElenco();
 			
@@ -976,7 +976,7 @@ var PAZIENTI = {
 				
 				HTML +=	'<div class="contAnag tags_head">';
 						
-				for(p in tags){
+				for(let p in tags){
 					HTML += '<span class="tag"' +
 							'	   style="background-color:#'+tags[p].colore+';">' +
 								htmlEntities(tags[p].NomeTag) +
@@ -1120,7 +1120,7 @@ var PAZIENTI = {
 				
 				H__2 +=	'	<div class="rgAnag rgMedicine">' +
 						'			<div>';
-				for(p in obj.ELS){
+				for(let p in obj.ELS){
 					H__2 += '<span class="tag" style="background-color:#FFF;">' +
 								htmlEntities(obj.ELS[p].NomeMedicina) +
 							'</span>';
@@ -1136,7 +1136,7 @@ var PAZIENTI = {
 				
 				H__2+=	'	<div class="rgAnag rgAllergie">' +
 						'			<div>';
-				for(p in obj.ELS){
+				for(let p in obj.ELS){
 					H__2 += '<span class="tag" style="background-color:#FFF;">' +
 								htmlEntities(obj.ELS[p].NomeAllergia) +
 							'</span>';
@@ -1152,7 +1152,7 @@ var PAZIENTI = {
 				
 				H__2 +=	'	<div class="rgAnag rgPatologie">' +
 						'			<div>';
-				for(p in obj.ELS){
+				for(let p in obj.ELS){
 					H__2 += '<span class="tag" style="background-color:#FFF;">' +
 								htmlEntities(obj.ELS[p].NomePatologia) +
 							'</span>';
@@ -1168,7 +1168,7 @@ var PAZIENTI = {
 				
 				H__2 +=	'	<div class="rgAnag rgInterventi">' +
 						'			<div>';
-				for(p in obj.ELS){
+				for(let p in obj.ELS){
 					H__2 += '<span class="tag" style="background-color:#FFF;">' +
 								htmlEntities(obj.ELS[p].NomeIntervento) +
 							'</span>';
@@ -1248,7 +1248,7 @@ var PAZIENTI = {
 		// salvo le immagini
 		//var f = 0;
 		var GA = PH.galleryProvvisoria;
-		for(i in GA){
+		for(let i in GA){
 			GA[i].Dida = document.getElementById("Dida"+i).value;
 			if(typeof(GA[i].imgMini) != 'undefined' && GA[i]!=null && GA[i].imgMini!=null){
 				
@@ -1325,7 +1325,7 @@ var PAZIENTI = {
 			}else{
 				// nuovo paziente
 				DB.pazienti.data.push(JSNPUSH);
-				for(p in DB.pazienti.data){
+				for(let p in DB.pazienti.data){
 					DB.pazienti.data[p].id_interno=p;
 					if(md5==DB.pazienti.data[p].md5)PAZIENTI.idCL=p;
 				}
@@ -1349,7 +1349,7 @@ var PAZIENTI = {
 						false,
 						arguments ).then(function(pass){if(pass){
 						var v = getParamNames(CONFIRM.args.callee.toString());
-						for(i in v)eval(getArguments(v,i));
+						for(let i in v)eval(getArguments(v,i));
 						
 			stopAnimate(true);
 			visLoader(TXT("SalvataggioInCorso"),'loadingLight');
@@ -1362,7 +1362,7 @@ var PAZIENTI = {
 				PAZIENTI.pazSelMD5='';
 			}
 			
-			for(n in DB.note.data){
+			for(let n in DB.note.data){
 				if(PAZIENTI.idCL == DB.note.data[n].idCL){
 					DB.note.data[n].Cancellato = 1;
 				}
@@ -1379,9 +1379,7 @@ var PAZIENTI = {
 				SCHEDA.scaricaScheda();
 				try{
 					SET.leggiNote();
-					localPouchDB.setItem(MD5("DB"+LOGIN._frv()+".note"), IMPORTER.COMPR(DB.note)).then(function(){
-						// salvo il DB
-					});
+					localPouchDB.setItem(MD5("DB"+LOGIN._frv()+".note"), IMPORTER.COMPR(DB.note));
 				}catch(err){}
 				LOGIN.pulisciGallery();
 			});
@@ -1410,7 +1408,7 @@ var PAZIENTI = {
 	caricaTags: function(){ // carica i tags del paziente
 		var HTML='';
 		if(PAZIENTI.tagsProvvisori.length>0){
-			for(p in PAZIENTI.tagsProvvisori){
+			for(let p in PAZIENTI.tagsProvvisori){
 				HTML += '<div class="rgTagsMod"' +
 						'	  data-id="'+PAZIENTI.tagsProvvisori[p].idTag+'">' +
 						'	<span class="tag"' +
@@ -1497,7 +1495,7 @@ var PAZIENTI = {
 					var DataModifica = DB.pazienti.lastSync+1;
 					var PZ = DB.pazienti.data;
 					var modificato = false;
-					for(p in PZ){
+					for(let p in PZ){
 						var tags = toJson(PZ[p].tags);
 						var tgMod = false;
 						if(tags.length){
@@ -1514,7 +1512,7 @@ var PAZIENTI = {
 							PZ[p].tags = tags;
 						}
 					}
-					for(p in PAZIENTI.tagsProvvisori){
+					for(let p in PAZIENTI.tagsProvvisori){
 						if(PAZIENTI.tagsProvvisori[p].NomeTag == oldValue){
 							PAZIENTI.tagsProvvisori[p] = JSNPUSH;
 						}
@@ -1549,7 +1547,7 @@ var PAZIENTI = {
 	cambiaColTag: function( el ){ // elimina un tag del paziente
 		var oldCol = el.dataset.colore;
 		var cSel = -1;
-		for(c=0;c<DB.coloriTags.length;c++){
+		for(let c=0;c<DB.coloriTags.length;c++){
 			if(DB.coloriTags[c]==oldCol)cSel = c+1;
 		}
 		if(cSel==DB.coloriTags.length)cSel = 0;
@@ -1560,7 +1558,7 @@ var PAZIENTI = {
 	getTags: function(){ // restituisce l'elenco globale dei tags
 		var TAGS = [];
 		var PZ = DB.pazienti.data;
-		for(p in PZ){
+		for(let p in PZ){
 			var tags = toJson(PZ[p].tags);
 			if(tags.length){
 				for(t in tags){
@@ -1576,8 +1574,7 @@ var PAZIENTI = {
 		}
 		return TAGS;
 	},
-	selezionaTag: function( t ){
-		if(typeof(id)=='undefined')var id=0;
+	selezionaTag: function( t=0 ){
 		var globalTags = PAZIENTI.getTags();
 		JSNPUSH={	"idTag": id*1,
 					"NomeTag": globalTags[t].NomeTag.trim(),
@@ -1702,7 +1699,7 @@ var PAZIENTI = {
 		obj = PAZIENTI.defElemento( tipo );
 		var HTML ='';
 		if(obj.ELS.length>0){
-			for(p in obj.ELS){
+			for(let p in obj.ELS){
 				HTML += '<div class="rg'+obj.els+'Mod"' +
 						'	  data-id="'+obj.ELS[p]["id"+obj.el]+'">' +
 						'	<span class="'+obj.el.toLowerCase()+'">' +
@@ -1790,7 +1787,7 @@ var PAZIENTI = {
 					var modificato = false;
 					obj = PAZIENTI.defElemento( tipo );
 					var PZ = DB.pazienti.data;
-					for(p in PZ){
+					for(let p in PZ){
 						var elenco = toJson(PZ[p][tipo]);
 						var pzMod = false;
 						if(elenco.length){
@@ -1807,7 +1804,7 @@ var PAZIENTI = {
 							PZ[p][tipo] = elenco;
 						}
 					}
-					for(p in EL){
+					for(let p in EL){
 						if(EL[p]["Nome"+obj.el]== oldValue){
 							EL[p] = JSNPUSH;
 						}
@@ -1842,12 +1839,12 @@ var PAZIENTI = {
 		obj = PAZIENTI.defElemento( tipo );
 		var LISTA = [];
 		var PZ = DB.pazienti.data;
-		for(p in PZ){
+		for(let p in PZ){
 			var elenco = toJson(PZ[p][tipo]);
 			if(elenco.length){
 				for(e in elenco){
 				   var pass = true;
-				   for(M in LISTA){
+				   for(let M in LISTA){
 					   if(LISTA[M]["Nome"+obj.el]==elenco[e]["Nome"+obj.el]){
 						  pass = false;
 					   }
@@ -1879,7 +1876,7 @@ var PAZIENTI = {
 		obj = PAZIENTI.defElemento( tipo );
 		var HTML = '';
 		var global = PAZIENTI.getElementi(tipo);
-		for(m in global){
+		for(let m in global){
 			var pass = true;
 			for(e in obj.ELS){
 				if(obj.ELS[e]["Nome"+obj.el] == global[m]["Nome"+obj.el])pass = false;

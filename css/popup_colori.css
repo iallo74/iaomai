@@ -148,6 +148,9 @@ body:not(.smart) #guida_generica #colSel{
 #a_BIG{
 	font-size:19px !important;
 }
+#a_MAG{
+	font-size:22.5px !important;
+}
 
 #t_MOUSE{
 	background-image:url(../img/ico_mouse.png);

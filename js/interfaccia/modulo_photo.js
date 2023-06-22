@@ -33,11 +33,8 @@ var PH = {
 	listaEstensioniFiles: [	"application/pdf" ],
 	maxFileSize: 20*1000*1000, // 20MB
 	
-	encodeImageFileAsURL: function( element, resizable, makeBig, functPH, listaEstensioni ) { // trasforma l'immagine in base64
+	encodeImageFileAsURL: function( element, resizable=false, makeBig=false, functPH='', listaEstensioni ) { // trasforma l'immagine in base64
 		var verSize = false;
-		if(typeof(functPH) == 'undefined')var functPH = '';
-		if(typeof(resizable) == 'undefined')var resizable = false;
-		if(typeof(makeBig) == 'undefined')var makeBig = false;
 		if(typeof(listaEstensioni) == 'undefined'){
 			var listaEstensioni = PH.listaEstensioni;
 			if(LOGIN.logedin() && !resizable){
@@ -353,8 +350,7 @@ var PH = {
 		eval(PH.functPH+"('"+JSON.stringify(obj)+"')");
 		PH.chiudi();
 	},
-	returnImageConverted: function( isBig ){ // restituisce l'immagine conveertita in base64
-		if(typeof(isBig) == 'undefined')var isBig = false;
+	returnImageConverted: function( isBig=false ){ // restituisce l'immagine conveertita in base64
 		var maxDim = 1000;
 		
 		var canvas = document.getElementById("img_CV");
@@ -399,17 +395,14 @@ var PH = {
 	
 	
 	// gallery
-	caricaGallery: function( vis, idU, dett ){ // carica la gallery in contGallery
+	caricaGallery: function( vis=false, idU='', dett=false ){ // carica la gallery in contGallery
 		var HTML='';
 		var totFoto = 0;
 		var afterFunct = '';
-		if(typeof(vis)=='undefined')var vis = false;
-		if(typeof(dett)=='undefined')var dett = false;
-		if(typeof(idU)=='undefined')var idU = '';
 		if(!idU)idU = DB.login.data.idUtente;
 		PH.idU = idU;
 		if(PH.galleryProvvisoria.length){
-			for(i in PH.galleryProvvisoria){
+			for(let i in PH.galleryProvvisoria){
 				totFoto++;
 				var src = '';
 				var cls = '';
@@ -420,7 +413,7 @@ var PH = {
 					src = PH.galleryProvvisoria[i].imgMini;
 				}
 				if(!locale){
-					for(f in DB.foto.data){
+					for(let f in DB.foto.data){
 						if(DB.foto.data[f].idFoto == PH.galleryProvvisoria[i].idFoto){
 							if(DB.foto.data[f].imgMini){
 								locale = true;
@@ -511,7 +504,7 @@ var PH = {
 			if(dett && !PH.actionClick){
 				setTimeout( function(){
 					var procs = [];
-					for(s in sets){
+					for(let s in sets){
 						var siglaProc = sets[s].siglaProc;
 						var nome = sets[s].nome;
 						if(!procs[siglaProc] && typeof(siglaProc)!='undefined')procs[siglaProc] = [];
@@ -520,7 +513,7 @@ var PH = {
 						}
 					}
 					n=-1;
-					for(f in DB.foto.data){
+					for(let f in DB.foto.data){
 						if(__(DB.foto.data[f].frv,false)==(LOGIN._frv()=='frv')){
 							n++;
 							var dim = DB.getStringMemorySize(IMPORTER.COMPR(DB.foto.data[f].imgMini));
@@ -536,13 +529,13 @@ var PH = {
 							
 							var ubicazione = "";
 							var u = 0;
-							for(p in DB.pazienti.data){
+							for(let p in DB.pazienti.data){
 								// verifico nel paziente
 								var gallery =  __(DB.pazienti.data[p].gallery,'[]');
 								if(!gallery)gallery='[]';
 								gallery = JSON.parse(gallery);
 								if(gallery.length){
-									for(g in gallery){
+									for(let g in gallery){
 										if(DB.foto.data[f].idFoto == gallery[g].idFoto){
 											u++;
 											ubicazione += "<p><b>"+u+"</b> ) <i>"+TXT("EtClienteGallery")+"</i> "+DB.pazienti.data[p].Nome+" "+DB.pazienti.data[p].Cognome + '</p>';
@@ -554,7 +547,7 @@ var PH = {
 									if(DB.pazienti.data[p].trattamenti[t].gallery){
 										var gallery =  JSON.parse(DB.pazienti.data[p].trattamenti[t].gallery);
 										if(gallery.length){
-											for(g in gallery){
+											for(let g in gallery){
 												if(DB.foto.data[f].idFoto == gallery[g].idFoto){
 													var tit = DB.pazienti.data[p].trattamenti[t].TitoloTrattamento;
 													if(!tit)tit = '...';
@@ -566,13 +559,13 @@ var PH = {
 									}
 								}
 							}
-							for(p in DB.procedure.data){
+							for(let p in DB.procedure.data){
 								// verifico nella procedura
 								var gallery =  __(DB.procedure.data[p].gallery,'[]');
 								if(!gallery)gallery='[]';
 								gallery = JSON.parse(gallery);
 								if(gallery.length){
-									for(g in gallery){
+									for(let g in gallery){
 										if(DB.foto.data[f].idFoto == gallery[g].idFoto){
 											u++;
 											ubicazione += "<p><b>"+u+"</b> ) <i>"+TXT("EtProceduraGallery")+" ("+procs[DB.procedure.data[p].app]+")</i> "+DB.procedure.data[p].NomeProcedura + '</p>';
@@ -612,19 +605,19 @@ var PH = {
 		if(afterFunct)eval(afterFunct);
 	},
 	resizeDida: function(){ // ridimensiona il campo dida in base al testo digitato
-		for(i in PH.galleryProvvisoria){
+		for(let i in PH.galleryProvvisoria){
 			H.auto_height(document.getElementById('Dida'+i));
 		}
 	},
 	scriviFoto: function( res ){ // scrive la miniatura
 		res = JSON.parse( res );
 		var presente = false;
-		for(f in DB.foto.data){
+		for(let f in DB.foto.data){
 			if(res.idFoto == DB.foto.data[f].idFoto){
 				presente = f;
 			}
 		}
-		for(f in PH.galleryProvvisoria){
+		for(let f in PH.galleryProvvisoria){
 			if(res.idFoto == PH.galleryProvvisoria[f].idFoto && __(PH.galleryProvvisoria[f].imported,false)){
 				presente = f;
 				console.log("OK")
@@ -673,7 +666,7 @@ var PH = {
 						false,
 						arguments ).then(function(pass){if(pass){
 						var v = getParamNames(CONFIRM.args.callee.toString());
-						for(i in v)eval(getArguments(v,i));
+						for(let i in v)eval(getArguments(v,i));
 
 			PH.galleryProvvisoria.splice(f,1);
 			
@@ -686,22 +679,21 @@ var PH = {
 						false,
 						arguments ).then(function(pass){if(pass){
 						var v = getParamNames(CONFIRM.args.callee.toString());
-						for(i in v)eval(getArguments(v,i));
+						for(let i in v)eval(getArguments(v,i));
 			CONN.caricaUrl(	'delImgGallery.php',
 							'iU='+PH.idU+'&idFoto='+idFoto,
 							'PH.car_gallery_online');
 			
 		}});
 	},
-	fullFoto: function( i, locale, elenco ){ // elabora la richiesta di mostrare la foto BIG
-		if(typeof(elenco)=='undefined')var elenco = PH.galleryProvvisoria;
+	fullFoto: function( i, locale, elenco = PH.galleryProvvisoria ){ // elabora la richiesta di mostrare la foto BIG
 		var locale = false;
 		if(__(elenco[i].nuova)){
 			locale = true;
 			src = elenco[i].imgBig;
 		}
 		if(!locale){
-			for(f in DB.foto.data){
+			for(let f in DB.foto.data){
 				if(DB.foto.data[f].idFoto == elenco[i].idFoto){
 					if(DB.foto.data[f].imgBig){
 						locale = true;
@@ -727,7 +719,7 @@ var PH = {
 					foto = elenco[i];
 				}
 				if(!locale){
-					for(f in DB.foto.data){
+					for(let f in DB.foto.data){
 						if(DB.foto.data[f].idFoto == elenco[i].idFoto){
 							foto = DB.foto.data[f];
 						}
@@ -737,9 +729,8 @@ var PH = {
 			}
 		}
 	},
-	openFile: function( i, elenco, fileType ){ // apro il file online
+	openFile: function( i, elenco = PH.galleryProvvisoria, fileType ){ // apro il file online
 		if(!CONN.retNoConn())return;
-		if(typeof(elenco)=='undefined')var elenco = PH.galleryProvvisoria;
 		if(!elenco)elenco = PH.galleryProvvisoria;	
 		if(fileType=='pdf' && !android)PH.visPdfBig(CONN.APIfolder+"getFile.php?inline=1&c="+DB.login.data.TOKEN+localStorage.UniqueId+elenco[i].idFoto.replace("foto_","")+DB.login.data.idUtente);
 		else CONN.openUrl(CONN.APIfolder+"getFile.php?c="+DB.login.data.TOKEN+localStorage.UniqueId+elenco[i].idFoto.replace("foto_","")+DB.login.data.idUtente);
@@ -749,7 +740,7 @@ var PH = {
 		var lowRes = false;
 		var urlImg = res.imgBig;
 		if(!urlImg || urlImg=='404'){
-			for(f in DB.foto.data){
+			for(let f in DB.foto.data){
 				if(DB.foto.data[f].idFoto == res.idFoto){
 					urlImg = DB.foto.data[f].imgMini;
 					lowRes = true;
@@ -836,7 +827,7 @@ var PH = {
 	},
 	car_gallery_local: function(){ // legge la lista dei file locali
 		PH.galleryProvvisoria = [];
-		for(f in DB.foto.data){
+		for(let f in DB.foto.data){
 			if(__(DB.foto.data[f].frv,false)==(LOGIN._frv()=='frv'))PH.galleryProvvisoria.push({ idFoto: DB.foto.data[f].idFoto, Dida: '' });
 		}
 		PH.caricaGallery(true,'',true);
@@ -851,9 +842,9 @@ var PH = {
 		PH.galleryOnline = [];
 		if(res){
 			var foto = JSON.parse(res);
-			for(f=foto.length-1;f>=0;f--){
+			for(let f=foto.length-1;f>=0;f--){
 				presente = false;
-				for(i in DB.foto.data){
+				for(let i in DB.foto.data){
 					if(DB.foto.data[i].idFoto == foto[f].idFoto)presente = true;
 				}
 				if(presente)foto.splice(f,1);
@@ -861,7 +852,7 @@ var PH = {
 			PH.galleryOnline = foto;
 		}
 		if(PH.galleryOnline.length){
-			for(f in PH.galleryOnline){
+			for(let f in PH.galleryOnline){
 				var src = PH.galleryOnline[f].imgMini;
 				var isFile = false;
 				var type = '';

@@ -29,7 +29,7 @@ var BACKUPS = {
 			else bkps = JSON.parse(bkps);
 			BACKUPS.totBackups = bkps.length;
 			if(BACKUPS.totBackups){
-				for(n in bkps){
+				for(let n in bkps){
 					var title = bkps[n].title;
 					var file = bkps[n].name.split(".")[0];
 					var d = file.split("-")[1]*1;

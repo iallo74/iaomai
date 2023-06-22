@@ -24,6 +24,7 @@ SET.COL = {
 	
 	/* VERSIONE CON PALLINI BLU */
 	eviPT: 0x0066BF,
+	eviFR: 0x000088,
 	eviPTemissive: 0x000040,
 	vuotoPT: 0x000000,
 	vuotoPTemissive: 0x191933,
@@ -98,6 +99,11 @@ SET.MAT = {
 	} ),
 	lineFrecce: new THREE.LineBasicMaterial( {
 		color: SET.COL.eviPT,
+		transparent: true,
+		opacity:0.8
+	} ),
+	lineFrecceEvi: new THREE.LineBasicMaterial( {
+		color: SET.COL.eviFR,
 		transparent: true,
 		opacity:0.8
 	} ),

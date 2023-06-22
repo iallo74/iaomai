@@ -22,11 +22,11 @@ var SERVIZI = {
 		var noServ = true;
 		if(DB.servizi.data.length){
 			var cloneSERVIZI = clone(DB.servizi.data);
-			for(p in cloneSERVIZI){
+			for(let p in cloneSERVIZI){
 				cloneSERVIZI[p].p = p;
 			}
 			cloneSERVIZI.sort(sort_by("NomeServizio", false));
-			for(p in cloneSERVIZI){
+			for(let p in cloneSERVIZI){
 				var SR = cloneSERVIZI[p];
 				
 				if(!SR.Cancellato){
@@ -61,7 +61,7 @@ var SERVIZI = {
 	},
 	filtra: function( event ){
 		var parola = document.getElementById("serv_ricerca").value;
-		for(p in DB.servizi.data){
+		for(let p in DB.servizi.data){
 			if(!DB.servizi.data[p].Cancellato*1){
 				if(DB.servizi.data[p].NomeServizio.toLowerCase().indexOf(parola.toLowerCase()) == -1){
 					document.getElementById("servizio_"+p).classList.add("nasPazRic");
@@ -83,7 +83,7 @@ var SERVIZI = {
 			}
 			if(maxServizi>-1){
 				var tServ = 0;
-				for(c in DB.servizi.data){
+				for(let c in DB.servizi.data){
 					if(DB.servizi.data[c].Cancellato*1==0)tServ++;
 				}
 				if(tServ >= maxServizi && !document.body.classList.contains("pplhd")){
@@ -97,7 +97,7 @@ var SERVIZI = {
 						!SCHEDA.verificaSchedaRet(),
 						arguments ).then(function(pass){if(pass){
 						var v = getParamNames(CONFIRM.args.callee.toString());
-						for(i in v)eval(getArguments(v,i));
+						for(let i in v)eval(getArguments(v,i));
 			
 			var Q_idServ = __(Q_idServ, -1);
 			var salvato = __(salvato, false);
@@ -256,7 +256,7 @@ var SERVIZI = {
 						false,
 						arguments ).then(function(pass){if(pass){
 						var v = getParamNames(CONFIRM.args.callee.toString());
-						for(i in v)eval(getArguments(v,i));
+						for(let i in v)eval(getArguments(v,i));
 			
 			if(Q_idServ>-1){
 				var DataModifica = DB.servizi.lastSync+1;
@@ -280,7 +280,7 @@ var SERVIZI = {
 						!SCHEDA.verificaSchedaRet(),
 						arguments ).then(function(pass){if(pass){
 						var v = getParamNames(CONFIRM.args.callee.toString());
-						for(i in v)eval(getArguments(v,i));
+						for(let i in v)eval(getArguments(v,i));
 		
 			var HTML = '';
 			HTML += '<div id="serv_spiegazione">' +
@@ -289,7 +289,7 @@ var SERVIZI = {
 					'<div id="app_elenco"' +
 					'	  class="serv_elenco">';
 			var noServ = true;
-			for(p in DB.servizi.data){
+			for(let p in DB.servizi.data){
 				if(!DB.servizi.data[p].Cancellato){
 					noServ = false;
 					HTML += '<div class="app_serv"' +
@@ -384,7 +384,7 @@ var SERVIZI = {
 						false,
 						arguments ).then(function(pass){if(pass){
 						var v = getParamNames(CONFIRM.args.callee.toString());
-						for(i in v)eval(getArguments(v,i));
+						for(let i in v)eval(getArguments(v,i));
 						
 			var NomeServizio = DB.servizi.data[p].NomeServizio;
 			var CostoServizio = DB.servizi.data[p].CostoServizio;
@@ -412,6 +412,7 @@ var SERVIZI = {
 								"Prescrizione": "",
 								"puntiTsuboMap": "",
 								"puntiAuriculoMap": "",
+								"puntiNamikoshi": "",
 								"sintomi": "[]",
 								"meridiani": "[]",
 								"gallery": "[]",
@@ -432,7 +433,7 @@ var SERVIZI = {
 			}
 			
 			
-			for(s=0;s<DB.servizi.data[p].NumeroSedute;s++){
+			for(let s=0;s<DB.servizi.data[p].NumeroSedute;s++){
 				var TitoloTrattamento = NomeSeduta;
 				if(DB.servizi.data[p].NumeroSedute>1)TitoloTrattamento += " "+(s+1)
 				JSNPUSH={	"idTrattamento": 0,
@@ -444,6 +445,7 @@ var SERVIZI = {
 							"Prescrizione": "",
 							"puntiTsuboMap": "",
 							"puntiAuriculoMap": "",
+							"puntiNamikoshi": "",
 							"sintomi": "[]",
 							"meridiani": "[]",
 							"gallery": "[]",

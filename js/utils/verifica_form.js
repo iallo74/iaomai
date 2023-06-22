@@ -1,5 +1,3 @@
-<!--
-
 /*
 ---------------------------------------------------------------------
 ----- VALIDATORE GENERICO DI FORM (v. 1.0.1) 14 maggio 2006 ---------
@@ -15,8 +13,8 @@ l'id deve essere suddiviso in valori dal segno |
 
 0) @ indica che l'elemento deve essere controllato
 1) [testo] indica il nome visualizzato nell'alert
-2) [numero] indica il numero minimo di caratteri che il campo può contenere (0 esclude il controllo)
-3) [numero] indica il numero massimo di caratteri che il campo può contenere (si usa per textarea perché i campi text hanno già il controllo inserito)
+2) [numero] indica il numero minimo di caratteri che il campo puï¿½ contenere (0 esclude il controllo)
+3) [numero] indica il numero massimo di caratteri che il campo puï¿½ contenere (si usa per textarea perchï¿½ i campi text hanno giï¿½ il controllo inserito)
 4) [testo] indica il nome di una funzione da richiamare per un controllo particolare (es. validazione email). Se si inserisce di nuovo il carattere @ viene automaticamente validato come email. Se si inserisce "num" viene automaticamente validato come numero. Se si inserisce "int" viene validato come numero ntero
 
 
@@ -112,7 +110,7 @@ function verifica_form(frm){
 		if (ver_parti.length>3) ver_lMax=ver_parti[3];
 		if (ver_parti.length>4) ver_funzione=ver_parti[4];
 		if (ver_contr){
-			if (ver_type=="text" || ver_type=="textarea" || ver_type=="hidden" || ver_type=="password"){ // se è un testo
+			if (ver_type=="text" || ver_type=="textarea" || ver_type=="hidden" || ver_type=="password"){ // se ï¿½ un testo
 				if(ver_value.length<ver_lMin){
 					if(ver_lMin>1)ALERT(TXT("lunghezzaMinCampo").replace("[1]","'"+ver_etichetta+"' ").replace("[2]"," "+ver_lMin).replace("[3]"," "+ver_value.length));
 					else ALERT(TXT("inserireValore").replace("[1]"," '"+ver_etichetta+"' "));
@@ -125,14 +123,14 @@ function verifica_form(frm){
 					return false;
 				}
 			}
-			if (ver_type=="select-one"){ // se è un testo
+			if (ver_type=="select-one"){ // se ï¿½ un testo
 				if(frm.elements[k].selectedIndex==0){
 					ALERT(TXT("selezionareValore").replace("[1]"," '"+ver_etichetta+"' "));
 					frm.elements[k].focus();
 					return false;
 				}
 			}
-			if (ver_type=="checkbox"){ // se è un testo
+			if (ver_type=="checkbox"){ // se ï¿½ un testo
 				if(!frm.elements[k].checked){
 					ALERT(TXT("selezionareCasella").replace("[1]"," '"+ver_etichetta+"' "));
 					frm.elements[k].focus();
@@ -153,4 +151,3 @@ function verifica_form(frm){
 	}
 	return true;
 }
-//-->

@@ -3,6 +3,36 @@ var MODULO_PATOLOGIE = { // extend SET
 
 	PATOLOGIE_free: [ "12", "18", "26", "46", "104" ],
 	
+	componiPatologie: function(){
+		for(let p in DB.set.patologie){
+			
+			var nmk = false;
+			var mas = false;
+			var cin = false;
+			
+			
+			// carica le schede collegate
+			var SCH = DB.set.schede[DB.set.patologie[p].scheda];
+			var txtMTC = '';
+			for(let s in SCH.mtc){
+				txtMTC += '<div class="schedaSpecifica" data-sistema=""><p>'+TXT("MTC")+'<span class="eviPtsBtn" onclick="SET.evidenziaPat(this.parentElement.parentElement);"></span></p>'+SCH.mtc[s]+'<div class="swSistema"><span onClick="SET.swSistemaMeridiani(this.parentElement.parentElement);">'+TXT("CambiaMeridiani")+'</span></div></div>';
+			}
+			if(txtMTC){
+				DB.set.patologie[p].TestoPatologia += '<br><br>'+txtMTC
+			}
+			var txtNMK = '';
+			for(let s in SCH.nmk){
+				var PRT = DB.set.protocolli[SCH.nmk[s]];
+				txtNMK += '<div class="schedaSpecifica" data-sistema="NMK"><p>'+PRT.TitoloProtocollo+'<span class="eviPtsBtn" onclick="SET.evidenziaPat(this.parentElement.parentElement);"></span></p>'+PRT.TestoProtocollo+'</div>';
+				nmk = true;
+			}
+			if(txtNMK){
+				DB.set.patologie[p].TestoPatologia += '<br><br><b>'+TXT("ProtocolloNamikoshi")+'</b><br>'+txtNMK
+			}
+			DB.set.patologie[p].TestoPatologia += '<br><br>'+SCH.txt;
+		}
+		SET.caricaPatologie();
+	},
 	caricaPatologie: function(){
 		// carica la lista delle patologie
 		var contPatologie = 
@@ -13,15 +43,48 @@ var MODULO_PATOLOGIE = { // extend SET
 						'		   placeholder="'+htmlEntities(TXT("CercaPatologia"))+'"'+H.noAutoGen+'>' +
 						'</div>' +
 						'<div class="lista listaPatologie">';
-		for(p in DB.set.patologie){
+		for(let p in DB.set.patologie){
+			
+			var nmk = false;
+			var mas = false;
+			var cin = false;
+			
+			try{ 
+				regexp = /\[\.[A-Z]{2}\.\]/ig;
+				pts = DB.set.patologie[p].TestoPatologia.match(regexp);
+				if(pts.length)mas = true;
+			}catch(err){}
+			try{ 
+				regexp = /\[\.[0-9]{1,2}\.[A-Z]{2}\.\]/ig;
+				pts = DB.set.patologie[p].TestoPatologia.match(regexp);
+				if(pts.length){
+					for(let n in pts){
+						if(pts[n].split(".")[2]!='NK')cin = true;
+						else nmk = true;
+					}
+				}
+			}catch(err){}
+			/*try{ 
+				regexp = /\[\.[A-Z]{2}\.NK\.\]/ig;
+				pts = DB.set.patologie[p].TestoPatologia.match(regexp);
+				if(pts.length)nmk = true;
+			}catch(err){}*/
+			
+			//var addSys = " pats"+__(DB.set.patologie[p].sistema,'');
+			var addSys = '';
+			if(nmk)addSys += ' patsNMK';
+			if(mas)addSys += ' patsMAS';
+			if(cin)addSys += ' patsCIN';
 			
 			// verifico le autorizzazioni
 			var addLock =	(!SET.verFreePatologia(DB.set.patologie[p].siglaPatologia)) ? ' lockedItem' : '';
 			// --------------------------
-						
+			
+			if(__(DB.set.patologie[p].evi))addSys += " patEvi";
 			contPatologie +=	'<div id="btn_patologia_'+p+'"' +
-								'     class="base'+addLock+'"' +
+								'     class="base'+addLock+addSys+'"' +
 								'     onClick="SET.apriPatologia(\''+p+'\',this);">' +
+								'<span class="pallSYS"></span>' +
 									DB.set.patologie[p].NomePatologia +
 								'</div>';
 		}
@@ -30,8 +93,9 @@ var MODULO_PATOLOGIE = { // extend SET
 	},
 	apriPatologia: function( n, btn ){
 		// apre la scheda della patologia
+		var siglaPatologia = DB.set.patologie[n].siglaPatologia;
 		// verifico le autorizzazioni
-		if(!SET.verFreePatologia(DB.set.patologie[n].siglaPatologia)){
+		if(!SET.verFreePatologia(siglaPatologia)){
 			ALERT(TXT("MsgContSoloPay"),true,true);
 			return;
 		}
@@ -63,15 +127,32 @@ var MODULO_PATOLOGIE = { // extend SET
 								ritorno,
 								true,
 								btn,
-								btnAdd );
+								btnAdd,
+								globals.set.cartella+'_patologie_'+siglaPatologia );
 		SET.convSigleScheda();
-		SET.evidenziaTsubo(html);
-		SET.evidenziaMeridiani(html);
+		/*SET.evidenziaTsubo(html);
+		SET.evidenziaMeridiani(html);*/
+		var els = document.getElementById("scheda_testo").getElementsByClassName("schedaSpecifica");
+		var selected = false;
+		for(let e=0;e<els.length;e++){
+			var sistema = __(els[e].dataset.sistema,'');
+			var sistemaVer = localStorage.sistemaMeridiani;
+			if(sistemaVer=='MAS')sistemaVer = '';
+			if(sistema == sistemaVer && !selected){
+				SET.evidenziaPat(els[e]);
+				els[e].classList.add("eviPoints");
+				selected = true;
+			}
+		}
+		if(!selected){
+			SET.annullaEvidenziaTsubo();
+			SET.spegniMeridiani(true);
+		}
 	},
 	filtraPatologie: function( event ){
 		// filtra le patologie con il campo testuale
 		var parola = document.getElementById("pat_ricerca").value.trim();
-		for(p in DB.set.patologie){
+		for(let p in DB.set.patologie){
 			if(DB.set.patologie[p].NomePatologia.toLowerCase().indexOf(parola.toLowerCase()) == -1){
 				document.getElementById("btn_patologia_"+p).classList.add("nasPazRic");
 			}else{

@@ -32,7 +32,7 @@ var MODULO_PATOLOGIE = { // extend SET
 								'	</span>' +
 								'	<div>';
 								
-				for(p in DB.set.patologie){
+				for(let p in DB.set.patologie){
 					
 					if(DB.set.patologie[p].apparato == a){
 						// verifico le autorizzazioni
@@ -55,7 +55,7 @@ var MODULO_PATOLOGIE = { // extend SET
 			}
 		}else{
 			// lista				
-			for(p in DB.set.patologie){
+			for(let p in DB.set.patologie){
 				
 				// verifico le autorizzazioni
 				var addLock =	(!SET.verFreePatologia(p*1)) ? ' lockedItem' : '';
@@ -81,7 +81,7 @@ var MODULO_PATOLOGIE = { // extend SET
 		if(typeof(el)=='object'){
 			if(typeof(el.length)=='undefined'){
 				ST += '<div class="ptTr" data-tri="'+el.l+'"><div>';
-				for(j=0;j<el.p.length;j++){
+				for(let j=0;j<el.p.length;j++){
 					if(el.p[j].length==3)ST += '[.'+el.p[j]+'.]';
 					else ST += '<span class="etPoints">'+el.p[j].replace('[]','<span class="pNUL"></span>')+'</span>';
 					if(j<el.p.length-1)ST += '<br>';
@@ -92,7 +92,7 @@ var MODULO_PATOLOGIE = { // extend SET
 			
 			}else{
 				ST += '<p class="ptLk">';
-				for(j=0;j<el.length;j++){
+				for(let j=0;j<el.length;j++){
 					ST += '[.'+el[j]+'.]';
 					if(j<el.length-1)ST += '<br>';
 				}
@@ -106,7 +106,7 @@ var MODULO_PATOLOGIE = { // extend SET
 	getListPointPat: function( n ){
 		var EL = [];
 		function getPT( obj ){
-			for(var o in obj){
+			for(let o in obj){
 				if(typeof(obj[o])=='object'){
 					getPT(obj[o]);
 				}else if(obj[0]){
@@ -144,20 +144,20 @@ var MODULO_PATOLOGIE = { // extend SET
 			if(!__(objTer.g.sx,'')){
 				ST += '	<strong>'+TXT("PadiglioneDominante")+'</strong><br><br>';
 				if(__(objTer.g.ds))ST += '<em>'+TXT("PuntiPrincipali")+'</em>';
-				for(p in objTer.g.dp.p){
+				for(let p in objTer.g.dp.p){
 					ST += SET.getPointPat(objTer.g.dp.p[p]);
 				}
 				if(__(objTer.g.dp.a))ST += ''+objTer.g.dp.a+'<br>';
 				if(__(objTer.g.ds)){
 					ST += '<br><em>'+TXT("PuntiSecondari")+'</em>';
-					for(p in objTer.g.ds.p){
+					for(let p in objTer.g.ds.p){
 						ST += SET.getPointPat(objTer.g.ds.p[p]);
 					}
 					if(__(objTer.g.ds.a))ST += ''+objTer.g.ds.a+'<br>';
 				}
 			}else{
 				ST += '	<strong>'+TXT("PadiglioneSinistro")+'</strong><br><br>';
-				for(p in objTer.g.sx.p){
+				for(let p in objTer.g.sx.p){
 					ST += SET.getPointPat(objTer.g.sx.p[p]);
 				}
 				if(__(objTer.g.sx.a))ST += ''+objTer.g.sx.a+'<br>';
@@ -166,13 +166,13 @@ var MODULO_PATOLOGIE = { // extend SET
 			if(!__(objTer.g.dx,'')){
 				ST += '<strong>'+TXT("PadiglioneNonDominante")+'</strong><br><br>';
 				if(__(objTer.g.ns))ST += '<em>'+TXT("PuntiPrincipali")+'</em>';
-				for(p in objTer.g.np.p){
+				for(let p in objTer.g.np.p){
 					ST += SET.getPointPat(objTer.g.np.p[p]);
 				}
 				if(__(objTer.g.np.a))ST += ''+objTer.g.np.a+'<br>';
 				if(__(objTer.g.ns)){
 					ST += '<br><em>'+TXT("PuntiSecondari")+'</em>';
-					for(p in objTer.g.ns.p){
+					for(let p in objTer.g.ns.p){
 						ST += SET.getPointPat(objTer.g.ns.p[p]);
 					}
 					if(__(objTer.g.ns.a))ST += ''+objTer.g.ns.a+'<br>';
@@ -180,7 +180,7 @@ var MODULO_PATOLOGIE = { // extend SET
 			}else{
 				ST +=
 				'	<strong>'+TXT("PadiglioneDestro")+'</strong><br><br>';
-				for(p in objTer.g.dx.p){
+				for(let p in objTer.g.dx.p){
 					ST += SET.getPointPat(objTer.g.dx.p[p]);
 				}
 				if(__(objTer.g.dx.a))ST += ''+objTer.g.dx.a+'<br>';
@@ -190,10 +190,10 @@ var MODULO_PATOLOGIE = { // extend SET
 			ST += '</div>';
 			if(__(objTer.s,[]).length){
 				if(!__(objTer.tit))ST += '<div class="lineaSu" id="causeSpecifiche"><p><b>'+TXT("CauseSpecifiche")+'</b></p>';
-				for(s in objTer.s){
+				for(let s in objTer.s){
 					ST += '<div class="schedaSpecifica"><p><span class="eviPtsBtn" onClick="SET.eviPointsPat(this.parentElement.parentElement);"></span>'+objTer.s[s].t+'</p>';
 					if(__(objTer.s[s].d))ST += ''+objTer.s[s].d+'<br>';
-					for(p in objTer.s[s].p){
+					for(let p in objTer.s[s].p){
 						ST += SET.getPointPat(objTer.s[s].p[p]);
 					}
 					if(__(objTer.s[s].a))ST += ''+objTer.s[s].a+'<br>';
@@ -209,7 +209,7 @@ var MODULO_PATOLOGIE = { // extend SET
 			}
 		}
 		var elencoAltre = '';
-		for(p in DB.set.patologie){
+		for(let p in DB.set.patologie){
 			if(p != n && DB.set.patologie[p].scheda == DB.set.patologie[n].scheda){
 				elencoAltre += '<p onClick="SET.apriPatologia(\''+p+'\',document.getElementById(\'btn_patologia_'+p+'\'));"><span>• '+DB.set.patologie[p].NomePatologia+'</span></p>';
 			}
@@ -268,11 +268,12 @@ var MODULO_PATOLOGIE = { // extend SET
 								ritorno,
 								true,
 								btn,
-								btnAdd );
+								btnAdd,
+								globals.set.cartella+'_patologie_'+n );
 		SET.eviPointsPat(document.getElementById("schedaTerapeutica"));
 	},
 	getPatFromScheda: function( scheda ){
-		for(p in DB.set.patologie){
+		for(let p in DB.set.patologie){
 			if(DB.set.patologie[p].scheda == scheda)return p;
 		}
 	},
@@ -290,7 +291,7 @@ var MODULO_PATOLOGIE = { // extend SET
 	},
 	filtraPatologie: function( event ){ // filtra le patologie tramite campo di testo
 		var parola = document.getElementById("pat_ricerca").value.trim();
-		for(p in DB.set.patologie){
+		for(let p in DB.set.patologie){
 			if(DB.set.patologie[p].NomePatologia.toLowerCase().indexOf(parola.toLowerCase()) == -1){
 				document.getElementById("btn_patologia_"+p).classList.add("nasPazRic");
 			}else{

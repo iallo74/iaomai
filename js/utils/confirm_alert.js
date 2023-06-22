@@ -6,16 +6,12 @@ var CONFIRM = {
 	txtBtnConf: '',
 	args: '',
 	type: '',
-    vis: function ( domanda, bypass, args, style, txtBtnConf ) {
+    vis: function ( domanda, bypass=false, args=false, style=false, txtBtnConf=TXT("si") ) {
 		// azzero prima di avviare
 		clearInterval(CONFIRM.interval);
 		CONFIRM.conferma = null;
 		CONFIRM.bypass = false;
-		
-		if(typeof(bypass) == 'undefined')var bypass = false;
-		if(typeof(args) == 'undefined')var args = false;
-		if(typeof(style) == 'undefined')var style = false;
-		if(typeof(txtBtnConf ) == 'undefined')var txtBtnConf =TXT("si");
+
       	this.bypass = bypass;
 		this.args = args;
 		if(!this.bypass){
@@ -57,8 +53,7 @@ var CONFIRM = {
     reject: function () {
         this.conferma = false;
     },
-	nascondi: function( bypass ){
-		if(typeof(bypass) == 'undefined')var bypass = false;
+	nascondi: function( bypass=false ){
 		clearInterval(CONFIRM.interval);
 		CONFIRM.conferma = null;
 		CONFIRM.bypass = false;
@@ -89,9 +84,7 @@ var CONFIRM = {
 		}
 	}
 }
-function ALERT( msg, login, purchase ){
-	if(typeof(login) == 'undefined')var login = false;
-	if(typeof(purchase) == 'undefined')var purchase = false;
+function ALERT( msg, login=false, purchase=false ){
 	CONFIRM.type = 'alert';
 	document.getElementById("CNF_titolo").innerHTML = stripslashes(msg.replace(/\n/g,"<br>"));
 	document.getElementById("CNF").classList.add("visCNF");

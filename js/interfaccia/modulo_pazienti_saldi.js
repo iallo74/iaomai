@@ -12,11 +12,11 @@ var PAZIENTI_SALDI = {
 			var DaSaldare=Saldato=0;
 			if(typeof(PZ.saldi)!='undefined'){
 				cloneSALDI = clone(PZ.saldi);
-				for(p in cloneSALDI){
+				for(let p in cloneSALDI){
 					cloneSALDI[p].p = p;
 				}
 				cloneSALDI.sort(sort_by("DataSaldo", true, parseInt));
-				for(p in cloneSALDI){
+				for(let p in cloneSALDI){
 					var SA = cloneSALDI[p];
 					if(!PAZIENTI.saldoOp)SA.md5='';
 					if(!SA.Cancellato){
@@ -34,7 +34,7 @@ var PAZIENTI_SALDI = {
 			
 			
 			if(typeof(PZ.trattamenti)!='undefined'){
-				for(p in PZ.trattamenti){
+				for(let p in PZ.trattamenti){
 					var TR = PZ.trattamenti[p];
 					if(!TR.Cancellato && typeof(TR.CostoTrattamento)!='undefined')DaSaldare+=TR.CostoTrattamento;
 				}
@@ -93,7 +93,7 @@ var PAZIENTI_SALDI = {
 						!SCHEDA.verificaSchedaRet(),
 						arguments ).then(function(pass){if(pass){
 						var v = getParamNames(CONFIRM.args.callee.toString());
-						for(i in v)eval(getArguments(v,i));
+						for(let i in v)eval(getArguments(v,i));
 						Q_idSaldo = __(Q_idSaldo,-1); // prefefinito
 			
 			MENU.nasMM();
@@ -105,7 +105,7 @@ var PAZIENTI_SALDI = {
 			var PZ = DB.pazienti.data[PAZIENTI.idCL];
 			if(Q_idSaldo>-1){
 				var SA = PZ.saldi[Q_idSaldo];
-				for(i in PZ.saldi)PZ.saldi[i].md5='';
+				for(let i in PZ.saldi)PZ.saldi[i].md5='';
 				idSaldo=SA.idSaldo*1;
 				MotivoSaldo=SA.MotivoSaldo;
 				RicevutaSaldo= __(SA.RicevutaSaldo);
@@ -113,9 +113,7 @@ var PAZIENTI_SALDI = {
 				DataSaldo=SA.DataSaldo*1;
 				SA.md5=PAZIENTI.pazSelMD5;
 				
-				localPouchDB.setItem(MD5("DB"+LOGIN._frv()+".pazienti"), IMPORTER.COMPR(DB.pazienti)).then(function(){
-					// salvo il DB
-				});
+				localPouchDB.setItem(MD5("DB"+LOGIN._frv()+".pazienti"), IMPORTER.COMPR(DB.pazienti));
 			}else{
 				DataSaldo = new Date()*1;
 				DataSaldo /= 1000;
@@ -265,9 +263,7 @@ var PAZIENTI_SALDI = {
 			}
 			if(document.formMod.Intestazione){
 				DB.login.data.Intestazione=document.formMod.Intestazione.value;
-				localPouchDB.setItem(MD5("DB.login"), IMPORTER.COMPR(DB.login)).then(function(){
-					// salvo il DB
-				});
+				localPouchDB.setItem(MD5("DB.login"), IMPORTER.COMPR(DB.login));
 			}
 			endChangeDetection();
 			SCHEDA.formModificato = false;
@@ -287,7 +283,7 @@ var PAZIENTI_SALDI = {
 						false,
 						arguments ).then(function(pass){if(pass){
 						var v = getParamNames(CONFIRM.args.callee.toString());
-						for(i in v)eval(getArguments(v,i));
+						for(let i in v)eval(getArguments(v,i));
 						
 			stopAnimate(true);
 			visLoader(TXT("SalvataggioInCorso"),'loadingLight');

@@ -8,7 +8,7 @@ var MODULO_PUNTI = { // extend SET
 		var contElenco = '';
 		var elencoTsubo = '';
 		var puntiElenco = [];
-		for(siglaTsubo in DB.set.punti){
+		for(let siglaTsubo in DB.set.punti){
 			if(__(DB.set.punti[siglaTsubo])){
 				if(!__(DB.set.punti[siglaTsubo].hidden,false)){
 					puntiElenco.push({
@@ -147,7 +147,7 @@ var MODULO_PUNTI = { // extend SET
 		var phases = [	"",
 						"2",
 						"3" ];
-		for(h in phases){
+		for(let h in phases){
 			sceltaPuntiTag += 	'  <option value="'+phases[h]+'"';
 			if(SET.phase == phases[h])sceltaPuntiTag += ' SELECTED';
 			sceltaPuntiTag += 	'>'+htmlEntities(TXT("Phase_"+phases[h]))+'</option>';
@@ -162,7 +162,7 @@ var MODULO_PUNTI = { // extend SET
 								'		 onClick="this.blur();ALERT(TXT(\'alertApriModello\'));return;"' +
 								'		 style="opacity:0.5;"';
 			sceltaPuntiTag += 	'		 onChange="SET.cambiaMappa(this.value);">';
-			for(m in GEOMETRIE.mappe){
+			for(let m in GEOMETRIE.mappe){
 				var name = GEOMETRIE.mappe[m].name;
 				sceltaPuntiTag += 	'  <option value="'+name+'"';
 				if(localStorage.imgMappa == name)sceltaPuntiTag += ' SELECTED';
@@ -270,11 +270,7 @@ var MODULO_PUNTI = { // extend SET
 			els[e].classList.toggle("nasPT",pass);
 		}
 	},
-	filtraGruppo: function( type, val, id , forza){ // filtra i punti pruppo
-		if(typeof(type)=='undefined')var type = '';
-		if(typeof(val)=='undefined')var val = '';
-		if(typeof(id)=='undefined')var id = '';
-		if(typeof(forza)=='undefined')var forza = false;
+	filtraGruppo: function( type='', val='', id ='', forza=false){ // filtra i punti pruppo
 		if(document.getElementById("punti_ricerca").value.trim()!='' && id){
 			document.getElementById("punti_ricerca").value = '';
 			document.getElementById("punti_ricerca").classList.remove("filtro_attivo_bordo");

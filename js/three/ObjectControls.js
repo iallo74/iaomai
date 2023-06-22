@@ -78,7 +78,7 @@ THREE.ObjectControls = function ( object, domElement ) {
 		clearInterval(scope.touchInterval);
 		scope.touchInterval = setInterval(function(){
 			scope._MM=false;
-			console.log("_MM=false");
+			//console.log("_MM=false");
 		}, 6000);
 	}
 	function onMouseMove2( event ) {

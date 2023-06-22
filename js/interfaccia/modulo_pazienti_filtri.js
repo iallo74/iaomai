@@ -12,7 +12,7 @@ var PAZIENTI_FILTRI = {
 						!SCHEDA.verificaSchedaRet(),
 						arguments ).then(function(pass){if(pass){
 						var v = getParamNames(CONFIRM.args.callee.toString());
-						for(i in v)eval(getArguments(v,i));
+						for(let i in v)eval(getArguments(v,i));
 						
 			if(typeof(salvato) == 'undefined')var salvato = false;
 			if(typeof(aggiorna) == 'undefined')var aggiorna = false;
@@ -23,7 +23,7 @@ var PAZIENTI_FILTRI = {
 			
 			// COMPONGO GLI ELENCHI
 			var PZ = [];
-			for(p in DB.pazienti.data){
+			for(let p in DB.pazienti.data){
 				var P = clone(DB.pazienti.data[p]);
 				if(	PAZIENTI.pazientiFiltrati.length && 
 					PAZIENTI.pazientiFiltrati.indexOf(p*1)==-1 )P.Cancellato = 1;
@@ -53,9 +53,9 @@ var PAZIENTI_FILTRI = {
 					sintomi: {}
 				};
 			// generi
-			for(s in sessi){
+			for(let s in sessi){
 				if(!stats.generi[s])stats.generi[s] = [];
-				for(p in PZ){
+				for(let p in PZ){
 					if(PZ[p].sesso == s && !PZ[p].Cancellato*1){
 						if(stats.generi[s].indexOf(p*1)==-1)stats.generi[s].push(p*1);
 					}
@@ -63,7 +63,7 @@ var PAZIENTI_FILTRI = {
 			}
 			// fasce di età
 			var annoAttuale=new Date().getFullYear();
-			for(p in PZ){
+			for(let p in PZ){
 				if(!PZ[p].Cancellato*1){
 					var decina = -1;
 					if(PZ[p].DataNascita!='0000-00-00'){
@@ -77,7 +77,7 @@ var PAZIENTI_FILTRI = {
 				}
 			}
 			// professioni | province | socials
-			for(p in PZ){
+			for(let p in PZ){
 				if(!PZ[p].Cancellato*1){
 					if(!stats.provenienze[PZ[p].Provenienza])stats.provenienze[PZ[p].Provenienza] = [];
 					if(!stats.professioni[PZ[p].Professione])stats.professioni[PZ[p].Professione] = [];
@@ -116,12 +116,12 @@ var PAZIENTI_FILTRI = {
 			for(e in etichette){
 				if(etichette[e]){
 					if(!stats.etichette[etichette[e]])stats.etichette[etichette[e]] = {};
-					for(p in PZ){
+					for(let p in PZ){
 						if(!PZ[p].Cancellato*1){
 							var et = __(PZ[p].etichette,[]);
 							//if(typeof(et)=='string')et=JSON.parse(et)
 							var pass = false;
-							for(f in et){
+							for(let f in et){
 								var etichetta = et[f].NomeEtichetta;
 								var valore = et[f].ValoreEtichetta;
 								if(etichetta == etichette[e]){
@@ -141,7 +141,7 @@ var PAZIENTI_FILTRI = {
 			}
 			
 			// tags
-			for(p in PZ){
+			for(let p in PZ){
 				if(!PZ[p].Cancellato*1){
 					var tg = __(PZ[p].tags,[]);
 					//if(typeof(tg)=='string')tg=JSON.parse(tg)
@@ -154,11 +154,11 @@ var PAZIENTI_FILTRI = {
 			}
 			
 			// medicine
-			for(p in PZ){
+			for(let p in PZ){
 				if(!PZ[p].Cancellato*1){
 					var md = __(PZ[p].medicine,[]);
 					//if(typeof(md)=='string')md=JSON.parse(md)
-					for(m in md){
+					for(let m in md){
 						var medicina = md[m].NomeMedicina;
 						if(!stats.medicine[medicina])stats.medicine[medicina] = [];
 						if(stats.medicine[medicina].indexOf(p*1)==-1)stats.medicine[medicina].push(p*1);
@@ -167,7 +167,7 @@ var PAZIENTI_FILTRI = {
 			}
 			
 			// allergie
-			for(p in PZ){
+			for(let p in PZ){
 				if(!PZ[p].Cancellato*1){
 					var al = __(PZ[p].allergie,[]);
 					//if(typeof(al)=='string')al=JSON.parse(al)
@@ -180,7 +180,7 @@ var PAZIENTI_FILTRI = {
 			}
 			
 			// patologie
-			for(p in PZ){
+			for(let p in PZ){
 				if(!PZ[p].Cancellato*1){
 					var pt = __(PZ[p].patologie,[]);
 					//if(typeof(pt)=='string')pt=JSON.parse(pt)
@@ -193,11 +193,11 @@ var PAZIENTI_FILTRI = {
 			}
 			
 			// interventi
-			for(p in PZ){
+			for(let p in PZ){
 				if(!PZ[p].Cancellato*1){
 					var int = __(PZ[p].interventi,[]);
 					//if(typeof(int)=='string')int=JSON.parse(int)
-					for(i in int){
+					for(let i in int){
 						var intervento = int[i].NomeIntervento;
 						if(!stats.interventi[intervento])stats.interventi[intervento] = [];
 						if(stats.interventi[intervento].indexOf(p*1)==-1)stats.interventi[intervento].push(p*1);
@@ -206,7 +206,7 @@ var PAZIENTI_FILTRI = {
 			}
 			
 			// sintomi
-			for(p in PZ){
+			for(let p in PZ){
 				if(!PZ[p].Cancellato*1){
 					for(t in PZ[p].trattamenti){
 						var TR = PZ[p].trattamenti[t];
@@ -214,7 +214,7 @@ var PAZIENTI_FILTRI = {
 							var si = TR.sintomi;
 							if(!si)si = '[]';
 							si = JSON.parse(si);
-							for(s in si){
+							for(let s in si){
 								var sintomo = si[s].NomeSintomo;
 								if(!stats.sintomi[sintomo])stats.sintomi[sintomo] = [];
 								if(stats.sintomi[sintomo].indexOf(p*1)==-1)stats.sintomi[sintomo].push(p*1);
@@ -267,7 +267,7 @@ var PAZIENTI_FILTRI = {
 						'<h2>'+htmlEntities(TXT("FiltriApplicati"))+'</h2>';
 					var htmlParametri = '';
 					if(PAZIENTI.parametriFiltri.length){	
-						for(p in PAZIENTI.parametriFiltri){
+						for(let p in PAZIENTI.parametriFiltri){
 							htmlParametri += '<p><i>'+PAZIENTI.parametriFiltri[p].cat+':</i><span>';
 							for(e in PAZIENTI.parametriFiltri[p].elems){
 								htmlParametri += '<u>'+PAZIENTI.parametriFiltri[p].elems[e]+'</u>';
@@ -294,11 +294,11 @@ var PAZIENTI_FILTRI = {
 							'		<div>' +
 							'			<table>';
 					var tot = 0;
-					for(f in stats.fasce_eta){
+					for(let f in stats.fasce_eta){
 						tot += stats.fasce_eta[f].length;
 					}
 					
-					for(f in stats.fasce_eta){
+					for(let f in stats.fasce_eta){
 						var label = (f*10)+'-'+((f*1+1)*10-1);
 						var cls = 'statsBarre';
 						if(f==-1){
@@ -341,10 +341,10 @@ var PAZIENTI_FILTRI = {
 							'	<div>' +
 							'		<table>';
 					var tot = 0;
-					for(g in stats.generi){
+					for(let g in stats.generi){
 						tot += stats.generi[g].length;
 					}
-					for(g in stats.generi){
+					for(let g in stats.generi){
 						var label = sessi[g];
 						var cls = 'statsBarre';
 						if(!label){
@@ -384,10 +384,10 @@ var PAZIENTI_FILTRI = {
 							'		<table>';
 					
 					var tot = 0;
-					for(p in stats.professioni){
+					for(let p in stats.professioni){
 						tot += stats.professioni[p].length;
 					}
-					for(p in stats.professioni){
+					for(let p in stats.professioni){
 						var label = p;
 						var cls = 'statsBarre';
 						if(!label){
@@ -427,10 +427,10 @@ var PAZIENTI_FILTRI = {
 							'		<table>';
 					
 					var tot = 0;
-					for(p in stats.provenienze){
+					for(let p in stats.provenienze){
 						tot += stats.provenienze[p].length;
 					}
-					for(p in stats.provenienze){
+					for(let p in stats.provenienze){
 						var label = p;
 						var cls = 'statsBarre';
 						if(!label){
@@ -469,10 +469,10 @@ var PAZIENTI_FILTRI = {
 							'	<div>' +
 							'		<table>';
 					var tot = 0;
-					for(p in stats.province){
+					for(let p in stats.province){
 						tot += stats.province[p].length;
 					}
-					for(p in stats.province){
+					for(let p in stats.province){
 						var label = p;
 						var cls = 'statsBarre';
 						if(!label){
@@ -513,10 +513,10 @@ var PAZIENTI_FILTRI = {
 							
 							
 					var tot = 0;
-					for(p in stats.socials){
+					for(let p in stats.socials){
 						tot += stats.socials[p].length;
 					}
-					for(p in stats.socials){
+					for(let p in stats.socials){
 						var label = p;
 						var cls = 'statsBarre';
 						if(!label){
@@ -556,14 +556,14 @@ var PAZIENTI_FILTRI = {
 										'	<div>' +
 										'		<table>';
 						var tot = 0;
-						for(p in stats.etichette[e]){
+						for(let p in stats.etichette[e]){
 							tot += stats.etichette[e][p].length;
 						}
 						//stats.etichette[e][""] = totPazienti - tot;
 								
 						stats.etichette[e] = sortObject(stats.etichette[e]);
 						var totEt = 0;
-						for(p in stats.etichette[e]){
+						for(let p in stats.etichette[e]){
 							totEt++;
 							var label = p;
 							var cls = 'statsBarre';
@@ -611,10 +611,10 @@ var PAZIENTI_FILTRI = {
 								'		<div>' +
 								'			<table>';
 						var tot = 0;
-						for(p in stats.tags){
+						for(let p in stats.tags){
 							tot += stats.tags[p].length;
 						}
-						for(p in stats.tags){
+						for(let p in stats.tags){
 							var label = p;
 							var cls = 'statsBarre';
 							if(!label){
@@ -658,10 +658,10 @@ var PAZIENTI_FILTRI = {
 								'		<div>' +
 								'			<table>';
 						var tot = 0;
-						for(p in stats.medicine){
+						for(let p in stats.medicine){
 							tot += stats.medicine[p].length;
 						}
-						for(p in stats.medicine){
+						for(let p in stats.medicine){
 							var label = p;
 							var cls = 'statsBarre';
 							if(!label){
@@ -706,10 +706,10 @@ var PAZIENTI_FILTRI = {
 								'		<div>' +
 								'			<table>';
 						var tot = 0;
-						for(p in stats.allergie){
+						for(let p in stats.allergie){
 							tot += stats.allergie[p].length;
 						}
-						for(p in stats.allergie){
+						for(let p in stats.allergie){
 							var label = p;
 							var cls = 'statsBarre';
 							if(!label){
@@ -753,10 +753,10 @@ var PAZIENTI_FILTRI = {
 								'		<div>' +
 								'			<table>';
 						var tot = 0;
-						for(p in stats.patologie){
+						for(let p in stats.patologie){
 							tot += stats.patologie[p].length;
 						}
-						for(p in stats.patologie){
+						for(let p in stats.patologie){
 							var label = p;
 							var cls = 'statsBarre';
 							if(!label){
@@ -800,10 +800,10 @@ var PAZIENTI_FILTRI = {
 								'		<div>' +
 								'			<table>';
 						var tot = 0;
-						for(p in stats.interventi){
+						for(let p in stats.interventi){
 							tot += stats.interventi[p].length;
 						}
-						for(p in stats.interventi){
+						for(let p in stats.interventi){
 							var label = p;
 							var cls = 'statsBarre';
 							if(!label){
@@ -847,10 +847,10 @@ var PAZIENTI_FILTRI = {
 								'			<div>' +
 								'				<table>';
 						var tot = 0;
-						for(p in stats.sintomi){
+						for(let p in stats.sintomi){
 							tot += stats.sintomi[p].length;
 						}
-						for(p in stats.sintomi){
+						for(let p in stats.sintomi){
 							var label = p;
 							var cls = 'statsBarre';
 							if(!label){
@@ -921,12 +921,12 @@ var PAZIENTI_FILTRI = {
 			}else{
 				// se AGGIORNO
 				var elenco = [];
-				for(p in PAZIENTI.parametriFiltri){
+				for(let p in PAZIENTI.parametriFiltri){
 					for(e in PAZIENTI.parametriFiltri[p].elems){
 						var pazProvv = [];
 						var elem = PAZIENTI.parametriFiltri[p].elems[e];
 						var pazienti = stats[PAZIENTI.parametriFiltri[p].et][elem];
-						for(z in pazienti){
+						for(let z in pazienti){
 							if(elenco.indexOf(pazienti[z])==-1)elenco.push(pazienti[z]);
 							if(pazProvv.indexOf(pazienti[z])==-1)pazProvv.push(pazienti[z]);
 						}
@@ -934,7 +934,7 @@ var PAZIENTI_FILTRI = {
 					}
 				}
 				PAZIENTI.pazientiFiltrati = elenco;
-				for(p in DB.pazienti.data){
+				for(let p in DB.pazienti.data){
 					if(!DB.pazienti.data[p].Cancellato*1){
 						document.getElementById("paziente_"+p).classList.add("nasPaz");
 					}
@@ -947,8 +947,7 @@ var PAZIENTI_FILTRI = {
 			}
 		}});
 	},
-	statsFiltra: function( applica ){
-		if(typeof(applica) == 'undefined')var applica = false;
+	statsFiltra: function( applica=false ){
 		var els = document.getElementById("pazienti_stats").getElementsByTagName("input");
 		var elenco = [];
 		PAZIENTI.parametriFiltri = [];
@@ -960,12 +959,12 @@ var PAZIENTI_FILTRI = {
 					checks = true;
 					elencoLoc = JSON.parse(els[e].value);
 					var presente = -1;
-					for(p in PAZIENTI.parametriFiltri){
+					for(let p in PAZIENTI.parametriFiltri){
 						if(PAZIENTI.parametriFiltri[p].cat==els[e].dataset.cat)presente = p;
 					}
 					if(presente==-1)PAZIENTI.parametriFiltri.push({"cat": els[e].dataset.cat, "et": els[e].dataset.et, "elems": [ els[e].dataset.elem ], "pazienti": elencoLoc });
 					else PAZIENTI.parametriFiltri[p].elems.push(els[e].dataset.elem);
-					for(f in elencoLoc){
+					for(let f in elencoLoc){
 						if(elenco.indexOf(elencoLoc[f])==-1)elenco.push(elencoLoc[f])
 					}
 				}
@@ -975,7 +974,7 @@ var PAZIENTI_FILTRI = {
 		else document.getElementById("rgApplicaFiltri").classList.remove("visSch");
 		var cls = "op50";
 		if(applica)cls = "nasPaz";
-		for(p in DB.pazienti.data){
+		for(let p in DB.pazienti.data){
 			if(!DB.pazienti.data[p].Cancellato*1){
 				document.getElementById("paziente_"+p).classList.add(cls);
 			}
@@ -986,7 +985,7 @@ var PAZIENTI_FILTRI = {
 			}
 			SCHEDA.comprimiElenco();
 		}else{
-			for(p in DB.pazienti.data){
+			for(let p in DB.pazienti.data){
 				if(!DB.pazienti.data[p].Cancellato*1){
 					document.getElementById("paziente_"+p).classList.remove(cls);
 				}
@@ -1012,21 +1011,20 @@ var PAZIENTI_FILTRI = {
 	},
 	annullaFiltri: function(){
 		try{
-			for(p in DB.pazienti.data){
+			for(let p in DB.pazienti.data){
 				if(!DB.pazienti.data[p].Cancellato*1){
 					document.getElementById("paziente_"+p).classList.remove("op50");
 				}
 			}
 		}catch(err){}
 	},
-	cancellaFiltri: function( noCar ){
-		if(typeof(noCar)=='undefined')var noCar = false;
+	cancellaFiltri: function( noCar=false ){
 		PAZIENTI.pazientiFiltrati = [];
 		PAZIENTI.parametriFiltri = [];
 		document.getElementById("scheda_testo").scrollTo(0,0);
 		if(!noCar)PAZIENTI.car_filtri();
 		document.getElementById("paz_filtrati").style.display = 'none';
-		for(p in DB.pazienti.data){
+		for(let p in DB.pazienti.data){
 			if(!DB.pazienti.data[p].Cancellato*1){
 				document.getElementById("paziente_"+p).classList.remove("nasPaz");
 				document.getElementById("paziente_"+p).classList.remove("op50");
@@ -1041,7 +1039,7 @@ var PAZIENTI_FILTRI = {
 						!SCHEDA.verificaSchedaRet(),
 						arguments ).then(function(pass){if(pass){
 						var v = getParamNames(CONFIRM.args.callee.toString());
-						for(i in v)eval(getArguments(v,i));
+						for(let i in v)eval(getArguments(v,i));
 						
 			MENU.nasMM();
 			var titolo = TXT("StrumentiMarketing");
@@ -1104,7 +1102,7 @@ var PAZIENTI_FILTRI = {
 							!SCHEDA.verificaSchedaRet(),
 							arguments ).then(function(pass){if(pass){
 							var v = getParamNames(CONFIRM.args.callee.toString());
-							for(i in v)eval(getArguments(v,i));
+							for(let i in v)eval(getArguments(v,i));
 					applicaLoading(document.getElementById("scheda_testo"));
 					CONN.caricaUrl(	"marketing_email_elenco.php",
 									"b64=1&SL="+globals.siglaLingua.toUpperCase(),
@@ -1427,7 +1425,7 @@ var PAZIENTI_FILTRI = {
 					TXT("Destinatari")+' ('+msg.lista.length+')' +
 		'		</em>' +
 		'		<div id="contDests">';
-		for(d in msg.lista){
+		for(let d in msg.lista){
 			HTML += msg.lista[d].Nominativo+" - "+ msg.lista[d].Email + "<br>";
 		}
 		HTML +=
@@ -1453,8 +1451,7 @@ var PAZIENTI_FILTRI = {
 								'',
 								btnAdd );
 	},
-	get_nEmail: function( lista ){
-		if(typeof(lista) == 'undefined')var lista = '';
+	get_nEmail: function( lista='' ){
 		var nEmail = 0;
 		if(lista){
 			for(e in PAZIENTI.pazientiFiltrati){
@@ -1462,7 +1459,7 @@ var PAZIENTI_FILTRI = {
 				if(PZ.Email.trim())nEmail++;
 			}
 		}else{
-			for(p in DB.pazienti.data){
+			for(let p in DB.pazienti.data){
 				if(DB.pazienti.data[p].Email.trim())nEmail++;
 			}
 		}
@@ -1521,7 +1518,7 @@ var PAZIENTI_FILTRI = {
 						}
 					}
 				}else{
-					for(p in DB.pazienti.data){
+					for(let p in DB.pazienti.data){
 						var PZ = DB.pazienti.data[p];
 						if(PZ.Email.trim() && !PZ.Cancellato*1){
 							lista.push({

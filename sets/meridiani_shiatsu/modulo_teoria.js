@@ -26,7 +26,8 @@ var MODULO_TEORIA = { // extend SET
 	caricaApprofondimenti: function(){
 		// carica la lista degli approfondimenti
 		var contTeoria = '';
-		for(p in DB.set.teoria){
+		for(let p in DB.set.teoria){
+			if(__(DB.set.teoria[p].label))contTeoria += '<p class="labelCartella">'+DB.set.teoria[p].label+'</p>';
 			contTeoria += 	'<div class="cartella" onTouchStart="SCHEDA.setCartella(this);">' +
 							'	<span id="btn_teoria_cart_'+p+'" onClick="SCHEDA.swCartella(this);">' +
 							 		DB.set.teoria[p].TitoloSezione +
@@ -74,9 +75,9 @@ var MODULO_TEORIA = { // extend SET
 		/*
 		// SCRIVE L'ELENCO DEGLI TSUBO DEL MERIDIANO
 		if(p==1){
-			var mAtt=DB.set.teoria[1].contenuti[t].sigla;
+			var mAtt=DB.set.teoria[SET.idTeoMeridiani].contenuti[t].sigla;
 			var elencoTsubo='<b>Elenco degli tsubo</b>';
-			for(s in DB.set.meridiani[mAtt].tsubo){
+			for(let s in DB.set.meridiani[mAtt].tsubo){
 				var TS = DB.set.meridiani[mAtt].tsubo[s];
 				elencoTsubo+='<p>'+this.scriviTsubo(TS.NomeTsubo,true)+'</p>';
 			}
@@ -101,7 +102,8 @@ var MODULO_TEORIA = { // extend SET
 								ritorno,
 								true,
 								btn,
-								btnAdd );
+								btnAdd,
+								globals.set.cartella+'_teoria_'+p+"_"+t );
 		SET.convSigleScheda();
 		SET.evidenziaTsubo(html);
 	},

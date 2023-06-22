@@ -52,8 +52,7 @@ function nasToolTip(){
 	document.getElementById("tooltip").style.top='-500px';
 }
 
-function visLoader( txt, cls ){
-	if(typeof(cls)=='undefined')var cls = '';
+function visLoader( txt, cls='' ){
 	document.getElementById("loader").classList.remove("noLoader");
 	if(cls)document.getElementById("loader").classList.add(cls);
 	document.getElementById("loader").dataset.cls = cls;
@@ -72,8 +71,7 @@ function nasLoader(){
 	}
 	document.getElementById("loader").getElementsByTagName("div")[0].innerHTML='';
 }
-function applicaLoading( el, style ){
-	if(typeof(style) == 'undefined')var style = '';
+function applicaLoading( el, style='' ){
 	var loading = document.createElement("DIV");
 	loading.className='loading';
 	if(el.id == "scheda_testo")loading.className += ' loadingScheda';
@@ -205,8 +203,7 @@ function formHasChanges() {
 function clone(obj) {
 	return JSON.parse(JSON.stringify(obj));
 }
-function __( txt, def ){
-	if(typeof(def) == 'undefined') var def = '';
+function __( txt, def='' ){
 	if(typeof(txt) == 'undefined')var txt = def;
 	return txt;
 }

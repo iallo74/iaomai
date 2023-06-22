@@ -41,7 +41,7 @@ var guide = {
 		titolo: {
 			"ita": 'Il set',
 			"eng": 'The set',
-			"esp": 'El conjunto',
+			"esp": 'El set',
 			"fra": 'L\'ensemble',
 			"por": 'O conjunto',
 			"deu": 'Das Set'
@@ -49,7 +49,7 @@ var guide = {
 		testo: {
 			"ita": 'Con questo menu puoi navigare i contenuti del set e utilizzarne le funzionalità specifiche.'+chr10+'<span style="line-height:25px;margin-top:5px;display:block;"><i>Utilizzo delle icone:</i>'+chr10+'<i id="help_set">?</i> Guida online'+chr10+'<img src="img/p_impostazioniN.png" style="width:25px; vertical-align:middle"> Impostazioni del set'+chr10+'<img src="img/ico_quit4.png" style="width:25px; vertical-align:middle"> Uscire dal set</span>',
 			"eng": 'With this menu you can browse the contents of the set and use its specific features.'+chr10+'<span style="line-height:25px;margin-top:5px;display:block;"><i>Using icons:</i>'+chr10+'<i id="help_set">?</i> Online help'+chr10+'<img src="img/p_impostazioniN.png" style="width:25px; vertical-align:middle"> Set settings'+chr10+'<img src="img/ico_quit4.png" style="width:25px; vertical-align:middle"> Exit the set</span>',
-			"esp": 'Con este menú puedes navegar por los contenidos del conjunto y utilizar sus características específicas.'+chr10+'<span style="line-height:25px;margin-top:5px;display:block;"><i>Uso de los iconos:</i>'+chr10+'<i id="help_set">?</i> Ayuda en línea'+chr10+'<img src="img/p_impostazioniN.png" style="width:25px; vertical-align:middle"> Configuración del conjunto'+chr10+'<img src="img/ico_quit4.png" style="width:25px; vertical-align:middle"> Salir del conjunto</span>',
+			"esp": 'Con este menú puedes navegar por los contenidos del set y utilizar sus características específicas.'+chr10+'<span style="line-height:25px;margin-top:5px;display:block;"><i>Uso de los iconos:</i>'+chr10+'<i id="help_set">?</i> Ayuda en línea'+chr10+'<img src="img/p_impostazioniN.png" style="width:25px; vertical-align:middle"> Configuración del set'+chr10+'<img src="img/ico_quit4.png" style="width:25px; vertical-align:middle"> Salir del set</span>',
 			"fra": 'Avec ce menu, vous pouvez parcourir le contenu de l\'ensemble et utiliser ses fonctionnalités spécifiques.'+chr10+'<span style="line-height:25px;margin-top:5px;display:block;"><i>Utilisation des icônes :</i>'+chr10+'<i id="help_set">?</i> Aide en ligne'+chr10+'<img src="img/p_impostazioniN.png" style="width:25px; vertical-align:middle"> Paramètres de l\'ensemble'+chr10+'<img src="img/ico_quit4.png" style="width:25px; vertical-align:middle"> Quitter l\'ensemble</span>',
 			"por": 'Com este menu, você pode navegar pelos conteúdos do conjunto e usar seus recursos específicos.'+chr10+'<span style="line-height:25px;margin-top:5px;display:block;"><i>Usando ícones:</i>'+chr10+'<i id="help_set">?</i> Ajuda online'+chr10+'<img src="img/p_impostazioniN.png" style="width:25px; vertical-align:middle"> Configurações do conjunto'+chr10+'<img src="img/ico_quit4.png" style="width:25px; vertical-align:middle"> Sair do conjunto</span>',
 			"deu": 'Mit diesem Menü können Sie durch den Inhalt des Sets navigieren und dessen spezifische Funktionen nutzen.'+chr10+'<span style="line-height:25px;margin-top:5px;display:block;"><i>Verwendung von Symbolen:</i>'+chr10+'<i id="help_set">?</i> Online-Hilfe'+chr10+'<img src="img/p_impostazioniN.png" style="width:25px; vertical-align:middle"> Set-Einstellungen'+chr10+'<img src="img/ico_quit4.png" style="width:25px; vertical-align:middle"> Set verlassen</span>'
@@ -68,7 +68,7 @@ var guide = {
 		testo: {
 			"ita": 'Utilizza questa icona per navigare tutti i contenuti del set',
 			"eng": 'Use this icon to navigate through all the contents of the set.',
-			"esp": 'Utiliza este icono para navegar por todos los contenidos del conjunto.',
+			"esp": 'Utiliza este icono para navegar por todos los contenidos del set.',
 			"fra": "Utilisez cette icône pour naviguer à travers tous les contenus de l'ensemble.",
 			"por": "Utilize este ícone para navegar por todos os conteúdos do conjunto.",
 			"deu": "Verwenden Sie dieses Symbol, um durch alle Inhalte des Sets zu navigieren."

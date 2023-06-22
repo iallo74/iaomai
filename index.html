@@ -13,22 +13,22 @@
         <script src="cordova.js"></script>
         
         <!-- ICONE DELL'APP -->
-        <link rel="apple-touch-icon" sizes="57x57" href="icons/apple-icon-57x57.png">
-        <link rel="apple-touch-icon" sizes="60x60" href="icons/apple-icon-60x60.png">
-        <link rel="apple-touch-icon" sizes="72x72" href="icons/apple-icon-72x72.png">
-        <link rel="apple-touch-icon" sizes="76x76" href="icons/apple-icon-76x76.png">
-        <link rel="apple-touch-icon" sizes="114x114" href="icons/apple-icon-114x114.png">
-        <link rel="apple-touch-icon" sizes="120x120" href="icons/apple-icon-120x120.png">
-        <link rel="apple-touch-icon" sizes="144x144" href="icons/apple-icon-144x144.png">
-        <link rel="apple-touch-icon" sizes="152x152" href="icons/apple-icon-152x152.png">
-        <link rel="apple-touch-icon" sizes="180x180" href="icons/apple-icon-180x180.png">
-        <link rel="icon" type="image/png" sizes="192x192"  href="icons/android-icon-192x192.png">
-        <link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="96x96" href="icons/favicon-96x96.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="icons/favicon-16x16.png">
+        <link rel="apple-touch-icon" sizes="57x57" href="icons/apple-icon-57x57_B.png">
+        <link rel="apple-touch-icon" sizes="60x60" href="icons/apple-icon-60x60_B.png">
+        <link rel="apple-touch-icon" sizes="72x72" href="icons/apple-icon-72x72_B.png">
+        <link rel="apple-touch-icon" sizes="76x76" href="icons/apple-icon-76x76_B.png">
+        <link rel="apple-touch-icon" sizes="114x114" href="icons/apple-icon-114x114_B.png">
+        <link rel="apple-touch-icon" sizes="120x120" href="icons/apple-icon-120x120_B.png">
+        <link rel="apple-touch-icon" sizes="144x144" href="icons/apple-icon-144x144_B.png">
+        <link rel="apple-touch-icon" sizes="152x152" href="icons/apple-icon-152x152_B.png">
+        <link rel="apple-touch-icon" sizes="180x180" href="icons/apple-icon-180x180_B.png">
+        <link rel="icon" type="image/png" sizes="192x192"  href="icons/android-icon-192x192_B.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32x32_B.png">
+        <link rel="icon" type="image/png" sizes="96x96" href="icons/favicon-96x96_B.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="icons/favicon-16x16_B.png">
         <link rel="manifest" href="icons/manifest.json">
         <meta name="msapplication-TileColor" content="#333333">
-        <meta name="msapplication-TileImage" content="icons/ms-icon-144x144.png">
+        <meta name="msapplication-TileImage" content="icons/ms-icon-144x144_B.png">
         <meta name="theme-color" content="#333333">
         
         <link id="favicon" rel="icon" href="icons/faviconB.ico?v=1" />
@@ -340,6 +340,7 @@
                    		<b id="a_" data-value="" onClick="setTextSize('');">A</b>
                    		<b id="a_MID" data-value="MID" onClick="setTextSize('MID');">A</b>
                    		<b id="a_BIG" data-value="BIG" onClick="setTextSize('BIG');">A</b>
+                   		<b id="a_MAG" data-value="MAG" onClick="setTextSize('MAG');">A</b>
                    </span>
                </p>
                <p id="pointerSel">
@@ -536,55 +537,9 @@
             </div>
             <div id="features" class="popup"> <!-- NUOVA VERSIONE -->
             	<div class="popup_chiudi" onClick="MENU.chiudiMenu();"></div>
-                <div id="contFeatures" class="popup_cont">
-                    <h2>Benvenuto nella versione 1.3</h2>
-                    <p class="descr">Abbiamo cambiato alcune caratteristiche dell'applicazione al fine di renderla sempre più ricca di contenuto, facile e intuitiva da usare e veloce.</p>
+                <div id="contFeatures" class="popup_cont"></div>
                 
-					<div>
-                        <div><img src="sets/auricologia/img/logoNero.png" width="50" height="50"></div>
-                        <div><b>AuriculoMap</b><br>
-                        La nuova mappa dedicata all'agopuntura auricolare, ricca di contenuti e protocolli, curata dal dr. Antonello Lovato</div>
-                    </div>
-                   
-                    <div>
-                        <div><img src="img/ico_files.png" width="32" height="32" style="margin-left:9px;"></div>
-                        <div><b>Gestione migliorata dei files</b><br>
-                    Da questa versione è possibile caricare, oltre ai files immagine, anche i files PDF. Abbiamo anche migliorato la gestione delle immagini consentendoti di scegliere i files da un elenco e recuperare quelli cancellati.</div>
-                    </div>
-                    
-                    <div>
-                        <div><img src="img/spunta.png" width="40" height="40" style="margin-left:4px;"></div>
-                        <div>
-                          <b>Personalizzazione e fruibilità</b><br>
-                            Potrai gestire i seguenti elementi:<br>
-                            - Scegliere le dimensioni del testo<br>
-                          - Spostare i trattamenti e le cartelle cliniche con il mouse o con il dito<br>
-                            - 
-                          Scegliere il tipo di puntatore (mouse o dito) per gli schermi multi-touch<br>
-                          - Indicare il tipo di utilizzo: olistico o medico
-                      </div>
-                    </div>
-                    
-                    <div>
-                        <div><img src="img/lock.png" width="32" height="33" style="margin-left:9px;"></div>
-                        <div><b>Sicurezza aggiuntiva</b><br>
-                    Siamo sempre attenti alla privacy e alla sicurezza dei dati. Per questo motivo abbiamo inserito un livello di sicurezza aggiuntivo facendoti scegliere se chiedere la password anche all'accesso agli archivi dei pazienti.</div>
-                    </div>
-                    
-                    <div>
-                        <div><img src="img/m_referenceN.png" width="40" height="40" style="margin-left:6px;"></div>
-                        <div><b>Guida in linea</b><br>
-                    Per aiutarti nella comprensione delle caratteristiche e delle funzioni, abbiamo aggiunto una guida in linea che puoi consultare in qualsiasi istante.</div>
-                    </div>
-                    
-                    <div>
-                        <div><img src="img/p_impostazioniN.png" width="32" height="36" style="margin:6px 6px 6px 11px;"></div>
-                        <div><b>Miglioramenti</b><br>
-                    Sono stati effettuati miglioramenti di vario genere e corretti alcuni bugs presenti nella versione precedente.</div>
-                    </div>
-                </div>
-                
-                <div class="noVisPiu">Non visualizzare più <input type="checkbox" id="no_info_features" name="no_info_features_1_3" value="1" onclick="localStorage.setItem(this.dataset.name,this.checked);" data-name="no_info_features_1_3"></div>
+                <div class="noVisPiu">{{TXT_noVisPiu}} <input type="checkbox" id="no_info_features" name="no_info_features" value="1" onclick="localStorage.setItem(this.dataset.name,this.checked);" data-name="no_info_features"></div>
             </div>
             <div id="purchases" class="popup"> <!-- ACQUISTI -->
             	<div id="labelPurchases" class="popup_label">{{TXT_AcquistaLicenza}}<div class="popup_chiudi" onClick="MENU.chiudiMenu();"></div></div>
