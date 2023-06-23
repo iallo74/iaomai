@@ -502,5 +502,13 @@ DB.TXT.set = {
 		fra: "Rechercher une procédure...",
 		por: "Buscar um procedimento...",
 		deu: "Suche nach einem Verfahren..."
+	},
+	ZoneAnatomiche: {
+		ita: "Zone anatomiche",
+		eng: "Anatomical zones",
+		esp: "Zonas anatómicas",
+		fra: "Zones anatomiques",
+		por: "Zonas anatômicas",
+		deu: "Anatomische Zonen"
 	}
 }

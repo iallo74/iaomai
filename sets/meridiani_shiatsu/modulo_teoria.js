@@ -105,7 +105,7 @@ var MODULO_TEORIA = { // extend SET
 								btnAdd,
 								globals.set.cartella+'_teoria_'+p+"_"+t );
 		SET.convSigleScheda();
-		SET.evidenziaTsubo(html);
+		SET.evidenziaTsubo(/*html*/);
 	},
 	caricaVideo: function( p, t, btn ){
 		// carica un approfondimento video

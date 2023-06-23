@@ -11,6 +11,7 @@ var MODULO_TSUBO = { // extend SET
 		// apre la scheda di uno tsubo
 		var nTsubo2 = (nTsubo+1)+"";
 		if(nTsubo2.length == 1)nTsubo2 = "0"+nTsubo2;
+		
 		// verifico le autorizzazioni
 		//if(!SET.verFreeMeridiani(siglaMeridiano)){
 		if(!SET.verFreePunti(siglaMeridiano+"."+nTsubo2)){

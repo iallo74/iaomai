@@ -927,10 +927,10 @@ body.uomo .eviPoints{
 
 
 /* NAMIKOSHI */
-.dettNamikoshi .numPoints{
+#puntiNamikoshi .dettNamikoshi .numPoints{
     width: 107px !important;
 }
-.dettNamikoshi .textPuntoTratt{
+#scheda:not(.sch_Max450) .dettNamikoshi .textPuntoTratt{
     width: calc(100% - 216px) !important;
 }
 .smart #scheda:not(.sch_Max450) .dettNamikoshi .textPuntoTratt{
@@ -940,7 +940,7 @@ body.uomo .eviPoints{
 	width: calc(100% - 301px) !important;
 }
 
-.dettNamikoshi .textPuntoTratt{
+#scheda:not(.sch_Max450) .dettNamikoshi .textPuntoTratt{
 	margin-top: 0px !important;
     border: none !important;
     background: transparent !important;
@@ -952,6 +952,6 @@ body.uomo .eviPoints{
 #scheda:not(.sch_Max600) .dettNamikoshi .textPuntoTratt{
 	margin-top: 0px !important;
 }
-.dettNamikoshi .textPuntoTratt{
+#scheda:not(.sch_Max450) .dettNamikoshi .textPuntoTratt{
     width: calc(100% - 238px) !important;
 }

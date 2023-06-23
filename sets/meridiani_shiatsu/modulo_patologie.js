@@ -130,8 +130,7 @@ var MODULO_PATOLOGIE = { // extend SET
 								btnAdd,
 								globals.set.cartella+'_patologie_'+siglaPatologia );
 		SET.convSigleScheda();
-		/*SET.evidenziaTsubo(html);
-		SET.evidenziaMeridiani(html);*/
+		
 		var els = document.getElementById("scheda_testo").getElementsByClassName("schedaSpecifica");
 		var selected = false;
 		for(let e=0;e<els.length;e++){

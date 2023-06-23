@@ -11,13 +11,13 @@ DB.set= {
             ChiaviTsubo: ""
         },
         "105": {
-            NomeTsubo: "Uretere EUR",
-            AzioniTsubo: "<p><b>Acción<br></b>El Punto Uretere encuentra su eficacia en todas las patologías relacionadas con las vías urinarias, especialmente las vías excretoras.</p><p><b>Ubicación</b><br>IH4, en la parte interna de la hélice a la altura de la raíz de la antihélice, un poco por encima</p>",
+            NomeTsubo: "Uréter EUR",
+            AzioniTsubo: "<p><b>Acción<br></b>El Punto Uréter encuentra su eficacia en todas las patologías relacionadas con las vías urinarias, especialmente las vías excretoras.</p><p><b>Ubicación</b><br>IH4, en la parte interna de la hélice a la altura de la raíz de la antihélice, un poco por encima</p>",
             ChiaviTsubo: ""
         },
         "106": {
-            NomeTsubo: "Vescica urinaria",
-            AzioniTsubo: "<p><b>Otros nombres</b><br>- Vescica</p><p><b>Acción</b><br>El punto Vescica se utiliza para tratar a todas las personas que sufren de patologías del sistema urinario, especialmente en casos de infecciones urinarias, retenciones, enuresis e incontinencia.</p><p><b>Ubicación</b><br>SC5, en la frontera entre el hemicono superior y el muro anterior superior, entre el tercio anterior y los dos tercios posteriores de la raíz inferior de la antihélice.</p>",
+            NomeTsubo: "Vejiga urinaria",
+            AzioniTsubo: "<p><b>Otros nombres</b><br>- Vejiga</p><p><b>Acción</b><br>El punto Vejiga urinaria se utiliza para tratar a todas las personas que sufren de patologías del sistema urinario, especialmente en casos de infecciones urinarias, retenciones, enuresis e incontinencia.</p><p><b>Ubicación</b><br>SC5, en la frontera entre el hemicono superior y el muro anterior superior, entre el tercio anterior y los dos tercios posteriores de la raíz inferior de la antihélice.</p>",
             ChiaviTsubo: ""
         },
         "108": {

@@ -26,7 +26,7 @@ var MODULO_MERIDIANI = { // extend SET
 			if(m!='NK')addClass +=	' noNMK';
 			else{
 				addClass +=	' NMK';
-				elencoTsubo += '<p id="titNMK">Zone anatomiche</p>';
+				elencoTsubo += '<p id="titNMK">'+TXT("Zone anatomiche")+'</p>';
 			}
 			for(let s in DB.set.meridiani[m].tsubo){
 				if(!DB.set.meridiani[m].tsubo[s].siglaTsubo){

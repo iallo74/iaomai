@@ -501,8 +501,6 @@ var LOGIN = {
 						TXT("AttenzioneAnnullaUtente") ).then(function(pass){if(pass){
 		
 			MENU.chiudiAllSelected();
-			//if(globals.set.cartella)caricaSet(globals.set.cartella,document.getElementById('p_'+globals.set.cartella));
-			//localPouchDB.clear();
 			setTimeout( function(){
 				localPouchDB.setItem(MD5("FILES"), IMPORTER.COMPR(JSON.stringify(FILES)));
 			},500);
@@ -526,55 +524,6 @@ var LOGIN = {
 		// decripta una stringa se inizia [@]
 		if(txt.substr(0,3)=='[@]')txt = LZString.decompressFromUTF16(txt.substr(3,txt.length-3));
 		return txt;
-	},
-	cryptPrivacy: function(txt,i){
-		// cripta una stringa	
-		if(	i!='meridiano' && 
-			i!='TipoDettaglio' && 
-			i!='TipoTrattamento' && 
-			i!='PseudonimoN' && 
-			i!='TestoRicerca' && 
-			i!='sesso' && 
-			i!='prefRic' && 
-			i!='parolaRic' && 
-			i!='sintomi' && 
-			i!='meridiani' && 
-			i!='avatar' && 
-			i!='gallery' && 
-			i!='p' && 
-			i!='ordine' && 
-			i!='Stato' && 
-			i!='DataNascita' && 
-			i!='paeseCellulare' &&
-			i!='id_interno' &&
-			i!='numeroTsubo' &&
-			i!='app'){
-			if(typeof(txt)=='string' && txt!='')txt='[@]'+LZString.compressToUTF16(txt);
-		}
-		return txt;
-	},
-	cryptJSON: function(el){
-		// CRYPRT per la PRIVACY: carica i dati testuali criptati sul server
-		var dbCAR=clone(el);
-		for(let i in dbCAR){
-			if(typeof(dbCAR[i])!='object'){
-				dbCAR[i]=LOGIN.cryptPrivacy(dbCAR[i],i);
-			}else{
-				for(let i2 in dbCAR[i]){
-					if(typeof(dbCAR[i][i2])!='object'){
-						dbCAR[i][i2]=LOGIN.cryptPrivacy(dbCAR[i][i2],i2);
-					}else{
-						for(let i3 in dbCAR[i][i2]){
-							dbCAR[i][i2][i3]=LOGIN.cryptPrivacy(dbCAR[i][i2][i3],i3);
-						}
-					}
-				}
-			}
-		}
-		dbCARstr=JSON.stringify(dbCAR);
-		while(dbCARstr.indexOf(H.chr10)>-1)dbCARstr=dbCARstr.replace(H.chr10,'');
-		// ------------------------------------------------------------------	
-		return dbCARstr;	
 	},
 	
 	
@@ -645,9 +594,9 @@ var LOGIN = {
 			applicaLoading(document.getElementById("scheda_testo"));
 			MENU.chiudiMenu();
 			
-			var btnAdd = 	'<div class="p_paz_ref_menu" onClick="REF.open(\'feature.login\')">' +
+			/* var btnAdd = 	'<div class="p_paz_ref_menu" onClick="REF.open(\'feature.login\')">' +
 								TXT("ReferenceGuide") +
-							'</div>';
+							'</div>'; */
 							
 			CONN.caricaUrl(	"utente_dati.php",
 							"b64=1",
@@ -1064,7 +1013,6 @@ var LOGIN = {
 				elencoNote='';
 				for(let k in DB.note.data){
 					if(DB.note.data[k].DataModifica*1>DB.note.lastSync*1 || dwnl || bkp){
-						//elencoNote+=LOGIN.cryptJSON(DB.note.data[k])+", ";
 						elencoNote+=JSON.stringify(DB.note.data[k])+", ";
 					}
 				}
@@ -1098,7 +1046,6 @@ var LOGIN = {
 					
 					if((DB.appuntamenti.data[k].DataModifica*1>DB.appuntamenti.lastSync*1 || dwnl || bkp) && !__(DB.appuntamenti.data[k].frv))aggiungere=true;
 					if(aggiungere){
-						//elencoAppuntamenti+=LOGIN.cryptJSON(db)+", ";
 						elencoAppuntamenti+=JSON.stringify(db)+", ";
 					}
 				}
@@ -1117,7 +1064,6 @@ var LOGIN = {
 					
 					if((DB.annotazioni.data[k].DataModifica*1>DB.annotazioni.lastSync*1 || dwnl || bkp) && !__(DB.annotazioni.data[k].frv))aggiungere=true;
 					if(aggiungere){
-						//elencoAnnotazioni+=LOGIN.cryptJSON(db)+", ";
 						elencoAnnotazioni+=JSON.stringify(db)+", ";
 					}
 				}
@@ -1138,7 +1084,6 @@ var LOGIN = {
 					
 					if((DB.servizi.data[k].DataModifica*1>DB.servizi.lastSync*1 || dwnl || bkp) && !__(DB.servizi.data[k].frv))aggiungere=true;
 					if(aggiungere){
-						//elencoServizi+=LOGIN.cryptJSON(db)+", ";
 						elencoServizi+=JSON.stringify(db)+", ";
 					}
 				}
@@ -1169,7 +1114,6 @@ var LOGIN = {
 					
 					if((DB.fornitori.data[k].DataModifica*1>DB.fornitori.lastSync*1 || dwnl || bkp) && !__(DB.fornitori.data[k].frv))aggiungere=true;
 					if(aggiungere){
-						//elencoFornitori+=LOGIN.cryptJSON(db)+", ";
 						elencoFornitori+=JSON.stringify(db)+", ";
 					}
 				}
@@ -1251,7 +1195,6 @@ var LOGIN = {
 					
 					if((DB.pazienti.data[k].DataModifica*1>DB.pazienti.lastSync*1 || dwnl || bkp) && !__(DB.pazienti.data[k].frv))aggiungere=true;
 					if(aggiungere){
-						//elencoPazienti+=LOGIN.cryptJSON(db)+", ";
 						elencoPazienti+=JSON.stringify(db)+", ";
 					}
 				}

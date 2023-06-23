@@ -845,10 +845,7 @@ SET = {
 		html+='</i></a>';
 		return html;
 	},
-	selTsubo: function( PT ){
-		var pP = PT.split("|");
-		var siglaMeridiano = pP[1]
-		var nTsubo = pP[0];
+	selTsubo: function( nTsubo, siglaMeridiano ){
 		if(nTsubo.length == 1)nTsubo='0'+nTsubo;
 		// verifico le autorizzazioni
 		if(!SET.verFreeMeridiani(siglaMeridiano)){
@@ -860,8 +857,9 @@ SET = {
 	},
 	selTsuboMod: function( p ){
 		SET.pMod = p;
-		PT = document.getElementById("formMod")["pt_"+p].value+"|"+document.getElementById("formMod")["mr_"+p].value;
-		SET.selTsubo( PT );
+		var nTsubo = document.getElementById("formMod")["pt_"+p].value;
+		var siglaMeridiano = document.getElementById("formMod")["mr_"+p].value;
+		SET.selTsubo( nTsubo, siglaMeridiano );
 	},
 	setTsuboFrm: function(){
 		var ptP = SET.ptSel.name.split(".");
@@ -878,8 +876,16 @@ SET = {
 		SCHEDA.torna();
 		SCHEDA.formModificato = true;
 	},
-	evidenziaTsubo: function( html ){
+	evidenziaTsubo: function( el = document.getElementById("scheda_testo")/*html*/ ){
+		
 		SET.annullaEvidenziaTsubo();
+		var els = el.getElementsByClassName("pallinoPat");
+		for(let p=0;p<els.length;p++){
+			var siglaMeridiano = els[p].dataset.siglaMeridiano;
+			var nTsubo = els[p].dataset.nTsubo;
+			if(nTsubo.length==1)nTsubo = '0'+nTsubo;
+
+		/*SET.annullaEvidenziaTsubo();
 		var re = /selTsubo\([^\)]+\)/ig;
 		var result = html.match(re);
 		for(let k in result){
@@ -888,14 +894,14 @@ SET = {
 			var pP=pT[1].split(".");
 			var nTsubo=pP[0];
 			if(nTsubo.length == 1)nTsubo = "0"+nTsubo;
-			siglaMeridiano = pP[1];
+			siglaMeridiano = pP[1];*/
 			var el = scene.getObjectByName("PT_"+siglaMeridiano)
 			if(el){
 				for(e in el.children){
 					if(el.children[e].name.indexOf("_"+siglaMeridiano+"."+nTsubo+".")==0)el.children[e].material=SET.MAT.pointEvi;
 				}
 			}
-			SET.tsuboEvidenziati.push(pT[1]);
+			SET.tsuboEvidenziati.push(nTsubo+"."+siglaMeridiano);
 		}
 		SET.settaOverTsubo();
 	},
@@ -993,23 +999,9 @@ SET = {
 			var nTsubo = sl[1].value;
 			if(typeof(DB.set.meridiani[mer])=='undefined')return;
 		}else{
-			var re = /selTsubo\([^\)]+\)/ig;
-			var re2 = /apriTsubo\([^\,]+\,/ig;
-			var html = el.onclick.toString();
-			var result = html.match(re);
-			if(result){
-				var pT=result[0].split("'");
-				while(pT[1].indexOf("|")>-1)pT[1]=pT[1].replace("|",".");
-				var pP=pT[1].split(".");
-				var nTsubo=pP[0];
-				var mer=SET.estraiSigla(pP[1]);
-			}else{
-				result = html.match(re2);
-				var pT=result[0].split("'");
-				var pP=pT[1].split(".");
-				var nTsubo=pP[1];
-				var mer=SET.estraiSigla(pP[0]);
-			}
+			if(!el.dataset.siglaMeridiano)return;
+			var nTsubo = el.dataset.nTsubo;
+			var mer = el.dataset.siglaMeridiano;
 		}
 		if(nTsubo.length == 1)nTsubo = "0"+nTsubo;
 		if(over){
@@ -1068,7 +1060,7 @@ SET = {
 			var n_M = SET.convSigla(siglaMeridiano)+pP[2].substr(2,1);
 			var addClick = '';
 			if(noPall)addClick = 'return;';
-			html = html.replace(pts[p], '<span class="'+pallClass+'" onClick="'+addClick+'SET.selTsubo(\''+n_P+'|'+siglaMeridiano+'\');">'+n_P+'.'+n_M+'</span>');
+			html = html.replace(pts[p], '<span class="'+pallClass+'" data-n-tsubo="'+n_P+'" data-sigla-meridiano="'+siglaMeridiano+'" onClick="'+addClick+'SET.selTsubo(\''+n_P+'\',\''+siglaMeridiano+'\');">'+n_P+'.'+n_M+'</span>');
 		}
 		var regexp = /\[\.[A-Z]{2}\.\]/ig;
 		var pts = html.match(regexp);
@@ -1234,6 +1226,7 @@ SET = {
 	},
 	
 	addEviPalls: function( siglaMeridiano, nTsubo, tipo ){
+		if(!scene.getObjectByName("PT_"+siglaMeridiano))return;
 		var els = scene.getObjectByName("PT_"+siglaMeridiano).children;
 		for(e in els){
 			if(els[e].name.indexOf(siglaMeridiano+"."+nTsubo+".")==0){

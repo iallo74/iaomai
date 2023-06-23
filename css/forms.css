@@ -1183,6 +1183,7 @@ cont_p_paz_label{
     padding-bottom: 20px;	
 	margin-top: 10px;
 	width: 100%;
+	width: calc(100% + 60px);
 }
 .smart #p_add_dett{
     margin-left: -20px !important;
@@ -1800,6 +1801,12 @@ body:not(.touch) #puntiAuriculoMap .dettPunto:hover{
 	padding-left: 3px !important;
     padding-right: 7px !important;
 }
+.numPoints.numNamikoshi{
+	width:147px;
+}
+#dettagliCont .numPoints.numNamikoshi{
+	width:190px;
+}
 .smart .selectTratt{
 	text-align-last: center;
 }
@@ -1808,17 +1815,32 @@ body:not(.touch) #puntiAuriculoMap .dettPunto:hover{
 	width:64px !important;
 	text-align:center !important;
 }
+.smart #puntiTsuboMap .numPoints.numNamikoshi{
+	width:164px !important;
+}
+.sch_Max450 .rgProcMod.dettNamikoshi .numPoints.numNamikoshi{
+	width:130px !important;
+}
 .sch_Max450 .dettNamikoshi .numPoints
 .sch_Max450 .dettAuriculo .numPoints{
 	width:130px !important;
 }
 #dettagliCont .selectTratt:not(.numPoints){
 	width: 140px;
-    margin-left: -6px;
+    /* margin-left: -6px; */
+}
+#dettagliCont .dettMeridiano .selectTratt:not(.numPoints){
+	width: 190px;
+    /* margin-left: -6px; */
 }
 .sch_Max450 .selectTratt:not(.numPoints){
 	width:80px !important;
 }
+.sch_Max450 .dettMeridiano .selectTratt:not(.numPoints){
+	width:129px !important;
+	margin-left:11px;
+}
+
 .smart #dettagliCont .numPoints{
 	text-align:center !important;
 }

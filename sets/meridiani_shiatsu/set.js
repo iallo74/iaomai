@@ -925,11 +925,8 @@ SET = {
 		html+='</i></a>';
 		return html;
 	},
-	selTsubo: function( PT, N='', el=null ){
-		var pP = PT.split("|");
-		var siglaMeridiano = pP[1];
+	selTsubo: function( nTsubo, siglaMeridiano, N='' ){
 		var rit = 10;
-		
 		if(	(siglaMeridiano=='NK' && localStorage.sistemaMeridiani!='NMK') || 
 			(siglaMeridiano!='NK' && localStorage.sistemaMeridiani=='NMK') || 
 			(localStorage.sistemaMeridiani=='MAS') ){
@@ -964,8 +961,9 @@ SET = {
 	},
 	selTsuboMod: function( p, N='' ){
 		SET.pMod = p;
-		PT = document.getElementById("formMod")[N+"pt_"+p].value+"|"+document.getElementById("formMod")[N+"mr_"+p].value;
-		SET.selTsubo( PT, N );
+		var nTsubo = document.getElementById("formMod")[N+"pt_"+p].value;
+		var siglaMeridiano = document.getElementById("formMod")[N+"mr_"+p].value;
+		SET.selTsubo( nTsubo, siglaMeridiano, N );
 	},
 	setTsuboFrm: function(){
 		var ptP = SET.ptSel.name.split(".");
@@ -990,15 +988,16 @@ SET = {
 		var sistemaVer = localStorage.sistemaMeridiani;
 		if(sistemaVer=='MAS')sistemaVer = '';
 		if(sistemaVer != el.dataset.sistema)SET.cambiaSistema( el.dataset.sistema, true, true );
-		SET.evidenziaTsubo( el.innerHTML );
+		SET.evidenziaTsubo( el/*.innerHTML*/ );
 		setTimeout(function(){SET.evidenziaMeridiani( el.innerHTML );},300);
 	},
-	evidenziaTsubo: function( /*el = document.getElementById("scheda_testo")*/html ){
+	evidenziaTsubo: function( el = document.getElementById("scheda_testo")/*html*/ ){
 		SET.annullaEvidenziaTsubo();
-		/*var els = el.getElementsByClassName("pallinoPat");
+		var els = el.getElementsByClassName("pallinoPat");
 		for(let p=0;p<els.length;p++){
 			var siglaMeridiano = els[p].dataset.siglaMeridiano;
 			var nTsubo = els[p].dataset.nTsubo;
+			if(nTsubo.length==1)nTsubo = '0'+nTsubo;
 			var el = scene.getObjectByName("PT_"+siglaMeridiano);
 			if(el){
 				for(let e in el.children){
@@ -1014,11 +1013,11 @@ SET = {
 			}
 			SET.tsuboEvidenziati.push(nTsubo+"."+siglaMeridiano);
 		}
-		SET.settaOverTsubo();*/
+		SET.settaOverTsubo();
 		
 		
 		
-		var re = /selTsubo\([^\)]+\)/ig;
+		/*var re = /selTsubo\([^\)]+\)/ig;
 		var result = html.match(re);
 		for(let k in result){
 			var pT=result[k].split("'");
@@ -1042,7 +1041,7 @@ SET = {
 			}
 			SET.tsuboEvidenziati.push(pT[1]);
 		}
-		SET.settaOverTsubo();
+		SET.settaOverTsubo();*/
 	},
 	evidenziaMeridiani: function( html, noSpegni=false ){
 		if(localStorage.sistemaMeridiani == 'NMK')return;
@@ -1157,24 +1156,9 @@ SET = {
 			if(!__(DB.set.meridiani[mer]))return; // in caso di EX
 			if(typeof(DB.set.meridiani[mer])=='undefined')return;
 		}else{
-			if(!el.onclick)return; // in caso di EX
-			var re = /selTsubo\([^\)]+\)/ig;
-			var re2 = /apriTsubo\([^\,]+\,/ig;
-			var html = el.onclick.toString();
-			var result = html.match(re);
-			if(result){
-				var pT=result[0].split("'");
-				while(pT[1].indexOf("|")>-1)pT[1]=pT[1].replace("|",".");
-				var pP=pT[1].split(".");
-				var nTsubo=pP[0];
-				var mer=pP[1];
-			}else{
-				result = html.match(re2);
-				var pT=result[0].split("'");
-				var pP=pT[1].split(".");
-				var nTsubo=pP[1];
-				var mer=pP[0];
-			}
+			if(!el.dataset.siglaMeridiano)return;
+			var nTsubo = el.dataset.nTsubo;
+			var mer = el.dataset.siglaMeridiano;
 		}
 		
 		if(	(mer=='NK' && localStorage.sistemaMeridiani!='NMK') || 
@@ -1239,7 +1223,7 @@ SET = {
 			}
 			var name = n_P+'.'+n_M;
 			if(siglaMeridiano=='NK')name = DB.set.meridiani[n_M].tsubo[n_P-1].NomeTsubo;
-			html = html.replace(pts[p], '<span'+nascPunto+' class="pallinoPat" data-n-tsubo="'+n_P+'" data-sigla-meridiano="'+siglaMeridiano+'" onClick="SET.selTsubo(\''+n_P+'|'+siglaMeridiano+'\',\'\',this)">'+name+'</span>');
+			html = html.replace(pts[p], '<span'+nascPunto+' class="pallinoPat" data-n-tsubo="'+n_P+'" data-sigla-meridiano="'+siglaMeridiano+'" onClick="SET.selTsubo(\''+n_P+'\',\''+siglaMeridiano+'\');">'+name+'</span>');
 		}
 		
 		var regexp = /\[\.[A-Z]{2}\.\]/ig;
@@ -1378,11 +1362,10 @@ SET = {
 			}
 		}
 		var titPoints = TXT("Meridiani");
-		if(localStorage.sistemaMeridiani=='NMK'){
-			titPoints = TXT("MappaPunti");
-		}
-		document.getElementById("elenchi_titolo").innerHTML = titPoints;
+		if(localStorage.sistemaMeridiani=='NMK')titPoints = TXT("MappaPunti");
 		document.getElementById("pulsante_meridiani").innerHTML = titPoints;
+		if(SCHEDA.elencoSel=='meridiani')document.getElementById("elenchi_titolo").innerHTML = titPoints;
+		
 		if(togliLoader){
 			var els = document.getElementById("sceltaMeridianiElenco").options;
 			for(e in els){
@@ -1428,6 +1411,7 @@ SET = {
 	},
 	
 	addEviPalls: function( siglaMeridiano, nTsubo, tipo ){
+		if(!scene.getObjectByName("PT_"+siglaMeridiano))return;
 		var els = scene.getObjectByName("PT_"+siglaMeridiano).children;
 		for(e in els){
 			if(els[e].name.indexOf(siglaMeridiano+"."+nTsubo+".")==0){

@@ -356,7 +356,7 @@ var PAZIENTI_SETS = {
 	aggiungiGruppoTrattamento: function( punti ){ // importa un gruppo di punti
 		PAZIENTI.topAdd = tCoord(document.getElementById("p_add_dett"),'y');
 		SCHEDA.formModificato=true;
-		if(PAZIENTI.tipoGruppo=='P')PAZIENTI.ricPuntiTratt();
+		if(PAZIENTI.tipoGruppo=='P' || PAZIENTI.tipoGruppo=='N')PAZIENTI.ricPuntiTratt();
 		var pP=punti.split("|");
 		var presenti=false;
 		var pass=true;
@@ -364,7 +364,7 @@ var PAZIENTI_SETS = {
 		for(let p=0;p<pP.length-1;p++){
 			// verifico che non ci sia già
 			pass=true;
-			if(PAZIENTI.tipoGruppo=='P'){
+			if(PAZIENTI.tipoGruppo=='P' || PAZIENTI.tipoGruppo=='N'){
 				var n = pP[p].split(".")[0]*1;
 				var siglaMeridiano = pP[p].split(".")[1];
 				for(let k in PAZIENTI.puntiProvvisori){
@@ -429,10 +429,8 @@ var PAZIENTI_SETS = {
 			}
 		}
 		if(presenti){
-			if(PAZIENTI.tipoGruppo=='P')ALERT(TXT("PuntiPresenti"));
+			if(PAZIENTI.tipoGruppo=='P' || PAZIENTI.tipoGruppo=='N' || PAZIENTI.tipoGruppo=='A')ALERT(TXT("PuntiPresenti"));
 			if(PAZIENTI.tipoGruppo=='M')ALERT(TXT("MeridianiPresenti"));
-			if(PAZIENTI.tipoGruppo=='A')ALERT(TXT("PuntiPresenti"));
-			if(PAZIENTI.tipoGruppo=='N')ALERT(TXT("PuntiPresenti"));
 		}
 		if(totAggiunti){
 			if(PAZIENTI.tipoGruppo=='P'){
@@ -1312,7 +1310,7 @@ var PAZIENTI_SETS = {
 					for(let k in result){
 						var pP = result[k].split(".");
 						PT=pP[1];
-						if(PAZIENTI.tipoGruppo=='P')PT += '.'+pP[2];
+						if(PAZIENTI.tipoGruppo=='P' || PAZIENTI.tipoGruppo=='N')PT += '.'+pP[2];
 						if(EL2.contenuto.indexOf(PT)===-1 && 
 						   ((PAZIENTI.tipoGruppo=='P' && pP[2]!='NK') || (PAZIENTI.tipoGruppo=='N' && pP[2]=='NK')) ){
 							var pass = true;
@@ -1416,7 +1414,7 @@ var PAZIENTI_SETS = {
 		if(txt.substr(0,3) != '404' && txt != 'vuoto'){
 			
 			
-			if(PAZIENTI.tipoGruppo=='P'){ // DA RIVEDERE <<<<<<<<<<<<<<<<<<<<<<<<<<<<<|!!!!!!!!!!!!!!!!
+			if(PAZIENTI.tipoGruppo=='P' || PAZIENTI.tipoGruppo=='N' || PAZIENTI.tipoGruppo=='A'){ // DA RIVEDERE <<<<<<<<<<<<<<<<<<<<<<<<<<<<<|!!!!!!!!!!!!!!!!
 				
 				
 				EL = {};
@@ -1467,7 +1465,7 @@ var PAZIENTI_SETS = {
 				EL2.parent = EL;
 				// scansiono il testo
 				var txtPat=DB.set.patologie[i].TestoPatologia;
-				if(PAZIENTI.tipoGruppo=='P')re = /\[\.[0-9]{1,2}\.[A-Z]{2}\.\]/ig;
+				if(PAZIENTI.tipoGruppo=='P' || PAZIENTI.tipoGruppo=='N')re = /\[\.[0-9]{1,2}\.[A-Z]{2}\.\]/ig;
 				if(PAZIENTI.tipoGruppo=='M')re = /\[\.[A-Z]{2}\.\]/ig;
 				if(PAZIENTI.tipoGruppo=='A'){
 					var list = SET.getListPointPat(i);
@@ -1480,9 +1478,9 @@ var PAZIENTI_SETS = {
 				}
 				var result = txtPat.match(re);
 				for(let k in result){
-					var pP = result[k].split(".");
-					PT = pP[1];
-					if(PAZIENTI.tipoGruppo=='P')PT += '.'+pP[2];
+					let pP = result[k].split(".");
+					let PT = pP[1];
+					if(PAZIENTI.tipoGruppo=='P' || PAZIENTI.tipoGruppo=='N')PT += '.'+pP[2];
 					if(EL2.contenuto.indexOf(PT)==-1){
 						var pass = true;
 						
@@ -1490,8 +1488,9 @@ var PAZIENTI_SETS = {
 						if(PAZIENTI.tipoGruppo=='M')pass = SET.verFreeMeridiani(PT)
 						else pass = SET.verFreePunti(PT);
 						// --------------------------
-							
-						if(pass)EL2.contenuto.push(PT);
+						if(pass && 
+							((PAZIENTI.tipoGruppo=='P' && pP[2]!='NK') ||
+							 (PAZIENTI.tipoGruppo=='N' && pP[2]=='NK')))EL2.contenuto.push(PT);
 					}
 				}
 				if(EL2.contenuto.length){
@@ -1622,15 +1621,21 @@ var PAZIENTI_SETS = {
 		if(pP[1])mer = pP[1];
 		
 		if(pP[0] && __(DB.set.meridiani[mer])){
+			var siglaPT = __(DB.set.meridiani[pP[1]].tsubo[pP[0]*1-1].siglaTsubo,pP[0]+"."+SET.convSigla(pP[1]));
 			HTML += '<label class="gr_3"' +
 					'		for="'+n+'">' +
 					'	<input type="checkbox"' +
 					'		   id="'+n+'"' +
-					'		   value="'+PT+'">';
-			if(PAZIENTI.tipoGruppo=='P' || PAZIENTI.tipoGruppo=='N'){
-				var siglaPT = __(DB.set.meridiani[pP[1]].tsubo[pP[0]*1-1].siglaTsubo,pP[0]+"."+SET.convSigla(pP[1]));
+					'		   value="'+PT+'"';
+			if(pP[1]=='EX')HTML += '		   data-sigla-tsubo="'+siglaPT+'"';
+			if(pP[1]=='NK')HTML += '		   data-sigla-tsubo="'+DB.set.meridiani[pP[1]].tsubo[pP[0]*1-1].NomeTsubo+'"';
+			HTML += '>';
+			if(PAZIENTI.tipoGruppo=='P'){
 				HTML +=	'<b>'+siglaPT+'.</b>' +
 						'<i>'+DB.set.meridiani[pP[1]].tsubo[pP[0]*1-1].NomeTsubo.replace(PT+".","")+'</i>';
+			}
+			if(PAZIENTI.tipoGruppo=='N'){
+				HTML +=	'<b>'+DB.set.meridiani[pP[1]].tsubo[pP[0]*1-1].NomeTsubo.replace(PT+".","")+'</b>';
 			}
 			if(PAZIENTI.tipoGruppo=='M'){
 				HTML +=	DB.set.meridiani[PT].NomeMeridiano;
@@ -1665,7 +1670,10 @@ var PAZIENTI_SETS = {
 			if(els[e].checked && els[e].type=='checkbox'){
 				punti += els[e].value;
 				if(	globals.set.cartella == 'meridiani_cinesi' ||
-					globals.set.cartella == 'meridiani_shiatsu' )punti += ".";
+					globals.set.cartella == 'meridiani_shiatsu' ){
+						punti += ".";
+						if(els[e].dataset.siglaTsubo)punti += els[e].dataset.siglaTsubo;
+					}
 				punti += "."+PAZIENTI.mezzoProvvisorio+"|";
 			}
 		}
