@@ -1029,7 +1029,6 @@ var LOGIN = {
 				
 				
 				
-				
 				elencoAppuntamenti='';
 				for(let k in DB.appuntamenti.data){
 					var db={ 	"idAppuntamento": DB.appuntamenti.data[k].idAppuntamento*1,
