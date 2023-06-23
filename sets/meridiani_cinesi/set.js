@@ -262,13 +262,13 @@ SET = {
 		
 	},
 	
+	// funzioni per settare la posizione dei punti
 	iniPos: function( azzera=false ){
 		if(azzera)localStorage.POS = '{}';
 		SET.POS = JSON.parse(__(localStorage.POS,'{}'));
 		SET.hidePlaced();
 		document.addEventListener("keyup", SET.keyUpPos, false );
 	},
-	
 	keyUpPos: function(event){
 		if(event.keyCode==81){
 			normalizeRotation();
@@ -486,13 +486,13 @@ SET = {
 			SET.setPulsePt( this.ptSel, 1, 1, mat );
 			var pP = this.ptSel.name.split(".");		
 			var siglaMeridiano = pP[0];
-			var nTsubo = parseInt(pP[1])-1;
+			var nTsubo = SET.tsubo2number(pP[1]);
 			document.getElementById("pt_"+(nTsubo+1)+"_"+siglaMeridiano).classList.remove("selElPt");
 		}
 		if(this.MAT.pointSel)SET.chiudiTsubo(true,true);
 		var pP = PT_name.split(".");		
 		var siglaMeridiano = pP[0];
-		var nTsubo = parseInt(pP[1])-1;
+		var nTsubo = SET.tsubo2number(pP[1]);
 		if(!scene.getObjectByName( PT_name )){
 			if(scene.getObjectByName( PT_name + "." )){
 				PT=scene.getObjectByName( PT_name + "." );
@@ -602,7 +602,7 @@ SET = {
 		if(!this.ptSel)return;
 		var pP = this.ptSel.name.split(".");
 		var siglaMeridiano = pP[0];
-		var nTsubo = pP[1];
+		var nTsubo = SET.tsubo2string(pP[1]);
 		this.pulse=0;
 		var mat=this.MAT.pointBase;
 		if(MERIDIANI[pP[0]].meridianoAcceso)mat=this.MAT.pointSel;
@@ -830,8 +830,7 @@ SET = {
 		var siglaTsuboOr = siglaTsubo;
 		var nomeTsubo = tsubo.substr(siglaTsubo.length,tsubo.length-siglaTsubo.length);
 		if(sigla)siglaTsubo = sigla;
-		var nTsubo = pT[0];
-		if(nTsubo.length == 1)nTsubo = '0' + nTsubo;
+		var nTsubo = SET.tsubo2string(pT[0]);
 		var html = '<a class="pallinoPat';
 		if(esteso)html += ' pallinoPatEsteso';
 		var ret = '';
@@ -846,14 +845,13 @@ SET = {
 		return html;
 	},
 	selTsubo: function( nTsubo, siglaMeridiano ){
-		if(nTsubo.length == 1)nTsubo='0'+nTsubo;
 		// verifico le autorizzazioni
 		if(!SET.verFreeMeridiani(siglaMeridiano)){
 			ALERT(TXT("MsgContSoloPay"),true,true);
 			return;
 		}
 		// --------------------------
-		SET.apriTsubo(siglaMeridiano+"."+nTsubo,'SET.chiudiTsubo(true);');
+		SET.apriTsubo(siglaMeridiano+"."+SET.tsubo2string(nTsubo),'SET.chiudiTsubo(true);');
 	},
 	selTsuboMod: function( p ){
 		SET.pMod = p;
@@ -876,25 +874,12 @@ SET = {
 		SCHEDA.torna();
 		SCHEDA.formModificato = true;
 	},
-	evidenziaTsubo: function( el = document.getElementById("scheda_testo")/*html*/ ){
-		
+	evidenziaTsubo: function( el = document.getElementById("scheda_testo") ){
 		SET.annullaEvidenziaTsubo();
 		var els = el.getElementsByClassName("pallinoPat");
 		for(let p=0;p<els.length;p++){
 			var siglaMeridiano = els[p].dataset.siglaMeridiano;
-			var nTsubo = els[p].dataset.nTsubo;
-			if(nTsubo.length==1)nTsubo = '0'+nTsubo;
-
-		/*SET.annullaEvidenziaTsubo();
-		var re = /selTsubo\([^\)]+\)/ig;
-		var result = html.match(re);
-		for(let k in result){
-			var pT=result[k].split("'");
-			while(pT[1].indexOf("|")>-1)pT[1]=pT[1].replace("|",".");
-			var pP=pT[1].split(".");
-			var nTsubo=pP[0];
-			if(nTsubo.length == 1)nTsubo = "0"+nTsubo;
-			siglaMeridiano = pP[1];*/
+			var nTsubo = SET.tsubo2string(els[p].dataset.nTsubo);
 			var el = scene.getObjectByName("PT_"+siglaMeridiano)
 			if(el){
 				for(e in el.children){
@@ -918,15 +903,15 @@ SET = {
 		SET.annullaEvidenziaTsubo();
 		for(let k in elenco){
 			var pP=elenco[k].split(".");
-			var nTsubo=pP[0];
-			if(nTsubo.length == 1)nTsubo = "0"+nTsubo;
+			var nTsubo=SET.tsubo2string(pP[0]);
+			var siglaMeridiano = pP[1];
+			var valutazione=pP[2];
 			var mat = SET.MAT.pointEvi;
-			if(pP[2]){
-				if(pP[2]=='V')mat = SET.MAT.pointVuoto;
-				if(pP[2]=='P')mat = SET.MAT.pointPieno;
-				if(pP[2]=='D')mat = SET.MAT.pointDolore;
+			if(valutazione){
+				if(valutazione=='V')mat = SET.MAT.pointVuoto;
+				if(valutazione=='P')mat = SET.MAT.pointPieno;
+				if(valutazione=='D')mat = SET.MAT.pointDolore;
 			}
-			siglaMeridiano = pP[1];
 			var els = scene.getObjectByName("PT_"+siglaMeridiano).children;
 			for(e in els){
 				if(els[e].name.indexOf("_"+siglaMeridiano+"."+nTsubo+".")==0)els[e].material=mat;
@@ -945,8 +930,7 @@ SET = {
 			for(let k in SET.tsuboEvidenziati){
 				var pT=SET.tsuboEvidenziati[k];
 				var pP=pT.split(".");
-				var nTsubo=pP[0];
-				if(nTsubo.length == 1)nTsubo = "0"+nTsubo;
+				var nTsubo=SET.tsubo2string(pP[0]);
 				siglaMeridiano = pP[1];
 				
 				var el = scene.getObjectByName("PT_"+siglaMeridiano)
@@ -982,8 +966,7 @@ SET = {
 				var sl = els[e].getElementsByTagName("select");
 				if(sl.length){
 					var mer = SET.estraiSigla(sl[0].value);
-					var nTsubo = sl[1].value;
-					if(nTsubo.length == 1)nTsubo='0'+nTsubo;
+					var nTsubo = SET.tsubo2string(sl[1].value);
 					elenco.push(nTsubo+"."+mer);
 				}
 			}
@@ -996,14 +979,13 @@ SET = {
 			var sl = el.getElementsByTagName("select");
 			if(!sl.length)return;
 			var mer = SET.estraiSigla(sl[0].value);
-			var nTsubo = sl[1].value;
+			var nTsubo = SET.tsubo2string(sl[1].value);
 			if(typeof(DB.set.meridiani[mer])=='undefined')return;
 		}else{
 			if(!el.dataset.siglaMeridiano)return;
-			var nTsubo = el.dataset.nTsubo;
+			var nTsubo = SET.tsubo2string(el.dataset.nTsubo);
 			var mer = el.dataset.siglaMeridiano;
 		}
-		if(nTsubo.length == 1)nTsubo = "0"+nTsubo;
 		if(over){
 			SET.addEviPalls(mer,nTsubo,'Over');
 		}else{
@@ -1229,7 +1211,7 @@ SET = {
 		if(!scene.getObjectByName("PT_"+siglaMeridiano))return;
 		var els = scene.getObjectByName("PT_"+siglaMeridiano).children;
 		for(e in els){
-			if(els[e].name.indexOf(siglaMeridiano+"."+nTsubo+".")==0){
+			if(els[e].name.indexOf(siglaMeridiano+"."+SET.tsubo2string(nTsubo)+".")==0){
 				var geoPoint =  new THREE.SphereGeometry( 0.11, 16, 16 );
 				var eviPoint;
 				eviPoint =  new THREE.Mesh( geoPoint, this.MAT.pointSel2.clone() );
@@ -1246,7 +1228,7 @@ SET = {
 	delEviPalls: function( siglaMeridiano, nTsubo, tipo ){
 		var els = SETS.children;
 		for(e=els.length-1;e>=0;e--){
-			if(els[e].name.indexOf(tipo+' point: '+siglaMeridiano+"."+nTsubo+".")==0){
+			if(els[e].name.indexOf(tipo+' point: '+siglaMeridiano+"."+SET.tsubo2string(nTsubo)+".")==0){
 				SETS.remove( els[e] );
 			}
 		}

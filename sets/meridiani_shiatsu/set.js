@@ -298,13 +298,13 @@ SET = {
 		
 	},
 	
+	// funzioni per settare la posizione dei punti
 	iniPos: function( azzera=false ){
 		if(azzera)localStorage.POS = '{}';
 		SET.POS = JSON.parse(__(localStorage.POS,'{}'));
 		SET.hidePlaced();
 		document.addEventListener("keyup", SET.keyUpPos, false );
-	},
-	
+	},	
 	keyUpPos: function(event){
 		if(event.keyCode==81){
 			normalizeRotation();
@@ -910,8 +910,7 @@ SET = {
 		var nomeTsubo = tsubo.substr(siglaTsubo.length+1,Object.keys(tsubo).length-(siglaTsubo.length+1));
 		if(sigla)siglaTsubo = sigla;
 		if(siglaMeridiano=='NK')siglaTsubo = '';
-		var nTsubo = pT[0];
-		if(nTsubo.length == 1)nTsubo = '0' + nTsubo;
+		var nTsubo = SET.tsubo2string(pT[0]);
 		var html = '<a class="pallinoPat';
 		if(esteso)html += ' pallinoPatEsteso';
 		var ret = '';
@@ -940,8 +939,7 @@ SET = {
 			rit = 500;
 		}
 		
-		var nTsubo = pP[0];
-		if(nTsubo.length == 1)nTsubo='0'+nTsubo;
+		var nTsubo = SET.tsubo2string(nTsubo);
 		// verifico le autorizzazioni
 		if(!SET.verFreeMeridiani(siglaMeridiano)){
 			ALERT(TXT("MsgContSoloPay"),true,true);
@@ -996,8 +994,7 @@ SET = {
 		var els = el.getElementsByClassName("pallinoPat");
 		for(let p=0;p<els.length;p++){
 			var siglaMeridiano = els[p].dataset.siglaMeridiano;
-			var nTsubo = els[p].dataset.nTsubo;
-			if(nTsubo.length==1)nTsubo = '0'+nTsubo;
+			var nTsubo = SET.tsubo2string(els[p].dataset.nTsubo);
 			var el = scene.getObjectByName("PT_"+siglaMeridiano);
 			if(el){
 				for(let e in el.children){
@@ -1014,34 +1011,6 @@ SET = {
 			SET.tsuboEvidenziati.push(nTsubo+"."+siglaMeridiano);
 		}
 		SET.settaOverTsubo();
-		
-		
-		
-		/*var re = /selTsubo\([^\)]+\)/ig;
-		var result = html.match(re);
-		for(let k in result){
-			var pT=result[k].split("'");
-			while(pT[1].indexOf("|")>-1)pT[1]=pT[1].replace("|",".");
-			var pP=pT[1].split(".");
-			var nTsubo=pP[0];
-			if(nTsubo.length == 1)nTsubo = "0"+nTsubo;
-			siglaMeridiano = pP[1];
-			var el = scene.getObjectByName("PT_"+siglaMeridiano);
-			if(el){
-				for(e in el.children){
-					if(el.children[e].name.indexOf("_"+siglaMeridiano+"."+nTsubo+".")==0)el.children[e].material=SET.MAT.pointEvi;
-				}
-			}
-			var el = scene.getObjectByName("FR_"+siglaMeridiano);
-			if(el){
-				for(e in el.children){
-					if(el.children[e].name == "FR."+nTsubo )el.children[e].visible=true;
-					if(el.children[e].name == "FR."+nTsubo )el.children[e].material=SET.MAT.lineFrecceEvi;
-				}
-			}
-			SET.tsuboEvidenziati.push(pT[1]);
-		}
-		SET.settaOverTsubo();*/
 	},
 	evidenziaMeridiani: function( html, noSpegni=false ){
 		if(localStorage.sistemaMeridiani == 'NMK')return;
@@ -1057,8 +1026,7 @@ SET = {
 		SET.annullaEvidenziaTsubo();
 		for(let k in elenco){
 			var pP=elenco[k].split(".");
-			var nTsubo=pP[0];
-			if(nTsubo.length == 1)nTsubo = "0"+nTsubo;
+			var nTsubo=SET.tsubo2string(pP[0]);
 			var mat = SET.MAT.pointEvi;
 			if(pP[2]){
 				if(pP[2]=='V')mat = SET.MAT.pointVuoto;
@@ -1093,8 +1061,7 @@ SET = {
 			for(let k in SET.tsuboEvidenziati){
 				var pT=SET.tsuboEvidenziati[k];
 				var pP=pT.split(".");
-				var nTsubo=pP[0];
-				if(nTsubo.length == 1)nTsubo = "0"+nTsubo;
+				var nTsubo=SET.tsubo2string(pP[0]);
 				siglaMeridiano = pP[1];
 				
 				var el = scene.getObjectByName("PT_"+siglaMeridiano)
@@ -1137,8 +1104,7 @@ SET = {
 				var sl = els[e].getElementsByTagName("select");
 				if(sl.length){
 					var mer = sl[0].value;
-					var nTsubo = sl[1].value;
-					if(nTsubo.length == 1)nTsubo='0'+nTsubo;
+					var nTsubo = SET.tsubo2string(sl[1].value);
 					elenco.push(nTsubo+"."+mer);
 				}
 			}
@@ -1151,20 +1117,19 @@ SET = {
 			var mer = el.getElementsByClassName("selectTratt")[0];
 			var nTsubo = el.getElementsByClassName("numPoints")[0];
 			if(!nTsubo)return;
-			else nTsubo = nTsubo.value;
+			else nTsubo = SET.tsubo2string(nTsubo.value);
 			if(mer)mer = mer.value;
 			if(!__(DB.set.meridiani[mer]))return; // in caso di EX
 			if(typeof(DB.set.meridiani[mer])=='undefined')return;
 		}else{
 			if(!el.dataset.siglaMeridiano)return;
-			var nTsubo = el.dataset.nTsubo;
+			var nTsubo = SET.tsubo2string(el.dataset.nTsubo);
 			var mer = el.dataset.siglaMeridiano;
 		}
 		
 		if(	(mer=='NK' && localStorage.sistemaMeridiani!='NMK') || 
 			(mer!='NK' && localStorage.sistemaMeridiani=='NMK') )return;	
 		
-		if(nTsubo.length == 1)nTsubo = "0"+nTsubo;
 		if(over){
 			SET.addEviPalls(mer,nTsubo,'Over');
 		}else{

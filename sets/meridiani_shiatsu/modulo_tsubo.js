@@ -9,8 +9,7 @@ var MODULO_TSUBO = { // extend SET
 	
 	caricaTsubo: function( siglaMeridiano, nTsubo, ritorno ){
 		// apre la scheda di uno tsubo
-		var nTsubo2 = (nTsubo+1)+"";
-		if(nTsubo2.length == 1)nTsubo2 = "0"+nTsubo2;
+		var nTsubo2 = SET.tsubo2string(nTsubo+1);
 		
 		// verifico le autorizzazioni
 		//if(!SET.verFreeMeridiani(siglaMeridiano)){
@@ -90,7 +89,7 @@ var MODULO_TSUBO = { // extend SET
 					// aggiungi il punto al trattamento
 					txt = TXT("AggiungiTsuboTratt");
 					if(siglaMeridiano!='NK')az = "PAZIENTI.aggiungiPuntoTrattamento('"+tsuboNuovo+"');SCHEDA.torna();";
-					else az = "PAZIENTI.aggiungiNamikoshiTrattamento('"+(nTsubo*1+1)+"');SCHEDA.torna();";
+					else az = "PAZIENTI.aggiungiNamikoshiTrattamento('"+(nTsubo+1)+"');SCHEDA.torna();";
 					cls = 'spAdd';
 				}
 			}
@@ -232,10 +231,8 @@ var MODULO_TSUBO = { // extend SET
 		var classFr = '';
 		
 		if(!SCHEDA.scheda2Aperta){
-			var nTsuboGiu = (nTsubo)+"";
-			if(nTsuboGiu.length == 1)nTsuboGiu = "0"+nTsuboGiu;
-			var nTsuboSu = (nTsubo+2)+"";
-			if(nTsuboSu.length == 1)nTsuboSu = "0"+nTsuboSu;
+			var nTsuboGiu = SET.tsubo2string(nTsubo);
+			var nTsuboSu = SET.tsubo2string(nTsubo+2);
 			// evidenzio i pulsanti su e giù
 			
 			if(nTsubo*1 > 0){ // attiva giù
@@ -382,5 +379,13 @@ var MODULO_TSUBO = { // extend SET
 		// apre la scheda dello tsubo dalla ricerca globale
 		SET.apriTsubo(pt);
 		evidenziaParola();
+	},
+	tsubo2string: function( nTsubo ){
+		nTsubo = nTsubo+"";
+		if(nTsubo.length == 1)nTsubo = "0"+nTsubo;
+		return nTsubo;
+	},
+	tsubo2number: function( nTsubo ){
+		return parseInt(nTsubo)-1;
 	}
 }

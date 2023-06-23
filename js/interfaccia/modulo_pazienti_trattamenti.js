@@ -1172,7 +1172,7 @@ var PAZIENTI_TRATTAMENTI = {
 				delete(GA[i].imported);
 			}
 			localPouchDB.setItem(MD5("DB"+LOGIN._frv()+".foto"), IMPORTER.COMPR(DB.foto)).then(function(){
-				PAZIENTI.ricPuntiTratt();
+				PAZIENTI.ricPuntiTratt();	
 				if(TipoTrattamento=='A'){
 					TestoTrattamento={};
 					TestoTrattamento.AnamnesiMotivo=document.formMod.AnamnesiMotivo.value;

@@ -364,7 +364,7 @@ var PAZIENTI_SETS = {
 		for(let p=0;p<pP.length-1;p++){
 			// verifico che non ci sia già
 			pass=true;
-			if(PAZIENTI.tipoGruppo=='P' || PAZIENTI.tipoGruppo=='N'){
+			if(PAZIENTI.tipoGruppo=='P'){
 				var n = pP[p].split(".")[0]*1;
 				var siglaMeridiano = pP[p].split(".")[1];
 				for(let k in PAZIENTI.puntiProvvisori){
@@ -375,16 +375,7 @@ var PAZIENTI_SETS = {
 					}
 				}
 				if(pass){
-					var siglaTsubo = __(DB.set.meridiani[siglaMeridiano].tsubo[n-1].siglaTsubo, pP[p]);
-					var descrTsubo = __(DB.set.meridiani[siglaMeridiano].tsubo[n-1].ChiaviTsubo, '');
-					PAZIENTI.puntiProvvisori.push({
-						n: n,
-						m: siglaMeridiano,
-						e: '',
-						z: PAZIENTI.mezzoProvvisorio,
-						t: descrTsubo,
-						s: siglaTsubo
-					});
+					PAZIENTI.aggiungiPuntoTrattamento(n+"."+siglaMeridiano);
 					totAggiunti++;
 				}
 			}
