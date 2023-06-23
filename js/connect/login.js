@@ -1016,6 +1016,7 @@ var LOGIN = {
 						elencoNote+=JSON.stringify(DB.note.data[k])+", ";
 					}
 				}
+				
 				if(elencoNote)elenco+='"note": ['+elencoNote.substr(0,elencoNote.length-2)+'], ';		
 				elencoProcedure='';
 				for(let k in DB.procedure.data){
