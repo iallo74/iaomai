@@ -69,7 +69,7 @@ var PAZIENTI_SETS = {
 			}
 			var mrProc=new Array();
 			for(let k in DB.set.meridiani){
-				mrProc[k]=DB.set.meridiani[k].tsubo.length;
+				mrProc[k]=Object.keys(DB.set.meridiani[k].tsubo).length;
 			}
 			for(a=mrProc[mr.value];a>=1;a--){
 				punto.options[a]=new Option('',encodeURIComponent(a),false,false);
@@ -207,7 +207,7 @@ var PAZIENTI_SETS = {
 							HTML+='<option value="'+k+'"';
 							if(siglaMeridiano==k){
 								HTML+=' SELECTED';
-								totPunti=DB.set.meridiani[k].tsubo.length;
+								totPunti= Object.keys(DB.set.meridiani[k].tsubo).length;
 							}
 							HTML+=	'>'+SET.convSigla(k) +
 									'</option>';

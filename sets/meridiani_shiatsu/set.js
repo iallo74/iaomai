@@ -907,7 +907,7 @@ SET = {
 		var pT = tsubo.split(".");
 		var siglaTsubo = pT[0]+"."+pT[1];
 		var siglaTsuboOr = siglaTsubo;
-		var nomeTsubo = tsubo.substr(siglaTsubo.length+1,tsubo.length-(siglaTsubo.length+1));
+		var nomeTsubo = tsubo.substr(siglaTsubo.length+1,Object.keys(tsubo).length-(siglaTsubo.length+1));
 		if(sigla)siglaTsubo = sigla;
 		if(siglaMeridiano=='NK')siglaTsubo = '';
 		var nTsubo = pT[0];

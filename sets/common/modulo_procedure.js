@@ -757,7 +757,7 @@ var MODULO_PROCEDURE = { // extend SET
 		}
 		var mrProc=new Array();
 		for(let k in DB.set.meridiani){
-			mrProc[k]=DB.set.meridiani[k].tsubo.length;
+			mrProc[k]=Object.keys(DB.set.meridiani[k].tsubo).length;
 		}
 		for(a=mrProc[mr.value];a>=1;a--){
 			punto.options[a]=new Option('',encodeURIComponent(a),false,false);
@@ -972,7 +972,7 @@ var MODULO_PROCEDURE = { // extend SET
 									'		<option value="'+k+'"';
 									if(siglaMeridiano==k){
 										HTML += ' SELECTED';
-										totPunti=DB.set.meridiani[k].tsubo.length;
+										totPunti=Object.keys(DB.set.meridiani[k].tsubo).length;
 									}
 									HTML += '>'+SET.convSigla(k);
 									if(WF()>=509)HTML += ' &nbsp; ('+DB.set.meridiani[k].NomeMeridiano+')';
@@ -1064,7 +1064,7 @@ var MODULO_PROCEDURE = { // extend SET
 								'		<option value="'+k+'"';
 								if(DescrizioneDettaglio==k){
 									HTML += ' SELECTED';
-									totPunti=DB.set.meridiani[k].tsubo.length;
+									totPunti=Object.keys(DB.set.meridiani[k].tsubo).length;
 								}
 								HTML += '>'+SET.convSigla(k);
 								if(WF()>=509)HTML += ' &nbsp; ('+DB.set.meridiani[k].NomeMeridiano+')';

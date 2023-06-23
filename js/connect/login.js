@@ -520,11 +520,6 @@ var LOGIN = {
 			if(globals.set.cartella)caricaSet(globals.set.cartella,document.getElementById('p_'+globals.set.cartella));
 		}});
 	},
-	decryptPrivacy: function(txt){		
-		// decripta una stringa se inizia [@]
-		if(txt.substr(0,3)=='[@]')txt = LZString.decompressFromUTF16(txt.substr(3,txt.length-3));
-		return txt;
-	},
 	
 	
 	// GESTIONE UTENTE
@@ -1330,7 +1325,7 @@ var LOGIN = {
 				passato=false;
 				var id_interno=-1;
 				if(BACKUPS.bkpProvv)elenco.note[p].DataModifica = lastSync*1;
-				JSNPUSH={	"TestoAnnotazione": LOGIN.decryptPrivacy(elenco.note[p].TestoAnnotazione),
+				JSNPUSH={	"TestoAnnotazione": elenco.note[p].TestoAnnotazione,
 							"meridiano": elenco.note[p].meridiano,
 							"numeroTsubo": elenco.note[p].numeroTsubo+'',//*1,
 							"idPaziente": elenco.note[p].idPaziente*1,
@@ -1464,8 +1459,8 @@ var LOGIN = {
 				passato=false;
 				if(BACKUPS.bkpProvv)elenco.servizi[p].DataModifica = lastSync*1;
 				JSNPUSH={ 	"idServizio": elenco.servizi[p].idServizio*1,
-							"NomeServizio": LOGIN.decryptPrivacy(elenco.servizi[p].NomeServizio)+"",
-							"DescrizioneServizio": LOGIN.decryptPrivacy(elenco.servizi[p].DescrizioneServizio)+"",
+							"NomeServizio": elenco.servizi[p].NomeServizio+"",
+							"DescrizioneServizio": elenco.servizi[p].DescrizioneServizio+"",
 							"CostoServizio": elenco.servizi[p].CostoServizio*1,
 							"NumeroSedute": elenco.servizi[p].NumeroSedute*1,
 							"DataModifica": elenco.servizi[p].DataModifica*1,
@@ -1477,7 +1472,7 @@ var LOGIN = {
 					var SR = DB.servizi.data[k];
 					if(	( SR.idServizio*1>0 && SR.idServizio*1==elenco.servizi[p].idServizio*1 ) || 
 						(	SR.idServizio*1==0 &&
-							SR.NomeServizio==LOGIN.decryptPrivacy(elenco.servizi[p].NomeServizio) && 
+							SR.NomeServizio==elenco.servizi[p].NomeServizio && 
 							SR.DataCreazione*1==elenco.servizi[p].DataCreazione*1)	){ // se esiste aggiorna
 							
 						DB.servizi.data[k] = JSNPUSH;
@@ -1526,19 +1521,19 @@ var LOGIN = {
 				passato=false;
 				if(BACKUPS.bkpProvv)elenco.fornitori[p].DataModifica = lastSync*1;
 				JSNPUSH={ 	"idFornitore": elenco.fornitori[p].idFornitore*1,
-							"RagioneSociale": LOGIN.decryptPrivacy(elenco.fornitori[p].RagioneSociale)+"",
-							"Intestazione": LOGIN.decryptPrivacy(elenco.fornitori[p].Intestazione)+"",
-							"PartitaIva": LOGIN.decryptPrivacy(elenco.fornitori[p].PartitaIva),
-							"CodiceFiscale": LOGIN.decryptPrivacy(elenco.fornitori[p].CodiceFiscale),
-							"Indirizzo": LOGIN.decryptPrivacy(elenco.fornitori[p].Indirizzo),
-							"CAP": LOGIN.decryptPrivacy(elenco.fornitori[p].CAP),
-							"Citta": LOGIN.decryptPrivacy(elenco.fornitori[p].Citta),
-							"Provincia": LOGIN.decryptPrivacy(elenco.fornitori[p].Provincia),
-							"Stato": LOGIN.decryptPrivacy(elenco.fornitori[p].Stato),
-							"Telefono": LOGIN.decryptPrivacy(elenco.fornitori[p].Telefono),
-							"Email": LOGIN.decryptPrivacy(elenco.fornitori[p].Email),
-							"NoteFornitore": LOGIN.decryptPrivacy(elenco.fornitori[p].NoteFornitore),
-							"etichette": toJson(LOGIN.decryptPrivacy(elenco.fornitori[p].etichette)),
+							"RagioneSociale": elenco.fornitori[p].RagioneSociale+"",
+							"Intestazione": elenco.fornitori[p].Intestazione+"",
+							"PartitaIva": elenco.fornitori[p].PartitaIva,
+							"CodiceFiscale": elenco.fornitori[p].CodiceFiscale,
+							"Indirizzo": elenco.fornitori[p].Indirizzo,
+							"CAP": elenco.fornitori[p].CAP,
+							"Citta": elenco.fornitori[p].Citta,
+							"Provincia": elenco.fornitori[p].Provincia,
+							"Stato": elenco.fornitori[p].Stato,
+							"Telefono": elenco.fornitori[p].Telefono,
+							"Email": elenco.fornitori[p].Email,
+							"NoteFornitore": elenco.fornitori[p].NoteFornitore,
+							"etichette": toJson(elenco.fornitori[p].etichette),
 							"DataModifica": elenco.fornitori[p].DataModifica*1,
 							"DataCreazione": elenco.fornitori[p].DataCreazione*1,
 							"Cancellato": elenco.fornitori[p].Cancellato*1,
@@ -1548,7 +1543,7 @@ var LOGIN = {
 					var FR = DB.fornitori.data[k];
 					if(	( FR.idFornitore*1>0 && FR.idFornitore*1==elenco.fornitori[p].idFornitore*1 ) || 
 						(	FR.idFornitore*1==0 &&
-							FR.RagioneSociale==LOGIN.decryptPrivacy(elenco.fornitori[p].RagioneSociale) && 
+							FR.RagioneSociale==elenco.fornitori[p].RagioneSociale && 
 							FR.DataCreazione*1==elenco.fornitori[p].DataCreazione*1)	){ // se esiste aggiorna
 							
 						DB.fornitori.data[k] = JSNPUSH;
@@ -1597,7 +1592,7 @@ var LOGIN = {
 				passato=false;
 				if(BACKUPS.bkpProvv)elenco.appuntamenti[p].DataModifica = lastSync*1;
 				JSNPUSH={ 	"idAppuntamento": elenco.appuntamenti[p].idAppuntamento*1,
-							"TestoAppuntamento": LOGIN.decryptPrivacy(elenco.appuntamenti[p].TestoAppuntamento)+"",
+							"TestoAppuntamento": elenco.appuntamenti[p].TestoAppuntamento+"",
 							"TimeAppuntamento": elenco.appuntamenti[p].TimeAppuntamento*1,
 							"oraInizio": elenco.appuntamenti[p].oraInizio*1,
 							"oraFine": elenco.appuntamenti[p].oraFine*1,
@@ -1611,7 +1606,7 @@ var LOGIN = {
 					var AP = DB.appuntamenti.data[k];
 					if(	( AP.idAppuntamento*1>-1 && AP.idAppuntamento*1==elenco.appuntamenti[p].idAppuntamento*1 ) || 
 						(	AP.idAppuntamento*1==-1 &&
-							AP.TestoAppuntamento==LOGIN.decryptPrivacy(elenco.appuntamenti[p].TestoAppuntamento) && 
+							AP.TestoAppuntamento==elenco.appuntamenti[p].TestoAppuntamento && 
 							AP.DataCreazione*1==elenco.appuntamenti[p].DataCreazione*1)	){ // se esiste aggiorna
 							
 						DB.appuntamenti.data[k] = JSNPUSH;
@@ -1661,8 +1656,8 @@ var LOGIN = {
 				passato=false;
 				if(BACKUPS.bkpProvv)elenco.annotazioni[p].DataModifica = lastSync*1;
 				JSNPUSH={ 	"idAnnotazione": elenco.annotazioni[p].idAnnotazione*1,
-							"TitoloAnnotazione": LOGIN.decryptPrivacy(elenco.annotazioni[p].TitoloAnnotazione)+"",
-							"TestoAnnotazione": LOGIN.decryptPrivacy(elenco.annotazioni[p].TestoAnnotazione)+"",
+							"TitoloAnnotazione": elenco.annotazioni[p].TitoloAnnotazione+"",
+							"TestoAnnotazione": elenco.annotazioni[p].TestoAnnotazione+"",
 							"DataModifica": elenco.annotazioni[p].DataModifica*1,
 							"DataCreazione": elenco.annotazioni[p].DataCreazione*1,
 							"Cancellato": elenco.annotazioni[p].Cancellato*1,
@@ -1672,7 +1667,7 @@ var LOGIN = {
 					var AN = DB.annotazioni.data[k];
 					if(	( AN.idAnnotazione*1>0 && AN.idAnnotazione*1==elenco.annotazioni[p].idAnnotazione*1 ) || 
 						(	AN.idAnnotazione*1==0 &&
-							AN.TitoloAnnotazione==LOGIN.decryptPrivacy(elenco.annotazioni[p].TitoloAnnotazione) && 
+							AN.TitoloAnnotazione==elenco.annotazioni[p].TitoloAnnotazione && 
 							AN.DataCreazione*1==elenco.annotazioni[p].DataCreazione*1)	){ // se esiste aggiorna
 							
 						DB.annotazioni.data[k] = JSNPUSH;
@@ -1722,37 +1717,37 @@ var LOGIN = {
 				if(BACKUPS.bkpProvv)elenco.pazienti[p].DataModifica = lastSync*1;
 				
 				JSNPUSH={ 	"idPaziente": elenco.pazienti[p].idPaziente*1,
-							"Nome": LOGIN.decryptPrivacy(elenco.pazienti[p].Nome)+"",
-							"Cognome": LOGIN.decryptPrivacy(elenco.pazienti[p].Cognome)+"",
-							"Indirizzo": LOGIN.decryptPrivacy(elenco.pazienti[p].Indirizzo),
-							"CAP": LOGIN.decryptPrivacy(elenco.pazienti[p].CAP),
-							"Citta": LOGIN.decryptPrivacy(elenco.pazienti[p].Citta),
-							"Provincia": LOGIN.decryptPrivacy(elenco.pazienti[p].Provincia),
-							"Stato": LOGIN.decryptPrivacy(elenco.pazienti[p].Stato),
-							"Telefono": LOGIN.decryptPrivacy(elenco.pazienti[p].Telefono),
-							"Cellulare": LOGIN.decryptPrivacy(__(elenco.pazienti[p].Cellulare)),
+							"Nome": elenco.pazienti[p].Nome+"",
+							"Cognome": elenco.pazienti[p].Cognome+"",
+							"Indirizzo": elenco.pazienti[p].Indirizzo,
+							"CAP": elenco.pazienti[p].CAP,
+							"Citta": elenco.pazienti[p].Citta,
+							"Provincia": elenco.pazienti[p].Provincia,
+							"Stato": elenco.pazienti[p].Stato,
+							"Telefono": elenco.pazienti[p].Telefono,
+							"Cellulare": __(elenco.pazienti[p].Cellulare),
 							"paeseCellulare": __(elenco.pazienti[p].paeseCellulare),
-							"Email": LOGIN.decryptPrivacy(elenco.pazienti[p].Email),
-							"sesso": LOGIN.decryptPrivacy(elenco.pazienti[p].sesso),
-							"NotePaziente": LOGIN.decryptPrivacy(elenco.pazienti[p].NotePaziente),
+							"Email": elenco.pazienti[p].Email,
+							"sesso": elenco.pazienti[p].sesso,
+							"NotePaziente": elenco.pazienti[p].NotePaziente,
 							"DataNascita": elenco.pazienti[p].DataNascita,
-							"LuogoNascita": LOGIN.decryptPrivacy(__(elenco.pazienti[p].LuogoNascita)),
-							"tags": toJson(LOGIN.decryptPrivacy(elenco.pazienti[p].tags)),
-							"etichette": toJson(LOGIN.decryptPrivacy(elenco.pazienti[p].etichette)),
-							"medicine": toJson(LOGIN.decryptPrivacy(elenco.pazienti[p].medicine)),
-							"allergie": toJson(LOGIN.decryptPrivacy(elenco.pazienti[p].allergie)),
-							"patologie": toJson(LOGIN.decryptPrivacy(elenco.pazienti[p].patologie)),
-							"interventi": toJson(LOGIN.decryptPrivacy(elenco.pazienti[p].interventi)),
+							"LuogoNascita": __(elenco.pazienti[p].LuogoNascita),
+							"tags": toJson(elenco.pazienti[p].tags),
+							"etichette": toJson(elenco.pazienti[p].etichette),
+							"medicine": toJson(elenco.pazienti[p].medicine),
+							"allergie": toJson(elenco.pazienti[p].allergie),
+							"patologie": toJson(elenco.pazienti[p].patologie),
+							"interventi": toJson(elenco.pazienti[p].interventi),
 							"gallery": elenco.pazienti[p].gallery,
-							"Provenienza": LOGIN.decryptPrivacy(elenco.pazienti[p].Provenienza),
-							"Professione": LOGIN.decryptPrivacy(elenco.pazienti[p].Professione),
-							"Intestazione": LOGIN.decryptPrivacy(elenco.pazienti[p].Intestazione),
-							"CodiceFiscale": LOGIN.decryptPrivacy(elenco.pazienti[p].CodiceFiscale),
-							"PartitaIva": LOGIN.decryptPrivacy(elenco.pazienti[p].PartitaIva),
-							"Social": LOGIN.decryptPrivacy(elenco.pazienti[p].Social),
-							"avatar": LOGIN.decryptPrivacy(elenco.pazienti[p].avatar),
-							"Altezza": LOGIN.decryptPrivacy(elenco.pazienti[p].Altezza),
-							"Peso": LOGIN.decryptPrivacy(elenco.pazienti[p].Peso),
+							"Provenienza": elenco.pazienti[p].Provenienza,
+							"Professione": elenco.pazienti[p].Professione,
+							"Intestazione": elenco.pazienti[p].Intestazione,
+							"CodiceFiscale": elenco.pazienti[p].CodiceFiscale,
+							"PartitaIva": elenco.pazienti[p].PartitaIva,
+							"Social": elenco.pazienti[p].Social,
+							"avatar": elenco.pazienti[p].avatar,
+							"Altezza": elenco.pazienti[p].Altezza,
+							"Peso": elenco.pazienti[p].Peso,
 							"DataModifica": elenco.pazienti[p].DataModifica*1,
 							"trattamenti": [],
 							"saldi": [],
@@ -1795,7 +1790,7 @@ var LOGIN = {
 					for(t in trattamenti){ // in tutti i trattamenti arrivati
 						passato=false;
 						
-						var puntiTsuboMap = LOGIN.decryptPrivacy(trattamenti[t].puntiTsuboMap);
+						var puntiTsuboMap = trattamenti[t].puntiTsuboMap;
 						
 						if(puntiTsuboMap.substr(0,1)!="["){
 							if(puntiTsuboMap.indexOf(".")>-1){
@@ -1816,12 +1811,12 @@ var LOGIN = {
 						if(BACKUPS.bkpProvv)trattamenti[t].DataModifica = lastSync*1;
 						JSNPUSH={ 	"idTrattamento": trattamenti[t].idTrattamento*1,
 									"idPaziente": DB.pazienti.data[kDef].idPaziente*1,
-									"TitoloTrattamento": LOGIN.decryptPrivacy(trattamenti[t].TitoloTrattamento),
-									"TestoTrattamento": LOGIN.decryptPrivacy(trattamenti[t].TestoTrattamento),
-									"Prescrizione": LOGIN.decryptPrivacy(trattamenti[t].Prescrizione),
+									"TitoloTrattamento": trattamenti[t].TitoloTrattamento,
+									"TestoTrattamento": trattamenti[t].TestoTrattamento,
+									"Prescrizione": trattamenti[t].Prescrizione,
 									"puntiTsuboMap": puntiTsuboMap,
-									"puntiAuriculoMap": LOGIN.decryptPrivacy(trattamenti[t].puntiAuriculoMap),
-									"puntiNamikoshi": LOGIN.decryptPrivacy(trattamenti[t].puntiNamikoshi),
+									"puntiAuriculoMap": trattamenti[t].puntiAuriculoMap,
+									"puntiNamikoshi": trattamenti[t].puntiNamikoshi,
 									"meridiani": trattamenti[t].meridiani,
 									"sintomi": trattamenti[t].sintomi,
 									"gallery": trattamenti[t].gallery,
@@ -1829,8 +1824,8 @@ var LOGIN = {
 									"oraInizio": trattamenti[t].oraInizio*1,
 									"oraFine": trattamenti[t].oraFine*1,
 									"DataModifica": trattamenti[t].DataModifica*1,
-									"LabelCiclo": LOGIN.decryptPrivacy(trattamenti[t].LabelCiclo),
-									"TipoTrattamento": LOGIN.decryptPrivacy(trattamenti[t].TipoTrattamento),
+									"LabelCiclo": trattamenti[t].LabelCiclo,
+									"TipoTrattamento": trattamenti[t].TipoTrattamento,
 									"CostoTrattamento": trattamenti[t].CostoTrattamento*1,
 									"ordine": trattamenti[t].ordine*1,
 									"Cancellato": trattamenti[t].Cancellato*1,
@@ -1890,8 +1885,8 @@ var LOGIN = {
 						if(BACKUPS.bkpProvv)saldi[t].DataModifica = lastSync*1;
 						JSNPUSH={ 	"idSaldo": saldi[t].idSaldo*1,
 									"idPaziente": DB.pazienti.data[kDef].idPaziente*1,
-									"MotivoSaldo": LOGIN.decryptPrivacy(saldi[t].MotivoSaldo),
-									"RicevutaSaldo": LOGIN.decryptPrivacy(__(saldi[t].RicevutaSaldo)),
+									"MotivoSaldo": saldi[t].MotivoSaldo,
+									"RicevutaSaldo": __(saldi[t].RicevutaSaldo),
 									"ValoreSaldo": saldi[t].ValoreSaldo*1,
 									"DataSaldo": saldi[t].DataSaldo*1,
 									"DataModifica": saldi[t].DataModifica*1,
@@ -2314,19 +2309,15 @@ var LOGIN = {
 	},
 	
 	// funzioni generiche
-	dataW: function(txt){
-		if(typeof(txt)=='string')txt=LOGIN.decryptPrivacy(txt);
-		return txt;
-	},
 	componi: function( backup, data ){
 		LOGIN.addHTML('<style type="text/css">*{font-family:Verdana, Geneva, sans-serif;font-size:12px;line-height:20px;}.rientro{padding-left:20px;}.tits{font-size:14px;}h1, h1 *{font-size:24px;}h2, h2 *{font-size:20px;}h3, h3 *{font-size:16px;}i{color:#999;}</style>')
-		LOGIN.addHTML(TXT("Backup")+": <b>"+LOGIN.dataW(DB.login.data.Nominativo)+"</b><br>");
+		LOGIN.addHTML(TXT("Backup")+": <b>"+DB.login.data.Nominativo+"</b><br>");
 		LOGIN.addHTML("<i>"+TXT("DataCreazione")+":</i> <b>"+getFullDataTS(data)+" ore "+getOraTS(data)+"</b><hr>");
 		
 		LOGIN.addHTML("<h1>"+TXT("Pazienti").toUpperCase()+"</h1><div class=\"rientro\">");
 		for(let p in backup.pazienti){
-			backup.pazienti[p].Nome=LOGIN.dataW(backup.pazienti[p].Nome);
-			backup.pazienti[p].Cognome=LOGIN.dataW(backup.pazienti[p].Cognome);
+			backup.pazienti[p].Nome=backup.pazienti[p].Nome;
+			backup.pazienti[p].Cognome=backup.pazienti[p].Cognome;
 		}
 		backup.pazienti.sort(sort_by("Nome" ));
 		backup.pazienti.sort(sort_by("Cognome" ));
@@ -2335,17 +2326,17 @@ var LOGIN = {
 			if((backup.pazienti[p].Nome || backup.pazienti[p].Cognome) && backup.pazienti[p].Cancellato!='1'){
 				nr++;
 				LOGIN.addHTML("<h2>"+(nr)+") "+backup.pazienti[p].Nome+" "+backup.pazienti[p].Cognome+"</h2><p class=\"rientro\">");
-				LOGIN.addHTML("<i>"+TXT("Indirizzo")+":</i> "+LOGIN.dataW(backup.pazienti[p].Indirizzo)+"<br>");
-				LOGIN.addHTML("<i>"+TXT("CAP")+":</i> "+LOGIN.dataW(backup.pazienti[p].CAP)+"<br>");
-				LOGIN.addHTML("<i>"+TXT("Provincia")+":</i> "+LOGIN.dataW(backup.pazienti[p].Provincia)+"<br>");
-				LOGIN.addHTML("<i>"+TXT("Stato")+":</i> "+LOGIN.dataW(backup.pazienti[p].Stato)+"<br>");
-				LOGIN.addHTML("<i>"+TXT("Telefono")+":</i> "+LOGIN.dataW(backup.pazienti[p].Telefono)+"<br>");
+				LOGIN.addHTML("<i>"+TXT("Indirizzo")+":</i> "+backup.pazienti[p].Indirizzo+"<br>");
+				LOGIN.addHTML("<i>"+TXT("CAP")+":</i> "+backup.pazienti[p].CAP+"<br>");
+				LOGIN.addHTML("<i>"+TXT("Provincia")+":</i> "+backup.pazienti[p].Provincia+"<br>");
+				LOGIN.addHTML("<i>"+TXT("Stato")+":</i> "+backup.pazienti[p].Stato+"<br>");
+				LOGIN.addHTML("<i>"+TXT("Telefono")+":</i> "+backup.pazienti[p].Telefono+"<br>");
 				var prefisso = '';
 				if(backup.pazienti[p].paeseCellulare)prefisso = paesi[backup.pazienti[p].paeseCellulare].prefisso;
-				LOGIN.addHTML("<i>"+TXT("Cellulare")+":</i> "+prefisso+LOGIN.dataW(backup.pazienti[p].Cellulare)+"<br>");
-				LOGIN.addHTML("<i>"+TXT("Email")+":</i> "+LOGIN.dataW(backup.pazienti[p].Email)+"<br>");
-				LOGIN.addHTML("<i>"+TXT("Sesso")+":</i> "+TXT(""+LOGIN.dataW(backup.pazienti[p].sesso))+"<br>");
-				LOGIN.addHTML("<i>"+TXT("Note")+":</i> "+LOGIN.dataW(backup.pazienti[p].NotePaziente)+"</p>");
+				LOGIN.addHTML("<i>"+TXT("Cellulare")+":</i> "+prefisso+backup.pazienti[p].Cellulare+"<br>");
+				LOGIN.addHTML("<i>"+TXT("Email")+":</i> "+backup.pazienti[p].Email+"<br>");
+				LOGIN.addHTML("<i>"+TXT("Sesso")+":</i> "+TXT(""+backup.pazienti[p].sesso)+"<br>");
+				LOGIN.addHTML("<i>"+TXT("Note")+":</i> "+backup.pazienti[p].NotePaziente+"</p>");
 	
 	
 				if(backup.pazienti[p].trattamenti.length>0){
@@ -2384,10 +2375,10 @@ var LOGIN = {
 						}
 						trattamenti.sort(sort_by("TipoTrattamento" ));
 						
-						LOGIN.addHTML("<h3>- "+LOGIN.dataW(NomeCiclo)+" -</h3><div class=\"rientro\">");
+						LOGIN.addHTML("<h3>- "+NomeCiclo+" -</h3><div class=\"rientro\">");
 						for(t in trattamenti){
-							var oI=LOGIN.dataW(trattamenti[t].oraInizio);
-							var oF=LOGIN.dataW(trattamenti[t].oraFine);
+							var oI=trattamenti[t].oraInizio;
+							var oF=trattamenti[t].oraFine;
 							var orario=txtOrario='';
 							if(oI*1>0 || oF*1>0){
 								if(oI.toString().indexOf(".")>-1){
@@ -2403,11 +2394,11 @@ var LOGIN = {
 							}
 							
 							LOGIN.addHTML("<b class=\"tits\"> "+TXT("ModificaTrattamento")+" "+(t*1+1)+"</b><br>");
-							if(LOGIN.dataW(trattamenti[t].TimeTrattamento))LOGIN.addHTML("<i>"+TXT("Data")+txtOrario+": </i> "+getFullDataTS(LOGIN.dataW(trattamenti[t].TimeTrattamento))+" "+orario+"<br>");
-							LOGIN.addHTML("<i>"+TXT("Titolo")+":</i> <b>"+LOGIN.dataW(trattamenti[t].TitoloTrattamento)+"</b><br>");
+							if(trattamenti[t].TimeTrattamento)LOGIN.addHTML("<i>"+TXT("Data")+txtOrario+": </i> "+getFullDataTS(trattamenti[t].TimeTrattamento)+" "+orario+"<br>");
+							LOGIN.addHTML("<i>"+TXT("Titolo")+":</i> <b>"+trattamenti[t].TitoloTrattamento+"</b><br>");
 							LOGIN.addHTML("<i>"+TXT("Costo")+":</i> <b>"+ArrotondaEuro(trattamenti[t].CostoTrattamento)+"</b><br>");
-							var TT=LOGIN.dataW(trattamenti[t].TestoTrattamento);
-							if(LOGIN.dataW(trattamenti[t].TipoTrattamento)=='A'){
+							var TT=trattamenti[t].TestoTrattamento;
+							if(trattamenti[t].TipoTrattamento=='A'){
 							TT=JSON.parse(TT);
 								LOGIN.addHTML("<i>"+TXT("AnamnesiMotivo")+":</i> "+TT.AnamnesiMotivo+"<br>");
 								LOGIN.addHTML("<i>"+TXT("AnamnesiDiagnosiOccidentale")+":</i> "+TT.AnamnesiDiagnosiOccidentale+"<br>");
@@ -2428,7 +2419,7 @@ var LOGIN = {
 								LOGIN.addHTML("<i>"+TXT("Sintomi")+":</i> "+txtSintomi+"<br>");
 							}
 							if(trattamenti[t].puntiTsuboMap){
-								var punti=JSON.parse(LOGIN.dataW(trattamenti[t].puntiTsuboMap));
+								var punti=JSON.parse(trattamenti[t].puntiTsuboMap);
 								var txtPunti='';
 								for(let f in punti){
 									nTsubo=punti[f].n*1;
@@ -2450,7 +2441,7 @@ var LOGIN = {
 								if(txtPunti)LOGIN.addHTML("<i>"+TXT("PuntiTrattamento")+":</i> "+txtPunti+"<br>");
 							}
 							if(trattamenti[t].puntiNamikoshi){
-								var punti=JSON.parse(LOGIN.dataW(trattamenti[t].puntiNamikoshi));
+								var punti=JSON.parse(trattamenti[t].puntiNamikoshi);
 								var txtPunti='';
 								for(let f in punti){
 									siglaTsubo=punti[f].s;
@@ -2467,7 +2458,7 @@ var LOGIN = {
 								if(txtPunti)LOGIN.addHTML("<i>"+TXT("PuntiNamikoshi")+":</i> "+txtPunti+"<br>");
 							}
 							if(trattamenti[t].meridiani){
-								var meridiani=JSON.parse(LOGIN.dataW(trattamenti[t].meridiani));
+								var meridiani=JSON.parse(trattamenti[t].meridiani);
 								var txtMeridiani='';
 								for(let m in meridiani){
 									siglaMeridiano=meridiani[m].siglaMeridiano;
@@ -2485,7 +2476,7 @@ var LOGIN = {
 								if(txtMeridiani)LOGIN.addHTML("<i>"+TXT("MeridianiTrattamento")+":</i> "+txtMeridiani+"<br>");
 							}
 							if(trattamenti[t].puntiAuriculoMap){
-								var punti=JSON.parse(LOGIN.dataW(trattamenti[t].puntiAuriculoMap));
+								var punti=JSON.parse(trattamenti[t].puntiAuriculoMap);
 								var txtPunti='';
 								for(let f in punti){
 									siglaTsubo=punti[f].s;
@@ -2515,7 +2506,7 @@ var LOGIN = {
 					var saldi=JSON.parse(JSON.stringify(backup.pazienti[p].saldi));
 					saldi.sort(sort_by("DataSaldo", true, parseInt ));
 					for(let s in saldi){
-						if(saldi[s].Cancellato!='1')LOGIN.addHTML("<i>"+getFullDataTS(LOGIN.dataW(saldi[s].DataSaldo))+"</i>: <b>&euro; "+ArrotondaEuro(saldi[s].ValoreSaldo)+"</b><br>");
+						if(saldi[s].Cancellato!='1')LOGIN.addHTML("<i>"+getFullDataTS(saldi[s].DataSaldo)+"</i>: <b>&euro; "+ArrotondaEuro(saldi[s].ValoreSaldo)+"</b><br>");
 					}
 					LOGIN.addHTML("</div>");
 				}
@@ -2530,7 +2521,7 @@ var LOGIN = {
 				if(note.length>0){
 					LOGIN.addHTML("<br><i>"+TXT("ANNOTAZIONI")+":</i><br><div class=\"rientro\">");
 					for(let n in note){
-						LOGIN.addHTML("<b>"+note[n].meridiano+" "+LOGIN.decryptPrivacy(LOGIN.decryptPrivacy(LOGIN.dataW(note[n].numeroTsubo)))+"</b>: "+LOGIN.dataW(note[n].TestoAnnotazione.replace(/\n/gi,"<br>"))+"<br>");
+						LOGIN.addHTML("<b>"+note[n].meridiano+" "+note[n].numeroTsubo+"</b>: "+note[n].TestoAnnotazione.replace(/\n/gi,"<br>")+"<br>");
 					}
 					LOGIN.addHTML("</div>");
 				}
@@ -2571,7 +2562,7 @@ var LOGIN = {
 	
 		for(let n in backup.note){
 			if(backup.note[n].TestoAnnotazione && backup.note[n].idPaziente==-1 && backup.note[n].Cancellato!='1'){
-				LOGIN.addHTML("<b class=\"tits\">"+LOGIN.dataW(backup.note[n].meridiano)+" "+LOGIN.dataW(backup.note[n].numeroTsubo)+"</b>: "+ LOGIN.dataW(backup.note[n].TestoAnnotazione.replace(/\n/gi,"<br>"))+"<br>");
+				LOGIN.addHTML("<b class=\"tits\">"+backup.note[n].meridiano+" "+backup.note[n].numeroTsubo+"</b>: "+ backup.note[n].TestoAnnotazione.replace(/\n/gi,"<br>")+"<br>");
 				
 				LOGIN.addHTML("<hr>");
 			}

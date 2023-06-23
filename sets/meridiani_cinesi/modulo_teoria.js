@@ -65,21 +65,8 @@ var MODULO_TEORIA = { // extend SET
 		if(occhiello)html += "<i>"+htmlEntities(occhiello)+"</i>";
 		html += "<h1>"+htmlEntities(titolo)+"</h1>";
 		var html_cont = SET.convPuntiScheda(DB.set.teoria[p].contenuti[t].TestoTeoria);
-		var meridianiSecondari = __(DB.set.teoria[p].contenuti[t].meridianiSecondari)
-		/*
-		// SCRIVE L'ELENCO DEGLI TSUBO DEL MERIDIANO
-		if(p==1 || meridianiSecondari.indexOf("CV")>-1 || meridianiSecondari.indexOf("GV")>-1){
-			var mAtt=DB.set.teoria[SET.idTeoMeridiani].contenuti[t].sigla;
-			var elencoTsubo='<b>Elenco degli tsubo</b>';
-			for(let s in DB.set.meridiani[mAtt].tsubo){
-				var TS = DB.set.meridiani[mAtt].tsubo[s];
-				elencoTsubo+='<p>'+this.scriviTsubo(TS.NomeTsubo,true)+'</p>';
-			}
-			html_cont = '<div class="col50">'+html_cont+'</div>' +
-						'<div class="col50 elencoTsubo">' +
-							elencoTsubo +
-						'</div>';
-		}*/
+		var meridianiSecondari = __(DB.set.teoria[p].contenuti[t].meridianiSecondari);
+		
 		html += html_cont;
 		var espansa = true;
 		if(meridianiSecondari)espansa = false;
