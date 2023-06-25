@@ -670,7 +670,6 @@ SET = {
 		for(v in els){
 			var int='';
 			if(els[v].userData.interno)int='Int';
-			console.log('SET.MAT.line'+Y+int+matLine)
 			els[v].material = eval('SET.MAT.line'+Y+int+matLine);
 		}
 	},
