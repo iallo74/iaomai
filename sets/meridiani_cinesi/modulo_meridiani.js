@@ -5,11 +5,13 @@ var MODULO_MERIDIANI = { // extend SET
 	
 	caricaMeridiani: function(){
 		// carica i meridiani nell'elenco del menu
-		var contElencoMeridiani = contSmart = '';
-		var n = 0;
+		var contElencoMeridiani = '',
+			contSmart = '',
+			n = 0;
 		for(let m in DB.set.meridiani){
 			n++;
-			var addClass = addClassEl = '';
+			var addClass = '',
+				addClassEl = '';
 			
 			// verifico le autorizzazioni
 			var addLock =	(!SET.verFreeMeridiani(m)) ? ' lockedItem' : '';
@@ -19,10 +21,10 @@ var MODULO_MERIDIANI = { // extend SET
 				addClass = ' spazioDopo';
 				addClassEl = ' spazioPrima';
 			}
-			var elencoTsubo = '';
-			for(let s in DB.set.meridiani[m].tsubo){
-				var TS = DB.set.meridiani[m].tsubo[s];
-				elencoTsubo+='<p>'+this.scriviTsubo(TS.NomeTsubo,true,true,__(TS.siglaTsubo))+'</p>';
+			var elencoPunti = '';
+			for(let s in DB.set.meridiani[m].punti){
+				var TS = DB.set.meridiani[m].punti[s];
+				elencoPunti+='<p>'+this.scriviPunto(TS.NomePunto,true,true,__(TS.siglaPunto))+'</p>';
 			}
 			var siglaPunto = m;
 			if(m!='EX')siglaPunto = SET.convSigla(m);
@@ -44,7 +46,7 @@ var MODULO_MERIDIANI = { // extend SET
 					' <strong title="'+htmlEntities(TXT("ElencoPunti"))+'"></strong>' +
 				'</div>' +
 				'<span id="e_'+m+'"' +
-				'	   class="elencoPunti '+addClassEl+'">'+elencoTsubo+'</span>';
+				'	   class="elencoPunti '+addClassEl+'">'+elencoPunti+'</span>';
 									
 			if(m!='EX')contSmart += 
 				'<div onMouseOver="SET.eviMeridiano(\''+m+'\',true);"' +
@@ -81,8 +83,8 @@ var MODULO_MERIDIANI = { // extend SET
 	verFreeMeridiani: function( m ){
 		return !(SET.MERIDIANI_free.indexOf(m)==-1 && (DB.login.data.auths.indexOf(globals.set.cartella)==-1 || !LOGIN.logedin()));
 	},
-	verFreePunti: function( siglaTsubo ){
-		var siglaMeridiano = siglaTsubo.split(".")[1];
+	verFreePunti: function( siglaPunto ){
+		var siglaMeridiano = siglaPunto.split(".")[1];
 		return SET.verFreeMeridiani(siglaMeridiano);
 	}
 	

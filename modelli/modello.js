@@ -336,7 +336,7 @@ var MODELLO = {
 				},300);
 			}else if(getVar("demo")){
 				console.log(getVar("demo"))
-				if(getVar("demo")=='tsubomap')caricaSet('meridiani_cinesi');
+				if(getVar("demo")=='acupointsmap')caricaSet('meridiani_cinesi');
 				if(getVar("demo")=='shiatsumap')caricaSet('meridiani_shiatsu');
 				if(getVar("demo")=='auriculomap')caricaSet('auricologia');
 			}else{

@@ -1,1034 +1,1034 @@
 DB.set= {
     punti: {
         "101": {
-            NomeTsubo: "Duodeno",
-            AzioniTsubo: "<p><b>Acción<br></b>Punto indicado por su eficacia en la reducción de trastornos relacionados con la digestión, trastornos alimentarios, diarrea y úlceras duodenales.</p><p><b>Ubicación</b><br>SC1-PC3, en el hemicono superior, justo encima del hueco rígido. Justo detrás del [.000.]</p><p></p>",
-            ChiaviTsubo: ""
+            NomePunto: "Duodeno",
+            AzioniPunto: "<p><b>Acción<br></b>Punto indicado por su eficacia en la reducción de trastornos relacionados con la digestión, trastornos alimentarios, diarrea y úlceras duodenales.</p><p><b>Ubicación</b><br>SC1-PC3, en el hemicono superior, justo encima del hueco rígido. Justo detrás del [.000.]</p><p></p>",
+            ChiaviPunto: ""
         },
         "104": {
-            NomeTsubo: "Omega 1",
-            AzioniTsubo: "<p><b>Otros nombres</b><br>- Plexo hipogástrico<br>- Punto MASTER vegetativo</p><p><b>Acción</b><br>Este es el Punto Master del tejido endotérmico también conocido como Punto de las Mucosas. Es muy eficaz para tratar todos los trastornos digestivos, dolores viscerales y estrés visceral.</p><p><b>Ubicación</b><br>SC2, un poco por encima y posteriormente al [.000.]</p>",
-            ChiaviTsubo: ""
+            NomePunto: "Omega 1",
+            AzioniPunto: "<p><b>Otros nombres</b><br>- Plexo hipogástrico<br>- Punto MASTER vegetativo</p><p><b>Acción</b><br>Este es el Punto Master del tejido endotérmico también conocido como Punto de las Mucosas. Es muy eficaz para tratar todos los trastornos digestivos, dolores viscerales y estrés visceral.</p><p><b>Ubicación</b><br>SC2, un poco por encima y posteriormente al [.000.]</p>",
+            ChiaviPunto: ""
         },
         "105": {
-            NomeTsubo: "Uréter EUR",
-            AzioniTsubo: "<p><b>Acción<br></b>El Punto Uréter encuentra su eficacia en todas las patologías relacionadas con las vías urinarias, especialmente las vías excretoras.</p><p><b>Ubicación</b><br>IH4, en la parte interna de la hélice a la altura de la raíz de la antihélice, un poco por encima</p>",
-            ChiaviTsubo: ""
+            NomePunto: "Uréter EUR",
+            AzioniPunto: "<p><b>Acción<br></b>El Punto Uréter encuentra su eficacia en todas las patologías relacionadas con las vías urinarias, especialmente las vías excretoras.</p><p><b>Ubicación</b><br>IH4, en la parte interna de la hélice a la altura de la raíz de la antihélice, un poco por encima</p>",
+            ChiaviPunto: ""
         },
         "106": {
-            NomeTsubo: "Vejiga urinaria",
-            AzioniTsubo: "<p><b>Otros nombres</b><br>- Vejiga</p><p><b>Acción</b><br>El punto Vejiga urinaria se utiliza para tratar a todas las personas que sufren de patologías del sistema urinario, especialmente en casos de infecciones urinarias, retenciones, enuresis e incontinencia.</p><p><b>Ubicación</b><br>SC5, en la frontera entre el hemicono superior y el muro anterior superior, entre el tercio anterior y los dos tercios posteriores de la raíz inferior de la antihélice.</p>",
-            ChiaviTsubo: ""
+            NomePunto: "Vejiga urinaria",
+            AzioniPunto: "<p><b>Otros nombres</b><br>- Vejiga</p><p><b>Acción</b><br>El punto Vejiga urinaria se utiliza para tratar a todas las personas que sufren de patologías del sistema urinario, especialmente en casos de infecciones urinarias, retenciones, enuresis e incontinencia.</p><p><b>Ubicación</b><br>SC5, en la frontera entre el hemicono superior y el muro anterior superior, entre el tercio anterior y los dos tercios posteriores de la raíz inferior de la antihélice.</p>",
+            ChiaviPunto: ""
         },
         "108": {
-            NomeTsubo: "Próstata",
-            AzioniTsubo: "<p><b>Acción<br></b>Según la Escuela China, este punto se utiliza para tratar las patologías urinarias y de la próstata; tiene una gran eficacia en los trastornos del aparato reproductor.</p><p><b>Ubicación</b><br>SC4, en el hemicono superior, hacia el punto donde la raíz inferior de la antihélice se encuentra con la hélice.</p>",
-            ChiaviTsubo: ""
+            NomePunto: "Próstata",
+            AzioniPunto: "<p><b>Acción<br></b>Según la Escuela China, este punto se utiliza para tratar las patologías urinarias y de la próstata; tiene una gran eficacia en los trastornos del aparato reproductor.</p><p><b>Ubicación</b><br>SC4, en el hemicono superior, hacia el punto donde la raíz inferior de la antihélice se encuentra con la hélice.</p>",
+            ChiaviPunto: ""
         },
         "109": {
-            NomeTsubo: "Uretra EUR",
-            AzioniTsubo: "<p><b>Acción<br></b>El Punto Uretra encuentra su eficacia en todas las patologías relacionadas con las vías urinarias.</p><p><b>Ubicación</b><br>SC4, en el hemicono superior cerca del punto de encuentro entre la hélice y la raíz inferior de la antihélice.</p>",
-            ChiaviTsubo: ""
+            NomePunto: "Uretra EUR",
+            AzioniPunto: "<p><b>Acción<br></b>El Punto Uretra encuentra su eficacia en todas las patologías relacionadas con las vías urinarias.</p><p><b>Ubicación</b><br>SC4, en el hemicono superior cerca del punto de encuentro entre la hélice y la raíz inferior de la antihélice.</p>",
+            ChiaviPunto: ""
         },
         "110": {
-            NomeTsubo: "Oreja externa EUR",
-            AzioniTsubo: "<p><b>Acción</b><br>Vértigo, zumbidos y tinnitus.</p><p><b>Ubicación</b><br>LO5, en la parte inferior y periférica del lóbulo, anteroinferiormente al punto ATM</p>",
-            ChiaviTsubo: ""
+            NomePunto: "Oreja externa EUR",
+            AzioniPunto: "<p><b>Acción</b><br>Vértigo, zumbidos y tinnitus.</p><p><b>Ubicación</b><br>LO5, en la parte inferior y periférica del lóbulo, anteroinferiormente al punto ATM</p>",
+            ChiaviPunto: ""
         },
         "111": {
-            NomeTsubo: "Riñón CIN",
-            AzioniTsubo: "<p><b>Acción<br></b>El punto Riñón, utilizado por la Escuela China, tiene un efecto de equilibrio tanto en el aspecto físico como emocional. Es muy útil para reducir los dolores y trastornos relacionados con los riñones, especialmente en el sistema urinario. También se indica para el tratamiento del estrés, la astenia, la depresión y los acúfenos.</p><p><b>Ubicación</b><br>SC6-CW8, en la frontera entre el hemicono superior y el muro anterior, un poco anteriormente al inicio de la raíz inferior de la antihélice.</p>",
-            ChiaviTsubo: ""
+            NomePunto: "Riñón CIN",
+            AzioniPunto: "<p><b>Acción<br></b>El punto Riñón, utilizado por la Escuela China, tiene un efecto de equilibrio tanto en el aspecto físico como emocional. Es muy útil para reducir los dolores y trastornos relacionados con los riñones, especialmente en el sistema urinario. También se indica para el tratamiento del estrés, la astenia, la depresión y los acúfenos.</p><p><b>Ubicación</b><br>SC6-CW8, en la frontera entre el hemicono superior y el muro anterior, un poco anteriormente al inicio de la raíz inferior de la antihélice.</p>",
+            ChiaviPunto: ""
         },
         "112": {
-            NomeTsubo: "Comisura Riencefálica",
-            AzioniTsubo: "<p><b>Acción<br></b>En combinación con el [.113.] y el [.254.], favorece las conexiones intra-hemisféricas cerebrales.</p><p><b>Ubicación</b><br>En la frontera entre la mejilla y el trago, cerca del punto [.195.]</p>",
-            ChiaviTsubo: "",
+            NomePunto: "Comisura Riencefálica",
+            AzioniPunto: "<p><b>Acción<br></b>En combinación con el [.113.] y el [.254.], favorece las conexiones intra-hemisféricas cerebrales.</p><p><b>Ubicación</b><br>En la frontera entre la mejilla y el trago, cerca del punto [.195.]</p>",
+            ChiaviPunto: "",
             "hidden": true
         },
         "113": {
-            NomeTsubo: "Comisura Abenular",
-            AzioniTsubo: "<p><b>Acción<br></b>En combinación con el [.112.] y el [.254.], favorece las conexiones intra-hemisféricas cerebrales.</p><p><b>Ubicación</b><br>En la frontera entre la mejilla y el trago, cerca del área TG5.</p>",
-            ChiaviTsubo: "",
+            NomePunto: "Comisura Abenular",
+            AzioniPunto: "<p><b>Acción<br></b>En combinación con el [.112.] y el [.254.], favorece las conexiones intra-hemisféricas cerebrales.</p><p><b>Ubicación</b><br>En la frontera entre la mejilla y el trago, cerca del área TG5.</p>",
+            ChiaviPunto: "",
             "hidden": true
         },
         "114": {
-            NomeTsubo: "Vesícula Biliar",
-            AzioniTsubo: "<p><b>Otros nombres</b><br>- Vesícula biliar</p><p><b>Acción</b><br>Este punto es muy eficaz para el tratamiento de todos los trastornos relacionados con el correcto funcionamiento del aparato gastrointestinal. También se utiliza en casos de migrañas y acúfenos.</p><p><b>Ubicación</b><br>SC8-PC3, en el hemicono superior, justo encima del hueco rígido.<br>Nota: Solo en la oreja derecha.</p>",
-            ChiaviTsubo: ""
+            NomePunto: "Vesícula Biliar",
+            AzioniPunto: "<p><b>Otros nombres</b><br>- Vesícula biliar</p><p><b>Acción</b><br>Este punto es muy eficaz para el tratamiento de todos los trastornos relacionados con el correcto funcionamiento del aparato gastrointestinal. También se utiliza en casos de migrañas y acúfenos.</p><p><b>Ubicación</b><br>SC8-PC3, en el hemicono superior, justo encima del hueco rígido.<br>Nota: Solo en la oreja derecha.</p>",
+            ChiaviPunto: ""
         },
         "115": {
-            NomeTsubo: "Bazo EUR",
-            AzioniTsubo: "<p><b>Acción<br></b>Según la Escuela Francesa, este punto se utiliza para tratar todas las patologías relacionadas con el sistema inmunológico y linfático. También es muy útil para tratar los trastornos digestivos.</p><p><b>Ubicación</b><br>SC8, en la frontera entre el hemicono superior y el hueco rígido, cerca del muro anterior.<br>Nota: Solo en la oreja izquierda.</p>",
-            ChiaviTsubo: ""
+            NomePunto: "Bazo EUR",
+            AzioniPunto: "<p><b>Acción<br></b>Según la Escuela Francesa, este punto se utiliza para tratar todas las patologías relacionadas con el sistema inmunológico y linfático. También es muy útil para tratar los trastornos digestivos.</p><p><b>Ubicación</b><br>SC8, en la frontera entre el hemicono superior y el hueco rígido, cerca del muro anterior.<br>Nota: Solo en la oreja izquierda.</p>",
+            ChiaviPunto: ""
         },
         "116": {
-            NomeTsubo: "Páncreas",
-            AzioniTsubo: "<p><b>Acción<br></b>El Punto Páncreas tiene un efecto equilibrante en las funciones digestivas, especialmente para tratar los trastornos relacionados con el páncreas.</p><p><b>Ubicación</b><br>CR2-SC8, en la frontera entre el hueco rígido y el hemicono superior, cerca de la hélice.<br>Nota: Solo en la oreja izquierda.</p>",
-            ChiaviTsubo: ""
+            NomePunto: "Páncreas",
+            AzioniPunto: "<p><b>Acción<br></b>El Punto Páncreas tiene un efecto equilibrante en las funciones digestivas, especialmente para tratar los trastornos relacionados con el páncreas.</p><p><b>Ubicación</b><br>CR2-SC8, en la frontera entre el hueco rígido y el hemicono superior, cerca de la hélice.<br>Nota: Solo en la oreja izquierda.</p>",
+            ChiaviPunto: ""
         },
         "117": {
-            NomeTsubo: "Timus",
-            AzioniTsubo: "<p><b>Otros nombres</b><br>- Timo</p><p><b>Acción</b><br>Tonifica las defensas inmunológicas, tiene efecto antiinflamatorio y antirreumático.</p><p><b>Ubicación</b><br>CW6-SC8, justo encima del hueco rígido entre el muro anterior y el hemicono superior.</p>",
-            ChiaviTsubo: ""
+            NomePunto: "Timus",
+            AzioniPunto: "<p><b>Otros nombres</b><br>- Timo</p><p><b>Acción</b><br>Tonifica las defensas inmunológicas, tiene efecto antiinflamatorio y antirreumático.</p><p><b>Ubicación</b><br>CW6-SC8, justo encima del hueco rígido entre el muro anterior y el hemicono superior.</p>",
+            ChiaviPunto: ""
         },
         "118": {
-            NomeTsubo: "Glándula Suprarrenal EUR",
-            AzioniTsubo: "<p><b>Otros nombres</b><br>- Cortisol<br>- Suprarrenal</p><p><b>Acción</b><br>Como sugiere su nombre, este punto se utiliza para tratar todos los trastornos relacionados con las glándulas suprarrenales.</p><p><b>Ubicación</b><br>CW7-SC7, en la zona de transición entre el muro anterior y el hemicono superior, en la vertical del punto [.001.]</p>",
-            ChiaviTsubo: ""
+            NomePunto: "Glándula Suprarrenal EUR",
+            AzioniPunto: "<p><b>Otros nombres</b><br>- Cortisol<br>- Suprarrenal</p><p><b>Acción</b><br>Como sugiere su nombre, este punto se utiliza para tratar todos los trastornos relacionados con las glándulas suprarrenales.</p><p><b>Ubicación</b><br>CW7-SC7, en la zona de transición entre el muro anterior y el hemicono superior, en la vertical del punto [.001.]</p>",
+            ChiaviPunto: ""
         },
         "119": {
-            NomeTsubo: "Glándula Mamaria EUR",
-            AzioniTsubo: "<p><b>Otros nombres</b><br>- Mama</p><p><b>Acción</b><br>Patologías de la glándula mamaria, mastodinia.</p><p><b>Ubicación</b><br>CW6, en la frontera entre el muro anterior y el hemicono superior a la altura de la representación de la IV-VI vértebra torácica.</p>",
-            ChiaviTsubo: ""
+            NomePunto: "Glándula Mamaria EUR",
+            AzioniPunto: "<p><b>Otros nombres</b><br>- Mama</p><p><b>Acción</b><br>Patologías de la glándula mamaria, mastodinia.</p><p><b>Ubicación</b><br>CW6, en la frontera entre el muro anterior y el hemicono superior a la altura de la representación de la IV-VI vértebra torácica.</p>",
+            ChiaviPunto: ""
         },
        "120": {
-            NomeTsubo: "Ganglio cervical inferior",
-            AzioniTsubo: "<p><b>Otros nombres</b><br>- Ganglio estrellado</p><p><b>Acción</b><br>La escuela francesa indica este punto por su eficacia en la reducción de trastornos neurológicos del dorso periférico y todos los dolores neuropáticos relacionados con el miembro superior y el tronco.</p><p><b>Ubicación</b><br>CW5, en el muro anterior, justo por encima del punto de encuentro con el hueco rígido</p>",
-            ChiaviTsubo: ""
+            NomePunto: "Ganglio cervical inferior",
+            AzioniPunto: "<p><b>Otros nombres</b><br>- Ganglio estrellado</p><p><b>Acción</b><br>La escuela francesa indica este punto por su eficacia en la reducción de trastornos neurológicos del dorso periférico y todos los dolores neuropáticos relacionados con el miembro superior y el tronco.</p><p><b>Ubicación</b><br>CW5, en el muro anterior, justo por encima del punto de encuentro con el hueco rígido</p>",
+            ChiaviPunto: ""
         },
         "121": {
-            NomeTsubo: "Hígado",
-            AzioniTsubo: "<p><b>Acción<br></b>El punto Hígado está indicado en caso de trastornos anémicos, ansiedad, estrés e hipertensión. Se recomienda en el tratamiento de trastornos hepáticos y del aparato digestivo.</p><p><b>Ubicación</b><br>CR2-SC8, en la frontera entre el hemicono superior y el hueco rígido.<br>Nota: Solo en la oreja derecha.</p>",
-            ChiaviTsubo: ""
+            NomePunto: "Hígado",
+            AzioniPunto: "<p><b>Acción<br></b>El punto Hígado está indicado en caso de trastornos anémicos, ansiedad, estrés e hipertensión. Se recomienda en el tratamiento de trastornos hepáticos y del aparato digestivo.</p><p><b>Ubicación</b><br>CR2-SC8, en la frontera entre el hemicono superior y el hueco rígido.<br>Nota: Solo en la oreja derecha.</p>",
+            ChiaviPunto: ""
         },
         "122": {
-            NomeTsubo: "Bazo CIN",
-            AzioniTsubo: "<p><b>Acción<br></b>Según la escuela china, este punto se utiliza para tratar todos los trastornos relacionados con el sistema inmunológico y linfático. También se aplica en el tratamiento de trastornos musculares y tendinosos.</p><p><b>Ubicación</b><br>IC8-PC2, en la frontera entre el hemicono inferior y el hueco rígido, cerca del muro anterior.<br>Nota: Solo en la oreja izquierda.</p>",
-            ChiaviTsubo: ""
+            NomePunto: "Bazo CIN",
+            AzioniPunto: "<p><b>Acción<br></b>Según la escuela china, este punto se utiliza para tratar todos los trastornos relacionados con el sistema inmunológico y linfático. También se aplica en el tratamiento de trastornos musculares y tendinosos.</p><p><b>Ubicación</b><br>IC8-PC2, en la frontera entre el hemicono inferior y el hueco rígido, cerca del muro anterior.<br>Nota: Solo en la oreja izquierda.</p>",
+            ChiaviPunto: ""
         },
         "123": {
-            NomeTsubo: "Diafragma EUR",
-            AzioniTsubo: "<p><b>Acción<br></b>Punto indicado por la escuela francesa por su eficacia en la reducción de los vómitos, los dolores y los espasmos diafragmáticos y el hipo.</p><p><b>Ubicación</b><br>IC8-CR2, en la frontera entre el hueco rígido y el hemicono inferior</p>",
-            ChiaviTsubo: ""
+            NomePunto: "Diafragma EUR",
+            AzioniPunto: "<p><b>Acción<br></b>Punto indicado por la escuela francesa por su eficacia en la reducción de los vómitos, los dolores y los espasmos diafragmáticos y el hipo.</p><p><b>Ubicación</b><br>IC8-CR2, en la frontera entre el hueco rígido y el hemicono inferior</p>",
+            ChiaviPunto: ""
         },
         "124": {
-            NomeTsubo: "Relajación muscular",
-            AzioniTsubo: "<p><b>Otros nombres</b><br>- Relajación muscular</p><p><b>Acción</b><br>El punto de Relajación Muscular es un punto poderoso que puede equilibrar el estrés muscular y, en particular, las tensiones. La escuela china sugiere aprovechar su capacidad de relajación muscular tratando el punto en el lado dominante; mientras que en el lado no dominante posee propiedades ansiolíticas.</p><p><b>Ubicación</b><br>IC7-IC8, en el hemicono inferior, justo debajo del hueco rígido.</p>",
-            ChiaviTsubo: ""
+            NomePunto: "Relajación muscular",
+            AzioniPunto: "<p><b>Otros nombres</b><br>- Relajación muscular</p><p><b>Acción</b><br>El punto de Relajación Muscular es un punto poderoso que puede equilibrar el estrés muscular y, en particular, las tensiones. La escuela china sugiere aprovechar su capacidad de relajación muscular tratando el punto en el lado dominante; mientras que en el lado no dominante posee propiedades ansiolíticas.</p><p><b>Ubicación</b><br>IC7-IC8, en el hemicono inferior, justo debajo del hueco rígido.</p>",
+            ChiaviPunto: ""
         },
         "126": {
-            NomeTsubo: "Bronquios",
-            AzioniTsubo: "<p><b>Acción<br></b>El punto de los Bronquios es muy útil para tratar trastornos como el asma y la bronquitis. Según la escuela china, también es efectivo en casos de EPOC (enfermedad pulmonar obstructiva crónica), una enfermedad del sistema respiratorio que afecta a los bronquios y los pulmones, irreversible y progresiva, causada principalmente por el tabaquismo.</p><p><b>Ubicación</b><br>IC7, en el hemicono superior, justo por encima del punto más profundo correspondiente al corazón.</p>",
-            ChiaviTsubo: ""
+            NomePunto: "Bronquios",
+            AzioniPunto: "<p><b>Acción<br></b>El punto de los Bronquios es muy útil para tratar trastornos como el asma y la bronquitis. Según la escuela china, también es efectivo en casos de EPOC (enfermedad pulmonar obstructiva crónica), una enfermedad del sistema respiratorio que afecta a los bronquios y los pulmones, irreversible y progresiva, causada principalmente por el tabaquismo.</p><p><b>Ubicación</b><br>IC7, en el hemicono superior, justo por encima del punto más profundo correspondiente al corazón.</p>",
+            ChiaviPunto: ""
         },
         "127": {
-            NomeTsubo: "Cardias",
-            AzioniTsubo: "<p><b>Otros nombres</b><br>- Orificio cardial<br>- Esfínter esofágico</p><p><b>Acción</b><br>Este punto está indicado para el tratamiento de todos los trastornos con componente esofágico, especialmente el reflujo gastroesofágico, la náusea, el vómito, la esofagitis, la hernia de hiato y la dispepsia.</p><p><b>Ubicación</b><br>IC7, en el hemicono inferior, cerca del hueco rígido, justo debajo y posterior al punto [.000.].</p>",
-            ChiaviTsubo: ""
+            NomePunto: "Cardias",
+            AzioniPunto: "<p><b>Otros nombres</b><br>- Orificio cardial<br>- Esfínter esofágico</p><p><b>Acción</b><br>Este punto está indicado para el tratamiento de todos los trastornos con componente esofágico, especialmente el reflujo gastroesofágico, la náusea, el vómito, la esofagitis, la hernia de hiato y la dispepsia.</p><p><b>Ubicación</b><br>IC7, en el hemicono inferior, cerca del hueco rígido, justo debajo y posterior al punto [.000.].</p>",
+            ChiaviPunto: ""
         },
         "128": {
-            NomeTsubo: "Esófago",
-            AzioniTsubo: "<p><b>Acción<br></b>Punto auricular utilizado internacionalmente para tratar todos los trastornos esofágicos. Indicado principalmente para equilibrar los trastornos del esófago, el estómago, el duodeno y el colon.</p><p><b>Ubicación</b><br>IC6-IC7, en el hemicono inferior justo debajo del [.000.]</p>",
-            ChiaviTsubo: ""
+            NomePunto: "Esófago",
+            AzioniPunto: "<p><b>Acción<br></b>Punto auricular utilizado internacionalmente para tratar todos los trastornos esofágicos. Indicado principalmente para equilibrar los trastornos del esófago, el estómago, el duodeno y el colon.</p><p><b>Ubicación</b><br>IC6-IC7, en el hemicono inferior justo debajo del [.000.]</p>",
+            ChiaviPunto: ""
         },
         "129": {
-            NomeTsubo: "Boca",
-            AzioniTsubo: "<p><b>Otros nombres</b><br>- Fauces<br>- Paladar blando</p><p><b>Acción</b><br>El punto de la boca se utiliza por sus beneficios en la cavidad oral, especialmente para todas las patologías relacionadas con la lengua y las mucosas. También es muy eficaz en el tratamiento de la ansiedad y los ataques de pánico.</p><p><b>Ubicación</b><br>IC6, en el hemicono inferior, cerca del meato auditivo externo, justo debajo de la rama ascendente de la hélice<span></span></p>",
-            ChiaviTsubo: ""
+            NomePunto: "Boca",
+            AzioniPunto: "<p><b>Otros nombres</b><br>- Fauces<br>- Paladar blando</p><p><b>Acción</b><br>El punto de la boca se utiliza por sus beneficios en la cavidad oral, especialmente para todas las patologías relacionadas con la lengua y las mucosas. También es muy eficaz en el tratamiento de la ansiedad y los ataques de pánico.</p><p><b>Ubicación</b><br>IC6, en el hemicono inferior, cerca del meato auditivo externo, justo debajo de la rama ascendente de la hélice<span></span></p>",
+            ChiaviPunto: ""
         },
         "130": {
-            NomeTsubo: "Ojo 2",
-            AzioniTsubo: "<p><b>Otros nombres</b><br>- Visión 2</p><p><b>Acción</b><br>La escuela china distingue 3 puntos diferentes para indicar el ojo. A menudo se combinan y tienen una fuerte acción para reducir las patologías visuales y oculares.</p><p><b>Ubicación</b><br>IT1-AT1, entre el antitrago y la incisura intertragiana</p>",
-            ChiaviTsubo: ""
+            NomePunto: "Ojo 2",
+            AzioniPunto: "<p><b>Otros nombres</b><br>- Visión 2</p><p><b>Acción</b><br>La escuela china distingue 3 puntos diferentes para indicar el ojo. A menudo se combinan y tienen una fuerte acción para reducir las patologías visuales y oculares.</p><p><b>Ubicación</b><br>IT1-AT1, entre el antitrago y la incisura intertragiana</p>",
+            ChiaviPunto: ""
         },
         "131": {
-            NomeTsubo: "Ojo 3",
-            AzioniTsubo: "<p><b>Otros nombres</b><br>- Nuevo punto ocular</p><p><b>Acción</b><br>La escuela china distingue 3 puntos diferentes para indicar el ojo. A menudo se combinan y tienen una fuerte acción para reducir las patologías visuales y oculares.</p><p><b>Ubicación</b><br>IC6, en el hemicono inferior, cerca del meato auditivo externo</p>",
-            ChiaviTsubo: ""
+            NomePunto: "Ojo 3",
+            AzioniPunto: "<p><b>Otros nombres</b><br>- Nuevo punto ocular</p><p><b>Acción</b><br>La escuela china distingue 3 puntos diferentes para indicar el ojo. A menudo se combinan y tienen una fuerte acción para reducir las patologías visuales y oculares.</p><p><b>Ubicación</b><br>IC6, en el hemicono inferior, cerca del meato auditivo externo</p>",
+            ChiaviPunto: ""
         },
         "132": {
-            NomeTsubo: "Ojo 1",
-            AzioniTsubo: "<p><b>Otros nombres</b><br>- Visión 1</p><p><b>Acción</b><br>La Escuela China distingue 3 puntos diferentes para indicar el ojo. A menudo se combinan y tienen una fuerte acción para reducir las patologías visuales y oculares.</p><p><b>Ubicación</b><br>IT1-TG1, entre el trago y la incisura intertragiana</p>",
-            ChiaviTsubo: ""
+            NomePunto: "Ojo 1",
+            AzioniPunto: "<p><b>Otros nombres</b><br>- Visión 1</p><p><b>Acción</b><br>La Escuela China distingue 3 puntos diferentes para indicar el ojo. A menudo se combinan y tienen una fuerte acción para reducir las patologías visuales y oculares.</p><p><b>Ubicación</b><br>IT1-TG1, entre el trago y la incisura intertragiana</p>",
+            ChiaviPunto: ""
         },
         "134": {
-            NomeTsubo: "Tráquea",
-            AzioniTsubo: "<p><b>Otros nombres</b><br>- Laringe EUR</p><p><b>Acción<br></b>El punto de la tráquea está indicado para tratar todos los casos de trastornos de la laringe, tráquea y bronquios.</p><p><b>Ubicación</b><br>IC3, en el hemicono inferior, en el centro, cerca del meato auditivo externo.</p>",
-            ChiaviTsubo: ""
+            NomePunto: "Tráquea",
+            AzioniPunto: "<p><b>Otros nombres</b><br>- Laringe EUR</p><p><b>Acción<br></b>El punto de la tráquea está indicado para tratar todos los casos de trastornos de la laringe, tráquea y bronquios.</p><p><b>Ubicación</b><br>IC3, en el hemicono inferior, en el centro, cerca del meato auditivo externo.</p>",
+            ChiaviPunto: ""
         },
         "135": {
-            NomeTsubo: "Nervio vago",
-            AzioniTsubo: "<p><b>Otros nombres</b><br>- Nervio craneal X<br>- X NC</p><p><b>Acción</b><br>Este punto tiene una fuerte acción de equilibrio parasimpático, utilizado especialmente para tratar casos de taquicardia con palpitaciones y ansiedad.</p><p><b>Ubicación</b><br>IC3, en el hemicono inferior, en el centro y hacia el meato auditivo externo</p>",
-            ChiaviTsubo: ""
+            NomePunto: "Nervio vago",
+            AzioniPunto: "<p><b>Otros nombres</b><br>- Nervio craneal X<br>- X NC</p><p><b>Acción</b><br>Este punto tiene una fuerte acción de equilibrio parasimpático, utilizado especialmente para tratar casos de taquicardia con palpitaciones y ansiedad.</p><p><b>Ubicación</b><br>IC3, en el hemicono inferior, en el centro y hacia el meato auditivo externo</p>",
+            ChiaviPunto: ""
         },
         "137": {
-            NomeTsubo: "San Jiao",
-            AzioniTsubo: "<p><b>Otros nombres</b><br>- Sānjiāo<br>- Triple calentador<br></p><p><b>Acción</b><br>El punto de San Jiao tiene un poderoso efecto tanto físico como emocional. Está indicado para equilibrar el sistema respiratorio, digestivo, circulatorio y para el tratamiento de la ansiedad y la depresión.</p><p><b>Ubicación</b><br>IC1, en el hemicono inferior, en su parte más baja, en una zona delimitada por la punta del antitrago con la protuberancia inferior del trago, antes de la zona endocrina intertragiana.</p>",
-            ChiaviTsubo: ""
+            NomePunto: "San Jiao",
+            AzioniPunto: "<p><b>Otros nombres</b><br>- Sānjiāo<br>- Triple calentador<br></p><p><b>Acción</b><br>El punto de San Jiao tiene un poderoso efecto tanto físico como emocional. Está indicado para equilibrar el sistema respiratorio, digestivo, circulatorio y para el tratamiento de la ansiedad y la depresión.</p><p><b>Ubicación</b><br>IC1, en el hemicono inferior, en su parte más baja, en una zona delimitada por la punta del antitrago con la protuberancia inferior del trago, antes de la zona endocrina intertragiana.</p>",
+            ChiaviPunto: ""
         },
         "138": {
-            NomeTsubo: "Prolactina",
-            AzioniTsubo: "<p><b>Acción</b><br>Regula la producción de leche, regula el ciclo menstrual. También es útil en los hombres en casos de ginecomastia, impotencia y disminución de la libido.</p><p><b>Ubicación</b><br>IC1, en el hemicono inferior, en un área que se encuentra por debajo de la línea imaginaria que conecta <span class='LMtxt'>LM13</span> con <span class='LMtxt'>LM10</span> hacia la parte frontal.</p>",
-            ChiaviTsubo: ""
+            NomePunto: "Prolactina",
+            AzioniPunto: "<p><b>Acción</b><br>Regula la producción de leche, regula el ciclo menstrual. También es útil en los hombres en casos de ginecomastia, impotencia y disminución de la libido.</p><p><b>Ubicación</b><br>IC1, en el hemicono inferior, en un área que se encuentra por debajo de la línea imaginaria que conecta <span class='LMtxt'>LM13</span> con <span class='LMtxt'>LM10</span> hacia la parte frontal.</p>",
+            ChiaviPunto: ""
         },
         "142": {
-            NomeTsubo: "Corazón CIN",
-            AzioniTsubo: "<p><b>Otros nombres</b><br>- Coronarias</p><p><b>Acción</b><br>La Escuela China indica este punto por su eficacia en el equilibrio emocional y afectivo del corazón.</p><p><b>Ubicación</b><br>IC4-PC2, en el punto más profundo del hemicono inferior.</p>",
-            ChiaviTsubo: ""
+            NomePunto: "Corazón CIN",
+            AzioniPunto: "<p><b>Otros nombres</b><br>- Coronarias</p><p><b>Acción</b><br>La Escuela China indica este punto por su eficacia en el equilibrio emocional y afectivo del corazón.</p><p><b>Ubicación</b><br>IC4-PC2, en el punto más profundo del hemicono inferior.</p>",
+            ChiaviPunto: ""
         },
         "143": {
-            NomeTsubo: "Hipotálamo posterior",
-            AzioniTsubo: "<p><b>Acción<br></b>La Escuela Francesa distingue los Puntos Hipotálamo en Anterior y Posterior por sus diferentes propiedades. El Punto Hipotálamo Posterior está indicado para equilibrar el sistema nervioso autónomo y la secreción de adrenalina. También regula las funciones del sistema ortosimpático-tonico y apoya el umbral de vigilancia y atención.</p><p><b>Ubicación</b><br>IC5-CW3, en la frontera entre el antemuro del antitrago y el hemicono inferior, a la altura del área de paso del antitrago a la antélice.</p>",
-            ChiaviTsubo: ""
+            NomePunto: "Hipotálamo posterior",
+            AzioniPunto: "<p><b>Acción<br></b>La Escuela Francesa distingue los Puntos Hipotálamo en Anterior y Posterior por sus diferentes propiedades. El Punto Hipotálamo Posterior está indicado para equilibrar el sistema nervioso autónomo y la secreción de adrenalina. También regula las funciones del sistema ortosimpático-tonico y apoya el umbral de vigilancia y atención.</p><p><b>Ubicación</b><br>IC5-CW3, en la frontera entre el antemuro del antitrago y el hemicono inferior, a la altura del área de paso del antitrago a la antélice.</p>",
+            ChiaviPunto: ""
         },
        "144": {
-            NomeTsubo: "Tiroides EUR",
-            AzioniTsubo: "<p><b>Otros nombres</b><br>- Glándula tiroides<br>- Glándula paratiroidea EUR<br>- TSH<br>- Tireotropinas<br>- Paratireotropinas</p><p><b>Acción</b><br>Como sugiere su nombre, este punto está indicado para tratar todos los trastornos relacionados con la tiroides.</p><p><b>Ubicación</b><br>IT2-IC2, en la incisura intertrágica en su límite con la emiconca inferior.</p>",
-            ChiaviTsubo: ""
+            NomePunto: "Tiroides EUR",
+            AzioniPunto: "<p><b>Otros nombres</b><br>- Glándula tiroides<br>- Glándula paratiroidea EUR<br>- TSH<br>- Tireotropinas<br>- Paratireotropinas</p><p><b>Acción</b><br>Como sugiere su nombre, este punto está indicado para tratar todos los trastornos relacionados con la tiroides.</p><p><b>Ubicación</b><br>IT2-IC2, en la incisura intertrágica en su límite con la emiconca inferior.</p>",
+            ChiaviPunto: ""
         },
         "147": {
-            NomeTsubo: "Ganglio cervical medio",
-            AzioniTsubo: "<p><b>Otros nombres</b><br>- Punto maravilloso de Nogier</p><p><b>Acción</b><br>La escuela francesa indica este punto por su eficacia en la reducción de los trastornos neurológicos del dorsal periférico y todos los dolores neuropáticos relacionados con el brazo superior y el tronco.</p><p><b>Ubicación</b><br>CW4, a media altura del avanmuro a nivel de la representación de las vértebras C3-4.</p>",
-            ChiaviTsubo: ""
+            NomePunto: "Ganglio cervical medio",
+            AzioniPunto: "<p><b>Otros nombres</b><br>- Punto maravilloso de Nogier</p><p><b>Acción</b><br>La escuela francesa indica este punto por su eficacia en la reducción de los trastornos neurológicos del dorsal periférico y todos los dolores neuropáticos relacionados con el brazo superior y el tronco.</p><p><b>Ubicación</b><br>CW4, a media altura del avanmuro a nivel de la representación de las vértebras C3-4.</p>",
+            ChiaviPunto: ""
         },
         "148": {
-            NomeTsubo: "Ganglio cervical superior",
-            AzioniTsubo: "<p><b>Otros nombres</b><br>- Punto vértigo</p><p><b>Acción</b><br>La escuela francesa indica este punto por su eficacia en la reducción de los trastornos neurológicos del dorsal periférico y todos los dolores neuropáticos relacionados con el brazo superior y el tronco.</p><p><b>Ubicación</b><br>CW4, en el límite entre el avanmuro de la antélice y de l'antitrago</p>",
-            ChiaviTsubo: ""
+            NomePunto: "Ganglio cervical superior",
+            AzioniPunto: "<p><b>Otros nombres</b><br>- Punto vértigo</p><p><b>Acción</b><br>La escuela francesa indica este punto por su eficacia en la reducción de los trastornos neurológicos del dorsal periférico y todos los dolores neuropáticos relacionados con el brazo superior y el tronco.</p><p><b>Ubicación</b><br>CW4, en el límite entre el avanmuro de la antélice y de l'antitrago</p>",
+            ChiaviPunto: ""
         },
         "150": {
-            NomeTsubo: "Tronco cerebral",
-            AzioniTsubo: "<p><b>Otros nombres</b><br>- Bulbo raquídeo CIN</p><p><b>Acción</b><br>Según la escuela china, el punto Tronco cerebral está indicado para tonificar la mente y regular la respiración, la temperatura y el ritmo cardíaco. También es efectivo para la epilepsia y las convulsiones.</p><p><b>Ubicación</b><br>CW4, en el avanmuro en correspondencia con el límite entre la antélice y el antitrago.</p>",
-            ChiaviTsubo: ""
+            NomePunto: "Tronco cerebral",
+            AzioniPunto: "<p><b>Otros nombres</b><br>- Bulbo raquídeo CIN</p><p><b>Acción</b><br>Según la escuela china, el punto Tronco cerebral está indicado para tonificar la mente y regular la respiración, la temperatura y el ritmo cardíaco. También es efectivo para la epilepsia y las convulsiones.</p><p><b>Ubicación</b><br>CW4, en el avanmuro en correspondencia con el límite entre la antélice y el antitrago.</p>",
+            ChiaviPunto: ""
         },
         "151": {
-            NomeTsubo: "Cerebro",
-            AzioniTsubo: "<p><b>Otros nombres</b><br>- Diencéfalo<br>- Núcleos talámicos</p><p><b>Acción</b><br>El punto Cerebro está relacionado con el tratamiento de múltiples trastornos. Según la escuela china, se aplica para regular la circulación sanguínea cerebral y tratar trastornos de atención, sueño, inquietud y depresión.</p><p><b>Ubicación</b><br>CW3, en la parte interna del antitrago, cerca del surco post-antitrago.</p>",
-            ChiaviTsubo: ""
+            NomePunto: "Cerebro",
+            AzioniPunto: "<p><b>Otros nombres</b><br>- Diencéfalo<br>- Núcleos talámicos</p><p><b>Acción</b><br>El punto Cerebro está relacionado con el tratamiento de múltiples trastornos. Según la escuela china, se aplica para regular la circulación sanguínea cerebral y tratar trastornos de atención, sueño, inquietud y depresión.</p><p><b>Ubicación</b><br>CW3, en la parte interna del antitrago, cerca del surco post-antitrago.</p>",
+            ChiaviPunto: ""
         },
         "154": {
-            NomeTsubo: "Subcorteza",
-            AzioniTsubo: "<p><b>Otros nombres</b><br>- Excitación<br>- Punto epilepsia<br>- Glándulas salivales</p><p><b>Acción</b><br>Este punto se utiliza para el tratamiento de enfermedades neurológicas agudas y crónicas. También se indica para reducir los síntomas de depresión, ansiedad y trastornos circulatorios.</p><p><b>Ubicación</b><br>CW2, en el centro del avanmuro del antitrago.</p>",
-            ChiaviTsubo: ""
+            NomePunto: "Subcorteza",
+            AzioniPunto: "<p><b>Otros nombres</b><br>- Excitación<br>- Punto epilepsia<br>- Glándulas salivales</p><p><b>Acción</b><br>Este punto se utiliza para el tratamiento de enfermedades neurológicas agudas y crónicas. También se indica para reducir los síntomas de depresión, ansiedad y trastornos circulatorios.</p><p><b>Ubicación</b><br>CW2, en el centro del avanmuro del antitrago.</p>",
+            ChiaviPunto: ""
         },
         "155": {
-            NomeTsubo: "Punto tálamo",
-            AzioniTsubo: "<p><b>Otros nombres</b><br>- Tálamo</p><p><b>Acción</b><br>Este punto poderoso es útil para reducir y contrarrestar el dolor agudo cuando el VAS es igual o superior a 5. Se indica en el tratamiento de enfermedades con componente tanto psíquico como orgánico, como ansiedad, depresión, hipertensión, gastritis, náuseas y diarrea.</p><p><b>Ubicación</b><br>CW2-IC4, en el límite entre el avanmuro del antitrago y la emiconca inferior, en correspondencia con el centro del antitrago.</p>",
-            ChiaviTsubo: ""
+            NomePunto: "Punto tálamo",
+            AzioniPunto: "<p><b>Otros nombres</b><br>- Tálamo</p><p><b>Acción</b><br>Este punto poderoso es útil para reducir y contrarrestar el dolor agudo cuando el VAS es igual o superior a 5. Se indica en el tratamiento de enfermedades con componente tanto psíquico como orgánico, como ansiedad, depresión, hipertensión, gastritis, náuseas y diarrea.</p><p><b>Ubicación</b><br>CW2-IC4, en el límite entre el avanmuro del antitrago y la emiconca inferior, en correspondencia con el centro del antitrago.</p>",
+            ChiaviPunto: ""
         },
         "157": {
-		   NomeTsubo: "Hipotálamo anterior",
-		   AzioniTsubo: "<p><b>Acción<br></b>La Escuela Francesa distingue los Puntos Hipotálamo en Anterior y Posterior por sus diferentes propiedades. El Punto Hipotálamo Anterior se indica para el reequilibrio del sistema nervioso autónomo y el deseo sexual. Además, regula las funciones del sistema parasimpático tónico</p><p><b>Ubicación</b><br>IC2-CW1, en el límite entre el antitrago y la emiconca inferior, cerca de la incisura intertragica.</p>",
-		   ChiaviTsubo: ""
+		   NomePunto: "Hipotálamo anterior",
+		   AzioniPunto: "<p><b>Acción<br></b>La Escuela Francesa distingue los Puntos Hipotálamo en Anterior y Posterior por sus diferentes propiedades. El Punto Hipotálamo Anterior se indica para el reequilibrio del sistema nervioso autónomo y el deseo sexual. Además, regula las funciones del sistema parasimpático tónico</p><p><b>Ubicación</b><br>IC2-CW1, en el límite entre el antitrago y la emiconca inferior, cerca de la incisura intertragica.</p>",
+		   ChiaviPunto: ""
 		},
 		"159": {
-		   NomeTsubo: "Ovario-Testículos CIN",
-		   AzioniTsubo: "<p><b>Otros nombres</b><br>- Ovario<br>- Testículo<br>- Gónadas<br>- Glándula sexual CIN<br>- Genitales internos</p><p><b>Acción</b><br>Este punto tiene una amplia aplicación en el tratamiento y equilibrio de las gónadas.</p><p><b>Ubicación</b><br>CW1, en el antitrago, cerca de la incisura intertragica</p>",
-		   ChiaviTsubo: ""
+		   NomePunto: "Ovario-Testículos CIN",
+		   AzioniPunto: "<p><b>Otros nombres</b><br>- Ovario<br>- Testículo<br>- Gónadas<br>- Glándula sexual CIN<br>- Genitales internos</p><p><b>Acción</b><br>Este punto tiene una amplia aplicación en el tratamiento y equilibrio de las gónadas.</p><p><b>Ubicación</b><br>CW1, en el antitrago, cerca de la incisura intertragica</p>",
+		   ChiaviPunto: ""
 		},
 		"161": {
-		   NomeTsubo: "Núcleos simpáticos intramidulares",
-		   AzioniTsubo: "<p><b>Otros nombres</b><br>- Cadena Simpática Intramidular</p><p><b>Acción</b><br>Acción de reequilibrio del sistema ortosimpático.</p><p><b>Ubicación</b><br>HX12-HX13-HX14, en el margen anterolateral de la hélice. Son una serie de puntos que se proyectan desde D1 a D11</p>",
-		   ChiaviTsubo: ""
+		   NomePunto: "Núcleos simpáticos intramidulares",
+		   AzioniPunto: "<p><b>Otros nombres</b><br>- Cadena Simpática Intramidular</p><p><b>Acción</b><br>Acción de reequilibrio del sistema ortosimpático.</p><p><b>Ubicación</b><br>HX12-HX13-HX14, en el margen anterolateral de la hélice. Son una serie de puntos que se proyectan desde D1 a D11</p>",
+		   ChiaviPunto: ""
 		},
 		"164": {
-		   NomeTsubo: "Punto Maestro Endocrino",
-		   AzioniTsubo: "<p><b>Otros nombres</b><br>- Glándula pituitaria<br>- Hipófisis<br>- Secreciones internas</p><p><b>Acción</b><br>Este Punto Maestro es reconocido internacionalmente por su capacidad de equilibrar las glándulas endocrinas. También se utiliza para reducir los trastornos derivados del hipotiroidismo, hipertiroidismo, disfunciones ginecológicas y trastornos con sustrato inflamatorio.</p><p><b>Ubicación</b><br>IT2, en el límite entre la incisura intertragica y la emiconca inferior.</p>",
-		   ChiaviTsubo: ""
+		   NomePunto: "Punto Maestro Endocrino",
+		   AzioniPunto: "<p><b>Otros nombres</b><br>- Glándula pituitaria<br>- Hipófisis<br>- Secreciones internas</p><p><b>Acción</b><br>Este Punto Maestro es reconocido internacionalmente por su capacidad de equilibrar las glándulas endocrinas. También se utiliza para reducir los trastornos derivados del hipotiroidismo, hipertiroidismo, disfunciones ginecológicas y trastornos con sustrato inflamatorio.</p><p><b>Ubicación</b><br>IT2, en el límite entre la incisura intertragica y la emiconca inferior.</p>",
+		   ChiaviPunto: ""
 		},
 		"165": {
-		   NomeTsubo: "ACTH",
-		   AzioniTsubo: "<p><b>Otros nombres</b><br>- Hormona adrenocorticotrópica<br>- Punto de control de la glándula suprarrenal<p><b>Acción</b><br>Indicado en casos de patologías crónicas inflamatorias, prolongadas durante más de seis meses. Equilibra las funciones de la ACTH y, por lo tanto, las funciones suprarrenales. Muy eficaz en situaciones de estrés intenso.</p><p><b>Ubicación</b><br>ST1, en el límite con la incisura intertrágica un poco hacia afuera<span></span></p>",
-		   ChiaviTsubo: ""
+		   NomePunto: "ACTH",
+		   AzioniPunto: "<p><b>Otros nombres</b><br>- Hormona adrenocorticotrópica<br>- Punto de control de la glándula suprarrenal<p><b>Acción</b><br>Indicado en casos de patologías crónicas inflamatorias, prolongadas durante más de seis meses. Equilibra las funciones de la ACTH y, por lo tanto, las funciones suprarrenales. Muy eficaz en situaciones de estrés intenso.</p><p><b>Ubicación</b><br>ST1, en el límite con la incisura intertrágica un poco hacia afuera<span></span></p>",
+		   ChiaviPunto: ""
 		},
         "166": {
-		   NomeTsubo: "Nariz interna",
-		   AzioniTsubo: "<p><b>Otros nombres</b><br>- Cavidad nasal</p><p><b>Acción</b><br>La Escuela China distingue los Puntos Nariz Externa y Nariz Interna por sus diferentes aplicaciones terapéuticas. Este punto se indica para tratar todos los trastornos internos de la nariz, especialmente sinusitis, rinitis, alergia y obstrucción nasal.</p><p><b>Ubicación</b><br>ST2, en la cara interna del trago, justo detrás de su prominencia inferior</p>",
-		   ChiaviTsubo: ""
+		   NomePunto: "Nariz interna",
+		   AzioniPunto: "<p><b>Otros nombres</b><br>- Cavidad nasal</p><p><b>Acción</b><br>La Escuela China distingue los Puntos Nariz Externa y Nariz Interna por sus diferentes aplicaciones terapéuticas. Este punto se indica para tratar todos los trastornos internos de la nariz, especialmente sinusitis, rinitis, alergia y obstrucción nasal.</p><p><b>Ubicación</b><br>ST2, en la cara interna del trago, justo detrás de su prominencia inferior</p>",
+		   ChiaviPunto: ""
 		},
 		"169": {
-		   NomeTsubo: "Oído interno EUR",
-		   AzioniTsubo: "<p><b>Otros nombres</b><br>- Nervio auditivo<br>- Cóclea<br>- VIII Nervio Craneal<br>- Punto faringe-laringe<br>- Punto faringe<br>- Punto laringe</p><p><b>Acción</b><br>La Escuela Francesa distingue los Puntos Oído Externo y Oído Interno por sus diferentes propiedades curativas. Este punto se indica para reducir los trastornos y dolores internos del oído, especialmente vértigo y acúfenos.</p><p><b>Ubicación</b><br>ST3, en la cara interna del trago, cerca de la prominencia inferior</p>",
-		   ChiaviTsubo: ""
+		   NomePunto: "Oído interno EUR",
+		   AzioniPunto: "<p><b>Otros nombres</b><br>- Nervio auditivo<br>- Cóclea<br>- VIII Nervio Craneal<br>- Punto faringe-laringe<br>- Punto faringe<br>- Punto laringe</p><p><b>Acción</b><br>La Escuela Francesa distingue los Puntos Oído Externo y Oído Interno por sus diferentes propiedades curativas. Este punto se indica para reducir los trastornos y dolores internos del oído, especialmente vértigo y acúfenos.</p><p><b>Ubicación</b><br>ST3, en la cara interna del trago, cerca de la prominencia inferior</p>",
+		   ChiaviPunto: ""
 		},
 		"170": {
-		   NomeTsubo: "Punto Maestro Oscilación",
-		   AzioniTsubo: "<p><b>Otros nombres</b><br>- Punto lateralidad</p><p><b>Acción</b><br>Indicado para reducir los trastornos posturales, especialmente de lateralidad.</p><p><b>Ubicación</b><br>ST3, en la cara oculta del trago, a la altura de la prominencia inferior.</p>",
-		   ChiaviTsubo: ""
+		   NomePunto: "Punto Maestro Oscilación",
+		   AzioniPunto: "<p><b>Otros nombres</b><br>- Punto lateralidad</p><p><b>Acción</b><br>Indicado para reducir los trastornos posturales, especialmente de lateralidad.</p><p><b>Ubicación</b><br>ST3, en la cara oculta del trago, a la altura de la prominencia inferior.</p>",
+		   ChiaviPunto: ""
 		},
 		"171": {
-		   NomeTsubo: "Médula espinal lumbosacra",
-		   AzioniTsubo: "<p><b>Otros nombres</b><br>- Médula lumbosacra</p><p><b>Acción</b><br>Patologías medulares lumbosacras</p><p><b>Ubicación</b><br>HX12, en el margen posterior de la hélice, entre el área de representación de la raíz sensitiva y motora, justo debajo del tubérculo de Darwin, en el tercio superior de la rama descendente de la hélice.</p>",
-		   ChiaviTsubo: ""
+		   NomePunto: "Médula espinal lumbosacra",
+		   AzioniPunto: "<p><b>Otros nombres</b><br>- Médula lumbosacra</p><p><b>Acción</b><br>Patologías medulares lumbosacras</p><p><b>Ubicación</b><br>HX12, en el margen posterior de la hélice, entre el área de representación de la raíz sensitiva y motora, justo debajo del tubérculo de Darwin, en el tercio superior de la rama descendente de la hélice.</p>",
+		   ChiaviPunto: ""
 		},
 		"173": {
-		   NomeTsubo: "Antidepresivo",
-		   AzioniTsubo: "<p><b>Otros nombres</b><br>- Punto Antidepresivo<br>- Alegría de vivir</p><p><b>Acción</b><br>Este punto es muy eficaz en el equilibrio emocional, especialmente en casos de depresión.</p><p><b>Ubicación</b><br>LO8, en el lóbulo, en el extremo de la fosa navicular, donde se divide en forma de Y, en su rama posterior.</p>",
-		   ChiaviTsubo: ""
+		   NomePunto: "Antidepresivo",
+		   AzioniPunto: "<p><b>Otros nombres</b><br>- Punto Antidepresivo<br>- Alegría de vivir</p><p><b>Acción</b><br>Este punto es muy eficaz en el equilibrio emocional, especialmente en casos de depresión.</p><p><b>Ubicación</b><br>LO8, en el lóbulo, en el extremo de la fosa navicular, donde se divide en forma de Y, en su rama posterior.</p>",
+		   ChiaviPunto: ""
 		},
         "174": {
-		   NomeTsubo: "Articulación temporo-mandibular",
-		   AzioniTsubo: "<p><b>Otros nombres</b><br>- ATM<br>- Músculo pterigoideo externo</p><p><b>Acción</b><br>Tratar este punto para reducir el dolor asociado a una o ambas articulaciones externas de la mandíbula. Eficaz en caso de bruxismo.</p><p><b>Ubicación</b><br>LO8-PP1, en el punto donde la fosa navicular se divide en forma de Y, al comienzo de su rama anterior.</p>",
-		   ChiaviTsubo: ""
+		   NomePunto: "Articulación temporo-mandibular",
+		   AzioniPunto: "<p><b>Otros nombres</b><br>- ATM<br>- Músculo pterigoideo externo</p><p><b>Acción</b><br>Tratar este punto para reducir el dolor asociado a una o ambas articulaciones externas de la mandíbula. Eficaz en caso de bruxismo.</p><p><b>Ubicación</b><br>LO8-PP1, en el punto donde la fosa navicular se divide en forma de Y, al comienzo de su rama anterior.</p>",
+		   ChiaviPunto: ""
 		},
 		"176": {
-		   NomeTsubo: "Médula espinal dorsal",
-		   AzioniTsubo: "<p><b>Otros nombres</b><br>- Médula dorsal</p><p><b>Acción</b><br>Patologías medulares dorsales</p><p><b>Ubicación</b><br>HX13, en el margen posterior de la hélice, entre el área de representación de la raíz sensitiva y motora, aproximadamente en el tercio medio de la rama descendente de la hélice.</p>",
-		   ChiaviTsubo: ""
+		   NomePunto: "Médula espinal dorsal",
+		   AzioniPunto: "<p><b>Otros nombres</b><br>- Médula dorsal</p><p><b>Acción</b><br>Patologías medulares dorsales</p><p><b>Ubicación</b><br>HX13, en el margen posterior de la hélice, entre el área de representación de la raíz sensitiva y motora, aproximadamente en el tercio medio de la rama descendente de la hélice.</p>",
+		   ChiaviPunto: ""
 		},
 		"177": {
-		   NomeTsubo: "Occipital",
-		   AzioniTsubo: "<p><b>Otros nombres</b><br>- Hueso occipital<br>- Músculo occipital<br>- Atlas</p><p><b>Acción</b><br>Este Punto Internacional se utiliza para tratar todos los trastornos occipitales, especialmente las contracturas musculares occipitales, los espasmos faciales, el insomnio y el vértigo.</p><p><b>Ubicación</b><br>AT3-PC1, en el antitrago cerca del surco post-antitrago.</p>",
-		   ChiaviTsubo: ""
+		   NomePunto: "Occipital",
+		   AzioniPunto: "<p><b>Otros nombres</b><br>- Hueso occipital<br>- Músculo occipital<br>- Atlas</p><p><b>Acción</b><br>Este Punto Internacional se utiliza para tratar todos los trastornos occipitales, especialmente las contracturas musculares occipitales, los espasmos faciales, el insomnio y el vértigo.</p><p><b>Ubicación</b><br>AT3-PC1, en el antitrago cerca del surco post-antitrago.</p>",
+		   ChiaviPunto: ""
 		},
 		"178": {
-		   NomeTsubo: "Corteza occipital",
-		   AzioniTsubo: "<p><b>Otros nombres</b><br>- Lóbulo Occipital<br>- Corteza visual</p><p><b>Acción</b><br>Trastornos neurológicos de la visión</p><p><b>Ubicación</b><br>AT2-AT3, área ubicada en el tercio posterior del antitrago, en la frontera con la parte superior del lóbulo.</p>",
-		   ChiaviTsubo: ""
+		   NomePunto: "Corteza occipital",
+		   AzioniPunto: "<p><b>Otros nombres</b><br>- Lóbulo Occipital<br>- Corteza visual</p><p><b>Acción</b><br>Trastornos neurológicos de la visión</p><p><b>Ubicación</b><br>AT2-AT3, área ubicada en el tercio posterior del antitrago, en la frontera con la parte superior del lóbulo.</p>",
+		   ChiaviPunto: ""
 		},
 		"179": {
-		   NomeTsubo: "Sien",
-		   AzioniTsubo: "<p><b>Otros nombres</b><br>- Hueso temporal<br>- Hueso parietal</p><p><b>Acción</b><br>El Punto Sien es útil para el tratamiento del dolor en la sien y para reducir los síntomas de migraña y acúfenos.</p><p><b>Ubicación</b><br>AT2, en la superficie externa del antitrago, inferiormente a la punta del antitrago y a <span class='LMtxt'>LM13</span>.</p>",
-		   ChiaviTsubo: ""
+		   NomePunto: "Sien",
+		   AzioniPunto: "<p><b>Otros nombres</b><br>- Hueso temporal<br>- Hueso parietal</p><p><b>Acción</b><br>El Punto Sien es útil para el tratamiento del dolor en la sien y para reducir los síntomas de migraña y acúfenos.</p><p><b>Ubicación</b><br>AT2, en la superficie externa del antitrago, inferiormente a la punta del antitrago y a <span class='LMtxt'>LM13</span>.</p>",
+		   ChiaviPunto: ""
 		},
         "180": {
-		   NomeTsubo: "Ápice del antitrago",
-		   AzioniTsubo: "<p><b>Otros nombres</b><br>- Punto asma CIN<br>- Formación reticular<br>- Punto MASTER reticular</p><p><b>Acción</b><br>Definido por la escuela china como el \"Punto Asma\", por lo tanto, indicado para el asma y migrañas fuertes. A menudo se utiliza en casos de dolor leve, con umbrales que no superan el nivel 5 en la escala VAS.</p><p><b>Ubicación</b><br>AT2-AT3, en el punto más alto del antitrago. Corresponde a <span class='LMtxt'>LM13</span>.</p>",
-		   ChiaviTsubo: ""
+		   NomePunto: "Ápice del antitrago",
+		   AzioniPunto: "<p><b>Otros nombres</b><br>- Punto asma CIN<br>- Formación reticular<br>- Punto MASTER reticular</p><p><b>Acción</b><br>Definido por la escuela china como el \"Punto Asma\", por lo tanto, indicado para el asma y migrañas fuertes. A menudo se utiliza en casos de dolor leve, con umbrales que no superan el nivel 5 en la escala VAS.</p><p><b>Ubicación</b><br>AT2-AT3, en el punto más alto del antitrago. Corresponde a <span class='LMtxt'>LM13</span>.</p>",
+		   ChiaviPunto: ""
 		},
 		"181": {
-		   NomeTsubo: "Médula espinal cervical",
-		   AzioniTsubo: "<p><b>Otros nombres</b><br>- Médula cervical</p><p><b>Acción</b><br>Patologías medulares cervicales</p><p><b>Ubicación</b><br>HX15, en el margen posterior de la hélice, entre el área de representación de la raíz sensitiva y motora, aproximadamente en el tercio inferior de la rama descendente de la hélice.</p>",
-		   ChiaviTsubo: ""
+		   NomePunto: "Médula espinal cervical",
+		   AzioniPunto: "<p><b>Otros nombres</b><br>- Médula cervical</p><p><b>Acción</b><br>Patologías medulares cervicales</p><p><b>Ubicación</b><br>HX15, en el margen posterior de la hélice, entre el área de representación de la raíz sensitiva y motora, aproximadamente en el tercio inferior de la rama descendente de la hélice.</p>",
+		   ChiaviPunto: ""
 		},
 		"182": {
-		   NomeTsubo: "Oído externo CIN",
-		   AzioniTsubo: "<p><b>Acción</b><br>Este Punto se indica para reducir los trastornos y dolores externos del oído.</p><p><b>Ubicación</b><br>TG5, en el centro del trago justo por encima de una línea imaginaria horizontal que pasa por <span class='LMtxt'>LM11</span>.</p>",
-		   ChiaviTsubo: ""
+		   NomePunto: "Oído externo CIN",
+		   AzioniPunto: "<p><b>Acción</b><br>Este Punto se indica para reducir los trastornos y dolores externos del oído.</p><p><b>Ubicación</b><br>TG5, en el centro del trago justo por encima de una línea imaginaria horizontal que pasa por <span class='LMtxt'>LM11</span>.</p>",
+		   ChiaviPunto: ""
 		},
 		"183": {
-		   NomeTsubo: "Punto de la sed",
-		   AzioniTsubo: "<p><b>Acción</b><br>Polidipsia especialmente de base psicosomática.</p><p><b>Ubicación</b><br>TG4, a mitad de distancia entre <span class='LMtxt'>LM11</span> y el punto del Naso Esterno, es decir, <span class='LMtxt'>LM23</span>.</p>",
-		   ChiaviTsubo: ""
+		   NomePunto: "Punto de la sed",
+		   AzioniPunto: "<p><b>Acción</b><br>Polidipsia especialmente de base psicosomática.</p><p><b>Ubicación</b><br>TG4, a mitad de distancia entre <span class='LMtxt'>LM11</span> y el punto del Naso Esterno, es decir, <span class='LMtxt'>LM23</span>.</p>",
+		   ChiaviPunto: ""
 		},
 		"184": {
-		   NomeTsubo: "Punto de vitalidad",
-		   AzioniTsubo: "<p><b>Otros nombres</b><br>- Punto de la vitalidad<br>- Punto de la frustración<br>- Punto interferón<br>- Punto cardiaco</p><p><b>Acción</b><br>La Escuela Francesa indica este punto por su poderosa acción energética, psicológica y física. Se aplica para tonificar en todos los casos con componentes de apatía, baja aptitud física y depresión.</p><p><b>Ubicación</b><br>TG4, en el centro del trago justo anterior a <span class='LMtxt'>LM11</span>.</p>",
-		   ChiaviTsubo: ""
+		   NomePunto: "Punto de vitalidad",
+		   AzioniPunto: "<p><b>Otros nombres</b><br>- Punto de la vitalidad<br>- Punto de la frustración<br>- Punto interferón<br>- Punto cardiaco</p><p><b>Acción</b><br>La Escuela Francesa indica este punto por su poderosa acción energética, psicológica y física. Se aplica para tonificar en todos los casos con componentes de apatía, baja aptitud física y depresión.</p><p><b>Ubicación</b><br>TG4, en el centro del trago justo anterior a <span class='LMtxt'>LM11</span>.</p>",
+		   ChiaviPunto: ""
 		},
 		"185": {
-			NomeTsubo: "Nariz externa CIN",
-			AzioniTsubo: "<p><b>Acción<br></b>La Medicina China distingue los Puntos de Nariz Externa y Nariz Interna por sus diferentes aplicaciones terapéuticas. Este punto está indicado para tratar todos los trastornos nasales, especialmente la obstrucción nasal.</p><p><b>Ubicación</b><br>TG3, en la línea de frontera entre el Trago y la mejilla, a mitad de camino entre la prominencia superior e inferior del Trago, es decir, <span class='LMtxt'>LM10</span> y <span class='LMtxt'>LM11</span>. Corresponde a <span class='LMtxt'>LM23</span></p>",
-			ChiaviTsubo: ""
+			NomePunto: "Nariz externa CIN",
+			AzioniPunto: "<p><b>Acción<br></b>La Medicina China distingue los Puntos de Nariz Externa y Nariz Interna por sus diferentes aplicaciones terapéuticas. Este punto está indicado para tratar todos los trastornos nasales, especialmente la obstrucción nasal.</p><p><b>Ubicación</b><br>TG3, en la línea de frontera entre el Trago y la mejilla, a mitad de camino entre la prominencia superior e inferior del Trago, es decir, <span class='LMtxt'>LM10</span> y <span class='LMtxt'>LM11</span>. Corresponde a <span class='LMtxt'>LM23</span></p>",
+			ChiaviPunto: ""
 		},
 		"186": {
-			NomeTsubo: "Corteza parietal",
-			AzioniTsubo: "<p><b>Otros nombres</b><br>- Lóbulo Parietal</p><p><b>Acción</b><br>Dolor musculoesquelético, sintomatología post-ictus.</p><p><b>Ubicación</b><br>LO3-LO4-LO5-LO6, área ubicada en la parte posterior del lóbulo, en su parte inferior.</p>",
-			ChiaviTsubo: ""
+			NomePunto: "Corteza parietal",
+			AzioniPunto: "<p><b>Otros nombres</b><br>- Lóbulo Parietal</p><p><b>Acción</b><br>Dolor musculoesquelético, sintomatología post-ictus.</p><p><b>Ubicación</b><br>LO3-LO4-LO5-LO6, área ubicada en la parte posterior del lóbulo, en su parte inferior.</p>",
+			ChiaviPunto: ""
 		},
 		"187": {
-			NomeTsubo: "Corteza frontal",
-			AzioniTsubo: "<p><b>Acción</b><br>Facilita la acción motora, reduce los trastornos motores relacionados con la parálisis.</p><p><b>Ubicación</b><br>LO1-LO2-LO3-LO4, amplia área del lóbulo inferior en una zona delimitada en la parte superior por el Punto Maestro Sensorial y en la parte inferior por la línea trigeminal</p>",
-			ChiaviTsubo: ""
+			NomePunto: "Corteza frontal",
+			AzioniPunto: "<p><b>Acción</b><br>Facilita la acción motora, reduce los trastornos motores relacionados con la parálisis.</p><p><b>Ubicación</b><br>LO1-LO2-LO3-LO4, amplia área del lóbulo inferior en una zona delimitada en la parte superior por el Punto Maestro Sensorial y en la parte inferior por la línea trigeminal</p>",
+			ChiaviPunto: ""
 		},
 		"188": {
-			NomeTsubo: "Corteza prefrontal",
-			AzioniTsubo: "<p><b>Otros nombres</b><br>- Cerebro ejecutivo</p><p><b>Acción</b><br>Facilita la concentración y la toma de decisiones, reduce la obsesión y la preocupación.</p><p><b>Ubicación</b><br>LO1-LO2, amplia área anterior del lóbulo que se extiende desde el Punto Maestro Cerebral hasta el borde inferior del Lóbulo</p>",
-			ChiaviTsubo: ""
+			NomePunto: "Corteza prefrontal",
+			AzioniPunto: "<p><b>Otros nombres</b><br>- Cerebro ejecutivo</p><p><b>Acción</b><br>Facilita la concentración y la toma de decisiones, reduce la obsesión y la preocupación.</p><p><b>Ubicación</b><br>LO1-LO2, amplia área anterior del lóbulo que se extiende desde el Punto Maestro Cerebral hasta el borde inferior del Lóbulo</p>",
+			ChiaviPunto: ""
 		},
 		"191": {
-			NomeTsubo: "Control del apetito",
-			AzioniTsubo: "<p><b>Otros nombres</b><br>- Punto del Hambre<br>- Punto del Hambre</p><p><b>Acción</b><br>Este punto se utiliza por su capacidad para disminuir el apetito.</p><p><b>Ubicación</b><br>TG3, a mitad de camino entre la punta de la prominencia inferior del Trago (<span class='LMtxt'>LM10</span>) y un punto intermedio entre la punta de la prominencia superior e inferior del Trago en la línea de frontera entre esta y la mejilla (<span class='LMtxt'>LM23</span>).</p>",
-			ChiaviTsubo: ""
+			NomePunto: "Control del apetito",
+			AzioniPunto: "<p><b>Otros nombres</b><br>- Punto del Hambre<br>- Punto del Hambre</p><p><b>Acción</b><br>Este punto se utiliza por su capacidad para disminuir el apetito.</p><p><b>Ubicación</b><br>TG3, a mitad de camino entre la punta de la prominencia inferior del Trago (<span class='LMtxt'>LM10</span>) y un punto intermedio entre la punta de la prominencia superior e inferior del Trago en la línea de frontera entre esta y la mejilla (<span class='LMtxt'>LM23</span>).</p>",
+			ChiaviPunto: ""
 		},
         "192": {
-			NomeTsubo: "Punto tranquilizante",
-			AzioniTsubo: "<p><b>Otros nombres</b><br>- Punto Valium EUR<br>- Hipertensión 2 CIN<br>- Punto de la manía<br>- Punto de la nicotina</p><p><b>Acción</b><br>Este punto es reconocido por su eficacia en el tratamiento de todos los trastornos con componente de ansiedad y estrés. Tiene un poderoso efecto de reequilibrio psicofísico y favorece la relajación, especialmente en casos de insomnio.</p><p><b>Ubicación.</b><br>TG2, en la pared central hacia la zona posterior cartilaginosa. A mitad de camino entre <span class='LMtxt'>LM9</span> y <span class='LMtxt'>LM10</span></p>",
-			ChiaviTsubo: ""
+			NomePunto: "Punto tranquilizante",
+			AzioniPunto: "<p><b>Otros nombres</b><br>- Punto Valium EUR<br>- Hipertensión 2 CIN<br>- Punto de la manía<br>- Punto de la nicotina</p><p><b>Acción</b><br>Este punto es reconocido por su eficacia en el tratamiento de todos los trastornos con componente de ansiedad y estrés. Tiene un poderoso efecto de reequilibrio psicofísico y favorece la relajación, especialmente en casos de insomnio.</p><p><b>Ubicación.</b><br>TG2, en la pared central hacia la zona posterior cartilaginosa. A mitad de camino entre <span class='LMtxt'>LM9</span> y <span class='LMtxt'>LM10</span></p>",
+			ChiaviPunto: ""
 		},
 		"195": {
-			NomeTsubo: "Epífisis",
-			AzioniTsubo: "<p><b>Otros nombres</b><br>- Glándula pineal<br>- Punto E</p><p><b>Acción</b><br>Punto utilizado para el reequilibrio de todos los biorritmos, especialmente en el tratamiento de insomnio y depresión.</p><p><b>Ubicación</b><br>TG1. Corresponde a <span class='LMtxt'>LM9</span>. Opuesto diametralmente a la incisura intertragica en la zona de transición entre TG1 y la mejilla</p>",
-			ChiaviTsubo: ""
+			NomePunto: "Epífisis",
+			AzioniPunto: "<p><b>Otros nombres</b><br>- Glándula pineal<br>- Punto E</p><p><b>Acción</b><br>Punto utilizado para el reequilibrio de todos los biorritmos, especialmente en el tratamiento de insomnio y depresión.</p><p><b>Ubicación</b><br>TG1. Corresponde a <span class='LMtxt'>LM9</span>. Opuesto diametralmente a la incisura intertragica en la zona de transición entre TG1 y la mejilla</p>",
+			ChiaviPunto: ""
 		},
 		"198": {
-			NomeTsubo: "Hipotensión",
-			AzioniTsubo: "<p><b>Otros nombres</b><br>- Punto para elevar la presión arterial</p><p><b>Acción</b><br>El Punto de Hipotensión está indicado para elevar la presión arterial, especialmente la arterial.</p><p><b>Ubicación</b><br>IT1, en la base de la incisura intertragica.</p>",
-			ChiaviTsubo: ""
+			NomePunto: "Hipotensión",
+			AzioniPunto: "<p><b>Otros nombres</b><br>- Punto para elevar la presión arterial</p><p><b>Acción</b><br>El Punto de Hipotensión está indicado para elevar la presión arterial, especialmente la arterial.</p><p><b>Ubicación</b><br>IT1, en la base de la incisura intertragica.</p>",
+			ChiaviPunto: ""
 		},
 		"199": {
-			NomeTsubo: "Agresividad",
-			AzioniTsubo: "<p><b>Otros nombres</b><br>- Amígdala<br>- Irritabilidad<p><b>Acción</b><br><p>Este Punto Internacional se utiliza para reequilibrar todos los estados emocionales relacionados con la irritabilidad, agresividad, rabia y acciones maníacas.</p><p><b>Ubicación</b><br>LO2-AT1, en la depresión que se encuentra en la superficie lateral del lóbulo, debajo de la incisura intertragica.</p>",
-			ChiaviTsubo: ""
+			NomePunto: "Agresividad",
+			AzioniPunto: "<p><b>Otros nombres</b><br>- Amígdala<br>- Irritabilidad<p><b>Acción</b><br><p>Este Punto Internacional se utiliza para reequilibrar todos los estados emocionales relacionados con la irritabilidad, agresividad, rabia y acciones maníacas.</p><p><b>Ubicación</b><br>LO2-AT1, en la depresión que se encuentra en la superficie lateral del lóbulo, debajo de la incisura intertragica.</p>",
+			ChiaviPunto: ""
 		},
 		"202": {
-			NomeTsubo: "Frente",
-			AzioniTsubo: "<p><b>Otros nombres</b><br>- Hueso frontal</p><p><b>Acción</b><br>El punto internacional de la frente se utiliza para tratar tanto las molestias emocionales como el insomnio, la depresión y la ansiedad, como los trastornos físicos como el dolor de cabeza frontal, vértigo y sinusitis.</p><p><b>Ubicación</b><br>AT1-PG1, en el antitrago cerca de la incisura intertragica</p>",
-			ChiaviTsubo: ""
+			NomePunto: "Frente",
+			AzioniPunto: "<p><b>Otros nombres</b><br>- Hueso frontal</p><p><b>Acción</b><br>El punto internacional de la frente se utiliza para tratar tanto las molestias emocionales como el insomnio, la depresión y la ansiedad, como los trastornos físicos como el dolor de cabeza frontal, vértigo y sinusitis.</p><p><b>Ubicación</b><br>AT1-PG1, en el antitrago cerca de la incisura intertragica</p>",
+			ChiaviPunto: ""
 		},
         "207": {
-			NomeTsubo: "Corteza temporal",
-			AzioniTsubo: "<p><b>Otros nombres</b><br>- Lóbulo temporal<br>- Corteza auditiva<br>- Línea de los sonidos</p><p><b>Acción</b><br>Según la Escuela Francesa, este punto está indicado en el tratamiento de todas las patologías relacionadas con la audición y la percepción de sonidos.</p><p><b>Ubicación</b><br>LO6-LO8, en el lóbulo, ligeramente inferior y posterior al antitrago.</p>",
-			ChiaviTsubo: ""
+			NomePunto: "Corteza temporal",
+			AzioniPunto: "<p><b>Otros nombres</b><br>- Lóbulo temporal<br>- Corteza auditiva<br>- Línea de los sonidos</p><p><b>Acción</b><br>Según la Escuela Francesa, este punto está indicado en el tratamiento de todas las patologías relacionadas con la audición y la percepción de sonidos.</p><p><b>Ubicación</b><br>LO6-LO8, en el lóbulo, ligeramente inferior y posterior al antitrago.</p>",
+			ChiaviPunto: ""
 		},
 		"209": {
-			NomeTsubo: "Lengua CIN",
-			AzioniTsubo: "<p><b>Acción<br></b>Como su nombre indica, este punto es muy efectivo en el tratamiento de todos los trastornos relacionados con la lengua y la cavidad oral.</p><p><b>Ubicación</b><br>LO4, en el punto medio entre la punta del trago y el punto [.222.]</p>",
-			ChiaviTsubo: ""
+			NomePunto: "Lengua CIN",
+			AzioniPunto: "<p><b>Acción<br></b>Como su nombre indica, este punto es muy efectivo en el tratamiento de todos los trastornos relacionados con la lengua y la cavidad oral.</p><p><b>Ubicación</b><br>LO4, en el punto medio entre la punta del trago y el punto [.222.]</p>",
+			ChiaviPunto: ""
 		},
 		"211": {
-			NomeTsubo: "Lengua EUR",
-			AzioniTsubo: "<p><b>Acción<br></b>Como su nombre indica, este punto es muy efectivo en el tratamiento de todos los trastornos relacionados con la lengua y la cavidad oral.</p><p><b>Ubicación</b><br>LO5-PL6, en el punto medio entre el punto de la cara y el punto de la mandíbula superior</p>",
-			ChiaviTsubo: ""
+			NomePunto: "Lengua EUR",
+			AzioniPunto: "<p><b>Acción<br></b>Como su nombre indica, este punto es muy efectivo en el tratamiento de todos los trastornos relacionados con la lengua y la cavidad oral.</p><p><b>Ubicación</b><br>LO5-PL6, en el punto medio entre el punto de la cara y el punto de la mandíbula superior</p>",
+			ChiaviPunto: ""
 		},
 		"213": {
-			NomeTsubo: "Núcleos trigeminales",
-			AzioniTsubo: "<p><b>Otros nombres</b><br>- Quinto nervio craneal</p><p><b>Acción</b><br>Como su nombre indica, estos puntos son muy efectivos en el tratamiento de todos los trastornos relacionados con el dolor facial, trigeminal y neuropático. También se indica para reducir los espasmos faciales.</p><p><b>Ubicación</b><br>PL1-PL3, a lo largo del borde inferior del lóbulo, medialmente como correspondencia de la superficie lateral de V1 a V3.</p>",
-			ChiaviTsubo: ""
+			NomePunto: "Núcleos trigeminales",
+			AzioniPunto: "<p><b>Otros nombres</b><br>- Quinto nervio craneal</p><p><b>Acción</b><br>Como su nombre indica, estos puntos son muy efectivos en el tratamiento de todos los trastornos relacionados con el dolor facial, trigeminal y neuropático. También se indica para reducir los espasmos faciales.</p><p><b>Ubicación</b><br>PL1-PL3, a lo largo del borde inferior del lóbulo, medialmente como correspondencia de la superficie lateral de V1 a V3.</p>",
+			ChiaviPunto: ""
 		},
 		"215": {
-			NomeTsubo: "Rostro",
-			AzioniTsubo: "<p><b>Otros nombres</b><br>- Cara<br>- Mejilla<br>- Músculos faciales</p><p><b>Acción</b><br>Punto internacional de auriculoterapia muy efectivo para reducir los tics nerviosos, parálisis facial, neuralgia; también se indica para tratar los espasmos faciales.</p><p><b>Ubicación</b><br>LO5-PL6, en el lóbulo, lateralmente, área bastante amplia sobre la llamada [.283.]</p>",
-			ChiaviTsubo: ""
+			NomePunto: "Rostro",
+			AzioniPunto: "<p><b>Otros nombres</b><br>- Cara<br>- Mejilla<br>- Músculos faciales</p><p><b>Acción</b><br>Punto internacional de auriculoterapia muy efectivo para reducir los tics nerviosos, parálisis facial, neuralgia; también se indica para tratar los espasmos faciales.</p><p><b>Ubicación</b><br>LO5-PL6, en el lóbulo, lateralmente, área bastante amplia sobre la llamada [.283.]</p>",
+			ChiaviPunto: ""
 		},
 		"221": {
-			NomeTsubo: "Reflejo del Vómito",
-			AzioniTsubo: "<p><b>Acción<br></b>El Punto Reflejo del Vómito, como su nombre indica, tiene una fuerte acción contra las náuseas y los vómitos.</p><p><b>Ubicación</b><br>LO7, en la cara lateral posterior del lóbulo, cerca de la cola de la hélice.</p>",
-			ChiaviTsubo: ""
+			NomePunto: "Reflejo del Vómito",
+			AzioniPunto: "<p><b>Acción<br></b>El Punto Reflejo del Vómito, como su nombre indica, tiene una fuerte acción contra las náuseas y los vómitos.</p><p><b>Ubicación</b><br>LO7, en la cara lateral posterior del lóbulo, cerca de la cola de la hélice.</p>",
+			ChiaviPunto: ""
 		},
 		"222": {
-			NomeTsubo: "Punto Maestro Sensorial",
-			AzioniTsubo: "<p><b>Otros nombres</b><br>- Punto ojo<br>- PMSs</p><p><b>Acción</b><br>El Punto Maestro Internacional está relacionado con trastornos tanto del ojo como del oído. Este punto tiene la capacidad de equilibrar las sensaciones auditivas del lóbulo temporal y las visuales del lóbulo occipital. El Punto Maestro Sensorial se indica para reducir los trastornos relacionados con los acúfenos, la irritabilidad relacionada con olores o sonidos, y finalmente los fenómenos de hipersensibilidad.</p><p><b>Ubicación</b><br>LO4, aproximadamente a mitad de camino entre <span class='LMtxt'>LM13</span> y <span class='LMtxt'>LM7</span>, en el centro del lóbulo.</p>",
-			ChiaviTsubo: ""
+			NomePunto: "Punto Maestro Sensorial",
+			AzioniPunto: "<p><b>Otros nombres</b><br>- Punto ojo<br>- PMSs</p><p><b>Acción</b><br>El Punto Maestro Internacional está relacionado con trastornos tanto del ojo como del oído. Este punto tiene la capacidad de equilibrar las sensaciones auditivas del lóbulo temporal y las visuales del lóbulo occipital. El Punto Maestro Sensorial se indica para reducir los trastornos relacionados con los acúfenos, la irritabilidad relacionada con olores o sonidos, y finalmente los fenómenos de hipersensibilidad.</p><p><b>Ubicación</b><br>LO4, aproximadamente a mitad de camino entre <span class='LMtxt'>LM13</span> y <span class='LMtxt'>LM7</span>, en el centro del lóbulo.</p>",
+			ChiaviPunto: ""
 		},
 		"224": {
-			NomeTsubo: "Glándula Suprarrenal CIN",
-			AzioniTsubo: "<p><b>Otros nombres</b><br>- Cortisol</p><p><b>Acción</b><br>Reequilibrio funcional de las glándulas suprarrenales. Tiene acción antiinflamatoria.</p><p><b>Ubicación</b><br>TG3, en el ápice de la prominencia inferior del trago. Corresponde a <span class='LMtxt'>LM10</span></p>",
-			ChiaviTsubo: ""
+			NomePunto: "Glándula Suprarrenal CIN",
+			AzioniPunto: "<p><b>Otros nombres</b><br>- Cortisol</p><p><b>Acción</b><br>Reequilibrio funcional de las glándulas suprarrenales. Tiene acción antiinflamatoria.</p><p><b>Ubicación</b><br>TG3, en el ápice de la prominencia inferior del trago. Corresponde a <span class='LMtxt'>LM10</span></p>",
+			ChiaviPunto: ""
 		},
 		"226": {
-			NomeTsubo: "Laringe CIN",
-			AzioniTsubo: "<p><b>Acción</b><br>Punto indicado para tratar a aquellos sujetos afectados por trastornos en la laringe, tráquea y bronquios.</p><p><b>Ubicación</b><br>ST4, en la superficie interna del trago, justo debajo de la protuberancia superior.</p>",
-			ChiaviTsubo: ""
+			NomePunto: "Laringe CIN",
+			AzioniPunto: "<p><b>Acción</b><br>Punto indicado para tratar a aquellos sujetos afectados por trastornos en la laringe, tráquea y bronquios.</p><p><b>Ubicación</b><br>ST4, en la superficie interna del trago, justo debajo de la protuberancia superior.</p>",
+			ChiaviPunto: ""
 		},
 		"229": {
-			NomeTsubo: "Prostaglandinas",
-			AzioniTsubo: "<p><b>Acción<br></b>El Punto de las Prostaglandinas está indicado para el tratamiento de los casos con componente inflamatorio y doloroso.</p><p><b>Ubicación</b><br>PL1-LO1, en la superficie medial del lóbulo, cerca de <span class='LMtxt'>LM8</span>.</p>",
-			ChiaviTsubo: ""
+			NomePunto: "Prostaglandinas",
+			AzioniPunto: "<p><b>Acción<br></b>El Punto de las Prostaglandinas está indicado para el tratamiento de los casos con componente inflamatorio y doloroso.</p><p><b>Ubicación</b><br>PL1-LO1, en la superficie medial del lóbulo, cerca de <span class='LMtxt'>LM8</span>.</p>",
+			ChiaviPunto: ""
 		},
 		"230": {
-			NomeTsubo: "Punto Maestro Cerebral",
-			AzioniTsubo: "<p><b>Otros nombres</b><br>- Omega<br>- Nerviosismo<br>- Preocupación</p><p><b>Acción</b><br>Según la Escuela Francesa, el punto Omega, es el Punto Maestro del tejido ectodérmico. Representa al Lóbulo prefrontal. Se indica para la ansiedad, el nerviosismo y los trastornos del sueño.</p><p><b>Ubicación</b><br>LO2, a mitad de camino entre <span class='LMtxt'>LM8</span> y <span class='LMtxt'>LM9</span>, a aproximadamente 2 mm de la frontera con la mejilla.</p>",
-			ChiaviTsubo: ""
+			NomePunto: "Punto Maestro Cerebral",
+			AzioniPunto: "<p><b>Otros nombres</b><br>- Omega<br>- Nerviosismo<br>- Preocupación</p><p><b>Acción</b><br>Según la Escuela Francesa, el punto Omega, es el Punto Maestro del tejido ectodérmico. Representa al Lóbulo prefrontal. Se indica para la ansiedad, el nerviosismo y los trastornos del sueño.</p><p><b>Ubicación</b><br>LO2, a mitad de camino entre <span class='LMtxt'>LM8</span> y <span class='LMtxt'>LM9</span>, a aproximadamente 2 mm de la frontera con la mejilla.</p>",
+			ChiaviPunto: ""
 		},
 		"231": {
-			NomeTsubo: "Nervio óptico",
-			AzioniTsubo: "<p><b>Otros nombres</b><br>- II nervio craneal<br>- II NC</p><p><b>Acción</b><br>Este punto se utiliza para todos los trastornos relacionados con el nervio óptico, en particular para reducir los trastornos oculares y visuales.</p><p><b>Ubicación</b><br>LO1, debajo de [.230.], cerca de <span class='LMtxt'>LM8</span>.</p>",
-			ChiaviTsubo: ""
+			NomePunto: "Nervio óptico",
+			AzioniPunto: "<p><b>Otros nombres</b><br>- II nervio craneal<br>- II NC</p><p><b>Acción</b><br>Este punto se utiliza para todos los trastornos relacionados con el nervio óptico, en particular para reducir los trastornos oculares y visuales.</p><p><b>Ubicación</b><br>LO1, debajo de [.230.], cerca de <span class='LMtxt'>LM8</span>.</p>",
+			ChiaviPunto: ""
 		},
 		"232": {
-			NomeTsubo: "Nervio olfatorio",
-			AzioniTsubo: "<p><b>Otros nombres</b><br>- Nariz Interna EUR<br>- I nervio craneal<br>- I NC</p><p><b>Acción</b><br>Este punto se utiliza para todos los trastornos relacionados con el nervio olfatorio.</p><p><b>Ubicación</b><br>LO2, justo encima de [.230.]. Se encuentra trazando una línea recta entre <span class='LMtxt'>LM9</span> y <span class='LMtxt'>LM8</span>, aproximadamente entre 1/3 superior y 2/3 inferior de esta distancia.</p>",
-			ChiaviTsubo: ""
+			NomePunto: "Nervio olfatorio",
+			AzioniPunto: "<p><b>Otros nombres</b><br>- Nariz Interna EUR<br>- I nervio craneal<br>- I NC</p><p><b>Acción</b><br>Este punto se utiliza para todos los trastornos relacionados con el nervio olfatorio.</p><p><b>Ubicación</b><br>LO2, justo encima de [.230.]. Se encuentra trazando una línea recta entre <span class='LMtxt'>LM9</span> y <span class='LMtxt'>LM8</span>, aproximadamente entre 1/3 superior y 2/3 inferior de esta distancia.</p>",
+			ChiaviPunto: ""
 		},
 		"243": {
-			NomeTsubo: "Hipertensión 3",
-			AzioniTsubo: "<p><b>Acción<br></b>La Escuela China distingue el tratamiento de la hipertensión con tres puntos diferentes. El Punto Hipertensión 3 se indica para el tratamiento de la hipertensión y reducir la ansiedad y el estrés.</p><p><b>Ubicación</b><br>PG4-PG8, área amplia en la hendidura longitudinal posterior, en el punto donde se divide en forma de Y y hacia su rama superior.</p>",
-			ChiaviTsubo: ""
+			NomePunto: "Hipertensión 3",
+			AzioniPunto: "<p><b>Acción<br></b>La Escuela China distingue el tratamiento de la hipertensión con tres puntos diferentes. El Punto Hipertensión 3 se indica para el tratamiento de la hipertensión y reducir la ansiedad y el estrés.</p><p><b>Ubicación</b><br>PG4-PG8, área amplia en la hendidura longitudinal posterior, en el punto donde se divide en forma de Y y hacia su rama superior.</p>",
+			ChiaviPunto: ""
 		},
 		"244": {
-			NomeTsubo: "Pulmón CIN",
-			AzioniTsubo: "<p><b>Acción<br></b>El Punto Pulmón es adoptado tanto por la Escuela China como por la Francesa por su acción de reequilibrio del sistema respiratorio, especialmente en casos de bronquitis, enfisema y dolores en el pecho.</p><p><b>Ubicación</b><br>IC2-IC4-IC5, área amplia en la mitad inferior, hacia el antemuro.</p>",
-			ChiaviTsubo: ""
+			NomePunto: "Pulmón CIN",
+			AzioniPunto: "<p><b>Acción<br></b>El Punto Pulmón es adoptado tanto por la Escuela China como por la Francesa por su acción de reequilibrio del sistema respiratorio, especialmente en casos de bronquitis, enfisema y dolores en el pecho.</p><p><b>Ubicación</b><br>IC2-IC4-IC5, área amplia en la mitad inferior, hacia el antemuro.</p>",
+			ChiaviPunto: ""
 		},
 		"245": {
-			NomeTsubo: "Insomnio 2",
-			AzioniTsubo: "<p><b>Otros nombres</b><br>- Trastornos del sueño 2</p><p><b>Acción</b><br>La Escuela Francesa distingue el tratamiento del insomnio con dos puntos diferentes. El punto Insomnio 2 se indica principalmente en casos de dificultad para conciliar el sueño. Excelente eficacia en la reducción del estrés, nerviosismo y, como sugiere el nombre, para el insomnio.</p><p><b>Ubicación</b><br>SF1, en la parte inferior de la fosa escafoides, cerca del borde de la hélice.</p>",
-			ChiaviTsubo: ""
+			NomePunto: "Insomnio 2",
+			AzioniPunto: "<p><b>Otros nombres</b><br>- Trastornos del sueño 2</p><p><b>Acción</b><br>La Escuela Francesa distingue el tratamiento del insomnio con dos puntos diferentes. El punto Insomnio 2 se indica principalmente en casos de dificultad para conciliar el sueño. Excelente eficacia en la reducción del estrés, nerviosismo y, como sugiere el nombre, para el insomnio.</p><p><b>Ubicación</b><br>SF1, en la parte inferior de la fosa escafoides, cerca del borde de la hélice.</p>",
+			ChiaviPunto: ""
 		},
 		"246": {
-			NomeTsubo: "Músculos del cinturón escapular",
-			AzioniTsubo: "<p><b>Acción<br></b>Este punto es muy eficaz para reducir los trastornos relacionados con los músculos del cinturón escapular.</p><p><b>Ubicación</b><br>PP1-PP3, entre la eminencia escafoides y la hendidura longitudinal posterior.</p>",
-			ChiaviTsubo: ""
+			NomePunto: "Músculos del cinturón escapular",
+			AzioniPunto: "<p><b>Acción<br></b>Este punto es muy eficaz para reducir los trastornos relacionados con los músculos del cinturón escapular.</p><p><b>Ubicación</b><br>PP1-PP3, entre la eminencia escafoides y la hendidura longitudinal posterior.</p>",
+			ChiaviPunto: ""
 		},
 		"247": {
-			NomeTsubo: "Músculos y tendones del antepié EUR",
-			AzioniTsubo: "<p><b>Otros nombres</b><br>- Músculos y tendones del tobillo</p><p><b>Acción</b><br>Este punto se utiliza tanto en la Escuela Francesa como en la China por sus propiedades para tratar los trastornos musculotendinosos del tobillo y el pie.</p><p><b>Ubicación</b><br>PT3, en la base de la eminencia triangular.</p>",
-			ChiaviTsubo: ""
+			NomePunto: "Músculos y tendones del antepié EUR",
+			AzioniPunto: "<p><b>Otros nombres</b><br>- Músculos y tendones del tobillo</p><p><b>Acción</b><br>Este punto se utiliza tanto en la Escuela Francesa como en la China por sus propiedades para tratar los trastornos musculotendinosos del tobillo y el pie.</p><p><b>Ubicación</b><br>PT3, en la base de la eminencia triangular.</p>",
+			ChiaviPunto: ""
 		},
 		"248": {
-			NomeTsubo: "Músculos y tendones del antepié CIN",
-			AzioniTsubo: "<p><b>Otros nombres</b><br>- Músculos y tendones del tobillo</p><p><b>Acción</b><br>Este punto se utiliza tanto en la Escuela Francesa como en la China por sus propiedades para tratar los trastornos musculotendinosos del tobillo y el pie.</p><p><b>Ubicación</b><br>PP12, en la parte posterior de la hélice, hacia la punta de la concha.</p>",
-			ChiaviTsubo: ""
+			NomePunto: "Músculos y tendones del antepié CIN",
+			AzioniPunto: "<p><b>Otros nombres</b><br>- Músculos y tendones del tobillo</p><p><b>Acción</b><br>Este punto se utiliza tanto en la Escuela Francesa como en la China por sus propiedades para tratar los trastornos musculotendinosos del tobillo y el pie.</p><p><b>Ubicación</b><br>PP12, en la parte posterior de la hélice, hacia la punta de la concha.</p>",
+			ChiaviPunto: ""
 		},
 		"249": {
-			NomeTsubo: "Pulmón EUR",
-			AzioniTsubo: "<p><b>Acción<br></b>El Punto Pulmón es adoptado tanto por la Escuela China como por la Francesa por su acción de reequilibrio del sistema respiratorio, especialmente en casos de bronquitis, enfisema y dolores en el pecho.</p><p><b>Ubicación</b><br>IC2-IC4-IC5-IC7, área amplia en la mitad inferior, hacia el antemuro.</p>",
-			ChiaviTsubo: ""
+			NomePunto: "Pulmón EUR",
+			AzioniPunto: "<p><b>Acción<br></b>El Punto Pulmón es adoptado tanto por la Escuela China como por la Francesa por su acción de reequilibrio del sistema respiratorio, especialmente en casos de bronquitis, enfisema y dolores en el pecho.</p><p><b>Ubicación</b><br>IC2-IC4-IC5-IC7, área amplia en la mitad inferior, hacia el antemuro.</p>",
+			ChiaviPunto: ""
 		},
 		"251": {
-			NomeTsubo: "Uréter CIN",
-			AzioniTsubo: "<p><b>Acción<br></b>El Punto Uréter encuentra su eficacia en todas las patologías relacionadas con las vías urinarias, en particular las vías excretoras.</p><p><b>Ubicación</b><br>SC6, en la mitad superior, en el límite con el antemuro superior, en el tercio posterior de la raíz inferior de la antélice.</p>",
-			ChiaviTsubo: ""
+			NomePunto: "Uréter CIN",
+			AzioniPunto: "<p><b>Acción<br></b>El Punto Uréter encuentra su eficacia en todas las patologías relacionadas con las vías urinarias, en particular las vías excretoras.</p><p><b>Ubicación</b><br>SC6, en la mitad superior, en el límite con el antemuro superior, en el tercio posterior de la raíz inferior de la antélice.</p>",
+			ChiaviPunto: ""
 		},
 		"252": {
-			NomeTsubo: "Punto maestro de la piel",
-			AzioniTsubo: "<p><b>Acción<br></b>La Escuela Francesa indica este punto Maestro para el reequilibrio y tratamiento de todos los trastornos relacionados con la piel.</p><p><b>Ubicación</b><br>ST2-ST3, en la superficie interna del Trago, en un área ubicada a mitad de camino entre <span class='LMtxt'>LM10</span> e incisura intertragica.</p>",
-			ChiaviTsubo: ""
+			NomePunto: "Punto maestro de la piel",
+			AzioniPunto: "<p><b>Acción<br></b>La Escuela Francesa indica este punto Maestro para el reequilibrio y tratamiento de todos los trastornos relacionados con la piel.</p><p><b>Ubicación</b><br>ST2-ST3, en la superficie interna del Trago, en un área ubicada a mitad de camino entre <span class='LMtxt'>LM10</span> e incisura intertragica.</p>",
+			ChiaviPunto: ""
 		},
 		"253": {
-			NomeTsubo: "Mesonéfro",
-			AzioniTsubo: "<p><b>Acción<br></b>El Punto Mesonéfro tiene la propiedad de reducir los efectos de los edemas de diversas naturalezas.</p><p><b>Ubicación</b><br>IH5-IH6-IH7-IH8, amplia área lineal situada en la parte oculta de la antélice y que se extiende desde el ápice de la oreja hasta la raíz inferior de la antélice.</p>",
-			ChiaviTsubo: ""
+			NomePunto: "Mesonéfro",
+			AzioniPunto: "<p><b>Acción<br></b>El Punto Mesonéfro tiene la propiedad de reducir los efectos de los edemas de diversas naturalezas.</p><p><b>Ubicación</b><br>IH5-IH6-IH7-IH8, amplia área lineal situada en la parte oculta de la antélice y que se extiende desde el ápice de la oreja hasta la raíz inferior de la antélice.</p>",
+			ChiaviPunto: ""
 		},
 		"254": {
-			NomeTsubo: "Cuerpo calloso",
-			AzioniTsubo: "<p><b>Otros nombres</b><br>- Cero primero</p><p><b>Acción</b><br>El Punto Cero Primero tiene una poderosa acción de reequilibrio general en el sistema cerebral, fomentando la conexión entre los dos hemisferios y equilibrando el aspecto racional y emocional del individuo. Este punto también tiene una excelente aplicación para el relajamiento muscular.</p><p><b>Ubicación</b><br>TG2-TG4, área vertical que se extiende paralelamente a la zona del trago, cuyo punto central se encuentra a la altura de la prominencia inferior del trago entre ésta y la mejilla.</p>",
-			ChiaviTsubo: ""
+			NomePunto: "Cuerpo calloso",
+			AzioniPunto: "<p><b>Otros nombres</b><br>- Cero primero</p><p><b>Acción</b><br>El Punto Cero Primero tiene una poderosa acción de reequilibrio general en el sistema cerebral, fomentando la conexión entre los dos hemisferios y equilibrando el aspecto racional y emocional del individuo. Este punto también tiene una excelente aplicación para el relajamiento muscular.</p><p><b>Ubicación</b><br>TG2-TG4, área vertical que se extiende paralelamente a la zona del trago, cuyo punto central se encuentra a la altura de la prominencia inferior del trago entre ésta y la mejilla.</p>",
+			ChiaviPunto: ""
 		},
 		"255": {
-			NomeTsubo: "Músculos y tendones de la rodilla CIN",
-			AzioniTsubo: "<p><b>Otros nombres</b><br>- Ligamentos de la rodilla EUR</p><p><b>Acción</b><br>Patologías musculotendinosas de la rodilla.</p><p><b>Ubicación</b><br>PG9, en la parte posterior de la antélice, en su tercio superior.</p>",
-			ChiaviTsubo: ""
+			NomePunto: "Músculos y tendones de la rodilla CIN",
+			AzioniPunto: "<p><b>Otros nombres</b><br>- Ligamentos de la rodilla EUR</p><p><b>Acción</b><br>Patologías musculotendinosas de la rodilla.</p><p><b>Ubicación</b><br>PG9, en la parte posterior de la antélice, en su tercio superior.</p>",
+			ChiaviPunto: ""
 		},
 		"256": {
-			NomeTsubo: "Músculos y tendones de la rodilla EUR",
-			AzioniTsubo: "<p><b>Otros nombres</b><br>- Ligamentos de la rodilla CIN</p><p><b>Acción</b><br>Patologías musculotendinosas de la rodilla.</p><p><b>Ubicación</b><br>PT2, en el centro de la eminencia triangular</p>",
-			ChiaviTsubo: ""
+			NomePunto: "Músculos y tendones de la rodilla EUR",
+			AzioniPunto: "<p><b>Otros nombres</b><br>- Ligamentos de la rodilla CIN</p><p><b>Acción</b><br>Patologías musculotendinosas de la rodilla.</p><p><b>Ubicación</b><br>PT2, en el centro de la eminencia triangular</p>",
+			ChiaviPunto: ""
 		},
 		"257": {
-			NomeTsubo: "Músculos y tendones del codo",
-			AzioniTsubo: "<p><b>Acción<br></b>Este punto se utiliza por sus propiedades en el tratamiento de los trastornos musculotendinosos del codo.</p><p><b>Ubicación</b><br>PP5, encontrando el punto [.054.] en la superficie lateral, este punto se encuentra especularmente en la superficie medial.</p>",
-			ChiaviTsubo: ""
+			NomePunto: "Músculos y tendones del codo",
+			AzioniPunto: "<p><b>Acción<br></b>Este punto se utiliza por sus propiedades en el tratamiento de los trastornos musculotendinosos del codo.</p><p><b>Ubicación</b><br>PP5, encontrando el punto [.054.] en la superficie lateral, este punto se encuentra especularmente en la superficie medial.</p>",
+			ChiaviPunto: ""
 		},
 		"258": {
-			NomeTsubo: "Músculos y tendones de la muñeca",
-			AzioniTsubo: "<p><b>Acción<br></b>Este punto internacional se utiliza por su función en el tratamiento de los trastornos musculotendinosos de la muñeca.</p><p><b>Ubicación</b><br>PP7, encontrando el punto [.065.] en la superficie lateral, este punto se encuentra especularmente en la superficie medial.</p>",
-			ChiaviTsubo: ""
+			NomePunto: "Músculos y tendones de la muñeca",
+			AzioniPunto: "<p><b>Acción<br></b>Este punto internacional se utiliza por su función en el tratamiento de los trastornos musculotendinosos de la muñeca.</p><p><b>Ubicación</b><br>PP7, encontrando el punto [.065.] en la superficie lateral, este punto se encuentra especularmente en la superficie medial.</p>",
+			ChiaviPunto: ""
 		},
 		"259": {
-			NomeTsubo: "Músculos y tendones del antebrazo",
-			AzioniTsubo: "<p><b>Acción<br></b>Este punto internacional se utiliza por su acción en todos los trastornos musculotendinosos del antebrazo.</p><p><b>Ubicación</b><br>PP5, encontrando el punto [.055.] en la superficie lateral, este punto se encuentra especularmente en la superficie medial.</p>",
-			ChiaviTsubo: ""
+			NomePunto: "Músculos y tendones del antebrazo",
+			AzioniPunto: "<p><b>Acción<br></b>Este punto internacional se utiliza por su acción en todos los trastornos musculotendinosos del antebrazo.</p><p><b>Ubicación</b><br>PP5, encontrando el punto [.055.] en la superficie lateral, este punto se encuentra especularmente en la superficie medial.</p>",
+			ChiaviPunto: ""
 		},
 		"260": {
-			NomeTsubo: "Ganglios simpáticos torácicos",
-			AzioniTsubo: "<p><b>Acción<br></b>La escuela francesa indica este punto por su eficacia en la reducción de los trastornos neurológicos de la periferia dorsal y todos los dolores neuropáticos relacionados con el miembro superior y el tronco.</p><p><b>Ubicación</b><br>CW6-CW7, en el antemuro cerca de la zona refleja de la columna dorsal.</p>",
-			ChiaviTsubo: ""
+			NomePunto: "Ganglios simpáticos torácicos",
+			AzioniPunto: "<p><b>Acción<br></b>La escuela francesa indica este punto por su eficacia en la reducción de los trastornos neurológicos de la periferia dorsal y todos los dolores neuropáticos relacionados con el miembro superior y el tronco.</p><p><b>Ubicación</b><br>CW6-CW7, en el antemuro cerca de la zona refleja de la columna dorsal.</p>",
+			ChiaviPunto: ""
 		},
 		"261": {
-			NomeTsubo: "Ganglio simpático lumbar",
-			AzioniTsubo: "<p><b>Acción<br></b>La escuela francesa indica este punto por su eficacia en la reducción de los trastornos neurológicos de la periferia dorsal y todos los dolores neuropáticos relacionados con el miembro superior y el tronco.</p><p><b>Ubicación</b><br>CW8-CW9, en el antemuro en correspondencia con el tercio inferior de la raíz inferior de la antelice.</p>",
-			ChiaviTsubo: ""
+			NomePunto: "Ganglio simpático lumbar",
+			AzioniPunto: "<p><b>Acción<br></b>La escuela francesa indica este punto por su eficacia en la reducción de los trastornos neurológicos de la periferia dorsal y todos los dolores neuropáticos relacionados con el miembro superior y el tronco.</p><p><b>Ubicación</b><br>CW8-CW9, en el antemuro en correspondencia con el tercio inferior de la raíz inferior de la antelice.</p>",
+			ChiaviPunto: ""
 		},
 		"262": {
-			NomeTsubo: "Gonadotropinas",
-			AzioniTsubo: "<p><b>Otros nombres</b><br>- Área ginecológica<br><br>- Punto ginecológico<br>- FSH (hormona folículo estimulante)<br>- LH (hormona luteinizante)</p><p><b>Acción</b><br>La escuela francesa indica la eficacia de este punto en el tratamiento de todas las patologías relacionadas con las alteraciones en la secreción de gonadotropinas y el ciclo menstrual. También se utiliza en casos de infertilidad y para reducir los trastornos relacionados con el síndrome climatérico, menopausia y desequilibrios hormonales.</p><p><b>Ubicación</b><br>CW1-AT1-LO4, en el tercio anterior de la superficie externa del antitrago. Algunos autores lo describen en la superficie interna.</p>",
-			ChiaviTsubo: ""
+			NomePunto: "Gonadotropinas",
+			AzioniPunto: "<p><b>Otros nombres</b><br>- Área ginecológica<br><br>- Punto ginecológico<br>- FSH (hormona folículo estimulante)<br>- LH (hormona luteinizante)</p><p><b>Acción</b><br>La escuela francesa indica la eficacia de este punto en el tratamiento de todas las patologías relacionadas con las alteraciones en la secreción de gonadotropinas y el ciclo menstrual. También se utiliza en casos de infertilidad y para reducir los trastornos relacionados con el síndrome climatérico, menopausia y desequilibrios hormonales.</p><p><b>Ubicación</b><br>CW1-AT1-LO4, en el tercio anterior de la superficie externa del antitrago. Algunos autores lo describen en la superficie interna.</p>",
+			ChiaviPunto: ""
 		},
 		"263": {
-			NomeTsubo: "Locus Coeruleus",
-			AzioniTsubo: "<p><b>Otros nombres</b><br>- Locus Caeruleus<br>- Locus Ceruleus<br>- Punto azul</p><p><b>Acción</b><br>Este punto indicado por la escuela francesa tonifica y equilibra el sueño REM, reduciendo además el estrés.</p><p><b>Ubicación</b><br>L3-L5, en la parte baja del lóbulo, un poco por encima de la línea trigeminal.</p>",
-			ChiaviTsubo: ""
+			NomePunto: "Locus Coeruleus",
+			AzioniPunto: "<p><b>Otros nombres</b><br>- Locus Caeruleus<br>- Locus Ceruleus<br>- Punto azul</p><p><b>Acción</b><br>Este punto indicado por la escuela francesa tonifica y equilibra el sueño REM, reduciendo además el estrés.</p><p><b>Ubicación</b><br>L3-L5, en la parte baja del lóbulo, un poco por encima de la línea trigeminal.</p>",
+			ChiaviPunto: ""
 		},
 		"264": {
-			NomeTsubo: "Músculos y tendones de la cadera EUR",
-			AzioniTsubo: "<p><b>Otros nombres</b><br>- Músculos de la cintura pélvica</p><p><b>Acción</b><br>Este punto se utiliza tanto por la escuela francesa como por la china por sus propiedades en el tratamiento de los trastornos musculotendinosos y de la cintura pélvica.</p><p><b>Ubicación</b><br>PT1, cerca del ápice de la eminencia triangular.</p>",
-			ChiaviTsubo: ""
+			NomePunto: "Músculos y tendones de la cadera EUR",
+			AzioniPunto: "<p><b>Otros nombres</b><br>- Músculos de la cintura pélvica</p><p><b>Acción</b><br>Este punto se utiliza tanto por la escuela francesa como por la china por sus propiedades en el tratamiento de los trastornos musculotendinosos y de la cintura pélvica.</p><p><b>Ubicación</b><br>PT1, cerca del ápice de la eminencia triangular.</p>",
+			ChiaviPunto: ""
 		},
 		"265": {
-			NomeTsubo: "Músculos y tendones de la cadera CIN",
-			AzioniTsubo: "<p><b>Otros nombres</b><br>- Músculos de la cintura pélvica</p><p><b>Acción</b><br>Este punto se utiliza tanto por la escuela francesa como por la china por sus propiedades en el tratamiento de los trastornos musculotendinosos y de la cintura pélvica.</p><p><b>Ubicación</b><br>PG8, en la parte posterior de la hélice, en su tercio superior.</p>",
-			ChiaviTsubo: ""
+			NomePunto: "Músculos y tendones de la cadera CIN",
+			AzioniPunto: "<p><b>Otros nombres</b><br>- Músculos de la cintura pélvica</p><p><b>Acción</b><br>Este punto se utiliza tanto por la escuela francesa como por la china por sus propiedades en el tratamiento de los trastornos musculotendinosos y de la cintura pélvica.</p><p><b>Ubicación</b><br>PG8, en la parte posterior de la hélice, en su tercio superior.</p>",
+			ChiaviPunto: ""
 		},
 		"266": {
-			NomeTsubo: "Nervio facial",
-			AzioniTsubo: "<p><b>Otros nombres</b><br>- VII nervio craneal<br>- Núcleo del nervio facial<br>- Núcleo del tracto solitario</p><p><b>Acción</b><br>Este punto tiene una excelente acción para reducir los espasmos faciales, las parálisis del VII nervio craneal y todos los dolores neuropáticos.</p><p><b>Ubicación</b><br>PL6-PL4, en la parte superior de la superficie medial del lóbulo, en un área entre el surco longitudinal posterior y la superficie posterior de la hélice.</p>",
-			ChiaviTsubo: ""
+			NomePunto: "Nervio facial",
+			AzioniPunto: "<p><b>Otros nombres</b><br>- VII nervio craneal<br>- Núcleo del nervio facial<br>- Núcleo del tracto solitario</p><p><b>Acción</b><br>Este punto tiene una excelente acción para reducir los espasmos faciales, las parálisis del VII nervio craneal y todos los dolores neuropáticos.</p><p><b>Ubicación</b><br>PL6-PL4, en la parte superior de la superficie medial del lóbulo, en un área entre el surco longitudinal posterior y la superficie posterior de la hélice.</p>",
+			ChiaviPunto: ""
 		},
 		"267": {
-			NomeTsubo: "Punto del Craving",
-			AzioniTsubo: "<p><b>Otros nombres</b><br>- Craving</p><p><b>Acción</b><br>Este punto tiene la propiedad de reducir los efectos del craving, es decir, el deseo persistente e irresistible de una determinada sustancia o sustancias con efectos similares. El craving también se puede definir como la sensación creciente de tensión que precede al inicio del consumo de la sustancia o la realización del comportamiento adictivo.</p><p><b>Ubicación</b><br>HX15-LO7, en el límite entre la cola de la hélice y el lóbulo en el margen posterior.</p>",
-			ChiaviTsubo: ""
+			NomePunto: "Punto del Craving",
+			AzioniPunto: "<p><b>Otros nombres</b><br>- Craving</p><p><b>Acción</b><br>Este punto tiene la propiedad de reducir los efectos del craving, es decir, el deseo persistente e irresistible de una determinada sustancia o sustancias con efectos similares. El craving también se puede definir como la sensación creciente de tensión que precede al inicio del consumo de la sustancia o la realización del comportamiento adictivo.</p><p><b>Ubicación</b><br>HX15-LO7, en el límite entre la cola de la hélice y el lóbulo en el margen posterior.</p>",
+			ChiaviPunto: ""
 		},
 		"268": {
-			NomeTsubo: "Punto de síntesis",
-			AzioniTsubo: "<p><b>Acción</b><br>Este punto es muy activo en las patologías degenerativas, estimulando y equilibrando la síntesis. No se recomienda su uso en pacientes con neoplasias.</p><p><b>Ubicación</b><br>PC1-PG1, ubicado en la parte inferior de la superficie medial en el punto de inserción de la parte inferior del surco cefalo-auricular con el surco longitudinal de la antelice.</p>",
-			ChiaviTsubo: ""
+			NomePunto: "Punto de síntesis",
+			AzioniPunto: "<p><b>Acción</b><br>Este punto es muy activo en las patologías degenerativas, estimulando y equilibrando la síntesis. No se recomienda su uso en pacientes con neoplasias.</p><p><b>Ubicación</b><br>PC1-PG1, ubicado en la parte inferior de la superficie medial en el punto de inserción de la parte inferior del surco cefalo-auricular con el surco longitudinal de la antelice.</p>",
+			ChiaviPunto: ""
 		},
 		"269": {
-			NomeTsubo: "Raíz motora C2",
-			AzioniTsubo: "<p><b>Otros nombres</b><br>- Raíz maestra motora del plexo cervical</p><p><b>Acción</b><br>Este punto se aplica para el tratamiento y la disminución de todos los dolores y trastornos relacionados con la motricidad del plexo cervical.</p><p><b>Ubicación</b><br>PP2, en la parte medial posterior de la hélice, justo antes de que la hélice se difumine en la superficie medial del lóbulo.</p>",
-			ChiaviTsubo: ""
+			NomePunto: "Raíz motora C2",
+			AzioniPunto: "<p><b>Otros nombres</b><br>- Raíz maestra motora del plexo cervical</p><p><b>Acción</b><br>Este punto se aplica para el tratamiento y la disminución de todos los dolores y trastornos relacionados con la motricidad del plexo cervical.</p><p><b>Ubicación</b><br>PP2, en la parte medial posterior de la hélice, justo antes de que la hélice se difumine en la superficie medial del lóbulo.</p>",
+			ChiaviPunto: ""
 		},
 		"270": {
-			NomeTsubo: "Raíz motora C7",
-			AzioniTsubo: "<p><b>Otros nombres</b><br>- Raíz maestra motora del plexo braquial</p><p><b>Acción</b><br>Este punto se aplica para el tratamiento y la disminución de todos los dolores y trastornos relacionados con la motricidad del plexo braquial.</p><p><b>Ubicación</b><br>PP4, en la parte medial posterior de la hélice, en su tercio inferior, a la altura de la representación del paso vértebro-dorsal cervical.</p>",
-			ChiaviTsubo: ""
+			NomePunto: "Raíz motora C7",
+			AzioniPunto: "<p><b>Otros nombres</b><br>- Raíz maestra motora del plexo braquial</p><p><b>Acción</b><br>Este punto se aplica para el tratamiento y la disminución de todos los dolores y trastornos relacionados con la motricidad del plexo braquial.</p><p><b>Ubicación</b><br>PP4, en la parte medial posterior de la hélice, en su tercio inferior, a la altura de la representación del paso vértebro-dorsal cervical.</p>",
+			ChiaviPunto: ""
 		},
 		"271": {
-			NomeTsubo: "Raíz motora plexo lumbar",
-			AzioniTsubo: "<p><b>Otros nombres</b><br>- Raíz maestra motora plexo lumbar</p><p><b>Acción</b><br>Este punto se aplica para el tratamiento y la disminución de todos los dolores y trastornos relacionados con la motricidad del plexo lumbar.</p><p><b>Ubicación</b><br>PP8, en la parte medial posterior de la hélice, en su tercio superior, por encima del tubérculo de Darwin.</p>",
-			ChiaviTsubo: ""
+			NomePunto: "Raíz motora plexo lumbar",
+			AzioniPunto: "<p><b>Otros nombres</b><br>- Raíz maestra motora plexo lumbar</p><p><b>Acción</b><br>Este punto se aplica para el tratamiento y la disminución de todos los dolores y trastornos relacionados con la motricidad del plexo lumbar.</p><p><b>Ubicación</b><br>PP8, en la parte medial posterior de la hélice, en su tercio superior, por encima del tubérculo de Darwin.</p>",
+			ChiaviPunto: ""
 		},
 		"272": {
-			NomeTsubo: "Raíz sensitiva C2",
-			AzioniTsubo: "<p><b>Otros nombres</b><br>- Raíz maestra sensitiva plexo cervical</p><p><b>Acción</b><br>Este punto se aplica para el tratamiento y la disminución de todos los dolores y trastornos relacionados con la sensibilidad del plexo cervical.</p><p><b>Ubicación</b><br>HX15, en el borde externo de la hélice, en su cola, en una zona identificada por una línea recta que pasa por el [.000.] y el surco post-antitragal.</p>",
-			ChiaviTsubo: ""
+			NomePunto: "Raíz sensitiva C2",
+			AzioniPunto: "<p><b>Otros nombres</b><br>- Raíz maestra sensitiva plexo cervical</p><p><b>Acción</b><br>Este punto se aplica para el tratamiento y la disminución de todos los dolores y trastornos relacionados con la sensibilidad del plexo cervical.</p><p><b>Ubicación</b><br>HX15, en el borde externo de la hélice, en su cola, en una zona identificada por una línea recta que pasa por el [.000.] y el surco post-antitragal.</p>",
+			ChiaviPunto: ""
 		},
 		"273": {
-			NomeTsubo: "Raíz sensitiva C7",
-			AzioniTsubo: "<p><b>Otros nombres</b><br>- Raíz maestra sensitiva plexo braquial</p><p><b>Acción</b><br>Este punto se aplica para el tratamiento y la disminución de todos los dolores y trastornos relacionados con la sensibilidad del plexo braquial.</p><p><b>Ubicación</b><br>HX14, en el borde externo de la hélice a la altura del tercio medio de la rama descendente de la hélice, en un área de proyección del paso cervico-dorsal.</p>",
-			ChiaviTsubo: ""
+			NomePunto: "Raíz sensitiva C7",
+			AzioniPunto: "<p><b>Otros nombres</b><br>- Raíz maestra sensitiva plexo braquial</p><p><b>Acción</b><br>Este punto se aplica para el tratamiento y la disminución de todos los dolores y trastornos relacionados con la sensibilidad del plexo braquial.</p><p><b>Ubicación</b><br>HX14, en el borde externo de la hélice a la altura del tercio medio de la rama descendente de la hélice, en un área de proyección del paso cervico-dorsal.</p>",
+			ChiaviPunto: ""
 		},
 		"274": {
-			NomeTsubo: "Raíz sensitiva plexo lumbar",
-			AzioniTsubo: "<p><b>Otros nombres</b><br>- Raíz maestra sensitiva plexo lumbar</p><p><b>Acción</b><br>Este punto se aplica para el tratamiento y la disminución de todos los dolores y trastornos relacionados con la sensibilidad del plexo lumbar.</p><p><b>Ubicación</b><br>HX10, en la hélice, justo encima del tubérculo de Darwin.</p>",
-			ChiaviTsubo: ""
+			NomePunto: "Raíz sensitiva plexo lumbar",
+			AzioniPunto: "<p><b>Otros nombres</b><br>- Raíz maestra sensitiva plexo lumbar</p><p><b>Acción</b><br>Este punto se aplica para el tratamiento y la disminución de todos los dolores y trastornos relacionados con la sensibilidad del plexo lumbar.</p><p><b>Ubicación</b><br>HX10, en la hélice, justo encima del tubérculo de Darwin.</p>",
+			ChiaviPunto: ""
 		},
 		"275": {
-			NomeTsubo: "Senos frontales",
-			AzioniTsubo: "<p><b>Otros nombres</b><br>- Senos maxilares</p><p><b>Acción</b><br>Este punto está indicado para reducir los síntomas de rinitis y sinusitis.</p><p><b>Ubicación</b><br>LO4, en el centro del lóbulo, en la parte superior, hacia el antitrago, cerca del punto [.202.]</p>",
-			ChiaviTsubo: ""
+			NomePunto: "Senos frontales",
+			AzioniPunto: "<p><b>Otros nombres</b><br>- Senos maxilares</p><p><b>Acción</b><br>Este punto está indicado para reducir los síntomas de rinitis y sinusitis.</p><p><b>Ubicación</b><br>LO4, en el centro del lóbulo, en la parte superior, hacia el antitrago, cerca del punto [.202.]</p>",
+			ChiaviPunto: ""
 		},
 		"276": {
-			NomeTsubo: "Tubérculo de Darwin",
-			AzioniTsubo: "<p><b>Otros nombres</b><br>- Punto de Darwin<br>- Punto MASTER del dolor neuropático</p><p><b>Acción</b><br>La Escuela Francesa indica este punto por su poderosa acción contra todos los trastornos de componente neuropático en general, especialmente en las extremidades inferiores y la región lumbar.</p><p><b>Ubicación</b><br>HX11, en el tubérculo de Darwin.</p>",
-			ChiaviTsubo: ""
+			NomePunto: "Tubérculo de Darwin",
+			AzioniPunto: "<p><b>Otros nombres</b><br>- Punto de Darwin<br>- Punto MASTER del dolor neuropático</p><p><b>Acción</b><br>La Escuela Francesa indica este punto por su poderosa acción contra todos los trastornos de componente neuropático en general, especialmente en las extremidades inferiores y la región lumbar.</p><p><b>Ubicación</b><br>HX11, en el tubérculo de Darwin.</p>",
+			ChiaviPunto: ""
 		},
 		"277": {
-			NomeTsubo: "Vértebras cervicales CIN",
-			AzioniTsubo: "<p><b>Acción</b><br>Los puntos Vértebras Cervicales son reconocidos tanto por la Escuela China como por la Escuela Francesa por su eficacia en todas las patologías relacionadas con las vértebras cervicales.</p><p><b>Ubicación</b><br>AH8, en el tercio inferior del cuerpo del antehélice, hacia la fosa escafoidea.</p>",
-			ChiaviTsubo: ""
+			NomePunto: "Vértebras cervicales CIN",
+			AzioniPunto: "<p><b>Acción</b><br>Los puntos Vértebras Cervicales son reconocidos tanto por la Escuela China como por la Escuela Francesa por su eficacia en todas las patologías relacionadas con las vértebras cervicales.</p><p><b>Ubicación</b><br>AH8, en el tercio inferior del cuerpo del antehélice, hacia la fosa escafoidea.</p>",
+			ChiaviPunto: ""
 		},
 		"278": {
-			NomeTsubo: "Vértebras dorsales CIN",
-			AzioniTsubo: "<p><b>Acción</b><br>Los puntos Vértebras Dorsales son reconocidos tanto por la Escuela China como por la Escuela Francesa por su eficacia en todas las patologías relacionadas con las vértebras dorsales.</p><p><b>Ubicación</b><br>AH9-AH10, en los tercios medio y superior del cuerpo del antehélice, hacia la fosa escafoidea.</p>",
-			ChiaviTsubo: ""
+			NomePunto: "Vértebras dorsales CIN",
+			AzioniPunto: "<p><b>Acción</b><br>Los puntos Vértebras Dorsales son reconocidos tanto por la Escuela China como por la Escuela Francesa por su eficacia en todas las patologías relacionadas con las vértebras dorsales.</p><p><b>Ubicación</b><br>AH9-AH10, en los tercios medio y superior del cuerpo del antehélice, hacia la fosa escafoidea.</p>",
+			ChiaviPunto: ""
 		},
 		"279": {
-			NomeTsubo: "Vértebras lumbares CIN",
-			AzioniTsubo: "<p><b>Acción</b><br>Los puntos Vértebras Lumbares son reconocidos tanto por la Escuela China como por la Escuela Francesa por su eficacia en todas las patologías relacionadas con las vértebras lumbares.</p><p><b>Ubicación</b><br>AH1, en la parte superior del cuerpo del antehélice, antes de que se divida en raíz superior e inferior del antehélice.</p>",
-			ChiaviTsubo: ""
+			NomePunto: "Vértebras lumbares CIN",
+			AzioniPunto: "<p><b>Acción</b><br>Los puntos Vértebras Lumbares son reconocidos tanto por la Escuela China como por la Escuela Francesa por su eficacia en todas las patologías relacionadas con las vértebras lumbares.</p><p><b>Ubicación</b><br>AH1, en la parte superior del cuerpo del antehélice, antes de que se divida en raíz superior e inferior del antehélice.</p>",
+			ChiaviPunto: ""
 		},
 		"280": {
-			NomeTsubo: "Mandíbula",
-			AzioniTsubo: "<p><b>Otros nombres</b><br>- Dientes inferiores<br>- Músculo masetero</p><p><b>Acción</b><br>Como indica su nombre, este punto es muy efectivo en el tratamiento de todos los trastornos relacionados con la mandíbula, como parálisis facial, dolor en el arco inferior y bruxismo. A menudo se asocia con el Punto Mandíbula Superior.</p><p><b>Ubicación</b><br>LO8-PP1, en el punto donde la fosa escafoidea se divide en Y, al final de su rama anterior, justo debajo del punto [.174.]</p>",
-			ChiaviTsubo: ""
+			NomePunto: "Mandíbula",
+			AzioniPunto: "<p><b>Otros nombres</b><br>- Dientes inferiores<br>- Músculo masetero</p><p><b>Acción</b><br>Como indica su nombre, este punto es muy efectivo en el tratamiento de todos los trastornos relacionados con la mandíbula, como parálisis facial, dolor en el arco inferior y bruxismo. A menudo se asocia con el Punto Mandíbula Superior.</p><p><b>Ubicación</b><br>LO8-PP1, en el punto donde la fosa escafoidea se divide en Y, al final de su rama anterior, justo debajo del punto [.174.]</p>",
+			ChiaviPunto: ""
 		},
 		"281": {
-			NomeTsubo: "Mandíbula superior",
-			AzioniTsubo: "<p><b>Otros nombres</b><br>- Dientes superiores</p><p><b>Acción</b><br>Este punto a menudo se asocia con el Punto Mandíbula debido a su eficacia en el tratamiento de todos los trastornos relacionados con la mandíbula, como parálisis facial, dolor en el arco inferior y bruxismo.</p><p><b>Ubicación</b><br>LO8-PP1, en el punto donde la fosa escafoidea se divide en Y, al final de su rama anterior, justo debajo y medialmente al punto [.174.]</p>",
-			ChiaviTsubo: ""
+			NomePunto: "Mandíbula superior",
+			AzioniPunto: "<p><b>Otros nombres</b><br>- Dientes superiores</p><p><b>Acción</b><br>Este punto a menudo se asocia con el Punto Mandíbula debido a su eficacia en el tratamiento de todos los trastornos relacionados con la mandíbula, como parálisis facial, dolor en el arco inferior y bruxismo.</p><p><b>Ubicación</b><br>LO8-PP1, en el punto donde la fosa escafoidea se divide en Y, al final de su rama anterior, justo debajo y medialmente al punto [.174.]</p>",
+			ChiaviPunto: ""
 		},
 		"282": {
-			NomeTsubo: "Músculos lumbosacrales",
-			AzioniTsubo: "<p><b>Acción</b><br>Este punto internacional se utiliza por su función relajante en los músculos lumbares y sacros.</p><p><b>Ubicación</b><br>PG5-PG6, en el surco longitudinal posterior, en la rama inferior-media</p>",
-			ChiaviTsubo: ""
+			NomePunto: "Músculos lumbosacrales",
+			AzioniPunto: "<p><b>Acción</b><br>Este punto internacional se utiliza por su función relajante en los músculos lumbares y sacros.</p><p><b>Ubicación</b><br>PG5-PG6, en el surco longitudinal posterior, en la rama inferior-media</p>",
+			ChiaviPunto: ""
 		},
 		"283": {
-			NomeTsubo: "Línea trigeminal",
-			AzioniTsubo: "<p><b>Otros nombres</b><br>- Quinto nervio craneal</p><p><b>Acción</b><br>Como indica su nombre, estos puntos son muy efectivos en el tratamiento de todos los trastornos relacionados con el dolor facial, trigeminal y neuropático. También se indica para reducir los espasmos faciales.</p><p><b>Ubicación</b><br>LO1-LO3, a lo largo del borde inferior del lóbulo, delimitada lateralmente por V1 y posteriormente por V3. V1 se encuentra trazando una línea desde [.000.] hasta el punto [.262.] (Fsh/Lh); V3 se traza una línea desde [.000.] que pasa por el surco post-antitragus.</p>",
-			ChiaviTsubo: ""
+			NomePunto: "Línea trigeminal",
+			AzioniPunto: "<p><b>Otros nombres</b><br>- Quinto nervio craneal</p><p><b>Acción</b><br>Como indica su nombre, estos puntos son muy efectivos en el tratamiento de todos los trastornos relacionados con el dolor facial, trigeminal y neuropático. También se indica para reducir los espasmos faciales.</p><p><b>Ubicación</b><br>LO1-LO3, a lo largo del borde inferior del lóbulo, delimitada lateralmente por V1 y posteriormente por V3. V1 se encuentra trazando una línea desde [.000.] hasta el punto [.262.] (Fsh/Lh); V3 se traza una línea desde [.000.] que pasa por el surco post-antitragus.</p>",
+			ChiaviPunto: ""
 		},
 		"284": {
-			NomeTsubo: "Musculatura coccígea",
-			AzioniTsubo: "<p><b>Acción</b><br>Como indica su nombre, este punto es muy efectivo para reducir todos los trastornos relacionados con la musculatura coccígea.</p><p><b>Ubicación</b><br>PG7, en el surco longitudinal posterior, en el tercio superior de la rama inferior-media</p>",
-			ChiaviTsubo: ""
+			NomePunto: "Musculatura coccígea",
+			AzioniPunto: "<p><b>Acción</b><br>Como indica su nombre, este punto es muy efectivo para reducir todos los trastornos relacionados con la musculatura coccígea.</p><p><b>Ubicación</b><br>PG7, en el surco longitudinal posterior, en el tercio superior de la rama inferior-media</p>",
+			ChiaviPunto: ""
 		},
 		"285": {
-			NomeTsubo: "Musculatura paravertebral cervical",
-			AzioniTsubo: "<p><b>Acción</b><br>Este punto internacional se utiliza por su función mio relajante paravertebral.</p><p><b>Ubicación</b><br>AH1, en el tercio inferior del antehélice en el lado hacia la cresta.</p>",
-			ChiaviTsubo: ""
+			NomePunto: "Musculatura paravertebral cervical",
+			AzioniPunto: "<p><b>Acción</b><br>Este punto internacional se utiliza por su función mio relajante paravertebral.</p><p><b>Ubicación</b><br>AH1, en el tercio inferior del antehélice en el lado hacia la cresta.</p>",
+			ChiaviPunto: ""
 		},
 		"286": {
-			NomeTsubo: "Musculatura paravertebral dorsal",
-			AzioniTsubo: "<p><b>Acción</b><br>Según la Escuela Francesa, este punto se utiliza por su función mio relajante paravertebral.</p><p><b>Ubicación</b><br>AH3-AH4, en los dos tercios superiores del cuerpo de la antélice, antes de que se divida en 2 ramas, en el lado hacia la fosa escafoidea.</p>",
-			ChiaviTsubo: ""
+			NomePunto: "Musculatura paravertebral dorsal",
+			AzioniPunto: "<p><b>Acción</b><br>Según la Escuela Francesa, este punto se utiliza por su función mio relajante paravertebral.</p><p><b>Ubicación</b><br>AH3-AH4, en los dos tercios superiores del cuerpo de la antélice, antes de que se divida en 2 ramas, en el lado hacia la fosa escafoidea.</p>",
+			ChiaviPunto: ""
 		},
 		"287": {
-			NomeTsubo: "Musculatura paravertebral lumbosacral",
-			AzioniTsubo: "<p><b>Acción</b><br>Este punto internacional se utiliza por su función mio relajante paravertebral.</p><p><b>Ubicación</b><br>AH5-AH6-AH7, en la raíz inferior de la antélice en el límite con la fosa triangular</p>",
-			ChiaviTsubo: ""
+			NomePunto: "Musculatura paravertebral lumbosacral",
+			AzioniPunto: "<p><b>Acción</b><br>Este punto internacional se utiliza por su función mio relajante paravertebral.</p><p><b>Ubicación</b><br>AH5-AH6-AH7, en la raíz inferior de la antélice en el límite con la fosa triangular</p>",
+			ChiaviPunto: ""
 		},
 		"288": {
-			NomeTsubo: "Músculos del cuello",
-			AzioniTsubo: "<p><b>Acción</b><br>Este punto internacional se utiliza por su función relajante en los músculos del cuello.</p><p><b>Ubicación</b><br>PP3-PG3, entre la prominencia escafoidea y el surco longitudinal posterior</p>",
-			ChiaviTsubo: ""
+			NomePunto: "Músculos del cuello",
+			AzioniPunto: "<p><b>Acción</b><br>Este punto internacional se utiliza por su función relajante en los músculos del cuello.</p><p><b>Ubicación</b><br>PP3-PG3, entre la prominencia escafoidea y el surco longitudinal posterior</p>",
+			ChiaviPunto: ""
 		},
 		"289": {
-			NomeTsubo: "Músculos de la espalda",
-			AzioniTsubo: "<p><b>Acción</b><br>Punto utilizado por la Escuela Francesa por su acción relajante en los músculos dorsales.</p><p><b>Ubicación</b><br>PP3-PP5-PG3-PG4-PG5, entre la prominencia escafoidea y el surco longitudinal posterior</p>",
-			ChiaviTsubo: ""
+			NomePunto: "Músculos de la espalda",
+			AzioniPunto: "<p><b>Acción</b><br>Punto utilizado por la Escuela Francesa por su acción relajante en los músculos dorsales.</p><p><b>Ubicación</b><br>PP3-PP5-PG3-PG4-PG5, entre la prominencia escafoidea y el surco longitudinal posterior</p>",
+			ChiaviPunto: ""
 		},
 		"291": {
-			NomeTsubo: "Punto Maestro Occipital",
-			AzioniTsubo: "<p><b>Otros nombres</b><br>- Hueso occipital<br>- Atlas</p><p><b>Acción</b><br>Este Punto Maestro está directamente relacionado con el espacio entre el hueso occipital y la primera vértebra cervical. Tiene una fuerte acción en el tratamiento de vértigo, insomnio, cefaleas tensionales y neuralgias. También se reconoce por sus propiedades mio relajantes, especialmente en casos con componente tensional-emocional.</p><p><b>Ubicación</b><br>AT3, en el surco antehélice-antitragus o post-antitragus.</p>",
-			ChiaviTsubo: ""
+			NomePunto: "Punto Maestro Occipital",
+			AzioniPunto: "<p><b>Otros nombres</b><br>- Hueso occipital<br>- Atlas</p><p><b>Acción</b><br>Este Punto Maestro está directamente relacionado con el espacio entre el hueso occipital y la primera vértebra cervical. Tiene una fuerte acción en el tratamiento de vértigo, insomnio, cefaleas tensionales y neuralgias. También se reconoce por sus propiedades mio relajantes, especialmente en casos con componente tensional-emocional.</p><p><b>Ubicación</b><br>AT3, en el surco antehélice-antitragus o post-antitragus.</p>",
+			ChiaviPunto: ""
 		},
 		"293": {
-			NomeTsubo: "Mentón",
-			AzioniTsubo: "<p><b>Acción</b><br>Patologías del mentón, dermatitis del mentón.</p><p><b>Ubicación</b><br>LO7, en la periferia del lóbulo cerca de <span class='LMtxt'>LM6</span>.</p>",
-			ChiaviTsubo: ""
+			NomePunto: "Mentón",
+			AzioniPunto: "<p><b>Acción</b><br>Patologías del mentón, dermatitis del mentón.</p><p><b>Ubicación</b><br>LO7, en la periferia del lóbulo cerca de <span class='LMtxt'>LM6</span>.</p>",
+			ChiaviPunto: ""
 		},
 		"294": {
-			NomeTsubo: "Vértice de la cabeza",
-			AzioniTsubo: "<p><b>Otros nombres</b><br>- Ápice de la Cabeza<br>- Corona de la Cabeza</p><p><b>Acción</b><br>Alivia el dolor de cabeza.</p><p><b>Ubicación</b><br>LO6, en la parte superior del lóbulo, posterior a la línea que pasa entre <span class='LMtxt'>LM13</span> y <span class='LMtxt'>LM7</span></p>",
-			ChiaviTsubo: ""
+			NomePunto: "Vértice de la cabeza",
+			AzioniPunto: "<p><b>Otros nombres</b><br>- Ápice de la Cabeza<br>- Corona de la Cabeza</p><p><b>Acción</b><br>Alivia el dolor de cabeza.</p><p><b>Ubicación</b><br>LO6, en la parte superior del lóbulo, posterior a la línea que pasa entre <span class='LMtxt'>LM13</span> y <span class='LMtxt'>LM7</span></p>",
+			ChiaviPunto: ""
 		},
 		"298": {
-			NomeTsubo: "Bulbo raquídeo EUR",
-			AzioniTsubo: "<p><b>Acción</b><br>Patología neurológica cervical alta. Modulación del dolor neuropático cervical. Control del tono muscular.</p><p><b>Ubicación</b><br>HX15, en el borde anterior de la hélice en su cola, en un área de transición hacia el lóbulo auricular</p>",
-			ChiaviTsubo: ""
+			NomePunto: "Bulbo raquídeo EUR",
+			AzioniPunto: "<p><b>Acción</b><br>Patología neurológica cervical alta. Modulación del dolor neuropático cervical. Control del tono muscular.</p><p><b>Ubicación</b><br>HX15, en el borde anterior de la hélice en su cola, en un área de transición hacia el lóbulo auricular</p>",
+			ChiaviPunto: ""
 		},
 		"302": {
-			NomeTsubo: "Oído interno CIN",
-			AzioniTsubo: "<p><b>Acción</b><br>Vértigo, zumbidos y tinnitus.</p><p><b>Ubicación</b><br>LO5, en la parte inferior y periférica del lóbulo, antero-inferior al punto ATM</p>",
-			ChiaviTsubo: ""
+			NomePunto: "Oído interno CIN",
+			AzioniPunto: "<p><b>Acción</b><br>Vértigo, zumbidos y tinnitus.</p><p><b>Ubicación</b><br>LO5, en la parte inferior y periférica del lóbulo, antero-inferior al punto ATM</p>",
+			ChiaviPunto: ""
 		},
 		"303": {
-			NomeTsubo: "Hipocampo",
-			AzioniTsubo: "<p><b>Otros nombres</b><br>- Memoria<br>- Cerebro de la memoria<br>- Fórnix</p><p><b>Acción</b><br>Trastornos de la memoria, amnesia y atención.</p><p><b>Ubicación</b><br>LO6, en la parte superior del lóbulo, justo debajo de la línea de borde con el antitrago.</p>",
-			ChiaviTsubo: ""
+			NomePunto: "Hipocampo",
+			AzioniPunto: "<p><b>Otros nombres</b><br>- Memoria<br>- Cerebro de la memoria<br>- Fórnix</p><p><b>Acción</b><br>Trastornos de la memoria, amnesia y atención.</p><p><b>Ubicación</b><br>LO6, en la parte superior del lóbulo, justo debajo de la línea de borde con el antitrago.</p>",
+			ChiaviPunto: ""
 		},
 		"304": {
-			NomeTsubo: "Analgesia dental",
-			AzioniTsubo: "<p><b>Otros nombres</b><br>- Dientes</p><p><b>Acción</b><br>Útil en el dolor dental, especialmente cuando es agudo y actual.</p><p><b>Ubicación</b><br>LO1-LO2, en un área anterior del lóbulo, aproximadamente a 2-3 mm de la mejilla entre los dos tercios superiores e inferiores de la distancia entre <span class='LMtxt'>LM9</span> y <span class='LMtxt'>LM8</span></p>",
-			ChiaviTsubo: ""
+			NomePunto: "Analgesia dental",
+			AzioniPunto: "<p><b>Otros nombres</b><br>- Dientes</p><p><b>Acción</b><br>Útil en el dolor dental, especialmente cuando es agudo y actual.</p><p><b>Ubicación</b><br>LO1-LO2, en un área anterior del lóbulo, aproximadamente a 2-3 mm de la mejilla entre los dos tercios superiores e inferiores de la distancia entre <span class='LMtxt'>LM9</span> y <span class='LMtxt'>LM8</span></p>",
+			ChiaviPunto: ""
 		},
 		"305": {
-			NomeTsubo: "Nariz externa EUR",
-			AzioniTsubo: "<p><b>Otros nombres</b><br>- Senos Paranasales</p><p><b>Acción</b><br>Rinitis, sinusitis, obstrucción nasal y todos los trastornos de las vías respiratorias superiores.</p><p><b>Ubicación</b><br>LO2, área ubicada en la parte superior del lóbulo, justo anterior a una línea vertical que pasa por el borde anterior de la incisura intertragica.</p>",
-			ChiaviTsubo: ""
+			NomePunto: "Nariz externa EUR",
+			AzioniPunto: "<p><b>Otros nombres</b><br>- Senos Paranasales</p><p><b>Acción</b><br>Rinitis, sinusitis, obstrucción nasal y todos los trastornos de las vías respiratorias superiores.</p><p><b>Ubicación</b><br>LO2, área ubicada en la parte superior del lóbulo, justo anterior a una línea vertical que pasa por el borde anterior de la incisura intertragica.</p>",
+			ChiaviPunto: ""
 		},
 		"000": {
-			NomeTsubo: "Punto Cero",
-			AzioniTsubo: "<p><b>Otros nombres</b><br>- Centro de la Oreja<br>- Punto de Apoyo<br>- Plexo Solar<br>- Ombligo</p><p><b>Acción</b><br>Considerado muy importante por la escuela francesa, según Paul Nogier representa un centro fisiológico y geométrico. La estimulación de este punto era utilizada por Nogier en condiciones de fatiga y tensiones nerviosas para equilibrar un estado de calma general. El Punto Cero tiene un potente efecto de reequilibrio general en el sistema energético, psicológico y físico.</p><p><b>Ubicación</b><br>HX1-CR1, en la raíz de la hélice en el límite con la concha rígida. En un surco ortogonal a la raíz de la hélice.</p>",
-			ChiaviTsubo: ""
+			NomePunto: "Punto Cero",
+			AzioniPunto: "<p><b>Otros nombres</b><br>- Centro de la Oreja<br>- Punto de Apoyo<br>- Plexo Solar<br>- Ombligo</p><p><b>Acción</b><br>Considerado muy importante por la escuela francesa, según Paul Nogier representa un centro fisiológico y geométrico. La estimulación de este punto era utilizada por Nogier en condiciones de fatiga y tensiones nerviosas para equilibrar un estado de calma general. El Punto Cero tiene un potente efecto de reequilibrio general en el sistema energético, psicológico y físico.</p><p><b>Ubicación</b><br>HX1-CR1, en la raíz de la hélice en el límite con la concha rígida. En un surco ortogonal a la raíz de la hélice.</p>",
+			ChiaviPunto: ""
 		},
 		"001": {
-			NomeTsubo: "ShenMen",
-			AzioniTsubo: "<p><b>Otros nombres</b><br>- Shen Men<br>- Puerta del Espíritu<br>- Puerta Divina</p><p><b>Acción</b><br>ShenMen es un punto poderoso reconocido internacionalmente por sus numerosas propiedades energéticas, emocionales y físicas. Se utiliza para tonificar la mente y facilitar la circulación del Qi, restableciendo la armonía y la serenidad. Es indicado para el tratamiento de la ansiedad, el estrés, la depresión, el insomnio; tiene un gran éxito en disuadir el uso frecuente de alcohol, drogas, tabaco, etc. El tratamiento de este punto ayuda a reducir los síntomas relacionados con la hipertensión y la epilepsia.</p><p><b>Ubicación</b><br>TF2, cerca del ápice de la fosa triangular en un área próxima a la raíz superior de la antihélice.</p>",
-			ChiaviTsubo: "punto funcional de primer nivel"
+			NomePunto: "ShenMen",
+			AzioniPunto: "<p><b>Otros nombres</b><br>- Shen Men<br>- Puerta del Espíritu<br>- Puerta Divina</p><p><b>Acción</b><br>ShenMen es un punto poderoso reconocido internacionalmente por sus numerosas propiedades energéticas, emocionales y físicas. Se utiliza para tonificar la mente y facilitar la circulación del Qi, restableciendo la armonía y la serenidad. Es indicado para el tratamiento de la ansiedad, el estrés, la depresión, el insomnio; tiene un gran éxito en disuadir el uso frecuente de alcohol, drogas, tabaco, etc. El tratamiento de este punto ayuda a reducir los síntomas relacionados con la hipertensión y la epilepsia.</p><p><b>Ubicación</b><br>TF2, cerca del ápice de la fosa triangular en un área próxima a la raíz superior de la antihélice.</p>",
+			ChiaviPunto: "punto funcional de primer nivel"
 		},
 		"002": {
-			NomeTsubo: "Punto Alergia 2",
-			AzioniTsubo: "<p><b>Otros nombres</b><br>- Alergia 2</p><p><b>Acción</b><br>Este punto es muy eficaz para reducir los efectos de las alergias y las inflamaciones.</p><p><b>Ubicación</b><br>IH7-iH8, en la cara oculta de la hélice, es un área alargada</p>",
-			ChiaviTsubo: "acción antiflogística"
+			NomePunto: "Punto Alergia 2",
+			AzioniPunto: "<p><b>Otros nombres</b><br>- Alergia 2</p><p><b>Acción</b><br>Este punto es muy eficaz para reducir los efectos de las alergias y las inflamaciones.</p><p><b>Ubicación</b><br>IH7-iH8, en la cara oculta de la hélice, es un área alargada</p>",
+			ChiaviPunto: "acción antiflogística"
 		},
 		"003": {
-			NomeTsubo: "Ápice del pabellón auricular",
-			AzioniTsubo: "<p><b>Otros nombres</b><br>- Punto alergia 1<br>- Omega 2 EUR<br>- Punto Maestro antiinflamatorio</p><p><b>Acción</b><br>Según la filosofía de la escuela francesa, este es un punto auricular muy efectivo en casos de alergia, hipertensión y edema. Por otro lado, la escuela china lo utiliza por sus propiedades antipiréticas, analgésicas y antiinflamatorias. A menudo se utiliza en enfermedades osteoarticulares.<br><br>Especialmente indicado en enfermedades inflamatorias crónicas.</p><p><b>Ubicación</b><br>HX7-HX8, en el ápice del pabellón auricular. Corresponde a <span class='LMtxt'>LM2</span>.</p>",
-			ChiaviTsubo: ""
+			NomePunto: "Ápice del pabellón auricular",
+			AzioniPunto: "<p><b>Otros nombres</b><br>- Punto alergia 1<br>- Omega 2 EUR<br>- Punto Maestro antiinflamatorio</p><p><b>Acción</b><br>Según la filosofía de la escuela francesa, este es un punto auricular muy efectivo en casos de alergia, hipertensión y edema. Por otro lado, la escuela china lo utiliza por sus propiedades antipiréticas, analgésicas y antiinflamatorias. A menudo se utiliza en enfermedades osteoarticulares.<br><br>Especialmente indicado en enfermedades inflamatorias crónicas.</p><p><b>Ubicación</b><br>HX7-HX8, en el ápice del pabellón auricular. Corresponde a <span class='LMtxt'>LM2</span>.</p>",
+			ChiaviPunto: ""
 		},
 		"004": {
-			NomeTsubo: "Punto psicosomático",
-			AzioniTsubo: "<p><b>Otros nombres</b><br>- Punto psicoterapéutico<br>- Punto R.<br>- Punto de Bourdiol<br>- Reacciones psicosomáticas</p><p><b>Acción</b><br>La escuela francesa utiliza este punto para disminuir todos los trastornos con componente psicosomática; se obtienen excelentes resultados en psicoterapia y en casos de individuos afectados por psicosis.</p><p><b>Ubicación</b><br>HX4-HX5, en la frontera entre la rodilla de la hélice y la sien. Corresponde a <span class='LMtxt'>LM1</span>, en la superficie externa con respecto a [.039.] y a <span class='LMtxt'>LM18</span>.</p>",
-			ChiaviTsubo: ""
+			NomePunto: "Punto psicosomático",
+			AzioniPunto: "<p><b>Otros nombres</b><br>- Punto psicoterapéutico<br>- Punto R.<br>- Punto de Bourdiol<br>- Reacciones psicosomáticas</p><p><b>Acción</b><br>La escuela francesa utiliza este punto para disminuir todos los trastornos con componente psicosomática; se obtienen excelentes resultados en psicoterapia y en casos de individuos afectados por psicosis.</p><p><b>Ubicación</b><br>HX4-HX5, en la frontera entre la rodilla de la hélice y la sien. Corresponde a <span class='LMtxt'>LM1</span>, en la superficie externa con respecto a [.039.] y a <span class='LMtxt'>LM18</span>.</p>",
+			ChiaviPunto: ""
 		},
 		"007": {
-			NomeTsubo: "Recto CIN",
-			AzioniTsubo: "<p><b>Acción</b><br>El Punto Recto es muy útil para reducir los síntomas del síndrome del intestino irritable, la disentería, las hemorroides, la diarrea, el estreñimiento y los dolores rectales.</p><p><b>Ubicación</b><br>HX3, en la rodilla de la hélice, debajo del punto donde la hélice se encuentra con la raíz inferior de la antihélice.</p>",
-			ChiaviTsubo: ""
+			NomePunto: "Recto CIN",
+			AzioniPunto: "<p><b>Acción</b><br>El Punto Recto es muy útil para reducir los síntomas del síndrome del intestino irritable, la disentería, las hemorroides, la diarrea, el estreñimiento y los dolores rectales.</p><p><b>Ubicación</b><br>HX3, en la rodilla de la hélice, debajo del punto donde la hélice se encuentra con la raíz inferior de la antihélice.</p>",
+			ChiaviPunto: ""
 		},
 		"008": {
-			NomeTsubo: "Uretra CIN",
-			AzioniTsubo: "<p><b>Acción</b><br>El Punto Uretra muestra su eficacia en todas las patologías relacionadas con las vías urinarias.</p><p><b>Ubicación</b><br>HX3, en la rodilla de la hélice, justo debajo del punto de encuentro entre la hélice y la raíz inferior de la antihélice.</p>",
-			ChiaviTsubo: ""
+			NomePunto: "Uretra CIN",
+			AzioniPunto: "<p><b>Acción</b><br>El Punto Uretra muestra su eficacia en todas las patologías relacionadas con las vías urinarias.</p><p><b>Ubicación</b><br>HX3, en la rodilla de la hélice, justo debajo del punto de encuentro entre la hélice y la raíz inferior de la antihélice.</p>",
+			ChiaviPunto: ""
 		},
 		"009": {
-			NomeTsubo: "Genitales externos CIN",
-			AzioniTsubo: "<p><b>Otros nombres</b><br>- Pene<br>- Clítoris</p><p><b>Acción</b><br>Punto indicado por la escuela china para el tratamiento de todas las patologías escrotales y relacionadas con los órganos genitales masculinos y femeninos. Muy eficaz en casos de frigidez e impotencia.</p><p><b>Ubicación</b><br>HX4, en la rodilla de la hélice a la altura de la rama inferior de la antihélice</p>",
-			ChiaviTsubo: ""
+			NomePunto: "Genitales externos CIN",
+			AzioniPunto: "<p><b>Otros nombres</b><br>- Pene<br>- Clítoris</p><p><b>Acción</b><br>Punto indicado por la escuela china para el tratamiento de todas las patologías escrotales y relacionadas con los órganos genitales masculinos y femeninos. Muy eficaz en casos de frigidez e impotencia.</p><p><b>Ubicación</b><br>HX4, en la rodilla de la hélice a la altura de la rama inferior de la antihélice</p>",
+			ChiaviPunto: ""
 		},
 		"013": {
-			NomeTsubo: "Ansia de Romoli",
-			AzioniTsubo: "<p><b>Acción</b><br>Particularmente sensible y efectivo en ataques de pánico, junto con el punto Boca.</p><p><b>Ubicación</b><br>IC5-IC8, codificado por A. Lovato, descrito por Marco Romoli en varias exposiciones, informes y congresos, identificado en una zona del hemiconca inferior, cerca del punto Maravilloso de Nogier.</p>",
-			ChiaviTsubo: "",
+			NomePunto: "Ansia de Romoli",
+			AzioniPunto: "<p><b>Acción</b><br>Particularmente sensible y efectivo en ataques de pánico, junto con el punto Boca.</p><p><b>Ubicación</b><br>IC5-IC8, codificado por A. Lovato, descrito por Marco Romoli en varias exposiciones, informes y congresos, identificado en una zona del hemiconca inferior, cerca del punto Maravilloso de Nogier.</p>",
+			ChiaviPunto: "",
 			"hidden": true
 		},
 		"014": {
-			NomeTsubo: "Área de la migraña",
-			AzioniTsubo: "<p><b>Acción</b><br>Reduce una crisis de migraña a través de la prueba de contacto con la aguja (NTC). La detección se realiza a través del pauper negro y con el pauper vertical en las áreas IT1, AT1 y CW1.</p><p><b>Ubicación</b><br>IT1-AT1-CW1-LO4, codificado por A. Lovato y determinado por primera vez por Romoli a través de la prueba de contacto (NTC).</p>",
-			ChiaviTsubo: "",
+			NomePunto: "Área de la migraña",
+			AzioniPunto: "<p><b>Acción</b><br>Reduce una crisis de migraña a través de la prueba de contacto con la aguja (NTC). La detección se realiza a través del pauper negro y con el pauper vertical en las áreas IT1, AT1 y CW1.</p><p><b>Ubicación</b><br>IT1-AT1-CW1-LO4, codificado por A. Lovato y determinado por primera vez por Romoli a través de la prueba de contacto (NTC).</p>",
+			ChiaviPunto: "",
 			"hidden": true
 		},
 		"015": {
-			NomeTsubo: "Hélice 1-7",
-			AzioniTsubo: "<p><b>Acción</b><br>Puntos específicos del protocolo antitabaco clásico de P. Nogier y del programa antitabaco de G. Rossato.</p><p><b>Ubicación</b><br>Para encontrar los 7 puntos, primero se deben obtener los 2 extremos. El punto inferior se encuentra trazando el radio que intersecta la representación de la primera vértebra cervical desde el Punto Cero. El punto superior se obtiene trazando el radio que intersecta el tubérculo de Darwin desde el Punto Cero. Los 5 puntos intermedios se determinan utilizando la regla de Nogier.</p>",
-			ChiaviTsubo: "",
+			NomePunto: "Hélice 1-7",
+			AzioniPunto: "<p><b>Acción</b><br>Puntos específicos del protocolo antitabaco clásico de P. Nogier y del programa antitabaco de G. Rossato.</p><p><b>Ubicación</b><br>Para encontrar los 7 puntos, primero se deben obtener los 2 extremos. El punto inferior se encuentra trazando el radio que intersecta la representación de la primera vértebra cervical desde el Punto Cero. El punto superior se obtiene trazando el radio que intersecta el tubérculo de Darwin desde el Punto Cero. Los 5 puntos intermedios se determinan utilizando la regla de Nogier.</p>",
+			ChiaviPunto: "",
 			"hidden": true
 		},
 		"017": {
-			NomeTsubo: "Dedos de las manos",
-			AzioniTsubo: "<p><b>Otros nombres</b><br>- Falanges</p><p><b>Acción</b><br>Este punto internacional está indicado para tratar todos los trastornos relacionados con los dedos, especialmente para el tratamiento de trastornos del carpo y del hueso metacarpiano.</p><p><b>Ubicación</b><br>SF6, en un área amplia entre la hélice y la raíz superior de la antihélice, por encima del tubérculo de Darwin.</p>",
-			ChiaviTsubo: ""
+			NomePunto: "Dedos de las manos",
+			AzioniPunto: "<p><b>Otros nombres</b><br>- Falanges</p><p><b>Acción</b><br>Este punto internacional está indicado para tratar todos los trastornos relacionados con los dedos, especialmente para el tratamiento de trastornos del carpo y del hueso metacarpiano.</p><p><b>Ubicación</b><br>SF6, en un área amplia entre la hélice y la raíz superior de la antihélice, por encima del tubérculo de Darwin.</p>",
+			ChiaviPunto: ""
 		},
 		"018": {
-			NomeTsubo: "Dermatitis",
-			AzioniTsubo: "<p><b>Otros nombres</b><br>- Trastornos de la piel EUR<br>- Urticaria<br>- Eccema<br><span style='color: rgb(0, 0, 0);'>- Patologías dermatológicas<br>- Médula EUR</span></p><p><b>Acción</b><br>Como sugiere su nombre, este punto se utiliza para tratar todas las principales patologías dermatológicas como dermatitis, acné, eccema y urticaria.</p><p><b>Ubicación</b><br>HX12-HX13-HX14-HX15 en el borde de la hélice. También es el sitio de representación medular. El tratamiento y la representación patológica siguen la lógica dermatómica.</p>",
-			ChiaviTsubo: ""
+			NomePunto: "Dermatitis",
+			AzioniPunto: "<p><b>Otros nombres</b><br>- Trastornos de la piel EUR<br>- Urticaria<br>- Eccema<br><span style='color: rgb(0, 0, 0);'>- Patologías dermatológicas<br>- Médula EUR</span></p><p><b>Acción</b><br>Como sugiere su nombre, este punto se utiliza para tratar todas las principales patologías dermatológicas como dermatitis, acné, eccema y urticaria.</p><p><b>Ubicación</b><br>HX12-HX13-HX14-HX15 en el borde de la hélice. También es el sitio de representación medular. El tratamiento y la representación patológica siguen la lógica dermatómica.</p>",
+			ChiaviPunto: ""
 		},
 		"023": {
-			NomeTsubo: "Punto Jerome",
-			AzioniTsubo: "<p><b>Otros nombres</b><br>- Compulsiones sexuales<br>- Inhibición del deseo sexual</p><p><b>Acción</b><br>El Punto de Jerome se utiliza para inhibir la libido y regular todos los trastornos compulsivos sexuales.</p><p><b>Ubicación</b><br>HX15, en la parte inferior del hélix, en la frontera con el lóbulo y la fosa escafoidea.</p>",
-			ChiaviTsubo: ""
+			NomePunto: "Punto Jerome",
+			AzioniPunto: "<p><b>Otros nombres</b><br>- Compulsiones sexuales<br>- Inhibición del deseo sexual</p><p><b>Acción</b><br>El Punto de Jerome se utiliza para inhibir la libido y regular todos los trastornos compulsivos sexuales.</p><p><b>Ubicación</b><br>HX15, en la parte inferior del hélix, en la frontera con el lóbulo y la fosa escafoidea.</p>",
+			ChiaviPunto: ""
 		},
 		"026": {
-			NomeTsubo: "Windstream",
-			AzioniTsubo: "<p><b>Otros nombres</b><br>- Nervio occipital menor<br>- Golpe de viento</p><p><b>Acción</b><br>Según la Escuela China, este punto está relacionado con la glándula suprarrenal. Está indicado para favorecer la respuesta del sistema inmunológico y tiene una acción particular en todos los trastornos en fase aguda.</p><p><b>Ubicación</b><br>IH11, en la superficie oculta del hélix, debajo del tubérculo de Darwin.</p>",
-			ChiaviTsubo: ""
+			NomePunto: "Windstream",
+			AzioniPunto: "<p><b>Otros nombres</b><br>- Nervio occipital menor<br>- Golpe de viento</p><p><b>Acción</b><br>Según la Escuela China, este punto está relacionado con la glándula suprarrenal. Está indicado para favorecer la respuesta del sistema inmunológico y tiene una acción particular en todos los trastornos en fase aguda.</p><p><b>Ubicación</b><br>IH11, en la superficie oculta del hélix, debajo del tubérculo de Darwin.</p>",
+			ChiaviPunto: ""
 		},
 		"028": {
-			NomeTsubo: "Pie CIN",
-			AzioniTsubo: "<p><b>Otros nombres</b><br>- Metatarso</p><p><b>Acción</b><br>Punto auricular indicado para el tratamiento de trastornos y dolores relacionados con el pie</p><p><b>Ubicación</b><br>AH17-AH18-PP11, en el punto más alto de la raíz superior del antehélix, oculto por el borde del hélix</p>",
-			ChiaviTsubo: ""
+			NomePunto: "Pie CIN",
+			AzioniPunto: "<p><b>Otros nombres</b><br>- Metatarso</p><p><b>Acción</b><br>Punto auricular indicado para el tratamiento de trastornos y dolores relacionados con el pie</p><p><b>Ubicación</b><br>AH17-AH18-PP11, en el punto más alto de la raíz superior del antehélix, oculto por el borde del hélix</p>",
+			ChiaviPunto: ""
 		},
 		"029": {
-			NomeTsubo: "Talón CIN",
-			AzioniTsubo: "<p><b>Otros nombres</b><br>- Punto del talón</p><p><b>Acción</b><br>Este punto es adoptado tanto por la Escuela China como por la Escuela Francesa por su acción en la contrarrestación de trastornos y dolor en el talón.</p><p><b>Ubicación</b><br>AH17, en el tercio superior de la raíz superior del antehélix, en un área oculta por el borde del hélix y cerca de la fosa triangular.</p>",
-			ChiaviTsubo: ""
+			NomePunto: "Talón CIN",
+			AzioniPunto: "<p><b>Otros nombres</b><br>- Punto del talón</p><p><b>Acción</b><br>Este punto es adoptado tanto por la Escuela China como por la Escuela Francesa por su acción en la contrarrestación de trastornos y dolor en el talón.</p><p><b>Ubicación</b><br>AH17, en el tercio superior de la raíz superior del antehélix, en un área oculta por el borde del hélix y cerca de la fosa triangular.</p>",
+			ChiaviPunto: ""
 		},
 		"030": {
-			NomeTsubo: "Hipertensión 1",
-			AzioniTsubo: "<p><b>Otros nombres</b><br>- Ansiedad 1<br>- Depresión</p><p><b>Acción</b><br>La Escuela China distingue el tratamiento de la Hipertensión con tres puntos diferentes. El Punto Hipertensión 1 está indicado para el reequilibrio de la presión arterial, ansiedad y depresión.</p><p><b>Ubicación</b><br>TF6, en la fosa triangular cerca del punto de encuentro entre el hélix y la rama inferior del antehélix.</p>",
-			ChiaviTsubo: ""
+			NomePunto: "Hipertensión 1",
+			AzioniPunto: "<p><b>Otros nombres</b><br>- Ansiedad 1<br>- Depresión</p><p><b>Acción</b><br>La Escuela China distingue el tratamiento de la Hipertensión con tres puntos diferentes. El Punto Hipertensión 1 está indicado para el reequilibrio de la presión arterial, ansiedad y depresión.</p><p><b>Ubicación</b><br>TF6, en la fosa triangular cerca del punto de encuentro entre el hélix y la rama inferior del antehélix.</p>",
+			ChiaviPunto: ""
 		},
 		"031": {
-			NomeTsubo: "Útero CIN",
-			AzioniTsubo: "<p><b>Acción</b><br>Trastornos dolorosos y funcionales del aparato reproductor. Especialmente dismenorrea y polimenorrea.</p><p><b>Ubicación</b><br>TF5-TF6, amplia área en el tercio anterior de la fosa triangular, parcialmente oculta por el borde del hélix.</p>",
-			ChiaviTsubo: ""
+			NomePunto: "Útero CIN",
+			AzioniPunto: "<p><b>Acción</b><br>Trastornos dolorosos y funcionales del aparato reproductor. Especialmente dismenorrea y polimenorrea.</p><p><b>Ubicación</b><br>TF5-TF6, amplia área en el tercio anterior de la fosa triangular, parcialmente oculta por el borde del hélix.</p>",
+			ChiaviPunto: ""
 		},
 		"032": {
-			NomeTsubo: "Tobillo EUR",
-			AzioniTsubo: "<p><b>Otros nombres</b><br>- Articulación astrágalo-tibial<br>- Tendón de Aquiles</p><p><b>Acción</b><br>El punto del tobillo se utiliza para todos los trastornos relacionados con el tobillo, especialmente las articulaciones y el tendón de Aquiles.</p><p><b>Ubicación</b><br>TF5-TF6 a lo largo de la bisectriz de la fosa triangular, en el tercio proximal de la rodilla del hélix.</p>",
-			ChiaviTsubo: ""
+			NomePunto: "Tobillo EUR",
+			AzioniPunto: "<p><b>Otros nombres</b><br>- Articulación astrágalo-tibial<br>- Tendón de Aquiles</p><p><b>Acción</b><br>El punto del tobillo se utiliza para todos los trastornos relacionados con el tobillo, especialmente las articulaciones y el tendón de Aquiles.</p><p><b>Ubicación</b><br>TF5-TF6 a lo largo de la bisectriz de la fosa triangular, en el tercio proximal de la rodilla del hélix.</p>",
+			ChiaviPunto: ""
 		},
 		"033": {
-			NomeTsubo: "Rodilla EUR",
-			AzioniTsubo: "<p><b>Otros nombres</b><br>- Articulación de la rodilla<br>- Rótula</p><p><b>Acción</b><br>Como indica su nombre, este punto es muy eficaz para reducir todos los trastornos relacionados con la rodilla, especialmente los trastornos articulares.</p><p><b>Ubicación</b><br>TF3-TF4-PT2, en el centro de la fosa triangular.</p>",
-			ChiaviTsubo: ""
+			NomePunto: "Rodilla EUR",
+			AzioniPunto: "<p><b>Otros nombres</b><br>- Articulación de la rodilla<br>- Rótula</p><p><b>Acción</b><br>Como indica su nombre, este punto es muy eficaz para reducir todos los trastornos relacionados con la rodilla, especialmente los trastornos articulares.</p><p><b>Ubicación</b><br>TF3-TF4-PT2, en el centro de la fosa triangular.</p>",
+			ChiaviPunto: ""
 		},
 		"034": {
-			NomeTsubo: "Muslo",
-			AzioniTsubo: "<p><b>Acción</b><br>Patologías dolorosas del muslo.</p><p><b>Ubicación</b><br>TF3, ubicado aproximadamente a mitad de camino entre la bisectriz de la fosa triangular y la raíz inferior del antehélix, y aproximadamente a mitad de camino entre el ápice de la fosa triangular y su punto central.</p>",
-			ChiaviTsubo: ""
+			NomePunto: "Muslo",
+			AzioniPunto: "<p><b>Acción</b><br>Patologías dolorosas del muslo.</p><p><b>Ubicación</b><br>TF3, ubicado aproximadamente a mitad de camino entre la bisectriz de la fosa triangular y la raíz inferior del antehélix, y aproximadamente a mitad de camino entre el ápice de la fosa triangular y su punto central.</p>",
+			ChiaviPunto: ""
 		},
 		"036": {
-			NomeTsubo: "Nervio ciático",
-			AzioniTsubo: "<p><b>Otros nombres</b><br>- Ciático</p><p><b>Acción</b><br>Es el punto donde P. Nogier realizaba la cauterización para tratar el dolor del ciático.</p><p><b>Ubicación</b><br>AH6, aproximadamente a mitad de la raíz inferior del antehélix, justo antes de que esta cruce el borde posterior de la rodilla del hélix.</p>",
-			ChiaviTsubo: ""
+			NomePunto: "Nervio ciático",
+			AzioniPunto: "<p><b>Otros nombres</b><br>- Ciático</p><p><b>Acción</b><br>Es el punto donde P. Nogier realizaba la cauterización para tratar el dolor del ciático.</p><p><b>Ubicación</b><br>AH6, aproximadamente a mitad de la raíz inferior del antehélix, justo antes de que esta cruce el borde posterior de la rodilla del hélix.</p>",
+			ChiaviPunto: ""
 		},
 		"037": {
-			NomeTsubo: "Estreñimiento",
-			AzioniTsubo: "<p><b>Otros nombres</b><br>- Constipación</p><p><b>Acción</b><br>Punto utilizado por la Escuela China por su acción en la reducción de los trastornos de estreñimiento y en la regulación de la motilidad intestinal.</p><p><b>Ubicación</b><br>TF3, a mitad de camino entre el centro de la fosa triangular y la raíz inferior del antehélix.</p>",
-			ChiaviTsubo: ""
+			NomePunto: "Estreñimiento",
+			AzioniPunto: "<p><b>Otros nombres</b><br>- Constipación</p><p><b>Acción</b><br>Punto utilizado por la Escuela China por su acción en la reducción de los trastornos de estreñimiento y en la regulación de la motilidad intestinal.</p><p><b>Ubicación</b><br>TF3, a mitad de camino entre el centro de la fosa triangular y la raíz inferior del antehélix.</p>",
+			ChiaviPunto: ""
 		},
 		"038": {
-			NomeTsubo: "Pie EUR",
-			AzioniTsubo: "<p><b>Otros nombres</b><br>- Metatarso</p><p><b>Acción</b><br>Punto auricular indicado para el tratamiento de trastornos y dolores relacionados con el pie</p><p><b>Ubicación</b><br>TF5-TF6-PT3, en la base de la fosa triangular, oculto por el borde del hélix</p>",
-			ChiaviTsubo: ""
+			NomePunto: "Pie EUR",
+			AzioniPunto: "<p><b>Otros nombres</b><br>- Metatarso</p><p><b>Acción</b><br>Punto auricular indicado para el tratamiento de trastornos y dolores relacionados con el pie</p><p><b>Ubicación</b><br>TF5-TF6-PT3, en la base de la fosa triangular, oculto por el borde del hélix</p>",
+			ChiaviPunto: ""
 		},
 		"039": {
-			NomeTsubo: "Punto Ortosimpático",
-			AzioniTsubo: "<p><b>Otros nombres</b><br>- Punto del Simpático<br>- Punto del Simpático Autonómico</p><p><b>Acción</b><br>Este punto es reconocido a nivel internacional por sus capacidades analgésicas, especialmente en los órganos internos. También se indica por su acción en el sistema nervioso autónomo y en el parasimpático tónico.</p><p><b>Ubicación</b><br>AH7-IH4, en la raíz inferior del antehélix, en su encuentro con el hélix. El punto está oculto por el hélix. Corresponde a <span class='LMtxt'>LM18</span>.</p>",
-			ChiaviTsubo: ""
+			NomePunto: "Punto Ortosimpático",
+			AzioniPunto: "<p><b>Otros nombres</b><br>- Punto del Simpático<br>- Punto del Simpático Autonómico</p><p><b>Acción</b><br>Este punto es reconocido a nivel internacional por sus capacidades analgésicas, especialmente en los órganos internos. También se indica por su acción en el sistema nervioso autónomo y en el parasimpático tónico.</p><p><b>Ubicación</b><br>AH7-IH4, en la raíz inferior del antehélix, en su encuentro con el hélix. El punto está oculto por el hélix. Corresponde a <span class='LMtxt'>LM18</span>.</p>",
+			ChiaviPunto: ""
 		},
 		"040": {
-			NomeTsubo: "Talón EUR",
-			AzioniTsubo: "<p><b>Acción</b><br>Patologías dolorosas y disfuncionales del talón y la parte posterior del pie</p><p><b>Ubicación</b><br>TF5, en la base de la fosa triangular, cerca del punto de encuentro entre el hélix y la raíz inferior del antehélix. El punto está oculto por el hélix.</p>",
-			ChiaviTsubo: ""
+			NomePunto: "Talón EUR",
+			AzioniPunto: "<p><b>Acción</b><br>Patologías dolorosas y disfuncionales del talón y la parte posterior del pie</p><p><b>Ubicación</b><br>TF5, en la base de la fosa triangular, cerca del punto de encuentro entre el hélix y la raíz inferior del antehélix. El punto está oculto por el hélix.</p>",
+			ChiaviPunto: ""
 		},
 		"041": {
-			NomeTsubo: "Tiroides CIN",
-			AzioniTsubo: "<p><b>Otros nombres</b><br>- Glándula tiroides<br>- Glándula paratiroides</p><p><b>Acción</b><br>Como sugiere su nombre, este punto se indica para tratar todos los trastornos relacionados con la tiroides.</p><b>Ubicación</b><br>CW4-IC8-AH8, en la frontera entre la parte frontal y la parte inferior del antehélix, a la altura de la representación de las vértebras C3-4.</p>",
-			ChiaviTsubo: ""
+			NomePunto: "Tiroides CIN",
+			AzioniPunto: "<p><b>Otros nombres</b><br>- Glándula tiroides<br>- Glándula paratiroides</p><p><b>Acción</b><br>Como sugiere su nombre, este punto se indica para tratar todos los trastornos relacionados con la tiroides.</p><b>Ubicación</b><br>CW4-IC8-AH8, en la frontera entre la parte frontal y la parte inferior del antehélix, a la altura de la representación de las vértebras C3-4.</p>",
+			ChiaviPunto: ""
 		},
 		"042": {
-			NomeTsubo: "Glándula mamaria CIN",
-			AzioniTsubo: "<p><b>Otros nombres</b><br>- Mama</p><p><b>Acción</b><br>Patologías de la mama, mastodinia.</p><p><b>Ubicación</b><br>AH3, en el centro del cuerpo del antehélix a nivel de la zona de representación de la IV-V vértebra torácica.</p>",
-			ChiaviTsubo: ""
+			NomePunto: "Glándula mamaria CIN",
+			AzioniPunto: "<p><b>Otros nombres</b><br>- Mama</p><p><b>Acción</b><br>Patologías de la mama, mastodinia.</p><p><b>Ubicación</b><br>AH3, en el centro del cuerpo del antehélix a nivel de la zona de representación de la IV-V vértebra torácica.</p>",
+			ChiaviPunto: ""
 		},
 		"043": {
-			NomeTsubo: "Tórax",
-			AzioniTsubo: "<p><b>Otros nombres</b><br>- Pecho<br>- Esternón<br>- Caja torácica<br>- Músculos pectorales</p><p><b>Acción</b><br>El Punto Tórax tiene una acción de equilibrio del dolor costal, torácico y en el tratamiento del asma, la tos y los trastornos circulatorios.</p><p><b>Ubicación</b><br>AH10, en el cuerpo del antehélix a la altura de la concha rígida, hacia la fosa escafoides.</p>",
-			ChiaviTsubo: ""
+			NomePunto: "Tórax",
+			AzioniPunto: "<p><b>Otros nombres</b><br>- Pecho<br>- Esternón<br>- Caja torácica<br>- Músculos pectorales</p><p><b>Acción</b><br>El Punto Tórax tiene una acción de equilibrio del dolor costal, torácico y en el tratamiento del asma, la tos y los trastornos circulatorios.</p><p><b>Ubicación</b><br>AH10, en el cuerpo del antehélix a la altura de la concha rígida, hacia la fosa escafoides.</p>",
+			ChiaviPunto: ""
 		},
 		"044": {
-			NomeTsubo: "Cerebelo",
-			AzioniTsubo: "<p><b>Acción</b><br>Trastornos del equilibrio y de la coordinación motora.</p><p><b>Ubicación</b><br>AH1, en la parte inferior del cuerpo del antehélix, justo encima del surco post-antitragal.</p>",
-			ChiaviTsubo: ""
+			NomePunto: "Cerebelo",
+			AzioniPunto: "<p><b>Acción</b><br>Trastornos del equilibrio y de la coordinación motora.</p><p><b>Ubicación</b><br>AH1, en la parte inferior del cuerpo del antehélix, justo encima del surco post-antitragal.</p>",
+			ChiaviPunto: ""
 		},
 		"045": {
-			NomeTsubo: "Insomnio 1",
-			AzioniTsubo: "<p><b>Otros nombres</b><br>- Trastornos del sueño 1</p><p><b>Acción</b><br>La Escuela Francesa distingue el tratamiento del insomnio con dos puntos diferentes. El punto Insomnio 1 se indica principalmente en casos de despertares nocturnos constantes. Tiene una excelente eficacia en la reducción del estrés, la depresión, el nerviosismo y, como sugiere su nombre, en el insomnio.</p><p><b>Ubicación</b><br>SF5, en la fosa escafoides, en la parte superior.</p>",
-			ChiaviTsubo: ""
+			NomePunto: "Insomnio 1",
+			AzioniPunto: "<p><b>Otros nombres</b><br>- Trastornos del sueño 1</p><p><b>Acción</b><br>La Escuela Francesa distingue el tratamiento del insomnio con dos puntos diferentes. El punto Insomnio 1 se indica principalmente en casos de despertares nocturnos constantes. Tiene una excelente eficacia en la reducción del estrés, la depresión, el nerviosismo y, como sugiere su nombre, en el insomnio.</p><p><b>Ubicación</b><br>SF5, en la fosa escafoides, en la parte superior.</p>",
+			ChiaviPunto: ""
 		},
 		"047": {
-			NomeTsubo: "Clavícula",
-			AzioniTsubo: "<p><b>Acción</b><br>Como indica el nombre, este punto es muy eficaz para reducir todos los trastornos relacionados con la clavícula. También es eficaz en el tratamiento del dolor escapular y del cíngulo escapular.</p><p><b>Ubicación</b><br>SF1, en la fosa escafoides, justo antes de que se divida en una Y.</p>",
-			ChiaviTsubo: ""
+			NomePunto: "Clavícula",
+			AzioniPunto: "<p><b>Acción</b><br>Como indica el nombre, este punto es muy eficaz para reducir todos los trastornos relacionados con la clavícula. También es eficaz en el tratamiento del dolor escapular y del cíngulo escapular.</p><p><b>Ubicación</b><br>SF1, en la fosa escafoides, justo antes de que se divida en una Y.</p>",
+			ChiaviPunto: ""
 		},
 		"048": {
-			NomeTsubo: "Punto articulación del hombro",
-			AzioniTsubo: "<p><b>Otros nombres</b><br>- Articulación del hombro<br>- Escápula<br>- Músculo trapecio</p><p><b>Acción</b><br>Según la Escuela Francesa, este punto tiene una gran aplicación para todos los trastornos relacionados con el hombro, especialmente con el manguito de los rotadores, los dolores articulares, la escápula y el trapecio.</p><p><b>Ubicación</b><br>SF1-PP3, en el centro de la fosa escafoides, a nivel de la representación de C4-5.</p>",
-			ChiaviTsubo: ""
+			NomePunto: "Punto articulación del hombro",
+			AzioniPunto: "<p><b>Otros nombres</b><br>- Articulación del hombro<br>- Escápula<br>- Músculo trapecio</p><p><b>Acción</b><br>Según la Escuela Francesa, este punto tiene una gran aplicación para todos los trastornos relacionados con el hombro, especialmente con el manguito de los rotadores, los dolores articulares, la escápula y el trapecio.</p><p><b>Ubicación</b><br>SF1-PP3, en el centro de la fosa escafoides, a nivel de la representación de C4-5.</p>",
+			ChiaviPunto: ""
 		},
 		"049": {
-			NomeTsubo: "Hombro",
-			AzioniTsubo: "<p><b>Otros nombres</b><br>- Cíngulo escapular<br>- Músculo deltoides</p><p><b>Acción</b><br>El Punto del Hombro es muy activo para reducir los trastornos del hombro con componente artrosica y artrítica. También es eficaz en casos de trastornos musculotendinosos del hombro.</p><p><b>Ubicación</b><br>SF2-PP5, en el centro de la fosa escafoides, a nivel de la representación del paso de la columna cervicodorsal Francesa.</p>",
-			ChiaviTsubo: ""
+			NomePunto: "Hombro",
+			AzioniPunto: "<p><b>Otros nombres</b><br>- Cíngulo escapular<br>- Músculo deltoides</p><p><b>Acción</b><br>El Punto del Hombro es muy activo para reducir los trastornos del hombro con componente artrosica y artrítica. También es eficaz en casos de trastornos musculotendinosos del hombro.</p><p><b>Ubicación</b><br>SF2-PP5, en el centro de la fosa escafoides, a nivel de la representación del paso de la columna cervicodorsal Francesa.</p>",
+			ChiaviPunto: ""
 		},
 		"053": {
-			NomeTsubo: "Brazo",
-			AzioniTsubo: "<p><b>Otros nombres</b><br>- Punto del brazo<br>- Húmero<br>- Músculo bíceps<br>- Músculo tríceps</p><p><b>Acción</b><br>Como indica el nombre, este punto es muy eficaz para reducir todos los trastornos relacionados con el brazo.</p><p><b>Ubicación</b><br>SF3-PP5, en la fosa escafoides, entre el punto [.054.] y el punto [.049.]</p>",
-			ChiaviTsubo: ""
+			NomePunto: "Brazo",
+			AzioniPunto: "<p><b>Otros nombres</b><br>- Punto del brazo<br>- Húmero<br>- Músculo bíceps<br>- Músculo tríceps</p><p><b>Acción</b><br>Como indica el nombre, este punto es muy eficaz para reducir todos los trastornos relacionados con el brazo.</p><p><b>Ubicación</b><br>SF3-PP5, en la fosa escafoides, entre el punto [.054.] y el punto [.049.]</p>",
+			ChiaviPunto: ""
 		},
 		"054": {
-			NomeTsubo: "Codo",
-			AzioniTsubo: "<p><b>Otros nombres</b><br>- Punto del codo<br>- Articulación del codo</p><p><b>Acción</b><br>Como indica el nombre, este punto es muy eficaz para reducir todos los trastornos relacionados con el codo.</p><p><b>Ubicación</b><br>SF4-PP5, en la fosa escafoides, a nivel del punto [.001.]</p>",
-			ChiaviTsubo: ""
+			NomePunto: "Codo",
+			AzioniPunto: "<p><b>Otros nombres</b><br>- Punto del codo<br>- Articulación del codo</p><p><b>Acción</b><br>Como indica el nombre, este punto es muy eficaz para reducir todos los trastornos relacionados con el codo.</p><p><b>Ubicación</b><br>SF4-PP5, en la fosa escafoides, a nivel del punto [.001.]</p>",
+			ChiaviPunto: ""
 		},
 		"055": {
-			NomeTsubo: "Antebrazo",
-			AzioniTsubo: "<p><b>Otros nombres</b><br>- Punto antebrazo<br>- Radio<br>- Ulna<br>- Músculo braquiorradial</p><p><b>Acción</b><br>Como indica el nombre, este punto es muy eficaz para reducir todos los trastornos relacionados con el antebrazo.</p><p><b>Ubicación</b><br>SF4-PP5, en la fosa escafoides, a nivel del punto [.001.]</p>",
-			ChiaviTsubo: ""
+			NomePunto: "Antebrazo",
+			AzioniPunto: "<p><b>Otros nombres</b><br>- Punto antebrazo<br>- Radio<br>- Ulna<br>- Músculo braquiorradial</p><p><b>Acción</b><br>Como indica el nombre, este punto es muy eficaz para reducir todos los trastornos relacionados con el antebrazo.</p><p><b>Ubicación</b><br>SF4-PP5, en la fosa escafoides, a nivel del punto [.001.]</p>",
+			ChiaviPunto: ""
 		},
 		"056": {
-			NomeTsubo: "Corazón EUR",
-			AzioniTsubo: "<p><b>Acción<br></b>Según la Escuela Francesa, este punto está indicado para el tratamiento de patologías y trastornos cardíacos. Por lo tanto, se recomienda tratar el punto Corazón en caso de dolor torácico, hipertensión e hipotensión, taquicardia y diversas arritmias.</p><p><b>Ubicación</b><br>AH3-PG4, en el antehélix en la frontera con el antemuro, a la altura del [.000.]</p>",
-			ChiaviTsubo: ""
+			NomePunto: "Corazón EUR",
+			AzioniPunto: "<p><b>Acción<br></b>Según la Escuela Francesa, este punto está indicado para el tratamiento de patologías y trastornos cardíacos. Por lo tanto, se recomienda tratar el punto Corazón en caso de dolor torácico, hipertensión e hipotensión, taquicardia y diversas arritmias.</p><p><b>Ubicación</b><br>AH3-PG4, en el antehélix en la frontera con el antemuro, a la altura del [.000.]</p>",
+			ChiaviPunto: ""
 		},
 		"058": {
-			NomeTsubo: "Punto glúteo",
-			AzioniTsubo: "<p><b>Otros nombres</b><br>- Punto gran glúteo<br>- Punto nalgas</p><p><b>Acción</b><br>Dolor en la cadera, en el glúteo y dolor en la pseudo-ciática.</p><p><b>Ubicación</b><br>AH5-PG5, justo encima <span class='LMtxt'>LM16</span> en la parte posterior de la raíz inferior del antehélix.</p>",
-			ChiaviTsubo: ""
+			NomePunto: "Punto glúteo",
+			AzioniPunto: "<p><b>Otros nombres</b><br>- Punto gran glúteo<br>- Punto nalgas</p><p><b>Acción</b><br>Dolor en la cadera, en el glúteo y dolor en la pseudo-ciática.</p><p><b>Ubicación</b><br>AH5-PG5, justo encima <span class='LMtxt'>LM16</span> en la parte posterior de la raíz inferior del antehélix.</p>",
+			ChiaviPunto: ""
 		},
 		"060": {
-			NomeTsubo: "Cadera EUR",
-			AzioniTsubo: "<p><b>Otros nombres</b><br><span style='color: rgb(0, 0, 0);'>- Articulación coxofemoral</span><br></p><p><b>Acción</b><br>Este punto es utilizado tanto por la Escuela China como por la Escuela Francesa, pero en diferentes ubicaciones. En común tienen la aplicación para el tratamiento de trastornos relacionados con la cadera y el cinturón pélvico.</p><p><b>Ubicación</b><br>TF1-PT1, en la punta del foso triangular</p>",
-			ChiaviTsubo: ""
+			NomePunto: "Cadera EUR",
+			AzioniPunto: "<p><b>Otros nombres</b><br><span style='color: rgb(0, 0, 0);'>- Articulación coxofemoral</span><br></p><p><b>Acción</b><br>Este punto es utilizado tanto por la Escuela China como por la Escuela Francesa, pero en diferentes ubicaciones. En común tienen la aplicación para el tratamiento de trastornos relacionados con la cadera y el cinturón pélvico.</p><p><b>Ubicación</b><br>TF1-PT1, en la punta del foso triangular</p>",
+			ChiaviPunto: ""
 		},
 		"061": {
-			NomeTsubo: "Pelvis",
-			AzioniTsubo: "<p><b>Otros nombres</b><br>- Bacino<br>- Cinturón pélvico<br>- Ingle<br>- Hueso púbico<br>- Cavidad pélvica</p><p><b>Acción</b><br>Este Punto Internacional se utiliza para tratar todas las patologías pélvicas. Tiene una buena eficacia en casos de dolor lumbar.</p><p><b>Ubicación</b><br>TF1-PG5, en la punta del foso triangular, hacia abajo, debajo del punto [.001.]</p>",
-			ChiaviTsubo: ""
+			NomePunto: "Pelvis",
+			AzioniPunto: "<p><b>Otros nombres</b><br>- Bacino<br>- Cinturón pélvico<br>- Ingle<br>- Hueso púbico<br>- Cavidad pélvica</p><p><b>Acción</b><br>Este Punto Internacional se utiliza para tratar todas las patologías pélvicas. Tiene una buena eficacia en casos de dolor lumbar.</p><p><b>Ubicación</b><br>TF1-PG5, en la punta del foso triangular, hacia abajo, debajo del punto [.001.]</p>",
+			ChiaviPunto: ""
 		},
 		"065": {
-			NomeTsubo: "Muñeca",
-			AzioniTsubo: "<p><b>Otros nombres</b><br>- Punto de la muñeca<br>- Articulación de la muñeca</p><p><b>Acción</b><br>Como indica el nombre, este punto es muy eficaz para reducir todos los trastornos relacionados con la muñeca, especialmente los trastornos osteoarticulares.</p><p><b>Ubicación</b><br>SF5-PP7, en el foso escafoides, un poco por encima del nivel del punto [.001.]</p>",
-			ChiaviTsubo: ""
+			NomePunto: "Muñeca",
+			AzioniPunto: "<p><b>Otros nombres</b><br>- Punto de la muñeca<br>- Articulación de la muñeca</p><p><b>Acción</b><br>Como indica el nombre, este punto es muy eficaz para reducir todos los trastornos relacionados con la muñeca, especialmente los trastornos osteoarticulares.</p><p><b>Ubicación</b><br>SF5-PP7, en el foso escafoides, un poco por encima del nivel del punto [.001.]</p>",
+			ChiaviPunto: ""
 		},
 		"067": {
-			NomeTsubo: "Abdomen",
-			AzioniTsubo: "<p><b>Otros nombres</b><br>- Punto del abdomen<br>- Lumbalgia<br>- Músculos abdominales</p><p><b>Acción</b><br>El Punto Abdomen tiene un fuerte efecto en la reducción del dolor abdominal y en el tratamiento de la lumbalgia.</p><p><b>Ubicación</b><br>AH11-AH12-PG4, cerca del punto de bifurcación del antehélix en raíz superior e inferior</p>",
-			ChiaviTsubo: ""
+			NomePunto: "Abdomen",
+			AzioniPunto: "<p><b>Otros nombres</b><br>- Punto del abdomen<br>- Lumbalgia<br>- Músculos abdominales</p><p><b>Acción</b><br>El Punto Abdomen tiene un fuerte efecto en la reducción del dolor abdominal y en el tratamiento de la lumbalgia.</p><p><b>Ubicación</b><br>AH11-AH12-PG4, cerca del punto de bifurcación del antehélix en raíz superior e inferior</p>",
+			ChiaviPunto: ""
 		},
 		"068": {
-			NomeTsubo: "Rodilla CIN",
-			AzioniTsubo: "<p><b>Otros nombres</b><br>- Punto de la rodilla<br>- Articulación de la rodilla<br>- Rótula</p><p><b>Acción</b><br>Como indica el nombre, este punto es muy eficaz para reducir todos los trastornos relacionados con la rodilla, especialmente los trastornos articulares.</p><p><b>Ubicación</b><br>AH14-AH15, en el centro de la raíz superior del antehélix</p>",
-			ChiaviTsubo: ""
+			NomePunto: "Rodilla CIN",
+			AzioniPunto: "<p><b>Otros nombres</b><br>- Punto de la rodilla<br>- Articulación de la rodilla<br>- Rótula</p><p><b>Acción</b><br>Como indica el nombre, este punto es muy eficaz para reducir todos los trastornos relacionados con la rodilla, especialmente los trastornos articulares.</p><p><b>Ubicación</b><br>AH14-AH15, en el centro de la raíz superior del antehélix</p>",
+			ChiaviPunto: ""
 		},
 		"069": {
-			NomeTsubo: "Vértebras cervicales EUR",
-			AzioniTsubo: "<p><b>Acción<br></b>El Punto Vértebras Cervicales es reconocido tanto por la Escuela China como por la Escuela Francesa por su eficacia en todas las patologías relacionadas con las vértebras cervicales.</p><p><b>Ubicación</b><br>AH1-AH2, en la cresta del antehélix, se extiende aproximadamente hasta la mitad inferior del cuerpo del antehélix.</p>",
-			ChiaviTsubo: ""
+			NomePunto: "Vértebras cervicales EUR",
+			AzioniPunto: "<p><b>Acción<br></b>El Punto Vértebras Cervicales es reconocido tanto por la Escuela China como por la Escuela Francesa por su eficacia en todas las patologías relacionadas con las vértebras cervicales.</p><p><b>Ubicación</b><br>AH1-AH2, en la cresta del antehélix, se extiende aproximadamente hasta la mitad inferior del cuerpo del antehélix.</p>",
+			ChiaviPunto: ""
 		},
 		"070": {
-			NomeTsubo: "Vértebras dorsales EUR",
-			AzioniTsubo: "<p><b>Acción<br></b>Los puntos Vértebras Dorsales son reconocidos tanto por la Escuela China como por la Escuela Francesa por su eficacia en todas las patologías relacionadas con las vértebras dorsales.</p><p><b>Ubicación</b><br>AH3-AH4-AH5, en la cresta del cuerpo del antehélix en su parte más alta.</p>",
-			ChiaviTsubo: ""
+			NomePunto: "Vértebras dorsales EUR",
+			AzioniPunto: "<p><b>Acción<br></b>Los puntos Vértebras Dorsales son reconocidos tanto por la Escuela China como por la Escuela Francesa por su eficacia en todas las patologías relacionadas con las vértebras dorsales.</p><p><b>Ubicación</b><br>AH3-AH4-AH5, en la cresta del cuerpo del antehélix en su parte más alta.</p>",
+			ChiaviPunto: ""
 		},
 		"071": {
-			NomeTsubo: "Vértebras lumbares EUR",
-			AzioniTsubo: "<p><b>Acción<br></b>Los puntos Vértebras Lumbares son reconocidos tanto por la Escuela China como por la Escuela Francesa por su eficacia en todas las patologías relacionadas con las vértebras lumbares.</p><p><b>Ubicación</b><br>AH5-AH6,&nbsp;en la cresta de la raíz inferior del antehélix en los dos tercios posteriores.</p>",
-			ChiaviTsubo: ""
+			NomePunto: "Vértebras lumbares EUR",
+			AzioniPunto: "<p><b>Acción<br></b>Los puntos Vértebras Lumbares son reconocidos tanto por la Escuela China como por la Escuela Francesa por su eficacia en todas las patologías relacionadas con las vértebras lumbares.</p><p><b>Ubicación</b><br>AH5-AH6,&nbsp;en la cresta de la raíz inferior del antehélix en los dos tercios posteriores.</p>",
+			ChiaviPunto: ""
 		},
 		"072": {
-			NomeTsubo: "Vértebras sacras y coccígeas",
-			AzioniTsubo: "<p><b>Acción<br></b>Este punto es reconocido por la Escuela Francesa por su eficacia en el tratamiento de trastornos relacionados con las vértebras sacras y el cóccix.</p><p><b>Ubicación</b><br>AH6-AH7, en la cresta de la raíz inferior del antehélix, en su parte parcialmente oculta por el hélix, donde la raíz se encuentra con el hélix.</p>",
-			ChiaviTsubo: ""
+			NomePunto: "Vértebras sacras y coccígeas",
+			AzioniPunto: "<p><b>Acción<br></b>Este punto es reconocido por la Escuela Francesa por su eficacia en el tratamiento de trastornos relacionados con las vértebras sacras y el cóccix.</p><p><b>Ubicación</b><br>AH6-AH7, en la cresta de la raíz inferior del antehélix, en su parte parcialmente oculta por el hélix, donde la raíz se encuentra con el hélix.</p>",
+			ChiaviPunto: ""
 		},
 		"073": {
-			NomeTsubo: "Mano",
-			AzioniTsubo: "<p><b>Otros nombres</b><br>- Punto de la mano<br>- Palma<br>- Huesos carpianos<br>- Huesos metacarpianos</p><p><b>Acción</b><br>El tratamiento de este punto está indicado para todos los trastornos osteoarticulares de la mano y las patologías relacionadas con la compresión de la muñeca.</p><p><b>Ubicación</b><br>SF5-AH14-PP7, en el foso escafoides a nivel del tubérculo de Darwin.</p>",
-			ChiaviTsubo: ""
+			NomePunto: "Mano",
+			AzioniPunto: "<p><b>Otros nombres</b><br>- Punto de la mano<br>- Palma<br>- Huesos carpianos<br>- Huesos metacarpianos</p><p><b>Acción</b><br>El tratamiento de este punto está indicado para todos los trastornos osteoarticulares de la mano y las patologías relacionadas con la compresión de la muñeca.</p><p><b>Ubicación</b><br>SF5-AH14-PP7, en el foso escafoides a nivel del tubérculo de Darwin.</p>",
+			ChiaviPunto: ""
 		},
 		"074": {
-			NomeTsubo: "Urticaria",
-			AzioniTsubo: "<p><b>Otros nombres</b><br>- Dermatitis<br>- Trastornos de la piel CIN</p><p><b>Acción</b><br>Este Punto es muy indicado para tratar todas las patologías relacionadas con la piel, especialmente el acné, eczema, urticaria y dermatitis.</p><p><b>Ubicación</b><br>SF5-IH11, área amplia que incluye parte del foso escafoides y parte de la superficie oculta del hélix, a la altura del tubérculo de Darwin.</p>",
-			ChiaviTsubo: ""
+			NomePunto: "Urticaria",
+			AzioniPunto: "<p><b>Otros nombres</b><br>- Dermatitis<br>- Trastornos de la piel CIN</p><p><b>Acción</b><br>Este Punto es muy indicado para tratar todas las patologías relacionadas con la piel, especialmente el acné, eczema, urticaria y dermatitis.</p><p><b>Ubicación</b><br>SF5-IH11, área amplia que incluye parte del foso escafoides y parte de la superficie oculta del hélix, a la altura del tubérculo de Darwin.</p>",
+			ChiaviPunto: ""
 		},
 		"075": {
-			NomeTsubo: "Cadera CIN",
-			AzioniTsubo: "<p><b>Otros nombres</b><br>- Punto de cadera<br>- Articulación coxofemoral</p><p><b>Acción</b><br>Este Punto es adoptado tanto por la Escuela China como por la Escuela Francesa, pero en diferentes ubicaciones. En común tienen la aplicación para el tratamiento de trastornos relacionados con la cadera y el cinturón pélvico.</p><p><b>Ubicación</b><br>AH13-PG8, en el tercio inferior de la rama superior del antehélix, hacia el foso triangular<span></span></p>",
-			ChiaviTsubo: ""
+			NomePunto: "Cadera CIN",
+			AzioniPunto: "<p><b>Otros nombres</b><br>- Punto de cadera<br>- Articulación coxofemoral</p><p><b>Acción</b><br>Este Punto es adoptado tanto por la Escuela China como por la Escuela Francesa, pero en diferentes ubicaciones. En común tienen la aplicación para el tratamiento de trastornos relacionados con la cadera y el cinturón pélvico.</p><p><b>Ubicación</b><br>AH13-PG8, en el tercio inferior de la rama superior del antehélix, hacia el foso triangular<span></span></p>",
+			ChiaviPunto: ""
 		},
 		"078": {
-			NomeTsubo: "Punto Antihistamínico",
-			AzioniTsubo: "<p><b>Acción<br></b>El Punto Antihistamínico se utiliza para tratar trastornos relacionados con los pulmones, especialmente síntomas de resfriado, bronquitis, asma y alergias.</p><p><b>Ubicación</b><br>TF3-TF4, en el centro del foso triangular<span></span></p>",
-			ChiaviTsubo: ""
+			NomePunto: "Punto Antihistamínico",
+			AzioniPunto: "<p><b>Acción<br></b>El Punto Antihistamínico se utiliza para tratar trastornos relacionados con los pulmones, especialmente síntomas de resfriado, bronquitis, asma y alergias.</p><p><b>Ubicación</b><br>TF3-TF4, en el centro del foso triangular<span></span></p>",
+			ChiaviPunto: ""
 		},
 		"080": {
-			NomeTsubo: "Hepatitis",
-			AzioniTsubo: "<p><b>Acción</b><br>Hepatopatía y dispepsia funcional.</p><p><b>Ubicación</b><br>TF4, en el foso triangular. En un área delimitada inferiormente por el centro del foso triangular y superiormente por la raíz superior del antehélix.</p>",
-			ChiaviTsubo: ""
+			NomePunto: "Hepatitis",
+			AzioniPunto: "<p><b>Acción</b><br>Hepatopatía y dispepsia funcional.</p><p><b>Ubicación</b><br>TF4, en el foso triangular. En un área delimitada inferiormente por el centro del foso triangular y superiormente por la raíz superior del antehélix.</p>",
+			ChiaviPunto: ""
 		},
 		"081": {
-			NomeTsubo: "Tobillo CIN",
-			AzioniTsubo: "<p><b>Otros nombres</b><br>- Punto del tobillo<br>- Articulación astrágalo-tibial<br>- Tendón de Aquiles</p><p><b>Acción</b><br>El punto tobillo se utiliza para todos los trastornos relacionados con el tobillo, y especialmente con el tendón de Aquiles.</p><p><b>Ubicación</b><br>AH17-PG9, en la raíz superior del hélix en su tercio superior</p>",
-			ChiaviTsubo: ""
+			NomePunto: "Tobillo CIN",
+			AzioniPunto: "<p><b>Otros nombres</b><br>- Punto del tobillo<br>- Articulación astrágalo-tibial<br>- Tendón de Aquiles</p><p><b>Acción</b><br>El punto tobillo se utiliza para todos los trastornos relacionados con el tobillo, y especialmente con el tendón de Aquiles.</p><p><b>Ubicación</b><br>AH17-PG9, en la raíz superior del hélix en su tercio superior</p>",
+			ChiaviPunto: ""
 		},
 		"083": {
-			NomeTsubo: "Pulgar EUR",
-			AzioniTsubo: "<p><b>Otros nombres</b><br>- Punto del pulgar</p><p><b>Acción</b><br>Como indica su nombre, este punto es muy efectivo para reducir todos los trastornos relacionados con el pulgar, especialmente las patologías asociadas al primer metacarpiano.</p><p><b>Ubicación</b><br>AH14-AH16-AH18, amplia área en la raíz superior del antehélix</p>",
-			ChiaviTsubo: ""
+			NomePunto: "Pulgar EUR",
+			AzioniPunto: "<p><b>Otros nombres</b><br>- Punto del pulgar</p><p><b>Acción</b><br>Como indica su nombre, este punto es muy efectivo para reducir todos los trastornos relacionados con el pulgar, especialmente las patologías asociadas al primer metacarpiano.</p><p><b>Ubicación</b><br>AH14-AH16-AH18, amplia área en la raíz superior del antehélix</p>",
+			ChiaviPunto: ""
 		},
 		"084": {
-			NomeTsubo: "Pulgar CIN",
-			AzioniTsubo: "<p><b>Acción<br></b>Como indica su nombre, este punto es muy efectivo para reducir todos los trastornos relacionados con el pulgar, especialmente las patologías asociadas al primer metacarpiano.</p><p><b>Ubicación</b><br>SF5-AH16, amplia área que incluye una parte de la raíz superior del antehélix y una parte del foso escafoides.</p>",
-			ChiaviTsubo: ""
+			NomePunto: "Pulgar CIN",
+			AzioniPunto: "<p><b>Acción<br></b>Como indica su nombre, este punto es muy efectivo para reducir todos los trastornos relacionados con el pulgar, especialmente las patologías asociadas al primer metacarpiano.</p><p><b>Ubicación</b><br>SF5-AH16, amplia área que incluye una parte de la raíz superior del antehélix y una parte del foso escafoides.</p>",
+			ChiaviPunto: ""
 		},
 		"085": {
-			NomeTsubo: "Útero EUR",
-			AzioniTsubo: "<p><b>Acción<br></b>El Punto Útero es reconocido tanto por la Escuela China como por la Escuela Francesa por su eficacia en todas las patologías relacionadas con las vías urinarias, especialmente el sistema ginecológico y reproductivo.</p><p><b>Ubicación</b><br>IH3, en la superficie oculta del hélix justo debajo del punto de encuentro entre el hélix y la raíz inferior del antehélix.</p>",
-			ChiaviTsubo: ""
+			NomePunto: "Útero EUR",
+			AzioniPunto: "<p><b>Acción<br></b>El Punto Útero es reconocido tanto por la Escuela China como por la Escuela Francesa por su eficacia en todas las patologías relacionadas con las vías urinarias, especialmente el sistema ginecológico y reproductivo.</p><p><b>Ubicación</b><br>IH3, en la superficie oculta del hélix justo debajo del punto de encuentro entre el hélix y la raíz inferior del antehélix.</p>",
+			ChiaviPunto: ""
 		},
 		"087": {
-			NomeTsubo: "Hemorroides",
-			AzioniTsubo: "<p><b>Acción</b><br>Patología ano-rectal, especialmente la disfuncional y vascular.</p><p><b>Ubicación</b><br>IH4, en la superficie interna del hélix debajo de su cruce con la raíz inferior del antehélix.</p>",
-			ChiaviTsubo: ""
+			NomePunto: "Hemorroides",
+			AzioniPunto: "<p><b>Acción</b><br>Patología ano-rectal, especialmente la disfuncional y vascular.</p><p><b>Ubicación</b><br>IH4, en la superficie interna del hélix debajo de su cruce con la raíz inferior del antehélix.</p>",
+			ChiaviPunto: ""
 		},
 		"088": {
-			NomeTsubo: "Riñón EUR",
-			AzioniTsubo: "<p><b>Acción</b><br>Trastornos urinarios, cálculos renales y trastornos del aparato urinario.</p><p><b>Ubicación</b><br>IH6, superficie interna del hélix por encima de su cruce con la raíz inferior del antehélix.</p>",
-			ChiaviTsubo: ""
+			NomePunto: "Riñón EUR",
+			AzioniPunto: "<p><b>Acción</b><br>Trastornos urinarios, cálculos renales y trastornos del aparato urinario.</p><p><b>Ubicación</b><br>IH6, superficie interna del hélix por encima de su cruce con la raíz inferior del antehélix.</p>",
+			ChiaviPunto: ""
 		},
 		"089": {
-			NomeTsubo: "Genitales externos EUR",
-			AzioniTsubo: "<p><b>Otros nombres</b><br>- Pene<br>- Clítoris<br>- Punto de Bosch</p><p><b>Acción</b><br>Punto indicado por la Escuela Francesa para el tratamiento de todas las patologías escrotales y relacionadas con los órganos genitales masculinos y femeninos. Muy efectivo en casos de frigidez e impotencia.</p><p><b>Ubicación</b><br>HX1, en la frontera entre la rama montante de la hélice, el trago y el hemiconca superior</p>",
-			ChiaviTsubo: ""
+			NomePunto: "Genitales externos EUR",
+			AzioniPunto: "<p><b>Otros nombres</b><br>- Pene<br>- Clítoris<br>- Punto de Bosch</p><p><b>Acción</b><br>Punto indicado por la Escuela Francesa para el tratamiento de todas las patologías escrotales y relacionadas con los órganos genitales masculinos y femeninos. Muy efectivo en casos de frigidez e impotencia.</p><p><b>Ubicación</b><br>HX1, en la frontera entre la rama montante de la hélice, el trago y el hemiconca superior</p>",
+			ChiaviPunto: ""
 		},
 		"092": {
-			NomeTsubo: "Diafragma CIN",
-			AzioniTsubo: "<p><b>Acción</b><br>La Escuela China sugiere el tratamiento de este punto para reducir el vómito, los dolores y los espasmos diafragmáticos, así como el hipo.</p><p><b>Ubicación</b><br>HX1-HX2, en la raíz de la hélice, anteriormente a [.000.]</p>",
-			ChiaviTsubo: ""
+			NomePunto: "Diafragma CIN",
+			AzioniPunto: "<p><b>Acción</b><br>La Escuela China sugiere el tratamiento de este punto para reducir el vómito, los dolores y los espasmos diafragmáticos, así como el hipo.</p><p><b>Ubicación</b><br>HX1-HX2, en la raíz de la hélice, anteriormente a [.000.]</p>",
+			ChiaviPunto: ""
 		},
 		"093": {
-			NomeTsubo: "Estómago",
-			AzioniTsubo: "<p><b>Acción</b><br>El Punto Estómago tiene una acción equilibrante en todos los trastornos digestivos, tanto a nivel físico como psicosomático. Está indicado para el tratamiento de la falta de apetito, el estrés, la ansiedad y el estrés.</p><p><b>Ubicación</b><br>CR1, en el trago, justo detrás de [.000.].</p>",
-			ChiaviTsubo: ""
+			NomePunto: "Estómago",
+			AzioniPunto: "<p><b>Acción</b><br>El Punto Estómago tiene una acción equilibrante en todos los trastornos digestivos, tanto a nivel físico como psicosomático. Está indicado para el tratamiento de la falta de apetito, el estrés, la ansiedad y el estrés.</p><p><b>Ubicación</b><br>CR1, en el trago, justo detrás de [.000.].</p>",
+			ChiaviPunto: ""
 		},
 		"095": {
-			NomeTsubo: "Recto EUR",
-			AzioniTsubo: "<p><b>Otros nombres</b><br>- Ano<br>- Hemorroides<br>- Próstata</p><p><b>Acción</b><br>El Punto Recto es muy útil para reducir los síntomas del colon irritable, la disentería, las hemorroides, la diarrea, el estreñimiento y los dolores rectales.</p><p><b>Ubicación</b><br>IH1-SC4, en la frontera entre la parte oculta de la rama ascendente de la hélice y el hemiconca superior.</p>",
-			ChiaviTsubo: ""
+			NomePunto: "Recto EUR",
+			AzioniPunto: "<p><b>Otros nombres</b><br>- Ano<br>- Hemorroides<br>- Próstata</p><p><b>Acción</b><br>El Punto Recto es muy útil para reducir los síntomas del colon irritable, la disentería, las hemorroides, la diarrea, el estreñimiento y los dolores rectales.</p><p><b>Ubicación</b><br>IH1-SC4, en la frontera entre la parte oculta de la rama ascendente de la hélice y el hemiconca superior.</p>",
+			ChiaviPunto: ""
 		},
 		"097": {
-			NomeTsubo: "Ovario-Testículos EUR",
-			AzioniTsubo: "<p><b>Otros nombres</b><br>- Ovario<br>- Testículo<br>- Gónadas<br>- Genitales internos<br>- Glándula sexual EUR</p><p><b>Acción</b><br>Este punto tiene una gran aplicación para el tratamiento y el reequilibrio de las gónadas.</p><p><b>Ubicación</b><br>IH1, en la superficie oculta de la rama montante de la hélice.</p>",
-			ChiaviTsubo: ""
+			NomePunto: "Ovario-Testículos EUR",
+			AzioniPunto: "<p><b>Otros nombres</b><br>- Ovario<br>- Testículo<br>- Gónadas<br>- Genitales internos<br>- Glándula sexual EUR</p><p><b>Acción</b><br>Este punto tiene una gran aplicación para el tratamiento y el reequilibrio de las gónadas.</p><p><b>Ubicación</b><br>IH1, en la superficie oculta de la rama montante de la hélice.</p>",
+			ChiaviPunto: ""
 		},
 		"098": {
-			NomeTsubo: "Intestino grueso",
-			AzioniTsubo: "<p><b>Otros nombres</b><br>- Intestino craso<br>- Colon</p><p><b>Acción</b><br>Como sugiere el nombre, este punto se indica para tratar todos los trastornos relacionados con la funcionalidad del intestino grueso.</p><p><b>Ubicación</b><br>SC4-SC5-PC4, en el hemiconca superior, cerca de la rama superior de la hélice.</p>",
-			ChiaviTsubo: ""
+			NomePunto: "Intestino grueso",
+			AzioniPunto: "<p><b>Otros nombres</b><br>- Intestino craso<br>- Colon</p><p><b>Acción</b><br>Como sugiere el nombre, este punto se indica para tratar todos los trastornos relacionados con la funcionalidad del intestino grueso.</p><p><b>Ubicación</b><br>SC4-SC5-PC4, en el hemiconca superior, cerca de la rama superior de la hélice.</p>",
+			ChiaviPunto: ""
 		},
 		"099": {
-			NomeTsubo: "Intestino delgado",
-			AzioniTsubo: "<p><b>Otros nombres</b><br>- Intestino delgado<br>- Deyuno<br>- Íleon</p><p><b>Acción</b><br>Como sugiere el nombre, este punto se indica para tratar todos los trastornos relacionados con la funcionalidad del intestino grueso, especialmente para reducir los trastornos estomacales e intestinales, los trastornos alimentarios y la diarrea.</p><p><b>Ubicación</b><br>SC2-PC3, en el hemiconca superior, superior y anterior a [.000.]</p>",
-			ChiaviTsubo: ""
+			NomePunto: "Intestino delgado",
+			AzioniPunto: "<p><b>Otros nombres</b><br>- Intestino delgado<br>- Deyuno<br>- Íleon</p><p><b>Acción</b><br>Como sugiere el nombre, este punto se indica para tratar todos los trastornos relacionados con la funcionalidad del intestino grueso, especialmente para reducir los trastornos estomacales e intestinales, los trastornos alimentarios y la diarrea.</p><p><b>Ubicación</b><br>SC2-PC3, en el hemiconca superior, superior y anterior a [.000.]</p>",
+			ChiaviPunto: ""
 		}
     },
     apparati: {

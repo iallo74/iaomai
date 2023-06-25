@@ -77,21 +77,21 @@ var MODULO_TEORIA = { // extend SET
 			document.getElementById("sceltaPhaseElenco").selectedIndex = 0;
 			if(SET.phase)setTimeout(function(){SET.setPhase('');},500);
 			var mAtt=DB.set.teoria[SET.idTeoCategorie].contenuti[t].sigla;
-			var elencoTsubo='<br><b>'+htmlEntities(TXT("ElencoPunti"))+'</b>';
+			var elencoPunti='<br><b>'+htmlEntities(TXT("ElencoPunti"))+'</b>';
 			var priority = __(GEOMETRIE.gruppi[gruppo].priority,false);
 			
 			var puntiElenco = [];
 			for(let g in GEOMETRIE.gruppi[gruppo].punti){
-				var siglaTsubo = GEOMETRIE.gruppi[gruppo].punti[g];
-				if(siglaTsubo.length==3 && DB.set.punti[siglaTsubo]){
-					if(!__(DB.set.punti[siglaTsubo].hidden,false) || forzaHidden){
-						var NomeTsubo = siglaTsubo;
-						if(siglaTsubo.length==3)NomeTsubo = DB.set.punti[siglaTsubo].NomeTsubo;
-						var ordine = NomeTsubo;
+				var siglaPunto = GEOMETRIE.gruppi[gruppo].punti[g];
+				if(siglaPunto.length==3 && DB.set.punti[siglaPunto]){
+					if(!__(DB.set.punti[siglaPunto].hidden,false) || forzaHidden){
+						var NomePunto = siglaPunto;
+						if(siglaPunto.length==3)NomePunto = DB.set.punti[siglaPunto].NomePunto;
+						var ordine = NomePunto;
 						var categoria = '';
 						if(priority){
-							if(priority.punti.indexOf(siglaTsubo)>-1){
-								ordine = siglaTsubo + ": " + ordine;
+							if(priority.punti.indexOf(siglaPunto)>-1){
+								ordine = siglaPunto + ": " + ordine;
 								categoria = priority.tipoOn;
 							}else{
 								categoria = priority.tipoOff;
@@ -99,8 +99,8 @@ var MODULO_TEORIA = { // extend SET
 						}
 						puntiElenco.push({
 							ordine: ordine,
-							siglaTsubo: siglaTsubo,
-							NomeTsubo: NomeTsubo,
+							siglaPunto: siglaPunto,
+							NomePunto: NomePunto,
 							categoria: categoria
 						});
 					}
@@ -111,19 +111,19 @@ var MODULO_TEORIA = { // extend SET
 			var catV = categoria = '';
 			for(let g in puntiElenco){
 				if(puntiElenco[g].categoria && puntiElenco[g].categoria != catV){
-					elencoTsubo+='<p class="categoriaGruppo"><i>'+TXT("Gruppi_"+puntiElenco[g].categoria)+'</i></p>';
+					elencoPunti+='<p class="categoriaGruppo"><i>'+TXT("Gruppi_"+puntiElenco[g].categoria)+'</i></p>';
 				}
 				catV = puntiElenco[g].categoria;
-				var TS = puntiElenco[g].siglaTsubo;
+				var TS = puntiElenco[g].siglaPunto;
 				if(TS.length==3){
-					elencoTsubo+='<p>[.'+TS+'.]</p>';
+					elencoPunti+='<p>[.'+TS+'.]</p>';
 				}
-				else elencoTsubo+='<p><span class="pallinoNul"><span class="pNUL"></span>'+htmlEntities(TXT(""+TS))+'</span></p>';
+				else elencoPunti+='<p><span class="pallinoNul"><span class="pNUL"></span>'+htmlEntities(TXT(""+TS))+'</span></p>';
 			}
 			
 			html_cont = '<div>'+html_cont+'</div>' +
-						'<div class="elencoTsubo">' +
-							SET.convPuntiScheda(elencoTsubo) +
+						'<div class="elencoPunti">' +
+							SET.convPuntiScheda(elencoPunti) +
 						'</div>';
 			if(GEOMETRIE.gruppi[gruppo].posizione){
 				var pos = GEOMETRIE.gruppi[gruppo].posizione;
@@ -155,14 +155,14 @@ var MODULO_TEORIA = { // extend SET
 							
 		SCHEDA.caricaScheda( 	titolo,
 								html,
-								'SET.annullaEvidenziaTsubo(true);'+addClose,
+								'SET.annullaEvidenziaPunto(true);'+addClose,
 								'scheda_teoria',
 								ritorno,
 								true,
 								btn,
 								btnAdd,
 								globals.set.cartella+'_teoria_'+p+"_"+t );
-		SET.evidenziaTsubo(html,anatomia,mappa,lm);
+		SET.evidenziaPunto(html,anatomia,mappa,lm);
 		if(flowchart){
 			if(SET.risTest.dipendenza.tot > -1){
 				for(let o=0;o<document.getElementById("dipendenze").options.length;o++){

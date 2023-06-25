@@ -408,7 +408,7 @@ body:not(.smart) #scheda_cont{
 .app_version.bug_font.smart.android #scheda_titolo{
 	line-height:36.64px !important;
 }
-body:not(.smart) #scheda.schForm:not(.schedaRitorno):not(.minimized):not(.tab_tsubo):not(.scheda_marketing) #scheda_titolo{
+body:not(.smart) #scheda.schForm:not(.schedaRitorno):not(.minimized):not(.tab_punti):not(.scheda_marketing) #scheda_titolo{
 	width: calc(100% - 179px) !important;
 }
 .smart #scheda_titolo{
@@ -582,7 +582,7 @@ body:not(.smart) .schedaRitorno #scheda_titolo{
     vertical-align: top;
 	margin-top: 3px;
 }
-.smart #scheda.visSch.schForm:not(.tab_tsubo) #scheda_titolo{
+.smart #scheda.visSch.schForm:not(.tab_punti) #scheda_titolo{
 	/*width: calc(100% - 172px) !important;
     margin-left: 48px !important;
     padding-left: 20px !important;

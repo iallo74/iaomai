@@ -1,4 +1,3 @@
-
 var NOTIFICHE = {
 
 	aggiornaIcona: function( daleggere ){ // aggiorna l'icona delle notifiche

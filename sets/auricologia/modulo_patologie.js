@@ -216,7 +216,7 @@ var MODULO_PATOLOGIE = { // extend SET
 		}
 		if(elencoAltre){
 			ST += 	'<p class="lineaSu"><strong>'+TXT("AltrePatologie")+'</strong></p>' +
-					'<div id="patologieTsubo" class="vis">' +
+					'<div id="patologiePunto" class="vis">' +
 					elencoAltre +
 					'</div>';
 		}
@@ -246,7 +246,7 @@ var MODULO_PATOLOGIE = { // extend SET
 		// sesso
 		if(DB.set.patologie[n].sessoPatologia){
 			html = 	'<img 	src="sets/meridiani_shiatsu/img/sesso_'+DB.set.patologie[n].sessoPatologia+'.png"' +
-					'		class="ideogrammaTsubo">'+html;
+					'		class="ideogrammaPunto">'+html;
 		}
 		
 		var ritorno = false;
@@ -262,7 +262,7 @@ var MODULO_PATOLOGIE = { // extend SET
 		SCHEDA.caricaScheda(	titolo,
 								html,
 								'SET.chiudiPatologia();' +
-								'SET.annullaEvidenziaTsubo();' +
+								'SET.annullaEvidenziaPunto();' +
 								'SET.hideGroupLines();'+addClose,
 								'scheda_patologia',
 								ritorno,
@@ -284,7 +284,7 @@ var MODULO_PATOLOGIE = { // extend SET
 	eviPointsPat: function( el ){
 		if(!el.innerHTML)return;
 		SET.hideGroupLines();
-		SET.evidenziaTsubo(el.innerHTML);
+		SET.evidenziaPunto(el.innerHTML);
 		if(SET.schEvi)SET.schEvi.classList.remove("eviPoints");
 		el.classList.add("eviPoints");
 		SET.schEvi = el;

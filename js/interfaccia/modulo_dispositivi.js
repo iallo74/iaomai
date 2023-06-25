@@ -1,4 +1,3 @@
-
 var DISPOSITIVI = {
 
 	carica: function( txt ){

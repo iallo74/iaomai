@@ -6,27 +6,27 @@ var MODULO_PUNTI = { // extend SET
 	caricaPunti: function(){ // carica l'elenco dei punti e delle aree
 		var n = 0;
 		var contElenco = '';
-		var elencoTsubo = '';
+		var elencoPunti = '';
 		var puntiElenco = [];
-		for(let siglaTsubo in DB.set.punti){
-			if(__(DB.set.punti[siglaTsubo])){
-				if(!__(DB.set.punti[siglaTsubo].hidden,false)){
+		for(let siglaPunto in DB.set.punti){
+			if(__(DB.set.punti[siglaPunto])){
+				if(!__(DB.set.punti[siglaPunto].hidden,false)){
 					puntiElenco.push({
-						siglaTsubo: siglaTsubo,
-						NomeTsubo: DB.set.punti[siglaTsubo].NomeTsubo
+						siglaPunto: siglaPunto,
+						NomePunto: DB.set.punti[siglaPunto].NomePunto
 					});
 				}
 			}
 		}
-		puntiElenco.sort(sort_by("NomeTsubo", false));
+		puntiElenco.sort(sort_by("NomePunto", false));
 		for(a=0;a<puntiElenco.length;a++){
-			var siglaTsubo = puntiElenco[a].siglaTsubo;
+			var siglaPunto = puntiElenco[a].siglaPunto;
 			n++;
 			
 			// verifico le autorizzazioni
-			var addLock =	(!SET.verFreePunti(siglaTsubo)) ? ' lockedItem' : '';
+			var addLock =	(!SET.verFreePunti(siglaPunto)) ? ' lockedItem' : '';
 			// --------------------------
-			elencoTsubo+='<p>'+this.scriviTsubo(siglaTsubo,true,true,'')+'</p>';
+			elencoPunti+='<p>'+this.scriviPunto(siglaPunto,true,true,'')+'</p>';
 		}
 		
 		// FILTRI
@@ -119,7 +119,7 @@ var MODULO_PUNTI = { // extend SET
 							'</div></span>';
 						
 						
-		if(elencoTsubo){
+		if(elencoPunti){
 			contElenco +=	'<div onClick="SET.swElencoPt(this,\'punti\');"' +
 							'     id="p_punti"' +
 							'     class="p_punti">'+htmlEntities(TXT("ElencoPunti"))+'<strong></strong></div>' +
@@ -127,7 +127,7 @@ var MODULO_PUNTI = { // extend SET
 							'	   class="elencoPunti">'+
 							
 							contFiltri +
-							'<div id="elencoTsubo">' + elencoTsubo + '</div></span>';
+							'<div id="elencoPunti">' + elencoPunti + '</div></span>';
 		}
 		
 		var legenda = [];	
@@ -254,19 +254,19 @@ var MODULO_PUNTI = { // extend SET
 		if(SET.groupSel.id)SET.filtraGruppo();
 		var el = document.getElementById("punti_ricerca");
 		el.classList.toggle("filtro_attivo_bordo",(el.value.trim()!=''));
-		var els = document.getElementById("elencoTsubo").getElementsByTagName("p");
+		var els = document.getElementById("elencoPunti").getElementsByTagName("p");
 		for(e=0;e<els.length;e++){
 			var i = els[e].getElementsByTagName("i")[0];
 			var a = els[e].getElementsByTagName("a")[0];
-			var siglaTsubo = a.id.replace("ts_","");
+			var siglaPunto = a.id.replace("ts_","");
 			var pass = false;
-			if(	DB.set.punti[siglaTsubo].NomeTsubo.toLowerCase().indexOf(el.value.toLowerCase())==-1 &&
-				DB.set.punti[siglaTsubo].AzioniTsubo.toLowerCase().indexOf(el.value.toLowerCase())==-1 &&
-				DB.set.punti[siglaTsubo].ChiaviTsubo.toLowerCase().indexOf(el.value.toLowerCase())==-1 ){
+			if(	DB.set.punti[siglaPunto].NomePunto.toLowerCase().indexOf(el.value.toLowerCase())==-1 &&
+				DB.set.punti[siglaPunto].AzioniPunto.toLowerCase().indexOf(el.value.toLowerCase())==-1 &&
+				DB.set.punti[siglaPunto].ChiaviPunto.toLowerCase().indexOf(el.value.toLowerCase())==-1 ){
 					pass = true;
 			}
-			if(!__(DB.set.punti[siglaTsubo]["PH"+SET.phase],false) && SET.phase)pass = true;
-			if(!document.getElementById("ts_"+siglaTsubo))pass = true;
+			if(!__(DB.set.punti[siglaPunto]["PH"+SET.phase],false) && SET.phase)pass = true;
+			if(!document.getElementById("ts_"+siglaPunto))pass = true;
 			els[e].classList.toggle("nasPT",pass);
 		}
 	},
@@ -435,7 +435,7 @@ var MODULO_PUNTI = { // extend SET
 	setPhase: function( ph ){ // seleziona la fase di Nogier
 		var PT_name = "";
 		if(SET.ptSel)PT_name = SET.ptSel.name;
-		SET.chiudiTsubo(true);
+		SET.chiudiPunto(true);
 		scene.getObjectByName("PTs").visible = false;
 		scene.getObjectByName("LNs").visible = false;
 		scene.getObjectByName("ARs").visible = false;
@@ -454,11 +454,11 @@ var MODULO_PUNTI = { // extend SET
 		SET.filtraPunti();
 		if(PT_name){
 			setTimeout( function(){
-				SET.apriTsubo(PT_name);
+				SET.apriPunto(PT_name);
 			}, 200, PT_name );
 		}
 	},
-	verFreePunti: function( siglaTsubo ){
-		return !(SET.PUNTI_free.indexOf(siglaTsubo)==-1 && (DB.login.data.auths.indexOf(globals.set.cartella)==-1 || !LOGIN.logedin()));
+	verFreePunti: function( siglaPunto ){
+		return !(SET.PUNTI_free.indexOf(siglaPunto)==-1 && (DB.login.data.auths.indexOf(globals.set.cartella)==-1 || !LOGIN.logedin()));
 	}
 }

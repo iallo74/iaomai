@@ -220,27 +220,27 @@ var MODULO_PROCEDURE = { // extend SET
 					OrdineDettaglio=dettagliProcedura[p].OrdineDettaglio*1;
 					
 					
-					var nTsubo='';
+					var nPunto='';
 					var siglaMeridiano='';
-					var siglaTsubo='';
+					var siglaPunto='';
 					var mezzo='';
 					if(TipoDettaglio=='P' || TipoDettaglio=='N' || TipoDettaglio=='A'){	
 						if(DescrizioneDettaglio){
 							if(DescrizioneDettaglio.indexOf(".")>-1){
 								pP=DescrizioneDettaglio.split(".");
 								if(TipoDettaglio=='P' || TipoDettaglio=='N'){
-									nTsubo=pP[0];
+									nPunto=pP[0];
 									siglaMeridiano=pP[1];
-									siglaTsubo=__(pP[2]);
+									siglaPunto=__(pP[2]);
 									mezzo=__(pP[3]);
 								}
 								if(TipoDettaglio=='A'){
-									siglaTsubo=pP[0];
+									siglaPunto=pP[0];
 									mezzo=__(pP[1]);
 								}
 							}else{
-								if(TipoDettaglio=='P' || TipoDettaglio=='N')nTsubo=DescrizioneDettaglio;
-								if(TipoDettaglio=='A')siglaTsubo=DescrizioneDettaglio;
+								if(TipoDettaglio=='P' || TipoDettaglio=='N')nPunto=DescrizioneDettaglio;
+								if(TipoDettaglio=='A')siglaPunto=DescrizioneDettaglio;
 							}
 						}
 					}
@@ -256,15 +256,15 @@ var MODULO_PROCEDURE = { // extend SET
 						HTML+=DescrizioneDettaglio;
 					}
 					if(TipoDettaglio=='P' || TipoDettaglio=='N'){
-						if(!siglaTsubo)siglaTsubo = nTsubo+"."+siglaMeridiano;
-						if(nTsubo && siglaMeridiano){
+						if(!siglaPunto)siglaPunto = nPunto+"."+siglaMeridiano;
+						if(nPunto && siglaMeridiano){
 							HTML += '<span class="pallinoPat';
 							if(typeof(DB.set.meridiani[siglaMeridiano])=='undefined')HTML += ' ptNoSel';
-							HTML += '" data-sigla-meridiano="'+siglaMeridiano+'" data-n-tsubo="'+nTsubo+'"';
-							if(typeof(DB.set.meridiani[siglaMeridiano])!='undefined')HTML += ' onClick="SET.selTsubo(\''+nTsubo+'\',\''+siglaMeridiano+'\')"';
+							HTML += '" data-sigla-meridiano="'+siglaMeridiano+'" data-n-punto="'+nPunto+'"';
+							if(typeof(DB.set.meridiani[siglaMeridiano])!='undefined')HTML += ' onClick="SET.selPunto(\''+nPunto+'\',\''+siglaMeridiano+'\')"';
 							
-							var txt = siglaTsubo;
-							if(siglaMeridiano=='NK' && DB.set.meridiani.NK)txt = DB.set.meridiani.NK.tsubo[nTsubo*1-1].NomeTsubo
+							var txt = siglaPunto;
+							if(siglaMeridiano=='NK' && DB.set.meridiani.NK)txt = DB.set.meridiani.NK.punti[nPunto*1-1].NomePunto
 							
 							HTML += '>'+txt+'</span>';
 						}
@@ -284,9 +284,9 @@ var MODULO_PROCEDURE = { // extend SET
 								'	</span>'
 								'</span>';
 					}
-					if(TipoDettaglio=='A' && siglaTsubo){
-						var NomeTsubo = DB.set.punti[siglaTsubo].NomeTsubo;
-						HTML += '[.'+siglaTsubo+'.]';
+					if(TipoDettaglio=='A' && siglaPunto){
+						var NomePunto = DB.set.punti[siglaPunto].NomePunto;
+						HTML += '[.'+siglaPunto+'.]';
 					}
 					if(mezzo)HTML += '<img src="img/mezzo_'+mezzo+'.png" class="noMod" style="vertical-align: middle;margin-top: -3px;margin-left: 5px;">';
 					if(TipoDettaglio=='T')HTML += '</b>';
@@ -351,7 +351,7 @@ var MODULO_PROCEDURE = { // extend SET
 						'</div>';
 			SCHEDA.caricaScheda( 	NomeProcedura,
 									HTML,
-									'SET.annullaEvidenziaTsubo();' +
+									'SET.annullaEvidenziaPunto();' +
 									((!globals.set.siglaProc)?'SET.spegniMeridiani(true);':''),
 									'scheda_procedura',
 									false,
@@ -360,7 +360,7 @@ var MODULO_PROCEDURE = { // extend SET
 									btnAdd );
 			PH.caricaGallery(true,idUtenteProcedura);
 			if(!globals.set.siglaProc)SET.convSigleScheda();
-			SET.evidenziaTsubo(/*HTML*/);
+			SET.evidenziaPunto(/*HTML*/);
 			if(!globals.set.siglaProc)SET.evidenziaMeridiani(HTML);
 			if(idProcedura)SET.car_commenti(idProcedura);
 			if(Q_resta){
@@ -550,7 +550,7 @@ var MODULO_PROCEDURE = { // extend SET
 									TXT("Descrizione") +
 					'			</div>';
 			if(!globals.set.siglaProc)HTML += 
-					// tsubo
+					// punti
 					'			<div id="grpPt"' +
 					'			    class="p_proc_gruppo"' +
 					'			    onClick="PAZIENTI.gruppoPunti((localStorage.sistemaMeridiani!=\'NMK\')?\'P\':\'N\');">' +
@@ -653,7 +653,7 @@ var MODULO_PROCEDURE = { // extend SET
 		}});
 	},
 	chiudiProcedura: function( idProcedura ){ // alla chiusura della modifica della procedura
-		SET.annullaEvidenziaTsubo();
+		SET.annullaEvidenziaPunto();
 		if(!globals.set.siglaProc)SET.spegniMeridiani(true);
 		endChangeDetection();
 		SCHEDA.formModificato = false;
@@ -757,7 +757,7 @@ var MODULO_PROCEDURE = { // extend SET
 		}
 		var mrProc=new Array();
 		for(let k in DB.set.meridiani){
-			mrProc[k]=Object.keys(DB.set.meridiani[k].tsubo).length;
+			mrProc[k]=Object.keys(DB.set.meridiani[k].punti).length;
 		}
 		for(a=mrProc[mr.value];a>=1;a--){
 			punto.options[a]=new Option('',encodeURIComponent(a),false,false);
@@ -807,20 +807,20 @@ var MODULO_PROCEDURE = { // extend SET
 		var nD = -1;
 		var txareas = ''; // per il resize su tochable
 		var OrdineDettaglio = -1
-		var tsuboProvvisoriProc = [];
+		var puntiProvvisoriProc = [];
 		var meridianiProvvisoriProc = [];
 		
 		if(globals.set.siglaProc=='AUR'){
 			var puntiElenco = [];
-			for(let siglaTsubo in DB.set.punti){
-				if(__(DB.set.punti[siglaTsubo])){
+			for(let siglaPunto in DB.set.punti){
+				if(__(DB.set.punti[siglaPunto])){
 					puntiElenco.push({
-						siglaTsubo: siglaTsubo,
-						NomeTsubo: DB.set.punti[siglaTsubo].NomeTsubo
+						siglaPunto: siglaPunto,
+						NomePunto: DB.set.punti[siglaPunto].NomePunto
 					});
 				}
 			}
-			puntiElenco.sort(sort_by("NomeTsubo", false));
+			puntiElenco.sort(sort_by("NomePunto", false));
 		}
 		
 		for(let p in SET.dettagliProvvisori){
@@ -840,13 +840,13 @@ var MODULO_PROCEDURE = { // extend SET
 						'"';
 				if(mouseDetect && (TipoDettaglio=='P' || TipoDettaglio=='N')){
 					HTML += 
-						'	  onMouseOver="SET.overTsubo(this,true);"'+
-						'	  onMouseOut="SET.overTsubo(this,false);"';
+						'	  onMouseOver="SET.overPunto(this,true);"'+
+						'	  onMouseOut="SET.overPunto(this,false);"';
 				}
 				if(mouseDetect && TipoDettaglio=='A' && DescrizioneDettaglio){
 					HTML += 
-						'	  onMouseOver="SET.overTsubo(\'_PT'+DescrizioneDettaglio+'\',true);"'+
-						'	  onMouseOut="SET.overTsubo(\'_PT'+DescrizioneDettaglio+'\',false);"';
+						'	  onMouseOver="SET.overPunto(\'_PT'+DescrizioneDettaglio+'\',true);"'+
+						'	  onMouseOut="SET.overPunto(\'_PT'+DescrizioneDettaglio+'\',false);"';
 				}
 				if(mouseDetect && TipoDettaglio=='M'){
 					HTML += 
@@ -887,26 +887,26 @@ var MODULO_PROCEDURE = { // extend SET
 				
 				if(TipoDettaglio=='P' || TipoDettaglio=='N' || TipoDettaglio=='A'){	
 				
-					var nTsubo='';
+					var nPunto='';
 					var siglaMeridiano='';
-					var siglaTsubo='';
+					var siglaPunto='';
 					var mezzo='';
 					if(DescrizioneDettaglio){
 						if(DescrizioneDettaglio.indexOf(".")>-1){
 							pP=DescrizioneDettaglio.split(".");
 							if(TipoDettaglio=='P' || TipoDettaglio=='N'){
-								nTsubo=pP[0]*1;
+								nPunto=pP[0]*1;
 								siglaMeridiano=pP[1];
-								siglaTsubo=__(pP[2]);
+								siglaPunto=__(pP[2]);
 								mezzo=__(pP[3]);
 							}
 							if(TipoDettaglio=='A'){
-								siglaTsubo=pP[0];
+								siglaPunto=pP[0];
 								mezzo=__(pP[1]);
 							}
 						}else{
-							if(TipoDettaglio=='P' || TipoDettaglio=='N')nTsubo=DescrizioneDettaglio;
-							if(TipoDettaglio=='A')siglaTsubo=DescrizioneDettaglio;
+							if(TipoDettaglio=='P' || TipoDettaglio=='N')nPunto=DescrizioneDettaglio;
+							if(TipoDettaglio=='A')siglaPunto=DescrizioneDettaglio;
 						}
 					}
 					
@@ -948,17 +948,17 @@ var MODULO_PROCEDURE = { // extend SET
 					HTML += htmlEntities(DescrizioneDettaglio);
 					
 				if(TipoDettaglio=='P' || TipoDettaglio=='N'){
-					tsuboProvvisoriProc.push( DescrizioneDettaglio );
+					puntiProvvisoriProc.push( DescrizioneDettaglio );
 					if(typeof(DB.set.meridiani[siglaMeridiano])=='undefined'){
-						var siglaTsubo = __(siglaTsubo, nTsubo+"."+siglaMeridiano);
-						HTML += '<span class="ptNo">'+siglaTsubo+'</span>';
+						var siglaPunto = __(siglaPunto, nPunto+"."+siglaMeridiano);
+						HTML += '<span class="ptNo">'+siglaPunto+'</span>';
 					}else{
 						if(TipoDettaglio=='P'){
 							HTML += 
 								'	<select name="mr_'+p+'"' +
 								'		    id="mr_'+p+'"' +
 								'		    onChange="this.blur();SET.modNumPunti(\'formMod\','+p+');' +
-								'		    		  SET.ritOverTsubo(\'dettagliCont\','+p+');" class="selectTratt">';
+								'		    		  SET.ritOverPunto(\'dettagliCont\','+p+');" class="selectTratt">';
 							
 							var totPunti=0;
 							if(siglaMeridiano=='')HTML +=
@@ -972,7 +972,7 @@ var MODULO_PROCEDURE = { // extend SET
 									'		<option value="'+k+'"';
 									if(siglaMeridiano==k){
 										HTML += ' SELECTED';
-										totPunti=Object.keys(DB.set.meridiani[k].tsubo).length;
+										totPunti=Object.keys(DB.set.meridiani[k].punti).length;
 									}
 									HTML += '>'+SET.convSigla(k);
 									if(WF()>=509)HTML += ' &nbsp; ('+DB.set.meridiani[k].NomeMeridiano+')';
@@ -984,47 +984,47 @@ var MODULO_PROCEDURE = { // extend SET
 							HTML += '	<select class="numPoints"' +
 									' 			name="pt_'+p+'"' +
 									' 			id="pt_'+p+'"' +
-									' 			onChange="SET.ritOverTsubo(\'dettagliCont\','+p+');this.blur();">';
+									' 			onChange="SET.ritOverPunto(\'dettagliCont\','+p+');this.blur();">';
 							
 							for(let n=1;n<=totPunti;n++){
-								var siglaTsubo = n;
-								if(__(DB.set.meridiani[siglaMeridiano].tsubo[n-1].siglaTsubo)){
-									siglaTsubo = __(DB.set.meridiani[siglaMeridiano].tsubo[n-1].siglaTsubo);
-									siglaTsubo = siglaTsubo.substr(3,siglaTsubo.length-3);
+								var siglaPunto = n;
+								if(__(DB.set.meridiani[siglaMeridiano].punti[n-1].siglaPunto)){
+									siglaPunto = __(DB.set.meridiani[siglaMeridiano].punti[n-1].siglaPunto);
+									siglaPunto = siglaPunto.substr(3,siglaPunto.length-3);
 								}
 								HTML += '	<option value="'+n+'"';
-								if(nTsubo==n)HTML += ' SELECTED';
-								HTML += '>'+siglaTsubo+'</option>';
+								if(nPunto==n)HTML += ' SELECTED';
+								HTML += '>'+siglaPunto+'</option>';
 							}
 							HTML += '	</select>';
 						}else{
 							var puntiElenco = [];
-							for(let siglaTsubo in DB.set.meridiani.NK.tsubo){
-								if(__(DB.set.meridiani.NK.tsubo[siglaTsubo])){
-									if(	__(DB.set.meridiani.NK.tsubo[siglaTsubo].apparato,-1)>-1 && 
-										DB.set.meridiani.NK.tsubo[siglaTsubo].NomeTsubo){
-										var pP = DB.set.meridiani.NK.tsubo[siglaTsubo].siglaTsubo.split("-");
+							for(let siglaPunto in DB.set.meridiani.NK.punti){
+								if(__(DB.set.meridiani.NK.punti[siglaPunto])){
+									if(	__(DB.set.meridiani.NK.punti[siglaPunto].apparato,-1)>-1 && 
+										DB.set.meridiani.NK.punti[siglaPunto].NomePunto){
+										var pP = DB.set.meridiani.NK.punti[siglaPunto].siglaPunto.split("-");
 										puntiElenco.push({
-											siglaTsubo: pP[1]*1,
-											NomeTsubo: DB.set.meridiani.NK.tsubo[siglaTsubo].NomeTsubo
+											siglaPunto: pP[1]*1,
+											NomePunto: DB.set.meridiani.NK.punti[siglaPunto].NomePunto
 										});
 									}
 								}
 							}
-							puntiElenco.sort(sort_by("NomeTsubo", false));
-							HTML +=	'	<input type="hidden" id="n-pt_'+p+'" name="n-pt_'+p+'" value="'+siglaTsubo+'">' +
+							puntiElenco.sort(sort_by("NomePunto", false));
+							HTML +=	'	<input type="hidden" id="n-pt_'+p+'" name="n-pt_'+p+'" value="'+siglaPunto+'">' +
 									'	<select class="numPoints numNamikoshi"' +
 									'	     	 name="n-pt_'+p+'"' +
 									'	     	 id="n-pt_'+p+'"' +
 									'		     onChange="this.blur();SET.modNumPunti(\'formMod\','+p+');' +
-									'		    		   SET.ritOverTsubo(\'dettagliCont\','+p+');">' +
+									'		    		   SET.ritOverPunto(\'dettagliCont\','+p+');">' +
 									'		<option></option>';
 							for(let n in puntiElenco){
 								// verifico le autorizzazioni
-								if(SET.verFreePunti(puntiElenco[n].siglaTsubo)){
-									HTML += '<option value="'+puntiElenco[n].siglaTsubo+'"';
-									if(puntiElenco[n].siglaTsubo == nTsubo+"")HTML += ' SELECTED';
-									HTML += '>'+puntiElenco[n].NomeTsubo+'</option>';
+								if(SET.verFreePunti(puntiElenco[n].siglaPunto)){
+									HTML += '<option value="'+puntiElenco[n].siglaPunto+'"';
+									if(puntiElenco[n].siglaPunto == nPunto+"")HTML += ' SELECTED';
+									HTML += '>'+puntiElenco[n].NomePunto+'</option>';
 								}
 								// --------------------------
 							}
@@ -1041,7 +1041,7 @@ var MODULO_PROCEDURE = { // extend SET
 								'				margin-top: -5px;""' +
 								' 		 class="occhio"' +
 								' 		 title="'+TXT("VisualizzaPunto")+'"' +
-								' 		 onClick="SET.selTsuboMod('+p+')">'; // ???????
+								' 		 onClick="SET.selPuntoMod('+p+')">'; // ???????
 					}
 				}
 				
@@ -1064,7 +1064,7 @@ var MODULO_PROCEDURE = { // extend SET
 								'		<option value="'+k+'"';
 								if(DescrizioneDettaglio==k){
 									HTML += ' SELECTED';
-									totPunti=Object.keys(DB.set.meridiani[k].tsubo).length;
+									totPunti=Object.keys(DB.set.meridiani[k].punti).length;
 								}
 								HTML += '>'+SET.convSigla(k);
 								if(WF()>=509)HTML += ' &nbsp; ('+DB.set.meridiani[k].NomeMeridiano+')';
@@ -1076,18 +1076,18 @@ var MODULO_PROCEDURE = { // extend SET
 					HTML += '	</select>';
 				}
 				if(TipoDettaglio=='A'){
-					tsuboProvvisoriProc.push( DescrizioneDettaglio );
+					puntiProvvisoriProc.push( DescrizioneDettaglio );
 					HTML += '	<select class="numPoints"' +
 							' 			name="pt_'+p+'"' +
 							' 			id="pt_'+p+'"' +
-							' 			onChange="SET.ritOverTsubo(\'dettagliCont\','+p+');this.blur();"><option></option>';
+							' 			onChange="SET.ritOverPunto(\'dettagliCont\','+p+');this.blur();"><option></option>';
 					
 					for(a=0;a<puntiElenco.length;a++){
 						// verifico le autorizzazioni
-						if(SET.verFreePunti(puntiElenco[a].siglaTsubo)){
-							HTML += '	<option value="'+puntiElenco[a].siglaTsubo+'"';
-							if(siglaTsubo==puntiElenco[a].siglaTsubo)HTML += ' SELECTED';
-							HTML += '>'+puntiElenco[a].NomeTsubo+'</option>';
+						if(SET.verFreePunti(puntiElenco[a].siglaPunto)){
+							HTML += '	<option value="'+puntiElenco[a].siglaPunto+'"';
+							if(siglaPunto==puntiElenco[a].siglaPunto)HTML += ' SELECTED';
+							HTML += '>'+puntiElenco[a].NomePunto+'</option>';
 						}
 						// --------------------------
 					}
@@ -1102,7 +1102,7 @@ var MODULO_PROCEDURE = { // extend SET
 							'				margin-top: -5px;""' +
 							' 		 class="occhio"' +
 							' 		 title="'+TXT("VisualizzaPunto")+'"' +
-							' 		 onClick="SET.selTsuboMod(document.getElementById(\'pt_'+p+'\').value,'+p+')">'; 
+							' 		 onClick="SET.selPuntoMod(document.getElementById(\'pt_'+p+'\').value,'+p+')">'; 
 				}
 				
 				if(TipoDettaglio=='T')HTML += '">';
@@ -1114,7 +1114,7 @@ var MODULO_PROCEDURE = { // extend SET
 		if(!presente)HTML += '<div class="noResults" style="height:50px;">'+TXT("NoRes")+'...</div>';
 		document.getElementById("dettagliCont").innerHTML=HTML;
 		try{
-			SET.evidenziaTsuboMod( tsuboProvvisoriProc );
+			SET.evidenziaPuntoMod( puntiProvvisoriProc );
 			if(!globals.set.siglaProc)ET.evidenziaMeridianiMod( meridianiProvvisoriProc );
 		}catch(err){}
 		if(eviUltimo){
@@ -1175,12 +1175,12 @@ var MODULO_PROCEDURE = { // extend SET
 			if(document.getElementById("pt_"+n)){
 			if(!globals.set.siglaProc){
 				var mer = document.getElementById("mr_"+n).value;
-				var nTsubo = document.getElementById("pt_"+n).value;
-				if(nTsubo.length == 1)nTsubo='0'+nTsubo;
-				val = nTsubo+"."+mer;
+				var nPunto = document.getElementById("pt_"+n).value;
+				if(nPunto.length == 1)nPunto='0'+nPunto;
+				val = nPunto+"."+mer;
 				var sg = val.replace(/\./g,"-");
-				if(__(DB.set.meridiani[mer].tsubo[nTsubo*1-1].siglaTsubo)){
-					sg = __(DB.set.meridiani[mer].tsubo[nTsubo*1-1].siglaTsubo);
+				if(__(DB.set.meridiani[mer].punti[nPunto*1-1].siglaPunto)){
+					sg = __(DB.set.meridiani[mer].punti[nPunto*1-1].siglaPunto);
 				}
 				val += "."+sg+"."+__(DP[2])+"."+__(DP[3]);
 			}

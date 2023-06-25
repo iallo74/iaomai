@@ -47,23 +47,23 @@ DB.TXT.set = {
         por: "Sem comentários",
         deu: "Keine Kommentare"
     },
-    TsuboSelezionato: {
-        ita: "Tsubo selezionato",
-        eng: "Selected Tsubo",
-        esp: "Tsubo seleccionado",
-        fra: "Tsubo sélectionné",
-        por: "Tsubo selecionado",
-        deu: "Ausgewählter Tsubo"
+    PuntoSelezionato: {
+        ita: "Punto selezionato",
+        eng: "Selected point",
+        esp: "Punto seleccionado",
+        fra: "Point sélectionné",
+        por: "Ponto selecionado",
+        deu: "Ausgewählten Punkt"
     },
-    SostituisciTsubo: {
-        ita: "Sostituisci [t] con questo Tsubo",
-        eng: "Replace [t] with this Tsubo",
-        esp: "Reemplaza [t] con este Tsubo",
-        fra: "Remplacez [t] par ce Tsubo",
-        por: "Substitua [t] por este Tsubo",
-        deu: "Ersetze [t] durch diesen Tsubo"
+    SostituisciPunto: {
+        ita: "Sostituisci [t] con questo punto",
+        eng: "Replace [t] with this point",
+        esp: "Reemplaza [t] con este punto",
+        fra: "Remplacez [t] par ce point",
+        por: "Substitua [t] por este ponto",
+        deu: "Ersetze [t] durch diesen Punkt"
     },
-    AggiungiTsuboProc: {
+    AggiungiPuntoProc: {
         ita: "Aggiungi alla procedura",
         eng: "Add to procedure",
         esp: "Agregar a la procedimiento",
@@ -71,7 +71,7 @@ DB.TXT.set = {
         por: "Adicionar à procedimento",
         deu: "Zur Prozedur hinzufügen"
     },
-    AggiungiTsuboTratt: {
+    AggiungiPuntoTratt: {
         ita: "Aggiungi al trattamento",
         eng: "Add to treatment",
         esp: "Agregar al tratamiento",

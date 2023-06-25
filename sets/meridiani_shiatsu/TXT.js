@@ -31,22 +31,14 @@ DB.TXT.set = {
 		por: "Sem comentários",
 		deu: "Keine Kommentare"
 	},
-	TsuboSelezionato: {
-		ita: "Tsubo selezionato",
-		eng: "Selected Tsubo",
-		esp: "Tsubo seleccionado",
-		fra: "Tsubo sélectionné",
-		por: "Tsubo selecionado",
-		deu: "Ausgewählter Tsubo"
-	},
-	SostituisciTsubo: {
-		ita: "Sostituisci [t] con questo Tsubo",
-		eng: "Replace [t] with this Tsubo",
-		esp: "Reemplaza [t] con este Tsubo",
-		fra: "Remplacez [t] par ce Tsubo",
-		por: "Substitua [t] por este Tsubo",
-		deu: "Ersetze [t] durch diesen Tsubo"
-	},
+    SostituisciPunto: {
+        ita: "Sostituisci [t] con questo punto",
+        eng: "Replace [t] with this point",
+        esp: "Reemplazar [t] con este punto",
+        fra: "Remplacer [t] par ce point",
+        por: "Substitua [t] por este ponto",
+        deu: "Ersetze [t] durch diesen Punkte"
+    },
 	CambiaMeridiani: {
 		ita: "Cambia sistema di meridiani ( cinesi / masunaga )",
 		eng: "Change meridian system (Chinese/Masunaga)",
@@ -71,7 +63,7 @@ DB.TXT.set = {
 		por: "Protocolo Namikoshi",
 		deu: "Namikoshi-Protokoll"
 	},
-	AggiungiTsuboProc: {
+	AggiungiPuntoProc: {
 		ita: "Aggiungi alla procedura",
 		eng: "Add to procedure",
 		esp: "Agregar a la procedimiento",
@@ -79,7 +71,7 @@ DB.TXT.set = {
 		por: "Adicionar à procedimento",
 		deu: "Zur Prozedur hinzufügen"
 	},
-	AggiungiTsuboTratt: {
+	AggiungiPuntoTratt: {
 		ita: "Aggiungi al trattamento",
 		eng: "Add to treatment",
 		esp: "Agregar al tratamiento",
@@ -278,14 +270,6 @@ DB.TXT.set = {
 		fra: "Aucune procédure",
 		por: "Sem procedimento",
 		deu: "Kein Verfahren"
-	},
-	Punto: {
-		ita: "Tsubo",
-		eng: "Tsubo",
-		esp: "Tsubo",
-		fra: "Tsubo",
-		por: "Tsubo",
-		deu: "Tsubo"
 	},
 	Titoletto: {
 		ita: "Titoletto",

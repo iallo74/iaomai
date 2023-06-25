@@ -1,4 +1,3 @@
-
 var PAZIENTI_TRATTAMENTI = {
 	
 	mn: null, // il menu contestuale dei cicli
@@ -326,8 +325,8 @@ var PAZIENTI_TRATTAMENTI = {
 			var TitoloTrattamento='';
 			var TestoTrattamento='';
 			var Prescrizione='';
-			var puntiTsuboMap='';
-			var puntiAuriculoMap='';
+			var puntiMTC='';
+			var puntiAuricolari='';
 			var puntiNamikoshi='';
 			var TimeTrattamento=0;
 			var CostoTrattamento=0;
@@ -363,8 +362,8 @@ var PAZIENTI_TRATTAMENTI = {
 				if(typeof(TR.TipoTrattamento)!='undefined')TipoTrattamento=TR.TipoTrattamento;
 				if(typeof(TR.LabelCiclo)!='undefined')LabelCiclo=TR.LabelCiclo;
 				if(typeof(TR.CostoTrattamento)!='undefined')CostoTrattamento=TR.CostoTrattamento*1;
-				if(typeof(TR.puntiTsuboMap)=='string')puntiTsuboMap=TR.puntiTsuboMap;
-				if(typeof(TR.puntiAuriculoMap)=='string')puntiAuriculoMap=TR.puntiAuriculoMap;
+				if(typeof(TR.puntiMTC)=='string')puntiMTC=TR.puntiMTC;
+				if(typeof(TR.puntiAuricolari)=='string')puntiAuricolari=TR.puntiAuricolari;
 				if(typeof(TR.puntiNamikoshi)=='string')puntiNamikoshi=TR.puntiNamikoshi;
 				if(typeof(TR.sintomi)=='string')sintomi=TR.sintomi;
 				if(typeof(TR.gallery)=='string')gallery=TR.gallery;
@@ -388,14 +387,14 @@ var PAZIENTI_TRATTAMENTI = {
 				agenda.init();
 			}
 			
-			if(puntiTsuboMap!='')puntiTsuboMap=JSON.parse(puntiTsuboMap);
-			else puntiTsuboMap=[];
+			if(puntiMTC!='')puntiMTC=JSON.parse(puntiMTC);
+			else puntiMTC=[];
 			if(sintomi!='')sintomi=JSON.parse(sintomi);
 			else sintomi=[];
 			if(meridiani!='')meridiani=JSON.parse(meridiani);
 			else meridiani=[];
-			if(puntiAuriculoMap!='')puntiAuriculoMap=JSON.parse(puntiAuriculoMap);
-			else puntiAuriculoMap=[];
+			if(puntiAuricolari!='')puntiAuricolari=JSON.parse(puntiAuricolari);
+			else puntiAuricolari=[];
 			if(puntiNamikoshi!='')puntiNamikoshi=JSON.parse(puntiNamikoshi);
 			else puntiNamikoshi=[];
 			if(gallery!='')gallery=JSON.parse(gallery);
@@ -425,8 +424,8 @@ var PAZIENTI_TRATTAMENTI = {
 				TimeAgenda = TimeTrattamento;
 			}
 			PAZIENTI.sintomiEliminati=[];
-			PAZIENTI.puntiProvvisori=puntiTsuboMap;
-			PAZIENTI.auriculoProvvisori=puntiAuriculoMap;
+			PAZIENTI.puntiProvvisori=puntiMTC;
+			PAZIENTI.auriculoProvvisori=puntiAuricolari;
 			PAZIENTI.namikoshiProvvisori=puntiNamikoshi;
 			PAZIENTI.sintomiProvvisori=sintomi;
 			PAZIENTI.meridianiProvvisori=meridiani;
@@ -613,7 +612,7 @@ var PAZIENTI_TRATTAMENTI = {
 								classCampo: "okPlaceHolder",
 								styleCampo: "margin-bottom:10px;" });
 				
-				var TXT_P=TXT("Tsubo");
+				var TXT_P=TXT("PuntiMTC");
 				var TXT_M=TXT("MeridianiTrattamento");
 				HTML += separatore;
 				
@@ -726,25 +725,25 @@ var PAZIENTI_TRATTAMENTI = {
 					// POPUP di caricamento punti e meridiani
 					'<div id="gruppoPunti_cont"></div>' +
 			
-			// TSUBO
+			// PUNTI MTC
 					'<div id="tratt_cont_punti"' +
 					'	  class="sezioneTrattamenti divEspansa '+ 
 						((localStorage.getItem("op_punti")) ? '' : 'sezioneChiusa') +
 						'">' +
-					'	<em id="label_puntiTsuboMap"' +
+					'	<em id="label_puntiMTC"' +
 					'		class="labelMobile labelTrattamenti"' +
 					'		onClick="H.swSezione(this);">' +
 					'		<img class="icoLabel"' +
-					'		     src="img/ico_tsubo.png">' +
-							TXT_P+' (<span id="totTsubo"></span>)' +
+					'		     src="img/ico_punti.png">' +
+							TXT_P+' (<span id="totPunto"></span>)' +
 					'	</em>' +
-					'	<div id="puntiTsuboMap">' +
+					'	<div id="puntiMTC">' +
 					'	</div>' +
 					'	<div id="tratt_btns_punti"' +
 					'		 class="noPrint"></div>' +
 					'</div>' +
 			
-			// NAMIKOSHI
+			// PUNTI NAMIKOSHI
 					'<div id="tratt_cont_namikoshi"' +
 					'	  class="sezioneTrattamenti divEspansa '+ 
 						((localStorage.getItem("op_namikoshi")) ? '' : 'sezioneChiusa') +
@@ -767,14 +766,14 @@ var PAZIENTI_TRATTAMENTI = {
 					'	  class="sezioneTrattamenti divEspansa '+ 
 						((localStorage.getItem("op_meridiani")) ? '' : 'sezioneChiusa') +
 						'">' +
-					'	<em id="label_meridianiTsuboMap"' +
+					'	<em id="label_meridianiMTC"' +
 					'		class="labelMobile labelTrattamenti"' +
 					'		onClick="H.swSezione(this);">' +
 					'		<img class="icoLabel"' +
 					'		     src="img/ico_meridiani.png">' +
 							TXT_M+' (<span id="totMeridiani"></span>)' +
 					'	</em>' +
-					'	<div id="meridianiTsuboMap">' +
+					'	<div id="meridianiMTC">' +
 					'	</div>' +
 					'	<div id="tratt_btns_meridiani"' +
 					'		 class="noPrint"></div>' +
@@ -785,14 +784,14 @@ var PAZIENTI_TRATTAMENTI = {
 					'	  class="sezioneTrattamenti divEspansa '+ 
 						((localStorage.getItem("op_auriculo")) ? '' : 'sezioneChiusa') +
 						'">' +
-					'	<em id="label_puntiAuriculoMap"' +
+					'	<em id="label_puntiAuricolari"' +
 					'		class="labelMobile labelTrattamenti"' +
 					'		onClick="H.swSezione(this);">' +
 					'		<img class="icoLabel"' +
 					'		     src="img/ico_auriculo.png">' +
 							TXT("PuntiAuriculo")+' (<span id="totAuriculo"></span>)' +
 					'	</em>' +
-					'	<div id="puntiAuriculoMap">' +
+					'	<div id="puntiAuricolari">' +
 					'	</div>' +
 					'	<div id="tratt_btns_auriculo"' +
 					'		 class="noPrint"></div>' +
@@ -875,7 +874,7 @@ var PAZIENTI_TRATTAMENTI = {
 			//H.verData();
 			
 			if(TipoTrattamento=='A' || !LabelCiclo)PAZIENTI.popolaSintomi();
-			PAZIENTI.caricaDettagliSet(); // carico le schede dei singoli sets (TsuboMap, ShiatsuMap, ecc)
+			PAZIENTI.caricaDettagliSet(); // carico le schede dei singoli sets
 			PAZIENTI.caricaSintomi();
 			//PH.caricaGallery( Q_idTratt );
 			PH.caricaGallery();
@@ -891,7 +890,7 @@ var PAZIENTI_TRATTAMENTI = {
 	caricaDettagliSet: function(){ // carica i dettagli trattamento dei singoli set
 		// PUNTI
 		var HTML = '';
-		var html_caricaPunti = '<div class="labelModificaCon">'+htmlEntities(TXT("ModificaCon"))+'<br><span onClick="caricaSet(\'meridiani_cinesi\',this);"><img src="sets/meridiani_cinesi/img/logoNero.png" width="25" height="25"> TsuboMap</span> o <span onClick="caricaSet(\'meridiani_shiatsu\',this);"><img src="sets/meridiani_shiatsu/img/logoNero.png" width="25" height="25"> ShiatsuMap</span></div>';
+		var html_caricaPunti = '<div class="labelModificaCon">'+htmlEntities(TXT("ModificaCon"))+'<br><span onClick="caricaSet(\'meridiani_cinesi\',this);"><img src="sets/meridiani_cinesi/img/logoNero.png" width="25" height="25"> AcupointsMap</span> o <span onClick="caricaSet(\'meridiani_shiatsu\',this);"><img src="sets/meridiani_shiatsu/img/logoNero.png" width="25" height="25"> ShiatsuMap</span></div>';
 		if( globals.set.cartella == 'meridiani_cinesi' ||
 			globals.set.cartella == 'meridiani_shiatsu' ){
 			HTML+=
@@ -1003,7 +1002,7 @@ var PAZIENTI_TRATTAMENTI = {
 	},
 	chiudiTrattamento: function( idTrattamento ){ // funzione chiamata alla chiusura del trattamento
 		try{
-			SET.annullaEvidenziaTsubo();
+			SET.annullaEvidenziaPunto();
 			SET.spegniMeridiani(true);
 		}catch(err){}
 		SCHEDA.formModificato = false;
@@ -1187,8 +1186,8 @@ var PAZIENTI_TRATTAMENTI = {
 							"oraFine": document.formMod.oraFine.value*1,
 							"TestoTrattamento": TestoTrattamento,
 							"Prescrizione": document.formMod.Prescrizione.value,
-							"puntiTsuboMap": JSON.stringify(PAZIENTI.puntiProvvisori),
-							"puntiAuriculoMap": JSON.stringify(PAZIENTI.auriculoProvvisori),
+							"puntiMTC": JSON.stringify(PAZIENTI.puntiProvvisori),
+							"puntiAuricolari": JSON.stringify(PAZIENTI.auriculoProvvisori),
 							"puntiNamikoshi": JSON.stringify(PAZIENTI.namikoshiProvvisori),
 							"sintomi": JSON.stringify(PAZIENTI.sintomiProvvisori),
 							"meridiani": JSON.stringify(PAZIENTI.meridianiProvvisori),
@@ -1655,20 +1654,20 @@ var PAZIENTI_TRATTAMENTI = {
 					TitoloTrattamento=TR.TitoloTrattamento;
 					TestoTrattamento=TR.TestoTrattamento;
 					Prescrizione=__(TR.Prescrizione);
-					puntiTsuboMap=__(TR.puntiTsuboMap,"[]");
-					puntiAuriculoMap=__(TR.puntiAuriculoMap,"[]");
+					puntiMTC=__(TR.puntiMTC,"[]");
+					puntiAuricolari=__(TR.puntiAuricolari,"[]");
 					puntiNamikoshi=__(TR.puntiNamikoshi,"[]");
 					meridiani = __(TR.meridiani,"{}");
 					sintomi=__(TR.sintomi,"{}");
 					
 					if(!meridiani)meridiani = "{}";
 					if(!sintomi)sintomi = "{}";
-					if(!puntiTsuboMap)puntiTsuboMap = "[]";
-					if(!puntiAuriculoMap)puntiAuriculoMap = "[]";
+					if(!puntiMTC)puntiMTC = "[]";
+					if(!puntiAuricolari)puntiAuricolari = "[]";
 					if(!puntiNamikoshi)puntiNamikoshi = "[]";
 					
-					puntiTsuboMap=JSON.parse(puntiTsuboMap);
-					puntiAuriculoMap=JSON.parse(puntiAuriculoMap);
+					puntiMTC=JSON.parse(puntiMTC);
+					puntiAuricolari=JSON.parse(puntiAuricolari);
 					puntiNamikoshi=JSON.parse(puntiNamikoshi);
 					sintomi=JSON.parse(sintomi);
 					meridiani=JSON.parse(meridiani);
@@ -1694,7 +1693,7 @@ var PAZIENTI_TRATTAMENTI = {
 					if(TipoTrattamento!='A'){
 						HTML+='<h3>'+data+'</h3><p class="labelCicli"><i>'+htmlEntities(TitoloTrattamento)+'</i></p>';
 						HTML+='<p>'+htmlEntities(TestoTrattamento).replace(/\n/g, '<br>')+'</p>';
-						var TXT_P=TXT("Tsubo");
+						var TXT_P=TXT("Punto");
 						var TXT_M=TXT("MeridianiTrattamento");
 						
 					}else{
@@ -1720,21 +1719,21 @@ var PAZIENTI_TRATTAMENTI = {
 							"score": score
 						}
 					}
-					if(puntiTsuboMap.length){
+					if(puntiMTC.length){
 						HTML+='<div class="app_report_sch"> ';
 						HTML+='<i>'+TXT_P+':</i> ';
 						HTML+='<div id="puntiCiclo">';
-						for(let p in puntiTsuboMap){
-							nTsubo=puntiTsuboMap[p].n*1;
-							siglaMeridiano=puntiTsuboMap[p].m;
-							valutazione=__(puntiTsuboMap[p].e);
-							mezzo=__(puntiTsuboMap[p].z);
-							descrizione=__(puntiTsuboMap[p].t);
-							siglaTsubo=__(puntiTsuboMap[p].s);
-							if(!siglaTsubo)siglaTsubo = nTsubo+'.'+siglaMeridiano;
+						for(let p in puntiMTC){
+							nPunto=puntiMTC[p].n*1;
+							siglaMeridiano=puntiMTC[p].m;
+							valutazione=__(puntiMTC[p].e);
+							mezzo=__(puntiMTC[p].z);
+							descrizione=__(puntiMTC[p].t);
+							siglaPunto=__(puntiMTC[p].s);
+							if(!siglaPunto)siglaPunto = nPunto+'.'+siglaMeridiano;
 							
 							HTML += '<span class="tsb"><img src="img/mezzo_'+mezzo+'.png" class="noMod" style="vertical-align: middle;margin-top: -2px;margin-right: -2px;"> ';
-							HTML += '<b>'+siglaTsubo+'</b>';
+							HTML += '<b>'+siglaPunto+'</b>';
 							if(valutazione)HTML += '<img src="img/ico_PV'+valutazione+'.png" class="noMod" style="vertical-align: middle;margin-top: -3px;">';
 							if(descrizione)HTML += ' <span style="font-style:italic;">'+htmlEntities(descrizione)+'</span>';
 							HTML += '</span> '+chr10;
@@ -1747,13 +1746,13 @@ var PAZIENTI_TRATTAMENTI = {
 						HTML+='<i>'+TXT("PuntiNamikoshi")+':</i> ';
 						HTML+='<div id="puntiCiclo">';
 						for(let p in puntiNamikoshi){
-							nomeTsubo=puntiNamikoshi[p].s;
+							nomePunto=puntiNamikoshi[p].s;
 							valutazione=__(puntiNamikoshi[p].e);
 							mezzo=__(puntiNamikoshi[p].z);
 							descrizione=__(puntiNamikoshi[p].t);
 							
 							HTML += '<span class="tsb"><img src="img/mezzo_'+mezzo+'.png" class="noMod" style="vertical-align: middle;margin-top: -2px;margin-right: -2px;"> ';
-							HTML += '<b>'+nomeTsubo+'</b>';
+							HTML += '<b>'+nomePunto+'</b>';
 							if(valutazione)HTML += '<img src="img/ico_PV'+valutazione+'.png" class="noMod" style="vertical-align: middle;margin-top: -3px;">';
 							if(descrizione)HTML += ' <span style="font-style:italic;">'+htmlEntities(descrizione)+'</span>';
 							HTML += '</span> '+chr10;
@@ -1761,18 +1760,18 @@ var PAZIENTI_TRATTAMENTI = {
 						HTML+='</div>';
 						HTML+='</div>';
 					}
-					if(puntiAuriculoMap.length){
+					if(puntiAuricolari.length){
 						HTML+='<div class="app_report_sch"> ';
 						HTML+='<i>'+TXT_P+':</i> ';
 						HTML+='<div id="puntiCiclo">';
-						for(let p in puntiAuriculoMap){
-							nomeTsubo=puntiAuriculoMap[p].n;
-							valutazione=__(puntiAuriculoMap[p].e);
-							mezzo=__(puntiAuriculoMap[p].z);
-							descrizione=__(puntiAuriculoMap[p].t);
+						for(let p in puntiAuricolari){
+							nomePunto=puntiAuricolari[p].n;
+							valutazione=__(puntiAuricolari[p].e);
+							mezzo=__(puntiAuricolari[p].z);
+							descrizione=__(puntiAuricolari[p].t);
 							
 							HTML += '<span class="tsb"><img src="img/mezzo_'+mezzo+'.png" class="noMod" style="vertical-align: middle;margin-top: -2px;margin-right: -2px;"> ';
-							HTML += '<b>'+nomeTsubo+'</b>';
+							HTML += '<b>'+nomePunto+'</b>';
 							if(valutazione)HTML += '<img src="img/ico_PV'+valutazione+'.png" class="noMod" style="vertical-align: middle;margin-top: -3px;">';
 							if(descrizione)HTML += ' <span style="font-style:italic;">'+htmlEntities(descrizione)+'</span>';
 							HTML += '</span> '+chr10;

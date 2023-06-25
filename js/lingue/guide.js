@@ -1,4 +1,4 @@
-var guide = {
+const guide = {
 	guida_anatomia: {
 		titolo: {
 			"ita": 'Modelli anatomici 3D',

@@ -17,14 +17,14 @@ body.uomo #pulsante_modello{
 	display:none;
 }
 
-.ideogrammaTsubo{
+.ideogrammaPunto{
 	float:right;
 }
-.smart .ideogrammaTsubo{
+.smart .ideogrammaPunto{
 	margin-top: 20px;
 }
 
-.simboliTsubo{
+.simboliPunto{
     width: 45px;
     height: 45px;
     margin-left: 10px;
@@ -37,7 +37,7 @@ body.uomo #pulsante_modello{
 	display:inline-block;
 	vertical-align:middle;
 }
-.zoomTsubo{
+.zoomPunto{
 	width:371px;
 	height:490px;
 }
@@ -83,9 +83,9 @@ body.uomo #pulsante_modello{
 
 /* SCHEDE */
 .pallinoPat,
-.pallinoTsubo{
+.pallinoPunto{
 }
-.pallinoPat:not(.pallinoTsubo){
+.pallinoPat:not(.pallinoPunto){
 	display:inline-block;
 	padding-left:16px;
 	height:16px;
@@ -98,17 +98,17 @@ body.uomo #pulsante_modello{
 	text-overflow:ellipsis;
 	overflow:hidden;
 }
-.pallinoTsubo{
+.pallinoPunto{
 	color: #366ee1;
 	/*cursor:pointer;*/
 }
-.pallinoPat:not(.ptNoSel):not(.pallinoTsubo){
+.pallinoPat:not(.ptNoSel):not(.pallinoPunto){
 	cursor:pointer;
 }
-.pallinoPat.ptNoSel:not(.pallinoTsubo){
+.pallinoPat.ptNoSel:not(.pallinoPunto){
 	cursor:default !important;
 }
-.pallinoPat:not(.ptNoSel):not(.pallinoTsubo):hover{
+.pallinoPat:not(.ptNoSel):not(.pallinoPunto):hover{
 	background-color:rgba(255,255,255,0.3);
 	border-radius:3px;
 }
@@ -121,14 +121,14 @@ body.uomo #pulsante_modello{
     line-height: 30px !important;
 }
 .pallinoPat i,
-.pallinoTsubo i{
+.pallinoPunto i{
 	font-weight:normal !important;
 	font-style:normal !important;
 }
-.elencoTsubo{
+.elencoPunti{
 	margin-top:10px;
 }
-.elencoTsubo p{
+.elencoPunti p{
 	text-align:left;
 	height:30px;
 	line-height:30px;

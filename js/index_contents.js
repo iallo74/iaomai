@@ -17,9 +17,9 @@ var sets = {
 		]
 	},
 	meridiani_cinesi: {
-		nome: TXT("TsuboMap"),
-		sottotitolo: TXT("TsuboMapST"),
-		descrizione: TXT("TsuboMapDESCR"),
+		nome: TXT("AcupointsMap"),
+		sottotitolo: TXT("AcupointsMapST"),
+		descrizione: TXT("AcupointsMapDESCR"),
 		modelli: [
 			"donna",
 			"uomo"
@@ -29,7 +29,7 @@ var sets = {
 			'TXT.js',
 			'geometrie.js',
 			'set.js',
-			'modulo_tsubo.js',
+			'modulo_punto.js',
 			'modulo_patologie.js',
 			'modulo_meridiani.js',
 			'modulo_teoria.js',
@@ -37,7 +37,7 @@ var sets = {
 			'materiali.js',
 			'stili.css',
 			'sets/common/stili_procedure.css',
-			'stili_tsubo.css'
+			'stili_punto.css'
 		],
 		dims: [
 			65,
@@ -63,7 +63,7 @@ var sets = {
 		siglaProc: '',
 		idApple: 'TM22',
 		idGoogle: 'tm22',
-		pageStore: 'tsubomap',
+		pageStore: 'acupointsmap',
 		lingueCont: [
 			"ita",
 			"eng",
@@ -83,7 +83,7 @@ var sets = {
 			'TXT.js',
 			'geometrie.js',
 			'set.js',
-			'modulo_tsubo.js',
+			'modulo_punto.js',
 			'modulo_patologie.js',
 			'modulo_meridiani.js',
 			'modulo_teoria.js',
@@ -91,7 +91,7 @@ var sets = {
 			'materiali.js',
 			'stili.css',
 			'sets/common/stili_procedure.css',
-			'stili_tsubo.css'
+			'stili_punto.css'
 		],
 		dims: [
 			65,
@@ -133,15 +133,15 @@ var sets = {
 			'TXT.js',
 			'geometrie.js',
 			'set.js',
-			'modulo_tsubo.js',
-			'modulo_patologie.js',
 			'modulo_punti.js',
+			'modulo_patologie.js',
+			'modulo_punto.js',
 			'modulo_teoria.js',
 			'sets/common/modulo_procedure.js',
 			'materiali.js',
 			'stili.css',
 			'sets/common/stili_procedure.css',
-			'stili_tsubo.css'
+			'stili_punto.css'
 		],
 		dims: [
 			19,

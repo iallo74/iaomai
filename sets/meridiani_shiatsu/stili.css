@@ -22,15 +22,15 @@ body.uomo #pulsante_modello{
 	display:none;
 }
 
-.ideogrammaTsubo{
+.ideogrammaPunto{
 	float:right;
 }
-.smart .ideogrammaTsubo{
+.smart .ideogrammaPunto{
 	margin-top: 20px;
 }
 
 
-.simboliTsubo{
+.simboliPunto{
     width: 45px;
     height: 45px;
     margin-left: 10px;
@@ -43,7 +43,7 @@ body.uomo #pulsante_modello{
 	display:inline-block;
 	vertical-align:middle;
 }
-.zoomTsubo{
+.zoomPunto{
 	width:371px;
 	height:490px;
 }
@@ -131,10 +131,10 @@ body.uomo #pulsante_modello{
 	font-weight:normal !important;
 	font-style:normal !important;
 }
-.elencoTsubo{
+.elencoPunti{
 	margin-top:10px;
 }
-.elencoTsubo p{
+.elencoPunti p{
 	text-align:left;
 	height:30px;
 	line-height:30px;
@@ -874,8 +874,9 @@ body.smart #elenchi #cambioSistemaMeridiani/*,
 }
 
 
-body.donna .eviPoints,
-body.uomo .eviPoints{
+/* body.donna .eviPoints,
+body.uomo .eviPoints{ */
+.eviPoints{
     background-color: rgba(0,0,0,0.1) !important;
     box-shadow: 0px 0px 2px #89aeff, 0px 0px 3px #89aeff, 0px 0px 5px rgba(0,0,0,0.3);
 }
@@ -919,6 +920,9 @@ body.uomo .eviPoints{
 }
 .schedaSpecifica:not(.eviPoints) .swSistema{
 	display:none;
+}
+body:not(.donna):not(.uomo) .swSistema{
+	display:none !important;
 }
 .swSistema span{
 	cursor:pointer;

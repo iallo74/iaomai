@@ -1,4 +1,3 @@
-
 var CATALOGO = {
 	//
 	scriviListaSets: function(){

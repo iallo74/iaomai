@@ -1,4 +1,3 @@
-
 var FEEDBACK = {
 	//
 	inviaFeedback: function(){ // invia il feedback

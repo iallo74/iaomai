@@ -1,4 +1,3 @@
-
 var PAZIENTI = {
 	idCL: -1,
 	idPaziente: -1,
@@ -145,7 +144,7 @@ var PAZIENTI = {
 				SCHEDA.classeAperta == 'scheda_B' ||
 				SCHEDA.classeAperta == 'scheda_paziente' ||
 				SCHEDA.classeAperta == 'scheda_Riepi' || 
-				SCHEDA.classeAperta == 'tab_tsubo' )SCHEDA.scaricaScheda();
+				SCHEDA.classeAperta == 'tab_punti' )SCHEDA.scaricaScheda();
 				
 			PAZIENTI.idCL = n*1;
 			PAZIENTI.idPaziente = DB.pazienti.data[PAZIENTI.idCL].idPaziente;
@@ -195,7 +194,7 @@ var PAZIENTI = {
 				SCHEDA.classeAperta == 'scheda_paziente' ||
 				SCHEDA.classeAperta == 'scheda_Riepi' ||
 				SCHEDA.classeAperta == 'scheda_saldo' ||
-				SCHEDA.classeAperta == 'tab_tsubo' )SCHEDA.scaricaScheda();
+				SCHEDA.classeAperta == 'tab_punti' )SCHEDA.scaricaScheda();
 			PAZIENTI.trattSel = null;
 			PAZIENTI.trattOp = false;
 			PAZIENTI.cicli = [];

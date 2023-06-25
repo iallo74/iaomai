@@ -21,14 +21,14 @@ body.orecchio #pulsante_modello{
 	display:none;
 }
 
-.ideogrammaTsubo{
+.ideogrammaPunto{
 	float:right;
 }
-.smart .ideogrammaTsubo{
+.smart .ideogrammaPunto{
 	margin-top: 20px;
 }
 
-.simboliTsubo{
+.simboliPunto{
     width: 45px;
     height: 45px;
     margin-left: 10px;
@@ -41,7 +41,7 @@ body.orecchio #pulsante_modello{
 	display:inline-block;
 	vertical-align:middle;
 }
-.zoomTsubo{
+.zoomPunto{
 	width:371px;
 	height:490px;
 }
@@ -75,10 +75,10 @@ body.orecchio #pulsante_modello{
 
 /* SCHEDE */
 
-.pallinoTsubo span{
+.pallinoPunto span{
 	display:none;
 }
-/*.pallinoPat:not(.pallinoTsubo){
+/*.pallinoPat:not(.pallinoPunto){
 	display:inline-block;
 	padding-left:16px;
 	height:16px;
@@ -91,7 +91,7 @@ body.orecchio #pulsante_modello{
 	text-overflow:ellipsis;
 	overflow:hidden;
 }*/
-.pallinoTsubo{
+.pallinoPunto{
 	color: #366ee1;
 	cursor:default !important;
 	display:inline !important;
@@ -133,7 +133,7 @@ body.orecchio #pulsante_modello{
     height: 22px;
     line-height: 22px;
 }
-#elencoTsubo .pallinoPat:not(.noPall){
+#elencoPunti .pallinoPat:not(.noPall){
     line-height: 30px;
 }
 .smart.android .pallinoPat:not(.noPall){
@@ -146,13 +146,13 @@ body.orecchio #pulsante_modello{
     background-position: 5px center !important;
     background-size: auto 20px;
 }
-.pallinoPat:not(.ptNoSel):not(.pallinoTsubo){
+.pallinoPat:not(.ptNoSel):not(.pallinoPunto){
 	cursor:pointer;
 }
-.pallinoPat.ptNoSel:not(.pallinoTsubo){
+.pallinoPat.ptNoSel:not(.pallinoPunto){
 	cursor:default !important;
 }
-.pallinoPat:not(.ptNoSel):not(.pallinoTsubo):hover{
+.pallinoPat:not(.ptNoSel):not(.pallinoPunto):hover{
 	background-color:rgba(0,0,0,0.1);
 	border-radius:3px;
 }
@@ -165,27 +165,27 @@ body.orecchio #pulsante_modello{
     line-height: 30px;
 }
 .pallinoPat i,
-.pallinoTsubo i{
+.pallinoPunto i{
 	font-weight:normal !important;
 	font-style:normal !important;
 }
-.elencoTsubo{
+.elencoPunti{
 	margin-top:10px;
 }
-.elencoTsubo p{
+.elencoPunti p{
 	text-align:left;
 	height:30px;
 	line-height:30px;
 	margin:0px;
 }
-#scheda_testo .elencoTsubo p:not(.categoriaGruppo){
+#scheda_testo .elencoPunti p:not(.categoriaGruppo){
 	height:25px;
 	line-height:25px;
 }
-#scheda_testo .elencoTsubo p.categoriaGruppo{
+#scheda_testo .elencoPunti p.categoriaGruppo{
 	margin-top:10px !important;
 }
-.smart.android .elencoTsubo p{
+.smart.android .elencoPunti p{
 	height:40px !important;
 	line-height:40px !important;
 }
@@ -316,17 +316,17 @@ body:not(.smart) #p_set{
 .onlyCIN .noCIN{
 	display:none !important;
 }*/
-#elencoTsubo > p > a.lockedItem{
+#elencoPunti > p > a.lockedItem{
     cursor: default !important;
 	background-image: url(../../img/lockB.png) !important;
     background-size: auto 70% !important;
     background-position: right 5px !important;
 	cursor:default !important;
 }
-#elencoTsubo > p > a.lockedItem i{
+#elencoPunti > p > a.lockedItem i{
 	color: rgba(255,255,255,0.2) !important;
 }
-#elencoTsubo > p > a.lockedItem span{
+#elencoPunti > p > a.lockedItem span{
 	opacity: 0.3 !important;
 }
 body:not(.smart) .listaPunti,
@@ -501,7 +501,7 @@ body:not(.touch) .listaPunti .spazioDopo{
 .smart.android .lista > div:not(.loading):not(.menuElenchi) {
 	padding-right:7px;
 }
-.tab_tsubo h1{
+.tab_punti h1{
 	margin-bottom:10px;
 }
 #setting_point{
@@ -865,7 +865,7 @@ body:not(.smart) .listaPunti .p_aria:not(.elencoSel) span:hover{
 	.touch #elenchi #lista_punti div > div span{
 		height: 50px;
 	}
-	body:not(.smart) #elencoTsubo > p > a.lockedItem b {
+	body:not(.smart) #elencoPunti > p > a.lockedItem b {
 		margin-left: 14px;
 	}
 	.smart .listaPunti > div b {

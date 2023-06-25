@@ -71,21 +71,6 @@ var MODULO_TEORIA = { // extend SET
 		var titolo = DB.set.teoria[p].contenuti[t].TitoloTeoria;
 		var html = "<h1>"+htmlEntities(titolo)+"</h1>";
 		var html_cont = SET.convPuntiScheda(DB.set.teoria[p].contenuti[t].TestoTeoria);
-
-		/*
-		// SCRIVE L'ELENCO DEGLI TSUBO DEL MERIDIANO
-		if(p==1){
-			var mAtt=DB.set.teoria[SET.idTeoMeridiani].contenuti[t].sigla;
-			var elencoTsubo='<b>Elenco degli tsubo</b>';
-			for(let s in DB.set.meridiani[mAtt].tsubo){
-				var TS = DB.set.meridiani[mAtt].tsubo[s];
-				elencoTsubo+='<p>'+this.scriviTsubo(TS.NomeTsubo,true)+'</p>';
-			}
-			html_cont = '<div class="col50">'+html_cont+'</div>' +
-						'<div class="col50 elencoTsubo">' +
-							elencoTsubo +
-						'</div>';
-		}*/
 		html += html_cont;
 		
 		var ritorno = false;
@@ -97,7 +82,7 @@ var MODULO_TEORIA = { // extend SET
 							
 		SCHEDA.caricaScheda( 	titolo,
 								html,
-								'SET.annullaEvidenziaTsubo();SET.spegniMeridiani(true);',
+								'SET.annullaEvidenziaPunto();SET.spegniMeridiani(true);',
 								'scheda_teoria',
 								ritorno,
 								true,
@@ -105,7 +90,7 @@ var MODULO_TEORIA = { // extend SET
 								btnAdd,
 								globals.set.cartella+'_teoria_'+p+"_"+t );
 		SET.convSigleScheda();
-		SET.evidenziaTsubo(/*html*/);
+		SET.evidenziaPunto(/*html*/);
 	},
 	caricaVideo: function( p, t, btn ){
 		// carica un approfondimento video
@@ -134,7 +119,7 @@ var MODULO_TEORIA = { // extend SET
 		
 		SCHEDA.caricaScheda( 	titolo,
 								html,
-								'SET.annullaEvidenziaTsubo();SET.spegniMeridiani(true);',
+								'SET.annullaEvidenziaPunto();SET.spegniMeridiani(true);',
 								'scheda_video',
 								false,
 								true,

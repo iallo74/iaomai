@@ -936,43 +936,43 @@ cont_p_paz_label{
     display: inline-block;
     float: right;
 }
-#puntiTsuboMap,
+#puntiMTC,
 #puntiNamikoshi,
-#meridianiTsuboMap,
-#puntiAuriculoMap{ /* PAZIENTI */
+#meridianiMTC,
+#puntiAuricolari{ /* PAZIENTI */
 	height:auto !important;
 	padding-top: 12px;
 }
-#puntiTsuboMap > div,
+#puntiMTC > div,
 #puntiNamikoshi > div,
-#meridianiTsuboMap > div,
-#puntiAuriculoMap > div{ /* PAZIENTI */
+#meridianiMTC > div,
+#puntiAuricolari > div{ /* PAZIENTI */
 	border-bottom:none !important;
     border-radius: 6px;
 	background-color:rgba(0,0,0,0.05);
 }
-#puntiTsuboMap > div:not(.pushDrag_before),
+#puntiMTC > div:not(.pushDrag_before),
 #puntiNamikoshi > div:not(.pushDrag_before),
-#meridianiTsuboMap > div:not(.pushDrag_before),
-#puntiAuriculoMap > div:not(.pushDrag_before){ /* PAZIENTI */
+#meridianiMTC > div:not(.pushDrag_before),
+#puntiAuricolari > div:not(.pushDrag_before){ /* PAZIENTI */
 	margin-top:0px !important;
 }
-#puntiTsuboMap > div:not(.pushDrag_after),
+#puntiMTC > div:not(.pushDrag_after),
 #puntiNamikoshi > div:not(.pushDrag_after),
-#meridianiTsuboMap > div:not(.pushDrag_after),
-#puntiAuriculoMap > div:not(.pushDrag_after){ /* PAZIENTI */
+#meridianiMTC > div:not(.pushDrag_after),
+#puntiAuricolari > div:not(.pushDrag_after){ /* PAZIENTI */
 	margin-bottom: 2px !important;
 }
-#puntiTsuboMap > div,
+#puntiMTC > div,
 #puntiNamikoshi > div,
-#puntiAuriculoMap > div{ /* PAZIENTI */
+#puntiAuricolari > div{ /* PAZIENTI */
 	height:auto !important;
 	line-height:normal !important;
 }
-#puntiTsuboMap img.noMod,
+#puntiMTC img.noMod,
 #puntiNamikoshi img.noMod,
-#meridianiTsuboMap img.noMod,
-#puntiAuriculoMap img.noMod{ /* PAZIENTI */
+#meridianiMTC img.noMod,
+#puntiAuricolari img.noMod{ /* PAZIENTI */
 	vertical-align: -webkit-baseline-middle;
 	margin-top: -9px;
 	height: 15px;
@@ -1157,7 +1157,7 @@ cont_p_paz_label{
     margin-bottom: 5px;
 }
 #formCommenti input:not([type="checkbox"]), /* procedura */
-#formAnnotazioni input:not([type="checkbox"]), /* --tsubo-- */
+#formAnnotazioni input:not([type="checkbox"]), /* --punti-- */
 #formMod input:not([type="checkbox"]):not([type="file"]), /* PAZIENTI */
 #formFeedback input:not([type="checkbox"]){ /* #feedback# */
 	background-color:rgba(255,255,255,0.5);
@@ -1519,9 +1519,9 @@ body:not(.smart) #scheda:not(.scheda_procedura) .dettMeridiano span:not(.valPunt
 #scheda .p_fuoco_supplementare span{
 	color:#FFF !important;
 }
-body:not(.touch) #puntiTsuboMap .dettPunto:hover,
+body:not(.touch) #puntiMTC .dettPunto:hover,
 body:not(.touch) #puntiNamikoshi .dettPunto:hover,
-body:not(.touch) #puntiAuriculoMap .dettPunto:hover{
+body:not(.touch) #puntiAuricolari .dettPunto:hover{
 	background-color:rgba(0,0,0,0.1) !important;
 }
 #dettagliCont .dettPunto,
@@ -1548,26 +1548,26 @@ body:not(.touch) #puntiAuriculoMap .dettPunto:hover{
 .sch_Max450 .valPunto{
     width: 38px !important;
 }
-#puntiTsuboMap .cestino,
+#puntiMTC .cestino,
 #puntiNamikoshi .cestino,
-#meridianiTsuboMap .cestino,
-#puntiAuriculoMap .cestino{
+#meridianiMTC .cestino,
+#puntiAuricolari .cestino{
 	margin:7px 10px 7px 10px;
 	margin-left:0px;
 	cursor:pointer !important;
 	opacity:0.5;
 	float:right;
 }
-.smart #puntiTsuboMap .cestino,
+.smart #puntiMTC .cestino,
 .smart #puntiNamikoshi .cestino,
-.smart #meridianiTsuboMap .cestino,
-.smart #puntiAuriculoMap .cestino{
+.smart #meridianiMTC .cestino,
+.smart #puntiAuricolari .cestino{
 	margin: 13px 9px 12px 0px !important;
 }
 
 
-.smart #puntiTsuboMap .valPunto,
-.smart #puntiTsuboMap .mezzoPunto{
+.smart #puntiMTC .valPunto,
+.smart #puntiMTC .mezzoPunto{
     margin-top: -6px !important;
 }
 .rgMod .valPunto,
@@ -1759,7 +1759,7 @@ body:not(.touch) #puntiAuriculoMap .dettPunto:hover{
 }
 #p_sch_salva, /* procedura */
 #p_sch_annulla, /* procedura */
-#formAnnotazioni button{ /* tsubo */
+#formAnnotazioni button{ /* punti */
 	border-radius:5px;
 	box-shadow:0px 0px 3px #000;
 	padding:5px;
@@ -1810,12 +1810,12 @@ body:not(.touch) #puntiAuriculoMap .dettPunto:hover{
 .smart .selectTratt{
 	text-align-last: center;
 }
-.smart #puntiTsuboMap .numPoints,
-.smart #puntiTsuboMap .selectTratt{
+.smart #puntiMTC .numPoints,
+.smart #puntiMTC .selectTratt{
 	width:64px !important;
 	text-align:center !important;
 }
-.smart #puntiTsuboMap .numPoints.numNamikoshi{
+.smart #puntiMTC .numPoints.numNamikoshi{
 	width:164px !important;
 }
 .sch_Max450 .rgProcMod.dettNamikoshi .numPoints.numNamikoshi{

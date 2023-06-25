@@ -1246,7 +1246,7 @@ var LOGIN = {
 				
 				syncJSN += '}';
 				if(!dwnl){
-					CONN.caricaUrl(	"sincro_globale_2_6.php",
+					CONN.caricaUrl(	"sincro_GLOBAL.php",
 									"b64=1&JSNPOST="+window.btoa(encodeURIComponent(syncJSN)), 
 									"LOGIN.retGlobalSyncro");
 				}else{
@@ -1327,7 +1327,7 @@ var LOGIN = {
 				if(BACKUPS.bkpProvv)elenco.note[p].DataModifica = lastSync*1;
 				JSNPUSH={	"TestoAnnotazione": elenco.note[p].TestoAnnotazione,
 							"meridiano": elenco.note[p].meridiano,
-							"numeroTsubo": elenco.note[p].numeroTsubo+'',//*1,
+							"numeroPunto": elenco.note[p].numeroPunto+'',//*1,
 							"idPaziente": elenco.note[p].idPaziente*1,
 							"idCL": id_interno,
 							"app": __(elenco.note[p].app,''),
@@ -1336,7 +1336,7 @@ var LOGIN = {
 				for(let k in DB.note.data){
 					var NT = DB.note.data[k];
 					if(	NT.meridiano==elenco.note[p].meridiano && 
-						NT.numeroTsubo+''==elenco.note[p].numeroTsubo+'' && 
+						NT.numeroPunto+''==elenco.note[p].numeroPunto+'' && 
 						NT.idPaziente==elenco.note[p].idPaziente){
 						// se esiste aggiorna
 						DB.note.data[k]=JSNPUSH;
@@ -1364,7 +1364,7 @@ var LOGIN = {
 							cancello l'elemento locale
 						*/
 						if(	NT.meridiano==elenco.note[p].meridiano && 
-							NT.numeroTsubo+''==elenco.note[p].numeroTsubo+'' && 
+							NT.numeroPunto+''==elenco.note[p].numeroPunto+'' && 
 							NT.idPaziente==elenco.note[p].idPaziente){
 							trovato = true;
 						}
@@ -1790,12 +1790,12 @@ var LOGIN = {
 					for(t in trattamenti){ // in tutti i trattamenti arrivati
 						passato=false;
 						
-						var puntiTsuboMap = trattamenti[t].puntiTsuboMap;
+						var puntiMTC = trattamenti[t].puntiMTC;
 						
-						if(puntiTsuboMap.substr(0,1)!="["){
-							if(puntiTsuboMap.indexOf(".")>-1){
+						if(puntiMTC.substr(0,1)!="["){
+							if(puntiMTC.indexOf(".")>-1){
 								var puntiProvvisori = [];
-								var parti=puntiTsuboMap.split("|");
+								var parti=puntiMTC.split("|");
 								for(let pt in parti){
 									var ppp = parti[pt].split(".");
 									puntiProvvisori.push({
@@ -1804,8 +1804,8 @@ var LOGIN = {
 										e: ppp[2]
 									});
 								}
-								puntiTsuboMap = JSON.stringify(puntiProvvisori);
-							}else puntiTsuboMap = '[]';
+								puntiMTC = JSON.stringify(puntiProvvisori);
+							}else puntiMTC = '[]';
 						}
 						
 						if(BACKUPS.bkpProvv)trattamenti[t].DataModifica = lastSync*1;
@@ -1814,8 +1814,8 @@ var LOGIN = {
 									"TitoloTrattamento": trattamenti[t].TitoloTrattamento,
 									"TestoTrattamento": trattamenti[t].TestoTrattamento,
 									"Prescrizione": trattamenti[t].Prescrizione,
-									"puntiTsuboMap": puntiTsuboMap,
-									"puntiAuriculoMap": trattamenti[t].puntiAuriculoMap,
+									"puntiMTC": puntiMTC,
+									"puntiAuricolari": trattamenti[t].puntiAuricolari,
 									"puntiNamikoshi": trattamenti[t].puntiNamikoshi,
 									"meridiani": trattamenti[t].meridiani,
 									"sintomi": trattamenti[t].sintomi,
@@ -2418,18 +2418,18 @@ var LOGIN = {
 								txtSintomi=txtSintomi.substr(0,txtSintomi.length-2);
 								LOGIN.addHTML("<i>"+TXT("Sintomi")+":</i> "+txtSintomi+"<br>");
 							}
-							if(trattamenti[t].puntiTsuboMap){
-								var punti=JSON.parse(trattamenti[t].puntiTsuboMap);
+							if(trattamenti[t].puntiMTC){
+								var punti=JSON.parse(trattamenti[t].puntiMTC);
 								var txtPunti='';
 								for(let f in punti){
-									nTsubo=punti[f].n*1;
+									nPunto=punti[f].n*1;
 									siglaMeridiano=punti[f].m;
 									valutazione=__(punti[f].e);
 									mezzo=__(punti[f].z);
 									descrizione=__(punti[f].t);
-									siglaTsubo=__(punti[f].s);
-									if(!siglaTsubo)txtPunti+=siglaMeridiano+"."+nTsubo;
-									else txtPunti+=siglaTsubo;
+									siglaPunto=__(punti[f].s);
+									if(!siglaPunto)txtPunti+=siglaMeridiano+"."+nPunto;
+									else txtPunti+=siglaPunto;
 									if(valutazione=='V')txtPunti+=' (vuoto)';
 									if(valutazione=='P')txtPunti+=' (pieno)';
 									if(valutazione=='D')txtPunti+=' (dolorante)';
@@ -2444,7 +2444,7 @@ var LOGIN = {
 								var punti=JSON.parse(trattamenti[t].puntiNamikoshi);
 								var txtPunti='';
 								for(let f in punti){
-									siglaTsubo=punti[f].s;
+									siglaPunto=punti[f].s;
 									valutazione=__(punti[f].e);
 									mezzo=__(punti[f].z);
 									descrizione=__(punti[f].t);
@@ -2475,11 +2475,11 @@ var LOGIN = {
 								txtMeridiani=txtMeridiani.substr(0,txtMeridiani.length-2);
 								if(txtMeridiani)LOGIN.addHTML("<i>"+TXT("MeridianiTrattamento")+":</i> "+txtMeridiani+"<br>");
 							}
-							if(trattamenti[t].puntiAuriculoMap){
-								var punti=JSON.parse(trattamenti[t].puntiAuriculoMap);
+							if(trattamenti[t].puntiAuricolari){
+								var punti=JSON.parse(trattamenti[t].puntiAuricolari);
 								var txtPunti='';
 								for(let f in punti){
-									siglaTsubo=punti[f].s;
+									siglaPunto=punti[f].s;
 									valutazione=__(punti[f].e);
 									mezzo=__(punti[f].z);
 									descrizione=__(punti[f].t);
@@ -2521,7 +2521,7 @@ var LOGIN = {
 				if(note.length>0){
 					LOGIN.addHTML("<br><i>"+TXT("ANNOTAZIONI")+":</i><br><div class=\"rientro\">");
 					for(let n in note){
-						LOGIN.addHTML("<b>"+note[n].meridiano+" "+note[n].numeroTsubo+"</b>: "+note[n].TestoAnnotazione.replace(/\n/gi,"<br>")+"<br>");
+						LOGIN.addHTML("<b>"+note[n].meridiano+" "+note[n].numeroPunto+"</b>: "+note[n].TestoAnnotazione.replace(/\n/gi,"<br>")+"<br>");
 					}
 					LOGIN.addHTML("</div>");
 				}
@@ -2562,7 +2562,7 @@ var LOGIN = {
 	
 		for(let n in backup.note){
 			if(backup.note[n].TestoAnnotazione && backup.note[n].idPaziente==-1 && backup.note[n].Cancellato!='1'){
-				LOGIN.addHTML("<b class=\"tits\">"+backup.note[n].meridiano+" "+backup.note[n].numeroTsubo+"</b>: "+ backup.note[n].TestoAnnotazione.replace(/\n/gi,"<br>")+"<br>");
+				LOGIN.addHTML("<b class=\"tits\">"+backup.note[n].meridiano+" "+backup.note[n].numeroPunto+"</b>: "+ backup.note[n].TestoAnnotazione.replace(/\n/gi,"<br>")+"<br>");
 				
 				LOGIN.addHTML("<hr>");
 			}

@@ -138,11 +138,11 @@ function init() {
 			scaricaModello();
 			if(getVar("demo")){
 				if(	getVar("demo")=='anatomymap' || 
-					getVar("demo")=='tsubomap' ||
+					getVar("demo")=='acupointsmap' ||
 					getVar("demo")=='shiatsumap')cambiaModello('donna');
 				if(getVar("demo")=='auriculomap' )caricaModello('orecchio');
 				
-				/*if(getVar("demo")=='tsubomap')caricaSet('meridiani_cinesi');
+				/*if(getVar("demo")=='acupointsmap')caricaSet('meridiani_cinesi');
 				if(getVar("demo")=='shiatsumap')caricaSet('meridiani_shiatsu');
 				if(getVar("demo")=='auriculomap')caricaSet('auricologia');*/
 				if(getVar("demo")=='pazienti'){

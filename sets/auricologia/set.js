@@ -17,7 +17,7 @@ SET = {
 	diffY: 0,
 	mAtt: '',
 	tmChiusura: null,
-	tsuboEvidenziati: [],
+	puntiEvidenziati: [],
 	pMod: '',
 	pointEvi: '',
 	geometryPallino: null,
@@ -437,14 +437,14 @@ SET = {
 		// unisco i moduli al set
 		Object.assign(SET, MODULO_PATOLOGIE);
 		Object.assign(SET, MODULO_PUNTI);
-		Object.assign(SET, MODULO_TSUBO);
+		Object.assign(SET, MODULO_PUNTO);
 		Object.assign(SET, MODULO_TEORIA);
 		Object.assign(SET, MODULO_PROCEDURE);
 		
 		// svuoto la memoria
 		MODULO_PATOLOGIE = null;
 		MODULO_PUNTI = null;
-		MODULO_TSUBO = null;
+		MODULO_PUNTO = null;
 		MODULO_TEORIA = null;
 		MODULO_PROCEDURE = null;
 		
@@ -602,7 +602,7 @@ SET = {
 					var name=this.INTERSECTED.name;
 					if(name.substr(0,1)=='_')name = name.substr(3,name.length-3);
 					else name = name.substr(2,name.length-2);
-					visToolTip(DB.set.punti[name].NomeTsubo);
+					visToolTip(DB.set.punti[name].NomePunto);
 					renderer.domElement.style.cursor='pointer';
 					SET.coloraPunti(name,'Over');
 				}
@@ -686,8 +686,8 @@ SET = {
 					var name=this.INTERSECTED.name;
 					if(name.substr(0,1)=='_')name = name.substr(1,name.length-1);
 					var ritorno = '';
-					if(SCHEDA.classeAperta && SCHEDA.classeAperta!='tab_tsubo')ritorno = 'SET.chiudiTsubo(true)';
-					SET.apriTsubo(name,ritorno,this.INTERSECTED);
+					if(SCHEDA.classeAperta && SCHEDA.classeAperta!='tab_punti')ritorno = 'SET.chiudiPunto(true)';
+					SET.apriPunto(name,ritorno,this.INTERSECTED);
 				}
 			}
 		}
@@ -698,7 +698,7 @@ SET = {
 	},
 	
 	
-	apriTsubo: function( PT_name, ritorno='', el='' ){
+	apriPunto: function( PT_name, ritorno='', el='' ){
 		var PT=scene.getObjectByName( PT_name );
 		if(typeof(PT)=='undefined')PT = scene.getObjectByName( PT_name.replace("PT","AR") );
 		var type = (PT.userData.type == 'point')?"punti":"aree";
@@ -718,7 +718,7 @@ SET = {
 			if(this.ptSel.userData.nota)mat=this.MAT.pointNote;
 			SET.setPulsePt( this.ptSel, 1, 1, mat );
 			if(document.getElementById("ts_"+this.ptSel.name.substr(2,3)))document.getElementById("ts_"+this.ptSel.name.substr(2,3)).classList.remove("selElPt");
-			SET.chiudiTsubo(true);
+			SET.chiudiPunto(true);
 		}
 		
 		this.ptSel=PT;
@@ -821,11 +821,11 @@ SET = {
 		
 		
 		
-		SET.caricaTsubo( name, ritorno );
+		SET.caricaPunto( name, ritorno );
 	},
-	chiudiTsubo: function( nonChiudereScheda=false ){
+	chiudiPunto: function( nonChiudereScheda=false ){
 		if(!this.ptSel)return;
-		document.getElementById("scheda").classList.remove("tab_tsubo");
+		document.getElementById("scheda").classList.remove("tab_punti");
 		document.getElementById("scheda").classList.remove("schForm");
 		if(document.getElementById("ts_"+this.ptSel.name.substr(2,3)))
 			document.getElementById("ts_"+this.ptSel.name.substr(2,3)).classList.remove("selElPt");
@@ -870,7 +870,7 @@ SET = {
 			for(e in els){
 				if(els[e].name.indexOf("AR"+this.ptSel.name.substr(2,3))==0){
 					system = els[e].userData.system;
-					if(SET.tsuboEvidenziati.indexOf(this.ptSel.name.substr(2,3))>-1){
+					if(SET.puntiEvidenziati.indexOf(this.ptSel.name.substr(2,3))>-1){
 						system = 'Evi';
 						tipo='';
 					}else tipo='Base';
@@ -912,57 +912,57 @@ SET = {
 		manichinoCont.position.z = manichinoCont.position.z - (vector2.z-vector.z);
 		controlsM._ZPR = false;
 		render();
-		SET.overTsubo( exPt.name, false );
+		SET.overPunto( exPt.name, false );
 	},
 	_applyLineMethod: function(){
 		//
 	},
-	scriviTsubo: function( siglaTsubo, esteso=false, noRet=false, col ){
+	scriviPunto: function( siglaPunto, esteso=false, noRet=false, col ){
 		
-		var nomeTsubo = DB.set.punti[siglaTsubo].NomeTsubo;
+		var nomePunto = DB.set.punti[siglaPunto].NomePunto;
 		var EL = null;
-		if(scene.getObjectByName( "PT"+siglaTsubo ))EL=scene.getObjectByName( "PT"+siglaTsubo );
-		if(scene.getObjectByName( "AR"+siglaTsubo ))EL=scene.getObjectByName( "AR"+siglaTsubo );
+		if(scene.getObjectByName( "PT"+siglaPunto ))EL=scene.getObjectByName( "PT"+siglaPunto );
+		if(scene.getObjectByName( "AR"+siglaPunto ))EL=scene.getObjectByName( "AR"+siglaPunto );
 		
 		var html = '<a class="pallinoPat';
 		if(esteso)html += ' pallinoPatEsteso';
 		if(col)html += ' noPall';
 		if(__(EL.userData.locked,false))html+=' lockedItem';
 		var ret = '';
-		if(!noRet)ret = SET.chiudiTsubo(true);
+		if(!noRet)ret = SET.chiudiPunto(true);
 		html += '"';
 		if(col)html+= ' style="border-left:6px solid #'+col+'"';
-		html+= ' onClick="SET.apriTsubo(\''+EL.name+'\',\''+ret+'\');"';
-		if(noRet)html += '  onMouseOver="SET.overTsubo(\''+EL.name+'\',true);"' +
-						 '  onMouseOut="SET.overTsubo(\''+EL.name+'\',false);"' +
-						 '	id="ts_'+siglaTsubo.replace('.','_')+'"';
+		html+= ' onClick="SET.apriPunto(\''+EL.name+'\',\''+ret+'\');"';
+		if(noRet)html += '  onMouseOver="SET.overPunto(\''+EL.name+'\',true);"' +
+						 '  onMouseOut="SET.overPunto(\''+EL.name+'\',false);"' +
+						 '	id="ts_'+siglaPunto.replace('.','_')+'"';
 		html += '>';
 		var system = EL.userData.system;
 		if(!system)system = 'INT';
 		html += '<span class="p'+system+'"></span>';
-		if(esteso)html+='<i>'+nomeTsubo+'</i>';
+		if(esteso)html+='<i>'+nomePunto+'</i>';
 		html+='</a>';
 		return html;
 	},
-	selTsubo: function( PT ){
+	selPunto: function( PT ){
 		// verifico le autorizzazioni
 		if(!SET.verFreePunti(PT)){
 			ALERT(TXT("MsgContSoloPay"),true,true);
 			return;
 		}
 		// --------------------------
-		SET.apriTsubo("PT"+PT,'SET.chiudiTsubo(true);');
+		SET.apriPunto("PT"+PT,'SET.chiudiPunto(true);');
 	},
 	selArea: function( PT ){
-		SET.selTsubo(PT);
+		SET.selPunto(PT);
 	},
-	selTsuboMod: function( PT, p ){
+	selPuntoMod: function( PT, p ){
 		if(!PT)return;
 		SET.pMod = PT;
 		PT = document.getElementById("formMod")["pt_"+p].value;
-		SET.selTsubo( PT );
+		SET.selPunto( PT );
 	},
-	setTsuboFrm: function(){
+	setPuntoFrm: function(){
 		var ptP = SET.ptSel.name;
 		if( SCHEDA.classeAperta == 'scheda_procedura' ){
 			SET.dettagliProvvisori[SET.pMod].DescrizioneDettaglio = ptP;
@@ -976,21 +976,21 @@ SET = {
 		SCHEDA.torna();
 		SCHEDA.formModificato = true;
 	},
-	evidenziaTsubo: function( html, anatomia='', mappa='', lm='' ){
-		SET.annullaEvidenziaTsubo(true);
-		var re = /selTsubo\([^\)]+\)/ig;
+	evidenziaPunto: function( html, anatomia='', mappa='', lm='' ){
+		SET.annullaEvidenziaPunto(true);
+		var re = /selPunto\([^\)]+\)/ig;
 		var result = html.match(re);
 		for(let k in result){
 			var pT=result[k].split("'");
-			var siglaTsubo = pT[1];
+			var siglaPunto = pT[1];
 			
 			// verifico le autorizzazioni
-			if(SET.verFreePunti(siglaTsubo)){
-				SET.tsuboEvidenziati.push(siglaTsubo);
+			if(SET.verFreePunti(siglaPunto)){
+				SET.puntiEvidenziati.push(siglaPunto);
 			}
 			// --------------------------
 		}
-		SET.applicaEvidenziaTsubo(anatomia,mappa,lm);
+		SET.applicaEvidenziaPunto(anatomia,mappa,lm);
 		/*
 		//-------------------- MOSTRA LINEE
 		//SET.hideGroupLines();
@@ -1004,24 +1004,24 @@ SET = {
 			}
 		}
 		//----------------*/
-		SET.settaOverTsubo();
+		SET.settaOverPunto();
 	},
-	evidenziaTsuboMod: function( elenco ){
-		SET.annullaEvidenziaTsubo();
+	evidenziaPuntoMod: function( elenco ){
+		SET.annullaEvidenziaPunto();
 		for(let k in elenco){
-			siglaTsubo = elenco[k].split(".")[0];
-			SET.tsuboEvidenziati.push(siglaTsubo);
+			siglaPunto = elenco[k].split(".")[0];
+			SET.puntiEvidenziati.push(siglaPunto);
 		}
-		SET.applicaEvidenziaTsubo();
+		SET.applicaEvidenziaPunto();
 	},
-	applicaEvidenziaTsubo: function( anatomia, mappa, lm='' ){
-		if(SET.tsuboEvidenziati.length || anatomia){
+	applicaEvidenziaPunto: function( anatomia, mappa, lm='' ){
+		if(SET.puntiEvidenziati.length || anatomia){
 			var phs = ["","2","3"];
 			for(let ph in phs){
 				var els = scene.getObjectByName("PTs"+phs[ph]).children;
 				for(e in els){
-					var siglaTsubo = els[e].name.replace("_","").substr(2,3);
-					if(SET.tsuboEvidenziati.indexOf(siglaTsubo)>-1){
+					var siglaPunto = els[e].name.replace("_","").substr(2,3);
+					if(SET.puntiEvidenziati.indexOf(siglaPunto)>-1){
 						if(els[e].name.substr(0,1)=='_')els[e].material=SET.MAT.pointEvi;
 						else els[e].material.opacity = 1;
 						els[e].visible = true;
@@ -1031,8 +1031,8 @@ SET = {
 				}
 				var els = scene.getObjectByName("ARs"+phs[ph]).children;
 				for(e in els){
-					var siglaTsubo = els[e].name.substr(2,3);
-					if(SET.tsuboEvidenziati.indexOf(siglaTsubo)>-1){
+					var siglaPunto = els[e].name.substr(2,3);
+					if(SET.puntiEvidenziati.indexOf(siglaPunto)>-1){
 						els[e].material=SET.MAT.areaEvi;
 						els[e].material.opacity = 0.7;
 						els[e].visible = true;
@@ -1052,7 +1052,7 @@ SET = {
 				MODELLO.op("Pelle",parseFloat(anatomia.Pelle));
 				MODELLO.op("Ossa",parseFloat(anatomia.Ossa));
 				MODELLO.op("Visceri",parseFloat(anatomia.Visceri));
-				SET.tsuboEvidenziati.push("999"); // evita l'illuminazione dei punti al passaggio del mouse
+				SET.puntiEvidenziati.push("999"); // evita l'illuminazione dei punti al passaggio del mouse
 			}, 200, anatomia);
 		}
 		if(mappa){
@@ -1068,21 +1068,21 @@ SET = {
 			}, 200, lm);
 		}
 	},
-	annullaEvidenziaTsubo: function( forzaDissolve=false ){
-		if(SET.tsuboEvidenziati.length || forzaDissolve){
+	annullaEvidenziaPunto: function( forzaDissolve=false ){
+		if(SET.puntiEvidenziati.length || forzaDissolve){
 			var phs = ["","2","3"];
 			for(let ph in phs){
 				
 				var els = scene.getObjectByName("PTs"+phs[ph]).children;
 				for(e in els){
-					var siglaTsubo = els[e].name.replace("_","").substr(2,3);
-					var vis = !__(DB.set.punti[siglaTsubo].hidden,false);
-					if(SET.tsuboEvidenziati.indexOf(siglaTsubo)>-1){
-						if(els[e].name.indexOf("_PT"+siglaTsubo)==0){
+					var siglaPunto = els[e].name.replace("_","").substr(2,3);
+					var vis = !__(DB.set.punti[siglaPunto].hidden,false);
+					if(SET.puntiEvidenziati.indexOf(siglaPunto)>-1){
+						if(els[e].name.indexOf("_PT"+siglaPunto)==0){
 							els[e].material=SET.MAT.pointTrasp;
 							els[e].visible = vis;
 						}
-						if(els[e].name.indexOf("PT"+siglaTsubo)==0){
+						if(els[e].name.indexOf("PT"+siglaPunto)==0){
 							els[e].visible = vis;
 						}
 					}
@@ -1092,10 +1092,10 @@ SET = {
 				}
 				var els = scene.getObjectByName("ARs"+phs[ph]).children;
 				for(e in els){
-					var siglaTsubo = els[e].name.substr(2,3);
-					var vis = !__(DB.set.punti[siglaTsubo].hidden,false);
-					if(SET.tsuboEvidenziati.indexOf(siglaTsubo)>-1){
-						if(els[e].name.indexOf("AR"+siglaTsubo)==0){
+					var siglaPunto = els[e].name.substr(2,3);
+					var vis = !__(DB.set.punti[siglaPunto].hidden,false);
+					if(SET.puntiEvidenziati.indexOf(siglaPunto)>-1){
+						if(els[e].name.indexOf("AR"+siglaPunto)==0){
 							els[e].material=cloneMAT(eval("SET.MAT.areaBase"+els[e].userData.system));
 							els[e].visible = vis;
 						}
@@ -1120,32 +1120,32 @@ SET = {
 				SET.lmOr = '';
 			}
 		}
-		SET.tsuboEvidenziati = [];
+		SET.puntiEvidenziati = [];
 	},
-	settaOverTsubo: function(){
+	settaOverPunto: function(){
 		if(!touchable){
 			var els = document.getElementById("scheda_testo").getElementsByClassName("pallinoPat");
 			for(e=0;e<els.length;e++){
 				var onclick = els[e].onclick.toString();
-				if(onclick.indexOf("SET.selTsubo('")>-1){
-					els[e].dataset.siglaTsubo = onclick.split("SET.selTsubo('")[1].split("')")[0];
+				if(onclick.indexOf("SET.selPunto('")>-1){
+					els[e].dataset.siglaPunto = onclick.split("SET.selPunto('")[1].split("')")[0];
 				}
 				if(onclick.indexOf("SET.selArea('")>-1){
-					els[e].dataset.siglaTsubo = onclick.split("SET.selArea('")[1].split("')")[0];
+					els[e].dataset.siglaPunto = onclick.split("SET.selArea('")[1].split("')")[0];
 				}
 				els[e].onmouseover = function(){
-					SET.overTsubo("PT"+this.dataset.siglaTsubo,true);
+					SET.overPunto("PT"+this.dataset.siglaPunto,true);
 				}
 				els[e].onmouseout = function(){
-					SET.overTsubo("PT"+this.dataset.siglaTsubo,false);
+					SET.overPunto("PT"+this.dataset.siglaPunto,false);
 				}
 			}
 		}
 	},
-	ritOverTsubo: function( id, p ){
+	ritOverPunto: function( id, p ){
 		var el = document.getElementById("pt_"+p);
-		var siglaTsubo = el.value;
-		SET.overTsubo("PT"+siglaTsubo,false);
+		var siglaPunto = el.value;
+		SET.overPunto("PT"+siglaPunto,false);
 		var elenco = [];
 		var els = document.getElementById(id).getElementsByClassName("dettPunto");
 		var tot = els.length;
@@ -1153,7 +1153,7 @@ SET = {
 			var sl = els[e].getElementsByTagName("select");
 			elenco.push(sl[0].value);
 		}
-		SET.evidenziaTsuboMod(elenco);
+		SET.evidenziaPuntoMod(elenco);
 		SET.aggiornaDettaglio(el);
 	},
 	coloraPunti: function( PT_name, tipo ){
@@ -1166,7 +1166,7 @@ SET = {
 				system = els[e].userData.system;
 				if(eval("SET.MAT.point"+tipo+system).name != els[e].material.name){
 					els[e].material = cloneMAT(eval("SET.MAT.point"+tipo+system));
-					if(SET.tsuboEvidenziati.length && SET.tsuboEvidenziati.indexOf(PT_name)==-1){
+					if(SET.puntiEvidenziati.length && SET.puntiEvidenziati.indexOf(PT_name)==-1){
 						els[e].material.opacity = 0.5;
 					}else els[e].material.opacity = 1;
 				}
@@ -1184,15 +1184,15 @@ SET = {
 				}
 				if(eval("SET.MAT.area"+tipo+system).name != els[e].material.name){
 					els[e].material = cloneMAT(eval("SET.MAT.area"+tipo+system));
-					if(SET.tsuboEvidenziati.length){
-						if(SET.tsuboEvidenziati.indexOf(PT_name)>-1)els[e].material.opacity = 0.7;
+					if(SET.puntiEvidenziati.length){
+						if(SET.puntiEvidenziati.indexOf(PT_name)>-1)els[e].material.opacity = 0.7;
 						else els[e].material.opacity = 0.2;
 					}
 				}
 			}
 		}
 	},
-	overTsubo: function( PT_name, over ){
+	overPunto: function( PT_name, over ){
 		var name = PT_name.split(".")[0];
 		if(name.substr(0,1)=='_')name = name.substr(3,name.length-3);
 		else name = name.substr(2,name.length-2);
@@ -1235,20 +1235,20 @@ SET = {
 		var regexp = /\[\.[^\]]+\.\]/ig;
 		var pts = html.match(regexp);
 		for(let p in pts){
-			siglaTsubo = pts[p].split(".")[1];
-			NomeTsubo = DB.set.punti[siglaTsubo].NomeTsubo;
+			siglaPunto = pts[p].split(".")[1];
+			NomePunto = DB.set.punti[siglaPunto].NomePunto;
 			var EL = null;
-			if(scene.getObjectByName( "PT"+siglaTsubo ))EL=scene.getObjectByName( "PT"+siglaTsubo );
-			if(scene.getObjectByName( "AR"+siglaTsubo ))EL=scene.getObjectByName( "AR"+siglaTsubo );
+			if(scene.getObjectByName( "PT"+siglaPunto ))EL=scene.getObjectByName( "PT"+siglaPunto );
+			if(scene.getObjectByName( "AR"+siglaPunto ))EL=scene.getObjectByName( "AR"+siglaPunto );
 			var system = EL.userData.system;
 			if(!system)system = 'INT';
 			var pallClass = 'pallinoPat';
 			var addClick = '';
 			if(noPall){
-				pallClass += ' pallinoTsubo';
+				pallClass += ' pallinoPunto';
 				addClick = 'return;';
 			}
-			html = html.replace(pts[p], '<span class="'+pallClass+'" onClick="'+addClick+'SET.selTsubo(\''+siglaTsubo+'\')"><span class="p'+system+'"></span>'+NomeTsubo+'</span>');
+			html = html.replace(pts[p], '<span class="'+pallClass+'" onClick="'+addClick+'SET.selPunto(\''+siglaPunto+'\')"><span class="p'+system+'"></span>'+NomePunto+'</span>');
 		}
 		
 		return html;
@@ -1415,7 +1415,7 @@ SET = {
 		if(SET.groupSel.id)SET.filtraGruppo( SET.groupSel.type, SET.groupSel.val, SET.groupSel.id, true );
 	},
 	_caricaScheda: function( args ){
-		if( args.classe != 'tab_tsubo' && args.classe != SCHEDA.classeAperta)SET.pMod = '';
+		if( args.classe != 'tab_punti' && args.classe != SCHEDA.classeAperta)SET.pMod = '';
 	},
 	_scaricaScheda: function(){
 		SET.pMod = '';

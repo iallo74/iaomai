@@ -80,7 +80,7 @@ var MODULO_TEORIA = { // extend SET
 							
 		SCHEDA.caricaScheda( 	titolo,
 								html,
-								"SET.annullaEvidenziaTsubo();" +
+								"SET.annullaEvidenziaPunto();" +
 								"SET.spegniMeridiani(true);" +
 								"SET.spegniMeridianoSecondario('',true);" +
 								"SET.spegniMeridiani(true);",
@@ -91,7 +91,7 @@ var MODULO_TEORIA = { // extend SET
 								btnAdd,
 								globals.set.cartella+'_teoria_'+p+"_"+t );
 		SET.convSigleScheda();
-		SET.evidenziaTsubo(/*html*/);
+		SET.evidenziaPunto(/*html*/);
 		
 		SET.spegniMeridianoSecondario();
 		setTimeout( function(meridianiSecondari){
@@ -130,7 +130,7 @@ var MODULO_TEORIA = { // extend SET
 		
 		SCHEDA.caricaScheda( 	titolo,
 								html,
-								'SET.annullaEvidenziaTsubo();SET.spegniMeridiani(true);',
+								'SET.annullaEvidenziaPunto();SET.spegniMeridiani(true);',
 								'scheda_video',
 								false,
 								true,

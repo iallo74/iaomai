@@ -27,7 +27,7 @@ var debug=false;
 //debug=true;
 
 
-var globals = {
+globals = {
 	siglaLingua: 'ita',
 	memorizza: false,
 	open3d: true,

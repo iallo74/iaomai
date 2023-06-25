@@ -1,4 +1,3 @@
-
 var FORNITORI = {
 	fornOp: false,
 		

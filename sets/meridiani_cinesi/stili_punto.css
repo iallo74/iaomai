@@ -1,13 +1,12 @@
 @charset "utf-8";
 /* CSS Document */
 
-
-#patologieTsubo{
+#patologiePunti{
 	margin-top:13px;
 	margin-bottom:13px;
     margin-right: -13px;
 }
-#patologieTsubo:not(.vis){
+#patologiePunti:not(.vis){
 	overflow:hidden;
 	height:30px;
 	margin-bottom: 20px;
@@ -16,7 +15,7 @@
     padding-left: 13px;
     margin-left: -13px;
 }
-#patologieTsubo div:first-child{
+#patologiePunti div:first-child{
 	height:30px;
 	line-height:30px;
 	font-weight:bold;
@@ -27,15 +26,15 @@
 	background-repeat:no-repeat;
 	background-size: auto 40px;
 }
-#patologieTsubo.vis div:first-child{
+#patologiePunti.vis div:first-child{
 	background-image:url(../../img/frSuB.png) !important;
 }
-#patologieTsubo p{
+#patologiePunti p{
 	margin-top:4px;
 	margin-bottom:4px;
 	cursor:pointer;
 }
-#patologieTsubo span{
+#patologiePunti span{
 	display:inline-block;
 	line-height:20px;
 	height:22px;
@@ -43,7 +42,7 @@
 	border-radius:11px;
 	padding: 0px 10px;
 }
-#patologieTsubo span:hover{
+#patologiePunti span:hover{
 	background-color:rgba(0,0,0,0.2) !important;
 }
 

@@ -21,36 +21,36 @@ var RICERCHE = {
 		
 		
 		
-		// TsuboMap e ShiatsuMap
+		// AMap e ShiatsuMap
 		if(	globals.set.cartella == 'meridiani_cinesi' ||
 			globals.set.cartella == 'meridiani_shiatsu' ){
 			var R_parz='';
 			var nRisParz = 0;
 			
-			// CERCO negli TSUBO e nei MERIDIANI
+			// CERCO nei PUNTI e nei MERIDIANI
 			for (k in DB.set.meridiani) {
-				for (p in DB.set.meridiani[k].tsubo) {
-					var MER = DB.set.meridiani[k].tsubo[p];
-					var testo = MER.AzioniTsubo+" "+MER.NomeTsubo+" "+MER.ChiaviTsubo;
+				for (p in DB.set.meridiani[k].punti) {
+					var MER = DB.set.meridiani[k].punti[p];
+					var testo = MER.AzioniPunto+" "+MER.NomePunto+" "+MER.ChiaviPunto;
 						
 					testo = RICERCHE.pulisciTesto(testo);
 					
 					if(testo.toUpperCase().indexOf(parola.toUpperCase())>-1){
-						NT = MER.NomeTsubo;
+						NT = MER.NomePunto;
 						partiNT=NT.split(".");
-						siglaTsubo = partiNT[0];
-						var nomeTsubo = partiNT[0]+"."+partiNT[1];
+						siglaPunto = partiNT[0];
+						var nomePunto = partiNT[0]+"."+partiNT[1];
 						if(globals.set.cartella == 'meridiani_cinesi'){
-							if(__(MER.siglaTsubo))nomeTsubo = MER.siglaTsubo;
+							if(__(MER.siglaPunto))nomePunto = MER.siglaPunto;
 						}
-						NT = '<b>'+htmlEntities(nomeTsubo)+'</b>';
+						NT = '<b>'+htmlEntities(nomePunto)+'</b>';
 						for(let n=2;n<partiNT.length;n++){
 							NT+=partiNT[n];
 							if(n<partiNT.length-1)NT+=".";
 						}
 						if(partiNT[0].length == 1)partiNT[0]='0'+partiNT[0];
 						R_parz += RICERCHE.wR({
-							az: "SET.azRicercaTsubo('"+k+'.'+partiNT[0]+"');RICERCHE.nascondiGlobal();",
+							az: "SET.azRicercaPunto('"+k+'.'+partiNT[0]+"');RICERCHE.nascondiGlobal();",
 							cont: NT,
 							bull: '<font style="color:#FF0000;">&#8226;</font>' });
 						nRisParz++;
@@ -73,16 +73,16 @@ var RICERCHE = {
 			var R_parz='';
 			var nRisParz = 0;
 			// CERCO nei PUNTI AURICOLARI
-			for (siglaTsubo in DB.set.punti) {
-				var PT = DB.set.punti[siglaTsubo];
-				var testo = PT.AzioniTsubo+" "+PT.NomeTsubo+" "+PT.ChiaviTsubo;
+			for (siglaPunto in DB.set.punti) {
+				var PT = DB.set.punti[siglaPunto];
+				var testo = PT.AzioniPunto+" "+PT.NomePunto+" "+PT.ChiaviPunto;
 					
 				testo = RICERCHE.pulisciTesto(testo);
 				
 				if(testo.toUpperCase().indexOf(parola.toUpperCase())>-1){
 					R_parz += RICERCHE.wR({
-						az: "SET.azRicercaTsubo('"+siglaTsubo+"');RICERCHE.nascondiGlobal();",
-						cont: '<b>'+htmlEntities(PT.NomeTsubo)+'</b>',
+						az: "SET.azRicercaPunto('"+siglaPunto+"');RICERCHE.nascondiGlobal();",
+						cont: '<b>'+htmlEntities(PT.NomePunto)+'</b>',
 						bull: '<font style="color:#FF0000;">&#8226;</font>' });
 					nRisParz++;
 					nRis++;
@@ -108,41 +108,41 @@ var RICERCHE = {
 			for (p in DB.note.data) {
 				var NT = DB.note.data[p];
 				var testo=NT.TestoAnnotazione;
-				var NomeTsubo = siglaTsubo = '';
+				var NomePunto = siglaPunto = '';
 				testo=RICERCHE.pulisciTesto(testo);
-				var tsuboPass = (globals.set.cartella == 'auricologia') ? (NT.numeroTsubo) : (NT.numeroTsubo*1-1>-1);
-				if(testo.toUpperCase().indexOf(parola.toUpperCase())>-1 && NT.Cancellato!='1' && tsuboPass){
+				var puntiPass = (globals.set.cartella == 'auricologia') ? (NT.numeroPunto) : (NT.numeroPunto*1-1>-1);
+				if(testo.toUpperCase().indexOf(parola.toUpperCase())>-1 && NT.Cancellato!='1' && puntiPass){
 					
 					if(	( globals.set.cartella == 'meridiani_cinesi' || 
 						  globals.set.cartella == 'meridiani_shiatsu' ) && __(NT.app,'') == ''){
-						NomeTsubo = DB.set.meridiani[SET.leggiSiglaMeridiano(NT.meridiano)].tsubo[NT.numeroTsubo*1-1].NomeTsubo;
-						partiNT=NomeTsubo.split(".");
-						NomeTsubo='<b>'+htmlEntities(partiNT[0]+"."+partiNT[1])+"</b>";
+						NomePunto = DB.set.meridiani[SET.leggiSiglaMeridiano(NT.meridiano)].punti[NT.numeroPunto*1-1].NomePunto;
+						partiNT=NomePunto.split(".");
+						NomePunto='<b>'+htmlEntities(partiNT[0]+"."+partiNT[1])+"</b>";
 						for(let n=2;n<partiNT.length;n++){
-							NomeTsubo+=partiNT[n];
-							if(n<partiNT.length-1)NomeTsubo+=".";
+							NomePunto+=partiNT[n];
+							if(n<partiNT.length-1)NomePunto+=".";
 						}
 						if(partiNT[0].length == 1)partiNT[0]='0'+partiNT[0];
-						siglaTsubo = partiNT[1]+"."+partiNT[0];
+						siglaPunto = partiNT[1]+"."+partiNT[0];
 					}
 					if(	globals.set.cartella == 'auricologia' && __(NT.app,'') == 'AUR'){
-						NomeTsubo='<b>'+htmlEntities(DB.set.punti[NT.numeroTsubo].NomeTsubo)+"</b>";
-						siglaTsubo = "PT"+NT.numeroTsubo;
+						NomePunto='<b>'+htmlEntities(DB.set.punti[NT.numeroPunto].NomePunto)+"</b>";
+						siglaPunto = "PT"+NT.numeroPunto;
 					}
 					
 					var pass = true;
-					if(DB.note.data[p].idPaziente>-1 && siglaTsubo){
+					if(DB.note.data[p].idPaziente>-1 && siglaPunto){
 						pass = false;
 						for(let paz in DB.pazienti.data){
 							if(	DB.pazienti.data[paz].idPaziente == DB.note.data[p].idPaziente){
-								NomeTsubo += ' - '+DB.pazienti.data[paz].Nome+" "+DB.pazienti.data[paz].Cognome;
+								NomePunto += ' - '+DB.pazienti.data[paz].Nome+" "+DB.pazienti.data[paz].Cognome;
 								pass = true;
 							}
 						}
 					}
-					if(pass && siglaTsubo){
-						R_parz += RICERCHE.wR({ az: "SET.apriTsubo('"+siglaTsubo+"');RICERCHE.nascondiGlobal();",
-												cont: NomeTsubo,
+					if(pass && siglaPunto){
+						R_parz += RICERCHE.wR({ az: "SET.apriPunto('"+siglaPunto+"');RICERCHE.nascondiGlobal();",
+												cont: NomePunto,
 												bull: '<font style="color:#FFCC00;">&#8226;</font>' });
 						nRisParz++;
 						nRis++;

@@ -1,4 +1,3 @@
-
 var PAZIENTI_SALDI = {
 	// SALDI
 	caricaSaldi: function( Q_resta ){

@@ -1,4 +1,3 @@
-
 var COMMUNITY = {
 	
 	verifica: function(){

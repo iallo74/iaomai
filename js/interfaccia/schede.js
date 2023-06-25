@@ -175,10 +175,8 @@ var SCHEDA = {
 		document.getElementById("scheda_testo"+nScheda).innerHTML=html;
 		//document.getElementById("scheda_testo"+nScheda).classList.remove("translated");
 		
-		var html_to_translate = '';
 		if(trans_el = document.getElementById("scheda_testo"+nScheda).querySelector(".translatable")){
-			trans_el.innerHTML
-			eval('SCHEDA.htmlOr'+nScheda+' = html_to_translate');
+			SCHEDA["htmlOr"+nScheda] = trans_el.innerHTML;
 		}
 		
 		document.getElementById("scheda").classList.add("visSch");

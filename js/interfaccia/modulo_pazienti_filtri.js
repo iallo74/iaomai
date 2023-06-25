@@ -1,4 +1,3 @@
-
 var PAZIENTI_FILTRI = {
 	maxInvii: 100,
 	maxInviiMese: 1000,

@@ -1,20 +1,20 @@
 
-var MODULO_TSUBO = { // extend SET
+var MODULO_PUNTO = { // extend SET
 
 	note: [],
 	
-	caricaTsubo: function( siglaTsubo, ritorno ){ //  carica la scheda del punto
+	caricaPunto: function( siglaPunto, ritorno ){ //  carica la scheda del punto
 		// verifico le autorizzazioni
-		if(!SET.verFreePunti(siglaTsubo)){
+		if(!SET.verFreePunti(siglaPunto)){
 			ALERT(TXT("MsgContSoloPay"),true,true);
-			SET.chiudiTsubo();
+			SET.chiudiPunto();
 			return;
 		}
 		// --------------------------
 		
-		var titolo = DB.set.punti[siglaTsubo].NomeTsubo;
+		var titolo = DB.set.punti[siglaPunto].NomePunto;
 		for(a in DB.set.aree){
-			if(DB.set.aree[a].siglaTsubo == siglaTsubo)titolo = siglaTsubo+". "+titolo;
+			if(DB.set.aree[a].siglaPunto == siglaPunto)titolo = siglaPunto+". "+titolo;
 		}
 		var HTML = "<h1>"+htmlEntities(titolo)+"</h1>";
 		var HTML_simboli = '';
@@ -24,20 +24,20 @@ var MODULO_TSUBO = { // extend SET
 			lato = '',
 			system = '';
 		
-		if(GEOMETRIE.gruppi.FN.punti.indexOf(siglaTsubo)>-1)type = 'FN';
+		if(GEOMETRIE.gruppi.FN.punti.indexOf(siglaPunto)>-1)type = 'FN';
 		else type = 'NR';
-		if(GEOMETRIE.gruppi.MASTER.punti.indexOf(siglaTsubo)>-1)master = true;
+		if(GEOMETRIE.gruppi.MASTER.punti.indexOf(siglaPunto)>-1)master = true;
 		
 		var els = scene.getObjectByName("PTs"+SET.phase).children;
 		for(e in els){
-			if(els[e].name == "PT"+siglaTsubo){
+			if(els[e].name == "PT"+siglaPunto){
 				lato = els[e].userData.lato;
 				system = els[e].userData.system;
 			}
 		}
 		var els = scene.getObjectByName("ARs"+SET.phase).children;
 		for(e in els){
-			if(els[e].name == "AR"+siglaTsubo){
+			if(els[e].name == "AR"+siglaPunto){
 				lato = els[e].userData.lato;
 				system = els[e].userData.system;
 			}
@@ -83,27 +83,27 @@ var MODULO_TSUBO = { // extend SET
 		
 		if( ritorno && 
 			document.getElementById("scheda_testo").innerHTML.indexOf("formMod") > -1 && 
-			SCHEDA.classeAperta != "tab_tsubo" ){
+			SCHEDA.classeAperta != "tab_punti" ){
 				
 			// pulsante per la scelta del punto su trattamenti e procedure
 			var az = '';
 			var txt = '';
 			var cls = '';
 			var stesso = false;
-			var tsuboNuovo = siglaTsubo;
+			var puntoNuovo = siglaPunto;
 			if( SCHEDA.classeAperta == 'scheda_procedura' ){
-				if(SET.tsuboEvidenziati.indexOf(tsuboNuovo)==-1){
+				if(SET.puntiEvidenziati.indexOf(puntoNuovo)==-1){
 					// aggiungi il punto alla procedura
-					txt = TXT("AggiungiTsuboProc");
-					az = "SET.aggiungiDettaglio('A','"+tsuboNuovo+"');SCHEDA.torna();";
+					txt = TXT("AggiungiPuntoProc");
+					az = "SET.aggiungiDettaglio('A','"+puntoNuovo+"');SCHEDA.torna();";
 					cls = 'spAdd';
 				}else stesso = true;
 			}
 			if( SCHEDA.classeAperta == 'scheda_A' || SCHEDA.classeAperta == 'scheda_B' ){
-				if(SET.tsuboEvidenziati.indexOf(tsuboNuovo)==-1){
+				if(SET.puntiEvidenziati.indexOf(puntoNuovo)==-1){
 					// aggiungi il punto al trattamento
-					txt = TXT("AggiungiTsuboTratt");
-					az = "PAZIENTI.aggiungiAuriculoTrattamento('"+tsuboNuovo+"');SCHEDA.torna();";
+					txt = TXT("AggiungiPuntoTratt");
+					az = "PAZIENTI.aggiungiAuriculoTrattamento('"+puntoNuovo+"');SCHEDA.torna();";
 					cls = 'spAdd';
 				}else stesso = true;
 			}
@@ -113,12 +113,12 @@ var MODULO_TSUBO = { // extend SET
 										'</div>';
 										
 			else HTML_simboli += 	'<div id="spStesso">'+
-									htmlEntities(TXT("TsuboSelezionato")) +
+									htmlEntities(TXT("PuntoSelezionato")) +
 									'</div>';
 		}
 		if(HTML_simboli)HTML += '<div>'+HTML_simboli+'</div>';
 		
-		HTML += SET.convPuntiScheda(DB.set.punti[siglaTsubo].AzioniTsubo,true);
+		HTML += SET.convPuntiScheda(DB.set.punti[siglaPunto].AzioniPunto,true);
 		
 		
 		
@@ -130,7 +130,7 @@ var MODULO_TSUBO = { // extend SET
 					for(let x4 in DB.set.schede[x1][x2][x3].p){
 						var el = DB.set.schede[x1][x2][x3].p[x4];
 						if(typeof(el)=='string'){
-							if(DB.set.schede[x1][x2][x3].p[x4].indexOf(siglaTsubo) >- 1){
+							if(DB.set.schede[x1][x2][x3].p[x4].indexOf(siglaPunto) >- 1){
 								for(let p in DB.set.patologie){
 									if(DB.set.patologie[p].scheda == x1){
 										if(elenco.indexOf(p)==-1)elenco.push(p);
@@ -140,7 +140,7 @@ var MODULO_TSUBO = { // extend SET
 						}else{
 							if(typeof(el.length)=='undefined')el = el.p;
 							for(let x5 in el){
-								if(el[x5].indexOf(siglaTsubo) >- 1){
+								if(el[x5].indexOf(siglaPunto) >- 1){
 									for(let p in DB.set.patologie){
 										if(DB.set.patologie[p].scheda == x1){
 											if(elenco.indexOf(p)==-1)elenco.push(p);
@@ -158,7 +158,7 @@ var MODULO_TSUBO = { // extend SET
 		
 		
 		if(elenco.length){
-			HTML += '<div id="patologieTsubo">' +
+			HTML += '<div id="patologiePunti">' +
 					'	<div onClick="this.parentElement.classList.toggle(\'vis\');">'+TXT("Patologie")+'</div>';
 			for(e in elenco){
 				HTML += '<p onClick="SET.apriPatologia(\''+elenco[e]+'\',document.getElementById(\'btn_patologia_'+elenco[e]+'\'));"><span>• '+DB.set.patologie[elenco[e]].NomePatologia+'</span></p>';
@@ -172,8 +172,8 @@ var MODULO_TSUBO = { // extend SET
 		// annotazione
 		var TestoAnnotazione = '';
 		var cartella = "auricolo";
-		if(SET.verificaNota(siglaTsubo)){
-			TestoAnnotazione += SET.leggiNota( cartella, siglaTsubo*1 );
+		if(SET.verificaNota(siglaPunto)){
+			TestoAnnotazione += SET.leggiNota( cartella, siglaPunto*1 );
 		}
 		HTML +=  '<p id="annotazioni_label"><b>'+htmlEntities(TXT("Note"))+'</b></p>';
 		if(!ritorno || !SCHEDA.formModificato){
@@ -181,7 +181,7 @@ var MODULO_TSUBO = { // extend SET
 			HTML += '<div id="annotazioni_cont">' +
 					'	<form 	id="formAnnotazioni" name="formAnnotazioni" method="post" onSubmit="return false;">' +
 					'		<input name="stessa" type="hidden" id="stessa" value="1" />' +
-					'		<input name="siglaTsubo" type="hidden" id="siglaTsubo" value="'+siglaTsubo+'" />' +
+					'		<input name="siglaPunto" type="hidden" id="siglaPunto" value="'+siglaPunto+'" />' +
 					'		<textarea  	id="TestoAnnotazione"' +
 					'					name="TestoAnnotazione"' +
 					'					onKeyDown="document.getElementById(\'pulsantiAnnotazione\').style.display=\'block\';"' +
@@ -190,7 +190,7 @@ var MODULO_TSUBO = { // extend SET
 					'</div>' +
 					'<div id="pulsantiAnnotazione">' +
 					'	<div 	id="p_sch_salva"' +
-					'			onClick="if(verifica_form(document.formAnnotazioni))SET.mod_nota( \''+(siglaTsubo)+'\' );">' +
+					'			onClick="if(verifica_form(document.formAnnotazioni))SET.mod_nota( \''+(siglaPunto)+'\' );">' +
 						TXT("Salva") +
 					'	</div>' +
 					'</div><div class="l"></div>';
@@ -215,28 +215,28 @@ var MODULO_TSUBO = { // extend SET
 						
 		SCHEDA.caricaScheda(	titolo,
 								HTML,
-								"if(SET.ptSel)SET.chiudiTsubo()",
-								"tab_tsubo",
+								"if(SET.ptSel)SET.chiudiPunto()",
+								"tab_punti",
 								ritorno,
 								false,
 								'',
 								btnAdd,
-								globals.set.cartella+'_punti_'+"_"+siglaTsubo,
+								globals.set.cartella+'_punti_'+"_"+siglaPunto,
 								finalFunct );
-		SET.settaOverTsubo();
+		SET.settaOverPunto();
 		SET.ptSel = ptSel;
 		if(!ritorno || !SCHEDA.formModificato)initChangeDetection( "formAnnotazioni" );
 		
 		if(ritorno && !SCHEDA.aggancio.tipo == 'libera')SCHEDA.nasScheda();
 	},
-	mod_nota: function( siglaTsubo ){ // salva la nota di uno tsubo
+	mod_nota: function( siglaPunto ){ // salva la nota di un punto
 		var nota_salvata=false;
 		var DataModifica = DB.note.lastSync+1;
 		var pDef=-1;
 		var Q_TestoAnnotazione = document.getElementById("TestoAnnotazione").value;
 		for (p in DB.note.data) {
 			if(DB.note.data.length && typeof(DB.note.data[p].meridiano)=='undefined')DB.note.data.splice(p,p);
-			else if(DB.note.data[p].meridiano=='auricolo' && DB.note.data[p].numeroTsubo==siglaTsubo && SET.verNotaCli(p)){
+			else if(DB.note.data[p].meridiano=='auricolo' && DB.note.data[p].numeroPunto==siglaPunto && SET.verNotaCli(p)){
 				DB.note.data[p].TestoAnnotazione=Q_TestoAnnotazione;
 				DB.note.data[p].DataModifica=parseInt(DataModifica);
 				nota_salvata=true;
@@ -248,7 +248,7 @@ var MODULO_TSUBO = { // extend SET
 			if(PAZIENTI.idCL>-1)idPaziente=PAZIENTI.idPaziente;
 			JSNPUSH={	"TestoAnnotazione": Q_TestoAnnotazione,
 						"meridiano": "auricolo",
-						"numeroTsubo": siglaTsubo,
+						"numeroPunto": siglaPunto,
 						"idPaziente": idPaziente*1,
 						"idCL": PAZIENTI.idCL*1,
 						"app": "AUR",
@@ -291,7 +291,7 @@ var MODULO_TSUBO = { // extend SET
 				if(DB.note.data[n].idCL == PAZIENTI.idCL)pass=true;
 			}
 			if(pass){
-				if( DB.note.data[n].meridiano == mr && DB.note.data[n].numeroTsubo == pt ){
+				if( DB.note.data[n].meridiano == mr && DB.note.data[n].numeroPunto == pt ){
 					TestoAnnotazione = DB.note.data[n].TestoAnnotazione;
 				}
 			}
@@ -312,7 +312,7 @@ var MODULO_TSUBO = { // extend SET
 					}
 					if(pass){
 						if(DB.note.data[n].TestoAnnotazione.trim()!=''){
-							SET.note.push(DB.note.data[n].numeroTsubo);
+							SET.note.push(DB.note.data[n].numeroPunto);
 						}
 					}
 				}
@@ -335,11 +335,11 @@ var MODULO_TSUBO = { // extend SET
 			}
 		}
 	},
-	verificaNota: function( siglaTsubo ){ // verifica l'esistenza di una nota sul punto
-		return SET.note.indexOf(siglaTsubo)>-1;
+	verificaNota: function( siglaPunto ){ // verifica l'esistenza di una nota sul punto
+		return SET.note.indexOf(siglaPunto)>-1;
 	},
-	azRicercaTsubo: function( pt ){ // apre la scheda dello tsubo dalla ricerca globale
-		SET.apriTsubo("PT"+pt);
+	azRicercaPunto: function( pt ){ // apre la scheda del p dalla ricerca globale
+		SET.apriPunto("PT"+pt);
 		evidenziaParola();
 	}
 }

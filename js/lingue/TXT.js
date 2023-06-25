@@ -1284,13 +1284,13 @@ DB.TXT = {
             por: " e horário",
             deu: " und Uhrzeit"
         },
-        Tsubo: {
-            ita: "Tsubo",
-            eng: "Tsubo",
-            esp: "Tsubo",
-            fra: "Tsubo",
-            por: "Tsubo",
-            deu: "Tsubo"
+        Punto: {
+            ita: "Punto",
+            eng: "Point",
+            esp: "Punto",
+            fra: "Point",
+            por: "Ponto",
+            deu: "Punkte"
         },
         Punti: {
             ita: "Punti",
@@ -1299,6 +1299,14 @@ DB.TXT = {
 			fra: "Points",
 			por: "Pontos",
 			deu: "Punkte"
+        },
+        PuntiMTC: {
+            ita: "Punti MTC",
+            eng: "TCM Points",
+            esp: "Puntos MTC",
+            fra: "Points MTC",
+            por: "Pontos MTC",
+            deu: "TCM-Punkte"
         },
         Mezzo: {
             ita: "- mezzo -",
@@ -1427,14 +1435,6 @@ DB.TXT = {
             fra: "Moyen par défaut",
             por: "Média padrão",
             deu: "Standardmittel"
-        },
-        SpiegazioneTsuboTratt: {
-            ita: "Annotazioni sullo tsubo ...",
-			eng: "Annotations on the tsubo...",
-			esp: "Anotaciones sobre el tsubo...",
-			fra: "Annotations sur le tsubo...",
-			por: "Anotações sobre o tsubo...",
-			deu: "Anmerkungen zum tsubo..."
         },
         SpiegazionePuntoTratt: {
             ita: "Annotazioni sul punto ...",
@@ -2745,7 +2745,7 @@ DB.TXT = {
             deu: "Verschreibung"
         },
 
-        // tsubo e valutazione
+        // punti e valutazione
         MeridianiTrattamento: {
             ita: "Meridiani",
             eng: "Meridians",
@@ -2851,12 +2851,12 @@ DB.TXT = {
             deu: "Um diesen Abschnitt zu bearbeiten, musst du öffnen "
         },
         PuntiAnamnesi: {
-            ita: "Valutazione sugli tsubo",
-			eng: "Evaluation on the tsubo",
-			esp: "Evaluación de los tsubo",
-			fra: "Évaluation des tsubo",
-			por: "Avaliação nos tsubo",
-			deu: "Bewertung der tsubo"
+            ita: "Valutazione sui punti",
+			eng: "Evaluation on points",
+			esp: "Evaluación de los puntos",
+			fra: "Évaluation des points",
+			por: "Avaliação de puntos",
+			deu: "Bewertung der Punkte"
         },
         PuntiPresenti: {
             ita: "Alcuni punti risultano già presenti, quindi non sono stati aggiunti",
@@ -4487,12 +4487,12 @@ DB.TXT = {
             deu: "Mit der kostenlosen Registrierung können Sie bis zu 5 Pakete verwalten. Kaufen Sie das Medizinische Akten-Modul für unbegrenzte Dateien!"
         },
         MsgMaxProcedure: {
-            ita: "Con la versione gratuita puoi gestire una sola procedura. Acquista una licenza di TsuboMap per gestire procedure illimitate!.",
-            eng: "With the free version you can manage only one procedure. Buy a TsuboMap license to manage unlimited procedures!",
-            esp: "Con la versión gratuita solo puedes gestionar un procedimiento. ¡Compra una licencia de TsuboMap para gestionar procedimientos ilimitados!",
-            fra: "Avec la version gratuite, vous ne pouvez gérer qu'une seule procédure. Achetez une licence TsuboMap pour gérer des procédures illimitées !",
-            por: "Com a versão gratuita, você só pode gerenciar um procedimento. Compre uma licença do TsuboMap para gerenciar procedimentos ilimitados!",
-            deu: "Mit der kostenlosen Version können Sie nur eine Prozedur verwalten. Kaufen Sie eine TsuboMap-Lizenz, um unbegrenzte Prozeduren zu verwalten!"
+            ita: "Con la versione gratuita puoi gestire una sola procedura. Acquista una licenza di AcupointsMap per gestire procedure illimitate!.",
+            eng: "With the free version you can manage only one procedure. Buy a AcupointsMap license to manage unlimited procedures!",
+            esp: "Con la versión gratuita solo puedes gestionar un procedimiento. ¡Compra una licencia de AcupointsMap para gestionar procedimientos ilimitados!",
+            fra: "Avec la version gratuite, vous ne pouvez gérer qu'une seule procédure. Achetez une licence AcupointsMap pour gérer des procédures illimitées !",
+            por: "Com a versão gratuita, você só pode gerenciar um procedimento. Compre uma licença do AcupointsMap para gerenciar procedimentos ilimitados!",
+            deu: "Mit der kostenlosen Version können Sie nur eine Prozedur verwalten. Kaufen Sie eine AcupointsMap-Lizenz, um unbegrenzte Prozeduren zu verwalten!"
         },
         MsgMaxCicli: {
             ita: "Con la versione gratuita puoi gestire al massimo 3 cartelle per paziente. Acquista un pacchetto Patients Full con cartelle illimitate!.",
@@ -4586,15 +4586,15 @@ DB.TXT = {
         },
 
         // LE MAPPE
-        TsuboMap: {
-            ita: "TsuboMap",
-            eng: "TsuboMap",
-            esp: "TsuboMap",
-            fra: "TsuboMap",
-            por: "TsuboMap",
-            deu: "TsuboMap"
+        AcupointsMap: {
+            ita: "AcupointsMap",
+            eng: "AcupointsMap",
+            esp: "AcupointsMap",
+            fra: "AcupointsMap",
+            por: "AcupointsMap",
+            deu: "AcupointsMap"
         },
-        TsuboMapST: {
+        AcupointsMapST: {
             ita: "Atlante dei punti agopuntura",
             eng: "Acupuncture points atlas",
             esp: "Atlas de puntos de acupuntura",
@@ -4602,13 +4602,13 @@ DB.TXT = {
             por: "Atlas de pontos de acupuntura",
             deu: "Akupunkturpunkte-Atlas"
         },
-        TsuboMapDESCR: {
-            ita: "TsuboMap è il set che ti consente di studiare i concetti della Medicina Tradizionale Cinese applicati ai punti agopuntura (gli tsubo) e i meridiani energetici. Oltre all'anatomia completa e la gestione dei pazienti, è a tua disposizione un elenco di più di 130 patologie preconfigurate e il relativo trattamento secondo la MTC. Potrai inoltre elaborare procedure di trattamento personalizzate e condividerle nella Community.\n\nIl set include anche:\n[anatomy_full]",
-            eng: "TsuboMap is the set that allows you to study the concepts of Traditional Chinese Medicine applied to acupuncture points (tsubo) and energy meridians. In addition to complete anatomy and patient management, a list of more than 130 preconfigured pathologies and their treatment according to TCM is available to you. You will also be able to develop customized treatment procedures and share them in the Community.",
-            esp: "TsuboMap es el set que te permite estudiar los conceptos de la Medicina Tradicional China aplicados a los puntos de acupuntura (tsubo) y meridianos de energía. Además de la anatomía completa y la gestión de pacientes, tendrás a tu disposición una lista de más de 130 patologías preconfiguradas y su tratamiento según la MTC. También podrás desarrollar procedimientos de tratamiento personalizados y compartirlos en la comunidad.",
-            fra: "TsuboMap est l'ensemble qui vous permet d'étudier les concepts de la médecine traditionnelle chinoise appliqués aux points d'acupuncture (tsubo) et aux méridiens d'énergie. En plus de l'anatomie complète et de la gestion des patients, une liste de plus de 130 pathologies préconfigurées et leur traitement selon la MTC est à votre disposition. Vous pourrez également développer des procédures de traitement personnalisées et les partager dans la communauté.",
-            por: "TsuboMap é o conjunto que permite estudar os conceitos da Medicina Tradicional Chinesa aplicados aos pontos de acupuntura (tsubo) e meridianos de energia. Além da anatomia completa e do gerenciamento de pacientes, você terá acesso a uma lista com mais de 130 patologias preconfiguradas e seus respectivos tratamentos de acordo com a MTC. Você também poderá desenvolver procedimentos de tratamento personalizados e compartilhá-los na Comunidade.",
-            deu: "TsuboMap ist das Set, das es Ihnen ermöglicht, die Konzepte der Traditionellen Chinesischen Medizin zu studieren, die auf Akupunkturpunkte (Tsubo) und Energie-Meridiane angewendet werden. Neben der vollständigen Anatomie und der Patientenverwaltung steht Ihnen eine Liste mit über 130 vorkonfigurierten Pathologien und deren Behandlung nach der TCM zur Verfügung. Sie können auch maßgeschneiderte Behandlungsverfahren entwickeln und sie in der Community teilen."
+        AcupointsMapDESCR: {
+            ita: "AcupointsMap è il set che ti consente di studiare i concetti della Medicina Tradizionale Cinese applicati ai punti agopuntura e i meridiani energetici. Oltre all'anatomia completa e la gestione dei pazienti, è a tua disposizione un elenco di più di 130 patologie preconfigurate e il relativo trattamento secondo la MTC. Potrai inoltre elaborare procedure di trattamento personalizzate e condividerle nella Community.\n\nIl set include anche:\n[anatomy_full]",
+            eng: "AcupointsMap is the set that allows you to study the concepts of Traditional Chinese Medicine applied to acupuncture points and energy meridians. In addition to complete anatomy and patient management, a list of more than 130 preconfigured pathologies and their treatment according to TCM is available to you. You will also be able to develop customized treatment procedures and share them in the Community.",
+            esp: "AcupointsMap es el set que te permite estudiar los conceptos de la Medicina Tradicional China aplicados a los puntos de acupuntura y meridianos de energía. Además de la anatomía completa y la gestión de pacientes, tendrás a tu disposición una lista de más de 130 patologías preconfiguradas y su tratamiento según la MTC. También podrás desarrollar procedimientos de tratamiento personalizados y compartirlos en la comunidad.",
+            fra: "AcupointsMap est l'ensemble qui vous permet d'étudier les concepts de la médecine traditionnelle chinoise appliqués aux points d'acupuncture et aux méridiens d'énergie. En plus de l'anatomie complète et de la gestion des patients, une liste de plus de 130 pathologies préconfigurées et leur traitement selon la MTC est à votre disposition. Vous pourrez également développer des procédures de traitement personnalisées et les partager dans la communauté.",
+            por: "AcupointsMap é o conjunto que permite estudar os conceitos da Medicina Tradicional Chinesa aplicados aos pontos de acupuntura e meridianos de energia. Além da anatomia completa e do gerenciamento de pacientes, você terá acesso a uma lista com mais de 130 patologias preconfiguradas e seus respectivos tratamentos de acordo com a MTC. Você também poderá desenvolver procedimentos de tratamento personalizados e compartilhá-los na Comunidade.",
+            deu: "AcupointsMap ist das Set, das es Ihnen ermöglicht, die Konzepte der Traditionellen Chinesischen Medizin zu studieren, die auf Akupunkturpunkte und Energie-Meridiane angewendet werden. Neben der vollständigen Anatomie und der Patientenverwaltung steht Ihnen eine Liste mit über 130 vorkonfigurierten Pathologien und deren Behandlung nach der TCM zur Verfügung. Sie können auch maßgeschneiderte Behandlungsverfahren entwickeln und sie in der Community teilen."
         },
         ShiatsuMap: {
             ita: "ShiatsuMap",
