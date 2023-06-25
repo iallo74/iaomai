@@ -423,7 +423,7 @@ SET = {
 					var pN = this.INTERSECTED.name.split(".");
 					var tt = (pN[1]*1)+"."+SET.convSigla(pN[0].substr(1,2));
 					if(n1=='NK'){
-						tt = DB.set.meridiani.NK.punti[(this.INTERSECTED.name.substr(4,2))*1-1].NomePunto;
+						tt = DB.set.meridiani.NK.punti[SET.ptToStr(this.INTERSECTED.name.substr(4,2))].NomePunto;
 					}
 					
 					visToolTip(tt);
@@ -549,13 +549,13 @@ SET = {
 			SET.setPulsePt( this.ptSel, 1, 1, mat );
 			var pP = this.ptSel.name.split(".");		
 			var siglaMeridiano = pP[0];
-			var nPunto = parseInt(pP[1])-1;
-			if(document.getElementById("pt_"+(nPunto+1)+"_"+siglaMeridiano))document.getElementById("pt_"+(nPunto+1)+"_"+siglaMeridiano).classList.remove("selElPt");
+			var nPunto = SET.ptToStr(pP[1]);
+			if(document.getElementById("pt_"+nPunto+"_"+siglaMeridiano))document.getElementById("pt_"+SET.ptToStr(nPunto)+"_"+siglaMeridiano).classList.remove("selElPt");
 		}
 		if(this.MAT.pointSel)SET.chiudiPunto(true,true);
 		var pP = PT_name.split(".");		
 		var siglaMeridiano = pP[0];
-		var nPunto = parseInt(pP[1])-1;
+		var nPunto = SET.ptToStr(pP[1]);
 
 		if(!scene.getObjectByName( PT_name )){
 			if(scene.getObjectByName( PT_name + "." )){
@@ -574,7 +574,7 @@ SET = {
 		var pP = this.ptSel.name.split(".");
 		
 		if(!ritorno)this.accendiMeridiano(pP[0]);
-		if(document.getElementById("pt_"+(nPunto+1)+"_"+siglaMeridiano))document.getElementById("pt_"+(nPunto+1)+"_"+siglaMeridiano).classList.add("selElPt");
+		if(document.getElementById("pt_"+SET.ptToStr(nPunto)+"_"+siglaMeridiano))document.getElementById("pt_"+SET.ptToStr(nPunto)+"_"+siglaMeridiano).classList.add("selElPt");
 		var matTxt = "this.MAT.pointSel";
 		if(PT.userData.nota)matTxt = "this.MAT.pointSelNote";
 		if(this.ptSel.userData.interno)matTxt += "Int";
@@ -624,7 +624,6 @@ SET = {
 		SET.delEviPalls(siglaMeridiano,pP[1],'Over');
 		SET.addEviPalls(siglaMeridiano,pP[1],'Select');
 		this.pulse = 1;
-		
 		SET.caricaPunto( siglaMeridiano, nPunto, ritorno );
 	},
 	chiudiPunto: function( nonChiudereScheda=false, cambiaPunto=false ){
@@ -655,7 +654,7 @@ SET = {
 		if(!this.ptSel)return;
 		var pP = this.ptSel.name.split(".");
 		var siglaMeridiano = pP[0];
-		var nPunto = pP[1];
+		var nPunto = SET.ptToStr(pP[1]);
 		if(siglaMeridiano == "NK")MERIDIANI['NK'].meridianoAcceso = false;
 		this.pulse=0;
 		var mat=this.MAT.pointBase;
@@ -675,17 +674,17 @@ SET = {
 		if(frs = scene.getObjectByName("FR_"+siglaMeridiano)){
 			var evids = clone(SET.puntiEvidenziati);
 			for(let e in evids){
-				evids[e] = evids[e].split(".")[0]+"."+evids[e].split(".")[1];
+				evids[e] = SET.ptToStr(evids[e].split(".")[0])+"."+evids[e].split(".")[1];
 			}
 			var els = frs.children;
 			for(let e in els){
-				var sigla = els[e].name.split(".")[1]*1+"."+siglaMeridiano;
+				var sigla = els[e].name.split(".")[1]+"."+siglaMeridiano;
 				if(els[e].name == "FR."+pP[1] && evids.indexOf(sigla)==-1)els[e].visible = false;
 			}
 		}
 		
 		this.ptSel=null;
-		if(document.getElementById("pt_"+(pP[1]*1)+"_"+pP[0]))document.getElementById("pt_"+(pP[1]*1)+"_"+pP[0]).classList.remove("selElPt");
+		if(document.getElementById("pt_"+SET.ptToStr(pP[1])+"_"+pP[0]))document.getElementById("pt_"+SET.ptToStr(pP[1])+"_"+pP[0]).classList.remove("selElPt");
 		if(SCHEDA.scheda2Aperta){
 			nonChiudereScheda=true;
 			document.getElementById("scheda_ritorno").click();
@@ -906,11 +905,10 @@ SET = {
 	scriviPunto: function( punto, esteso=false, noRet=false, sigla=false, siglaMeridiano=false ){
 		var pT = punto.split(".");
 		var siglaPunto = pT[0]+"."+pT[1];
-		var siglaPuntoOr = siglaPunto;
 		var nomePunto = punto.substr(siglaPunto.length+1,Object.keys(punto).length-(siglaPunto.length+1));
 		if(sigla)siglaPunto = sigla;
 		if(siglaMeridiano=='NK')siglaPunto = '';
-		var nPunto = SET.punto2string(pT[0]);
+		var nPunto = SET.ptToStr(pT[0]);
 		var html = '<a class="pallinoPat';
 		if(esteso)html += ' pallinoPatEsteso';
 		var ret = '';
@@ -918,7 +916,7 @@ SET = {
 		html += '" onClick="SET.apriPunto(\''+pT[1]+"."+nPunto+'\',\''+ret+'\');"';
 		if(noRet)html += '  onMouseOver="SET.overPunto(this,true);"' +
 						 '  onMouseOut="SET.overPunto(this,false);"' +
-						 '	id="pt_'+siglaPuntoOr.replace('.','_')+'"';
+						 '	id="pt_'+nPunto+'_'+pT[1]+'"';
 		html += '> '+siglaPunto;//+' ';
 		if(esteso)html+='<i>'+nomePunto;
 		html+='</i></a>';
@@ -939,7 +937,7 @@ SET = {
 			rit = 500;
 		}
 		
-		var nPunto = SET.punto2string(nPunto);
+		var nPunto = SET.ptToStr(nPunto);
 		// verifico le autorizzazioni
 		if(!SET.verFreeMeridiani(siglaMeridiano)){
 			ALERT(TXT("MsgContSoloPay"),true,true);
@@ -994,7 +992,7 @@ SET = {
 		var els = el.getElementsByClassName("pallinoPat");
 		for(let p=0;p<els.length;p++){
 			var siglaMeridiano = els[p].dataset.siglaMeridiano;
-			var nPunto = SET.punto2string(els[p].dataset.nPunto);
+			var nPunto = SET.ptToStr(els[p].dataset.nPunto);
 			var el = scene.getObjectByName("PT_"+siglaMeridiano);
 			if(el){
 				for(let e in el.children){
@@ -1026,7 +1024,7 @@ SET = {
 		SET.annullaEvidenziaPunto();
 		for(let k in elenco){
 			var pP=elenco[k].split(".");
-			var nPunto=SET.punto2string(pP[0]);
+			var nPunto=SET.ptToStr(pP[0]);
 			var mat = SET.MAT.pointEvi;
 			if(pP[2]){
 				if(pP[2]=='V')mat = SET.MAT.pointVuoto;
@@ -1061,7 +1059,7 @@ SET = {
 			for(let k in SET.puntiEvidenziati){
 				var pT=SET.puntiEvidenziati[k];
 				var pP=pT.split(".");
-				var nPunto=SET.punto2string(pP[0]);
+				var nPunto=SET.ptToStr(pP[0]);
 				siglaMeridiano = pP[1];
 				
 				var el = scene.getObjectByName("PT_"+siglaMeridiano)
@@ -1104,7 +1102,7 @@ SET = {
 				var sl = els[e].getElementsByTagName("select");
 				if(sl.length){
 					var mer = sl[0].value;
-					var nPunto = SET.punto2string(sl[1].value);
+					var nPunto = SET.ptToStr(sl[1].value);
 					elenco.push(nPunto+"."+mer);
 				}
 			}
@@ -1117,13 +1115,13 @@ SET = {
 			var mer = el.getElementsByClassName("selectTratt")[0];
 			var nPunto = el.getElementsByClassName("numPoints")[0];
 			if(!nPunto)return;
-			else nPunto = SET.punto2string(nPunto.value);
+			else nPunto = SET.ptToStr(nPunto.value);
 			if(mer)mer = mer.value;
 			if(!__(DB.set.meridiani[mer]))return; // in caso di EX
 			if(typeof(DB.set.meridiani[mer])=='undefined')return;
 		}else{
 			if(!el.dataset.siglaMeridiano)return;
-			var nPunto = SET.punto2string(el.dataset.nPunto);
+			var nPunto = SET.ptToStr(el.dataset.nPunto);
 			var mer = el.dataset.siglaMeridiano;
 		}
 		
@@ -1187,7 +1185,7 @@ SET = {
 				if(els[e].name.indexOf(siglaMeridiano+"."+((n_P.length==1)?"0":"")+n_P+".")==0)nascPunto = '';
 			}
 			var name = n_P+'.'+n_M;
-			if(siglaMeridiano=='NK')name = DB.set.meridiani[n_M].punti[n_P-1].NomePunto;
+			if(siglaMeridiano=='NK')name = DB.set.meridiani[n_M].punti[SET.ptToStr(n_P)].NomePunto;
 			html = html.replace(pts[p], '<span'+nascPunto+' class="pallinoPat" data-n-punto="'+n_P+'" data-sigla-meridiano="'+siglaMeridiano+'" onClick="SET.selPunto(\''+n_P+'\',\''+siglaMeridiano+'\',\'\',this);">'+name+'</span>');
 		}
 		
@@ -1379,7 +1377,7 @@ SET = {
 		if(!scene.getObjectByName("PT_"+siglaMeridiano))return;
 		var els = scene.getObjectByName("PT_"+siglaMeridiano).children;
 		for(e in els){
-			if(els[e].name.indexOf(siglaMeridiano+"."+nPunto+".")==0){
+			if(els[e].name.indexOf(siglaMeridiano+"."+SET.ptToStr(nPunto)+".")==0){
 				var geoPoint =  new THREE.SphereGeometry( 0.11, 16, 16 );
 				var eviPoint;
 				eviPoint =  new THREE.Mesh( geoPoint, this.MAT.pointSel2.clone() );
@@ -1396,7 +1394,7 @@ SET = {
 	delEviPalls: function( siglaMeridiano, nPunto, tipo ){
 		var els = SETS.children;
 		for(e=els.length-1;e>=0;e--){
-			if(els[e].name.indexOf(tipo+' point: '+siglaMeridiano+"."+nPunto+".")==0){
+			if(els[e].name.indexOf(tipo+' point: '+siglaMeridiano+"."+SET.ptToStr(nPunto)+".")==0){
 				SETS.remove( els[e] );
 			}
 		}

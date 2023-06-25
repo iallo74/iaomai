@@ -24,7 +24,7 @@ var PAZIENTI_TRATTAMENTI = {
 			btn.classList.remove('anaVis');
 		}
 	},
-	caricaTrattamenti: function( Q_resta=false, evi=-1 ){ // elenco trattamenti
+	caricaTrattamenti: function( Q_resta=false, ev = -1 ){ // elenco trattamenti
 		if(PAZIENTI.idCL>-1){
 			var PZ = DB.pazienti.data[PAZIENTI.idCL];
 			var cloneTRATTAMENTI = clone(PZ.trattamenti);
@@ -173,7 +173,7 @@ var PAZIENTI_TRATTAMENTI = {
 						}
 					}
 					
-					HTML+='<div class="cartella'+((evi==c)?' eviCiclo':'');
+					HTML+='<div class="cartella'+((ev==c)?' eviCiclo':'');
 					if(PAZIENTI.cicli[c].Tipo == 'V')HTML += ' cartellaSingoli';
 					var cartAperta = this.aperture[NomeCiclo];
 					if(typeof(cartAperta)=='undefined')cartAperta=false;
@@ -262,8 +262,8 @@ var PAZIENTI_TRATTAMENTI = {
 
 			document.getElementById("lista_pazienti").innerHTML = HTML;
 			
-			if(evi>-1){
-				setTimeout(function(){document.getElementById("cl_"+evi).parentElement.classList.remove("eviCiclo")},2000);
+			if(ev>-1){
+				setTimeout(function(){document.getElementById("cl_"+ev).parentElement.classList.remove("eviCiclo")},2000);
 			}
 			
 			if(cartOpened)document.querySelector(".listaTrattamenti").classList.add("cont_cartellaAperta");

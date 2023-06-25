@@ -73,8 +73,8 @@ var PAZIENTI_SETS = {
 			for(a=mrProc[mr.value];a>=1;a--){
 				punto.options[a]=new Option('',encodeURIComponent(a),false,false);
 				var siglaPunto = a;
-				if(DB.set.meridiani[mr.value].punti[a-1].siglaPunto){
-					siglaPunto = DB.set.meridiani[mr.value].punti[a-1].siglaPunto;
+				if(DB.set.meridiani[mr.value].punti[SET.ptToStr(a)].siglaPunto){
+					siglaPunto = DB.set.meridiani[mr.value].punti[SET.ptToStr(a)].siglaPunto;
 					siglaPunto = siglaPunto.substr(3,siglaPunto.length-3);
 				}
 				punto.options[a].innerHTML=siglaPunto;
@@ -90,7 +90,7 @@ var PAZIENTI_SETS = {
 		var pt=document[frm][addN+"pt_"+n].value;
 		var de=document[frm][addN+"de_"+n].value;
 		if(DB.set.meridiani[mr]){
-			var siglaPunto = __(DB.set.meridiani[mr].punti[pt*1-1].siglaPunto, pt+"."+mr);
+			var siglaPunto = __(DB.set.meridiani[mr].punti[SET.ptToStr(pt)].siglaPunto, pt+"."+mr);
 			document[frm][addN+"hd_"+n].value=siglaPunto;
 		}
 		
@@ -124,7 +124,7 @@ var PAZIENTI_SETS = {
 		H.selTT(n,((tipo=='N')?"n-":"")+"ico_PZ",html);
 	},
 	
-	caricaPuntiTrattamento: function( evi=-1 ){ // carica i punti del trattamento
+	caricaPuntiTrattamento: function( ev = -1 ){ // carica i punti del trattamento
 		document.getElementById('puntiMTC').style.display = 'block';
 		document.getElementById('label_puntiMTC').style.display = 'block';
 		var elenco = [];
@@ -146,7 +146,7 @@ var PAZIENTI_SETS = {
 					elenco.push(nPunto+'.'+siglaMeridiano+'.'+valutazione);
 					
 					totPunti=0;
-					HTML += '<div class="rgProcMod rgMod dettPunto'+((evi==p)?' eviPunto':'')+'"' +
+					HTML += '<div class="rgProcMod rgMod dettPunto'+((ev==p)?' eviPunto':'')+'"' +
 							'	  id="rg_'+p+'"';
 					if(mouseDetect)HTML += 	' onMouseOver="SET.overPunto(this,true);"' +
 											' onMouseOut="SET.overPunto(this,false);"';
@@ -221,8 +221,8 @@ var PAZIENTI_SETS = {
 								'	     	 		   PAZIENTI.ricGroup(\'formMod\','+p+');">';
 						for(let n=1;n<=totPunti;n++){
 							var siglaPunto = n;
-							if(DB.set.meridiani[siglaMeridiano].punti[n-1].siglaPunto){
-								siglaPunto = DB.set.meridiani[siglaMeridiano].punti[n-1].siglaPunto;
+							if(DB.set.meridiani[siglaMeridiano].punti[SET.ptToStr(n)].siglaPunto){
+								siglaPunto = DB.set.meridiani[siglaMeridiano].punti[SET.ptToStr(n)].siglaPunto;
 								siglaPunto = siglaPunto.substr(3,siglaPunto.length-3);
 							}
 							HTML += '<option value="'+n+'"';
@@ -300,8 +300,8 @@ var PAZIENTI_SETS = {
 		document.getElementById('puntiMTC').innerHTML=HTML;
 		
 		
-		if(evi>-1){
-			setTimeout(function(){document.getElementById("rg_"+evi).classList.remove("eviPunto")},2000);
+		if(ev>-1){
+			setTimeout(function(){document.getElementById("rg_"+ev).classList.remove("eviPunto")},2000);
 		}
 		
 		try{
@@ -339,7 +339,7 @@ var PAZIENTI_SETS = {
 		PAZIENTI.ricPuntiTratt();
 		var n = PT.split(".")[0]*1;
 		var siglaMeridiano = PT.split(".")[1];
-		var siglaPunto = __(DB.set.meridiani[siglaMeridiano].punti[n-1].siglaPunto, PT);
+		var siglaPunto = __(DB.set.meridiani[siglaMeridiano].punti[SET.ptToStr(n)].siglaPunto, PT);
 		PAZIENTI.puntiProvvisori.push({
 			n: n,
 			m: siglaMeridiano,
@@ -499,7 +499,7 @@ var PAZIENTI_SETS = {
 	},
 	
 	// meridiani
-	caricaMeridianiTrattamento: function( evi=-1 ){ // carica i punti del trattamento
+	caricaMeridianiTrattamento: function( ev = -1 ){ // carica i punti del trattamento
 		document.getElementById('meridianiMTC').style.display = 'block';
 		document.getElementById('label_meridianiMTC').style.display = 'block';
 		var HTML = '<div></div>'; // serve lasciarlo per il drag&drop
@@ -514,7 +514,7 @@ var PAZIENTI_SETS = {
 					elenco.push(PAZIENTI.meridianiProvvisori[m].siglaMeridiano);
 					var m2 = __(PAZIENTI.meridianiProvvisori[m].valEnergetica);
 					var descrizione = __(PAZIENTI.meridianiProvvisori[m].descrizione);
-					HTML += '<div class="rgProcMod rgMod dettMeridiano'+((evi==m)?' eviPunto':'');
+					HTML += '<div class="rgProcMod rgMod dettMeridiano'+((ev==m)?' eviPunto':'');
 					if(typeof(MERIDIANI) != 'undefined'){
 						if(MERIDIANI[PAZIENTI.meridianiProvvisori[m].siglaMeridiano].meridianoAcceso){
 							HTML += ' p_'+MERIDIANI[PAZIENTI.meridianiProvvisori[m].siglaMeridiano].elemento;
@@ -601,8 +601,8 @@ var PAZIENTI_SETS = {
 		document.getElementById('totMeridiani').innerHTML = PAZIENTI.meridianiProvvisori.length;
 		document.getElementById('meridianiMTC').innerHTML=HTML;
 		
-		if(evi>-1){
-			setTimeout(function(){document.getElementById("tr_p"+evi).classList.remove("eviPunto")},2000);
+		if(ev>-1){
+			setTimeout(function(){document.getElementById("tr_p"+ev).classList.remove("eviPunto")},2000);
 		}
 		
 		try{
@@ -665,14 +665,16 @@ var PAZIENTI_SETS = {
 	// auriculo-punti
 	ricAuriculo: function( frm, n ){ // ricarica tutti i punti
 		SET.overPunto("PT"+PAZIENTI.auriculoProvvisori[n].s,false);
-		PAZIENTI.auriculoProvvisori[n].s = document[frm]["pt_"+n].value;
+		let siglaPunto = document[frm]["pt_"+n].value;
+		console.log(siglaPunto)
+		PAZIENTI.auriculoProvvisori[n].s = siglaPunto;
 		PAZIENTI.auriculoProvvisori[n].n = DB.set.punti[siglaPunto].NomePunto;
 		PAZIENTI.auriculoProvvisori[n].t = document[frm]["de_"+n].value;
 		try{
 			PAZIENTI.caricaAuriculoTrattamento();
 		}catch(err){}
 	},
-	caricaAuriculoTrattamento: function( evi=-1 ){ // carica i punti del trattamento
+	caricaAuriculoTrattamento: function( ev = -1 ){ // carica i punti del trattamento
 		document.getElementById('puntiAuricolari').style.display = 'block';
 		document.getElementById('label_puntiAuricolari').style.display = 'block';
 		var HTML = '<div></div>'; // serve lasciarlo per il drag&drop
@@ -698,7 +700,7 @@ var PAZIENTI_SETS = {
 					nomePunto=__(PAZIENTI.auriculoProvvisori[p].n);
 					elenco.push(siglaPunto);
 					
-					HTML += '<div class="rgProcMod rgMod dettAuriculo'+((evi==p)?' eviPunto':'')+'"' +
+					HTML += '<div class="rgProcMod rgMod dettAuriculo'+((ev==p)?' eviPunto':'')+'"' +
 							'	  id="rg_'+p+'"';
 					if(mouseDetect && siglaPunto){
 						HTML += 	' onMouseOver="SET.overPunto(\'PT'+siglaPunto+'\',true);"' +
@@ -833,8 +835,8 @@ var PAZIENTI_SETS = {
 		document.getElementById('totAuriculo').innerHTML = PAZIENTI.auriculoProvvisori.length;
 		document.getElementById('puntiAuricolari').innerHTML=HTML;
 		
-		if(evi>-1){
-			setTimeout(function(){document.getElementById("rg_"+evi).classList.remove("eviPunto")},2000);
+		if(ev>-1){
+			setTimeout(function(){document.getElementById("rg_"+ev).classList.remove("eviPunto")},2000);
 		}
 		try{
 			if( globals.set.cartella == 'auricologia' )SET.evidenziaPuntoMod(elenco);
@@ -917,14 +919,15 @@ var PAZIENTI_SETS = {
 	// punti namikoshi
 	ricNamikoshi: function( frm, n ){ // ricarica tutti i punti
 		//SET.overPunto(document.getElementById("n-rg_"+n),false);
-		PAZIENTI.namikoshiProvvisori[n].n = document[frm]["n-pt_"+n].value;
-		PAZIENTI.namikoshiProvvisori[n].s = DB.set.meridiani.NK.punti[siglaPunto].NomePunto;
+		let nPunto = document[frm]["n-pt_"+n].value;
+		PAZIENTI.namikoshiProvvisori[n].n = SET.ptToNum(nPunto);
+		PAZIENTI.namikoshiProvvisori[n].s = DB.set.meridiani.NK.punti[SET.ptToStr(nPunto)].NomePunto;
 		PAZIENTI.namikoshiProvvisori[n].t = document[frm]["n-de_"+n].value;
 		try{
 			PAZIENTI.caricaNamikoshiTrattamento();
 		}catch(err){}
 	},
-	caricaNamikoshiTrattamento: function( evi=-1 ){ // carica i punti del trattamento
+	caricaNamikoshiTrattamento: function( ev = -1 ){ // carica i punti del trattamento
 		document.getElementById('puntiNamikoshi').style.display = 'block';
 		document.getElementById('label_puntiNamikoshi').style.display = 'block';
 		var HTML = '<div></div>'; // serve lasciarlo per il drag&drop
@@ -953,7 +956,7 @@ var PAZIENTI_SETS = {
 					nPunto=__(PAZIENTI.namikoshiProvvisori[p].n);
 					elenco.push(nPunto+".NK."+valutazione);
 					
-					HTML += '<div class="rgProcMod rgMod dettPunto dettNamikoshi'+((evi==p)?' eviPunto':'')+'"' +
+					HTML += '<div class="rgProcMod rgMod dettPunto dettNamikoshi'+((ev==p)?' eviPunto':'')+'"' +
 							'	  id="n-rg_'+p+'"';
 					if(mouseDetect && nPunto){
 						HTML += 	' onMouseOver="SET.overPunto(this,true);"' +
@@ -1089,8 +1092,8 @@ var PAZIENTI_SETS = {
 		document.getElementById('totNamikoshi').innerHTML = PAZIENTI.namikoshiProvvisori.length;
 		document.getElementById('puntiNamikoshi').innerHTML=HTML;
 		
-		if(evi>-1){
-			setTimeout(function(){document.getElementById("rg_"+evi).classList.remove("eviPunto")},2000);
+		if(ev>-1){
+			setTimeout(function(){document.getElementById("rg_"+ev).classList.remove("eviPunto")},2000);
 		}
 		try{
 			if( globals.set.cartella == 'meridiani_shiatsu' && 
@@ -1105,7 +1108,7 @@ var PAZIENTI_SETS = {
 		JSNPUSH = {
 			m: 'NK',
 			n: PT*1,
-			s: DB.set.meridiani.NK.punti[PT*1].NomePunto,
+			s: DB.set.meridiani.NK.punti[SET.ptToStr(PT)].NomePunto,
 			z: PAZIENTI.mezzoProvvisorio,
 			e: "",
 			t: ""
@@ -1615,17 +1618,17 @@ var PAZIENTI_SETS = {
 					'		   id="'+n+'"' +
 					'		   value="'+PT+'"';
 			if(PAZIENTI.tipoGruppo=='P'){
-				var siglaPT = __(DB.set.meridiani[mer].punti[pP[0]*1-1].siglaPunto,pP[0]+"."+SET.convSigla(pP[1]));
+				var siglaPT = __(DB.set.meridiani[mer].punti[SET.ptToStr(pP[0])].siglaPunto,pP[0]+"."+SET.convSigla(pP[1]));
 				if(pP[1]=='EX')HTML += '		   data-sigla-punto="'+siglaPT+'"';
-				if(pP[1]=='NK')HTML += '		   data-sigla-punto="'+DB.set.meridiani[pP[1]].punti[pP[0]*1-1].NomePunto+'"';
+				if(pP[1]=='NK')HTML += '		   data-sigla-punto="'+DB.set.meridiani[pP[1]].punti[SET.ptToStr(pP[0])].NomePunto+'"';
 			}
 			HTML += '>';
 			if(PAZIENTI.tipoGruppo=='P'){
 				HTML +=	'<b>'+siglaPT+'.</b>' +
-						'<i>'+DB.set.meridiani[mer].punti[pP[0]*1-1].NomePunto.replace(PT+".","")+'</i>';
+						'<i>'+DB.set.meridiani[mer].punti[SET.ptToStr(pP[0])].NomePunto.replace(PT+".","")+'</i>';
 			}
 			if(PAZIENTI.tipoGruppo=='N'){
-				HTML +=	'<b>'+DB.set.meridiani[mer].punti[pP[0]*1-1].NomePunto.replace(PT+".","")+'</b>';
+				HTML +=	'<b>'+DB.set.meridiani[mer].punti[SET.ptToStr(pP[0])].NomePunto.replace(PT+".","")+'</b>';
 			}
 			if(PAZIENTI.tipoGruppo=='M'){
 				HTML +=	DB.set.meridiani[PT].NomeMeridiano;

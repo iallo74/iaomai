@@ -10,11 +10,11 @@ var MODULO_PUNTO = { // extend SET
 			return;
 		}
 		// --------------------------
-		var nPunto2 = SET.punto2string(nPunto+1);
+		var nPunto = SET.ptToStr(nPunto);
 		
 		var titolo = DB.set.meridiani[siglaMeridiano].punti[nPunto].NomePunto;
 		var sigla = __(DB.set.meridiani[siglaMeridiano].punti[nPunto].siglaPunto);
-		if(sigla)titolo = titolo.replace((nPunto+1)+"."+siglaMeridiano,sigla);
+		if(sigla)titolo = titolo.replace(nPunto+"."+siglaMeridiano,sigla);
 		var meridiano = DB.set.meridiani[siglaMeridiano];
 		var coordZoom = __(DB.mtc.meridiani[siglaMeridiano].punti[nPunto].coordZoom);
 		var imgZoom = __(DB.mtc.meridiani[siglaMeridiano].punti[nPunto].imgZoom);
@@ -40,7 +40,7 @@ var MODULO_PUNTO = { // extend SET
 			var txt = '';
 			var cls = '';
 			var stesso = false;
-			var puntoNuovo = (nPunto+1)+"."+siglaMeridiano;
+			var puntoNuovo = nPunto+"."+siglaMeridiano;
 			if( SCHEDA.classeAperta == 'scheda_procedura' ){
 				if(SET.pMod > -1){
 					var puntoOr = SET.dettagliProvvisori[SET.pMod].DescrizioneDettaglio;
@@ -93,7 +93,7 @@ var MODULO_PUNTO = { // extend SET
 			var regexp = /[\s>\(\.\,]{0,1}[0-9]{1,2}\.[A-Z]{2}[\s<\.,\)]{1}/ig;
 			var pts = DB.set.patologie[p].TestoPatologia.match(regexp);
 			for(let i in pts){
-				if(pts[i]=='.'+(nPunto+1)+'.'+siglaMeridiano+'.'){
+				if(pts[i]=='.'+nPunto+'.'+siglaMeridiano+'.'){
 					var JSNPUSH = {"p": p, "NomePatologia": DB.set.patologie[p].NomePatologia} 
 					
 					if(elenco.indexOf(JSNPUSH)==-1)elenco.push(JSNPUSH);
@@ -131,7 +131,7 @@ var MODULO_PUNTO = { // extend SET
 		
 		
 		// ideogramma
-		HTML = 	'<img 	src="sets/common/mtc/img/txt_meridiani/'+siglaMeridiano+'/punto_'+nPunto2+'.png"' +
+		HTML = 	'<img 	src="sets/common/mtc/img/txt_meridiani/'+siglaMeridiano+'/punto_'+nPunto+'.png"' +
 				'		class="ideogrammaPunto">'+HTML;
 		
 		HTML = '<div class="translatable">'+HTML+'</div>';
@@ -139,8 +139,8 @@ var MODULO_PUNTO = { // extend SET
 		
 		// annotazione
 		var TestoAnnotazione = '';
-		if(SET.verificaNota(siglaMeridiano+"."+nPunto2)){
-			TestoAnnotazione += SET.leggiNota( cartella, nPunto2 );
+		if(SET.verificaNota(siglaMeridiano+"."+nPunto)){
+			TestoAnnotazione += SET.leggiNota( cartella, nPunto );
 		}
 		HTML +=  '<p id="annotazioni_label"><b>'+htmlEntities(TXT("Note"))+'</b></p>';
 		if(!ritorno || !SCHEDA.formModificato){
@@ -158,7 +158,7 @@ var MODULO_PUNTO = { // extend SET
 					'</div>' +
 					'<div id="pulsantiAnnotazione">' +
 					'	<div 	id="p_sch_salva"' +
-					'			onClick="if(verifica_form(document.formAnnotazioni))SET.mod_nota( \''+cartella+'\', \''+(nPunto+1)+'\' );">' +
+					'			onClick="if(verifica_form(document.formAnnotazioni))SET.mod_nota( \''+cartella+'\', \''+nPunto+'\' );">' +
 						TXT("Salva") +
 					'	</div>' +
 					'</div><div class="l"></div>';
@@ -212,17 +212,17 @@ var MODULO_PUNTO = { // extend SET
 		var classFr = '';
 		
 		if(!SCHEDA.scheda2Aperta){
-			var nPuntoGiu = SET.punto2string(nPunto);
-			var nPuntoSu = SET.punto2string(nPunto+2);
+			var nPuntoGiu = SET.ptToStr(SET.ptToNum(nPunto)-1);
+			var nPuntoSu = SET.ptToStr(SET.ptToNum(nPunto)+1);
 			// evidenzio i pulsanti su e giù
 			
-			if(nPunto*1 > 0){ // attiva giù
+			if(SET.ptToNum(nPunto) > 1){ // attiva giù
 				classFr += "frGiu ";
 				document.getElementById("frSchGiu").onclick = function(){
 					SET.apriPunto(siglaMeridiano+"."+nPuntoGiu,'');
 				};
 			}
-			if(nPunto*1 < meridiano.punti.length-1){ // attiva su
+			if(SET.ptToNum(nPunto) < Object.keys(meridiano.punti).length){ // attiva su
 				classFr += "frSu ";
 				document.getElementById("frSchSu").onclick = function(){
 					SET.apriPunto(siglaMeridiano+"."+nPuntoSu,'');
@@ -354,12 +354,12 @@ var MODULO_PUNTO = { // extend SET
 		SET.apriPunto(pt);
 		evidenziaParola();
 	},
-	punto2string: function( nPunto ){
+	ptToStr: function( nPunto ){
 		nPunto = nPunto+"";
 		if(nPunto.length == 1)nPunto = "0"+nPunto;
 		return nPunto;
 	},
-	punto2number: function( nPunto ){
-		return parseInt(nPunto)-1;
+	ptToNum: function( nPunto ){
+		return parseInt(nPunto);
 	}
 }

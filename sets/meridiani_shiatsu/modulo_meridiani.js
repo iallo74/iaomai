@@ -7,6 +7,7 @@ var MODULO_MERIDIANI = { // extend SET
 		// carica la lista dei meridiani
 		var contElencoMeridiani = contSmart = '';
 		var n = 0;
+		
 		for(let m in DB.set.meridiani){
 			n++;
 			var addClass = addClassEl = '';
@@ -26,17 +27,22 @@ var MODULO_MERIDIANI = { // extend SET
 			if(m!='NK')addClass +=	' noNMK';
 			else{
 				addClass +=	' NMK';
-				elencoPunti += '<p id="titNMK">'+TXT("Zone anatomiche")+'</p>';
+				elencoPunti += '<p id="titNMK">'+TXT("ZoneAnatomiche")+'</p>';
 			}
-			for(let s in DB.set.meridiani[m].punti){
+			let myObj = DB.set.meridiani[m].punti,
+				keys = 	Object.keys(myObj),
+				len = keys.length;
+			keys.sort();		
+			//for(let s in DB.set.meridiani[m].punti){
+			for (let i=0; i<len; i++) {	
+				let s = keys[i];
 				if(!DB.set.meridiani[m].punti[s].siglaPunto){
-					let n = DB.set.meridiani[m].punti[s].NomePunto.split(".")[0]+"";
-					if(n.length==1)n = '0'+n;
+					let n = SET.ptToStr(DB.set.meridiani[m].punti[s].NomePunto.split(".")[0]);
 					DB.set.meridiani[m].punti[s].siglaPunto = m+"."+n;
 				}
 				var TS = DB.set.meridiani[m].punti[s];
 				if(m!='NK' || __(TS.apparato,-1)>-1){
-					var addNMK = (m=='NK')? (s*1+1)+'.NK. ' : '';
+					var addNMK = (m=='NK')? SET.ptToStr(s)+'.NK. ' : '';
 					var elemento = (!__(DB.set.meridiani[m].punti[s].nascosto,false)) ? '<p>'+this.scriviPunto(addNMK+TS.NomePunto,true,true,__(TS.siglaPunto),m)+'</p>' : "";
 					if(m=='NK'){
 						// verifico le autorizzazioni
