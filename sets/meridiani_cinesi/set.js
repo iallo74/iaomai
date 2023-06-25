@@ -63,16 +63,16 @@ SET = {
 							mesh.material=cloneMAT(this.MAT.lineSel), {opacity: op};
 							if(!LNS[l].interno)mesh.material.depthFunc = 3;
 							mesh.material.opacity = op;
-							if(MERIDIANI[m].colore)mesh.material.color = new THREE.Color( eval("SET.COL.sel"+MERIDIANI[m].colore) );
+							if(MERIDIANI[m].colore)mesh.material.color = new THREE.Color( SET.COL["sel"+MERIDIANI[m].colore] );
 							if(m.indexOf("_MT")>-1){
 								mesh.material.color = new THREE.Color( SET.COL.selMT );
 							}
 							mesh.computeLineDistances();
 						}else{
 							if(!MERIDIANI[m].yin){
-								mesh.material=eval("this.MAT.lineYang"+intAdd);
+								mesh.material=this.MAT["lineYang"+intAdd];
 							}else{
-								mesh.material=eval("this.MAT.lineYin"+intAdd);
+								mesh.material=this.MAT["lineYin"+intAdd];
 								mesh.computeLineDistances();
 							}
 						}
@@ -590,7 +590,7 @@ SET = {
 					for(e in evidenziati){
 						for(let i in evidenziati[e]){
 							var tipo = scene.getObjectByName( evidenziati[e][i] ).parent.name;
-							scene.getObjectByName( evidenziati[e][i] ).material = eval("MODELLO.MAT.material"+tipo);
+							scene.getObjectByName( evidenziati[e][i] ).material = MODELLO.MAT["material"+tipo];
 						}
 					}
 				}
@@ -659,7 +659,7 @@ SET = {
 				}catch(err){}
 				var pass = true;
 				if(SET.ptSel)pass = false;
-				if(pass || matPoint.indexOf("On")>-1 || matPoint.indexOf("Base")>-1)els[v].material = eval('this.MAT.point'+mat); // cambiare se NOTA
+				if(pass || matPoint.indexOf("On")>-1 || matPoint.indexOf("Base")>-1)els[v].material = this.MAT['point'+mat]; // cambiare se NOTA
 				els[v].scale.set(1,1,1);
 			}
 		}
@@ -670,6 +670,7 @@ SET = {
 		for(v in els){
 			var int='';
 			if(els[v].userData.interno)int='Int';
+			console.log('SET.MAT.line'+Y+int+matLine)
 			els[v].material = eval('SET.MAT.line'+Y+int+matLine);
 		}
 	},
@@ -1186,7 +1187,7 @@ SET = {
 					for(e in evidenziati){
 						for(let i in evidenziati[e]){
 							var tipo = scene.getObjectByName( evidenziati[e][i] ).parent.name;
-							scene.getObjectByName( evidenziati[e][i] ).material = eval("MODELLO.MAT.material"+tipo);
+							scene.getObjectByName( evidenziati[e][i] ).material = MODELLO.MAT["material"+tipo];
 						}
 					}
 				}

@@ -44,7 +44,7 @@ var GUIDA = {
 		document.getElementById("guida_cont").classList.add("guida"+GUIDA.nGuida+g);
 	},
 	visFumetto: function( n, forza=false, noFr=false ){
-		var noGuida = eval(__(localStorage.getItem("no_"+n),"false"));
+		var noGuida = (__(localStorage.getItem("no_"+n),"false"));
 		if(!noGuida || forza){
 			if(GUIDA.fumettoAperto){
 				document.getElementById(GUIDA.fumettoAperto).classList.remove("vis","visSch","noFr");

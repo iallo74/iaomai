@@ -139,7 +139,6 @@ var LINGUE = {
 			
 			testo = LINGUE.convPaziente(testo);
 			
-			//var testo = eval(txt.substr(2,txt.length-4)+"['"+globals.siglaLingua+"']");
 			element.title=txt.replace(/\{\{TXT_[^\}\}]+\}\}/i, testo);
 		}
 	},
@@ -161,9 +160,6 @@ var LINGUE = {
 					testo = strSet[globals.siglaLingua];
 					if(!testo)testo = strSet["eng"];
 				}
-				
-				//var testo = eval(txt.substr(2,txt.length-4)+"['"+globals.siglaLingua+"']");
-				
 				testo = testo.replace(/\n/g,"<br>");
 				testo = testo.replace(/\[#\]/g,'<img src="img/spunta.png" height="16" style="vertical-align:middle;margin-left:5px;margin-top:-1px;margin-bottom:2px;">');
 				testo = testo.replace(/\[§\]/g,nomeApp);

@@ -749,8 +749,8 @@ var MODULO_PROCEDURE = { // extend SET
 		}});
 	},
 	modNumPunti: function(frm,n){
-		var mr=eval("document."+frm+".mr_"+n);
-		var punto=eval("document."+frm+".pt_"+n);
+		var mr=document[frm]["mr_"+n];
+		var punto=document[frm]["pt_"+n];
 		var maxL=punto.options.length;
 		for(a=maxL;a>=0;a--){
 			punto.options[a]=null;
@@ -1118,9 +1118,9 @@ var MODULO_PROCEDURE = { // extend SET
 			if(!globals.set.siglaProc)ET.evidenziaMeridianiMod( meridianiProvvisoriProc );
 		}catch(err){}
 		if(eviUltimo){
-			if(TipoDettaglio=='P' || TipoDettaglio=='N')eval("document.formMod.mr_"+p+".focus()");
-			else if(TipoDettaglio=='A')eval("document.formMod.pt_"+p+".focus()");
-			else if(TipoDettaglio!='M')eval("document.formMod.de_"+p+".focus()");
+			if(TipoDettaglio=='P' || TipoDettaglio=='N')document.formMod["mr_"+p].focus();
+			else if(TipoDettaglio=='A')document.formMod["pt_"+p].focus();
+			else if(TipoDettaglio!='M')document.formMod["de_"+p].focus();
 		}
 	},
 	aggiungiDettaglio: function( t, c='', u=1 ){ // aggiunge un dettaglio vuoto alla proceura

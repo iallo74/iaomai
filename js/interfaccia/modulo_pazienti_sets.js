@@ -59,9 +59,9 @@ var PAZIENTI_SETS = {
 	
 	// punti
 	modNumPunti: function( frm, n ){ // al cambio di punti o meridiano
-		var mr=eval("document."+frm+".mr_"+n);
+		var mr=document[frm][".mr_"+n];
 		if(typeof(DB.set.meridiani[mr])!='undefined'){
-			var punto=eval("document."+frm+".pt_"+n);
+			var punto=edocument[frm][".pt_"+n];
 			var maxL=punto.options.length;
 			for(a=maxL;a>=0;a--){
 				punto.options[a]=null;
@@ -86,16 +86,15 @@ var PAZIENTI_SETS = {
 		PAZIENTI.ricGroup(frm,n);
 	},
 	ricGroup: function( frm, n, addN='' ){
-		console.log("document."+frm+"['"+addN+"mr_"+n+"'].value");
-		var mr=eval("document."+frm+"['"+addN+"mr_"+n+"'].value");
-		var pt=eval("document."+frm+"['"+addN+"pt_"+n+"'].value");
-		var de=eval("document."+frm+"['"+addN+"de_"+n+"'].value");
+		var mr=document[frm][addN+"mr_"+n].value;
+		var pt=document[frm][addN+"pt_"+n].value;
+		var de=document[frm][addN+"de_"+n].value;
 		if(DB.set.meridiani[mr]){
 			var siglaPunto = __(DB.set.meridiani[mr].punti[pt*1-1].siglaPunto, pt+"."+mr);
-			eval("document."+frm+"['"+addN+"hd_"+n+"'].value='"+siglaPunto+"'");
+			document[frm][addN+"hd_"+n].value=siglaPunto;
 		}
 		
-		var hd=eval("document."+frm+"['"+addN+"hd_"+n+"'].value");
+		var hd=document[frm][addN+"hd_"+n].value;
 		if(pt.length == 1)pt = "0"+pt;
 		var elenco = [];
 		for(let p in PAZIENTI.puntiProvvisori){
@@ -666,9 +665,9 @@ var PAZIENTI_SETS = {
 	// auriculo-punti
 	ricAuriculo: function( frm, n ){ // ricarica tutti i punti
 		SET.overPunto("PT"+PAZIENTI.auriculoProvvisori[n].s,false);
-		PAZIENTI.auriculoProvvisori[n].s = eval("document."+frm+".pt_"+n+".value");
+		PAZIENTI.auriculoProvvisori[n].s = document[frm]["pt_"+n].value;
 		PAZIENTI.auriculoProvvisori[n].n = DB.set.punti[siglaPunto].NomePunto;
-		PAZIENTI.auriculoProvvisori[n].t = eval("document."+frm+".de_"+n+".value");
+		PAZIENTI.auriculoProvvisori[n].t = document[frm]["de_"+n].value;
 		try{
 			PAZIENTI.caricaAuriculoTrattamento();
 		}catch(err){}
@@ -918,9 +917,9 @@ var PAZIENTI_SETS = {
 	// punti namikoshi
 	ricNamikoshi: function( frm, n ){ // ricarica tutti i punti
 		//SET.overPunto(document.getElementById("n-rg_"+n),false);
-		PAZIENTI.namikoshiProvvisori[n].n = eval("document."+frm+"['n-pt_"+n+"'].value");
+		PAZIENTI.namikoshiProvvisori[n].n = document[frm]["n-pt_"+n].value;
 		PAZIENTI.namikoshiProvvisori[n].s = DB.set.meridiani.NK.punti[siglaPunto].NomePunto;
-		PAZIENTI.namikoshiProvvisori[n].t = eval("document."+frm+"['n-de_"+n+"'].value");
+		PAZIENTI.namikoshiProvvisori[n].t = document[frm]["n-de_"+n].value;
 		try{
 			PAZIENTI.caricaNamikoshiTrattamento();
 		}catch(err){}

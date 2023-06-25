@@ -68,9 +68,9 @@ SET = {
 						var intAdd='';
 						if(LNS[l].interno)intAdd='Int';
 						if(!MERIDIANI[m].yin){
-							mesh.material=eval("this.MAT.lineYang"+intAdd);
+							mesh.material=this.MAT["lineYang"+intAdd];
 						}else{
-							mesh.material=eval("this.MAT.lineYin"+intAdd);
+							mesh.material=this.MAT["lineYin"+intAdd];
 							mesh.computeLineDistances();
 						}
 						mesh.userData.interno=LNS[l].interno;
@@ -644,7 +644,7 @@ SET = {
 					for(e in evidenziati){
 						for(let i in evidenziati[e]){
 							var tipo = scene.getObjectByName( evidenziati[e][i] ).parent.name;
-							scene.getObjectByName( evidenziati[e][i] ).material = eval("MODELLO.MAT.material"+tipo);
+							scene.getObjectByName( evidenziati[e][i] ).material = MODELLO.MAT["material"+tipo];
 						}
 					}
 				}
@@ -728,7 +728,7 @@ SET = {
 					try{
 						if(els[v].userData.nota)mat="Note";
 					}catch(err){}
-					els[v].material = eval('this.MAT.point'+mat); // cambiare se NOTA
+					els[v].material = this.MAT["point"+mat]; // cambiare se NOTA
 					els[v].scale.set(1,1,1);
 				}
 			}
@@ -744,7 +744,7 @@ SET = {
 					try{
 						if(els[v].userData.nota)mat="Note";
 					}catch(err){}
-					els[v].material = eval('this.MAT.point'+mat); // cambiare se NOTA
+					els[v].material = this.MAT["point"+mat]; // cambiare se NOTA
 					els[v].scale.set(1,1,1);
 				}
 			}
