@@ -1326,6 +1326,7 @@ var LOGIN = {
 				var id_interno=-1;
 				if(BACKUPS.bkpProvv)elenco.note[p].DataModifica = lastSync*1;
 				JSNPUSH={	"TestoAnnotazione": elenco.note[p].TestoAnnotazione,
+							"hidePunto": elenco.note[p].hidePunto,
 							"meridiano": elenco.note[p].meridiano,
 							"numeroPunto": elenco.note[p].numeroPunto+'',//*1,
 							"idPaziente": elenco.note[p].idPaziente*1,
@@ -1365,12 +1366,14 @@ var LOGIN = {
 						*/
 						if(	NT.meridiano==elenco.note[p].meridiano && 
 							NT.numeroPunto+''==elenco.note[p].numeroPunto+'' && 
-							NT.idPaziente==elenco.note[p].idPaziente){
+							NT.idPaziente==elenco.note[p].idPaziente && 
+							NT.hidePunto=='1'){
 							trovato = true;
 						}
 					}
 					if(!trovato){
 						DB.note.data[k].TestoAnnotazione = '';
+						DB.note.data[k].hidePunto = '';
 						DB.note.data[k].DataModifica = lastSync + 1;
 					}
 				}
@@ -2513,7 +2516,10 @@ var LOGIN = {
 				
 				var note=[];
 				for(let n in backup.note){
-					if(backup.note[n].TestoAnnotazione && backup.note[n].idPaziente==backup.pazienti[p].idPaziente && backup.note[n].Cancellato!='1'){
+					if(	backup.note[n].TestoAnnotazione && 
+						backup.note[n].idPaziente==backup.pazienti[p].idPaziente && 
+						backup.note[n].hidePunto=='1' && 
+						backup.note[n].Cancellato!='1'){
 						note.push(backup.note[n]);
 					}
 				}
@@ -2561,7 +2567,10 @@ var LOGIN = {
 		LOGIN.addHTML("<h1>"+TXT("ANNOTAZIONI_GENERICO")+"</h1><div class=\"rientro\">");
 	
 		for(let n in backup.note){
-			if(backup.note[n].TestoAnnotazione && backup.note[n].idPaziente==-1 && backup.note[n].Cancellato!='1'){
+			if(	backup.note[n].TestoAnnotazione && 
+				backup.note[n].idPaziente==-1 && 
+				backup.note[n].hidePunto=='1' && 
+				backup.note[n].Cancellato!='1'){
 				LOGIN.addHTML("<b class=\"tits\">"+backup.note[n].meridiano+" "+backup.note[n].numeroPunto+"</b>: "+ backup.note[n].TestoAnnotazione.replace(/\n/gi,"<br>")+"<br>");
 				
 				LOGIN.addHTML("<hr>");

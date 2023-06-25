@@ -138,9 +138,12 @@ var MODULO_PUNTO = { // extend SET
 		HTML += imgDettaglio;
 		
 		// annotazione
-		var TestoAnnotazione = '';
+		var TestoAnnotazione = '',
+			hidePunto;
 		if(SET.verificaNota(siglaMeridiano+"."+nPunto)){
-			TestoAnnotazione += SET.leggiNota( cartella, nPunto );
+			let ar = SET.leggiNota( cartella, nPunto );
+			TestoAnnotazione = ar[0];
+			hidePunto = __(ar[1],'0');
 		}
 		HTML +=  '<p id="annotazioni_label"><b>'+htmlEntities(TXT("Note"))+'</b></p>';
 		if(!ritorno || !SCHEDA.formModificato){
@@ -150,6 +153,7 @@ var MODULO_PUNTO = { // extend SET
 					'		<input name="stessa" type="hidden" id="stessa" value="1" />' +
 					'		<input name="siglaMeridiano" type="hidden" id="siglaMeridiano" value="'+siglaMeridiano+'" />' +
 					'		<input name="nPunto" type="hidden" id="nPunto" value="'+nPunto+'" />' +
+					'		<input name="hidePunto" type="hidden" id="hidePunto" value="'+hidePunto+'" />' +
 					'		<textarea  	id="TestoAnnotazione"' +
 					'					name="TestoAnnotazione"' +
 					'					onKeyDown="document.getElementById(\'pulsantiAnnotazione\').style.display=\'block\';"' +
@@ -237,10 +241,12 @@ var MODULO_PUNTO = { // extend SET
 		var DataModifica = DB.note.lastSync+1;
 		var pDef=-1;
 		var Q_TestoAnnotazione = document.getElementById("TestoAnnotazione").value;
+		var Q_hidePunto = document.getElementById("hidePunto").value;
 		for (p in DB.note.data) {
 			if(DB.note.data.length && typeof(DB.note.data[p].meridiano)=='undefined')DB.note.data.splice(p,p);
 			else if(DB.note.data[p].meridiano==Q_nome_meridiano && DB.note.data[p].numeroPunto==Q_p && SET.verNotaCli(p)){
 				DB.note.data[p].TestoAnnotazione=Q_TestoAnnotazione;
+				DB.note.data[p].hidePunto=Q_hidePunto;
 				DB.note.data[p].DataModifica=parseInt(DataModifica);
 				nota_salvata=true;
 				pDef=p;
@@ -250,6 +256,7 @@ var MODULO_PUNTO = { // extend SET
 			var idPaziente=-1;
 			if(PAZIENTI.idCL>-1)idPaziente=PAZIENTI.idPaziente;
 			JSNPUSH={	"TestoAnnotazione": Q_TestoAnnotazione,
+						"hidePunto": Q_hidePunto,
 						"meridiano": Q_nome_meridiano,
 						"numeroPunto": Q_p*1,
 						"idPaziente": idPaziente*1,
@@ -292,10 +299,11 @@ var MODULO_PUNTO = { // extend SET
 			if(pass){
 				if( DB.note.data[n].meridiano == mr && DB.note.data[n].numeroPunto == pt ){
 					TestoAnnotazione = DB.note.data[n].TestoAnnotazione;
+					hidePunto = DB.note.data[n].hidePunto;
 				}
 			}
 		}	
-		return TestoAnnotazione;
+		return [TestoAnnotazione,hidePunto];
 	},
 	leggiNote: function(){ // crea l'elenco delle note e le evidenzia dul modello
 		SET.evidenziaNote(false);

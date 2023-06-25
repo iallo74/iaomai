@@ -170,10 +170,13 @@ var MODULO_PUNTO = { // extend SET
 		
 		
 		// annotazione
-		var TestoAnnotazione = '';
-		var cartella = "auricolo";
+		var TestoAnnotazione = '',
+			hidePunto,
+			cartella = "auricolo";
 		if(SET.verificaNota(siglaPunto)){
-			TestoAnnotazione += SET.leggiNota( cartella, siglaPunto*1 );
+			let ar = SET.leggiNota( cartella, siglaPunto*1 );
+			TestoAnnotazione = ar[0];
+			hidePunto = __(ar[1],'0');
 		}
 		HTML +=  '<p id="annotazioni_label"><b>'+htmlEntities(TXT("Note"))+'</b></p>';
 		if(!ritorno || !SCHEDA.formModificato){
@@ -182,6 +185,7 @@ var MODULO_PUNTO = { // extend SET
 					'	<form 	id="formAnnotazioni" name="formAnnotazioni" method="post" onSubmit="return false;">' +
 					'		<input name="stessa" type="hidden" id="stessa" value="1" />' +
 					'		<input name="siglaPunto" type="hidden" id="siglaPunto" value="'+siglaPunto+'" />' +
+					'		<input name="hidePunto" type="hidden" id="hidePunto" value="'+hidePunto+'" />' +
 					'		<textarea  	id="TestoAnnotazione"' +
 					'					name="TestoAnnotazione"' +
 					'					onKeyDown="document.getElementById(\'pulsantiAnnotazione\').style.display=\'block\';"' +
@@ -234,10 +238,12 @@ var MODULO_PUNTO = { // extend SET
 		var DataModifica = DB.note.lastSync+1;
 		var pDef=-1;
 		var Q_TestoAnnotazione = document.getElementById("TestoAnnotazione").value;
+		var Q_hidePunto = document.getElementById("hidePunto").value;
 		for (p in DB.note.data) {
 			if(DB.note.data.length && typeof(DB.note.data[p].meridiano)=='undefined')DB.note.data.splice(p,p);
 			else if(DB.note.data[p].meridiano=='auricolo' && DB.note.data[p].numeroPunto==siglaPunto && SET.verNotaCli(p)){
 				DB.note.data[p].TestoAnnotazione=Q_TestoAnnotazione;
+				DB.note.data[p].hidePunto=Q_hidePunto;
 				DB.note.data[p].DataModifica=parseInt(DataModifica);
 				nota_salvata=true;
 				pDef=p;
@@ -247,6 +253,7 @@ var MODULO_PUNTO = { // extend SET
 			var idPaziente=-1;
 			if(PAZIENTI.idCL>-1)idPaziente=PAZIENTI.idPaziente;
 			JSNPUSH={	"TestoAnnotazione": Q_TestoAnnotazione,
+						"hidePunto": Q_hidePunto,
 						"meridiano": "auricolo",
 						"numeroPunto": siglaPunto,
 						"idPaziente": idPaziente*1,
@@ -293,10 +300,11 @@ var MODULO_PUNTO = { // extend SET
 			if(pass){
 				if( DB.note.data[n].meridiano == mr && DB.note.data[n].numeroPunto == pt ){
 					TestoAnnotazione = DB.note.data[n].TestoAnnotazione;
+					hidePunto = DB.note.data[n].hidePunto;
 				}
 			}
 		}	
-		return TestoAnnotazione;
+		return [TestoAnnotazione,hidePunto];
 	},
 	leggiNote: function(){ // estrae l'elenco delle note
 		SET.evidenziaNote(false);
