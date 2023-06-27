@@ -735,6 +735,7 @@ SET = {
 			var els = scene.getObjectByName("PTs"+phs[ph]).children;
 			for(e in els){
 				if(els[e].name.indexOf("PT"+name)==0){
+					els[e].visible = true;
 					els[e].material=mat;
 					if(!PT_name_first && els[e].userData.PH == SET.phase){
 						PT_name_first = "PT"+name;
@@ -752,6 +753,7 @@ SET = {
 			var els = scene.getObjectByName("ARs"+phs[ph]).children;
 			for(e in els){
 				if(els[e].name.indexOf("AR"+name)==0){
+					els[e].visible = true;
 					els[e].material=mat;
 					if(els[e].userData.PH == SET.phase)AR_name_first = "AR"+name;
 				}
@@ -855,9 +857,13 @@ SET = {
 			var els = scene.getObjectByName("PTs"+phs[ph]).children;
 			for(e in els){
 				if(els[e].name.indexOf("PT"+this.ptSel.name.substr(2,3))==0){
+					if(__(els[e].userData.hidePunto,'0')=='1')els[e].visible = false;
 					els[e].material=mat;
 					els[e].material.opacity = 1;
 					els[e].scale.set(1,1,1);
+				}
+				if(els[e].name.indexOf("_PT"+this.ptSel.name.substr(2,3))==0){
+					if(__(els[e].userData.hidePunto,'0')=='1')els[e].visible = false;
 				}
 			}
 			var els = scene.getObjectByName("LNs"+phs[ph]).children;
@@ -869,6 +875,7 @@ SET = {
 			var els = scene.getObjectByName("ARs"+phs[ph]).children;
 			for(e in els){
 				if(els[e].name.indexOf("AR"+this.ptSel.name.substr(2,3))==0){
+					if(__(els[e].userData.hidePunto,'0')=='1')els[e].visible = false;
 					system = els[e].userData.system;
 					if(SET.puntiEvidenziati.indexOf(this.ptSel.name.substr(2,3))>-1){
 						system = 'Evi';
@@ -976,9 +983,12 @@ SET = {
 		SCHEDA.torna();
 		SCHEDA.formModificato = true;
 	},
-	evidenziaPunto: function( html, anatomia='', mappa='', lm='' ){
+	evidenziaPunto: function( el, anatomia='', mappa='', lm='' ){
+		if(!el || typeof(el)=='undefined') var el = document.getElementById("scheda_testo");
+		let html = el.innerHTML;
 		SET.annullaEvidenziaPunto(true);
 		var re = /selPunto\([^\)]+\)/ig;
+		
 		var result = html.match(re);
 		for(let k in result){
 			var pT=result[k].split("'");
@@ -1076,7 +1086,7 @@ SET = {
 				var els = scene.getObjectByName("PTs"+phs[ph]).children;
 				for(e in els){
 					var siglaPunto = els[e].name.replace("_","").substr(2,3);
-					var vis = !__(DB.set.punti[siglaPunto].hidden,false);
+					var vis = !__(DB.set.punti[siglaPunto].hidden,false) && __(els[e].userData.hidePunto,'0')=='0';
 					if(SET.puntiEvidenziati.indexOf(siglaPunto)>-1){
 						if(els[e].name.indexOf("_PT"+siglaPunto)==0){
 							els[e].material=SET.MAT.pointTrasp;
@@ -1093,7 +1103,7 @@ SET = {
 				var els = scene.getObjectByName("ARs"+phs[ph]).children;
 				for(e in els){
 					var siglaPunto = els[e].name.substr(2,3);
-					var vis = !__(DB.set.punti[siglaPunto].hidden,false);
+					var vis = !__(DB.set.punti[siglaPunto].hidden,false) && __(els[e].userData.hidePunto,'0')=='0';
 					if(SET.puntiEvidenziati.indexOf(siglaPunto)>-1){
 						if(els[e].name.indexOf("AR"+siglaPunto)==0){
 							els[e].material=cloneMAT(SET.MAT["areaBase"+els[e].userData.system]);
@@ -1344,7 +1354,7 @@ SET = {
 			leg.style.cursor = "pointer";
 			leg.innerHTML = leg.id;
 			leg.onclick = function(){
-				SET.caricaTeoria(	parseInt(SET.idTeoLM.split("_")[0]),
+				SET.caricaApprofondimento(	parseInt(SET.idTeoLM.split("_")[0]),
 									parseInt(SET.idTeoLM.split("_")[1]),
 									document.getElementById("btn_teoria_"+SET.idTeoLM));
 			}
@@ -1391,14 +1401,14 @@ SET = {
 			var els = scene.getObjectByName("PTs"+phs[ph]).children;
 			for(e in els){
 				var name = els[e].name.replace("_","").substr(2,3);
-				if(DB.set.punti[name].hidden)els[e].visible = false;
+				if(DB.set.punti[name].hidden || __(els[e].userData.hidePunto,'0')=='1')els[e].visible = false;
 				else if(els[e].userData.lato == opposite)els[e].visible = false;
 				else if(!els[e].visible && !__(els[e].userData.locked,false))els[e].visible = true;
 			}
 			var els = scene.getObjectByName("ARs"+phs[ph]).children;
 			for(e in els){
 				var name = els[e].name.replace("_","").substr(2,3);
-				if(DB.set.punti[name].hidden)els[e].visible = false;
+				if(DB.set.punti[name].hidden || __(els[e].userData.hidePunto,'0')=='1')els[e].visible = false;
 				else if(els[e].userData.lato == opposite)els[e].visible = false;
 				else if(!els[e].visible && !__(els[e].userData.locked,false))els[e].visible = true;
 			}
@@ -1406,7 +1416,7 @@ SET = {
 			for(e in els){
 				var name = els[e].name.substr(2,3);
 				if(els[e].name.substr(0,2)=='AG' && name == SET.ptSel.name.substr(2,3)){
-					if(DB.set.punti[name].hidden)els[e].visible = false;
+					if(DB.set.punti[name].hidden || __(els[e].userData.hidePunto,'0')=='1')els[e].visible = false;
 					else if(els[e].userData.lato == opposite)els[e].visible = false;
 					else if(!els[e].visible && !__(els[e].userData.locked,false))els[e].visible = true;
 				}

@@ -229,7 +229,7 @@ var MODULO_PROCEDURE = { // extend SET
 							if(DescrizioneDettaglio.indexOf(".")>-1){
 								pP=DescrizioneDettaglio.split(".");
 								if(TipoDettaglio=='P' || TipoDettaglio=='N'){
-									nPunto=pP[0];
+									nPunto=SET.ptToStr(pP[0]);
 									siglaMeridiano=pP[1];
 									siglaPunto=__(pP[2]);
 									mezzo=__(pP[3]);
@@ -264,7 +264,7 @@ var MODULO_PROCEDURE = { // extend SET
 							if(typeof(DB.set.meridiani[siglaMeridiano])!='undefined')HTML += ' onClick="SET.selPunto(\''+nPunto+'\',\''+siglaMeridiano+'\')"';
 							
 							var txt = siglaPunto;
-							if(siglaMeridiano=='NK' && DB.set.meridiani.NK)txt = DB.set.meridiani.NK.punti[nPunto*1-1].NomePunto
+							if(siglaMeridiano=='NK' && DB.set.meridiani.NK)txt = DB.set.meridiani.NK.punti[nPunto].NomePunto
 							
 							HTML += '>'+txt+'</span>';
 						}
@@ -848,11 +848,11 @@ var MODULO_PROCEDURE = { // extend SET
 						'	  onMouseOver="SET.overPunto(\'_PT'+DescrizioneDettaglio+'\',true);"'+
 						'	  onMouseOut="SET.overPunto(\'_PT'+DescrizioneDettaglio+'\',false);"';
 				}
-				if(mouseDetect && TipoDettaglio=='M'){
+				/*if(mouseDetect && TipoDettaglio=='N'){
 					HTML += 
-						'	  onMouseOver="SET.eviMeridiano(document.getElementById(\'mr_'+p+'\').value,true);"'+
-						'	  onMouseOut="SET.eviMeridiano(document.getElementById(\'mr_'+p+'\').value,false);"';
-				}
+						'	  onMouseOver="SET.eviMeridiano(document.getElementById(\'n-mr_'+p+'\').value,true);"'+
+						'	  onMouseOut="SET.eviMeridiano(document.getElementById(\'n-mr_'+p+'\').value,false);"';
+				}*/
 				HTML += '><div class="grabElement'+((TipoDettaglio=='T' || TipoDettaglio=='D') ? ' rgLabel' : '')+'"' +
 						'	   data-drag-class="lbProc"' +
 						'	   data-drag-family="proc"' +
@@ -986,10 +986,10 @@ var MODULO_PROCEDURE = { // extend SET
 									' 			id="pt_'+p+'"' +
 									' 			onChange="SET.ritOverPunto(\'dettagliCont\','+p+');this.blur();">';
 							
-							for(let n=1;n<=totPunti;n++){
-								var siglaPunto = n;
-								if(__(DB.set.meridiani[siglaMeridiano].punti[n-1].siglaPunto)){
-									siglaPunto = __(DB.set.meridiani[siglaMeridiano].punti[n-1].siglaPunto);
+							for(let n in DB.set.meridiani[siglaMeridiano].punti){
+								let siglaPunto = +nPunto;
+								if(__(DB.set.meridiani[siglaMeridiano].punti[n].siglaPunto)){
+									siglaPunto = __(DB.set.meridiani[siglaMeridiano].punti[n].siglaPunto);
 									siglaPunto = siglaPunto.substr(3,siglaPunto.length-3);
 								}
 								HTML += '	<option value="'+n+'"';
@@ -1012,7 +1012,7 @@ var MODULO_PROCEDURE = { // extend SET
 								}
 							}
 							puntiElenco.sort(sort_by("NomePunto", false));
-							HTML +=	'	<input type="hidden" id="n-pt_'+p+'" name="n-pt_'+p+'" value="'+siglaPunto+'">' +
+							HTML +=	'	<input type="hidden" id="n-mr_'+p+'" name="n-mr_'+p+'" value="NK" class="selectTratt">' +
 									'	<select class="numPoints numNamikoshi"' +
 									'	     	 name="n-pt_'+p+'"' +
 									'	     	 id="n-pt_'+p+'"' +
@@ -1115,7 +1115,7 @@ var MODULO_PROCEDURE = { // extend SET
 		document.getElementById("dettagliCont").innerHTML=HTML;
 		try{
 			SET.evidenziaPuntoMod( puntiProvvisoriProc );
-			if(!globals.set.siglaProc)ET.evidenziaMeridianiMod( meridianiProvvisoriProc );
+			if(!globals.set.siglaProc)SET.evidenziaMeridianiMod( meridianiProvvisoriProc );
 		}catch(err){}
 		if(eviUltimo){
 			if(TipoDettaglio=='P' || TipoDettaglio=='N')document.formMod["mr_"+p].focus();
@@ -1175,12 +1175,11 @@ var MODULO_PROCEDURE = { // extend SET
 			if(document.getElementById("pt_"+n)){
 			if(!globals.set.siglaProc){
 				var mer = document.getElementById("mr_"+n).value;
-				var nPunto = document.getElementById("pt_"+n).value;
-				if(nPunto.length == 1)nPunto='0'+nPunto;
+				var nPunto = SET.ptToStr(document.getElementById("pt_"+n).value);
 				val = nPunto+"."+mer;
 				var sg = val.replace(/\./g,"-");
-				if(__(DB.set.meridiani[mer].punti[nPunto*1-1].siglaPunto)){
-					sg = __(DB.set.meridiani[mer].punti[nPunto*1-1].siglaPunto);
+				if(__(DB.set.meridiani[mer].punti[nPunto].siglaPunto)){
+					sg = __(DB.set.meridiani[mer].punti[nPunto].siglaPunto);
 				}
 				val += "."+sg+"."+__(DP[2])+"."+__(DP[3]);
 			}

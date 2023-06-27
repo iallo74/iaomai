@@ -46,8 +46,7 @@ var MODULO_MERIDIANI = { // extend SET
 					var elemento = (!__(DB.set.meridiani[m].punti[s].nascosto,false)) ? '<p>'+this.scriviPunto(addNMK+TS.NomePunto,true,true,__(TS.siglaPunto),m)+'</p>' : "";
 					if(m=='NK'){
 						// verifico le autorizzazioni
-						var pT = addNMK.split(".");
-						if(!SET.verFreePunti(pT[1]+"."+((pT[0].length==1)?"0":"")+pT[0])){
+						if(!SET.verFreePunti("NK."+SET.ptToStr(s))){
 							elemento = elemento.replace("pallinoPat","pallinoPat lockedItem");
 						}
 						// --------------------------

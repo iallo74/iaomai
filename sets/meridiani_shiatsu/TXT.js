@@ -31,6 +31,14 @@ DB.TXT.set = {
 		por: "Sem comentários",
 		deu: "Keine Kommentare"
 	},
+    PuntoSelezionato: {
+        ita: "Punto selezionato",
+        eng: "Selected point",
+        esp: "Punto seleccionado",
+        fra: "Point sélectionné",
+        por: "Ponto selecionado",
+        deu: "Ausgewählter Punkte"
+    },
     SostituisciPunto: {
         ita: "Sostituisci [t] con questo punto",
         eng: "Replace [t] with this point",

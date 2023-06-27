@@ -57,7 +57,7 @@ var MODULO_PUNTO = { // extend SET
 			var txt = '';
 			var cls = '';
 			var stesso = false;
-			var puntoNuovo = nPunto+"."+siglaMeridiano;
+			var puntoNuovo = +nPunto +"."+siglaMeridiano;
 			if( SCHEDA.classeAperta == 'scheda_procedura' ){
 				if(SET.pMod > -1){
 					var puntoOr = SET.dettagliProvvisori[SET.pMod].DescrizioneDettaglio;
@@ -163,9 +163,7 @@ var MODULO_PUNTO = { // extend SET
 		var TestoAnnotazione = '',
 			hidePunto;
 		if(SET.verificaNota(siglaMeridiano+"."+nPunto)){
-			let ar = SET.leggiNota( cartella, nPunto );
-			TestoAnnotazione = ar[0];
-			hidePunto = __(ar[1],'0');
+			TestoAnnotazione = SET.leggiNota( cartella, nPunto );
 		}
 		HTML +=  '<p id="annotazioni_label"><b>'+htmlEntities(TXT("Note"))+'</b></p>';
 		if(!ritorno || !SCHEDA.formModificato){
@@ -175,7 +173,6 @@ var MODULO_PUNTO = { // extend SET
 					'		<input name="stessa" type="hidden" id="stessa" value="1" />' +
 					'		<input name="siglaMeridiano" type="hidden" id="siglaMeridiano" value="'+siglaMeridiano+'" />' +
 					'		<input name="nPunto" type="hidden" id="nPunto" value="'+nPunto+'" />' +
-					'		<input name="hidePunto" type="hidden" id="hidePunto" value="'+hidePunto+'" />' +
 					'		<textarea  	id="TestoAnnotazione"' +
 					'					name="TestoAnnotazione"' +
 					'					onKeyDown="document.getElementById(\'pulsantiAnnotazione\').style.display=\'block\';"' +
@@ -184,7 +181,7 @@ var MODULO_PUNTO = { // extend SET
 					'</div>' +
 					'<div id="pulsantiAnnotazione">' +
 					'	<div 	id="p_sch_salva"' +
-					'			onClick="if(verifica_form(document.formAnnotazioni))SET.mod_nota( \''+cartella+'\', \''+SET.ptToNum(nPunto)+'\' );">' +
+					'			onClick="if(verifica_form(document.formAnnotazioni))SET.mod_nota( \''+cartella+'\', \''+(+nPunto)+'\' );">' +
 						TXT("Salva") +
 					'	</div>' +
 					'</div><div class="l"></div>';
@@ -235,17 +232,17 @@ var MODULO_PUNTO = { // extend SET
 		var classFr = '';
 		
 		if(!SCHEDA.scheda2Aperta){
-			var nPuntoGiu = SET.ptToStr(SET.ptToNum(nPunto)-1);
-			var nPuntoSu = SET.ptToStr(SET.ptToNum(nPunto)+1);
+			var nPuntoGiu = SET.ptToStr(+nPunto - 1);
+			var nPuntoSu = SET.ptToStr(+Punto +1 );
 			// evidenzio i pulsanti su e giù
 			
-			if(SET.ptToNum(nPunto) > 1){ // attiva giù
+			if(+nPunto > 1){ // attiva giù
 				classFr += "frGiu ";
 				document.getElementById("frSchGiu").onclick = function(){
 					SET.apriPunto(siglaMeridiano+"."+nPuntoGiu,'');
 				};
 			}
-			if(SET.ptToNum(nPunto) < Object.keys(meridiano.punti).length){ // attiva su
+			if(+nPunto < Object.keys(meridiano.punti).length){ // attiva su
 				classFr += "frSu ";
 				document.getElementById("frSchSu").onclick = function(){
 					SET.apriPunto(siglaMeridiano+"."+nPuntoSu,'');
@@ -260,12 +257,10 @@ var MODULO_PUNTO = { // extend SET
 		var DataModifica = DB.note.lastSync+1;
 		var pDef=-1;
 		var Q_TestoAnnotazione = document.getElementById("TestoAnnotazione").value;
-		var Q_hidePunto = document.getElementById("hidePunto").value;
 		for (p in DB.note.data) {
 			if(DB.note.data.length && typeof(DB.note.data[p].meridiano)=='undefined')DB.note.data.splice(p,p);
 			else if(DB.note.data[p].meridiano==Q_nome_meridiano && DB.note.data[p].numeroPunto==Q_p && SET.verNotaCli(p)){
 				DB.note.data[p].TestoAnnotazione=Q_TestoAnnotazione;
-				DB.note.data[p].hidePunto=Q_hidePunto;
 				DB.note.data[p].DataModifica=parseInt(DataModifica);
 				nota_salvata=true;
 				pDef=p;
@@ -275,7 +270,6 @@ var MODULO_PUNTO = { // extend SET
 			var idPaziente=-1;
 			if(PAZIENTI.idCL>-1)idPaziente=PAZIENTI.idPaziente;
 			JSNPUSH={	"TestoAnnotazione": Q_TestoAnnotazione,
-						"hidePunto": Q_hidePunto,
 						"meridiano": Q_nome_meridiano,
 						"numeroPunto": Q_p*1,
 						"idPaziente": idPaziente*1,
@@ -324,7 +318,7 @@ var MODULO_PUNTO = { // extend SET
 				}
 			}
 		}	
-		return [TestoAnnotazione,hidePunto];
+		return TestoAnnotazione;
 	},
 	leggiNote: function(){
 		// crea l'elenco delle note e le evidenzia dul modello
@@ -383,17 +377,31 @@ var MODULO_PUNTO = { // extend SET
 			if(DB.mtc.meridiani[k].cartella == cartella)return k;
 		}
 	},
-	azRicercaPunto: function( pt ){
-		// apre la scheda del punto dalla ricerca globale
-		SET.apriPunto(pt);
-		evidenziaParola();
-	},
 	ptToStr: function( nPunto ){
 		nPunto = nPunto+"";
 		if(nPunto.length == 1)nPunto = "0"+nPunto;
 		return nPunto;
 	},
-	ptToNum: function( nPunto ){
-		return parseInt(nPunto);
+	splitPoint: function( siglaPunto ){
+		let pP = siglaPunto.split("."),
+			el = {
+				nPunto: '',
+				siglaMeridiano: '',
+				valutazione: ''
+			};
+		Filtro = /[0-9]{1,2}/;
+		if (Filtro.test(pP[0]))el.nPunto = pP[0];
+		if (Filtro.test(pP[1]))el.nPunto = pP[1];
+		Filtro = /[A-Z]{2}/;
+		if (Filtro.test(pP[0]))el.siglaMeridiano = pP[0];
+		if (Filtro.test(pP[1]))el.siglaMeridiano = pP[1];
+		if(el.nPunto.length == 1)el.nPunto = "0"+el.nPunto;
+		el.valutazione = __(pP[2],'');
+		return el;
+	},
+	azRicercaPunto: function( pt ){
+		// apre la scheda del punto dalla ricerca globale
+		SET.apriPunto(pt);
+		evidenziaParola();
 	}
 }

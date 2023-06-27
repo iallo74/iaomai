@@ -18,7 +18,7 @@ var MODULO_TEORIA = { // extend SET
 				var addLock = 	(!SET.verFreeTeoria(p+"_"+t))? ' lockedItem' : '';
 				// --------------------------
 				TitoloTeoria = DB.set.teoria[p].contenuti[t].TitoloTeoria;
-				funct = 'Teoria';
+				funct = 'Approfondimento';
 				addClass = '';
 				if(TitoloTeoria.indexOf("[video]")>-1){
 					var pT = TitoloTeoria.split("[video]");
@@ -38,7 +38,7 @@ var MODULO_TEORIA = { // extend SET
 																contTeoria +
 															'</div>';
 	},
-	caricaTeoria: function( p, t, btn ){ // apre la scheda della teoria
+	caricaApprofondimento: function( p, t, btn ){ // apre la scheda della teoria
 		// verifico le autorizzazioni
 		if(!SET.verFreeTeoria(p+"_"+t)){
 			ALERT(TXT("MsgContSoloPay"),true,true);
@@ -122,7 +122,7 @@ var MODULO_TEORIA = { // extend SET
 			}
 			
 			html_cont = '<div>'+html_cont+'</div>' +
-						'<div class="elencoPunti">' +
+						'<div class="elencoPunti visSch">' +
 							SET.convPuntiScheda(elencoPunti) +
 						'</div>';
 			if(GEOMETRIE.gruppi[gruppo].posizione){
@@ -162,7 +162,7 @@ var MODULO_TEORIA = { // extend SET
 								btn,
 								btnAdd,
 								globals.set.cartella+'_teoria_'+p+"_"+t );
-		SET.evidenziaPunto(html,anatomia,mappa,lm);
+		SET.evidenziaPunto(null,anatomia,mappa,lm);
 		if(flowchart){
 			if(SET.risTest.dipendenza.tot > -1){
 				for(let o=0;o<document.getElementById("dipendenze").options.length;o++){
@@ -211,7 +211,7 @@ var MODULO_TEORIA = { // extend SET
 			}
 			delete(localStorage.risTest);
 		}
-		SET.caricaTeoria(SET.idTeoTests,n,document.getElementById("btn_teoria_"+SET.idTeoTests+"_"+n));
+		SET.caricaApprofondimento(SET.idTeoTests,n,document.getElementById("btn_teoria_"+SET.idTeoTests+"_"+n));
 		SCHEDA.selElenco("teoria");
 		SCHEDA.swCartella(document.getElementById("btn_teoria_cart_"+SET.idTeoTests),true);
 	},
@@ -278,8 +278,8 @@ var MODULO_TEORIA = { // extend SET
 		SET.risTest[SET.test].vals = valori;
 		SET.risTest[SET.test].tot = SET.testTOT;
 		localStorage.risTest = JSON.stringify(SET.risTest);
-		if(SET.test=='motivazione')SET.caricaTeoria(3,2,document.getElementById("btn_teoria_3_2"));
-		else if(SET.test=='dipendenza')SET.caricaTeoria(3,3,document.getElementById("btn_teoria_3_3"));
+		if(SET.test=='motivazione')SET.caricaApprofondimento(3,2,document.getElementById("btn_teoria_3_2"));
+		else if(SET.test=='dipendenza')SET.caricaApprofondimento(3,3,document.getElementById("btn_teoria_3_3"));
 	},
 	azzeraTest: function(){
 		if(!document.getElementById("test_cont").classList.contains("full"))return;
@@ -287,8 +287,8 @@ var MODULO_TEORIA = { // extend SET
 		SET.risTest[SET.test].vals = {};
 		SET.risTest[SET.test].tot = SET.testTOT;
 		localStorage.risTest = JSON.stringify(SET.risTest);
-		if(SET.test=='motivazione')SET.caricaTeoria(3,1,document.getElementById("btn_teoria_3_1"));
-		else if(SET.test=='dipendenza')SET.caricaTeoria(3,2,document.getElementById("btn_teoria_3_2"));
+		if(SET.test=='motivazione')SET.caricaApprofondimento(3,1,document.getElementById("btn_teoria_3_1"));
+		else if(SET.test=='dipendenza')SET.caricaApprofondimento(3,2,document.getElementById("btn_teoria_3_2"));
 	},
 	
 	scriviFlowChart: function(){
@@ -445,7 +445,7 @@ var MODULO_TEORIA = { // extend SET
 	azRicercaTeoria: function( i, p ){  // apre la scheda della teoria dalla ricerca globale
 		SCHEDA.swCartella( document.getElementById('btn_teoria_cart_'+i),true);
 		SCHEDA.selElenco('teoria');
-		SET.caricaTeoria( i, p, document.getElementById('btn_teoria_'+i+'_'+p));
+		SET.caricaApprofondimento( i, p, document.getElementById('btn_teoria_'+i+'_'+p));
 		evidenziaParola();
 		RICERCHE.nascondiGlobal();	
 		SCHEDA.individuaElemento( 'btn_teoria_cart_'+i, "listaTeoria" );

@@ -1005,14 +1005,15 @@ var LOGIN = {
 					}
 				}
 				if(elencoRicerche)elenco+='"ricerche": ['+elencoRicerche.substr(0,elencoRicerche.length-2)+'], ';
+				
 				elencoNote='';
 				for(let k in DB.note.data){
 					if(DB.note.data[k].DataModifica*1>DB.note.lastSync*1 || dwnl || bkp){
 						elencoNote+=JSON.stringify(DB.note.data[k])+", ";
 					}
 				}
-				
-				if(elencoNote)elenco+='"note": ['+elencoNote.substr(0,elencoNote.length-2)+'], ';		
+				if(elencoNote)elenco+='"note": ['+elencoNote.substr(0,elencoNote.length-2)+'], ';
+
 				elencoProcedure='';
 				for(let k in DB.procedure.data){
 					if(DB.procedure.data[k].DataModifica*1>DB.procedure.lastSync*1 || dwnl || bkp){
@@ -1021,8 +1022,6 @@ var LOGIN = {
 					}
 				}
 				if(elencoProcedure)elenco+='"procedure": ['+elencoProcedure.substr(0,elencoProcedure.length-2)+'], ';
-				
-				
 				
 				elencoAppuntamenti='';
 				for(let k in DB.appuntamenti.data){
@@ -1084,7 +1083,6 @@ var LOGIN = {
 				}
 				if(elencoServizi)elenco+='"servizi": ['+elencoServizi.substr(0,elencoServizi.length-2)+'], ';
 				
-				
 				elencoFornitori='';
 				for(let k in DB.fornitori.data){
 					var db={ 	"idFornitore": DB.fornitori.data[k].idFornitore*1,
@@ -1113,6 +1111,7 @@ var LOGIN = {
 					}
 				}
 				if(elencoFornitori)elenco+='"fornitori": ['+elencoFornitori.substr(0,elencoFornitori.length-2)+'], ';
+
 				elencoPazienti='';
 				for(let k in DB.pazienti.data){
 					var db={ 	"idPaziente": DB.pazienti.data[k].idPaziente*1,
@@ -1279,6 +1278,7 @@ var LOGIN = {
 		nSinc=0;
 		var syncUp=false;
 		elenco=JSON.parse(txt);
+		
 		lastSync=elenco.lastSync;
 		
 		DB.ricerche.lastSync=lastSync;
@@ -1366,14 +1366,12 @@ var LOGIN = {
 						*/
 						if(	NT.meridiano==elenco.note[p].meridiano && 
 							NT.numeroPunto+''==elenco.note[p].numeroPunto+'' && 
-							NT.idPaziente==elenco.note[p].idPaziente && 
-							NT.hidePunto=='1'){
+							NT.idPaziente==elenco.note[p].idPaziente){
 							trovato = true;
 						}
 					}
 					if(!trovato){
 						DB.note.data[k].TestoAnnotazione = '';
-						DB.note.data[k].hidePunto = '';
 						DB.note.data[k].DataModifica = lastSync + 1;
 					}
 				}
@@ -2111,7 +2109,10 @@ var LOGIN = {
 				}
 				LOGIN.afterFunct = null;
 			}else{
-				try{SET.car_procedure(-1,1);}catch(err){}
+				try{
+					SET.car_procedure(-1,1);
+					SET.leggiNote();
+				}catch(err){}
 			}
 			if(PAZIENTI.idCL == -1)PAZIENTI.caricaPazienti();
 			else{
@@ -2518,7 +2519,6 @@ var LOGIN = {
 				for(let n in backup.note){
 					if(	backup.note[n].TestoAnnotazione && 
 						backup.note[n].idPaziente==backup.pazienti[p].idPaziente && 
-						backup.note[n].hidePunto=='1' && 
 						backup.note[n].Cancellato!='1'){
 						note.push(backup.note[n]);
 					}
@@ -2569,7 +2569,6 @@ var LOGIN = {
 		for(let n in backup.note){
 			if(	backup.note[n].TestoAnnotazione && 
 				backup.note[n].idPaziente==-1 && 
-				backup.note[n].hidePunto=='1' && 
 				backup.note[n].Cancellato!='1'){
 				LOGIN.addHTML("<b class=\"tits\">"+backup.note[n].meridiano+" "+backup.note[n].numeroPunto+"</b>: "+ backup.note[n].TestoAnnotazione.replace(/\n/gi,"<br>")+"<br>");
 				

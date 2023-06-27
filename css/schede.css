@@ -830,7 +830,9 @@ body:not(.bodyStyled2) #scheda_testo2{
 
 
 .p_paz_el_menu,
-.p_paz_ref_menu{
+.p_paz_ref_menu,
+.p_hide_point,
+.p_show_point{
     padding: 0px;
     cursor: pointer;
     padding-left: 38px;
@@ -846,7 +848,21 @@ body:not(.bodyStyled2) #scheda_testo2{
     background-image: url(../img/ico_guidaN.png);
 }
 
-
+.p_hide_point{
+    background-image: url(../img/ico_hideN.png);
+}
+.p_show_point{
+    background-image: url(../img/ico_showN.png);
+}
+.listaPunti a.hide_point_list{
+    opacity: 0.5;
+    background-image: url(../img/ico_showN.png);
+    background-position: right center !important;
+    background-size: auto 22px;
+}
+.listaPunti a.hide_point_list *{
+	opacity:0.5;
+}
 
 .divEspansa{
 	width:calc(100% + 60px);

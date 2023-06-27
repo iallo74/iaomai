@@ -418,10 +418,10 @@ SET = {
 		return make;
 	},
 	setPulsePt: function( pt, pulse, op, mat='' ){
-		var pP = pt.name.split(".");
-		var els = scene.getObjectByName("PT_"+pP[0]).children;
-		for(e in els){
-			if(els[e].name.indexOf(pP[0]+"."+pP[1]+".")==0){
+		let pp = SET.splitPoint(pt.name);
+		let els = scene.getObjectByName("PT_"+pp.siglaMeridiano).children;
+		for(let e in els){
+			if(els[e].name.indexOf(pp.siglaMeridiano+"."+pp.nPunto+".")==0){
 				els[e].scale.set(pulse,pulse,pulse);
 				if(mat)els[e].material=mat;
 			}
@@ -484,15 +484,11 @@ SET = {
 			var mat=this.MAT.pointOn;
 			if(this.ptSel.userData.nota)mat=this.MAT.pointNote;
 			SET.setPulsePt( this.ptSel, 1, 1, mat );
-			var pP = this.ptSel.name.split(".");		
-			var siglaMeridiano = pP[0];
-			var nPunto = SET.ptToStr(pP[1]);
-			document.getElementById("pt_"+SET.ptToStr(nPunto)+"_"+siglaMeridiano).classList.remove("selElPt");
+			var pp = SET.splitPoint(this.ptSel.name);
+			document.getElementById("pt_"+pp.nPunto+"_"+pp.siglaMeridiano).classList.remove("selElPt");
 		}
 		if(this.MAT.pointSel)SET.chiudiPunto(true,true);
-		var pP = PT_name.split(".");		
-		var siglaMeridiano = pP[0];
-		var nPunto = SET.ptToStr(pP[1]);
+		//var pp = SET.splitPoint(PT_name);	
 		if(!scene.getObjectByName( PT_name )){
 			if(scene.getObjectByName( PT_name + "." )){
 				PT=scene.getObjectByName( PT_name + "." );
@@ -502,10 +498,10 @@ SET = {
 		}else PT=scene.getObjectByName( PT_name );
 		if(this.ptSel && !SCHEDA.schedaAperta)this.chiudiPunto();
 		this.ptSel=PT;
-		var pP = this.ptSel.name.split(".");
+		var pp = SET.splitPoint(this.ptSel.name.substr(0,5));	
 		
-		if(!ritorno && PT_name.indexOf("EX")==-1)this.accendiMeridiano(pP[0]);
-		document.getElementById("pt_"+SET.ptToStr(nPunto)+"_"+siglaMeridiano).classList.add("selElPt");
+		if(!ritorno && PT_name.indexOf("EX")==-1)this.accendiMeridiano(pp.siglaMeridiano);
+		document.getElementById("pt_"+pp.nPunto+"_"+pp.siglaMeridiano).classList.add("selElPt");
 		var matTxt = "this.MAT.pointSel";
 		if(PT.userData.nota)matTxt = "this.MAT.pointSelNote";
 		if(this.ptSel.userData.interno)matTxt += "Int";
@@ -514,9 +510,9 @@ SET = {
 		this.diffY = this.ptSel.position.y*1;
 		
 		
-		var els = scene.getObjectByName("PT_"+siglaMeridiano).children;
+		var els = scene.getObjectByName("PT_"+pp.siglaMeridiano).children;
 		for(e in els){
-			if(els[e].name.indexOf(pP[0]+"."+pP[1]+".")==0)els[e].material=mat;
+			if(els[e].name.indexOf(pp.siglaMeridiano+"."+pp.nPunto+".")==0)els[e].material=mat;
 		}
 		
 		
@@ -550,8 +546,8 @@ SET = {
 			}
 		}
 		
-		SET.delEviPalls(siglaMeridiano,pP[1],'Over');
-		SET.addEviPalls(siglaMeridiano,pP[1],'Select');
+		SET.delEviPalls(pp.siglaMeridiano,pp.nPunto,'Over');
+		SET.addEviPalls(pp.siglaMeridiano,pp.nPunto,'Select');
 		this.pulse = 1;
 		
 		
@@ -571,7 +567,7 @@ SET = {
 			}
 		}
 		// ---------------------
-		SET.caricaPunto( siglaMeridiano, nPunto, ritorno );
+		SET.caricaPunto( pp.siglaMeridiano, pp.nPunto, ritorno );
 	},
 	chiudiPunto: function( nonChiudereScheda=false, cambiaPunto=false ){
 		document.getElementById("scheda").classList.remove("tab_punti");
@@ -600,19 +596,17 @@ SET = {
 		var exPt = SET.ptSel;
 		
 		if(!this.ptSel)return;
-		var pP = this.ptSel.name.split(".");
-		var siglaMeridiano = pP[0];
-		var nPunto = SET.ptToStr(pP[1]);
+		var pp = SET.splitPoint(this.ptSel.name);
 		this.pulse=0;
 		var mat=this.MAT.pointBase;
-		if(MERIDIANI[pP[0]].meridianoAcceso)mat=this.MAT.pointSel;
+		if(MERIDIANI[pp.siglaMeridiano].meridianoAcceso)mat=this.MAT.pointSel;
 		if(this.ptSel.userData.nota)mat=this.MAT.pointNote;
-		SET.delEviPalls(siglaMeridiano,nPunto,'Select');
+		SET.delEviPalls(pp.siglaMeridiano,pp.nPunto,'Select');
 		
 		// coloro tutti gli altri punti non SX o DX o CC
-		var els = scene.getObjectByName("PT_"+siglaMeridiano).children;
+		var els = scene.getObjectByName("PT_"+pp.siglaMeridiano).children;
 		for(e in els){
-			if(els[e].name.indexOf(pP[0]+"."+pP[1]+".")==0){
+			if(els[e].name.indexOf(pp.siglaMeridiano+"."+pp.nPunto+".")==0){
 				els[e].material=mat;
 				els[e].material.opacity=1;
 				els[e].scale.set(1,1,1);
@@ -620,7 +614,7 @@ SET = {
 		}
 		
 		this.ptSel=null;	
-		document.getElementById("pt_"+SET.ptToStr(pP[1])+"_"+pP[0]).classList.remove("selElPt");
+		document.getElementById("pt_"+pp.nPunto+"_"+pp.siglaMeridiano).classList.remove("selElPt");
 		if(SCHEDA.scheda2Aperta){
 			nonChiudereScheda=true;
 			document.getElementById("scheda_ritorno").click();
@@ -825,20 +819,18 @@ SET = {
 		else document.getElementById("p_contrasto").classList.remove("btnSel");
 	},
 	scriviPunto: function( punto, esteso=false, noRet=false, sigla=false ){
-		var pT = punto.split(".");
-		var siglaPunto = pT[0]+"."+pT[1];
-		var siglaPuntoOr = siglaPunto;
+		var pp = SET.splitPoint(punto);
+		var siglaPunto = +pp.nPunto +"."+pp.siglaMeridiano;
 		var nomePunto = punto.substr(siglaPunto.length,punto.length-siglaPunto.length);
 		if(sigla)siglaPunto = sigla;
-		var nPunto = SET.ptToStr(pT[0]);
 		var html = '<a class="pallinoPat';
 		if(esteso)html += ' pallinoPatEsteso';
 		var ret = '';
 		if(!noRet)ret = SET.chiudiPunto(true);
-		html += '" onClick="SET.apriPunto(\''+pT[1]+"."+nPunto+'\',\''+ret+'\');"';
+		html += '" onClick="SET.apriPunto(\''+pp.siglaMeridiano+"."+pp.nPunto+'\',\''+ret+'\');"';
 		if(noRet)html += '  onMouseOver="SET.overPunto(this,true);"' +
 						 '  onMouseOut="SET.overPunto(this,false);"' +
-						 '	id="pt_'+nPunto+'_'+pT[1]+'"';
+						 '	id="pt_'+pp.nPunto+'_'+pp.siglaMeridiano+'"';
 		html += '> '+siglaPunto;//+' ';
 		if(esteso)html+='<i>'+nomePunto;
 		html+='</i></a>';
@@ -860,14 +852,14 @@ SET = {
 		SET.selPunto( nPunto, siglaMeridiano );
 	},
 	setPuntoFrm: function(){
-		var ptP = SET.ptSel.name.split(".");
+		var pp = SET.splitPoint(SET.ptSel.name);
 		if( SCHEDA.classeAperta == 'scheda_procedura' ){
-			SET.dettagliProvvisori[SET.pMod].DescrizioneDettaglio = SET.ptToStr(ptP[1])+"."+ptP[0];
+			SET.dettagliProvvisori[SET.pMod].DescrizioneDettaglio = pp.nPunto+"."+pp.siglaMeridiano;
 			SET.caricaDettagli();
 		}
 		if( SCHEDA.classeAperta == 'scheda_A' || SCHEDA.classeAperta == 'scheda_B' ){
-			PAZIENTI.puntiProvvisori[SET.pMod].n = ptP[1]*1;
-			PAZIENTI.puntiProvvisori[SET.pMod].m = ptP[0];
+			PAZIENTI.puntiProvvisori[SET.pMod].n = +pp.nPunto;
+			PAZIENTI.puntiProvvisori[SET.pMod].m = pp.siglaMeridiano;
 			PAZIENTI.caricaPuntiTrattamento();
 		}
 		SET.pMod = -1;
@@ -880,7 +872,7 @@ SET = {
 		for(let p=0;p<els.length;p++){
 			var siglaMeridiano = els[p].dataset.siglaMeridiano;
 			var nPunto = SET.ptToStr(els[p].dataset.nPunto);
-			var el = scene.getObjectByName("PT_"+siglaMeridiano)
+			var el = scene.getObjectByName("PT_"+siglaMeridiano);
 			if(el){
 				for(e in el.children){
 					if(el.children[e].name.indexOf("_"+siglaMeridiano+"."+nPunto+".")==0)el.children[e].material=SET.MAT.pointEvi;
@@ -902,19 +894,16 @@ SET = {
 	evidenziaPuntoMod: function( elenco ){ 
 		SET.annullaEvidenziaPunto();
 		for(let k in elenco){
-			var pP=elenco[k].split(".");
-			var nPunto=SET.ptToStr(pP[0]);
-			var siglaMeridiano = pP[1];
-			var valutazione=pP[2];
+			var pp=SET.splitPoint(elenco[k]);
 			var mat = SET.MAT.pointEvi;
-			if(valutazione){
-				if(valutazione=='V')mat = SET.MAT.pointVuoto;
-				if(valutazione=='P')mat = SET.MAT.pointPieno;
-				if(valutazione=='D')mat = SET.MAT.pointDolore;
+			if(pp.valutazione){
+				if(pp.valutazione=='V')mat = SET.MAT.pointVuoto;
+				if(pp.valutazione=='P')mat = SET.MAT.pointPieno;
+				if(pp.valutazione=='D')mat = SET.MAT.pointDolore;
 			}
-			var els = scene.getObjectByName("PT_"+siglaMeridiano).children;
+			var els = scene.getObjectByName("PT_"+pp.siglaMeridiano).children;
 			for(e in els){
-				if(els[e].name.indexOf("_"+siglaMeridiano+"."+nPunto+".")==0)els[e].material=mat;
+				if(els[e].name.indexOf("_"+pp.siglaMeridiano+"."+pp.nPunto+".")==0)els[e].material=mat;
 			}
 			SET.puntiEvidenziati.push(elenco[k]);
 		}
@@ -929,14 +918,12 @@ SET = {
 		if(SET.puntiEvidenziati.length){
 			for(let k in SET.puntiEvidenziati){
 				var pT=SET.puntiEvidenziati[k];
-				var pP=pT.split(".");
-				var nPunto=SET.ptToStr(pP[0]);
-				siglaMeridiano = pP[1];
+				var pp=SET.splitPoint(pT);
 				
-				var el = scene.getObjectByName("PT_"+siglaMeridiano)
+				var el = scene.getObjectByName("PT_"+pp.siglaMeridiano)
 				if(el){
 					for(e in el.children){
-						if(el.children[e].name.indexOf("_"+siglaMeridiano+"."+nPunto+".")==0)el.children[e].material=SET.MAT.pointTrasp;
+						if(el.children[e].name.indexOf("_"+pp.siglaMeridiano+"."+pp.nPunto+".")==0)el.children[e].material=SET.MAT.pointTrasp;
 					}
 				}
 			}
@@ -1014,6 +1001,7 @@ SET = {
 		var str = document.getElementById("scheda_testo"+nScheda).innerHTML;
 		var pts = str.match(regexp);
 		for(let p in pts){
+			console.log(pts[p])
 			var pP = pts[p].split(".");
 			str = str.replace(pts[p], pP[0]+"."+SET.convSigla(pP[1].substr(0,2))+pP[1].substr(2,1));
 		}
@@ -1022,6 +1010,7 @@ SET = {
 			var str = document.getElementById("scheda_titolo"+nScheda).innerHTML;
 			var pts = str.match(regexp);
 			for(let p in pts){
+				console.log(pts[p])
 				var pP = pts[p].split(".");
 				str = str.replace(pts[p], pP[0]+"."+SET.convSigla(pP[1].substr(0,2))+pP[1].substr(2,1));
 			}
@@ -1036,13 +1025,11 @@ SET = {
 		var regexp = /\[\.[0-9]{1,2}\.[A-Z]{2}\.\]/ig;
 		var pts = html.match(regexp);
 		for(let p in pts){
-			var pP = pts[p].split(".");
-			var n_P = pP[1];
-			var siglaMeridiano = pP[2].substr(0,2);
-			var n_M = SET.convSigla(siglaMeridiano)+pP[2].substr(2,1);
-			var addClick = '';
-			if(noPall)addClick = 'return;';
-			html = html.replace(pts[p], '<span class="'+pallClass+'" data-n-punto="'+n_P+'" data-sigla-meridiano="'+siglaMeridiano+'" onClick="'+addClick+'SET.selPunto(\''+n_P+'\',\''+siglaMeridiano+'\');">'+n_P+'.'+n_M+'</span>');
+			var pp = SET.splitPoint(pts[p].replace("[.","").replace(".]",""));
+			var n_P = +pp.nPunto;
+			var n_M = SET.convSigla(pp.siglaMeridiano);
+			var addClick = (noPall)?'return':'';
+			html = html.replace(pts[p], '<span class="'+pallClass+'" data-n-punto="'+n_P+'" data-sigla-meridiano="'+pp.siglaMeridiano+'" onClick="'+addClick+'SET.selPunto(\''+n_P+'\',\''+pp.siglaMeridiano+'\');">'+n_P+'.'+n_M+'</span>');
 		}
 		var regexp = /\[\.[A-Z]{2}\.\]/ig;
 		var pts = html.match(regexp);

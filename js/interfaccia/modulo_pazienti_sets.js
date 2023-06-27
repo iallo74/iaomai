@@ -920,7 +920,7 @@ var PAZIENTI_SETS = {
 	ricNamikoshi: function( frm, n ){ // ricarica tutti i punti
 		//SET.overPunto(document.getElementById("n-rg_"+n),false);
 		let nPunto = document[frm]["n-pt_"+n].value;
-		PAZIENTI.namikoshiProvvisori[n].n = SET.ptToNum(nPunto);
+		PAZIENTI.namikoshiProvvisori[n].n = +nPunto;
 		PAZIENTI.namikoshiProvvisori[n].s = DB.set.meridiani.NK.punti[SET.ptToStr(nPunto)].NomePunto;
 		PAZIENTI.namikoshiProvvisori[n].t = document[frm]["n-de_"+n].value;
 		try{

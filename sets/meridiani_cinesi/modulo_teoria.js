@@ -24,7 +24,7 @@ var MODULO_TEORIA = { // extend SET
 				var addLock = 	(!SET.verFreeTeoria(p+"_"+t))? ' lockedItem' : '';
 				// --------------------------
 				TitoloTeoria = DB.set.teoria[p].contenuti[t].TitoloTeoria;
-				funct = 'Teoria';
+				funct = 'Approfondimento';
 				addClass = '';
 				if(TitoloTeoria.indexOf("[video]")>-1){
 					var pT = TitoloTeoria.split("[video]");
@@ -51,7 +51,7 @@ var MODULO_TEORIA = { // extend SET
 																contCanali +
 															'</div>';
 	},
-	caricaTeoria: function( p, t, btn ){
+	caricaApprofondimento: function( p, t, btn ){
 		// apre la scheda di un approfondimento
 		// verifico le autorizzazioni
 		if(!SET.verFreeTeoria(p+"_"+t)){
@@ -141,7 +141,7 @@ var MODULO_TEORIA = { // extend SET
 		// apre una scheda di approfondimento dalla ricerca globale
 		SCHEDA.swCartella( document.getElementById('btn_teoria_cart_'+i),true);
 		SCHEDA.selElenco('teoria');
-		SET.caricaTeoria( i, p, document.getElementById('btn_teoria_'+i+'_'+p));
+		SET.caricaApprofondimento( i, p, document.getElementById('btn_teoria_'+i+'_'+p));
 		evidenziaParola();
 		RICERCHE.nascondiGlobal();	
 		SCHEDA.individuaElemento( 'btn_teoria_cart_'+i, "listaTeoria" );

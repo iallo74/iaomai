@@ -940,6 +940,22 @@ DB.TXT = {
             por: "Próximo ponto",
             deu: "Nächster Punkt"
         },
+        NascondiPunto: {
+            ita: "Nascondi il punto",
+            eng: "Hide the point",
+            esp: "Ocultar el punto",
+            fra: "Masquer le point",
+            por: "Esconder o ponto",
+            deu: "Punkt ausblenden"
+        },
+        MostraPunto: {
+            ita: "Mostra il punto",
+            eng: "Show the point",
+            esp: "Mostrar el punto",
+            fra: "Afficher le point",
+            por: "Mostrar o ponto",
+            deu: "Punkt anzeigen"
+        },
         ElementoGiaAperto: {
             ita: "L'elemento che vuoi aprire risulta già aperto su un altro dispositivo. Chiudilo e riprova.",
             eng: "The item you want to open is already open on another device. Close it and try again.",

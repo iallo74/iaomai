@@ -293,11 +293,11 @@ var MODULO_PUNTI = { // extend SET
 				}else{
 					if(type=='freq')vis = (els[e].userData[type].indexOf(val)>-1);
 					else vis = (els[e].userData[type]==val);
-					if(!type)vis = true;
+					if(!type && els[e].userData.hidePunto!='1')vis = true;
 				}
 				var visEl = vis;
-				if(DB.set.punti[name].hidden)visEl = false;
-				if(__(els[e].userData.locked,false))visEl = false;
+				if(	DB.set.punti[name].hidden || 
+					__(els[e].userData.locked,false) )visEl = false;
 				els[e].visible = visEl;
 				if(document.getElementById("ts_"+name)){
 					document.getElementById("ts_"+name).parentElement.classList.toggle("nasPT",!vis);
