@@ -9,7 +9,6 @@ var MODULO_PUNTO = { // extend SET
 	
 	caricaPunto: function( siglaMeridiano, nPunto, ritorno ){
 		// apre la scheda di un punto
-		var nPunto = SET.ptToStr(nPunto);
 		
 		// verifico le autorizzazioni
 		//if(!SET.verFreeMeridiani(siglaMeridiano)){
@@ -36,7 +35,6 @@ var MODULO_PUNTO = { // extend SET
 			noGravidanza = __(DB.mtc.meridiani[siglaMeridiano].punti[nPunto].noGravidanza,'');
 		}
 		
-		var TS = meridiano.punti[nPunto];
 		var HTML = "<h1>"+htmlEntities(titolo)+"</h1>";
 		var HTML_simboli = '';
 		
@@ -57,7 +55,7 @@ var MODULO_PUNTO = { // extend SET
 			var txt = '';
 			var cls = '';
 			var stesso = false;
-			var puntoNuovo = +nPunto +"."+siglaMeridiano;
+			var puntoNuovo = nPunto +"."+siglaMeridiano;
 			if( SCHEDA.classeAperta == 'scheda_procedura' ){
 				if(SET.pMod > -1){
 					var puntoOr = SET.dettagliProvvisori[SET.pMod].DescrizioneDettaglio;

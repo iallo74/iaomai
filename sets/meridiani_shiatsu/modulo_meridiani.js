@@ -35,18 +35,14 @@ var MODULO_MERIDIANI = { // extend SET
 			keys.sort();		
 			//for(let s in DB.set.meridiani[m].punti){
 			for (let i=0; i<len; i++) {	
-				let s = keys[i];
-				if(!DB.set.meridiani[m].punti[s].siglaPunto){
-					let n = SET.ptToStr(DB.set.meridiani[m].punti[s].NomePunto.split(".")[0]);
-					DB.set.meridiani[m].punti[s].siglaPunto = m+"."+n;
-				}
-				var TS = DB.set.meridiani[m].punti[s];
+				let nPunto = keys[i];
+				var TS = DB.set.meridiani[m].punti[nPunto];
 				if(m!='NK' || __(TS.apparato,-1)>-1){
-					var addNMK = (m=='NK')? SET.ptToStr(s)+'.NK. ' : '';
-					var elemento = (!__(DB.set.meridiani[m].punti[s].nascosto,false)) ? '<p>'+this.scriviPunto(addNMK+TS.NomePunto,true,true,__(TS.siglaPunto),m)+'</p>' : "";
+					var addNMK = (m=='NK')? nPunto+'.NK. ' : '';
+					var elemento = (!__(DB.set.meridiani[m].punti[nPunto].nascosto,false)) ? '<p>'+this.scriviPunto(addNMK+TS.NomePunto,true,true,__(TS.siglaPunto),m)+'</p>' : "";
 					if(m=='NK'){
 						// verifico le autorizzazioni
-						if(!SET.verFreePunti("NK."+SET.ptToStr(s))){
+						if(!SET.verFreePunti("NK."+nPunto)){
 							elemento = elemento.replace("pallinoPat","pallinoPat lockedItem");
 						}
 						// --------------------------

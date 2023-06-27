@@ -10,7 +10,6 @@ var MODULO_PUNTO = { // extend SET
 			return;
 		}
 		// --------------------------
-		var nPunto = SET.ptToStr(nPunto);
 		
 		var titolo = DB.set.meridiani[siglaMeridiano].punti[nPunto].NomePunto;
 		var sigla = __(DB.set.meridiani[siglaMeridiano].punti[nPunto].siglaPunto);

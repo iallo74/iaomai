@@ -284,7 +284,7 @@ var MODULO_PATOLOGIE = { // extend SET
 	eviPointsPat: function( el ){
 		if(!el.innerHTML)return;
 		SET.hideGroupLines();
-		SET.evidenziaPunto(el.innerHTML);
+		SET.evidenziaPunto(el);
 		if(SET.schEvi)SET.schEvi.classList.remove("eviPoints");
 		el.classList.add("eviPoints");
 		SET.schEvi = el;

@@ -27,8 +27,8 @@ var MODULO_MERIDIANI = { // extend SET
 				len = keys.length;
 			keys.sort();		
 			//for(let s in DB.set.meridiani[m].punti){
-				for (let i=0; i<len; i++) {	
-					let s = keys[i];
+			for (let i=0; i<len; i++) {	
+				let s = keys[i];
 				var TS = DB.set.meridiani[m].punti[s];
 				elencoPunti+='<p>'+this.scriviPunto(TS.NomePunto,true,true,__(TS.siglaPunto))+'</p>';
 			}

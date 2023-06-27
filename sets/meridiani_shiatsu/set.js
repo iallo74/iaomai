@@ -137,7 +137,8 @@ SET = {
 							this.FR[m].add( mesh );
 							
 						}
-						this.FR[m].visible = true;
+						this.FR[m].userData.categoria=categoria;
+						this.FR[m].visible = vis;
 						SETS.add( this.FR[m] );
 					}
 				}
@@ -423,7 +424,7 @@ SET = {
 					var pN = this.INTERSECTED.name.split(".");
 					var tt = (pN[1]*1)+"."+SET.convSigla(pN[0].substr(1,2));
 					if(n1=='NK'){
-						tt = DB.set.meridiani.NK.punti[SET.ptToStr(this.INTERSECTED.name.substr(4,2))].NomePunto;
+						tt = DB.set.meridiani.NK.punti[this.INTERSECTED.name.substr(4,2)].NomePunto;
 					}
 					
 					visToolTip(tt);
@@ -668,7 +669,7 @@ SET = {
 		if(frs = scene.getObjectByName("FR_"+pp.siglaMeridiano)){
 			var evids = clone(SET.puntiEvidenziati);
 			for(let e in evids){
-				evids[e] = SET.ptToStr(evids[e].split(".")[0])+"."+evids[e].split(".")[1];
+				evids[e] = evids[e].split(".")[0]+"."+evids[e].split(".")[1];
 			}
 			var els = frs.children;
 			for(let e in els){
@@ -902,7 +903,6 @@ SET = {
 		var nomePunto = punto.substr(siglaPunto.length+1,Object.keys(punto).length-(siglaPunto.length+1));
 		if(sigla)siglaPunto = sigla;
 		if(siglaMeridiano=='NK')siglaPunto = '';
-		var nPunto = pp.nPunto;
 		var html = '<a class="pallinoPat';
 		if(esteso)html += ' pallinoPatEsteso';
 		var ret = '';
@@ -931,7 +931,6 @@ SET = {
 			rit = 500;
 		}
 		
-		var nPunto = SET.ptToStr(nPunto);
 		// verifico le autorizzazioni
 		if(!SET.verFreeMeridiani(siglaMeridiano)){
 			ALERT(TXT("MsgContSoloPay"),true,true);
@@ -958,11 +957,11 @@ SET = {
 	setPuntoFrm: function(){
 		var pp = SET.splitPoint(SET.ptSel.name);
 		if( SCHEDA.classeAperta == 'scheda_procedura' ){
-			SET.dettagliProvvisori[SET.pMod].DescrizioneDettaglio = (+pp.nPunto)+"."+pp.siglaMeridiano;
+			SET.dettagliProvvisori[SET.pMod].DescrizioneDettaglio = pp.nPunto+"."+pp.siglaMeridiano;
 			SET.caricaDettagli();
 		}
 		if( SCHEDA.classeAperta == 'scheda_A' || SCHEDA.classeAperta == 'scheda_B' ){
-			PAZIENTI.puntiProvvisori[SET.pMod].n = +pp.nPunto;
+			PAZIENTI.puntiProvvisori[SET.pMod].n = pp.nPunto;
 			PAZIENTI.puntiProvvisori[SET.pMod].m = pp.siglaMeridiano;
 			PAZIENTI.caricaPuntiTrattamento();
 		}
@@ -978,7 +977,7 @@ SET = {
 		var sistemaVer = localStorage.sistemaMeridiani;
 		if(sistemaVer=='MAS')sistemaVer = '';
 		if(sistemaVer != el.dataset.sistema)SET.cambiaSistema( el.dataset.sistema, true, true );
-		SET.evidenziaPunto( el/*.innerHTML*/ );
+		SET.evidenziaPunto( el );
 		setTimeout(function(){SET.evidenziaMeridiani( el.innerHTML );},300);
 	},
 	evidenziaPunto: function( el = document.getElementById("scheda_testo")/*html*/ ){
@@ -986,7 +985,7 @@ SET = {
 		var els = el.getElementsByClassName("pallinoPat");
 		for(let p=0;p<els.length;p++){
 			var siglaMeridiano = els[p].dataset.siglaMeridiano;
-			var nPunto = SET.ptToStr(els[p].dataset.nPunto);
+			var nPunto = els[p].dataset.nPunto;
 			var el = scene.getObjectByName("PT_"+siglaMeridiano);
 			if(el){
 				for(let e in el.children){
@@ -1024,20 +1023,22 @@ SET = {
 				if(pp.valutazione=='P')mat = SET.MAT.pointPieno;
 				if(pp.valutazione=='D')mat = SET.MAT.pointDolore;
 			}
-			var el = scene.getObjectByName("PT_"+pp.siglaMeridiano)
-			if(el){
-				for(e in el.children){
-					if(el.children[e].name.indexOf("_"+pp.siglaMeridiano+"."+pp.nPunto+".")==0)el.children[e].material=mat;
+			//if(scene.getObjectByName("PT_"+pp.siglaMeridiano)){
+				var el = scene.getObjectByName("PT_"+pp.siglaMeridiano)
+				if(el){
+					for(e in el.children){
+						if(el.children[e].name.indexOf("_"+pp.siglaMeridiano+"."+pp.nPunto+".")==0)el.children[e].material=mat;
+					}
 				}
-			}
-			var el = scene.getObjectByName("FR_"+pp.siglaMeridiano);
-			if(el){
-				for(e in el.children){
-					if(el.children[e].name == "FR."+pp.nPunto )el.children[e].visible=true;
-					if(el.children[e].name == "FR."+pp.nPunto )el.children[e].material=SET.MAT.lineFrecceEvi;
+				var el = scene.getObjectByName("FR_"+pp.siglaMeridiano);
+				if(el){
+					for(e in el.children){
+						if(el.children[e].name == "FR."+pp.nPunto )el.children[e].visible=true;
+						if(el.children[e].name == "FR."+pp.nPunto )el.children[e].material=SET.MAT.lineFrecceEvi;
+					}
 				}
-			}
-			SET.puntiEvidenziati.push(elenco[k]);
+				SET.puntiEvidenziati.push(elenco[k]);
+			//}
 		}
 	},
 	evidenziaMeridianiMod: function( elenco ){
@@ -1084,15 +1085,14 @@ SET = {
 	},
 	ritOverPunto: function( id, p ){
 		if(!touchable){
-			SET.overPunto(document.getElementById("rg"+p),false);
+			SET.delAllEviPalls('Over');
 			var elenco = [];
 			var els = document.getElementById(id).getElementsByClassName("dettPunto");
 			var tot = els.length;
-			for(e=0;e<tot;e++){
-				var sl = els[e].getElementsByTagName("select");
-				if(sl.length){
-					var mer = sl[0].value;
-					var nPunto = SET.ptToStr(sl[1].value);
+			for(let e=0;e<tot;e++){
+				if(nPunto = els[e].getElementsByClassName("numPoints")[0]){
+					let mer = els[e].getElementsByClassName("selectTratt")[0].value;
+					nPunto = nPunto.value;
 					elenco.push(nPunto+"."+mer);
 				}
 			}
@@ -1106,12 +1106,12 @@ SET = {
 			var nPunto = el.getElementsByClassName("numPoints")[0];
 			if(!nPunto)return;
 			else nPunto = SET.ptToStr(nPunto.value);
-			if(mer)mer = mer.value;
+			if(mer)mer = SET.estraiSigla(mer.value);
 			if(!__(DB.set.meridiani[mer]))return; // in caso di EX
 			if(typeof(DB.set.meridiani[mer])=='undefined')return;
 		}else{
 			if(!el.dataset.siglaMeridiano)return;
-			var nPunto = SET.ptToStr(el.dataset.nPunto);
+			var nPunto = el.dataset.nPunto;
 			var mer = el.dataset.siglaMeridiano;
 		}
 		
@@ -1165,16 +1165,15 @@ SET = {
 		var pts = html.match(regexp);
 		for(let p in pts){
 			var pp = SET.splitPoint(pts[p].replace("[.","").replace(".]",""));
-			var n_P = +pp.nPunto;
 			var n_M = SET.convSigla(pp.siglaMeridiano);
 			var nascPunto = ' style="display:none;"';
 			var els = scene.getObjectByName("PT_"+pp.siglaMeridiano).children;
 			for(e in els){
 				if(els[e].name.indexOf(pp.siglaMeridiano+"."+pp.nPunto+".")==0)nascPunto = '';
 			}
-			var siglaPunto = n_P+'.'+n_M;
+			var siglaPunto = +pp.nPunto+'.'+n_M;
 			if(pp.siglaMeridiano=='NK')siglaPunto = DB.set.meridiani[pp.siglaMeridiano].punti[pp.nPunto].NomePunto;
-			html = html.replace(pts[p], '<span'+nascPunto+' class="pallinoPat" data-n-punto="'+n_P+'" data-sigla-meridiano="'+pp.siglaMeridiano+'" onClick="SET.selPunto(\''+n_P+'\',\''+pp.siglaMeridiano+'\',\'\',this);">'+siglaPunto+'</span>');
+			html = html.replace(pts[p], '<span'+nascPunto+' class="pallinoPat" data-n-punto="'+pp.nPunto+'" data-sigla-meridiano="'+pp.siglaMeridiano+'" onClick="SET.selPunto(\''+pp.nPunto+'\',\''+pp.siglaMeridiano+'\',\'\',this);">'+siglaPunto+'</span>');
 		}
 		
 		var regexp = /\[\.[A-Z]{2}\.\]/ig;
@@ -1296,10 +1295,9 @@ SET = {
 		for(let m in SETS.children){
 			var visMer = vis;
 			if(	SET.MERIDIANI_free.indexOf(SETS.children[m].name.split("_")[1])!=-1 )visMer = true;
-			if(SET.allMeridiansFree)visMer = true;
+			if( SET.allMeridiansFree)visMer = true;
 			if( SETS.children[m].userData.categoria != localStorage.sistemaMeridiani )visMer = false;
 			if(	SETS.children[m].name.substr(0,2)=='AR' &&  localStorage.sistemaMeridiani=='MAS')visMer = true;
-			if(	SETS.children[m].name.substr(0,2)=='FR')visMer = true;
 			SETS.children[m].visible = visMer;
 		}
 		var ME = document.getElementById("lista_meridiani").getElementsByClassName("listaMeridiani")[0].getElementsByTagName("div");
@@ -1347,12 +1345,12 @@ SET = {
 			if(localStorage.sistemaMeridiani)localStorage.sistemaMeridianiAdd = "_"+localStorage.sistemaMeridiani.toLowerCase();
 			else localStorage.sistemaMeridianiAdd = '';
 			SET.filtraMeridiani();
-			if(localStorage.sistemaMeridiani!='NMK'){
+			/*if(localStorage.sistemaMeridiani!='NMK'){
 				var els = scene.getObjectByName("FR_NK").children;
 				for(e in els){
 					els[e].visible = false;
 				}
-			}
+			}*/
 		},t2,sistema);
 		setTimeout(function(loader){SET.filtraSet(loader);},t,loader);
 		document.getElementById("sceltaMeridianiElenco").value = sistema;
@@ -1365,7 +1363,7 @@ SET = {
 		if(!scene.getObjectByName("PT_"+siglaMeridiano))return;
 		var els = scene.getObjectByName("PT_"+siglaMeridiano).children;
 		for(e in els){
-			if(els[e].name.indexOf(siglaMeridiano+"."+SET.ptToStr(nPunto)+".")==0){
+			if(els[e].name.indexOf(siglaMeridiano+"."+nPunto+".")==0){
 				var geoPoint =  new THREE.SphereGeometry( 0.11, 16, 16 );
 				var eviPoint;
 				eviPoint =  new THREE.Mesh( geoPoint, this.MAT.pointSel2.clone() );
@@ -1382,7 +1380,15 @@ SET = {
 	delEviPalls: function( siglaMeridiano, nPunto, tipo ){
 		var els = SETS.children;
 		for(e=els.length-1;e>=0;e--){
-			if(els[e].name.indexOf(tipo+' point: '+siglaMeridiano+"."+SET.ptToStr(nPunto)+".")==0){
+			if(els[e].name.indexOf(tipo+' point: '+siglaMeridiano+"."+nPunto+".")==0){
+				SETS.remove( els[e] );
+			}
+		}
+	},
+	delAllEviPalls: function(tipo){
+		var els = SETS.children;
+		for(e=els.length-1;e>=0;e--){
+			if(els[e].name.indexOf(tipo+' point: ')==0){
 				SETS.remove( els[e] );
 			}
 		}

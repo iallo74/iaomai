@@ -2426,7 +2426,7 @@ var LOGIN = {
 								var punti=JSON.parse(trattamenti[t].puntiMTC);
 								var txtPunti='';
 								for(let f in punti){
-									nPunto=punti[f].n*1;
+									nPunto=punti[f].n;
 									siglaMeridiano=punti[f].m;
 									valutazione=__(punti[f].e);
 									mezzo=__(punti[f].z);

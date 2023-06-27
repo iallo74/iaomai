@@ -256,7 +256,7 @@ var MODULO_PROCEDURE = { // extend SET
 						HTML+=DescrizioneDettaglio;
 					}
 					if(TipoDettaglio=='P' || TipoDettaglio=='N'){
-						if(!siglaPunto)siglaPunto = nPunto+"."+siglaMeridiano;
+						if(!siglaPunto)siglaPunto = +nPunto+"."+siglaMeridiano;
 						if(nPunto && siglaMeridiano){
 							HTML += '<span class="pallinoPat';
 							if(typeof(DB.set.meridiani[siglaMeridiano])=='undefined')HTML += ' ptNoSel';
@@ -360,7 +360,7 @@ var MODULO_PROCEDURE = { // extend SET
 									btnAdd );
 			PH.caricaGallery(true,idUtenteProcedura);
 			if(!globals.set.siglaProc)SET.convSigleScheda();
-			SET.evidenziaPunto(/*HTML*/);
+			SET.evidenziaPunto();
 			if(!globals.set.siglaProc)SET.evidenziaMeridiani(HTML);
 			if(idProcedura)SET.car_commenti(idProcedura);
 			if(Q_resta){
@@ -553,7 +553,7 @@ var MODULO_PROCEDURE = { // extend SET
 					// punti
 					'			<div id="grpPt"' +
 					'			    class="p_proc_gruppo"' +
-					'			    onClick="PAZIENTI.gruppoPunti((localStorage.sistemaMeridiani!=\'NMK\')?\'P\':\'N\');">' +
+					'			    onClick="PAZIENTI.gruppoPunti((localStorage.sistemaMeridiani==\'NMK\' && globals.set.cartella==\'meridiani_shiatsu\')?\'N\':\'P\');">' +
 									htmlEntities(TXT("Punto")) +
 					'			</div>' +
 			
@@ -776,9 +776,8 @@ var MODULO_PROCEDURE = { // extend SET
 		else return true;
 	},
 	aggiungiGruppoProcedura: function( punti ){ // importa un gruppo di punti
-		var pP=punti.split("|");			
-		for(let p=0;p<pP.length-1;p++)SET.aggiungiDettaglio(PAZIENTI.tipoGruppo,pP[p],0);
-		PAZIENTI.evidenziaAggiunti(document.getElementById('dettagliCont'),pP.length-1);
+		for(let p in punti)SET.aggiungiDettaglio(PAZIENTI.tipoGruppo,punti[p],0);
+		PAZIENTI.evidenziaAggiunti(document.getElementById('dettagliCont'),punti.length);
 	},
 	azRicercaProcedure: function( p, id=-1, comm=false ){ // apre la scheda della procedura dalla ricerca globale
 		if(p == -1 && id > -1){
@@ -895,7 +894,7 @@ var MODULO_PROCEDURE = { // extend SET
 						if(DescrizioneDettaglio.indexOf(".")>-1){
 							pP=DescrizioneDettaglio.split(".");
 							if(TipoDettaglio=='P' || TipoDettaglio=='N'){
-								nPunto=pP[0]*1;
+								nPunto=SET.ptToStr(pP[0]);
 								siglaMeridiano=pP[1];
 								siglaPunto=__(pP[2]);
 								mezzo=__(pP[3]);
@@ -916,7 +915,7 @@ var MODULO_PROCEDURE = { // extend SET
 					if(mezzo)addMezzoTit = ': '+PAZIENTI.mezzi[mezzo];
 					HTML += '	<span id="ico_PZ'+p+'"' +
 							'	      class="mezzoPunto"' +
-							'	      onClick="PAZIENTI.selMezzo('+p+',\''+TipoDettaglio+'\',true);">' +
+							'	      onClick="PAZIENTI.selMezzo('+p+',\'P\',true);">' + // lasciare 'P'
 							'		<img src="img/mezzo_'+mezzo+'.png"' +
 							'	  	     width="20"' +
 							'	  	     height="20"' +
@@ -986,18 +985,25 @@ var MODULO_PROCEDURE = { // extend SET
 									' 			id="pt_'+p+'"' +
 									' 			onChange="SET.ritOverPunto(\'dettagliCont\','+p+');this.blur();">';
 							
-							for(let n in DB.set.meridiani[siglaMeridiano].punti){
-								let siglaPunto = +nPunto;
-								if(__(DB.set.meridiani[siglaMeridiano].punti[n].siglaPunto)){
-									siglaPunto = __(DB.set.meridiani[siglaMeridiano].punti[n].siglaPunto);
+							let myObj = DB.set.meridiani[siglaMeridiano].punti,
+								keys = 	Object.keys(myObj),
+								len = keys.length;
+							keys.sort();
+							for (let i=0; i<len; i++) {	
+								let s = keys[i];
+								var TS = myObj[s];	
+								let siglaPunto = +s;
+								if(__(TS.siglaPunto)){
+									siglaPunto = __(TS.siglaPunto);
 									siglaPunto = siglaPunto.substr(3,siglaPunto.length-3);
 								}
-								HTML += '	<option value="'+n+'"';
-								if(nPunto==n)HTML += ' SELECTED';
+								HTML += '	<option value="'+s+'"';
+								if(nPunto==s)HTML += ' SELECTED';
 								HTML += '>'+siglaPunto+'</option>';
 							}
 							HTML += '	</select>';
-						}else{
+						}
+						if(TipoDettaglio=='N'){
 							var puntiElenco = [];
 							for(let siglaPunto in DB.set.meridiani.NK.punti){
 								if(__(DB.set.meridiani.NK.punti[siglaPunto])){
@@ -1012,18 +1018,17 @@ var MODULO_PROCEDURE = { // extend SET
 								}
 							}
 							puntiElenco.sort(sort_by("NomePunto", false));
-							HTML +=	'	<input type="hidden" id="n-mr_'+p+'" name="n-mr_'+p+'" value="NK" class="selectTratt">' +
+							HTML +=	'	<input type="hidden" id="mr_'+p+'" name="mr_'+p+'" value="NK" class="selectTratt">' +
 									'	<select class="numPoints numNamikoshi"' +
-									'	     	 name="n-pt_'+p+'"' +
-									'	     	 id="n-pt_'+p+'"' +
-									'		     onChange="this.blur();SET.modNumPunti(\'formMod\','+p+');' +
-									'		    		   SET.ritOverPunto(\'dettagliCont\','+p+');">' +
+									'	     	 name="pt_'+p+'"' +
+									'	     	 id="pt_'+p+'"' +
+									'		     onChange="SET.ritOverPunto(\'dettagliCont\','+p+');">' +
 									'		<option></option>';
 							for(let n in puntiElenco){
 								// verifico le autorizzazioni
 								if(SET.verFreePunti(puntiElenco[n].siglaPunto)){
 									HTML += '<option value="'+puntiElenco[n].siglaPunto+'"';
-									if(puntiElenco[n].siglaPunto == nPunto+"")HTML += ' SELECTED';
+									if(puntiElenco[n].siglaPunto == nPunto)HTML += ' SELECTED';
 									HTML += '>'+puntiElenco[n].NomePunto+'</option>';
 								}
 								// --------------------------
@@ -1172,16 +1177,18 @@ var MODULO_PROCEDURE = { // extend SET
 		var n = pId[1];
 		var DP = SET.dettagliProvvisori[n].DescrizioneDettaglio.split(".");
 		var val = el.value;
-			if(document.getElementById("pt_"+n)){
+		if(document.getElementById("pt_"+n)){
 			if(!globals.set.siglaProc){
 				var mer = document.getElementById("mr_"+n).value;
-				var nPunto = SET.ptToStr(document.getElementById("pt_"+n).value);
+				var nPunto = document.getElementById("pt_"+n).value;
 				val = nPunto+"."+mer;
-				var sg = val.replace(/\./g,"-");
+				/*var sg = val.replace(/\./g,"-");
 				if(__(DB.set.meridiani[mer].punti[nPunto].siglaPunto)){
 					sg = __(DB.set.meridiani[mer].punti[nPunto].siglaPunto);
-				}
-				val += "."+sg+"."+__(DP[2])+"."+__(DP[3]);
+				}*/
+				var sg = __(DB.set.meridiani[mer].punti[nPunto].siglaPunto,'');
+				if(SET.dettagliProvvisori[n].TipoDettaglio=='N')sg = DB.set.meridiani[mer].punti[nPunto].NomePunto;
+				val += "."+sg+"."+__(DP[2]);
 			}
 			if(globals.set.siglaProc=='AUR'){
 				val = document.getElementById("pt_"+n).value+"."+__(DP[1]);

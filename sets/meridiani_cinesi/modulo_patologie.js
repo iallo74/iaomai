@@ -66,7 +66,7 @@ var MODULO_PATOLOGIE = { // extend SET
 								btnAdd,
 								globals.set.cartella+'_patologie_'+siglaPatologia );
 		SET.convSigleScheda();
-		SET.evidenziaPunto(/*html*/);
+		SET.evidenziaPunto();
 		SET.evidenziaMeridiani(html);
 	},
 	filtraPatologie: function( event ){

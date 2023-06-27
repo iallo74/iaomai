@@ -843,7 +843,7 @@ SET = {
 			return;
 		}
 		// --------------------------
-		SET.apriPunto(siglaMeridiano+"."+SET.ptToStr(nPunto),'SET.chiudiPunto(true);');
+		SET.apriPunto(siglaMeridiano+"."+nPunto,'SET.chiudiPunto(true);');
 	},
 	selPuntoMod: function( p ){
 		SET.pMod = p;
@@ -858,7 +858,7 @@ SET = {
 			SET.caricaDettagli();
 		}
 		if( SCHEDA.classeAperta == 'scheda_A' || SCHEDA.classeAperta == 'scheda_B' ){
-			PAZIENTI.puntiProvvisori[SET.pMod].n = +pp.nPunto;
+			PAZIENTI.puntiProvvisori[SET.pMod].n = pp.nPunto;
 			PAZIENTI.puntiProvvisori[SET.pMod].m = pp.siglaMeridiano;
 			PAZIENTI.caricaPuntiTrattamento();
 		}
@@ -871,7 +871,7 @@ SET = {
 		var els = el.getElementsByClassName("pallinoPat");
 		for(let p=0;p<els.length;p++){
 			var siglaMeridiano = els[p].dataset.siglaMeridiano;
-			var nPunto = SET.ptToStr(els[p].dataset.nPunto);
+			var nPunto = els[p].dataset.nPunto;
 			var el = scene.getObjectByName("PT_"+siglaMeridiano);
 			if(el){
 				for(e in el.children){
@@ -901,11 +901,13 @@ SET = {
 				if(pp.valutazione=='P')mat = SET.MAT.pointPieno;
 				if(pp.valutazione=='D')mat = SET.MAT.pointDolore;
 			}
-			var els = scene.getObjectByName("PT_"+pp.siglaMeridiano).children;
-			for(e in els){
-				if(els[e].name.indexOf("_"+pp.siglaMeridiano+"."+pp.nPunto+".")==0)els[e].material=mat;
+			if(scene.getObjectByName("PT_"+pp.siglaMeridiano)){
+				var els = scene.getObjectByName("PT_"+pp.siglaMeridiano).children;
+				for(e in els){
+					if(els[e].name.indexOf("_"+pp.siglaMeridiano+"."+pp.nPunto+".")==0)els[e].material=mat;
+				}
+				SET.puntiEvidenziati.push(elenco[k]);
 			}
-			SET.puntiEvidenziati.push(elenco[k]);
 		}
 	},
 	evidenziaMeridianiMod: function( elenco ){
@@ -945,15 +947,14 @@ SET = {
 	},
 	ritOverPunto: function( id, p ){
 		if(!touchable){
-			SET.overPunto(document.getElementById("rg"+p),false);
+			SET.delAllEviPalls('Over');
 			var elenco = [];
 			var els = document.getElementById(id).getElementsByClassName("dettPunto");
 			var tot = els.length;
-			for(e=0;e<tot;e++){
-				var sl = els[e].getElementsByTagName("select");
-				if(sl.length){
-					var mer = SET.estraiSigla(sl[0].value);
-					var nPunto = SET.ptToStr(sl[1].value);
+			for(let e=0;e<tot;e++){
+				if(nPunto = els[e].getElementsByClassName("numPoints")[0]){
+					let mer = els[e].getElementsByClassName("selectTratt")[0].value;
+					nPunto = nPunto.value;
 					elenco.push(nPunto+"."+mer);
 				}
 			}
@@ -963,14 +964,16 @@ SET = {
 	},
 	overPunto: function( el, over ){
 		if(el.classList.contains("dettPunto")){
-			var sl = el.getElementsByTagName("select");
-			if(!sl.length)return;
-			var mer = SET.estraiSigla(sl[0].value);
-			var nPunto = SET.ptToStr(sl[1].value);
+			var mer = el.getElementsByClassName("selectTratt")[0];
+			var nPunto = el.getElementsByClassName("numPoints")[0];
+			if(!nPunto)return;
+			else nPunto = SET.ptToStr(nPunto.value);
+			if(mer)mer = SET.estraiSigla(mer.value);
+			if(!__(DB.set.meridiani[mer]))return; // in caso di EX
 			if(typeof(DB.set.meridiani[mer])=='undefined')return;
 		}else{
 			if(!el.dataset.siglaMeridiano)return;
-			var nPunto = SET.ptToStr(el.dataset.nPunto);
+			var nPunto = el.dataset.nPunto;
 			var mer = el.dataset.siglaMeridiano;
 		}
 		if(over){
@@ -1012,7 +1015,7 @@ SET = {
 			for(let p in pts){
 				console.log(pts[p])
 				var pP = pts[p].split(".");
-				str = str.replace(pts[p], pP[0]+"."+SET.convSigla(pP[1].substr(0,2))+pP[1].substr(2,1));
+				str = str.replace(pts[p], +pP[0] +"."+SET.convSigla(pP[1].substr(0,2))+pP[1].substr(2,1));
 			}
 			document.getElementById("scheda_titolo"+nScheda).innerHTML = str;
 		}
@@ -1026,10 +1029,9 @@ SET = {
 		var pts = html.match(regexp);
 		for(let p in pts){
 			var pp = SET.splitPoint(pts[p].replace("[.","").replace(".]",""));
-			var n_P = +pp.nPunto;
 			var n_M = SET.convSigla(pp.siglaMeridiano);
 			var addClick = (noPall)?'return':'';
-			html = html.replace(pts[p], '<span class="'+pallClass+'" data-n-punto="'+n_P+'" data-sigla-meridiano="'+pp.siglaMeridiano+'" onClick="'+addClick+'SET.selPunto(\''+n_P+'\',\''+pp.siglaMeridiano+'\');">'+n_P+'.'+n_M+'</span>');
+			html = html.replace(pts[p], '<span class="'+pallClass+'" data-n-punto="'+pp.nPunto+'" data-sigla-meridiano="'+pp.siglaMeridiano+'" onClick="'+addClick+'SET.selPunto(\''+pp.nPunto+'\',\''+pp.siglaMeridiano+'\');">'+ +pp.nPunto+'.'+n_M+'</span>');
 		}
 		var regexp = /\[\.[A-Z]{2}\.\]/ig;
 		var pts = html.match(regexp);
@@ -1198,7 +1200,7 @@ SET = {
 		if(!scene.getObjectByName("PT_"+siglaMeridiano))return;
 		var els = scene.getObjectByName("PT_"+siglaMeridiano).children;
 		for(e in els){
-			if(els[e].name.indexOf(siglaMeridiano+"."+SET.ptToStr(nPunto)+".")==0){
+			if(els[e].name.indexOf(siglaMeridiano+"."+nPunto+".")==0){
 				var geoPoint =  new THREE.SphereGeometry( 0.11, 16, 16 );
 				var eviPoint;
 				eviPoint =  new THREE.Mesh( geoPoint, this.MAT.pointSel2.clone() );
@@ -1215,7 +1217,15 @@ SET = {
 	delEviPalls: function( siglaMeridiano, nPunto, tipo ){
 		var els = SETS.children;
 		for(e=els.length-1;e>=0;e--){
-			if(els[e].name.indexOf(tipo+' point: '+siglaMeridiano+"."+SET.ptToStr(nPunto)+".")==0){
+			if(els[e].name.indexOf(tipo+' point: '+siglaMeridiano+"."+nPunto+".")==0){
+				SETS.remove( els[e] );
+			}
+		}
+	},
+	delAllEviPalls: function(tipo){
+		var els = SETS.children;
+		for(e=els.length-1;e>=0;e--){
+			if(els[e].name.indexOf(tipo+' point: ')==0){
 				SETS.remove( els[e] );
 			}
 		}

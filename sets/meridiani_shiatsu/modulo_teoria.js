@@ -90,7 +90,7 @@ var MODULO_TEORIA = { // extend SET
 								btnAdd,
 								globals.set.cartella+'_teoria_'+p+"_"+t );
 		SET.convSigleScheda();
-		SET.evidenziaPunto(/*html*/);
+		SET.evidenziaPunto();
 	},
 	caricaVideo: function( p, t, btn ){
 		// carica un approfondimento video

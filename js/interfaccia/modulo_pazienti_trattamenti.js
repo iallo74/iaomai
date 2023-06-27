@@ -1724,7 +1724,7 @@ var PAZIENTI_TRATTAMENTI = {
 						HTML+='<i>'+TXT_P+':</i> ';
 						HTML+='<div id="puntiCiclo">';
 						for(let p in puntiMTC){
-							nPunto=puntiMTC[p].n*1;
+							nPunto=puntiMTC[p].n;
 							siglaMeridiano=puntiMTC[p].m;
 							valutazione=__(puntiMTC[p].e);
 							mezzo=__(puntiMTC[p].z);

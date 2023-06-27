@@ -86,6 +86,7 @@ var PAZIENTI_SETS = {
 		PAZIENTI.ricGroup(frm,n);
 	},
 	ricGroup: function( frm, n, addN='' ){
+		SET.delAllEviPalls("Over");
 		var mr=document[frm][addN+"mr_"+n].value;
 		var pt=document[frm][addN+"pt_"+n].value;
 		var de=document[frm][addN+"de_"+n].value;
@@ -95,11 +96,10 @@ var PAZIENTI_SETS = {
 		}
 		
 		var hd=document[frm][addN+"hd_"+n].value;
-		if(pt.length == 1)pt = "0"+pt;
 		var elenco = [];
 		for(let p in PAZIENTI.puntiProvvisori){
-			if(p*1 == n*1){
-				PAZIENTI.puntiProvvisori[p].n = pt*1;
+			if(p == n){
+				PAZIENTI.puntiProvvisori[p].n = pt;
 				PAZIENTI.puntiProvvisori[p].m = mr;
 				PAZIENTI.puntiProvvisori[p].t = de;
 				PAZIENTI.puntiProvvisori[p].s = siglaPunto;
@@ -121,7 +121,7 @@ var PAZIENTI_SETS = {
 					'	   onClick="PAZIENTI.cambia'+tipo+'Z('+n+',\''+mzs[m]+'\','+isProc+');"' +
 					'	   title="'+htmlEntities(PAZIENTI.mezzi[mzs[m]])+'"></span>';
 		}
-		H.selTT(n,((tipo=='N')?"n-":"")+"ico_PZ",html);
+		H.selTT(n,((tipo=='N' && !isProc)?"n-":"")+"ico_PZ",html);
 	},
 	
 	caricaPuntiTrattamento: function( ev = -1 ){ // carica i punti del trattamento
@@ -135,7 +135,7 @@ var PAZIENTI_SETS = {
 			if( globals.set.cartella == 'meridiani_cinesi' || 
 				globals.set.cartella == 'meridiani_shiatsu' ){
 				for(let p in PAZIENTI.puntiProvvisori){
-					nPunto=PAZIENTI.puntiProvvisori[p].n*1;
+					nPunto=SET.ptToStr(PAZIENTI.puntiProvvisori[p].n);
 					siglaMeridiano=PAZIENTI.puntiProvvisori[p].m;
 					valutazione=__(PAZIENTI.puntiProvvisori[p].e);
 					mezzo=__(PAZIENTI.puntiProvvisori[p].z);
@@ -219,14 +219,22 @@ var PAZIENTI_SETS = {
 								'	     	 onChange="this.blur();' +
 								'	     	 		   SCHEDA.formModificato=true;' +
 								'	     	 		   PAZIENTI.ricGroup(\'formMod\','+p+');">';
-						for(let n=1;n<=totPunti;n++){
-							var siglaPunto = n;
-							if(DB.set.meridiani[siglaMeridiano].punti[SET.ptToStr(n)].siglaPunto){
-								siglaPunto = DB.set.meridiani[siglaMeridiano].punti[SET.ptToStr(n)].siglaPunto;
+					
+						let myObj = DB.set.meridiani[siglaMeridiano].punti,
+							keys = 	Object.keys(myObj),
+							len = keys.length;
+						keys.sort();		
+						for (let i=0; i<len; i++) {	
+							let s = keys[i];
+							var TS = DB.set.meridiani[siglaMeridiano].punti[s];
+							
+							var siglaPunto = +s;
+							if(DB.set.meridiani[siglaMeridiano].punti[s].siglaPunto){
+								siglaPunto = DB.set.meridiani[siglaMeridiano].punti[s].siglaPunto;
 								siglaPunto = siglaPunto.substr(3,siglaPunto.length-3);
 							}
-							HTML += '<option value="'+n+'"';
-							if(nPunto==n)HTML += ' SELECTED';
+							HTML += '<option value="'+s+'"';
+							if(nPunto==s)HTML += ' SELECTED';
 							HTML += '>'+siglaPunto+'</option>';
 						}
 						HTML += '	</select>';
@@ -274,7 +282,7 @@ var PAZIENTI_SETS = {
 				HTML +=	'<div style="clear:both;height:1px;"></div>';
 			}else{
 				for(let p in PAZIENTI.puntiProvvisori){
-					nPunto=PAZIENTI.puntiProvvisori[p].n*1;
+					nPunto=PAZIENTI.puntiProvvisori[p].n;
 					siglaMeridiano=PAZIENTI.puntiProvvisori[p].m;
 					valutazione=__(PAZIENTI.puntiProvvisori[p].e);
 					mezzo=__(PAZIENTI.puntiProvvisori[p].z);
@@ -322,22 +330,22 @@ var PAZIENTI_SETS = {
 				else if(im.indexOf("ico_PVV.")!==-1)imPV='V';
 				else if(im.indexOf("ico_PVP.")!==-1)imPV='P';
 				else imPV='D';
-				PAZIENTI.puntiProvvisori[p].n = document.getElementById('pt_'+p).value*1;
+				PAZIENTI.puntiProvvisori[p].n = document.getElementById('pt_'+p).value;
 				PAZIENTI.puntiProvvisori[p].m = document.getElementById('mr_'+p).value;
 				PAZIENTI.puntiProvvisori[p].s = document.getElementById('hd_'+p).value;
 				PAZIENTI.puntiProvvisori[p].e = imPV;
-				var n=0;
+				/*var n=0;
 				for(let m in DB.set.meridiani){
 					if(DB.set.meridiani[m].siglaMeridiano==document.getElementById('mr_'+p).value){
 						n=(document.getElementById('pt_'+p).value*1+DB.set.meridiani[m].iniMerid*1)-1;
 					}
-				}
+				}*/
 			}
 		}
 	},
 	aggiungiPuntoTrattamento: function( PT='0.' ){ // aggiunge un singolo punto al trattamento
 		PAZIENTI.ricPuntiTratt();
-		var n = PT.split(".")[0]*1;
+		var n = PT.split(".")[0];
 		var siglaMeridiano = PT.split(".")[1];
 		var siglaPunto = __(DB.set.meridiani[siglaMeridiano].punti[SET.ptToStr(n)].siglaPunto, PT);
 		PAZIENTI.puntiProvvisori.push({
@@ -355,16 +363,15 @@ var PAZIENTI_SETS = {
 		PAZIENTI.topAdd = tCoord(document.getElementById("p_add_dett"),'y');
 		SCHEDA.formModificato=true;
 		if(PAZIENTI.tipoGruppo=='P' || PAZIENTI.tipoGruppo=='N')PAZIENTI.ricPuntiTratt();
-		var pP=punti.split("|");
 		var presenti=false;
 		var pass=true;
 		var totAggiunti = 0;
-		for(let p=0;p<pP.length-1;p++){
+		for(let p in punti){
 			// verifico che non ci sia già
 			pass=true;
 			if(PAZIENTI.tipoGruppo=='P'){
-				var n = pP[p].split(".")[0]*1;
-				var siglaMeridiano = pP[p].split(".")[1];
+				var n = punti[p].split(".")[0];
+				var siglaMeridiano = punti[p].split(".")[1];
 				for(let k in PAZIENTI.puntiProvvisori){
 					if(	PAZIENTI.puntiProvvisori[k].n == n && 
 						PAZIENTI.puntiProvvisori[k].m == siglaMeridiano){
@@ -378,7 +385,7 @@ var PAZIENTI_SETS = {
 				}
 			}
 			if(PAZIENTI.tipoGruppo=='M'){
-				var siglaMeridiano = pP[p].split(".")[0];
+				var siglaMeridiano = punti[p].split(".")[0];
 				for(let k in PAZIENTI.meridianiProvvisori){
 					if(PAZIENTI.meridianiProvvisori[k].siglaMeridiano == siglaMeridiano){
 						pass=false;
@@ -391,7 +398,7 @@ var PAZIENTI_SETS = {
 				}
 			}
 			if(PAZIENTI.tipoGruppo=='A'){
-				var siglaPunto = pP[p].split(".")[0];
+				var siglaPunto = punti[p].split(".")[0];
 				for(let k in PAZIENTI.auriculoProvvisori){
 					if(PAZIENTI.auriculoProvvisori[k].siglaMeridiano == siglaPunto){
 						pass=false;
@@ -404,7 +411,7 @@ var PAZIENTI_SETS = {
 				}
 			}
 			if(PAZIENTI.tipoGruppo=='N'){
-				var siglaPunto = pP[p].split(".")[0];
+				var siglaPunto = punti[p].split(".")[0];
 				for(let k in PAZIENTI.namikoshiProvvisori){
 					if(PAZIENTI.namikoshiProvvisori[k].siglaMeridiano == siglaPunto){
 						pass=false;
@@ -880,7 +887,7 @@ var PAZIENTI_SETS = {
 		//SET.overPunto(document.getElementById("pt_"+n).parentElement,false);
 		PAZIENTI.auriculoProvvisori[n].e = m;
 		SCHEDA.formModificato = true;
-		//PAZIENTI.ricGroup("formMod",n);
+		PAZIENTI.ricGroup("formMod",n);
 		//SET.overPunto(document.getElementById("pt_"+n).parentElement,true);
 		document.getElementById("tt_mezzival").dataset.on='0';
 		H.removeTT();
@@ -917,11 +924,11 @@ var PAZIENTI_SETS = {
 	
 	
 	// punti namikoshi
-	ricNamikoshi: function( frm, n ){ // ricarica tutti i punti
+	ricNamikoshi: function( frm, n ){ // ricarica tutti i punti	
 		//SET.overPunto(document.getElementById("n-rg_"+n),false);
 		let nPunto = document[frm]["n-pt_"+n].value;
-		PAZIENTI.namikoshiProvvisori[n].n = +nPunto;
-		PAZIENTI.namikoshiProvvisori[n].s = DB.set.meridiani.NK.punti[SET.ptToStr(nPunto)].NomePunto;
+		PAZIENTI.namikoshiProvvisori[n].n = SET.ptToStr(nPunto);
+		PAZIENTI.namikoshiProvvisori[n].s = DB.set.meridiani.NK.punti[nPunto].NomePunto;
 		PAZIENTI.namikoshiProvvisori[n].t = document[frm]["n-de_"+n].value;
 		try{
 			PAZIENTI.caricaNamikoshiTrattamento();
@@ -941,7 +948,7 @@ var PAZIENTI_SETS = {
 							DB.set.meridiani.NK.punti[siglaPunto].NomePunto){
 							var pP = DB.set.meridiani.NK.punti[siglaPunto].siglaPunto.split("-");
 							puntiElenco.push({
-								siglaPunto: pP[1]*1,
+								siglaPunto: pP[1],
 								NomePunto: DB.set.meridiani.NK.punti[siglaPunto].NomePunto
 							});
 						}
@@ -953,7 +960,7 @@ var PAZIENTI_SETS = {
 					mezzo=__(PAZIENTI.namikoshiProvvisori[p].z);
 					descrizione=__(PAZIENTI.namikoshiProvvisori[p].t);
 					siglaPunto=__(PAZIENTI.namikoshiProvvisori[p].s);
-					nPunto=__(PAZIENTI.namikoshiProvvisori[p].n);
+					nPunto=SET.ptToStr(PAZIENTI.namikoshiProvvisori[p].n);
 					elenco.push(nPunto+".NK."+valutazione);
 					
 					HTML += '<div class="rgProcMod rgMod dettPunto dettNamikoshi'+((ev==p)?' eviPunto':'')+'"' +
@@ -1070,8 +1077,7 @@ var PAZIENTI_SETS = {
 					mezzo=__(PAZIENTI.namikoshiProvvisori[p].z);
 					descrizione=__(PAZIENTI.namikoshiProvvisori[p].t);
 					siglaPunto=__(PAZIENTI.namikoshiProvvisori[p].s);
-					nPunto=__(PAZIENTI.namikoshiProvvisori[p].n)+"";
-					if(nPunto.length==1)nPunto = '0' + nPunto;
+					nPunto=PAZIENTI.namikoshiProvvisori[p].n;
 					
 					elenco.push(nPunto+'.NK'+valutazione);
 					
@@ -1107,7 +1113,7 @@ var PAZIENTI_SETS = {
 	aggiungiNamikoshiTrattamento: function( PT ){ // aggiunge un singolo punto al trattamento;
 		JSNPUSH = {
 			m: 'NK',
-			n: PT*1,
+			n: PT,
 			s: DB.set.meridiani.NK.punti[SET.ptToStr(PT)].NomePunto,
 			z: PAZIENTI.mezzoProvvisorio,
 			e: "",
@@ -1137,11 +1143,9 @@ var PAZIENTI_SETS = {
 	cambiaNV: function( n, m ){ // cambia la valutazione energetica su un punto
 		var el = document.getElementById("n-ico_PV"+n);
 		el.getElementsByTagName("img")[0].src='img/ico_PV'+m+'.png';
-		SET.overPunto(el.parentElement.parentElement,false);
 		PAZIENTI.namikoshiProvvisori[n].e = m;
 		SCHEDA.formModificato = true;
-		PAZIENTI.ricGroup("formMod",n,'n-');
-		SET.overPunto(el.parentElement.parentElement,true);
+		PAZIENTI.ricNamikoshi("formMod",n,'n-');
 		document.getElementById("tt_mezzival").dataset.on='0';
 		H.removeTT();
 	},
@@ -1209,25 +1213,31 @@ var PAZIENTI_SETS = {
 			var n = -1;
 			if(PAZIENTI.tipoGruppo=='P' || PAZIENTI.tipoGruppo=='M'){
 				EL.titolo = TXT("MeridianiTrattamento");
-				for(let i in DB.set.meridiani){
+				for(let m in DB.set.meridiani){
 					// verifico le autorizzazioni
-					if(SET.verFreeMeridiani(i) && i!='NK'){
+					if(SET.verFreeMeridiani(m) && m!='NK'){
 						n++;
 						if(PAZIENTI.tipoGruppo=='P'){ // punti
 							EL.contenuto[n] = {};
-							EL.contenuto[n].titolo = DB.set.meridiani[i].NomeMeridiano;
+							EL.contenuto[n].titolo = DB.set.meridiani[m].NomeMeridiano;
 							EL.contenuto[n].contenuto = [];
 							EL.contenuto[n].livello = 3;
 							EL.contenuto[n].parent = EL;
-							for(let pm in DB.set.meridiani[i].punti){
-								if(DB.set.meridiani[i].punti[pm].NomePunto){
-									var pt = DB.set.meridiani[i].punti[pm].NomePunto.split(". ")[0];
+
+							let myObj = DB.set.meridiani[m].punti,
+								keys = 	Object.keys(myObj),
+								len = keys.length;
+							keys.sort();		
+							for (let i=0; i<len; i++) {	
+								let pm = keys[i];
+								if(DB.set.meridiani[m].punti[pm].NomePunto){
+									var pt = DB.set.meridiani[m].punti[pm].NomePunto.split(". ")[0];
 									EL.contenuto[n].contenuto.push(pt);
 								}
 							}	
 						}
 						if(PAZIENTI.tipoGruppo=='M'){ // meridiani
-							if(i!='EX')EL.contenuto.push(i);
+							if(i!='EX')EL.contenuto.push(m);
 						}
 					}
 					// --------------------------
@@ -1267,10 +1277,15 @@ var PAZIENTI_SETS = {
 			EL.parent = PAZIENTI.elencoGruppoPunti;
 			var n = -1;
 			EL.titolo = TXT("PuntiNamikoshi");
-			var i = 'NK';
-			for(let pm in DB.set.meridiani[i].punti){
-				if(DB.set.meridiani[i].punti[pm].NomePunto && __(DB.set.meridiani[i].punti[pm].apparato,-1)>-1){
-					var pP = DB.set.meridiani[i].punti[pm].siglaPunto.split("-");
+
+			let myObj = DB.set.meridiani['NK'].punti,
+				keys = 	Object.keys(myObj),
+				len = keys.length;
+			keys.sort();		
+			for (let i=0; i<len; i++) {	
+				let pm = keys[i];
+				if(DB.set.meridiani['NK'].punti[pm].NomePunto && __(DB.set.meridiani['NK'].punti[pm].apparato,-1)>-1){
+					var pP = DB.set.meridiani['NK'].punti[pm].siglaPunto.split("-");
 					EL.contenuto.push(pP[1]+"."+pP[0]);
 				}
 			}
@@ -1609,26 +1624,30 @@ var PAZIENTI_SETS = {
 	ptGruppo: function( PT, n ){ // scrive la riga del punto da selezionare nel menu dei gruppi di punti
 		var pP = PT.split(".");
 		var HTML = '';
+		var nPunto = '';
 		var mer = pP[0];
-		if(pP[1])mer = pP[1];
+		if(pP[1]){
+			mer = pP[1];
+			nPunto = SET.ptToStr(pP[0]);
+		}
 		if(pP[0] && __(DB.set.meridiani[mer])){
 			HTML += '<label class="gr_3"' +
 					'		for="'+n+'">' +
 					'	<input type="checkbox"' +
 					'		   id="'+n+'"' +
 					'		   value="'+PT+'"';
-			if(PAZIENTI.tipoGruppo=='P'){
-				var siglaPT = __(DB.set.meridiani[mer].punti[SET.ptToStr(pP[0])].siglaPunto,pP[0]+"."+SET.convSigla(pP[1]));
-				if(pP[1]=='EX')HTML += '		   data-sigla-punto="'+siglaPT+'"';
-				if(pP[1]=='NK')HTML += '		   data-sigla-punto="'+DB.set.meridiani[pP[1]].punti[SET.ptToStr(pP[0])].NomePunto+'"';
+			if(PAZIENTI.tipoGruppo=='P' || PAZIENTI.tipoGruppo=='N'){
+				var siglaPT = __(DB.set.meridiani[mer].punti[nPunto].siglaPunto,nPunto+"."+SET.convSigla(mer));
+				if(mer=='EX')HTML += '		   data-sigla-punto="'+siglaPT+'"';
+				if(mer=='NK')HTML += '		   data-sigla-punto="'+DB.set.meridiani[mer].punti[nPunto].NomePunto+'"';
 			}
 			HTML += '>';
 			if(PAZIENTI.tipoGruppo=='P'){
 				HTML +=	'<b>'+siglaPT+'.</b>' +
-						'<i>'+DB.set.meridiani[mer].punti[SET.ptToStr(pP[0])].NomePunto.replace(PT+".","")+'</i>';
+						'<i>'+DB.set.meridiani[mer].punti[nPunto].NomePunto.replace(PT+".","")+'</i>';
 			}
 			if(PAZIENTI.tipoGruppo=='N'){
-				HTML +=	'<b>'+DB.set.meridiani[mer].punti[SET.ptToStr(pP[0])].NomePunto.replace(PT+".","")+'</b>';
+				HTML +=	'<b>'+DB.set.meridiani[mer].punti[nPunto].NomePunto+'</b>';
 			}
 			if(PAZIENTI.tipoGruppo=='M'){
 				HTML +=	DB.set.meridiani[PT].NomeMeridiano;
@@ -1658,19 +1677,20 @@ var PAZIENTI_SETS = {
 	ptGruppoImporta: function(){ // importa il gruppo dei punti nel trattamento
 		var isProc = (document.getElementById("scheda").classList.contains("scheda_procedura"));
 		var els = document.getElementById("gruppoPunti_cont").getElementsByTagName("input");
-		var punti = '';
+		let punti = [];
 		for(e in els){
 			if(els[e].checked && els[e].type=='checkbox'){
-				punti += els[e].value;
+				let punto = els[e].value;
 				if(	globals.set.cartella == 'meridiani_cinesi' ||
 					globals.set.cartella == 'meridiani_shiatsu' ){
-						punti += ".";
-						if(els[e].dataset.siglaPunto)punti += els[e].dataset.siglaPunto;
+						punto += ".";
+						if(els[e].dataset.siglaPunto)punto += els[e].dataset.siglaPunto;
 					}
-				punti += "."+PAZIENTI.mezzoProvvisorio+"|";
+				punto += "."+PAZIENTI.mezzoProvvisorio;
+				punti.push(punto);
 			}
 		}
-		if(punti){
+		if(punti.length){
 			if(!isProc)PAZIENTI.aggiungiGruppoTrattamento(punti);
 			else SET.aggiungiGruppoProcedura(punti);
 			PAZIENTI.swGruppoPunti();
