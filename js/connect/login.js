@@ -179,7 +179,7 @@ var LOGIN = {
 	getLogin: function(){
 		// avviato quando si preme il pulsante Accedi nel popup LOGIN
 		if(CONN.retNoConn() && document.getElementById("USR").value.trim()!='' && document.getElementById("PWD").value.trim()!=''){
-			if(document.querySelector(".listaPazienti"))applicaLoading(document.querySelector(".listaPazienti"));
+			console.log("loading")
 			document.getElementById("login").classList.add("popup_back");
 			document.loginFrom.PWD.blur();
 			CONN.caricaUrl(	"login.php",
@@ -198,7 +198,6 @@ var LOGIN = {
 			}else{
 				LOGIN.logedout=false;
 			}
-			if(document.querySelector(".listaPazienti"))rimuoviLoading(document.querySelector(".listaPazienti"));
 			document.getElementById("login").classList.remove("popup_back");
 			var USRprovv=DB.login.data.UsernameU;
 			if(typeof(USRprovv)=='undefined')USRprovv='';
@@ -217,6 +216,9 @@ var LOGIN = {
 			}
 			txt = JSON.stringify(jsn);
 			DB._reset();
+			if(document.querySelector(".listaPazienti"))applicaLoading(document.querySelector(".listaPazienti"));
+			applicaLoading(document.querySelector(".listaFornitori"));
+			applicaLoading(document.querySelector(".listaServizi"));
 			LOGIN.salvaToken(txt);
 			LOGIN.tmAttesaLogin = 	setInterval( function(){
 										if(LOGIN.logedin()){

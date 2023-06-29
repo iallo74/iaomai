@@ -626,6 +626,12 @@ body:not(.smart) .trattTools i:not(.infoCiclo):not(.addTrattBtn):hover{
 .trattBtns span:not(.selBtn):hover{
 	background-color: rgba(0,0,0,0.23) !important;
 }
+#procBtnComm{
+	background-image: url(../img/ico_condW.png);
+    background-repeat: no-repeat;
+    background-position: 8px center;
+    padding-left: 32px;
+}
 
 
 .addTrattBtn,

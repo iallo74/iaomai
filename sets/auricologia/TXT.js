@@ -1040,12 +1040,20 @@ DB.TXT.set = {
         deu: "Deine eigenen"
     },
     Community: {
-        ita: "Community",
+        ita: "Condivise",
         eng: "Community",
         esp: "Comunidad",
         fra: "Communauté",
         por: "Comunidade",
         deu: "Community"
+    },
+    Condivise: {
+        ita: "Condivise",
+        eng: "Shared",
+        esp: "Compartidas",
+        fra: "Partagées",
+        por: "Compartilhadas",
+        deu: "Geteilt"
     },
     CommunityPreferiti: {
         ita: "Condivisi: preferiti",

@@ -24,7 +24,7 @@ var MODULO_PROCEDURE = { // extend SET
 		HTML += '>'+TXT("Tue").toUpperCase()+'</span> <span id="procBtnComm" ';
 		if(!Q_tue)HTML += 'class="selBtn" ';
 		else HTML += 'onClick="SET.caricaCommunity();"';
-		HTML += '>'+TXT("Community").toUpperCase()+'</span></p>';
+		HTML += '>'+TXT("Condivise").toUpperCase()+'</span></p>';
 		return HTML;
 	},
 	car_procedure: function( Q_idProc='', Q_tue='' ){ // elenco delle procedure
