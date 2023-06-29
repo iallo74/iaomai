@@ -266,6 +266,7 @@ body:not(.smart) .stampaBtn{
 .p_paz_punto, /* PAZIENTI */
 .p_paz_foto, /* PAZIENTI */
 .p_paz_choose, /* PAZIENTI */
+.p_paz_screenshot, /* PAZIENTI */
 .p_paz_label, /* PAZIENTI */
 #cont_paz_add, /* PAZIENTI */
 #cont_tag_add, /* PAZIENTI */
@@ -289,7 +290,8 @@ body:not(.smart) .stampaBtn{
 .p_sch_descr, /* procedura */
 .p_paz_punto, /* PAZIENTI */
 .p_paz_foto, /* PAZIENTI */
-.p_paz_choose{ /* PAZIENTI */
+.p_paz_choose, /* PAZIENTI */
+.p_paz_screenshot{ /* PAZIENTI */
 	cursor:pointer;
 }
 .p_sch_punto:hover, /* procedura */
@@ -298,7 +300,8 @@ body:not(.smart) .stampaBtn{
 .p_paz_punto:hover, /* PAZIENTI */
 .p_paz_label:hover, /* PAZIENTI */
 .p_paz_foto:hover, /* PAZIENTI */
-.p_paz_choose:hover{ /* PAZIENTI */
+.p_paz_choose:hover, /* PAZIENTI */
+.p_paz_screenshot:hover{ /* PAZIENTI */
 	background-color:#ffd8af !important
 }
 .sch_Max450 #cont_paz_add,
@@ -322,6 +325,7 @@ body:not(.smart) .stampaBtn{
 #p_add_comm, /* procedura */
 .p_paz_foto, /* PAZIENTI */
 .p_paz_choose, /* PAZIENTI */
+.p_paz_screenshot, /* PAZIENTI */
 .p_paz_punto, /* PAZIENTI */
 .p_paz_label{ /* PAZIENTI */
 	padding-left: 10px;
@@ -370,6 +374,13 @@ body:not(.smart) .stampaBtn{
 	background-color:rgba(0,0,0,0.05);
 	height: 36px;
     line-height: 36px;
+}
+#contSintomi div span{
+	display: inline-block;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    width: calc(100% - 85px);
 }
 #contSintomi .occhio{
 	width:16px;
@@ -777,6 +788,7 @@ body:not(.smart) .stampaBtn{
 .p_paz_punto,
 .p_paz_foto,
 .p_paz_choose,
+.p_paz_screenshot,
 .p_paz_label{ /* PAZIENTI */
 	background-repeat:no-repeat;
 	padding-right:10px !important;
@@ -792,12 +804,14 @@ body:not(.smart) .stampaBtn{
 	background-position:5px center;
 }
 .p_paz_foto,
-.p_paz_choose{ /* PAZIENTI */
+.p_paz_choose,
+.p_paz_screenshot{ /* PAZIENTI */
 	background-position:center center !important;
 }
 .smart.android .p_paz_punto,
 .smart.android .p_paz_foto,
 .smart.android .p_paz_choose,
+.smart.android .p_paz_screenshot,
 .smart.android .p_paz_label{ /* PAZIENTI */
 	height:42px !important;
 	line-height:42px !important;
@@ -808,6 +822,7 @@ body:not(.smart) .stampaBtn{
 .app_version.bug_font.smart.android .p_paz_punto,
 .app_version.bug_font.smart.android .p_paz_foto,
 .app_version.bug_font.smart.android .p_paz_choose,
+.app_version.bug_font.smart.android .p_paz_screenshot,
 .app_version.bug_font.smart.android .p_paz_label{ /* PAZIENTI */
 	line-height:38.48px !important;
 	font-size: var(--font-13-58) !important;
@@ -858,6 +873,12 @@ cont_p_paz_label{
 }
 .p_paz_choose{
 	background-image: url(../img/ico_choose.png);
+    background-size: auto 28px;
+	margin-left:15px;
+	padding-right: 3px !important;
+}
+.p_paz_screenshot{
+	background-image: url(../img/ico_screenshot.png);
     background-size: auto 28px;
 	margin-left:15px;
 	padding-right: 3px !important;
@@ -2194,7 +2215,8 @@ body:not(.touch) .sezioneChiusa:hover{
 	margin-top:-5px;
 }
 #addFoto,
-#chooFoto{
+#chooFoto,
+#screenShot{
     display: inline-block;
     margin-top: 17px;
     height: 32px;
@@ -2210,7 +2232,8 @@ body:not(.touch) .sezioneChiusa:hover{
     display: inline-block;
 }
 .smart.android #fotoProvv_FL,
-.smart.android .p_paz_choose{
+.smart.android .p_paz_choose,
+.smart.android .p_paz_screenshot{
     padding-left: 42px !important;
     width: 42px !important;
 	background-position: center center !important;

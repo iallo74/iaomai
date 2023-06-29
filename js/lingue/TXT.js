@@ -3166,6 +3166,14 @@ DB.TXT = {
             por: "Arquivo de fotos",
             deu: "Dateiarchiv"
         },
+        ScreenShot: {
+            ita: "Screenshot",
+            eng: "Screenshot",
+            esp: "Screenshot",
+            fra: "Screenshot",
+            por: "Screenshot",
+            deu: "Screenshot"
+        },
         FormatiConsentiti: {
             ita: "Formati consentiti",
             eng: "Allowed formats",
@@ -5235,6 +5243,48 @@ DB.TXT = {
             fra: "En sélectionnant ce modèle, vous quitterez [NomeSet]. Voulez-vous quand même continuer ?",
             por: "Ao selecionar este modelo, você sairá de [NomeSet]. Deseja continuar mesmo assim?",
             deu: "Wenn Sie dieses Modell auswählen, verlassen Sie [NomeSet]. Möchten Sie dennoch fortfahren?"
+        },
+
+        // UPGRADE
+        UpgradeIntro: {
+            ita: "ATTENZIONE!<br>IAOMAI richiede un importante aggiornamento.",
+            eng: "WARNING!<br>IAOMAI requires an important update.",
+            esp: "¡ADVERTENCIA!<br>IAOMAI requiere una actualización importante.",
+            fra: "ATTENTION!<br>IAOMAI nécessite une mise à jour importante.",
+            por: "ATENÇÃO!<br>O IAOMAI requer uma atualização importante.",
+            deu: "WARNUNG!<br>IAOMAI erfordert ein wichtiges Update."
+        },
+        UpgradeInfoAndroid: {
+            ita: "È necessario accedere al PlayStore e aggiornare l'app.",
+            eng: "You need to access the Play Store and update the app.",
+            esp: "Debe acceder a Play Store y actualizar la aplicación.",
+            fra: "Vous devez accéder à Play Store et mettre à jour l'application.",
+            por: "Você precisa acessar a Play Store e atualizar o aplicativo.",
+            deu: "Sie müssen auf den Play Store zugreifen und die App aktualisieren."
+        },
+        UpgradeInfoApple: {
+            ita: "È necessario accedere all'App Store e aggiornare l'app.",
+            eng: "You need to access the App Store and update the app.",
+            esp: "Debe acceder a la App Store y actualizar la aplicación.",
+            fra: "Vous devez accéder à l'App Store et mettre à jour l'application.",
+            por: "Você precisa acessar a App Store e atualizar o aplicativo.",
+            deu: "Sie müssen auf den App Store zugreifen und die App aktualisieren."
+        },
+        UpgradeInfoPC: {
+            ita: "Assicurati di essere connesso a internet e attendi qualche minuto affinché il sistema aggiorni l'applicazione automaticamente, oppure scarica l'ultima versione.",
+            eng: "Make sure you are connected to the internet and wait a few minutes for the system to update the application automatically, or download the latest version.",
+            esp: "Asegúrate de estar conectado a internet y espera unos minutos para que el sistema actualice la aplicación automáticamente, o descarga la última versión.",
+            fra: "Assurez-vous d'être connecté à Internet et attendez quelques minutes pour que le système mette à jour l'application automatiquement, ou téléchargez la dernière version.",
+            por: "Certifique-se de estar conectado à internet e aguarde alguns minutos para que o sistema atualize o aplicativo automaticamente ou baixe a versão mais recente.",
+            deu: "Stellen Sie sicher, dass Sie mit dem Internet verbunden sind, und warten Sie einige Minuten, damit das System die Anwendung automatisch aktualisiert oder laden Sie die neueste Version herunter."
+        },
+        CliccaQui: {
+            ita: "CLICCA QUI",
+            eng: "CLICK HERE",
+            esp: "CLIC AQUÍ",
+            fra: "CLIQUEZ ICI",
+            por: "CLIQUE AQUI",
+            deu: "HIER KLICKEN"
         },
 
         // PROCESSO DI ACQUISTO

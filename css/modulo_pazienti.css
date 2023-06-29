@@ -366,7 +366,7 @@ body:not(.smart) #pazienti_head{
 }
 .graficoEtichetta{
 	width:150px;
-	text-wrap:none;
+	white-space:nowrap;
 	text-overflow:ellipsis;
 	overflow:hidden;
 	height:60px;

@@ -71,6 +71,7 @@ var PH = {
 						PH.res = null;
 						PH.modify();
 						visLoader();
+						document.getElementById("img_draw_tools").classList.add("nasRes");
 						window.addEventListener("resize", PH.resizeW, false);
 						if(mouseDetect){
 							document.getElementById("img_man").addEventListener("mousedown", PH.inizioResizeCrop, false);
@@ -163,7 +164,7 @@ var PH = {
 		document.getElementById("img_resizer").style.width = newDim + 'px';
 		document.getElementById("img_resizer").style.height = newDim + 'px';
 	},
-	fineResizeCrop: function( event ){ // smetter il ridimensionamento del ritaglio
+	fineResizeCrop: function( event ){ // smette il ridimensionamento del ritaglio
 		if(mouseDetect)event.preventDefault();
 		else event.stopPropagation();	
 		if(mouseDetect){
@@ -310,6 +311,7 @@ var PH = {
 			});
 		}
 		
+		document.getElementById("img_resizer").classList.remove("nasRes");
 		document.getElementById("img_resizer").style.width = (PH.getRes().dim) + 'px';
 		document.getElementById("img_resizer").style.height = (PH.getRes().dim) + 'px';
 		document.getElementById("img_resizer").style.marginLeft = PH.getRes().left + 'px';
@@ -320,16 +322,52 @@ var PH = {
 		PH.img_hOr = PH.img.height;
 		PH.resizeW();
 	},
+	draw: function(img){ // disegna sull'immagine
+		PH.img_wOr = PH.img.width;
+		PH.img_hOr = PH.img.height;
+		var rapp = PH.img.width / PH.img.height;
+		var rappW = WF() / (HF()-40);
+		var nW = 0;
+		var nH = 0;
+		PH.maxDim = '';
+		
+		if(rappW > rapp){ // fisso il verticale
+			nH = HF()-100;
+			nW = nH * rapp;
+			PH.maxDim = nW;
+		}else{
+			nW = WF()-40;
+			nH = nW / rapp;
+			PH.maxDim = nH;
+		}
+		if(rapp > 1){ // fisso il verticale
+			PH.maxDim = nH;
+		}else{
+			PH.maxDim = nW;
+		}
+		document.getElementById("photo").style.width = (nW+20)+'px';
+		document.getElementById("photo").style.height = (nH+60)+'px';
+		document.getElementById("photo").style.marginLeft = "-" + parseInt((nW + 20) / 2) + 'px';
+		document.getElementById("photo").style.marginTop = "-" + parseInt((nH + 60) / 2) + 'px';
+		PH.img.style.width = (nW)+'px';
+		PH.img.style.height = (nH)+'px';
+		PH.img.style.display = 'block';
+		DW._init();
+	},
 	chiudi: function(){ // chiude 
+		if(DW.initialized)DW.clearDraw();
 		window.removeEventListener("resize", PH.resizeW, false);
 		document.getElementById("photo").classList.remove("visPH");
 		document.getElementById("photo").classList.remove("visPH2");
 		document.getElementById("photo").classList.remove("nasPH");
+		document.getElementById("img_pulsanti").classList.remove("editable");
 		if(PH.img)PH.img.src="";
 		PH.res = null;
 		if(PH.img)PH.img.onload = null;
-		PH.file.value = '';
-		PH.file = null;
+		if(PH.file){
+			PH.file.value = '';
+			PH.file = null;
+		}
 		PH.functPH = null;
 		PH.makeBig = false;
 		nasLoader();
@@ -958,6 +996,267 @@ var PH = {
 		PH.galleryProvvisoria = newGallery;
 		PH.caricaGallery();
 		SCHEDA.formModificato = true;
+	},
+
+	screenShot: function(){ // acquisisce lo screenshot del manichino
+		var srcCanvas = document.getElementById("container").getElementsByTagName("canvas")[0];
+		var destinationCanvas = document.createElement("canvas");
+		destinationCanvas.width = srcCanvas.width;
+		destinationCanvas.height = srcCanvas.height;
+
+		var destCtx = destinationCanvas.getContext('2d');
+
+		//create a rectangle with the desired color
+		destCtx.fillStyle = "#FFFFFF";
+		destCtx.fillRect(0,0,srcCanvas.width,srcCanvas.height);
+
+		//draw the original canvas onto the destination canvas
+		destCtx.drawImage(srcCanvas, 0, 0);
+
+		//finally use the destinationCanvas.toDataURL() method to get the desired output;
+		base64 = destinationCanvas.toDataURL('image/jpeg', .8);
+		return base64;
+	},
+	aggiungiScreenshot: function( obj ){ // aggiunge lo screenshot alla gallery
+		PH.img.src = DW.destImg.src;
+		var imgMini = PH.returnImageConverted();
+		var obj = {
+			imgMini: imgMini,
+			imgBig: (PH.makeBig) ? PH.returnImageConverted( true ) : '',
+			fileType: imgMini.split("data:")[1].split(";")[0]
+		};
+		PH.aggiungiFoto( JSON.stringify(obj) );
+	},
+	editScreenShot: function(){ // acquisisce lo screenshot del manichino e lo apre in disegno
+		PH.functPH="PH.aggiungiScreenshot";
+		PH.makeBig = true;
+		PH.img = document.getElementById("img_PH");
+		PH.img.style.width = '';
+		PH.img.style.height = '';
+		PH.img.onload = function(){
+			PH.res = null;
+			PH.draw();
+			PH.img.style.width = PH.img.width;
+			PH.img.style.width = PH.img.height;
+			visLoader("");
+			document.getElementById("img_resizer").classList.add("nasRes");
+			document.getElementById("img_pulsanti").classList.add("editable");
+			document.getElementById("img_draw_tools").classList.remove("nasRes");
+			document.getElementById("photo").classList.add("visPHop");
+		};
+		PH.img.src = PH.screenShot();
+		document.getElementById("photo").classList.add("visPH");
+		document.getElementById("img_draw_undo").classList.remove("active");
 	}
 	
+}
+
+var DW = {
+	lineWidth:0,
+	isMousedown: false,
+	points: [],
+	firstPointMultiplier: 0,
+	startWidth: 1,
+	endWidth: 2,
+	drawColor: '#000',
+	drawStyle: 'linear', // o smoth
+	isPencil: false,
+	strokeHistory: [],
+	canvas: null,
+	context: null,
+	initialied: false,
+	xCanvas: 0,
+	yCanvas: 0,
+	destImg: null,
+
+	_init: function( image ){ // inizializza il canvas del disegno
+		if(!this.initialized){
+			this.canvas = document.getElementById("img_CV");
+			for(const ev of ["touchstart", "mousedown"]) {
+				this.canvas.addEventListener(ev, function (e) {
+					DW.drawStart(e);
+				});
+			}
+			for(const ev of ['touchmove', 'mousemove']) {
+				this.canvas.addEventListener(ev, function (e) {
+					DW.drawMove(e);
+				});
+			}
+			for(const ev of ['touchend', 'touchleave', 'mouseup']) {
+				this.canvas.addEventListener(ev, function (e) {
+					DW.drawEnd();
+				});
+			}
+			window.addEventListener("resize", function(){
+				DW.xCanvas = tCoord(DW.canvas);
+				DW.yCanvas = tCoord(DW.canvas,'y');
+			});
+			this.detectProperties();
+			this.initialized = true;
+		}
+		document.querySelector(".cont_canvasImmagine").classList.add("canvas_big");
+		//var ctx = this.canvas.getContext('2d');
+		this.context = this.canvas.getContext('2d');
+		this.canvas.width = this.canvas.scrollWidth;
+		this.canvas.height = this.canvas.scrollHeight;
+		this.context.drawImage(PH.img, 0, 0, this.canvas.scrollWidth, this.canvas.scrollHeight);
+		this.xCanvas = tCoord(this.canvas);
+		this.yCanvas = tCoord(this.canvas,'y');
+		this.destImg=new Image();
+		this.destImg.src = PH.img.src;
+	},
+	drawStart: function( e ){ // touch, mouse o pencil down
+		let pressure = 0.1;
+		let x, y;
+		if (e.touches && e.touches[0] && typeof e.touches[0]["force"] !== "undefined") {
+			if (e.touches[0]["force"] > 0) {
+				pressure = e.touches[0]["force"];
+			}
+			x = e.touches[0].pageX;
+			y = e.touches[0].pageY;
+			if(e.touches[0]["force"] !== "undefined")this.isPencil = true;
+		}else{
+			if(this.isPencil)return;
+			pressure = 1.0
+			x = e.pageX;
+			y = e.pageY;
+
+		}
+		x -= this.xCanvas;
+		y -= this.yCanvas;
+		if(this.drawStyle == 'linear')pressure = 1.0;
+		this.isMousedown = true;
+		this.lineWidth = Math.log(pressure + this.firstPointMultiplier) * this.startWidth;
+		this.context.lineWidth = this.lineWidth; // pressure * 50;
+		let drawColor = this.drawColor;
+		let lineWidth = this.lineWidth;
+		this.points.push({ x, y, lineWidth, drawColor });
+		this.drawOnCanvas(this.points);
+	},
+	drawMove: function( e ){ // touch, mouse o pencil move
+		if(!this.isMousedown) return;
+		e.preventDefault();
+		let pressure = 0.1;
+		let x, y;
+		if (e.touches && e.touches[0] && typeof e.touches[0]["force"] !== "undefined") {
+			if (e.touches[0]["force"] > 0) {
+				pressure = e.touches[0]["force"]*3;
+			}
+			x = e.touches[0].pageX;
+			y = e.touches[0].pageY;
+		}else{
+			if(this.isPencil)return;
+			pressure = 1.0;
+			x = e.pageX;
+			y = e.pageY;
+		}
+		x -= this.xCanvas;
+		y -= this.yCanvas;
+		if(this.drawStyle == 'linear')pressure = 1.0;
+		// smoothen line width
+		if(this.drawStyle == 'linear')this.lineWidth = (Math.log(pressure + 1) * this.endWidth);
+		else this.lineWidth = (Math.log(pressure + 1) * this.endWidth * 0.2 + this.lineWidth * 0.8)
+		let drawColor = this.drawColor;
+		let lineWidth = this.lineWidth;
+		this.points.push({ x, y, lineWidth, drawColor });
+		this.drawOnCanvas(this.points);
+	},
+	drawEnd: function(){ // touch, mouse o pencil up
+		this.isMousedown = false;
+		this.strokeHistory.push([...this.points]);
+		this.points = [];
+		this.lineWidth = 0;
+		this.destImg.src = this.canvas.toDataURL('image/jpeg', 1);
+		document.getElementById("img_draw_undo").classList.add("active");
+	},
+	drawOnCanvas: function( stroke ){ // disegna
+		this.context.strokeStyle = 'black';
+		this.context.lineCap = 'round';
+		this.context.lineJoin = 'round';
+		this.context.strokeStyle = this.drawColor;
+		const l = stroke.length - 1;
+		const point = stroke[l];
+		if(point.drawColor)this.context.strokeStyle = point.drawColor;
+		if(stroke.length >= 3) {
+			const xc = (stroke[l].x + stroke[l - 1].x) / 2;
+			const yc = (stroke[l].y + stroke[l - 1].y) / 2;
+			this.context.lineWidth = stroke[l - 1].lineWidth;
+			this.context.quadraticCurveTo(stroke[l - 1].x, stroke[l - 1].y, xc, yc);
+			this.context.stroke();
+			this.context.beginPath();
+			this.context.moveTo(xc, yc);
+		}else{
+			this.context.lineWidth = point.lineWidth;
+			this.context.beginPath();
+			this.context.moveTo(point.x, point.y);
+			this.context.stroke();
+		}
+	},
+	undoDraw: function(){ // annulla l'ultimo segno
+		this.strokeHistory.pop();
+		// this.context.clearRect(0, 0, canvas.width, canvas.height) // per svuotare con il bianco
+		this.context.drawImage(PH.img, 0, 0, this.canvas.scrollWidth, this.canvas.scrollHeight);
+		this.strokeHistory.map(function(stroke) {
+			if(DW.strokeHistory.length === 0)return;
+			DW.context.beginPath();
+			let strokePath = [];
+			stroke.map(function(point){
+				strokePath.push(point),
+				DW.drawOnCanvas(strokePath);
+			});
+		});
+		document.getElementById("img_draw_undo").classList.toggle("active",DW.strokeHistory.length);
+		this.destImg.src = this.canvas.toDataURL('image/jpeg', 1);
+	},
+	clearDraw: function(){ // cancella il disegno e ripristina lo screenshot
+		this.strokeHistory.pop();
+		this.points = [];
+		this.context.clearRect(0, 0, this.canvas.scrollWidth, this.canvas.scrollHeight);
+	},
+	showDrawDims: function(){ // visualizza le dimensioni disponibili
+		document.getElementById("img_draw_dims").classList.toggle("opened");
+	},
+	showDrawCols: function(){ //visualizza la tavolozza
+		document.getElementById("img_draw_cols").classList.toggle("opened");
+	},
+	setDrawWidth: function( el ){ // setta la dimensione
+		this.endWidth = +el.dataset.value;
+		this.drawStyle = 'linear';
+		this.detectProperties();
+	},
+	setDrawColor: function( el ){ // setta il colore
+		this.drawColor = el.dataset.value;
+		this.detectProperties();
+	},
+	setDrawStyle: function( el ){ // setta lo stile (linear o smoth)
+		this.drawStyle = el.dataset.value;
+		this.endWidth = 12;
+		this.detectProperties();
+	},
+	detectProperties: function(){ // legge le proprietà del disegno
+		var els = document.getElementById("img_draw_tools").getElementsByTagName("span");
+		for(let e=0;e<els.length;e++){
+			if(els[e].dataset.value){
+				els[e].classList.remove("elSel");
+			}
+		}
+		var els = document.getElementById("img_draw_dims").getElementsByTagName("span");
+		for(let e=0;e<els.length;e++){
+			if(els[e].dataset.value){
+				if(els[e].dataset.value!='smoth'){
+					els[e].classList.toggle("elSel",this.endWidth==+els[e].dataset.value && this.drawStyle!='smoth');
+				}else{
+					els[e].classList.toggle("elSel",this.drawStyle=='smoth');
+				}
+			}
+		}
+		var els = document.getElementById("img_draw_cols").getElementsByTagName("span");
+		for(let e=0;e<els.length;e++){
+			if(els[e].dataset.value){
+				els[e].classList.toggle("elSel",this.drawColor==els[e].dataset.value);
+			}
+		}
+	}
+	
+
 }

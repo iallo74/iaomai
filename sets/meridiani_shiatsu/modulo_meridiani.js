@@ -55,8 +55,8 @@ var MODULO_MERIDIANI = { // extend SET
 					elencoPunti += '<div class="apparati_nmk" id="apr_'+a+'"><p class="labelApparato" onClick="SET.swApparati(this);">'+DB.set.apparati[a].tit+'</p>'+DB.set.apparati[a].html+'</div>';
 				}
 			}
-			var siglaPunto = m;
-			//if(m!='EX')siglaPunto = SET.convSigla(m);
+			var siglaMeridiano = m;
+			if(m!='NK')siglaMeridiano = SET.convSigla(m);
 			contElencoMeridiani +=	'<div onMouseOver="SET.eviMeridiano(\''+m+'\',true);"' +
 									'     onMouseOut="SET.eviMeridiano(\''+m+'\',false);"' +
 									'     onClick="SET.clickMeridiano(\''+m+'\',this);"' +
@@ -70,7 +70,7 @@ var MODULO_MERIDIANI = { // extend SET
 									'		  onMouseOut="SET.onElencoPt=false;this.parentElement.classList.remove(\'overLight\');"' +
 									'		  onClick="SET.accendiMeridiano(\''+m+'\',true);"></span>';
 			
-			contElencoMeridiani +=	'	<b>'+siglaPunto+'</b>' +
+			contElencoMeridiani +=	'	<b>'+siglaMeridiano+'</b>' +
 										DB.set.meridiani[m].NomeMeridiano +
 									'	<span class="noCIN"></span>' +
 									'	<strong class="noMAS" title="'+htmlEntities(TXT("ElencoPunti"))+'"></strong>' +

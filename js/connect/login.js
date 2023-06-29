@@ -179,6 +179,7 @@ var LOGIN = {
 	getLogin: function(){
 		// avviato quando si preme il pulsante Accedi nel popup LOGIN
 		if(CONN.retNoConn() && document.getElementById("USR").value.trim()!='' && document.getElementById("PWD").value.trim()!=''){
+			if(document.querySelector(".listaPazienti"))applicaLoading(document.querySelector(".listaPazienti"));
 			document.getElementById("login").classList.add("popup_back");
 			document.loginFrom.PWD.blur();
 			CONN.caricaUrl(	"login.php",
@@ -197,12 +198,14 @@ var LOGIN = {
 			}else{
 				LOGIN.logedout=false;
 			}
+			if(document.querySelector(".listaPazienti"))rimuoviLoading(document.querySelector(".listaPazienti"));
 			document.getElementById("login").classList.remove("popup_back");
 			var USRprovv=DB.login.data.UsernameU;
 			if(typeof(USRprovv)=='undefined')USRprovv='';
 			document.getElementById("btnRecupero").style.display='block';
 		}else{
 			var jsn = JSON.parse(txt);
+			if(__(jsn.nuova_versione_presente))LOGIN.showUpgradeBox();
 			var Nuovo = jsn.data.Nuovo;
 			if(__(jsn.upgrade_info,false))MENU.visFeatures();
 			delete jsn.data.Nuovo;
@@ -433,7 +436,7 @@ var LOGIN = {
 			}else if(txt){
 				// se c'è una notifica la gestisco
 				elenco=JSON.parse(txt);
-				
+				if(__(elenco.nuova_versione_presente))LOGIN.showUpgradeBox();
 				if(__(elenco.upgrade_info,false))MENU.visFeatures();
 				NOTIFICHE.aggiornaIcona(elenco.notificheDaleggere*1);
 				if(LOGIN.connAssente){
@@ -535,7 +538,6 @@ var LOGIN = {
 								"app": document.registrazioneForm.app.value,
 								"siglaLingua": globals.siglaLingua };
 								
-				console.log(JSNPOST)
 				document.getElementById("registrazione").classList.add("popup_back");
 				CONN.caricaUrl(	"utente_registrazione.php",
 								"b64=1&JSNPOST="+window.btoa(encodeURIComponent(JSON.stringify(JSNPOST))),
@@ -2580,5 +2582,31 @@ var LOGIN = {
 	},
 	addHTML: function(txt){
 		LOGIN.HTML+=txt;
+	},
+
+	/* UPGRADE */
+	showUpgradeBox: function(){
+		if(document.getElementById("upgrade_box"))return;
+		var dvUpdate = document.createElement('div');
+		dvUpdate.id = 'upgrade_box';
+		document.body.appendChild(dvUpdate);
+		var html = '<div id=upgrade_content">'+stripslashes(TXT("UpgradeIntro"))+'<br><br>';
+		var txtClick = TXT("CliccaQui");
+		var langWeb = LINGUE.getSigla2();
+		if(langWeb!='it' && langWeb!='en' && langWeb!='es')langWeb = 'it';
+		var UA=navigator.userAgent;
+		var isMacUA = 0;
+		if(UA.toLowerCase().indexOf("mac")>-1)isMacUA=1;
+		if(android)html += stripslashes(TXT("UpgradeInfoAndroid"))+'<br><a id="upgrade_button" href="https://play.google.com/store/apps/details?id=app.iaomai.app&pli=1" target="_system">'+txtClick+'</a>';
+		else if((iPad || iPhone || isMacUA) && touchable)html += stripslashes(TXT("UpgradeInfoApple"))+'<br><a id="upgrade_button" href="https://apps.apple.com/it/app/i%C3%A1omai/id1588705898?ign-mpt=uo%3D4" target="_system">'+txtClick+'</a>';
+		else html += stripslashes(TXT("UpgradeInfoPC"))+'<br><a id="upgrade_button" href="https://www.iaomai.app/'+langWeb+'/iaomai/download.php" target="_blank">'+txtClick+'</a>';
+		html += '</div>';
+		document.getElementById("upgrade_box").innerHTML = html;
+		localStorage.modello = '';
+		localStorage.set= '';
+		localStorage.open3d= 'false';
+		localStorage.openMap= 'false';
+
 	}
+	
 };

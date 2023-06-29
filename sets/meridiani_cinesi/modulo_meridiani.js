@@ -32,8 +32,8 @@ var MODULO_MERIDIANI = { // extend SET
 				var TS = DB.set.meridiani[m].punti[s];
 				elencoPunti+='<p>'+this.scriviPunto(TS.NomePunto,true,true,__(TS.siglaPunto))+'</p>';
 			}
-			var siglaPunto = m;
-			if(m!='EX')siglaPunto = SET.convSigla(m);
+			var siglaMeridiano = m;
+			if(m!='EX')siglaMeridiano = SET.convSigla(m);
 			
 			contElencoMeridiani +=	
 				'<div onMouseEnter="SET.eviMeridiano(\''+m+'\',true);"' +
@@ -47,7 +47,7 @@ var MODULO_MERIDIANI = { // extend SET
 				'		  onMouseOut="SET.onElencoPt=false;this.parentElement.classList.remove(\'overLight\');"' +
 				'		  onClick="SET.accendiMeridiano(\''+m+'\',true);"></span>';
 			contElencoMeridiani +=	
-				'	<b>'+siglaPunto+'</b>' +
+				'	<b>'+siglaMeridiano+'</b>' +
 					DB.set.meridiani[m].NomeMeridiano +
 					' <strong title="'+htmlEntities(TXT("ElencoPunti"))+'"></strong>' +
 				'</div>' +
@@ -59,7 +59,7 @@ var MODULO_MERIDIANI = { // extend SET
 				'     onMouseOut="SET.eviMeridiano(\''+m+'\',false);"' +
 				'     onClick="SET.accendiMeridiano(\''+m+'\',true);"' + // elenco dei punti
 				'	  id="sm'+m+'"' +
-				'     class="sm_'+MERIDIANI[m].elemento+addClass+addLock+'">'+siglaPunto+'</div>';
+				'     class="sm_'+MERIDIANI[m].elemento+addClass+addLock+'">'+siglaMeridiano+'</div>';
 		}
 									
 		document.getElementById("lista_meridiani").innerHTML = '<div class="lista listaMeridiani">'+contElencoMeridiani+'</div>';

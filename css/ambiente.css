@@ -695,3 +695,45 @@ body:not(.bodyModello) #logoSovra{
 	z-index:100000001;
 	background:url(../img/chMenu.png) rgba(0,0,0,0.6) no-repeat center center !important;
 }
+
+/* UPGRADE */
+#upgrade_box{
+	position: fixed;
+	z-index: 100000000;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(21, 78, 156, 0.75);
+	overflow-y: scroll;
+	background-image: url(../img/logo_iaomai.png);
+	background-size: auto 120px;
+	background-position: center 30px;
+	background-repeat: no-repeat;
+	backdrop-filter: blur(6px);
+	padding-left: 50px;
+	padding-right: 50px;
+	padding-top: 200px;
+	text-align: center;
+}
+#upgrade_box > div{
+	color: #FFF !important;
+	font-size: 20px;
+	max-width: 463px;
+	display: inline-block;
+	width: 100%;
+}
+#upgrade_button{
+	color:#000;
+	font-size:20px;
+	text-decoration:none;
+	line-height:40px;
+	height:40px;
+	display:inline-block;
+	padding-left:15px;
+	padding-right:15px;
+	background-color:#FFF;
+	border-radius:6px;
+	box-shadow:0px 0px 3px #000;
+	margin-top:20px;
+}

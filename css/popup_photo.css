@@ -14,7 +14,7 @@
 	left:50%;
 	border-radius:6px;
 	box-shadow:0px 0px 5px #000;
-	background-color:#FFF;
+	background-color:#EEE;
 	padding:10px;
 	display:none;
 	opacity:0;
@@ -30,6 +30,9 @@
 	 overflow: hidden !important;
 	 height:1px !important;
 }
+.nasRes{
+	 display: none !important;
+}
 
 #img_PH{
 	display:none;
@@ -40,7 +43,10 @@
 	text-align:center;
 	margin-top:8px;
 }
-#img_pulsanti div{
+#img_pulsanti.editable{
+	text-align:right !important;
+}
+#img_pulsanti > div.btn{
 	height:32px;
 	line-height:32px;
 	padding-left:10px;
@@ -84,4 +90,123 @@
 }
 #img_man svg polygon{
 	fill:#F00;
+}
+
+#img_draw_tools{
+	display: inline-block;
+    vertical-align: middle;
+	float:left;
+	background-image:url("../img/ico_draw.png") ;
+	background-position: left center;
+	background-repeat: no-repeat;
+    background-size: 30px;
+	padding-left:50px;
+}
+#img_pulsanti:not(.editable) #img_draw_tools{
+	display:none !important;
+}
+#img_draw_tools > div{
+	height: 40px;
+	overflow:hidden;
+	display: inline-block;
+    vertical-align: middle;
+	padding:5px;
+	margin-top: -2px;
+}
+#img_draw_tools > div:not(.opened){
+	/*width: 47px;*/
+	overflow:hidden;
+}
+#img_draw_tools > div:not(.opened) > span:not(.elSel){
+	display:none;
+}
+.elSel{
+	box-shadow: 0px 0px 5px #069;
+}
+#img_draw_tools > div > span{
+	width: 30px;
+	height: 30px;
+	display: inline-block;
+    vertical-align: middle;
+	border: 5px solid #FFF;
+	margin-right: 4px;
+}
+#img_draw_dims{
+	border-left: 1px solid #CCC;
+    padding-left: 10px !important;
+}
+#img_draw_dims.opened{
+	border-right:1px solid #CCC;
+	margin-right:5px;
+	padding-right: 10px;
+}
+#img_draw_dims > span{
+	background-color:#000;
+	border-radius:50px;
+}
+#dw1{
+	border-width: 14px !important;
+}
+#dw3{
+	border-width: 10px !important;
+}
+#dw5{
+	border-width: 6px !important;
+}
+#dw7{
+    height: 23px !important;
+    margin: 4px 0 !important;
+	width:40px !important;
+	vertical-align:middle !important;
+	border-radius:89% 11% 11% 89% / 50% 50% 50% 50% !important;
+	display:none !important;
+}
+
+#img_draw_cols > span{
+	border-radius:6px;
+	border-width: 2px;
+}
+#dc1{
+	background-color:#000;
+}
+#dc2{
+	background-color:#D00;
+}
+#dc3{
+	background-color:#0B0;
+}
+#dc4{
+	background-color:#00C;
+}
+#dc5{
+	background-color:#FC0;
+}
+
+#img_draw_undo{
+	line-height: 30px;
+    padding-right: 13px !important;
+    width: 42px !important;
+	background-image:url("../img/ico_undo.png") ;
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: 28px;
+	cursor:pointer;
+	border-right: 1px solid #FFF;
+    margin-right: -4px;
+}
+#img_draw_undo:not(.active){
+	opacity:0.3;
+}
+.canvas_big{
+	position: absolute;
+    top: 0;
+    left: 0;
+    height: calc(100% - 45px) !important;
+    padding: 0px;
+}
+.canvas_big canvas{
+	width: calc(100% - 20px);
+    height: calc(100% - 15px);
+	margin-top: 10px;
+	box-shadow:0px 0px 4px rgba(0,0,0,0.7);
 }

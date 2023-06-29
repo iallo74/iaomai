@@ -821,6 +821,11 @@ var PAZIENTI_TRATTAMENTI = {
 					'		<span id="addFoto">' +
 								TXT("AggiungiFoto") +
 					'		</span>' +
+					'		<span class="p_paz_screenshot"' +
+					'		      onClick="PH.editScreenShot();"></span>' +
+					'		<span id="screenShot">' +
+								TXT("ScreenShot") +
+					'		</span>' +
 					'		<span class="p_paz_choose"' +
 					'		      onClick="MENU.visArchives();"></span>' +
 					'		<span id="chooFoto">' +
@@ -1628,7 +1633,9 @@ var PAZIENTI_TRATTAMENTI = {
 			var TRS_clone = clone(DB.pazienti.data[PAZIENTI.idCL].trattamenti);
 			var TRS = [];			
 			for(let i=TRS_clone.length-1;i>=0;i--){
-			   if(TRS_clone[i].LabelCiclo==LabelCiclo && (TRS_clone[i].TimeTrattamento>0 || TRS_clone[i].TipoTrattamento=='A'))TRS.push(TRS_clone[i]);
+			   if(	TRS_clone[i].LabelCiclo==LabelCiclo && 
+					( (	TRS_clone[i].TimeTrattamento>0 && TRS_clone[i].TimeTrattamento<=new Date()/1000) || 
+						TRS_clone[i].TipoTrattamento=='A') )TRS.push(TRS_clone[i]);
 			}
 			TRS.sort(sort_by("TipoTrattamento", false));
 			var f = 0;
@@ -1649,6 +1656,7 @@ var PAZIENTI_TRATTAMENTI = {
 			for(let i in TRS){
 				var TR = TRS[i];
 				if(TR.Cancellato==0 && TR.LabelCiclo==LabelCiclo){
+					console.log(TR)
 					n++;
 					idTrattamento=TR.idTrattamento*1;
 					TitoloTrattamento=TR.TitoloTrattamento;
@@ -1721,7 +1729,7 @@ var PAZIENTI_TRATTAMENTI = {
 					}
 					if(puntiMTC.length){
 						HTML+='<div class="app_report_sch"> ';
-						HTML+='<i>'+TXT_P+':</i> ';
+						HTML+='<br><i>'+TXT_P+':</i> ';
 						HTML+='<div id="puntiCiclo">';
 						for(let p in puntiMTC){
 							nPunto=puntiMTC[p].n;
@@ -1743,7 +1751,7 @@ var PAZIENTI_TRATTAMENTI = {
 					}
 					if(puntiNamikoshi.length){
 						HTML+='<div class="app_report_sch"> ';
-						HTML+='<i>'+TXT("PuntiNamikoshi")+':</i> ';
+						HTML+='<br><i>'+TXT("PuntiNamikoshi")+':</i> ';
 						HTML+='<div id="puntiCiclo">';
 						for(let p in puntiNamikoshi){
 							nomePunto=puntiNamikoshi[p].s;
@@ -1762,7 +1770,7 @@ var PAZIENTI_TRATTAMENTI = {
 					}
 					if(puntiAuricolari.length){
 						HTML+='<div class="app_report_sch"> ';
-						HTML+='<i>'+TXT_P+':</i> ';
+						HTML+='<br><i>'+TXT_P+':</i> ';
 						HTML+='<div id="puntiCiclo">';
 						for(let p in puntiAuricolari){
 							nomePunto=puntiAuricolari[p].n;
