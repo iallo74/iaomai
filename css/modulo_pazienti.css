@@ -1117,7 +1117,13 @@ html:not(.htmlStampa) #noteAnag{
 	padding-bottom:0px !important;
 	margin-bottom:0px !important;
 }
-
+.shared_element{
+    background-color: #FC0;
+    padding: 20px;
+    border-radius: 6px;
+    margin-bottom: 20px;
+	margin-top:10px;
+}
 body:not(.smart) #modAnag,
 body:not(.smart) #modProc{
 	background-color:rgba(0,51,159,0.1);

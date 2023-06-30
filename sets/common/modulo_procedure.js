@@ -207,6 +207,9 @@ var MODULO_PROCEDURE = { // extend SET
 					'		 style="border-bottom:1px solid rgba(0,0,0,0.2);">' +
 					'	</div>' +
 					'</div>';
+			
+			
+			if(Condiviso==1)HTML += '<div class="shared_element">'+TXT("ElementoCondiviso")+'</div>'
 					
 			// elenco dei dettagli procedura
 			var presente=false;

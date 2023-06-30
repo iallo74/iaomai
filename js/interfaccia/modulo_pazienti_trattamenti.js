@@ -1656,7 +1656,6 @@ var PAZIENTI_TRATTAMENTI = {
 			for(let i in TRS){
 				var TR = TRS[i];
 				if(TR.Cancellato==0 && TR.LabelCiclo==LabelCiclo){
-					console.log(TR)
 					n++;
 					idTrattamento=TR.idTrattamento*1;
 					TitoloTrattamento=TR.TitoloTrattamento;

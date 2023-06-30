@@ -401,7 +401,7 @@ var DB_anatomia = {
     },*/
     "Muscolo_RETTO": {
         "Titolo": "Muscolo Retto del femore (Quadricipite femorale)",
-        "Descrizione": "<p> <i>Origine:</i> origina nella S.I.A.I. (spina iliaca anteriore inferiore) <br />  Inserzione: si inserisce sulla rugosità tibiale (con gli altri tre fasci del quadricipite femorale).<br />    <i>Azione: </i>serve a flettere la coscia sull'anca ed estendere la gamba sulla coscia, la sua azione è fondamentale  per la deambulazione e per il mantenimento dellastazione eretta. è un muscoloestensore. <br />    <i>Innervazione: </i>innervatodal nervo femorale (L2, L4). <br />    <i>Vascolarizzazione:</i> alimentato dall'arteria femorale.</p>",
+        "Descrizione": "<p> <i>Origine:</i> origina nella S.I.A.I. (spina iliaca anteriore inferiore) <br /> <i>Inserzione:</i> si inserisce sulla rugosità tibiale (con gli altri tre fasci del quadricipite femorale).<br />    <i>Azione: </i>serve a flettere la coscia sull'anca ed estendere la gamba sulla coscia, la sua azione è fondamentale  per la deambulazione e per il mantenimento dellastazione eretta. è un muscoloestensore. <br />    <i>Innervazione: </i>innervatodal nervo femorale (L2, L4). <br />    <i>Vascolarizzazione:</i> alimentato dall'arteria femorale.</p>",
         "baseImg": "Muscolo_QUADRICIPITE_FEMORALE"
     },
     "Muscolo_VASTO_LATERALE": {

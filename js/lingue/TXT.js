@@ -4090,6 +4090,14 @@ DB.TXT = {
             por: "- Estou ciente de que todas as informações compartilhadas, incluindo o apelido mencionado acima, serão visíveis para outros usuários da comunidade<br>- Comprometo-me a não divulgar a outros usuários da comunidade dados sensíveis sobre meus pacientes, especialmente os relacionados à saúde deles, e assumo total responsabilidade por qualquer vazamento de informações.",
             deu: "- Mir ist bewusst, dass alle geteilten Informationen, einschließlich des oben genannten Spitznamens, für andere Benutzer der Community sichtbar sein werden<br>- Ich verpflichte mich, sensible Daten meiner Patienten nicht an andere Benutzer der Community weiterzugeben, insbesondere solche, die ihre Gesundheit betreffen, und übernehme die volle Verantwortung für etwaige Informationslecks."
         },
+        ElementoCondiviso: {
+            ita: "Questo elemento è condiviso con la Community di iaomai, quindi può essere letto da chiunque.",
+            eng: "This item is shared with the iaomai Community, so it can be read by anyone.",
+            esp: "Este elemento se comparte con la comunidad de iaomai, por lo que puede ser leído por cualquier persona.",
+            fra: "Cet élément est partagé avec la communauté iaomai, donc il peut être lu par n'importe qui.",
+            por: "Este item é compartilhado com a Comunidade iaomai, portanto, pode ser lido por qualquer pessoa.",
+            deu: "Dieser Artikel wird mit der iaomai-Community geteilt und kann daher von jedem gelesen werden."
+        },
 		
         // STATS
         SpazioUtilizzato: {
