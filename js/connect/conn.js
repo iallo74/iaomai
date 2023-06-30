@@ -3,8 +3,9 @@ var CONN = {
 	APIfolder: 'https://www.corpomentespirito.it/__stream/app/030_iaomai/__API/V1.4/',
 	urlStore: 'https://www.iaomai.app/[lang]/iaomai/',
 	linkPrivacy: 'https://www.iaomai.app/privacy',
+	linkReqPwd: 'https://www.iaomai.app/account/requestpassword.php',
 	online: true,
-	caricaUrl: function(url, qs='', funzione){ // carica un URL
+	caricaUrl: function(url, qs='', funzione){ // carica un API url e richiama la funzione
 		if(CONN.getConn()){
 			var x;
 			if(typeof XMLHttpRequest!="undefined"){
@@ -60,7 +61,7 @@ var CONN = {
 			return false;
 		}else return true;
 	},
-	openUrl: function( url ){
+	openUrl: function( url ){ // apre un URL nel browser i sistema
 		if(window.cordova && window.cordova.platformId !== 'windows')window.open(url,'_system');
 		else window.open(url,'_blank');
 	}

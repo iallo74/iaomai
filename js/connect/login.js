@@ -13,14 +13,12 @@ var LOGIN = {
 	tmAttesaLogin: null,
 	HTML: '',
 	daSync: false,
-	getUniqueId: function(){
-		// restituisce un ID unico come 1234-1234567890123
+	getUniqueId: function(){ // restituisce un ID unico come 1234-1234567890123
 		var t = new Date().getTime()+"";
 		var r = (Math.floor(Math.random() * (9999 - 1000 + 1)) + 1000)+"";
 		return(r+"-"+t);
 	},
-	_init: function(){
-		// inizializza il DB.login
+	_init: function(){ // inizializza il DB.login
 		DB.login={	"lastSync": 0,
 			"data": {
 				"idUtente": 0,
@@ -43,14 +41,12 @@ var LOGIN = {
 		localPouchDB.setItem(MD5("DB.login"), IMPORTER.COMPR(DB.login));
 	},
 	
-	_frv: function(){
-		// restituisce 'frv' se non si è loggati
+	_frv: function(){ // restituisce 'frv' se non si è loggati
 		var str = '';
 		if(!LOGIN.logedin())str = 'frv';
 		return str;
 	},
-	getDB: function( syncro=false ){
-		// carica i DB da pouch
+	getDB: function( syncro=false ){ // carica i DB da pouch
 		Promise.all([
 			localPouchDB.getItem(MD5("DB"+LOGIN._frv()+".procedure")),
 			localPouchDB.getItem(MD5("DB"+LOGIN._frv()+".note")),
@@ -82,8 +78,7 @@ var LOGIN = {
 			}
 		});
 	},
-	resetDB: function(){
-		//salva tutto il DB locale in pouchDB
+	resetDB: function(){ //salva tutto il DB locale in pouchDB
 		localPouchDB.setItem(MD5("DB.procedure"), IMPORTER.COMPR(DB.procedure));
 		localPouchDB.setItem(MD5("DB.note"), IMPORTER.COMPR(DB.note));
 		localPouchDB.setItem(MD5("DB.pazienti"), IMPORTER.COMPR(DB.pazienti));
@@ -95,7 +90,7 @@ var LOGIN = {
 	},
 	
 	
-	getLS: function(k){
+	getLS: function(k){ // restituisce l'oggetto utente
 		if(typeof(DB.login)=='undefined'){
 			localPouchDB.getItem(MD5("DB.login")).then(function(dbCont){ // leggo il DB
 				DB.login=IMPORTER.DECOMPR(dbCont);
@@ -103,32 +98,27 @@ var LOGIN = {
 			});
 		}else return DB.login.data[k];
 	},
-	setLS: function(k,v){
-		// salva il valore v nell'elemento k di DB.login
+	setLS: function(k,v){ // salva il valore v nell'elemento k di DB.login
 		DB.login.data[k]=v;
 		localPouchDB.setItem(MD5("DB.login"), IMPORTER.COMPR(DB.login));
 		return;
 	},
-	recuperaPwd: function(){
-		// apre il link di recuper password (INSERIRE NELL'APP)
-		var url='https://www.iaomai.app/account/requestpassword.php?l='+globals.siglaLingua.toLowerCase()+"&app="+tipoApp;
+	recuperaPwd: function(){ // apre il link di recuper password (INSERIRE NELL'APP)
+		var url=linkReqPwd+'?l='+globals.siglaLingua.toLowerCase()+"&app="+tipoApp;
 		if(window.cordova && window.cordova.platformId !== 'windows')window.open(url,'_system');
 		else window.open(url,'_blank');
 	},
-	logedin: function(){
-		// restituisce il TOKEN, indicando che si è connessi
+	logedin: function(){ // restituisce il TOKEN, indicando che si è connessi
 		var TOKEN=DB.login.data.TOKEN;
 		if(typeof(TOKEN)=='undefined')TOKEN='';
 		return TOKEN;
 	},
-	reg: function(){
-		// restituisce l'idUtente
+	reg: function(){ // restituisce l'idUtente
 		var idUtente=DB.login.data.idUtente;
 		if(typeof(idUtente)=='undefined')idUtente='';
 		return idUtente;
 	},
-	getOS: function() {
-		// restituisce il sistema operativo
+	getOS: function() { // restituisce il sistema operativo
 		var userAgent = window.navigator.userAgent,
 		platform = window.navigator.platform,
 		macosPlatforms = ['Macintosh', 'MacIntel', 'MacPPC', 'Mac68K'],
@@ -151,8 +141,7 @@ var LOGIN = {
 		}
 		return os;
 	},
-	getDeviceInfo: function(){
-		// restituisce un array con le caratteristiche del dispositivo
+	getDeviceInfo: function(){ // restituisce un array con le caratteristiche del dispositivo
 		var device = {};
 		device.platform = "Unknown OS";
 		if (navigator.userAgent.indexOf("Win") != -1) device.platform = "Windows";
@@ -176,8 +165,7 @@ var LOGIN = {
 		
 		return JSON.stringify(device);
 	},
-	getLogin: function(){
-		// avviato quando si preme il pulsante Accedi nel popup LOGIN
+	getLogin: function(){ // avviato quando si preme il pulsante Accedi nel popup LOGIN
 		if(CONN.retNoConn() && document.getElementById("USR").value.trim()!='' && document.getElementById("PWD").value.trim()!=''){
 			console.log("loading")
 			document.getElementById("login").classList.add("popup_back");
@@ -190,8 +178,7 @@ var LOGIN = {
 		}
 		return false;
 	},
-	setLogin: function(txt){
-		// la risposta di getLogin()
+	setLogin: function(txt){ // la risposta di getLogin()
 		if(!txt || txt.substr(0,3)=='404'){
 			if(!LOGIN.logedout){
 				ALERT(TXT("ErroreLogin"));
@@ -243,8 +230,7 @@ var LOGIN = {
 									}, 500);
 		}
 	},
-	verLogin: function( funct='' ){
-		// verifica se si è loggati
+	verLogin: function( funct='' ){ // verifica se si è loggati
 		localPouchDB.getItem(MD5("DB.login")).then(function(dbCont){ // leggo il DB
 			loginProvv=IMPORTER.DECOMPR(dbCont);
 			if(loginProvv!=null){
@@ -271,8 +257,7 @@ var LOGIN = {
 			}
 		});
 	},
-	scriviUtente: function(){
-		// scrive il nome utente nel menu impostazioni
+	scriviUtente: function(){ // scrive il nome utente nel menu impostazioni
 		var NN=LOGIN.getLS("Nominativo");
 		var EE=LOGIN.getLS("Email");
 		if(typeof(NN)=='undefined')NN='';
@@ -310,8 +295,7 @@ var LOGIN = {
 		}
 		document.getElementById("nomeUtente").innerHTML=NN;
 	},
-	attivaX: function(){
-		// attiva il pulsante X nel login
+	attivaX: function(){ // attiva il pulsante X nel login
 		var USRprovv = DB.login.data.UsernameU;
 		if(typeof(USRprovv)=='undefined')USRprovv='';
 		if(USRprovv.trim()!=''){
@@ -325,8 +309,7 @@ var LOGIN = {
 			document.getElementById("USRlabel").getElementsByTagName("span")[0].innerHTML="";
 		}
 	},
-	aggiornaToken: function(ret){
-		// richiama l'url per aggiornare il token
+	aggiornaToken: function(ret){ // richiama l'url per aggiornare il token
 		LOGIN.retIni=ret;
 		if(CONN.getConn()){
 			CONN.caricaUrl(	"testauth.php",
@@ -335,8 +318,7 @@ var LOGIN = {
 			return false;
 		}
 	},
-	salvaToken: function(txt){
-		// salva il TOKEN in DB.login
+	salvaToken: function(txt){ // salva il TOKEN in DB.login
 		if(txt.substr(0,3)!='404'){
 			localPouchDB.setItem(MD5("DB.login"), IMPORTER.COMPR(JSON.parse(txt))).then(function(){ // salvo il DB
 				DB.login=JSON.parse(txt);
@@ -350,8 +332,7 @@ var LOGIN = {
 			});
 		}else LOGIN.logout();
 	},
-	verificaToken: function(){
-		// Verifico che il token sia valido
+	verificaToken: function(){ // Verifico che il token sia valido
 		if(CONN.getConn() && LOGIN.logedin()){
 			// se c'è connessione e ho il TOKEN
 			
@@ -422,12 +403,10 @@ var LOGIN = {
 		}
 		LINGUE.getGoogleLanguages();
 	},
-	avviaVerToken: function(){
-		// Avvia la verifica del TOKEN ogni 10 secondi
+	avviaVerToken: function(){ // Avvia la verifica del TOKEN ogni 10 secondi
 		tmVerT=setInterval(function(){LOGIN.verificaToken()},10000); // verifico ogni 10 secondi
 	},
-	resToken: function(txt){
-		// Risposta dalla verifica del TOKEN
+	resToken: function(txt){ // Risposta dalla verifica del TOKEN
 		if(typeof(txt) != 'undefined'){;
 			if(txt.substr(0,3)=='404'){
 				SCHEDA.scaricaScheda();
@@ -500,8 +479,7 @@ var LOGIN = {
 		PAZIENTI.cancellaFiltri(true);
 		SCHEDA.scaricaScheda();
 	},
-	annullaUtente: function(){
-		// cancella tutti i dati utente in locale
+	annullaUtente: function(){ // cancella tutti i dati utente in locale
 		CONFIRM.vis(	TXT("ChiediAnnullaUtente")+'<br>'+
 						TXT("AttenzioneAnnullaUtente") ).then(function(pass){if(pass){
 		
@@ -528,8 +506,7 @@ var LOGIN = {
 	
 	
 	// GESTIONE UTENTE
-	registrazione: function(){
-		// registra l'utente su server
+	registrazione: function(){ // registra l'utente su server
 		if(CONN.retNoConn()){
 			if(verifica_form(document.registrazioneForm)){
 
@@ -547,8 +524,7 @@ var LOGIN = {
 			}
 		}
 	},
-	retRegistrazione: function( txt ){
-		// risposta dalla registrazione utente sul server (registrazione)
+	retRegistrazione: function( txt ){ // risposta dalla registrazione utente sul server (registrazione)
 		if(typeof(txt)=='undefined' || txt=='404'){
 			// si è verificato un errore generico
 			ALERT(TXT("ErroreGenerico"));
@@ -570,8 +546,7 @@ var LOGIN = {
 		document.getElementById("registrazione").classList.remove("popup_back");
 		return;
 	},
-	modUtente: function(){
-		// scarica le modifiche dell'utente dal server
+	modUtente: function(){ // scarica le modifiche dell'utente dal server
 		if(!LOGIN.logedin()){
 			ALERT(TXT("ErroreUtenteNonConnesso"));
 			return;
@@ -607,11 +582,7 @@ var LOGIN = {
 							btnAdd );
 		}
 	},
-	car_utente: function( txt ){
-		/*
-		- risposta dallo scaricamento dati utente (modUtente)
-		- carica i dati dell'utente nella scheda
-		*/
+	car_utente: function( txt ){ // risposta da modUtente: carica i dati dell'utente nella scheda
 		if(typeof(txt)=='undefined')var txt = '';
 		if(txt.substr(0,3)=='404'){
 			
@@ -810,7 +781,7 @@ var LOGIN = {
 			}});
 		}
 	},
-	el_utente: function(){
+	el_utente: function(){ // elimina l'utente (richiesto da apple)
 		CONFIRM.vis(	TXT("ChiediEliminaAccount"), false, arguments, "warning" ).then(function(pass){if(pass){
 			CONFIRM.vis(	TXT("ConfermaEliminaAccount"), false, arguments, "warning", TXT("EliminaAccount") ).then(function(pass){if(pass){
 				CONN.caricaUrl(	"utente_elimina.php",
@@ -819,16 +790,14 @@ var LOGIN = {
 			}});			
 		}});
 	},
-	retElUtente: function( txt ){
-		// risposta dal caricamento dell'utente (mod_utente)
+	retElUtente: function( txt ){ // risposta el_utente
 		if(txt=='404'){
 			ALERT(TXT("ErroreGenerico"));
 		}else{
 			ALERT(TXT("MsgEliminaAccount"));
 		}
 	},
-	mod_utente: function(){
-		// salva i dati dell'utente e li carica sul server
+	mod_utente: function(){ // salva i dati dell'utente e li carica sul server
 		if(!verifica_form(document.getElementById("formMod")))return;
 		stopAnimate(true);
 		visLoader(TXT("SalvataggioInCorso"),'loadingLight');
@@ -893,8 +862,7 @@ var LOGIN = {
 						'LOGIN.retModUtente;'  );
 		return false;
 	},
-	retModUtente: function( txt ){
-		// risposta dal caricamento dell'utente (mod_utente)
+	retModUtente: function( txt ){ // risposta dal caricamento dell'utente (mod_utente)
 		if(txt=='404'){
 			ALERT(TXT("ErroreGenerico"));
 			//rimuoviLoading(document.getElementById("scheda_testo"));
@@ -922,26 +890,22 @@ var LOGIN = {
 			});
 		}
 	},
-	salvaAvatar: function( obj, n = 'avatarUtente' ){
-		// sostituisce l'avatar provvisorio nella scheda
+	salvaAvatar: function( obj, n = 'avatarUtente' ){ // sostituisce l'avatar provvisorio nella scheda
 		obj = JSON.parse(obj);
 		document.getElementById(n).getElementsByTagName('div')[0].style.backgroundImage="url('"+obj.imgMini+"')";
 		SCHEDA.formModificato = true;
 	},
-	salvaLogo: function( obj ){
-		// sostituisce il logo aziendale provvisorio nella scheda
+	salvaLogo: function( obj ){ // sostituisce il logo aziendale provvisorio nella scheda
 		LOGIN.salvaAvatar( obj, 'logoAzienda');
 	},
-	deleteAvatar: function( n ){
-		// cancella l'avatar o il loso
+	deleteAvatar: function( n ){ // cancella l'avatar o il loso
 		document.getElementById(n).getElementsByTagName('div')[0].style.backgroundImage="";
 		SCHEDA.formModificato = true;
 	},
 		
 				
 	// SINCRONIZZAZIONE
-	sincronizza: function(funct, bkp=false){
-		// sincronizza i DB locali con quelli remoti (quando modifico)
+	sincronizza: function(funct, bkp=false){ // sincronizza i DB locali con quelli remoti (quando modifico)
 		DB.verDbSize();
 		if(typeof(funct)!='undefined')LOGIN.afterFunct=funct;
 		else if(!LOGIN.afterFunct)LOGIN.afterFunct=null;
@@ -953,8 +917,7 @@ var LOGIN = {
 			LOGIN.afterFunct = null;
 		}
 	},
-	globalSync: function(dwnl=false, bkp=false, Nuovo=false){
-		// sincro globale up e down
+	globalSync: function(dwnl=false, bkp=false, Nuovo=false){ // sincro globale up e down
 		// da controllare all'avvio dell'app e ogni volta che riprende la connessione
 		// invio i lastSync delle tabelle
 		if(CONN.getConn() || dwnl){
@@ -1272,8 +1235,7 @@ var LOGIN = {
 			});
 		}
 	},
-	retGlobalSyncro: function( txt ){
-		// chiamato da "globalSync" o da "ripristinaBackup"
+	retGlobalSyncro: function( txt ){ // chiamato da "globalSync" o da "ripristinaBackup"
 		if(txt.substr(0,3)+""=='404'){
 			if(debug)console.log(txt);
 			return;
@@ -1988,8 +1950,7 @@ var LOGIN = {
 		LOGIN.daSync = false;
 		LINGUE.getGoogleLanguages();
 	},
-	verSincro: function ( txt ){
-		// verifica la sincronizzazione della tabella txt
+	verSincro: function ( txt ){ // verifica la sincronizzazione della tabella txt
 		nSinc++;
 		if(LOGIN.afterFunct && LOGIN.afterFunct.indexOf('/*noRic*/')==-1) {
 			switch(txt){
@@ -2034,8 +1995,7 @@ var LOGIN = {
 			DB.verDbSize();
 		}
 	},
-	pulisciTabelle: function(){
-		// elimina gli elementi "Cancellati"
+	pulisciTabelle: function(){ // elimina gli elementi "Cancellati"
 		if(!BACKUPS.bkpProvv){
 			PZS = DB.pazienti.data;
 			tot = PZS.length;
@@ -2142,7 +2102,7 @@ var LOGIN = {
 			if(DB.sizeDb<40*1000*1000)LOGIN.updateGallery(); // limite a 40MB (circa 1000 foto)
 		});
 	},
-	download:function ( filename, text ){
+	download:function ( filename, text ){ // scarica un file
 		var element = document.createElement('a');
 		element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(text));
 		element.setAttribute('download', filename);	
@@ -2151,14 +2111,14 @@ var LOGIN = {
 		element.click();
 		document.body.removeChild(element);
 	},
-	slugify: function(s){
+	slugify: function(s){ // NON UTILIZZATA
 		_slugify_strip_re = /[^\w\s-]/g;
 		_slugify_hyphenate_re = /[-\s]+/g;
 		s = s.replace(_slugify_strip_re, '').trim().toLowerCase();
 		s = s.replace(_slugify_hyphenate_re, '-');
 		return s;
 	},
-	updateGallery: function(){
+	updateGallery: function(){ // aggiorna la Gallery e richiama l'API url
 		if(CONN.getConn() && LOGIN.logedin()!=''){
 			var elenco = [];
 			for(let p in DB.pazienti.data){
@@ -2215,7 +2175,7 @@ var LOGIN = {
 			CONN.caricaUrl(	'getImgGallery_GLOBAL.php','b64=1&iU='+DB.login.data.idUtente+'&JSNPOST='+window.btoa(encodeURIComponent(JSON.stringify(elenco))),'LOGIN.updateGallery_save');
 		}
 	},
-	updateGallery_save: function( res ){
+	updateGallery_save: function( res ){ // risposta dall'API url dell'aggiornamento gallery
 		if(res){
 			var modificato = false;
 			var foto = JSON.parse(res);
@@ -2237,7 +2197,7 @@ var LOGIN = {
 			}
 		}
 	},
-	pulisciGallery: function(){
+	pulisciGallery: function(){ // pulisce la gallery
 		for(let f=DB.foto.data.length-1;f>=0;f--){
 			presente = false;
 			for(let p in DB.pazienti.data){
@@ -2280,11 +2240,7 @@ var LOGIN = {
 	
 	
 	// GESTORE APERTURE
-	verifyLocked: function( tab, n ){
-		/*
-		- Verifica se l'elemento "n" della tabella "tab" è già stato aperto da un altro dispositivo
-		- Se non è già aperto lo blocca
-		*/
+	verifyLocked: function( tab, n ){// Verifica se l'elemento "n" della tabella "tab" è già stato aperto da un altro dispositivo e se non è aperto lo blocca
 		if(n){
 			SCHEDA.locked.tab = tab;
 			SCHEDA.locked.idEl = n;
@@ -2293,20 +2249,13 @@ var LOGIN = {
 							"LOGIN.manageLocked");
 		}
 	},
-	manageLocked: function( txt ){
-		/*
-		- Risposta al controllo se l'elemento è già aperto
-		- gestisce la chiusura della schda in caso sia già aperto
-		*/
+	manageLocked: function( txt ){// risposta da verifyLocked: gestisce la chiusura della scheda in caso sia già aperto
 		if(txt == 'locked'){
 			ALERT(TXT("ElementoGiaAperto"));
 			SCHEDA.scaricaScheda();
 		}
 	},
-	closeLocked: function( tab, n ){
-		/*
-		- Chiude l'elemento "n" della tabella "tab" aperto sul server
-		*/
+	closeLocked: function( tab, n ){ // Chiude l'elemento "n" della tabella "tab" aperto sul server
 		if(n){
 			CONN.caricaUrl(	"lockedChiudi.php",
 							"tab=" +tab+"&idEl="+n,
@@ -2317,7 +2266,7 @@ var LOGIN = {
 	},
 	
 	// funzioni generiche
-	componi: function( backup, data ){
+	componi: function( backup, data ){ // compone l'html per il backup visivo
 		LOGIN.addHTML('<style type="text/css">*{font-family:Verdana, Geneva, sans-serif;font-size:12px;line-height:20px;}.rientro{padding-left:20px;}.tits{font-size:14px;}h1, h1 *{font-size:24px;}h2, h2 *{font-size:20px;}h3, h3 *{font-size:16px;}i{color:#999;}</style>')
 		LOGIN.addHTML(TXT("Backup")+": <b>"+DB.login.data.Nominativo+"</b><br>");
 		LOGIN.addHTML("<i>"+TXT("DataCreazione")+":</i> <b>"+getFullDataTS(data)+" ore "+getOraTS(data)+"</b><hr>");
@@ -2587,7 +2536,7 @@ var LOGIN = {
 	},
 
 	/* UPGRADE */
-	showUpgradeBox: function(){
+	showUpgradeBox: function(){ // mostra il box di UPGRADE quando gestito da API (per blocco su nuove versioni)
 		if(document.getElementById("upgrade_box"))return;
 		var dvUpdate = document.createElement('div');
 		dvUpdate.id = 'upgrade_box';

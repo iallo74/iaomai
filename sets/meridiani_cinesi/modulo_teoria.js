@@ -123,7 +123,7 @@ var MODULO_TEORIA = { // extend SET
 					'       width="100%"' +
 					'       height="100%"' +
 					'       id="VideoID"' +
-					'       src="https://www.iaomai.app/app/video/'+video+'.mp4">' +
+					'       src="https://www.tecnichedelmassaggio.it/video/iaomai/'+video+'.mp4">' +
 					'</video>';
 					
 		var btnAdd = 	'';
