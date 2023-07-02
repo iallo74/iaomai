@@ -1759,7 +1759,7 @@ var LOGIN = {
 						
 						var puntiMTC = trattamenti[t].puntiMTC;
 						
-						if(puntiMTC.substr(0,1)!="["){
+						if(puntiMTC.substr(0,1)!="["){ // in caso di provenienza da TM15 (SPOSTARE CONVERSIONE SU SERVER)
 							if(puntiMTC.indexOf(".")>-1){
 								var puntiProvvisori = [];
 								var parti=puntiMTC.split("|");
@@ -1773,7 +1773,7 @@ var LOGIN = {
 								}
 								puntiMTC = JSON.stringify(puntiProvvisori);
 							}else puntiMTC = '[]';
-						}
+						} // -----------------------------------------------------------
 						
 						if(BACKUPS.bkpProvv)trattamenti[t].DataModifica = lastSync*1;
 						JSNPUSH={ 	"idTrattamento": trattamenti[t].idTrattamento*1,

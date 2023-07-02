@@ -433,7 +433,7 @@ var MENU = {
 	visFeatures: function( forza=false ){
 		var maxDate = new Date("2023-09-01").getTime();
 		var now = new Date().getTime();
-		if(	(!__(localStorage["no_info_features_"+verApp.replace(".","_")],'') &&
+		if(	(!__(localStorage.getItem("no_info_features_"+verApp.replace(".","_")),'') &&
 			!__(MENU["no_info_features_"+verApp.replace(".","_")],false) &&
 			LOGIN.logedin() &&
 			maxDate>now) || forza ){

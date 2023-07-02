@@ -32,7 +32,7 @@ body:not(.smart) #scheda{
 .smart #scheda{
 	width: 100%;
 }
-body:not(.smart).not(.htmlStampa) #scheda{
+body:not(.smart):not(.htmlStampa) #scheda{
 	width: calc(100% - 48px);
 }
 .schRid:not(.schOp):not(.schLibera):not(.schLato){
