@@ -13,7 +13,7 @@
 .pplhd.ios #tratt_cont_namikoshi,
 .pplhd.ios #tratt_cont_meridiani,
 .pplhd.ios #tratt_cont_auriculo,
-.pplhd.ios #pulsante_foto,
+.pplhd.ios #pulsante_file,
 .pplhd.ios #pulsanti_base .separatorePulsanti,
 .pplhd.ios #notLogged,
 .pplhd.ios #marketingPazienti,
@@ -21,7 +21,7 @@
 .pplhd.ios #marketingTools_btns_in,
 .pplhd.ios .p_paz_choose,
 .pplhd.ios .p_paz_screenshot,
-.pplhd.ios #chooFoto,
+.pplhd.ios #chooFile,
 .pplhd.ios .app_report_sch{
 	display:none !important;
 }

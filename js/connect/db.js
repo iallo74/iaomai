@@ -31,7 +31,7 @@ var DB = {
 		"DB.note",
 		"DB.ricerche",
 		"DB.login",
-		"DB.foto",
+		"DB.files",
 		"DB.appuntamenti",
 		"DB.annotazioni",
 		"FILES" ],
@@ -51,10 +51,10 @@ var DB = {
 		return jsn;
 	},
 	_reset: function(){
-		var pazientiBase = fotoBase = serviziBase = fornitoriBase = [];
+		var pazientiBase = filesBase = serviziBase = fornitoriBase = [];
 		if(typeof(localStorage.dbInizializzato) == 'undefined'){
 			pazientiBase = archiviDemo.pazienti;
-			fotoBase = archiviDemo.foto;
+			filesBase = archiviDemo.files;
 			serviziBase = archiviDemo.servizi;
 			fornitoriBase = archiviDemo.fornitori;
 		}
@@ -72,13 +72,13 @@ var DB = {
 			lastSync: 0,
 			data: serviziBase
 		};
-		DB.foto = {
+		DB.files = {
 			lastSync: 0,
-			data: fotoBase
+			data: filesBase
 		};
-		/*if(fotoBase.length){
-			for(let f in DB.foto.data){
-				DB.foto.data[f].imgBig = DB.foto.data[f].imgMini;
+		/*if(filesBase.length){
+			for(let f in DB.files.data){
+				DB.files.data[f].imgBig = DB.files.data[f].imgMini;
 			}
 		}*/
 		DB.ricerche = {
@@ -109,7 +109,7 @@ var DB = {
 		if(typeof(localStorage.dbInizializzato) == 'undefined'){
 			Promise.all([
 				localPouchDB.setItem(MD5("DBfrv.pazienti"), IMPORTER.COMPR(DB.pazienti)),
-				localPouchDB.setItem(MD5("DBfrv.foto"), IMPORTER.COMPR(DB.foto)),
+				localPouchDB.setItem(MD5("DBfrv.files"), IMPORTER.COMPR(DB.files)),
 				localPouchDB.setItem(MD5("DBfrv.fornitori"), IMPORTER.COMPR(DB.fornitori)),
 				localPouchDB.setItem(MD5("DBfrv.servizi"), IMPORTER.COMPR(DB.servizi))
 			]).then(function(){

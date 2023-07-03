@@ -3150,7 +3150,7 @@ DB.TXT = {
         },
 
         // gallery
-        AggiungiFoto: {
+        AggiungiFile: {
             ita: "Carica un file",
             eng: "Upload a file",
             esp: "Cargar un archivo",
@@ -3158,7 +3158,7 @@ DB.TXT = {
             por: "Carregar um arquivo",
             deu: "Eine Datei hochladen"
         },
-        ScegliFoto: {
+        ScegliFile: {
             ita: "Archivio file",
             eng: "File archive",
             esp: "Archivo de fotos",
@@ -3167,12 +3167,12 @@ DB.TXT = {
             deu: "Dateiarchiv"
         },
         ScreenShot: {
-            ita: "Screenshot",
-            eng: "Screenshot",
-            esp: "Screenshot",
-            fra: "Screenshot",
-            por: "Screenshot",
-            deu: "Screenshot"
+            ita: "Cattura 3D",
+            eng: "3D capture",
+            esp: "Captura 3D",
+            fra: "Capture 3D",
+            por: "Captura 3D",
+            deu: "Cattura 3D"
         },
         FormatiConsentiti: {
             ita: "Formati consentiti",
@@ -3182,7 +3182,7 @@ DB.TXT = {
             por: "Formatos permitidos",
             deu: "Zulässige Formate"
         },
-        ChiediEliminaFoto: {
+        ChiediEliminaFile: {
             ita: "Vuoi davvero eliminare la foto?",
             eng: "Do you really want to delete the photo?",
             esp: "¿Realmente quieres eliminar la foto?",
@@ -4164,7 +4164,7 @@ DB.TXT = {
             por: "Pacotes de sessões",
             deu: "Sitzungspakete"
         },
-        ElFoto: {
+        ElFiles: {
             ita: "Foto e documenti",
             eng: "Pics and documents",
             esp: "Fotos y documentos",

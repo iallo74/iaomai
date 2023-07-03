@@ -325,9 +325,9 @@ var PAZIENTI_TRATTAMENTI = {
 			var TitoloTrattamento='';
 			var TestoTrattamento='';
 			var Prescrizione='';
-			var puntiMTC='';
-			var puntiAuricolari='';
-			var puntiNamikoshi='';
+			var puntiMTC=[];
+			var puntiAuricolari=[];
+			var puntiNamikoshi=[];
 			var TimeTrattamento=0;
 			var CostoTrattamento=0;
 			var ordine=0;
@@ -357,16 +357,16 @@ var PAZIENTI_TRATTAMENTI = {
 				Prescrizione=__(TR.Prescrizione);
 				ordine=__(TR.ordine,0);
 				meridiani=__(TR.meridiani);
+				puntiMTC=__(TR.puntiMTC,[]);
+				puntiAuricolari=__(TR.puntiAuricolari,[]);
+				puntiNamikoshi=__(TR.puntiNamikoshi,[]);
+				sintomi=__(TR.sintomi,[]);
+				gallery=__(TR.gallery,[]);
 				
 				TimeTrattamento=(TR.TimeTrattamento*1)/1000;
 				if(typeof(TR.TipoTrattamento)!='undefined')TipoTrattamento=TR.TipoTrattamento;
 				if(typeof(TR.LabelCiclo)!='undefined')LabelCiclo=TR.LabelCiclo;
 				if(typeof(TR.CostoTrattamento)!='undefined')CostoTrattamento=TR.CostoTrattamento*1;
-				if(typeof(TR.puntiMTC)=='string')puntiMTC=TR.puntiMTC;
-				if(typeof(TR.puntiAuricolari)=='string')puntiAuricolari=TR.puntiAuricolari;
-				if(typeof(TR.puntiNamikoshi)=='string')puntiNamikoshi=TR.puntiNamikoshi;
-				if(typeof(TR.sintomi)=='string')sintomi=TR.sintomi;
-				if(typeof(TR.gallery)=='string')gallery=TR.gallery;
 				if(typeof(TR.oraInizio)!='undefined')oraInizio=TR.oraInizio*1;
 				if(typeof(TR.oraFine)!='undefined')oraFine=TR.oraFine*1;
 				if(oraInizio<agenda.oraMin)oraInizio=agenda.oraMin+2;
@@ -386,19 +386,6 @@ var PAZIENTI_TRATTAMENTI = {
 				oraFine = agenda.orarioDef.oraFine;
 				agenda.init();
 			}
-			
-			if(puntiMTC!='')puntiMTC=JSON.parse(puntiMTC);
-			else puntiMTC=[];
-			if(sintomi!='')sintomi=JSON.parse(sintomi);
-			else sintomi=[];
-			if(meridiani!='')meridiani=JSON.parse(meridiani);
-			else meridiani=[];
-			if(puntiAuricolari!='')puntiAuricolari=JSON.parse(puntiAuricolari);
-			else puntiAuricolari=[];
-			if(puntiNamikoshi!='')puntiNamikoshi=JSON.parse(puntiNamikoshi);
-			else puntiNamikoshi=[];
-			if(gallery!='')gallery=JSON.parse(gallery);
-			else gallery=[];
 			
 			var sintomiCiclo = PAZIENTI.getSintomiCiclo(LabelCiclo);
 			if(sintomiCiclo.length){
@@ -806,7 +793,7 @@ var PAZIENTI_TRATTAMENTI = {
 					'		onClick="H.swSezione(this);PH.resizeDida();">' +
 					'		<img class="icoLabel"' +
 					'		     src="img/ico_files.png">' +
-							TXT("Gallery")+' (<span id="totFoto"></span>)' +
+							TXT("Gallery")+' (<span id="totFiles"></span>)' +
 					'	</em>' +
 					'	<div id="contGallery"' +
 					'		 class="divEspansa contGallery">' +
@@ -815,11 +802,11 @@ var PAZIENTI_TRATTAMENTI = {
 					'		 class="noPrint"' +
 					'		 style="margin-top: 0px;">' +
 					'		<input type="file"' +
-					'			   id="fotoProvv_FL"' +
-					'			   class="p_paz_foto"' +
-					'		       onChange="PH.selezionaFoto(this);">' +
-					'		<span id="addFoto">' +
-								TXT("AggiungiFoto") +
+					'			   id="fileProvv_FL"' +
+					'			   class="p_paz_file"' +
+					'		       onChange="PH.selezionaFile(this);">' +
+					'		<span id="addFile">' +
+								TXT("AggiungiFile") +
 					'		</span>' +
 					'		<span class="p_paz_screenshot"' +
 					'		      onClick="PH.editScreenShot();"></span>' +
@@ -828,8 +815,8 @@ var PAZIENTI_TRATTAMENTI = {
 					'		</span>' +
 					'		<span class="p_paz_choose"' +
 					'		      onClick="MENU.visArchives();"></span>' +
-					'		<span id="chooFoto">' +
-								TXT("ScegliFoto") +
+					'		<span id="chooFile">' +
+								TXT("ScegliFile") +
 					'		</span>' +
 					'	</div>' +
 					'</div>';
@@ -1136,14 +1123,14 @@ var PAZIENTI_TRATTAMENTI = {
 					for(let d in PAZIENTI.sintomiEliminati){
 						for(t in TRS){
 							var mod = false;
-							var sint = JSON.parse(__(TRS[t].sintomi,[]));
+							var sint = __(TRS[t].sintomi,[]);
 							for(let s in sint){
 								if(sint[s].NomeSintomo == PAZIENTI.sintomiEliminati[d]){
 									sint.splice(s,1);
 									mod = true;
 								}
 							}
-							if(mod)TRS[t].sintomi = JSON.stringify(sint);
+							if(mod)TRS[t].sintomi = sint;
 						}
 					}
 					PAZIENTI.sintomiEliminati = [];
@@ -1160,14 +1147,14 @@ var PAZIENTI_TRATTAMENTI = {
 				if(typeof(GA[i].imgMini) != 'undefined' && GA[i]!=null && GA[i].imgMini!=null){
 					
 					// salvo l'immagine nel DB locale
-					DB.foto.data.push({
-						idFoto: GA[i].idFoto,
+					DB.files.data.push({
+						idFile: GA[i].idFile,
 						imgMini: GA[i].imgMini,
 						imgBig: GA[i].imgBig,
 						frv: (LOGIN._frv()!='')
 					});
 					var NG = {
-						idFoto: GA[i].idFoto,
+						idFile: GA[i].idFile,
 						Dida: GA[i].Dida
 					}
 					GA[i] = NG;
@@ -1175,7 +1162,7 @@ var PAZIENTI_TRATTAMENTI = {
 				}
 				delete(GA[i].imported);
 			}
-			localPouchDB.setItem(MD5("DB"+LOGIN._frv()+".foto"), IMPORTER.COMPR(DB.foto)).then(function(){
+			localPouchDB.setItem(MD5("DB"+LOGIN._frv()+".files"), IMPORTER.COMPR(DB.files)).then(function(){
 				PAZIENTI.ricPuntiTratt();	
 				if(TipoTrattamento=='A'){
 					TestoTrattamento={};
@@ -1191,12 +1178,12 @@ var PAZIENTI_TRATTAMENTI = {
 							"oraFine": document.formMod.oraFine.value*1,
 							"TestoTrattamento": TestoTrattamento,
 							"Prescrizione": document.formMod.Prescrizione.value,
-							"puntiMTC": JSON.stringify(PAZIENTI.puntiProvvisori),
-							"puntiAuricolari": JSON.stringify(PAZIENTI.auriculoProvvisori),
-							"puntiNamikoshi": JSON.stringify(PAZIENTI.namikoshiProvvisori),
-							"sintomi": JSON.stringify(PAZIENTI.sintomiProvvisori),
-							"meridiani": JSON.stringify(PAZIENTI.meridianiProvvisori),
-							"gallery": JSON.stringify(GA),
+							"puntiMTC": PAZIENTI.puntiProvvisori,
+							"puntiAuricolari": PAZIENTI.auriculoProvvisori,
+							"puntiNamikoshi": PAZIENTI.namikoshiProvvisori,
+							"sintomi": PAZIENTI.sintomiProvvisori,
+							"meridiani": PAZIENTI.meridianiProvvisori,
+							"gallery": GA,
 							"DataModifica": parseInt(DataModifica),
 							"LabelCiclo": LabelCiclo,
 							"TipoTrattamento": TipoTrattamento,
@@ -1204,6 +1191,7 @@ var PAZIENTI_TRATTAMENTI = {
 							"ordine": parseInt(document.formMod.ordine.value),
 							"Cancellato": 0,
 							"frv": (LOGIN._frv()!='') };
+							console.log(PAZIENTI.sintomiProvvisori)
 				if(!DB.pazienti.data[PAZIENTI.idCL].trattamenti)DB.pazienti.data[PAZIENTI.idCL].trattamenti=[];
 				if(document.formMod.idTratt.value*1>-1){
 					DB.pazienti.data[PAZIENTI.idCL].trattamenti[document.formMod.idTratt.value*1]=JSNPUSH;
@@ -1405,8 +1393,8 @@ var PAZIENTI_TRATTAMENTI = {
 								var TRS = PZS[p].trattamenti;
 								var pzMod = false;
 								for(t in TRS){
-									if(TRS.Cancellato!=1 && TRS[t].sintomi!='[]'){
-										var sintomi = JSON.parse(TRS[t].sintomi);
+									if(TRS.Cancellato!=1 && TRS[t].sintomi.length){
+										var sintomi = clone(TRS[t].sintomi);
 										for(let s in sintomi){
 											if(sintomi[s].NomeSintomo==oldValue){
 												sintomi[s].NomeSintomo=txt;
@@ -1414,7 +1402,7 @@ var PAZIENTI_TRATTAMENTI = {
 												pzMod = true;
 											}
 										}
-										if(pzMod)DB.pazienti.data[p].trattamenti[t].sintomi = JSON.stringify(sintomi);
+										if(pzMod)DB.pazienti.data[p].trattamenti[t].sintomi = sintomi;
 									}
 								}
 								if(pzMod)DB.pazienti.data[p].DataModifica = DataModifica;
@@ -1471,9 +1459,7 @@ var PAZIENTI_TRATTAMENTI = {
 		for(let p in PZ){
 			var TR = PZ[p].trattamenti;
 			for(t in TR){
-				var sintomi = TR[t].sintomi;
-				if(!sintomi)sintomi = "[]";
-				sintomi = JSON.parse(sintomi)
+				var sintomi = __(TR[t].sintomi,[]);
 				if(sintomi.length){
 					for(let s in sintomi){
 					   var pass = true;
@@ -1496,7 +1482,7 @@ var PAZIENTI_TRATTAMENTI = {
 		if(cartella){
 			for(t in DB.pazienti.data[PAZIENTI.idCL].trattamenti){
 				if(cartella == DB.pazienti.data[PAZIENTI.idCL].trattamenti[t].LabelCiclo){
-					var ss = JSON.parse(DB.pazienti.data[PAZIENTI.idCL].trattamenti[t].sintomi);
+					var ss = clone(DB.pazienti.data[PAZIENTI.idCL].trattamenti[t].sintomi);
 					for(let s in ss){
 						if(nomiSintomi.indexOf(ss[s].NomeSintomo)==-1){
 							var sintomo = ss[s];
@@ -1661,23 +1647,11 @@ var PAZIENTI_TRATTAMENTI = {
 					TitoloTrattamento=TR.TitoloTrattamento;
 					TestoTrattamento=TR.TestoTrattamento;
 					Prescrizione=__(TR.Prescrizione);
-					puntiMTC=__(TR.puntiMTC,"[]");
-					puntiAuricolari=__(TR.puntiAuricolari,"[]");
-					puntiNamikoshi=__(TR.puntiNamikoshi,"[]");
-					meridiani = __(TR.meridiani,"{}");
-					sintomi=__(TR.sintomi,"{}");
-					
-					if(!meridiani)meridiani = "{}";
-					if(!sintomi)sintomi = "{}";
-					if(!puntiMTC)puntiMTC = "[]";
-					if(!puntiAuricolari)puntiAuricolari = "[]";
-					if(!puntiNamikoshi)puntiNamikoshi = "[]";
-					
-					puntiMTC=JSON.parse(puntiMTC);
-					puntiAuricolari=JSON.parse(puntiAuricolari);
-					puntiNamikoshi=JSON.parse(puntiNamikoshi);
-					sintomi=JSON.parse(sintomi);
-					meridiani=JSON.parse(meridiani);
+					puntiMTC=__(TR.puntiMTC,[]);
+					puntiAuricolari=__(TR.puntiAuricolari,[]);
+					puntiNamikoshi=__(TR.puntiNamikoshi,[]);
+					meridiani = __(TR.meridiani,[]);
+					sintomi=__(TR.sintomi,[]);
 					
 					TipoTrattamento=TR.TipoTrattamento;
 					if(debug)console.log(i+" - "+TipoTrattamento+" - "+TitoloTrattamento)

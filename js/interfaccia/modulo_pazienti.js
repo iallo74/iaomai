@@ -73,7 +73,7 @@ var PAZIENTI = {
 					'		 onClick="PAZIENTI.selPaziente('+PZ.p+');">';
 						
 						// AVATAR
-						if(PZ.avatar){ // foto del cliente
+						if(PZ.avatar){ // files del cliente
 							HTML +=
 					'		<img src="'+PZ.avatar+'"' +
 					'			 class="avatarList">';
@@ -303,7 +303,7 @@ var PAZIENTI = {
 			var allergie=[];
 			var patologie=[];
 			var interventi=[];
-			var gallery='[]';
+			var gallery=[];
 			var Provenienza='';
 			var Professione='';
 			var Social='';
@@ -339,7 +339,7 @@ var PAZIENTI = {
 				allergie = toJson(PZ.allergie);
 				patologie = toJson(PZ.patologie);
 				interventi = toJson(PZ.interventi);
-				gallery=__(PZ.gallery,'[]');
+				gallery=__(PZ.gallery,[]);
 				Provenienza = PZ.Provenienza;
 				Professione = PZ.Professione;
 				Social = PZ.Social;
@@ -364,8 +364,6 @@ var PAZIENTI = {
 			PAZIENTI.allergieProvvisorie = clone(allergie);
 			PAZIENTI.patologieProvvisorie = clone(patologie);
 			PAZIENTI.interventiProvvisori = clone(interventi);
-			if(!gallery)gallery='[]';
-			gallery=JSON.parse(gallery);
 			PH.galleryProvvisoria=gallery;
 			
 			var HTML = '';
@@ -389,7 +387,7 @@ var PAZIENTI = {
 					'			<div style="background-image:url(\''+avatar+'\')"></div>' +
 					'		</div>' +
 					'		<div style="float:left;height: 120px;">' +
-					'			<input class="ico_foto"' +
+					'			<input class="ico_file"' +
 					'				   id="avatarPaziente_FL"' +
 					'				   type="file"' +
 					'				   onchange="PH.encodeImageFileAsURL(this, true, false, \'PAZIENTI.salvaAvatar\');"' +
@@ -766,21 +764,21 @@ var PAZIENTI = {
 						'	<div id="p_add_dett"' +
 						'		 style="margin-top: 0px;">' +
 						'		<input type="file"' +
-						'			   id="fotoProvv_FL"' +
-						'			   class="p_paz_foto"' +
-						'		       onChange="PH.selezionaFoto(this);">' +
-						'		<span id="addFoto">' +
-									TXT("AggiungiFoto") +
+						'			   id="fileProvv_FL"' +
+						'			   class="p_paz_file"' +
+						'		       onChange="PH.selezionaFile(this);">' +
+						'		<span id="addFile">' +
+									TXT("AggiungiFile") +
 						'		</span>' +
 						'		<span class="p_paz_choose"' +
 						'		      onClick="MENU.visArchives();"></span>' +
-						'		<span id="chooFoto">' +
-									TXT("ScegliFoto") +
+						'		<span id="chooFile">' +
+									TXT("ScegliFile") +
 						'		</span>' +
 						'	</div>' +
 						'	<div class="allowedFormats">* '+TXT("FormatiConsentiti")+": "+ext+'</div>';
 					
-			HTML += H.r({	t: "h", name: "totFoto",	value: "0" });
+			HTML += H.r({	t: "h", name: "totFiles",	value: "0" });
 			HTML += H.sezione({
 				label: TXT("Gallery"),
 				nome: 'files',
@@ -906,7 +904,7 @@ var PAZIENTI = {
 			allergie = toJson(PZ.allergie);
 			patologie = toJson(PZ.patologie);
 			interventi = toJson(PZ.interventi);
-			gallery=__(PZ.gallery,'[]');
+			gallery=__(PZ.gallery,[]);
 			Provenienza = PZ.Provenienza;
 			Professione = PZ.Professione;
 			Social = PZ.Social;
@@ -921,8 +919,6 @@ var PAZIENTI = {
 			PAZIENTI.allergieProvvisorie = clone(allergie);
 			PAZIENTI.patologieProvvisorie = clone(patologie);
 			PAZIENTI.interventiProvvisori = clone(interventi);
-			if(!gallery)gallery='[]';
-			gallery=JSON.parse(gallery);
 			PH.galleryProvvisoria=gallery;
 		
 			var eta = '';
@@ -1252,14 +1248,14 @@ var PAZIENTI = {
 			if(typeof(GA[i].imgMini) != 'undefined' && GA[i]!=null && GA[i].imgMini!=null){
 				
 				// salvo l'immagine nel DB locale
-				DB.foto.data.push({
-					idFoto: GA[i].idFoto,
+				DB.files.data.push({
+					idFile: GA[i].idFile,
 					imgMini: GA[i].imgMini,
 					imgBig: GA[i].imgBig,
 					frv: (LOGIN._frv()!='')
 				});
 				var NG = {
-					idFoto: GA[i].idFoto,
+					idFile: GA[i].idFile,
 					Dida: GA[i].Dida
 				}
 				GA[i] = NG;
@@ -1268,7 +1264,7 @@ var PAZIENTI = {
 			delete(GA[i].imported);
 		}
 		
-		localPouchDB.setItem(MD5("DB"+LOGIN._frv()+".foto"), IMPORTER.COMPR(DB.foto)).then(function(){
+		localPouchDB.setItem(MD5("DB"+LOGIN._frv()+".files"), IMPORTER.COMPR(DB.files)).then(function(){
 			JSNPUSH={ 	"idPaziente": document.formMod.idPaziente.value*1,
 						"Nome": document.formMod.Nome.value.trim(),
 						"Cognome": document.formMod.Cognome.value.trim(),
@@ -1297,7 +1293,7 @@ var PAZIENTI = {
 						"Social": document.formMod.Social.value.trim(),
 						"Intestazione": document.formMod.Intestazione.value,
 						"avatar": avatar,
-						"gallery": JSON.stringify(GA),
+						"gallery": GA,
 						
 						"CodiceFiscale": document.formMod.CodiceFiscale.value.trim(),
 						"PartitaIva": document.formMod.PartitaIva.value.trim(),

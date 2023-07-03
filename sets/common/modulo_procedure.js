@@ -126,7 +126,7 @@ var MODULO_PROCEDURE = { // extend SET
 			var DataModifica=0;
 			var Preferito=0; // solo community
 			var Condiviso=0;
-			var gallery='[]';
+			var gallery=[];
 			if(!Q_community){
 				if(Q_idProc>-1){
 					var PR = DB.procedure.data[Q_idProc];
@@ -140,7 +140,7 @@ var MODULO_PROCEDURE = { // extend SET
 					DataModifica=PR.DataModifica*1;
 					Condiviso=PR.Condiviso*1;
 					idUtenteProcedura = DB.login.data.idUtente*1;
-					gallery=__(PR.gallery,'[]');
+					gallery=__(PR.gallery,[]);
 				}
 			}else{
 				for(let p in SET.community_elenco){
@@ -156,12 +156,10 @@ var MODULO_PROCEDURE = { // extend SET
 						DataModifica=PR.DataModifica*1;
 						Preferito=PR.Preferito*1;
 						Condiviso=PR.Condiviso*1;
-						gallery=__(PR.gallery,'[]');
+						gallery=__(PR.gallery,[]);
 					}
 				}
 			}
-			if(!gallery)gallery='[]';
-			gallery=JSON.parse(gallery);
 			PH.galleryProvvisoria=gallery;
 			if(Preferito*1==1)TXT_AggiungiPreferitiDEF=TXT("EliminaPreferiti");
 			else TXT_AggiungiPreferitiDEF=TXT("AggiungiPreferiti");
@@ -475,7 +473,7 @@ var MODULO_PROCEDURE = { // extend SET
 			var NomeProcedura='';
 			var dettagliProcedura='';
 			var Condiviso=0;
-			var gallery='[]';
+			var gallery=[];
 		
 			if(Q_idProc>-1){
 				var PR = DB.procedure.data[Q_idProc];
@@ -484,15 +482,13 @@ var MODULO_PROCEDURE = { // extend SET
 				NomeProcedura=PR.NomeProcedura;
 				dettagliProcedura=PR.dettagliProcedura;
 				Condiviso=PR.Condiviso*1;
-				gallery=__(PR.gallery,'[]');
+				gallery=__(PR.gallery,[]);
 			}
 			
 			if(!dettagliProcedura)dettagliProcedura=[];
 			SET.dettagliProvvisori=JSON.parse(JSON.stringify(dettagliProcedura));
 			var siglaLinguaProcedura='';
 			if(idLinguaProcedura)siglaLinguaProcedura=DB.lingueProcedure[idLinguaProcedura];
-			if(!gallery)gallery='[]';
-			gallery=JSON.parse(gallery);
 			PH.galleryProvvisoria=gallery;
 			
 			var HTML = '';
@@ -590,20 +586,20 @@ var MODULO_PROCEDURE = { // extend SET
 						'	<div id="p_add_dett"' +
 						'		 style="margin-top: 0px;">' +
 						'		<input type="file"' +
-						'			   id="fotoProvv_FL"' +
-						'			   class="p_paz_foto"' +
-						'		       onChange="PH.selezionaFoto(this);">' +
-						'		<span id="addFoto">' +
-									TXT("AggiungiFoto") +
+						'			   id="fileProvv_FL"' +
+						'			   class="p_paz_file"' +
+						'		       onChange="PH.selezionaFile(this);">' +
+						'		<span id="addFile">' +
+									TXT("AggiungiFile") +
 						'		</span>' +
 						'		<span class="p_paz_choose"' +
 						'		      onClick="MENU.visArchives();"></span>' +
-						'		<span id="chooFoto">' +
-									TXT("ScegliFoto") +
+						'		<span id="chooFile">' +
+									TXT("ScegliFile") +
 						'		</span>' +
 						'	</div>';
 					
-			HTML += H.r({	t: "h", name: "totFoto",	value: "0" });
+			HTML += H.r({	t: "h", name: "totFiles",	value: "0" });
 			HTML += H.sezione({
 				label: TXT("Gallery"),
 				nome: 'files',
@@ -677,14 +673,14 @@ var MODULO_PROCEDURE = { // extend SET
 			if(typeof(GA[i].imgMini) != 'undefined' && GA[i]!=null && GA[i].imgMini!=null){
 				
 				// salvo l'immagine nel DB locale
-				DB.foto.data.push({
-					idFoto: GA[i].idFoto,
+				DB.files.data.push({
+					idFile: GA[i].idFile,
 					imgMini: GA[i].imgMini,
 					imgBig: GA[i].imgBig,
 					frv: (LOGIN._frv()!='')
 				});
 				var NG = {
-					idFoto: GA[i].idFoto,
+					idFile: GA[i].idFile,
 					Dida: GA[i].Dida
 				}
 				GA[i] = NG;
@@ -692,11 +688,11 @@ var MODULO_PROCEDURE = { // extend SET
 			delete(GA[i].imported);
 		}
 		
-		localPouchDB.setItem(MD5("DB"+LOGIN._frv()+".foto"), IMPORTER.COMPR(DB.foto)).then(function(){
+		localPouchDB.setItem(MD5("DB"+LOGIN._frv()+".files"), IMPORTER.COMPR(DB.files)).then(function(){
 			JSNPUSH={	"idProcedura": document.formMod.idProcedura.value*1,
 						"idLinguaProcedura": document.formMod.idLinguaProcedura.value*1,
 						"NomeProcedura": document.formMod.NomeProcedura.value,
-						"gallery": JSON.stringify(GA),
+						"gallery": GA,
 						"dettagliProcedura": SET.dettagliProvvisori,
 						"DataModifica": parseInt(DataModifica),
 						"DataCreazione": parseInt(DataCreazione),

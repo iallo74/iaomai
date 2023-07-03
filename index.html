@@ -283,7 +283,7 @@
                         	<div id="pulsante_fornitori" class="frdx" onClick="SCHEDA.selElenco('fornitori');">{{TXT_ElFornitori}}</div>
                         	<div id="pulsante_servizi" class="frdx" onClick="SCHEDA.selElenco('servizi');">{{TXT_ElServizi}}</div>
                             <span class="separatorePulsanti"></span>
-                        	<div id="pulsante_foto" class="frdx" onClick="PH.car_gallery();">{{TXT_ElFoto}}</div>
+                        	<div id="pulsante_file" class="frdx" onClick="PH.car_gallery();">{{TXT_ElFiles}}</div>
                         </div>
                     </div>
 				</div>
@@ -297,7 +297,7 @@
                 	<div id="btnArchives">
                     	<div onClick="PH.selArchive(false);" id="btnArLocal">{{TXT_ArInUso}}</div>
                     	<div onClick="PH.selArchive(true);" id="btnArOnline">{{TXT_ArEliminate}}</div>
-                    	<div onClick="PH.importaFoto();" id="btnArImport">{{TXT_ArImporta}} (<span></span>)</div>
+                    	<div onClick="PH.importaFile();" id="btnArImport">{{TXT_ArImporta}} (<span></span>)</div>
                     </div>
                     <div id="listsArchives"></div>
                 </div>
@@ -846,7 +846,7 @@
 		<div id="loader" class="noLoader" onMouseOver="if(!touchable)overInterfaccia=true;" onMouseOut="if(!touchable)overInterfaccia=false;"><div>{{TXT_CaricamentoImpostazioni}}</div></div>
         
         <!-- ZOOM FOTO -->
-		<div id="fotoBig" class="noLoader" onMouseOver="if(!touchable)overInterfaccia=true;" onMouseOut="if(!touchable)overInterfaccia=false;"><div id="chiudiFotoBig" onClick="nasLoader();"></div><div id="foto_alert"></div></div>
+		<div id="fileBig" class="noLoader" onMouseOver="if(!touchable)overInterfaccia=true;" onMouseOut="if(!touchable)overInterfaccia=false;"><div id="chiudiFileBig" onClick="nasLoader();"></div><div id="file_alert"></div></div>
         
         <!-- IFRAME PDF -->
 		<div id="pdfBig" class="noLoader" onMouseOver="if(!touchable)overInterfaccia=true;" onMouseOut="if(!touchable)overInterfaccia=false;"><div id="chiudiPdfBig" onClick="nasLoader();"></div><iframe id="frPdf" frameborder="0"></iframe></div>

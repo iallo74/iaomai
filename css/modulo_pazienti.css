@@ -247,7 +247,7 @@ body:not(.smart) #pazienti_head{
 .imgList{
     opacity: 0.5;
 }
-.ico_foto,
+.ico_file,
 .ico_del{
    	width: 32px !important;
     padding-left: 32px !important;
@@ -259,9 +259,9 @@ body:not(.smart) #pazienti_head{
     cursor: pointer;
     margin-left: 10px !important;
 }
-.ico_foto{
+.ico_file{
 	margin-top: 20px !important;
-    background-image: url(../img/ico_foto.png) !important;
+    background-image: url(../img/ico_file.png) !important;
 }
 .ico_del{
     background-image: url(../img/ico_cestino.png) !important;

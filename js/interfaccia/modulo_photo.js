@@ -23,7 +23,7 @@ var PH = {
 	galleryOnline: [],
 	oldGallery: [],
 	overCestino: false,
-	maxFoto: 15,
+	maxFiles: 15,
 	idU: -1,
 	actionClick: '',
 	selected: [],
@@ -98,7 +98,7 @@ var PH = {
 					
 					CONN.caricaUrl(	"putFile.php",
 									"b64=1&JSNPOST="+encodeURIComponent(window.btoa(JSON.stringify({
-										idFoto: d,
+										idFile: d,
 										e: file.type.split("/")[1], // pdf
 										F: reader.result,
 										n: file.name
@@ -435,13 +435,13 @@ var PH = {
 	// gallery
 	caricaGallery: function( vis=false, idU='', dett=false ){ // carica la gallery in contGallery
 		var HTML='';
-		var totFoto = 0;
+		var totFiles = 0;
 		var afterFunct = '';
 		if(!idU)idU = DB.login.data.idUtente;
 		PH.idU = idU;
 		if(PH.galleryProvvisoria.length){
 			for(let i in PH.galleryProvvisoria){
-				totFoto++;
+				totFiles++;
 				var src = '';
 				var cls = '';
 				var name = '';
@@ -451,12 +451,12 @@ var PH = {
 					src = PH.galleryProvvisoria[i].imgMini;
 				}
 				if(!locale){
-					for(let f in DB.foto.data){
-						if(DB.foto.data[f].idFoto == PH.galleryProvvisoria[i].idFoto){
-							if(DB.foto.data[f].imgMini){
+					for(let f in DB.files.data){
+						if(DB.files.data[f].idFile == PH.galleryProvvisoria[i].idFile){
+							if(DB.files.data[f].imgMini){
 								locale = true;
-								src = DB.foto.data[f].imgMini;
-								name = __(DB.foto.data[f].name);
+								src = DB.files.data[f].imgMini;
+								name = __(DB.files.data[f].name);
 							}
 						}
 					}
@@ -473,7 +473,7 @@ var PH = {
 				if(!locale){
 					if(CONN.getConn()){
 						// se connesso a internet la scarico
-						afterFunct += "CONN.caricaUrl(	'"+"getImgGallery.php','n="+i+"&iU="+PH.idU+"&idFoto="+PH.galleryProvvisoria[i].idFoto+"','PH.scriviFoto');";
+						afterFunct += "CONN.caricaUrl(	'"+"getImgGallery.php','n="+i+"&iU="+PH.idU+"&idFile="+PH.galleryProvvisoria[i].idFile+"','PH.scriviFile');";
 					}else{
 						cls='noConn';
 					}
@@ -483,15 +483,15 @@ var PH = {
 						'	<div id="gall_'+i+'"' +
 						'		  class="' +
 								  ((cls) ? cls : '') +
-							  	  ((locale) ? 'fotoLocale' : '') + '">' +
+							  	  ((locale) ? 'fileLocale' : '') + '">' +
 						'		<div class="imgEl"' +
-						'			 data-id="'+PH.galleryProvvisoria[i].idFoto+'"' +
+						'			 data-id="'+PH.galleryProvvisoria[i].idFile+'"' +
 									 ((src) ? ' style="background-image:url(\''+src+'\');"' : '') +
 						'			 onClick="';
 						
 				if(!PH.actionClick){
 					HTML += 'if(!PH.overCestino)';
-					if(!isFile)HTML += 'PH.fullFoto('+i+','+locale+');';
+					if(!isFile)HTML += 'PH.fullPhoto('+i+','+locale+');';
 					else HTML += 'PH.openFile('+i+',\'\',type);';
 				}else HTML += PH.actionClick;
 				HTML += '"';
@@ -510,21 +510,21 @@ var PH = {
 						'			 	 src="img/ico_cestinoB.png"' +
 						'			 	 onMouseOver="PH.overCestino=true;"' +
 						'			 	 onMouseOut="PH.overCestino=false;"' +
-						'			 	 onClick="PH.eliminaFoto('+i+');">';
+						'			 	 onClick="PH.eliminaFile('+i+');">';
 				HTML += '		</div>' +
 						'	</div>';
 				var Dida = __(PH.galleryProvvisoria[i].Dida);
-				if(vis && Dida)HTML +='	<span class="noDefault DidaFoto">'+Dida+'</span>';
+				if(vis && Dida)HTML +='	<span class="noDefault DidaFile">'+Dida+'</span>';
 				if(!vis)HTML += H.r({	t: "t",	
 								name: "Dida"+i,	
 								value: Dida,
-								classRiga: "DidaFoto",
+								classRiga: "DidaFile",
 								classCampo: 'TitTrattDx noDefault',
 								label: TXT("InserisciDida"),
 								noLabel: true,
 								keyupCampo: 'H.auto_height(this);' });
 				if(dett && !PH.actionClick){
-					HTML += '<div class="dettagliFoto"><b>'+TXT("DettagliGallery")+'</b><br>' +
+					HTML += '<div class="dettagliFile"><b>'+TXT("DettagliGallery")+'</b><br>' +
 							TXT("DimensioniGallery")+': <span id="dim'+i+'">...</span><br>' +
 							TXT("DataGallery")+': <span id="dt'+i+'">...</span><br><br>' +
 							TXT("UbicazioneGallery")+': <span id="ub'+i+'">...</span><br>' +
@@ -551,10 +551,10 @@ var PH = {
 						}
 					}
 					n=-1;
-					for(let f in DB.foto.data){
-						if(__(DB.foto.data[f].frv,false)==(LOGIN._frv()=='frv')){
+					for(let f in DB.files.data){
+						if(__(DB.files.data[f].frv,false)==(LOGIN._frv()=='frv')){
 							n++;
-							var dim = DB.getStringMemorySize(IMPORTER.COMPR(DB.foto.data[f].imgMini));
+							var dim = DB.getStringMemorySize(IMPORTER.COMPR(DB.files.data[f].imgMini));
 							if(dim<1000*1000){
 								dimTxt = parseInt(dim/(1000))+"KB";
 							}else{
@@ -562,19 +562,17 @@ var PH = {
 							}
 							document.getElementById('dim'+n).innerHTML = dimTxt;
 							
-							document.getElementById('dt'+n).innerHTML =  getDataTS(parseInt(DB.foto.data[f].idFoto.split("_")[1]/1000));
+							document.getElementById('dt'+n).innerHTML =  getDataTS(parseInt(DB.files.data[f].idFile.split("_")[1]/1000));
 							
 							
 							var ubicazione = "";
 							var u = 0;
 							for(let p in DB.pazienti.data){
 								// verifico nel paziente
-								var gallery =  __(DB.pazienti.data[p].gallery,'[]');
-								if(!gallery)gallery='[]';
-								gallery = JSON.parse(gallery);
+								var gallery =  __(DB.pazienti.data[p].gallery,[]);
 								if(gallery.length){
 									for(let g in gallery){
-										if(DB.foto.data[f].idFoto == gallery[g].idFoto){
+										if(DB.files.data[f].idFile == gallery[g].idFile){
 											u++;
 											ubicazione += "<p><b>"+u+"</b> ) <i>"+TXT("EtClienteGallery")+"</i> "+DB.pazienti.data[p].Nome+" "+DB.pazienti.data[p].Cognome + '</p>';
 										}
@@ -583,10 +581,10 @@ var PH = {
 								// verifico nei trattamenti
 								for(t in DB.pazienti.data[p].trattamenti){
 									if(DB.pazienti.data[p].trattamenti[t].gallery){
-										var gallery =  JSON.parse(DB.pazienti.data[p].trattamenti[t].gallery);
+										var gallery =  clone(DB.pazienti.data[p].trattamenti[t].gallery);
 										if(gallery.length){
 											for(let g in gallery){
-												if(DB.foto.data[f].idFoto == gallery[g].idFoto){
+												if(DB.files.data[f].idFile == gallery[g].idFile){
 													var tit = DB.pazienti.data[p].trattamenti[t].TitoloTrattamento;
 													if(!tit)tit = '...';
 													u++;
@@ -599,12 +597,10 @@ var PH = {
 							}
 							for(let p in DB.procedure.data){
 								// verifico nella procedura
-								var gallery =  __(DB.procedure.data[p].gallery,'[]');
-								if(!gallery)gallery='[]';
-								gallery = JSON.parse(gallery);
+								var gallery =  __(DB.procedure.data[p].gallery,[]);
 								if(gallery.length){
 									for(let g in gallery){
-										if(DB.foto.data[f].idFoto == gallery[g].idFoto){
+										if(DB.files.data[f].idFile == gallery[g].idFile){
 											u++;
 											ubicazione += "<p><b>"+u+"</b> ) <i>"+TXT("EtProceduraGallery")+" ("+procs[DB.procedure.data[p].app]+")</i> "+DB.procedure.data[p].NomeProcedura + '</p>';
 										}
@@ -618,7 +614,7 @@ var PH = {
 				}, 500);
 			}
 		}
-		if(!totFoto){
+		if(!totFiles){
 			document.getElementById("contGallery"+((PH.actionClick)?'Ar':'')).classList.remove("galleryFull");
 			HTML += '<div class="noResults"' +
 					'	  style="padding-left:30px;">' +
@@ -626,17 +622,17 @@ var PH = {
 					'</div>';
 		}else{
 			setTimeout( function(){
-				if(__(DB.foto.update,false)){
-					localPouchDB.setItem(MD5("DB"+LOGIN._frv()+".foto"), IMPORTER.COMPR(DB.foto)).then(function(){ // salvo il DB
-						DB.foto.update = false;
+				if(__(DB.files.update,false)){
+					localPouchDB.setItem(MD5("DB"+LOGIN._frv()+".files"), IMPORTER.COMPR(DB.files)).then(function(){ // salvo il DB
+						DB.files.update = false;
 					});
 				}
 			}, 5000);
 		}
 		if(!vis){
-			if(totFoto < PH.maxFoto)document.getElementById('p_add_dett').style.display = 'block';
+			if(totFiles < PH.maxFiles)document.getElementById('p_add_dett').style.display = 'block';
 			else document.getElementById('p_add_dett').style.display = 'none';
-			document.getElementById('totFoto').innerHTML = totFoto;
+			document.getElementById('totFiles').innerHTML = totFiles;
 		}
 				
 		document.getElementById("contGallery"+((PH.actionClick)?'Ar':'')).innerHTML = HTML;
@@ -647,50 +643,50 @@ var PH = {
 			H.auto_height(document.getElementById('Dida'+i));
 		}
 	},
-	scriviFoto: function( res ){ // scrive la miniatura
+	scriviFile: function( res ){ // scrive la miniatura
 		res = JSON.parse( res );
 		var presente = false;
-		for(let f in DB.foto.data){
-			if(res.idFoto == DB.foto.data[f].idFoto){
+		for(let f in DB.files.data){
+			if(res.idFile == DB.files.data[f].idFile){
 				presente = f;
 			}
 		}
 		for(let f in PH.galleryProvvisoria){
-			if(res.idFoto == PH.galleryProvvisoria[f].idFoto && __(PH.galleryProvvisoria[f].imported,false)){
+			if(res.idFile == PH.galleryProvvisoria[f].idFile && __(PH.galleryProvvisoria[f].imported,false)){
 				presente = f;
 				console.log("OK")
 			}
 		}
 		if(!presente){
-			if(PH.galleryOnline.indexOf(res.idFoto)==-1){
-				DB.foto.data.push({
-					idFoto: res.idFoto,
+			if(PH.galleryOnline.indexOf(res.idFile)==-1){
+				DB.files.data.push({
+					idFile: res.idFile,
 					imgMini: res.imgMini,
 					name: res.name
 				});
-				DB.foto.update = true;
+				DB.files.update = true;
 			}
 		}else{
-			if(!__(DB.foto.data[presente].imgMini)){
-				DB.foto.data[presente].imgMini = res.imgMini;
-				DB.foto.update = true;
+			if(!__(DB.files.data[presente].imgMini)){
+				DB.files.data[presente].imgMini = res.imgMini;
+				DB.files.update = true;
 			}
 		}
 		if(document.getElementById("gall_"+res.n)){
 			if(res.imgMini)document.getElementById("gall_"+res.n).getElementsByTagName('div')[0].style.backgroundImage='url(\''+res.imgMini+'\')';
 		}
 	},
-	selezionaFoto: function( element ){ // seleziona la foto che si carica con il pulsante carica foto
-		PH.encodeImageFileAsURL( element, false, true, 'PH.aggiungiFoto' );
+	selezionaFile: function( element ){ // seleziona i files che si carica con il pulsante carica files
+		PH.encodeImageFileAsURL( element, false, true, 'PH.aggiungiFiles' );
 	},
-	aggiungiFoto: function( obj ){ // carica una nuova foto nella gallery
+	aggiungiFile: function( obj ){ // carica un nuova file nella gallery
 		obj = JSON.parse(obj);
 		var d = new Date()*1;
 		var nuova = true;
-		if(__(obj.idFoto)){
-			d = obj.idFoto;
+		if(__(obj.idFile)){
+			d = obj.idFile;
 		}
-		var JSNPUSH = {	idFoto: "foto_"+d,
+		var JSNPUSH = {	idFile: "file_"+d,
 						imgMini: obj.imgMini,
 						imgBig: obj.imgBig,
 						nuova: true }
@@ -699,8 +695,8 @@ var PH = {
 		PH.caricaGallery();
 		SCHEDA.formModificato = true;
 	},
-	eliminaFoto: function( f ){ // elimina la foto dalla gallery
-		CONFIRM.vis(	TXT("ChiediEliminaFoto"),
+	eliminaFile: function( f ){ // elimina il file dalla gallery
+		CONFIRM.vis(	TXT("ChiediEliminaFile"),
 						false,
 						arguments ).then(function(pass){if(pass){
 						var v = getParamNames(CONFIRM.args.callee.toString());
@@ -712,30 +708,30 @@ var PH = {
 			SCHEDA.formModificato = true;
 		}});
 	},
-	eliminaFotoOnline: function( idFoto ){ // elimina la foto dalla gallery
-		CONFIRM.vis(	TXT("ChiediEliminaFoto"),
+	eliminaFileOnline: function( idFile ){ // elimina il file dalla gallery online
+		CONFIRM.vis(	TXT("ChiediEliminaFile"),
 						false,
 						arguments ).then(function(pass){if(pass){
 						var v = getParamNames(CONFIRM.args.callee.toString());
 						for(let i in v)eval(getArguments(v,i));
 			CONN.caricaUrl(	'delImgGallery.php',
-							'iU='+PH.idU+'&idFoto='+idFoto,
+							'iU='+PH.idU+'&idFile='+idFile,
 							'PH.car_gallery_online');
 			
 		}});
 	},
-	fullFoto: function( i, locale, elenco = PH.galleryProvvisoria ){ // elabora la richiesta di mostrare la foto BIG
+	fullPhoto: function( i, locale, elenco = PH.galleryProvvisoria ){ // elabora la richiesta di mostrare il file BIG
 		var locale = false;
 		if(__(elenco[i].nuova)){
 			locale = true;
 			src = elenco[i].imgBig;
 		}
 		if(!locale){
-			for(let f in DB.foto.data){
-				if(DB.foto.data[f].idFoto == elenco[i].idFoto){
-					if(DB.foto.data[f].imgBig){
+			for(let f in DB.files.data){
+				if(DB.files.data[f].idFile == elenco[i].idFile){
+					if(DB.files.data[f].imgBig){
 						locale = true;
-						src = DB.foto.data[f].imgBig;
+						src = DB.files.data[f].imgBig;
 					}
 				}
 			}
@@ -748,51 +744,51 @@ var PH = {
 				idU = PH.idU;
 				if(LOGIN._frv())idU = 'frv';
 				CONN.caricaUrl(	'getImgGallery.php',
-								'big=1&n='+i+'&iU='+idU+'&idFoto='+elenco[i].idFoto,
-								'PH.scriviFotoBig');
+								'big=1&n='+i+'&iU='+idU+'&idFile='+elenco[i].idFile,
+								'PH.scriviPhotoBig');
 			}else{
 				var locale = false;
 				if(__(elenco[i].nuova)){
 					locale = true;
-					foto = elenco[i];
+					files = elenco[i];
 				}
 				if(!locale){
-					for(let f in DB.foto.data){
-						if(DB.foto.data[f].idFoto == elenco[i].idFoto){
-							foto = DB.foto.data[f];
+					for(let f in DB.files.data){
+						if(DB.files.data[f].idFile == elenco[i].idFile){
+							files = DB.files.data[f];
 						}
 					}
 				}
-				PH.scriviFotoBig( JSON.stringify(foto) );
+				PH.scriviPhotoBig( JSON.stringify(files) );
 			}
 		}
 	},
 	openFile: function( i, elenco = PH.galleryProvvisoria, fileType ){ // apro il file online
 		if(!CONN.retNoConn())return;
 		if(!elenco)elenco = PH.galleryProvvisoria;	
-		if(fileType=='pdf' && !android)PH.visPdfBig(CONN.APIfolder+"getFile.php?inline=1&c="+DB.login.data.TOKEN+localStorage.UniqueId+elenco[i].idFoto.replace("foto_","")+DB.login.data.idUtente);
-		else CONN.openUrl(CONN.APIfolder+"getFile.php?c="+DB.login.data.TOKEN+localStorage.UniqueId+elenco[i].idFoto.replace("foto_","")+DB.login.data.idUtente);
+		if(fileType=='pdf' && !android)PH.visPdfBig(CONN.APIfolder+"getFile.php?inline=1&c="+DB.login.data.TOKEN+localStorage.UniqueId+elenco[i].idFile.replace("file_","")+DB.login.data.idUtente);
+		else CONN.openUrl(CONN.APIfolder+"getFile.php?c="+DB.login.data.TOKEN+localStorage.UniqueId+elenco[i].idFile.replace("file_","")+DB.login.data.idUtente);
 	},
-	scriviFotoBig: function( res ){ // scrive la foto BIG
+	scriviPhotoBig: function( res ){ // scrive il file BIG
 		res = JSON.parse( res );
 		var lowRes = false;
 		var urlImg = res.imgBig;
 		if(!urlImg || urlImg=='404'){
-			for(let f in DB.foto.data){
-				if(DB.foto.data[f].idFoto == res.idFoto){
-					urlImg = DB.foto.data[f].imgMini;
+			for(let f in DB.files.data){
+				if(DB.files.data[f].idFile == res.idFile){
+					urlImg = DB.files.data[f].imgMini;
 					lowRes = true;
 				}
 			}
 		}
-		document.getElementById("foto_alert").classList.remove("visSch");
-		document.getElementById("fotoBig").classList.remove("noLoader");
-		document.getElementById("fotoBig").style.backgroundImage='url(\''+urlImg+'\')';
+		document.getElementById("file_alert").classList.remove("visSch");
+		document.getElementById("fileBig").classList.remove("noLoader");
+		document.getElementById("fileBig").style.backgroundImage='url(\''+urlImg+'\')';
 		if(lowRes){
 			if(!CONN.getConn())msg = TXT("AlertImgLowNoConn");
 			else msg = TXT("AlertImgLow");
-			document.getElementById("foto_alert").classList.add("visSch");
-			document.getElementById("foto_alert").innerHTML = stripslashes(msg);
+			document.getElementById("file_alert").classList.add("visSch");
+			document.getElementById("file_alert").innerHTML = stripslashes(msg);
 		}
 	},	
 	visPdfBig: function( url ){ // visualizza il PDF in iframe
@@ -800,7 +796,7 @@ var PH = {
 		document.getElementById("frPdf").src = url;
 	},	
 	
-	car_gallery: function(){ // carica la scheda delle fotografie del menu ARCHIVI
+	car_gallery: function(){ // carica la scheda dei files del menu ARCHIVI
 		// verifico le autorizzazioni
 		if(!DB.login.data.auths.length){
 			setTimeout(function(){
@@ -809,7 +805,7 @@ var PH = {
 			return;
 		}
 		// --------------------------
-		var space = DB.getStringMemorySize(IMPORTER.COMPR(DB.foto));
+		var space = DB.getStringMemorySize(IMPORTER.COMPR(DB.files));
 		var spaceAvail = (45*1000*1000 - DB.sizeDb);
 		var perc = (space*100) / spaceAvail;
 		var spaceTxt = '<b>';
@@ -820,7 +816,7 @@ var PH = {
 		}
 		spaceTxt += '</b> ('+parseInt(perc)+'%)'
 		
-		var number = DB.foto.data.length;
+		var number = DB.files.data.length;
 		var HTML = 	'<p>'+htmlEntities(TXT("SpiegazioneGallery"))+'</p>' +
 					'<div>'+htmlEntities(TXT("NumberGallery"))+': <b>'+number+'</b><br>' +
 					htmlEntities(TXT("SpaceGallery"))+': '+spaceTxt+'</div>' +
@@ -846,12 +842,12 @@ var PH = {
 		
 		HTML += H.sezione({
 			label: TXT("GalleryCestinate"),
-			nome: 'fotocestinate',
+			nome: 'filescestinati',
 			aperta: false,
 			html: cont
 					});	
 		
-		SCHEDA.caricaScheda(	stripslashes(TXT("ElFoto")),
+		SCHEDA.caricaScheda(	stripslashes(TXT("ElFiles")),
 								HTML,
 								'PH.chiudiGallery();',
 								'scheda_gallery',
@@ -865,8 +861,8 @@ var PH = {
 	},
 	car_gallery_local: function(){ // legge la lista dei file locali
 		PH.galleryProvvisoria = [];
-		for(let f in DB.foto.data){
-			if(__(DB.foto.data[f].frv,false)==(LOGIN._frv()=='frv'))PH.galleryProvvisoria.push({ idFoto: DB.foto.data[f].idFoto, Dida: '' });
+		for(let f in DB.files.data){
+			if(__(DB.files.data[f].frv,false)==(LOGIN._frv()=='frv'))PH.galleryProvvisoria.push({ idFile: DB.files.data[f].idFile, Dida: '' });
 		}
 		PH.caricaGallery(true,'',true);
 	},
@@ -879,15 +875,15 @@ var PH = {
 		HTML = '';
 		PH.galleryOnline = [];
 		if(res){
-			var foto = JSON.parse(res);
-			for(let f=foto.length-1;f>=0;f--){
+			var files = JSON.parse(res);
+			for(let f=files.length-1;f>=0;f--){
 				presente = false;
-				for(let i in DB.foto.data){
-					if(DB.foto.data[i].idFoto == foto[f].idFoto)presente = true;
+				for(let i in DB.files.data){
+					if(DB.files.data[i].idFile == files[f].idFile)presente = true;
 				}
-				if(presente)foto.splice(f,1);
+				if(presente)files.splice(f,1);
 			}
-			PH.galleryOnline = foto;
+			PH.galleryOnline = files;
 		}
 		if(PH.galleryOnline.length){
 			for(let f in PH.galleryOnline){
@@ -899,16 +895,16 @@ var PH = {
 					type = src;
 					src = 'img/ext/'+src+'Big.jpg';
 				}
-				HTML += '<div ' + ((!PH.actionClick)?'class="fotoMini"':'')+'>' +
+				HTML += '<div ' + ((!PH.actionClick)?'class="fileMini"':'')+'>' +
 						'	<div id="gall_'+f+'">' +
 						'		<div class="imgEl"' +
-						'			 data-id="'+PH.galleryOnline[f].idFoto+'"' +
+						'			 data-id="'+PH.galleryOnline[f].idFile+'"' +
 						'			 data-type="'+type+'"' +
 						'			 style="background-image:url(\''+src+'\');"' +
 						'	 		 onClick="';
 				if(!PH.actionClick){
 					HTML += 'if(!PH.overCestino)';
-					if(!isFile)HTML += 'PH.fullFoto('+f+',false,PH.galleryOnline);';
+					if(!isFile)HTML += 'PH.fullPhoto('+f+',false,PH.galleryOnline);';
 					else HTML += 'PH.openFile('+f+',PH.galleryOnline,type);';
 				}else HTML += PH.actionClick;
 				HTML += '"';
@@ -928,7 +924,7 @@ var PH = {
 						'			 	 src="img/ico_cestinoB.png"' +
 						'			 	 onMouseOver="PH.overCestino=true;"' +
 						'			 	 onMouseOut="PH.overCestino=false;"' +
-						'			 	 onClick="PH.eliminaFotoOnline(\''+PH.galleryOnline[f].idFoto+'\');">';
+						'			 	 onClick="PH.eliminaFileOnline(\''+PH.galleryOnline[f].idFile+'\');">';
 						
 				HTML += '		</div>' +
 						'	</div>' +
@@ -947,7 +943,7 @@ var PH = {
 		}
 		document.getElementById("contGallery"+((PH.actionClick)?'Ar':'')+"Online").innerHTML = HTML;
 	},
-	chiudiGallery: function(){ // chiamata alla chiusura della scheda fotograife
+	chiudiGallery: function(){ // chiamata alla chiusura della scheda files
 		if(!SCHEDA.schedaAperta)PH.galleryProvvisoria = [];
 		PH.actionClick = '';
 	},
@@ -957,7 +953,7 @@ var PH = {
 		document.getElementById("listsArchives").innerHTML = 
 			'<div id="contGalleryAr" class="contGallery vis">'+TXT("Caricamento")+'</div>' +
 			'<div id="contGalleryArOnline" class="contGallery">'+TXT("Caricamento")+'</div>';
-		PH.actionClick = "PH.selFoto(this)";
+		PH.actionClick = "PH.selFile(this)";
 		document.getElementById("btnArImport").getElementsByTagName("span")[0].innerHTML = '0';
 		document.getElementById("btnArImport").classList.remove("act");
 		PH.car_gallery_local();
@@ -971,22 +967,22 @@ var PH = {
 			PH.oldGallery = [];
 		}
 	},
-	selArchive: function( online ){ // seleziona l'archivio (locale o online) nel popup di scelta foto
+	selArchive: function( online ){ // seleziona l'archivio (locale o online) nel popup di scelta file
 		document.getElementById("contArchives").classList.toggle("online",online);
 	},
-	selFoto: function( el ){ // seleziona una foto nel popup si scelta foto
+	selFile: function( el ){ // seleziona un file nel popup di scelta file
 		el.classList.toggle("sel");
 		var els = document.getElementById("listsArchives").querySelectorAll(".sel");
 		document.getElementById("btnArImport").getElementsByTagName("span")[0].innerHTML = els.length;
 		document.getElementById("btnArImport").classList.toggle("act",(els.length));
 	},
-	importaFoto: function(){ // importa le foto nella gallery della scheda aperta
+	importaFile: function(){ // importa o nella gallery della scheda aperta
 		var els = document.getElementById("listsArchives").querySelectorAll(".sel");
 		if(!els.length)return;
 		newGallery = PH.oldGallery;
 		for(e=0;e<els.length;e++){
 			var JSNPUSH = {	
-				idFoto: els[e].dataset.id,
+				idFile: els[e].dataset.id,
 				imported: true
 			};
 			if(els[e].dataset.type)JSNPUSH.imgMini = els[e].dataset.type;
@@ -1025,7 +1021,7 @@ var PH = {
 			imgBig: (PH.makeBig) ? PH.returnImageConverted( true ) : '',
 			fileType: imgMini.split("data:")[1].split(";")[0]
 		};
-		PH.aggiungiFoto( JSON.stringify(obj) );
+		PH.aggiungiFile( JSON.stringify(obj) );
 	},
 	editScreenShot: function(){ // acquisisce lo screenshot del manichino e lo apre in disegno
 		PH.functPH="PH.aggiungiScreenshot";

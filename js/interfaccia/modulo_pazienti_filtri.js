@@ -211,8 +211,6 @@ var PAZIENTI_FILTRI = {
 						var TR = PZ[p].trattamenti[t];
 						if(!TR.Cancellato*1){
 							var si = TR.sintomi;
-							if(!si)si = '[]';
-							si = JSON.parse(si);
 							for(let s in si){
 								var sintomo = si[s].NomeSintomo;
 								if(!stats.sintomi[sintomo])stats.sintomi[sintomo] = [];

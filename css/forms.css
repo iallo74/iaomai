@@ -264,7 +264,7 @@ body:not(.smart) .stampaBtn{
 .p_sch_descr, /* procedura */
 #p_add_comm, /* procedura */
 .p_paz_punto, /* PAZIENTI */
-.p_paz_foto, /* PAZIENTI */
+.p_paz_file, /* PAZIENTI */
 .p_paz_choose, /* PAZIENTI */
 .p_paz_screenshot, /* PAZIENTI */
 .p_paz_label, /* PAZIENTI */
@@ -289,7 +289,7 @@ body:not(.smart) .stampaBtn{
 .p_sch_tit, /* procedura */
 .p_sch_descr, /* procedura */
 .p_paz_punto, /* PAZIENTI */
-.p_paz_foto, /* PAZIENTI */
+.p_paz_file, /* PAZIENTI */
 .p_paz_choose, /* PAZIENTI */
 .p_paz_screenshot{ /* PAZIENTI */
 	cursor:pointer;
@@ -299,7 +299,7 @@ body:not(.smart) .stampaBtn{
 .p_sch_descr:hover, /* procedura */
 .p_paz_punto:hover, /* PAZIENTI */
 .p_paz_label:hover, /* PAZIENTI */
-.p_paz_foto:hover, /* PAZIENTI */
+.p_paz_file:hover, /* PAZIENTI */
 .p_paz_choose:hover, /* PAZIENTI */
 .p_paz_screenshot:hover{ /* PAZIENTI */
 	background-color:#ffd8af !important
@@ -323,7 +323,7 @@ body:not(.smart) .stampaBtn{
 .p_sch_tit, /* procedura */
 .p_sch_descr, /* procedura */
 #p_add_comm, /* procedura */
-.p_paz_foto, /* PAZIENTI */
+.p_paz_file, /* PAZIENTI */
 .p_paz_choose, /* PAZIENTI */
 .p_paz_screenshot, /* PAZIENTI */
 .p_paz_punto, /* PAZIENTI */
@@ -786,7 +786,7 @@ body:not(.smart) .stampaBtn{
 	padding-left:22px;
 }
 .p_paz_punto,
-.p_paz_foto,
+.p_paz_file,
 .p_paz_choose,
 .p_paz_screenshot,
 .p_paz_label{ /* PAZIENTI */
@@ -803,13 +803,13 @@ body:not(.smart) .stampaBtn{
 	min-width:70px !important;
 	background-position:5px center;
 }
-.p_paz_foto,
+.p_paz_file,
 .p_paz_choose,
 .p_paz_screenshot{ /* PAZIENTI */
 	background-position:center center !important;
 }
 .smart.android .p_paz_punto,
-.smart.android .p_paz_foto,
+.smart.android .p_paz_file,
 .smart.android .p_paz_choose,
 .smart.android .p_paz_screenshot,
 .smart.android .p_paz_label{ /* PAZIENTI */
@@ -820,7 +820,7 @@ body:not(.smart) .stampaBtn{
 	padding-left:30px !important;
 }
 .app_version.bug_font.smart.android .p_paz_punto,
-.app_version.bug_font.smart.android .p_paz_foto,
+.app_version.bug_font.smart.android .p_paz_file,
 .app_version.bug_font.smart.android .p_paz_choose,
 .app_version.bug_font.smart.android .p_paz_screenshot,
 .app_version.bug_font.smart.android .p_paz_label{ /* PAZIENTI */
@@ -866,7 +866,7 @@ cont_p_paz_label{
 	height:50px !important;
 	padding-top: 10px !important;
 }
-.p_paz_foto{
+.p_paz_file{
 	background-image: url(../img/ico_upload.png);
     background-size: auto 28px;
     padding-left: 30px !important;
@@ -878,7 +878,7 @@ cont_p_paz_label{
 	padding-right: 3px !important;
 }
 .p_paz_screenshot{
-	background-image: url(../img/ico_screenshot.png);
+	background-image: url(../img/ico_screenshot3D.png);
     background-size: auto 28px;
 	margin-left:15px;
 	padding-right: 3px !important;
@@ -2214,8 +2214,8 @@ body:not(.touch) .sezioneChiusa:hover{
 	margin-right:10px;
 	margin-top:-5px;
 }
-#addFoto,
-#chooFoto,
+#addFile,
+#chooFile,
 #screenShot{
     display: inline-block;
     margin-top: 17px;
@@ -2223,7 +2223,7 @@ body:not(.touch) .sezioneChiusa:hover{
     line-height: 32px;
     margin-left: 10px;
 }
-#fotoProvv_FL{
+#fileProvv_FL{
     padding-left: 32px !important;
     overflow: hidden !important;
     width: 32px !important;
@@ -2231,7 +2231,7 @@ body:not(.touch) .sezioneChiusa:hover{
     min-width: auto !important;
     display: inline-block;
 }
-.smart.android #fotoProvv_FL,
+.smart.android #fileProvv_FL,
 .smart.android .p_paz_choose,
 .smart.android .p_paz_screenshot{
     padding-left: 42px !important;
@@ -2285,7 +2285,7 @@ html:not(.htmlStampa) .contGallery{
 #archives .contGallery > div > div > div.sel img{
 	opacity:1 !important;
 }
-.scheda_gallery .contGallery > div:not(.fotoMini){
+.scheda_gallery .contGallery > div:not(.fileMini){
 	margin-top: 11px;
     display: block !important;
     border-top: 1px solid rgba(0,0,0,0.2);
@@ -2312,17 +2312,17 @@ html:not(.htmlStampa) .contGallery{
 .galleryFull{
     min-height: 180px;
 }
-.contGallery > div > div:not(.DidaFoto):not(.dettagliFoto),
+.contGallery > div > div:not(.DidaFile):not(.dettagliFile),
 .contGallery > div > div > div {
     width: 150px;
     height: 150px;
 }
-.contGallery > div.fotoMini > div:not(.DidaFoto):not(.dettagliFoto),
-.contGallery > div.fotoMini > div{
+.contGallery > div.fileMini > div:not(.DidaFile):not(.dettagliFile),
+.contGallery > div.fileMini > div{
 	margin: 5px;
 }
-.contGallery > div.fotoMini > div:not(.DidaFoto):not(.dettagliFoto),
-.contGallery > div.fotoMini > div > div {
+.contGallery > div.fileMini > div:not(.DidaFile):not(.dettagliFile),
+.contGallery > div.fileMini > div > div {
     width: 80px;
     height: 80px;
 }
@@ -2330,27 +2330,27 @@ html:not(.htmlStampa) .contGallery{
 	margin-top: -13px;
 	font-size: var(--font-12);
 }
-.contGallery .fotoMini{
+.contGallery .fileMini{
 	padding: 5px !important;
 }
-#scheda:not(.sch_Max450):not(.sch_Max600):not(.sch_Max800) .contGallery .fotoMini{
+#scheda:not(.sch_Max450):not(.sch_Max600):not(.sch_Max800) .contGallery .fileMini{
 	width: calc(((100% - 60px) / 6) + 10px) !important;
 }
-#scheda:not(.sch_Max450):not(.sch_Max600) .contGallery .fotoMini{
+#scheda:not(.sch_Max450):not(.sch_Max600) .contGallery .fileMini{
 	width: calc(((100% - 50px) / 5) + 10px) !important;
 }
-#scheda:not(.sch_Max450) .contGallery .fotoMini{
+#scheda:not(.sch_Max450) .contGallery .fileMini{
 	width: calc(((100% - 40px) / 4) + 10px) !important;
 }
-.sch_Max450 .contGallery .fotoMini{
+.sch_Max450 .contGallery .fileMini{
 	width: calc(((100% - 40px) / 3) + 10px) !important;
 }
-.contGallery .fotoMini > div{
+.contGallery .fileMini > div{
 	width: 100% !important;
 	margin: 0px !important;
     height: auto !important;
 }
-.contGallery .fotoMini > div > div{
+.contGallery .fileMini > div > div{
 	width: 100% !important;
 	height: auto !important;
 	padding-bottom: 100% !important;
@@ -2366,7 +2366,7 @@ html:not(.htmlStampa) .contGallery{
 	display:inline-block;
 	vertical-align:top;
 }
-.contGallery > div > div:not(.DidaFoto):not(.dettagliFoto){
+.contGallery > div > div:not(.DidaFile):not(.dettagliFile){
     border-radius: 8px;
     margin: 2px 7px 2px 7px;
     box-shadow: 0px 0px 3px rgba(0,0,0,0.5);
@@ -2379,12 +2379,12 @@ html:not(.htmlStampa) .contGallery{
 	display: inline-block;
     vertical-align: top;
 }
-.dettagliFoto{
+.dettagliFile{
 	display: inline-block;
     vertical-align: top;
 	padding: 10px;
 }
-.dettagliFoto p{
+.dettagliFile p{
 	margin:0px;
 	border-top:1px solid rgba(0,0,0,0.1);
 	padding-top:2px;
@@ -2397,12 +2397,12 @@ html:not(.htmlStampa) .contGallery{
     line-height: 15px !important;
 	width: 154px;
 }
-.contGallery > div > div:not(.DidaFoto):not(.dettagliFoto) > div {
+.contGallery > div > div:not(.DidaFile):not(.dettagliFile) > div {
 	background-size:cover;
 	background-position:center center;
 	cursor: pointer;
 }
-.DidaFoto{
+.DidaFile{
 	padding-top: 5px;
     width: 159px;
     margin: 0px 3px;
@@ -2411,14 +2411,14 @@ html:not(.htmlStampa) .contGallery{
     white-space: normal;
     text-align: center;
 }
-.DidaFoto textarea{
+.DidaFile textarea{
 	padding: 5px !important;
     line-height: 15px !important;
     border: none !important;
     background-color: transparent !important;
     text-align: center;
 }
-.DidaFoto textarea::placeholder{
+.DidaFile textarea::placeholder{
 	opacity:0.5 !important;
 	text-align:center !important;
 	font-style:italic;
@@ -2429,7 +2429,7 @@ html:not(.htmlStampa) .contGallery{
     background-color: rgba(0,0,0,0.2) !important;
     background-repeat: no-repeat !important;
 }
-.noConn:not(.fotoLocale) img{
+.noConn:not(.fileLocale) img{
 	display:none;
 }
 .gall_full{

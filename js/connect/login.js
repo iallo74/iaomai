@@ -56,7 +56,7 @@ var LOGIN = {
 			localPouchDB.getItem(MD5("DB"+LOGIN._frv()+".appuntamenti")),
 			localPouchDB.getItem(MD5("DB"+LOGIN._frv()+".annotazioni")),
 			localPouchDB.getItem(MD5("DB"+LOGIN._frv()+".ricerche")),
-			localPouchDB.getItem(MD5("DB"+LOGIN._frv()+".foto"))
+			localPouchDB.getItem(MD5("DB"+LOGIN._frv()+".files"))
 		]).then(function( dbs ){
 			DB.procedure=IMPORTER.DECOMPR(dbs[0]);
 			DB.note=IMPORTER.DECOMPR(dbs[1]);
@@ -66,7 +66,7 @@ var LOGIN = {
 			DB.appuntamenti=IMPORTER.DECOMPR(dbs[5]);
 			DB.annotazioni=IMPORTER.DECOMPR(dbs[6]);
 			DB.ricerche=IMPORTER.DECOMPR(dbs[7]);
-			DB.foto=IMPORTER.DECOMPR(dbs[8]);
+			DB.files=IMPORTER.DECOMPR(dbs[8]);
 			
 			if(PAZIENTI.idCL == -1)PAZIENTI.caricaPazienti();
 			FORNITORI.caricaFornitori();
@@ -86,7 +86,7 @@ var LOGIN = {
 		localPouchDB.setItem(MD5("DB.servizi"), IMPORTER.COMPR(DB.servizi));
 		localPouchDB.setItem(MD5("DB.appuntamenti"), IMPORTER.COMPR(DB.appuntamenti));
 		localPouchDB.setItem(MD5("DB.ricerche"), IMPORTER.COMPR(DB.ricerche));
-		localPouchDB.setItem(MD5("DB.foto"), IMPORTER.COMPR(DB.foto));
+		localPouchDB.setItem(MD5("DB.files"), IMPORTER.COMPR(DB.files));
 	},
 	
 	
@@ -167,7 +167,6 @@ var LOGIN = {
 	},
 	getLogin: function(){ // avviato quando si preme il pulsante Accedi nel popup LOGIN
 		if(CONN.retNoConn() && document.getElementById("USR").value.trim()!='' && document.getElementById("PWD").value.trim()!=''){
-			console.log("loading")
 			document.getElementById("login").classList.add("popup_back");
 			document.loginFrom.PWD.blur();
 			CONN.caricaUrl(	"login.php",
@@ -616,7 +615,7 @@ var LOGIN = {
 						'			<div style="background-image:url(\''+UT.imgAvatar+'\')"></div>' +
 						'		</div>' +
 						'		<div style="float:left;height: 120px;">' +
-						'			<input class="ico_foto"' +
+						'			<input class="ico_file"' +
 						'				   id="avatarUtente_FL"' +
 						'				   type="file"' +
 						'				   onchange="PH.encodeImageFileAsURL(this, true, false, \'LOGIN.salvaAvatar\');"' +
@@ -694,7 +693,7 @@ var LOGIN = {
 						'			<div style="background-image:url(\''+UT.logoAzienda+'\')"></div>' +
 						'		</div>' +
 						'		<div style="float:left;height: 120px;">' +
-						'			<input class="ico_foto"' +
+						'			<input class="ico_file"' +
 						'				   id="logoAzienda_FL"' +
 						'				   type="file"' +
 						'				   onchange="PH.encodeImageFileAsURL(this, true, false, \'LOGIN.salvaLogo\');"' +
@@ -931,7 +930,7 @@ var LOGIN = {
 				localPouchDB.getItem(MD5("DB"+LOGIN._frv()+".appuntamenti")),
 				localPouchDB.getItem(MD5("DB"+LOGIN._frv()+".annotazioni")),
 				localPouchDB.getItem(MD5("DB"+LOGIN._frv()+".ricerche")),
-				localPouchDB.getItem(MD5("DB"+LOGIN._frv()+".foto"))
+				localPouchDB.getItem(MD5("DB"+LOGIN._frv()+".files"))
 			]).then(function( dbs ){
 				DB.procedure=IMPORTER.DECOMPR(dbs[0]);
 				DB.note=IMPORTER.DECOMPR(dbs[1]);
@@ -941,29 +940,29 @@ var LOGIN = {
 				DB.appuntamenti=IMPORTER.DECOMPR(dbs[5]);
 				DB.annotazioni=IMPORTER.DECOMPR(dbs[6]);
 				DB.ricerche=IMPORTER.DECOMPR(dbs[7]);
-				DB.foto=IMPORTER.DECOMPR(dbs[8]);
+				DB.files=IMPORTER.DECOMPR(dbs[8]);
 				
-				LOGIN.totSinc = dbs.length-1; /* le foto non contano perché sono solo in upload */
+				LOGIN.totSinc = dbs.length-1; /* i files non contano perché sono solo in upload */
 				
 				var elenco='';				
 				if(Nuovo){ // se è un account nuovo popolo i DB con quelli DEMO
 					DB.pazienti.data = DB.pulisciFRV(archiviDemo.pazienti);
 					DB.fornitori.data = DB.pulisciFRV(archiviDemo.fornitori);
 					DB.servizi.data = DB.pulisciFRV(archiviDemo.servizi);
-					DB.foto.data = DB.pulisciFRV(archiviDemo.foto);
+					DB.files.data = DB.pulisciFRV(archiviDemo.files);
 				}
 				
-				elencoFoto='';
-				for(let k in DB.foto.data){
-					if(DB.foto.data[k]){
-						if(	!__(DB.foto.data[k].frv) && 
-							__(DB.foto.data[k].imgBig) && 
-							DB.foto.data[k].imgBig!='404'){
-								elencoFoto+=JSON.stringify(DB.foto.data[k])+", ";
+				elencoFiles='';
+				for(let k in DB.files.data){
+					if(DB.files.data[k]){
+						if(	!__(DB.files.data[k].frv) && 
+							__(DB.files.data[k].imgBig) && 
+							DB.files.data[k].imgBig!='404'){
+								elencoFiles+=JSON.stringify(DB.files.data[k])+", ";
 							}
 					}
 				}
-				if(elencoFoto)elenco+='"foto": ['+elencoFoto.substr(0,elencoFoto.length-2)+'], ';
+				if(elencoFiles)elenco+='"files": ['+elencoFiles.substr(0,elencoFiles.length-2)+'], ';
 				
 				elencoRicerche='';
 				for(let k in DB.ricerche.data){
@@ -1103,7 +1102,7 @@ var LOGIN = {
 								"allergie": JSON.stringify(DB.pazienti.data[k].allergie),
 								"patologie": JSON.stringify(DB.pazienti.data[k].patologie),
 								"interventi": JSON.stringify(DB.pazienti.data[k].interventi),
-								"gallery": DB.pazienti.data[k].gallery,
+								"gallery": JSON.stringify(DB.pazienti.data[k].gallery),
 								"Provenienza": DB.pazienti.data[k].Provenienza,
 								"Professione": DB.pazienti.data[k].Professione,
 								"Intestazione": DB.pazienti.data[k].Intestazione,
@@ -1128,7 +1127,13 @@ var LOGIN = {
 					for(t in DB.pazienti.data[k].trattamenti){
 						if(DB.pazienti.data[k].trattamenti[t].DataModifica*1>DB.pazienti.lastSync*1 || dwnl || bkp){
 							DB.pazienti.data[k].trattamenti[t].id_interno=t*1;
-							n++;elencoTrattamenti[n]=DB.pazienti.data[k].trattamenti[t];
+							n++;elencoTrattamenti[n]=clone(DB.pazienti.data[k].trattamenti[t]);
+							elencoTrattamenti[n].gallery = JSON.stringify(elencoTrattamenti[n].gallery);
+							elencoTrattamenti[n].meridiani = JSON.stringify(elencoTrattamenti[n].meridiani);
+							elencoTrattamenti[n].sintomi = JSON.stringify(elencoTrattamenti[n].sintomi);
+							elencoTrattamenti[n].puntiMTC = JSON.stringify(elencoTrattamenti[n].puntiMTC);
+							elencoTrattamenti[n].puntiAuricolari = JSON.stringify(elencoTrattamenti[n].puntiAuricolari);
+							elencoTrattamenti[n].puntiNamikoshi = JSON.stringify(elencoTrattamenti[n].puntiNamikoshi);
 							aggiungereTrattamenti=true;
 						}
 					}
@@ -1186,9 +1191,9 @@ var LOGIN = {
 					DB.ricerche=[];
 					localPouchDB.setItem(MD5("DB"+LOGIN._frv()+".ricerche"), IMPORTER.COMPR(DB.ricerche));
 				}
-				if(typeof(DB.foto)=='undefined'){
-					DB.foto=[];
-					localPouchDB.setItem(MD5("DB"+LOGIN._frv()+".foto"), IMPORTER.COMPR(DB.foto));
+				if(typeof(DB.files)=='undefined'){
+					DB.files=[];
+					localPouchDB.setItem(MD5("DB"+LOGIN._frv()+".files"), IMPORTER.COMPR(DB.files));
 				}	
 				if(typeof(DB.cicli)=='undefined'){
 					DB.cicli=[];
@@ -1357,7 +1362,7 @@ var LOGIN = {
 				if(BACKUPS.bkpProvv)elenco.procedure[p].DataModifica = lastSync*1;
 				JSNPUSH={	"idProcedura": elenco.procedure[p].idProcedura*1,
 							"idLinguaProcedura": elenco.procedure[p].idLinguaProcedura*1,
-							"gallery": elenco.procedure[p].gallery,
+							"gallery": toJson(elenco.procedure[p].gallery),
 							"NomeProcedura": elenco.procedure[p].NomeProcedura,
 							"DataModifica": elenco.procedure[p].DataModifica*1,
 							"DataCreazione": elenco.procedure[p].DataCreazione*1,
@@ -1705,7 +1710,7 @@ var LOGIN = {
 							"allergie": toJson(elenco.pazienti[p].allergie),
 							"patologie": toJson(elenco.pazienti[p].patologie),
 							"interventi": toJson(elenco.pazienti[p].interventi),
-							"gallery": elenco.pazienti[p].gallery,
+							"gallery": toJson(elenco.pazienti[p].gallery),
 							"Provenienza": elenco.pazienti[p].Provenienza,
 							"Professione": elenco.pazienti[p].Professione,
 							"Intestazione": elenco.pazienti[p].Intestazione,
@@ -1759,7 +1764,7 @@ var LOGIN = {
 						
 						var puntiMTC = trattamenti[t].puntiMTC;
 						
-						if(puntiMTC.substr(0,1)!="["){ // in caso di provenienza da TM15 (SPOSTARE CONVERSIONE SU SERVER)
+						if(puntiMTC.substr(0,1)!="["){ // per i dati che arrivano da TM15
 							if(puntiMTC.indexOf(".")>-1){
 								var puntiProvvisori = [];
 								var parti=puntiMTC.split("|");
@@ -1773,7 +1778,7 @@ var LOGIN = {
 								}
 								puntiMTC = JSON.stringify(puntiProvvisori);
 							}else puntiMTC = '[]';
-						} // -----------------------------------------------------------
+						} //-------------------------------------------------------------
 						
 						if(BACKUPS.bkpProvv)trattamenti[t].DataModifica = lastSync*1;
 						JSNPUSH={ 	"idTrattamento": trattamenti[t].idTrattamento*1,
@@ -1781,12 +1786,12 @@ var LOGIN = {
 									"TitoloTrattamento": trattamenti[t].TitoloTrattamento,
 									"TestoTrattamento": trattamenti[t].TestoTrattamento,
 									"Prescrizione": trattamenti[t].Prescrizione,
-									"puntiMTC": puntiMTC,
-									"puntiAuricolari": trattamenti[t].puntiAuricolari,
-									"puntiNamikoshi": trattamenti[t].puntiNamikoshi,
-									"meridiani": trattamenti[t].meridiani,
-									"sintomi": trattamenti[t].sintomi,
-									"gallery": trattamenti[t].gallery,
+									"puntiMTC": toJson(puntiMTC),
+									"puntiAuricolari": toJson(trattamenti[t].puntiAuricolari),
+									"puntiNamikoshi": toJson(trattamenti[t].puntiNamikoshi),
+									"meridiani": toJson(trattamenti[t].meridiani),
+									"sintomi": toJson(trattamenti[t].sintomi),
+									"gallery": toJson(trattamenti[t].gallery),
 									"TimeTrattamento": trattamenti[t].TimeTrattamento*1,
 									"oraInizio": trattamenti[t].oraInizio*1,
 									"oraFine": trattamenti[t].oraFine*1,
@@ -1797,7 +1802,6 @@ var LOGIN = {
 									"ordine": trattamenti[t].ordine*1,
 									"Cancellato": trattamenti[t].Cancellato*1,
 									"frv": false };		
-									
 						for(let g in trattamentiProvvisori){ // in quelli esistenti ...
 							var TR = trattamentiProvvisori[g];
 							var md5='';
@@ -1839,7 +1843,6 @@ var LOGIN = {
 							}
 						}
 					}
-					
 					DB.pazienti.data[kDef].trattamenti=trattamentiProvvisori;
 					
 				}
@@ -2052,9 +2055,9 @@ var LOGIN = {
 				}
 			}
 		}
-		//DB.foto = { data: [], lastSync: 0 };
-		for(let f in DB.foto.data){
-			DB.foto.data[f].imgBig = '';
+		//DB.files = { data: [], lastSync: 0 };
+		for(let f in DB.files.data){
+			DB.files.data[f].imgBig = '';
 		}
 		Promise.all([
 			localPouchDB.setItem(MD5("DB"+LOGIN._frv()+".pazienti"), IMPORTER.COMPR(DB.pazienti)),
@@ -2063,7 +2066,7 @@ var LOGIN = {
 			localPouchDB.setItem(MD5("DB"+LOGIN._frv()+".annotazioni"), IMPORTER.COMPR(DB.annotazioni)),
 			localPouchDB.setItem(MD5("DB"+LOGIN._frv()+".appuntamenti"), IMPORTER.COMPR(DB.appuntamenti)),
 			localPouchDB.setItem(MD5("DB"+LOGIN._frv()+".procedure"), IMPORTER.COMPR(DB.procedure)),
-			localPouchDB.setItem(MD5("DB"+LOGIN._frv()+".foto"), IMPORTER.COMPR(DB.foto))
+			localPouchDB.setItem(MD5("DB"+LOGIN._frv()+".files"), IMPORTER.COMPR(DB.files))
 		]).then(function( dbs ){
 			if(LOGIN.afterFunct){
 				eval(LOGIN.afterFunct);
@@ -2099,7 +2102,7 @@ var LOGIN = {
 					PAZIENTI.deselPaziente();
 				}
 			}
-			if(DB.sizeDb<40*1000*1000)LOGIN.updateGallery(); // limite a 40MB (circa 1000 foto)
+			if(DB.sizeDb<40*1000*1000)LOGIN.updateGallery(); // limite a 40MB (circa 1000 file)
 		});
 	},
 	download:function ( filename, text ){ // scarica un file
@@ -2123,32 +2126,30 @@ var LOGIN = {
 			var elenco = [];
 			for(let p in DB.pazienti.data){
 				// verifico nel paziente
-				var gallery =  __(DB.pazienti.data[p].gallery,'[]');
-                if(!gallery)gallery='[]';
-                gallery = JSON.parse(gallery);
+				var gallery =  __(DB.pazienti.data[p].gallery,[]);
 				if(gallery.length){
 					for(let g in gallery){
 						if(!__(gallery[g].imgMini)){
 							var add = true;
-							for(let f in DB.foto.data){
-								if(DB.foto.data[f].idFoto==gallery[g].idFoto && __(DB.foto.data[f].imgMini))add = false;
+							for(let f in DB.files.data){
+								if(DB.files.data[f].idFile==gallery[g].idFile && __(DB.files.data[f].imgMini))add = false;
 							}
-							if(add)elenco.push(gallery[g].idFoto);
+							if(add)elenco.push(gallery[g].idFile);
 						}
 					}
 				}
 				// verifico nei trattamenti
 				for(t in DB.pazienti.data[p].trattamenti){
 					if(DB.pazienti.data[p].trattamenti[t].gallery){
-						var gallery =  JSON.parse(DB.pazienti.data[p].trattamenti[t].gallery);
+						var gallery =  DB.pazienti.data[p].trattamenti[t].gallery;
 						if(gallery.length){
 							for(let g in gallery){
 								if(!__(gallery[g].imgMini)){
 									var add = true;
-									for(let f in DB.foto.data){
-										if(DB.foto.data[f].idFoto==gallery[g].idFoto && __(DB.foto.data[f].imgMini))add = false;
+									for(let f in DB.files.data){
+										if(DB.files.data[f].idFile==gallery[g].idFile && __(DB.files.data[f].imgMini))add = false;
 									}
-									if(add)elenco.push(gallery[g].idFoto);
+									if(add)elenco.push(gallery[g].idFile);
 								}
 							}
 						}
@@ -2157,17 +2158,15 @@ var LOGIN = {
 			}
 			for(let p in DB.procedure.data){
 				// verifico nella procedura
-				var gallery =  __(DB.procedure.data[p].gallery,'[]');
-                if(!gallery)gallery='[]';
-                gallery = JSON.parse(gallery);
+				var gallery =  __(DB.procedure.data[p].gallery,[]);
 				if(gallery.length){
 					for(let g in gallery){
 						if(!__(gallery[g].imgMini)){
 							var add = true;
-							for(let f in DB.foto.data){
-								if(DB.foto.data[f].idFoto==gallery[g].idFoto && __(DB.foto.data[f].imgMini))add = false;
+							for(let f in DB.files.data){
+								if(DB.files.data[f].idFile==gallery[g].idFile && __(DB.files.data[f].imgMini))add = false;
 							}
-							if(add)elenco.push(gallery[g].idFoto);
+							if(add)elenco.push(gallery[g].idFile);
 						}
 					}
 				}
@@ -2178,45 +2177,43 @@ var LOGIN = {
 	updateGallery_save: function( res ){ // risposta dall'API url dell'aggiornamento gallery
 		if(res){
 			var modificato = false;
-			var foto = JSON.parse(res);
-			for(let f in foto){
+			var files = JSON.parse(res);
+			for(let f in files){
 				var presente = false;
-				for(let g in DB.foto.data){
-					if(DB.foto.data[g].idFoto == foto[f].idFoto){
-						DB.foto.data[g].imgMini = foto[f].imgMini;
+				for(let g in DB.files.data){
+					if(DB.files.data[g].idFile == files[f].idFile){
+						DB.files.data[g].imgMini = files[f].imgMini;
 						presente = true;
 					}
 				}
 				if(!presente){
-					DB.foto.data.push(foto[f]);
+					DB.files.data.push(files[f]);
 					modificato = true;
 				}
 			}
 			if(modificato){
-				localPouchDB.setItem(MD5("DB"+LOGIN._frv()+".foto"), IMPORTER.COMPR(DB.foto));
+				localPouchDB.setItem(MD5("DB"+LOGIN._frv()+".files"), IMPORTER.COMPR(DB.files));
 			}
 		}
 	},
 	pulisciGallery: function(){ // pulisce la gallery
-		for(let f=DB.foto.data.length-1;f>=0;f--){
+		for(let f=DB.files.data.length-1;f>=0;f--){
 			presente = false;
 			for(let p in DB.pazienti.data){
 				// verifico nel paziente
-				var gallery =  __(DB.pazienti.data[p].gallery,'[]');
-                if(!gallery)gallery='[]';
-                gallery = JSON.parse(gallery);
+				var gallery =  __(DB.pazienti.data[p].gallery,[]);
 				if(gallery.length){
 					for(let g in gallery){
-						if(DB.foto.data[f].idFoto == gallery[g].idFoto)presente = true;
+						if(DB.files.data[f].idFile == gallery[g].idFile)presente = true;
 					}
 				}
 				// verifico nei trattamenti
 				for(t in DB.pazienti.data[p].trattamenti){
 					if(DB.pazienti.data[p].trattamenti[t].gallery){
-						var gallery =  JSON.parse(DB.pazienti.data[p].trattamenti[t].gallery);
+						var gallery =  DB.pazienti.data[p].trattamenti[t].gallery;
 						if(gallery.length){
 							for(let g in gallery){
-								if(DB.foto.data[f].idFoto == gallery[g].idFoto)presente = true;
+								if(DB.files.data[f].idFile == gallery[g].idFile)presente = true;
 							}
 						}
 					}
@@ -2224,18 +2221,16 @@ var LOGIN = {
 			}
 			for(let p in DB.procedure.data){
 				// verifico nella procedura
-				var gallery =  __(DB.procedure.data[p].gallery,'[]');
-                if(!gallery)gallery='[]';
-                gallery = JSON.parse(gallery);
+				var gallery =  __(DB.procedure.data[p].gallery,[]);
 				if(gallery.length){
 					for(let g in gallery){
-						if(DB.foto.data[f].idFoto == gallery[g].idFoto)presente = true;
+						if(DB.files.data[f].idFile == gallery[g].idFile)presente = true;
 					}
 				}
 			}
-			if(!presente)DB.foto.data.splice(f,1);
+			if(!presente)DB.files.data.splice(f,1);
 		}
-		localPouchDB.setItem(MD5("DB"+LOGIN._frv()+".foto"), IMPORTER.COMPR(DB.foto));
+		localPouchDB.setItem(MD5("DB"+LOGIN._frv()+".files"), IMPORTER.COMPR(DB.files));
 	},
 	
 	
@@ -2362,13 +2357,11 @@ var LOGIN = {
 								LOGIN.addHTML("<i>"+TXT("AnamnesiDiagnosiMTC")+":</i> "+TT.AnamnesiDiagnosiMTC+"<br>");
 							}else LOGIN.addHTML("<i>"+TXT("Descrizione")+":</i> "+TT.replace(/\n/gi,"<br>")+"<br>");
 							
-							sintomi=[];
-							if(trattamenti[t].sintomi)var sintomi=JSON.parse(trattamenti[t].sintomi);
-							if(sintomi.length>0){
+							if(trattamenti[t].sintomi.length>0){
 								var txtSintomi='';
-								for(let s in sintomi){
-									txtSintomi+=sintomi[s].NomeSintomo+" <b>(";
-									if(sintomi[s].score>-1)txtSintomi+=sintomi[s].score;
+								for(let s in trattamenti[t].sintomi){
+									txtSintomi+=trattamenti[t].sintomi[s].NomeSintomo+" <b>(";
+									if(trattamenti[t].sintomi[s].score>-1)txtSintomi+=trattamenti[t].sintomi[s].score;
 									else txtSintomi+='-';
 									txtSintomi+=")</b>, ";
 								}
@@ -2376,7 +2369,7 @@ var LOGIN = {
 								LOGIN.addHTML("<i>"+TXT("Sintomi")+":</i> "+txtSintomi+"<br>");
 							}
 							if(trattamenti[t].puntiMTC){
-								var punti=JSON.parse(trattamenti[t].puntiMTC);
+								var punti=trattamenti[t].puntiMTC;
 								var txtPunti='';
 								for(let f in punti){
 									nPunto=punti[f].n;
@@ -2398,7 +2391,7 @@ var LOGIN = {
 								if(txtPunti)LOGIN.addHTML("<i>"+TXT("PuntiTrattamento")+":</i> "+txtPunti+"<br>");
 							}
 							if(trattamenti[t].puntiNamikoshi){
-								var punti=JSON.parse(trattamenti[t].puntiNamikoshi);
+								var punti=trattamenti[t].puntiNamikoshi;
 								var txtPunti='';
 								for(let f in punti){
 									siglaPunto=punti[f].s;
@@ -2415,7 +2408,7 @@ var LOGIN = {
 								if(txtPunti)LOGIN.addHTML("<i>"+TXT("PuntiNamikoshi")+":</i> "+txtPunti+"<br>");
 							}
 							if(trattamenti[t].meridiani){
-								var meridiani=JSON.parse(trattamenti[t].meridiani);
+								var meridiani=trattamenti[t].meridiani;
 								var txtMeridiani='';
 								for(let m in meridiani){
 									siglaMeridiano=meridiani[m].siglaMeridiano;
@@ -2433,7 +2426,7 @@ var LOGIN = {
 								if(txtMeridiani)LOGIN.addHTML("<i>"+TXT("MeridianiTrattamento")+":</i> "+txtMeridiani+"<br>");
 							}
 							if(trattamenti[t].puntiAuricolari){
-								var punti=JSON.parse(trattamenti[t].puntiAuricolari);
+								var punti=trattamenti[t].puntiAuricolari;
 								var txtPunti='';
 								for(let f in punti){
 									siglaPunto=punti[f].s;

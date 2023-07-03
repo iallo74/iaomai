@@ -359,7 +359,7 @@ body:not(.bodyModello) #logoSovra{
 
 
 #loader,
-#fotoBig,
+#fileBig,
 #pdfBig{
 	display:block;
 	position:fixed;
@@ -374,7 +374,7 @@ body:not(.bodyModello) #logoSovra{
 	z-index:1000000;
 	opacity:0.8;
 }
-#fotoBig{
+#fileBig{
 	background-size:contain;
     background-repeat: no-repeat;
     background-position: center center;
@@ -386,7 +386,7 @@ body:not(.bodyModello) #logoSovra{
 	z-index:1000001;
 	opacity:1
 }
-#chiudiFotoBig,
+#chiudiFileBig,
 #chiudiPdfBig,
 #chiudiDebugBig{
 	position:fixed;
@@ -400,7 +400,7 @@ body:not(.bodyModello) #logoSovra{
 	cursor:pointer;
 	z-index:1000003;
 }
-#chiudiFotoBig:hover{
+#chiudiFileBig:hover{
 	background-color:rgba(255,255,255,0.8) !important;
 }
 #chiudiPdfBig{
@@ -424,7 +424,7 @@ body:not(.bodyModello) #logoSovra{
 	width:100% !important;
 	height:100% !important;
 }
-#foto_alert{
+#file_alert{
 	display:none;
 	position:fixed;
 	bottom:5px;

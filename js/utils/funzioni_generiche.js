@@ -60,10 +60,10 @@ function visLoader( txt, cls='' ){
 }
 
 function nasLoader(){
-	document.getElementById("fotoBig").classList.add("noLoader");
+	document.getElementById("fileBig").classList.add("noLoader");
 	document.getElementById("pdfBig").classList.add("noLoader");
 	document.getElementById("frPdf").src = '';
-	document.getElementById("fotoBig").style.backgroundImage = '';
+	document.getElementById("fileBig").style.backgroundImage = '';
 	document.getElementById("loader").classList.add("noLoader");
 	if(document.getElementById("loader").dataset.cls){
 		document.getElementById("loader").classList.remove(document.getElementById("loader").dataset.cls);
