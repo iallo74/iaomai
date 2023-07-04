@@ -1,5 +1,8 @@
 
 var SERVIZI = {
+	maxServiziFree: 1,
+	maxServiziLogged: 5,
+	
 	caricaServizi: function(){ // carica l'elenco dei servizi
 		var HTML = '';
 		
@@ -76,10 +79,14 @@ var SERVIZI = {
 	car_servizio: function( Q_idServ, salvato ){ // carica la scheda del servizio
 		// verifico le autorizzazioni
 		if(__(Q_idServ,-1)==-1){
-			var maxServizi = 1;
+			var maxServizi = SERVIZI.maxServiziFree;
+			var addMaxTxt = 'Free';
 			if(LOGIN.reg() && LOGIN.logedin()){
 				if(DB.login.data.auths.indexOf("clients_full")>-1)maxServizi = -1;
-				else maxServizi = 5;
+				else{
+					maxServizi = SERVIZI.maxServiziLogged;
+					addMaxTxt = 'Logged';
+				}
 			}
 			if(maxServizi>-1){
 				var tServ = 0;
@@ -87,7 +94,7 @@ var SERVIZI = {
 					if(DB.servizi.data[c].Cancellato*1==0)tServ++;
 				}
 				if(tServ >= maxServizi && !document.body.classList.contains("pplhd")){
-					ALERT(TXT("MsgMaxServizi"+maxServizi));
+					ALERT(TXT("MsgMaxServizi"+addMaxTxt).replace("[n]",SERVIZI.maxServiziLogged));
 					return;
 				}
 			}

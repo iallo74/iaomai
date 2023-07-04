@@ -40,11 +40,11 @@ function ControllaNumero(frmNum,NCampo,nt){
 			add='';
 		}else{
 			Filtro = /[\d]+/;
-			add=" "+TXT("numeriInteri");
+			add="Interi";
 		}
 		if (Filtro.test(NumVal)) return true;
 		else{
-			ALERT(TXT("ATTENZIONE")+" "+TXT("campoNumerici").replace("[1]"," '"+NCampo+"' ")+add);
+			ALERT(TXT("ATTENZIONE")+" "+TXT("campoNumerici"+add).replace("[1]"," '"+NCampo+"' ")+add);
 			frmNum.focus();
 			return false;
 		}
@@ -56,10 +56,9 @@ function ControllaTelefono(frmNum,NCampo,cell){
 	if (frmNum.value.length>0){		
 		if(!cell)Filtro = /[\d\+\.\s]+/;
 		else Filtro = /\+[\d\.\s]*/;
-		add=" "+TXT("numeriInteri");
 		if (Filtro.test(NumVal)) return true;
 		else{
-			ALERT(TXT("ATTENZIONE")+" "+TXT("campoNumerici").replace("[1]"," '"+NCampo+"' ")+add);
+			ALERT(TXT("ATTENZIONE")+" "+TXT("campoNumericiInteri").replace("[1]"," '"+NCampo+"' ")+add);
 			frmNum.focus();
 			return false;
 		}

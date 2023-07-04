@@ -2047,7 +2047,7 @@ DB.set= {
 				"24": {
 					siglaPunto: "NK-24",
 					NomePunto: "Trapezio - Parte alta della spalla",
-					AzioniPunto: "xxx",
+					AzioniPunto: "<p><b>Ubicazione</b><br />Individuare la depressione che si forma nella congiunzione tra scapola e clavicola, il punto si trova all'apice del muscolo del trapezio.</p><p><b>Azioni</b><br />Questa operazione coinvolge il muscolo del trapezio, il quale supporta il movimento della scapola, come pure l'estensione e la flessione laterale del collo; i benefici verranno avvertiti immediatamente in tutta la spalla, nella zona del collo e l'area scapolare.<br />L'effetto dell'operazione talvolta è leggermente dolorosa quindi accertarsi che la pressione non sia mai esagerata, tuttavia noterete che al termine di ogni sequenza, il dolore tende progressivamente ad attenuarsi.</p><p style=\"margin-bottom: 5px;margin-top: 31px;\"><b style=\"font-size: 17px;\">Tecnica di lavoro</b></p><p style=\"min-height: 83px;border-bottom: 1px solid rgba(0,0,0,0.1);padding-bottom: 13px;\"><img src=\"sets/meridiani_shiatsu/img/tori_samurai.png\" width=\"63\" height=\"92\" align=\"right\" /><b>Postura Tori</b><br />  Posizione samurai a fianco della testa di Uke, il punto va premuto perpendicolarmente con la tecnica dei pollici sovrapposti per tre volte consecutive e per 5 secondi ognuna.<br />  <br /></p><p style=\"min-height: 56px;border-bottom: 1px solid rgba(0,0,0,0.1);padding-bottom: 13px;\"><img src=\"sets/meridiani_shiatsu/img/uke_supino.png\" width=\"152\" height=\"30\" align=\"right\" /><b>Posizione Uke</b><br /> Posizione supina.  <br /></p><p style=\"min-height: 90px;\"><img src=\"sets/meridiani_shiatsu/img/dita_sovrapposte.png\" width=\"120\" height=\"59\" align=\"right\" /><b>Tipo di pressione</b><br />  Pressione perpendicolare con la tecnica dei pollici sovrapposti.<br /></p>",
 					ChiaviPunto: "",
 					apparato: 4
 				},
@@ -4686,6 +4686,10 @@ DB.set= {
 				},
 				{
 					TitoloTeoria: "Protocolli e kata",
+					TestoTeoria: "" 	
+				},
+				{
+					TitoloTeoria: "Tecniche e posture",
 					TestoTeoria: "" 	
 				}
 			],

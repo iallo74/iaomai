@@ -1,4 +1,4 @@
-DB.TXT.set = {
+	DB.TXT.set = {
 	SistemaSigle: {
 		ita: "Sistema di sigle dei meridiani",
 		eng: "Meridian abbreviation system",

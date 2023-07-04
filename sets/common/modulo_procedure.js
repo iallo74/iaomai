@@ -15,6 +15,7 @@ var MODULO_PROCEDURE = { // extend SET
 		prefRic: '0'
 	},
 	commSel: '',
+	maxProcedureFree: 1,
 	
 	intestazioneProcedure: function( Q_tue){
 		var HTML = '';
@@ -439,7 +440,7 @@ var MODULO_PROCEDURE = { // extend SET
 		if(typeof(Q_idProc)=='undefined')var Q_idProc=-1;
 		if(Q_idProc.toString()=='')Q_idProc=-1;
 		// verifico le autorizzazioni
-		var maxProcedure = 1;
+		var maxProcedure = SET.maxProcedureFree;
 		if(LOGIN.reg() && LOGIN.logedin()){
 			if(DB.login.data.auths.indexOf(globals.set.cartella)>-1)maxProcedure = -1;
 		}

@@ -1,7 +1,7 @@
 DB.TXT = {
     base: {
  
-       // GENERICHE
+        // GENERICHE
         nomiGiorni: {
             ita: [
                 "Domenica",
@@ -154,7 +154,7 @@ DB.TXT = {
         },
         Help: {
             ita: "Maggiori informazioni",
-            eng: "More information",
+            eng: "Further information",
             esp: "Más información",
             fra: "Plus d'informations",
             por: "Mais informações",
@@ -369,11 +369,11 @@ DB.TXT = {
             deu: "Die Datei wurde gespeichert"
         },
         InserisciNote: {
-            ita: "Inserisci qualche nota...",
-            eng: "Insert some annotation...",
-            esp: "Inserte alguna anotación...",
-            fra: "Insérez une annotation...",
-            por: "Insira alguma anotação...",
+            ita: "Inserisci nota...",
+            eng: "Insert note...",
+            esp: "Inserte anotación...",
+            fra: "Insérez annotation...",
+            por: "Insira anotação...",
             deu: "Fügen Sie eine Anmerkung hinzu..."
         },
         SelettoreAnatomia: {
@@ -448,7 +448,7 @@ DB.TXT = {
         //popup VERSIONE
         Versione: {
             ita: "Info su [§]",
-            eng: "Info about [§]",
+            eng: "About [§]",
             esp: "Información sobre [§]",
             fra: "Informations à propos de [§]",
             por: "Informações sobre [§]",
@@ -472,7 +472,7 @@ DB.TXT = {
         },
         SviluppoContenuti: {
             ita: "Sviluppo contenuti",
-            eng: "Contents",
+            eng: "Content development",
             esp: "Desarrollo de contenidos",
             fra: "Contenus",
             por: "Conteúdos",
@@ -578,7 +578,7 @@ DB.TXT = {
         },
         NoCambioPelle: {
             ita: "Con questo modello non è possibile scegliere il tipo di pelle",
-            eng: "With this model you can not choose skin type",
+            eng: "With this model you can't choose skin type",
             esp: "Con este modelo no puedes elegir el tipo de piel",
             fra: "Avec ce modèle, vous ne pouvez pas choisir le type de peau",
             por: "Com este modelo, você não pode escolher o tipo de pele",
@@ -884,7 +884,7 @@ DB.TXT = {
         },
         MsgLogoutDevices: {
             ita: "Il dispositivo è stato disconnesso",
-            eng: "The device as been disconnected",
+            eng: "The device has been disconnected",
             esp: "El dispositivo ha sido desconectado",
             fra: "Le dispositif a été déconnecté",
             por: "O dispositivo foi desconectado",
@@ -958,7 +958,7 @@ DB.TXT = {
         },
         ElementoGiaAperto: {
             ita: "L'elemento che vuoi aprire risulta già aperto su un altro dispositivo. Chiudilo e riprova.",
-            eng: "The item you want to open is already open on another device. Close it and try again.",
+            eng: "The item you want to open is already opened on another device. Close it and try again.",
             esp: "El elemento que deseas abrir ya está abierto en otro dispositivo. Ciérralo e inténtalo nuevamente.",
             fra: "L'élément que vous souhaitez ouvrir est déjà ouvert sur un autre appareil. Fermez-le et réessayez.",
             por: "O item que você deseja abrir já está aberto em outro dispositivo. Feche-o e tente novamente.",
@@ -1109,8 +1109,8 @@ DB.TXT = {
             deu: "Daten-Backup"
         },
         DownloadChiedi: {
-            ita: "Vuoi davvero scaricare il backup dei tuoi dati",
-            eng: "Are you sure you want to download your personal data backup",
+            ita: "Vuoi davvero scaricare il backup dei tuoi dati?",
+            eng: "Are you sure you want to download your personal data backup?",
             esp: "¿Estás seguro de que quieres descargar la copia de seguridad de tus datos personales?",
             fra: "Êtes-vous sûr de vouloir télécharger la sauvegarde de vos données personnelles ?",
             por: "Tem certeza de que deseja baixar o backup de seus dados pessoais?",
@@ -1158,7 +1158,7 @@ DB.TXT = {
         },
         PreparazioneStampa: {
             ita: "Preparazione della stampa...",
-            eng: "Printing process...",
+            eng: "Processing print...",
             esp: "Proceso de impresión...",
             fra: "Processus d'impression...",
             por: "Processo de impressão...",
@@ -1182,7 +1182,7 @@ DB.TXT = {
         },
         NomeBackup: {
             ita: "Inserisci un nome per il backup",
-            eng: "Insert the title of your backup",
+            eng: "Insert your backup name",
             esp: "Ingresa el título de tu copia de seguridad",
             fra: "Entrez le titre de votre sauvegarde",
             por: "Insira o título do seu backup",
@@ -1357,8 +1357,8 @@ DB.TXT = {
             deu: "Becher"
         },
         MezzoDiapason: {
-            ita: "Diaphason",
-            eng: "Diaphason",
+            ita: "Diapason",
+            eng: "Tuning fork",
             esp: "Diapasón",
             fra: "Diapason",
             por: "Diapasão",
@@ -1381,12 +1381,12 @@ DB.TXT = {
             deu: "Finger"
         },
         MezzoPauper: {
-            ita: "Pauper",
-            eng: "Pauper",
-            esp: "Pauper",
-            fra: "Pauper",
-            por: "Pauper",
-            deu: "Pauper"
+            ita: "Palpeur",
+            eng: "Palpeur",
+            esp: "Palpeur",
+            fra: "Palpeur",
+            por: "Palpeur",
+            deu: "Palpeur"
         },
         MezzoSemeVaccaria: {
             ita: "Seme di Vaccaria",
@@ -1430,7 +1430,7 @@ DB.TXT = {
         },
         MezzoSalasso: {
             ita: "Microsalasso",
-            eng: "Bloodletting",
+            eng: "Micro-bloodletting",
             esp: "Sangrado",
             fra: "Saignée",
             por: "Sangria",
@@ -1486,7 +1486,7 @@ DB.TXT = {
         },
         AlertMezzoElettroAgopuntura: {
             ita: "Attenzione!! Non utilizzare l'elettro-agopuntura o la detezione elettrica su pazienti sui quali è stato innestato un pacemaker. Potrebbe comportare rischio di malfunzionamento e morte del paziente.",
-            eng: "Attention! Do not use electro-acupuncture or electrical detection on patients with a pacemaker. It could lead to the risk of malfunction and death of the patient.",
+            eng: "Warning! Do not use electro-acupuncture or electrical detection on patients with a pacemaker. It could lead to the risk of malfunction and death of the patient.",
             esp: "¡Atención! No utilice la electroacupuntura o la detección eléctrica en pacientes con marcapasos. Esto podría llevar al riesgo de malfuncionamiento y muerte del paciente.",
             fra: "Attention ! N'utilisez pas l'électro-acupuncture ou la détection électrique sur des patients porteurs d'un pacemaker. Cela pourrait entraîner un risque de dysfonctionnement et de décès du patient.",
             por: "Atenção! Não utilize a eletroacupuntura ou a detecção elétrica em pacientes com marca-passo. Isso pode levar ao risco de mau funcionamento e morte do paciente.",
@@ -1560,19 +1560,11 @@ DB.TXT = {
         },
         erroreFormatoEmail: {
             ita: "Il formato dell'email per il campo [1] non è esatto...",
-            eng: "The mail format for [1] is not correct...",
+            eng: "The email format for [1] is not correct...",
             esp: "El formato del correo electrónico para [1] no es correcto...",
             fra: "Le format de l'e-mail pour le champ [1] n'est pas correct...",
             por: "O formato de e-mail para o campo [1] não está correto...",
             deu: "Das E-Mail-Format für das Feld [1] ist nicht korrekt..."
-        },
-        numeriInteri: {
-            ita: "interi",
-            eng: "integer",
-            esp: "enteros",
-            fra: "entiers",
-            por: "inteiros",
-            deu: "ganze Zahlen"
         },
         campoNumerici: {
             ita: "Nel campo [1] puoi inserire solo valori numerici",
@@ -1580,7 +1572,15 @@ DB.TXT = {
             esp: "En el campo [1] debes indicar solo números",
             fra: "Dans le champ [1], vous devez indiquer uniquement des chiffres",
             por: "No campo [1], você deve indicar apenas números",
-            deu: "Im Feld [1] müssen nur Zahlen angegeben werden"
+            deu: "In das Feld [1] können nur numerische Werte eingegeben werden"
+        },
+        campoNumericiInteri: {
+            ita: "Nel campo [1] puoi inserire solo valori numerici interi",
+            eng: "In the field [1] you must indicate only integer numbers",
+            esp: "En el campo [1] debes indicar solo números enteros",
+            fra: "Dans le champ [1], vous devez indiquer uniquement des chiffres entiers",
+            por: "No campo [1], você deve indicar apenas números inteiros",
+            deu: "In das Feld [1] können nur ganze numerische Werte eingegeben werden"
         },
         lunghezzaMinCampo: {
             ita: "Il campo [1] deve contenere minimo [2] caratteri, attualmente ne contiene [3]",
@@ -1600,7 +1600,7 @@ DB.TXT = {
         },
         inserireValore: {
             ita: "Devi inserire un valore per il campo [1]",
-            eng: "You must indicate the [1]",
+            eng: "You must indicate the field [1]",
             esp: "Debes indicar el campo [1]",
             fra: "Vous devez indiquer [1]",
             por: "Você deve indicar o(a) [1]",
@@ -1608,7 +1608,7 @@ DB.TXT = {
         },
         selezionareValore: {
             ita: "Devi selezionare un valore per il campo [1]",
-            eng: "You must indicate the [1]",
+            eng: "You must indicate the field [1]",
             esp: "Debes seleccionar el campo [1]",
             fra: "Vous devez indiquer [1]",
             por: "Você deve indicar o(a) [1]",
@@ -1691,7 +1691,7 @@ DB.TXT = {
             deu: "Beim Senden Ihres Feedbacks ist ein Fehler aufgetreten. Bitte versuchen Sie es später erneut."
         },
         ErroreInvio2: {
-            ita: "In alternativa puoi scrivere un email a ",
+            ita: "In alternativa puoi scrivere un'email a ",
             eng: "Alternatively, you can write an email to ",
             esp: "Envía un correo electrónico a ",
             fra: "Vous pouvez également écrire un e-mail à ",
@@ -1752,11 +1752,11 @@ DB.TXT = {
         },
         ChiediEliminaServizio: {
             ita: "Vuoi davvero eliminare il pacchetto? N.B. Non sarà più possibile recuperarlo.",
-            eng: "Do you really want to delete the package? N.B. It won't be possible to recover it anymore.",
+            eng: "Do you really want to delete the package? Please note! It won't be possible to recover it anymore.",
             esp: "¿Realmente deseas eliminar el paquete? ¡Ten en cuenta! No se podrá recuperar.",
-            fra: "Voulez-vous vraiment supprimer le forfait ? N.B. Il ne sera plus possible de le récupérer.",
-            por: "Você realmente deseja excluir o pacote? N.B. Não será possível recuperá-lo posteriormente.",
-            deu: "Möchten Sie das Paket wirklich löschen? HINWEIS: Es wird nicht mehr möglich sein, es wiederherzustellen."
+            fra: "Voulez-vous vraiment supprimer le forfait ? Notez bien! Il ne sera plus possible de le récupérer.",
+            por: "Você realmente deseja excluir o pacote? Observação! Não será possível recuperá-lo posteriormente.",
+            deu: "Möchten Sie das Paket wirklich löschen? Hinweis! Es wird nicht mehr möglich sein, es wiederherzustellen."
         },
         ScegliServizio: {
             ita: "Pacchetti di sedute",
@@ -1924,7 +1924,7 @@ DB.TXT = {
             ita: "Vuoi davvero eliminare il fornitore? N.B. Non sarà più possibile recuperarlo.",
             eng: "Do you really want to delete the supplier? Please note! It will no longer be recovered.",
             esp: "¿Realmente deseas eliminar el proveedor? ¡Ten en cuenta! No se podrá recuperar.",
-            fra: "Voulez-vous vraiment supprimer le fournisseur ? Notez bien ! Il ne pourra plus être récupéré.",
+            fra: "Voulez-vous vraiment supprimer le fournisseur ? Notez bien! Il ne pourra plus être récupéré.",
             por: "Você realmente deseja excluir o fornecedor? Por favor, observe! Não será mais possível recuperá-lo.",
             deu: "Möchten Sie den Lieferanten wirklich löschen? Bitte beachten Sie! Eine Wiederherstellung ist nicht mehr möglich."
         },
@@ -1981,11 +1981,11 @@ DB.TXT = {
         },
         ChiediEliminaPaziente: {
             ita: "Vuoi davvero eliminare il paziente? N.B. Non sarà più possibile recuperarlo. Inoltre verranno cancellate definitivamente anche tutte le note associate al manichino.",
-            eng: "Do you really want to delete the patient? Please note! It will no longer be recovered. Besides every notes referring to the model will be permanently deleted.",
+            eng: "Do you really want to delete the patient? Please note! It will no longer be recovered. Furthermore every note referring to the model will be permanently deleted.",
             esp: "¿Realmente desea eliminar al paciente? ¡Tenga en cuenta! No se podrá recuperar. Además, todas las notas asociadas al modelo se eliminarán permanentemente.",
-            fra: "Voulez-vous vraiment supprimer le patient ? Notez bien ! Il ne pourra plus être récupéré. De plus, toutes les notes liées au modèle seront définitivement supprimées.",
-            por: "Você realmente deseja excluir o paciente? Por favor, observe! Não será mais possível recuperá-lo. Além disso, todas as anotações referentes ao modelo serão excluídas permanentemente.",
-            deu: "Möchten Sie den Patienten wirklich löschen? Bitte beachten Sie! Eine Wiederherstellung ist nicht mehr möglich. Zudem werden alle Notizen, die sich auf das Modell beziehen, dauerhaft gelöscht."
+            fra: "Voulez-vous vraiment supprimer le patient ? Notez bien! Il ne pourra plus être récupéré. De plus, toutes les notes liées au modèle seront définitivement supprimées.",
+            por: "Você realmente deseja excluir o paciente? Observação! Não será mais possível recuperá-lo. Além disso, todas as anotações referentes ao modelo serão excluídas permanentemente.",
+            deu: "Möchten Sie den Patienten wirklich löschen? Hinweis! Eine Wiederherstellung ist nicht mehr möglich. Zudem werden alle Notizen, die sich auf das Modell beziehen, dauerhaft gelöscht."
         },
         AggiungiPaziente: {
             ita: "Aggiungi un paziente",
@@ -2045,7 +2045,7 @@ DB.TXT = {
         },
         Cognome: {
             ita: "Cognome",
-            eng: "Family name",
+            eng: "Surname",
             esp: "Apellido",
             fra: "Nom de famille",
             por: "Sobrenome",
@@ -2085,7 +2085,7 @@ DB.TXT = {
         },
         Provincia: {
             ita: "Provincia",
-            eng: "Province",
+            eng: "Region",
             esp: "Provincia",
             fra: "Province",
             por: "Província",
@@ -2093,7 +2093,7 @@ DB.TXT = {
         },
         Stato: {
             ita: "Stato",
-            eng: "State",
+            eng: "Country",
             esp: "Estado",
             fra: "État",
             por: "Estado",
@@ -2277,7 +2277,7 @@ DB.TXT = {
         },
         Interventi: {
             ita: "Interventi chirurgici",
-            eng: "Surgical interventions",
+            eng: "Surgical operations",
             esp: "Intervenciones quirúrgicas",
             fra: "Interventions chirurgicales",
             por: "Intervenções cirúrgicas",
@@ -2285,7 +2285,7 @@ DB.TXT = {
         },
         InterventiSpiegazione: {
             ita: "Inserisci un intervento chirurgico ...",
-            eng: "Enter a surgical intervention ...",
+            eng: "Enter a surgical operations ...",
             esp: "Ingrese una intervención quirúrgica ...",
             fra: "Entrez une intervention chirurgicale ...",
             por: "Digite uma intervenção cirúrgica ...",
@@ -2301,7 +2301,7 @@ DB.TXT = {
         },
         AggiungiMedicina: {
             ita: "Aggiungi medicinale",
-            eng: "Add a medicinal",
+            eng: "Add a medicine",
             esp: "Agregar un medicamento",
             fra: "Ajouter un médicament",
             por: "Adicionar um medicamento",
@@ -2325,7 +2325,7 @@ DB.TXT = {
         },
         MedicinaPresente: {
             ita: "Il medicinale che vuoi aggiungere esiste già. Se non l'hai ancora aggiunta sceglila dall'elenco.",
-            eng: "The medicinal you want to add already exists. If you haven't added it yet, choose it from the list.",
+            eng: "The medicine you want to add already exists. If you haven't added it yet, choose it from the list.",
             esp: "El medicamento que deseas agregar ya existe. Si aún no lo has agregado, elígelo de la lista.",
             fra: "Le médicament que vous souhaitez ajouter existe déjà. Si vous ne l'avez pas encore ajouté, choisissez-le dans la liste.",
             por: "O medicamento que você deseja adicionar já existe. Se você ainda não o adicionou, escolha-o na lista.",
@@ -2349,7 +2349,7 @@ DB.TXT = {
         },
         InterventoPresente: {
             ita: "L'intervento chirurgico che vuoi aggiungere esiste già. Se non l'hai ancora aggiunta sceglila dall'elenco.",
-            eng: "The surgical intervention you want to add already exists. If you haven't added it yet, choose it from the list.",
+            eng: "The surgical operation you want to add already exists. If you haven't added it yet, choose it from the list.",
             esp: "La intervención quirúrgica que deseas agregar ya existe. Si aún no la has agregado, elígela de la lista.",
             fra: "L'intervention chirurgicale que vous souhaitez ajouter existe déjà. Si vous ne l'avez pas encore ajoutée, choisissez-la dans la liste.",
             por: "A intervenção cirúrgica que você deseja adicionar já existe. Se você ainda não a adicionou, escolha-a na lista.",
@@ -2445,7 +2445,7 @@ DB.TXT = {
         },
         Social: {
             ita: "Social usato",
-            eng: "Used social",
+            eng: "Used social network",
             esp: "Red social utilizada",
             fra: "Réseau social utilisé",
             por: "Rede social utilizada",
@@ -2852,14 +2852,14 @@ DB.TXT = {
         },
         ImportaMeridiani: {
             ita: "Importa meridiani da...",
-            eng: "Import meridiani from...",
+            eng: "Import meridians from...",
             esp: "Importar meridianos desde...",
             fra: "Importer des méridiens depuis...",
             por: "Importar meridianos de...",
             deu: "Meridiane importieren aus..."
         },
         ModificaCon: {
-            ita: "N.B: Per modificare questo sezione devi aprire ",
+            ita: "Per modificare questo sezione devi aprire ",
             eng: "To edit this section you must open ",
             esp: "Para editar esta sección debes abrir ",
             fra: "Pour modifier cette section, vous devez ouvrir ",
@@ -3070,7 +3070,7 @@ DB.TXT = {
         },
         ScoresSintomi: {
             ita: "Andamento dei sintomi",
-            eng: "Course of symptoms",
+            eng: "Symptoms evolution",
             esp: "Evolución de los síntomas",
             fra: "Évolution des symptômes",
             por: "Evolução dos sintomas",
@@ -3078,7 +3078,7 @@ DB.TXT = {
         },
         SintomoSpiegazione: {
             ita: "Inserisci un sintomo (es. mal di pancia)",
-            eng: "Enter a symptom (e.g. stomach ache)",
+            eng: "Enter a symptom (e.g. stomachache)",
             esp: "Ingresa un síntoma (por ejemplo, dolor de estómago)",
             fra: "Entrez un symptôme (par exemple, mal de ventre)",
             por: "Digite um sintoma (por exemplo, dor de barriga)",
@@ -3186,7 +3186,7 @@ DB.TXT = {
             ita: "Vuoi davvero eliminare la foto?",
             eng: "Do you really want to delete the photo?",
             esp: "¿Realmente quieres eliminar la foto?",
-            fra: "Voulez-vous vraiment supprimer la photo ?",
+            fra: "Voulez-vous vraiment supprimer la photo?",
             por: "Deseja realmente excluir a foto?",
             deu: "Möchten Sie das Foto wirklich löschen?"
         },
@@ -3207,21 +3207,21 @@ DB.TXT = {
             deu: "Auf dieser Seite werden alle auf Ihrem Gerät gespeicherten Fotos angezeigt."
         },
         SpaceGallery: {
-            ita: "Spazio occupato",
-            eng: "Occupied space",
-            esp: "Espacio ocupado",
-            fra: "Espace occupé",
-            por: "Espaço ocupado",
-            deu: "Belegter Speicherplatz"
-        },
-        NumberGallery: {
-            ita: "Totale foto",
-            eng: "Total photos",
-            esp: "Total de fotos",
-            fra: "Total des photos",
-            por: "Total de fotos",
-            deu: "Gesamtzahl der Fotos"
-        },
+			ita: "Spazio usato",
+			eng: "Used space",
+			esp: "Espacio utilizado",
+			fra: "Espace utilisé",
+			por: "Espaço utilizado",
+			deu: "Verwendeter Speicherplatz"
+		},
+		NumberGallery: {
+			ita: "Totale elementi",
+			eng: "Total items",
+			esp: "Elementos totales",
+			fra: "Nombre total d'éléments",
+			por: "Total de itens",
+			deu: "Gesamtanzahl der Elemente"
+		},
         DettagliGallery: {
             ita: "Dettagli",
             eng: "Details",
@@ -3336,11 +3336,11 @@ DB.TXT = {
         },
         FileNonConsentito: {
             ita: "Tipo di file non consentito. N.B. Puoi caricare solo immagini [listaEstensioni].",
-            eng: "File type not allowed. N.B. You can only upload [listaEstensioni] images.",
-            esp: "Tipo de archivo no permitido. N.B. Solo puedes cargar imágenes [listaEstensioni].",
-            fra: "Type de fichier non autorisé. N.B. Vous ne pouvez télécharger que des images [listaEstensioni].",
-            por: "Tipo de arquivo não permitido. N.B. Você só pode enviar imagens [listaEstensioni].",
-            deu: "Dateityp nicht erlaubt. N.B. Du kannst nur [listaEstensioni]-Bilder hochladen."
+            eng: "File type not allowed. Please note! You can only upload [listaEstensioni] images.",
+            esp: "Tipo de archivo no permitido. ¡Ten en cuenta! Solo puedes cargar imágenes [listaEstensioni].",
+            fra: "Type de fichier non autorisé. Notez bien! Vous ne pouvez télécharger que des images [listaEstensioni].",
+            por: "Tipo de arquivo não permitido. Observação! Você só pode enviar imagens [listaEstensioni].",
+            deu: "Dateityp nicht erlaubt. Hinweis! Du kannst nur [listaEstensioni]-Bilder hochladen."
         },
         DimensioneNonConsentita: {
             ita: "Non è consentito caricare file di dimensioni superiori ai [maxSize] MB. Il file che stai cercando di caricare è [size]MB.",
@@ -3450,11 +3450,11 @@ DB.TXT = {
         },
         ChiediEliminaCiclo: {
             ita: "Vuoi davvero eliminare l'intera cartella? N.B. Non sarà più possibile recuperarla. Inoltre, verranno cancellati definitivamente anche tutti i trattamenti contenuti in essa.",
-            eng: "Do you really want to delete the entire folder? N.B. It will no longer be possible to recover it. Furthermore, all the treatments contained within it will also be permanently deleted.",
-            esp: "¿Realmente deseas eliminar toda la carpeta? N.B. Ya no será posible recuperarla. Además, todos los tratamientos contenidos en ella también se eliminarán de forma permanente.",
-            fra: "Voulez-vous vraiment supprimer tout le dossier ? N.B. Il ne sera plus possible de le récupérer. De plus, tous les traitements qu'il contient seront également supprimés de manière permanente.",
-            por: "Você realmente deseja excluir a pasta inteira? N.B. Não será mais possível recuperá-la. Além disso, todos os tratamentos contidos nela também serão excluídos permanentemente.",
-            deu: "Möchtest du wirklich den gesamten Ordner löschen? N.B. Es wird nicht mehr möglich sein, ihn wiederherzustellen. Darüber hinaus werden auch alle darin enthaltenen Behandlungen dauerhaft gelöscht."
+            eng: "Do you really want to delete the entire folder? Please note! It will no longer be possible to recover it. Furthermore, all the treatments contained within it will also be permanently deleted.",
+            esp: "¿Realmente deseas eliminar toda la carpeta? ¡Ten en cuenta! Ya no será posible recuperarla. Además, todos los tratamientos contenidos en ella también se eliminarán de forma permanente.",
+            fra: "Voulez-vous vraiment supprimer tout le dossier ? Notez bien! Il ne sera plus possible de le récupérer. De plus, tous les traitements qu'il contient seront également supprimés de manière permanente.",
+            por: "Você realmente deseja excluir a pasta inteira? Observação! Não será mais possível recuperá-la. Além disso, todos os tratamentos contidos nela também serão excluídos permanentemente.",
+            deu: "Möchtest du wirklich den gesamten Ordner löschen? Hinweis! Es wird nicht mehr möglich sein, ihn wiederherzustellen. Darüber hinaus werden auch alle darin enthaltenen Behandlungen dauerhaft gelöscht."
         },
         SchedaCiclo: {
             ita: "Riepilogo",
@@ -3564,7 +3564,7 @@ DB.TXT = {
         },
         IntestazioneSpiegazione: {
             ita: "Intestazione dell'azienda...",
-            eng: "Header of the company...",
+            eng: "Company header...",
             esp: "Encabezado de documentos...",
             fra: "En-tête de l'entreprise...",
             por: "Cabeçalho da empresa...",
@@ -3590,7 +3590,7 @@ DB.TXT = {
         },
         Province: {
             ita: "Province",
-            eng: "Provinces",
+            eng: "Regions",
             esp: "Provincias",
             fra: "Provinces",
             por: "Províncias",
@@ -3598,7 +3598,7 @@ DB.TXT = {
         },
         Professioni: {
             ita: "Professioni",
-            eng: "Professions",
+            eng: "Jobs",
             esp: "Profesiones",
             fra: "Professions",
             por: "Profissões",
@@ -3686,7 +3686,7 @@ DB.TXT = {
         },
         InviaSmsPazienti: {
             ita: "Invia sms multipli",
-            eng: "Send multiple sms",
+            eng: "Send multiple texts",
             esp: "Enviar mensajes de texto múltiples",
             fra: "Envoyer des SMS multiples",
             por: "Enviar vários SMS",
@@ -3994,7 +3994,7 @@ DB.TXT = {
         },
         ClientiAppSpiegazione: {
             ita: "Seleziona un paziente o scrivi qui il suo nome ...",
-            eng: "Select a patient or write his name here ...",
+            eng: "Select a patient or write the name here ...",
             esp: "Selecciona un paciente o escribe su nombre aquí ...",
             fra: "Sélectionnez un patient ou écrivez son nom ici ...",
             por: "Selecione um paciente ou escreva o nome dele aqui ...",
@@ -4052,7 +4052,7 @@ DB.TXT = {
         },
         NoteCommunity: {
             ita: "Attenzione! Non hai ancora completato il tuo profilo, necessario per condividere i tuoi contenuti nella Community. Una volta memorizzato non sarà più possibile modificarlo",
-            eng: "Please note! Your profile, necessary to share your personal contents in the Community, is not complete yet. Once saved it will no longer be editable.",
+            eng: "Please note! Your profile, necessary to share your personal contents in the Community, is still not complete. Once saved it will no longer be editable.",
             esp: "¡Atención! Tu perfil no está completo, es necesario para compartir tus contenidos personales en la Comunidad. Una vez guardado, no se podrá editar.",
             fra: "Veuillez noter ! Votre profil, nécessaire pour partager vos contenus personnels dans la communauté, n'est pas encore complet. Une fois enregistré, il ne sera plus modifiable.",
             por: "Atenção! Seu perfil, necessário para compartilhar seus conteúdos pessoais na comunidade, ainda não está completo. Uma vez salvo, não será mais possível editá-lo.",
@@ -4274,7 +4274,7 @@ DB.TXT = {
         },
         GuidaPazientiTxt: {
             ita: "Da questo menu puoi gestire il tuo lavoro. Accedi ad una delle sezioni qui sotto per visualizzare, aggiungere e gestire le anagrafiche e le cartelle cliniche.",
-            eng: "From this menu you can manage your work. Access one of the sections below to view, add and manage personal data and medical records.",
+            eng: "From this menu you can manage your work. Access one of the sections below to view, add and manage personal data and medical files.",
             esp: "Desde este menú puedes gestionar tu trabajo. Accede a una de las secciones a continuación para ver, agregar y gestionar datos personales y historiales médicos.",
             fra: "À partir de ce menu, vous pouvez gérer votre travail. Accédez à l'une des sections ci-dessous pour afficher, ajouter et gérer les données personnelles et les dossiers médicaux.",
             por: "A partir deste menu, você pode gerenciar seu trabalho. Acesse uma das seções abaixo para visualizar, adicionar e gerenciar dados pessoais e prontuários médicos.",
@@ -4300,7 +4300,7 @@ DB.TXT = {
         // UTENTE
         Web: {
             ita: "Sito web",
-            eng: "Web site",
+            eng: "Website",
             esp: "Sitio web",
             fra: "Site web",
             por: "Site web",
@@ -4315,10 +4315,10 @@ DB.TXT = {
             deu: "Lebenslauf"
         },
         ProvinciaNascita: {
-            ita: "Provincia",
-            eng: "Province",
+            ita: "Provincia di nascita",
+            eng: "Region of birth",
             esp: "Provincia de nacimiento",
-            fra: "Province",
+            fra: "Province naissance",
             por: "Província de nascimento",
             deu: "Geburtsprovinz"
         },
@@ -4363,7 +4363,7 @@ DB.TXT = {
             deu: "Zeige deine E-Mail"
         },
         visScheda: {
-            ita: "Mostra la tua scheda",
+            ita: "Mostra il tuo profilo",
             eng: "Show your profile",
             esp: "Mostrar tu perfil",
             fra: "Afficher votre profil",
@@ -4371,7 +4371,7 @@ DB.TXT = {
             deu: "Zeige dein Profil"
         },
         azienda: {
-            ita: "E' un'azienda",
+            ita: "È un'azienda",
             eng: "It's a company",
             esp: "Es una empresa",
             fra: "C'est une entreprise",
@@ -4380,7 +4380,7 @@ DB.TXT = {
         },
         Registrati: {
             ita: "Registrati gratuitamente",
-            eng: "Sign-up free",
+            eng: "Sign-up for free",
             esp: "Regístrate gratis",
             fra: "Inscrivez-vous gratuitement",
             por: "Cadastre-se gratuitamente",
@@ -4414,7 +4414,7 @@ DB.TXT = {
         // UTENTE
         TestoRegistrazioneEspanso: {
             ita: "Con la registrazione a [§] avrai {10 giorni di prova gratuita di tutte le app} e allo scadere potrai usufruire di tutte le funzionalità di base dell'app:\n\n[#] Fino a 15 pazienti\n[#] Backup dei dati\n[#] Accesso multipiattaforma\n[#] Funzionalità della community\n[#] 10% di sconto su un prodotto [IAOMAI]",
-            eng: "With the registration to [§] you will have {10-day free trial of all apps} and upon expiry you will be able to use all the basic functions of the app:\n\n[#] Up to 15 patients\n[#] Data backup\n[#] Cross-platform access\n[#] Community functionality\n[#] 10% discount on [IAOMAI] product",
+            eng: "With the registration to [§] you will have {10 days free trial of all apps} and upon expiry you will be able to use all the basic functions of the app:\n\n[#] Up to 15 patients\n[#] Data backup\n[#] Cross-platform access\n[#] Community functionality\n[#] 10% discount on [IAOMAI] product",
             esp: "Al registrarte en [§], obtendrás {10 días de prueba gratuita de todas las aplicaciones} y al vencimiento podrás utilizar todas las funciones básicas de la aplicación:\n\n[#] Hasta 15 pacientes\n[#] Respaldo de datos\n[#] Acceso multiplataforma\n[#] Funciones de la comunidad\n[#] 10% de descuento en un producto [IAOMAI]",
             fra: "Avec l'inscription à [§], vous bénéficierez de {10 jours d'essai gratuit pour toutes les applications} et à l'expiration, vous pourrez utiliser toutes les fonctions de base de l'application:\n\n[#] Jusqu'à 15 patients\n[#] Sauvegarde des données\n[#] Accès multiplateforme\n[#] Fonctionnalité de communauté\n[#] 10% de réduction sur un produit [IAOMAI]",
             por: "Ao se registrar em [§], você terá {10 dias de teste gratuito de todos os aplicativos} e, ao expirar, poderá usar todas as funções básicas do aplicativo:\n\n[#] Até 15 pacientes\n[#] Backup de dados\n[#] Acesso multiplataforma\n[#] Funcionalidade da comunidade\n[#] Desconto de 10% em um produto [IAOMAI]",
@@ -4463,54 +4463,54 @@ DB.TXT = {
 
         // CONTROLLI VERSIONI
         MsgNoAnatomy: {
-            ita: "Con la versione gratuita è possibile visualizzare solo i dettagli anatomici Ossa, cuore e muscolo pettorale.",
+            ita: "Con la versione gratuita è possibile visualizzare solo i dettagli anatomici ossa, cuore e muscolo grande pettorale.",
             eng: "With the free version you can only view the anatomical details of bones, heart and pectoral major muscle.",
             esp: "Con la versión gratuita solo puedes ver los detalles anatómicos de los huesos, el corazón y el músculo pectoral mayor.",
             fra: "Avec la version gratuite, vous ne pouvez visualiser que les détails anatomiques des os, du cœur et du muscle grand pectoral.",
             por: "Com a versão gratuita, você só pode visualizar os detalhes anatômicos dos ossos, coração e músculo peitoral maior.",
             deu: "Mit der kostenlosen Version können Sie nur die anatomischen Details von Knochen, Herz und großen Brustmuskel anzeigen."
         },
-        MsgMaxPazienti1: {
-            ita: "Con la versione gratuita puoi gestire un solo paziente. Registrati gratuitamente per gestire fino a 15 pazienti o acquista un pacchetto Patients Full con cartelle cliniche illimitate!.",
-            eng: "With the free version you can manage only one patient. Register for free to manage up to 15 patients or purchase a Patients Full package with unlimited medical files!",
-            esp: "Con la versión gratuita solo puedes gestionar un paciente. ¡Regístrate gratis para gestionar hasta 15 pacientes o compra un paquete Patients Full con historiales médicos ilimitados!",
-            fra: "Avec la version gratuite, vous ne pouvez gérer qu'un seul patient. Inscrivez-vous gratuitement pour gérer jusqu'à 15 patients ou achetez un package Patients Full avec des dossiers médicaux illimités !",
-            por: "Com a versão gratuita, você só pode gerenciar um paciente. Cadastre-se gratuitamente para gerenciar até 15 pacientes ou adquira um pacote Patients Full com arquivos médicos ilimitados!",
-            deu: "Mit der kostenlosen Version können Sie nur einen Patienten verwalten. Registrieren Sie sich kostenlos, um bis zu 15 Patienten zu verwalten oder erwerben Sie ein Patients Full-Paket mit unbegrenzten medizinischen Akten!"
+        MsgMaxPazientiFree: {
+            ita: "Con la versione gratuita puoi gestire un solo paziente. Registrati gratuitamente per gestire fino a [n] pazienti o acquista un pacchetto Patients Full con cartelle cliniche illimitate!.",
+            eng: "With the free version you can manage only one patient. Register for free to manage up to [n] patients or purchase a Patients Full package with unlimited medical files!",
+            esp: "Con la versión gratuita solo puedes gestionar un paciente. ¡Regístrate gratis para gestionar hasta [n] pacientes o compra un paquete Patients Full con historiales médicos ilimitados!",
+            fra: "Avec la version gratuite, vous ne pouvez gérer qu'un seul patient. Inscrivez-vous gratuitement pour gérer jusqu'à [n] patients ou achetez un package Patients Full avec des dossiers médicaux illimités !",
+            por: "Com a versão gratuita, você só pode gerenciar um paciente. Cadastre-se gratuitamente para gerenciar até [n] pacientes ou adquira um pacote Patients Full com arquivos médicos ilimitados!",
+            deu: "Mit der kostenlosen Version können Sie nur einen Patienten verwalten. Registrieren Sie sich kostenlos, um bis zu [n] Patienten zu verwalten oder erwerben Sie ein Patients Full-Paket mit unbegrenzten medizinischen Akten!"
         },
-        MsgMaxPazienti15: {
-            ita: "Con la registrazione gratuita puoi gestire fino a 15 pazienti. Acquista un pacchetto Patients Full per cartelle cliniche illimitate!.",
-            eng: "With the free registration you can manage up to 15 patients. Purchase a Patients Full package for unlimited medical files!",
-            esp: "Con el registro gratuito puedes gestionar hasta 15 pacientes. ¡Adquiere un paquete Patients Full para historiales médicos ilimitados!",
-            fra: "Avec l'inscription gratuite, vous pouvez gérer jusqu'à 15 patients. Achetez un package Patients Full pour des dossiers médicaux illimités !",
-            por: "Com o registro gratuito, você pode gerenciar até 15 pacientes. Adquira um pacote Patients Full para arquivos médicos ilimitados!",
-            deu: "Mit der kostenlosen Registrierung können Sie bis zu 15 Patienten verwalten. Kaufen Sie ein Patients Full-Paket für unbegrenzte medizinische Akten!"
+        MsgMaxPazientiLogged: {
+            ita: "Con la registrazione gratuita puoi gestire fino a [n] pazienti. Acquista un pacchetto Patients Full per cartelle cliniche illimitate!.",
+            eng: "With the free registration you can manage up to [n] patients. Purchase a Patients Full package for unlimited medical files!",
+            esp: "Con el registro gratuito puedes gestionar hasta [n] pacientes. ¡Adquiere un paquete Patients Full para historiales médicos ilimitados!",
+            fra: "Avec l'inscription gratuite, vous pouvez gérer jusqu'à [n] patients. Achetez un package Patients Full pour des dossiers médicaux illimités !",
+            por: "Com o registro gratuito, você pode gerenciar até [n] pacientes. Adquira um pacote Patients Full para arquivos médicos ilimitados!",
+            deu: "Mit der kostenlosen Registrierung können Sie bis zu [n] Patienten verwalten. Kaufen Sie ein Patients Full-Paket für unbegrenzte medizinische Akten!"
         },
-        MsgMaxFornitori1: {
-            ita: "Con la versione gratuita puoi gestire un solo fornitore. Registrati gratuitamente per gestire fino a 5 fornitori o acquista un pacchetto Patients Full con archivi illimitati!.",
-            eng: "With the free version you can manage only one supplier. Register for free to manage up to 5 suppliers or purchase a Patients Full package with unlimited files!",
-            esp: "Con la versión gratuita solo puedes gestionar un proveedor. ¡Regístrate gratis para gestionar hasta 5 proveedores o compra un paquete Patients Full con archivos ilimitados!",
-            fra: "Avec la version gratuite, vous ne pouvez gérer qu'un seul fournisseur. Inscrivez-vous gratuitement pour gérer jusqu'à 5 fournisseurs ou achetez un package Patients Full avec des fichiers illimités !",
-            por: "Com a versão gratuita, você só pode gerenciar um fornecedor. Cadastre-se gratuitamente para gerenciar até 5 fornecedores ou adquira um pacote Patients Full com arquivos ilimitados!",
-            deu: "Mit der kostenlosen Version können Sie nur einen Lieferanten verwalten. Registrieren Sie sich kostenlos, um bis zu 5 Lieferanten zu verwalten oder erwerben Sie ein Patients Full-Paket mit unbegrenzten Dateien!"
+        MsgMaxFornitoriFree: {
+            ita: "Con la versione gratuita puoi gestire un solo fornitore. Registrati gratuitamente per gestire fino a [n] fornitori o acquista un pacchetto Patients Full con archivi illimitati!.",
+            eng: "With the free version you can manage only one supplier. Register for free to manage up to [n] suppliers or purchase a Patients Full package with unlimited archives!",
+            esp: "Con la versión gratuita solo puedes gestionar un proveedor. ¡Regístrate gratis para gestionar hasta [n] proveedores o compra un paquete Patients Full con archivos ilimitados!",
+            fra: "Avec la version gratuite, vous ne pouvez gérer qu'un seul fournisseur. Inscrivez-vous gratuitement pour gérer jusqu'à [n] fournisseurs ou achetez un package Patients Full avec des fichiers illimités !",
+            por: "Com a versão gratuita, você só pode gerenciar um fornecedor. Cadastre-se gratuitamente para gerenciar até [n] fornecedores ou adquira um pacote Patients Full com arquivos ilimitados!",
+            deu: "Mit der kostenlosen Version können Sie nur einen Lieferanten verwalten. Registrieren Sie sich kostenlos, um bis zu [n] Lieferanten zu verwalten oder erwerben Sie ein Patients Full-Paket mit unbegrenzten Dateien!"
         },
-        MsgMaxFornitori5: {
-            ita: "Con la registrazione gratuita puoi gestire fino a 5 fornitori. Acquista un pacchetto Patients Full per archivi illimitati!.",
-            eng: "With the free registration you can manage up to 5 suppliers. Purchase a Patients Full package for unlimited files!",
-            esp: "Con el registro gratuito puedes gestionar hasta 5 proveedores. ¡Adquiere un paquete Patients Full para archivos ilimitados!",
-            fra: "Avec l'inscription gratuite, vous pouvez gérer jusqu'à 5 fournisseurs. Achetez un package Patients Full pour des fichiers illimités !",
-            por: "Com o registro gratuito, você pode gerenciar até 5 fornecedores. Adquira um pacote Patients Full para arquivos ilimitados!",
-            deu: "Mit der kostenlosen Registrierung können Sie bis zu 5 Lieferanten verwalten. Kaufen Sie ein Patients Full-Paket für unbegrenzte Dateien!"
+        MsgMaxFornitoriLogged: {
+            ita: "Con la registrazione gratuita puoi gestire fino a [n] fornitori. Acquista un pacchetto Patients Full per archivi illimitati!.",
+            eng: "With the free registration you can manage up to [n] suppliers. Purchase a Patients Full package for unlimited archives!",
+            esp: "Con el registro gratuito puedes gestionar hasta [n] proveedores. ¡Adquiere un paquete Patients Full para archivos ilimitados!",
+            fra: "Avec l'inscription gratuite, vous pouvez gérer jusqu'à [n] fournisseurs. Achetez un package Patients Full pour des fichiers illimités !",
+            por: "Com o registro gratuito, você pode gerenciar até [n] fornecedores. Adquira um pacote Patients Full para arquivos ilimitados!",
+            deu: "Mit der kostenlosen Registrierung können Sie bis zu [n] Lieferanten verwalten. Kaufen Sie ein Patients Full-Paket für unbegrenzte Dateien!"
         },
-        MsgMaxServizi1: {
+        MsgMaxServiziFree: {
             ita: "Con la versione gratuita puoi gestire un solo pacchetto. Registrati gratuitamente per gestire fino a 5 pacchetti o acquista il modulo Schedario Pazienti con archivi illimitati!.",
-            eng: "With the free version you can manage only one pack. Register for free to manage up to 5 packs or purchase Medical File module with unlimited files!",
+            eng: "With the free version you can manage only one pack. Register for free to manage up to 5 packs or purchase Medical File module with unlimited archives!",
             esp: "Con la versión gratuita solo puedes gestionar un paquete. ¡Regístrate gratis para gestionar hasta 5 paquetes o compra el módulo de Archivo Médico con archivos ilimitados!",
             fra: "Avec la version gratuite, vous ne pouvez gérer qu'un seul pack. Inscrivez-vous gratuitement pour gérer jusqu'à 5 packs ou achetez le module Fichier Médical avec des fichiers illimités !",
             por: "Com a versão gratuita, você só pode gerenciar um pacote. Cadastre-se gratuitamente para gerenciar até 5 pacotes ou adquira o módulo de Arquivo Médico com arquivos ilimitados!",
             deu: "Mit der kostenlosen Version können Sie nur ein Paket verwalten. Registrieren Sie sich kostenlos, um bis zu 5 Pakete zu verwalten oder erwerben Sie das Medizinische Akten-Modul mit unbegrenzten Dateien!"
         },
-        MsgMaxServizi5: {
+        MsgMaxServiziLogged: {
             ita: "Con la registrazione gratuita puoi gestire fino a 5 pacchetti. Acquista il modulo Schedario Pazienti per archivi illimitati!.",
             eng: "With the free registration you can manage up to 5 packs. Purchase Medical File module for unlimited files!",
             esp: "Con el registro gratuito puedes gestionar hasta 5 paquetes. ¡Adquiere el módulo de Archivo Médico para archivos ilimitados!",
@@ -4519,20 +4519,20 @@ DB.TXT = {
             deu: "Mit der kostenlosen Registrierung können Sie bis zu 5 Pakete verwalten. Kaufen Sie das Medizinische Akten-Modul für unbegrenzte Dateien!"
         },
         MsgMaxProcedure: {
-            ita: "Con la versione gratuita puoi gestire una sola procedura. Acquista una licenza di AcupointsMap per gestire procedure illimitate!.",
-            eng: "With the free version you can manage only one procedure. Buy a AcupointsMap license to manage unlimited procedures!",
-            esp: "Con la versión gratuita solo puedes gestionar un procedimiento. ¡Compra una licencia de AcupointsMap para gestionar procedimientos ilimitados!",
-            fra: "Avec la version gratuite, vous ne pouvez gérer qu'une seule procédure. Achetez une licence AcupointsMap pour gérer des procédures illimitées !",
-            por: "Com a versão gratuita, você só pode gerenciar um procedimento. Compre uma licença do AcupointsMap para gerenciar procedimentos ilimitados!",
-            deu: "Mit der kostenlosen Version können Sie nur eine Prozedur verwalten. Kaufen Sie eine AcupointsMap-Lizenz, um unbegrenzte Prozeduren zu verwalten!"
+            ita: "Con la versione gratuita puoi gestire una sola procedura. Acquista una licenza per gestire procedure illimitate!.",
+            eng: "With the free version you can manage only one procedure. Buy a license to manage unlimited procedures!",
+            esp: "Con la versión gratuita solo puedes gestionar un procedimiento. ¡Compra una licencia para gestionar procedimientos ilimitados!",
+            fra: "Avec la version gratuite, vous ne pouvez gérer qu'une seule procédure. Achetez une licence pour gérer des procédures illimitées !",
+            por: "Com a versão gratuita, você só pode gerenciar um procedimento. Compre uma licença para gerenciar procedimentos ilimitados!",
+            deu: "Mit der kostenlosen Version können Sie nur eine Prozedur verwalten. Kaufen Sie eine Lizenz, um unbegrenzte Prozeduren zu verwalten!"
         },
         MsgMaxCicli: {
-            ita: "Con la versione gratuita puoi gestire al massimo 3 cartelle per paziente. Acquista un pacchetto Patients Full con cartelle illimitate!.",
-            eng: "With the free version you can manage a maximum of 3 folders per patient. Buy a Patients Full package with unlimited folders!",
-            esp: "Con la versión gratuita solo puedes gestionar un máximo de 3 carpetas por paciente. ¡Adquiere un paquete Patients Full con carpetas ilimitadas!",
-            fra: "Avec la version gratuite, vous pouvez gérer au maximum 3 dossiers par patient. Achetez un package Patients Full avec des dossiers illimités !",
-            por: "Com a versão gratuita, você pode gerenciar no máximo 3 pastas por paciente. Adquira um pacote Patients Full com pastas ilimitadas!",
-            deu: "Mit der kostenlosen Version können Sie maximal 3 Ordner pro Patient verwalten. Kaufen Sie ein Patients Full-Paket mit unbegrenzten Ordnern!"
+            ita: "Con la versione gratuita puoi gestire al massimo [n] cartelle per paziente. Acquista un pacchetto Patients Full con cartelle illimitate!.",
+            eng: "With the free version you can manage a maximum of [n] folders per patient. Buy a Patients Full package with unlimited folders!",
+            esp: "Con la versión gratuita solo puedes gestionar un máximo de [n] carpetas por paciente. ¡Adquiere un paquete Patients Full con carpetas ilimitadas!",
+            fra: "Avec la version gratuite, vous pouvez gérer au maximum [n] dossiers par patient. Achetez un package Patients Full avec des dossiers illimités !",
+            por: "Com a versão gratuita, você pode gerenciar no máximo [n] pastas por paciente. Adquira um pacote Patients Full com pastas ilimitadas!",
+            deu: "Mit der kostenlosen Version können Sie maximal [n] Ordner pro Patient verwalten. Kaufen Sie ein Patients Full-Paket mit unbegrenzten Ordnern!"
         },
         MsgFunzioneSoloPay: {
             ita: "Con la versione gratuita non è possibile utilizzare questa funzione.",
@@ -4586,7 +4586,7 @@ DB.TXT = {
         },
         Ossa: {
             ita: "Visualizza ossa, organi e visceri",
-            eng: "Show bones, organs and bowels",
+            eng: "Show bones, organs and viscera",
             esp: "Mostrar huesos, órganos y vísceras",
             fra: "Afficher les os, les organes et les viscères",
             por: "Mostrar ossos, órgãos e vísceras",
@@ -4660,11 +4660,11 @@ DB.TXT = {
         },
         ShiatsuMapDESCR: {
             ita: "Il set contiene i percorsi dei meridiani Shiatsu secondo la teoria di Shizuto Masunaga e le informazioni teoriche sugli elementi.\n\nIl set include anche:\n[anatomy_full]",
-            eng: "The set contains the paths of the Shiatsu meridians according to the theory of Shizuto Masunaga and the theoretical information on the elements.",
-            esp: "El set contiene los recorridos de los meridianos de Shiatsu según la teoría de Shizuto Masunaga y la información teórica sobre los elementos.",
-            fra: "L'ensemble contient les parcours des méridiens de Shiatsu selon la théorie de Shizuto Masunaga et les informations théoriques sur les éléments.",
-            por: "O conjunto contém os percursos dos meridianos de Shiatsu de acordo com a teoria de Shizuto Masunaga e as informações teóricas sobre os elementos.",
-            deu: "Das Set enthält die Pfade der Shiatsu-Meridiane nach der Theorie von Shizuto Masunaga und die theoretischen Informationen über die Elemente."
+            eng: "The set contains the paths of the Shiatsu meridians according to the theory of Shizuto Masunaga and the theoretical information on the elements.\n\nThe set includes also:\n[anatomy_full]",
+            esp: "El set contiene los recorridos de los meridianos de Shiatsu según la teoría de Shizuto Masunaga y la información teórica sobre los elementos.\n\nEl set también incluye:\n[anatomy_full]",
+            fra: "L'ensemble contient les parcours des méridiens de Shiatsu selon la théorie de Shizuto Masunaga et les informations théoriques sur les éléments.\n\nL’ensemble comprend également:\n[anatomy_full]",
+            por: "O conjunto contém os percursos dos meridianos de Shiatsu de acordo com a teoria de Shizuto Masunaga e as informações teóricas sobre os elementos.\n\nO conjunto também inclui:\n[anatomy_full]",
+            deu: "Das Set enthält die Pfade der Shiatsu-Meridiane nach der Theorie von Shizuto Masunaga und die theoretischen Informationen über die Elemente.\n\nDas Set beinhaltet auch:\n[anatomy_full]"
         },
         ReflessologiaPlantare: {
             ita: "ReflexologyMap",
@@ -4684,10 +4684,10 @@ DB.TXT = {
         },
         ReflessologiaPlantareDESCR: {
             ita: "Mappe e zone della reflessologia del piede secondo la visione occidentale.\n\nIl set include anche:\n[anatomy_full]",
-            eng: "Foot reflexology maps and zones according to the Western view.",
-            esp: "Mapas y zonas de reflexología del pie según la visión occidental.",
-            fra: "Cartes et zones de réflexologie plantaire selon la vision occidentale.",
-            por: "Mapas e zonas de reflexologia podal segundo a visão ocidental.",
+            eng: "Foot reflexology maps and zones according to the Western view.\n\nThe set includes also:\n[anatomy_full]",
+            esp: "Mapas y zonas de reflexología del pie según la visión occidental.\n\nEl set también incluye:\n[anatomy_full]",
+            fra: "Cartes et zones de réflexologie plantaire selon la vision occidentale.\n\nL’ensemble comprend également:\n[anatomy_full]",
+            por: "Mapas e zonas de reflexologia podal segundo a visão ocidental.\n\nO conjunto também inclui:\n[anatomy_full]",
             deu: "Fußreflexzonenkarten und Zonen nach westlicher Sichtweise.\n\nDas Set enthält auch:\n[anatomy_full]"
         },
         AuriculoMap: {
@@ -4708,10 +4708,10 @@ DB.TXT = {
         },
         AuriculoMapDESCR: {
             ita: "Il set contiene la mappa dei punti dell'auricologia e il trattamento dei disturbi attraverso l'auricoloterapia.\n\nIl set include anche:\n[anatomy_full]",
-            eng: "The set contains the map of points of auricology and the treatment of ailments through auriculotherapy.",
-            esp: "El set contiene el mapa de puntos de auriculología y el tratamiento de dolencias a través de la auriculoterapia.",
-            fra: "L'ensemble contient la carte des points d'auriculothérapie et le traitement des affections par l'auriculothérapie.",
-            por: "O conjunto contém o mapa de pontos de auriculoterapia e o tratamento de doenças por meio da auriculoterapia.",
+            eng: "The set contains the map of points of auricology and the treatment of ailments through auriculotherapy.\n\nThe set includes also:\n[anatomy_full]",
+            esp: "El set contiene el mapa de puntos de auriculología y el tratamiento de dolencias a través de la auriculoterapia.\n\nEl set también incluye:\n[anatomy_full]",
+            fra: "L'ensemble contient la carte des points d'auriculothérapie et le traitement des affections par l'auriculothérapie.\n\nL’ensemble comprend également:\n[anatomy_full]",
+            por: "O conjunto contém o mapa de pontos de auriculoterapia e o tratamento de doenças por meio da auriculoterapia.\n\nO conjunto também inclui:\n[anatomy_full]",
             deu: "Das Set enthält die Karte der Aurikulologiepunkte und die Behandlung von Beschwerden durch Aurikulotherapie.\n\nDas Set enthält auch:\n[anatomy_full]"
         },
         TriggerPoints: {
@@ -4732,10 +4732,10 @@ DB.TXT = {
         },
         TriggerPointsDESCR: {
             ita: "Mappa dei punti trigger e delle zone riflesse del dolore.\n\nIl set include anche:\n[anatomy_full]",
-            eng: "Map of trigger points and pain reflex zones.",
-            esp: "Mapa de puntos de activación y zonas reflejas del dolor.",
-            fra: "Carte des points de déclenchement et des zones réflexes de la douleur.",
-            por: "Mapa de pontos de gatilho e zonas reflexas de dor.",
+            eng: "Map of trigger points and pain reflex zones.\n\nThe set includes also:\n[anatomy_full]",
+            esp: "Mapa de puntos de activación y zonas reflejas del dolor.\n\nEl set también incluye:\n[anatomy_full]",
+            fra: "Carte des points de déclenchement et des zones réflexes de la douleur.\n\nL’ensemble comprend également:\n[anatomy_full]",
+            por: "Mapa de pontos de gatilho e zonas reflexas de dor.\n\nO conjunto também inclui:\n[anatomy_full]",
             deu: "Karte der Triggerpunkte und schmerzreflektorischen Zonen.\n\nDas Set enthält auch:\n[anatomy_full]"
         },
         Anatomy: {
@@ -4910,7 +4910,7 @@ DB.TXT = {
         },
         CaricamentoMeridiani: {
             ita: "Caricamento set di meridiani",
-            eng: "Loading meridian's set",
+            eng: "Loading meridians set",
             esp: "Cargando set de meridianos",
             fra: "Chargement de l'ensemble des méridiens",
             por: "Carregando conjunto de meridianos",
@@ -4973,7 +4973,7 @@ DB.TXT = {
             deu: "Nicht mehr anzeigen"
         },
         guida0: {
-            ita: "Utilizza l'icona dell'omino per scoprire l'anatomia del modello",
+            ita: "Utilizza l'icona dell'omino per scoprire l'anatomia del modello 3D",
             eng: "Use the man icon to discover the anatomy of the 3D model",
             esp: "Utiliza el icono del hombre para descubrir la anatomía del modelo 3D",
             fra: "Utilisez l'icône de l'homme pour découvrir l'anatomie du modèle 3D",
@@ -4997,7 +4997,7 @@ DB.TXT = {
             deu: "Verwenden Sie das Einstellungsmenü, um Ihre App anzupassen"
         },
         guida3: {
-            ita: "Comandi per il manichino",
+            ita: "Comandi per il modello 3D",
             eng: "Commands for the 3D model",
             esp: "Comandos para el modelo 3D",
             fra: "Commandes pour le modèle 3D",
@@ -5013,8 +5013,8 @@ DB.TXT = {
             deu: "Wählen Sie das Modell aus, das Sie anzeigen möchten"
         },
         guida_modello1: {
-            ita: "Sposta lo slide per controllare l'opacità di ogni livello anatomico",
-            eng: "Move the slide to control the opacity of each anatomical layer",
+            ita: "Sposta lo slider per controllare l'opacità di ogni livello anatomico",
+            eng: "Move the slider to control the opacity of each anatomical layer",
             esp: "Mueve la barra deslizante para controlar la opacidad de cada capa anatómica",
             fra: "Déplacez le curseur pour contrôler l'opacité de chaque couche anatomique",
             por: "Mova a barra deslizante para controlar a opacidade de cada camada anatômica",
@@ -5022,7 +5022,7 @@ DB.TXT = {
         },
         guida_modello2: {
             ita: "Apri l'elenco di muscoli, ossa, organi e visceri",
-            eng: "Open the list of muscles, bones, organs and bowels",
+            eng: "Open the list of muscles, bones, organs and viscera",
             esp: "Abre la lista de músculos, huesos, órganos y vísceras",
             fra: "Ouvrez la liste des muscles, des os, des organes et des viscères",
             por: "Abra a lista de músculos, ossos, órgãos e vísceras",
@@ -5054,7 +5054,7 @@ DB.TXT = {
         },
         ModelloPiede: {
             ita: "Modello piedi",
-            eng: "Select feet model",
+            eng: "Feet model",
             esp: "Modelo de pies",
             fra: "Modèle des pieds",
             por: "Modelo de pés",
@@ -5670,7 +5670,7 @@ DB.TXT = {
         },
         Organo_GENITALI: {
             ita: "GENITALI",
-            eng: "GENITALS",
+            eng: "GENITALIA",
             esp: "ÓRGANOS GENITALES",
             fra: "GÉNITAUX",
             por: "ÓRGÃOS GENITAIS",
@@ -5734,7 +5734,7 @@ DB.TXT = {
         },
         Organo_PROSTATA: {
             ita: "PROSTATA",
-            eng: "PROSTATE GLAND",
+            eng: "PROSTATE",
             esp: "PRÓSTATA",
             fra: "PROSTATE",
             por: "PRÓSTATA",
@@ -5758,10 +5758,10 @@ DB.TXT = {
         },
         Organo_MAMMELLE: {
             ita: "MAMMELLA",
-            eng: "BREASTS",
-            esp: "PECHOS",
-            fra: "SEINS",
-            por: "SEIOS",
+            eng: "BREAST",
+            esp: "PECHO",
+            fra: "SEIN",
+            por: "SEIO",
             deu: "BRÜSTE"
         },
         Organo_CERVELLO: {
@@ -5856,7 +5856,7 @@ DB.TXT = {
         },
         Osso_CARTILAGINE_PUBICA: {
             ita: "SINFISI PUBICA",
-            eng: "SYNPHISIS PUBIS",
+            eng: "SYMPHISIS PUBIS",
             esp: "SÍNFISIS PÚBICA",
             fra: "SYMPHYSE PUBIENNE",
             por: "SÍNFISE PÚBICA",
@@ -5952,10 +5952,10 @@ DB.TXT = {
         },
         Osso_EPISTROFEO: {
             ita: "EPISTROFEO",
-            eng: "AXIS",
+            eng: "EPISTROPHEUS",
             esp: "EPISTROFEO",
-            fra: "AXE",
-            por: "ÁXIS",
+            fra: "ÉPISTROPHEÉ",
+            por: "EPISTROFEO",
             deu: "ZWEITER HALSWIRBEL"
         },
         Osso_FALANGI_MANO: {
@@ -6176,7 +6176,7 @@ DB.TXT = {
         },
         Osso_DITO_2_F1: {
             ita: "PRIMA FALANGE 2° DITO",
-            eng: "PROXIMAL PHALANGE OF 2° TOE",
+            eng: "PROXIMAL PHALANGE OF 2nd TOE",
             esp: "FALANGE PROXIMAL DEL SEGUNDO DEDO",
             fra: "PHALANGE PROXIMALE DU 2E ORTEIL",
             por: "FALANGE PROXIMAL DO SEGUNDO DEDO",
@@ -6184,7 +6184,7 @@ DB.TXT = {
         },
         Osso_DITO_2_F2: {
             ita: "SECONDA FALANGE 2° DITO",
-            eng: "INTERMEDIATE PHALANGE OF 2° TOE",
+            eng: "INTERMEDIATE PHALANGE OF 2nd TOE",
             esp: "FALANGE INTERMEDIA DEL SEGUNDO DEDO",
             fra: "PHALANGE INTERMÉDIAIRE DU 2E ORTEIL",
             por: "FALANGE INTERMEDIÁRIA DO SEGUNDO DEDO",
@@ -6192,7 +6192,7 @@ DB.TXT = {
         },
         Osso_DITO_2_F3: {
             ita: "TERZA FALANGE 2° DITO",
-            eng: "DISTAL PHALANGE OF 2° TOE",
+            eng: "DISTAL PHALANGE OF 2nd TOE",
             esp: "FALANGE DISTAL DEL SEGUNDO DEDO",
             fra: "PHALANGE DISTALE DU 2E ORTEIL",
             por: "FALANGE DISTAL DO SEGUNDO DEDO",
@@ -6200,7 +6200,7 @@ DB.TXT = {
         },
         Osso_DITO_3_F1: {
             ita: "PRIMA FALANGE 3° DITO",
-            eng: "PROXIMAL PHALANGE OF 3° TOE",
+            eng: "PROXIMAL PHALANGE OF 3rd TOE",
             esp: "FALANGE PROXIMAL DEL TERCER DEDO",
             fra: "PHALANGE PROXIMALE DU 3E ORTEIL",
             por: "FALANGE PROXIMAL DO TERCEIRO DEDO",
@@ -6208,7 +6208,7 @@ DB.TXT = {
         },
         Osso_DITO_3_F2: {
             ita: "SECONDA FALANGE 3° DITO",
-            eng: "INTERMEDIATE PHALANGE OF 3° TOE",
+            eng: "INTERMEDIATE PHALANGE OF 3rd TOE",
             esp: "FALANGE INTERMEDIA DEL TERCER DEDO",
             fra: "PHALANGE INTERMÉDIAIRE DU 3E ORTEIL",
             por: "FALANGE INTERMEDIÁRIA DO TERCEIRO DEDO",
@@ -6216,7 +6216,7 @@ DB.TXT = {
         },
         Osso_DITO_3_F3: {
             ita: "TERZA FALANGE 3° DITO",
-            eng: "DISTAL PHALANGE OF 3° TOE",
+            eng: "DISTAL PHALANGE OF 3rd TOE",
             esp: "FALANGE DISTAL DEL TERCER DEDO",
             fra: "PHALANGE DISTALE DU 3E ORTEIL",
             por: "FALANGE DISTAL DO TERCEIRO DEDO",
@@ -6224,7 +6224,7 @@ DB.TXT = {
         },
         Osso_DITO_4_F1: {
             ita: "PRIMA FALANGE 4° DITO",
-            eng: "PROXIMAL PHALANGE OF 4° TOE",
+            eng: "PROXIMAL PHALANGE OF 4th TOE",
             esp: "FALANGE PROXIMAL DEL CUARTO DEDO",
             fra: "PHALANGE PROXIMALE DU 4E ORTEIL",
             por: "FALANGE PROXIMAL DO QUARTO DEDO",
@@ -6232,7 +6232,7 @@ DB.TXT = {
         },
         Osso_DITO_4_F2: {
             ita: "SECONDA FALANGE 4° DITO",
-            eng: "INTERMEDIATE PHALANGE OF 4° TOE",
+            eng: "INTERMEDIATE PHALANGE OF 4th TOE",
             esp: "FALANGE INTERMEDIA DEL CUARTO DEDO",
             fra: "PHALANGE INTERMÉDIAIRE DU 4E ORTEIL",
             por: "FALANGE INTERMEDIÁRIA DO QUARTO DEDO",
@@ -6240,7 +6240,7 @@ DB.TXT = {
         },
         Osso_DITO_4_F3: {
             ita: "TERZA FALANGE 4° DITO",
-            eng: "DISTAL PHALANGE OF 4° TOE",
+            eng: "DISTAL PHALANGE OF 4th TOE",
             esp: "FALANGE DISTAL DEL CUARTO DEDO",
             fra: "PHALANGE DISTALE DU 4E ORTEIL",
             por: "FALANGE DISTAL DO QUARTO DEDO",
@@ -6248,7 +6248,7 @@ DB.TXT = {
         },
         Osso_DITO_5_F1: {
             ita: "PRIMA FALANGE 5° DITO",
-            eng: "PROXIMAL PHALANGE OF 5° TOE",
+            eng: "PROXIMAL PHALANGE OF 5th TOE",
             esp: "FALANGE PROXIMAL DEL QUINTO DEDO",
             fra: "PHALANGE PROXIMALE DU 5E ORTEIL",
             por: "FALANGE PROXIMAL DO QUINTO DEDO",
@@ -6256,7 +6256,7 @@ DB.TXT = {
         },
         Osso_DITO_5_F2: {
             ita: "SECONDA FALANGE 5° DITO",
-            eng: "INTERMEDIATE PHALANGE OF 5° TOE",
+            eng: "INTERMEDIATE PHALANGE OF 5th TOE",
             esp: "FALANGE INTERMEDIA DEL QUINTO DEDO",
             fra: "PHALANGE INTERMÉDIAIRE DU 5E ORTEIL",
             por: "FALANGE INTERMEDIÁRIA DO QUINTO DEDO",
@@ -6264,7 +6264,7 @@ DB.TXT = {
         },
         Osso_DITO_5_F3: {
             ita: "TERZA FALANGE 5° DITO",
-            eng: "DISTAL PHALANGE OF 4° TOE",
+            eng: "DISTAL PHALANGE OF 5th TOE",
             esp: "FALANGE DISTAL DEL QUINTO DEDO",
             fra: "PHALANGE DISTALE DU 5E ORTEIL",
             por: "FALANGE DISTAL DO QUINTO DEDO",
@@ -6272,7 +6272,7 @@ DB.TXT = {
         },
 		Osso_METATARSO_1: {
             ita: "1° METATARSO",
-            eng: "1° METATARSAL",
+            eng: "1st METATARSAL",
             esp: "METATARSO 1",
             fra: "1er MÉTATARSE",
             por: "1° METATARSO",
@@ -6280,7 +6280,7 @@ DB.TXT = {
         },
         Osso_METATARSO_2: {
             ita: "2° METATARSO",
-            eng: "2° METATARSAL",
+            eng: "2nd METATARSAL",
             esp: "METATARSO 2",
             fra: "2e MÉTATARSE",
             por: "2° METATARSO",
@@ -6288,7 +6288,7 @@ DB.TXT = {
         },
         Osso_METATARSO_3: {
             ita: "3° METATARSO",
-            eng: "3° METATARSAL",
+            eng: "3rd METATARSAL",
             esp: "METATARSO 3",
             fra: "3e MÉTATARSE",
             por: "3° METATARSO",
@@ -6296,7 +6296,7 @@ DB.TXT = {
         },
         Osso_METATARSO_4: {
             ita: "4° METATARSO",
-            eng: "4° METATARSAL",
+            eng: "4th METATARSAL",
             esp: "METATARSO 4",
             fra: "4e MÉTATARSE",
             por: "4° METATARSO",
@@ -6304,7 +6304,7 @@ DB.TXT = {
         },
         Osso_METATARSO_5: {
             ita: "5° METATARSO",
-            eng: "5° METATARSAL",
+            eng: "5th METATARSAL",
             esp: "METATARSO 5",
             fra: "5e MÉTATARSE",
             por: "5° METATARSO",
@@ -6340,7 +6340,7 @@ DB.TXT = {
             ita: "RETTO DELL'ADDOME",
             eng: "RECTUS ABDOMINIS",
             esp: "RECTO DEL ABDOMEN",
-            fra: "MUSCLE DROIT DE L'ABDOMEN",
+            fra: "DROIT DE L'ABDOMEN",
             por: "RETO DO ABDOME",
             deu: "GERADER BAUCHMUSKEL"
         },
@@ -6348,17 +6348,17 @@ DB.TXT = {
             ita: "OBLIQUO ESTERNO DELL'ADDOME",
             eng: "ABDOMINAL EXTERNAL OBLIQUE",
             esp: "OBLICUO EXTERNO DEL ABDOMEN",
-            fra: "MUSCLE OBLIQUE EXTERNE DE L'ABDOMEN",
+            fra: "OBLIQUE EXTERNE DE L'ABDOMEN",
             por: "OBLÍQUO EXTERNO DO ABDOME",
-            deu: "ÄUSSERER SCHRÄGER BAUCHMUSKEL"
+            deu: "ÄUSSERER SCHRÄGER BAUCH"
         },
         Muscolo_OBLIQUO_INTERNO_ADDOME: {
             ita: "OBLIQUO INTERNO DELL'ADDOME",
             eng: "ABDOMINAL INTERNAL OBLIQUE",
             esp: "OBLICUO INTERNO DEL ABDOMEN",
-            fra: "MUSCLE OBLIQUE INTERNE DE L'ABDOMEN",
+            fra: "OBLIQUE INTERNE DE L'ABDOMEN",
             por: "OBLÍQUO INTERNO DO ABDOME",
-            deu: "INNERER SCHRÄGER BAUCHMUSKEL"
+            deu: "INNERER SCHRÄGER BAUCH"
         },
         Muscolo_DENTATO_ANTERIORE: {
             ita: "DENTATO ANTERIORE",
@@ -6374,7 +6374,7 @@ DB.TXT = {
             esp: "PECTORAL MAYOR",
             fra: "GRAND PECTORAL",
             por: "PEITORAL MAIOR",
-            deu: "GROSSE BRUSTMUSKEL"
+            deu: "GROSSE BRUST"
         },
         Muscolo_INFRASPINATO: {
             ita: "INFRASPINATO",
@@ -6390,7 +6390,7 @@ DB.TXT = {
             esp: "REDONDO MAYOR",
             fra: "GRAND ROND",
             por: "TERES MAJOR",
-            deu: "GROSSER RUNDER MUSKEL"
+            deu: "GROSSER RUNDER"
         },
         Muscolo_PICCOLO_ROTONDO: {
             ita: "PICCOLO ROTONDO",
@@ -6398,7 +6398,7 @@ DB.TXT = {
             esp: "REDONDO MENOR",
             fra: "PETIT ROND",
             por: "TERES MINOR",
-            deu: "KLEINER RUNDER MUSKEL"
+            deu: "KLEINER RUNDER"
         },
         Muscolo_GRANDE_GLUTEO: {
             ita: "GRANDE GLUTEO",
@@ -6420,57 +6420,57 @@ DB.TXT = {
             ita: "MEDIO GLUTEO",
             eng: "GLUTEUS MEDIUS",
             esp: "GLÚTEO MEDIO",
-            fra: "MUSCLE MOYEN FESSIER",
+            fra: "MOYEN FESSIER",
             por: "GLÚTEO MÉDIO",
-            deu: "MUSCULUS GLUTEUS MEDIUS"
+            deu: "GLUTEUS MEDIUS"
         },
         Muscolo_TRAPEZIO: {
             ita: "TRAPEZIO",
             eng: "TRAPEZIUS",
             esp: "TRAPECIO",
-            fra: "MUSCLE TRAPÈZE",
+            fra: "TRAPÈZE",
             por: "TRAPEZIO",
-            deu: "MUSKEL TRAPEZ"
+            deu: "TRAPEZ"
         },
         Muscolo_FRONTALE: {
             ita: "FRONTALE",
             eng: "FRONTALIS",
             esp: "FRONTAL",
-            fra: "MUSCLE FRONTAL",
+            fra: "FRONTAL",
             por: "FRONTAL",
-            deu: "MUSKEL FRONTALE"
+            deu: "FRONTALE"
         },
         Muscolo_OCCIPITALE: {
             ita: "OCCIPITALE",
             eng: "OCCIPITALIS",
             esp: "OCCIPITAL",
-            fra: "MUSCLE OCCIPITAL",
+            fra: "OCCIPITAL",
             por: "OCCIPITAL",
-            deu: "MUSKEL OCCIPITALIS"
+            deu: "OCCIPITALIS"
         },
         Muscolo_ORBICOLARE_DELL_OCCHIO: {
             ita: "ORBICOLARE DELL'OCCHIO",
             eng: "ORBICULARIS OCULI",
             esp: "ORBICULAR DE LOS OJOS",
-            fra: "MUSCLE ORBICULAIRE DE L'ŒIL",
+            fra: "ORBICULAIRE DE L'ŒIL",
             por: "ORBICULAR DOS OLHOS",
-            deu: "MUSKEL ORBICULARIS OCULI"
+            deu: "ORBICULARIS OCULI"
         },
         Muscolo_TEMPORALE: {
             ita: "TEMPORALE",
             eng: "TEMPOROPARIETALIS",
             esp: "TEMPOROPARIETAL",
-            fra: "MUSCLE TEMPORO-PARIÉTAL",
+            fra: "TEMPORO-PARIÉTAL",
             por: "TEMPOROPARIETAL",
-            deu: "MUSKEL TEMPOROPARIETALIS"
+            deu: "TEMPOROPARIETALIS"
         },
         Muscolo_MASSETERE: {
             ita: "MASSETERE",
             eng: "MASSETER",
             esp: "MASÉTERO",
-            fra: "MUSCLE MASSETER",
+            fra: "MASSETER",
             por: "MASSETER",
-            deu: "MUSKEL MASSETER"
+            deu: "MASSETER"
         },
         Muscolo_PROCERO: {
             ita: "PROCERO",
@@ -6484,162 +6484,161 @@ DB.TXT = {
             ita: "ZIGOMATICO",
             eng: "ZYGOMATICUS",
             esp: "ZIGOMÁTICO",
-            fra: "MUSCLE ZYGOMATIQUE",
+            fra: "ZYGOMATIQUE",
             por: "ZIGOMÁTICO",
-            deu: "MUSKEL ZYGOMATICUS"
+            deu: "ZYGOMATICUS"
         },
         Muscolo_ELEVATORE_DEL_LABBRO: {
             ita: "ELEVATORE DEL LABBRO",
             eng: "LEVATOR LABII SUPERIORIS",
             esp: "LEVANTADOR DEL LABIO SUPERIOR",
-            fra: "MUSCLE LEVATEUR DE LA LÈVRE SUPÉRIEURE",
+            fra: "LEVATEUR DE LA LÈVRE SUPÉRIEURE",
             por: "LEVANTADOR DO LÁBIO SUPERIOR",
-            deu: "MUSKEL LEVATOR LABII SUPERIORIS"
+            deu: "LEVATOR LABII SUPERIORIS"
         },
         Muscolo_DEPRESSORE_ANGOLO_BOCCA: {
             ita: "DEPRESSORE ANGOLO DELLA BOCCA",
             eng: "DEPRESSOR ANGULI ORIS",
             esp: "DEPRESOR DEL ÁNGULO DE LA BOCA",
-            fra: "MUSCLE DÉPRESSEUR DE L'ANGLE DE LA BOUCHE",
+            fra: "DÉPRESSEUR DE L'ANGLE DE LA BOUCHE",
             por: "DEPRESSOR DO CANTO DA BOCA",
-            deu: "MUSKEL DEPRESSOR ANGULI ORIS"
+            deu: "DEPRESSOR ANGULI ORIS"
         },
         Muscolo_ELEVATORE_ALA_NASO: {
             ita: "ELEVATORE ALA DEL NASO",
             eng: "LEVATOR LABII SUP. ALAEQUE NASI",
             esp: "ELEVADOR DEL ALA DE LA NARIZ",
-            fra: "MUSCLE ÉLÉVATEUR DE L'AILE DU NEZ",
+            fra: "ÉLÉVATEUR DE L'AILE DU NEZ",
             por: "LEVANTADOR DA ALETA DO NARIZ",
-            deu: "MUSKEL LEVATOR LABII SUP. ALAEQUE NASI"
+            deu: "LEVATOR LABII SUP. ALAEQUE NASI"
         },
         Muscolo_CORRUGATORE: {
             ita: "CORRUGATORE",
             eng: "CORRUGATOR SUPERCILII",
             esp: "CORRUGADOR",
-            fra: "MUSCLE CORRUGATEUR DU SOURCIL",
+            fra: "CORRUGATEUR DU SOURCIL",
             por: "CORRUGADOR",
-            deu: "MUSKEL CORRUGATOR SUPERCILII"
+            deu: "CORRUGATOR SUPERCILII"
         },
         Muscolo_BUCCINATORE: {
             ita: "BUCCINATORE",
             eng: "BUCCINATOR",
             esp: "BUCCINADOR",
-            fra: "MUSCLE BUCCINATEUR",
+            fra: "BUCCINATEUR",
             por: "BUCCINADOR",
-            deu: "MUSKEL BUCCINATOR"
+            deu: "BUCCINATOR"
         },
         Muscolo_PLATISMA: {
             ita: "PLATISMA",
             eng: "PLATYSMA",
             esp: "PLATISMA",
-            fra: "MUSCLE PLATYSMA",
+            fra: "PLATYSMA",
             por: "PLATISMA",
-            deu: "MUSKEL PLATYSMA"
+            deu: "PLATYSMA"
         },
         Muscolo_RISORIO: {
             ita: "RISORIO",
             eng: "RISORIUS",
             esp: "RISORIO",
-            fra: "MUSCLE RISORIUS",
+            fra: "RISORIUS",
             por: "RISÓRIO",
-            deu: "MUSKEL RISORIUS"
+            deu: "RISORIUS"
         },
         Muscolo_DEPRESSORE_LABBRO: {
             ita: "DEPRESSORE DEL LABBRO",
             eng: "DEPRESSOR LABII INFERIORIS",
             esp: "DEPRESOR DEL LABIO INFERIOR",
-            fra: "MUSCLE DÉPRESSEUR DE LA LÈVRE INFÉRIEURE",
+            fra: "DÉPRESSEUR DE LA LÈVRE INFÉRIEURE",
             por: "DEPRESSOR DO LÁBIO INFERIOR",
-            deu: "MUSKEL DEPRESSOR LABII INFERIORIS"
+            deu: "DEPRESSOR LABII INFERIORIS"
         },
         Muscolo_ORBICOLARE_BOCCA: {
             ita: "ORBICOLARE DELLA BOCCA",
             eng: "ORBICULARIS ORIS",
             esp: "ORBICULAR DE LA BOCA",
-            fra: "MUSCLE ORBICULAIRE DE LA BOUCHE",
+            fra: "ORBICULAIRE DE LA BOUCHE",
             por: "ORBICULAR DOS LÁBIOS",
-            deu: "MUSKEL ORBICULARIS ORIS"
+            deu: "ORBICULARIS ORIS"
         },
         Muscolo_NASALE: {
             ita: "NASALE",
             eng: "NASALIS",
             esp: "NASAL",
-            fra: "MUSCLE NASAL",
+            fra: "NASAL",
             por: "NASAL",
-            deu: "MUSKEL NASALIS"
+            deu: "NASALIS"
         },
         Muscolo_MENTALE: {
             ita: "MENTALE",
             eng: "MENTALIS",
             esp: "MENTÓN",
-            fra: "MUSCLE MENTONNIER",
+            fra: "MENTONNIER",
             por: "MENTAL",
-            deu: "MUSKEL MENTALIS"
+            deu: "MENTALIS"
         },
         Muscolo_MILOIOIDEO: {
             ita: "MILOIOIDEO",
             eng: "MYLOHYOID",
             esp: "MILOHIOIDEO",
-            fra: "MUSCLE MYLO-HYOÏDIEN",
+            fra: "MYLO-HYOÏDIEN",
             por: "MILOHIOIDEO",
-            deu: "MUSKEL MYLOHYOIDEUS"
+            deu: "MYLOHYOIDEUS"
         },
         Muscolo_STILOIOIDEO: {
             ita: "STILOIOIDEO",
             eng: "STYLOHYOID",
             esp: "ESTILOHIOIDEO",
-            fra: "MUSCLE STYLO-HYOÏDIEN",
+            fra: "STYLO-HYOÏDIEN",
             por: "ESTILOHIOIDEO",
-            deu: "MUSKEL STYLOHYOIDEUS"
+            deu: "STYLOHYOIDEUS"
         },
         Muscolo_DIGASTRICO: {
             ita: "DIGASTRICO",
             eng: "DIGASTRIC",
             esp: "DIGÁSTRICO",
-            fra: "MUSCLE DIGASTRIQUE",
+            fra: "DIGASTRIQUE",
             por: "DIGÁSTRICO",
-            deu: "MUSKEL DIGASTRICUS"
+            deu: "DIGASTRICUS"
         },
         Muscolo_STERNOCLEIDOMASTOIDEO: {
             ita: "STERNOCLEIDOMASTOIDEO",
             eng: "STERNOCLEIDOMASTOID",
             esp: "ESTERNOCLEIDOMASTOIDEO",
-            fra: "MUSCLE STERNOCLEIDOMASTOÏDIEN",
+            fra: "STERNOCLEIDOMASTOÏDIEN",
             por: "ESTERNOCLIDOMASTOIDEO",
-            deu: "MUSKEL STERNOCLEIDOMASTOIDEUS"
+            deu: "STERNOCLEIDOMASTOIDEUS"
         },
         Muscolo_STERNOIOIDEO: {
             ita: "STERNOIOIDEO",
             eng: "STERNOHYOID",
             esp: "ESTERNOHIOIDEO",
-            fra: "MUSCLE STERNO-HYOÏDIEN",
+            fra: "STERNO-HYOÏDIEN",
             por: "ESTERNOHIOIDEO",
-            deu: "MUSKEL STERNOHYOIDEUS"
+            deu: "STERNOHYOIDEUS"
         },
         Muscolo_OMOIOIDEO: {
             ita: "OMOIOIDEO",
             eng: "OMOHYOID",
             esp: "OMOHIOIDEO",
-            fra: "MUSCLE OMO-HYOÏDIEN",
+            fra: "OMO-HYOÏDIEN",
             por: "OMOHIOIDEO",
-            deu: "MUSKEL OMOHYOIDEUS"
+            deu: "OMOHYOIDEUS"
         },
         Muscolo_TIROIDEO: {
             ita: "TIROIDEO",
             eng: "THYROHYOID",
             esp: "TIROIDES",
-            fra: "MUSCLE THYRO-HYOÏDIEN",
+            fra: "THYRO-HYOÏDIEN",
             por: "TIROHIOIDEO",
-            deu: "MUSKEL THYROHYOIDEUS"
+            deu: "THYROHYOIDEUS"
         },
         Muscolo_SCALENI: {
             ita: "SCALENI",
-            eng: "SCALENE MUSCLES",
+            eng: "SCALENES",
             esp: "ESCALENOS",
-
-            fra: "MUSCLES SCALÈNES",
+            fra: "SCALÈNES",
             por: "ESCALENOS",
-            deu: "MUSKELN DES SCHIEFHALSMUSKELS"
+            deu: "SCHIEFHALSMUSKELS"
         },
         Muscolo_SPLENIO_DELLA_TESTA: {
             ita: "SPLENIO DELLA TESTA",
@@ -6647,7 +6646,7 @@ DB.TXT = {
             esp: "ESPLENIO DE LA CABEZA",
             fra: "SPLENIUS DE LA TÊTE",
             por: "SPLENIUS DA CABEÇA",
-            deu: "MUSKEL SPLENIUS CAPITIS"
+            deu: "SPLENIUS CAPITIS"
         },
         Muscolo_ELEVATORE_DELLA_SCAPOLA: {
             ita: "ELEVATORE DELLA SCAPOLA",
@@ -6655,15 +6654,15 @@ DB.TXT = {
             esp: "ELEVADOR DE LA ESCÁPULA",
             fra: "ÉLÉVATEUR DE LA SCAPULA",
             por: "ELEVADOR DA ESCÁPULA",
-            deu: "MUSKEL LEVATOR SCAPULAE"
+            deu: "LEVATOR SCAPULAE"
         },
         Muscolo_SARTORIO: {
             ita: "SARTORIO",
             eng: "SARTORIUS",
             esp: "SARTORIO",
-            fra: "MUSCLE SARTORIUS",
+            fra: "SARTORIUS",
             por: "SARTÓRIO",
-            deu: "MUSKEL SARTORIUS"
+            deu: "SARTORIUS"
         },
         Muscolo_QUADRICIPITE_FEMORALE: {
             ita: "QUADRICIPITE FEMORALE",
@@ -6671,7 +6670,7 @@ DB.TXT = {
             esp: "CUÁDRICEPS FEMORAL",
             fra: "QUADRICEPS FÉMORAL",
             por: "QUADRÍCEPS FEMORAL",
-            deu: "MUSKEL QUADRICEPS FEMORIS"
+            deu: "QUADRICEPS FEMORIS"
         },
         Muscolo_VASTO_LATERALE: {
             ita: "VASTO LATERALE",
@@ -6679,7 +6678,7 @@ DB.TXT = {
             esp: "VASTO LATERAL",
             fra: "VASTE LATÉRAL",
             por: "VASTO LATERAL",
-            deu: "MUSKEL VASTUS LATERALIS"
+            deu: "VASTUS LATERALIS"
         },
         Muscolo_VASTO_MEDIALE: {
             ita: "VASTO MEDIALE",
@@ -6687,47 +6686,47 @@ DB.TXT = {
             esp: "VASTO MEDIAL",
             fra: "VASTE MÉDIAL",
             por: "VASTO MEDIAL",
-            deu: "MUSKEL VASTUS MEDIALIS"
+            deu: "VASTUS MEDIALIS"
         },
         Muscolo_RETTO: {
             ita: "RETTO DEL FEMORE",
             eng: "RECTUS FEMORIS",
             esp: "RECTO FEMORAL",
-            fra: "MUSCLE DROIT FÉMORAL",
+            fra: "DROIT FÉMORAL",
             por: "RETO FEMORAL",
-            deu: "MUSKEL RECTUS FEMORIS"
+            deu: "RECTUS FEMORIS"
         },
         Muscolo_GRACILE: {
             ita: "GRACILE",
             eng: "GRACILIS",
             esp: "GRACIL",
-            fra: "MUSCLE GRACILE",
+            fra: "GRACILE",
             por: "GRÁCIL",
-            deu: "MUSKEL GRACILIS"
+            deu: "GRACILIS"
         },
         Muscolo_ADDUTTORE_LUNGO: {
             ita: "ADDUTTORE LUNGO",
             eng: "ADDUCTOR LONGUS",
             esp: "ADUCTOR LARGO",
-            fra: "MUSCLE LONG ADDUCTEUR",
+            fra: "LONG ADDUCTEUR",
             por: "ADUTOR LONGO",
-            deu: "MUSKEL ADDUCTOR LONGUS"
+            deu: "ADDUCTOR LONGUS"
         },
         Muscolo_PETTINEO: {
             ita: "PETTINEO",
             eng: "PECTINEUS",
             esp: "PECTÍNEO",
-            fra: "MUSCLE PECTINE",
+            fra: "PECTINE",
             por: "PECTÍNEO",
-            deu: "MUSKEL PECTINEUS"
+            deu: "PECTINEUS"
         },
         Muscolo_ILEO: {
             ita: "ILEO",
             eng: "ILIACUS",
             esp: "ILÍACO",
-            fra: "MUSCLE ILIAQUE",
+            fra: "ILIAQUE",
             por: "ILÍACO",
-            deu: "MUSKEL ILIACUS"
+            deu: "ILIACUS"
         },
         Muscolo_GRANDE_PSOAS: {
             ita: "GRANDE PSOAS",
@@ -6735,7 +6734,7 @@ DB.TXT = {
             esp: "PSOAS MAYOR",
             fra: "GRAND PSOAS",
             por: "PSOAS MAIOR",
-            deu: "MUSKEL PSOAS MAJOR"
+            deu: "PSOAS MAJOR"
         },
         Muscolo_BICIPITE_FEMORALE: {
             ita: "BICIPITE FEMORALE",
@@ -6743,7 +6742,7 @@ DB.TXT = {
             esp: "BÍCEPS FEMORAL",
             fra: "BICEPS FÉMORAL",
             por: "BÍCEPS FEMORAL",
-            deu: "MUSKEL BICEPS FEMORIS"
+            deu: "BICEPS FEMORIS"
         },
         Muscolo_SEMITENDINOSO: {
             ita: "SEMITENDINOSO",
@@ -6751,7 +6750,7 @@ DB.TXT = {
             esp: "SEMITENDINOSO",
             fra: "SEMITENDINEUX",
             por: "SEMITENDÍNEO",
-            deu: "MUSKEL SEMITENDINOSUS"
+            deu: "SEMITENDINOSUS"
         },
         Muscolo_SEMIMEMBRANOSO: {
             ita: "SEMIMEMBRANOSO",
@@ -6759,7 +6758,7 @@ DB.TXT = {
             esp: "SEMIMEMBRANOSO",
             fra: "SEMIMEMBRANEUX",
             por: "SEMIMEMBRANOSO",
-            deu: "MUSKEL SEMIMEMBRANOSUS"
+            deu: "SEMIMEMBRANOSUS"
         },
         Muscolo_GRANDE_ADDUTTORE: {
             ita: "GRANDE ADDUTTORE",
@@ -6767,7 +6766,7 @@ DB.TXT = {
             esp: "ADUCTOR MAGNO",
             fra: "ADDUCTEUR MAGNUS",
             por: "ADUTOR MAGNO",
-            deu: "MUSKEL ADDUCTOR MAGNUS"
+            deu: "ADDUCTOR MAGNUS"
         },
         Muscolo_DELTOIDE: {
             ita: "DELTOIDE",
@@ -6775,7 +6774,7 @@ DB.TXT = {
             esp: "DELTOIDES",
             fra: "DELTOÏDE",
             por: "DELTÓIDE",
-            deu: "MUSKEL DELTOID"
+            deu: "DELTOID"
         },
         Muscolo_CORACOBRACHIALE: {
             ita: "CORACO-BRACHIALE",
@@ -6783,7 +6782,7 @@ DB.TXT = {
             esp: "CORACOBRAQUIAL",
             fra: "CORACO-BRACHIAL",
             por: "CORACOBRAQUIAL",
-            deu: "MUSKEL CORACOBRACHIALIS"
+            deu: "CORACOBRACHIALIS"
         },
         Muscolo_BICIPITE_BRACHIALE: {
             ita: "BICIPITE BRACHIALE",
@@ -6791,7 +6790,7 @@ DB.TXT = {
             esp: "BÍCEPS BRAQUIAL",
             fra: "BICEPS BRACHIAL",
             por: "BÍCEPS BRAQUIAL",
-            deu: "MUSKEL BICEPS BRACHII"
+            deu: "BICEPS BRACHII"
         },
         Muscolo_TRICIPITE_BRACHIALE: {
             ita: "TRICIPITE BRACHIALE",
@@ -6799,7 +6798,7 @@ DB.TXT = {
             esp: "TRÍCEPS BRAQUIAL",
             fra: "TRICEPS BRACHIAL",
             por: "TRÍCEPS BRAQUIAL",
-            deu: "MUSKEL TRICEPS BRACHII"
+            deu: "TRICEPS BRACHII"
         },
         Muscolo_BRACHIALE: {
             ita: "BRACHIALE",
@@ -6807,7 +6806,7 @@ DB.TXT = {
             esp: "BRAQUIAL",
             fra: "BRACHIAL",
             por: "BRAQUIAL",
-            deu: "MUSKEL BRACHIALIS"
+            deu: "BRACHIALIS"
         },
         Muscolo_ANCONEO: {
             ita: "ANCONEO",
@@ -6815,7 +6814,7 @@ DB.TXT = {
             esp: "ANCONEO",
             fra: "ANCONE",
             por: "ANCONEU",
-            deu: "MUSKEL ANCONEUS"
+            deu: "ANCONEUS"
         },
         Muscolo_BRACHIORADIALE: {
             ita: "BRACHIORADIALE",
@@ -6823,7 +6822,7 @@ DB.TXT = {
             esp: "BRAQUIORRADIAL",
             fra: "BRACHIORADIAL",
             por: "BRAQUIORRADIAL",
-            deu: "MUSKEL BRACHIORADIALIS"
+            deu: "BRACHIORADIALIS"
         },
         Muscolo_ESTENSORE_RADIALE_LUNGO_CARPO: {
             ita: "ESTENSORE RADIALE LUNGO DEL CARPO",
@@ -6831,7 +6830,7 @@ DB.TXT = {
             esp: "EXTENSOR RADIAL LARGO DEL CARPO",
             fra: "EXTENSEUR RADIAL LONG DU CARPE",
             por: "EXTENSOR RADIAL LONGO DO CARPO",
-            deu: "MUSKEL EXTENSOR CARPI RADIALIS LONGUS"
+            deu: "EXTENSOR CARPI RADIALIS LONGUS"
         },
         Muscolo_ESTENSORE_RADIALE_BREVE_CARPO: {
             ita: "ESTENSORE RADIALE BREVE DEL CARPO",
@@ -6839,7 +6838,7 @@ DB.TXT = {
             esp: "EXTENSOR RADIAL CORTO DEL CARPO",
             fra: "EXTENSEUR RADIAL COURT DU CARPE",
             por: "EXTENSOR RADIAL CURTO DO CARPO",
-            deu: "MUSKEL EXTENSOR CARPI RADIALIS BREVIS"
+            deu: "EXTENSOR CARPI RADIALIS BREVIS"
         },
         Muscolo_ABDUTTORE_LUNGO_POLLICE: {
             ita: "ABDUTTORE LUNGO DEL POLLICE",
@@ -6847,7 +6846,7 @@ DB.TXT = {
             esp: "ABDUCTOR LARGO DEL PULGAR",
             fra: "ABDUCTEUR LONG DU POUCE",
             por: "ABDUTOR LONGO DO POLEGAR",
-            deu: "MUSKEL ABDUCTOR POLLICIS LONGUS"
+            deu: "ABDUCTOR POLLICIS LONGUS"
         },
         Muscolo_ESTENSORE_BREVE_POLLICE: {
             ita: "ESTENSORE BREVE DEL POLLICE",
@@ -6855,7 +6854,7 @@ DB.TXT = {
             esp: "EXTENSOR CORTO DEL PULGAR",
             fra: "EXTENSEUR COURT DU POUCE",
             por: "EXTENSOR CURTO DO POLEGAR",
-            deu: "MUSKEL EXTENSOR POLLICIS BREVIS"
+            deu: "EXTENSOR POLLICIS BREVIS"
         },
         Muscolo_ESTENSORE_LUNGO_POLLICE: {
             ita: "ESTENSORE LUNGO DEL POLLICE",
@@ -6863,7 +6862,7 @@ DB.TXT = {
             esp: "EXTENSOR LARGO DEL PULGAR",
             fra: "EXTENSEUR LONG DU POUCE",
             por: "EXTENSOR LONGO DO POLEGAR",
-            deu: "MUSKEL EXTENSOR POLLICIS LONGUS"
+            deu: "EXTENSOR POLLICIS LONGUS"
         },
         Muscolo_ESTENSORE_COMUNE_DITA: {
             ita: "ESTENSORE COMUNE DELLE DITA",
@@ -6871,7 +6870,7 @@ DB.TXT = {
             esp: "EXTENSOR COMÚN DE LOS DEDOS",
             fra: "EXTENSEUR COMMUN DES DOIGTS",
             por: "EXTENSOR COMUM DOS DEDOS",
-            deu: "MUSKEL EXTENSOR DIGITORUM"
+            deu: "EXTENSOR DIGITORUM"
         },
         Muscolo_ESTENSORE_PROPRIO_MIGNOLO: {
             ita: "ESTENSORE PROPRIO DEL MIGNOLO",
@@ -6879,7 +6878,7 @@ DB.TXT = {
             esp: "EXTENSOR PROPIO DEL MEÑIQUE",
             fra: "EXTENSEUR PROPRIÉ DU PETIT DOIGT",
             por: "EXTENSOR PRÓPRIO DO MÍNIMO",
-            deu: "MUSKEL EXTENSOR DIGITI MINIMI"
+            deu: "EXTENSOR DIGITI MINIMI"
         },
         Muscolo_ESTENSORE_ULNARE_CARPO: {
             ita: "ESTENSORE ULNARE DEL CARPO",
@@ -6887,7 +6886,7 @@ DB.TXT = {
             esp: "EXTENSOR CUBITAL DEL CARPO",
             fra: "EXTENSEUR ULNAIRE DU CARPE",
             por: "EXTENSOR ULNAR DO CARPO",
-            deu: "MUSKEL EXTENSOR CARPI ULNARIS"
+            deu: "EXTENSOR CARPI ULNARIS"
         },
         Muscolo_FLESSORE_ULNARE_CARPO: {
             ita: "FLESSORE ULNARE DEL CARPO",
@@ -6895,7 +6894,7 @@ DB.TXT = {
             esp: "FLEXOR CUBITAL DEL CARPO",
             fra: "FLECHISSEUR ULNAIRE DU CARPE",
             por: "FLEXOR ULNAR DO CARPO",
-            deu: "MUSKEL FLEXOR CARPI ULNARIS"
+            deu: "FLEXOR CARPI ULNARIS"
         },
         Muscolo_PRONATORE: {
             ita: "PRONATORE",
@@ -6903,7 +6902,7 @@ DB.TXT = {
             esp: "PRONADOR",
             fra: "PRONATEUR",
             por: "PRONADOR",
-            deu: "MUSKEL PRONATOR TERES"
+            deu: "PRONATOR TERES"
         },
         Muscolo_FLESSORE_RADIALE_CARPO: {
             ita: "FLESSORE RADIALE DEL CARPO",
@@ -6911,7 +6910,7 @@ DB.TXT = {
             esp: "FLEXOR RADIAL DEL CARPO",
             fra: "FLECHISSEUR RADIAL DU CARPE",
             por: "FLEXOR RADIAL DO CARPO",
-            deu: "MUSKEL FLEXOR CARPI RADIALIS"
+            deu: "FLEXOR CARPI RADIALIS"
         },
         Muscolo_PALMARE_LUNGO: {
             ita: "PALMARE LUNGO",
@@ -6919,7 +6918,7 @@ DB.TXT = {
             esp: "PALMAR LARGO",
             fra: "PALMAR LONG",
             por: "PALMAR LONGO",
-            deu: "MUSKEL PALMARIS LONGUS"
+            deu: "PALMARIS LONGUS"
         },
         Muscolo_FLESSORI_SUPERFICIALI_DITA: {
             ita: "FLESSORI SUPERFICIALI DELLE DITA",
@@ -6970,9 +6969,9 @@ DB.TXT = {
             deu: "LUMBRICALIS"
         },
         Muscolo_FLESSORE_MIGNOLO_MANO: {
-            ita: "FLESSORE DEL MIGNOLO",
+            ita: "FLESSORE BREVE DEL MIGNOLO",
             eng: "FLEXOR DIGITI MINIMI BREVIS",
-            esp: "FLEXOR DEL MEÑIQUE DE LA MANO",
+            esp: "FLEXOR BREVE DEL MEÑIQUE DE LA MANO",
             fra: "FLECHISSEUR COURT DE L'AURICULAIRE DE LA MAIN",
             por: "FLEXOR CURTO DO MÍNIMO DA MÃO",
             deu: "KURZER FLEXOR DES KLEINFINGERS DER HAND"
@@ -7031,7 +7030,7 @@ DB.TXT = {
             esp: "PERONEO LARGO",
             fra: "LONG PÉRONIER",
             por: "PERÔNEO LONGO",
-            deu: "LANGER WADENBEINMUSKEL"
+            deu: "LANGER WADENBEIN"
         },
         Muscolo_PERONEO_BREVE: {
             ita: "PERONEO BREVE",
@@ -7039,7 +7038,7 @@ DB.TXT = {
             esp: "PERONEO BREVE",
             fra: "COURT PÉRONIER",
             por: "PERÔNEO CURTO",
-            deu: "KURZER WADENBEINMUSKEL"
+            deu: "KURZER WADENBEIN"
         },
         Muscolo_TIBIALE_ANTERIORE: {
             ita: "TIBIALE ANTERIORE",
@@ -7047,7 +7046,7 @@ DB.TXT = {
             esp: "TIBIAL ANTERIOR",
             fra: "TIBIAL ANTÉRIEUR",
             por: "TIBIAL ANTERIOR",
-            deu: "VORDERER SCHIENBEINMUSKEL"
+            deu: "VORDERER SCHIENBEIN"
         },
         Muscolo_ESTENSORE_LUNGO_DITA: {
             ita: "ESTENSORE LUNGO DELLE DITA",
@@ -7122,12 +7121,12 @@ DB.TXT = {
             deu: "ABDUKTOR DES KLEINFINGERS (FUß)"
         },
         Muscolo_FLESSORE_MIGNOLO_PIEDE: {
-            ita: "FLESSORE DEL MIGNOLO",
-            eng: "FLEXOR DIGITI MINIMI",
-            esp: "FLEXOR DEL MEÑIQUE",
-            fra: "FLECHISSEUR DE L'AURICULAIRE",
-            por: "FLEXOR DO MÍNIMO",
-            deu: "FINGERBEUGER DES KLEINFINGERS"
+            ita: "FLESSORE DEL MIGNOLO (PIEDE)",
+            eng: "FLEXOR DIGITI MINIMI (FOOT)",
+            esp: "FLEXOR DEL MEÑIQUE (PIE)",
+            fra: "FLECHISSEUR DE L'AURICULAIRE (PIED)",
+            por: "FLEXOR DO MÍNIMO (PE)",
+            deu: "FINGERBEUGER DES KLEINFINGERS (FUß)"
         },
 
         // zone anatomiche
@@ -7255,7 +7254,7 @@ DB.TXT = {
         },
         Muscolo_EMICONCA_SUPERIORE: {
             ita: "EMICONCA SUPERIORE",
-            eng: "UPPER SEMI-CONCHA",
+            eng: "SUPERIOR CONCHA",
             esp: "EMINENCIA SEMICONCAVA SUPERIOR",
             fra: "DEMIE CONQUE SUPÉRIEURE",
             por: "SEMICONCHA SUPERIOR",
@@ -7263,7 +7262,7 @@ DB.TXT = {
         },
         Muscolo_EMICONCA_INFERIORE: {
             ita: "EMICONCA INFERIORE",
-            eng: "LOWER SEMI-CONCHA",
+            eng: "INFERIOR CONCHA",
             esp: "EMINENCIA SEMICONCAVA INFERIOR",
             fra: "DEMIE CONQUE INFÉRIEURE",
             por: "SEMICONCHA INFERIOR",
@@ -7342,7 +7341,7 @@ DB.TXT = {
             deu: "RETROLOBARE GRUBE"
         },
         Muscolo_CONVESSITA_EMICONCA_INFERIORE: {
-            ita: "CONVESSITA' EMICONCA INFERIORE",
+            ita: "CONVESSITÀ EMICONCA INFERIORE",
             eng: "LOWER SEMI-CONCAVA CONVEXITY",
             esp: "CONVEXIDAD SEMICONCAVA INFERIOR",
             fra: "CONVEXITÉ SEMICONCAVE INFÉRIEURE",
@@ -7350,7 +7349,7 @@ DB.TXT = {
             deu: "KONVEXITÄT DER UNTEREN HALBSCHALE"
         },
         Muscolo_CONVESSITA_EMICONCA_SUPERIORE: {
-            ita: "CONVESSITA' EMICONCA SUPERIORE",
+            ita: "CONVESSITÀ EMICONCA SUPERIORE",
             eng: "UPPER SEMI-CONCAVA CONVEXITY",
             esp: "CONVEXIDAD SEMICONCAVA SUPERIOR",
             fra: "CONVEXITÉ SEMICONCAVE SUPÉRIEURE",
@@ -7407,7 +7406,7 @@ DB.TXT = {
         },
         Muscolo_RAMO_INFERIORE: {
             ita: "RAMO INFERIORE",
-            eng: "LOWER BRANCH",
+            eng: "INFERIOR CRUS",
             esp: "RAMA INFERIOR",
             fra: "BRANCHE INFÉRIEURE",
             por: "RAMO INFERIOR",
@@ -7415,7 +7414,7 @@ DB.TXT = {
         },
         Muscolo_RAMO_SUPERIORE: {
             ita: "RAMO SUPERIORE",
-            eng: "UPPER BRANCH",
+            eng: "SUPERIOR CRUS",
             esp: "RAMA SUPERIOR",
             fra: "BRANCHE SUPÉRIEURE",
             por: "RAMO SUPERIOR",
@@ -7488,7 +7487,7 @@ DB.TXT = {
         },
 		_Cliente_S: {
             ita: "Ricevente - Uke",
-            eng: "Receivers - Uke",
+            eng: "Receiver - Uke",
             esp: "Receptor - Uke",
             fra: "Receveur - Uke",
             por: "Receptor - Uke",
@@ -7666,8 +7665,8 @@ DB.TXT = {
         },
 		
 		features: {
-			ita: "<h2>Benvenuto nella versione 1.4</h2><p class=\"descr\">Abbiamo cambiato alcune caratteristiche dell'applicazione al fine di renderla sempre più ricca di contenuto, facile e intuitiva da usare e veloce.</p><div><div><img src=\"sets/meridiani_shiatsu/img/logoNero.png\" width=\"50\" height=\"50\"></div><div><b>ShiatsuMap</b><br>Abbiamo aggiunto le mappe e i protocolli di Namikoshi e ristrutturato i contenuti col fine di rendere ShiatsuMap uno strumento sempre più ricco.</div></div><div><div><img src=\"sets/meridiani_cinesi/img/logoNero.png\" width=\"44\" height=\"44\" style=\"margin: 0px 4px -8px 4px;\"></div><div><b>AcupointsMap</b><br>TsuboMap cambia nome! Da oggi si chiamerà AcupointsMap.</div></div><div><div><img src=\"img/ico_linguaprefN.png\" width=\"32\" height=\"36\" style=\"margin-left:9px;\"></div><div><b>Supporto per le lingue</b><br>Da questa versione l'interfaccia è stata tradotta in 6 lingue e i contenuti in 3 lingue. E' stato aggiunto inoltre uno strumento di traduzione automatica per 135 idiomi.</div></div><div><div><img src=\"img/ico_draw_screenshot.png\" width=\"32\" height=\"32\" style=\"margin-left:9px;\"></div><div><b>Strumenti di disegno</b><br>Aggiunto una strumento per eseguire screenshot del modello e scrivere a mano libera per archiviare appunti personali.</div></div><div><div><img src=\"img/spunta.png\" width=\"40\" height=\"40\" style=\"margin-left:4px;\"></div><div><b>Personalizzazione e fruibilità</b><br>- Aggiunta una dimensioni di testo &quot;grandissima&quot;<br>- Aggiunta la nomenclatura &quot;Shiatsu&quot; per archivi e contenuti (es. Uke al posto di Cliente)</div></div><div><div><img src=\"img/ico_purchasesN.png\" width=\"32\" height=\"36\" style=\"margin-left:9px;\"></div><div><b>Acquisti in app</b><br>Da questa versione è possibile acquistare le licenze direttamente dall'app, cliccando sulla sezione &quot;Acquista una licenza&quot; nel menu impostazioni.</div></div><div><div><img src=\"img/p_impostazioniN.png\" width=\"32\" height=\"36\" style=\"margin:6px 6px 6px 11px;\"></div><div><b>Miglioramenti</b><br>Sono stati effettuati miglioramenti di vario genere e corretti alcuni bugs presenti nella versione precedente.</div></div>",
-			eng: "<h2>Welcome to version 1.4</h2><p class=\"descr\">We have made some changes to the application to make it richer in content, easy and intuitive to use, and fast.</p><div><div><img src=\"sets/meridiani_shiatsu/img/logoNero.png\" width=\"50\" height=\"50\"></div><div><b>ShiatsuMap</b><br>We have added Namikoshi maps and protocols and restructured the content to make ShiatsuMap an even richer tool.</div></div><div><div><img src=\"sets/meridiani_cinesi/img/logoNero.png\" width=\"44\" height=\"44\" style=\"margin: 0px 4px -8px 4px;\"></div><div><b>AcupointsMap</b><br>TsuboMap changes its name! From today, it will be called AcupointsMap.</div></div><div><div><img src=\"img/ico_linguaprefN.png\" width=\"32\" height=\"36\" style=\"margin-left:9px;\"></div><div><b>Language Support</b><br>From this version the interface has been translated into 6 languages and the contents into 3 languages. A machine translation tool for 135 languages has also been added.</div></div><div><div><img src=\"img/ico_draw_screenshot.png\" width=\"32\" height=\"32\" style=\"margin-left:9px;\"></div><div><b>Drawing tools</b><br>Added a tool to take screenshots of the template and write freehand to store personal notes.</div></div><div><div><img src=\"img/spunta.png\" width=\"40\" height=\"40\" style=\"margin-left:4px;\"></div><div><b>Customization and Usability</b><br>- Added a \"very large\" text size<br>- Added the naming of \"Shiatsu\" for archives and content (e.g., Uke instead of Client)</div></div><div><div><img src=\"img/ico_purchasesN.png\" width=\"32\" height=\"36\" style=\"margin-left:9px;\"></div><div><b>In-App Purchases</b><br>From this version, you can directly purchase licenses from the app by clicking on the \"Buy a License\" section in the settings menu.</div></div><div><div><img src=\"img/p_impostazioniN.png\" width=\"32\" height=\"36\" style=\"margin:6px 6px 6px 11px;\"></div><div><b>Improvements</b><br>We have made various improvements and fixed some bugs present in the previous version.</div></div>",
+			ita: "<h2>Benvenuto nella versione 1.4</h2><p class=\"descr\">Abbiamo cambiato alcune caratteristiche dell'applicazione al fine di renderla sempre più ricca di contenuto, facile e intuitiva da usare e veloce.</p><div><div><img src=\"sets/meridiani_shiatsu/img/logoNero.png\" width=\"50\" height=\"50\"></div><div><b>ShiatsuMap</b><br>Abbiamo aggiunto le mappe e i protocolli di Namikoshi e ristrutturato i contenuti col fine di rendere ShiatsuMap uno strumento sempre più ricco.</div></div><div><div><img src=\"sets/meridiani_cinesi/img/logoNero.png\" width=\"44\" height=\"44\" style=\"margin: 0px 4px -8px 4px;\"></div><div><b>AcupointsMap</b><br>TsuboMap cambia nome! Da oggi si chiamerà AcupointsMap.</div></div><div><div><img src=\"img/ico_linguaprefN.png\" width=\"32\" height=\"36\" style=\"margin-left:9px;\"></div><div><b>Supporto per le lingue</b><br>Da questa versione l'interfaccia è stata tradotta in 6 lingue e i contenuti in 3 lingue. E' stato aggiunto inoltre uno strumento di traduzione automatica per 135 idiomi.</div></div><div><div><img src=\"img/ico_draw_screenshot.png\" width=\"32\" height=\"32\" style=\"margin-left:9px;\"></div><div><b>Strumenti di disegno</b><br>Aggiunto uno strumento per eseguire screenshot del modello e scrivere a mano libera per archiviare appunti personali.</div></div><div><div><img src=\"img/spunta.png\" width=\"40\" height=\"40\" style=\"margin-left:4px;\"></div><div><b>Personalizzazione e fruibilità</b><br>- Aggiunta una dimensione di testo &quot;grandissima&quot;<br>- Aggiunta la nomenclatura &quot;Shiatsu&quot; per archivi e contenuti (es. Uke al posto di Cliente)</div></div><div><div><img src=\"img/ico_purchasesN.png\" width=\"32\" height=\"36\" style=\"margin-left:9px;\"></div><div><b>Acquisti in app</b><br>Da questa versione è possibile acquistare le licenze direttamente dall'app, cliccando sulla sezione &quot;Acquista una licenza&quot; nel menu impostazioni.</div></div><div><div><img src=\"img/p_impostazioniN.png\" width=\"32\" height=\"36\" style=\"margin:6px 6px 6px 11px;\"></div><div><b>Miglioramenti</b><br>Sono stati effettuati miglioramenti di vario genere e corretti alcuni bugs presenti nella versione precedente.</div></div>",
+			eng: "<h2>Welcome to version 1.4</h2><p class=\"descr\">We have made some changes to the application to make it richer in content, easy and intuitive to use, and fast.</p><div><div><img src=\"sets/meridiani_shiatsu/img/logoNero.png\" width=\"50\" height=\"50\"></div><div><b>ShiatsuMap</b><br>We have added Namikoshi maps and protocols and restructured the content to make ShiatsuMap an even richer tool.</div></div><div><div><img src=\"sets/meridiani_cinesi/img/logoNero.png\" width=\"44\" height=\"44\" style=\"margin: 0px 4px -8px 4px;\"></div><div><b>AcupointsMap</b><br>TsuboMap changes its name! From today, it will be called AcupointsMap.</div></div><div><div><img src=\"img/ico_linguaprefN.png\" width=\"32\" height=\"36\" style=\"margin-left:9px;\"></div><div><b>Language Support</b><br>From this version the interface has been translated into 6 languages and the contents into 3 languages. A machine translation tool for 135 languages has also been added.</div></div><div><div><img src=\"img/ico_draw_screenshot.png\" width=\"32\" height=\"32\" style=\"margin-left:9px;\"></div><div><b>Drawing tools</b><br>Added a tool to take screenshots of the template and write freehand to store personal notes.</div></div><div><div><img src=\"img/spunta.png\" width=\"40\" height=\"40\" style=\"margin-left:4px;\"></div><div><b>Customization and Usability</b><br>- Added a \"very large\" text size<br>- Added the \"Shiatsu\" naming  for archives and content (e.g., Uke instead of Client)</div></div><div><div><img src=\"img/ico_purchasesN.png\" width=\"32\" height=\"36\" style=\"margin-left:9px;\"></div><div><b>In-App Purchases</b><br>From this version, you can directly purchase licenses from the app by clicking on the \"Buy a License\" section in the settings menu.</div></div><div><div><img src=\"img/p_impostazioniN.png\" width=\"32\" height=\"36\" style=\"margin:6px 6px 6px 11px;\"></div><div><b>Improvements</b><br>We have made various improvements and fixed some bugs present in the previous version.</div></div>",
 			esp: "<h2>Bienvenido a la versión 1.4</h2><p class=\"descr\">Hemos realizado algunos cambios en la aplicación para hacerla más rica en contenido, fácil e intuitiva de usar, y rápida.</p><div><div><img src=\"sets/meridiani_shiatsu/img/logoNero.png\" width=\"50\" height=\"50\"></div><div><b>ShiatsuMap</b><br>Hemos agregado mapas y protocolos de Namikoshi y reestructurado el contenido para hacer de ShiatsuMap una herramienta aún más completa.</div></div><div><div><img src=\"sets/meridiani_cinesi/img/logoNero.png\" width=\"44\" height=\"44\" style=\"margin: 0px 4px -8px 4px;\"></div><div><b>AcupointsMap</b><br>¡TsuboMap cambia de nombre! A partir de hoy se llamará AcupointsMap.</div></div><div><div><img src=\"img/ico_linguaprefN.png\" width=\"32\" height=\"36\" style=\"margin-left:9px;\"></div><div><b>Soporte de idiomas</b><br>A partir de esta versión, la interfaz se ha traducido a 6 idiomas y el contenido a 3 idiomas. También se ha añadido una herramienta de traducción automática para 135 idiomas.</div></div><div><div><img src=\"img/ico_draw_screenshot.png\" width=\"32\" height=\"32\" style=\"margin-left:9px;\"></div><div><b>Herramientas de dibujo</b><br>Se agregó una herramienta para realizar capturas de pantalla de la plantilla y escribir a mano alzada para archivar notas personales.</div></div><div><div><img src=\"img/spunta.png\" width=\"40\" height=\"40\" style=\"margin-left:4px;\"></div><div><b>Personalización y usabilidad</b><br>- Se ha añadido un tamaño de texto \"muy grande\"<br>- Se ha añadido la denominación \"Shiatsu\" para archivos y contenido (por ejemplo, Uke en lugar de Cliente)</div></div><div><div><img src=\"img/ico_purchasesN.png\" width=\"32\" height=\"36\" style=\"margin-left:9px;\"></div><div><b>Compras dentro de la aplicación</b><br>Desde esta versión, puedes adquirir licencias directamente desde la aplicación haciendo clic en la sección \"Comprar una licencia\" en el menú de configuración.</div></div><div><div><img src=\"img/p_impostazioniN.png\" width=\"32\" height=\"36\" style=\"margin:6px 6px 6px 11px;\"></div><div><b>Mejoras</b><br>Hemos realizado diversas mejoras y corregido algunos errores presentes en la versión anterior.</div></div>",
 			fra: "<h2>Bienvenue à la version 1.4</h2><p class=\"descr\">Nous avons apporté quelques modifications à l'application pour la rendre encore plus riche en contenu, facile et intuitive à utiliser, et rapide.</p><div><div><img src=\"sets/meridiani_shiatsu/img/logoNero.png\" width=\"50\" height=\"50\"></div><div><b>ShiatsuMap</b><br>Nous avons ajouté des cartes et des protocoles de Namikoshi et restructuré le contenu pour faire de ShiatsuMap un outil encore plus complet.</div></div><div><div><img src=\"sets/meridiani_cinesi/img/logoNero.png\" width=\"44\" height=\"44\" style=\"margin: 0px 4px -8px 4px;\"></div><div><b>AcupointsMap</b><br>TsuboMap change de nom ! À partir d'aujourd'hui, il s'appellera AcupointsMap.</div></div><div><div><img src=\"img/ico_linguaprefN.png\" width=\"32\" height=\"36\" style=\"margin-left:9px;\"></div><div><b>Prise en charge des langues</b><br>À partir de cette version, l’interface a été traduite en 6 langues et le contenu en 3 langues. Un outil de traduction automatique pour 135 langues a également été ajouté.</div></div><div><div><img src=\"img/ico_draw_screenshot.png\" width=\"32\" height=\"32\" style=\"margin-left:9px;\"></div><div><b>Outils de dessin</b><br>Ajout d’un outil pour effectuer des captures d’écran du modèle et écrire à main levée pour stocker des notes personnelles.</div></div><div><div><img src=\"img/spunta.png\" width=\"40\" height=\"40\" style=\"margin-left:4px;\"></div><div><b>Personnalisation et facilité d'utilisation</b><br>- Ajout d'une taille de texte \"très grande\"<br>- Ajout de la dénomination \"Shiatsu\" pour les archives et le contenu (par exemple, Uke au lieu de Client)</div></div><div><div><img src=\"img/ico_purchasesN.png\" width=\"32\" height=\"36\" style=\"margin-left:9px;\"></div><div><b>Achats intégrés</b><br>À partir de cette version, vous pouvez acheter des licences directement depuis l'application en cliquant sur la section \"Acheter une licence\" dans le menu des paramètres.</div></div><div><div><img src=\"img/p_impostazioniN.png\" width=\"32\" height=\"36\" style=\"margin:6px 6px 6px 11px;\"></div><div><b>Améliorations</b><br>Nous avons apporté diverses améliorations et corrigé certains bugs présents dans la version précédente.</div></div>",
 			por: "<h2>Bem-vindo à versão 1.4</h2><p class=\"descr\">Fizemos algumas alterações no aplicativo para torná-lo mais rico em conteúdo, fácil e intuitivo de usar, e rápido.</p><div><div><img src=\"sets/meridiani_shiatsu/img/logoNero.png\" width=\"50\" height=\"50\"></div><div><b>ShiatsuMap</b><br>Adicionamos mapas e protocolos de Namikoshi e reestruturamos o conteúdo para tornar o ShiatsuMap uma ferramenta ainda mais completa.</div></div><div><div><img src=\"sets/meridiani_cinesi/img/logoNero.png\" width=\"44\" height=\"44\" style=\"margin: 0px 4px -8px 4px;\"></div><div><b>AcupointsMap</b><br>O TsuboMap muda de nome! A partir de hoje, será chamado AcupointsMap.</div></div><div><div><img src=\"img/ico_linguaprefN.png\" width=\"32\" height=\"36\" style=\"margin-left:9px;\"></div><div><b>Suporte de idiomas</b><br>A partir desta versão, a interface foi traduzida em 6 idiomas e o conteúdo em 3 idiomas. Uma ferramenta de tradução automática para 135 idiomas também foi adicionada.</div></div><div><div><img src=\"img/ico_draw_screenshot.png\" width=\"32\" height=\"32\" style=\"margin-left:9px;\"></div><div><b>Ferramentas de desenho</b><br>Adicionado uma ferramenta para tirar screenshots do modelo e escrever à mão livre para armazenar notas pessoais.</div></div><div><div><img src=\"img/spunta.png\" width=\"40\" height=\"40\" style=\"margin-left:4px;\"></div><div><b>Personalização e usabilidade</b><br>- Adicionado um tamanho de texto \"muito grande\"<br>- Adicionada a nomenclatura \"Shiatsu\" para arquivos e conteúdos (por exemplo, Uke em vez de Cliente)</div></div><div><div><img src=\"img/ico_purchasesN.png\" width=\"32\" height=\"36\" style=\"margin-left:9px;\"></div><div><b>Compras no aplicativo</b><br>A partir desta versão, você pode comprar licenças diretamente pelo aplicativo, clicando na seção \"Comprar uma licença\" no menu de configurações.</div></div><div><div><img src=\"img/p_impostazioniN.png\" width=\"32\" height=\"36\" style=\"margin:6px 6px 6px 11px;\"></div><div><b>Melhorias</b><br>Fizemos várias melhorias e corrigimos alguns bugs presentes na versão anterior.</div></div>",

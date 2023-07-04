@@ -2,6 +2,9 @@ var PAZIENTI = {
 	idCL: -1,
 	idPaziente: -1,
 	cicli: [],
+	maxCicli: 3,
+	maxPazientiFree: 1,
+	maxPazientiLogged: 15,
 	pazOp: false,
 	trattOp: false,
 	cicOp: false,
@@ -258,18 +261,22 @@ var PAZIENTI = {
 	},
 	car_paziente: function( salvato ){ // carica la scheda anagrafica del paziente
 		// verifico le autorizzazioni
-		var maxClienti = 1;
+		var maxPazienti = PAZIENTI.maxPazientiFree;
+		var addMaxTxt = 'Free';
 		if(LOGIN.reg() && LOGIN.logedin()){
-			if(DB.login.data.auths.indexOf("clients_full")>-1)maxClienti = -1;
-			else maxClienti = 15;
+			if(DB.login.data.auths.indexOf("clients_full")>-1)maxPazienti = -1;
+			else{
+				maxPazienti = PAZIENTI.maxPazientiLogged;
+				addMaxTxt = 'Logged';
+			}
 		}
-		if(maxClienti>-1 && PAZIENTI.idCL==-1){
+		if(maxPazienti>-1 && PAZIENTI.idCL==-1){
 			var tPaz = 0;
 			for(let c in DB.pazienti.data){
 				if(DB.pazienti.data[c].Cancellato*1==0)tPaz++;
 			}
-			if(tPaz >= maxClienti && !document.body.classList.contains("pplhd")){
-				ALERT(TXT("MsgMaxPazienti"+maxClienti));
+			if(tPaz >= maxPazienti && !document.body.classList.contains("pplhd")){
+				ALERT(TXT("MsgMaxPazienti"+addMaxTxt).replace("[n]",PAZIENTI.maxPazientiLogged));
 				return;
 			}
 		}
@@ -387,7 +394,7 @@ var PAZIENTI = {
 					'			<div style="background-image:url(\''+avatar+'\')"></div>' +
 					'		</div>' +
 					'		<div style="float:left;height: 120px;">' +
-					'			<input class="ico_file"' +
+					'			<input class="ico_foto"' +
 					'				   id="avatarPaziente_FL"' +
 					'				   type="file"' +
 					'				   onchange="PH.encodeImageFileAsURL(this, true, false, \'PAZIENTI.salvaAvatar\');"' +
@@ -764,8 +771,8 @@ var PAZIENTI = {
 						'	<div id="p_add_dett"' +
 						'		 style="margin-top: 0px;">' +
 						'		<input type="file"' +
-						'			   id="fileProvv_FL"' +
-						'			   class="p_paz_file"' +
+						'			   id="fotoProvv_FL"' +
+						'			   class="p_paz_foto"' +
 						'		       onChange="PH.selezionaFile(this);">' +
 						'		<span id="addFile">' +
 									TXT("AggiungiFile") +
@@ -778,7 +785,7 @@ var PAZIENTI = {
 						'	</div>' +
 						'	<div class="allowedFormats">* '+TXT("FormatiConsentiti")+": "+ext+'</div>';
 					
-			HTML += H.r({	t: "h", name: "totFiles",	value: "0" });
+			HTML += H.r({	t: "h", name: "totFoto",	value: "0" });
 			HTML += H.sezione({
 				label: TXT("Gallery"),
 				nome: 'files',

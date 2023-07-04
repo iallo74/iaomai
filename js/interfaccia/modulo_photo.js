@@ -561,7 +561,6 @@ var PH = {
 								dimTxt = ArrotondaEuro(dim/(1000*1000))+"MB";
 							}
 							document.getElementById('dim'+n).innerHTML = dimTxt;
-							
 							document.getElementById('dt'+n).innerHTML =  getDataTS(parseInt(DB.files.data[f].idFile.split("_")[1]/1000));
 							
 							
@@ -1024,6 +1023,7 @@ var PH = {
 		PH.aggiungiFile( JSON.stringify(obj) );
 	},
 	editScreenShot: function(){ // acquisisce lo screenshot del manichino e lo apre in disegno
+		if(!globals.modello.cartella)return;
 		PH.functPH="PH.aggiungiScreenshot";
 		PH.makeBig = true;
 		PH.img = document.getElementById("img_PH");

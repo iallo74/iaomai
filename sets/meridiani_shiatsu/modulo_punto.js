@@ -229,7 +229,7 @@ var MODULO_PUNTO = { // extend SET
 		
 		var classFr = '';
 		
-		if(!SCHEDA.scheda2Aperta){
+		if(!SCHEDA.scheda2Aperta && siglaMeridiano!='NK'){
 			var nPuntoGiu = SET.ptToStr(+nPunto - 1);
 			var nPuntoSu = SET.ptToStr(+Punto +1 );
 			// evidenzio i pulsanti su e giù

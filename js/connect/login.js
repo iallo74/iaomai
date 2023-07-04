@@ -2284,7 +2284,7 @@ var LOGIN = {
 				LOGIN.addHTML("<i>"+TXT("Stato")+":</i> "+backup.pazienti[p].Stato+"<br>");
 				LOGIN.addHTML("<i>"+TXT("Telefono")+":</i> "+backup.pazienti[p].Telefono+"<br>");
 				var prefisso = '';
-				if(backup.pazienti[p].paeseCellulare)prefisso = paesi[backup.pazienti[p].paeseCellulare].prefisso;
+				if(backup.pazienti[p].paeseCellulare)prefisso = countries[backup.pazienti[p].paeseCellulare].prefisso;
 				LOGIN.addHTML("<i>"+TXT("Cellulare")+":</i> "+prefisso+backup.pazienti[p].Cellulare+"<br>");
 				LOGIN.addHTML("<i>"+TXT("Email")+":</i> "+backup.pazienti[p].Email+"<br>");
 				LOGIN.addHTML("<i>"+TXT("Sesso")+":</i> "+TXT(""+backup.pazienti[p].sesso)+"<br>");

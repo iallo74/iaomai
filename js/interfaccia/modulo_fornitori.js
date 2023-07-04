@@ -1,5 +1,7 @@
 var FORNITORI = {
 	fornOp: false,
+	maxFornitoriFree: 1,
+	maxFornitoriLogged: 5,
 		
 	caricaFornitori: function(){ // carica l'elenco dei fornitori
 		var HTML = '';
@@ -78,10 +80,14 @@ var FORNITORI = {
 	car_fornitore: function( Q_idForn, salvato ){ // carica la scheda anagrafica del fornitore
 		// verifico le autorizzazioni
 		if(__(Q_idForn,-1)==-1){
-			var maxFornitori = 1;
+			var maxFornitori = FORNITORI.maxFornitoriFree;
+			var addMaxTxt = 'Free';
 			if(LOGIN.reg() && LOGIN.logedin()){
 				if(DB.login.data.auths.indexOf("clients_full")>-1)maxFornitori = -1;
-				else maxFornitori = 5;
+				else{
+					maxFornitori = FORNITORI.maxFornitoriLogged;
+					addMaxTxt = 'Logged';
+				}
 			}
 			if(maxFornitori>-1){
 				var tForn = 0;
@@ -89,7 +95,7 @@ var FORNITORI = {
 					if(DB.fornitori.data[c].Cancellato*1==0)tForn++;
 				}
 				if(tForn >= maxFornitori && !document.body.classList.contains("pplhd")){
-					ALERT(TXT("MsgMaxFornitori"+maxFornitori));
+					ALERT(TXT("MsgMaxFornitori"+addMaxTxt).replace("[n]",FORNITORI.maxFornitoriLogged));
 					return;
 				}
 			}

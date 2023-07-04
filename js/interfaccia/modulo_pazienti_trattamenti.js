@@ -292,13 +292,13 @@ var PAZIENTI_TRATTAMENTI = {
 			for(let c in PAZIENTI.cicli){
 				if(PAZIENTI.cicli[c].Tipo == 'C')cicliTot++;
 			}
-			var maxCicli = 3;
+			var maxCicli = PAZIENTI.maxCicli;
 			if(LOGIN.reg() && LOGIN.logedin()){
 				if(DB.login.data.auths.indexOf("clients_full")>-1)maxCicli = -1;
 			}
 			if(maxCicli>-1){
 				if(cicliTot >= maxCicli && !document.body.classList.contains("pplhd")){
-					ALERT(TXT("MsgMaxCicli"));
+					ALERT(TXT("MsgMaxCicli").replace("[n]",(maxCicli==-1?"":maxCicli)));
 					return;
 				}
 			}

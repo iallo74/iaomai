@@ -284,6 +284,9 @@ body:not(.smart) .stampaBtn{
 	text-align:center;
 
 }
+body:not(.bodyModello) .p_paz_screenshot{
+	opacity:0.5;
+}
 .p_paz_label,
 .p_sch_punto, /* procedura */
 .p_sch_tit, /* procedura */
@@ -291,7 +294,7 @@ body:not(.smart) .stampaBtn{
 .p_paz_punto, /* PAZIENTI */
 .p_paz_file, /* PAZIENTI */
 .p_paz_choose, /* PAZIENTI */
-.p_paz_screenshot{ /* PAZIENTI */
+body.bodyModello .p_paz_screenshot{ /* PAZIENTI */
 	cursor:pointer;
 }
 .p_sch_punto:hover, /* procedura */
@@ -301,7 +304,7 @@ body:not(.smart) .stampaBtn{
 .p_paz_label:hover, /* PAZIENTI */
 .p_paz_file:hover, /* PAZIENTI */
 .p_paz_choose:hover, /* PAZIENTI */
-.p_paz_screenshot:hover{ /* PAZIENTI */
+body.bodyModello .p_paz_screenshot:hover{ /* PAZIENTI */
 	background-color:#ffd8af !important
 }
 .sch_Max450 #cont_paz_add,
@@ -2222,6 +2225,9 @@ body:not(.touch) .sezioneChiusa:hover{
     height: 32px;
     line-height: 32px;
     margin-left: 10px;
+}
+body:not(.bodyModello) #screenShot{
+	opacity:0.5;
 }
 #fileProvv_FL{
     padding-left: 32px !important;
