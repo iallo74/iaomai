@@ -221,7 +221,7 @@ var PURCHASES  = {
 			var prices = JSON.parse( txt );
 			for(let p in PURCHASES.product_list){
 				for(e in prices){
-					if(PURCHASES.product_list[p].folder == e)PURCHASES.product_list[p].price =  prices[e]+"€";
+					if(PURCHASES.product_list[p].folder == e)PURCHASES.product_list[p].price =  prices[e]+getValuta();
 				}
 			}
 			PURCHASES.productList();

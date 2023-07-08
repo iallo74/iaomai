@@ -121,12 +121,25 @@ body:not(.smart) #guida_generica #colSel{
 	font-size: var(--font-11);
 }
 #patientSel > i,
-#patientPwd > i{
+#patientPwd > i,
+.patientValuta > i,
+.patientMisura > i{
     display: inline-block;
 	vertical-align:top;
 	width:120px;
 	margin-right:-4px;
 	text-align:right;
+}
+.patientValuta,
+.patientMisura{
+	margin: 7px 0;
+    line-height: 38px;
+	text-align: left;
+}
+.patientValuta select,
+.patientMisura select{
+	margin-left: 16px !important;
+	max-width: 233px;
 }
 #patientSel > i{
     min-height: 50px;

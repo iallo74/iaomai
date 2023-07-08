@@ -1,4 +1,4 @@
-var paesi = {
+DB.INT.paesi = {
 	"af": {
 		"ita": "Afghanistan",
 		"eng": "Afghanistan",
@@ -6,7 +6,8 @@ var paesi = {
 		"fra": "Afghanistan",
 		"por": "Afeganistão",
 		"deu": "Afghanistan",
-		"prefisso": "+93"
+		"prefisso": "+93",
+		"valuta": "AFN"
 	},
 	"al": {
 		"ita": "Albania",
@@ -15,7 +16,8 @@ var paesi = {
 		"fra": "Albanie",
 		"por": "Albânia",
 		"deu": "Albanien",
-		"prefisso": "+355"
+		"prefisso": "+355",
+		"valuta": "ALL"
 	},
 	"dz": {
 		"ita": "Algeria",
@@ -24,7 +26,8 @@ var paesi = {
 		"fra": "Algérie",
 		"por": "Argélia",
 		"deu": "Algerien",
-		"prefisso": "+213"
+		"prefisso": "+213",
+		"valuta": "DZD"
 	},
 	"ad": {
 		"ita": "Andorra",
@@ -33,7 +36,8 @@ var paesi = {
 		"fra": "Andorre",
 		"por": "Andorra",
 		"deu": "Andorra",
-		"prefisso": "+376"
+		"prefisso": "+376",
+		"valuta": "EUR"
 	},
 	"ao": {
 		"ita": "Angola",
@@ -42,7 +46,8 @@ var paesi = {
 		"fra": "Angola",
 		"por": "Angola",
 		"deu": "Angola",
-		"prefisso": "+244"
+		"prefisso": "+244",
+		"valuta": "AOA"
 	},
 	"ag": {
 		"ita": "Antigua e Barbuda",
@@ -51,7 +56,8 @@ var paesi = {
 		"fra": "Antigua-et-Barbuda",
 		"por": "Antígua e Barbuda",
 		"deu": "Antigua und Barbuda",
-		"prefisso": "+1268"
+		"prefisso": "+1268",
+		"valuta": "XCD"
 	},
 	"am": {
 		"ita": "Armenia",
@@ -60,7 +66,8 @@ var paesi = {
 		"fra": "Armenie",
 		"por": "Arménia",
 		"deu": "Armenien",
-		"prefisso": "+374"
+		"prefisso": "+374",
+		"valuta": "AMD"
 	},
 	"az": {
 		"ita": "Azerbaigian",
@@ -69,7 +76,8 @@ var paesi = {
 		"fra": "Azerbaïdjan",
 		"por": "Azerbaijão",
 		"deu": "Aserbaidschan",
-		"prefisso": "+994"
+		"prefisso": "+994",
+		"valuta": "AZN"
 	},
 	"ar": {
 		"ita": "Argentina",
@@ -78,7 +86,8 @@ var paesi = {
 		"fra": "Argentine",
 		"por": "Argentina",
 		"deu": "Argentinien",
-		"prefisso": "+54"
+		"prefisso": "+54",
+		"valuta": "ARS"
 	},
 	"au": {
 		"ita": "Australia",
@@ -87,7 +96,8 @@ var paesi = {
 		"fra": "Australie",
 		"por": "Austrália",
 		"deu": "Australien",
-		"prefisso": "+61"
+		"prefisso": "+61",
+		"valuta": "AUD"
 	},
 	"at": {
 		"ita": "Austria",
@@ -96,7 +106,8 @@ var paesi = {
 		"fra": "Autriche",
 		"por": "Áustria",
 		"deu": "Österreich",
-		"prefisso": "+43"
+		"prefisso": "+43",
+		"valuta": "EUR"
 	},
 	"bs": {
 		"ita": "Bahamas",
@@ -105,7 +116,8 @@ var paesi = {
 		"fra": "Bahamas",
 		"por": "Bahamas",
 		"deu": "Bahamas",
-		"prefisso": "+1242"
+		"prefisso": "+1242",
+		"valuta": "BSD"
 	},
 	"bh": {
 		"ita": "Bahrein",
@@ -114,7 +126,8 @@ var paesi = {
 		"fra": "Bahreïn",
 		"por": "Bahrein",
 		"deu": "Bahrain",
-		"prefisso": "+973"
+		"prefisso": "+973",
+		"valuta": "BHD"
 	},
 	"bd": {
 		"ita": "Bangladesh",
@@ -123,7 +136,8 @@ var paesi = {
 		"fra": "Bangladesh",
 		"por": "Bangladesh",
 		"deu": "Bangladesch",
-		"prefisso": "+880"
+		"prefisso": "+880",
+		"valuta": "BDT"
 	},
 	"bb": {
 		"ita": "Barbados",
@@ -132,7 +146,8 @@ var paesi = {
 		"fra": "Barbade",
 		"por": "Barbados",
 		"deu": "Barbados",
-		"prefisso": "+1246"
+		"prefisso": "+1246",
+		"valuta": "BBD"
 	},
 	"by": {
 		"ita": "Bielorussia",
@@ -141,7 +156,8 @@ var paesi = {
 		"fra": "Biélorussie",
 		"por": "Bielorrússia",
 		"deu": "Weißrussland",
-		"prefisso": "+375"
+		"prefisso": "+375",
+		"valuta": "BYN"
 	},
 	"be": {
 		"ita": "Belgio",
@@ -150,7 +166,8 @@ var paesi = {
 		"fra": "Belgique",
 		"por": "Bélgica",
 		"deu": "Belgien",
-		"prefisso": "+32"
+		"prefisso": "+32",
+		"valuta": "EUR"
 	},
 	"bz": {
 		"ita": "Belize",
@@ -159,7 +176,8 @@ var paesi = {
 		"fra": "Belize",
 		"por": "Belize",
 		"deu": "Belize",
-		"prefisso": "+501"
+		"prefisso": "+501",
+		"valuta": "BZD"
 	},
 	"bj": {
 		"ita": "Benin",
@@ -168,7 +186,8 @@ var paesi = {
 		"fra": "Bénin",
 		"por": "Benin",
 		"deu": "Benin",
-		"prefisso": "+229"
+		"prefisso": "+229",
+		"valuta": "XAF"
 	},
 	"bt": {
 		"ita": "Bhutan",
@@ -177,7 +196,8 @@ var paesi = {
 		"fra": "Bhoutan",
 		"por": "Butão",
 		"deu": "Bhutan",
-		"prefisso": "+975"
+		"prefisso": "+975",
+		"valuta": "BTN"
 	},
 	"bo": {
 		"ita": "Bolivia",
@@ -186,7 +206,8 @@ var paesi = {
 		"fra": "Bolivie",
 		"por": "Bolívia",
 		"deu": "Bolivien",
-		"prefisso": "+591"
+		"prefisso": "+591",
+		"valuta": "BOB"
 	},
 	"ba": {
 		"ita": "Bosnia-Erzegovina",
@@ -195,7 +216,8 @@ var paesi = {
 		"fra": "Bosnie-Herzégovine",
 		"por": "Bósnia e Herzegovina",
 		"deu": "Bosnien und Herzegowina",
-		"prefisso": "+387"
+		"prefisso": "+387",
+		"valuta": "BAM"
 	},
 	"bw": {
 		"ita": "Botswana",
@@ -204,7 +226,8 @@ var paesi = {
 		"fra": "Botswana",
 		"por": "Botsuana",
 		"deu": "Botsuana",
-		"prefisso": "+267"
+		"prefisso": "+267",
+		"valuta": "BWP"
 	},
 	"br": {
 		"ita": "Brasile",
@@ -213,7 +236,8 @@ var paesi = {
 		"fra": "Brésil",
 		"por": "Brasil",
 		"deu": "Brasilien",
-		"prefisso": "+55"
+		"prefisso": "+55",
+		"valuta": "BRL"
 	},
 	"bn": {
 		"ita": "Brunei",
@@ -222,7 +246,8 @@ var paesi = {
 		"fra": "Brunéi",
 		"por": "Brunei",
 		"deu": "Brunei",
-		"prefisso": "+673"
+		"prefisso": "+673",
+		"valuta": "BND"
 	},
 	"bg": {
 		"ita": "Bulgaria",
@@ -231,7 +256,8 @@ var paesi = {
 		"fra": "Bulgarie",
 		"por": "Bulgária",
 		"deu": "Bulgarien",
-		"prefisso": "+359"
+		"prefisso": "+359",
+		"valuta": "BGN"
 	},
 	"bf": {
 		"ita": "Burkina Faso",
@@ -240,7 +266,8 @@ var paesi = {
 		"fra": "Burkina Faso",
 		"por": "Burkina Faso",
 		"deu": "Burkina Faso",
-		"prefisso": "+226"
+		"prefisso": "+226",
+		"valuta": "XAF"
 	},
 	"bi": {
 		"ita": "Burundi",
@@ -249,7 +276,8 @@ var paesi = {
 		"fra": "Burundi",
 		"por": "Burundi",
 		"deu": "Burundi",
-		"prefisso": "+257"
+		"prefisso": "+257",
+		"valuta": "BIF"
 	},
 	"kh": {
 		"ita": "Cambogia",
@@ -258,7 +286,8 @@ var paesi = {
 		"fra": "Cambodge",
 		"por": "Camboja",
 		"deu": "Kambodscha",
-		"prefisso": "+855"
+		"prefisso": "+855",
+		"valuta": "KHR"
 	},
 	"cm": {
 		"ita": "Camerun",
@@ -267,7 +296,8 @@ var paesi = {
 		"fra": "Cameroun",
 		"por": "Camarões",
 		"deu": "Kamerun",
-		"prefisso": "+237"
+		"prefisso": "+237",
+		"valuta": "XAF"
 	},
 	"ca": {
 		"ita": "Canada",
@@ -276,7 +306,8 @@ var paesi = {
 		"fra": "Canada",
 		"por": "Canadá",
 		"deu": "Kanada",
-		"prefisso": "+1"
+		"prefisso": "+1",
+		"valuta": "CAD"
 	},
 	"cv": {
 		"ita": "Capo Verde",
@@ -285,7 +316,8 @@ var paesi = {
 		"fra": "Cap-Vert",
 		"por": "Cabo Verde",
 		"deu": "Kap Verde",
-		"prefisso": "+238"
+		"prefisso": "+238",
+		"valuta": "CVE"
 	},
 	"cf": {
 		"ita": "Repubblica Centrafricana",
@@ -294,7 +326,8 @@ var paesi = {
 		"fra": "République centrafricaine",
 		"por": "República Centro-Africana",
 		"deu": "Zentralafrikanische Republik",
-		"prefisso": "+236"
+		"prefisso": "+236",
+		"valuta": "XAF"
 	},
 	"td": {
 		"ita": "Ciad",
@@ -303,7 +336,8 @@ var paesi = {
 		"fra": "Tchad",
 		"por": "Chade",
 		"deu": "Tschad",
-		"prefisso": "+235"
+		"prefisso": "+235",
+		"valuta": "XAF"
 	},
 	"cl": {
 		"ita": "Cile",
@@ -312,7 +346,8 @@ var paesi = {
 		"fra": "Chili",
 		"por": "Chile",
 		"deu": "Chile",
-		"prefisso": "+56"
+		"prefisso": "+56",
+		"valuta": "CLP"
 	},
 	"cn": {
 		"ita": "Cina",
@@ -321,7 +356,8 @@ var paesi = {
 		"fra": "Chine",
 		"por": "China",
 		"deu": "China",
-		"prefisso": "+86"
+		"prefisso": "+86",
+		"valuta": "CNY"
 	},
 	"co": {
 		"ita": "Colombia",
@@ -330,7 +366,8 @@ var paesi = {
 		"fra": "Colombie",
 		"por": "Colômbia",
 		"deu": "Kolumbien",
-		"prefisso": "+57"
+		"prefisso": "+57",
+		"valuta": "COP"
 	},
 	"km": {
 		"ita": "Comore",
@@ -339,7 +376,8 @@ var paesi = {
 		"fra": "Comores",
 		"por": "Comores",
 		"deu": "Komoren",
-		"prefisso": "+269"
+		"prefisso": "+269",
+		"valuta": "KMF"
 	},
 	"cg": {
 		"ita": "Congo",
@@ -348,7 +386,8 @@ var paesi = {
 		"fra": "Congo",
 		"por": "Congo",
 		"deu": "Kongo",
-		"prefisso": "+242"
+		"prefisso": "+242",
+		"valuta": "CDF"
 	},
 	"cd": {
 		"ita": "RD del Congo",
@@ -357,7 +396,8 @@ var paesi = {
 		"fra": "République démocratique du Congo",
 		"por": "República Democrática do Congo",
 		"deu": "Demokratische Republik Kongo",
-		"prefisso": "+243"
+		"prefisso": "+243",
+		"valuta": "CDF"
 	},
 	"cr": {
 		"ita": "Costa Rica",
@@ -366,7 +406,8 @@ var paesi = {
 		"fra": "Costa Rica",
 		"por": "Costa Rica",
 		"deu": "Costa Rica",
-		"prefisso": "+506"
+		"prefisso": "+506",
+		"valuta": "CRC"
 	},
 	"ci": {
 		"ita": "Costa d'Avorio",
@@ -375,7 +416,8 @@ var paesi = {
 		"fra": "Côte d'Ivoire",
 		"por": "Costa do Marfim",
 		"deu": "Elfenbeinküste",
-		"prefisso": "+225"
+		"prefisso": "+225",
+		"valuta": "XAF"
 	},
 	"hr": {
 		"ita": "Croazia",
@@ -384,7 +426,8 @@ var paesi = {
 		"fra": "Croatie",
 		"por": "Croácia",
 		"deu": "Kroatien",
-		"prefisso": "+385"
+		"prefisso": "+385",
+		"valuta": "HRK"
 	},
 	"cu": {
 		"ita": "Cuba",
@@ -393,7 +436,8 @@ var paesi = {
 		"fra": "Cuba",
 		"por": "Cuba",
 		"deu": "Kuba",
-		"prefisso": "+53"
+		"prefisso": "+53",
+		"valuta": "CUP"
 	},
 	"cy": {
 		"ita": "Cipro",
@@ -402,7 +446,8 @@ var paesi = {
 		"fra": "Chypre",
 		"por": "Chipre",
 		"deu": "Zypern",
-		"prefisso": "+357"
+		"prefisso": "+357",
+		"valuta": "EUR"
 	},
 	"cz": {
 		"ita": "Repubblica Ceca",
@@ -411,7 +456,8 @@ var paesi = {
 		"fra": "République tchèque",
 		"por": "República Checa",
 		"deu": "Tschechische Republik",
-		"prefisso": "+420"
+		"prefisso": "+420",
+		"valuta": "CZK"
 	},
 	"dk": {
 		"ita": "Danimarca",
@@ -420,7 +466,8 @@ var paesi = {
 		"fra": "Danemark",
 		"por": "Dinamarca",
 		"deu": "Dänemark",
-		"prefisso": "+45"
+		"prefisso": "+45",
+		"valuta": "DKK"
 	},
 	"dj": {
 		"ita": "Gibuti",
@@ -429,7 +476,8 @@ var paesi = {
 		"fra": "Djibouti",
 		"por": "Djibuti",
 		"deu": "Dschibuti",
-		"prefisso": "+253"
+		"prefisso": "+253",
+		"valuta": "DJF"
 	},
 	"dm": {
 		"ita": "Dominica",
@@ -438,7 +486,8 @@ var paesi = {
 		"fra": "Dominique",
 		"por": "Dominica",
 		"deu": "Dominica",
-		"prefisso": "+1767"
+		"prefisso": "+1767",
+		"valuta": "DOP"
 	},
 	"do": {
 		"ita": "Repubblica Dominicana",
@@ -447,7 +496,8 @@ var paesi = {
 		"fra": "République dominicaine",
 		"por": "República Dominicana",
 		"deu": "Dominikanische Republik",
-		"prefisso": "+1809"
+		"prefisso": "+1809",
+		"valuta": "DOP"
 	},
 	"ec": {
 		"ita": "Ecuador",
@@ -456,7 +506,8 @@ var paesi = {
 		"fra": "Équateur",
 		"por": "Equador",
 		"deu": "Ecuador",
-		"prefisso": "+593"
+		"prefisso": "+593",
+		"valuta": "USD"
 	},
 	"eg": {
 		"ita": "Egitto",
@@ -465,7 +516,8 @@ var paesi = {
 		"fra": "Égypte",
 		"por": "Egito",
 		"deu": "Ägypten",
-		"prefisso": "+20"
+		"prefisso": "+20",
+		"valuta": "EGP"
 	},
 	"sv": {
 		"ita": "El Salvador",
@@ -474,7 +526,8 @@ var paesi = {
 		"fra": "Salvador",
 		"por": "El Salvador",
 		"deu": "El Salvador",
-		"prefisso": "+503"
+		"prefisso": "+503",
+		"valuta": "SVC"
 	},
 	"gq": {
 		"ita": "Guinea Equatoriale",
@@ -483,7 +536,8 @@ var paesi = {
 		"fra": "Guinée équatoriale",
 		"por": "Guiné Equatorial",
 		"deu": "Äquatorialguinea",
-		"prefisso": "+240"
+		"prefisso": "+240",
+		"valuta": "XAF"
 	},
 	"er": {
 		"ita": "Eritrea",
@@ -492,7 +546,8 @@ var paesi = {
 		"fra": "Érythrée",
 		"por": "Eritreia",
 		"deu": "Eritrea",
-		"prefisso": "+291"
+		"prefisso": "+291",
+		"valuta": "ERN"
 	},
 	"ee": {
 		"ita": "Estonia",
@@ -501,7 +556,8 @@ var paesi = {
 		"fra": "Estonie",
 		"por": "Estônia",
 		"deu": "Estland",
-		"prefisso": "+372"
+		"prefisso": "+372",
+		"valuta": "EUR"
 	},
 	"sz": {
 		"ita": "Swaziland",
@@ -510,7 +566,8 @@ var paesi = {
 		"fra": "Eswatini",
 		"por": "Suazilândia",
 		"deu": "Eswatini",
-		"prefisso": "+268"
+		"prefisso": "+268",
+		"valuta": "SZL"
 	},
 	"et": {
 		"ita": "Etiopia",
@@ -519,7 +576,8 @@ var paesi = {
 		"fra": "Éthiopie",
 		"por": "Etiópia",
 		"deu": "Äthiopien",
-		"prefisso": "+251"
+		"prefisso": "+251",
+		"valuta": "ETB"
 	},
 	"fj": {
 		"ita": "Figi",
@@ -528,7 +586,8 @@ var paesi = {
 		"fra": "Fidji",
 		"por": "Fiji",
 		"deu": "Fidschi",
-		"prefisso": "+679"
+		"prefisso": "+679",
+		"valuta": "FJD"
 	},
 	"fi": {
 		"ita": "Finlandia",
@@ -537,7 +596,8 @@ var paesi = {
 		"fra": "Finlande",
 		"por": "Finlândia",
 		"deu": "Finnland",
-		"prefisso": "+358"
+		"prefisso": "+358",
+		"valuta": "EUR"
 	},
 	"fr": {
 		"ita": "Francia",
@@ -546,7 +606,8 @@ var paesi = {
 		"fra": "France",
 		"por": "França",
 		"deu": "Frankreich",
-		"prefisso": "+33"
+		"prefisso": "+33",
+		"valuta": "EUR"
 	},
 	"ga": {
 		"ita": "Gabon",
@@ -555,7 +616,8 @@ var paesi = {
 		"fra": "Gabon",
 		"por": "Gabão",
 		"deu": "Gabun",
-		"prefisso": "+241"
+		"prefisso": "+241",
+		"valuta": "XAF"
 	},
 	"gm": {
 		"ita": "Gambia",
@@ -564,7 +626,8 @@ var paesi = {
 		"fra": "Gambie",
 		"por": "Gâmbia",
 		"deu": "Gambia",
-		"prefisso": "+220"
+		"prefisso": "+220",
+		"valuta": "GMD"
 	},
 	"ge": {
 		"ita": "Georgia",
@@ -573,7 +636,8 @@ var paesi = {
 		"fra": "Géorgie",
 		"por": "Geórgia",
 		"deu": "Georgien",
-		"prefisso": "+995"
+		"prefisso": "+995",
+		"valuta": "GEL"
 	},
 	"de": {
 		"ita": "Germania",
@@ -582,7 +646,8 @@ var paesi = {
 		"fra": "Allemagne",
 		"por": "Alemanha",
 		"deu": "Deutschland",
-		"prefisso": "+49"
+		"prefisso": "+49",
+		"valuta": "EUR"
 	},
 	"gh": {
 		"ita": "Ghana",
@@ -591,7 +656,8 @@ var paesi = {
 		"fra": "Ghana",
 		"por": "Gana",
 		"deu": "Ghana",
-		"prefisso": "+233"
+		"prefisso": "+233",
+		"valuta": "GHS"
 	},
 	"gi": {
 		"ita": "Gibilterra",
@@ -600,7 +666,8 @@ var paesi = {
 		"fra": "Gibraltar",
 		"por": "Gibraltar",
 		"deu": "Gibraltar",
-		"prefisso": "+350"
+		"prefisso": "+350",
+		"valuta": "GIP"
 	},
 	"gr": {
 		"ita": "Grecia",
@@ -609,7 +676,8 @@ var paesi = {
 		"fra": "Grèce",
 		"por": "Grécia",
 		"deu": "Griechenland",
-		"prefisso": "+30"
+		"prefisso": "+30",
+		"valuta": "EUR"
 	},
 	"gd": {
 		"ita": "Grenada",
@@ -618,7 +686,8 @@ var paesi = {
 		"fra": "Grenade",
 		"por": "Granada",
 		"deu": "Grenada",
-		"prefisso": "+1473"
+		"prefisso": "+1473",
+		"valuta": "XCD"
 	},
 	"gt": {
 		"ita": "Guatemala",
@@ -627,7 +696,8 @@ var paesi = {
 		"fra": "Guatemala",
 		"por": "Guatemala",
 		"deu": "Guatemala",
-		"prefisso": "+502"
+		"prefisso": "+502",
+		"valuta": "GTQ"
 	},
 	"gn": {
 		"ita": "Guinea",
@@ -636,7 +706,8 @@ var paesi = {
 		"fra": "Guinée",
 		"por": "Guiné",
 		"deu": "Guinea",
-		"prefisso": "+224"
+		"prefisso": "+224",
+		"valuta": "GNF"
 	},
 	"gw": {
 		"ita": "Guinea-Bissau",
@@ -645,7 +716,8 @@ var paesi = {
 		"fra": "Guinée-Bissau",
 		"por": "Guiné-Bissau",
 		"deu": "Guinea-Bissau",
-		"prefisso": "+245"
+		"prefisso": "+245",
+		"valuta": "XAF"
 	},
 	"gy": {
 		"ita": "Guyana",
@@ -654,7 +726,8 @@ var paesi = {
 		"fra": "Guyana",
 		"por": "Guiana",
 		"deu": "Guyana",
-		"prefisso": "+592"
+		"prefisso": "+592",
+		"valuta": "GYD"
 	},
 	"ht": {
 		"ita": "Haiti",
@@ -663,7 +736,8 @@ var paesi = {
 		"fra": "Haïti",
 		"por": "Haiti",
 		"deu": "Haiti",
-		"prefisso": "+509"
+		"prefisso": "+509",
+		"valuta": "HTG"
 	},
 	"hn": {
 		"ita": "Honduras",
@@ -672,7 +746,8 @@ var paesi = {
 		"fra": "Honduras",
 		"por": "Honduras",
 		"deu": "Honduras",
-		"prefisso": "+504"
+		"prefisso": "+504",
+		"valuta": "HNL"
 	},
 	"hu": {
 		"ita": "Ungheria",
@@ -681,7 +756,8 @@ var paesi = {
 		"fra": "Hongrie",
 		"por": "Hungria",
 		"deu": "Ungarn",
-		"prefisso": "+36"
+		"prefisso": "+36",
+		"valuta": "HUF"
 	},
 	"is": {
 		"ita": "Islanda",
@@ -690,7 +766,8 @@ var paesi = {
 		"fra": "Islande",
 		"por": "Islândia",
 		"deu": "Island",
-		"prefisso": "+354"
+		"prefisso": "+354",
+		"valuta": "ISK"
 	},
 	"in": {
 		"ita": "India",
@@ -699,7 +776,8 @@ var paesi = {
 		"fra": "Inde",
 		"por": "Índia",
 		"deu": "Indien",
-		"prefisso": "+91"
+		"prefisso": "+91",
+		"valuta": "INR"
 	},
 	"id": {
 		"ita": "Indonesia",
@@ -708,7 +786,8 @@ var paesi = {
 		"fra": "Indonésie",
 		"por": "Indonésia",
 		"deu": "Indonesien",
-		"prefisso": "+62"
+		"prefisso": "+62",
+		"valuta": "IDR"
 	},
 	"ir": {
 		"ita": "Iran",
@@ -717,7 +796,8 @@ var paesi = {
 		"fra": "Iran",
 		"por": "Irã",
 		"deu": "Iran",
-		"prefisso": "+98"
+		"prefisso": "+98",
+		"valuta": "IRR"
 	},
 	"iq": {
 		"ita": "Iraq",
@@ -726,7 +806,8 @@ var paesi = {
 		"fra": "Irak",
 		"por": "Iraque",
 		"deu": "Irak",
-		"prefisso": "+964"
+		"prefisso": "+964",
+		"valuta": "IQD"
 	},
 	"ie": {
 		"ita": "Irlanda",
@@ -735,7 +816,8 @@ var paesi = {
 		"fra": "Irlande",
 		"por": "Irlanda",
 		"deu": "Irland",
-		"prefisso": "+353"
+		"prefisso": "+353",
+		"valuta": "EUR"
 	},
 	"il": {
 		"ita": "Israele",
@@ -744,7 +826,8 @@ var paesi = {
 		"fra": "Israël",
 		"por": "Israel",
 		"deu": "Israel",
-		"prefisso": "+972"
+		"prefisso": "+972",
+		"valuta": "ILS"
 	},
 	"it": {
 		"ita": "Italia",
@@ -753,7 +836,8 @@ var paesi = {
 		"fra": "Italie",
 		"por": "Itália",
 		"deu": "Italien",
-		"prefisso": "+39"
+		"prefisso": "+39",
+		"valuta": "EUR"
 	},
 	"jm": {
 		"ita": "Giamaica",
@@ -762,7 +846,8 @@ var paesi = {
 		"fra": "Jamaïque",
 		"por": "Jamaica",
 		"deu": "Jamaika",
-		"prefisso": "+1876"
+		"prefisso": "+1876",
+		"valuta": "JMD"
 	},
 	"jp": {
 		"ita": "Giappone",
@@ -771,7 +856,8 @@ var paesi = {
 		"fra": "Japon",
 		"por": "Japão",
 		"deu": "Japan",
-		"prefisso": "+81"
+		"prefisso": "+81",
+		"valuta": "JPY"
 	},
 	"jo": {
 		"ita": "Giordania",
@@ -780,7 +866,8 @@ var paesi = {
 		"fra": "Jordanie",
 		"por": "Jordânia",
 		"deu": "Jordanien",
-		"prefisso": "+962"
+		"prefisso": "+962",
+		"valuta": "JOD"
 	},
 	"kz": {
 		"ita": "Kazakistan",
@@ -789,7 +876,8 @@ var paesi = {
 		"fra": "Kazakhstan",
 		"por": "Cazaquistão",
 		"deu": "Kasachstan",
-		"prefisso": "+7"
+		"prefisso": "+7",
+		"valuta": "KZT"
 	},
 	"ke": {
 		"ita": "Kenya",
@@ -798,7 +886,8 @@ var paesi = {
 		"fra": "Kenya",
 		"por": "Quênia",
 		"deu": "Kenia",
-		"prefisso": "+254"
+		"prefisso": "+254",
+		"valuta": "KES"
 	},
 	"ki": {
 		"ita": "Kiribati",
@@ -807,7 +896,8 @@ var paesi = {
 		"fra": "Kiribati",
 		"por": "Kiribati",
 		"deu": "Kiribati",
-		"prefisso": "+686"
+		"prefisso": "+686",
+		"valuta": "AUD"
 	},
 	"kw": {
 		"ita": "Kuwait",
@@ -816,7 +906,8 @@ var paesi = {
 		"fra": "Koweït",
 		"por": "Kuwait",
 		"deu": "Kuwait",
-		"prefisso": "+965"
+		"prefisso": "+965",
+		"valuta": "KWD"
 	},
 	"kg": {
 		"ita": "Kirghizistan",
@@ -825,7 +916,8 @@ var paesi = {
 		"fra": "Kirghizistan",
 		"por": "Quirguistão",
 		"deu": "Kirgisistan",
-		"prefisso": "+996"
+		"prefisso": "+996",
+		"valuta": "KGS"
 	},
 	"la": {
 		"ita": "Laos",
@@ -834,7 +926,8 @@ var paesi = {
 		"fra": "Laos",
 		"por": "Laos",
 		"deu": "Laos",
-		"prefisso": "+856"
+		"prefisso": "+856",
+		"valuta": "LAK"
 	},
 	"lv": {
 		"ita": "Lettonia",
@@ -843,7 +936,8 @@ var paesi = {
 		"fra": "Lettonie",
 		"por": "Letônia",
 		"deu": "Lettland",
-		"prefisso": "+371"
+		"prefisso": "+371",
+		"valuta": "EUR"
 	},
 	"lb": {
 		"ita": "Libano",
@@ -852,7 +946,8 @@ var paesi = {
 		"fra": "Liban",
 		"por": "Líbano",
 		"deu": "Libanon",
-		"prefisso": "+961"
+		"prefisso": "+961",
+		"valuta": "LBP"
 	},
 	"ls": {
 		"ita": "Lesotho",
@@ -861,7 +956,8 @@ var paesi = {
 		"fra": "Lesotho",
 		"por": "Lesoto",
 		"deu": "Lesotho",
-		"prefisso": "+266"
+		"prefisso": "+266",
+		"valuta": "LSL"
 	},
 	"lr": {
 		"ita": "Liberia",
@@ -870,7 +966,9 @@ var paesi = {
 		"fra": "Libéria",
 		"por": "Libéria",
 		"deu": "Liberia",
-		"prefisso": "+231"
+		"prefisso": "+231",
+		"valuta": "LRD",
+		"sistema_misure": "a"
 	},
 	"ly": {
 		"ita": "Libia",
@@ -879,7 +977,8 @@ var paesi = {
 		"fra": "Libye",
 		"por": "Líbia",
 		"deu": "Libyen",
-		"prefisso": "+218"
+		"prefisso": "+218",
+		"valuta": "LYD"
 	},
 	"li": {
 		"ita": "Liechtenstein",
@@ -888,7 +987,8 @@ var paesi = {
 		"fra": "Liechtenstein",
 		"por": "Liechtenstein",
 		"deu": "Liechtenstein",
-		"prefisso": "+423"
+		"prefisso": "+423",
+		"valuta": "CHF"
 	},
 	"lt": {
 		"ita": "Lituania",
@@ -897,7 +997,8 @@ var paesi = {
 		"fra": "Lituanie",
 		"por": "Lituânia",
 		"deu": "Litauen",
-		"prefisso": "+370"
+		"prefisso": "+370",
+		"valuta": "EUR"
 	},
 	"lu": {
 		"ita": "Lussemburgo",
@@ -906,7 +1007,8 @@ var paesi = {
 		"fra": "Luxembourg",
 		"por": "Luxemburgo",
 		"deu": "Luxemburg",
-		"prefisso": "+352"
+		"prefisso": "+352",
+		"valuta": "EUR"
 	},
 	"mk": {
 		"ita": "Macedonia del Nord",
@@ -915,7 +1017,8 @@ var paesi = {
 		"fra": "Macédoine du Nord",
 		"por": "Macedônia do Norte",
 		"deu": "Nordmazedonien",
-		"prefisso": "+389"
+		"prefisso": "+389",
+		"valuta": "MKD"
 	},
 	"mg": {
 		"ita": "Madagascar",
@@ -924,7 +1027,8 @@ var paesi = {
 		"fra": "Madagascar",
 		"por": "Madagáscar",
 		"deu": "Madagaskar",
-		"prefisso": "+261"
+		"prefisso": "+261",
+		"valuta": "MGA"
 	},
 	"mw": {
 		"ita": "Malawi",
@@ -933,7 +1037,8 @@ var paesi = {
 		"fra": "Malawi",
 		"por": "Malawi",
 		"deu": "Malawi",
-		"prefisso": "+265"
+		"prefisso": "+265",
+		"valuta": "MWK"
 	},
 	"my": {
 		"ita": "Malesia",
@@ -942,7 +1047,8 @@ var paesi = {
 		"fra": "Malaisie",
 		"por": "Malásia",
 		"deu": "Malaysia",
-		"prefisso": "+60"
+		"prefisso": "+60",
+		"valuta": "MYR"
 	},
 	"mv": {
 		"ita": "Maldive",
@@ -951,7 +1057,8 @@ var paesi = {
 		"fra": "Maldives",
 		"por": "Maldivas",
 		"deu": "Malediven",
-		"prefisso": "+960"
+		"prefisso": "+960",
+		"valuta": "MVR"
 	},
 	"ml": {
 		"ita": "Mali",
@@ -960,7 +1067,8 @@ var paesi = {
 		"fra": "Mali",
 		"por": "Mali",
 		"deu": "Mali",
-		"prefisso": "+223"
+		"prefisso": "+223",
+		"valuta": "XAF"
 	},
 	"mt": {
 		"ita": "Malta",
@@ -969,7 +1077,8 @@ var paesi = {
 		"fra": "Malte",
 		"por": "Malta",
 		"deu": "Malta",
-		"prefisso": "+356"
+		"prefisso": "+356",
+		"valuta": "EUR"
 	},
 	"mh": {
 		"ita": "Isole Marshall",
@@ -978,7 +1087,8 @@ var paesi = {
 		"fra": "Îles Marshall",
 		"por": "Ilhas Marshall",
 		"deu": "Marshallinseln",
-		"prefisso": "+692"
+		"prefisso": "+692",
+		"valuta": "USD"
 	},
 	"mr": {
 		"ita": "Mauritania",
@@ -987,7 +1097,8 @@ var paesi = {
 		"fra": "Mauritanie",
 		"por": "Mauritânia",
 		"deu": "Mauretanien",
-		"prefisso": "+222"
+		"prefisso": "+222",
+		"valuta": "MRU"
 	},
 	"mu": {
 		"ita": "Mauritius",
@@ -996,7 +1107,8 @@ var paesi = {
 		"fra": "Maurice",
 		"por": "Maurício",
 		"deu": "Mauritius",
-		"prefisso": "+230"
+		"prefisso": "+230",
+		"valuta": "MUR"
 	},
 	"mx": {
 		"ita": "Messico",
@@ -1005,7 +1117,8 @@ var paesi = {
 		"fra": "Mexique",
 		"por": "México",
 		"deu": "Mexiko",
-		"prefisso": "+52"
+		"prefisso": "+52",
+		"valuta": "MXN"
 	},
 	"fm": {
 		"ita": "Micronesia",
@@ -1014,7 +1127,8 @@ var paesi = {
 		"fra": "Micronésie",
 		"por": "Micronésia",
 		"deu": "Mikronesien",
-		"prefisso": "+691"
+		"prefisso": "+691",
+		"valuta": "USD"
 	},
 	"md": {
 		"ita": "Moldavia",
@@ -1023,7 +1137,8 @@ var paesi = {
 		"fra": "Moldavie",
 		"por": "Moldávia",
 		"deu": "Republik Moldau",
-		"prefisso": "+373"
+		"prefisso": "+373",
+		"valuta": "MDL"
 	},
 	"mc": {
 		"ita": "Monaco",
@@ -1032,7 +1147,8 @@ var paesi = {
 		"fra": "Monaco",
 		"por": "Mônaco",
 		"deu": "Monaco",
-		"prefisso": "+377"
+		"prefisso": "+377",
+		"valuta": "EUR"
 	},
 	"mn": {
 		"ita": "Mongolia",
@@ -1041,7 +1157,8 @@ var paesi = {
 		"fra": "Mongolie",
 		"por": "Mongólia",
 		"deu": "Mongolei",
-		"prefisso": "+976"
+		"prefisso": "+976",
+		"valuta": "MNT"
 	},
 	"me": {
 		"ita": "Montenegro",
@@ -1050,7 +1167,8 @@ var paesi = {
 		"fra": "Monténégro",
 		"por": "Montenegro",
 		"deu": "Montenegro",
-		"prefisso": "+382"
+		"prefisso": "+382",
+		"valuta": "EUR"
 	},
 	"ma": {
 		"ita": "Marocco",
@@ -1059,7 +1177,8 @@ var paesi = {
 		"fra": "Maroc",
 		"por": "Marrocos",
 		"deu": "Marokko",
-		"prefisso": "+212"
+		"prefisso": "+212",
+		"valuta": "MAD"
 	},
 	"mz": {
 		"ita": "Mozambico",
@@ -1068,7 +1187,8 @@ var paesi = {
 		"fra": "Mozambique",
 		"por": "Moçambique",
 		"deu": "Mosambik",
-		"prefisso": "+258"
+		"prefisso": "+258",
+		"valuta": "MZN"
 	},
 	"mm": {
 		"ita": "Myanmar",
@@ -1077,7 +1197,9 @@ var paesi = {
 		"fra": "Myanmar",
 		"por": "Myanmar",
 		"deu": "Myanmar",
-		"prefisso": "+95"
+		"prefisso": "+95",
+		"valuta": "MMK",
+		"sistema_misure": "a"
 	},
 	"na": {
 		"ita": "Namibia",
@@ -1086,7 +1208,8 @@ var paesi = {
 		"fra": "Namibie",
 		"por": "Namíbia",
 		"deu": "Namibia",
-		"prefisso": "+264"
+		"prefisso": "+264",
+		"valuta": "NAD"
 	},
 	"nr": {
 		"ita": "Nauru",
@@ -1095,7 +1218,8 @@ var paesi = {
 		"fra": "Nauru",
 		"por": "Nauru",
 		"deu": "Nauru",
-		"prefisso": "+674"
+		"prefisso": "+674",
+		"valuta": "AUD"
 	},
 	"np": {
 		"ita": "Nepal",
@@ -1104,7 +1228,8 @@ var paesi = {
 		"fra": "Népal",
 		"por": "Nepal",
 		"deu": "Nepal",
-		"prefisso": "+977"
+		"prefisso": "+977",
+		"valuta": "NPR"
 	},
 	"nl": {
 		"ita": "Paesi Bassi",
@@ -1113,7 +1238,8 @@ var paesi = {
 		"fra": "Pays-Bas",
 		"por": "Países Baixos",
 		"deu": "Niederlande",
-		"prefisso": "+31"
+		"prefisso": "+31",
+		"valuta": "EUR"
 	},
 	"nz": {
 		"ita": "Nuova Zelanda",
@@ -1122,7 +1248,8 @@ var paesi = {
 		"fra": "Nouvelle-Zélande",
 		"por": "Nova Zelândia",
 		"deu": "Neuseeland",
-		"prefisso": "+64"
+		"prefisso": "+64",
+		"valuta": "NZD"
 	},
 	"ni": {
 		"ita": "Nicaragua",
@@ -1131,7 +1258,8 @@ var paesi = {
 		"fra": "Nicaragua",
 		"por": "Nicarágua",
 		"deu": "Nicaragua",
-		"prefisso": "+505"
+		"prefisso": "+505",
+		"valuta": "NIO"
 	},
 	"ne": {
 		"ita": "Niger",
@@ -1140,7 +1268,8 @@ var paesi = {
 		"fra": "Niger",
 		"por": "Níger",
 		"deu": "Niger",
-		"prefisso": "+227"
+		"prefisso": "+227",
+		"valuta": "XAF"
 	},
 	"ng": {
 		"ita": "Nigeria",
@@ -1149,7 +1278,8 @@ var paesi = {
 		"fra": "Nigéria",
 		"por": "Nigéria",
 		"deu": "Nigeria",
-		"prefisso": "+234"
+		"prefisso": "+234",
+		"valuta": "NGN"
 	},
 	"kp": {
 		"ita": "Corea del Nord",
@@ -1158,7 +1288,8 @@ var paesi = {
 		"fra": "Corée du Nord",
 		"por": "Coreia do Norte",
 		"deu": "Nordkorea",
-		"prefisso": "+850"
+		"prefisso": "+850",
+		"valuta": "KPW"
 	},
 	"no": {
 		"ita": "Norvegia",
@@ -1167,7 +1298,8 @@ var paesi = {
 		"fra": "Norvège",
 		"por": "Noruega",
 		"deu": "Norwegen",
-		"prefisso": "+47"
+		"prefisso": "+47",
+		"valuta": "NOK"
 	},
 	"om": {
 		"ita": "Oman",
@@ -1176,7 +1308,8 @@ var paesi = {
 		"fra": "Oman",
 		"por": "Omã",
 		"deu": "Oman",
-		"prefisso": "+968"
+		"prefisso": "+968",
+		"valuta": "OMR"
 	},
 	"pk": {
 		"ita": "Pakistan",
@@ -1185,7 +1318,8 @@ var paesi = {
 		"fra": "Pakistan",
 		"por": "Paquistão",
 		"deu": "Pakistan",
-		"prefisso": "+92"
+		"prefisso": "+92",
+		"valuta": "PKR"
 	},
 	"pw": {
 		"ita": "Palau",
@@ -1194,7 +1328,8 @@ var paesi = {
 		"fra": "Palaos",
 		"por": "Palau",
 		"deu": "Palau",
-		"prefisso": "+680"
+		"prefisso": "+680",
+		"valuta": "USD"
 	},
 	"pa": {
 		"ita": "Panama",
@@ -1203,7 +1338,8 @@ var paesi = {
 		"fra": "Panama",
 		"por": "Panamá",
 		"deu": "Panama",
-		"prefisso": "+507"
+		"prefisso": "+507",
+		"valuta": "PAB"
 	},
 	"pg": {
 		"ita": "Papua Nuova Guinea",
@@ -1212,7 +1348,8 @@ var paesi = {
 		"fra": "Papouasie-Nouvelle-Guinée",
 		"por": "Papua-Nova Guiné",
 		"deu": "Papua-Neuguinea",
-		"prefisso": "+675"
+		"prefisso": "+675",
+		"valuta": "PGK"
 	},
 	"py": {
 		"ita": "Paraguay",
@@ -1221,7 +1358,8 @@ var paesi = {
 		"fra": "Paraguay",
 		"por": "Paraguai",
 		"deu": "Paraguay",
-		"prefisso": "+595"
+		"prefisso": "+595",
+		"valuta": "PYG"
 	},
 	"pe": {
 		"ita": "Peru",
@@ -1230,7 +1368,8 @@ var paesi = {
 		"fra": "Pérou",
 		"por": "Peru",
 		"deu": "Peru",
-		"prefisso": "+51"
+		"prefisso": "+51",
+		"valuta": "PEN"
 	},
 	"ph": {
 		"ita": "Filippine",
@@ -1239,7 +1378,8 @@ var paesi = {
 		"fra": "Philippines",
 		"por": "Filipinas",
 		"deu": "Philippinen",
-		"prefisso": "+63"
+		"prefisso": "+63",
+		"valuta": "PHP"
 	},
 	"pl": {
 		"ita": "Polonia",
@@ -1248,7 +1388,8 @@ var paesi = {
 		"fra": "Pologne",
 		"por": "Polônia",
 		"deu": "Polen",
-		"prefisso": "+48"
+		"prefisso": "+48",
+		"valuta": "PLN"
 	},
 	"pt": {
 		"ita": "Portogallo",
@@ -1257,7 +1398,8 @@ var paesi = {
 		"fra": "Portugal",
 		"por": "Portugal",
 		"deu": "Portugal",
-		"prefisso": "+351"
+		"prefisso": "+351",
+		"valuta": "EUR"
 	},
 	"qa": {
 		"ita": "Qatar",
@@ -1266,7 +1408,8 @@ var paesi = {
 		"fra": "Qatar",
 		"por": "Catar",
 		"deu": "Katar",
-		"prefisso": "+974"
+		"prefisso": "+974",
+		"valuta": "QAR"
 	},
 	"ro": {
 		"ita": "Romania",
@@ -1275,7 +1418,8 @@ var paesi = {
 		"fra": "Roumanie",
 		"por": "Romênia",
 		"deu": "Rumänien",
-		"prefisso": "+40"
+		"prefisso": "+40",
+		"valuta": "RON"
 	},
 	"ru": {
 		"ita": "Russia",
@@ -1284,7 +1428,8 @@ var paesi = {
 		"fra": "Russie",
 		"por": "Rússia",
 		"deu": "Russland",
-		"prefisso": "+7"
+		"prefisso": "+7",
+		"valuta": "RUB"
 	},
 	"rw": {
 		"ita": "Ruanda",
@@ -1293,7 +1438,8 @@ var paesi = {
 		"fra": "Rwanda",
 		"por": "Ruanda",
 		"deu": "Ruanda",
-		"prefisso": "+250"
+		"prefisso": "+250",
+		"valuta": "RWF"
 	},
 	"kn": {
 		"ita": "Saint Kitts e Nevis",
@@ -1302,7 +1448,8 @@ var paesi = {
 		"fra": "Saint-Kitts-et-Nevis",
 		"por": "São Cristóvão e Nevis",
 		"deu": "St. Kitts und Nevis",
-		"prefisso": "+1-869"
+		"prefisso": "+1-869",
+		"valuta": "XCD"
 	},
 	"lc": {
 		"ita": "Saint Lucia",
@@ -1311,7 +1458,8 @@ var paesi = {
 		"fra": "Sainte-Lucie",
 		"por": "Santa Lúcia",
 		"deu": "St. Lucia",
-		"prefisso": "+1-758"
+		"prefisso": "+1-758",
+		"valuta": "XCD"
 	},
 	"vc": {
 		"ita": "Saint Vincent e Grenadine",
@@ -1320,7 +1468,8 @@ var paesi = {
 		"fra": "Saint-Vincent-et-les Grenadines",
 		"por": "São Vicente e Granadinas",
 		"deu": "St. Vincent und die Grenadinen",
-		"prefisso": "+1-784"
+		"prefisso": "+1-784",
+		"valuta": "XCD"
 	},
 	"ws": {
 		"ita": "Samoa",
@@ -1329,7 +1478,8 @@ var paesi = {
 		"fra": "Samoa",
 		"por": "Samoa",
 		"deu": "Samoa",
-		"prefisso": "+685"
+		"prefisso": "+685",
+		"valuta": "WST"
 	},
 	"sm": {
 		"ita": "San Marino",
@@ -1338,7 +1488,8 @@ var paesi = {
 		"fra": "Saint-Marin",
 		"por": "San Marino",
 		"deu": "San Marino",
-		"prefisso": "+378"
+		"prefisso": "+378",
+		"valuta": "EUR"
 	},
 	"st": {
 		"ita": "São Tomé e Príncipe",
@@ -1347,7 +1498,8 @@ var paesi = {
 		"fra": "São Tomé et Príncipe",
 		"por": "São Tomé e Príncipe",
 		"deu": "São Tomé und Príncipe",
-		"prefisso": "+239"
+		"prefisso": "+239",
+		"valuta": "STN"
 	},
 	"sa": {
 		"ita": "Arabia Saudita",
@@ -1356,7 +1508,8 @@ var paesi = {
 		"fra": "Arabie saoudite",
 		"por": "Arábia Saudita",
 		"deu": "Saudi-Arabien",
-		"prefisso": "+966"
+		"prefisso": "+966",
+		"valuta": "SAR"
 	},
 	"sn": {
 		"ita": "Senegal",
@@ -1365,7 +1518,8 @@ var paesi = {
 		"fra": "Sénégal",
 		"por": "Senegal",
 		"deu": "Senegal",
-		"prefisso": "+221"
+		"prefisso": "+221",
+		"valuta": "XAF"
 	},
 	"rs": {
 		"ita": "Serbia",
@@ -1374,7 +1528,8 @@ var paesi = {
 		"fra": "Serbie",
 		"por": "Sérvia",
 		"deu": "Serbien",
-		"prefisso": "+381"
+		"prefisso": "+381",
+		"valuta": "RSD"
 	},
 	"sc": {
 		"ita": "Seychelles",
@@ -1383,7 +1538,8 @@ var paesi = {
 		"fra": "Seychelles",
 		"por": "Seicheles",
 		"deu": "Seychellen",
-		"prefisso": "+248"
+		"prefisso": "+248",
+		"valuta": "SCR"
 	},
 	"sl": {
 		"ita": "Sierra Leone",
@@ -1392,7 +1548,8 @@ var paesi = {
 		"fra": "Sierra Leone",
 		"por": "Serra Leoa",
 		"deu": "Sierra Leone",
-		"prefisso": "+232"
+		"prefisso": "+232",
+		"valuta": "SLL"
 	},
 	"sg": {
 		"ita": "Singapore",
@@ -1401,7 +1558,8 @@ var paesi = {
 		"fra": "Singapour",
 		"por": "Singapura",
 		"deu": "Singapur",
-		"prefisso": "+65"
+		"prefisso": "+65",
+		"valuta": "SGD"
 	},
 	"sk": {
 		"ita": "Slovacchia",
@@ -1410,7 +1568,8 @@ var paesi = {
 		"fra": "Slovaquie",
 		"por": "Eslováquia",
 		"deu": "Slowakei",
-		"prefisso": "+421"
+		"prefisso": "+421",
+		"valuta": "EUR"
 	},
 	"si": {
 		"ita": "Slovenia",
@@ -1419,7 +1578,8 @@ var paesi = {
 		"fra": "Slovénie",
 		"por": "Eslovênia",
 		"deu": "Slowenien",
-		"prefisso": "+386"
+		"prefisso": "+386",
+		"valuta": "EUR"
 	},
 	"sb": {
 		"ita": "Isole Salomone",
@@ -1428,7 +1588,8 @@ var paesi = {
 		"fra": "Îles Salomon",
 		"por": "Ilhas Salomão",
 		"deu": "Salomonen",
-		"prefisso": "+677"
+		"prefisso": "+677",
+		"valuta": "SBD"
 	},
 	"so": {
 		"ita": "Somalia",
@@ -1437,7 +1598,8 @@ var paesi = {
 		"fra": "Somalie",
 		"por": "Somália",
 		"deu": "Somalia",
-		"prefisso": "+252"
+		"prefisso": "+252",
+		"valuta": "SOS"
 	},
 	"za": {
 		"ita": "Sudafrica",
@@ -1446,7 +1608,8 @@ var paesi = {
 		"fra": "Afrique du Sud",
 		"por": "África do Sul",
 		"deu": "Südafrika",
-		"prefisso": "+27"
+		"prefisso": "+27",
+		"valuta": "ZAR"
 	},
 	"kr": {
 		"ita": "Corea del Sud",
@@ -1455,7 +1618,8 @@ var paesi = {
 		"fra": "Corée du Sud",
 		"por": "Coreia do Sul",
 		"deu": "Südkorea",
-		"prefisso": "+82"
+		"prefisso": "+82",
+		"valuta": "KRW"
 	},
 	"ss": {
 		"ita": "Sudan del Sud",
@@ -1464,7 +1628,8 @@ var paesi = {
 		"fra": "Soudan du Sud",
 		"por": "Sudão do Sul",
 		"deu": "Südsudan",
-		"prefisso": "+211"
+		"prefisso": "+211",
+		"valuta": "SDG"
 	},
 	"es": {
 		"ita": "Spagna",
@@ -1473,7 +1638,8 @@ var paesi = {
 		"fra": "Espagne",
 		"por": "Espanha",
 		"deu": "Spanien",
-		"prefisso": "+34"
+		"prefisso": "+34",
+		"valuta": "EUR"
 	},
 	"lk": {
 		"ita": "Sri Lanka",
@@ -1482,7 +1648,8 @@ var paesi = {
 		"fra": "Sri Lanka",
 		"por": "Sri Lanka",
 		"deu": "Sri Lanka",
-		"prefisso": "+94"
+		"prefisso": "+94",
+		"valuta": "LKR"
 	},
 	"sd": {
 		"ita": "Sudan",
@@ -1491,7 +1658,8 @@ var paesi = {
 		"fra": "Soudan",
 		"por": "Sudão",
 		"deu": "Sudan",
-		"prefisso": "+249"
+		"prefisso": "+249",
+		"valuta": "SDG"
 	},
 	"sr": {
 		"ita": "Suriname",
@@ -1500,7 +1668,8 @@ var paesi = {
 		"fra": "Suriname",
 		"por": "Suriname",
 		"deu": "Suriname",
-		"prefisso": "+597"
+		"prefisso": "+597",
+		"valuta": "SRD"
 	},
 	"se": {
 		"ita": "Svezia",
@@ -1509,7 +1678,8 @@ var paesi = {
 		"fra": "Suède",
 		"por": "Suécia",
 		"deu": "Schweden",
-		"prefisso": "+46"
+		"prefisso": "+46",
+		"valuta": "SEK"
 	},
 	"ch": {
 		"ita": "Svizzera",
@@ -1518,7 +1688,8 @@ var paesi = {
 		"fra": "Suisse",
 		"por": "Suíça",
 		"deu": "Schweiz",
-		"prefisso": "+41"
+		"prefisso": "+41",
+		"valuta": "CHF"
 	},
 	"sy": {
 		"ita": "Siria",
@@ -1527,7 +1698,8 @@ var paesi = {
 		"fra": "Syrie",
 		"por": "Síria",
 		"deu": "Syrien",
-		"prefisso": "+963"
+		"prefisso": "+963",
+		"valuta": "SYP"
 	},
 	"tw": {
 		"ita": "Taiwan",
@@ -1536,7 +1708,8 @@ var paesi = {
 		"fra": "Taïwan",
 		"por": "Taiwan",
 		"deu": "Taiwan",
-		"prefisso": "+886"
+		"prefisso": "+886",
+		"valuta": "TWD"
 	},
 	"tj": {
 		"ita": "Tagikistan",
@@ -1545,7 +1718,8 @@ var paesi = {
 		"fra": "Tadjikistan",
 		"por": "Tajiquistão",
 		"deu": "Tadschikistan",
-		"prefisso": "+992"
+		"prefisso": "+992",
+		"valuta": "TJS"
 	},
 	"tz": {
 		"ita": "Tanzania",
@@ -1554,7 +1728,8 @@ var paesi = {
 		"fra": "Tanzanie",
 		"por": "Tanzânia",
 		"deu": "Tansania",
-		"prefisso": "+255"
+		"prefisso": "+255",
+		"valuta": "TZS"
 	},
 	"th": {
 		"ita": "Tailandia",
@@ -1563,7 +1738,8 @@ var paesi = {
 		"fra": "Thaïlande",
 		"por": "Tailândia",
 		"deu": "Thailand",
-		"prefisso": "+66"
+		"prefisso": "+66",
+		"valuta": "THB"
 	},
 	"tl": {
 		"ita": "Timor Est",
@@ -1572,7 +1748,8 @@ var paesi = {
 		"fra": "Timor oriental",
 		"por": "Timor-Leste",
 		"deu": "Timor-Leste",
-		"prefisso": "+670"
+		"prefisso": "+670",
+		"valuta": "USD"
 	},
 	"tg": {
 		"ita": "Togo",
@@ -1581,7 +1758,8 @@ var paesi = {
 		"fra": "Togo",
 		"por": "Togo",
 		"deu": "Togo",
-		"prefisso": "+228"
+		"prefisso": "+228",
+		"valuta": "XAF"
 	},
 	"to": {
 		"ita": "Tonga",
@@ -1590,7 +1768,8 @@ var paesi = {
 		"fra": "Tonga",
 		"por": "Tonga",
 		"deu": "Tonga",
-		"prefisso": "+676"
+		"prefisso": "+676",
+		"valuta": "TOP"
 	},
 	"tt": {
 		"ita": "Trinidad e Tobago",
@@ -1599,7 +1778,8 @@ var paesi = {
 		"fra": "Trinité-et-Tobago",
 		"por": "Trinidad e Tobago",
 		"deu": "Trinidad und Tobago",
-		"prefisso": "+1-868"
+		"prefisso": "+1-868",
+		"valuta": "TTD"
 	},
 	"tn": {
 		"ita": "Tunisia",
@@ -1608,7 +1788,8 @@ var paesi = {
 		"fra": "Tunisie",
 		"por": "Tunísia",
 		"deu": "Tunesien",
-		"prefisso": "+216"
+		"prefisso": "+216",
+		"valuta": "TND"
 	},
 	"tr": {
 		"ita": "Turchia",
@@ -1617,7 +1798,8 @@ var paesi = {
 		"fra": "Turquie",
 		"por": "Turquia",
 		"deu": "Türkei",
-		"prefisso": "+90"
+		"prefisso": "+90",
+		"valuta": "TRY"
 	},
 	"tm": {
 		"ita": "Turkmenistan",
@@ -1626,7 +1808,8 @@ var paesi = {
 		"fra": "Turkménistan",
 		"por": "Turcomenistão",
 		"deu": "Turkmenistan",
-		"prefisso": "+993"
+		"prefisso": "+993",
+		"valuta": "TMT"
 	},
 	"tv": {
 		"ita": "Tuvalu",
@@ -1635,7 +1818,8 @@ var paesi = {
 		"fra": "Tuvalu",
 		"por": "Tuvalu",
 		"deu": "Tuvalu",
-		"prefisso": "+688"
+		"prefisso": "+688",
+		"valuta": "AUD"
 	},
 	"ug": {
 		"ita": "Uganda",
@@ -1644,7 +1828,8 @@ var paesi = {
 		"fra": "Ouganda",
 		"por": "Uganda",
 		"deu": "Uganda",
-		"prefisso": "+256"
+		"prefisso": "+256",
+		"valuta": "UGX"
 	},
 	"ua": {
 		"ita": "Ucraina",
@@ -1653,7 +1838,8 @@ var paesi = {
 		"fra": "Ukraine",
 		"por": "Ucrânia",
 		"deu": "Ukraine",
-		"prefisso": "+380"
+		"prefisso": "+380",
+		"valuta": "UAH"
 	},
 	"ae": {
 		"ita": "Emirati Arabi Uniti",
@@ -1662,7 +1848,8 @@ var paesi = {
 		"fra": "Émirats arabes unis",
 		"por": "Emirados Árabes Unidos",
 		"deu": "Vereinigte Arabische Emirate",
-		"prefisso": "+971"
+		"prefisso": "+971",
+		"valuta": "AED"
 	},
 	"gb": {
 		"ita": "Regno Unito",
@@ -1671,7 +1858,8 @@ var paesi = {
 		"fra": "Royaume-Uni",
 		"por": "Reino Unido",
 		"deu": "Vereinigtes Königreich",
-		"prefisso": "+44"
+		"prefisso": "+44",
+		"valuta": "GBP"
 	},
 	"us": {
 		"ita": "Stati Uniti",
@@ -1680,7 +1868,9 @@ var paesi = {
 		"fra": "États-Unis",
 		"por": "Estados Unidos",
 		"deu": "Vereinigte Staaten",
-		"prefisso": "+1"
+		"prefisso": "+1",
+		"valuta": "USD",
+		"sistema_misure": "a"
 	},
 	"uy": {
 		"ita": "Uruguay",
@@ -1689,7 +1879,8 @@ var paesi = {
 		"fra": "Uruguay",
 		"por": "Uruguai",
 		"deu": "Uruguay",
-		"prefisso": "+598"
+		"prefisso": "+598",
+		"valuta": "UYU"
 	},
 	"uz": {
 		"ita": "Uzbekistan",
@@ -1698,7 +1889,8 @@ var paesi = {
 		"fra": "Ouzbékistan",
 		"por": "Uzbequistão",
 		"deu": "Usbekistan",
-		"prefisso": "+998"
+		"prefisso": "+998",
+		"valuta": "UZS"
 	},
 	"vu": {
 		"ita": "Vanuatu",
@@ -1707,7 +1899,8 @@ var paesi = {
 		"fra": "Vanuatu",
 		"por": "Vanuatu",
 		"deu": "Vanuatu",
-		"prefisso": "+678"
+		"prefisso": "+678",
+		"valuta": "VUV"
 	},
 	"va": {
 		"ita": "Città del Vaticano",
@@ -1716,7 +1909,8 @@ var paesi = {
 		"fra": "Cité du Vatican",
 		"por": "Cidade do Vaticano",
 		"deu": "Vatikanstadt",
-		"prefisso": "+379"
+		"prefisso": "+379",
+		"valuta": "EUR"
 	},
 	"ve": {
 		"ita": "Venezuela",
@@ -1725,7 +1919,8 @@ var paesi = {
 		"fra": "Venezuela",
 		"por": "Venezuela",
 		"deu": "Venezuela",
-		"prefisso": "+58"
+		"prefisso": "+58",
+		"valuta": "VEF"
 	},
 	"vn": {
 		"ita": "Vietnam",
@@ -1734,7 +1929,8 @@ var paesi = {
 		"fra": "Vietnam",
 		"por": "Vietnã",
 		"deu": "Vietnam",
-		"prefisso": "+84"
+		"prefisso": "+84",
+		"valuta": "VND"
 	},
 	"wf": {
 		"ita": "Wallis e Futuna",
@@ -1743,7 +1939,8 @@ var paesi = {
 		"fra": "Wallis-et-Futuna",
 		"por": "Wallis e Futuna",
 		"deu": "Wallis und Futuna",
-		"prefisso": "+681"
+		"prefisso": "+681",
+		"valuta": "XPF"
 	},
 	"ye": {
 		"ita": "Yemen",
@@ -1752,7 +1949,8 @@ var paesi = {
 		"fra": "Yémen",
 		"por": "Iêmen",
 		"deu": "Jemen",
-		"prefisso": "+967"
+		"prefisso": "+967",
+		"valuta": "YER"
 	},
 	"zm": {
 		"ita": "Zambia",
@@ -1761,7 +1959,8 @@ var paesi = {
 		"fra": "Zambie",
 		"por": "Zâmbia",
 		"deu": "Sambia",
-		"prefisso": "+260"
+		"prefisso": "+260",
+		"valuta": "ZMW"
 	},
 	"zw": {
 		"ita": "Zimbabwe",
@@ -1770,16 +1969,7 @@ var paesi = {
 		"fra": "Zimbabwe",
 		"por": "Zimbábue",
 		"deu": "Simbabwe",
-		"prefisso": "+263"
+		"prefisso": "+263",
+		"valuta": "ZWL"
 	}
-};
-function elencaPaesi( prefissi ){
-	var prefissi = __(prefissi);
-	var elenco = {"":""};
-	for(let p in paesi){
-		var paese = paesi[p][globals.siglaLingua];
-		if(prefissi)paese += ' ('+paesi[p].prefisso+')';
-		elenco[p] = paese;
-	}
-	return elenco;
 }

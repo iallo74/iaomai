@@ -1237,7 +1237,7 @@ var PAZIENTI_SETS = {
 							}	
 						}
 						if(PAZIENTI.tipoGruppo=='M'){ // meridiani
-							if(i!='EX')EL.contenuto.push(m);
+							if(m!='EX')EL.contenuto.push(m);
 						}
 					}
 					// --------------------------
@@ -1630,7 +1630,7 @@ var PAZIENTI_SETS = {
 			mer = pP[1];
 			nPunto = SET.ptToStr(pP[0]);
 		}
-		if(pP[0] && __(DB.set.meridiani[mer])){
+		if((pP[0] && __(DB.set?.meridiani?.[mer])) || !pP[1]){
 			HTML += '<label class="gr_3"' +
 					'		for="'+n+'">' +
 					'	<input type="checkbox"' +

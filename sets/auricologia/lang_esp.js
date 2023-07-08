@@ -179,17 +179,17 @@ DB.set= {
         },
         "147": {
             NomePunto: "Ganglio cervical medio",
-            AzioniPunto: "<p><b>Otros nombres</b><br>- Punto maravilloso de Nogier</p><p><b>Acción</b><br>La escuela francesa indica este punto por su eficacia en la reducción de los trastornos neurológicos del dorsal periférico y todos los dolores neuropáticos relacionados con el brazo superior y el tronco.</p><p><b>Ubicación</b><br>CW4, a media altura del avanmuro a nivel de la representación de las vértebras C3-4.</p>",
+            AzioniPunto: "<p><b>Otros nombres</b><br>- Punto maravilloso de Nogier</p><p><b>Acción</b><br>La escuela francesa indica este punto por su eficacia en la reducción de los trastornos neurológicos del dorsal periférico y todos los dolores neuropáticos relacionados con el brazo superior y el tronco.</p><p><b>Ubicación</b><br>CW4, a media altura de la pared a nivel de la representación de las vértebras C3-4.</p>",
             ChiaviPunto: ""
         },
         "148": {
             NomePunto: "Ganglio cervical superior",
-            AzioniPunto: "<p><b>Otros nombres</b><br>- Punto vértigo</p><p><b>Acción</b><br>La escuela francesa indica este punto por su eficacia en la reducción de los trastornos neurológicos del dorsal periférico y todos los dolores neuropáticos relacionados con el brazo superior y el tronco.</p><p><b>Ubicación</b><br>CW4, en el límite entre el avanmuro de la antélice y de l'antitrago</p>",
+            AzioniPunto: "<p><b>Otros nombres</b><br>- Punto vértigo</p><p><b>Acción</b><br>La escuela francesa indica este punto por su eficacia en la reducción de los trastornos neurológicos del dorsal periférico y todos los dolores neuropáticos relacionados con el brazo superior y el tronco.</p><p><b>Ubicación</b><br>CW4, en el límite entre la pared de la antélice y de l'antitrago</p>",
             ChiaviPunto: ""
         },
         "150": {
             NomePunto: "Tronco cerebral",
-            AzioniPunto: "<p><b>Otros nombres</b><br>- Bulbo raquídeo CIN</p><p><b>Acción</b><br>Según la escuela china, el punto Tronco cerebral está indicado para tonificar la mente y regular la respiración, la temperatura y el ritmo cardíaco. También es efectivo para la epilepsia y las convulsiones.</p><p><b>Ubicación</b><br>CW4, en el avanmuro en correspondencia con el límite entre la antélice y el antitrago.</p>",
+            AzioniPunto: "<p><b>Otros nombres</b><br>- Bulbo raquídeo CIN</p><p><b>Acción</b><br>Según la escuela china, el punto Tronco cerebral está indicado para tonificar la mente y regular la respiración, la temperatura y el ritmo cardíaco. También es efectivo para la epilepsia y las convulsiones.</p><p><b>Ubicación</b><br>CW4, en la pared en correspondencia con el límite entre la antélice y el antitrago.</p>",
             ChiaviPunto: ""
         },
         "151": {
@@ -199,12 +199,12 @@ DB.set= {
         },
         "154": {
             NomePunto: "Subcorteza",
-            AzioniPunto: "<p><b>Otros nombres</b><br>- Excitación<br>- Punto epilepsia<br>- Glándulas salivales</p><p><b>Acción</b><br>Este punto se utiliza para el tratamiento de enfermedades neurológicas agudas y crónicas. También se indica para reducir los síntomas de depresión, ansiedad y trastornos circulatorios.</p><p><b>Ubicación</b><br>CW2, en el centro del avanmuro del antitrago.</p>",
+            AzioniPunto: "<p><b>Otros nombres</b><br>- Excitación<br>- Punto epilepsia<br>- Glándulas salivales</p><p><b>Acción</b><br>Este punto se utiliza para el tratamiento de enfermedades neurológicas agudas y crónicas. También se indica para reducir los síntomas de depresión, ansiedad y trastornos circulatorios.</p><p><b>Ubicación</b><br>CW2, en el centro de la pared del antitrago.</p>",
             ChiaviPunto: ""
         },
         "155": {
             NomePunto: "Punto tálamo",
-            AzioniPunto: "<p><b>Otros nombres</b><br>- Tálamo</p><p><b>Acción</b><br>Este punto poderoso es útil para reducir y contrarrestar el dolor agudo cuando el VAS es igual o superior a 5. Se indica en el tratamiento de enfermedades con componente tanto psíquico como orgánico, como ansiedad, depresión, hipertensión, gastritis, náuseas y diarrea.</p><p><b>Ubicación</b><br>CW2-IC4, en el límite entre el avanmuro del antitrago y la emiconca inferior, en correspondencia con el centro del antitrago.</p>",
+            AzioniPunto: "<p><b>Otros nombres</b><br>- Tálamo</p><p><b>Acción</b><br>Este punto poderoso es útil para reducir y contrarrestar el dolor agudo cuando el VAS es igual o superior a 5. Se indica en el tratamiento de enfermedades con componente tanto psíquico como orgánico, como ansiedad, depresión, hipertensión, gastritis, náuseas y diarrea.</p><p><b>Ubicación</b><br>CW2-IC4, en el límite entre la pared del antitrago y la emiconca inferior, en correspondencia con el centro del antitrago.</p>",
             ChiaviPunto: ""
         },
         "157": {
@@ -1007,7 +1007,7 @@ DB.set= {
 		},
 		"093": {
 			NomePunto: "Estómago",
-			AzioniPunto: "<p><b>Acción</b><br>El Punto Estómago tiene una acción equilibrante en todos los trastornos digestivos, tanto a nivel físico como psicosomático. Está indicado para el tratamiento de la falta de apetito, el estrés, la ansiedad y el estrés.</p><p><b>Ubicación</b><br>CR1, en el trago, justo detrás de [.000.].</p>",
+			AzioniPunto: "<p><b>Acción</b><br>El Punto Estómago tiene una acción equilibrante en todos los trastornos digestivos, tanto a nivel físico como psicosomático. Está indicado para el tratamiento de la falta de apetito, la ansiedad y el estrés.</p><p><b>Ubicación</b><br>CR1, en el trago, justo detrás de [.000.].</p>",
 			ChiaviPunto: ""
 		},
 		"095": {
@@ -1032,7 +1032,7 @@ DB.set= {
 		}
     },
     apparati: {
-		1: "aparato locomotor",
+		1: "Aparato locomotor",
 		2: "Jefe",
 		3: "Clínica neurológica",
 		4: "Clínica psiquiátrica",
@@ -3350,7 +3350,7 @@ DB.set= {
 				"ds": {
 					"p": [
 						"164",
-						"[]Avanmuro*",
+						"[]Pared de la concha*",
 						"[]Raíz sensitiva *"
 					]
 				},
@@ -7848,7 +7848,7 @@ DB.set= {
 						"244"
 					]
 				},
-				"d": "<b>ALCOHOLISMO</b><br><b>Fase 1</b>: tratar todos los días, durante 5 días a la semana más 2 (fin de semana) con semillas de vaca, durante 2 semanas. Fase adecuada para tratar los síntomas de abstinencia. <br><b>Paso 2</b>: tratar 3 veces por semana, durante 2 semanas, para tratar síntomas de origen psicológico, ansiedad, insomnio y deseo de alcohol o drogas. <br><b>Fase 3</b>: una vez estabilizada la sobriedad, se realizan 2 sesiones por semana, durante una semana o más, para continuar y consolidar la sensación de bienestar y control. <br><br><b>TABAQUISMO</b><br><b>Fase 1</b>: tratar cada día, durante 5 días a la semana más 2 (fin de semana) con semillas de vaca, durante 2 semanas. Fase adecuada para contrarrestar los síntomas de abstinencia del tabaco. <br><b>Paso 2</b>: cuando el consumo de cigarrillos se reduce a cero (o casi) se realizan 3 sesiones a la semana durante 2 semanas. Esta fase contrarresta los síntomas psicológicos, ansiedad, insomnio y deseo de tabaco. <br><b>Seguimiento</b>: a los 15 días, 3 meses y 6 meses. <br><br><b>RECAÍDAS</b><br>En cualquier momento que lo desee, el paciente puede decidir tomar ventaja de la fase 1 de cualquier protocolo con el fin de detener repentinamente las recaídas. Acudetox resultó particularmente eficaz en esta etapa donde otras terapias fallaron." 
+				"d": "<b>ALCOHOLISMO</b><br><b>Fase 1</b>: tratar todos los días, durante 5 días a la semana más 2 (fin de semana) con semillas de Vaccaria, durante 2 semanas. Fase adecuada para tratar los síntomas de abstinencia. <br><b>Fase 2</b>: tratar 3 veces por semana, durante 2 semanas, para tratar síntomas de origen psicológico, ansiedad, insomnio y deseo de alcohol o drogas. <br><b>Fase 3</b>: una vez estabilizada la sobriedad, se realizan 2 sesiones por semana, durante una semana o más, para continuar y consolidar la sensación de bienestar y control. <br><br><b>TABAQUISMO</b><br><b>Fase 1</b>: tratar cada día, durante 5 días a la semana más 2 (fin de semana) con semillas de Vaccaria, durante 2 semanas. Fase adecuada para contrarrestar los síntomas de abstinencia del tabaco. <br><b>Fase 2</b>: cuando el consumo de cigarrillos se reduce a cero (o casi) se realizan 3 sesiones a la semana durante 2 semanas. Esta fase contrarresta los síntomas psicológicos, ansiedad, insomnio y deseo de tabaco. <br><b>Seguimiento</b>: a los 15 días, 3 meses y 6 meses. <br><br><b>RECAÍDAS</b><br>En cualquier momento que lo desee, el paciente puede decidir tomar ventaja de la fase 1 de cualquier protocolo con el fin de detener repentinamente las recaídas. Acudetox resultó particularmente eficaz en esta etapa donde otras terapias fallaron." 
 			},
 			"d": "Para evaluar el grado de intensidad y el tipo de terapia antitabaco, lleve a cabo las dos pruebas que se encuentran en los detalles: ",
 			"t": true
@@ -7896,6 +7896,14 @@ DB.set= {
 			apparato: 3
 		},
 		{
+			NomePatologia: "Algias pélvicas femeninas",
+			TestoPatologia: "Las algias pélvicas son el resultado de la formación de tejido fibroso entre los órganos pélvicos, similar a una cicatriz de gran tamaño, que aparece después de un traumatismo o una cirugía.",
+			sessoPatologia: "f",
+			chiaviPatologia: "",
+			scheda: 50,
+			apparato: 5
+		},
+		{
 			NomePatologia: "Algodistrofia",
 			TestoPatologia: "La algodistrofia es una enfermedad rara, multisintomática y multisistémica, caracterizada por dolores muy intensos y continuos localizados en las extremidades. El dolor se manifiesta de manera impredecible en los brazos, las piernas, las manos y los pies, y las extremidades afectadas son hipersensibles al tacto. A menudo, el paciente informa de sentir la extremidad como \"extraña\" al resto del cuerpo, experimentando en muchos casos dificultades para moverse y temblores. Este trastorno a menudo se asocia con la aparición de edemas y eritemas.",
 			sessoPatologia: "",
@@ -7913,18 +7921,10 @@ DB.set= {
 		},
 		{
 			NomePatologia: "Anorexia",
-			TestoPatologia: "El término anorexia se refiere a la angustia que ocurre con el control obsesivo de las calorías y el peso.<br>El cuerpo se percibe como excesivamente gordo incluso cuando la delgadez ha alcanzado características que dañan a la persona, con graves consecuencias. Por esta razón, la persona anoréxica se impone una dieta, a menudo abusando de diuréticos y laxantes, para tratar de ver los cambios deseados en su cuerpo.",
+			TestoPatologia: "El término anorexia se refiere a la angustia que ocurre con el control obsesivo de las calorías y el peso.<br>El cuerpo se percibe como excesivo sobrepeso incluso cuando la delgadez ha alcanzado características que dañan a la persona, con graves consecuencias. Por esta razón, la persona anoréxica se impone una dieta, a menudo abusando de diuréticos y laxantes, para tratar de ver los cambios deseados en su cuerpo.",
 			sessoPatologia: "",
 			chiaviPatologia: "",
 			scheda: 47,
-			apparato: 5
-		},
-		{
-			NomePatologia: "Algias pélvicas femeninas",
-			TestoPatologia: "Las algias pélvicas son el resultado de la formación de tejido fibroso entre los órganos pélvicos, similar a una cicatriz de gran tamaño, que aparece después de un traumatismo o una cirugía.",
-			sessoPatologia: "f",
-			chiaviPatologia: "",
-			scheda: 50,
 			apparato: 5
 		},
 		{
@@ -9577,14 +9577,14 @@ DB.set= {
 			scheda: 39,
 			apparato: 3
 		},
-		{
-			NomePatologia: "Síndrome de hiperfollicolinia",
-			TestoPatologia: "El síndrome de hiperfollicolinia (a menudo abreviado como SPM; también conocido como síndrome premenstrual) se caracteriza por irritabilidad, ansiedad, labilidad emocional, depresión, edema, dolor mamario y cefalea. Estos síntomas ocurren durante los 7-10 días previos al inicio del período menstrual y generalmente desaparecen algunas horas después del inicio del mismo. El diagnóstico es clínico, a menudo basado en el registro diario de los síntomas de la paciente. El tratamiento es sintomático e incluye cambios en la dieta, medicamentos y asesoramiento. Aproximadamente del 20% al 50% de las mujeres en edad fértil tienen síndrome de hiperfollicolinia; aproximadamente el 5% tiene una forma grave de síndrome premenstrual llamado trastorno disfórico premenstrual. El síndrome premenstrual puede tener repercusiones significativas en la vida social, las relaciones personales y el trabajo en muchos casos. Las mujeres que sufren este trastorno a menudo se quejan de cambios de humor, tendencia a la depresión, agresividad, mayor fatiga, llanto, cefalea y antojos de alimentos (especialmente dulces).",
+		/*ELIMINATA (non togliere){
+			NomePatologia: "---",
+			TestoPatologia: "---",
 			sessoPatologia: "f",
 			chiaviPatologia: "",
 			scheda: 53,
 			apparato: 5
-		},
+		},ELIMINATA*/
 		{
 			NomePatologia: "Síndrome miofascial",
 			TestoPatologia: "Es un síndrome caracterizado por dolor crónico e inflamación muscular profunda específica en una región del cuerpo. El área muscular afectada presenta rigidez, espasmos y debilidad. Afecta la fascia del tejido conectivo que cubre un solo músculo o varios grupos musculares en puntos definidos llamados PUNTOS TRIGGER (TP). El síndrome doloroso miofascial incluye un amplio y heterogéneo grupo de patologías musculares caracterizadas por un dolor muscular continuo, asociado con contractura, limitación funcional y ocasionalmente síntomas de tipo neural (parestesias, hormigueo y disfunción vegetativa). Las principales causas de este trastorno son actividades repetitivas que estresan el músculo afectado a lo largo del tiempo o lo mantienen en un estado de acortamiento constante, traumatismos o lesiones (sobrecarga aguda), posturas incorrectas durante largas horas de trabajo, estrés y ansiedad. La persona experimenta un dolor intenso, sordo y profundo, molesto y limitante al punto que cuando se tensiona el músculo se siente ardor, espasmos y debilidad muscular. El dolor está presente tanto en reposo como durante la actividad y con el tiempo tiende a extenderse y empeorar, causando una disminución de la fuerza muscular y del rango de movimiento. Los microtraumatismos repetitivos o la sobrecarga pueden generar contracciones musculares prolongadas y fenómenos de isquemia local. Los puntos trigger también tienen actividad electromiográfica espontánea, lo que los hace liberarse de los procesos normales de control y regulación de la contracción muscular. Las consecuencias de esta patología incluyen la reducción de la amplitud de movimiento de las partes del cuerpo más afectadas, empeoramiento con el aumento del estrés psicológico, cambios de temperatura y desequilibrios posturales.",
@@ -9595,7 +9595,7 @@ DB.set= {
 		},
 		{
 			NomePatologia: "Síndrome premenstrual",
-			TestoPatologia: "El síndrome premenstrual (a menudo abreviado como SPM; también conocido como síndrome de hiperfollicolinia) se caracteriza por irritabilidad, ansiedad, labilidad emocional, depresión, edema, dolor mamario y cefalea. Estos síntomas ocurren durante los 7-10 días previos al inicio del período menstrual y generalmente desaparecen algunas horas después del inicio del mismo. El diagnóstico es clínico, a menudo basado en el registro diario de los síntomas de la paciente. El tratamiento es sintomático e incluye cambios en la dieta, medicamentos y asesoramiento. Aproximadamente del 20% al 50% de las mujeres en edad fértil tienen síndrome de hiperfollicolinia; aproximadamente el 5% tiene una forma grave de síndrome premenstrual llamado trastorno disfórico premenstrual. El síndrome premenstrual puede tener repercusiones significativas en la vida social, las relaciones personales y el trabajo en muchos casos. Las mujeres que sufren este trastorno a menudo se quejan de cambios de humor, tendencia a la depresión, agresividad, mayor fatiga, llanto, cefalea y antojos de alimentos (especialmente dulces).",
+			TestoPatologia: "El síndrome premenstrual (a menudo abreviado como SPM) se caracteriza por irritabilidad, ansiedad, labilidad emocional, depresión, edema, dolor mamario y cefalea. Estos síntomas ocurren durante los 7-10 días previos al inicio del período menstrual y generalmente desaparecen algunas horas después del inicio del mismo. El diagnóstico es clínico, a menudo basado en el registro diario de los síntomas de la paciente. El tratamiento es sintomático e incluye cambios en la dieta, medicamentos y asesoramiento. Aproximadamente del 20% al 50% de las mujeres en edad fértil tienen síndrome premenstrual; aproximadamente el 5% tiene una forma grave de síndrome premenstrual llamado trastorno disfórico premenstrual. El síndrome premenstrual puede tener repercusiones significativas en la vida social, las relaciones personales y el trabajo en muchos casos. Las mujeres que sufren este trastorno a menudo se quejan de cambios de humor, tendencia a la depresión, agresividad, mayor fatiga, llanto, cefalea y antojos de alimentos (especialmente dulces).",
 			sessoPatologia: "f",
 			chiaviPatologia: "",
 			scheda: 53,
@@ -9796,8 +9796,8 @@ DB.set= {
 				},
 				{
 				  TitoloTeoria: "Mapa y áreas",
-				  TestoTeoria: "Para el mapeo del pabellón auricular y la clasificación de las áreas, utilizaremos el microsistema desarrollado por Terry Oleson en 1983 y adoptado oficialmente durante la reunión de la OMS en Pekín en 2010.<br> El mapa de Oleson tiene la gran ventaja de no tener áreas fijas. Estas no son más que proporciones que se adaptan bien a cualquier pabellón auricular. La reconstrucción en 3D ha hecho que algunos puntos, especialmente de la superficie medial, al proyectarse desde la superficie lateral a la superficie medial, hayan experimentado cambios en la nomenclatura, pero han adquirido una clasificación mucho más realista.<br><br><b>Nomenclatura de las áreas</b><br>El pabellón auricular se divide en 19 áreas, que se indican a continuación junto con sus códigos entre paréntesis:<br>- Hélice (HX)- Superficie interna de la hélice (IH)<br>- Fosa triangular (TF)<br>- Antihélice (AH)<br>- Fosa escafoidea (SF)<br>- Avanmuro (CW)<br>- Eminencia superior de la concha (SC)<br>- Eminencia inferior de la concha (IC)<br>- Concha rígida (CR)<br>- Trago (TG)<br>- Superficie interna del trago (ST)<br>- Incisura intertrágica (IT)<br>- Antitrago (AT)<br>- Lóbulo (LO)<br>- Hélice posterior (PP)<br>- Surco longitudinal posterior (PG)<br>- Eminencia triangular posterior (PT)<br>- Concha posterior (PC)<br>- Lóbulo posterior (PL)<br><br>Cada área se divide a su vez en sectores numerados en progresión caudo-craneal y antero-posterior.<br><br>En la ficha de cada punto o área, bajo la etiqueta 'ubicación', se indica un código que representa el área y el sector de un punto (por ejemplo, AH1).",
-				  "mappa": "COL"
+				  TestoTeoria: "Para el mapeo del pabellón auricular y la clasificación de las áreas, utilizaremos el microsistema desarrollado por Terry Oleson en 1983 y adoptado oficialmente durante la reunión de la OMS en Pekín en 2010.<br> El mapa de Oleson tiene la gran ventaja de no tener áreas fijas. Estas no son más que proporciones que se adaptan bien a cualquier pabellón auricular. La reconstrucción en 3D ha hecho que algunos puntos, especialmente de la superficie medial, al proyectarse desde la superficie lateral a la superficie medial, hayan experimentado cambios en la nomenclatura, pero han adquirido una clasificación mucho más realista.<br><br><b>Nomenclatura de las áreas</b><br>El pabellón auricular se divide en 19 áreas, que se indican a continuación junto con sus códigos entre paréntesis:<br>- Hélice (HX)- Superficie interna de la hélice (IH)<br>- Fosa triangular (TF)<br>- Antihélice (AH)<br>- Fosa escafoidea (SF)<br>- Pared de la concha (CW)<br>- Eminencia superior de la concha (SC)<br>- Eminencia inferior de la concha (IC)<br>- Concha rígida (CR)<br>- Trago (TG)<br>- Superficie interna del trago (ST)<br>- Incisura intertrágica (IT)<br>- Antitrago (AT)<br>- Lóbulo (LO)<br>- Hélice posterior (PP)<br>- Surco longitudinal posterior (PG)<br>- Eminencia triangular posterior (PT)<br>- Concha posterior (PC)<br>- Lóbulo posterior (PL)<br><br>Cada área se divide a su vez en sectores numerados en progresión caudo-craneal y antero-posterior.<br><br>En la ficha de cada punto o área, bajo la etiqueta 'ubicación', se indica un código que representa el área y el sector de un punto (por ejemplo, AH1).",
+				  mappa: "COL"
 				},
                 {
 				  TitoloTeoria: "Puntos de referencia",
@@ -9807,7 +9807,7 @@ DB.set= {
 				{
 				  TitoloTeoria: "Zonas de frecuencia",
 				  TestoTeoria: "Según Paul Nogier, existen siete regiones distintas en el cuerpo que resuenan con siete frecuencias básicas, clasificadas con las letras de la A a la G. Estas letras también indican algunas condiciones de salud relacionadas con el tipo de tejido de una región específica del cuerpo.<br>Cada color corresponde a una frecuencia de fotones de luz: desde la frecuencia más baja del rojo hasta frecuencias gradualmente más altas en el espectro de colores. Los mismos efectos producidos por longitudes de onda progresivamente más cortas de diferentes filtros de luz coloreados en el tejido corporal también se pueden encontrar con frecuencias cada vez más altas de luz intermitente (frecuencias más rápidas de impulsos eléctricos o frecuencias más altas de estimulación láser).<br><br><br><b>Zona A - Vitalidad celular</b><br><i>Color: </i><span style='color:#e3a15d;'>Naranja</span><br><i>Frecuencia eléctrica: </i>2.3Hz<br> <i>Frecuencia láser: </i>292Hz<br><br>Esta zona corresponde a la línea media del cuerpo, como en la Medicina Tradicional China para los meridianos de Acupuntura Vaso de Concepción y Vaso de Gobierno, y afecta a la energía reticular primitiva y a las fuerzas primordiales que condicionan la organización celular.<br>Esta frecuencia a menudo se encuentra en tejidos marcados por cicatrices o trastornos y se refiere a la organización embrionaria del tejido celular. Se utiliza para tratar la hiperactividad y la proliferación celular, inflamaciones o procesos neoplásicos.<br><br><br><b>Zona B - Metabolismo nutricional</b><br><i>Color: </i><span style='color:#da554d;'>Rojo</span><br><i>Frecuencia eléctrica: </i>5.0Hz<br> <i>Frecuencia láser: </i>584Hz<br><br>Esta zona corresponde a los órganos internos. La frecuencia ideal para estimular los puntos en el pabellón auricular es de 5Hz: se utiliza para tratar trastornos nutricionales y de asimilación, desnutrición de los tejidos, disfunciones neurovegetativas, alergias orgánicas, anomalías constitucionales, desequilibrio parasimpático, en el tratamiento endodérmico de los órganos viscerales relacionados con la segunda y tercera fase de Nogier.<br><br><br><b>Zona C - Movimientos cinéticos</b><br><i>Color: </i><span style='color:#dfbc4e;'>Amarillo</span><br><i>Frecuencia eléctrica: </i>10.0Hz<br> <i>Frecuencia láser: </i>1168Hz<br><br>Esta zona se refiere a la propiocepción, es decir, a los movimientos cinéticos del aparato musculoesquelético. La frecuencia es de 10 Hz y se utiliza para tratar los puntos auriculares en la antélice y las áreas circundantes del pabellón, como la fosa escafoidea y la fosa triangular, cuando hay dolor miofascial, excitación del sistema nervioso simpático, trastornos de somatización, alergias cutáneas, espasmos musculares, enfermedades musculares y cualquier problema agravado por el movimiento cinético o en los tratamientos musculoesqueléticos mesodérmicos relacionados con la segunda y tercera fase de Nogier.<br><br><br><b>Zona D - Coordinación global</b><br><i>Color: </i><span style='color:#df8b5c;'>Rojo-naranja</span><br><i>Frecuencia eléctrica: </i>20.0Hz<br> <i>Frecuencia láser: </i>2336Hz<br><br>Esta zona corresponde al cuerpo calloso y a las comisuras anteriores, que conectan las asociaciones entre los dos hemisferios cerebrales, y se encuentra en el trago externo del pabellón auricular. La frecuencia se utiliza en casos de disfunciones transversales, problemas de simetría cerebral, contra divergencia, trastornos de coordinación de los dos lados del cuerpo, disfunciones bilaterales, dolores medianos.<br>En una persona diestra, el trago derecho corresponde al Vaso de Concepción y el trago izquierdo al Vaso de Gobierno de la Medicina Tradicional China, y viceversa en una persona zurda.<br><br><br><b>Zona E - Interacciones neurológicas</b><br> <i>Color: </i><span style='color:#86a050;'>Verde</span><br><i>Frecuencia eléctrica: </i>40.0Hz<br> <i>Frecuencia láser: </i>4672Hz<br><br>Esta zona corresponde a la médula espinal y a los nervios periféricos y se encuentra en la cola hélica del pabellón auricular.<br>La frecuencia se utiliza en casos de trastornos de la columna vertebral, de la piel, dermatitis, cicatrices cutáneas, neuropatías, neuralgias, herpes zóster.<br><br><br><b>Zona F - Reacciones emocionales</b><br><i>Color: </i><span style='color:#a287b0;'>Azul</span><br><i>Frecuencia eléctrica: </i>80.0Hz<br><i>Frecuencia láser: </i>9334Hz<br><br>Esta zona está relacionada con el tronco cerebral, el tálamo, el sistema límbico y el estriado, y se encuentra en el lóbulo periférico del pabellón auricular. <br>La frecuencia se utiliza para tratar problemas relacionados con posturas inconscientes, reflejos incondicionados, tics, espasmos musculares, tartamudeo, dolores de cabeza, dolor facial, depresión clínica y trastornos emocionales, en el tratamiento de los puntos neuroendocrinos ectodérmicos relacionados con la segunda y tercera fase de Nogier.<br><br><br><b>Zona G - Organización intelectual</b><br><i>Color: </i><span style='color:#bb5eae;'>Violeta</span><br><i>Frecuencia eléctrica: </i>160.0Hz<br> <i>Frecuencia láser: </i>18688Hz<br><br>Esta zona corresponde a las funciones psicológicas relacionadas con la corteza frontal. Se encuentra en la parte media del lóbulo.<br>La frecuencia se utiliza para trastornos del sistema piramidal, trastornos de la memoria, disfunciones intelectuales, reacciones psicosomáticas, nerviosismo obsesivo, preocupación crónica, reflejos condicionados disfuncionales, psicopatología profunda, en el tratamiento de los puntos de la corteza cerebral ectodérmica relacionados con la segunda y tercera fase de Nogier.",
-                    "mappa": "FREQ"
+                    mappa: "FREQ"
                 },
 				{
 					TitoloTeoria: "Inervación",
@@ -9821,7 +9821,7 @@ DB.set= {
 				{
 				  TitoloTeoria: "Derivación embrionaria",
 				  TestoTeoria: "Los organismos vertebrados se forman a partir de la unión de un óvulo y un espermatozoide: la primera célula que se forma inmediatamente se divide para convertirse en un organismo multicelular. Esta célula finalmente se pliega sobre sí misma y se divide en tres capas diferentes de tejido embrionario, a partir de las cuales se forman posteriormente todos los órganos. Estos órganos están proyectados en algunas regiones del pabellón auricular.<br><br><b style='color:#a77b8d;'>•</b> <b style='text-decoration:underline;text-decoration-color:#a77b8d;'>Tejido endodérmico</b><br>A partir del endodermo se forman el tracto gastrointestinal, el sistema respiratorio, los órganos abdominales como el hígado, el páncreas, la uretra y la vejiga. Los órganos de origen endodérmico están principalmente representados en la concha. El oído tiene la forma de un feto con la cabeza hacia abajo, lo que hace que los órganos supradiaphragmáticos estén representados en la mitad inferior de la concha, mientras que los órganos subdiaphragmáticos están representados en la mitad superior de la concha.<br><br><b style='color:#f0bf43;'>•</b> <b style='text-decoration:underline;text-decoration-color:#f0bf43;'>Tejido mesodérmico</b><br>A partir del mesodermo se forman los músculos esqueléticos, los músculos cardíacos, los músculos lisos, el tejido conectivo, las articulaciones, los huesos, las células sanguíneas de la médula ósea, el sistema circulatorio y el sistema linfático. Los órganos de derivación mesodérmica están representados históricamente en el pabellón auricular y principalmente en la antélice. Otros órganos de origen mesodérmico se encuentran representados en la fosa scafa, en la fosa triangular y en parte también en la rama ascendente y en la rodilla de la hélice.<br><br><b style='color:#d68750;'>•</b> <b style='text-decoration:underline;text-decoration-color:#d68750;'>Tejido ectodérmico</b><br>A partir del ectodermo del embrión se genera la capa superficial, es decir, la piel externa, la córnea, el cristalino, el epitelio nasal, los dientes, los nervios periféricos, la médula espinal, el cerebro y las glándulas endocrinas de la pituitaria, pineal y adrenal.<br>Los órganos de derivación ectodérmica están representados principalmente en el pabellón auricular en el lóbulo auricular y en la hélice. En esta última encontramos la representación ectodérmica desde el ápice del pabellón auricular, pasando por el tubérculo de Darwin y terminando en la cola de la hélice, que sin solución de continuidad se une al lóbulo auricular.",
-				  "mappa": "NERVI"
+				  mappa: "NERVI"
 				}
 
 
@@ -9928,17 +9928,17 @@ DB.set= {
 				{
 				  TitoloTeoria: "1. Test de Mondor (motivación)",
 				  TestoTeoria: "Esta prueba es útil para evaluar el nivel de motivación para dejar de fumar.",
-				  "test": "motivación"
+				  test: "motivazione"
 				},
 				{
 				  TitoloTeoria: "2. Test de Fagerström (dependencia)",
 				  TestoTeoria: "Esta prueba es necesaria para determinar el grado de dependencia del tabaco.",
-				  "test": "dependencia"
+				  test: "dipendenza"
 				},
 				{
 				  TitoloTeoria: "3. Propuesta terapéutica",
 				  TestoTeoria: "Realizar después de las pruebas de Mondor y Fagerström.<br>Los pasos 2 y 3 se consideran respectivamente como segunda y tercera opción si los protocolos anteriores no han sido efectivos o no se han llevado a cabo por diversas razones.",
-				  "flowchart": true
+				  flowchart: true
 				}
             ],
             noList: true
@@ -10106,7 +10106,7 @@ DB.set= {
 				{
 					"d": "¿Cuántos cigarrillos fuma al día?",
 					"r": [
-						{ "t": "10 o menos", "v": 0 },
+						{ "t": "Menos de 11", "v": 0 },
 						{ "t": "De 11 a 20", "v": 1 },
 						{ "t": "De 21 a 30", "v": 2 },
 						{ "t": "31 o más", "v": 3 }

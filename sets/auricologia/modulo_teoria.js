@@ -319,30 +319,30 @@ var MODULO_TEORIA = { // extend SET
 			//'		<p><b>'+TXT("ProposteTerapeutiche").toUpperCase()+'</b></p>' +
 			'		<div>' +
 			'			<div id="props_nocont">' +
-							'<i>Indica i gradi di dipendenza e di motivazione</i>' +
+							'<i>'+TXT("TestTxt1")+'</i>' +
 			'			</div>' +
 			'			<div id="props_noterapia">' +
-							'<i>Con motivazione o dipendenza bassa si consiglia di non effettuare alcuna terapia</i>' +
+							'<i>'+TXT("TestTxt2")+'</i>' +
 			'			</div>' +
 			'			<div id="props_labels">' +
-			'				<div>Step 1</div>' +
-			'				<div>Step 2</div>' +
-			'				<div>Step 3</div>' +
+			'				<div>'+TXT("Step")+' 1</div>' +
+			'				<div>'+TXT("Step")+' 2</div>' +
+			'				<div>'+TXT("Step")+' 3</div>' +
 			'			</div>' +
 			'			<div id="R1">' +
-			'				<p>Proposta 1</p>' +
+			'				<p>'+TXT("Proposta")+' 1</p>' +
 			'				<div class="props_cont">' +
 			'					<div>'+SET.scriviProtocollo("lovato_g")+'</div>'+
 			'					<div>'+SET.scriviProtocollo("rossato")+'</div>'+
 			'					<div>'+SET.scriviProtocollo("nada")+'</div>'+
 			'				</div>' +
-			'				<p>Proposta 2</p>' +
+			'				<p>'+TXT("Proposta")+' 2</p>' +
 			'				<div class="props_cont">' +
 			'					<div>'+SET.scriviProtocollo("lovato_g")+'</div>'+
 			'					<div>'+SET.scriviProtocollo("lovato_i")+'</div>'+
 			'					<div>'+SET.scriviProtocollo("nogier")+'</div>'+
 			'				</div>' +
-			'				<p>Proposta 3</p>' +
+			'				<p>'+TXT("Proposta")+' 3</p>' +
 			'				<div class="props_cont">' +
 			'					<div>'+SET.scriviProtocollo("nada")+'</div>'+
 			'					<div>'+SET.scriviProtocollo("nogier")+'</div>'+
@@ -350,13 +350,13 @@ var MODULO_TEORIA = { // extend SET
 			'				</div>' +
 			'			</div>' +
 			'			<div id="R2">' +
-			'				<p>Proposta 1</p>' +
+			'				<p>'+TXT("Proposta")+' 1</p>' +
 			'				<div class="props_cont">' +
 			'					<div>'+SET.scriviProtocollo("rossato")+'</div>'+
 			'					<div>'+SET.scriviProtocollo("lovato_g")+'</div>'+
 			'					<div>'+SET.scriviProtocollo("lovato_i")+'</div>'+
 			'				</div>' +
-			'				<p>Proposta 2</p>' +
+			'				<p>'+TXT("Proposta")+' 2</p>' +
 			'				<div class="props_cont">' +
 			'					<div>'+SET.scriviProtocollo("lovato_g")+'</div>'+
 			'					<div>'+SET.scriviProtocollo("lovato_i")+'</div>'+

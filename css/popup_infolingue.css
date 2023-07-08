@@ -57,6 +57,9 @@
 	vertical-align:middle;
 	border-left:1px solid rgba(0,0,0,0.1);
 }
+#tabLingue *:not(.selectInfoLingua){
+	font-size:13.2px !important;
+}
 #tabLingue > div > div:first-child{
 	text-align:left !important;
 	width:calc(100% - 207px);

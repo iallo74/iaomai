@@ -576,6 +576,7 @@ var MENU = {
 		MENU.chiudiMenu("impset");
 		visLoader("");
 		document.getElementById("impset").classList.toggle("visSch");
+		document.getElementById("impset").classList.toggle("impSet",!archivi);
 		if(!archivi){
 			try{ SET.popolaImpSet(); }catch(err){}
 		}else{
@@ -600,15 +601,40 @@ var MENU = {
 		}
 		// confirm per salvare
 		if(!LOGIN._frv()){
-			localStorage.patientPwd = '';
-			if(document.getElementById("patientPwdCheck").checked)localStorage.patientPwd = 'true';
+			DB.login.data.password_pazienti = '0';
+			if(document.getElementById("patientPwdCheck").checked)DB.login.data.password_pazienti = '1';
 		}
 		var naming = '';
-		if(document.getElementById("t_OLISTICO").classList.contains("a_SEL"))naming = 'true';
-		if(document.getElementById("t_SHIATSU").classList.contains("a_SEL"))naming = 'shiatsu';
-		localStorage.noMedico = naming;
-		MENU.updateNaming();
+		if(document.getElementById("t_OLISTICO").classList.contains("a_SEL"))naming = 'O';
+		if(document.getElementById("t_SHIATSU").classList.contains("a_SEL"))naming = 'S';
+		localStorage.tipo_utilizzo = naming;
+		DB.login.data.valuta = document.getElementById("valuta").value;
+		DB.login.data.sistema_misure = document.getElementById("sistema_misure").value;
+		
+		var JSNPOST = {
+			password_pazienti: DB.login.data.password_pazienti,
+			valuta: DB.login.data.valuta,
+			sistema_misure: DB.login.data.sistema_misure
+		}
+		document.getElementById("impset").classList.add("popup_back");
+		if(CONN.getConn() && LOGIN.logedin()!=''){
+			CONN.caricaUrl(	"utente_parametri_up.php",
+							"b64=1&JSNPOST="+window.btoa(encodeURIComponent(JSON.stringify(JSNPOST))),
+							"MENU.ret_salvaImpSet");
+		}else MENU.ret_salvaImpSet('OK');
+
+	},
+	ret_salvaImpSet: function( txt ){
+		document.getElementById("impset").classList.remove("popup_back");
 		MENU.chiudiImpSet();
+		if(txt!='OK'){
+			ALERT(TXT("ErroreGenerico"));
+			return;
+		}
+		MENU.updateNaming();
+		localPouchDB.setItem(MD5("DB.login"), IMPORTER.COMPR(DB.login)).then(function(){ // salvo il DB
+			
+		});
 	},
 	updateNaming: function(){
 		document.getElementById("pulsante_pazienti").innerHTML = LINGUE.convPaziente(TXT("ElPazienti"));
@@ -625,26 +651,50 @@ var MENU = {
             '	<i>'+TXT("PatientType")+':</i>' +
             '	<span>' +
             '		<b id="t_MEDICO" onClick="MENU.setPatientType(\'M\');"' +
-			((!__(localStorage.noMedico))?' class="a_SEL"':'') +
+			((!__(localStorage.tipo_utilizzo))?' class="a_SEL"':'') +
 			'>'+TXT("_UTILIZZO_P")+'</b>' +
             '		<b id="t_OLISTICO" onClick="MENU.setPatientType(\'O\');"' +
-			((__(localStorage.noMedico=='true'))?' class="a_SEL"':'') +
+			((__(localStorage.tipo_utilizzo=='O'))?' class="a_SEL"':'') +
 			'>'+TXT("_UTILIZZO_C")+'</b>' +
             '		<b id="t_SHIATSU" onClick="MENU.setPatientType(\'S\');"' +
-			((__(localStorage.noMedico=='shiatsu'))?' class="a_SEL"':'') +
+			((__(localStorage.tipo_utilizzo=='S'))?' class="a_SEL"':'') +
 			'>'+TXT("_UTILIZZO_S")+'</b>' +
             '	</span>' +
             '</p>';
+
+			
+
+		var valuta = __(DB.login.data.valuta,'EUR');
+		var sistema_misure = __(DB.login.data.sistema_misure,'i');
+		var elenco = {};
+		for(v in DB.INT.valute){
+			elenco[v] = DB.INT.valute[v].simbolo+" ("+DB.INT.valute[v][globals.siglaLingua]+")";
+		}
+		HTML_imp += H.r({	t: "s", 
+							name: "valuta",
+							value: valuta,
+							opts: elenco,
+							label: TXT("Valuta"),
+							classRiga: "patientValuta" });
+
+		HTML_imp += H.r({	t: "s", 
+							name: "sistema_misure",
+							value: sistema_misure,
+							opts: { "i":TXT("SistemaMisureMetrico"), "a":TXT("SistemaMisureImperiale") },
+							label: TXT("SistemaMisure"),
+							classRiga: "patientMisura" });
+							
 		if(LOGIN.logedin() && DB.login.data.PasswordU)HTML_imp += 
 			'<p id="patientPwd">' +
             '	<i>'+TXT("PatientPwd")+':</i>' +
             '	<span>' +
             '		<input type="checkbox" id="patientPwdCheck" onClick="MENU.checkPatientPwd(this);"' +
-			((__(localStorage.patientPwd))?' checked':'') +
+			((__(DB.login.data.password_pazienti,'0')=='1')?' checked':'') +
 			'> '+ stripslashes(TXT("PatientPwdTxt"))+
-            '		<input type="password" id="patientPwdField">' +
+            '		<input type="password" id="patientPwdField" disabled="true">' +
             '	</span>' +
             '</p>';
+
 		HTML_imp += 
 			'<div style="margin-top:30px;">' +
 			'	<span class="annullaBtn" onclick="MENU.chiudiImpSet();">'+TXT("Annulla")+'</span>' +
@@ -654,11 +704,13 @@ var MENU = {
 		document.getElementById("contImpset").innerHTML = HTML_imp;
 	},
 	checkPatientPwd: function( el ){
-		if(el.checked != (__(localStorage.patientPwd)!='')){
+		if(el.checked != (__(DB.login.data.password_pazienti,'0')!='0')){
 			document.getElementById("patientPwdField").classList.add("visSch");
 			document.getElementById("patientPwdField").focus();
+			document.getElementById("patientPwdField").disabled = false;
 		}else{
 			document.getElementById("patientPwdField").classList.remove("visSch");
+			document.getElementById("patientPwdField").disabled = true;
 		}
 	},
 	setPatientType: function( type ){
@@ -681,7 +733,7 @@ var MENU = {
 			document.getElementById("t_SHIATSU").classList.add("a_SEL");
 			contr = 'shiatsu';
 		}
-		//if(__(localStorage.noMedico) != contr)ALERT(TXT("AlertNecessarioRiavvio"));
+		//if(__(localStorage.tipo_utilizzo) != contr)ALERT(TXT("AlertNecessarioRiavvio"));
 	},
 	patientPwdConf: function(){
 		var pwd = document.getElementById("patientPwdRequest");

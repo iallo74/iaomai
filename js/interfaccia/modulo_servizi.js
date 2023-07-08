@@ -149,7 +149,7 @@ var SERVIZI = {
 								name: "CostoServizio",	
 								value: (CostoServizio) ? ArrotondaEuro(CostoServizio) : '',
 								ver: '1|0|num',
-								label: TXT("CostoServizio")+' €',
+								label: TXT("CostoServizio")+' '+getValuta(),
 								keyupCampo: "H.keyPrezzo(this);",
 								classCampo: 'CostoTrattDx prezzi',
 								classRiga: "labelSx",

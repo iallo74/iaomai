@@ -574,6 +574,10 @@ body:not(.smart) #pulsanti_modello{
 #chiudi_modello,
 #help_modello{
 	height:40px;
+	/* border:1px solid #F00 !important; */
+	/* display: inline-block; */
+	float: right;
+	/* margin-right: 10px; */
 }
 #p1 div{
 	display:inline-block;

@@ -634,7 +634,7 @@ var SCHEDA = {
 		var d = new Date();
 		var annoAtt=d.getFullYear();
 		var cartaIntestata = false;
-		var TITOLO_PAGINA = htmlEntities(nomeApp)+'&#8482; - '+htmlEntities(sloganApp);
+		var TITOLO_PAGINA = document.title;
 		var sch = document.getElementById("scheda");
 		/*if(	sch.classList.contains("scheda_A") || 
 			sch.classList.contains("scheda_B") || 
@@ -711,7 +711,7 @@ var SCHEDA = {
 				'				   	<td align="right"' +
 				'				   		valign="middle"' +
 				'				   		style="font-size:11px;">' +
-				'				   		&copy;'+annoAtt+' '+htmlEntities(nomeApp)+'&#8482; | All rights reserved' +
+				'				   		&copy;'+annoAtt+' iáomai&#8482; | All rights reserved' +
 				'				   	</td>' +
 				'				</tr>' +
 				'			</table>' +
@@ -883,7 +883,7 @@ var SCHEDA = {
 		document.getElementById("lista_base").classList.remove("noPwd");
 		document.getElementById("patientPwdRequest").type = 'text';
 		document.getElementById("patientPwdRequest").value = '';
-		if(elenco == 'pazienti' && LOGIN.logedin() && __(localStorage.patientPwd)){
+		if(elenco == 'pazienti' && LOGIN.logedin() && __(DB.login.data.password_pazienti,'0')!='0'){
 			// verifico se serve la password
 			if(!MENU.pwdOK){
 				document.getElementById("lista_base").classList.add("noPwd");

@@ -44,7 +44,7 @@ var H = {
 		// controllo i valori
 		if(	typeof(obj.label) == 'undefined' &&
 			obj.t != 'h' &&
-			obj.t != 'v' )obj.label = TXT(""+obj.name);
+			obj.t != 'v' )obj.label = convertMisure(TXT(""+obj.name));
 		if(typeof(obj.idRiga) == 'undefined')obj.idRiga = '';
 		if(typeof(obj.label) == 'undefined')obj.label = '';
 		if(typeof(obj.noLabel) == 'undefined')obj.noLabel = false;

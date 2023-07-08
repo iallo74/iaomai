@@ -30,9 +30,7 @@ var	smartphone = false,
 	verApp = '1.4',
 	
 	// IMPOSTAZIONI DI APP
-	nomeApp = 'Iáomai',
-	sloganApp = 'A new vision on health',
-	tipoApp = '',
+	tipoApp = '', // per la demo
 	chr10 = String.fromCharCode(10);
 	
 if(location.search){
@@ -114,8 +112,9 @@ var IMPORTER = {
 		'js/utils/swipe.js',
         
         'js/lingue/etichette.js',
-        'js/lingue/paesi.js',
         'js/lingue/TXT.js',
+        'js/lingue/paesi.js',
+        'js/lingue/valute.js',
         'js/lingue/guide.js',
         'modelli/zone.js',
         'js/lingue/lingue.js',
@@ -184,7 +183,7 @@ var IMPORTER = {
 		brw_safari=window.safari !== undefined;
 		brw_chrome=(navigator.userAgent.indexOf("Chrome") != -1);
 		isMac = navigator.platform.toUpperCase().indexOf('MAC')>=0;
-		document.title = nomeApp+" - "+sloganApp;
+		document.title = "iáomai™ - A new vision on health";
 		document.getElementById("no_info_features").name = 'no_info_features_'+verApp.replace(".","_");
 		document.getElementById("no_info_features").dataset.name = 'no_info_features_'+verApp.replace(".","_");
 		/*
@@ -417,7 +416,7 @@ var IMPORTER = {
 			}
 		}
 	},
-	dbArray: function(txt = txt){
+	dbArray: function( txt ){
 		if(txt=='' || txt==null)txt='{"lastSync": 0, "data": []}';
 		return JSON.parse(txt);
 	},

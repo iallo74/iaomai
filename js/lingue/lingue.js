@@ -162,7 +162,6 @@ var LINGUE = {
 				}
 				testo = testo.replace(/\n/g,"<br>");
 				testo = testo.replace(/\[#\]/g,'<img src="img/spunta.png" height="16" style="vertical-align:middle;margin-left:5px;margin-top:-1px;margin-bottom:2px;">');
-				testo = testo.replace(/\[§\]/g,nomeApp);
 				testo = testo.replace(/\[\*\]/g,'<img src="img/p_impostazioniN.png" height="22" style="vertical-align: middle;margin-top: -11px;margin-bottom: -8px;margin-left: -4px;">');
 				testo = testo.replace(/(iáomai)/g,"<b>iáomai</b>");
 				testo = testo.replace('[IAOMAI]','<img src="img/logo_iaomai_mini.png" style="display:inline-block;vertical-align:middle;width:80px;">');
@@ -172,7 +171,6 @@ var LINGUE = {
 				str = element.innerHTML;
 			}	
 		}
-		if(element.innerHTML == '{{[§]}}')element.innerHTML = nomeApp;
 	},
 	
 	linguaBrowser: function(){ // legge la lingua di default del browser
@@ -187,9 +185,9 @@ var LINGUE = {
 	convPaziente: function( str ){
 		var cartOp = '';
 		if(__(globals.set))cartOp = __(globals.set.cartella);
-		if(__(localStorage.noMedico) || cartOp=='meridiani_shiatsu'){
-			//var dest = (__(localStorage.noMedico)=='shiatsu')?"S":"C";
-			var dest = (__(localStorage.noMedico)=='shiatsu' || 
+		if(__(localStorage.tipo_utilizzo) || cartOp=='meridiani_shiatsu'){
+			//var dest = (__(localStorage.tipo_utilizzo)=='S')?"S":"C";
+			var dest = (__(localStorage.tipo_utilizzo)=='S' || 
 						cartOp=='meridiani_shiatsu' ) ? "S" : "C";
 			
 			var re = new RegExp(DB.TXT.base["_Cliente_P"][globals.siglaLingua], 'g');
@@ -320,7 +318,6 @@ var LINGUE = {
 		}
 	}
 };
-
 function addslashes(str) {
 	str = str.replace(/\\/g, '\\\\');
 	str = str.replace(/\'/g, '\\\'');
@@ -328,7 +325,6 @@ function addslashes(str) {
 	str = str.replace(/\0/g, '\\0');
 	return str;
 }
- 
 function stripslashes(str) {
 	str = str.replace(/\\'/g, '\'');
 	str = str.replace(/\\"/g, '"');
@@ -336,17 +332,11 @@ function stripslashes(str) {
 	str = str.replace(/\\\\/g, '\\');
 	return str;
 }
-
 function htmlEntities(str) {
 	return stripslashes(String(str).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/(iáomai)/g,"<b>iáomai</b>"));
 }
 function htmlRev(str) {
 	return String(str).replace('&amp;', '&').replace('&lt;', '<').replace('&gt;', '>').replace('&quot;', '"');
-}
-function Lingua(txt){
-	var str = txt[globals.siglaLingua];
-	if(!str)str = txt["eng"];
-	return addslashes(str.replace(/\[§\]/g,nomeApp));
 }
 function TXT(txt){
 	var str = '';
@@ -360,19 +350,16 @@ function TXT(txt){
 		str = strSet[localStorage.siglaLingua];
 		if(!str)str = strSet["eng"];
 	}
-	str = addslashes(str.replace(/\[§\]/g,nomeApp));
 	str = LINGUE.convPaziente(str);
 	return str;
 }
 function convLangPath( path ){
-	var langs = {
-		"ita": "it",
-		"eng": "en",
-		"esp": "es"
-	};
-	return path.replace("[lang]",langs[globals.siglaLingua]);
+	let lang = 'en';
+	for(let l in LINGUE.NLS){
+		if(LINGUE.NLS[l].sigla == globals.siglaLingua)lang = LINGUE.NLS[l].sigla2;
+	}
+	return path.replace("[lang]",lang);
 }
-
 function doHighlight( html, parola, cls ){
 	var t1 = '<font class="'+cls+'">';
 	var t2 = '</font>';
@@ -432,4 +419,26 @@ function setTextSize( n ){
 			else els[i].classList.remove("a_SEL");
 		}
 	}
+}
+function convertMisure( txt ){
+    for(let m in DB.INT.misure){
+        let pattern = new RegExp("\\["+m+"\\]");
+        if(pattern.test(txt)){
+            txt = txt.replace(pattern,DB.INT.misure[m][DB.login.data.sistema_misure]);
+        }
+    }
+    return txt;
+}
+function elencaPaesi( prefissi ){
+	var prefissi = __(prefissi);
+	var elenco = {"":""};
+	for(let p in DB.INT.paesi){
+		var paese = DB.INT.paesi[p][globals.siglaLingua];
+		if(prefissi)paese += ' ('+DB.INT.paesi[p].prefisso+')';
+		elenco[p] = paese;
+	}
+	return elenco;
+}
+function getValuta(){
+	return DB.INT.valute[DB.login.data.valuta].simbolo;
 }

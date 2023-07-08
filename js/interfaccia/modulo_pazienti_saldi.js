@@ -23,7 +23,7 @@ var PAZIENTI_SALDI = {
 								'	  id="btn_saldo_'+SA.p+'"' +
 								'	  onClick="PAZIENTI.car_saldo(\''+SA.p+'\',this);">';
 						if(SA.DataModifica*1>DB.pazienti.lastSync)HTML += H.imgSyncro();
-						HTML += getDataTS(SA.DataSaldo)+' - &euro; '+ArrotondaEuro(SA.ValoreSaldo) +
+						HTML += getDataTS(SA.DataSaldo)+' - '+getValuta()+' '+ArrotondaEuro(SA.ValoreSaldo) +
 								'</div>';
 						vuoto=false;
 						Saldato+=SA.ValoreSaldo;
@@ -46,7 +46,7 @@ var PAZIENTI_SALDI = {
 									'		  padding-left:4px;' +
 									'		  padding-right:4px;' +
 									'		  border-radius:4px;"';
-			HTML_provv += 	'>&euro; '+ArrotondaEuro(RIS) +
+			HTML_provv += 	'>'+getValuta()+' '+ArrotondaEuro(RIS) +
 							'	</span>' +
 							'</p>';
 			if(vuoto){
@@ -182,7 +182,7 @@ var PAZIENTI_SALDI = {
 			HTML += H.r({	t: "r",
 							name: "ValoreSaldo",
 							value: (ValoreSaldo) ? ArrotondaEuro(ValoreSaldo) : '',
-							label: TXT("ValoreSaldo")+" €",
+							label: TXT("ValoreSaldo")+" "+getValuta(),
 							ver: "1|0|num",
 							classCampo: "CostoTrattDx",
 							keyupCampo: "H.keyPrezzo(this);",

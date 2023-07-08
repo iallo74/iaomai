@@ -66,7 +66,7 @@ DB.TXT.set = {
     AggiungiPuntoProc: {
         ita: "Aggiungi alla procedura",
         eng: "Add to procedure",
-        esp: "Agregar a la procedimiento",
+        esp: "Agregar al procedimiento",
         fra: "Ajouter à la procédure",
         por: "Adicionar à procedimento",
         deu: "Zur Prozedur hinzufügen"
@@ -202,7 +202,7 @@ DB.TXT.set = {
     Legenda_IH: {
         ita: "Superficie interna dell'elice",
         eng: "Hidden side of helix",
-        esp: "Lado oculto de la hélice",
+        esp: "Lado interno de la hélice",
         fra: "Côté interne de l'hélice",
         por: "Lado oculto da hélice",
         deu: "Verdeckte Seite der Helix"
@@ -266,7 +266,7 @@ DB.TXT.set = {
     Legenda_ST: {
         ita: "Superficie interna del trago",
         eng: "Subtragus",
-        esp: "Lado oculto del trago",
+        esp: "Lado interno del trago",
         fra: "Face interne du tragus",
         por: "Face interna do trago",
         deu: "Verdeckte Seite des Tragus"
@@ -642,7 +642,7 @@ DB.TXT.set = {
     ProtocolloLovatoI: {
         ita: "Protocollo per smettere improvvisamente di Lovato",
         eng: "Protocol to suddenly stop Lovato",
-        esp: "Protocolo para dejar de fumar Lovato repentinamente",
+        esp: "Protocolo para dejar de fumar repentinamente de Lovato",
         fra: "Protocole pour arrêter brusquement Lovato",
         por: "Protocolo para parar de fumar Lovato repentinamente",
         deu: "Protokoll zum plötzlichen Beenden von Lovato"
@@ -962,7 +962,7 @@ DB.TXT.set = {
     Setting_NR: {
         ita: "Punto neuroriflesso",
         eng: "Neuroreflex point",
-        esp: "Punto neuroreflexo",
+        esp: "Punto neuroreflejo",
         fra: "Point neuroréflexe",
         por: "Ponto neuroreflexo",
         deu: "Neuroreflexpunkt"
@@ -1040,7 +1040,7 @@ DB.TXT.set = {
         deu: "Deine eigenen"
     },
     Community: {
-        ita: "Condivise",
+        ita: "Community",
         eng: "Community",
         esp: "Comunidad",
         fra: "Communauté",
@@ -1106,7 +1106,7 @@ DB.TXT.set = {
     CreaProcedura: {
         ita: "Nuova procedura",
         eng: "New procedure",
-        esp: "Nueva procedimiento",
+        esp: "Nuevo procedimiento",
         fra: "Nouvelle procédure",
         por: "Nova procedimento",
         deu: "Neues Verfahren"
@@ -1146,7 +1146,7 @@ DB.TXT.set = {
     ProcTue: {
         ita: "Questa procedura è tua",
         eng: "This procedure is yours",
-        esp: "Esta procedimiento es tuya",
+        esp: "Este procedimiento es tuyo",
         fra: "Cette procédure est la vôtre",
         por: "Este procedimento é seu",
         deu: "Dieses Verfahren gehört dir"
@@ -1162,7 +1162,7 @@ DB.TXT.set = {
     Di: {
         ita: "Di",
         eng: "By",
-        esp: "Por",
+        esp: "De",
         fra: "Par",
         por: "Por",
         deu: "Von"
@@ -1310,5 +1310,37 @@ DB.TXT.set = {
         fra: "Résultat du test",
         por: "Resultado do teste",
         deu: "Testergebnis"
+    },
+    TestTxt1: {
+        ita: "Indica i gradi di dipendenza e di motivazione",
+        eng: "Indicates the degrees of dependence and motivation",
+        esp: "Indica los grados de dependencia y motivación",
+        fra: "Indique les degrés de dépendance et de motivation",
+        por: "Indica os graus de dependência e motivação",
+        deu: "Gibt die Grade der Abhängigkeit und Motivation an"
+    },
+    TestTxt2: {
+        ita: "Con motivazione o dipendenza bassa si consiglia di non effettuare alcuna terapia",
+        eng: "If motivation or dependence is low, it is advisable not to undergo any therapy",
+        esp: "Si la motivación o la dependencia es baja, se recomienda no realizar ninguna terapia",
+        fra: "Si la motivation ou la dépendance est faible, il est conseillé de ne pas suivre de thérapie",
+        por: "Se a motivação ou dependência estiver baixa, é aconselhável não realizar nenhuma terapia",
+        deu: "Wenn Motivation oder Abhängigkeit gering ist, wird empfohlen, keine Therapie durchzuführen"
+    },
+    Step: {
+        ita: "Passo",
+        eng: "Step",
+        esp: "Paso",
+        fra: "Étape",
+        por: "Passo",
+        deu: "Schritt"
+    },
+    Proposta: {
+        ita: "Proposta",
+        eng: "Proposal",
+        esp: "Propuesta",
+        fra: "Proposition",
+        por: "Proposta",
+        deu: "Vorschlag"
     }
 }

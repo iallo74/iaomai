@@ -79,6 +79,10 @@
 	height:32px;
 	line-height:32px;
 	cursor:pointer;
+	width: calc(100% - 228px);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 #toolsBackups div:hover{
 	background-color:rgba(255,255,255,0.1);

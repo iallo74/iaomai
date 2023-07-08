@@ -499,14 +499,14 @@ var PAZIENTI = {
 					'					class="prefisso">' +
 					'				<option></option>';
 					
-				for(let p in paesi){
+				for(let p in DB.INT.paesi){
 					var isSelected = '';
 					if(paeseCellulare == p)isSelected = ' SELECTED';
 					cont += '		<option'+isSelected +
 							'				value="'+p+'">'	+
-								paesi[p].prefisso +
+							DB.INT.paesi[p].prefisso +
 								' &nbsp; &nbsp; &nbsp; (' +
-								htmlEntities(paesi[p][globals.siglaLingua])+')' +
+								htmlEntities(DB.INT.paesi[p][globals.siglaLingua])+')' +
 							'		</option>'+H.chr10;
 				}
 			cont += '			</select>' +
@@ -771,8 +771,8 @@ var PAZIENTI = {
 						'	<div id="p_add_dett"' +
 						'		 style="margin-top: 0px;">' +
 						'		<input type="file"' +
-						'			   id="fotoProvv_FL"' +
-						'			   class="p_paz_foto"' +
+						'			   id="fileProvv_FL"' +
+						'			   class="p_paz_file"' +
 						'		       onChange="PH.selezionaFile(this);">' +
 						'		<span id="addFile">' +
 									TXT("AggiungiFile") +
@@ -785,7 +785,7 @@ var PAZIENTI = {
 						'	</div>' +
 						'	<div class="allowedFormats">* '+TXT("FormatiConsentiti")+": "+ext+'</div>';
 					
-			HTML += H.r({	t: "h", name: "totFoto",	value: "0" });
+			HTML += H.r({	t: "h", name: "totFiles",	value: "0" });
 			HTML += H.sezione({
 				label: TXT("Gallery"),
 				nome: 'files',
@@ -955,7 +955,7 @@ var PAZIENTI = {
 			}
 			if(Cellulare.trim()){
 				HTML += '			<i>'+htmlEntities(TXT("Cellulare"))+':</i> ' +
-									htmlEntities(paesi[paeseCellulare].prefisso + " " +Cellulare)+'<br>';
+									htmlEntities(DB.INT.paesi[paeseCellulare].prefisso + " " +Cellulare)+'<br>';
 			}
 			if(Email.trim()){
 				HTML += '			<i>'+htmlEntities(TXT("Email"))+':</i> ' +
@@ -1014,7 +1014,7 @@ var PAZIENTI = {
 				if(Provincia)H__1 += ' ('+htmlEntities(Provincia)+')';
 				if(Stato){
 					H__1 += 	'<br>(';
-					if(Stato.length==2)H__1 +=		htmlEntities(paesi[Stato][globals.siglaLingua]);
+					if(Stato.length==2)H__1 +=		htmlEntities(DB.INT.paesi[Stato][globals.siglaLingua]);
 					else H__1 +=		htmlEntities(Stato);
 					H__1 +=		')';
 				}
@@ -1099,10 +1099,10 @@ var PAZIENTI = {
 			// BIOMETRICI
 			var HTML_provv = '';
 			if(Altezza.trim()){
-				HTML_provv += '<div><i>'+htmlEntities(TXT("Altezza"))+':</i> ' + htmlEntities(Altezza) + '</div>';
+				HTML_provv += '<div><i>'+htmlEntities(convertMisure(TXT("Altezza")))+':</i> ' + htmlEntities(Altezza) + '</div>';
 			}
 			if(Peso.trim()){
-				HTML_provv += '<div><i>'+htmlEntities(TXT("Peso"))+':</i> ' + htmlEntities(Peso) + '</div>';
+				HTML_provv += '<div><i>'+htmlEntities(convertMisure(TXT("Peso")))+':</i> ' + htmlEntities(Peso) + '</div>';
 			}
 			HTML_provv += H.scriviEtichette('biometrici');
 			

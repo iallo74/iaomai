@@ -28,6 +28,7 @@ var LOGIN = {
 				"Pseudonimo": "",
 				"Intestazione": "",
 				"Stato": "",
+				"siglaPaese": "",
 				"CondizioniCommunity": 0,
 				"Email": "",
 				"ExpDate": 0,
@@ -35,6 +36,9 @@ var LOGIN = {
 				"LastVer": CONN.VERSIONE,
 				"imgAvatar": "",
 				"logoAzienda": "",
+				"password_pazienti": "",
+				"valuta": "EUR",
+				"sistema_misure": "",
 				"auths": []
 			}
 		};
@@ -327,6 +331,7 @@ var LOGIN = {
 					LOGIN.retIni=false;
 					LOGIN.globalSync();
 					LOGIN.scriviUtente();
+					LOGIN.verInternationals();
 				}
 			});
 		}else LOGIN.logout();
@@ -502,6 +507,29 @@ var LOGIN = {
 			if(globals.set.cartella)caricaSet(globals.set.cartella,document.getElementById('p_'+globals.set.cartella));
 		}});
 	},
+	verInternationals: function(){
+		mod = false;
+		if(!DB.login.data.valuta){
+			DB.login.data.valuta = DB.INT.paesi[DB.login.data.siglaPaese].valuta;
+			mod = true;
+		}
+		if(!DB.login.data.sistema_misure){
+			DB.login.data.sistema_misure = __(DB.INT.paesi[DB.login.data.siglaPaese].sistema_misure,'i');
+			mod = true;
+		}
+		if(mod){
+			var JSNPOST = {
+				password_pazienti: DB.login.data.password_pazienti,
+				valuta: DB.login.data.valuta,
+				sistema_misure: DB.login.data.sistema_misure
+			}
+			if(CONN.getConn() && LOGIN.logedin()!=''){
+				CONN.caricaUrl(	"utente_parametri_up.php",
+								"b64=1&JSNPOST="+window.btoa(encodeURIComponent(JSON.stringify(JSNPOST))),
+								"console.log");
+			}
+		}
+	},
 	
 	
 	// GESTIONE UTENTE
@@ -615,7 +643,7 @@ var LOGIN = {
 						'			<div style="background-image:url(\''+UT.imgAvatar+'\')"></div>' +
 						'		</div>' +
 						'		<div style="float:left;height: 120px;">' +
-						'			<input class="ico_file"' +
+						'			<input class="ico_foto"' +
 						'				   id="avatarUtente_FL"' +
 						'				   type="file"' +
 						'				   onchange="PH.encodeImageFileAsURL(this, true, false, \'LOGIN.salvaAvatar\');"' +
@@ -684,7 +712,6 @@ var LOGIN = {
 						'	   	<b>'+htmlEntities(TXT("LabelFatturazione"))+'</b>' +
 						'	</div>';
 				
-					console.log(UT.logoAzienda)
 				// logoAzienda
 				HTML += '	<div>' +
 						'		<div onClick="this.classList.toggle(\'avatarBig\');"' +
@@ -693,7 +720,7 @@ var LOGIN = {
 						'			<div style="background-image:url(\''+UT.logoAzienda+'\')"></div>' +
 						'		</div>' +
 						'		<div style="float:left;height: 120px;">' +
-						'			<input class="ico_file"' +
+						'			<input class="ico_foto"' +
 						'				   id="logoAzienda_FL"' +
 						'				   type="file"' +
 						'				   onchange="PH.encodeImageFileAsURL(this, true, false, \'LOGIN.salvaLogo\');"' +
@@ -766,7 +793,7 @@ var LOGIN = {
 				
 				SCHEDA.caricaScheda(	stripslashes(TXT("ModificaUtente")),
 										HTML,
-										'',
+										'SCHEDA.formModificato = false;',
 										'scheda_utente',
 										false,
 										true,'',
@@ -905,7 +932,7 @@ var LOGIN = {
 				
 	// SINCRONIZZAZIONE
 	sincronizza: function(funct, bkp=false){ // sincronizza i DB locali con quelli remoti (quando modifico)
-		DB.verDbSize();
+		DB._verDbSize();
 		if(typeof(funct)!='undefined')LOGIN.afterFunct=funct;
 		else if(!LOGIN.afterFunct)LOGIN.afterFunct=null;
 		
@@ -946,10 +973,10 @@ var LOGIN = {
 				
 				var elenco='';				
 				if(Nuovo){ // se è un account nuovo popolo i DB con quelli DEMO
-					DB.pazienti.data = DB.pulisciFRV(archiviDemo.pazienti);
-					DB.fornitori.data = DB.pulisciFRV(archiviDemo.fornitori);
-					DB.servizi.data = DB.pulisciFRV(archiviDemo.servizi);
-					DB.files.data = DB.pulisciFRV(archiviDemo.files);
+					DB.pazienti.data = DB._pulisciFRV(archiviDemo.pazienti);
+					DB.fornitori.data = DB._pulisciFRV(archiviDemo.fornitori);
+					DB.servizi.data = DB._pulisciFRV(archiviDemo.servizi);
+					DB.files.data = DB._pulisciFRV(archiviDemo.files);
 				}
 				
 				elencoFiles='';
@@ -1995,7 +2022,7 @@ var LOGIN = {
 		}
 		if(nSinc == LOGIN.totSinc){ // pazienti | procedure | note | ricerche
 			LOGIN.pulisciTabelle();
-			DB.verDbSize();
+			DB._verDbSize();
 		}
 	},
 	pulisciTabelle: function(){ // elimina gli elementi "Cancellati"
@@ -2102,7 +2129,7 @@ var LOGIN = {
 					PAZIENTI.deselPaziente();
 				}
 			}
-			if(DB.sizeDb<40*1000*1000)LOGIN.updateGallery(); // limite a 40MB (circa 1000 file)
+			if(DB.__sizeDb<40*1000*1000)LOGIN.updateGallery(); // limite a 40MB (circa 1000 file)
 		});
 	},
 	download:function ( filename, text ){ // scarica un file
@@ -2456,7 +2483,7 @@ var LOGIN = {
 					var saldi=JSON.parse(JSON.stringify(backup.pazienti[p].saldi));
 					saldi.sort(sort_by("DataSaldo", true, parseInt ));
 					for(let s in saldi){
-						if(saldi[s].Cancellato!='1')LOGIN.addHTML("<i>"+getFullDataTS(saldi[s].DataSaldo)+"</i>: <b>&euro; "+ArrotondaEuro(saldi[s].ValoreSaldo)+"</b><br>");
+						if(saldi[s].Cancellato!='1')LOGIN.addHTML("<i>"+getFullDataTS(saldi[s].DataSaldo)+"</i>: <b>"+getValuta()+" "+ArrotondaEuro(saldi[s].ValoreSaldo)+"</b><br>");
 					}
 					LOGIN.addHTML("</div>");
 				}

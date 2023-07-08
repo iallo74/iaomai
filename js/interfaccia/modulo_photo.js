@@ -1,6 +1,7 @@
 var PH = {
 	
 	nImg: '',
+	openedImg: -1,
 	makeBig: false,
 	file: null,
 	img: null,
@@ -554,7 +555,7 @@ var PH = {
 					for(let f in DB.files.data){
 						if(__(DB.files.data[f].frv,false)==(LOGIN._frv()=='frv')){
 							n++;
-							var dim = DB.getStringMemorySize(IMPORTER.COMPR(DB.files.data[f].imgMini));
+							var dim = DB._getStringMemorySize(IMPORTER.COMPR(DB.files.data[f].imgMini));
 							if(dim<1000*1000){
 								dimTxt = parseInt(dim/(1000))+"KB";
 							}else{
@@ -676,7 +677,7 @@ var PH = {
 		}
 	},
 	selezionaFile: function( element ){ // seleziona i files che si carica con il pulsante carica files
-		PH.encodeImageFileAsURL( element, false, true, 'PH.aggiungiFiles' );
+		PH.encodeImageFileAsURL( element, false, true, 'PH.aggiungiFile' );
 	},
 	aggiungiFile: function( obj ){ // carica un nuova file nella gallery
 		obj = JSON.parse(obj);
@@ -739,6 +740,7 @@ var PH = {
 		//if(!locale)pass = CONN.retNoConn();
 		if(pass){
 			visLoader("");
+			PH.openedImg = i;
 			if(!locale && CONN.getConn()){
 				idU = PH.idU;
 				if(LOGIN._frv())idU = 'frv';
@@ -762,7 +764,12 @@ var PH = {
 			}
 		}
 	},
-	openFile: function( i, elenco = PH.galleryProvvisoria, fileType ){ // apro il file online
+	chiudiFoto: function(){
+		PH.openedImg = -1;
+		nasLoader();
+		document.getElementById("editFileBig").classList.remove("visSch");
+	},
+	openFile: function( i, elenco = PH.galleryProvvisoria	, fileType ){ // apro il file online
 		if(!CONN.retNoConn())return;
 		if(!elenco)elenco = PH.galleryProvvisoria;	
 		if(fileType=='pdf' && !android)PH.visPdfBig(CONN.APIfolder+"getFile.php?inline=1&c="+DB.login.data.TOKEN+localStorage.UniqueId+elenco[i].idFile.replace("file_","")+DB.login.data.idUtente);
@@ -781,12 +788,14 @@ var PH = {
 			}
 		}
 		document.getElementById("file_alert").classList.remove("visSch");
+		document.getElementById("editFileBig").classList.toggle("visSch",SCHEDA.form);
 		document.getElementById("fileBig").classList.remove("noLoader");
 		document.getElementById("fileBig").style.backgroundImage='url(\''+urlImg+'\')';
 		if(lowRes){
 			if(!CONN.getConn())msg = TXT("AlertImgLowNoConn");
 			else msg = TXT("AlertImgLow");
 			document.getElementById("file_alert").classList.add("visSch");
+			document.getElementById("editFileBig").classList.remove("visSch");
 			document.getElementById("file_alert").innerHTML = stripslashes(msg);
 		}
 	},	
@@ -804,8 +813,8 @@ var PH = {
 			return;
 		}
 		// --------------------------
-		var space = DB.getStringMemorySize(IMPORTER.COMPR(DB.files));
-		var spaceAvail = (45*1000*1000 - DB.sizeDb);
+		var space = DB._getStringMemorySize(IMPORTER.COMPR(DB.files));
+		var spaceAvail = (45*1000*1000 - DB.__sizeDb);
 		var perc = (space*100) / spaceAvail;
 		var spaceTxt = '<b>';
 		if(space<1000*1000){
@@ -1022,9 +1031,9 @@ var PH = {
 		};
 		PH.aggiungiFile( JSON.stringify(obj) );
 	},
-	editScreenShot: function(){ // acquisisce lo screenshot del manichino e lo apre in disegno
-		if(!globals.modello.cartella)return;
-		PH.functPH="PH.aggiungiScreenshot";
+	editImg: function( screenshot = false ){ // acquisisce lo screenshot del manichino e lo apre in disegno
+		if(!globals.modello.cartella && screenshot)return;
+		PH.functPH = screenshot ? "PH.aggiungiScreenshot" : "PH.sostImg";
 		PH.makeBig = true;
 		PH.img = document.getElementById("img_PH");
 		PH.img.style.width = '';
@@ -1040,9 +1049,30 @@ var PH = {
 			document.getElementById("img_draw_tools").classList.remove("nasRes");
 			document.getElementById("photo").classList.add("visPHop");
 		};
-		PH.img.src = PH.screenShot();
+		var el = document.getElementById("fileBig");
+		PH.img.src = screenshot ? PH.screenShot() : el.style.backgroundImage.replace('url("','').replace('")','');
+		el.classList.add("noLoader");
+		el.style.backgroundImage = '';
 		document.getElementById("photo").classList.add("visPH");
 		document.getElementById("img_draw_undo").classList.remove("active");
+	},
+	aggiungiScreenshot: function( obj ){ // aggiunge lo screenshot alla gallery
+		PH.img.src = DW.destImg.src;
+		var imgMini = PH.returnImageConverted();
+		var obj = {
+			imgMini: imgMini,
+			imgBig: (PH.makeBig) ? PH.returnImageConverted( true ) : '',
+			fileType: imgMini.split("data:")[1].split(";")[0]
+		};
+		PH.aggiungiFile( JSON.stringify(obj) );
+	},
+	sostImg: function(){ // acquisisce lo screenshot del manichino e lo apre in disegno
+		PH.img.src = DW.destImg.src;
+		let imgMini = PH.returnImageConverted();
+		PH.galleryProvvisoria[PH.openedImg].imgMini = imgMini;
+		PH.galleryProvvisoria[PH.openedImg].imgBig = PH.returnImageConverted( true );
+		document.getElementById("gall_"+PH.openedImg).getElementsByTagName("div")[0].style.backgroundImage = 'url("'+imgMini+'")';
+		PH.chiudiFoto();
 	}
 	
 }
@@ -1100,6 +1130,7 @@ var DW = {
 		this.yCanvas = tCoord(this.canvas,'y');
 		this.destImg=new Image();
 		this.destImg.src = PH.img.src;
+		this.strokeHistory = [];
 	},
 	drawStart: function( e ){ // touch, mouse o pencil down
 		let pressure = 0.1;

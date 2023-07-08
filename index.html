@@ -1,7 +1,7 @@
 <!DOCTYPE html> 
 <html lang="it">
 	<head>
-		<title>Iáomai - A new vision on health</title>
+		<title>iáomai - A new vision on health</title>
 		<meta charset="utf-8">
         
         <!-- META PER L'IN-APP PURCHASE TEST -->
@@ -79,7 +79,7 @@
 		<script src="js/connect/conn.js"></script>
 		<script src="js/connect/vendor.bundle.js"></script>
         <script src="js/connect/localPouchDB.js"></script>
-        <script src="js/importer.js"></script>
+        <script src="js/importer.js?v=1"></script>
         
 	</head>
 
@@ -540,11 +540,11 @@
                 {{TXT_VersioneNumero}} <span id="verApp_imp"></span>
                 <br>
                 <br>
-               <i>{{TXT_IdeazioneProgetto}}:</i> Christian Iallonardi, Luca Doglione | <i>{{TXT_SviluppoContenuti}}:</i> Vittorio Piacenza, Luca Doglione | <i>Software:</i> Christian Iallonardi, Denny Biasiolli | <i>{{TXT_DisegniModellazione}}:</i> Christian Iallonardi | <i>{{TXT_ComunicazioneTesting}}:</i> Luca Doglione | <i>{{TXT_VersioneInglese}}:</i> Daniela Borghese | <i>{{TXT_Collaboratori}}:</i> Roberto Federico Crispo, Antonino Caldarella, Zion Levy, Antonello Lovato, Elisa Iallonardi, Laura Lucchino, Nicola Revello, Giorgio Eugenio Bertani, Carmelo Perlongo.
+               <i>{{TXT_IdeazioneProgetto}}:</i> Christian Iallonardi, Luca Doglione | <i>{{TXT_SviluppoContenuti}}:</i> Vittorio Piacenza, Luca Doglione | <i>Software:</i> Christian Iallonardi, Denny Biasiolli | <i>{{TXT_DisegniModellazione}}:</i> Christian Iallonardi | <i>{{TXT_ComunicazioneTesting}}:</i> Luca Doglione | <i>{{TXT_VersioneInglese}}:</i> Roman Henry Clarke, Daniela Borghese | <i>{{TXT_VersioneSpagnola}}:</i> Celia Guadalupe Garza Rosas | <i>{{TXT_Collaboratori}}:</i> Roberto Federico Crispo, Antonino Caldarella, Zion Levy, Antonello Lovato, Elisa Iallonardi, Laura Lucchino, Nicola Revello, Giorgio Eugenio Bertani, Carmelo Perlongo, Daglas Gattini, Roberto Taverna.
                 <br>
                 <br>
                 <br>
-                <span style="font-family:Verdana;">&copy;&reg;</span> <script language="javascript">d = new Date();document.write(d.getFullYear());</script> <b>{{[§]}}</b> - {{TXT_DirittiRiservati}}
+                <span style="font-family:Verdana;">&copy;&reg;</span> <script language="javascript">d = new Date();document.write(d.getFullYear());</script> <b>iáomai</b> - {{TXT_DirittiRiservati}}
                 </div>
             </div>
             <div id="dispositivi" class="popup"> <!-- DISPOSITIVI CONNESSI -->
@@ -846,7 +846,7 @@
 		<div id="loader" class="noLoader" onMouseOver="if(!touchable)overInterfaccia=true;" onMouseOut="if(!touchable)overInterfaccia=false;"><div>{{TXT_CaricamentoImpostazioni}}</div></div>
         
         <!-- ZOOM FOTO -->
-		<div id="fileBig" class="noLoader" onMouseOver="if(!touchable)overInterfaccia=true;" onMouseOut="if(!touchable)overInterfaccia=false;"><div id="chiudiFileBig" onClick="nasLoader();"></div><div id="file_alert"></div></div>
+		<div id="fileBig" class="noLoader" onMouseOver="if(!touchable)overInterfaccia=true;" onMouseOut="if(!touchable)overInterfaccia=false;"><div id="editFileBig" onClick="PH.editImg();"></div><div id="chiudiFileBig" onClick="PH.chiudiFoto();"></div><div id="file_alert"></div></div>
         
         <!-- IFRAME PDF -->
 		<div id="pdfBig" class="noLoader" onMouseOver="if(!touchable)overInterfaccia=true;" onMouseOut="if(!touchable)overInterfaccia=false;"><div id="chiudiPdfBig" onClick="nasLoader();"></div><iframe id="frPdf" frameborder="0"></iframe></div>

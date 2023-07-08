@@ -2635,7 +2635,8 @@ DB.set = {
 				},
 				d: "*Based on somatotopy, search for the corresponding area most sensitive to the detection of allodynia."
 			},
-			s: [{
+			s: [
+				{
 					t: "Unilateral pain",
 					d: "Preferably treat the homolateral auricle to the pain",
 					p: [
@@ -2646,10 +2647,14 @@ DB.set = {
 						"039",
 						"155"
 					]
-				}, {
+				},
+				{
 					t: "Exacerbation",
 					d: "On the dominant side",
-					p: [{
+					p: [
+						"165",
+						"229",
+						{
 							t: "Anti-inflammatory triad",
 							p: [
 								"003",
@@ -2659,15 +2664,18 @@ DB.set = {
 							l: "TAN"
 						}
 					]
-				}, {
+				},
+				{
 					t: "Muscle contraction",
 					p: [
 						"124",
 						"[]Muscle points corresponding to the affected area"
 					]
-				}, {
+				},
+				{
 					t: "Anxious component",
-					p: [{
+					p: [
+						{
 							t: "Neurovegetative relaxation",
 							p: [
 								"001",
@@ -2676,7 +2684,8 @@ DB.set = {
 								"254"
 							],
 							l: "RIL_NEUR"
-						}, {
+						},
+						{
 							t: "Relaxation triad",
 							p: [
 								"001",
@@ -2686,7 +2695,8 @@ DB.set = {
 							l: "TRE"
 						}
 					]
-				}, {
+				}, 
+				{
 					t: "Depressive component",
 					p: [
 						"173",
@@ -7501,7 +7511,21 @@ DB.set = {
 					]
 				}
 			},
-			d: "The protocol should be performed once a week with a decrease of 3 cigarettes per session. Extemporaneous needles are used.<br><br><b>Treatment for anxious patients</b><br>For particularly anxious patients, it is recommended to apply a Triad of relaxation on the left auricle for 5 days using <i>semipermanent needles</i>. These needles should be removed 2 days before the next session, in which the Triad of relaxation can be applied again or alternated with the Omega Line."
+			"s": [
+				{
+					"t": "Suspensión repentina",
+					"d": "En ambos pabellones",
+					"p": [
+						"000",
+						"267",
+						"230",
+						"137"
+					],
+					"a": "Se requiere una abstinencia de al menos 12 horas antes de la sesión para la suspensión repentina del humo. En caso de que el paciente no pueda cumplir con la abstinencia, evite aplicar el protocolo, ya que esto significa que no está motivado y los puntos serán menos sensibles al tratamiento.<br><br><b>Modo de ejecución</b><br>Ejecute la electroacupuntura en una sola sesión siguiendo la ficha indicada, a una frecuencia de 15Hz y durante 25 minutos, en particular el San Jiao y el punto del Craving.<br><br><b>Recidiva y dificultad para dejar de fumar</b><br>En caso de recidiva o dificultad para mantener la abstinencia, es posible repetir la sesión una semana después.<br><br><b>Integración con el protocolo de reducción gradual</b><br>Este protocolo también es adecuado para las personas que han realizado la reducción gradual y tienen dificultades para dejar las últimas 2-3 cigarrillos."
+				}
+			],
+			d: "Para evaluar el grado de intensidad y el tipo de terapia antitabaco, realice las dos pruebas que se encuentran en los recursos adicionales:",
+			"t": true
 		},
 		103: {
 			tit: "TREATMENT",
@@ -8952,14 +8976,14 @@ DB.set = {
 			scheda: 19,
 			apparato: 1
 		},
-		/*{
-		NomePatologia: "Multiple sclerosis", // Sclerosi a placche
-		TestoPatologia: "Multiple sclerosis (MS), also known as disseminated sclerosis or poly sclerosis, is a chronic autoimmune demyelinating disease that affects the central nervous system, causing a wide range of signs and symptoms.<br>This condition affects nerve cells, making communication between the brain and spinal cord difficult.<br>Nerve cells transmit electrical signals, known as action potentials, through long fibers called axons, which are covered by an insulating substance called myelin sheath. In the disease, the patient's immune defenses attack and damage this sheath. When this happens, the axons are no longer able to effectively transmit signals.<br>The disease can manifest with a wide range of neurological symptoms and can progress to complete physical and cognitive disability. Multiple sclerosis can take various forms, including relapsing and progressive forms.<br>As of 2022, there is no known cure. Some pharmacological treatments are available to prevent new attacks and disabilities. The prognosis is difficult to predict and depends on many factors, while life expectancy is about 5 to 10 years lower than that of the healthy population.<br>The name multiple sclerosis derives from the scars (sclerosis), better known as plaques or lesions, that form in the white matter of the spinal cord and brain.",
+		/*ELIMINATA (non togliere){
+		NomePatologia: "---", // Sclerosi a placche
+		TestoPatologia: "---",
 		sessoPatologia: "",
 		chiaviPatologia: "",
 		scheda: 40,
 		apparato: 3
-		},*/
+		},ELIMINATA*/
 		{
 			NomePatologia: "Disseminated sclerosis",
 			TestoPatologia: "Multiple sclerosis (MS), also known as disseminated sclerosis or poly sclerosis, is a chronic autoimmune demyelinating disease that affects the central nervous system, causing a wide range of signs and symptoms.<br>This condition affects nerve cells, making communication between the brain and spinal cord difficult.<br>Nerve cells transmit electrical signals, known as action potentials, through long fibers called axons, which are covered by an insulating substance called myelin sheath. In the disease, the patient's immune defenses attack and damage this sheath. When this happens, the axons are no longer able to effectively transmit signals.<br>The disease can manifest with a wide range of neurological symptoms and can progress to complete physical and cognitive disability. Multiple sclerosis can take various forms, including relapsing and progressive forms.<br>As of 2022, there is no known cure. Some pharmacological treatments are available to prevent new attacks and disabilities. The prognosis is difficult to predict and depends on many factors, while life expectancy is about 5 to 10 years lower than that of the healthy population.<br>The name multiple sclerosis derives from the scars (sclerosis), better known as plaques or lesions, that form in the white matter of the spinal cord and brain.",

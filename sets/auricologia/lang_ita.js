@@ -1007,7 +1007,7 @@ DB.set= {
         },
         "093": {
             NomePunto: "Stomaco",
-            AzioniPunto: "<p><b>Azione<br></b>Il Punto Stomaco ha un'azione riequilibrante su tutti i disturbi digestivi sia su base fisica che psicosomatica. È indicato per il trattamento di inappetenza, stress, ansia e stress.</p><p><b>Ubicazione</b><br>CR1, sulla conca rigida, poco dietro al [.000.].</p>",
+            AzioniPunto: "<p><b>Azione<br></b>Il Punto Stomaco ha un'azione riequilibrante su tutti i disturbi digestivi sia su base fisica che psicosomatica. È indicato per il trattamento di inappetenza, ansia e stress.</p><p><b>Ubicazione</b><br>CR1, sulla conca rigida, poco dietro al [.000.].</p>",
             ChiaviPunto: ""
         },
         "095": {

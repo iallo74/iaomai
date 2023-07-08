@@ -22,13 +22,13 @@ DB.TXT = {
                 "Saturday"
             ],
             esp: [
-                "Domenica",
-                "Lunedì",
-                "Martedì",
-                "Mercoledì",
-                "Giovedì",
-                "Venerdì",
-                "Sabato"
+                "Domingo",
+                "Lunes",
+                "Martes",
+                "Miércoles",
+                "Jueves",
+                "Viernes",
+                "Sábado"
             ],
             fra: [
                 "Dimanche",
@@ -88,18 +88,18 @@ DB.TXT = {
                 "December"
             ],
             esp: [
-                "Gennaio",
-                "Febbraio",
+                "Enero",
+                "Febrero",
                 "Marzo",
-                "Aprile",
-                "Maggio",
-                "Giugno",
-                "Luglio",
+                "Abril",
+                "Mayo",
+                "Junio",
+                "Julio",
                 "Agosto",
-                "Settembre",
-                "Ottobre",
-                "Novembre",
-                "Dicembre"
+                "Septiembre",
+                "Octubre",
+                "Noviembre",
+                "Diciembre"
             ],
             fra: [
                 "Janvier",
@@ -434,6 +434,38 @@ DB.TXT = {
             por: "Mostrar tutorial de inicialização",
             deu: "Start-Tutorial anzeigen"
         },
+        SistemaMisureMetrico: {
+            ita: "Metrico decimale",
+            eng: "Metric decimal",
+            esp: "Métrico decimal",
+            fra: "Métrique décimal",
+            por: "Métrico decimal",
+            deu: "Metrisch dezimal"
+        },
+        SistemaMisureImperiale: {
+            ita: "Imperiale",
+            eng: "Imperial",
+            esp: "Imperial",
+            fra: "Impérial",
+            por: "Imperial",
+            deu: "Imperial"
+        },
+        Valuta: {
+            ita: "Valuta",
+            eng: "Currency",
+            esp: "Moneda",
+            fra: "Devise",
+            por: "Moeda",
+            deu: "Währung"
+        },
+        SistemaMisure: {
+            ita: "Sistema di misura",
+            eng: "Measurement system",
+            esp: "Sistema de medida",
+            fra: "Système de mesure",
+            por: "Sistema de medição",
+            deu: "Messsystem"
+        },
 
         //popup NUOVA VERSIONE
         NuoveCaratteristiche: {
@@ -447,12 +479,12 @@ DB.TXT = {
 
         //popup VERSIONE
         Versione: {
-            ita: "Info su [§]",
-            eng: "About [§]",
-            esp: "Información sobre [§]",
-            fra: "Informations à propos de [§]",
-            por: "Informações sobre [§]",
-            deu: "Informationen über [§]"
+            ita: "Info su iáomai",
+            eng: "About iáomai",
+            esp: "Información sobre iáomai",
+            fra: "Informations à propos de iáomai",
+            por: "Informações sobre iáomai",
+            deu: "Informationen über iáomai"
         },
         VersioneNumero: {
             ita: "Versione",
@@ -501,6 +533,14 @@ DB.TXT = {
             fra: "Version anglaise",
             por: "Versão em inglês",
             deu: "Englische Version"
+        },
+        VersioneSpagnola: {
+            ita: "Versione spagnola",
+            eng: "Spanish version",
+            esp: "Versión en español",
+            fra: "Version espagnole",
+            por: "Versão em espanhol",
+            deu: "Spanische Version"
         },
         Consulenti: {
             ita: "Consulenti",
@@ -2196,20 +2236,20 @@ DB.TXT = {
             deu: "Geburtsort"
         },
         Altezza: {
-            ita: "Altezza (cm)",
-            eng: "Height (cm)",
-            esp: "Altura (cm)",
-            fra: "Taille (cm)",
-            por: "Altura (cm)",
-            deu: "Größe (cm)"
+            ita: "Altezza ([cm])",
+            eng: "Height ([cm])",
+            esp: "Altura ([cm])",
+            fra: "Taille ([cm])",
+            por: "Altura ([cm])",
+            deu: "Größe ([cm])"
         },
         Peso: {
-            ita: "Peso (kg)",
-            eng: "Weight (kg)",
-            esp: "Peso (kg)",
-            fra: "Poids (kg)",
-            por: "Peso (kg)",
-            deu: "Gewicht (kg)"
+            ita: "Peso ([kg])",
+            eng: "Weight ([kg])",
+            esp: "Peso ([kg])",
+            fra: "Poids ([kg])",
+            por: "Peso ([kg])",
+            deu: "Gewicht ([kg])"
         },
         Tags: {
             ita: "Tags",
@@ -4231,12 +4271,12 @@ DB.TXT = {
 
         // Messaggi benvenuto
         MessaggioBenvenuto: {
-            ita: "[§] è la nuova piattaforma che ti consente di studiare, lavorare e condividere le tue conoscenze nel settore della salute e del benessere.",
-            eng: "[§] is the new platform that allows you to study, work and share your knowledge in the wellness and health sectors.",
-            esp: "[§] es la nueva plataforma que te permite estudiar, trabajar y compartir tus conocimientos en los sectores de bienestar y salud.",
-            fra: "[§] est la nouvelle plateforme qui vous permet d'étudier, de travailler et de partager vos connaissances dans les secteurs du bien-être et de la santé.",
-            por: "[§] é a nova plataforma que permite estudar, trabalhar e compartilhar conhecimentos nos setores de bem-estar e saúde.",
-            deu: "[§] ist die neue Plattform, die es Ihnen ermöglicht, in den Bereichen Wellness und Gesundheit zu studieren, zu arbeiten und Ihr Wissen zu teilen."
+            ita: "iáomai è la nuova piattaforma che ti consente di studiare, lavorare e condividere le tue conoscenze nel settore della salute e del benessere.",
+            eng: "iáomai is the new platform that allows you to study, work and share your knowledge in the wellness and health sectors.",
+            esp: "iáomai es la nueva plataforma que te permite estudiar, trabajar y compartir tus conocimientos en los sectores de bienestar y salud.",
+            fra: "iáomai est la nouvelle plateforme qui vous permet d'étudier, de travailler et de partager vos connaissances dans les secteurs du bien-être et de la santé.",
+            por: "iáomai é a nova plataforma que permite estudar, trabalhar e compartilhar conhecimentos nos setores de bem-estar e saúde.",
+            deu: "iáomai ist die neue Plattform, die es Ihnen ermöglicht, in den Bereichen Wellness und Gesundheit zu studieren, zu arbeiten und Ihr Wissen zu teilen."
         },
         NonVisualizzarePiu: {
             ita: "Non mostrare più",
@@ -4413,12 +4453,12 @@ DB.TXT = {
 
         // UTENTE
         TestoRegistrazioneEspanso: {
-            ita: "Con la registrazione a [§] avrai {10 giorni di prova gratuita di tutte le app} e allo scadere potrai usufruire di tutte le funzionalità di base dell'app:\n\n[#] Fino a 15 pazienti\n[#] Backup dei dati\n[#] Accesso multipiattaforma\n[#] Funzionalità della community\n[#] 10% di sconto su un prodotto [IAOMAI]",
-            eng: "With the registration to [§] you will have {10 days free trial of all apps} and upon expiry you will be able to use all the basic functions of the app:\n\n[#] Up to 15 patients\n[#] Data backup\n[#] Cross-platform access\n[#] Community functionality\n[#] 10% discount on [IAOMAI] product",
-            esp: "Al registrarte en [§], obtendrás {10 días de prueba gratuita de todas las aplicaciones} y al vencimiento podrás utilizar todas las funciones básicas de la aplicación:\n\n[#] Hasta 15 pacientes\n[#] Respaldo de datos\n[#] Acceso multiplataforma\n[#] Funciones de la comunidad\n[#] 10% de descuento en un producto [IAOMAI]",
-            fra: "Avec l'inscription à [§], vous bénéficierez de {10 jours d'essai gratuit pour toutes les applications} et à l'expiration, vous pourrez utiliser toutes les fonctions de base de l'application:\n\n[#] Jusqu'à 15 patients\n[#] Sauvegarde des données\n[#] Accès multiplateforme\n[#] Fonctionnalité de communauté\n[#] 10% de réduction sur un produit [IAOMAI]",
-            por: "Ao se registrar em [§], você terá {10 dias de teste gratuito de todos os aplicativos} e, ao expirar, poderá usar todas as funções básicas do aplicativo:\n\n[#] Até 15 pacientes\n[#] Backup de dados\n[#] Acesso multiplataforma\n[#] Funcionalidade da comunidade\n[#] Desconto de 10% em um produto [IAOMAI]",
-            deu: "Mit der Registrierung bei [§] erhalten Sie {10 Tage kostenlose Testversion aller Apps} und nach Ablauf können Sie alle grundlegenden Funktionen der App nutzen:\n\n[#] Bis zu 15 Patienten\n[#] Datensicherung\n[#] Cross-Plattform-Zugriff\n[#] Community-Funktionalität\n[#] 10% Rabatt auf ein [IAOMAI] Produkt"
+            ita: "Con la registrazione a iáomai avrai {10 giorni di prova gratuita di tutte le app} e allo scadere potrai usufruire di tutte le funzionalità di base dell'app:\n\n[#] Fino a 15 pazienti\n[#] Backup dei dati\n[#] Accesso multipiattaforma\n[#] Funzionalità della community\n[#] 10% di sconto su un prodotto [IAOMAI]",
+            eng: "With the registration to iáomai you will have {10 days free trial of all apps} and upon expiry you will be able to use all the basic functions of the app:\n\n[#] Up to 15 patients\n[#] Data backup\n[#] Cross-platform access\n[#] Community functionality\n[#] 10% discount on [IAOMAI] product",
+            esp: "Al registrarte en iáomai, obtendrás {10 días de prueba gratuita de todas las aplicaciones} y al vencimiento podrás utilizar todas las funciones básicas de la aplicación:\n\n[#] Hasta 15 pacientes\n[#] Respaldo de datos\n[#] Acceso multiplataforma\n[#] Funciones de la comunidad\n[#] 10% de descuento en un producto [IAOMAI]",
+            fra: "Avec l'inscription à iáomai, vous bénéficierez de {10 jours d'essai gratuit pour toutes les applications} et à l'expiration, vous pourrez utiliser toutes les fonctions de base de l'application:\n\n[#] Jusqu'à 15 patients\n[#] Sauvegarde des données\n[#] Accès multiplateforme\n[#] Fonctionnalité de communauté\n[#] 10% de réduction sur un produit [IAOMAI]",
+            por: "Ao se registrar em iáomai, você terá {10 dias de teste gratuito de todos os aplicativos} e, ao expirar, poderá usar todas as funções básicas do aplicativo:\n\n[#] Até 15 pacientes\n[#] Backup de dados\n[#] Acesso multiplataforma\n[#] Funcionalidade da comunidade\n[#] Desconto de 10% em um produto [IAOMAI]",
+            deu: "Mit der Registrierung bei iáomai erhalten Sie {10 Tage kostenlose Testversion aller Apps} und nach Ablauf können Sie alle grundlegenden Funktionen der App nutzen:\n\n[#] Bis zu 15 Patienten\n[#] Datensicherung\n[#] Cross-Plattform-Zugriff\n[#] Community-Funktionalität\n[#] 10% Rabatt auf ein [IAOMAI] Produkt"
         },
         ErroreGenerico: {
             ita: "Si è verificato un errore",
@@ -4445,20 +4485,20 @@ DB.TXT = {
             deu: "Der Benutzername wird bereits verwendet"
         },
         ConfermareRegistrazione: {
-            ita: "Registrazione avvenuta correttamente. Accedi alla tua posta elettronica per cerificare il tuo account e iniziare ad utilizzare [§].",
-            eng: "Registration successful. Log in to your email to certify your account and start using [§].",
-            esp: "Registro exitoso. Inicia sesión en tu correo electrónico para certificar tu cuenta y comenzar a usar [§].",
-            fra: "Inscription réussie. Connectez-vous à votre e-mail pour certifier votre compte et commencer à utiliser [§].",
-            por: "Registro concluído com sucesso. Faça login no seu e-mail para certificar sua conta e começar a usar [§].",
-            deu: "Registrierung erfolgreich. Melden Sie sich bei Ihrer E-Mail an, um Ihr Konto zu bestätigen und mit der Nutzung von [§] zu beginnen."
+            ita: "Registrazione avvenuta correttamente. Accedi alla tua posta elettronica per cerificare il tuo account e iniziare ad utilizzare iáomai.",
+            eng: "Registration successful. Log in to your email to certify your account and start using iáomai.",
+            esp: "Registro exitoso. Inicia sesión en tu correo electrónico para certificar tu cuenta y comenzar a usar iáomai.",
+            fra: "Inscription réussie. Connectez-vous à votre e-mail pour certifier votre compte et commencer à utiliser iáomai.",
+            por: "Registro concluído com sucesso. Faça login no seu e-mail para certificar sua conta e começar a usar iáomai.",
+            deu: "Registrierung erfolgreich. Melden Sie sich bei Ihrer E-Mail an, um Ihr Konto zu bestätigen und mit der Nutzung von iáomai zu beginnen."
         },
         ConfermaRegistrazione: {
-            ita: "Registrazione avvenuta correttamente. Inizia da subito ad utilizzare [§]!",
-            eng: "Registration successful. Start using [§] immediately!",
-            esp: "Registro exitoso. ¡Comienza a usar [§] de inmediato!",
-            fra: "Inscription réussie. Commencez à utiliser [§] immédiatement !",
-            por: "Registro concluído com sucesso. Comece a usar [§] imediatamente!",
-            deu: "Registrierung erfolgreich. Beginnen Sie sofort mit der Nutzung von [§]!"
+            ita: "Registrazione avvenuta correttamente. Inizia da subito ad utilizzare iáomai!",
+            eng: "Registration successful. Start using iáomai immediately!",
+            esp: "Registro exitoso. ¡Comienza a usar iáomai de inmediato!",
+            fra: "Inscription réussie. Commencez à utiliser iáomai immédiatement !",
+            por: "Registro concluído com sucesso. Comece a usar iáomai imediatamente!",
+            deu: "Registrierung erfolgreich. Beginnen Sie sofort mit der Nutzung von iáomai!"
         },
 
         // CONTROLLI VERSIONI
@@ -4885,12 +4925,12 @@ DB.TXT = {
             deu: "So aktivieren Sie ein zusätzliches Set"
         },
         SpiegazioneSetsTxt: {
-            ita: "Le mappe tematiche di [§] ti consentono di arricchire la piattaforma per un uso professionale, a seconda delle tue necessità e delle discipline di tuo interesse. Tutte le mappe sono sottoscrivibili in licenza multipiattaforma, ovvero, potrai usarle senza limitazioni di tempo e di dispositivo (PC, tablet e smartphone), semplicemente scaricando l'app oppure utilizzandole nella versione online. Per attivare una mappa tematica è necessario acquistare una licenza accedendo al sito web di [§] oppure compilando il form qui sotto.",
-            eng: "The thematic maps of [§] allow you to enrich the platform for professional use, according to your needs and the disciplines of your interest. All the maps can be subscribed in a multi-platform license, that is, you can use them without time and device limitations (PC, tablet, and smartphone), simply by downloading the app or using them in the online version. To activate a thematic map, you need to purchase a license on [§] website or by completing the form below.",
-            esp: "Los mapas temáticos de [§] te permiten enriquecer la plataforma para uso profesional, según tus necesidades y las disciplinas de tu interés. Todos los mapas se pueden suscribir en una licencia multiplataforma, es decir, puedes usarlos sin limitaciones de tiempo y dispositivo (PC, tablet y smartphone), simplemente descargando la aplicación o utilizándolos en la versión en línea. Para activar un mapa temático, necesitas adquirir una licencia en el sitio web de [§] o completando el formulario a continuación.",
-            fra: "Les cartes thématiques de [§] vous permettent d'enrichir la plateforme pour une utilisation professionnelle, selon vos besoins et les disciplines qui vous intéressent. Toutes les cartes peuvent être souscrites dans une licence multiplateforme, c'est-à-dire que vous pouvez les utiliser sans limitations de temps et d'appareil (PC, tablette et smartphone), simplement en téléchargeant l'application ou en les utilisant dans la version en ligne. Pour activer une carte thématique, vous devez acheter une licence sur le site web de [§] ou en remplissant le formulaire ci-dessous.",
-            por: "Os mapas temáticos de [§] permitem enriquecer a plataforma para uso profissional, de acordo com suas necessidades e disciplinas de seu interesse. Todos os mapas podem ser adquiridos por meio de uma licença multiplataforma, ou seja, você pode usá-los sem restrições de tempo e dispositivo (PC, tablet e smartphone), simplesmente baixando o aplicativo ou usando-os na versão online. Para ativar um mapa temático adicional, é necessário adquirir uma licença no site da [§] ou preenchendo o formulário abaixo.",
-            deu: "Die thematischen Karten von [§] ermöglichen es Ihnen, die Plattform entsprechend Ihrer Bedürfnisse und Interessen zu bereichern. Alle Karten können in einer Multiplattform-Lizenz abonniert werden, das heißt, Sie können sie ohne zeitliche und gerätespezifische Einschränkungen (PC, Tablet und Smartphone) verwenden, indem Sie die App herunterladen oder in der Online-Version verwenden. Um eine thematische Karte zu aktivieren, müssen Sie eine Lizenz auf der Website von [§] erwerben oder das unten stehende Formular ausfüllen."
+            ita: "Le mappe tematiche di iáomai ti consentono di arricchire la piattaforma per un uso professionale, a seconda delle tue necessità e delle discipline di tuo interesse. Tutte le mappe sono sottoscrivibili in licenza multipiattaforma, ovvero, potrai usarle senza limitazioni di tempo e di dispositivo (PC, tablet e smartphone), semplicemente scaricando l'app oppure utilizzandole nella versione online. Per attivare una mappa tematica è necessario acquistare una licenza accedendo al sito web di iáomai oppure compilando il form qui sotto.",
+            eng: "The thematic maps of iáomai allow you to enrich the platform for professional use, according to your needs and the disciplines of your interest. All the maps can be subscribed in a multi-platform license, that is, you can use them without time and device limitations (PC, tablet, and smartphone), simply by downloading the app or using them in the online version. To activate a thematic map, you need to purchase a license on iáomai website or by completing the form below.",
+            esp: "Los mapas temáticos de iáomai te permiten enriquecer la plataforma para uso profesional, según tus necesidades y las disciplinas de tu interés. Todos los mapas se pueden suscribir en una licencia multiplataforma, es decir, puedes usarlos sin limitaciones de tiempo y dispositivo (PC, tablet y smartphone), simplemente descargando la aplicación o utilizándolos en la versión en línea. Para activar un mapa temático, necesitas adquirir una licencia en el sitio web de iáomai o completando el formulario a continuación.",
+            fra: "Les cartes thématiques de iáomai vous permettent d'enrichir la plateforme pour une utilisation professionnelle, selon vos besoins et les disciplines qui vous intéressent. Toutes les cartes peuvent être souscrites dans une licence multiplateforme, c'est-à-dire que vous pouvez les utiliser sans limitations de temps et d'appareil (PC, tablette et smartphone), simplement en téléchargeant l'application ou en les utilisant dans la version en ligne. Pour activer une carte thématique, vous devez acheter une licence sur le site web de iáomai ou en remplissant le formulaire ci-dessous.",
+            por: "Os mapas temáticos de iáomai permitem enriquecer a plataforma para uso profissional, de acordo com suas necessidades e disciplinas de seu interesse. Todos os mapas podem ser adquiridos por meio de uma licença multiplataforma, ou seja, você pode usá-los sem restrições de tempo e dispositivo (PC, tablet e smartphone), simplesmente baixando o aplicativo ou usando-os na versão online. Para ativar um mapa temático adicional, é necessário adquirir uma licença no site da iáomai ou preenchendo o formulário abaixo.",
+            deu: "Die thematischen Karten von iáomai ermöglichen es Ihnen, die Plattform entsprechend Ihrer Bedürfnisse und Interessen zu bereichern. Alle Karten können in einer Multiplattform-Lizenz abonniert werden, das heißt, Sie können sie ohne zeitliche und gerätespezifische Einschränkungen (PC, Tablet und Smartphone) verwenden, indem Sie die App herunterladen oder in der Online-Version verwenden. Um eine thematische Karte zu aktivieren, müssen Sie eine Lizenz auf der Website von iáomai erwerben oder das unten stehende Formular ausfüllen."
         },
         DataPubblicazione: {
             ita: "Data di pubblicazione prevista",
@@ -5621,12 +5661,12 @@ DB.TXT = {
             deu: "BAUCHSPEICHELDRÜSE"
         },
         Organo_VESCICA: {
-            ita: "VESCICA",
-            eng: "BLADDER",
-            esp: "VEJIGA",
-            fra: "VESSIE",
-            por: "BEXIGA",
-            deu: "BLASE"
+            ita: "VESCICA URINARIA",
+            eng: "URINARY BLADDER",
+            esp: "VEJIGA URINARIA",
+			fra: "VESSIE URINAIRE",
+			por: "BEXIGA URINÁRIA",
+			deu: "HARNBLASE"
         },
         Organo_CISTIFELLEA: {
             ita: "CISTIFELLEA",
@@ -5638,7 +5678,7 @@ DB.TXT = {
         },
         Organo_SURRENALI: {
             ita: "GHIANDOLA SURRENALE",
-            eng: "ADRENAL",
+            eng: "ADRENAL GLANDS",
             esp: "GLÁNDULA SUPRARRENAL",
             fra: "GLANDE SURRÉNALIENNE",
             por: "SUPRARRENAL",

@@ -42,7 +42,7 @@ DB.TXT.set = {
     AggiungiPuntoProc: {
         ita: "Aggiungi alla procedura",
         eng: "Add to procedure",
-        esp: "Agregar a la procedimiento",
+        esp: "Agregar al procedimiento",
         fra: "Ajouter à la procédure",
         por: "Adicionar ao procedimento",
         deu: "Zur Prozedur hinzufügen"
@@ -98,7 +98,7 @@ DB.TXT.set = {
     MeridianiSmart: {
         ita: "Selettore rapido meridiani",
         eng: "Meridians smart view",
-        esp: "Vista inteligente de meridianos",
+        esp: "Selección rápida de meridianos",
         fra: "Vue intelligente des méridiens",
         por: "Visão inteligente dos meridianos",
         deu: "Smart-Ansicht der Meridiane"
@@ -186,7 +186,7 @@ DB.TXT.set = {
     Tue: {
         ita: "Tue",
         eng: "Your own",
-        esp: "Propio",
+        esp: "Tuyos",
         fra: "Personnalisé",
         por: "Próprio",
         deu: "Eigene"
@@ -258,7 +258,7 @@ DB.TXT.set = {
     CreaProcedura: {
         ita: "Nuova procedura",
         eng: "New procedure",
-        esp: "Nueva procedimiento",
+        esp: "Nuevo procedimiento",
         fra: "Nouvelle procédure",
         por: "Nova procedimento",
         deu: "Neue Prozedur"
@@ -314,7 +314,7 @@ DB.TXT.set = {
     Di: {
         ita: "Di",
         eng: "By",
-        esp: "Por",
+        esp: "De",
         fra: "Par",
         por: "De",
         deu: "Von"
@@ -434,7 +434,7 @@ DB.TXT.set = {
     ContrastoElevato: {
         ita: "Contrasto elevato",
         eng: "High contrast",
-        esp: "Alto contraste",
+        esp: "Contraste elevado",
         fra: "Contraste élevé",
         por: "Alto contraste",
         deu: "Hoher Kontrast"

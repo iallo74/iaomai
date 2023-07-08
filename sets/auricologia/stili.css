@@ -1,9 +1,9 @@
 @charset "utf-8";
 /* CSS Document */
 
-#impset{
-    height: 230px;
-    margin-top: -115px;
+.impSet{
+    height: 230px !important;
+    margin-top: -115px !important;
 }
 
 #pulsante_modello{

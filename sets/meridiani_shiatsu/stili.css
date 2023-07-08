@@ -1,9 +1,9 @@
 @charset "utf-8";
 /* CSS Document */
 
-#impset{
-    height: 510px;
-    margin-top: -255px;
+.impSet{
+    height: 510px !important;
+    margin-top: -255px !important;
 }
 
 #pulsante_modello{
@@ -666,7 +666,6 @@ body:not(.smart) .listaMeridiani .p_aria:not(.elencoSel) span:hover{
 	cursor:pointer;
 	border-radius:6px;
 	background-color: rgba(0,0,0,0.2);
-	z-index:11;
 }
 /*body.bodyStyled2:not(.smart) #meridianiSmart_ico{
 	background-image:url(../../img/ico_meridiani.png);
@@ -682,6 +681,7 @@ body:not(.smart) .listaMeridiani .p_aria:not(.elencoSel) span:hover{
     border-top-left-radius: 0px !important;
     border-top-right-radius: 0px !important;
     background-position: 19px 9px !important;
+	z-index:11;
 }
 #meridianiSmart_cont{
 	position: fixed;

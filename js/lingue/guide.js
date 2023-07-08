@@ -2,7 +2,7 @@ const guide = {
 	guida_anatomia: {
 		titolo: {
 			"ita": 'Modelli anatomici 3D',
-			"eng": 'Modèles anatomiques 3D',
+			"eng": '3D anatomical models',
 			"esp": 'Modelos anatómicos 3D',
 			"fra": 'Modèles anatomiques 3D',
 			"por": 'Modelos anatômicos 3D',
@@ -29,7 +29,7 @@ const guide = {
 		},
 		testo: {
 			"ita": 'Da questo menu puoi gestire pazienti, fornitori, servizi e appuntamenti.'+chr10+'Per ogni paziente hai la possibilità di aggiungere cartelle cliniche con trattamenti e report, aggiungere pagamenti, creare ricevute e visualizzare statistiche.'+chr10+'Seleziona un archivio per iniziare subito!',
-			"eng": 'From this menu you can manage patients, suppliers, services and appointments.'+chr10+'For each patient you have the possibility to add medical records with treatments and reports, add payments, create receipts and view statistics.'+chr10+'Select a file to get started right away!',
+			"eng": 'From this menu you can manage patients, suppliers, services and appointments.'+chr10+'For each patient you have the possibility to add medical files with treatments and reports, add payments, create receipts and view statistics.'+chr10+'Select a file to get started right away!',
 			"esp": 'Desde este menú puedes gestionar pacientes, proveedores, servicios y citas.'+chr10+'Para cada paciente, tienes la posibilidad de agregar registros médicos con tratamientos e informes, agregar pagos, crear recibos y ver estadísticas.'+chr10+'¡Selecciona un archivo para comenzar de inmediato!',
 			"fra": 'À partir de ce menu, vous pouvez gérer les patients, les fournisseurs, les services et les rendez-vous.'+chr10+'Pour chaque patient, vous avez la possibilité d\'ajouter des dossiers médicaux avec des traitements et des rapports, d\'ajouter des paiements, de créer des reçus et de consulter des statistiques.'+chr10+'Sélectionnez un fichier pour commencer immédiatement !',
 			"por": 'A partir deste menu, você pode gerenciar pacientes, fornecedores, serviços e consultas.'+chr10+'Para cada paciente, você tem a possibilidade de adicionar registros médicos com tratamentos e relatórios, adicionar pagamentos, criar recibos e visualizar estatísticas.'+chr10+'Selecione um arquivo para começar imediatamente!',

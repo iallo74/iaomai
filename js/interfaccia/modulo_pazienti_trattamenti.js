@@ -575,7 +575,7 @@ var PAZIENTI_TRATTAMENTI = {
 								name: "CostoTrattamento",	
 								value: (CostoTrattamento) ? ArrotondaEuro(CostoTrattamento) : '',
 								ver: '0|0|num',
-								label: TXT("Costo")+' €',
+								label: TXT("Costo")+' '+getValuta(),
 								keyupCampo: "H.keyPrezzo(this);",
 								classCampo: 'CostoTrattDx prezzi',
 								classRiga: "labelSx",
@@ -792,7 +792,7 @@ var PAZIENTI_TRATTAMENTI = {
 					'	<em class="labelMobile labelTrattamenti"' +
 					'		onClick="H.swSezione(this);PH.resizeDida();">' +
 					'		<img class="icoLabel"' +
-					'		     src="img/ico_files.png">' +
+					'		     src="img/ico_foto.png">' +
 							TXT("Gallery")+' (<span id="totFiles"></span>)' +
 					'	</em>' +
 					'	<div id="contGallery"' +
@@ -809,7 +809,7 @@ var PAZIENTI_TRATTAMENTI = {
 								TXT("AggiungiFile") +
 					'		</span>' +
 					'		<span class="p_paz_screenshot"' +
-					'		      onClick="PH.editScreenShot();"></span>' +
+					'		      onClick="PH.editImg(true);"></span>' +
 					'		<span id="screenShot">' +
 								TXT("ScreenShot") +
 					'		</span>' +
@@ -1191,7 +1191,7 @@ var PAZIENTI_TRATTAMENTI = {
 							"ordine": parseInt(document.formMod.ordine.value),
 							"Cancellato": 0,
 							"frv": (LOGIN._frv()!='') };
-							console.log(PAZIENTI.sintomiProvvisori)
+							
 				if(!DB.pazienti.data[PAZIENTI.idCL].trattamenti)DB.pazienti.data[PAZIENTI.idCL].trattamenti=[];
 				if(document.formMod.idTratt.value*1>-1){
 					DB.pazienti.data[PAZIENTI.idCL].trattamenti[document.formMod.idTratt.value*1]=JSNPUSH;

@@ -21,8 +21,24 @@ var DB = {
 		"d7f5fb",
 		"d7dafb"
 	],
-	sizeDb: 0,
-	nDb: 0,
+	TXT: {},
+	INT: {
+		valute: {},
+		paesi: {},
+		misure: {
+			"cm": {
+				"i": "cm",
+				"a": "inch"
+			},
+			"kg": {
+				"i": "kg",
+				"a": "lbs"
+			}
+			
+		}
+	},
+	__sizeDb: 0,
+	__nDb: 0,
 	dbs: [
 		"DB.pazienti",
 		"DB.fornitori",
@@ -37,7 +53,7 @@ var DB = {
 		"FILES" ],
 	
 	// i metodi
-	pulisciFRV: function( jsn ){
+	_pulisciFRV: function( jsn ){
 		for(let i in jsn){
 			if(jsn[i].frv)delete jsn[i].frv;
 			for(let  l in jsn[i]){
@@ -124,27 +140,27 @@ var DB = {
 		}
 		localStorage.dbInizializzato = '1';
 	},
-	verDbSize: function(){
-		DB.nDb = 0;
-		DB.sizeDb = 0;
+	_verDbSize: function(){
+		DB.__nDb = 0;
+		DB.__sizeDb = 0;
 		for(let d=0;d<DB.dbs.length;d++){
 			localPouchDB.getItem(MD5(DB.dbs[d])).then(function(dbCont){
-				if(typeof(dbCont) != 'undefined')DB.sizeDb += DB.getStringMemorySize(dbCont);
-				DB.nDb++;
-				if(DB.nDb == DB.dbs.length){
-					DB.resDbSize();
+				if(typeof(dbCont) != 'undefined')DB.__sizeDb += DB._getStringMemorySize(dbCont);
+				DB.__nDb++;
+				if(DB.__nDb == DB.dbs.length){
+					DB._resDbSize();
 				}
 			});
 		}
 	},
-	resDbSize: function(){
+	_resDbSize: function(){
 		// controllo l'occupazione dello spazio del DB al di sopra dei 45MB
-		console.log("Totale spazio DB: "+DB.sizeDb);
-		if(DB.sizeDb>45*1000*1000){
+		console.log("Totale spazio DB: "+DB.__sizeDb);
+		if(DB.__sizeDb>45*1000*1000){
 		   // invio un alert a noi
 		}
 	},
-	getStringMemorySize: function( _string ) {
+	_getStringMemorySize: function( _string ) {
         "use strict";
         var codePoint, accum = 0;
         for(var stringIndex=0, endOfString=_string.length; stringIndex<endOfString; stringIndex++) {
