@@ -2,47 +2,47 @@ DB.set = {
 	punti: {
 		"101": {
 			NomePunto: "Duodenum",
-			AzioniPunto: "<p><b>Action<br></b>Point indicated for its effectiveness in reducing digestive disorders, eating disorders, diarrhea, and duodenal ulcers.</p><p><b>Location</b><br>SC1-PC3, in the upper half-concha, just above the rigid concha. Just behind the [.000.]</p><p></p>",
+			AzioniPunto: "<p><b>Action<br></b>Point indicated for its effectiveness in reducing digestive disorders, eating disorders, diarrhea, and duodenal ulcers.</p><p><b>Location</b><br>SC1-PC3, in the superior concha, just above the rigid concha. Just behind the [.000.].</p>",
 			ChiaviPunto: ""
 		},
 		"104": {
 			NomePunto: "Omega 1",
-			AzioniPunto: "<p><b>Other names</b><br>- Hypogastric plexus<br>- Vegetative MASTER point</p><p><b>Action</b><br>This is the Master Point of the endothermic tissue, also known as the Mucus Point. It is very effective in treating all digestive disorders, visceral pain, and visceral stress.</p><p><b>Location</b><br>SC2, just above and posterior to the [.000.]</p>",
+			AzioniPunto: "<p><b>Other names</b><br>- Hypogastric plexus<br>- Vegetative MASTER point</p><p><b>Action</b><br>This is the Master Point of the endothermic tissue, also known as the Mucus Point. It is very effective in treating all digestive disorders, visceral pain, and visceral stress.</p><p><b>Location</b><br>SC2, just above and posterior to the [.000.].</p>",
 			ChiaviPunto: ""
 		},
 		"105": {
 			NomePunto: "Ureter EUR",
-			AzioniPunto: "<p><b>Action<br></b>The Ureter Point is effective in all pathologies related to the urinary tract, particularly the excretory pathways.</p><p><b>Location</b><br>IH4, on the inner part of the helix at the level of the root of the antihelix, just above</p>",
+			AzioniPunto: "<p><b>Action<br></b>The Ureter Point is effective in all pathologies related to the urinary tract, particularly the excretory pathways.</p><p><b>Location</b><br>IH4, on the inner part of the helix at the level of the root of the antihelix, just above.</p>",
 			ChiaviPunto: ""
 		},
 		"106": {
 			NomePunto: "Urinary bladder",
-			AzioniPunto: "<p><b>Other names</b><br>- Bladder</p><p><b>Action</b><br>The Urinary Bladder point is used to treat all individuals with urinary system pathologies, particularly in cases of urinary infections, retention, enuresis, and incontinence.</p><p><b>Location</b><br>SC5, at the border between the upper half-concha and the upper antihelix, between the anterior third and the posterior two-thirds of the lower root of the antihelix.</p>",
+			AzioniPunto: "<p><b>Other names</b><br>- Bladder</p><p><b>Action</b><br>The Urinary Bladder point is used to treat all individuals with urinary system pathologies, particularly in cases of urinary infections, retention, enuresis, and incontinence.</p><p><b>Location</b><br>SC5, at the border between the superior concha and the superior concha wall, between the anterior third and the posterior two-thirds of the lower root of the antihelix.</p>",
 			ChiaviPunto: ""
 		},
 		"108": {
 			NomePunto: "Prostate",
-			AzioniPunto: "<p><b>Action<br></b>According to the Chinese School, this point is used to treat urinary and prostate pathologies; it has excellent efficacy for disorders of the reproductive system.</p><p><b>Location</b><br>SC4, in the upper half-concha, where the lower root of the antihelix meets the helix</p>",
+			AzioniPunto: "<p><b>Action<br></b>According to the Chinese School, this point is used to treat urinary and prostate pathologies; it has excellent efficacy for disorders of the reproductive system.</p><p><b>Location</b><br>SC4, in the superior concha, where the lower root of the antihelix meets the helix.</p>",
 			ChiaviPunto: ""
 		},
 		"109": {
 			NomePunto: "Urethra EUR",
-			AzioniPunto: "<p><b>Action<br></b>The Urethra Point is effective in all pathologies related to the urinary tract.</p><p><b>Location</b><br>SC4, in the upper half-concha near the meeting point between the helix and the lower root of the antihelix.</p>",
+			AzioniPunto: "<p><b>Action<br></b>The Urethra Point is effective in all pathologies related to the urinary tract.</p><p><b>Location</b><br>SC4, in the superior concha near the meeting point between the helix and the lower root of the antihelix.</p>",
 			ChiaviPunto: ""
 		},
 		"110": {
 			NomePunto: "External ear EUR",
-			AzioniPunto: "<p><b>Action</b><br>Dizziness, ringing, and tinnitus.</p><p><b>Location</b><br>LO5, in the lower and peripheral part of the earlobe, anterior-inferior to the ATM point.</p>",
+			AzioniPunto: "<p><b>Action</b><br>Dizziness, ringing, and tinnitus.</p><p><b>Location</b><br>LO5, in the lower and peripheral part of the earlobe, anterior-inferior to the TMJ point.</p>",
 			ChiaviPunto: ""
 		},
 		"111": {
-			NomePunto: "Kidney CIN",
-			AzioniPunto: "<p><b>Action<br></b>The Kidney point, used by the Chinese School, for its balancing action on both the physical and emotional aspects. It is very useful in reducing pain and disorders related to the kidneys, especially the urinary system. It is also indicated for the treatment of stress, asthenia, depression, and tinnitus.</p><p><b>Location</b><br>SC6-CW8, at the border between the upper half-concha and the antihelix, just anteriorly from where the lower root of the antihelix begins.</p>",
+			NomePunto: "Kidney CHN",
+			AzioniPunto: "<p><b>Action<br></b>The Kidney point is used by the Chinese School for its balancing action on both the physical and emotional aspects. It is very useful in reducing pain and disorders related to the kidneys, especially the urinary system. It is also indicated for the treatment of stress, asthenia, depression, and tinnitus.</p><p><b>Location</b><br>SC6-CW8, at the border between the superior concha and the concha wall, just anteriorly from where the lower root of the antihelix begins.</p>",
 			ChiaviPunto: ""
 		},
 		"112": {
 			NomePunto: "Rhinencephalic Commissure",
-			AzioniPunto: "<p><b>Action<br></b>In combination with [.113.] and [.254.], it promotes intrahemispheric brain connections.</p><p><b>Location</b><br>At the border between the cheek and the tragus, near point [.195.]</p>",
+			AzioniPunto: "<p><b>Action<br></b>In combination with [.113.] and [.254.], it promotes intrahemispheric brain connections.</p><p><b>Location</b><br>At the border between the cheek and the tragus, near point [.195.].</p>",
 			ChiaviPunto: "",
 			"hidden": true
 		},
@@ -54,142 +54,142 @@ DB.set = {
 		},
 		"114": {
 			NomePunto: "Gallbladder",
-			AzioniPunto: "<p><b>Other names</b><br>- Biliary vesicle</p><p><b>Action</b><br>This point is very effective in treating all disorders related to the proper functioning of the gastrointestinal system. It is also used in cases of migraines and tinnitus.</p><p><b>Location</b><br>SC8-PC3, in the upper half-concha, just above the rigid concha.<br>Note: Only in the right ear</p>",
+			AzioniPunto: "<p><b>Other names</b><br>- Biliary vesicle</p><p><b>Action</b><br>This point is very effective in treating all disorders related to the proper functioning of the gastrointestinal system. It is also used in cases of migraines and tinnitus.</p><p><b>Location</b><br>SC8-PC3, in the superior concha, just above the rigid concha.<br>Please note: only in the right ear.</p>",
 			ChiaviPunto: ""
 		},
 		"115": {
 			NomePunto: "Spleen EUR",
-			AzioniPunto: "<p><b>Action<br></b>According to the French School, this point is used to treat all pathologies related to the immune and lymphatic systems. It is also beneficial for digestive disorders.</p><p><b>Location</b><br>SC8, at the border between the upper half-concha and the rigid concha, near the antihelix.<br>Note: Only in the left ear</p>",
+			AzioniPunto: "<p><b>Action<br></b>According to the French School, this point is used to treat all pathologies related to the immune and lymphatic systems. It is also beneficial for digestive disorders.</p><p><b>Location</b><br>SC8, at the border between the superior concha and the rigid concha, near the concha wall.<br>Please note: only in the left ear.</p>",
 			ChiaviPunto: ""
 		},
 		"116": {
 			NomePunto: "Pancreas",
-			AzioniPunto: "<p><b>Action<br></b>The Pancreas Point has a balancing action on digestive functions, particularly in treating disorders related to the pancreas.</p><p><b>Location</b><br>CR2-SC8, at the border between the rigid concha and the upper half-concha, near the helix.<br>Note: Only in the left ear</p>",
+			AzioniPunto: "<p><b>Action<br></b>The Pancreas Point has a balancing action on digestive functions, particularly in treating disorders related to the pancreas.</p><p><b>Location</b><br>CR2-SC8, at the border between the rigid concha and the superior concha, near the helix.<br>Please note: only in the left ear.</p>",
 			ChiaviPunto: ""
 		},
 		"117": {
 			NomePunto: "Thymus Gland",
-			AzioniPunto: "<p><b>Other names</b><br>- Thymus</p><p><b>Action</b><br>Tonifies the immune defenses, has anti-inflammatory and anti-rheumatic actions.</p><p><b>Location</b><br>CW6-SC8, just above the rigid concha between the antihelix and the upper half-concha.</p>",
+			AzioniPunto: "<p><b>Other names</b><br>- Thymus</p><p><b>Action</b><br>Tonifies the immune defenses, has anti-inflammatory and anti-rheumatic actions.</p><p><b>Location</b><br>CW6-SC8, just above the rigid concha between the concha wall and the superior concha.</p>",
 			ChiaviPunto: ""
 		},
 		"118": {
 			NomePunto: "Adrenal Gland EUR",
-			AzioniPunto: "<p><b>Other names</b><br>- Cortisol<br>- Adrenal</p><p><b>Action</b><br>As suggested by the name, this point is indicated for treating all disorders related to the adrenal glands.</p><p><b>Location</b><br>CW7-SC7, in the transitional area between the antihelix and the upper half-concha, on the vertical line of point [.001.]</p>",
+			AzioniPunto: "<p><b>Other names</b><br>- Cortisol<br>- Adrenal</p><p><b>Action</b><br>As suggested by the name, this point is indicated for treating all disorders related to the adrenal glands.</p><p><b>Location</b><br>CW7-SC7, in the transitional area between the concha wall and the superior concha, on the vertical line of point [.001.].</p>",
 			ChiaviPunto: ""
 		},
 		"119": {
 			NomePunto: "Mammary Gland EUR",
-			AzioniPunto: "<p><b>Other names</b><br>- Mammary</p><p><b>Action</b><br>Pathologies of the mammary gland, mastodynia.</p><p><b>Location</b><br>CW6, at the border between the antihelix and the upper half-concha, at the level of the representation of the IV-VI thoracic vertebrae.</p>",
+			AzioniPunto: "<p><b>Other names</b><br>- Mammary</p><p><b>Action</b><br>Pathologies of the mammary gland, mastodynia.</p><p><b>Location</b><br>CW6, at the border between the concha wall and the superior concha, at the level of the representation of the IV-VI thoracic vertebrae.</p>",
 			ChiaviPunto: ""
 		},
 		"120": {
 			NomePunto: "Inferior Cervical Ganglion",
-			AzioniPunto: "<p><b>Other names</b><br>- Stellate ganglion</p><p><b>Action</b><br>The French School indicates this point for its effectiveness in reducing peripheral neurological disorders and all neuropathic pain related to the upper limb and trunk.</p><p><b>Location</b><br>CW5, in the antihelix, just above the meeting point with the rigid concha</p>",
+			AzioniPunto: "<p><b>Other names</b><br>- Stellate ganglion</p><p><b>Action</b><br>The French School indicates this point for its effectiveness in reducing peripheral neurological disorders and all neuropathic pain related to the upper limb and trunk.</p><p><b>Location</b><br>CW5, in the concha wall, just above the meeting point with the rigid concha.</p>",
 			ChiaviPunto: ""
 		},
 		"121": {
 			NomePunto: "Liver",
-			AzioniPunto: "<p><b>Action<br></b>The Liver point is indicated for anemic disorders, anxiety, stress, and hypertension. It is recommended for treating liver disorders and the digestive system.</p><p><b>Location</b><br>CR2-SC8, at the border between the upper half-concha and the rigid concha.<br>Note: Only in the right ear</p>",
+			AzioniPunto: "<p><b>Action<br></b>The Liver point is indicated for anemic disorders, anxiety, stress, and hypertension. It is recommended for treating liver disorders and the digestive system.</p><p><b>Location</b><br>CR2-SC8, at the border between the superior concha and the rigid concha.<br>Please note: only in the right ear.</p>",
 			ChiaviPunto: ""
 		},
 		"122": {
-			NomePunto: "Spleen CIN",
-			AzioniPunto: "<p><b>Action<br></b>According to the Chinese School, this point is used to treat all pathologies related to the immune and lymphatic systems. It is also beneficial for treating muscular and tendon disorders.</p><p><b>Location</b><br>IC8-PC2, at the border between the lower half-concha and the rigid concha, near the antihelix.<br>Note: Only in the left ear</p>",
+			NomePunto: "Spleen CHN",
+			AzioniPunto: "<p><b>Action<br></b>According to the Chinese School, this point is used to treat all pathologies related to the immune and lymphatic systems. It is also beneficial for treating muscular and tendon disorders.</p><p><b>Location</b><br>IC8-PC2, at the border between the inferior concha and the rigid concha, near the concha wall.<br>Please note: only in the left ear.</p>",
 			ChiaviPunto: ""
 		},
 		"123": {
 			NomePunto: "Diaphragm EUR",
-			AzioniPunto: "<p><b>Action<br></b>This point is indicated by the French School for its effectiveness in reducing vomiting, diaphragmatic pain and spasms, and hiccups.</p><p><b>Location</b><br>IC8-CR2, at the border between the rigid concha and the lower half-concha</p>",
+			AzioniPunto: "<p><b>Action<br></b>This point is indicated by the French School for its effectiveness in reducing vomiting, diaphragmatic pain and spasms, and hiccups.</p><p><b>Location</b><br>IC8-CR2, at the border between the rigid concha and the inferior concha.</p>",
 			ChiaviPunto: ""
 		},
 		"124": {
 			NomePunto: "Muscle Relaxation",
-			AzioniPunto: "<p><b>Other names</b><br>- Muscle relaxation</p><p><b>Action</b><br>The Muscle Relaxation Point is a powerful point capable of rebalancing muscle stress, especially tensions. The Chinese School suggests exploiting its myorelaxant capacity by treating the point on the dominant side; the non-dominant side instead has anxiolytic properties.</p><p><b>Location</b><br>IC7-IC8, in the lower half-concha, just below the rigid concha.</p>",
+			AzioniPunto: "<p><b>Action</b><br>The Muscle Relaxation Point is a powerful point capable of rebalancing muscle stress, especially tensions. The Chinese School suggests exploiting its myorelaxant capacity by treating the point on the dominant side; the non-dominant side instead has anxiolytic properties.</p><p><b>Location</b><br>IC7-IC8, in the inferior concha, just below the rigid concha.</p>",
 			ChiaviPunto: ""
 		},
 		"126": {
 			NomePunto: "Bronchi",
-			AzioniPunto: "<p><b>Action<br></b>The Bronchi point is very useful in treating disorders such as asthma and bronchitis. According to the Chinese School, it is also effective in cases of COPD (chronic obstructive pulmonary disease), a progressive and irreversible disease of the respiratory system affecting the bronchi and lungs, mainly caused by smoking.</p><p><b>Location</b><br>IC7, in the upper half-concha, just above the deepest point corresponding to the heart.</p>",
+			AzioniPunto: "<p><b>Action<br></b>The Bronchi point is very useful in treating disorders such as asthma and bronchitis. According to the Chinese School, it is also effective in cases of COPD (chronic obstructive pulmonary disease), a progressive and irreversible disease of the respiratory system affecting the bronchi and lungs, mainly caused by smoking.</p><p><b>Location</b><br>IC7, in the superior concha, just above the deepest point corresponding to the heart.</p>",
 			ChiaviPunto: ""
 		},
 		"127": {
 			NomePunto: "Cardia",
-			AzioniPunto: "<p><b>Other names</b><br>- Cardiac orifice<br>- Esophageal sphincter</p><p><b>Action</b><br>This point is indicated for the treatment of all disorders with an esophageal component, particularly gastroesophageal reflux, nausea, vomiting, esophagitis, hiatal hernia, and dyspepsia.</p><p><b>Location</b><br>IC7, in the lower half-concha, near the rigid concha, just below and posterior to point [.000.].</p>",
+			AzioniPunto: "<p><b>Other names</b><br>- Cardiac orifice<br>- Esophageal sphincter</p><p><b>Action</b><br>This point is indicated for the treatment of all disorders with an esophageal component, particularly gastroesophageal reflux, nausea, vomiting, esophagitis, hiatal hernia, and dyspepsia.</p><p><b>Location</b><br>IC7, in the inferior concha, near the rigid concha, just below and posterior to point [.000.].</p>",
 			ChiaviPunto: ""
 		},
 		"128": {
 			NomePunto: "Esophagus",
-			AzioniPunto: "<p><b>Action<br></b>The Esophagus point is internationally used to treat all esophageal disorders. It is mainly indicated for rebalancing disorders of the esophagus, stomach, duodenum, and colon.</p><p><b>Location</b><br>IC6-IC7, in the lower half-concha just below [.000.]</p>",
+			AzioniPunto: "<p><b>Action<br></b>The Esophagus point is internationally used to treat all esophageal disorders. It is mainly indicated for rebalancing disorders of the esophagus, stomach, duodenum, and colon.</p><p><b>Location</b><br>IC6-IC7, in the inferior concha just below [.000.].</p>",
 			ChiaviPunto: ""
 		},
 		"129": {
 			NomePunto: "Mouth",
-			AzioniPunto: "<p><b>Other names</b><br>- Pharynx<br>- Soft palate</p><p><b>Action</b><br>The Mouth point is used for its benefits on the oral cavity, particularly for all pathologies related to the tongue and mucous membranes. It is also very effective in treating anxiety and panic attacks.</p><p><b>Location</b><br>IC6, in the lower half-concha, near the external auditory meatus, just below the ascending branch of the helix<span></span></p>",
+			AzioniPunto: "<p><b>Other names</b><br>- Pharynx<br>- Soft palate</p><p><b>Action</b><br>The Mouth point is used for its benefits on the oral cavity, particularly for all pathologies related to the tongue and mucous membranes. It is also very effective in treating anxiety and panic attacks.</p><p><b>Location</b><br>IC6, in the inferior concha, near the external auditory meatus, just below the ascending branch of the helix.</p>",
 			ChiaviPunto: ""
 		},
 		"130": {
 			NomePunto: "Eye 2",
-			AzioniPunto: "<p><b>Other names</b><br>- Vision 2</p><p><b>Action</b><br>The Chinese School distinguishes three different points to indicate the eye. They are often combined together and have a strong action in reducing visual and ocular pathologies.</p><p><b>Location</b><br>IT1-AT1, between the antitragus and the intertragic notch</p>",
+			AzioniPunto: "<p><b>Other names</b><br>- Vision 2</p><p><b>Action</b><br>The Chinese School distinguishes three different points to indicate the eye. They are often combined together and have a strong action in reducing visual and ocular pathologies.</p><p><b>Location</b><br>IT1-AT1, between the antitragus and the intertragic notch.</p>",
 			ChiaviPunto: ""
 		},
 		"131": {
 			NomePunto: "Eye 3",
-			AzioniPunto: "<p><b>Other names</b><br>- New eye point</p><p><b>Action</b><br>The Chinese School distinguishes three different points to indicate the eye. They are often combined together and have a strong action in reducing visual and ocular pathologies.</p><p><b>Location</b><br>IC6, in the lower half-concha, near the external auditory meatus</p>",
+			AzioniPunto: "<p><b>Other names</b><br>- New eye point</p><p><b>Action</b><br>The Chinese School distinguishes three different points to indicate the eye. They are often combined together and have a strong action in reducing visual and ocular pathologies.</p><p><b>Location</b><br>IC6, in the inferior concha, near the external auditory meatus.</p>",
 			ChiaviPunto: ""
 		},
 		"132": {
 			NomePunto: "Eye 1",
-			AzioniPunto: "<p><b>Other names</b><br>- Vision 1</p><p><b>Action</b><br>The Chinese School distinguishes three different points to indicate the eye. They are often combined together and have a strong action in reducing visual and ocular pathologies.</p><p><b>Location</b><br>IT1-TG1, between the tragus and the intertragic notch</p>",
+			AzioniPunto: "<p><b>Other names</b><br>- Vision 1</p><p><b>Action</b><br>The Chinese School distinguishes three different points to indicate the eye. They are often combined together and have a strong action in reducing visual and ocular pathologies.</p><p><b>Location</b><br>IT1-TG1, between the tragus and the intertragic notch.</p>",
 			ChiaviPunto: ""
 		},
 		"134": {
 			NomePunto: "Trachea",
-			AzioniPunto: "<p><b>Other names</b><br>- Larynx EUR</p><p><b>Action<br></b>The Trachea Point is indicated to treat all subjects with disorders of the larynx, trachea, and bronchi.</p><p><b>Location</b><br>IC3, in the lower half-concha, centrally, near the external auditory meatus.</p>",
+			AzioniPunto: "<p><b>Other names</b><br>- Larynx EUR</p><p><b>Action<br></b>The Trachea Point is indicated to treat all subjects with disorders of the larynx, trachea, and bronchi.</p><p><b>Location</b><br>IC3, in the inferior concha, centrally, near the external auditory meatus.</p>",
 			ChiaviPunto: ""
 		},
 		"135": {
 			NomePunto: "Vagus Nerve",
-			AzioniPunto: "<p><b>Other names</b><br>- Cranial nerve X<br>- X CN</p><p><b>Action</b><br>This point has a strong rebalancing action on the parasympathetic nervous system, used particularly to treat cases of tachycardia with palpitations and anxiety.</p><p><b>Location</b><br>IC3, in the lower half-concha, centrally and towards the external auditory meatus</p>",
+			AzioniPunto: "<p><b>Other names</b><br>- Cranial nerve X<br>- X CN</p><p><b>Action</b><br>This point has a strong rebalancing action on the parasympathetic nervous system, used particularly to treat cases of tachycardia with palpitations and anxiety.</p><p><b>Location</b><br>IC3, in the inferior concha, centrally and towards the external auditory meatus.</p>",
 			ChiaviPunto: ""
 		},
 		"137": {
 			NomePunto: "San Jiao",
-			AzioniPunto: "<p><b>Other names</b><br>- Sānjiāo<br>- Triple Heater<br></p><p><b>Action</b><br>The San Jiao Point has a powerful physical and emotional action. It is indicated for rebalancing the respiratory, digestive, and circulatory systems, as well as for treating anxiety and depression.</p><p><b>Location</b><br>IC1, in the lower emiconcha, at its lowest part, in an area delimited by the apex of the antitragus with the lower protrusion of the tragus, before the inter-tragal endocrine zone.</p>",
+			AzioniPunto: "<p><b>Other names</b><br>- Sānjiāo<br>- Triple Burner<br></p><p><b>Action</b><br>The San Jiao Point has a powerful physical and emotional action. It is indicated for rebalancing the respiratory, digestive, and circulatory systems, as well as for treating anxiety and depression.</p><p><b>Location</b><br>IC1, in the inferior concha, at its lowest part, in an area delimited by the apex of the antitragus with the lower protrusion of the tragus, before the inter-tragal endocrine zone.</p>",
 			ChiaviPunto: ""
 		},
 		"138": {
 			NomePunto: "Prolactin",
-			AzioniPunto: "<p><b>Action</b><br>Regulates milk production, regulates the menstrual cycle. Also useful in men for gynecomastia, impotence, and decreased libido.</p><p><b>Location</b><br>IC1, in the lower emiconcha, in an area located below the imaginary line connecting <span class='LMtxt'>LM13</span> with <span class='LMtxt'>LM10</span> towards the front.</p>",
+			AzioniPunto: "<p><b>Action</b><br>Regulates milk production, regulates the menstrual cycle. Also useful in men for gynecomastia, impotence, and decreased libido.</p><p><b>Location</b><br>IC1, in the inferior concha, in an area located below the imaginary line connecting <span class='LMtxt'>LM13</span> with <span class='LMtxt'><span class='LMtxt'>LM10</span></span> towards the front.</p>",
 			ChiaviPunto: ""
 		},
 		"142": {
-			NomePunto: "Heart CIN",
-			AzioniPunto: "<p><b>Other names</b><br>- Coronaries</p><p><b>Action</b><br>The Chinese School indicates this point for its effectiveness in emotional and affective rebalancing of the Heart.</p><p><b>Location</b><br>IC4-PC2, in the deepest point of the lower emiconcha.</p>",
+			NomePunto: "Heart CHN",
+			AzioniPunto: "<p><b>Other names</b><br>- Coronaries</p><p><b>Action</b><br>The Chinese School indicates this point for its effectiveness in emotional and affective rebalancing of the Heart.</p><p><b>Location</b><br>IC4-PC2, in the deepest point of the inferior concha.</p>",
 			ChiaviPunto: ""
 		},
 		"143": {
 			NomePunto: "Posterior Hypothalamus",
-			AzioniPunto: "<p><b>Action</b><br>The French School distinguishes between Anterior and Posterior Hypothalamus Points for their different properties. The Posterior Hypothalamus Point is indicated for rebalancing the autonomic nervous system and adrenaline secretion. It also regulates the functions of the orthosympathetic-tonic system and supports the threshold of vigilance and attention.</p><p><b>Location</b><br>IC5-CW3, at the border between the front wall of the antitragus and the lower emiconcha, at the height of the passage area of the antitragus to the antehelix.</p>",
+			AzioniPunto: "<p><b>Action</b><br>The French School distinguishes between Anterior and Posterior Hypothalamus Points for their different properties. The Posterior Hypothalamus Point is indicated for rebalancing the autonomic nervous system and adrenaline secretion. It also regulates the functions of the orthosympathetic-tonic system and supports the threshold of vigilance and attention.</p><p><b>Location</b><br>IC5-CW3, at the border between the concha wall and the inferior concha, at the height of the passage area of the antitragus to the antehelix.</p>",
 			ChiaviPunto: ""
 		},
 		"144": {
 			NomePunto: "Thyroid EUR",
-			AzioniPunto: "<p><b>Other names</b><br>- Thyroid gland<br>- Parathyroid gland EUR<br>- TSH<br>- Thyrotropins<br>- Parathyrotropins</p><p><b>Action</b><br>As suggested by the name, this point is indicated for treating all disorders related to the thyroid gland.</p><p><b>Location</b><br>IT2-IC2, in the intertragic notch at its border with the lower emiconcha.</p>",
+			AzioniPunto: "<p><b>Other names</b><br>- Thyroid gland<br>- Parathyroid gland EUR<br>- TSH<br>- Thyrotropins<br>- Parathyrotropins</p><p><b>Action</b><br>As suggested by the name, this point is indicated for treating all disorders related to the thyroid gland.</p><p><b>Location</b><br>IT2-IC2, in the intertragic notch at its border with the inferior concha.</p>",
 			ChiaviPunto: ""
 		},
 		"147": {
 			NomePunto: "Middle Cervical Ganglion",
-			AzioniPunto: "<p><b>Other names</b><br>- Nogier's Wonderful Point</p><p><b>Action</b><br>The French School indicates this point for its effectiveness in reducing peripheral dorsal neurological disorders and all neuropathic pains related to the upper limb and trunk.</p><p><b>Location</b><br>CW4, at the mid-height of the front wall at the level of the representation of C3-4 vertebrae.</p>",
+			AzioniPunto: "<p><b>Other names</b><br>- Nogier's Wonderful Point</p><p><b>Action</b><br>The French School indicates this point for its effectiveness in reducing peripheral dorsal neurological disorders and all neuropathic pains related to the upper limb and trunk.</p><p><b>Location</b><br>CW4, at the mid-height of the concha wall at the level of the representation of C3-4 vertebrae.</p>",
 			ChiaviPunto: ""
 		},
 		"148": {
 			NomePunto: "Superior Cervical Ganglion",
-			AzioniPunto: "<p><b>Other names</b><br>- Dizziness Point</p><p><b>Action</b><br>The French School indicates this point for its effectiveness in reducing peripheral dorsal neurological disorders and all neuropathic pains related to the upper limb and trunk.</p><p><b>Location</b><br>CW4, at the border between the front wall of the antehelix and the antitragus.</p>",
+			AzioniPunto: "<p><b>Other names</b><br>- Dizziness Point</p><p><b>Action</b><br>The French School indicates this point for its effectiveness in reducing peripheral dorsal neurological disorders and all neuropathic pains related to the upper limb and trunk.</p><p><b>Location</b><br>CW4, at the border between the concha wall of the antehelix and the antitragus.</p>",
 			ChiaviPunto: ""
 		},
 		"150": {
 			NomePunto: "Brainstem",
-			AzioniPunto: "<p><b>Other names</b><br>- Medulla Oblongata CIN</p><p><b>Action</b><br>According to the Chinese School, the Brainstem Point is indicated for tonifying the mind and regulating respiration, temperature, and heart rate. It is also effective in cases of epilepsy and convulsions.</p><p><b>Location</b><br>CW4, in the front wall at the border between the antehelix and the antitragus.</p>",
+			AzioniPunto: "<p><b>Other names</b><br>- Medulla Oblongata CHN</p><p><b>Action</b><br>According to the Chinese School, the Brainstem Point is indicated for tonifying the mind and regulating respiration, temperature, and heart rate. It is also effective in cases of epilepsy and convulsions.</p><p><b>Location</b><br>CW4, in the concha wall at the border between the antehelix and the antitragus.</p>",
 			ChiaviPunto: ""
 		},
 		"151": {
@@ -199,22 +199,22 @@ DB.set = {
 		},
 		"154": {
 			NomePunto: "Subcortex",
-			AzioniPunto: "<p><b>Other names</b><br>- Excitement Point<br>- Epilepsy Point<br>- Salivary Glands</p><p><b>Action</b><br>This point is used for the treatment of acute and chronic neurological pathologies. It is also indicated for reducing symptoms of depression, anxiety, and circulatory disorders.</p><p><b>Location</b><br>CW2, at the center of the front wall of the antitragus.</p>",
+			AzioniPunto: "<p><b>Other names</b><br>- Excitement Point<br>- Epilepsy Point<br>- Salivary Glands</p><p><b>Action</b><br>This point is used for the treatment of acute and chronic neurological pathologies. It is also indicated for reducing symptoms of depression, anxiety, and circulatory disorders.</p><p><b>Location</b><br>CW2, at the center of the concha wall of the antitragus.</p>",
 			ChiaviPunto: ""
 		},
 		"155": {
 			NomePunto: "Thalamus Point",
-			AzioniPunto: "<p><b>Other names</b><br>- Thalamus</p><p><b>Action</b><br>This powerful point is useful for reducing and counteracting acute pain when the VAS is equal to or greater than 5. It is indicated in the treatment of conditions with both psychological and organic components, such as anxiety, depression, hypertension, gastritis, nausea, and diarrhea.</p><p><b>Location</b><br>CW2-IC4, at the border between the front wall of the antitragus and the lower semicanal, in correspondence with the center of the antitragus.</p>",
+			AzioniPunto: "<p><b>Other names</b><br>- Thalamus</p><p><b>Action</b><br>This powerful point is useful for reducing and counteracting acute pain when the VAS is equal to or greater than 5. It is indicated in the treatment of conditions with both psychological and organic components, such as anxiety, depression, hypertension, gastritis, nausea, and diarrhea.</p><p><b>Location</b><br>CW2-IC4, at the border between the concha wall of the antitragus and the inferior concha, in correspondence with the center of the antitragus.</p>",
 			ChiaviPunto: ""
 		},
 		"157": {
 			NomePunto: "Anterior Hypothalamus",
-			AzioniPunto: "<p><b>Action</b><br>The French School distinguishes the Hypothalamus Points into Anterior and Posterior for their different properties. The Anterior Hypothalamus Point is indicated for rebalancing the autonomic nervous system and sexual desire. It also regulates the functions of the tonic parasympathetic system.</p><p><b>Location</b><br>IC2-CW1, at the border between the front wall of the antitragus and the lower semicanal, near the intertragic notch.</p>",
+			AzioniPunto: "<p><b>Action</b><br>The French School distinguishes the Hypothalamus Points into Anterior and Posterior for their different properties. The Anterior Hypothalamus Point is indicated for rebalancing the autonomic nervous system and sexual desire. It also regulates the functions of the tonic parasympathetic system.</p><p><b>Location</b><br>IC2-CW1, at the border between the concha wall of the antitragus and the inferior concha, near the intertragic notch.</p>",
 			ChiaviPunto: ""
 		},
 		"159": {
-			NomePunto: "Ovary-Testicles CIN",
-			AzioniPunto: "<p><b>Other names</b><br>- Ovary<br>- Testicle<br>- Gonads<br>- Sexual Gland CIN<br>- Internal Genitals</p><p><b>Action</b><br>This point has a great application for the treatment and rebalancing of the gonads.</p><p><b>Location</b><br>CW1, on the front wall of the antitragus, near the intertragic notch.</p>",
+			NomePunto: "Ovary-Testicles CHN",
+			AzioniPunto: "<p><b>Other names</b><br>- Ovary<br>- Testicle<br>- Gonads<br>- Sexual Gland CHN<br>- Internal Genitals</p><p><b>Action</b><br>This point has a great application for the treatment and rebalancing of the gonads.</p><p><b>Location</b><br>CW1, on the concha wall of the antitragus, near the intertragic notch.</p>",
 			ChiaviPunto: ""
 		},
 		"161": {
@@ -229,7 +229,7 @@ DB.set = {
 		},
 		"165": {
 			NomePunto: "ACTH",
-			AzioniPunto: "<p><b>Other names</b><br>- Adrenocorticotropic Hormone<br>- Adrenal Gland Control Point<p><b>Action</b><br>Indicated in chronic inflammatory pathologies lasting more than six months. It rebalances the functions of ACTH and consequently the adrenal functions. Very effective in situations of high stress.</p><p><b>Location</b><br>ST1, at the border with the intertragic notch slightly outward<span></span></p>",
+			AzioniPunto: "<p><b>Other names</b><br>- Adrenocorticotropic Hormone<br>- Adrenal Gland Control Point<p><b>Action</b><br>Indicated in chronic inflammatory pathologies lasting more than six months. It rebalances the functions of ACTH and consequently the adrenal functions. Very effective in situations of high stress.</p><p><b>Location</b><br>ST1, at the border with the intertragic notch slightly outward.</p>",
 			ChiaviPunto: ""
 		},
 		"166": {
@@ -249,7 +249,7 @@ DB.set = {
 		},
 		"171": {
 			NomePunto: "Lumbosacral Spinal Cord",
-			AzioniPunto: "<p><b>Other names</b><br>- Lumbosacral Spinal Cord</p><p><b>Action</b><br>Lumbosacral spinal cord pathologies</p><p><b>Location</b><br>HX12, on the posterior margin of the helix, between the representation area of the sensory and motor roots, just below Darwin's tubercle, in the upper third of the descending branch of the helix.</p>",
+			AzioniPunto: "<p><b>Other names</b><br>- Lumbosacral Cord</p><p><b>Action</b><br>Lumbosacral spinal cord pathologies</p><p><b>Location</b><br>HX12, on the posterior margin of the helix, between the representation area of the sensory and motor roots, just below Darwin's tubercle, in the upper third of the descending branch of the helix.</p>",
 			ChiaviPunto: ""
 		},
 		"173": {
@@ -264,12 +264,12 @@ DB.set = {
 		},
 		"176": {
 			NomePunto: "Dorsal Spinal Cord",
-			AzioniPunto: "<p><b>Other names</b><br>- Dorsal Spinal Cord</p><p><b>Action</b><br>Dorsal spinal cord pathologies</p><p><b>Location</b><br>HX13, on the posterior margin of the helix, between the representation area of the sensory and motor roots, approximately in the middle third of the descending branch of the helix.</p>",
+			AzioniPunto: "<p><b>Other names</b><br>- Dorsal Cord</p><p><b>Action</b><br>Dorsal spinal cord pathologies</p><p><b>Location</b><br>HX13, on the posterior margin of the helix, between the representation area of the sensory and motor roots, approximately in the middle third of the descending branch of the helix.</p>",
 			ChiaviPunto: ""
 		},
 		"177": {
 			NomePunto: "Occiput",
-			AzioniPunto: "<p><b>Other names</b><br>- Occipital Bone<br>- Occipital Muscle<br>- Atlas</p><p><b>Action</b><br>This International Point is used to treat all occipital disorders, particularly occipital muscle contractions, facial spasms, insomnia, and dizziness.</p><p><b>Location</b><br>AT3-PC1, on the antitragus near the post-antitragal groove</p>",
+			AzioniPunto: "<p><b>Other names</b><br>- Occipital Bone<br>- Occipital Muscle<br>- Atlas</p><p><b>Action</b><br>This International Point is used to treat all occipital disorders, particularly occipital muscle contractions, facial spasms, insomnia, and dizziness.</p><p><b>Location</b><br>AT3-PC1, on the antitragus near the post-antitragal groove.</p>",
 			ChiaviPunto: ""
 		},
 		"178": {
@@ -279,12 +279,12 @@ DB.set = {
 		},
 		"179": {
 			NomePunto: "Temple",
-			AzioniPunto: "<p><b>Other names</b><br>- Temporal Bone<br>- Parietal Bone</p><p><b>Action</b><br>The Temple Point is useful for treating temple pain and reducing symptoms of migraines and tinnitus.</p><p><b>Location</b><br>AT2, on the outer surface of the antitragus, inferior to the apex of the antitragus and at LM13.</p>",
+			AzioniPunto: "<p><b>Other names</b><br>- Temporal Bone<br>- Parietal Bone</p><p><b>Action</b><br>The Temple Point is useful for treating temple pain and reducing symptoms of migraines and tinnitus.</p><p><b>Location</b><br>AT2, on the outer surface of the antitragus, inferior to the apex of the antitragus and at <span class=\"LMtxt\">LM13</span>.</p>",
 			ChiaviPunto: ""
 		},
 		"180": {
 			NomePunto: "Apex of the Antitragus",
-			AzioniPunto: "<p><b>Other names</b><br>- CIN Asthma Point<br>- Reticular Formation<br>- MASTER Reticular Point</p><p><b>Action</b><br>Referred to as the 'Asthma Point' in Chinese medicine, it is indicated for asthma and severe migraines. Often used in cases of mild pain with thresholds not exceeding level 5 on the VAS scale.</p><p><b>Location</b><br>AT2-AT3, at the highest point of the antitragus. Corresponds to LM13.</p>",
+			AzioniPunto: "<p><b>Other names</b><br>- Asthma Point CHN<br>- Reticular Formation<br>- MASTER Reticular Point</p><p><b>Action</b><br>Referred to as the 'Asthma Point' in Chinese medicine, it is indicated for asthma and severe migraines. Often used in cases of mild pain with thresholds not exceeding level 5 on the VAS scale.</p><p><b>Location</b><br>AT2-AT3, at the highest point of the antitragus. Corresponds to <span class=\"LMtxt\">LM13</span>.</p>",
 			ChiaviPunto: ""
 		},
 		"181": {
@@ -293,23 +293,23 @@ DB.set = {
 			ChiaviPunto: ""
 		},
 		"182": {
-			NomePunto: "External Ear CIN",
-			AzioniPunto: "<p><b>Action<br></b>This point is indicated for reducing external ear disorders and pain.</p><p><b>Location</b><br>TG5, at the center of the tragus, just above an imaginary horizontal line passing through LM11.</p>",
+			NomePunto: "External Ear CHN",
+			AzioniPunto: "<p><b>Action<br></b>This point is indicated for reducing external ear disorders and pain.</p><p><b>Location</b><br>TG5, at the center of the tragus, just above an imaginary horizontal line passing through <span class='LMtxt'>LM11</span>.</p>",
 			ChiaviPunto: ""
 		},
 		"183": {
 			NomePunto: "Thirst Point",
-			AzioniPunto: "<p><b>Action</b><br>Polydipsia, especially psychosomatic-based.</p><p><b>Location</b><br>TG4, halfway between LM11 and the External Nose point (LM23).</p>",
+			AzioniPunto: "<p><b>Action</b><br>Polydipsia, especially psychosomatic-based.</p><p><b>Location</b><br>TG4, halfway between <span class='LMtxt'>LM11</span> and the External Nose point (<span class='LMtxt'>LM23</span>).</p>",
 			ChiaviPunto: ""
 		},
 		"184": {
 			NomePunto: "Vitality Point",
-			AzioniPunto: "<p><b>Other names</b><br>- Vitality Point<br>- Frustration Point<br>- Interferon Point<br>- Heart Point</p><p><b>Action<br></b>The French School indicates this point for its powerful energetic, psychological, and physical action. It is used for tonifying cases with apathy, low physical aptitude, and depression.</p><p><b>Location</b><br>TG4, at the center of the tragus, just anteriorly to LM11.</p>",
+			AzioniPunto: "<p><b>Other names</b><br>- Frustration Point<br>- Interferon Point<br>- Heart Point</p><p><b>Action<br></b>The French School indicates this point for its powerful energetic, psychological, and physical action. It is used for tonifying cases with apathy, low physical aptitude, and depression.</p><p><b>Location</b><br>TG4, at the center of the tragus, just anteriorly to <span class='LMtxt'>LM11</span>.</p>",
 			ChiaviPunto: ""
 		},
 		"185": {
-			NomePunto: "External Nose CIN",
-			AzioniPunto: "<p><b>Action<br></b>The Chinese School distinguishes the External Nose and Internal Nose points for their different therapeutic applications. This point is indicated for treating all nasal disorders, particularly nasal congestion.</p><p><b>Location</b><br>TG3, on the border line between the Tragus and the cheek, halfway between the upper and lower prominences of the Tragus (LM10 and LM11). Corresponds to LM23.</p>",
+			NomePunto: "External Nose CHN",
+			AzioniPunto: "<p><b>Action<br></b>The Chinese School distinguishes the External Nose and Internal Nose points for their different therapeutic applications. This point is indicated for treating all nasal disorders, particularly nasal congestion.</p><p><b>Location</b><br>TG3, on the border line between the Tragus and the cheek, halfway between the upper and lower prominences of the Tragus (<span class='LMtxt'>LM10</span> and <span class='LMtxt'>LM11</span>). Corresponds to <span class='LMtxt'>LM23</span>.</p>",
 			ChiaviPunto: ""
 		},
 		"186": {
@@ -319,27 +319,27 @@ DB.set = {
 		},
 		"187": {
 			NomePunto: "Frontal Cortex",
-			AzioniPunto: "<p><b>Action</b><br>Facilitates motor action, reduces motor disorders related to paralysis.</p><p><b>Location</b><br>LO1-LO2-LO3-LO4, large area of the lower lobe in a zone delimited at the top by the Sensory Master Point and at the bottom by the trigeminal line</p>",
+			AzioniPunto: "<p><b>Action</b><br>Facilitates motor action, reduces motor disorders related to paralysis.</p><p><b>Location</b><br>LO1-LO2-LO3-LO4, large area of the lower lobe in a zone delimited at the top by the [.222.] and at the bottom by the [.283.].</p>",
 			ChiaviPunto: ""
 		},
 		"188": {
 			NomePunto: "Prefrontal Cortex",
-			AzioniPunto: "<p><b>Other names</b><br>- Executive Brain</p><p><b>Action</b><br>Facilitates concentration and decision-making, reduces obsession and worry.</p><p><b>Location</b><br>LO1-LO2, large anterior area of the lobe extending from the Cerebral Master Point to the lower margin of the lobe</p>",
+			AzioniPunto: "<p><b>Other names</b><br>- Executive Brain</p><p><b>Action</b><br>Facilitates concentration and decision-making, reduces obsession and worry.</p><p><b>Location</b><br>LO1-LO2, large anterior area of the lobe extending from the [.230.] to the lower margin of the lobe.</p>",
 			ChiaviPunto: ""
 		},
 		"191": {
 			NomePunto: "Appetite Control",
-			AzioniPunto: "<p><b>Other names</b><br>- Hunger Point</p><p><b>Action</b><br>This point is used for its ability to decrease appetite.</p><p><b>Location</b><br>TG3, halfway between the apex of the lower Tragus prominence (LM10) and an intermediate point between the upper and lower Tragus prominences on the border line between the Tragus and the cheek (LM23).</p>",
+			AzioniPunto: "<p><b>Other names</b><br>- Hunger Point</p><p><b>Action</b><br>This point is used for its ability to decrease appetite.</p><p><b>Location</b><br>TG3, halfway between the apex of the lower Tragus prominence (<span class='LMtxt'>LM10</span>) and an intermediate point between the upper and lower Tragus prominences on the border line between the Tragus and the cheek (<span class='LMtxt'>LM23</span>).</p>",
 			ChiaviPunto: ""
 		},
 		"192": {
 			NomePunto: "Tranquilizer Point",
-			AzioniPunto: "<p><b>Other names</b><br>- Valium EUR Point<br>- Hypertension 2 CIN<br>- Mania Point<br>- Nicotine Point</p><p><b>Action</b><br>This point is recognized for its effectiveness in treating all disorders with an anxiety and stress component. It has a powerful psycho-physical rebalancing action, promotes relaxation, especially in cases of insomnia.</p><p><b>Location</b><br>TG2, in the central wall towards the posterior cartilaginous area. Midway between LM9 and LM10.</p>",
+			AzioniPunto: "<p><b>Other names</b><br>- Valium Point EUR<br>- Hypertension 2 CHN<br>- Mania Point<br>- Nicotine Point</p><p><b>Action</b><br>This point is recognized for its effectiveness in treating all disorders with an anxiety and stress component. It has a powerful psycho-physical rebalancing action, promotes relaxation, especially in cases of insomnia.</p><p><b>Location</b><br>TG2, in the central wall towards the posterior cartilaginous area. Midway between <span class='LMtxt'>LM9</span> and <span class='LMtxt'>LM10</span>.</p>",
 			ChiaviPunto: ""
 		},
 		"195": {
 			NomePunto: "Pineal Gland",
-			AzioniPunto: "<p><b>Other names</b><br>- Pineal Gland<br>- Point E</p><p><b>Action</b><br>Point used for rebalancing all biorhythms, particularly for the treatment of insomnia and depression.</p><p><b>Location</b><br>TG1. Corresponds to LM9. Diametrically opposite the intertragic notch in the area of transition between TG1 and the cheek.</p>",
+			AzioniPunto: "<p><b>Other names</b><br>- Epiphysis cerebri <br>- Point E</p><p><b>Action</b><br>Point used for rebalancing all biorhythms, particularly for the treatment of insomnia and depression.</p><p><b>Location</b><br>TG1. Corresponds to <span class='LMtxt'>LM9</span>. Diametrically opposite the intertragic notch in the area of transition between TG1 and the cheek.</p>",
 			ChiaviPunto: ""
 		},
 		"198": {
@@ -354,7 +354,7 @@ DB.set = {
 		},
 		"202": {
 			NomePunto: "Forehead",
-			AzioniPunto: "<p><b>Other names</b><br>- Frontal Bone</p><p><b>Action</b><br>The International Forehead Point is indicated for treating both emotional discomforts such as insomnia, depression, and anxiety, as well as physical disorders such as frontal pain, dizziness, and sinusitis.</p><p><b>Location</b><br>AT1-PG1, on the antitragus near the intertragic notch</p>",
+			AzioniPunto: "<p><b>Other names</b><br>- Frontal Bone</p><p><b>Action</b><br>The International Forehead Point is indicated for treating both emotional discomforts such as insomnia, depression, and anxiety, as well as physical disorders such as frontal pain, dizziness, and sinusitis.</p><p><b>Location</b><br>AT1-PG1, on the antitragus near the intertragic notch.</p>",
 			ChiaviPunto: ""
 		},
 		"207": {
@@ -363,12 +363,12 @@ DB.set = {
 			ChiaviPunto: ""
 		},
 		"209": {
-			NomePunto: "CIN Tongue",
-			AzioniPunto: "<p><b>Action</b><br>As indicated by the name, this point is very effective in treating all disorders related to the tongue and oral cavity.</p><p><b>Location</b><br>LO4, at the midpoint between the apex of the tragus and point [.222.]</p>",
+			NomePunto: "Tongue CHN",
+			AzioniPunto: "<p><b>Action</b><br>As indicated by the name, this point is very effective in treating all disorders related to the tongue and oral cavity.</p><p><b>Location</b><br>LO4, at the midpoint between the apex of the tragus and point [.222.].</p>",
 			ChiaviPunto: ""
 		},
 		"211": {
-			NomePunto: "EUR Tongue",
+			NomePunto: "Tongue EUR",
 			AzioniPunto: "<p><b>Action</b><br>As indicated by the name, this point is very effective in treating all disorders related to the tongue and oral cavity.</p><p><b>Location</b><br>LO5-PL6, at the midpoint between the face point and the upper jaw point.</p>",
 			ChiaviPunto: ""
 		},
@@ -379,7 +379,7 @@ DB.set = {
 		},
 		"215": {
 			NomePunto: "Face",
-			AzioniPunto: "<p><b>Other names</b><br>- Visage<br>- Cheek<br>- Facial Muscles</p><p><b>Action</b><br>This international auriculotherapy point is very effective in reducing nervous tics, facial paralysis, neuralgia, and is also indicated for treating facial spasms.</p><p><b>Location</b><br>LO5-PL6, on the lobe, laterally, a rather large area above the so-called [.283.]</p>",
+			AzioniPunto: "<p><b>Other names</b><br>- Visage<br>- Cheek<br>- Facial Muscles</p><p><b>Action</b><br>This international auriculotherapy point is very effective in reducing nervous tics, facial paralysis, neuralgia, and is also indicated for treating facial spasms.</p><p><b>Location</b><br>LO5-PL6, on the lobe, laterally, a rather large area above the so-called [.283.].</p>",
 			ChiaviPunto: ""
 		},
 		"221": {
@@ -389,16 +389,16 @@ DB.set = {
 		},
 		"222": {
 			NomePunto: "Master Sensorial Point",
-			AzioniPunto: "<p><b>Other names</b><br>- Eye Point<br>- PMSs</p><p><b>Action</b><br>The International Master Point is related to both eye and ear disorders. This point has the ability to rebalance the auditory sensations of the temporal lobe and the visual sensations of the occipital lobe. The Master Sensorial Point is indicated to reduce disorders related to tinnitus, irritability linked to smells or sounds, and hypersensitivity phenomena.</p><p><b>Location</b><br>LO4, approximately halfway between <span class='LMtxt'>LM13</span> and <span class='LMtxt'>LM7</span>, in the center of the lobe.</p>",
+			AzioniPunto: "<p><b>Other names</b><br>- Eye Point</p><p><b>Action</b><br>International master point related to both eye and ear disorders. This point has the ability to rebalance the auditory sensations of the temporal lobe and the visual sensations of the occipital lobe. The Master Sensorial Point is indicated to reduce disorders related to tinnitus, irritability linked to smells or sounds, and hypersensitivity phenomena.</p><p><b>Location</b><br>LO4, approximately halfway between <span class='LMtxt'>LM13</span> and <span class='LMtxt'>LM7</span>, in the center of the lobe.</p>",
 			ChiaviPunto: ""
 		},
 		"224": {
-			NomePunto: "Adrenal Gland CIN",
-			AzioniPunto: "<p><b>Other names</b><br>- Cortisol</p><p><b>Action</b><br>Functional rebalancing of the adrenal glands. It has an anti-inflammatory action.</p><p><b>Location</b><br>TG3, at the apex of the lower protrusion of the Tragus. Corresponds to <span class='LMtxt'>LM10</span></p>",
+			NomePunto: "Adrenal Gland CHN",
+			AzioniPunto: "<p><b>Other names</b><br>- Cortisol</p><p><b>Action</b><br>Functional rebalancing of the adrenal glands. It has an anti-inflammatory action.</p><p><b>Location</b><br>TG3, at the apex of the lower protrusion of the Tragus. Corresponds to <span class='LMtxt'>LM10</span>.</p>",
 			ChiaviPunto: ""
 		},
 		"226": {
-			NomePunto: "Larynx CIN",
+			NomePunto: "Larynx CHN",
 			AzioniPunto: "<p><b>Action</b><br>Point indicated for treating subjects with disorders of the larynx, trachea, and bronchi.</p><p><b>Location</b><br>ST4, on the inner surface of the Tragus immediately below the upper protrusion.</p>",
 			ChiaviPunto: ""
 		},
@@ -414,12 +414,12 @@ DB.set = {
 		},
 		"231": {
 			NomePunto: "Optic Nerve",
-			AzioniPunto: "<p><b>Other names</b><br>- Cranial Nerve II<br>- CN II</p><p><b>Action</b><br>This point is used for all disorders related to the optic nerve, particularly to reduce ocular and visual disorders.</p><p><b>Location</b><br>LO1, below [.230.], near span class='LMtxt'>LM8</span>.</p>",
+			AzioniPunto: "<p><b>Other names</b><br>- Cranial Nerve II<br>- CN II</p><p><b>Action</b><br>This point is used for all disorders related to the optic nerve, particularly to reduce ocular and visual disorders.</p><p><b>Location</b><br>LO1, below [.230.], near <span class='LMtxt'>LM8</span>.</p>",
 			ChiaviPunto: ""
 		},
 		"232": {
 			NomePunto: "Olfactory Nerve",
-			AzioniPunto: "<p><b>Other names</b><br>- Internal Nose EUR<br>- Cranial Nerve I<br>- CN I</p><p><b>Action</b><br>This point is used for all disorders related to the olfactory nerve.</p><p><b>Location</b><br>LO2, just above [.230.]. It is found by drawing a line between <span class='LMtxt'>LM9</span> and <span class='LMtxt'>LM8</span> approximately between the upper 1/3 and lower 2/3 of this distance.</p>",
+			AzioniPunto: "<p><b>Other names</b><br>- Internal Nose EUR<br>- Cranial Nerve I<br>- CN I</p><p><b>Action</b><br>This point is used for all disorders related to the olfactory nerve.</p><p><b>Location</b><br>LO2, just above [.230.]. It is found by drawing a line between <span class='LMtxt'>LM9</span> and <span class='LMtxt'>LM8</span> approximately between the upper first-third and lower second-third of this distance.</p>",
 			ChiaviPunto: ""
 		},
 		"243": {
@@ -428,8 +428,8 @@ DB.set = {
 			ChiaviPunto: ""
 		},
 		"244": {
-			NomePunto: "Lung CIN",
-			AzioniPunto: "<p><b>Action<br></b>The Lung Point is used by both the Chinese and French Schools for its rebalancing action on the respiratory system, particularly in cases of bronchitis, emphysema, and chest pains.</p><p><b>Location</b><br>IC2-IC4-IC5, large area in the lower hemiconcha, towards the anterior wall</p>",
+			NomePunto: "Lung CHN",
+			AzioniPunto: "<p><b>Action<br></b>The Lung Point is used by both the Chinese and French Schools for its rebalancing action on the respiratory system, particularly in cases of bronchitis, emphysema, and chest pains.</p><p><b>Location</b><br>IC2-IC4-IC5, large area in the inferior concha, towards the concha wall.</p>",
 			ChiaviPunto: ""
 		},
 		"245": {
@@ -444,27 +444,27 @@ DB.set = {
 		},
 		"247": {
 			NomePunto: "Foot Arch Muscles and Tendons EUR",
-			AzioniPunto: "<p><b>Other names</b><br>- Ankle Muscles and Tendons</p><p><b>Action</b><br>This point is used by both the French and Chinese Schools for its properties in treating musculotendinous disorders of the ankle and foot.</p><p><b>Location</b><br>PT3, at the base of the triangular prominence</p>",
+			AzioniPunto: "<p><b>Other names</b><br>- Ankle Muscles and Tendons</p><p><b>Action</b><br>This point is used by both the French and Chinese Schools for its properties in treating musculotendinous disorders of the ankle and foot.</p><p><b>Location</b><br>PT3, at the base of the triangular prominence.</p>",
 			ChiaviPunto: ""
 		},
 		"248": {
-			NomePunto: "Foot Arch Muscles and Tendons CIN",
-			AzioniPunto: "<p><b>Other names</b><br>- Ankle Muscles and Tendons</p><p><b>Action</b><br>This point is used by both the French and Chinese Schools for its properties in treating musculotendinous disorders of the ankle and foot.</p><p><b>Location</b><br>PP12, on the posterior part of the helix, towards the apex of the pinna</p>",
+			NomePunto: "Foot Arch Muscles and Tendons CHN",
+			AzioniPunto: "<p><b>Other names</b><br>- Ankle Muscles and Tendons</p><p><b>Action</b><br>This point is used by both the French and Chinese Schools for its properties in treating musculotendinous disorders of the ankle and foot.</p><p><b>Location</b><br>PP12, on the posterior part of the helix, towards the apex of the pinna.</p>",
 			ChiaviPunto: ""
 		},
 		"249": {
 			NomePunto: "Lung EUR",
-			AzioniPunto: "<p><b>Action<br></b>The Lung Point is used by both the Chinese and French Schools for its rebalancing action on the respiratory system, particularly in cases of bronchitis, emphysema, and chest pains.</p><p><b>Location</b><br>IC2-IC4-IC5-IC7, large area in the lower hemiconcha, towards the anterior wall</p>",
+			AzioniPunto: "<p><b>Action<br></b>The Lung Point is used by both the Chinese and French Schools for its rebalancing action on the respiratory system, particularly in cases of bronchitis, emphysema, and chest pains.</p><p><b>Location</b><br>IC2-IC4-IC5-IC7, large area in the inferior concha, towards the comcha wall.</p>",
 			ChiaviPunto: ""
 		},
 		"251": {
-			NomePunto: "Ureter CIN",
-			AzioniPunto: "<p><b>Action<br></b>The Ureter Point is effective in all pathologies related to the urinary tract, particularly the excretory tract.</p><p><b>Location</b><br>SC6, in the upper hemiconcha, at the border with the upper anterior wall, corresponding to the posterior third of the lower root of the antihelix.</p>",
+			NomePunto: "Ureter CHN",
+			AzioniPunto: "<p><b>Action<br></b>The Ureter Point is effective in all pathologies related to the urinary tract, particularly the excretory tract.</p><p><b>Location</b><br>SC6, in the superior concha, at the border with the upper concha wall, corresponding to the posterior third of the lower root of the antihelix.</p>",
 			ChiaviPunto: ""
 		},
 		"252": {
 			NomePunto: "Master point of the skin",
-			AzioniPunto: "<p><b>Action</b><br>The French School indicates this Master point for rebalancing and treating all skin-related disorders.</p><p><b>Location</b><br>ST2-ST3, on the inner surface of the Tragus, in an area halfway between LM10 and the intertragic notch.</p>",
+			AzioniPunto: "<p><b>Action</b><br>The French School indicates this Master point for rebalancing and treating all skin-related disorders.</p><p><b>Location</b><br>ST2-ST3, on the inner surface of the Tragus, in an area halfway between <span class='LMtxt'>LM10</span> and the intertragic notch.</p>",
 			ChiaviPunto: ""
 		},
 		"253": {
@@ -478,13 +478,13 @@ DB.set = {
 			ChiaviPunto: ""
 		},
 		"255": {
-			NomePunto: "Knee muscles and tendons CIN",
+			NomePunto: "Knee muscles and tendons CHN",
 			AzioniPunto: "<p><b>Other names</b><br>- Knee ligaments EUR</p><p><b>Action</b><br>Musculotendinous pathologies of the knee.</p><p><b>Location</b><br>PG9, on the posterior part of the antihelix, in its upper third.</p>",
 			ChiaviPunto: ""
 		},
 		"256": {
 			NomePunto: "Knee muscles and tendons EUR",
-			AzioniPunto: "<p><b>Other names</b><br>- Knee ligaments CIN</p><p><b>Action</b><br>Musculotendinous pathologies of the knee.</p><p><b>Location</b><br>PT2, at the center of the triangular eminence.</p>",
+			AzioniPunto: "<p><b>Other names</b><br>- Knee ligaments CHN</p><p><b>Action</b><br>Musculotendinous pathologies of the knee.</p><p><b>Location</b><br>PT2, at the center of the triangular eminence.</p>",
 			ChiaviPunto: ""
 		},
 		"257": {
@@ -504,31 +504,31 @@ DB.set = {
 		},
 		"260": {
 			NomePunto: "Thoracic sympathetic ganglia",
-			AzioniPunto: "<p><b>Action</b><br>The French School indicates this point for its effectiveness in reducing neurological disorders of the dorsal periphery and all neuropathic pains related to the upper limb and trunk.</p><p><b>Location</b><br>CW6-CW7, in the anterior wall near the reflex zone of the dorsal spine</p>",
+			AzioniPunto: "<p><b>Action</b><br>The French School indicates this point for its effectiveness in reducing neurological disorders of the dorsal periphery and all neuropathic pains related to the upper limb and trunk.</p><p><b>Location</b><br>CW6-CW7, in the comcha wall near the reflex zone of the dorsal spine.</p>",
 			ChiaviPunto: ""
 		},
 		"261": {
 			NomePunto: "Lumbar sympathetic ganglion",
-			AzioniPunto: "<p><b>Action</b><br>The French School indicates this point for its effectiveness in reducing neurological disorders of the dorsal periphery and all neuropathic pains related to the upper limb and trunk.</p><p><b>Location</b><br>CW8-CW9, in the anterior wall at the lower third of the lower root of the antihelix</p>",
+			AzioniPunto: "<p><b>Action</b><br>The French School indicates this point for its effectiveness in reducing neurological disorders of the dorsal periphery and all neuropathic pains related to the upper limb and trunk.</p><p><b>Location</b><br>CW8-CW9, in the concha wall at the lower third of the lower root of the antihelix.</p>",
 			ChiaviPunto: ""
 		},
 		"262": {
 			NomePunto: "Gonadotropins",
-			AzioniPunto: "<p><b>Other names</b><br>- Gynecological area<br><br>- Gynecological point<br>- FSH (follicle-stimulating hormone)<br>- LH (luteinizing hormone)</p><p><b>Action</b><br>The French School indicates the effectiveness of this point in treating all pathologies related to alterations in gonadotropin secretion and the menstrual cycle. It is also used in cases of infertility and to reduce disorders related to climacteric syndrome, menopause, and hormonal imbalances.</p><p><b>Location</b><br>CW1-AT1-LO4, in the anterior third of the outer surface of the antitragus. Some authors describe it on the inner surface.</p>",
+			AzioniPunto: "<p><b>Other names</b><br>- Gynecological area<br>- Gynecological point<br>- FSH (follicle-stimulating hormone)<br>- LH (luteinizing hormone)</p><p><b>Action</b><br>The French School indicates the effectiveness of this point in treating all pathologies related to alterations in gonadotropin secretion and the menstrual cycle. It is also used in cases of infertility and to reduce disorders related to climacteric syndrome, menopause, and hormonal imbalances.</p><p><b>Location</b><br>CW1-AT1-LO4, in the anterior third of the outer surface of the antitragus. Some authors describe it on the inner surface.</p>",
 			ChiaviPunto: ""
 		},
 		"263": {
 			NomePunto: "Locus Coeruleus",
-			AzioniPunto: "<p><b>Other names</b><br>- Locus Caeruleus<br>- Locus Ceruleus<br>- Blue point</p><p><b>Action</b><br>This point indicated by the French School tones and rebalances REM sleep, also reducing stress.</p><p><b>Location</b><br>L3-L5, in the lower part of the lobe, just above the trigeminal line</p>",
+			AzioniPunto: "<p><b>Other names</b><br>- Locus Caeruleus<br>- Locus Ceruleus<br>- Blue point</p><p><b>Action</b><br>This point indicated by the French School tones and rebalances REM sleep, also reducing stress.</p><p><b>Location</b><br>L3-L5, in the lower part of the lobe, just above the trigeminal line.</p>",
 			ChiaviPunto: ""
 		},
 		"264": {
-			NomePunto: "Hip muscles and tendons (EUR)",
-			AzioniPunto: "<p><b>Other names</b><br>- Pelvic girdle muscles</p><p><b>Action</b><br>This point is used by both the French and Chinese Schools for its properties in treating musculotendinous disorders and pelvic girdle disorders.</p><p><b>Location</b><br>PT1, near the apex of the triangular eminence</p>",
+			NomePunto: "Hip muscles and tendons EUR",
+			AzioniPunto: "<p><b>Other names</b><br>- Pelvic girdle muscles</p><p><b>Action</b><br>This point is used by both the French and Chinese Schools for its properties in treating musculotendinous disorders and pelvic girdle disorders.</p><p><b>Location</b><br>PT1, near the apex of the triangular eminence.</p>",
 			ChiaviPunto: ""
 		},
 		"265": {
-			NomePunto: "Hip muscles and tendons (CIN)",
+			NomePunto: "Hip muscles and tendons CHN",
 			AzioniPunto: "<p><b>Other names</b><br>- Pelvic girdle muscles</p><p><b>Action</b><br>This point is used by both the French and Chinese Schools for its properties in treating musculotendinous disorders and pelvic girdle disorders.</p><p><b>Location</b><br>PG8, on the posterior part of the helix, in its upper third.</p>",
 			ChiaviPunto: ""
 		},
@@ -579,7 +579,7 @@ DB.set = {
 		},
 		"275": {
 			NomePunto: "Frontal sinuses",
-			AzioniPunto: "<p><b>Other names</b><br>- Maxillary sinuses</p><p><b>Action</b><br>This point is indicated to reduce symptoms of rhinitis and sinusitis.</p><p><b>Location</b><br>LO4, at the center of the lobe, at the top, toward the antitragus, near point [.202.]</p>",
+			AzioniPunto: "<p><b>Other names</b><br>- Maxillary sinuses</p><p><b>Action</b><br>This point is indicated to reduce symptoms of rhinitis and sinusitis.</p><p><b>Location</b><br>LO4, at the center of the lobe, at the top, toward the antitragus, near point [.202.].</p>",
 			ChiaviPunto: ""
 		},
 		"276": {
@@ -588,33 +588,33 @@ DB.set = {
 			ChiaviPunto: ""
 		},
 		"277": {
-			NomePunto: "Cervical vertebrae CIN",
+			NomePunto: "Cervical vertebrae CHN",
 			AzioniPunto: "<p><b>Action</b><br>The Cervical Vertebrae points are recognized by both the Chinese and French Schools for their effectiveness in all pathologies related to the cervical vertebrae.</p><p><b>Location</b><br>AH8, in the lower third of the body of the antihelix, toward the scaphoid fossa.</p>",
 			ChiaviPunto: ""
 		},
 		"278": {
-			NomePunto: "Dorsal vertebrae CIN",
+			NomePunto: "Dorsal vertebrae CHN",
 			AzioniPunto: "<p><b>Action</b><br>The Dorsal Vertebrae points are recognized by both the Chinese and French Schools for their effectiveness in all pathologies related to the dorsal vertebrae.</p><p><b>Location</b><br>AH9-AH10, in the middle and upper thirds of the body of the antihelix, toward the scaphoid fossa.</p>",
 			ChiaviPunto: ""
 		},
 		"279": {
-			NomePunto: "Lumbar vertebrae CIN",
+			NomePunto: "Lumbar vertebrae CHN",
 			AzioniPunto: "<p><b>Action</b><br>The Lumbar Vertebrae points are recognized by both the Chinese and French Schools for their effectiveness in all pathologies related to the lumbar vertebrae.</p><p><b>Location</b><br>AH1, in the upper part of the body of the antihelix, before it splits into the upper and lower roots of the antihelix.</p>",
 			ChiaviPunto: ""
 		},
 		"280": {
 			NomePunto: "Mandible",
-			AzioniPunto: "<p><b>Other names</b><br>- Lower teeth<br>- Masseter muscle</p><p><b>Action</b><br>As indicated by the name, this point is very effective in the treatment of all disorders related to the mandible, such as facial paralysis, lower arch algia, and bruxism. Often associated with the Upper Jaw Point.</p><p><b>Location</b><br>LO8-PP1, at the point where the scaphoid fossa divides into a Y, at the end of its anterior branch, just below point [.174.]</p>",
+			AzioniPunto: "<p><b>Other names</b><br>- Lower teeth<br>- Masseter muscle</p><p><b>Action</b><br>As indicated by the name, this point is very effective in the treatment of all disorders related to the mandible, such as facial paralysis, lower arch algia, and bruxism. Often associated with the Upper Jaw Point.</p><p><b>Location</b><br>LO8-PP1, at the point where the scaphoid fossa divides into a Y, at the end of its anterior branch, just below point [.174.].</p>",
 			ChiaviPunto: ""
 		},
 		"281": {
 			NomePunto: "Upper jaw",
-			AzioniPunto: "<p><b>Other names</b><br>- Upper teeth</p><p><b>Action</b><br>This point is often associated with the Mandible Point for its effectiveness in the treatment of all disorders related to the mandible, such as facial paralysis, lower arch algia, and bruxism.</p><p><b>Location</b><br>LO8-PP1, at the point where the scaphoid fossa divides into a Y, at the end of its anterior branch, just below and medially to point [.174.]</p>",
+			AzioniPunto: "<p><b>Other names</b><br>- Upper teeth</p><p><b>Action</b><br>This point is often associated with the Mandible Point for its effectiveness in the treatment of all disorders related to the mandible, such as facial paralysis, lower arch algia, and bruxism.</p><p><b>Location</b><br>LO8-PP1, at the point where the scaphoid fossa divides into a Y, at the end of its anterior branch, just below and medially to point [.174.].</p>",
 			ChiaviPunto: ""
 		},
 		"282": {
 			NomePunto: "Lumbosacral muscles",
-			AzioniPunto: "<p><b>Action</b><br>This international point is used for its muscle-relaxing function on the lumbar and sacral muscles.</p><p><b>Location</b><br>PG5-PG6, in the posterior longitudinal groove, in the lower-middle branch</p>",
+			AzioniPunto: "<p><b>Action</b><br>This international point is used for its muscle-relaxing function on the lumbar and sacral muscles.</p><p><b>Location</b><br>PG5-PG6, in the posterior longitudinal groove, in the lower-middle branch.</p>",
 			ChiaviPunto: ""
 		},
 		"283": {
@@ -624,7 +624,7 @@ DB.set = {
 		},
 		"284": {
 			NomePunto: "Coccygeal musculature",
-			AzioniPunto: "<p><b>Action</b><br>As indicated by the name, this point is very effective in reducing all disorders related to the coccygeal musculature.</p><p><b>Location</b><br>PG7, in the posterior longitudinal groove, in the upper third of the lower-middle branch</p>",
+			AzioniPunto: "<p><b>Action</b><br>As indicated by the name, this point is very effective in reducing all disorders related to the coccygeal musculature.</p><p><b>Location</b><br>PG7, in the posterior longitudinal groove, in the upper third of the lower-middle branch.</p>",
 			ChiaviPunto: ""
 		},
 		"285": {
@@ -634,27 +634,27 @@ DB.set = {
 		},
 		"286": {
 			NomePunto: "Dorsal Paravertebral Musculature",
-			AzioniPunto: "<p><b>Action<br></b>This point, according to the French School, is used for its paravertebral myorelaxant function.&nbsp;</p><p><b>Location</b><br>AH3-AH4, in the upper two-thirds of the antehelix body, before it bifurcates into 2 branches, on the side towards the scaphoid fossa.</p>",
+			AzioniPunto: "<p><b>Action<br></b>This point, according to the French School, is used for its paravertebral myorelaxant function.</p><p><b>Location</b><br>AH3-AH4, in the upper two-thirds of the antehelix body, before it bifurcates into 2 branches, on the side towards the scaphoid fossa.</p>",
 			ChiaviPunto: ""
 		},
 		"287": {
 			NomePunto: "Lumbosacral Paravertebral Musculature",
-			AzioniPunto: "<p><b>Action<br></b>This international point is used for its paravertebral myorelaxant function.</p><p><b>Location</b><br>AH5-AH6-AH7, on the lower root of the antehelix at the border with the triangular fossa</p>",
+			AzioniPunto: "<p><b>Action<br></b>This international point is used for its paravertebral myorelaxant function.</p><p><b>Location</b><br>AH5-AH6-AH7, on the lower root of the antehelix at the border with the triangular fossa.</p>",
 			ChiaviPunto: ""
 		},
 		"288": {
 			NomePunto: "Neck Muscles",
-			AzioniPunto: "<p><b>Action<br></b>This international point is used for its relaxing function on the neck muscles.</p><p><b>Location</b><br>PP3-PG3, between the scaphoid eminence and the posterior longitudinal groove</p>",
+			AzioniPunto: "<p><b>Action<br></b>This international point is used for its relaxing function on the neck muscles.</p><p><b>Location</b><br>PP3-PG3, between the scaphoid eminence and the posterior longitudinal groove.</p>",
 			ChiaviPunto: ""
 		},
 		"289": {
 			NomePunto: "Back Muscles",
-			AzioniPunto: "<p><b>Action<br></b>Point used by the French School for its relaxing action on the dorsal muscles.</p><p><b>Location</b><br>PP3-PP5-PG3-PG4-PG5, between the scaphoid eminence and the posterior longitudinal groove</p>",
+			AzioniPunto: "<p><b>Action<br></b>Point used by the French School for its relaxing action on the dorsal muscles.</p><p><b>Location</b><br>PP3-PP5-PG3-PG4-PG5, between the scaphoid eminence and the posterior longitudinal groove.</p>",
 			ChiaviPunto: ""
 		},
 		"291": {
 			NomePunto: "Master Occipital Point",
-			AzioniPunto: "<p><b>Other names</b><br>- Occipital bone<br>- Atlas</p><p><b>Action</b><br>This Master Point is directly connected to the space between the occipital bone and the first cervical vertebra. It has a strong action in the treatment of dizziness, insomnia, tension headaches, and neuralgia. It is also recognized for its myorelaxant properties, particularly with a tensile-emotional component.</p><p><b>Location</b><br>AT3, in the antehelical-antitragal or post-antitragal groove.</p>",
+			AzioniPunto: "<p><b>Other names</b><br>- Occipital bone<br>- Atlas</p><p><b>Action</b><br>This master point is directly connected to the space between the occipital bone and the first cervical vertebra. It has a strong action in the treatment of dizziness, insomnia, tension headaches, and neuralgia. It is also recognized for its myorelaxant properties, particularly with a tensile-emotional component.</p><p><b>Location</b><br>AT3, in the antehelical-antitragal or post-antitragal groove.</p>",
 			ChiaviPunto: ""
 		},
 		"293": {
@@ -664,17 +664,17 @@ DB.set = {
 		},
 		"294": {
 			NomePunto: "Top of the Head",
-			AzioniPunto: "<p><b>Other names</b><br>- Head Apex<br>- Head Crown</p><p><b>Action</b><br>Reduces head pain.</p><p><b>Location</b><br>LO6, on the upper part of the earlobe posteriorly to the line passing through <span class='LMtxt'>LM13</span> and <span class='LMtxt'>LM7</span></p>",
+			AzioniPunto: "<p><b>Other names</b><br>- Head Apex<br>- Head Crown</p><p><b>Action</b><br>Reduces head pain.</p><p><b>Location</b><br>LO6, on the upper part of the earlobe posteriorly to the line passing through <span class='LMtxt'>LM13</span> and <span class='LMtxt'>LM7</span>.</p>",
 			ChiaviPunto: ""
 		},
 		"298": {
-			NomePunto: "EUR Elongated Medulla",
-			AzioniPunto: "<p><b>Action</b><br>High cervical neurological pathology. Modulation of cervical neuropathic pain. Muscular tone control.</p><p><b>Location</b><br>HX15, on the anterior edge of the helix in its tail, in an area transitioning towards the Earlobe</p>",
+			NomePunto: "Elongated Medulla EUR",
+			AzioniPunto: "<p><b>Action</b><br>High cervical neurological pathology. Modulation of cervical neuropathic pain. Muscular tone control.</p><p><b>Location</b><br>HX15, on the anterior edge of the helix in its tail, in an area transitioning towards the Earlobe.</p>",
 			ChiaviPunto: ""
 		},
 		"302": {
-			NomePunto: "CIN Inner Ear",
-			AzioniPunto: "<p><b>Action</b><br>Dizziness, buzzing, and tinnitus.</p><p><b>Location</b><br>LO5, on the lower and peripheral part of the earlobe, antero-inferiorly to the ATM point</p>",
+			NomePunto: "Inner Ear CHN",
+			AzioniPunto: "<p><b>Action</b><br>Dizziness, buzzing, and tinnitus.</p><p><b>Location</b><br>LO5, on the lower and peripheral part of the earlobe, antero-inferiorly to the TMJ point.</p>",
 			ChiaviPunto: ""
 		},
 		"303": {
@@ -684,17 +684,17 @@ DB.set = {
 		},
 		"304": {
 			NomePunto: "Dental Analgesia",
-			AzioniPunto: "<p><b>Other names</b><br>- Teeth</p><p><b>Action</b><br>Useful in dental pain, especially acute and ongoing pain.</p><p><b>Location</b><br>LO1-LO2, in an anterior area of the earlobe, approximately 2-3 mm from the cheek between the upper and lower two-thirds of the distance between <span class='LMtxt'>LM9</span> and <span class='LMtxt'>LM8</span></p>",
+			AzioniPunto: "<p><b>Other names</b><br>- Teeth</p><p><b>Action</b><br>Useful in dental pain, especially acute and ongoing pain.</p><p><b>Location</b><br>LO1-LO2, in an anterior area of the earlobe, approximately 2-3 mm from the cheek between the upper and lower two-thirds of the distance between <span class='LMtxt'>LM9</span> and <span class='LMtxt'>LM8</span>.</p>",
 			ChiaviPunto: ""
 		},
 		"305": {
-			NomePunto: "EUR External Nose",
+			NomePunto: "External Nose EUR",
 			AzioniPunto: "<p><b>Other names</b><br>- Paranasal Sinuses</p><p><b>Action</b><br>Rhinitis, sinusitis, nasal obstruction, and all disorders of the upper respiratory tract.</p><p><b>Location</b><br>LO2, area located on the upper part of the earlobe, just anteriorly to a vertical line passing through the anterior margin of the intertragic notch.</p>",
 			ChiaviPunto: ""
 		},
 		"000": {
 			NomePunto: "Zero Point",
-			AzioniPunto: "<p><b>Other names</b><br>- Ear Center<br>- Support Point<br>- Solar Plexus<br>- Navel</p><p><b>Action</b><br>Considered very important by the French school, according to Paul Nogier, it represents a physiological and geometrical center. The stimulation of this point was used by Nogier in conditions of fatigue and nervous tension to restore a state of general calm. The Zero Point has a powerful action in overall rebalancing of the energy, psychological, and physical system.&nbsp;</p><p><b>Location</b><br>HX1-CR1, at the root of the helix bordering the crus helix. In a groove orthogonal to the root of the helix.</p>",
+			AzioniPunto: "<p><b>Other names</b><br>- Ear Center<br>- Support Point<br>- Solar Plexus<br>- Navel</p><p><b>Action</b><br>Considered very important by the French school, according to Paul Nogier, it represents a physiological and geometrical center. The stimulation of this point was used by Nogier in conditions of fatigue and nervous tension to restore a state of general calm. The Zero Point has a powerful action in overall rebalancing of the energy, psychological, and physical system.</p><p><b>Location</b><br>HX1-CR1, at the root of the helix bordering the crus helix. In a groove orthogonal to the root of the helix.</p>",
 			ChiaviPunto: ""
 		},
 		"001": {
@@ -718,29 +718,29 @@ DB.set = {
 			ChiaviPunto: ""
 		},
 		"007": {
-			NomePunto: "Rectum CIN",
+			NomePunto: "Rectum CHN",
 			AzioniPunto: "<p><b>Action<br></b>The Rectum Point is very useful in reducing symptoms of irritable bowel syndrome, dysentery, hemorrhoids, diarrhea, constipation, and rectal pain.</p><p><b>Location</b><br>HX3, on the helix knee, below the point where the helix meets the lower root of the antihelix.</p>",
 			ChiaviPunto: ""
 		},
 		"008": {
-			NomePunto: "Urethra CIN",
+			NomePunto: "Urethra CHN",
 			AzioniPunto: "<p><b>Action<br></b>The Urethra Point is effective in all pathologies related to the urinary tract.</p><p><b>Location</b><br>HX3, on the helix knee, just below the point where the helix meets the lower root of the antihelix.</p>",
 			ChiaviPunto: ""
 		},
 		"009": {
-			NomePunto: "External Genitals CIN",
+			NomePunto: "External Genitals CHN",
 			AzioniPunto: "<p><b>Other names</b><br>- Penis<br>- Clitoris</p><p><b>Action</b><br>Point indicated by the Chinese School for the treatment of all scrotal pathologies and those related to male and female genital organs. Very effective in cases of frigidity and impotence.</p><p><b>Location</b><br>HX4, on the helix knee at the level of the lower branch of the antihelix.</p>",
 			ChiaviPunto: ""
 		},
 		"013": {
 			NomePunto: "Romoli Anxiety",
-			AzioniPunto: "<p><b>Action</b><br>Particularly sensitive and effective in panic attacks, together with the Mouth Point.</p><p><b>Location</b><br>IC5-IC8, codified by A. Lovato, described by Marco Romoli in various presentations, reports, and conferences, identified in a lower hemiconch area, close to the Wonderful Point of Nogier.</p>",
+			AzioniPunto: "<p><b>Action</b><br>Particularly sensitive and effective in panic attacks, together with the Mouth Point.</p><p><b>Location</b><br>IC5-IC8, codified by A. Lovato, described by Marco Romoli in various presentations, reports, and conferences, identified in a lower hemiconch area, close to the Nogier's Wonderful Point.</p>",
 			ChiaviPunto: "",
 			"hidden": true
 		},
 		"014": {
 			NomePunto: "Migraine Area",
-			AzioniPunto: "<p><b>Action</b><br>Reduces a migraine crisis through the needle contact test (NCT). Detection is done through the pauper nero and with the pauper verticale in the areas IT1, AT1, and CW1.</p><p><b>Location</b><br>IT1-AT1-CW1-LO4, codified by A. Lovato, first determined by Romoli through the contact test (NCT).</p>",
+			AzioniPunto: "<p><b>Action</b><br>Reduces a migraine crisis through the needle contact test (NCT). Detection is done through the black Palpeur in vertical position in the areas IT1, AT1, and CW1.</p><p><b>Location</b><br>IT1-AT1-CW1-LO4, codified by A. Lovato, first determined by Romoli through the contact test (NCT).</p>",
 			ChiaviPunto: "",
 			"hidden": true
 		},
@@ -757,7 +757,7 @@ DB.set = {
 		},
 		"018": {
 			NomePunto: "Dermatitis",
-			AzioniPunto: "<p><b>Other names</b><br>- Skin Disorders EUR<br>- Urticaria<br>- Eczema<br><span style='color: rgb(0, 0, 0);'>- Dermatological pathologies<br>- EUR Marrow</span></p><p><b>Action</b><br>As suggested by the name, this point is used to treat all major dermatological pathologies such as dermatitis, acne, eczema, and urticaria.</p><p><b>Location</b><br>HX12-HX13-HX14-HX15 on the helix rim. It is also the site of spinal representation. The treatment and pathological representation follow the dermatomeric logic.</p>",
+			AzioniPunto: "<p><b>Other names</b><br>- Skin Disorders EUR<br>- Urticaria<br>- Eczema<br>- Dermatological pathologies<br>- Marrow EUR</p><p><b>Action</b><br>As suggested by the name, this point is used to treat all major dermatological pathologies such as dermatitis, acne, eczema, and urticaria.</p><p><b>Location</b><br>HX12-HX13-HX14-HX15 on the helix rim. It is also the site of spinal representation. The treatment and pathological representation follow the dermatomeric logic.</p>",
 			ChiaviPunto: ""
 		},
 		"023": {
@@ -771,12 +771,12 @@ DB.set = {
 			ChiaviPunto: ""
 		},
 		"028": {
-			NomePunto: "Forefoot CIN",
+			NomePunto: "Forefoot CHN",
 			AzioniPunto: "<p><b>Other names</b><br>- Metatarsal</p><p><b>Action</b><br>Auricular point indicated for the treatment of disorders and pain related to the forefoot.</p><p><b>Location</b><br>AH17-AH18-PP11, at the highest point of the upper root of the antihelix, hidden by the helix rim.</p>",
 			ChiaviPunto: ""
 		},
 		"029": {
-			NomePunto: "Heel CIN",
+			NomePunto: "Heel CHN",
 			AzioniPunto: "<p><b>Other names</b><br>- Heel point</p><p><b>Action</b><br>This point is used by both the Chinese and French Schools for its action in counteracting disorders and pain in the heel.</p><p><b>Location</b><br>AH17, in the upper third of the upper root of the antihelix, in an area hidden by the helix rim and near the triangular fossa.</p>",
 			ChiaviPunto: ""
 		},
@@ -786,7 +786,7 @@ DB.set = {
 			ChiaviPunto: ""
 		},
 		"031": {
-			NomePunto: "Uterus CIN",
+			NomePunto: "Uterus CHN",
 			AzioniPunto: "<p><b>Action</b><br>Painful and functional disorders of the reproductive system, particularly dysmenorrhea and polymenorrhea.</p><p><b>Location</b><br>TF5-TF6, a wide area in the anterior third of the triangular fossa, partially hidden by the helix rim.</p>",
 			ChiaviPunto: ""
 		},
@@ -833,12 +833,12 @@ DB.set = {
 			ChiaviPunto: ""
 		},
 		"041": {
-			NomePunto: "Thyroid CIN",
-			AzioniPunto: "<p><b>Other names</b><br>- Thyroid gland<br>- Parathyroid gland</p><p><b>Action</b><br>As suggested by the name, this point is indicated for treating all disorders related to the thyroid gland.</p><b>Location</b><br>CW4-IC8-AH8, at the border between the frontal eminence and the lower hemiconch, at the level of the representation of the C3-4 vertebrae.</p>",
+			NomePunto: "Thyroid CHN",
+			AzioniPunto: "<p><b>Other names</b><br>- Thyroid gland<br>- Parathyroid gland</p><p><b>Action</b><br>As suggested by the name, this point is indicated for treating all disorders related to the thyroid gland.</p><b>Location</b><br>CW4-IC8-AH8, at the border between the concha wall and the lower hemiconch, at the level of the representation of the C3-4 vertebrae.</p>",
 			ChiaviPunto: ""
 		},
 		"042": {
-			NomePunto: "Breast Gland CIN",
+			NomePunto: "Breast Gland CHN",
 			AzioniPunto: "<p><b>Other names</b><br>- Mammary gland</p><p><b>Action</b><br>Pathologies of the breast, mastodynia.</p><p><b>Location</b><br>AH3, at the center of the helix body at the level of the representation of the IV-V thoracic vertebra.</p>",
 			ChiaviPunto: ""
 		},
@@ -854,7 +854,7 @@ DB.set = {
 		},
 		"045": {
 			NomePunto: "Insomnia 1",
-			AzioniPunto: "<p><b>Other names</b><br>- Sleep disorders 1</p><p><b>Action</b><br>The French School distinguishes the treatment of insomnia with two different points. Insomnia 1 point is mainly indicated in cases of continuous nocturnal awakenings. It has excellent efficacy in reducing stress, depression, nervousness, and as suggested by the name, for insomnia.</p><p><b>Location</b><br>SF5, in the scaphoid fossa, at the top</p>",
+			AzioniPunto: "<p><b>Other names</b><br>- Sleep disorders 1</p><p><b>Action</b><br>The French School distinguishes the treatment of insomnia with two different points. Insomnia 1 point is mainly indicated in cases of continuous nocturnal awakenings. It has excellent efficacy in reducing stress, depression, nervousness, and as suggested by the name, for insomnia.</p><p><b>Location</b><br>SF5, in the scaphoid fossa, at the top.</p>",
 			ChiaviPunto: ""
 		},
 		"047": {
@@ -869,57 +869,57 @@ DB.set = {
 		},
 		"049": {
 			NomePunto: "Shoulder",
-			AzioniPunto: "<p><b>Other names</b><br>- Scapular girdle<br>- Deltoid muscle</p><p><b>Action</b><br>The Shoulder Point is very effective in reducing shoulder disorders with an arthritic and inflammatory component. It is also effective in cases of musculotendinous disorders of the shoulder.</p><p><b>Location</b><br>SF2-PP5, in the scaphoid fossa, at the level of the representation of the French cervico-dorsal column passage</p>",
+			AzioniPunto: "<p><b>Other names</b><br>- Scapular girdle<br>- Deltoid muscle</p><p><b>Action</b><br>The Shoulder Point is very effective in reducing shoulder disorders with an arthritic and inflammatory component. It is also effective in cases of musculotendinous disorders of the shoulder.</p><p><b>Location</b><br>SF2-PP5, in the scaphoid fossa, at the level of the representation of the French cervico-dorsal column passage.</p>",
 			ChiaviPunto: ""
 		},
 		"053": {
 			NomePunto: "Arm",
-			AzioniPunto: "<p><b>Other names</b><br>- Arm point<br>- Humerus<br>- Biceps muscle<br>- Triceps muscle</p><p><b>Action</b><br>As indicated by the name, this point is highly effective in reducing all disorders related to arm problems.</p><p><b>Location</b><br>SF3-PP5, in the scaphoid fossa, between point [.054.] and point [.049.]</p>",
+			AzioniPunto: "<p><b>Other names</b><br>- Arm point<br>- Humerus<br>- Biceps muscle<br>- Triceps muscle</p><p><b>Action</b><br>As indicated by the name, this point is highly effective in reducing all disorders related to arm problems.</p><p><b>Location</b><br>SF3-PP5, in the scaphoid fossa, between point [.054.] and point [.049.].</p>",
 			ChiaviPunto: ""
 		},
 		"054": {
 			NomePunto: "Elbow",
-			AzioniPunto: "<p><b>Other names</b><br>- Elbow point<br>- Elbow joint</p><p><b>Action</b><br>As indicated by the name, this point is highly effective in reducing all disorders related to the elbow.</p><p><b>Location</b><br>SF4-PP5, in the scaphoid fossa, at the level of point [.001.]</p>",
+			AzioniPunto: "<p><b>Other names</b><br>- Elbow point<br>- Elbow joint</p><p><b>Action</b><br>As indicated by the name, this point is highly effective in reducing all disorders related to the elbow.</p><p><b>Location</b><br>SF4-PP5, in the scaphoid fossa, at the level of point [.001.].</p>",
 			ChiaviPunto: ""
 		},
 		"055": {
 			NomePunto: "Forearm",
-			AzioniPunto: "<p><b>Other names</b><br>- Forearm point<br>- Radius<br>- Ulna<br>- Brachioradialis muscle</p><p><b>Action</b><br>As indicated by the name, this point is highly effective in reducing all disorders related to the forearm.</p><p><b>Location</b><br>SF4-PP5, in the scaphoid fossa, at the level of point [.001.]</p>",
+			AzioniPunto: "<p><b>Other names</b><br>- Forearm point<br>- Radius<br>- Ulna<br>- Brachioradialis muscle</p><p><b>Action</b><br>As indicated by the name, this point is highly effective in reducing all disorders related to the forearm.</p><p><b>Location</b><br>SF4-PP5, in the scaphoid fossa, at the level of point [.001.].</p>",
 			ChiaviPunto: ""
 		},
 		"056": {
 			NomePunto: "Heart EUR",
-			AzioniPunto: "<p><b>Action</b><br>According to the French School, this point is indicated for the treatment of heart pathologies and disorders. Therefore, it is recommended to treat the Heart point in case of chest pain, hypertension and hypotension, tachycardia, and various arrhythmias.</p><p><b>Location</b><br>AH3-PG4, on the helix at the border with the anterior wall, at the height of [.000.]</p>",
+			AzioniPunto: "<p><b>Action</b><br>According to the French School, this point is indicated for the treatment of heart pathologies and disorders. Therefore, it is recommended to treat the Heart point in case of chest pain, hypertension and hypotension, tachycardia, and various arrhythmias.</p><p><b>Location</b><br>AH3-PG4, on the helix at the border with the concha wall, at the height of [.000.].</p>",
 			ChiaviPunto: ""
 		},
 		"058": {
 			NomePunto: "Gluteal Point",
-			AzioniPunto: "<p><b>Other names</b><br>- Great gluteal point<br>- Buttock point</p><p><b>Action</b><br>Hip pain, gluteal pain, and pain in pseudosciatica.</p><p><b>Location</b><br>AH5-PG5, just above LM16 in the posterior third of the lower root of the helix.</p>",
+			AzioniPunto: "<p><b>Other names</b><br>- Great gluteal point<br>- Buttock point</p><p><b>Action</b><br>Hip pain, gluteal pain, and pain in pseudosciatica.</p><p><b>Location</b><br>AH5-PG5, just above <span class='LMtxt'>LM16</span> in the posterior third of the lower root of the helix.</p>",
 			ChiaviPunto: ""
 		},
 		"060": {
 			NomePunto: "Hip EUR",
-			AzioniPunto: "<p><b>Other names</b><br>- Coxofemoral joint</p><p><b>Action</b><br>This point is used both by the Chinese and French Schools but in different locations. They both have the application for treating disorders related to the hip and pelvic girdle in common.</p><p><b>Location</b><br>TF1-PT1, at the apex of the triangular fossa</p>",
+			AzioniPunto: "<p><b>Other names</b><br>- Coxofemoral joint</p><p><b>Action</b><br>This point is used both by the Chinese and French Schools but in different locations. They both have the application for treating disorders related to the hip and pelvic girdle in common.</p><p><b>Location</b><br>TF1-PT1, at the apex of the triangular fossa.</p>",
 			ChiaviPunto: ""
 		},
 		"061": {
 			NomePunto: "Pelvis",
-			AzioniPunto: "<p><b>Other names</b><br>- Pelvis<br>- Pelvic girdle<br>- Groin<br>- Pubic bone<br>- Pelvic cavity</p><p><b>Action</b><br>This International Point is used to treat all pelvic pathologies. It is highly effective in cases of low back pain.</p><p><b>Location</b><br>TF1-PG5, at the apex of the triangular fossa, downwards, below point [.001.]</p>",
+			AzioniPunto: "<p><b>Other names</b><br>- Pelvis<br>- Pelvic girdle<br>- Groin<br>- Pubic bone<br>- Pelvic cavity</p><p><b>Action</b><br>This International Point is used to treat all pelvic pathologies. It is highly effective in cases of low back pain.</p><p><b>Location</b><br>TF1-PG5, at the apex of the triangular fossa, downwards, below point [.001.].</p>",
 			ChiaviPunto: ""
 		},
 		"065": {
 			NomePunto: "Wrist",
-			AzioniPunto: "<p><b>Other names</b><br>- Wrist point<br>- Wrist joint</p><p><b>Action</b><br>As indicated by the name, this point is highly effective in reducing all disorders related to the wrist, particularly osteoarticular disorders.</p><p><b>Location</b><br>SF5-PP7, in the scaphoid fossa, just above the level of point [.001.]</p>",
+			AzioniPunto: "<p><b>Other names</b><br>- Wrist point<br>- Wrist joint</p><p><b>Action</b><br>As indicated by the name, this point is highly effective in reducing all disorders related to the wrist, particularly osteoarticular disorders.</p><p><b>Location</b><br>SF5-PP7, in the scaphoid fossa, just above the level of point [.001.].</p>",
 			ChiaviPunto: ""
 		},
 		"067": {
 			NomePunto: "Abdomen",
-			AzioniPunto: "<p><b>Other names</b><br>- Abdomen point<br>- Low back pain<br>- Abdominal muscles</p><p><b>Action</b><br>The Abdomen Point has a strong action in reducing abdominal pain and treating low back pain.</p><p><b>Location</b><br>AH11-AH12-PG4, near the bifurcation point of the antihelix in the upper and lower roots</p>",
+			AzioniPunto: "<p><b>Other names</b><br>- Abdomen point<br>- Low back pain<br>- Abdominal muscles</p><p><b>Action</b><br>The Abdomen Point has a strong action in reducing abdominal pain and treating low back pain.</p><p><b>Location</b><br>AH11-AH12-PG4, near the bifurcation point of the antihelix in the upper and lower roots.</p>",
 			ChiaviPunto: ""
 		},
 		"068": {
-			NomePunto: "Knee CIN",
-			AzioniPunto: "<p><b>Other names</b><br>- Knee point<br>- Knee joint<br>- Patella</p><p><b>Action</b><br>As indicated by the name, this point is highly effective in reducing all disorders related to the knee, particularly articular disorders.</p><p><b>Location</b><br>AH14-AH15, at the center of the upper root of the antihelix</p>",
+			NomePunto: "Knee CHN",
+			AzioniPunto: "<p><b>Other names</b><br>- Knee point<br>- Knee joint<br>- Patella</p><p><b>Action</b><br>As indicated by the name, this point is highly effective in reducing all disorders related to the knee, particularly articular disorders.</p><p><b>Location</b><br>AH14-AH15, at the center of the upper root of the antihelix.</p>",
 			ChiaviPunto: ""
 		},
 		"069": {
@@ -949,17 +949,17 @@ DB.set = {
 		},
 		"074": {
 			NomePunto: "Urticaria",
-			AzioniPunto: "<p><b>Other names</b><br>- Dermatitis<br>- Skin disorders CIN</p><p><b>Action</b><br>This Point is highly indicated for treating all skin-related pathologies, particularly acne, eczema, urticaria, and dermatitis.</p><p><b>Location</b><br>SF5-IH11, broad area encompassing part of the scaphoid fossa and part of the hidden surface of the helix, at the level of Darwin's tubercle</p>",
+			AzioniPunto: "<p><b>Other names</b><br>- Dermatitis<br>- Skin disorders CHN</p><p><b>Action</b><br>This Point is highly indicated for treating all skin-related pathologies, particularly acne, eczema, urticaria, and dermatitis.</p><p><b>Location</b><br>SF5-IH11, broad area encompassing part of the scaphoid fossa and part of the hidden surface of the helix, at the level of Darwin's tubercle.</p>",
 			ChiaviPunto: ""
 		},
 		"075": {
-			NomePunto: "Hip CIN",
-			AzioniPunto: "<p><b>Other names</b><br>- Hip point<br>- Coxofemoral joint</p><p><b>Action</b><br>This point is used both by the Chinese and French Schools but in different locations. They both have the application for treating disorders related to the hip and pelvic girdle in common.</p><p><b>Location</b><br>AH13-PG8, in the lower third of the upper branch of the antihelix, towards the triangular fossa<span></span></p>",
+			NomePunto: "Hip CHN",
+			AzioniPunto: "<p><b>Other names</b><br>- Hip point<br>- Coxofemoral joint</p><p><b>Action</b><br>This point is used both by the Chinese and French Schools but in different locations. They both have the application for treating disorders related to the hip and pelvic girdle in common.</p><p><b>Location</b><br>AH13-PG8, in the lower third of the upper branch of the antihelix, towards the triangular fossa<span></span>.</p>",
 			ChiaviPunto: ""
 		},
 		"078": {
 			NomePunto: "Antihistamine Point",
-			AzioniPunto: "<p><b>Action</b><br>The Antihistamine Point is used to treat disorders related to the lungs, particularly cold symptoms, bronchitis, asthma, and allergies.</p><p><b>Location</b><br>TF3-TF4, in the center of the triangular fossa<span></span></p>",
+			AzioniPunto: "<p><b>Action</b><br>The Antihistamine Point is used to treat disorders related to the lungs, particularly cold symptoms, bronchitis, asthma, and allergies.</p><p><b>Location</b><br>TF3-TF4, in the center of the triangular fossa<span></span>.</p>",
 			ChiaviPunto: ""
 		},
 		"080": {
@@ -968,17 +968,17 @@ DB.set = {
 			ChiaviPunto: ""
 		},
 		"081": {
-			NomePunto: "Ankle CIN",
-			AzioniPunto: "<p><b>Other names</b><br>- Ankle point<br>- Talocrural joint<br>- Achilles tendon</p><p><b>Action</b><br>The ankle point is used for all disorders related to the ankle, particularly the Achilles tendon</p><p><b>Location</b><br>AH17-PG9, on the upper root of the helix in its upper third</p>",
+			NomePunto: "Ankle CHN",
+			AzioniPunto: "<p><b>Other names</b><br>- Ankle point<br>- Talocrural joint<br>- Achilles tendon</p><p><b>Action</b><br>The ankle point is used for all disorders related to the ankle, particularly the Achilles tendon.</p><p><b>Location</b><br>AH17-PG9, on the upper root of the helix in its upper third.</p>",
 			ChiaviPunto: ""
 		},
 		"083": {
 			NomePunto: "Thumb EUR",
-			AzioniPunto: "<p><b>Other names</b><br>- Thumb point</p><p><b>Action</b><br>As indicated by the name, this point is very effective in reducing all disorders related to the thumb, particularly pathologies related to the first metacarpal ray.</p><p><b>Location</b><br>AH14-AH16-AH18, large area in the upper root of the antihelix</p>",
+			AzioniPunto: "<p><b>Other names</b><br>- Thumb point</p><p><b>Action</b><br>As indicated by the name, this point is very effective in reducing all disorders related to the thumb, particularly pathologies related to the first metacarpal ray.</p><p><b>Location</b><br>AH14-AH16-AH18, large area in the upper root of the antihelix.</p>",
 			ChiaviPunto: ""
 		},
 		"084": {
-			NomePunto: "Thumb CIN",
+			NomePunto: "Thumb CHN",
 			AzioniPunto: "<p><b>Action</b><br>As indicated by the name, this point is very effective in reducing all disorders related to the thumb, particularly pathologies related to the first metacarpal ray.</p><p><b>Location</b><br>SF5-AH16, large area encompassing part of the upper root of the antihelix and part of the scaphoid fossa.</p>",
 			ChiaviPunto: ""
 		},
@@ -1003,13 +1003,13 @@ DB.set = {
 			ChiaviPunto: ""
 		},
 		"092": {
-			NomePunto: "Diaphragm CIN",
-			AzioniPunto: "<p><b>Action</b><br>The Chinese School suggests treating this point to reduce vomiting, diaphragmatic pain and spasms, and hiccups.</p><p><b>Location</b><br>HX1-HX2, at the root of the helix, anterior to [.000.]</p>",
+			NomePunto: "Diaphragm CHN",
+			AzioniPunto: "<p><b>Action</b><br>The Chinese School suggests treating this point to reduce vomiting, diaphragmatic pain and spasms, and hiccups.</p><p><b>Location</b><br>HX1-HX2, at the root of the helix, anterior to [.000.].</p>",
 			ChiaviPunto: ""
 		},
 		"093": {
 			NomePunto: "Stomach",
-			AzioniPunto: "<p><b>Action</b><br>The Stomach Point has a rebalancing action on all digestive disorders, both physical and psychosomatic. It is indicated for the treatment of loss of appetite, stress, anxiety, and tension.</p><p><b>Location</b><br>CR1, on the tragus, just behind [.000.]</p>",
+			AzioniPunto: "<p><b>Action</b><br>The Stomach Point has a rebalancing action on all digestive disorders, both physical and psychosomatic. It is indicated for the treatment of loss of appetite, stress, anxiety, and tension.</p><p><b>Location</b><br>CR1, on the tragus, just behind [.000.].</p>",
 			ChiaviPunto: ""
 		},
 		"095": {
@@ -1029,7 +1029,7 @@ DB.set = {
 		},
 		"099": {
 			NomePunto: "Small Intestine",
-			AzioniPunto: "<p><b>Other names</b><br>- Jejunum</p><p><b>Action</b><br>As suggested by the name, this point is indicated for treating all disorders related to the functionality of the small intestine, particularly reducing stomach and intestinal disorders, eating disorders, and diarrhea.</p><p><b>Location</b><br>SC2-PC3, in the upper semicircular notch, superiorly and anteriorly to [.000.]</p>",
+			AzioniPunto: "<p><b>Other names</b><br>- Jejunum</p><p><b>Action</b><br>As suggested by the name, this point is indicated for treating all disorders related to the functionality of the small intestine, particularly reducing stomach and intestinal disorders, eating disorders, and diarrhea.</p><p><b>Location</b><br>SC2-PC3, in the upper semicircular notch, superiorly and anteriorly to [.000.].</p>",
 			ChiaviPunto: ""
 		}
 	},
@@ -1557,7 +1557,7 @@ DB.set = {
 						"170"
 					]
 				},
-				d: "* To identify the most sensitive area, use manual palpation with the index finger and thumb, then use the blue pauper on the lateral surface and the black pauper on the medial surface. Initially, perform the sliding maneuver and then the baresthesic maneuver until you find the most sensitive points."
+				d: "* To identify the most sensitive area, use manual palpation with the index finger and thumb, then use the blue Palpeur on the lateral surface and the black Palpeur on the medial surface. Initially, perform the sliding maneuver and then the baresthesic maneuver until you find the most sensitive points."
 			},
 			s: [{
 					t: "Unilateral pain",
@@ -3294,7 +3294,7 @@ DB.set = {
 				ds: {
 					p: [
 						"164",
-						"[]Front wall*",
+						"[]Concha wall*",
 						"[]Sensitive root*"
 					]
 				},
@@ -3311,7 +3311,7 @@ DB.set = {
 						"137"
 					]
 				},
-				d: "* Identify the metamere where the neuralgia is detected, preferably inspecting the homolateral auricle and delimit the possible site of representation of the neuralgia (using the stirrup method on the antihelix). Search for sensitive points in the avanmuro and the sensitive roots in the helix. If after 2 sessions the neuralgia has not improved, it is recommended to treat it with electrostimulation at 15Hz for at least 20 minutes, connecting the avo to the avanmuo with the needle on the sensitive root, adjusting the intensity to the patient's pain threshold."
+				d: "* Identify the metamere where the neuralgia is detected, preferably inspecting the homolateral auricle and delimit the possible site of representation of the neuralgia (using the stirrup method on the antihelix). Search for sensitive points in the concha wall and the sensitive roots in the helix. If after 2 sessions the neuralgia has not improved, it is recommended to treat it with electrostimulation at 15Hz for at least 20 minutes, connecting the avo to the avanmuo with the needle on the sensitive root, adjusting the intensity to the patient's pain threshold."
 			},
 			s: [{
 					t: "Inflammation",
@@ -3375,7 +3375,7 @@ DB.set = {
 						"154"
 					]
 				},
-				d: "* Search for sensitive points on the helix.<br>** Depending on the metameric level of the peripheral neuralgia, search for a tender point on palpation in the avanmuro of the antihelix."
+				d: "* Search for sensitive points on the helix.<br>** Depending on the metameric level of the peripheral neuralgia, search for a tender point on palpation in the concha wall of the antihelix."
 			},
 			s: [{
 					t: "Inflammation",
@@ -6791,7 +6791,7 @@ DB.set = {
 						"004"
 					]
 				},
-				d: "Note: Choose 1-2 most sensitive points between Occiput, Temple, and Forehead"
+				d: "Please note: choose 1-2 most sensitive points between Occiput, Temple, and Forehead"
 			},
 			s: [{
 					t: "Anxious and stress component",
@@ -7488,7 +7488,7 @@ DB.set = {
 					]
 				}
 			},
-			d: "EXTRA POINT: In the auricular points, the Tim Mee somatic acupuncture point should be added, which is an extra meridian point located laterally to LU.7, where a bony ridge is palpable.<br><br><b>Insertion sequence</b><br>The points are inserted following a predefined pattern and according to a stimulation mode.<br><b>D</b> dispersion, with the needle inserted during inspiration and rotated counterclockwise.<br><b>T</b> tonification, with the needle inserted during expiration and rotated clockwise.<br><br>- <b>Tin Mee (D)</b>: bilateral<br>- <b>P1 and P2 (D)</b>: needle towards the lobe<br>- <b>P3</b>: indifferent<br>- <b>P4, P5, P6, and P7 (T)</b>: needle upwards<br>- <b>Aggressiveness (D)</b><br>- <b>Epiphysis (D)</b><br>- <b>Zero Point (D)</b>: dominant side<br>- <b>Zero Point (T)</b>: non-dominant side<br><br><b>Electrostimulation</b><br>When the needles are inserted, they are electrostimulated at 15Hz for 30 minutes, increasing the intensity every 5 minutes to allow the patient's adaptation. The electrostimulation should be performed in four pairs:<br>1(-) Dominant Zero Point<br>1(+) Non-dominant Zero Point<br>2(-) Aggressiveness<br>2(+) Epiphysis<br>3(-) P7<br>3(+) P4<br>4(-) P2<br>4(+) P1<br><br><b>Additional treatment prescriptions</b><br>- Vitamin C as a detoxifier<br>- Drink 2-3 liters of water per day<br>- Licorice sticks for oral compensation<br>- Whole chili powder as a food seasoning<br>- The doctor may prescribe an anxiolytic if necessary" //- Alprazolam 0.25mg, twice a day<br>Note: Alprazolam should only be taken under medical prescription and if not contraindicated."
+			d: "EXTRA POINT: In the auricular points, the Tim Mee somatic acupuncture point should be added, which is an extra meridian point located laterally to LU.7, where a bony ridge is palpable.<br><br><b>Insertion sequence</b><br>The points are inserted following a predefined pattern and according to a stimulation mode.<br><b>D</b> dispersion, with the needle inserted during inspiration and rotated counterclockwise.<br><b>T</b> tonification, with the needle inserted during expiration and rotated clockwise.<br><br>- <b>Tin Mee (D)</b>: bilateral<br>- <b>P1 and P2 (D)</b>: needle towards the lobe<br>- <b>P3</b>: indifferent<br>- <b>P4, P5, P6, and P7 (T)</b>: needle upwards<br>- <b>Aggressiveness (D)</b><br>- <b>Epiphysis (D)</b><br>- <b>Zero Point (D)</b>: dominant side<br>- <b>Zero Point (T)</b>: non-dominant side<br><br><b>Electrostimulation</b><br>When the needles are inserted, they are electrostimulated at 15Hz for 30 minutes, increasing the intensity every 5 minutes to allow the patient's adaptation. The electrostimulation should be performed in four pairs:<br>1(-) Dominant Zero Point<br>1(+) Non-dominant Zero Point<br>2(-) Aggressiveness<br>2(+) Epiphysis<br>3(-) P7<br>3(+) P4<br>4(-) P2<br>4(+) P1<br><br><b>Additional treatment prescriptions</b><br>- Vitamin C as a detoxifier<br>- Drink 2-3 liters of water per day<br>- Licorice sticks for oral compensation<br>- Whole chili powder as a food seasoning<br>- The doctor may prescribe an anxiolytic if necessary" //- Alprazolam 0.25mg, twice a day<br>Please note: Alprazolam should only be taken under medical prescription and if not contraindicated."
 		},
 		102: {
 			tit: "GRADUAL REDUCTION",
@@ -8864,14 +8864,14 @@ DB.set = {
 			scheda: 100,
 			apparato: 11
 		}, {
-			NomePatologia: "Programma antitabacco di G. Rossato",
+			NomePatologia: "G. Rossato's Antitobaco Program",
 			TestoPatologia: "The program, developed by Dr. Giacomo Rossato, is an adaptation of the classic Nogier antitobacco program, with the addition of a somatic acupuncture point: the Tin Mee extra meridian point. This program consists of a single session and requires abstinence from tobacco for the 12 hours prior to treatment. It is indicated for patients who respond well to the all-or-nothing approach. In case of relapse or difficulty quitting, it can be repeated after 5-8 days.",
 			sessoPatologia: "",
 			chiaviPatologia: "",
 			scheda: 101,
 			apparato: 11
 		}, {
-			NomePatologia: "Programma antitabacco di A. Lovato",
+			NomePatologia: "A. Lovato's Antitobaco Program",
 			TestoPatologia: "These are two protocols developed by Dr. A. Lovato, which involve gradual reduction and abrupt cessation of addiction, respectively.<br>The choice of which therapeutic protocol to follow is dictated by several evaluations, and an attempt is made to accommodate the patient's natural tendencies:<br>- <b>Level of addiction</b>: if the addiction is high (see Fagerström test), only gradual reduction should be opted for, while in case of moderate addiction, the abrupt cessation protocol can be considered. In case of low to moderate addiction, the protocol can be applied in a single session using electroacupuncture.<br>- <b>Psychological aspect</b>: if the patient tends towards an all-or-nothing approach, the abrupt cessation protocol should be preferred, and vice versa.<br>- <b>Motivation</b>: attempting a smoking cessation therapy in a patient with low motivation is unlikely to be effective.<br>- <b>Information</b>: provide appropriate information to the patient about the usefulness of auricular acupuncture in reducing addiction.<br><br><b>Therapy results</b><br>The success rate of the antismoking protocol is around 50%, varying based on the patient's level of motivation. It is higher in individuals who undergo the abrupt cessation protocol, due to the generally low to moderate level of addiction and the fact that sudden cessation indicates greater motivation. The gradual reduction approach, on the other hand, is associated with more failures, as individuals who undergo this program unconsciously exhibit difficulty in quitting smoking.",
 			sessoPatologia: "",
 			chiaviPatologia: "",
@@ -9255,12 +9255,12 @@ DB.set = {
 				}, 
 				{
 					TitoloTeoria: "Mapping and Areas",
-					TestoTeoria: "For the mapping of the auricular pavilion and classification of areas, we will use the microsystem developed by Terry Oleson in 1983 and officially recognized during the WHO meeting in Beijing in 2010.<br>Oleson's map has the great advantage of not having fixed areas. These are merely proportions that adapt well to any auricular pavilion. The 3D reconstruction has resulted in some points, especially on the medial surface, undergoing changes in nomenclature as they are projected from the lateral surface to the medial surface, but they have acquired a much more realistic classification.<br><br><b>Nomenclature of Areas</b><br>The auricular pavilion has been divided into 19 areas, indicated below with their respective codes in parentheses:<br>- Helix (HX) - Internal surface of the helix (IH)<br>- Triangular fossa (TF)<br>- Antihelix (AH)<br>- Scapha (SF)<br>- Cavum conchae (CW)<br>- Superior concha (SC)<br>- Inferior concha (IC)<br>- Crus of the helix (CR)<br>- Tragus (TG)<br>- Internal surface of the tragus (ST)<br>- Intertragic notch (IT)<br>- Antitragus (AT)<br>- Lobule (LO)<br>- Posterior helix (PP)<br>- Posterior longitudinal groove (PG)<br>- Posterior triangular eminence (PT)<br>- Posterior concha (PC)<br>- Posterior lobule (PL)<br><br>Each area is further divided into sectors numbered in caudal-cranial and antero-posterior progression.<br><br>In the record of each point or area, under the 'location' section, there is a code representing the area and sector of a point (e.g., AH1).",
+					TestoTeoria: "For the mapping of the auricular pavilion and classification of areas, we will use the microsystem developed by Terry Oleson in 1983 and officially recognized during the WHO meeting in Beijing in 2010.<br>Oleson's map has the great advantage of not having fixed areas. These are merely proportions that adapt well to any auricular pavilion. The 3D reconstruction has resulted in some points, especially on the medial surface, undergoing changes in nomenclature as they are projected from the lateral surface to the medial surface, but they have acquired a much more realistic classification.<br><br><b>Nomenclature of Areas</b><br>The auricular pavilion has been divided into 19 areas, indicated below with their respective codes in parentheses:<br>- Helix (HX) - Internal surface of the helix (IH)<br>- Triangular fossa (TF)<br>- Antihelix (AH)<br>- Scapha (SF)<br>- Concha wall (CW)<br>- Superior concha (SC)<br>- Inferior concha (IC)<br>- Crus of the helix (CR)<br>- Tragus (TG)<br>- Internal surface of the tragus (ST)<br>- Intertragic notch (IT)<br>- Antitragus (AT)<br>- Lobule (LO)<br>- Posterior helix (PP)<br>- Posterior longitudinal groove (PG)<br>- Posterior triangular eminence (PT)<br>- Posterior concha (PC)<br>- Posterior lobule (PL)<br><br>Each area is further divided into sectors numbered in caudal-cranial and antero-posterior progression.<br><br>In the record of each point or area, under the 'location' section, there is a code representing the area and sector of a point (e.g., AH1).",
 					mappa: "COL"
 				}, 
 				{
 					TitoloTeoria: "Landmarks",
-					TestoTeoria: "The size and shape of the ear can vary from person to person, which is why it is necessary to identify landmarks to locate specific regions of the auricular pavilion in each patient. There are 18 landmarks that can be recognized on different individuals. They are classified based on the different subsections of the auricular pavilion, starting from LM 0, which is located in the same position as a primary landmark called Point Zero, and continuing up to LM 23.<br><br><b><span class='lmLabel'>LM 0</span> - Ear Center:</b> A distinct notch is located in the most central position of the ear, where the cavum conchae meets the helix root. It can be easily detected with a fingernail or a metal probe. LM 0 is the most common landmark used as a reference for other anatomical regions of the auricular pavilion. This region of the helix root represents the autonomic solar plexus and the umbilical cord, bringing any body dysfunction towards a state of balance.<br><br><b><span class='lmLabel'>LM 1</span> - Helix Insertion:</b> Where the ascending branch of the helix root ends and separates from the face, and the helix knee begins. Corresponds to Bouridiol's Point R.<br><br><b><span class='lmLabel'>LM 2</span> - Helix Apex:</b> The highest point of the auricular pavilion located along a line that is vertically above LM 0. This area is also referred to as the master anti-inflammatory point and coincides with the French School's Omega2 point.<br><br><b><span class='lmLabel'>LM 3</span> - Superior Margin of Darwin's Tubercle:</b> The groove immediately above the auricular tubercle, separating Darwin's tubercle from the superior helix.<br><br><b><span class='lmLabel'>LM 4</span> - Inferior Margin of Darwin's Tubercle:</b> It coincides with the lower groove of Darwin's T. The area of the helix that extends from LM 4 to LM 5 represents the representation of the spinal cord.<br><br><b><span class='lmLabel'>LM 5</span> - Helix Curve:</b> Located in the tail of the helix, where the cartilaginous structure ends. The representation of the cervical spinal cord can be found in this area.<br><br><b><span class='lmLabel'>LM 6</span> - Helix-Lobule Incisure:</b> Corresponds to the helix-lobule groove, which is the insertion point between two hypothetical circumferences formed by the outer margin of the lobule and auricular lobe. The staff is practically used from the lobule to the posterior-inferior part of the cartilage to locate this point.<br><br><b><span class='lmLabel'>LM 7</span> - Lobule Base:</b> The lowest point of the lobule is vertically below a straight line passing through LM 2, LM 0, and LM 7.<br><br><b><span class='lmLabel'>LM 8</span> - Lobule Insertion:</b> The lowest point of the lobule that attaches to the mandible. The position of this landmark varies considerably. In some people, LM 8 is lower than LM 7, while in others, LM 8 is higher than LM 7.<br><br><b><span class='lmLabel'>LM 9</span> - Intertragic Notch:</b> This landmark is diametrically opposite the intertragic notch. It is located using the staff where the cartilage ends, and it is a transitional area between the auricular pavilion and the cheek.<br><br><b><span class='lmLabel'>LM 10</span> - Lower Tragus Prominence:</b> It coincides with the most prominent point of the lower tragus prominence. The lower tragus prominence is also physiologically the most noticeable.<br><br><b><span class='lmLabel'>LM 11</span> - Upper Tragus Prominence:</b> Corresponds to the upper tragus prominence. It is not always present. In such cases, it coincides with the rudimentary protrusion, which is always present.<br><br><b><span class='lmLabel'>LM 12</span> - Antitragus Prominence:</b> Also called antitragal protrusion. It is located at the base of the antitragus, supported by cartilage, and can be highlighted by applying pressure with the staff's probe.<br><br><b><span class='lmLabel'>LM 13</span> - Antitragus Apex:</b> Located at the apex of the antitragus, the summit and highest point of the antitragus. It is found by tracing a vertical line passing through LM 2, LM 0, LM 13, and LM 7.<br><br><b><span class='lmLabel'>LM 14</span> - Antihelix Base:</b> It is a prominence at the base of the antihelix body that becomes evident when pressure is applied with the staff's probe in the post-antitragal or antehelical-antitragal groove. It represents the first cervical vertebrae.<br><br><b><span class='lmLabel'>LM 15</span> - Antihelix Curve:</b> Located on the crest of the antihelix, in the transition zone between the lower part of the antihelix body and the upper part. In this area, the transverse section of the antihelix changes its radius of curvature, which can be exploited with the staff to highlight the transition from the representation of the cervical spine to the representation of the dorsal spine.<br><br><b><span class='lmLabel'>LM 16</span> - Antihelix Incisure:</b> Located in the upper part of the antihelix body, where the lower root begins. In this area, the transverse section of the antihelix abruptly changes its radius. The upper part of the antihelix represents the dorsal vertebrae, while the lower root of the antihelix represents the lumbar vertebrae.<br><br><b><span class='lmLabel'>LM 17</span> - Midpoint of the Lower Antihelix Branch:</b> Located in a groove about halfway along the lower root of the antihelix. Corresponds to the lumbosacral representation area. This is the area that P. Nogier cauterized for the treatment of sciatic pain.<br><br><b><span class='lmLabel'>LM 18</span> - Internal Helix Insertion:</b> Located immediately below LM 1, at the junction between the ascending part of the helix and the lower root of the antihelix.<br><br><b><span class='lmLabel'>LM 19</span> - Midpoint of the Concha Cymba:</b> Located in the central point of the cymba concha.<br><br><b><span class='lmLabel'>LM 20</span> - Antihelix-Cymba Cymba:</b> Inferiorly to LM 15, at the point of intersection between the cymba concha and the cymba anterior wall.</b><br><br><b><span class='lmLabel'>LM 21</span> - Tragus-Lower Hemiconcha:</b> Located between the inner surface of the tragus and the lower hemiconcha. To locate it more accurately, follow the crest of the inner surface of the tragus from the tragus apex (LM 13) to the lower hemiconcha at the point of insertion.<br><br><b><span class='lmLabel'>LM 22</span> - Intertragic Incisure:</b> Located posteriorly and above LM 9, at the midpoint between the tragus and the antitragus.<br><br><b><span class='lmLabel'>LM 23</span> - Midpoint of the Tragus:</b> halfway between LM 10 and LM 11, where the tragus joins the face.",
+					TestoTeoria: "The size and shape of the ear can vary from person to person, which is why it is necessary to identify landmarks to locate specific regions of the auricular pavilion in each patient. There are 18 landmarks that can be recognized on different individuals. They are classified based on the different subsections of the auricular pavilion, starting from LM 0, which is located in the same position as a primary landmark called Point Zero, and continuing up to LM 23.<br><br><b><span class='lmLabel'>LM 0</span> - Ear Center:</b> A distinct notch is located in the most central position of the ear, where the cavum conchae meets the helix root. It can be easily detected with a fingernail or a metal probe. LM 0 is the most common landmark used as a reference for other anatomical regions of the auricular pavilion. This region of the helix root represents the autonomic solar plexus and the umbilical cord, bringing any body dysfunction towards a state of balance.<br><br><b><span class='lmLabel'>LM 1</span> - Helix Insertion:</b> Where the ascending branch of the helix root ends and separates from the face, and the helix knee begins. Corresponds to Bouridiol's Point R.<br><br><b><span class='lmLabel'>LM 2</span> - Helix Apex:</b> The highest point of the auricular pavilion located along a line that is vertically above LM 0. This area is also referred to as the master anti-inflammatory point and coincides with the French School's Omega2 point.<br><br><b><span class='lmLabel'>LM 3</span> - Superior Margin of Darwin's Tubercle:</b> The groove immediately above the auricular tubercle, separating Darwin's tubercle from the superior helix.<br><br><b><span class='lmLabel'>LM 4</span> - Inferior Margin of Darwin's Tubercle:</b> It coincides with the lower groove of Darwin's T. The area of the helix that extends from LM 4 to LM 5 represents the representation of the spinal cord.<br><br><b><span class='lmLabel'>LM 5</span> - Helix Curve:</b> Located in the tail of the helix, where the cartilaginous structure ends. The representation of the cervical spinal cord can be found in this area.<br><br><b><span class='lmLabel'>LM 6</span> - Helix-Lobule Incisure:</b> Corresponds to the helix-lobule groove, which is the insertion point between two hypothetical circumferences formed by the outer margin of the lobule and auricular lobe. The staff is practically used from the lobule to the posterior-inferior part of the cartilage to locate this point.<br><br><b><span class='lmLabel'>LM 7</span> - Lobule Base:</b> The lowest point of the lobule is vertically below a straight line passing through LM 2, LM 0, and LM 7.<br><br><b><span class='lmLabel'>LM 8</span> - Lobule Insertion:</b> The lowest point of the lobule that attaches to the mandible. The position of this landmark varies considerably. In some people, LM 8 is lower than LM 7, while in others, LM 8 is higher than LM 7.<br><br><b><span class='lmLabel'>LM 9</span> - Intertragic Notch:</b> This landmark is diametrically opposite the intertragic notch. It is located using the staff where the cartilage ends, and it is a transitional area between the auricular pavilion and the cheek.<br><br><b><span class='lmLabel'>LM 10</span> - Lower Tragus Prominence:</b> It coincides with the most prominent point of the lower tragus prominence. The lower tragus prominence is also physiologically the most noticeable.<br><br><b><span class='lmLabel'>LM 11</span> - Upper Tragus Prominence:</b> Corresponds to the upper tragus prominence. It is not always present. In such cases, it coincides with the rudimentary protrusion, which is always present.<br><br><b><span class='lmLabel'>LM 12</span> - Antitragus Prominence:</b> Also called antitragal protrusion. It is located at the base of the antitragus, supported by cartilage, and can be highlighted by applying pressure with the staff's probe.<br><br><b><span class='lmLabel'>LM 13</span> - Antitragus Apex:</b> Located at the apex of the antitragus, the summit and highest point of the antitragus. It is found by tracing a vertical line passing through LM 2, LM 0, LM 13, and LM 7.<br><br><b><span class='lmLabel'>LM 14</span> - Antihelix Base:</b> It is a prominence at the base of the antihelix body that becomes evident when pressure is applied with the staff's probe in the post-antitragal or antehelical-antitragal groove. It represents the first cervical vertebrae.<br><br><b><span class='lmLabel'>LM 15</span> - Antihelix Curve:</b> Located on the crest of the antihelix, in the transition zone between the lower part of the antihelix body and the upper part. In this area, the transverse section of the antihelix changes its radius of curvature, which can be exploited with the staff to highlight the transition from the representation of the cervical spine to the representation of the dorsal spine.<br><br><b><span class='lmLabel'>LM 16</span> - Antihelix Incisure:</b> Located in the upper part of the antihelix body, where the lower root begins. In this area, the transverse section of the antihelix abruptly changes its radius. The upper part of the antihelix represents the dorsal vertebrae, while the lower root of the antihelix represents the lumbar vertebrae.<br><br><b><span class='lmLabel'>LM 17</span> - Midpoint of the Lower Antihelix Branch:</b> Located in a groove about halfway along the lower root of the antihelix. Corresponds to the lumbosacral representation area. This is the area that P. Nogier cauterized for the treatment of sciatic pain.<br><br><b><span class='lmLabel'>LM 18</span> - Internal Helix Insertion:</b> Located immediately below LM 1, at the junction between the ascending part of the helix and the lower root of the antihelix.<br><br><b><span class='lmLabel'>LM 19</span> - Midpoint of the Rigid Concha:</b> Located in the central point of the rigid concha.<br><br><b><span class='lmLabel'>LM 20</span> - Antihelix-Rigid Concha:</b> Inferiorly to LM 15, at the point of intersection between the rigid concha and the concha wall.</b><br><br><b><span class='lmLabel'>LM 21</span> - Tragus-Inferior Concha:</b> Located between the inner surface of the tragus and the inferior concha. To locate it more accurately, follow the crest of the inner surface of the tragus from the tragus apex (LM 13) to the inferior concha at the point of insertion.<br><br><b><span class='lmLabel'>LM 22</span> - Intertragic Incisure:</b> Located posteriorly and above LM 9, at the midpoint between the tragus and the antitragus.<br><br><b><span class='lmLabel'>LM 23</span> - Midpoint of the Tragus:</b> halfway between LM 10 and LM 11, where the tragus joins the face.",
 					lm: true
 				}, 
 				{
@@ -9270,7 +9270,7 @@ DB.set = {
 				}, 
 				{
 					TitoloTeoria: "Innervation",
-					TestoTeoria: "In auriculotherapy, it is essential to understand the innervation of the auricle. The auricle is rich in nerves, and it is estimated to have approximately 10,000 sensory receptors located between the epidermis and dermis. The motor branches that reach the auricle and its intrinsic muscles come from the facial nerve (VII cranial nerve). Additionally, several nerves of the auricle originate from cranial and spinal nerves.<br>The auricle is entirely covered by a thin layer of skin that contains a dense network of nerves. This connection between the external ear regions and ectodermal tissue is significant.<br>The auricle has the peculiarity of having a dense interlacing of nerve fibers in its skin. This characteristic implies that we cannot talk about an area innervated by a single nerve branch but rather about prevailing innervation.<br><br><b style='color:#ff9900;'>•</b> <b style='text-decoration:underline;text-decoration-color:#ff9900;'>Auriculotemporal Nerve</b><br>The auriculotemporal nerve is a branch of the mandibular nerve of the trigeminal nerve. It primarily innervates the tragus, a part of the antitragus, the root and helical crus, the apex of the auricle, the triangular fossa, the inferior root, and a portion of the superior root of the antihelix.<br><br><b style='color:#0073cc;'>•</b> <b style='text-decoration:underline;text-decoration-color:#0073cc;'>Auricular Branch of the Vagus Nerve</b><br>The auricular branch of the vagus nerve (ABVN), or auricular branch, is the only cutaneous innervation provided by the vagus nerve. The vagus nerve innervates the majority of the upper concha and a significant part of the lower concha, the internal surface of the antitragus, and partially the tragus.<br><br><b style='color:#cc5331;'>•</b> <b style='text-decoration:underline;text-decoration-color:#cc5331;'>Lesser Occipital Nerve</b><br>The lesser occipital nerve arises from the superficial cervical plexus (PCS, C2-C3) and is responsible for innervating the helical body, its superior root, the scaphoid fossa, the helical area from the apex to the helical tail, and the triangular fossa.<br><br><b style='color:#049241;'>•</b> <b style='text-decoration:underline;text-decoration-color:#049241;'>Great Auricular Nerve</b><br>Similar to the lesser occipital nerve, the great auricular nerve also originates from the superficial cervical plexus (PCS, C2-C3). It mainly innervates the lobule and a portion of the helical body.",
+					TestoTeoria: "In auriculotherapy, it is essential to understand the innervation of the auricle. The auricle is rich in nerves, and it is estimated to have approximately 10,000 sensory receptors located between the epidermis and dermis. The motor branches that reach the auricle and its intrinsic muscles come from the facial nerve (VII cranial nerve). Additionally, several nerves of the auricle originate from cranial and spinal nerves.<br>The auricle is entirely covered by a thin layer of skin that contains a dense network of nerves. This connection between the external ear regions and ectodermal tissue is significant.<br>The auricle has the peculiarity of having a dense interlacing of nerve fibers in its skin. This characteristic implies that we cannot talk about an area innervated by a single nerve branch but rather about prevailing innervation.<br><br><b style='color:#ff9900;'>•</b> <b style='text-decoration:underline;text-decoration-color:#ff9900;'>Auriculotemporal Nerve</b><br>The auriculotemporal nerve is a branch of the mandibular nerve of the trigeminal nerve. It primarily innervates the tragus, a part of the antitragus, the root and helical crus, the apex of the auricle, the triangular fossa, the inferior root, and a portion of the superior root of the antihelix.<br><br><b style='color:#0073cc;'>•</b> <b style='text-decoration:underline;text-decoration-color:#0073cc;'>Auricular Branch of the Vagus Nerve</b><br>The auricular branch of the vagus nerve (ABVN), or auricular branch, is the only cutaneous innervation provided by the vagus nerve. The vagus nerve innervates the majority of the superior concha and a significant part of the inferior concha, the internal surface of the antitragus, and partially the tragus.<br><br><b style='color:#cc5331;'>•</b> <b style='text-decoration:underline;text-decoration-color:#cc5331;'>Lesser Occipital Nerve</b><br>The lesser occipital nerve arises from the superficial cervical plexus (PCS, C2-C3) and is responsible for innervating the helical body, its superior root, the scaphoid fossa, the helical area from the apex to the helical tail, and the triangular fossa.<br><br><b style='color:#049241;'>•</b> <b style='text-decoration:underline;text-decoration-color:#049241;'>Great Auricular Nerve</b><br>Similar to the lesser occipital nerve, the great auricular nerve also originates from the superficial cervical plexus (PCS, C2-C3). It mainly innervates the lobule and a portion of the helical body.",
 					anatomia: {
 						"Pelle": 0.5,
 						"Ossa": 0.7,
@@ -9279,7 +9279,7 @@ DB.set = {
 				}, 
 				{
 					TitoloTeoria: "Embryological Derivation",
-					TestoTeoria: "Vertebrate organisms are formed by the union of an egg and a sperm cell. The first cell that forms immediately divides to become a multicellular organism. This cell eventually folds in on itself and divides into three different layers of embryological tissue, from which all organs subsequently develop. These organs are projected onto specific regions of the auricle.<br><br><b style='color:#a77b8d;'>•</b> <b style='text-decoration:underline;text-decoration-color:#a77b8d;'>Endodermal Tissue</b><br>The endoderm gives rise to the gastrointestinal tract, the respiratory system, and abdominal organs such as the liver, pancreas, urethra, and bladder. Endoderm-derived organs are primarily represented in the concha. The ear takes the shape of a fetus with the head facing downward, resulting in supradiaphragmatic organs being represented in the lower concha, while subdiaphragmatic organs are represented in the upper concha.<br><br><b style='color:#f0bf43;'>•</b> <b style='text-decoration:underline;text-decoration-color:#f0bf43;'>Mesodermal Tissue</b><br>The mesoderm gives rise to skeletal muscles, cardiac muscles, smooth muscles, connective tissue, joints, bones, blood cells from the bone marrow, the circulatory system, and the lymphatic system. Mesoderm-derived organs are historically and mainly represented in the auricle's antihelix. Other organs of mesodermal origin are found in the scaphoid fossa, the triangular fossa, and partially in the ascending branch and helical crus.<br><br><b style='color:#d68750;'>•</b> <b style='text-decoration:underline;text-decoration-color:#d68750;'>Ectodermal Tissue</b><br>The ectoderm of the embryo gives rise to the superficial layer, namely the external skin, the cornea, the lens, the nasal epithelium, teeth, peripheral nerves, the spinal cord, the brain, the endocrine glands of the pituitary, pineal, and adrenal medulla.<br>Ectoderm-derived organs are predominantly represented in the auricle's lobule and helix. In the helix, the ectodermal representation starts from the apex of the auricle, passes through Darwin's Tubercle, and ends in the helical tail, which seamlessly merges with the auricular lobe.",
+					TestoTeoria: "Vertebrate organisms are formed by the union of an egg and a sperm cell. The first cell that forms immediately divides to become a multicellular organism. This cell eventually folds in on itself and divides into three different layers of embryological tissue, from which all organs subsequently develop. These organs are projected onto specific regions of the auricle.<br><br><b style='color:#a77b8d;'>•</b> <b style='text-decoration:underline;text-decoration-color:#a77b8d;'>Endodermal Tissue</b><br>The endoderm gives rise to the gastrointestinal tract, the respiratory system, and abdominal organs such as the liver, pancreas, urethra, and bladder. Endoderm-derived organs are primarily represented in the concha. The ear takes the shape of a fetus with the head facing downward, resulting in supradiaphragmatic organs being represented in the inferior concha, while subdiaphragmatic organs are represented in the superior concha.<br><br><b style='color:#f0bf43;'>•</b> <b style='text-decoration:underline;text-decoration-color:#f0bf43;'>Mesodermal Tissue</b><br>The mesoderm gives rise to skeletal muscles, cardiac muscles, smooth muscles, connective tissue, joints, bones, blood cells from the bone marrow, the circulatory system, and the lymphatic system. Mesoderm-derived organs are historically and mainly represented in the auricle's antihelix. Other organs of mesodermal origin are found in the scaphoid fossa, the triangular fossa, and partially in the ascending branch and helical crus.<br><br><b style='color:#d68750;'>•</b> <b style='text-decoration:underline;text-decoration-color:#d68750;'>Ectodermal Tissue</b><br>The ectoderm of the embryo gives rise to the superficial layer, namely the external skin, the cornea, the lens, the nasal epithelium, teeth, peripheral nerves, the spinal cord, the brain, the endocrine glands of the pituitary, pineal, and adrenal medulla.<br>Ectoderm-derived organs are predominantly represented in the auricle's lobule and helix. In the helix, the ectodermal representation starts from the apex of the auricle, passes through Darwin's Tubercle, and ends in the helical tail, which seamlessly merges with the auricular lobe.",
 					mappa: "NERVI"
 				}
 			],

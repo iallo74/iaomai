@@ -708,6 +708,12 @@ body:not(.bodyStyled2) #scheda_testo2{
 #scheda.scheda_teoria li{
 	margin: 4px 0px !important;
 }
+#scheda.scheda_ideogramma #scheda_testo{
+    padding-right: 69px;
+}
+#scheda.scheda_ideogramma #scheda_testo::-webkit-scrollbar {
+	background: #999;
+}
 #scheda h1 *{
 	font-size: var(--font-30-9);
     font-weight: normal;

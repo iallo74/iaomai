@@ -69,7 +69,23 @@ var MODULO_TEORIA = { // extend SET
 		}
 		// --------------------------
 		var titolo = DB.set.teoria[p].contenuti[t].TitoloTeoria;
-		var html = "<h1>"+htmlEntities(titolo)+"</h1>";
+		var html = '';
+		var addTabStyle = '';
+
+		if(DB.set.teoria[p].contenuti[t].sigla){
+			let meridiano = DB.set.teoria[p].contenuti[t].sigla;
+			let ideogramma = '';
+			let ideogrammaOr = DB.mtc.meridiani[meridiano].ideogramma ;
+			lI = ideogrammaOr.length;
+			for(let l=0;l<lI;l++){
+				ideogramma += ideogrammaOr[l];
+				if(l<lI-1)ideogramma += "<br>";
+			}
+			html += '<div class="ideogrammaMeridianoChar">'+ideogramma+'</div>';
+			addTabStyle = ' scheda_ideogramma';
+		}
+
+		html += "<h1>"+htmlEntities(titolo)+"</h1>";
 		var html_cont = SET.convPuntiScheda(DB.set.teoria[p].contenuti[t].TestoTeoria);
 		html += html_cont;
 		

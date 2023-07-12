@@ -960,7 +960,7 @@ var PAZIENTI_FILTRI = {
 						if(PAZIENTI.parametriFiltri[p].cat==els[e].dataset.cat)presente = p;
 					}
 					if(presente==-1)PAZIENTI.parametriFiltri.push({"cat": els[e].dataset.cat, "et": els[e].dataset.et, "elems": [ els[e].dataset.elem ], "pazienti": elencoLoc });
-					else PAZIENTI.parametriFiltri[p].elems.push(els[e].dataset.elem);
+					else PAZIENTI.parametriFiltri[presente].elems.push(els[e].dataset.elem);
 					for(let f in elencoLoc){
 						if(elenco.indexOf(elencoLoc[f])==-1)elenco.push(elencoLoc[f])
 					}

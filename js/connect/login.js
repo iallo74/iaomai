@@ -2311,7 +2311,7 @@ var LOGIN = {
 				LOGIN.addHTML("<i>"+TXT("Stato")+":</i> "+backup.pazienti[p].Stato+"<br>");
 				LOGIN.addHTML("<i>"+TXT("Telefono")+":</i> "+backup.pazienti[p].Telefono+"<br>");
 				var prefisso = '';
-				if(backup.pazienti[p].paeseCellulare)prefisso = countries[backup.pazienti[p].paeseCellulare].prefisso;
+				if(backup.pazienti[p].paeseCellulare)prefisso = DB.INT.paesi[backup.pazienti[p].paeseCellulare].prefisso;
 				LOGIN.addHTML("<i>"+TXT("Cellulare")+":</i> "+prefisso+backup.pazienti[p].Cellulare+"<br>");
 				LOGIN.addHTML("<i>"+TXT("Email")+":</i> "+backup.pazienti[p].Email+"<br>");
 				LOGIN.addHTML("<i>"+TXT("Sesso")+":</i> "+TXT(""+backup.pazienti[p].sesso)+"<br>");
@@ -2378,7 +2378,8 @@ var LOGIN = {
 							LOGIN.addHTML("<i>"+TXT("Costo")+":</i> <b>"+ArrotondaEuro(trattamenti[t].CostoTrattamento)+"</b><br>");
 							var TT=trattamenti[t].TestoTrattamento;
 							if(trattamenti[t].TipoTrattamento=='A'){
-							TT=JSON.parse(TT);
+								//console.log(TT)
+								//TT=JSON.parse(TT);
 								LOGIN.addHTML("<i>"+TXT("AnamnesiMotivo")+":</i> "+TT.AnamnesiMotivo+"<br>");
 								LOGIN.addHTML("<i>"+TXT("AnamnesiDiagnosiOccidentale")+":</i> "+TT.AnamnesiDiagnosiOccidentale+"<br>");
 								LOGIN.addHTML("<i>"+TXT("AnamnesiDiagnosiMTC")+":</i> "+TT.AnamnesiDiagnosiMTC+"<br>");
@@ -2386,9 +2387,10 @@ var LOGIN = {
 							
 							if(trattamenti[t].sintomi.length>0){
 								var txtSintomi='';
-								for(let s in trattamenti[t].sintomi){
-									txtSintomi+=trattamenti[t].sintomi[s].NomeSintomo+" <b>(";
-									if(trattamenti[t].sintomi[s].score>-1)txtSintomi+=trattamenti[t].sintomi[s].score;
+								var sintomi = JSON.parse(trattamenti[t].sintomi);
+								for(let s in sintomi){
+									txtSintomi+=sintomi[s].NomeSintomo+" <b>(";
+									if(sintomi[s].score>-1)txtSintomi+=sintomi[s].score;
 									else txtSintomi+='-';
 									txtSintomi+=")</b>, ";
 								}
@@ -2396,7 +2398,7 @@ var LOGIN = {
 								LOGIN.addHTML("<i>"+TXT("Sintomi")+":</i> "+txtSintomi+"<br>");
 							}
 							if(trattamenti[t].puntiMTC){
-								var punti=trattamenti[t].puntiMTC;
+								var punti=JSON.parse(trattamenti[t].puntiMTC);
 								var txtPunti='';
 								for(let f in punti){
 									nPunto=punti[f].n;
@@ -2418,7 +2420,7 @@ var LOGIN = {
 								if(txtPunti)LOGIN.addHTML("<i>"+TXT("PuntiTrattamento")+":</i> "+txtPunti+"<br>");
 							}
 							if(trattamenti[t].puntiNamikoshi){
-								var punti=trattamenti[t].puntiNamikoshi;
+								var punti=JSON.parse(trattamenti[t].puntiNamikoshi);
 								var txtPunti='';
 								for(let f in punti){
 									siglaPunto=punti[f].s;
@@ -2435,7 +2437,7 @@ var LOGIN = {
 								if(txtPunti)LOGIN.addHTML("<i>"+TXT("PuntiNamikoshi")+":</i> "+txtPunti+"<br>");
 							}
 							if(trattamenti[t].meridiani){
-								var meridiani=trattamenti[t].meridiani;
+								var meridiani=JSON.parse(trattamenti[t].meridiani);
 								var txtMeridiani='';
 								for(let m in meridiani){
 									siglaMeridiano=meridiani[m].siglaMeridiano;
@@ -2453,7 +2455,7 @@ var LOGIN = {
 								if(txtMeridiani)LOGIN.addHTML("<i>"+TXT("MeridianiTrattamento")+":</i> "+txtMeridiani+"<br>");
 							}
 							if(trattamenti[t].puntiAuricolari){
-								var punti=trattamenti[t].puntiAuricolari;
+								var punti=JSON.parse(trattamenti[t].puntiAuricolari);
 								var txtPunti='';
 								for(let f in punti){
 									siglaPunto=punti[f].s;

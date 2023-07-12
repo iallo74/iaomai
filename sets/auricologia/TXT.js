@@ -121,7 +121,7 @@ DB.TXT.set = {
     },
     Mappa_COL: {
         ita: "Settori colorati",
-        eng: "Coloured sectors",
+        eng: "Colored sectors",
         esp: "Sectores coloreados",
         fra: "Secteurs colorés",
         por: "Setores coloridos",
@@ -320,7 +320,7 @@ DB.TXT.set = {
         deu: "Hintere Muschel"
     },
     Legenda_DidaFrequenze: {
-        ita: "Frequenza laser / frequenza elettrica",
+        ita: "Frequenza laser / Frequenza elettrica",
         eng: "Laser frequency / Electrical frequency",
         esp: "Frecuencia láser / Frecuencia eléctrica",
         fra: "Fréquence laser / Fréquence électrique",
@@ -385,7 +385,7 @@ DB.TXT.set = {
     },
     Legenda_DidaPunti_tit: {
         ita: "Punti e aree",
-        eng: "Points and areas",
+        eng: "Points and Areas",
         esp: "Puntos y áreas",
         fra: "Points et zones",
         por: "Pontos e áreas",
@@ -481,7 +481,7 @@ DB.TXT.set = {
     },
     Patologie: {
         ita: "Patologie e protocolli",
-        eng: "Pathologies and protocols",
+        eng: "Pathologies and Protocols",
         esp: "Patologías y protocolos",
         fra: "Pathologies et protocoles",
         por: "Patologias e protocolos",
@@ -632,19 +632,19 @@ DB.TXT.set = {
         deu: "Therapeutische Vorschläge"
     },
     ProtocolloLovatoG: {
-        ita: "Protocollo per la riduzione graduale di Lovato",
-        eng: "Protocol for the gradual reduction of Lovato",
-        esp: "Protocolo para la reducción gradual de Lovato",
-        fra: "Protocole pour la réduction graduelle de Lovato",
-        por: "Protocolo para a redução gradual de Lovato",
+        ita: "Protocollo per la riduzione graduale del fumo, di Lovato",
+        eng: "Lovato's protocol for the gradual reduction of smoking",
+        esp: "Protocolo para la reducción gradual del fumo, de Lovato",
+        fra: "Protocole pour la réduction graduelle, de Lovato",
+        por: "Protocolo para a redução gradual, de Lovato",
         deu: "Protokoll zur schrittweisen Reduzierung von Lovato"
     },
     ProtocolloLovatoI: {
-        ita: "Protocollo per smettere improvvisamente di Lovato",
-        eng: "Protocol to suddenly stop Lovato",
-        esp: "Protocolo para dejar de fumar repentinamente de Lovato",
-        fra: "Protocole pour arrêter brusquement Lovato",
-        por: "Protocolo para parar de fumar Lovato repentinamente",
+        ita: "Protocollo per smettere improvvisamente, di Lovato",
+        eng: "Lovato's protocol to suddenly stop smoking",
+        esp: "Protocolo para dejar de fumar repentinamente, de Lovato",
+        fra: "Protocole pour arrêter brusquement, de Lovato",
+        por: "Protocolo para parar de fumar repentinamente,  Lovato",
         deu: "Protokoll zum plötzlichen Beenden von Lovato"
     },
     ProtocolloRossato: {
@@ -697,7 +697,7 @@ DB.TXT.set = {
     },
     Mappa: {
         ita: "Punti e aree",
-        eng: "Points and areas",
+        eng: "Points and Areas",
         esp: "Puntos y áreas",
         fra: "Points et zones",
         por: "Pontos e áreas",
@@ -985,7 +985,7 @@ DB.TXT.set = {
     },
     Approfondimenti: {
         ita: "Approfondimenti",
-        eng: "Further details",
+        eng: "In-depth Studies",
         esp: "Detalles adicionales",
         fra: "Plus de détails",
         por: "Mais detalhes",
@@ -993,7 +993,7 @@ DB.TXT.set = {
     },
     Procedure: {
         ita: "Procedure personali",
-        eng: "Custom procedures",
+        eng: "Custom Procedures",
         esp: "Procedimientos personalizados",
         fra: "Procédures personnalisées",
         por: "Procedimentos personalizados",
@@ -1321,7 +1321,7 @@ DB.TXT.set = {
     },
     TestTxt2: {
         ita: "Con motivazione o dipendenza bassa si consiglia di non effettuare alcuna terapia",
-        eng: "If motivation or dependence is low, it is advisable not to undergo any therapy",
+        eng: "With low motivation or dependence, it is advisable not to undergo any therapy",
         esp: "Si la motivación o la dependencia es baja, se recomienda no realizar ninguna terapia",
         fra: "Si la motivation ou la dépendance est faible, il est conseillé de ne pas suivre de thérapie",
         por: "Se a motivação ou dependência estiver baixa, é aconselhável não realizar nenhuma terapia",

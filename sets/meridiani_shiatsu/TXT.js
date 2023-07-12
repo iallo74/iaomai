@@ -145,7 +145,7 @@ DB.TXT.set = {
 	},
 	Patologie: {
 		ita: "Protocolli Shiatsu",
-		eng: "Shiatsu protocols",
+		eng: "Shiatsu Protocols",
 		esp: "Protocolos Shiatsu",
 		fra: "Protocoles Shiatsu",
 		por: "Protocolos shiatsu",
@@ -169,7 +169,7 @@ DB.TXT.set = {
 	},
 	MappaPunti: {
 		ita: "Mappa dei punti",
-		eng: "Points map",
+		eng: "Points Map",
 		esp: "Mapa de puntos",
 		fra: "Carte des points",
 		por: "Mapa de pontos",
@@ -201,7 +201,7 @@ DB.TXT.set = {
 	},
 	Approfondimenti: {
 		ita: "Approfondimenti",
-		eng: "Further details",
+		eng: "In-depth Studies",
 		 esp: "Más detalles",
 		fra: "Plus de détails",
 		por: "Mais detalhes",
@@ -209,7 +209,7 @@ DB.TXT.set = {
 	},
 	Procedure: {
 		ita: "Procedure personali",
-		eng: "Custom procedures",
+		eng: "Custom Procedures",
 		esp: "Procedimientos personalizados",
 		fra: "Procédures personnalisées",
 		por: "Procedimentos personalizados",

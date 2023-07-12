@@ -21,10 +21,10 @@ body.orecchio #pulsante_modello{
 	display:none;
 }
 
-.ideogrammaPunto{
+.simboliPunto{
 	float:right;
 }
-.smart .ideogrammaPunto{
+.smart .simboliPunto{
 	margin-top: 20px;
 }
 

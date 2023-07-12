@@ -19,7 +19,8 @@ var MODULO_PUNTO = { // extend SET
 		var imgZoom = __(DB.mtc.meridiani[siglaMeridiano].punti[nPunto].imgZoom);
 		var TS = meridiano.punti[nPunto];
 		var cartella = DB.mtc.meridiani[siglaMeridiano].cartella;
-		var HTML = "<h1>"+htmlEntities(titolo)+"</h1>";
+		let pattern = /[0-9]{1,2}\.[A-Z]{2}\.\s[^\(]+\(([^\)]+)\)/g;
+		var HTML = "<h1>"+ +nPunto +"."+siglaMeridiano+". "+htmlEntities(DB.mtc.meridiani[siglaMeridiano].punti[nPunto].pinyin)+"<br><i>"+htmlEntities(titolo.replace(pattern,"$1"))+"</i></h1>";
 		var HTML_simboli = '';
 		
 		// noMoxa
@@ -128,10 +129,16 @@ var MODULO_PUNTO = { // extend SET
 		if(imgZoom)imgDettaglio='<div style="position:relative;width:'+wCont+'px;"><img src="sets/common/mtc/img/zoom/'+imgZoom+'" border="0" width="'+wCont+'" id="imgDettPunto">'+posPunti+'</div>';
 		
 		
-		
-		// ideogramma
-		HTML = 	'<img 	src="sets/common/mtc/img/txt_meridiani/'+siglaMeridiano+'/punto_'+nPunto+'.png"' +
-				'		class="ideogrammaPunto">'+HTML;
+		let ideogramma = '',
+			ideogrammaOr = DB.mtc.meridiani[siglaMeridiano].punti[nPunto].ideogramma,
+			lI = ideogrammaOr.length;
+		for(let l=0;l<lI;l++){
+			ideogramma += ideogrammaOr[l];
+			if(l<lI-1)ideogramma += "<br>";
+		}
+		HTML = 	'<div class="ideogrammaPuntoChar">'+ideogramma+'</div>'+HTML;
+
+
 		
 		HTML = '<div class="translatable">'+HTML+'</div>';
 		HTML += imgDettaglio;

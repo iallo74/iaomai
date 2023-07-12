@@ -264,7 +264,7 @@ SET = {
 		
 		manichinoCaricato = true;
 		SET.componiPatologie();
-		SET.caricaMeridiani();
+		SET.componiMeridiani();
 		SET.caricaApprofondimenti();
 		if(DB.procedure)SET.car_procedure(-1,1);
 		
@@ -912,8 +912,8 @@ SET = {
 						 '  onMouseOut="SET.overPunto(this,false);"' +
 						 '	id="pt_'+pp.nPunto+'_'+pp.siglaMeridiano+'"';
 		html += '> '+siglaPunto;//+' ';
-		if(esteso)html+='<i>'+nomePunto;
-		html+='</i></a>';
+		if(esteso)html += (siglaMeridiano=='NK' ? "":".")+' <i>'+nomePunto+'</i>';
+		html+='</a>';
 		return html;
 	},
 	selPunto: function( nPunto, siglaMeridiano, N='', el=null ){

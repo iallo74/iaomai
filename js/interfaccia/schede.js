@@ -135,8 +135,14 @@ var SCHEDA = {
 			};
 			SCHEDA.scheda2Aperta = true;
 		}
-		if(SCHEDA.classeAperta)document.getElementById("scheda").classList.remove(SCHEDA.classeAperta);
-		if(classe)document.getElementById("scheda").classList.add(classe);
+		if(SCHEDA.classeAperta){
+			let pC = SCHEDA.classeAperta.split(" ");
+			for(let p in pC)document.getElementById("scheda").classList.remove(pC[p]);
+		}
+		if(classe){
+			let pC = classe.split(" ");
+			for(let p in pC)document.getElementById("scheda").classList.add(pC[p]);
+		}
 		if(!ritorno){
 			SCHEDA.classeAperta = classe;
 			SCHEDA.torna();

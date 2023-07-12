@@ -226,7 +226,7 @@ SET = {
 		DB.set.patologie.sort(sort_by("NomePatologia"));
 		
 		manichinoCaricato = true;
-		SET.caricaMeridiani();
+		SET.componiMeridiani();
 		SET.caricaPatologie();
 		SET.caricaApprofondimenti();
 		if(DB.procedure)SET.car_procedure(-1,1);

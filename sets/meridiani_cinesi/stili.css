@@ -1,6 +1,11 @@
 @charset "utf-8";
 /* CSS Document */
 
+#impset {
+    height: 420px;
+    margin-top: -210px;
+}
+
 #pulsante_modello{
 	background-image: url(../anatomy_full/img/logoMenuN.png) !important;
     background-repeat: no-repeat !important;
@@ -17,10 +22,43 @@ body.uomo #pulsante_modello{
 	display:none;
 }
 
-.ideogrammaPunto{
+/*.simboliPunto{
 	float:right;
+}*/
+.smart .simboliPunto{
+	margin-top: 20px;
 }
-.smart .ideogrammaPunto{
+.ideogrammaPuntoChar,
+.ideogrammaMeridianoChar{
+	font-family: adobe-clean-han-simplified-c,adobe-clean,PingFang SC,SimSun,Heiti SC Light,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,sans-serif;
+	font-weight: bold;
+	font-size: 40px;
+	float: right;
+}
+.ideogrammaPuntoChar{
+	border-radius: 20px;
+	background-color: #999999;
+	color: #FFF;
+	padding: 15px 10px;
+	margin: -15px;
+}
+.ideogrammaMeridianoChar{
+	position: absolute;
+    right: 8px;
+    padding: 14px;
+    background-color: #999;
+    color: #FFF;
+	width:69px;
+}
+#scheda.schLato .ideogrammaMeridianoChar{
+    top: 46px;
+    height: calc(100% - 46px);
+}
+#scheda:not(.schLato) .ideogrammaMeridianoChar{
+    top: 71px;
+    height: calc(100% - 71px);
+}
+.smart .ideogrammaPuntoChar{
 	margin-top: 20px;
 }
 

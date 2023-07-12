@@ -3498,7 +3498,7 @@ DB.TXT = {
         },
         SchedaCiclo: {
             ita: "Riepilogo",
-            eng: "Summary",
+            eng: "Report",
             esp: "Resumen",
             fra: "Résumé",
             por: "Visão geral",
@@ -3734,7 +3734,7 @@ DB.TXT = {
         },
         AnnullaFiltri: {
             ita: "Annulla i filtri",
-            eng: "Cancel filters",
+            eng: "Reset filters",
             esp: "Cancelar filtros",
             fra: "Annuler les filtres",
             por: "Cancelar filtros",

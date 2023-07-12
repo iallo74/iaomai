@@ -61,11 +61,28 @@ var MODULO_TEORIA = { // extend SET
 		// --------------------------
 		var titolo = DB.set.teoria[p].contenuti[t].TitoloTeoria;
 		var occhiello = __(DB.set.teoria[p].contenuti[t].OcchielloTeoria);
+		var meridianiSecondari = __(DB.set.teoria[p].contenuti[t].meridianiSecondari);
 		var html = '';
+		var addTabStyle = '';
+
+		if(meridianiSecondari){
+			let meridiano = meridianiSecondari[0].split("_")[0];
+			let ideogramma = '';
+			let ideogrammaOr = DB.mtc.meridiani?.[meridiano]?.ideogramma || DB.mtc.straordinari?.[meridiano]?.ideogramma;
+			lI = ideogrammaOr.length;
+			for(let l=0;l<lI;l++){
+				ideogramma += ideogrammaOr[l];
+				if(l<lI-1)ideogramma += "<br>";
+			}
+			html += '<div class="ideogrammaMeridianoChar">'+ideogramma+'</div>';
+			addTabStyle = ' scheda_ideogramma';
+		}
+		
+
+
 		if(occhiello)html += "<i>"+htmlEntities(occhiello)+"</i>";
 		html += "<h1>"+htmlEntities(titolo)+"</h1>";
 		var html_cont = SET.convPuntiScheda(DB.set.teoria[p].contenuti[t].TestoTeoria);
-		var meridianiSecondari = __(DB.set.teoria[p].contenuti[t].meridianiSecondari);
 		
 		html += html_cont;
 		var espansa = true;
@@ -84,7 +101,7 @@ var MODULO_TEORIA = { // extend SET
 								"SET.spegniMeridiani(true);" +
 								"SET.spegniMeridianoSecondario('',true);" +
 								"SET.spegniMeridiani(true);",
-								'scheda_teoria',
+								'scheda_teoria'+addTabStyle,
 								ritorno,
 								espansa,
 								btn,

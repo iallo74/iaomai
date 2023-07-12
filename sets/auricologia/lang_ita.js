@@ -2,17 +2,17 @@ DB.set= {
     punti: {
         "101": {
             NomePunto: "Duodeno",
-            AzioniPunto: "<p><b>Azione<br></b>Punto indicato per la sua efficacia nella riduzione dei disturbi correlati alla digestione, disturbi alimentari, diarrea e ulcere duodenali.</p><p><b>Ubicazione</b><br>SC1-PC3, nell'emiconca superiore, appena al di sopra della conca rigida. Subito dietro al [.000.]</p><p></p>",
+            AzioniPunto: "<p><b>Azione<br></b>Punto indicato per la sua efficacia nella riduzione dei disturbi correlati alla digestione, disturbi alimentari, diarrea e ulcere duodenali.</p><p><b>Ubicazione</b><br>SC1-PC3, nell'emiconca superiore, appena al di sopra della conca rigida. Subito dietro al [.000.].</p>",
             ChiaviPunto: ""
         },
         "104": {
             NomePunto: "Omega 1",
-            AzioniPunto: "<p><b>Altri nomi</b><br>- Plesso ipogastrico<br>- Punto MASTER vegetativo</p><p><b>Azione</b><br>Questo è il Punto Master del tessuto endotermico detto anche Punto delle Mucose. È molto efficace per trattare tutti i disturbi digestivi, dolori viscerali e stress viscerale.</p><p><b>Ubicazione</b><br>SC2, poco sopra e posteriormente al [.000.]</p>",
+            AzioniPunto: "<p><b>Altri nomi</b><br>- Plesso ipogastrico<br>- Punto MASTER vegetativo</p><p><b>Azione</b><br>Questo è il Punto Master del tessuto endotermico detto anche Punto delle Mucose. È molto efficace per trattare tutti i disturbi digestivi, dolori viscerali e stress viscerale.</p><p><b>Ubicazione</b><br>SC2, poco sopra e posteriormente al [.000.].</p>",
             ChiaviPunto: ""
         },
         "105": {
             NomePunto: "Uretere EUR",
-            AzioniPunto: "<p><b>Azione<br></b>Il Punto Uretere trova la sua efficacia in tutte le patologie correlate alle vie urinarie in particolare alle vie escretrici.</p><p><b>Ubicazione</b><br>IH4, nella parte interna dell'elice all'altezza della radice dell'antelice, poco sopra</p>",
+            AzioniPunto: "<p><b>Azione<br></b>Il Punto Uretere trova la sua efficacia in tutte le patologie correlate alle vie urinarie in particolare alle vie escretrici.</p><p><b>Ubicazione</b><br>IH4, nella parte interna dell'elice all'altezza della radice dell'antelice, poco sopra.</p>",
             ChiaviPunto: ""
         },
         "106": {
@@ -22,7 +22,7 @@ DB.set= {
         },
         "108": {
             NomePunto: "Prostata",
-            AzioniPunto: "<p><b>Azione<br></b>Secondo la Scuola Cinese, questo punto viene adottato per trattare le patologie urinarie e della prostata; possiede un'ottima efficacia per i disturbi dell'apparato riproduttivo.</p><p><b>Ubicazione</b><br>SC4, nell'emiconca superiore, verso il punto in cui la radice inferiore dell'antelice incontra l'elice</p>",
+            AzioniPunto: "<p><b>Azione<br></b>Secondo la Scuola Cinese, questo punto viene adottato per trattare le patologie urinarie e della prostata; possiede un'ottima efficacia per i disturbi dell'apparato riproduttivo.</p><p><b>Ubicazione</b><br>SC4, nell'emiconca superiore, verso il punto in cui la radice inferiore dell'antelice incontra l'elice.</p>",
             ChiaviPunto: ""
         },
         "109": {
@@ -32,17 +32,17 @@ DB.set= {
         },
         "110": {
             NomePunto: "Orecchio esterno EUR",
-            AzioniPunto: "<p><b>Azione</b><br>Vertigini, ronzii e tinnitus.</p><p><b>Ubicazione</b><br>LO5, nella parte inferiore e periferica del lobulo, antero-inferiormente al punto ATM</p>",
+            AzioniPunto: "<p><b>Azione</b><br>Vertigini, ronzii e tinnitus.</p><p><b>Ubicazione</b><br>LO5, nella parte inferiore e periferica del lobulo, antero-inferiormente al punto ATM.</p>",
             ChiaviPunto: ""
         },
         "111": {
             NomePunto: "Rene CIN",
-            AzioniPunto: "<p><b>Azione<br></b>Il punto Rene, viene utilizzato dalla Scuola Cinese, per la sua azione di riequilibrio sia sull'aspetto fisico che emotivo. È molto utile per ridurre i dolori e disturbi correlati ai reni in particolare all'apparato urinario. Viene inoltre indicato per il trattamento dello stress, astenia, depressione e acufeni.</p><p><b>Ubicazione</b><br>SC6-CW8, al confine tra emiconca superiore ed avanmuro poco anteriormente da dove inizia la radice inferiore dell'antelice</p>",
+            AzioniPunto: "<p><b>Azione<br></b>Il punto Rene viene utilizzato dalla Scuola Cinese per la sua azione di riequilibrio sia sull'aspetto fisico che emotivo. È molto utile per ridurre i dolori e disturbi correlati ai reni in particolare all'apparato urinario. Viene inoltre indicato per il trattamento dello stress, astenia, depressione e acufeni.</p><p><b>Ubicazione</b><br>SC6-CW8, al confine tra emiconca superiore ed avanmuro poco anteriormente da dove inizia la radice inferiore dell'antelice.</p>",
             ChiaviPunto: ""
         },
         "112": {
             NomePunto: "Commessura Rinencefalica",
-            AzioniPunto: "<p><b>Azione<br></b>In combinazione con la [.113.] e il [.254.], favorisce le connessini intraemisferiche cerebrali.</p><p><b>Ubicazione</b><br>Al confine tra la guancia e il trago, in prossimità del punto [.195.]</p>",
+            AzioniPunto: "<p><b>Azione<br></b>In combinazione con la [.113.] e il [.254.], favorisce le connessini intraemisferiche cerebrali.</p><p><b>Ubicazione</b><br>Al confine tra la guancia e il trago, in prossimità del punto [.195.].</p>",
             ChiaviPunto: "",
 			"hidden": true
         },
@@ -54,12 +54,12 @@ DB.set= {
         },
         "114": {
             NomePunto: "Cistifellea",
-            AzioniPunto: "<p><b>Altri nomi</b><br>- Vescicola biliare</p><p><b>Azione</b><br>Questo punto è molto efficace per il trattamento di tutti quei disturbi correlati al corretto funzionamento dell'apparato gastrointestinale. Utilizzato inoltre in casi di emicranie ed acufeni.</p><p><b>Ubicazione</b><br>SC8-PC3, nell'emiconca superiore, subito al di sopra della conca rigida.<br>N.B. Solo nell'orecchio destro</p>",
+            AzioniPunto: "<p><b>Altri nomi</b><br>- Vescicola biliare<br>- Colecisti</p><p><b>Azione</b><br>Questo punto è molto efficace per il trattamento di tutti quei disturbi correlati al corretto funzionamento dell'apparato gastrointestinale. Utilizzato inoltre in casi di emicranie ed acufeni.</p><p><b>Ubicazione</b><br>SC8-PC3, nell'emiconca superiore, subito al di sopra della conca rigida.<br>N.B. Solo nell'orecchio destro.</p>",
             ChiaviPunto: ""
         },
         "115": {
             NomePunto: "Milza EUR",
-            AzioniPunto: "<p><b>Azione<br></b>Secondo la Scuola Francese questo punto viene utilizzato per trattare tutte le patologie correlate al sistema immunitario e linfatico. Trova un'ottima applicazione anche per trattare i disturbi digestivi.</p><p><b>Ubicazione</b><br>SC8, al confine tra l'emiconca superiore e la conca rigida, vicino all'avanmuro.<br>N.B. Solo sull'orecchio sinistro</p>",
+            AzioniPunto: "<p><b>Azione<br></b>Secondo la Scuola Francese questo punto viene utilizzato per trattare tutte le patologie correlate al sistema immunitario e linfatico. Trova un'ottima applicazione anche per trattare i disturbi digestivi.</p><p><b>Ubicazione</b><br>SC8, al confine tra l'emiconca superiore e la conca rigida, vicino all'avanmuro.<br>N.B. Solo sull'orecchio sinistro.</p>",
             ChiaviPunto: ""
         },
         "116": {
@@ -74,7 +74,7 @@ DB.set= {
         },
         "118": {
             NomePunto: "Ghiandola surrenale EUR",
-            AzioniPunto: "<p><b>Altri nomi</b><br>- Cortisolo<br>- Surrene</p><p><b>Azione</b><br>Come suggerito dal nome, questo punto è indicato per trattare tutti i disturbi correlati alle ghiandole surrenali.</p><p><b>Ubicazione</b><br>CW7-SC7, nella zona di passaggio tra avanmuro ed emiconca superiore, sulla verticale del punto [.001.]</p>",
+            AzioniPunto: "<p><b>Altri nomi</b><br>- Cortisolo<br>- Surrene</p><p><b>Azione</b><br>Come suggerito dal nome, questo punto è indicato per trattare tutti i disturbi correlati alle ghiandole surrenali.</p><p><b>Ubicazione</b><br>CW7-SC7, nella zona di passaggio tra avanmuro ed emiconca superiore, sulla verticale del punto [.001.].</p>",
             ChiaviPunto: ""
         },
         "119": {
@@ -84,22 +84,22 @@ DB.set= {
         },
         "120": {
             NomePunto: "Ganglio cervicale inferiore",
-            AzioniPunto: "<p><b>Altri nomi</b><br>- Ganglio stellato</p><p><b>Azione</b><br>La scuola Francese indica questo punto per la sua efficacia nella riduzione dei disturbi neurologici della periferica dorsale e tutti i dolori neuropatici correlati all'arto superiore e del tronco.</p><p><b>Ubicazione</b><br>CW5, nell'avanmuro, poco sopra al punto di incontro con la conca rigida</p>",
+            AzioniPunto: "<p><b>Altri nomi</b><br>- Ganglio stellato</p><p><b>Azione</b><br>La scuola Francese indica questo punto per la sua efficacia nella riduzione dei disturbi neurologici della periferica dorsale e tutti i dolori neuropatici correlati all'arto superiore e del tronco.</p><p><b>Ubicazione</b><br>CW5, nell'avanmuro, poco sopra al punto di incontro con la conca rigida.</p>",
             ChiaviPunto: ""
         },
         "121": {
             NomePunto: "Fegato",
-            AzioniPunto: "<p><b>Azione<br></b>Il punto Fegato è indicato in caso di disturbi anemici, ansia, stress e ipertensione. Consigliato nel trattamento di disturbi epatici ed all'apparato digerente.</p><p><b>Ubicazione</b><br>CR2-SC8, al confine tra l'emiconca superiore e la conca rigida<br>N.B. Solo nell'orecchio destro</p>",
+            AzioniPunto: "<p><b>Azione<br></b>Il punto Fegato è indicato in caso di disturbi anemici, ansia, stress e ipertensione. Consigliato nel trattamento di disturbi epatici ed all'apparato digerente.</p><p><b>Ubicazione</b><br>CR2-SC8, al confine tra l'emiconca superiore e la conca rigida<br>N.B. Solo nell'orecchio destro.</p>",
             ChiaviPunto: ""
         },
         "122": {
             NomePunto: "Milza CIN",
-            AzioniPunto: "<p><b>Azione<br></b>Secondo la Scuola Cinese questo punto viene utilizzato per trattare tutte le patologie correlate al sistema immunitario e linfatico. Trova un'ottima applicazione anche per trattare i disturbi muscolari e tendinei.</p><p><b>Ubicazione</b><br>IC8-PC2, al confine tra l'emiconca inferiore e la conca rigida, vicino all'avanmuro.<br>N.B. Solo sull'orecchio sinistro</p>",
+            AzioniPunto: "<p><b>Azione<br></b>Secondo la Scuola Cinese questo punto viene utilizzato per trattare tutte le patologie correlate al sistema immunitario e linfatico. Trova un'ottima applicazione anche per trattare i disturbi muscolari e tendinei.</p><p><b>Ubicazione</b><br>IC8-PC2, al confine tra l'emiconca inferiore e la conca rigida, vicino all'avanmuro.<br>N.B. Solo sull'orecchio sinistro.</p>",
             ChiaviPunto: ""
         },
         "123": {
             NomePunto: "Diaframma EUR",
-            AzioniPunto: "<p><b>Azione<br></b>Punto indicato dalla Scuola Francese per la sua efficacia nel ridurre il vomito, dolori e spasmi diaframmatici ed il singhiozzo.</p><p><b>Ubicazione</b><br>IC8-CR2, al confine tra la conca rigida e l'emiconca inferiore</p>",
+            AzioniPunto: "<p><b>Azione<br></b>Punto indicato dalla Scuola Francese per la sua efficacia nel ridurre il vomito, dolori e spasmi diaframmatici ed il singhiozzo.</p><p><b>Ubicazione</b><br>IC8-CR2, al confine tra la conca rigida e l'emiconca inferiore.</p>",
             ChiaviPunto: ""
         },
         "124": {
@@ -119,27 +119,27 @@ DB.set= {
         },
         "128": {
             NomePunto: "Esofago",
-            AzioniPunto: "<p><b>Azione<br></b>Punto auricolare utilizzato a livello internazionale per trattare tutti i disturbi esofagei. Indicato principalmente per riequilibrare i disturbi all'esofago, stomaco, duodeno e colon.</p><p><b>Ubicazione</b><br>IC6-IC7, nell'emiconca inferiore subito sotto al [.000.]</p>",
+            AzioniPunto: "<p><b>Azione<br></b>Punto auricolare utilizzato a livello internazionale per trattare tutti i disturbi esofagei. Indicato principalmente per riequilibrare i disturbi all'esofago, stomaco, duodeno e colon.</p><p><b>Ubicazione</b><br>IC6-IC7, nell'emiconca inferiore subito sotto al [.000.].</p>",
             ChiaviPunto: ""
         },
         "129": {
             NomePunto: "Bocca",
-            AzioniPunto: "<p><b>Altri nomi</b><br>- Fauci<br>- Palato molle</p><p><b>Azione</b><br>Il punto bocca è utilizzato per i suoi benefici sul cavo orale, in particolare per tutte quelle patologie correlate alla lingua ed alle mucose. Risulta molto efficace anche per il trattamento di ansia e attacchi di panico.</p><p><b>Ubicazione</b><br>IC6, nell'emiconca inferiore, vicino al meato uditivo esterno eterno, poco sotto la branca montante dell'elice<span></span></p>",
+            AzioniPunto: "<p><b>Altri nomi</b><br>- Fauci<br>- Palato molle</p><p><b>Azione</b><br>Il punto bocca è utilizzato per i suoi benefici sul cavo orale, in particolare per tutte quelle patologie correlate alla lingua ed alle mucose. Risulta molto efficace anche per il trattamento di ansia e attacchi di panico.</p><p><b>Ubicazione</b><br>IC6, nell'emiconca inferiore, vicino al meato uditivo esterno eterno, poco sotto la branca montante dell'elice.</p>",
             ChiaviPunto: ""
         },
         "130": {
             NomePunto: "Occhio 2",
-            AzioniPunto: "<p><b>Altri nomi</b><br>- Visione 2</p><p><b>Azione</b><br>La Scuola Cinese distingue 3 diversi punti per indicare l'occhio. Vengono spesso combinati assieme ed hanno una forte azione per ridurre le patologie visive ed oculari.</p><p><b>Ubicazione</b><br>IT1-AT1, tra l'antitrago e l'incisura intertragica</p>",
+            AzioniPunto: "<p><b>Altri nomi</b><br>- Visione 2</p><p><b>Azione</b><br>La Scuola Cinese distingue 3 diversi punti per indicare l'occhio. Vengono spesso combinati assieme ed hanno una forte azione per ridurre le patologie visive ed oculari.</p><p><b>Ubicazione</b><br>IT1-AT1, tra l'antitrago e l'incisura intertragica.</p>",
             ChiaviPunto: ""
         },
         "131": {
             NomePunto: "Occhio 3",
-            AzioniPunto: "<p><b>Altri nomi</b><br>- Nuovo punto occhio</p><p><b>Azione</b><br>La Scuola Cinese distingue 3 diversi punti per indicare l'occhio. Vengono spesso combinati assieme ed hanno una forte azione per ridurre le patologie visive ed oculari.</p><p><b>Ubicazione</b><br>IC6, nell'emiconca inferiore, in prossimità del meato uditivo esterno</p>",
+            AzioniPunto: "<p><b>Altri nomi</b><br>- Nuovo punto occhio</p><p><b>Azione</b><br>La Scuola Cinese distingue 3 diversi punti per indicare l'occhio. Vengono spesso combinati assieme ed hanno una forte azione per ridurre le patologie visive ed oculari.</p><p><b>Ubicazione</b><br>IC6, nell'emiconca inferiore, in prossimità del meato uditivo esterno.</p>",
             ChiaviPunto: ""
         },
         "132": {
             NomePunto: "Occhio 1",
-            AzioniPunto: "<p><b>Altri nomi</b><br>- Visione 1</p><p><b>Azione</b><br>La Scuola Cinese distingue 3 diversi punti per indicare l'occhio. Vengono spesso combinati assieme ed hanno una forte azione per ridurre le patologie visive ed oculari.</p><p><b>Ubicazione</b><br>IT1-TG1, tra il trago e l'incisura intertragica</p>",
+            AzioniPunto: "<p><b>Altri nomi</b><br>- Visione 1</p><p><b>Azione</b><br>La Scuola Cinese distingue 3 diversi punti per indicare l'occhio. Vengono spesso combinati assieme ed hanno una forte azione per ridurre le patologie visive ed oculari.</p><p><b>Ubicazione</b><br>IT1-TG1, tra il trago e l'incisura intertragica.</p>",
             ChiaviPunto: ""
         },
         "134": {
@@ -149,7 +149,7 @@ DB.set= {
         },
         "135": {
             NomePunto: "Nervo vago",
-            AzioniPunto: "<p><b>Altri nomi</b><br>- X nervo cranico<br>- X NC</p><p><b>Azione</b><br>Questo punto ha una forte azione riequilibrante del parasimpatico, utilizzato in particolare per trattare casi di tachicardia con palpitazioni e ansia.</p><p><b>Ubicazione</b><br>IC3, nell'emiconca inferiore, al centro e verso il meato uditivo esterno</p>",
+            AzioniPunto: "<p><b>Altri nomi</b><br>- X nervo cranico<br>- X NC</p><p><b>Azione</b><br>Questo punto ha una forte azione riequilibrante del parasimpatico, utilizzato in particolare per trattare casi di tachicardia con palpitazioni e ansia.</p><p><b>Ubicazione</b><br>IC3, nell'emiconca inferiore, al centro e verso il meato uditivo esterno.</p>",
             ChiaviPunto: ""
         },
         "137": {
@@ -169,7 +169,7 @@ DB.set= {
         },
         "143": {
             NomePunto: "Ipotalamo posteriore",
-            AzioniPunto: "<p><b>Azione<br></b>La Scuola Francese distingue i Punti Ipotalamo in Anteriore e Posteriore per le diverse proprietà. Il Punto Ipotalamo Posteriore è indicato per il riequilibrio del sistema nervoso autonomo e la secrezione dell'adrenalina. Regola inoltre le funzioni del sistema ortosimpatico-tonico e sostiene la soglia di vigilanza e attenzione.</p><p><b>Ubicazione</b><br>IC5-CW3, al confine tra l'avanmuro dell'antitrago e l'emiconca inferiore, all'altezza dell'area di passaggio dell'antitrago all'avantelice.</p>",
+            AzioniPunto: "<p><b>Azione<br></b>La Scuola Francese distingue i Punti Ipotalamo in Anteriore e Posteriore per le diverse proprietà. Il Punto Ipotalamo Posteriore è indicato per il riequilibrio del sistema nervoso autonomo e la secrezione dell'adrenalina. Regola inoltre le funzioni del sistema ortosimpatico-tonico e sostiene la soglia di vigilanza e attenzione.</p><p><b>Ubicazione</b><br>IC5-CW3, al confine tra l'avanmuro dell'antitrago e l'emiconca inferiore, all'altezza dell'area di passaggio dell'antitrago all'antelice.</p>",
             ChiaviPunto: ""
         },
         "144": {
@@ -184,17 +184,17 @@ DB.set= {
         },
         "148": {
             NomePunto: "Ganglio cervicale superiore",
-            AzioniPunto: "<p><b>Altri nomi</b><br>- Punto vertigini</p><p><b>Azione</b><br>La scuola Francese indica questo punto per la sua efficacia nella riduzione dei disturbi neurologici della periferica dorsale e tutti i dolori neuropatici correlati all'arto superiore e del tronco.</p><p><b>Ubicazione</b><br>CW4, al confine tra l'avanmuro dell'antelice e dell'antitrago</p>",
+            AzioniPunto: "<p><b>Altri nomi</b><br>- Punto vertigini</p><p><b>Azione</b><br>La scuola Francese indica questo punto per la sua efficacia nella riduzione dei disturbi neurologici della periferica dorsale e tutti i dolori neuropatici correlati all'arto superiore e del tronco.</p><p><b>Ubicazione</b><br>CW4, al confine tra l'avanmuro dell'antelice e dell'antitrago.</p>",
             ChiaviPunto: ""
         },
         "150": {
             NomePunto: "Brainstem",
-            AzioniPunto: "<p><b>Altri nomi</b><br>- Midollo allungato CIN</p><p><b>Azione</b><br>Secondo la scuola cinese, il punto Brainstem è indicato per tonificare la mente e regolare la respirazione, la temperatura ed il ritmo cardiaco. Risulta altresì efficace in caso di epilessia e convulsioni.</p><p><b>Ubicazione</b><br>CW4, nell'avanmuro in corrispondenza del confine tra antelice e antitrago</p>",
+            AzioniPunto: "<p><b>Altri nomi</b><br>- Midollo allungato CIN</p><p><b>Azione</b><br>Secondo la scuola cinese, il punto Brainstem è indicato per tonificare la mente e regolare la respirazione, la temperatura ed il ritmo cardiaco. Risulta altresì efficace in caso di epilessia e convulsioni.</p><p><b>Ubicazione</b><br>CW4, nell'avanmuro in corrispondenza del confine tra antelice e antitrago.</p>",
             ChiaviPunto: ""
         },
         "151": {
             NomePunto: "Cervello",
-            AzioniPunto: "<p><b>Altri nomi</b><br>- Diencefalo<br>- Nuclei talamici</p><p><b>Azione</b><br>Il punto Cervello è correlato al trattamento di molteplici disturbi. Secondo la Scuola Cinese, trova un'ottima applicazione per la regolazione ematica cerebrale e per trattare i disturbi dell'attenzione, del sonno, oltre che l'irrequietezza e la depressione.</p><p><b>Ubicazione</b><br>CW3, nella parte interna dell'antitrago, in prossimità del solco post-antitragale</p>",
+            AzioniPunto: "<p><b>Altri nomi</b><br>- Diencefalo<br>- Nuclei talamici</p><p><b>Azione</b><br>Il punto Cervello è correlato al trattamento di molteplici disturbi. Secondo la Scuola Cinese, trova un'ottima applicazione per la regolazione ematica cerebrale e per trattare i disturbi dell'attenzione, del sonno, oltre che l'irrequietezza e la depressione.</p><p><b>Ubicazione</b><br>CW3, nella parte interna dell'antitrago, in prossimità del solco post-antitragale.</p>",
             ChiaviPunto: ""
         },
         "154": {
@@ -209,17 +209,17 @@ DB.set= {
         },
         "157": {
             NomePunto: "Ipotalamo anteriore",
-            AzioniPunto: "<p><b>Azione<br></b>La Scuola Francese distingue i Punti Ipotalamo in Anteriore e Posteriore per le diverse proprietà. Il Punto Ipotalamo Anteriore è indicato per il riequilibrio del sistema nervoso autonomo ed il desiderio sessuale. Regola inoltre le funzioni del sistema parasimpatico-tonico</p><p><b>Ubicazione</b><br>IC2-CW1, al confine tra l'avanmuro dell'antitrago e l'emiconca inferiore, in prossimità dell'incisura intertragica.</p>",
+            AzioniPunto: "<p><b>Azione<br></b>La Scuola Francese distingue i Punti Ipotalamo in Anteriore e Posteriore per le diverse proprietà. Il Punto Ipotalamo Anteriore è indicato per il riequilibrio del sistema nervoso autonomo ed il desiderio sessuale. Regola inoltre le funzioni del sistema parasimpatico-tonico.</p><p><b>Ubicazione</b><br>IC2-CW1, al confine tra l'avanmuro dell'antitrago e l'emiconca inferiore, in prossimità dell'incisura intertragica.</p>",
             ChiaviPunto: ""
         },
         "159": {
             NomePunto: "Ovaio-Testicoli CIN",
-            AzioniPunto: "<p><b>Altri nomi</b><br>- Ovaio<br>- Testicolo<br>- Gonadi<br>- Ghiandola sessuale CIN<br>- Genitali interni</p><p><b>Azione</b><br>Questo punto trova una grande applicazione per il trattamento ed il riequilibrio delle gonadi.</p><p><b>Ubicazione</b><br>CW1, nell'avanmuro dell'antitrago, vicino all'incisura intertragica</p>",
+            AzioniPunto: "<p><b>Altri nomi</b><br>- Ovaio<br>- Testicolo<br>- Gonadi<br>- Ghiandola sessuale CIN<br>- Genitali interni</p><p><b>Azione</b><br>Questo punto trova una grande applicazione per il trattamento ed il riequilibrio delle gonadi.</p><p><b>Ubicazione</b><br>CW1, nell'avanmuro dell'antitrago, vicino all'incisura intertragica.</p>",
             ChiaviPunto: ""
         },
         "161": {
             NomePunto: "Nuclei simpatici intramidollari",
-            AzioniPunto: "<p><b>Altri nomi</b><br>- Catena Simpatica Intramidollare</p><p><b>Azione</b><br>Azione di riequilibrio del sistema ortosimpatico.</p><p><b>Ubicazione</b><br>HX12-HX13-HX14, sul margine antero-laterale dell'elice. Sono una serie di punti che si proiettano da D1 a D11</p>",
+            AzioniPunto: "<p><b>Altri nomi</b><br>- Catena Simpatica Intramidollare</p><p><b>Azione</b><br>Azione di riequilibrio del sistema ortosimpatico.</p><p><b>Ubicazione</b><br>HX12-HX13-HX14, sul margine antero-laterale dell'elice. Sono una serie di punti che si proiettano da D1 a D11.</p>",
             ChiaviPunto: ""
         },
         "164": {
@@ -229,17 +229,17 @@ DB.set= {
         },
         "165": {
             NomePunto: "ACTH",
-            AzioniPunto: "<p><b>Altri nomi</b><br>- Ormone Adrenocorticotropo<br>- Punto di controllo della ghiandola surrenale<p><b>Azione</b><br>Indicato in caso di patologie croniche infiammatorie, prolungate da un tempo superiore ai sei mesi. Riequilibra le funzioni dell'ACTH e di conseguenza le funzioni surrenali. Molto efficace nelle situazione di forte stress.</p><p><b>Ubicazione</b><br>ST1, al confine con l'incisura intergragica un po' verso l'esterno<span></span></p>",
+            AzioniPunto: "<p><b>Altri nomi</b><br>- Ormone Adrenocorticotropo<br>- Punto di controllo della ghiandola surrenale<p><b>Azione</b><br>Indicato in caso di patologie croniche infiammatorie, prolungate da un tempo superiore ai sei mesi. Riequilibra le funzioni dell'ACTH e di conseguenza le funzioni surrenali. Molto efficace nelle situazione di forte stress.</p><p><b>Ubicazione</b><br>ST1, al confine con l'incisura intergragica un po' verso l'esterno.</p>",
             ChiaviPunto: ""
         },
         "166": {
             NomePunto: "Naso interno",
-            AzioniPunto: "<p><b>Altri nomi</b><br>- Cavità nasali</p><p><b>Azione</b><br>La Scuola Cinese distingue i Punti Naso Esterno e Naso Interno per le loro diverse applicazioni terapiche. Questo punto è indicato per trattare tutti i disturbi nasali interni in particolare la sinusite, rinite, allergia e l'ostruzione nasale.</p><p><b>Ubicazione</b><br>ST2, nella faccia interna del trago, appena dietro alla sua protuberanza inferiore</p>",
+            AzioniPunto: "<p><b>Altri nomi</b><br>- Cavità nasali</p><p><b>Azione</b><br>La Scuola Cinese distingue i Punti Naso Esterno e Naso Interno per le loro diverse applicazioni terapiche. Questo punto è indicato per trattare tutti i disturbi nasali interni in particolare la sinusite, rinite, allergia e l'ostruzione nasale.</p><p><b>Ubicazione</b><br>ST2, nella faccia interna del trago, appena dietro alla sua protuberanza inferiore.</p>",
             ChiaviPunto: ""
         },
         "169": {
             NomePunto: "Orecchio interno EUR",
-            AzioniPunto: "<p><b>Altri nomi</b><br>- Nervo uditivo<br>- Coclea<br>- VIII Nervo Cranico<br>- Punto faringe-laringe<br>- Punto faringe<br>- Punto laringe</p><p><b>Azione</b><br>La Scuola Francese distingue i Punti Orecchio Esterno e Orecchio Interno per le loro diverse proprietà curative. Questo Punto è indicato per ridurre i disturbi ed i dolori interni dell'orecchio. In particolare vertigini, acufeni.</p><p><b>Ubicazione</b><br>ST3, nella faccia interna del trago, vicino alla protuberanza inferiore</p>",
+            AzioniPunto: "<p><b>Altri nomi</b><br>- Nervo uditivo<br>- Coclea<br>- VIII Nervo Cranico<br>- Punto faringe-laringe<br>- Punto faringe<br>- Punto laringe</p><p><b>Azione</b><br>La Scuola Francese distingue i Punti Orecchio Esterno e Orecchio Interno per le loro diverse proprietà curative. Questo Punto è indicato per ridurre i disturbi ed i dolori interni dell'orecchio. In particolare vertigini, acufeni.</p><p><b>Ubicazione</b><br>ST3, nella faccia interna del trago, vicino alla protuberanza inferiore.</p>",
             ChiaviPunto: ""
         },
         "170": {
@@ -259,7 +259,7 @@ DB.set= {
         },
         "174": {
             NomePunto: "Articolazione temporo-mandibolare",
-            AzioniPunto: "<p><b>Altri nomi</b><br>- ATM<br>- Muscolo pterigoideo esterno</p><p><b>Azione</b><br>Trattare questo punto per ridurre il dolore legato ad una o entrambe le articolazioni esterne alla mascella. Efficace in caso di bruxismo.</p><p><b>Ubicazione</b><br>LO8-PP1, nel punto in qui la fossa scafoidea si divide a Y, all'inizio della sua branca anteriore</p>",
+            AzioniPunto: "<p><b>Altri nomi</b><br>- ATM<br>- Muscolo pterigoideo esterno</p><p><b>Azione</b><br>Trattare questo punto per ridurre il dolore legato ad una o entrambe le articolazioni esterne alla mascella. Efficace in caso di bruxismo.</p><p><b>Ubicazione</b><br>LO8-PP1, nel punto in qui la fossa scafoidea si divide a Y, all'inizio della sua branca anteriore.</p>",
             ChiaviPunto: ""
         },
         "176": {
@@ -269,12 +269,12 @@ DB.set= {
         },
         "177": {
             NomePunto: "Occipite",
-            AzioniPunto: "<p><b>Altri nomi</b><br>- Osso occipitale<br>- Muscolo occipitale<br>- Atlante</p><p><b>Azione</b><br>Questo Punto Internazionale viene adottato per trattare tutti i disturbi occipitali, in particolare le contratture muscolari occipitali, gli spasmi facciali, l'insonnia e le vertigini.</p><p><b>Ubicazione</b><br>AT3-PC1, sull'antitrago vicino al solco post-antitragale</p>",
+            AzioniPunto: "<p><b>Altri nomi</b><br>- Osso occipitale<br>- Muscolo occipitale<br>- Atlante</p><p><b>Azione</b><br>Questo Punto Internazionale viene adottato per trattare tutti i disturbi occipitali, in particolare le contratture muscolari occipitali, gli spasmi facciali, l'insonnia e le vertigini.</p><p><b>Ubicazione</b><br>AT3-PC1, sull'antitrago vicino al solco post-antitragale.</p>",
             ChiaviPunto: ""
         },
         "178": {
             NomePunto: "Corteccia occipitale",
-            AzioniPunto: "<p><b>Altri nomi</b><br>- Lobo Occipitale<br>- Corteccia visiva</p><p><b>Azione</b><br>Disturbi neurologici della visione</p><p><b>Ubicazione</b><br>AT2-AT3, area localizzata nel terzo posteriore dell'antitrago, al confine con la parte superiore del lobulo.</p>",
+            AzioniPunto: "<p><b>Altri nomi</b><br>- Lobo Occipitale<br>- Corteccia visiva</p><p><b>Azione</b><br>Disturbi neurologici della visione.</p><p><b>Ubicazione</b><br>AT2-AT3, area localizzata nel terzo posteriore dell'antitrago, al confine con la parte superiore del lobulo.</p>",
             ChiaviPunto: ""
         },
         "179": {
@@ -289,7 +289,7 @@ DB.set= {
         },
         "181": {
             NomePunto: "Midollo spinale cervicale",
-            AzioniPunto: "<p><b>Altri nomi</b><br>- Midollo cervicale</p><p><b>Azione</b><br>Patologie midollari cervicali</p><p><b>Ubicazione</b><br>HX15, nel margine posteriore dell'elice, interposto tra l'area di rappresentazione della radice sensitiva e motoria, all'incirca nel terzo inferiore della branca discendente dell'elice.</p>",
+            AzioniPunto: "<p><b>Altri nomi</b><br>- Midollo cervicale</p><p><b>Azione</b><br>Patologie midollari cervicali.</p><p><b>Ubicazione</b><br>HX15, nel margine posteriore dell'elice, interposto tra l'area di rappresentazione della radice sensitiva e motoria, all'incirca nel terzo inferiore della branca discendente dell'elice.</p>",
             ChiaviPunto: ""
         },
         "182": {
@@ -299,7 +299,7 @@ DB.set= {
         },
         "183": {
             NomePunto: "Punto della sete",
-            AzioniPunto: "<p><b>Azione</b><br>Polidipsia specie su base psicosomatica.</p><p><b>Ubicazione</b><br>TG4, a metà distanza tra <span class='LMtxt'>LM11</span> ed il punto del Naso Esterno ovvero <span class='LMtxt'>LM23</span></p>",
+            AzioniPunto: "<p><b>Azione</b><br>Polidipsia specie su base psicosomatica.</p><p><b>Ubicazione</b><br>TG4, a metà distanza tra <span class='LMtxt'>LM11</span> ed il punto del Naso Esterno ovvero <span class='LMtxt'>LM23</span>.</p>",
             ChiaviPunto: ""
         },
         "184": {
@@ -309,7 +309,7 @@ DB.set= {
         },
         "185": {
             NomePunto: "Naso esterno CIN",
-            AzioniPunto: "<p><b>Azione<br></b>La Scuola Cinese distingue i Punti Naso Esterno e Naso Interno per le loro diverse applicazioni terapiche. Questo punto è indicato per trattare tutti i disturbi nasali in particolare l'ostruzione nasale.</p><p><b>Ubicazione</b><br>TG3, nella linea di confine tra il Trago e la guancia a metà distanza tra la protuberanza superiore ed inferiore del Trago ovvero <span class='LMtxt'>LM10</span> ed <span class='LMtxt'>LM11</span>. Corrisponde a <span class='LMtxt'>LM23</span></p>",
+            AzioniPunto: "<p><b>Azione<br></b>La Scuola Cinese distingue i Punti Naso Esterno e Naso Interno per le loro diverse applicazioni terapiche. Questo punto è indicato per trattare tutti i disturbi nasali in particolare l'ostruzione nasale.</p><p><b>Ubicazione</b><br>TG3, nella linea di confine tra il Trago e la guancia a metà distanza tra la protuberanza superiore ed inferiore del Trago ovvero <span class='LMtxt'>LM10</span> ed <span class='LMtxt'>LM11</span>. Corrisponde a <span class='LMtxt'>LM23</span>.</p>",
             ChiaviPunto: ""
         },
         "186": {
@@ -319,12 +319,12 @@ DB.set= {
         },
         "187": {
             NomePunto: "Corteccia frontale",
-            AzioniPunto: "<p><b>Azione</b><br>Facilita l'azione motoria, riduce i disturbi motori legati alla paralisi.</p><p><b>Ubicazione</b><br>LO1-LO2-LO3-LO4, ampia area del lobulo inferiore in una zona delimitato in alto da Punto Maestro Sensoriale ed in basso dalla linea trigeminale</p>",
+            AzioniPunto: "<p><b>Azione</b><br>Facilita l'azione motoria, riduce i disturbi motori legati alla paralisi.</p><p><b>Ubicazione</b><br>LO1-LO2-LO3-LO4, ampia area del lobulo inferiore in una zona delimitato in alto dal [.222.] ed in basso dalla [.283.].</p>",
             ChiaviPunto: ""
         },
         "188": {
             NomePunto: "Corteccia prefrontale",
-            AzioniPunto: "<p><b>Altri nomi</b><br>- Cervello esecutivo</p><p><b>Azione</b><br>Facilita la concentrazione e le decisioni, riduce l'ossessione e la preoccupazione.</p><p><b>Ubicazione</b><br>LO1-LO2, ampia area anteriore del lobulo che si estende dal Master Cerebral Pont sino al margine inferiore del Lobulo</p>",
+            AzioniPunto: "<p><b>Altri nomi</b><br>- Cervello esecutivo</p><p><b>Azione</b><br>Facilita la concentrazione e le decisioni, riduce l'ossessione e la preoccupazione.</p><p><b>Ubicazione</b><br>LO1-LO2, ampia area anteriore del lobulo che si estende dal [.230.] sino al margine inferiore del Lobulo.</p>",
             ChiaviPunto: ""
         },
         "191": {
@@ -334,12 +334,12 @@ DB.set= {
         },
         "192": {
             NomePunto: "Tranquilizer Point",
-            AzioniPunto: "<p><b>Altri nomi</b><br>- Punto Valium EUR<br>- Ipertensione 2 CIN<br>- Punto della mania<br>- Punto della nicotina</p><p><b>Azione</b><br>Questo punto è riconosciuto per la sua efficacia per il trattamento di tutti i disturbi con componente ansia e stress. Ha una potente azione di riequilibrio psicofisico, favorisce il rilassamento in particolare in caso di insonnia.</p><p><b>Ubicazione.</b><br>TG2, nella parete centrale verso la zona posteriore cartilaginea. A metà distanza tra <span class='LMtxt'>LM9</span> ed <span class='LMtxt'>LM10</span></p>",
+            AzioniPunto: "<p><b>Altri nomi</b><br>- Punto Valium EUR<br>- Ipertensione 2 CIN<br>- Punto della mania<br>- Punto della nicotina</p><p><b>Azione</b><br>Questo punto è riconosciuto per la sua efficacia per il trattamento di tutti i disturbi con componente ansia e stress. Ha una potente azione di riequilibrio psicofisico, favorisce il rilassamento in particolare in caso di insonnia.</p><p><b>Ubicazione.</b><br>TG2, nella parete centrale verso la zona posteriore cartilaginea. A metà distanza tra <span class='LMtxt'>LM9</span> ed <span class='LMtxt'>LM10</span>.</p>",
             ChiaviPunto: ""
         },
         "195": {
             NomePunto: "Epifisi",
-            AzioniPunto: "<p><b>Altri nomi</b><br>- Ghiandola pineale<br>- Punto E</p><p><b>Azione</b><br>Punto utilizzato per il riequilibrio di tutti i bioritmi, in particolare per il trattamento di insonnia e depressione.</p><p><b>Ubicazione</b><br>TG1. Corrisponde a <span class='LMtxt'>LM9</span>. Diametralmente opposto all'incisura intertragica nella zona di passaggio tra TG1 e Guancia</p>",
+            AzioniPunto: "<p><b>Altri nomi</b><br>- Ghiandola pineale<br>- Punto E</p><p><b>Azione</b><br>Punto utilizzato per il riequilibrio di tutti i bioritmi, in particolare per il trattamento di insonnia e depressione.</p><p><b>Ubicazione</b><br>TG1. Corrisponde a <span class='LMtxt'>LM9</span>. Diametralmente opposto all'incisura intertragica nella zona di passaggio tra TG1 e Guancia.</p>",
             ChiaviPunto: ""
         },
         "198": {
@@ -354,7 +354,7 @@ DB.set= {
         },
         "202": {
             NomePunto: "Fronte",
-            AzioniPunto: "<p><b>Altri nomi</b><br>- Osso frontale</p><p><b>Azione</b><br>Il punto internazionale Fronte è indicato per trattare sia i disagi emotivi come insonnia, depressione ed ansia, sia i disturbi fisici quali dolore frontale, vertigini e sinusite.</p><p><b>Ubicazione</b><br>AT1-PG1, sull'antitrago in prossimità dell'incisura intertragica</p>",
+            AzioniPunto: "<p><b>Altri nomi</b><br>- Osso frontale</p><p><b>Azione</b><br>Il punto internazionale Fronte è indicato per trattare sia i disagi emotivi come insonnia, depressione ed ansia, sia i disturbi fisici quali dolore frontale, vertigini e sinusite.</p><p><b>Ubicazione</b><br>AT1-PG1, sull'antitrago in prossimità dell'incisura intertragica.</p>",
             ChiaviPunto: ""
         },
         "207": {
@@ -364,12 +364,12 @@ DB.set= {
         },
         "209": {
             NomePunto: "Lingua CIN",
-            AzioniPunto: "<p><b>Azione<br></b>Come indicato dal nome, questo punto è molto efficace nel trattamento di tutti i disturbi correlati alla lingua e del cavo orale.</p><p><b>Ubicazione</b><br>LO4, nel punto mediano tra l'apice del trago e il punto [.222.]</p>",
+            AzioniPunto: "<p><b>Azione<br></b>Come indicato dal nome, questo punto è molto efficace nel trattamento di tutti i disturbi correlati alla lingua e del cavo orale.</p><p><b>Ubicazione</b><br>LO4, nel punto mediano tra l'apice del trago e il punto [.222.].</p>",
             ChiaviPunto: ""
         },
         "211": {
             NomePunto: "Lingua EUR",
-            AzioniPunto: "<p><b>Azione<br></b>Come indicato dal nome, questo punto è molto efficace nel trattamento di tutti i disturbi correlati alla lingua e del cavo orale.</p><p><b>Ubicazione</b><br>LO5-PL6, nel punto mediano tra il punto viso e il punto mascella superiore</p>",
+            AzioniPunto: "<p><b>Azione<br></b>Come indicato dal nome, questo punto è molto efficace nel trattamento di tutti i disturbi correlati alla lingua e del cavo orale.</p><p><b>Ubicazione</b><br>LO5-PL6, nel punto mediano tra il punto viso e il punto mascella superiore.</p>",
             ChiaviPunto: ""
         },
         "213": {
@@ -379,7 +379,7 @@ DB.set= {
         },
         "215": {
             NomePunto: "Faccia",
-            AzioniPunto: "<p><b>Altri nomi</b><br>- Viso<br>- Guancia<br>- Muscoli facciali</p><p><b>Azione</b><br>Punto internazionale di auricoloterapia molto efficace per ridurre Tic nervosi, paralisi facciali, nevralgie; indicato inoltre per trattare gli spasmi facciali.</p><p><b>Ubicazione</b><br>LO5-PL6, sul lobulo, lateralmente, area piuttosto vasta al di sopra della cosiddetta [.283.]</p>",
+            AzioniPunto: "<p><b>Altri nomi</b><br>- Viso<br>- Guancia<br>- Muscoli facciali</p><p><b>Azione</b><br>Punto internazionale di auricoloterapia molto efficace per ridurre Tic nervosi, paralisi facciali, nevralgie; indicato inoltre per trattare gli spasmi facciali.</p><p><b>Ubicazione</b><br>LO5-PL6, sul lobulo, lateralmente, area piuttosto vasta al di sopra della cosiddetta [.283.].</p>",
             ChiaviPunto: ""
         },
         "221": {
@@ -389,12 +389,12 @@ DB.set= {
         },
         "222": {
             NomePunto: "Punto Maestro Sensoriale",
-            AzioniPunto: "<p><b>Altri nomi</b><br>- Punto occhio<br>- PMSs</p><p><b>Azione</b><br>Punto Internazionale Master è correlato ai disturbi sia dell'occhio, sia dell'udito. Questo punto ha la capacità di riequilibrare le sensazioni uditive del lobo temporale e quelle visive del lobo occipitale. Il Punto Master Sensoriale è indicato per ridurre i disturbi correlati agli acufeni, all'irritabilità collegata ad odori o suoni ed infine a fenomeni di ipersensibilità.</p><p><b>Ubicazione</b><br>LO4, circa a metà distanza tra <span class='LMtxt'>LM13</span> ed <span class='LMtxt'>LM7</span>, al centro del lobulo.</p>",
+            AzioniPunto: "<p><b>Altri nomi</b><br>- Punto occhio<br>- PMSs</p><p><b>Azione</b><br>Punto master internazionale correlato ai disturbi sia dell'occhio, sia dell'udito. Questo punto ha la capacità di riequilibrare le sensazioni uditive del lobo temporale e quelle visive del lobo occipitale. Il Punto Master Sensoriale è indicato per ridurre i disturbi correlati agli acufeni, all'irritabilità collegata ad odori o suoni ed infine a fenomeni di ipersensibilità.</p><p><b>Ubicazione</b><br>LO4, circa a metà distanza tra <span class='LMtxt'>LM13</span> ed <span class='LMtxt'>LM7</span>, al centro del lobulo.</p>",
             ChiaviPunto: ""
         },
         "224": {
             NomePunto: "Ghiandola surrenale CIN",
-            AzioniPunto: "<p><b>Altri nomi</b><br>- Cortisolo</p><p><b>Azione</b><br>Riequilibrio funzionale delle ghiandole surrenali. Ha un'azione antinfiammatoria.</p><p><b>Ubicazione</b><br>TG3, all'apice della protuberanza inferiore del Trago. Corrisponde a <span class='LMtxt'>LM10</span></p>",
+            AzioniPunto: "<p><b>Altri nomi</b><br>- Cortisolo</p><p><b>Azione</b><br>Riequilibrio funzionale delle ghiandole surrenali. Ha un'azione antinfiammatoria.</p><p><b>Ubicazione</b><br>TG3, all'apice della protuberanza inferiore del Trago. Corrisponde a <span class='LMtxt'>LM10</span>.</p>",
             ChiaviPunto: ""
         },
         "226": {
@@ -409,7 +409,7 @@ DB.set= {
         },
         "230": {
             NomePunto: "Master Cerebral Point",
-            AzioniPunto: "<p><b>Altri nomi</b><br>- Omega<br>- Nervosismo<br>- Preoccupazione</p><p><b>Azione</b><br>Per la Scuola Francese, punto Omega, è il Punto Maestro del tessuto Ectodermico. Rappresenta il Lobo prefrontale. E' indicato nell'asia, nervosismo e nei disturbi del sonno.</p><p><b>Ubicazione</b><br>LO2, a metà distanza tra <span class='LMtxt'>LM8</span> ed <span class='LMtxt'>LM9</span> a 2 mm circa dal confine con la guancia.</p>",
+            AzioniPunto: "<p><b>Altri nomi</b><br>- Omega<br>- Nervosismo<br>- Preoccupazione</p><p><b>Azione</b><br>Per la Scuola Francese, punto Omega, è il Punto Maestro del tessuto Ectodermico. Rappresenta il Lobo prefrontale. È indicato nell'asia, nervosismo e nei disturbi del sonno.</p><p><b>Ubicazione</b><br>LO2, a metà distanza tra <span class='LMtxt'>LM8</span> ed <span class='LMtxt'>LM9</span> a 2 mm circa dal confine con la guancia.</p>",
             ChiaviPunto: ""
         },
         "231": {
@@ -419,7 +419,7 @@ DB.set= {
         },
         "232": {
             NomePunto: "Nervo olfattivo",
-            AzioniPunto: "<p><b>Altri nomi</b><br>- Naso Interno EUR<br>- I nervo cranico<br>- I NC</p><p><b>Azione</b><br>Questo punto viene impiegato per tutti i disturbi legati al nervo olfattivo.</p><p><b>Ubicazione</b><br>LO2, subito sopra al [.230.]. Lo si trova tracciando una retta tra <span class='LMtxt'>LM9</span> ed <span class='LMtxt'>LM8</span> circa tra i 1/3 superiore ed i 2/3 inferiori di questa distanza</p>",
+            AzioniPunto: "<p><b>Altri nomi</b><br>- Naso Interno EUR<br>- I nervo cranico<br>- I NC</p><p><b>Azione</b><br>Questo punto viene impiegato per tutti i disturbi legati al nervo olfattivo.</p><p><b>Ubicazione</b><br>LO2, subito sopra al [.230.]. Lo si trova tracciando una retta tra <span class='LMtxt'>LM9</span> ed <span class='LMtxt'>LM8</span> circa tra i 1/3 superiore ed i 2/3 inferiori di questa distanza.</p>",
             ChiaviPunto: ""
         },
         "243": {
@@ -429,7 +429,7 @@ DB.set= {
         },
         "244": {
             NomePunto: "Polmone CIN",
-            AzioniPunto: "<p><b>Azione<br></b>Il Punto Polmone viene adottato sia dalla Scuola Cinese sia da quella Francese per la sua azione riequilibrante del sistema respiratorio, in particolare nei casi di bronchiti, enfisema e dolori al torace.</p><p><b>Ubicazione</b><br>IC2-IC4-IC5, ampia area nell'emiconca inferiore, verso l'avanmuro</p>",
+            AzioniPunto: "<p><b>Azione<br></b>Il Punto Polmone viene adottato sia dalla Scuola Cinese sia da quella Francese per la sua azione riequilibrante del sistema respiratorio, in particolare nei casi di bronchiti, enfisema e dolori al torace.</p><p><b>Ubicazione</b><br>IC2-IC4-IC5, ampia area nell'emiconca inferiore, verso l'avanmuro.</p>",
             ChiaviPunto: ""
         },
         "245": {
@@ -444,17 +444,17 @@ DB.set= {
         },
         "247": {
             NomePunto: "Muscoli e tendini dell'avampiede EUR",
-            AzioniPunto: "<p><b>Altri nomi</b><br>- Muscoli e tendini della caviglia</p><p><b>Azione</b><br>Questo punto viene impiegato sia dalla Scuola Francese che Cinese per le sue proprietà nel trattare i disturbi muscolo-tendinei della caviglia e del piede.</p><p><b>Ubicazione</b><br>PT3, alla base dell'eminenza triangolare</p>",
+            AzioniPunto: "<p><b>Altri nomi</b><br>- Muscoli e tendini della caviglia</p><p><b>Azione</b><br>Questo punto viene impiegato sia dalla Scuola Francese che Cinese per le sue proprietà nel trattare i disturbi muscolo-tendinei della caviglia e del piede.</p><p><b>Ubicazione</b><br>PT3, alla base dell'eminenza triangolare.</p>",
             ChiaviPunto: ""
         },
         "248": {
             NomePunto: "Muscoli e tendini dell'avampiede CIN",
-            AzioniPunto: "<p><b>Altri nomi</b><br>- Muscoli e tendini della caviglia</p><p><b>Azione</b><br>Questo punto viene impiegato sia dalla Scuola Francese che Cinese per le sue proprietà nel trattare i disturbi muscolo-tendinei della caviglia e del piede.</p><p><b>Ubicazione</b><br>PP12, sulla parte posteriore dell'elice, verso l'apice del padiglione</p>",
+            AzioniPunto: "<p><b>Altri nomi</b><br>- Muscoli e tendini della caviglia</p><p><b>Azione</b><br>Questo punto viene impiegato sia dalla Scuola Francese che Cinese per le sue proprietà nel trattare i disturbi muscolo-tendinei della caviglia e del piede.</p><p><b>Ubicazione</b><br>PP12, sulla parte posteriore dell'elice, verso l'apice del padiglione.</p>",
             ChiaviPunto: ""
         },
         "249": {
             NomePunto: "Polmone EUR",
-            AzioniPunto: "<p><b>Azione<br></b>Il Punto Polmone viene adottato sia dalla Scuola Cinese sia da quella Francese per la sua azione riequilibrante del sistema respiratorio, in particolare nei casi di bronchiti, enfisema e dolori al torace.</p><p><b>Ubicazione</b><br>IC2-IC4-IC5-IC7, ampia area nell'emiconca inferiore, verso l'avanmuro</p>",
+            AzioniPunto: "<p><b>Azione<br></b>Il Punto Polmone viene adottato sia dalla Scuola Cinese sia da quella Francese per la sua azione riequilibrante del sistema respiratorio, in particolare nei casi di bronchiti, enfisema e dolori al torace.</p><p><b>Ubicazione</b><br>IC2-IC4-IC5-IC7, ampia area nell'emiconca inferiore, verso l'avanmuro.</p>",
             ChiaviPunto: ""
         },
         "251": {
@@ -479,12 +479,12 @@ DB.set= {
         },
         "255": {
             NomePunto: "Muscoli e tendini del ginocchio CIN",
-            AzioniPunto: "<p><b>Altri nomi</b><br>- Legamenti del ginocchio EUR</p><p><b>Azione</b><br>Patologie muscolo-tendinee del ginocchio.</p><p><b>Ubicazione</b><br>PG9, nella parte posteriore dell'antelice, nel suo terzo superiore</p>",
+            AzioniPunto: "<p><b>Altri nomi</b><br>- Legamenti del ginocchio EUR</p><p><b>Azione</b><br>Patologie muscolo-tendinee del ginocchio.</p><p><b>Ubicazione</b><br>PG9, nella parte posteriore dell'antelice, nel suo terzo superiore.</p>",
             ChiaviPunto: ""
         },
         "256": {
             NomePunto: "Muscoli e tendini del ginocchio EUR",
-            AzioniPunto: "<p><b>Altri nomi</b><br>- Legamenti del ginocchio CIN</p><p><b>Azione</b><br>Patologie muscolo-tendinee del ginocchio.</p><p><b>Ubicazione</b><br>PT2, al centro dell'eminenza triangolare</p>",
+            AzioniPunto: "<p><b>Altri nomi</b><br>- Legamenti del ginocchio CIN</p><p><b>Azione</b><br>Patologie muscolo-tendinee del ginocchio.</p><p><b>Ubicazione</b><br>PT2, al centro dell'eminenza triangolare.</p>",
             ChiaviPunto: ""
         },
         "257": {
@@ -504,27 +504,27 @@ DB.set= {
         },
         "260": {
             NomePunto: "Gangli simpatici toracici",
-            AzioniPunto: "<p><b>Azione<br></b>La scuola Francese indica questo punto per la sua efficacia nella riduzione dei disturbi neurologici della periferica dorsale e tutti i dolori neuropatici correlati all'arto superiore e del tronco.</p><p><b>Ubicazione</b><br>CW6-CW7, nell'avanmuro in prossimità della zona riflessa del rachide dorsale</p>",
+            AzioniPunto: "<p><b>Azione<br></b>La scuola Francese indica questo punto per la sua efficacia nella riduzione dei disturbi neurologici della periferica dorsale e tutti i dolori neuropatici correlati all'arto superiore e del tronco.</p><p><b>Ubicazione</b><br>CW6-CW7, nell'avanmuro in prossimità della zona riflessa del rachide dorsale.</p>",
             ChiaviPunto: ""
         },
         "261": {
             NomePunto: "Ganglio simpatico lombare",
-            AzioniPunto: "<p><b>Azione<br></b>La scuola Francese indica questo punto per la sua efficacia nella riduzione dei disturbi neurologici della periferica dorsale e tutti i dolori neuropatici correlati all'arto superiore e del tronco.</p><p><b>Ubicazione</b><br>CW8-CW9, nell'avanmuro in corrispondenza del terzo inferiore della radice inferiore dell'antelice</p>",
+            AzioniPunto: "<p><b>Azione<br></b>La scuola Francese indica questo punto per la sua efficacia nella riduzione dei disturbi neurologici della periferica dorsale e tutti i dolori neuropatici correlati all'arto superiore e del tronco.</p><p><b>Ubicazione</b><br>CW8-CW9, nell'avanmuro in corrispondenza del terzo inferiore della radice inferiore dell'antelice.</p>",
             ChiaviPunto: ""
         },
         "262": {
             NomePunto: "Gonadotropine",
-            AzioniPunto: "<p><b>Altri nomi</b><br>- Area ginecologica<br><br>- Punto ginecologico<br>- FSH (ormone follico stimolante)<br>- LH (ormone luteinizzante)</p><p><b>Azione</b><br>La Scuola Francese indica l'efficacia di questo punto per il trattamento di tutte le patologie correlate alle alterazioni della secrezione delle gonadotropine e del ciclo mestruale. Utilizzato inoltre in caso di infertilità e per ridurre i disturbi legati alla sindrome climaterica, menopausa e squilibri ormonali.</p><p><b>Ubicazione</b><br>CW1-AT1-LO4, nel terzo anteriore della superficie esterna dell'antitrago. Alcuni Autori lo descrivono sulla superficie interna. </p>",
+            AzioniPunto: "<p><b>Altri nomi</b><br>- Area ginecologica<br>- Punto ginecologico<br>- FSH (ormone follico stimolante)<br>- LH (ormone luteinizzante)</p><p><b>Azione</b><br>La Scuola Francese indica l'efficacia di questo punto per il trattamento di tutte le patologie correlate alle alterazioni della secrezione delle gonadotropine e del ciclo mestruale. Utilizzato inoltre in caso di infertilità e per ridurre i disturbi legati alla sindrome climaterica, menopausa e squilibri ormonali.</p><p><b>Ubicazione</b><br>CW1-AT1-LO4, nel terzo anteriore della superficie esterna dell'antitrago. Alcuni Autori lo descrivono sulla superficie interna.</p>",
             ChiaviPunto: ""
         },
         "263": {
             NomePunto: "Locus Coeruleus",
-            AzioniPunto: "<p><b>Altri nomi</b><br>- Locus Caeruleus<br>- Locus Ceruleus<br>- Punto blu</p><p><b>Azione</b><br>Questo Punto indicato dalla Scuola Francese tonifica e riequilibra il sonno REM, riducendo inoltre lo stress.</p><p><b>Ubicazione</b><br>L3-L5, nella parte bassa del lobulo, poco sopra la linea trigeminale</p>",
+            AzioniPunto: "<p><b>Altri nomi</b><br>- Locus Caeruleus<br>- Locus Ceruleus<br>- Punto blu</p><p><b>Azione</b><br>Questo Punto indicato dalla Scuola Francese tonifica e riequilibra il sonno REM, riducendo inoltre lo stress.</p><p><b>Ubicazione</b><br>L3-L5, nella parte bassa del lobulo, poco sopra la linea trigeminale.</p>",
             ChiaviPunto: ""
         },
         "264": {
             NomePunto: "Muscoli e tendini dell'anca EUR",
-            AzioniPunto: "<p><b>Altri nomi</b><br>- Muscoli del cingolo pelvico</p><p><b>Azione</b><br>Questo punto viene impiegato sia dalla Scuola Francese che Cinese per le sue proprietà nel trattare i disturbi muscolo tendinei e del cingolo pelvico.</p><p><b>Ubicazione</b><br>PT1, vicino all'apice dell'eminenza triangolare</p>",
+            AzioniPunto: "<p><b>Altri nomi</b><br>- Muscoli del cingolo pelvico</p><p><b>Azione</b><br>Questo punto viene impiegato sia dalla Scuola Francese che Cinese per le sue proprietà nel trattare i disturbi muscolo tendinei e del cingolo pelvico.</p><p><b>Ubicazione</b><br>PT1, vicino all'apice dell'eminenza triangolare.</p>",
             ChiaviPunto: ""
         },
         "265": {
@@ -579,12 +579,12 @@ DB.set= {
         },
         "275": {
             NomePunto: "Seni frontali",
-            AzioniPunto: "<p><b>Altri nomi</b><br>- Seni mascellari</p><p><b>Azione</b><br>Questo punto è indicato per ridurre i sintomi da rinite e sinusite.</p><p><b>Ubicazione</b><br>LO4, al centro del lobulo, in alto, verso l'antitrago, in prossimità del punto [.202.]</p>",
+            AzioniPunto: "<p><b>Altri nomi</b><br>- Seni mascellari</p><p><b>Azione</b><br>Questo punto è indicato per ridurre i sintomi da rinite e sinusite.</p><p><b>Ubicazione</b><br>LO4, al centro del lobulo, in alto, verso l'antitrago, in prossimità del punto [.202.].</p>",
             ChiaviPunto: ""
         },
         "276": {
             NomePunto: "Tubercolo di Darwin",
-            AzioniPunto: "<p><b>Altri nomi</b><br>- Punto di Darwin<br>- Punto MASTER del dolore neuropatico</p><p><b>Azione</b><br>La Scuola Francese indica questo punto per la sua potente azione di contrasto per tutti i disturbi componente neuropatica in generale, in modo particolare gli arti inferiori ed alla fascia lombare.</p><p><b>Ubicazione</b><br>HX11, nel tubercolo di Darwin.</p>",
+            AzioniPunto: "<p><b>Altri nomi</b><br>- Punto di Darwin<br>- Punto MASTER del dolore neuropatico</p><p><b>Azione</b><br>La Scuola Francese indica questo punto per la sua potente azione di contrasto per tutti i disturbi con componente neuropatica in generale, in modo particolare gli arti inferiori ed alla fascia lombare.</p><p><b>Ubicazione</b><br>HX11, nel tubercolo di Darwin.</p>",
             ChiaviPunto: ""
         },
         "277": {
@@ -594,7 +594,7 @@ DB.set= {
         },
         "278": {
             NomePunto: "Vertebre dorsali CIN",
-            AzioniPunto: "<p><b>Azione<br></b>I punti Vertebre Cervicali è riconosciuto sia dalla Scuola Cinese sia dalla Scuola Francese per la sua efficacia in tutte le patologie correlate alle vertebre dorsali.&nbsp;</p><p><b>Ubicazione</b><br>AH9-AH10, nei terzi medio e superiore del corpo dell'antelice, verso la fossa scafoide.</p>",
+            AzioniPunto: "<p><b>Azione<br></b>I punti Vertebre Cervicali è riconosciuto sia dalla Scuola Cinese sia dalla Scuola Francese per la sua efficacia in tutte le patologie correlate alle vertebre dorsali.</p><p><b>Ubicazione</b><br>AH9-AH10, nei terzi medio e superiore del corpo dell'antelice, verso la fossa scafoide.</p>",
             ChiaviPunto: ""
         },
         "279": {
@@ -604,17 +604,17 @@ DB.set= {
         },
         "280": {
             NomePunto: "Mandibola",
-            AzioniPunto: "<p><b>Altri nomi</b><br>- Denti inferiori<br>- Muscolo massetere</p><p><b>Azione</b><br>Come indicato dal nome, questo punto è molto efficace nel trattamento di tutti i disturbi correlati alla mandibola, quali paralisi facciale, algia dell'arcata inferiore e bruxismo. Spesso associato al Punto Mascella Superiore.</p><p><b>Ubicazione</b><br>LO8-PP1,&nbsp;nel punto in qui la fossa scafoidea si divide a Y, alla fine della sua branca anteriore, poco sotto il punto [.174.]</p>",
+            AzioniPunto: "<p><b>Altri nomi</b><br>- Denti inferiori<br>- Muscolo massetere</p><p><b>Azione</b><br>Come indicato dal nome, questo punto è molto efficace nel trattamento di tutti i disturbi correlati alla mandibola, quali paralisi facciale, algia dell'arcata inferiore e bruxismo. Spesso associato al Punto Mascella Superiore.</p><p><b>Ubicazione</b><br>LO8-PP1,&nbsp;nel punto in qui la fossa scafoidea si divide a Y, alla fine della sua branca anteriore, poco sotto il punto [.174.].</p>",
             ChiaviPunto: ""
         },
         "281": {
             NomePunto: "Mascella superiore",
-            AzioniPunto: "<p><b>Altri nomi</b><br>- Denti superiori</p><p><b>Azione</b><br>Questo punto viene spesso associato al Punto Mandibola per la sua efficacia nel trattamento di tutti i disturbi correlati alla mandibola, quali paralisi facciale, algia dell'arcata inferiore e bruxismo.</p><p><b>Ubicazione</b><br>LO8-PP1, nel punto in qui la fossa scafoidea si divide a Y, alla fine della sua branca anteriore, poco sotto e medialmente al punto [.174.]</p>",
+            AzioniPunto: "<p><b>Altri nomi</b><br>- Denti superiori</p><p><b>Azione</b><br>Questo punto viene spesso associato al Punto Mandibola per la sua efficacia nel trattamento di tutti i disturbi correlati alla mandibola, quali paralisi facciale, algia dell'arcata inferiore e bruxismo.</p><p><b>Ubicazione</b><br>LO8-PP1, nel punto in cui la fossa scafoidea si divide a Y, alla fine della sua branca anteriore, poco sotto e medialmente al punto [.174.].</p>",
             ChiaviPunto: ""
         },
         "282": {
             NomePunto: "Muscoli lombosacrali",
-            AzioniPunto: "<p><b>Azione<br></b>Questo punto internazionale viene impiegato per la sua funzione rilassante dei muscoli lombari e sacrali.</p><p><b>Ubicazione</b><br>PG5-PG6, nel solco longitudinale posteriore, nella branca inferiore-mediale</p>",
+            AzioniPunto: "<p><b>Azione<br></b>Questo punto internazionale viene impiegato per la sua funzione rilassante dei muscoli lombari e sacrali.</p><p><b>Ubicazione</b><br>PG5-PG6, nel solco longitudinale posteriore, nella branca inferiore-mediale.</p>",
             ChiaviPunto: ""
         },
         "283": {
@@ -624,7 +624,7 @@ DB.set= {
         },
         "284": {
             NomePunto: "Muscolatura coccigea",
-            AzioniPunto: "<p><b>Azione<br></b>Come indicato dal nome, questo punto è molto efficace per ridurre tutti i disturbi correlati alla muscolatura coccigea.</p><p><b>Ubicazione</b><br>PG7, nel solco longitudinale posteriore, nel terzo superiore della branca inferiore-mediale</p>",
+            AzioniPunto: "<p><b>Azione<br></b>Come indicato dal nome, questo punto è molto efficace per ridurre tutti i disturbi correlati alla muscolatura coccigea.</p><p><b>Ubicazione</b><br>PG7, nel solco longitudinale posteriore, nel terzo superiore della branca inferiore-mediale.</p>",
             ChiaviPunto: ""
         },
         "285": {
@@ -634,27 +634,27 @@ DB.set= {
         },
         "286": {
             NomePunto: "Muscolatura paravertebrale dorsale",
-            AzioniPunto: "<p><b>Azione<br></b>Questo punto, secondo la Scuola Francese, viene impiegato per la sua funzione miorilassante paravertebrale.&nbsp;</p><p><b>Ubicazione</b><br>AH3-AH4, nei due terzi superiori del corpo dell'antelice, prima che si biforchi nelle 2 branche, sul lato verso la fossa scafoidea.</p>",
+            AzioniPunto: "<p><b>Azione<br></b>Questo punto, secondo la Scuola Francese, viene impiegato per la sua funzione miorilassante paravertebrale.</p><p><b>Ubicazione</b><br>AH3-AH4, nei due terzi superiori del corpo dell'antelice, prima che si biforchi nelle 2 branche, sul lato verso la fossa scafoidea.</p>",
             ChiaviPunto: ""
         },
         "287": {
             NomePunto: "Muscolatura paravertebrale lombosacrale",
-            AzioniPunto: "<p><b>Azione<br></b>Questo punto internazionale viene impiegato per la sua funzione miorilassante paravertebrale.</p><p><b>Ubicazione</b><br>AH5-AH6-AH7, sulla radice inferiore dell'antelice al confine con la fossa triangolare</p>",
+            AzioniPunto: "<p><b>Azione<br></b>Questo punto internazionale viene impiegato per la sua funzione miorilassante paravertebrale.</p><p><b>Ubicazione</b><br>AH5-AH6-AH7, sulla radice inferiore dell'antelice al confine con la fossa triangolare.</p>",
             ChiaviPunto: ""
         },
         "288": {
             NomePunto: "Muscoli del collo",
-            AzioniPunto: "<p><b>Azione<br></b>Questo punto internazionale viene impiegato per la sua funzione rilassante sui muscoli del collo.</p><p><b>Ubicazione</b><br>PP3-PG3, tra l'eminenza scafoidea e il solco longitudinale posteriore</p>",
+            AzioniPunto: "<p><b>Azione<br></b>Questo punto internazionale viene impiegato per la sua funzione rilassante sui muscoli del collo.</p><p><b>Ubicazione</b><br>PP3-PG3, tra l'eminenza scafoidea e il solco longitudinale posteriore.</p>",
             ChiaviPunto: ""
         },
         "289": {
             NomePunto: "Muscoli del dorso",
-            AzioniPunto: "<p><b>Azione<br></b>Punto utilizzato dalla Scuola Francese per la sua azione rilassante sui muscoli dorsali.</p><p><b>Ubicazione</b><br>PP3-PP5-PG3-PG4-PG5, tra l'eminenza scafoidea e il solco longitudinale posteriore</p>",
+            AzioniPunto: "<p><b>Azione<br></b>Punto utilizzato dalla Scuola Francese per la sua azione rilassante sui muscoli dorsali.</p><p><b>Ubicazione</b><br>PP3-PP5-PG3-PG4-PG5, tra l'eminenza scafoidea e il solco longitudinale posteriore.</p>",
             ChiaviPunto: ""
         },
         "291": {
             NomePunto: "Punto Maestro Occipitale",
-            AzioniPunto: "<p><b>Altri nomi</b><br>- Osso occipitale<br>- Atlante</p><p><b>Azione</b><br>Questo Punto Master è collegato direttamente allo spazio che intercorre tra l'osso occipitale e la prima vertebra cervicale. Ha una forte azione nel trattamento di vertigini, insonnia, cefalee tensive e nevralgie. È inoltre riconosciuto per le sue proprietà miorilassanti in particolare con componente tensivo-emozionale.</p><p><b>Ubicazione</b><br>AT3, Nel solco antelico-antitragale o post-antitragale.</p>",
+            AzioniPunto: "<p><b>Altri nomi</b><br>- Osso occipitale<br>- Atlante</p><p><b>Azione</b><br>Questo punto master è collegato direttamente allo spazio che intercorre tra l'osso occipitale e la prima vertebra cervicale. Ha una forte azione nel trattamento di vertigini, insonnia, cefalee tensive e nevralgie. È inoltre riconosciuto per le sue proprietà miorilassanti in particolare con componente tensivo-emozionale.</p><p><b>Ubicazione</b><br>AT3, nel solco antelico-antitragale o post-antitragale.</p>",
             ChiaviPunto: ""
         },
         "293": {
@@ -664,17 +664,17 @@ DB.set= {
         },
         "294": {
             NomePunto: "Vertice della testa",
-            AzioniPunto: "<p><b>Altri nomi</b><br>- Apice della Testa<br>- Corona della Testa</p><p><b>Azione</b><br>Riduce il dolore della testa.</p><p><b>Ubicazione</b><br>LO6, nella parte superiore del lobulo posteriormente alla linea passante tra <span class='LMtxt'>LM13</span> ed <span class='LMtxt'>LM7</span></p>",
+            AzioniPunto: "<p><b>Altri nomi</b><br>- Apice della Testa<br>- Corona della Testa</p><p><b>Azione</b><br>Riduce il dolore della testa.</p><p><b>Ubicazione</b><br>LO6, nella parte superiore del lobulo posteriormente alla linea passante tra <span class='LMtxt'>LM13</span> ed <span class='LMtxt'>LM7</span>.</p>",
             ChiaviPunto: ""
         },
         "298": {
             NomePunto: "Midollo allungato EUR",
-            AzioniPunto: "<p><b>Azione</b><br>Patologia neurologica cervicale alta. Modulazione del dolore neuropatico cervicale. Controllo del tono muscolare.</p><p><b>Ubicazione</b><br>HX15, sul bordo anteriore dell'elice nella sua coda, in un'area di passaggio verso il Lobulo auricolare</p>",
+            AzioniPunto: "<p><b>Azione</b><br>Patologia neurologica cervicale alta. Modulazione del dolore neuropatico cervicale. Controllo del tono muscolare.</p><p><b>Ubicazione</b><br>HX15, sul bordo anteriore dell'elice nella sua coda, in un'area di passaggio verso il Lobulo auricolare.</p>",
             ChiaviPunto: ""
         },
         "302": {
             NomePunto: "Orecchio interno CIN",
-            AzioniPunto: "<p><b>Azione</b><br>Vertigini, ronzii e tinnitus.</p><p><b>Ubicazione</b><br>LO5, nella parte inferiore e periferica del lobulo, antero-inferiormente al punto ATM</p>",
+            AzioniPunto: "<p><b>Azione</b><br>Vertigini, ronzii e tinnitus.</p><p><b>Ubicazione</b><br>LO5, nella parte inferiore e periferica del lobulo, antero-inferiormente al punto ATM.</p>",
             ChiaviPunto: ""
         },
         "303": {
@@ -684,7 +684,7 @@ DB.set= {
         },
         "304": {
             NomePunto: "Analgesia dentale",
-            AzioniPunto: "<p><b>Altri nomi</b><br>- Denti</p><p><b>Azione</b><br>Utile nel dolore dentario specie quanto acuto ed in atto.</p><p><b>Ubicazione</b><br>LO1-LO2, in un'area anteriore del lobulo, circa a 2-3 mm dalla guancia tra i due terzi superiori ed inferiore della distanza tra <span class='LMtxt'>LM9</span> ed <span class='LMtxt'>LM8</span></p>",
+            AzioniPunto: "<p><b>Altri nomi</b><br>- Denti</p><p><b>Azione</b><br>Utile nel dolore dentario specie quanto acuto ed in atto.</p><p><b>Ubicazione</b><br>LO1-LO2, in un'area anteriore del lobulo, circa a 2-3 mm dalla guancia tra i due terzi superiori ed inferiore della distanza tra <span class='LMtxt'>LM9</span> ed <span class='LMtxt'>LM8</span>.</p>",
             ChiaviPunto: ""
         },
         "305": {
@@ -694,7 +694,7 @@ DB.set= {
         },
         "000": {
             NomePunto: "Punto Zero",
-            AzioniPunto: "<p><b>Altri nomi</b><br>- Centro dell'orecchio<br>- Punto di supporto<br>- Plesso solare<br>- Ombelico</p><p><b>Azione</b><br>Considerato molto importante per la scuola francese, secondo Paul Nogier rappresenta un centro fisiologico e geometrico. La stimolazione di questo punto veniva usato da Nogier in condizioni di fatica e tensioni nervose riequilibrando uno stato di calma generale. Il Punto Zero ha una potente azione di riequilibrio generale sul sistema energetico, psicologico e fisico.&nbsp;</p><p><b>Ubicazione</b><br>HX1-CR1, alla radice dell'elice al confine con la conca rigida. In un solco ortogonale alla radice dell'elice.</p>",
+            AzioniPunto: "<p><b>Altri nomi</b><br>- Centro dell'orecchio<br>- Punto di supporto<br>- Plesso solare<br>- Ombelico</p><p><b>Azione</b><br>Considerato molto importante per la scuola francese, secondo Paul Nogier rappresenta un centro fisiologico e geometrico. La stimolazione di questo punto veniva usato da Nogier in condizioni di fatica e tensioni nervose riequilibrando uno stato di calma generale. Il Punto Zero ha una potente azione di riequilibrio generale sul sistema energetico, psicologico e fisico.</p><p><b>Ubicazione</b><br>HX1-CR1, alla radice dell'elice al confine con la conca rigida. In un solco ortogonale alla radice dell'elice.</p>",
             ChiaviPunto: ""
         },
         "001": {
@@ -704,7 +704,7 @@ DB.set= {
         },
         "002": {
             NomePunto: "Punto Allergia 2",
-            AzioniPunto: "<p><b>Altri nomi</b><br>- Allergia 2</p><p><b>Azione</b><br>Questo Punto è molto efficace per ridurre gli effetti di allergie e infiammazioni.</p><p><b>Ubicazione</b><br>IH7-iH8, nella faccia nascosta dell'elice, è un'area longilinea</p>",
+            AzioniPunto: "<p><b>Altri nomi</b><br>- Allergia 2</p><p><b>Azione</b><br>Questo Punto è molto efficace per ridurre gli effetti di allergie e infiammazioni.</p><p><b>Ubicazione</b><br>IH7-iH8, nella faccia nascosta dell'elice, è un'area longilinea.</p>",
             ChiaviPunto: "azione antiflogistica"
         },
         "003": {
@@ -729,18 +729,18 @@ DB.set= {
         },
         "009": {
             NomePunto: "Genitali esterni CIN",
-            AzioniPunto: "<p><b>Altri nomi</b><br>- Pene<br>- Clitoride</p><p><b>Azione</b><br>Punto indicato dalla Scuola Cinese per il trattamento di tutte le patologie scrotali e correlate agli organi genitali maschili e femminili. Molto efficace in caso di frigidità e impotenza.</p><p><b>Ubicazione</b><br>HX4, sul ginocchio dell'elice all'altezza della branca inferiore dell'antelice</p>",
+            AzioniPunto: "<p><b>Altri nomi</b><br>- Pene<br>- Clitoride</p><p><b>Azione</b><br>Punto indicato dalla Scuola Cinese per il trattamento di tutte le patologie scrotali e correlate agli organi genitali maschili e femminili. Molto efficace in caso di frigidità e impotenza.</p><p><b>Ubicazione</b><br>HX4, sul ginocchio dell'elice all'altezza della branca inferiore dell'antelice.</p>",
             ChiaviPunto: ""
         },
         "013": {
             NomePunto: "Ansia di Romoli",
-            AzioniPunto: "<p><b>Azione</b><br>Particolarmente sensibile ed efficace negli attacchi di panico, unitamente al punto Bocca</p><p><b>Ubicazione</b><br>IC5-IC8, codificata da A. Lovato, descritta da Marco Romoli in diverse esposizioni, relazioni e congressi, identificata in una zona dell'emiconca inferiore, vicino al punto Meraviglioso di Nogier.</p>",
+            AzioniPunto: "<p><b>Azione</b><br>Particolarmente sensibile ed efficace negli attacchi di panico, unitamente al punto Bocca.</p><p><b>Ubicazione</b><br>IC5-IC8, codificata da A. Lovato, descritta da Marco Romoli in diverse esposizioni, relazioni e congressi, identificata in una zona dell'emiconca inferiore, vicino al punto Meraviglioso di Nogier.</p>",
             ChiaviPunto: "",
 			"hidden": true
         },
         "014": {
             NomePunto: "Area dell'emicrania",
-            AzioniPunto: "<p><b>Azione</b><br>Riduce una crisi emicranica, attraverso il test di contatto con l'ago (NTC). La detezione avviene attraverso il pauper nero e con il pauper verticale nelle aree IT1, AT1 e CW1.</p><p><b>Ubicazione</b><br>IT1-AT1-CW1-LO4, codificata da A. Lovato determinata per la prima volta da Romoli attraverso il test da contatto (NTC).</p>",
+            AzioniPunto: "<p><b>Azione</b><br>Riduce una crisi emicranica, attraverso il test di contatto con l'ago (NTC). La detezione avviene attraverso il Palpeur nero in posizione verticale nelle aree IT1, AT1 e CW1.</p><p><b>Ubicazione</b><br>IT1-AT1-CW1-LO4, codificata da A. Lovato determinata per la prima volta da Romoli attraverso il test da contatto (NTC).</p>",
             ChiaviPunto: "",
 			"hidden": true
         },
@@ -757,7 +757,7 @@ DB.set= {
         },
         "018": {
             NomePunto: "Dermatite",
-            AzioniPunto: "<p><b>Altri nomi</b><br>- Disturbi della pelle EUR<br>- Orticaria<br>- Eczema<br><span style='color: rgb(0, 0, 0);'>- Patologie dermatologiche<br>- Midollo EUR</span></p><p><b>Azione</b><br>Come suggerito dal nome, questo punto viene utilizzato per trattare tutte le principali patologie dermatologiche quali ad esempio dermatite, acne, eczema e orticaria.</p><p><b>Ubicazione</b><br>HX12-HX13-HX14-HX15 sul bordo dell'elice. È anche la sede di rappresentazione midollare. Il trattamento e la rappresentazione patologica segue la logica dermatomerica.</p>",
+            AzioniPunto: "<p><b>Altri nomi</b><br>- Disturbi della pelle EUR<br>- Orticaria<br>- Eczema<br>- Patologie dermatologiche<br>- Midollo EUR</p><p><b>Azione</b><br>Come suggerito dal nome, questo punto viene utilizzato per trattare tutte le principali patologie dermatologiche quali ad esempio dermatite, acne, eczema e orticaria.</p><p><b>Ubicazione</b><br>HX12-HX13-HX14-HX15 sul bordo dell'elice. È anche la sede di rappresentazione midollare. Il trattamento e la rappresentazione patologica segue la logica dermatomerica.</p>",
             ChiaviPunto: ""
         },
         "023": {
@@ -772,27 +772,27 @@ DB.set= {
         },
         "028": {
             NomePunto: "Avampiede CIN",
-            AzioniPunto: "<p><b>Altri nomi</b><br>- Metatarso</p><p><b>Azione</b><br>Punto auricolare indicato per il trattamento di disturbi e dolori legati all'avampiede</p><p><b>Ubicazione</b><br>AH17-AH18-PP11, nel punto più alto della radice superiore dell'antelice, nascosto dal bordo dell'elice</p>",
+            AzioniPunto: "<p><b>Altri nomi</b><br>- Metatarso</p><p><b>Azione</b><br>Punto auricolare indicato per il trattamento di disturbi e dolori legati all'avampiede.</p><p><b>Ubicazione</b><br>AH17-AH18-PP11, nel punto più alto della radice superiore dell'antelice, nascosto dal bordo dell'elice.</p>",
             ChiaviPunto: ""
         },
         "029": {
             NomePunto: "Tallone CIN",
-            AzioniPunto: "<p><b>Altri nomi</b><br>- Punto del tallone</p><p><b>Azione<br></b>Questo punto viene adottato sia dalla Scuola Cinese sia dalla Scuola Francese per la sua azione nel contrasto dei disturbi e dolore al tallone.&nbsp;</p><p><b>Ubicazione</b><br>AH17, nel terzo superiore della radice superiore dell'antelice, in un'area nascosta dal bordo dell'elice ed in prossimità con la fossa triangolare.</p>",
+            AzioniPunto: "<p><b>Altri nomi</b><br>- Punto del tallone</p><p><b>Azione<br></b>Questo punto viene adottato sia dalla Scuola Cinese sia dalla Scuola Francese per la sua azione nel contrasto dei disturbi e dolore al tallone.</p><p><b>Ubicazione</b><br>AH17, nel terzo superiore della radice superiore dell'antelice, in un'area nascosta dal bordo dell'elice ed in prossimità con la fossa triangolare.</p>",
             ChiaviPunto: ""
         },
         "030": {
             NomePunto: "Ipertensione 1",
-            AzioniPunto: "<p><b>Altri nomi</b><br>- Ansia 1<br>- Depressione</p><p><b>Azione</b><br>La Scuola Cinese distingue il trattamento dell'Ipertensione con tre punti differenti. Il Punto Ipertensione 1 è indicato per il riequilibrio della pressione arteriosa, ansia e depressione.</p><p><b>Ubicazione</b><br>TF6, nella fossa triangolare in prossimità del punto di incontro tra elice e branca inferiore dell'antelice</p>",
+            AzioniPunto: "<p><b>Altri nomi</b><br>- Ansia 1<br>- Depressione</p><p><b>Azione</b><br>La Scuola Cinese distingue il trattamento dell'Ipertensione con tre punti differenti. Il Punto Ipertensione 1 è indicato per il riequilibrio della pressione arteriosa, ansia e depressione.</p><p><b>Ubicazione</b><br>TF6, nella fossa triangolare in prossimità del punto di incontro tra elice e branca inferiore dell'antelice.</p>",
             ChiaviPunto: ""
         },
         "031": {
             NomePunto: "Utero CIN",
-            AzioniPunto: "<p><b>Azione<br></b>Disturbi dolorosi e funzionali dell'apparato riproduttivo. In particolare dismenorrea e polimenorrea</p><p><b>Ubicazione</b><br>TF5-TF6, vasta area nel terzo anteriore della fossa triangolare, in parte nascosta dal bordo dell'elice.</p>",
+            AzioniPunto: "<p><b>Azione<br></b>Disturbi dolorosi e funzionali dell'apparato riproduttivo. In particolare dismenorrea e polimenorrea.</p><p><b>Ubicazione</b><br>TF5-TF6, vasta area nel terzo anteriore della fossa triangolare, in parte nascosta dal bordo dell'elice.</p>",
             ChiaviPunto: ""
         },
         "032": {
             NomePunto: "Caviglia EUR",
-            AzioniPunto: "<p><b>Altri nomi</b><br>- Articolazione astragalo-tibiale<br>- Tendine d'Achille</p><p><b>Azione</b><br>Il punto caviglia viene utilizzato tutti i disturbi correlati alla caviglia, in particolare articolazioni, tendine d'Achille</p><p><b>Ubicazione</b><br>TF5-TF6 lungo la bisettrice della fossa triangolare, nel terzo prossimale al ginocchio dell'elice.</p>",
+            AzioniPunto: "<p><b>Altri nomi</b><br>- Articolazione astragalo-tibiale<br>- Tendine d'Achille</p><p><b>Azione</b><br>Il punto caviglia viene utilizzato tutti i disturbi correlati alla caviglia, in particolare articolazioni, tendine d'Achille.</p><p><b>Ubicazione</b><br>TF5-TF6 lungo la bisettrice della fossa triangolare, nel terzo prossimale al ginocchio dell'elice.</p>",
             ChiaviPunto: ""
         },
         "033": {
@@ -817,7 +817,7 @@ DB.set= {
         },
         "038": {
             NomePunto: "Avampiede EUR",
-            AzioniPunto: "<p><b>Altri nomi</b><br>- Metatarso</p><p><b>Azione</b><br>Punto auricolare indicato per il trattamento di disturbi e dolori legati all'avampiede</p><p><b>Ubicazione</b><br>TF5-TF6-PT3, alla base della fossa triangolare, nascosto dal bordo dell'elice</p>",
+            AzioniPunto: "<p><b>Altri nomi</b><br>- Metatarso</p><p><b>Azione</b><br>Punto auricolare indicato per il trattamento di disturbi e dolori legati all'avampiede.</p><p><b>Ubicazione</b><br>TF5-TF6-PT3, alla base della fossa triangolare, nascosto dal bordo dell'elice.</p>",
             ChiaviPunto: ""
         },
         "039": {
@@ -827,7 +827,7 @@ DB.set= {
         },
         "040": {
             NomePunto: "Tallone EUR",
-            AzioniPunto: "<p><b>Azione<br></b>Patologie dolorose e disfunzionali del tallone e del retro-piede</p><p><b>Ubicazione</b><br>TF5, alla base della fossa triangolare, vicino al punto di incontro tra l'elice e la radice inferiore dell'antelice. Il punto è nascosto dall'elice.</p>",
+            AzioniPunto: "<p><b>Azione<br></b>Patologie dolorose e disfunzionali del tallone e del retro-piede.</p><p><b>Ubicazione</b><br>TF5, alla base della fossa triangolare, vicino al punto di incontro tra l'elice e la radice inferiore dell'antelice. Il punto è nascosto dall'elice.</p>",
             ChiaviPunto: ""
         },
         "041": {
@@ -837,7 +837,7 @@ DB.set= {
         },
         "042": {
             NomePunto: "Ghiandola mammaria CIN",
-            AzioniPunto: "<p><b>Altri nomi</b><br>- Mammella</p><p><b>Azione</b><br>Patologie della mammella, mastodinia. </p><p><b>Ubicazione</b><br>AH3, al centro del corpo dell'antelice a livello della zona di rappresentazione della IV-V vertebra toracica.</p>",
+            AzioniPunto: "<p><b>Altri nomi</b><br>- Mammella</p><p><b>Azione</b><br>Patologie della mammella, mastodinia.</p><p><b>Ubicazione</b><br>AH3, al centro del corpo dell'antelice a livello della zona di rappresentazione della IV-V vertebra toracica.</p>",
             ChiaviPunto: ""
         },
         "043": {
@@ -852,7 +852,7 @@ DB.set= {
         },
         "045": {
             NomePunto: "Insonnia 1",
-            AzioniPunto: "<p><b>Altri nomi</b><br>- Disturbi del sonno 1</p><p><b>Azione</b><br>La Scuola Francese distingue il trattamento dell'insonnia con due punti differenti. Il punto Insonnia 1 è indicato principalmente nei casi di continui risvegli notturni. Ottima efficacia nella riduzione di stress, depressione, nervosismo e come suggerito dal nome, per l'insonnia.</p><p><b>Ubicazione</b><br>SF5, nella fossa scafoidea, in alto</p>",
+            AzioniPunto: "<p><b>Altri nomi</b><br>- Disturbi del sonno 1</p><p><b>Azione</b><br>La Scuola Francese distingue il trattamento dell'insonnia con due punti differenti. Il punto Insonnia 1 è indicato principalmente nei casi di continui risvegli notturni. Ottima efficacia nella riduzione di stress, depressione, nervosismo e come suggerito dal nome, per l'insonnia.</p><p><b>Ubicazione</b><br>SF5, nella fossa scafoidea, in alto.</p>",
             ChiaviPunto: ""
         },
         "047": {
@@ -867,27 +867,27 @@ DB.set= {
         },
         "049": {
             NomePunto: "Spalla",
-            AzioniPunto: "<p><b>Altri nomi</b><br>- Cingolo scapolare<br>- Muscolo deltoide</p><p><b>Azione</b><br>Il Punto della Spalla è molto attivo per ridurre i disturbi della spalla con componente artrosica e artritica. È inoltre efficace nei casi di disturbi muscolo-tendinei della spalla.</p><p><b>Ubicazione</b><br>SF2-PP5, al centro della fossa scafoidea, a livello della rappresentazione del passaggio della colonna cervico-dorsale Francese</p>",
+            AzioniPunto: "<p><b>Altri nomi</b><br>- Cingolo scapolare<br>- Muscolo deltoide</p><p><b>Azione</b><br>Il Punto della Spalla è molto attivo per ridurre i disturbi della spalla con componente artrosica e artritica. È inoltre efficace nei casi di disturbi muscolo-tendinei della spalla.</p><p><b>Ubicazione</b><br>SF2-PP5, al centro della fossa scafoidea, a livello della rappresentazione del passaggio della colonna cervico-dorsale Francese.</p>",
             ChiaviPunto: ""
         },
         "053": {
             NomePunto: "Braccio",
-            AzioniPunto: "<p><b>Altri nomi</b><br>- Punto del braccio<br>- Omero<br>- Muscolo bicipite<br>- Muscolo tricipite</p><p><b>Azione</b><br>Come indicato dal nome, questo punto è molto efficace per ridurre tutti i disturbi correlati ai disturbi del braccio.</p><p><b>Ubicazione</b><br>SF3-PP5, nella fossa scafoidea, tra il punto [.054.] e il punto [.049.]</p>",
+            AzioniPunto: "<p><b>Altri nomi</b><br>- Punto del braccio<br>- Omero<br>- Muscolo bicipite<br>- Muscolo tricipite</p><p><b>Azione</b><br>Come indicato dal nome, questo punto è molto efficace per ridurre tutti i disturbi correlati ai disturbi del braccio.</p><p><b>Ubicazione</b><br>SF3-PP5, nella fossa scafoidea, tra il punto [.054.] e il punto [.049.].</p>",
             ChiaviPunto: ""
         },
         "054": {
             NomePunto: "Gomito",
-            AzioniPunto: "<p><b>Altri nomi</b><br>- Punto del gomito<br>- Articolazione del gomito</p><p><b>Azione</b><br>Come indicato dal nome, questo punto è molto efficace per ridurre tutti i disturbi correlati al gomito.</p><p><b>Ubicazione</b><br>SF4-PP5, nella fossa scafoidea, al livello del punto [.001.]</p>",
+            AzioniPunto: "<p><b>Altri nomi</b><br>- Punto del gomito<br>- Articolazione del gomito</p><p><b>Azione</b><br>Come indicato dal nome, questo punto è molto efficace per ridurre tutti i disturbi correlati al gomito.</p><p><b>Ubicazione</b><br>SF4-PP5, nella fossa scafoidea, al livello del punto [.001.].</p>",
             ChiaviPunto: ""
         },
         "055": {
             NomePunto: "Avambraccio",
-            AzioniPunto: "<p><b>Altri nomi</b><br>- Punto avambraccio<br>- Radio<br>- Ulna<br>- Muscolo brachioradiale</p><p><b>Azione</b><br>Come indicato dal nome, questo punto è molto efficace per ridurre tutti i disturbi correlati all'avambraccio.</p><p><b>Ubicazione</b><br>SF4-PP5, nella fossa scafoidea, al livello del punto [.001.]</p>",
+            AzioniPunto: "<p><b>Altri nomi</b><br>- Punto avambraccio<br>- Radio<br>- Ulna<br>- Muscolo brachioradiale</p><p><b>Azione</b><br>Come indicato dal nome, questo punto è molto efficace per ridurre tutti i disturbi correlati all'avambraccio.</p><p><b>Ubicazione</b><br>SF4-PP5, nella fossa scafoidea, al livello del punto [.001.].</p>",
             ChiaviPunto: ""
         },
         "056": {
             NomePunto: "Cuore EUR",
-            AzioniPunto: "<p><b>Azione<br></b>Questo punto, secondo la Scuola Francese, è indicato per il trattamento delle patologie e disturbi cardiaci. È quindi consigliato trattare il punto Cuore in caso di dolore toracico, ipertensione e ipotensione, tachicardia ed aritmie di vario genere.</p><p><b>Ubicazione</b><br>AH3-PG4, sull'antelice al confine con l'avanmuro, all'altezza del [.000.]</p>",
+            AzioniPunto: "<p><b>Azione<br></b>Questo punto, secondo la Scuola Francese, è indicato per il trattamento delle patologie e disturbi cardiaci. È quindi consigliato trattare il punto Cuore in caso di dolore toracico, ipertensione e ipotensione, tachicardia ed aritmie di vario genere.</p><p><b>Ubicazione</b><br>AH3-PG4, sull'antelice al confine con l'avanmuro, all'altezza del [.000.].</p>",
             ChiaviPunto: ""
         },
         "058": {
@@ -897,27 +897,27 @@ DB.set= {
         },
         "060": {
             NomePunto: "Anca EUR",
-            AzioniPunto: "<p><b>Altri nomi</b><br><span style='color: rgb(0, 0, 0);'>- Articolazione coxofemorale</span><br></p><p><b>Azione</b><br>Questo Punto è adottato sia dalla Scuola Cinese sia dalla Scuola Francese ma in diverse localizzazioni. In comune hanno l'applicazione per il trattamento dei disturbi legati all'anca e del cingolo pelvico.</p><p><b>Ubicazione</b><br>TF1-PT1, all'apice della fossa triangolare</p>",
+            AzioniPunto: "<p><b>Altri nomi</b><br>- Articolazione coxofemorale</p><p><b>Azione</b><br>Questo Punto è adottato sia dalla Scuola Cinese sia dalla Scuola Francese ma in diverse localizzazioni. In comune hanno l'applicazione per il trattamento dei disturbi legati all'anca e del cingolo pelvico.</p><p><b>Ubicazione</b><br>TF1-PT1, all'apice della fossa triangolare.</p>",
             ChiaviPunto: ""
         },
         "061": {
             NomePunto: "Pelvi",
-            AzioniPunto: "<p><b>Altri nomi</b><br>- Bacino<br>- Cintura pelvica<br>- Inguine<br>- Osso pubico<br>- Cavità pelvica</p><p><b>Azione</b><br>Questo Punto Internazionale viene utilizzato per trattare tutte le patologie pelviche. Trova una buona efficacia nei casi di dolore lombare.</p><p><b>Ubicazione</b><br>TF1-PG5, all'apice della fossa triangolare, verso il basso, sotto il punto [.001.]</p>",
+            AzioniPunto: "<p><b>Altri nomi</b><br>- Bacino<br>- Cintura pelvica<br>- Inguine<br>- Osso pubico<br>- Cavità pelvica</p><p><b>Azione</b><br>Questo Punto Internazionale viene utilizzato per trattare tutte le patologie pelviche. Trova una buona efficacia nei casi di dolore lombare.</p><p><b>Ubicazione</b><br>TF1-PG5, all'apice della fossa triangolare, verso il basso, sotto il punto [.001.].</p>",
             ChiaviPunto: ""
         },
         "065": {
             NomePunto: "Polso",
-            AzioniPunto: "<p><b>Altri nomi</b><br>- Punto del polso<br>- Articolazione del polso</p><p><b>Azione</b><br>Come indicato dal nome, questo punto è molto efficace per ridurre tutti i disturbi correlati al polso, in particolare ai disturbi osteoarticolari dello stesso.</p><p><b>Ubicazione</b><br>SF5-PP7, nella fossa scafoidea, poco sopra il livello del punto [.001.]</p>",
+            AzioniPunto: "<p><b>Altri nomi</b><br>- Punto del polso<br>- Articolazione del polso</p><p><b>Azione</b><br>Come indicato dal nome, questo punto è molto efficace per ridurre tutti i disturbi correlati al polso, in particolare ai disturbi osteoarticolari dello stesso.</p><p><b>Ubicazione</b><br>SF5-PP7, nella fossa scafoidea, poco sopra il livello del punto [.001.].</p>",
             ChiaviPunto: ""
         },
         "067": {
             NomePunto: "Addome",
-            AzioniPunto: "<p><b>Altri nomi</b><br>- Punto addome<br>- Lombalgia<br>- Muscoli addominali</p><p><b>Azione</b><br>Il Punto Addome ha una forte azione nel ridurre i dolori addominali e nel trattamento della Lombalgia.</p><p><b>Ubicazione</b><br>AH11-AH12-PG4, vicino al punto di biforcazione dell'antelice in radice superiore e inferiore</p>",
+            AzioniPunto: "<p><b>Altri nomi</b><br>- Punto addome<br>- Lombalgia<br>- Muscoli addominali</p><p><b>Azione</b><br>Il Punto Addome ha una forte azione nel ridurre i dolori addominali e nel trattamento della Lombalgia.</p><p><b>Ubicazione</b><br>AH11-AH12-PG4, vicino al punto di biforcazione dell'antelice in radice superiore e inferiore.</p>",
             ChiaviPunto: ""
         },
         "068": {
             NomePunto: "Ginocchio CIN",
-            AzioniPunto: "<p><b>Altri nomi</b><br>- Punto del ginocchio<br>- Articolazione del ginocchio<br>- Rotula</p><p><b>Azione</b><br>Come indicato dal nome, questo punto è molto efficace per ridurre tutti i disturbi correlati al ginocchio in particolare ai disturbi articolari dello stesso.</p><p><b>Ubicazione</b><br>AH14-AH15, al centro della radice superiore dell'antelice</p>",
+            AzioniPunto: "<p><b>Altri nomi</b><br>- Punto del ginocchio<br>- Articolazione del ginocchio<br>- Rotula</p><p><b>Azione</b><br>Come indicato dal nome, questo punto è molto efficace per ridurre tutti i disturbi correlati al ginocchio in particolare ai disturbi articolari dello stesso.</p><p><b>Ubicazione</b><br>AH14-AH15, al centro della radice superiore dell'antelice.</p>",
             ChiaviPunto: ""
         },
         "069": {
@@ -947,17 +947,17 @@ DB.set= {
         },
         "074": {
             NomePunto: "Orticaria",
-            AzioniPunto: "<p><b>Altri nomi</b><br>- Dermatite<br>- Disturbi della pelle CIN</p><p><b>Azione</b><br>Questo Punto è molto indicato per trattare tutte le patologie legate alla pelle, in particolare acne, eczema, orticaria e dermatite.</p><p><b>Ubicazione</b><br>SF5-IH11, area ampia che comprende parte della fossa scafoide e parte della superficie nascosta dell'elice, all'altezza del tubercolo di Darwin</p>",
+            AzioniPunto: "<p><b>Altri nomi</b><br>- Dermatite<br>- Disturbi della pelle CIN</p><p><b>Azione</b><br>Questo Punto è molto indicato per trattare tutte le patologie legate alla pelle, in particolare acne, eczema, orticaria e dermatite.</p><p><b>Ubicazione</b><br>SF5-IH11, area ampia che comprende parte della fossa scafoide e parte della superficie nascosta dell'elice, all'altezza del tubercolo di Darwin.</p>",
             ChiaviPunto: ""
         },
         "075": {
             NomePunto: "Anca CIN",
-            AzioniPunto: "<p><b>Altri nomi</b><br>- Punto anca<br>- Articolazione coxofemorale</p><p><b>Azione</b><br>Questo Punto è adottato sia dalla Scuola Cinese sia dalla Scuola Francese ma in diverse localizzazioni. In comune hanno l'applicazione per il trattamento dei disturbi legati all'anca e del cingolo pelvico.</p><p><b>Ubicazione</b><br>AH13-PG8, nel terzo inferiore della branca superiore dell'antelice, verso la fossa triangolare<span></span></p>",
+            AzioniPunto: "<p><b>Altri nomi</b><br>- Punto anca<br>- Articolazione coxofemorale</p><p><b>Azione</b><br>Questo Punto è adottato sia dalla Scuola Cinese sia dalla Scuola Francese ma in diverse localizzazioni. In comune hanno l'applicazione per il trattamento dei disturbi legati all'anca e del cingolo pelvico.</p><p><b>Ubicazione</b><br>AH13-PG8, nel terzo inferiore della branca superiore dell'antelice, verso la fossa triangolare.</p>",
             ChiaviPunto: ""
         },
         "078": {
             NomePunto: "Punto Antistaminico",
-            AzioniPunto: "<p><b>Azione<br></b>Il Punto Antistaminico viene adottato per trattare i disturbi legati ai polmoni, in particolare sintomi da raffreddamento, bronchiti, asma ed allergie.</p><p><b>Ubicazione</b><br>TF3-TF4, nel centro della fossa triangolare<span></span></p>",
+            AzioniPunto: "<p><b>Azione<br></b>Il Punto Antistaminico viene adottato per trattare i disturbi legati ai polmoni, in particolare sintomi da raffreddamento, bronchiti, asma ed allergie.</p><p><b>Ubicazione</b><br>TF3-TF4, nel centro della fossa triangolare.</p>",
             ChiaviPunto: ""
         },
         "080": {
@@ -967,12 +967,12 @@ DB.set= {
         },
         "081": {
             NomePunto: "Caviglia CIN",
-            AzioniPunto: "<p><b>Altri nomi</b><br>- Punto della caviglia<br>- Articolazione astragalo-tibiale<br>- Tendine d'Achille</p><p><b>Azione</b><br>Il punto caviglia viene utilizzato tutti i disturbi correlati alla caviglia, e in particolare al tendine d'Achille</p><p><b>Ubicazione</b><br>AH17-PG9, sulla radice superiore dell'elice nel suo terzo superiore</p>",
+            AzioniPunto: "<p><b>Altri nomi</b><br>- Punto della caviglia<br>- Articolazione astragalo-tibiale<br>- Tendine d'Achille</p><p><b>Azione</b><br>Il punto caviglia viene utilizzato tutti i disturbi correlati alla caviglia, e in particolare al tendine d'Achille.</p><p><b>Ubicazione</b><br>AH17-PG9, sulla radice superiore dell'elice nel suo terzo superiore.</p>",
             ChiaviPunto: ""
         },
         "083": {
             NomePunto: "Pollice EUR",
-            AzioniPunto: "<p><b>Altri nomi</b><br>- Punto del pollice</p><p><b>Azione<br></b>Come indicato dal nome, questo punto è molto efficace per ridurre tutti i disturbi correlati al pollice in particolare alle patologie legate al primo raggio metacarpale.</p><p><b>Ubicazione</b><br>AH14-AH16-AH18, ampia area nella radice superiore dell'antelice</p>",
+            AzioniPunto: "<p><b>Altri nomi</b><br>- Punto del pollice</p><p><b>Azione<br></b>Come indicato dal nome, questo punto è molto efficace per ridurre tutti i disturbi correlati al pollice in particolare alle patologie legate al primo raggio metacarpale.</p><p><b>Ubicazione</b><br>AH14-AH16-AH18, ampia area nella radice superiore dell'antelice.</p>",
             ChiaviPunto: ""
         },
         "084": {
@@ -997,12 +997,12 @@ DB.set= {
         },
         "089": {
             NomePunto: "Genitali esterni EUR",
-            AzioniPunto: "<p><b>Altri nomi</b><br>- Pene<br>- Clitoride<br>- Punto di Bosch</p><p><b>Azione</b><br>Punto indicato dalla Scuola Francese per il trattamento di tutte le patologie scrotali e correlate agli organi genitali maschili e femminili. Molto efficace in caso di frigidità e impotenza.</p><p><b>Ubicazione</b><br>HX1, al confine tra la branca momtante dell'elice, il trago e l'emiconca superiore</p>",
+            AzioniPunto: "<p><b>Altri nomi</b><br>- Pene<br>- Clitoride<br>- Punto di Bosch</p><p><b>Azione</b><br>Punto indicato dalla Scuola Francese per il trattamento di tutte le patologie scrotali e correlate agli organi genitali maschili e femminili. Molto efficace in caso di frigidità e impotenza.</p><p><b>Ubicazione</b><br>HX1, al confine tra la branca momtante dell'elice, il trago e l'emiconca superiore.</p>",
             ChiaviPunto: ""
         },
         "092": {
             NomePunto: "Diaframma CIN",
-            AzioniPunto: "<p><b>Azione<br></b>La Scuola Cinese suggerisce il trattamento di questo punto per ridurre il vomito, dolori e spasmi diaframmatici ed il singhiozzo.</p><p><b>Ubicazione</b><br>HX1-HX2, alla radice dell'elice, anteriormente al [.000.]</p>",
+            AzioniPunto: "<p><b>Azione<br></b>La Scuola Cinese suggerisce il trattamento di questo punto per ridurre il vomito, dolori e spasmi diaframmatici ed il singhiozzo.</p><p><b>Ubicazione</b><br>HX1-HX2, alla radice dell'elice, anteriormente al [.000.].</p>",
             ChiaviPunto: ""
         },
         "093": {
@@ -1027,7 +1027,7 @@ DB.set= {
         },
         "099": {
             NomePunto: "Intestino tenue",
-            AzioniPunto: "<p><b>Altri nomi</b><br>- Piccolo intestino<br>- Digiuno<br>- Ileo</p><p><b>Azione</b><br>Come suggerito dal nome, questo punto è indicato per trattare tutti i disturbi correlati alla funzionalità del grosso intestino, in particolare per ridurre i disturbi allo stomaco e intestinali, disturbi alimentari e diarrea.</p><p><b>Ubicazione</b><br>SC2-PC3, nell'emiconca superiore, superiormente e anteriormente al [.000.]</p>",
+            AzioniPunto: "<p><b>Altri nomi</b><br>- Piccolo intestino<br>- Digiuno<br>- Ileo</p><p><b>Azione</b><br>Come suggerito dal nome, questo punto è indicato per trattare tutti i disturbi correlati alla funzionalità del grosso intestino, in particolare per ridurre i disturbi allo stomaco e intestinali, disturbi alimentari e diarrea.</p><p><b>Ubicazione</b><br>SC2-PC3, nell'emiconca superiore, superiormente e anteriormente al [.000.].</p>",
             ChiaviPunto: ""
         }
     },
@@ -1582,7 +1582,7 @@ DB.set= {
 						"170"
 					]
 				},
-				"d": "* Per individuare la zona più sensibile utilizzare la palpazione manuale utilizzando indice e pollice e in seguito il pauper azzurro sulla superficie laterale e quello nero sulla superficie mediale. Per la detezione inizialmente si deve effettuare la manovra di strisciamento e in seguito la manovra barestesica, fino a trovare i punti più sensibili."
+				"d": "* Per individuare la zona più sensibile utilizzare la palpazione manuale utilizzando indice e pollice e in seguito il Palpeur azzurro sulla superficie laterale e quello nero sulla superficie mediale. Per la detezione inizialmente si deve effettuare la manovra di strisciamento e in seguito la manovra barestesica, fino a trovare i punti più sensibili."
 			},
 			"s": [
 				{

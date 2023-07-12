@@ -108,7 +108,7 @@ var MODULO_PATOLOGIE = { // extend SET
 		// sesso
 		if(DB.set.patologie[n].sessoPatologia){
 			html = 	'<img 	src="sets/meridiani_shiatsu/img/sesso_'+DB.set.patologie[n].sessoPatologia+'.png"' +
-					'		class="ideogrammaPunto">'+html;
+					'		class="simboliPunto">'+html;
 		}
 		
 		var ritorno = false;
