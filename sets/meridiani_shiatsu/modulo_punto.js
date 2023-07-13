@@ -166,7 +166,7 @@ var MODULO_PUNTO = { // extend SET
 				ideogramma += ideogrammaOr[l];
 				if(l<lI-1)ideogramma += "<br>";
 			}
-			HTML = 	'<div class="ideogrammaPuntoChar">'+ideogramma+'</div><img src="img/speachW.png" onClick="SET.speachName(\''+siglaMeridiano+nPunto+'\');" class="speach_icon">'+HTML;
+			HTML = 	'<div class="ideogrammaPuntoChar">'+ideogramma+'</div><img src="img/speach2W.png" onClick="SET.speachName(\''+siglaMeridiano+nPunto+'\');" class="speach_icon">'+HTML;
 		}
 		
 		HTML = '<div class="translatable">'+HTML+'</div>';

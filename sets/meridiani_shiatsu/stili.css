@@ -43,6 +43,8 @@ body.uomo #pulsante_modello{
 	padding: 15px 10px;
 	margin: -15px;
     margin-left: 20px !important;
+	padding-top: 26px;
+    border-top-left-radius: 14px;
 }
 .ideogrammaMeridianoChar{
 	position: absolute;
@@ -64,25 +66,26 @@ body.uomo #pulsante_modello{
 	margin-top: 20px;
 }
 .speach_icon{
+	
 	width: 31px;
     cursor: pointer;
-    background-color: #4e74c9;
-    border-radius: 20px;
-    margin-right: -37px;
+    border-radius: 9px;
+    margin-right: -51px;
     padding: 5px;
     position: relative;
     float: right;
-    margin-top: -27px;
+    margin-top: -17px;
+    opacity: 0.6;
 }
 .ideogrammaMeridianoChar img{
 	width: 31px;
     cursor: pointer;
-    background-color: #4e74c9;
     border-radius: 20px;
-    margin-left: -32px;
-    margin-top: -9px;
+    margin-left: -15px;
+    margin-top: -29px;
     padding: 5px;
     position: absolute;
+    opacity: 0.6;
 }
 
 
