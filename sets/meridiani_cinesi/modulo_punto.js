@@ -13,14 +13,22 @@ var MODULO_PUNTO = { // extend SET
 		
 		var titolo = DB.set.meridiani[siglaMeridiano].punti[nPunto].NomePunto;
 		var sigla = __(DB.set.meridiani[siglaMeridiano].punti[nPunto].siglaPunto);
-		if(sigla)titolo = titolo.replace(nPunto+"."+siglaMeridiano,sigla);
+		//if(sigla)titolo = titolo.replace(nPunto+"."+siglaMeridiano,sigla);
 		var meridiano = DB.set.meridiani[siglaMeridiano];
 		var coordZoom = __(DB.mtc.meridiani[siglaMeridiano].punti[nPunto].coordZoom);
 		var imgZoom = __(DB.mtc.meridiani[siglaMeridiano].punti[nPunto].imgZoom);
 		var TS = meridiano.punti[nPunto];
 		var cartella = DB.mtc.meridiani[siglaMeridiano].cartella;
+		
 		let pattern = /[0-9]{1,2}\.[A-Z]{2}\.\s[^\(]+\(([^\)]+)\)/g;
-		var HTML = "<h1>"+ +nPunto +"."+siglaMeridiano+". "+htmlEntities(DB.mtc.meridiani[siglaMeridiano].punti[nPunto].pinyin)+"<br><i>"+htmlEntities(titolo.replace(pattern,"$1"))+"</i></h1>";
+		var HTML = "<h1>";
+		
+		if(siglaMeridiano!='EX')HTML += +nPunto +"."+siglaMeridiano;
+		else HTML += sigla;
+		
+		HTML += ". "+htmlEntities(DB.mtc.meridiani[siglaMeridiano].punti[nPunto].pinyin)+"<br><i>"+htmlEntities(titolo.replace(pattern,"$1"))+"</i></h1>";
+
+
 		var HTML_simboli = '';
 		
 		// noMoxa
@@ -136,7 +144,7 @@ var MODULO_PUNTO = { // extend SET
 			ideogramma += ideogrammaOr[l];
 			if(l<lI-1)ideogramma += "<br>";
 		}
-		HTML = 	'<div class="ideogrammaPuntoChar">'+ideogramma+'</div>'+HTML;
+		HTML = 	'<div class="ideogrammaPuntoChar">'+ideogramma+'</div><img src="img/speachW.png" onClick="SET.speachName(\''+siglaMeridiano+nPunto+'\');" class="speach_icon">'+HTML;
 
 
 		
@@ -373,6 +381,11 @@ var MODULO_PUNTO = { // extend SET
 		if(el.nPunto.length == 1)el.nPunto = "0"+el.nPunto;
 		el.valutazione = __(pP[2],'');
 		return el;
+	},
+	speachName: function( txt ){
+		let snd = new Audio("sets/common/mtc/audio/"+txt+".mp3");
+		snd.play();
+		snd = null;
 	},
 	azRicercaPunto: function( pt ){ // apre la scheda del punto dalla ricerca globale
 		SET.apriPunto(pt);

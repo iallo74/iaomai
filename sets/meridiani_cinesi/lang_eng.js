@@ -219,7 +219,7 @@ DB.set = {
 					ChiaviPunto: ""
 				}, 
 				"45": {
-					NomePunto: "45.BL. Yixi",
+					NomePunto: "45.BL. Yixi (Sighing sound)",
 					AzioniPunto: "<p><b>T.C.M.</b><br><span>•</span> Strengthens Qi and blood<br><span>•</span> Reduces Qi in the Lung<br><span>•</span> Expels wind<br><span>•</span> Clears Heat<br><span>•</span> Relieves pain<br></p><p><b>Applications</b><br><span>•</span> Headache and chest pain radiating to the loins<br><span>•</span> Visual dizziness<br><span>•</span> Epistaxis<br><span>•</span> Malaria<br><span>•</span> Eye pain<br><span>•</span> Also indicated for cough<br><span>•</span> Dyspnea<br><span>•</span> Febrile disease without sweating<br><span>•</span> Wind attack without sweating<br><span>•</span> Shoulder, scapula, and back pain<br><span>•</span> Chest pain radiating to the lumbar region<br><span>•</span> Rib pain radiating to the Heart and Lung<br><span>•</span> Axillary contracture<br><span>•</span> Headache in a child while eating<br></p><p><b>Needle</b><br><span>•</span> 45° at 0.3-0.5 cun<br><span>•</span> Precautions: Perpendicular insertion (90°) can carry the risk of pneumothorax</p><p><b>Moxibustion</b><br><span>•</span> Used for the above pathologies both directly and indirectly<br></p><p><b>Location</b><br><span>•</span> At the level of the lower border of the spinous process of the sixth thoracic vertebra (T6)<br><span>•</span> At the level of 16.BL<br><span>•</span> 3 cun lateral to the midline</p>",
 					ChiaviPunto: ""
 				}, 

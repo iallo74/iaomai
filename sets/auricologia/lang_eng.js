@@ -734,7 +734,7 @@ DB.set = {
 		},
 		"013": {
 			NomePunto: "Romoli Anxiety",
-			AzioniPunto: "<p><b>Action</b><br>Particularly sensitive and effective in panic attacks, together with the Mouth Point.</p><p><b>Location</b><br>IC5-IC8, codified by A. Lovato, described by Marco Romoli in various presentations, reports, and conferences, identified in a lower hemiconch area, close to the Nogier's Wonderful Point.</p>",
+			AzioniPunto: "<p><b>Action</b><br>Particularly sensitive and effective in panic attacks, together with the Mouth Point.</p><p><b>Location</b><br>IC5-IC8, codified by A. Lovato, described by Marco Romoli in various presentations, reports, and conferences, identified in a inferior concha area, close to the Nogier's Wonderful Point.</p>",
 			ChiaviPunto: "",
 			"hidden": true
 		},
@@ -814,7 +814,7 @@ DB.set = {
 		},
 		"037": {
 			NomePunto: "Constipation",
-			AzioniPunto: "<p><b>Other names</b><br>- Costipation</p><p><b>Action</b><br>Point used by the Chinese School for its action in reducing constipation disorders by regulating intestinal motility.</p><p><b>Location</b><br>TF3, halfway between the center of the triangular fossa and the lower root of the antihelix.</p>",
+			AzioniPunto: "<p><b>Action</b><br>Point used by the Chinese School for its action in reducing constipation disorders by regulating intestinal motility.</p><p><b>Location</b><br>TF3, halfway between the center of the triangular fossa and the lower root of the antihelix.</p>",
 			ChiaviPunto: ""
 		},
 		"038": {
@@ -824,7 +824,7 @@ DB.set = {
 		},
 		"039": {
 			NomePunto: "Orthosympathetic Point",
-			AzioniPunto: "<p><b>Other names</b><br>- Sympathetic Point<br>- Autonomic Sympathetic Point</p><p><b>Action</b><br>This point is internationally recognized for its analgesic abilities, particularly on the viscera. It is also indicated for its action on the autonomic and tonifying parasympathetic nervous systems.</p><p><b>Location</b><br>AH7-IH4, on the lower root of the antihelix, at its junction with the helix. The point is hidden by the helix. Corresponds to <span class='LMtxt'>LM18</span>.</p>",
+			AzioniPunto: "<p><b>Other names</b><br>- Sympathetic Point<br>- Autonomic Sympathetic Point</p><p><b>Action</b><br>This point is internationally recognized for its analgesic abilities, particularly on the viscera. It is also indicated for its action on the autonomic and tonic parasympathetic nervous systems.</p><p><b>Location</b><br>AH7-IH4, on the lower root of the antihelix, at its junction with the helix. The point is hidden by the helix. Corresponds to <span class='LMtxt'>LM18</span>.</p>",
 			ChiaviPunto: ""
 		},
 		"040": {
@@ -834,7 +834,7 @@ DB.set = {
 		},
 		"041": {
 			NomePunto: "Thyroid CHN",
-			AzioniPunto: "<p><b>Other names</b><br>- Thyroid gland<br>- Parathyroid gland</p><p><b>Action</b><br>As suggested by the name, this point is indicated for treating all disorders related to the thyroid gland.</p><b>Location</b><br>CW4-IC8-AH8, at the border between the concha wall and the lower hemiconch, at the level of the representation of the C3-4 vertebrae.</p>",
+			AzioniPunto: "<p><b>Other names</b><br>- Thyroid gland<br>- Parathyroid gland</p><p><b>Action</b><br>As suggested by the name, this point is indicated for treating all disorders related to the thyroid gland.</p><b>Location</b><br>CW4-IC8-AH8, at the border between the concha wall and the inferior concha, at the level of the representation of the C3-4 vertebrae.</p>",
 			ChiaviPunto: ""
 		},
 		"042": {
@@ -899,7 +899,7 @@ DB.set = {
 		},
 		"060": {
 			NomePunto: "Hip EUR",
-			AzioniPunto: "<p><b>Other names</b><br>- Coxofemoral joint</p><p><b>Action</b><br>This point is used both by the Chinese and French Schools but in different locations. They both have the application for treating disorders related to the hip and pelvic girdle in common.</p><p><b>Location</b><br>TF1-PT1, at the apex of the triangular fossa.</p>",
+			AzioniPunto: "<p><b>Other names</b><br>- Coxofemoral joint</p><p><b>Action</b><br>This point is used both by the Chinese and French Schools but in different locations. They both have in common the application for treating disorders related to the hip and pelvic girdle.</p><p><b>Location</b><br>TF1-PT1, at the apex of the triangular fossa.</p>",
 			ChiaviPunto: ""
 		},
 		"061": {
@@ -954,7 +954,7 @@ DB.set = {
 		},
 		"075": {
 			NomePunto: "Hip CHN",
-			AzioniPunto: "<p><b>Other names</b><br>- Hip point<br>- Coxofemoral joint</p><p><b>Action</b><br>This point is used both by the Chinese and French Schools but in different locations. They both have the application for treating disorders related to the hip and pelvic girdle in common.</p><p><b>Location</b><br>AH13-PG8, in the lower third of the upper branch of the antihelix, towards the triangular fossa<span></span>.</p>",
+			AzioniPunto: "<p><b>Other names</b><br>- Hip point<br>- Coxofemoral joint</p><p><b>Action</b><br>This point is used both by the Chinese and French Schools but in different locations. They both have in common the application for treating disorders related to the hip and pelvic girdle.</p><p><b>Location</b><br>AH13-PG8, in the lower third of the upper branch of the antihelix, towards the triangular fossa<span></span>.</p>",
 			ChiaviPunto: ""
 		},
 		"078": {
@@ -999,7 +999,7 @@ DB.set = {
 		},
 		"089": {
 			NomePunto: "External Genitals EUR",
-			AzioniPunto: "<p><b>Other names</b><br>- Penis<br>- Clitoris<br>- Bosch Point</p><p><b>Action</b><br>Point indicated by the French School for the treatment of all scrotal pathologies and those related to male and female genital organs. Very effective in cases of frigidity and impotence.</p><p><b>Location</b><br>HX1, at the border between the ascending branch of the helix, the tragus, and the upper semicircular notch.</p>",
+			AzioniPunto: "<p><b>Other names</b><br>- Penis<br>- Clitoris<br>- Bosch Point</p><p><b>Action</b><br>Point indicated by the French School for the treatment of all scrotal pathologies and those related to male and female genital organs. Very effective in cases of frigidity and impotence.</p><p><b>Location</b><br>HX1, at the border between the ascending branch of the helix, the tragus, and the superior concha.</p>",
 			ChiaviPunto: ""
 		},
 		"092": {
@@ -1014,7 +1014,7 @@ DB.set = {
 		},
 		"095": {
 			NomePunto: "Rectum EUR",
-			AzioniPunto: "<p><b>Other names</b><br>- Anus<br>- Hemorrhoids<br>- Prostate</p><p><b>Action</b><br>The Rectum Point is very useful in reducing symptoms of irritable bowel syndrome, dysentery, hemorrhoids, diarrhea, constipation, and rectal pain.</p><p><b>Location</b><br>IH1-SC4, at the border between the hidden part of the ascending branch of the helix and the upper semicircular notch.</p>",
+			AzioniPunto: "<p><b>Other names</b><br>- Anus<br>- Hemorrhoids<br>- Prostate</p><p><b>Action</b><br>The Rectum Point is very useful in reducing symptoms of irritable bowel syndrome, dysentery, hemorrhoids, diarrhea, constipation, and rectal pain.</p><p><b>Location</b><br>IH1-SC4, at the border between the hidden part of the ascending branch of the helix and the superior concha.</p>",
 			ChiaviPunto: ""
 		},
 		"097": {
@@ -1024,26 +1024,26 @@ DB.set = {
 		},
 		"098": {
 			NomePunto: "Large Intestine",
-			AzioniPunto: "<p><b>Other names</b><br>- Colon</p><p><b>Action</b><br>As suggested by the name, this point is indicated for treating all disorders related to the functionality of the large intestine.</p><p><b>Location</b><br>SC4-SC5-PC4, in the upper semicircular notch, near the upper branch of the helix.</p>",
+			AzioniPunto: "<p><b>Other names</b><br>- Colon</p><p><b>Action</b><br>As suggested by the name, this point is indicated for treating all disorders related to the functionality of the large intestine.</p><p><b>Location</b><br>SC4-SC5-PC4, in the superior concha, near the upper branch of the helix.</p>",
 			ChiaviPunto: ""
 		},
 		"099": {
 			NomePunto: "Small Intestine",
-			AzioniPunto: "<p><b>Other names</b><br>- Jejunum</p><p><b>Action</b><br>As suggested by the name, this point is indicated for treating all disorders related to the functionality of the small intestine, particularly reducing stomach and intestinal disorders, eating disorders, and diarrhea.</p><p><b>Location</b><br>SC2-PC3, in the upper semicircular notch, superiorly and anteriorly to [.000.].</p>",
+			AzioniPunto: "<p><b>Other names</b><br>- Jejunum</p><p><b>Action</b><br>As suggested by the name, this point is indicated for treating all disorders related to the functionality of the small intestine, particularly reducing stomach and intestinal disorders, eating disorders, and diarrhea.</p><p><b>Location</b><br>SC2-PC3, in the superior concha, superiorly and anteriorly to [.000.].</p>",
 			ChiaviPunto: ""
 		}
 	},
 	apparati: {
 		1: "Locomotor apparatus",
-		2: "Chief",
-		3: "Neurological Clinic",
-		4: "Psychiatric Clinic",
+		2: "Head",
+		3: "Neurological clinic",
+		4: "Psychiatric clinic",
 		5: "Endocrinological clinic and urogenital system",
-		6: "Gastroenterological Clinic",
+		6: "Gastroenterological clinic",
 		7: "Cardiovascular and lymphatic system",
 		8: "Respiratory, phonetic and otovestibular",
-		9: "Dermatological Clinic",
-		10: "Eye Clinic",
+		9: "Dermatological clinic",
+		10: "Eye clinic",
 		11: "Addictions"
 	},
 	schede: {
@@ -7486,15 +7486,17 @@ DB.set = {
 					p: [
 						"000"
 					]
-				}
+				},
+				d: "EXTRA POINT: In the auricular points, the Tim Mee somatic acupuncture point should be added, which is an extra meridian point located laterally to LU.7, where a bony ridge is palpable.<br><br><b>Insertion sequence</b><br>The points are inserted following a predefined pattern and according to a stimulation mode.<br><b>D</b> dispersion, with the needle inserted during inspiration and rotated counterclockwise.<br><b>T</b> tonification, with the needle inserted during expiration and rotated clockwise.<br><br>- <b>Tin Mee (D)</b>: bilateral<br>- <b>P1 and P2 (D)</b>: needle towards the lobe<br>- <b>P3</b>: indifferent<br>- <b>P4, P5, P6, and P7 (T)</b>: needle upwards<br>- <b>Aggressiveness (D)</b><br>- <b>Epiphysis (D)</b><br>- <b>Zero Point (D)</b>: dominant side<br>- <b>Zero Point (T)</b>: non-dominant side<br><br><b>Electrostimulation</b><br>When the needles are inserted, they are electrostimulated at 15Hz for 30 minutes, increasing the intensity every 5 minutes to allow the patient's adaptation. The electrostimulation should be performed in four pairs:<br>1(-) Dominant Zero Point<br>1(+) Non-dominant Zero Point<br>2(-) Aggressiveness<br>2(+) Epiphysis<br>3(-) P7<br>3(+) P4<br>4(-) P2<br>4(+) P1<br><br><b>Additional treatment prescriptions</b><br>- Vitamin C as a detoxifier<br>- Drink 2-3 liters of water per day<br>- Licorice sticks for oral compensation<br>- Whole chili powder as a food seasoning<br>- The doctor may prescribe an anxiolytic if necessary" //- Alprazolam 0.25mg, twice a day<br>Please note: Alprazolam should only be taken under medical prescription and if not contraindicated."
 			},
-			d: "EXTRA POINT: In the auricular points, the Tim Mee somatic acupuncture point should be added, which is an extra meridian point located laterally to LU.7, where a bony ridge is palpable.<br><br><b>Insertion sequence</b><br>The points are inserted following a predefined pattern and according to a stimulation mode.<br><b>D</b> dispersion, with the needle inserted during inspiration and rotated counterclockwise.<br><b>T</b> tonification, with the needle inserted during expiration and rotated clockwise.<br><br>- <b>Tin Mee (D)</b>: bilateral<br>- <b>P1 and P2 (D)</b>: needle towards the lobe<br>- <b>P3</b>: indifferent<br>- <b>P4, P5, P6, and P7 (T)</b>: needle upwards<br>- <b>Aggressiveness (D)</b><br>- <b>Epiphysis (D)</b><br>- <b>Zero Point (D)</b>: dominant side<br>- <b>Zero Point (T)</b>: non-dominant side<br><br><b>Electrostimulation</b><br>When the needles are inserted, they are electrostimulated at 15Hz for 30 minutes, increasing the intensity every 5 minutes to allow the patient's adaptation. The electrostimulation should be performed in four pairs:<br>1(-) Dominant Zero Point<br>1(+) Non-dominant Zero Point<br>2(-) Aggressiveness<br>2(+) Epiphysis<br>3(-) P7<br>3(+) P4<br>4(-) P2<br>4(+) P1<br><br><b>Additional treatment prescriptions</b><br>- Vitamin C as a detoxifier<br>- Drink 2-3 liters of water per day<br>- Licorice sticks for oral compensation<br>- Whole chili powder as a food seasoning<br>- The doctor may prescribe an anxiolytic if necessary" //- Alprazolam 0.25mg, twice a day<br>Please note: Alprazolam should only be taken under medical prescription and if not contraindicated."
+			"d": "To assess the degree of intensity and the type of anti-smoking therapy, carry out the two tests found in the insights: ",
+			"t": true
 		},
-		102: {
-			tit: "GRADUAL REDUCTION",
-			g: {
-				sx: {
-					p: [
+		102: { // Lovato Anti-Smoking Program
+			"tit": "GRADUAL REDUCTION",
+			"g": {
+				"sx": {
+					"p": [
 						"001",
 						"137",
 						"030",
@@ -7502,29 +7504,30 @@ DB.set = {
 						"230"
 					]
 				},
-				dx: {
-					p: [
+				"dx": {
+					"p": [
 						"000",
 						"004",
 						"192",
 						"267"
 					]
-				}
+				},
+				"d": "The protocol should be performed once a week with a decrease of 3 cigarettes per session. Temporary needles are used.<br><br><b>Treatment for anxious patients</b><br>For particularly anxious patients, it is recommended to apply a Relaxation Triad on the left ear for 5 days using semi-permanent needles. These needles should be removed 2 days before the next session, in which the Relaxation Triad can be applied again or alternated with the Omega Line."
 			},
 			"s": [
 				{
-					"t": "Suspensión repentina",
-					"d": "En ambos pabellones",
+					"t": "Abrupt Cessation",
+					"d": "On both ears",
 					"p": [
 						"000",
 						"267",
 						"230",
 						"137"
 					],
-					"a": "Se requiere una abstinencia de al menos 12 horas antes de la sesión para la suspensión repentina del humo. En caso de que el paciente no pueda cumplir con la abstinencia, evite aplicar el protocolo, ya que esto significa que no está motivado y los puntos serán menos sensibles al tratamiento.<br><br><b>Modo de ejecución</b><br>Ejecute la electroacupuntura en una sola sesión siguiendo la ficha indicada, a una frecuencia de 15Hz y durante 25 minutos, en particular el San Jiao y el punto del Craving.<br><br><b>Recidiva y dificultad para dejar de fumar</b><br>En caso de recidiva o dificultad para mantener la abstinencia, es posible repetir la sesión una semana después.<br><br><b>Integración con el protocolo de reducción gradual</b><br>Este protocolo también es adecuado para las personas que han realizado la reducción gradual y tienen dificultades para dejar las últimas 2-3 cigarrillos."
+					"a": "For abrupt smoking cessation, a minimum abstinence of 12 hours before the session is required. If the patient is unable to comply with the abstinence, avoid applying the protocol as it indicates a lack of motivation and the points will be less responsive to the treatment.<br><br><b>Procedure</b><br>Perform electroacupuncture in a single session following the indicated schedule, with a frequency of 15Hz for 25 minutes, focusing on the San Jiao and Craving points.<br><br><b>Relapse and Difficulty Quitting</b><br>In case of relapse or difficulty maintaining abstinence, the session can be repeated one week apart.<br><br><b>Integration with the gradual reduction protocol</b><br>This protocol is also suitable for individuals who have undergone gradual reduction and have difficulty eliminating the last 2-3 cigarettes."
 				}
 			],
-			d: "Para evaluar el grado de intensidad y el tipo de terapia antitabaco, realice las dos pruebas que se encuentran en los recursos adicionales:",
+			"d": "To assess the intensity level and type of anti-smoking therapy, perform the two tests found in the supplementary materials:",
 			"t": true
 		},
 		103: {
@@ -7577,7 +7580,7 @@ DB.set = {
 			apparato: 5
 		}, {
 			NomePatologia: "Benign Adenosis",
-			TestoPatologia: "Adenosis is a benign condition characterized by enlarged breast lobules.<br>It is a proliferative lesion of the lobules, often associated with fibrocystic changes. It is not associated with an increased risk of developing malignancy.",
+			TestoPatologia: "Adenosis is a benign condition characterized by enlarged breast lobules.<br>It is a proliferative lesion of the lobules, often associated with fibrocystic mastopathy. It is not associated with an increased risk of developing malignancy.",
 			sessoPatologia: "",
 			chiaviPatologia: "",
 			scheda: 51,
@@ -7654,7 +7657,7 @@ DB.set = {
 			apparato: 1
 		}, {
 			NomePatologia: "Rheumatoid Arthritis",
-			TestoPatologia: "Rheumatoid arthritis is a progressive and chronic systemic inflammatory connective tissue disease.<br>It affects individuals between the ages of 35 and 55.<br>It can be genetically transmitted and may occur due to triggering factors such as exposure to cold, trauma, menopause, and nonspecific infections.",
+			TestoPatologia: "Rheumatoid arthritis is a progressive and chronic systemic inflammatory connective tissue disease.<br>It affects individuals between the ages of 35 and 55.<br>It can be genetically transmitted and may occur due to triggering factors such as exposure to cold, trauma, menopause, and non-specific infections.",
 			sessoPatologia: "",
 			chiaviPatologia: "",
 			scheda: 20,
@@ -7786,7 +7789,7 @@ DB.set = {
 			scheda: 47,
 			apparato: 5
 		}, {
-			NomePatologia: "Kidney stones",
+			NomePatologia: "Urolithiasis",
 			TestoPatologia: "Urolithiasis, or kidney stones, is a condition characterized by the presence of one or more stones of variable size, located in the excretory cavities of the urinary system, the calyces, inside the kidney, and down to the urethra.<br>Kidney stones usually form in the kidneys and can pass through the urinary tract until they leave the body with the flow of urine.<br>A small stone can pass without causing symptoms.<br>If a stone becomes larger than 5 millimeters, it can block the ureter, causing severe back or abdominal pain.<br>A stone can also cause blood in the urine, vomiting, and painful urination.",
 			sessoPatologia: "",
 			chiaviPatologia: "",
@@ -7808,7 +7811,7 @@ DB.set = {
 			apparato: 7
 		}, {
 			NomePatologia: "Cataract",
-			TestoPatologia: "Cataract is an opacification of the lens, the lens responsible for focusing images on the retina, which is located behind the colored part of the eye, namely the iris.<br>It is a disorder that tends to appear after the age of 60, but in rare cases, it can also affect younger individuals and can be resolved with surgery.",
+			TestoPatologia: "Cataract is an opacification of the lens, which is responsible for focusing images on the retina, located behind the colored part of the eye, namely the iris.<br>It is a disorder that tends to appear after the age of 60, but in rare cases, it can also affect younger individuals and can be resolved with surgery.",
 			sessoPatologia: "",
 			chiaviPatologia: "",
 			scheda: 96,
@@ -7877,7 +7880,7 @@ DB.set = {
 			scheda: 60,
 			apparato: 5
 		}, {
-			NomePatologia: "Coccigodinia",
+			NomePatologia: "Coccydynia",
 			TestoPatologia: "Coccydynia is a painful syndrome that affects the pelvis, particularly the coccyx or the surrounding area, and is caused by a chronic inflammatory process. The majority of cases are related to abnormal mobility of the coccyx, which triggers a chronic inflammatory process responsible for pain and degeneration of the surrounding tissues. This syndrome is very common in women but can also affect men, and the average age of onset is 40 years.",
 			sessoPatologia: "",
 			chiaviPatologia: "",
@@ -7933,15 +7936,15 @@ DB.set = {
 			scheda: 8,
 			apparato: 1
 		}, {
-			NomePatologia: "Contrattura muscolare della colonna - Schema generale",
+			NomePatologia: "Muscle contracture of the spine - General overview",
 			TestoPatologia: "Muscle contracture is a muscle injury caused by involuntary and sudden contraction of one or more muscles.<br>It represents a defense mechanism of our body when the muscle tissue is subjected to excessive strain that exceeds its physiological tolerance limit.<br>It manifests with the appearance of stiffness and an increase in volume (hypertonia) of the affected muscle fibers, which can be appreciated upon palpation.",
 			sessoPatologia: "",
 			chiaviPatologia: "",
 			scheda: 5,
 			apparato: 1
 		}, {
-			NomePatologia: "Corioblastoma dell'utero",
-			TestoPatologia: "Corioblastoma is a tumor that can form in the uterus. Gynecological tumors affect the female reproductive system and are divided into uterine tumors (endometrial tumors and cervical tumors) and ovarian tumors. The rarest uterine tumor is sarcoma (5%), while the most common one is endometrial cancer (80%) with almost 9,000 cases per year, especially after menopause between 50 and 70 years of age. Cervical cancer (or cervical cancer), the lower part of the uterus, is the third most common gynecological neoplasm, the fifth most common cancer in the world, with an average age at diagnosis of 50 years, but it can also occur at a young age. Cervical cancer is the leading cause of death from gynecological cancer worldwide. However, thanks to screening, cervical cancer can be prevented and cured when detected in the early stages, increasing the likelihood of survival and prognosis at diagnosis.",
+			NomePatologia: "Chorioblastoma of the uterus",
+			TestoPatologia: "Chorioblastoma is a tumor that can form in the uterus. Gynecological tumors affect the female reproductive system and are divided into uterine tumors (endometrial tumors and cervical tumors) and ovarian tumors. The rarest uterine tumor is sarcoma (5%), while the most common one is endometrial cancer (80%) with almost 9,000 cases per year, especially after menopause between 50 and 70 years of age. Cervical cancer, the lower part of the uterus, is the third most common gynecological neoplasm, the fifth most common cancer in the world, with an average age at diagnosis of 50 years, but it can also occur at a young age. Cervical cancer is the leading cause of death from gynecological cancer worldwide. However, thanks to screening, cervical cancer can be prevented and cured when detected in the early stages, increasing the likelihood of survival and prognosis at diagnosis.",
 			sessoPatologia: "f",
 			chiaviPatologia: "",
 			scheda: 51,
@@ -7954,7 +7957,7 @@ DB.set = {
 			scheda: 14,
 			apparato: 1
 		}, {
-			NomePatologia: "Coxartrosi",
+			NomePatologia: "Coxarthrosis",
 			TestoPatologia: "Coxarthrosis is a chronic inflammatory disorder that affects the hip joint and is characterized by progressive and relentless degeneration (wear and tear) of the articular cartilage of the hip joint.<br>Coxarthrosis is synonymous with hip osteoarthritis.",
 			sessoPatologia: "",
 			chiaviPatologia: "",
@@ -8059,133 +8062,133 @@ DB.set = {
 			scheda: 78,
 			apparato: 7
 		}, {
-			NomePatologia: "Temporomandibular Joint Disorders",
+			NomePatologia: "Temporomandibular joint disorders",
 			TestoPatologia: "Temporomandibular joint disorders (TMD) are conditions that affect the temporomandibular joint (TMJ) and the chewing muscles. They are the main cause of non-odontogenic facial pain, which means it is not caused or attributed to any dental problems.",
 			sessoPatologia: "",
 			chiaviPatologia: "",
 			scheda: 27,
 			apparato: 2
 		}, {
-			NomePatologia: "Sleep Disorders",
+			NomePatologia: "Sleep disorders",
 			TestoPatologia: "Sleep disorders are conditions that hinder an individual from falling asleep or cause early awakening. They are influenced by multiple factors, including the quality and quantity of sleep hours. People with these disorders experience difficulties in falling asleep, staying asleep, nocturnal awakenings, or combinations of these symptoms. Common triggers, sometimes temporary disorders, can be stress, the use of psychotropic substances, daytime rest habits, and others. Sometimes these sleep disorders are associated with other psychiatric disorders or are the triggering cause for them.",
 			sessoPatologia: "",
 			chiaviPatologia: "",
 			scheda: 46,
 			apparato: 4
 		}, {
-			NomePatologia: "Depressive Disorders",
+			NomePatologia: "Depressive disorders",
 			TestoPatologia: "Depressive disorders are part of a range of psychiatric pathologies characterized by depressed mood accompanied by low self-esteem and partial or complete loss of interest in activities commonly considered pleasurable. It is a disabling condition that affects both the affective and cognitive sphere of the patient, negatively influencing family life, work, study, eating habits, sleep, physical health, and overall quality of life.",
 			sessoPatologia: "",
 			chiaviPatologia: "",
 			scheda: 45,
 			apparato: 4
 		}, {
-			NomePatologia: "Lymphatic Disorders",
+			NomePatologia: "Lymphatic disorders",
 			TestoPatologia: "Lymphedema is a chronic, progressive, disabling condition. It is characterized by a slowing down or blockage of lymphatic circulation in the upper and/or lower limb, causing swelling, alteration in skin color, and difficulty moving the affected limb. Many patients complain of itching, skin tension, and acute pain.",
 			sessoPatologia: "",
 			chiaviPatologia: "",
 			scheda: 77,
 			apparato: 7
 		}, {
-			NomePatologia: "Panic Disorder (PD)",
-			TestoPatologia: "Panic disorder (often referred to by the acronym PD) is a psychopathological syndrome characterized by repeated episodes of acute anxiety. Among anxiety disorders, it is the one characterized by the most intense physical component. Panic attacks generally cause accelerated heart rate, shortness of breath, dizziness, tremors, muscle tension, and a sense of general discomfort. Panic attacks occur frequently and are not predictable, often having no correlation with imminent external threats. A panic attack can last from a few minutes to half an hour, but the physical and emotional effects of the attack can persist for several hours.",
+			NomePatologia: "Panic Attack Disorder (PAD)",
+			TestoPatologia: "Panic Attack Disorder (often referred to by the acronym PAD) is a psychopathological syndrome characterized by repeated episodes of acute anxiety. Among anxiety disorders, it is the one characterized by the most intense physical component. Panic attacks generally cause accelerated heart rate, shortness of breath, dizziness, tremors, muscle tension, and a sense of general discomfort. Panic attacks occur frequently and are not predictable, often having no correlation with imminent external threats. A panic attack can last from a few minutes to half an hour, but the physical and emotional effects of the attack can persist for several hours.",
 			sessoPatologia: "",
 			chiaviPatologia: "",
 			scheda: 43,
 			apparato: 4
 		}, {
-			NomePatologia: "Elbow Pain",
+			NomePatologia: "Elbow pain",
 			TestoPatologia: "Elbow pain is experienced as a bothersome, dull, burning, sharp, or even electric shock-like sensation. It may occur gradually or suddenly, worsen with specific movements or positions, and may be accompanied by pain in other areas of the body and neurological symptoms. In any case, the characteristics of elbow pain depend on the causal factor. In most cases, elbow pain is related to epicondylitis, epitrochleitis, elbow arthritis, and the so-called olecranon bursitis. However, this symptom can also be caused by dislocations, sprains, fractures, nerve compression syndromes, and cervical radiculopathy.",
 			sessoPatologia: "",
 			chiaviPatologia: "",
 			scheda: 12,
 			apparato: 1
 		}, {
-			NomePatologia: "Temporomandibular Joint Pain",
+			NomePatologia: "Temporomandibular joint pain",
 			TestoPatologia: "Temporomandibular joint pain is a sensation that originates in the orofacial region, affecting the masticatory muscles and the joint that connects the temporal bone of the skull to the mandible. Dysfunctions of this structure often cause severe pain, especially during jaw movements such as chewing and speaking. Most temporomandibular joint pains are related to myofascial pain, temporomandibular joint disorders with clicks or joint blockages, arthritis, or temporomandibular joint osteoarthritis.",
 			sessoPatologia: "",
 			chiaviPatologia: "",
 			scheda: 27,
 			apparato: 2
 		}, {
-			NomePatologia: "Cervical Pain due to Osteoarthritis",
+			NomePatologia: "Cervical pain due to osteoarthritis",
 			TestoPatologia: "Cervical osteoarthritis is a condition that presents symptoms such as pain and difficulty in neck movements. Some individuals may experience complications due to compression of the spinal cord, nerve roots, or blood vessels, which commonly manifest as neck and occipital pain, headaches, dizziness, and nystagmus. Generally, patients with cervical osteoarthritis do not present symptoms of significant severity; mostly, they may include neck pain and stiffness, and in rare cases, headaches. Symptoms can vary from mild to severe, and neck pain may radiate to the shoulders, arms, and hands.",
 			sessoPatologia: "",
 			chiaviPatologia: "",
 			scheda: 2,
 			apparato: 1
 		}, {
-			NomePatologia: "Cervical Pain due to Muscular Causes",
-			TestoPatologia: "Cervicalgia is a condition characterized by tension, contractions, or strains of the muscles in the cervical area. Cervical pain stems from musculoskeletal disorders. The most frequent causes are poor posture, trauma, rapid and repetitive movements, and incorrect head positioning during sleep.",
+			NomePatologia: "Cervical pain due to muscular causes",
+			TestoPatologia: "Cervical pain is a condition characterized by tension, contractions, or strains of the muscles in the cervical area. Cervical pain stems from musculoskeletal disorders. The most frequent causes are poor posture, trauma, rapid and repetitive movements, and incorrect head positioning during sleep.",
 			sessoPatologia: "",
 			chiaviPatologia: "",
 			scheda: 6,
 			apparato: 1
 		}, {
-			NomePatologia: "Coccygeal Pain",
+			NomePatologia: "Coccygeal pain",
 			TestoPatologia: "Coccydynia is a syndrome that affects the coccyx, particularly the last vertebrae of the spine. The pain is felt in the area of the gluteal fold (anal area). It manifests as a fairly sharp pain, resulting from a chronic inflammatory process that can affect individuals of all ages and both sexes. The causes are varied, but in most cases, they result from trauma associated with excessive muscle and ligament tension in the coccyx. Contusion, a fall, a fracture, or dislocation can be possible causes of the onset of pain.",
 			sessoPatologia: "",
 			chiaviPatologia: "",
 			scheda: 10,
 			apparato: 1
 		}, {
-			NomePatologia: "Ankle Pain",
+			NomePatologia: "Ankle pain",
 			TestoPatologia: "Ankle pain, in most cases, is the result of a sprain but can also be attributed to other disorders such as ankle joint instability, arthritis, gout, tendonitis, bone fracture, compression of a nerve (such as tarsal tunnel syndrome), infection, and poor structural alignment of the leg or foot. The most frequent symptoms are swelling, stiffness, redness, and heat in the affected area. Generally, the patient describes the pain as 'intense and dull,' extending to the leg and occurring when standing or during ankle movement.",
 			sessoPatologia: "",
 			chiaviPatologia: "",
 			scheda: 16,
 			apparato: 1
 		}, {
-			NomePatologia: "Hip Pain",
+			NomePatologia: "Hip pain",
 			TestoPatologia: "Hip pain is felt as an 'intense and dull' pain usually localized in the front, radiating from the groin to the knee, posterior to the buttock, or lateral to the greater trochanter. The pain is most intense in the morning just after getting out of bed or after a period of rest. Pain is followed by a reduction in the range of motion at the hip joint, but simple daily activities over time can improve it.",
 			sessoPatologia: "",
 			chiaviPatologia: "",
 			scheda: 14,
 			apparato: 1
 		}, {
-			NomePatologia: "Foot Pain",
+			NomePatologia: "Foot pain",
 			TestoPatologia: "Foot pain is a very common disorder that can arise following trauma, due to a malformation, a pathology such as hallux valgus, or incorrect posture. Tendinitis is characterized by increasing pain during contraction against resistance of the relevant muscle group and often during passive stretching. If the origin is misalignment of the ankle due to the type of shoes or as a result of exertion (e.g., long walks), it can be easily treated with holistic remedies: rest, application of ice, arnica, comfortable shoes, and taking anti-inflammatory drugs if the pain persists. In cases where the origin is genetic, it is necessary to consult a specialist to identify possible causes of the disorder and the necessary treatments to limit or prevent degeneration.",
 			sessoPatologia: "",
 			chiaviPatologia: "",
 			scheda: 16,
 			apparato: 1
 		}, {
-			NomePatologia: "Muscular Back Pain",
+			NomePatologia: "Muscular back pain",
 			TestoPatologia: "Dorsalgia, commonly called back pain, is pain that occurs in the dorsal region, particularly in the upper part of the back, between the shoulder blades, but it can also radiate to the neck or chest. Most acute episodes of dorsalgia are caused by exertion, trauma, and altered postures, which cause tension, strain, and stiffness of the structures connected to the spine. Patients may experience acute pain, which usually does not exceed 30 days, or chronic pain, where symptoms persist for three to six months.",
 			sessoPatologia: "",
 			chiaviPatologia: "",
 			scheda: 7,
 			apparato: 1
 		}, {
-			NomePatologia: "Muscular Low Back Pain",
+			NomePatologia: "Muscular low back pain",
 			TestoPatologia: "Lumbago, dorsalgia, or dorsolumbar pain are commonly referred to as low back pain. The symptom manifests as pain localized in the back or loin area. However, sciatica, which is pain radiating to a part or the entire leg due to involvement of the sciatic nerve, is often a consequence of a herniated disc. The triggering factors are generally the result of poor posture during working hours, particularly heavy exertion, or lack of rest.",
 			sessoPatologia: "",
 			chiaviPatologia: "",
 			scheda: 8,
 			apparato: 1
 		}, {
-			NomePatologia: "Muscle Pain",
+			NomePatologia: "Muscle pain",
 			TestoPatologia: "Muscle pain can arise from various causes, such as tension, stress, overuse, trauma, and minor injuries (sprains, strains, or contractions). Patients generally experience a sense of muscle weakness, inability to perform movements, fever and chills, and excessive fatigue. This type of pain is usually localized and affects only a few muscles or a part of the body.",
 			sessoPatologia: "",
 			chiaviPatologia: "",
 			scheda: 9,
 			apparato: 1
 		}, {
-			NomePatologia: "Muscular Spine Pain - General Overview",
+			NomePatologia: "Muscular spine pain - General overview",
 			TestoPatologia: "Muscle pain involving the spine is commonly referred to as back pain. In most cases, it affects the cervical and lumbar muscles, radiating to the surrounding muscles. The triggering factors are generally poor posture during working hours, particularly heavy exertion, or lack of rest. Patients may experience acute pain, which usually does not exceed 30 days, or chronic pain, where symptoms persist for three to six months.",
 			sessoPatologia: "",
 			chiaviPatologia: "",
 			scheda: 5,
 			apparato: 1
 		}, {
-			NomePatologia: "Arthrosis-related Dorsalgia",
+			NomePatologia: "Arthrosis-related dorsalgia",
 			TestoPatologia: "Arthrosis of the lumbosacral spine is characterized by a slow and progressive reduction of the articular cartilage and subsequently the bone tissue at the vertebral level. It is a very common degenerative disorder, and patients may experience intermittent pain in the lumbar region, particularly after exertion. It can also cause sciatica with pain and tingling radiating to the thigh and leg. This condition is more common in the elderly but can occur at any age.",
 			sessoPatologia: "",
 			chiaviPatologia: "",
 			scheda: 3,
 			apparato: 1
 		}, {
-			NomePatologia: "Muscular Dorsalgia",
+			NomePatologia: "Muscular dorsalgia",
 			TestoPatologia: "Dorsalgia is a condition caused by excessive muscle tension fueled by mechanical and psychological stress, poor tone of the abdominal, dorsal, and lumbar muscles, or overweight. In most cases, it is caused by poor posture during sleep and working hours, sudden movements, and emotional stress.",
 			sessoPatologia: "",
 			chiaviPatologia: "",
@@ -8206,14 +8209,14 @@ DB.set = {
 			scheda: 91,
 			apparato: 9
 		}, {
-			NomePatologia: "Premature Ejaculation",
+			NomePatologia: "Premature ejaculation",
 			TestoPatologia: "Premature ejaculation refers to the seminal emission of sperm before sexual intercourse, generally before penile penetration into the vagina.",
 			sessoPatologia: "m",
 			chiaviPatologia: "",
 			scheda: 59,
 			apparato: 5
 		}, {
-			NomePatologia: "Hyperemesis Gravidarum",
+			NomePatologia: "Hyperemesis gravidarum",
 			TestoPatologia: "Hyperemesis gravidarum manifests through severe vomiting and nausea during pregnancy, resulting in dehydration, weight loss, and ketosis. The diagnosis is clinical, involving the measurement of ketone bodies in the urine, serum electrolytes, and kidney function.",
 			sessoPatologia: "f",
 			chiaviPatologia: "",
@@ -8227,28 +8230,28 @@ DB.set = {
 			scheda: 23,
 			apparato: 2
 		}, {
-			NomePatologia: "Migraine with Aura",
+			NomePatologia: "Migraine with aura",
 			TestoPatologia: "Migraine with aura is a relatively rare form of primary headache.<br>Its particularity is the aura, a set of neurological symptoms that develop before or in the initial phase of the actual headache and can last for a variable duration ranging from 5 to 60 minutes.<br>Compared to other types of migraines, the painful attacks are less frequent and have a more irregular course over time.<br>The diagnosis of migraine with aura is based on a careful analysis of the patient's medical history combined with a physical examination.<br>The diagnostic process may also involve specific neuro-radiological investigations, such as computerized tomography or magnetic resonance imaging.",
 			sessoPatologia: "",
 			chiaviPatologia: "",
 			scheda: 23,
 			apparato: 2
 		}, {
-			NomePatologia: "Menstrual Migraine",
+			NomePatologia: "Menstrual migraine",
 			TestoPatologia: "Menstrual migraine, commonly referred to as menstrual headache and better defined as cephalalgia, affects over 50% of women and occurs immediately before, during, and/or immediately after the menstrual cycle.<br>It is a disorder that occurs regularly around the menstrual period, specifically in the 2-3 days preceding the onset of menstruation, called premenstrual syndrome migraine, or in the first 3 days following the start of menstrual flow, known as menstrual migraine.<br>The headache is triggered by hormonal variations (particularly the drop in estrogen levels) that characterize this phase of the menstrual cycle.<br>The disorder may improve or even regress during pregnancy and after menopause.",
 			sessoPatologia: "f",
 			chiaviPatologia: "",
 			scheda: 23,
 			apparato: 2
 		}, {
-			NomePatologia: "Migraine without Aura",
+			NomePatologia: "Migraine without aura",
 			TestoPatologia: "Migraine without aura is the second most common type of primary headache (after tension headache) and generally manifests with sudden throbbing pain localized to one side of the head, prone to worsening.<br>The disorder is characterized by predominantly unilateral pain but can also occur bilaterally, of moderate or severe intensity, described as pulsating, which tends to worsen with movement and physical exertion and is usually associated with nausea and/or vomiting. Generally, the pain develops in the fronto-temporal region and then spreads throughout the head and neck.",
 			sessoPatologia: "",
 			chiaviPatologia: "",
 			scheda: 23,
 			apparato: 2
 		}, {
-			NomePatologia: "Cerebral Hemorrhage",
+			NomePatologia: "Cerebral hemorrhage",
 			TestoPatologia: "The symptoms are not strictly specific: stabbing headache, nausea, vomiting, linguistic and motor difficulties can suddenly appear in a person affected by cerebral hemorrhage. Cerebral hemorrhage is a severe acute neurological condition caused by the rupture of a cerebral blood vessel, resulting in the leakage of blood inside the cranial cavity. The onset is completely sudden, and the causes can be multiple: the rupture of a congenital aneurysm, a violent trauma, or a sharp increase in blood pressure. Cerebral hemorrhages can be post-traumatic, developing after a severe head injury (traffic accidents, falls, fights or assaults), or spontaneous: occurring without head trauma due to various initially unknown causes. The main symptoms include severe headache that does not respond to normal painkillers, nausea and vomiting, motor or visual deficits, seizures, loss of consciousness, and in some cases, coma.",
 			sessoPatologia: "",
 			chiaviPatologia: "",
@@ -8276,8 +8279,8 @@ DB.set = {
 			scheda: 51,
 			apparato: 5
 		}, {
-			NomePatologia: "Pulmonary Emphysema",
-			TestoPatologia: "Pulmonary emphysema is a severe respiratory disorder caused by progressive deterioration and enlargement of the alveolar sacs. The most common cause is the inhalation of irritant substances, such as cigarette smoke, polluted air, or emissions from certain industrial plants. These substances not only potentially cause pulmonary emphysema but also contribute to the formation of lung tumors. The most significant symptom in patients with pulmonary emphysema is dyspnea, which worsens over the years and is accompanied by noticeable and significant changes in the chest cage, giving it a barrel-shaped appearance. Patients adopt the classic posture of elevated shoulders to aid breathing, which becomes noisy and wheezing. Additionally, dry cough and great fatigue are present. With time and the progression of the disease, cyanosis of the lips and nail bed may occur, indicating a need for oxygen therapy due to symptoms of blood oxygenation deficiency. When this symptomatology persists, and the patient experiences severe respiratory distress with severe desaturation, urgent interventions are necessary, as the impairment of other organs, such as the heart and brain, becomes imminent.",
+			NomePatologia: "Pulmonary emphysema",
+			TestoPatologia: "Pulmonary emphysema is a severe respiratory disorder caused by progressive deterioration and enlargement of the alveolar sacs. The most common cause is the inhalation of irritant substances, such as cigarette smoke, polluted air, or emissions from certain industrial plants. These substances not only potentially cause pulmonary emphysema but also contribute to the formation of lung tumors. The most significant symptom in patients with pulmonary emphysema is dyspnea, which worsens over the years and is accompanied by noticeable and significant changes in the chest cage, giving it a barrel-shaped appearance. Patients adopt the classic posture of elevated shoulders to aid breathing, which becomes noisy and wheezing. Additionally, dry cough and great fatigue are present. With time and the progression of the disease, cyanosis of the lips and of nail bed may occur, indicating a need for oxygen therapy due to symptoms of blood oxygenation deficiency. When this symptomatology persists, and the patient experiences severe respiratory distress with severe desaturation, urgent interventions are necessary, as the impairment of other organs, such as the heart and brain, becomes imminent.",
 			sessoPatologia: "",
 			chiaviPatologia: "",
 			scheda: 87,
@@ -8311,14 +8314,14 @@ DB.set = {
 			scheda: 12,
 			apparato: 1
 		}, {
-			NomePatologia: "Cervical Disc Herniation",
+			NomePatologia: "Cervical disc herniation",
 			TestoPatologia: "Cervical disc herniation is a common condition in the adult population and is due to degeneration of the vertebral discs in the cervical spine. It often becomes disabling due to the onset of pain and neurological symptoms, leading to the need for rest and prolonged absence from work.<br>Compression of the nerve roots causes cervical pain that can radiate down the arm to the hand (cervicobrachialgia). Compression of the spinal cord can lead to myelopathy, spinal cord damage due to compression.<br>Disc herniations (cervical, lumbar, thoracic) are often mistakenly associated with terms such as disc bulge or disc protrusion, causing confusion.<br>Bulging disc and protrusion do not reflect true disc herniation but rather a situation in which the fibers of the disc's annulus (or fibrous ring) are stretched and elongated, with a relative loss of elasticity, without being disrupted.<br>Protrusion is actually the initial form of herniation: the disc protrudes into the spinal canal. In disc herniation, on the other hand, the fibrous ring ruptures under the pressure of the herniated nucleus pulposus.",
 			sessoPatologia: "",
 			chiaviPatologia: "",
 			scheda: 17,
 			apparato: 1
 		}, {
-			NomePatologia: "Lumbosacral Disc Herniation",
+			NomePatologia: "Lumbosacral disc herniation",
 			TestoPatologia: "Also known as lumbosacral pain, it can be acute or chronic and is considered a social pathology due to its widespread prevalence and high costs to society in terms of work absenteeism.<br>It manifests with pain in the paraspinal muscles, causing restricted movement with radiation of pain to the legs and groin.<br>Often, the cause is a protrusion or disc herniation.",
 			sessoPatologia: "",
 			chiaviPatologia: "",
@@ -8381,35 +8384,35 @@ DB.set = {
 			scheda: 66,
 			apparato: 6
 		}, {
-			NomePatologia: "Cerebral Stroke",
+			NomePatologia: "Cerebral stroke",
 			TestoPatologia: "Cerebral stroke, also known as stroke, is characterized by symptoms such as deviation of the mouth (facial paralysis), loss of skin sensitivity, aphasia, hemiplegia, partial motor dysfunctions, and loss of consciousness.<br>The causes can be thrombosis, cerebral hemorrhage, subarachnoid hemorrhage, cerebral embolism, or cerebral vasospasm.<br>Stroke mainly affects elderly individuals and has a high mortality rate. In acute attacks, emergency treatment is administered in Western medicine.<br>Treatment can be accompanied by Traditional Chinese Medicine; moxibustion is especially useful for symptomatic treatment.",
 			sessoPatologia: "",
 			chiaviPatologia: "",
 			scheda: 41,
 			apparato: 3
 		}, {
-			NomePatologia: "Impotence/Frigidity",
+			NomePatologia: "Impotence/frigidity",
 			TestoPatologia: "Impotence refers to the inability to have or maintain an erection sufficient for sexual intercourse; it can be of organic (typically vascular) or psychological origin.",
 			sessoPatologia: "",
 			chiaviPatologia: "",
 			scheda: 58,
 			apparato: 5
 		}, {
-			NomePatologia: "Sexual Impotence",
+			NomePatologia: "Sexual impotence",
 			TestoPatologia: "Sexual impotence refers to the inability to have or maintain an erection sufficient for sexual intercourse; it can be of organic (typically vascular) or psychological origin.",
 			sessoPatologia: "m",
 			chiaviPatologia: "",
 			scheda: 58,
 			apparato: 5
 		}, {
-			NomePatologia: "Stress Urinary Incontinence",
+			NomePatologia: "Stress urinary incontinence",
 			TestoPatologia: "It manifests as nocturnal urinary incontinence.<br>The affected age group is generally after 3 years of age until puberty, rarely affecting adults.<br>The cause can be an alteration of the urinary system or a problem with the delayed development of the nervous system control of the micturition area.<br>Other causes can be malnutrition, physical debilitation, or psychological causes.",
 			sessoPatologia: "",
 			chiaviPatologia: "",
 			scheda: 62,
 			apparato: 5
 		}, {
-			NomePatologia: "Urinary Incontinence",
+			NomePatologia: "Urinary incontinence",
 			TestoPatologia: "It manifests as nocturnal urinary incontinence.<br>The affected age group is generally after 3 years of age until puberty, rarely affecting adults.<br>The cause can be an alteration of the urinary system or a problem with the delayed development of the nervous system control of the micturition area.<br>Other causes can be malnutrition, physical debilitation, or psychological causes.",
 			sessoPatologia: "",
 			chiaviPatologia: "",
@@ -8430,28 +8433,28 @@ DB.set = {
 			scheda: 46,
 			apparato: 4
 		}, {
-			NomePatologia: "Cerebrovascular Stroke",
+			NomePatologia: "Cerebrovascular stroke",
 			TestoPatologia: "Stroke is a term derived from Latin, meaning 'a blow,' and is caused by the sudden closure or rupture of a cerebral blood vessel and the consequent damage to brain cells due to the lack of oxygen and nutrients carried by the blood (ischemia) or due to compression caused by the blood coming out of the vessel (cerebral hemorrhage).<br>The death or damage suffered by brain cells following a stroke episode manifests as more or less evident symptoms in the parts of the body that were under their control, such as speech disorders or comprehension problems, vision problems, facial paralysis, arm or leg paralysis.<br>If not treated in time, stroke can cause serious permanent brain damage, chronic disabilities, and in some cases even death.",
 			sessoPatologia: "",
 			chiaviPatologia: "",
 			scheda: 41,
 			apparato: 3
 		}, {
-			NomePatologia: "Hyperemesis Gravidarum",
+			NomePatologia: "Hyperemesis gravidarum",
 			TestoPatologia: "Hyperemesis gravidarum consists of severe vomiting and nausea during pregnancy that result in dehydration, ketosis, and dangerous weight loss often exceeding 5%. The diagnosis is clinical and involves measuring ketones in the urine, serum electrolytes, and renal function.",
 			sessoPatologia: "f",
 			chiaviPatologia: "",
 			scheda: 55,
 			apparato: 5
 		}, {
-			NomePatologia: "Arterial Hypertension",
+			NomePatologia: "Arterial hypertension",
 			TestoPatologia: "Arterial hypertension is a condition characterized by high blood pressure in the arteries, which is determined by the amount of blood pumped by the heart and the resistance of the arteries to blood flow.",
 			sessoPatologia: "",
 			chiaviPatologia: "",
 			scheda: 73,
 			apparato: 7
 		}, {
-			NomePatologia: "Autoimmune Hyperthyroidism",
+			NomePatologia: "Autoimmune hyperthyroidism",
 			TestoPatologia: "The main cause of hyperthyroidism is Graves' disease or diffuse toxic goiter, an autoimmune disease characterized by the production of antibodies by the immune system that have the ability to stimulate the thyroid to produce excessive thyroid hormones.<br>Hyperthyroidism is more common in women than in men and tends to have a familial pattern. The excess thyroid hormones have serious consequences on metabolism, leading to sudden weight loss, changes in heart rate, sweating, and nervousness. This is because the thyroid controls all aspects of metabolism through the hormones it produces.<br>Diseases that can cause increased circulating levels of thyroid hormones are varied. Among the most common are Graves' disease (an autoimmune disease), thyroid nodules (toxic adenoma, toxic multinodular goiter, and Plummer's disease), and thyroiditis (inflammation that leads to the release of stored hormone into the blood). It should also be noted that certain medications (interferon, amiodarone) can induce hyperthyroidism.",
 			sessoPatologia: "",
 			chiaviPatologia: "",
@@ -8472,15 +8475,15 @@ DB.set = {
 			scheda: 64,
 			apparato: 5
 		}, {
-			NomePatologia: "Arterial Hypotension",
-			TestoPatologia: "Hypotension is a condition in which the blood pressure is much lower than the values considered normal, causing symptoms such as dizziness and fainting.<br>In most cases, it can be successfully treated to prevent the heart, brain, and other organs and tissues from not receiving sufficient oxygen and nutrients.<br+Very low blood pressure can cause organ damage, a process called shock.",
+			NomePatologia: "Arterial hypotension",
+			TestoPatologia: "Hypotension is a condition in which the blood pressure is much lower than the values considered normal, causing symptoms such as dizziness and fainting.<br>In most cases, it can be successfully treated to prevent the heart, brain, and other organs and tissues from not receiving sufficient oxygen and nutrients.<br>Very low blood pressure can cause organ damage, a process called shock.",
 			sessoPatologia: "",
 			chiaviPatologia: "",
 			scheda: 74,
 			apparato: 7
 		}, {
-			NomePatologia: "Hypothyroidism and Hyperthyroidism",
-			TestoPatologia: "The prefix 'hypo' indicates that the thyroid secretes insufficient thyroid hormones, whereas 'hyper' implies excessive production of thyroid hormones.<br>The most common symptoms of hypothyroidism are characterized by enlargement of the neck, excessive fatigue, hypomnesia (difficulty in remembering), muscle cramps, unexplained weight gain, generalized feeling of coldness, and constipation.<br+Signs of hyperthyroidism generally manifest with symptoms such as nervousness, tachycardia, irritability, muscle weakness, increased sweating, diarrhea, and unexplained weight loss.",
+			NomePatologia: "Hypothyroidism and hyperthyroidism",
+			TestoPatologia: "The prefix 'hypo' indicates that the thyroid secretes insufficient thyroid hormones, whereas 'hyper' implies excessive production of thyroid hormones.<br>The most common symptoms of hypothyroidism are characterized by enlargement of the neck, excessive fatigue, hypomnesia (difficulty in remembering), muscle cramps, unexplained weight gain, generalized feeling of coldness, and constipation.<br>Signs of hyperthyroidism generally manifest with symptoms such as nervousness, tachycardia, irritability, muscle weakness, increased sweating, diarrhea, and unexplained weight loss.",
 			sessoPatologia: "",
 			chiaviPatologia: "",
 			scheda: 48,
@@ -8493,8 +8496,8 @@ DB.set = {
 			scheda: 49,
 			apparato: 5
 		}, {
-			NomePatologia: "Irritable bowel syndrome (IBS)",
-			TestoPatologia: "Irritable bowel syndrome (IBS) or spastic colon is one of the most common gastrointestinal disorders. It is diagnosed when symptoms cannot be attributed to any organic or pathological cause and significantly affect the patient's quality of life.<br>Patients commonly complain of persistent symptoms such as abdominal pain and bloating associated with alterations in bowel regularity (alternating between constipation and diarrhea), fatigue, weakness, and often reduced quality of life.",
+			NomePatologia: "Irritable Bowel Syndrome (IBS)",
+			TestoPatologia: "Irritable Bowel Syndrome (IBS) or spastic colon is one of the most common gastrointestinal disorders. It is diagnosed when symptoms cannot be attributed to any organic or pathological cause and significantly affect the patient's quality of life.<br>Patients commonly complain of persistent symptoms such as abdominal pain and bloating associated with alterations in bowel regularity (alternating between constipation and diarrhea), fatigue, weakness, and often reduced quality of life.",
 			sessoPatologia: "",
 			chiaviPatologia: "",
 			scheda: 69,
@@ -8508,13 +8511,13 @@ DB.set = {
 			apparato: 5
 		}, {
 			NomePatologia: "Labyrinthitis",
-			TestoPatologia: "Labyrinthitis refers to inflammation of the labyrinth, a structure located in the inner ear.<br+When this part becomes inflamed, it manifests with reduced hearing, dizziness, tinnitus (ringing in the ears), as well as balance and postural problems.<br+Patients often experience symptoms such as dizziness, tinnitus, reduced hearing, postural problems, and balance disturbances.",
+			TestoPatologia: "Labyrinthitis refers to inflammation of the labyrinth, a structure located in the inner ear.<br>When this part becomes inflamed, it manifests with reduced hearing, dizziness, tinnitus (ringing in the ears), as well as balance and postural problems.",
 			sessoPatologia: "",
 			chiaviPatologia: "",
 			scheda: 81,
 			apparato: 8
 		}, {
-			NomePatologia: "Kidney Stones",
+			NomePatologia: "Kidney stones",
 			TestoPatologia: "Kidney stones are a fairly common disorder characterized by the formation of small stone-like deposits of minerals in the urinary tract.<br>Renal calculi are composed of mineral salts found in the urine, primarily calcium, oxalate, uric acid, and phosphates.",
 			sessoPatologia: "",
 			chiaviPatologia: "",
@@ -8528,7 +8531,7 @@ DB.set = {
 			scheda: 4,
 			apparato: 1
 		}, {
-			NomePatologia: "Muscular Low Back Pain",
+			NomePatologia: "Muscular low back pain",
 			TestoPatologia: "Low back pain is one of the most common complaints among the adult population, especially after the age of 30.<br>There are two types of low back pain: acute and chronic.<br>Acute low back pain is characterized by intense pain associated with muscle, joint, ligament, and disc injuries and tends to be accompanied by inflammatory processes.<br>Chronic low back pain consists of pain that lasts for more than 3 months.<br>It is the most severe form of back pain due to its individual, professional, social, and economic repercussions.",
 			sessoPatologia: "",
 			chiaviPatologia: "",
@@ -8542,20 +8545,22 @@ DB.set = {
 			scheda: 19,
 			apparato: 1
 		}, {
-			NomePatologia: "Ménière's Disease",
+			NomePatologia: "Ménière's disease",
 			TestoPatologia: "Ménière's disease is a disorder of the inner ear characterized by recurrent vertigo attacks lasting variable durations, from a few minutes to several hours, associated with tinnitus and mostly unilateral fluctuating hearing loss, nausea, and vomiting.",
 			sessoPatologia: "",
 			chiaviPatologia: "",
 			scheda: 81,
 			apparato: 8
-		}, {
+		},
+		/*ELIMINATA (non togliere){
 			NomePatologia: "Pelvic Inflammatory Disease (PID)",
 			TestoPatologia: "Pelvic inflammatory disease (PID) is a polymicrobial infection affecting the upper female genital tract, including the cervix, uterus, fallopian tubes, and ovaries, which can result in an abscess. Pelvic inflammatory disease can be sexually transmitted.<br>Patients experience severe lower abdominal pain, cervical discharge, and irregular vaginal bleeding. Long-term complications include infertility, chronic pelvic pain, and ectopic pregnancy. Treatment is based on antibiotic therapy.",
 			sessoPatologia: "f",
 			chiaviPatologia: "",
 			scheda: 50,
 			apparato: 5
-		}, {
+		},ELIMINATA*/
+		{
 			NomePatologia: "Menometrorrhagia",
 			TestoPatologia: "Menometrorrhagia is characterized by excessive uterine bleeding that can occur during menstruation or at other times in the menstrual cycle. The symptoms typically manifest as excessively heavy bleeding, not necessarily coinciding with the menstrual period. It can be a symptom of various health problems, ranging from hormonal imbalances to endometriosis, benign uterine fibroids, and, less frequently, tumors. The possible causes of menometrorrhagia can be organic or functional in nature. The main organic causes include fibroids, cervical polyps, endometriosis, and cervical tumors. The functional causes are related to hormonal disruption of the menstrual regulation mechanism. The menstrual cycle fails to progress regularly through its various phases, resulting in thickening of the endometrium and subsequent bleeding.",
 			sessoPatologia: "f",
@@ -8584,42 +8589,42 @@ DB.set = {
 			scheda: 99,
 			apparato: 10
 		}, {
-			NomePatologia: "Parkinson's Disease",
+			NomePatologia: "Parkinson's disease",
 			TestoPatologia: "Parkinson's disease is a neurodegenerative, extrapyramidal syndrome characterized by muscle rigidity, which manifests as resistance to passive movements, tremors that occur during rest and can increase with anxiety, and bradykinesia, which causes difficulty in initiating and terminating movements. The condition belongs to a group of disorders known as Movement Disorders, and it is the most common among them.",
 			sessoPatologia: "",
 			chiaviPatologia: "",
 			scheda: 39,
 			apparato: 3
 		}, {
-			NomePatologia: "Nausea and/or Vomiting",
+			NomePatologia: "Nausea and/or vomiting",
 			TestoPatologia: "Nausea is the subjective sensation of the need to vomit. Vomiting, on the other hand, is the oral expulsion of gastrointestinal contents due to contractions of the stomach and the muscles of the thoracoabdominal wall. Nausea and vomiting can be symptoms of very different disorders. Nausea is considered primarily a protective mechanism that helps avoid the ingestion of potentially toxic substances. It is sometimes associated with other forms of discomfort (such as stomach pain, diarrhea, headache, dizziness, or fatigue) and, although unpleasant, can be useful. It is often considered a sign that vomiting is about to occur, although that is not always the case. Nausea should raise concerns when it is associated with head trauma, headache, severe abdominal pain, etc. Vomiting, on the other hand, is a reflex based on a series of coordinated mechanisms that lead to the forced expulsion of the stomach contents through the mouth. Regurgitation and retching, on the other hand, are different phenomena. Regurgitation consists of the reflux of esophageal contents into the deeper part of the pharynx and does not require much effort. Retching, on the other hand, is a stimulus to vomit that is not followed by actual vomiting because the stomach is empty or because the valve separating it from the esophagus remains closed.",
 			sessoPatologia: "",
 			chiaviPatologia: "",
 			scheda: 68,
 			apparato: 6
 		}, {
-			NomePatologia: "Peripheral Neuropathy",
+			NomePatologia: "Peripheral neuropathy",
 			TestoPatologia: "Peripheral neuropathy is a condition characterized by localized damage to the nerves in the extremities (feet, arms, and hands), which inevitably disrupts the transport of information to and from the central nervous system. Peripheral neuropathy is a functional disorder of the peripheral nervous system. The nervous system consists of two components: the central nervous system, consisting of the brain and spinal cord, and the peripheral nervous system, consisting of nerves that connect the central nervous system to muscles, skin, and internal organs. The peripheral nervous system is the part that, when damaged, causes neuropathy. Peripheral neuropathy can be the result of various triggering factors, such as diseases like certain hematological tumors, HIV, diabetes, and diphtheria, exposure to toxic substances or drugs, or hereditary causes.",
 			sessoPatologia: "",
 			chiaviPatologia: "",
 			scheda: 32,
 			apparato: 3
 		}, {
-			NomePatologia: "Trigeminal Neuralgia",
+			NomePatologia: "Trigeminal neuralgia",
 			TestoPatologia: "Trigeminal neuralgia is a chronic syndrome, a neuropathic disorder characterized by episodes of lancinating pain in the areas of the face innervated by the fifth cranial nerve: the forehead and eyes, the jaw up to the chin or the upper part of the cheek. The trigeminal nerve is actually composed of a pair of nerves that branch symmetrically on both the right and left sides of the head. However, in most cases, the disorder affects only one side of the face (unilateral), most commonly the right side. Rarely, patients with trigeminal neuralgia experience bilateral pain. The episodes are of short duration (from a few seconds up to 1-2 minutes), can occur without warning, and sometimes can occur in rapid succession. It primarily affects women and people over 50 years old.",
 			sessoPatologia: "",
 			chiaviPatologia: "",
 			scheda: 30,
 			apparato: 3
 		}, {
-			NomePatologia: "Peripheral Neuralgia",
+			NomePatologia: "Peripheral neuralgia",
 			TestoPatologia: "Peripheral neuropathy or peripheral neuralgia is the chronic painful condition resulting from deterioration and malfunctioning of the peripheral nerves or structures of the central nervous system.",
 			sessoPatologia: "",
 			chiaviPatologia: "",
 			scheda: 32,
 			apparato: 3
 		}, {
-			NomePatologia: "Postherpetic Neuralgia",
+			NomePatologia: "Postherpetic neuralgia",
 			TestoPatologia: "Postherpetic neuralgia is a frequent complication of herpes zoster infection, better known as shingles. It is caused by the reactivation of the same virus responsible for chickenpox, which remains dormant in the nervous system after the illness. Shingles consists of a painful eruption of fluid-filled blisters caused by the reactivation of the varicella-zoster virus, which causes chickenpox. Some people with herpes zoster continue to experience pain long after the rash has resolved. This pain is called postherpetic neuralgia. The exact reason why postherpetic neuralgia occurs is unclear. The average duration of postherpetic neuralgia is 5-6 months, but in some cases, it can last for years or even a lifetime. This condition mainly affects people over 60 years old and can be very debilitating. Although there is no specific cure, certain types of treatments can reduce the symptoms.",
 			sessoPatologia: "",
 			chiaviPatologia: "",
@@ -8647,28 +8652,28 @@ DB.set = {
 			scheda: 92,
 			apparato: 9
 		}, {
-			NomePatologia: "Osteoarthritis of the Knee",
+			NomePatologia: "Osteoarthritis of the knee",
 			TestoPatologia: "Knee osteoarthritis, also known as gonarthritis, is the chronic inflammation of the knee joint. It is a chronic condition characterized by the degeneration of the cartilage layers typical of the affected joint and the consequent abnormal rubbing of the femur on the tibia.<br>Usually, knee osteoarthritis is the result of a combination of factors and rarely depends on a single cause.<br>Among the factors that most contribute to the development of knee osteoarthritis are advanced age, obesity, a history of knee injuries, and meniscus removal surgery.<br>Patients often complain of difficulty in movement and, in severe cases, deformation of the joint itself.",
 			sessoPatologia: "",
 			chiaviPatologia: "",
 			scheda: 15,
 			apparato: 1
 		}, {
-			NomePatologia: "Osteoarthritis of the Elbow",
+			NomePatologia: "Osteoarthritis of the elbow",
 			TestoPatologia: "Elbow osteoarthritis is a degenerative condition that affects the cartilage surface of the elbow when it becomes worn or damaged.<br>The deterioration of the cartilage surface of the elbow may result from a previous injury, such as dislocation or fracture of the elbow. More commonly, however, it is the result of normal wear and tear of the joint cartilage due to age and activity.<br>Elbow osteoarthritis is often caused by repetitive movements or gestures. These repetitive movements can cause injuries or microtrauma to the elbow joint. This is why elbow osteoarthritis is often diagnosed in athletes, commonly known as tennis elbow, and in professionals with particularly repetitive activities such as hairdressers, painters, and bricklayers.<br>Patients experience severe pain, especially when performing simple movements of daily routine. In many cases, symptoms related to difficulty bending and straightening the elbow freely are also present. The last two fingers can experience an annoying tingling sensation.",
 			sessoPatologia: "",
 			chiaviPatologia: "",
 			scheda: 12,
 			apparato: 1
 		}, {
-			NomePatologia: "Osteoarthritis of the Ankle",
+			NomePatologia: "Osteoarthritis of the ankle",
 			TestoPatologia: "Ankle osteoarthritis is a chronic degenerative condition that affects the ankle joint, progressively reducing the cartilage tissue that covers the joint surfaces.<br>The cartilage wears down, exposing the underlying bone. In response, the bone develops osteophytes.<br>Ankle osteoarthritis leads to increasing disability over a few years due to the development of pain and progressive functional limitation of joint movement.<br>In the early stages, ankle osteoarthritis manifests as severe pain and reduced joint mobility, particularly in the morning. The pain decreases throughout the day as the patient moves the affected limb, promoting the production of synovial fluid within the joint, which lubricates the joint surfaces.<br>As the condition progresses, the patient experiences pain even at rest, during walking, and when the joint is touched.<br>Visually, the ankle is often swollen, stiff, and deformed, with possible misalignments. This misalignment is due to the fact that the healing of a fracture often does not restore the joint perfectly in alignment, thus promoting osteoarthritic degeneration.<br>Indeed, the majority of ankle osteoarthritis cases are a result of a previous fracture involving the joint surfaces (articular fractures) or fractures with altered mechanical alignment during the healing process (displaced fractures).<br>Patients experience severe localized pain in the ankle characterized by stiffness and swelling of the joint. The pain, initially present during movement, can also occur at rest. In some cases, there may be a sense of joint instability, as if the ankle is no longer able to bear weight.",
 			sessoPatologia: "",
 			chiaviPatologia: "",
 			scheda: 16,
 			apparato: 1
 		}, {
-			NomePatologia: "Osteoarthritis of the Cervical Spine",
+			NomePatologia: "Osteoarthritis of the cervical spine",
 			TestoPatologia: "Cervical spine osteoarthritis is a degenerative condition affecting the cervical spine characterized by slow and progressive degeneration of the intervertebral discs. The main risk factors are advanced age, poor posture, certain sports activities, and physically demanding occupations.<br>Cervical osteoarthritis refers to a condition of osteoarthritis that wears down and erodes the joint surfaces of the cervical vertebrae and the cartilaginous discs located between the vertebrae in the neck.<br>Patients often complain of stiffness even during common movements, dizziness, and severe headaches.<br>Unfortunately, there is no cure for this condition, which is often associated with aging, but relief can be obtained through medication, exercises, and rarely, surgery.<br>The causes of cervical osteoarthritis can vary. Often, the condition manifests as a result of years of incorrect postures that cause abnormal compression on the cervical spine joints. People who spend many hours standing or sitting at a desk are at risk.<br>Other times, excessive or repetitive strain on the cervical spine, such as heavy lifting or sports activities like weightlifting, can be involved.",
 			sessoPatologia: "",
 			chiaviPatologia: "",
@@ -8724,7 +8729,7 @@ DB.set = {
 			scheda: 81,
 			apparato: 8
 		}, {
-			NomePatologia: "Panic disorder (PD)",
+			NomePatologia: "Panic Disorder (PD)",
 			TestoPatologia: "Panic disorder, also known as PD, is an event characterized by numerous symptoms that alarm and frighten the individual, such as shortness of breath, intense anxiety, tachycardia, chest pain, dizziness, and fear of dying or going crazy.<br>It can occur at any time and is often associated with periods of high stress and fatigue. When panic attacks occur frequently in a short period of time, it is referred to as panic disorder.<br>Although the duration of panic attacks varies from a few seconds to several hours, on average they do not exceed 30 minutes.<br>Despite being an emotionally intense event to the point where the patient may feel like losing control, panic attacks do not pose risks to physical health.<br>Women are twice as likely to experience panic disorder compared to men.",
 			sessoPatologia: "",
 			chiaviPatologia: "",
@@ -8738,77 +8743,77 @@ DB.set = {
 			scheda: 25,
 			apparato: 2
 		}, {
-			NomePatologia: "Facial Nerve Palsy",
+			NomePatologia: "Facial nerve palsy",
 			TestoPatologia: "Commonly known as cold palsy or Bell's palsy, Facial Nerve Palsy is a disorder that paralyzes the patient.<br>Cold palsy is a disease that can occur without any apparent cause and is characterized by reversible or permanent damage to the seventh cranial or facial nerve.<br>It manifests as altered mobility of the facial muscles that the patient can no longer control. The most acute phase occurs within 48 hours of the onset of the episode.<br>The inability to control the facial muscles significantly alters the appearance of the face, both at rest and during movements.<br>Peripheral facial palsy is the most common form of acute mononeuropathy (a disease that affects a single nerve) and represents the most common cause of acute facial nerve paralysis.<br>Typically, only one side of the face innervated by the affected nerve is involved; functional problems affect the eye, nose, and speech (the ability to articulate words).<br>The so-called Bell's phenomenon (named after Charles Bell, who first described it) is also present, characterized by the upward rotation of the eyeball when attempting to close the eye.",
 			sessoPatologia: "",
 			chiaviPatologia: "",
 			scheda: 25,
 			apparato: 2
 		}, {
-			NomePatologia: "Bell's Palsy",
+			NomePatologia: "Bell's palsy",
 			TestoPatologia: "Commonly known as cold palsy or Bell's palsy, Facial Nerve Palsy is a disorder that paralyzes the patient.<br>Cold palsy is a disease that can occur without any apparent cause and is characterized by reversible or permanent damage to the seventh cranial or facial nerve.<br>It manifests as altered mobility of the facial muscles that the patient can no longer control. The most acute phase occurs within 48 hours of the onset of the episode.<br>The inability to control the facial muscles significantly alters the appearance of the face, both at rest and during movements.<br>Peripheral facial palsy is the most common form of acute mononeuropathy (a disease that affects a single nerve) and represents the most common cause of acute facial nerve paralysis.<br>Typically, only one side of the face innervated by the affected nerve is involved; functional problems affect the eye, nose, and speech (the ability to articulate words).<br>The so-called Bell's phenomenon (named after Charles Bell, who first described it) is also present, characterized by the upward rotation of the eyeball when attempting to close the eye.",
 			sessoPatologia: "",
 			chiaviPatologia: "",
 			scheda: 25,
 			apparato: 2
 		}, {
-			NomePatologia: "Temporomandibular Joint Disorder",
+			NomePatologia: "Temporomandibular joint disorder",
 			TestoPatologia: "Also known as TMJ disorder, it is a condition characterized by recurrent headaches that do not respond to normal medical treatment.<br>Other symptoms include neck and shoulder pain or stiffness, dizziness, ear pain or a feeling of fullness, and sleep disturbances.<br>Individuals with untreated TMJ disorder experience decades of suffering, starting with joint pain in front of the ear and continuing with neck-arm pain and headaches.<br>The most common symptoms of TMJ disorder are noise when opening and closing the mouth and bothersome pain in the back of the head and shoulders. As the cranio-cervical musculature (neck and shoulders) is fundamentally linked to the proper movement of the mouth, any alteration to the joint affects these muscle structures. Ringing, buzzing, or whistling in the ear (tinnitus) may be additional symptoms of TMJ dysfunction.",
 			sessoPatologia: "",
 			chiaviPatologia: "",
 			scheda: 27,
 			apparato: 2
 		}, {
-			NomePatologia: "Painful Ankle-Foot Pathology",
+			NomePatologia: "Painful ankle-foot pathology",
 			TestoPatologia: "Ankle pain is a very common symptom that can have various causes, from trauma to more significant pathologies such as ankle osteoarthritis. The pain can be localized on the outside of the joint or inside it and extend to the foot arch and the Achilles tendon.<br>In most cases, the symptom disappears with simple remedies: rest, keeping the foot elevated to promote blood circulation, applying ice, and bandaging in case of sprains.<br>However, when the triggering cause is a pathology, it is advisable to undergo an orthopedic examination to evaluate the necessary treatments.",
 			sessoPatologia: "",
 			chiaviPatologia: "",
 			scheda: 16,
 			apparato: 1
 		}, {
-			NomePatologia: "Painful Knee Pathology",
+			NomePatologia: "Painful knee pathology",
 			TestoPatologia: "Gonalgia, the medical term for localized knee pain, knows no limits of gender and age but can more likely affect individuals such as athletes, overweight people, and the elderly.<br>It is often the direct consequence of joint trauma, inflammation caused by excessive physical exertion, or it could be a warning sign of more serious pathologies.",
 			sessoPatologia: "",
 			chiaviPatologia: "",
 			scheda: 15,
 			apparato: 1
 		}, {
-			NomePatologia: "Painful Elbow Pathology",
+			NomePatologia: "Painful elbow pathology",
 			TestoPatologia: "Elbow pain is a very common symptom that can have various causes. Depending on the triggering cause, it can be more or less debilitating.<br>Epicondylitis, which manifests on the outer lateral part of the elbow, better known as tennis elbow, is due to inflammation of the extensor tendons of the forearm. On the other hand, epitrochleitis, which manifests on the inner side of the elbow, also known as golfer's elbow, is due to inflammation of the epitrochlear tendons that rotate the hand and forearm internally (pronation) and flex the wrist and fingers.<br>Elbow arthritis is the so-called olecranon bursitis. However, this symptom can also be caused by dislocations, sprains, fractures, nerve compression syndromes, and cervical radiculopathies.",
 			sessoPatologia: "",
 			chiaviPatologia: "",
 			scheda: 12,
 			apparato: 1
 		}, {
-			NomePatologia: "Painful Hip Pathology",
+			NomePatologia: "Painful hip pathology",
 			TestoPatologia: "Coxalgia, a fairly common medical term, defines the common hip pain, which can be more or less debilitating depending on the triggering cause.<br>Hip pain can occur in numerous conditions. Among them, there are tendinitis of the gluteus medius, trochanteric bursitis, hip osteoarthritis (or coxarthrosis), and hip fracture.<br>Hip pain can be felt in the groin or just below the flank, on the outer side of the thigh. Coxalgia is often accompanied by other symptoms, such as limping, a sense of joint stiffness, tenderness, redness, and local swelling.<br>The main causes are direct trauma, foot, knee, and pelvic problems, incorrect posture, and functional overload.<br>The patient generally experiences severe pain in the trochanteric or inguinal region and during movement, limited mobility (abduction and internal rotation), and difficulty walking with an antalgic gait.",
 			sessoPatologia: "",
 			chiaviPatologia: "",
 			scheda: 14,
 			apparato: 1
 		}, {
-			NomePatologia: "Arthritic Wrist-Hand Pain Pathology",
+			NomePatologia: "Arthritic wrist-hand pain pathology",
 			TestoPatologia: "Wrist arthritis is a chronic degenerative condition caused by incorrect movement of the wrist, which, when repeated over time, alters the anatomy of the joint. Generally, the factors that cause this incorrect movement are sprains, fractures, or other types of injuries.<br>The main causes of this disorder can depend on the hand's own conformation (morphology), other pathologies, or the person's habits. For example, hand pathologies are often caused by trauma or microtrauma due to repetitive movements.",
 			sessoPatologia: "",
 			chiaviPatologia: "",
 			scheda: 13,
 			apparato: 1
 		}, {
-			NomePatologia: "Muscular Pathologies of the Spine - General Overview",
+			NomePatologia: "Muscular pathologies of the spine - General overview",
 			TestoPatologia: "Children and young adults are affected by back pain, particularly lower back pain, as a consequence of sports activities (especially if excessive or performed with inappropriate technique), accidental injuries, or sudden movements that exert abnormal stress on the muscles, resulting in reactive muscle contraction.<br>Individuals between 40 and 50 years of age are prone to acute or chronic pathologies such as spinal osteoarthritis, herniated discs, or muscle contractions.<br>The spine (vertebral column) consists of vertebrae. Between the vertebrae, there are shock-absorbing discs. The discs have a strong outer layer of fibrocartilage and a soft, gelatinous inner part called the nucleus. Posterior to the discs, each vertebra has two articular joints called facet joints. The facet joints of one vertebra rest on the facets of the vertebra below, forming an articulation. The facet joints, and thus the vertebral column, are stabilized by the following ligaments and muscles:<br>- Two iliopsoas muscles that run along both sides of the spine<br>- Two extensor muscles of the spine that run along and behind the spine<br>- Several short paraspinal muscles that run between the vertebrae<br>Inside the spinal column, there is the spinal cord, along which spinal nerves emerge laterally from the intervertebral spaces to connect to nerves throughout the body. The part of the spinal nerve closest to the spinal cord is called the spinal nerve root. Due to their location, spinal nerve roots can be compressed in the event of a spinal injury, causing pain and the development of numerous pathologies.",
 			sessoPatologia: "",
 			chiaviPatologia: "",
 			scheda: 5,
 			apparato: 1
 		}, {
-			NomePatologia: "Pelvic inflammatory disease (PID)",
-			TestoPatologia: "Pelvic inflammatory disease (PID) is an infection that affects the upper female genital organs (uterus, ovaries, fallopian tubes, peritoneum) caused, under specific conditions, by the ascent from the vagina to the uterus – and sometimes the urethra.<br>Transmission can occur during unprotected sexual intercourse, as well as during childbirth, miscarriage, abortion, or the use of contraceptive devices such as an intrauterine device.<br>If left untreated, this condition can damage the reproductive organs and compromise fertility. The risk increases with each occurrence of the disease.<br>Unfortunately, in most cases, PID is asymptomatic or manifests with mild and constant discomfort, which is not always directly proportional to the severity of the ongoing infection. The following are the most important symptoms that can accompany PID but can also be associated with various other gastrointestinal or genitourinary disorders (such as diverticulitis or other inflammatory bowel diseases, appendicitis, cystitis or urethritis, endometriosis, or ectopic pregnancy):<br>- Pelvic and lower abdominal pain<br>- Lower back pain radiating to the thigh<br>- Pain during intercourse<br>- Pain or difficulty urinating<br>- Foul-smelling vaginal discharge (leukorrhea)<br>- Abnormal vaginal bleeding<br>- Menstrual irregularities<br>- Fever<br>- Tachycardia<br>- Fatigue<br>- Vomiting<br>- Diarrhea",
+			NomePatologia: "Pelvic Inflammatory Disease (PID)",
+			TestoPatologia: "Pelvic Inflammatory Disease (PID) is an infection that affects the upper female genital organs (uterus, ovaries, fallopian tubes, peritoneum) caused, under specific conditions, by the ascent from the vagina to the uterus – and sometimes the urethra.<br>Transmission can occur during unprotected sexual intercourse, as well as during childbirth, miscarriage, abortion, or the use of contraceptive devices such as an intrauterine device.<br>If left untreated, this condition can damage the reproductive organs and compromise fertility. The risk increases with each occurrence of the disease.<br>Unfortunately, in most cases, PID is asymptomatic or manifests with mild and constant discomfort, which is not always directly proportional to the severity of the ongoing infection. The following are the most important symptoms that can accompany PID but can also be associated with various other gastrointestinal or genitourinary disorders (such as diverticulitis or other inflammatory bowel diseases, appendicitis, cystitis or urethritis, endometriosis, or ectopic pregnancy):<br>- Pelvic and lower abdominal pain<br>- Lower back pain radiating to the thigh<br>- Pain during intercourse<br>- Pain or difficulty urinating<br>- Foul-smelling vaginal discharge (leukorrhea)<br>- Abnormal vaginal bleeding<br>- Menstrual irregularities<br>- Fever<br>- Tachycardia<br>- Fatigue<br>- Vomiting<br>- Diarrhea",
 			sessoPatologia: "f",
 			chiaviPatologia: "",
 			scheda: 50,
 			apparato: 5
 		}, {
-			NomePatologia: "Scapulo-Humeral Periarthritis",
+			NomePatologia: "Scapulo-humeral periarthritis",
 			TestoPatologia: "Shoulder periarthritis, also known as scapulo-humeral periarthritis, can refer to a chronic and recurrent condition or a degenerative state that involves the structures that make up the shoulder joint: tendons, ligaments, capsule, bursa, and cartilage, characterized by inflammation and stiffening of the joint capsule.<br>Today, those who suffer from shoulder periarthritis only have access to symptomatic treatments; fortunately, the condition tends to resolve spontaneously, although very slowly (within 1-3 years).",
 			sessoPatologia: "",
 			chiaviPatologia: "",
@@ -9027,7 +9032,7 @@ DB.set = {
 			scheda: 35,
 			apparato: 3
 		}, {
-			NomePatologia: "Central Sensitization Syndrome",
+			NomePatologia: "Central sensitization syndrome",
 			TestoPatologia: "Central sensitization is characterized by an increased responsiveness of nociceptive neurons in the central nervous system to their normal or subthreshold afferent input. This increased responsiveness of second-order neurons is an adaptive response aimed at protecting us from actual or potential damage. However, if intense, prolonged, and repetitive nociceptive stimuli are present, the central neuron may remain sensitized even after the cessation of the activating stimulus. Chronic pain has various origins, and its mechanisms of onset have long been the subject of attention, but a common pathophysiological basis has recently been identified in a group of diseases characterized by chronic pain. These conditions are grouped under the name of Central Sensitization Syndromes (CSS) because they are characterized by an altered perception of normal sensory stimuli, which are perceived in the brain as excessive or painful. They are conditions that have long been considered somatic disorders of difficult classification and often underestimated, including fibromyalgia (FMS), migraine and tension headache, temporomandibular disorders, irritable bowel syndrome, chronic fatigue syndrome, and interstitial cystitis/female urethral syndrome. Under normal conditions, this process is completely reversible: when the peripheral stimulus ceases, both the nociceptor and the central neuron return to normal. However, it can happen that when peripheral inflammation stops, the central neuron does not return to its initial state. In this case, central sensitization becomes a paraphysiological phenomenon supported by neuroplastic changes.",
 			sessoPatologia: "",
 			chiaviPatologia: "",
@@ -9140,7 +9145,7 @@ DB.set = {
 			apparato: 5
 		}, {
 			NomePatologia: "Stress",
-			TestoPatologia: "Stress is the psychological and physiological response that the body exhibits towards tasks, difficulties, or events in life that are perceived as excessive or dangerous.<br>The feeling experienced in a stressful situation is that of being faced with apparently insurmountable mental and emotional pressure.<br>The term stress was first used in 1936 by Hans Selye. He defined it as the 'nonspecific response of the body to any demand made upon it'. According to Selye's model, the stress process consists of three distinct phases:<br>- Alarm phase: the individual signals an excess of duties and sets in motion the resources to fulfill them;<br>- Resistance phase: the individual stabilizes their conditions and adapts to the new level of demands;<br>- Exhaustion phase: in this phase, defenses fall and physical, physiological, and emotional symptoms appear.<br>The duration of the stressful event distinguishes between acute stress and chronic stress. The former occurs only once and within a limited period of time, while the latter involves long-lasting stimuli.<br>Stress can be attributed to both pleasant and unpleasant life events (e.g., marriage, birth of a child, death of a loved one, divorce, retirement, sexual problems); physical causes such as extreme cold or heat, excessive smoking and alcohol consumption, severe limitations in movement; environmental factors such as lack of housing, noisy or polluted environments, which are determining factors in a certain state of stress; or organic diseases: in fact, when our body is affected by a disease, the entire organism, in an attempt to defend itself, enters a state of tension which, in most cases, due to the limited defenses it can provide, results in a condition of stress.<br>People affected by stress generally experience headaches, muscle pain, especially in the back, neck, and shoulders, stomach pain, tachycardia, restlessness, sleep problems, fatigue, loss of appetite, sexual problems, and tinnitus (ringing, buzzing) in the ears.<br>The most common behavioral response is teeth grinding, but in some cases, there is a tendency towards bullying, increased use of alcohol, and emotional eating.<br>Based on the level of stress, a person may experience crying spells, anger, feelings of loneliness and helplessness in dealing with change, tension, and unhappiness without a valid reason.<br>Psychosomatic disorders related to stress include post-traumatic stress disorder, acute stress disorder, psychosomatic disorders (bronchial asthma, hypertension, colitis, eczema, psychogenic alopecia, gastrointestinal ulcers), fibromyalgia, depression, bipolar disorder, anxiety disorders, sexual disorders, and eating disorders (anorexia, bulimia).<br>Although there is no real solution that can solve this disorder, it is now certain that by using relaxation techniques, meditation, mindfulness, neurofeedback, and especially cognitive-behavioral psychotherapy, excellent results can be achieved.",
+			TestoPatologia: "Stress is the psychological and physiological response that the body exhibits towards tasks, difficulties, or events in life that are perceived as excessive or dangerous.<br>The feeling experienced in a stressful situation is that of being faced with apparently insurmountable mental and emotional pressure.<br>The term stress was first used in 1936 by Hans Selye. He defined it as the 'non-specific response of the body to any demand made upon it'. According to Selye's model, the stress process consists of three distinct phases:<br>- Alarm phase: the individual signals an excess of duties and sets in motion the resources to fulfill them;<br>- Resistance phase: the individual stabilizes their conditions and adapts to the new level of demands;<br>- Exhaustion phase: in this phase, defenses fall and physical, physiological, and emotional symptoms appear.<br>The duration of the stressful event distinguishes between acute stress and chronic stress. The former occurs only once and within a limited period of time, while the latter involves long-lasting stimuli.<br>Stress can be attributed to both pleasant and unpleasant life events (e.g., marriage, birth of a child, death of a loved one, divorce, retirement, sexual problems); physical causes such as extreme cold or heat, excessive smoking and alcohol consumption, severe limitations in movement; environmental factors such as lack of housing, noisy or polluted environments, which are determining factors in a certain state of stress; or organic diseases: in fact, when our body is affected by a disease, the entire organism, in an attempt to defend itself, enters a state of tension which, in most cases, due to the limited defenses it can provide, results in a condition of stress.<br>People affected by stress generally experience headaches, muscle pain, especially in the back, neck, and shoulders, stomach pain, tachycardia, restlessness, sleep problems, fatigue, loss of appetite, sexual problems, and tinnitus (ringing, buzzing) in the ears.<br>The most common behavioral response is teeth grinding, but in some cases, there is a tendency towards bullying, increased use of alcohol, and emotional eating.<br>Based on the level of stress, a person may experience crying spells, anger, feelings of loneliness and helplessness in dealing with change, tension, and unhappiness without a valid reason.<br>Psychosomatic disorders related to stress include post-traumatic stress disorder, acute stress disorder, psychosomatic disorders (bronchial asthma, hypertension, colitis, eczema, psychogenic alopecia, gastrointestinal ulcers), fibromyalgia, depression, bipolar disorder, anxiety disorders, sexual disorders, and eating disorders (anorexia, bulimia).<br>Although there is no real solution that can solve this disorder, it is now certain that by using relaxation techniques, meditation, mindfulness, neurofeedback, and especially cognitive-behavioral psychotherapy, excellent results can be achieved.",
 			sessoPatologia: "",
 			chiaviPatologia: "",
 			scheda: 44,
@@ -9216,7 +9221,7 @@ DB.set = {
 			scheda: 80,
 			apparato: 8
 		}, {
-			NomePatologia: "Peripheral Vertigo",
+			NomePatologia: "Peripheral vertigo",
 			TestoPatologia: "Peripheral vertigo is directly caused by vestibular dysfunction in the inner ear, with the most common form being benign paroxysmal positional vertigo (BPPV). This type of vertigo, triggered by head movements, leads the affected individual to lose their perception of head orientation in space. The sensation subsides a few seconds after the head movement stops.<br>The cause of this disorder is related to the detachment of small calcium oxalate crystals, called otoliths, from the vestibular system within the ear. These otoliths cause vertigo every time a movement is made. This phenomenon is known as cupulolithiasis.<br>When these otoliths detach from their structure due to trauma, sports injuries, genetic predisposition, or other causes, they disrupt the normal functioning of the inner ear. As a result, they transmit different signals from one ear to the brain compared to the other ear. When the brain receives two different signals, vertigo occurs because the signals are not perfectly synchronized.<br>In addition to benign paroxysmal positional vertigo, there is also vestibular neuritis, which was previously known as labyrinthitis. It is characterized by inflammation or ischemia of the vestibular nerve, which connects the labyrinth (the set of canals that make up the vestibular system in the inner ear) to the brain. When this connection, responsible for balance regulation, is damaged, it leads to a sensation of vertigo. Vestibular neuritis often has a viral inflammatory origin.<br>Vertigo can also be a symptom of a viral or bacterial infection of the ear, a simple otitis, or labyrinthitis, which is an inflammation of the labyrinth caused by common viruses like influenza or the common cold.<br>Less frequently, vertigo can be caused by Ménière's disease, a rare disorder that affects the inner ear, or vestibular neuritis, an inflammation of the vestibular nerves.<br>Finally, peripheral vertigo can also be caused by head trauma, allergic reactions, or the use of certain medications.",
 			sessoPatologia: "",
 			chiaviPatologia: "",
@@ -9237,7 +9242,7 @@ DB.set = {
 			scheda: 68,
 			apparato: 6
 		}, {
-			NomePatologia: "Hyperemesis Gravidarum",
+			NomePatologia: "Hyperemesis gravidarum",
 			TestoPatologia: "Hyperemesis gravidarum is a severe and persistent form of vomiting that occurs during pregnancy. It can reach a level that causes weight loss and dehydration (from 4 to 19 kilograms). Women with this condition do not absorb enough energy through nutrition, so the body breaks down fats, resulting in the accumulation of waste products (ketones), a situation called ketosis (carbohydrate deficiency, where the body uses fats as the primary source of energy instead of glucose). Ketosis leads to symptoms such as fatigue, bad breath, and others.<br>Women with hyperemesis gravidarum are often dehydrated to the extent that the electrolyte balance necessary for normal body functioning is disturbed.<br>Women who experience occasional vomiting episodes with weight gain and no dehydration do not have hyperemesis gravidarum. Morning sickness and hyperemesis gravidarum generally tend to resolve by the second trimester.<br>Usually, nausea and vomiting during pregnancy are related to pregnancy itself, but sometimes they can be due to other disorders.<br>The causes of morning sickness and hyperemesis gravidarum are not clear, although the symptoms may be related to increased levels of two hormones during pregnancy: human chorionic gonadotropin (hCG), produced by the placenta in early pregnancy, and estrogens, which help sustain pregnancy. Estrogen levels are particularly elevated in women who suffer from hyperemesis gravidarum. Additionally, hormones like progesterone (produced continuously during pregnancy) can slow down the movement of stomach contents, contributing to nausea and vomiting.<br>When a woman experiences uncontrollable and persistent symptoms of nausea and vomiting during pregnancy, the doctor orders a complete blood count, a urine test to check for ketones, and a comprehensive medical evaluation to assess the frequency and intensity of the symptoms.",
 			sessoPatologia: "f",
 			chiaviPatologia: "",

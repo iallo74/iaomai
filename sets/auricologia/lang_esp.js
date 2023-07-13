@@ -8947,7 +8947,7 @@ DB.set= {
 		},
 		{
 			NomePatologia: "Laberintitis",
-			TestoPatologia: "El término laberintitis se refiere a una inflamación del laberinto, una estructura ubicada en el oído interno.<br>Cuando esta parte se inflama, se manifiesta no solo con una disminución de la audición, mareos y tinnitus (zumbido en los oídos), sino también con trastornos del equilibrio y problemas de postura.<br>Con frecuencia, el paciente presenta síntomas como mareos, tinnitus, pérdida de audición, problemas de postura y trastornos del equilibrio.",
+			TestoPatologia: "El término laberintitis se refiere a una inflamación del laberinto, una estructura ubicada en el oído interno.<br>Cuando esta parte se inflama, se manifiesta no solo con una disminución de la audición, mareos y tinnitus (zumbido en los oídos), sino también con trastornos del equilibrio y problemas de postura.",
 			sessoPatologia: "",
 			chiaviPatologia: "",
 			scheda: 81,

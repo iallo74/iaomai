@@ -225,7 +225,7 @@ DB.set= {
 					ChiaviPunto: "",
 				},
 				"45": {
-					NomePunto: "45.BL. Yixi",
+					NomePunto: "45.BL. Yixi (Suono sospirante)",
 					AzioniPunto: "<p><b>M.T.C.</b><br><span>•</span> Rafforza Qi e sangue <br><span>•</span> Riduce il Qi nel Polmone<br><span>•</span> Espelle il vento<br><span>•</span> Purifica il Calore<br><span>•</span> Allevia il dolore<br></p><p><b>Applicazioni</b><br><span>•</span> Cefalea e dolore al petto irradiato ai lombi<br><span>•</span> Capogiri visivi<br><span>•</span> Epistassi<br><span>•</span> Malaria<br><span>•</span> Dolore oculare<br><span>•</span> Indicato anche per tosse<br><span>•</span> Dispnea<br><span>•</span> Malattia febbrile senza sudorazione<br><span>•</span> Attacco da Vento senza sudorazione<br><span>•</span> Dolore a spalla, scapola e dorso,<br><span>•</span> Dolore al petto irradiato nella regione lombare<br><span>•</span> Dolore alla regione costale che si irradia al Cuore e al Polmone<br><span>•</span> Contrattura ascellare<br><span>•</span> Cefalea nel bambino mentre mangia<br></p><p><b>Ago</b><br><span>•</span> 45° di 0.3-0.5 cun<br><span>•</span> Precauzioni: l'inserzione perpendicolare (90°) può comportare il rischio di pneumotorace</p><p><b>Moxa</b><br><span>•</span> Usato per le patologie di cui sopra sia in modo diretto che indiretto<br></p><p><b>Ubicazione</b><br><span>•</span> A livello del bordo inferiore del processo spinoso della sesta vertebra toracica (D6)<br><span>•</span> A livello di 16.BL<br><span>•</span> 3 cun a lato alla linea mediana</p>",
 					ChiaviPunto: "",
 				},

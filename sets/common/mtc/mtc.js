@@ -3193,8 +3193,8 @@ DB.mtc= {
 					"coordZoom": "186,315",
 					"noMoxa": false,
 					"noGravidanza": false,
-					"pinyin": "Rénzhōng/Shuǐgōu",
-					"ideogramma": "人中/水溝"
+					"pinyin": "Rénzhōng",
+					"ideogramma": "人中"
 				},
 				"27": {
 					"NomePunto": "27.GV.",
@@ -3315,7 +3315,7 @@ DB.mtc= {
 					"coordZoom": "196,314",
 					"noMoxa": false,
 					"noGravidanza": true,
-					"pinyin": "Xiàwǎn o Xiàguǎn",
+					"pinyin": "Xiàwǎn",
 					"ideogramma": "下脘"
 				},
 				"11": {
@@ -3333,7 +3333,7 @@ DB.mtc= {
 					"coordZoom": "197,289",
 					"noMoxa": false,
 					"noGravidanza": true,
-					"pinyin": "Zhōngwǎn o Zhōngguǎn",
+					"pinyin": "Zhōngwǎn",
 					"ideogramma": "中脘"
 				},
 				"13": {
@@ -3342,7 +3342,7 @@ DB.mtc= {
 					"coordZoom": "197,275",
 					"noMoxa": false,
 					"noGravidanza": true,
-					"pinyin": "Shàngwǎn o Shàngguǎn",
+					"pinyin": "Shàngwǎn",
 					"ideogramma": "上脘"
 				},
 				"14": {
@@ -3474,7 +3474,7 @@ DB.mtc= {
 					"noMoxa": false,
 					"noGravidanza": false,
 					"pinyin": "Dāngyáng ",
-					"ideogramma": "當陽|当阳"
+					"ideogramma": "當陽"
 				},
 				"03": {
 					"siglaPunto": "EX-HN-3",

@@ -553,7 +553,7 @@ SET = {
 		
 		
 		// se è un punto interno evidenzio gli organi o le ossa
-		if(this.ptSel.userData.interno){
+		if(this.ptSel.userData.interno && globals.modello.cartella){
 			this.preCM = SET.COL.contrastMethod;
 			this.swContrastMethod(false);
 			

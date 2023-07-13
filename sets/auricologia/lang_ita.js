@@ -857,7 +857,7 @@ DB.set= {
         },
         "047": {
             NomePunto: "Clavicola",
-            AzioniPunto: "<p><b>Azione<br></b>Come indicato dal nome, questo punto è molto efficace per ridurre tutti i disturbi correlati alla clavicola. Trova inoltre efficacia nel trattamento del dolore alla scapola e del cingolo scapolare.</p><p><b>Ubicazione</b><br>SF1, nella fossa scafoidea, poco prima che questa si divida in un Y.</p>",
+            AzioniPunto: "<p><b>Azione<br></b>Come indicato dal nome, questo punto è molto efficace per ridurre tutti i disturbi correlati alla clavicola. Trova inoltre efficacia nel trattamento del dolore alla scapola e del cingolo scapolare.</p><p><b>Ubicazione</b><br>SF1, nella fossa scafoidea, poco prima che questa si divida in una Y.</p>",
             ChiaviPunto: ""
         },
         "048": {
@@ -7809,7 +7809,7 @@ DB.set= {
 						"267"
 					]
 				},
-				"d": "Il protocollo va eseguito una volta a settimana con diminuzione di 3 sigarette a seduta. Si utilizzano di aghi estemporanei.<br><br><b>Trattamento pazienti ansiosi</b><br>Su pazienti particolarmente ansiosi si consiglia di applicare una Triade di relax sul padiglione sinistro per 5 giorni con <i>aghi a semipermanenza</i>. Tali aghi vanno rimossi 2 giorni prima della seduta successiva, nella quale può venire applicata nuovamente la Triade di relax o in alternanza con la Linea degli Omega."
+				"d": "Il protocollo va eseguito una volta a settimana con diminuzione di 3 sigarette a seduta. Si utilizzano aghi estemporanei.<br><br><b>Trattamento pazienti ansiosi</b><br>Su pazienti particolarmente ansiosi si consiglia di applicare una Triade di relax sul padiglione sinistro per 5 giorni con <i>aghi a semipermanenza</i>. Tali aghi vanno rimossi 2 giorni prima della seduta successiva, nella quale può venire applicata nuovamente la Triade di relax o in alternanza con la Linea degli Omega."
 			},
 			"s": [
 				{
@@ -8945,7 +8945,7 @@ DB.set= {
 		},
 		{
 			NomePatologia: "Labirintite",
-			TestoPatologia: "Il termine labirintite indica un'infiammazione del labirinto, una struttura che si trova nell'orecchio interno.<br>Quando infatti questa parte si infiamma si manifesta, oltre che con una riduzione dell'udito, vertigini e acufeni (il ronzio nelle orecchie), anche con disturbi dell'equilibrio e problemi della postura.<br>Spesso il paziente accusa sintomi quali vertigini, acufeni, riduzione dell'udito, problemi di postura e disturbi nell'equilibrio.",
+			TestoPatologia: "Il termine labirintite indica un'infiammazione del labirinto, una struttura che si trova nell'orecchio interno.<br>Quando infatti questa parte si infiamma si manifesta, oltre che con una riduzione dell'udito, vertigini e acufeni (il ronzio nelle orecchie), anche con disturbi dell'equilibrio e problemi della postura.",
 			sessoPatologia: "",
 			chiaviPatologia: "",
 			scheda: 81,
@@ -9288,7 +9288,7 @@ DB.set= {
 			apparato: 5
 		},
 		{
-			NomePatologia: "Periartrite scapolo-omerale ",
+			NomePatologia: "Periartrite scapolo-omerale",
 			TestoPatologia: "La periartrite alla spalla, anche detta periartrite scapolo-omerale può indicare una condizione cronica e ricorrente o uno stato degenerativo, che coinvolge le strutture di cui è composta l'articolazione della spalla: tendini, legamenti, capsula, borsa e cartilagine; contraddistinta dall'infiammazione e dall'irrigidimento della capsula articolare.<br>Oggi, chi soffre di periartrite alla spalla dispone esclusivamente di cure sintomatiche; fortunatamente, però, la condizione tende, seppur molto lentamente (nell'arco di 1-3 anni), a una risoluzione spontanea.",
 			sessoPatologia: "",
 			chiaviPatologia: "",
