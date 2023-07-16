@@ -51,6 +51,7 @@ body.uomo #pulsante_modello{
 .smart .ideogrammaMeridianoChar{
     font-size: 38px !important;
     line-height: 44px !important;
+	font-weight: normal !important;
 }
 .ideogrammaMeridianoChar{
 	position: absolute;
