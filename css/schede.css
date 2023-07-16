@@ -417,6 +417,10 @@ body:not(.smart) #scheda.schForm:not(.schedaRitorno):not(.minimized):not(.tab_pu
     text-align: center;
 	padding-left: 44px !important;
 }
+.smart .tab_punti #scheda_titolo{
+	padding-left:25px !important;
+	padding-right:85px !important;
+}
 .smart.bodyModello #scheda_titolo{
 	width: calc(100% - 120px) !important;
 }
@@ -473,10 +477,11 @@ body:not(.smart) #scheda.schForm:not(.schedaRitorno):not(.minimized):not(.tab_pu
     position: absolute;
     z-index: 100;
 	display:none;
-}
-#frSch{
 	right: 28px;
-    width: 70px;
+}
+.smart #frSch {
+    margin-top: -38px !important;
+    margin-right: 10px !important;
 }
 .frSu, .frGiu{
 	display:block !important;
@@ -710,6 +715,9 @@ body:not(.bodyStyled2) #scheda_testo2{
 }
 #scheda.scheda_ideogramma #scheda_testo{
     padding-right: 69px;
+}
+.smart #scheda.scheda_ideogramma #scheda_testo{
+    padding-right: 59px;
 }
 #scheda.scheda_ideogramma #scheda_testo::-webkit-scrollbar {
 	background: #999;

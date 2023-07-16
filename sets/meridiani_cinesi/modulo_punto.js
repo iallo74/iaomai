@@ -201,7 +201,9 @@ var MODULO_PUNTO = { // extend SET
 		
 		var finalFunct = '';
 		if(!ritorno || !SCHEDA.formModificato)finalFunct += 'initChangeDetection( "formAnnotazioni");';
-							
+
+		
+		
 		SCHEDA.caricaScheda(	titolo,
 								HTML,
 								"if(SET.ptSel)SET.chiudiPunto()",
@@ -221,10 +223,7 @@ var MODULO_PUNTO = { // extend SET
 		
 		document.getElementById("frSchSu").onclick = '';
 		document.getElementById("frSchGiu").onclick = '';
-		
-		
 		var classFr = '';
-		
 		if(!SCHEDA.scheda2Aperta){
 			var nPuntoGiu = SET.ptToStr(+nPunto - 1);
 			var nPuntoSu = SET.ptToStr(+nPunto + 1);

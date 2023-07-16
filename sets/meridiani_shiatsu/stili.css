@@ -22,9 +22,9 @@ body.uomo #pulsante_modello{
 	display:none;
 }
 
-/*.simboliPunto{
-	float:right;
-}*/
+.tab_punti h1 *{
+	font-size:inherit !important;
+}
 .smart .simboliPunto{
 	margin-top: 20px;
 }
@@ -43,8 +43,14 @@ body.uomo #pulsante_modello{
 	padding: 15px 10px;
 	margin: -15px;
     margin-left: 20px !important;
+	margin-bottom: 20px !important;
 	padding-top: 26px;
     border-top-left-radius: 14px;
+}
+.smart .ideogrammaPuntoChar,
+.smart .ideogrammaMeridianoChar{
+    font-size: 38px !important;
+    line-height: 44px !important;
 }
 .ideogrammaMeridianoChar{
 	position: absolute;
@@ -53,20 +59,23 @@ body.uomo #pulsante_modello{
     background-color: #999;
     color: #FFF;
 	width:69px;
+	padding-top:26px;
 }
-#scheda.schLato .ideogrammaMeridianoChar{
+.smart .ideogrammaMeridianoChar{
+	width:59px;
+    font-size: 38px !important;
+    line-height: 44px !important;
+}
+#scheda.schLato .ideogrammaMeridianoChar,
+.smart .ideogrammaMeridianoChar{
     top: 46px;
     height: calc(100% - 46px);
 }
-#scheda:not(.schLato) .ideogrammaMeridianoChar{
+body:not(.smart) #scheda:not(.schLato) .ideogrammaMeridianoChar{
     top: 71px;
     height: calc(100% - 71px);
 }
-.smart .ideogrammaPuntoChar{
-	margin-top: 20px;
-}
 .speach_icon{
-	
 	width: 31px;
     cursor: pointer;
     border-radius: 9px;

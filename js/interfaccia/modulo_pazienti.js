@@ -1331,7 +1331,7 @@ var PAZIENTI = {
 					DB.pazienti.data[p].id_interno=p;
 					if(md5==DB.pazienti.data[p].md5)PAZIENTI.idCL=p;
 				}
-				postAction = 'PAZIENTI.selPaziente('+p+');';
+				postAction = 'PAZIENTI.selPaziente('+PAZIENTI.idCL+');';
 			}
 			
 			endChangeDetection();
