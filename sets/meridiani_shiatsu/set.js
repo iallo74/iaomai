@@ -26,6 +26,7 @@ SET = {
 	geometryPallinoTrasp: null,
 	idTeoMeridiani: 2,
 	allMeridiansFree: true,
+	snd: null,
 	
 	// FUNZIONI
 	_init: function(){

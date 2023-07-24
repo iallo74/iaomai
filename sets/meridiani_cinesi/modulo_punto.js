@@ -382,9 +382,13 @@ var MODULO_PUNTO = { // extend SET
 		return el;
 	},
 	speachName: function( txt ){
-		let snd = new Audio("sets/common/mtc/audio/"+txt+".mp3");
-		snd.play();
-		snd = null;
+		if(	SET.snd &&
+			SET.snd.currentTime > 0 &&
+			!SET.snd.paused && 
+			!SET.snd.ended &&
+			SET.snd.readyState > 2)return;
+		SET.snd = new Audio("sets/common/mtc/audio/"+txt+".mp3");
+		SET.snd.play();
 	},
 	azRicercaPunto: function( pt ){ // apre la scheda del punto dalla ricerca globale
 		SET.apriPunto(pt);

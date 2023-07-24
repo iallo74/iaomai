@@ -254,7 +254,8 @@ var SCHEDA = {
 			document.getElementById("scheda_testo2").innerHTML='';
 			document.getElementById("elenchi").classList.remove("noTesta");
 			if(SCHEDA.classeAperta){
-				document.getElementById("scheda").classList.remove(SCHEDA.classeAperta);
+				let cls = SCHEDA.classeAperta.split(" ");
+				for(let c in cls)document.getElementById("scheda").classList.remove(cls[c]);
 			}
 			SCHEDA.schedaAperta = false;
 			SCHEDA.scheda2Aperta = false;
@@ -867,7 +868,8 @@ var SCHEDA = {
 					"daCarica": daCarica
 				});
 			}catch(err){}
-			document.getElementById("scheda").classList.add(SCHEDA.classeAperta);
+			let cls = SCHEDA.classeAperta.split(" ");
+			for(let c in cls)document.getElementById("scheda").classList.add(cls[c]);
 			document.getElementById("scheda").classList.remove("schedaRitorno");
 			document.getElementById("scheda_titolo").innerHTML=document.getElementById("scheda_ritorno").getElementsByTagName("div")[0].innerHTML;
 			document.getElementById("scheda_testo").style.height = SCHEDA.memHrit;
