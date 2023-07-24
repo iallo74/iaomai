@@ -81,7 +81,7 @@ var MODULO_TEORIA = { // extend SET
 				ideogramma += ideogrammaOr[l];
 				if(l<lI-1)ideogramma += "<br>";
 			}
-			html += '<div class="ideogrammaMeridianoChar"><img src="img/speach2W.png" onClick="SET.speachName(\''+meridiano+'\');">'+ideogramma+'</div>';
+			html += '<div class="ideogrammaMeridianoChar"><img src="img/speach2W.png" onClick="SET.speachName(\''+meridiano+'\');" class="noPrint">'+ideogramma+'</div>';
 			addTabStyle = ' scheda_ideogramma';
 		}
 

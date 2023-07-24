@@ -37,7 +37,11 @@ var sets = {
 			'materiali.js',
 			'stili.css',
 			'sets/common/stili_procedure.css',
-			'stili_punto.css'
+			'stili_punto.css',
+			'stili_punto.css',
+			'lang_[lang].js',
+			'sets/common/mtc/lang_[lang].js',
+			'sets/common/patologie/lang_[lang].js'
 		],
 		dims: [
 			65,
@@ -52,7 +56,10 @@ var sets = {
 			8,
 			18,
 			8,
-			2
+			2,
+			369,
+			513,
+			322
 		],
 		txtLoading: stripslashes(TXT("CaricamentoMeridiani")),
 		auth: false,
@@ -91,7 +98,10 @@ var sets = {
 			'materiali.js',
 			'stili.css',
 			'sets/common/stili_procedure.css',
-			'stili_punto.css'
+			'stili_punto.css',
+			'lang_[lang].js',
+			'sets/common/mtc/lang_[lang].js',
+			'sets/common/patologie/lang_[lang].js'
 		],
 		dims: [
 			65,
@@ -106,7 +116,10 @@ var sets = {
 			9,
 			20,
 			8,
-			2
+			2,
+			369,
+			513,
+			322
 		],
 		txtLoading: stripslashes(TXT("CaricamentoMappa")),
 		auth: false,
@@ -119,7 +132,9 @@ var sets = {
 		idGoogle: 'sm22',
 		pageStore: 'shiatsumap',
 		lingueCont: [
-			"ita"
+			"ita",
+			"eng",
+			"esp"
 		]
 	},
 	auricologia: {
@@ -141,7 +156,9 @@ var sets = {
 			'materiali.js',
 			'stili.css',
 			'sets/common/stili_procedure.css',
-			'stili_punto.css'
+			'stili_punto.css',
+			'lang_[lang].js',
+			'sets/common/patologie/lang_[lang].js'
 		],
 		dims: [
 			19,
@@ -155,7 +172,9 @@ var sets = {
 			11,
 			37,
 			8,
-			3
+			3,
+			462,
+			322
 		],
 		txtLoading: stripslashes(TXT("CaricamentoMappe")),
 		auth: false,

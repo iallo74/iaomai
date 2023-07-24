@@ -166,7 +166,7 @@ var MODULO_PUNTO = { // extend SET
 				ideogramma += ideogrammaOr[l];
 				if(l<lI-1)ideogramma += "<br>";
 			}
-			HTML = 	'<div class="ideogrammaPuntoChar">'+ideogramma+'</div><img src="img/speach2W.png" onClick="SET.speachName(\''+siglaMeridiano+nPunto+'\');" class="speach_icon">'+HTML;
+			HTML = 	'<div class="ideogrammaPuntoChar">'+ideogramma+'</div><img src="img/speach2W.png" onClick="SET.speachName(\''+siglaMeridiano+nPunto+'\');" class="speach_icon noPrint">'+HTML;
 		}
 		
 		HTML = '<div class="translatable">'+HTML+'</div>';
@@ -412,6 +412,11 @@ var MODULO_PUNTO = { // extend SET
 		if(el.nPunto.length == 1)el.nPunto = "0"+el.nPunto;
 		el.valutazione = __(pP[2],'');
 		return el;
+	},
+	speachName: function( txt ){
+		let snd = new Audio("sets/common/mtc/audio/"+txt+".mp3");
+		snd.play();
+		snd = null;
 	},
 	azRicercaPunto: function( pt ){
 		// apre la scheda del punto dalla ricerca globale

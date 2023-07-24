@@ -4,38 +4,109 @@ var MODULO_PATOLOGIE = { // extend SET
 	PATOLOGIE_free: [ "12", "18", "26", "46", "104" ],
 	
 	componiPatologie: function(){
-		for(let p in DB.set.patologie){
-			
-			var nmk = false;
-			var mas = false;
-			var cin = false;
-			
-			
-			// carica le schede collegate
-			var SCH = DB.set.schede[DB.set.patologie[p].scheda];
-			var txtMTC = '';
-			for(let s in SCH.mtc){
-				txtMTC += '<div class="schedaSpecifica" data-sistema=""><p>'+TXT("MTC")+'<span class="eviPtsBtn" onclick="SET.evidenziaPat(this.parentElement.parentElement);"></span></p>'+SCH.mtc[s]+'<div class="swSistema"><span onClick="SET.swSistemaMeridiani(this.parentElement.parentElement);">'+TXT("CambiaMeridiani")+'</span></div></div>';
+		DB.set.patologie = [];
+
+		for(let p in DB.set.protocolliMTC){
+			for(let m in DB.set.protocolliMTC[p].patologie){
+				let pat = DB_patologie[DB.set.protocolliMTC[p].patologie[m]];
+				if(!__(pat.mtc))pat.mtc = [];
+				if(pat.mtc.indexOf(p)===-1)pat.mtc.push(p);
 			}
-			if(txtMTC){
-				DB.set.patologie[p].TestoPatologia += '<br><br>'+txtMTC
-			}
-			var txtNMK = '';
-			for(let s in SCH.nmk){
-				var PRT = DB.set.protocolli[SCH.nmk[s]];
-				txtNMK += '<div class="schedaSpecifica" data-sistema="NMK"><p>'+PRT.TitoloProtocollo+'<span class="eviPtsBtn" onclick="SET.evidenziaPat(this.parentElement.parentElement);"></span></p>'+PRT.TestoProtocollo+'</div>';
-				nmk = true;
-			}
-			if(txtNMK){
-				DB.set.patologie[p].TestoPatologia += '<br><br><b>'+TXT("ProtocolloNamikoshi")+'</b><br>'+txtNMK
-			}
-			DB.set.patologie[p].TestoPatologia += '<br><br>'+SCH.txt;
 		}
+		for(let p in DB.set.protocolliNMK){
+			for(let m in DB.set.protocolliNMK[p].patologie){
+				let pat = DB_patologie[DB.set.protocolliNMK[p].patologie[m]];
+				if(!__(pat.nmk))pat.nmk = [];
+				if(pat.nmk.indexOf(p)===-1)pat.nmk.push(p);
+			}
+		}
+
+		for(let p in DB_patologie){
+			if(__(DB_patologie[p].mtc) || __(DB_patologie[p].nmk)){
+				let TestoPatologia = '';
+				if(__(DB_patologie[p].descrizione))TestoPatologia += '<div class="schedaDescrittiva">'+DB_patologie[p].descrizione+"</div>";
+				
+				if(__(DB_patologie[p].mtc)){
+					var txtMTC = '';
+					let addClass = '';
+					if(DB_patologie[p].mtc.length==1)addClass = ' noOcchio';
+					for(let m in DB_patologie[p].mtc){
+						let schedaMtc = __(DB.set.protocolliMTC[DB_patologie[p].mtc[m]]);
+						let protAdd = '',
+							mas = false,
+							cin = false;
+						try{ 
+							regexp = /\[\.[0-9]{1,2}\.[A-Z]{2}\.\]/ig;
+							pts = schedaMtc.scheda.match(regexp);
+							if(pts.length){
+								for(let n in pts){
+									cin = true;
+								}
+							}
+						}catch(err){}
+						try{ 
+							regexp = /\[\.[A-Z]{2}\.\]/ig;
+							pts = schedaMtc.scheda.match(regexp);
+							if(pts.length)mas = true;
+						}catch(err){}
+						if(cin)protAdd += ' protCIN';
+						if(mas)protAdd += ' protMAS';
+						txtMTC += '<div class="schedaSpecifica'+protAdd+addClass+'" data-sistema=""><p><span class="no_masunaga">'+TXT("ProtocolloMTC")+'</span><span class="only_masunaga">'+TXT("ProtocolloMasunaga")+'</span><span class="eviPtsBtn" onclick="SET.evidenziaPat(this.parentElement.parentElement);"></span></p>'+schedaMtc.scheda+'</div>';
+					}
+					if(txtMTC){
+						TestoPatologia += txtMTC
+					}
+				}
+				if(__(DB_patologie[p].nmk)){
+					var txtNMK = '';
+					let addClass = '';
+					if(DB_patologie[p].nmk.length==1)addClass = ' noOcchio';
+					for(let m in DB_patologie[p].nmk){
+						let PRT = __(DB.set.protocolliNMK[DB_patologie[p].nmk[m]]);
+						txtNMK += '<div class="schedaSpecifica protNMK'+addClass+'" data-sistema="NMK"><p>'+TXT("ProtocolloNamikoshi")+'<span class="eviPtsBtn" onclick="SET.evidenziaPat(this.parentElement.parentElement);"></span></p>'+PRT.TestoProtocollo+'</div>';
+						nmk = true;
+					}
+					if(txtNMK){
+
+
+						TestoPatologia += txtNMK
+					}
+				}
+
+				if(__(DB_patologie[p].consigli)){
+					if(TestoPatologia)TestoPatologia += "<br>";
+					TestoPatologia += '<b>'+TXT("Consigli")+'</b><br>'+DB_patologie[p].consigli;
+				}
+				let nomi = clone(DB_patologie[p].nomi);
+				for(let n in nomi){
+					sinonimi = clone(nomi);
+					TestoSinonimi = '';
+					if(sinonimi.length>1){
+						TestoSinonimi += '<b>'+TXT("AltriNomi")+'</b><br>';
+						for(let s in sinonimi){
+							if(sinonimi[s]!=nomi[n])TestoSinonimi += "- "+sinonimi[s]+"<br>";
+						}
+						TestoSinonimi += '<br>';
+					}
+					DB.set.patologie.push({
+						NomePatologia: nomi[n],
+						sinonimi: sinonimi,
+						siglaPatologia: p,
+						TestoPatologia: TestoSinonimi+TestoPatologia,
+						sessoPatologia: __(DB_patologie[p].sesso),
+						chiaviPatologia: __(DB_patologie[p].chiavi)
+					});
+				}
+			}
+		}
+		DB.set.patologie.sort(sort_by("NomePatologia"));
+		//DB_patologie = null;
 		SET.caricaPatologie();
 	},
 	caricaPatologie: function(){
 		// carica la lista delle patologie
 		var contPatologie = 
+						'<div id="sistemaMeridiani_pats"></div>' +
 						'<div id="add_pat">'+
 						'	<input id="pat_ricerca"' +
 						'		   onKeyUp="SET.filtraPatologie();"' +
@@ -49,28 +120,17 @@ var MODULO_PATOLOGIE = { // extend SET
 			var mas = false;
 			var cin = false;
 			
+
+
+			
+			if(DB.set.patologie[p].TestoPatologia.indexOf('data-sistema="NMK"')>-1)nmk = true;
+			if(DB.set.patologie[p].TestoPatologia.indexOf('data-sistema=""')>-1)cin = true;
 			try{ 
 				regexp = /\[\.[A-Z]{2}\.\]/ig;
 				pts = DB.set.patologie[p].TestoPatologia.match(regexp);
 				if(pts.length)mas = true;
 			}catch(err){}
-			try{ 
-				regexp = /\[\.[0-9]{1,2}\.[A-Z]{2}\.\]/ig;
-				pts = DB.set.patologie[p].TestoPatologia.match(regexp);
-				if(pts.length){
-					for(let n in pts){
-						if(pts[n].split(".")[2]!='NK')cin = true;
-						else nmk = true;
-					}
-				}
-			}catch(err){}
-			/*try{ 
-				regexp = /\[\.[A-Z]{2}\.NK\.\]/ig;
-				pts = DB.set.patologie[p].TestoPatologia.match(regexp);
-				if(pts.length)nmk = true;
-			}catch(err){}*/
 			
-			//var addSys = " pats"+__(DB.set.patologie[p].sistema,'');
 			var addSys = '';
 			if(nmk)addSys += ' patsNMK';
 			if(mas)addSys += ' patsMAS';
@@ -84,7 +144,7 @@ var MODULO_PATOLOGIE = { // extend SET
 			contPatologie +=	'<div id="btn_patologia_'+p+'"' +
 								'     class="base'+addLock+addSys+'"' +
 								'     onClick="SET.apriPatologia(\''+p+'\',this);">' +
-								'<span class="pallSYS"></span>' +
+								//'<span class="pallSYS"></span>' +
 									DB.set.patologie[p].NomePatologia +
 								'</div>';
 		}
@@ -108,7 +168,7 @@ var MODULO_PATOLOGIE = { // extend SET
 		// sesso
 		if(DB.set.patologie[n].sessoPatologia){
 			html = 	'<img 	src="sets/meridiani_shiatsu/img/sesso_'+DB.set.patologie[n].sessoPatologia+'.png"' +
-					'		class="simboliPunto">'+html;
+					'		class="simboliPatologia">'+html;
 		}
 		
 		var ritorno = false;

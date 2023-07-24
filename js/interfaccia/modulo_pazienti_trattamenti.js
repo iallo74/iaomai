@@ -457,7 +457,7 @@ var PAZIENTI_TRATTAMENTI = {
 			
 			if(TipoTrattamento != 'A'){
 				HTML +=	'<div id="label_ciclo"';
-				if(Q_idTratt>-1)HTML += ' class="label_ciclo_cambia" onClick="PAZIENTI.apriSpostaTrattamento('+Q_idTratt+');"';
+				if(Q_idTratt>-1)HTML += ' class="label_ciclo_cambia noPrint" onClick="PAZIENTI.apriSpostaTrattamento('+Q_idTratt+');"';
 				HTML += '><span>';
 				if(LabelCiclo)HTML +=	htmlEntities(LabelCiclo);
 				else HTML += htmlEntities(TXT("TrattamentiSingoli"));

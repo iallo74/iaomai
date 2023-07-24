@@ -221,13 +221,19 @@ SET = {
 		MODULO_PUNTO = null;
 		MODULO_TEORIA = null;
 		MODULO_PROCEDURE = null;
+
+		for(let m in DB_addset){
+			if(!DB.set[m])DB.set[m] = {};
+			for(let e in DB_addset[m]){
+				DB.set[m][e] = DB_addset[m][e];
+			}
+		}
+		DB_addset = null;
 		
-		
-		DB.set.patologie.sort(sort_by("NomePatologia"));
 		
 		manichinoCaricato = true;
 		SET.componiMeridiani();
-		SET.caricaPatologie();
+		SET.componiPatologie();
 		SET.caricaApprofondimenti();
 		if(DB.procedure)SET.car_procedure(-1,1);
 		

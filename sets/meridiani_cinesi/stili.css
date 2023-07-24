@@ -28,6 +28,13 @@ body.uomo #pulsante_modello{
 .smart .simboliPunto{
 	margin-top: 20px;
 }
+.simboliPatologia{
+	float: right;
+    width: 38px;
+    background-color: #aec5f1;
+    border-radius: 25px;
+    padding: 6px;
+}
 .ideogrammaPuntoChar,
 .ideogrammaMeridianoChar{
 	font-family: adobe-clean-han-simplified-c,adobe-clean,PingFang SC,SimSun,Heiti SC Light,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,sans-serif;
@@ -96,6 +103,13 @@ body:not(.smart) #scheda:not(.schLato) .ideogrammaMeridianoChar{
     padding: 5px;
     position: absolute;
     opacity: 0.6;
+}
+@media only print{
+	.ideogrammaPuntoChar,
+	.ideogrammaMeridianoChar{
+		background-color: transparent !important;
+		color: #000 !important;
+	}
 }
 
 .simboliPunto{
@@ -754,4 +768,12 @@ body:not(.smart) #meridianiSmart_cont div:not(.elencoSel):hover{
 .sm_none.elencoSel{
 	background:#006699 !important;
 	color:#FFF !important;
+}
+.schedaSpecifica,
+.schedaDescrittiva{
+	border-bottom:1px solid rgba(0,0,0,0.1);
+	padding:17px 0;
+}
+.only_meridiani_shiatsu{
+	display:none;
 }

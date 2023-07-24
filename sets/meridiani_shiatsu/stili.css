@@ -28,6 +28,13 @@ body.uomo #pulsante_modello{
 .smart .simboliPunto{
 	margin-top: 20px;
 }
+.simboliPatologia{
+	float: right;
+    width: 38px;
+    background-color: #aec5f1;
+    border-radius: 25px;
+    padding: 6px;
+}
 .ideogrammaPuntoChar,
 .ideogrammaMeridianoChar{
 	font-family: adobe-clean-han-simplified-c,adobe-clean,PingFang SC,SimSun,Heiti SC Light,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,sans-serif;
@@ -96,6 +103,13 @@ body:not(.smart) #scheda:not(.schLato) .ideogrammaMeridianoChar{
     padding: 5px;
     position: absolute;
     opacity: 0.6;
+}
+@media only print{
+	.ideogrammaPuntoChar,
+	.ideogrammaMeridianoChar{
+		background-color: transparent !important;
+		color: #000 !important;
+	}
 }
 
 
@@ -379,14 +393,25 @@ body:not(.bodyStyled1):not(.bodyStyled2):not(.smart) #p_set{
 	margin-left:5px;
 }
 #meridianiSmart_cont:not(.onlyCIN) .noMAS,
-/*#meridianiSmart_cont.onlyNMK,
-#meridianiSmart_ico.onlyNMK,*/
 #meridianiSmart_cont.onlyNMK > .noNMK,
 .listaMeridiani:not(.onlyCIN) .noMAS,
 .listaMeridiani.onlyNMK .noNMK,
 .listaMeridiani:not(.onlyNMK) .NMK{
 	display:none !important;
 }
+
+#scheda.onlyCIN .schedaSpecifica:not(.protCIN),
+#scheda.onlyMAS .schedaSpecifica:not(.protMAS),
+#scheda.onlyNMK .schedaSpecifica:not(.protNMK),
+#scheda.onlyMAS .no_masunaga,
+#scheda:not(.onlyMAS) .only_masunaga{
+	display:none;
+}
+
+
+
+
+
 
 .onlyCIN .noCIN{
 	display:none !important;
@@ -845,22 +870,22 @@ body:not(.smart) #meridianiSmart_cont div:not(.elencoSel):hover{
 	background:#006699 !important;
 	color:#FFF !important;
 }
-#sistemaMeridiani_p{
+.sistemaMeridiani_p{
 	margin-top:0px;
 	margin-bottom:0px;
 	text-align:right;
 	height:48px;
 }
-.smart.android #sistemaMeridiani_p{
+.smart.android .sistemaMeridiani_p{
 	margin-top: -3px;
     margin-bottom: 10px;
 }
-.smart.android #sistemaMeridiani_p *{
+.smart.android .sistemaMeridiani_p *{
 	font-size: var(--font-14-94);
     height: 36px;
     line-height: 36px;
 }
-#sceltaMeridianiElenco,
+.sceltaMeridianiElenco,
 #sceltaMeridianiElenco_smart{
 	display: inline-block;
     height: 30px;
@@ -897,39 +922,21 @@ body:not(.smart) #meridianiSmart_cont div:not(.elencoSel):hover{
     background-position: calc(100% - -3px) center;
     text-align: right;
 }
+.listaPatologie{
+	height: calc(100% - 87px);
+}
 body:not(.smart) #cambioSistemaMeridiani,
-body.smart #elenchi #cambioSistemaMeridiani/*,
-.listaPatologie:not(.onlyNMK) > div.patsNMK,
-.listaPatologie.onlyNMK > div:not(.patsNMK)*/{
+body.smart #elenchi #cambioSistemaMeridiani{
 	display:none !important;
 }
 
-.listaPatologie > div > span.pallSYS{
-	float: right;
-    border-radius: 10px;
-    width: 8px;
-    height: 8px;
-    vertical-align: middle;
-    background-color: #039;
-    opacity: .5;
-    margin-right: -10px;
-    margin-top: 5px;
-	display:none;
+
+.listaPatologie.onlyNMK > div:not(.patsNMK),
+.listaPatologie.onlyMAS > div:not(.patsMAS),
+.listaPatologie.onlyCIN > div:not(.patsCIN){
+	display:none !important;
 }
 
-
-/*.listaPatologie:not(.onlyNMK) > div.patsNMK > span.pallNMK,*/
-/*.listaPatologie:not(.onlyNMK) > div > span.pallSYS,
-.listaPatologie.onlyNMK > div:not(.patsNMK) > span.pallSYS,
-.listaPatologie:not(.onlyMAS) > div > span.pallSYS,
-.listaPatologie.onlyMAS > div:not(.patsMAS) > span.pallSYS{
-}*/
-
-.listaPatologie.onlyNMK > div.patsNMK > span.pallSYS,
-.listaPatologie.onlyMAS > div.patsMAS > span.pallSYS,
-.listaPatologie.onlyCIN > div.patsCIN > span.pallSYS{
-	display:inline-block !important;
-}
 
 .patEvi:not(.lockedItem){
     margin-top: 10px !important;
@@ -943,24 +950,33 @@ body.smart #elenchi #cambioSistemaMeridiani/*,
 }
 
 
-/* body.donna .eviPoints,
-body.uomo .eviPoints{ */
-.eviPoints{
+.schedaSpecifica:not(.noOcchio) .eviPoints{
     background-color: rgba(0,0,0,0.1) !important;
     box-shadow: 0px 0px 2px #89aeff, 0px 0px 3px #89aeff, 0px 0px 5px rgba(0,0,0,0.3);
 }
-.schedaSpecifica {
+.schedaSpecifica:not(.noOcchio){
     background-color: rgba(0,0,0,0.05);
     padding: 7px 7px;
     border-radius: 5px;
-    margin-top: 15px;
+    margin-top: 33px;
 }
+.schedaDescrittiva,
+.schedaSpecifica.noOcchio{
+	border-bottom:1px solid rgba(0,0,0,0.1);
+	padding:17px 0 !important;
+}
+
 .schedaSpecifica > p:first-child {
     font-weight: bold;
-    border-bottom: 1px solid rgba(0,0,0,0.2);
     margin: 0px 0px 5px 0px;
-    padding: 5px 0px 10px 5px;
     font-size: var(--font-14-94);
+}
+.schedaSpecifica > p:first-child *{
+    font-size: var(--font-14-94);
+}
+.schedaSpecifica:not(.noOcchio) > p:first-child {
+    border-bottom: 1px solid rgba(0,0,0,0.2);
+    padding: 5px 0px 10px 5px;
 }
 .eviPtsBtn {
     display: inline-block;
@@ -979,25 +995,9 @@ body.uomo .eviPoints{ */
     background-color: #8eb3ff;
     opacity: 1;
 }
-.swSistema{
-	padding-top: 10px;
-    margin-top: 10px;
-    border-top: 1px solid rgba(0,0,0,.2);
-    text-align: right;
-    padding-right: 8px;
-    padding-bottom: 5px;
-}
-.schedaSpecifica:not(.eviPoints) .swSistema{
+.schedaSpecifica.noOcchio .eviPtsBtn{
 	display:none;
 }
-body:not(.donna):not(.uomo) .swSistema{
-	display:none !important;
-}
-.swSistema span{
-	cursor:pointer;
-	/*text-decoration:underline;*/
-}
-
 
 /* NAMIKOSHI */
 #puntiNamikoshi .dettNamikoshi .numPoints{
@@ -1027,4 +1027,11 @@ body:not(.donna):not(.uomo) .swSistema{
 }
 #scheda:not(.sch_Max450) .dettNamikoshi .textPuntoTratt{
     width: calc(100% - 238px) !important;
+}
+.schedaDescrittiva{
+	padding-top:17px;
+	padding-bottom:0px;
+}
+.only_meridiani_cinesi{
+	display:none;
 }

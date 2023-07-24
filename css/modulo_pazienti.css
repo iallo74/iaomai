@@ -330,7 +330,7 @@ body:not(.smart) #pazienti_head{
 }
 @media only print{
 	.noPrint{
-		display:none;
+		display:none !important;
 	}
 }
 .dwnl .noPrint{
@@ -706,7 +706,7 @@ body:not(.smart) #add_saldo .elMenu:hover{
 #add_serv,
 #add_pat,
 #add_saldo,
-#sistemaMeridiani_p,
+.sistemaMeridiani_p,
 #add_proc, /* specifico di PROCEDURE */
 #filtroCond{ /* specifico di PROCEDURE */
     text-align: right;
@@ -727,7 +727,7 @@ body:not(.smart) #add_saldo .elMenu:hover{
     height: 41px;
 }
 #add_paz,
-#sistemaMeridiani_p,
+.sistemaMeridiani_p,
 #add_forn,
 #add_serv,
 #add_pat{
@@ -741,7 +741,7 @@ body:not(.smart) #add_pat{
 }
 #add_ciclo i,
 #add_paz i,
-#sistemaMeridiani_p i,
+.sistemaMeridiani_p i,
 #add_forn i,
 #add_serv i,
 #add_saldo i,
@@ -754,7 +754,7 @@ body:not(.smart) #add_pat{
 }
 .smart #add_ciclo i,
 .smart #add_paz i,
-.smart #sistemaMeridiani_p i,
+.smart .sistemaMeridiani_p i,
 .smart #add_forn i,
 .smart #add_serv i,
 .smart #add_saldo i,
@@ -818,7 +818,7 @@ body:not(.smart) #add_pat{
     color: #FFF;
 }
 #add_paz i span,
-#sistemaMeridiani_p i span,
+.sistemaMeridiani_p i span,
 #add_forn i span,
 #add_serv i span{
     font-size: var(--font-12-1);
@@ -844,7 +844,7 @@ body:not(.smart) #add_proc{
     color: #c6c5c3;
 }
 #add_paz i,
-#sistemaMeridiani_p i,
+.sistemaMeridiani_p i,
 #add_forn i,
 #add_serv i{
     color: #666;

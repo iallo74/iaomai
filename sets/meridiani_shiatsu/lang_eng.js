@@ -603,35 +603,35 @@ DB.set = {
 			]
 		},
 		"2": {
-			/*TitoloProtocollo: "Insufficienza cardiaca",*/
+			/*TitoloProtocollo: "Heart failure",*/
 			TestoProtocollo: "xxx",
 			patologie: [
 				"302"
 			]
 		},
 		"3": {
-			/*TitoloProtocollo: "Infarto del miocardio",*/
+			/*TitoloProtocollo: "Myocardial infarction",*/
 			TestoProtocollo: "xxx",
 			patologie: [
 				"303"
 			]
 		},
 		"4": {
-			/*TitoloProtocollo: "Ipertensione arteriosa",*/
+			/*TitoloProtocollo: "Arterial hypertension",*/
 			TestoProtocollo: "xxx",
 			patologie: [
 				"068"
 			]
 		},
 		"5": {
-			/*TitoloProtocollo: "Arteriosclerosi",*/
+			/*TitoloProtocollo: "Arteriosclerosis",*/
 			TestoProtocollo: "xxx",
 			patologie: [
 				"305"
 			]
 		},
 		"6": {
-			/*TitoloProtocollo: "Emiplegia (paralisi di un lato del corpo)",*/
+			/*TitoloProtocollo: "Emiplegia",*/
 			TestoProtocollo: "xxx",
 			patologie: [
 				"306"

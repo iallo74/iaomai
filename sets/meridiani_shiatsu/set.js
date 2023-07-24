@@ -255,12 +255,20 @@ SET = {
 		MODULO_PUNTO = null;
 		MODULO_TEORIA = null;
 		MODULO_PROCEDURE = null;
+
+		for(let m in DB_addset){
+			if(!DB.set[m])DB.set[m] = {};
+			for(let e in DB_addset[m]){
+				DB.set[m][e] = DB_addset[m][e];
+			}
+		}
+		DB_addset = null;
 		
 		
 		
-		DB.set.patologie = clone(DB.set.patologie_model);
+		//DB.set.patologie = clone(DB.set.patologie_model);
 		
-		DB.set.patologie.sort(sort_by("NomePatologia"));
+		//DB.set.patologie.sort(sort_by("NomePatologia"));
 		
 		manichinoCaricato = true;
 		SET.componiPatologie();
@@ -1281,11 +1289,13 @@ SET = {
 		for(e in els){
 			if(els[e].value == localStorage.sistemaMeridiani)document.getElementById("sceltaMeridiani").selectedIndex = e;
 		}*/
-		var els = document.getElementById("sceltaMeridianiElenco").options;
+		var selects = document.getElementsByClassName("sceltaMeridianiElenco");
+		var els = selects[0].options;//document.getElementById("sceltaMeridianiElenco").options;
 		for(e in els){
 			if(els[e].value == localStorage.sistemaMeridiani){
-				document.getElementById("sceltaMeridianiElenco").selectedIndex = e;
-				document.getElementById("sceltaMeridianiElenco_smart").selectedIndex = e;
+				for(let s in selects){
+					selects[s].selectedIndex = e;
+				}
 			}
 		}
 	},
@@ -1316,19 +1326,18 @@ SET = {
 		if(SCHEDA.elencoSel=='meridiani')document.getElementById("elenchi_titolo").innerHTML = titPoints;
 		
 		if(togliLoader){
-			var els = document.getElementById("sceltaMeridianiElenco").options;
+			
+			var selects = document.getElementsByClassName("sceltaMeridianiElenco");
+			var els = selects[0].options;
 			for(e in els){
 				if(els[e].value == localStorage.sistemaMeridiani){
-					document.getElementById("sceltaMeridianiElenco").selectedIndex = e;
-					document.getElementById("sceltaMeridianiElenco_smart").selectedIndex = e;
+					for(let s=0;s<selects.length;s++){
+						selects[s].selectedIndex = e;
+					}
 				}
 			}
 			nasLoader();
 		}
-	},
-	swSistemaMeridiani: function( el ){
-		SET.cambiaSistema((localStorage.sistemaMeridiani)?"":"MAS",true,true);
-		setTimeout(function(){SET.evidenziaMeridiani( el.innerHTML );},300);
 	},
 	cambiaSistema: function( sistema, loader=false, noClick=false ){
 		if(localStorage.sistemaMeridiani == sistema)return;
@@ -1353,10 +1362,11 @@ SET = {
 			}*/
 		},t2,sistema);
 		setTimeout(function(loader){SET.filtraSet(loader);},t,loader);
-		document.getElementById("sceltaMeridianiElenco").value = sistema;
-		document.getElementById("sceltaMeridianiElenco_smart").value = sistema;
-		document.getElementById("sceltaMeridianiElenco").blur();
-		document.getElementById("sceltaMeridianiElenco_smart").blur();
+		var selects = document.getElementsByClassName("sceltaMeridianiElenco");
+		for(let s=0;s<selects.length;s++){
+			selects[s].value = sistema;
+			selects[s].blur();
+		}
 	},
 	
 	addEviPalls: function( siglaMeridiano, nPunto, tipo ){

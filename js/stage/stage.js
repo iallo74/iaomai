@@ -386,11 +386,12 @@ function caricaSet( cartella, el ){
 			caricaModello(modelli[0]);
 			return;
 		}
-		globals.set.imports.push("lang_"+LINGUE.getLinguaCont(cartella)+".js");
+		//globals.set.imports.push("lang_"+LINGUE.getLinguaCont(cartella)+".js");
 		visLoader(globals.set.txtLoading);
 		var imports = clone(globals.set.imports);
 		for(let i in imports){
 			if(imports[i].indexOf("/")==-1)imports[i]='sets/'+cartella+'/'+imports[i];
+			imports[i]=imports[i].replace("[lang]",LINGUE.getLinguaCont(cartella));
 		}
 		IMPORTER.importaFiles(	0,
 								imports,

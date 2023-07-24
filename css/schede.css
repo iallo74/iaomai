@@ -32,8 +32,15 @@ body:not(.smart) #scheda{
 .smart #scheda{
 	width: 100%;
 }
-body:not(.smart):not(.htmlStampa) #scheda{
-	width: calc(100% - 48px);
+@media only screen{
+	body:not(.smart):not(.htmlStampa) #scheda{
+		width: calc(100% - 48px);
+	}
+}
+@media only print{
+	body:not(.smart):not(.htmlStampa) #scheda{
+		padding:0 30px !important;
+	}
 }
 .schRid:not(.schOp):not(.schLibera):not(.schLato){
 	width:calc(100% - 48px) !important;
@@ -654,8 +661,10 @@ body:not(.smart) .schedaRitorno #scheda_titolo{
 }
 .contStampa #scheda_testo > div,
 .contStampa #scheda_testo2 > div{
-	padding-left:0px !important;
-	padding-right:0px !important;
+	/* padding-left:0px !important;
+	padding-right:0px !important; */
+	padding:0px !important;
+	
 }
 body:not(.smart) .h150 #scheda_testo > div:not(#btnMenuScheda){
 	padding-bottom:80px !important;
@@ -700,6 +709,11 @@ body:not(.bodyStyled2) #scheda_testo2{
     font-weight: normal;
     margin-top: 0px;
 	line-height: normal !important;
+}
+@media only print{
+	h1{
+		font-size: 35px !important;
+	}
 }
 #scheda li{
 	margin-top:10px;

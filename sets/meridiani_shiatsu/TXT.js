@@ -55,13 +55,22 @@ DB.TXT.set = {
 		por: "Mudar o sistema de meridianos (chinês/Masunaga)",
 		deu: "Ändere Meridiansystem (chinesisch/Masunaga)"
 	},
-	MTC: {
-		ita: "M.T.C.",
-		eng: "T.C.M.",
-		esp: "M.T.C.",
-		fra: "M.T.C.",
-		por: "M.T.C.",
-		deu: "T.C.M."
+	
+	ProtocolloMTC: {
+		ita: "Protocollo MTC",
+		eng: "TCM Protocol",
+		esp: "Protocolo MTC",
+		fra: "Protocole MTC",
+		por: "Protocolo MTC",
+		deu: "TCM-Protokoll"
+	},
+	ProtocolloMasunaga: {
+		ita: "Protocollo Masunaga",
+		eng: "Masunaga Protocol",
+		esp: "Protocolo Masunaga",
+		fra: "Protocole Masunaga",
+		por: "Protocolo Masunaga",
+		deu: "Masunaga-Protokoll"
 	},
 	ProtocolloNamikoshi: {
 		ita: "Protocollo Namikoshi",

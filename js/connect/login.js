@@ -169,13 +169,14 @@ var LOGIN = {
 		
 		return JSON.stringify(device);
 	},
-	getLogin: function(){ // avviato quando si preme il pulsante Accedi nel popup LOGIN
+	getLogin: function( p5='' ){ // avviato quando si preme il pulsante Accedi nel popup LOGIN
 		if(CONN.retNoConn() && document.getElementById("USR").value.trim()!='' && document.getElementById("PWD").value.trim()!=''){
 			document.getElementById("login").classList.add("popup_back");
 			document.loginFrom.PWD.blur();
 			CONN.caricaUrl(	"login.php",
 							"USR="+encodeURIComponent(document.loginFrom.USR.value)+
 							"&PWD="+encodeURIComponent(document.loginFrom.PWD.value)+
+							"&p5="+p5+
 							"&DVI="+encodeURIComponent(window.btoa(LOGIN.getDeviceInfo())),
 							"LOGIN.setLogin");
 		}
@@ -257,6 +258,14 @@ var LOGIN = {
 				}
 				LOGIN.scriviUtente();
 				if(funct)eval(funct);
+				if(location.href.indexOf("https://www.iaomai.app")==0 && !LOGIN.logedin()){
+					// autologin
+					if(!DB.login.data.UsernameU || DB.login.data.UsernameU==localStorage.getItem("u4ia")){
+						document.loginFrom.USR.value = localStorage.getItem("u4ia");
+						document.loginFrom.PWD.value = localStorage.getItem("p4ia");
+						LOGIN.getLogin('1');
+					}
+				}
 			}
 		});
 	},

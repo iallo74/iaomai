@@ -449,11 +449,10 @@ SET = {
 		MODULO_PROCEDURE = null;
 		
 		
-		DB.set.patologie.sort(sort_by("NomePatologia"));	
 		
 		manichinoCaricato = true;
 		SET.caricaPunti();
-		SET.caricaPatologie();
+		SET.componiPatologie();
 		SET.caricaApprofondimenti();
 		if(DB.procedure)SET.car_procedure(-1,1);
 		

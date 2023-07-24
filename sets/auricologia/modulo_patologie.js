@@ -3,6 +3,19 @@ var MODULO_PATOLOGIE = { // extend SET
 	
 	PATOLOGIE_free: [ 12, 18, 26, 46, 104 ],
 	
+	componiPatologie: function(){
+		for(let p in DB.set.patologie){
+			let schedaPatologia = DB_patologie[DB.set.patologie[p].schedaPatologia];
+			DB.set.patologie[p].TestoPatologia = /*TestoSinonimi+*/schedaPatologia.descrizione;
+			DB.set.patologie[p].sessoPatologia = schedaPatologia.sesso;
+			DB.set.patologie[p].chiaviPatologia = schedaPatologia.chiavi;
+			if(!__(DB.set.patologie[p].sinonimi))DB.set.patologie[p].sinonimi = [];
+			DB.set.patologie[p].sinonimi = DB.set.patologie[p].sinonimi.concat(clone(schedaPatologia.nomi));
+		}
+		//DB_patologie = null;
+		DB.set.patologie.sort(sort_by("NomePatologia"));
+		SET.caricaPatologie();
+	},
 	caricaPatologie: function(){ // carica l'elenco delle patologie
 		var crtOp = -1;
 		var contPatologie = 
@@ -227,7 +240,17 @@ var MODULO_PATOLOGIE = { // extend SET
 		if(typeof(localStorage.op_protocollo)!='undefined')op_protocollo = (__(localStorage.op_protocollo)=='1');
 		var labelDescrizione = TXT("DescrizionePatologia");
 		if(DB.set.patologie[n].apparato==11)labelDescrizione = TXT("DescrizioneProtocollo");
-		var TestoPatologia = H.sezione({
+
+		let sinonimi = clone(DB.set.patologie[n].sinonimi);
+		let TestoSinonimi = '';
+		for(let s in sinonimi){
+			if(sinonimi[s]!=DB.set.patologie[n].NomePatologia)TestoSinonimi += "- "+sinonimi[s]+"<br>";
+		}
+		if(TestoSinonimi){
+			TestoSinonimi = '<b>'+TXT("AltriNomi")+'</b><br>'+TestoSinonimi+'<br>';
+		}
+		
+		var TestoPatologia = TestoSinonimi + H.sezione({
 			label: labelDescrizione,
 			nome: 'descrizione',
 			aperta: op_descrizione,

@@ -62,7 +62,7 @@ var SCHEDA = {
 			SCHEDA.verRedim();
 		}, false);
 	},
-	caricaScheda: function( titolo,  		// titolo della scheda
+	caricaScheda: function( titolo,  		// titolo della scheda	
 							html, 	 		// contenuto della scheda
 							funct, 	 		// funzione da eseguire alla chiusura della scheda
 							classe,  		// la classe della scheda (es. per il colore del titolo)
@@ -655,7 +655,7 @@ var SCHEDA = {
 			if(JSON.stringify(obj)!='{}')TITOLO_PAGINA = htmlEntities(obj.titolo)+" "+htmlEntities(TXT("per"))+" "+htmlEntities(obj.intestazione);
 			console.log(TITOLO_PAGINA);
 			var dati = '<p>'+htmlEntities(TXT("per"))+' '+htmlEntities(obj.intestazione) + '</p>' + 
-						'<p>'+htmlEntities(obj.corpo) + '</p>' + 
+						'<p>'+htmlEntities(obj.corpo).replace(/\n/g,'<br>') + '</p>' + 
 						'<p style="padding-left:50px;padding-top:50px;"><i>' + TXT("Data") + ':</i> ' + getFullDataTS(d/1000) + '<br><br>' +
 						'<i style="font-size:15px;">' + DB.login.data.Nominativo + '</i></p>';
 						
@@ -701,7 +701,7 @@ var SCHEDA = {
 				'	<body style="background:#FFF;" class="bodyStampa">';
 		if(!cartaIntestata)HTML += 
 				'		<div style="margin-bottom:10px;' +
-				'					border-bottom:1px solid #DDD;' +
+				//'					border-bottom:1px solid #DDD;' +
 				'					width:100%;">'+
 		 		'			<table width="100%"' +
 				'				   id="testataStampa"' +
@@ -709,14 +709,14 @@ var SCHEDA = {
 				'				   cellspacing="0"' +
 				'				   border="0">' +
 				'				<tr>' +
-				'					<td>' +
+				/*'					<td>' +
 				'						<img src="img/logo_iaomai_Bucato_Beige.png"' +
 				'				   			 width="125"' +
 				'				   			 height="38" />' +
-				'				   	</td>' +
+				'				   	</td>' +*/
 				'				   	<td align="right"' +
 				'				   		valign="middle"' +
-				'				   		style="font-size:11px;">' +
+				'				   		style="font-size:11px;opacity:0.7;">' +
 				'				   		&copy;'+annoAtt+' iáomai&#8482; | All rights reserved' +
 				'				   	</td>' +
 				'				</tr>' +
@@ -734,10 +734,10 @@ var SCHEDA = {
 			HTML += '<div class="l" style="margin-bottom:20px;"></div></div>';
 		}
 		HTML += '		<div id="cont">';
-		if(titolo)HTML +=
-				'			<h1 style="font-size: 27px;' +
+		if(titolo && corpo.indexOf("<h1")==-1)HTML +=
+				'			<h1 style="font-size: 35px;' +
 				'			   		   font-weight: normal;' +
-				'			   		   text-align: right;' +
+				'			   		   text-align: left;' +
 				'			   		   margin-top: 0px;' +
 				'			   		   display: inline-block;' +
 				'			   		   width: calc(100% - 20px);">' +
@@ -753,12 +753,13 @@ var SCHEDA = {
 				'			   	 	  		background-color:#FFF;">' +
 				'			   		<div id="scheda_testo"' +
 				'			   	 	  	 style="background-color:#FFF;' +
-				'			   	 	  			padding-left:20px;' +
-				'			   	 	  			padding-right:20px;' +
+				/* '			   	 	  			padding-left:20px;' +
+				'			   	 	  			padding-right:20px;' + */
 				'			   	 	  			display:block;' +
 				'			   	 	  			height:auto;' +
 				'			   	 	  			overflow:visible;' +
-				'			   	 	  			text-align: left;">' +
+				'			   	 	  			text-align: left;' +
+				'			   	 	  			border-top: none;">' +
 										corpo +
 				'					</div>' +
 				'				</div>' +

@@ -1,8 +1,64 @@
 
 var MODULO_PATOLOGIE = { // extend SET
 
-	PATOLOGIE_free: [ "12", "18", "26", "46", "104" ],
+	PATOLOGIE_free: [ "011", "017", "025", "026", "105" ],
 	
+	componiPatologie: function(){
+		DB.set.patologie = [];
+
+		for(let p in DB.set.protocolliMTC){
+			for(let m in DB.set.protocolliMTC[p].patologie){
+				let pat = DB_patologie[DB.set.protocolliMTC[p].patologie[m]];
+				if(!__(pat.mtc))pat.mtc = [];
+				if(pat.mtc.indexOf(p)===-1)pat.mtc.push(p);
+			}
+		}
+
+		for(let p in DB_patologie){
+			if(__(DB_patologie[p].mtc)){
+				let TestoPatologia = '';
+				if(__(DB_patologie[p].descrizione))TestoPatologia += '<div class="schedaDescrittiva">'+DB_patologie[p].descrizione+"</div>";
+				
+				
+				for(let m in DB_patologie[p].mtc){
+					let schedaMtc = __(DB.set.protocolliMTC[DB_patologie[p].mtc[m]]);
+					TestoPatologia += '<div class="schedaSpecifica">';
+
+					TestoPatologia += '<b>'+TXT("MTC")+'</b><br>'+schedaMtc.scheda+'</div>';
+				}
+
+
+
+				if(__(DB_patologie[p].consigli)){
+					if(TestoPatologia)TestoPatologia += "<br>";
+					TestoPatologia += '<b>'+TXT("Consigli")+'</b><br>'+DB_patologie[p].consigli;
+				}
+				let nomi = clone(DB_patologie[p].nomi);
+				for(let n in nomi){
+					sinonimi = clone(nomi);
+					TestoSinonimi = '';
+					if(sinonimi.length>1){
+						TestoSinonimi += '<b>'+TXT("AltriNomi")+'</b><br>';
+						for(let s in sinonimi){
+							if(sinonimi[s]!=nomi[n])TestoSinonimi += "- "+sinonimi[s]+"<br>";
+						}
+						TestoSinonimi += '<br>';
+					}
+					DB.set.patologie.push({
+						NomePatologia: nomi[n],
+						sinonimi: sinonimi,
+						siglaPatologia: p,
+						TestoPatologia: TestoSinonimi+TestoPatologia,
+						sessoPatologia: __(DB_patologie[p].sesso),
+						chiaviPatologia: __(DB_patologie[p].chiavi)
+					});
+				}
+			}
+		}
+		DB.set.patologie.sort(sort_by("NomePatologia"));
+		//DB_patologie = null;
+		SET.caricaPatologie();
+	},
 	caricaPatologie: function(){
 		// carica la lista delle patologie
 		var contPatologie = 
@@ -22,7 +78,7 @@ var MODULO_PATOLOGIE = { // extend SET
 			contPatologie +=	'<div id="btn_patologia_'+p+'"' +
 								'     class="base'+addLock+'"' +
 								'     onClick="SET.apriPatologia(\''+p+'\',this);">' +
-									DB.set.patologie[p].NomePatologia +
+								DB.set.patologie[p].NomePatologia +
 								'</div>';
 		}
 		contPatologie += '</div>';
@@ -45,7 +101,7 @@ var MODULO_PATOLOGIE = { // extend SET
 		// sesso
 		if(DB.set.patologie[n].sessoPatologia){
 			html = 	'<img 	src="sets/meridiani_cinesi/img/sesso_'+DB.set.patologie[n].sessoPatologia+'.png"' +
-					'		class="simboliPunto">'+html;
+					'		class="simboliPatologia">'+html;
 		}
 		
 		var ritorno = false;
