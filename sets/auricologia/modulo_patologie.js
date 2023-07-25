@@ -170,11 +170,13 @@ var MODULO_PATOLOGIE = { // extend SET
 				}
 				if(__(objTer.g.dp.a))ST += ''+objTer.g.dp.a+'<br>';
 				if(__(objTer.g.ds)){
-					ST += '<br><em>'+TXT("PuntiSecondari")+'</em>';
-					for(let p in objTer.g.ds.p){
-						ST += SET.getPointPat(objTer.g.ds.p[p]);
+					if(objTer.g.ds.p.length || __(objTer.g.ds.a)){
+						ST += '<br><em>'+TXT("PuntiSecondari")+'</em>';
+						for(let p in objTer.g.ds.p){
+							ST += SET.getPointPat(objTer.g.ds.p[p]);
+						}
+						if(__(objTer.g.ds.a))ST += ''+objTer.g.ds.a+'<br>';
 					}
-					if(__(objTer.g.ds.a))ST += ''+objTer.g.ds.a+'<br>';
 				}
 			}else{
 				ST += '	<strong>'+TXT("PadiglioneSinistro")+'</strong><br><br>';
@@ -192,9 +194,11 @@ var MODULO_PATOLOGIE = { // extend SET
 				}
 				if(__(objTer.g.np.a))ST += ''+objTer.g.np.a+'<br>';
 				if(__(objTer.g.ns)){
-					ST += '<br><em>'+TXT("PuntiSecondari")+'</em>';
-					for(let p in objTer.g.ns.p){
-						ST += SET.getPointPat(objTer.g.ns.p[p]);
+					if(objTer.g.ns.p.length || __(objTer.g.ns.a)){
+						ST += '<br><em>'+TXT("PuntiSecondari")+'</em>';
+						for(let p in objTer.g.ns.p){
+							ST += SET.getPointPat(objTer.g.ns.p[p]);
+						}
 					}
 					if(__(objTer.g.ns.a))ST += ''+objTer.g.ns.a+'<br>';
 				}
