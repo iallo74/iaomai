@@ -1,7 +1,7 @@
 
 var MODULO_PATOLOGIE = { // extend SET
 	
-	PATOLOGIE_free: [ "012", "018", "026", "046", "104" ],
+	PATOLOGIE_free: [ 12, 18, 26, 46, 104 ],
 	
 	componiPatologie: function(){
 		DB.set.patologie = [];
