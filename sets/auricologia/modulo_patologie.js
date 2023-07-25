@@ -1,17 +1,25 @@
 
 var MODULO_PATOLOGIE = { // extend SET
 	
-	PATOLOGIE_free: [ 12, 18, 26, 46, 104 ],
+	PATOLOGIE_free: [ "012", "018", "026", "046", "104" ],
 	
 	componiPatologie: function(){
-		for(let p in DB.set.patologie){
-			let schedaPatologia = DB_patologie[DB.set.patologie[p].schedaPatologia];
-			DB.set.patologie[p].TestoPatologia = /*TestoSinonimi+*/schedaPatologia.descrizione;
-			DB.set.patologie[p].sessoPatologia = schedaPatologia.sesso;
-			DB.set.patologie[p].chiaviPatologia = schedaPatologia.chiavi;
-			if(!__(DB.set.patologie[p].sinonimi))DB.set.patologie[p].sinonimi = [];
-			DB.set.patologie[p].sinonimi = DB.set.patologie[p].sinonimi.concat(clone(schedaPatologia.nomi));
+		DB.set.patologie = [];
+		for(let p in DB.set.protocolliAuriculo){
+			let PAT = {};
+			let schedaPatologia = DB_patologie[DB.set.protocolliAuriculo[p].schedaPatologia];
+			PAT.NomePatologia = DB.set.protocolliAuriculo[p].NomePatologia;
+			PAT.apparato = DB.set.protocolliAuriculo[p].apparato;
+			PAT.scheda = DB.set.protocolliAuriculo[p].scheda;
+			PAT.TestoPatologia = schedaPatologia.descrizione;
+			PAT.sessoPatologia = schedaPatologia.sesso;
+			PAT.chiaviPatologia = schedaPatologia.chiavi;
+			PAT.sinonimi = __(DB.set.protocolliAuriculo[p].sinonimi,[])
+			PAT.sinonimi = PAT.sinonimi.concat(clone(schedaPatologia.nomi));
+			
+			DB.set.patologie.push(PAT);
 		}
+		
 		//DB_patologie = null;
 		DB.set.patologie.sort(sort_by("NomePatologia"));
 		SET.caricaPatologie();

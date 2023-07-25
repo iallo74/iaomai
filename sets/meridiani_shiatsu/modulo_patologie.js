@@ -1,7 +1,7 @@
 
 var MODULO_PATOLOGIE = { // extend SET
 
-	PATOLOGIE_free: [ "12", "18", "26", "46", "104" ],
+	PATOLOGIE_free: [ "012", "018", "026", "046", "104", "1000" ],
 	
 	componiPatologie: function(){
 		DB.set.patologie = [];
@@ -92,6 +92,7 @@ var MODULO_PATOLOGIE = { // extend SET
 						NomePatologia: nomi[n],
 						sinonimi: sinonimi,
 						siglaPatologia: p,
+						evi: (p=='1000')?"1":"0",
 						TestoPatologia: TestoSinonimi+TestoPatologia,
 						sessoPatologia: __(DB_patologie[p].sesso),
 						chiaviPatologia: __(DB_patologie[p].chiavi)
@@ -100,6 +101,7 @@ var MODULO_PATOLOGIE = { // extend SET
 			}
 		}
 		DB.set.patologie.sort(sort_by("NomePatologia"));
+		DB.set.patologie.sort(sort_by("evi",true));
 		//DB_patologie = null;
 		SET.caricaPatologie();
 	},
@@ -140,11 +142,10 @@ var MODULO_PATOLOGIE = { // extend SET
 			var addLock =	(!SET.verFreePatologia(DB.set.patologie[p].siglaPatologia)) ? ' lockedItem' : '';
 			// --------------------------
 			
-			if(__(DB.set.patologie[p].evi))addSys += " patEvi";
+			if(__(DB.set.patologie[p].evi)=='1')addSys += " patEvi";
 			contPatologie +=	'<div id="btn_patologia_'+p+'"' +
 								'     class="base'+addLock+addSys+'"' +
 								'     onClick="SET.apriPatologia(\''+p+'\',this);">' +
-								//'<span class="pallSYS"></span>' +
 									DB.set.patologie[p].NomePatologia +
 								'</div>';
 		}

@@ -7557,1107 +7557,1324 @@ DB.set = {
 			t: true
 		}
 	},
-	patologie: [{
+	protocolliAuriculo: {
+		"0": {
 			NomePatologia: "Acne",
 			schedaPatologia: "133",
 			scheda: 88,
 			apparato: 9
-		}, {
+		},
+		"1": {
 			NomePatologia: "Tinnitus",
 			schedaPatologia: "001",
 			scheda: 79,
 			apparato: 8
-		}, {
+		},
+		"2": {
 			NomePatologia: "Adenomyosis",
 			schedaPatologia: "134",
 			scheda: 51,
 			apparato: 5
-		}, {
+		},
+		"3": {
 			NomePatologia: "Benign Adenosis",
 			schedaPatologia: "135",
 			scheda: 51,
 			apparato: 5
-		}, {
+		},
+		"4": {
 			NomePatologia: "Ageusia",
 			schedaPatologia: "136",
 			scheda: 33,
 			apparato: 3
-		}, {
+		},
+		"5": {
 			NomePatologia: "Female Pelvic Pain",
 			schedaPatologia: "137",
 			scheda: 50,
 			apparato: 5
-		}, {
+		},
+		"6": {
 			NomePatologia: "Algodystrophy",
 			schedaPatologia: "138",
 			scheda: 35,
 			apparato: 3
-		}, {
+		},
+		"7": {
 			NomePatologia: "Alopecia",
 			schedaPatologia: "139",
 			scheda: 89,
 			apparato: 9
-		}, {
+		},
+		"8": {
 			NomePatologia: "Anorexia",
 			schedaPatologia: "140",
 			scheda: 47,
 			apparato: 5
-		}, {
+		},
+		"9": {
 			NomePatologia: "Anosmia",
 			schedaPatologia: "141",
 			scheda: 34,
 			apparato: 3
-		}, {
+		},
+		"10": {
 			NomePatologia: "Anxiety",
 			schedaPatologia: "011",
 			scheda: 42,
 			apparato: 4
-		}, {
+		},
+		"11": {
 			NomePatologia: "Cardiac Arrhythmias",
 			schedaPatologia: "090",
 			scheda: 75,
 			apparato: 7
-		}, {
+		},
+		"12": {
 			NomePatologia: "Phantom Limb",
 			schedaPatologia: "143",
 			scheda: 36,
 			apparato: 3
-		}, {
+		},
+		"13": {
 			NomePatologia: "Psoriatic Arthritis",
 			schedaPatologia: "144",
 			scheda: 21,
 			apparato: 1
-		}, {
+		},
+		"14": {
 			NomePatologia: "Rheumatoid Arthritis",
 			schedaPatologia: "014",
 			scheda: 20,
 			apparato: 1
-		}, {
+		},
+		"25": {
 			NomePatologia: "Bronchial asthma",
 			schedaPatologia: "016",
 			scheda: 85,
 			apparato: 8
-		}, {
+		},
+		"26": {
 			NomePatologia: "Astigmatism",
 			schedaPatologia: "145",
 			scheda: 95,
 			apparato: 10
-		}, {
+		},
+		"27": {
 			NomePatologia: "Stuttering",
 			schedaPatologia: "146",
 			scheda: 82,
 			apparato: 8
-		}, {
+		},
+		"28": {
 			NomePatologia: "Chronic Obstructive Pulmonary Disease (COPD)",
 			schedaPatologia: "147",
 			scheda: 86,
 			apparato: 8
-		}, {
+		},
+		"29": {
 			NomePatologia: "Bradycardia",
 			schedaPatologia: "090",
 			scheda: 76,
 			apparato: 7
-		}, {
+		},
+		"30": {
 			NomePatologia: "Chronic obstructive bronchitis (COB)",
 			schedaPatologia: "148",
 			scheda: 86,
 			apparato: 8
-		}, {
+		},
+		"31": {
 			NomePatologia: "Bruxism",
 			schedaPatologia: "149",
 			scheda: 28,
 			apparato: 2
-		}, {
+		},
+		"32": {
 			NomePatologia: "Bulimia",
 			schedaPatologia: "150",
 			scheda: 47,
 			apparato: 5
-		}, {
+		},
+		"33": {
 			NomePatologia: "Urolithiasis",
 			schedaPatologia: "022",
 			scheda: 61,
 			apparato: 5
-		}, {
+		},
+		"34": {
 			NomePatologia: "Adhesive capsulitis",
 			schedaPatologia: "151",
 			scheda: 11,
 			apparato: 1
-		}, {
+		},
+		"35": {
 			NomePatologia: "Palpitations",
 			schedaPatologia: "090",
 			sessoPatologia: "",
 			chiaviPatologia: "",
 			scheda: 76,
 			apparato: 7
-		}, {
+		},
+		"36": {
 			NomePatologia: "Cataract",
 			schedaPatologia: "024",
 			scheda: 96,
 			apparato: 10
-		}, {
+		},
+		"37": {
 			NomePatologia: "Cluster headache",
 			schedaPatologia: "026",
 			scheda: 24,
 			apparato: 2
-		}, {
+		},
+		"39": {
 			NomePatologia: "Muscle tension headache",
 			schedaPatologia: "026",
 			scheda: 22,
 			apparato: 2
-		}, {
+		},
+		"40": {
 			NomePatologia: "Tension headache",
 			schedaPatologia: "026",
 			scheda: 22,
 			apparato: 2
-		}, {
+		},
+		"41": {
 			NomePatologia: "Cervicalgia on an arthritic basis",
 			schedaPatologia: "152",
 			scheda: 2,
 			apparato: 1
-		}, {
+		},
+		"42": {
 			NomePatologia: "Cervicalgia of muscular origin",
 			schedaPatologia: "153",
 			scheda: 6,
 			apparato: 1
-		}, {
+		},
+		"43": {
 			NomePatologia: "Cervicobrachialgia",
 			schedaPatologia: "154",
 			scheda: 17,
 			apparato: 1
-		}, {
+		},
+		"44": {
 			NomePatologia: "Cystitis",
 			schedaPatologia: "155",
 			scheda: 60,
 			apparato: 5
-		}, {
+		},
+		"45": {
 			NomePatologia: "Interstitial cystitis",
 			schedaPatologia: "156",
 			scheda: 60,
 			apparato: 5
-		}, {
+		},
+		"46": {
 			NomePatologia: "Coccydynia",
 			schedaPatologia: "157",
 			scheda: 10,
 			apparato: 1
-		}, {
+		},
+		"47": {
 			NomePatologia: "Renal colic",
 			schedaPatologia: "158",
 			scheda: 61,
 			apparato: 5
-		}, {
+		},
+		"49": {
 			NomePatologia: "Whiplash",
 			schedaPatologia: "159",
 			scheda: 6,
 			apparato: 1
-		}, {
+		},
+		"50": {
 			NomePatologia: "Conjunctivitis",
 			schedaPatologia: "030",
 			scheda: 97,
 			apparato: 10
-		}, {
+		},
+		"51": {
 			NomePatologia: "Muscle contracture of the cervical spine",
 			schedaPatologia: "160",
 			scheda: 6,
 			apparato: 1
-		}, {
+		},
+		"52": {
 			NomePatologia: "Muscle contracture of the dorsal spine",
 			schedaPatologia: "160",
 			scheda: 7,
 			apparato: 1
-		}, {
+		},
+		"53": {
 			NomePatologia: "Muscle contracture of the lumbosacral spine",
 			schedaPatologia: "160",
 			scheda: 8,
 			apparato: 1
-		}, {
+		},
+		"54": {
 			NomePatologia: "Muscle contracture of the spine - General overview",
 			schedaPatologia: "160",
 			scheda: 5,
 			apparato: 1
-		}, {
+		},
+		"55": {
 			NomePatologia: "Chorioblastoma of the uterus",
 			schedaPatologia: "161",
 			scheda: 51,
 			apparato: 5
-		}, {
+		},
+		"56": {
 			NomePatologia: "Coxalgia",
 			schedaPatologia: "162",
 			scheda: 14,
 			apparato: 1
-		}, {
+		},
+		"57": {
 			NomePatologia: "Coxarthrosis",
 			schedaPatologia: "163",
 			scheda: 14,
 			apparato: 1
-		}, {
+		},
+		"58": {
 			NomePatologia: "Depression",
 			schedaPatologia: "034",
 			scheda: 45,
-			scheda: 45,
 			apparato: 4
-		}, {
+		},
+		"59": {
 			NomePatologia: "Dermatitis",
 			schedaPatologia: "035",
 			scheda: 90,
 			apparato: 9
-		}, {
+		},
+		"60": {
 			NomePatologia: "Diarrhea",
 			schedaPatologia: "038",
 			scheda: 71,
 			apparato: 6
-		}, {
+		},
+		"61": {
 			NomePatologia: "Weight loss",
 			schedaPatologia: "140",
 			scheda: 47,
 			apparato: 6
-		}, {
+		},
+		"62": {
 			NomePatologia: "Functional dysarthria",
 			schedaPatologia: "166",
 			scheda: 82,
 			apparato: 8
-		}, {
+		},
+		"63": {
 			NomePatologia: "Erectile dysfunction",
 			schedaPatologia: "063",
 			scheda: 58,
 			apparato: 5
-		}, {
+		},
+		"64": {
 			NomePatologia: "Articulation disorder",
 			schedaPatologia: "167",
 			scheda: 82,
 			apparato: 8
-		}, {
+		},
+		"65": {
 			NomePatologia: "Primary dysmenorrhea",
 			schedaPatologia: "041",
 			scheda: 54,
 			apparato: 5
-		}, {
+		},
+		"66": {
 			NomePatologia: "Gastric dyspepsia",
 			schedaPatologia: "025",
 			scheda: 66,
 			apparato: 6
-		}, {
+		},
+		"67": {
 			NomePatologia: "Facial dystonia",
 			schedaPatologia: "168",
 			scheda: 29,
 			apparato: 2
-		}, {
+		},
+		"68": {
 			NomePatologia: "Distress",
 			schedaPatologia: "169",
 			scheda: 44,
 			apparato: 4
-		}, {
+		},
+		"69": {
 			NomePatologia: "Eating disorders",
 			schedaPatologia: "170",
 			scheda: 47,
 			apparato: 5
-		}, {
+		},
+		"70": {
 			NomePatologia: "Peripheral circulatory disorders",
 			schedaPatologia: "171",
 			scheda: 78,
 			apparato: 7
-		}, {
+		},
+		"71": {
 			NomePatologia: "Temporomandibular joint disorders",
 			schedaPatologia: "172",
 			scheda: 27,
 			apparato: 2
-		}, {
+		},
+		"72": {
 			NomePatologia: "Sleep disorders",
 			schedaPatologia: "067",
 			scheda: 46,
 			apparato: 4
-		}, {
+		},
+		"74": {
 			NomePatologia: "Lymphatic disorders",
 			schedaPatologia: "173",
 			scheda: 77,
 			apparato: 7
-		}, {
+		},
+		"75": {
 			NomePatologia: "Panic Attack Disorder (PAD)",
 			schedaPatologia: "018",
 			scheda: 43,
 			apparato: 4
-		}, {
+		},
+		"76": {
 			NomePatologia: "Elbow pain",
 			schedaPatologia: "174",
 			scheda: 12,
 			apparato: 1
-		}, {
+		},
+		"77": {
 			NomePatologia: "Temporomandibular joint pain",
 			schedaPatologia: "175",
 			scheda: 27,
 			apparato: 2
-		}, {
+		},
+		"78": {
 			NomePatologia: "Cervical pain due to osteoarthritis",
 			schedaPatologia: "176",
 			scheda: 2,
 			apparato: 1
-		}, {
+		},
+		"79": {
 			NomePatologia: "Cervical pain due to muscular causes",
 			schedaPatologia: "177",
 			scheda: 6,
 			apparato: 1
-		}, {
+		},
+		"80": {
 			NomePatologia: "Coccygeal pain",
 			schedaPatologia: "178",
 			scheda: 10,
 			apparato: 1
-		}, {
+		},
+		"81": {
 			NomePatologia: "Ankle pain",
 			schedaPatologia: "179",
 			scheda: 16,
 			apparato: 1
-		}, {
+		},
+		"82": {
 			NomePatologia: "Hip pain",
 			schedaPatologia: "180",
 			scheda: 14,
 			apparato: 1
-		}, {
+		},
+		"83": {
 			NomePatologia: "Foot pain",
 			schedaPatologia: "285",
 			scheda: 16,
 			apparato: 1
-		}, {
+		},
+		"84": {
 			NomePatologia: "Muscular back pain",
 			schedaPatologia: "181",
 			scheda: 7,
 			apparato: 1
-		}, {
+		},
+		"85": {
 			NomePatologia: "Muscular low back pain",
 			schedaPatologia: "182",
 			scheda: 8,
 			apparato: 1
-		}, {
+		},
+		"86": {
 			NomePatologia: "Muscle pain",
 			schedaPatologia: "183",
 			scheda: 9,
 			apparato: 1
-		}, {
+		},
+		"87": {
 			NomePatologia: "Muscular spine pain - General overview",
 			schedaPatologia: "184",
 			scheda: 5,
 			apparato: 1
-		}, {
+		},
+		"88": {
 			NomePatologia: "Arthrosis-related dorsalgia",
 			schedaPatologia: "185",
 			scheda: 3,
 			apparato: 1
-		}, {
+		},
+		"89": {
 			NomePatologia: "Muscular dorsalgia",
 			schedaPatologia: "186",
 			scheda: 7,
 			apparato: 1
-		}, {
+		},
+		"90": {
 			NomePatologia: "Duodenitis",
 			schedaPatologia: "187",
 			scheda: 65,
 			apparato: 6
-		}, {
+		},
+		"91": {
 			NomePatologia: "Eczema",
 			schedaPatologia: "043",
 			scheda: 91,
 			apparato: 9
-		}, {
+		},
+		"92": {
 			NomePatologia: "Premature ejaculation",
 			schedaPatologia: "044",
 			scheda: 59,
 			apparato: 5
-		}, {
+		},
+		"94": {
 			NomePatologia: "Migraine",
 			schedaPatologia: "026",
 			scheda: 23,
 			apparato: 2
-		}, {
+		},
+		"95": {
 			NomePatologia: "Migraine with aura",
 			schedaPatologia: "188",
 			scheda: 23,
 			apparato: 2
-		}, {
+		},
+		"96": {
 			NomePatologia: "Menstrual migraine",
 			schedaPatologia: "189",
 			scheda: 23,
 			apparato: 2
-		}, {
+		},
+		"97": {
 			NomePatologia: "Migraine without aura",
 			schedaPatologia: "190",
 			scheda: 23,
 			apparato: 2
-		}, {
+		},
+		"98": {
 			NomePatologia: "Cerebral hemorrhage",
 			schedaPatologia: "191",
 			scheda: 41,
 			apparato: 3
-		}, {
+		},
+		"99": {
 			NomePatologia: "Hemorrhoids",
 			schedaPatologia: "047",
 			scheda: 72,
 			apparato: 6
-		}, {
+		},
+		"100": {
 			NomePatologia: "Endometrioma",
 			schedaPatologia: "192",
 			scheda: 51,
 			apparato: 5
-		}, {
+		},
+		"101": {
 			NomePatologia: "Endometriosis",
 			schedaPatologia: "193",
 			scheda: 51,
 			apparato: 5
-		}, {
+		},
+		"102": {
 			NomePatologia: "Pulmonary emphysema",
 			schedaPatologia: "194",
 			scheda: 87,
 			apparato: 8
-		}, {
+		},
+		"103": {
 			NomePatologia: "Enuresis",
 			schedaPatologia: "048",
 			scheda: 62,
 			apparato: 5
-		}, {
+		},
+		"104": {
 			NomePatologia: "Epicondylitis",
 			schedaPatologia: "195",
 			scheda: 12,
 			apparato: 1
-		}, {
+		},
+		"105": {
 			NomePatologia: "Epilepsy",
 			schedaPatologia: "051",
 			scheda: 38,
 			apparato: 3
-		}, {
+		},
+		"106": {
 			NomePatologia: "Epitrocleitis",
 			schedaPatologia: "196",
 			scheda: 12,
 			apparato: 1
-		}, {
+		},
+		"107": {
 			NomePatologia: "Cervical disc herniation",
 			schedaPatologia: "053",
 			scheda: 17,
 			apparato: 1
-		}, {
+		},
+		"108": {
 			NomePatologia: "Lumbosacral disc herniation",
 			schedaPatologia: "053",
 			scheda: 19,
 			apparato: 1
-		}, {
+		},
+		"109": {
 			NomePatologia: "Fibromyalgia",
 			schedaPatologia: "197",
 			scheda: 37,
 			apparato: 3
-		}, {
+		},
+		"110": {
 			NomePatologia: "Gastritis",
 			schedaPatologia: "058",
 			scheda: 65,
 			apparato: 6
-		}, {
+		},
+		"111": {
 			NomePatologia: "Gastroduodenitis",
 			schedaPatologia: "198",
 			scheda: 65,
 			apparato: 6
-		}, {
+		},
+		"112": {
 			NomePatologia: "Gastroesophageal reflux disease (GERD)",
 			schedaPatologia: "263",
 			scheda: 67,
 			apparato: 6
-		}, {
+		},
+		"113": {
 			NomePatologia: "Glaucoma",
 			schedaPatologia: "199",
 			scheda: 98,
 			apparato: 10
-		}, {
+		},
+		"114": {
 			NomePatologia: "Gonalgia",
 			schedaPatologia: "200",
 			scheda: 15,
 			apparato: 1
-		}, {
+		},
+		"115": {
 			NomePatologia: "Gonarthrosis",
 			schedaPatologia: "201",
 			scheda: 15,
 			apparato: 1
-		}, {
+		},
+		"116": {
 			NomePatologia: "Abdominal swelling",
 			schedaPatologia: "202",
 			scheda: 66,
 			apparato: 6
-		}, {
+		},
+		"117": {
 			NomePatologia: "Cerebral stroke",
 			schedaPatologia: "062",
 			scheda: 41,
 			apparato: 3
-		}, {
+		},
+		"118": {
 			NomePatologia: "Frigidity",
 			schedaPatologia: "055",
 			scheda: 58,
 			apparato: 5
-		}, {
+		},
+		"119": {
 			NomePatologia: "Sexual impotence",
 			schedaPatologia: "063",
 			scheda: 58,
 			apparato: 5
-		}, {
+		},
+		"120": {
 			NomePatologia: "Stress urinary incontinence",
 			schedaPatologia: "064",
 			scheda: 62,
 			apparato: 5
-		}, {
+		},
+		"121": {
 			NomePatologia: "Urinary incontinence",
 			schedaPatologia: "064",
 			scheda: 62,
 			apparato: 5
-		}, {
+		},
+		"122": {
 			NomePatologia: "Urinary Tract Infection (UTI)",
 			schedaPatologia: "205",
 			scheda: 60,
 			apparato: 5
-		}, {
+		},
+		"123": {
 			NomePatologia: "Insomnia",
 			schedaPatologia: "067",
 			scheda: 46,
 			apparato: 4
-		}, {
+		},
+		"124": {
 			NomePatologia: "Cerebrovascular stroke",
 			schedaPatologia: "062",
 			scheda: 41,
 			apparato: 3
-		}, {
+		},
+		"126": {
 			NomePatologia: "Arterial hypertension",
 			schedaPatologia: "068",
 			scheda: 73,
 			apparato: 7
-		}, {
+		},
+		"127": {
 			NomePatologia: "Autoimmune hyperthyroidism",
 			schedaPatologia: "208",
 			scheda: 48,
 			apparato: 5
-		}, {
+		},
+		"128": {
 			NomePatologia: "Hypertrichosis",
 			schedaPatologia: "209",
 			scheda: 49,
 			apparato: 5
-		}, {
+		},
+		"129": {
 			NomePatologia: "Benign Prostatic Hyperplasia (BPH)",
 			schedaPatologia: "210",
 			scheda: 64,
 			apparato: 5
-		}, {
+		},
+		"130": {
 			NomePatologia: "Arterial hypotension",
 			schedaPatologia: "069",
 			scheda: 74,
 			apparato: 7
-		}, {
+		},
+		"131": {
 			NomePatologia: "Hypothyroidism and hyperthyroidism",
 			schedaPatologia: "211",
 			scheda: 48,
 			apparato: 5
-		}, {
+		},
+		"132": {
 			NomePatologia: "Hypotrichosis",
 			schedaPatologia: "212",
 			scheda: 49,
 			apparato: 5
-		}, {
+		},
+		"133": {
 			NomePatologia: "Irritable Bowel Syndrome (IBS)",
 			schedaPatologia: "082",
 			scheda: 69,
 			apparato: 7
-		}, {
+		},
+		"134": {
 			NomePatologia: "Hirsutism",
 			schedaPatologia: "213",
 			scheda: 49,
 			apparato: 5
-		}, {
+		},
+		"135": {
 			NomePatologia: "Labyrinthitis",
 			schedaPatologia: "214",
 			scheda: 81,
 			apparato: 8
-		}, {
+		},
+		"136": {
 			NomePatologia: "Kidney stones",
 			schedaPatologia: "022",
 			scheda: 61,
 			apparato: 5
-		}, {
+		},
+		"137": {
 			NomePatologia: "Arthritic Low Back Pain",
 			schedaPatologia: "215",
 			scheda: 4,
 			apparato: 1
-		}, {
+		},
+		"138": {
 			NomePatologia: "Muscular low back pain",
 			schedaPatologia: "216",
 			scheda: 8,
 			apparato: 1
-		}, {
+		},
+		"139": {
 			NomePatologia: "Lumbosciatica",
 			schedaPatologia: "217",
 			scheda: 19,
 			apparato: 1
-		}, {
+		},
+		"140": {
 			NomePatologia: "Ménière's disease",
 			schedaPatologia: "218",
 			scheda: 81,
 			apparato: 8
 		},
-		{
+		"142": {
 			NomePatologia: "Menometrorrhagia",
 			schedaPatologia: "220",
 			scheda: 52,
 			apparato: 5
-		}, {
+		},
+		"143": {
 			NomePatologia: "Menopause",
 			schedaPatologia: "221",
 			scheda: 52,
 			apparato: 5
-		}, {
+		},
+		"144": {
 			NomePatologia: "Painful menstruation",
 			schedaPatologia: "041",
 			scheda: 54,
 			apparato: 5
-		}, {
+		},
+		"145": {
 			NomePatologia: "Myopia",
 			schedaPatologia: "222",
 			scheda: 99,
 			apparato: 10
-		}, {
+		},
+		"146": {
 			NomePatologia: "Parkinson's disease",
 			schedaPatologia: "223",
 			scheda: 39,
 			apparato: 3
-		}, {
+		},
+		"147": {
 			NomePatologia: "Nausea and/or vomiting",
 			schedaPatologia: "223",
 			scheda: 68,
 			apparato: 6
-		}, {
+		},
+		"148": {
 			NomePatologia: "Peripheral neuropathy",
 			schedaPatologia: "225",
 			scheda: 32,
 			apparato: 3
-		}, {
+		},
+		"149": {
 			NomePatologia: "Trigeminal neuralgia",
 			schedaPatologia: "226",
 			scheda: 30,
 			apparato: 3
-		}, {
+		},
+		"150": {
 			NomePatologia: "Peripheral neuralgia",
 			schedaPatologia: "227",
 			scheda: 32,
 			apparato: 3
-		}, {
+		},
+		"151": {
 			NomePatologia: "Postherpetic neuralgia",
 			schedaPatologia: "228",
 			scheda: 31,
 			apparato: 3
-		}, {
+		},
+		"152": {
 			NomePatologia: "Obesity",
 			schedaPatologia: "229",
 			scheda: 47,
 			apparato: 5
-		}, {
+		},
+		"153": {
 			NomePatologia: "Oligomenorrhea",
 			schedaPatologia: "230",
 			scheda: 52,
 			apparato: 5
-		}, {
+		},
+		"154": {
 			NomePatologia: "Urticaria",
 			schedaPatologia: "087",
 			scheda: 92,
 			apparato: 9
-		}, {
+		},
+		"155": {
 			NomePatologia: "Osteoarthritis of the knee",
 			schedaPatologia: "231",
 			scheda: 15,
 			apparato: 1
-		}, {
+		},
+		"156": {
 			NomePatologia: "Osteoarthritis of the elbow",
 			schedaPatologia: "232",
 			scheda: 12,
 			apparato: 1
-		}, {
+		},
+		"157": {
 			NomePatologia: "Osteoarthritis of the ankle",
 			schedaPatologia: "233",
 			scheda: 16,
 			apparato: 1
-		}, {
+		},
+		"158": {
 			NomePatologia: "Osteoarthritis of the cervical spine",
 			schedaPatologia: "234",
 			scheda: 2,
 			apparato: 1
-		}, {
+		},
+		"159": {
 			NomePatologia: "Osteoarthritis of the thoracic spine",
 			schedaPatologia: "235",
 			scheda: 3,
 			apparato: 1
-		}, {
+		},
+		"160": {
 			NomePatologia: "Osteoarthritis of the lumbosacral spine",
 			schedaPatologia: "236",
 			scheda: 4,
 			apparato: 1
-		}, {
+		},
+		"161": {
 			NomePatologia: "Osteoarthritis of the hand",
 			schedaPatologia: "237",
 			scheda: 13,
 			apparato: 1
-		}, {
+		},
+		"162": {
 			NomePatologia: "Osteoarthritis of the foot",
 			schedaPatologia: "238",
 			scheda: 16,
 			apparato: 1
-		}, {
+		},
+		"163": {
 			NomePatologia: "Osteoarthritis of the wrist",
 			schedaPatologia: "239",
 			scheda: 13,
 			apparato: 1
-		}, {
+		},
+		"164": {
 			NomePatologia: "Osteoarthritis - General overview",
 			schedaPatologia: "015",
 			scheda: 1,
 			apparato: 1
-		}, {
+		},
+		"165": {
 			NomePatologia: "Otolithopathy",
 			schedaPatologia: "241",
 			scheda: 81,
 			apparato: 8
-		}, {
+		},
+		"166": {
 			NomePatologia: "Panic Disorder (PD)",
 			schedaPatologia: "018",
 			scheda: 43,
 			apparato: 4
-		}, {
+		},
+		"167": {
 			NomePatologia: "Cold paresis",
 			schedaPatologia: "242",
 			scheda: 25,
 			apparato: 2
-		}, {
+		},
+		"168": {
 			NomePatologia: "Facial nerve palsy",
 			schedaPatologia: "242",
 			scheda: 25,
 			apparato: 2
-		}, {
+		},
+		"169": {
 			NomePatologia: "Bell's palsy",
 			schedaPatologia: "242",
 			scheda: 25,
 			apparato: 2
-		}, {
+		},
+		"171": {
 			NomePatologia: "Painful ankle-foot pathology",
 			schedaPatologia: "244",
 			scheda: 16,
 			apparato: 1
-		}, {
+		},
+		"172": {
 			NomePatologia: "Painful knee pathology",
 			schedaPatologia: "245",
 			scheda: 15,
 			apparato: 1
-		}, {
+		},
+		"173": {
 			NomePatologia: "Painful elbow pathology",
 			schedaPatologia: "246",
 			scheda: 12,
 			apparato: 1
-		}, {
+		},
+		"174": {
 			NomePatologia: "Painful hip pathology",
 			schedaPatologia: "247",
 			scheda: 14,
 			apparato: 1
-		}, {
+		},
+		"175": {
 			NomePatologia: "Arthritic wrist-hand pain pathology",
 			schedaPatologia: "248",
 			scheda: 13,
 			apparato: 1
-		}, {
+		},
+		"176": {
 			NomePatologia: "Muscular pathologies of the spine - General overview",
 			schedaPatologia: "249",
 			scheda: 5,
 			apparato: 1
-		}, {
+		},
+		"177": {
 			NomePatologia: "Pelvic Inflammatory Disease (PID)",
 			schedaPatologia: "250",
 			scheda: 50,
 			apparato: 5
-		}, {
+		},
+		"178": {
 			NomePatologia: "Scapulo-humeral periarthritis",
 			schedaPatologia: "094",
 			scheda: 11,
 			apparato: 1
-		}, {
+		},
+		"179": {
 			NomePatologia: "Perimenopause",
 			schedaPatologia: "251",
 			scheda: 52,
 			apparato: 5
-		}, {
+		},
+		"180": {
 			NomePatologia: "Polymenorrhea",
 			schedaPatologia: "252",
 			scheda: 52,
 			apparato: 5
-		}, {
+		},
+		"181": {
 			NomePatologia: "Polysclerosis",
 			schedaPatologia: "269",
 			scheda: 40,
 			apparato: 3
-		}, {
+		},
+		"182": {
 			NomePatologia: "Postmenopause",
 			schedaPatologia: "254",
 			scheda: 52,
 			apparato: 5
-		}, {
+		},
+		"183": {
 			NomePatologia: "Premenopause",
 			schedaPatologia: "255",
 			scheda: 52,
 			apparato: 5
-		}, {
+		},
+		"184": {
 			NomePatologia: "Preparation/Assistance for Childbirth",
 			schedaPatologia: "256",
 			scheda: 56,
 			apparato: 5
-		}, {
+		},
+		"185": {
 			NomePatologia: "Antitobacco Classic Program by Nogier",
 			schedaPatologia: "257",
 			scheda: 100,
 			apparato: 11
-		}, {
+		},
+		"186": {
 			NomePatologia: "Antitobacco Program by G. Rossato",
 			schedaPatologia: "258",
 			scheda: 101,
 			apparato: 11
-		}, {
+		},
+		"187": {
 			NomePatologia: "Antitobacco Program by A. Lovato",
 			schedaPatologia: "259",
 			scheda: 102,
 			apparato: 11
-		}, {
+		},
+		"188": {
 			NomePatologia: "NADA Protocol for Addictions",
 			schedaPatologia: "260",
 			scheda: 103,
 			apparato: 11
-		}, {
+		},
+		"189": {
 			NomePatologia: "Psoriasis",
 			schedaPatologia: "099",
 			scheda: 93,
 			apparato: 9
-		}, {
+		},
+		"190": {
 			NomePatologia: "Cervical Radiculopathy",
 			schedaPatologia: "261",
 			scheda: 17,
 			apparato: 1
-		}, {
+		},
+		"191": {
 			NomePatologia: "Lumbosacral Radiculopathy",
 			schedaPatologia: "262",
 			scheda: 19,
 			apparato: 1
-		}, {
+		},
+		"193": {
 			NomePatologia: "Non-inflammatory extra-articular rheumatism of uncertain etiology",
 			schedaPatologia: "264",
 			scheda: 37,
 			apparato: 3
-		}, {
+		},
+		"194": {
 			NomePatologia: "Acute rhinitis",
 			schedaPatologia: "101",
 			scheda: 83,
 			apparato: 8
-		}, {
+		},
+		"195": {
 			NomePatologia: "Allergic rhinitis",
 			schedaPatologia: "105",
 			scheda: 83,
 			apparato: 8
-		}, {
+		},
+		"196": {
 			NomePatologia: "Chronic catarrhal rhinitis",
 			schedaPatologia: "265",
 			scheda: 84,
 			apparato: 8
-		}, {
+		},
+		"197": {
 			NomePatologia: "Chronic rhinitis",
 			schedaPatologia: "266",
 			scheda: 84,
 			apparato: 8
-		}, {
+		},
+		"198": {
 			NomePatologia: "Vasomotor rhinitis",
 			schedaPatologia: "267",
 			scheda: 84,
 			apparato: 8
-		}, {
+		},
+		"199": {
 			NomePatologia: "Urinary retention",
 			schedaPatologia: "106",
 			scheda: 63,
 			apparato: 5
-		}, {
+		},
+		"200": {
 			NomePatologia: "Rosacea",
 			schedaPatologia: "268",
 			scheda: 94,
 			apparato: 9
-		}, {
+		},
+		"201": {
 			NomePatologia: "Sciatica",
 			schedaPatologia: "070",
 			scheda: 19,
 			apparato: 1
-		}, {
+		},
+		"203": {
 			NomePatologia: "Disseminated sclerosis",
 			schedaPatologia: "269",
 			scheda: 40,
 			apparato: 3
-		}, {
+		},
+		"204": {
 			NomePatologia: "Multiple sclerosis",
 			schedaPatologia: "269",
 			scheda: 40,
 			apparato: 3
-		}, {
+		},
+		"205": {
 			NomePatologia: "Anxiety syndrome",
 			schedaPatologia: "011",
 			scheda: 42,
 			apparato: 4
-		}, {
+		},
+		"206": {
 			NomePatologia: "Cervicobrachial syndrome",
 			schedaPatologia: "154",
 			scheda: 17,
 			apparato: 1
-		}, {
+		},
+		"207": {
 			NomePatologia: "Menopausal syndrome",
 			schedaPatologia: "270",
 			scheda: 52,
 			apparato: 5
-		}, {
+		},
+		"208": {
 			NomePatologia: "Complex Regional Pain Syndrome (CRPS)",
 			schedaPatologia: "164",
 			scheda: 35,
 			apparato: 3
-		}, {
+		},
+		"209": {
 			NomePatologia: "Central sensitization syndrome",
 			schedaPatologia: "271",
 			scheda: 37,
 			apparato: 6
-		}, {
+		},
+		"210": {
 			NomePatologia: "Gastrointestinal Neurosis",
 			schedaPatologia: "082",
 			scheda: 69,
 			apparato: 6
-		}, {
+		},
+		"212": {
 			NomePatologia: "Depressive Disorder",
 			schedaPatologia: "034",
 			scheda: 45,
 			apparato: 4
-		}, {
+		},
+		"213": {
 			NomePatologia: "Extrapyramidal syndrome",
 			schedaPatologia: "223",
 			scheda: 39,
 			apparato: 3
-		}, {
+		},
+		"214": {
 			NomePatologia: "Hyperfolliculinic syndrome",
 			schedaPatologia: "273",
 			scheda: 53,
 			apparato: 5
-		}, {
+		},
+		"215": {
 			NomePatologia: "Myofascial syndrome",
 			schedaPatologia: "274",
 			scheda: 9,
 			apparato: 1
-		}, {
+		},
+		"216": {
 			NomePatologia: "Premenstrual syndrome",
 			schedaPatologia: "273",
 			scheda: 53,
 			apparato: 5
-		}, {
+		},
+		"217": {
 			NomePatologia: "Sinusitis",
 			schedaPatologia: "114",
 			scheda: 26,
 			apparato: 2
-		}, {
+		},
+		"218": {
 			NomePatologia: "Overweight/obesity and eating disorders",
 			schedaPatologia: "229",
 			scheda: 47,
 			apparato: 5
-		}, {
+		},
+		"219": {
 			NomePatologia: "Frozen shoulder",
 			schedaPatologia: "151",
 			scheda: 11,
 			apparato: 1
-		}, {
+		},
+		"220": {
 			NomePatologia: "Functional hemifacial spasm",
 			schedaPatologia: "275",
 			scheda: 29,
 			apparato: 2
-		}, {
+		},
+		"221": {
 			NomePatologia: "Lumbosacral spondyloarthrosis",
 			schedaPatologia: "276",
 			scheda: 4,
 			apparato: 1
-		}, {
+		},
+		"222": {
 			NomePatologia: "State of anxiety",
 			schedaPatologia: "011",
 			scheda: 42,
 			apparato: 4
-		}, {
+		},
+		"223": {
 			NomePatologia: "Constipation",
 			schedaPatologia: "032",
 			scheda: 70,
 			apparato: 6
-		}, {
+		},
+		"224": {
 			NomePatologia: "Couple infertility",
 			schedaPatologia: "065",
 			scheda: 57,
 			apparato: 5
-		}, {
+		},
+		"225": {
 			NomePatologia: "Stress",
 			schedaPatologia: "277",
 			scheda: 44,
 			apparato: 4
-		}, {
+		},
+		"226": {
 			NomePatologia: "Stroke",
 			schedaPatologia: "062",
 			scheda: 41,
 			apparato: 3
-		}, {
+		},
+		"227": {
 			NomePatologia: "Tachycardia, bradycardia, and palpitations",
 			schedaPatologia: "090",
 			scheda: 76,
 			apparato: 7
-		}, {
+		},
+		"228": {
 			NomePatologia: "Rotator cuff tendinitis",
 			schedaPatologia: "278",
 			scheda: 11,
 			apparato: 1
-		}, {
+		},
+		"229": {
 			NomePatologia: "Facial tic",
 			schedaPatologia: "279",
 			scheda: 29,
 			apparato: 2
-		}, {
+		},
+		"231": {
 			NomePatologia: "Factitious hyperthyroidism",
 			schedaPatologia: "280",
 			scheda: 48,
 			apparato: 5
-		}, {
+		},
+		"232": {
 			NomePatologia: "Autoimmune thyroiditis",
 			schedaPatologia: "123",
 			scheda: 48,
 			apparato: 5
-		}, {
+		},
+		"233": {
 			NomePatologia: "Hashimoto's thyroiditis",
 			schedaPatologia: "123",
 			scheda: 48,
 			apparato: 5
-		}, {
+		},
+		"234": {
 			NomePatologia: "Carpal tunnel syndrome",
 			schedaPatologia: "272",
 			scheda: 18,
 			apparato: 1
-		}, {
+		},
+		"235": {
 			NomePatologia: "Central vertigo",
 			schedaPatologia: "281",
 			scheda: 80,
 			apparato: 8
-		}, {
+		},
+		"236": {
 			NomePatologia: "Peripheral vertigo",
 			schedaPatologia: "282",
 			scheda: 81,
 			apparato: 8
-		}, {
+		},
+		"237": {
 			NomePatologia: "Benign Positional Vertigo (BPV)",
 			schedaPatologia: "283",
 			scheda: 81,
 			apparato: 8
-		}, {
+		},
+		"238": {
 			NomePatologia: "Vomiting",
 			schedaPatologia: "224",
 			scheda: 68,
 			apparato: 6
-		}, {
+		},
+		"239": {
 			NomePatologia: "Hyperemesis gravidarum",
 			schedaPatologia: "284",
 			scheda: 55,
 			apparato: 5
 		}
-	],
+	},
 	teoria: [
 		{ // anatomia dell'orecchio
 			TitoloSezione: "The Auricular Pavilion",

@@ -7854,98 +7854,98 @@ DB.set = {
 			"t": true
 		}
 	},
-	patologie: [
-		{
+	protocolliAuriculo: {
+		"0": {
 			NomePatologia: "Acné",
 			schedaPatologia: "133",
 			scheda: 88,
 			apparato: 9
 		},
-		{
+		"1": {
 			NomePatologia: "Acufenos/tinnitus",
 			schedaPatologia: "001",
 			scheda: 79,
 			apparato: 8
 		},
-		{
+		"2": {
 			NomePatologia: "Adenomiosis",
 			schedaPatologia: "134",
 			scheda: 51,
 			apparato: 5
 		},
-		{
+		"3": {
 			NomePatologia: "Adenosis benigna",
 			schedaPatologia: "135",
 			scheda: 51,
 			apparato: 5
 		},
-		{
+		"4": {
 			NomePatologia: "Ageusia",
 			schedaPatologia: "136",
 			scheda: 33,
 			apparato: 3
 		},
-		{
+		"5": {
 			NomePatologia: "Algias pélvicas femeninas",
 			schedaPatologia: "137",
 			scheda: 50,
 			apparato: 5
 		},
-		{
+		"6": {
 			NomePatologia: "Algodistrofia",
 			schedaPatologia: "138",
 			scheda: 35,
 			apparato: 3
 		},
-		{
+		"7": {
 			NomePatologia: "Alopecia",
 			schedaPatologia: "139",
 			scheda: 89,
 			apparato: 9
 		},
-		{
+		"8": {
 			NomePatologia: "Anorexia",
 			schedaPatologia: "140",
 			scheda: 47,
 			apparato: 5
 		},
-		{
+		"9": {
 			NomePatologia: "Anosmia",
 			schedaPatologia: "141",
 			scheda: 34,
 			apparato: 3
 		},
-		{
+		"10": {
 			NomePatologia: "Ansiedad",
 			schedaPatologia: "011",
 			scheda: 42,
 			apparato: 4
 		},
-		{
+		"11": {
 			NomePatologia: "Arritmias cardíacas",
 			schedaPatologia: "090",
 			scheda: 75,
 			apparato: 7
 		},
-		{
+		"12": {
 			NomePatologia: "Miembro fantasma",
 			schedaPatologia: "143",
 			scheda: 36,
 			apparato: 3
 		},
-		{
+		"13": {
 			NomePatologia: "Artritis psoriásica",
 			schedaPatologia: "144",
 			scheda: 21,
 			apparato: 1
 		},
-		{
+		"14": {
 			NomePatologia: "Artritis reumatoide",
 			schedaPatologia: "014",
 			scheda: 20,
 			apparato: 1
 		},
-		{
+		"15": {
 			NomePatologia: "Artrosis - Esquema general",
 			schedaPatologia: "015",
 			sessoPatologia: "",
@@ -7953,1329 +7953,1327 @@ DB.set = {
 			scheda: 1,
 			apparato: 1
 		},
-		{
+		"16": {
 			NomePatologia: "Artrosis de rodilla",
 			schedaPatologia: "231",
 			scheda: 15,
 			apparato: 1
 		},
-		{
+		"17": {
 			NomePatologia: "Artrosis de codo",
 			schedaPatologia: "232",
 			scheda: 12,
 			apparato: 1
 		},
-		{
+		"18": {
 			NomePatologia: "Artrosis de tobillo",
 			schedaPatologia: "233",
 			scheda: 16,
 			apparato: 1
 		},
-		{
+		"19": {
 			NomePatologia: "Artrosis de la columna cervical",
 			schedaPatologia: "234",
 			scheda: 2,
 			apparato: 1
 		},
-		{
+		"20": {
 			NomePatologia: "Artrosis de la columna dorsal",
 			schedaPatologia: "235",
 			scheda: 3,
 			apparato: 1
 		},
-		{
+		"21": {
 			NomePatologia: "Artrosis de la columna lumbosacra",
 			schedaPatologia: "236",
 			scheda: 4,
 			apparato: 1
 		},
-		{
+		"22": {
 			NomePatologia: "Artrosis de la mano",
 			schedaPatologia: "237",
 			scheda: 13,
 			apparato: 1
 		},
-		{
+		"23": {
 			NomePatologia: "Artrosis del pie",
 			schedaPatologia: "238",
 			scheda: 16,
 			apparato: 1
 		},
-		{
+		"24": {
 			NomePatologia: "Artrosis de la muñeca",
 			schedaPatologia: "239",
 			scheda: 13,
 			apparato: 1
 		},
-		{
+		"25": {
 			NomePatologia: "Asma bronquial",
 			schedaPatologia: "016",
 			scheda: 85,
 			apparato: 8
 		},
-		{
+		"26": {
 			NomePatologia: "Astigmatismo",
 			schedaPatologia: "145",
 			scheda: 95,
 			apparato: 10
 		},
-		{
+		"27": {
 			NomePatologia: "Tartamudez",
 			schedaPatologia: "146",
 			scheda: 82,
 			apparato: 8
 		},
-		{
+		"28": {
 			NomePatologia: "Enfermedad pulmonar obstructiva crónica (EPOC)",
 			schedaPatologia: "147",
 			scheda: 86,
 			apparato: 8
 		},
-		{
+		"29": {
 			NomePatologia: "Bradicardia",
 			schedaPatologia: "090",
 			scheda: 76,
 			apparato: 7
 		},
-		{
+		"30": {
 			NomePatologia: "Bronquitis crónica obstructiva",
 			schedaPatologia: "148",
 			scheda: 86,
 			apparato: 8
 		},
-		{
+		"31": {
 			NomePatologia: "Bruxismo",
 			schedaPatologia: "149",
 			scheda: 28,
 			apparato: 2
 		},
-		{
+		"32": {
 			NomePatologia: "Bulimia",
 			schedaPatologia: "150",
 			scheda: 47,
 			apparato: 5
 		},
-		{
+		"33": {
 			NomePatologia: "Cálculos renales",
 			schedaPatologia: "022",
 			scheda: 61,
 			apparato: 5
 		},
-		{
+		"34": {
 			NomePatologia: "Capsulitis adhesiva",
 			schedaPatologia: "151",
 			scheda: 11,
 			apparato: 1
 		},
-		{
+		"35": {
 			NomePatologia: "Palpitaciones cardíacas",
 			schedaPatologia: "090",
 			scheda: 76,
 			apparato: 7
 		},
-		{
+		"36": {
 			NomePatologia: "Cataratas",
 			schedaPatologia: "024",
 			scheda: 96,
 			apparato: 10
 		},
-		{
+		"37": {
 			NomePatologia: "Cefalea en racimos",
 			schedaPatologia: "026",
 			scheda: 24,
 			apparato: 2
 		},
-		{
+		"38": {
 			NomePatologia: "Cefalea catamenial",
 			schedaPatologia: "026",
 			scheda: 23,
 			apparato: 2
 		},
-		{
+		"39": {
 			NomePatologia: "Cefalea musculotensiva",
 			schedaPatologia: "026",
 			scheda: 22,
 			apparato: 2
 		},
-		{
+		"40": {
 			NomePatologia: "Cefalea tensional",
 			schedaPatologia: "026",
 			scheda: 22,
 			apparato: 2
 		},
-		{
+		"41": {
 			NomePatologia: "Cervicalgia de base artrosica",
 			schedaPatologia: "152",
 			scheda: 2,
 			apparato: 1
 		},
-		{
+		"42": {
 			NomePatologia: "Cervicalgia de base muscular",
 			schedaPatologia: "153",
 			scheda: 6,
 			apparato: 1
 		},
-		{
+		"43": {
 			NomePatologia: "Cervicobraquialgia",
 			schedaPatologia: "154",
 			scheda: 17,
 			apparato: 1
 		},
-		{
+		"44": {
 			NomePatologia: "Cistitis",
 			schedaPatologia: "155",
 			scheda: 60,
 			apparato: 5
 		},
-		{
+		"45": {
 			NomePatologia: "Cistitis intersticial",
 			schedaPatologia: "156",
 			scheda: 60,
 			apparato: 5
 		},
-		{
+		"46": {
 			NomePatologia: "Coccigodinia",
 			schedaPatologia: "157",
 			scheda: 10,
 			apparato: 1
 		},
-		{
+		"47": {
 			NomePatologia: "Cólico renal",
 			schedaPatologia: "158",
 			scheda: 61,
 			apparato: 5
 		},
-		{
+		"48": {
 			NomePatologia: "Síndrome del intestino irritable",
 			schedaPatologia: "082",
 			scheda: 69,
 			apparato: 6
 		},
-		{
+		"49": {
 			NomePatologia: "Latigazo cervical",
 			schedaPatologia: "159",
 			scheda: 6,
 			apparato: 1
 		},
-		{
+		"50": {
 			NomePatologia: "Conjuntivitis",
 			schedaPatologia: "030",
 			scheda: 97,
 			apparato: 10
 		},
-		{
+		"51": {
 			NomePatologia: "Contractura muscular de la columna cervical",
 			schedaPatologia: "160",
 			scheda: 6,
 			apparato: 1
 		},
-		{
+		"52": {
 			NomePatologia: "Contractura muscular de la columna dorsal",
 			schedaPatologia: "160",
 			scheda: 7,
 			apparato: 1
 		},
-		{
+		"53": {
 			NomePatologia: "Contractura muscular de la columna lumbosacra",
 			schedaPatologia: "160",
 			scheda: 8,
 			apparato: 1
 		},
-		{
+		"54": {
 			NomePatologia: "Contracción muscular de la columna - Esquema general",
 			schedaPatologia: "160",
 			scheda: 5,
 			apparato: 1
 		},
-		{
+		"55": {
 			NomePatologia: "Coriocarcinoma del útero",
 			schedaPatologia: "161",
 			scheda: 51,
 			apparato: 5
 		},
-		{
+		"56": {
 			NomePatologia: "Coxalgia",
 			schedaPatologia: "162",
 			scheda: 14,
 			apparato: 1
 		},
-		{
+		"57": {
 			NomePatologia: "Coxartrosis",
 			schedaPatologia: "163",
 			scheda: 14,
 			apparato: 1
 		},
-		{
-			NomePatologia: "Síndrome de dolor regional complejo (SDRC)",
-			schedaPatologia: "164",
-			scheda: 35,
-			apparato: 3
-		},
-		{
+		"58": {
 			NomePatologia: "Depresión",
 			schedaPatologia: "034",
 			scheda: 45,
 			apparato: 4
 		},
-		{
+		"59": {
 			NomePatologia: "Dermatitis",
 			schedaPatologia: "035",
 			scheda: 90,
 			apparato: 9
 		},
-		{
+		"60": {
 			NomePatologia: "Diarrea",
 			schedaPatologia: "038",
 			scheda: 71,
 			apparato: 6
 		},
-		{
+		"61": {
 			NomePatologia: "Pérdida de Peso",
 			schedaPatologia: "140",
 			scheda: 47,
 			apparato: 6
 		},
-		{
+		"62": {
 			NomePatologia: "Disartria funcional",
 			schedaPatologia: "166",
 			scheda: 82,
 			apparato: 8
 		},
-		{
+		"63": {
 			NomePatologia: "Disfunción eréctil",
 			schedaPatologia: "063",
 			scheda: 58,
 			apparato: 5
 		},
-		{
+		"64": {
 			NomePatologia: "Dislalia",
 			schedaPatologia: "167",
-			
 			scheda: 82,
 			apparato: 8
 		},
-		{
+		"65": {
 			NomePatologia: "Dismenorrea primaria",
 			schedaPatologia: "041",
 			scheda: 54,
 			apparato: 5
 		},
-		{
+		"66": {
 			NomePatologia: "Dispepsia gástrica",
 			schedaPatologia: "025",
 			scheda: 66,
 			apparato: 6
 		},
-		{
+		"67": {
 			NomePatologia: "Distonía facial",
 			schedaPatologia: "168",
 			scheda: 29,
 			apparato: 2
 		},
-		{
+		"68": {
 			NomePatologia: "Angustia",
 			schedaPatologia: "169",
 			scheda: 44,
 			apparato: 4
 		},
-		{
+		"69": {
 			NomePatologia: "Trastornos alimentarios",
 			schedaPatologia: "170",
 			scheda: 47,
 			apparato: 5
 		},
-		{
+		"70": {
 			NomePatologia: "Trastornos del sistema circulatorio periférico",
 			schedaPatologia: "171",
 			scheda: 78,
 			apparato: 7
 		},
-		{
+		"71": {
 			NomePatologia: "Trastornos de la articulación temporomandibular",
 			schedaPatologia: "172",
 			scheda: 27,
 			apparato: 2
 		},
-		{
+		"72": {
 			NomePatologia: "Trastornos del sueño",
 			schedaPatologia: "067",
 			scheda: 46,
 			apparato: 4
 		},
-		{
+		"73": {
 			NomePatologia: "Trastornos depresivos",
 			schedaPatologia: "034",
 			scheda: 45,
 			apparato: 4
 		},
-		{
+		"74": {
 			NomePatologia: "Trastornos linfáticos",
 			schedaPatologia: "173",
 			scheda: 77,
 			apparato: 7
 		},
-		{
+		"75": {
 			NomePatologia: "Trastorno de pánico (TP)",
 			schedaPatologia: "018",
 			scheda: 43,
 			apparato: 4
 		},
-		{
+		"76": {
 			NomePatologia: "Dolor de codo",
 			schedaPatologia: "174",
 			scheda: 12,
 			apparato: 1
 		},
-		{
+		"77": {
 			NomePatologia: "Dolor en la articulación temporomandibular",
 			schedaPatologia: "175",
 			scheda: 27,
 			apparato: 2
 		},
-		{
+		"78": {
 			NomePatologia: "Dolor cervical de base artrosica",
 			schedaPatologia: "176",
 			scheda: 2,
 			apparato: 1
 		},
-		{
+		"79": {
 			NomePatologia: "Dolor cervical de base muscular",
 			schedaPatologia: "177",
 			scheda: 6,
 			apparato: 1
 		},
-		{
+		"80": {
 			NomePatologia: "Dolor coccígeo",
 			schedaPatologia: "178",
 			scheda: 10,
 			apparato: 1
 		},
-		{
+		"81": {
 			NomePatologia: "Dolor de tobillo",
 			schedaPatologia: "179",
 			scheda: 16,
 			apparato: 1
 		},
-		{
+		"82": {
 			NomePatologia: "Dolor de cadera",
 			schedaPatologia: "180",
 			scheda: 14,
 			apparato: 1
 		},
-		{
+		"83": {
 			NomePatologia: "Dolor del pie",
 			schedaPatologia: "285",
 			scheda: 16,
 			apparato: 1
 		},
-		{
+		"84": {
 			NomePatologia: "Dolor dorsal de base muscular",
 			schedaPatologia: "181",
 			scheda: 7,
 			apparato: 1
 		},
-		{
+		"85": {
 			NomePatologia: "Dolor lumbar de base muscular",
 			schedaPatologia: "182",
 			scheda: 8,
 			apparato: 1
 		},
-		{
+		"86": {
 			NomePatologia: "Dolor muscular",
 			schedaPatologia: "183",
 			scheda: 9,
 			apparato: 1
 		},
-		{
+		"87": {
 			NomePatologia: "Dolor muscular de la columna - Esquema general",
 			schedaPatologia: "184",
 			scheda: 5,
 			apparato: 1
 		},
-		{
+		"88": {
 			NomePatologia: "Dorsalgia de base artrosica",
 			schedaPatologia: "185",
 			scheda: 3,
 			apparato: 1
 		},
-		{
+		"89": {
 			NomePatologia: "Dorsalgia de base muscular",
 			schedaPatologia: "186",
 			scheda: 7,
 			apparato: 1
 		},
-		{
+		"90": {
 			NomePatologia: "Duodenitis",
 			schedaPatologia: "187",
 			scheda: 65,
 			apparato: 6
 		},
-		{
+		"91": {
 			NomePatologia: "Eczema",
 			schedaPatologia: "043",
 			scheda: 91,
 			apparato: 9
 		},
-		{
+		"92": {
 			NomePatologia: "Eyaculación precoz",
 			schedaPatologia: "044",
 			scheda: 59,
 			apparato: 5
 		},
-		{
+		"93": {
 			NomePatologia: "Emesis gravidica",
 			schedaPatologia: "284",
 			scheda: 55,
 			apparato: 5
 		},
-		{
+		"94": {
 			NomePatologia: "Migraña",
 			schedaPatologia: "026",
 			scheda: 23,
 			apparato: 2
 		},
-		{
+		"95": {
 			NomePatologia: "Migraña con aura",
 			schedaPatologia: "188",
 			scheda: 23,
 			apparato: 2
 		},
-		{
+		"96": {
 			NomePatologia: "Migraña menstrual",
 			schedaPatologia: "189",
 			scheda: 23,
 			apparato: 2
 		},
-		{
+		"97": {
 			NomePatologia: "Migraña sin aura",
 			schedaPatologia: "190",
 			scheda: 23,
 			apparato: 2
 		},
-		{
+		"98": {
 			NomePatologia: "Emorragia cerebrovascular",
 			schedaPatologia: "191",
 			scheda: 41,
 			apparato: 3
 		},
-		{
+		"99": {
 			NomePatologia: "Hemorroides",
 			schedaPatologia: "047",
 			scheda: 72,
 			apparato: 6
 		},
-		{
+		"100": {
 			NomePatologia: "Endometrioma",
 			schedaPatologia: "192",
 			scheda: 51,
 			apparato: 5
 		},
-		{
+		"101": {
 			NomePatologia: "Endometriosis",
 			schedaPatologia: "193",
 			scheda: 51,
 			apparato: 5
 		},
-		{
+		"102": {
 			NomePatologia: "Enfisema pulmonar",
 			schedaPatologia: "194",
 			scheda: 87,
 			apparato: 8
 		},
-		{
+		"103": {
 			NomePatologia: "Enuresis",
 			schedaPatologia: "048",
 			scheda: 62,
 			apparato: 5
 		},
-		{
+		"104": {
 			NomePatologia: "Epicondilitis",
 			schedaPatologia: "195",
 			scheda: 12,
 			apparato: 1
 		},
-		{
+		"105": {
 			NomePatologia: "Epilepsia",
 			schedaPatologia: "051",
 			scheda: 38,
 			apparato: 3
 		},
-		{
+		"106": {
 			NomePatologia: "Epitrocleitis",
 			schedaPatologia: "196",
 			scheda: 12,
 			apparato: 1
 		},
-		{
+		"107": {
 			NomePatologia: "Hernia discal cervical",
 			schedaPatologia: "053",
 			scheda: 17,
 			apparato: 1
 		},
-		{
+		"108": {
 			NomePatologia: "Hernia de disco de la columna lumbosacra",
 			schedaPatologia: "053",
 			scheda: 19,
 			apparato: 1
 		},
-		{
+		"109": {
 			NomePatologia: "Fibromialgia",
 			schedaPatologia: "197",
 			scheda: 37,
 			apparato: 3
 		},
-		{
+		"110": {
 			NomePatologia: "Gastritis",
 			schedaPatologia: "058",
 			scheda: 65,
 			apparato: 6
 		},
-		{
+		"111": {
 			NomePatologia: "Gastroduodenitis",
 			schedaPatologia: "198",
 			scheda: 65,
 			apparato: 6
 		},
-		{
+		"112": {
 			NomePatologia: "Enfermedad por reflujo gastroesofágico (ERGE)",
 			schedaPatologia: "263",
 			scheda: 67,
 			apparato: 6
 		},
-		{
+		"113": {
 			NomePatologia: "Glaucoma",
 			schedaPatologia: "199",
 			scheda: 98,
 			apparato: 10
 		},
-		{
+		"114": {
 			NomePatologia: "Gonalgia",
 			schedaPatologia: "200",
 			scheda: 15,
 			apparato: 1
 		},
-		{
+		"115": {
 			NomePatologia: "Gonartrosis",
 			schedaPatologia: "201",
 			scheda: 15,
 			apparato: 1
 		},
-		{
+		"116": {
 			NomePatologia: "Distensión abdominal",
 			schedaPatologia: "202",
 			scheda: 66,
 			apparato: 6
 		},
-		{
+		"117": {
 			NomePatologia: "Ictus",
 			schedaPatologia: "062",
 			scheda: 41,
 			apparato: 3
 		},
-		{
+		"118": {
 			NomePatologia: "Frigidez",
 			schedaPatologia: "055",
 			scheda: 58,
 			apparato: 5
 		},
-		{
+		"119": {
 			NomePatologia: "Impotencia sexual",
 			schedaPatologia: "063",
 			scheda: 58,
 			apparato: 5
 		},
-		{
+		"120": {
 			NomePatologia: "Incontinencia por esfuerzo",
 			schedaPatologia: "064",
 			scheda: 62,
 			apparato: 5
 		},
-		{
+		"121": {
 			NomePatologia: "Incontinencia urinaria",
 			schedaPatologia: "064",
 			scheda: 62,
 			apparato: 5
 		},
-		{
+		"122": {
 			NomePatologia: "Infección del tracto urinario (ITU)",
 			schedaPatologia: "205",
 			scheda: 60,
 			apparato: 5
 		},
-		{
+		"123": {
 			NomePatologia: "Insomnio",
 			schedaPatologia: "067",
 			scheda: 46,
 			apparato: 4
 		},
-		{
+		"124": {
 			NomePatologia: "Accidente cerebrovascular",
 			schedaPatologia: "062",
 			scheda: 41,
 			apparato: 3
 		},
-		{
+		"125": {
 			NomePatologia: "Iperemesis gravídica",
 			schedaPatologia: "284",
 			scheda: 55,
 			apparato: 5
 		},
-		{
+		"126": {
 			NomePatologia: "Hipertensión arterial",
 			schedaPatologia: "068",
 			scheda: 73,
 			apparato: 7
 		},
-		{
+		"127": {
 			NomePatologia: "Hipertiroidismo autoinmune",
 			schedaPatologia: "208",
 			scheda: 48,
 			apparato: 5
 		},
-		{
+		"128": {
 			NomePatologia: "Hipertricosis",
 			schedaPatologia: "209",
 			scheda: 49,
 			apparato: 5
 		},
-		{
+		"129": {
 			NomePatologia: "Hiperplasia prostática benigna (HPB)",
 			schedaPatologia: "210",
 			scheda: 64,
 			apparato: 5
 		},
-		{
+		"130": {
 			NomePatologia: "Hipotensión arterial",
 			schedaPatologia: "069",
 			scheda: 74,
 			apparato: 7
 		},
-		{
+		"131": {
 			NomePatologia: "Hipotiroidismo e hipertiroidismo",
 			schedaPatologia: "211",
 			scheda: 48,
 			apparato: 5
 		},
-		{
+		"132": {
 			NomePatologia: "Hipotricosis",
 			schedaPatologia: "212",
 			scheda: 49,
 			apparato: 5
 		},
-		{
+		"133": {
 			NomePatologia: "Síndrome del intestino irritable (SII)",
 			schedaPatologia: "082",
 			scheda: 69,
 			apparato: 7
 		},
-		{
+		"134": {
 			NomePatologia: "Hirsutismo",
 			schedaPatologia: "213",
 			scheda: 49,
 			apparato: 5
 		},
-		{
+		"135": {
 			NomePatologia: "Laberintitis",
 			schedaPatologia: "214",
 			scheda: 81,
 			apparato: 8
 		},
-		{
+		"136": {
 			NomePatologia: "Litiasis renal",
 			schedaPatologia: "022",
 			scheda: 61,
 			apparato: 5
 		},
-		{
+		"137": {
 			NomePatologia: "Lumbalgia de base artrosica",
 			schedaPatologia: "215",
 			scheda: 4,
 			apparato: 1
 		},
-		{
+		"138": {
 			NomePatologia: "Lumbalgia de base muscular",
 			schedaPatologia: "216",
 			scheda: 8,
 			apparato: 1
 		},
-		{
+		"139": {
 			NomePatologia: "Lumbociática",
 			schedaPatologia: "217",
 			scheda: 19,
 			apparato: 1
 		},
-		{
+		"140": {
 			NomePatologia: "Enfermedad de Ménière",
 			schedaPatologia: "218",
 			scheda: 81,
 			apparato: 8
 		},
-		{
+		"142": {
 			NomePatologia: "Menometrorragia",
 			schedaPatologia: "220",
 			scheda: 52,
 			apparato: 5
 		},
-		{
+		"143": {
 			NomePatologia: "Menopausia",
 			schedaPatologia: "221",
 			scheda: 52,
 			apparato: 5
 		},
-		{
+		"144": {
 			NomePatologia: "Menstruación dolorosa",
 			schedaPatologia: "041",
 			scheda: 54,
 			apparato: 5
 		},
-		{
+		"145": {
 			NomePatologia: "Miopía",
 			schedaPatologia: "222",
 			scheda: 99,
 			apparato: 10
 		},
-		{
+		"146": {
 			NomePatologia: "Enfermedad de Parkinson",
 			schedaPatologia: "223",
 			scheda: 39,
 			apparato: 3
 		},
-		{
+		"147": {
 			NomePatologia: "Náuseas y/o vómitos",
 			schedaPatologia: "224",
 			scheda: 68,
 			apparato: 6
 		},
-		{
+		"148": {
 			NomePatologia: "Neuropatía periférica",
 			schedaPatologia: "225",
 			scheda: 32,
 			apparato: 3
 		},
-		{
+		"149": {
 			NomePatologia: "Neuralgia del trigémino",
 			schedaPatologia: "226",
 			scheda: 30,
 			apparato: 3
 		},
-		{
+		"150": {
 			NomePatologia: "Neuralgia periférica",
 			schedaPatologia: "227",
 			scheda: 32,
 			apparato: 3
 		},
-		{
+		"151": {
 			NomePatologia: "Neuralgia postherpética",
 			schedaPatologia: "228",
 			scheda: 31,
 			apparato: 3
 		},
-		{
+		"152": {
 			NomePatologia: "Obesidad",
 			schedaPatologia: "229",
 			scheda: 47,
 			apparato: 5
 		},
-		{
+		"153": {
 			NomePatologia: "Oligomenorrea",
 			schedaPatologia: "230",
 			scheda: 52,
 			apparato: 5
 		},
-		{
+		"154": {
 			NomePatologia: "Urticaria",
 			schedaPatologia: "087",
 			scheda: 92,
 			apparato: 9
 		},
-		{
+		"155": {
 			NomePatologia: "Osteoartritis de rodilla",
 			schedaPatologia: "231",
 			scheda: 15,
 			apparato: 1
 		},
-		{
+		"156": {
 			NomePatologia: "Osteoartrosis de codo",
 			schedaPatologia: "232",
 			scheda: 12,
 			apparato: 1
 		},
-		{
+		"157": {
 			NomePatologia: "Osteoartrosis de tobillo",
 			schedaPatologia: "233",
 			scheda: 16,
 			apparato: 1
 		},
-		{
+		"158": {
 			NomePatologia: "Osteoartritis de la columna cervical",
 			schedaPatologia: "234",
 			scheda: 2,
 			apparato: 1
 		},
-		{
+		"159": {
 			NomePatologia: "Osteoartritis de la columna dorsal",
 			schedaPatologia: "235",
 			scheda: 3,
 			apparato: 1
 		},
-		{
+		"160": {
 			NomePatologia: "Osteoartritis de la columna lumbosacra",
 			schedaPatologia: "236",
 			scheda: 4,
 			apparato: 1
 		},
-		{
+		"161": {
 			NomePatologia: "Osteoartritis de la mano",
 			schedaPatologia: "237",
 			scheda: 13,
 			apparato: 1
 		},
-		{
+		"162": {
 			NomePatologia: "Osteoartritis del pie",
 			schedaPatologia: "238",
 			scheda: 16,
 			apparato: 1
 		},
-		{
+		"163": {
 			NomePatologia: "Osteoartrosis de la muñeca",
 			schedaPatologia: "239",
-			scheda: 16,
 			scheda: 13,
 			apparato: 1
 		},
-		{
+		"164": {
 			NomePatologia: "Osteoartrosis - Esquema general",
 			schedaPatologia: "015",
 			scheda: 1,
 			apparato: 1
 		},
-		{
+		"165": {
 			NomePatologia: "Otolitopatía",
 			schedaPatologia: "241",
 			scheda: 81,
 			apparato: 8
 		},
-		{
+		"166": {
 			NomePatologia: "Trastorno de pánico (TP)",
 			schedaPatologia: "018",
 			scheda: 43,
 			apparato: 4
 		},
-		{
+		"167": {
 			NomePatologia: "Parálisis por frío",
 			schedaPatologia: "242",
 			scheda: 25,
 			apparato: 2
 		},
-		{
+		"168": {
 			NomePatologia: "Parálisis del nervio facial",
 			schedaPatologia: "242",
 			scheda: 25,
 			apparato: 2
 		},
-		{
+		"169": {
 			NomePatologia: "Parálisis de Bell",
 			schedaPatologia: "242",
 			scheda: 25,
 			apparato: 2
 		},
-		{
+		"170": {
 			NomePatologia: "Patología de la articulación temporomandibular",
 			schedaPatologia: "243",
 			scheda: 27,
 			apparato: 2
 		},
-		{
+		"171": {
 			NomePatologia: "Patología dolorosa del tobillo y pie",
 			schedaPatologia: "244",
 			scheda: 16,
 			apparato: 1
 		},
-		{
+		"172": {
 			NomePatologia: "Patología dolorosa de la rodilla",
 			schedaPatologia: "245",
 			scheda: 15,
 			apparato: 1
 		},
-		{
+		"173": {
 			NomePatologia: "Patología dolorosa del codo",
 			schedaPatologia: "246",
 			scheda: 12,
 			apparato: 1
 		},
-		{
+		"174": {
 			NomePatologia: "Patología dolorosa de la cadera",
 			schedaPatologia: "247",
 			scheda: 14,
 			apparato: 1
 		},
-		{
+		"175": {
 			NomePatologia: "Patología dolorosa de la muñeca y la mano (por base artrosica)",
 			schedaPatologia: "248",
 			scheda: 13,
 			apparato: 1
 		},
-		{
+		"176": {
 			NomePatologia: "Patologías musculares de la columna - Esquema general",
 			schedaPatologia: "249",
 			scheda: 5,
 			apparato: 1
 		},
-		{
+		"177": {
 			NomePatologia: "Enfermedad inflamatoria pélvica (EIP)",
 			schedaPatologia: "250",
 			scheda: 50,
 			apparato: 5
 		},
-		{
+		"178": {
 			NomePatologia: "Periartritis escápulo-humeral",
 			schedaPatologia: "094",
 			scheda: 11,
 			apparato: 1
 		},
-		{
+		"179": {
 			NomePatologia: "Perimenopausia",
 			schedaPatologia: "251",
 			scheda: 52,
 			apparato: 5
 		},
-		{
+		"180": {
 			NomePatologia: "Polimenorrea",
 			schedaPatologia: "252",
 			scheda: 52,
 			apparato: 5
 		},
-		{
+		"182": {
 			NomePatologia: "Postmenopausia",
 			schedaPatologia: "254",
 			scheda: 52,
 			apparato: 5
 		},
-		{
+		"183": {
 			NomePatologia: "Premenopausia",
 			schedaPatologia: "255",
 			scheda: 52,
 			apparato: 5
 		},
-		{
+		"184": {
 			NomePatologia: "Preparación/ayuda al parto",
 			schedaPatologia: "256",
 			scheda: 56,
 			apparato: 5
 		},
-		{
+		"185": {
 			NomePatologia: "Programa antitabaco clásico de Nogier",
 			schedaPatologia: "257",
 			scheda: 100,
 			apparato: 11
 		},
-		{
+		"186": {
 			NomePatologia: "Programa antitabaco de G. Rossato",
 			schedaPatologia: "258",
 			scheda: 101,
 			apparato: 11
 		},
-		{
+		"187": {
 			NomePatologia: "Programa antitabaco de A. Lovato",
 			schedaPatologia: "259",
 			scheda: 102,
 			apparato: 11
 		},
-		{
+		"188": {
 			NomePatologia: "Protocolo NADA para adicciones",
 			schedaPatologia: "260",
 			scheda: 103,
 			apparato: 11
 		},
-		{
+		"189": {
 			NomePatologia: "Psoriasis",
 			schedaPatologia: "099",
 			scheda: 93,
 			apparato: 9
 		},
-		{
+		"190": {
 			NomePatologia: "Radicolopatía cervical",
 			schedaPatologia: "261",
 			scheda: 17,
 			apparato: 1
 		},
-		{
+		"191": {
 			NomePatologia: "Radicolopatía lumbosacral",
 			schedaPatologia: "262",
 			scheda: 19,
 			apparato: 1
 		},
-		{
+		"192": {
 			NomePatologia: "Reflujo gastroesofágico",
 			schedaPatologia: "263",
 			scheda: 67,
 			apparato: 6
 		},
-		{
+		"193": {
 			NomePatologia: "Reumatismo extraarticular no inflamatorio de etiología incierta",
 			schedaPatologia: "264",
 			scheda: 37,
 			apparato: 3
 		},
-		{
+		"194": {
 			NomePatologia: "Rinitis aguda",
 			schedaPatologia: "101",
 			scheda: 83,
 			apparato: 8
 		},
-		{
+		"195": {
 			NomePatologia: "Rinitis alérgica",
 			schedaPatologia: "105",
 			scheda: 83,
 			apparato: 8
 		},
-		{
+		"196": {
 			NomePatologia: "Rinitis catarral crónica",
 			schedaPatologia: "265",
 			scheda: 84,
 			apparato: 8
 		},
-		{
+		"197": {
 			NomePatologia: "Rinitis crónica",
 			schedaPatologia: "266",
 			scheda: 84,
 			apparato: 8
 		},
-		{
+		"198": {
 			NomePatologia: "Rinitis vasomotora",
 			schedaPatologia: "267",
 			scheda: 84,
 			apparato: 8
 		},
-		{
+		"199": {
 			NomePatologia: "Retención urinaria",
 			schedaPatologia: "106",
 			scheda: 63,
 			apparato: 5
 		},
-		{
+		"200": {
 			NomePatologia: "Rosácea",
 			schedaPatologia: "268",
 			scheda: 94,
 			apparato: 9
 		},
-		{
+		"201": {
 			NomePatologia: "Ciática",
 			schedaPatologia: "070",
 			scheda: 19,
 			apparato: 1
 		},
-		{
-			NomePatologia: "Esclerosis múltiple",
-			schedaPatologia: "269",
-			scheda: 40,
-			apparato: 3
-		},
-		{
+		"203": {
 			NomePatologia: "Esclerosis diseminada",
 			schedaPatologia: "269",
 			scheda: 40,
 			apparato: 3
 		},
-		{
+		"204": {
+			NomePatologia: "Esclerosis múltiple",
+			schedaPatologia: "269",
+			scheda: 40,
+			apparato: 3
+		},
+		"205": {
 			NomePatologia: "Síndrome de ansiedad",
 			schedaPatologia: "011",
 			scheda: 42,
 			apparato: 4
 		},
-		{
+		"206": {
 			NomePatologia: "Síndrome cervicobraquial",
 			schedaPatologia: "154",
 			scheda: 17,
 			apparato: 1
 		},
-		{
+		"207": {
 			NomePatologia: "Síndrome climatérico",
 			schedaPatologia: "270",
 			scheda: 52,
 			apparato: 5
 		},
-		{
+		"208": {
+			NomePatologia: "Síndrome de dolor regional complejo (SDRC)",
+			schedaPatologia: "164",
+			scheda: 35,
+			apparato: 3
+		},
+		"209": {
 			NomePatologia: "Síndrome de sensibilización central",
 			schedaPatologia: "271",
 			scheda: 37,
 			apparato: 6
 		},
-		{
+		"210": {
 			NomePatologia: "Síndrome del intestino irritable",
 			schedaPatologia: "082",
 			scheda: 69,
 			apparato: 6
 		},
-		{
+		"211": {
 			NomePatologia: "Túnel carpiano",
 			schedaPatologia: "272",
 			scheda: 18,
 			apparato: 1
 		},
-		{
+		"212": {
 			NomePatologia: "Síndrome depresivo",
 			schedaPatologia: "034",
 			scheda: 45,
 			apparato: 4
 		},
-		{
+		"213": {
 			NomePatologia: "Síndrome extrapiramidal",
 			schedaPatologia: "223",
 			scheda: 39,
 			apparato: 3
 		},
-		{
+		"215": {
 			NomePatologia: "Síndrome miofascial",
 			schedaPatologia: "274",
 			scheda: 9,
 			apparato: 1
 		},
-		{
+		"216": {
 			NomePatologia: "Síndrome premenstrual",
 			schedaPatologia: "273",
 			scheda: 53,
 			apparato: 5
 		},
-		{
+		"217": {
 			NomePatologia: "Sinusitis",
 			schedaPatologia: "114",
 			scheda: 26,
 			apparato: 2
 		},
-		{
+		"218": {
 			NomePatologia: "Sobrepeso/obesidad y trastornos alimentarios",
 			schedaPatologia: "229",
 			scheda: 47,
 			apparato: 5
 		},
-		{
+		"219": {
 			NomePatologia: "Hombro congelado",
 			schedaPatologia: "151",
 			scheda: 11,
 			apparato: 1
 		},
-		{
+		"220": {
 			NomePatologia: "Espasmo hemifacial funcional",
 			schedaPatologia: "275",
 			scheda: 29,
 			apparato: 2
 		},
-		{
+		"221": {
 			NomePatologia: "Espondiloartrosis de la columna lumbosacra",
 			schedaPatologia: "276",
 			scheda: 4,
 			apparato: 1
 		},
-		{
+		"222": {
 			NomePatologia: "Estado de ansiedad",
 			schedaPatologia: "011",
 			scheda: 42,
 			apparato: 4
 		},
-		{
+		"223": {
 			NomePatologia: "Estreñimiento",
 			schedaPatologia: "032",
 			scheda: 70,
 			apparato: 6
 		},
-		{
+		"224": {
 			NomePatologia: "Infertilidad de pareja",
 			schedaPatologia: "065",
 			scheda: 57,
 			apparato: 5
 		},
-		{
+		"225": {
 			NomePatologia: "Estrés",
 			schedaPatologia: "277",
 			scheda: 44,
 			apparato: 4
 		},
-		{
+		"226": {
 			NomePatologia: "Stroke",
 			schedaPatologia: "062",
 			scheda: 41,
 			apparato: 3
 		},
-		{
+		"227": {
 			NomePatologia: "Taquicardia, bradicardia y palpitaciones",
 			schedaPatologia: "090",
 			scheda: 76,
 			apparato: 7
 		},
-		{
+		"228": {
 			NomePatologia: "Tendinitis del manguito de los rotadores",
 			schedaPatologia: "278",
 			scheda: 11,
 			apparato: 1
 		},
-		{
+		"229": {
 			NomePatologia: "Tic facial",
 			schedaPatologia: "279",
 			scheda: 29,
 			apparato: 2
 		},
-		{
+		"220": {
 			NomePatologia: "Tinnitus",
 			schedaPatologia: "001",
 			scheda: 79,
 			apparato: 8
 		},
-		{
+		"231": {
 			NomePatologia: "Tireotoxicosis",
 			schedaPatologia: "280",
 			scheda: 48,
 			apparato: 5
 		},
-		{
+		"232": {
 			NomePatologia: "Tiroiditis autoinmune",
 			schedaPatologia: "123",
 			scheda: 48,
 			apparato: 5
 		},
-		{
+		"233": {
 			NomePatologia: "Tiroiditis de Hashimoto",
 			schedaPatologia: "123",
 			scheda: 48,
 			apparato: 5
 		},
-		{
+		"234": {
 			NomePatologia: "Síndrome del túnel carpiano",
 			schedaPatologia: "272",
 			scheda: 18,
 			apparato: 1
 		},
-		{
+		"235": {
 			NomePatologia: "Vértigo central",
 			schedaPatologia: "281",
 			scheda: 80,
 			apparato: 8
 		},
-		{
+		"236": {
 			NomePatologia: "Vértigo periférico",
 			schedaPatologia: "282",
 			scheda: 81,
 			apparato: 8
 		},
-		{
+		"237": {
 			NomePatologia: "Vértigo posicional benigno (VPB)",
 			schedaPatologia: "283",
 			scheda: 81,
 			apparato: 8
 		},
-		{
+		"238": {
 			NomePatologia: "Vómito",
 			schedaPatologia: "224",
 			scheda: 68,
 			apparato: 6
 		},
-		{
+		"239": {
 			NomePatologia: "Vómito en el embarazo",
 			schedaPatologia: "284",
 			scheda: 55,
 			apparato: 5
 		}
-	],
+	},
     teoria: [
         { // anatomia dell'orecchio
             TitoloSezione: "El pabellón auricular",
