@@ -36,7 +36,7 @@ var MODULO_PATOLOGIE = { // extend SET
 							mas = false,
 							cin = false;
 						try{ 
-							regexp = /\[\.[0-9]{1,2}\.[A-Z]{2}\.\]/ig;
+							regexp = /\[\.[0-9]{1,2}\.[A-Z]{2}[\.*]+\]/ig;
 							pts = schedaMtc.scheda.match(regexp);
 							if(pts.length){
 								for(let n in pts){

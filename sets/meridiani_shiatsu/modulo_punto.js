@@ -401,16 +401,19 @@ var MODULO_PUNTO = { // extend SET
 			el = {
 				nPunto: '',
 				siglaMeridiano: '',
-				valutazione: ''
+				valutazione: '',
+				pinyin: ''
 			};
 		Filtro = /[0-9]{1,2}/;
 		if (Filtro.test(pP[0]))el.nPunto = pP[0];
 		if (Filtro.test(pP[1]))el.nPunto = pP[1];
+		if(el.nPunto.length == 1)el.nPunto = "0"+el.nPunto;
 		Filtro = /[A-Z]{2}/;
 		if (Filtro.test(pP[0]))el.siglaMeridiano = pP[0];
 		if (Filtro.test(pP[1]))el.siglaMeridiano = pP[1];
-		if(el.nPunto.length == 1)el.nPunto = "0"+el.nPunto;
-		el.valutazione = __(pP[2],'');
+		let contr = __(pP[2],'')
+		if(contr!='*')el.valutazione = contr;
+		else el.pinyin = DB.mtc.meridiani[el.siglaMeridiano].punti[el.nPunto].pinyin;
 		return el;
 	},
 	speachName: function( txt ){

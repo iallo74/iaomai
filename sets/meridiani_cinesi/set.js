@@ -1032,13 +1032,16 @@ SET = {
 		if(noPall)pallClass += ' pallinoPunto';
 		var nScheda = '';
 		if(SCHEDA.scheda2Aperta)nScheda='2';
-		var regexp = /\[\.[0-9]{1,2}\.[A-Z]{2}\.\]/ig;
+		var regexp = /\[\.[0-9]{1,2}\.[A-Z]{2}[\.*]+\]/ig;
 		var pts = html.match(regexp);
 		for(let p in pts){
-			var pp = SET.splitPoint(pts[p].replace("[.","").replace(".]",""));
+			var pp = SET.splitPoint(pts[p].substr(2,pts[p].length-2));
 			var n_M = SET.convSigla(pp.siglaMeridiano);
 			var addClick = (noPall)?'return':'';
-			html = html.replace(pts[p], '<span class="'+pallClass+'" data-n-punto="'+pp.nPunto+'" data-sigla-meridiano="'+pp.siglaMeridiano+'" onClick="'+addClick+'SET.selPunto(\''+pp.nPunto+'\',\''+pp.siglaMeridiano+'\');">'+ +pp.nPunto+'.'+n_M+'</span>');
+			let sost = '<span class="'+pallClass+'" data-n-punto="'+pp.nPunto+'" data-sigla-meridiano="'+pp.siglaMeridiano+'" onClick="'+addClick+'SET.selPunto(\''+pp.nPunto+'\',\''+pp.siglaMeridiano+'\');">'+ +pp.nPunto+'.'+n_M;
+			if(__(pp.pinyin))sost += ' <i>'+pp.pinyin+'</i>';
+			sost += '</span>'
+			html = html.replace(pts[p], sost);
 		}
 		var regexp = /\[\.[A-Z]{2}\.\]/ig;
 		var pts = html.match(regexp);
