@@ -908,7 +908,7 @@ SET = {
 	},
 	scriviPunto: function( punto, esteso=false, noRet=false, sigla=false, siglaMeridiano=false ){
 		var pp = SET.splitPoint(punto);
-		var siglaPunto = pp.nPunto+"."+pp.siglaMeridiano;
+		var siglaPunto = +pp.nPunto+"."+pp.siglaMeridiano;
 		var nomePunto = punto.substr(siglaPunto.length+1,Object.keys(punto).length-(siglaPunto.length+1));
 		if(sigla)siglaPunto = sigla;
 		if(siglaMeridiano=='NK')siglaPunto = '';

@@ -4,7 +4,6 @@ var MODULO_MERIDIANI = { // extend SET
 	MERIDIANI_free: [ "LR" ],
 	
 	componiMeridiani: function(){
-		let pattern = /[0-9]{1,2}\.[A-Z]{2}\.\s[^\(]+\(([^\)]+)\)/g;
 		for(let m in DB.set.meridiani){
 			if(m!='NK'){
 				for(let p in DB.set.meridiani[m].punti){
@@ -12,7 +11,7 @@ var MODULO_MERIDIANI = { // extend SET
 					DB.set.meridiani[m].punti[p].NomePunto = 
 						+p + "." + m + ". " +
 						DB.mtc.meridiani[m].punti[p].pinyin + " (" +
-						DB.set.meridiani[m].punti[p].NomePunto.replace(pattern,'$1') + ")";
+						DB.set.meridiani[m].punti[p].NomePunto + ")";
 
 					DB.set.meridiani[m].punti[p].ChiaviPunto += ' '+DB.mtc.meridiani[m].punti[p].pinyin +
 																' '+m+"."+p +
@@ -43,7 +42,7 @@ var MODULO_MERIDIANI = { // extend SET
 				var addLock =	(!SET.verFreeMeridiani(m)) ? ' lockedItem' : '';
 				// --------------------------
 				
-				if(n==2 || n==4 || n==6 || n==8 || n==10 || n==12 || n==14){
+				if(m=='KI' || m=='LR' || m=='SP' || m=='HT' || m=='PC' || m=='LU' || m=='CV'){
 					addClass = ' spazioDopo';
 					addClassEl = ' spazioPrima';
 				}
@@ -59,7 +58,6 @@ var MODULO_MERIDIANI = { // extend SET
 					keys = 	Object.keys(myObj),
 					len = keys.length;
 				keys.sort();		
-				//for(let s in DB.set.meridiani[m].punti){
 				for (let i=0; i<len; i++) {	
 					let nPunto = keys[i];
 					var TS = DB.set.meridiani[m].punti[nPunto];
