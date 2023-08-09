@@ -683,7 +683,7 @@ DB.set = {
 			TitoloSezione: "Video Resources",
 			contenuti: [
 				{
-					TitoloTeoria: "Cigar lighting[video]preparazione_sigaro",
+					TitoloTeoria: "Roll lighting[video]preparazione_sigaro",
 					TestoTeoria: "video=preparazione_sigaro"
 				}, 
 				{
@@ -699,7 +699,7 @@ DB.set = {
 					TestoTeoria: "video=preparazione_zenzero"
 				}, 
 				{
-					TitoloTeoria: "Direct moxa with cigar[video]diretta_sigaro",
+					TitoloTeoria: "Direct moxa with roll[video]diretta_sigaro",
 					TestoTeoria: "video=diretta_sigaro"
 				}, 
 				{

@@ -179,6 +179,15 @@ SET.MAT = {
 		opacity: 0.2,
 		visible: false
 	}),
+	pointSel2NK: new THREE.MeshStandardMaterial( {
+		side: 3,
+		color: 0xFFFFFF, /* COLsel, */
+		roughness:1,
+		transparent: true,
+		blending: 2,
+		opacity: 0.1,
+		visible: false
+	}),
 	pointEvi: new THREE.MeshStandardMaterial( {
 		color: SET.COL.eviPT,
 		emissive: SET.COL.eviPTemissive,

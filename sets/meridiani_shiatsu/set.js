@@ -12,6 +12,7 @@ SET = {
 	time: 0,
 	pulse: 1,
 	ptSel: null,
+	grSel: '',
 	eviPoint1: '',
 	eviPoint2: '',
 	diffX: 0,
@@ -155,16 +156,30 @@ SET = {
 						var x=PTS[p].array[0];
 						var y=PTS[p].array[1];
 						var z=PTS[p].array[2];
-						var pN = PTS[p].nome.split(".");
-						var N = pN[1];
 						
-						var nome = PTS[p].nome.split(" ")[0];
+						var pG = PTS[p].nome.split(" ");
+						var nome = pG[0];
+						var pN = nome.split(".");
+						
+						var gruppi = [];
+						var pattern = /\[[a-z]\]/g;
+						if(pG.length>1){
+							for(let g=1;g<pG.length;g++){
+								if(pattern.test(pG[g])){
+									gruppi.push(pG[g].substr(1,1));
+								}
+							}
+						}
+						if(nome.indexOf('.CC')>-1)gruppi.push("x"); // centrale
+						if(nome.indexOf('.SX')>-1)gruppi.push("y"); // sinistra
+						if(nome.indexOf('.DX')>-1)gruppi.push("z"); // destra
 						if((pN[0]=='GV' || pN[0]=='CV') && nome.substr(nome.length-1,1)!='.')nome += '.CC';
 						// pallino colorato
 						n++;
 						this.P[n] = new THREE.Mesh( this.geometryPallino, this.MAT.pointBase );
 						this.P[n].position.set(x,y,z);
 						this.P[n].name=nome;
+						this.P[n].userData.gruppi=gruppi;
 						this.P[n].userData.hidden = __(PTS[p].hidden,false);
 						this.P[n].visible = !__(PTS[p].hidden,false);
 						this.PT[m].add( this.P[n] );
@@ -174,6 +189,7 @@ SET = {
 						this.P[n] = new THREE.Mesh( this.geometryPallinoTrasp, this.MAT.pointTrasp ); 
 						this.P[n].position.set(x,y,z);
 						this.P[n].name='_'+nome
+						this.P[n].userData.gruppi=gruppi;
 						this.P[n].userData.raycastable = true;
 						this.PT[m].add( this.P[n] );
 					}
@@ -472,7 +488,8 @@ SET = {
 		var pp = SET.splitPoint(pt.name);
 		var els = scene.getObjectByName("PT_"+pp.siglaMeridiano).children;
 		for(e in els){
-			if(els[e].name.indexOf(pp.siglaMeridiano+"."+pp.nPunto+".")==0){
+			if(	els[e].name.indexOf(pp.siglaMeridiano+"."+pp.nPunto+".")==0 && 
+				SET.isInGruppo(els[e]) ){
 				els[e].scale.set(pulse,pulse,pulse);
 				if(mat)els[e].material=mat;
 			}
@@ -545,7 +562,15 @@ SET = {
 		controlsM.yIni=-1;
 		controlsM.yEnd=-1;
 	},
-	apriPunto: function( PT_name, ritorno='', el='' ){
+	isInGruppo: function( el ){
+		if(!SET.grSel)return false;
+		let ret = true;
+		for(let e=0;e<SET.grSel.length;e++){
+			if(el.userData.gruppi.indexOf(SET.grSel[e])===-1)ret = false;
+		}
+		return ret;
+	},
+	apriPunto: function( PT_name, ritorno='', el='', gruppo='' ){
 		if(localStorage.sistemaMeridiani=='MAS'){
 			var sm = '';
 			if(PT_name.substr(0,2)=='NK')sm = 'NMK';
@@ -576,7 +601,8 @@ SET = {
 		}else PT=scene.getObjectByName( PT_name );
 
 		if(this.ptSel && !SCHEDA.schedaAperta)this.chiudiPunto();
-		this.ptSel=PT;
+		this.ptSel = PT;
+		this.grSel = gruppo;
 		var pp = SET.splitPoint(this.ptSel.name.substr(0,5));
 		
 		if(!ritorno)this.accendiMeridiano(pp.siglaMeridiano);
@@ -590,7 +616,8 @@ SET = {
 		
 		var els = scene.getObjectByName("PT_"+pp.siglaMeridiano).children;
 		for(e in els){
-			if(els[e].name.indexOf(pp.siglaMeridiano+"."+pp.nPunto+".")==0)els[e].material=mat;
+			if(	els[e].name.indexOf(pp.siglaMeridiano+"."+pp.nPunto+".")==0 &&
+				(!gruppo || SET.isInGruppo(els[e])) )els[e].material=mat;
 		}
 		if(frs = scene.getObjectByName("FR_"+pp.siglaMeridiano)){
 			var els = frs.children;
@@ -909,6 +936,7 @@ SET = {
 	scriviPunto: function( punto, esteso=false, noRet=false, sigla=false, siglaMeridiano=false ){
 		var pp = SET.splitPoint(punto);
 		var siglaPunto = +pp.nPunto+"."+pp.siglaMeridiano;
+		if(pp.siglaMeridiano=='NK')siglaPunto = pp.nPunto+"."+pp.siglaMeridiano;
 		var nomePunto = punto.substr(siglaPunto.length+1,Object.keys(punto).length-(siglaPunto.length+1));
 		if(sigla)siglaPunto = sigla;
 		if(siglaMeridiano=='NK')siglaPunto = '';
@@ -1378,10 +1406,19 @@ SET = {
 		if(!scene.getObjectByName("PT_"+siglaMeridiano))return;
 		var els = scene.getObjectByName("PT_"+siglaMeridiano).children;
 		for(e in els){
-			if(els[e].name.indexOf(siglaMeridiano+"."+nPunto+".")==0){
-				var geoPoint =  new THREE.SphereGeometry( 0.11, 16, 16 );
+			if(	els[e].name.indexOf(siglaMeridiano+"."+nPunto+".")==0 && 
+				(SET.isInGruppo(els[e]) || !SET.grSel) ){
+
+
+				let d = 16;
+				let mat = this.MAT.pointSel2.clone();
+				if(siglaMeridiano=='NK' && tipo=='Select'){
+					d = 10;
+					mat = this.MAT.pointSel2NK.clone();
+				}
+				var geoPoint =  new THREE.SphereGeometry( 0.11, d, d );
 				var eviPoint;
-				eviPoint =  new THREE.Mesh( geoPoint, this.MAT.pointSel2.clone() );
+				eviPoint =  new THREE.Mesh( geoPoint, mat );
 				eviPoint.name=tipo+' point: '+els[e].name;
 				eviPoint.material.visible=true;
 				eviPoint.position.set( els[e].position.x, els[e].position.y, els[e].position.z );
