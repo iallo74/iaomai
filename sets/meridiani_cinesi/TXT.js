@@ -119,6 +119,14 @@ DB.TXT.set = {
         por: "Buscar uma patologia...",
         deu: "Suche nach einer Pathologie..."
     },
+    Apparati: {
+        ita: "Categorie",
+        eng: "Categories",
+        esp: "Categorías",
+        fra: "Catégories",
+        por: "Categorias",
+        deu: "Kategorien"
+    },
     MeridianiTradizionali: {
         ita: "Mappa dei punti",
         eng: "Points Map",
@@ -160,7 +168,7 @@ DB.TXT.set = {
         deu: "Prozedur hinzufügen"
     },
     ProcedureErrore: {
-        ita: "Si è verificato un errore nella lettura delle procedure. Ti preghiamo di riprovare più tardi.",
+        ita: "Si è verificato un errore nel download delle procedure. Ti preghiamo di riprovare più tardi.",
         eng: "We're sorry, an error occurred with procedure download. Please try later.",
         esp: "Lo sentimos, ocurrió un error al descargar el procedimiento. Por favor, inténtalo más tarde.",
         fra: "Désolé, une erreur s'est produite lors du téléchargement de la procédure. Veuillez réessayer ultérieurement.",
@@ -232,8 +240,8 @@ DB.TXT.set = {
         deu: "Punkte"
     },
     Titoletto: {
-        ita: "Titoletto",
-        eng: "Title",
+        ita: "Titolo",
+        eng: "Heading",
         esp: "Título",
         fra: "Titre",
         por: "Título",
@@ -272,13 +280,13 @@ DB.TXT.set = {
         deu: "Prozedur bearbeiten"
     },
     NomeProcedura: {
-        ita: "Titolo",
-        eng: "Title",
-        esp: "Título",
-        fra: "Titre",
-        por: "Título",
-        deu: "Titel"
-    },
+		ita: "Nome della procedura",
+		eng: "Procedure name",
+		esp: "Nombre del procedimiento",
+		fra: "Nom de la procédure",
+		por: "Nome do procedimento",
+		deu: "Verfahrensname"
+	},
     Procedura: {
         ita: "Procedura",
         eng: "Procedure",
@@ -385,7 +393,7 @@ DB.TXT.set = {
     },
     NoComm: {
         ita: "Nessun commento",
-        eng: "No comment",
+        eng: "No comments",
         esp: "Sin comentarios",
         fra: "Aucun commentaire",
         por: "Sem comentários",

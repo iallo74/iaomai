@@ -176,6 +176,14 @@ DB.TXT.set = {
 		por: "Meridianos",
 		deu: "Meridiane"
 	},
+    Apparati: {
+        ita: "Categorie",
+        eng: "Categories",
+        esp: "Categorías",
+        fra: "Catégories",
+        por: "Categorias",
+        deu: "Kategorien"
+    },
 	MappaPunti: {
 		ita: "Mappa dei punti",
 		eng: "Points Map",

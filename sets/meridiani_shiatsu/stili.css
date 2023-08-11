@@ -931,9 +931,12 @@ body.smart #elenchi #cambioSistemaMeridiani{
 }
 
 
-.listaPatologie.onlyNMK > div:not(.patsNMK),
-.listaPatologie.onlyMAS > div:not(.patsMAS),
-.listaPatologie.onlyCIN > div:not(.patsCIN){
+.listaPatologie.onlyNMK > div:not(.cartella):not(.patsNMK),
+.listaPatologie.onlyMAS > div:not(.cartella):not(.patsMAS),
+.listaPatologie.onlyCIN > div:not(.cartella):not(.patsCIN),
+.listaPatologie.onlyNMK > div.cartella > div > div:not(.patsNMK),
+.listaPatologie.onlyMAS > div.cartella > div > div:not(.patsMAS),
+.listaPatologie.onlyCIN > div.cartella > div > div:not(.patsCIN){
 	display:none !important;
 }
 
@@ -1034,4 +1037,39 @@ body.smart #elenchi #cambioSistemaMeridiani{
 }
 .only_meridiani_cinesi{
 	display:none;
+}
+
+
+#add_pat{
+	padding-right:4px !important;
+}
+#pat_ricerca,
+#labelApparati{
+    width: calc(var(--menu-width) - 44px);
+}
+#labelApparati{
+	display: inline-block;
+    vertical-align: middle;
+    height: 26px;
+    line-height: 26px;
+    font-size: var(--font-17-6);
+    text-align: left;
+    padding-left: 6px;
+}
+#categoryBtn{
+    width: 28px;
+    height: 28px;
+	margin:1px;
+	display:inline-block;
+	vertical-align:middle;
+	cursor:pointer;
+	border-left:1px solid rgba(0,0,0,0.2);
+	background-position:center center;
+	background-repeat:no-repeat;
+}
+#add_pat.category #categoryBtn{
+	background-image:url(../../img/ico_list.png);
+}
+#add_pat:not(.category) #categoryBtn{
+	background-image:url(../../img/ico_category.png);
 }

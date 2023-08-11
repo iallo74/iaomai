@@ -78,6 +78,7 @@ var MODULO_PATOLOGIE = { // extend SET
 					TestoPatologia += '<b>'+TXT("Consigli")+'</b><br>'+DB_patologie[p].consigli;
 				}
 				let nomi = clone(DB_patologie[p].nomi);
+				let categoria = DB_patologie[p].categoria;
 				for(let n in nomi){
 					sinonimi = clone(nomi);
 					TestoSinonimi = '';
@@ -91,6 +92,7 @@ var MODULO_PATOLOGIE = { // extend SET
 					DB.set.patologie.push({
 						NomePatologia: nomi[n],
 						sinonimi: sinonimi,
+						categoria: categoria,
 						siglaPatologia: p,
 						evi: (p=='1000')?"1":"0",
 						TestoPatologia: TestoSinonimi+TestoPatologia,
@@ -108,49 +110,77 @@ var MODULO_PATOLOGIE = { // extend SET
 	caricaPatologie: function(){
 		// carica la lista delle patologie
 		var contPatologie = 
-						'<div id="sistemaMeridiani_pats"></div>' +
-						'<div id="add_pat">'+
-						'	<input id="pat_ricerca"' +
-						'		   onKeyUp="SET.filtraPatologie();"' +
-						'		   class="okPlaceHolder"' +
-						'		   placeholder="'+htmlEntities(TXT("CercaPatologia"))+'"'+H.noAutoGen+'>' +
-						'</div>' +
-						'<div class="lista listaPatologie">';
-		for(let p in DB.set.patologie){
-			
-			var nmk = false;
-			var mas = false;
-			var cin = false;
-			
-
-
-			
-			if(DB.set.patologie[p].TestoPatologia.indexOf('data-sistema="NMK"')>-1)nmk = true;
-			if(DB.set.patologie[p].TestoPatologia.indexOf('data-sistema=""')>-1)cin = true;
-			try{ 
-				regexp = /\[\.[A-Z]{2}\.\]/ig;
-				pts = DB.set.patologie[p].TestoPatologia.match(regexp);
-				if(pts.length)mas = true;
-			}catch(err){}
-			
-			var addSys = '';
-			if(nmk)addSys += ' patsNMK';
-			if(mas)addSys += ' patsMAS';
-			if(cin)addSys += ' patsCIN';
-			
-			// verifico le autorizzazioni
-			var addLock =	(!SET.verFreePatologia(DB.set.patologie[p].siglaPatologia)) ? ' lockedItem' : '';
-			// --------------------------
-			
-			if(__(DB.set.patologie[p].evi)=='1')addSys += " patEvi";
-			contPatologie +=	'<div id="btn_patologia_'+p+'"' +
-								'     class="base'+addLock+addSys+'"' +
-								'     onClick="SET.apriPatologia(\''+p+'\',this);">' +
-									DB.set.patologie[p].NomePatologia +
-								'</div>';
+					'<div id="sistemaMeridiani_pats"></div>' +
+					'<div id="add_pat"' +
+					((__(localStorage.listPatType)=='category')?' class="category"':'') +
+					'>';
+		if(__(localStorage.listPatType)!='category'){
+		contPatologie +=
+					'	<input id="pat_ricerca"' +
+					'		   onKeyUp="SET.filtraPatologie();"' +
+					'		   class="okPlaceHolder"' +
+					'		   placeholder="'+htmlEntities(TXT("CercaPatologia"))+'"'+H.noAutoGen+'>';
+		}else{
+		contPatologie +=
+					'	<span id="labelApparati">'+TXT("Apparati")+'</span>';
 		}
-		contPatologie += '</div>';
+		contPatologie +=	'	<span id="categoryBtn" onClick="SET.swListType();"></span>' +
+							'</div>' +
+							'<div class="lista listaPatologie">';
+
+		let elenco = [1];
+		if(__(localStorage.listPatType)=='category')elenco = clone(DB_categorie_patologie);
+		for(a in elenco){
+			let vuota = true;
+			let contCartella = 	'';
+			if(__(localStorage.listPatType)=='category')contCartella = 	
+				'<div class="cartella" onTouchStart="SCHEDA.setCartella(this);">' +
+				'	<span id="btn_apparati_cart_'+a+'" onClick="SCHEDA.swCartella(this);">' +
+				DB_categorie_patologie[a] +
+				'	</span>' +
+				'	<div>';
+							
+			for(let p in DB.set.patologie){
+				if(DB.set.patologie[p].categoria == a || __(localStorage.listPatType)!='category'){	
+					var nmk = false;
+					var mas = false;
+					var cin = false;
+					
+
+
+					
+					if(DB.set.patologie[p].TestoPatologia.indexOf('data-sistema="NMK"')>-1)nmk = true;
+					if(DB.set.patologie[p].TestoPatologia.indexOf('data-sistema=""')>-1)cin = true;
+					try{ 
+						regexp = /\[\.[A-Z]{2}\.\]/ig;
+						pts = DB.set.patologie[p].TestoPatologia.match(regexp);
+						if(pts.length)mas = true;
+					}catch(err){}
+					
+					var addSys = '';
+					if(nmk)addSys += ' patsNMK';
+					if(mas)addSys += ' patsMAS';
+					if(cin)addSys += ' patsCIN';
+					
+					// verifico le autorizzazioni
+					var addLock =	(!SET.verFreePatologia(DB.set.patologie[p].siglaPatologia)) ? ' lockedItem' : '';
+					// --------------------------
+					
+					vuota = false;
+					if(__(DB.set.patologie[p].evi)=='1')addSys += " patEvi";
+					contCartella +=	'<div id="btn_patologia_'+p+'"' +
+										'     class="'+((__(localStorage.listPatType)=='category')?'cart_els':'base')+' '+addLock+addSys+'"' +
+										'     onClick="SET.apriPatologia(\''+p+'\',this);">' +
+											DB.set.patologie[p].NomePatologia +
+										'</div>';
+				}
+			}
+			contCartella += '</div>';
+			if(__(localStorage.listPatType)=='category')contCartella += '</div>';
+			if(!vuota)contPatologie += contCartella;
+		}
 		document.getElementById("lista_patologie").innerHTML = contPatologie;
+		SET.caricaMeridiani();
 	},
 	apriPatologia: function( n, btn ){
 		// apre la scheda della patologia
@@ -221,6 +251,11 @@ var MODULO_PATOLOGIE = { // extend SET
 		}
 		if(parola)document.getElementById("pat_ricerca").classList.add("filtro_attivo");
 		else document.getElementById("pat_ricerca").classList.remove("filtro_attivo");
+	},
+	swListType: function(){
+		if(__(localStorage.listPatType)!='category')localStorage.listPatType = 'category';
+		else localStorage.listPatType = 'list';
+		SET.caricaPatologie();
 	},
 	azRicercaPatologie: function( p ){
 		// apre una patologia della ricerca globale

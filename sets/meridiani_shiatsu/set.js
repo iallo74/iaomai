@@ -289,7 +289,7 @@ SET = {
 		
 		manichinoCaricato = true;
 		SET.componiPatologie();
-		SET.componiMeridiani();
+		//SET.componiMeridiani();
 		SET.caricaApprofondimenti();
 		if(DB.procedure)SET.car_procedure(-1,1);
 		
