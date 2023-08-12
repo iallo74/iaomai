@@ -1046,35 +1046,35 @@ DB.set = {
 	},
 	schede: {
 		1: {
-			"g": {
-				"dp": {
-					"p": [
+			g: {
+				dp: {
+					p: [
 						"003",
 						"268",
 						"155"
 					]
 				},
-				"ds": {
-					"p": [
+				ds: {
+					p: [
 						"180"
 					]
 				},
-				"np": {
-					"p": [
+				np: {
+					p: [
 						"000",
 						"001"
 					]
 				},
-				"ns": {
-					"p": [
+				ns: {
+					p: [
 						"192"
 					]
 				},
 			},
-			"s": [
+			s: [
 				{
-					"t": "Infiammazione",
-					"p": [
+					t: "Infiammazione",
+					p: [
 						"165",
 						"026",
 						{
@@ -1089,14 +1089,14 @@ DB.set = {
 					]
 				},
 				{
-					"t": "Contrattura muscolare",
-					"p": [
+					t: "Contrattura muscolare",
+					p: [
 						"124"
 					]
 				},
 				{
-					"t": "Componente ansiosa",
-					"p": [
+					t: "Componente ansiosa",
+					p: [
 						{
 							t: "Triade di relax",
 							p: [
@@ -1119,8 +1119,8 @@ DB.set = {
 					]
 				},
 				{
-					"t": "Componente depressiva",
-					"p": [
+					t: "Componente depressiva",
+					p: [
 						"173",
 						"184"
 					]
@@ -1128,37 +1128,37 @@ DB.set = {
 			]
 		},
 		2: {
-			"g": {
-				"dp": {
-					"p": [
+			g: {
+				dp: {
+					p: [
 						"003",
 						["277","069"],
 						"155"
 					]
 				},
-				"ds": {
-					"p": [
+				ds: {
+					p: [
 						"268",
 						"291"
 					]
 				},
-				"np": {
-					"p": [
+				np: {
+					p: [
 						"000",
 						"001"
 					]
 				},
-				"ns": {
-					"p": [
+				ns: {
+					p: [
 						"192"
 					]
 				},
 			},
-			"s": [
+			s: [
 				{
-					"t": "Dolore unilaterale",
-					"d": "Trattare preferibilmente il padiglione omolaterale al dolore",
-					"p": [
+					t: "Dolore unilaterale",
+					d: "Trattare preferibilmente il padiglione omolaterale al dolore",
+					p: [
 						"003",
 						"291",
 						"120",
@@ -1166,8 +1166,8 @@ DB.set = {
 					]
 				},
 				{
-					"t": "Contrattura muscolare",
-					"p": [
+					t: "Contrattura muscolare",
+					p: [
 						"124",
 						"285",
 						"288"
@@ -1176,38 +1176,38 @@ DB.set = {
 			]
 		},
 		3: {
-			"g": {
-				"dp": {
-					"p": [
+			g: {
+				dp: {
+					p: [
 						"003",
 						["278","070"],
 						"155"
 					]
 				},
-				"ds": {
-					"p": [
+				ds: {
+					p: [
 						"268",
 						"291",
 						"260"
 					]
 				},
-				"np": {
-					"p": [
+				np: {
+					p: [
 						"000",
 						"001"
 					]
 				},
-				"ns": {
-					"p": [
+				ns: {
+					p: [
 						"192"
 					]
 				},
 			},
-			"s": [
+			s: [
 				{
-					"t": "Dolore unilaterale",
-					"d": "Trattare preferibilmente il padiglione omolaterale al dolore",
-					"p": [
+					t: "Dolore unilaterale",
+					d: "Trattare preferibilmente il padiglione omolaterale al dolore",
+					p: [
 						"003",
 						"291",
 						"260",
@@ -1215,8 +1215,8 @@ DB.set = {
 					]
 				},
 				{
-					"t": "Contrattura muscolare",
-					"p": [
+					t: "Contrattura muscolare",
+					p: [
 						"124",
 						"286",
 						"289"
@@ -1225,40 +1225,40 @@ DB.set = {
 			]
 		},
 		4: {
-			"g": {
-				"dp": {
-					"p": [
+			g: {
+				dp: {
+					p: [
 						"003",
 						["279","071"],
 						"072",
 						"155"
 					]
 				},
-				"ds": {
-					"p": [
+				ds: {
+					p: [
 						"268",
 						"067",
 						"261"
 					]
 				},
-				"np": {
-					"p": [
+				np: {
+					p: [
 						"000",
 						"001"
 					]
 				},
-				"ns": {
-					"p": [
+				ns: {
+					p: [
 						"192",
 						"199"
 					]
 				},
 			},
-			"s": [
+			s: [
 				{
-					"t": "Dolore unilaterale",
-					"d": "Trattare preferibilmente il padiglione omolaterale al dolore",
-					"p": [
+					t: "Dolore unilaterale",
+					d: "Trattare preferibilmente il padiglione omolaterale al dolore",
+					p: [
 						"003",
 						"067",
 						["279","071"],
@@ -1268,8 +1268,8 @@ DB.set = {
 					]
 				},
 				{
-					"t": "Contrattura muscolare",
-					"p": [
+					t: "Contrattura muscolare",
+					p: [
 						"124",
 						"287",
 						"282"
@@ -1278,37 +1278,37 @@ DB.set = {
 			]
 		},
 		5: {
-			"g": {
-				"dp": {
-					"p": [
+			g: {
+				dp: {
+					p: [
 						"003",
 						"124",
 						"155"
 					]
 				},
-				"ds": {
-					"p": [
+				ds: {
+					p: [
 						"222",
 						"180"
 					]
 				},
-				"np": {
-					"p": [
+				np: {
+					p: [
 						"000",
 						"001"
 					]
 				},
-				"ns": {
-					"p": [
+				ns: {
+					p: [
 						"192",
 						"199"
 					]
 				},
 			},
-			"s": [
+			s: [
 				{
-					"t": "Infiammazione",
-					"p": [
+					t: "Infiammazione",
+					p: [
 						"165",
 						"026",
 						{
@@ -1323,8 +1323,8 @@ DB.set = {
 					]
 				},
 				{
-					"t": "Componente ansiosa",
-					"p": [
+					t: "Componente ansiosa",
+					p: [
 						{
 							t: "Triade di relax",
 							p: [
@@ -1347,9 +1347,9 @@ DB.set = {
 					]
 				},
 				{
-					"t": "Dolore unilaterale",
-					"d": "Trattare preferibilmente il padiglione omolaterale al dolore",
-					"p": [
+					t: "Dolore unilaterale",
+					d: "Trattare preferibilmente il padiglione omolaterale al dolore",
+					p: [
 						"000",
 						"003",
 						"124",
@@ -1360,16 +1360,16 @@ DB.set = {
 			]
 		},
 		6: {
-			"g": {
-				"dp": {
-					"p": [
+			g: {
+				dp: {
+					p: [
 						"003",
 						"124",
 						"155"
 					]
 				},
-				"ds": {
-					"p": [
+				ds: {
+					p: [
 						"000",
 						"291",
 						"180",
@@ -1377,25 +1377,25 @@ DB.set = {
 						"288"
 					]
 				},
-				"np": {
-					"p": [
+				np: {
+					p: [
 						"000",
 						"001"
 					]
 				},
-				"ns": {
-					"p": [
+				ns: {
+					p: [
 						"192",
 						"199",
 						"222"
 					]
 				},
 			},
-			"s": [
+			s: [
 				{
-					"t": "Dolore unilaterale",
-					"d": "Trattare preferibilmente il padiglione omolaterale al dolore",
-					"p": [
+					t: "Dolore unilaterale",
+					d: "Trattare preferibilmente il padiglione omolaterale al dolore",
+					p: [
 						"000",
 						"003",
 						"291",
@@ -1407,8 +1407,8 @@ DB.set = {
 					]
 				},
 				{
-					"t": "Sindrome vertiginosa",
-					"p": [
+					t: "Sindrome vertiginosa",
+					p: [
 						{
 							t: "Linea delle vertigini",
 							p: [
@@ -1421,8 +1421,8 @@ DB.set = {
 					]
 				},
 				{
-					"t": "Dolore irradiato all'arto superiore",
-					"p": [
+					t: "Dolore irradiato all'arto superiore",
+					p: [
 						"230",
 						"148",
 						"147",
@@ -1435,41 +1435,41 @@ DB.set = {
 			]
 		},
 		7: {
-			"g": {
-				"dp": {
-					"p": [
+			g: {
+				dp: {
+					p: [
 						"003",
 						"124",
 						"155"
 					]
 				},
-				"ds": {
-					"p": [
+				ds: {
+					p: [
 						"000",
 						"180",
 						"286",
 						"289"
 					]
 				},
-				"np": {
-					"p": [
+				np: {
+					p: [
 						"000",
 						"001"
 					]
 				},
-				"ns": {
-					"p": [
+				ns: {
+					p: [
 						"192",
 						"199",
 						"222"
 					]
 				},
 			},
-			"s": [
+			s: [
 				{
-					"t": "Dolore unilaterale",
-					"d": "Trattare preferibilmente il padiglione omolaterale al dolore",
-					"p": [
+					t: "Dolore unilaterale",
+					d: "Trattare preferibilmente il padiglione omolaterale al dolore",
+					p: [
 						"000",
 						"003",
 						"286",
@@ -1482,16 +1482,16 @@ DB.set = {
 			]
 		},
 		8: {
-			"g": {
-				"dp": {
-					"p": [
+			g: {
+				dp: {
+					p: [
 						"003",
 						"124",
 						"155"
 					]
 				},
-				"ds": {
-					"p": [
+				ds: {
+					p: [
 						"000",
 						"067",
 						"180",
@@ -1500,25 +1500,25 @@ DB.set = {
 						"261"
 					]
 				},
-				"np": {
-					"p": [
+				np: {
+					p: [
 						"000",
 						"001"
 					]
 				},
-				"ns": {
-					"p": [
+				ns: {
+					p: [
 						"192",
 						"199",
 						"222"
 					]
 				},
 			},
-			"s": [
+			s: [
 				{
-					"t": "Dolore unilaterale",
-					"d": "Trattare preferibilmente il padiglione omolaterale al dolore",
-					"p": [
+					t: "Dolore unilaterale",
+					d: "Trattare preferibilmente il padiglione omolaterale al dolore",
+					p: [
 						"000",
 						"003",
 						"067",
@@ -1530,15 +1530,15 @@ DB.set = {
 					]
 				},
 				{
-					"t": "Irradiazione alle natiche",
-					"p": [
+					t: "Irradiazione alle natiche",
+					p: [
 						"058",
 						"222"
 					]
 				},
 				{
-					"t": "Infiammazione",
-					"p": [
+					t: "Infiammazione",
+					p: [
 						"165",
 						"026",
 						{
@@ -1555,40 +1555,40 @@ DB.set = {
 			]
 		},
 		9: {
-			"g": {
-				"dp": {
-					"p": [
+			g: {
+				dp: {
+					p: [
 						"003",
 						"000",
 						"155"
 					]
 				},
-				"ds": {
-					"p": [
+				ds: {
+					p: [
 						"124",
 						"254",
 						"[]Punti neuroriflessi sulle superfici anteriore mediale corrispondenti alle aree di maggior dolore *"
 					]
 				},
-				"np": {
-					"p": [
+				np: {
+					p: [
 						"001",
 						"124",
 						"254"
 					]
 				},
-				"ns": {
-					"p": [
+				ns: {
+					p: [
 						"170"
 					]
 				},
-				"d": "* Per individuare la zona più sensibile utilizzare la palpazione manuale utilizzando indice e pollice e in seguito il Palpeur azzurro sulla superficie laterale e quello nero sulla superficie mediale. Per la detezione inizialmente si deve effettuare la manovra di strisciamento e in seguito la manovra barestesica, fino a trovare i punti più sensibili."
+				d: "* Per individuare la zona più sensibile utilizzare la palpazione manuale utilizzando indice e pollice e in seguito il Palpeur azzurro sulla superficie laterale e quello nero sulla superficie mediale. Per la detezione inizialmente si deve effettuare la manovra di strisciamento e in seguito la manovra barestesica, fino a trovare i punti più sensibili."
 			},
-			"s": [
+			s: [
 				{
-					"t": "Dolore unilaterale",
-					"d": "Trattare preferibilmente il padiglione omolaterale al dolore",
-					"p": [
+					t: "Dolore unilaterale",
+					d: "Trattare preferibilmente il padiglione omolaterale al dolore",
+					p: [
 						"001",
 						"003",
 						"124",
@@ -1598,9 +1598,9 @@ DB.set = {
 					]
 				},
 				{
-					"t": "Componente depressiva",
-					"d": "Scegliere uno dei due punti, preferibilmente sul lato non dominante.",
-					"p": [
+					t: "Componente depressiva",
+					d: "Scegliere uno dei due punti, preferibilmente sul lato non dominante.",
+					p: [
 						"173",
 						"184"
 					]
@@ -1608,38 +1608,38 @@ DB.set = {
 			]
 		},
 		10: {
-			"g": {
-				"dp": {
-					"p": [
+			g: {
+				dp: {
+					p: [
 						"000",
 						"003",
 						"155"
 					]
 				},
-				"ds": {
-					"p": [
+				ds: {
+					p: [
 						"039",
 						"072",
 						"284",
 						"261"
 					]
 				},
-				"np": {
-					"p": [
+				np: {
+					p: [
 						"001",
 						"192"
 					]
 				},
-				"ns": {
-					"p": [
+				ns: {
+					p: [
 						"199"
 					]
 				},
 			},
-			"s": [
+			s: [
 				{
-					"t": "Infiammazione",
-					"p": [
+					t: "Infiammazione",
+					p: [
 						"165",
 						"026",
 						{
@@ -1654,8 +1654,8 @@ DB.set = {
 					]
 				},
 				{
-					"t": "Componente ansiosa",
-					"p": [
+					t: "Componente ansiosa",
+					p: [
 						{
 							t: "Triade di relax",
 							p: [
@@ -1680,39 +1680,39 @@ DB.set = {
 			]
 		},
 		11: {
-			"g": {
-				"dp": {
-					"p": [
+			g: {
+				dp: {
+					p: [
 						"003",
 						"049",
 						"155"
 					]
 				},
-				"ds": {
-					"p": [
+				ds: {
+					p: [
 						"120",
 						"048",
 						"047",
 						"273"
 					]
 				},
-				"np": {
-					"p": [
+				np: {
+					p: [
 						"001",
 						"000"
 					]
 				},
-				"ns": {
-					"p": [
+				ns: {
+					p: [
 						"268"
 					]
 				},
 			},
-			"s": [
+			s: [
 				{
-					"t": "Dolore unilaterale",
-					"d": "Trattare preferibilmente il padiglione omolaterale al dolore",
-					"p": [
+					t: "Dolore unilaterale",
+					d: "Trattare preferibilmente il padiglione omolaterale al dolore",
+					p: [
 						"000",
 						"003",
 						"049",
@@ -1723,8 +1723,8 @@ DB.set = {
 					]
 				},
 				{
-					"t": "Infiammazione / capsilite adesiva",
-					"p": [
+					t: "Infiammazione / capsilite adesiva",
+					p: [
 						"165",
 						"026",
 						{
@@ -1739,8 +1739,8 @@ DB.set = {
 					]
 				},
 				{
-					"t": "Componente ansiosa",
-					"p": [
+					t: "Componente ansiosa",
+					p: [
 						{
 							t: "Triade di relax",
 							p: [
@@ -1764,53 +1764,53 @@ DB.set = {
 					]
 				},
 				{
-					"t": "Contrattura muscolare",
-					"p": [
+					t: "Contrattura muscolare",
+					p: [
 						"124",
 						"246"
 					]
 				},
 				{
-					"t": "Componente depressiva",
-					"p": [
+					t: "Componente depressiva",
+					p: [
 						"173"
 					]
 				}
 			]
 		},
 		12: {
-			"g": {
-				"dp": {
-					"p": [
+			g: {
+				dp: {
+					p: [
 						"003",
 						"054",
 						"155"
 					]
 				},
-				"ds": {
-					"p": [
+				ds: {
+					p: [
 						"120",
 						"257",
 						"053"
 					]
 				},
-				"np": {
-					"p": [
+				np: {
+					p: [
 						"001",
 						"000"
 					]
 				},
-				"ns": {
-					"p": [
+				ns: {
+					p: [
 						
 					]
 				},
 			},
-			"s": [
+			s: [
 				{
-					"t": "Dolore unilaterale",
-					"d": "Trattare preferibilmente il padiglione omolaterale al dolore",
-					"p": [
+					t: "Dolore unilaterale",
+					d: "Trattare preferibilmente il padiglione omolaterale al dolore",
+					p: [
 						"000",
 						"003",
 						"054",
@@ -1821,8 +1821,8 @@ DB.set = {
 					]
 				},
 				{
-					"t": "Infiammazione",
-					"p": [
+					t: "Infiammazione",
+					p: [
 						"165",
 						"026",
 						{
@@ -1837,8 +1837,8 @@ DB.set = {
 					]
 				},
 				{
-					"t": "Componente ansiosa",
-					"p": [
+					t: "Componente ansiosa",
+					p: [
 						{
 							t: "Triade di relax",
 							p: [
@@ -1863,40 +1863,40 @@ DB.set = {
 			]
 		},
 		13: {
-			"g": {
-				"dp": {
-					"p": [
+			g: {
+				dp: {
+					p: [
 						"003",
 						"065",
 						"073",
 						"155"
 					]
 				},
-				"ds": {
-					"p": [
+				ds: {
+					p: [
 						"268",
 						["084","083"],
 						"017"
 					]
 				},
-				"np": {
-					"p": [
+				np: {
+					p: [
 						"001",
 						"000"
 					]
 				},
-				"ns": {
-					"p": [
+				ns: {
+					p: [
 						"262",
 						"192"
 					]
 				},
 			},
-			"s": [
+			s: [
 				{
-					"t": "Dolore unilaterale",
-					"d": "Trattare preferibilmente il padiglione omolaterale al dolore",
-					"p": [
+					t: "Dolore unilaterale",
+					d: "Trattare preferibilmente il padiglione omolaterale al dolore",
+					p: [
 						"000",
 						"003",
 						"065",
@@ -1908,8 +1908,8 @@ DB.set = {
 					]
 				},
 				{
-					"t": "Infiammazione",
-					"p": [
+					t: "Infiammazione",
+					p: [
 						"165",
 						"026",
 						{
@@ -1924,8 +1924,8 @@ DB.set = {
 					]
 				},
 				{
-					"t": "Componente ansiosa",
-					"p": [
+					t: "Componente ansiosa",
+					p: [
 						{
 							t: "Triade di relax",
 							p: [
@@ -1950,38 +1950,38 @@ DB.set = {
 			]
 		},
 		14: {
-			"g": {
-				"dp": {
-					"p": [
+			g: {
+				dp: {
+					p: [
 						"003",
 						["060","075"],
 						"155"
 					]
 				},
-				"ds": {
-					"p": [
+				ds: {
+					p: [
 						"268",
 						"254",
 						["264","265"]
 					]
 				},
-				"np": {
-					"p": [
+				np: {
+					p: [
 						"001",
 						"000"
 					]
 				},
-				"ns": {
-					"p": [
+				ns: {
+					p: [
 						"254"
 					]
 				},
 			},
-			"s": [
+			s: [
 				{
-					"t": "Dolore unilaterale",
-					"d": "Trattare preferibilmente il padiglione omolaterale al dolore",
-					"p": [
+					t: "Dolore unilaterale",
+					d: "Trattare preferibilmente il padiglione omolaterale al dolore",
+					p: [
 						"000",
 						"003",
 						["060","075"],
@@ -1991,8 +1991,8 @@ DB.set = {
 					]
 				},
 				{
-					"t": "Infiammazione",
-					"p": [
+					t: "Infiammazione",
+					p: [
 						"165",
 						"026",
 						{
@@ -2007,15 +2007,15 @@ DB.set = {
 					]
 				},
 				{
-					"t": "Contrattura muscolare",
-					"p": [
+					t: "Contrattura muscolare",
+					p: [
 						"124",
 						["264","265"]
 					]
 				},
 				{
-					"t": "Componente ansiosa",
-					"p": [
+					t: "Componente ansiosa",
+					p: [
 						{
 							t: "Triade di relax",
 							p: [
@@ -2040,38 +2040,38 @@ DB.set = {
 			]
 		},
 		15: {
-			"g": {
-				"dp": {
-					"p": [
+			g: {
+				dp: {
+					p: [
 						"003",
 						["068","033"],
 						"155"
 					]
 				},
-				"ds": {
-					"p": [
+				ds: {
+					p: [
 						"268",
 						"254",
 						["256","255"]
 					]
 				},
-				"np": {
-					"p": [
+				np: {
+					p: [
 						"001",
 						"000"
 					]
 				},
-				"ns": {
-					"p": [
+				ns: {
+					p: [
 						"254"
 					]
 				},
 			},
-			"s": [
+			s: [
 				{
-					"t": "Dolore unilaterale",
-					"d": "Trattare preferibilmente il padiglione omolaterale al dolore",
-					"p": [
+					t: "Dolore unilaterale",
+					d: "Trattare preferibilmente il padiglione omolaterale al dolore",
+					p: [
 						"000",
 						"003",
 						["068","033"],
@@ -2081,8 +2081,8 @@ DB.set = {
 					]
 				},
 				{
-					"t": "Infiammazione",
-					"p": [
+					t: "Infiammazione",
+					p: [
 						"165",
 						"026",
 						{
@@ -2097,15 +2097,15 @@ DB.set = {
 					]
 				},
 				{
-					"t": "Contrattura muscolare",
-					"p": [
+					t: "Contrattura muscolare",
+					p: [
 						"124",
 						["256","255"]
 					]
 				},
 				{
-					"t": "Componente ansiosa",
-					"p": [
+					t: "Componente ansiosa",
+					p: [
 						{
 							t: "Triade di relax",
 							p: [
@@ -2130,9 +2130,9 @@ DB.set = {
 			]
 		},
 		16: {
-			"g": {
-				"dp": {
-					"p": [
+			g: {
+				dp: {
+					p: [
 						"003",
 						["081","032"],
 						["029","040"],
@@ -2140,29 +2140,29 @@ DB.set = {
 						"155"
 					]
 				},
-				"ds": {
-					"p": [
+				ds: {
+					p: [
 						"268",
 						["248","247"]
 					]
 				},
-				"np": {
-					"p": [
+				np: {
+					p: [
 						"001",
 						"000"
 					]
 				},
-				"ns": {
-					"p": [
+				ns: {
+					p: [
 						"124"
 					]
 				},
 			},
-			"s": [
+			s: [
 				{
-					"t": "Dolore unilaterale",
-					"d": "Trattare preferibilmente il padiglione omolaterale al dolore",
-					"p": [
+					t: "Dolore unilaterale",
+					d: "Trattare preferibilmente il padiglione omolaterale al dolore",
+					p: [
 						"000",
 						"003",
 						["081","032"],
@@ -2174,8 +2174,8 @@ DB.set = {
 					]
 				},
 				{
-					"t": "Infiammazione",
-					"p": [
+					t: "Infiammazione",
+					p: [
 						"165",
 						"026",
 						{
@@ -2190,14 +2190,14 @@ DB.set = {
 					]
 				},
 				{
-					"t": "Distorsione",
-					"p": [
+					t: "Distorsione",
+					p: [
 						"253"
 					]
 				},
 				{
-					"t": "Componente ansiosa",
-					"p": [
+					t: "Componente ansiosa",
+					p: [
 						{
 							t: "Triade di relax",
 							p: [
@@ -2222,16 +2222,16 @@ DB.set = {
 			]
 		},
 		17: {
-			"g": {
-				"dp": {
-					"p": [
+			g: {
+				dp: {
+					p: [
 						"230",
 						"276",
 						"155"
 					]
 				},
-				"ds": {
-					"p": [
+				ds: {
+					p: [
 						"120",
 						"222",
 						["277","069"],
@@ -2241,24 +2241,24 @@ DB.set = {
 						"269"
 					]
 				},
-				"np": {
-					"p": [
+				np: {
+					p: [
 						"001",
 						"000"
 					]
 				},
-				"ns": {
-					"p": [
+				ns: {
+					p: [
 						"003",
 						"170"
 					]
 				},
 			},
-			"s": [
+			s: [
 				{
-					"t": "Dolore unilaterale",
-					"d": "Trattare preferibilmente il padiglione omolaterale al dolore",
-					"p": [
+					t: "Dolore unilaterale",
+					d: "Trattare preferibilmente il padiglione omolaterale al dolore",
+					p: [
 						"000",
 						"230",
 						["277","069"],
@@ -2271,8 +2271,8 @@ DB.set = {
 					]
 				},
 				{
-					"t": "Infiammazione",
-					"p": [
+					t: "Infiammazione",
+					p: [
 						"165",
 						"026",
 						{
@@ -2287,16 +2287,16 @@ DB.set = {
 					]
 				},
 				{
-					"t": "Contrattura muscolare",
-					"p": [
+					t: "Contrattura muscolare",
+					p: [
 						"124",
 						"288",
 						"285"
 					]
 				},
 				{
-					"t": "Componente ansiosa",
-					"p": [
+					t: "Componente ansiosa",
+					p: [
 						{
 							t: "Triade di relax",
 							p: [
@@ -2319,8 +2319,8 @@ DB.set = {
 					]
 				},
 				{
-					"t": "Componente depressiva",
-					"p": [
+					t: "Componente depressiva",
+					p: [
 						"173",
 						"184"
 					]
@@ -2328,16 +2328,16 @@ DB.set = {
 			]
 		},
 		18: {
-			"g": {
-				"dp": {
-					"p": [
+			g: {
+				dp: {
+					p: [
 						"230",
 						"120",
 						"222"
 					]
 				},
-				"ds": {
-					"p": [
+				ds: {
+					p: [
 						"155",
 						"065",
 						"258",
@@ -2347,23 +2347,23 @@ DB.set = {
 						"273"
 					]
 				},
-				"np": {
-					"p": [
+				np: {
+					p: [
 						"001",
 						"000"
 					]
 				},
-				"ns": {
-					"p": [
+				ns: {
+					p: [
 						"262"
 					]
 				},
 			},
-			"s": [
+			s: [
 				{
-					"t": "Dolore unilaterale",
-					"d": "Trattare preferibilmente il padiglione omolaterale al dolore",
-					"p": [
+					t: "Dolore unilaterale",
+					d: "Trattare preferibilmente il padiglione omolaterale al dolore",
+					p: [
 						"000",
 						"230",
 						"120",
@@ -2376,8 +2376,8 @@ DB.set = {
 					]
 				},
 				{
-					"t": "Infiammazione",
-					"p": [
+					t: "Infiammazione",
+					p: [
 						"165",
 						"026",
 						{
@@ -2392,8 +2392,8 @@ DB.set = {
 					]
 				},
 				{
-					"t": "Componente ansiosa",
-					"p": [
+					t: "Componente ansiosa",
+					p: [
 						{
 							t: "Triade di relax",
 							p: [
@@ -2418,16 +2418,16 @@ DB.set = {
 			]
 		},
 		19: {
-			"g": {
-				"dp": {
-					"p": [
+			g: {
+				dp: {
+					p: [
 						"230",
 						"155",
 						"276"
 					]
 				},
-				"ds": {
-					"p": [
+				ds: {
+					p: [
 						"261",
 						["279","071"],
 						"072",
@@ -2435,25 +2435,25 @@ DB.set = {
 						"271"
 					]
 				},
-				"np": {
-					"p": [
+				np: {
+					p: [
 						"001",
 						"000"
 					]
 				},
-				"ns": {
-					"p": [
+				ns: {
+					p: [
 						"003",
 						"170",
 						"222"
 					]
 				},
 			},
-			"s": [
+			s: [
 				{
-					"t": "Dolore unilaterale",
-					"d": "Trattare preferibilmente il padiglione omolaterale al dolore",
-					"p": [
+					t: "Dolore unilaterale",
+					d: "Trattare preferibilmente il padiglione omolaterale al dolore",
+					p: [
 						"000",
 						"230",
 						["279","071"],
@@ -2464,14 +2464,14 @@ DB.set = {
 					]
 				},
 				{
-					"t": "Disestesie/parestesie",
-					"p": [
+					t: "Disestesie/parestesie",
+					p: [
 						"222"
 					]
 				},
 				{
-					"t": "Infiammazione",
-					"p": [
+					t: "Infiammazione",
+					p: [
 						"165",
 						"026",
 						{
@@ -2486,16 +2486,16 @@ DB.set = {
 					]
 				},
 				{
-					"t": "Contrattura muscolare",
-					"p": [
+					t: "Contrattura muscolare",
+					p: [
 						"124",
 						"287",
 						"282"
 					]
 				},
 				{
-					"t": "Componente ansiosa",
-					"p": [
+					t: "Componente ansiosa",
+					p: [
 						{
 							t: "Triade di relax",
 							p: [
@@ -2518,8 +2518,8 @@ DB.set = {
 					]
 				},
 				{
-					"t": "Componente depressiva",
-					"p": [
+					t: "Componente depressiva",
+					p: [
 						"173",
 						"184"
 					]
@@ -2527,38 +2527,38 @@ DB.set = {
 			]
 		},
 		20: {
-			"g": {
-				"dp": {
-					"p": [
+			g: {
+				dp: {
+					p: [
 						"003",
 						"165",
 						"155"
 					]
 				},
-				"ds": {
-					"p": [
+				ds: {
+					p: [
 						"229",
 						"[]Area riflessa corrispondente alla zona di maggior dolore*"
 					]
 				},
-				"np": {
-					"p": [
+				np: {
+					p: [
 						"001",
 						"000"
 					]
 				},
-				"ns": {
-					"p": [
+				ns: {
+					p: [
 						"003"
 					]
 				},
-				"d": "*In base alla somatotopia, ricercare l'area corrispondente più sensibile alla detezione barestetica."
+				d: "*In base alla somatotopia, ricercare l'area corrispondente più sensibile alla detezione barestetica."
 			},
-			"s": [
+			s: [
 				{
-					"t": "Dolore unilaterale",
-					"d": "Trattare preferibilmente il padiglione omolaterale al dolore",
-					"p": [
+					t: "Dolore unilaterale",
+					d: "Trattare preferibilmente il padiglione omolaterale al dolore",
+					p: [
 						"000",
 						"003",
 						"[]Area riflessa corrispondente alla zona di maggior dolore",
@@ -2567,9 +2567,9 @@ DB.set = {
 					]
 				},
 				{
-					"t": "Riacutizzazione",
-					"d": "Sul lato dominante",
-					"p": [
+					t: "Riacutizzazione",
+					d: "Sul lato dominante",
+					p: [
 						{
 							t: "Triade antinfiammatoria",
 							p: [
@@ -2582,15 +2582,15 @@ DB.set = {
 					]
 				},
 				{
-					"t": "Contrattura muscolare",
-					"p": [
+					t: "Contrattura muscolare",
+					p: [
 						"124",
 						"[]Punti muscolari corrispondenti alla zona interessata",
 					]
 				},
 				{
-					"t": "Componente ansiosa",
-					"p": [
+					t: "Componente ansiosa",
+					p: [
 						{
 							t: "Triade di relax",
 							p: [
@@ -2614,8 +2614,8 @@ DB.set = {
 					]
 				},
 				{
-					"t": "Componente depressiva",
-					"p": [
+					t: "Componente depressiva",
+					p: [
 						"173",
 						"184"
 					]
@@ -2623,30 +2623,30 @@ DB.set = {
 			]
 		},
 		21: {
-			"g": {
-				"dp": {
-					"p": [
+			g: {
+				dp: {
+					p: [
 						"003",
 						"165",
 						"155"
 					]
 				},
-				"ds": {
-					"p": [
+				ds: {
+					p: [
 						"000",
 						"004",
 						"039",
 						"[]Area riflessa corrispondente alla zona di maggior dolore*"
 					]
 				},
-				"np": {
-					"p": [
+				np: {
+					p: [
 						"001",
 						"000"
 					]
 				},
-				"ns": {
-					"p": [
+				ns: {
+					p: [
 						"230",
 						"003",
 						"104",
@@ -2654,13 +2654,13 @@ DB.set = {
 						"192"
 					]
 				},
-				"d": "*In base alla somatotopia, ricercare l'area corrispondente più sensibile alla detezione barestetica."
+				d: "*In base alla somatotopia, ricercare l'area corrispondente più sensibile alla detezione barestetica."
 			},
-			"s": [
+			s: [
 				{
-					"t": "Dolore unilaterale",
-					"d": "Trattare preferibilmente il padiglione omolaterale al dolore",
-					"p": [
+					t: "Dolore unilaterale",
+					d: "Trattare preferibilmente il padiglione omolaterale al dolore",
+					p: [
 						"000",
 						"230",
 						"003",
@@ -2670,9 +2670,9 @@ DB.set = {
 					]
 				},
 				{
-					"t": "Riacutizzazione",
-					"d": "Sul lato dominante",
-					"p": [
+					t: "Riacutizzazione",
+					d: "Sul lato dominante",
+					p: [
 						"165",
 						"229",
 						{
@@ -2687,15 +2687,15 @@ DB.set = {
 					]
 				},
 				{
-					"t": "Contrattura muscolare",
-					"p": [
+					t: "Contrattura muscolare",
+					p: [
 						"124",
 						"[]Punti muscolari corrispondenti alla zona interessata",
 					]
 				},
 				{
-					"t": "Componente ansiosa",
-					"p": [
+					t: "Componente ansiosa",
+					p: [
 						{
 							t: "Rilassamento neurovegetativo",
 							p: [
@@ -2718,8 +2718,8 @@ DB.set = {
 					]
 				},
 				{
-					"t": "Componente depressiva",
-					"p": [
+					t: "Componente depressiva",
+					p: [
 						"173",
 						"184"
 					]
@@ -2727,16 +2727,16 @@ DB.set = {
 			]
 		},
 		22: {
-			"g": {
-				"dp": {
-					"p": [
+			g: {
+				dp: {
+					p: [
 						"230",
 						"291",
 						"155"
 					]
 				},
-				"ds": {
-					"p": [
+				ds: {
+					p: [
 						"000",
 						"180",
 						"285",
@@ -2748,23 +2748,23 @@ DB.set = {
 						"202"
 					]
 				},
-				"np": {
-					"p": [
+				np: {
+					p: [
 						"001",
 						"000"
 					]
 				},
-				"ns": {
-					"p": [
+				ns: {
+					p: [
 						"004"
 					]
 				},
 			},
-			"s": [
+			s: [
 				{
-					"t": "Dolore unilaterale",
-					"d": "Trattare preferibilmente il padiglione omolaterale al dolore",
-					"p": [
+					t: "Dolore unilaterale",
+					d: "Trattare preferibilmente il padiglione omolaterale al dolore",
+					p: [
 						"000",
 						"230",
 						"291",
@@ -2776,16 +2776,16 @@ DB.set = {
 					]
 				},
 				{
-					"t": "Contrattura muscolare",
-					"p": [
+					t: "Contrattura muscolare",
+					p: [
 						"124",
 						"288"
 					]
 				},
 				{
-					"t": "Componente ansiosa e stress",
-					"d": "Sul lato non dominante",
-					"p": [
+					t: "Componente ansiosa e stress",
+					d: "Sul lato non dominante",
+					p: [
 						"137",
 						"192",
 						{
@@ -2800,25 +2800,25 @@ DB.set = {
 					]
 				},
 				{
-					"t": "Componente depressiva",
-					"d": "Lato non dominante",
-					"p": [
+					t: "Componente depressiva",
+					d: "Lato non dominante",
+					p: [
 						"173"
 					]
 				}
 			]
 		},
 		23: {
-			"g": {
-				"dp": {
-					"p": [
+			g: {
+				dp: {
+					p: [
 						"230",
 						"180",
 						"155"
 					]
 				},
-				"ds": {
-					"p": [
+				ds: {
+					p: [
 						"001",
 						"003",
 						"014",
@@ -2828,39 +2828,39 @@ DB.set = {
 						"151"
 					]
 				},
-				"np": {
-					"p": [
+				np: {
+					p: [
 						"001",
 						"000"
 					]
 				},
-				"ns": {
-					"p": [
+				ns: {
+					p: [
 						"039",
 						"170"
 					]
 				},
 			},
-			"s": [
+			s: [
 				{
-					"t": "Dolore bilaterale diffuso",
-					"d": "Se sensibili, eseguire su entrambi i lati.",
-					"p": [
+					t: "Dolore bilaterale diffuso",
+					d: "Se sensibili, eseguire su entrambi i lati.",
+					p: [
 						"001",
 						"180",
 						"230"
 					]
 				},
 				{
-					"t": "Contrattura muscolare",
-					"p": [
+					t: "Contrattura muscolare",
+					p: [
 						"124",
 						"288"
 					]
 				},
 				{
-					"t": "Componente ansiosa e stress",
-					"p": [
+					t: "Componente ansiosa e stress",
+					p: [
 						{
 							t: "Triade di relax",
 							p: [
@@ -2883,8 +2883,8 @@ DB.set = {
 					]
 				},
 				{
-					"t": "Componente endocrina/ormonale",
-					"p": [
+					t: "Componente endocrina/ormonale",
+					p: [
 						"164",
 						"262"
 					]
@@ -2892,16 +2892,16 @@ DB.set = {
 			]
 		},
 		24: {
-			"g": {
-				"dp": {
-					"p": [
+			g: {
+				dp: {
+					p: [
 						"230",
 						"180",
 						"155"
 					]
 				},
-				"ds": {
-					"p": [
+				ds: {
+					p: [
 						"000",
 						"165",
 						"003",
@@ -2913,24 +2913,24 @@ DB.set = {
 						"151"
 					]
 				},
-				"np": {
-					"p": [
+				np: {
+					p: [
 						"001",
 						"000"
 					]
 				},
-				"ns": {
-					"p": [
+				ns: {
+					p: [
 						"039",
 						"199"
 					]
 				},
 			},
-			"s": [
+			s: [
 				{
-					"t": "Componente ansiosa e stress",
-					"d": "Trattare preferibilmente il padiglione controlaterale al dolore",
-					"p": [
+					t: "Componente ansiosa e stress",
+					d: "Trattare preferibilmente il padiglione controlaterale al dolore",
+					p: [
 						"137",
 						{
 							t: "Triade di relax",
@@ -2956,16 +2956,16 @@ DB.set = {
 			]
 		},
 		25: {
-			"g": {
-				"dp": {
-					"p": [
+			g: {
+				dp: {
+					p: [
 						"230",
 						"215",
 						"003"
 					]
 				},
-				"ds": {
-					"p": [
+				ds: {
+					p: [
 						"165",
 						"268",
 						"154",
@@ -2975,30 +2975,30 @@ DB.set = {
 						"266"
 					]
 				},
-				"np": {
-					"p": [
+				np: {
+					p: [
 						"001",
 						"000"
 					]
 				},
-				"ns": {
-					"p": [
+				ns: {
+					p: [
 						"230"
 					]
 				},
 			},
-			"s": [
+			s: [
 				{
-					"t": "Infiammazione",
-					"d": "Sul lato dominante",
-					"p": [
+					t: "Infiammazione",
+					d: "Sul lato dominante",
+					p: [
 						"026"
 					]
 				},
 				{
-					"t": "Componente ansiosa e stress",
-					"d": "Sul lato non dominante",
-					"p": [
+					t: "Componente ansiosa e stress",
+					d: "Sul lato non dominante",
+					p: [
 						{
 							t: "Triade di relax",
 							p: [
@@ -3022,16 +3022,16 @@ DB.set = {
 			]
 		},
 		26: {
-			"g": {
-				"dp": {
-					"p": [
+			g: {
+				dp: {
+					p: [
 						"003",
 						"202",
 						"155"
 					]
 				},
-				"ds": {
-					"p": [
+				ds: {
+					p: [
 						"002",
 						"165",
 						"039",
@@ -3039,32 +3039,32 @@ DB.set = {
 						"275"
 					]
 				},
-				"np": {
-					"p": [
+				np: {
+					p: [
 						"001",
 						"000"
 					]
 				},
-				"ns": {
-					"p": [
+				ns: {
+					p: [
 						"137",
 						"003"
 					]
 				},
 			},
-			"s": [
+			s: [
 				{
-					"t": "Componente allergica",
-					"d": "Sul lato dominante",
-					"p": [
+					t: "Componente allergica",
+					d: "Sul lato dominante",
+					p: [
 						"078",
 						"180"
 					]
 				},
 				{
-					"t": "Miscellanea",
-					"d": "Sul lato non dominante",
-					"p": [
+					t: "Miscellanea",
+					d: "Sul lato non dominante",
+					p: [
 						["244","249"],
 						"195"
 					]
@@ -3072,55 +3072,55 @@ DB.set = {
 			]
 		},
 		27: {
-			"g": {
-				"dp": {
-					"p": [
+			g: {
+				dp: {
+					p: [
 						"003",
 						"174",
 						"155"
 					]
 				},
-				"ds": {
-					"p": [
+				ds: {
+					p: [
 						"039",
 						"268",
 						"281",
 						"179"
 					]
 				},
-				"np": {
-					"p": [
+				np: {
+					p: [
 						"001",
 						"000"
 					]
 				},
-				"ns": {
-					"p": [
+				ns: {
+					p: [
 						"222",
 						"254"
 					]
 				},
 			},
-			"s": [
+			s: [
 				{
-					"t": "Contrattura muscolare",
-					"d": "Sul lato dominante",
-					"p": [
+					t: "Contrattura muscolare",
+					d: "Sul lato dominante",
+					p: [
 						"124"
 					]
 				},
 				{
-					"t": "Se associata a patologia cervicale",
-					"d": "Sul lato dominante",
-					"p": [
+					t: "Se associata a patologia cervicale",
+					d: "Sul lato dominante",
+					p: [
 						["277","069"],
 						"291"
 					]
 				},
 				{
-					"t": "Componente depressiva/ansiosa",
-					"d": "Sul lato non dominante",
-					"p": [
+					t: "Componente depressiva/ansiosa",
+					d: "Sul lato non dominante",
+					p: [
 						"173",
 						{
 							t: "Triade modificata",
@@ -3144,9 +3144,9 @@ DB.set = {
 			]
 		},
 		28: {
-			"g": {
-				"dp": {
-					"p": [
+			g: {
+				dp: {
+					p: [
 						{
 							t: "Rilassamento neurovegetativo",
 							p: [
@@ -3163,8 +3163,8 @@ DB.set = {
 						"254"
 					]
 				},
-				"ds": {
-					"p": [
+				ds: {
+					p: [
 						"230",
 						"030",
 						"174",
@@ -3173,31 +3173,31 @@ DB.set = {
 						"283"
 					]
 				},
-				"np": {
-					"p": [
+				np: {
+					p: [
 						"001",
 						"137",
 						"173"
 					]
 				},
-				"ns": {
-					"p": [
+				ns: {
+					p: [
 						"192"
 					]
 				},
 			},
-			"s": [
+			s: [
 				{
-					"t": "Contrattura muscolare",
-					"d": "Sul lato dominante",
-					"p": [
+					t: "Contrattura muscolare",
+					d: "Sul lato dominante",
+					p: [
 						"124"
 					]
 				},
 				{
-					"t": "Componente ansiosa e stress",
-					"d": "Sul lato non dominante",
-					"p": [
+					t: "Componente ansiosa e stress",
+					d: "Sul lato non dominante",
+					p: [
 						{
 							t: "Linea degli omega",
 							p: [
@@ -3215,16 +3215,16 @@ DB.set = {
 			]
 		},
 		29: {
-			"g": {
-				"dp": {
-					"p": [
+			g: {
+				dp: {
+					p: [
 						"230",
 						"215",
 						"003"
 					]
 				},
-				"ds": {
-					"p": [
+				ds: {
+					p: [
 						"004",
 						"030",
 						"039",
@@ -3233,14 +3233,14 @@ DB.set = {
 						"213"
 					]
 				},
-				"np": {
-					"p": [
+				np: {
+					p: [
 						"001",
 						"137"
 					]
 				},
-				"ns": {
-					"p": [
+				ns: {
+					p: [
 						"000",
 						"222",
 						"199",
@@ -3248,18 +3248,18 @@ DB.set = {
 					]
 				},
 			},
-			"s": [
+			s: [
 				{
-					"t": "Contrattura muscolare",
-					"d": "Sul lato dominante",
-					"p": [
+					t: "Contrattura muscolare",
+					d: "Sul lato dominante",
+					p: [
 						"124"
 					]
 				},
 				{
-					"t": "Componente ansiosa e stress",
-					"d": "Sul lato non dominante",
-					"p": [
+					t: "Componente ansiosa e stress",
+					d: "Sul lato non dominante",
+					p: [
 						"192",
 						"137"
 					]
@@ -3267,16 +3267,16 @@ DB.set = {
 			]
 		},
 		30: {
-			"g": {
-				"dp": {
-					"p": [
+			g: {
+				dp: {
+					p: [
 						"230",
 						"283",
 						"155"
 					]
 				},
-				"ds": {
-					"p": [
+				ds: {
+					p: [
 						"000",
 						"039",
 						"215",
@@ -3285,31 +3285,31 @@ DB.set = {
 						"280"
 					]
 				},
-				"np": {
-					"p": [
+				np: {
+					p: [
 						"001",
 						"222"
 					]
 				},
-				"ns": {
-					"p": [
+				ns: {
+					p: [
 						"137"
 					]
 				},
-				"d": "In caso di resistenza alla terapia, la Linea trigeminale può essere elettrostimolata. Se il problema non si attenua entro 2 o 3 sedute, applicare 2 aghi omolateralmente al dolore, uno sulla superficie laterale (lato sensitivo) e l'altro sulla superficie mediale (lato motorio) del lobulo ed elettrostimolarli a 15Hz per 20 minuti."
+				d: "In caso di resistenza alla terapia, la Linea trigeminale può essere elettrostimolata. Se il problema non si attenua entro 2 o 3 sedute, applicare 2 aghi omolateralmente al dolore, uno sulla superficie laterale (lato sensitivo) e l'altro sulla superficie mediale (lato motorio) del lobulo ed elettrostimolarli a 15Hz per 20 minuti."
 			},
-			"s": [
+			s: [
 				{
-					"t": "Contrattura muscolare",
-					"d": "Sul lato dominante",
-					"p": [
+					t: "Contrattura muscolare",
+					d: "Sul lato dominante",
+					p: [
 						"291"
 					]
 				},
 				{
-					"t": "Componente ansiosa e stress",
-					"d": "Sul lato non dominante",
-					"p": [
+					t: "Componente ansiosa e stress",
+					d: "Sul lato non dominante",
+					p: [
 						{
 							t: "Linea degli omega",
 							p: [
@@ -3322,16 +3322,16 @@ DB.set = {
 					]
 				},
 				{
-					"t": "Componente depressiva",
-					"d": "Sul lato non dominante",
-					"p": [
+					t: "Componente depressiva",
+					d: "Sul lato non dominante",
+					p: [
 						"173"
 					]
 				},
 				{
-					"t": "Infiammazione",
-					"d": "Sul lato dominante",
-					"p": [
+					t: "Infiammazione",
+					d: "Sul lato dominante",
+					p: [
 						"165",
 						"026"
 					]
@@ -3339,48 +3339,48 @@ DB.set = {
 			]
 		},
 		31: {
-			"g": {
-				"dp": {
-					"p": [
+			g: {
+				dp: {
+					p: [
 						"230",
 						"039",
 						"155"
 					]
 				},
-				"ds": {
-					"p": [
+				ds: {
+					p: [
 						"164",
 						"[]Avanmuro*",
 						"[]Radice sensitiva *"
 					]
 				},
-				"np": {
-					"p": [
+				np: {
+					p: [
 						"001",
 						"222",
 						"276"
 					]
 				},
-				"ns": {
-					"p": [
+				ns: {
+					p: [
 						"000",
 						"137"
 					]
 				},
-				"d": "* Individuare il metamero dov'è rilevata la nevralgia, ispezionanso preferibilmente il padiglione omolaterale e delimitare la possibile sede di rappresentazione della nevralgia (con il metodo della staffa sull'antelice). Ricercarne punti sensibili nell'avanmuro e le radici sensitive nell'elice. Se dopo 2 sedute la nevrelgia non è migliorata si consiglia il trattamento con l'elettrostimolazione a 15Hz per almeno 20 minuti, collegando l'ago dell'avanmuro con l'ago della radice sensitiva, regolando l'intensità sulla soglia di dolore del paziente."
+				d: "* Individuare il metamero dov'è rilevata la nevralgia, ispezionanso preferibilmente il padiglione omolaterale e delimitare la possibile sede di rappresentazione della nevralgia (con il metodo della staffa sull'antelice). Ricercarne punti sensibili nell'avanmuro e le radici sensitive nell'elice. Se dopo 2 sedute la nevrelgia non è migliorata si consiglia il trattamento con l'elettrostimolazione a 15Hz per almeno 20 minuti, collegando l'ago dell'avanmuro con l'ago della radice sensitiva, regolando l'intensità sulla soglia di dolore del paziente."
 			},
-			"s": [
+			s: [
 				{
-					"t": "Infiammazione",
-					"d": "Sul lato dominante",
-					"p": [
+					t: "Infiammazione",
+					d: "Sul lato dominante",
+					p: [
 						"026"
 					]
 				},
 				{
-					"t": "Componente ansiosa e stress",
-					"d": "Sul lato non dominante",
-					"p": [
+					t: "Componente ansiosa e stress",
+					d: "Sul lato non dominante",
+					p: [
 						"230",
 						{
 							t: "Triade di relax",
@@ -3394,9 +3394,9 @@ DB.set = {
 					]
 				},
 				{
-					"t": "Componente depressiva",
-					"d": "Sul lato non dominante",
-					"p": [
+					t: "Componente depressiva",
+					d: "Sul lato non dominante",
+					p: [
 						"045",
 						"245"
 					]
@@ -3404,16 +3404,16 @@ DB.set = {
 			]
 		},
 		32: {
-			"g": {
-				"dp": {
-					"p": [
+			g: {
+				dp: {
+					p: [
 						"000",
 						"039",
 						"155"
 					]
 				},
-				"ds": {
-					"p": [
+				ds: {
+					p: [
 						"154",
 						"222",
 						"165",
@@ -3422,35 +3422,35 @@ DB.set = {
 						"[]Ganglio corrispondente**"
 					]
 				},
-				"np": {
-					"p": [
+				np: {
+					p: [
 						"001",
 						"230",
 						"137"
 					]
 				},
-				"ns": {
-					"p": [
+				ns: {
+					p: [
 						"039",
 						"154"
 					]
 				},
-				"d": "* Ricercare sull'elice i punti sensibili.<br>** A seconda del livello metamerico della nevralgia periferica, ricercare un punto dolente alla palpazione barestetica nell'avanmuro dell'antelice."
+				d: "* Ricercare sull'elice i punti sensibili.<br>** A seconda del livello metamerico della nevralgia periferica, ricercare un punto dolente alla palpazione barestetica nell'avanmuro dell'antelice."
 			},
-			"s": [
+			s: [
 				{
-					"t": "Infiammazione",
-					"d": "Sul lato dominante",
-					"p": [
+					t: "Infiammazione",
+					d: "Sul lato dominante",
+					p: [
 						"229",
 						"165",
 						"026"
 					]
 				},
 				{
-					"t": "Componente ansiosa e stress",
-					"d": "Sul lato non dominante",
-					"p": [
+					t: "Componente ansiosa e stress",
+					d: "Sul lato non dominante",
+					p: [
 						{
 							t: "Triade adattata",
 							p: [
@@ -3465,16 +3465,16 @@ DB.set = {
 			]
 		},
 		33: {
-			"g": {
-				"dp": {
-					"p": [
+			g: {
+				dp: {
+					p: [
 						"000",
 						"215",
 						"155"
 					]
 				},
-				"ds": {
-					"p": [
+				ds: {
+					p: [
 						"230",
 						"165",
 						"104",
@@ -3483,25 +3483,25 @@ DB.set = {
 						["209","211"]
 					]
 				},
-				"np": {
-					"p": [
+				np: {
+					p: [
 						"001",
 						"230",
 						"004"
 					]
 				},
-				"ns": {
-					"p": [
+				ns: {
+					p: [
 						"222",
 						"192"
 					]
 				},
 			},
-			"s": [
+			s: [
 				{
-					"t": "Componente ansiosa e stress",
-					"d": "Sul lato non dominante",
-					"p": [
+					t: "Componente ansiosa e stress",
+					d: "Sul lato non dominante",
+					p: [
 						{
 							t: "Triade di relax",
 							p: [
@@ -3535,16 +3535,16 @@ DB.set = {
 			]
 		},
 		34: {
-			"g": {
-				"dp": {
-					"p": [
+			g: {
+				dp: {
+					p: [
 						"230",
 						"039",
 						"104"
 					]
 				},
-				"ds": {
-					"p": [
+				ds: {
+					p: [
 						"003",
 						"165",
 						"232",
@@ -3552,32 +3552,32 @@ DB.set = {
 						"185"
 					]
 				},
-				"np": {
-					"p": [
+				np: {
+					p: [
 						"001",
 						"000"
 					]
 				},
-				"ns": {
-					"p": [
+				ns: {
+					p: [
 						"230"
 					]
 				},
-				"d": "Se alla stimolazione del punto Omega 2 non si trae beneficio, transfiggere l'elice in modo da andare a stimolare anche la superficie interna dove si trava il punto Allergia 2"
+				d: "Se alla stimolazione del punto Omega 2 non si trae beneficio, transfiggere l'elice in modo da andare a stimolare anche la superficie interna dove si trava il punto Allergia 2"
 			},
-			"s": [
+			s: [
 				{
-					"t": "Componente allergica/infiammatoria",
-					"d": "Sul lato dominante",
-					"p": [
+					t: "Componente allergica/infiammatoria",
+					d: "Sul lato dominante",
+					p: [
 						"026",
 						"078"
 					]
 				},
 				{
-					"t": "Componente ansiosa e stress",
-					"d": "Sul lato non dominante",
-					"p": [
+					t: "Componente ansiosa e stress",
+					d: "Sul lato non dominante",
+					p: [
 						{
 							t: "Linea degli omega",
 							p: [
@@ -3590,24 +3590,24 @@ DB.set = {
 					]
 				},
 				{
-					"t": "Miscellanea",
-					"p": [
+					t: "Miscellanea",
+					p: [
 						"157"
 					]
 				}
 			]
 		},
 		35: {
-			"g": {
-				"dp": {
-					"p": [
+			g: {
+				dp: {
+					p: [
 						"003",
 						"276",
 						"155"
 					]
 				},
-				"ds": {
-					"p": [
+				ds: {
+					p: [
 						"268",
 						"170",
 						"120",
@@ -3615,15 +3615,15 @@ DB.set = {
 						"270"
 					]
 				},
-				"np": {
-					"p": [
+				np: {
+					p: [
 						"001",
 						"000",
 						"039"
 					]
 				},
-				"ns": {
-					"p": [
+				ns: {
+					p: [
 						"192",
 						"261",
 						"274",
@@ -3631,19 +3631,19 @@ DB.set = {
 					]
 				}
 			},
-			"s": [
+			s: [
 				{
-					"t": "Infiammazione",
-					"d": "Sul lato dominante",
-					"p": [
+					t: "Infiammazione",
+					d: "Sul lato dominante",
+					p: [
 						"165",
 						"229"
 					]
 				},
 				{
-					"t": "Componente ansiosa e stress",
-					"d": "Sul lato non dominante",
-					"p": [
+					t: "Componente ansiosa e stress",
+					d: "Sul lato non dominante",
+					p: [
 						{
 							t: "Linea degli omega",
 							p: [
@@ -3656,8 +3656,8 @@ DB.set = {
 					]
 				},
 				{
-					"t": "Miscellanea",
-					"p": [
+					t: "Miscellanea",
+					p: [
 						"222",
 						"157",
 						"143"
@@ -3667,16 +3667,16 @@ DB.set = {
 			]
 		},
 		36: {
-			"g": {
-				"dp": {
-					"p": [
+			g: {
+				dp: {
+					p: [
 						"003",
 						"276",
 						"155"
 					]
 				},
-				"ds": {
-					"p": [
+				ds: {
+					p: [
 						"230",
 						"039",
 						"165",
@@ -3686,14 +3686,14 @@ DB.set = {
 						"270"
 					]
 				},
-				"np": {
-					"p": [
+				np: {
+					p: [
 						"001",
 						"000"
 					]
 				},
-				"ns": {
-					"p": [
+				ns: {
+					p: [
 						"180",
 						"222",
 						"[]Area somatotopica corrispondente al dolore",
@@ -3703,11 +3703,11 @@ DB.set = {
 					]
 				},
 			},
-			"s": [
+			s: [
 				{
-					"t": "Componente ansiosa e stress",
-					"d": "Sul lato non dominante",
-					"p": [
+					t: "Componente ansiosa e stress",
+					d: "Sul lato non dominante",
+					p: [
 						"192",
 						{
 							t: "Triade di relax",
@@ -3730,57 +3730,57 @@ DB.set = {
 					]
 				},
 				{
-					"t": "Componente depressiva",
-					"p": [
+					t: "Componente depressiva",
+					p: [
 						"173"
 					]
 				}
 			]
 		},
 		37: {
-			"g": {
-				"dp": {
-					"p": [
+			g: {
+				dp: {
+					p: [
 						"230",
 						"004",
 						"003"
 					]
 				},
-				"ds": {
-					"p": [
+				ds: {
+					p: [
 						"155",
 						"039",
 						"170",
 						"[]Aree corrispondente alle zone di maggior dolore"
 					]
 				},
-				"np": {
-					"p": [
+				np: {
+					p: [
 						"000",
 						"030",
 						"184"
 					]
 				},
-				"ns": {
-					"p": [
+				ns: {
+					p: [
 						"001",
 						"137",
 						"170"
 					]
 				},
 			},
-			"s": [
+			s: [
 				{
-					"t": "Contrattura muscolare",
-					"d": "Sul lato dominante",
-					"p": [
+					t: "Contrattura muscolare",
+					d: "Sul lato dominante",
+					p: [
 						"124"
 					]
 				},
 				{
-					"t": "Componente ansiosa e stress",
-					"d": "Sul lato non dominante",
-					"p": [
+					t: "Componente ansiosa e stress",
+					d: "Sul lato non dominante",
+					p: [
 						{
 							t: "Triade di relax",
 							p: [
@@ -3804,15 +3804,15 @@ DB.set = {
 					]
 				},
 				{
-					"t": "Componente depressiva",
-					"d": "Sul lato non dominante",
-					"p": [
+					t: "Componente depressiva",
+					d: "Sul lato non dominante",
+					p: [
 						"173"
 					]
 				},
 				{
-					"t": "Disturbi vegetativi",
-					"p": [
+					t: "Disturbi vegetativi",
+					p: [
 						"039",
 						"157",
 						"143"
@@ -3822,16 +3822,16 @@ DB.set = {
 			]
 		},
 		38: {
-			"g": {
-				"dp": {
-					"p": [
+			g: {
+				dp: {
+					p: [
 						"230",
 						"004",
 						"254"
 					]
 				},
-				"ds": {
-					"p": [
+				ds: {
+					p: [
 						"154",
 						"207",
 						"142",
@@ -3839,15 +3839,15 @@ DB.set = {
 						"151"
 					]
 				},
-				"np": {
-					"p": [
+				np: {
+					p: [
 						"000",
 						"030",
 						"254"
 					]
 				},
-				"ns": {
-					"p": [
+				ns: {
+					p: [
 						"001",
 						"154",
 						"170",
@@ -3855,11 +3855,11 @@ DB.set = {
 					]
 				},
 			},
-			"s": [
+			s: [
 				{
-					"t": "Componente ansiosa e stress",
-					"d": "Sul lato non dominante",
-					"p": [
+					t: "Componente ansiosa e stress",
+					d: "Sul lato non dominante",
+					p: [
 						{
 							t: "Triade modificata bilaterale",
 							p: [
@@ -3873,8 +3873,8 @@ DB.set = {
 					]
 				},
 				{
-					"t": "Miscellanea",
-					"p": [
+					t: "Miscellanea",
+					p: [
 						{
 							t: "Linea delle connessure",
 							p: [
@@ -3887,16 +3887,16 @@ DB.set = {
 			]
 		},
 		39: {
-			"g": {
-				"dp": {
-					"p": [
+			g: {
+				dp: {
+					p: [
 						"003",
 						"039",
 						"268"
 					]
 				},
-				"ds": {
-					"p": [
+				ds: {
+					p: [
 						"195",
 						"165",
 						"151",
@@ -3906,32 +3906,32 @@ DB.set = {
 						"271"
 					]
 				},
-				"np": {
-					"p": [
+				np: {
+					p: [
 						"030",
 						"000",
 						"222"
 					]
 				},
-				"ns": {
-					"p": [
+				ns: {
+					p: [
 						"001",
 						"195"
 					]
 				},
 			},
-			"s": [
+			s: [
 				{
-					"t": "Contrattura muscolare",
-					"d": "Sul lato dominante",
-					"p": [
+					t: "Contrattura muscolare",
+					d: "Sul lato dominante",
+					p: [
 						"124"
 					]
 				},
 				{
-					"t": "Componente ansiosa e stress",
-					"d": "Sul lato non dominante",
-					"p": [
+					t: "Componente ansiosa e stress",
+					d: "Sul lato non dominante",
+					p: [
 						{
 							t: "Triade adattata",
 							p: [
@@ -3947,9 +3947,9 @@ DB.set = {
 			]
 		},
 		40: {
-			"g": {
-				"dp": {
-					"p": [
+			g: {
+				dp: {
+					p: [
 						{
 							t: "Linea degli omega",
 							p: [
@@ -3961,8 +3961,8 @@ DB.set = {
 						}
 					]
 				},
-				"ds": {
-					"p": [
+				ds: {
+					p: [
 						"039",
 						"154",
 						"151",
@@ -3971,8 +3971,8 @@ DB.set = {
 						"150"
 					]
 				},
-				"np": {
-					"p": [
+				np: {
+					p: [
 						{
 							t: "Rilassamento neurovegetativo",
 							p: [
@@ -3985,27 +3985,27 @@ DB.set = {
 						}
 					]
 				},
-				"ns": {
-					"p": [
+				ns: {
+					p: [
 						"000",
 						"154",
 						"230"
 					]
 				},
-				"d": "N.B L'affaticamento è il sintomo per il quale i pazienti si sottopongono ad agopuntura, la quale risulta molto efficace nel ridurne l'intensità."
+				d: "N.B L'affaticamento è il sintomo per il quale i pazienti si sottopongono ad agopuntura, la quale risulta molto efficace nel ridurne l'intensità."
 			},
-			"s": [
+			s: [
 				{
-					"t": "Contrattura muscolare",
-					"d": "Sul lato dominante",
-					"p": [
+					t: "Contrattura muscolare",
+					d: "Sul lato dominante",
+					p: [
 						"124"
 					]
 				},
 				{
-					"t": "Componente ansiosa e stress",
-					"d": "Sul lato non dominante",
-					"p": [
+					t: "Componente ansiosa e stress",
+					d: "Sul lato non dominante",
+					p: [
 						"030",
 						"137",
 						"192",
@@ -4013,8 +4013,8 @@ DB.set = {
 					]
 				},
 				{
-					"t": "Miscellanea",
-					"p": [
+					t: "Miscellanea",
+					p: [
 						"268",
 						"165"
 					]
@@ -4022,38 +4022,38 @@ DB.set = {
 			]
 		},
 		41: {
-			"g": {
-				"dp": {
-					"p": [
+			g: {
+				dp: {
+					p: [
 						"003",
 						"039",
 						"165"
 					]
 				},
-				"ds": {
-					"p": [
+				ds: {
+					p: [
 						"154",
 						"151"
 					]
 				},
-				"np": {
-					"p": [
+				np: {
+					p: [
 						"000",
 						"001",
 						"230"
 					]
 				},
-				"ns": {
-					"p": [
+				ns: {
+					p: [
 						"142"
 					]
 				}
 			},
-			"s": [
+			s: [
 				{
-					"t": "In caso di ipertensione",
-					"d": "Sul lato dominante",
-					"p": [
+					t: "In caso di ipertensione",
+					d: "Sul lato dominante",
+					p: [
 						"030",
 						"192",
 						"243",
@@ -4061,9 +4061,9 @@ DB.set = {
 					]
 				},
 				{
-					"t": "Componente ansiosa e stress",
-					"d": "Sul lato non dominante",
-					"p": [
+					t: "Componente ansiosa e stress",
+					d: "Sul lato non dominante",
+					p: [
 						{
 							t: "Triade adattata",
 							p: [
@@ -4078,48 +4078,48 @@ DB.set = {
 			]
 		},
 		42: {
-			"g": {
-				"dp": {
-					"p": [
+			g: {
+				dp: {
+					p: [
 						"230",
 						"030",
 						"192"
 					]
 				},
-				"ds": {
-					"p": [
+				ds: {
+					p: [
 						"142",
 						"199",
 						"111",
 						"003"
 					]
 				},
-				"np": {
-					"p": [
+				np: {
+					p: [
 						"000",
 						"001",
 						"137"
 					]
 				},
-				"ns": {
-					"p": [
+				ns: {
+					p: [
 						"230",
 						"030"
 					]
 				}
 			},
-			"s": [
+			s: [
 				{
-					"t": "Componente depressiva",
-					"d": "Sul lato non dominante",
-					"p": [
+					t: "Componente depressiva",
+					d: "Sul lato non dominante",
+					p: [
 						"173",
 						"184"
 					]
 				},
 				{
-					"t": "Miscellanea",
-					"p": [
+					t: "Miscellanea",
+					p: [
 						{
 							t: "Triade di relax",
 							p: [
@@ -4143,42 +4143,42 @@ DB.set = {
 			]
 		},
 		43: {
-			"g": {
-				"dp": {
-					"p": [
+			g: {
+				dp: {
+					p: [
 						"230",
 						"129",
 						"192"
 					]
 				},
-				"ds": {
-					"p": [
+				ds: {
+					p: [
 						"030",
 						"137",
 						"173",
 						"199"
 					]
 				},
-				"np": {
-					"p": [
+				np: {
+					p: [
 						"030",
 						"000",
 						"137"
 					]
 				},
-				"ns": {
-					"p": [
+				ns: {
+					p: [
 						"001",
 						"013",
 						"129"
 					]
 				}
 			},
-			"s": [
+			s: [
 				{
-					"t": "Componente ansiosa e stress",
-					"d": "Sul lato non dominante",
-					"p": [
+					t: "Componente ansiosa e stress",
+					d: "Sul lato non dominante",
+					p: [
 						{
 							t: "Triade di relax",
 							p: [
@@ -4191,8 +4191,8 @@ DB.set = {
 					]
 				},
 				{
-					"t": "Miscellanea",
-					"p": [
+					t: "Miscellanea",
+					p: [
 						"150",
 						"039",
 						"004"
@@ -4201,16 +4201,16 @@ DB.set = {
 			]
 		},
 		44: {
-			"g": {
-				"dp": {
-					"p": [
+			g: {
+				dp: {
+					p: [
 						"137",
 						"001",
 						"230"
 					]
 				},
-				"ds": {
-					"p": [
+				ds: {
+					p: [
 						"192",
 						"039",
 						"030",
@@ -4218,32 +4218,32 @@ DB.set = {
 						"In uno studio sullo stress, Marco Romoli ha notato che i punti che si evidenziano maggiormente nel padiglione, e che quindi sono sensibili alla detezione, sono SanJiao e il punto Fegato, quest'ultimo posizionato sul solo padiglione destro."
 					]
 				},
-				"np": {
-					"p": [
+				np: {
+					p: [
 						"030",
 						"000",
 						"013"
 					]
 				},
-				"ns": {
-					"p": [
+				ns: {
+					p: [
 						"001"
 					]
 				}
 			},
-			"s": [
+			s: [
 				{
-					"t": "Componente depressiva",
-					"d": "Sul lato dominante",
-					"p": [
+					t: "Componente depressiva",
+					d: "Sul lato dominante",
+					p: [
 						"111",
 						"173"
 					]
 				},
 				{
-					"t": "Componente ansiosa / somatizzazione",
-					"d": "Sul lato non dominante",
-					"p": [
+					t: "Componente ansiosa / somatizzazione",
+					d: "Sul lato non dominante",
+					p: [
 						{
 							t: "Linea degli omega",
 							p: [
@@ -4277,16 +4277,16 @@ DB.set = {
 			]
 		},
 		45: {
-			"g": {
-				"dp": {
-					"p": [
+			g: {
+				dp: {
+					p: [
 						"030",
 						"013",
 						"184"
 					]
 				},
-				"ds": {
-					"p": [
+				ds: {
+					p: [
 						"230",
 						"195",
 						"137",
@@ -4295,32 +4295,32 @@ DB.set = {
 						"150"
 					]
 				},
-				"np": {
-					"p": [
+				np: {
+					p: [
 						"001",
 						"137",
 						"173"
 					]
 				},
-				"ns": {
-					"p": [
+				ns: {
+					p: [
 						"000",
 						"030"
 					]
 				}
 			},
-			"s": [
+			s: [
 				{
-					"t": "Insonnia",
-					"d": "Sul lato non dominante",
-					"p": [
+					t: "Insonnia",
+					d: "Sul lato non dominante",
+					p: [
 						"045",
 						"245"
 					]
 				},
 				{
-					"t": "Miscellanea",
-					"p": [
+					t: "Miscellanea",
+					p: [
 						{
 							t: "Schema di miglioramento dell'umore",
 							p: [
@@ -4336,16 +4336,16 @@ DB.set = {
 			]
 		},
 		46: {
-			"g": {
-				"dp": {
-					"p": [
+			g: {
+				dp: {
+					p: [
 						"003",
 						"013",
 						"230"
 					]
 				},
-				"ds": {
-					"p": [
+				ds: {
+					p: [
 						"195",
 						"045",
 						"245",
@@ -4354,33 +4354,33 @@ DB.set = {
 						"Tempia e Fronte sono ritenuti indicati in caso di insonnia dalla China Accademy, analogamente al punto Occipite per la depressione"
 					]
 				},
-				"np": {
-					"p": [
+				np: {
+					p: [
 						"001",
 						"195",
 						"142"
 					]
 				},
-				"ns": {
-					"p": [
+				ns: {
+					p: [
 						"000",
 						"030",
 						"245"
 					]
 				}
 			},
-			"s": [
+			s: [
 				{
-					"t": "Componente ansiosa e stress",
-					"d": "Sul lato non dominante",
-					"p": [
+					t: "Componente ansiosa e stress",
+					d: "Sul lato non dominante",
+					p: [
 						"030"
 					],
 					"a": "Essendo indicato per l'ansia di stato, questo punto può ricoprire il primo posto nello schema terapeutico come anche non essere preso in considerazione. Tutto dipende dall'anamnesi."
 				},
 				{
-					"t": "Miscellanea",
-					"p": [
+					t: "Miscellanea",
+					p: [
 						{
 							t: "Linea degli omega",
 							p: [
@@ -4415,52 +4415,52 @@ DB.set = {
 			]
 		},
 		47: {
-			"g": {
-				"dp": {
-					"p": [
+			g: {
+				dp: {
+					p: [
 						"230",
 						"137",
 						"267"
 					]
 				},
-				"ds": {
-					"p": [
+				ds: {
+					p: [
 						"192",
 						"142"
 					]
 				},
-				"np": {
-					"p": [
+				np: {
+					p: [
 						"000",
 						"001",
 						"030"
 					]
 				},
-				"ns": {
-					"p": [
+				ns: {
+					p: [
 						"191"
 					]
 				}
 			},
-			"s": [
+			s: [
 				{
-					"t": "Componente depressiva",
-					"p": [
+					t: "Componente depressiva",
+					p: [
 						"173",
 						"184",
 						"111"
 					]
 				},
 				{
-					"t": "Disturbo da attacchi di panico (DAP)",
-					"p": [
+					t: "Disturbo da attacchi di panico (DAP)",
+					p: [
 						"129",
 						"013"
 					]
 				},
 				{
-					"t": "Somatizzazione dell'ansia",
-					"p": [
+					t: "Somatizzazione dell'ansia",
+					p: [
 						"004",
 						{
 							t: "Triade di relax",
@@ -4495,46 +4495,46 @@ DB.set = {
 			]
 		},
 		48: {
-			"g": {
-				"dp": {
-					"p": [
+			g: {
+				dp: {
+					p: [
 						"104",
 						"041",
 						"164"
 					]
 				},
-				"ds": {
-					"p": [
+				ds: {
+					p: [
 						"039",
 						"135",
 						"142"
 					]
 				},
-				"np": {
-					"p": [
+				np: {
+					p: [
 						"041",
 						"000"
 					]
 				},
-				"ns": {
-					"p": [
+				ns: {
+					p: [
 						"001",
 						"230"
 					]
 				}
 			},
-			"s": [
+			s: [
 				{
-					"t": "Ipotiroidismo",
-					"p": [
+					t: "Ipotiroidismo",
+					p: [
 						"268",
 						"154"
 					]
 				},
 				{
-					"t": "Componente ansiosa e stress",
-					"d": "Sul lato non dominante",
-					"p": [
+					t: "Componente ansiosa e stress",
+					d: "Sul lato non dominante",
+					p: [
 						{
 							t: "Linea degli omega",
 							p: [
@@ -4559,16 +4559,16 @@ DB.set = {
 			]
 		},
 		49: {
-			"g": {
-				"dp": {
-					"p": [
+			g: {
+				dp: {
+					p: [
 						"230",
 						"215",
 						"195"
 					]
 				},
-				"ds": {
-					"p": [
+				ds: {
+					p: [
 						"104",
 						"164",
 						"165",
@@ -4577,24 +4577,24 @@ DB.set = {
 						"097"
 					]
 				},
-				"np": {
-					"p": [
+				np: {
+					p: [
 						"000",
 						"001"
 					]
 				},
-				"ns": {
-					"p": [
+				ns: {
+					p: [
 						"039",
 						"230"
 					]
 				}
 			},
-			"s": [
+			s: [
 				{
-					"t": "Componente ansiosa e stress",
-					"d": "Sul lato non dominante",
-					"p": [
+					t: "Componente ansiosa e stress",
+					d: "Sul lato non dominante",
+					p: [
 						"137",
 						{
 							t: "Linea degli omega",
@@ -4608,8 +4608,8 @@ DB.set = {
 					]
 				},
 				{
-					"t": "Miscellanea",
-					"p": [
+					t: "Miscellanea",
+					p: [
 						"039",
 						"157",
 						"143"
@@ -4618,16 +4618,16 @@ DB.set = {
 			]
 		},
 		50: {
-			"g": {
-				"dp": {
-					"p": [
+			g: {
+				dp: {
+					p: [
 						"230",
 						"061",
 						"155"
 					]
 				},
-				"ds": {
-					"p": [
+				ds: {
+					p: [
 						"003",
 						"104",
 						"039",
@@ -4638,31 +4638,31 @@ DB.set = {
 						"106"
 					]
 				},
-				"np": {
-					"p": [
+				np: {
+					p: [
 						"000",
 						"001"
 					]
 				},
-				"ns": {
-					"p": [
+				ns: {
+					p: [
 						"180",
 						"039"
 					]
 				}
 			},
-			"s": [
+			s: [
 				{
-					"t": "Contrattura muscolare",
-					"d": "Sul lato dominante",
-					"p": [
+					t: "Contrattura muscolare",
+					d: "Sul lato dominante",
+					p: [
 						"124"
 					]
 				},
 				{
-					"t": "Componente ansiosa e stress",
-					"d": "Sul lato non dominante",
-					"p": [
+					t: "Componente ansiosa e stress",
+					d: "Sul lato non dominante",
+					p: [
 						"013",
 						"030",
 						{
@@ -4678,8 +4678,8 @@ DB.set = {
 					]
 				},
 				{
-					"t": "Miscellanea",
-					"p": [
+					t: "Miscellanea",
+					p: [
 						"165",
 						"222"
 					]
@@ -4687,16 +4687,16 @@ DB.set = {
 			]
 		},
 		51: {
-			"g": {
-				"dp": {
-					"p": [
+			g: {
+				dp: {
+					p: [
 						"000",
 						"003",
 						"164"
 					]
 				},
-				"ds": {
-					"p": [
+				ds: {
+					p: [
 						"155",
 						"039",
 						"180",
@@ -4706,31 +4706,31 @@ DB.set = {
 						"097"
 					]
 				},
-				"np": {
-					"p": [
+				np: {
+					p: [
 						"001",
 						"104"
 					]
 				},
-				"ns": {
-					"p": [
+				ns: {
+					p: [
 						"000",
 						"039"
 					]
 				}
 			},
-			"s": [
+			s: [
 				{
-					"t": "Contrattura muscolare",
-					"d": "Sul lato dominante",
-					"p": [
+					t: "Contrattura muscolare",
+					d: "Sul lato dominante",
+					p: [
 						"124"
 					]
 				},
 				{
-					"t": "Componente ansiosa e stress",
-					"d": "Sul lato non dominante",
-					"p": [
+					t: "Componente ansiosa e stress",
+					d: "Sul lato non dominante",
+					p: [
 						"173",
 						"030",
 						"013",
@@ -4746,8 +4746,8 @@ DB.set = {
 					]
 				},
 				{
-					"t": "Miscellanea",
-					"p": [
+					t: "Miscellanea",
+					p: [
 						"165",
 						"195"
 					]
@@ -4755,16 +4755,16 @@ DB.set = {
 			]
 		},
 		52: {
-			"g": {
-				"dp": {
-					"p": [
+			g: {
+				dp: {
+					p: [
 						"003",
 						"039",
 						"157"
 					]
 				},
-				"ds": {
-					"p": [
+				ds: {
+					p: [
 						"164",
 						"039",
 						"230",
@@ -4776,8 +4776,8 @@ DB.set = {
 						"085"
 					]
 				},
-				"np": {
-					"p": [
+				np: {
+					p: [
 						{
 							t: "Triade modificata",
 							p: [
@@ -4788,34 +4788,34 @@ DB.set = {
 						}
 					]
 				},
-				"ns": {
-					"p": [
+				ns: {
+					p: [
 						"000",
 						"039",
 						"199"
 					]
 				}
 			},
-			"s": [
+			s: [
 				{
-					"t": "Contrattura muscolare",
-					"d": "Sul lato dominante",
-					"p": [
+					t: "Contrattura muscolare",
+					d: "Sul lato dominante",
+					p: [
 						"124"
 					]
 				},
 				{
-					"t": "Componente ansiosa e stress",
-					"d": "Sul lato non dominante",
-					"p": [
+					t: "Componente ansiosa e stress",
+					d: "Sul lato non dominante",
+					p: [
 						"199",
 						"030",
 						"137"
 					]
 				},
 				{
-					"t": "Miscellanea",
-					"p": [
+					t: "Miscellanea",
+					p: [
 						"143",
 						"157",
 						"195",
@@ -4826,17 +4826,17 @@ DB.set = {
 			]
 		},
 		53: {
-			"g": {
-				"dp": {
-					"p": [
+			g: {
+				dp: {
+					p: [
 						"104",
 						"159",
 						"097",
 						"155"
 					]
 				},
-				"ds": {
-					"p": [
+				ds: {
+					p: [
 						"164",
 						"039",
 						"230",
@@ -4847,33 +4847,33 @@ DB.set = {
 						"097"
 					]
 				},
-				"np": {
-					"p": [
+				np: {
+					p: [
 						"000",
 						"001",
 						"164"
 					]
 				},
-				"ns": {
-					"p": [
+				ns: {
+					p: [
 						"104",
 						"262"
 					]
 				}
 			},
-			"s": [
+			s: [
 				{
-					"t": "Contrattura muscolare",
-					"d": "Sul lato dominante",
-					"p": [
+					t: "Contrattura muscolare",
+					d: "Sul lato dominante",
+					p: [
 						"124",
 						"067"
 					]
 				},
 				{
-					"t": "Componente ansiosa e stress",
-					"d": "Sul lato non dominante",
-					"p": [
+					t: "Componente ansiosa e stress",
+					d: "Sul lato non dominante",
+					p: [
 						"199",
 						"137",
 						"192",
@@ -4881,8 +4881,8 @@ DB.set = {
 					]
 				},
 				{
-					"t": "Miscellanea",
-					"p": [
+					t: "Miscellanea",
+					p: [
 						"262",
 						"195"
 					]
@@ -4890,16 +4890,16 @@ DB.set = {
 			]
 		},
 		54: {
-			"g": {
-				"dp": {
-					"p": [
+			g: {
+				dp: {
+					p: [
 						"000",
 						"030",
 						"155"
 					]
 				},
-				"ds": {
-					"p": [
+				ds: {
+					p: [
 						"164",
 						"039",
 						"004",
@@ -4912,41 +4912,41 @@ DB.set = {
 						"061"
 					]
 				},
-				"np": {
-					"p": [
+				np: {
+					p: [
 						"001",
 						"104",
 						"180"
 					]
 				},
-				"ns": {
-					"p": [
+				ns: {
+					p: [
 						"000",
 						"222"
 					]
 				}
 			},
-			"s": [
+			s: [
 				{
-					"t": "Contrattura muscolare",
-					"d": "Sul lato dominante",
-					"p": [
+					t: "Contrattura muscolare",
+					d: "Sul lato dominante",
+					p: [
 						"124",
 						"067"
 					]
 				},
 				{
-					"t": "Componente ansiosa e stress",
-					"d": "Sul lato non dominante",
-					"p": [
+					t: "Componente ansiosa e stress",
+					d: "Sul lato non dominante",
+					p: [
 						"199",
 						"013",
 						"192"
 					]
 				},
 				{
-					"t": "Miscellanea",
-					"p": [
+					t: "Miscellanea",
+					p: [
 						"262",
 						"195",
 						"229"
@@ -4955,53 +4955,53 @@ DB.set = {
 			]
 		},
 		55: {
-			"g": {
-				"dp": {
-					"p": [
+			g: {
+				dp: {
+					p: [
 						"000",
 						"093"
 					]
 				},
-				"ds": {
-					"p": [
+				ds: {
+					p: [
 						"221",
 						"170",
 						["092","123"]
 					]
 				},
-				"np": {
-					"p": [
+				np: {
+					p: [
 						"000",
 						"093"
 					]
 				},
-				"ns": {
-					"p": [
+				ns: {
+					p: [
 						"001",
 						"013"
 					]
 				}
 			},
-			"s": [
+			s: [
 				{
-					"t": "Contrattura muscolare",
-					"d": "Sul lato dominante",
-					"p": [
+					t: "Contrattura muscolare",
+					d: "Sul lato dominante",
+					p: [
 						"124"
 					]
 				},
 				{
-					"t": "Componente ansiosa e stress",
-					"d": "Sul lato non dominante",
-					"p": [
+					t: "Componente ansiosa e stress",
+					d: "Sul lato non dominante",
+					p: [
 						"199",
 						"137",
 						"192"
 					]
 				},
 				{
-					"t": "Miscellanea",
-					"p": [
+					t: "Miscellanea",
+					p: [
 						{
 							t: "Rilassamento neurovegetativo",
 							p: [
@@ -5036,15 +5036,15 @@ DB.set = {
 			]
 		},
 		56: {
-			"g": {
-				"dp": {
-					"p": [
+			g: {
+				dp: {
+					p: [
 						"000",
 						"061"
 					]
 				},
-				"ds": {
-					"p": [
+				ds: {
+					p: [
 						"039",
 						"155",
 						"195",
@@ -5053,39 +5053,39 @@ DB.set = {
 						"085"
 					]
 				},
-				"np": {
-					"p": [
+				np: {
+					p: [
 						"001",
 						"124"
 					]
 				},
-				"ns": {
-					"p": [
+				ns: {
+					p: [
 						"000",
 						"155",
 						"222"
 					]
 				}
 			},
-			"s": [
+			s: [
 				{
-					"t": "Contrattura muscolare",
-					"d": "Sul lato dominante",
-					"p": [
+					t: "Contrattura muscolare",
+					d: "Sul lato dominante",
+					p: [
 						"067"
 					]
 				},
 				{
-					"t": "Componente ansiosa e stress",
-					"d": "Sul lato non dominante",
-					"p": [
+					t: "Componente ansiosa e stress",
+					d: "Sul lato non dominante",
+					p: [
 						"030",
 						"013"
 					]
 				},
 				{
-					"t": "Miscellanea",
-					"p": [
+					t: "Miscellanea",
+					p: [
 						"003",
 						"262",
 						"229"
@@ -5094,16 +5094,16 @@ DB.set = {
 			]
 		},
 		57: {
-			"g": {
-				"dp": {
-					"p": [
+			g: {
+				dp: {
+					p: [
 						"104",
 						"164",
 						"230"
 					]
 				},
-				"ds": {
-					"p": [
+				ds: {
+					p: [
 						"003",
 						"004",
 						"031",
@@ -5112,32 +5112,32 @@ DB.set = {
 						"097"
 					]
 				},
-				"np": {
-					"p": [
+				np: {
+					p: [
 						"001",
 						"039",
 						"013"
 					]
 				},
-				"ns": {
-					"p": [
+				ns: {
+					p: [
 						"000"
 					]
 				}
 			},
-			"s": [
+			s: [
 				{
-					"t": "Componente ansiosa e stress",
-					"d": "Sul lato non dominante",
-					"p": [
+					t: "Componente ansiosa e stress",
+					d: "Sul lato non dominante",
+					p: [
 						"137",
 						"199",
 						"192"
 					]
 				},
 				{
-					"t": "Miscellanea",
-					"p": [
+					t: "Miscellanea",
+					p: [
 						{
 							t: "Linea degli omega",
 							p: [
@@ -5161,15 +5161,15 @@ DB.set = {
 			]
 		},
 		58: {
-			"g": {
-				"dp": {
-					"p": [
+			g: {
+				dp: {
+					p: [
 						"000",
 						"089"
 					]
 				},
-				"ds": {
-					"p": [
+				ds: {
+					p: [
 						"164",
 						"230",
 						"039",
@@ -5181,30 +5181,30 @@ DB.set = {
 						"085"
 					]
 				},
-				"np": {
-					"p": [
+				np: {
+					p: [
 						"001",
 						"089",
 						"137"
 					]
 				},
-				"ns": {
-					"p": [
+				ns: {
+					p: [
 						"000"
 					]
 				}
 			},
-			"s": [
+			s: [
 				{
-					"t": "Componente ansiosa e stress",
-					"d": "Sul lato non dominante",
-					"p": [
+					t: "Componente ansiosa e stress",
+					d: "Sul lato non dominante",
+					p: [
 						"199"
 					]
 				},
 				{
-					"t": "Miscellanea",
-					"p": [
+					t: "Miscellanea",
+					p: [
 						"154",
 						"151",
 						"262"
@@ -5213,16 +5213,16 @@ DB.set = {
 			]
 		},
 		59: {
-			"g": {
-				"dp": {
-					"p": [
+			g: {
+				dp: {
+					p: [
 						"155",
 						"222",
 						"230"
 					]
 				},
-				"ds": {
-					"p": [
+				ds: {
+					p: [
 						"164",
 						"023",
 						"159",
@@ -5231,25 +5231,25 @@ DB.set = {
 						"089"
 					]
 				},
-				"np": {
-					"p": [
+				np: {
+					p: [
 						"030",
 						"137",
 						"192"
 					]
 				},
-				"ns": {
-					"p": [
+				ns: {
+					p: [
 						"001",
 						"000"
 					]
 				}
 			},
-			"s": [
+			s: [
 				{
-					"t": "Componente ansiosa e stress",
-					"d": "Sul lato non dominante",
-					"p": [
+					t: "Componente ansiosa e stress",
+					d: "Sul lato non dominante",
+					p: [
 						{
 							t: "Triade di relax",
 							p: [
@@ -5281,24 +5281,24 @@ DB.set = {
 					]
 				},
 				{
-					"t": "Miscellanea",
-					"p": [
+					t: "Miscellanea",
+					p: [
 						"262"
 					]
 				}
 			]
 		},
 		60: {
-			"g": {
-				"dp": {
-					"p": [
+			g: {
+				dp: {
+					p: [
 						"001",
 						"106",
 						"180"
 					]
 				},
-				"ds": {
-					"p": [
+				ds: {
+					p: [
 						"039",
 						"111",
 						"104",
@@ -5308,33 +5308,33 @@ DB.set = {
 						"105"
 					]
 				},
-				"np": {
-					"p": [
+				np: {
+					p: [
 						"000",
 						"030",
 						"117"
 					]
 				},
-				"ns": {
-					"p": [
+				ns: {
+					p: [
 						"003",
 						"180"
 					]
 				}
 			},
-			"s": [
+			s: [
 				{
-					"t": "Componente ansiosa e stress",
-					"d": "Sul lato non dominante",
-					"p": [
+					t: "Componente ansiosa e stress",
+					d: "Sul lato non dominante",
+					p: [
 						"013",
 						"129",
 						"199"
 					]
 				},
 				{
-					"t": "Miscellanea",
-					"p": [
+					t: "Miscellanea",
+					p: [
 						"165",
 						"262",
 						"004"
@@ -5343,16 +5343,16 @@ DB.set = {
 			]
 		},
 		61: {
-			"g": {
-				"dp": {
-					"p": [
+			g: {
+				dp: {
+					p: [
 						"003",
 						"111",
 						"155"
 					]
 				},
-				"ds": {
-					"p": [
+				ds: {
+					p: [
 						"039",
 						"104",
 						"251",
@@ -5360,31 +5360,31 @@ DB.set = {
 						"061"
 					]
 				},
-				"np": {
-					"p": [
+				np: {
+					p: [
 						"001",
 						"111",
 						"124"
 					]
 				},
-				"ns": {
-					"p": [
+				ns: {
+					p: [
 						"000"
 					]
 				}
 			},
-			"s": [
+			s: [
 				{
-					"t": "Contrattura muscolare",
-					"d": "Sul lato dominante",
-					"p": [
+					t: "Contrattura muscolare",
+					d: "Sul lato dominante",
+					p: [
 						"067"
 					]
 				},
 				{
-					"t": "Componente ansiosa e stress",
-					"d": "Sul lato non dominante",
-					"p": [
+					t: "Componente ansiosa e stress",
+					d: "Sul lato non dominante",
+					p: [
 						"137",
 						"030",
 						"013",
@@ -5411,16 +5411,16 @@ DB.set = {
 			]
 		},
 		62: {
-			"g": {
-				"dp": {
-					"p": [
+			g: {
+				dp: {
+					p: [
 						"003",
 						"106",
 						"039"
 					]
 				},
-				"ds": {
-					"p": [
+				ds: {
+					p: [
 						"104",
 						"157",
 						"143",
@@ -5429,34 +5429,34 @@ DB.set = {
 						"109"
 					]
 				},
-				"np": {
-					"p": [
+				np: {
+					p: [
 						"030",
 						"106",
 						"222"
 					]
 				},
-				"ns": {
-					"p": [
+				ns: {
+					p: [
 						"001",
 						"000",
 						"155"
 					]
 				}
 			},
-			"s": [
+			s: [
 				{
-					"t": "Componente ansiosa e stress",
-					"d": "Sul lato non dominante",
-					"p": [
+					t: "Componente ansiosa e stress",
+					d: "Sul lato non dominante",
+					p: [
 						"030",
 						"137",
 						"192"
 					]
 				},
 				{
-					"t": "Miscellanea",
-					"p": [
+					t: "Miscellanea",
+					p: [
 						"061",
 						"039"
 					]
@@ -5464,16 +5464,16 @@ DB.set = {
 			]
 		},
 		63: {
-			"g": {
-				"dp": {
-					"p": [
+			g: {
+				dp: {
+					p: [
 						"003",
 						"230",
 						"106"
 					]
 				},
-				"ds": {
-					"p": [
+				ds: {
+					p: [
 						"039",
 						"030",
 						"108",
@@ -5481,26 +5481,26 @@ DB.set = {
 						"109"
 					]
 				},
-				"np": {
-					"p": [
+				np: {
+					p: [
 						"230",
 						"030",
 						"106"
 					]
 				},
-				"ns": {
-					"p": [
+				ns: {
+					p: [
 						"001",
 						"000",
 						"039"
 					]
 				}
 			},
-			"s": [
+			s: [
 				{
-					"t": "Componente ansiosa e stress",
-					"d": "Sul lato non dominante",
-					"p": [
+					t: "Componente ansiosa e stress",
+					d: "Sul lato non dominante",
+					p: [
 						"137",
 						"192",
 						"013",
@@ -5517,8 +5517,8 @@ DB.set = {
 					]
 				},
 				{
-					"t": "Miscellanea",
-					"p": [
+					t: "Miscellanea",
+					p: [
 						"262",
 						"157",
 						"143"
@@ -5527,16 +5527,16 @@ DB.set = {
 			]
 		},
 		64: {
-			"g": {
-				"dp": {
-					"p": [
+			g: {
+				dp: {
+					p: [
 						"001",
 						"108",
 						"155"
 					]
 				},
-				"ds": {
-					"p": [
+				ds: {
+					p: [
 						"164",
 						"104",
 						"061",
@@ -5545,26 +5545,26 @@ DB.set = {
 						"106"
 					]
 				},
-				"np": {
-					"p": [
+				np: {
+					p: [
 						"000",
 						"003",
 						"108"
 					]
 				},
-				"ns": {
-					"p": [
+				ns: {
+					p: [
 						"001",
 						"222",
 						"180"
 					]
 				}
 			},
-			"s": [
+			s: [
 				{
-					"t": "Componente ansiosa e stress",
-					"d": "Sul lato non dominante",
-					"p": [
+					t: "Componente ansiosa e stress",
+					d: "Sul lato non dominante",
+					p: [
 						"030",
 						"137",
 						"192",
@@ -5572,8 +5572,8 @@ DB.set = {
 					]
 				},
 				{
-					"t": "Miscellanea",
-					"p": [
+					t: "Miscellanea",
+					p: [
 						"165",
 						"262",
 						"039"
@@ -5582,16 +5582,16 @@ DB.set = {
 			]
 		},
 		65: {
-			"g": {
-				"dp": {
-					"p": [
+			g: {
+				dp: {
+					p: [
 						"104",
 						"093",
 						"039"
 					]
 				},
-				"ds": {
-					"p": [
+				ds: {
+					p: [
 						"154",
 						"222",
 						"127",
@@ -5599,39 +5599,39 @@ DB.set = {
 						"121"
 					]
 				},
-				"np": {
-					"p": [
+				np: {
+					p: [
 						"001",
 						"000",
 						"137"
 					]
 				},
-				"ns": {
-					"p": [
+				ns: {
+					p: [
 						"192",
 						"093"
 					]
 				}
 			},
-			"s": [
+			s: [
 				{
-					"t": "Contrattura muscolare",
-					"d": "Sul lato dominante",
-					"p": [
+					t: "Contrattura muscolare",
+					d: "Sul lato dominante",
+					p: [
 						"067"
 					]
 				},
 				{
-					"t": "Componente ansiosa e stress",
-					"d": "Sul lato non dominante",
-					"p": [
+					t: "Componente ansiosa e stress",
+					d: "Sul lato non dominante",
+					p: [
 						"137",
 						"013"
 					]
 				},
 				{
-					"t": "Miscellanea",
-					"p": [
+					t: "Miscellanea",
+					p: [
 						"026",
 						"098",
 						"114",
@@ -5641,16 +5641,16 @@ DB.set = {
 			]
 		},
 		66: {
-			"g": {
-				"dp": {
-					"p": [
+			g: {
+				dp: {
+					p: [
 						"104",
 						"127",
 						"039"
 					]
 				},
-				"ds": {
-					"p": [
+				ds: {
+					p: [
 						"004",
 						"180",
 						"093",
@@ -5658,40 +5658,40 @@ DB.set = {
 						"101"
 					]
 				},
-				"np": {
-					"p": [
+				np: {
+					p: [
 						"001",
 						"000",
 						"135"
 					]
 				},
-				"ns": {
-					"p": [
+				ns: {
+					p: [
 						"154",
 						"192"
 					]
 				}
 			},
-			"s": [
+			s: [
 				{
-					"t": "Contrattura muscolare",
-					"d": "Sul lato dominante",
-					"p": [
+					t: "Contrattura muscolare",
+					d: "Sul lato dominante",
+					p: [
 						"067"
 					]
 				},
 				{
-					"t": "Componente ansiosa e stress",
-					"d": "Sul lato non dominante",
-					"p": [
+					t: "Componente ansiosa e stress",
+					d: "Sul lato non dominante",
+					p: [
 						"030",
 						"137",
 						"013"
 					]
 				},
 				{
-					"t": "Miscellanea",
-					"p": [
+					t: "Miscellanea",
+					p: [
 						"135",
 						"116",
 						"121"
@@ -5700,41 +5700,41 @@ DB.set = {
 			]
 		},
 		67: {
-			"g": {
-				"dp": {
-					"p": [
+			g: {
+				dp: {
+					p: [
 						"104",
 						"127",
 						"039"
 					]
 				},
-				"ds": {
-					"p": [
+				ds: {
+					p: [
 						"000",
 						"003",
 						"093",
 						"128"
 					]
 				},
-				"np": {
-					"p": [
+				np: {
+					p: [
 						"001",
 						"000",
 						"128"
 					]
 				},
-				"ns": {
-					"p": [
+				ns: {
+					p: [
 						"154",
 						"195"
 					]
 				}
 			},
-			"s": [
+			s: [
 				{
-					"t": "Componente ansiosa e stress",
-					"d": "Sul lato non dominante",
-					"p": [
+					t: "Componente ansiosa e stress",
+					d: "Sul lato non dominante",
+					p: [
 						"192",
 						"030",
 						"137",
@@ -5742,8 +5742,8 @@ DB.set = {
 					]
 				},
 				{
-					"t": "Miscellanea",
-					"p": [
+					t: "Miscellanea",
+					p: [
 						{
 							t: "Rilassamento neurovegetativo",
 							p: [
@@ -5760,16 +5760,16 @@ DB.set = {
 			]
 		},
 		68: {
-			"g": {
-				"dp": {
-					"p": [
+			g: {
+				dp: {
+					p: [
 						"230",
 						"093",
 						"104"
 					]
 				},
-				"ds": {
-					"p": [
+				ds: {
+					p: [
 						"039",
 						"000",
 						"221",
@@ -5778,34 +5778,34 @@ DB.set = {
 						"114"
 					]
 				},
-				"np": {
-					"p": [
+				np: {
+					p: [
 						"000",
 						"030",
 						"221"
 					]
 				},
-				"ns": {
-					"p": [
+				ns: {
+					p: [
 						"039",
 						"001",
 						"154"
 					]
 				}
 			},
-			"s": [
+			s: [
 				{
-					"t": "Componente ansiosa e stress",
-					"d": "Sul lato non dominante",
-					"p": [
+					t: "Componente ansiosa e stress",
+					d: "Sul lato non dominante",
+					p: [
 						"030",
 						"137",
 						"192"
 					]
 				},
 				{
-					"t": "Miscellanea",
-					"p": [
+					t: "Miscellanea",
+					p: [
 						"121",
 						"291"
 					]
@@ -5813,16 +5813,16 @@ DB.set = {
 			]
 		},
 		69: {
-			"g": {
-				"dp": {
-					"p": [
+			g: {
+				dp: {
+					p: [
 						"000",
 						"098",
 						"154"
 					]
 				},
-				"ds": {
-					"p": [
+				ds: {
+					p: [
 						"104",
 						"039",
 						"037",
@@ -5833,15 +5833,15 @@ DB.set = {
 						"095"
 					]
 				},
-				"np": {
-					"p": [
+				np: {
+					p: [
 						"001",
 						"098",
 						"137"
 					]
 				},
-				"ns": {
-					"p": [
+				ns: {
+					p: [
 						"000",
 						"004",
 						"013",
@@ -5849,18 +5849,18 @@ DB.set = {
 					]
 				}
 			},
-			"s": [
+			s: [
 				{
-					"t": "Contrattura muscolare",
-					"d": "Sul lato dominante",
-					"p": [
+					t: "Contrattura muscolare",
+					d: "Sul lato dominante",
+					p: [
 						"067"
 					]
 				},
 				{
-					"t": "Componente ansiosa e stress",
-					"d": "Sul lato non dominante",
-					"p": [
+					t: "Componente ansiosa e stress",
+					d: "Sul lato non dominante",
+					p: [
 						"137",
 						"173",
 						"030",
@@ -5868,8 +5868,8 @@ DB.set = {
 					]
 				},
 				{
-					"t": "Miscellanea",
-					"p": [
+					t: "Miscellanea",
+					p: [
 						"155",
 						"222",
 						"195"
@@ -5878,16 +5878,16 @@ DB.set = {
 			]
 		},
 		70: {
-			"g": {
-				"dp": {
-					"p": [
+			g: {
+				dp: {
+					p: [
 						"003",
 						"037",
 						["007","095"]
 					]
 				},
-				"ds": {
-					"p": [
+				ds: {
+					p: [
 						"104",
 						"039",
 						"122",
@@ -5897,33 +5897,33 @@ DB.set = {
 						"115"
 					]
 				},
-				"np": {
-					"p": [
+				np: {
+					p: [
 						"230",
 						"001",
 						"098"
 					]
 				},
-				"ns": {
-					"p": [
+				ns: {
+					p: [
 						"000",
 						"154",
 						"037"
 					]
 				}
 			},
-			"s": [
+			s: [
 				{
-					"t": "Contrattura muscolare",
-					"d": "Sul lato dominante",
-					"p": [
+					t: "Contrattura muscolare",
+					d: "Sul lato dominante",
+					p: [
 						"067"
 					]
 				},
 				{
-					"t": "Componente ansiosa e stress",
-					"d": "Sul lato non dominante",
-					"p": [
+					t: "Componente ansiosa e stress",
+					d: "Sul lato non dominante",
+					p: [
 						"137",
 						"030",
 						"013",
@@ -5933,16 +5933,16 @@ DB.set = {
 			]
 		},
 		71: {
-			"g": {
-				"dp": {
-					"p": [
+			g: {
+				dp: {
+					p: [
 						"001",
 						"098",
 						"154"
 					]
 				},
-				"ds": {
-					"p": [
+				ds: {
+					p: [
 						"000",
 						"039",
 						"104",
@@ -5954,8 +5954,8 @@ DB.set = {
 						"095"
 					]
 				},
-				"np": {
-					"p": [
+				np: {
+					p: [
 						{
 							t: "Linea degli omega",
 							p: [
@@ -5967,19 +5967,19 @@ DB.set = {
 						}
 					]
 				},
-				"ns": {
-					"p": [
+				ns: {
+					p: [
 						"001",
 						"154",
 						"137"
 					]
 				}
 			},
-			"s": [
+			s: [
 				{
-					"t": "Componente ansiosa e stress",
-					"d": "Sul lato non dominante",
-					"p": [
+					t: "Componente ansiosa e stress",
+					d: "Sul lato non dominante",
+					p: [
 						"192",
 						"013",
 						"030",
@@ -5987,24 +5987,24 @@ DB.set = {
 					]
 				},
 				{
-					"t": "Miscellanea",
-					"p": [
+					t: "Miscellanea",
+					p: [
 						"195"
 					]
 				}
 			]
 		},
 		72: {
-			"g": {
-				"dp": {
-					"p": [
+			g: {
+				dp: {
+					p: [
 						"003",
 						"165",
 						["007","095"]
 					]
 				},
-				"ds": {
-					"p": [
+				ds: {
+					p: [
 						"039",
 						"037",
 						"098",
@@ -6012,25 +6012,25 @@ DB.set = {
 						"115"
 					]
 				},
-				"np": {
-					"p": [
+				np: {
+					p: [
 						"003",
 						"037",
 						"000"
 					]
 				},
-				"ns": {
-					"p": [
+				ns: {
+					p: [
 						"001",
 						"230"
 					]
 				}
 			},
-			"s": [
+			s: [
 				{
-					"t": "Componente ansiosa e stress",
-					"d": "Sul lato non dominante",
-					"p": [
+					t: "Componente ansiosa e stress",
+					d: "Sul lato non dominante",
+					p: [
 						"199",
 						"137",
 						"013",
@@ -6040,16 +6040,16 @@ DB.set = {
 			]
 		},
 		73: {
-			"g": {
-				"dp": {
-					"p": [
+			g: {
+				dp: {
+					p: [
 						"001",
 						"003",
 						"192"
 					]
 				},
-				"ds": {
-					"p": [
+				ds: {
+					p: [
 						"039",
 						"030",
 						"192",
@@ -6058,32 +6058,32 @@ DB.set = {
 						"147"
 					]
 				},
-				"np": {
-					"p": [
+				np: {
+					p: [
 						"030",
 						"000",
 						"137"
 					]
 				},
-				"ns": {
-					"p": [
+				ns: {
+					p: [
 						"001",
 						"142"
 					]
 				}
 			},
-			"s": [
+			s: [
 				{
-					"t": "Componente ansiosa e stress",
-					"d": "Sul lato non dominante",
-					"p": [
+					t: "Componente ansiosa e stress",
+					d: "Sul lato non dominante",
+					p: [
 						"004",
 						"013"
 					]
 				},
 				{
-					"t": "Miscellanea",
-					"p": [
+					t: "Miscellanea",
+					p: [
 						"135",
 						"002",
 						{
@@ -6100,16 +6100,16 @@ DB.set = {
 			]
 		},
 		74: {
-			"g": {
-				"dp": {
-					"p": [
+			g: {
+				dp: {
+					p: [
 						"000",
 						"003",
 						"165"
 					]
 				},
-				"ds": {
-					"p": [
+				ds: {
+					p: [
 						"198",
 						"147",
 						"039",
@@ -6118,33 +6118,33 @@ DB.set = {
 						"157"
 					]
 				},
-				"np": {
-					"p": [
+				np: {
+					p: [
 						"003",
 						"039",
 						"137"
 					]
 				},
-				"ns": {
-					"p": [
+				ns: {
+					p: [
 						"000",
 						"001"
 					]
 				}
 			},
-			"s": [
+			s: [
 				{
-					"t": "Componente ansiosa e stress",
-					"d": "Sul lato non dominante",
-					"p": [
+					t: "Componente ansiosa e stress",
+					d: "Sul lato non dominante",
+					p: [
 						"013",
 						"199",
 						"004"
 					]
 				},
 				{
-					"t": "Miscellanea",
-					"p": [
+					t: "Miscellanea",
+					p: [
 						"135",
 						"026",
 						{
@@ -6161,16 +6161,16 @@ DB.set = {
 			]
 		},
 		75: {
-			"g": {
-				"dp": {
-					"p": [
+			g: {
+				dp: {
+					p: [
 						"230",
 						"039",
 						"056"
 					]
 				},
-				"ds": {
-					"p": [
+				ds: {
+					p: [
 						"195",
 						"135",
 						"043",
@@ -6179,33 +6179,33 @@ DB.set = {
 						"143"
 					]
 				},
-				"np": {
-					"p": [
+				np: {
+					p: [
 						"000",
 						"030",
 						"142"
 					]
 				},
-				"ns": {
-					"p": [
+				ns: {
+					p: [
 						"001",
 						"137"
 					]
 				}
 			},
-			"s": [
+			s: [
 				{
-					"t": "Componente ansiosa e stress",
-					"d": "Sul lato non dominante",
-					"p": [
+					t: "Componente ansiosa e stress",
+					d: "Sul lato non dominante",
+					p: [
 						"030",
 						"013",
 						"121"
 					]
 				},
 				{
-					"t": "Miscellanea",
-					"p": [
+					t: "Miscellanea",
+					p: [
 						"148",
 						"147",
 						{
@@ -6222,16 +6222,16 @@ DB.set = {
 			]
 		},
 		76: {
-			"g": {
-				"dp": {
-					"p": [
+			g: {
+				dp: {
+					p: [
 						"039",
 						"056",
 						"195"
 					]
 				},
-				"ds": {
-					"p": [
+				ds: {
+					p: [
 						"043",
 						"104",
 						"030",
@@ -6240,25 +6240,25 @@ DB.set = {
 						"143"
 					]
 				},
-				"np": {
-					"p": [
+				np: {
+					p: [
 						"000",
 						"030",
 						"142"
 					]
 				},
-				"ns": {
-					"p": [
+				ns: {
+					p: [
 						"001",
 						"195"
 					]
 				}
 			},
-			"s": [
+			s: [
 				{
-					"t": "Componente ansiosa e stress",
-					"d": "Sul lato non dominante",
-					"p": [
+					t: "Componente ansiosa e stress",
+					d: "Sul lato non dominante",
+					p: [
 						"137",
 						"199",
 						"013",
@@ -6274,8 +6274,8 @@ DB.set = {
 					]
 				},
 				{
-					"t": "Miscellanea",
-					"p": [
+					t: "Miscellanea",
+					p: [
 						{
 							t: "Triade modificata",
 							p: [
@@ -6289,16 +6289,16 @@ DB.set = {
 			]
 		},
 		77: {
-			"g": {
-				"dp": {
-					"p": [
+			g: {
+				dp: {
+					p: [
 						"001",
 						"056",
 						"111"
 					]
 				},
-				"ds": {
-					"p": [
+				ds: {
+					p: [
 						"003",
 						"039",
 						"184",
@@ -6308,25 +6308,25 @@ DB.set = {
 						"115"
 					]
 				},
-				"np": {
-					"p": [
+				np: {
+					p: [
 						"003",
 						"000",
 						"154"
 					]
 				},
-				"ns": {
-					"p": [
+				ns: {
+					p: [
 						"001",
 						"111"
 					]
 				}
 			},
-			"s": [
+			s: [
 				{
-					"t": "Componente ansiosa e stress",
-					"d": "Sul lato non dominante",
-					"p": [
+					t: "Componente ansiosa e stress",
+					d: "Sul lato non dominante",
+					p: [
 						{
 							t: "Linea degli omega",
 							p: [
@@ -6339,8 +6339,8 @@ DB.set = {
 					]
 				},
 				{
-					"t": "Miscellanea",
-					"p": [
+					t: "Miscellanea",
+					p: [
 						"165",
 						"026"
 					]
@@ -6348,16 +6348,16 @@ DB.set = {
 			]
 		},
 		78: {
-			"g": {
-				"dp": {
-					"p": [
+			g: {
+				dp: {
+					p: [
 						"003",
 						"056",
 						"154"
 					]
 				},
-				"ds": {
-					"p": [
+				ds: {
+					p: [
 						"039",
 						"230",
 						"268",
@@ -6367,32 +6367,32 @@ DB.set = {
 						"043"
 					]
 				},
-				"np": {
-					"p": [
+				np: {
+					p: [
 						"000",
 						"142",
 						"111"
 					]
 				},
-				"ns": {
-					"p": [
+				ns: {
+					p: [
 						"001"
 					]
 				}
 			},
-			"s": [
+			s: [
 				{
-					"t": "Componente ansiosa e stress",
-					"d": "Sul lato non dominante",
-					"p": [
+					t: "Componente ansiosa e stress",
+					d: "Sul lato non dominante",
+					p: [
 						"030",
 						"137",
 						"192"
 					]
 				},
 				{
-					"t": "Miscellanea",
-					"p": [
+					t: "Miscellanea",
+					p: [
 						"165",
 						"195"
 					]
@@ -6400,17 +6400,17 @@ DB.set = {
 			]
 		},
 		79: {
-			"g": {
-				"dp": {
-					"p": [
+			g: {
+				dp: {
+					p: [
 						"000",
 						"002",
 						"253",
 						"207"
 					]
 				},
-				"ds": {
-					"p": [
+				ds: {
+					p: [
 						"039",
 						"111",
 						"154",
@@ -6420,42 +6420,42 @@ DB.set = {
 						"169"
 					]
 				},
-				"np": {
-					"p": [
+				np: {
+					p: [
 						"001",
 						"137",
 						"207"
 					]
 				},
-				"ns": {
-					"p": [
+				ns: {
+					p: [
 						"222",
 						"230"
 					]
 				},
-				"d": "N.B. La Linea dei suoni (o Corteccia temporale) va eseguita sul padigione omolaterale al problema. In caso di problema bilaterale può essere eseguita su entrambi i padiglioni o su quello maggiormente interessato."
+				d: "N.B. La Linea dei suoni (o Corteccia temporale) va eseguita sul padigione omolaterale al problema. In caso di problema bilaterale può essere eseguita su entrambi i padiglioni o su quello maggiormente interessato."
 			},
-			"s": [
+			s: [
 				{
-					"t": "Contrattura muscolare",
-					"d": "Sul lato dominante",
-					"p": [
+					t: "Contrattura muscolare",
+					d: "Sul lato dominante",
+					p: [
 						"285",
 						"288"
 					]
 				},
 				{
-					"t": "Componente ansiosa e stress",
-					"d": "Sul lato non dominante",
-					"p": [
+					t: "Componente ansiosa e stress",
+					d: "Sul lato non dominante",
+					p: [
 						"030",
 						"192",
 						"013"
 					]
 				},
 				{
-					"t": "Miscellanea",
-					"p": [
+					t: "Miscellanea",
+					p: [
 						{
 							t: "Rilassamento neurovegetativo",
 							p: [
@@ -6473,9 +6473,9 @@ DB.set = {
 			]
 		},
 		80: {
-			"g": {
-				"dp": {
-					"p": [
+			g: {
+				dp: {
+					p: [
 						"030",
 						{
 							t: "Linea delle vertigini",
@@ -6488,8 +6488,8 @@ DB.set = {
 						}
 					]
 				},
-				"ds": {
-					"p": [
+				ds: {
+					p: [
 						"230",
 						"039",
 						"291",
@@ -6497,26 +6497,26 @@ DB.set = {
 						"147"
 					]
 				},
-				"np": {
-					"p": [
+				np: {
+					p: [
 						"001",
 						"013",
 						"230"
 					]
 				},
-				"ns": {
-					"p": [
+				ns: {
+					p: [
 						"000",
 						"150",
 						"004"
 					]
 				}
 			},
-			"s": [
+			s: [
 				{
-					"t": "Componente ansiosa e stress",
-					"d": "Sul lato non dominante",
-					"p": [
+					t: "Componente ansiosa e stress",
+					d: "Sul lato non dominante",
+					p: [
 						"137",
 						"013",
 						"199",
@@ -6532,17 +6532,17 @@ DB.set = {
 					]
 				},
 				{
-					"t": "Miscellanea",
-					"p": [
+					t: "Miscellanea",
+					p: [
 						"222"
 					]
 				}
 			]
 		},
 		81: {
-			"g": {
-				"dp": {
-					"p": [
+			g: {
+				dp: {
+					p: [
 						"001",
 						"169",
 						{
@@ -6556,8 +6556,8 @@ DB.set = {
 						}
 					]
 				},
-				"ds": {
-					"p": [
+				ds: {
+					p: [
 						"170",
 						"003",
 						"111",
@@ -6566,15 +6566,15 @@ DB.set = {
 						"182"
 					]
 				},
-				"np": {
-					"p": [
+				np: {
+					p: [
 						"000",
 						"003",
 						"111"
 					]
 				},
-				"ns": {
-					"p": [
+				ns: {
+					p: [
 						"039",
 						"002",
 						"253",
@@ -6582,19 +6582,19 @@ DB.set = {
 					]
 				}
 			},
-			"s": [
+			s: [
 				{
-					"t": "Contrattura muscolare",
-					"d": "Sul lato dominante",
-					"p": [
+					t: "Contrattura muscolare",
+					d: "Sul lato dominante",
+					p: [
 						"285",
 						"288"
 					]
 				},
 				{
-					"t": "Componente ansiosa e stress",
-					"d": "Sul lato non dominante",
-					"p": [
+					t: "Componente ansiosa e stress",
+					d: "Sul lato non dominante",
+					p: [
 						"030",
 						"013",
 						{
@@ -6608,24 +6608,24 @@ DB.set = {
 					]
 				},
 				{
-					"t": "Miscellanea",
-					"p": [
+					t: "Miscellanea",
+					p: [
 						"148"
 					]
 				}
 			]
 		},
 		82: {
-			"g": {
-				"dp": {
-					"p": [
+			g: {
+				dp: {
+					p: [
 						"230",
 						"211",
 						"170"
 					]
 				},
-				"ds": {
-					"p": [
+				ds: {
+					p: [
 						"254",
 						"195",
 						"003",
@@ -6633,34 +6633,34 @@ DB.set = {
 						"209"
 					]
 				},
-				"np": {
-					"p": [
+				np: {
+					p: [
 						"001",
 						"137",
 						"173"
 					]
 				},
-				"ns": {
-					"p": [
+				ns: {
+					p: [
 						"000",
 						"230",
 						"222"
 					]
 				}
 			},
-			"s": [
+			s: [
 				{
-					"t": "Componente ansiosa e stress",
-					"d": "Sul lato non dominante",
-					"p": [
+					t: "Componente ansiosa e stress",
+					d: "Sul lato non dominante",
+					p: [
 						"030",
 						"137",
 						"199"
 					]
 				},
 				{
-					"t": "Miscellanea",
-					"p": [
+					t: "Miscellanea",
+					p: [
 						{
 							t: "Linea delle commessure",
 							p: [
@@ -6676,16 +6676,16 @@ DB.set = {
 			]
 		},
 		83: {
-			"g": {
-				"dp": {
-					"p": [
+			g: {
+				dp: {
+					p: [
 						"002",
 						"165",
 						"104"
 					]
 				},
-				"ds": {
-					"p": [
+				ds: {
+					p: [
 						"003",
 						"078",
 						"039",
@@ -6693,31 +6693,31 @@ DB.set = {
 						"185"
 					]
 				},
-				"np": {
-					"p": [
+				np: {
+					p: [
 						"000",
 						"003",
 						"166"
 					]
 				},
-				"ns": {
-					"p": [
+				ns: {
+					p: [
 						"001",
 						"026"
 					]
 				}
 			},
-			"s": [
+			s: [
 				{
-					"t": "Componente ansiosa e stress",
-					"d": "Sul lato non dominante",
-					"p": [
+					t: "Componente ansiosa e stress",
+					d: "Sul lato non dominante",
+					p: [
 						"137"
 					]
 				},
 				{
-					"t": "Miscellanea",
-					"p": [
+					t: "Miscellanea",
+					p: [
 						"026",
 						"157",
 						"143"
@@ -6726,16 +6726,16 @@ DB.set = {
 			]
 		},
 		84: {
-			"g": {
-				"dp": {
-					"p": [
+			g: {
+				dp: {
+					p: [
 						"001",
 						"104",
 						"185"
 					]
 				},
-				"ds": {
-					"p": [
+				ds: {
+					p: [
 						"003",
 						"039",
 						"165",
@@ -6746,26 +6746,26 @@ DB.set = {
 						"143"
 					]
 				},
-				"np": {
-					"p": [
+				np: {
+					p: [
 						"000",
 						"166",
 						"165"
 					]
 				},
-				"ns": {
-					"p": [
+				ns: {
+					p: [
 						"001",
 						"137",
 						"199"
 					]
 				}
 			},
-			"s": [
+			s: [
 				{
-					"t": "Componente ansiosa e stress",
-					"d": "Sul lato non dominante",
-					"p": [
+					t: "Componente ansiosa e stress",
+					d: "Sul lato non dominante",
+					p: [
 						"192",
 						"199",
 						"013",
@@ -6782,8 +6782,8 @@ DB.set = {
 					]
 				},
 				{
-					"t": "Miscellanea",
-					"p": [
+					t: "Miscellanea",
+					p: [
 						"026",
 						"078",
 						"305"
@@ -6792,16 +6792,16 @@ DB.set = {
 			]
 		},
 		85: {
-			"g": {
-				"dp": {
-					"p": [
+			g: {
+				dp: {
+					p: [
 						"001",
 						"002",
 						"249"
 					]
 				},
-				"ds": {
-					"p": [
+				ds: {
+					p: [
 						"003",
 						"039",
 						"180",
@@ -6811,34 +6811,34 @@ DB.set = {
 						"134"
 					]
 				},
-				"np": {
-					"p": [
+				np: {
+					p: [
 						"000",
 						"003",
 						"135"
 					]
 				},
-				"ns": {
-					"p": [
+				ns: {
+					p: [
 						"002",
 						"001",
 						"192"
 					]
 				}
 			},
-			"s": [
+			s: [
 				{
-					"t": "Componente ansiosa e stress",
-					"d": "Sul lato non dominante",
-					"p": [
+					t: "Componente ansiosa e stress",
+					d: "Sul lato non dominante",
+					p: [
 						"004",
 						"173",
 						"192"
 					]
 				},
 				{
-					"t": "Miscellanea",
-					"p": [
+					t: "Miscellanea",
+					p: [
 						"043",
 						"026"
 					]
@@ -6846,16 +6846,16 @@ DB.set = {
 			]
 		},
 		86: {
-			"g": {
-				"dp": {
-					"p": [
+			g: {
+				dp: {
+					p: [
 						"104",
 						"002",
 						"126"
 					]
 				},
-				"ds": {
-					"p": [
+				ds: {
+					p: [
 						"039",
 						"180",
 						"078",
@@ -6864,33 +6864,33 @@ DB.set = {
 						"244"
 					]
 				},
-				"np": {
-					"p": [
+				np: {
+					p: [
 						"000",
 						"003",
 						"134"
 					]
 				},
-				"ns": {
-					"p": [
+				ns: {
+					p: [
 						"001",
 						"165"
 					]
 				}
 			},
-			"s": [
+			s: [
 				{
-					"t": "Componente ansiosa e stress",
-					"d": "Sul lato non dominante",
-					"p": [
+					t: "Componente ansiosa e stress",
+					d: "Sul lato non dominante",
+					p: [
 						"030",
 						"199",
 						"173"
 					]
 				},
 				{
-					"t": "Miscellanea",
-					"p": [
+					t: "Miscellanea",
+					p: [
 						"026",
 						"118",
 						"184"
@@ -6899,16 +6899,16 @@ DB.set = {
 			]
 		},
 		87: {
-			"g": {
-				"dp": {
-					"p": [
+			g: {
+				dp: {
+					p: [
 						"230",
 						"268",
 						"039"
 					]
 				},
-				"ds": {
-					"p": [
+				ds: {
+					p: [
 						"078",
 						"249",
 						"244",
@@ -6916,24 +6916,24 @@ DB.set = {
 						"134"
 					]
 				},
-				"np": {
-					"p": [
+				np: {
+					p: [
 						"000",
 						"001",
 						"195"
 					]
 				},
-				"ns": {
-					"p": [
+				ns: {
+					p: [
 						"180"
 					]
 				}
 			},
-			"s": [
+			s: [
 				{
-					"t": "Componente ansiosa e stress",
-					"d": "Sul lato non dominante",
-					"p": [
+					t: "Componente ansiosa e stress",
+					d: "Sul lato non dominante",
+					p: [
 						"030",
 						"199",
 						{
@@ -6948,8 +6948,8 @@ DB.set = {
 					]
 				},
 				{
-					"t": "Miscellanea",
-					"p": [
+					t: "Miscellanea",
+					p: [
 						"043",
 						"026",
 						"165"
@@ -6958,16 +6958,16 @@ DB.set = {
 			]
 		},
 		88: {
-			"g": {
-				"dp": {
-					"p": [
+			g: {
+				dp: {
+					p: [
 						"164",
 						"074",
 						"215"
 					]
 				},
-				"ds": {
-					"p": [
+				ds: {
+					p: [
 						"039",
 						"262",
 						"018",
@@ -6977,32 +6977,32 @@ DB.set = {
 						"089"
 					]
 				},
-				"np": {
-					"p": [
+				np: {
+					p: [
 						"000",
 						"001",
 						"230"
 					]
 				},
-				"ns": {
-					"p": [
+				ns: {
+					p: [
 						"165"
 					]
 				}
 			},
-			"s": [
+			s: [
 				{
-					"t": "Componente ansiosa e stress",
-					"d": "Sul lato non dominante",
-					"p": [
+					t: "Componente ansiosa e stress",
+					d: "Sul lato non dominante",
+					p: [
 						"137",
 						"192",
 						"199"
 					]
 				},
 				{
-					"t": "Miscellanea",
-					"p": [
+					t: "Miscellanea",
+					p: [
 						"121",
 						"098"
 					]
@@ -7010,9 +7010,9 @@ DB.set = {
 			]
 		},
 		89: {
-			"g": {
-				"dp": {
-					"p": [
+			g: {
+				dp: {
+					p: [
 						"230",
 						"177",
 						"179",
@@ -7020,8 +7020,8 @@ DB.set = {
 						"268"
 					]
 				},
-				"ds": {
-					"p": [
+				ds: {
+					p: [
 						"039",
 						"157",
 						"143",
@@ -7030,25 +7030,25 @@ DB.set = {
 						"262"
 					]
 				},
-				"np": {
-					"p": [
+				np: {
+					p: [
 						"000",
 						"001",
 						"164"
 					]
 				},
-				"ns": {
-					"p": [
+				ns: {
+					p: [
 						"004"
 					]
 				},
-				"d": "N.B. Tra Occipite, Tempia e Fronte, scegliere 1-2 punti più sensibili"
+				d: "N.B. Tra Occipite, Tempia e Fronte, scegliere 1-2 punti più sensibili"
 			},
-			"s": [
+			s: [
 				{
-					"t": "Componente ansiosa e stress",
-					"d": "Sul lato non dominante",
-					"p": [
+					t: "Componente ansiosa e stress",
+					d: "Sul lato non dominante",
+					p: [
 						{
 							t: "Rilassamento neurovegetativo",
 							p: [
@@ -7071,47 +7071,47 @@ DB.set = {
 					]
 				},
 				{
-					"t": "Miscellanea",
-					"p": [
+					t: "Miscellanea",
+					p: [
 						"114"
 					]
 				}
 			]
 		},
 		90: {
-			"g": {
-				"dp": {
-					"p": [
+			g: {
+				dp: {
+					p: [
 						"230",
 						"039",
 						"165"
 					]
 				},
-				"ds": {
-					"p": [
+				ds: {
+					p: [
 						"026",
 						"004",
 						"[]Area somatotopica nel padiglione corrispondente alla zona interessata o maggiormente interessata."
 					]
 				},
-				"np": {
-					"p": [
+				np: {
+					p: [
 						"000",
 						"001",
 						"074"
 					]
 				},
-				"ns": {
-					"p": [
+				ns: {
+					p: [
 						"252"
 					]
 				}
 			},
-			"s": [
+			s: [
 				{
-					"t": "Componente ansiosa e stress",
-					"d": "Sul lato non dominante",
-					"p": [
+					t: "Componente ansiosa e stress",
+					d: "Sul lato non dominante",
+					p: [
 						{
 							t: "Linea degli omega",
 							p: [
@@ -7124,8 +7124,8 @@ DB.set = {
 					]
 				},
 				{
-					"t": "Infiammazione cronica",
-					"p": [
+					t: "Infiammazione cronica",
+					p: [
 						"118",
 						{
 							t: "Triade antinfiammatoria",
@@ -7141,40 +7141,40 @@ DB.set = {
 			]
 		},
 		91: {
-			"g": {
-				"dp": {
-					"p": [
+			g: {
+				dp: {
+					p: [
 						"230",
 						"003",
 						"002",
 						"165"
 					]
 				},
-				"ds": {
-					"p": [
+				ds: {
+					p: [
 						"164",
 						"018",
 						"[]Area somatotopica nel padiglione corrispondente alla zona interessata."
 					]
 				},
-				"np": {
-					"p": [
+				np: {
+					p: [
 						"000",
 						"001",
 						"252"
 					]
 				},
-				"ns": {
-					"p": [
+				ns: {
+					p: [
 						"074"
 					]
 				},
 			},
-			"s": [
+			s: [
 				{
-					"t": "Ansia e stress",
-					"d": "Lato non dominante",
-					"p": [
+					t: "Ansia e stress",
+					d: "Lato non dominante",
+					p: [
 						"004",
 						{
 							t: "Triade adattata",
@@ -7189,8 +7189,8 @@ DB.set = {
 					]
 				},
 				{
-					"t": "Infiammazione",
-					"p": [
+					t: "Infiammazione",
+					p: [
 						"026",
 						"118",
 						{
@@ -7205,48 +7205,48 @@ DB.set = {
 					]
 				},
 				{
-					"t": "Ipotrofia cutanea",
-					"p": [
+					t: "Ipotrofia cutanea",
+					p: [
 						"268"
 					]
 				}
 			]
 		},
 		92: {
-			"g": {
-				"dp": {
-					"p": [
+			g: {
+				dp: {
+					p: [
 						"230",
 						"003",
 						"026"
 					]
 				},
-				"ds": {
-					"p": [
+				ds: {
+					p: [
 						"078",
 						"039",
 						"118",
 						"018"
 					]
 				},
-				"np": {
-					"p": [
+				np: {
+					p: [
 						"000",
 						"001",
 						"074"
 					]
 				},
-				"ns": {
-					"p": [
+				ns: {
+					p: [
 						"165"
 					]
 				}
 			},
-			"s": [
+			s: [
 				{
-					"t": "Componente ansiosa e stress",
-					"d": "Sul lato non dominante",
-					"p": [
+					t: "Componente ansiosa e stress",
+					d: "Sul lato non dominante",
+					p: [
 						{
 							t: "Triade di relax",
 							p: [
@@ -7269,8 +7269,8 @@ DB.set = {
 					]
 				},
 				{
-					"t": "Allergia",
-					"p": [
+					t: "Allergia",
+					p: [
 						"078",
 						"003",
 						"002"
@@ -7280,46 +7280,46 @@ DB.set = {
 			]
 		},
 		93: {
-			"g": {
-				"dp": {
-					"p": [
+			g: {
+				dp: {
+					p: [
 						"003",
 						"165",
 						"230"
 					]
 				},
-				"ds": {
-					"p": [
+				ds: {
+					p: [
 						"026",
 						"074",
 						"018",
 						"[]Area somatotopica nel padiglione corrispondente alla zona interessata."
 					]
 				},
-				"np": {
-					"p": [
+				np: {
+					p: [
 						"000",
 						"001",
 						"004"
 					]
 				},
-				"ns": {
-					"p": [
+				ns: {
+					p: [
 						"252"
 					]
 				}
 			},
-			"s": [
+			s: [
 				{
-					"t": "Ipotrofia cutanea",
-					"p": [
+					t: "Ipotrofia cutanea",
+					p: [
 						"268"
 					]
 				},
 				{
-					"t": "Componente ansiosa e stress",
-					"d": "Sul lato non dominante",
-					"p": [
+					t: "Componente ansiosa e stress",
+					d: "Sul lato non dominante",
+					p: [
 						"030",
 						"137",
 						{
@@ -7333,8 +7333,8 @@ DB.set = {
 					]
 				},
 				{
-					"t": "Infiammazione",
-					"p": [
+					t: "Infiammazione",
+					p: [
 						{
 							t: "Triade antinfiammatoria",
 							p: [
@@ -7347,48 +7347,48 @@ DB.set = {
 					]
 				},
 				{
-					"t": "Artrite psorisiaca",
-					"p": [
+					t: "Artrite psorisiaca",
+					p: [
 						"[]Articolazione interessata dal dolore"
 					]
 				}
 			]
 		},
 		94: {
-			"g": {
-				"dp": {
-					"p": [
+			g: {
+				dp: {
+					p: [
 						"230",
 						"215",
 						"165"
 					]
 				},
-				"ds": {
-					"p": [
+				ds: {
+					p: [
 						"039",
 						"157",
 						"003",
 						"185"
 					]
 				},
-				"np": {
-					"p": [
+				np: {
+					p: [
 						"000",
 						"001",
 						"252"
 					]
 				},
-				"ns": {
-					"p": [
+				ns: {
+					p: [
 						"074"
 					]
 				}
 			},
-			"s": [
+			s: [
 				{
-					"t": "Componente ansiosa e stress",
-					"d": "Sul lato non dominante",
-					"p": [
+					t: "Componente ansiosa e stress",
+					d: "Sul lato non dominante",
+					p: [
 						"137",
 						{
 							t: "Triade di relax",
@@ -7421,8 +7421,8 @@ DB.set = {
 					]
 				},
 				{
-					"t": "Infiammazione",
-					"p": [
+					t: "Infiammazione",
+					p: [
 						"026",
 						"118",
 						{
@@ -7437,24 +7437,24 @@ DB.set = {
 					]
 				},
 				{
-					"t": "Dismetabolismo",
-					"p": [
+					t: "Dismetabolismo",
+					p: [
 						"121"
 					]
 				}
 			]
 		},
 		95: {
-			"g": {
-				"dp": {
-					"p": [
+			g: {
+				dp: {
+					p: [
 						"222",
 						"111",
 						"003"
 					]
 				},
-				"ds": {
-					"p": [
+				ds: {
+					p: [
 						"121",
 						"291",
 						"132",
@@ -7463,24 +7463,24 @@ DB.set = {
 						"231"
 					]
 				},
-				"np": {
-					"p": [
+				np: {
+					p: [
 						"000",
 						"001",
 						"039"
 					]
 				},
-				"ns": {
-					"p": [
+				ns: {
+					p: [
 						"268"
 					]
 				}
 			},
-			"s": [
+			s: [
 				{
-					"t": "Componente ansiosa e stress",
-					"d": "Sul lato non dominante",
-					"p": [
+					t: "Componente ansiosa e stress",
+					d: "Sul lato non dominante",
+					p: [
 						{
 							t: "Triade di relax",
 							p: [
@@ -7503,8 +7503,8 @@ DB.set = {
 					]
 				},
 				{
-					"t": "Miscellanea",
-					"p": [
+					t: "Miscellanea",
+					p: [
 						"148",
 						"157",
 						"143"
@@ -7513,16 +7513,16 @@ DB.set = {
 			]
 		},
 		96: {
-			"g": {
-				"dp": {
-					"p": [
+			g: {
+				dp: {
+					p: [
 						"104",
 						"222",
 						"268"
 					]
 				},
-				"ds": {
-					"p": [
+				ds: {
+					p: [
 						"003",
 						"164",
 						"118",
@@ -7532,24 +7532,24 @@ DB.set = {
 						"231"
 					]
 				},
-				"np": {
-					"p": [
+				np: {
+					p: [
 						"000",
 						"001",
 						"268"
 					]
 				},
-				"ns": {
-					"p": [
+				ns: {
+					p: [
 						"154"
 					]
 				}
 			},
-			"s": [
+			s: [
 				{
-					"t": "Componente ansiosa e stress",
-					"d": "Sul lato non dominante",
-					"p": [
+					t: "Componente ansiosa e stress",
+					d: "Sul lato non dominante",
+					p: [
 						{
 							t: "Linea degli omega",
 							p: [
@@ -7564,16 +7564,16 @@ DB.set = {
 			]
 		},
 		97: {
-			"g": {
-				"dp": {
-					"p": [
+			g: {
+				dp: {
+					p: [
 						"104",
 						"118",
 						"117"
 					]
 				},
-				"ds": {
-					"p": [
+				ds: {
+					p: [
 						"164",
 						"222",
 						"132",
@@ -7581,31 +7581,31 @@ DB.set = {
 						"131"
 					]
 				},
-				"np": {
-					"p": [
+				np: {
+					p: [
 						"000",
 						"001",
 						"026"
 					]
 				},
-				"ns": {
-					"p": [
+				ns: {
+					p: [
 						"154"
 					]
 				}
 			},
-			"s": [
+			s: [
 				{
-					"t": "Infiammazione",
-					"d": "Sul lato dominante",
-					"p": [
+					t: "Infiammazione",
+					d: "Sul lato dominante",
+					p: [
 						"165"
 					]
 				},
 				{
-					"t": "Componente ansiosa e stress",
-					"d": "Sul lato non dominante",
-					"p": [
+					t: "Componente ansiosa e stress",
+					d: "Sul lato non dominante",
+					p: [
 						{
 							t: "Linea degli omega",
 							p: [
@@ -7618,8 +7618,8 @@ DB.set = {
 					]
 				},
 				{
-					"t": "Allergia",
-					"p": [
+					t: "Allergia",
+					p: [
 						"078",
 						"003",
 						"002"
@@ -7628,17 +7628,17 @@ DB.set = {
 			]
 		},
 		98: {
-			"g": {
-				"dp": {
-					"p": [
+			g: {
+				dp: {
+					p: [
 						"222",
 						"111",
 						"002",
 						"253"
 					]
 				},
-				"ds": {
-					"p": [
+				ds: {
+					p: [
 						"154",
 						"148",
 						"132",
@@ -7647,32 +7647,32 @@ DB.set = {
 						"231"
 					]
 				},
-				"np": {
-					"p": [
+				np: {
+					p: [
 						"000",
 						"001",
 						"002",
 						"253"
 					]
 				},
-				"ns": {
-					"p": [
+				ns: {
+					p: [
 						"192"
 					]
 				}
 			},
-			"s": [
+			s: [
 				{
-					"t": "Componente ansiosa e stress",
-					"d": "Sul lato non dominante",
-					"p": [
+					t: "Componente ansiosa e stress",
+					d: "Sul lato non dominante",
+					p: [
 						"137",
 						"013"
 					]
 				},
 				{
-					"t": "Miscellanea",
-					"p": [
+					t: "Miscellanea",
+					p: [
 						"030",
 						"192",
 						"243"
@@ -7681,16 +7681,16 @@ DB.set = {
 			]
 		},
 		99: {
-			"g": {
-				"dp": {
-					"p": [
+			g: {
+				dp: {
+					p: [
 						"039",
 						"222",
 						"154"
 					]
 				},
-				"ds": {
-					"p": [
+				ds: {
+					p: [
 						"104",
 						"231",
 						"132",
@@ -7698,24 +7698,24 @@ DB.set = {
 						"131"
 					]
 				},
-				"np": {
-					"p": [
+				np: {
+					p: [
 						"000",
 						"001",
 						"003"
 					]
 				},
-				"ns": {
-					"p": [
+				ns: {
+					p: [
 						"230"
 					]
 				}
 			},
-			"s": [
+			s: [
 				{
-					"t": "Componente ansiosa e stress",
-					"d": "Sul lato non dominante",
-					"p": [
+					t: "Componente ansiosa e stress",
+					d: "Sul lato non dominante",
+					p: [
 						{
 							t: "Linea degli omega",
 							p: [
@@ -7738,8 +7738,8 @@ DB.set = {
 					]
 				},
 				{
-					"t": "Miscellanea",
-					"p": [
+					t: "Miscellanea",
+					p: [
 						"121",
 						"122",
 						"157",
@@ -7750,50 +7750,50 @@ DB.set = {
 		},
 		100: { // programma antitabacco classico di Nogier
 			"tit": "TRATTAMENTO",
-			"g": {
-				"dp": {
-					"p": [
+			g: {
+				dp: {
+					p: [
 						"015",
 						"000",
 						"199",
 						"195"
 					]
 				},
-				"np": {
-					"p": [
+				np: {
+					p: [
 						"000"
 					]
 				}
 			},
-			"d": "Per valutare il grado di intensità e il tipo di terapia antifumo, effettuare i due test che si trovano negli approfondimenti: ",
-			"t": true
+			d: "Per valutare il grado di intensità e il tipo di terapia antifumo, effettuare i due test che si trovano negli approfondimenti: ",
+			t: true
 		},
 		101: { // programma antitabacco di Rossato
 			"tit": "TRATTAMENTO",
-			"g": {
-				"dp": {
-					"p": [
+			g: {
+				dp: {
+					p: [
 						"015",
 						"000",
 						"199",
 						"195"
 					]
 				},
-				"np": {
-					"p": [
+				np: {
+					p: [
 						"000"
 					]
 				},
-				"d": "PUNTO EXTRA: ai punti auricolari, va aggiunto il punto dell'agopuntura somatica Tim Mee, punto extra meridiano posizionato lateralmente al punto LU.7, dove è palpabile una cresta ossea.<br><br><b>Sequenza di infissione</b><br>I punti vengono infissi seguendo uno schema predefinito e secondo una modalità di stimolazione.<br><b>D</b> dispersione, con ago in inspirazione e rotazione in senso antiorario.<br><b>T</b> tonificazione, con ago in espirazione e rotazione in senso orario.<br><br>- <b>Tin Mee (D)</b>: bilaterale<br>- <b>P1 e P2 (D)</b>: pungere verso il lobo<br>- <b>P3</b>: indifferente<br>- <b>P4, P5, P6 e P7 (T)</b>: pungere verso l'alto<br>- <b>Aggressività (D)</b><br>- <b>Epifisi (D)</b><br>- <b>Punto Zero (D)</b>: lato dominante<br>- <b>Punto Zero (T)</b>: lato non dominante<br><br><b>Elettrostimolazione</b><br>Quando gli agi sono infissi, vanno elettrostimolati a 15Hz per 30 minuti, aumentando l'intensità ogni 5 minuti, per consentire l'adattamento del paziente. L'elettrostimolazione va effettuata in quattro coppie:<br>1(-) Punto Zero dominante<br>1(+) Punto Zero non dominante<br>2(-)Aggressività<br>2(+)Epifisi<br>3(-)P7<br>3(+)P4<br>4(-)P2<br>4(+)P1<br><br><b>Prescrizioni extra trattamento</b><br>- Vitamina C come disintossicante<br>- Bere 2-3 litri d'acua al giorno<br>- Bastoncini di liquirizia per compensazione orale<br>- Polvere di peperoncino integrale come condimento agli alimenti<br>- Il medico può consigliare un ansiolitico all'occorrenza"//- Alprazolam 0,25mg, 2 volte al giorno<br>N.B. Alprazolam deve essere preso solo sotto prescrizione medica e solo se non è controindicato."
+				d: "PUNTO EXTRA: ai punti auricolari, va aggiunto il punto dell'agopuntura somatica Tim Mee, punto extra meridiano posizionato lateralmente al punto LU.7, dove è palpabile una cresta ossea.<br><br><b>Sequenza di infissione</b><br>I punti vengono infissi seguendo uno schema predefinito e secondo una modalità di stimolazione.<br><b>D</b> dispersione, con ago in inspirazione e rotazione in senso antiorario.<br><b>T</b> tonificazione, con ago in espirazione e rotazione in senso orario.<br><br>- <b>Tin Mee (D)</b>: bilaterale<br>- <b>P1 e P2 (D)</b>: pungere verso il lobo<br>- <b>P3</b>: indifferente<br>- <b>P4, P5, P6 e P7 (T)</b>: pungere verso l'alto<br>- <b>Aggressività (D)</b><br>- <b>Epifisi (D)</b><br>- <b>Punto Zero (D)</b>: lato dominante<br>- <b>Punto Zero (T)</b>: lato non dominante<br><br><b>Elettrostimolazione</b><br>Quando gli agi sono infissi, vanno elettrostimolati a 15Hz per 30 minuti, aumentando l'intensità ogni 5 minuti, per consentire l'adattamento del paziente. L'elettrostimolazione va effettuata in quattro coppie:<br>1(-) Punto Zero dominante<br>1(+) Punto Zero non dominante<br>2(-)Aggressività<br>2(+)Epifisi<br>3(-)P7<br>3(+)P4<br>4(-)P2<br>4(+)P1<br><br><b>Prescrizioni extra trattamento</b><br>- Vitamina C come disintossicante<br>- Bere 2-3 litri d'acua al giorno<br>- Bastoncini di liquirizia per compensazione orale<br>- Polvere di peperoncino integrale come condimento agli alimenti<br>- Il medico può consigliare un ansiolitico all'occorrenza"//- Alprazolam 0,25mg, 2 volte al giorno<br>N.B. Alprazolam deve essere preso solo sotto prescrizione medica e solo se non è controindicato."
 			},
-			"d": "Per valutare il grado di intensità e il tipo di terapia antifumo, effettuare i due test che si trovano negli approfondimenti: ",
-			"t": true
+			d: "Per valutare il grado di intensità e il tipo di terapia antifumo, effettuare i due test che si trovano negli approfondimenti: ",
+			t: true
 		},
 		102: { // programma antitabacco Lovato
 			"tit": "RIDUZIONE GRADUALE",
-			"g": {
+			g: {
 				"sx": {
-					"p": [
+					p: [
 						"001",
 						"137",
 						"030",
@@ -7802,20 +7802,20 @@ DB.set = {
 					]
 				},
 				"dx": {
-					"p": [
+					p: [
 						"000",
 						"004",
 						"192",
 						"267"
 					]
 				},
-				"d": "Il protocollo va eseguito una volta a settimana con diminuzione di 3 sigarette a seduta. Si utilizzano aghi estemporanei.<br><br><b>Trattamento pazienti ansiosi</b><br>Su pazienti particolarmente ansiosi si consiglia di applicare una Triade di relax sul padiglione sinistro per 5 giorni con <i>aghi a semipermanenza</i>. Tali aghi vanno rimossi 2 giorni prima della seduta successiva, nella quale può venire applicata nuovamente la Triade di relax o in alternanza con la Linea degli Omega."
+				d: "Il protocollo va eseguito una volta a settimana con diminuzione di 3 sigarette a seduta. Si utilizzano aghi estemporanei.<br><br><b>Trattamento pazienti ansiosi</b><br>Su pazienti particolarmente ansiosi si consiglia di applicare una Triade di relax sul padiglione sinistro per 5 giorni con <i>aghi a semipermanenza</i>. Tali aghi vanno rimossi 2 giorni prima della seduta successiva, nella quale può venire applicata nuovamente la Triade di relax o in alternanza con la Linea degli Omega."
 			},
-			"s": [
+			s: [
 				{
-					"t": "Sospensione improvvisa",
-					"d": "Su entrambi i padiglioni",
-					"p": [
+					t: "Sospensione improvvisa",
+					d: "Su entrambi i padiglioni",
+					p: [
 						"000",
 						"267",
 						"230",
@@ -7824,14 +7824,14 @@ DB.set = {
 					"a": "Per la sospensione improvvisa del fumo è richiesta un'astinenza di almeno 12 ore prima della seduta. In caso il paziente non riesca a rispettare l'astinenza, evitare di applicare il protocollo perché da una parte ciò vuol dire che non è motivato e dall'altra i punti saranno meno sensibili al trattamento.<br><br><b>Modalità di esecuzione</b><br>Eseguire l'elettroagopuntura in seduta unica seguendo lo scheda indicato, con una frequenza di 15Hz e per 25 minuti, in particolare San Jiao e il punto del Craving.<br><br><b>Recidiva e difficoltà a smettere</b><br>In caso di recidiva o difficoltà a mantenere l'astinenza è possibile ripetere la seduta ad una settimana di distanza.<br><br><b>Integrazione con il protocollo di riduzione graduale</b><br>Questo protocollo è indicato anche per i soggetti che abbiamo effettuato la riduzione graduale e abbiamo difficoltà a togliere le ultime 2-3 sigarette."
 				}
 			],
-			"d": "Per valutare il grado di intensità e il tipo di terapia antifumo, effettuare i due test che si trovano negli approfondimenti: ",
-			"t": true
+			d: "Per valutare il grado di intensità e il tipo di terapia antifumo, effettuare i due test che si trovano negli approfondimenti: ",
+			t: true
 		},
 		103: { // protocollo NADA
 			"tit": "TRATTAMENTO",
-			"g": {
+			g: {
 				"sx": {
-					"p": [
+					p: [
 						"001",
 						"039",
 						"111",
@@ -7840,7 +7840,7 @@ DB.set = {
 					]
 				},
 				"dx": {
-					"p": [
+					p: [
 						"001",
 						"039",
 						"111",
@@ -7848,10 +7848,10 @@ DB.set = {
 						"244"
 					]
 				},
-				"d": "<b>ALCOLISMO</b><br><b>Fase 1</b>: trattare ogni giorno, per 5 giorni alla settimana più 2 (weekend) con i semi di vaccaria, per 2 settimane. Fase adatta a curare i sintomi di astinenza.<br><b>Fase 2</b>: trattaere 3 volte a settimana, per 2 settimane, per curare sintomi di origine psicologica, ansia, insonnia e desiderio di alcol o droga.<br><b>Fase 3</b>: una volta stabilizata la sobrietà, si eseguono 2 sedute alla settimana, per una settimana o più, per continuare e consolidare la sensazione di benessere e controllo.<br><br><b>TABAGISMO</b><br><b>Fase 1</b>: trattare ogni giorno, per 5 giorni alla settimana più 2 (weekend) con i semi di vaccaria, per 2 settimane. Fase adatta a contrastare i sintomi di astinenza da tabacco.<br><b>Fase 2</b>: quando il consumo di sigarette si riduce a zero (o quasi), si eseguono 3 sedute a settimana per 2 settimane. Questa fase contrasta i sintomi psicologici, ansia, insonnia e desiderio di tabacco.<br><b>Follow-up</b>: a 15 giorni, 3 mesi e 6 mesi.<br><br><b>RICADUTE</b><br>In qualsiasi momento lo desideri, il paziente può decidere di usufruire della fase 1 di qualsiasi protocollo con il fine di arrestare repentinamente le ricadure. Acudetox è risultato particolarmente efficace in questa fase dove altre terapie hanno fallito." 
+				d: "<b>ALCOLISMO</b><br><b>Fase 1</b>: trattare ogni giorno, per 5 giorni alla settimana più 2 (weekend) con i semi di vaccaria, per 2 settimane. Fase adatta a curare i sintomi di astinenza.<br><b>Fase 2</b>: trattaere 3 volte a settimana, per 2 settimane, per curare sintomi di origine psicologica, ansia, insonnia e desiderio di alcol o droga.<br><b>Fase 3</b>: una volta stabilizata la sobrietà, si eseguono 2 sedute alla settimana, per una settimana o più, per continuare e consolidare la sensazione di benessere e controllo.<br><br><b>TABAGISMO</b><br><b>Fase 1</b>: trattare ogni giorno, per 5 giorni alla settimana più 2 (weekend) con i semi di vaccaria, per 2 settimane. Fase adatta a contrastare i sintomi di astinenza da tabacco.<br><b>Fase 2</b>: quando il consumo di sigarette si riduce a zero (o quasi), si eseguono 3 sedute a settimana per 2 settimane. Questa fase contrasta i sintomi psicologici, ansia, insonnia e desiderio di tabacco.<br><b>Follow-up</b>: a 15 giorni, 3 mesi e 6 mesi.<br><br><b>RICADUTE</b><br>In qualsiasi momento lo desideri, il paziente può decidere di usufruire della fase 1 di qualsiasi protocollo con il fine di arrestare repentinamente le ricadure. Acudetox è risultato particolarmente efficace in questa fase dove altre terapie hanno fallito." 
 			},
-			"d": "Per valutare il grado di intensità e il tipo di terapia antifumo, effettuare i due test che si trovano negli approfondimenti: ",
-			"t": true
+			d: "Per valutare il grado di intensità e il tipo di terapia antifumo, effettuare i due test che si trovano negli approfondimenti: ",
+			t: true
 		}
 	},
 	protocolliAuriculo: {
@@ -9471,109 +9471,108 @@ DB.set = {
         }
     ],
 	tests: {
-		"motivazione": {
-			"q": [
-				{
-					"d": "Ho deciso di presentarmi spontaneamente",
-					"r": [
+		motivazione: {
+			q: [{
+					d: "Ho deciso di presentarmi spontaneamente",
+					r: [
 						{ t: "Sì", v: 2},
 						{ t: "No", v: 0}
 					]
 				},
 				{
-					"d": "Ho già smesso di fumare per più di una settimana",
-					"r": [
+					d: "Ho già smesso di fumare per più di una settimana",
+					r: [
 						{ t: "Sì", v: 1},
 						{ t: "No", v: 0}
 					]
 				},
 				{
-					"d": "Attualmente non ho problemi sul lavoro",
-					"r": [
+					d: "Attualmente non ho problemi sul lavoro",
+					r: [
 						{ t: "Sì", v: 1},
 						{ t: "No", v: 0}
 					]
 				},
 				{
-					"d": "Attualmente non ho problemi sul piano familiare",
-					"r": [
+					d: "Attualmente non ho problemi sul piano familiare",
+					r: [
 						{ t: "Sì", v: 1},
 						{ t: "No", v: 0}
 					]
 				},
 				{
-					"d": "Mi voglio liberare da questa schiavitù",
-					"r": [
+					d: "Mi voglio liberare da questa schiavitù",
+					r: [
 						{ t: "Sì", v: 2},
 						{ t: "No", v: 0}
 					]
 				},
 				{
-					"d": "Pratico dello sport/ho intenzione di praticarlo",
-					"r": [
+					d: "Pratico dello sport/ho intenzione di praticarlo",
+					r: [
 						{ t: "Sì", v: 1},
 						{ t: "No", v: 0}
 					]
 				},
 				{
-					"d": "Voglio raggiungere una forma fisica migliore",
-					"r": [
+					d: "Voglio raggiungere una forma fisica migliore",
+					r: [
 						{ t: "Sì", v: 1},
 						{ t: "No", v: 0}
 					]
 				},
 				{
-					"d": "Voglio curare il mio aspetto fisico",
-					"r": [
+					d: "Voglio curare il mio aspetto fisico",
+					r: [
 						{ t: "Sì", v: 1},
 						{ t: "No", v: 0}
 					]
 				},
 				{
-					"d": "Sono incinta/Mia moglie è incinta",
-					"r": [
+					d: "Sono incinta/Mia moglie è incinta",
+					r: [
 						{ t: "Sì", v: 1},
 						{ t: "No", v: 0}
 					]
 				},
 				{
-					"d": "Ho dei bambini piccoli",
-					"r": [
+					d: "Ho dei bambini piccoli",
+					r: [
 						{ t: "Sì", v: 2},
 						{ t: "No", v: 0}
 					]
 				},
 				{
-					"d": "Attualmente sono di buon umore",
-					"r": [
+					d: "Attualmente sono di buon umore",
+					r: [
 						{ t: "Sì", v: 2},
 						{ t: "No", v: 0}
 					]
 				},
 				{
-					"d": "Di solito porto a termine quello che intraprendo",
-					"r": [
+					d: "Di solito porto a termine quello che intraprendo",
+					r: [
 						{ t: "Sì", v: 1},
 						{ t: "No", v: 0}
 					]
 				},
 				{
-					"d": "Sono di temperamento calmo e disteso",
-					"r": [
+					d: "Sono di temperamento calmo e disteso",
+					r: [
 						{ t: "Sì", v: 1},
 						{ t: "No", v: 0}
 					]
 				},
 				{
-					"d": "Il mio peso è abitualmente stabile",
-					"r": [
+					d: "Il mio peso è abitualmente stabile",
+					r: [
 						{ t: "Sì", v: 1},
 						{ t: "No", v: 0}
 					]
 				},
 				{
-					"d": "Voglio migliorare la qualità della mia vita",
-					"r": [
+					d: "Voglio migliorare la qualità della mia vita",
+					r: [
 						{ t: "Sì", v: 1},
 						{ t: "No", v: 0}
 					]
@@ -9586,11 +9585,11 @@ DB.set = {
 				16: "Alta motivazione"
 			}
 		},
-		"dipendenza": {
-			"q": [
+		dipendenza: {
+			q: [
 				{
-					"d": "Quanto tempo dopo il risveglio accende la prima sigaretta?",
-					"r": [
+					d: "Quanto tempo dopo il risveglio accende la prima sigaretta?",
+					r: [
 						{ t: "Entro 5 minuti", v: 3},
 						{ t: "Dopo 6-30 minuti", v: 2},
 						{ t: "Dopo 31-60 minuti", v: 1},
@@ -9598,22 +9597,22 @@ DB.set = {
 					]
 				},
 				{
-					"d": "Fa fatica a non fumare nei luoghi in cui è proibito?",
-					"r": [
+					d: "Fa fatica a non fumare nei luoghi in cui è proibito?",
+					r: [
 						{ t: "Sì", v: 1},
 						{ t: "No", v: 0}
 					]
 				},
 				{
-					"d": "A quale sigaretta le costa di più rinunciare?",
-					"r": [
+					d: "A quale sigaretta le costa di più rinunciare?",
+					r: [
 						{ t: "La prima del mattino", v: 1},
 						{ t: "Tutte le altre", v: 0}
 					]
 				},
 				{
-					"d": "Quante sigarette fuma al giorno?",
-					"r": [
+					d: "Quante sigarette fuma al giorno?",
+					r: [
 						{ t: "10 o meno", v: 0},
 						{ t: "Da 11 a 20", v: 1},
 						{ t: "Da 21 a 30", v: 2},
@@ -9621,15 +9620,15 @@ DB.set = {
 					]
 				},
 				{
-					"d": "Fuma più frequentemente durante la prima ora dal risveglio che durante il resto del giorno?",
-					"r": [
+					d: "Fuma più frequentemente durante la prima ora dal risveglio che durante il resto del giorno?",
+					r: [
 						{ t: "Sì", v: 1},
 						{ t: "No", v: 0}
 					]
 				},
 				{
-					"d": "Fuma anche quando è così malato da passare a letto la maggior parte del giorno?",
-					"r": [
+					d: "Fuma anche quando è così malato da passare a letto la maggior parte del giorno?",
+					r: [
 						{ t: "Sì", v: 1},
 						{ t: "No", v: 0}
 					]

@@ -69,9 +69,10 @@ var MODULO_TEORIA = { // extend SET
 		}
 		// --------------------------
 		var titolo = DB.set.teoria[p].contenuti[t].TitoloTeoria;
+		var meridianiSecondari = __(DB.set.teoria[p].contenuti[t].meridianiSecondari);
 		var html = '';
 		var addTabStyle = '';
-
+		
 		if(DB.set.teoria[p].contenuti[t].sigla){
 			let meridiano = DB.set.teoria[p].contenuti[t].sigla;
 			let ideogramma = '';
@@ -99,7 +100,7 @@ var MODULO_TEORIA = { // extend SET
 		SCHEDA.caricaScheda( 	titolo,
 								html,
 								'SET.annullaEvidenziaPunto();SET.spegniMeridiani(true);',
-								'scheda_teoria',
+								'scheda_teoria'+addTabStyle,
 								ritorno,
 								true,
 								btn,
@@ -107,6 +108,16 @@ var MODULO_TEORIA = { // extend SET
 								globals.set.cartella+'_teoria_'+p+"_"+t );
 		SET.convSigleScheda();
 		SET.evidenziaPunto();
+		
+		SET.spegniMeridianoSecondario();
+		setTimeout( function(meridianiSecondari){
+			if(meridianiSecondari){
+				for(let m in meridianiSecondari){
+					if(meridianiSecondari[m].indexOf("_")==-1)SET.accendiMeridiano(meridianiSecondari[m],false,true);
+					SET.accendiMeridianoSecondario(meridianiSecondari[m],true);
+				}
+			}
+		},250,meridianiSecondari);
 	},
 	caricaVideo: function( p, t, btn ){
 		// carica un approfondimento video

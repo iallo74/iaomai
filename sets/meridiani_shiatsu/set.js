@@ -22,6 +22,7 @@ SET = {
 	puntiEvidenziati: [],
 	pMod: -1,
 	pointEvi: '',
+	meridianiSecondariAccesi: [],
 	meridianiOn: false,
 	geometryPallino: null,
 	geometryPallinoTrasp: null,
@@ -1197,8 +1198,8 @@ SET = {
 		// converte i punti di html in punti cliccabili e formattati
 		var nScheda = '';
 		if(SCHEDA.scheda2Aperta)nScheda='2';
-		
-		var regexp = /\[\.[0-9]{1,2}\.[A-Z]{2}[\.*]\]/ig;
+
+		var regexp = /\[\.[0-9]{1,2}\.[A-Z]{2}[\.*]+\]/ig;
 		var pts = html.match(regexp);
 		for(let p in pts){
 			var pp = SET.splitPoint(pts[p].replace("[.","").replace(".]",""));
@@ -1332,6 +1333,90 @@ SET = {
 			}
 		}
 	},
+	
+	
+	
+	accendiMeridianoSecondario: function( sigla, mantieni=false ){
+		if(!globals.modello.cartella)return;
+		for(let m in MERIDIANI){
+			if(MERIDIANI[m].categoria == "" ){
+				if(MERIDIANI[m].meridianoAcceso){
+					if(m!=sigla)SET.spegniMeridiano(m);
+				}
+			}	
+		}
+		SET.meridianiSecondariAccesi.push(sigla);
+		
+		var meridiano = scene.getObjectByName( "LN_"+sigla );
+		var percorsoInterno = false;
+		for(let c in meridiano.children){
+			if( __(meridiano.children[c].userData.interno) )percorsoInterno = true;
+		}
+		if(!SET.COL.contrastMethod)SET.swContrastMethod();
+		
+		var elM = meridiano.children
+		for(e in elM){
+			elM[e].visible = true
+		}
+		var evidenziati = meridiano.userData.evidenziati;
+		if(meridiano.userData.evidenziati){
+			for(e in evidenziati){
+				for(let i in evidenziati[e]){
+					scene.getObjectByName( evidenziati[e][i] ).material = MODELLO.MAT.materialVisceriEvi;
+				}
+			}
+		}
+		if(isTablet){
+			SET.MAT.pointBase.visible = false;
+			SET.MAT.lineYang.visible = false;
+			SET.MAT.lineYin.visible = false;
+			MODELLO.MAT.materialVisceri.visible = false;
+		}
+	},
+	spegniMeridianoSecondario: function( sigla='', forza=false ){
+		if(!globals.modello.cartella)return;
+		var meridianoPrincipale = false;
+		for(let m=SET.meridianiSecondariAccesi.length-1;m>-1;m--){
+			if(SET.meridianiSecondariAccesi[m] == sigla || !sigla){
+				var meridiano = scene.getObjectByName( "LN_"+SET.meridianiSecondariAccesi[m] );
+				if(SET.meridianiSecondariAccesi[m].indexOf("_")==-1){
+					var mer = SET.meridianiSecondariAccesi[m];
+					setTimeout(function(mer){SET.eviMeridiano(mer,false);},200,mer);
+					if(forza)SET.accendiMeridiano(SET.meridianiSecondariAccesi[m],true,true);
+					meridianoPrincipale = true;
+				}else{
+					
+					var elM = meridiano.children
+					for(e in elM){
+						elM[e].visible = false
+					}
+				}
+				var evidenziati = meridiano.userData.evidenziati;
+				if(evidenziati){
+					for(e in evidenziati){
+						for(let i in evidenziati[e]){
+							var tipo = scene.getObjectByName( evidenziati[e][i] ).parent.name;
+							scene.getObjectByName( evidenziati[e][i] ).material = MODELLO.MAT["material"+tipo];
+						}
+					}
+				}
+				if(SET.meridianiSecondariAccesi.length>1)SET.meridianiSecondariAccesi.splice(m,1);
+				else SET.meridianiSecondariAccesi = [];
+			}
+		}
+		if(!SET.meridianiSecondariAccesi.length){
+			if(SET.COL.contrastMethod){
+				SET.swContrastMethod();
+			}
+		}
+		if(isTablet){
+			SET.MAT.pointBase.visible = true;
+			SET.MAT.lineYang.visible = true;
+			SET.MAT.lineYin.visible = true;
+			MODELLO.MAT.materialVisceri.visible = true;
+		}
+	},
+
 	filtraSet: function( togliLoader=false ){
 		var vis = true;
 		if(	DB.login.data.auths.indexOf(globals.set.cartella)==-1 || !LOGIN.logedin())vis = false;

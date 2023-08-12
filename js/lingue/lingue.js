@@ -11,14 +11,12 @@ var LINGUE = {
 		"2": {
 			sigla: "eng",
 			sigla2: "en",
-			text: "English",
-			ai: true
+			text: "English"
 		},
 		"3": {
 			sigla: "esp",
 			sigla2: "es",
-			text: "Español",
-			ai: true
+			text: "Español"
 		},
 		"4": {
 			sigla: "fra",
@@ -101,7 +99,7 @@ var LINGUE = {
 					if(sets[s].lingueCont.indexOf(LINGUE.NLS[l].sigla)>-1)html += ' class="lok"';
 					html += '>';
 					if(sets[s].lingueCont.indexOf(LINGUE.NLS[l].sigla)>-1 && LINGUE.NLS[l].sigla != 'ita'){
-						html += '<b class="ai">*</b>';
+						if(sets[s].lingueAI.indexOf(LINGUE.NLS[l].sigla)>-1)html += '<b class="ai">*</b>';
 						aiPres = true;
 					}
 					html += '</div>';

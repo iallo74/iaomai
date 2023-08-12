@@ -1059,72 +1059,114 @@ DB.set = {
 				{
 					TitoloTeoria: "Vescica urinaria",
 					sigla: "BL",
-					TestoTeoria: "<div style=\"background:url(sets/common/mtc/img/elementi/BL.png) no-repeat;min-height:441px;\"><p><i>Purificazione dei fluidi dal corpo</i><br>  <font color=\"#666666\">Meridiano Yang di Acqua</font></p>  <p><b>Governa:</b><br>    - Vescica Urinaria<br>    - Sistema nervoso autonomo<br>    - Sistema urinario<br>    - Sistema riproduttivo<br>    - Sistema linfatico<br>    - Ossa, giunture<br>    - Ghiandola pituitaria<br>    - Utero<br>    - Colonna vertebrale<br>  - Scheletro</p>  <p><b>Rappresenta:</b><br>    - Fluidità<br>    - Spinta<br>    - Impeto<br>    - Subconscio<br>  - Adattabilità</p>  <p><b>Risolve:</b><br>    - Paura <br>    - Ansia<br>    - Insicurezza<br>    - Stanchezza<br>  - Patologie scheletriche e vertebrali</p></div>" 	
+					TestoTeoria: "<div style=\"background:url(sets/common/mtc/img/elementi/BL.png) no-repeat;min-height:441px;\"><p><i>Purificazione dei fluidi dal corpo</i><br>  <font color=\"#666666\">Meridiano Yang di Acqua</font></p>  <p><b>Governa:</b><br>    - Vescica Urinaria<br>    - Sistema nervoso autonomo<br>    - Sistema urinario<br>    - Sistema riproduttivo<br>    - Sistema linfatico<br>    - Ossa, giunture<br>    - Ghiandola pituitaria<br>    - Utero<br>    - Colonna vertebrale<br>  - Scheletro</p>  <p><b>Rappresenta:</b><br>    - Fluidità<br>    - Spinta<br>    - Impeto<br>    - Subconscio<br>  - Adattabilità</p>  <p><b>Risolve:</b><br>    - Paura <br>    - Ansia<br>    - Insicurezza<br>    - Stanchezza<br>  - Patologie scheletriche e vertebrali</p></div>",
+					meridianiSecondari: [
+						"BL"
+					]
 				},
 				{
 					TitoloTeoria: "Rene",
 					sigla: "KI",
-					TestoTeoria: "<div style=\"background:url(sets/common/mtc/img/elementi/KI.png) no-repeat left 15px;min-height:460px;\"><p><i>Purificazione dei fluidi del corpo</i><br>  <font color=\"#666666\">Meridiano Yin di Acqua</font></p>  <p><b>Governa:</b><br>    - Liquidi del corpo<br>    - Ormoni<br>    - Ghiandole surrenali<br>    - Reni<br>    - Energia sessuale<br>    - Desiderio sessuale<br>    - Jing del cielo anteriore<br>    - Jing del cielo posteriore<br>  - Yuan QI</p>  <p><b>Rappresenta:</b><br>    - Purificazione del sangue<br>    - Energia ancestrale<br>    - Scorta di energia<br>    - Forza di volontà<br>  - Spinta ad andare avanti</p>  <p><b>Risolve:</b><br>    - Stress<br>    - Paura<br>    - Ansia<br>    - Insicurezza<br>    - Flessibilità<br>    - Sincronizzazione<br>  - Problemi correlati ai liquidi</p></div>" 	
+					TestoTeoria: "<div style=\"background:url(sets/common/mtc/img/elementi/KI.png) no-repeat left 15px;min-height:460px;\"><p><i>Purificazione dei fluidi del corpo</i><br>  <font color=\"#666666\">Meridiano Yin di Acqua</font></p>  <p><b>Governa:</b><br>    - Liquidi del corpo<br>    - Ormoni<br>    - Ghiandole surrenali<br>    - Reni<br>    - Energia sessuale<br>    - Desiderio sessuale<br>    - Jing del cielo anteriore<br>    - Jing del cielo posteriore<br>  - Yuan QI</p>  <p><b>Rappresenta:</b><br>    - Purificazione del sangue<br>    - Energia ancestrale<br>    - Scorta di energia<br>    - Forza di volontà<br>  - Spinta ad andare avanti</p>  <p><b>Risolve:</b><br>    - Stress<br>    - Paura<br>    - Ansia<br>    - Insicurezza<br>    - Flessibilità<br>    - Sincronizzazione<br>  - Problemi correlati ai liquidi</p></div>" ,
+					meridianiSecondari: [
+						"KI"
+					]	
 				},
 				{
 					TitoloTeoria: "Cistifellea",
 					sigla: "GB",
-					TestoTeoria: "<div style=\"background:url(sets/common/mtc/img/elementi/GB.png) no-repeat left 15px;min-height:460px;\"><p><i>Distribuzione, Decisione</i><br><font color=\"#666666\">Meridiano Yang di Legno</font></p><p><b>Governa:</b><br>  - Cistifellea<br>  - Muscoli<br>  - Tendini <br>  - Legamenti<br>  - Occhi<br>  <br>  <b>Rappresenta: </b><br>  - Responsabilità<br>  - Controllo<br>  - Decisioni<br>  - Organizzazione<br>  - Perfezionamento<br>- Resistenza</p><p><b>Risolve:</b><br>  - Esitazione<br>  - Rabbia trattenuta<br>  - Tensioni<br>  - Stress<br>- Contratture</p></div>" 	
+					TestoTeoria: "<div style=\"background:url(sets/common/mtc/img/elementi/GB.png) no-repeat left 15px;min-height:460px;\"><p><i>Distribuzione, Decisione</i><br><font color=\"#666666\">Meridiano Yang di Legno</font></p><p><b>Governa:</b><br>  - Cistifellea<br>  - Muscoli<br>  - Tendini <br>  - Legamenti<br>  - Occhi<br>  <br>  <b>Rappresenta: </b><br>  - Responsabilità<br>  - Controllo<br>  - Decisioni<br>  - Organizzazione<br>  - Perfezionamento<br>- Resistenza</p><p><b>Risolve:</b><br>  - Esitazione<br>  - Rabbia trattenuta<br>  - Tensioni<br>  - Stress<br>- Contratture</p></div>",
+					meridianiSecondari: [
+						"GB"
+					] 	
 				},
 				{
 					TitoloTeoria: "Fegato",
 					sigla: "LR",
-					TestoTeoria: "<div style=\"background:url(sets/common/mtc/img/elementi/LR.png) no-repeat left 15px;min-height:460px;\"><p><i>Pianificazione, Immagazzinamento, Detossificazione</i><br><font color=\"#666666\">Meridiano Yin di Legno</font></p><p><b>  Governa:</b><br>  - Fegato<br>  - Muscoli<br>  - Tendini<br>  - Legamenti<br>  - Occhi<br>  - Unghie</p><p><b>Rappresenta:</b><br>  - Controllo<br>  - Autocontrollo<br>  - Coraggio<br>  - Pianificazione<br>  - Fertilità<br>  - Resistenza<br>  - Disintossicazione <br>  - Temperamento <br>  - Magazzino di energia in generale ( a livello energetico)</p><p><b>Risolve:</b><br>  - Assuefazione<br>  - Rabbia esplosiva<br>  - Patologie muscolari</p></div>" 	
+					TestoTeoria: "<div style=\"background:url(sets/common/mtc/img/elementi/LR.png) no-repeat left 15px;min-height:460px;\"><p><i>Pianificazione, Immagazzinamento, Detossificazione</i><br><font color=\"#666666\">Meridiano Yin di Legno</font></p><p><b>  Governa:</b><br>  - Fegato<br>  - Muscoli<br>  - Tendini<br>  - Legamenti<br>  - Occhi<br>  - Unghie</p><p><b>Rappresenta:</b><br>  - Controllo<br>  - Autocontrollo<br>  - Coraggio<br>  - Pianificazione<br>  - Fertilità<br>  - Resistenza<br>  - Disintossicazione <br>  - Temperamento <br>  - Magazzino di energia in generale ( a livello energetico)</p><p><b>Risolve:</b><br>  - Assuefazione<br>  - Rabbia esplosiva<br>  - Patologie muscolari</p></div>" ,
+					meridianiSecondari: [
+						"LR"
+					]	
 				},
 				{
 					TitoloTeoria: "Stomaco",
 					sigla: "ST",
-					TestoTeoria: "<div style=\"background:url(sets/common/mtc/img/elementi/ST.png) no-repeat left 15px;min-height:460px;\"><p><i>Sistema digerente e sistema riproduttivo</i><br><font color=\"#666666\">Meridiano Yang di Terra</font></p><p><b>Governa:</b><br>  - Stomaco<br>  - Carnagione<br>  - Tubi digerenti<br>  - Digestione<br>  - Tubi del sistema riproduttivo<br>  - Cicli naturali<br>  - Allattamento<br>  - Pensiero</p><p><b>Rappresenta:<br>  </b>- Testardaggine<br>  - Realtà<br>  - Costrizione <br>  - Abbraccio<br>  - Simpatia<br>  - Preoccupazione<br>  - Tenersi aggrappati<br>  - Stabilità<br>  - Conquista</p><p><b>Risolve:</b><br>  - Appetito<br>  - Fame<br>  - Voglia di …<br>  - Ossessione<br>  - Apatia</p></div>" 	
+					TestoTeoria: "<div style=\"background:url(sets/common/mtc/img/elementi/ST.png) no-repeat left 15px;min-height:460px;\"><p><i>Sistema digerente e sistema riproduttivo</i><br><font color=\"#666666\">Meridiano Yang di Terra</font></p><p><b>Governa:</b><br>  - Stomaco<br>  - Carnagione<br>  - Tubi digerenti<br>  - Digestione<br>  - Tubi del sistema riproduttivo<br>  - Cicli naturali<br>  - Allattamento<br>  - Pensiero</p><p><b>Rappresenta:<br>  </b>- Testardaggine<br>  - Realtà<br>  - Costrizione <br>  - Abbraccio<br>  - Simpatia<br>  - Preoccupazione<br>  - Tenersi aggrappati<br>  - Stabilità<br>  - Conquista</p><p><b>Risolve:</b><br>  - Appetito<br>  - Fame<br>  - Voglia di …<br>  - Ossessione<br>  - Apatia</p></div>" 	,
+					meridianiSecondari: [
+						"ST"
+					]
 				},
 				{
 					TitoloTeoria: "Milza-pancreas",
 					sigla: "SP",
-					TestoTeoria: "<div style=\"background:url(sets/common/mtc/img/elementi/SP.png) no-repeat left 15px;min-height:460px;\"><p><i>Sistema digerente e sistema riproduttivo</i><br><font color=\"#666666\">Meridiano Yin di Terra</font></p><p><b>Governa:</b><br>  - Milza<br>  - Pancreas<br>  - Succhi gastrici<br>  - Secrezioni del sistema riproduttivo<br>  - Circolazione del sangue nei vasi<br>  - Cicli bionaturali<br>  - Ciclo Mestruale<br>  - Digestione<br>  - Pensiero</p><p><b>Rappresenta:</b><br>  - Simpatia<br>  - Attività mentale<br>  - Maturità mentale<br>  - Maturità sessuale<br>  - La capacità di mantenere gli organi al loro posto<br>  - Mantenere il sangue nei vasi<br>  - Realtà</p><p><b>Risolve:</b><br>  - Preoccupazione<br>  - Problemi correlati al ciclo mestruale<br>  - Emorragie<br>  - Prolassi<br>  - Problemi del tubo digerente<br>  - Problemi mentali</p></div>" 	
+					TestoTeoria: "<div style=\"background:url(sets/common/mtc/img/elementi/SP.png) no-repeat left 15px;min-height:460px;\"><p><i>Sistema digerente e sistema riproduttivo</i><br><font color=\"#666666\">Meridiano Yin di Terra</font></p><p><b>Governa:</b><br>  - Milza<br>  - Pancreas<br>  - Succhi gastrici<br>  - Secrezioni del sistema riproduttivo<br>  - Circolazione del sangue nei vasi<br>  - Cicli bionaturali<br>  - Ciclo Mestruale<br>  - Digestione<br>  - Pensiero</p><p><b>Rappresenta:</b><br>  - Simpatia<br>  - Attività mentale<br>  - Maturità mentale<br>  - Maturità sessuale<br>  - La capacità di mantenere gli organi al loro posto<br>  - Mantenere il sangue nei vasi<br>  - Realtà</p><p><b>Risolve:</b><br>  - Preoccupazione<br>  - Problemi correlati al ciclo mestruale<br>  - Emorragie<br>  - Prolassi<br>  - Problemi del tubo digerente<br>  - Problemi mentali</p></div>" ,
+					meridianiSecondari: [
+						"SP"
+					]	
 				},
 				{
 					TitoloTeoria: "Intestino tenue",
 					sigla: "SI",
-					TestoTeoria: "<div style=\"background:url(sets/common/mtc/img/elementi/SI.png) no-repeat;min-height:441px;\"><p><i>Assimilazione, Assorbimento</i><br><font color=\"#666666\">Meridiano Yang di Fuoco</font></p><p><b>Governa:</b><br>  - Intestino Tenue<br>  - Midollo spinale</p><p><b>Rappresenta:</b><br>  - Meccanismo anti-shock<br>  - Risata <br>  - Autoanalisi<br>  - Rivalutazione del Sé<br>  - Intuizione<br>  - Determinazione<br>  - Emozioni<br>  - Stabilità emozionale<br>  - Compassione<br>  - Amore<br>  - Gioia</p><p><b>Risolve:</b><br>  - Grandi cambiamenti interiori<br>  - Transizioni<br>  - Problemi dell'assimilazione<br>  - Problemi di interpretazione</p></div>" 	
+					TestoTeoria: "<div style=\"background:url(sets/common/mtc/img/elementi/SI.png) no-repeat;min-height:441px;\"><p><i>Assimilazione, Assorbimento</i><br><font color=\"#666666\">Meridiano Yang di Fuoco</font></p><p><b>Governa:</b><br>  - Intestino Tenue<br>  - Midollo spinale</p><p><b>Rappresenta:</b><br>  - Meccanismo anti-shock<br>  - Risata <br>  - Autoanalisi<br>  - Rivalutazione del Sé<br>  - Intuizione<br>  - Determinazione<br>  - Emozioni<br>  - Stabilità emozionale<br>  - Compassione<br>  - Amore<br>  - Gioia</p><p><b>Risolve:</b><br>  - Grandi cambiamenti interiori<br>  - Transizioni<br>  - Problemi dell'assimilazione<br>  - Problemi di interpretazione</p></div>",
+					meridianiSecondari: [
+						"SI"
+					]	
 				},
 				{
 					TitoloTeoria: "Cuore",
 					sigla: "HT",
-					TestoTeoria: "<div style=\"background:url(sets/common/mtc/img/elementi/HT.png) no-repeat left 15px;min-height:460px;\"><p><i>Interpretazione</i><br><font color=\"#666666\">Meridiano Yin di Fuoco</font></p><p><b>Governa:</b><br>  - Cuore<br>  - Sistema nervoso centrale<br>  - Cervello<br>  - Sangue quantità<br>  - Emozioni<br>  - Stabilità emozionale<br>  - Shen ( Spirito )</p><p><b>Rappresenta:</b><br>  - Amore<br>  - Gioia<br>  - Compassione<br>  - Risata<br>  - Autoanalisi<br>  - Rivalutazione del Sé <br>  - Intuizione<br>  - Interpretazione<br>  - Stabilità affettiva</p><p><b>Risolve:</b><br>  - Grandi cambiamenti interiori<br>  - Transizione<br>  - Depressione<br>  - Infelicità</p></div>" 	
+					TestoTeoria: "<div style=\"background:url(sets/common/mtc/img/elementi/HT.png) no-repeat left 15px;min-height:460px;\"><p><i>Interpretazione</i><br><font color=\"#666666\">Meridiano Yin di Fuoco</font></p><p><b>Governa:</b><br>  - Cuore<br>  - Sistema nervoso centrale<br>  - Cervello<br>  - Sangue quantità<br>  - Emozioni<br>  - Stabilità emozionale<br>  - Shen ( Spirito )</p><p><b>Rappresenta:</b><br>  - Amore<br>  - Gioia<br>  - Compassione<br>  - Risata<br>  - Autoanalisi<br>  - Rivalutazione del Sé <br>  - Intuizione<br>  - Interpretazione<br>  - Stabilità affettiva</p><p><b>Risolve:</b><br>  - Grandi cambiamenti interiori<br>  - Transizione<br>  - Depressione<br>  - Infelicità</p></div>",
+					meridianiSecondari: [
+						"HT"
+					]	
 				},
 				{
 					TitoloTeoria: "Triplice riscaldatore",
 					sigla: "TE",
-					TestoTeoria: "<div style=\"background:url(sets/common/mtc/img/elementi/TE.png) no-repeat left 35px;min-height:480px;\"><p><i>Protezione</i><br><font color=\"#666666\">Meridiano Yang di Fuoco supplementare</font></p><p><b>Governa:</b><br>  - Temperatura del corpo<br>  - Sistema immunitario<br>  - Sistema linfatico<br>  - Esperienza emotiva sessuale <br>  - Coordinazione dell'interazione fra i vari organi</p><p><b>Rappresenta:</b><br>  - Autoprotezione emotiva <br>  - Tutte le difese<br>  - Emozioni</p><p><b>Risolve:</b><br>  - Innamoramento<br>  - Violenza<br>  - Stupro<br>  - Sentimenti <br>  - Iperprotezione<br>  - Mancanza di protezione<br>  - Patologie virali e batteriche<br>  - Infiammazioni</p></div>" 	
+					TestoTeoria: "<div style=\"background:url(sets/common/mtc/img/elementi/TE.png) no-repeat left 35px;min-height:480px;\"><p><i>Protezione</i><br><font color=\"#666666\">Meridiano Yang di Fuoco supplementare</font></p><p><b>Governa:</b><br>  - Temperatura del corpo<br>  - Sistema immunitario<br>  - Sistema linfatico<br>  - Esperienza emotiva sessuale <br>  - Coordinazione dell'interazione fra i vari organi</p><p><b>Rappresenta:</b><br>  - Autoprotezione emotiva <br>  - Tutte le difese<br>  - Emozioni</p><p><b>Risolve:</b><br>  - Innamoramento<br>  - Violenza<br>  - Stupro<br>  - Sentimenti <br>  - Iperprotezione<br>  - Mancanza di protezione<br>  - Patologie virali e batteriche<br>  - Infiammazioni</p></div>",
+					meridianiSecondari: [
+						"TE"
+					]	
 				},
 				{
 					TitoloTeoria: "Mastro del cuore",
 					sigla: "PC",
-					TestoTeoria: "<div style=\"background:url(sets/common/mtc/img/elementi/PC.png) no-repeat left 35px;min-height:480px;\"><p><i>Circolazione</i><br><font color=\"#666666\">Meridiano Yin di Fuoco supplementare</font></p><p><b>Governa:</b><br>  - Sistema vascolare<br>  - Sangue<br>  - Pressione sanguigna<br>  - Circolazione sanguigna<br>  - Pericardio<br>  - Energia sessuale <br>  - Sogni<br>  - Emozioni<br>  - Sentimenti</p><p><b>Rappresenta:</b><br>  - Esperienza emotiva sessuale<br>  - Stato emotivo generale<br>  - Stabilità emozionale</p><p><b>Risolve:</b><br>  - Innamoramento<br>  - Violenza<br>  - Stupro<br>  - L'abbandono</p></div>" 	
+					TestoTeoria: "<div style=\"background:url(sets/common/mtc/img/elementi/PC.png) no-repeat left 35px;min-height:480px;\"><p><i>Circolazione</i><br><font color=\"#666666\">Meridiano Yin di Fuoco supplementare</font></p><p><b>Governa:</b><br>  - Sistema vascolare<br>  - Sangue<br>  - Pressione sanguigna<br>  - Circolazione sanguigna<br>  - Pericardio<br>  - Energia sessuale <br>  - Sogni<br>  - Emozioni<br>  - Sentimenti</p><p><b>Rappresenta:</b><br>  - Esperienza emotiva sessuale<br>  - Stato emotivo generale<br>  - Stabilità emozionale</p><p><b>Risolve:</b><br>  - Innamoramento<br>  - Violenza<br>  - Stupro<br>  - L'abbandono</p></div>",
+					meridianiSecondari: [
+						"PC"
+					]
 				},
 				{
 					TitoloTeoria: "Intestino crasso",
 					sigla: "LI",
-					TestoTeoria: "<div style=\"background:url(sets/common/mtc/img/elementi/LI.png) no-repeat left 35px;min-height:480px;\"><p><i>Eliminazione della stagnazione di KI</i><br><font color=\"#666666\">Meridiano Yang di Aria (o Metallo)</font></p><p><b>Governa:</b><br>  - Intestino Crasso<br>  - Pelle<br>  - Escrezioni in generale</p><p><b>Rappresenta:</b><br>  - Trattenere (anche fisico, materiale ,cose come libri, mobili, ecc.) <br>  - Relazioni con l'ambiente esterno</p><p><b>Risolve:</b><br>  - Insoddisfazione <br>  - Mancanza di pensiero positivo<br>  - Mancanza  di vitalità<br>  - Capacità a lasciar andare<br>  - Dolore<br>  - Tristezza<br>  - Pianto</p><p>&nbsp;</p><p>&nbsp;</p></div>" 	
+					TestoTeoria: "<div style=\"background:url(sets/common/mtc/img/elementi/LI.png) no-repeat left 35px;min-height:480px;\"><p><i>Eliminazione della stagnazione di KI</i><br><font color=\"#666666\">Meridiano Yang di Aria (o Metallo)</font></p><p><b>Governa:</b><br>  - Intestino Crasso<br>  - Pelle<br>  - Escrezioni in generale</p><p><b>Rappresenta:</b><br>  - Trattenere (anche fisico, materiale ,cose come libri, mobili, ecc.) <br>  - Relazioni con l'ambiente esterno</p><p><b>Risolve:</b><br>  - Insoddisfazione <br>  - Mancanza di pensiero positivo<br>  - Mancanza  di vitalità<br>  - Capacità a lasciar andare<br>  - Dolore<br>  - Tristezza<br>  - Pianto</p><p>&nbsp;</p><p>&nbsp;</p></div>",
+					meridianiSecondari: [
+						"LI"
+					]	
 				},
 				{
 					TitoloTeoria: "Polmone",
 					sigla: "LU",
-					TestoTeoria: "<div style=\"background:url(sets/common/mtc/img/elementi/LU.png) no-repeat left 35px;min-height:480px;\"><p><i>Immissione di KI, limiti, struttura, vitalità</i><br><font color=\"#666666\">Meridiano Yin di Aria (o Metallo)</font></p><p><b>Governa:</b><br>  - Apparato respiratorio<br>  - Scambio energetico<br>  - Pelle<br>  - Sudore</p><p><b>Rappresenta:</b><br>  - Relazioni con l'ambiente esterno<br>  - Relazioni sociali<br>  - Trattenere o lasciare andare<br>  - I nostri confini</p><p><b>Risolve:</b><br>  - Comportamento antisociale<br>  - Lutto<br>  - Dolore<br>  - Pianto<br>  - Tristezza<br>  - Problemi correlati all'apparato respiratorio<br>  - Problemi dermatologici</p></div>" 	
+					TestoTeoria: "<div style=\"background:url(sets/common/mtc/img/elementi/LU.png) no-repeat left 35px;min-height:480px;\"><p><i>Immissione di KI, limiti, struttura, vitalità</i><br><font color=\"#666666\">Meridiano Yin di Aria (o Metallo)</font></p><p><b>Governa:</b><br>  - Apparato respiratorio<br>  - Scambio energetico<br>  - Pelle<br>  - Sudore</p><p><b>Rappresenta:</b><br>  - Relazioni con l'ambiente esterno<br>  - Relazioni sociali<br>  - Trattenere o lasciare andare<br>  - I nostri confini</p><p><b>Risolve:</b><br>  - Comportamento antisociale<br>  - Lutto<br>  - Dolore<br>  - Pianto<br>  - Tristezza<br>  - Problemi correlati all'apparato respiratorio<br>  - Problemi dermatologici</p></div>",
+					meridianiSecondari: [
+						"LU"
+					] 	
 				},
 				{
 					TitoloTeoria: "Vaso governatore",
 					sigla: "GV",
-					TestoTeoria: "<div style=\"background:url(sets/common/mtc/img/elementi/GV.png) no-repeat left -55px;min-height:389px;\"><p><font color=\"#666666\">Meridiano straordinario Yang</font></p><p><b>Governa:</b><br>  - I meridiani Yang<br>  - Energie Yang<br>  - Parte energetica<br>  - Sfera psichica<br>  - Rachide superficiale<br>  - Caratteri sessuali energetici<br>  - Cervello</p><p><b>Rappresenta:</b><br>  - Creazione<br>  - Relazioni esterne<br>  - Forza</p><p><b>Risolve:</b><br>  - Malattie esterne<br>  - Malattie psichiche<br>  - Sindromi da pieno</p></div>" 	
+					TestoTeoria: "<div style=\"background:url(sets/common/mtc/img/elementi/GV.png) no-repeat left -55px;min-height:389px;\"><p><font color=\"#666666\">Meridiano straordinario Yang</font></p><p><b>Governa:</b><br>  - I meridiani Yang<br>  - Energie Yang<br>  - Parte energetica<br>  - Sfera psichica<br>  - Rachide superficiale<br>  - Caratteri sessuali energetici<br>  - Cervello</p><p><b>Rappresenta:</b><br>  - Creazione<br>  - Relazioni esterne<br>  - Forza</p><p><b>Risolve:</b><br>  - Malattie esterne<br>  - Malattie psichiche<br>  - Sindromi da pieno</p></div>",
+					meridianiSecondari: [
+						"GV"
+					] 	
 				},
 				{
 					TitoloTeoria: "Vaso concezione",
 					sigla: "CV",
-					TestoTeoria: "<div style=\"background:url(sets/common/mtc/img/elementi/CV.png) no-repeat left -55px;min-height:389px;\"><p><font color=\"#666666\">Meridiano straordinario Yin</font></p><p><b>Governa:</b><br>  - I meridiani Yin<br>  - Energie Yin<br>  - Parte materiale<br>  - Fisiologia organica<br>  - Rachide profondo<br>  - Caratteri  sessuali esterni</p><p><b>Rappresenta:</b><br>  - Procreazione<br>  - Crescita<br>  - Realizzazione della vita</p><p><b>Risolve:</b><br>  - Malattie interne<br>  - Disfunzioni organiche<br>  - Sindromi da vuoto</p></div>" 	
+					TestoTeoria: "<div style=\"background:url(sets/common/mtc/img/elementi/CV.png) no-repeat left -55px;min-height:389px;\"><p><font color=\"#666666\">Meridiano straordinario Yin</font></p><p><b>Governa:</b><br>  - I meridiani Yin<br>  - Energie Yin<br>  - Parte materiale<br>  - Fisiologia organica<br>  - Rachide profondo<br>  - Caratteri  sessuali esterni</p><p><b>Rappresenta:</b><br>  - Procreazione<br>  - Crescita<br>  - Realizzazione della vita</p><p><b>Risolve:</b><br>  - Malattie interne<br>  - Disfunzioni organiche<br>  - Sindromi da vuoto</p></div>",
+					meridianiSecondari: [
+						"CV"
+					] 	
 				}
 			],
 			noList: true

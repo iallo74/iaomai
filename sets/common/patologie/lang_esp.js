@@ -33,7 +33,7 @@ var DB_patologie = {
 			"Disfonía"
 		],
 		descrizione: "Tanto la afonía como la disfonía son condiciones que afectan la voz, pero tienen diferencias significativas. La afonía ocurre cuando una persona pierde completamente la voz, lo que le impide producir sonidos vocales. Esta condición a menudo es causada por una inflamación o irritación de las cuerdas vocales, como en infecciones respiratorias o un exceso de esfuerzo vocal.<br>Por otro lado, la disfonía es una condición en la que la voz suena diferente a la normal debido a un problema con las cuerdas vocales o la laringe. La voz puede volverse ronca, temblorosa o débil, y esto puede ser causado por un esfuerzo excesivo de las cuerdas vocales, pólipos o nódulos en las cuerdas vocales u otros trastornos de las cuerdas vocales o la laringe.<br>Ambas condiciones pueden tener diversas causas y pueden ser temporales o persistentes.",
-		consigli: "Descansar la voz, evitar exposiciones al frío y la humedad y al viento.",
+		consigli: "Descansar la voz, evitar exposiciones al frío, la humedad y al viento.",
 		categoria: 1	
 	},
 	"004": {
@@ -244,7 +244,8 @@ var DB_patologie = {
 	"026": {
 		nomi: [
 			"Cefalea",
-			"Migraña"
+			"Migraña",
+			"Dolor de cabeza"
 		],
 		descrizione: "Una condición médica caracterizada por dolor o malestar localizado en la región de la cabeza o el cuello. Hay varios tipos de cefaleas<br>- Cefalea tensional: caracterizada por una sensación bilateral de presión o tensión en la cabeza, a menudo causada por el estrés, la tensión muscular o una mala postura. Puede aliviarse con descanso, relajación y masajes.<br>- Cefalea en racimos: extremadamente intensa y dolorosa, localizada alrededor del ojo, a menudo acompañada de lagrimeo y congestión nasal. Los ataques pueden durar desde semanas hasta meses, seguidos de períodos de remisión.<br>- Migraña: dolor intenso y pulsante, a menudo unilateral, acompañado de náuseas, vómitos y sensibilidad a la luz y el sonido. Puede durar desde horas hasta días y puede ser desencadenada por diversos factores como ciertos alimentos, estrés o cambios hormonales.<br>- Migraña menstrual: relacionada con el ciclo menstrual, las mujeres pueden experimentar migrañas antes, durante o después de la menstruación. Es causada por fluctuaciones hormonales.<br>- Cefalea de tipo tensional: caracterizada por dolor constante y difuso, causado por tensión muscular prolongada, estrés o ansiedad. Por lo general, no es grave, pero puede ser molesta y persistente. El descanso y la relajación pueden ayudar a mejorar la situación.",
 		consigli: "En las cefaleas relacionadas con el estrés, evitar los factores desencadenantes; en cualquier caso, si las causas no son orgánicas, llevar una vida moderada y evitar excesos.",
@@ -466,10 +467,10 @@ var DB_patologie = {
 	},
 	"054": {
 		nomi: [
-			"Presentación de nalgas",
+			"Feto de nalgas",
 			"Posición anormal del feto"
 		],
-		descrizione: "Posición anormal del feto en el útero, donde el bebé se encuentra con los pies hacia abajo en lugar de hacia arriba, como se esperaría durante el desarrollo normal. En la presentación de nalgas, las piernas del feto se encuentran hacia abajo y las nalgas pueden estar situadas en la parte inferior del útero.<br>La presentación de nalgas puede ser una variante normal hasta cierto punto del embarazo, pero generalmente durante el tercer trimestre, el feto debe girar para que la cabeza esté posicionada hacia abajo, en preparación para el parto vaginal.<br>Si el feto permanece en posición de nalgas al momento del parto, esto puede causar riesgos y complicaciones durante el trabajo de parto y el parto, ya que la presentación de nalgas está asociada con una mayor probabilidad de complicaciones tanto para el bebé como para la madre. En algunos casos, se pueden intentar maniobras para girar manualmente el feto (procedimiento de versión de nalgas) u optar por un parto por cesárea programado, según las circunstancias individuales y las preferencias de la madre.<br>El monitoreo prenatal regular y la comunicación con el médico son fundamentales para identificar oportunamente la posición del feto y tomar decisiones adecuadas para garantizar un parto seguro y saludable.",
+		descrizione: "Posición anormal del feto en el útero, donde el bebé se encuentra con los pies hacia abajo en lugar de hacia arriba, como se esperaría durante el desarrollo normal. Quando il feto está volteado, las piernas del feto se encuentran hacia abajo y las nalgas pueden estar situadas en la parte inferior del útero.<br>La posición del feto volteado puede ser una variante normal hasta cierto punto del embarazo, pero generalmente durante el tercer trimestre, el feto debe girar para que la cabeza esté posicionada hacia abajo, en preparación para el parto vaginal.<br>Si el feto permanece en posición de nalgas al momento del parto, esto puede causar riesgos y complicaciones durante el trabajo de parto y el parto, ya que el feto volteado está asociada con una mayor probabilidad de complicaciones tanto para el bebé como para la madre. En algunos casos, se pueden intentar maniobras para girar manualmente el feto (procedimiento de versión de nalgas) u optar por un parto por cesárea programado, según las circunstancias individuales y las preferencias de la madre.<br>El monitoreo prenatal regular y la comunicación con el médico son fundamentales para identificar oportunamente la posición del feto y tomar decisiones adecuadas para garantizar un parto seguro y saludable.",
 		consigli: "Los mejores resultados se obtienen cuando se trata entre la 28ª y 34ª semana de gestación.<br>No se obtienen resultados si la malposición fetal se debe a deformaciones uterinas, tumores, estenosis pélvica o patologías específicas del feto.",
 		sesso: "f",
 		categoria: 7	
@@ -892,7 +893,7 @@ var DB_patologie = {
 	"110": {
 		nomi: [
 			"Shock",
-			"Fallo circulatorio"
+			"Insuficiencia circulatorio"
 		],
 		descrizione: "Condición médica grave y potencialmente mortal que ocurre cuando el flujo sanguíneo y el suministro de oxígeno a los órganos vitales del cuerpo son insuficientes para mantener sus funciones. Esto puede suceder debido a diversas causas, como pérdidas graves de sangre, reacciones alérgicas graves (anafilaxis), infecciones graves, insuficiencia cardíaca o traumatismos graves.<br>Los síntomas del shock incluyen una frecuencia cardíaca rápida (taquicardia), presión arterial baja, confusión, piel fría y pálida, sudoración y respiración rápida. En algunos casos, el paciente puede perder el conocimiento.",
 		consigli: "",
@@ -1022,7 +1023,7 @@ var DB_patologie = {
 		nomi: [
 			"Acné"
 		],
-		descrizione: "Inflamación de la unidad pilosebácea con la aparición de puntos blancos, puntos negros y pápulas, y en casos más avanzados, quistes, pústulas, nódulos y cicatrices hipertróficas.<br>El acné juvenil afecta a personas entre 10 y 14 años en mujeres y entre 13 y 20 años en hombres; después de esta etapa se puede hablar de acné tardío.<br>Por lo general, los hombres son más afectados que las mujeres.<br>Existe una fuerte predisposición hereditaria.<br>La inflamación generalmente es causada por estafilococos.",
+		descrizione: "Inflamación de la unidad pilo sebácea con la aparición de puntos blancos, puntos negros y pápulas, y en casos más avanzados, quistes, pústulas, nódulos y cicatrices hipertróficas.<br>El acné juvenil afecta a personas entre 10 y 14 años en mujeres y entre 13 y 20 años en hombres; después de esta etapa se puede hablar de acné tardío.<br>Por lo general, los hombres son más afectados que las mujeres.<br>Existe una fuerte predisposición hereditaria.<br>La inflamación generalmente es causada por estafilococos.",
 		categoria: 5
 	},
 	"134": {
@@ -2221,10 +2222,11 @@ var DB_patologie = {
 	},
 	"338": {
 		nomi: [
-			"Náuseas matutinas"
+			"Malestar matutino"
 		],
 		descrizione: "Condición común que ocurre durante el embarazo, especialmente en el primer trimestre. Se caracteriza por una sensación de náuseas y a veces vómitos que suelen ocurrir por la mañana, pero pueden ocurrir en cualquier momento del día.<br>A pesar de que el nombre hace referencia a las mañanas, las náuseas matutinas pueden manifestarse en otros momentos y pueden variar de una mujer a otra. Las causas exactas de las náuseas matutinas no se comprenden completamente, pero se cree que están relacionadas con los cambios hormonales que ocurren en el cuerpo durante el embarazo.<br>Las mujeres embarazadas pueden experimentar una amplia variedad de síntomas, que van desde náuseas leves hasta malestar intenso. Aunque las náuseas matutinas se consideran generalmente un síntoma normal del embarazo y tienden a mejorar a medida que avanza el embarazo, en algunos casos pueden ser lo suficientemente graves como para requerir atención médica.",
-		consigli: "Para aliviar las náuseas matutinas, se recomienda realizar comidas pequeñas y frecuentes, evitar alimentos grasos o pesados, beber líquidos en pequeños sorbos y descansar adecuadamente. Además, algunas mujeres encuentran alivio tomando vitamina B6 u otros remedios naturales.",
+		consigli: "Para aliviar las molestias matutinas, se recomienda realizar comidas pequeñas y frecuentes, evitar alimentos grasos o pesados, beber líquidos en pequeños sorbos y descansar adecuadamente. Además, algunas mujeres encuentran alivio tomando vitamina B6 u otros remedios naturales.",
+		sesso: "f",
 		categoria: 7
 	},
 	"341": {
@@ -2239,10 +2241,10 @@ var DB_patologie = {
 	"344": {
 		nomi: [
 			"Cinetosis",
-			"Mareo en el coche",
-			"Mareo en el mar"
+			"Mareo de carro",
+			"Mareado"
 		],
-		descrizione: "La cinetosis, comúnmente conocida como mareo en el coche o mareo en el mar, es una condición médica caracterizada por una sensación de malestar, náuseas y, a veces, vómitos que ocurren cuando una persona está expuesta a movimientos u oscilaciones irregulares, como durante un viaje en coche, avión o barco.<br>La cinetosis es causada por una discrepancia entre las señales que el cerebro recibe de los sentidos del movimiento, como el oído interno, los ojos y los receptores musculares, y puede ocurrir cuando estas señales son conflictivas o no coinciden entre sí.<br>Los síntomas típicos de la cinetosis incluyen náuseas, sudoración excesiva, mareos, palidez y, a veces, vómitos. Estos síntomas pueden variar en intensidad de una persona a otra y pueden ser influenciados por factores como la sensibilidad individual, la duración del viaje y las condiciones del medio de transporte.",
+		descrizione: "Condición médica caracterizada por una sensación de malestar, náuseas y, a veces, vómitos que ocurren cuando una persona está expuesta a movimientos u oscilaciones irregulares, como durante un viaje en coche, avión o barco.<br>La cinetosis es causada por una discrepancia entre las señales que el cerebro recibe de los sentidos del movimiento, como el oído interno, los ojos y los receptores musculares, y puede ocurrir cuando estas señales son conflictivas o no coinciden entre sí.<br>Los síntomas típicos de la cinetosis incluyen náuseas, sudoración excesiva, mareos, palidez y, a veces, vómitos. Estos síntomas pueden variar en intensidad de una persona a otra y pueden ser influenciados por factores como la sensibilidad individual, la duración del viaje y las condiciones del medio de transporte.",
 		consigli: "Para prevenir o aliviar la cinetosis, se pueden tomar varias medidas, como fijar la vista en un punto fijo en el horizonte, sentarse en la parte delantera del vehículo o barco, evitar comidas pesadas o picantes antes del viaje y asegurar una buena ventilación en el entorno. Además, existen medicamentos de venta libre o con receta que pueden ayudar a reducir los síntomas de la cinetosis.",
 		categoria: 9
 	},
@@ -2257,16 +2259,16 @@ var DB_patologie = {
 	"350": {
 		nomi: [
 			"Dislocación congénita de cadera",
-			"Displasia congénita de cadera",
-			"Luxación congénita de cadera"
+			"Luxación congénita de cadera",
+			"Displasia congénita de cadera"
 		],
-		descrizione: "La dislocación congénita de cadera, también conocida como luxación congénita de cadera o displasia de cadera, es una condición médica en la cual la cabeza del hueso del muslo (fémur) se encuentra en una posición anómala dentro de la articulación de la cadera, no estando correctamente colocada en el acetábulo (la parte del hueso pélvico que forma la articulación de la cadera).<br>Esta condición se presenta desde el nacimiento y puede ser causada por una combinación de factores genéticos y ambientales. La dislocación congénita de cadera puede variar en gravedad desde casos leves de inestabilidad de la cadera hasta verdaderas luxaciones.<br>Los síntomas pueden variar dependiendo del grado de dislocación y de su detección temprana. En recién nacidos y niños pequeños, se puede observar una movilidad limitada de la cadera o asimetría de los pliegues cutáneos en la región inguinal. En niños mayores y adultos, puede ocurrir dolor en la cadera, cojera o dificultad para caminar.<br>El diagnóstico de la dislocación congénita de cadera se basa en el examen clínico y en pruebas diagnósticas como la ecografía de cadera en bebés y las radiografías de cadera en adultos. Un diagnóstico temprano es importante para iniciar el tratamiento de manera oportuna.",
+		descrizione: "Condición médica en la cual la cabeza del hueso del muslo (fémur) se encuentra en una posición anómala dentro de la articulación de la cadera, no estando correctamente colocada en el acetábulo (la parte del hueso pélvico que forma la articulación de la cadera).<br>Esta condición se presenta desde el nacimiento y puede ser causada por una combinación de factores genéticos y ambientales. La dislocación congénita de cadera puede variar en gravedad desde casos leves de inestabilidad de la cadera hasta verdaderas luxaciones.<br>Los síntomas pueden variar dependiendo del grado de dislocación y de su detección temprana. En recién nacidos y niños pequeños, se puede observar una movilidad limitada de la cadera o asimetría de los pliegues cutáneos en la región inguinal. En niños mayores y adultos, puede ocurrir dolor en la cadera, cojera o dificultad para caminar.<br>El diagnóstico de la dislocación congénita de cadera se basa en el examen clínico y en pruebas diagnósticas como la ecografía de cadera en bebés y las radiografías de cadera en adultos. Un diagnóstico temprano es importante para iniciar el tratamiento de manera oportuna.",
 		categoria: 13
 	},
 	"351": {
 		nomi: [
 			"Genu valgo",
-			"Rodillas en O"
+			"Piernas a O"
 		],
 		descrizione: "Condición médica en la que las rodillas se separan entre sí, mientras que los tobillos permanecen más cerca. Este fenómeno se caracteriza por una curvatura hacia afuera de las piernas, creando una apariencia característica en forma de arco entre las rodillas. El genu valgo puede ser causado por diversos factores, como problemas congénitos, trastornos del desarrollo o lesiones.<br>Los síntomas del genu valgo pueden variar según la gravedad de la condición. En casos leves, puede no haber síntomas o solo una ligera molestia, mientras que en casos más graves puede haber dolor, inestabilidad en la articulación de la rodilla y dificultad para caminar adecuadamente.<br>El diagnóstico del genu valgo se basa en el examen clínico y en pruebas de imagen, como radiografías, para evaluar la posición de las rodillas y confirmar la presencia de esta curvatura.",
 		categoria: 13
@@ -2274,9 +2276,9 @@ var DB_patologie = {
 	"352": {
 		nomi: [
 			"Genu Varo",
-			"Rodillas en X"
+			"Piernas en X"
 		],
-		descrizione: "Una condición médica en la cual las rodillas se acercan entre sí mientras los tobillos permanecen separados. Este fenómeno se debe a una curvatura hacia adentro de las piernas, creando una apariencia característica en forma de arco entre las rodillas. El genu valgo puede ser causado por diversos factores, incluyendo problemas congénitos, trastornos del desarrollo o lesiones.<br>Los síntomas del genu valgo pueden variar según la gravedad de la condición. En casos leves, puede no haber síntomas o solo una ligera molestia, mientras que en casos más graves puede haber dolor, inestabilidad en la articulación de la rodilla y dificultad para caminar adecuadamente.<br>El diagnóstico del genu valgo se basa en el examen clínico y en pruebas de imagen, como radiografías, para evaluar la posición de las rodillas y confirmar la presencia de esta curvatura.",
+		descrizione: "Condición médica en la cual las rodillas se acercan entre sí mientras los tobillos permanecen separados. Este fenómeno se debe a una curvatura hacia adentro de las piernas, creando una apariencia característica en forma de arco entre las rodillas. El genu valgo puede ser causado por diversos factores, incluyendo problemas congénitos, trastornos del desarrollo o lesiones.<br>Los síntomas del genu valgo pueden variar según la gravedad de la condición. En casos leves, puede no haber síntomas o solo una ligera molestia, mientras que en casos más graves puede haber dolor, inestabilidad en la articulación de la rodilla y dificultad para caminar adecuadamente.<br>El diagnóstico del genu valgo se basa en el examen clínico y en pruebas de imagen, como radiografías, para evaluar la posición de las rodillas y confirmar la presencia de esta curvatura.",
 		categoria: 13
 	},
 	"353": {

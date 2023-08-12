@@ -8995,11 +8995,11 @@ DB.set = {
 				}, {
 					TitoloTeoria: "1. Mondor Test (motivation)",
 					TestoTeoria: "This test is useful to assess the level of motivation to quit smoking.",
-					test: "motivation"
+					test: "motivazione"
 				}, {
 					TitoloTeoria: "2. Fagerström Test (dependence)",
 					TestoTeoria: "This test is necessary to determine the degree of dependence on smoking.",
-					test: "dependence"
+					test: "dipendenza"
 				}, {
 					TitoloTeoria: "3. Therapeutic proposal",
 					TestoTeoria: "To be performed following the Mondor and Fagerström tests.<br>Steps 2 and 3 are intended as second and third choices, respectively, if the previous protocols have not been effective or have not been carried out for various reasons.",

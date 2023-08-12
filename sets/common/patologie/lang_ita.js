@@ -2257,12 +2257,12 @@ var DB_patologie = {
 	},
 	"344": {
 		nomi: [
-			"Kinetosi",
+			"Chinetosi",
 			"Mal d'auto",
 			"Mal di mare"
 		],
-		descrizione: "La kinetosi, comunemente nota come mal d'auto o mal di mare, è una condizione medica caratterizzata da una sensazione di malessere, nausea e talvolta vomito, che si verifica quando una persona è esposta a movimenti o oscillazioni irregolari, come durante un viaggio in auto, in aereo o in barca.<br>La kinetosi è causata da una discrepanza tra i segnali che il cervello riceve dai sensi del movimento, come l'orecchio interno, gli occhi e i recettori muscolari, e può verificarsi quando questi segnali sono conflittuali o non corrispondono tra loro.<br>I sintomi tipici della kinetosi includono nausea, sudorazione eccessiva, vertigini, pallore e talvolta vomito. Questi sintomi possono variare in intensità da persona a persona e possono essere influenzati da fattori come la sensibilità individuale, la durata del viaggio e le condizioni del mezzo di trasporto.",
-		consigli: "Per prevenire o alleviare la kinetosi, possono essere adottate alcune misure, come guardare fisso un punto all'orizzonte, sedersi nella parte anteriore del veicolo o dell'imbarcazione, evitare cibi pesanti o piccanti prima del viaggio e ventilare bene gli ambienti. Inoltre, esistono farmaci da banco o prescritti dal medico che possono aiutare a ridurre i sintomi della kinetosi.",
+		descrizione: "La chinetosi è una condizione medica caratterizzata da una sensazione di malessere, nausea e talvolta vomito, che si verifica quando una persona è esposta a movimenti o oscillazioni irregolari, come durante un viaggio in auto, in aereo o in barca.<br>La chinetosi è causata da una discrepanza tra i segnali che il cervello riceve dai sensi del movimento, come l'orecchio interno, gli occhi e i recettori muscolari, e può verificarsi quando questi segnali sono conflittuali o non corrispondono tra loro.<br>I sintomi tipici della chinetosi includono nausea, sudorazione eccessiva, vertigini, pallore e talvolta vomito. Questi sintomi possono variare in intensità da persona a persona e possono essere influenzati da fattori come la sensibilità individuale, la durata del viaggio e le condizioni del mezzo di trasporto.",
+		consigli: "Per prevenire o alleviare la chinetosi, possono essere adottate alcune misure, come guardare fisso un punto all'orizzonte, sedersi nella parte anteriore del veicolo o dell'imbarcazione, evitare cibi pesanti o piccanti prima del viaggio e ventilare bene gli ambienti. Inoltre, esistono farmaci da banco o prescritti dal medico che possono aiutare a ridurre i sintomi della chinetosi.",
 		categoria: 9
 	},
 	"349": {

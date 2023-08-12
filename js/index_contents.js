@@ -13,7 +13,15 @@ var sets = {
 		lingueCont: [
 			"ita",
 			"eng",
-			"esp"
+			"esp",
+			"fra",
+			"por",
+			"deu"
+		],
+		lingueAI: [
+			"fra",
+			"por",
+			"deu"
 		]
 	},
 	meridiani_cinesi: {
@@ -74,7 +82,15 @@ var sets = {
 		lingueCont: [
 			"ita",
 			"eng",
-			"esp"
+			"esp",
+			"fra",
+			"por",
+			"deu"
+		],
+		lingueAI: [
+			"fra",
+			"por",
+			"deu"
 		]
 	},
 	meridiani_shiatsu: {
@@ -134,7 +150,15 @@ var sets = {
 		lingueCont: [
 			"ita",
 			"eng",
-			"esp"
+			"esp",
+			"fra",
+			"por",
+			"deu"
+		],
+		lingueAI: [
+			"fra",
+			"por",
+			"deu"
 		]
 	},
 	auricologia: {
@@ -188,7 +212,15 @@ var sets = {
 		lingueCont: [
 			"ita",
 			"eng",
-			"esp"
+			"esp",
+			"fra",
+			"por",
+			"deu"
+		],
+		lingueAI: [
+			"fra",
+			"por",
+			"deu"
 		]
 	},
 	reflessologia_plantare: {

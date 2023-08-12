@@ -265,13 +265,13 @@ var MODULO_PATOLOGIE = { // extend SET
 		var TestoPatologia = TestoSinonimi + H.sezione({
 			label: labelDescrizione,
 			nome: 'descrizione',
-			aperta: op_descrizione,
+			aperta: '0',//op_descrizione,
 			html: "<br>"+SET.convPuntiScheda(DB.set.patologie[n].TestoPatologia)
 					}) +
 			H.sezione({
 			label: TXT("SchedaTerapeutica"),
 			nome: 'protocollo',
-			aperta: op_protocollo,
+			aperta: '1',//op_protocollo,
 			html: SET.convPuntiScheda(ST)
 					});
 		
@@ -306,6 +306,8 @@ var MODULO_PATOLOGIE = { // extend SET
 								btnAdd,
 								globals.set.cartella+'_patologie_'+n );
 		SET.eviPointsPat(document.getElementById("schedaTerapeutica"));
+		document.getElementById("sez_cont_descrizione").classList.toggle("sezioneChiusa",!op_descrizione);
+		document.getElementById("sez_cont_protocollo").classList.toggle("sezioneChiusa",!op_protocollo)
 	},
 	getPatFromScheda: function( scheda ){
 		for(let p in DB.set.patologie){
