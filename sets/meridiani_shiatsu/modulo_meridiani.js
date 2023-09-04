@@ -31,7 +31,6 @@ var MODULO_MERIDIANI = { // extend SET
 		// carica la lista dei meridiani
 		var contElencoMeridiani = contSmart = '';
 		var n = 0;
-		
 		for(let m in DB.set.meridiani){
 			if(m!='EX'){
 				n++;
@@ -52,12 +51,13 @@ var MODULO_MERIDIANI = { // extend SET
 				if(m!='NK')addClass +=	' noNMK';
 				else{
 					addClass +=	' NMK';
-					elencoPunti += '<p id="titNMK">'+TXT("ZoneAnatomiche")+'</p>';
+					//elencoPunti += '<p id="titNMK">'+TXT("ZoneAnatomiche")+'</p>';
 				}
 				let myObj = DB.set.meridiani[m].punti,
 					keys = 	Object.keys(myObj),
 					len = keys.length;
-				keys.sort();		
+				keys.sort();
+				
 				for (let i=0; i<len; i++) {	
 					let nPunto = keys[i];
 					var TS = DB.set.meridiani[m].punti[nPunto];
@@ -70,7 +70,7 @@ var MODULO_MERIDIANI = { // extend SET
 								elemento = elemento.replace("pallinoPat","pallinoPat lockedItem");
 							}
 							// --------------------------
-							DB.set.apparatiNMK[TS.apparato].html += elemento;
+							if(!__(TS.hidden,false))DB.set.apparatiNMK[TS.apparato].html += elemento;
 						}else elencoPunti += elemento;
 					}
 				}

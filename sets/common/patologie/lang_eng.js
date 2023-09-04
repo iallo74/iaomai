@@ -84,8 +84,7 @@ var DB_patologie = {
 	},
 	"009": {
 		nomi: [
-			"Angina pectoris",
-			"Coronary heart disease"
+			"Angina pectoris"
 		],
 		descrizione: "Commonly known as \"angina\", it is a medical condition characterized by chest pain or discomfort. This sensation is often described as a feeling of pressure, heaviness, burning, or constriction. Angina pectoris occurs when blood flow to the heart is reduced, typically due to atherosclerosis of the coronary arteries.<br>The pain associated with angina pectoris is usually triggered by physical exertion or stressful situations and can be relieved with rest or by taking nitroglycerin. It is important to recognize the signs of angina pectoris as it can be a warning sign of possible coronary heart disease.",
 		consigli: "Although the above-mentioned techniques yield good results, it is essential to use all emergency medications and, if necessary, admit the individual to suitable facilities.<br>Consulting a doctor immediately in case of symptoms of angina pectoris is crucial for an accurate evaluation and to initiate appropriate treatment to prevent serious complications, such as myocardial infarction.",

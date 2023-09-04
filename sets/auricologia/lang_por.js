@@ -782,7 +782,7 @@ DB.set = {
         },
         "030": {
             "NomePunto": "Hipertensão 1",
-            "AzioniPunto": "<p><b>Outros nomes</b><br> - Ansiedade 1<br> - Depressão</p><p> <b>Ação</b><br> A Escola Chinesa distingue o tratamento da Hipertensão com três pontos diferentes. Hipertensão 1 Ponto é indicado para o reequilíbrio da pressão arterial, ansiedade e depressão.</p><p> <b>Localização</b><br> TF6, na fossa triangular próximo ao ponto de intersecção entre a hélice e o ramo inferior da anti-hélice.</p>",
+            "AzioniPunto": "<p><b>Outros nomes</b><br> - Ansiedade 1<br> - Depressão</p><p> <b>Ação</b><br> A Escola Chinesa distingue o tratamento da Hipertensão com três pontos diferentes. Hipertensão 1 Ponto é indicado para o reequilíbrio da pressão arterial, ansiedade e depressão.</p><p> <b>Localização</b><br> TF6, na fossa triangular próximo ao ponto de intersecção entre a hélice e o ramo superior da anti-hélice.</p>",
             "ChiaviPunto": ""
         },
         "031": {

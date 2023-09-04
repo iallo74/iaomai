@@ -782,5 +782,17 @@ var DB_anatomia = {
     "Organo_TIROIDE": {
         "Titolo": "Tiroides",
         "Descrizione": "<p><i>Ubicación: </i>ubicada en la región anterior del cuello, delante y lateralmente a la laringe y la tráquea. A la altura de C5. Su forma recuerda a la letra H. Los lóbulos están unidos por el istmo<br><i>Función: </i>la tiroides produce hormonas, conocidas como hormonas tiroideas, que controlan las actividades metabólicas y son responsables del correcto funcionamiento de la mayoría de las células del organismo.</p>"
+    },
+    "Organo_FLESSURA_SIGMOIDEA": {
+        "Titolo": "Flexo sigmoidea",
+        "Descrizione": ""
+    },
+    "Organo_FOSSA_EPIGASTRICA": {
+        "Titolo": "Região epigástrica",
+        "Descrizione": ""
+    },
+    "Organo_OMBELICO": {
+        "Titolo": "Ombligo",
+        "Descrizione": ""
     }
 };

@@ -786,5 +786,17 @@ var DB_anatomia = {
     "Organo_TIROIDE": {
         "Titolo": "Tiroide",
         "Descrizione": "<p><i>Ubicazione: </i>posizionata nella regione anteriore del collo, davanti e lateralmente alla laringe ed alla trachea. All'altezza di C5. La sua forma ricorda la lettera H. I lobi sono uniti tramite l'istmo.<br> <i>Funzione: </i>la tiroide produce ormoni, detti ormoni tiroidei, i quali controllano le attività metaboliche e sono responsabili del corretto funzionamento di gran parte delle cellule dell'organismo.</p>"
+    },
+    "Organo_FLESSURA_SIGMOIDEA": {
+        "Titolo": "Flessura sigmoidea",
+        "Descrizione": ""
+    },
+    "Organo_FOSSA_EPIGASTRICA": {
+        "Titolo": "Fossa epigastrica",
+        "Descrizione": ""
+    },
+    "Organo_OMBELICO": {
+        "Titolo": "Ombelico",
+        "Descrizione": ""
     }
 };

@@ -782,7 +782,7 @@ DB.set = {
 		},
 		"030": {
 			NomePunto: "Hypertension 1",
-			AzioniPunto: "<p><b>Other names</b><br>- Anxiety 1<br>- Depression</p><p><b>Action</b><br>The Chinese School distinguishes the treatment of Hypertension with three different points. Hypertension 1 Point is indicated for the rebalancing of blood pressure, anxiety, and depression.</p><p><b>Location</b><br>TF6, in the triangular fossa near the point of intersection between the helix and the lower branch of the antihelix.</p>",
+			AzioniPunto: "<p><b>Other names</b><br>- Anxiety 1<br>- Depression</p><p><b>Action</b><br>The Chinese School distinguishes the treatment of Hypertension with three different points. Hypertension 1 Point is indicated for the rebalancing of blood pressure, anxiety, and depression.</p><p><b>Location</b><br>TF6, in the triangular fossa near the point of intersection between the helix and the upper branch of the antihelix.</p>",
 			ChiaviPunto: ""
 		},
 		"031": {
@@ -7577,7 +7577,7 @@ DB.set = {
 			apparato: 5
 		},
 		"3": {
-			NomePatologia: "Benign Adenosis",
+			NomePatologia: "Benign adenosis",
 			schedaPatologia: "135",
 			scheda: 51,
 			apparato: 5
@@ -7589,7 +7589,7 @@ DB.set = {
 			apparato: 3
 		},
 		"5": {
-			NomePatologia: "Female Pelvic Pain",
+			NomePatologia: "Female pelvic pain",
 			schedaPatologia: "137",
 			scheda: 50,
 			apparato: 5
@@ -7625,25 +7625,25 @@ DB.set = {
 			apparato: 4
 		},
 		"11": {
-			NomePatologia: "Cardiac Arrhythmias",
+			NomePatologia: "Cardiac arrhythmias",
 			schedaPatologia: "090",
 			scheda: 75,
 			apparato: 7
 		},
 		"12": {
-			NomePatologia: "Phantom Limb",
+			NomePatologia: "Phantom limb",
 			schedaPatologia: "143",
 			scheda: 36,
 			apparato: 3
 		},
 		"13": {
-			NomePatologia: "Psoriatic Arthritis",
+			NomePatologia: "Psoriatic arthritis",
 			schedaPatologia: "144",
 			scheda: 21,
 			apparato: 1
 		},
 		"14": {
-			NomePatologia: "Rheumatoid Arthritis",
+			NomePatologia: "Rheumatoid arthritis",
 			schedaPatologia: "014",
 			scheda: 20,
 			apparato: 1
@@ -7679,7 +7679,7 @@ DB.set = {
 			apparato: 7
 		},
 		"30": {
-			NomePatologia: "Chronic obstructive bronchitis (COB)",
+			NomePatologia: "Chronic Obstructive Bronchitis (COB)",
 			schedaPatologia: "148",
 			scheda: 86,
 			apparato: 8
@@ -8149,7 +8149,7 @@ DB.set = {
 			apparato: 6
 		},
 		"112": {
-			NomePatologia: "Gastroesophageal reflux disease (GERD)",
+			NomePatologia: "GastroEsophageal Reflux Disease (GERD)",
 			schedaPatologia: "263",
 			scheda: 67,
 			apparato: 6
@@ -8293,13 +8293,13 @@ DB.set = {
 			apparato: 5
 		},
 		"137": {
-			NomePatologia: "Arthritic Low Back Pain",
+			NomePatologia: "Arthritic low back pain",
 			schedaPatologia: "215",
 			scheda: 4,
 			apparato: 1
 		},
 		"138": {
-			NomePatologia: "Muscular low back pain",
+			NomePatologia: "Muscle-based lumbago",
 			schedaPatologia: "216",
 			scheda: 8,
 			apparato: 1
@@ -8563,31 +8563,31 @@ DB.set = {
 			apparato: 5
 		},
 		"184": {
-			NomePatologia: "Preparation/Assistance for Childbirth",
+			NomePatologia: "Preparation/Assistance for childbirth",
 			schedaPatologia: "256",
 			scheda: 56,
 			apparato: 5
 		},
 		"185": {
-			NomePatologia: "Antitobacco Classic Program by Nogier",
+			NomePatologia: "Antitobacco classic program by Nogier",
 			schedaPatologia: "257",
 			scheda: 100,
 			apparato: 11
 		},
 		"186": {
-			NomePatologia: "Antitobacco Program by G. Rossato",
+			NomePatologia: "Antitobacco program by G. Rossato",
 			schedaPatologia: "258",
 			scheda: 101,
 			apparato: 11
 		},
 		"187": {
-			NomePatologia: "Antitobacco Program by A. Lovato",
+			NomePatologia: "Antitobacco program by A. Lovato",
 			schedaPatologia: "259",
 			scheda: 102,
 			apparato: 11
 		},
 		"188": {
-			NomePatologia: "NADA Protocol for Addictions",
+			NomePatologia: "NADA protocol for Addictions",
 			schedaPatologia: "260",
 			scheda: 103,
 			apparato: 11
@@ -8599,13 +8599,13 @@ DB.set = {
 			apparato: 9
 		},
 		"190": {
-			NomePatologia: "Cervical Radiculopathy",
+			NomePatologia: "Cervical radiculopathy",
 			schedaPatologia: "261",
 			scheda: 17,
 			apparato: 1
 		},
 		"191": {
-			NomePatologia: "Lumbosacral Radiculopathy",
+			NomePatologia: "Lumbosacral radiculopathy",
 			schedaPatologia: "262",
 			scheda: 19,
 			apparato: 1
@@ -8707,13 +8707,13 @@ DB.set = {
 			apparato: 6
 		},
 		"210": {
-			NomePatologia: "Gastrointestinal Neurosis",
+			NomePatologia: "Gastrointestinal neurosis",
 			schedaPatologia: "082",
 			scheda: 69,
 			apparato: 6
 		},
 		"212": {
-			NomePatologia: "Depressive Disorder",
+			NomePatologia: "Depressive disorder",
 			schedaPatologia: "034",
 			scheda: 45,
 			apparato: 4

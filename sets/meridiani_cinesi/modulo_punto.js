@@ -22,11 +22,14 @@ var MODULO_PUNTO = { // extend SET
 		
 		let pattern = /[0-9]{1,2}\.[A-Z]{2}\.\s[^\(]+\(([^\)]+)\)/g;
 		var HTML = "<h1>";
+		var HTML_tit = '<h1>';
 		
-		if(siglaMeridiano!='EX')HTML += +nPunto +"."+siglaMeridiano;
-		else HTML += sigla;
+		if(siglaMeridiano!='EX')HTML_tit += +nPunto +"."+siglaMeridiano;
+		else HTML_tit += sigla;
 		
-		HTML += ". "+htmlEntities(DB.mtc.meridiani[siglaMeridiano].punti[nPunto].pinyin)+"<br><i>"+htmlEntities(titolo.replace(pattern,"$1"))+"</i></h1>";
+		HTML_tit += ". "+htmlEntities(DB.mtc.meridiani[siglaMeridiano].punti[nPunto].pinyin)+"</h1>";
+		
+		HTML += "<i>"+htmlEntities(titolo.replace(pattern,"$1"))+"</i></h1>";
 
 
 		var HTML_simboli = '';
@@ -144,11 +147,11 @@ var MODULO_PUNTO = { // extend SET
 			ideogramma += ideogrammaOr[l];
 			if(l<lI-1)ideogramma += "<br>";
 		}
-		HTML = 	'<div class="ideogrammaPuntoChar">'+ideogramma+'</div><img src="img/speach2W.png" onClick="SET.speachName(\''+siglaMeridiano+nPunto+'\');" class="speach_icon noPrint">'+HTML;
+		HTML_tit = 	'<div class="ideogrammaPuntoChar">'+ideogramma+'</div><img src="img/speach2W.png" onClick="SET.speachName(\''+siglaMeridiano+nPunto+'\');" class="speach_icon noPrint">'+HTML_tit;
 
 
 		
-		HTML = '<div class="translatable">'+HTML+'</div>';
+		HTML = '<div id="titPoint">'+HTML_tit+'</div><div class="translatable">'+HTML+'</div>';
 		HTML += imgDettaglio;
 		
 		// annotazione

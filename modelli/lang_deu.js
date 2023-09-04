@@ -767,5 +767,17 @@ var DB_anatomia = {
     "Organo_TIROIDE": {
         "Titolo": "Schilddrüse",
         "Descrizione": "<p><i>Lage:</i> Die Schilddrüse liegt im vorderen Bereich des Halses, vor und seitlich des Kehlkopfes und der Luftröhre. Es liegt auf der Ebene von C5. Seine Form ähnelt dem Buchstaben „H“, wobei die Lappen durch den Isthmus verbunden sind<br> <i>Funktion:</i> Die Schilddrüse produziert Hormone, sogenannte Schilddrüsenhormone, die die Stoffwechselaktivitäten steuern und für die ordnungsgemäße Funktion vieler Zellen im Körper verantwortlich sind.</p>"
+    },
+    "Organo_FLESSURA_SIGMOIDEA": {
+        "Titolo": "Flexur sigmoidea",
+        "Descrizione": ""
+    },
+    "Organo_FOSSA_EPIGASTRICA": {
+        "Titolo": "Magengegend",
+        "Descrizione": ""
+    },
+    "Organo_OMBELICO": {
+        "Titolo": "Nabel",
+        "Descrizione": ""
     }
 };

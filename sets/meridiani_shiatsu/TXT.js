@@ -192,6 +192,14 @@ DB.TXT.set = {
 		por: "Mapa de pontos",
 		deu: "Karte der Punkte"
 	},
+	RegioniAnatomiche: {
+		ita: "Regioni anatomiche",
+		eng: "Anatomic regions",
+		esp: "Regiones anatómicas",
+		fra: "Régions anatomiques",
+		por: "Regiões anatômicas",
+		deu: "Anatomische Regionen"
+	},
 	MeridianiCinesi: {
 		ita: "Meridiani cinesi",
 		eng: "Chinese meridians",

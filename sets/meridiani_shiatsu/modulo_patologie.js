@@ -106,6 +106,7 @@ var MODULO_PATOLOGIE = { // extend SET
 		DB.set.patologie.sort(sort_by("evi",true));
 		//DB_patologie = null;
 		SET.caricaPatologie();
+		SET.componiMeridiani();
 	},
 	caricaPatologie: function(){
 		// carica la lista delle patologie
@@ -180,7 +181,7 @@ var MODULO_PATOLOGIE = { // extend SET
 			if(!vuota)contPatologie += contCartella;
 		}
 		document.getElementById("lista_patologie").innerHTML = contPatologie;
-		SET.caricaMeridiani();
+		//SET.caricaMeridiani();
 	},
 	apriPatologia: function( n, btn ){
 		// apre la scheda della patologia

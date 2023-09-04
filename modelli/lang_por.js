@@ -767,5 +767,17 @@ var DB_anatomia = {
     "Organo_TIROIDE": {
         "Titolo": "Tireoide",
         "Descrizione": "<p><i>Localização:</i> a tireoide está posicionada na região anterior do pescoço, anterior e lateralmente à laringe e traquéia. Ele está localizado no nível de C5. Sua forma lembra a letra &#39;H&#39;, com os lóbulos conectados pelo istmo<br> <i>Função:</i> a tireoide produz hormônios chamados hormônios tireoidianos, que controlam as atividades metabólicas e são responsáveis pelo bom funcionamento de muitas células do corpo.</p>"
+    },
+    "Organo_FLESSURA_SIGMOIDEA": {
+        "Titolo": "Flexão sigmóide",
+        "Descrizione": ""
+    },
+    "Organo_FOSSA_EPIGASTRICA": {
+        "Titolo": "Región epigástrica",
+        "Descrizione": ""
+    },
+    "Organo_OMBELICO": {
+        "Titolo": "Umbigo",
+        "Descrizione": ""
     }
 };

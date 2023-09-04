@@ -782,7 +782,7 @@ DB.set = {
         },
         "030": {
             "NomePunto": "Bluthochdruck 1",
-            "AzioniPunto": "<p><b>Andere Namen</b><br> - Angst 1<br> - Depression</p><p> <b>Aktion</b><br> Die Chinesische Schule unterscheidet die Behandlung von Bluthochdruck nach drei verschiedenen Punkten. Hypertonie 1 Punkt ist für den Ausgleich von Blutdruck, Angstzuständen und Depressionen geeignet.</p><p> <b>Standort</b><br> TF6, in der dreieckigen Fossa nahe dem Schnittpunkt zwischen der Helix und dem unteren Ast der Anthelix.</p>",
+            "AzioniPunto": "<p><b>Andere Namen</b><br> - Angst 1<br> - Depression</p><p> <b>Aktion</b><br> Die Chinesische Schule unterscheidet die Behandlung von Bluthochdruck nach drei verschiedenen Punkten. Hypertonie 1 Punkt ist für den Ausgleich von Blutdruck, Angstzuständen und Depressionen geeignet.</p><p> <b>Standort</b><br> TF6, in der dreieckigen Fossa nahe dem Schnittpunkt zwischen der Helix und dem oberen Ast der Anthelix.</p>",
             "ChiaviPunto": ""
         },
         "031": {

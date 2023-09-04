@@ -873,7 +873,9 @@ var SCHEDA = {
 			document.getElementById("scheda").classList.remove("schedaRitorno");
 			document.getElementById("scheda_titolo").innerHTML=document.getElementById("scheda_ritorno").getElementsByTagName("div")[0].innerHTML;
 			document.getElementById("scheda_testo").style.height = SCHEDA.memHrit;
-			eval(SCHEDA.functRitorno);
+			try{
+				eval(SCHEDA.functRitorno);
+			}catch(err){}
 			SCHEDA.scheda2Aperta = false;
 			document.getElementById("scheda").classList.toggle("h150", (document.getElementById("scheda").scrollHeight<=275));
 			document.getElementById("scheda").classList.toggle("schForm", (document.getElementById("scheda").querySelector(".formBtn")));

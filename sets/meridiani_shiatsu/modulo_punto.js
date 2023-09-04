@@ -35,12 +35,15 @@ var MODULO_PUNTO = { // extend SET
 			noGravidanza = __(DB.mtc.meridiani[siglaMeridiano].punti[nPunto].noGravidanza,'');
 		}
 		
-		var HTML = '';
+		var HTML = '',
+			HTML_tit='';
 		if(siglaMeridiano=='NK'){
-			HTML += "<h1>"+htmlEntities(titolo)+"</h1>";
+			HTML_tit+= "<h1>"+htmlEntities(titolo)+"</h1>";
+			cartella = 'namikoshi';
 		}else{
 			let pattern = /[0-9]{1,2}\.[A-Z]{2}\.\s[^\(]+\(([^\)]+)\)/g;
-			HTML += "<h1>"+ +nPunto +"."+siglaMeridiano+". "+htmlEntities(DB.mtc.meridiani[siglaMeridiano].punti[nPunto].pinyin)+"<br><i>"+htmlEntities(titolo.replace(pattern,"$1"))+"</i></h1>";
+			HTML_tit += "<h1>"+ +nPunto +"."+siglaMeridiano+". "+htmlEntities(DB.mtc.meridiani[siglaMeridiano].punti[nPunto].pinyin)+"</h1>";
+			HTML += "<h1><i>"+htmlEntities(titolo.replace(pattern,"$1"))+"</i></h1>";
 		}
 
 
@@ -169,7 +172,7 @@ var MODULO_PUNTO = { // extend SET
 			HTML = 	'<div class="ideogrammaPuntoChar">'+ideogramma+'</div><img src="img/speach2W.png" onClick="SET.speachName(\''+siglaMeridiano+nPunto+'\');" class="speach_icon noPrint">'+HTML;
 		}
 		
-		HTML = '<div class="translatable">'+HTML+'</div>';
+		HTML = '<div id="titPoint">'+HTML_tit+'</div><div class="translatable">'+HTML+'</div>';
 		
 		if(siglaMeridiano!='NK')HTML += imgDettaglio;
 		
@@ -177,7 +180,7 @@ var MODULO_PUNTO = { // extend SET
 		var TestoAnnotazione = '',
 			hidePunto;
 		if(SET.verificaNota(siglaMeridiano+"."+nPunto)){
-			TestoAnnotazione = SET.leggiNota( cartella, nPunto );
+			TestoAnnotazione = SET.leggiNota( cartella, +nPunto );
 		}
 		HTML +=  '<p id="annotazioni_label"><b>'+htmlEntities(TXT("Note"))+'</b></p>';
 		if(!ritorno || !SCHEDA.formModificato){
@@ -402,7 +405,8 @@ var MODULO_PUNTO = { // extend SET
 				nPunto: '',
 				siglaMeridiano: '',
 				valutazione: '',
-				pinyin: ''
+				pinyin: '',
+				gruppo: ''
 			};
 		Filtro = /[0-9]{1,2}/;
 		if (Filtro.test(pP[0]))el.nPunto = pP[0];
@@ -411,8 +415,10 @@ var MODULO_PUNTO = { // extend SET
 		Filtro = /[A-Z]{2}/;
 		if (Filtro.test(pP[0]))el.siglaMeridiano = pP[0];
 		if (Filtro.test(pP[1]))el.siglaMeridiano = pP[1];
-		let contr = __(pP[2],'')
+		let contr = __(pP[2],'');
+		Filtro = /[a-z]{1,2}}/;
 		if(contr!='*')el.valutazione = contr;
+		else if(Filtro.test(contr))el.gruppo = contr;
 		else el.pinyin = DB.mtc.meridiani[el.siglaMeridiano].punti[el.nPunto].pinyin;
 		return el;
 	},

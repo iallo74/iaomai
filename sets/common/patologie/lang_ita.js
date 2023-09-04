@@ -2175,7 +2175,8 @@ var DB_patologie = {
 		nomi: [
 			"Crampo dello scrittore",
 			"Distonia focale",
-			"Distonia da scrittura"
+			"Distonia da scrittura",
+			"Mogigrafia"
 		],
 		descrizione: "Si tratta di un disturbo neuromotorio caratterizzato da contrazioni involontarie e dolorose dei muscoli delle mani e delle dita durante l'atto della scrittura o dell'uso prolungato di tastiere.<br>I sintomi possono variare da persona a persona, ma di solito includono spasmi, tremori o torsioni delle dita, delle mani o dell'avambraccio mentre si scrive. Il crampo dello scrittore può rendere difficile, se non impossibile, scrivere in modo leggibile e può causare dolore e affaticamento durante l'attività di scrittura.<br>Le cause esatte del crampo dello scrittore non sono completamente comprese, ma si pensa che possano essere coinvolte sia predisposizioni genetiche che fattori ambientali, come l'uso eccessivo di strumenti per scrivere o digitare. Questa condizione può essere frustrante e limitante per coloro che ne soffrono, specialmente per chi ha bisogno di scrivere o digitare per lunghi periodi di tempo, come gli scrittori, i giornalisti o gli studenti.",
 		categoria: 13
@@ -2250,7 +2251,7 @@ var DB_patologie = {
 		nomi: [
 			"Blefaroptosi",
 			"Ptosi palpebrale",
-			"Caduta delle palpebra superiori"
+			"Caduta delle palpebre superiori"
 		],
 		descrizione: "Condizione medica in cui una o entrambe le palpebre superiori scendono più in basso del normale, coprendo in parte o completamente l'occhio. Questo fenomeno può variare in gravità, con conseguente disagio estetico o, nei casi più gravi, compromissione della visione.<br>La blefaroptosi può essere causata da diverse ragioni, tra cui problemi muscolari o nervosi che controllano il movimento delle palpebre, perdita di tono muscolare legata all'invecchiamento, traumi o interventi chirurgici precedenti, malattie neurologiche o disturbi dell'apparato visivo.<br>I sintomi associati alla blefaroptosi possono includere sensazione di pesantezza o stanchezza agli occhi, difficoltà nell'alzare completamente le palpebre superiori, affaticamento visivo e in alcuni casi visione offuscata o ridotta.<br>La diagnosi di blefaroptosi si basa sull'esame clinico dell'oculista o del medico specialista e può richiedere test diagnostici per valutare la funzionalità muscolare o la salute degli occhi.",
 		categoria: 6

@@ -778,5 +778,17 @@ var DB_anatomia = {
     "Organo_TIROIDE": {
         "Titolo": "Thyroid",
         "Descrizione": "<p><i>Location:</i> the thyroid is positioned in the anterior region of the neck, in front of and laterally to the larynx and trachea. It is located at the level of C5. Its shape resembles the letter 'H,' with the lobes connected by the isthmus<br><i>Function:</i> the thyroid produces hormones called thyroid hormones, which control metabolic activities and are responsible for the proper functioning of many cells in the body.</p>"
+    },
+    "Organo_FLESSURA_SIGMOIDEA": {
+        "Titolo": "Sigmoid flexure",
+        "Descrizione": ""
+    },
+    "Organo_FOSSA_EPIGASTRICA": {
+        "Titolo": "Epigastric region",
+        "Descrizione": ""
+    },
+    "Organo_OMBELICO": {
+        "Titolo": "Navel",
+        "Descrizione": ""
     }
 };

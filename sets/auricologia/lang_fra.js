@@ -782,7 +782,7 @@ DB.set = {
         },
         "030": {
             "NomePunto": "HTA 1",
-            "AzioniPunto": "<p><b>Autres noms</b><br> - Anxiété 1<br> - Dépression</p><p> <b>Action</b><br> L&#39;école chinoise distingue le traitement de l&#39;hypertension avec trois points différents. Hypertension 1 Point est indiqué pour le rééquilibrage de la tension artérielle, de l&#39;anxiété et de la dépression.</p><p> <b>Emplacement</b><br> TF6, dans la fosse triangulaire près du point d&#39;intersection entre l&#39;hélice et la branche inférieure de l&#39;antihélice.</p>",
+            "AzioniPunto": "<p><b>Autres noms</b><br> - Anxiété 1<br> - Dépression</p><p> <b>Action</b><br> L&#39;école chinoise distingue le traitement de l&#39;hypertension avec trois points différents. Hypertension 1 Point est indiqué pour le rééquilibrage de la tension artérielle, de l&#39;anxiété et de la dépression.</p><p> <b>Emplacement</b><br> TF6, dans la fosse triangulaire près du point d&#39;intersection entre l&#39;hélice et la branche supérieure de l&#39;antihélice.</p>",
             "ChiaviPunto": ""
         },
         "031": {

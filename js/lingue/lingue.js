@@ -275,6 +275,8 @@ var LINGUE = {
 			txt = SCHEDA.htmlOr2;
 			elText = document.getElementById("scheda_testo2");
 		}
+		elText.classList.add("lang_"+lang);
+		elText.dataset.lang = lang;
 		applicaLoading( elText );
 		JSNPOST = {
 			codice: codice,
@@ -291,10 +293,17 @@ var LINGUE = {
 	resGoogleTranslate: function( txt ){
 		if(txt.substr(0,3)!='404'){
 			var jsn = JSON.parse(txt);
-			var elText = document.getElementById("scheda_testo");
-			if(SCHEDA.scheda2Aperta)elText = document.getElementById("scheda_testo2");
-			//elText.classList.add("translated");
-			elText.querySelector(".translatable").innerHTML = '<div class="translate_note">'+jsn.txt_note+'<span onClick="LINGUE.annGoogleTranslate();">'+jsn.txt_cancel+'</span></div>' + jsn.txt_dest;
+			var elText = document.getElementById("scheda_testo"+(SCHEDA.scheda2Aperta?"2":""));
+			if(!elText.querySelector(".translate_note")){
+				var newNode = document.createElement('div');
+				newNode.className = 'translate_note';
+				newNode.innerHTML = jsn.txt_note+'<span onClick="LINGUE.annGoogleTranslate();">'+jsn.txt_cancel+'</span>';
+				var parentNode = elText.querySelector('.scheda_stampa');
+				parentNode.insertBefore(newNode, parentNode.firstChild);
+			}
+
+			elText.querySelector(".translatable").innerHTML = jsn.txt_dest;
+			//elText.querySelector(".translatable").innerHTML = '<div class="translate_note">'+jsn.txt_note+'<span onClick="LINGUE.annGoogleTranslate();">'+jsn.txt_cancel+'</span></div>' + jsn.txt_dest;
 			rimuoviLoading( elText );
 			eval(SCHEDA.addFunct);
 			SCHEDA.addFunct = null;
@@ -303,8 +312,13 @@ var LINGUE = {
 	},
 	annGoogleTranslate: function(){
 		LINGUE.googleLangSel = '';
-		document.getElementById("scheda_testo").querySelector(".translatable").innerHTML = SCHEDA.htmlOr;
-		if(document.getElementById("scheda_testo2").querySelector(".translatable"))document.getElementById("scheda_testo2").querySelector(".translatable").innerHTML = SCHEDA.htmlOr2;
+		let elText = document.getElementById("scheda_testo"+(SCHEDA.scheda2Aperta?"2":""));
+		elText.querySelector(".translatable").innerHTML = SCHEDA["htmlOr"+(SCHEDA.scheda2Aperta?"2":"")];
+		elText.classList.remove("lang_"+elText.dataset.lang)
+		elText.dataset.lang = '';
+		
+		//if(document.getElementById("scheda_testo2").querySelector(".translatable"))document.getElementById("scheda_testo2").querySelector(".translatable").innerHTML = SCHEDA[.]htmlOr2;
+		document.querySelector(".translate_note").remove();
 		LINGUE.resetGoogleTranslate();
 	},
 	resetGoogleTranslate: function(){

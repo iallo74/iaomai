@@ -767,5 +767,17 @@ var DB_anatomia = {
     "Organo_TIROIDE": {
         "Titolo": "Thyroïde",
         "Descrizione": "<p><i>Localisation :</i> la thyroïde est positionnée dans la région antérieure du cou, devant et latéralement au larynx et à la trachée. Il est situé au niveau du C5. Sa forme ressemble à la lettre &#39;H&#39;, avec les lobes reliés par l&#39;isthme<br> <i>Fonction :</i> la thyroïde produit des hormones appelées hormones thyroïdiennes, qui contrôlent les activités métaboliques et sont responsables du bon fonctionnement de nombreuses cellules du corps.</p>"
+    },
+    "Organo_FLESSURA_SIGMOIDEA": {
+        "Titolo": "Sigma",
+        "Descrizione": ""
+    },
+    "Organo_FOSSA_EPIGASTRICA": {
+        "Titolo": "Région épigastrique",
+        "Descrizione": ""
+    },
+    "Organo_OMBELICO": {
+        "Titolo": "Nombril",
+        "Descrizione": ""
     }
 };

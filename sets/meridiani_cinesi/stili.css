@@ -812,3 +812,7 @@ body:not(.smart) #meridianiSmart_cont div:not(.elencoSel):hover{
 #add_pat:not(.category) #categoryBtn{
 	background-image:url(../../img/ico_category.png);
 }
+
+#titPoint h1{
+	margin-bottom:0px;
+}

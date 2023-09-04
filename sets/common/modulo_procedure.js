@@ -95,11 +95,14 @@ var MODULO_PROCEDURE = { // extend SET
 	},
 	filtraProcedure: function( event ){
 		var parola = document.getElementById("proc_ricerca").value.trim();
+		let app = (globals.set.cartella=='auricologia')?'AUR':'';
 		for(let p in DB.procedure.data){
-			if(DB.procedure.data[p].NomeProcedura.toLowerCase().indexOf(parola.toLowerCase()) == -1){
-				document.getElementById("btn_procedura_"+p).classList.add("nasPazRic");
-			}else{
-				document.getElementById("btn_procedura_"+p).classList.remove("nasPazRic");
+			if(DB.procedure.data[p].app == app){
+				if(DB.procedure.data[p].NomeProcedura.toLowerCase().indexOf(parola.toLowerCase()) == -1){
+					document.getElementById("btn_procedura_"+p).classList.add("nasPazRic");
+				}else{
+					document.getElementById("btn_procedura_"+p).classList.remove("nasPazRic");
+				}
 			}
 		}
 		if(parola)document.getElementById("proc_ricerca").classList.add("filtro_attivo");

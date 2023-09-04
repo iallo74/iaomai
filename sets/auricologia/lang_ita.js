@@ -782,7 +782,7 @@ DB.set = {
         },
         "030": {
             NomePunto: "Ipertensione 1",
-            AzioniPunto: "<p><b>Altri nomi</b><br>- Ansia 1<br>- Depressione</p><p><b>Azione</b><br>La Scuola Cinese distingue il trattamento dell'Ipertensione con tre punti differenti. Il Punto Ipertensione 1 è indicato per il riequilibrio della pressione arteriosa, ansia e depressione.</p><p><b>Ubicazione</b><br>TF6, nella fossa triangolare in prossimità del punto di incontro tra elice e branca inferiore dell'antelice.</p>",
+            AzioniPunto: "<p><b>Altri nomi</b><br>- Ansia 1<br>- Depressione</p><p><b>Azione</b><br>La Scuola Cinese distingue il trattamento dell'Ipertensione con tre punti differenti. Il Punto Ipertensione 1 è indicato per il riequilibrio della pressione arteriosa, ansia e depressione.</p><p><b>Ubicazione</b><br>TF6, nella fossa triangolare in prossimità del punto di incontro tra elice e branca superiore dell'antelice.</p>",
             ChiaviPunto: ""
         },
         "031": {

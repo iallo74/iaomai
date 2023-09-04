@@ -171,15 +171,19 @@ body:not(.smart) #scheda:not(.schLato) .ideogrammaMeridianoChar{
 }
 
 /* SCHEDE */
+ul{
+	padding-left: 24px;
+}
 .pallinoPat{
 	display:inline-block;
 	padding-left:16px;
+	padding-right:3px;
 	height:16px;
 	line-height:16px;
 	background-image:url(img/pallinoPat.png);
-	background-position:left center;
+	background-position:left calc(50% + 1px);
 	background-repeat:no-repeat;
-	vertical-align:middle;
+	vertical-align:bottom;
 	cursor:pointer;
 	font-weight:bold;
 	text-overflow:ellipsis;
@@ -348,6 +352,9 @@ body:not(.bodyStyled1):not(.bodyStyled2):not(.smart) #p_set{
     text-align: left;
     margin-left: 16px;
     margin-top: 14px;
+}
+#e_NK{
+	padding-top:5px;
 }
 .labelApparato{
 	display: block;
@@ -1072,4 +1079,31 @@ body.smart #elenchi #cambioSistemaMeridiani{
 }
 #add_pat:not(.category) #categoryBtn{
 	background-image:url(../../img/ico_category.png);
+}
+
+#titPoint h1{
+	margin-bottom:0px;
+}
+.protNMK .pallinoPat{
+    border-bottom: 1px solid rgb(5,0,200,0.3);
+    border-bottom-left-radius: 6px;
+    background-position: 1px calc(50% + 2px);
+    background-size: 9px;
+    padding-left: 14px;
+    border-bottom-right-radius: 2px;
+}
+.protNMK .pallinoPat.pallinoHidden{
+    background-image: none !important;
+    padding-left: 6px !important;
+	cursor:default !important;
+}
+.fontBIG .protNMK .pallinoPat,
+.fontMAG .protNMK .pallinoPat{
+    background-size: 14px;
+    padding-left: 18px;
+	height: 19px;
+    line-height: 19px;
+}
+.ptsHidden{
+	display:none;
 }

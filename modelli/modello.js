@@ -18,6 +18,7 @@ var MODELLO = {
 	orOp: -1,
 	tipoPelle: '',
 	flip: false,
+	open_x_translate: false,
 	
 	_init: function(modello){
 		
@@ -494,6 +495,8 @@ var MODELLO = {
 			if(this.INTERSECTED.indexOf("Osso_") > -1)MODELLO.isolaOsso(document.getElementById(this.INTERSECTED),'',true);
 			if(this.INTERSECTED.indexOf("Organo_") > -1)MODELLO.isolaOrgano(document.getElementById(this.INTERSECTED),'',true);
 			if(this.INTERSECTED.indexOf("Muscolo_") > -1)MODELLO.isolaMuscolo(document.getElementById(this.INTERSECTED),'',true);
+			
+			var id = this.INTERSECTED;
 		}
 	},
 	
@@ -987,7 +990,8 @@ var MODELLO = {
 	isolaOrgano: function( el, modo='', noCentra=false ){
 		if(!modo)MODELLO.annullaIsolamento();
 		var organo = el.id.replace("Organo_","");
-		
+		if(MODELLO.open_x_translate && !modo){try{MODELLO.caricaAnatomia(el.id,true);}catch(err){}};
+
 		// verifico le autorizzazioni
 		if((DB.login.data.auths.indexOf("anatomy_full")==-1 || !LOGIN.logedin()) && !globals.AnatomyFREE){
 			if(	organo != 'CUORE' ){
@@ -1044,6 +1048,7 @@ var MODELLO = {
 	isolaOsso: function( el, modo='', noCentra=false ){
 		if(!modo)MODELLO.annullaIsolamento();
 		var osso = el.id.replace("Osso_","");
+		if(MODELLO.open_x_translate && !modo){try{MODELLO.caricaAnatomia(el.id,true);}catch(err){}};
 		
 		for(let n=0;n<MODELLO.meshOssa.children.length;n++){
 			if(MODELLO.meshOssa.children[n].name == osso){
@@ -1094,6 +1099,7 @@ var MODELLO = {
 		var muscolo = '';
 		var desel = false;
 		if(el.id)muscolo = el.id.replace("Muscolo_","");
+		if(MODELLO.open_x_translate && !modo){try{MODELLO.caricaAnatomia(el.id,true);}catch(err){}};
 		
 		// verifico le autorizzazioni
 		if((DB.login.data.auths.indexOf("anatomy_full")==-1 || !LOGIN.logedin()) && !globals.AnatomyFREE){

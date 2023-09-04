@@ -957,21 +957,70 @@ body:not(.bodyStyled2) #scheda_testo2{
 	cursor:pointer;
 }
 .translate_note{
-	background-color: #c4eeff;
-    line-height: 33px;
-    margin: -10px -10px 20px -10px;
-    border-radius: 8px;
-    padding-left: 32px;
+	background-color: #696969;
+    line-height: 43px;
+    margin: -31px -10px 20px -10px;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+    padding-left: 37px;
     padding-right: 15px;
-    background-image: url(../img/ico_translate2N.png);
+    background-image: url(../img/ico_translate2.png);
     background-repeat: no-repeat;
     background-position: 3px center;
-    background-size: auto 91%;
-    box-shadow: 0px 0px 3px rgba(0,0,0,0.4);
+    background-size: auto 37px;
+    color: #FFF;
 }
 .translate_note span{
-	cursor:pointer;
-	text-decoration: underline;
-	display:inline-block;
-	float:right;
+    cursor: pointer;
+    display: inline-block;
+    float: right;
+    background-color: #FFF;
+    line-height: 27px;
+    margin-top: 7px;
+    border-radius: 4px;
+    margin-right: -4px;
+    padding: 0 7px;
+    box-shadow: 0px 0px 2px rgba(0,0,0,0.5);
+}
+
+.lang_ar .translatable{
+	text-align:right;
+	direction:rtl
+}
+.lang_ar #titPoint{
+	text-align:right;
+	/* direction:rtl */
+}
+.lang_ar .simboliPatologia{
+	float:left;
+}
+.lang_ar .ideogrammaPuntoChar {
+    margin-left: -15px !important;
+    margin-right: 20px !important;
+    float: left;
+}
+.lang_ar .speach_icon {
+    margin-left: -51px;
+    margin-right: 0px;
+    float: left;
+}
+.lang_ar .autore_mini {
+    float: right;
+    margin-left: 12px;
+    margin-right: 0px;
+}
+.lang_ar .icoLabel {
+    float: right;
+    margin-right: 0px;
+    margin-left: 10px;
+}
+.lang_ar .sezioneTrattamenti > .labelTrattamenti {
+    background-position: left center;
+}
+.lang_ar .pINT, 
+.lang_ar .pEUR, 
+.lang_ar .pCIN, 
+.lang_ar .pNUL {
+    margin-right: 0px;
+    margin-left: 5px;
 }

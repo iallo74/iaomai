@@ -57,7 +57,7 @@ SET.COL = {
 }
 
 SET.colsElementi = {
-	"none": 0x006699,
+	"none": 0x2566CF,
 	"legno": 0x009900,
 	"fuoco":0xFF0000,
 	"fuoco_supplementare":0x990000,
@@ -185,7 +185,7 @@ SET.MAT = {
 		roughness:1,
 		transparent: true,
 		blending: 2,
-		opacity: 0.1,
+		opacity: 0.2,
 		visible: false
 	}),
 	pointEvi: new THREE.MeshStandardMaterial( {
