@@ -809,7 +809,7 @@ var MENU = {
 		render();
 		setTimeout(function(){
 			//console.log(Canvas2Img());
-			document.getElementById("container").getElementsByTagName("canvas")[0].style.marginLeft = '-400px';;
+			document.getElementById("container").getElementsByTagName("canvas")[0].style.marginLeft = '-400px';
 			if(isMac)document.documentElement.style.position = 'relative'; // aggiunto per MAC
 			window.print();
 			if(isMac)document.documentElement.style.position = 'fixed';

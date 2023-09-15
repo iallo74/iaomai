@@ -123,7 +123,7 @@ var MODULO_PATOLOGIE = { // extend SET
 					'		   placeholder="'+htmlEntities(TXT("CercaPatologia"))+'"'+H.noAutoGen+'>';
 		}else{
 		contPatologie +=
-					'	<span id="labelApparati">'+TXT("Apparati")+'</span>';
+					'	<span id="labelSequenze">'+TXT("Apparati")+'</span>';
 		}
 		contPatologie +=	'	<span id="categoryBtn" onClick="SET.swListType();"></span>' +
 							'</div>' +
@@ -256,7 +256,7 @@ var MODULO_PATOLOGIE = { // extend SET
 	swListType: function(){
 		if(__(localStorage.listPatType)!='category')localStorage.listPatType = 'category';
 		else localStorage.listPatType = 'list';
-		SET.caricaPatologie();
+		SET.componiPatologie();
 	},
 	azRicercaPatologie: function( p ){
 		// apre una patologia della ricerca globale

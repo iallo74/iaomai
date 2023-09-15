@@ -1207,10 +1207,10 @@ body:not(.smart) #filtriSmart_cont div:not(.elencoSel):not(.selected):hover{
 	padding-right:4px !important;
 }
 #pat_ricerca,
-#labelApparati{
+#labelSequenze{
     width: calc(var(--menu-width) - 44px);
 }
-#labelApparati{
+#labelSequenze{
 	display: inline-block;
     vertical-align: middle;
     height: 26px;

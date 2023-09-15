@@ -547,10 +547,12 @@ SET = {
 				normalizeRotation();
 				rotateEnd = { x:pos.x, y:pos.y, z:0 };
 			}
-			if(smothingView){
+			/*if(smothingView){
 				if(manichinoCont.position.z<15)zoomEnd = 15;
 				normalizeRotation();
-			}
+			}*/
+			if(manichinoCont.position.z<15 || !zoomEnd || !smothingView)zoomEnd = 15;
+			normalizeRotation();
 		}
 		
 		SET.delEviPalls(pp.siglaMeridiano,pp.nPunto,'Over');

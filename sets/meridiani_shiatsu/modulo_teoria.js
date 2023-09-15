@@ -153,6 +153,10 @@ var MODULO_TEORIA = { // extend SET
 								btn,
 								btnAdd );
 	},
+	swSz: function( el, n ){
+		document.getElementById("sz"+n).classList.toggle("szVis");
+		el.classList.toggle("szVis");
+	},
 	azRicercaTeoria: function( i, p ){
 		// apre una scheda di approfondimento dalla ricerca globale
 		SCHEDA.swCartella( document.getElementById('btn_teoria_cart_'+i),true);

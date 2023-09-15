@@ -30,6 +30,9 @@ var MODULO_MERIDIANI = { // extend SET
 	caricaMeridiani: function(){
 		// carica la lista dei meridiani
 		var contElencoMeridiani = contSmart = '';
+		for(let a in DB.set.apparatiNMK){
+			DB.set.apparatiNMK[a].html = '';
+		}
 		var n = 0;
 		for(let m in DB.set.meridiani){
 			if(m!='EX'){
@@ -58,29 +61,55 @@ var MODULO_MERIDIANI = { // extend SET
 					len = keys.length;
 				keys.sort();
 				
-				for (let i=0; i<len; i++) {	
-					let nPunto = keys[i];
-					var TS = DB.set.meridiani[m].punti[nPunto];
-					if(m!='NK' || __(TS.apparato,-1)>-1){
-						var addNMK = (m=='NK')? nPunto+'.NK. ' : '';
-						var elemento = (!__(DB.set.meridiani[m].punti[nPunto].nascosto,false)) ? '<p>'+this.scriviPunto(addNMK+TS.NomePunto,true,true,__(TS.siglaPunto),m)+'</p>' : "";
-						if(m=='NK'){
-							// verifico le autorizzazioni
-							if(!SET.verFreePunti("NK."+nPunto)){
-								elemento = elemento.replace("pallinoPat","pallinoPat lockedItem");
-							}
-							// --------------------------
-							if(!__(TS.hidden,false))DB.set.apparatiNMK[TS.apparato].html += elemento;
-						}else elencoPunti += elemento;
+				if(m!='NK'){
+					for (let i=0; i<len; i++) {	
+						let nPunto = keys[i];
+						var TS = DB.set.meridiani[m].punti[nPunto];
+						var elemento = (!__(DB.set.meridiani[m].punti[nPunto].nascosto,false)) ? '<p>'+this.scriviPunto(TS.NomePunto,true,true,__(TS.siglaPunto),m)+'</p>' : "";
+						elencoPunti += elemento;
 					}
+					
 				}
 				if(m=='NK'){
-					for(a in DB.set.apparatiNMK){
-						elencoPunti += '<div class="apparati_nmk" id="apr_'+a+'"><p class="labelApparato" onClick="SET.swApparati(this);">'+DB.set.apparatiNMK[a].tit+'</p>'+DB.set.apparatiNMK[a].html+'</div>';
+					var seq = 0;
+					for(a in DB.set.sequenzaNMK){
+						if(DB.set.sequenzaNMK[a].label)elencoPunti += '<i class="labelSequenzaNMK">'+DB.set.sequenzaNMK[a].label+'</i>';
+						elencoPunti += '<div class="sequenze_nmk" id="apr_'+a+'"><p class="labelSequenza" onClick="SET.swSequenze(this);">'+DB.set.sequenzaNMK[a].tit+'</p>';
+						
+
+						for (let i in DB.set.sequenzaNMK[a].punti) {	
+							let gruppo = '',
+								gruppoForzato = '';
+
+							if(DB.set.sequenzaNMK[a].gruppo)gruppo = DB.set.sequenzaNMK[a].gruppo;
+							var nPunto = DB.set.sequenzaNMK[a].punti[i];
+							
+							if(nPunto.indexOf(".")>-1){
+								gruppoForzato = nPunto.split(".")[1];
+								gruppo = gruppoForzato;
+								nPunto = nPunto.split(".")[0];
+							}
+
+							var TS = DB.set.meridiani[m].punti[nPunto];
+							if(__(TS.rif,'')){
+								nPunto = TS.rif.split(".")[0];
+								if(!gruppoForzato)gruppo += TS.rif.split(".")[1];
+							}
+							seq++;
+							elencoPunti += (!__(DB.set.meridiani[m].punti[nPunto].nascosto,false)) ? '<p>'+this.scriviPunto(nPunto+'.NK. '+TS.NomePunto,true,true,__(TS.siglaPunto),m,gruppo,seq)+'</p>' : "";
+							// verifico le autorizzazioni
+							if(!SET.verFreePunti("NK."+nPunto)){
+								elencoPunti += elencoPunti.replace("pallinoPat","pallinoPat lockedItem");
+							}
+							// --------------------------
+						}
+
+						elencoPunti += '</div>';
 					}
 				}
 				var siglaMeridiano = m;
 				if(m!='NK')siglaMeridiano = SET.convSigla(m);
+				
 				contElencoMeridiani +=	'<div onMouseOver="SET.eviMeridiano(\''+m+'\',true);"' +
 										'     onMouseOut="SET.eviMeridiano(\''+m+'\',false);"' +
 										'     onClick="SET.clickMeridiano(\''+m+'\',this);"' +
@@ -124,7 +153,7 @@ var MODULO_MERIDIANI = { // extend SET
 		if(localStorage.sistemaMeridiani == 'NMK')sceltaSistemaTag += ' SELECTED';
 		sceltaSistemaTag += 	'>'+htmlEntities(TXT("SistemaNamikoshi"))+'</option>' +
 								'</select></span><i class="elMenu" id="cambioSistemaMeridiani" onClick="MENU.visImpset();"><span>'+htmlEntities(TXT("SistemaMeridiani2"))+'</span></i></p>';
-		
+	
 		document.getElementById("lista_meridiani").innerHTML = sceltaSistemaTag+'<div class="lista listaMeridiani">'+contElencoMeridiani+'</div>';
 
 		document.getElementById("sistemaMeridiani_pats").innerHTML = sceltaSistemaTag;
@@ -157,7 +186,7 @@ var MODULO_MERIDIANI = { // extend SET
 			el.classList.remove("frSw");
 		}
 	},
-	swApparati: function( el ){
+	swSequenze: function( el ){
 		el.parentElement.classList.toggle("vis_apparati");
 	},
 	filtraMeridiani: function(){

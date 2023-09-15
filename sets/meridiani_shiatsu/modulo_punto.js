@@ -116,7 +116,7 @@ var MODULO_PUNTO = { // extend SET
 		
 		HTML += DB.set.meridiani[siglaMeridiano].punti[nPunto].AzioniPunto;
 		
-		// elenco le patolige incluse
+		// elenco le patologie incluse
 		var elenco = [];
 		for(let p in DB.set.patologie){
 			var regexp = /[\s>\(\.\,]{0,1}[0-9]{1,2}\.[A-Z]{2}[\s<\.,\)]{1}/ig;
@@ -161,7 +161,6 @@ var MODULO_PUNTO = { // extend SET
 		
 		// ideogramma
 		if(siglaMeridiano!='NK'){
-		
 			let ideogramma = '',
 				ideogrammaOr = DB.mtc.meridiani[siglaMeridiano].punti[nPunto].ideogramma,
 				lI = ideogrammaOr.length;
@@ -242,27 +241,56 @@ var MODULO_PUNTO = { // extend SET
 		SET.ptSel = ptSel;
 		if(ritorno && !SCHEDA.aggancio.tipo == 'libera')SCHEDA.nasScheda();
 		
+
+		// gestione e visualizzazione delle frecce di navigazione
 		document.getElementById("frSchSu").onclick = '';
 		document.getElementById("frSchGiu").onclick = '';
-		
-		
 		var classFr = '';
-		
-		if(!SCHEDA.scheda2Aperta && siglaMeridiano!='NK'){
-			var nPuntoGiu = SET.ptToStr(+nPunto - 1);
-			var nPuntoSu = SET.ptToStr(+nPunto +1 );
-			// evidenzio i pulsanti su e giù
+		if(!SCHEDA.scheda2Aperta && localStorage.sistemaMeridiani!='MAS'){
+			let totPunti = 0,
+				nPuntoSu = '',
+				nPuntoGiu = '',
+				gruppoSu = '',
+				gruppoGiu = '',
+				puntoSu = '',
+				puntoGiu = '';
 			
-			if(+nPunto > 1){ // attiva giù
+			if(siglaMeridiano!='NK'){
+				totPunti = Object.keys(meridiano.punti).length;
+				nPuntoGiu = SET.ptToStr(+nPunto - 1);
+				nPuntoSu = SET.ptToStr(+nPunto +1 );
+				if(+nPuntoGiu==0)nPuntoGiu='';
+				if(+nPuntoSu>totPunti)nPuntoSu='';
+			}else{
+				let els = document.getElementById("e_NK").getElementsByTagName("a");
+				totPunti = els.length;
+				for(let e=0;e<totPunti;e++){
+					if(els[e] == SET.btnSel){
+						if(e>0){
+							puntoGiu = els[e-1];
+							let pP = puntoGiu.id.split("_");
+							nPuntoGiu = pP[1];
+							if(pP[3])gruppoGiu = pP[3];
+						}
+						if(e<totPunti-1){
+							puntoSu = els[e+1];
+							let pP = puntoSu.id.split("_");
+							nPuntoSu = pP[1];
+							if(pP[3])gruppoSu = pP[3];
+						}
+					}
+				}
+			}
+			if(nPuntoGiu){ // attiva giù
 				classFr += "frGiu ";
 				document.getElementById("frSchGiu").onclick = function(){
-					SET.apriPunto(siglaMeridiano+"."+nPuntoGiu,'');
+					SET.apriPunto(siglaMeridiano+"."+nPuntoGiu,'','',gruppoGiu,puntoGiu);
 				};
 			}
-			if(+nPunto < Object.keys(meridiano.punti).length){ // attiva su
+			if(nPuntoSu){ // attiva su
 				classFr += "frSu ";
 				document.getElementById("frSchSu").onclick = function(){
-					SET.apriPunto(siglaMeridiano+"."+nPuntoSu,'');
+					SET.apriPunto(siglaMeridiano+"."+nPuntoSu,'','',gruppoSu,puntoSu);
 				};
 			}
 		}
@@ -415,6 +443,7 @@ var MODULO_PUNTO = { // extend SET
 		Filtro = /[A-Z]{2}/;
 		if (Filtro.test(pP[0]))el.siglaMeridiano = pP[0];
 		if (Filtro.test(pP[1]))el.siglaMeridiano = pP[1];
+		if(el.siglaMeridiano=='AR')el.siglaMeridiano='NK';
 		let contr = __(pP[2],'');
 		Filtro = /[a-z]{1,2}}/;
 		if(contr!='*')el.valutazione = contr;
