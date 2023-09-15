@@ -207,6 +207,7 @@ SET = {
 						this.P[n].position.set(x,y,z);
 						this.P[n].name='_'+nome
 						this.P[n].userData.gruppi=gruppi;
+						this.P[n].userData.hidden = gruppi.indexOf("h")>-1;
 						this.P[n].userData.raycastable = true;
 						if(label)this.P[n].userData.label = label;
 						this.PT[m].add( this.P[n] );
@@ -1210,6 +1211,7 @@ SET = {
 	},
 	evidenziaPuntoMod: function( elenco ){
 		SET.annullaEvidenziaPunto();
+
 		for(let k in elenco){
 			var pp=SET.splitPoint(elenco[k]);
 			var mat = SET.MAT.pointEvi;
@@ -1219,17 +1221,24 @@ SET = {
 				if(pp.valutazione=='D')mat = SET.MAT.pointDolore;
 			}
 			//if(scene.getObjectByName("PT_"+pp.siglaMeridiano)){
-				var el = scene.getObjectByName("PT_"+pp.siglaMeridiano)
+				var el = scene.getObjectByName("PT_"+pp.siglaMeridiano);
 				if(el){
 					for(e in el.children){
-						if(el.children[e].name.indexOf("_"+pp.siglaMeridiano+"."+pp.nPunto+".")==0)el.children[e].material=mat;
+						if(	el.children[e].name.indexOf("_"+pp.siglaMeridiano+"."+pp.nPunto+".")==0 &&
+							!__(el.children[e].userData.hidden,false) )el.children[e].material=mat;
 					}
 				}
-				var el = scene.getObjectByName("FR_"+pp.siglaMeridiano);
+				/*var el = scene.getObjectByName("FR_"+pp.siglaMeridiano);
 				if(el){
 					for(e in el.children){
 						if(el.children[e].name == "FR."+pp.nPunto )el.children[e].visible=true;
 						//if(el.children[e].name == "FR."+pp.nPunto )el.children[e].material=SET.MAT.lineFrecceEvi;
+					}
+				}*/
+				var el = scene.getObjectByName("AR_"+pp.siglaMeridiano);
+				if(el){
+					for(let e in el.children){
+						if(el.children[e].name.indexOf("AR."+pp.nPunto)>-1 )el.children[e].visible=true;
 					}
 				}
 				SET.puntiEvidenziati.push(elenco[k]);
@@ -1368,7 +1377,7 @@ SET = {
 
 
 		// solo NK in protocolli
-		var regexp = /\[\.[A-Z]{1,2}\.[0-9]{2}[\.]{0,1}[^\]]*\]/ig;
+		var regexp = /\[\.[A-Z]{1,2}\.[A-Z0-9]{2}[\.]{0,1}[^\]]*\]/ig;
 		//	var str = document.getElementById("scheda_testo"+nScheda).innerHTML;
 		var pts = str.match(regexp);
 		for(let p in pts){
@@ -1403,7 +1412,7 @@ SET = {
 			html = html.replace(pts[p], sost);
 		}
 		
-		var regexp = /\[\.[A-Z]{1,2}\.[0-9]{2}[\.]{0,1}[^\]]*\]/ig;
+		var regexp = /\[\.[A-Z]{1,2}\.[A-Z0-9]{2}[\.]{0,1}[^\]]*\]/ig;
 		var pts = html.match(regexp);
 		for(let p in pts){
 			let pP = pts[p].replace("[.","").replace(".]","").split(".");
@@ -1703,7 +1712,7 @@ SET = {
 				eviPoint.position.set( els[e].position.x, els[e].position.y, els[e].position.z );
 				if(	tipo=='Select' || 
 					(tipo=='Over' && !scene.getObjectByName('Select point: '+els[e].name))){
-						SETS.add( eviPoint );
+						if(SET.grSel || !__(els[e].userData.hidden,false))SETS.add( eviPoint );
 				}
 			}
 		}

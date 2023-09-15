@@ -944,8 +944,7 @@ var PAZIENTI_SETS = {
 				var puntiElenco = [];
 				for(let siglaPunto in DB.set.meridiani.NK.punti){
 					if(__(DB.set.meridiani.NK.punti[siglaPunto])){
-						if(	__(DB.set.meridiani.NK.punti[siglaPunto].apparato,-1)>-1 && 
-							DB.set.meridiani.NK.punti[siglaPunto].NomePunto){
+						if(	DB.set.meridiani.NK.punti[siglaPunto].NomePunto){
 							var pP = DB.set.meridiani.NK.punti[siglaPunto].siglaPunto.split("-");
 							puntiElenco.push({
 								siglaPunto: pP[1],
@@ -1282,11 +1281,12 @@ var PAZIENTI_SETS = {
 				keys = 	Object.keys(myObj),
 				len = keys.length;
 			keys.sort();		
+			
 			for (let i=0; i<len; i++) {	
 				let pm = keys[i];
-				if(DB.set.meridiani['NK'].punti[pm].NomePunto && __(DB.set.meridiani['NK'].punti[pm].apparato,-1)>-1){
+				if(DB.set.meridiani['NK'].punti[pm].NomePunto){
 					var pP = DB.set.meridiani['NK'].punti[pm].siglaPunto.split("-");
-					EL.contenuto.push(pP[1]+"."+pP[0]);
+					EL.contenuto.push(pP[1]+"."+pP[0]+"."+DB.set.meridiani['NK'].punti[pm].siglaPunto);
 				}
 			}
 			PAZIENTI.elencoGruppoPunti.contenuto.push(EL);
@@ -1636,7 +1636,7 @@ var PAZIENTI_SETS = {
 					'	<input type="checkbox"' +
 					'		   id="'+n+'"' +
 					'		   value="'+PT+'"';
-			if(PAZIENTI.tipoGruppo=='P' || PAZIENTI.tipoGruppo=='N'){
+			if(PAZIENTI.tipoGruppo=='P' || (PAZIENTI.tipoGruppo=='N' && __(DB.set.meridiani[mer].punti[nPunto]))){
 				var siglaPT = __(DB.set.meridiani[mer].punti[nPunto].siglaPunto,nPunto+"."+SET.convSigla(mer));
 				if(mer=='EX')HTML += '		   data-sigla-punto="'+siglaPT+'"';
 				if(mer=='NK')HTML += '		   data-sigla-punto="'+DB.set.meridiani[mer].punti[nPunto].NomePunto+'"';
@@ -1646,7 +1646,7 @@ var PAZIENTI_SETS = {
 				HTML +=	'<b>'+siglaPT+'.</b>' +
 						'<i>'+DB.set.meridiani[mer].punti[nPunto].NomePunto.replace(PT+".","")+'</i>';
 			}
-			if(PAZIENTI.tipoGruppo=='N'){
+			if(PAZIENTI.tipoGruppo=='N' && __(DB.set.meridiani[mer].punti[nPunto])){
 				HTML +=	'<b>'+DB.set.meridiani[mer].punti[nPunto].NomePunto+'</b>';
 			}
 			if(PAZIENTI.tipoGruppo=='M'){
