@@ -98,8 +98,8 @@ var sets = {
 		sottotitolo: TXT("ShiatsuMapST"),
 		descrizione: TXT("ShiatsuMapDESCR"),
 		modelli: [
-			"donna",
-			"uomo"
+			"donna"/* ,
+			"uomo" */
 		],
 		imports: [
 			'sets/common/mtc/mtc.js',
