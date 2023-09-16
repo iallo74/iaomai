@@ -188,7 +188,8 @@ var PAZIENTI_SETS = {
 					HTML += '<input type="hidden" id="hd_'+p+'" name="hd_'+p+'" value="'+siglaPunto+'">';
 					
 					// verifico che esista il meridiano (es. EX su ShiatsuMap)
-					if(typeof(DB.set.meridiani[siglaMeridiano])=='undefined'){
+					//if(typeof(DB.set.meridiani[siglaMeridiano])=='undefined'){
+					if(siglaMeridiano=='EX' && globals.set.cartella=='meridiani_shiatsu'){
 						HTML += '<span class="ptNo">'+siglaPunto+'</span>' +
 								'<input type="hidden" id="mr_'+p+'" name="mr_'+p+'" value="'+siglaMeridiano+'">' +
 								'<input type="hidden" id="pt_'+p+'" name="pt_'+p+'" value="'+nPunto+'">';
@@ -202,13 +203,15 @@ var PAZIENTI_SETS = {
 								'<option value="">' +
 								'</option>';
 						for(let k in DB.set.meridiani){
-							HTML+='<option value="'+k+'"';
-							if(siglaMeridiano==k){
-								HTML+=' SELECTED';
-								totPunti= Object.keys(DB.set.meridiani[k].punti).length;
+							if(k!='EX' || globals.set.cartella=='meridiani_cinesi'){
+								HTML+='<option value="'+k+'"';
+								if(siglaMeridiano==k){
+									HTML+=' SELECTED';
+									totPunti= Object.keys(DB.set.meridiani[k].punti).length;
+								}
+								HTML+=	'>'+SET.convSigla(k) +
+										'</option>';
 							}
-							HTML+=	'>'+SET.convSigla(k) +
-									'</option>';
 						}
 						HTML += '	</select>';
 						
@@ -926,6 +929,7 @@ var PAZIENTI_SETS = {
 	// punti namikoshi
 	ricNamikoshi: function( frm, n ){ // ricarica tutti i punti	
 		//SET.overPunto(document.getElementById("n-rg_"+n),false);
+		SET.delAllEviPalls("Over");
 		let nPunto = document[frm]["n-pt_"+n].value;
 		PAZIENTI.namikoshiProvvisori[n].n = SET.ptToStr(nPunto);
 		PAZIENTI.namikoshiProvvisori[n].s = DB.set.meridiani.NK.punti[nPunto].NomePunto;
