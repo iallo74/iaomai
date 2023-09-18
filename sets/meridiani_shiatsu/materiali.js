@@ -36,6 +36,7 @@ SET.COL = {
 	pienoPTemissive: 0xFF5900,
 	dolorePT: 0x990000,
 	dolorePTemissive: 0xff00a8,
+	areaSostegno: 0xc079f2,//0xf2cd79,
 	
 	
 	/* VERSIONE CON PALLINI ROSSI */
@@ -297,7 +298,8 @@ SET._setLineMaterials = function(){
 			},
 			vertexShader: SET.MAT.vertexShader,
 			fragmentShader: SET.MAT.fragmentShader,
-			transparent: true
+			transparent: true,
+			depthFunc: 1
 		});
 
 		SET.MAT.lineOnMAS[elemento] = new THREE.LineBasicMaterial( {

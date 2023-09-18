@@ -535,5 +535,53 @@ DB.TXT.set = {
 		fra: "Zones anatomiques",
 		por: "Zonas anatômicas",
 		deu: "Anatomische Zonen"
+	},
+    Legenda: {
+        ita: "Legenda",
+        eng: "Legend",
+        esp: "Leyenda",
+        fra: "Légende",
+        por: "Legenda",
+        deu: "Legende"
+    },
+	LegendaPunti: {
+		ita: "Punti di pressione",
+		eng: "Pressure Points",
+		esp: "Puntos de Presión",
+		fra: "Points de Pression",
+		por: "Pontos de Pressão",
+		deu: "Druckpunkte"
+	},
+	LegendaAree: {
+		ita: "Aree di trattamento",
+		eng: "Treatment Areas",
+		esp: "Áreas de Tratamiento",
+		fra: "Zones de Traitement",
+		por: "Áreas de Tratamento",
+		deu: "Behandlungsbereiche"
+	},
+	LegendaSostegno: {
+		ita: "Aree di sostegno",
+		eng: "Support Areas",
+		esp: "Áreas de Apoyo",
+		fra: "Zones de Soutien",
+		por: "Áreas de Apoio",
+		deu: "Unterstützungsbereiche"
+	},
+	LegendaDirezione: {
+		ita: "Direzione del trattamento",
+		eng: "Treatment Direction",
+		esp: "Dirección del Tratamiento",
+		fra: "Direction du Traitement",
+		por: "Direção do Tratamento",
+		deu: "Behandlungsrichtung"
+	},
+	LegendaStiramenti: {
+		ita: "Stiramenti e mobilizzazioni",
+		eng: "Stretching and Mobilization",
+		esp: "Estiramientos y Movilización",
+		fra: "Étirements et Mobilisation",
+		por: "Alongamento e Mobilização",
+		deu: "Dehnung und Mobilisation"
 	}
 }

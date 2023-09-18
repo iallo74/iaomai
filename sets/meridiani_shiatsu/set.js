@@ -98,6 +98,11 @@ SET = {
 						if(m=='NK')mesh.material.opacity = 0.45;
 						mesh.material.depthWrite = false;
 						mesh.userData.hidden = false;
+						mesh.userData.sostegno = false;
+						if(mesh.name.indexOf("SS.")==0){
+							mesh.userData.sostegno = true;
+							mesh.material.emissive = new THREE.Color( SET.COL.areaSostegno );
+						} 
 						if(ARS[a].hidden){
 							mesh.visible = false;
 							mesh.userData.hidden = true;
@@ -631,9 +636,9 @@ SET = {
 			if(gruppo.indexOf('y')>-1)addGr = '.SX';
 			if(gruppo.indexOf('z')>-1)addGr = '.CC';
 		}
-		//if(PT2=scene.getObjectByName( PT_name.replace("NK.","AR.")+addGr ))PT2.visible = true;
+		
 		if(!PT){
-			PT=scene.getObjectByName( PT_name.replace("NK.","AR.")+addGr );
+			PT=scene.getObjectByName( PT_name.replace("NK.","AR.") );
 			if(PT){
 				PT.visible = true;
 				setTimeout(function(){SET.ptSel.material.opacity = 0.7;},200);
@@ -644,7 +649,10 @@ SET = {
 				PT=scene.getObjectByName( PT_name + addGr );
 			}
 		}
-		
+
+		// aree di sostegno
+		if(SS=scene.getObjectByName( PT_name.replace("NK.","SS.") + addGr ))SS.visible = true;
+
 		if(this.ptSel && !SCHEDA.schedaAperta)this.chiudiPunto();
 		this.ptSel = PT;
 		this.grSel = gruppo;
@@ -654,16 +662,18 @@ SET = {
 
 		// accendo il pulsante
 		if(btn){ 
-			// NMK
-			// btn è valorizzata con l'elemento pulsante solo per i pulsanti della listaMeridiani della mappa NMK
+			/* NMK
+			- btn è valorizzata con l'elemento pulsante solo per i pulsanti della listaMeridiani della mappa NMK
+			- setto this.btnSel e lo illuminiamo per poterlo poi spegnere
+			- apro la cartella (utile quando uso i pulsanti avanti e indietro della navigazione)
+			- centro il pulsante se fuori dallo schermo (utile quando uso i pulsanti avanti e indietro della navigazione)
+			*/
 			this.btnSel = btn;
-			// qui settiamo this.btnSel e lo illuminiamo per poterlo poi spegnere
 			this.btnSel.classList.add("selElPt");
-			// apro la cartella (utile quando uso i pulsanti avanti e indietro della navigazione)
 			this.btnSel.parentElement.parentElement.classList.add("vis_apparati");
-			// centro il pulsante se fuori dallo schermo (utile quando uso i pulsanti avanti e indietro della navigazione)
-			if(tCoord(SET.btnSel,'y')-document.querySelector(".listaMeridiani").scrollTop>HF())document.querySelector(".listaMeridiani").scrollTo(0,document.querySelector(".listaMeridiani").scrollTop+(HF()/2));
-			if(tCoord(SET.btnSel,'y')-document.querySelector(".listaMeridiani").scrollTop - tCoord(document.querySelector(".listaMeridiani"),'y')<0)document.querySelector(".listaMeridiani").scrollTo(0,document.querySelector(".listaMeridiani").scrollTop-(HF()/2)-tCoord(document.querySelector(".listaMeridiani"),'y'));
+			let lista = document.querySelector(".listaMeridiani");
+			if(tCoord(SET.btnSel,'y')-lista.scrollTop>HF())lista.scrollTo(0,lista.scrollTop+(HF()/2));
+			if(tCoord(SET.btnSel,'y')-lista.scrollTop - tCoord(lista,'y')<0)lista.scrollTo(0,lista.scrollTop-(HF()/2)-tCoord(lista,'y'));
 		}else if(document.getElementById("pt_"+pp.nPunto+"_"+pp.siglaMeridiano+((gruppo)?"_"+gruppo:""))){
 			// CIN e MAS
 			document.getElementById("pt_"+pp.nPunto+"_"+pp.siglaMeridiano+((gruppo)?"_"+gruppo:"")).classList.add("selElPt");
@@ -726,9 +736,6 @@ SET = {
 		}
 		panEndZero = { x: x2, y: y2, z: z2 };
 		
-		// panEnd muove manichinoCont
-		// panEndZero muove manichino
-		
 		if(SCHEDA.aggancio.tipo=='libera' && el){
 			this.ptSel.updateMatrixWorld();
 			var vector = this.ptSel.geometry.vertices[i].clone();
@@ -741,13 +748,30 @@ SET = {
 			// posiziono
 			if(MERIDIANI.posizioni[SET.ptSel.name]){
 				var pos = MERIDIANI.posizioni[SET.ptSel.name];
+
+				// cerco la via più breve
+				let diffX = manichinoCont.rotation.x-pos.x,
+					diffY = manichinoCont.rotation.y-pos.y;
+				if(diffX>3){
+					if(pos.x>0)pos.x = 6-pos.x;
+					else pos.x = pos.x+6;
+				}
+				if(diffX<-3){
+					if(pos.x>0)pos.x = pos.x-6;
+					else pos.x = 6-pos.x;
+				}
+				if(diffY>3){
+					if(pos.y>0)pos.y = 6-pos.y;
+					else pos.y = pos.y+6;
+				}
+				if(diffY<-3){
+					if(pos.y>0)pos.y = pos.y-6;
+					else pos.y = 6-pos.y;
+				}
+				
 				normalizeRotation();
 				rotateEnd = { x:pos.x, y:pos.y, z:0 };
 			}
-			/*if(smothingView){
-				if(manichinoCont.position.z<15)zoomEnd = 15;
-				normalizeRotation();
-			}*/
 			if(manichinoCont.position.z<15 || !zoomEnd || !smothingView)zoomEnd = 15;
 			normalizeRotation();
 		}
@@ -804,6 +828,9 @@ SET = {
 		if(exPt.name.indexOf("AR")>-1){
 			var sigla = exPt.name.split(".")[1]+"."+pp.siglaMeridiano;
 			if(exPt.userData.hidden && SET.puntiEvidenziati.indexOf(sigla)==-1)exPt.visible = false;
+		}
+		if(SS=scene.getObjectByName( exPt.name.replace("NK.","SS.") )){
+			if(SS.userData.hidden)SS.visible = false;
 		}
 		if(frs = scene.getObjectByName("FR_"+pp.siglaMeridiano)){
 			var evids = clone(SET.puntiEvidenziati);
@@ -928,7 +955,6 @@ SET = {
 	},
 	scoloraMeridiani: function(){
 		for(let m in MERIDIANI){
-			//if(!__(MERIDIANI[m].meridianoAcceso,false) && m.indexOf("_")==-1){
 			pass = false;
 			if(!__(MERIDIANI[m].meridianoAcceso,false))pass=true;
 			if(localStorage.sistemaMeridiani && m.indexOf(localStorage.sistemaMeridianiAdd)==-1)pass=false;
@@ -950,13 +976,6 @@ SET = {
 			MERIDIANI['NK'].meridianoAcceso = this.ptSel.name.split(".")[1];
 			return;
 		}
-		/*if(	g && localStorage.sistemaMeridiani=='NMK' ){
-			SET.cambiaSistema( 'MAS', false, true );
-			setTimeout(function(){
-				SET.evidenziaMeridiani(document.getElementById("scheda_testo").innerHTML,true);
-				//SET.accendiMeridiano(siglaMeridiano, g);
-			},200,siglaMeridiano,g);
-		}*/
 		if(localStorage.sistemaMeridiani=='NMK')return;
 		var SM = siglaMeridiano + localStorage.sistemaMeridianiAdd;
 		if(!g || (g && this.ptSel)){
@@ -1164,8 +1183,6 @@ SET = {
 					if(gruppo){
 						for(let g=0;g<gruppo.length;g++){
 							if(	el.children[e].userData.gruppi.indexOf(gruppo[g])==-1)pass=false;
-							/*else if( el.children[e].userData.gruppi.indexOf("h")>-1 &&
-								el.children[e].userData.gruppi.indexOf("v")==-1)pass=false;*/
 						}
 					}
 					if(pass){
@@ -1193,7 +1210,6 @@ SET = {
 							else col = new THREE.Color( SET.COL.movFR_dark );
 						}
 						el.children[e].material.color = col;
-						//if(el.children[e].name == "FR."+nPunto )el.children[e].material=SET.MAT.lineFrecceEvi;
 					}
 				}
 			}
@@ -1301,12 +1317,10 @@ SET = {
 					for(e in el.children){
 						if(	el.children[e].name.indexOf("_"+pp.siglaMeridiano+"."+pp.nPunto+".")==0 &&
 							(!gruppo || el.children[e].userData.gruppi.indexOf(gruppo)>-1) ){
-						//if(el.children[e].name.indexOf("_"+pp.siglaMeridiano+"."+pp.nPunto+".")==0){
 							el.children[e].material=SET.MAT.pointTrasp;
 						}
 						if(	el.children[e].name.indexOf(pp.siglaMeridiano+"."+pp.nPunto+".")==0 &&
 							(!gruppo || el.children[e].userData.gruppi.indexOf(gruppo)>-1) ){
-						//if(el.children[e].name.indexOf(pp.siglaMeridiano+"."+pp.nPunto+".")==0){
 							if(__(el.children[e].userData.hidden,false))el.children[e].visible = false;
 						}
 						if(__(el.children[e].userData.hidden))el.children[e].visible = false;
@@ -1409,16 +1423,6 @@ SET = {
 			var pP = pts[p].split(".");
 			str = str.replace(pts[p], pP[0]+"."+SET.convSigla(pP[1].substr(0,2))+pP[1].substr(2,1));
 		}
-		/*if(!nScheda){
-			var str = document.getElementById("scheda_titolo"+nScheda).innerHTML;
-			var pts = str.match(regexp);
-			for(let p in pts){
-				var pP = pts[p].split(".");
-				str = str.replace(pts[p], pP[0]+"."+SET.convSigla(pP[1].substr(0,2))+pP[1].substr(2,1));
-			}
-			document.getElementById("scheda_titolo"+nScheda).innerHTML = str;
-		}*/
-
 
 		// solo NK in protocolli
 		var regexp = /\[\.[A-Z]{1,2}\.[A-Z0-9]{2}[\.]{0,1}[^\]]*\]/ig;
@@ -1485,31 +1489,14 @@ SET = {
 	},
 	salvaImpSet: function(){
 		localStorage.sistemaSigleMeridiani = document.getElementById("sceltaSigle").value;
-		//SET.cambiaSistema(document.getElementById("sceltaMeridiani").value);
 		SET.caricaMeridiani();
 		PAZIENTI.cambiaGZ(PAZIENTI.mezzoProvvisorio,true);
 		MENU.chiudiImpSet();
 	},
 	popolaImpSet: function(){
-		HTML_imp = 	
-		/*
-			// sistemi meridiani
-			'<p><i>'+htmlEntities(TXT("SistemaMeridiani"))+':</i> ' +
-			'<select id="sceltaMeridiani">' +
-			'  <option value=""' +
-			((localStorage.sistemaMeridiani=='' || !__(localStorage.sistemaMeridiani) )?' SELECTED':'') +
-			'>'+htmlEntities(TXT("MeridianiCinesi"))+'</option>'+H.chr10 +
-			'  <option value="MAS"' +
-			((localStorage.sistemaMeridiani == 'MAS')?' SELECTED':'') +
-			'>'+htmlEntities(TXT("MeridianiGiapponesi"))+'</option>'+H.chr10 +
-			'  <option value="NMK"' +
-			((localStorage.sistemaMeridiani == 'NMK')?' SELECTED':'') +
-			'>'+htmlEntities(TXT("SistemaNamikoshi"))+'</option>'+H.chr10 +
-			'</select></p>'+H.chr10 +*/
-		
-			// sistemi sigle
-			'<p><i>'+htmlEntities(TXT("SistemaSigle"))+':</i> ' +
-			'<select id="sceltaSigle" onChange="SET.popolaSigle();">';
+		// sistemi sigle
+		HTML_imp = 	'<p><i>'+htmlEntities(TXT("SistemaSigle"))+':</i> ' +
+					'<select id="sceltaSigle" onChange="SET.popolaSigle();">';
 		for(let k in DB.mtc.meridiani["BL"].sigle){
 			HTML_imp += '  <option value="'+k+'"';
 			if(localStorage.sistemaSigleMeridiani == k)HTML_imp += ' SELECTED';
@@ -1565,10 +1552,6 @@ SET = {
 		HTML += '</table>';
 		document.getElementById("tbSigleMeridiani").innerHTML = HTML;
 		
-		/*var els = document.getElementById("sceltaMeridiani").options;
-		for(e in els){
-			if(els[e].value == localStorage.sistemaMeridiani)document.getElementById("sceltaMeridiani").selectedIndex = e;
-		}*/
 		var selects = document.getElementsByClassName("sceltaMeridianiElenco");
 		var els = selects[0].options;//document.getElementById("sceltaMeridianiElenco").options;
 		for(e in els){
@@ -1719,12 +1702,6 @@ SET = {
 			if(localStorage.sistemaMeridiani)localStorage.sistemaMeridianiAdd = "_"+localStorage.sistemaMeridiani.toLowerCase();
 			else localStorage.sistemaMeridianiAdd = '';
 			SET.filtraMeridiani();
-			/*if(localStorage.sistemaMeridiani!='NMK'){
-				var els = scene.getObjectByName("FR_NK").children;
-				for(e in els){
-					els[e].visible = false;
-				}
-			}*/
 		},t2,sistema);
 		setTimeout(function(loader){SET.filtraSet(loader);},t,loader);
 		var selects = document.getElementsByClassName("sceltaMeridianiElenco");

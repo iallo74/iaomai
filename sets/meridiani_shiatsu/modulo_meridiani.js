@@ -52,10 +52,7 @@ var MODULO_MERIDIANI = { // extend SET
 				var elencoPunti = '';
 				if(m=='CV' || m=='GV' || m=='NK')addClass +=	' noMAS';
 				if(m!='NK')addClass +=	' noNMK';
-				else{
-					addClass +=	' NMK';
-					//elencoPunti += '<p id="titNMK">'+TXT("ZoneAnatomiche")+'</p>';
-				}
+				else addClass += ' NMK';
 				let myObj = DB.set.meridiani[m].punti,
 					keys = 	Object.keys(myObj),
 					len = keys.length;
@@ -131,7 +128,18 @@ var MODULO_MERIDIANI = { // extend SET
 										'<span id="e_'+m+'"' +
 										'	   class="';
 				if(m!='NK')contElencoMeridiani +=	'noMAS';	
-				else contElencoMeridiani +=	'NMK visElPt';	
+				else{
+					contElencoMeridiani +=	'NMK visElPt';	
+					elencoPunti += 	
+						'<p id="legendaNMK">' +
+						'	<i class="labelSequenzaNMK">'+TXT("Legenda")+'</i>' +
+						'	<img src="sets/meridiani_shiatsu/img/legenda_punti.png"> '+TXT("LegendaPunti")+"<br>" +
+						'	<img src="sets/meridiani_shiatsu/img/legenda_aree.png"> '+TXT("LegendaAree")+"<br>" +
+						'	<img src="sets/meridiani_shiatsu/img/legenda_sostegno.png"> '+TXT("LegendaSostegno")+"<br>" +
+						'	<img src="sets/meridiani_shiatsu/img/legenda_direzione.png"> '+TXT("LegendaDirezione")+"<br>" +
+						'	<img src="sets/meridiani_shiatsu/img/legenda_stiramenti.png"> '+TXT("LegendaStiramenti")+"<br>" +
+						'</p>';
+				}
 				contElencoMeridiani +=	' elencoPunti '+addClassEl+'">'+elencoPunti+'</span>';
 
 										
@@ -140,6 +148,7 @@ var MODULO_MERIDIANI = { // extend SET
 										'     onClick="SET.accendiMeridiano(\''+m+'\',true);"' + // elenco dei punti
 										'	   id="sm'+m+'"' +
 										'     class="sm_'+MERIDIANI[m].elemento+addClass+addLock+'">'+SET.convSigla(m)+'</div>';
+				
 			}
 		}
 		sceltaSistemaTag = 		'<p class="sistemaMeridiani_p"><span class="selectCambioMeridiani"><i>'+htmlEntities(TXT("SistemaMeridiani"))+':</i><select class="sceltaMeridianiElenco" onChange="SET.cambiaSistema(this.value,true);">'+

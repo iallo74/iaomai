@@ -452,5 +452,5 @@ function elencaPaesi( prefissi ){
 	return elenco;
 }
 function getValuta(){
-	return DB.INT.valute[DB.login.data.valuta].simbolo;
+	return DB.INT.valute[__(DB.login.data.valuta,'EUR')].simbolo;
 }

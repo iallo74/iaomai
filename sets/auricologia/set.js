@@ -794,9 +794,6 @@ SET = {
 		}
 		panEndZero = { x: x2, y: y2, z: z2 };
 		
-		// panEnd muove manichinoCont
-		// panEndZero muove manichino
-		
 		if(SCHEDA.aggancio.tipo=='libera' && el){
 			panEnd = { x: vector.x, y: vector.y, z: vector.z };
 		}else panEnd = { x: 0, y: 0, z: 0 };
@@ -807,13 +804,30 @@ SET = {
 			// posiziono
 			if(GEOMETRIE.posizioni[name] && !SET.phase){
 				var pos = GEOMETRIE.posizioni[name];
+
+				// cerco la via più breve
+				let diffX = manichinoCont.rotation.x-pos.x,
+					diffY = manichinoCont.rotation.y-pos.y;
+				if(diffX>3){
+					if(pos.x>0)pos.x = 6-pos.x;
+					else pos.x = pos.x+6;
+				}
+				if(diffX<-3){
+					if(pos.x>0)pos.x = pos.x-6;
+					else pos.x = 6-pos.x;
+				}
+				if(diffY>3){
+					if(pos.y>0)pos.y = 6-pos.y;
+					else pos.y = pos.y+6;
+				}
+				if(diffY<-3){
+					if(pos.y>0)pos.y = pos.y-6;
+					else pos.y = 6-pos.y;
+				}
+
 				normalizeRotation();
 				rotateEnd = { x:pos.x, y: ((MODELLO.flip) ? 0-pos.y : pos.y), z:0 };
 			}
-			/*if(smothingView){
-				if(manichinoCont.position.z!=15)zoomEnd = 15;
-				normalizeRotation();
-			}*/
 			if(manichinoCont.position.z<15 || !zoomEnd || !smothingView)zoomEnd = 15;
 			normalizeRotation();
 		}

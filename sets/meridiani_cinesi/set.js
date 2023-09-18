@@ -528,9 +528,6 @@ SET = {
 		var z2 = 0-this.ptSel.position.z;
 		panEndZero = { x: x2, y: y2, z: z2 };
 		
-		// panEnd muove manichinoCont
-		// panEndZero muove manichino
-		
 		if(SCHEDA.aggancio.tipo=='libera' && el){
 			this.ptSel.updateMatrixWorld();
 			var vector = this.ptSel.geometry.vertices[0].clone();
@@ -544,13 +541,30 @@ SET = {
 			// posiziono
 			if(MERIDIANI.posizioni[SET.ptSel.name]){
 				var pos = MERIDIANI.posizioni[SET.ptSel.name];
+
+				// cerco la via più breve
+				let diffX = manichinoCont.rotation.x-pos.x,
+					diffY = manichinoCont.rotation.y-pos.y;
+				if(diffX>3){
+					if(pos.x>0)pos.x = 6-pos.x;
+					else pos.x = pos.x+6;
+				}
+				if(diffX<-3){
+					if(pos.x>0)pos.x = pos.x-6;
+					else pos.x = 6-pos.x;
+				}
+				if(diffY>3){
+					if(pos.y>0)pos.y = 6-pos.y;
+					else pos.y = pos.y+6;
+				}
+				if(diffY<-3){
+					if(pos.y>0)pos.y = pos.y-6;
+					else pos.y = 6-pos.y;
+				}
+				
 				normalizeRotation();
 				rotateEnd = { x:pos.x, y:pos.y, z:0 };
 			}
-			/*if(smothingView){
-				if(manichinoCont.position.z<15)zoomEnd = 15;
-				normalizeRotation();
-			}*/
 			if(manichinoCont.position.z<15 || !zoomEnd || !smothingView)zoomEnd = 15;
 			normalizeRotation();
 		}
