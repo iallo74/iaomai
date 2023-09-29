@@ -420,6 +420,7 @@ function scaricaSet( notInit=false ){
 	var daScheda = (SCHEDA.classeAperta == 'scheda_A' ||
 					SCHEDA.classeAperta == 'scheda_B');
 	try{SET._scaricaSet();}catch(err){};
+	RICERCHE.annullaGlobal();
 	if(	!daScheda )SCHEDA.scaricaScheda();
 	manichino.remove(SETS);
 	overInterfaccia=false;

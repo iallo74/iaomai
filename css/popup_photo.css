@@ -96,10 +96,12 @@
 	display: inline-block;
     vertical-align: middle;
 	float:left;
-	background-image:url("../img/ico_draw.png") ;
 	background-position: left center;
 	background-repeat: no-repeat;
     background-size: 30px;
+}
+body:not(.smart) #img_draw_tools{
+	background-image:url("../img/ico_draw.png") ;
 	padding-left:50px;
 }
 #img_pulsanti:not(.editable) #img_draw_tools{

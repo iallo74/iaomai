@@ -403,5 +403,6 @@ var MODULO_PUNTO = { // extend SET
 	azRicercaPunto: function( pt ){ // apre la scheda del punto dalla ricerca globale
 		SET.apriPunto(pt);
 		evidenziaParola();
+		RICERCHE.nascondiGlobal(true); // lasciare qui
 	}
 }

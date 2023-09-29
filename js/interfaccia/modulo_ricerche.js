@@ -29,33 +29,37 @@ var RICERCHE = {
 			
 			// CERCO nei PUNTI e nei MERIDIANI
 			for (k in DB.set.meridiani) {
-				for (p in DB.set.meridiani[k].punti) {
-					var MER = DB.set.meridiani[k].punti[p];
-					var testo = MER.AzioniPunto+" "+MER.NomePunto+" "+MER.ChiaviPunto;
+				if(!(globals.set.cartella == 'meridiani_shiatsu' && k=='EX')){
+					for (p in DB.set.meridiani[k].punti) {
+						var MER = DB.set.meridiani[k].punti[p];
+						var testo = MER.AzioniPunto+" "+MER.NomePunto+" "+MER.ChiaviPunto;
+							
+						testo = RICERCHE.pulisciTesto(testo);
 						
-					testo = RICERCHE.pulisciTesto(testo);
-					
-					if(testo.toUpperCase().indexOf(parola.toUpperCase())>-1){
-						NT = MER.NomePunto;
-						partiNT=NT.split(".");
-						siglaPunto = partiNT[0];
-						var nomePunto = partiNT[0]+"."+partiNT[1];
-						if(globals.set.cartella == 'meridiani_cinesi'){
-							if(__(MER.siglaPunto))nomePunto = MER.siglaPunto;
+						if(	testo.toUpperCase().indexOf(parola.toUpperCase())>-1){
+							NT = MER.NomePunto;
+							partiNT=NT.split(".");
+							siglaPunto = partiNT[0];
+							var nomePunto = partiNT[0];
+							if(k!='NK')nomePunto += "."+partiNT[1]
+							if(globals.set.cartella == 'meridiani_cinesi'){
+								if(__(MER.siglaPunto))nomePunto = MER.siglaPunto;
+							}
+							NT = '<b>'+htmlEntities(nomePunto)+'</b>';
+							for(let n=2;n<partiNT.length;n++){
+								NT+=partiNT[n];
+								if(n<partiNT.length-1)NT+=".";
+							}
+							if(partiNT[0].length == 1)partiNT[0]='0'+partiNT[0];
+							if(k=='NK')partiNT[0] = p;
+							R_parz += RICERCHE.wR({
+								az: "SET.azRicercaPunto('"+k+'.'+partiNT[0]+"');",//RICERCHE.nascondiGlobal(true);",
+								cont: NT,
+								bull: '<font style="color:#FF0000;">&#8226;</font>' });
+							nRisParz++;
+							nRis++;
+							nRisBase++;
 						}
-						NT = '<b>'+htmlEntities(nomePunto)+'</b>';
-						for(let n=2;n<partiNT.length;n++){
-							NT+=partiNT[n];
-							if(n<partiNT.length-1)NT+=".";
-						}
-						if(partiNT[0].length == 1)partiNT[0]='0'+partiNT[0];
-						R_parz += RICERCHE.wR({
-							az: "SET.azRicercaPunto('"+k+'.'+partiNT[0]+"');RICERCHE.nascondiGlobal();",
-							cont: NT,
-							bull: '<font style="color:#FF0000;">&#8226;</font>' });
-						nRisParz++;
-						nRis++;
-						nRisBase++;
 					}
 				}
 			}

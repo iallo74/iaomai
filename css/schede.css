@@ -488,7 +488,7 @@ body:not(.smart) #scheda.schForm:not(.schedaRitorno):not(.minimized):not(.tab_pu
 }
 .smart #frSch {
     margin-top: -38px !important;
-    margin-right: 10px !important;
+    margin-right: 55px !important;
 }
 .frSu, .frGiu{
 	display:block !important;

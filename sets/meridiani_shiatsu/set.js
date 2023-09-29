@@ -638,7 +638,7 @@ SET = {
 		}
 		
 		if(!PT){
-			PT=scene.getObjectByName( PT_name.replace("NK.","AR.") );
+			PT=scene.getObjectByName( PT_name.replace("NK.","AR.")+addGr );
 			if(PT){
 				PT.visible = true;
 				setTimeout(function(){SET.ptSel.material.opacity = 0.7;},200);
@@ -1686,7 +1686,7 @@ SET = {
 			nasLoader();
 		}
 	},
-	cambiaSistema: function( sistema, loader=false, noClick=false ){
+	cambiaSistema: function( sistema, loader=false, noClick=false, funct='' ){
 		if(localStorage.sistemaMeridiani == sistema)return;
 		SET.btnSel = null;
 		var t = t2 = 10;
@@ -1703,7 +1703,10 @@ SET = {
 			else localStorage.sistemaMeridianiAdd = '';
 			SET.filtraMeridiani();
 		},t2,sistema);
-		setTimeout(function(loader){SET.filtraSet(loader);},t,loader);
+		setTimeout(function(loader){
+			SET.filtraSet(loader);
+			eval(funct);
+		},t,loader, funct);
 		var selects = document.getElementsByClassName("sceltaMeridianiElenco");
 		for(let s=0;s<selects.length;s++){
 			selects[s].value = sistema;

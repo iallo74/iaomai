@@ -462,7 +462,10 @@ var MODULO_PUNTO = { // extend SET
 	},
 	azRicercaPunto: function( pt ){
 		// apre la scheda del punto dalla ricerca globale
-		SET.apriPunto(pt);
-		evidenziaParola();
+		let k = pt.split(".")[0];
+		let funct = "SET.apriPunto('"+pt+"');evidenziaParola();RICERCHE.nascondiGlobal(true);";
+		if(k=='NK' && localStorage.sistemaMeridiani!='NMK')SET.cambiaSistema('NMK',true,true,funct);
+		else if(k!='NK' && localStorage.sistemaMeridiani!='')SET.cambiaSistema('',true,true,funct);
+		else eval(funct); // lasciare qui
 	}
 }
