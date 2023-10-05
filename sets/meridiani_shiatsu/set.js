@@ -691,7 +691,10 @@ SET = {
 			var els = scene.getObjectByName("PT_"+pp.siglaMeridiano).children;
 			for(e in els){
 				if(	els[e].name.indexOf(pp.siglaMeridiano+"."+pp.nPunto+".")==0 &&
-					(!gruppo || SET.isInGruppo(els[e])) )els[e].material=mat;
+					(!gruppo || SET.isInGruppo(els[e])) ){
+						els[e].material=mat;
+						els[e].visible=true;
+					}
 			}
 			
 			if(frs = scene.getObjectByName("FR_"+pp.siglaMeridiano)){
@@ -822,6 +825,8 @@ SET = {
 					els[e].material=mat;
 					els[e].material.opacity=1;
 					els[e].scale.set(1,1,1);
+					let ptName = exPt.name.split(".")[1]+"."+exPt.name.split(".")[0];
+					if(exPt.userData.hidden && SET.puntiEvidenziati.indexOf(ptName)==-1)els[e].visible = false;
 				}
 			}
 		}
