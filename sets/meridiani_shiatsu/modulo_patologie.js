@@ -51,7 +51,7 @@ var MODULO_PATOLOGIE = { // extend SET
 						}catch(err){}
 						if(cin)protAdd += ' protCIN';
 						if(mas)protAdd += ' protMAS';
-						txtMTC += '<div class="schedaSpecifica'+protAdd+addClass+'" data-sistema=""><p><span class="no_masunaga">'+TXT("ProtocolloMTC")+'</span><span class="only_masunaga">'+TXT("ProtocolloMasunaga")+'</span><span class="eviPtsBtn" onclick="SET.evidenziaPat(this.parentElement.parentElement);"></span></p>'+schedaMtc.scheda+'</div>';
+						txtMTC += '<div class="schedaSpecifica'+protAdd+addClass+'" data-sistema=""><p>'+TXT("ProtocolloTrattamento")+'<span class="eviPtsBtn" onclick="SET.evidenziaPat(this.parentElement.parentElement);"></span></p>'+schedaMtc.scheda+'</div>';
 					}
 					if(txtMTC){
 						TestoPatologia += txtMTC
@@ -63,7 +63,7 @@ var MODULO_PATOLOGIE = { // extend SET
 					if(DB_patologie[p].nmk.length==1)addClass = ' noOcchio';
 					for(let m in DB_patologie[p].nmk){
 						let PRT = __(DB.set.protocolliNMK[DB_patologie[p].nmk[m]]);
-						txtNMK += '<div class="schedaSpecifica protNMK'+addClass+'" data-sistema="NMK"><p>'+TXT("ProtocolloNamikoshi")+'<span class="eviPtsBtn" onclick="SET.evidenziaPat(this.parentElement.parentElement);"></span></p>'+PRT.TestoProtocollo+'</div>';
+						txtNMK += '<div class="schedaSpecifica protNMK'+addClass+'" data-sistema="NMK"><p>'+TXT("ProtocolloTrattamento")+'<span class="eviPtsBtn" onclick="SET.evidenziaPat(this.parentElement.parentElement);"></span></p>'+PRT.TestoProtocollo+'</div>';
 						nmk = true;
 					}
 					if(txtNMK){

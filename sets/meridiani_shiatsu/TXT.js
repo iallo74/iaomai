@@ -56,29 +56,13 @@ DB.TXT.set = {
 		deu: "Ändere Meridiansystem (chinesisch/Masunaga)"
 	},
 	
-	ProtocolloMTC: {
-		ita: "Protocollo MTC",
-		eng: "TCM Protocol",
-		esp: "Protocolo MTC",
-		fra: "Protocole MTC",
-		por: "Protocolo MTC",
-		deu: "TCM-Protokoll"
-	},
-	ProtocolloMasunaga: {
-		ita: "Protocollo Masunaga",
-		eng: "Masunaga Protocol",
-		esp: "Protocolo Masunaga",
-		fra: "Protocole Masunaga",
-		por: "Protocolo Masunaga",
-		deu: "Masunaga-Protokoll"
-	},
-	ProtocolloNamikoshi: {
-		ita: "Protocollo Namikoshi",
-		eng: "Namikoshi Protocol",
-		esp: "Protocolo Namikoshi",
-		fra: "Protocole Namikoshi",
-		por: "Protocolo Namikoshi",
-		deu: "Namikoshi-Protokoll"
+	ProtocolloTrattamento: {
+		ita: "Protocollo di trattamento",
+		eng: "Treatment protocol",
+		esp: "Protocolo de tratamiento",
+		fra: "Protocole de traitement",
+		por: "Protocolo de tratamento",
+		deu: "Behandlungsprotokoll"
 	},
 	AggiungiPuntoProc: {
 		ita: "Aggiungi alla procedura",
