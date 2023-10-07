@@ -2311,39 +2311,131 @@ var LOGIN = {
 		backup.pazienti.sort(sort_by("Cognome" ));
 		var nr = 0;
 		for(let p in backup.pazienti){
-			if((backup.pazienti[p].Nome || backup.pazienti[p].Cognome) && backup.pazienti[p].Cancellato!='1'){
+			let PZ = backup.pazienti[p];
+			if((PZ.Nome || PZ.Cognome) && PZ.Cancellato!='1'){
 				nr++;
-				LOGIN.addHTML("<h2>"+(nr)+") "+backup.pazienti[p].Nome+" "+backup.pazienti[p].Cognome+"</h2><p class=\"rientro\">");
-				LOGIN.addHTML("<i>"+TXT("Indirizzo")+":</i> "+backup.pazienti[p].Indirizzo+"<br>");
-				LOGIN.addHTML("<i>"+TXT("CAP")+":</i> "+backup.pazienti[p].CAP+"<br>");
-				LOGIN.addHTML("<i>"+TXT("Provincia")+":</i> "+backup.pazienti[p].Provincia+"<br>");
-				LOGIN.addHTML("<i>"+TXT("Stato")+":</i> "+backup.pazienti[p].Stato+"<br>");
-				LOGIN.addHTML("<i>"+TXT("Telefono")+":</i> "+backup.pazienti[p].Telefono+"<br>");
-				var prefisso = '';
-				if(backup.pazienti[p].paeseCellulare)prefisso = DB.INT.paesi[backup.pazienti[p].paeseCellulare].prefisso;
-				LOGIN.addHTML("<i>"+TXT("Cellulare")+":</i> "+prefisso+backup.pazienti[p].Cellulare+"<br>");
-				LOGIN.addHTML("<i>"+TXT("Email")+":</i> "+backup.pazienti[p].Email+"<br>");
-				LOGIN.addHTML("<i>"+TXT("Sesso")+":</i> "+TXT(""+backup.pazienti[p].sesso)+"<br>");
-				LOGIN.addHTML("<i>"+TXT("Note")+":</i> "+backup.pazienti[p].NotePaziente+"</p>");
+
+				etichette = JSON.parse(PZ.etichette);
+				
+				LOGIN.addHTML("<h2>"+htmlEntities(PZ.Nome)+" "+htmlEntities(PZ.Cognome)+"</h2><div class=\"rientro\">");
+
+				let htmlProvv = '';
+				if(PZ.sesso)htmlProvv += "<i>"+TXT("Sesso")+":</i> "+sessi[PZ.sesso]+"<br>";
+				if(PZ.DataNascita!='0000-00-00')htmlProvv += "<i>"+TXT("DataNascita")+":</i> "+htmlEntities(getDataTS(new Date(PZ.DataNascita)*.001))+"<br>";
+				if(PZ.LuogoNascita)htmlProvv += "<i>"+TXT("LuogoNascita")+":</i> "+htmlEntities(PZ.LuogoNascita)+"<br>";
+				htmlProvv += H.scriviEtichette('anagrafici');
+				if(htmlProvv)LOGIN.addHTML("<i><b>"+TXT("LabelAnagrafici")+"</b></i><br>"+htmlProvv+"<br>");
+				
+				htmlProvv = '';
+				if(PZ.Indirizzo)htmlProvv += "<i>"+TXT("Indirizzo")+":</i> "+htmlEntities(PZ.Indirizzo)+"<br>";
+				if(PZ.Citta)htmlProvv += "<i>"+TXT("Citta")+":</i> "+htmlEntities(PZ.Citta)+"<br>";
+				if(PZ.Provincia)htmlProvv += "<i>"+TXT("Provincia")+":</i> "+htmlEntities(PZ.Provincia)+"<br>";
+				if(PZ.CAP)htmlProvv += "<i>"+TXT("CAP")+":</i> "+htmlEntities(PZ.CAP)+"<br>";
+				if(PZ.Stato)htmlProvv += "<i>"+TXT("Stato")+":</i> "+htmlEntities(PZ.Stato)+"<br>";
+				htmlProvv += H.scriviEtichette('indirizzo');
+				if(htmlProvv)LOGIN.addHTML("<i><b>"+TXT("LabelIndirizzo")+"</b></i><br>"+htmlProvv+"<br>");
+				
+				htmlProvv = '';
+				if(PZ.Telefono)htmlProvv += "<i>"+TXT("Telefono")+":</i> "+htmlEntities(PZ.Telefono)+"<br>";
+				let prefisso = (PZ.paeseCellulare)?DB.INT.paesi[PZ.paeseCellulare].prefisso:'';
+				if(PZ.Cellulare)htmlProvv += "<i>"+TXT("Cellulare")+":</i> "+prefisso+PZ.Cellulare+"<br>";
+				if(PZ.Email)htmlProvv += "<i>"+TXT("Email")+":</i> "+htmlEntities(PZ.Email)+"<br>";
+				htmlProvv += H.scriviEtichette('contatti');
+				if(htmlProvv)LOGIN.addHTML("<i><b>"+TXT("LabelContatti")+"</b></i><br>"+htmlProvv+"<br>");
+				
+				htmlProvv = '';
+				if(PZ.Intestazione)htmlProvv += "<i>"+TXT("Intestazione")+":</i> "+htmlEntities(PZ.Intestazione)+"<br>";
+				if(PZ.CodiceFiscale)htmlProvv += "<i>"+TXT("CodiceFiscale")+":</i> "+htmlEntities(PZ.CodiceFiscale)+"<br>";
+				if(PZ.PartitaIva)htmlProvv += "<i>"+TXT("PartitaIva")+":</i> "+htmlEntities(PZ.PartitaIva)+"<br>";
+				htmlProvv += H.scriviEtichette('fatturazione');
+				if(htmlProvv)LOGIN.addHTML("<i><b>"+TXT("LabelFatturazione")+"</b></i><br>"+htmlProvv+"<br>");
+				
+				htmlProvv = '';
+				if(PZ.Provenienza)htmlProvv += "<i>"+TXT("Provenienza")+":</i> "+htmlEntities(PZ.Provenienza)+"<br>";
+				if(PZ.Professione)htmlProvv += "<i>"+TXT("Professione")+":</i> "+htmlEntities(PZ.Professione)+"<br>";
+				if(PZ.Social)htmlProvv += "<i>"+TXT("Social")+":</i> "+htmlEntities(PZ.Social)+"<br>";
+				htmlProvv += H.scriviEtichette('aggiuntive');
+				if(htmlProvv)LOGIN.addHTML("<i><b>"+TXT("LabelAggiuntive")+"</b></i><br>"+htmlProvv+"<br>");
+
+				
+				htmlProvv = '';
+				let tags = JSON.parse(PZ.tags);
+				if(tags.length>0){
+					LOGIN.addHTML("<br><i><b>"+TXT("Tags")+"</b></i><br>");
+					for(let j in tags){
+						htmlProvv += '- ' +htmlEntities(tags[j].NomeTag) +'<br>';
+					}
+				}
+				if(htmlProvv)LOGIN.addHTML(htmlProvv+"<br>");
+				
+				htmlProvv = '';
+				if(PZ.Altezza)htmlProvv += "<i>"+convertMisure(TXT("Altezza"))+":</i> "+htmlEntities(PZ.Altezza)+"<br>";
+				if(PZ.Peso)htmlProvv += "<i>"+convertMisure(TXT("Peso"))+":</i> "+htmlEntities(PZ.Peso)+"<br>";
+				htmlProvv += H.scriviEtichette('biometrici');
+				if(htmlProvv)LOGIN.addHTML("<i><b>"+TXT("LabelBiometrici")+"</b></i><br>"+htmlProvv+"<br>");
+
+				htmlProvv = '';
+				let medicine = JSON.parse(PZ.medicine);
+				if(medicine.length>0){
+					LOGIN.addHTML("<br><i><b>"+TXT("Medicine")+"</b></i><br>");
+					for(let j in medicine){
+						htmlProvv += '- ' +htmlEntities(medicine[j].NomeMedicina) +'<br>';
+					}
+				}
+				if(htmlProvv)LOGIN.addHTML(htmlProvv+"<br>");
+
+				htmlProvv = '';
+				let allergie = JSON.parse(PZ.allergie);
+				if(allergie.length>0){
+					LOGIN.addHTML("<br><i><b>"+TXT("Allergie")+"</b></i><br>");
+					for(let j in allergie){
+						htmlProvv += '- ' +htmlEntities(allergie[j].NomeAllergia) +'<br>';
+					}
+				}
+				if(htmlProvv)LOGIN.addHTML(htmlProvv+"<br>");
+
+				htmlProvv = '';
+				let patologie = JSON.parse(PZ.patologie);
+				if(patologie.length>0){
+					LOGIN.addHTML("<br><i><b>"+TXT("Patologie")+"</b></i><br>");
+					for(let j in patologie){
+						htmlProvv += '- ' +htmlEntities(patologie[j].NomePatologie) +'<br>';
+					}
+				}
+				if(htmlProvv)LOGIN.addHTML(htmlProvv+"<br>");
+
+				htmlProvv = '';
+				let interventi = JSON.parse(PZ.interventi);
+				if(interventi.length>0){
+					LOGIN.addHTML("<br><i><b>"+TXT("Intervento")+"</b></i><br>");
+					for(let j in interventi){
+						htmlProvv += '- ' +htmlEntities(interventi[j].NomeIntervento) +'<br>';
+					}
+				}
+				if(htmlProvv)LOGIN.addHTML(htmlProvv+"<br>");
+
+				htmlProvv = '';
+				if(PZ.NotePaziente)htmlProvv += "<i>"+TXT("Note")+":</i> "+htmlEntities(PZ.NotePaziente)+"</div>";
+				if(htmlProvv)LOGIN.addHTML("<i><b>"+TXT("LabelAnnotazioni")+"</b></i><br>"+htmlProvv+"<br>");
 	
-	
-				if(backup.pazienti[p].trattamenti.length>0){
+
+				if(PZ.trattamenti.length>0){
 					LOGIN.addHTML("<br><i>"+TXT("CicloTrattamenti").toUpperCase()+":</i><br><div class=\"rientro\">");
 					
 					
 					var cicli=[];
 					var n=0;
-					for(let i in backup.pazienti[p].trattamenti){
+					for(let i in PZ.trattamenti){
 						esiste=false;
 						for(let c in cicli){
-							if(cicli[c].NomeCiclo==backup.pazienti[p].trattamenti[i].LabelCiclo)esiste=true;
+							if(cicli[c].NomeCiclo==PZ.trattamenti[i].LabelCiclo)esiste=true;
 						}
-						if(!esiste)cicli[n++]={"NomeCiclo": backup.pazienti[p].trattamenti[i].LabelCiclo, "UltimaModifica": backup.pazienti[p].trattamenti[i].TimeTrattamento*1, "p": i*1 };
+						if(!esiste)cicli[n++]={"NomeCiclo": PZ.trattamenti[i].LabelCiclo, "UltimaModifica": PZ.trattamenti[i].TimeTrattamento*1, "p": i*1 };
 					}
 					for(let c in cicli){
-						for(let i in backup.pazienti[p].trattamenti){
-							if(backup.pazienti[p].trattamenti[i].TimeTrattamento*1>cicli[c].UltimaModifica*1){
-								cicli[c].UltimaModifica=backup.pazienti[p].trattamenti[i].TimeTrattamento*1;
+						for(let i in PZ.trattamenti){
+							if(PZ.trattamenti[i].TimeTrattamento*1>cicli[c].UltimaModifica*1){
+								cicli[c].UltimaModifica=PZ.trattamenti[i].TimeTrattamento*1;
 							}
 						}
 					}
@@ -2356,9 +2448,9 @@ var LOGIN = {
 						if(NomeCiclo=='0' || NomeCiclo=='')NomeCiclo=TXT("CicloSenzaNome");
 						
 						var trattamenti=[];
-						for(t in backup.pazienti[p].trattamenti){
-							if(backup.pazienti[p].trattamenti[t].LabelCiclo==cicli[c].NomeCiclo && backup.pazienti[p].trattamenti[t].Cancellato!='1'){
-								trattamenti.push(backup.pazienti[p].trattamenti[t]);
+						for(t in PZ.trattamenti){
+							if(PZ.trattamenti[t].LabelCiclo==cicli[c].NomeCiclo && PZ.trattamenti[t].Cancellato!='1'){
+								trattamenti.push(PZ.trattamenti[t]);
 							}
 						}
 						trattamenti.sort(sort_by("TipoTrattamento" ));
@@ -2388,23 +2480,27 @@ var LOGIN = {
 							var TT=trattamenti[t].TestoTrattamento;
 							if(trattamenti[t].TipoTrattamento=='A'){
 								//console.log(TT)
-								//TT=JSON.parse(TT);
-								LOGIN.addHTML("<i>"+TXT("AnamnesiMotivo")+":</i> "+TT.AnamnesiMotivo+"<br>");
-								LOGIN.addHTML("<i>"+TXT("AnamnesiDiagnosiOccidentale")+":</i> "+TT.AnamnesiDiagnosiOccidentale+"<br>");
-								LOGIN.addHTML("<i>"+TXT("AnamnesiDiagnosiMTC")+":</i> "+TT.AnamnesiDiagnosiMTC+"<br>");
-							}else LOGIN.addHTML("<i>"+TXT("Descrizione")+":</i> "+TT.replace(/\n/gi,"<br>")+"<br>");
+								if(TT){
+									TT=JSON.parse(TT);
+									if(TT.AnamnesiMotivo)LOGIN.addHTML("<i>"+TXT("AnamnesiMotivo")+":</i> "+TT.AnamnesiMotivo+"<br>");
+									if(TT.AnamnesiDiagnosiOccidentale)LOGIN.addHTML("<i>"+TXT("AnamnesiDiagnosiOccidentale")+":</i> "+TT.AnamnesiDiagnosiOccidentale+"<br>");
+									if(TT.AnamnesiDiagnosiMTC)LOGIN.addHTML("<i>"+TXT("AnamnesiDiagnosiMTC")+":</i> "+TT.AnamnesiDiagnosiMTC+"<br>");
+								}
+							}else{
+								if(TT)LOGIN.addHTML("<i>"+TXT("Descrizione")+":</i> "+TT.replace(/\n/gi,"<br>")+"<br>");
+							}
 							
-							if(trattamenti[t].sintomi.length>0){
+							let sintomi = JSON.parse(trattamenti[t].sintomi);
+							if(sintomi.length>0){
 								var txtSintomi='';
-								var sintomi = JSON.parse(trattamenti[t].sintomi);
 								for(let s in sintomi){
-									txtSintomi+=sintomi[s].NomeSintomo+" <b>(";
+									txtSintomi+="- "+sintomi[s].NomeSintomo+" <b> (";
 									if(sintomi[s].score>-1)txtSintomi+=sintomi[s].score;
 									else txtSintomi+='-';
-									txtSintomi+=")</b>, ";
+									txtSintomi+=")</b><br>";
 								}
 								txtSintomi=txtSintomi.substr(0,txtSintomi.length-2);
-								LOGIN.addHTML("<i>"+TXT("Sintomi")+":</i> "+txtSintomi+"<br>");
+								LOGIN.addHTML("<i>"+TXT("Sintomi")+":</i> <div class=\"rientro\">"+txtSintomi+"<br></div><br>");
 							}
 							if(trattamenti[t].puntiMTC){
 								var punti=JSON.parse(trattamenti[t].puntiMTC);
@@ -2416,17 +2512,19 @@ var LOGIN = {
 									mezzo=__(punti[f].z);
 									descrizione=__(punti[f].t);
 									siglaPunto=__(punti[f].s);
+									txtPunti+="<b><font color=\"#999999\">•</font> ";
 									if(!siglaPunto)txtPunti+=siglaMeridiano+"."+nPunto;
 									else txtPunti+=siglaPunto;
+									txtPunti += "</b>";
 									if(valutazione=='V')txtPunti+=' (vuoto)';
 									if(valutazione=='P')txtPunti+=' (pieno)';
 									if(valutazione=='D')txtPunti+=' (dolorante)';
-									if(mezzo)txtPunti+=' '+mezzo;
+									if(mezzo)txtPunti+=' '+mezzo+' - ';
 									if(descrizione)txtPunti+=' '+descrizione;
-									txtPunti+=", ";
+									txtPunti+="<br>";
 								}
 								txtPunti=txtPunti.substr(0,txtPunti.length-2);
-								if(txtPunti)LOGIN.addHTML("<i>"+TXT("PuntiTrattamento")+":</i> "+txtPunti+"<br>");
+								if(txtPunti)LOGIN.addHTML("<i>"+TXT("PuntiTrattamento")+":</i> <div class=\"rientro\">"+txtPunti+"<br></div><br>");
 							}
 							if(trattamenti[t].puntiNamikoshi){
 								var punti=JSON.parse(trattamenti[t].puntiNamikoshi);
@@ -2436,14 +2534,14 @@ var LOGIN = {
 									valutazione=__(punti[f].e);
 									mezzo=__(punti[f].z);
 									descrizione=__(punti[f].t);
-									txtPunti+=punti[f].n;
+									txtPunti+="<b><font color=\"#999999\">•</font> "+siglaPunto+"</b>";
 									if(valutazione=='D')txtPunti+=' (dolorante)';
-									if(mezzo)txtPunti+=' '+mezzo;
+									if(mezzo)txtPunti+=' '+mezzo+' - ';
 									if(descrizione)txtPunti+=' '+descrizione;
-									txtPunti+=", ";
+									txtPunti+="<br>";
 								}
 								txtPunti=txtPunti.substr(0,txtPunti.length-2);
-								if(txtPunti)LOGIN.addHTML("<i>"+TXT("PuntiNamikoshi")+":</i> "+txtPunti+"<br>");
+								if(txtPunti)LOGIN.addHTML("<i>"+TXT("PuntiNamikoshi")+":</i> <div class=\"rientro\">"+txtPunti+"<br></div><br>");
 							}
 							if(trattamenti[t].meridiani){
 								var meridiani=JSON.parse(trattamenti[t].meridiani);
@@ -2453,15 +2551,15 @@ var LOGIN = {
 									NomeMeridiano=__(meridiani[m].NomeMeridiano);
 									valEnergetica=__(meridiani[m].valEnergetica);
 									descrizione=__(meridiani[m].descrizione);
-									txtMeridiani+=NomeMeridiano;
+									txtMeridiani+="<b><font color=\"#999999\">•</font> "+NomeMeridiano+"</b>";
 									if(valEnergetica=='V')txtMeridiani+=' (vuoto)';
 									if(valEnergetica=='P')txtMeridiani+=' (pieno)';
 									if(valEnergetica=='D')txtMeridiani+=' (dolorante)';
 									if(descrizione)txtMeridiani+=' '+descrizione;
-									txtMeridiani+=", ";
+									txtMeridiani+="<br>";
 								}
 								txtMeridiani=txtMeridiani.substr(0,txtMeridiani.length-2);
-								if(txtMeridiani)LOGIN.addHTML("<i>"+TXT("MeridianiTrattamento")+":</i> "+txtMeridiani+"<br>");
+								if(txtMeridiani)LOGIN.addHTML("<i>"+TXT("MeridianiTrattamento")+":</i> <div class=\"rientro\">"+txtMeridiani+"<br></div><br>");
 							}
 							if(trattamenti[t].puntiAuricolari){
 								var punti=JSON.parse(trattamenti[t].puntiAuricolari);
@@ -2471,14 +2569,14 @@ var LOGIN = {
 									valutazione=__(punti[f].e);
 									mezzo=__(punti[f].z);
 									descrizione=__(punti[f].t);
-									txtPunti+=punti[f].n;
+									txtPunti+="<b><font color=\"#999999\">•</font> "+punti[f].n+"</b>";
 									if(valutazione=='D')txtPunti+=' (dolorante)';
-									if(mezzo)txtPunti+=' '+mezzo;
+									if(mezzo)txtPunti+=' '+mezzo+' - ';
 									if(descrizione)txtPunti+=' '+descrizione;
-									txtPunti+=", ";
+									txtPunti+="<br> ";
 								}
 								txtPunti=txtPunti.substr(0,txtPunti.length-2);
-								if(txtPunti)LOGIN.addHTML("<i>"+TXT("PuntiAuriculo")+":</i> "+txtPunti+"<br>");
+								if(txtPunti)LOGIN.addHTML("<i>"+TXT("PuntiAuriculo")+":</i> <div class=\"rientro\">"+txtPunti+"<br></div><br>");
 							}
 							LOGIN.addHTML("<br>");
 						}
@@ -2489,9 +2587,9 @@ var LOGIN = {
 				}
 				
 				
-				if(backup.pazienti[p].saldi.length>0){
+				if(PZ.saldi.length>0){
 					LOGIN.addHTML("<br><i>"+TXT("ElSaldi").toUpperCase()+":</i><br><div class=\"rientro\">");
-					var saldi=JSON.parse(JSON.stringify(backup.pazienti[p].saldi));
+					var saldi=JSON.parse(JSON.stringify(PZ.saldi));
 					saldi.sort(sort_by("DataSaldo", true, parseInt ));
 					for(let s in saldi){
 						if(saldi[s].Cancellato!='1')LOGIN.addHTML("<i>"+getFullDataTS(saldi[s].DataSaldo)+"</i>: <b>"+getValuta()+" "+ArrotondaEuro(saldi[s].ValoreSaldo)+"</b><br>");
@@ -2502,7 +2600,7 @@ var LOGIN = {
 				var note=[];
 				for(let n in backup.note){
 					if(	backup.note[n].TestoAnnotazione && 
-						backup.note[n].idPaziente==backup.pazienti[p].idPaziente && 
+						backup.note[n].idPaziente==PZ.idPaziente && 
 						backup.note[n].Cancellato!='1'){
 						note.push(backup.note[n]);
 					}
@@ -2516,7 +2614,7 @@ var LOGIN = {
 					LOGIN.addHTML("</div>");
 				}
 				
-				LOGIN.addHTML("<br><hr>");
+				LOGIN.addHTML("</div><br><hr>");
 				
 			}
 		}

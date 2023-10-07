@@ -553,7 +553,7 @@ var PAZIENTI_TRATTAMENTI = {
 					'</div>';
 			if(TipoTrattamento!='A' || (TipoTrattamento=='A' && oraInizio>-1)){		
 				// AGENDA
-				HTML+=	
+				HTML +=	
 					'<div id="dataTratt" class="labelSx">' +
 					'	<i class="vis">'+TXT_DT+':</i>' +
 					'	<div onClick="	PAZIENTI.swAgenda('+(TimeAgenda*1000)+',' +
@@ -599,8 +599,8 @@ var PAZIENTI_TRATTAMENTI = {
 								classCampo: "okPlaceHolder",
 								styleCampo: "margin-bottom:10px;" });
 				
-				var TXT_P=TXT("PuntiMTC");
-				var TXT_M=TXT("MeridianiTrattamento");
+				var TXT_P = TXT("PuntiMTC");
+				var TXT_M = TXT("MeridianiTrattamento");
 				HTML += separatore;
 				
 			}else{
@@ -633,8 +633,8 @@ var PAZIENTI_TRATTAMENTI = {
 						'	</div>' +
 						'</div>';
 				
-				var TXT_P=TXT("PuntiAnamnesi");
-				var TXT_M=TXT("MeridianiAnamnesi");
+				var TXT_P = TXT("PuntiAnamnesi");
+				var TXT_M = TXT("MeridianiAnamnesi");
 			}
 			
 			// PRESCRIZIONE
