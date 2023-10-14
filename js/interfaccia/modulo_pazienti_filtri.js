@@ -1287,7 +1287,7 @@ var PAZIENTI_FILTRI = {
 				'		 class="divEspansa">' +
 						htmlEntities(document.formMod.MessaggioMarketing.value).replace(/\n/g, "<br>").replace(/\s/g," ") +
 				'		<div id="anteprimaPiede">' +
-				'			<div style="background-image:url(\'' + CONN.APIfolder+'../../__files_utenti/immagini/'+DB.login.data.idUtente+'/__avatar.jpg\');">' +
+				'			<div style="background-image:url(\'' + CONN.FILESfolder+DB.login.data.idUtente+'/__avatar.jpg\');">' +
 				'			</div>' +
 				'			<i>'+htmlEntities(DB.login.data.Nominativo)+'</i><br>' +
 							htmlEntities(DB.login.data.Email) +
@@ -1398,7 +1398,7 @@ var PAZIENTI_FILTRI = {
 		'		 class="divEspansa">' +
 				htmlEntities(msg.Messaggio).replace(/\n/g, "<br>").replace(/\s/g,"&nbsp;") +
 		'		<div id="anteprimaPiede">' +
-		'			<div style="background-image:url(\'' + CONN.APIfolder+'../../__files_utenti/immagini/'+DB.login.data.idUtente+'/__avatar.jpg\');">' +
+		'			<div style="background-image:url(\'' + CONN.FILESfolder+DB.login.data.idUtente+'/__avatar.jpg\');">' +
 		'			</div>' +
 		'			<i>'+htmlEntities(DB.login.data.Nominativo)+'</i><br>' +
 					htmlEntities(DB.login.data.Email) +
