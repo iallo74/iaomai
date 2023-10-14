@@ -8,6 +8,9 @@
     margin-left: -200px;
     margin-top: -210px;
 }
+#dispositivi.blur{
+z-index:100 !important;
+}
 #labelDispositivi{
 	background-image:url(../img/ico_connessioneB.png);
 	background-position:10px center;

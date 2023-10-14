@@ -1,4 +1,5 @@
 
+
 var LOGIN = {
 	retIni: false,
 	//loginVerificato: false,
@@ -112,6 +113,15 @@ var LOGIN = {
 		if(window.cordova && window.cordova.platformId !== 'windows')window.open(url,'_system');
 		else window.open(url,'_blank');
 	},
+	swVisPwd: function( forza=false ){
+		if(document.getElementById("PWD").type=='text' || forza){
+			document.getElementById("PWD").type = 'password';
+			document.getElementById("visPwd").classList.remove("hide");
+		}else{
+			document.getElementById("PWD").type = 'text';
+			document.getElementById("visPwd").classList.add("hide");
+		}
+	},
 	logedin: function(){ // restituisce il TOKEN, indicando che si è connessi
 		var TOKEN=DB.login.data.TOKEN;
 		if(typeof(TOKEN)=='undefined')TOKEN='';
@@ -202,6 +212,7 @@ var LOGIN = {
 			if(__(jsn.errConn)){
 				MENU.chiudiMenu();
 				SCHEDA.scaricaScheda();
+				console.log(jsn)
 				MENU.visDispositivi(JSON.stringify(jsn.data));
 				return;
 			}
@@ -210,6 +221,7 @@ var LOGIN = {
 			if(document.querySelector(".listaPazienti"))applicaLoading(document.querySelector(".listaPazienti"));
 			applicaLoading(document.querySelector(".listaFornitori"));
 			applicaLoading(document.querySelector(".listaServizi"));
+			localStorage.RimaniConnesso = document.getElementById("stayConnected").checked;
 			LOGIN.salvaToken(txt);
 			LOGIN.tmAttesaLogin = 	setInterval( function(){
 										if(LOGIN.logedin()){
@@ -234,7 +246,7 @@ var LOGIN = {
 									}, 500);
 		}
 	},
-	verLogin: function( funct='' ){ // verifica se si è loggati
+	verLogin: function( funct='' ){ // verifica se si è loggati (solo all'inizio)
 		localPouchDB.getItem(MD5("DB.login")).then(function(dbCont){ // leggo il DB
 			loginProvv=IMPORTER.DECOMPR(dbCont);
 			if(loginProvv!=null){
@@ -244,8 +256,8 @@ var LOGIN = {
 				var dateNow = new Date();
 				dateNow=dateNow.getTime()/1000;
 				dateNow=parseInt(dateNow);
-				if((dateStored<dateNow || dateStored==0 || isNaN(dateStored))){
-					if(!LOGIN.logedin()){
+				if((dateStored<dateNow || dateStored==0 || isNaN(dateStored) || !eval(__(localStorage.RimaniConnesso,'false')))){
+					if(!LOGIN.logedin() || !eval(__(localStorage.RimaniConnesso,'false'))){
 						DB.login.data.TOKEN='';
 						DB.login.data.ExpDate=0;
 						if(!DB.login.data.auths)DB.login.data.auths = [];
@@ -324,9 +336,16 @@ var LOGIN = {
 	aggiornaToken: function(ret){ // richiama l'url per aggiornare il token
 		LOGIN.retIni=ret;
 		if(CONN.getConn()){
+			/*DB.login.data.ExpDate = parseInt(new Date().getTime()/1000)+(60*60*24*90);
+			localPouchDB.setItem(MD5("DB.login"), IMPORTER.COMPR(DB.login)).then(function(){ // salvo il DB
+				CONN.caricaUrl(	"testauth.php",
+								"ExpDate="+DB.login.data.ExpDate,
+								"LOGIN.salvaToken");
+				
+			});*/
 			CONN.caricaUrl(	"testauth.php",
-							"",
-							"LOGIN.salvaToken");
+			"",
+			"LOGIN.salvaToken");
 			return false;
 		}
 	},
@@ -343,7 +362,9 @@ var LOGIN = {
 					LOGIN.verInternationals();
 				}
 			});
-		}else LOGIN.logout();
+		}else{
+			LOGIN.logout();
+		}
 	},
 	verificaToken: function(){ // Verifico che il token sia valido
 		if(CONN.getConn() && LOGIN.logedin()){
@@ -417,7 +438,7 @@ var LOGIN = {
 		LINGUE.getGoogleLanguages();
 	},
 	avviaVerToken: function(){ // Avvia la verifica del TOKEN ogni 10 secondi
-		tmVerT=setInterval(function(){LOGIN.verificaToken()},10000); // verifico ogni 10 secondi
+		tmVerT=setInterval(function(){LOGIN.verificaToken();},10000); // verifico ogni 10 secondi
 	},
 	resToken: function(txt){ // Risposta dalla verifica del TOKEN
 		if(typeof(txt) != 'undefined'){;
@@ -2141,7 +2162,7 @@ var LOGIN = {
 			if(DB.__sizeDb<40*1000*1000)LOGIN.updateGallery(); // limite a 40MB (circa 1000 file)
 		});
 	},
-	download:function ( filename, text ){ // scarica un file
+	download:function( filename, text ){ // scarica un file
 		var element = document.createElement('a');
 		element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(text));
 		element.setAttribute('download', filename);	
@@ -2306,9 +2327,10 @@ var LOGIN = {
 		for(let p in backup.pazienti){
 			backup.pazienti[p].Nome=backup.pazienti[p].Nome;
 			backup.pazienti[p].Cognome=backup.pazienti[p].Cognome;
+			backup.pazienti[p].p=p;
 		}
-		backup.pazienti.sort(sort_by("Nome" ));
 		backup.pazienti.sort(sort_by("Cognome" ));
+		backup.pazienti.sort(sort_by("Nome" ));
 		var nr = 0;
 		for(let p in backup.pazienti){
 			let PZ = backup.pazienti[p];
@@ -2420,7 +2442,7 @@ var LOGIN = {
 	
 
 				if(PZ.trattamenti.length>0){
-					LOGIN.addHTML("<br><i>"+TXT("CicloTrattamenti").toUpperCase()+":</i><br><div class=\"rientro\">");
+					LOGIN.addHTML("<br><div>");
 					
 					
 					var cicli=[];
@@ -2439,7 +2461,7 @@ var LOGIN = {
 							}
 						}
 					}
-					cicli.sort(sort_by("UltimaModifica", true, parseInt));
+					cicli.sort(sort_by("ordine", false, parseInt));
 					var vuoto=true;
 					for(let c in cicli){
 						vuoto=false;
@@ -2453,9 +2475,11 @@ var LOGIN = {
 								trattamenti.push(PZ.trattamenti[t]);
 							}
 						}
+						trattamenti.sort(sort_by("TimeTrattamento" , false, parseInt));
 						trattamenti.sort(sort_by("TipoTrattamento" ));
 						
-						LOGIN.addHTML("<h3>- "+NomeCiclo+" -</h3><div class=\"rientro\">");
+						LOGIN.addHTML("<h3><i style=\"font-weight:normal;color:#666;\">"+TXT("CicloTrattamenti")+":</i> "+NomeCiclo+"</h3><div class=\"rientro\">");
+						let isCiclo = false;
 						for(t in trattamenti){
 							var oI=trattamenti[t].oraInizio;
 							var oF=trattamenti[t].oraFine;
@@ -2473,7 +2497,13 @@ var LOGIN = {
 								txtOrario=TXT("eOra");
 							}
 							
-							LOGIN.addHTML("<b class=\"tits\"> "+TXT("ModificaTrattamento")+" "+(t*1+1)+"</b><br>");
+							let titoletto = TXT("ModificaTrattamento")+" "+((isCiclo)?(t*1):(t*1)+1);
+							if(trattamenti[t].TipoTrattamento=='A'){
+								titoletto = TXT("Anamnesi");
+								isCiclo = true;
+							}
+
+							LOGIN.addHTML("<b class=\"tits\" style=\"color:#666;\">"+titoletto+"</b><br>");
 							if(trattamenti[t].TimeTrattamento)LOGIN.addHTML("<i>"+TXT("Data")+txtOrario+": </i> "+getFullDataTS(trattamenti[t].TimeTrattamento)+" "+orario+"<br>");
 							LOGIN.addHTML("<i>"+TXT("Titolo")+":</i> <b>"+trattamenti[t].TitoloTrattamento+"</b><br>");
 							LOGIN.addHTML("<i>"+TXT("Costo")+":</i> <b>"+ArrotondaEuro(trattamenti[t].CostoTrattamento)+"</b><br>");
@@ -2491,6 +2521,9 @@ var LOGIN = {
 							}
 							
 							let sintomi = JSON.parse(trattamenti[t].sintomi);
+							if(sintomi.length==0 && trattamenti[t].LabelCiclo){
+								sintomi = PAZIENTI.getSintomiCiclo(trattamenti[t].LabelCiclo,PZ.p);
+							}
 							if(sintomi.length>0){
 								var txtSintomi='';
 								for(let s in sintomi){
@@ -2619,45 +2652,46 @@ var LOGIN = {
 			}
 		}
 		LOGIN.addHTML("</div>");
-		LOGIN.addHTML("<h1>"+TXT("PROCEDURE")+"</h1><div class=\"rientro\">");
-		
-		
+
+		htmlProvv = '';
 		for(let n in backup.procedure){
 			if(backup.procedure[n].NomeProcedura && backup.procedure[n].Cancellato!='1'){
-				LOGIN.addHTML("<b class=\"tits\">"+backup.procedure[n].NomeProcedura+"</b><div class=\"rientro\">");
-				LOGIN.addHTML("<i>"+TXT("Data")+": </i> "+getFullDataTS(backup.procedure[n].DataCreazione)+"<br>");
+				htmlProvv += "<b class=\"tits\">"+backup.procedure[n].NomeProcedura+"</b><div class=\"rientro\">";
+				htmlProvv += "<i>"+TXT("Data")+": </i> "+getFullDataTS(backup.procedure[n].DataCreazione)+"<br>";
 				for(let d in backup.procedure[n].dettagliProcedura){
 					var TD=backup.procedure[n].dettagliProcedura[d].TipoDettaglio;
-					if(TD=='P')LOGIN.addHTML("<i>"+TXT("Punti")+": </i>");
-					if(TD=='M')LOGIN.addHTML("<i>"+TXT("AggiungiMeridiano")+": </i>");
-					if(TD=='T' || TD=='P' || TD=='M')LOGIN.addHTML("<b>");
+					if(TD=='P')htmlProvv += "<i>"+TXT("Punti")+": </i>";
+					if(TD=='M')htmlProvv += "<i>"+TXT("AggiungiMeridiano"+": </i>");
+					if(TD=='T' || TD=='P' || TD=='M')htmlProvv += "<b>";
 					var descrizione = backup.procedure[n].dettagliProcedura[d].DescrizioneDettaglio.replace(/\n/gi,"<br>");
-					LOGIN.addHTML(descrizione);
-					if(TD=='T' || TD=='P' || TD=='M')LOGIN.addHTML("</b>");
-					LOGIN.addHTML("<br>");
+					htmlProvv += descrizione;
+					if(TD=='T' || TD=='P' || TD=='M')htmlProvv += "</b>";
+					htmlProvv += "<br>";
 				}
-				LOGIN.addHTML("<i>"+TXT("Condiviso")+": </i> ");
-				if(backup.procedure[n].Condiviso=='1')LOGIN.addHTML("<b>"+TXT("si")+"</b>");
-				else LOGIN.addHTML("<b>"+TXT("no")+"</b>");
-				LOGIN.addHTML("<br>");
-				LOGIN.addHTML("</div>");
+				htmlProvv += "<i>"+TXT("Condiviso")+": </i> ";
+				if(backup.procedure[n].Condiviso=='1')htmlProvv += "<b>"+TXT("si")+"</b>";
+				else htmlProvv += "<b>"+TXT("no")+"</b>";
+				htmlProvv += "<br>";
+				htmlProvv += "</div>";
 				
-				LOGIN.addHTML("<hr>");
+				htmlProvv += "<hr>";
 			}
 		}
-		LOGIN.addHTML("</div>");
-		LOGIN.addHTML("<h1>"+TXT("ANNOTAZIONI_GENERICO")+"</h1><div class=\"rientro\">");
+		if(htmlProvv)LOGIN.addHTML("<h1>"+TXT("PROCEDURE")+"</h1><div class=\"rientro\">"+htmlProvv+"</div>");
 	
+		htmlProvv = '';
 		for(let n in backup.note){
 			if(	backup.note[n].TestoAnnotazione && 
 				backup.note[n].idPaziente==-1 && 
 				backup.note[n].Cancellato!='1'){
-				LOGIN.addHTML("<b class=\"tits\">"+backup.note[n].meridiano+" "+backup.note[n].numeroPunto+"</b>: "+ backup.note[n].TestoAnnotazione.replace(/\n/gi,"<br>")+"<br>");
+					htmlProvv += "<b class=\"tits\">"+backup.note[n].meridiano+" "+backup.note[n].numeroPunto+"</b>: "+ backup.note[n].TestoAnnotazione.replace(/\n/gi,"<br>")+"<br>";
 				
-				LOGIN.addHTML("<hr>");
+					htmlProvv += "<hr>";
 			}
 		}
-		LOGIN.addHTML("</div>");
+
+		if(htmlProvv)LOGIN.addHTML("<h1>"+TXT("ANNOTAZIONI_GENERICO")+"</h1><div class=\"rientro\">"+htmlProvv+"</div>");
+
 		LOGIN.download("dati personali "+getFullDataTS(data)+" ("+data+").htm",LOGIN.HTML);
 	},
 	addHTML: function(txt){
@@ -2677,7 +2711,7 @@ var LOGIN = {
 		var UA=navigator.userAgent;
 		var isMacUA = 0;
 		if(UA.toLowerCase().indexOf("mac")>-1)isMacUA=1;
-		if(android)html += stripslashes(TXT("UpgradeInfoAndroid"))+'<br><a id="upgrade_button" href="https://play.google.com/store/apps/details?id=app.iaomai.app&pli=1" target="_system">'+txtClick+'</a>';
+		if(android)html += stripslashes(TXT("UpgradeInfoAndroid")) + '<br><a id="upgrade_button" href="https://play.google.com/store/apps/details?id=app.iaomai.app&pli=1" target="_system">'+txtClick+'</a>';
 		else if((iPad || iPhone || isMacUA) && touchable)html += stripslashes(TXT("UpgradeInfoApple"))+'<br><a id="upgrade_button" href="https://apps.apple.com/it/app/i%C3%A1omai/id1588705898?ign-mpt=uo%3D4" target="_system">'+txtClick+'</a>';
 		else html += stripslashes(TXT("UpgradeInfoPC"))+'<br><a id="upgrade_button" href="https://www.iaomai.app/'+langWeb+'/iaomai/download.php" target="_blank">'+txtClick+'</a>';
 		html += '</div>';

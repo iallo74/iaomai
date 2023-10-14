@@ -111,7 +111,6 @@ var MODULO_PATOLOGIE = { // extend SET
 	caricaPatologie: function(){
 		// carica la lista delle patologie
 		var contPatologie = 
-					'<div id="sistemaMeridiani_pats"></div>' +
 					'<div id="add_pat"' +
 					((__(localStorage.listPatType)=='category')?' class="category"':'') +
 					'>';

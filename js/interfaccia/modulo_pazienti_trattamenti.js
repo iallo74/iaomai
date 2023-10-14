@@ -1476,16 +1476,18 @@ var PAZIENTI_TRATTAMENTI = {
 		SINTOMI.sort(sort_by("NomeSintomo",false))
 		return SINTOMI;
 	},
-	getSintomiCiclo: function( cartella ){
-		var SINTOMI = [];
-		var nomiSintomi = [];
+	getSintomiCiclo: function( cartella, idCL=-1 ){
+		let SINTOMI = [];
+		let nomiSintomi = [];
+		if(idCL==-1)idCL = PAZIENTI.idCL;
 		if(cartella){
-			for(t in DB.pazienti.data[PAZIENTI.idCL].trattamenti){
-				if(cartella == DB.pazienti.data[PAZIENTI.idCL].trattamenti[t].LabelCiclo){
-					var ss = clone(DB.pazienti.data[PAZIENTI.idCL].trattamenti[t].sintomi);
+			for(let t in DB.pazienti.data[idCL].trattamenti){
+				if(idCL==28)console.log(cartella+"=="+DB.pazienti.data[idCL].trattamenti[t].LabelCiclo)
+				if(cartella == DB.pazienti.data[idCL].trattamenti[t].LabelCiclo){	
+					let ss = clone(DB.pazienti.data[idCL].trattamenti[t].sintomi);
 					for(let s in ss){
 						if(nomiSintomi.indexOf(ss[s].NomeSintomo)==-1){
-							var sintomo = ss[s];
+							let sintomo = ss[s];
 							sintomo.score = -1;
 							SINTOMI.push(sintomo);
 							nomiSintomi.push(sintomo.NomeSintomo);

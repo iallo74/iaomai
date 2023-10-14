@@ -858,6 +858,22 @@ DB.TXT = {
             por: "SAIR",
             deu: "ABMELDEN"
         },
+        "Disconnetti": {
+            ita: "Cambia utente",
+            eng: "Change user",
+            esp: "Cambiar usuario",
+            fra: "Changer d'usager",
+            por: "Alterar usuário",
+            deu: "Benutzer wechseln"
+        },
+        "StaiConnesso": {
+            ita: "Rimani connesso",
+            eng: "Stay connected",
+            esp: "Permanece conectado",
+            fra: "Restez connecté",
+            por: "Permaneça conectado",
+            deu: "Bleiben Sie verbunden"
+        },
         ACQUISTA: {
             ita: "ACQUISTA",
             eng: "BUY",

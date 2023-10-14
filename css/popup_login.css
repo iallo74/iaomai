@@ -46,7 +46,52 @@
     box-shadow: 0px 0px 3px rgb(0 0 0 / 50%);
 	-webkit-appearance: none;
 }
-
+#usrChange{
+    border-radius: 7px;
+    border: none;
+    height: 26px;
+    line-height: 26px;
+    cursor: pointer;
+	background: rgba(0,0,0,0.5);
+    color: #FFF;
+    padding: 0px 7px;
+    float: right;
+    cursor: pointer;
+    box-shadow: 0px 0px 3px rgb(0 0 0 / 50%);
+    -webkit-appearance: none;
+	margin-left: -100px;
+    z-index: 100;
+    position: relative;
+}
+#visPwd{
+	width:30px;
+	height:30px;
+	background-image: url(../img/visPwd.png);
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center;
+	display: inline-block;
+    position: relative;
+    z-index: 100;
+    margin-left: -32px;
+    cursor: pointer;
+    vertical-align: middle;
+    width: 30px;
+}
+#visPwd.hide{
+	background-image: url(../img/visPwdHide.png) !important;
+}
+#loginStayConnected{
+	text-align:left;
+	line-height:20px;
+	margin:3px 0;
+}
+#stayConnected{
+	width:20px;
+	height:20px;
+	vertical-align: middle;
+	margin-top:-2px;
+}
 .smart.android #loginFrom input[type='submit']{
 	font-size: var(--font-16-93);
 }
@@ -75,7 +120,7 @@
     line-height: 30px;
     height: 30px;
 }
-#USRlabel img{
+/* #USRlabel img{
 	opacity:0.5;
 	float:right;
 	cursor:pointer;
@@ -83,7 +128,7 @@
 }
 #USRlabel img:hover{
 	opacity:0.8;
-}
+} */
 #btnRecupero{
 	color:#333 !important;
 	line-height: 30px;

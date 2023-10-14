@@ -12,7 +12,7 @@ SET = {
 	time: 0,
 	pulse: 1,
 	ptSel: null,
-	btnSel: null,
+	btnSel: null, 
 	grSel: '',
 	eviPoint1: '',
 	eviPoint2: '',
@@ -133,7 +133,7 @@ SET = {
 						this.GD[m].visible = vis;
 						this.GD[m].userData.categoria = categoria;
 						SETS.add( this.GD[m] );
-					}
+					}	
 				}
 				
 				
@@ -237,6 +237,21 @@ SET = {
 		var contElenco = '';
 		
 		contPulsanti += '<div id="pulsante_modello" onClick="cambiaModello(\'donna\');">'+TXT("ApriModello3D")+'</div>';
+
+		// scelta sistema
+		contPulsanti += '<p class="sistemaMeridiani_p"><span class="selectCambioMeridiani"><i>'+htmlEntities(TXT("SistemaMeridiani"))+':</i><select class="sceltaMeridianiElenco" onChange="SET.cambiaSistema(this.value,true);">'+
+		'  <option value=""';
+		if(localStorage.sistemaMeridiani == '' || !__(localStorage.sistemaMeridiani) )contPulsanti += ' SELECTED';
+		contPulsanti += 	'>'+htmlEntities(TXT("MeridianiCinesi"))+'</option>' +
+							'  <option value="MAS"';
+		if(localStorage.sistemaMeridiani == 'MAS')contPulsanti += ' SELECTED';
+		contPulsanti += 	'>'+htmlEntities(TXT("MeridianiGiapponesi"))+'</option>' +
+							'  <option value="NMK"';
+		if(localStorage.sistemaMeridiani == 'NMK')contPulsanti += ' SELECTED';
+		contPulsanti += 	'>'+htmlEntities(TXT("SistemaNamikoshi"))+'</option>' +
+				'</select></span><i class="elMenu" id="cambioSistemaMeridiani" onClick="MENU.visImpset();"><span>'+htmlEntities(TXT("SistemaMeridiani2"))+'</span></i></p>';
+
+
 		// meridiani
 		contPulsanti += '<div id="pulsante_meridiani" class="frdx" onClick="SCHEDA.selElenco(\'meridiani\');">'+TXT("Meridiani")+'</div>';
 		contElenco += '<div id="lista_meridiani"></div>';
@@ -1672,8 +1687,9 @@ SET = {
 				}
 			}
 		}
-		var titPoints = TXT("Meridiani");
+		var titPoints = TXT("MeridianiPunti");
 		if(localStorage.sistemaMeridiani=='NMK')titPoints = TXT("RegioniAnatomiche");
+		if(localStorage.sistemaMeridiani=='MAS')titPoints = TXT("Meridiani");
 		document.getElementById("pulsante_meridiani").innerHTML = titPoints;
 		if(SCHEDA.elencoSel=='meridiani')document.getElementById("elenchi_titolo").innerHTML = titPoints;
 		

@@ -168,13 +168,13 @@ DB.TXT.set = {
         por: "Categorias",
         deu: "Kategorien"
     },
-	MappaPunti: {
-		ita: "Mappa dei punti",
-		eng: "Points Map",
-		esp: "Mapa de puntos",
-		fra: "Carte des points",
-		por: "Mapa de pontos",
-		deu: "Karte der Punkte"
+	MeridianiPunti: {
+		ita: "Meridiani e punti",
+		eng: "Meridians and points",
+		esp: "Meridianos y puntos",
+		fra: "Méridiens et points",
+		por: "Meridianos e pontos",
+		deu: "Meridiane und Punkte"
 	},
 	RegioniAnatomiche: {
 		ita: "Regioni anatomiche",

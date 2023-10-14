@@ -151,21 +151,8 @@ var MODULO_MERIDIANI = { // extend SET
 				
 			}
 		}
-		sceltaSistemaTag = 		'<p class="sistemaMeridiani_p"><span class="selectCambioMeridiani"><i>'+htmlEntities(TXT("SistemaMeridiani"))+':</i><select class="sceltaMeridianiElenco" onChange="SET.cambiaSistema(this.value,true);">'+
-								'  <option value=""';
-		if(localStorage.sistemaMeridiani == '' || !__(localStorage.sistemaMeridiani) )sceltaSistemaTag += ' SELECTED';
-		sceltaSistemaTag += 	'>'+htmlEntities(TXT("MeridianiCinesi"))+'</option>' +
-								'  <option value="MAS"';
-		if(localStorage.sistemaMeridiani == 'MAS')sceltaSistemaTag += ' SELECTED';
-		sceltaSistemaTag += 	'>'+htmlEntities(TXT("MeridianiGiapponesi"))+'</option>' +
-								'  <option value="NMK"';
-		if(localStorage.sistemaMeridiani == 'NMK')sceltaSistemaTag += ' SELECTED';
-		sceltaSistemaTag += 	'>'+htmlEntities(TXT("SistemaNamikoshi"))+'</option>' +
-								'</select></span><i class="elMenu" id="cambioSistemaMeridiani" onClick="MENU.visImpset();"><span>'+htmlEntities(TXT("SistemaMeridiani2"))+'</span></i></p>';
 	
-		document.getElementById("lista_meridiani").innerHTML = sceltaSistemaTag+'<div class="lista listaMeridiani">'+contElencoMeridiani+'</div>';
-
-		document.getElementById("sistemaMeridiani_pats").innerHTML = sceltaSistemaTag;
+		document.getElementById("lista_meridiani").innerHTML = '<div class="lista listaMeridiani">'+contElencoMeridiani+'</div>';
 		
 		
 

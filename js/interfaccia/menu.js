@@ -427,6 +427,7 @@ var MENU = {
 	visDispositivi: function( jsn ){
 		visLoader("");
 		document.getElementById("dispositivi").classList.add("visSch");
+		document.getElementById("dispositivi").classList.remove("blur");
 		visLoader('');
 		DISPOSITIVI.carica(jsn);
 	},
@@ -557,6 +558,8 @@ var MENU = {
 		visLoader("");
 		document.getElementById("login").classList.toggle("visSch");
 		document.getElementById("login").classList.remove("popup_back");
+		document.getElementById("stayConnected").checked = eval(__(localStorage.RimaniConnesso,'false'));
+		LOGIN.swVisPwd(true);
 		LOGIN.attivaX();
 		var USRprovv=DB.login.data.UsernameU;
 		if(typeof(USRprovv)=='undefined')USRprovv='';

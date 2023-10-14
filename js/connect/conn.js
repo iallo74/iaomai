@@ -42,6 +42,7 @@ var CONN = {
 				x.setRequestHeader("Content-type", "application/x-www-form-urlencoded;charset=uft-8;");
 				//x.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded; ');
 				if(qs.indexOf("TK=D6G-w34rgV")==-1)x.setRequestHeader("Authorization", LOGIN.getLS('TOKEN'));
+				
 				x.onerror = function () {
 					//console.log("Non più connesso");
 					console.log("Errore da chiamata API");

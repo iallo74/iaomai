@@ -35,7 +35,6 @@
 		<link href="fonts/stylesheet.css" rel="stylesheet">
         
         <style type="text/css">
-        <!--
 		#schermo_nero{
 			position:fixed;
 			top:0px;
@@ -71,7 +70,6 @@
 			}
 		/*}*/
 		
-		-->
         </style>
        
         <!-- SCRIPTS NECESSARI -->
@@ -373,7 +371,7 @@
             <div id="login" class="popup"> <!-- LOGIN -->
             	<div id="labelLogin" class="popup_label">Login<div class="popup_chiudi" onClick="MENU.chiudiMenu();"></div></div>
             	<div id="contLogin" class="popup_cont">
-                	<form name="loginFrom" id="loginFrom" method="post" onSubmit="return LOGIN.getLogin();"><div><input type="text" name="USR" id="USR"  placeholder="Username" class="okPlaceHolder" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" onFocus="LOGIN.focRic=true;" onBlur="LOGIN.focRic=false;"><div id="USRlabel"><span></span><img src="img/annullaUtente.png" width="20" height="20" onClick="LOGIN.annullaUtente();"></div></div><div><input type="password" name="PWD" id="PWD" placeholder="Password" class="okPlaceHolder" autocomplete="off"></div><div id="loginButCont"><input type="submit" name="loginBut" id="loginBut" value="{{TXT_Accedi}}" /><p><!-- da popolare //--></p></div></form>
+                	<form name="loginFrom" id="loginFrom" method="post" onSubmit="return LOGIN.getLogin();"><div><input type="text" name="USR" id="USR"  placeholder="Username" class="okPlaceHolder" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" onFocus="LOGIN.focRic=true;" onBlur="LOGIN.focRic=false;"><div id="USRlabel"><span></span><div id="usrChange" onClick="LOGIN.annullaUtente();">{{TXT_Disconnetti}}</div></div></div><div><input type="password" name="PWD" id="PWD" placeholder="Password" class="okPlaceHolder" autocomplete="off"><span id="visPwd" onClick="LOGIN.swVisPwd();"></span></div><div id="loginStayConnected"><label for="stayConnected"><input type="checkbox" id="stayConnected" name="stayConnected">{{TXT_StaiConnesso}}</label></div><div id="loginButCont"><input type="submit" name="loginBut" id="loginBut" value="{{TXT_Accedi}}" /><p><!-- da popolare //--></p></div></form>
     <div id="btnRecupero" onClick="LOGIN.recuperaPwd();">{{TXT_PWDdimenticata}}</div>
                 </div>
             </div>

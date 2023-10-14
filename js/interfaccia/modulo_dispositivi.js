@@ -50,6 +50,7 @@ var DISPOSITIVI = {
 	},
 	
 	disconnetti: function( UniqueId ){
+		document.getElementById("dispositivi").classList.add("blur");
 		CONN.caricaUrl(	"logout_device.php",
 						"USR="+encodeURIComponent(DB.login.data.UsernameU) +
 						"&ui_dev="+encodeURIComponent(UniqueId),
@@ -58,10 +59,12 @@ var DISPOSITIVI = {
 	
 	ret_disconnetti: function( txt ){
 		if(txt == 'ok'){
-			ALERT(TXT("MsgLogoutDevices"));
-			MENU.chiudiMenu();
-			MENU.visLogin();
+			//ALERT(TXT("MsgLogoutDevices"));
+			//MENU.chiudiMenu();
+			//MENU.visLogin();
+			LOGIN.getLogin();
 		}else{
+			nasLoader("");
 			ALERT(TXT("ErrLogoutDevices"));
 		}
 	}

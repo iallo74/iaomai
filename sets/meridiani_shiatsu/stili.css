@@ -438,7 +438,7 @@ body:not(.bodyStyled1):not(.bodyStyled2):not(.smart) #p_set{
 }
 body:not(.smart) .listaMeridiani,
 body.smart #elenchi .listaMeridiani{
-	height: calc(100% - 48px) !important;
+	height: 100%;/*calc(100% - 48px) !important;*/
 }
 /* linguetta a destra */
 #lista_meridiani div span { 
@@ -934,9 +934,9 @@ body:not(.smart) #meridianiSmart_cont div:not(.elencoSel):hover{
     background-position: calc(100% - -3px) center;
     text-align: right;
 }
-.listaPatologie{
+/*.listaPatologie{
 	height: calc(100% - 87px);
-}
+}*/
 body:not(.smart) #cambioSistemaMeridiani,
 body.smart #elenchi #cambioSistemaMeridiani{
 	display:none !important;
