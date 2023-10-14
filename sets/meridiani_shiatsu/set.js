@@ -849,7 +849,7 @@ SET = {
 			var sigla = exPt.name.split(".")[1]+"."+pp.siglaMeridiano;
 			if(exPt.userData.hidden && SET.puntiEvidenziati.indexOf(sigla)==-1)exPt.visible = false;
 		}
-		if(SS=scene.getObjectByName( exPt.name.replace("NK.","SS.") )){
+		if(SS=scene.getObjectByName( exPt.name.replace("NK.","SS.").replace("AR.","SS.") )){
 			if(SS.userData.hidden)SS.visible = false;
 		}
 		if(frs = scene.getObjectByName("FR_"+pp.siglaMeridiano)){
@@ -877,7 +877,7 @@ SET = {
 				}
 			}
 		}
-
+		
 		// spengo il pulsante
 		if(this.btnSel)this.btnSel.classList.remove("selElPt");
 		else if(document.getElementById("pt_"+pp.nPunto+"_"+pp.siglaMeridiano+((this.grSel)?"_"+this.grSel:"")))document.getElementById("pt_"+pp.nPunto+"_"+pp.siglaMeridiano+((this.grSel)?"_"+this.grSel:"")).classList.remove("selElPt");
