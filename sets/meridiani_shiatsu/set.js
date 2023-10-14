@@ -254,7 +254,7 @@ SET = {
 
 		// meridiani
 		contPulsanti += '<div id="pulsante_meridiani" class="frdx" onClick="SCHEDA.selElenco(\'meridiani\');">'+TXT("Meridiani")+'</div>';
-		contElenco += '<div id="lista_meridiani"></div>';
+		contElenco += '<div id="lista_meridiani"></div>'; 
 		
 		
 		// patologie
