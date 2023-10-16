@@ -554,10 +554,10 @@ body:not(.smart) .frSu #frSchSu:hover{
     overflow: hidden;
     white-space: nowrap;	
 }
-body:not(.bodyStyled2) .schedaRitorno #scheda_ritorno div{
+body:not(.bodyStyled2):not(.smart) .schedaRitorno #scheda_ritorno div{
     color: #000 !important;
 }
-body:not(.bodyStyled2) .schedaRitorno #scheda_ritorno svg line{
+body:not(.bodyStyled2):not(.smart) .schedaRitorno #scheda_ritorno svg line{
     stroke: #000 !important;
 }
 .schedaRitorno #scheda_ritorno svg{

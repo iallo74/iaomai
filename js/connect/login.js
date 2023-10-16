@@ -37,6 +37,7 @@ var LOGIN = {
 				"LastVer": CONN.VERSIONE,
 				"imgAvatar": "",
 				"logoAzienda": "",
+				"logoConv": "",
 				"password_pazienti": "",
 				"valuta": "EUR",
 				"sistema_misure": "",
@@ -44,6 +45,7 @@ var LOGIN = {
 			}
 		};
 		localPouchDB.setItem(MD5("DB.login"), IMPORTER.COMPR(DB.login));
+		localStorage.logoConv = '';
 	},
 	
 	_frv: function(){ // restituisce 'frv' se non si è loggati
@@ -318,6 +320,14 @@ var LOGIN = {
 			document.getElementById("notLogged").classList.add("visSch");
 		}
 		document.getElementById("nomeUtente").innerHTML=NN;
+		let lg = document.getElementById("logoSovra");
+		if(__(DB.login.data.logoConv)){
+			lg.classList.add("logoConv");
+			lg.style.backgroundImage = "url(img/logoPartner_iaomai.png), url('"+DB.login.data.logoConv+"')";
+		}else{
+			lg.classList.remove("logoConv");
+			lg.style.backgroundImage = "";
+		}
 	},
 	attivaX: function(){ // attiva il pulsante X nel login
 		var USRprovv = DB.login.data.UsernameU;
@@ -353,6 +363,7 @@ var LOGIN = {
 		if(txt.substr(0,3)!='404'){
 			localPouchDB.setItem(MD5("DB.login"), IMPORTER.COMPR(JSON.parse(txt))).then(function(){ // salvo il DB
 				DB.login=JSON.parse(txt);
+				localStorage.logoConv = DB.login.data.logoConv;
 				MODELLO.filtraAnatomia();
 				try{ SET.filtraSet(); }catch(err){}
 				if(LOGIN.retIni){

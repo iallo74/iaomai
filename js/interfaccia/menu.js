@@ -707,7 +707,7 @@ var MENU = {
 		document.getElementById("contImpset").innerHTML = HTML_imp;
 	},
 	checkPatientPwd: function( el ){
-		if(el.checked != (__(DB.login.data.password_pazienti,'0')!='0')){
+		if(el.checked != (__(DB.login.data.password_pazienti,'0')=='1')){
 			document.getElementById("patientPwdField").classList.add("visSch");
 			document.getElementById("patientPwdField").focus();
 			document.getElementById("patientPwdField").disabled = false;

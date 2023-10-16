@@ -894,7 +894,7 @@ var SCHEDA = {
 		document.getElementById("lista_base").classList.remove("noPwd");
 		document.getElementById("patientPwdRequest").type = 'text';
 		document.getElementById("patientPwdRequest").value = '';
-		if(elenco == 'pazienti' && LOGIN.logedin() && __(DB.login.data.password_pazienti,'0')!='0'){
+		if(elenco == 'pazienti' && LOGIN.logedin() && __(DB.login.data.password_pazienti,'0')=='1'){
 			// verifico se serve la password
 			if(!MENU.pwdOK){
 				document.getElementById("lista_base").classList.add("noPwd");

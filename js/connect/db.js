@@ -69,10 +69,10 @@ var DB = {
 	_reset: function(){
 		var pazientiBase = filesBase = serviziBase = fornitoriBase = [];
 		if(typeof(localStorage.dbInizializzato) == 'undefined'){
-			pazientiBase = archiviDemo.pazienti;
+			pazientiBase = archiviDemo[globals.siglaLingua].pazienti;
+			serviziBase = archiviDemo[globals.siglaLingua].servizi;
+			fornitoriBase = archiviDemo[globals.siglaLingua].fornitori;
 			filesBase = archiviDemo.files;
-			serviziBase = archiviDemo.servizi;
-			fornitoriBase = archiviDemo.fornitori;
 		}
 		PAZIENTI.idCL = -1
 		DB.set = [];

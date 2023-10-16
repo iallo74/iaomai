@@ -303,14 +303,27 @@ body:not(.bodyModello).bodyStyled2{
     position: fixed;
     bottom: 0px;
     right: 0px;
-    width: 197px;
     height: 75px;
-    background: url(../img/logo_iaomai.png) no-repeat center center;
+	background-repeat: no-repeat;
+	background-position: center center;
     background-size: auto 75px;
     opacity: 0.7;	
 	z-index:1;
 	opacity:0;
 	/*display:none;*/
+}
+#logoSovra:not(.logoConv){
+    background-image: url(../img/logo_iaomai.png);
+    width: 197px;
+    height: 75px;
+    background-size: auto 75px;
+}
+#logoSovra.logoConv{
+    width: 260px;
+    height: 56px;
+    background-size: auto 56px;
+	background-position: right center, left center !important;
+    margin-right: 5px;
 }
 .bodyStampa #logoSovra{
     bottom:auto !important;
@@ -319,7 +332,7 @@ body:not(.bodyModello).bodyStyled2{
 .bodyStampa #conteiner{
 	border:1px solid rgba(0,0,0,0.1);
 }
-body.bodyStyled2 #logoSovra{
+body.bodyStyled2 #logoSovra:not(.logoConv){
     background-image: url(../img/logo_iaomai_Fondino2.png) !important;
 }
 body:not(.bodyModello) #logoSovra{
@@ -351,12 +364,18 @@ body:not(.bodyModello) #logoSovra{
 	background-size:contain;
 	mix-blend-mode: lighten;
 	margin-top:20px;
-}
-#car_inizio{
 	background-blend-mode: lighten;
 	background-color: #0054a7;
 }
-
+#partner_inizio{
+	position:fixed;
+	bottom:10px;
+	width:100%;
+	height:90px;
+	background-size: auto 90px;
+	background-position: center;
+	background-repeat:no-repeat;
+}
 
 #loader,
 #fileBig,

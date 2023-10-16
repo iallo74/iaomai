@@ -50,6 +50,7 @@ if(location.search){
 		tipoApp = vDef;
 	}
 }
+
 /*const checkOnlineStatus = async () => {
 	try{
 		var t = new Date().getTime();
@@ -170,6 +171,7 @@ var IMPORTER = {
 		}
 	},
 	init: function(){
+		document.getElementById("partner_inizio").style.backgroundImage = "url("+localStorage.logoConv+")";
 		if(window.cordova)this.produzione = true;
 		var UA=navigator.userAgent;
 		if(UA.toLowerCase().indexOf("ipad")>-1)iPad=1;

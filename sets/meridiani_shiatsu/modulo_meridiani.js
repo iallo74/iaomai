@@ -93,12 +93,15 @@ var MODULO_MERIDIANI = { // extend SET
 								if(!gruppoForzato)gruppo += TS.rif.split(".")[1];
 							}
 							seq++;
-							elencoPunti += (!__(DB.set.meridiani[m].punti[nPunto].nascosto,false)) ? '<p>'+this.scriviPunto(nPunto+'.NK. '+TS.NomePunto,true,true,__(TS.siglaPunto),m,gruppo,seq)+'</p>' : "";
+							let pulsantePunto = (!__(DB.set.meridiani[m].punti[nPunto].nascosto,false)) ? '<p>'+this.scriviPunto(nPunto+'.NK. '+TS.NomePunto,true,true,__(TS.siglaPunto),m,gruppo,seq)+'</p>' : "";
+							
 							// verifico le autorizzazioni
+						
 							if(!SET.verFreePunti("NK."+nPunto)){
-								elencoPunti += elencoPunti.replace("pallinoPat","pallinoPat lockedItem");
+								pulsantePunto = pulsantePunto.replace("pallinoPat","pallinoPat lockedItem");
 							}
 							// --------------------------
+							elencoPunti += pulsantePunto;
 						}
 
 						elencoPunti += '</div>';
