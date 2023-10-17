@@ -248,7 +248,7 @@ DB.set = {
 				"44": { //*Tubercolo calcaneare
 					siglaPunto: "NK-44",
 					NomePunto: "Tubercolo calcaneare",
-					AzioniPunto: "<p><b>Localizzazione</b><br>Tre punti posti tra l'area distale e quella prossimale lungo il tubercolo calcaneare e da tre punti situati su entrambi i lati del calcagno, nelle depressioni presenti tra il calcagno e i malleoli mediale e laterale. La pressione è rivolta all'attaccatura del tendine d'Achille, in prossimità dell'inserzione del tricipite della sura.</p><p><b>Applicazioni</b><br />    <span>•</span> lombalgia e sciatica<br />    <span>•</span> dolore al tendine di Achille<br />    <span>•</span> temperatura corporea fredda<br />  <span>•</span> miglioramento della circolazione sanguigna degli arti inferiori<br />  <span>•</span> vene varicose<br />  <span>•</span> squilibri ormonali<br />  <span>•</span> distorsioni della caviglia</p><p class=\"tab_dis dis_ric\"><img src=\"sets/meridiani_shiatsu/img/ricevente_prona_testa_di_fianco.png\"><b>  Posizione del ricevente</b><br />  <span>•</span> in <i>decubito prono</i><br />  <span>•</span> con la faccia rivolta verso l'operatore</p><p class=\"tab_dis dis_ter\"><img src=\"sets/meridiani_shiatsu/img/operatore_seiza.png\"><b>Posizione dell'operatore</b><br />  <span>•</span> posizione<i> seiza</i><br />  <span>•</span> guardando verso i piedi del ricevente</p><p class=\"tab_dis dis_prs\"><img src=\"sets/meridiani_shiatsu/img/pressioni_pollici_ad_A.png\"><b>Tipo di pressione (sul tubercolo calcaneare)</b><br />  <span>•</span> <i>pollici affiancati a forma di A</i><br />  <span>•</span> le altre dita circondano la caviglia per sorreggerla<br />  <span>•</span> con direzione dal tallone alla caviglia<br />  <span>•</span> nell'eseguire le pressioni si effettua una lieve flessione del piede<br />  <b>Ripetizioni</b><b>:</b> 3 volte per 3 secondi</p><p><b>Tipo di pressione (sulle linee laterale e mediale)</b><br />  <span>•</span> <i>pollice singolo (uno per lato simultaneamente)</i><br />  <span>•</span> le altre dita si appoggiano alla pianta del piede<br />  <span>•</span> con direzione dal tallone verso le dita del piede<br />  <span>•</span> le pressioni vengono eseguite allargando leggermente i gomiti<br /><b>Ripetizioni</b><b>:</b> 3 volte per 3 secondi</p>",
+					AzioniPunto: "<p><b>Localizzazione</b><br>Tre punti posti tra l'area distale e quella prossimale lungo il tubercolo calcaneare. La pressione è rivolta all'attaccatura del tendine d'Achille, in prossimità dell'inserzione del tricipite della sura.</p><p><b>Applicazioni</b><br />    <span>•</span> lombalgia e sciatica<br />    <span>•</span> dolore al tendine di Achille<br />    <span>•</span> temperatura corporea fredda<br />  <span>•</span> miglioramento della circolazione sanguigna degli arti inferiori<br />  <span>•</span> vene varicose<br />  <span>•</span> squilibri ormonali<br />  <span>•</span> distorsioni della caviglia</p><p class=\"tab_dis dis_ric\"><img src=\"sets/meridiani_shiatsu/img/ricevente_prona_testa_di_fianco.png\"><b>  Posizione del ricevente</b><br />  <span>•</span> in <i>decubito prono</i><br />  <span>•</span> con la faccia rivolta verso l'operatore</p><p class=\"tab_dis dis_ter\"><img src=\"sets/meridiani_shiatsu/img/operatore_seiza.png\"><b>Posizione dell'operatore</b><br />  <span>•</span> posizione<i> seiza</i><br />  <span>•</span> guardando verso i piedi del ricevente</p><p class=\"tab_dis dis_prs\"><img src=\"sets/meridiani_shiatsu/img/pressioni_pollici_ad_A.png\"><b>Tipo di pressione</b><br />  <span>•</span> <i>pollici affiancati a forma di A</i><br />  <span>•</span> le altre dita circondano la caviglia per sorreggerla<br />  <span>•</span> con direzione dal tallone alla caviglia<br />  <span>•</span> nell'eseguire le pressioni si effettua una lieve flessione del piede<br />  <b>Ripetizioni</b><b>:</b> 3 volte per 3 secondi</p>",
 					ChiaviPunto: ""
 				},
 				"45": { //*Dorso del piede
@@ -296,13 +296,13 @@ DB.set = {
 				"L1": { //Muscolatura paravertebrale
 					siglaPunto: "NK-L1",
 					NomePunto: "Muscolatura paravertevrale",
-					AzioniPunto: "Xxx",
+					AzioniPunto: "<p style=\"font-size:var(--font-20-5);margin-top:0px;font-style:italic;\">Pressione palmare e frizione<br></p><p><b>Localizzazione</b><br>Il trattamento ha azione sui muscoli paravertebrali: spinoso del torace, ileocostale del lombi, lunghissimo del torace e ileocostale del collo.<br></p><p class=\"dis_ric\"><img src=\"sets/meridiani_shiatsu/img/ricevente_laterale_braccio_incrociato.png\"><b>Posizione del ricevente</b><br />  <span>•</span> in <i>decubito laterale lato destro</i><br />  <span>•</span> con la mano dell'arto superiore sn  appoggiata sulla fossa cubitale di quello ds, che rimane appoggiato a terra<br />  <span>•</span> con il busto inclinato a 60° rispetto al pavimento</p><p class=\"dis_ter\"><img src=\"sets/meridiani_shiatsu/img/operatore_arciere.png\"><b>Posizione dell'operatore</b><br />  <span>•</span> posizione ad<i> arciere</i><br />  <span>•</span> ginocchio destro accanto all'anca del ricevente<br />  <span>•</span> l'operatore non deve  cambiare  la sua  posizione rispetto al ricevente a meno che non vi sia sproporzione fra l'altezza dell'operatore e del  ricevente</p><p class=\"dis_prs\"><img src=\"sets/meridiani_shiatsu/img/pressioni_palmo_singolo.png\"><b>Tipo di pressione</b><br>  <span>•</span>  <i>palmare</i>, con una mano sola. La mano sinistra si appoggia alla cresta iliaca sinistra del ricevente.<br />  <span>•</span> con direzione dalla vertebra 7C alla cresta iliaca posteriore.<br />  <span>•</span> l'obiettivo delle pressioni è trattare i muscoli erettori della colonna.<br /><b>Ripetizioni (pressione palmare):</b> 2 volte per 3 secondi<br /><b>Ripetizioni (frizione):</b> 2 volte</p>",
 					ChiaviPunto: ""
 				},
 				"P1": { //Calcaneare laterale e mediale
 					siglaPunto: "NK-P1",
 					NomePunto: "Calcaneare laterale e mediale",
-					AzioniPunto: "Xxx",
+					AzioniPunto: "<p><b>Localizzazione</b><br>Tre punti situati su entrambi i lati del calcagno, nelle depressioni presenti tra il calcagno e i malleoli mediale e laterale.</p><p><b>Applicazioni</b><br />    <span>•</span> lombalgia e sciatica<br />    <span>•</span> cellulite<br />  <span>•</span> miglioramento della circolazione sanguigna degli arti inferiori<br />  <span>•</span> vene varicose<br />  <span>•</span> squilibri ormonali<br />  <span>•</span> distorsioni della caviglia</p><p class=\"tab_dis dis_ric\"><img src=\"sets/meridiani_shiatsu/img/ricevente_prona_testa_di_fianco.png\"><b>  Posizione del ricevente</b><br />  <span>•</span> in <i>decubito prono</i><br />  <span>•</span> con la faccia rivolta verso l'operatore</p><p class=\"tab_dis dis_ter\"><img src=\"sets/meridiani_shiatsu/img/operatore_seiza.png\"><b>Posizione dell'operatore</b><br />  <span>•</span> posizione<i> seiza</i><br />  <span>•</span> guardando verso i piedi del ricevente</p><p class=\"tab_dis dis_prs\"><img src=\"sets/meridiani_shiatsu/img/pressioni_pollice_singolo.png\"><b>Tipo di pressione</b><br />  <span>•</span> <i>pollice singolo (uno per lato simultaneamente)</i><br />  <span>•</span> le altre dita si appoggiano alla pianta del piede<br />  <span>•</span> con direzione dal tallone verso le dita del piede<br />  <span>•</span> le pressioni vengono eseguite allargando leggermente i gomiti<br /><b>Ripetizioni</b><b>:</b> 3 volte per 3 secondi</p>",
 					ChiaviPunto: ""
 				},
 				"P2": { //*Centro della pianta del piede
@@ -314,37 +314,37 @@ DB.set = {
 				"P3": { //Scapole
 					siglaPunto: "NK-P3",
 					NomePunto: "Scapole",
-					AzioniPunto: "Xxx",
+					AzioniPunto: "<p><b>Localizzazione</b><br>In corrispondenza delle scapole.</p><p class=\"tab_dis dis_ric\"><img src=\"sets/meridiani_shiatsu/img/ricevente_prona_testa_di_fianco.png\"><b>  Posizione del ricevente</b><br />  <span>•</span> in <i>decubito prono</i><br />  <span>•</span> con la faccia rivolta verso l'operatore</p><p class=\"tab_dis dis_ter\"><img src=\"sets/meridiani_shiatsu/img/operatore_arciere.png\"><b>Posizione dell'operatore</b><br />  <span>•</span> posizione ad <i>arciere</i><br /><span>•</span> sul lato destro del paziente<br />  <span>•</span> il ginocchio sinistro poggia accanto all'addome del ricevente</p><p class=\"tab_dis dis_prs\"><img src=\"sets/meridiani_shiatsu/img/pressioni_palmo_singolo.png\"><b>Tipo di pressione</b><br />  <span>•</span> <i>palmare e rotatoria verso l'esterno</i><br />  <span>•</span> ogni mano tratta il proprio lato<br /><b>Ripetizioni</b><b>:</b> 3 volte sul lato sinistro, 3 volte sul lato destro e 5 volte simultaneamente</p>",
 					ChiaviPunto: ""
 				},
 				"P4": { //Dorsale laterale
 					siglaPunto: "NK-P4",
 					NomePunto: "Dorsale laterale",
-					AzioniPunto: "Xxx",
+					AzioniPunto: "<p><b>Localizzazione</b><br>In corrispondenza della zona dorso-lombare.</p><p class=\"tab_dis dis_ric\"><img src=\"sets/meridiani_shiatsu/img/ricevente_prona_testa_di_fianco.png\"><b>  Posizione del ricevente</b><br />  <span>•</span> in <i>decubito prono</i><br />  <span>•</span> con la faccia rivolta verso l'operatore</p><p class=\"tab_dis dis_ter\"><img src=\"sets/meridiani_shiatsu/img/operatore_arciere.png\"><b>Posizione dell'operatore</b><br />  <span>•</span> posizione ad <i>arciere</i><br /><span>•</span> sul lato destro del paziente<br />  <span>•</span> il ginocchio sinistro poggia accanto all'anca del ricevente</p><p class=\"tab_dis dis_prs\"><img src=\"sets/meridiani_shiatsu/img/pressioni_palmo_singolo.png\"><b>Tipo di pressione</b><br />  <span>•</span> <i>palmare e con movimento va e vieni</i><br />  <span>•</span> entrambe le mani appoggiate all'area dorso-lombare del ricevente<br /><span>•</span> i pollici stanno sotto le scapole mentre le altre dita premono all'altezza del diaframma<br /><b>Ripetizioni</b><b>:</b> 5 volte verso l'alto e 5 volte verso il basso</p>",
 					ChiaviPunto: ""
 				},
 				"P5": { //Gluteo (pressione rotatoria)
 					siglaPunto: "NK-P5",
 					NomePunto: "Gluteo (pressione rotatoria)",
-					AzioniPunto: "Xxx",
+					AzioniPunto: "<p><b>Localizzazione</b><br>Sul muscolo grande gluteo.</p><p class=\"tab_dis dis_ric\"><img src=\"sets/meridiani_shiatsu/img/ricevente_prona_testa_di_fianco.png\"><b>  Posizione del ricevente</b><br />  <span>•</span> in <i>decubito prono</i><br />  <span>•</span> con la faccia rivolta verso l'operatore</p><p class=\"tab_dis dis_ter\"><img src=\"sets/meridiani_shiatsu/img/operatore_arciere.png\"><b>Posizione dell'operatore</b><br />  <span>•</span> posizione ad <i>arciere</i><br /><span>•</span> sul lato destro del paziente<br />  <span>•</span> il ginocchio sinistro poggia accanto all'anca del ricevente</p><p class=\"tab_dis dis_prs\"><img src=\"sets/meridiani_shiatsu/img/pressioni_palmo_singolo.png\"><b>Tipo di pressione</b><br />  <span>•</span> <i>palmare e rotatoria verso l'esterno</i><br /><span>•</span> ogni mano tratta il proprio lato<br /><span>•</span> l'obiettivo della pressione è liberare e rilassare i muscoli glutei<br /><b>Ripetizioni</b><b>:</b> 3 volte sul lato sinistro, 3 volte sul lato destro e 5 volte simultaneamente</p>",
 					ChiaviPunto: ""
 				},
 				"P6": { //Apofisi trasversa
 					siglaPunto: "NK-P6",
 					NomePunto: "Apofisi trasversa",
-					AzioniPunto: "Xxx",
+					AzioniPunto: "<p><b>Localizzazione</b><br>Sulle apofisi trasverse delle vertebre.</p><p class=\"tab_dis dis_ric\"><img src=\"sets/meridiani_shiatsu/img/ricevente_prona_testa_di_fianco.png\"><b>  Posizione del ricevente</b><br />  <span>•</span> in <i>decubito prono</i><br />  <span>•</span> con la faccia rivolta verso l'operatore</p><p class=\"tab_dis dis_ter\"><img src=\"sets/meridiani_shiatsu/img/operatore_seiza.png\"><b>Posizione dell'operatore</b><br />  <span>•</span> posizione <i>seiza</i><br /><span>•</span> sul lato destro del ricevente<br />  <span>•</span> di fornte alla sua schieena</p><p class=\"tab_dis dis_prs\"><img src=\"sets/meridiani_shiatsu/img/pressioni_palmi_uniti.png\"><b>Tipo di pressione</b><br />  <span>•</span> <i>con i palmi uniti con movimento va e vieni</i><br /><span>•</span> entrambe le man su ogni punto<br /><span>•</span> con direzione dalla zona interscapolare verso quella lombare<br /><span>•</span> l'obiettivo della pressione è sbloccare e liberaare le faccette articolari delle vertebre<br /><b>Ripetizioni</b><b>:</b> 1 volte su ogni punto esercitanto 4 volte il movimento di va e vieni</p>",
 					ChiaviPunto: ""
 				},
 				"P7": { //Colonna vertebrale
 					siglaPunto: "NK-P7",
 					NomePunto: "Colonna vertebrale",
-					AzioniPunto: "Xxx",
+					AzioniPunto: "<p><b>Localizzazione</b><br>Lungo la colonna vertebrale</p><p class=\"tab_dis dis_ric\"><img src=\"sets/meridiani_shiatsu/img/ricevente_prona_testa_di_fianco.png\"><b>  Posizione del ricevente</b><br />  <span>•</span> in <i>decubito prono</i><br />  <span>•</span> con la faccia rivolta verso l'operatore</p><p class=\"tab_dis dis_ter\"><img src=\"sets/meridiani_shiatsu/img/operatore_arciere.png\"><b>Posizione dell'operatore</b><br />  <span>•</span> posizione ad <i>arciere</i><br /><span>•</span> sul lato destro del paziente<br />  <span>•</span> il ginocchio sinistro poggia accanto all'anca del ricevente</p><p class=\"tab_dis dis_prs\"><img src=\"sets/meridiani_shiatsu/img/pressioni_palmi_sovrapposti.png\"><b>Tipo di pressione</b><br />  <span>•</span> <i>palmare e con le mani incrociate</i><br />  <span>•</span> mano sinistra sotto<br /><span>•</span> il dito medio della mano sinistra allineato alle apofisi trasverse<br /><b>Ripetizioni</b><b>:</b> 2 volte per 3 secondi</p>",
 					ChiaviPunto: ""
 				},
 				"P8": { //Stimolazione dei nervi spinali
 					siglaPunto: "NK-P8",
 					NomePunto: "Stimolazione dei nervi spinali",
-					AzioniPunto: "Xxx",
+					AzioniPunto: "<p><b>Localizzazione</b><br>Lungo la colonna vertebrale</p><p class=\"tab_dis dis_ric\"><img src=\"sets/meridiani_shiatsu/img/ricevente_prona_testa_di_fianco.png\"><b>  Posizione del ricevente</b><br />  <span>•</span> in <i>decubito prono</i><br />  <span>•</span> con la faccia rivolta verso l'operatore</p><p class=\"tab_dis dis_ter\"><img src=\"sets/meridiani_shiatsu/img/operatore_arciere.png\"><b>Posizione dell'operatore</b><br />  <span>•</span> posizione ad <i>arciere</i><br /><span>•</span> sul lato destro del paziente<br />  <span>•</span> il ginocchio sinistro poggia accanto all'anca del ricevente</p><p class=\"tab_dis dis_prs\"><img src=\"sets/meridiani_shiatsu/img/pressioni_palmi_sovrapposti.png\"><b>Tipo di pressione</b><br />  <span>•</span> <i>palmare e con le mani incrociate</i><br />  <span>•</span> mano sinistra sotto<br /><span>•</span> il dito medio della mano sinistra allineato alle apofisi trasverse<br /><span>•</span> effettuare una frizione dalla settima cervicale fino al sacro<br /><span>•</span> l'obiettivo della pressione è stimolare le terminazioni nervose dei nervi spinali<br /><b>Ripetizioni</b><b>:</b> 3</p>",
 					ChiaviPunto: ""
 				},
 				"P9": { //*Laterale e mediale della gamba
@@ -356,93 +356,93 @@ DB.set = {
 				"S1": { //Esercizio dita - Articolazioni
 					siglaPunto: "NK-S1",
 					NomePunto: "Esercizio dita - Articolazioni",
-					AzioniPunto: "Xxx",
+					AzioniPunto: "<p><b>Applicazioni</b><br /><span>•</span> ansia e stress<br />  <span>•</span> regola la digestione<br />  <span>•</span> regola l'apparato escretore<br /><span>•</span> stimola le funzioni cerebrali<br />  <span>•</span> previene la demenza senile</p><p class=\"tab_dis dis_ric\"><img src=\"sets/meridiani_shiatsu/img/ricevente_supina.png\"><b>  Posizione del ricevente</b><br /><span>•</span> in <i>decubito supino</i><br />  <span>•</span> con le gambe e le braccia distese parallele lungo il corpo<br />  <span>•</span> cuscino opzionale</p><p class=\"tab_dis dis_ter\"><img src=\"sets/meridiani_shiatsu/img/operatore_seiza.png\"><b>Posizione dell'operatore</b><br />  <span>•</span> posizione<i> seiza</i><br /><span>•</span> lateralmente alla zona da trattare</p><p class=\"tab_dis dis_prs\"><b>Tipo di movimento</b><br />  <span>•</span> la mano sinistra avvolge le dita del piede<br /><span>•</span> l'altra mano sostiene la caviglia<br />  <span>•</span> alternare una flessione e un'estensione<br />  <span>•</span> movimenti ritmici e veloci<br />  <b>Ripetizioni</b><b>:</b> 10 volte</p>",
 					ChiaviPunto: ""
 				},
 				"S2": { //Estensione plantare
 					siglaPunto: "NK-S2",
 					NomePunto: "Estensione plantare",
-					AzioniPunto: "Xxx",
+					AzioniPunto: "<p><b>Applicazioni</b><br /><span>•</span> ansia e stress<br />  <span>•</span> regola la digestione<br />  <span>•</span> regola l'apparato escretore<br /><span>•</span> stimola le funzioni cerebrali<br />  <span>•</span> previene la demenza senile</p><p class=\"tab_dis dis_ric\"><img src=\"sets/meridiani_shiatsu/img/ricevente_supina.png\"><b>  Posizione del ricevente</b><br /><span>•</span> in <i>decubito supino</i><br />  <span>•</span> con le gambe e le braccia distese parallele lungo il corpo<br />  <span>•</span> cuscino opzionale</p><p class=\"tab_dis dis_ter\"><img src=\"sets/meridiani_shiatsu/img/operatore_seiza.png\"><b>Posizione dell'operatore</b><br />  <span>•</span> posizione<i> seiza</i><br /><span>•</span> lateralmente alla zona da trattare</p><p class=\"tab_dis dis_prs\"><b>Tipo di movimento</b><br />  <span>•</span> la mano sinistra appoggia sull'eminenza metatarsiana del piede<br /><span>•</span> l'altra mano sostiene la caviglia<br />  <span>•</span> effettuare una flessione del piede mantenendo al pressione<br />  <b>Ripetizioni</b><b>:</b> 1 volta per 10 secondi</p>",
 					ChiaviPunto: ""
 				},
 				"S3": { //Stiramento della gamba
 					siglaPunto: "NK-S3",
 					NomePunto: "Stiramento della gamba",
-					AzioniPunto: "Xxx",
+					AzioniPunto: "<p><b>Applicazioni</b><br /><span>•</span> ansia e stress<br />  <span>•</span> migliora la circolazione sanguigna<br />  <span>•</span> problemi all'articolazione coxo-femorale<br /><span>•</span> migliora la digestione e regola gli intestini<br />  <span>•</span> lombalgia e sciatalgia</p><p class=\"tab_dis dis_ric\"><img src=\"sets/meridiani_shiatsu/img/ricevente_supina.png\"><b>  Posizione del ricevente</b><br /><span>•</span> in <i>decubito supino</i><br />  <span>•</span> con le gambe e le braccia distese parallele lungo il corpo<br />  <span>•</span> cuscino opzionale</p><p class=\"tab_dis dis_ter\"><img src=\"sets/meridiani_shiatsu/img/operatore_seiza.png\"><b>Posizione dell'operatore</b><br />  <span>•</span> posizione<i> seiza</i><br /><span>•</span> davanti ai piedi del paziente<br /><span>•</span> il tallone dell'arto non trattato appoggiato sul ginocchio dell'operatore in modo da fare restitenza</p><p class=\"tab_dis dis_prs\"><b>Tipo di movimento</b><br />  <span>•</span> sollevare l'arto di circa 20 centimetri<br /><span>•</span> afferrare la caviglia con entrambe le mani<br />  <span>•</span> flettere il busto indietro ed effettuare la trazione<br />  <b>Ripetizioni</b><b>:</b> 1 volta per 5 secondi</p>",
 					ChiaviPunto: ""
 				},
 				"S4": { //Ascellare
 					siglaPunto: "NK-S4",
 					NomePunto: "Ascellare",
-					AzioniPunto: "Xxx",
+					AzioniPunto: "<p><b>Localizzazione</b><br>Un solo punto al centro dell'ascella. Corrisponde al primo punto della regione brachiale mediale.</p><p><b>Applicazioni</b><br>  <span>•</span> epicondilite (gomito del tennista)<br /><span>•</span> stress e ansia<br /><span>•</span> spalla congelata<br /><span>•</span> sindrome cervico-brachiale</p><p class=\"tab_dis dis_ric\"><img src=\"sets/meridiani_shiatsu/img/ricevente_supina_braccio_90.png\"><b>Posizione del ricevente</b><br />  <span>•</span> in <i>decubito supino</i><br />  <span>•</span> gambe distese<br />  <span>•</span> braccio a 90° con palmo rivolto verso l'alto<br />  <span>•</span> cuscino opzionale</p><p class=\"tab_dis dis_ter\"><img src=\"sets/meridiani_shiatsu/img/operatore_seiza.png\"><b>Posizione dell'operatore</b><br /><span>•</span> posizione<i> seiza </i><br />  <span>•</span> davanti alla zona da trattare</p><p class=\"tab_dis dis_prs\"><img src=\"sets/meridiani_shiatsu/img/pressioni_pollici_a_V.png\"><b>Tipo di pressione</b><br>  <span>•</span>  <i>pollici sovrapposti a forma di V</i><br />    <span>•</span> pollice sinistro sul destro<br><b>Ripetizioni:</b> 3 volte per 5 secondi</p>",
 					ChiaviPunto: "",
 					rif: "27.a"
 				},
 				"S5": { //Palmare centrale
 					siglaPunto: "NK-S5",
 					NomePunto: "Palmare centrale",
-					AzioniPunto: "Xxx",
+					AzioniPunto: "<p><b>Localizzazione</b><br>Un solo punto situato al centro della linea che trova origine dalla regione carpale all'area immediatamente prossimale rispetto all'articolazione metacarpo-falangea del medio.</p><p><b>Applicazioni</b><br />  <span>•</span> stress e ansia<br />   <span>•</span> regola la pressione arteriosa<br />  <span>•</span> dolore al capo</p><p class=\"tab_dis dis_ric\"><img src=\"sets/meridiani_shiatsu/img/ricevente_supina_braccio_45_disteso.png\"><b>Posizione del ricevente</b><br />  <span>•</span> in <i>decubito supino</i><br />  <span>•</span> gambe distese<br />   <span>•</span> braccio  a 45° con il palmo in su<br />  <span>•</span> cuscino opzionale</p><p class=\"tab_dis dis_ter\"><img src=\"sets/meridiani_shiatsu/img/operatore_seiza.png\"><b>Posizione dell'operatore</b><br /><span>•</span> posizione<i> seiza</i><br />  <span>•</span> di fronte alla zona da trattare</p><p class=\"tab_dis dis_prs\"><img src=\"sets/meridiani_shiatsu/img/pressioni_pollici_ad_A.png\"><b>Tipo di pressione</b><br>   <span>•</span>  <i>pollici affiancati a forma di A</i><br /><span>•</span> con direzione dal carpo verso il dito medio<br />   <span>•</span> eseguire una leggera trazione della mano ad ogni pressione<br />   <span>•</span> l'obiettivo della pressione e trattare i muscoli interossei palmari<br />  <b>Ripetizioni:</b> 3 volte per 5 secondi</p>",
 					ChiaviPunto: "",
 					rif: "31.a"
 				},
 				"S6": { //Stiramento del braccio
 					siglaPunto: "NK-S6",
 					NomePunto: "Stiramento del braccio",
-					AzioniPunto: "Xxx",
+					AzioniPunto: "<p><b>Applicazioni</b><br />  <span>•</span> stress mentale<br />   <span>•</span> regola la pressione arteriosa<br /><span>•</span> problemi respiratori<br /><span>•</span> giova all'articolazione della spalla</p><p class=\"tab_dis dis_ric\"><img src=\"sets/meridiani_shiatsu/img/ricevente_supina_braccio_45_disteso.png\"><b>Posizione del ricevente</b><br />  <span>•</span> in <i>decubito supino</i><br />  <span>•</span> cuscino opzionale</p><p class=\"tab_dis dis_ter\"><img src=\"sets/meridiani_shiatsu/img/operatore_arciere.png\"><b>Posizione dell'operatore</b><br /><span>•</span> posizione ad <i> arciere</i> (o in piedi)</p><p class=\"tab_dis dis_prs\"><b>Stiramento</b><br>   <span>•</span> stiramento verso i piedi<br /><span>•</span> con il braccio al di sopra della testa del ricevente, stiramento verso l'alto (135°)<br />   <span>•</span> sostenere il polso con la mano destra e eseguire 3 frizioni sull'ascella del ricevente<br /><span>•</span> sostenere il polso con entrambe le mani, posizionare il braccio a 180° ed effettuare uno stiramento di 5 secondi<br /><span>•</span> alzarsi in piedi ed eseguire uno stiramento verso il cielo, a formare un angolo di 90° con il pavimento<br /><span>•</span> riportare l'arto superiore nella sua posizione originale</p>",
 					ChiaviPunto: ""
 				},
 				"92": { //Pressioni sui bulbi oculari
 					siglaPunto: "NK-92",
 					NomePunto: "Pressioni sui bulbi oculari",
-					AzioniPunto: "Xxx",
+					AzioniPunto: "<p class=\"tab_dis dis_ric\"><img src=\"sets/meridiani_shiatsu/img/ricevente_supina_braccio_45_disteso.png\"><b>Posizione del ricevente</b><br />  <span>•</span> in <i>decubito supino</i><br /><span>•</span> gambe e braccia distese<br /><span>•</span> cuscino opzionale</p><p class=\"tab_dis dis_ter\"><img src=\"sets/meridiani_shiatsu/img/operatore_seiza.png\"><b>Posizione dell'operatore</b><br /><span>•</span> posizione  <i> seiza</i> di fronte alla zona da trattare</p><p class=\"tab_dis dis_prs\"><img src=\"sets/meridiani_shiatsu/img/pressioni_palmo_singolo.png\"><b>Tipo di pressione</b><br>   <span>•</span> <i>palmare</i>, con le dita delle mani unite al centro del viso<br /><span>•</span> effettuare una leggera pressione simultanea sui bulbi oculari<br />   <span>•</span> N.B. evitare la pressione su riceventi che portano lenti a contatto, con glaucoma o con problemi di vista<br><b>Ripetizioni:</b> 1 volta per 10 secondi</p>",
 					ChiaviPunto: ""
 				},
 				"89": { //Pettorale - Pressione circolare
 					siglaPunto: "NK-89",
 					NomePunto: "Pettorale - Pressione circolare",
-					AzioniPunto: "Xxx",
+					AzioniPunto: "<p><b>Localizzazione</b><br>Sul muscolo grande pettorale</p><p><b>Applicazioni</b><br>   <span>•</span> ansia e stress<br><span>•</span> problemi respiratori  </p><p class=\"dis_ric\"><img src=\"sets/meridiani_shiatsu/img/ricevente_supina.png\"><b>Posizione del ricevente</b><br /><span>•</span> in <i>decubito supino</i><br /><span>•</span> gambe distese<br /><span>•</span> cuscino opzionale</p><p class=\"dis_ter\"><img src=\"sets/meridiani_shiatsu/img/operatore_seiza.png\"><b>Posizione dell'operatore</b><br /><span>•</span> posizione <i>seiza</i><br /><span>•</span> di fronte alla zona da trattare</p><p class=\"dis_prs\"><img src=\"sets/meridiani_shiatsu/img/pressioni_palmo_singolo.png\"><b>Tipo di pressione</b><br>  <span>•</span>  <i>palmare</i><br /><span>•</span> effettuare una pressione circolare simultanea su entrami i muscoli pettorali<br><b>Ripetizioni:</b> 10 volte</p>",
 					ChiaviPunto: ""
 				},
 				"T2": { //Pettorale - Pressione discendente
 					siglaPunto: "NK-T2",
 					NomePunto: "Pettorale - Pressione discendente",
-					AzioniPunto: "Xxx",
+					AzioniPunto: "<p><b>Localizzazione</b><br>Sul muscolo grande pettorale</p><p><b>Applicazioni</b><br>   <span>•</span> ansia e stress<br><span>•</span> problemi respiratori  </p><p class=\"dis_ric\"><img src=\"sets/meridiani_shiatsu/img/ricevente_supina.png\"><b>Posizione del ricevente</b><br /><span>•</span> in <i>decubito supino</i><br /><span>•</span> gambe distese<br /><span>•</span> cuscino opzionale</p><p class=\"dis_ter\"><img src=\"sets/meridiani_shiatsu/img/operatore_seiza.png\"><b>Posizione dell'operatore</b><br /><span>•</span> posizione <i>seiza</i><br /><span>•</span> di fronte alla zona da trattare</p><p class=\"dis_prs\"><img src=\"sets/meridiani_shiatsu/img/pressioni_palmo_singolo.png\"><b>Tipo di pressione</b><br>  <span>•</span>  <i>palmare</i><br /><span>•</span> effettuare una pressione longitudinale seguendo i movimenti espiratori del ricevente<br /><span>•</span> la pressione deve essrere contemporaneamente longitudinale (verso i piedi) e verso l'esterno come pre separare i muscoli pettorali<br><b>Ripetizioni:</b> 2 volte</p>",
 					ChiaviPunto: ""
 				},
 				"A1": { //Addome - Pressione ondulatoria
 					siglaPunto: "NK-A1",
 					NomePunto: "Addome - Pressione ondulatoria",
-					AzioniPunto: "Xxx",
+					AzioniPunto: "<p><b>Applicazioni</b><br>   <span>•</span> rilassa la zona addominale<br><span>•</span> giova agli organi addominali</p><p class=\"dis_ric\"><img src=\"sets/meridiani_shiatsu/img/ricevente_supina.png\"><b>Posizione del ricevente</b><br /><span>•</span> in <i>decubito supino</i><br /><span>•</span> gambe distese<br /><span>•</span> cuscino opzionale</p><p class=\"dis_ter\"><img src=\"sets/meridiani_shiatsu/img/operatore_seiza.png\"><b>Posizione dell'operatore</b><br /><span>•</span> posizione <i>seiza</i><br /><span>•</span> sul lato destro del ricevente<br /><span class=\"dis_ter\"><span>•</span> di fronte alla zona da trattare</span></p><p class=\"dis_prs\"><img src=\"sets/meridiani_shiatsu/img/pressioni_palmo_singolo.png\"><b>Tipo di pressione</b><br>  <span>•</span>  <i>palmare</i><br /><span>•</span> appoggiare entrambi i palimi sulla zona addominale in corrispondenza dell'ombelico<br /><span>•</span> con un movimento alternato tirare il colon disendente con le dita e spingere il colon ascendente con le aminenze delle mani<br><b>Ripetizioni:</b> 5 volte</p>",
 					ChiaviPunto: ""
 				},
 				"A2": { //Addome - Pressione circolare vibratoria
 					siglaPunto: "NK-A2",
 					NomePunto: "Addome - Pressione circolare e vibratoria",
-					AzioniPunto: "Xxx",
+					AzioniPunto: "<p><b>Applicazioni</b><br>   <span>•</span> rilassa la zona addominale<br><span>•</span> giova agli organi addominali</p><p class=\"dis_ric\"><img src=\"sets/meridiani_shiatsu/img/ricevente_supina.png\"><b>Posizione del ricevente</b><br /><span>•</span> in <i>decubito supino</i><br /><span>•</span> gambe distese<br /><span>•</span> cuscino opzionale</p><p class=\"dis_ter\"><img src=\"sets/meridiani_shiatsu/img/operatore_seiza.png\"><b>Posizione dell'operatore</b><br /><span>•</span> posizione <i>seiza</i><br /><span>•</span> sul lato destro del ricevente<br /><span class=\"dis_ter\"><span>•</span> di fronte alla zona da trattare</span></p><p class=\"dis_prs\"><img src=\"sets/meridiani_shiatsu/img/pressioni_palmo_singolo.png\"><b>Tipo di pressione</b><br>  <span>•</span>  <i>palmare</i><br /><span>•</span> appoggiare entrambi i palimi sulla zona addominale in corrispondenza dell'ombelico<br /><span>•</span> con le mani ferme nello stesso posto effettuare una pressione leggera ma profonda, applicandola in modo circolare in senso orario<br /><span>•</span> al termine delle pressioni circolari effettuanre una vibrazione estendendo gli avambracci<br><b>Ripetizioni (pressione circolatoria):</b> 10 volte<br /><b>Ripetizioni (pressione vibratoria):</b> 10 secondi</p>",
 					ChiaviPunto: ""
 				},
 				"99": { //Spina iliaca antero-superiore
 					siglaPunto: "NK-99",
 					NomePunto: "Spina iliaca antero-superiore",
-					AzioniPunto: "Xxx",
+					AzioniPunto: "<p><b>Applicazioni</b><br>   <span>•</span> rilassa la zona addominale<br><span>•</span> giova agli organi addominali</p><p class=\"dis_ric\"><img src=\"sets/meridiani_shiatsu/img/ricevente_supina.png\"><b>Posizione del ricevente</b><br /><span>•</span> in <i>decubito supino</i><br /><span>•</span> gambe distese<br /><span>•</span> cuscino opzionale</p><p class=\"dis_ter\"><img src=\"sets/meridiani_shiatsu/img/operatore_arciere.png\"><b>Posizione dell'operatore</b><br /><span>•</span> posizione ad <i>arciere</i><br /><span>•</span> con il ginocchio appoggiato di fianco alla coscia del ricevente</p><p class=\"dis_prs\"><img src=\"sets/meridiani_shiatsu/img/pressioni_eminenza_tenar.png\"><b>Tipo di pressione</b><br>  <span>•</span>  <i>palmare</i>, con l'eminenza tenar<br /><span>•</span> appoggiare entrambe le eminenze tenar dei palmi nello spazio all'interno delle creste iliache<br /><span>•</span> premere alterenatamente prima la destra e poi la sinistra effettuando un movimento ritmico<br><b>Ripetizioni:</b> 5 volte (per ogni lato)  per 1 secondo</p>",
 					ChiaviPunto: ""
 				},
 				"A3": { //Addome - Spinta verso l'alto
 					siglaPunto: "NK-A3",
 					NomePunto: "Addome - Spinta verso l'alto",
-					AzioniPunto: "Xxx",
+					AzioniPunto: "<p><b>Applicazioni</b><br>   <span>•</span> rilassa la zona addominale<br><span>•</span> giova agli organi addominali</p><p class=\"dis_ric\"><img src=\"sets/meridiani_shiatsu/img/ricevente_supina.png\"><b>Posizione del ricevente</b><br /><span>•</span> in <i>decubito supino</i><br /><span>•</span> gambe distese<br /><span>•</span> cuscino opzionale</p><p class=\"dis_ter\"><img src=\"sets/meridiani_shiatsu/img/operatore_arciere.png\"><b>Posizione dell'operatore</b><br /><span>•</span> posizione ad <i>arciere</i><br /><span>•</span> con il ginocchio appoggiato di fianco alla coscia del ricevente</p><p class=\"dis_prs\"><img src=\"sets/meridiani_shiatsu/img/pressioni_tre_dita_singola.png\"><b>Tipo di pressione</b><br>  <span>•</span>  <i>4 dita unite</i><br /><span>•</span> appoggianre le mani sotto la schiena, ad ogni lato della colonna vertebrale e in corrispondenza della terza vertebra lombare (in corrispondenza dell'ombelico)<br /><span>•</span> con il dorso della mano che resta appoggiato al pavimento, effettuare delle pressioni verso l'alto con le 4 dita di ogni mano<br><b>Ripetizioni:</b> 3 volte</p>",
 					ChiaviPunto: ""
 				},
 				"94": { //Addominale laterale
 					siglaPunto: "NK-94",
 					NomePunto: "Addominale laterale",
-					AzioniPunto: "Xxx",
+					AzioniPunto: "<p><b>Applicazioni</b><br>   <span>•</span> rilassa la zona addominale<br><span>•</span> giova agli organi addominali</p><p class=\"dis_ric\"><img src=\"sets/meridiani_shiatsu/img/ricevente_supina.png\"><b>Posizione del ricevente</b><br /><span>•</span> in <i>decubito supino</i><br /><span>•</span> gambe distese<br /><span>•</span> cuscino opzionale</p><p class=\"dis_ter\"><img src=\"sets/meridiani_shiatsu/img/operatore_arciere.png\"><b>Posizione dell'operatore</b><br /><span>•</span> posizione ad <i>arciere</i><br /><span>•</span> con il ginocchio appoggiato di fianco alla coscia del ricevente</p><p class=\"dis_prs\"><img src=\"sets/meridiani_shiatsu/img/pressioni_palmo_singolo.png\"><b>Tipo di pressione</b><br>  <span>•</span>  <i>palmare</i><br /><span>•</span> appoggianre le mani sulla regione addominale laterale del ricevente<br /><span>•</span> effettuare una pressione con una trazione veloce verso l'alto, contemporaneamente da entrambi i lati<br><b>Ripetizioni:</b> 3 volte</p>",
 					ChiaviPunto: ""
 				},
 				"A5": { //Addome - Sfioramento e pressione vibratoria
 					siglaPunto: "NK-A5",
 					NomePunto: "Addome - Sfioramento e pressione vibratoria",
-					AzioniPunto: "Xxx",
+					AzioniPunto: "<p><b>Applicazioni</b><br>   <span>•</span> rilassa la zona addominale<br><span>•</span> giova agli organi addominali</p><p class=\"dis_ric\"><img src=\"sets/meridiani_shiatsu/img/ricevente_supina.png\"><b>Posizione del ricevente</b><br /><span>•</span> in <i>decubito supino</i><br /><span>•</span> gambe distese<br /><span>•</span> cuscino opzionale</p><p class=\"dis_ter\"><img src=\"sets/meridiani_shiatsu/img/operatore_arciere.png\"><b>Posizione dell'operatore</b><br /><span>•</span> posizione ad <i>arciere</i><br /><span>•</span> con il ginocchio appoggiato di fianco alla coscia del ricevente</p><p class=\"dis_prs\"><img src=\"sets/meridiani_shiatsu/img/pressioni_palmo_singolo.png\"><b>Tipo di pressione</b><br>  <span>•</span>  <i>palmare</i><br /><span>•</span> con le dita di entrambe le mani effettuare uno sfioramento partendo alla zona epigastrica verso il pube, con una pressione veloce e lieve<br /><span>•</span> concludere con una pressione sull'ombelico esercitata con i palmi incrociati<br><b>Ripetizioni (sfioramento):</b> 10 volte<br /><b>Ripetizioni (vibrazione):</b> 10 secondi</p>",
 					ChiaviPunto: ""
 				}
 			}

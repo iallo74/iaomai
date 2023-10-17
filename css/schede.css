@@ -421,19 +421,23 @@ body:not(.smart) #scheda.schForm:not(.schedaRitorno):not(.minimized):not(.tab_pu
 .smart #scheda_titolo{
 	width: calc(100% - 75px);
     cursor: default !important;
-    text-align: center;
+    text-align: center !important;
 	padding-left: 44px !important;
 }
 .smart.bodyModello #scheda_titolo{
 	width: calc(100% - 120px) !important;
 }
-.smart:not(.bodyModello) .tab_punti #scheda_titolo{
+.smart:not(.bodyModello) .tab_punti:not(.schedaRitorno) #scheda_titolo{
 	padding-left:25px !important;
 	padding-right:85px !important;
 }
-.smart.bodyModello .tab_punti #scheda_titolo{
+.smart.bodyModello .tab_punti:not(.schedaRitorno) #scheda_titolo{
 	padding-left:13px !important;
-	padding-right:125px !important;
+	padding-right:85px !important;
+}
+.smart .tab_punti.schedaRitorno #scheda_titolo{
+	padding-left:13px !important;
+	padding-right:13px !important;
 }
 #scheda_modello,
 #scheda_back{
@@ -592,8 +596,11 @@ body:not(.smart) .schedaRitorno #scheda_titolo{
 	width: calc(100% - 153px) !important;
 	margin-right:26px;
 }
-.smart #scheda.schedaRitorno #scheda_titolo{
+.smart.bodyModello #scheda.schedaRitorno #scheda_titolo{
 	width: calc(100% - 210px) !important;
+}
+.smart.smart:not(.bodyModello) #scheda.schedaRitorno #scheda_titolo{
+	width: calc(100% - 160px) !important;
 }
 .smart #scheda.visSch #scheda_titolo,
 .smart #scheda.visSch.schedaRitorno #scheda_ritorno{

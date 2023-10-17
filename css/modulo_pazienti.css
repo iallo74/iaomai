@@ -1709,8 +1709,9 @@ body:not(.smart) #rgApplicaFiltri{
 	/*width: 240px;*/
     height: 78px;
     white-space: normal;
-    text-align: left;
+    /* text-align: left; */
     border-radius: 10px;
+	max-width: 250px;
 }
 #tt_mezzival span,
 #tt_mezzival2 span{

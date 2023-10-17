@@ -1,7 +1,7 @@
 @charset "utf-8";
 /* CSS Document */
 
-.impSet{
+body:not(.smart) .impSet{
     height: 510px !important;
     margin-top: -255px !important;
 }
@@ -405,6 +405,9 @@ body:not(.bodyStyled1):not(.bodyStyled2):not(.smart) #p_set{
 	height:40px;
 	overflow:hidden;
 }
+.smart.android .sequenze_nmk:not(.vis_apparati){
+	height: 50px;
+}
 .sequenze_nmk.vis_apparati .labelSequenza{
     background-image: url(../../img/frSuB.png), linear-gradient(to bottom, #FFF 0%,#EEE 100%) !important;
 }
@@ -416,6 +419,7 @@ body:not(.bodyStyled1):not(.bodyStyled2):not(.smart) #p_set{
 	padding:10px 0 5px 5px;
 	color:rgba(255,255,255,0.7);
 }
+
 #meridianiSmart_cont:not(.onlyCIN) .noMAS,
 #meridianiSmart_cont.onlyNMK > .noNMK,
 .listaMeridiani:not(.onlyCIN) .noMAS,

@@ -892,6 +892,47 @@ var MENU = {
 		document.getElementById("tooltipmenu_txt").innerHTML='';
 		document.getElementById("tooltipmenu").style.left='-500px';
 		document.getElementById("tooltipmenu").style.top='-500px';
+	},
+
+	backButton: function(){ //  gestione del back button di android
+		//Fare il controllo in questo ordine:
+		//popupaperto > deve chiuderlo
+		let pps = document.getElementsByClassName("popup");
+		let ppOp = false;
+		for(let p in pps){
+			if(pps[p].classList){
+				if(pps[p].classList.contains("visSch"))ppOp = true;
+			}
+		}
+		if(ppOp)MENU.chiudiMenu();
+		
+		//scheda aperta nascosta (con l'occhietto) > deve tornare alla scheda:
+		else if(	document.getElementById("scheda").classList.contains("visSch") &&
+					document.body.classList.contains("nasSch") )SCHEDA.riapriScheda();
+		
+		//scheda 2 aperta > deve chiudere la scheda 2
+		else if(	document.getElementById("scheda").classList.contains("visSch") &&
+					!document.body.classList.contains("nasSch") && 
+					document.getElementById("scheda").classList.contains("schedaRitorno") )document.getElementById("scheda_ritorno").click()
+	
+		//scheda aperta > deve chiudere la scheda
+		else if(	document.getElementById("scheda").classList.contains("visSch") &&
+					!document.body.classList.contains("nasSch") && 
+					!document.getElementById("scheda").classList.contains("schedaRitorno") )SCHEDA.scaricaScheda();
+		
+		//menu livello 1 > deve chiudere il menu: 
+		else if(	document.getElementById("elenchi").classList.contains("visSch") &&
+					!document.getElementById("elenchi").classList.contains("LISTE") )SCHEDA.chiudiElenco();
+		
+		//menu livello 2 > deve passare al livello 1: 
+		else if(	document.getElementById("elenchi").classList.contains("visSch") &&
+					document.getElementById("elenchi").classList.contains("LISTE") )SCHEDA.swPulsanti();
+		
+		//una delle schede: impostazioni, ag o schedaGlobal 
+		else if(	document.getElementById("impostazioni").classList.contains("visSch") ||
+					document.getElementById("ag").classList.contains("visSch") ||
+					document.getElementById("schedaGlobal").classList.contains("visSch") )MENU.chiudiMenu();
+		
 	}
 }
 

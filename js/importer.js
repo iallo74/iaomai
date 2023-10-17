@@ -235,7 +235,7 @@ var IMPORTER = {
 		document.addEventListener('backbutton', function (e) {
 			//uscitaESC();
 			if (window.cordova && window.cordova.platformId !== 'windows'){
-				backButton();
+				MENU.backButton();
 				return;
 			}
 			if (window.location.href) {
@@ -533,10 +533,6 @@ function bringBackDefault(event) {
   event.cancelBubble(); 
 } 
 
-function backButton(){
-	// futura integrazione
-	 
-}
 
 /*window.onerror = (message, source, lineno, colno, error) => {
 	if(error==null)var error = '';
