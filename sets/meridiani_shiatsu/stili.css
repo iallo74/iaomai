@@ -380,6 +380,18 @@ body:not(.bodyStyled1):not(.bodyStyled2):not(.smart) #p_set{
 	cursor:pointer;
 	margin-bottom:5px !important;
 }
+.smart.android .labelSequenza{
+	height:50px !important;
+	line-height:50px !important;
+	background-size:auto 46px, auto;
+}
+.smart:not(.android) .labelSequenza{
+	height:40px !important;
+	line-height:40px !important;
+}
+.smart .sequenze_nmk{
+	margin-bottom: 5px;
+}
 .sequenze_nmk:not(.vis_apparati) .labelSequenza:hover{
 	background-image:url(../../img/frGiuB.png), linear-gradient(to bottom, #EEE 0%,#DDD 100%) !important;
 }

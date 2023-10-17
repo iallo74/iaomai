@@ -230,15 +230,22 @@ var IMPORTER = {
 		if(typeof(localStorage.sbl_pplhd)=='undefined' || localStorage.sbl_pplhd.toString()!='true')document.body.classList.add("pplhd");
 		//-----------
 		document.getElementById("verApp_imp").innerHTML = verApp;
+
+		// BACK BUTTON Android in app
 		document.addEventListener('backbutton', function (e) {
 			//uscitaESC();
-			if (window.cordova && window.cordova.platformId !== 'windows')return;
+			if (window.cordova && window.cordova.platformId !== 'windows'){
+				backButton();
+				return;
+			}
 			if (window.location.href) {
 				//window.history.back();
 			}else{
 				throw new Error('Exit'); // This will suspend the app
 			}
-		  }, false);
+		}, false);
+
+
 		/*if(!touchable){
 			history.pushState(null, document.title, location.href)
 			window.addEventListener('popstate', function (event){
@@ -525,6 +532,11 @@ function bringBackDefault(event) {
   (typeof event.cancelBubble === 'function') && 
   event.cancelBubble(); 
 } 
+
+function backButton(){
+	// futura integrazione
+	
+}
 
 /*window.onerror = (message, source, lineno, colno, error) => {
 	if(error==null)var error = '';

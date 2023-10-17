@@ -424,12 +424,16 @@ body:not(.smart) #scheda.schForm:not(.schedaRitorno):not(.minimized):not(.tab_pu
     text-align: center;
 	padding-left: 44px !important;
 }
-.smart .tab_punti #scheda_titolo{
+.smart.bodyModello #scheda_titolo{
+	width: calc(100% - 120px) !important;
+}
+.smart:not(.bodyModello) .tab_punti #scheda_titolo{
 	padding-left:25px !important;
 	padding-right:85px !important;
 }
-.smart.bodyModello #scheda_titolo{
-	width: calc(100% - 120px) !important;
+.smart.bodyModello .tab_punti #scheda_titolo{
+	padding-left:13px !important;
+	padding-right:125px !important;
 }
 #scheda_modello,
 #scheda_back{
@@ -489,6 +493,9 @@ body:not(.smart) #scheda.schForm:not(.schedaRitorno):not(.minimized):not(.tab_pu
 .smart #frSch {
     margin-top: -38px !important;
     margin-right: 55px !important;
+}
+.smart:not(.bodyModello) #frSch {
+    margin-right: 12px !important;
 }
 .frSu, .frGiu{
 	display:block !important;
