@@ -111,7 +111,7 @@ var LOGIN = {
 		return;
 	},
 	recuperaPwd: function(){ // apre il link di recuper password (INSERIRE NELL'APP)
-		var url=linkReqPwd+'?l='+globals.siglaLingua.toLowerCase()+"&app="+tipoApp;
+		var url=CONN.linkReqPwd+'?l='+globals.siglaLingua.toLowerCase()+"&app="+tipoApp;
 		if(window.cordova && window.cordova.platformId !== 'windows')window.open(url,'_system');
 		else window.open(url,'_blank');
 	},
