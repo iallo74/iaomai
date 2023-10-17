@@ -708,7 +708,7 @@ var PAZIENTI_SETS = {
 					descrizione=__(PAZIENTI.auriculoProvvisori[p].t);
 					siglaPunto=__(PAZIENTI.auriculoProvvisori[p].s);
 					nomePunto=__(PAZIENTI.auriculoProvvisori[p].n);
-					elenco.push(siglaPunto);
+					elenco.push(siglaPunto+"."+valutazione);
 					
 					HTML += '<div class="rgProcMod rgMod dettAuriculo'+((ev==p)?' eviPunto':'')+'"' +
 							'	  id="rg_'+p+'"';
@@ -890,7 +890,7 @@ var PAZIENTI_SETS = {
 		//SET.overPunto(document.getElementById("pt_"+n).parentElement,false);
 		PAZIENTI.auriculoProvvisori[n].e = m;
 		SCHEDA.formModificato = true;
-		PAZIENTI.ricGroup("formMod",n);
+		PAZIENTI.ricAuriculo("formMod",n);
 		//SET.overPunto(document.getElementById("pt_"+n).parentElement,true);
 		document.getElementById("tt_mezzival").dataset.on='0';
 		H.removeTT();

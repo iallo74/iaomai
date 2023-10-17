@@ -1034,6 +1034,10 @@ SET = {
 	evidenziaPuntoMod: function( elenco ){
 		SET.annullaEvidenziaPunto();
 		for(let k in elenco){
+			var pp=elenco[k].split(".");
+			var mat = SET.MAT.pointEvi;
+			if(pp[1]=='D')mat = SET.MAT.pointDolore;
+			scene.getObjectByName("_PT"+pp[0]).material=mat;
 			siglaPunto = elenco[k].split(".")[0];
 			SET.puntiEvidenziati.push(siglaPunto);
 		}
@@ -1334,6 +1338,14 @@ SET = {
 		var els = SETS.children;
 		for(e=els.length-1;e>=0;e--){
 			if(els[e].name.indexOf(tipo+' point: '+PT_name)==0){
+				SETS.remove( els[e] );
+			}
+		}
+	},
+	delAllEviPalls: function(tipo){_
+		var els = SETS.children;
+		for(e=els.length-1;e>=0;e--){
+			if(els[e].name.indexOf(tipo+' point: ')==0){
 				SETS.remove( els[e] );
 			}
 		}
