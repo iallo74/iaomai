@@ -535,7 +535,7 @@ function bringBackDefault(event) {
 
 function backButton(){
 	// futura integrazione
-	
+	 
 }
 
 /*window.onerror = (message, source, lineno, colno, error) => {
