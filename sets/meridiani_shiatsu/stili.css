@@ -1195,6 +1195,10 @@ body.smart #elenchi #cambioSistemaMeridiani{
     float: right;
     margin-left: 10px;
 }
+.imgTecnica.strumenti{
+	border-radius: 8px;
+    box-shadow: 0 0 3px rgba(0,0,0,0.5);
+}
 .szDiv{
 	border-bottom:1px solid rgba(0,0,0,0.1);
 	min-height:90px;
