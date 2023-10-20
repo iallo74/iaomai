@@ -1183,7 +1183,7 @@ var DB_patologie = {
     },
     "281": {
         "nomi": [
-            "zentraler Schwindel"
+            "Zentraler Schwindel"
         ],
         "descrizione": "Zentraler Schwindel entsteht durch die Unfähigkeit des Gehirns, Gleichgewichtseinflüsse aus der Peripherie zu koordinieren. Das Gefühl der Instabilität ist oft mit Kreislaufinsuffizienz, Stoffwechselphänomenen, Traumata, emotionalem Stress und alkoholischer Vergiftung (durch Medikamente oder Drogen) verbunden.<br> Diese Störung kann manchmal ein Warnzeichen für schwerwiegendere Erkrankungen sein, wie z. B. entzündliche Erkrankungen (z. B. Multiple Sklerose), neoplastische Erkrankungen (z. B. Hirntumor) und Gefäßerkrankungen (z. B. zerebrale Ischämie, Schlaganfall).",
         "categoria": 4
@@ -1439,12 +1439,6 @@ var DB_patologie = {
         ],
         "descrizione": "Ein medizinischer Zustand, der durch eine abnormale seitliche Krümmung der Wirbelsäule gekennzeichnet ist, die sich während des Wachstums entwickelt und für die keine spezifische Ursache ermittelt werden kann. Der Begriff „idiopathisch“ weist darauf hin, dass die Ursache der Skoliose unbekannt ist oder nicht auf bestimmte Faktoren zurückzuführen ist.<br> Von dieser Erkrankung sind vor allem Kinder und Jugendliche betroffen, vor allem während der schnellen Wachstumsphase im Jugendalter. Die Krümmung der Wirbelsäule kann leicht oder stärker sein und in verschiedenen Regionen des Rückens lokalisiert sein.<br> Die idiopathische Skoliose kann im Laufe der Zeit langsam fortschreiten und zu Problemen wie Rückenschmerzen, Veränderungen im ästhetischen Erscheinungsbild und in schweren Fällen zu Einschränkungen der Lungenfunktion aufgrund der Kompression innerer Organe führen.<br> Die Diagnose basiert auf einer körperlichen Untersuchung und bildgebenden Verfahren wie Röntgenaufnahmen, um das Ausmaß und die Lage der Krümmung zu messen. Die Behandlung hängt vom Schweregrad der Skoliose ab und kann regelmäßige Beobachtung, Physiotherapie, die Verwendung orthopädischer Zahnspangen oder in schweren Fällen eine Operation zur Korrektur der Krümmung umfassen.<br> Bei frühzeitiger Diagnose und angemessener Behandlung können viele Patienten mit idiopathischer Skoliose eine gute Lebensqualität haben und eine gute Rückenfunktion aufrechterhalten.",
         "categoria": 13
-    },
-    "1000": {
-        "nomi": [
-            "Kata neu ausbalancieren"
-        ],
-        "descrizione": ""
     },
     "000": {
         "nomi": [

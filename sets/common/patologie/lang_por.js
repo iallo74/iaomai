@@ -2,7 +2,7 @@ var DB_patologie = {
     "000": {
         nomi: [
             "Acne fulminante",
-            "acne fulminante"
+            "Acne fulminante"
         ],
         descrizione: "É uma forma grave de acne caracterizada pela formação de furúnculos subcutâneos profundos e dolorosos. Essa condição ocorre quando os poros da pele ficam bloqueados por sebo, células mortas e bactérias, levando à inflamação dos folículos pilosos. Ao contrário da acne comum, a acne fulminante pode causar lesões subcutâneas maiores e mais dolorosas que podem durar semanas ou meses.<br> A acne fulminans afeta principalmente a face, costas, tórax e ombros e pode ter um impacto significativo na qualidade de vida dos indivíduos afetados, causando sofrimento emocional e cicatrizes permanentes.",
         consigli: "Atividade física para melhorar a circulação sanguínea, beber muita água para limpar a pele, dieta com baixo teor de gordura.<br> A consulta com um dermatologista é essencial para o tratamento adequado e para reduzir o risco de cicatrizes permanentes.",
@@ -11,7 +11,7 @@ var DB_patologie = {
     "001": {
         nomi: [
             "Zumbido",
-            "zumbido nos ouvidos"
+            "Zumbido nos ouvidos"
         ],
         descrizione: "Comumente conhecido como &quot;assobio&quot; ou &quot;zumbido&quot; nos ouvidos, o zumbido é uma condição médica caracterizada pela percepção de sons ou ruídos na ausência de fontes externas. Esses sons podem ser intermitentes ou constantes e podem variar de um apito a um toque. O zumbido pode ser ouvido em um ou ambos os ouvidos e pode variar em intensidade.<br> As causas do zumbido podem ser diversas, incluindo danos auditivos devido à exposição a sons altos, infecções de ouvido, acúmulo de cera, alterações vasculares ou problemas no ouvido interno. Em alguns casos, o zumbido pode estar associado a outras condições médicas, como hipertensão ou disfunção da articulação temporomandibular (ATM).",
         consigli: "Realize 30 pressões no tragus correspondente por 5 segundos cada com um intervalo de 3 segundos; essa manobra ameniza o desconforto e, aliada a outras técnicas, contribui para a resolução.<br> Consultar um médico ou otorrinolaringologista é importante para um diagnóstico preciso e para identificar as melhores opções de tratamento para aliviar os sintomas e melhorar a qualidade de vida do paciente.",
@@ -38,7 +38,7 @@ var DB_patologie = {
     "004": {
         nomi: [
             "Aftas",
-            "estomatite aftosa",
+            "Estomatite aftosa",
             "Úlceras na boca"
         ],
         descrizione: "Uma pequena lesão ou úlcera dolorosa que aparece na membrana mucosa da boca, como bochechas, lábios ou língua. Essa condição é comum e pode afetar pessoas de todas as idades, mas é mais frequente em jovens e adolescentes.<br> As causas das aftas não são totalmente compreendidas, mas acredita-se que estejam relacionadas a traumas locais, estresse, alergias alimentares, deficiências de vitaminas ou problemas no sistema imunológico. As aftas podem causar dor e desconforto ao falar, mastigar ou engolir, mas tendem a cicatrizar espontaneamente dentro de uma ou duas semanas sem deixar cicatrizes.",
@@ -49,7 +49,7 @@ var DB_patologie = {
         nomi: [
             "Dores de dente",
             "Gengivite",
-            "dor na gengiva"
+            "Dor na gengiva"
         ],
         descrizione: "Um termo médico usado para descrever a dor nos dentes ou gengivas. Essa condição pode se manifestar com sensibilidade aguda nos dentes ao consumir bebidas ou alimentos quentes ou frios, ou durante a mastigação. As causas das dores de dente podem ser diversas, incluindo cáries, recessão gengival, infecções dentárias, más oclusões ou dentes danificados. Dores de dente podem causar desconforto significativo e podem indicar problemas de saúde bucal subjacentes que requerem atenção. Um exame odontológico completo é essencial para determinar a causa da dor e iniciar o tratamento adequado, que pode incluir obturações dentárias, tratamento de canal radicular, extração dentária ou outros procedimentos, dependendo das necessidades do paciente.",
         consigli: "Higiene dental minuciosa, evitando alimentos açucarados, evitando mudanças bruscas de temperatura e fortalecendo o aparelho de suporte (goma de mascar com a boca fechada).<br> Visitas regulares ao dentista podem ajudar a prevenir ou controlar dores de dente.",
@@ -85,7 +85,7 @@ var DB_patologie = {
     "009": {
         nomi: [
             "Angina de peito",
-            "doença cardíaca coronária"
+            "Doença cardíaca coronária"
         ],
         descrizione: "Comumente conhecida como &quot;angina&quot;, é uma condição médica caracterizada por dor ou desconforto no peito. Essa sensação é frequentemente descrita como uma sensação de pressão, peso, queimação ou constrição. A angina pectoris ocorre quando o fluxo sanguíneo para o coração é reduzido, geralmente devido à aterosclerose das artérias coronárias.<br> A dor associada à angina pectoris geralmente é desencadeada por esforço físico ou situações estressantes e pode ser aliviada com o repouso ou com a administração de nitroglicerina. É importante reconhecer os sinais de angina pectoris, pois pode ser um sinal de alerta de uma possível doença cardíaca coronária.",
         consigli: "Embora as técnicas citadas apresentem bons resultados, é fundamental o uso de todas as medicações de emergência e, se necessário, internar o indivíduo em estabelecimentos adequados.<br> Consultar um médico imediatamente em caso de sintomas de angina pectoris é fundamental para uma avaliação precisa e iniciar o tratamento adequado para evitar complicações graves, como o infarto do miocárdio.",
@@ -103,7 +103,7 @@ var DB_patologie = {
         nomi: [
             "Ansiedade",
             "Transtorno de ansiedade",
-            "estado de ansiedade"
+            "Estado de ansiedade"
         ],
         descrizione: "A ansiedade é uma reação natural do corpo e da mente a situações percebidas como ameaçadoras ou estressantes. Manifesta-se como uma sensação de apreensão, medo ou nervosismo e pode ser acompanhada de sintomas físicos como palpitações, sudorese, tremores, tensão muscular e dificuldade de concentração. A ansiedade pode ser uma emoção temporária e normal, mas quando se torna excessiva ou persistente, pode interferir no bem-estar e na qualidade de vida.<br> Existem diferentes tipos de ansiedade, como ansiedade generalizada, fobias, transtorno do pânico e transtorno de ansiedade social. Essas condições podem ser tratadas com abordagens terapêuticas, como terapia cognitivo-comportamental, terapia farmacológica ou uma combinação de ambas. A gestão eficaz da ansiedade pode ajudar os indivíduos a levar uma vida mais equilibrada e emocionalmente satisfatória, permitindo-lhes enfrentar os desafios diários com maior serenidade.",
         consigli: "Em caso de ataque de pânico, aplique pressão no diafragma pressionando os dedos nas laterais da caixa torácica enquanto regula a respiração com respirações longas e profundas e repetindo mentalmente que tudo está sob controle, que tudo vai passar e que o coração vai voltar ao normal seu ritmo normal.<br> Tente levar uma vida ativa e engajada com momentos pessoais (por exemplo, praticar arte, tocar um instrumento musical, estudar um idioma, praticar esportes, etc.).",
@@ -136,8 +136,8 @@ var DB_patologie = {
     },
     "015": {
         nomi: [
-            "osteoartrite",
-            "osteoartrose"
+            "Osteoartrite",
+            "Osteoartrose"
         ],
         descrizione: "Também conhecida como &quot;desgaste articular&quot;, é uma doença articular degenerativa que afeta principalmente a cartilagem articular. Esta é uma condição comum, especialmente em idosos, mas também pode ocorrer em pessoas mais jovens após lesões nas articulações ou uso excessivo.<br> Na osteoartrite, a cartilagem que cobre as extremidades ósseas das articulações se deteriora progressivamente, causando o dano gradual das articulações afetadas. Isso pode levar a sintomas como dor, rigidez, inchaço e mobilidade limitada da articulação afetada.",
         consigli: "Infelizmente, os afetados pela osteoartrite tendem a mover cada vez menos as articulações afetadas, levando a uma redução na amplitude de movimento articular até o bloqueio completo da articulação. Convencer os afetados a praticar exercícios suaves, realizar movimentos que abram as articulações com rotações lentas nos limites da amplitude de movimento articular, pode ser benéfico.",
@@ -204,10 +204,10 @@ var DB_patologie = {
     },
     "022": {
         nomi: [
-            "cálculos urinários",
+            "Cálculos urinários",
             "Cálculo renal",
             "Pedras nos rins",
-            "cálculos urinários",
+            "Cálculos urinários",
             "Urolitíase"
         ],
         descrizione: "Uma condição médica na qual cristais sólidos, conhecidos como cálculos ou pedras, se formam no trato urinário. Essas pedras podem se desenvolver nos rins, ureteres, bexiga ou uretra e podem variar em tamanho e composição.<br> A formação de cálculos urinários geralmente está ligada a uma concentração excessiva de substâncias como cálcio, oxalato, ácido úrico ou fosfato na urina. Essas substâncias podem se agregar e cristalizar, formando as pedras.<br> Os sintomas de cálculos urinários podem incluir dor intensa no abdômen ou na parte inferior das costas, dificuldade e dor durante a micção, sangue na urina e infecções do trato urinário.",
@@ -216,7 +216,7 @@ var DB_patologie = {
     },
     "023": {
         nomi: [
-            "doença cardíaca coronária",
+            "Doença cardíaca coronária",
             "Doença isquêmica do coração"
         ],
         descrizione: "Uma condição cardíaca envolvendo o estreitamento ou bloqueio das artérias coronárias, os vasos sanguíneos que fornecem sangue e oxigênio ao músculo cardíaco. Esse estreitamento geralmente é causado pelo acúmulo de placas de gordura, conhecidas como aterosclerose, nas paredes das artérias coronárias. Com o tempo, essas placas podem impedir o fluxo sanguíneo para o coração, levando à redução do suprimento de oxigênio e nutrientes para os tecidos cardíacos. Isso pode causar sintomas como dor no peito (angina pectoris) e, em casos mais graves, um infarto do miocárdio, onde uma parte do músculo cardíaco morre devido à interrupção do fluxo sanguíneo.",
@@ -225,7 +225,7 @@ var DB_patologie = {
     },
     "024": {
         nomi: [
-            "catarata senil"
+            "Catarata senil"
         ],
         descrizione: "Uma condição ocular comum que afeta a lente do olho, a lente natural transparente chamada de cristalino. Com o envelhecimento, a lente pode ficar opaca e embaçar a visão, causando uma perda gradual da nitidez visual. Isso pode afetar as atividades diárias, como dirigir, ler e ver detalhes. A catarata senil é uma consequência natural do envelhecimento e pode ser agravada por fatores como a exposição à luz ultravioleta e o uso de medicamentos específicos.",
         consigli: "Neste caso, o único conselho sensato é recomendar que o paciente se submeta a um exame especializado.",
@@ -251,8 +251,8 @@ var DB_patologie = {
     },
     "027": {
         nomi: [
-            "cólica intestinal",
-            "espasmos abdominais"
+            "Cólica intestinal",
+            "Espasmos abdominais"
         ],
         descrizione: "Condição caracterizada por dores agudas, cãibras ou espasmos no abdome, muitas vezes associados a distúrbios do trato intestinal. Essa dor pode ser localizada em várias áreas do abdômen e pode variar em intensidade e duração. As causas da cólica intestinal podem incluir distúrbios gastrointestinais, como síndrome do intestino irritável (SII), gases intestinais, constipação ou diarreia. Às vezes, a dor pode ser desencadeada por alimentos específicos, estresse ou mudanças nas rotinas diárias.",
         consigli: "Monitore e, se necessário, melhore sua alimentação; evitar um estilo de vida sedentário. Se a causa estiver relacionada com os nervos, elimine os fatores desencadeantes ou, pelo menos, reduza o stress a eles associado e estabeleça hábitos para um estilo de vida mais regular.",
@@ -268,9 +268,9 @@ var DB_patologie = {
     },
     "029": {
         nomi: [
-            "colapso vasomotor",
+            "Colapso vasomotor",
             "Colapso cardiocirculatório",
-            "desmaio",
+            "Cesmaio",
             "Síncope",
             "Perda de consciência"
         ],
@@ -289,7 +289,7 @@ var DB_patologie = {
     "031": {
         nomi: [
             "Doença reumática do tecido conjuntivo",
-            "doença reumática",
+            "Doença reumática",
             "Doença Mista do Tecido Conjuntivo (MCTD)"
         ],
         descrizione: "Doença autoimune rara que envolve o tecido conjuntivo do corpo. Nessa condição, o sistema imunológico ataca por engano seu próprio tecido, causando inflamação e danos a órgãos e estruturas conectivas, como músculos, articulações, pele e vasos sanguíneos. A doença reumática do tecido conjuntivo apresenta uma ampla gama de sintomas, incluindo inchaço das articulações, dores musculares, fadiga, febre, erupções cutâneas e problemas pulmonares. A causa exata da doença não é totalmente compreendida, mas fatores genéticos e ambientais podem contribuir para o seu desenvolvimento.",
@@ -316,7 +316,7 @@ var DB_patologie = {
     "034": {
         nomi: [
             "Depressão",
-            "síndrome depressiva"
+            "Síndrome depressiva"
         ],
         descrizione: "Transtorno mental caracterizado por tristeza ou apatia persistente e intensa, que pode afetar profundamente a qualidade de vida de uma pessoa. Essa condição vai além das flutuações emocionais normais e geralmente é acompanhada por sentimentos de desesperança, perda de interesse nas atividades diárias, insônia ou sono excessivo, falta de energia e falta de concentração. A depressão pode ter várias causas, incluindo fatores genéticos, desequilíbrios químicos no cérebro, eventos estressantes ou traumas emocionais. Pode afetar pessoas de todas as idades e pode se manifestar de diferentes formas, de leve a grave. O diagnóstico e o tratamento da depressão são essenciais para aliviar os sintomas e melhorar a qualidade de vida.",
         consigli: "Em casos graves, complemente a terapia com psicoterapia, psicanálise, terapia social e, se necessário, mude a situação ambiental.",
@@ -368,7 +368,7 @@ var DB_patologie = {
             "Dismenorreia",
             "Dismenorreia primária",
             "Dor menstrual",
-            "menstruação dolorosa"
+            "Menstruação dolorosa"
         ],
         descrizione: "Um termo médico usado para descrever a dor menstrual dolorosa e desagradável que algumas mulheres experimentam durante o ciclo menstrual. Esta condição pode se manifestar como cólicas abdominais intensas, dor lombar, náuseas, dores de cabeça e sensibilidade mamária. A dismenorreia pode ser primária ou secundária. A dismenorreia primária é a dor menstrual sem uma causa específica e muitas vezes é o resultado de contrações uterinas excessivas durante a menstruação. A dismenorreia secundária, por outro lado, geralmente é causada por problemas subjacentes, como endometriose, miomas uterinos, infecções pélvicas ou anormalidades uterinas. A dismenorreia pode afetar significativamente a qualidade de vida das mulheres, levando a distúrbios do sono, ansiedade e interferência nas atividades diárias.",
         consigli: "Durante cãibras dolorosas, ensine o indivíduo a pressionar firmemente o ponto [.6.SP.] bilateralmente: a dor desaparece instantaneamente.",
@@ -386,7 +386,7 @@ var DB_patologie = {
     },
     "044": {
         nomi: [
-            "ejaculação precoce"
+            "Ejaculação precoce"
         ],
         descrizione: "Distúrbio sexual masculino no qual o indivíduo experimenta ejaculação precoce e descontrolada durante a atividade sexual, muitas vezes antes de atingir a satisfação sexual para si ou para o parceiro. Essa condição pode causar desconforto e frustração, impactando negativamente na intimidade e na qualidade da vida sexual.<br> As causas da ejaculação precoce podem ser variadas, incluindo fatores psicológicos, como ansiedade, estresse ou depressão, ou fatores biológicos, como desequilíbrios neuroquímicos. Às vezes, experiências sexuais anteriores, a frequência da atividade sexual ou problemas de relacionamento podem contribuir para o problema.<br> É essencial assegurar ao paciente que a ejaculação precoce é um problema comum e tratável. Discutir abertamente com o parceiro e buscar a ajuda de um profissional pode auxiliar na superação dessa condição e no restabelecimento de uma vida sexual saudável.",
         consigli: "Evite alimentos afrodisíacos, considere a terapia psicológica, se necessário, e certifique-se de que o problema não seja orgânico, consultando um especialista.",
@@ -405,7 +405,7 @@ var DB_patologie = {
     "047": {
         nomi: [
             "Hemorróidas",
-            "varizes retais"
+            "Varizes retais"
         ],
         descrizione: "Uma condição comum e geralmente não grave que afeta a área retal e anal. Ocorre quando as veias da área ficam inchadas e inflamadas. As hemorróidas podem ser internas, quando se formam dentro do reto, ou externas, quando se localizam ao redor da abertura anal.<br> As principais causas de hemorróidas incluem pressão excessiva na área anal, muitas vezes devido à constipação crônica, diarréia, levantamento de peso ou permanência prolongada no vaso sanitário. As mulheres grávidas podem ser mais propensas a desenvolver hemorróidas devido ao aumento da pressão abdominal.<br> Os sintomas comuns incluem coceira, dor, sangramento durante as evacuações e sensação de plenitude ou pressão no ânus. Em muitos casos, os sintomas podem ser aliviados com medidas de autocuidado, como dieta rica em fibras, hidratação aumentada ou uso de cremes ou supositórios contendo vaselina ou substâncias calmantes.",
         consigli: "Controle a alimentação, monitore a pressão arterial, evite o sedentarismo.<br> Em caso de sangramento intenso, consulte um médico.",
@@ -421,7 +421,7 @@ var DB_patologie = {
     },
     "049": {
         nomi: [
-            "hepatite aguda"
+            "Hepatite aguda"
         ],
         descrizione: "Uma condição inflamatória do fígado que se desenvolve rapidamente e tem uma duração relativamente curta, geralmente não excedendo seis meses. Essa forma de hepatite é causada principalmente por infecções virais, incluindo os vírus das hepatites A, B, C, D e E, mas também pode estar associada a outras causas, como o uso de certos medicamentos, abuso de álcool ou reações autoimunes.<br> Os sintomas da hepatite aguda podem variar, mas geralmente incluem fadiga, náusea, febre, dor abdominal, urina escura e icterícia (amarelecimento da pele e dos olhos). Em alguns casos, a infecção pode ser assintomática ou causar apenas sintomas leves.<br> O diagnóstico de hepatite aguda envolve exames de sangue para detectar enzimas hepáticas alteradas e marcadores específicos de infecção viral. A maioria das pessoas se recupera completamente da hepatite aguda sem a necessidade de tratamentos específicos, mas o repouso e a adoção de uma dieta adequada para apoiar a função hepática são essenciais.",
         consigli: "Descanso, dieta importante, eliminar tudo o que pode sobrecarregar o fígado (gorduras, álcool, frituras, etc.)",
@@ -476,7 +476,7 @@ var DB_patologie = {
     "055": {
         nomi: [
             "Frigidez",
-            "impotencia sexual feminina"
+            "Impotencia sexual feminina"
         ],
         descrizione: "Termo médico que descreve um distúrbio sexual feminino caracterizado por libido reduzida ou ausente, significando um baixo desejo sexual ou falta de interesse ou prazer nas atividades sexuais. Esta condição pode levar a uma resposta sexual reduzida e menor participação em relacionamentos íntimos.<br> As causas da frigidez podem ser diversas, incluindo fatores físicos como desequilíbrios hormonais, problemas de saúde, efeitos colaterais de medicamentos ou problemas ginecológicos, além de fatores psicológicos como estresse, ansiedade, traumas emocionais ou problemas no relacionamento do casal.<br> É importante distinguir a frigidez de outros distúrbios sexuais, como a disfunção erétil nos homens. A frigidez pode causar desconforto e frustração na vida de uma pessoa e pode ter impactos negativos no relacionamento do casal.",
         consigli: "Se necessário, oriente o paciente a considerar sessões de terapia (psicólogo) paralelamente ao tratamento.",
@@ -487,7 +487,7 @@ var DB_patologie = {
         nomi: [
             "Cobreiro",
             "Incêndio de st. Antonio",
-            "herpes zóster"
+            "Herpes zóster"
         ],
         descrizione: "Doença viral dolorosa da pele e nervos causada pelo vírus varicela-zoster, o mesmo vírus responsável pela varicela. Depois de contrair a varicela, o vírus pode permanecer adormecido nos nervos por anos e reativar mais tarde na vida, causando herpes zoster.<br> Os sintomas das telhas incluem uma erupção vesicular que segue o curso de um nervo, muitas vezes acompanhada de queimação ou dor aguda na área afetada. Essa erupção se desenvolve como uma faixa ou aglomerado de bolhas em um lado do corpo, geralmente no peito, abdômen ou rosto. A condição pode ser acompanhada de febre, dor de cabeça e mal-estar geral.<br> As telhas são mais comuns em adultos e pessoas com sistema imunológico enfraquecido. O tratamento oportuno pode ajudar a reduzir a duração e a intensidade da doença. Medicamentos antivirais e analgésicos podem ser prescritos para aliviar os sintomas. Em alguns casos, podem ocorrer complicações como dor persistente após a resolução da erupção cutânea, conhecida como &quot;neuralgia pós-herpética&quot;. A vacinação contra herpes zoster é recomendada para indivíduos em risco como medida preventiva.",
         consigli: "Em crianças com Herpes Zoster (que também inclui varicela), é preferível aplicar um tratamento moderado nos pontos localizados entre as lesões.",
@@ -514,7 +514,7 @@ var DB_patologie = {
     "059": {
         nomi: [
             "Gastroptose",
-            "prolapso gástrico",
+            "Prolapso gástrico",
             "Estômago longo"
         ],
         descrizione: "Condição médica na qual o estômago escorrega de sua posição normal no abdômen. Esse deslocamento do estômago pode ocorrer quando os ligamentos que o mantêm no lugar enfraquecem ou se esticam, permitindo que o estômago se mova de forma anormal.<br> Os sintomas da gastroptose podem variar e incluem dor ou desconforto na parte superior do abdômen, sensação de peso após as refeições, azia, refluxo ácido e problemas digestivos. Em alguns casos, a gastroptose pode ser assintomática e ser descoberta incidentalmente durante exames de imagem ou exames físicos.<br> A gastroptose pode ser uma condição congênita ou ser causada por tensão excessiva, gravidez, perda drástica de peso ou outras condições médicas que podem enfraquecer os ligamentos do estômago. O diagnóstico de gastroptose envolve exames físicos, exames de imagem como raios-X ou fluoroscopia e, às vezes, testes funcionais do estômago.",
@@ -523,7 +523,7 @@ var DB_patologie = {
     },
     "060": {
         nomi: [
-            "herpes simples",
+            "Herpes simples",
             "Herpes labial"
         ],
         descrizione: "Infecção viral comum causada pelos vírus herpes simplex (HSV) tipo 1 e tipo 2. O tipo 1 (HSV-1) é frequentemente associado a lesões que ocorrem ao redor da boca e dos lábios, comumente conhecidas como herpes labial ou &quot;bolhas de febre&quot; nos lábios . O tipo 2 (HSV-2) é geralmente responsável por lesões genitais, como o herpes genital.<br> Este vírus pode ser transmitido através do contato direto com lesões ativas ou fluidos corporais infectados. Uma vez contraído, o HSV permanece no corpo por toda a vida e pode ser reativado periodicamente, causando novas lesões.<br> Os sintomas do herpes simples incluem formigamento ou coceira, seguidos pelo aparecimento de bolhas dolorosas e cheias de líquido. As lesões podem ser acompanhadas de febre, mal-estar e gânglios linfáticos inchados.",
@@ -533,9 +533,8 @@ var DB_patologie = {
     "062": {
         nomi: [
             "AVC",
-            "AVC",
-            "derrame cerebral",
-            "insulto cerebrovascular"
+            "Derrame cerebral",
+            "Insulto cerebrovascular"
         ],
         descrizione: "Uma condição médica grave que ocorre quando o fluxo sanguíneo para o cérebro é interrompido ou significativamente reduzido. Isso pode ser causado por um bloqueio em um vaso sanguíneo no cérebro (AVC isquêmico) ou por uma ruptura de um vaso sanguíneo resultando em sangramento (AVC hemorrágico).<br> O AVC pode levar a danos cerebrais permanentes devido à falta de oxigênio e nutrientes vitais. Os sintomas comuns incluem fraqueza súbita ou paralisia de um lado do corpo, dificuldade para falar, visão turva ou perda de visão, tontura e fortes dores de cabeça.<br> A intervenção imediata é crucial, pois o tratamento oportuno pode ajudar a reduzir os danos cerebrais e melhorar as perspectivas de recuperação. A prevenção é igualmente importante, e estilos de vida saudáveis, controle de fatores de risco como hipertensão, diabetes e colesterol e adoção de hábitos saudáveis podem reduzir o risco de AVC. Em caso de suspeita de AVC, é fundamental acionar imediatamente o atendimento médico de emergência.",
         consigli: "Cuidar de uma pessoa deve ser apenas uma terapia complementar ao trabalho do médico assistente, que deve estar ciente do tipo de tratamento que decidimos realizar.",
@@ -543,7 +542,7 @@ var DB_patologie = {
     },
     "063": {
         nomi: [
-            "impotência sexual masculina",
+            "Impotência sexual masculina",
             "Disfunção erétil"
         ],
         descrizione: "Uma condição médica na qual um homem tem dificuldade em obter ou manter uma ereção suficiente para uma relação sexual satisfatória. Essa condição pode ser causada por vários fatores, incluindo problemas físicos, problemas psicológicos ou uma combinação de ambos.<br> As causas físicas podem incluir problemas circulatórios, diabetes, doenças cardíacas, hipertensão e efeitos colaterais de certos medicamentos. As causas psicológicas podem estar relacionadas a problemas de estresse, ansiedade, depressão ou autoestima. A idade avançada pode ser um fator de risco para o desenvolvimento da disfunção erétil, mas pode ocorrer em qualquer idade.",
@@ -571,7 +570,7 @@ var DB_patologie = {
     "066": {
         nomi: [
             "Gripe",
-            "síndrome da gripe"
+            "Síndrome da gripe"
         ],
         descrizione: "Comumente conhecida como &quot;gripe&quot;, é uma doença viral altamente contagiosa que afeta principalmente o sistema respiratório. É causada pelos vírus influenza, principalmente os subtipos A, B e C. A doença é caracterizada por sintomas como febre súbita, calafrios, dor de cabeça, fadiga, dores musculares e sintomas respiratórios como tosse, dor de garganta e congestão nasal.<br> A gripe se espalha facilmente através de gotículas de saliva que se espalham no ar quando uma pessoa infectada tosse, espirra ou fala. O vírus também pode ser transmitido ao tocar em superfícies contaminadas e depois tocar no rosto.<br> A maioria das pessoas se recupera da gripe sem problemas, mas, em alguns casos, pode causar complicações graves, especialmente em idosos, crianças pequenas, mulheres grávidas e indivíduos com sistema imunológico enfraquecido. As complicações podem incluir pneumonia, infecções de ouvido, sinusite e piora de condições de saúde preexistentes.",
         consigli: "Consumir alimentos picantes é recomendado para esfriar o corpo e liberar o calor da superfície.",
@@ -591,7 +590,7 @@ var DB_patologie = {
             "Hipertensão",
             "Hipertensão arterial",
             "Pressão alta",
-            "pressiopatia"
+            "Pressiopatia"
         ],
         descrizione: "Uma condição médica caracterizada por um aumento persistente da pressão sanguínea dentro das artérias. A pressão arterial é medida em milímetros de mercúrio (mmHg) e é expressa em dois valores: pressão sistólica (o valor mais alto) e pressão diastólica (o valor mais baixo), separados por uma barra (por exemplo, 120/80 mmHg).<br> A hipertensão pode ser classificada em diferentes categorias com base nos valores da pressão arterial. Uma leitura de 130/80 mmHg ou superior é considerada hipertensão.<br> A hipertensão arterial é um fator de risco significativo para muitas doenças cardiovasculares, como acidente vascular cerebral, infarto do miocárdio, insuficiência cardíaca e doenças renais. Também pode danificar as artérias, coração, cérebro e outros órgãos ao longo do tempo.<br> A maioria das pessoas com hipertensão é assintomática e muitas vezes é diagnosticada durante um exame médico de rotina. O tratamento da hipertensão pode envolver mudanças no estilo de vida, como adoção de dieta balanceada, aumento da atividade física, redução da ingestão de sódio e abandono do tabagismo. Em alguns casos, medicamentos anti-hipertensivos podem ser prescritos para ajudar a controlar a pressão arterial.",
         consigli: "Evite estresse, álcool, alimentos gordurosos e comer demais.<br> O monitoramento regular da pressão arterial e o manejo adequado da hipertensão são essenciais para reduzir o risco de complicações cardiovasculares e promover uma boa saúde. É importante tomar medidas preventivas e procurar atendimento médico adequado para o controle da hipertensão.",
@@ -599,8 +598,8 @@ var DB_patologie = {
     },
     "069": {
         nomi: [
-            "hipotensão",
-            "hipotensão arterial"
+            "Hipotensão",
+            "Hipotensão arterial"
         ],
         descrizione: "Uma condição médica caracterizada por pressão sanguínea anormalmente baixa dentro das artérias. A pressão arterial é medida em milímetros de mercúrio (mmHg) e é expressa em dois valores: pressão sistólica (o valor mais alto) e pressão diastólica (o valor mais baixo), separados por uma barra (por exemplo, 90/60 mmHg).<br> No caso de hipotensão, a pressão arterial pode cair abaixo dos valores normais, geralmente considerados em torno de 120/80 mmHg. No entanto, os sintomas de hipotensão podem variar de pessoa para pessoa, e alguns indivíduos podem ser assintomáticos.<br> As causas da hipotensão podem ser diversas e incluem desidratação, perda excessiva de sangue, reações alérgicas, doenças cardíacas, distúrbios do sistema nervoso, efeitos colaterais de certos medicamentos e distúrbios endócrinos.<br> Os sintomas de hipotensão podem incluir tonturas, fraqueza, desmaio ou sensação de desmaio (síncope), visão turva, transpiração excessiva, náuseas e fadiga.",
         consigli: "Adapte uma dieta adequada.<br> Se você costuma sentir sintomas relacionados à hipotensão ou tem dúvidas sobre a pressão arterial, é aconselhável consultar um profissional médico para uma avaliação e tratamento adequado.",
@@ -608,7 +607,7 @@ var DB_patologie = {
     },
     "070": {
         nomi: [
-            "isquialgia",
+            "Isquialgia",
             "Ciática",
             "Ciática"
         ],
@@ -618,7 +617,7 @@ var DB_patologie = {
     },
     "071": {
         nomi: [
-            "laringite aguda"
+            "Laringite aguda"
         ],
         descrizione: "Condição médica caracterizada por inflamação da laringe, que é a parte da garganta que contém as cordas vocais. Esta condição é comum, especialmente em crianças, mas pode afetar pessoas de todas as idades. A laringite aguda geralmente é causada por infecções virais, como vírus do resfriado ou da gripe, que irritam e inflamam a laringe.<br> Os sintomas típicos da laringite aguda incluem rouquidão ou perda temporária da voz, tosse seca e persistente e, às vezes, dificuldade para engolir. Em alguns casos, o paciente pode sentir um leve aumento da temperatura corporal e dor de garganta.",
         consigli: "A decocção de dente-de-leão é excelente.",
@@ -648,7 +647,7 @@ var DB_patologie = {
     },
     "074": {
         nomi: [
-            "dor lombar",
+            "Dor lombar",
             "Lumbago",
             "Dor lombar"
         ],
@@ -658,7 +657,7 @@ var DB_patologie = {
     },
     "076": {
         nomi: [
-            "doença de Bekhterev",
+            "Doença de Bekhterev",
             "Espondilite anquilosante"
         ],
         descrizione: "Patologia inflamatória crônica que afeta principalmente as articulações da coluna vertebral e da pelve. Esta doença se enquadra na categoria de espondiloartropatias, um grupo de doenças reumáticas que envolvem o sistema músculo-esquelético.<br> A espondilite anquilosante causa inflamação das vértebras, levando a dor e rigidez na região lombar e na coluna. Com o tempo, a inflamação pode levar à fusão das vértebras, limitando a mobilidade e causando uma postura rígida e curva, conhecida como &quot;postura de flexão&quot;.<br> Os sintomas da espondilite anquilosante podem variar de pessoa para pessoa, mas geralmente incluem dor crônica na região lombar, rigidez matinal, fadiga e perda de flexibilidade da coluna vertebral. Além disso, a doença também pode envolver outras articulações e se manifestar com olhos inflamados (uveíte), dor nas articulações e problemas gastrointestinais.<br> Embora a causa exata ainda seja desconhecida, acredita-se que a predisposição genética desempenhe um papel significativo no desenvolvimento da espondilite anquilosante. O tratamento visa controlar os sintomas e prevenir a progressão da doença. Isso pode incluir medicamentos anti-inflamatórios, medicamentos biológicos, fisioterapia, exercícios de alongamento e fortalecimento muscular.<br> O diagnóstico oportuno e o tratamento adequado são cruciais para reduzir os sintomas e melhorar a qualidade de vida das pessoas afetadas por essa condição.",
@@ -668,7 +667,7 @@ var DB_patologie = {
     "078": {
         nomi: [
             "Mastite",
-            "infecção de mama"
+            "Infecção de mama"
         ],
         descrizione: "Inflamação da glândula mamária, localizada no tecido mamário. Essa inflamação pode ser causada por diversos fatores, mas é mais comum em mulheres durante o período de amamentação (mastite puerperal).<br> Os sintomas típicos da mastite incluem dor, inchaço, vermelhidão e calor na mama afetada. Além disso, podem ocorrer sintomas sistêmicos como febre, calafrios e mal-estar geral, especialmente se houver infecção.<br> A mastite puerperal ocorre quando os dutos de leite dentro da mama ficam bloqueados, promovendo o crescimento bacteriano. Novas mães podem desenvolver mastite devido a um fluxo de leite bloqueado ou amamentação ineficaz pelo recém-nascido. Por outro lado, a mastite não relacionada à amamentação pode ser causada por outras infecções ou irritações locais.",
         consigli: "Ao usar moxabustão, evite colocar o bastão de moxa muito próximo à superfície da pele, pois a mama durante a amamentação é muito delicada e sensível.",
@@ -694,7 +693,7 @@ var DB_patologie = {
     },
     "081": {
         nomi: [
-            "neurodermatite"
+            "Neurodermatite"
         ],
         descrizione: "Condição crônica e inflamatória da pele caracterizada por coceira intensa e persistente. Afeta principalmente a pele e pode se manifestar em diferentes partes do corpo, mas é mais comum em áreas como pescoço, punhos, cotovelos, joelhos e tornozelos.<br> A causa exata da neurodermatite não é totalmente compreendida, mas acredita-se que esteja ligada a uma combinação de fatores genéticos, ambientais e imunológicos. Irritação da pele e coceira constante podem piorar a condição, criando um ciclo vicioso.<br> Os sintomas da neurodermatite incluem coceira intensa, vermelhidão da pele, espessamento da superfície da pele e formação de pequenas bolhas ou crostas como resultado do ato de coçar. A coceira pode ser particularmente intensa à noite, atrapalhando o sono e afetando a qualidade de vida do paciente.",
         consigli: "Leve um estilo de vida moderado com bastante descanso, evite esforço excessivo e evite alimentos condimentados.",
@@ -711,7 +710,7 @@ var DB_patologie = {
     },
     "083": {
         nomi: [
-            "neuralgia da cabeça"
+            "Neuralgia da cabeça"
         ],
         descrizione: "Condição caracterizada por episódios agudos e dolorosos de pontadas ou dores penetrantes que afetam a área da cabeça, incluindo couro cabeludo, testa, têmporas e região occipital. Esse tipo de dor é causado pela irritação ou compressão dos nervos cranianos, que pode ser desencadeada por diversas causas, como tensão muscular, inflamação nervosa, infecções ou traumas.<br> Os sintomas da neuralgia da cabeça podem variar em intensidade e duração, mas são frequentemente descritos como choques elétricos ou dores agudas em pontada. Os pacientes podem sentir uma sensação de queimação ou dormência na área afetada.<br> Embora possa ser desconfortável, a neuralgia da cabeça geralmente não está associada a condições graves ou com risco de vida. Porém, como as causas podem ser diversas, é importante consultar um médico para uma avaliação precisa e determinar o tratamento adequado. As abordagens terapêuticas podem incluir analgésicos, fisioterapia ou outras opções, dependendo da causa subjacente da neuralgia da cabeça.",
         consigli: "Nas dores de cabeça induzidas pelo estresse, evite os fatores desencadeantes e, em qualquer caso, se as causas não forem orgânicas, leve uma vida moderada, evitando os excessos.",
@@ -727,7 +726,7 @@ var DB_patologie = {
     },
     "085": {
         nomi: [
-            "orquite"
+            "Orquite"
         ],
         descrizione: "Condição médica caracterizada pela inflamação de um ou ambos os testículos, que são os órgãos masculinos responsáveis pela produção de esperma e hormônios sexuais. A inflamação pode ser causada por vários motivos, incluindo infecções virais ou bacterianas, lesões ou reações autoimunes.<br> Os sintomas típicos da orquite incluem inchaço, vermelhidão e sensibilidade do testículo afetado, muitas vezes acompanhados de dor localizada. Às vezes, os sintomas podem se estender para a virilha e abdômen. A inflamação pode causar um leve aumento da temperatura corporal.<br> As infecções virais, especialmente aquelas associadas à caxumba, são uma das principais causas de orquite em homens adultos. É importante tratar adequadamente a infecção subjacente para prevenir o aparecimento ou agravamento da orquite.",
         consigli: "Evite usar roupas íntimas do tipo Boxer, em vez disso, use cuecas justas com efeito suspensor.",
@@ -737,7 +736,7 @@ var DB_patologie = {
     "086": {
         nomi: [
             "Caxumba",
-            "parotidite epidêmica"
+            "Parotidite epidêmica"
         ],
         descrizione: "Doença infecciosa viral também conhecida como &quot;parotidite epidêmica&quot;. É uma infecção altamente contagiosa causada pelo vírus da caxumba, que afeta principalmente as glândulas salivares, principalmente as parótidas localizadas atrás e abaixo das orelhas.<br> Os sintomas típicos da caxumba incluem inchaço doloroso das glândulas parótidas, que pode causar aumento da bochecha ou da região do pescoço. Outros sintomas podem incluir febre, dor de cabeça, fadiga e dor ao mastigar ou engolir.<br> A caxumba é transmitida por gotículas de saliva de uma pessoa infectada, geralmente por tosse, espirro ou contato direto com objetos contaminados. Como o vírus é altamente contagioso, ele pode se espalhar rapidamente dentro das comunidades, especialmente em ambientes lotados.<br> Embora a maioria dos casos de caxumba se resolva espontaneamente sem complicações graves, em alguns casos podem ocorrer complicações como inflamação do pâncreas (pancreatite), cérebro (encefalite) ou testículos em homens (orquite).",
         consigli: "Em qualquer caso, consulte um médico.",
@@ -754,8 +753,8 @@ var DB_patologie = {
     },
     "088": {
         nomi: [
-            "chiqueiro",
-            "hordéolo"
+            "Chiqueiro",
+            "Hordéolo"
         ],
         descrizione: "Infecção comum das glândulas sebáceas ao longo da borda das pálpebras, conhecida como glândula Meibomiana ou Zeis. Esta condição é causada principalmente pela inflamação da glândula devido a uma infecção bacteriana, muitas vezes de Staphylococcus.<br> Os sintomas típicos de um terçol incluem inchaço, vermelhidão e sensibilidade na área afetada, que pode ser dolorosa ao toque. Além disso, uma pequena protuberância ou abscesso pode se formar na borda da pálpebra, contendo pus.<br> Um terçol costuma ser incômodo, mas raramente representa um risco para a visão ou para a saúde geral. Pode aparecer no interior ou no exterior do olho e pode ser recorrente.",
         consigli: "Compressas úmidas mornas para facilitar a drenagem espontânea.",
@@ -763,7 +762,7 @@ var DB_patologie = {
     },
     "089": {
         nomi: [
-            "infecção do ouvido médio",
+            "Infecção do ouvido médio",
             "Inflamação na orelha"
         ],
         descrizione: "Condição médica caracterizada pela inflamação do ouvido médio, a parte do ouvido localizada atrás do tímpano. Essa inflamação pode ser causada por infecções bacterianas ou virais ou pelo acúmulo de líquido devido a uma infecção respiratória superior.<br> Os sintomas típicos da otite média incluem dor de ouvido, audição reduzida, sensação de ouvido &quot;entupido&quot;, sensação de pressão no ouvido, febre e, às vezes, descarga de fluido do ouvido.<br> A otite média é comum em crianças, mas também pode ocorrer em adultos. Na infância, o ouvido médio é mais suscetível a infecções porque as trompas de Eustáquio, que conectam o ouvido médio à parte posterior da garganta, são mais curtas e horizontais.",
@@ -773,10 +772,10 @@ var DB_patologie = {
     "090": {
         nomi: [
             "Arritmias cardíacas",
-            "palpitações",
-            "vibração do coração",
+            "Palpitações",
+            "Vibração do coração",
             "Taquicardia",
-            "bradicardia"
+            "Bradicardia"
         ],
         descrizione: "As arritmias cardíacas são alterações no ritmo dos batimentos cardíacos e podem se manifestar como taquicardia, bradicardia ou taquicardia.<br> A taquicardia é caracterizada por um aumento da frequência cardíaca, muitas vezes superior a 100 batimentos por minuto. Pode ser causada por ansiedade, estresse, febre, desidratação ou problemas cardíacos. Os sintomas podem incluir palpitações, tonturas ou fadiga.<br> Por outro lado, a bradicardia é uma redução da frequência cardíaca, geralmente abaixo de 60 batimentos por minuto. Pode ser causada por problemas no nódulo sinusal, no átrio ou no sistema de condução cardíaca. Os sintomas podem incluir tontura, confusão, fadiga ou desmaio.<br> A palpitação do coração refere-se a uma sensação de batimentos cardíacos acelerados ou irregulares sentida pelo paciente. Não é uma condição em si, mas um sintoma de possíveis arritmias ou outras causas, como ansiedade, estresse, cafeína ou drogas.<br> As arritmias cardíacas podem ser transitórias e não requerem tratamento ou podem ser persistentes e requerem intervenção médica. O diagnóstico é baseado em um eletrocardiograma e monitoramento Holter. O tratamento pode incluir medicamentos para controlar o ritmo cardíaco, procedimentos de ablação ou dispositivos implantáveis, como marcapassos ou desfibriladores.",
         consigli: "Busque a raiz do problema, entenda o que está perturbando a mente e resolva o problema.<br> Em caso de ataque, faça respirações longas e profundas, tente se acalmar repetindo mentalmente que não é nada, que está tudo sob controle, que vai passar e assim por diante.",
@@ -845,8 +844,8 @@ var DB_patologie = {
     "101": {
         nomi: [
             "Gripe comum",
-            "rinite viral",
-            "rinite aguda",
+            "Rinite viral",
+            "Rinite aguda",
             "Infecção do trato respiratório superior"
         ],
         descrizione: "Infecção viral comum do trato respiratório superior, envolvendo principalmente o nariz e a garganta. É causada principalmente por diferentes tipos de vírus, incluindo o rinovírus, e se espalha facilmente através do contato direto com indivíduos infectados ou superfícies contaminadas.<br> Os sintomas típicos do resfriado comum incluem congestão nasal, secreção mucosa, espirros, dor de garganta, tosse, sensação de desconforto geral e, às vezes, febre baixa. A duração do frio pode variar de alguns dias a uma ou duas semanas.",
@@ -864,8 +863,8 @@ var DB_patologie = {
     "105": {
         nomi: [
             "Rinite alérgica",
-            "rinite atópica",
-            "alergia nasal",
+            "Rinite atópica",
+            "Alergia nasal",
             "Rinite alérgica"
         ],
         descrizione: "Resultado nasal de uma reação antígeno-anticorpo tipo I (anticorpo IgE).<br> Pode ser sazonal (ervas, pólen), perene (parietária, ácaro da poeira doméstica) ou aperiódica (derivada de animais, como pelo de gato ou comida).<br> Manifesta-se com prurido nasal, espirros, secreção aquosa abundante, obstrução nasal, hiposmia, cefaléia e conjuntivite.",
@@ -883,7 +882,7 @@ var DB_patologie = {
     "108": {
         nomi: [
             "Salmonelose",
-            "gastroenterite por salmonela"
+            "Gastroenterite por salmonela"
         ],
         descrizione: "Doença infecciosa causada pela contaminação com bactérias do gênero Salmonella. Essa infecção é comumente associada ao consumo de alimentos contaminados, como carne crua ou mal cozida, ovos não pasteurizados, leite não tratado ou frutas e vegetais contaminados com fezes de animais ou humanos.<br> Os sintomas da salmonelose podem variar de leves a graves e incluem náuseas, vômitos, diarreia, cólicas abdominais e febre. A maioria das pessoas se recupera completamente sem a necessidade de tratamento médico, mas em casos graves ou em pacientes imunocomprometidos, a infecção pode exigir intervenção médica.",
         consigli: "Dependendo da causa, faça correções dietéticas, beba bastante líquido para evitar a desidratação, faça tratamentos específicos em caso de causas parasitárias, evite expor a região visceral ao frio.",
@@ -916,7 +915,7 @@ var DB_patologie = {
     },
     "115": {
         nomi: [
-            "sinusite crônica"
+            "Sinusite crônica"
         ],
         descrizione: "Condição médica que ocorre quando os seios paranasais (espaços cheios de ar localizados ao redor do nariz, olhos e bochechas) ficam inflamados e inchados devido a infecções, alergias ou outras irritações. Existem dois tipos principais de sinusite: aguda e crônica.<br> A sinusite aguda é uma forma temporária e geralmente é causada por infecções virais, bacterianas ou fúngicas. Os sintomas incluem congestão nasal, secreção espessa de muco de cor verde ou amarela, dores de cabeça, dor facial e tosse. A sinusite aguda pode durar até 4 semanas e tende a se resolver com o tratamento adequado.<br> A sinusite crônica, por outro lado, é uma condição mais persistente, com sintomas que duram mais de 12 semanas. Pode ser causada por infecções recorrentes, desvio de septo nasal, pólipos sinusais ou outras condições nasais. Os sintomas são semelhantes aos da sinusite aguda, mas podem ser menos intensos. A sinusite crônica requer uma avaliação e tratamento mais minuciosos para aliviar os sintomas e melhorar a qualidade de vida do paciente.",
         consigli: "Evite a exposição ao frio.",
@@ -943,7 +942,7 @@ var DB_patologie = {
     "123": {
         nomi: [
             "Tireoidite linfocítica crônica",
-            "tireoidite de Hashimoto",
+            "Tireoidite de Hashimoto",
             "Tireoidite autoimune"
         ],
         descrizione: "Condição médica autoimune crônica envolvendo a tireoide, uma glândula em forma de borboleta localizada no pescoço responsável pela produção de hormônios tireoidianos. Nessa doença, o sistema imunológico ataca por engano a tireoide, causando inflamação crônica.<br> Na tireoidite linfocítica crônica, o tecido tireoidiano é infiltrado por linfócitos, um tipo de célula imune, que progressivamente danificam a glândula e reduzem sua capacidade de produzir hormônios. Isso pode levar ao hipotireoidismo progressivo, uma condição na qual a tireoide não produz hormônios tireoidianos suficientes.<br> Os sintomas da tireoidite de Hashimoto podem ser sutis e se desenvolver gradualmente. Eles podem incluir fadiga, ganho de peso, pele seca, cabelos quebradiços, intolerância ao frio, depressão e inchaço da tireoide (bócio).<br> Manifesta-se primeiro como hipofunção da tireoide com aumento do TSH, então o T4 sérico diminui e o hipotireoidismo se desenvolve.",
@@ -952,7 +951,7 @@ var DB_patologie = {
     },
     "125": {
         nomi: [
-            "amigdalite aguda"
+            "Amigdalite aguda"
         ],
         descrizione: "Inflamação das amígdalas, as massas de tecido em forma de amêndoa localizadas na parte posterior da garganta. Esta inflamação é frequentemente causada por infecções virais ou bacterianas.<br> Os sintomas da amigdalite aguda podem incluir dor de garganta, dificuldade para engolir, febre, dor ou inchaço das amígdalas, gânglios linfáticos aumentados no pescoço, tosse e dor de cabeça. Nos casos de amigdalite bacteriana, pode aparecer um revestimento branco ou amarelo nas amígdalas.<br> A amigdalite aguda é mais comum em crianças e adolescentes, mas pode afetar pessoas de todas as idades. É facilmente transmitida através do contato com gotículas de saliva infectadas, como durante contato direto ou compartilhamento de itens pessoais.<br> Na maioria dos casos, a tonsilite inevitavelmente também envolve laringite e apresenta o mesmo quadro clínico.",
         consigli: "A decocção de dente-de-leão é excelente.",
@@ -969,7 +968,7 @@ var DB_patologie = {
     "127": {
         nomi: [
             "Tromboangiite",
-            "doença de Buerger"
+            "Doença de Buerger"
         ],
         descrizione: "Uma condição inflamatória rara que afeta os vasos sanguíneos das extremidades, como mãos e pés. Caracteriza-se pela formação de coágulos sanguíneos (trombos) nas artérias e veias, causando redução do fluxo sanguíneo e danificando os tecidos circundantes.<br> A causa exata da tromboangeíte não é totalmente compreendida, mas o tabagismo é considerado um fator de risco significativo para o desenvolvimento da doença. Portanto, a cessação do tabagismo é crucial para o tratamento e gerenciamento da condição.<br> Os sintomas de tromboangeíte podem incluir dor, inchaço, úlceras e, em casos graves, possível necrose tecidual (morte de tecido) nos dedos das mãos e dos pés. Os sintomas podem ser cíclicos, com períodos de exacerbação seguidos de remissões temporárias.",
         consigli: "Combine o tratamento com moxa ou shiatsu com o tratamento farmacológico da Medicina Ocidental.",
@@ -978,7 +977,7 @@ var DB_patologie = {
     "128": {
         nomi: [
             "Trombocitopenia",
-            "insuficiência plaquetária"
+            "Insuficiência plaquetária"
         ],
         descrizione: "Condição caracterizada por uma diminuição no número de plaquetas no sangue. As plaquetas são pequenas células do sangue que desempenham um papel fundamental na coagulação do sangue, ajudando a formar coágulos para estancar o sangramento.<br> Na trombocitopenia, o número de plaquetas é menor que o normal, aumentando o risco de sangramento e hematomas. Essa condição pode ser causada por vários motivos, como doenças autoimunes, infecções, certos medicamentos, problemas de medula óssea, distúrbios hematológicos ou condições genéticas.<br> Os sintomas de trombocitopenia podem variar e podem incluir hematomas espontâneos, sangramento nasal ou gengival, manchas vermelhas na pele (petéquias), sangramento gastrointestinal ou sangramento menstrual intenso. Em alguns casos, a trombocitopenia pode ser assintomática e só pode ser diagnosticada por meio de exames de sangue de rotina.",
         consigli: "Como as plaquetas são responsáveis pelo reparo e coagulação de feridas, atenção especial deve ser dada para evitar queimaduras na pele com a moxabustão, pois a cicatrização seria muito mais demorada e desconfortável.",
@@ -1004,7 +1003,7 @@ var DB_patologie = {
     "131": {
         nomi: [
             "Úlcera gástrica e duodenal",
-            "úlcera péptica"
+            "Úlcera péptica"
         ],
         descrizione: "Condição médica caracterizada pela formação de pequenas feridas ou úlceras na parede interna do estômago ou duodeno (a primeira parte do intestino delgado). Essas úlceras se desenvolvem devido a danos no revestimento protetor que reveste o estômago e o duodeno, permitindo que os ácidos estomacais danifiquem as paredes dos órgãos.<br> As úlceras gástricas se formam no estômago, enquanto as úlceras duodenais se desenvolvem no duodeno. As principais causas de úlceras gástricas e duodenais incluem infecção por Helicobacter pylori, uso excessivo de anti-inflamatórios não esteróides (AINEs), estresse, excesso de ácido estomacal e abuso de álcool ou tabaco.<br> Os sintomas comuns incluem dor abdominal, azia, arrotos, náuseas e vômitos. A dor geralmente diminui temporariamente com a ingestão de medicamentos antiácidos.<br> O diagnóstico é estabelecido através de exames endoscópicos ou testes respiratórios para detectar a infecção por Helicobacter pylori.",
         consigli: "Corrija a dieta, a quantidade de alimentos e o número de refeições.",
@@ -1012,7 +1011,7 @@ var DB_patologie = {
     },
     "132": {
         nomi: [
-            "verrugas comuns"
+            "Verrugas comuns"
         ],
         descrizione: "Lesões cutâneas benignas causadas por uma infecção viral do papilomavírus humano (HPV). Essas verrugas aparecem como pequenos crescimentos salientes, geralmente de cor acinzentada ou marrom, com uma superfície áspera. Eles são mais comumente encontrados nas mãos, dedos e outras áreas da pele sujeitas a fricção ou pressão.<br> As verrugas comuns são contagiosas e são transmitidas através do contato direto com a pele infectada ou objetos contaminados com o vírus. Eles podem aparecer individualmente ou em grupos.<br> Embora as verrugas comuns sejam geralmente inofensivas e não causem sérios problemas de saúde, elas podem ser incômodas ou embaraçosas para algumas pessoas. Além disso, se arranhados ou danificados, podem se espalhar para outras partes do corpo ou para outras pessoas.",
         consigli: "Use sandálias cobertas na piscina, que é o local mais infeccioso e onde as verrugas são mais comumente transmitidas para os pés.<br> Lave as mãos com frequência se estiver em ambientes com pessoas portadoras.",
@@ -1035,7 +1034,7 @@ var DB_patologie = {
     },
     "135": {
         nomi: [
-            "adenose benigna"
+            "Adenose benigna"
         ],
         descrizione: "Adenose é uma condição benigna caracterizada por lóbulos mamários aumentados.<br> É uma lesão proliferativa dos lóbulos, frequentemente associada à mastopatia fibrocística. Não está associado a um risco aumentado de desenvolvimento de malignidade.",
         categoria: 7
@@ -1049,7 +1048,7 @@ var DB_patologie = {
     },
     "137": {
         nomi: [
-            "dor pélvica feminina"
+            "Dor pélvica feminina"
         ],
         descrizione: "A dor pélvica é resultado da formação de tecido fibroso entre os órgãos pélvicos, semelhante a uma grande cicatriz, que surge após um trauma ou cirurgia.",
         sesso: "f",
@@ -1086,7 +1085,7 @@ var DB_patologie = {
     },
     "143": {
         nomi: [
-            "membro fantasma"
+            "Membro fantasma"
         ],
         descrizione: "A síndrome do membro fantasma é a sensação anormal que persiste em um membro após sua amputação ou após a perda de sensibilidade.<br> O indivíduo afetado experimenta sensações dolorosas e desconforto como se o membro ainda estivesse presente.",
         categoria: 4
@@ -1128,14 +1127,14 @@ var DB_patologie = {
     },
     "149": {
         nomi: [
-            "bruxismo"
+            "Bruxismo"
         ],
         descrizione: "O bruxismo refere-se a uma condição em que ocorre o ranger dos dentes, esfregando o arco superior contra o inferior enquanto aperta os maxilares com alguma força.<br> O bruxismo é uma condição bastante comum que depende da contração involuntária dos músculos da mastigação.<br> Ocorre principalmente à noite e pode causar uma série de consequências: desgaste dos dentes, dor na mandíbula, dores de cabeça.",
         categoria: 4
     },
     "150": {
         nomi: [
-            "bulimia"
+            "Bulimia"
         ],
         descrizione: "A bulimia é um dos transtornos alimentares caracterizados pela ingestão excessiva de alimentos, conhecida como compulsão alimentar, seguida de episódios que visam eliminar a quantidade ingerida de alimentos, por meio de métodos como a autoindução do vômito ou o uso de laxantes. Essa condição é difícil de reconhecer, pois os indivíduos freqüentemente afetados têm um peso corporal normal.",
         categoria: 4
@@ -1144,7 +1143,7 @@ var DB_patologie = {
         nomi: [
             "Capsulite adesiva",
             "Ombro congelado",
-            "ombros rígidos"
+            "Ombros rígidos"
         ],
         descrizione: "A capsulite adesiva, comumente conhecida como ombro congelado, é uma forma particular de degeneração periarticular dolorosa que causa perda da mobilidade do ombro.<br> Sinais e sintomas clínicos comuns incluem dor e restrição dos movimentos normais do ombro, que não podem mais ultrapassar a cabeça.",
         categoria: 13
@@ -1244,7 +1243,7 @@ var DB_patologie = {
     },
     "166": {
         nomi: [
-            "disartria funcional"
+            "Disartria funcional"
         ],
         descrizione: "A disartria é uma condição caracterizada por fraqueza, dificuldade em controlar ou coordenar os músculos usados para a fala.<br> Frequentemente caracterizado por linguagem e compreensão confusas ou lentas, o distúrbio pode ser causado por certos medicamentos ou problemas relacionados ao sistema nervoso.",
         categoria: 4
@@ -1258,7 +1257,7 @@ var DB_patologie = {
     },
     "168": {
         nomi: [
-            "distonia facial",
+            "Distonia facial",
             "Síndrome de Meige"
         ],
         descrizione: "A síndrome de Meige (blefaroespasmo combinado com distonia oromandibular), também conhecida como distonia, manifesta-se com contrações musculares semelhantes a piscar involuntário, ranger da mandíbula e caretas faciais, que geralmente começam no final da idade adulta.",
@@ -1301,14 +1300,14 @@ var DB_patologie = {
     },
     "174": {
         nomi: [
-            "dor de cotovelo"
+            "Dor de cotovelo"
         ],
         descrizione: "A dor no cotovelo é sentida como uma sensação incômoda, incômoda, ardente, aguda ou até mesmo de choque elétrico. Pode ocorrer de forma gradual ou repentina, piorar com movimentos ou posições específicas, e pode ser acompanhada de dor em outras áreas do corpo e sintomas neurológicos. De qualquer forma, as características da dor no cotovelo dependem do fator causal. Na maioria dos casos, a dor no cotovelo está relacionada à epicondilite, epitrocleite, artrite do cotovelo e à chamada bursite do olécrano. No entanto, esse sintoma também pode ser causado por luxações, entorses, fraturas, síndromes de compressão nervosa e radiculopatia cervical.",
         categoria: 13
     },
     "175": {
         nomi: [
-            "dor na articulação temporomandibular"
+            "Dor na articulação temporomandibular"
         ],
         descrizione: "A dor na articulação temporomandibular é uma sensação que se origina na região orofacial, afetando os músculos mastigatórios e a articulação que liga o osso temporal do crânio à mandíbula. As disfunções dessa estrutura geralmente causam dor intensa, especialmente durante os movimentos da mandíbula, como mastigar e falar. A maioria das dores na articulação temporomandibular está relacionada à dor miofascial, distúrbios da articulação temporomandibular com cliques ou bloqueios articulares, artrite ou osteoartrite da articulação temporomandibular.",
         categoria: 13
@@ -1329,14 +1328,14 @@ var DB_patologie = {
     },
     "178": {
         nomi: [
-            "dor coccígea"
+            "Dor coccígea"
         ],
         descrizione: "A coccidínia é uma síndrome que afeta o cóccix, principalmente as últimas vértebras da coluna vertebral. A dor é sentida na área da prega glútea (região anal). Manifesta-se como uma dor bastante aguda, decorrente de um processo inflamatório crônico que pode acometer indivíduos de todas as idades e ambos os sexos. As causas são variadas, mas na maioria dos casos resultam de traumas associados a tensão muscular e ligamentar excessiva no cóccix. Contusão, queda, fratura ou luxação podem ser possíveis causas do início da dor.",
         categoria: 13
     },
     "179": {
         nomi: [
-            "dor no tornozelo"
+            "Dor no tornozelo"
         ],
         descrizione: "A dor no tornozelo, na maioria dos casos, é resultado de uma entorse, mas também pode ser atribuída a outros distúrbios, como instabilidade da articulação do tornozelo, artrite, gota, tendinite, fratura óssea, compressão de um nervo (como a síndrome do túnel do tarso), infecção, e mau alinhamento estrutural da perna ou pé. Os sintomas mais frequentes são inchaço, rigidez, vermelhidão e calor na área afetada. Geralmente, o paciente descreve a dor como &#39;intensa e incômoda&#39;, estendendo-se para a perna e ocorrendo quando está em pé ou durante o movimento do tornozelo.",
         categoria: 13
@@ -1350,7 +1349,7 @@ var DB_patologie = {
     },
     "181": {
         nomi: [
-            "dor muscular nas costas"
+            "Dor muscular nas costas"
         ],
         descrizione: "Dorsalgia, comumente chamada de dor nas costas, é uma dor que ocorre na região dorsal, principalmente na parte superior das costas, entre as escápulas, mas também pode irradiar para o pescoço ou tórax. A maioria dos episódios agudos de dorsalgia é causada por esforço, trauma e posturas alteradas, que causam tensão, tensão e rigidez das estruturas conectadas à coluna vertebral. Os pacientes podem apresentar dor aguda, que geralmente não ultrapassa 30 dias, ou dor crônica, em que os sintomas persistem por três a seis meses.",
         categoria: 13
@@ -1385,14 +1384,14 @@ var DB_patologie = {
     },
     "186": {
         nomi: [
-            "dorsalgia muscular"
+            "Dorsalgia muscular"
         ],
         descrizione: "Dorsalgia é uma condição causada por tensão muscular excessiva alimentada por estresse mecânico e psicológico, tônus fraco dos músculos abdominais, dorsais e lombares ou excesso de peso. Na maioria dos casos, é causada por má postura durante o sono e horas de trabalho, movimentos bruscos e estresse emocional.",
         categoria: 13
     },
     "187": {
         nomi: [
-            "duodenite"
+            "Duodenite"
         ],
         descrizione: "Duodenite indica uma condição inflamatória aguda ou crônica do duodeno, a porção do canal alimentar entre o estômago e o jejuno.<br> Este distúrbio pode ter várias causas, embora geralmente seja causado pelo aumento da secreção ácida do estômago, resultante da infecção por Helicobacter pylori ou outras infecções bacterianas e virais, bem como medicamentos como AINEs e má alimentação.",
         categoria: 9
@@ -1428,7 +1427,7 @@ var DB_patologie = {
     },
     "192": {
         nomi: [
-            "endometrioma"
+            "Endometrioma"
         ],
         descrizione: "O endometrioma, também conhecido como cisto de endometriose vulvar, é um cisto doloroso raro que deriva da implantação ectópica de tecido endometrial (endometriose). Os cistos de endometriose são sacos cheios de sangue &quot;velho&quot; de origem endometrial. Eles normalmente medem entre 2 e 5 centímetros de diâmetro, mas em raras circunstâncias podem atingir 10 a 20 centímetros. Indivíduos afetados por um endometrioma experimentam cólicas abdominais, dor pélvica e menstruação dolorosa. A ruptura de um endometrioma causa dor pélvica intensa, sangramento vaginal, febre, náusea e vômito. O tratamento pode ser farmacológico ou cirúrgico, dependendo da gravidade do cisto endometriótico existente. Geralmente, cistos pequenos requerem terapia farmacológica, enquanto cistos grandes requerem cirurgia.",
         sesso: "f",
@@ -1444,7 +1443,7 @@ var DB_patologie = {
     },
     "194": {
         nomi: [
-            "enfisema pulmonar"
+            "Enfisema pulmonar"
         ],
         descrizione: "O enfisema pulmonar é um distúrbio respiratório grave causado pela deterioração progressiva e aumento dos sacos alveolares. A causa mais comum é a inalação de substâncias irritantes, como fumaça de cigarro, ar poluído ou emissões de certas plantas industriais. Essas substâncias não apenas causam potencialmente enfisema pulmonar, mas também contribuem para a formação de tumores pulmonares. O sintoma mais significativo em pacientes com enfisema pulmonar é a dispnéia, que piora com o passar dos anos e é acompanhada por alterações perceptíveis e significativas na caixa torácica, dando-lhe uma aparência em forma de barril. Os pacientes adotam a postura clássica de ombros elevados para auxiliar a respiração, que se torna ruidosa e sibilante. Além disso, tosse seca e grande cansaço estão presentes. Com o tempo e a progressão da doença, pode ocorrer cianose dos lábios e do leito ungueal, indicando necessidade de oxigenoterapia devido a sintomas de deficiência de oxigenação sanguínea. Quando esta sintomatologia persiste e o paciente apresenta desconforto respiratório grave com dessaturação grave, são necessárias intervenções urgentes, pois o comprometimento de outros órgãos, como coração e cérebro, torna-se iminente.",
         categoria: 2
@@ -1500,7 +1499,7 @@ var DB_patologie = {
     },
     "202": {
         nomi: [
-            "inchaço abdominal"
+            "Inchaço abdominal"
         ],
         descrizione: "O inchaço abdominal é um sintoma muito comum causado pelo acúmulo de gases no estômago ou intestinos.<br> Pode estar associada a dor intensa e pode ser causada por certos alimentos, bebidas carbonatadas, mau hábito de comer muito rápido, goma de mascar, tabagismo, estresse ou ansiedade.<br> Ocorre após a alimentação e, geralmente, o indivíduo experimenta uma sensação de inchaço e tensão no abdome, que pode ser acompanhada de inchaço real da barriga (aumento de sua circunferência) e, às vezes, também de dor abdominal, cólicas, flatulência, náuseas e dores de cabeça.<br> Pode ocorrer ocasionalmente, como resultado de uma refeição pesada, ou pode ser mais frequente e representar um sintoma de um distúrbio gastrointestinal ou outro tipo.",
         categoria: 9
@@ -1514,14 +1513,14 @@ var DB_patologie = {
     },
     "208": {
         nomi: [
-            "hipertireoidismo autoimune"
+            "Hipertireoidismo autoimune"
         ],
         descrizione: "A principal causa do hipertireoidismo é a doença de Graves ou bócio tóxico difuso, uma doença autoimune caracterizada pela produção de anticorpos pelo sistema imunológico que têm a capacidade de estimular a tireoide a produzir hormônios tireoidianos em excesso.<br> O hipertireoidismo é mais comum em mulheres do que em homens e tende a ter um padrão familiar. O excesso de hormônios tireoidianos tem sérias consequências sobre o metabolismo, levando à perda repentina de peso, alterações nos batimentos cardíacos, sudorese e nervosismo. Isso ocorre porque a tireoide controla todos os aspectos do metabolismo por meio dos hormônios que produz.<br> As doenças que podem causar aumento dos níveis circulantes de hormônios tireoidianos são variadas. Entre as mais comuns estão a doença de Graves (uma doença autoimune), nódulos tireoidianos (adenoma tóxico, bócio multinodular tóxico e doença de Plummer) e tireoidite (inflamação que leva à liberação de hormônio armazenado no sangue). Também deve ser notado que certos medicamentos (interferon, amiodarona) podem induzir hipertireoidismo.",
         categoria: 12
     },
     "209": {
         nomi: [
-            "hipertricose"
+            "Hipertricose"
         ],
         descrizione: "A hipertricose é uma condição caracterizada pelo crescimento excessivo de pelos localizado ou generalizado. Ao contrário do hirsutismo, que afeta áreas normalmente sem pelos (como rosto, ombros, abdômen inferior, costas e parte interna das coxas), a hipertricose pode afetar qualquer parte do corpo, mesmo aquelas normalmente cobertas por pelos.",
         categoria: 5
@@ -1543,14 +1542,14 @@ var DB_patologie = {
     },
     "212": {
         nomi: [
-            "hipotricose"
+            "Hipotricose"
         ],
         descrizione: "A hipotricose é um distúrbio raro de queda de cabelo autossômico dominante caracterizado pela ausência ou rarefação de cabelos, sobrancelhas e cílios no nascimento; cabelo áspero, tipo arame durante a infância; e queda de cabelo progressiva a partir da puberdade.<br> Indivíduos afetados de ambos os sexos geralmente apresentam ausência ou rarefação de cabelos, sobrancelhas e cílios no nascimento. Na primeira infância, o cabelo torna-se áspero e &#39;como arame&#39;. A perda de cabelo começa por volta da puberdade, semelhante ao padrão observado na alopecia androgenética, e progride para alopecia quase total. Os pêlos axilares e pubianos podem ser escassos ou ausentes, assim como os pêlos da barba em homens e adolescentes. Nenhuma outra anomalia ectodérmica está presente.",
         categoria: 5
     },
     "213": {
         nomi: [
-            "hirsutismo"
+            "Hirsutismo"
         ],
         descrizione: "O hirsutismo refere-se a uma condição caracterizada pelo crescimento excessivo de pelos grossos, escuros e ásperos em áreas onde normalmente está ausente nas mulheres, como o lábio superior, queixo, tórax, abdômen, costas, nádegas e parte superior do braço, do ombro ao cotovelo. Geralmente é causada pela produção excessiva de andrógenos (ou hormônios masculinos) pelos ovários ou glândulas adrenais.<br> Este distúrbio pode ser familiar e é principalmente uma condição clínica benigna.<br> É frequentemente associada a outros distúrbios, incluindo fluxo menstrual irregular ou ausente, perda de cabelo, acne e excesso de peso, todos fatores importantes a serem considerados. No entanto, o crescimento súbito e excessivo do cabelo pode indicar a presença de câncer.",
         sesso: "f",
@@ -1558,7 +1557,7 @@ var DB_patologie = {
     },
     "214": {
         nomi: [
-            "labirintite"
+            "Labirintite"
         ],
         descrizione: "A labirintite refere-se à inflamação do labirinto, uma estrutura localizada no ouvido interno.<br> Quando essa parte fica inflamada, manifesta-se com diminuição da audição, tontura, zumbido (zumbido nos ouvidos), além de problemas de equilíbrio e postura.",
         categoria: 1
@@ -1572,7 +1571,7 @@ var DB_patologie = {
     },
     "216": {
         nomi: [
-            "lumbago muscular"
+            "Lumbago muscular"
         ],
         descrizione: "A lombalgia é uma das queixas mais comuns da população adulta, principalmente após os 30 anos.<br> Existem dois tipos de lombalgia: aguda e crônica.<br> A lombalgia aguda é caracterizada por dor intensa associada a lesões musculares, articulares, ligamentares e discais e tende a ser acompanhada de processos inflamatórios.<br> A dor lombar crônica consiste em dor que dura mais de 3 meses.<br> É a forma mais grave de lombalgia devido às suas repercussões individuais, profissionais, sociais e econômicas.",
         categoria: 13
@@ -1586,7 +1585,7 @@ var DB_patologie = {
     },
     "218": {
         nomi: [
-            "doença de Ménière"
+            "Doença de Ménière"
         ],
         descrizione: "A doença de Ménière é um distúrbio do ouvido interno caracterizado por crises recorrentes de vertigem com durações variáveis, de alguns minutos a várias horas, associadas a zumbido e principalmente perda auditiva flutuante unilateral, náuseas e vômitos.",
         categoria: 1
@@ -1646,14 +1645,14 @@ var DB_patologie = {
     },
     "227": {
         nomi: [
-            "neuralgia periférica"
+            "Neuralgia periférica"
         ],
         descrizione: "A neuropatia periférica ou neuralgia periférica é a condição dolorosa crônica resultante da deterioração e mau funcionamento dos nervos periféricos ou estruturas do sistema nervoso central.",
         categoria: 4
     },
     "228": {
         nomi: [
-            "neuralgia pós-herpética"
+            "Neuralgia pós-herpética"
         ],
         descrizione: "A neuralgia pós-herpética é uma complicação frequente da infecção por herpes zoster, mais conhecida como zona. Ela é causada pela reativação do mesmo vírus responsável pela varicela, que permanece adormecido no sistema nervoso após a doença. As telhas consistem em uma erupção dolorosa de bolhas cheias de líquido causadas pela reativação do vírus varicela-zoster, causador da catapora. Algumas pessoas com herpes zoster continuam a sentir dor muito tempo depois que a erupção foi resolvida. Essa dor é chamada de neuralgia pós-herpética. A razão exata pela qual a neuralgia pós-herpética ocorre não é clara. A duração média da neuralgia pós-herpética é de 5 a 6 meses, mas, em alguns casos, pode durar anos ou até a vida toda. Esta condição afeta principalmente pessoas com mais de 60 anos e pode ser muito debilitante. Embora não haja cura específica, certos tipos de tratamentos podem reduzir os sintomas.",
         categoria: 4
@@ -1669,7 +1668,7 @@ var DB_patologie = {
     },
     "230": {
         nomi: [
-            "oligomenorréia"
+            "Oligomenorréia"
         ],
         descrizione: "A oligomenorréia é um dos tipos de irregularidades do ciclo menstrual que as mulheres em idade reprodutiva podem experimentar. Esta condição envolve fluxo menstrual escasso e um ciclo bastante longo, superior a 35 e inferior a 90 dias (entre uma menstruação e outra). Quando o ciclo excede 90 dias, é referido como amenorréia. A principal causa da oligomenorréia é o uso de pílulas anticoncepcionais orais. Em outras circunstâncias, pode ser devido à idade jovem, pois os primeiros estágios da menstruação podem ser caracterizados por um ciclo irregular. Outra causa pode ser o envolvimento em atividades físicas particularmente intensas, como em esportes competitivos. A oligomenorréia também pode ser causada pelo uso de certos medicamentos, como antipsicóticos ou antiepilépticos, deficiência do hormônio prolactina ou várias condições, incluindo diabetes, distúrbios da tireoide, anorexia nervosa, bulimia e síndrome dos ovários policísticos.",
         sesso: "f",
@@ -1747,9 +1746,9 @@ var DB_patologie = {
     },
     "242": {
         nomi: [
-            "paresia fria",
+            "Paresia fria",
             "Paralisia do nervo facial",
-            "paralisia de Bell"
+            "Paralisia de Bell"
         ],
         descrizione: "Comumente conhecida como paralisia pelo frio, clinicamente definida como paralisia de Bell, é um distúrbio que afeta o paciente causando paralisia.<br> A paresia fria é uma doença que pode ocorrer sem causa aparente e é caracterizada por danos reversíveis ou permanentes ao sétimo nervo craniano ou facial.<br> Manifesta-se como motilidade alterada dos músculos faciais que o paciente não consegue mais controlar. A fase mais aguda ocorre dentro de 48 horas após o início do episódio.<br> A incapacidade de controlar os músculos faciais altera significativamente a aparência da face, em repouso e ainda mais durante os movimentos de sua musculatura.<br> A paresia facial periférica (ou paralisia) é a forma mais comum de mononeuropatia aguda (uma doença que afeta um único nervo) e representa a causa mais comum de paralisia aguda do nervo facial.<br> Normalmente, apenas um lado da face, inervado pelo nervo afetado, é acometido; problemas funcionais afetam os olhos, o nariz e a fala (a capacidade de articular palavras).<br> O chamado fenômeno de Bell (em homenagem a Charles Bell, que o descreveu pela primeira vez) também estará presente, caracterizado pela rotação para cima do globo ocular ao tentar fechar o olho.",
         categoria: 4
@@ -1874,7 +1873,7 @@ var DB_patologie = {
     },
     "261": {
         nomi: [
-            "radiculopatia cervical"
+            "Radiculopatia cervical"
         ],
         descrizione: "Radiculopatia é uma condição do sistema nervoso periférico que afeta a raiz de um nervo espinhal, geralmente devido à síndrome de compressão. Pode afetar uma única raiz nervosa ou múltiplas raízes nervosas simultaneamente, muitas vezes causando incapacidade significativa.<br> Os sintomas característicos incluem déficits sensoriais, déficits motores, reflexos tendinosos diminuídos com ou sem dor radicular no pescoço que se irradia para todo o membro superior. A maioria dos pacientes atinge a resolução da radiculopatia por meio de tratamento conservador (fisioterapia, colar e medicação), mas em alguns casos, a intervenção cirúrgica pode ser necessária para controlar os sintomas.",
         categoria: 4
@@ -1909,14 +1908,14 @@ var DB_patologie = {
     },
     "266": {
         nomi: [
-            "rinite crônica"
+            "Rinite crônica"
         ],
         descrizione: "A rinite crônica é caracterizada por sintomas que aparecem gradualmente, duram vários meses e são de gravidade moderada. Na área médica, a rinite é considerada crônica quando suas manifestações clínicas duram pelo menos uma hora por dia, durante cerca de um ano.<br> As causas são múltiplas, mas na maioria dos casos é causada por alergias, irritantes nasais ou problemas estruturais do septo nasal.",
         categoria: 1
     },
     "267": {
         nomi: [
-            "rinite vasomotora"
+            "Rinite vasomotora"
         ],
         descrizione: "A rinite vasomotora, também conhecida como rinite não alérgica, é uma condição crônica caracterizada por congestão vascular intermitente da mucosa nasal levando a rinorreia aquosa e espirros.<br> É uma condição que se manifesta com congestão nasal (nariz entupido), rinorreia (nariz escorrendo) e espirros recorrentes sem uma causa clara.<br> Os fatores que podem desencadear o aparecimento dos sintomas são múltiplos, incluindo poeira, poluição, tabagismo passivo, perfumes fortes, alimentos quentes ou condimentados, consumo excessivo de bebidas alcoólicas e uso excessivo de sprays descongestionantes nasais.<br> Um clima muito seco ou um ambiente contaminado com irritantes podem piorar a condição.<br> Crianças e adultos podem ser afetados, embora seja mais comum após os 20 anos de idade.<br> O diagnóstico de rinite vasomotora é feito após a exclusão de uma forma alérgica, que necessariamente requer testes cutâneos e exames de sangue.<br> A condição não representa sérios riscos à saúde, mas pode ser incômoda e afetar a qualidade de vida do paciente. Não existe cura definitiva, pelo que o tratamento visa exclusivamente o controlo e prevenção dos sintomas.",
         categoria: 1
@@ -1931,8 +1930,8 @@ var DB_patologie = {
     "269": {
         nomi: [
             "Esclerose múltipla",
-            "poliesclerose",
-            "esclerose disseminada"
+            "Poliesclerose",
+            "Esclerose disseminada"
         ],
         descrizione: "A esclerose múltipla (EM), também conhecida como esclerose disseminada ou poliesclerose, é uma doença desmielinizante autoimune crônica que afeta o sistema nervoso central, causando uma ampla gama de sinais e sintomas.<br> Essa condição afeta as células nervosas, dificultando a comunicação entre o cérebro e a medula espinhal.<br> As células nervosas transmitem sinais elétricos, conhecidos como potenciais de ação, através de longas fibras chamadas axônios, que são cobertas por uma substância isolante chamada bainha de mielina. Na doença, as defesas imunológicas do paciente atacam e danificam essa bainha. Quando isso acontece, os axônios não são mais capazes de transmitir sinais de forma eficaz.<br> A doença pode se manifestar com uma ampla gama de sintomas neurológicos e pode progredir para completa incapacidade física e cognitiva. A esclerose múltipla pode assumir várias formas, incluindo formas recidivantes e progressivas.<br> A partir de 2022, não há cura conhecida. Alguns tratamentos farmacológicos estão disponíveis para prevenir novos ataques e incapacidades. O prognóstico é difícil de prever e depende de muitos fatores, enquanto a expectativa de vida é cerca de 5 a 10 anos menor que a da população saudável.<br> O nome esclerose múltipla deriva das cicatrizes (esclerose), mais conhecidas como placas ou lesões, que se formam na substância branca da medula espinhal e do cérebro.",
         categoria: 4
@@ -1970,7 +1969,7 @@ var DB_patologie = {
     },
     "274": {
         nomi: [
-            "síndrome miofascial"
+            "Síndrome miofascial"
         ],
         descrizione: "É uma síndrome caracterizada por dor crônica e inflamação muscular profunda específica em uma determinada região do corpo. A área muscular afetada apresenta rigidez, espasmos e fraqueza.<br> Afeta a fáscia do tecido conjuntivo que cobre um único músculo ou múltiplos grupos musculares em pontos definidos chamados PONTOS DE GATILHO (TP).<br> A síndrome da dor miofascial inclui um vasto e heterogêneo grupo de patologias musculares caracterizadas por dor muscular contínua, associada à contração, limitação funcional e, ocasionalmente, sintomas nevrálgicos (parestesia, formigamento e disfunção autonômica).<br> As principais causas desse distúrbio são atividades repetitivas ao longo do tempo que estressam ou mantêm o músculo constantemente encurtado, traumas ou acidentes (sobrecarga aguda), posturas incorretas prolongadas, como em determinadas ocupações, estresse e ansiedade.<br> A pessoa sente uma dor intensa, incômoda, profunda, incômoda e limitante, a ponto de sentir queimação, espasmos e fraqueza muscular quando o músculo está tenso.<br> A dor está presente tanto em repouso quanto durante a atividade e tende a se espalhar e piorar com o tempo, causando redução da força muscular e da amplitude de movimento.<br> Microtraumas ou sobrecargas repetidas podem gerar contrações musculares prolongadas e fenômenos de isquemia local.<br> Os pontos-gatilho também possuem atividade eletromiográfica espontânea, tornando-se assim independentes dos processos normais de controle e regulação da contração muscular.<br> As consequências dessa condição incluem redução da amplitude de movimento nos segmentos corporais afetados, piorando com aumento do estresse psicológico, variações de temperatura e desequilíbrios posturais.",
         categoria: 13
@@ -1998,21 +1997,21 @@ var DB_patologie = {
     },
     "278": {
         nomi: [
-            "tendinite do manguito rotador"
+            "Tendinite do manguito rotador"
         ],
         descrizione: "A tendinite do manguito rotador é a inflamação de um ou mais tendões que compõem o manguito rotador, enquanto a bursite é a inflamação de uma das bursas (pequenas bolsas cheias de líquido que reduzem o atrito durante o movimento).<br> O manguito rotador refere-se a um conjunto de músculos e tendões no ombro que permitem quase todos os movimentos da articulação. A articulação do ombro é particularmente instável e o componente do tendão é de particular importância. Devido a essa instabilidade, é possível que os tendões da articulação fiquem sobrecarregados, inflamados, lesionados ou desenvolvam calcificações, o que leva ao desenvolvimento do que chamamos de tendinopatias do manguito rotador - condições dolorosas que causam sintomas e limitações no funcionalidade da articulação.",
         categoria: 13
     },
     "279": {
         nomi: [
-            "tique facial"
+            "Tique facial"
         ],
         descrizione: "Os tiques faciais são espasmos repetidos, geralmente envolvendo os olhos e os músculos faciais.<br> Os tiques geralmente ocorrem em crianças, mas podem persistir na idade adulta.<br> A causa exata é desconhecida, mas o estresse parece piorar os tiques.<br> Os tiques de curta duração, considerados distúrbios transitórios, são comuns na infância.<br> Há também a possibilidade de a condição se tornar crônica. Pode durar anos, mas isso é muito raro em comparação com o normal. A síndrome de Gilles de la Tourette é uma condição diferente que se caracteriza por tiques como seu principal sintoma.<br> Os principais sintomas são espasmos musculares repetidos e incontroláveis, como piscar de olhos, movimentos involuntários da boca, enrugamento do nariz ou estrabismo e pigarro repetitivo ou ruídos semelhantes a grunhidos.<br> O diagnóstico geralmente é feito através de um exame físico. Não são necessários mais testes especiais. Em casos raros, um eletroencefalograma pode ser realizado para descartar convulsões.",
         categoria: 4
     },
     "280": {
         nomi: [
-            "hipertireoidismo factício"
+            "Hipertireoidismo factício"
         ],
         descrizione: "O hipertireoidismo factício é uma condição de hipertireoidismo causada pela ingestão excessiva, intencional ou acidental de hormônio tireoidiano. A ingestão excessiva de iodo causa hipertireoidismo associado à baixa captação de iodo radioativo pela tireoide.",
         categoria: 12
@@ -2026,7 +2025,7 @@ var DB_patologie = {
     },
     "282": {
         nomi: [
-            "vertigem periférica"
+            "Vertigem periférica"
         ],
         descrizione: "A vertigem periférica é causada diretamente pela disfunção vestibular na orelha interna, sendo a forma mais comum a vertigem posicional paroxística benigna (VPPB). Esse tipo de vertigem, desencadeada pelos movimentos da cabeça, leva o indivíduo acometido a perder a percepção da orientação da cabeça no espaço. A sensação diminui alguns segundos depois que o movimento da cabeça para.<br> A causa desse distúrbio está relacionada ao desprendimento de pequenos cristais de oxalato de cálcio, chamados otólitos, do sistema vestibular dentro da orelha. Esses otólitos causam vertigem toda vez que um movimento é feito. Esse fenômeno é conhecido como cupulolitíase.<br> Quando esses otólitos se desprendem de sua estrutura devido a traumas, lesões esportivas, predisposição genética ou outras causas, eles interrompem o funcionamento normal do ouvido interno. Como resultado, eles transmitem sinais diferentes de um ouvido para o cérebro em comparação com o outro ouvido. Quando o cérebro recebe dois sinais diferentes, a vertigem ocorre porque os sinais não estão perfeitamente sincronizados.<br> Além da vertigem posicional paroxística benigna, há também a neurite vestibular, anteriormente conhecida como labirintite. É caracterizada pela inflamação ou isquemia do nervo vestibular, que liga o labirinto (conjunto de canais que compõem o sistema vestibular no ouvido interno) ao cérebro. Quando essa conexão, responsável pela regulação do equilíbrio, é prejudicada, leva a uma sensação de vertigem. A neurite vestibular geralmente tem origem inflamatória viral.<br> A vertigem também pode ser um sintoma de uma infecção viral ou bacteriana do ouvido, uma otite simples ou labirintite, que é uma inflamação do labirinto causada por vírus comuns como gripe ou resfriado comum.<br> Menos frequentemente, a vertigem pode ser causada pela doença de Ménière, um distúrbio raro que afeta o ouvido interno, ou neurite vestibular, uma inflamação dos nervos vestibulares.<br> Finalmente, a vertigem periférica também pode ser causada por traumatismo craniano, reações alérgicas ou uso de certos medicamentos.",
         categoria: 4
@@ -2040,7 +2039,7 @@ var DB_patologie = {
     },
     "284": {
         nomi: [
-            "vômito gravídico",
+            "Vômito gravídico",
             "Hiperêmese gravídica"
         ],
         descrizione: "A hiperêmese gravídica é uma forma grave e persistente de vômito que ocorre durante a gravidez. Pode atingir um nível que causa perda de peso e desidratação (de 4 a 19 quilos). As mulheres com essa condição não absorvem energia suficiente por meio da nutrição, de modo que o corpo quebra as gorduras, resultando no acúmulo de produtos residuais (cetonas), uma situação chamada cetose (deficiência de carboidratos, em que o corpo usa as gorduras como fonte primária de energia). de glicose). A cetose leva a sintomas como fadiga, mau hálito e outros.<br> As mulheres com hiperêmese gravídica são frequentemente desidratadas a ponto de perturbar o equilíbrio eletrolítico necessário para o funcionamento normal do corpo.<br> Mulheres que apresentam episódios ocasionais de vômito com ganho de peso e sem desidratação não apresentam hiperêmese gravídica. O enjôo matinal e a hiperêmese gravídica geralmente tendem a desaparecer no segundo trimestre.<br> Normalmente, náuseas e vômitos durante a gravidez estão relacionados à própria gravidez, mas às vezes podem ser causados por outros distúrbios.<br> As causas do enjôo matinal e da hiperêmese gravídica não são claras, embora os sintomas possam estar relacionados ao aumento dos níveis de dois hormônios durante a gravidez: gonadotrofina coriônica humana (hCG), produzida pela placenta no início da gravidez, e estrogênios, que ajudam a manter a gravidez. Os níveis de estrogênio são particularmente elevados em mulheres que sofrem de hiperêmese gravídica. Além disso, hormônios como a progesterona (produzida continuamente durante a gravidez) podem retardar o movimento do conteúdo estomacal, contribuindo para náuseas e vômitos.<br> Quando uma mulher apresenta sintomas incontroláveis e persistentes de náusea e vômito durante a gravidez, o médico solicita um hemograma completo, um exame de urina para verificar cetonas e uma avaliação médica abrangente para avaliar a frequência e a intensidade dos sintomas.",
@@ -2090,28 +2089,28 @@ var DB_patologie = {
     },
     "310": {
         nomi: [
-            "neuralgia occipital"
+            "Neuralgia occipital"
         ],
         descrizione: "Condição caracterizada por episódios recorrentes de dor aguda e lancinante na região occipital, a parte de trás do crânio. Essa condição está relacionada à irritação ou compressão do nervo occipital maior ou do nervo occipital menor, que se estendem desde a coluna cervical até a região do couro cabeludo.<br> A dor associada à neuralgia occipital pode ser intensa e localizada unilateral ou bilateralmente na parte de trás da cabeça. Às vezes, o desconforto pode irradiar para o couro cabeludo, causando sensibilidade à pressão e ao toque. Os sintomas podem ser desencadeados por movimentos do pescoço, compressão do nervo, trauma ou mesmo posturas prolongadas que exercem pressão sobre a área afetada.<br> O diagnóstico de neuralgia occipital é baseado no exame clínico, na história dos sintomas e, às vezes, em exames de imagem para descartar outras causas de dor. A identificação dos fatores desencadeantes e a adoção de medidas preventivas, como manutenção da boa postura e controle do estresse, podem auxiliar na prevenção do surgimento de novos episódios de neuralgia occipital.",
         categoria: 4
     },
     "311": {
         nomi: [
-            "neuralgia braquial"
+            "Neuralgia braquial"
         ],
         descrizione: "Uma condição médica caracterizada por dor aguda, lancinante ou ardente que se origina ao longo do trajeto de um nervo braquial. O termo &quot;braquial&quot; refere-se à área do braço, onde essa dor frequentemente se manifesta. Esse tipo de neuralgia pode ser causado por irritação ou compressão do nervo braquial, que se estende desde a coluna cervical, passando pelo braço até os dedos.<br> A neuralgia braquial pode se manifestar com dor localizada no pescoço, ombro ou em todo o membro superior e geralmente é unilateral, envolvendo apenas um braço. Os sintomas podem variar de leves a intensos e podem ser desencadeados por movimentos do pescoço ou dos braços, posturas incorretas, lesões ou inflamações locais.<br> Causas comuns de neuralgia braquial incluem hérnias de disco cervical, compressão do nervo devido a problemas na coluna, lesões, infecções ou doenças inflamatórias.<br> O diagnóstico de neuralgia braquial é baseado no exame clínico, avaliação do histórico de sintomas e, às vezes, exames de imagem, como ressonância magnética ou tomografia computadorizada, para descartar outras possíveis causas de dor. A identificação dos fatores desencadeantes e a adoção de medidas preventivas podem ajudar no manejo da condição e na prevenção de recorrências.",
         categoria: 4
     },
     "312": {
         nomi: [
-            "neuralgia intercostal"
+            "Neuralgia intercostal"
         ],
         descrizione: "A neuralgia intercostal é uma condição médica caracterizada por dor aguda, esfaqueada ou ardente ao longo dos espaços entre as costelas. Essa condição é causada pela irritação ou compressão dos nervos intercostais, que se estendem ao longo da região das costelas e contribuem para dar sensibilidade à parede torácica.<br> A dor da neuralgia intercostal geralmente é localizada unilateralmente e pode ser desencadeada por movimentos torácicos, respiração profunda, tosse ou postura incorreta. As causas comuns desta condição incluem trauma torácico, infecções virais, como herpes zoster (cobreiro), hérnia de disco, doenças inflamatórias ou distensões musculares simples.<br> A neuralgia intercostal pode ser uma fonte significativa de desconforto e às vezes pode ser confundida com dor no coração, pois ambas podem ocorrer na mesma região do tórax. No entanto, ao contrário da dor cardíaca, a neuralgia intercostal geralmente não se irradia para o braço esquerdo ou mandíbula.<br> O diagnóstico de neuralgia intercostal é baseado no exame clínico, avaliação dos sintomas e, às vezes, exames de imagem, como radiografia de tórax. Identificar as causas subjacentes e adotar medidas preventivas pode ajudar a controlar a condição e reduzir o risco de recorrência.",
         categoria: 4
     },
     "318": {
         nomi: [
-            "hepatopatias"
+            "Hepatopatias"
         ],
         descrizione: "As hepatopatias são uma categoria de doenças que envolvem o fígado, um dos órgãos mais importantes do nosso corpo. Esta condição indica qualquer alteração patológica que pode afetar o fígado e sua estrutura ou função normal. As hepatopatias podem ser causadas por vários fatores, incluindo infecções virais (como hepatite B ou C), consumo excessivo ou crônico de álcool, acúmulo de gordura no fígado (fígado gorduroso), doenças autoimunes ou distúrbios genéticos.<br> Os sintomas das hepatopatias podem variar dependendo do tipo e gravidade da doença, mas geralmente incluem fadiga, perda de apetite, icterícia (coloração amarelada da pele e dos olhos), náusea, vômito e dor na parte superior direita do abdome. No entanto, em algumas situações, as hepatopatias podem ser assintomáticas e apenas detectadas por meio de exames diagnósticos ou análises de sangue.<br> O diagnóstico de hepatopatias é baseado no exame clínico, exames de sangue para avaliar os níveis de função hepática e, às vezes, exames de imagem adicionais, como ultrassonografia ou ressonância magnética do fígado.",
         categoria: 9
@@ -2120,7 +2119,7 @@ var DB_patologie = {
         nomi: [
             "Colelitíase",
             "Pedra na vesícula",
-            "cálculo biliar"
+            "Cálculo biliar"
         ],
         descrizione: "A colelitíase, comumente conhecida como cálculos biliares, é uma condição médica caracterizada pela formação de pequenos depósitos sólidos dentro da vesícula biliar, órgão localizado sob o fígado que armazena e concentra a bile produzida pelo fígado. Os cálculos biliares podem variar em tamanho e composição e podem ser feitos de colesterol, bilirrubina ou uma combinação de ambos.<br> A maioria das pessoas com colelitíase não apresenta sintomas e pode não ter consciência da presença de cálculos biliares. No entanto, quando os cálculos biliares se movem dentro da vesícula biliar ou bloqueiam o ducto biliar comum, eles podem causar episódios de dor abdominal aguda conhecida como cólica biliar. Esses ataques podem ser acompanhados por náuseas, vômitos e desconforto geral.<br> A colelitíase é uma condição comum e seus fatores de risco incluem uma dieta rica em gorduras saturadas, obesidade, gravidez, idade avançada e histórico familiar de cálculos biliares.<br> O diagnóstico de colelitíase é baseado em exames de imagem, como ultrassonografia ou tomografia computadorizada (TC) abdominal. O tratamento depende da gravidade dos sintomas e pode incluir mudanças na dieta, medicamentos para controlar a dor ou, em alguns casos, cirurgia para remover a vesícula biliar (colecistectomia).",
         consigli: "A prevenção da formação de cálculos biliares pode ser conseguida através da manutenção de um estilo de vida saudável, com uma alimentação equilibrada e atividade física regular. Se houver suspeita de cálculos biliares ou sintomas associados, é importante consultar um médico para uma avaliação precisa e um plano de tratamento adequado.",
@@ -2136,8 +2135,8 @@ var DB_patologie = {
     },
     "323": {
         nomi: [
-            "cãibra de escritor",
-            "distonia focal",
+            "Cãibra de escritor",
+            "Distonia focal",
             "Escrita distonia",
             "Mogigrafia"
         ],
@@ -2147,7 +2146,7 @@ var DB_patologie = {
     "326": {
         nomi: [
             "Paralisia do nervo ulnar",
-            "mão em garra"
+            "Mão em garra"
         ],
         descrizione: "Condição médica na qual o nervo ulnar, um dos principais nervos do braço, sofre dano ou compressão, causando perda de funcionalidade e fraqueza muscular na mão e nos dedos. Esse nervo se estende ao longo do antebraço e passa por uma pequena depressão no cotovelo conhecida como &quot;sulco ulnar&quot;.<br> A paralisia do nervo ulnar pode ser causada por vários fatores, incluindo trauma, compressão prolongada do nervo, fraturas do cotovelo, cistos ou tumores, bem como condições como artrite ou síndrome do túnel cubital.<br> Os sintomas incluem uma sensação de formigamento ou dormência ao longo da borda externa da mão e dos dedos, fraqueza na preensão, dificuldade em estender os dedos ou mover o polegar. Em alguns casos, pode haver sensibilidade tátil alterada na área afetada.<br> O diagnóstico é baseado no exame clínico, testes diagnósticos como eletromiografia e, às vezes, estudos de imagem para avaliar a causa e a extensão da paralisia.",
         categoria: 4
@@ -2155,7 +2154,7 @@ var DB_patologie = {
     "327": {
         nomi: [
             "Paralisia do nervo mediano",
-            "mão de macaco"
+            "Mão de macaco"
         ],
         descrizione: "Condição médica na qual o nervo mediano, um dos principais nervos do braço, sofre dano ou compressão, causando sintomas como formigamento, dormência, fraqueza muscular e dificuldade em mover a mão e os dedos. Este nervo se estende ao longo do antebraço e passa pelo pulso através de uma passagem estreita conhecida como &quot;túnel do carpo&quot;.<br> A paralisia do nervo mediano pode ser causada por vários motivos, incluindo trauma, atividades repetitivas ou posições em que o punho é dobrado excessivamente e por períodos prolongados. Outras causas podem incluir artrite, cistos ou tumores que comprimem o nervo e condições como a síndrome do túnel do carpo.<br> Os sintomas típicos incluem formigamento e dormência na mão e nos dedos, especialmente no polegar, indicador, meio e parte do dedo anelar. A força de preensão pode diminuir e, às vezes, pode ser difícil agarrar objetos ou realizar movimentos precisos com a mão.<br> O diagnóstico é baseado no exame clínico, testes diagnósticos como estudos de condução nervosa e, em alguns casos, estudos de imagem para avaliar a causa e a extensão da paralisia.",
         categoria: 4
@@ -2163,7 +2162,7 @@ var DB_patologie = {
     "328": {
         nomi: [
             "Paralisia do nervo radial",
-            "mão caída"
+            "Mão caída"
         ],
         descrizione: "Condição médica na qual o nervo radial, um dos principais nervos do braço, sofre dano ou compressão, causando sintomas como fraqueza ou perda de movimento no antebraço e na mão. Esse nervo se estende ao longo do braço e atinge a mão, proporcionando sensibilidade e controle muscular para a extensão do punho e dos dedos.<br> As causas da paralisia do nervo radial podem variar e incluem trauma, lesões ou fraturas do braço, compressão do nervo no cotovelo ou punho ou infecções locais.<br> Os sintomas típicos incluem dificuldade em mover o pulso e os dedos, perda da força de preensão e, muitas vezes, uma aparência característica da mão conhecida como &quot;mão caída&quot;, onde o pulso está em uma posição flexionada e os dedos estendidos.<br> O diagnóstico é baseado no exame clínico, testes de diagnóstico, como estudos de condução nervosa e, às vezes, estudos de imagem para avaliar a causa e a extensão da paralisia.",
         categoria: 4
@@ -2173,7 +2172,7 @@ var DB_patologie = {
             "Prosopoplegia",
             "Prosopagnosia",
             "Paralisia facial",
-            "agnosia facial"
+            "Agnosia facial"
         ],
         descrizione: "Condição médica em que uma pessoa tem dificuldade em reconhecer os rostos de outras pessoas. Essa condição é causada por um distúrbio cerebral que afeta a região envolvida no reconhecimento facial, conhecida como área fusiforme. A prosopoplegia pode ser congênita, presente desde o nascimento ou adquirida devido a lesões ou condições que afetam o cérebro.<br> Indivíduos com prosopoplegia podem ter dificuldade em reconhecer rostos de pessoas familiares, incluindo amigos, familiares e até mesmo seu próprio reflexo no espelho. Esse distúrbio não está relacionado a problemas visuais, pois a própria visão está intacta. Em vez disso, diz respeito especificamente à capacidade de processar e interpretar características faciais para identificar pessoas.<br> A prosopoplegia pode ser desafiadora na vida cotidiana, pois pode levar a situações embaraçosas ou socialmente desconfortáveis ao encontrar pessoas que não podem ser reconhecidas corretamente. No entanto, muitos indivíduos aprendem a compensar essa dificuldade usando outras características, como voz ou roupas, para identificar as pessoas.<br> O diagnóstico de prosopoplegia é baseado no exame clínico, testes neuropsicológicos e, às vezes, imagens do cérebro para descartar outras causas de disfunção cognitiva.",
         categoria: 4
@@ -2195,7 +2194,7 @@ var DB_patologie = {
     },
     "336": {
         nomi: [
-            "agenesia"
+            "Agenesia"
         ],
         descrizione: "Condição médica congênita na qual um órgão ou parte do corpo não se desenvolve totalmente ou não se desenvolve durante a gestação. Este fenômeno pode afetar diferentes partes do corpo e pode variar em gravidade, dependendo do órgão afetado e do grau de falta de desenvolvimento.<br> A agenesia pode estar presente desde o nascimento ou pode ser detectada nos estágios iniciais do desenvolvimento fetal por meio de exames de imagem, como a ultrassonografia. As causas da agenesia podem ser diversas e muitas vezes não totalmente compreendidas, e podem incluir fatores genéticos ou ambientais.<br> As manifestações da agenesia dependem do órgão envolvido. Por exemplo, a agenesia dentária pode levar à ausência de um ou mais dentes, enquanto a agenesia renal pode causar a ausência de um dos dois rins.",
         consigli: "O manejo da agenesia requer avaliação criteriosa e acompanhamento multidisciplinar para adequar-se às necessidades específicas do paciente e garantir uma melhor qualidade de vida.",
@@ -2220,9 +2219,9 @@ var DB_patologie = {
     },
     "344": {
         nomi: [
-            "enjoo de movimento",
+            "Enjoo de movimento",
             "Enjoo",
-            "enjôo"
+            "Enjôo"
         ],
         descrizione: "O enjôo é uma condição médica caracterizada por uma sensação de desconforto, náusea e, às vezes, vômito que ocorre quando uma pessoa é exposta a movimentos ou oscilações irregulares, como durante uma viagem de carro, avião ou barco.<br> O enjôo é causado por uma discrepância entre os sinais que o cérebro recebe dos sentidos de movimento, como o ouvido interno, os olhos e os receptores musculares, e pode ocorrer quando esses sinais são conflitantes ou incompatíveis.<br> Os sintomas típicos da cinetose incluem náusea, sudorese excessiva, tontura, palidez e, às vezes, vômitos. Esses sintomas podem variar de intensidade de pessoa para pessoa e podem ser influenciados por fatores como a sensibilidade individual, a duração da viagem e as condições do meio de transporte.",
         consigli: "Para prevenir ou aliviar o enjôo, várias medidas podem ser tomadas, como olhar para um ponto fixo no horizonte, sentar na frente do veículo ou barco, evitar refeições pesadas ou condimentadas antes da viagem e garantir uma boa ventilação nos arredores . Além disso, estão disponíveis medicamentos de venda livre ou prescritos que podem ajudar a reduzir os sintomas do enjôo.",
@@ -2230,8 +2229,8 @@ var DB_patologie = {
     },
     "349": {
         nomi: [
-            "miogênico congênito",
-            "miopatia congênita"
+            "Miogênico congênito",
+            "Miopatia congênita"
         ],
         descrizione: "Uma condição médica genética rara que afeta os músculos desde o nascimento ou durante a infância. É um grupo de doenças musculares hereditárias caracterizadas por estrutura ou função muscular anormal, que pode levar a fraqueza muscular e problemas de movimento.<br> As miopatias congênitas podem apresentar sintomas diferentes, dependendo do tipo específico e da gravidade da condição. Os sintomas podem incluir dificuldade em se levantar de uma posição sentada ou caminhar, fraqueza muscular, baixo desempenho físico, movimentos musculares involuntários e, em alguns casos, complicações respiratórias graves.<br> O diagnóstico de condições miogênicas congênitas é baseado em exames clínicos, exames de sangue, estudos genéticos e, às vezes, biópsias musculares para avaliar a estrutura e a função dos tecidos musculares.",
         categoria: 13
@@ -2247,15 +2246,15 @@ var DB_patologie = {
     },
     "351": {
         nomi: [
-            "joelho varo",
-            "pernas tortas"
+            "Joelho varo",
+            "Pernas tortas"
         ],
         descrizione: "Uma condição médica na qual os joelhos se afastam um do outro, enquanto os tornozelos permanecem mais próximos. Esse fenômeno é caracterizado por uma curvatura externa das pernas, criando uma aparência característica de arco entre os joelhos. O joelho varo pode ser causado por vários fatores, como problemas congênitos, distúrbios de desenvolvimento ou lesões.<br> Os sintomas do joelho varo podem variar de acordo com a gravidade da condição. Em casos leves, pode não haver sintomas ou apenas um leve desconforto, enquanto em casos mais graves pode haver dor, instabilidade da articulação do joelho e dificuldade para andar corretamente.<br> O diagnóstico do joelho varo é baseado no exame clínico e em exames de imagem, como radiografias, para avaliar a posição dos joelhos e confirmar a presença dessa curvatura.",
         categoria: 13
     },
     "352": {
         nomi: [
-            "joelho leve",
+            "Joelho leve",
             "Bater joelhos"
         ],
         descrizione: "Uma condição médica na qual os joelhos se aproximam enquanto os tornozelos permanecem separados. Esse fenômeno se deve a uma curvatura interna das pernas, criando uma aparência característica de arco entre os joelhos. O joelho varo pode ser causado por vários fatores, incluindo problemas congênitos, distúrbios de desenvolvimento ou lesões.<br> Os sintomas do joelho valgo podem variar de acordo com a gravidade da condição. Em casos leves, pode não haver sintomas ou apenas um leve desconforto, enquanto em casos mais graves pode haver dor, instabilidade da articulação do joelho e dificuldade para andar corretamente.<br> O diagnóstico do joelho valgo é baseado no exame clínico e em exames de imagem, como radiografias, para avaliar a posição dos joelhos e confirmar a presença dessa curvatura.",
@@ -2264,23 +2263,17 @@ var DB_patologie = {
     "353": {
         nomi: [
             "Pé torto",
-            "talipes"
+            "Talipes"
         ],
         descrizione: "Uma condição congênita na qual o pé de um recém-nascido é posicionado de forma anormal. Esta condição é caracterizada por uma combinação de deformidades, como inversão do pé (o pé é virado para dentro), supinação (o pé é inclinado para cima) e adução (o pé é dobrado para dentro).<br> O pé torto pode ser classificado como idiopático (sem causa conhecida) ou secundário a uma malformação durante o desenvolvimento fetal. Muitas vezes afeta ambos os pés, mas também pode ocorrer em um único membro.<br> O diagnóstico precoce e o tratamento oportuno são importantes para alcançar uma correção eficaz. O tratamento do pé torto pode incluir manipulação e mobilização do pé do recém-nascido, uso de gesso corretivo (método de Ponseti) ou, em casos mais graves, intervenções cirúrgicas.",
         categoria: 13
     },
     "354": {
         nomi: [
-            "escoliose idiopática"
+            "Escoliose idiopática"
         ],
         descrizione: "Uma condição médica caracterizada por uma curvatura lateral anormal da coluna, que se desenvolve durante o crescimento e para a qual uma causa específica não pode ser identificada. O termo &quot;idiopático&quot; indica que a causa da escoliose é desconhecida ou não pode ser atribuída a fatores específicos.<br> Esta condição afeta principalmente crianças e adolescentes, especialmente durante a fase de rápido crescimento na adolescência. A curvatura da coluna pode ser leve ou mais grave e pode estar localizada em diferentes regiões das costas.<br> A escoliose idiopática pode progredir lentamente ao longo do tempo e pode levar a problemas como dores nas costas, alterações na aparência estética e, em casos graves, limitações na função pulmonar devido à compressão de órgãos internos.<br> O diagnóstico é baseado no exame físico e em exames de imagem, como radiografias, para medir a extensão e a localização da curvatura. O tratamento depende da gravidade da escoliose e pode incluir observação periódica, fisioterapia, uso de aparelhos ortopédicos ou, em casos graves, cirurgia para corrigir a curvatura.<br> Com diagnóstico precoce e tratamento adequado, muitos pacientes com escoliose idiopática podem ter uma boa qualidade de vida e manter uma boa funcionalidade da coluna.",
         categoria: 13
-    },
-    "1000": {
-        nomi: [
-            "Kata de reequilíbrio"
-        ],
-        descrizione: ""
     }
 };
 var DB_categorie_patologie = {

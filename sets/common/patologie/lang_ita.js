@@ -2313,15 +2313,7 @@ var DB_patologie = {
 		],
 		descrizione: "Condizione medica caratterizzata da una curvatura laterale anomala della colonna vertebrale, che si sviluppa durante la crescita e per cui non è possibile identificare una causa specifica. La parola \"idiopatica\" indica che la causa della scoliosi è sconosciuta o non attribuibile a fattori specifici.<br>Questa condizione colpisce principalmente i bambini e gli adolescenti, specialmente durante la fase di crescita più rapida durante l'adolescenza. La curvatura della colonna vertebrale può essere lieve o più grave, e può essere localizzata in diverse regioni della schiena.<br>La scoliosi idiopatica può progredire lentamente nel tempo e può portare a problemi come dolore alla schiena, alterazione dell'aspetto estetico e, nei casi più gravi, limitazioni nella funzionalità polmonare a causa della compressione degli organi interni.<br>La diagnosi si basa sull'esame fisico e su esami di imaging, come le radiografie, per misurare l'entità e la localizzazione della curvatura. Il trattamento dipende dalla gravità della scoliosi e può includere osservazione periodica, terapia fisica, l'utilizzo di corsetti ortopedici o, nei casi più gravi, l'intervento chirurgico per correggere la curvatura.<br>Con una diagnosi precoce e un trattamento adeguato, molti pazienti con scoliosi idiopatica possono avere una buona qualità di vita e mantenere una buona funzionalità della schiena.",
 		categoria: 13
-	},
-	"1000": {
-		nomi: [
-			"Kata di riequilibrio"
-		],
-		descrizione: ""
 	}
-		
-		
 };
 var DB_categorie_patologie = {
 	1: "Otorinolaringoiatria",

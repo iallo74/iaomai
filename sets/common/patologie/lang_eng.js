@@ -2276,12 +2276,6 @@ var DB_patologie = {
 		],
 		descrizione: "A medical condition characterized by an abnormal lateral curvature of the spine, which develops during growth and for which a specific cause cannot be identified. The term \"idiopathic\" indicates that the cause of scoliosis is unknown or not attributable to specific factors.<br>This condition primarily affects children and adolescents, especially during the rapid growth phase in adolescence. The curvature of the spine can be mild or more severe and may be localized in different regions of the back.<br>Idiopathic scoliosis may progress slowly over time and can lead to issues such as back pain, alterations in aesthetic appearance, and in severe cases, limitations in lung function due to compression of internal organs.<br>Diagnosis is based on physical examination and imaging tests, such as X-rays, to measure the extent and location of the curvature. Treatment depends on the severity of scoliosis and may include periodic observation, physical therapy, the use of orthopedic braces, or in severe cases, surgery to correct the curvature.<br>With early diagnosis and appropriate treatment, many patients with idiopathic scoliosis can have a good quality of life and maintain good back functionality.",
 		categoria: 13
-	},
-	"1000": {
-		nomi: [
-			"Kata di riequilibrio"
-		],
-		descrizione: ""
 	}
 };
 var DB_categorie_patologie = {

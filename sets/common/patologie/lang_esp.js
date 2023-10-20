@@ -2295,12 +2295,6 @@ var DB_patologie = {
 		],
 		descrizione: "Condición médica caracterizada por una curvatura lateral anormal de la columna vertebral, que se desarrolla durante el crecimiento y para la cual no se puede identificar una causa específica. El término \"idiopática\" indica que la causa de la escoliosis es desconocida o no atribuible a factores específicos.<br>Esta condición afecta principalmente a niños y adolescentes, especialmente durante la fase de crecimiento rápido en la adolescencia. La curvatura de la columna vertebral puede ser leve o más grave y puede estar localizada en diferentes regiones de la espalda.<br>La escoliosis idiopática puede progresar lentamente con el tiempo y puede ocasionar problemas como dolor de espalda, alteraciones en la apariencia estética y, en casos más graves, limitaciones en la función pulmonar debido a la compresión de órganos internos.<br>El diagnóstico se basa en el examen físico y en pruebas de imagen, como radiografías, para medir la magnitud y la ubicación de la curvatura. El tratamiento depende de la gravedad de la escoliosis y puede incluir observación periódica, terapia física, el uso de férulas ortopédicas o, en casos graves, cirugía para corregir la curvatura.<br>Con un diagnóstico temprano y un tratamiento adecuado, muchos pacientes con escoliosis idiopática pueden tener una buena calidad de vida y mantener una buena funcionalidad de la espalda.",
 		categoria: 13
-	},
-	"1000": {
-		nomi: [
-			"Kata di riequilibrio"
-		],
-		descrizione: ""
 	}
 };
 var DB_categorie_patologie = DB_categorie_patologie = {

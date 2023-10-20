@@ -3543,7 +3543,7 @@ DB.mtc= {
 					"coordZoom": "183,255",
 					"noMoxa": false,
 					"noGravidanza": false,
-					"pinyin": "Jùquán ",
+					"pinyin": "Jùquán",
 					"ideogramma": "聚泉"
 				},
 				"10": {
@@ -3553,7 +3553,7 @@ DB.mtc= {
 					"coordZoom": "191,256",
 					"noMoxa": false,
 					"noGravidanza": false,
-					"pinyin": "Hǎiquán ",
+					"pinyin": "Hǎiquán",
 					"ideogramma": "海泉"
 				},
 				"11": {
@@ -3563,7 +3563,7 @@ DB.mtc= {
 					"coordZoom": "222,229",
 					"noMoxa": true,
 					"noGravidanza": false,
-					"pinyin": "Jīnjīn ",
+					"pinyin": "Jīnjīn",
 					"ideogramma": "金津"
 				},
 				"12": {
@@ -3573,7 +3573,7 @@ DB.mtc= {
 					"coordZoom": "159,229",
 					"noMoxa": true,
 					"noGravidanza": false,
-					"pinyin": "Yùyè ",
+					"pinyin": "Yùyè",
 					"ideogramma": "玉液"
 				},
 				"13": {
@@ -3593,7 +3593,7 @@ DB.mtc= {
 					"coordZoom": "215,291|155,291",
 					"noMoxa": false,
 					"noGravidanza": false,
-					"pinyin": "Bǎiláo ",
+					"pinyin": "Bǎiláo",
 					"ideogramma": "百勞|百劳"
 				},
 				"15": {
