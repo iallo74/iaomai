@@ -31,7 +31,7 @@ DB.set = {
                 {
                     "OcchielloTeoria": "Fundamentos da MTC",
                     "TitoloTeoria": "6. Classificação dos desequilíbrios energéticos",
-                    "TestoTeoria": "<p align=\"justify\">Ao analisar o estado energético de um indivíduo, os seguintes pontos devem ser levados em consideração:</p><div align=\"justify\"><ul><li> Base constitucional: condiciona o possível surgimento de determinadas patologias e a capacidade do indivíduo de responder a fatores perturbadores. Além da coleta de anamnese patológica familiar e remota realizada pelo médico durante a visita, deve-se avaliar o estado energético do Rim, como sede das energias primordiais herdadas dos pais.</li><li> O estado energético geral do indivíduo: as condições são classificadas como deficiência ou excesso com base na energia geral do indivíduo (por exemplo, uma doença aguda começa facilmente com excesso, portanto, espera-se uma boa resposta ao tratamento, enquanto uma patologia crônica que envolve deficiência de energia resultará em uma resposta menor à terapia). O reforço energético em casos de deficiência deve ser a base de todo tratamento.</li><li> A classificação externo-interno: os desequilíbrios que afetam o exterior envolvem Wei Qi e têm sintomas mais fortes, muitas vezes com início agudo e resposta mais rápida aos tratamentos. Os Pulmões, como governador da energia externa, são obviamente afetados. Todo efeito patogênico, à medida que progride, afeta o interior e, portanto, um ou mais órgãos. Nesses casos, surgem sintomas específicos de disfunção orgânica, caracterizando a síndrome.</li><li> Avaliação do fator patogênico atual: a identificação da causa é essencial, pois deve ser corrigida se for endógena (hábitos errados, estados emocionais crônicos, etc.) .</li></ul></div><p align=\"justify\"> O processo terapêutico baseado no quadro geral certamente visará a eliminação dos sintomas, mas deve ser baseado na eliminação das causas.</p></body>"
+                    "TestoTeoria": "<p align=\"justify\">Ao analisar o estado energético de um indivíduo, os seguintes pontos devem ser levados em consideração:</p><div align=\"justify\"><ul><li> Base constitucional: condiciona o possível surgimento de determinadas patologias e a capacidade do indivíduo de responder a fatores perturbadores. Além da coleta de anamnese patológica familiar e remota realizada pelo médico durante a visita, deve-se avaliar o estado energético do Rim, como sede das energias primordiais herdadas dos pais.</li><li> O estado energético geral do indivíduo: as condições são classificadas como deficiência ou excesso com base na energia geral do indivíduo (por exemplo, uma doença aguda começa facilmente com excesso, portanto, espera-se uma boa resposta ao tratamento, enquanto uma patologia crônica que envolve deficiência de energia resultará em uma resposta menor à terapia). O reforço energético em casos de deficiência deve ser a base de todo tratamento.</li><li> A classificação externo-interno: os desequilíbrios que afetam o exterior envolvem Wei Qi e têm sintomas mais fortes, muitas vezes com início agudo e resposta mais rápida aos tratamentos. Os Pulmões, como governador da energia externa, são obviamente afetados. Todo efeito patogênico, à medida que progride, afeta o interior e, portanto, um ou mais órgãos. Nesses casos, surgem sintomas específicos de disfunção orgânica, caracterizando a síndrome.</li><li> Avaliação do fator patogênico atual: a identificação da causa é essencial, pois deve ser corrigida se for endógena (hábitos errados, estados emocionais crônicos, etc.) .</li></ul></div><p align=\"justify\"> O processo terapêutico baseado no quadro geral certamente visará a eliminação dos sintomas, mas deve ser baseado na eliminação das causas.</p>"
                 },
                 {
                     "OcchielloTeoria": "Fundamentos da MTC",
@@ -82,7 +82,7 @@ DB.set = {
                     "OcchielloTeoria": "Meridianos Principais",
                     "TitoloTeoria": "Rim",
                     "sigla": "KI",
-                    "TestoTeoria": "<div style=\"background:url(sets/common/mtc/img/elementi/KI5px;min-height:460px;\"><p><i>Purificação de fluidos corporais</i><br> <font color=\"#666666\">Meridiano Yin da Água</font></p><p> <b>Governa:</b><br> - Fluidos corporais<br> - Hormônios<br> - Glândulas adrenais<br> - Rins<br> - Energia sexual<br> - Desejo sexual<br> - Céu anterior Jing<br> - céu posterior Jing<br> -Yuan Qi</p><p> <b>Representa:</b><br> - Purificação do sangue<br> - energia ancestral<br> - Armazenamento de energia<br> - Força de vontade<br> - Dirija para seguir em frente</p><p> <b>Resolve:</b><br> - Estresse<br> - Temer<br> - Ansiedade<br> - Insegurança<br> - Flexibilidade<br> - Sincronização<br> - Problemas relacionados com fluidos</p><p></p><p></p><p><p> <b>CAMINHADA</b><br> O canal do Rim ( <i>shào yīn</i> da perna) começa abaixo do quinto dedo do pé e se move ao longo da sola do pé até o ponto [.1.KI.*.], ao longo do osso navicular até o ponto [.2.KI.*.] , e atinge o maléolo medial. Ele sobe ao longo do lado medial da perna e da coxa, atinge a coluna vertebral (ponto [.1.GV.*.]), entra nos rins e na bexiga pela região lombar. Em seguida, atinge o fígado, passa pelo diafragma, entra no pulmão, sobe até a garganta e atinge a raiz da língua. Outra ramificação parte do pulmão e atinge o coração e o tórax, onde se conecta com o canal do Pericárdio.</p><p> Este canal é muito importante, pois pode influenciar vários órgãos; os rins, em particular, são essenciais para harmonizar o Yin e o Yang dos órgãos.</p></div>",
+                    "TestoTeoria": "<div style=\"background:url(sets/common/mtc/img/elementi/KI.png) no-repeat left 15px;min-height:460px;\"><p><i>Purificação de fluidos corporais</i><br> <font color=\"#666666\">Meridiano Yin da Água</font></p><p> <b>Governa:</b><br> - Fluidos corporais<br> - Hormônios<br> - Glândulas adrenais<br> - Rins<br> - Energia sexual<br> - Desejo sexual<br> - Céu anterior Jing<br> - céu posterior Jing<br> -Yuan Qi</p><p> <b>Representa:</b><br> - Purificação do sangue<br> - energia ancestral<br> - Armazenamento de energia<br> - Força de vontade<br> - Dirija para seguir em frente</p><p> <b>Resolve:</b><br> - Estresse<br> - Temer<br> - Ansiedade<br> - Insegurança<br> - Flexibilidade<br> - Sincronização<br> - Problemas relacionados com fluidos</p><p></p><p></p><p><p> <b>CAMINHADA</b><br> O canal do Rim ( <i>shào yīn</i> da perna) começa abaixo do quinto dedo do pé e se move ao longo da sola do pé até o ponto [.1.KI.*.], ao longo do osso navicular até o ponto [.2.KI.*.] , e atinge o maléolo medial. Ele sobe ao longo do lado medial da perna e da coxa, atinge a coluna vertebral (ponto [.1.GV.*.]), entra nos rins e na bexiga pela região lombar. Em seguida, atinge o fígado, passa pelo diafragma, entra no pulmão, sobe até a garganta e atinge a raiz da língua. Outra ramificação parte do pulmão e atinge o coração e o tórax, onde se conecta com o canal do Pericárdio.</p><p> Este canal é muito importante, pois pode influenciar vários órgãos; os rins, em particular, são essenciais para harmonizar o Yin e o Yang dos órgãos.</p></div>",
                     "meridianiSecondari": [
                         "KI"
                     ]
@@ -118,7 +118,7 @@ DB.set = {
                     "OcchielloTeoria": "Meridianos Principais",
                     "TitoloTeoria": "Baço-Pâncreas",
                     "sigla": "SP",
-                    "TestoTeoria": "<div style=\"background:url(sets/common/mtc/img/elementi/SP5px;min-height:460px;\"><p><i>Sistema digestivo e sistema reprodutor</i><br> <font color=\"#666666\">Meridiano Yin da Terra</font></p><p> <b>Governa:</b><br> - Baço<br> - Pâncreas<br> - Suco gástrico<br> - Secreções reprodutivas<br> - Circulação sanguínea nos vasos<br> - Ciclos naturais<br> - Ciclo menstrual<br> - Digestão<br> - Pensamento</p><p> <b>Representa:</b><br> - Simpatia<br> - Atividade mental<br> - Maturidade mental<br> - Maturidade sexual<br> - A capacidade de manter os órgãos no lugar<br> - Manutenção do sangue nos vasos<br> - Realidade</p><p> <b>Resolve:</b><br> - Preocupar<br> - Problemas do ciclo menstrual<br> - Sangramento<br> - Prolapsos<br> - Problemas do tubo digestivo<br> - Problemas mentais</p><p></p><p></p><p><p> <b>CAMINHADA</b><br> O canal do Baço ( <i>tài yīn</i> da perna) começa na ponta do dedão do pé, segue o aspecto medial do pé, move-se em direção ao maléolo medial e depois vai para dentro ao longo da perna. Em seguida, move-se anteriormente, cruzando o canal do Fígado. Nesse ponto, sobe em direção à face medial do joelho e da coxa, alcança o abdome, conecta-se com o baço e une-se ao estômago. A partir daqui, o canal principal atravessa o diafragma e o esôfago para chegar à raiz da língua; outro ramo se conecta com o coração.</p><p> Ao observar o trajeto desse canal, pode-se perceber uma conexão fisiológica entre estômago, baço e coração, que pode ser útil na presença de patologias cardíacas.</p></div>",
+                    "TestoTeoria": "<div style=\"background:url(sets/common/mtc/img/elementi/SP.png) no-repeat left 15px;min-height:460px;\"><p><i>Sistema digestivo e sistema reprodutor</i><br> <font color=\"#666666\">Meridiano Yin da Terra</font></p><p> <b>Governa:</b><br> - Baço<br> - Pâncreas<br> - Suco gástrico<br> - Secreções reprodutivas<br> - Circulação sanguínea nos vasos<br> - Ciclos naturais<br> - Ciclo menstrual<br> - Digestão<br> - Pensamento</p><p> <b>Representa:</b><br> - Simpatia<br> - Atividade mental<br> - Maturidade mental<br> - Maturidade sexual<br> - A capacidade de manter os órgãos no lugar<br> - Manutenção do sangue nos vasos<br> - Realidade</p><p> <b>Resolve:</b><br> - Preocupar<br> - Problemas do ciclo menstrual<br> - Sangramento<br> - Prolapsos<br> - Problemas do tubo digestivo<br> - Problemas mentais</p><p></p><p></p><p><p> <b>CAMINHADA</b><br> O canal do Baço ( <i>tài yīn</i> da perna) começa na ponta do dedão do pé, segue o aspecto medial do pé, move-se em direção ao maléolo medial e depois vai para dentro ao longo da perna. Em seguida, move-se anteriormente, cruzando o canal do Fígado. Nesse ponto, sobe em direção à face medial do joelho e da coxa, alcança o abdome, conecta-se com o baço e une-se ao estômago. A partir daqui, o canal principal atravessa o diafragma e o esôfago para chegar à raiz da língua; outro ramo se conecta com o coração.</p><p> Ao observar o trajeto desse canal, pode-se perceber uma conexão fisiológica entre estômago, baço e coração, que pode ser útil na presença de patologias cardíacas.</p></div>",
                     "meridianiSecondari": [
                         "SP"
                     ]
@@ -678,8 +678,8 @@ DB.set = {
             "TitoloSezione": "Recursos de vídeo",
             "contenuti": [
                 {
-                    "TitoloTeoria": "Rolo de iluminação[video]cigar_preparation",
-                    "TestoTeoria": "video=preparation_cigar"
+                    "TitoloTeoria": "Rolo de iluminação[video]preparazione_sigaro",
+                    "TestoTeoria": "video=preparazione_sigaro"
                 },
                 {
                     "TitoloTeoria": "Preparando cones de lã[video]preparazione_lana",
@@ -687,35 +687,35 @@ DB.set = {
                 },
                 {
                     "TitoloTeoria": "Preparação de alho[video]preparazione_aglio",
-                    "TestoTeoria": "video=preparando_alho"
+                    "TestoTeoria": "video=preparazione_aglio"
                 },
                 {
-                    "TitoloTeoria": "Preparação de gengibre[video]preparazione_zingenzero",
-                    "TestoTeoria": "video=preparation_ginger"
+                    "TitoloTeoria": "Preparação de gengibre[video]preparazione_zenzero",
+                    "TestoTeoria": "video=preparazione_zenzero"
                 },
                 {
-                    "TitoloTeoria": "Direct moxa com roll[video]direct_cigar",
-                    "TestoTeoria": "video=direct_cigar"
+                    "TitoloTeoria": "Direct moxa com roll[video]diretta_sigaro",
+                    "TestoTeoria": "video=diretta_sigaro"
                 },
                 {
                     "TitoloTeoria": "Moxa direta com lã[video]diretta_lana",
-                    "TestoTeoria": "video=direct_wool"
+                    "TestoTeoria": "video=diretta_lana"
                 },
                 {
                     "TitoloTeoria": "Moxa indireta com alho[video]indiretta_aglio",
-                    "TestoTeoria": "video=indirect_garlic"
+                    "TestoTeoria": "video=indiretta_aglio"
                 },
                 {
-                    "TitoloTeoria": "Moxa indireta com gengibre[video]indirect_ginger",
-                    "TestoTeoria": "video=indirect_ginger"
+                    "TitoloTeoria": "Moxa indireta com gengibre[video]indiretta_zenzero",
+                    "TestoTeoria": "video=indiretta_zenzero"
                 },
                 {
-                    "TitoloTeoria": "Moxa indireta com sal[video]venda",
-                    "TestoTeoria": "video=venda"
+                    "TitoloTeoria": "Moxa indireta com sal[video]sale",
+                    "TestoTeoria": "video=sale"
                 },
                 {
                     "TitoloTeoria": "Cupping nas costas[video]coppettazione",
-                    "TestoTeoria": "video=cupping"
+                    "TestoTeoria": "video=coppettazione"
                 }
             ],
             "noList": true

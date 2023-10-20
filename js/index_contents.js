@@ -156,6 +156,8 @@ var sets = {
 			"deu"
 		],
 		lingueAI: [
+			"eng",
+			"esp",
 			"fra",
 			"por",
 			"deu"
