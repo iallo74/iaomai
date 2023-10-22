@@ -1,7 +1,6 @@
 var DB_patologie = {
     "000": {
         nomi: [
-            "Acne fulminante",
             "Acne fulminante"
         ],
         descrizione: "É uma forma grave de acne caracterizada pela formação de furúnculos subcutâneos profundos e dolorosos. Essa condição ocorre quando os poros da pele ficam bloqueados por sebo, células mortas e bactérias, levando à inflamação dos folículos pilosos. Ao contrário da acne comum, a acne fulminante pode causar lesões subcutâneas maiores e mais dolorosas que podem durar semanas ou meses.<br> A acne fulminans afeta principalmente a face, costas, tórax e ombros e pode ter um impacto significativo na qualidade de vida dos indivíduos afetados, causando sofrimento emocional e cicatrizes permanentes.",
@@ -2277,18 +2276,18 @@ var DB_patologie = {
     }
 };
 var DB_categorie_patologie = {
-	1: "Otorinolaringoiatria",
+	1: "Otorrinolaringologia",
 	2: "Broncopneumologia",
-	3: "Urologia e andrologia",
-	4: "Neurologia e psichiatria",
+	3: "Urologia e Andrologia",
+	4: "Neurologia e psiquiatria",
 	5: "Dermatologia",
 	6: "Oftalmologia",
-	7: "Ginecologia e ostetricia",
-	8: "Patologie dismetaboliche",
-	9: "Gastroenterologia ed epatologia",
-	10: "Ematologia",
-	11: "Cardiologia e patologie circolatorie",
-	12: "Reumatologia, endocrinologia e immunologia",
-	13: "Disturbi dell'apparato locomotore",
-	14: "Dipendenze"
+	7: "Ginecologia e obstetrícia",
+	8: "Distúrbios metabólicos",
+	9: "Gastroenterologia e Hepatologia",
+	10: "Hematologia",
+	11: "Cardiologia e doenças circulatórias",
+	12: "Reumatologia, endocrinologia e imunologia",
+	13: "Perturbações do sistema locomotor",
+	14: "Vícios"
 };

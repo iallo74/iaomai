@@ -2278,18 +2278,18 @@ var DB_patologie = {
     }
 };
 var DB_categorie_patologie = {
-	1: "Otorinolaringoiatria",
-	2: "Broncopneumologia",
-	3: "Urologia e andrologia",
-	4: "Neurologia e psichiatria",
-	5: "Dermatologia",
-	6: "Oftalmologia",
-	7: "Ginecologia e ostetricia",
-	8: "Patologie dismetaboliche",
-	9: "Gastroenterologia ed epatologia",
-	10: "Ematologia",
-	11: "Cardiologia e patologie circolatorie",
-	12: "Reumatologia, endocrinologia e immunologia",
-	13: "Disturbi dell'apparato locomotore",
-	14: "Dipendenze"
+	1: "HNO-Heilkunde",
+	2: "Bronchopneumologie",
+	3: "Urologie und Andrologie",
+	4: "Neurologie und Psychiatrie",
+	5: "Dermatologie",
+	6: "Ophthalmologie",
+	7: "Gynäkologie und Geburtshilfe",
+	8: "Dysmetabolische Erkrankungen",
+	9: "Gastroenterologie und Hepatologie",
+	10: "Hämatologie",
+	11: "Kardiologie und Kreislauferkrankungen",
+	12: "Rheumatologie, Endokrinologie und Immunologie",
+	13: "Störungen des Bewegungsapparates",
+	14: "Abhängigkeiten"
 };
