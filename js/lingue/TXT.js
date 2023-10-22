@@ -4798,9 +4798,9 @@ DB.TXT = {
             ita: "TriggerPointsMap",
             eng: "TriggerPointsMap",
             esp: "TriggerPointsMap",
-            fra: "Carte des points de déclenchement",
-            por: "Mapa de pontos de gatilho",
-            deu: "Triggerpunkte-Karte"
+            fra: "TriggerPointsMap",
+            por: "TriggerPointsMap",
+            deu: "TriggerPointsMap"
         },
         TriggerPointsST: {
             ita: "Trigger points",
