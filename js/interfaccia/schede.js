@@ -153,7 +153,7 @@ var SCHEDA = {
 			html = '<div class="scheda_stampa">'+html+'</div>';
 		}
 		
-		if(codiceTranslate && LINGUE.googleLanguages.length && CONN.getConn()){
+		if(codiceTranslate && LINGUE.googleLanguages.length && CONN.getConn() && !LINGUE.getAi()){
 			var html_langs =
 							'<div class="p_translate">' +
 							'	<select id="languages" name="languages" onChange="LINGUE.googleTranslate(this.value,\''+codiceTranslate+'\');SCHEDA.swMenuScheda();">';
@@ -225,6 +225,7 @@ var SCHEDA = {
 			LINGUE.googleTranslate(LINGUE.googleLangSel,codiceTranslate);
 			document.getElementById("scheda_testo"+nScheda).querySelector(".scheda_stampa").style.opacity = 0;
 		}else{
+			LINGUE.addAiMsg();
 			eval(SCHEDA.addFunct);
 			SCHEDA.finalFunct = null;
 		}

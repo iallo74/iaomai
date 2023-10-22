@@ -1020,6 +1020,30 @@ DB.TXT = {
             por: "O item que você deseja abrir já está aberto em outro dispositivo. Feche-o e tente novamente.",
             deu: "Der Artikel, den Sie öffnen möchten, ist bereits auf einem anderen Gerät geöffnet. Schließen Sie ihn und versuchen Sie es erneut."
         },
+        msgAiLang: {
+            ita: "Tradotto con intelligenza artificiale",
+            eng: "Translated with artificial intelligence",
+            esp: "Traducido con la inteligencia artificial",
+            fra: "Traduit par intelligence artificielle",
+            por: "Traduzido com inteligência artificial",
+            deu: "Übersetzt mit künstlicher Intelligenz"
+        },
+        btnAiLang: {
+            ita: "Segnala errori",
+            eng: "signal error",
+            esp: "Señala errores",
+            fra: "Signale erreurs",
+            por: "Relatar erros",
+            deu: "Fehler melden"
+        },
+        signAiLang: {
+            ita: "Errore nella traduzione",
+            eng: "Error in the translation",
+            esp: "Error en la traducción",
+            fra: "Erreur dans la traduction",
+            por: "Erro na tradução",
+            deu: "Fehler bei der Übersetzung"
+        },
 
         // RICERCHE
         GuidaRicerca: {

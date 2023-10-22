@@ -329,7 +329,6 @@ var MENU = {
 		if(smartMenu)SCHEDA.chiudiElenco();
 		MENU.chiudiMenu("impostazioni");
 		document.getElementById("impostazioni").classList.toggle("visSch");
-		//document.getElementById("lingueSelect").value = globals.siglaLingua;
 		if(document.getElementById("impostazioni").classList.contains("visSch")){
 			MENU.icoSelected = document.getElementById("p_impostazioni");
 			MENU.icoSelected.classList.add("p_sel");
@@ -350,18 +349,19 @@ var MENU = {
 		MENU.chiudiMenu("stampa");
 		document.getElementById("stampa").classList.toggle("visSch");
 	},
-	visFeedback: function(){
+	visFeedback: function( tit='', msg='', focus=false ){
 		MENU.chiudiMenu("feedback");
 		document.getElementById("feedback").classList.toggle("visSch");
 		if(document.getElementById("feedback").className.indexOf("visSch") > -1){
 			document.feedbackForm.Nominativo.value = "";
 			document.feedbackForm.Email.value = "";
-			document.feedbackForm.Oggetto.value = "";
-			document.feedbackForm.Messaggio.value = "";
+			document.feedbackForm.Oggetto.value = tit;
+			document.feedbackForm.Messaggio.value = msg;
 			if(LOGIN.logedin()){
 				document.feedbackForm.Nominativo.value = DB.login.data.Nominativo;
 				document.feedbackForm.Email.value = DB.login.data.Email;
 			}
+			if(focus && !smartphone)document.feedbackForm.Messaggio.focus();
 			visLoader('');
 		}else{
 			nasLoader();

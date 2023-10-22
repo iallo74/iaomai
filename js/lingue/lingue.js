@@ -44,20 +44,17 @@ var LINGUE = {
 		globals.siglaLingua='eng';
 		if(!localStorage.getItem("siglaLingua")){ // OK localStorage
 			for(let p in LINGUE.NLS){
-				//if(this.linguaBrowser()==LINGUE.NLS[p].sigla.substring(0,2)){
 				if(this.linguaBrowser()==LINGUE.NLS[p].sigla2 && !__(LINGUE.NLS[p].ai)){
 					localStorage.setItem("siglaLingua",LINGUE.NLS[p].sigla);
 				}
 			}
 		}
-		if(typeof(localStorage.siglaLingua)=='undefined')localStorage.getItem("siglaLingua")='eng';
+		if(typeof(localStorage.siglaLingua)=='undefined')localStorage.setItem("siglaLingua",'eng');
 		var gC=localStorage.getItem("siglaLingua"); // OK localStorage
 		if(typeof(gC)!='undefined' && gC!='')globals.siglaLingua=gC;
 		
-		for(let p in LINGUE.NLS){
-			if(globals.siglaLingua==LINGUE.NLS[p].sigla){
-				if(__(LINGUE.NLS[p].ai))setTimeout(function(){ALERT(TXT("disclaimerLingua"));},4000);
-			}
+		if(LINGUE.getAi(globals.siglaLingua)){
+			setTimeout(function(){ALERT(TXT("disclaimerLingua"));},4000);
 		}
 		
 		this.formatDate='%D/%M/%Y';
@@ -91,7 +88,9 @@ var LINGUE = {
 			htmlInt += '</div>';
 			htmlSel += '<option value="'+LINGUE.NLS[l].sigla+'"';
 			if(LINGUE.NLS[l].sigla == globals.siglaLingua)htmlSel += ' SELECTED';
-			htmlSel += '>'+LINGUE.NLS[l].text+'</option>';
+			htmlSel += '>';
+			if(__(LINGUE.NLS[l].ai))htmlSel += '*';
+			htmlSel += LINGUE.NLS[l].text+'</option>';
 		}
 		html += 	'</div>' +
 					'<div id="lInt">' +
@@ -335,7 +334,30 @@ var LINGUE = {
 				document.getElementById("languages").selectedIndex=e;
 			}
 		}
-	}
+	},
+
+	getAi: function( l='' ){
+		if(!l)l=localStorage.getItem("siglaLingua");
+		let ai = false;
+		for(let p in LINGUE.NLS){
+			if(l==LINGUE.NLS[p].sigla)ai = __(LINGUE.NLS[p].ai,false);
+		}
+		return ai;
+	},
+	addAiMsg: function( l='' ){
+		if(LINGUE.getAi()){
+			var elText = document.getElementById("scheda_testo"+(SCHEDA.scheda2Aperta?"2":""));
+			if(!elText.querySelector(".translate_note")){
+				var newNode = document.createElement('div');
+				newNode.className = 'translate_note';
+				newNode.innerHTML = TXT("msgAiLang")+'<span onClick="MENU.visFeedback(\''+addslashes(TXT("signAiLang"))+'\',\'\',true);">'+TXT("btnAiLang")+'</span>';
+				var parentNode = elText.querySelector('.scheda_stampa');
+				parentNode.insertBefore(newNode, parentNode.firstChild);
+			}
+			elText.querySelector(".translatable").innerHTML = jsn.txt_dest;
+		}
+	},
+
 };
 function addslashes(str) {
 	str = str.replace(/\\/g, '\\\\');
