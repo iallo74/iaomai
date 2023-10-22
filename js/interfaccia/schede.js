@@ -167,6 +167,14 @@ var SCHEDA = {
 							'</div>';
 			btnAdd = html_langs + btnAdd;
 		}
+		if(LINGUE.getAi()){
+			var html_langs =
+							'<div class="p_translate">' +
+							'	<span id="languages" name="languages" onClick="MENU.visFeedback(\''+addslashes(TXT("signAiLang"))+'\',\'\',true);">'+TXT("btnAiLang")+'</span>';
+			html_langs +=	'</select>' +
+							'</div>';
+			btnAdd = html_langs + btnAdd;
+		}
 		
 		// inserisco il pulsante del menu (3 pallini)
 		if(classe != "scheda_agenda" && classe != "scheda_video"  && classe != "scheda_ricerche" ){

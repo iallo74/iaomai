@@ -345,18 +345,23 @@ var LINGUE = {
 		return ai;
 	},
 	addAiMsg: function( l='' ){
-		if(LINGUE.getAi()){
+		if(LINGUE.getAi() && !__(globals.disAiMsg,false)){
 			var elText = document.getElementById("scheda_testo"+(SCHEDA.scheda2Aperta?"2":""));
 			if(!elText.querySelector(".translate_note")){
 				var newNode = document.createElement('div');
 				newNode.className = 'translate_note';
-				newNode.innerHTML = TXT("msgAiLang")+'<span onClick="MENU.visFeedback(\''+addslashes(TXT("signAiLang"))+'\',\'\',true);">'+TXT("btnAiLang")+'</span>';
+				newNode.innerHTML = TXT("msgAiLang")+'<span class="translate_close" onClick="LINGUE.disAiMsg();"></span><span onClick="MENU.visFeedback(\''+addslashes(TXT("signAiLang"))+'\',\'\',true);">'+TXT("btnAiLang")+'</span>';
 				var parentNode = elText.querySelector('.scheda_stampa');
 				parentNode.insertBefore(newNode, parentNode.firstChild);
 			}
-			elText.querySelector(".translatable").innerHTML = jsn.txt_dest;
+			//elText.querySelector(".translatable").innerHTML = jsn.txt_dest;
 		}
 	},
+	disAiMsg: function(){
+		globals.disAiMsg = true;
+		document.getElementById("scheda_testo").querySelector(".translate_note").remove();
+		document.getElementById("scheda_testo2").querySelector(".translate_note")?.remove();
+	}
 
 };
 function addslashes(str) {

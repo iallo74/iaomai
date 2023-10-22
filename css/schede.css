@@ -970,6 +970,9 @@ body:not(.bodyStyled2) #scheda_testo2{
 	/*box-shadow:0px 0px 3px rgba(0,0,0,0.5);*/
 	cursor:pointer;
 }
+.p_translate span{
+	margin-left: 6px;
+}
 .translate_note{
 	background-color: #696969;
     line-height: 43px;
@@ -988,13 +991,24 @@ body:not(.bodyStyled2) #scheda_testo2{
     cursor: pointer;
     display: inline-block;
     float: right;
-    background-color: #FFF;
     line-height: 27px;
     margin-top: 7px;
-    border-radius: 4px;
     margin-right: -4px;
     padding: 0 7px;
+}
+.translate_note span:not(.translate_close){
     box-shadow: 0px 0px 2px rgba(0,0,0,0.5);
+    background-color: #FFF;
+    border-radius: 4px;
+}
+.translate_note span.translate_close{
+	width:27px;
+	height:27px;
+    background-image:url(../img/annullaUtente.png);
+	background-repeat: no-repeat;
+	background-position: center;
+	margin-left: 8px;
+    margin-right: -8px;
 }
 
 .lang_ar .translatable{

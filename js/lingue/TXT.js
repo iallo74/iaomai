@@ -1030,7 +1030,7 @@ DB.TXT = {
         },
         btnAiLang: {
             ita: "Segnala errori",
-            eng: "signal error",
+            eng: "Signal error",
             esp: "Señala errores",
             fra: "Signale erreurs",
             por: "Relatar erros",
