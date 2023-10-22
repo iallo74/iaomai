@@ -1217,7 +1217,7 @@ var PAZIENTI = {
 									true,
 									'',
 									btnAdd );
-			PH.caricaGallery(true);
+			PH.caricaGallery(true,'',false,true);
 			
 			if(salvato)SCHEDA.msgSalvataggio();
 		}});

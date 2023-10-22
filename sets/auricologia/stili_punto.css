@@ -51,7 +51,8 @@
 	background-color:rgba(0,0,0,0.2) !important;
 }
 
-#spSch, #spStesso{
+#spSch,
+#spStesso{
     display: inline-block;
     color: #fff;
     background: url(../../img/spuntaB.png) no-repeat left center;
@@ -59,7 +60,7 @@
     border-radius: 5px;
     padding-left: 40px;
     padding-right: 15px;
-    line-height: 34px;
+    line-height: 34px !important;
 }
 #spSch{
 	background-color:#194aa6;

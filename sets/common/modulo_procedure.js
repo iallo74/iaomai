@@ -363,7 +363,7 @@ var MODULO_PROCEDURE = { // extend SET
 									true,
 									btn,
 									btnAdd );
-			PH.caricaGallery(true,idUtenteProcedura);
+			PH.caricaGallery(true,idUtenteProcedura,false,true);
 			if(!globals.set.siglaProc)SET.convSigleScheda();
 			SET.evidenziaPunto();
 			if(!globals.set.siglaProc)SET.evidenziaMeridiani(HTML);
@@ -1010,8 +1010,7 @@ var MODULO_PROCEDURE = { // extend SET
 							var puntiElenco = [];
 							for(let siglaPunto in DB.set.meridiani.NK.punti){
 								if(__(DB.set.meridiani.NK.punti[siglaPunto])){
-									if(	__(DB.set.meridiani.NK.punti[siglaPunto].apparato,-1)>-1 && 
-										DB.set.meridiani.NK.punti[siglaPunto].NomePunto){
+									if(	DB.set.meridiani.NK.punti[siglaPunto].NomePunto){
 										var pP = DB.set.meridiani.NK.punti[siglaPunto].siglaPunto.split("-");
 										puntiElenco.push({
 											siglaPunto: pP[1]*1,

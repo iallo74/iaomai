@@ -609,6 +609,7 @@ SET = {
 		return ret;
 	},
 	apriPunto: function( PT_name, ritorno='', el='', gruppo='', btn=null ){
+		console.log(PT_name)
 		if(localStorage.sistemaMeridiani=='MAS'){
 			var sm = '';
 			if(PT_name.substr(0,2)=='NK')sm = 'NMK';

@@ -434,7 +434,7 @@ var PH = {
 	
 	
 	// gallery
-	caricaGallery: function( vis=false, idU='', dett=false ){ // carica la gallery in contGallery
+	caricaGallery: function( vis=false, idU='', dett=false, hideNoCont=false ){ // carica la gallery in contGallery
 		var HTML='';
 		var totFiles = 0;
 		var afterFunct = '';
@@ -616,7 +616,7 @@ var PH = {
 		}
 		if(!totFiles){
 			document.getElementById("contGallery"+((PH.actionClick)?'Ar':'')).classList.remove("galleryFull");
-			HTML += '<div class="noResults"' +
+			if(!hideNoCont)HTML += '<div class="noResults"' +
 					'	  style="padding-left:30px;">' +
 						TXT("NoRes")+'...' +
 					'</div>';

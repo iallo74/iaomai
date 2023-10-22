@@ -411,11 +411,11 @@ var PAZIENTI_TRATTAMENTI = {
 				TimeAgenda = TimeTrattamento;
 			}
 			PAZIENTI.sintomiEliminati=[];
-			PAZIENTI.puntiProvvisori=puntiMTC;
-			PAZIENTI.auriculoProvvisori=puntiAuricolari;
-			PAZIENTI.namikoshiProvvisori=puntiNamikoshi;
-			PAZIENTI.sintomiProvvisori=sintomi;
-			PAZIENTI.meridianiProvvisori=meridiani;
+			PAZIENTI.puntiProvvisori=clone(puntiMTC);
+			PAZIENTI.auriculoProvvisori=clone(puntiAuricolari);
+			PAZIENTI.namikoshiProvvisori=clone(puntiNamikoshi);
+			PAZIENTI.sintomiProvvisori=clone(sintomi);
+			PAZIENTI.meridianiProvvisori=clone(meridiani);
 			PH.galleryProvvisoria=gallery;
 			var HTML='';
 			// GUIDA

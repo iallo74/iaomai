@@ -59,9 +59,9 @@ var PAZIENTI_SETS = {
 	
 	// punti
 	modNumPunti: function( frm, n ){ // al cambio di punti o meridiano
-		var mr=document[frm][".mr_"+n];
-		if(typeof(DB.set.meridiani[mr])!='undefined'){
-			var punto=edocument[frm][".pt_"+n];
+		var mr=document[frm]["mr_"+n];
+		if(typeof(DB.set.meridiani[mr.value])!='undefined'){
+			var punto=document[frm]["pt_"+n];
 			var maxL=punto.options.length;
 			for(a=maxL;a>=0;a--){
 				punto.options[a]=null;
@@ -71,7 +71,7 @@ var PAZIENTI_SETS = {
 				mrProc[k]=Object.keys(DB.set.meridiani[k].punti).length;
 			}
 			for(a=mrProc[mr.value];a>=1;a--){
-				punto.options[a]=new Option('',encodeURIComponent(a),false,false);
+				punto.options[a]=new Option('',encodeURIComponent(SET.ptToStr(a)),false,false);
 				var siglaPunto = a;
 				if(DB.set.meridiani[mr.value].punti[SET.ptToStr(a)].siglaPunto){
 					siglaPunto = DB.set.meridiani[mr.value].punti[SET.ptToStr(a)].siglaPunto;
@@ -203,7 +203,7 @@ var PAZIENTI_SETS = {
 								'<option value="">' +
 								'</option>';
 						for(let k in DB.set.meridiani){
-							if(k!='EX' || globals.set.cartella=='meridiani_cinesi'){
+							if((k!='EX' && k!='NK') || globals.set.cartella=='meridiani_cinesi'){
 								HTML+='<option value="'+k+'"';
 								if(siglaMeridiano==k){
 									HTML+=' SELECTED';
@@ -355,7 +355,7 @@ var PAZIENTI_SETS = {
 			n: n,
 			m: siglaMeridiano,
 			e: '',
-			z: '',
+			z: PAZIENTI.mezzoProvvisorio,
 			t: '',
 			s: siglaPunto
 		});
@@ -676,7 +676,6 @@ var PAZIENTI_SETS = {
 	ricAuriculo: function( frm, n ){ // ricarica tutti i punti
 		SET.overPunto("PT"+PAZIENTI.auriculoProvvisori[n].s,false);
 		let siglaPunto = document[frm]["pt_"+n].value;
-		console.log(siglaPunto)
 		PAZIENTI.auriculoProvvisori[n].s = siglaPunto;
 		PAZIENTI.auriculoProvvisori[n].n = DB.set.punti[siglaPunto].NomePunto;
 		PAZIENTI.auriculoProvvisori[n].t = document[frm]["de_"+n].value;
@@ -1220,7 +1219,7 @@ var PAZIENTI_SETS = {
 					// verifico le autorizzazioni
 					if(SET.verFreeMeridiani(m) && m!='NK'){
 						n++;
-						if(PAZIENTI.tipoGruppo=='P'){ // punti
+						if(PAZIENTI.tipoGruppo=='P' && (globals.set.cartella=='meridiani_cinesi' || m!='EX')){ // punti
 							EL.contenuto[n] = {};
 							EL.contenuto[n].titolo = DB.set.meridiani[m].NomeMeridiano;
 							EL.contenuto[n].contenuto = [];
@@ -1290,7 +1289,8 @@ var PAZIENTI_SETS = {
 				let pm = keys[i];
 				if(DB.set.meridiani['NK'].punti[pm].NomePunto){
 					var pP = DB.set.meridiani['NK'].punti[pm].siglaPunto.split("-");
-					EL.contenuto.push(pP[1]+"."+pP[0]+"."+DB.set.meridiani['NK'].punti[pm].siglaPunto);
+					//EL.contenuto.push(pP[1]+"."+pP[0]+"."+DB.set.meridiani['NK'].punti[pm].siglaPunto);
+					EL.contenuto.push(pP[1]+"."+pP[0]);
 				}
 			}
 			PAZIENTI.elencoGruppoPunti.contenuto.push(EL);
