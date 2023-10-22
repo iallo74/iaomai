@@ -44,14 +44,21 @@ var LINGUE = {
 		globals.siglaLingua='eng';
 		if(!localStorage.getItem("siglaLingua")){ // OK localStorage
 			for(let p in LINGUE.NLS){
-				if(this.linguaBrowser()==LINGUE.NLS[p].sigla.substring(0,2)){
+				//if(this.linguaBrowser()==LINGUE.NLS[p].sigla.substring(0,2)){
+				if(this.linguaBrowser()==LINGUE.NLS[p].sigla2 && !__(LINGUE.NLS[p].ai)){
 					localStorage.setItem("siglaLingua",LINGUE.NLS[p].sigla);
 				}
 			}
 		}
+		if(typeof(localStorage.siglaLingua)=='undefined')localStorage.getItem("siglaLingua")='eng';
 		var gC=localStorage.getItem("siglaLingua"); // OK localStorage
 		if(typeof(gC)!='undefined' && gC!='')globals.siglaLingua=gC;
 		
+		for(let p in LINGUE.NLS){
+			if(globals.siglaLingua==LINGUE.NLS[p].sigla){
+				if(__(LINGUE.NLS[p].ai))setTimeout(function(){ALERT(TXT("disclaimerLingua"));},4000);
+			}
+		}
 		
 		this.formatDate='%D/%M/%Y';
 		if(globals.siglaLingua=="eng")this.formatDate='%M/%D/%Y';

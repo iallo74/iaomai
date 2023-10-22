@@ -84,7 +84,7 @@ DB.set = {
         },
         "120": {
             "NomePunto": "Gânglio Cervical Inferior",
-            "AzioniPunto": "<p><b>Outros nomes</b><br> - gânglio estrelado</p><p> <b>Ação</b><br> A Escola Francesa indica este ponto por sua eficácia na redução de distúrbios neurológicos periféricos e todas as dores neuropáticas relacionadas ao membro superior e tronco.</p><p> <b>Localização</b><br> CW5, na parede da concha, logo acima do ponto de encontro com a crista da concha.</p>",
+            "AzioniPunto": "<p><b>Outros nomes</b><br> - Gânglio estrelado</p><p> <b>Ação</b><br> A Escola Francesa indica este ponto por sua eficácia na redução de distúrbios neurológicos periféricos e todas as dores neuropáticas relacionadas ao membro superior e tronco.</p><p> <b>Localização</b><br> CW5, na parede da concha, logo acima do ponto de encontro com a crista da concha.</p>",
             "ChiaviPunto": ""
         },
         "121": {
@@ -149,7 +149,7 @@ DB.set = {
         },
         "135": {
             "NomePunto": "Nervo vago",
-            "AzioniPunto": "<p><b>Outros nomes</b><br> - Nervo craniano X<br> -X CN</p><p> <b>Ação</b><br> Este ponto tem forte ação reequilibrante do sistema nervoso parassimpático, utilizado principalmente para tratar casos de taquicardia com palpitações e ansiedade.</p><p> <b>Localização</b><br> IC3, na concha inferior, centralmente e em direção ao conduto auditivo externo.</p>",
+            "AzioniPunto": "<p><b>Outros nomes</b><br> - Nervo craniano X<br> - X CN</p><p> <b>Ação</b><br> Este ponto tem forte ação reequilibrante do sistema nervoso parassimpático, utilizado principalmente para tratar casos de taquicardia com palpitações e ansiedade.</p><p> <b>Localização</b><br> IC3, na concha inferior, centralmente e em direção ao conduto auditivo externo.</p>",
             "ChiaviPunto": ""
         },
         "137": {
@@ -214,7 +214,7 @@ DB.set = {
         },
         "159": {
             "NomePunto": "Ovário-Testículos CHN",
-            "AzioniPunto": "<p><b>Outros nomes</b><br> - ovário<br> - Testículo<br> - Gônadas<br> - Glândula Sexual CHN<br> - Genitais Internos</p><p> <b>Ação</b><br> Este ponto tem grande aplicação para o tratamento e reequilíbrio das gônadas.</p><p> <b>Localização</b><br> CW1, na parede da concha do antitrago, próximo à incisura intertrágica.</p>",
+            "AzioniPunto": "<p><b>Outros nomes</b><br> - Ovário<br> - Testículo<br> - Gônadas<br> - Glândula Sexual CHN<br> - Genitais Internos</p><p> <b>Ação</b><br> Este ponto tem grande aplicação para o tratamento e reequilíbrio das gônadas.</p><p> <b>Localização</b><br> CW1, na parede da concha do antitrago, próximo à incisura intertrágica.</p>",
             "ChiaviPunto": ""
         },
         "161": {
@@ -699,7 +699,7 @@ DB.set = {
         },
         "001": {
             "NomePunto": "ShenMen",
-            "AzioniPunto": "<p><b>Outros nomes</b><br> -Shen Men<br> - Portão Espiritual<br> - Portão Divino</p><p> <b>Ação</b><br> Shen Men é um poderoso ponto reconhecido internacionalmente por suas inúmeras propriedades energéticas, emocionais e físicas. É usado para tonificar a mente e facilitar a circulação do Qi, restaurando a harmonia e a serenidade. É indicado para o tratamento de ansiedade, estresse, depressão e insônia. Também encontra excelentes resultados na dissuasão do uso frequente de álcool, drogas, tabagismo, etc. O tratamento desse ponto pode ajudar a reduzir os sintomas associados à hipertensão e à epilepsia.</p><p> <b>Localização</b><br> TF2, próximo ao ápice da fossa triangular em uma área próxima à raiz superior da hélice.</p>",
+            "AzioniPunto": "<p><b>Outros nomes</b><br> - Shen Men<br> - Portão Espiritual<br> - Portão Divino</p><p> <b>Ação</b><br> Shen Men é um poderoso ponto reconhecido internacionalmente por suas inúmeras propriedades energéticas, emocionais e físicas. É usado para tonificar a mente e facilitar a circulação do Qi, restaurando a harmonia e a serenidade. É indicado para o tratamento de ansiedade, estresse, depressão e insônia. Também encontra excelentes resultados na dissuasão do uso frequente de álcool, drogas, tabagismo, etc. O tratamento desse ponto pode ajudar a reduzir os sintomas associados à hipertensão e à epilepsia.</p><p> <b>Localização</b><br> TF2, próximo ao ápice da fossa triangular em uma área próxima à raiz superior da hélice.</p>",
             "ChiaviPunto": "ponto funcional primeiro nível"
         },
         "002": {
@@ -729,7 +729,7 @@ DB.set = {
         },
         "009": {
             "NomePunto": "Genitais Externos CHN",
-            "AzioniPunto": "<p><b>Outros nomes</b><br> - pênis<br> - Clitóris</p><p> <b>Ação</b><br> Ponto indicado pela Escola Chinesa para o tratamento de todas as patologias escrotais e relacionadas aos órgãos genitais masculinos e femininos. Muito eficaz em casos de frigidez e impotência.</p><p> <b>Localização</b><br> HX4, no joelho da hélice ao nível do ramo inferior da anti-hélice.</p>",
+            "AzioniPunto": "<p><b>Outros nomes</b><br> - Pênis<br> - Clitóris</p><p> <b>Ação</b><br> Ponto indicado pela Escola Chinesa para o tratamento de todas as patologias escrotais e relacionadas aos órgãos genitais masculinos e femininos. Muito eficaz em casos de frigidez e impotência.</p><p> <b>Localização</b><br> HX4, no joelho da hélice ao nível do ramo inferior da anti-hélice.</p>",
             "ChiaviPunto": ""
         },
         "013": {
@@ -797,7 +797,7 @@ DB.set = {
         },
         "033": {
             "NomePunto": "Joelho EUR",
-            "AzioniPunto": "<p><b>Outros nomes</b><br> - Articulação do joelho<br> - patela</p><p> <b>Ação</b><br> Como sugerido pelo nome, este ponto é altamente eficaz na redução de todos os distúrbios relacionados ao joelho, particularmente distúrbios articulares.</p><p> <b>Localização</b><br> TF3-TF4-PT2, no centro da fossa triangular.</p>",
+            "AzioniPunto": "<p><b>Outros nomes</b><br> - Articulação do joelho<br> - Patela</p><p> <b>Ação</b><br> Como sugerido pelo nome, este ponto é altamente eficaz na redução de todos os distúrbios relacionados ao joelho, particularmente distúrbios articulares.</p><p> <b>Localização</b><br> TF3-TF4-PT2, no centro da fossa triangular.</p>",
             "ChiaviPunto": ""
         },
         "034": {
@@ -807,7 +807,7 @@ DB.set = {
         },
         "036": {
             "NomePunto": "Nervo ciático",
-            "AzioniPunto": "<p><b>Outros nomes</b><br> - ciática</p><p> <b>Ação</b><br> Este é o ponto onde P. Nogier realizou a cauterização para tratar a dor ciática.</p><p> <b>Localização</b><br> AH6, aproximadamente na metade da raiz inferior da anti-hélice, pouco antes de cruzar a borda posterior do joelho da hélice.</p>",
+            "AzioniPunto": "<p><b>Outros nomes</b><br> - Ciática</p><p> <b>Ação</b><br> Este é o ponto onde P. Nogier realizou a cauterização para tratar a dor ciática.</p><p> <b>Localização</b><br> AH6, aproximadamente na metade da raiz inferior da anti-hélice, pouco antes de cruzar a borda posterior do joelho da hélice.</p>",
             "ChiaviPunto": ""
         },
         "037": {
@@ -872,7 +872,7 @@ DB.set = {
         },
         "053": {
             "NomePunto": "Braço",
-            "AzioniPunto": "<p><b>Outros nomes</b><br> - Ponto do braço<br> - úmero<br> - Músculo bíceps<br> - Músculo tríceps</p><p> <b>Ação</b><br> Como o nome indica, este ponto é altamente eficaz na redução de todos os distúrbios relacionados a problemas nos braços.</p><p> <b>Localização</b><br> SF3-PP5, na fossa escafóide, entre o ponto [.054.] e o ponto [.049.].</p>",
+            "AzioniPunto": "<p><b>Outros nomes</b><br> - Ponto do braço<br> - Úmero<br> - Músculo bíceps<br> - Músculo tríceps</p><p> <b>Ação</b><br> Como o nome indica, este ponto é altamente eficaz na redução de todos os distúrbios relacionados a problemas nos braços.</p><p> <b>Localização</b><br> SF3-PP5, na fossa escafóide, entre o ponto [.054.] e o ponto [.049.].</p>",
             "ChiaviPunto": ""
         },
         "054": {
@@ -892,7 +892,7 @@ DB.set = {
         },
         "058": {
             "NomePunto": "Ponto glúteo",
-            "AzioniPunto": "<p><b>Outros nomes</b><br> - Grande ponto glúteo<br> - ponto glúteo</p><p> <b>Ação</b><br> Dor no quadril, dor glútea e dor na pseudociática.</p><p> <b>Localização</b><br> AH5-PG5, logo acima de <span class='LMtxt'>LM16</span> no terço posterior da raiz inferior da hélice.</p>",
+            "AzioniPunto": "<p><b>Outros nomes</b><br> - Grande ponto glúteo</p><p> <b>Ação</b><br> Dor no quadril, dor glútea e dor na pseudociática.</p><p> <b>Localização</b><br> AH5-PG5, logo acima de <span class='LMtxt'>LM16</span> no terço posterior da raiz inferior da hélice.</p>",
             "ChiaviPunto": ""
         },
         "060": {
@@ -917,7 +917,7 @@ DB.set = {
         },
         "068": {
             "NomePunto": "Joelho CHN",
-            "AzioniPunto": "<p><b>Outros nomes</b><br> - Ponto do joelho<br> - Articulação do joelho<br> - patela</p><p> <b>Ação</b><br> Como o próprio nome indica, este ponto é altamente eficaz na redução de todas as afecções relacionadas com o joelho, em particular as afecções articulares.</p><p> <b>Localização</b><br> AH14-AH15, no centro da raiz superior da anti-hélice.</p>",
+            "AzioniPunto": "<p><b>Outros nomes</b><br> - Ponto do joelho<br> - Articulação do joelho<br> - Patela</p><p> <b>Ação</b><br> Como o próprio nome indica, este ponto é altamente eficaz na redução de todas as afecções relacionadas com o joelho, em particular as afecções articulares.</p><p> <b>Localização</b><br> AH14-AH15, no centro da raiz superior da anti-hélice.</p>",
             "ChiaviPunto": ""
         },
         "069": {
@@ -997,7 +997,7 @@ DB.set = {
         },
         "089": {
             "NomePunto": "Genitais Externos EUR",
-            "AzioniPunto": "<p><b>Outros nomes</b><br> - pênis<br> - Clitóris<br> - Ponto Bosch</p><p> <b>Ação</b><br> Ponto indicado pela Escola Francesa para o tratamento de todas as patologias escrotais e relacionadas aos órgãos genitais masculinos e femininos. Muito eficaz em casos de frigidez e impotência.</p><p> <b>Localização</b><br> HX1, na fronteira entre o ramo ascendente da hélice, o tragus e a concha superior.</p>",
+            "AzioniPunto": "<p><b>Outros nomes</b><br> - Pênis<br> - Clitóris<br> - Ponto Bosch</p><p> <b>Ação</b><br> Ponto indicado pela Escola Francesa para o tratamento de todas as patologias escrotais e relacionadas aos órgãos genitais masculinos e femininos. Muito eficaz em casos de frigidez e impotência.</p><p> <b>Localização</b><br> HX1, na fronteira entre o ramo ascendente da hélice, o tragus e a concha superior.</p>",
             "ChiaviPunto": ""
         },
         "092": {
@@ -1012,12 +1012,12 @@ DB.set = {
         },
         "095": {
             "NomePunto": "Reto EUR",
-            "AzioniPunto": "<p><b>Outros nomes</b><br> - ânus<br> - Hemorróidas<br> - Próstata</p><p> <b>Ação</b><br> O Ponto do Reto é muito útil na redução dos sintomas da síndrome do intestino irritável, disenteria, hemorróidas, diarréia, constipação e dor retal.</p><p> <b>Localização</b><br> IH1-SC4, no limite entre a parte oculta do ramo ascendente da hélice e a concha superior.</p>",
+            "AzioniPunto": "<p><b>Outros nomes</b><br> - Ânus<br> - Hemorróidas<br> - Próstata</p><p> <b>Ação</b><br> O Ponto do Reto é muito útil na redução dos sintomas da síndrome do intestino irritável, disenteria, hemorróidas, diarréia, constipação e dor retal.</p><p> <b>Localização</b><br> IH1-SC4, no limite entre a parte oculta do ramo ascendente da hélice e a concha superior.</p>",
             "ChiaviPunto": ""
         },
         "097": {
             "NomePunto": "Ovário-Testículos EUR",
-            "AzioniPunto": "<p><b>Outros nomes</b><br> - ovário<br> - Testículo<br> - Gônadas<br> - Genitais Internos<br> - Glândula Sexual EUR</p><p> <b>Ação</b><br> Este ponto tem ampla aplicação para o tratamento e reequilíbrio das gônadas.</p><p> <b>Localização</b><br> IH1, na superfície oculta do ramo ascendente da hélice.</p>",
+            "AzioniPunto": "<p><b>Outros nomes</b><br> - Ovário<br> - Testículo<br> - Gônadas<br> - Genitais Internos<br> - Glândula Sexual EUR</p><p> <b>Ação</b><br> Este ponto tem ampla aplicação para o tratamento e reequilíbrio das gônadas.</p><p> <b>Localização</b><br> IH1, na superfície oculta do ramo ascendente da hélice.</p>",
             "ChiaviPunto": ""
         },
         "098": {

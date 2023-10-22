@@ -1585,7 +1585,7 @@ DB.set = {
                     "p": [
                         "124",
                         "254",
-                        "[]Neuroreflex points on the medial anterior surfaces corresponding to the areas of greatest pain *"
+                        "[]Points neuroréflexes sur les surfaces antérieures médianes correspondant aux zones de plus grande douleur *"
                     ]
                 },
                 "np": {
@@ -1611,7 +1611,7 @@ DB.set = {
                         "003",
                         "124",
                         "254",
-                        "[]Neuroreflex points on the medial anterior surfaces corresponding to the areas of greatest pain",
+                        "[]Points neuroréflexes sur les surfaces antérieures médianes correspondant aux zones de plus grande douleur",
                         "155"
                     ]
                 },
@@ -2656,7 +2656,7 @@ DB.set = {
                     "p": [
                         "000",
                         "003",
-                        "[]Corresponding reflex area to the most painful zone",
+                        "[]Zone réflexe correspondante à la zone la plus douloureuse",
                         "039",
                         "155"
                     ]
@@ -2680,7 +2680,7 @@ DB.set = {
                     "t": "Contraction musculaire",
                     "p": [
                         "124",
-                        "[]Muscle points corresponding to the affected area"
+                        "[]Points musculaires correspondant à la zone affectée"
                     ]
                 },
                 {
@@ -2731,7 +2731,7 @@ DB.set = {
                         "000",
                         "004",
                         "039",
-                        "[]Corresponding reflex area to the most painful zone*"
+                        "[]Zone réflexe correspondante à la zone la plus douloureuse*"
                     ]
                 },
                 "np": {
@@ -2759,7 +2759,7 @@ DB.set = {
                         "000",
                         "230",
                         "003",
-                        "[]Corresponding reflex area to the most painful zone",
+                        "[]Zone réflexe correspondante à la zone la plus douloureuse",
                         "039",
                         "155"
                     ]
@@ -2785,7 +2785,7 @@ DB.set = {
                     "t": "Contraction musculaire",
                     "p": [
                         "124",
-                        "[]Muscle points corresponding to the affected area"
+                        "[]Points musculaires correspondant à la zone affectée"
                     ]
                 },
                 {
@@ -2840,7 +2840,7 @@ DB.set = {
                             "277",
                             "069"
                         ],
-                        "Depending on the location of the pain:",
+                        "Selon l’emplacement de la douleur:",
                         "177",
                         "179",
                         "202"
@@ -2920,7 +2920,7 @@ DB.set = {
                         "001",
                         "003",
                         "014",
-                        "Depending on the location of the pain:",
+                        "Selon l’emplacement de la douleur:",
                         "179",
                         "202",
                         "151"
@@ -3005,7 +3005,7 @@ DB.set = {
                         "003",
                         "283",
                         "014",
-                        "Depending on the location of the pain:",
+                        "Selon l’emplacement de la douleur:",
                         "179",
                         "202",
                         "151"
@@ -3454,8 +3454,8 @@ DB.set = {
                 "ds": {
                     "p": [
                         "164",
-                        "[]Concha wall*",
-                        "[]Sensitive root*"
+                        "[]Paroi de la conque*",
+                        "[]Racine sensible*"
                     ]
                 },
                 "np": {
@@ -3522,8 +3522,8 @@ DB.set = {
                         "222",
                         "165",
                         "151",
-                        "[]Motor and sensitive corresponding root*",
-                        "[]Corresponding ganglion**"
+                        "[]Moteur et racine correspondante sensible*",
+                        "[]Ganglion correspondant**"
                     ]
                 },
                 "np": {
@@ -3561,7 +3561,7 @@ DB.set = {
                                 "001",
                                 "222",
                                 "254",
-                                "[]Affected sensitive root"
+                                "[]Racine sensible affectée"
                             ]
                         }
                     ]
@@ -3787,7 +3787,7 @@ DB.set = {
                         "230",
                         "039",
                         "165",
-                        "[]Corresponding somatotopic area to pain",
+                        "[]Zone somatotopique correspondante à la douleur",
                         "120",
                         "273",
                         "270"
@@ -3803,7 +3803,7 @@ DB.set = {
                     "p": [
                         "180",
                         "222",
-                        "[]Corresponding somatotopic area to pain",
+                        "[]Zone somatotopique correspondante à la douleur",
                         "261",
                         "274",
                         "271"
@@ -3829,7 +3829,7 @@ DB.set = {
                             "t": "Triade modifiée",
                             "p": [
                                 "001",
-                                "[]Corresponding somatotopic area to pain",
+                                "[]Zone somatotopique correspondante à la douleur",
                                 "254"
                             ]
                         },
@@ -3858,7 +3858,7 @@ DB.set = {
                         "155",
                         "039",
                         "170",
-                        "[]Areas corresponding to the most painful zones"
+                        "[]Zones correspondant aux zones les plus douloureuses"
                     ]
                 },
                 "np": {
@@ -3976,7 +3976,7 @@ DB.set = {
                             ],
                             "l": "TRE"
                         },
-                        "*Inspect the whole area and identify the most sensitive area."
+                        "*Inspecter toute la zone et identifier la zone la plus sensible."
                     ]
                 },
                 {
@@ -4049,7 +4049,7 @@ DB.set = {
                             ]
                         }
                     ],
-                    "a": "*Inspectez toute la zone et identifiez la zone la plus sensible."
+                    "a": "*Inspect the entire area and identify the most sensitive area."
                 }
             ]
         },
@@ -4322,7 +4322,7 @@ DB.set = {
                         "039",
                         "030",
                         "121",
-                        "In a study on stress, Marco Romoli noticed that the points that stand out most on the ear, and therefore are sensitive to detection, are San Jiao and the Liver point, the latter located only on the right ear."
+                        "Dans une étude sur le stress, Marco Romoli a remarqué que les points qui ressortent le plus sur l’oreille, et sont donc sensibles à la détection, sont San Jiao et le point Foie, ce dernier situé uniquement sur l’oreille droite."
                     ]
                 },
                 "np": {
@@ -7213,7 +7213,7 @@ DB.set = {
                     "p": [
                         "026",
                         "004",
-                        "[]Somatotopic area in the corresponding auricle related to the affected or most affected zone"
+                        "[]Zone somatotopique dans l’oreillette correspondante liée à la zone affectée ou la plus affectée"
                     ]
                 },
                 "np": {
@@ -7276,7 +7276,7 @@ DB.set = {
                     "p": [
                         "164",
                         "018",
-                        "[]Somatotopic area in the corresponding auricle related to the affected zone"
+                        "[]Zone somatotopique dans l’oreillette correspondante liée à la zone affectée"
                     ]
                 },
                 "np": {
@@ -7304,7 +7304,7 @@ DB.set = {
                                 "001",
                                 "222",
                                 "254",
-                                "[]Area representing the affected zone"
+                                "[]Zone représentant la zone affectée"
                             ]
                         },
                         "252"
@@ -7415,7 +7415,7 @@ DB.set = {
                         "026",
                         "074",
                         "018",
-                        "[]Somatotopic area in the corresponding auricle related to the affected zone"
+                        "[]Zone somatotopique dans l’oreillette correspondante liée à la zone affectée"
                     ]
                 },
                 "np": {
@@ -7471,7 +7471,7 @@ DB.set = {
                 {
                     "t": "Rhumatisme psoriasique",
                     "p": [
-                        "[]Joint affected by pain"
+                        "[]Articulation affectée par la douleur"
                     ]
                 }
             ]
@@ -7525,7 +7525,7 @@ DB.set = {
                             "t": "Triade modifiée",
                             "p": [
                                 "001",
-                                "One of the following 2 points:",
+                                "L’un des 2 points suivants:",
                                 "215",
                                 "185",
                                 "254"
