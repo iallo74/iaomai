@@ -69,7 +69,7 @@ DB.set = {
         },
         "117": {
             "NomePunto": "Thymusdrüse",
-            "AzioniPunto": "<p><b>Andere Namen</b><br> - Thymusdrüse</p><p> <b>Aktion</b><br> Stärkt die Immunabwehr, wirkt entzündungshemmend und antirheumatisch.</p><p> <b>Standort</b><br> CW6-SC8, direkt über dem Concha-Kamm zwischen der Concha-Wand und der oberen Concha.</p>",
+            "AzioniPunto": "<p> <b>Aktion</b><br> Stärkt die Immunabwehr, wirkt entzündungshemmend und antirheumatisch.</p><p> <b>Standort</b><br> CW6-SC8, direkt über dem Concha-Kamm zwischen der Concha-Wand und der oberen Concha.</p>",
             "ChiaviPunto": ""
         },
         "118": {
@@ -188,7 +188,7 @@ DB.set = {
             "ChiaviPunto": ""
         },
         "150": {
-            "NomePunto": "Hirnstamm",
+            "NomePunto": "Brainstem",
             "AzioniPunto": "<p><b>Andere Namen</b><br> - Medulla Oblongata CHN</p><p> <b>Aktion</b><br> Der Chinesischen Schule zufolge soll der Hirnstammpunkt den Geist stärken und Atmung, Temperatur und Herzfrequenz regulieren. Es ist auch wirksam bei Epilepsie und Krämpfen.</p><p> <b>Standort</b><br> CW4, in der Conchawand an der Grenze zwischen Antehelix und Antitragus.</p>",
             "ChiaviPunto": ""
         },
@@ -198,7 +198,7 @@ DB.set = {
             "ChiaviPunto": ""
         },
         "154": {
-            "NomePunto": "Subkortex",
+            "NomePunto": "Subcortex",
             "AzioniPunto": "<p><b>Andere Namen</b><br> - Aufregungspunkt<br> - Epilepsiepunkt<br> - Speicheldrüsen</p><p> <b>Aktion</b><br> Dieser Punkt wird zur Behandlung akuter und chronischer neurologischer Erkrankungen eingesetzt. Es ist auch zur Linderung der Symptome von Depressionen, Angstzuständen und Durchblutungsstörungen geeignet.</p><p> <b>Standort</b><br> CW2, in der Mitte der Conchawand des Antitragus.</p>",
             "ChiaviPunto": ""
         },
@@ -259,7 +259,7 @@ DB.set = {
         },
         "174": {
             "NomePunto": "Kiefergelenk",
-            "AzioniPunto": "<p><b>Andere Namen</b><br> - Kiefergelenk<br> - Äußerer Pterygoidmuskel</p><p> <b>Aktion</b><br> Behandeln Sie diesen Punkt, um Schmerzen in einem oder beiden Gelenken außerhalb des Kiefers zu lindern. Wirksam bei Bruxismus.</p><p> <b>Standort</b><br> LO8-PP1, an der Stelle, an der sich die Fossa scaphoidea in eine Y-Form teilt, am Anfang ihres vorderen Astes.</p>",
+            "AzioniPunto": "<p><b>Andere Namen</b><br> - Äußerer Pterygoidmuskel</p><p> <b>Aktion</b><br> Behandeln Sie diesen Punkt, um Schmerzen in einem oder beiden Gelenken außerhalb des Kiefers zu lindern. Wirksam bei Bruxismus.</p><p> <b>Standort</b><br> LO8-PP1, an der Stelle, an der sich die Fossa scaphoidea in eine Y-Form teilt, am Anfang ihres vorderen Astes.</p>",
             "ChiaviPunto": ""
         },
         "176": {
@@ -268,7 +268,7 @@ DB.set = {
             "ChiaviPunto": ""
         },
         "177": {
-            "NomePunto": "Zurück",
+            "NomePunto": "Hinterkopf",
             "AzioniPunto": "<p><b>Andere Namen</b><br> - Hinterhauptbein<br> - Hinterhauptsmuskel<br> - Atlas</p><p> <b>Aktion</b><br> Dieser internationale Punkt wird zur Behandlung aller okzipitalen Erkrankungen eingesetzt, insbesondere von Kontraktionen der Okzipitalmuskulatur, Gesichtskrämpfen, Schlaflosigkeit und Schwindel.</p><p> <b>Standort</b><br> AT3-PC1, auf dem Antitragus in der Nähe der postantitragalen Furche.</p>",
             "ChiaviPunto": ""
         },
@@ -303,8 +303,8 @@ DB.set = {
             "ChiaviPunto": ""
         },
         "184": {
-            "NomePunto": "Vitalitätspunkt",
-            "AzioniPunto": "<p><b>Andere Namen</b><br> - Frustrationspunkt<br> - Interferonpunkt<br> - Herzpunkt</p><p> <b>Aktion<br></b> Die Französische Schule weist auf diesen Punkt aufgrund seiner kraftvollen energetischen, psychologischen und physischen Wirkung hin. Es wird zur Stärkung bei Apathie, geringer körperlicher Leistungsfähigkeit und Depression eingesetzt.</p><p> <b>Standort</b><br> TG4, in der Mitte des Tragus, direkt vor <span class='LMtxt'>LM11</span> .</p>",
+            "NomePunto": "Vitality point",
+            "AzioniPunto": "<p><b>Andere Namen</b><br> - Vitalitätspunkt<br> - Frustrationspunkt<br> - Interferonpunkt<br> - Herzpunkt</p><p> <b>Aktion<br></b> Die Französische Schule weist auf diesen Punkt aufgrund seiner kraftvollen energetischen, psychologischen und physischen Wirkung hin. Es wird zur Stärkung bei Apathie, geringer körperlicher Leistungsfähigkeit und Depression eingesetzt.</p><p> <b>Standort</b><br> TG4, in der Mitte des Tragus, direkt vor <span class='LMtxt'>LM11</span> .</p>",
             "ChiaviPunto": ""
         },
         "185": {
@@ -333,8 +333,8 @@ DB.set = {
             "ChiaviPunto": ""
         },
         "192": {
-            "NomePunto": "Beruhigungspunkt",
-            "AzioniPunto": "<p><b>Andere Namen</b><br> - Valiumpunkt EUR<br> - Hypertonie 2 CHN<br> - Mania Point<br> - Nikotinpunkt</p><p> <b>Aktion</b><br> Dieser Punkt ist für seine Wirksamkeit bei der Behandlung aller Störungen mit einer Angst- und Stresskomponente anerkannt. Es hat eine starke psycho-physische ausgleichende Wirkung und fördert die Entspannung, insbesondere bei Schlaflosigkeit.</p><p> <b>Standort</b><br> TG2, in der Mittelwand in Richtung des hinteren Knorpelbereichs. Auf halbem Weg zwischen <span class='LMtxt'>LM9</span> und <span class='LMtxt'>LM10</span> .</p>",
+            "NomePunto": "Tranquilizer Point",
+            "AzioniPunto": "<p><b>Andere Namen</b><br> - Beruhigungspunkt<br> - Valiumpunkt EUR<br> - Hypertonie 2 CHN<br> - Mania Point<br> - Nikotinpunkt</p><p> <b>Aktion</b><br> Dieser Punkt ist für seine Wirksamkeit bei der Behandlung aller Störungen mit einer Angst- und Stresskomponente anerkannt. Es hat eine starke psycho-physische ausgleichende Wirkung und fördert die Entspannung, insbesondere bei Schlaflosigkeit.</p><p> <b>Standort</b><br> TG2, in der Mittelwand in Richtung des hinteren Knorpelbereichs. Auf halbem Weg zwischen <span class='LMtxt'>LM9</span> und <span class='LMtxt'>LM10</span> .</p>",
             "ChiaviPunto": ""
         },
         "195": {
@@ -408,8 +408,8 @@ DB.set = {
             "ChiaviPunto": ""
         },
         "230": {
-            "NomePunto": "Zerebraler Meisterpunkt",
-            "AzioniPunto": "<p><b>Andere Namen</b><br> - Omega<br> - Nervosität<br> - Sorge</p><p> <b>Aktion</b><br> Nach Angaben der französischen Schule ist der Omega-Punkt der Hauptpunkt des ektodermalen Gewebes. Es stellt den Präfrontallappen dar. Es ist angezeigt bei Angstzuständen, Nervosität und Schlafstörungen.</p><p> <b>Standort</b><br> LO2, auf halbem Weg zwischen <span class='LMtxt'>LM8</span> und <span class='LMtxt'>LM9,</span> etwa 2 mm von der Wangengrenze entfernt.</p>",
+            "NomePunto": "Master Cerebral Point",
+            "AzioniPunto": "<p><b>Andere Namen</b><br> - Zerebraler Meisterpunkt<br> - Omega<br> - Nervosität<br> - Sorge</p><p> <b>Aktion</b><br> Nach Angaben der französischen Schule ist der Omega-Punkt der Hauptpunkt des ektodermalen Gewebes. Es stellt den Präfrontallappen dar. Es ist angezeigt bei Angstzuständen, Nervosität und Schlafstörungen.</p><p> <b>Standort</b><br> LO2, auf halbem Weg zwischen <span class='LMtxt'>LM8</span> und <span class='LMtxt'>LM9,</span> etwa 2 mm von der Wangengrenze entfernt.</p>",
             "ChiaviPunto": ""
         },
         "231": {
@@ -428,7 +428,7 @@ DB.set = {
             "ChiaviPunto": ""
         },
         "244": {
-            "NomePunto": "Lung CHN",
+            "NomePunto": "Lunge CHN",
             "AzioniPunto": "<p><b>Aktion<br></b> Der Lungenpunkt wird sowohl von der chinesischen als auch der französischen Schule für seine ausgleichende Wirkung auf die Atemwege genutzt, insbesondere bei Bronchitis, Emphysem und Brustschmerzen.</p><p> <b>Standort</b><br> IC2-IC4-IC5, großer Bereich in der unteren Concha, zur Concha-Wand hin.</p>",
             "ChiaviPunto": ""
         },
@@ -453,7 +453,7 @@ DB.set = {
             "ChiaviPunto": ""
         },
         "249": {
-            "NomePunto": "Lung EUR",
+            "NomePunto": "Lunge EUR",
             "AzioniPunto": "<p><b>Aktion<br></b> Der Lungenpunkt wird sowohl von der chinesischen als auch von der französischen Schule wegen seiner ausgleichenden Wirkung auf das Atmungssystem verwendet, insbesondere bei Bronchitis, Emphysem und Brustschmerzen.</p><p> <b>Standort</b><br> IC2-IC4-IC5-IC7, großer Bereich in der unteren Concha, zur Comcha-Wand hin.</p>",
             "ChiaviPunto": ""
         },
@@ -538,8 +538,8 @@ DB.set = {
             "ChiaviPunto": ""
         },
         "267": {
-            "NomePunto": "Verlangenspunkt",
-            "AzioniPunto": "<p><b>Andere Namen</b><br> - Verlangen</p><p> <b>Aktion</b><br> Dieser Punkt hat die Eigenschaft, die Auswirkungen des Verlangens zu reduzieren, bei dem es sich um das anhaltende und unwiderstehliche Verlangen nach einer bestimmten Substanz oder Substanzen mit ähnlicher Wirkung handelt. Verlangen kann auch als das zunehmende Spannungsgefühl definiert werden, das dem Beginn der Substanzaufnahme oder dem Auftreten von Suchtverhalten vorausgeht.</p><p> <b>Standort</b><br> HX15-LO7, an der Grenze zwischen dem Ende der Helix und dem Lappen am hinteren Rand.</p>",
+            "NomePunto": "Punkt des Craving",
+            "AzioniPunto": "<p><b>Andere Namen</b><br> - Verlangenspunkt<br> - Verlangen</p><p> <b>Aktion</b><br> Dieser Punkt hat die Eigenschaft, die Auswirkungen des Verlangens zu reduzieren, bei dem es sich um das anhaltende und unwiderstehliche Verlangen nach einer bestimmten Substanz oder Substanzen mit ähnlicher Wirkung handelt. Verlangen kann auch als das zunehmende Spannungsgefühl definiert werden, das dem Beginn der Substanzaufnahme oder dem Auftreten von Suchtverhalten vorausgeht.</p><p> <b>Standort</b><br> HX15-LO7, an der Grenze zwischen dem Ende der Helix und dem Lappen am hinteren Rand.</p>",
             "ChiaviPunto": ""
         },
         "268": {
@@ -548,32 +548,32 @@ DB.set = {
             "ChiaviPunto": ""
         },
         "269": {
-            "NomePunto": "C2-Motorwurzel",
+            "NomePunto": "Wurzel motorisch C2",
             "AzioniPunto": "<p><b>Andere Namen</b><br> - Hauptmotorwurzel des Plexus cervicalis</p><p> <b>Aktion</b><br> Dieser Punkt dient der Behandlung und Linderung aller Schmerzen und Störungen im Zusammenhang mit der motorischen Funktion des Plexus cervicalis.</p><p> <b>Standort</b><br> PP2, im medial-hinteren Teil der Helix, kurz bevor die Helix in die mediale Oberfläche des Lappens übergeht.</p>",
             "ChiaviPunto": ""
         },
         "270": {
-            "NomePunto": "C7-Engine-Root",
+            "NomePunto": "Wurzel motorisch C7",
             "AzioniPunto": "<p><b>Andere Namen</b><br> - Hauptmotorische Wurzel des Plexus brachialis</p><p> <b>Aktion</b><br> Dieser Punkt wird zur Behandlung und Linderung aller Schmerzen und Störungen im Zusammenhang mit der motorischen Funktion des Plexus brachialis eingesetzt.</p><p> <b>Standort</b><br> PP4, im medial-posterioren Teil der Helix, in ihrem unteren Drittel, auf der Ebene der Darstellung des zerviko-dorsalen Spinalkanals.</p>",
             "ChiaviPunto": ""
         },
         "271": {
-            "NomePunto": "Motorische Wurzel des Plexus lumbalis",
+            "NomePunto": "Wurzel motorisch des Plexus lumbalis",
             "AzioniPunto": "<p><b>Andere Namen</b><br> - Hauptmotorische Wurzel des Plexus lumbalis</p><p> <b>Aktion</b><br> Dieser Punkt wird zur Behandlung und Linderung aller Schmerzen und Störungen im Zusammenhang mit der motorischen Funktion des Plexus lumbalis eingesetzt.</p><p> <b>Standort</b><br> PP8, im medial-hinteren Teil der Helix, im oberen Drittel, oberhalb des Darwin-Tuberkels.</p>",
             "ChiaviPunto": ""
         },
         "272": {
-            "NomePunto": "C2 Sinneswurzel",
+            "NomePunto": "Sensitive Wurzel C2",
             "AzioniPunto": "<p><b>Andere Namen</b><br> - Beherrschen Sie die sensorische Wurzel des Plexus cervicalis</p><p> <b>Aktion</b><br> Dieser Punkt wird zur Behandlung und Linderung aller Schmerzen und Störungen im Zusammenhang mit der Empfindlichkeit des Plexus cervicalis eingesetzt.</p><p> <b>Standort</b><br> HX15, am äußeren Rand der Helix, an ihrem Schwanz, in einem Bereich, der durch eine Linie gekennzeichnet ist, die durch den [.000.] und die postantitragale Rille verläuft.</p>",
             "ChiaviPunto": ""
         },
         "273": {
-            "NomePunto": "Sinneswurzel C7",
+            "NomePunto": "Sensitive Wurzel C7",
             "AzioniPunto": "<p><b>Andere Namen</b><br> - Beherrsche die sensorische Wurzel des Plexus brachialis</p><p> <b>Aktion</b><br> Dieser Punkt wird zur Behandlung und Linderung aller Schmerzen und Störungen im Zusammenhang mit der Empfindlichkeit des Plexus brachialis eingesetzt.</p><p> <b>Standort</b><br> HX14, am äußeren Rand der Helix im mittleren Drittel des absteigenden Zweigs der Helix, in einem Bereich, der vom Hals-Rücken-Durchgang projiziert wird.</p>",
             "ChiaviPunto": ""
         },
         "274": {
-            "NomePunto": "Sensorische Wurzel des Plexus lumbalis",
+            "NomePunto": "Sensitive Wurzel des Plexus lumbalis",
             "AzioniPunto": "<p><b>Andere Namen</b><br> - Beherrschen Sie die sensorische Wurzel des Plexus lumbalis</p><p> <b>Aktion</b><br> Dieser Punkt wird zur Behandlung und Linderung aller Schmerzen und Störungen im Zusammenhang mit der Empfindlichkeit des Plexus lumbalis eingesetzt.</p><p> <b>Standort</b><br> HX10, auf der Helix, knapp über Darwins Tuberkel.</p>",
             "ChiaviPunto": ""
         },
@@ -679,7 +679,7 @@ DB.set = {
         },
         "303": {
             "NomePunto": "Hippocampus",
-            "AzioniPunto": "<p><b>Andere Namen</b><br> - Erinnerung<br> - Gedächtnisgehirn<br> -Fornix</p><p> <b>Aktion</b><br> Gedächtnisstörungen, Amnesie und Aufmerksamkeit.</p><p> <b>Standort</b><br> LO6, am oberen Teil des Ohrläppchens, knapp unterhalb der Grenzlinie zum Antitragus.</p>",
+            "AzioniPunto": "<p><b>Andere Namen</b><br> - Erinnerung<br> - Gedächtnisgehirn<br> - Fornix</p><p> <b>Aktion</b><br> Gedächtnisstörungen, Amnesie und Aufmerksamkeit.</p><p> <b>Standort</b><br> LO6, am oberen Teil des Ohrläppchens, knapp unterhalb der Grenzlinie zum Antitragus.</p>",
             "ChiaviPunto": ""
         },
         "304": {
@@ -733,7 +733,7 @@ DB.set = {
             "ChiaviPunto": ""
         },
         "013": {
-            "NomePunto": "Romulus-Angst",
+            "NomePunto": "Angst vor Romoli",
             "AzioniPunto": "<p><b>Aktion</b><br> Besonders empfindlich und wirksam bei Panikattacken, zusammen mit dem Mouth Point.</p><p> <b>Standort</b><br> IC5-IC8, kodifiziert von A. Lovato, beschrieben von Marco Romoli in verschiedenen Präsentationen, Berichten und Konferenzen, identifiziert in einem unteren Concha-Bereich, in der Nähe des Nogier&#39;s Wonderful Point.</p>",
             "ChiaviPunto": "",
             "hidden": true
@@ -766,7 +766,7 @@ DB.set = {
             "ChiaviPunto": ""
         },
         "026": {
-            "NomePunto": "Windstrom",
+            "NomePunto": "Windstream",
             "AzioniPunto": "<p><b>Andere Namen</b><br> - Kleiner Hinterhauptnerv<br> - Windschlag</p><p> <b>Aktion</b><br> Nach der Chinesischen Schule ist dieser Punkt mit der Nebenniere verbunden. Es soll die Reaktion des Immunsystems fördern und hat eine besondere Wirkung bei allen Erkrankungen in der akuten Phase.</p><p> <b>Standort</b><br> IH11, auf der verborgenen Oberfläche der Helix, unterhalb von Darwins Tuberkel.</p>",
             "ChiaviPunto": ""
         },
@@ -791,7 +791,7 @@ DB.set = {
             "ChiaviPunto": ""
         },
         "032": {
-            "NomePunto": "EUR",
+            "NomePunto": "Knöchel EUR",
             "AzioniPunto": "<p><b>Andere Namen</b><br> - Sprunggelenk<br> - Achillessehne</p><p> <b>Aktion</b><br> Der Sprunggelenkpunkt wird bei allen Erkrankungen des Sprunggelenks eingesetzt, insbesondere bei Gelenk- und Achillessehnenerkrankungen.</p><p> <b>Standort</b><br> TF5-TF6 entlang der Winkelhalbierenden der dreieckigen Fossa, im proximalen Drittel bis zum Knie der Anthelix.</p>",
             "ChiaviPunto": ""
         },
@@ -826,7 +826,7 @@ DB.set = {
             "ChiaviPunto": ""
         },
         "040": {
-            "NomePunto": "Sehr EUR",
+            "NomePunto": "Ferse EUR",
             "AzioniPunto": "<p><b>Aktion</b><br> Schmerzhafte und dysfunktionale Erkrankungen der Ferse und des Rückfußes.</p><p> <b>Standort</b><br> TF5, an der Basis der dreieckigen Fossa, nahe dem Verbindungspunkt zwischen der Helix und der unteren Wurzel der Anthelix. Der Punkt wird durch die Helix verdeckt.</p>",
             "ChiaviPunto": ""
         },
@@ -896,8 +896,8 @@ DB.set = {
             "ChiaviPunto": ""
         },
         "060": {
-            "NomePunto": "Angesagter EUR",
-            "AzioniPunto": "<p><b>Andere Namen</b><br> - Hüftgelenk</p><p> <b>Aktion</b><br> Dieser Punkt wird sowohl von der chinesischen als auch der französischen Schule verwendet, jedoch an unterschiedlichen Orten. Beiden gemeinsam ist die Anwendung zur Behandlung von Erkrankungen des Hüft- und Beckengürtels.</p><p> <b>Standort</b><br> TF1-PT1, an der Spitze der dreieckigen Fossa.</p>",
+            "NomePunto": "Hüftgelenk EUR",
+            "AzioniPunto": "<p> <b>Aktion</b><br> Dieser Punkt wird sowohl von der chinesischen als auch der französischen Schule verwendet, jedoch an unterschiedlichen Orten. Beiden gemeinsam ist die Anwendung zur Behandlung von Erkrankungen des Hüft- und Beckengürtels.</p><p> <b>Standort</b><br> TF1-PT1, an der Spitze der dreieckigen Fossa.</p>",
             "ChiaviPunto": ""
         },
         "061": {
@@ -951,7 +951,7 @@ DB.set = {
             "ChiaviPunto": ""
         },
         "075": {
-            "NomePunto": "Hip CHN",
+            "NomePunto": "Hüftgelenk CHN",
             "AzioniPunto": "<p><b>Andere Namen</b><br> - Hüftpunkt<br> - Hüftgelenk</p><p> <b>Aktion</b><br> Dieser Punkt wird sowohl von der chinesischen als auch der französischen Schule verwendet, jedoch an unterschiedlichen Orten. Beiden gemeinsam ist die Anwendung zur Behandlung von Erkrankungen des Hüft- und Beckengürtels.</p><p> <b>Standort</b><br> AH13-PG8, im unteren Drittel des oberen Astes der Anthelix, in Richtung der dreieckigen Fossa<span></span> .</p>",
             "ChiaviPunto": ""
         },
@@ -1032,17 +1032,17 @@ DB.set = {
         }
     },
     "apparati": {
-        "1": "Locomotor apparatus",
-        "2": "Head",
-        "3": "Neurological clinic",
-        "4": "Psychiatric clinic",
-        "5": "Endocrinological clinic and urogenital system",
-        "6": "Gastroenterological clinic",
-        "7": "Cardiovascular and lymphatic system",
-        "8": "Respiratory, phonetic and otovestibular",
-        "9": "Dermatological clinic",
-        "10": "Eye clinic",
-        "11": "Addictions"
+        "1": "Bewegungsapparat",
+        "2": "Kopf",
+        "3": "Neurologische Klinik",
+        "4": "Psychiatrische Klinik",
+        "5": "Endokrinologische Klinik und Urogenitalsystem",
+        "6": "Gastroenterologische Klinik",
+        "7": "Herz-Kreislauf- und Lymphsystem",
+        "8": "Respiratorische, phonetische und otovestibuläre",
+        "9": "Dermatologische Klinik",
+        "10": "Augenklinik",
+        "11": "Macht Süchtig"
     },
     "schede": {
         "1": {
@@ -1585,7 +1585,7 @@ DB.set = {
                     "p": [
                         "124",
                         "254",
-                        "[]Neuroreflex points on the medial anterior surfaces corresponding to the areas of greatest pain *"
+                        "[]Neuroreflexpunkte auf den medialen Vorderflächen entsprechend den Bereichen mit den größten Schmerzen *"
                     ]
                 },
                 "np": {
@@ -1611,7 +1611,7 @@ DB.set = {
                         "003",
                         "124",
                         "254",
-                        "[]Neuroreflex points on the medial anterior surfaces corresponding to the areas of greatest pain",
+                        "[]Neuroreflexpunkte auf den medialen Vorderflächen entsprechend den Bereichen mit den größten Schmerzen",
                         "155"
                     ]
                 },
@@ -2633,7 +2633,7 @@ DB.set = {
                 "ds": {
                     "p": [
                         "229",
-                        "[]Corresponding reflex area to the most painful zone*"
+                        "[]Korrespondierender Reflexbereich zur schmerzhaftesten Zone*"
                     ]
                 },
                 "np": {
@@ -2656,7 +2656,7 @@ DB.set = {
                     "p": [
                         "000",
                         "003",
-                        "[]Corresponding reflex area to the most painful zone",
+                        "[]Korrespondierender Reflexbereich zur schmerzhaftesten Zone",
                         "039",
                         "155"
                     ]
@@ -2680,7 +2680,7 @@ DB.set = {
                     "t": "Muskelkontraktion",
                     "p": [
                         "124",
-                        "[]Muscle points corresponding to the affected area"
+                        "[]Muskelpunkte, die dem betroffenen Bereich entsprechen"
                     ]
                 },
                 {
@@ -2731,7 +2731,7 @@ DB.set = {
                         "000",
                         "004",
                         "039",
-                        "[]Corresponding reflex area to the most painful zone*"
+                        "[]Korrespondierender Reflexbereich zur schmerzhaftesten Zone*"
                     ]
                 },
                 "np": {
@@ -2759,7 +2759,7 @@ DB.set = {
                         "000",
                         "230",
                         "003",
-                        "[]Corresponding reflex area to the most painful zone",
+                        "[]Korrespondierender Reflexbereich zur schmerzhaftesten Zone",
                         "039",
                         "155"
                     ]
@@ -2785,7 +2785,7 @@ DB.set = {
                     "t": "Muskelkontraktion",
                     "p": [
                         "124",
-                        "[]Muscle points corresponding to the affected area"
+                        "[]Muskelpunkte, die dem betroffenen Bereich entsprechen"
                     ]
                 },
                 {
@@ -2840,7 +2840,7 @@ DB.set = {
                             "277",
                             "069"
                         ],
-                        "Depending on the location of the pain:",
+                        "Je nach Ort des Schmerzes:",
                         "177",
                         "179",
                         "202"
@@ -2920,7 +2920,7 @@ DB.set = {
                         "001",
                         "003",
                         "014",
-                        "Depending on the location of the pain:",
+                        "Je nach Ort des Schmerzes:",
                         "179",
                         "202",
                         "151"
@@ -3005,7 +3005,7 @@ DB.set = {
                         "003",
                         "283",
                         "014",
-                        "Depending on the location of the pain:",
+                        "Je nach Ort des Schmerzes:",
                         "179",
                         "202",
                         "151"
@@ -3454,8 +3454,8 @@ DB.set = {
                 "ds": {
                     "p": [
                         "164",
-                        "[]Concha wall*",
-                        "[]Sensitive root*"
+                        "[]Muschelwand*",
+                        "[]Empfindliche Wurzel*"
                     ]
                 },
                 "np": {
@@ -3522,8 +3522,8 @@ DB.set = {
                         "222",
                         "165",
                         "151",
-                        "[]Motor and sensitive corresponding root*",
-                        "[]Corresponding ganglion**"
+                        "[]Motorische und empfindliche entsprechende Wurzel*",
+                        "[]Korrespondierendes Ganglion**"
                     ]
                 },
                 "np": {
@@ -3561,7 +3561,7 @@ DB.set = {
                                 "001",
                                 "222",
                                 "254",
-                                "[]Affected sensitive root"
+                                "[]Betroffene empfindliche Wurzel"
                             ]
                         }
                     ]
@@ -3787,7 +3787,7 @@ DB.set = {
                         "230",
                         "039",
                         "165",
-                        "[]Corresponding somatotopic area to pain",
+                        "[]Korrespondierender somatotopischer Bereich bis Schmerz",
                         "120",
                         "273",
                         "270"
@@ -3803,7 +3803,7 @@ DB.set = {
                     "p": [
                         "180",
                         "222",
-                        "[]Corresponding somatotopic area to pain",
+                        "[]Korrespondierender somatotopischer Bereich bis Schmerz",
                         "261",
                         "274",
                         "271"
@@ -3829,7 +3829,7 @@ DB.set = {
                             "t": "Modifizierter Dreiklang",
                             "p": [
                                 "001",
-                                "[]Corresponding somatotopic area to pain",
+                                "[]Korrespondierender somatotopischer Bereich bis Schmerz",
                                 "254"
                             ]
                         },
@@ -3858,7 +3858,7 @@ DB.set = {
                         "155",
                         "039",
                         "170",
-                        "[]Areas corresponding to the most painful zones"
+                        "[]Bereiche, die den schmerzhaftesten Zonen entsprechen"
                     ]
                 },
                 "np": {
@@ -3976,7 +3976,7 @@ DB.set = {
                             ],
                             "l": "TRE"
                         },
-                        "*Inspect the whole area and identify the most sensitive area."
+                        "*Untersuchen Sie den gesamten Bereich und identifizieren Sie den empfindlichsten Bereich."
                     ]
                 },
                 {
@@ -4322,7 +4322,7 @@ DB.set = {
                         "039",
                         "030",
                         "121",
-                        "In a study on stress, Marco Romoli noticed that the points that stand out most on the ear, and therefore are sensitive to detection, are San Jiao and the Liver point, the latter located only on the right ear."
+                        "In einer Studie über Stress bemerkte Marco Romoli, dass die Punkte, die am Ohr am meisten hervorstechen und daher erkennungsempfindlich sind, San Jiao und der Leberpunkt sind, der sich nur am rechten Ohr befindet."
                     ]
                 },
                 "np": {
@@ -4458,7 +4458,7 @@ DB.set = {
                         "245",
                         "179",
                         "202",
-                        "Temples and forehead are considered appropriate for insomnia according to the China Academy, similarly to the Occiput point for depression."
+                        "Schläfen und Stirn gelten laut der China Academy als geeignet für Schlaflosigkeit, ähnlich wie der Occiput-Punkt für Depressionen."
                     ]
                 },
                 "np": {
@@ -7213,7 +7213,7 @@ DB.set = {
                     "p": [
                         "026",
                         "004",
-                        "[]Somatotopic area in the corresponding auricle related to the affected or most affected zone"
+                        "[]Somatotope Region in der entsprechenden Ohrmuschel bezogen auf die betroffene oder am meisten betroffene Zone"
                     ]
                 },
                 "np": {
@@ -7276,7 +7276,7 @@ DB.set = {
                     "p": [
                         "164",
                         "018",
-                        "[]Somatotopic area in the corresponding auricle related to the affected zone"
+                        "[]Somatotope Region in der entsprechenden Ohrmuschel bezogen auf die betroffene Zone"
                     ]
                 },
                 "np": {
@@ -7304,7 +7304,7 @@ DB.set = {
                                 "001",
                                 "222",
                                 "254",
-                                "[]Area representing the affected zone"
+                                "[]Bereich, der die betroffene Zone darstellt"
                             ]
                         },
                         "252"
@@ -7415,7 +7415,7 @@ DB.set = {
                         "026",
                         "074",
                         "018",
-                        "[]Somatotopic area in the corresponding auricle related to the affected zone"
+                        "[]Somatotope Region in der entsprechenden Ohrmuschel bezogen auf die betroffene Zone"
                     ]
                 },
                 "np": {
@@ -7471,7 +7471,7 @@ DB.set = {
                 {
                     "t": "Psoriasis-Arthritis",
                     "p": [
-                        "[]Joint affected by pain"
+                        "[]Gelenk von Schmerzen betroffen"
                     ]
                 }
             ]
@@ -7525,7 +7525,7 @@ DB.set = {
                             "t": "Modifizierter Dreiklang",
                             "p": [
                                 "001",
-                                "One of the following 2 points:",
+                                "Einer der folgenden 2 Punkte:",
                                 "215",
                                 "185",
                                 "254"
@@ -9264,7 +9264,7 @@ DB.set = {
             "apparato": 1
         },
         "235": {
-            "NomePatologia": "zentraler Schwindel",
+            "NomePatologia": "Zentraler Schwindel",
             "schedaPatologia": "281",
             "scheda": 80,
             "apparato": 8
@@ -9668,10 +9668,10 @@ DB.set = {
                 }
             ],
             "ris": {
-                "0": "Poor motivation",
-                "6": "Reasonable motivation",
-                "12": "Good motivation",
-                "16": "High motivation"
+                "0": "Schlechte Motivation",
+                "6": "Vernünftige Motivation",
+                "12": "Gute Motivation",
+                "16": "Hohe Motivation"
             }
         },
         "dipendenza": {
@@ -9772,10 +9772,10 @@ DB.set = {
                 }
             ],
             "ris": {
-                "0": "Low addiction",
-                "3": "Average addiction",
-                "6": "High addiction",
-                "8": "Very high addiction"
+                "0": "Niedrige Sucht",
+                "3": "Durchschnittliche Sucht",
+                "6": "Hohe Sucht",
+                "8": "Sehr hohe Sucht"
             }
         }
     }

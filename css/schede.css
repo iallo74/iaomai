@@ -1010,6 +1010,9 @@ body:not(.bodyStyled2) #scheda_testo2{
 	margin-left: 8px;
     margin-right: -8px;
 }
+#scheda:not(.tab_punti):not(.scheda_patologia):not(.scheda_teoria) .translate_note{
+	display:none;
+}
 
 .lang_ar .translatable{
 	text-align:right;
