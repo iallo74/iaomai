@@ -1266,7 +1266,6 @@ var PAZIENTI = {
 					Dida: GA[i].Dida
 				}
 				GA[i] = NG;
-				//f++;
 			}
 			delete(GA[i].imported);
 		}

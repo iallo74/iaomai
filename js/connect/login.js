@@ -1050,10 +1050,30 @@ var LOGIN = {
 
 				elencoProcedure='';
 				for(let k in DB.procedure.data){
-					if(DB.procedure.data[k].DataModifica*1>DB.procedure.lastSync*1 || dwnl || bkp){
+					var db={ 	"idProcedura": DB.procedure.data[k].idProcedura*1,
+								"NomeProcedura": DB.procedure.data[k].NomeProcedura,
+								"app": DB.procedure.data[k].app,
+								"idLinguaProcedura": DB.procedure.data[k].idLinguaProcedura*1,
+								"dettagliProcedura": DB.procedure.data[k].dettagliProcedura,
+								"gallery": JSON.stringify(DB.procedure.data[k].gallery),
+								"DataModifica":DB.procedure.data[k].DataModifica*1,
+								"DataCreazione":DB.procedure.data[k].DataCreazione*1,
+								"Condiviso": DB.procedure.data[k].Condiviso*1,
+								"Cancellato": DB.procedure.data[k].Cancellato*1 };
+
+					var aggiungere=false;
+					if((DB.procedure.data[k].DataModifica*1>DB.procedure.lastSync*1 || dwnl || bkp) && !__(DB.appuntamenti.data[k].frv)){
+						aggiungere=true;
+					}
+					if(aggiungere){
+						DB.procedure.data[k].id_interno=k;
+						elencoProcedure+=JSON.stringify(db)+", ";
+					}
+					
+					/* if(DB.procedure.data[k].DataModifica*1>DB.procedure.lastSync*1 || dwnl || bkp){
 						DB.procedure.data[k].id_interno=k;
 						elencoProcedure+=JSON.stringify(DB.procedure.data[k])+", ";
-					}
+					} */
 				}
 				if(elencoProcedure)elenco+='"procedure": ['+elencoProcedure.substr(0,elencoProcedure.length-2)+'], ';
 				

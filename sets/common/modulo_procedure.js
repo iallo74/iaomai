@@ -691,7 +691,7 @@ var MODULO_PROCEDURE = { // extend SET
 			}
 			delete(GA[i].imported);
 		}
-		
+
 		localPouchDB.setItem(MD5("DB"+LOGIN._frv()+".files"), IMPORTER.COMPR(DB.files)).then(function(){
 			JSNPUSH={	"idProcedura": document.formMod.idProcedura.value*1,
 						"idLinguaProcedura": document.formMod.idLinguaProcedura.value*1,
