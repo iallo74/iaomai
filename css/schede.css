@@ -840,6 +840,7 @@ body:not(.bodyStyled2) #scheda_testo2{
 	width:100%;
 	height: 42px;
     line-height: 42px !important;
+	padding-right: 15px;
     text-align: left;
     background-repeat: no-repeat;
     background-position: 5px center;
@@ -1012,6 +1013,22 @@ body:not(.bodyStyled2) #scheda_testo2{
 }
 #scheda:not(.tab_punti):not(.scheda_patologia):not(.scheda_teoria) .translate_note{
 	display:none;
+}
+body.smart .translate_note{
+	margin-top: -20px;
+	padding-top: 15px;
+	padding-bottom: 15px;
+}
+body.smart .translate_note span:not(.translate_close){
+    float: none;
+    height: 30px !important;
+    line-height: 30px !important;
+    margin-left: 11px;
+    margin-top: 14px;
+}
+body.smart .translate_note span.translate_close{
+	margin-top: -3px;
+    margin-right: -4px;
 }
 
 .lang_ar .translatable{

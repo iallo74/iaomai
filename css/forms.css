@@ -407,6 +407,7 @@ body.bodyModello .p_paz_screenshot:hover{ /* PAZIENTI */
 }
 .smart.android #contSintomi div:not(.noResults) span{ /* PAZIENTI */
 	font-size: var(--font-14-94) !important;
+	width: calc(100% - 94px) !important;
 }
 .app_version.bug_font.smart.android #contSintomi div:not(.noResults) span{ /* PAZIENTI */
 	font-size: var(--font-13-58) !important;
@@ -1493,8 +1494,11 @@ _:-webkit-full-screen,
 	width: 205px;
 	background-color: rgba(0,0,0,0.08);
 }
-#scheda.sch_Max450:not(.scheda_procedura) .dettMeridiano span:not(.valPunto):not(.mezzoPunto){
+body:not(.smart) #scheda.sch_Max450:not(.scheda_procedura) .dettMeridiano span:not(.valPunto):not(.mezzoPunto){
 	width: calc(100% - 45px) !important;
+}
+body.smart .dettMeridiano span:not(.valPunto):not(.mezzoPunto){
+	width: calc(100% - 68px) !important;
 }
 body:not(.smart) #scheda:not(.scheda_procedura) .dettMeridiano span:not(.valPunto):not(.mezzoPunto){
 	margin: -2px;

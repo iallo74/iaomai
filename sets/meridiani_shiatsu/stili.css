@@ -384,6 +384,7 @@ body:not(.bodyStyled1):not(.bodyStyled2):not(.smart) #p_set{
 	height:50px !important;
 	line-height:50px !important;
 	background-size:auto 46px, auto;
+	font-size: var(--font-16-93);
 }
 .smart:not(.android) .labelSequenza{
 	height:40px !important;
@@ -510,7 +511,7 @@ body:not(.touch) .listaMeridiani .spazioDopo{
 .smart.android .elencoPunti p *{
 	line-height: 37px !important;
     font-size: var(--font-16) !important;
-	background-position: 5px 14px !important;
+	background-position: 5px 14px, calc(100% - 3px) 5px !important;
 }
 .app_version.bug_font.smart.android .elencoPunti p *{
 	line-height: 33.9px !important;
@@ -725,7 +726,8 @@ body:not(.smart) .listaMeridiani .p_aria:not(.elencoSel) span:hover{
 }
 
 .sch_Max450 .textPuntoTratt,
-.sch_Max450 .textMeridianoTratt{
+.sch_Max450 .textMeridianoTratt,
+body.smart.touch .textMeridianoTratt{
     width: 100% !important;
     background-color: rgba(255,255,255,0.4) !important;
     border-radius: 4px !important;
@@ -741,7 +743,7 @@ body:not(.smart) .listaMeridiani .p_aria:not(.elencoSel) span:hover{
     width: calc(100% - 213px) !important;
 }
 .smart #scheda:not(.sch_Max450) .textPuntoTratt{
-	width: calc(100% - 282px) !important;
+	width: calc(100% - 288px) !important;
 }
 .touch:not(.smart) #scheda:not(.sch_Max450) .textPuntoTratt{
 	width: calc(100% - 298px) !important;
@@ -750,9 +752,9 @@ body:not(.smart) .listaMeridiani .p_aria:not(.elencoSel) span:hover{
     width: calc(100% - 245px) !important;
     margin-left: 5px !important;
 }
-.smart #scheda:not(.sch_Max450) .textMeridianoTratt{
+/*.smart #scheda:not(.sch_Max450) .textMeridianoTratt{
 	width: calc(100% - 256px) !important;
-}
+}*/
 .touch:not(.smart) #scheda:not(.sch_Max450) .textMeridianoTratt{
 	width: calc(100% - 272px) !important;
 }

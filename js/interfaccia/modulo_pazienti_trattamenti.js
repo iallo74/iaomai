@@ -356,12 +356,12 @@ var PAZIENTI_TRATTAMENTI = {
 				TestoTrattamento=TR.TestoTrattamento;
 				Prescrizione=__(TR.Prescrizione);
 				ordine=__(TR.ordine,0);
-				meridiani=__(TR.meridiani);
+				meridiani=toJson(__(TR.meridiani,[]));
 				puntiMTC=__(TR.puntiMTC,[]);
-				puntiAuricolari=__(TR.puntiAuricolari,[]);
-				puntiNamikoshi=__(TR.puntiNamikoshi,[]);
-				sintomi=__(TR.sintomi,[]);
-				gallery=__(TR.gallery,[]);
+				puntiAuricolari=toJson(__(TR.puntiAuricolari,[]));
+				puntiNamikoshi=toJson(__(TR.puntiNamikoshi,[]));
+				sintomi=toJson(__(TR.sintomi,[]));
+				gallery=toJson(__(TR.gallery,[]));
 				
 				TimeTrattamento=(TR.TimeTrattamento*1)/1000;
 				if(typeof(TR.TipoTrattamento)!='undefined')TipoTrattamento=TR.TipoTrattamento;
@@ -418,7 +418,6 @@ var PAZIENTI_TRATTAMENTI = {
 			PAZIENTI.meridianiProvvisori=meridiani;
 			PH.galleryProvvisoria=gallery;
 			var HTML='';
-			
 			// GUIDA
 			if(TipoTrattamento == 'A' && Q_idTratt<0){
 				ordine = PAZIENTI.cicli.length-1;
@@ -1484,7 +1483,7 @@ var PAZIENTI_TRATTAMENTI = {
 			for(let t in DB.pazienti.data[idCL].trattamenti){
 				if(idCL==28)console.log(cartella+"=="+DB.pazienti.data[idCL].trattamenti[t].LabelCiclo)
 				if(cartella == DB.pazienti.data[idCL].trattamenti[t].LabelCiclo){	
-					let ss = clone(DB.pazienti.data[idCL].trattamenti[t].sintomi);
+					let ss = clone(toJson(__(DB.pazienti.data[idCL].trattamenti[t].sintomi,[])));
 					for(let s in ss){
 						if(nomiSintomi.indexOf(ss[s].NomeSintomo)==-1){
 							let sintomo = ss[s];

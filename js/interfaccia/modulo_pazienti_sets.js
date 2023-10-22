@@ -91,7 +91,7 @@ var PAZIENTI_SETS = {
 		var pt=document[frm][addN+"pt_"+n].value;
 		var de=document[frm][addN+"de_"+n].value;
 		if(DB.set.meridiani[mr]){
-			var siglaPunto = __(DB.set.meridiani[mr].punti[SET.ptToStr(pt)].siglaPunto, pt+"."+mr);
+			var siglaPunto = __(DB.set.meridiani[mr].punti[SET.ptToStr(pt)]?.siglaPunto, pt+"."+mr);
 			document[frm][addN+"hd_"+n].value=siglaPunto;
 		}
 		
@@ -769,11 +769,11 @@ var PAZIENTI_SETS = {
 								'		<option></option>';
 						for(let n in puntiElenco){
 							// verifico le autorizzazioni
-							if(SET.verFreePunti(puntiElenco[n].siglaPunto)){
+							//if(SET.verFreePunti(puntiElenco[n].siglaPunto)){
 								HTML += '<option value="'+puntiElenco[n].siglaPunto+'"';
 								if(siglaPunto==puntiElenco[n].siglaPunto)HTML += ' SELECTED';
 								HTML += '>'+puntiElenco[n].NomePunto+'</option>';
-							}
+							//}
 							// --------------------------
 						}
 						HTML += '	</select>';
