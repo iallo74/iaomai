@@ -967,6 +967,72 @@ DB.TXT.set = {
         por: "Ponto neuroreflexo",
         deu: "Neuroreflexpunkt"
     },
+    
+    Symb_SX: {
+        ita: "SX",
+        eng: "L",
+        esp: "IZQ",
+        fra: "G",
+        por: "ESQ",
+        deu: "L"
+    },
+    Symb_DX: {
+        ita: "DX",
+        eng: "R",
+        esp: "DER",
+        fra: "D",
+        por: "DIR",
+        deu: "R"
+    },
+    Symb_INT: {
+        ita: "INT",
+        eng: "INT",
+        esp: "INT",
+        fra: "INT",
+        por: "INT",
+        deu: "INT"
+    },
+    Symb_EUR: {
+        ita: "EUR",
+        eng: "EUR",
+        esp: "EUR",
+        fra: "EUR",
+        por: "EUR",
+        deu: "EUR"
+    },
+    Symb_CIN: {
+        ita: "CIN",
+        eng: "CHN",
+        esp: "CHN",
+        fra: "CHN",
+        por: "CHN",
+        deu: "CHN"
+    },
+    Symb_MASTER: {
+        ita: "MASTER",
+        eng: "MASTER",
+        esp: "MASTER",
+        fra: "MASTER",
+        por: "MASTER",
+        deu: "MASTER"
+    },
+    Symb_FN: {
+        ita: "FN",
+        eng: "FN",
+        esp: "FN",
+        fra: "FN",
+        por: "FN",
+        deu: "FN"
+    },
+    Symb_NR: {
+        ita: "NR",
+        eng: "NR",
+        esp: "NR",
+        fra: "NR",
+        por: "NR",
+        deu: "NR"
+    },
+
     CercaPunti: {
         ita: "Cerca per nome",
         eng: "Search by name",

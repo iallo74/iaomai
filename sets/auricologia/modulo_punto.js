@@ -46,36 +46,36 @@ var MODULO_PUNTO = { // extend SET
 		var HTML_setting_text = '';
 		var HTML_setting_symb = '';
 		if(type=='FN'){
-			HTML_setting_text += '- '+TXT("Setting_FN")+"<br>";
-			HTML_setting_symb += '<b>FN</b>';
+			HTML_setting_text += '- '+TXT("Setting_FN")+'<br>';
+			HTML_setting_symb += '<b>'+TXT("Symb_FN")+'</b>';
 		}
 		if(type=='NR'){
-			HTML_setting_text += '- '+TXT("Setting_NR")+"<br>";
-			HTML_setting_symb += '<b>NR</b>';
+			HTML_setting_text += '- '+TXT("Setting_NR")+'<br>';
+			HTML_setting_symb += '<b>'+TXT("Symb_NR")+'</b>';
 		}
 		if(lato=='SX'){
-			HTML_setting_text += '- '+TXT("Setting_SX")+"<br>";
-			HTML_setting_symb += '<b>SX</b>';
+			HTML_setting_text += '- '+TXT("Setting_SX")+'<br>';
+			HTML_setting_symb += '<b>'+TXT("Symb_SX")+'</b>';
 		}
 		if(lato=='DX'){
-			HTML_setting_text += '- '+TXT("Setting_DX")+"<br>";
-			HTML_setting_symb += '<b>DX</b>';
+			HTML_setting_text += '- '+TXT("Setting_DX")+'<br>';
+			HTML_setting_symb += '<b>'+TXT("Symb_DX")+'</b>';
 		}
 		if(system==''){
-			HTML_setting_text += '- '+TXT("Setting_INT")+"<br>";
-			HTML_setting_symb += '<b>INT</b>';
+			HTML_setting_text += '- '+TXT("Setting_INT")+'<br>';
+			HTML_setting_symb += '<b>'+TXT("Symb_INT")+'</b>';
 		}
 		if(system=='EUR'){
-			HTML_setting_text += '- '+TXT("Setting_EUR")+"<br>";
-			HTML_setting_symb += '<b>EUR</b>';
+			HTML_setting_text += '- '+TXT("Setting_EUR")+'<br>';
+			HTML_setting_symb += '<b>'+TXT("Symb_EUR")+'</b>';
 		}
 		if(system=='CIN'){
-			HTML_setting_text += '- '+TXT("Setting_CIN")+"<br>";
-			HTML_setting_symb += '<b>CIN</b>';
+			HTML_setting_text += '- '+TXT("Setting_CIN")+'<br>';
+			HTML_setting_symb += '<b>'+TXT("Symb_CIN")+'</b>';
 		}
 		if(master){
-			HTML_setting_text += '- '+TXT("Setting_MASTER")+"<br>";
-			HTML_setting_symb += '<b>MASTER</b>';
+			HTML_setting_text += '- '+TXT("Setting_MASTER")+'<br>';
+			HTML_setting_symb += '<b>'+TXT("Symb_MASTER")+'</b>';
 		}
 		
 		if(HTML_setting_text)HTML += '<div id="setting_point" onClick="SET.swSettingPoint();">'+HTML_setting_symb+'<div id="setting_point_text">'+HTML_setting_text+'</div></div>';

@@ -36,7 +36,7 @@ DB.set = {
             "ChiaviPunto": ""
         },
         "111": {
-            "NomePunto": "CHN du rein",
+            "NomePunto": "Rein CHN",
             "AzioniPunto": "<p><b>Action<br></b> Le point Rein est utilisé par l'école chinoise pour son action équilibrante tant sur le plan physique qu'émotionnel. Il est très utile pour réduire les douleurs et les troubles liés aux reins, en particulier au système urinaire. Il est également indiqué pour le traitement du stress, de l'asthénie, de la dépression et des acouphènes.</p><p> <b>Emplacement</b><br> SC6-CW8, à la frontière entre la conque supérieure et la paroi de la conque, juste en avant d'où commence la racine inférieure de l'anthélix.</p>",
             "ChiaviPunto": ""
         },
@@ -174,7 +174,7 @@ DB.set = {
         },
         "144": {
             "NomePunto": "Thyroïde EUR",
-            "AzioniPunto": "<p><b>Autres noms</b><br> - Glande thyroïde<br> - Glande parathyroïde EUR<br> -TSH<br> - Thyrotropines<br> - Parathyrotropines</p><p> <b>Action</b><br> Comme son nom l'indique, ce point est indiqué pour traiter tous les troubles liés à la glande thyroïde.</p><p> <b>Emplacement</b><br> IT2-IC2, dans l'échancrure intertragique à sa frontière avec la conque inférieure.</p>",
+            "AzioniPunto": "<p><b>Autres noms</b><br> - Glande thyroïde<br> - Glande parathyroïde EUR<br> - TSH<br> - Thyrotropines<br> - Parathyrotropines</p><p> <b>Action</b><br> Comme son nom l'indique, ce point est indiqué pour traiter tous les troubles liés à la glande thyroïde.</p><p> <b>Emplacement</b><br> IT2-IC2, dans l'échancrure intertragique à sa frontière avec la conque inférieure.</p>",
             "ChiaviPunto": ""
         },
         "147": {
@@ -198,7 +198,7 @@ DB.set = {
             "ChiaviPunto": ""
         },
         "154": {
-            "NomePunto": "Sous-cortex",
+            "NomePunto": "Subcortex",
             "AzioniPunto": "<p><b>Autres noms</b><br> - Point d'excitation<br> - Point d'épilepsie<br> - Glandes salivaires</p><p> <b>Action</b><br> Ce point est utilisé pour le traitement des pathologies neurologiques aiguës et chroniques. Il est également indiqué pour réduire les symptômes de dépression, d'anxiété et de troubles circulatoires.</p><p> <b>Emplacement</b><br> CW2, au centre de la paroi de la conque de l'antitragus.</p>",
             "ChiaviPunto": ""
         },
@@ -268,7 +268,7 @@ DB.set = {
             "ChiaviPunto": ""
         },
         "177": {
-            "NomePunto": "Dos",
+            "NomePunto": "Occiput",
             "AzioniPunto": "<p><b>Autres noms</b><br> - Os occipital<br> - Muscle occipital<br> -Atlas</p><p> <b>Action</b><br> Ce Point International est utilisé pour traiter tous les troubles occipitaux, en particulier les contractions des muscles occipitaux, les spasmes faciaux, les insomnies et les vertiges.</p><p> <b>Emplacement</b><br> AT3-PC1, sur l'antitragus près du sillon post-antitragal.</p>",
             "ChiaviPunto": ""
         },
@@ -333,7 +333,7 @@ DB.set = {
             "ChiaviPunto": ""
         },
         "192": {
-            "NomePunto": "Point tranquillisant",
+            "NomePunto": "Tranquilizer Point",
             "AzioniPunto": "<p><b>Autres noms</b><br> - Point Valium EUR<br> - Hypertension 2 CHN<br> - Point de manie<br> - Point Nicotine</p><p> <b>Action</b><br> Ce point est reconnu pour son efficacité dans le traitement de tous les troubles à composante anxieuse et stressante. Il a une puissante action rééquilibrante psycho-physique, favorise la relaxation, notamment en cas d'insomnie.</p><p> <b>Emplacement</b><br> TG2, dans la paroi centrale vers la zone cartilagineuse postérieure. A mi-chemin entre <span class='LMtxt'>LM9</span> et <span class='LMtxt'>LM10</span> .</p>",
             "ChiaviPunto": ""
         },
@@ -368,7 +368,7 @@ DB.set = {
             "ChiaviPunto": ""
         },
         "211": {
-            "NomePunto": "Tongue EUR",
+            "NomePunto": "Langue EUR",
             "AzioniPunto": "<p><b>Action</b><br> Comme son nom l'indique, ce point est très efficace pour traiter tous les troubles liés à la langue et à la cavité buccale.</p><p> <b>Emplacement</b><br> LO5-PL6, à mi-chemin entre le point du visage et le point de la mâchoire supérieure.</p>",
             "ChiaviPunto": ""
         },
@@ -378,8 +378,8 @@ DB.set = {
             "ChiaviPunto": ""
         },
         "215": {
-            "NomePunto": "Affronter",
-            "AzioniPunto": "<p><b>Autres noms</b><br> -Visage<br> - Joue<br> - Muscles du visage</p><p> <b>Action</b><br> Ce point d'auriculothérapie international est très efficace pour réduire les tics nerveux, les paralysies faciales, les névralgies, et est également indiqué pour traiter les spasmes faciaux.</p><p> <b>Emplacement</b><br> LO5-PL6, sur le lobe, latéralement, une zone assez large au-dessus du soi-disant [.283.].</p>",
+            "NomePunto": "Visage",
+            "AzioniPunto": "<p><b>Autres noms</b><br>- Face<br> - Joue<br> - Muscles du visage</p><p> <b>Action</b><br> Ce point d'auriculothérapie international est très efficace pour réduire les tics nerveux, les paralysies faciales, les névralgies, et est également indiqué pour traiter les spasmes faciaux.</p><p> <b>Emplacement</b><br> LO5-PL6, sur le lobe, latéralement, une zone assez large au-dessus du soi-disant [.283.].</p>",
             "ChiaviPunto": ""
         },
         "221": {
@@ -398,7 +398,7 @@ DB.set = {
             "ChiaviPunto": ""
         },
         "226": {
-            "NomePunto": "CHN du larynx",
+            "NomePunto": "Larynx CHN",
             "AzioniPunto": "<p><b>Action</b><br> Point indiqué pour traiter les sujets souffrant de troubles du larynx, de la trachée et des bronches.</p><p> <b>Emplacement</b><br> ST4, sur la surface interne du Tragus immédiatement en dessous de la saillie supérieure.</p>",
             "ChiaviPunto": ""
         },
@@ -408,7 +408,7 @@ DB.set = {
             "ChiaviPunto": ""
         },
         "230": {
-            "NomePunto": "Point maître cérébral",
+            "NomePunto": "Master Cerebral Point",
             "AzioniPunto": "<p><b>Autres noms</b><br> - Oméga<br> - Nervosité<br> - Inquiétude</p><p> <b>Action</b><br> Selon l'école française, le point Oméga est le point maître du tissu ectodermique. Il représente le lobe préfrontal. Il est indiqué dans l'anxiété, la nervosité et les troubles du sommeil.</p><p> <b>Emplacement</b><br> LO2, à mi-chemin entre <span class='LMtxt'>LM8</span> et <span class='LMtxt'>LM9</span> à environ 2 mm du bord avec la joue.</p>",
             "ChiaviPunto": ""
         },
@@ -423,12 +423,12 @@ DB.set = {
             "ChiaviPunto": ""
         },
         "243": {
-            "NomePunto": "HTA 3",
+            "NomePunto": "Hypertension 3",
             "AzioniPunto": "<p><b>Action<br></b> L'école chinoise distingue le traitement de l'hypertension avec trois points différents. Hypertension Point 3 est indiqué pour le traitement de l'hypertension et pour réduire l'anxiété et le stress.</p><p> <b>Emplacement</b><br> PG4-PG8, large zone dans le sillon postérieur, où elle se divise en forme de Y et vers sa branche supérieure.</p>",
             "ChiaviPunto": ""
         },
         "244": {
-            "NomePunto": "CHN pulmonaire",
+            "NomePunto": "Pulmon CHN",
             "AzioniPunto": "<p><b>Action<br></b> Le Point Poumon est utilisé aussi bien par les écoles chinoises que françaises pour son action rééquilibrante sur le système respiratoire, notamment en cas de bronchite, d'emphysème et de douleurs thoraciques.</p><p> <b>Emplacement</b><br> IC2-IC4-IC5, grande zone dans la conque inférieure, vers la paroi de la conque.</p>",
             "ChiaviPunto": ""
         },
@@ -453,7 +453,7 @@ DB.set = {
             "ChiaviPunto": ""
         },
         "249": {
-            "NomePunto": "poumon EUR",
+            "NomePunto": "Poumon EUR",
             "AzioniPunto": "<p><b>Action<br></b> Le Point Poumon est utilisé aussi bien par les écoles chinoises que françaises pour son action rééquilibrante sur le système respiratoire, notamment en cas de bronchite, d'emphysème et de douleurs thoraciques.</p><p> <b>Emplacement</b><br> IC2-IC4-IC5-IC7, grande zone dans la conque inférieure, vers la paroi de la comcha.</p>",
             "ChiaviPunto": ""
         },
@@ -473,7 +473,7 @@ DB.set = {
             "ChiaviPunto": ""
         },
         "254": {
-            "NomePunto": "Un corps calleux",
+            "NomePunto": "Corps calleux",
             "AzioniPunto": "<p><b>Autres noms</b><br> - Zéro Premier</p><p> <b>Action</b><br> Le Zero Prime Point a une action puissante de rééquilibrage général sur le système cérébral, favorisant la connexion entre les deux hémisphères et équilibrant les aspects rationnels et émotionnels de l'individu. Ce point a également une excellente application pour la relaxation musculaire.</p><p> <b>Emplacement</b><br> TG2-TG4, une zone verticale parallèle à la région du tragus, avec son point central situé à la hauteur de la proéminence inférieure du tragus entre celui-ci et la joue.</p>",
             "ChiaviPunto": ""
         },
@@ -538,8 +538,8 @@ DB.set = {
             "ChiaviPunto": ""
         },
         "267": {
-            "NomePunto": "Point de soif",
-            "AzioniPunto": "<p><b>Autres noms</b><br> - Fringale</p><p> <b>Action</b><br> Ce point a la propriété de réduire les effets du craving, qui est le désir persistant et irrésistible d'une substance particulière ou de substances aux effets similaires. L'état de manque peut également être défini comme la sensation croissante de tension qui précède le début de la prise de substance ou l'adoption d'un comportement addictif.</p><p> <b>Emplacement</b><br> HX15-LO7, à la frontière entre la queue de l'hélice et le lobe sur la marge postérieure.</p>",
+            "NomePunto": "Point du Craving",
+            "AzioniPunto": "<p><b>Autres noms</b><br> - Craving</p><p> <b>Action</b><br> Ce point a la propriété de réduire les effets du craving, qui est le désir persistant et irrésistible d'une substance particulière ou de substances aux effets similaires. L'état de manque peut également être défini comme la sensation croissante de tension qui précède le début de la prise de substance ou l'adoption d'un comportement addictif.</p><p> <b>Emplacement</b><br> HX15-LO7, à la frontière entre la queue de l'hélice et le lobe sur la marge postérieure.</p>",
             "ChiaviPunto": ""
         },
         "268": {
@@ -548,12 +548,12 @@ DB.set = {
             "ChiaviPunto": ""
         },
         "269": {
-            "NomePunto": "Moteur racine C2",
+            "NomePunto": "Racine motrice C2",
             "AzioniPunto": "<p><b>Autres noms</b><br> - Racine motrice maîtresse du plexus cervical</p><p> <b>Action</b><br> Ce point est appliqué pour le traitement et la réduction de toutes les douleurs et troubles liés à la fonction motrice du plexus cervical.</p><p> <b>Emplacement</b><br> PP2, dans la partie médio-postérieure de l'hélice, juste avant que l'hélice ne se fonde dans la surface médiale du lobe.</p>",
             "ChiaviPunto": ""
         },
         "270": {
-            "NomePunto": "Racine du moteur C7",
+            "NomePunto": "Racine motrice C7",
             "AzioniPunto": "<p><b>Autres noms</b><br> - Racine motrice maîtresse du plexus brachial</p><p> <b>Action</b><br> Ce point est appliqué pour le traitement et la réduction de toutes les douleurs et troubles liés à la fonction motrice du plexus brachial.</p><p> <b>Emplacement</b><br> PP4, dans la partie médio-postérieure de l'hélice, dans son tiers inférieur, au niveau de la représentation du passage rachidien cervico-dorsal.</p>",
             "ChiaviPunto": ""
         },
@@ -563,12 +563,12 @@ DB.set = {
             "ChiaviPunto": ""
         },
         "272": {
-            "NomePunto": "racine sensorielle C2",
+            "NomePunto": "Racine sensorielle C2",
             "AzioniPunto": "<p><b>Autres noms</b><br> - Maîtriser la racine sensorielle du plexus cervical</p><p> <b>Action</b><br> Ce point est appliqué pour le traitement et la réduction de toutes les douleurs et troubles liés à la sensibilité du plexus cervical.</p><p> <b>Emplacement</b><br> HX15, sur le bord extérieur de l'hélice, sur sa queue, dans une zone identifiée par une ligne passant par le [.000.] et le sillon post-antitragal.</p>",
             "ChiaviPunto": ""
         },
         "273": {
-            "NomePunto": "C7 racine sensorielle",
+            "NomePunto": "Racine sensorielle C7",
             "AzioniPunto": "<p><b>Autres noms</b><br> - Maîtriser la racine sensorielle du plexus brachial</p><p> <b>Action</b><br> Ce point est appliqué pour le traitement et la réduction de toutes les douleurs et troubles liés à la sensibilité du plexus brachial.</p><p> <b>Emplacement</b><br> HX14, sur le bord externe de l'hélice au tiers médian de la branche descendante de l'hélice, dans une zone projetée du passage cervico-dorsal.</p>",
             "ChiaviPunto": ""
         },
@@ -653,8 +653,8 @@ DB.set = {
             "ChiaviPunto": ""
         },
         "291": {
-            "NomePunto": "Point occipital maître",
-            "AzioniPunto": "<p><b>Autres noms</b><br> - Os occipital<br> -Atlas</p><p> <b>Action</b><br> Ce point maître est directement relié à l'espace entre l'os occipital et la première vertèbre cervicale. Il a une forte action dans le traitement des étourdissements, de l'insomnie, des céphalées de tension et des névralgies. Elle est également reconnue pour ses propriétés myorelaxantes, notamment avec une composante tensio-émotionnelle.</p><p> <b>Emplacement</b><br> AT3, dans le sillon antéhélico-antitragal ou post-antitragal.</p>",
+            "NomePunto": "Point Maître Occipital",
+            "AzioniPunto": "<p><b>Autres noms</b><br> - Os occipital<br> - Atlas</p><p> <b>Action</b><br> Ce point maître est directement relié à l'espace entre l'os occipital et la première vertèbre cervicale. Il a une forte action dans le traitement des étourdissements, de l'insomnie, des céphalées de tension et des névralgies. Elle est également reconnue pour ses propriétés myorelaxantes, notamment avec une composante tensio-émotionnelle.</p><p> <b>Emplacement</b><br> AT3, dans le sillon antéhélico-antitragal ou post-antitragal.</p>",
             "ChiaviPunto": ""
         },
         "293": {
@@ -693,7 +693,7 @@ DB.set = {
             "ChiaviPunto": ""
         },
         "000": {
-            "NomePunto": "Zéro point",
+            "NomePunto": "Point Zéro",
             "AzioniPunto": "<p><b>Autres noms</b><br> - Centre de l'oreille<br> - Point d'assistance<br> - Plexus solaire<br> - Nombril</p><p> <b>Action</b><br> Considérée comme très importante par l'école française, selon Paul Nogier, elle représente un centre physiologique et géométrique. La stimulation de ce point était utilisée par Nogier dans des conditions de fatigue et de tension nerveuse pour rétablir un état de calme général. Le Point Zéro a une action puissante dans le rééquilibrage global du système énergétique, psychologique et physique.</p><p> <b>Emplacement</b><br> HX1-CR1, à la racine de l'hélice bordant l'hélice crus. Dans une rainure orthogonale à la racine de l'hélice.</p>",
             "ChiaviPunto": ""
         },
@@ -718,7 +718,7 @@ DB.set = {
             "ChiaviPunto": ""
         },
         "007": {
-            "NomePunto": "RHC du rectum",
+            "NomePunto": "Rectum CHN",
             "AzioniPunto": "<p><b>Action<br></b> Le Rectum Point est très utile pour réduire les symptômes du syndrome du côlon irritable, de la dysenterie, des hémorroïdes, de la diarrhée, de la constipation et des douleurs rectales.</p><p> <b>Emplacement</b><br> HX3, sur le genou de l'hélice, sous le point où l'hélice rencontre la racine inférieure de l'anthélix.</p>",
             "ChiaviPunto": ""
         },
@@ -751,7 +751,7 @@ DB.set = {
             "hidden": true
         },
         "017": {
-            "NomePunto": "Des doigts",
+            "NomePunto": "Doigts de la main",
             "AzioniPunto": "<p><b>Autres noms</b><br> - Phalanges</p><p> <b>Action</b><br> Ce point international est indiqué pour contrecarrer tous les troubles liés aux doigts, en particulier pour le traitement des troubles osseux carpiens et métacarpiens.</p><p> <b>Emplacement</b><br> SF6, dans une large zone entre l'hélice et la racine supérieure de l'antihélice, au-dessus du tubercule de Darwin.</p>",
             "ChiaviPunto": ""
         },
@@ -766,7 +766,7 @@ DB.set = {
             "ChiaviPunto": ""
         },
         "026": {
-            "NomePunto": "Courant d'air",
+            "NomePunto": "Windstream",
             "AzioniPunto": "<p><b>Autres noms</b><br> - Petit nerf occipital<br> - Coup de vent</p><p> <b>Action</b><br> Selon l'école chinoise, ce point est relié à la glande surrénale. Il est indiqué pour favoriser la réponse du système immunitaire et a une action particulière sur tous les troubles de la phase aiguë.</p><p> <b>Emplacement</b><br> IH11, sur la surface cachée de l'hélice, sous le tubercule de Darwin.</p>",
             "ChiaviPunto": ""
         },
@@ -781,7 +781,7 @@ DB.set = {
             "ChiaviPunto": ""
         },
         "030": {
-            "NomePunto": "HTA 1",
+            "NomePunto": "Hypertension 1",
             "AzioniPunto": "<p><b>Autres noms</b><br> - Anxiété 1<br> - Dépression</p><p> <b>Action</b><br> L'école chinoise distingue le traitement de l'hypertension avec trois points différents. Hypertension 1 Point est indiqué pour le rééquilibrage de la tension artérielle, de l'anxiété et de la dépression.</p><p> <b>Emplacement</b><br> TF6, dans la fosse triangulaire près du point d'intersection entre l'hélice et la branche supérieure de l'antihélice.</p>",
             "ChiaviPunto": ""
         },
@@ -791,7 +791,7 @@ DB.set = {
             "ChiaviPunto": ""
         },
         "032": {
-            "NomePunto": "Ankle EUR",
+            "NomePunto": "Cheville EUR",
             "AzioniPunto": "<p><b>Autres noms</b><br> - Articulation talocrurale<br> - Tendon d'Achille</p><p> <b>Action</b><br> Le point cheville est utilisé pour tous les troubles liés à la cheville, en particulier les troubles articulaires et du tendon d'Achille.</p><p> <b>Emplacement</b><br> TF5-TF6 le long de la bissectrice de la fosse triangulaire, dans le tiers proximal jusqu'au genou de l'anthélix.</p>",
             "ChiaviPunto": ""
         },
@@ -821,17 +821,17 @@ DB.set = {
             "ChiaviPunto": ""
         },
         "039": {
-            "NomePunto": "Point orthosympathique",
+            "NomePunto": "Point Orthosympathique",
             "AzioniPunto": "<p><b>Autres noms</b><br> - Point sympathique<br> - Point sympathique autonome</p><p> <b>Action</b><br> Ce point est internationalement reconnu pour ses capacités antalgiques, notamment sur les viscères. Il est également indiqué pour son action sur le système nerveux parasympathique autonome et tonique.</p><p> <b>Emplacement</b><br> AH7-IH4, sur la racine inférieure de l'antihélice, à sa jonction avec l'hélice. Le point est caché par l'hélice. Correspond à <span class='LMtxt'>LM18</span> .</p>",
             "ChiaviPunto": ""
         },
         "040": {
-            "NomePunto": "Très EUR",
+            "NomePunto": "Talon EUR",
             "AzioniPunto": "<p><b>Action</b><br> Pathologies douloureuses et dysfonctionnelles du talon et de l'arrière-pied.</p><p> <b>Emplacement</b><br> TF5, à la base de la fosse triangulaire, près du point de jonction entre l'hélice et la racine inférieure de l'antihélice. Le point est caché par l'hélice.</p>",
             "ChiaviPunto": ""
         },
         "041": {
-            "NomePunto": "NHC thyroïdienne",
+            "NomePunto": "Thyroïde CHN",
             "AzioniPunto": "<p><b>Autres noms</b><br> - Glande thyroïde<br> - Glande parathyroïde</p><p> <b>Action</b><br> Comme son nom l'indique, ce point est indiqué pour traiter tous les troubles liés à la glande thyroïde.</p> <b>Emplacement</b><br> CW4-IC8-AH8, à la frontière entre la paroi de la conque et la conque inférieure, au niveau de la représentation des vertèbres C3-4.</p>",
             "ChiaviPunto": ""
         },
@@ -896,13 +896,13 @@ DB.set = {
             "ChiaviPunto": ""
         },
         "060": {
-            "NomePunto": "Hip EUR",
+            "NomePunto": "Hanche EUR",
             "AzioniPunto": "<p><b>Autres noms</b><br> - Articulation coxofémorale</p><p> <b>Action</b><br> Ce point est utilisé à la fois par les écoles chinoises et françaises mais à des endroits différents. Ils ont tous deux en commun l'application pour le traitement des troubles liés à la ceinture coxale et pelvienne.</p><p> <b>Emplacement</b><br> TF1-PT1, au sommet de la fosse triangulaire.</p>",
             "ChiaviPunto": ""
         },
         "061": {
             "NomePunto": "Bassin",
-            "AzioniPunto": "<p><b>Autres noms</b><br> - Bassin<br> - Ceinture pelvienne<br> - Aine<br> - OS pubien<br> - Cavité pelvienne</p><p> <b>Action</b><br> Ce Point International est utilisé pour traiter toutes les pathologies pelviennes. Il est très efficace en cas de lombalgie.</p><p> <b>Emplacement</b><br> TF1-PG5, au sommet de la fosse triangulaire, vers le bas, sous le point [.001.].</p>",
+            "AzioniPunto": "<p><b>Autres noms</b><br> - Région pelvienne<br> - Ceinture pelvienne<br> - Aine<br> - OS pubien<br> - Cavité pelvienne</p><p> <b>Action</b><br> Ce Point International est utilisé pour traiter toutes les pathologies pelviennes. Il est très efficace en cas de lombalgie.</p><p> <b>Emplacement</b><br> TF1-PG5, au sommet de la fosse triangulaire, vers le bas, sous le point [.001.].</p>",
             "ChiaviPunto": ""
         },
         "065": {
@@ -951,7 +951,7 @@ DB.set = {
             "ChiaviPunto": ""
         },
         "075": {
-            "NomePunto": "CHN de la hanche",
+            "NomePunto": "Hanche CHN",
             "AzioniPunto": "<p><b>Autres noms</b><br> - Point de hanche<br> - Articulation coxofémorale</p><p> <b>Action</b><br> Ce point est utilisé à la fois par les écoles chinoises et françaises mais à des endroits différents. Ils ont tous deux en commun l'application pour le traitement des troubles liés à la ceinture coxale et pelvienne.</p><p> <b>Emplacement</b><br> AH13-PG8, dans le tiers inférieur de la branche supérieure de l'anthélix, vers la fosse triangulaire<span></span> .</p>",
             "ChiaviPunto": ""
         },
@@ -986,7 +986,7 @@ DB.set = {
             "ChiaviPunto": ""
         },
         "087": {
-            "NomePunto": "Les hémorroïdes",
+            "NomePunto": "Hémorroïdes",
             "AzioniPunto": "<p><b>Action</b><br> Pathologie anorectale, notamment fonctionnelle et vasculaire.</p><p> <b>Emplacement</b><br> IH4, sur la face interne de l'hélice sous sa jonction avec la racine inférieure de l'antihélice.</p>",
             "ChiaviPunto": ""
         },
@@ -1011,8 +1011,8 @@ DB.set = {
             "ChiaviPunto": ""
         },
         "095": {
-            "NomePunto": "EUR direct",
-            "AzioniPunto": "<p><b>Autres noms</b><br> -Anus<br> - Les hémorroïdes<br> - Prostate</p><p> <b>Action</b><br> Le Rectum Point est très utile pour réduire les symptômes du syndrome du côlon irritable, de la dysenterie, des hémorroïdes, de la diarrhée, de la constipation et des douleurs rectales.</p><p> <b>Emplacement</b><br> IH1-SC4, à la frontière entre la partie cachée de la branche ascendante de l'hélice et la conque supérieure.</p>",
+            "NomePunto": "Rectum EUR",
+            "AzioniPunto": "<p><b>Autres noms</b><br> - Anus<br> - Les hémorroïdes<br> - Prostate</p><p> <b>Action</b><br> Le Rectum Point est très utile pour réduire les symptômes du syndrome du côlon irritable, de la dysenterie, des hémorroïdes, de la diarrhée, de la constipation et des douleurs rectales.</p><p> <b>Emplacement</b><br> IH1-SC4, à la frontière entre la partie cachée de la branche ascendante de l'hélice et la conque supérieure.</p>",
             "ChiaviPunto": ""
         },
         "097": {
@@ -1032,17 +1032,17 @@ DB.set = {
         }
     },
     "apparati": {
-        "1": "Locomotor apparatus",
-        "2": "Head",
-        "3": "Neurological clinic",
-        "4": "Psychiatric clinic",
-        "5": "Endocrinological clinic and urogenital system",
-        "6": "Gastroenterological clinic",
-        "7": "Cardiovascular and lymphatic system",
-        "8": "Respiratory, phonetic and otovestibular",
-        "9": "Dermatological clinic",
-        "10": "Eye clinic",
-        "11": "Addictions"
+        "1": "Appareil locomoteur",
+        "2": "Tête",
+        "3": "Clinique neurologique",
+        "4": "Clinique psychiatrique",
+        "5": "Endocrinologie et appareil urogénital",
+        "6": "Clinique gastro-entérologique",
+        "7": "Appareil cardio-circulatoire et lymphatique",
+        "8": "Appareil respiratoire, phonétique et otovestibulaire",
+        "9": "Clinique dermatologique",
+        "10": "Clinique ophtalmologique",
+        "11": "Dépendances"
     },
     "schede": {
         "1": {
@@ -8050,7 +8050,7 @@ DB.set = {
             "apparato": 7
         },
         "12": {
-            "NomePatologia": "membre fantôme",
+            "NomePatologia": "Membre fantôme",
             "schedaPatologia": "143",
             "scheda": 36,
             "apparato": 3
@@ -8068,7 +8068,7 @@ DB.set = {
             "apparato": 1
         },
         "25": {
-            "NomePatologia": "L'asthme bronchique",
+            "NomePatologia": "Asthme bronchique",
             "schedaPatologia": "016",
             "scheda": 85,
             "apparato": 8
@@ -8184,7 +8184,7 @@ DB.set = {
             "apparato": 5
         },
         "45": {
-            "NomePatologia": "La cystite interstitielle",
+            "NomePatologia": "Cystite interstitielle",
             "schedaPatologia": "156",
             "scheda": 60,
             "apparato": 5
@@ -8340,7 +8340,7 @@ DB.set = {
             "apparato": 2
         },
         "72": {
-            "NomePatologia": "Les troubles du sommeil",
+            "NomePatologia": "Troubles du sommeil",
             "schedaPatologia": "067",
             "scheda": 46,
             "apparato": 4
@@ -8490,7 +8490,7 @@ DB.set = {
             "apparato": 3
         },
         "99": {
-            "NomePatologia": "Les hémorroïdes",
+            "NomePatologia": "Hémorroïdes",
             "schedaPatologia": "047",
             "scheda": 72,
             "apparato": 6
@@ -8760,7 +8760,7 @@ DB.set = {
             "apparato": 10
         },
         "146": {
-            "NomePatologia": "la maladie de Parkinson",
+            "NomePatologia": "Maladie de Parkinson",
             "schedaPatologia": "223",
             "scheda": 39,
             "apparato": 3
@@ -8778,7 +8778,7 @@ DB.set = {
             "apparato": 3
         },
         "149": {
-            "NomePatologia": "La névralgie du trijumeau",
+            "NomePatologia": "Névralgie du trijumeau",
             "schedaPatologia": "226",
             "scheda": 30,
             "apparato": 3
@@ -8898,7 +8898,7 @@ DB.set = {
             "apparato": 2
         },
         "169": {
-            "NomePatologia": "La paralysie de Bell",
+            "NomePatologia": "Paralysie de Bell",
             "schedaPatologia": "242",
             "scheda": 25,
             "apparato": 2
@@ -8988,7 +8988,7 @@ DB.set = {
             "apparato": 5
         },
         "185": {
-            "NomePatologia": "Programme Antitabac Classique par Nogier",
+            "NomePatologia": "Programme anti-tabac classique par Nogier",
             "schedaPatologia": "257",
             "scheda": 100,
             "apparato": 11
@@ -9000,7 +9000,7 @@ DB.set = {
             "apparato": 11
         },
         "187": {
-            "NomePatologia": "Programme antitabac par A. Lovato",
+            "NomePatologia": "Programme anti-tabac par A. Lovato",
             "schedaPatologia": "259",
             "scheda": 102,
             "apparato": 11
@@ -9264,7 +9264,7 @@ DB.set = {
             "apparato": 1
         },
         "235": {
-            "NomePatologia": "vertige central",
+            "NomePatologia": "Vertige central",
             "schedaPatologia": "281",
             "scheda": 80,
             "apparato": 8
@@ -9668,10 +9668,10 @@ DB.set = {
                 }
             ],
             "ris": {
-                "0": "Poor motivation",
-                "6": "Reasonable motivation",
-                "12": "Good motivation",
-                "16": "High motivation"
+                "0": "Motivation faible",
+                "6": "Motivation modérée",
+                "12": "Bonne motivation",
+                "16": "Motivation élevée"
             }
         },
         "dipendenza": {
@@ -9772,10 +9772,10 @@ DB.set = {
                 }
             ],
             "ris": {
-                "0": "Low addiction",
-                "3": "Average addiction",
-                "6": "High addiction",
-                "8": "Very high addiction"
+                "0": "Dépendance faible",
+                "3": "Dépendance modérée",
+                "6": "Dépendance élevée",
+                "8": "Dépendance très élevée"
             }
         }
     }

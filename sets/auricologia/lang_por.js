@@ -6,7 +6,7 @@ DB.set = {
             "ChiaviPunto": ""
         },
         "104": {
-            "NomePunto": "ômega 1",
+            "NomePunto": "Ômega 1",
             "AzioniPunto": "<p><b>Outros nomes</b><br> - Plexo hipogástrico<br> - Ponto MASTER vegetativo</p><p> <b>Ação</b><br> Este é o Ponto Mestre do tecido endotérmico, também conhecido como Ponto do Muco. É muito eficaz no tratamento de todos os distúrbios digestivos, dores viscerais e estresse visceral.</p><p> <b>Localização</b><br> SC2, logo acima e posterior ao [.000.].</p>",
             "ChiaviPunto": ""
         },
@@ -36,7 +36,7 @@ DB.set = {
             "ChiaviPunto": ""
         },
         "111": {
-            "NomePunto": "rim CHN",
+            "NomePunto": "Rim CHN",
             "AzioniPunto": "<p><b>Ação<br></b> O ponto do Rim é utilizado pela Escola Chinesa por sua ação equilibrante tanto no aspecto físico quanto no emocional. É muito útil na redução de dores e distúrbios relacionados aos rins, especialmente ao sistema urinário. Também é indicado para o tratamento de estresse, astenia, depressão e zumbido.</p><p> <b>Localização</b><br> SC6-CW8, na fronteira entre a concha superior e a parede da concha, logo anteriormente onde começa a raiz inferior da anti-hélice.</p>",
             "ChiaviPunto": ""
         },
@@ -47,7 +47,7 @@ DB.set = {
             "hidden": true
         },
         "113": {
-            "NomePunto": "comissura abenular",
+            "NomePunto": "Comissura abenular",
             "AzioniPunto": "<p><b>Ação<br></b> Em combinação com [.112.] e [.254.], promove conexões cerebrais intra-hemisféricas.</p><p> <b>Localização</b><br> Na fronteira entre a bochecha e o tragus, perto da área TG5.</p>",
             "ChiaviPunto": "",
             "hidden": true
@@ -63,7 +63,7 @@ DB.set = {
             "ChiaviPunto": ""
         },
         "116": {
-            "NomePunto": "pâncreas",
+            "NomePunto": "Pâncreas",
             "AzioniPunto": "<p><b>Ação<br></b> O Ponto Pâncreas tem ação equilibrante nas funções digestivas, principalmente no tratamento de distúrbios relacionados ao pâncreas.</p><p> <b>Localização</b><br> CR2-SC8, na fronteira entre a crista da concha e a concha superior, próximo à hélice.<br> Atenção: apenas na orelha esquerda.</p>",
             "ChiaviPunto": ""
         },
@@ -108,12 +108,12 @@ DB.set = {
             "ChiaviPunto": ""
         },
         "126": {
-            "NomePunto": "brônquios",
+            "NomePunto": "Brônquios",
             "AzioniPunto": "<p><b>Ação<br></b> O ponto Brônquio é muito útil no tratamento de doenças como asma e bronquite. Segundo a Escola Chinesa, também é eficaz em casos de DPOC (doença pulmonar obstrutiva crônica), uma doença progressiva e irreversível do sistema respiratório que afeta os brônquios e os pulmões, causada principalmente pelo tabagismo.</p><p> <b>Localização</b><br> IC7, na concha superior, logo acima do ponto mais profundo correspondente ao coração.</p>",
             "ChiaviPunto": ""
         },
         "127": {
-            "NomePunto": "cárdia",
+            "NomePunto": "Cárdia",
             "AzioniPunto": "<p><b>Outros nomes</b><br> - Orifício cardíaco<br> - Esfíncter esofágico</p><p> <b>Ação</b><br> Este ponto é indicado para o tratamento de todos os distúrbios com componente esofágico, particularmente refluxo gastroesofágico, náuseas, vômitos, esofagite, hérnia de hiato e dispepsia.</p><p> <b>Localização</b><br> IC7, na concha inferior, próximo à crista da concha, logo abaixo e posterior ao ponto [.000.].</p>",
             "ChiaviPunto": ""
         },
@@ -188,7 +188,7 @@ DB.set = {
             "ChiaviPunto": ""
         },
         "150": {
-            "NomePunto": "Tronco cerebral",
+            "NomePunto": "Brainstem",
             "AzioniPunto": "<p><b>Outros nomes</b><br> - Medula Oblongata CHN</p><p> <b>Ação</b><br> Segundo a Escola Chinesa, o Ponto do Tronco Encefálico é indicado para tonificar a mente e regular a respiração, a temperatura e os batimentos cardíacos. Também é eficaz em casos de epilepsia e convulsões.</p><p> <b>Localização</b><br> CW4, na parede da concha na fronteira entre a ante-hélice e o antitragus.</p>",
             "ChiaviPunto": ""
         },
@@ -198,7 +198,7 @@ DB.set = {
             "ChiaviPunto": ""
         },
         "154": {
-            "NomePunto": "Subcórtex",
+            "NomePunto": "Subcortex",
             "AzioniPunto": "<p><b>Outros nomes</b><br> - Ponto de Excitação<br> - Ponto de Epilepsia<br> - Glândulas salivares</p><p> <b>Ação</b><br> Este ponto é utilizado para o tratamento de patologias neurológicas agudas e crônicas. Também é indicado para reduzir sintomas de depressão, ansiedade e distúrbios circulatórios.</p><p> <b>Localização</b><br> CW2, no centro da parede da concha do antitragus.</p>",
             "ChiaviPunto": ""
         },
@@ -253,7 +253,7 @@ DB.set = {
             "ChiaviPunto": ""
         },
         "173": {
-            "NomePunto": "antidepressivo",
+            "NomePunto": "Antidepressivo",
             "AzioniPunto": "<p><b>Outros nomes</b><br> - Ponto Antidepressivo<br> - Alegria de viver</p><p> <b>Ação</b><br> Este ponto é muito eficaz no reequilíbrio emocional, principalmente em casos de depressão.</p><p> <b>Localização</b><br> LO8, no lóbulo da orelha no final da fossa escafóide, onde se divide em forma de Y, em seu ramo posterior.</p>",
             "ChiaviPunto": ""
         },
@@ -268,7 +268,7 @@ DB.set = {
             "ChiaviPunto": ""
         },
         "177": {
-            "NomePunto": "Voltar",
+            "NomePunto": "Occipital",
             "AzioniPunto": "<p><b>Outros nomes</b><br> - Osso occipital<br> - Músculo Occipital<br> - Atlas</p><p> <b>Ação</b><br> Este ponto internacional é usado para tratar todos os distúrbios occipitais, particularmente contrações musculares occipitais, espasmos faciais, insônia e tontura.</p><p> <b>Localização</b><br> AT3-PC1, no antitragus próximo ao sulco pós-antitragal.</p>",
             "ChiaviPunto": ""
         },
@@ -278,7 +278,7 @@ DB.set = {
             "ChiaviPunto": ""
         },
         "179": {
-            "NomePunto": "têmpora",
+            "NomePunto": "Têmpora",
             "AzioniPunto": "<p><b>Outros nomes</b><br> - Osso temporal<br> - Osso parietal</p><p> <b>Ação</b><br> O Ponto do Templo é útil para tratar dores nas têmporas e reduzir os sintomas de enxaqueca e zumbido.</p><p> <b>Localização</b><br> AT2, na superfície externa do antitragus, inferiormente ao ápice do antitragus e em <span class=\"LMtxt\">LM13</span> .</p>",
             "ChiaviPunto": ""
         },
@@ -303,7 +303,7 @@ DB.set = {
             "ChiaviPunto": ""
         },
         "184": {
-            "NomePunto": "Ponto de Vitalidade",
+            "NomePunto": "Vitality point",
             "AzioniPunto": "<p><b>Outros nomes</b><br> - Ponto de Frustração<br> - Ponto de Interferon<br> - Ponto Coração</p><p> <b>Ação<br></b> A Escola Francesa indica este ponto por sua poderosa ação energética, psicológica e física. É usado para tonificar casos de apatia, baixa aptidão física e depressão.</p><p> <b>Localização</b><br> TG4, no centro do tragus, imediatamente anterior a <span class='LMtxt'>LM11</span> .</p>",
             "ChiaviPunto": ""
         },
@@ -313,7 +313,7 @@ DB.set = {
             "ChiaviPunto": ""
         },
         "186": {
-            "NomePunto": "córtex parietal",
+            "NomePunto": "Córtex parietal",
             "AzioniPunto": "<p><b>Outros nomes</b><br> - Lobo parietal</p><p> <b>Ação</b><br> Dor musculoesquelética, sintomas pós-AVC.</p><p> <b>Localização</b><br> LO3-LO4-LO5-LO6, área localizada no terço posterior do lobo, em sua parte inferior.</p>",
             "ChiaviPunto": ""
         },
@@ -328,12 +328,12 @@ DB.set = {
             "ChiaviPunto": ""
         },
         "191": {
-            "NomePunto": "controle de apetite",
+            "NomePunto": "Controle de apetite",
             "AzioniPunto": "<p><b>Outros nomes</b><br> - Ponto da Fome</p><p> <b>Ação</b><br> Este ponto é usado por sua capacidade de diminuir o apetite.</p><p> <b>Localização</b><br> TG3, a meio caminho entre o ápice da proeminência inferior do Tragus ( <span class='LMtxt'>LM10</span> ) e um ponto intermediário entre as proeminências superior e inferior do Tragus na linha de fronteira entre o Tragus e a bochecha ( <span class='LMtxt'>LM23</span> ).</p>",
             "ChiaviPunto": ""
         },
         "192": {
-            "NomePunto": "Ponto Tranquilizador",
+            "NomePunto": "Tranquilizer Point",
             "AzioniPunto": "<p><b>Outros nomes</b><br> - Valium Point EUR<br> - Hipertensão 2 CHN<br> - Ponto Mania<br> - Ponto de nicotina</p><p> <b>Ação</b><br> Este ponto é reconhecido por sua eficácia no tratamento de todos os transtornos com componente de ansiedade e estresse. Tem uma poderosa ação de reequilíbrio psicofísico, promove relaxamento, principalmente em casos de insônia.</p><p> <b>Localização</b><br> TG2, na parede central em direção à área cartilaginosa posterior. A meio caminho entre <span class='LMtxt'>LM9</span> e <span class='LMtxt'>LM10</span> .</p>",
             "ChiaviPunto": ""
         },
@@ -343,7 +343,7 @@ DB.set = {
             "ChiaviPunto": ""
         },
         "198": {
-            "NomePunto": "hipotensão",
+            "NomePunto": "Hipotensão",
             "AzioniPunto": "<p><b>Outros nomes</b><br> - Ponto de Elevação da Pressão Arterial</p><p> <b>Ação</b><br> O Ponto de Hipotensão é indicado para elevar a pressão arterial, principalmente a pressão arterial.</p><p> <b>Localização</b><br> IT1, na base do entalhe intertrágico.</p>",
             "ChiaviPunto": ""
         },
@@ -353,7 +353,7 @@ DB.set = {
             "ChiaviPunto": ""
         },
         "202": {
-            "NomePunto": "Testa",
+            "NomePunto": "Frente",
             "AzioniPunto": "<p><b>Outros nomes</b><br> - Osso frontal</p><p> <b>Ação</b><br> O International Forehead Point é indicado tanto para o tratamento de desconfortos emocionais, como insônia, depressão e ansiedade, quanto para distúrbios físicos, como dor frontal, tontura e sinusite.</p><p> <b>Localização</b><br> AT1-PG1, no antitragus perto do entalhe intertrágico.</p>",
             "ChiaviPunto": ""
         },
@@ -408,7 +408,7 @@ DB.set = {
             "ChiaviPunto": ""
         },
         "230": {
-            "NomePunto": "Ponto Mestre Cerebral",
+            "NomePunto": "Master Cerebral Point",
             "AzioniPunto": "<p><b>Outros nomes</b><br> - Ômega<br> - Nervosismo<br> - Preocupar</p><p> <b>Ação</b><br> Segundo a Escola Francesa, o Ponto Ômega é o Ponto Mestre do tecido Ectodérmico. Representa o lobo pré-frontal. É indicado na ansiedade, nervosismo e distúrbios do sono.</p><p> <b>Localização</b><br> LO2, a meio caminho entre <span class='LMtxt'>LM8</span> e <span class='LMtxt'>LM9</span> cerca de 2 mm da borda com a bochecha.</p>",
             "ChiaviPunto": ""
         },
@@ -428,7 +428,7 @@ DB.set = {
             "ChiaviPunto": ""
         },
         "244": {
-            "NomePunto": "pulmão CHN",
+            "NomePunto": "Pulmão CHN",
             "AzioniPunto": "<p><b>Ação<br></b> O Ponto do Pulmão é utilizado pelas Escolas Chinesa e Francesa pela sua ação reequilibrante do sistema respiratório, principalmente em casos de bronquite, enfisema e dores no peito.</p><p> <b>Localização</b><br> IC2-IC4-IC5, grande área na concha inferior, em direção à parede da concha.</p>",
             "ChiaviPunto": ""
         },
@@ -453,7 +453,7 @@ DB.set = {
             "ChiaviPunto": ""
         },
         "249": {
-            "NomePunto": "pulmão EUR",
+            "NomePunto": "Pulmão EUR",
             "AzioniPunto": "<p><b>Ação<br></b> O Ponto do Pulmão é utilizado pelas Escolas Chinesa e Francesa pela sua ação reequilibrante do sistema respiratório, principalmente em casos de bronquite, enfisema e dores no peito.</p><p> <b>Localização</b><br> IC2-IC4-IC5-IC7, grande área na concha inferior, em direção à parede da comcha.</p>",
             "ChiaviPunto": ""
         },
@@ -473,7 +473,7 @@ DB.set = {
             "ChiaviPunto": ""
         },
         "254": {
-            "NomePunto": "Um corpo calejado",
+            "NomePunto": "Corpo calejado",
             "AzioniPunto": "<p><b>Outros nomes</b><br> - Zero Prime</p><p> <b>Ação</b><br> O Zero Prime Point tem uma poderosa ação de reequilíbrio geral sobre o sistema cerebral, promovendo a conexão entre os dois hemisférios e equilibrando os aspectos racionais e emocionais do indivíduo. Este ponto também tem excelente aplicação para relaxamento muscular.</p><p> <b>Localização</b><br> TG2-TG4, uma área vertical paralela à região do tragus, com seu ponto central localizado na altura da proeminência inferior do tragus entre ele e a bochecha.</p>",
             "ChiaviPunto": ""
         },
@@ -538,22 +538,22 @@ DB.set = {
             "ChiaviPunto": ""
         },
         "267": {
-            "NomePunto": "ponto de desejo",
+            "NomePunto": "Ponto de Craving",
             "AzioniPunto": "<p><b>Outros nomes</b><br> - Desejo</p><p> <b>Ação</b><br> Este ponto tem a propriedade de reduzir os efeitos do craving, que é o desejo persistente e irresistível por uma determinada substância ou substâncias com efeitos semelhantes. O desejo também pode ser definido como a sensação crescente de tensão que precede o início da ingestão de uma substância ou a promulgação de um comportamento aditivo.</p><p> <b>Localização</b><br> HX15-LO7, na fronteira entre a cauda da hélice e o lóbulo na margem posterior.</p>",
             "ChiaviPunto": ""
         },
         "268": {
-            "NomePunto": "ponto de síntese",
+            "NomePunto": "Ponto de síntese",
             "AzioniPunto": "<p><b>Ação</b><br> Este ponto é muito ativo nas patologias degenerativas, estimulando e reequilibrando a síntese. Seu uso não é recomendado para pacientes com câncer.</p><p> <b>Localização</b><br> PC1-PG1, localizado na parte inferior da superfície medial no ponto de inserção da parte inferior da crista da concha com o sulco longitudinal da anti-hélice.</p>",
             "ChiaviPunto": ""
         },
         "269": {
-            "NomePunto": "raiz do motor C2",
+            "NomePunto": "Raiz motora C2",
             "AzioniPunto": "<p><b>Outros nomes</b><br> - Raiz motora principal do plexo cervical</p><p> <b>Ação</b><br> Este ponto é aplicado para o tratamento e redução de todas as dores e distúrbios relacionados à função motora do plexo cervical.</p><p> <b>Localização</b><br> PP2, na parte medial-posterior da hélice, pouco antes da hélice se fundir com a superfície medial do lobo.</p>",
             "ChiaviPunto": ""
         },
         "270": {
-            "NomePunto": "raiz do motor C7",
+            "NomePunto": "Raiz motora C7",
             "AzioniPunto": "<p><b>Outros nomes</b><br> - Raiz motora principal do plexo braquial</p><p> <b>Ação</b><br> Este ponto é aplicado para o tratamento e redução de todas as dores e distúrbios relacionados à função motora do plexo braquial.</p><p> <b>Localização</b><br> PP4, na parte médio-posterior da hélice, em seu terço inferior, ao nível da representação da passagem cervico-dorsal da coluna vertebral.</p>",
             "ChiaviPunto": ""
         },
@@ -563,17 +563,17 @@ DB.set = {
             "ChiaviPunto": ""
         },
         "272": {
-            "NomePunto": "raiz sensorial C2",
+            "NomePunto": "Raiz sensorial C2",
             "AzioniPunto": "<p><b>Outros nomes</b><br> - Raiz sensorial principal do plexo cervical</p><p> <b>Ação</b><br> Este ponto é aplicado para o tratamento e redução de todas as dores e distúrbios relacionados à sensibilidade do plexo cervical.</p><p> <b>Localização</b><br> HX15, na borda externa da hélice, em sua cauda, em área identificada por uma linha que passa pelo [.000.] e pelo sulco pós-antitragal.</p>",
             "ChiaviPunto": ""
         },
         "273": {
-            "NomePunto": "raiz sensorial C7",
+            "NomePunto": "Raiz sensorial C7",
             "AzioniPunto": "<p><b>Outros nomes</b><br> - Raiz sensorial principal do plexo braquial</p><p> <b>Ação</b><br> Este ponto é aplicado para o tratamento e redução de todas as dores e distúrbios relacionados à sensibilidade do plexo braquial.</p><p> <b>Localização</b><br> HX14, na borda externa da hélice no terço médio do ramo descendente da hélice, em uma área projetada da passagem cervico-dorsal.</p>",
             "ChiaviPunto": ""
         },
         "274": {
-            "NomePunto": "Raiz sensitiva do plexo lombar",
+            "NomePunto": "Raiz sensorial do plexo lombar",
             "AzioniPunto": "<p><b>Outros nomes</b><br> - Raiz sensorial principal do plexo lombar</p><p> <b>Ação</b><br> Este ponto é aplicado para o tratamento e redução de todas as dores e distúrbios relacionados à sensibilidade do plexo lombar.</p><p> <b>Localização</b><br> HX10, na hélice, logo acima do tubérculo de Darwin.</p>",
             "ChiaviPunto": ""
         },
@@ -583,7 +583,7 @@ DB.set = {
             "ChiaviPunto": ""
         },
         "276": {
-            "NomePunto": "tubérculo de darwin",
+            "NomePunto": "Tubérculo de Darwin",
             "AzioniPunto": "<p><b>Outros nomes</b><br> - Ponto de Darwin<br> - Ponto MASTER para dor neuropática</p><p> <b>Ação</b><br> A Escola Francesa indica este ponto por sua poderosa ação contrastante em todos os distúrbios neuropáticos em geral, principalmente nos membros inferiores e na região lombar.</p><p> <b>Localização</b><br> HX11, no tubérculo de Darwin.</p>",
             "ChiaviPunto": ""
         },
@@ -613,17 +613,17 @@ DB.set = {
             "ChiaviPunto": ""
         },
         "282": {
-            "NomePunto": "músculos lombossacrais",
+            "NomePunto": "Músculos lombossacrais",
             "AzioniPunto": "<p><b>Ação</b><br> Este ponto internacional é usado por sua função de relaxamento muscular nos músculos lombares e sacrais.</p><p> <b>Localização</b><br> PG5-PG6, no sulco posterior, no ramo médio-inferior.</p>",
             "ChiaviPunto": ""
         },
         "283": {
-            "NomePunto": "linha trigeminal",
+            "NomePunto": "Linha trigeminal",
             "AzioniPunto": "<p><b>Outros nomes</b><br> - Quinto nervo craniano</p><p> <b>Ação</b><br> Como o nome indica, esses pontos são muito eficazes no tratamento de todos os distúrbios relacionados à dor facial, dor trigeminal e dor neuropática. Também indicado para reduzir os espasmos faciais.</p><p> <b>Localização</b><br> LO1-LO3, ao longo da margem inferior do lóbulo da orelha, delimitado lateralmente por V1 e posteriormente por V3. V1 é encontrado traçando uma linha de [.000.] ao ponto [.262.] (Fsh/Lh); V3 é encontrado traçando uma linha de [.000.] e passando pelo sulco pós-antitragus.</p>",
             "ChiaviPunto": ""
         },
         "284": {
-            "NomePunto": "musculatura coccígea",
+            "NomePunto": "Musculatura coccígea",
             "AzioniPunto": "<p><b>Ação</b><br> Como o nome indica, este ponto é muito eficaz na redução de todos os distúrbios relacionados à musculatura coccígea.</p><p> <b>Localização</b><br> PG7, no sulco posterior, no terço superior do ramo médio-inferior.</p>",
             "ChiaviPunto": ""
         },
@@ -653,7 +653,7 @@ DB.set = {
             "ChiaviPunto": ""
         },
         "291": {
-            "NomePunto": "Ponto Occipital Mestre",
+            "NomePunto": "Ponto Mestre Occipital",
             "AzioniPunto": "<p><b>Outros nomes</b><br> - Osso occipital<br> - Atlas</p><p> <b>Ação</b><br> Este ponto mestre está diretamente ligado ao espaço entre o osso occipital e a primeira vértebra cervical. Tem forte ação no tratamento de tonturas, insônia, dores de cabeça tensionais e nevralgias. Também é reconhecido por suas propriedades miorrelaxantes, particularmente com um componente tenso-emocional.</p><p> <b>Localização</b><br> AT3, no sulco anteélice-antitragal ou pós-antitragal.</p>",
             "ChiaviPunto": ""
         },
@@ -663,7 +663,7 @@ DB.set = {
             "ChiaviPunto": ""
         },
         "294": {
-            "NomePunto": "topo da cabeça",
+            "NomePunto": "Topo da cabeça",
             "AzioniPunto": "<p><b>Outros nomes</b><br> - Ápice da cabeça<br> - Coroa de cabeça</p><p> <b>Ação</b><br> Reduz a dor de cabeça.</p><p> <b>Localização</b><br> LO6, na parte superior do lóbulo da orelha posteriormente à linha que passa por <span class='LMtxt'>LM13</span> e <span class='LMtxt'>LM7</span> .</p>",
             "ChiaviPunto": ""
         },
@@ -693,12 +693,12 @@ DB.set = {
             "ChiaviPunto": ""
         },
         "000": {
-            "NomePunto": "Zero pontos",
+            "NomePunto": "Pontos Zero",
             "AzioniPunto": "<p><b>Outros nomes</b><br> - Centro da orelha<br> - Ponto de Apoio<br> - Plexo solar<br> - Umbigo</p><p> <b>Ação</b><br> Considerado muito importante pela escola francesa, segundo Paul Nogier, representa um centro fisiológico e geométrico. A estimulação deste ponto foi utilizada por Nogier em condições de fadiga e tensão nervosa para restaurar um estado de calma geral. O Ponto Zero tem uma ação poderosa no reequilíbrio geral do sistema energético, psicológico e físico.</p><p> <b>Localização</b><br> HX1-CR1, na raiz da hélice margeando a hélice crus. Em um sulco ortogonal à raiz da hélice.</p>",
             "ChiaviPunto": ""
         },
         "001": {
-            "NomePunto": "Shen Men",
+            "NomePunto": "ShenMen",
             "AzioniPunto": "<p><b>Outros nomes</b><br> -Shen Men<br> - Portão Espiritual<br> - Portão Divino</p><p> <b>Ação</b><br> Shen Men é um poderoso ponto reconhecido internacionalmente por suas inúmeras propriedades energéticas, emocionais e físicas. É usado para tonificar a mente e facilitar a circulação do Qi, restaurando a harmonia e a serenidade. É indicado para o tratamento de ansiedade, estresse, depressão e insônia. Também encontra excelentes resultados na dissuasão do uso frequente de álcool, drogas, tabagismo, etc. O tratamento desse ponto pode ajudar a reduzir os sintomas associados à hipertensão e à epilepsia.</p><p> <b>Localização</b><br> TF2, próximo ao ápice da fossa triangular em uma área próxima à raiz superior da hélice.</p>",
             "ChiaviPunto": "ponto funcional primeiro nível"
         },
@@ -733,7 +733,7 @@ DB.set = {
             "ChiaviPunto": ""
         },
         "013": {
-            "NomePunto": "Rômulo Ansiedade",
+            "NomePunto": "Ansiedade de Romoli",
             "AzioniPunto": "<p><b>Ação</b><br> Particularmente sensível e eficaz em ataques de pânico, juntamente com o Ponto da Boca.</p><p> <b>Localização</b><br> IC5-IC8, codificado por A. Lovato, descrito por Marco Romoli em diversas apresentações, reportagens e conferências, identificado em área de concha inferior, próximo ao Ponto Maravilhoso de Nogier.</p>",
             "ChiaviPunto": "",
             "hidden": true
@@ -751,7 +751,7 @@ DB.set = {
             "hidden": true
         },
         "017": {
-            "NomePunto": "Dedos",
+            "NomePunto": "Dedos das mãos",
             "AzioniPunto": "<p><b>Outros nomes</b><br> - Falanges</p><p> <b>Ação</b><br> Este ponto internacional é indicado para neutralizar todos os distúrbios relacionados aos dedos, particularmente para o tratamento de distúrbios ósseos do carpo e metacarpo.</p><p> <b>Localização</b><br> SF6, em uma ampla área entre a hélice e a raiz superior da anti-hélice, acima do tubérculo de Darwin.</p>",
             "ChiaviPunto": ""
         },
@@ -761,12 +761,12 @@ DB.set = {
             "ChiaviPunto": ""
         },
         "023": {
-            "NomePunto": "Ponto Jerônimo",
+            "NomePunto": "Ponto Jerome",
             "AzioniPunto": "<p><b>Outros nomes</b><br> - Compulsões sexuais<br> - Inibição do desejo sexual</p><p> <b>Ação</b><br> Jerome&#39;s Point é usado para inibir a libido e regular todos os distúrbios sexuais compulsivos.</p><p> <b>Localização</b><br> HX15, na parte inferior da hélice, na fronteira com o lobo e a fossa escafoide.</p>",
             "ChiaviPunto": ""
         },
         "026": {
-            "NomePunto": "corrente de vento",
+            "NomePunto": "Windstream",
             "AzioniPunto": "<p><b>Outros nomes</b><br> - Nervo occipital menor<br> - Insolação</p><p> <b>Ação</b><br> Segundo a Escola Chinesa, este ponto está ligado à glândula adrenal. É indicado para promover a resposta do sistema imunológico e tem uma ação particular em todos os distúrbios de fase aguda.</p><p> <b>Localização</b><br> IH11, na superfície oculta da hélice, abaixo do tubérculo de Darwin.</p>",
             "ChiaviPunto": ""
         },
@@ -776,7 +776,7 @@ DB.set = {
             "ChiaviPunto": ""
         },
         "029": {
-            "NomePunto": "Salto CHN",
+            "NomePunto": "Calcanhar CHN",
             "AzioniPunto": "<p><b>Outros nomes</b><br> - Ponto do calcanhar</p><p> <b>Ação</b><br> Este ponto é usado pelas escolas chinesa e francesa por sua ação no combate a distúrbios e dores no calcanhar.</p><p> <b>Localização</b><br> AH17, no terço superior da raiz superior da anti-hélice, em área oculta pela borda da hélice e próximo à fossa triangular.</p>",
             "ChiaviPunto": ""
         },
@@ -791,7 +791,7 @@ DB.set = {
             "ChiaviPunto": ""
         },
         "032": {
-            "NomePunto": "EUR",
+            "NomePunto": "Calcanhar EUR",
             "AzioniPunto": "<p><b>Outros nomes</b><br> - Articulação talocrural<br> - Tendão de Aquiles</p><p> <b>Ação</b><br> O ponto do tornozelo é usado para todos os distúrbios relacionados ao tornozelo, particularmente distúrbios da articulação e do tendão de Aquiles.</p><p> <b>Localização</b><br> TF5-TF6 ao longo da bissetriz da fossa triangular, no terço proximal ao joelho da anti-hélice.</p>",
             "ChiaviPunto": ""
         },
@@ -826,12 +826,12 @@ DB.set = {
             "ChiaviPunto": ""
         },
         "040": {
-            "NomePunto": "muito euros",
+            "NomePunto": "Tornozelo EUR",
             "AzioniPunto": "<p><b>Ação</b><br> Patologias dolorosas e disfuncionais do calcanhar e retropé.</p><p> <b>Localização</b><br> TF5, na base da fossa triangular, próximo ao ponto de junção entre a hélice e a raiz inferior da anti-hélice. O ponto está escondido pela hélice.</p>",
             "ChiaviPunto": ""
         },
         "041": {
-            "NomePunto": "tireóide CHN",
+            "NomePunto": "Tireóide CHN",
             "AzioniPunto": "<p><b>Outros nomes</b><br> - Glândula tireóide<br> - Glândula paratireoide</p><p> <b>Ação</b><br> Como sugere o nome, este ponto é indicado para o tratamento de todos os distúrbios relacionados à glândula tireoide.</p> <b>Localização</b><br> CW4-IC8-AH8, no limite entre a parede da concha e a concha inferior, ao nível da representação das vértebras C3-4.</p>",
             "ChiaviPunto": ""
         },
@@ -896,7 +896,7 @@ DB.set = {
             "ChiaviPunto": ""
         },
         "060": {
-            "NomePunto": "Hip EUR",
+            "NomePunto": "Quadril EUR",
             "AzioniPunto": "<p><b>Outros nomes</b><br> - Articulação coxofemoral</p><p> <b>Ação</b><br> Este ponto é utilizado tanto pelas escolas chinesas quanto pelas francesas, mas em locais diferentes. Ambos têm em comum a aplicação no tratamento de distúrbios relacionados ao quadril e cintura pélvica.</p><p> <b>Localização</b><br> TF1-PT1, no ápice da fossa triangular.</p>",
             "ChiaviPunto": ""
         },
@@ -971,12 +971,12 @@ DB.set = {
             "ChiaviPunto": ""
         },
         "083": {
-            "NomePunto": "Thumb EUR",
+            "NomePunto": "Polegar EUR",
             "AzioniPunto": "<p><b>Outros nomes</b><br> - Ponto do polegar</p><p> <b>Ação</b><br> Como o nome indica, este ponto é muito eficaz na redução de todos os distúrbios relacionados ao polegar, principalmente as patologias relacionadas ao primeiro raio metacarpal.</p><p> <b>Localização</b><br> AH14-AH16-AH18, grande área na raiz superior da anti-hélice.</p>",
             "ChiaviPunto": ""
         },
         "084": {
-            "NomePunto": "Thumb CHN",
+            "NomePunto": "Polegar CHN",
             "AzioniPunto": "<p><b>Ação</b><br> Como o nome indica, este ponto é muito eficaz na redução de todos os distúrbios relacionados ao polegar, principalmente as patologias relacionadas ao primeiro raio metacarpal.</p><p> <b>Localização</b><br> SF5-AH16, grande área abrangendo parte da raiz superior da anti-hélice e parte da fossa escafoide.</p>",
             "ChiaviPunto": ""
         },
@@ -1011,7 +1011,7 @@ DB.set = {
             "ChiaviPunto": ""
         },
         "095": {
-            "NomePunto": "Euro simples",
+            "NomePunto": "Reto EUR",
             "AzioniPunto": "<p><b>Outros nomes</b><br> - ânus<br> - Hemorróidas<br> - Próstata</p><p> <b>Ação</b><br> O Ponto do Reto é muito útil na redução dos sintomas da síndrome do intestino irritável, disenteria, hemorróidas, diarréia, constipação e dor retal.</p><p> <b>Localização</b><br> IH1-SC4, no limite entre a parte oculta do ramo ascendente da hélice e a concha superior.</p>",
             "ChiaviPunto": ""
         },
@@ -1032,17 +1032,17 @@ DB.set = {
         }
     },
     "apparati": {
-        "1": "Locomotor apparatus",
-        "2": "Head",
-        "3": "Neurological clinic",
-        "4": "Psychiatric clinic",
-        "5": "Endocrinological clinic and urogenital system",
-        "6": "Gastroenterological clinic",
-        "7": "Cardiovascular and lymphatic system",
-        "8": "Respiratory, phonetic and otovestibular",
-        "9": "Dermatological clinic",
-        "10": "Eye clinic",
-        "11": "Addictions"
+        "1": "Aparelho locomotor",
+        "2": "Cabeça",
+        "3": "Clínica neurológica",
+        "4": "Clínica psiquiátrica",
+        "5": "Clínica endocrinológica e sistema urogenital",
+        "6": "Clínica gastroenterológica",
+        "7": "Cardiovascular e sistema linfático",
+        "8": "Respiratório, fonético e otovestibular",
+        "9": "Clínica dermatológica",
+        "10": "Clínica oftalmológica",
+        "11": "Vícios"
     },
     "schede": {
         "1": {
@@ -1078,7 +1078,7 @@ DB.set = {
                         "165",
                         "026",
                         {
-                            "t": "tríade anti-inflamatória",
+                            "t": "Tríade anti-inflamatória",
                             "p": [
                                 "003",
                                 "165",
@@ -1098,7 +1098,7 @@ DB.set = {
                     "t": "Componente ansioso",
                     "p": [
                         {
-                            "t": "tríade de relaxamento",
+                            "t": "Tríade de relaxamento",
                             "p": [
                                 "001",
                                 "222",
@@ -1108,7 +1108,7 @@ DB.set = {
                         },
                         "137",
                         {
-                            "t": "linha ômega",
+                            "t": "Linha ômega",
                             "p": [
                                 "230",
                                 "104",
@@ -1119,7 +1119,7 @@ DB.set = {
                     ]
                 },
                 {
-                    "t": "componente depressivo",
+                    "t": "Componente depressivo",
                     "p": [
                         "173",
                         "184"
@@ -1159,7 +1159,7 @@ DB.set = {
             },
             "s": [
                 {
-                    "t": "dor unilateral",
+                    "t": "Dor unilateral",
                     "d": "Preferencialmente tratar a aurícula homolateral à dor",
                     "p": [
                         "003",
@@ -1214,7 +1214,7 @@ DB.set = {
             },
             "s": [
                 {
-                    "t": "dor unilateral",
+                    "t": "Dor unilateral",
                     "d": "Preferencialmente tratar a aurícula homolateral à dor",
                     "p": [
                         "003",
@@ -1271,7 +1271,7 @@ DB.set = {
             },
             "s": [
                 {
-                    "t": "dor unilateral",
+                    "t": "Dor unilateral",
                     "d": "Preferencialmente tratar a aurícula homolateral à dor",
                     "p": [
                         "003",
@@ -1330,7 +1330,7 @@ DB.set = {
                         "165",
                         "026",
                         {
-                            "t": "tríade anti-inflamatória",
+                            "t": "Tríade anti-inflamatória",
                             "p": [
                                 "003",
                                 "165",
@@ -1344,7 +1344,7 @@ DB.set = {
                     "t": "Componente ansioso",
                     "p": [
                         {
-                            "t": "tríade de relaxamento",
+                            "t": "Tríade de relaxamento",
                             "p": [
                                 "001",
                                 "222",
@@ -1354,7 +1354,7 @@ DB.set = {
                         },
                         "137",
                         {
-                            "t": "linha ômega",
+                            "t": "Linha ômega",
                             "p": [
                                 "230",
                                 "104",
@@ -1365,7 +1365,7 @@ DB.set = {
                     ]
                 },
                 {
-                    "t": "dor unilateral",
+                    "t": "Dor unilateral",
                     "d": "Preferencialmente tratar a aurícula homolateral à dor",
                     "p": [
                         "000",
@@ -1411,7 +1411,7 @@ DB.set = {
             },
             "s": [
                 {
-                    "t": "dor unilateral",
+                    "t": "Dor unilateral",
                     "d": "Preferencialmente tratar a aurícula homolateral à dor",
                     "p": [
                         "000",
@@ -1425,10 +1425,10 @@ DB.set = {
                     ]
                 },
                 {
-                    "t": "síndrome de vertigem",
+                    "t": "Síndrome de vertigem",
                     "p": [
                         {
-                            "t": "linha de vertigem",
+                            "t": "Linha de vertigem",
                             "p": [
                                 "148",
                                 "000",
@@ -1485,7 +1485,7 @@ DB.set = {
             },
             "s": [
                 {
-                    "t": "dor unilateral",
+                    "t": "Dor unilateral",
                     "d": "Preferencialmente tratar a aurícula homolateral à dor",
                     "p": [
                         "000",
@@ -1534,7 +1534,7 @@ DB.set = {
             },
             "s": [
                 {
-                    "t": "dor unilateral",
+                    "t": "Dor unilateral",
                     "d": "Preferencialmente tratar a aurícula homolateral à dor",
                     "p": [
                         "000",
@@ -1560,7 +1560,7 @@ DB.set = {
                         "165",
                         "026",
                         {
-                            "t": "tríade anti-inflamatória",
+                            "t": "Tríade anti-inflamatória",
                             "p": [
                                 "003",
                                 "165",
@@ -1585,7 +1585,7 @@ DB.set = {
                     "p": [
                         "124",
                         "254",
-                        "[]Neuroreflex points on the medial anterior surfaces corresponding to the areas of greatest pain *"
+                        "[]Pontos de neuro-reflexo nas superfícies médio-anteriores correspondentes às áreas de maior dor *"
                     ]
                 },
                 "np": {
@@ -1604,7 +1604,7 @@ DB.set = {
             },
             "s": [
                 {
-                    "t": "dor unilateral",
+                    "t": "Dor unilateral",
                     "d": "Preferencialmente tratar a aurícula homolateral à dor",
                     "p": [
                         "001",
@@ -1616,7 +1616,7 @@ DB.set = {
                     ]
                 },
                 {
-                    "t": "componente depressivo",
+                    "t": "Componente depressivo",
                     "d": "Escolha um dos dois pontos, de preferência no lado não dominante.",
                     "p": [
                         "173",
@@ -1661,7 +1661,7 @@ DB.set = {
                         "165",
                         "026",
                         {
-                            "t": "tríade anti-inflamatória",
+                            "t": "Tríade anti-inflamatória",
                             "p": [
                                 "003",
                                 "165",
@@ -1675,7 +1675,7 @@ DB.set = {
                     "t": "Componente ansioso",
                     "p": [
                         {
-                            "t": "tríade de relaxamento",
+                            "t": "Tríade de relaxamento",
                             "p": [
                                 "001",
                                 "222",
@@ -1685,7 +1685,7 @@ DB.set = {
                         },
                         "137",
                         {
-                            "t": "linha ômega",
+                            "t": "Linha ômega",
                             "p": [
                                 "230",
                                 "104",
@@ -1728,7 +1728,7 @@ DB.set = {
             },
             "s": [
                 {
-                    "t": "dor unilateral",
+                    "t": "Dor unilateral",
                     "d": "Preferencialmente tratar a aurícula homolateral à dor",
                     "p": [
                         "000",
@@ -1746,7 +1746,7 @@ DB.set = {
                         "165",
                         "026",
                         {
-                            "t": "tríade anti-inflamatória",
+                            "t": "Tríade anti-inflamatória",
                             "p": [
                                 "003",
                                 "165",
@@ -1760,7 +1760,7 @@ DB.set = {
                     "t": "Componente ansioso",
                     "p": [
                         {
-                            "t": "tríade de relaxamento",
+                            "t": "Tríade de relaxamento",
                             "p": [
                                 "001",
                                 "222",
@@ -1771,7 +1771,7 @@ DB.set = {
                         "137",
                         "192",
                         {
-                            "t": "linha ômega",
+                            "t": "Linha ômega",
                             "p": [
                                 "230",
                                 "104",
@@ -1789,7 +1789,7 @@ DB.set = {
                     ]
                 },
                 {
-                    "t": "componente depressivo",
+                    "t": "Componente depressivo",
                     "p": [
                         "173"
                     ]
@@ -1824,7 +1824,7 @@ DB.set = {
             },
             "s": [
                 {
-                    "t": "dor unilateral",
+                    "t": "Dor unilateral",
                     "d": "Preferencialmente tratar a aurícula homolateral à dor",
                     "p": [
                         "000",
@@ -1842,7 +1842,7 @@ DB.set = {
                         "165",
                         "026",
                         {
-                            "t": "tríade anti-inflamatória",
+                            "t": "Tríade anti-inflamatória",
                             "p": [
                                 "003",
                                 "165",
@@ -1856,7 +1856,7 @@ DB.set = {
                     "t": "Componente ansioso",
                     "p": [
                         {
-                            "t": "tríade de relaxamento",
+                            "t": "Tríade de relaxamento",
                             "p": [
                                 "001",
                                 "222",
@@ -1866,7 +1866,7 @@ DB.set = {
                         },
                         "137",
                         {
-                            "t": "linha ômega",
+                            "t": "Linha ômega",
                             "p": [
                                 "230",
                                 "104",
@@ -1913,7 +1913,7 @@ DB.set = {
             },
             "s": [
                 {
-                    "t": "dor unilateral",
+                    "t": "Dor unilateral",
                     "d": "Preferencialmente tratar a aurícula homolateral à dor",
                     "p": [
                         "000",
@@ -1935,7 +1935,7 @@ DB.set = {
                         "165",
                         "026",
                         {
-                            "t": "tríade anti-inflamatória",
+                            "t": "Tríade anti-inflamatória",
                             "p": [
                                 "003",
                                 "165",
@@ -1949,7 +1949,7 @@ DB.set = {
                     "t": "Componente ansioso",
                     "p": [
                         {
-                            "t": "tríade de relaxamento",
+                            "t": "Tríade de relaxamento",
                             "p": [
                                 "001",
                                 "222",
@@ -1959,7 +1959,7 @@ DB.set = {
                         },
                         "137",
                         {
-                            "t": "linha ômega",
+                            "t": "Linha ômega",
                             "p": [
                                 "230",
                                 "104",
@@ -2007,7 +2007,7 @@ DB.set = {
             },
             "s": [
                 {
-                    "t": "dor unilateral",
+                    "t": "Dor unilateral",
                     "d": "Preferencialmente tratar a aurícula homolateral à dor",
                     "p": [
                         "000",
@@ -2030,7 +2030,7 @@ DB.set = {
                         "165",
                         "026",
                         {
-                            "t": "tríade anti-inflamatória",
+                            "t": "Tríade anti-inflamatória",
                             "p": [
                                 "003",
                                 "165",
@@ -2054,7 +2054,7 @@ DB.set = {
                     "t": "Componente ansioso",
                     "p": [
                         {
-                            "t": "tríade de relaxamento",
+                            "t": "Tríade de relaxamento",
                             "p": [
                                 "001",
                                 "222",
@@ -2064,7 +2064,7 @@ DB.set = {
                         },
                         "137",
                         {
-                            "t": "linha ômega",
+                            "t": "Linha ômega",
                             "p": [
                                 "230",
                                 "104",
@@ -2112,7 +2112,7 @@ DB.set = {
             },
             "s": [
                 {
-                    "t": "dor unilateral",
+                    "t": "Dor unilateral",
                     "d": "Preferencialmente tratar a aurícula homolateral à dor",
                     "p": [
                         "000",
@@ -2135,7 +2135,7 @@ DB.set = {
                         "165",
                         "026",
                         {
-                            "t": "tríade anti-inflamatória",
+                            "t": "Tríade anti-inflamatória",
                             "p": [
                                 "003",
                                 "165",
@@ -2159,7 +2159,7 @@ DB.set = {
                     "t": "Componente ansioso",
                     "p": [
                         {
-                            "t": "tríade de relaxamento",
+                            "t": "Tríade de relaxamento",
                             "p": [
                                 "001",
                                 "222",
@@ -2169,7 +2169,7 @@ DB.set = {
                         },
                         "137",
                         {
-                            "t": "linha ômega",
+                            "t": "Linha ômega",
                             "p": [
                                 "230",
                                 "104",
@@ -2224,7 +2224,7 @@ DB.set = {
             },
             "s": [
                 {
-                    "t": "dor unilateral",
+                    "t": "Dor unilateral",
                     "d": "Preferencialmente tratar a aurícula homolateral à dor",
                     "p": [
                         "000",
@@ -2255,7 +2255,7 @@ DB.set = {
                         "165",
                         "026",
                         {
-                            "t": "tríade anti-inflamatória",
+                            "t": "Tríade anti-inflamatória",
                             "p": [
                                 "003",
                                 "165",
@@ -2276,7 +2276,7 @@ DB.set = {
                     "t": "Componente ansioso",
                     "p": [
                         {
-                            "t": "tríade de relaxamento",
+                            "t": "Tríade de relaxamento",
                             "p": [
                                 "001",
                                 "222",
@@ -2286,7 +2286,7 @@ DB.set = {
                         },
                         "137",
                         {
-                            "t": "linha ômega",
+                            "t": "Linha ômega",
                             "p": [
                                 "230",
                                 "104",
@@ -2336,7 +2336,7 @@ DB.set = {
             },
             "s": [
                 {
-                    "t": "dor unilateral",
+                    "t": "Dor unilateral",
                     "d": "Preferencialmente tratar a aurícula homolateral à dor",
                     "p": [
                         "000",
@@ -2359,7 +2359,7 @@ DB.set = {
                         "165",
                         "026",
                         {
-                            "t": "tríade anti-inflamatória",
+                            "t": "Tríade anti-inflamatória",
                             "p": [
                                 "003",
                                 "165",
@@ -2381,7 +2381,7 @@ DB.set = {
                     "t": "Componente ansioso",
                     "p": [
                         {
-                            "t": "tríade de relaxamento",
+                            "t": "Tríade de relaxamento",
                             "p": [
                                 "001",
                                 "222",
@@ -2391,7 +2391,7 @@ DB.set = {
                         },
                         "137",
                         {
-                            "t": "linha ômega",
+                            "t": "Linha ômega",
                             "p": [
                                 "230",
                                 "104",
@@ -2447,7 +2447,7 @@ DB.set = {
             },
             "s": [
                 {
-                    "t": "dor unilateral",
+                    "t": "Dor unilateral",
                     "d": "Preferencialmente tratar a aurícula homolateral à dor",
                     "p": [
                         "000",
@@ -2470,7 +2470,7 @@ DB.set = {
                         "165",
                         "026",
                         {
-                            "t": "tríade anti-inflamatória",
+                            "t": "Tríade anti-inflamatória",
                             "p": [
                                 "003",
                                 "165",
@@ -2484,7 +2484,7 @@ DB.set = {
                     "t": "Componente ansioso",
                     "p": [
                         {
-                            "t": "tríade de relaxamento",
+                            "t": "Tríade de relaxamento",
                             "p": [
                                 "001",
                                 "222",
@@ -2494,7 +2494,7 @@ DB.set = {
                         },
                         "137",
                         {
-                            "t": "linha ômega",
+                            "t": "Linha ômega",
                             "p": [
                                 "230",
                                 "104",
@@ -2543,7 +2543,7 @@ DB.set = {
             },
             "s": [
                 {
-                    "t": "dor unilateral",
+                    "t": "Dor unilateral",
                     "d": "Preferencialmente tratar a aurícula homolateral à dor",
                     "p": [
                         "000",
@@ -2570,7 +2570,7 @@ DB.set = {
                         "165",
                         "026",
                         {
-                            "t": "tríade anti-inflamatória",
+                            "t": "Tríade anti-inflamatória",
                             "p": [
                                 "003",
                                 "165",
@@ -2592,7 +2592,7 @@ DB.set = {
                     "t": "Componente ansioso",
                     "p": [
                         {
-                            "t": "tríade de relaxamento",
+                            "t": "Tríade de relaxamento",
                             "p": [
                                 "001",
                                 "222",
@@ -2602,7 +2602,7 @@ DB.set = {
                         },
                         "137",
                         {
-                            "t": "linha ômega",
+                            "t": "Linha ômega",
                             "p": [
                                 "230",
                                 "104",
@@ -2613,7 +2613,7 @@ DB.set = {
                     ]
                 },
                 {
-                    "t": "componente depressivo",
+                    "t": "Componente depressivo",
                     "p": [
                         "173",
                         "184"
@@ -2633,7 +2633,7 @@ DB.set = {
                 "ds": {
                     "p": [
                         "229",
-                        "[]Corresponding reflex area to the most painful zone*"
+                        "[]Área reflexa correspondente à zona mais dolorosa*"
                     ]
                 },
                 "np": {
@@ -2651,7 +2651,7 @@ DB.set = {
             },
             "s": [
                 {
-                    "t": "dor unilateral",
+                    "t": "Dor unilateral",
                     "d": "Preferencialmente tratar a aurícula homolateral à dor",
                     "p": [
                         "000",
@@ -2666,7 +2666,7 @@ DB.set = {
                     "d": "Do lado dominante",
                     "p": [
                         {
-                            "t": "tríade anti-inflamatória",
+                            "t": "Tríade anti-inflamatória",
                             "p": [
                                 "003",
                                 "165",
@@ -2680,14 +2680,14 @@ DB.set = {
                     "t": "Contração muscular",
                     "p": [
                         "124",
-                        "[]Muscle points corresponding to the affected area"
+                        "[]Área reflexa correspondente à zona mais dolorosa"
                     ]
                 },
                 {
                     "t": "Componente ansioso",
                     "p": [
                         {
-                            "t": "tríade de relaxamento",
+                            "t": "Tríade de relaxamento",
                             "p": [
                                 "001",
                                 "222",
@@ -2698,7 +2698,7 @@ DB.set = {
                         "137",
                         "192",
                         {
-                            "t": "linha ômega",
+                            "t": "Linha ômega",
                             "p": [
                                 "230",
                                 "104",
@@ -2709,7 +2709,7 @@ DB.set = {
                     ]
                 },
                 {
-                    "t": "componente depressivo",
+                    "t": "Componente depressivo",
                     "p": [
                         "173",
                         "184"
@@ -2731,7 +2731,7 @@ DB.set = {
                         "000",
                         "004",
                         "039",
-                        "[]Corresponding reflex area to the most painful zone*"
+                        "[]Área reflexa correspondente à zona mais dolorosa*"
                     ]
                 },
                 "np": {
@@ -2753,7 +2753,7 @@ DB.set = {
             },
             "s": [
                 {
-                    "t": "dor unilateral",
+                    "t": "Dor unilateral",
                     "d": "Preferencialmente tratar a aurícula homolateral à dor",
                     "p": [
                         "000",
@@ -2771,7 +2771,7 @@ DB.set = {
                         "165",
                         "229",
                         {
-                            "t": "tríade anti-inflamatória",
+                            "t": "Tríade anti-inflamatória",
                             "p": [
                                 "003",
                                 "165",
@@ -2792,7 +2792,7 @@ DB.set = {
                     "t": "Componente ansioso",
                     "p": [
                         {
-                            "t": "relaxamento neurovegetativo",
+                            "t": "Relaxamento neurovegetativo",
                             "p": [
                                 "001",
                                 "222",
@@ -2802,7 +2802,7 @@ DB.set = {
                             "l": "RIL_NEUR"
                         },
                         {
-                            "t": "tríade de relaxamento",
+                            "t": "Tríade de relaxamento",
                             "p": [
                                 "001",
                                 "222",
@@ -2813,7 +2813,7 @@ DB.set = {
                     ]
                 },
                 {
-                    "t": "componente depressivo",
+                    "t": "Componente depressivo",
                     "p": [
                         "173",
                         "184"
@@ -2840,7 +2840,7 @@ DB.set = {
                             "277",
                             "069"
                         ],
-                        "Depending on the location of the pain:",
+                        "Dependendo da localização da dor:",
                         "177",
                         "179",
                         "202"
@@ -2860,7 +2860,7 @@ DB.set = {
             },
             "s": [
                 {
-                    "t": "dor unilateral",
+                    "t": "Dor unilateral",
                     "d": "Preferencialmente tratar a aurícula homolateral à dor",
                     "p": [
                         "000",
@@ -2887,7 +2887,7 @@ DB.set = {
                         "137",
                         "192",
                         {
-                            "t": "tríade de relaxamento",
+                            "t": "Tríade de relaxamento",
                             "p": [
                                 "001",
                                 "222",
@@ -2898,7 +2898,7 @@ DB.set = {
                     ]
                 },
                 {
-                    "t": "componente depressivo",
+                    "t": "Componente depressivo",
                     "d": "Do lado não dominante",
                     "p": [
                         "173"
@@ -2960,7 +2960,7 @@ DB.set = {
                     "t": "Componente ansioso e estressado",
                     "p": [
                         {
-                            "t": "tríade de relaxamento",
+                            "t": "Críade de relaxamento",
                             "p": [
                                 "001",
                                 "222",
@@ -2969,7 +2969,7 @@ DB.set = {
                             "l": "TRE"
                         },
                         {
-                            "t": "linha ômega",
+                            "t": "Linha ômega",
                             "p": [
                                 "230",
                                 "104",
@@ -3031,7 +3031,7 @@ DB.set = {
                     "p": [
                         "137",
                         {
-                            "t": "tríade de relaxamento",
+                            "t": "Tríade de relaxamento",
                             "p": [
                                 "001",
                                 "222",
@@ -3040,7 +3040,7 @@ DB.set = {
                             "l": "TRE"
                         },
                         {
-                            "t": "linha ômega",
+                            "t": "Linha ômega",
                             "p": [
                                 "230",
                                 "104",
@@ -3098,7 +3098,7 @@ DB.set = {
                     "d": "Do lado não dominante",
                     "p": [
                         {
-                            "t": "tríade de relaxamento",
+                            "t": "Tríade de relaxamento",
                             "p": [
                                 "001",
                                 "222",
@@ -3107,7 +3107,7 @@ DB.set = {
                             "l": "TRE"
                         },
                         {
-                            "t": "linha ômega",
+                            "t": "Linha ômega",
                             "p": [
                                 "230",
                                 "104",
@@ -3227,7 +3227,7 @@ DB.set = {
                     "p": [
                         "173",
                         {
-                            "t": "tríade modificada",
+                            "t": "Tríade modificada",
                             "p": [
                                 "001",
                                 "174",
@@ -3235,7 +3235,7 @@ DB.set = {
                             ]
                         },
                         {
-                            "t": "tríade adaptada",
+                            "t": "Tríade adaptada",
                             "p": [
                                 "001",
                                 "222",
@@ -3252,7 +3252,7 @@ DB.set = {
                 "dp": {
                     "p": [
                         {
-                            "t": "relaxamento neurovegetativo",
+                            "t": "Relaxamento neurovegetativo",
                             "p": [
                                 "001",
                                 "222",
@@ -3303,7 +3303,7 @@ DB.set = {
                     "d": "Do lado não dominante",
                     "p": [
                         {
-                            "t": "linha ômega",
+                            "t": "Linha ômega",
                             "p": [
                                 "230",
                                 "104",
@@ -3415,7 +3415,7 @@ DB.set = {
                     "d": "Do lado não dominante",
                     "p": [
                         {
-                            "t": "linha ômega",
+                            "t": "Linha ômega",
                             "p": [
                                 "230",
                                 "104",
@@ -3426,7 +3426,7 @@ DB.set = {
                     ]
                 },
                 {
-                    "t": "componente depressivo",
+                    "t": "Componente depressivo",
                     "d": "Do lado não dominante",
                     "p": [
                         "173"
@@ -3454,8 +3454,8 @@ DB.set = {
                 "ds": {
                     "p": [
                         "164",
-                        "[]Concha wall*",
-                        "[]Sensitive root*"
+                        "[]Parede da concha*",
+                        "[]Raiz sensível*"
                     ]
                 },
                 "np": {
@@ -3487,7 +3487,7 @@ DB.set = {
                     "p": [
                         "230",
                         {
-                            "t": "tríade de relaxamento",
+                            "t": "Tríade de relaxamento",
                             "p": [
                                 "001",
                                 "222",
@@ -3498,7 +3498,7 @@ DB.set = {
                     ]
                 },
                 {
-                    "t": "componente depressivo",
+                    "t": "Componente depressivo",
                     "d": "Do lado não dominante",
                     "p": [
                         "045",
@@ -3522,8 +3522,8 @@ DB.set = {
                         "222",
                         "165",
                         "151",
-                        "[]Motor and sensitive corresponding root*",
-                        "[]Corresponding ganglion**"
+                        "[]Motor e raiz correspondente sensível*",
+                        "[]Gânglio correspondente**"
                     ]
                 },
                 "np": {
@@ -3556,12 +3556,12 @@ DB.set = {
                     "d": "Do lado não dominante",
                     "p": [
                         {
-                            "t": "tríade adaptada",
+                            "t": "Tríade adaptada",
                             "p": [
                                 "001",
                                 "222",
                                 "254",
-                                "[]Affected sensitive root"
+                                "[]Raiz sensível afetada"
                             ]
                         }
                     ]
@@ -3610,7 +3610,7 @@ DB.set = {
                     "d": "Do lado não dominante",
                     "p": [
                         {
-                            "t": "tríade de relaxamento",
+                            "t": "Tríade de relaxamento",
                             "p": [
                                 "001",
                                 "222",
@@ -3619,7 +3619,7 @@ DB.set = {
                             "l": "TRE"
                         },
                         {
-                            "t": "linha ômega",
+                            "t": "Linha ômega",
                             "p": [
                                 "230",
                                 "104",
@@ -3686,7 +3686,7 @@ DB.set = {
                     "d": "Do lado não dominante",
                     "p": [
                         {
-                            "t": "linha ômega",
+                            "t": "Linha ômega",
                             "p": [
                                 "230",
                                 "104",
@@ -3752,7 +3752,7 @@ DB.set = {
                     "d": "Do lado não dominante",
                     "p": [
                         {
-                            "t": "linha ômega",
+                            "t": "Linha ômega",
                             "p": [
                                 "230",
                                 "104",
@@ -3787,7 +3787,7 @@ DB.set = {
                         "230",
                         "039",
                         "165",
-                        "[]Corresponding somatotopic area to pain",
+                        "[]Área somatotópica correspondente à dor",
                         "120",
                         "273",
                         "270"
@@ -3817,7 +3817,7 @@ DB.set = {
                     "p": [
                         "192",
                         {
-                            "t": "tríade de relaxamento",
+                            "t": "Tríade de relaxamento",
                             "p": [
                                 "001",
                                 "222",
@@ -3826,10 +3826,10 @@ DB.set = {
                             "l": "TRE"
                         },
                         {
-                            "t": "tríade modificada",
+                            "t": "Tríade modificada",
                             "p": [
                                 "001",
-                                "[]Corresponding somatotopic area to pain",
+                                "[]Área somatotópica correspondente à dor",
                                 "254"
                             ]
                         },
@@ -3837,7 +3837,7 @@ DB.set = {
                     ]
                 },
                 {
-                    "t": "componente depressivo",
+                    "t": "Componente depressivo",
                     "p": [
                         "173"
                     ]
@@ -3858,7 +3858,7 @@ DB.set = {
                         "155",
                         "039",
                         "170",
-                        "[]Areas corresponding to the most painful zones"
+                        "[]Áreas correspondentes às zonas mais dolorosas"
                     ]
                 },
                 "np": {
@@ -3889,7 +3889,7 @@ DB.set = {
                     "d": "Do lado não dominante",
                     "p": [
                         {
-                            "t": "tríade de relaxamento",
+                            "t": "Tríade de relaxamento",
                             "p": [
                                 "001",
                                 "222",
@@ -3899,7 +3899,7 @@ DB.set = {
                         },
                         "192",
                         {
-                            "t": "relaxamento neurovegetativo",
+                            "t": "Relaxamento neurovegetativo",
                             "p": [
                                 "001",
                                 "222",
@@ -3911,7 +3911,7 @@ DB.set = {
                     ]
                 },
                 {
-                    "t": "componente depressivo",
+                    "t": "Componente depressivo",
                     "d": "Do lado não dominante",
                     "p": [
                         "173"
@@ -3971,12 +3971,12 @@ DB.set = {
                             "t": "Tríade modificada bilateral",
                             "p": [
                                 "001",
-                                "[]Sensitive point*",
+                                "[]Ponto sensível*",
                                 "254"
                             ],
                             "l": "TRE"
                         },
-                        "*Inspect the whole area and identify the most sensitive area."
+                        "*Inspecione toda a área e identifique a área mais sensível."
                     ]
                 },
                 {
@@ -4040,12 +4040,12 @@ DB.set = {
                     "d": "Do lado não dominante",
                     "p": [
                         {
-                            "t": "tríade adaptada",
+                            "t": "Tríade adaptada",
                             "p": [
                                 "001",
                                 "222",
                                 "254",
-                                "[]Sensitive area*"
+                                "[]zona sensível*"
                             ]
                         }
                     ],
@@ -4058,7 +4058,7 @@ DB.set = {
                 "dp": {
                     "p": [
                         {
-                            "t": "linha ômega",
+                            "t": "Linha ômega",
                             "p": [
                                 "230",
                                 "104",
@@ -4081,7 +4081,7 @@ DB.set = {
                 "np": {
                     "p": [
                         {
-                            "t": "relaxamento neurovegetativo",
+                            "t": "Relaxamento neurovegetativo",
                             "p": [
                                 "001",
                                 "222",
@@ -4172,7 +4172,7 @@ DB.set = {
                     "d": "Do lado não dominante",
                     "p": [
                         {
-                            "t": "tríade adaptada",
+                            "t": "Tríade adaptada",
                             "p": [
                                 "001",
                                 "222",
@@ -4217,7 +4217,7 @@ DB.set = {
             },
             "s": [
                 {
-                    "t": "componente depressivo",
+                    "t": "Componente depressivo",
                     "d": "Do lado não dominante",
                     "p": [
                         "173",
@@ -4228,7 +4228,7 @@ DB.set = {
                     "t": "Diversos",
                     "p": [
                         {
-                            "t": "tríade de relaxamento",
+                            "t": "Tríade de relaxamento",
                             "p": [
                                 "001",
                                 "222",
@@ -4237,7 +4237,7 @@ DB.set = {
                             "l": "TRE"
                         },
                         {
-                            "t": "linha ômega",
+                            "t": "Linha ômega",
                             "p": [
                                 "230",
                                 "104",
@@ -4287,7 +4287,7 @@ DB.set = {
                     "d": "Do lado não dominante",
                     "p": [
                         {
-                            "t": "tríade de relaxamento",
+                            "t": "Tríade de relaxamento",
                             "p": [
                                 "001",
                                 "222",
@@ -4322,7 +4322,7 @@ DB.set = {
                         "039",
                         "030",
                         "121",
-                        "In a study on stress, Marco Romoli noticed that the points that stand out most on the ear, and therefore are sensitive to detection, are San Jiao and the Liver point, the latter located only on the right ear."
+                        "Em um estudo sobre estresse, Marco Romoli notou que os pontos que mais se destacam na orelha e, portanto, são sensíveis à detecção são San Jiao e o ponto Fígado, este último localizado apenas na orelha direita."
                     ]
                 },
                 "np": {
@@ -4340,7 +4340,7 @@ DB.set = {
             },
             "s": [
                 {
-                    "t": "componente depressivo",
+                    "t": "Componente depressivo",
                     "d": "Do lado dominante",
                     "p": [
                         "111",
@@ -4352,7 +4352,7 @@ DB.set = {
                     "d": "Do lado não dominante",
                     "p": [
                         {
-                            "t": "linha ômega",
+                            "t": "Linha ômega",
                             "p": [
                                 "230",
                                 "104",
@@ -4361,7 +4361,7 @@ DB.set = {
                             "l": "LIN_OMEG"
                         },
                         {
-                            "t": "tríade de relaxamento",
+                            "t": "Tríade de relaxamento",
                             "p": [
                                 "001",
                                 "222",
@@ -4370,7 +4370,7 @@ DB.set = {
                             "l": "TRE"
                         },
                         {
-                            "t": "relaxamento neurovegetativo",
+                            "t": "Relaxamento neurovegetativo",
                             "p": [
                                 "001",
                                 "222",
@@ -4458,7 +4458,7 @@ DB.set = {
                         "245",
                         "179",
                         "202",
-                        "Temples and forehead are considered appropriate for insomnia according to the China Academy, similarly to the Occiput point for depression."
+                        "Templos e testa são considerados apropriados para insônia de acordo com a Academia da China, semelhante ao ponto de Occiput para depressão."
                     ]
                 },
                 "np": {
@@ -4499,7 +4499,7 @@ DB.set = {
                         },
                         "150",
                         {
-                            "t": "tríade de relaxamento",
+                            "t": "Tríade de relaxamento",
                             "p": [
                                 "001",
                                 "222",
@@ -4508,7 +4508,7 @@ DB.set = {
                             "l": "TRE"
                         },
                         {
-                            "t": "relaxamento neurovegetativo",
+                            "t": "Relaxamento neurovegetativo",
                             "p": [
                                 "001",
                                 "222",
@@ -4551,7 +4551,7 @@ DB.set = {
             },
             "s": [
                 {
-                    "t": "componente depressivo",
+                    "t": "Componente depressivo",
                     "p": [
                         "173",
                         "184",
@@ -4566,11 +4566,11 @@ DB.set = {
                     ]
                 },
                 {
-                    "t": "somatização da ansiedade",
+                    "t": "Somatização da ansiedade",
                     "p": [
                         "004",
                         {
-                            "t": "tríade de relaxamento",
+                            "t": "Tríade de relaxamento",
                             "p": [
                                 "001",
                                 "222",
@@ -4579,7 +4579,7 @@ DB.set = {
                             "l": "TRE"
                         },
                         {
-                            "t": "relaxamento neurovegetativo",
+                            "t": "Relaxamento neurovegetativo",
                             "p": [
                                 "001",
                                 "222",
@@ -4589,7 +4589,7 @@ DB.set = {
                             "l": "RIL_NEUR"
                         },
                         {
-                            "t": "linha ômega",
+                            "t": "Linha ômega",
                             "p": [
                                 "230",
                                 "104",
@@ -4632,7 +4632,7 @@ DB.set = {
             },
             "s": [
                 {
-                    "t": "hipotireoidismo",
+                    "t": "Hipotireoidismo",
                     "p": [
                         "268",
                         "154"
@@ -4643,7 +4643,7 @@ DB.set = {
                     "d": "Do lado não dominante",
                     "p": [
                         {
-                            "t": "linha ômega",
+                            "t": "Linha ômega",
                             "p": [
                                 "230",
                                 "104",
@@ -4652,7 +4652,7 @@ DB.set = {
                             "l": "LIN_OMEG"
                         },
                         {
-                            "t": "tríade de relaxamento",
+                            "t": "Tríade de relaxamento",
                             "p": [
                                 "001",
                                 "222",
@@ -4704,7 +4704,7 @@ DB.set = {
                     "p": [
                         "137",
                         {
-                            "t": "linha ômega",
+                            "t": "Linha ômega",
                             "p": [
                                 "230",
                                 "104",
@@ -4776,7 +4776,7 @@ DB.set = {
                         "013",
                         "030",
                         {
-                            "t": "relaxamento neurovegetativo",
+                            "t": "Relaxamento neurovegetativo",
                             "p": [
                                 "001",
                                 "222",
@@ -4848,7 +4848,7 @@ DB.set = {
                         "030",
                         "013",
                         {
-                            "t": "linha ômega",
+                            "t": "Linha ômega",
                             "p": [
                                 "230",
                                 "104",
@@ -4892,7 +4892,7 @@ DB.set = {
                 "np": {
                     "p": [
                         {
-                            "t": "tríade modificada",
+                            "t": "Tríade modificada",
                             "p": [
                                 "001",
                                 "262",
@@ -5119,7 +5119,7 @@ DB.set = {
                     "t": "Diversos",
                     "p": [
                         {
-                            "t": "relaxamento neurovegetativo",
+                            "t": "Relaxamento neurovegetativo",
                             "p": [
                                 "001",
                                 "222",
@@ -5130,7 +5130,7 @@ DB.set = {
                         },
                         "039",
                         {
-                            "t": "tríade de relaxamento",
+                            "t": "Tríade de relaxamento",
                             "p": [
                                 "001",
                                 "222",
@@ -5139,7 +5139,7 @@ DB.set = {
                             "l": "TRE"
                         },
                         {
-                            "t": "linha ômega",
+                            "t": "Linha ômega",
                             "p": [
                                 "230",
                                 "104",
@@ -5255,7 +5255,7 @@ DB.set = {
                     "t": "Diversos",
                     "p": [
                         {
-                            "t": "linha ômega",
+                            "t": "Linha ômega",
                             "p": [
                                 "230",
                                 "104",
@@ -5264,7 +5264,7 @@ DB.set = {
                             "l": "LIN_OMEG"
                         },
                         {
-                            "t": "tríade modificada",
+                            "t": "Tríade modificada",
                             "p": [
                                 "001",
                                 "159",
@@ -5367,7 +5367,7 @@ DB.set = {
                     "d": "Do lado não dominante",
                     "p": [
                         {
-                            "t": "tríade de relaxamento",
+                            "t": "Tríade de relaxamento",
                             "p": [
                                 "001",
                                 "222",
@@ -5376,7 +5376,7 @@ DB.set = {
                             "l": "TRE"
                         },
                         {
-                            "t": "tríade adaptada",
+                            "t": "Tríade adaptada",
                             "p": [
                                 "001",
                                 "009",
@@ -5385,7 +5385,7 @@ DB.set = {
                             ]
                         },
                         {
-                            "t": "relaxamento neurovegetativo",
+                            "t": "Relaxamento neurovegetativo",
                             "p": [
                                 "001",
                                 "222",
@@ -5505,7 +5505,7 @@ DB.set = {
                         "030",
                         "013",
                         {
-                            "t": "tríade de relaxamento",
+                            "t": "Tríade de relaxamento",
                             "p": [
                                 "001",
                                 "222",
@@ -5514,7 +5514,7 @@ DB.set = {
                             "l": "TRE"
                         },
                         {
-                            "t": "linha ômega",
+                            "t": "Linha ômega",
                             "p": [
                                 "230",
                                 "104",
@@ -5621,7 +5621,7 @@ DB.set = {
                         "192",
                         "013",
                         {
-                            "t": "relaxamento neurovegetativo",
+                            "t": "Relaxamento neurovegetativo",
                             "p": [
                                 "001",
                                 "222",
@@ -5861,7 +5861,7 @@ DB.set = {
                     "t": "Diversos",
                     "p": [
                         {
-                            "t": "relaxamento neurovegetativo",
+                            "t": "Relaxamento neurovegetativo",
                             "p": [
                                 "001",
                                 "222",
@@ -6076,7 +6076,7 @@ DB.set = {
                 "np": {
                     "p": [
                         {
-                            "t": "linha ômega",
+                            "t": "Linha ômega",
                             "p": [
                                 "230",
                                 "104",
@@ -6209,7 +6209,7 @@ DB.set = {
                         "135",
                         "002",
                         {
-                            "t": "linha ômega",
+                            "t": "Linha ômega",
                             "p": [
                                 "230",
                                 "104",
@@ -6270,7 +6270,7 @@ DB.set = {
                         "135",
                         "026",
                         {
-                            "t": "linha ômega",
+                            "t": "Linha ômega",
                             "p": [
                                 "230",
                                 "104",
@@ -6331,7 +6331,7 @@ DB.set = {
                         "148",
                         "147",
                         {
-                            "t": "linha ômega",
+                            "t": "Linha ômega",
                             "p": [
                                 "230",
                                 "104",
@@ -6385,7 +6385,7 @@ DB.set = {
                         "199",
                         "013",
                         {
-                            "t": "tríade de relaxamento",
+                            "t": "Tríade de relaxamento",
                             "p": [
                                 "001",
                                 "222",
@@ -6399,7 +6399,7 @@ DB.set = {
                     "t": "Diversos",
                     "p": [
                         {
-                            "t": "tríade modificada",
+                            "t": "Tríade modificada",
                             "p": [
                                 "001",
                                 "056",
@@ -6450,7 +6450,7 @@ DB.set = {
                     "d": "Do lado não dominante",
                     "p": [
                         {
-                            "t": "linha ômega",
+                            "t": "Linha ômega",
                             "p": [
                                 "230",
                                 "104",
@@ -6579,7 +6579,7 @@ DB.set = {
                     "t": "Diversos",
                     "p": [
                         {
-                            "t": "relaxamento neurovegetativo",
+                            "t": "Relaxamento neurovegetativo",
                             "p": [
                                 "001",
                                 "222",
@@ -6600,7 +6600,7 @@ DB.set = {
                     "p": [
                         "030",
                         {
-                            "t": "linha de vertigem",
+                            "t": "Linha de vertigem",
                             "p": [
                                 "000",
                                 "148",
@@ -6643,7 +6643,7 @@ DB.set = {
                         "013",
                         "199",
                         {
-                            "t": "tríade de relaxamento",
+                            "t": "Tríade de relaxamento",
                             "p": [
                                 "001",
                                 "222",
@@ -6720,7 +6720,7 @@ DB.set = {
                         "030",
                         "013",
                         {
-                            "t": "tríade modificada",
+                            "t": "Tríade modificada",
                             "p": [
                                 "001",
                                 "148",
@@ -6784,7 +6784,7 @@ DB.set = {
                     "t": "Diversos",
                     "p": [
                         {
-                            "t": "linha de comissura",
+                            "t": "Linha de comissura",
                             "p": [
                                 "113",
                                 "254",
@@ -6892,7 +6892,7 @@ DB.set = {
                         "199",
                         "013",
                         {
-                            "t": "relaxamento neurovegetativo",
+                            "t": "Relaxamento neurovegetativo",
                             "p": [
                                 "001",
                                 "222",
@@ -7059,7 +7059,7 @@ DB.set = {
                         "030",
                         "199",
                         {
-                            "t": "tríade de relaxamento",
+                            "t": "Tríade de relaxamento",
                             "p": [
                                 "001",
                                 "222",
@@ -7172,7 +7172,7 @@ DB.set = {
                     "d": "Do lado não dominante",
                     "p": [
                         {
-                            "t": "relaxamento neurovegetativo",
+                            "t": "Relaxamento neurovegetativo",
                             "p": [
                                 "001",
                                 "222",
@@ -7182,7 +7182,7 @@ DB.set = {
                             "l": "RIL_NEUR"
                         },
                         {
-                            "t": "tríade de relaxamento",
+                            "t": "Tríade de relaxamento",
                             "p": [
                                 "001",
                                 "222",
@@ -7213,7 +7213,7 @@ DB.set = {
                     "p": [
                         "026",
                         "004",
-                        "[]Somatotopic area in the corresponding auricle related to the affected or most affected zone"
+                        "[]Área somatotópica na aurícula correspondente relacionada à zona afetada ou mais afetada"
                     ]
                 },
                 "np": {
@@ -7235,7 +7235,7 @@ DB.set = {
                     "d": "Do lado não dominante",
                     "p": [
                         {
-                            "t": "linha ômega",
+                            "t": "Linha ômega",
                             "p": [
                                 "230",
                                 "104",
@@ -7250,7 +7250,7 @@ DB.set = {
                     "p": [
                         "118",
                         {
-                            "t": "tríade anti-inflamatória",
+                            "t": "Tríade anti-inflamatória",
                             "p": [
                                 "003",
                                 "165",
@@ -7276,7 +7276,7 @@ DB.set = {
                     "p": [
                         "164",
                         "018",
-                        "[]Somatotopic area in the corresponding auricle related to the affected zone"
+                        "[]Área somatotópica na aurícula correspondente relacionada à zona afetada ou mais afetada"
                     ]
                 },
                 "np": {
@@ -7299,12 +7299,12 @@ DB.set = {
                     "p": [
                         "004",
                         {
-                            "t": "tríade adaptada",
+                            "t": "Tríade adaptada",
                             "p": [
                                 "001",
                                 "222",
                                 "254",
-                                "[]Area representing the affected zone"
+                                "[]Área que representa a zona afetada"
                             ]
                         },
                         "252"
@@ -7316,7 +7316,7 @@ DB.set = {
                         "026",
                         "118",
                         {
-                            "t": "tríade anti-inflamatória",
+                            "t": "Tríade anti-inflamatória",
                             "p": [
                                 "003",
                                 "165",
@@ -7327,7 +7327,7 @@ DB.set = {
                     ]
                 },
                 {
-                    "t": "hipotrofia cutânea",
+                    "t": "Hipotrofia cutânea",
                     "p": [
                         "268"
                     ]
@@ -7370,7 +7370,7 @@ DB.set = {
                     "d": "Do lado não dominante",
                     "p": [
                         {
-                            "t": "tríade de relaxamento",
+                            "t": "Tríade de relaxamento",
                             "p": [
                                 "001",
                                 "222",
@@ -7379,7 +7379,7 @@ DB.set = {
                             "l": "TRE"
                         },
                         {
-                            "t": "relaxamento neurovegetativo",
+                            "t": "Relaxamento neurovegetativo",
                             "p": [
                                 "001",
                                 "222",
@@ -7415,7 +7415,7 @@ DB.set = {
                         "026",
                         "074",
                         "018",
-                        "[]Somatotopic area in the corresponding auricle related to the affected zone"
+                        "[]Área somatotópica na aurícula correspondente relacionada à zona afetada"
                     ]
                 },
                 "np": {
@@ -7433,7 +7433,7 @@ DB.set = {
             },
             "s": [
                 {
-                    "t": "hipotrofia cutânea",
+                    "t": "Hipotrofia cutânea",
                     "p": [
                         "268"
                     ]
@@ -7445,7 +7445,7 @@ DB.set = {
                         "030",
                         "137",
                         {
-                            "t": "tríade modificada",
+                            "t": "Tríade modificada",
                             "p": [
                                 "001",
                                 "018",
@@ -7458,7 +7458,7 @@ DB.set = {
                     "t": "Inflamação",
                     "p": [
                         {
-                            "t": "tríade anti-inflamatória",
+                            "t": "Tríade anti-inflamatória",
                             "p": [
                                 "003",
                                 "165",
@@ -7471,7 +7471,7 @@ DB.set = {
                 {
                     "t": "Artrite psoriática",
                     "p": [
-                        "[]Joint affected by pain"
+                        "[]Articulação afetada pela dor"
                     ]
                 }
             ]
@@ -7513,7 +7513,7 @@ DB.set = {
                     "p": [
                         "137",
                         {
-                            "t": "tríade de relaxamento",
+                            "t": "Tríade de relaxamento",
                             "p": [
                                 "001",
                                 "222",
@@ -7522,17 +7522,17 @@ DB.set = {
                             "l": "TRE"
                         },
                         {
-                            "t": "tríade modificada",
+                            "t": "Tríade modificada",
                             "p": [
                                 "001",
-                                "One of the following 2 points:",
+                                "Um dos seguintes 2 pontos:",
                                 "215",
                                 "185",
                                 "254"
                             ]
                         },
                         {
-                            "t": "linhas ômega",
+                            "t": "Linhas ômega",
                             "p": [
                                 "230",
                                 "104",
@@ -7548,7 +7548,7 @@ DB.set = {
                         "026",
                         "118",
                         {
-                            "t": "tríade anti-inflamatória",
+                            "t": "Tríade anti-inflamatória",
                             "p": [
                                 "003",
                                 "165",
@@ -7604,7 +7604,7 @@ DB.set = {
                     "d": "Do lado não dominante",
                     "p": [
                         {
-                            "t": "tríade de relaxamento",
+                            "t": "Tríade de relaxamento",
                             "p": [
                                 "001",
                                 "222",
@@ -7613,7 +7613,7 @@ DB.set = {
                             "l": "TRE"
                         },
                         {
-                            "t": "relaxamento neurovegetativo",
+                            "t": "Relaxamento neurovegetativo",
                             "p": [
                                 "001",
                                 "222",
@@ -7673,7 +7673,7 @@ DB.set = {
                     "d": "Do lado não dominante",
                     "p": [
                         {
-                            "t": "linhas ômega",
+                            "t": "Linhas ômega",
                             "p": [
                                 "230",
                                 "104",
@@ -7729,7 +7729,7 @@ DB.set = {
                     "d": "Do lado não dominante",
                     "p": [
                         {
-                            "t": "linhas ômega",
+                            "t": "Linhas ômega",
                             "p": [
                                 "230",
                                 "104",
@@ -7839,7 +7839,7 @@ DB.set = {
                     "d": "Do lado não dominante",
                     "p": [
                         {
-                            "t": "linhas ômega",
+                            "t": "Linhas ômega",
                             "p": [
                                 "230",
                                 "104",
@@ -7848,7 +7848,7 @@ DB.set = {
                             "l": "LIN_OMEG"
                         },
                         {
-                            "t": "relaxamento neurovegetativo",
+                            "t": "Relaxamento neurovegetativo",
                             "p": [
                                 "001",
                                 "222",
@@ -8050,7 +8050,7 @@ DB.set = {
             "apparato": 7
         },
         "12": {
-            "NomePatologia": "membro fantasma",
+            "NomePatologia": "Membro fantasma",
             "schedaPatologia": "143",
             "scheda": 36,
             "apparato": 3
@@ -8092,7 +8092,7 @@ DB.set = {
             "apparato": 8
         },
         "29": {
-            "NomePatologia": "bradicardia",
+            "NomePatologia": "Bradicardia",
             "schedaPatologia": "090",
             "scheda": 76,
             "apparato": 7
@@ -8104,13 +8104,13 @@ DB.set = {
             "apparato": 8
         },
         "31": {
-            "NomePatologia": "bruxismo",
+            "NomePatologia": "Bruxismo",
             "schedaPatologia": "149",
             "scheda": 28,
             "apparato": 2
         },
         "32": {
-            "NomePatologia": "bulimia",
+            "NomePatologia": "Bulimia",
             "schedaPatologia": "150",
             "scheda": 47,
             "apparato": 5
@@ -8128,7 +8128,7 @@ DB.set = {
             "apparato": 1
         },
         "35": {
-            "NomePatologia": "palpitações",
+            "NomePatologia": "Palpitações",
             "schedaPatologia": "090",
             "sessoPatologia": "",
             "chiaviPatologia": "",
@@ -8280,7 +8280,7 @@ DB.set = {
             "apparato": 6
         },
         "62": {
-            "NomePatologia": "disartria funcional",
+            "NomePatologia": "Disartria funcional",
             "schedaPatologia": "166",
             "scheda": 82,
             "apparato": 8
@@ -8304,13 +8304,13 @@ DB.set = {
             "apparato": 5
         },
         "66": {
-            "NomePatologia": "dispepsia gástrica",
+            "NomePatologia": "Dispepsia gástrica",
             "schedaPatologia": "025",
             "scheda": 66,
             "apparato": 6
         },
         "67": {
-            "NomePatologia": "distonia facial",
+            "NomePatologia": "Distonia facial",
             "schedaPatologia": "168",
             "scheda": 29,
             "apparato": 2
@@ -8358,13 +8358,13 @@ DB.set = {
             "apparato": 4
         },
         "76": {
-            "NomePatologia": "dor de cotovelo",
+            "NomePatologia": "Dor de cotovelo",
             "schedaPatologia": "174",
             "scheda": 12,
             "apparato": 1
         },
         "77": {
-            "NomePatologia": "dor na articulação temporomandibular",
+            "NomePatologia": "Dor na articulação temporomandibular",
             "schedaPatologia": "175",
             "scheda": 27,
             "apparato": 2
@@ -8382,13 +8382,13 @@ DB.set = {
             "apparato": 1
         },
         "80": {
-            "NomePatologia": "dor coccígea",
+            "NomePatologia": "Dor coccígea",
             "schedaPatologia": "178",
             "scheda": 10,
             "apparato": 1
         },
         "81": {
-            "NomePatologia": "dor no tornozelo",
+            "NomePatologia": "Dor no tornozelo",
             "schedaPatologia": "179",
             "scheda": 16,
             "apparato": 1
@@ -8406,7 +8406,7 @@ DB.set = {
             "apparato": 1
         },
         "84": {
-            "NomePatologia": "dor muscular nas costas",
+            "NomePatologia": "Dor muscular nas costas",
             "schedaPatologia": "181",
             "scheda": 7,
             "apparato": 1
@@ -8436,13 +8436,13 @@ DB.set = {
             "apparato": 1
         },
         "89": {
-            "NomePatologia": "dorsalgia muscular",
+            "NomePatologia": "Dorsalgia muscular",
             "schedaPatologia": "186",
             "scheda": 7,
             "apparato": 1
         },
         "90": {
-            "NomePatologia": "duodenite",
+            "NomePatologia": "Duodenite",
             "schedaPatologia": "187",
             "scheda": 65,
             "apparato": 6
@@ -8454,7 +8454,7 @@ DB.set = {
             "apparato": 9
         },
         "92": {
-            "NomePatologia": "ejaculação precoce",
+            "NomePatologia": "Eejaculação precoce",
             "schedaPatologia": "044",
             "scheda": 59,
             "apparato": 5
@@ -8496,7 +8496,7 @@ DB.set = {
             "apparato": 6
         },
         "100": {
-            "NomePatologia": "endometrioma",
+            "NomePatologia": "Endometrioma",
             "schedaPatologia": "192",
             "scheda": 51,
             "apparato": 5
@@ -8508,7 +8508,7 @@ DB.set = {
             "apparato": 5
         },
         "102": {
-            "NomePatologia": "enfisema pulmonar",
+            "NomePatologia": "Enfisema pulmonar",
             "schedaPatologia": "194",
             "scheda": 87,
             "apparato": 8
@@ -8592,7 +8592,7 @@ DB.set = {
             "apparato": 1
         },
         "116": {
-            "NomePatologia": "inchaço abdominal",
+            "NomePatologia": "Inchaço abdominal",
             "schedaPatologia": "202",
             "scheda": 66,
             "apparato": 6
@@ -8610,7 +8610,7 @@ DB.set = {
             "apparato": 5
         },
         "119": {
-            "NomePatologia": "impotência sexual",
+            "NomePatologia": "Impotência sexual",
             "schedaPatologia": "063",
             "scheda": 58,
             "apparato": 5
@@ -8652,13 +8652,13 @@ DB.set = {
             "apparato": 7
         },
         "127": {
-            "NomePatologia": "hipertireoidismo autoimune",
+            "NomePatologia": "Hipertireoidismo autoimune",
             "schedaPatologia": "208",
             "scheda": 48,
             "apparato": 5
         },
         "128": {
-            "NomePatologia": "hipertricose",
+            "NomePatologia": "Hipertricose",
             "schedaPatologia": "209",
             "scheda": 49,
             "apparato": 5
@@ -8670,7 +8670,7 @@ DB.set = {
             "apparato": 5
         },
         "130": {
-            "NomePatologia": "hipotensão arterial",
+            "NomePatologia": "Hipotensão arterial",
             "schedaPatologia": "069",
             "scheda": 74,
             "apparato": 7
@@ -8694,13 +8694,13 @@ DB.set = {
             "apparato": 7
         },
         "134": {
-            "NomePatologia": "hirsutismo",
+            "NomePatologia": "Hirsutismo",
             "schedaPatologia": "213",
             "scheda": 49,
             "apparato": 5
         },
         "135": {
-            "NomePatologia": "labirintite",
+            "NomePatologia": "Labirintite",
             "schedaPatologia": "214",
             "scheda": 81,
             "apparato": 8
@@ -8730,7 +8730,7 @@ DB.set = {
             "apparato": 1
         },
         "140": {
-            "NomePatologia": "doença de Ménière",
+            "NomePatologia": "Doença de Ménière",
             "schedaPatologia": "218",
             "scheda": 81,
             "apparato": 8
@@ -8748,7 +8748,7 @@ DB.set = {
             "apparato": 5
         },
         "144": {
-            "NomePatologia": "menstruação dolorosa",
+            "NomePatologia": "Denstruação dolorosa",
             "schedaPatologia": "041",
             "scheda": 54,
             "apparato": 5
@@ -8784,13 +8784,13 @@ DB.set = {
             "apparato": 3
         },
         "150": {
-            "NomePatologia": "neuralgia periférica",
+            "NomePatologia": "Neuralgia periférica",
             "schedaPatologia": "227",
             "scheda": 32,
             "apparato": 3
         },
         "151": {
-            "NomePatologia": "neuralgia pós-herpética",
+            "NomePatologia": "Neuralgia pós-herpética",
             "schedaPatologia": "228",
             "scheda": 31,
             "apparato": 3
@@ -8802,7 +8802,7 @@ DB.set = {
             "apparato": 5
         },
         "153": {
-            "NomePatologia": "oligomenorréia",
+            "NomePatologia": "Oligomenorréia",
             "schedaPatologia": "230",
             "scheda": 52,
             "apparato": 5
@@ -8886,7 +8886,7 @@ DB.set = {
             "apparato": 4
         },
         "167": {
-            "NomePatologia": "paresia fria",
+            "NomePatologia": "Paresia fria",
             "schedaPatologia": "242",
             "scheda": 25,
             "apparato": 2
@@ -8898,7 +8898,7 @@ DB.set = {
             "apparato": 2
         },
         "169": {
-            "NomePatologia": "paralisia de Bell",
+            "NomePatologia": "Paralisia de Bell",
             "schedaPatologia": "242",
             "scheda": 25,
             "apparato": 2
@@ -8964,7 +8964,7 @@ DB.set = {
             "apparato": 5
         },
         "181": {
-            "NomePatologia": "poliesclerose",
+            "NomePatologia": "Poliesclerose",
             "schedaPatologia": "269",
             "scheda": 40,
             "apparato": 3
@@ -9036,7 +9036,7 @@ DB.set = {
             "apparato": 3
         },
         "194": {
-            "NomePatologia": "rinite aguda",
+            "NomePatologia": "Rinite aguda",
             "schedaPatologia": "101",
             "scheda": 83,
             "apparato": 8
@@ -9054,13 +9054,13 @@ DB.set = {
             "apparato": 8
         },
         "197": {
-            "NomePatologia": "rinite crônica",
+            "NomePatologia": "Rinite crônica",
             "schedaPatologia": "266",
             "scheda": 84,
             "apparato": 8
         },
         "198": {
-            "NomePatologia": "rinite vasomotora",
+            "NomePatologia": "Rinite vasomotora",
             "schedaPatologia": "267",
             "scheda": 84,
             "apparato": 8
@@ -9084,7 +9084,7 @@ DB.set = {
             "apparato": 1
         },
         "203": {
-            "NomePatologia": "esclerose disseminada",
+            "NomePatologia": "Esclerose disseminada",
             "schedaPatologia": "269",
             "scheda": 40,
             "apparato": 3
@@ -9096,7 +9096,7 @@ DB.set = {
             "apparato": 3
         },
         "205": {
-            "NomePatologia": "síndrome de ansiedade",
+            "NomePatologia": "Síndrome de ansiedade",
             "schedaPatologia": "011",
             "scheda": 42,
             "apparato": 4
@@ -9150,7 +9150,7 @@ DB.set = {
             "apparato": 5
         },
         "215": {
-            "NomePatologia": "síndrome miofascial",
+            "NomePatologia": "Síndrome miofascial",
             "schedaPatologia": "274",
             "scheda": 9,
             "apparato": 1
@@ -9192,7 +9192,7 @@ DB.set = {
             "apparato": 1
         },
         "222": {
-            "NomePatologia": "estado de ansiedade",
+            "NomePatologia": "Estado de ansiedade",
             "schedaPatologia": "011",
             "scheda": 42,
             "apparato": 4
@@ -9204,7 +9204,7 @@ DB.set = {
             "apparato": 6
         },
         "224": {
-            "NomePatologia": "infertilidade de casal",
+            "NomePatologia": "Infertilidade de casal",
             "schedaPatologia": "065",
             "scheda": 57,
             "apparato": 5
@@ -9228,19 +9228,19 @@ DB.set = {
             "apparato": 7
         },
         "228": {
-            "NomePatologia": "tendinite do manguito rotador",
+            "NomePatologia": "Tendinite do manguito rotador",
             "schedaPatologia": "278",
             "scheda": 11,
             "apparato": 1
         },
         "229": {
-            "NomePatologia": "tique facial",
+            "NomePatologia": "Tique facial",
             "schedaPatologia": "279",
             "scheda": 29,
             "apparato": 2
         },
         "231": {
-            "NomePatologia": "hipertireoidismo factício",
+            "NomePatologia": "Hipertireoidismo factício",
             "schedaPatologia": "280",
             "scheda": 48,
             "apparato": 5
@@ -9252,7 +9252,7 @@ DB.set = {
             "apparato": 5
         },
         "233": {
-            "NomePatologia": "tireoidite de Hashimoto",
+            "NomePatologia": "Tireoidite de Hashimoto",
             "schedaPatologia": "123",
             "scheda": 48,
             "apparato": 5
@@ -9270,7 +9270,7 @@ DB.set = {
             "apparato": 8
         },
         "236": {
-            "NomePatologia": "vertigem periférica",
+            "NomePatologia": "Vertigem periférica",
             "schedaPatologia": "282",
             "scheda": 81,
             "apparato": 8
@@ -9668,10 +9668,10 @@ DB.set = {
                 }
             ],
             "ris": {
-                "0": "Poor motivation",
-                "6": "Reasonable motivation",
-                "12": "Good motivation",
-                "16": "High motivation"
+                "0": "Baixa motivação",
+                "6": "Motivação razoável",
+                "12": "Boa motivação",
+                "16": "Alta motivação"
             }
         },
         "dipendenza": {
@@ -9772,10 +9772,10 @@ DB.set = {
                 }
             ],
             "ris": {
-                "0": "Low addiction",
-                "3": "Average addiction",
-                "6": "High addiction",
-                "8": "Very high addiction"
+                "0": "Baixo vício",
+                "3": "Vício médio",
+                "6": "Alta dependência",
+                "8": "Muito alta dependência"
             }
         }
     }
