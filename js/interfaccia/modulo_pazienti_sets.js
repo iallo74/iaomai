@@ -59,9 +59,9 @@ var PAZIENTI_SETS = {
 	
 	// punti
 	modNumPunti: function( frm, n ){ // al cambio di punti o meridiano
-		var mr=document[frm][".mr_"+n];
-		if(typeof(DB.set.meridiani[mr])!='undefined'){
-			var punto=edocument[frm][".pt_"+n];
+		var mr=document[frm]["mr_"+n];
+		if(typeof(DB.set.meridiani[mr.value])!='undefined'){
+			var punto=document[frm]["pt_"+n];
 			var maxL=punto.options.length;
 			for(a=maxL;a>=0;a--){
 				punto.options[a]=null;
@@ -203,7 +203,7 @@ var PAZIENTI_SETS = {
 								'<option value="">' +
 								'</option>';
 						for(let k in DB.set.meridiani){
-							if(k!='EX' || globals.set.cartella=='meridiani_cinesi'){
+							if((k!='EX' && k!='NK') || globals.set.cartella=='meridiani_cinesi'){
 								HTML+='<option value="'+k+'"';
 								if(siglaMeridiano==k){
 									HTML+=' SELECTED';
@@ -676,7 +676,6 @@ var PAZIENTI_SETS = {
 	ricAuriculo: function( frm, n ){ // ricarica tutti i punti
 		SET.overPunto("PT"+PAZIENTI.auriculoProvvisori[n].s,false);
 		let siglaPunto = document[frm]["pt_"+n].value;
-		console.log(siglaPunto)
 		PAZIENTI.auriculoProvvisori[n].s = siglaPunto;
 		PAZIENTI.auriculoProvvisori[n].n = DB.set.punti[siglaPunto].NomePunto;
 		PAZIENTI.auriculoProvvisori[n].t = document[frm]["de_"+n].value;
