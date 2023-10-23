@@ -476,7 +476,7 @@ var PAZIENTI_SETS = {
 			PAZIENTI.ricGroup("formMod",n);
 		}else{
 			var pD = SET.dettagliProvvisori[n].DescrizioneDettaglio.split(".");
-			SET.dettagliProvvisori[n].DescrizioneDettaglio = __(pD[0])+"."+__(pD[1])+"."+__(pD[2])+"."+m;
+			SET.dettagliProvvisori[n].DescrizioneDettaglio = __(pD[0])+"."+m;
 			SET.caricaDettagli();
 		}
 		SCHEDA.formModificato = true;

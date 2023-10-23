@@ -164,7 +164,7 @@ var MODULO_PROCEDURE = { // extend SET
 					}
 				}
 			}
-			PH.galleryProvvisoria=gallery;
+			PH.galleryProvvisoria=toJson(gallery);
 			if(Preferito*1==1)TXT_AggiungiPreferitiDEF=TXT("EliminaPreferiti");
 			else TXT_AggiungiPreferitiDEF=TXT("AggiungiPreferiti");
 			
@@ -211,7 +211,7 @@ var MODULO_PROCEDURE = { // extend SET
 					'</div>';
 			
 			
-			if(Condiviso==1)HTML += '<div class="shared_element">'+TXT("ElementoCondiviso")+'</div>'
+			if(Condiviso==1 && !Q_community)HTML += '<div class="shared_element">'+TXT("ElementoCondiviso")+'</div>'
 					
 			// elenco dei dettagli procedura
 			var presente=false;
@@ -807,6 +807,7 @@ var MODULO_PROCEDURE = { // extend SET
 		var HTML = '<div class="rgProcMod"></div>'; // serve lasciarlo per il drag&drop
 		var presente = false;
 		var nD = -1;
+		var lastP = -1;
 		var txareas = ''; // per il resize su tochable
 		var OrdineDettaglio = -1
 		var puntiProvvisoriProc = [];
@@ -833,7 +834,7 @@ var MODULO_PROCEDURE = { // extend SET
 				DescrizioneDettaglio=DT.DescrizioneDettaglio;
 				nD++;
 				
-				HTML += '<div id="rg'+p+'"' +
+				HTML += '<div id="rg'+nD+'"' +
 						'	  class="rgProcMod' +
 						((TipoDettaglio=='P') ? ' dettPunto': '') +
 						((TipoDettaglio=='N') ? ' dettPunto dettNamikoshi': '') +
@@ -918,7 +919,7 @@ var MODULO_PROCEDURE = { // extend SET
 					if(mezzo)addMezzoTit = ': '+PAZIENTI.mezzi[mezzo];
 					HTML += '	<span id="ico_PZ'+p+'"' +
 							'	      class="mezzoPunto"' +
-							'	      onClick="PAZIENTI.selMezzo('+p+',\'P\',true);">' + // lasciare 'P'
+							'	      onClick="PAZIENTI.selMezzo('+p+',\''+TipoDettaglio+'\',true);">' + // lasciare 'P'
 							'		<img src="img/mezzo_'+mezzo+'.png"' +
 							'	  	     width="20"' +
 							'	  	     height="20"' +
@@ -1089,7 +1090,7 @@ var MODULO_PROCEDURE = { // extend SET
 							' 			id="pt_'+p+'"' +
 							' 			onChange="SET.ritOverPunto(\'dettagliCont\','+p+');this.blur();"><option></option>';
 					
-					for(a=0;a<puntiElenco.length;a++){
+					for(let a=0;a<puntiElenco.length;a++){
 						// verifico le autorizzazioni
 						if(SET.verFreePunti(puntiElenco[a].siglaPunto)){
 							HTML += '	<option value="'+puntiElenco[a].siglaPunto+'"';
@@ -1116,6 +1117,7 @@ var MODULO_PROCEDURE = { // extend SET
 				if(TipoDettaglio=='D')HTML += '</textarea>';
 				HTML +='</div></div>';
 				presente=true;
+				lastP = p;
 			}
 		}
 		if(!presente)HTML += '<div class="noResults" style="height:50px;">'+TXT("NoRes")+'...</div>';
@@ -1125,9 +1127,9 @@ var MODULO_PROCEDURE = { // extend SET
 			if(!globals.set.siglaProc)SET.evidenziaMeridianiMod( meridianiProvvisoriProc );
 		}catch(err){}
 		if(eviUltimo){
-			if(TipoDettaglio=='P' || TipoDettaglio=='N')document.formMod["mr_"+p].focus();
-			else if(TipoDettaglio=='A')document.formMod["pt_"+p].focus();
-			else if(TipoDettaglio!='M')document.formMod["de_"+p].focus();
+			if(TipoDettaglio=='P' || TipoDettaglio=='N')document.formMod["mr_"+lastP].focus();
+			else if(TipoDettaglio=='A')document.formMod["pt_"+lastP].focus();
+			else if(TipoDettaglio!='M')document.formMod["de_"+lastP].focus();
 		}
 	},
 	aggiungiDettaglio: function( t, c='', u=1 ){ // aggiunge un dettaglio vuoto alla proceura

@@ -1037,9 +1037,11 @@ SET = {
 			var pp=elenco[k].split(".");
 			var mat = SET.MAT.pointEvi;
 			if(pp[1]=='D')mat = SET.MAT.pointDolore;
-			scene.getObjectByName("_PT"+pp[0]).material=mat;
-			siglaPunto = elenco[k].split(".")[0];
-			SET.puntiEvidenziati.push(siglaPunto);
+			if(scene.getObjectByName("_PT"+pp[0])){
+				scene.getObjectByName("_PT"+pp[0]).material=mat;
+				siglaPunto = elenco[k].split(".")[0];
+				SET.puntiEvidenziati.push(siglaPunto);
+			}
 		}
 		SET.applicaEvidenziaPunto();
 	},
