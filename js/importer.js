@@ -215,6 +215,9 @@ var IMPORTER = {
 		if(location.host!='' && window.location.href.indexOf("localhost")==-1)onlineVersion=true;
 		if(this.WFINI()<510)smartphone=true;
 		if(!mouseDetect && this.WFINI()<=800 )smartMenu=true;
+		document.addEventListener("deviceready", function(){
+			if(smartMenu)window.screen.orientation.lock('portrait');
+		}, false);
 		if(userAgent.indexOf("macintosh") && touchable && !smartMenu)isTablet = true;
 		if(smartMenu)document.body.classList.add("smart");
 		if(isTablet)document.body.classList.add("tablet");
@@ -332,7 +335,6 @@ var IMPORTER = {
 		document.body.appendChild(dvf);
 		if(document.getElementById("dvf").scrollHeight>50)document.body.classList.add("bug_font");
 		document.body.removeChild(dvf);
-		
 		
 		if(mouseDetect)IMPORTER.files.push('css/scrollbars.css');
 		//if(brw_safari)document.getElementById("btnStampaScheda").style.display = 'none';
