@@ -558,7 +558,7 @@ var MENU = {
 		visLoader("");
 		document.getElementById("login").classList.toggle("visSch");
 		document.getElementById("login").classList.remove("popup_back");
-		document.getElementById("stayConnected").checked = eval(__(localStorage.RimaniConnesso,'false'));
+		document.getElementById("stayConnected").checked = eval(__(localStorage.RimaniConnesso,'true'));
 		LOGIN.swVisPwd(true);
 		LOGIN.attivaX();
 		var USRprovv=DB.login.data.UsernameU;

@@ -12,6 +12,8 @@ var	smartphone = false,
 	smartMenu = false,
 	touchable = false,
 	touchDetect = false,
+	isCordova = window.usingCordova,
+	isElectron = false,
 	android = false,
 	brw_IE = false,
 	brw_OPERA = false,
@@ -185,6 +187,7 @@ var IMPORTER = {
 		brw_safari=window.safari !== undefined;
 		brw_chrome=(navigator.userAgent.indexOf("Chrome") != -1);
 		isMac = navigator.platform.toUpperCase().indexOf('MAC')>=0;
+		isElectron = ver_electron();
 		document.title = "iáomai™ - A new vision on health";
 		document.getElementById("no_info_features").name = 'no_info_features_'+verApp.replace(".","_");
 		document.getElementById("no_info_features").dataset.name = 'no_info_features_'+verApp.replace(".","_");
@@ -212,11 +215,16 @@ var IMPORTER = {
 				setTimeout( function(){ SCHEDA.verPosScheda(); }, 2000 );
 			},false);
 		}
-		if(location.host!='' && window.location.href.indexOf("localhost")==-1)onlineVersion=true;
+		//if(location.host!='' && window.location.href.indexOf("localhost")==-1)onlineVersion=true;
+		if(window.location.href.indexOf("iaomai.app")>-1)onlineVersion=true;
 		if(this.WFINI()<510)smartphone=true;
 		if(!mouseDetect && this.WFINI()<=800 )smartMenu=true;
-		document.addEventListener("deviceready", function(){
-			if(smartMenu)window.screen.orientation.lock('portrait');
+		document.addEventListener('deviceready', function(){
+			if((screen.availWidth<510 || screen.availHeight<510) && isCordova){
+				window.screen.orientation.lock('portrait');
+				smartMenu=true;
+				smartphone=true;
+			}
 		}, false);
 		if(userAgent.indexOf("macintosh") && touchable && !smartMenu)isTablet = true;
 		if(smartMenu)document.body.classList.add("smart");
@@ -533,7 +541,25 @@ function bringBackDefault(event) {
   event.stopPropagation(); 
   (typeof event.cancelBubble === 'function') && 
   event.cancelBubble(); 
-} 
+}
+function ver_electron() {
+    // Renderer process
+    if (typeof window !== 'undefined' && typeof window.process === 'object' && window.process.type === 'renderer') {
+        return true;
+    }
+
+    // Main process
+    if (typeof process !== 'undefined' && typeof process.versions === 'object' && !!process.versions.electron) {
+        return true;
+    }
+
+    // Detect the user agent when the `nodeIntegration` option is set to true
+    if (typeof navigator === 'object' && typeof navigator.userAgent === 'string' && navigator.userAgent.indexOf('Electron') >= 0) {
+        return true;
+    }
+
+    return false;
+}
 
 
 /*window.onerror = (message, source, lineno, colno, error) => {
