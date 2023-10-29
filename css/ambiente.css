@@ -309,7 +309,7 @@ body:not(.bodyModello).bodyStyled2{
     background-size: auto 75px;
     opacity: 0.7;	
 	z-index:1;
-	opacity:0;
+	opacity:1;
 	/*display:none;*/
 }
 #logoSovra:not(.logoConv){
@@ -337,6 +337,28 @@ body.bodyStyled2 #logoSovra:not(.logoConv){
 }
 body:not(.bodyModello) #logoSovra{
 	display:none;
+}
+#logoPartner{
+    position: fixed;
+    z-index: 10;
+    top: 131px;
+    right: 40px;
+    width: 260px;
+    height: 77px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 190px;
+    border-top: 1px solid rgba(125,125,125,0.2);
+}
+body.bodyModello #logoPartner,
+#logoPartner:not(.logoPartner_on){
+    display:none;
+}
+.smart #logoPartner{
+    top: 192px;
+    left: 50%;
+    right: auto !important;
+    margin-left: -130px;
 }
 #logo_inizio{
 	z-index:1000001;

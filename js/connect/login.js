@@ -320,13 +320,18 @@ var LOGIN = {
 			document.getElementById("notLogged").classList.add("visSch");
 		}
 		document.getElementById("nomeUtente").innerHTML=NN;
-		let lg = document.getElementById("logoSovra");
+		let lg = document.getElementById("logoSovra"),
+			lp = document.getElementById("logoPartner");
 		if(__(DB.login.data.logoConv)){
 			lg.classList.add("logoConv");
 			lg.style.backgroundImage = "url(img/logoPartner_iaomai.png), url('"+DB.login.data.logoConv+"')";
+			lp.classList.add("logoPartner_on");
+			lp.style.backgroundImage = "url('"+DB.login.data.logoConv+"')";
 		}else{
 			lg.classList.remove("logoConv");
 			lg.style.backgroundImage = "";
+			lp.classList.remove("logoPartner_on");
+			lp.style.backgroundImage = "";
 		}
 	},
 	attivaX: function(){ // attiva il pulsante X nel login
