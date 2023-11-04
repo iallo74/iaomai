@@ -599,7 +599,7 @@ body:not(.smart) .schedaRitorno #scheda_titolo{
 .smart.bodyModello #scheda.schedaRitorno #scheda_titolo{
 	width: calc(100% - 210px) !important;
 }
-.smart.smart:not(.bodyModello) #scheda.schedaRitorno #scheda_titolo{
+.smart:not(.bodyModello) #scheda.schedaRitorno #scheda_titolo{
 	width: calc(100% - 160px) !important;
 }
 .smart #scheda.visSch #scheda_titolo,
