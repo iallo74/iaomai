@@ -461,7 +461,7 @@ SET = {
 		
 		SET.leggiNote();
 		nasLoader();
-		
+
 		if(postApreSet){
 			if(SCHEDA.livelloApertura!=3 ){
 				
@@ -473,9 +473,11 @@ SET = {
 				}
 				
 			}else{
-				GUIDA.visFumetto("guida_set_mini",false,true);
-				SCHEDA.chiudiElenco();
-				MENU.chiudiMenu();
+				if(!SET.ptSel){
+					GUIDA.visFumetto("guida_set_mini",false,true);
+					SCHEDA.chiudiElenco();
+					MENU.chiudiMenu();
+				}
 			}
 		}
 		postApreSet = false;
@@ -485,6 +487,7 @@ SET = {
 		if(__(localStorage.risTest))SET.risTest = JSON.parse(localStorage.risTest);
 
 		if(smartMenu)overInterfaccia=true;
+		SET.chiudiPunto(false,true); // riapre il punto se è aperto
 		
 		/*
 		Decommentare per salvare in localSorage.POS la posizione del manichino
@@ -840,7 +843,7 @@ SET = {
 		
 		SET.caricaPunto( name, ritorno );
 	},
-	chiudiPunto: function( nonChiudereScheda=false ){
+	chiudiPunto: function( nonChiudereScheda=false, riapri=false ){
 		if(!this.ptSel)return;
 		document.getElementById("scheda").classList.remove("tab_punti");
 		document.getElementById("scheda").classList.remove("schForm");
@@ -935,6 +938,16 @@ SET = {
 		controlsM._ZPR = false;
 		render();
 		SET.overPunto( exPt.name, false );
+		if(riapri){
+			MENU.visModello();
+			setTimeout(function(){
+				SET.swElencoPt(document.getElementById("p_punti"),'punti',true);
+				let nascosta = document.body.classList.contains("nasSch");
+				SET.apriPunto(exPt.name,'');
+				if(nascosta)SCHEDA.nascondiScheda();
+				if(smartMenu)SCHEDA.apriElenco('set',true);
+			},500);
+		}
 	},
 	_applyLineMethod: function(){
 		//

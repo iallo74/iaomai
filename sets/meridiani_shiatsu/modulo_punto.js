@@ -265,7 +265,7 @@ var MODULO_PUNTO = { // extend SET
 				let els = document.getElementById("e_NK").getElementsByTagName("a");
 				totPunti = els.length;
 				for(let e=0;e<totPunti;e++){
-					if(els[e] == SET.btnSel){
+					if(els[e].id == SET.btnSel.id){
 						if(e>0){
 							puntoGiu = els[e-1];
 							let pP = puntoGiu.id.split("_");

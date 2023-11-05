@@ -381,7 +381,6 @@ var MODELLO = {
 		if(globals.modello.cartella == 'orecchio' && MODELLO.tipoPelle){
 			MODELLO.cambiaTipoPelle(''); // metto la pelle chiare se si tratta dell'orecchio
 		}
-		
 		document.getElementById("pulsanti_modello").classList.add('modelloScelto');
 		inizio = false;
 	},

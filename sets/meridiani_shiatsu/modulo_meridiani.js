@@ -5,7 +5,8 @@ var MODULO_MERIDIANI = { // extend SET
 	
 	componiMeridiani: function(){
 		for(let m in DB.set.meridiani){
-			if(m!='NK'){
+			if(m!='NK' && !__(DB.set.meridiani[m].composto)){
+				DB.set.meridiani[m].composto = true;
 				for(let p in DB.set.meridiani[m].punti){
 
 					DB.set.meridiani[m].punti[p].NomePunto = 

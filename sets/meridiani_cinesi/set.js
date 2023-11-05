@@ -253,13 +253,14 @@ SET = {
 				}
 				
 			}else{
-				GUIDA.visFumetto("guida_set_mini",false,true);
+				if(!SET.ptSel)GUIDA.visFumetto("guida_set_mini",false,true);
 				SCHEDA.chiudiElenco();
 				MENU.chiudiMenu();
 			}
 		}
 		postApreSet = false;
 		if(smartMenu)overInterfaccia=true;
+		SET.riapriPunto();
 		
 		/*
 		Decommentare per salvare in localSorage.POS la posizione del manichino
@@ -660,6 +661,17 @@ SET = {
 		manichinoCont.position.z = manichinoCont.position.z - (vector2.z-vector.z);
 		render();
 		SET.spegniMeridiani();
+	},
+	riapriPunto: function(){
+		if(!SET.ptSel)return;
+		MENU.visModello();
+		if(smartMenu)SCHEDA.apriElenco('set',true);
+		let pt = SET.ptSel.name.split(".")[0]+"."+SET.ptSel.name.split(".")[1];
+		let siglaMeridiano = SET.ptSel.name.split(".")[0];
+		SET.swElencoPt(document.getElementById("p"+siglaMeridiano),siglaMeridiano);
+		let nascosta = document.body.classList.contains("nasSch");
+		SET.apriPunto(pt,'','','');
+		if(nascosta)SCHEDA.nascondiScheda();
 	},
 	coloraMeridiano: function( siglaMeridiano, matLine, matPoint, forza=false ){
 		if(siglaMeridiano=='EX' && !matLine && matPoint=='Base' && SET.ptSel)return;

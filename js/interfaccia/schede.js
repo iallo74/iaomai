@@ -381,6 +381,7 @@ var SCHEDA = {
 		document.body.classList.add("nasSch");
 		onWindowResize();
 		startAnimate();
+		cambiaModello(globals.set.modelli[0]);
 	},
 	riapriScheda: function(){
 		if(document.body.classList.contains("nasSch")){

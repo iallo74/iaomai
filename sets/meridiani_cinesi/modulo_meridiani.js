@@ -5,21 +5,24 @@ var MODULO_MERIDIANI = { // extend SET
 	
 	componiMeridiani: function(){
 		for(let m in DB.set.meridiani){
-			for(let p in DB.set.meridiani[m].punti){
+			if(!__(DB.set.meridiani[m].composto)){
+				DB.set.meridiani[m].composto = true;
+				for(let p in DB.set.meridiani[m].punti){
 
-				DB.set.meridiani[m].punti[p].NomePunto = 
-					+p + "." + m + ". " +
-					DB.mtc.meridiani[m].punti[p].pinyin + " (" +
-					DB.set.meridiani[m].punti[p].NomePunto + ")";
-					DB.set.meridiani[m].punti[p].ChiaviPunto += ' '+DB.mtc.meridiani[m].punti[p].pinyin +
-																' '+m+"."+p +
-																' '+m+"-"+ +p +
-																' '+m+"."+ +p +
-																' '+m+"-"+ +p +
-																' '+p+"."+m +
-																' '+p+"-"+m +
-																' '+ +p +"."+m; +
-																' '+ +p +"-"+m;
+					DB.set.meridiani[m].punti[p].NomePunto = 
+						+p + "." + m + ". " +
+						DB.mtc.meridiani[m].punti[p].pinyin + " (" +
+						DB.set.meridiani[m].punti[p].NomePunto + ")";
+						DB.set.meridiani[m].punti[p].ChiaviPunto += ' '+DB.mtc.meridiani[m].punti[p].pinyin +
+																	' '+m+"."+p +
+																	' '+m+"-"+ +p +
+																	' '+m+"."+ +p +
+																	' '+m+"-"+ +p +
+																	' '+p+"."+m +
+																	' '+p+"-"+m +
+																	' '+ +p +"."+m; +
+																	' '+ +p +"-"+m;
+				}
 			}
 		}
 		SET.caricaMeridiani();

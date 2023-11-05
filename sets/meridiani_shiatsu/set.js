@@ -347,13 +347,14 @@ SET = {
 				}
 				
 			}else{
-				GUIDA.visFumetto("guida_set_mini",false,true);
+				if(!SET.ptSel)GUIDA.visFumetto("guida_set_mini",false,true);
 				SCHEDA.chiudiElenco();
 				MENU.chiudiMenu();
 			}
 		}
 		postApreSet = false;
 		if(smartMenu)overInterfaccia=true;
+		SET.riapriPunto();
 		
 		/*
 		Decommentare per salvare in localSorage.POS la posizione del manichino
@@ -609,7 +610,6 @@ SET = {
 		return ret;
 	},
 	apriPunto: function( PT_name, ritorno='', el='', gruppo='', btn=null ){
-		console.log(PT_name)
 		if(localStorage.sistemaMeridiani=='MAS'){
 			var sm = '';
 			if(PT_name.substr(0,2)=='NK')sm = 'NMK';
@@ -916,6 +916,25 @@ SET = {
 		
 		SET.spegniMeridiani();
 	},
+	riapriPunto: function(){
+		if(!SET.ptSel)return;
+		MENU.visModello();
+		if(smartMenu)SCHEDA.apriElenco('set',true);
+		let pt = SET.ptSel.name.split(".")[0]+"."+SET.ptSel.name.split(".")[1];
+		let siglaMeridiano = SET.ptSel.name.split(".")[0];
+		let nascosta = document.body.classList.contains("nasSch");
+		switch (localStorage.sistemaMeridiani){
+			case "":
+				SET.clickMeridiano(siglaMeridiano,document.getElementById("p"+siglaMeridiano));
+				SET.apriPunto(pt,'','','');
+				break;
+			case "NMK":
+				SET.btnSel = document.getElementById(SET.btnSel.id); // risetto perché aggiornata la lista
+				SET.apriPunto(pt,'','',SET.grSel,SET.btnSel);
+				break;
+		}
+		if(nascosta)SCHEDA.nascondiScheda();
+	},
 	coloraMeridiano: function( cod, matLine, matPoint, forza=false ){
 		
 		var pp = SET.splitPoint(cod);
@@ -1001,7 +1020,7 @@ SET = {
 		var SM = siglaMeridiano + localStorage.sistemaMeridianiAdd;
 		if(!g || (g && this.ptSel)){
 			for(let m in MERIDIANI){
-				if(MERIDIANI[m].categoria = localStorage.sistemaMeridiani){
+				if(MERIDIANI[m].categoria == localStorage.sistemaMeridiani){
 					var pass=true;
 					if(g && this.ptSel){
 						if(siglaMeridiano==m)pass=false;

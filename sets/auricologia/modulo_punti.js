@@ -239,8 +239,8 @@ var MODULO_PUNTI = { // extend SET
 		if(!pass && globals.modello.cartella)document.getElementById("p_legenda").click();
 		if(SET.groupSel.id)SET.filtraGruppo( SET.groupSel.type, SET.groupSel.val, SET.groupSel.id, true );
 	},
-	swElencoPt: function( el, m ){ // mostra/nasconde un elenco (punti e aree, legenda, ecc...)
-		if(!document.getElementById("e_"+m).classList.contains("visElPt")){
+	swElencoPt: function( el, m, forza=false ){ // mostra/nasconde un elenco (punti e aree, legenda, ecc...)
+		if(!document.getElementById("e_"+m).classList.contains("visElPt") || forza){
 			document.getElementById("e_"+m).classList.add("visElPt");
 			el.classList.add("frSw");
 			localStorage["auricolo_mn_"+m] = 'true';

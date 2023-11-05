@@ -419,22 +419,28 @@ body:not(.smart) #scheda.schForm:not(.schedaRitorno):not(.minimized):not(.tab_pu
 	width: calc(100% - 179px) !important;
 }
 .smart #scheda_titolo{
-	width: calc(100% - 75px);
+	/* width: calc(100% - 75px); */
+		width: calc(100% - 120px) !important;
     cursor: default !important;
     text-align: center !important;
 	padding-left: 44px !important;
 }
-.smart.bodyModello #scheda_titolo{
+/* .smart.bodyModello #scheda_titolo{
 	width: calc(100% - 120px) !important;
+} */
+
+.smart .tab_punti:not(.schedaRitorno) #scheda_titolo{
+	padding-left:13px !important;
+	padding-right:85px !important;
 }
-.smart:not(.bodyModello) .tab_punti:not(.schedaRitorno) #scheda_titolo{
+/* .smart:not(.bodyModello) .tab_punti:not(.schedaRitorno) #scheda_titolo{
 	padding-left:25px !important;
 	padding-right:85px !important;
 }
 .smart.bodyModello .tab_punti:not(.schedaRitorno) #scheda_titolo{
 	padding-left:13px !important;
 	padding-right:85px !important;
-}
+} */
 .smart .tab_punti.schedaRitorno #scheda_titolo{
 	padding-left:13px !important;
 	padding-right:13px !important;
@@ -462,11 +468,16 @@ body:not(.smart) #scheda.schForm:not(.schedaRitorno):not(.minimized):not(.tab_pu
 	background-size:auto 60px;
 	margin-right: 4px !important;
 }
-.smart.bodyModello #scheda_modello{
+.smart #scheda_modello{
     background-image: url(../img/ico_occhio.png);
 	background-size:auto 30px;
 	margin-left: 7px;
 }
+/* .smart.bodyModello #scheda_modello{
+    background-image: url(../img/ico_occhio.png);
+	background-size:auto 30px;
+	margin-left: 7px;
+} */
 .smart .visSch #scheda_cont{
 	padding-top: 46px;
 }
@@ -498,9 +509,9 @@ body:not(.smart) #scheda.schForm:not(.schedaRitorno):not(.minimized):not(.tab_pu
     margin-top: -38px !important;
     margin-right: 55px !important;
 }
-.smart:not(.bodyModello) #frSch {
+/* .smart:not(.bodyModello) #frSch {
     margin-right: 12px !important;
-}
+} */
 .frSu, .frGiu{
 	display:block !important;
 }
@@ -596,12 +607,15 @@ body:not(.smart) .schedaRitorno #scheda_titolo{
 	width: calc(100% - 153px) !important;
 	margin-right:26px;
 }
-.smart.bodyModello #scheda.schedaRitorno #scheda_titolo{
+.smart #scheda.schedaRitorno #scheda_titolo{
+	width: calc(100% - 210px) !important;
+}
+/* .smart.bodyModello #scheda.schedaRitorno #scheda_titolo{
 	width: calc(100% - 210px) !important;
 }
 .smart:not(.bodyModello) #scheda.schedaRitorno #scheda_titolo{
 	width: calc(100% - 160px) !important;
-}
+} */
 .smart #scheda.visSch #scheda_titolo,
 .smart #scheda.visSch.schedaRitorno #scheda_ritorno{
 	display: inline-block;
