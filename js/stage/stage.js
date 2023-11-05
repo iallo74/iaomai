@@ -405,7 +405,8 @@ function caricaSet( cartella, el ){
 		localStorage.set = globals.set.cartella;
 		document.getElementById("pulsanti_set").classList.add("setAperto");
 		document.getElementById("btns_set").classList.add("visBtn");
-		
+		document.body.classList.add('bodySet');
+		updateModels()
 	}
 	try{
 		SET.leggiNote();
@@ -451,6 +452,8 @@ function scaricaSet( notInit=false ){
 		document.getElementById("btns_set").classList.remove("visBtn");
 	if(!smartMenu && !daScheda)SCHEDA.chiudiElenco();
 	document.getElementById("p_sets").classList.add("visSch");
+	document.body.classList.remove('bodySet');
+	updateModels();
 	GUIDA.nasFumetto();
 	if(	daScheda ){
 		setTimeout(function(){ SCHEDA.apriElenco('base'); },200 );
@@ -480,6 +483,13 @@ function chiudiSet(){
 			},500);
 		}});
 	}});
+}
+function updateModels(){
+	let html = '';
+	for(m in globals.set.modelli){
+		html += '<span id="st_'+globals.set.modelli[m]+'" onClick="cambiaModello(\''+globals.set.modelli[m]+'\');"></span>';
+	}
+	document.getElementById("modelsCont").innerHTML = html;
 }
 
 function cambiaLingua(nLingua){

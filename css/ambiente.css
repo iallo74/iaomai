@@ -787,3 +787,89 @@ body.bodyModello #logoPartner,
 	box-shadow:0px 0px 3px #000;
 	margin-top:20px;
 }
+
+#st_anatomy{
+	position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 50%;
+    width: 100%;
+    height: 110px;
+    margin-top: -55px;
+    text-align: center;
+	display:none;
+}
+#st_anatomy > div{
+	display:inline-block;
+    text-align: center;
+    background-color: rgba(0,0,0,0.05);
+    border-radius: 8px;
+    padding: 10px 10px 0px 10px;
+    box-shadow: 0 0 3px rgba(0,0,0,0.35);
+}
+.bodyStyled1 #st_anatomy > div{
+    background-color: rgba(255,255,255,0.05);
+}
+.bodyStyled0 #st_anatomy > div{
+	background-color: rgba(193,179,161,0.3);
+}
+.bodySet:not(.bodyModello) #st_anatomy{
+	display:block;
+}
+#st_anatomy > div > div{
+	text-align:center;
+}
+#st_anatomy > div > div:first-child{
+	height:20px;
+	line-height:20px;
+	font-style:italic;
+}
+body:not(.bodyStyled2) #st_anatomy > div > div:first-child{
+	color: rgba(255,255,255,0.7);
+}
+#st_anatomy > div > div:last-child{
+	padding:5px 0;
+}
+#st_anatomy > div span{
+	display:inline-block;
+	vertical-align: middle;
+	cursor:pointer;
+	width:65px;
+	height:65px;
+	margin:2px 0;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: 50px auto;
+	opacity:0.3;
+	border-left: 1px solid rgba(0,0,0,0.2);
+}
+#st_anatomy > div span:first-child{
+	border-left: none !important;
+}
+#st_anatomy > div span:hover{
+	opacity:0.5;
+}
+.bodyStyled2 #st_donna {
+    background-image:url(../img/pG_donnaN.png);
+}
+.bodyStyled2 #st_uomo {
+    background-image:url(../img/pG_uomoN.png);
+}
+.bodyStyled2 #st_piede {
+    background-image:url(../img/pG_piediN.png);
+}
+.bodyStyled2 #st_orecchio {
+    background-image:url(../img/pG_orecchioN.png);
+}
+body:not(.bodyStyled2) #st_donna {
+    background-image:url(../img/pG_donna.png);
+}
+body:not(.bodyStyled2) #st_uomo {
+    background-image:url(../img/pG_uomo.png);
+}
+body:not(.bodyStyled2) #st_piede {
+    background-image:url(../img/pG_piedi.png);
+}
+body:not(.bodyStyled2) #st_orecchio {
+    background-image:url(../img/pG_orecchio.png);
+}
