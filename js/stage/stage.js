@@ -420,6 +420,7 @@ function caricaSet( cartella, el ){
 function scaricaSet( notInit=false ){
 	var daScheda = (SCHEDA.classeAperta == 'scheda_A' ||
 					SCHEDA.classeAperta == 'scheda_B');
+	CUSTOMS._end();
 	try{SET._scaricaSet();}catch(err){};
 	RICERCHE.annullaGlobal();
 	if(	!daScheda )SCHEDA.scaricaScheda();

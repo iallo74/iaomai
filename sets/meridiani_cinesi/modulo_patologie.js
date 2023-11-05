@@ -131,7 +131,9 @@ var MODULO_PATOLOGIE = { // extend SET
 		
 		var titolo = DB.set.patologie[n].NomePatologia;
 		var html = 	"<h1>"+htmlEntities(titolo)+"</h1>" +
-					SET.convPuntiScheda(DB.set.patologie[n].TestoPatologia);
+					// aggiungo contenuto custom
+					CUSTOMS.addContent("patologie_"+n,SET.convPuntiScheda(DB.set.patologie[n].TestoPatologia));
+					//SET.convPuntiScheda(DB.set.patologie[n].TestoPatologia);
 		
 		// sesso
 		if(DB.set.patologie[n].sessoPatologia){

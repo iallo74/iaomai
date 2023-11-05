@@ -233,6 +233,10 @@ var MODULO_PATOLOGIE = { // extend SET
 					  '</div></div>';
 			}
 		}
+
+		// aggiungo contenuto custom
+		ST = CUSTOMS.addContent("patologie_"+n,ST);
+
 		var elencoAltre = '';
 		for(let p in DB.set.patologie){
 			if(p != n && DB.set.patologie[p].scheda == DB.set.patologie[n].scheda){
@@ -274,7 +278,7 @@ var MODULO_PATOLOGIE = { // extend SET
 			aperta: '1',//op_protocollo,
 			html: SET.convPuntiScheda(ST)
 					});
-		
+
 		var titolo = DB.set.patologie[n].NomePatologia;
 		var html = 	"<h1>"+htmlEntities(titolo)+"</h1>" + TestoPatologia;
 		

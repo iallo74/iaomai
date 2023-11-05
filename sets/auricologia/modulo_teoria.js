@@ -142,6 +142,9 @@ var MODULO_TEORIA = { // extend SET
 			addClose = "SET.hideGroupLines();";
 		}
 
+		// aggiungo contenuto custom
+		html_cont = CUSTOMS.addContent("teoria_"+p+"_"+t,html_cont);
+
 		html += html_cont;
 		if(test)html += SET.scriviTest(test);
 		if(flowchart)html += SET.scriviFlowChart();

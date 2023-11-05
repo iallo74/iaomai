@@ -355,6 +355,7 @@ SET = {
 		postApreSet = false;
 		if(smartMenu)overInterfaccia=true;
 		SET.riapriPunto();
+		CUSTOMS._init();
 		
 		/*
 		Decommentare per salvare in localSorage.POS la posizione del manichino

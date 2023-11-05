@@ -87,7 +87,11 @@ var MODULO_TEORIA = { // extend SET
 		}
 
 		html += "<h1>"+htmlEntities(titolo)+"</h1>";
-		var html_cont = SET.convPuntiScheda(DB.set.teoria[p].contenuti[t].TestoTeoria);
+		//var html_cont = SET.convPuntiScheda(DB.set.teoria[p].contenuti[t].TestoTeoria);
+		
+		// aggiungo contenuto custom
+		var html_cont = CUSTOMS.addContent("teoria_"+p+"_"+t,SET.convPuntiScheda(DB.set.teoria[p].contenuti[t].TestoTeoria));
+
 		html += html_cont;
 		
 		var ritorno = false;

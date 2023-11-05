@@ -139,6 +139,8 @@ var MODULO_PUNTO = { // extend SET
 		}
 		if(imgZoom)imgDettaglio='<div style="position:relative;width:'+wCont+'px;"><img src="sets/common/mtc/img/zoom/'+imgZoom+'" border="0" width="'+wCont+'" id="imgDettPunto">'+posPunti+'</div>';
 		
+		// aggiungo contenuto custom
+		HTML = CUSTOMS.addContent("meridiani_"+siglaMeridiano+"_"+nPunto,HTML);
 		
 		let ideogramma = '',
 			ideogrammaOr = DB.mtc.meridiani[siglaMeridiano].punti[nPunto].ideogramma,

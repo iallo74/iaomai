@@ -38,6 +38,7 @@ var LOGIN = {
 				"imgAvatar": "",
 				"logoAzienda": "",
 				"logoConv": "",
+				"customScript": "",
 				"password_pazienti": "",
 				"valuta": "EUR",
 				"sistema_misure": "",
@@ -46,6 +47,7 @@ var LOGIN = {
 		};
 		localPouchDB.setItem(MD5("DB.login"), IMPORTER.COMPR(DB.login));
 		localStorage.logoConv = '';
+		localStorage.customScript = '';
 	},
 	
 	_frv: function(){ // restituisce 'frv' se non si è loggati
@@ -214,7 +216,6 @@ var LOGIN = {
 			if(__(jsn.errConn)){
 				MENU.chiudiMenu();
 				SCHEDA.scaricaScheda();
-				console.log(jsn)
 				MENU.visDispositivi(JSON.stringify(jsn.data));
 				return;
 			}
@@ -301,18 +302,21 @@ var LOGIN = {
 			document.getElementById("btn_logout").title='LOGOUT';
 			document.getElementById("loginGuida").style.display = 'none';
 			document.getElementById("notLogged").classList.remove("visSch");
+			CUSTOMS._init();
 		}else{
 			if(NN){
 				document.getElementById("utDisc").style.display = 'block';
 				document.getElementById("btn_login").classList.add("btn_login_mini");
 				document.getElementById("btn_login").title='LOGIN';
 				document.getElementById("loginGuida").style.display = 'none';
+				CUSTOMS._init();
 			}else{
 				document.getElementById("p_reg").style.display = 'block';
 				document.getElementById("utDisc").style.display = 'none';
 				NN=TXT("NessunUtente");
 				document.getElementById("btn_modut").style.display = 'none';
 				document.getElementById("loginGuida").style.display = 'block';
+				CUSTOMS._end();
 			}
 			document.getElementById("p_cartella").classList.remove("clientAtt");
 			document.getElementById("btn_login").style.display = 'inline-block';
@@ -333,6 +337,7 @@ var LOGIN = {
 			lp.classList.remove("logoPartner_on");
 			lp.style.backgroundImage = "";
 		}
+		//document.getElementById("js_interfaccia_modulo_customs_js").src = __(localStorage.customScript)?eval(atob(localStorage.customScript)):eval('CUSTOMS._init=function(){};CUSTOMS._end=function(){};CUSTOMS._conts={};');
 	},
 	attivaX: function(){ // attiva il pulsante X nel login
 		var USRprovv = DB.login.data.UsernameU;
@@ -369,6 +374,8 @@ var LOGIN = {
 			localPouchDB.setItem(MD5("DB.login"), IMPORTER.COMPR(JSON.parse(txt))).then(function(){ // salvo il DB
 				DB.login=JSON.parse(txt);
 				localStorage.logoConv = DB.login.data.logoConv;
+				if(typeof(DB.login.data.customScript)!='undefined')localStorage.customScript = DB.login.data.customScript;
+				document.getElementById("js_interfaccia_modulo_customs_js").src = __(localStorage.customScript)?eval(atob(localStorage.customScript)):eval('CUSTOMS._init=function(){};CUSTOMS._end=function(){};CUSTOMS._conts={};');
 				MODELLO.filtraAnatomia();
 				try{ SET.filtraSet(); }catch(err){}
 				if(LOGIN.retIni){

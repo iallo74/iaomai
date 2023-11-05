@@ -157,6 +157,8 @@ var MODULO_PUNTO = { // extend SET
 		}
 		if(imgZoom)imgDettaglio='<div style="position:relative;width:370px;"><img src="sets/common/mtc/img/zoom/'+imgZoom+'" border="0" width="370" id="imgDettPunto">'+posPunti+'</div>';
 		
+		// aggiungo contenuto custom
+		HTML = CUSTOMS.addContent("meridiani_"+siglaMeridiano+"_"+nPunto,HTML);
 		
 		
 		// ideogramma
@@ -171,6 +173,7 @@ var MODULO_PUNTO = { // extend SET
 			HTML = 	'<div class="ideogrammaPuntoChar">'+ideogramma+'</div><img src="img/speach2W.png" onClick="SET.speachName(\''+siglaMeridiano+nPunto+'\');" class="speach_icon noPrint">'+HTML;
 		}
 		
+
 		HTML = '<div id="titPoint">'+HTML_tit+'</div><div class="translatable">'+HTML+'</div>';
 		
 		if(siglaMeridiano!='NK')HTML += imgDettaglio;
@@ -236,6 +239,7 @@ var MODULO_PUNTO = { // extend SET
 								btnAdd,
 								globals.set.cartella+'_meridiani_'+siglaMeridiano+"_"+nPunto,
 								finalFunct );
+								
 		SET.convSigleScheda();
 		SET.settaOverPunto();
 		SET.ptSel = ptSel;

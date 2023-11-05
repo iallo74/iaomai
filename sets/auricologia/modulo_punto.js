@@ -118,7 +118,11 @@ var MODULO_PUNTO = { // extend SET
 		}
 		if(HTML_simboli)HTML += '<div>'+HTML_simboli+'</div>';
 		
-		HTML += SET.convPuntiScheda(DB.set.punti[siglaPunto].AzioniPunto,true);
+		
+		// aggiungo contenuto custom
+		HTML += CUSTOMS.addContent("punti_"+siglaPunto,SET.convPuntiScheda(DB.set.punti[siglaPunto].AzioniPunto,true));
+		
+		//HTML += SET.convPuntiScheda(DB.set.punti[siglaPunto].AzioniPunto,true);
 		
 		
 		
@@ -166,6 +170,8 @@ var MODULO_PUNTO = { // extend SET
 			HTML += '</div>';
 		}
 		
+
+
 		HTML = '<div class="translatable">'+HTML+'</div>';
 		
 		

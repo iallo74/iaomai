@@ -146,6 +146,7 @@ var IMPORTER = {
         'js/interfaccia/modulo_community.js',
         'js/interfaccia/modulo_dispositivi.js',
 		'js/interfaccia/modulo_purchases.js',
+		'js/interfaccia/modulo_customs.js',
 		'js/utils/agenda.js',
         
 		'modelli/modello.js',

@@ -488,6 +488,7 @@ SET = {
 
 		if(smartMenu)overInterfaccia=true;
 		SET.chiudiPunto(false,true); // riapre il punto se è aperto
+		CUSTOMS._init();
 		
 		/*
 		Decommentare per salvare in localSorage.POS la posizione del manichino
