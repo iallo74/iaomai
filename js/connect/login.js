@@ -114,7 +114,8 @@ var LOGIN = {
 	},
 	recuperaPwd: function(){ // apre il link di recuper password (INSERIRE NELL'APP)
 		var url=CONN.linkReqPwd+'?l='+globals.siglaLingua.toLowerCase()+"&app="+tipoApp;
-		if(window.cordova && window.cordova.platformId !== 'windows')window.open(url,'_system');
+		//if(window.cordova && window.cordova.platformId !== 'windows')window.open(url,'_system');
+		if(isCordova)window.open(url,'_system');
 		else window.open(url,'_blank');
 	},
 	swVisPwd: function( forza=false ){

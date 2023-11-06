@@ -65,7 +65,8 @@ var CONN = {
 		}else return true;
 	},
 	openUrl: function( url ){ // apre un URL nel browser i sistema
-		if(window.cordova && window.cordova.platformId !== 'windows')window.open(url,'_system');
+		//if(window.cordova && window.cordova.platformId !== 'windows')window.open(url,'_system');
+		if(isCordova)window.open(url,'_system');
 		else window.open(url,'_blank');
 	}
 };

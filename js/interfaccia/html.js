@@ -17,7 +17,8 @@ var H = {
 		}
 		return HTML;
 	},
-	target: (window.cordova && window.cordova.platformId !== 'windows') ? '_system': '_blank',
+	//target: (window.cordova && window.cordova.platformId !== 'windows') ? '_system': '_blank',
+	target: (isCordova) ? '_system': '_blank',
 	chr10: String.fromCharCode(10),
 	chr13: String.fromCharCode(13),
 	tab: String.fromCharCode(9),

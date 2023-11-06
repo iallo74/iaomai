@@ -175,7 +175,8 @@ var IMPORTER = {
 	},
 	init: function(){
 		document.getElementById("partner_inizio").style.backgroundImage = "url("+localStorage.logoConv+")";
-		if(window.cordova)this.produzione = true;
+		//if(window.cordova)this.produzione = true;
+		if(isCordova)this.produzione = true;
 		var UA=navigator.userAgent;
 		if(UA.toLowerCase().indexOf("ipad")>-1)iPad=1;
 		if(UA.toLowerCase().indexOf("iphone")>-1)iPhone=1;
@@ -246,11 +247,13 @@ var IMPORTER = {
 		// BACK BUTTON Android in app
 		document.addEventListener('backbutton', function (e) {
 			//uscitaESC();
-			if (window.cordova && window.cordova.platformId !== 'windows'){
+			//if (window.cordova && window.cordova.platformId !== 'windows'){
+			if (isCordova){
 				MENU.backButton();
 				return;
 			}
-			if (window.location.href) {
+			//if (window.location.href) {
+			if(onlineVersion){
 				//window.history.back();
 			}else{
 				throw new Error('Exit'); // This will suspend the app
