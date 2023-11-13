@@ -686,7 +686,8 @@ body:not(.smart) #labelModello{
     height: 20px;
     line-height: 17px;
     float: right;
-    margin-left: -53px;
+    /* margin-left: -53px; */
+    margin-left: 0x;
     text-align: center;
     font-weight: bold;
     color: #FFF;

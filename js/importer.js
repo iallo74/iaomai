@@ -30,6 +30,7 @@ var	smartphone = false,
 	isTablet = false,
 	globals = {},
 	verApp = '1.4',
+	dateEndFeatures = new Date("2023-12-01").getTime(),
 	
 	// IMPOSTAZIONI DI APP
 	tipoApp = '', // per la demo
@@ -174,6 +175,7 @@ var IMPORTER = {
 		}
 	},
 	init: function(){
+		if(typeof(localStorage.RimaniConnesso)=='undefined')localStorage.RimaniConnesso='true';
 		document.getElementById("partner_inizio").style.backgroundImage = "url("+localStorage.logoConv+")";
 		//if(window.cordova)this.produzione = true;
 		if(isCordova)this.produzione = true;

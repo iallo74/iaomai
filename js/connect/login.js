@@ -1075,7 +1075,7 @@ var LOGIN = {
 								"Cancellato": DB.procedure.data[k].Cancellato*1 };
 
 					var aggiungere=false;
-					if((DB.procedure.data[k].DataModifica*1>DB.procedure.lastSync*1 || dwnl || bkp) && !__(DB.appuntamenti.data[k].frv)){
+					if((DB.procedure.data[k].DataModifica*1>DB.procedure.lastSync*1 || dwnl || bkp) && !__(DB.procedure.data[k].frv)){
 						aggiungere=true;
 					}
 					if(aggiungere){
@@ -2363,6 +2363,7 @@ var LOGIN = {
 	
 	// funzioni generiche
 	componi: function( backup, data ){ // compone l'html per il backup visivo
+		let addShiatsu = globals.set.cartella=='meridiani_shiatsu'?'Shiatsu':'';
 		LOGIN.addHTML('<style type="text/css">*{font-family:Verdana, Geneva, sans-serif;font-size:12px;line-height:20px;}.rientro{padding-left:20px;}.tits{font-size:14px;}h1, h1 *{font-size:24px;}h2, h2 *{font-size:20px;}h3, h3 *{font-size:16px;}i{color:#999;}</style>')
 		LOGIN.addHTML(TXT("Backup")+": <b>"+DB.login.data.Nominativo+"</b><br>");
 		LOGIN.addHTML("<i>"+TXT("DataCreazione")+":</i> <b>"+getFullDataTS(data)+" ore "+getOraTS(data)+"</b><hr>");
@@ -2543,7 +2544,7 @@ var LOGIN = {
 							
 							let titoletto = TXT("ModificaTrattamento")+" "+((isCiclo)?(t*1):(t*1)+1);
 							if(trattamenti[t].TipoTrattamento=='A'){
-								titoletto = TXT("Anamnesi");
+								titoletto = TXT("Anamnesi"+addShiatsu);
 								isCiclo = true;
 							}
 
@@ -2556,9 +2557,9 @@ var LOGIN = {
 								//console.log(TT)
 								if(TT){
 									TT=JSON.parse(TT);
-									if(TT.AnamnesiMotivo)LOGIN.addHTML("<i>"+TXT("AnamnesiMotivo")+":</i> "+TT.AnamnesiMotivo+"<br>");
-									if(TT.AnamnesiDiagnosiOccidentale)LOGIN.addHTML("<i>"+TXT("AnamnesiDiagnosiOccidentale")+":</i> "+TT.AnamnesiDiagnosiOccidentale+"<br>");
-									if(TT.AnamnesiDiagnosiMTC)LOGIN.addHTML("<i>"+TXT("AnamnesiDiagnosiMTC")+":</i> "+TT.AnamnesiDiagnosiMTC+"<br>");
+									if(TT.AnamnesiMotivo)LOGIN.addHTML("<i>"+TXT("AnamnesiMotivo"+addShiatsu)+":</i> "+TT.AnamnesiMotivo+"<br>");
+									if(TT.AnamnesiDiagnosiOccidentale)LOGIN.addHTML("<i>"+TXT("AnamnesiDiagnosiOccidentale"+addShiatsu)+":</i> "+TT.AnamnesiDiagnosiOccidentale+"<br>");
+									if(TT.AnamnesiDiagnosiMTC)LOGIN.addHTML("<i>"+TXT("AnamnesiDiagnosiMTC"+addShiatsu)+":</i> "+TT.AnamnesiDiagnosiMTC+"<br>");
 								}
 							}else{
 								if(TT)LOGIN.addHTML("<i>"+TXT("Descrizione")+":</i> "+TT.replace(/\n/gi,"<br>")+"<br>");

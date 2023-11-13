@@ -1568,6 +1568,10 @@ body:not(.smart) #rgApplicaFiltri{
 	vertical-align:top;
     height: 42px;
     line-height: 42px !important;
+	overflow: hidden;
+    text-overflow: ellipsis;
+    width: calc(100% - 15px);
+    white-space: nowrap;
 }
 .smart #label_ciclo{
     border-bottom: 1px solid rgba(0,0,0,0.3);

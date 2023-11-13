@@ -755,10 +755,12 @@ body:not(.bodyStyled2) #scheda_testo2{
 #scheda.scheda_teoria li{
 	margin: 4px 0px !important;
 }
-#scheda.scheda_ideogramma #scheda_testo{
+#scheda.scheda_ideogramma #scheda_testo,
+#scheda.scheda_ideogramma #scheda_testo2{
     padding-right: 69px;
 }
-.smart #scheda.scheda_ideogramma #scheda_testo{
+.smart #scheda.scheda_ideogramma #scheda_testo,
+.smart #scheda.scheda_ideogramma #scheda_testo2{
     padding-right: 59px;
 }
 #scheda.scheda_ideogramma #scheda_testo::-webkit-scrollbar {

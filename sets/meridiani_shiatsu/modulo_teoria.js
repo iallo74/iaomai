@@ -97,7 +97,7 @@ var MODULO_TEORIA = { // extend SET
 		var ritorno = false;
 		if(	document.getElementById("scheda").querySelector(".formBtn") &&
 			document.getElementById("scheda").classList.contains("visSch") &&
-			SCHEDA.verificaSchedaRet() )ritorno = "document.getElementById('scheda').classList.remove('scheda_teoria')";
+			SCHEDA.verificaSchedaRet() )ritorno = "document.getElementById('scheda').classList.remove('scheda_teoria');document.getElementById('scheda').classList.remove('scheda_ideogramma');";
 		
 		var btnAdd = 	'';
 							

@@ -1,7 +1,9 @@
 @charset "utf-8";
 /* CSS Document */
 
-
+#imgDettPunto{
+    max-width: calc(100%);
+}
 #patologiePunti,
 #patologieTests{
 	margin-top:13px;

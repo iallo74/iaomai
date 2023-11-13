@@ -432,7 +432,8 @@ var MENU = {
 		DISPOSITIVI.carica(jsn);
 	},
 	visFeatures: function( forza=false ){
-		var maxDate = new Date("2023-09-01").getTime();
+		console.log(dateEndFeatures)
+		var maxDate = dateEndFeatures;
 		var now = new Date().getTime();
 		if(	(!__(localStorage.getItem("no_info_features_"+verApp.replace(".","_")),'') &&
 			!__(MENU["no_info_features_"+verApp.replace(".","_")],false) &&

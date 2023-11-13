@@ -318,7 +318,7 @@ DB.set = {
                     ]
                 }
             ],
-            "noList": true,
+           /*  "noList": true, */
             "meridiani": true
         },
         {
@@ -426,7 +426,7 @@ DB.set = {
                     ]
                 }
             ],
-            "noList": true,
+            /* "noList": true, */
             "meridiani": true
         },
         {
@@ -506,7 +506,7 @@ DB.set = {
                     ]
                 }
             ],
-            "noList": true,
+            /* "noList": true, */
             "meridiani": true
         },
         {
@@ -626,7 +626,7 @@ DB.set = {
                     ]
                 }
             ],
-            "noList": true,
+            /* "noList": true, */
             "meridiani": true
         },
         {

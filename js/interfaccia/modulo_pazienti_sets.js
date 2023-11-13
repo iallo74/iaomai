@@ -476,7 +476,7 @@ var PAZIENTI_SETS = {
 			PAZIENTI.ricGroup("formMod",n);
 		}else{
 			var pD = SET.dettagliProvvisori[n].DescrizioneDettaglio.split(".");
-			SET.dettagliProvvisori[n].DescrizioneDettaglio = __(pD[0])+"."+m;
+			SET.dettagliProvvisori[n].DescrizioneDettaglio = __(pD[0])+"."+__(pD[1])+".."+m;
 			SET.caricaDettagli();
 		}
 		SCHEDA.formModificato = true;
@@ -1312,9 +1312,8 @@ var PAZIENTI_SETS = {
 					EL2.parent = EL;
 					// scansiono il testo
 					var txtTeo=DB.set.teoria[t].contenuti[i].TestoTeoria;
-					
 					if(PAZIENTI.tipoGruppo=='P' ||
-					   PAZIENTI.tipoGruppo=='N')re = /\[\.[0-9]{1,2}\.[A-Z]{2}\.\]/ig;
+					   PAZIENTI.tipoGruppo=='N')re = /\[\.[0-9]{1,2}\.[A-Z]{2}[\.*]+\]/ig;
 					if(PAZIENTI.tipoGruppo=='M')re = /\[\.[A-Z]{2}\.\]/ig;
 					if(PAZIENTI.tipoGruppo=='A')re = /\[\.[0-9]{3}\.\]/ig;
 					var result = txtTeo.match(re);
@@ -1476,7 +1475,7 @@ var PAZIENTI_SETS = {
 				EL2.parent = EL;
 				// scansiono il testo
 				var txtPat=DB.set.patologie[i].TestoPatologia;
-				if(PAZIENTI.tipoGruppo=='P' || PAZIENTI.tipoGruppo=='N')re = /\[\.[0-9]{1,2}\.[A-Z]{2}\.\]/ig;
+				if(PAZIENTI.tipoGruppo=='P' || PAZIENTI.tipoGruppo=='N')re = /\[\.[0-9]{1,2}\.[A-Z]{2}[\.*]+\]/ig;
 				if(PAZIENTI.tipoGruppo=='M')re = /\[\.[A-Z]{2}\.\]/ig;
 				if(PAZIENTI.tipoGruppo=='A'){
 					var list = SET.getListPointPat(i);

@@ -2347,6 +2347,14 @@ DB.TXT = {
             por: "Patologias",
             deu: "Pathologien"
         },
+        Malattie: {
+            ita: "Malattie",
+            eng: "Diseases",
+            esp: "Enfermedades",
+            fra: "Maladies",
+            por: "Doenças",
+            deu: "Krankheiten"
+        },
         PatologieSpiegazione: {
             ita: "Inserisci una patologia ...",
             eng: "Enter a pathology ...",
@@ -2694,6 +2702,14 @@ DB.TXT = {
             por: "Anamnese e diagnóstico",
             deu: "Anamnese und Diagnose"
         },
+        Anamnesi_e_DiagnosiShiatsu: {
+            ita: "Descrizione e valutazione energetica",
+            eng: "Description and energy assessment",
+            esp: "Descripción y evaluación energética",
+            fra: "Description et évaluation énergétique",
+            por: "Descrição e avaliação energética",
+            deu: "Beschreibung und Energiebewertung"
+        },
         AggiungiTrattamento: {
             ita: "Aggiungi un trattamento",
             eng: "Add a treatment",
@@ -2816,6 +2832,14 @@ DB.TXT = {
             por: "Anamnese...",
             deu: "Anamnese..."
         },
+        AnamnesiMotivoShiatsu: {
+            ita: "Valutazione energetica...",
+            eng: "Energy assessment...",
+            esp: "Evaluación energética...",
+            fra: "Évaluation énergétique...",
+            por: "Avaliação energética...",
+            deu: "Energiebewertung..."
+        },
         AnamnesiDiagnosiOccidentale: {
             ita: "Diagnosi occidentale",
             eng: "Western diagnosis",
@@ -2827,10 +2851,26 @@ DB.TXT = {
         AnamnesiDiagnosiMTC: {
             ita: "Diagnosi MTC",
             eng: "TCM diagnosis",
-            esp: "Diagnóstico de MTC",
-            fra: "Diagnostic de la MTC",
-            por: "Diagnóstico de MTC",
+            esp: "Diagnóstico MTC",
+            fra: "Diagnostic MTC",
+            por: "Diagnóstico MTC",
             deu: "TCM-Diagnose"
+        },
+        AnamnesiDiagnosiOccidentaleShiatsu: {
+            ita: "Descrizione occidentale",
+            eng: "Western description",
+            esp: "Descripción occidental",
+            fra: "Description occidental",
+            por: "Descrição ocidental",
+            deu: "Westliche Beschreibung"
+        },
+        AnamnesiDiagnosiMTCShiatsu: {
+            ita: "Descrizione MTC",
+            eng: "TCM Description",
+            esp: "Descripción MTC",
+            fra: "Description MTC",
+            por: "Descrição MTC",
+            deu: "TCM-Beschreibung"
         },
         Prescrizione: {
             ita: "Prescrizione",
@@ -2839,6 +2879,14 @@ DB.TXT = {
             fra: "Ordonnance",
             por: "Prescrição",
             deu: "Verschreibung"
+        },
+        PrescrizioneShiatsu: {
+            ita: "Consigli al ricevente",
+            eng: "Recipient's Advice",
+            esp: "Consejos para el destinatario",
+            fra: "Conseils au destinataire",
+            por: "Conselhos ao destinatário",
+            deu: "Ratschläge an den Empfänger"
         },
 
         // punti e valutazione
@@ -3131,6 +3179,14 @@ DB.TXT = {
             fra: "Diagnostic",
             por: "Diagnóstico",
             deu: "Diagnose"
+        },
+        DiagnosiShiatsu: {
+            ita: "Descrizione del disequilibrio",
+            eng: "Description of the imbalance",
+            esp: "Descripción del desequilibrio",
+            fra: "Description du déséquilibre",
+            por: "Descrição do desequilíbrio",
+            deu: "Beschreibung des Ungleichgewichts"
         },
         Sintomi: {
             ita: "Sintomi",
@@ -3471,6 +3527,14 @@ DB.TXT = {
             fra: "Dossier d'anamnèse",
             por: "Ficha de anamnese",
             deu: "Anamnese-Akte"
+        },
+        SchedaAnamnesiShiatsu: {
+            ita: "Scheda di valutazione",
+            eng: "Assessment form",
+            esp: "Formulario de evaluación",
+            fra: "Formulaire d'évaluation",
+            por: "Formulário de avaliação",
+            deu: "Bewertungsformular"
         },
         AggiungiCiclo: {
             ita: "Aggiungi una cartella",

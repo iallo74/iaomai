@@ -1066,11 +1066,11 @@ var MODULO_PROCEDURE = { // extend SET
 						
 					for(let k in DB.set.meridiani){
 						// verifico le autorizzazioni
-						if(SET.verFreeMeridiani(k)){
+						if(SET.verFreeMeridiani(k) && k!='NK'){
 							if(k!='EX'){
 								HTML += 
 								'		<option value="'+k+'"';
-								if(DescrizioneDettaglio==k){
+								if(DescrizioneDettaglio.split(".")[0]==k){
 									HTML += ' SELECTED';
 									totPunti=Object.keys(DB.set.meridiani[k].punti).length;
 								}

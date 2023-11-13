@@ -250,7 +250,7 @@ var PAZIENTI_TRATTAMENTI = {
 										  ' onMouseOut="PAZIENTI.desPallStat('+DataAn+');"';
 					HTML += ' 	   onclick="PAZIENTI.car_trattamento(\''+elAn+'\',this,\''+NC+'\',true);">'; // anamnesi
 					if(DataModAn>DB.pazienti.lastSync)HTML += H.imgSyncro();
-					HTML += '	<span>'+htmlEntities(TXT("SchedaAnamnesi"))+'</span>' +
+					HTML += '	<span>'+htmlEntities(TXT("SchedaAnamnesi"+(globals.set.cartella=='meridiani_shiatsu'?'Shiatsu':'')))+'</span>' +
 							'</div>';
 					}
 					HTML += HTMLProvv +
@@ -511,16 +511,17 @@ var PAZIENTI_TRATTAMENTI = {
 								classCampo: 'styled' }) +
 						H.r({	t: "h",
 								name: "TitoloTrattamento",
-								value: TXT("Anamnesi") });
+								value: TXT("Anamnesi"+(globals.set.cartella=='meridiani_shiatsu'?'Shiatsu':'')) });
 				if(nuovoCiclo){
 					HTML +=  	'<div style="text-align:right;"><div id="anamnesi_btn"' +
-								'		   onClick="PAZIENTI.vis_anamnesi();">'+htmlEntities(TXT("Anamnesi_e_Diagnosi"))+'</div></div>' +
+								'		   onClick="PAZIENTI.vis_anamnesi();">'+htmlEntities(TXT("Anamnesi_e_Diagnosi"+(globals.set.cartella=='meridiani_shiatsu'?'Shiatsu':'')))+'</div></div>' +
 								'<div style="display:none;"' +
 								'	  id="anamnesi_cont">'; // nascondo tutto se è un nuovo ciclo
 				}
 				HTML += H.r({	t: "t",	
 								name: "AnamnesiMotivo",	
 								value: AnamnesiMotivo,
+								label: TXT("AnamnesiMotivo"+(globals.set.cartella=='meridiani_shiatsu'?'Shiatsu':'')),
 								noLabel: true,
 								classCampo: "okPlaceHolder" });		
 			}
@@ -611,8 +612,8 @@ var PAZIENTI_TRATTAMENTI = {
 						'	<em class="labelMobile labelTrattamenti"' +
 						'  		onClick="H.swSezione(this);">' +
 						'		<img class="icoLabel"' +
-						'			 src="img/ico_diagnosi.png">' +
-								TXT("Diagnosi") +
+						'			 src="img/ico_diagnosi'+(globals.set.cartella=='meridiani_shiatsu'?'_shiatsu':'')+'.png">' +
+								TXT("Diagnosi"+(globals.set.cartella=='meridiani_shiatsu'?'Shiatsu':'')) +
 						'	</em>' +	
 						'	<div id="contDiagnosi" style="min-height:240px;">'+
 						'		<div class="l"></div>' +
@@ -620,12 +621,14 @@ var PAZIENTI_TRATTAMENTI = {
 						H.r({	t: "t",	
 								name: "AnamnesiDiagnosiOccidentale",	
 								value: AnamnesiDiagnosiOccidentale,
+								label: TXT("AnamnesiDiagnosiOccidentale"+(globals.set.cartella=='meridiani_shiatsu'?'Shiatsu':'')),
 								styleCampo: "margin-bottom:10px;" }) +
 						'		</div>' +
 						'		<div class="schSx">' +
 						H.r({	t: "t",	
 								name: "AnamnesiDiagnosiMTC",	
 								value: AnamnesiDiagnosiMTC,
+								label: TXT("AnamnesiDiagnosiMTC"+(globals.set.cartella=='meridiani_shiatsu'?'Shiatsu':'')),
 								styleCampo: "margin-bottom:10px;" }) +
 						'		</div>' +
 						'		<div class="l"></div>' +
@@ -646,7 +649,7 @@ var PAZIENTI_TRATTAMENTI = {
 				'  		onClick="H.swSezione(this);">' +
 				'		<img class="icoLabel"' +
 				'			 src="img/ico_prescrizione.png">' +
-						TXT("Prescrizione") +
+						TXT("Prescrizione"+(globals.set.cartella=='meridiani_shiatsu'?'Shiatsu':'')) +
 				'	</em>' +	
 				'	<img src="img/ico_stampa.png"' +
 				'		 id="stampa_prescr"' +
@@ -842,7 +845,7 @@ var PAZIENTI_TRATTAMENTI = {
 			HTML+='<div class="l"></div>';
 			
 			if(Q_idTratt>-1 || an){
-				if(TipoTrattamento=='A')titoloDef=TXT("SchedaAnamnesi");
+				if(TipoTrattamento=='A')titoloDef=TXT("SchedaAnamnesi"+(globals.set.cartella=='meridiani_shiatsu'?'Shiatsu':''));
 				else titoloDef=TXT("ModificaTrattamento");
 			}else{
 				if(TipoTrattamento=='A')titoloDef=TXT("CicloTrattamenti");
@@ -1684,9 +1687,9 @@ var PAZIENTI_TRATTAMENTI = {
 						AnamnesiMotivo=TestoTrattamento.AnamnesiMotivo;
 						AnamnesiDiagnosiOccidentale=TestoTrattamento.AnamnesiDiagnosiOccidentale;
 						AnamnesiDiagnosiMTC=TestoTrattamento.AnamnesiDiagnosiMTC;
-						if(AnamnesiMotivo)HTML+='<p><i>'+htmlEntities(TXT("AnamnesiMotivo"))+':</i><br>'+htmlEntities(AnamnesiMotivo).replace(/\n/g, '<br>')+'</p>';
-						if(AnamnesiDiagnosiOccidentale)HTML+='<p><i>'+htmlEntities(TXT("AnamnesiDiagnosiOccidentale"))+':</i><br>'+htmlEntities(AnamnesiDiagnosiOccidentale).replace(/\n/g, '<br>')+'</p>';
-						if(AnamnesiDiagnosiMTC)HTML+='<p><i>'+htmlEntities(TXT("AnamnesiDiagnosiMTC"))+':</i><br>'+htmlEntities(AnamnesiDiagnosiMTC).replace(/\n/g, '<br>')+'</i></p>';
+						if(AnamnesiMotivo)HTML+='<p><i>'+htmlEntities(TXT("AnamnesiMotivo"+(globals.set.cartella=='meridiani_shiatsu'?'Shiatsu':'')))+':</i><br>'+htmlEntities(AnamnesiMotivo).replace(/\n/g, '<br>')+'</p>';
+						if(AnamnesiDiagnosiOccidentale)HTML+='<p><i>'+htmlEntities(TXT("AnamnesiDiagnosiOccidentale"+(globals.set.cartella=='meridiani_shiatsu'?'Shiatsu':'')))+':</i><br>'+htmlEntities(AnamnesiDiagnosiOccidentale).replace(/\n/g, '<br>')+'</p>';
+						if(AnamnesiDiagnosiMTC)HTML+='<p><i>'+htmlEntities(TXT("AnamnesiDiagnosiMTC"+(globals.set.cartella=='meridiani_shiatsu'?'Shiatsu':'')))+':</i><br>'+htmlEntities(AnamnesiDiagnosiMTC).replace(/\n/g, '<br>')+'</i></p>';
 						var TXT_P=TXT("PuntiAnamnesi");
 						var TXT_M=TXT("MeridianiAnamnesi");
 					}

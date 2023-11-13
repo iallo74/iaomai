@@ -700,7 +700,7 @@ var PAZIENTI = {
 					'				   placeholder="'+htmlEntities(TXT("PatologieSpiegazione"))+'"' +
 					'				   onKeyup="PAZIENTI.filtraElemento(\'patologie\',this);"'+H.noAutoGen+'/>' +
 					'			<div class="p_patologia_ann"' +
-					'				 onClick="PAZIENTI.amnnullaElemento(\'patologie\');">' +
+					'				 onClick="PAZIENTI.annullaElemento(\'patologie\');">' +
 									TXT("Annulla") +
 					'			</div>' +
 					'			<div class="p_patologia_add"' +
@@ -712,7 +712,7 @@ var PAZIENTI = {
 					'			<div class="l"></div>' +
 					'		</div>';
 			HTML += H.sezione({
-				label: TXT("Patologie"),
+				label: TXT("Malattie"),
 				nome: 'patologie',
 				img: 'patologie2',
 				html: cont
@@ -1372,7 +1372,8 @@ var PAZIENTI = {
 			SCHEDA.formModificato = false;
 			localPouchDB.setItem(MD5("DB"+LOGIN._frv()+".pazienti"), IMPORTER.COMPR(DB.pazienti)).then(function(){ // salvo il DB
 				LOGIN.sincronizza( 	'startAnimate();' +
-									'nasLoader();' );
+									'nasLoader();' +
+									'PAZIENTI.caricaPazienti();' );
 				PAZIENTI.idCL = -1;
 				PAZIENTI.idPaziente = -1;
 				PAZIENTI.chiudiPaziente(idPaziente);
@@ -1414,18 +1415,18 @@ var PAZIENTI = {
 						'	  data-id="'+PAZIENTI.tagsProvvisori[p].idTag+'">' +
 						'	<span class="tag"' +
 						'		  style="background-color:#'+PAZIENTI.tagsProvvisori[p].colore+';">' +
-								htmlEntities(PAZIENTI.tagsProvvisori[p].NomeTag) +
 						'		<img src="img/ico_modifica_mini.png"' +
 						'			 width="22"' +
 						'			 height="22"' +
 						'			 style="margin-right: -5px;' +
-						'		  		    margin-top: -2px;' +
+						/* '		  		    margin-top: -2px;' + */
 						'		  		    cursor: pointer;"' +
 						'			 align="absmiddle"' +
 						'			 onClick="PAZIENTI.modificaTag(this);"' +
 						'			 data-value="'+htmlEntities(PAZIENTI.tagsProvvisori[p].NomeTag)+'"' +
 						'			 data-colore="'+PAZIENTI.tagsProvvisori[p].colore+'"' +
 						'			 class="occhio">' +
+								htmlEntities(PAZIENTI.tagsProvvisori[p].NomeTag) +
 						'	</span>' +
 						'	<img src="img/ico_cestino.png"' +
 						'		 width="16"' +
@@ -1704,17 +1705,18 @@ var PAZIENTI = {
 				HTML += '<div class="rg'+obj.els+'Mod"' +
 						'	  data-id="'+obj.ELS[p]["id"+obj.el]+'">' +
 						'	<span class="'+obj.el.toLowerCase()+'">' +
-								htmlEntities(obj.ELS[p]["Nome"+obj.el]) +
 						'		<img src="img/ico_modifica_mini.png"' +
 						'			 width="22"' +
 						'			 height="22"' +
 						'			 style="margin-right: -5px;' +
-						'		  		    margin-top: -2px;' +
+						/* '		  		    margin-top: -2px;' + */
+						'		  		    float: right;' +
 						'		  		    cursor: pointer;"' +
 						'			 align="absmiddle"' +
 						'			 onClick="PAZIENTI.modificaElemento(this,\''+tipo+'\');"' +
 						'			 data-value="'+htmlEntities(obj.ELS[p]["Nome"+obj.el])+'"' +
 						'			 class="occhio">' +
+								htmlEntities(obj.ELS[p]["Nome"+obj.el]) +
 						'	</span>' +
 						'	<img src="img/ico_cestino.png"' +
 						'		 width="16"' +
