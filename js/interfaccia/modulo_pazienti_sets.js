@@ -1152,14 +1152,14 @@ var PAZIENTI_SETS = {
 		H.removeTT();
 	},
 	cambiaNZ: function( n, m, isProc=false ){ // cambia il mezzo su un punto
-		var el = document.getElementById("n-ico_PZ"+n);
+		var el = document.getElementById((isProc?'':'n-')+"ico_PZ"+n);
 		el.getElementsByTagName("img")[0].src='img/mezzo_'+m+'.png';
 		if(globals.modello.cartella)SET.overPunto(el.parentElement.parentElement,false);
 		if(!isProc){
 			PAZIENTI.namikoshiProvvisori[n].z = m;
 		}else{
 			var pD = SET.dettagliProvvisori[n].DescrizioneDettaglio.split(".");
-			SET.dettagliProvvisori[n].DescrizioneDettaglio = __(pD[0])+"."+__(m);
+			SET.dettagliProvvisori[n].DescrizioneDettaglio = __(pD[0])+"."+__(pD[1])+"."+__(pD[2])+"."+__(m);
 			SET.caricaDettagli();
 		}
 		SCHEDA.formModificato = true;
