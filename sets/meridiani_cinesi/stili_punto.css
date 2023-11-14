@@ -1,6 +1,12 @@
 @charset "utf-8";
 /* CSS Document */
 
+#cont_imgDettPunto{
+	position:relative;
+}
+.smart #cont_imgDettPunto{
+	max-width: calc(100%);
+}
 #imgDettPunto{
     max-width: calc(100%);
 }

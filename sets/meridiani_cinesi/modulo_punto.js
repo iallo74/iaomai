@@ -137,7 +137,7 @@ var MODULO_PUNTO = { // extend SET
 				posPunti+='<img src="sets/common/mtc/img/zoom/punto.png" width="'+parseInt(43*rp)+'" height="'+parseInt(40*rp)+'" style="position:absolute;left:'+parseInt((pC2[0]-7)*rp-marginLeft)+'px;top:'+parseInt((pC2[1]-7)*rp)+'px;">';
 			}
 		}
-		if(imgZoom)imgDettaglio='<div style="position:relative;width:'+wCont+'px;"><img src="sets/common/mtc/img/zoom/'+imgZoom+'" border="0" width="'+wCont+'" id="imgDettPunto">'+posPunti+'</div>';
+		if(imgZoom)imgDettaglio='<div id="cont_imgDettPunto" style="width:'+wCont+'px;"><img src="sets/common/mtc/img/zoom/'+imgZoom+'" border="0" width="'+wCont+'" id="imgDettPunto">'+posPunti+'</div>';
 		
 		// aggiungo contenuto custom
 		HTML = CUSTOMS.addContent("meridiani_"+siglaMeridiano+"_"+nPunto,HTML);
