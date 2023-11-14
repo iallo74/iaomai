@@ -695,7 +695,7 @@ var archiviDemo = {
 								"e": "D",
 								"z": "ago",
 								"t": "PuntoShu di Rene",
-								"s": "23.BL..ago"
+								"s": "23.BL"
 							},
 							{
 								"n": 32,
@@ -703,7 +703,7 @@ var archiviDemo = {
 								"e": "P",
 								"z": "ago",
 								"t": "",
-								"s": "32.BL..ago"
+								"s": "32.BL"
 							},
 							{
 								"n": 8,
@@ -711,7 +711,7 @@ var archiviDemo = {
 								"e": "D",
 								"z": "ago",
 								"t": "",
-								"s": "8.BL..ago"
+								"s": "8.BL"
 							},
 							{
 								"n": 30,
@@ -719,7 +719,7 @@ var archiviDemo = {
 								"e": "P",
 								"z": "ago",
 								"t": "",
-								"s": "30.BL..ago"
+								"s": "30.BL"
 							},
 							{
 								"n": 4,
@@ -727,7 +727,7 @@ var archiviDemo = {
 								"e": "V",
 								"z": "ago",
 								"t": "Punto BO di Intestino tenue",
-								"s": "4.CV..ago"
+								"s": "4.CV"
 							},
 							{
 								"n": 4,
@@ -735,7 +735,7 @@ var archiviDemo = {
 								"e": "V",
 								"z": "ago",
 								"t": "",
-								"s": "4.SP..ago"
+								"s": "4.SP"
 							},
 							{
 								"n": 31,
@@ -743,7 +743,7 @@ var archiviDemo = {
 								"e": "D",
 								"z": "ago",
 								"t": "",
-								"s": "31.GB..ago"
+								"s": "31.GB"
 							}
 						],
 						"puntiAuricolari": [],
@@ -844,7 +844,7 @@ var archiviDemo = {
 								"e": "",
 								"z": "ago",
 								"t": "",
-								"s": "32.BL..ago"
+								"s": "32.BL"
 							},
 							{
 								"n": 8,
@@ -852,7 +852,7 @@ var archiviDemo = {
 								"e": "",
 								"z": "ago",
 								"t": "",
-								"s": "8.BL..ago"
+								"s": "8.BL"
 							},
 							{
 								"n": 30,
@@ -868,7 +868,7 @@ var archiviDemo = {
 								"e": "",
 								"z": "ago",
 								"t": "Punto BO di Intestino tenue",
-								"s": "4.CV..ago"
+								"s": "4.CV"
 							},
 							{
 								"n": 4,
@@ -876,7 +876,7 @@ var archiviDemo = {
 								"e": "",
 								"z": "ago",
 								"t": "",
-								"s": "4.SP..ago"
+								"s": "4.SP"
 							},
 							{
 								"n": 31,
@@ -884,7 +884,7 @@ var archiviDemo = {
 								"e": "",
 								"z": "ago",
 								"t": "",
-								"s": "31.GB..ago"
+								"s": "31.GB"
 							},
 							{
 								"n": 12,
@@ -892,7 +892,7 @@ var archiviDemo = {
 								"e": "",
 								"z": "moxa",
 								"t": "",
-								"s": "12.BL..moxa"
+								"s": "12.BL"
 							},
 							{
 								"n": 40,
@@ -900,7 +900,7 @@ var archiviDemo = {
 								"e": "",
 								"z": "moxa",
 								"t": "",
-								"s": "40.BL..moxa"
+								"s": "40.BL"
 							},
 							{
 								"n": 60,
@@ -908,7 +908,7 @@ var archiviDemo = {
 								"e": "",
 								"z": "moxa",
 								"t": "",
-								"s": "60.BL..moxa"
+								"s": "60.BL"
 							}
 						],
 						"puntiAuricolari": [],
@@ -1001,7 +1001,7 @@ var archiviDemo = {
 								"e": "",
 								"z": "ago",
 								"t": "",
-								"s": "8.GB..ago"
+								"s": "8.GB"
 							},
 							{
 								"n": 20,
@@ -1009,7 +1009,7 @@ var archiviDemo = {
 								"e": "",
 								"z": "ago",
 								"t": "",
-								"s": "20.GB..ago"
+								"s": "20.GB"
 							},
 							{
 								"n": 22,
@@ -1017,7 +1017,7 @@ var archiviDemo = {
 								"e": "",
 								"z": "ago",
 								"t": "",
-								"s": "22.GV..ago"
+								"s": "22.GV"
 							},
 							{
 								"n": 10,
@@ -1025,7 +1025,7 @@ var archiviDemo = {
 								"e": "",
 								"z": "ago",
 								"t": "",
-								"s": "10.BL..ago"
+								"s": "10.BL"
 							},
 							{
 								"n": 30,
@@ -1033,7 +1033,7 @@ var archiviDemo = {
 								"e": "",
 								"z": "ago",
 								"t": "",
-								"s": "30.BL..ago"
+								"s": "30.BL"
 							},
 							{
 								"n": 23,
@@ -1041,7 +1041,7 @@ var archiviDemo = {
 								"e": "",
 								"z": "moxa",
 								"t": "PuntoShu di Rene",
-								"s": "23.BL..moxa"
+								"s": "23.BL"
 							},
 							{
 								"n": 32,
@@ -1049,7 +1049,7 @@ var archiviDemo = {
 								"e": "",
 								"z": "moxa",
 								"t": "",
-								"s": "32.BL..moxa"
+								"s": "32.BL"
 							},
 							{
 								"n": 4,
@@ -1057,7 +1057,7 @@ var archiviDemo = {
 								"e": "",
 								"z": "moxa",
 								"t": "",
-								"s": "4.SP..moxa"
+								"s": "4.SP"
 							}
 						],
 						"puntiAuricolari": [],
@@ -1140,7 +1140,7 @@ var archiviDemo = {
 								"e": "",
 								"z": "ago",
 								"t": "",
-								"s": "20.GV..ago"
+								"s": "20.GV"
 							},
 							{
 								"n": 7,
@@ -1148,7 +1148,7 @@ var archiviDemo = {
 								"e": "",
 								"z": "ago",
 								"t": "",
-								"s": "7.HT..ago"
+								"s": "7.HT"
 							},
 							{
 								"n": 20,
@@ -1156,7 +1156,7 @@ var archiviDemo = {
 								"e": "",
 								"z": "ago",
 								"t": "PuntoShu di Milza",
-								"s": "20.BL..ago"
+								"s": "20.BL"
 							},
 							{
 								"n": 40,
@@ -1164,7 +1164,7 @@ var archiviDemo = {
 								"e": "",
 								"z": "moxa",
 								"t": "",
-								"s": "40.BL..moxa"
+								"s": "40.BL"
 							},
 							{
 								"n": 60,
@@ -1172,7 +1172,7 @@ var archiviDemo = {
 								"e": "",
 								"z": "moxa",
 								"t": "",
-								"s": "60.BL..moxa"
+								"s": "60.BL"
 							},
 							{
 								"n": 37,
@@ -1180,7 +1180,7 @@ var archiviDemo = {
 								"e": "",
 								"z": "coppetta",
 								"t": "",
-								"s": "37.BL..coppetta"
+								"s": "37.BL"
 							},
 							{
 								"n": 38,
@@ -1188,7 +1188,7 @@ var archiviDemo = {
 								"e": "",
 								"z": "coppetta",
 								"t": "",
-								"s": "38.BL..coppetta"
+								"s": "38.BL"
 							},
 							{
 								"n": 41,
@@ -1196,7 +1196,7 @@ var archiviDemo = {
 								"e": "",
 								"z": "coppetta",
 								"t": "",
-								"s": "41.BL..coppetta"
+								"s": "41.BL"
 							}
 						],
 						"puntiAuricolari": [],
@@ -1284,7 +1284,7 @@ var archiviDemo = {
 								"e": "",
 								"z": "ago",
 								"t": "PuntoShu di Rene",
-								"s": "23.BL..ago"
+								"s": "23.BL"
 							},
 							{
 								"n": 32,
@@ -1292,7 +1292,7 @@ var archiviDemo = {
 								"e": "",
 								"z": "ago",
 								"t": "",
-								"s": "32.BL..ago"
+								"s": "32.BL"
 							},
 							{
 								"n": 30,
@@ -1300,7 +1300,7 @@ var archiviDemo = {
 								"e": "",
 								"z": "ago",
 								"t": "",
-								"s": "30.BL..ago"
+								"s": "30.BL"
 							},
 							{
 								"n": 31,
@@ -1308,7 +1308,7 @@ var archiviDemo = {
 								"e": "",
 								"z": "ago",
 								"t": "",
-								"s": "31.GB..ago"
+								"s": "31.GB"
 							}
 						],
 						"puntiAuricolari": [],
@@ -1392,7 +1392,7 @@ var archiviDemo = {
 								"e": "",
 								"z": "dito",
 								"t": "",
-								"s": "7.HT..dito"
+								"s": "7.HT"
 							},
 							{
 								"n": 6,
@@ -1400,7 +1400,7 @@ var archiviDemo = {
 								"e": "",
 								"z": "dito",
 								"t": "",
-								"s": "6.PC..dito"
+								"s": "6.PC"
 							},
 							{
 								"n": 7,
@@ -1408,7 +1408,7 @@ var archiviDemo = {
 								"e": "",
 								"z": "dito",
 								"t": "",
-								"s": "7.PC..dito"
+								"s": "7.PC"
 							},
 							{
 								"n": 20,
@@ -1432,7 +1432,7 @@ var archiviDemo = {
 								"e": "",
 								"z": "moxa",
 								"t": "",
-								"s": "11.BL..moxa"
+								"s": "11.BL"
 							},
 							{
 								"n": 28,
@@ -1440,7 +1440,7 @@ var archiviDemo = {
 								"e": "",
 								"z": "moxa",
 								"t": "PuntoShu di Vescica",
-								"s": "28.BL..moxa"
+								"s": "28.BL"
 							}
 						],
 						"puntiAuricolari": [],
@@ -1552,7 +1552,7 @@ var archiviDemo = {
 								"e": "P",
 								"z": "dito",
 								"t": "",
-								"s": "7.HT..dito"
+								"s": "7.HT"
 							},
 							{
 								"n": 6,
@@ -1560,7 +1560,7 @@ var archiviDemo = {
 								"e": "D",
 								"z": "dito",
 								"t": "",
-								"s": "6.PC..dito"
+								"s": "6.PC"
 							},
 							{
 								"n": 7,
@@ -1568,7 +1568,7 @@ var archiviDemo = {
 								"e": "D",
 								"z": "dito",
 								"t": "",
-								"s": "7.PC..dito"
+								"s": "7.PC"
 							},
 							{
 								"n": 20,
@@ -1576,7 +1576,7 @@ var archiviDemo = {
 								"e": "V",
 								"z": "moxa",
 								"t": "",
-								"s": "20.GV..moxa"
+								"s": "20.GV"
 							},
 							{
 								"n": 6,
@@ -1584,7 +1584,7 @@ var archiviDemo = {
 								"e": "V",
 								"z": "moxa",
 								"t": "",
-								"s": "6.SP..moxa"
+								"s": "6.SP"
 							}
 						],
 						"puntiAuricolari": [],
@@ -1696,7 +1696,7 @@ var archiviDemo = {
 								"e": "",
 								"z": "dito",
 								"t": "",
-								"s": "11.BL..dito"
+								"s": "11.BL"
 							},
 							{
 								"n": 18,
@@ -1704,7 +1704,7 @@ var archiviDemo = {
 								"e": "",
 								"z": "dito",
 								"t": "PuntoShu di Fegato",
-								"s": "18.BL..dito"
+								"s": "18.BL"
 							},
 							{
 								"n": 19,
@@ -1712,7 +1712,7 @@ var archiviDemo = {
 								"e": "",
 								"z": "dito",
 								"t": "PuntoShu di Cistifellea",
-								"s": "19.BL..dito"
+								"s": "19.BL"
 							},
 							{
 								"n": 28,
@@ -1720,7 +1720,7 @@ var archiviDemo = {
 								"e": "",
 								"z": "dito",
 								"t": "PuntoShu di Vescica",
-								"s": "28.BL..dito"
+								"s": "28.BL"
 							},
 							{
 								"n": 20,
@@ -1848,7 +1848,7 @@ var archiviDemo = {
 								"e": "",
 								"z": "dito",
 								"t": "",
-								"s": "11.BL..dito"
+								"s": "11.BL"
 							},
 							{
 								"n": 18,
@@ -1864,7 +1864,7 @@ var archiviDemo = {
 								"e": "",
 								"z": "dito",
 								"t": "PuntoShu di Cistifellea",
-								"s": "19.BL..dito"
+								"s": "19.BL"
 							},
 							{
 								"n": 28,
@@ -1872,7 +1872,7 @@ var archiviDemo = {
 								"e": "",
 								"z": "dito",
 								"t": "PuntoShu di Vescica",
-								"s": "28.BL..dito"
+								"s": "28.BL"
 							},
 							{
 								"n": 13,
@@ -1880,7 +1880,7 @@ var archiviDemo = {
 								"e": "V",
 								"z": "moxa",
 								"t": "Punto BO di Milza",
-								"s": "13.LR..moxa"
+								"s": "13.LR"
 							}
 						],
 						"puntiAuricolari": [],
@@ -3379,7 +3379,7 @@ var archiviDemo = {
 								"e": "D",
 								"z": "ago",
 								"t": "Kidney Shu Point",
-								"s": "23.BL..ago"
+								"s": "23.BL"
 							},
 							{
 								"n": 32,
@@ -3387,7 +3387,7 @@ var archiviDemo = {
 								"e": "P",
 								"z": "ago",
 								"t": "",
-								"s": "32.BL..ago"
+								"s": "32.BL"
 							},
 							{
 								"n": 8,
@@ -3395,7 +3395,7 @@ var archiviDemo = {
 								"e": "D",
 								"z": "ago",
 								"t": "",
-								"s": "8.BL..ago"
+								"s": "8.BL"
 							},
 							{
 								"n": 30,
@@ -3403,7 +3403,7 @@ var archiviDemo = {
 								"e": "P",
 								"z": "ago",
 								"t": "",
-								"s": "30.BL..ago"
+								"s": "30.BL"
 							},
 							{
 								"n": 4,
@@ -3411,7 +3411,7 @@ var archiviDemo = {
 								"e": "V",
 								"z": "ago",
 								"t": "Small Intestine BO Point",
-								"s": "4.CV..ago"
+								"s": "4.CV"
 							},
 							{
 								"n": 4,
@@ -3419,7 +3419,7 @@ var archiviDemo = {
 								"e": "V",
 								"z": "ago",
 								"t": "",
-								"s": "4.SP..ago"
+								"s": "4.SP"
 							},
 							{
 								"n": 31,
@@ -3427,7 +3427,7 @@ var archiviDemo = {
 								"e": "D",
 								"z": "ago",
 								"t": "",
-								"s": "31.GB..ago"
+								"s": "31.GB"
 							}
 						],
 						"puntiAuricolari": [],
@@ -3528,7 +3528,7 @@ var archiviDemo = {
 								"e": "",
 								"z": "ago",
 								"t": "",
-								"s": "32.BL..ago"
+								"s": "32.BL"
 							},
 							{
 								"n": 8,
@@ -3536,7 +3536,7 @@ var archiviDemo = {
 								"e": "",
 								"z": "ago",
 								"t": "",
-								"s": "8.BL..ago"
+								"s": "8.BL"
 							},
 							{
 								"n": 30,
@@ -3552,7 +3552,7 @@ var archiviDemo = {
 								"e": "",
 								"z": "ago",
 								"t": "Small Intestine BO Point",
-								"s": "4.CV..ago"
+								"s": "4.CV"
 							},
 							{
 								"n": 4,
@@ -3560,7 +3560,7 @@ var archiviDemo = {
 								"e": "",
 								"z": "ago",
 								"t": "",
-								"s": "4.SP..ago"
+								"s": "4.SP"
 							},
 							{
 								"n": 31,
@@ -3568,7 +3568,7 @@ var archiviDemo = {
 								"e": "",
 								"z": "ago",
 								"t": "",
-								"s": "31.GB..ago"
+								"s": "31.GB"
 							},
 							{
 								"n": 12,
@@ -3576,7 +3576,7 @@ var archiviDemo = {
 								"e": "",
 								"z": "moxa",
 								"t": "",
-								"s": "12.BL..moxa"
+								"s": "12.BL"
 							},
 							{
 								"n": 40,
@@ -3584,7 +3584,7 @@ var archiviDemo = {
 								"e": "",
 								"z": "moxa",
 								"t": "",
-								"s": "40.BL..moxa"
+								"s": "40.BL"
 							},
 							{
 								"n": 60,
@@ -3592,7 +3592,7 @@ var archiviDemo = {
 								"e": "",
 								"z": "moxa",
 								"t": "",
-								"s": "60.BL..moxa"
+								"s": "60.BL"
 							}
 						],
 						"puntiAuricolari": [],
@@ -3685,7 +3685,7 @@ var archiviDemo = {
 								"e": "",
 								"z": "ago",
 								"t": "",
-								"s": "8.GB..ago"
+								"s": "8.GB"
 							},
 							{
 								"n": 20,
@@ -3693,7 +3693,7 @@ var archiviDemo = {
 								"e": "",
 								"z": "ago",
 								"t": "",
-								"s": "20.GB..ago"
+								"s": "20.GB"
 							},
 							{
 								"n": 22,
@@ -3701,7 +3701,7 @@ var archiviDemo = {
 								"e": "",
 								"z": "ago",
 								"t": "",
-								"s": "22.GV..ago"
+								"s": "22.GV"
 							},
 							{
 								"n": 10,
@@ -3709,7 +3709,7 @@ var archiviDemo = {
 								"e": "",
 								"z": "ago",
 								"t": "",
-								"s": "10.BL..ago"
+								"s": "10.BL"
 							},
 							{
 								"n": 30,
@@ -3717,7 +3717,7 @@ var archiviDemo = {
 								"e": "",
 								"z": "ago",
 								"t": "",
-								"s": "30.BL..ago"
+								"s": "30.BL"
 							},
 							{
 								"n": 23,
@@ -3725,7 +3725,7 @@ var archiviDemo = {
 								"e": "",
 								"z": "moxa",
 								"t": "PuntoShu di Rene",
-								"s": "23.BL..moxa"
+								"s": "23.BL"
 							},
 							{
 								"n": 32,
@@ -3733,7 +3733,7 @@ var archiviDemo = {
 								"e": "",
 								"z": "moxa",
 								"t": "",
-								"s": "32.BL..moxa"
+								"s": "32.BL"
 							},
 							{
 								"n": 4,
@@ -3741,7 +3741,7 @@ var archiviDemo = {
 								"e": "",
 								"z": "moxa",
 								"t": "",
-								"s": "4.SP..moxa"
+								"s": "4.SP"
 							}
 						],
 						"puntiAuricolari": [],
@@ -3824,7 +3824,7 @@ var archiviDemo = {
 								"e": "",
 								"z": "ago",
 								"t": "",
-								"s": "20.GV..ago"
+								"s": "20.GV"
 							},
 							{
 								"n": 7,
@@ -3832,7 +3832,7 @@ var archiviDemo = {
 								"e": "",
 								"z": "ago",
 								"t": "",
-								"s": "7.HT..ago"
+								"s": "7.HT"
 							},
 							{
 								"n": 20,
@@ -3840,7 +3840,7 @@ var archiviDemo = {
 								"e": "",
 								"z": "ago",
 								"t": "Spleen Shu Point",
-								"s": "20.BL..ago"
+								"s": "20.BL"
 							},
 							{
 								"n": 40,
@@ -3848,7 +3848,7 @@ var archiviDemo = {
 								"e": "",
 								"z": "moxa",
 								"t": "",
-								"s": "40.BL..moxa"
+								"s": "40.BL"
 							},
 							{
 								"n": 60,
@@ -3856,7 +3856,7 @@ var archiviDemo = {
 								"e": "",
 								"z": "moxa",
 								"t": "",
-								"s": "60.BL..moxa"
+								"s": "60.BL"
 							},
 							{
 								"n": 37,
@@ -3864,7 +3864,7 @@ var archiviDemo = {
 								"e": "",
 								"z": "coppetta",
 								"t": "",
-								"s": "37.BL..coppetta"
+								"s": "37.BL"
 							},
 							{
 								"n": 38,
@@ -3872,7 +3872,7 @@ var archiviDemo = {
 								"e": "",
 								"z": "coppetta",
 								"t": "",
-								"s": "38.BL..coppetta"
+								"s": "38.BL"
 							},
 							{
 								"n": 41,
@@ -3880,7 +3880,7 @@ var archiviDemo = {
 								"e": "",
 								"z": "coppetta",
 								"t": "",
-								"s": "41.BL..coppetta"
+								"s": "41.BL"
 							}
 						],
 						"puntiAuricolari": [],
@@ -3968,7 +3968,7 @@ var archiviDemo = {
 								"e": "",
 								"z": "ago",
 								"t": "Kidney Shu Point",
-								"s": "23.BL..ago"
+								"s": "23.BL"
 							},
 							{
 								"n": 32,
@@ -3976,7 +3976,7 @@ var archiviDemo = {
 								"e": "",
 								"z": "ago",
 								"t": "",
-								"s": "32.BL..ago"
+								"s": "32.BL"
 							},
 							{
 								"n": 30,
@@ -3984,7 +3984,7 @@ var archiviDemo = {
 								"e": "",
 								"z": "ago",
 								"t": "",
-								"s": "30.BL..ago"
+								"s": "30.BL"
 							},
 							{
 								"n": 31,
@@ -3992,7 +3992,7 @@ var archiviDemo = {
 								"e": "",
 								"z": "ago",
 								"t": "",
-								"s": "31.GB..ago"
+								"s": "31.GB"
 							}
 						],
 						"puntiAuricolari": [],
@@ -4076,7 +4076,7 @@ var archiviDemo = {
 								"e": "",
 								"z": "dito",
 								"t": "",
-								"s": "7.HT..dito"
+								"s": "7.HT"
 							},
 							{
 								"n": 6,
@@ -4084,7 +4084,7 @@ var archiviDemo = {
 								"e": "",
 								"z": "dito",
 								"t": "",
-								"s": "6.PC..dito"
+								"s": "6.PC"
 							},
 							{
 								"n": 7,
@@ -4092,7 +4092,7 @@ var archiviDemo = {
 								"e": "",
 								"z": "dito",
 								"t": "",
-								"s": "7.PC..dito"
+								"s": "7.PC"
 							},
 							{
 								"n": 20,
@@ -4116,7 +4116,7 @@ var archiviDemo = {
 								"e": "",
 								"z": "moxa",
 								"t": "",
-								"s": "11.BL..moxa"
+								"s": "11.BL"
 							},
 							{
 								"n": 28,
@@ -4124,7 +4124,7 @@ var archiviDemo = {
 								"e": "",
 								"z": "moxa",
 								"t": "Bladder Shu Point",
-								"s": "28.BL..moxa"
+								"s": "28.BL"
 							}
 						],
 						"puntiAuricolari": [],
@@ -4236,7 +4236,7 @@ var archiviDemo = {
 								"e": "P",
 								"z": "dito",
 								"t": "",
-								"s": "7.HT..dito"
+								"s": "7.HT"
 							},
 							{
 								"n": 6,
@@ -4244,7 +4244,7 @@ var archiviDemo = {
 								"e": "D",
 								"z": "dito",
 								"t": "",
-								"s": "6.PC..dito"
+								"s": "6.PC"
 							},
 							{
 								"n": 7,
@@ -4252,7 +4252,7 @@ var archiviDemo = {
 								"e": "D",
 								"z": "dito",
 								"t": "",
-								"s": "7.PC..dito"
+								"s": "7.PC"
 							},
 							{
 								"n": 20,
@@ -4260,7 +4260,7 @@ var archiviDemo = {
 								"e": "V",
 								"z": "moxa",
 								"t": "",
-								"s": "20.GV..moxa"
+								"s": "20.GV"
 							},
 							{
 								"n": 6,
@@ -4268,7 +4268,7 @@ var archiviDemo = {
 								"e": "V",
 								"z": "moxa",
 								"t": "",
-								"s": "6.SP..moxa"
+								"s": "6.SP"
 							}
 						],
 						"puntiAuricolari": [],
@@ -4380,7 +4380,7 @@ var archiviDemo = {
 								"e": "",
 								"z": "dito",
 								"t": "",
-								"s": "11.BL..dito"
+								"s": "11.BL"
 							},
 							{
 								"n": 18,
@@ -4388,7 +4388,7 @@ var archiviDemo = {
 								"e": "",
 								"z": "dito",
 								"t": "Liver Shu Point",
-								"s": "18.BL..dito"
+								"s": "18.BL"
 							},
 							{
 								"n": 19,
@@ -4396,7 +4396,7 @@ var archiviDemo = {
 								"e": "",
 								"z": "dito",
 								"t": "Gallbladder Shu Point",
-								"s": "19.BL..dito"
+								"s": "19.BL"
 							},
 							{
 								"n": 28,
@@ -4404,7 +4404,7 @@ var archiviDemo = {
 								"e": "",
 								"z": "dito",
 								"t": "Bladder Shu Point",
-								"s": "28.BL..dito"
+								"s": "28.BL"
 							},
 							{
 								"n": 20,
@@ -4532,7 +4532,7 @@ var archiviDemo = {
 								"e": "",
 								"z": "dito",
 								"t": "",
-								"s": "11.BL..dito"
+								"s": "11.BL"
 							},
 							{
 								"n": 18,
@@ -4548,7 +4548,7 @@ var archiviDemo = {
 								"e": "",
 								"z": "dito",
 								"t": "Gallbladder Shu Point",
-								"s": "19.BL..dito"
+								"s": "19.BL"
 							},
 							{
 								"n": 28,
@@ -4556,7 +4556,7 @@ var archiviDemo = {
 								"e": "",
 								"z": "dito",
 								"t": "Bladder Shu Point",
-								"s": "28.BL..dito"
+								"s": "28.BL"
 							},
 							{
 								"n": 13,
@@ -4564,7 +4564,7 @@ var archiviDemo = {
 								"e": "V",
 								"z": "moxa",
 								"t": "Spleen BO Point",
-								"s": "13.LR..moxa"
+								"s": "13.LR"
 							}
 						],
 						"puntiAuricolari": [],
@@ -6063,7 +6063,7 @@ var archiviDemo = {
 								"e": "D",
 								"z": "ago",
 								"t": "Punto Shu del Riñón",
-								"s": "23.BL..ago"
+								"s": "23.BL"
 							},
 							{
 								"n": 32,
@@ -6071,7 +6071,7 @@ var archiviDemo = {
 								"e": "P",
 								"z": "ago",
 								"t": "",
-								"s": "32.BL..ago"
+								"s": "32.BL"
 							},
 							{
 								"n": 8,
@@ -6079,7 +6079,7 @@ var archiviDemo = {
 								"e": "D",
 								"z": "ago",
 								"t": "",
-								"s": "8.BL..ago"
+								"s": "8.BL"
 							},
 							{
 								"n": 30,
@@ -6087,7 +6087,7 @@ var archiviDemo = {
 								"e": "P",
 								"z": "ago",
 								"t": "",
-								"s": "30.BL..ago"
+								"s": "30.BL"
 							},
 							{
 								"n": 4,
@@ -6095,7 +6095,7 @@ var archiviDemo = {
 								"e": "V",
 								"z": "ago",
 								"t": "Punto BO del Intestino Delgado",
-								"s": "4.CV..ago"
+								"s": "4.CV"
 							},
 							{
 								"n": 4,
@@ -6103,7 +6103,7 @@ var archiviDemo = {
 								"e": "V",
 								"z": "ago",
 								"t": "",
-								"s": "4.SP..ago"
+								"s": "4.SP"
 							},
 							{
 								"n": 31,
@@ -6111,7 +6111,7 @@ var archiviDemo = {
 								"e": "D",
 								"z": "ago",
 								"t": "",
-								"s": "31.GB..ago"
+								"s": "31.GB"
 							}
 						],
 						"puntiAuricolari": [],
@@ -6212,7 +6212,7 @@ var archiviDemo = {
 								"e": "",
 								"z": "ago",
 								"t": "",
-								"s": "32.BL..ago"
+								"s": "32.BL"
 							},
 							{
 								"n": 8,
@@ -6220,7 +6220,7 @@ var archiviDemo = {
 								"e": "",
 								"z": "ago",
 								"t": "",
-								"s": "8.BL..ago"
+								"s": "8.BL"
 							},
 							{
 								"n": 30,
@@ -6236,7 +6236,7 @@ var archiviDemo = {
 								"e": "",
 								"z": "ago",
 								"t": "Punto BO del Intestino Delgado",
-								"s": "4.CV..ago"
+								"s": "4.CV"
 							},
 							{
 								"n": 4,
@@ -6244,7 +6244,7 @@ var archiviDemo = {
 								"e": "",
 								"z": "ago",
 								"t": "",
-								"s": "4.SP..ago"
+								"s": "4.SP"
 							},
 							{
 								"n": 31,
@@ -6252,7 +6252,7 @@ var archiviDemo = {
 								"e": "",
 								"z": "ago",
 								"t": "",
-								"s": "31.GB..ago"
+								"s": "31.GB"
 							},
 							{
 								"n": 12,
@@ -6260,7 +6260,7 @@ var archiviDemo = {
 								"e": "",
 								"z": "moxa",
 								"t": "",
-								"s": "12.BL..moxa"
+								"s": "12.BL"
 							},
 							{
 								"n": 40,
@@ -6268,7 +6268,7 @@ var archiviDemo = {
 								"e": "",
 								"z": "moxa",
 								"t": "",
-								"s": "40.BL..moxa"
+								"s": "40.BL"
 							},
 							{
 								"n": 60,
@@ -6276,7 +6276,7 @@ var archiviDemo = {
 								"e": "",
 								"z": "moxa",
 								"t": "",
-								"s": "60.BL..moxa"
+								"s": "60.BL"
 							}
 						],
 						"puntiAuricolari": [],
@@ -6369,7 +6369,7 @@ var archiviDemo = {
 								"e": "",
 								"z": "ago",
 								"t": "",
-								"s": "8.GB..ago"
+								"s": "8.GB"
 							},
 							{
 								"n": 20,
@@ -6377,7 +6377,7 @@ var archiviDemo = {
 								"e": "",
 								"z": "ago",
 								"t": "",
-								"s": "20.GB..ago"
+								"s": "20.GB"
 							},
 							{
 								"n": 22,
@@ -6385,7 +6385,7 @@ var archiviDemo = {
 								"e": "",
 								"z": "ago",
 								"t": "",
-								"s": "22.GV..ago"
+								"s": "22.GV"
 							},
 							{
 								"n": 10,
@@ -6393,7 +6393,7 @@ var archiviDemo = {
 								"e": "",
 								"z": "ago",
 								"t": "",
-								"s": "10.BL..ago"
+								"s": "10.BL"
 							},
 							{
 								"n": 30,
@@ -6401,7 +6401,7 @@ var archiviDemo = {
 								"e": "",
 								"z": "ago",
 								"t": "",
-								"s": "30.BL..ago"
+								"s": "30.BL"
 							},
 							{
 								"n": 23,
@@ -6409,7 +6409,7 @@ var archiviDemo = {
 								"e": "",
 								"z": "moxa",
 								"t": "Punto Shu del Riñón",
-								"s": "23.BL..moxa"
+								"s": "23.BL"
 							},
 							{
 								"n": 32,
@@ -6417,7 +6417,7 @@ var archiviDemo = {
 								"e": "",
 								"z": "moxa",
 								"t": "",
-								"s": "32.BL..moxa"
+								"s": "32.BL"
 							},
 							{
 								"n": 4,
@@ -6425,7 +6425,7 @@ var archiviDemo = {
 								"e": "",
 								"z": "moxa",
 								"t": "",
-								"s": "4.SP..moxa"
+								"s": "4.SP"
 							}
 						],
 						"puntiAuricolari": [],
@@ -6508,7 +6508,7 @@ var archiviDemo = {
 								"e": "",
 								"z": "ago",
 								"t": "",
-								"s": "20.GV..ago"
+								"s": "20.GV"
 							},
 							{
 								"n": 7,
@@ -6516,7 +6516,7 @@ var archiviDemo = {
 								"e": "",
 								"z": "ago",
 								"t": "",
-								"s": "7.HT..ago"
+								"s": "7.HT"
 							},
 							{
 								"n": 20,
@@ -6524,7 +6524,7 @@ var archiviDemo = {
 								"e": "",
 								"z": "ago",
 								"t": "Punto Shu de Bazo",
-								"s": "20.BL..ago"
+								"s": "20.BL"
 							},
 							{
 								"n": 40,
@@ -6532,7 +6532,7 @@ var archiviDemo = {
 								"e": "",
 								"z": "moxa",
 								"t": "",
-								"s": "40.BL..moxa"
+								"s": "40.BL"
 							},
 							{
 								"n": 60,
@@ -6540,7 +6540,7 @@ var archiviDemo = {
 								"e": "",
 								"z": "moxa",
 								"t": "",
-								"s": "60.BL..moxa"
+								"s": "60.BL"
 							},
 							{
 								"n": 37,
@@ -6548,7 +6548,7 @@ var archiviDemo = {
 								"e": "",
 								"z": "coppetta",
 								"t": "",
-								"s": "37.BL..coppetta"
+								"s": "37.BL"
 							},
 							{
 								"n": 38,
@@ -6556,7 +6556,7 @@ var archiviDemo = {
 								"e": "",
 								"z": "coppetta",
 								"t": "",
-								"s": "38.BL..coppetta"
+								"s": "38.BL"
 							},
 							{
 								"n": 41,
@@ -6564,7 +6564,7 @@ var archiviDemo = {
 								"e": "",
 								"z": "coppetta",
 								"t": "",
-								"s": "41.BL..coppetta"
+								"s": "41.BL"
 							}
 						],
 						"puntiAuricolari": [],
@@ -6652,7 +6652,7 @@ var archiviDemo = {
 								"e": "",
 								"z": "ago",
 								"t": "Punto Shu del Riñón",
-								"s": "23.BL..ago"
+								"s": "23.BL"
 							},
 							{
 								"n": 32,
@@ -6660,7 +6660,7 @@ var archiviDemo = {
 								"e": "",
 								"z": "ago",
 								"t": "",
-								"s": "32.BL..ago"
+								"s": "32.BL"
 							},
 							{
 								"n": 30,
@@ -6668,7 +6668,7 @@ var archiviDemo = {
 								"e": "",
 								"z": "ago",
 								"t": "",
-								"s": "30.BL..ago"
+								"s": "30.BL"
 							},
 							{
 								"n": 31,
@@ -6676,7 +6676,7 @@ var archiviDemo = {
 								"e": "",
 								"z": "ago",
 								"t": "",
-								"s": "31.GB..ago"
+								"s": "31.GB"
 							}
 						],
 						"puntiAuricolari": [],
@@ -6760,7 +6760,7 @@ var archiviDemo = {
 								"e": "",
 								"z": "dito",
 								"t": "",
-								"s": "7.HT..dito"
+								"s": "7.HT"
 							},
 							{
 								"n": 6,
@@ -6768,7 +6768,7 @@ var archiviDemo = {
 								"e": "",
 								"z": "dito",
 								"t": "",
-								"s": "6.PC..dito"
+								"s": "6.PC"
 							},
 							{
 								"n": 7,
@@ -6776,7 +6776,7 @@ var archiviDemo = {
 								"e": "",
 								"z": "dito",
 								"t": "",
-								"s": "7.PC..dito"
+								"s": "7.PC"
 							},
 							{
 								"n": 20,
@@ -6800,7 +6800,7 @@ var archiviDemo = {
 								"e": "",
 								"z": "moxa",
 								"t": "",
-								"s": "11.BL..moxa"
+								"s": "11.BL"
 							},
 							{
 								"n": 28,
@@ -6808,7 +6808,7 @@ var archiviDemo = {
 								"e": "",
 								"z": "moxa",
 								"t": "Punto Shu de Vejiga",
-								"s": "28.BL..moxa"
+								"s": "28.BL"
 							}
 						],
 						"puntiAuricolari": [],
@@ -6920,7 +6920,7 @@ var archiviDemo = {
 								"e": "P",
 								"z": "dito",
 								"t": "",
-								"s": "7.HT..dito"
+								"s": "7.HT"
 							},
 							{
 								"n": 6,
@@ -6928,7 +6928,7 @@ var archiviDemo = {
 								"e": "D",
 								"z": "dito",
 								"t": "",
-								"s": "6.PC..dito"
+								"s": "6.PC"
 							},
 							{
 								"n": 7,
@@ -6936,7 +6936,7 @@ var archiviDemo = {
 								"e": "D",
 								"z": "dito",
 								"t": "",
-								"s": "7.PC..dito"
+								"s": "7.PC"
 							},
 							{
 								"n": 20,
@@ -6944,7 +6944,7 @@ var archiviDemo = {
 								"e": "V",
 								"z": "moxa",
 								"t": "",
-								"s": "20.GV..moxa"
+								"s": "20.GV"
 							},
 							{
 								"n": 6,
@@ -6952,7 +6952,7 @@ var archiviDemo = {
 								"e": "V",
 								"z": "moxa",
 								"t": "",
-								"s": "6.SP..moxa"
+								"s": "6.SP"
 							}
 						],
 						"puntiAuricolari": [],
@@ -7064,7 +7064,7 @@ var archiviDemo = {
 								"e": "",
 								"z": "dito",
 								"t": "",
-								"s": "11.BL..dito"
+								"s": "11.BL"
 							},
 							{
 								"n": 18,
@@ -7072,7 +7072,7 @@ var archiviDemo = {
 								"e": "",
 								"z": "dito",
 								"t": "Punto Shu de Hígado",
-								"s": "18.BL..dito"
+								"s": "18.BL"
 							},
 							{
 								"n": 19,
@@ -7080,7 +7080,7 @@ var archiviDemo = {
 								"e": "",
 								"z": "dito",
 								"t": "PuntoShu de Vesícula biliar",
-								"s": "19.BL..dito"
+								"s": "19.BL"
 							},
 							{
 								"n": 28,
@@ -7088,7 +7088,7 @@ var archiviDemo = {
 								"e": "",
 								"z": "dito",
 								"t": "PuntoShu de Vejiga",
-								"s": "28.BL..dito"
+								"s": "28.BL"
 							},
 							{
 								"n": 20,
@@ -7216,7 +7216,7 @@ var archiviDemo = {
 								"e": "",
 								"z": "dito",
 								"t": "",
-								"s": "11.BL..dito"
+								"s": "11.BL"
 							},
 							{
 								"n": 18,
@@ -7232,7 +7232,7 @@ var archiviDemo = {
 								"e": "",
 								"z": "dito",
 								"t": "Punto Shu de Vesícula biliar",
-								"s": "19.BL..dito"
+								"s": "19.BL"
 							},
 							{
 								"n": 28,
@@ -7240,7 +7240,7 @@ var archiviDemo = {
 								"e": "",
 								"z": "dito",
 								"t": "Punto Shu de Vejiga",
-								"s": "28.BL..dito"
+								"s": "28.BL"
 							},
 							{
 								"n": 13,
@@ -7248,7 +7248,7 @@ var archiviDemo = {
 								"e": "V",
 								"z": "moxa",
 								"t": "Punto BO de Bazo",
-								"s": "13.LR..moxa"
+								"s": "13.LR"
 							}
 						],
 						"puntiAuricolari": [],
@@ -8747,7 +8747,7 @@ var archiviDemo = {
 								"e": "D",
 								"z": "ago",
 								"t": "Point Shu du Rein",
-								"s": "23.BL..ago"
+								"s": "23.BL"
 							},
 							{
 								"n": 32,
@@ -8755,7 +8755,7 @@ var archiviDemo = {
 								"e": "P",
 								"z": "ago",
 								"t": "",
-								"s": "32.BL..ago"
+								"s": "32.BL"
 							},
 							{
 								"n": 8,
@@ -8763,7 +8763,7 @@ var archiviDemo = {
 								"e": "D",
 								"z": "ago",
 								"t": "",
-								"s": "8.BL..ago"
+								"s": "8.BL"
 							},
 							{
 								"n": 30,
@@ -8771,7 +8771,7 @@ var archiviDemo = {
 								"e": "P",
 								"z": "ago",
 								"t": "",
-								"s": "30.BL..ago"
+								"s": "30.BL"
 							},
 							{
 								"n": 4,
@@ -8779,7 +8779,7 @@ var archiviDemo = {
 								"e": "V",
 								"z": "ago",
 								"t": "Point BO de l'Intestin grêle",
-								"s": "4.CV..ago"
+								"s": "4.CV"
 							},
 							{
 								"n": 4,
@@ -8787,7 +8787,7 @@ var archiviDemo = {
 								"e": "V",
 								"z": "ago",
 								"t": "",
-								"s": "4.SP..ago"
+								"s": "4.SP"
 							},
 							{
 								"n": 31,
@@ -8795,7 +8795,7 @@ var archiviDemo = {
 								"e": "D",
 								"z": "ago",
 								"t": "",
-								"s": "31.GB..ago"
+								"s": "31.GB"
 							}
 						],
 						"puntiAuricolari": [],
@@ -8896,7 +8896,7 @@ var archiviDemo = {
 								"e": "",
 								"z": "ago",
 								"t": "",
-								"s": "32.BL..ago"
+								"s": "32.BL"
 							},
 							{
 								"n": 8,
@@ -8904,7 +8904,7 @@ var archiviDemo = {
 								"e": "",
 								"z": "ago",
 								"t": "",
-								"s": "8.BL..ago"
+								"s": "8.BL"
 							},
 							{
 								"n": 30,
@@ -8920,7 +8920,7 @@ var archiviDemo = {
 								"e": "",
 								"z": "ago",
 								"t": "Point BO de l'Intestin grêle",
-								"s": "4.CV..ago"
+								"s": "4.CV"
 							},
 							{
 								"n": 4,
@@ -8928,7 +8928,7 @@ var archiviDemo = {
 								"e": "",
 								"z": "ago",
 								"t": "",
-								"s": "4.SP..ago"
+								"s": "4.SP"
 							},
 							{
 								"n": 31,
@@ -8936,7 +8936,7 @@ var archiviDemo = {
 								"e": "",
 								"z": "ago",
 								"t": "",
-								"s": "31.GB..ago"
+								"s": "31.GB"
 							},
 							{
 								"n": 12,
@@ -8944,7 +8944,7 @@ var archiviDemo = {
 								"e": "",
 								"z": "moxa",
 								"t": "",
-								"s": "12.BL..moxa"
+								"s": "12.BL"
 							},
 							{
 								"n": 40,
@@ -8952,7 +8952,7 @@ var archiviDemo = {
 								"e": "",
 								"z": "moxa",
 								"t": "",
-								"s": "40.BL..moxa"
+								"s": "40.BL"
 							},
 							{
 								"n": 60,
@@ -8960,7 +8960,7 @@ var archiviDemo = {
 								"e": "",
 								"z": "moxa",
 								"t": "",
-								"s": "60.BL..moxa"
+								"s": "60.BL"
 							}
 						],
 						"puntiAuricolari": [],
@@ -9053,7 +9053,7 @@ var archiviDemo = {
 								"e": "",
 								"z": "ago",
 								"t": "",
-								"s": "8.GB..ago"
+								"s": "8.GB"
 							},
 							{
 								"n": 20,
@@ -9061,7 +9061,7 @@ var archiviDemo = {
 								"e": "",
 								"z": "ago",
 								"t": "",
-								"s": "20.GB..ago"
+								"s": "20.GB"
 							},
 							{
 								"n": 22,
@@ -9069,7 +9069,7 @@ var archiviDemo = {
 								"e": "",
 								"z": "ago",
 								"t": "",
-								"s": "22.GV..ago"
+								"s": "22.GV"
 							},
 							{
 								"n": 10,
@@ -9077,7 +9077,7 @@ var archiviDemo = {
 								"e": "",
 								"z": "ago",
 								"t": "",
-								"s": "10.BL..ago"
+								"s": "10.BL"
 							},
 							{
 								"n": 30,
@@ -9085,7 +9085,7 @@ var archiviDemo = {
 								"e": "",
 								"z": "ago",
 								"t": "",
-								"s": "30.BL..ago"
+								"s": "30.BL"
 							},
 							{
 								"n": 23,
@@ -9093,7 +9093,7 @@ var archiviDemo = {
 								"e": "",
 								"z": "moxa",
 								"t": "Point Shu du Rein",
-								"s": "23.BL..moxa"
+								"s": "23.BL"
 							},
 							{
 								"n": 32,
@@ -9101,7 +9101,7 @@ var archiviDemo = {
 								"e": "",
 								"z": "moxa",
 								"t": "",
-								"s": "32.BL..moxa"
+								"s": "32.BL"
 							},
 							{
 								"n": 4,
@@ -9109,7 +9109,7 @@ var archiviDemo = {
 								"e": "",
 								"z": "moxa",
 								"t": "",
-								"s": "4.SP..moxa"
+								"s": "4.SP"
 							}
 						],
 						"puntiAuricolari": [],
@@ -9192,7 +9192,7 @@ var archiviDemo = {
 								"e": "",
 								"z": "ago",
 								"t": "",
-								"s": "20.GV..ago"
+								"s": "20.GV"
 							},
 							{
 								"n": 7,
@@ -9200,7 +9200,7 @@ var archiviDemo = {
 								"e": "",
 								"z": "ago",
 								"t": "",
-								"s": "7.HT..ago"
+								"s": "7.HT"
 							},
 							{
 								"n": 20,
@@ -9208,7 +9208,7 @@ var archiviDemo = {
 								"e": "",
 								"z": "ago",
 								"t": "Point Shu de la Rate",
-								"s": "20.BL..ago"
+								"s": "20.BL"
 							},
 							{
 								"n": 40,
@@ -9216,7 +9216,7 @@ var archiviDemo = {
 								"e": "",
 								"z": "moxa",
 								"t": "",
-								"s": "40.BL..moxa"
+								"s": "40.BL"
 							},
 							{
 								"n": 60,
@@ -9224,7 +9224,7 @@ var archiviDemo = {
 								"e": "",
 								"z": "moxa",
 								"t": "",
-								"s": "60.BL..moxa"
+								"s": "60.BL"
 							},
 							{
 								"n": 37,
@@ -9232,7 +9232,7 @@ var archiviDemo = {
 								"e": "",
 								"z": "coppetta",
 								"t": "",
-								"s": "37.BL..coppetta"
+								"s": "37.BL"
 							},
 							{
 								"n": 38,
@@ -9240,7 +9240,7 @@ var archiviDemo = {
 								"e": "",
 								"z": "coppetta",
 								"t": "",
-								"s": "38.BL..coppetta"
+								"s": "38.BL"
 							},
 							{
 								"n": 41,
@@ -9248,7 +9248,7 @@ var archiviDemo = {
 								"e": "",
 								"z": "coppetta",
 								"t": "",
-								"s": "41.BL..coppetta"
+								"s": "41.BL"
 							}
 						],
 						"puntiAuricolari": [],
@@ -9336,7 +9336,7 @@ var archiviDemo = {
 								"e": "",
 								"z": "ago",
 								"t": "Point Shu du Rein",
-								"s": "23.BL..ago"
+								"s": "23.BL"
 							},
 							{
 								"n": 32,
@@ -9344,7 +9344,7 @@ var archiviDemo = {
 								"e": "",
 								"z": "ago",
 								"t": "",
-								"s": "32.BL..ago"
+								"s": "32.BL"
 							},
 							{
 								"n": 30,
@@ -9352,7 +9352,7 @@ var archiviDemo = {
 								"e": "",
 								"z": "ago",
 								"t": "",
-								"s": "30.BL..ago"
+								"s": "30.BL"
 							},
 							{
 								"n": 31,
@@ -9360,7 +9360,7 @@ var archiviDemo = {
 								"e": "",
 								"z": "ago",
 								"t": "",
-								"s": "31.GB..ago"
+								"s": "31.GB"
 							}
 						],
 						"puntiAuricolari": [],
@@ -9444,7 +9444,7 @@ var archiviDemo = {
 								"e": "",
 								"z": "dito",
 								"t": "",
-								"s": "7.HT..dito"
+								"s": "7.HT"
 							},
 							{
 								"n": 6,
@@ -9452,7 +9452,7 @@ var archiviDemo = {
 								"e": "",
 								"z": "dito",
 								"t": "",
-								"s": "6.PC..dito"
+								"s": "6.PC"
 							},
 							{
 								"n": 7,
@@ -9460,7 +9460,7 @@ var archiviDemo = {
 								"e": "",
 								"z": "dito",
 								"t": "",
-								"s": "7.PC..dito"
+								"s": "7.PC"
 							},
 							{
 								"n": 20,
@@ -9484,7 +9484,7 @@ var archiviDemo = {
 								"e": "",
 								"z": "moxa",
 								"t": "",
-								"s": "11.BL..moxa"
+								"s": "11.BL"
 							},
 							{
 								"n": 28,
@@ -9492,7 +9492,7 @@ var archiviDemo = {
 								"e": "",
 								"z": "moxa",
 								"t": "Point Shu de la Vessie",
-								"s": "28.BL..moxa"
+								"s": "28.BL"
 							}
 						],
 						"puntiAuricolari": [],
@@ -9604,7 +9604,7 @@ var archiviDemo = {
 								"e": "P",
 								"z": "dito",
 								"t": "",
-								"s": "7.HT..dito"
+								"s": "7.HT"
 							},
 							{
 								"n": 6,
@@ -9612,7 +9612,7 @@ var archiviDemo = {
 								"e": "D",
 								"z": "dito",
 								"t": "",
-								"s": "6.PC..dito"
+								"s": "6.PC"
 							},
 							{
 								"n": 7,
@@ -9620,7 +9620,7 @@ var archiviDemo = {
 								"e": "D",
 								"z": "dito",
 								"t": "",
-								"s": "7.PC..dito"
+								"s": "7.PC"
 							},
 							{
 								"n": 20,
@@ -9628,7 +9628,7 @@ var archiviDemo = {
 								"e": "V",
 								"z": "moxa",
 								"t": "",
-								"s": "20.GV..moxa"
+								"s": "20.GV"
 							},
 							{
 								"n": 6,
@@ -9636,7 +9636,7 @@ var archiviDemo = {
 								"e": "V",
 								"z": "moxa",
 								"t": "",
-								"s": "6.SP..moxa"
+								"s": "6.SP"
 							}
 						],
 						"puntiAuricolari": [],
@@ -9748,7 +9748,7 @@ var archiviDemo = {
 								"e": "",
 								"z": "dito",
 								"t": "",
-								"s": "11.BL..dito"
+								"s": "11.BL"
 							},
 							{
 								"n": 18,
@@ -9756,7 +9756,7 @@ var archiviDemo = {
 								"e": "",
 								"z": "dito",
 								"t": "Point Shu du Foie",
-								"s": "18.BL..dito"
+								"s": "18.BL"
 							},
 							{
 								"n": 19,
@@ -9764,7 +9764,7 @@ var archiviDemo = {
 								"e": "",
 								"z": "dito",
 								"t": "PuntoShu de Vésicule biliaire",
-								"s": "19.BL..dito"
+								"s": "19.BL"
 							},
 							{
 								"n": 28,
@@ -9772,7 +9772,7 @@ var archiviDemo = {
 								"e": "",
 								"z": "dito",
 								"t": "Point Shu de la Vessie",
-								"s": "28.BL..dito"
+								"s": "28.BL"
 							},
 							{
 								"n": 20,
@@ -9900,7 +9900,7 @@ var archiviDemo = {
 								"e": "",
 								"z": "dito",
 								"t": "",
-								"s": "11.BL..dito"
+								"s": "11.BL"
 							},
 							{
 								"n": 18,
@@ -9916,7 +9916,7 @@ var archiviDemo = {
 								"e": "",
 								"z": "dito",
 								"t": "Point Shu de la Vésicule biliaire",
-								"s": "19.BL..dito"
+								"s": "19.BL"
 							},
 							{
 								"n": 28,
@@ -9924,7 +9924,7 @@ var archiviDemo = {
 								"e": "",
 								"z": "dito",
 								"t": "Point Shu de la Vessie",
-								"s": "28.BL..dito"
+								"s": "28.BL"
 							},
 							{
 								"n": 13,
@@ -9932,7 +9932,7 @@ var archiviDemo = {
 								"e": "V",
 								"z": "moxa",
 								"t": "Point BO de la Rate",
-								"s": "13.LR..moxa"
+								"s": "13.LR"
 							}
 						],
 						"puntiAuricolari": [],
@@ -11431,7 +11431,7 @@ var archiviDemo = {
 								"e": "D",
 								"z": "ago",
 								"t": "Ponto Shu do Rim",
-								"s": "23.BL..ago"
+								"s": "23.BL"
 							},
 							{
 								"n": 32,
@@ -11439,7 +11439,7 @@ var archiviDemo = {
 								"e": "P",
 								"z": "ago",
 								"t": "",
-								"s": "32.BL..ago"
+								"s": "32.BL"
 							},
 							{
 								"n": 8,
@@ -11447,7 +11447,7 @@ var archiviDemo = {
 								"e": "D",
 								"z": "ago",
 								"t": "",
-								"s": "8.BL..ago"
+								"s": "8.BL"
 							},
 							{
 								"n": 30,
@@ -11455,7 +11455,7 @@ var archiviDemo = {
 								"e": "P",
 								"z": "ago",
 								"t": "",
-								"s": "30.BL..ago"
+								"s": "30.BL"
 							},
 							{
 								"n": 4,
@@ -11463,7 +11463,7 @@ var archiviDemo = {
 								"e": "V",
 								"z": "ago",
 								"t": "Ponto BO do Intestino Delgado",
-								"s": "4.CV..ago"
+								"s": "4.CV"
 							},
 							{
 								"n": 4,
@@ -11471,7 +11471,7 @@ var archiviDemo = {
 								"e": "V",
 								"z": "ago",
 								"t": "",
-								"s": "4.SP..ago"
+								"s": "4.SP"
 							},
 							{
 								"n": 31,
@@ -11479,7 +11479,7 @@ var archiviDemo = {
 								"e": "D",
 								"z": "ago",
 								"t": "",
-								"s": "31.GB..ago"
+								"s": "31.GB"
 							}
 						],
 						"puntiAuricolari": [],
@@ -11580,7 +11580,7 @@ var archiviDemo = {
 								"e": "",
 								"z": "ago",
 								"t": "",
-								"s": "32.BL..ago"
+								"s": "32.BL"
 							},
 							{
 								"n": 8,
@@ -11588,7 +11588,7 @@ var archiviDemo = {
 								"e": "",
 								"z": "ago",
 								"t": "",
-								"s": "8.BL..ago"
+								"s": "8.BL"
 							},
 							{
 								"n": 30,
@@ -11604,7 +11604,7 @@ var archiviDemo = {
 								"e": "",
 								"z": "ago",
 								"t": "Ponto BO do Intestino Delgado",
-								"s": "4.CV..ago"
+								"s": "4.CV"
 							},
 							{
 								"n": 4,
@@ -11612,7 +11612,7 @@ var archiviDemo = {
 								"e": "",
 								"z": "ago",
 								"t": "",
-								"s": "4.SP..ago"
+								"s": "4.SP"
 							},
 							{
 								"n": 31,
@@ -11620,7 +11620,7 @@ var archiviDemo = {
 								"e": "",
 								"z": "ago",
 								"t": "",
-								"s": "31.GB..ago"
+								"s": "31.GB"
 							},
 							{
 								"n": 12,
@@ -11628,7 +11628,7 @@ var archiviDemo = {
 								"e": "",
 								"z": "moxa",
 								"t": "",
-								"s": "12.BL..moxa"
+								"s": "12.BL"
 							},
 							{
 								"n": 40,
@@ -11636,7 +11636,7 @@ var archiviDemo = {
 								"e": "",
 								"z": "moxa",
 								"t": "",
-								"s": "40.BL..moxa"
+								"s": "40.BL"
 							},
 							{
 								"n": 60,
@@ -11644,7 +11644,7 @@ var archiviDemo = {
 								"e": "",
 								"z": "moxa",
 								"t": "",
-								"s": "60.BL..moxa"
+								"s": "60.BL"
 							}
 						],
 						"puntiAuricolari": [],
@@ -11736,7 +11736,7 @@ var archiviDemo = {
 								"e": "",
 								"z": "ago",
 								"t": "",
-								"s": "8.GB..ago"
+								"s": "8.GB"
 							},
 							{
 								"n": 20,
@@ -11744,7 +11744,7 @@ var archiviDemo = {
 								"e": "",
 								"z": "ago",
 								"t": "",
-								"s": "20.GB..ago"
+								"s": "20.GB"
 							},
 							{
 								"n": 22,
@@ -11752,7 +11752,7 @@ var archiviDemo = {
 								"e": "",
 								"z": "ago",
 								"t": "",
-								"s": "22.GV..ago"
+								"s": "22.GV"
 							},
 							{
 								"n": 10,
@@ -11760,7 +11760,7 @@ var archiviDemo = {
 								"e": "",
 								"z": "ago",
 								"t": "",
-								"s": "10.BL..ago"
+								"s": "10.BL"
 							},
 							{
 								"n": 30,
@@ -11768,7 +11768,7 @@ var archiviDemo = {
 								"e": "",
 								"z": "ago",
 								"t": "",
-								"s": "30.BL..ago"
+								"s": "30.BL"
 							},
 							{
 								"n": 23,
@@ -11776,7 +11776,7 @@ var archiviDemo = {
 								"e": "",
 								"z": "moxa",
 								"t": "Ponto Shu do Rim",
-								"s": "23.BL..moxa"
+								"s": "23.BL"
 							},
 							{
 								"n": 32,
@@ -11784,7 +11784,7 @@ var archiviDemo = {
 								"e": "",
 								"z": "moxa",
 								"t": "",
-								"s": "32.BL..moxa"
+								"s": "32.BL"
 							},
 							{
 								"n": 4,
@@ -11792,7 +11792,7 @@ var archiviDemo = {
 								"e": "",
 								"z": "moxa",
 								"t": "",
-								"s": "4.SP..moxa"
+								"s": "4.SP"
 							}
 						],
 						"puntiAuricolari": [],
@@ -11875,7 +11875,7 @@ var archiviDemo = {
 								"e": "",
 								"z": "ago",
 								"t": "",
-								"s": "20.GV..ago"
+								"s": "20.GV"
 							},
 							{
 								"n": 7,
@@ -11883,7 +11883,7 @@ var archiviDemo = {
 								"e": "",
 								"z": "ago",
 								"t": "",
-								"s": "7.HT..ago"
+								"s": "7.HT"
 							},
 							{
 								"n": 20,
@@ -11891,7 +11891,7 @@ var archiviDemo = {
 								"e": "",
 								"z": "ago",
 								"t": "Ponto Shu do Baço",
-								"s": "20.BL..ago"
+								"s": "20.BL"
 							},
 							{
 								"n": 40,
@@ -11899,7 +11899,7 @@ var archiviDemo = {
 								"e": "",
 								"z": "moxa",
 								"t": "",
-								"s": "40.BL..moxa"
+								"s": "40.BL"
 							},
 							{
 								"n": 60,
@@ -11907,7 +11907,7 @@ var archiviDemo = {
 								"e": "",
 								"z": "moxa",
 								"t": "",
-								"s": "60.BL..moxa"
+								"s": "60.BL"
 							},
 							{
 								"n": 37,
@@ -11915,7 +11915,7 @@ var archiviDemo = {
 								"e": "",
 								"z": "coppetta",
 								"t": "",
-								"s": "37.BL..coppetta"
+								"s": "37.BL"
 							},
 							{
 								"n": 38,
@@ -11923,7 +11923,7 @@ var archiviDemo = {
 								"e": "",
 								"z": "coppetta",
 								"t": "",
-								"s": "38.BL..coppetta"
+								"s": "38.BL"
 							},
 							{
 								"n": 41,
@@ -11931,7 +11931,7 @@ var archiviDemo = {
 								"e": "",
 								"z": "coppetta",
 								"t": "",
-								"s": "41.BL..coppetta"
+								"s": "41.BL"
 							}
 						],
 						"puntiAuricolari": [],
@@ -12019,7 +12019,7 @@ var archiviDemo = {
 								"e": "",
 								"z": "ago",
 								"t": "Ponto Shu do Rim",
-								"s": "23.BL..ago"
+								"s": "23.BL"
 							},
 							{
 								"n": 32,
@@ -12027,7 +12027,7 @@ var archiviDemo = {
 								"e": "",
 								"z": "ago",
 								"t": "",
-								"s": "32.BL..ago"
+								"s": "32.BL"
 							},
 							{
 								"n": 30,
@@ -12035,7 +12035,7 @@ var archiviDemo = {
 								"e": "",
 								"z": "ago",
 								"t": "",
-								"s": "30.BL..ago"
+								"s": "30.BL"
 							},
 							{
 								"n": 31,
@@ -12043,7 +12043,7 @@ var archiviDemo = {
 								"e": "",
 								"z": "ago",
 								"t": "",
-								"s": "31.GB..ago"
+								"s": "31.GB"
 							}
 						],
 						"puntiAuricolari": [],
@@ -12127,7 +12127,7 @@ var archiviDemo = {
 								"e": "",
 								"z": "dito",
 								"t": "",
-								"s": "7.HT..dito"
+								"s": "7.HT"
 							},
 							{
 								"n": 6,
@@ -12135,7 +12135,7 @@ var archiviDemo = {
 								"e": "",
 								"z": "dito",
 								"t": "",
-								"s": "6.PC..dito"
+								"s": "6.PC"
 							},
 							{
 								"n": 7,
@@ -12143,7 +12143,7 @@ var archiviDemo = {
 								"e": "",
 								"z": "dito",
 								"t": "",
-								"s": "7.PC..dito"
+								"s": "7.PC"
 							},
 							{
 								"n": 20,
@@ -12167,7 +12167,7 @@ var archiviDemo = {
 								"e": "",
 								"z": "moxa",
 								"t": "",
-								"s": "11.BL..moxa"
+								"s": "11.BL"
 							},
 							{
 								"n": 28,
@@ -12175,7 +12175,7 @@ var archiviDemo = {
 								"e": "",
 								"z": "moxa",
 								"t": "Ponto Shu do Baço",
-								"s": "28.BL..moxa"
+								"s": "28.BL"
 							}
 						],
 						"puntiAuricolari": [],
@@ -12287,7 +12287,7 @@ var archiviDemo = {
 								"e": "P",
 								"z": "dito",
 								"t": "",
-								"s": "7.HT..dito"
+								"s": "7.HT"
 							},
 							{
 								"n": 6,
@@ -12295,7 +12295,7 @@ var archiviDemo = {
 								"e": "D",
 								"z": "dito",
 								"t": "",
-								"s": "6.PC..dito"
+								"s": "6.PC"
 							},
 							{
 								"n": 7,
@@ -12303,7 +12303,7 @@ var archiviDemo = {
 								"e": "D",
 								"z": "dito",
 								"t": "",
-								"s": "7.PC..dito"
+								"s": "7.PC"
 							},
 							{
 								"n": 20,
@@ -12311,7 +12311,7 @@ var archiviDemo = {
 								"e": "V",
 								"z": "moxa",
 								"t": "",
-								"s": "20.GV..moxa"
+								"s": "20.GV"
 							},
 							{
 								"n": 6,
@@ -12319,7 +12319,7 @@ var archiviDemo = {
 								"e": "V",
 								"z": "moxa",
 								"t": "",
-								"s": "6.SP..moxa"
+								"s": "6.SP"
 							}
 						],
 						"puntiAuricolari": [],
@@ -12431,7 +12431,7 @@ var archiviDemo = {
 								"e": "",
 								"z": "dito",
 								"t": "",
-								"s": "11.BL..dito"
+								"s": "11.BL"
 							},
 							{
 								"n": 18,
@@ -12439,7 +12439,7 @@ var archiviDemo = {
 								"e": "",
 								"z": "dito",
 								"t": "Ponto Shu do Fígado",
-								"s": "18.BL..dito"
+								"s": "18.BL"
 							},
 							{
 								"n": 19,
@@ -12447,7 +12447,7 @@ var archiviDemo = {
 								"e": "",
 								"z": "dito",
 								"t": "Ponto Shu da Vesícula biliar",
-								"s": "19.BL..dito"
+								"s": "19.BL"
 							},
 							{
 								"n": 28,
@@ -12455,7 +12455,7 @@ var archiviDemo = {
 								"e": "",
 								"z": "dito",
 								"t": "Ponto Shu da Bexiga",
-								"s": "28.BL..dito"
+								"s": "28.BL"
 							},
 							{
 								"n": 20,
@@ -12583,7 +12583,7 @@ var archiviDemo = {
 								"e": "",
 								"z": "dito",
 								"t": "",
-								"s": "11.BL..dito"
+								"s": "11.BL"
 							},
 							{
 								"n": 18,
@@ -12599,7 +12599,7 @@ var archiviDemo = {
 								"e": "",
 								"z": "dito",
 								"t": "Ponto Shu da Vesícula biliar",
-								"s": "19.BL..dito"
+								"s": "19.BL"
 							},
 							{
 								"n": 28,
@@ -12607,7 +12607,7 @@ var archiviDemo = {
 								"e": "",
 								"z": "dito",
 								"t": "Ponto Shu da Bexiga",
-								"s": "28.BL..dito"
+								"s": "28.BL"
 							},
 							{
 								"n": 13,
@@ -12615,7 +12615,7 @@ var archiviDemo = {
 								"e": "V",
 								"z": "moxa",
 								"t": "Ponto BO do Baço",
-								"s": "13.LR..moxa"
+								"s": "13.LR"
 							}
 						],
 						"puntiAuricolari": [],
@@ -14114,7 +14114,7 @@ var archiviDemo = {
 								"e": "D",
 								"z": "ago",
 								"t": "Nieren-Shu-Punkt",
-								"s": "23.BL..ago"
+								"s": "23.BL"
 							},
 							{
 								"n": 32,
@@ -14122,7 +14122,7 @@ var archiviDemo = {
 								"e": "P",
 								"z": "ago",
 								"t": "",
-								"s": "32.BL..ago"
+								"s": "32.BL"
 							},
 							{
 								"n": 8,
@@ -14130,7 +14130,7 @@ var archiviDemo = {
 								"e": "D",
 								"z": "ago",
 								"t": "",
-								"s": "8.BL..ago"
+								"s": "8.BL"
 							},
 							{
 								"n": 30,
@@ -14138,7 +14138,7 @@ var archiviDemo = {
 								"e": "P",
 								"z": "ago",
 								"t": "",
-								"s": "30.BL..ago"
+								"s": "30.BL"
 							},
 							{
 								"n": 4,
@@ -14146,7 +14146,7 @@ var archiviDemo = {
 								"e": "V",
 								"z": "ago",
 								"t": "Dünndarm-BO-Punkt",
-								"s": "4.CV..ago"
+								"s": "4.CV"
 							},
 							{
 								"n": 4,
@@ -14154,7 +14154,7 @@ var archiviDemo = {
 								"e": "V",
 								"z": "ago",
 								"t": "",
-								"s": "4.SP..ago"
+								"s": "4.SP"
 							},
 							{
 								"n": 31,
@@ -14162,7 +14162,7 @@ var archiviDemo = {
 								"e": "D",
 								"z": "ago",
 								"t": "",
-								"s": "31.GB..ago"
+								"s": "31.GB"
 							}
 						],
 						"puntiAuricolari": [],
@@ -14263,7 +14263,7 @@ var archiviDemo = {
 								"e": "",
 								"z": "ago",
 								"t": "",
-								"s": "32.BL..ago"
+								"s": "32.BL"
 							},
 							{
 								"n": 8,
@@ -14271,7 +14271,7 @@ var archiviDemo = {
 								"e": "",
 								"z": "ago",
 								"t": "",
-								"s": "8.BL..ago"
+								"s": "8.BL"
 							},
 							{
 								"n": 30,
@@ -14287,7 +14287,7 @@ var archiviDemo = {
 								"e": "",
 								"z": "ago",
 								"t": "Dünndarm-BO-Punkt",
-								"s": "4.CV..ago"
+								"s": "4.CV"
 							},
 							{
 								"n": 4,
@@ -14295,7 +14295,7 @@ var archiviDemo = {
 								"e": "",
 								"z": "ago",
 								"t": "",
-								"s": "4.SP..ago"
+								"s": "4.SP"
 							},
 							{
 								"n": 31,
@@ -14303,7 +14303,7 @@ var archiviDemo = {
 								"e": "",
 								"z": "ago",
 								"t": "",
-								"s": "31.GB..ago"
+								"s": "31.GB"
 							},
 							{
 								"n": 12,
@@ -14311,7 +14311,7 @@ var archiviDemo = {
 								"e": "",
 								"z": "moxa",
 								"t": "",
-								"s": "12.BL..moxa"
+								"s": "12.BL"
 							},
 							{
 								"n": 40,
@@ -14319,7 +14319,7 @@ var archiviDemo = {
 								"e": "",
 								"z": "moxa",
 								"t": "",
-								"s": "40.BL..moxa"
+								"s": "40.BL"
 							},
 							{
 								"n": 60,
@@ -14327,7 +14327,7 @@ var archiviDemo = {
 								"e": "",
 								"z": "moxa",
 								"t": "",
-								"s": "60.BL..moxa"
+								"s": "60.BL"
 							}
 						],
 						"puntiAuricolari": [],
@@ -14420,7 +14420,7 @@ var archiviDemo = {
 								"e": "",
 								"z": "ago",
 								"t": "",
-								"s": "8.GB..ago"
+								"s": "8.GB"
 							},
 							{
 								"n": 20,
@@ -14428,7 +14428,7 @@ var archiviDemo = {
 								"e": "",
 								"z": "ago",
 								"t": "",
-								"s": "20.GB..ago"
+								"s": "20.GB"
 							},
 							{
 								"n": 22,
@@ -14436,7 +14436,7 @@ var archiviDemo = {
 								"e": "",
 								"z": "ago",
 								"t": "",
-								"s": "22.GV..ago"
+								"s": "22.GV"
 							},
 							{
 								"n": 10,
@@ -14444,7 +14444,7 @@ var archiviDemo = {
 								"e": "",
 								"z": "ago",
 								"t": "",
-								"s": "10.BL..ago"
+								"s": "10.BL"
 							},
 							{
 								"n": 30,
@@ -14452,7 +14452,7 @@ var archiviDemo = {
 								"e": "",
 								"z": "ago",
 								"t": "",
-								"s": "30.BL..ago"
+								"s": "30.BL"
 							},
 							{
 								"n": 23,
@@ -14460,7 +14460,7 @@ var archiviDemo = {
 								"e": "",
 								"z": "moxa",
 								"t": "Nieren-Shu-Punkt",
-								"s": "23.BL..moxa"
+								"s": "23.BL"
 							},
 							{
 								"n": 32,
@@ -14468,7 +14468,7 @@ var archiviDemo = {
 								"e": "",
 								"z": "moxa",
 								"t": "",
-								"s": "32.BL..moxa"
+								"s": "32.BL"
 							},
 							{
 								"n": 4,
@@ -14476,7 +14476,7 @@ var archiviDemo = {
 								"e": "",
 								"z": "moxa",
 								"t": "",
-								"s": "4.SP..moxa"
+								"s": "4.SP"
 							}
 						],
 						"puntiAuricolari": [],
@@ -14558,7 +14558,7 @@ var archiviDemo = {
 								"e": "",
 								"z": "ago",
 								"t": "",
-								"s": "20.GV..ago"
+								"s": "20.GV"
 							},
 							{
 								"n": 7,
@@ -14566,7 +14566,7 @@ var archiviDemo = {
 								"e": "",
 								"z": "ago",
 								"t": "",
-								"s": "7.HT..ago"
+								"s": "7.HT"
 							},
 							{
 								"n": 20,
@@ -14574,7 +14574,7 @@ var archiviDemo = {
 								"e": "",
 								"z": "ago",
 								"t": "Milz Shu Punkt",
-								"s": "20.BL..ago"
+								"s": "20.BL"
 							},
 							{
 								"n": 40,
@@ -14582,7 +14582,7 @@ var archiviDemo = {
 								"e": "",
 								"z": "moxa",
 								"t": "",
-								"s": "40.BL..moxa"
+								"s": "40.BL"
 							},
 							{
 								"n": 60,
@@ -14590,7 +14590,7 @@ var archiviDemo = {
 								"e": "",
 								"z": "moxa",
 								"t": "",
-								"s": "60.BL..moxa"
+								"s": "60.BL"
 							},
 							{
 								"n": 37,
@@ -14598,7 +14598,7 @@ var archiviDemo = {
 								"e": "",
 								"z": "coppetta",
 								"t": "",
-								"s": "37.BL..coppetta"
+								"s": "37.BL"
 							},
 							{
 								"n": 38,
@@ -14606,7 +14606,7 @@ var archiviDemo = {
 								"e": "",
 								"z": "coppetta",
 								"t": "",
-								"s": "38.BL..coppetta"
+								"s": "38.BL"
 							},
 							{
 								"n": 41,
@@ -14614,7 +14614,7 @@ var archiviDemo = {
 								"e": "",
 								"z": "coppetta",
 								"t": "",
-								"s": "41.BL..coppetta"
+								"s": "41.BL"
 							}
 						],
 						"puntiAuricolari": [],
@@ -14702,7 +14702,7 @@ var archiviDemo = {
 								"e": "",
 								"z": "ago",
 								"t": "Nieren-Shu-Punkt",
-								"s": "23.BL..ago"
+								"s": "23.BL"
 							},
 							{
 								"n": 32,
@@ -14710,7 +14710,7 @@ var archiviDemo = {
 								"e": "",
 								"z": "ago",
 								"t": "",
-								"s": "32.BL..ago"
+								"s": "32.BL"
 							},
 							{
 								"n": 30,
@@ -14718,7 +14718,7 @@ var archiviDemo = {
 								"e": "",
 								"z": "ago",
 								"t": "",
-								"s": "30.BL..ago"
+								"s": "30.BL"
 							},
 							{
 								"n": 31,
@@ -14726,7 +14726,7 @@ var archiviDemo = {
 								"e": "",
 								"z": "ago",
 								"t": "",
-								"s": "31.GB..ago"
+								"s": "31.GB"
 							}
 						],
 						"puntiAuricolari": [],
@@ -14810,7 +14810,7 @@ var archiviDemo = {
 								"e": "",
 								"z": "dito",
 								"t": "",
-								"s": "7.HT..dito"
+								"s": "7.HT"
 							},
 							{
 								"n": 6,
@@ -14818,7 +14818,7 @@ var archiviDemo = {
 								"e": "",
 								"z": "dito",
 								"t": "",
-								"s": "6.PC..dito"
+								"s": "6.PC"
 							},
 							{
 								"n": 7,
@@ -14826,7 +14826,7 @@ var archiviDemo = {
 								"e": "",
 								"z": "dito",
 								"t": "",
-								"s": "7.PC..dito"
+								"s": "7.PC"
 							},
 							{
 								"n": 20,
@@ -14850,7 +14850,7 @@ var archiviDemo = {
 								"e": "",
 								"z": "moxa",
 								"t": "",
-								"s": "11.BL..moxa"
+								"s": "11.BL"
 							},
 							{
 								"n": 28,
@@ -14858,7 +14858,7 @@ var archiviDemo = {
 								"e": "",
 								"z": "moxa",
 								"t": "Milz Shu Punkt",
-								"s": "28.BL..moxa"
+								"s": "28.BL"
 							}
 						],
 						"puntiAuricolari": [],
@@ -14970,7 +14970,7 @@ var archiviDemo = {
 								"e": "P",
 								"z": "dito",
 								"t": "",
-								"s": "7.HT..dito"
+								"s": "7.HT"
 							},
 							{
 								"n": 6,
@@ -14978,7 +14978,7 @@ var archiviDemo = {
 								"e": "D",
 								"z": "dito",
 								"t": "",
-								"s": "6.PC..dito"
+								"s": "6.PC"
 							},
 							{
 								"n": 7,
@@ -14986,7 +14986,7 @@ var archiviDemo = {
 								"e": "D",
 								"z": "dito",
 								"t": "",
-								"s": "7.PC..dito"
+								"s": "7.PC"
 							},
 							{
 								"n": 20,
@@ -14994,7 +14994,7 @@ var archiviDemo = {
 								"e": "V",
 								"z": "moxa",
 								"t": "",
-								"s": "20.GV..moxa"
+								"s": "20.GV"
 							},
 							{
 								"n": 6,
@@ -15002,7 +15002,7 @@ var archiviDemo = {
 								"e": "V",
 								"z": "moxa",
 								"t": "",
-								"s": "6.SP..moxa"
+								"s": "6.SP"
 							}
 						],
 						"puntiAuricolari": [],
@@ -15114,7 +15114,7 @@ var archiviDemo = {
 								"e": "",
 								"z": "dito",
 								"t": "",
-								"s": "11.BL..dito"
+								"s": "11.BL"
 							},
 							{
 								"n": 18,
@@ -15122,7 +15122,7 @@ var archiviDemo = {
 								"e": "",
 								"z": "dito",
 								"t": "Leber Shu Punkt",
-								"s": "18.BL..dito"
+								"s": "18.BL"
 							},
 							{
 								"n": 19,
@@ -15130,7 +15130,7 @@ var archiviDemo = {
 								"e": "",
 								"z": "dito",
 								"t": "Gallenblasen Shu Punkt",
-								"s": "19.BL..dito"
+								"s": "19.BL"
 							},
 							{
 								"n": 28,
@@ -15138,7 +15138,7 @@ var archiviDemo = {
 								"e": "",
 								"z": "dito",
 								"t": "Blasen Shu Punkt",
-								"s": "28.BL..dito"
+								"s": "28.BL"
 							},
 							{
 								"n": 20,
@@ -15266,7 +15266,7 @@ var archiviDemo = {
 								"e": "",
 								"z": "dito",
 								"t": "",
-								"s": "11.BL..dito"
+								"s": "11.BL"
 							},
 							{
 								"n": 18,
@@ -15282,7 +15282,7 @@ var archiviDemo = {
 								"e": "",
 								"z": "dito",
 								"t": "Gallenblasen Shu Punkt",
-								"s": "19.BL..dito"
+								"s": "19.BL"
 							},
 							{
 								"n": 28,
@@ -15290,7 +15290,7 @@ var archiviDemo = {
 								"e": "",
 								"z": "dito",
 								"t": "Blasen Shu Punkt",
-								"s": "28.BL..dito"
+								"s": "28.BL"
 							},
 							{
 								"n": 13,
@@ -15298,7 +15298,7 @@ var archiviDemo = {
 								"e": "V",
 								"z": "moxa",
 								"t": "Milz BO Punkt",
-								"s": "13.LR..moxa"
+								"s": "13.LR"
 							}
 						],
 						"puntiAuricolari": [],
