@@ -23,6 +23,7 @@ var PAZIENTI = {
 	pazientiFiltrati: [],
 		
 	caricaPazienti: function(){ // carica l'elenco dei pazienti
+		if(PAZIENTI.idCL>-1)return;
 		if(PAZIENTI.pazientiFiltrati.length)PAZIENTI.car_filtri(true); // per i cambi di filtri
 		var HTML = '';
 		

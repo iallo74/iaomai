@@ -305,6 +305,8 @@ SET = {
 		Object.assign(SET, MODULO_TEORIA);
 		Object.assign(SET, MODULO_PROCEDURE);
 		
+		SET.aggiungiPuntiParticolari();
+		
 		// svuoto la memoria
 		MODULO_PATOLOGIE = null;
 		MODULO_MERIDIANI = null;

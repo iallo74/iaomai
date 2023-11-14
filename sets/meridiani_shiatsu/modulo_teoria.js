@@ -23,38 +23,65 @@ var MODULO_TEORIA = { // extend SET
 		"4_4"
 	],
 	
+	aggiungiPuntiParticolari: function(){
+		var contProvv = document.createElement('div');
+		contProvv.id = 'contProvv';
+		contProvv.style.display = 'hidden';
+		contProvv.innerHTML = DB.set.teoria[1].contenuti[3].TestoTeoria;
+		document.body.appendChild(contProvv);
+		DB.set.teoria.push({
+			TitoloSezione: DB.set.teoria[1].contenuti[3].TitoloTeoria,
+			contenuti: [],
+			noVis: true
+		});
+		let re = /\[\.[0-9]{1,2}\.[A-Z]{2}[\.*]+\]/ig;
+		for(let t=1;t<=10;t++){
+			let testo = '';
+			let punti = document.getElementById("sz"+t).innerHTML.match(re);
+			for(let p=0;p<punti.length;p++){
+				testo += punti[p];
+			}
+			DB.set.teoria[DB.set.teoria.length-1].contenuti.push({
+				TitoloTeoria: document.getElementById("tz"+t).innerText,
+				TestoTeoria: testo
+			});
+		}
+		document.body.removeChild(contProvv);
+	},
 	caricaApprofondimenti: function(){
 		// carica la lista degli approfondimenti
 		var contTeoria = '';
 		for(let p in DB.set.teoria){
-			if(__(DB.set.teoria[p].label))contTeoria += '<p class="labelCartella">'+DB.set.teoria[p].label+'</p>';
-			contTeoria += 	'<div class="cartella" onTouchStart="SCHEDA.setCartella(this);">' +
-							'	<span id="btn_teoria_cart_'+p+'" onClick="SCHEDA.swCartella(this);">' +
-							 		DB.set.teoria[p].TitoloSezione +
-							'	</span>' +
-							'	<div>';
-							
-			for(t in DB.set.teoria[p].contenuti){
-				
-				// verifico le autorizzazioni
-				var addLock = 	(!SET.verFreeTeoria(p+"_"+t))? ' lockedItem' : '';
-				// --------------------------
-				TitoloTeoria = DB.set.teoria[p].contenuti[t].TitoloTeoria;
-				funct = 'Approfondimento';
-				addClass = '';
-				if(TitoloTeoria.indexOf("[video]")>-1){
-					var pT = TitoloTeoria.split("[video]");
-					TitoloTeoria = pT[0];
-					funct = 'Video';
-					addClass = 'cart_video';
+			if(!__(DB.set.teoria[p].noVis)){
+				if(__(DB.set.teoria[p].label))contTeoria += '<p class="labelCartella">'+DB.set.teoria[p].label+'</p>';
+				contTeoria += 	'<div class="cartella" onTouchStart="SCHEDA.setCartella(this);">' +
+								'	<span id="btn_teoria_cart_'+p+'" onClick="SCHEDA.swCartella(this);">' +
+										DB.set.teoria[p].TitoloSezione +
+								'	</span>' +
+								'	<div>';
+								
+				for(t in DB.set.teoria[p].contenuti){
+					
+					// verifico le autorizzazioni
+					var addLock = 	(!SET.verFreeTeoria(p+"_"+t))? ' lockedItem' : '';
+					// --------------------------
+					TitoloTeoria = DB.set.teoria[p].contenuti[t].TitoloTeoria;
+					funct = 'Approfondimento';
+					addClass = '';
+					if(TitoloTeoria.indexOf("[video]")>-1){
+						var pT = TitoloTeoria.split("[video]");
+						TitoloTeoria = pT[0];
+						funct = 'Video';
+						addClass = 'cart_video';
+					}
+					contTeoria += 	'<div id="btn_teoria_'+p+'_'+t+'"' +
+									'     class="cart_els '+addClass+addLock+'"' +
+									'     onClick="SET.carica'+funct+'('+p+','+t+',this);">' +
+										TitoloTeoria +
+									'</div>';
 				}
-				contTeoria += 	'<div id="btn_teoria_'+p+'_'+t+'"' +
-								'     class="cart_els '+addClass+addLock+'"' +
-								'     onClick="SET.carica'+funct+'('+p+','+t+',this);">' +
-									TitoloTeoria +
-								'</div>';
+				contTeoria += '</div></div>';
 			}
-			contTeoria += '</div></div>';
 		}
 		document.getElementById("lista_teoria").innerHTML = '<div class="lista listaTeoria">' +
 																contTeoria +
