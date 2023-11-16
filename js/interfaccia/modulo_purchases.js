@@ -37,6 +37,7 @@ var PURCHASES  = {
 	initStore: function(){
 		// inizializza l'acquisto
 		PURCHASES.initiated = true;
+		window.store = window.CdvPurchase.store; //<<<<<<<<<<<<< v13
 		if(window.store){
 			store.error(function(error) {
 				console.log('ERROR ' + error.code + ': ' + error.message);
@@ -44,16 +45,29 @@ var PURCHASES  = {
 			for(let id in PURCHASES.product_list){
 				store.register({
 					id:    PURCHASES.product_list[id].idStore,
-					type:  store.NON_CONSUMABLE
+					type:  store.NON_CONSUMABLE,
+					platform: android ? GOOGLE_PLAY : APPLE_APPSTORE //<<<<<<<<<<<<< v13
 				});
-				store.when(PURCHASES.product_list[id].idStore).loaded(PURCHASES.makeProductList);
+				
+				//<<<<<<<<<<<<< v11
+				/*store.when(PURCHASES.product_list[id].idStore).loaded(PURCHASES.makeProductList);
 				store.when(PURCHASES.product_list[id].idStore).updated(PURCHASES.viewProduct);
 				store.when(PURCHASES.product_list[id].idStore).approved(function(p) {
 					p.verify();
 				});
-				store.when(PURCHASES.product_list[id].idStore).verified(PURCHASES.finishPurchase);
+				store.when(PURCHASES.product_list[id].idStore).verified(PURCHASES.finishPurchase);*/
+				
+				//<<<<<<<<<<<<< v13
+				store.when()
+					.loaded(PURCHASES.makeProductList())
+					.productUpdated(PURCHASES.viewProduct())
+					.approved(function(p) { p.verify(); })
+					.verified(PURCHASES.finishPurchase());
+
+
 			}
-			store.refresh();
+			//store.refresh(); //<<<<<<<<<<<<< v11
+			store.initialize(); //<<<<<<<<<<<<< v13
 		}else{
 			PURCHASES.getPrices();
 		}
