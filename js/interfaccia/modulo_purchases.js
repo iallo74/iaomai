@@ -96,7 +96,7 @@ var PURCHASES  = {
         if(p.products[0].id = PURCHASES.idBuying){
             PURCHASES.idBuying = '';
 		    p.finish();
-		    var pr = PURCHASES.getProdById(p.id);
+		    var pr = PURCHASES.getProdById(p.products[0].id);
 		    CONN.caricaUrl(	"purchases_activate.php",
 				    	"folder="+pr.folder+"&price="+pr.price+"&siglaLingua="+globals.siglaLingua,
 				     	"PURCHASES.ret_activate");
