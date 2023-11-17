@@ -5,6 +5,7 @@ var PURCHASES  = {
 	list_view: true,
 	initiated: false,
 	orderState: '',
+    idBuying: '',
 	
 	init: function(){
 		// inizializza il catalogo
@@ -37,7 +38,7 @@ var PURCHASES  = {
 	initStore: function(){
 		// inizializza l'acquisto
 		PURCHASES.initiated = true;
-		window.store = window.CdvPurchase.store; //<<<<<<<<<<<<< v13
+		if(window?.CdvPurchase?.store)window.store = window.CdvPurchase.store;
 		if(window.store){
 			store.error(function(error) {
 				console.log('ERROR ' + error.code + ': ' + error.message);
@@ -46,28 +47,15 @@ var PURCHASES  = {
 				store.register({
 					id:    PURCHASES.product_list[id].idStore,
 					type:  store.NON_CONSUMABLE,
-					platform: android ? GOOGLE_PLAY : APPLE_APPSTORE //<<<<<<<<<<<<< v13
+					platform: android ? "android-playstore" : "ios-appstore"
 				});
-				
-				//<<<<<<<<<<<<< v11
-				/*store.when(PURCHASES.product_list[id].idStore).loaded(PURCHASES.makeProductList);
-				store.when(PURCHASES.product_list[id].idStore).updated(PURCHASES.viewProduct);
-				store.when(PURCHASES.product_list[id].idStore).approved(function(p) {
-					p.verify();
-				});
-				store.when(PURCHASES.product_list[id].idStore).verified(PURCHASES.finishPurchase);*/
-				
-				//<<<<<<<<<<<<< v13
 				store.when()
-					.loaded(PURCHASES.makeProductList())
-					.productUpdated(PURCHASES.viewProduct())
-					.approved(function(p) { p.verify(); })
-					.verified(PURCHASES.finishPurchase());
+					.productUpdated(product => PURCHASES.makeProductList(product))
+					.approved(transaction => PURCHASES.finishPurchase(transaction));
 
 
 			}
-			//store.refresh(); //<<<<<<<<<<<<< v11
-			store.initialize(); //<<<<<<<<<<<<< v13
+			store.initialize();
 		}else{
 			PURCHASES.getPrices();
 		}
@@ -81,10 +69,22 @@ var PURCHASES  = {
 		else p = PURCHASES.getProdById(PURCHASES.productId);
 		PURCHASES.viewProduct(p);
 	},
-	purchaseLicense: function(){
+	purchaseLicense: function( id ){
 		// acquista la licenza
-		if(window.store)store.order(PURCHASES.productId);
-		else{
+		if(window.store){
+			if(!android){ // ritardo per apple
+				let el = document.getElementById('contPurchases');
+				let preHTML = el.innerHTML;
+				el.classList.add("ini");
+				el.innerHTML = '';
+				setTimeout(function(){
+					el.classList.remove("ini");
+					el.innerHTML = preHTML;
+				},7000,preHTML);
+			}
+            PURCHASES.idBuying = id;
+			store.get(PURCHASES.productId)?.getOffer()?.order();
+		}else{
 			var tk = encodeURIComponent(window.btoa(LOGIN.logedin() + MD5(DB.login.data.idUtente)));
 			var fl = encodeURIComponent(window.btoa(PURCHASES.getProdById(PURCHASES.productId).folder));
 			CONN.openUrl(convLangPath(CONN.urlStore)+"in_app_purchase?tk="+tk+"&mp="+fl);
@@ -92,14 +92,15 @@ var PURCHASES  = {
 		}
 	},
 	finishPurchase:function(p){
-		p.finish();
-		//if(p.state == 'approved' || p.state == 'owned'){
-			var pr = PURCHASES.getProdById(p.id);
-			CONN.caricaUrl(	"purchases_activate.php",
-							"folder="+pr.folder+"&price="+pr.price+"&siglaLingua="+globals.siglaLingua,
-							"PURCHASES.ret_activate");
-			
-		//}
+		if(!p.products[0].id)return;
+        if(p.products[0].id = PURCHASES.idBuying){
+            PURCHASES.idBuying = '';
+		    p.finish();
+		    var pr = PURCHASES.getProdById(p.id);
+		    CONN.caricaUrl(	"purchases_activate.php",
+				    	"folder="+pr.folder+"&price="+pr.price+"&siglaLingua="+globals.siglaLingua,
+				     	"PURCHASES.ret_activate");
+        }
 	},
 	ret_activate: function( txt ){
 		if(txt=='404'){
@@ -130,7 +131,7 @@ var PURCHASES  = {
 		var canPurchase = true;
 		var owned = false;
 		var loadingPurchase = false;
-		var price = product.price;
+		var price = product.offers[0].pricingPhases[0].price;
 		var folder = '';
 		if(!price)TXT("AccediAlloStore");
 		if(window.store){
@@ -147,16 +148,16 @@ var PURCHASES  = {
 		if(!owned)owned = (DB.login.data.auths.indexOf(folder)>-1) ? true : false;
 		var info = '<div id="copertinaPurchase" style="background-image:url(sets/'+folder+'/img/copertina.png);"></div>';
 		var button = '...';
-		if(loaded){
+		//if(loaded){
 			info += '<b id="titLicenze"><img src="sets/'+folder+'/img/logoMenuN.png"> '+product.title+'</b><br/>' +
 					product.description+'<br/>' +
 					price+'<br/>';
-		}
+		//}
 		var button = '';
 		if(canPurchase){
 			button = '';
 			if(visRet)button += '<div class="ann" onClick="PURCHASES.productList();">'+TXT("Annulla")+'</div> ';
-			button += '<div class="btn" onClick="PURCHASES.purchaseLicense()">'+TXT("CompraOra")+'</div>';
+			button += '<div class="btn" onClick="PURCHASES.purchaseLicense(\''+product.id+'\')">'+TXT("CompraOra")+'</div>';
 		}else if(owned){
 			button = '<div>'+TXT("Acquistato")+'</div>';
 		}else if(loadingPurchase){
@@ -179,7 +180,7 @@ var PURCHASES  = {
 		if(!PURCHASES.list_view)return;
 		var el = PURCHASES.getProdById(product.id);
 		el.title = product.title;
-		el.price = product.price;
+		el.price = product.pricing?.price;
 		el.owned = product.owned;
 		PURCHASES.productList();
 	},
