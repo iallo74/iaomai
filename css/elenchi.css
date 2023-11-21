@@ -111,9 +111,13 @@ body:not(.smart) #help_set,
 	cursor:pointer;
     margin-top: 7px;
     margin-right: 4px;
+    margin-left: 10x;
 	font-size: var(--font-18-7) !important;
 	font-weight:bold !important;
 	font-style: normal !important;
+}
+.fumetti_cont #help_set{
+    margin-left:3px !important;
 }
 .popup_help{
 	margin-right: 36px;
