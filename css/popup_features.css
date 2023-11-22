@@ -8,13 +8,21 @@
 	max-width: 600px;
     max-height: 620px;
 	width: 600px;
-    height: 620px;
+    max-height: 620px;
     margin-left: -300px;
     margin-top: -310px;
 	opacity:0;
 	background-color: #FFF;
 	transition:opacity 0.5s;
 	-webkit-transition:opacity 0.5s;
+}
+@media (max-height: 660px){
+    body:not(.smart) #features{
+        height:calc(100% - 40px);
+        max-height: 620px;
+        top: 20px;
+        margin-top:0px;
+    }
 }
 @media (max-width: 600px){
 	.popup{
