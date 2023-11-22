@@ -62,6 +62,7 @@ var PAZIENTI_SETS = {
 		var mr=document[frm]["mr_"+n];
 		if(typeof(DB.set.meridiani[mr.value])!='undefined'){
 			var punto=document[frm]["pt_"+n];
+			var preVal = punto.selectedIndex;
 			var maxL=punto.options.length;
 			for(a=maxL;a>=0;a--){
 				punto.options[a]=null;
@@ -81,6 +82,7 @@ var PAZIENTI_SETS = {
 			}
 			punto.options[0]=null;
 			if(mr.options[0].value=='')mr.options[0]=null;
+			punto.selectedIndex = preVal;
 			document.getElementById("ico_vis"+n).style.display="inline";
 		}
 		PAZIENTI.ricGroup(frm,n);
