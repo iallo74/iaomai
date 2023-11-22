@@ -1134,6 +1134,9 @@ body:not(.bodyModello) #btns_set{
     border-radius: 6px;
     background-color: rgba(0,0,0,0.2);
 }
+body:not(.bodyStyled2) #filtriSmart_cont{
+    background-color: rgba(255,255,255,0.5) !important;
+}
 .smart #filtriSmart_cont{
     top: 50px !important;
     right: 0px !important;
