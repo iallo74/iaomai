@@ -9,7 +9,7 @@ var MENU = {
 	pwdOK: false,
 	init: function(){
 		MENU.setOp('Pelle',1);
-		MENU.setOp('Muscoli',1);
+		MENU.setOp('Aree',1);
 		MENU.setOp('Ossa',1);
 		MENU.setOp('Visceri',0.8);
 		document.getElementById("pulsanti_modello").addEventListener( 'wheel', function(){
@@ -42,12 +42,12 @@ var MENU = {
 			}
 		}
 		try{
-			if(globals.modello.livelli.indexOf("muscoli") > -1){
-				document.getElementById("p_muscoli").classList.add("visBtn");
-				document.getElementById("slideMuscles").classList.add("visSlide");
+			if(globals.modello.livelli.indexOf("aree") > -1){
+				document.getElementById("p_aree").classList.add("visBtn");
+				document.getElementById("slideAree").classList.add("visSlide");
 			}else{
-				document.getElementById("p_muscoli").classList.remove("visBtn");
-				document.getElementById("slideMuscles").classList.remove("visSlide");
+				document.getElementById("p_aree").classList.remove("visBtn");
+				document.getElementById("slideAree").classList.remove("visSlide");
 			}
 			if(globals.modello.rifletti){
 				document.getElementById("p_rifletti").classList.add("visBtn");
@@ -226,13 +226,25 @@ var MENU = {
 			document.getElementById("fr_ossa").classList.remove("frOpened");
 			document.getElementById("el_ossa_cont").classList.remove("elOpened");
 		}
+		if(n != 'legamenti'){
+			document.getElementById("fr_legamenti").classList.remove("frOpened");
+			document.getElementById("el_legamenti_cont").classList.remove("elOpened");
+		}
 		if(n != 'visceri'){
 			document.getElementById("fr_visceri").classList.remove("frOpened");
 			document.getElementById("el_visceri_cont").classList.remove("elOpened");
 		}
-		if(n != 'muscoli'){
-			document.getElementById("fr_muscoli").classList.remove("frOpened");
-			document.getElementById("el_muscoli_cont").classList.remove("elOpened");
+		if(n != 'vasi'){
+			document.getElementById("fr_vasi").classList.remove("frOpened");
+			document.getElementById("el_vasi_cont").classList.remove("elOpened");
+		}
+		if(n != 'aree'){
+			document.getElementById("fr_aree").classList.remove("frOpened");
+			document.getElementById("el_aree_cont").classList.remove("elOpened");
+		}
+		if(n != 'muscoli3d'){
+			document.getElementById("fr_muscoli3d").classList.remove("frOpened");
+			document.getElementById("el_muscoli3d_cont").classList.remove("elOpened");
 		}
 	},
 	swElOssa: function(){
@@ -240,16 +252,31 @@ var MENU = {
 		document.getElementById("fr_ossa").classList.toggle("frOpened");
 		document.getElementById("el_ossa_cont").classList.toggle("elOpened");
 	},
+	swElLegamenti: function(){
+		this.chEls('legamenti');
+		document.getElementById("fr_legamenti").classList.toggle("frOpened");
+		document.getElementById("el_legamenti_cont").classList.toggle("elOpened");
+	},
 	swElVisceri: function(){
 		this.chEls('visceri');
 		document.getElementById("fr_visceri").classList.toggle("frOpened");
 		document.getElementById("el_visceri_cont").classList.toggle("elOpened");
 	},
-	swElMuscoli: function(forza=false){
-		if(!muscleView && !forza)MODELLO.swMuscle(1);
-		this.chEls('muscoli');
-		document.getElementById("fr_muscoli").classList.toggle("frOpened");
-		document.getElementById("el_muscoli_cont").classList.toggle("elOpened");
+	swElVasi: function(){
+		this.chEls('vasi');
+		document.getElementById("fr_vasi").classList.toggle("frOpened");
+		document.getElementById("el_vasi_cont").classList.toggle("elOpened");
+	},
+	swElAree: function(forza=false){
+		if(!areasView && !forza)MODELLO.swArea(1);
+		this.chEls('aree');
+		document.getElementById("fr_aree").classList.toggle("frOpened");
+		document.getElementById("el_aree_cont").classList.toggle("elOpened");
+	},
+	swElMuscoli3d: function(forza=false){
+		this.chEls('muscoli3d');
+		document.getElementById("fr_muscoli3d").classList.toggle("frOpened");
+		document.getElementById("el_muscoli3d_cont").classList.toggle("elOpened");
 	},
 	
 	setOp: function(livello, op){
@@ -303,17 +330,17 @@ var MENU = {
 		MENU.comprimiIcone(true);
 	},
 	chiudiAllSelected: function(){
-		var els = document.getElementById("elencoSelected").getElementsByTagName("p");
-		var tot = els.length;
-		var e = 0;
+		let els = document.getElementById("elencoSelected").getElementsByTagName("p");
+		let tot = els.length;
+		let e = 0;
 		for(let p=0;p<tot;p++){
-			if(els[e].id.indexOf("SEL_Muscolo_") == -1)document.getElementById(els[e].id).click();
+			if(els[e].id.indexOf("SEL_Muscolo_") == -1 || globals.modello.muscles3d)document.getElementById(els[e].id).click();
 			else{
 				document.getElementById(els[e].id.replace("SEL_","")).classList.remove("p_viscSel");
 				e++;
 			}
 		}
-		try{ if(globals.modello.livelli.indexOf("muscoli") > -1)MODELLO.tuttiMuscoli(); }catch(err){}
+		try{ if(globals.modello.livelli.indexOf("aree") > -1)MODELLO.tutteAree(); }catch(err){}
 		document.getElementById("contSelected").innerHTML='';
 		globals.pezziSelezionati = [];
 		if(document.getElementById("elencoSelected").className.indexOf("visSch") > -1)MENU.visSelected();
@@ -1199,8 +1226,8 @@ var SLIDER = {
 		event.preventDefault();
 		livello=el.parentElement.parentElement.id.replace("p_","");
 		if(el.parentElement.parentElement.className.indexOf("disattLiv") > -1){
-			if(livello == 'pelle' && muscleView)MODELLO.swMuscle(2);
-			if(livello == 'muscoli' && !muscleView)MODELLO.swMuscle(1);
+			if(livello == 'pelle' && areasView)MODELLO.swArea(2);
+			if(livello == 'aree' && !areasView)MODELLO.swArea(1);
 			//return;
 		}
 		SLIDER.livelloSel = livello;

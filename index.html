@@ -589,15 +589,28 @@
                      onWheel="MODELLO.opw(event,'Pelle');"
                 	 onmousedown="MODELLO.slw(event,'pelle');"
                 	 onTouchStart="MODELLO.slw(event,'pelle');"></div>
-                <div id="p_liv_muscoli"
+                <div id="p_liv_aree"
                      class="disattLiv"
-                     onWheel="MODELLO.opw(event,'Muscoli');"
-                	 onmousedown="MODELLO.slw(event,'muscoli');"
-                	 onTouchStart="MODELLO.slw(event,'muscoli');"></div>
+                     onWheel="MODELLO.opw(event,'Aree');"
+                	 onmousedown="MODELLO.slw(event,'aree');"
+                	 onTouchStart="MODELLO.slw(event,'aree');"></div>
+                <div id="p_liv_muscoli3d"
+                    class="disattLiv"
+                    onWheel="MODELLO.opw(event,'Muscoli3d');"
+                    onmousedown="MODELLO.slw(event,'muscoli3d');"
+                    onTouchStart="MODELLO.slw(event,'muscoli3d');"></div>
+                <div id="p_liv_legamenti"
+                    onWheel="MODELLO.opw(event,'Legamenti');"
+                    onmousedown="MODELLO.slw(event,'legamenti');"
+                    onTouchStart="MODELLO.slw(event,'legamenti');"></div>
                 <div id="p_liv_ossa"
-                     onWheel="MODELLO.opw(event,'Ossa');"
-                	 onmousedown="MODELLO.slw(event,'ossa');"
-                	 onTouchStart="MODELLO.slw(event,'ossa');"></div>
+                    onWheel="MODELLO.opw(event,'Ossa');"
+                    onmousedown="MODELLO.slw(event,'ossa');"
+                    onTouchStart="MODELLO.slw(event,'ossa');"></div>
+                <div id="p_liv_vasi"
+                    onWheel="MODELLO.opw(event,'Vasi');"
+                    onmousedown="MODELLO.slw(event,'vasi');"
+                    onTouchStart="MODELLO.slw(event,'vasi');"></div>
                 <div id="p_liv_visceri"
                      onWheel="MODELLO.opw(event,'Visceri');"
                 	 onmousedown="MODELLO.slw(event,'visceri');"
@@ -656,22 +669,40 @@
                 </div>
                 <div id="livelli_precar">{{TXT_LivelliPrecar}}</div>
             	<div id="livelli_cont">
-                	<div id="slideMuscles" onClick="MODELLO.swMuscle();"><div></div></div>
+                	<div id="slideAree" onClick="MODELLO.swArea();"><div></div></div>
                 
                 
                 
-                    <div id="p_pelle" class="slider_cont"><div id="i_pelle" onClick="MODELLO.swMuscle(2);"></div><div class="slider" id="s_pelle"><div class="slider_btn" onMouseDown="SLIDER.iniziaSlide(event,this);" onTouchStart="SLIDER.iniziaSlide(event,this);"></div></div></div>
+                    <div id="p_pelle" class="slider_cont"><div id="i_pelle" onClick="MODELLO.swArea(2);"></div><div class="slider" id="s_pelle"><div class="slider_btn" onMouseDown="SLIDER.iniziaSlide(event,this);" onTouchStart="SLIDER.iniziaSlide(event,this);"></div></div></div>
                 
-                    <div id="p_muscoli" class="slider_cont disattLiv"><div id="i_muscoli" onClick="MODELLO.swMuscle(1);"></div><div class="slider" id="s_muscoli"><div class="slider_btn" onMouseDown="SLIDER.iniziaSlide(event,this);" onTouchStart="SLIDER.iniziaSlide(event,this);"></div></div><div id="fr_muscoli" onClick="MENU.swElMuscoli();"></div></div>
-                    <div id="el_muscoli_cont">
-                    	<input type="text" id="filtro_muscoli" onKeyUp="MENU.filtra(this);" placeholder="{{TXT_CercaMuscoli}}" class="okPlaceHolder" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"><span id="ch_muscoli" onClick="MENU.annullaFiltro(this);"></span>
-                        <div id="el_muscoli" class="scrb_scura"></div>
+                    <div id="p_aree" class="slider_cont disattLiv"><div id="i_aree" onClick="MODELLO.swArea(1);"></div><div class="slider" id="s_aree"><div class="slider_btn" onMouseDown="SLIDER.iniziaSlide(event,this);" onTouchStart="SLIDER.iniziaSlide(event,this);"></div></div><div id="fr_aree" onClick="MENU.swElAree();"></div></div>
+                    <div id="el_aree_cont">
+                    	<input type="text" id="filtro_aree" onKeyUp="MENU.filtra(this);" placeholder="{{TXT_CercaAree}}" class="okPlaceHolder" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"><span id="ch_aree" onClick="MENU.annullaFiltro(this);"></span>
+                        <div id="el_aree" class="scrb_scura"></div>
+                    </div>
+
+                    <div id="p_muscoli3d" class="slider_cont"><div id="i_muscoli3d"></div><div class="slider" id="s_muscoli3d"><div class="slider_btn" onMouseDown="SLIDER.iniziaSlide(event,this);" onTouchStart="SLIDER.iniziaSlide(event,this);"></div></div><div id="fr_muscoli3d" onClick="MENU.swElMuscoli3d();"></div></div>
+                    <div id="el_muscoli3d_cont">
+                    	<input type="text" id="filtro_muscoli3d" onKeyUp="MENU.filtra(this);" placeholder="{{TXT_CercaMuscoli}}" class="okPlaceHolder" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"><span id="ch_muscoli3d" onClick="MENU.annullaFiltro(this);"></span>
+                        <div id="el_muscoli3d" class="scrb_scura"></div>
+                    </div>
+                    
+                    <div id="p_legamenti" class="slider_cont"><div id="i_legamenti"></div><div class="slider" id="s_legamenti"><div class="slider_btn" onMouseDown="SLIDER.iniziaSlide(event,this);" onTouchStart="SLIDER.iniziaSlide(event,this);"></div></div><div id="fr_legamenti" onClick="MENU.swElLegamenti();"></div></div>
+                    <div id="el_legamenti_cont">
+                    	<input type="text" id="filtro_legamenti" onKeyUp="MENU.filtra(this);" placeholder="{{TXT_CercaLegamenti}}" class="okPlaceHolder" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"><span id="ch_legamenti" onClick="MENU.annullaFiltro(this);"></span>
+                        <div id="el_legamenti" class="scrb_scura"></div>
                     </div>
                     
                     <div id="p_ossa" class="slider_cont"><div id="i_ossa"></div><div class="slider" id="s_ossa"><div class="slider_btn" onMouseDown="SLIDER.iniziaSlide(event,this);" onTouchStart="SLIDER.iniziaSlide(event,this);"></div></div><div id="fr_ossa" onClick="MENU.swElOssa();"></div></div>
                     <div id="el_ossa_cont">
                     	<input type="text" id="filtro_ossa" onKeyUp="MENU.filtra(this);" placeholder="{{TXT_CercaOssa}}" class="okPlaceHolder" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"><span id="ch_ossa" onClick="MENU.annullaFiltro(this);"></span>
                         <div id="el_ossa" class="scrb_scura"></div>
+                    </div>
+                    
+                    <div id="p_vasi" class="slider_cont"><div id="i_vasi"></div><div class="slider" id="s_vasi"><div class="slider_btn" onMouseDown="SLIDER.iniziaSlide(event,this);" onTouchStart="SLIDER.iniziaSlide(event,this);"></div></div><div id="fr_vasi" onClick="MENU.swElVasi();"></div></div>
+                    <div id="el_vasi_cont">
+                    	<input type="text" id="filtro_vasi" onKeyUp="MENU.filtra(this);" placeholder="{{TXT_CercaVasi}}" class="okPlaceHolder" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"><span id="ch_vasi" onClick="MENU.annullaFiltro(this);"></span>
+                        <div id="el_vasi" class="scrb_scura"></div>
                     </div>
                     
                     <div id="p_visceri" class="slider_cont"><div id="i_visceri"></div><div class="slider" id="s_visceri"><div class="slider_btn" onMouseDown="SLIDER.iniziaSlide(event,this);" onTouchStart="SLIDER.iniziaSlide(event,this);"></div></div><div id="fr_visceri" onClick="MENU.swElVisceri();"></div></div>

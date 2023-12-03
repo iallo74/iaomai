@@ -40,7 +40,7 @@ globals = {
 	initModello: function(){
 		globals.modello = {
 			cartella: '',
-			muscoli:true
+			aree:true
 		}
 		if(localStorage.open3d=='true')globals.open3d = true;
 		if(localStorage.open3d=='false')globals.open3d = false;

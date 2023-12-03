@@ -3,10 +3,6 @@ SET = {
 	
 	// VARIABILI
 	INTERSECTED: null,
-	P: [],
-	PT: [],
-	LN: [],
-	PN: [],
 	AR: [],
 	GD: [],
 	time: 0,
@@ -32,57 +28,24 @@ SET = {
 	forzaDissolve: false,
 	mappaOr: '',
 	lmOr: '',
-	risTest:{
-		dipendenza: {
-			tot: -1,
-			vals: {}
-		},
-		motivazione: {
-			tot: -1,
-			vals: {}
-		}
-	},
-	test: '',
 	groupSel: {
 		type: '',
 		val: '',
 		id: ''
 	},
-	frequenze: [	"1168",
-					"18688",
-					"9334",
-					"584",
-					"4672",
-					"2336",
-					"292" ],
-	phase: '',
-	PH_full: false,
-	PH2_full: false,
-	PH3_full: false,
 	
 	idTeoAnatomia: 0,
 	idTeoLM: '0_2',
 	idTeoCategorie: 2,
-	idTeoTests: 3,
 	
 	// FUNZIONI
 	_init: function(){
-		if(!__(localStorage.imgMappa))localStorage.imgMappa = 'BN';
-		if(!__(localStorage.listPatType))localStorage.listPatType = 'category';
 		
 		SETS = new THREE.Group();
 		SETS.name = "SETS";
 		
-		var facce = 10;
-		var facceTrasp = 14;
-		if(isTablet){
-			facce = 8;
-			facceTrasp = 12;
-		}
 		var modelloAperto = globals.modello.cartella;
-		if(!modelloAperto)modelloAperto='orecchio';
-		this.geometryPallino = new THREE.SphereGeometry( 0.04, facce, facce );
-		this.geometryPallinoTrasp = new THREE.SphereGeometry( 0.08, facceTrasp, facceTrasp );
+		if(!modelloAperto)modelloAperto='piede';
 			
 		
 		var sysMesh = new THREE.Group();
@@ -109,120 +72,24 @@ SET = {
 			}
 		}
 		
-		// linee di conterno
-		var LNS=GEOMETRIE.linee;
-		if(LNS){
-			if(LNS.length){
-				var LN = new THREE.Group();
-				var LN2 = new THREE.Group();
-				var LN3 = new THREE.Group();
-				var LM = new THREE.Group();
-				LN.name="LNs";
-				LN2.name="LNs2";
-				LN3.name="LNs3";
-				LM.name="LMs";
-				LN.visible=true;
-				LN2.visible=false;
-				LN3.visible=false;
-				LM.visible=false;
-				for(l in LNS){ // aggiungo le guide
-					var loader = new THREE.ObjectLoader();
-					var mesh =  loader.parse(JSON.parse(LZString.decompressFromBase64(LNS[l].obj)));
-					
-					var name = mesh.name.split(" ")[0];
-					var orName = mesh.name;
-					mesh.name = name;
-					var vis = true;
-					var PH = '';
-					var type = '';
-					if(	orName.indexOf("AG")==0 ||
-						orName.indexOf("(GRUPPO)")>-1){
-						mesh.visible = false;
-						if(mesh.name.indexOf("AG")==0){
-							mesh.material = this.MAT.lineNeedle;
-							if(mesh.name.indexOf("PH2")>-1){
-								vis = false;
-								PH = '2';
-							}
-							if(mesh.name.indexOf("PH3")>-1){
-								vis = false;
-								PH = '3';
-							}
-							var lato = "";
-							if(orName.indexOf("SX")>-1)lato = "SX";
-							if(orName.indexOf("DX")>-1)lato = "DX";
-							mesh.userData.lato = lato;
-							if(	(MODELLO.flip && lato == 'DX') ||
-								(!MODELLO.flip && lato == 'SX') )mesh.visible = false;
-						}
-						if(orName.indexOf("(GRUPPO)")>-1)mesh.material = this.MAT.lineGroup;
-						if(orName.indexOf("HIDE")>-1){
-							mesh.visible = false;
-							mesh.userData.hidden = true;
-						}
-						mesh.userData.gruppo = true;
-						mesh.PH = PH;
-						SET["PH"+PH+"_full"] = true;
-						eval("LN"+PH+".add( mesh )");
-					}else if( orName.indexOf("LM")==0 ){
-						mesh.material = this.MAT.lineLM;
-						LM.add( mesh );
-					}else{
-						mesh.material = this.MAT.line;
-					}
-				}
-				sysMesh.add( LN );
-				sysMesh.add( LN2 );
-				sysMesh.add( LN3 );
-				sysMesh.add( LM );
-			}
-		}
-		
 		// aree
 		var ARS = GEOMETRIE.aree;
 		if(ARS){
 			var n=-1;
 			var AR = new THREE.Group();
-			var AR2 = new THREE.Group();
-			var AR3 = new THREE.Group();
 			AR.name="ARs";
-			AR2.name="ARs2";
-			AR3.name="ARs3";
 			AR.visible = true;
-			AR2.visible = false;
-			AR3.visible = false;
 			var area = GEOMETRIE.areaBase;
 			for(a in ARS){ // aggiungo le aree
 				var loader = new THREE.ObjectLoader();
 				var mesh = loader.parse(JSON.parse(LZString.decompressFromBase64(ARS[a].obj)));
 				var name = mesh.name.split("_")[0];
 				
-				
-				var system = "";
-				if(mesh.name.indexOf("EUR")>-1)system = "EUR";
-				if(mesh.name.indexOf("CIN")>-1)system = "CIN";
-				if(mesh.name.indexOf("INT")>-1)system = "";
 				var lato = "";
 				if(mesh.name.indexOf("SX")>-1)lato = "SX";
 				if(mesh.name.indexOf("DX")>-1)lato = "DX";
 				
-				var PH = '';
-				if(mesh.name.indexOf("PH2")>-1)PH = '2';
-				if(mesh.name.indexOf("PH3")>-1)PH = '3';
-				
-				var FN = (GEOMETRIE.gruppi.FN.punti.indexOf(name.substr(2,3))>-1);
-				var master = (GEOMETRIE.gruppi.MASTER.punti.indexOf(name.substr(2,3))>-1);
-				
-				var freq = [];
-				for(let f in SET.frequenze){
-					if(mesh.name.indexOf("_"+SET.frequenze[f])>-1)freq.push( SET.frequenze[f] );
-				}
-				if(PH){
-					system = 'EUR';
-					if(PH=='2')DB.set.punti[name.substr(2,3)].PH2 = true;
-					if(PH=='3')DB.set.punti[name.substr(2,3)].PH3 = true;
-				}
-				var mat = this.MAT["areaBase"+system];
+				var mat = this.MAT["areaBase"];
 				
 				mesh.material = cloneMAT(mat);
 				if(mesh.name.indexOf("HIDE")>-1){
@@ -232,150 +99,18 @@ SET = {
 				if(	(MODELLO.flip && lato == 'DX') ||
 					(!MODELLO.flip && lato == 'SX') )mesh.visible = false;
 				mesh.name = name;
-				mesh.userData.area = area;
-				mesh.userData.system = system;
-				mesh.userData.freq = freq;
-				mesh.userData.master = master;
-				mesh.userData.FN = FN;
+				mesh.userData.apparato = apparato;
 				mesh.userData.lato = lato;
 				mesh.userData.raycastable = true;
 				mesh.userData.type = 'area';
-				mesh.userData.PH = PH;
-				SET["PH"+PH+"_full"] = true;
-				eval("AR"+PH+".add( mesh )");
+				AR.add( mesh );
 			}
 			sysMesh.add( AR );
-			sysMesh.add( AR2 );
-			sysMesh.add( AR3 );
 		}
-		
-		// pins delle aree
-		var PN = new THREE.Group();
-		PN.name="PNs";
-		var n=-1;
-		var PNS=GEOMETRIE.pins;
-		for(let p in PNS){
-			if(PNS[p]!=''){
-				var x=PNS[p].array[0];
-				var y=PNS[p].array[1];
-				var z=PNS[p].array[2];
-					
-				// pallino trasparente
-				n++;
-				this.P[n] = new THREE.Mesh( this.geometryPallinoTrasp, this.MAT.pointTrasp ); 
-				this.P[n].position.set(x,y,z);
-				this.P[n].name=PNS[p].nome
-				this.P[n].visible=false
-				PN.add( this.P[n] );
-			}
-		}
-		sysMesh.add( PN );
-		
-		// PUNTI
-		var PT = new THREE.Group();
-		var PT2 = new THREE.Group();
-		var PT3 = new THREE.Group();
-		PT.name="PTs";
-		PT2.name="PTs2";
-		PT3.name="PTs3";
-		PT.visible = true;
-		PT2.visible = false;
-		PT3.visible = false;
-		// carico i punti parametrizzati
-		var n=-1;
-		var PTS=GEOMETRIE.punti;
-		for(let p in PTS){
-			if(PTS[p]!=''){
-				var x=PTS[p].array[0];
-				var y=PTS[p].array[1];
-				var z=PTS[p].array[2];
-				var name = PTS[p].nome.split("(")[0].trim();
-				
-				var system = "";
-				if(PTS[p].nome.indexOf("EUR")>-1)system = "EUR";
-				if(PTS[p].nome.indexOf("CIN")>-1)system = "CIN";
-				if(PTS[p].nome.indexOf("INT")>-1)system = "";
-				var lato = "";
-				if(PTS[p].nome.indexOf("SX")>-1)lato = "SX";
-				if(PTS[p].nome.indexOf("DX")>-1)lato = "DX";
-				
-				var PH = '';
-				if(PTS[p].nome.indexOf("PH2")>-1)PH = '2';
-				if(PTS[p].nome.indexOf("PH3")>-1)PH = '3';
-				
-				var freq = [];
-				for(let f in SET.frequenze){
-					if(PTS[p].nome.indexOf(" "+SET.frequenze[f])>-1)freq.push( SET.frequenze[f] );
-				}
-				
-				
-				var FN = (GEOMETRIE.gruppi.FN.punti.indexOf(name.substr(2,3))>-1);
-				var master = (GEOMETRIE.gruppi.MASTER.punti.indexOf(name.substr(2,3))>-1);
-				
-				
-				// pallino colorato
-				n++;
-				if(PH){
-					system = 'EUR';
-					if(PH=='2')DB.set.punti[name.substr(2,3)].PH2 = true;
-					if(PH=='3')DB.set.punti[name.substr(2,3)].PH3 = true;
-				}
-				var mat = this.MAT["pointBase"+system];
-				
-				this.P[n] = new THREE.Mesh( this.geometryPallino, cloneMAT(mat) );
-				
-				this.P[n].position.set(x,y,z);
-				this.P[n].name=name;
-				if(PTS[p].nome.indexOf("HIDE")>-1){
-					this.P[n].visible = false;
-					this.P[n].userData.hidden = true;
-				}
-				if(	(MODELLO.flip && lato == 'DX') ||
-					(!MODELLO.flip && lato == 'SX') )this.P[n].visible = false;
-				this.P[n].userData.type = 'point';
-				this.P[n].userData.system = system;
-				this.P[n].userData.freq = freq;
-				this.P[n].userData.master = master;
-				this.P[n].userData.FN = FN;
-				this.P[n].userData.lato = lato;
-				this.P[n].userData.PH = PH;
-				SET["PH"+PH+"_full"] = true;
-				eval("PT"+PH+".add( this.P[n] )");
-					
-				// pallino trasparente
-				n++;
-				this.P[n] = new THREE.Mesh( this.geometryPallinoTrasp, this.MAT.pointTrasp ); 
-				this.P[n].position.set(x,y,z);
-				this.P[n].name='_'+name;
-				if(PTS[p].nome.indexOf("HIDE")>-1){
-					this.P[n].visible = false;
-					this.P[n].userData.hidden = true;
-				}
-				if(	(MODELLO.flip && lato == 'DX') ||
-					(!MODELLO.flip && lato == 'SX') )this.P[n].visible = false;
-				this.P[n].userData.raycastable = true;
-				this.P[n].userData.nota = false;
-				this.P[n].userData.type = 'point';
-				this.P[n].userData.system = system;
-				this.P[n].userData.freq = freq;
-				this.P[n].userData.master = master;
-				this.P[n].userData.FN = FN;
-				this.P[n].userData.lato = lato;
-				this.P[n].userData.PH = PH;
-				SET["PH"+PH+"_full"] = true;
-				eval("PT"+PH+".add( this.P[n] )");
-			}
-		}
-		sysMesh.add( PT );
-		sysMesh.add( PT2 );
-		sysMesh.add( PT3 );
-		SETS.add( sysMesh );
-		
-		SET.MAT.mappaAree(true);
 		
 		var contPulsanti = 	'<span class="menuElenchi" onclick="MENU.visMM(\'btnCarMapMenu\');"></span>' +
 							'<span id="btnCarMapMenu" class="btn_meridiani_shiatsu titolo_set">' +
-							'<span>AuriculoMap</span>' +
+							'<span>ReflexologyMap</span>' +
 							'<i class="elMenu" id="chiudiSet" onClick="chiudiSet();" title="'+htmlEntities(TXT("ChiudiSet"))+'"><span>' +
 								htmlEntities(TXT("ChiudiSet")) +
 							'</span></i>' +
@@ -384,7 +119,7 @@ SET = {
 							'</span></i>' +
 							'<i class="elMenu" id="help_set" onClick="GUIDA.visFumetto(\'guida_set\',true,true);">?</i></span>';
 		var contElenco = '';
-		contPulsanti += '<div id="pulsante_modello" onClick="cambiaModello(\'orecchio\');">'+TXT("ApriModello3D")+'</div>';
+		contPulsanti += '<div id="pulsante_modello" onClick="cambiaModello(\'piede\');">'+TXT("ApriModello3D")+'</div>';
 		// punti
 		contPulsanti += '<div id="pulsante_punti" class="frdx" onClick="SCHEDA.selElenco(\'punti\');">'+TXT("Mappa")+'</div>';
 		contElenco += '<div id="lista_punti"></div>';
@@ -402,10 +137,9 @@ SET = {
 		contPulsanti += '<div id="pulsante_teoria" class="frdx" onClick="SCHEDA.selElenco(\'teoria\');">'+TXT("Approfondimenti")+'</div>';
 		contElenco += '<div id="lista_teoria"></div>';
 		
-		contBtns = 	'<div id="p_contrasto" class="p_noTxt" onClick="SET.swContrastMethod();"></div>' +
-					'<div id="p_lms" class="p_noTxt" onClick="SET.swLM();" title="'+htmlEntities(TXT("MostraLM"))+'"></div>';
+		contBtns = 	'<div id="p_contrasto" class="p_noTxt" onClick="SET.swContrastMethod();"></div>';
 		
-		contIcona = '<div id="p_set" onClick="SCHEDA.apriElenco(\'set\',true);"><svg viewBox="0 0 12 48"><polygon points="5,24 12,13 12,35"></polygon></svg><i>'+htmlEntities(TXT("AuriculoMap"))+'</i></div>';;
+		contIcona = '<div id="p_set" onClick="SCHEDA.apriElenco(\'set\',true);"><svg viewBox="0 0 12 48"><polygon points="5,24 12,13 12,35"></polygon></svg><i>'+htmlEntities(TXT("ReflexologyMap"))+'</i></div>';;
 		
 		var preElenco = SCHEDA.elencoSel;
 		SCHEDA.caricaElenco(globals.set.nome,contElenco);
@@ -415,15 +149,8 @@ SET = {
 		
 		if(preElenco)SCHEDA.selElenco(preElenco);
 		
-		// pallini di evidenza
-		var geoPoint =  new THREE.SphereGeometry( 0.11, 16, 16 );
-		this.eviPoint =  new THREE.Mesh( geoPoint, this.MAT.pointSel2.clone() );
-		this.eviPoint.name='Selected point 1';
-		this.eviPoint.userData.categoria='';
-		SETS.add( this.eviPoint );
 		manichino.add( SETS );
 		
-		if(MODELLO.flip)SETS.applyMatrix(new THREE.Matrix4().makeScale(-1, 1, 1));
 		
 		raycastDisable=false;
 		if(!globals.modello.cartella){
@@ -484,7 +211,6 @@ SET = {
 		if(scene.getObjectByName('pins_aree') && areasView){
 			scene.getObjectByName('pins_aree').visible = false;
 		}
-		if(__(localStorage.risTest))SET.risTest = JSON.parse(localStorage.risTest);
 
 		if(smartMenu)overInterfaccia=true;
 		SET.chiudiPunto(false,true); // riapre il punto se è aperto

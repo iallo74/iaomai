@@ -59,7 +59,7 @@ var MODULO_TEORIA = { // extend SET
 		if(SET.forzaDissolve){
 			MODELLO.op("Pelle",SET.forzaDissolve.Pelle);
 			MODELLO.op("Ossa",SET.forzaDissolve.Ossa);
-			MODELLO.op("Visceri",SET.forzaDissolve.Visceri);
+			MODELLO.op("Vasi",SET.forzaDissolve.Vasi);
 			SET.forzaDissolve = false;
 		}
 		if(SET.mappaOr){

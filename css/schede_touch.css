@@ -64,11 +64,14 @@
 }
 
 .touch.android #el_visceri,
+.touch.android #el_vasi,
 .touch.android #el_ossa,
-.touch.android #el_muscoli {
+.touch.android #el_legamenti,
+.touch.android #el_aree,
+.touch.android #el_muscoli3d {
 	height: 163px !important;
 }
-.touch.android #chMuscoli{
+.touch.android #chAree{
     margin-left: -27px !important;
     margin-top: 9px !important;
     margin-right: 3px !important;

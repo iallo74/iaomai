@@ -4,7 +4,7 @@ MODELLO.MAT = {
 	//materialOssa: null,
 	//materialVisceri: null,
 	//materialOrganoSel: null,
-	materialMuscoli: [],
+	materialAree: [],
 	colsVisceri: [
 		"#84a8fc",
 		"#F0A095",//"#ffcc7f",
@@ -62,9 +62,204 @@ MODELLO.MAT = {
 		metalness: 0.4,
 		side: 3
 	} ),
+	
+	materialOssaCartilagini: new THREE.MeshStandardMaterial( { // CARTILAGINI
+		name: "materiale cartilagini",
+		color: new THREE.Color( 0.89, 0.89, 0.99 ),
+		flatShading:false,
+		transparent:true,
+		opacity:0.6,//0.6,
+		roughness:1,
+		metalness: 0.4,
+		side: 3
+	} ),
+	materialOssaOverCartilagini: new THREE.MeshStandardMaterial( { // OSSA rollOVER
+		color: new THREE.Color( 0.92, 0.92, 1 ),
+		flatShading:false,
+		transparent:true,
+		roughness:1,
+		metalness: 0.4,
+		side: 3
+	} ),
+	/* materialOssaLegamenti: new THREE.MeshStandardMaterial( { // LEGAMENTI
+		name: "materiale legamenti",
+		color: new THREE.Color( 0.89, 0.99, 0.93 ),
+		flatShading:false,
+		transparent:true,
+		opacity:1,//0.6,
+		roughness:1,
+		metalness: 0.4,
+		side: 3
+	} ), */
+	materialLegamenti: new THREE.MeshStandardMaterial( { // LEGAMENTI
+		name: "materiale legamenti",
+		/* color: new THREE.Color( 0.89, 0.99, 0.93 ), */
+		color: new THREE.Color( 0.55, 0.8, 0.65 ),
+		flatShading:false,
+		transparent:true,
+		opacity:1,//0.6,
+		roughness:1,
+		metalness: 0.4,
+		side: 3
+	} ),
+	materialLegamentiOver: new THREE.MeshStandardMaterial( { // OSSA rollOVER
+		color: new THREE.Color( 1, 0.9, 0.8 ),
+		flatShading:false,
+		transparent:true,
+		roughness:1,
+		metalness: 0.4,
+		side: 3
+	} ),
+
+	materialMuscoli3d: new THREE.MeshStandardMaterial( { // MUSCOLI 3D
+		name: "materiale muscoli 3d",
+		flatShading:false,
+		color: new THREE.Color( 1, 1, 1 ),
+		transparent:true,
+		roughness:0.7,
+		side: 3,
+		needsUpdate: true,
+		bumpScale: 0.006
+	} ),
+	materialMuscoli3dLeg: new THREE.MeshStandardMaterial( { // MUSCOLI 3D
+		name: "materiale muscoli 3d Leg",
+		flatShading:false,
+		color: new THREE.Color( 1, 1, 1 ),
+		transparent:true,
+		roughness:0.7,
+		side: 3,
+		needsUpdate: true,
+		bumpScale: 0.006
+	} ),
+	materialMuscoli3dFoot: new THREE.MeshStandardMaterial( { // MUSCOLI 3D
+		name: "materiale muscoli 3d Foot",
+		flatShading:false,
+		color: new THREE.Color( 1, 1, 1 ),
+		transparent:true,
+		roughness:0.7,
+		side: 3,
+		needsUpdate: true,
+		bumpScale: 0.006
+	} ),
+
+
+	materialMuscoli3dOver: new THREE.MeshStandardMaterial( { // OSSA rollOVER
+		color: new THREE.Color( 1, 0.9, 0.8 ),
+		flatShading:false,
+		transparent:true,
+		roughness:1,
+		metalness: 0.4,
+		side: 3
+	} ),
+	materialMuscoli3dOverLeg: new THREE.MeshStandardMaterial( { // MUSCOLI 3D
+		name: "materiale muscoli 3d Leg",
+		flatShading:false,
+		color: new THREE.Color( 1, 1, 1 ),
+		emissive: new THREE.Color( 0.2, 0.2, 0.2 ),
+		transparent:true,
+		roughness:0.7,
+		side: 3,
+		needsUpdate: true,
+		bumpScale: 0.006
+	} ),
+	materialMuscoli3dOverFoot: new THREE.MeshStandardMaterial( { // MUSCOLI 3D
+		name: "materiale muscoli 3d Foot",
+		flatShading:false,
+		color: new THREE.Color( 1, 1, 1 ),
+		emissive: new THREE.Color( 0.2, 0.2, 0.2 ),
+		transparent:true,
+		roughness:0.7,
+		side: 3,
+		needsUpdate: true,
+		bumpScale: 0.006
+	} ),
+
+	materialMuscoli3dSelLeg: new THREE.MeshStandardMaterial( { // MUSCOLI 3D
+		name: "organoSelLeg",
+		flatShading:false,
+		color: new THREE.Color( 1, 1, 1 ),
+		emissive: new THREE.Color( 0.3, 0, 0.4 ),
+		transparent:false,
+		roughness:0.7,
+		side: 2,
+		depthFunc: 0,
+		depthTest:true,
+		needsUpdate: true,
+		bumpScale: 0.006,
+		opacity: 1,
+		//depthFunc: 1
+	} ),
+
+
+
+	
+	materialMuscoli3dSelFoot: new THREE.MeshStandardMaterial( { // MUSCOLI 3D
+		name: "organoSelFoot",
+		flatShading:false,
+		color: new THREE.Color( 1, 1, 1 ),
+		emissive: new THREE.Color( 0.3, 0, 0.4 ),
+		transparent:false,
+		roughness:0.7,
+		side: 2,
+		depthFunc: 0,
+		depthTest:true,
+		needsUpdate: true,
+		bumpScale: 0.006,
+		opacity: 1,
+		//depthFunc: 1
+	} ),
+
 	materialVisceri: new THREE.MeshStandardMaterial( { // VISCERI
 		name: "materiale visceri",
 		color: new THREE.Color( 0.52, 0.66, 0.99 ),
+		flatShading:false,
+		transparent:true,
+		opacity:1,
+		roughness:1,
+		side: 3
+	} ),
+
+
+	materialVasi: new THREE.MeshStandardMaterial( { // VASI
+		name: "materiale vasi e nervi",
+		color: new THREE.Color( 0.52, 0.66, 0.99 ),
+		flatShading:false,
+		transparent:true,
+		opacity:1,
+		roughness:1,
+		side: 3
+	} ),
+
+	materialVasiArterie: new THREE.MeshStandardMaterial( { // ARTERIE
+		name: "materiale arterie",
+		color: new THREE.Color( 0.2, 0.5, 0.99 ),
+		flatShading:false,
+		transparent:true,
+		opacity:1,
+		roughness:1,
+		side: 3
+	} ),
+	materialVasiVene: new THREE.MeshStandardMaterial( { // VENE
+		name: "materiale vene",
+		color: new THREE.Color( 0.99, 0.2, 0.2 ),
+		flatShading:false,
+		transparent:true,
+		opacity:1,
+		roughness:1,
+		side: 3
+	} ),
+	materialVasiLinfa: new THREE.MeshStandardMaterial( { // VASI LINFATICI
+		name: "materiale linfa",
+		color: new THREE.Color( 0.2, 0.6, 0.2 ),
+		flatShading:false,
+		transparent:true,
+		opacity:1,
+		roughness:1,
+		side: 3
+	} ),
+	materialVasiNervi: new THREE.MeshStandardMaterial( { // NERVI
+		name: "materiale nervi",
+		color: new THREE.Color( 0.99, 0.8, 0 ),
 		flatShading:false,
 		transparent:true,
 		opacity:1,
@@ -111,15 +306,6 @@ MODELLO.MAT = {
 		side: 3,
 		depthFunc: 1
 	} ),
-	/*materialVisceri_1: new THREE.MeshStandardMaterial( { // VISCERI
-		name: "materiale visceri",
-		color: new THREE.Color( 0.3, 0.8, 1 ),
-		flatShading:false,
-		transparent:true,
-		opacity:0.6,
-		roughness:1,
-		side: 3
-	} ),*/
 	materialVisceriOver: new THREE.MeshStandardMaterial( { // VISCERI rollOVER
 		color: new THREE.Color( 0.6, 0.4, 0.5 ),
 		flatShading:false,
@@ -127,7 +313,25 @@ MODELLO.MAT = {
 		roughness:1,
 		side: 3
 	} ),
-	materialOrganoSel: new THREE.MeshStandardMaterial( { // ORGANO O OSSO SELEZIONATO
+	
+	materialVasiEvi: new THREE.MeshStandardMaterial( { // VASI EVI
+		name: "materiale vasi evi",
+		color: new THREE.Color( 0.52, 0.66, 0.99 ),
+		flatShading:false,
+		transparent:true,
+		opacity:1,
+		roughness:1,
+		side: 3,
+		depthFunc: 1
+	} ),
+	materialVasiOver: new THREE.MeshStandardMaterial( { // VASI rollOVER
+		color: new THREE.Color( 0.6, 0.4, 0.5 ),
+		flatShading:false,
+		transparent:true,
+		roughness:1,
+		side: 3
+	} ),
+	materialOrganoSel: new THREE.MeshStandardMaterial( { // ORGANO, OSSO, VASO o LAGAMENTO SELEZIONATO
 		color:  new THREE.Color( 0.9, 0.2, 0.5 ),
 		flatShading:false,
 		transparent:false,
@@ -162,8 +366,8 @@ MODELLO.MAT = {
 		transparent: true,
 		opacity:0
 	} ),
-	pinMuscolo: new THREE.MeshStandardMaterial( { // PIN DEI MUSCOLI
-		name: "pin muscoli",
+	pinArea: new THREE.MeshStandardMaterial( { // PIN DELLE AREE
+		name: "pin aree",
 		/*color: new THREE.Color( 0.89, 0.56, 0.42 ),*/
 		/*color: new THREE.Color( 0.96, 0.56, 0.32 ),*/
 		color: new THREE.Color( 1, 1, 1 ),
@@ -173,7 +377,7 @@ MODELLO.MAT = {
 		roughness:1,
 		side: 3
 	} ),
-	pinMuscoloTrasp: new THREE.MeshStandardMaterial( { // PIN TRASPARENTI DEI MUSCOLI (PER IL CLICK)
+	pinAreaTrasp: new THREE.MeshStandardMaterial( { // PIN TRASPARENTI DELLE AREE (PER IL CLICK)
 		color: new THREE.Color( 0, 0, 0 ),
 		roughness:1, 
 		premultipliedAlpha: true,
@@ -185,7 +389,7 @@ MODELLO.MAT = {
 		depthFunc: 3,
 		depthWrite: false
 	} ),
-	pinMuscoloDemo: new THREE.MeshStandardMaterial( { // PIN TRASPARENTI DEI MUSCOLI (PER IL CLICK)
+	pinAreaDemo: new THREE.MeshStandardMaterial( { // PIN TRASPARENTI DELLE AREE (PER IL CLICK)
 		color: new THREE.Color( 0, 0, 0 ),
 		emissive: new THREE.Color( 0, 0, 1 ),
 		roughness:1, 

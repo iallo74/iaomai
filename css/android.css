@@ -3,7 +3,10 @@
 
 .android #el_visceri p,
 .android #el_ossa p,
-.android #el_muscoli p{
+.android #el_aree p,
+.android #el_vasi p,
+.android #el_muscoli3d p,
+.android #el_legamenti p{
 	font-size: var(--font-14-3) !important;
 	height:30px !important;
 	line-height:30px !important;

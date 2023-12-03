@@ -5292,6 +5292,14 @@ DB.TXT = {
             por: "Filtrar lista",
             deu: "Liste filtern"
         },
+        CercaAree: {
+            ita: "Filtra l'elenco",
+            eng: "Filter list",
+            esp: "Filtrar lista",
+            fra: "Filtrer la liste",
+            por: "Filtrar lista",
+            deu: "Liste filtern"
+        },
         CercaOssa: {
             ita: "Filtra l'elenco",
             eng: "Filter list",
@@ -5300,7 +5308,23 @@ DB.TXT = {
             por: "Filtrar lista",
             deu: "Liste filtern"
         },
+        CercaLegamenti: {
+            ita: "Filtra l'elenco",
+            eng: "Filter list",
+            esp: "Filtrar lista",
+            fra: "Filtrer la liste",
+            por: "Filtrar lista",
+            deu: "Liste filtern"
+        },
         CercaVisceri: {
+            ita: "Filtra l'elenco",
+            eng: "Filter list",
+            esp: "Filtrar lista",
+            fra: "Filtrer la liste",
+            por: "Filtrar lista",
+            deu: "Liste filtern"
+        },
+        CercaVasi: {
             ita: "Filtra l'elenco",
             eng: "Filter list",
             esp: "Filtrar lista",
@@ -5950,7 +5974,9 @@ DB.TXT = {
             por: "MEDULA ESPINHAL",
             deu: "RÜCKENMARK"
         },
-        Organo_NERVO_TRIGEMINO: {
+
+        // VASI e NERVI
+        Vaso_NERVO_TRIGEMINO: {
             ita: "NERVO AURICOLOTEMPORALE",
             eng: "AURICULOTEMPORAL NERVE",
             esp: "NERVIO AURICULOTEMPORAL",
@@ -5958,7 +5984,7 @@ DB.TXT = {
             por: "NERVO AURICULOTEMPORAL",
             deu: "AURISCHLÄFENNERV"
         },
-        Organo_NERVO_VAGO: {
+        Vaso_NERVO_VAGO: {
             ita: "NERVO VAGO",
             eng: "VAGUS NERVE",
             esp: "NERVIO VAGO",
@@ -5966,7 +5992,7 @@ DB.TXT = {
             por: "NERVO VAGO",
             deu: "VAGUSNERV"
         },
-        Organo_NERVO_OCCIPITALE_MINORE: {
+        Vaso_NERVO_OCCIPITALE_MINORE: {
             ita: "NERVO OCCIPITALE MINORE",
             eng: "MINOR OCCIPITALIS NERVE",
             esp: "NERVIO OCCIPITAL MENOR",
@@ -5974,7 +6000,7 @@ DB.TXT = {
             por: "NERVO OCCIPITAL MENOR",
             deu: "KLEINER HINTERHAUPTSNERV"
         },
-        Organo_NERVO_GRANDE_AURICOLARE: {
+        Vaso_NERVO_GRANDE_AURICOLARE: {
             ita: "NERVO GRANDE AURICOLARE",
             eng: "GREAT AURICOLAR NERVE",
             esp: "NERVIO AURICULAR GRANDE",
@@ -5982,6 +6008,87 @@ DB.TXT = {
             por: "NERVO AURICULAR GRANDE",
             deu: "GROSSER OHRNERVER"
         },
+        Vaso_ARCO_ARTERIOSO_DORSALE: {
+            ita: "ARCO ARTERIOSO DORSALE",
+            eng: "DORSAL ARTERIAL ARCH",
+            esp: "ARCO ARTERIAL DORSAL",
+            fra: "ARC ARTÉRIEL DORSALE",
+            por: "ARCO ARTERIAL DORSAL",
+            deu: "DORSALER ARTERIENBOGEN"
+        },
+        Vaso_VASI_LINFATICI: {
+            ita: "VASI LINFATICI",
+            eng: "LYMPHATIC VESSELS",
+            esp: "VASOS LINFÁTICOS",
+            fra: "VAISSEAUX LYMPHATIQUES",
+            por: "VASOS LINFÁTICOS",
+            deu: "LYMPHATISCHE GEFÄßE"
+        },
+        Vaso_ARCO_VENOSO_DORSALE: {
+            ita: "ARCO VENOSO DORSALE",
+            eng: "DORSAL VENOUS ARCH",
+            esp: "ARCO VENOSO DORSAL",
+            fra: "ARC VEINEUX DORSALE",
+            por: "ARCO VENOSO DORSAL",
+            deu: "DORSALER VENÖSER BOGEN"
+        },
+        Vaso_NERVO_CALCANEARE_INFERIORE: {
+            ita: "NERVO CALCANEARE INFERIORE",
+            eng: "INFERIOR CALCANEAL NERVE",
+            esp: "NERVIO CALCÁNEO INFERIOR",
+            fra: "NERF CALCANÉEN INFÉRIEUR",
+            por: "NERVO CALCÂNEO INFERIOR",
+            deu: "UNTERER CALCANEALNERV"
+        },
+        Vaso_NERVO_PERONEO_PROFONDO: {
+            ita: "NERVO PERONIERO PROFONDO",
+            eng: "DEEP PERONEAL NERVE",
+            esp: "NERVIO PERONEO PROFUNDO",
+            fra: "NERF PÉRONIER PROFOND",
+            por: "NERVO PERONEAL PROFUNDO",
+            deu: "TIEFER PERONÄUSNERV"
+        },
+        Vaso_NERVO_PERONEO_SUPERFICIALE: {
+            ita: "NERVO PERONIERO SUPERFICIALE",
+            eng: "SUPERFICIAL PERONEAL NERVE",
+            esp: "NERVIO PERONEO SUPERFICIAL",
+            fra: "NERF PÉRONIER SUPERFICIEL",
+            por: "NERVO PERONEAL SUPERFICIAL",
+            deu: "OBERFLÄCHLICHER PERONÄUSNERV"
+        },
+        Vaso_NERVO_PLANTARE_MEDIALE: {
+            ita: "NERVO PLANTARE MEDIALE",
+            eng: "MEDIAL PLANTAR NERVE",
+            esp: "NERVIO PLANTAR MEDIAL",
+            fra: "NERF PLANTAIRE MÉDIAL",
+            por: "NERVO PLANTAR MEDIAL",
+            deu: "MEDIALER PLANTARNERV"
+        },
+        Vaso_NERVO_SAFENO: {
+            ita: "NERVO SAFENO",
+            eng: "SAPHENOUS NERVE",
+            esp: "NERVIO SAFENO",
+            fra: "NERF SAPHÈNE",
+            por: "NERVO SAFENO",
+            deu: "SAFENUSNERV"
+        },
+        Vaso_NERVO_SCIATICO: {
+            ita: "NERVO SCIATICO",
+            eng: "SCIATIC NERVE",
+            esp: "NERVIO CIÁTICO",
+            fra: "NERF SCIAITIQUE",
+            por: "NERVO CIÁTICO",
+            deu: "ISCHIASNERV"
+        },
+        Vaso_NERVO_TIBIALE_POSTERIORE: {
+            ita: "NERVO TIBIALE POSTERIORE",
+            eng: "POSTERIOR TIBIAL NERVE",
+            esp: "NERVIO TIBIAL POSTERIOR",
+            fra: "NERF TIBIAL POSTÉRIEUR",
+            por: "NERVO TIBIAL POSTERIOR",
+            deu: "HINTERER TIBIALNERV"
+        },
+          
 
         // OSSA
         Osso_BACINO: {
@@ -6496,6 +6603,291 @@ DB.TXT = {
             por: "Cartilagem",
             deu: "Knorpel"
         },
+        // OSSA PIEDE AGGIUNTE
+        Osso_CAPSULE_ARTICOLARI: {
+            ita: "CAPSULE ARTICOLARI",
+            eng: "ARTICULAR CAPSULES",
+            esp: "CÁPSULAS ARTICULARES",
+            fra: "CAPSULES ARTICULAIRES",
+            por: "CÁPSULAS ARTICULARES",
+            deu: "GELENKKAPSELN"
+        },
+          
+
+
+        // LEGAMENTI
+        Legamento_LEGAMENTO_FIBULO_CALCANEARE_POSTERIORE: {
+            ita: "LEGAMENTO FIBULO-CALCANEARE POSTERIORE",
+            eng: "FIBULO-CALCANEAL POSTERIOR LIGAMENT",
+            esp: "LIGAMENTO FÍBULO-CALCÁNEO POSTERIOR",
+            fra: "LIGAMENT FIBULO-CALCANEAN POSTÉRIEUR",
+            por: "LIGAMENTO FÍBULO-CALCANEAR POSTERIOR",
+            deu: "FIBULO-CALCANEAL POSTERIOR LIGAMENT"
+        },
+        Legamento_RETINACOLO_SUPERIORE_MUSCOLI_PERONIERI: {
+            ita: "RETINACOLO SUPERIORE DEI MUSCOLI PERONIERI",
+            eng: "SUPERIOR PERONEAL MUSCLE RETINACULUM",
+            esp: "RETINÁCULO SUPERIOR DE LOS MÚSCULOS PERONEOS",
+            fra: "RÉTINACULE SUPÉRIEURE DES MUSCLES PÉRONIERS",
+            por: "RETÍNACULO SUPERIOR DOS MÚSCULOS PERONEAIS",
+            deu: "OBERES PERONÄALES MUSKEL-RETINACULUM"
+        },
+        Legamento_LEGAMENTI_METATARSALI_TRASVERSI_PROFONDI: {
+            ita: "LEGAMENTI METATARSALI TRASVERSI PROFONDI",
+            eng: "DEEP TRANSVERSE METATARSAL LIGAMENTS",
+            esp: "LIGAMENTOS METATARSOS TRANSVERSALES PROFUNDOS",
+            fra: "LIGAMENTS MÉTATARSIENS TRANSVERSAUX PROFONDS",
+            por: "LIGAMENTOS METATARSOS TRANSVERSAIS PROFUNDOS",
+            deu: "TIEFE QUERLIGAMENTE DER METATARSALIEN"
+        },
+        Legamento_PLACCHE_PLANTARI: {
+            ita: "PLACCHE PLANTARI",
+            eng: "PLANTAR PLATES",
+            esp: "PLACAS PLANTARES",
+            fra: "PLAQUES PLANTAIRES",
+            por: "PLACAS PLANTARES",
+            deu: "PFLANZENPLATTEN"
+        },
+        Legamento_TUNNEL_TARSALE: {
+            ita: "TUNNEL TARSALE",
+            eng: "TARSAL TUNNEL",
+            esp: "TÚNEL TARSO",
+            fra: "TUNNEL TARSIEN",
+            por: "TÚNEL TARSO",
+            deu: "TARSALTUNNEL"
+        },
+        Legamento_RETINACOLO_INFERIORE_MUSCOLI_PERONIERI: {
+            ita: "RETINACOLO INFERIORE DEI MUSCOLI PERONIERI",
+            eng: "INFERIOR PERONEAL MUSCLE RETINACULUM",
+            esp: "RETINÁCULO INFERIOR DE LOS MÚSCULOS PERONEOS",
+            fra: "RÉTINACULE INFÉRIEURE DES MUSCLES PÉRONIERS",
+            por: "RETÍNACULO INFERIOR DOS MÚSCULOS PERONEAIS",
+            deu: "UNTERES PERONÄALES MUSKEL-RETINACULUM"
+        },
+        Legamento_LEGAMENTO_TIBIO_TALARE_POSTERIORE: {
+            ita: "LEGAMENTO TIBIO-TALARE POSTERIORE",
+            eng: "POSTERIOR TIBIO-TALAR LIGAMENT",
+            esp: "LIGAMENTO TIBIO-TALAR POSTERIOR",
+            fra: "LIGAMENT TIBIO-TALIEN POSTÉRIEUR",
+            por: "LIGAMENTO TÍBIO-TÁLICO POSTERIOR",
+            deu: "HINTERES TIBIO-TALARE LIGAMENT"
+        },
+        Legamento_LEGAMENTO_TALO_FIBULARE_ANTERIORE: {
+            ita: "LEGAMENTO TALO-FIBULARE ANTERIORE",
+            eng: "ANTERIOR TALOFIBULAR LIGAMENT",
+            esp: "LIGAMENTO TALOFIBULAR ANTERIOR",
+            fra: "LIGAMENT TALO-FIBULAIRE ANTÉRIEUR",
+            por: "LIGAMENTO TALOFIBULAR ANTERIOR",
+            deu: "VORDERES TALOFIBULARE BAND"
+        },
+        Legamento_LEGAMENTO_TIBIO_FIBULARE_ANTERIORE: {
+            ita: "LEGAMENTO TIBIO-FIBULARE ANTERIORE",
+            eng: "ANTERIOR TIBIOFIBULAR LIGAMENT",
+            esp: "LIGAMENTO TIBIOFIBULAR ANTERIOR",
+            fra: "LIGAMENT TIBIO-FIBULAIRE ANTÉRIEUR",
+            por: "LIGAMENTO TIBIOFIBULAR ANTERIOR",
+            deu: "VORDERES TIBIOFIBULARE BAND"
+        },
+        Legamento_LEGAMENTO_TIBIO_CALCANEARE: {
+            ita: "LEGAMENTO TIBIO-CALCANEARE",
+            eng: "TIBIOCALCANEAL LIGAMENT",
+            esp: "LIGAMENTO TIBIOCALCÁNEO",
+            fra: "LIGAMENT TIBIO-CALCANEEN",
+            por: "LIGAMENTO TIBIOCALCÂNEO",
+            deu: "TIBIOKALKANÄALES LIGAMENT"
+        },
+        Legamento_LEGAMENTO_TIBIO_FIBULARE_POSTERIORE: {
+            ita: "LEGAMENTO TIBIO-FIBULARE POSTERIORE",
+            eng: "POSTERIOR TIBIOFIBULAR LIGAMENT",
+            esp: "LIGAMENTO TIBIOFIBULAR POSTERIOR",
+            fra: "LIGAMENT TIBIO-FIBULAIRE POSTÉRIEUR",
+            por: "LIGAMENTO TIBIOFIBULAR POSTERIOR",
+            deu: "HINTERES TIBIOFIBULARE BAND"
+        },
+        Legamento_LEGAMENTO_TALO_CALCANEARE_MEDIALE: {
+            ita: "LEGAMENTO TALO-CALCANEARE MEDIALE",
+            eng: "MEDIAL TALOCALCANEAL LIGAMENT",
+            esp: "LIGAMENTO TALOCALCÁNEO MEDIAL",
+            fra: "LIGAMENT TALO-CALCANEEN MÉDIAL",
+            por: "LIGAMENTO TALOCALCANEO MEDIAL",
+            deu: "MEDIALES TALOKALKANÄALES LIGAMENT"
+        },
+        Legamento_LEGAMENTO_TALO_CALCANEARE_POSTERIORE: {
+            ita: "LEGAMENTO TALO-CALCANEARE POSTERIORE",
+            eng: "POSTERIOR TALOCALCANEAL LIGAMENT",
+            esp: "LIGAMENTO TALOCALCÁNEO POSTERIOR",
+            fra: "LIGAMENT TALO-CALCANEEN POSTÉRIEUR",
+            por: "LIGAMENTO TALOCALCANEO POSTERIOR",
+            deu: "HINTERES TALOKALKANÄALES LIGAMENT"
+        },
+        Legamento_LEGAMENTO_CALCANEO_CUBOIDEO_DORSALE: {
+            ita: "LEGAMENTO CALCANEO-CUBOIDEO DORSALE",
+            eng: "DORSAL CALCANEOCUBOID LIGAMENT",
+            esp: "LIGAMENTO CALCÁNEO-CUBOIDEO DORSAL",
+            fra: "LIGAMENT CALCANÉO-CUBOÏDIEN DORSALE",
+            por: "LIGAMENTO CALCÂNEO-CUBOIDE DORSAL",
+            deu: "DORSALES CALCANEOKUBOIDALES LIGAMENT"
+        },
+        Legamento_LEGAMENTI_TARSO_METATARSALI_DORSALI: {
+            ita: "LEGAMENTI TARSO-METATARSALI DORSALI",
+            eng: "DORSAL TARSO-METATARSAL LIGAMENTS",
+            esp: "LIGAMENTOS TARSO-METATARSIANOS DORSALES",
+            fra: "LIGAMENTS TARSO-MÉTATARSIENS DORSAUX",
+            por: "LIGAMENTOS TARSO-METATARSAL DORSAIS",
+            deu: "DORSALE TARSO-METATARSAL LIGAMENTE"
+        },
+        Legamento_LEGAMENTI_INTERCUNEIFORMI_DORSALI: {
+            ita: "LEGAMENTI INTERCUNEIFORMI DORSALI",
+            eng: "DORSAL INTERCUNEIFORM LIGAMENTS",
+            esp: "LIGAMENTOS INTERCUNEIFORMES DORSALES",
+            fra: "LIGAMENTS INTERCUNÉIFORMES DORSAUX",
+            por: "LIGAMENTOS INTERCUNEIFORMES DORSAIS",
+            deu: "DORSALE INTERKUNEIFORMLIGAMENTE"
+        },
+        Legamento_LEGAMENTO_CUNEO_NAVICOLARE_MEDIALE: {
+            ita: "LEGAMENTO CUNEO-NAVICOLARE MEDIALE",
+            eng: "MEDIAL CUNEO-NAVICULAR LIGAMENT",
+            esp: "LIGAMENTO CUNEO-NAVICULAR MEDIAL",
+            fra: "LIGAMENT CUNÉO-NAVICULAIRE MÉDIAL",
+            por: "LIGAMENTO CUNEO-NAVICULAR MEDIAL",
+            deu: "MEDIALES KEIL-BOOTKNOCHEN-LIGAMENT"
+        },
+        Legamento_LEGAMENTO_NAVICOLO_CUBOIDEO_PLANTARE: {
+            ita: "LEGAMENTO NAVICOLO-CUBOIDEO PLANTARE",
+            eng: "PLANTAR NAVICULAR-CUBOID LIGAMENT",
+            esp: "LIGAMENTO NAVICULAR-CUBOIDEO PLANTAR",
+            fra: "LIGAMENT NAVICULO-CUBOÏDIEN PLANTAIRE",
+            por: "LIGAMENTO NAVICULAR-CUBOIDE PLANTAR",
+            deu: "PFLANZARES BOOTKNOCHEN-KEILLIGAMENT"
+        },
+        Legamento_LEGAMENTO_CALCANEO_NAVICOLARE_PLANTARE2: {
+            ita: "LEGAMENTO CALCANEO-NAVICOLARE PLANTARE",
+            eng: "PLANTAR CALCANEONAVICULAR LIGAMENT",
+            esp: "LIGAMENTO CALCÁNEO-NAVICULAR PLANTAR",
+            fra: "LIGAMENT CALCANÉO-NAVICULAIRE PLANTAIRE",
+            por: "LIGAMENTO CALCÂNEO-NAVICULAR PLANTAR",
+            deu: "PFLANZARES FERSENBOOTKNOCHEN-NAVICULAR-LIGAMENT"
+        },
+        Legamento_LEGAMENTO_CALCANEO_NAVICOLARE_PLANTARE: {
+            ita: "LEGAMENTO CALCANEO-NAVICOLARE PLANTARE",
+            eng: "PLANTAR CALCANEONAVICULAR LIGAMENT",
+            esp: "LIGAMENTO CALCÁNEO-NAVICULAR PLANTAR",
+            fra: "LIGAMENT CALCANÉO-NAVICULAIRE PLANTAIRE",
+            por: "LIGAMENTO CALCÂNEO-NAVICULAR PLANTAR",
+            deu: "PFLANZARES FERSENBOOTKNOCHEN-NAVICULAR-LIGAMENT"
+        },
+        Legamento_LEGAMENTO_BIFORCATO: {
+            ita: "LEGAMENTO BIFORCATO",
+            eng: "BIFURCATE LIGAMENT",
+            esp: "LIGAMENTO BIFURCADO",
+            fra: "LIGAMENT BIFURQUÉ",
+            por: "LIGAMENTO BIFURCADO",
+            deu: "GABELLIGAMENT"
+        },
+        Legamento_LEGAMENTO_TIBIO_NAVICOLARE: {
+            ita: "LEGAMENTO TIBIO-NAVICOLARE",
+            eng: "TIBIONAVICULAR LIGAMENT",
+            esp: "LIGAMENTO TIBIO-NAVICULAR",
+            fra: "LIGAMENT TIBIO-NAVICAULAIRE",
+            por: "LIGAMENTO TÍBIO-NAVICULAR",
+            deu: "TIBIONAVICULAR LIGAMENT"
+        },
+        Legamento_LEGAMENTO_TALO_NAVICOLARE_DORSALE: {
+            ita: "LEGAMENTO TALO-NAVICOLARE DORSALE",
+            eng: "DORSAL TALONAVICULAR LIGAMENT",
+            esp: "LIGAMENTO TALONAVICULAR DORSAL",
+            fra: "LIGAMENT TALO-NAVICAULAIRE DORSALE",
+            por: "LIGAMENTO TALONAVICULAR DORSAL",
+            deu: "DORSALES FESSENKNOCHEN-NAVICULAR-LIGAMENT"
+        },
+        Legamento_LEGAMENTI_NAVICOLOCUNEIFORMI_DORSALI: {
+            ita: "LEGAMENTI NAVICOLOCUNEIFORMI DORSALI",
+            eng: "DORSAL NAVICULOCUNEIFORM LIGAMENTS",
+            esp: "LIGAMENTOS NAVICULOCUNEIFORMES DORSALES",
+            fra: "LIGAMENTS NAVICULO-CUNÉIFORMES DORSAUX",
+            por: "LIGAMENTOS NAVICULOCUNEIFORMES DORSAIS",
+            deu: "DORSALE NAVIKULO-KAHNBEIN-LIGAMENTE"
+        },
+        Legamento_LEGAMENTI_METATARSALI_DORSALI: {
+            ita: "LEGAMENTI METATARSALI DORSALI",
+            eng: "DORSAL METATARSAL LIGAMENTS",
+            esp: "LIGAMENTOS METATARSIANOS DORSALES",
+            fra: "LIGAMENTS MÉTATARSIENS DORSAUX",
+            por: "LIGAMENTOS METATARSAL DORSAIS",
+            deu: "DORSALE METATARSAL LIGAMENTE"
+        },
+        Legamento_LEGAMENTO_NAVICOLO_CUBOIDEO_DORSALE: {
+            ita: "LEGAMENTO NAVICOLO-CUBOIDEO DORSALE",
+            eng: "DORSAL NAVICULOCUBOID LIGAMENT",
+            esp: "LIGAMENTO NAVICULAR-CUBOIDEO DORSAL",
+            fra: "LIGAMENT NAVICULO-CUBOÏDIEN DORSALE",
+            por: "LIGAMENTO NAVICULAR-CUBOIDE DORSAL",
+            deu: "DORSALES NAVIKULO-KEILBEIN-LIGAMENT"
+        },
+        Legamento_LEGAMENTO_TIBIO_TALARE_ANTERIORE: {
+            ita: "LEGAMENTO TIBIO-TALARE ANTERIORE",
+            eng: "ANTERIOR TIBIOTALAR LIGAMENT",
+            esp: "LIGAMENTO TIBIOTALAR ANTERIOR",
+            fra: "LIGAMENT TIBIO-TALIEN ANTÉRIEUR",
+            por: "LIGAMENTO TÍBIO-TÁLICO ANTERIOR",
+            deu: "VORDERES TIBIO-TALARE BAND"
+        },
+        Legamento_LEGAMENTO_TALO_CALCANEARE_LATERALE: {
+            ita: "LEGAMENTO TALO-CALCANEARE LATERALE",
+            eng: "LATERAL TALOCALCANEAL LIGAMENT",
+            esp: "LIGAMENTO TALOCALCÁNEO LATERAL",
+            fra: "LIGAMENT TALO-CALCANEEN LATÉRAL",
+            por: "LIGAMENTO TALOCALCANEO LATERAL",
+            deu: "LATERALES TALOKALKANÄALES LIGAMENT"
+        },
+        Legamento_LEGAMENTI_METATARSALI_PLANTARI: {
+            ita: "LEGAMENTI METATARSALI PLANTARI",
+            eng: "PLANTAR METATARSAL LIGAMENTS",
+            esp: "LIGAMENTOS METATARSIANOS PLANTARES",
+            fra: "LIGAMENTS MÉTATARSIENS PLANTAIRES",
+            por: "LIGAMENTOS METATARSAL PLANTARES",
+            deu: "PFLANZARES METATARSAL LIGAMENTE"
+        },
+        Legamento_LEGAMENTO_CUNEO_CUBOIDEO_DORSALE: {
+            ita: "LEGAMENTO CUNEO-CUBOIDEO DORSALE",
+            eng: "DORSAL CUNEOCUBOID LIGAMENT",
+            esp: "LIGAMENTO CUNEO-CUBOIDEO DORSAL",
+            fra: "LIGAMENT CUNÉO-CUBOÏDIEN DORSALE",
+            por: "LIGAMENTO CUNEO-CUBOIDE DORSAL",
+            deu: "DORSALES KEIL-KEILBEIN-LIGAMENT"
+        },
+        Legamento_RETINACOLO_INFERIORE_MUSCOLI_ESTENSORI: {
+            ita: "RETINACOLO INFERIORE DEI MUSCOLI ESTENSORI",
+            eng: "INFERIOR EXTENSOR MUSCLE RETINACULUM",
+            esp: "RETINÁCULO INFERIOR DE LOS MÚSCULOS EXTENSORES",
+            fra: "RÉTINACULE INFÉRIEURE DES MUSCLES EXTENSEURS",
+            por: "RETÍNACULO INFERIOR DOS MÚSCULOS EXTENSORES",
+            deu: "UNTERES STRECKER-MUSKEL-RETINACULUM"
+        },
+        Legamento_RETINACOLO_SUPERIORE_MUSCOLI_ESTENSORI: {
+            ita: "RETINACOLO SUPERIORE DEI MUSCOLI ESTENSORI",
+            eng: "SUPERIOR EXTENSOR MUSCLE RETINACULUM",
+            esp: "RETINÁCULO SUPERIOR DE LOS MÚSCULOS EXTENSORES",
+            fra: "RÉTINACULE SUPÉRIEURE DES MUSCLES EXTENSEURS",
+            por: "RETÍNACULO SUPERIOR DOS MÚSCULOS EXTENSORES",
+            deu: "OBERES STRECKER-MUSKEL-RETINACULUM"
+        },
+        Legamento_LEGAMENTO_CALCANEO_CUBOIDEO_PLANTARE: {
+            ita: "LEGAMENTO CALCANEO-CUBOIDEO PLANTARE",
+            eng: "PLANTAR CALCANEOCUBOID LIGAMENT",
+            esp: "LIGAMENTO CALCÁNEO-CUBOIDEO PLANTAR",
+            fra: "LIGAMENT CALCANÉO-CUBOÏDIEN PLANTAIRE",
+            por: "LIGAMENTO CALCÂNEO-CUBOIDE PLANTAR",
+            deu: "PFLANZARES FERSENBOOTKNOCHEN-KEILBEIN-LIGAMENT"
+        },
+        Legamento_LEGAMENTO_PLANTARE_LUNGO: {
+            ita: "LEGAMENTO PLANTARE LUNGO",
+            eng: "LONG PLANTAR LIGAMENT",
+            esp: "LIGAMENTO PLANTAR LARGO",
+            fra: "LIGAMENT PLANTAIRE LONG",
+            por: "LIGAMENTO PLANTAR LONGO",
+            deu: "LANGES PFLANZARES LIGAMENT"
+        },        
 
         // MUSCOLI
         Muscolo_GRAN_DORSALE: {
@@ -7298,6 +7690,90 @@ DB.TXT = {
             por: "FLEXOR DO MÍNIMO (PE)",
             deu: "FINGERBEUGER DES KLEINFINGERS (FUß)"
         },
+
+
+        // MUSCOLI PIEDE AGGIUNTI
+        Muscolo_ABDUTTORE_ALLUCE: {
+            ita: "ABDUTTORE DELL'ALLUCE",
+            eng: "ABDUCTOR HALLUCIS",
+            esp: "ABDUCTOR DEL HALUX",
+            fra: "ABDUCTEUR DE L'HALLUX",
+            por: "ABDUTOR DO HÁLUX",
+            deu: "ABDUKTOR DES HALLUX"
+        },
+        Muscolo_INTEROSSEI_PLANTARI: {
+            ita: "INTEROSSEI PLANTARI",
+            eng: "PLANTAR INTEROSSEI",
+            esp: "INTEROSEOS PLANTARES",
+            fra: "INTEROSSEUX PLANTAIRES",
+            por: "INTERÓSSEOS PLANTARES",
+            deu: "PLANTARE INTEROSSEI"
+        },
+        Muscolo_ESTENSORE_BREVE_DITA: {
+            ita: "ESTENSORE BREVE DELLE DITA",
+            eng: "SHORT EXTENSOR OF DIGITS",
+            esp: "EXTENSOR CORTO DE LOS DEDOS",
+            fra: "EXTENSEUR COURT DES DOIGTS",
+            por: "EXTENSOR CURTO DOS DEDOS",
+            deu: "KURZER DIGITALEXTENSOR"
+        },
+        Muscolo_TIBIALE_POSTERIORE: {
+            ita: "TIBIALE POSTERIORE",
+            eng: "POSTERIOR TIBIAL",
+            esp: "TIBIAL POSTERIOR",
+            fra: "TIBIAL POSTÉRIEUR",
+            por: "TIBIAL POSTERIOR",
+            deu: "HINTERER SCHIENBEINMUSKEL"
+        },
+        Muscolo_FLESSORE_BREVE_ALLUCE: {
+            ita: "FLESSORE BREVE DELL'ALLUCE",
+            eng: "SHORT FLEXOR OF HALLUX",
+            esp: "FLEXOR CORTO DEL HALLUX",
+            fra: "FLEXEUR COURT DE L'HALLUX",
+            por: "FLEXOR CURTO DO HÁLUX",
+            deu: "KURZER HALLUX-FLEXOR"
+        },
+        Muscolo_PERONEO_ANTERIORE: {
+            ita: "PERONIERO ANTERIORE",
+            eng: "ANTERIOR PERONEAL",
+            esp: "PERONEO ANTERIOR",
+            fra: "PÉRONIER ANTÉRIEUR",
+            por: "PERONEAL ANTERIOR",
+            deu: "VORDERER PERONÄUS"
+        },
+        Muscolo_FLESSORE_BREVE_DITO_5_PIEDE: {
+            ita: "FLESSORE BREVE DEL 5° DITO",
+            eng: "SHORT FLEXOR OF 5TH DIGIT",
+            esp: "FLEXOR CORTO DEL 5º DEDO",
+            fra: "FLEXEUR COURT DU 5E DOIGT",
+            por: "FLEXOR CURTO DO 5º DEDO",
+            deu: "KURZER FLEXOR DES 5. FINGERS"
+        },
+        Muscolo_INTEROSSEI_DORSALI_PIEDE: {
+            ita: "INTEROSSEI PLANTARI",
+            eng: "DORSAL INTEROSSEI OF FOOT",
+            esp: "INTEROSEOS DORSALES DEL PIE",
+            fra: "INTEROSSEUX DORSAUX DU PIED",
+            por: "INTERÓSSEOS DORSAIS DO PÉ",
+            deu: "DORSALE INTEROSSEI DES FUßES"
+        },
+        Muscolo_QUADRATO_DELLA_PIANTA: {
+            ita: "QUADRATO DELLA PIANTA",
+            eng: "PLANTARIS",
+            esp: "CUADRADO DE LA PLANTA",
+            fra: "CARRÉ DE LA PLANTA",
+            por: "QUADRADO DA PLANTA",
+            deu: "PLANTARIS"
+        },
+        Muscolo_PLANTARE: {
+            ita: "PLANTARE",
+            eng: "PLANTAR",
+            esp: "PLANTAR",
+            fra: "PLANTAIRE",
+            por: "PLANTAR",
+            deu: "PLANTAR"
+        },
+          
 
         // zone anatomiche
         Zona_TESTA: {

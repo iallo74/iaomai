@@ -812,8 +812,8 @@ SET = {
 			}
 			if(MODELLO.orOp == -1)MODELLO.orOp = MODELLO.opAtt;
 			if(muscolare){
-				//muscleView
-				MODELLO.swMuscle(true);
+				//areasView
+				MODELLO.swArea(true);
 				MODELLO.op("Pelle",0.60)  ;  
 				MODELLO.op("Visceri",0);
 				MODELLO.op("Ossa",1);
@@ -822,7 +822,7 @@ SET = {
 				SET.MAT.lineGuide.opacity = 0;
 				SET.MAT.pointBase.opacity = 0.4;
 			}else{
-				if(muscleView)MODELLO.swMuscle();
+				if(areasView)MODELLO.swArea();
 				MODELLO.op("Pelle",0.40)  ;  
 				MODELLO.op("Visceri",0.12);
 				MODELLO.op("Ossa",0.23);
@@ -833,7 +833,7 @@ SET = {
 			}
 		}else{
 			if(!SET.meridianiSecondariAccesi.length || (this.ptSel && this.ptSel.userData.evidenziati)){
-				if(muscleView)MODELLO.swMuscle();
+				if(areasView)MODELLO.swArea();
 				SET.MAT.lineYang.opacity = SET.MAT.opLine;
 				SET.MAT.lineYin.opacity = SET.MAT.opLine;
 				SET.MAT.pointBase.opacity = SET.MAT.opPoint;

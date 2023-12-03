@@ -228,19 +228,40 @@ var sets = {
 			"piedi"
 		],
 		imports: [
-		
+			'TXT.js',
+			'geometrie.js',
+			'set.js',
+			'modulo_punti.js',
+			'modulo_patologie.js',
+			'modulo_punto.js',
+			'modulo_teoria.js',
+			'sets/common/modulo_procedure.js',
+			'materiali.js',
+			'stili.css',
+			'sets/common/stili_procedure.css',
+			'stili_punto.css',
+			'lang_[lang].js',
+			//'sets/common/patologie/lang_[lang].js'
 		],
 		txtLoading: stripslashes(TXT("CaricamentoMappe")),
 		auth: false,
 		locked: true,
+		lastVer: 1,
 		opening: true,
-		dataPubblicazione: '2023-06',
+		dataPubblicazione: '2024-03',
 		siglaProc: 'RLF',
 		idApple: '',
 		idGoogle: '',
 		pageStore: 'reflexologymap',
 		lingueCont: [
-			
+			"ita"
+		],
+		lingueAI: [
+			"eng",
+			"esp",
+			"fra",
+			"por",
+			"deu"
 		]
 	},
 	trigger_points: {
@@ -312,10 +333,11 @@ var modelli = {
 		],
 		livelli: [
 			'pelle',
-			'muscoli',
+			'aree',
 			'ossa',
 			'visceri'
 		],
+		areaName: 'Muscles', // area come muscoli
 		rifletti: false,
 		txtLoading: stripslashes(TXT("CaricamentoModelloDonna")),
 		lastVer: 1
@@ -350,10 +372,11 @@ var modelli = {
 		],
 		livelli: [
 			'pelle',
-			'muscoli',
+			'aree',
 			'ossa',
 			'visceri'
 		],
+		areaName: 'Muscles', // area come muscoli
 		rifletti: false,
 		txtLoading: stripslashes(TXT("CaricamentoModelloUomo")),
 		lastVer: 1
@@ -361,25 +384,42 @@ var modelli = {
 	piedi: {
 		nome: TXT("ModelloPiede"),
 		imports: [
+			'Muscle_Foot.js',
+			'Muscle_Leg.js',
+			'mappa_muscoli3d.js',
 			'pelle_compr.js',
 			'ossa_compr.js',
+			'legamenti_compr.js',
+			'muscoli3d_compr.js',
+			'vasi_compr.js',
 			'guide_compr.js'
 		],
 		dims: [
-			404,
-			87,
+			635,
+			290,
+			1,
+			1706,
+			2015,
+			726,
+			1376,
+			1215,
 			15
 		],
 		livelli: [
 			'pelle',
-			'ossa'
+			'muscoli3d',
+			'ossa',
+			'legamenti',
+			'vasi'
 		],
 		centro: {
 			"x": 0.15168973204903138,
 			"y": -0.2381679067910409,
 			"z": 10.835390371711297
 		},
+		areaName: 'Muscles', // per le icone
 		rifletti: false,
+		muscles3d: true,
 		txtLoading: stripslashes(TXT("CaricamentoModelloPiede")),
 		lastVer: 1
 	},
@@ -390,7 +430,7 @@ var modelli = {
 			'mappa_aree.js',
 			'pelle_compr.js',
 			'ossa_compr.js',
-			'visceri_compr.js',
+			'vasi_compr.js',
 			'guide_compr.js'
 		],
 		dims: [
@@ -404,16 +444,15 @@ var modelli = {
 		livelli: [
 			'pelle',
 			'ossa',
-			'muscoli', // usati come aree
-			'visceri' // usati come nervi
+			'aree',
+			'vasi'
 		],
 		centro: {
 			x: -0.005833541848817953,
 			y: -0.0013587267383341226,
 			z: 7.394938985463911
 		},
-		areaName: 'Area',
-		viscName: 'Nerve',
+		areaName: 'Aree',
 		rifletti: true,
 		txtLoading: stripslashes(TXT("CaricamentoModelloOrecchio")),
 		lastVer: 1

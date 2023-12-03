@@ -368,36 +368,46 @@ body:not(.smart) #p_rifletti{
 	background-image:url(../img/p_pelle.png);
 	display:none;
 }
-#p_liv_muscoli,
+#p_liv_aree,
+#p_liv_muscoli3d,
 #p_liv_ossa,
+#p_liv_legamenti,
 #p_liv_visceri,
+#p_liv_vasi,
 #p_liv_pelle{
 	display:none;
 	background-size:auto 70%;
 }
-body:not(.Area) #p_liv_muscoli{
+.Muscles #p_liv_aree,
+#p_liv_muscoli3d{
 	background-image:url(../img/p_muscoli.png);
 }
-.Area #p_liv_muscoli{
+body:not(.Muscles)  #p_liv_aree{
 	background-image:url(../img/p_aree2.png);
 }
 #p_liv_ossa{
 	background-image:url(../img/p_ossa.png);
 }
-body:not(.Nerve) #p_liv_visceri{
+#p_liv_legamenti{
+	background-image:url(../img/p_legamenti.png);
+}
+#p_liv_visceri{
 	background-image:url(../img/p_visceri.png);
 }
-.Nerve #p_liv_visceri{
+#p_liv_vasi{
 	background-image:url(../img/p_nerve3.png);
 }
 #p_liv_pelle.disattLiv,
-#p_liv_muscoli.disattLiv{
+#p_liv_aree.disattLiv{
 	opacity:0.5 !important;
 }
 
-.smart #p_liv_muscoli,
+.smart #p_liv_aree,
+.smart #p_liv_muscoli3d,
 .smart #p_liv_ossa,
+.smart #p_liv_legamenti,
 .smart #p_liv_visceri,
+.smart #p_liv_vasi,
 .smart #p_liv_pelle{
 	display:none !important;
 	position:fixed !important;
@@ -718,7 +728,13 @@ body:not(.smart) #labelModello{
 .modelloScelto #livelli_precar{
 	display:none;
 }
-#p_pelle, #p_muscoli, #p_ossa, #p_visceri{
+#p_pelle,
+#p_aree,
+#p_muscoli3d,
+#p_ossa,
+#p_legamenti,
+#p_visceri,
+#p_vasi{
 	background: linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(0,0,0,0.1) 100%);
 }
 #scarica_modello{
@@ -747,7 +763,13 @@ body:not(.smart) #labelModello{
 #livelli_cont > div:not(#p_pelle){
 	border-top:1px solid rgba(0,0,0,0.3);
 }
-#i_pelle, #i_muscoli, #i_ossa, #i_visceri{
+#i_pelle,
+#i_aree,
+#i_muscoli3d,
+#i_ossa,
+#i_legamenti,
+#i_visceri,
+#i_vasi{
 	background-repeat:no-repeat;
 	background-position:5px center;
 	width:40px;
@@ -765,26 +787,30 @@ body:not(.smart) #labelModello{
 #i_ossa{
 	background-image:url(../img/p_ossaB.png);
 }
-body:not(.Nerve) #i_visceri{
+#i_legamenti{
+	background-image:url(../img/p_legamentiB.png);
+}
+#i_visceri{
 	background-image:url(../img/p_visceriB.png);
 }
-.Nerve #i_visceri{
+#i_vasi{
 	background-image:url(../img/p_nerve3B.png);
 }
-#i_muscoli{
+#i_aree{
 	cursor:pointer;
 }
-body:not(.Area) #i_muscoli{
+.Muscles #i_aree,
+#i_muscoli3d{
 	background-image:url(../img/p_muscoliB.png);
 }
-.Area #i_muscoli{
+body:not(.Muscles) #i_aree{
 	background-image:url(../img/p_aree2B.png);
 }
-#p_muscoli.disattLiv #i_muscoli:hover,
+#p_aree.disattLiv #i_aree:hover,
 #p_pelle.disattLiv #i_pelle:hover{
 	opacity:0.6 !important;
 }
-#slideMuscles{
+#slideAree{
     background-color: #565656;
     width: 6px;
     height: 72px;
@@ -801,7 +827,7 @@ body:not(.Area) #i_muscoli{
 	cursor:pointer;
 	opacity:0;
 }
-#slideMuscles div{
+#slideAree div{
 	width:9px;
 	height:19px;
 	background-color:#EEE;
@@ -813,7 +839,7 @@ body:not(.Area) #i_muscoli{
 	transition: margin-top .2s;
 	-webkit-transition: margin-top .2s;
 }
-#slideMuscles div:hover{
+#slideAree div:hover{
 	box-shadow:0px 0px 5px rgba(0,0,0,0.5);
 }
 .visSlide{
@@ -860,8 +886,11 @@ body:not(.Area) #i_muscoli{
 	box-shadow:0px 0px 5px rgba(0,0,0,0.5);
 }
 #el_visceri_cont,
+#el_vasi_cont,
 #el_ossa_cont,
-#el_muscoli_cont{
+#el_aree_cont,
+#el_muscoli3d_cont,
+#el_legamenti_cont{
 	display:none;
 	margin-left:10px;
 	width:100%;
@@ -873,8 +902,11 @@ body:not(.Area) #i_muscoli{
 	border-bottom: 1px solid rgba(0,0,0,0.3);
 }
 #el_visceri,
+#el_vasi,
 #el_ossa,
-#el_muscoli{
+#el_aree,
+#el_muscoli3d,
+#el_legamenti{
 	margin-top:10px;
 	margin-left:10px;
 	width:100%;
@@ -885,8 +917,11 @@ body:not(.Area) #i_muscoli{
 	padding:0px !important;
 }
 #filtro_visceri,
+#filtro_vasi,
 #filtro_ossa,
-#filtro_muscoli{
+#filtro_aree,
+#filtro_muscoli3d,
+#filtro_legamenti{
 	width:calc(100% - 10px);
 	border:1px solid rgba(255,255,255,0.4);
 	border-radius:3px;
@@ -902,14 +937,20 @@ body:not(.Area) #i_muscoli{
 	box-shadow:0px 0px 5px rgba(0,0,0,0.5);
 }
 #filtro_visceri::placeholder,
+#filtro_vasi::placeholder,
 #filtro_ossa::placeholder,
-#filtro_muscoli::placeholder{
+#filtro_aree::placeholder,
+#filtro_muscoli3d::placeholder,
+#filtro_legamenti::placeholder{
 	color:rgba(255,255,255,0.4);
 	font-style:italic;
 }
 #el_visceri p,
+#el_vasi p,
 #el_ossa p,
-#el_muscoli p{
+#el_aree p,
+#el_muscoli3d p,
+#el_legamenti p{
 	font-size: var(--font-12-1);
     cursor: pointer;
     margin-top: 0px;
@@ -921,8 +962,11 @@ body:not(.Area) #i_muscoli{
 	color:#FFF;
 }
 #el_visceri p.lockedItem,
+#el_vasi p.lockedItem,
 #el_ossa p.lockedItem,
-#el_muscoli p.lockedItem {
+#el_aree p.lockedItem,
+#el_muscoli3d p.lockedItem,
+#el_legamenti p.lockedItem {
 	background-image: url(../img/lockB.png);
     background-size: auto 50%;
     background-position: right center;
@@ -931,7 +975,12 @@ body:not(.Area) #i_muscoli{
 	color:#999 !important;
 }
 @media (max-width: 600px){
-	#el_visceri p, #el_ossa p, #el_muscoli p{
+	#el_visceri p,
+	#el_vasi p,
+	#el_ossa p,
+	#el_aree p
+	#el_muscoli3d p
+	#el_legamenti p{
 		font-size: var(--font-14-3) !important;
 		height:30px !important;
 		line-height:30px !important;
@@ -939,23 +988,33 @@ body:not(.Area) #i_muscoli{
 	}
 }
 #el_visceri i,
+#el_vasi i,
 #el_ossa i,
-#el_muscoli i{
+#el_aree i,
+#el_muscoli3d i,
+#el_legamenti i{
 	display:block;
 	padding-top:10px;
 	padding:5px;
 	color:rgba(255,255,255,0.6) !important;
 }
-.p_viscSel, .p_ossaSel, .p_muscoliSel{
+.p_viscSel,
+.p_ossaSel,
+.p_areeSel,
+.p_muscoli3dSel,
+.p_legamentiSel{
 	background-color:#F09;
 	color:#FFF;
 }
 .elNasc{
 	display:none !important;
 }
-#ch_muscoli,
+#ch_aree,
+#ch_muscoli3d,
 #ch_ossa,
-#ch_visceri{
+#ch_legamenti,
+#ch_visceri,
+#ch_vasi{
 	width:24px;
 	height:24px;
 	background:url(../img/chMenu.png) no-repeat center center;
@@ -970,8 +1029,11 @@ body:not(.Area) #i_muscoli{
 	display:inline-block !important;
 }
 #fr_visceri,
+#fr_vasi,
 #fr_ossa,
-#fr_muscoli{
+#fr_aree,
+#fr_muscoli3d,
+#fr_legamenti{
 	display:none;
 	float:right;
 	margin-top:-11px;
@@ -985,8 +1047,11 @@ body:not(.Area) #i_muscoli{
 	cursor:pointer;
 }
 .livelli_listed #fr_visceri,
+.livelli_listed #fr_vasi,
 .livelli_listed #fr_ossa,
-.livelli_listed #fr_muscoli{
+.livelli_listed #fr_aree,
+.livelli_listed #fr_muscoli3d,
+.livelli_listed #fr_legamenti{
 	display:inline-block !important;
 }
 .frOpened{
@@ -1090,20 +1155,23 @@ body:not(.smart) #labelSelected{
 	height:24px;
 	line-height:24px;
 }
-body:not(.Area) .selM{
+.Muscles .selM{
 	background-image:url(../img/chMenu.png), url(../img/p_muscoli.png) !important;
 }
-.Area .selM{
+body:not(.Muscles) .selM{
 	background-image:url(../img/chMenu.png), url(../img/p_aree2.png) !important;
 }
 .selO{
 	background-image:url(../img/chMenu.png), url(../img/p_ossa.png) !important;
 }
-body:not(.Nerve) .selV{
+.selV{
 	background-image:url(../img/chMenu.png), url(../img/p_visceri.png) !important;
 }
-.Nerve .selV{
+.selN{
 	background-image:url(../img/chMenu.png), url(../img/p_nerve3.png) !important;
+}
+.selL{
+	background-image:url(../img/chMenu.png), url(../img/p_legamenti.png) !important;
 }
 #chiudiTuttiSelected{
 	font-size: var(--font-12-1);

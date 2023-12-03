@@ -323,7 +323,7 @@ var RICERCHE = {
 					var iconaTipo = '';
 					if(tipo == 'osso')iconaTipo = 'O';
 					if(tipo == 'organo')iconaTipo = 'V';
-					if(tipo == 'muscolo')iconaTipo = 'M';
+					if(tipo == 'area')iconaTipo = 'M';
 					R_parz += RICERCHE.wR({ az: "MODELLO.azRicercaAnatomia('"+ELEM+"','"+tipo+"','"+ANATOMIA.children[3].children[p].name+"');",
 											cont: htmlEntities(stripslashes(TXT(""+ELEM))),
 											class: "sel"+iconaTipo,

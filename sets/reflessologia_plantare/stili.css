@@ -1,0 +1,22 @@
+@charset "utf-8";
+/* CSS Document */
+
+.impSet{
+    height: 230px;
+    margin-top: -115px;
+}
+
+#pulsante_modello{
+	background-image: url(../reflessologia_plantare/img/logoMenuN.png) !important;
+    background-repeat: no-repeat !important;
+    background-position: calc(100% - 10px)center !important;
+    background-size: auto 32px!important;
+    padding-right: 47px !important;
+    background-color: transparent !important;
+    box-shadow: none !important;
+    text-align: right !important;
+    margin-bottom: 10px !important;
+}
+body.piede #pulsante_modello{
+	display:none;
+}

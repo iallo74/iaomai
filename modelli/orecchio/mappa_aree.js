@@ -1,5 +1,5 @@
-MODELLO.MAT.mappaMuscoli = function(){
-	MODELLO.MAT.materialMuscoli[0] = new THREE.MeshStandardMaterial( {
+MODELLO.MAT.mappaAree = function(){
+	MODELLO.MAT.materialAree[0] = new THREE.MeshStandardMaterial( {
 		flatShading:false,
 		color: new THREE.Color( 1, 1, 1 ),
 		transparent:true,
@@ -17,7 +17,7 @@ MODELLO.MAT.mappaMuscoli = function(){
 	imageEar.onload = function() {
 		textureEar.needsUpdate = true;
 	};
-	MODELLO.MAT.materialMuscoli[0].map = textureEar;
+	MODELLO.MAT.materialAree[0].map = textureEar;
 	
 }
 

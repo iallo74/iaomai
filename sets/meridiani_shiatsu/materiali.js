@@ -258,12 +258,12 @@ SET._setLineMaterials = function(){
 		var col =  SET.colsElementi[elemento];
 		var col2 = col;
 		if( SET.COL.contrastMethod){
-			if(!muscleView)col =  SET.COL.sel;
+			if(!areasView)col =  SET.COL.sel;
 			else col =  SET.COL.musc;
 		}
 		var col3 = SET.COL.basePT;
 		var col4 = SET.COL.base;
-		if(muscleView){
+		if(areasView){
 			col3 = SET.COL.basePTmusc;
 			col4 = SET.COL.lineMusc;
 		}

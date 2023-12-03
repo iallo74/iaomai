@@ -1,6 +1,6 @@
-MODELLO.MAT.mappaMuscoli = function(){
+MODELLO.MAT.mappaAree = function(){
 	for(let m=0;m<4;m++){
-		MODELLO.MAT.materialMuscoli[m] = new THREE.MeshStandardMaterial( { // MUSCOLI
+		MODELLO.MAT.materialAree[m] = new THREE.MeshStandardMaterial( { // AREE
 			flatShading:false,
 			color: new THREE.Color( 1, 1, 1 ),
 			transparent:true,
@@ -19,7 +19,7 @@ MODELLO.MAT.mappaMuscoli = function(){
 	imageHead.onload = function() {
 		textureHead.needsUpdate = true;
 	};
-	MODELLO.MAT.materialMuscoli[2].map = textureHead;
+	MODELLO.MAT.materialAree[2].map = textureHead;
 	if(typeof(Muscle_Head_bump) != 'undefined'){
 		var imageHeadB = new Image();
 		imageHeadB.src =  Muscle_Head_bump;
@@ -28,7 +28,7 @@ MODELLO.MAT.mappaMuscoli = function(){
 		imageHeadB.onload = function() {
 			textureHeadB.needsUpdate = true;
 		};
-		MODELLO.MAT.materialMuscoli[2].bumpMap = textureHeadB;
+		MODELLO.MAT.materialAree[2].bumpMap = textureHeadB;
 	}
 	
 	var imageTorso = new Image();
@@ -38,7 +38,7 @@ MODELLO.MAT.mappaMuscoli = function(){
 	imageTorso.onload = function() {
 		textureTorso.needsUpdate = true;
 	};
-	MODELLO.MAT.materialMuscoli[1].map = textureTorso;
+	MODELLO.MAT.materialAree[1].map = textureTorso;
 	if(typeof(Muscle_Torso_bump) != 'undefined'){
 		var imageTorsoB = new Image();
 		imageTorsoB.src =  Muscle_Torso_bump;
@@ -47,7 +47,7 @@ MODELLO.MAT.mappaMuscoli = function(){
 		imageTorsoB.onload = function() {
 			textureTorsoB.needsUpdate = true;
 		};
-		MODELLO.MAT.materialMuscoli[1].bumpMap = textureTorsoB;
+		MODELLO.MAT.materialAree[1].bumpMap = textureTorsoB;
 	}
 		
 	var imageLimbs = new Image();
@@ -57,7 +57,7 @@ MODELLO.MAT.mappaMuscoli = function(){
 	imageLimbs.onload = function() {
 		textureLimbs.needsUpdate = true;
 	};
-	MODELLO.MAT.materialMuscoli[3].map = textureLimbs;
+	MODELLO.MAT.materialAree[3].map = textureLimbs;
 	if(typeof(Muscle_Limbs_bump) != 'undefined'){
 		var imageLimbsB = new Image();
 		imageLimbsB.src =  Muscle_Limbs_bump;
@@ -66,10 +66,10 @@ MODELLO.MAT.mappaMuscoli = function(){
 		imageLimbsB.onload = function() {
 			textureLimbsB.needsUpdate = true;
 		};
-		MODELLO.MAT.materialMuscoli[3].bumpMap = textureLimbsB;
+		MODELLO.MAT.materialAree[3].bumpMap = textureLimbsB;
 	}
 	
-	MODELLO.MAT.materialMuscoli[0].setValues( { color: 0xfdefdf } ); // occhi
+	MODELLO.MAT.materialAree[0].setValues( { color: 0xfdefdf } ); // occhi
 	
 }
 
