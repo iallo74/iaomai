@@ -452,9 +452,7 @@ SET = {
 						var intersects = raycaster.intersectObject( ANATOMIA.children[i] );
 						if ( intersects.length > 0 ){
 							for(l in intersects){
-								if(intersects[l].object.name.indexOf("NERVO")==-1){
-									ints.push(intersects[l]);
-								}
+								ints.push(intersects[l]);
 							}
 						}
 						if(ANATOMIA.children[i].type=='Group'){
@@ -462,9 +460,7 @@ SET = {
 								var intersects = raycaster.intersectObject( ANATOMIA.children[i].children[g] );
 								if ( intersects.length > 0 ){
 									for(l in intersects){
-										if(intersects[l].object.name.indexOf("NERVO")==-1){
-											ints.push(intersects[l]);
-										}
+										ints.push(intersects[l]);
 									}
 								}
 							}

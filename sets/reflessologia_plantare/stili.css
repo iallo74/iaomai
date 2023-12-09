@@ -20,3 +20,11 @@
 body.piede #pulsante_modello{
 	display:none;
 }
+#p_contrasto{
+	background-image:url(img/p_contrasto.png);
+	display:none;
+}
+#p_contrasto.btnSel{
+	background-image:url(img/p_contrasto_sel.png) !important;
+	display:none;
+}

@@ -4,6 +4,17 @@
 SET.COL = {
 	nero: 0x000000,
 	
+	col1: 0x0858b1,
+	col2: 0xffffff,
+	col3: 0xff4C00,
+	col4: 0x930cca,
+	col5: 0x4c3560,
+	col6: 0x846a47,
+	col7: 0x2dac0b,
+	col8: 0xffcc2f,
+	col9: 0x66cccc,
+
+
 	sel: 0xFF0000,
 	musc: 0x33FF00, // 0x000000;
 	basePT: 0x666666,//0x8899AA,
@@ -102,164 +113,212 @@ SET.MAT = {
 	
 	lines: [],
 	
-	// PUNTI
-	pointBase: new THREE.MeshStandardMaterial( {
-		name: "Point Base",
-		color: SET.COL.basePT,
+	
+	
+	
+	area1Base: new THREE.MeshStandardMaterial( {
+		name: "materiale APPARATO OSTEO-ARTICOLARE",
+		color: new THREE.Color( 0, 0, 0 ),
+		emissive: SET.COL.col1,
+		flatShading:false,
+		transparent:true,
 		roughness:1,
-		transparent: true
-	}),
-	pointBaseCIN: new THREE.MeshStandardMaterial( {
-		name: "Point Base CIN",
-		color: SET.COL.basePT_CIN,
-		roughness:1,
-		transparent: true
-	}),
-	pointBaseEUR: new THREE.MeshStandardMaterial( {
-		name: "Point Base EUR",
-		color: SET.COL.basePT_EUR,
-		roughness:1,
-		transparent: true
-	}),
-	pointOver: new THREE.MeshStandardMaterial( {
-		name: "Point Over",
-		color: SET.COL.overPT,
-		roughness:1,
-		transparent: true
-	}),
-	pointOverCIN: new THREE.MeshStandardMaterial( {
-		name: "Point Over CIN",
-		color: SET.COL.overPT_CIN,
-		roughness:1,
-		transparent: true
-	}),
-	pointOverEUR: new THREE.MeshStandardMaterial( {
-		name: "Point Over EUR",
-		color: SET.COL.overPT_EUR,
-		roughness:1,
-		transparent: true
-	}),
-	pointNote: new THREE.MeshStandardMaterial( {
-		name: "Point Note",
-		color: SET.COL.notePT,
-		emissive: SET.COL.notePTemissive,
-		roughness:1,
-		transparent: true
-	}),
-	pointTrasp: new THREE.MeshStandardMaterial( {
-		name: "Point Trasp",
-		roughness:1, 
-		premultipliedAlpha: true, // per visualizzare il colore sul fondo scuro
-		side: 2, // per visualizzare il colore sul fondo scuro
-		metalness: 0, // per visualizzare il colore sul fondo scuro
-		transparent:true, 
-		opacity: 0, 
-		visible:false,
-		depthWrite: false // !!!! per le trasparenze del pulse (senza i pallini vengono tagliati
-	} ),
-	pointOn: new THREE.MeshStandardMaterial( {
-		name: "Point On",
-		color: SET.COL.sel,
-		roughness:1,
-		transparent: true
-	}),
-	pointSel: new THREE.MeshStandardMaterial( {
-		name: "SEL",
-		color: SET.COL.sel, /* 0xFFFFFF */
-		roughness:1,
-		transparent: true
-	}),
-	pointSelNote: new THREE.MeshStandardMaterial( {
-		name: "SEL note",
-		color: SET.COL.notePTSel,
-		emissive: SET.COL.notePTemissive,
-		roughness:1,
-		transparent: true
-	}),
-	pointSel2: new THREE.MeshStandardMaterial( {
-		name: "SEL 2",
+		metalness:0.3,
 		side: 3,
-		color: 0xFFFFFF, /* COLsel, */
-		roughness:1,
-		transparent: true,
-		blending: 2,
-		opacity: 0.2,
-		visible: false
+		opacity: 0.4
 	}),
-	pointEvi: new THREE.MeshStandardMaterial( {
-		color: SET.COL.eviPT,
-		emissive: SET.COL.eviPTemissive,
-		depthWrite: false,
+	area2Base: new THREE.MeshStandardMaterial( {
+		name: "materiale SISTEMA MUSCOLARE",
+		color: new THREE.Color( 0, 0, 0 ),
+		emissive: SET.COL.col2,
+		flatShading:false,
+		transparent:true,
 		roughness:1,
-		transparent: true,
+		metalness:0.3,
+		side: 3,
+		opacity: 0.4
+	}),
+	area3Base: new THREE.MeshStandardMaterial( {
+		name: "materiale SISTEMA CARDIO-CIRCOLATORIO",
+		color: new THREE.Color( 0, 0, 0 ),
+		emissive: SET.COL.col3,
+		flatShading:false,
+		transparent:true,
+		roughness:1,
+		metalness:0.3,
+		side: 3,
+		opacity: 0.4
+	}),
+	area4Base: new THREE.MeshStandardMaterial( {
+		name: "materiale SISTEMA LINFATICO",
+		color: new THREE.Color( 0, 0, 0 ),
+		emissive: SET.COL.col4,
+		flatShading:false,
+		transparent:true,
+		roughness:1,
+		metalness:0.3,
+		side: 3,
+		opacity: 0.4
+	}),
+	area5Base: new THREE.MeshStandardMaterial( {
+		name: "materiale APPARATO RESPIRATORIO",
+		color: new THREE.Color( 0, 0, 0 ),
+		emissive: SET.COL.col5,
+		flatShading:false,
+		transparent:true,
+		roughness:1,
+		metalness:0.3,
+		side: 3,
+		opacity: 0.4
+	}),
+	area6Base: new THREE.MeshStandardMaterial( {
+		name: "materiale APPARATO DIGERENTE",
+		color: new THREE.Color( 0, 0, 0 ),
+		emissive: SET.COL.col6,
+		flatShading:false,
+		transparent:true,
+		roughness:1,
+		metalness:0.3,
+		side: 3,
+		opacity: 0.4
+	}),
+	area7Base: new THREE.MeshStandardMaterial( {
+		name: "materiale APPARATO UROGENITALE",
+		color: new THREE.Color( 0, 0, 0 ),
+		emissive: SET.COL.col7,
+		flatShading:false,
+		transparent:true,
+		roughness:1,
+		metalness:0.3,
+		side: 3,
+		opacity: 0.4
+	}),
+	area8Base: new THREE.MeshStandardMaterial( {
+		name: "materiale SISTEMA NERVOSO",
+		color: new THREE.Color( 0, 0, 0 ),
+		emissive: SET.COL.col8,
+		flatShading:false,
+		transparent:true,
+		roughness:1,
+		metalness:0.3,
+		side: 3,
+		opacity: 0.4
+	}),
+	area9Base: new THREE.MeshStandardMaterial( {
+		name: "materiale SISTEMA ENDOCRINO",
+		color: new THREE.Color( 0, 0, 0 ),
+		emissive: SET.COL.col9,
+		flatShading:false,
+		transparent:true,
+		roughness:1,
+		metalness:0.3,
+		side: 3,
+		opacity: 0.4
+	}),
+
+	
+	area1Over: new THREE.MeshStandardMaterial( {
+		name: "materiale APPARATO OSTEO-ARTICOLARE over",
+		color: new THREE.Color( 0, 0, 0 ),
+		emissive: SET.COL.col1,
+		flatShading:false,
+		transparent:true,
+		roughness:1,
+		metalness:0.3,
+		side: 3,
 		opacity: 0.5
 	}),
-	pointPieno: new THREE.MeshStandardMaterial( {
-		color: SET.COL.pienoPT,
-		emissive: SET.COL.pienoPTemissive,
-		depthWrite: false,
+	area2Over: new THREE.MeshStandardMaterial( {
+		name: "materiale SISTEMA MUSCOLARE over",
+		color: new THREE.Color( 0, 0, 0 ),
+		emissive: SET.COL.col2,
+		flatShading:false,
+		transparent:true,
 		roughness:1,
-		transparent: true,
-		opacity: 0.6
+		metalness:0.3,
+		side: 3,
+		opacity: 0.5
 	}),
-	pointVuoto: new THREE.MeshStandardMaterial( {
-		color: SET.COL.vuotoPT,
-		emissive: SET.COL.vuotoPTemissive,
-		depthWrite: false,
+	area3Over: new THREE.MeshStandardMaterial( {
+		name: "materiale SISTEMA CARDIO-CIRCOLATORIO over",
+		color: new THREE.Color( 0, 0, 0 ),
+		emissive: SET.COL.col3,
+		flatShading:false,
+		transparent:true,
 		roughness:1,
-		transparent: true,
-		opacity: 0.4
+		metalness:0.3,
+		side: 3,
+		opacity: 0.5
 	}),
-	pointDolore: new THREE.MeshStandardMaterial( {
-		color: SET.COL.dolorePT,
-		emissive: SET.COL.dolorePTemissive,
-		depthWrite: false,
+	area4Over: new THREE.MeshStandardMaterial( {
+		name: "materiale SISTEMA LINFATICO over",
+		color: new THREE.Color( 0, 0, 0 ),
+		emissive: SET.COL.col4,
+		flatShading:false,
+		transparent:true,
 		roughness:1,
-		transparent: true,
-		opacity: 0.4
+		metalness:0.3,
+		side: 3,
+		opacity: 0.5
 	}),
-	pointBianco: new THREE.MeshStandardMaterial( {
-		color: SET.COL.biancoPT,
-		emissive: SET.COL.biancoPT,
+	area5Over: new THREE.MeshStandardMaterial( {
+		name: "materiale APPARATO RESPIRATORIO over",
+		color: new THREE.Color( 0, 0, 0 ),
+		emissive: SET.COL.col5,
+		flatShading:false,
+		transparent:true,
 		roughness:1,
-		transparent: true,
-		opacity: 0.6
+		metalness:0.3,
+		side: 3,
+		opacity: 0.5
 	}),
+	area6Over: new THREE.MeshStandardMaterial( {
+		name: "materiale APPARATO DIGERENTE over",
+		color: new THREE.Color( 0, 0, 0 ),
+		emissive: SET.COL.col6,
+		flatShading:false,
+		transparent:true,
+		roughness:1,
+		metalness:0.3,
+		side: 3,
+		opacity: 0.5
+	}),
+	area7Over: new THREE.MeshStandardMaterial( {
+		name: "materiale APPARATO UROGENITALE over",
+		color: new THREE.Color( 0, 0, 0 ),
+		emissive: SET.COL.col7,
+		flatShading:false,
+		transparent:true,
+		roughness:1,
+		metalness:0.3,
+		side: 3,
+		opacity: 0.5
+	}),
+	area8Over: new THREE.MeshStandardMaterial( {
+		name: "materiale SISTEMA NERVOSO over",
+		color: new THREE.Color( 0, 0, 0 ),
+		emissive: SET.COL.col8,
+		flatShading:false,
+		transparent:true,
+		roughness:1,
+		metalness:0.3,
+		side: 3,
+		opacity: 0.5
+	}),
+	area9Over: new THREE.MeshStandardMaterial( {
+		name: "materiale SISTEMA ENDOCRINO over",
+		color: new THREE.Color( 0, 0, 0 ),
+		emissive: SET.COL.col9,
+		flatShading:false,
+		transparent:true,
+		roughness:1,
+		metalness:0.3,
+		side: 3,
+		opacity: 0.5
+	}),
+
+
 	
-	
-	areaBase: new THREE.MeshStandardMaterial( {
-		name: "materiale Area",
-		color: new THREE.Color( 0, 0, 0 ),
-		emissive: SET.COL.baseAR,
-		flatShading:false,
-		transparent:true,
-		roughness:1,
-		metalness:0.3,
-		side: 3,
-		opacity: 0.4
-	}),
-	areaBaseEUR: new THREE.MeshStandardMaterial( {
-		name: "materiale Area EUR",
-		color: new THREE.Color( 0, 0, 0 ),
-		emissive: SET.COL.baseAR_EUR,
-		flatShading:false,
-		transparent:true,
-		roughness:1,
-		metalness:0.3,
-		side: 3,
-		opacity: 0.4
-	}),
-	areaBaseCIN: new THREE.MeshStandardMaterial( {
-		name: "materiale Area CIN",
-		color: new THREE.Color( 0, 0, 0 ),
-		emissive: SET.COL.baseAR_CIN,
-		flatShading:false,
-		transparent:true,
-		roughness:1,
-		metalness:0.3,
-		side: 3,
-		opacity: 0.4
-	}),
 	areaOver: new THREE.MeshStandardMaterial( {
 		name: "materiale Area OVER",
 		color: new THREE.Color( 0, 0, 0 ),
@@ -271,28 +330,7 @@ SET.MAT = {
 		side: 3,
 		opacity: 0.4
 	}),
-	areaOverEUR: new THREE.MeshStandardMaterial( {
-		name: "materiale Area OVER EUR",
-		color: new THREE.Color( 0, 0, 0 ),
-		emissive: SET.COL.overAR_EUR,
-		flatShading:false,
-		transparent:true,
-		roughness:1,
-		metalness:0.3,
-		side: 3,
-		opacity: 0.4
-	}),
-	areaOverCIN: new THREE.MeshStandardMaterial( {
-		name: "materiale Area OVER CIN",
-		color: new THREE.Color( 0, 0, 0 ),
-		emissive: SET.COL.overAR_CIN,
-		flatShading:false,
-		transparent:true,
-		roughness:1,
-		metalness:0.3,
-		side: 3,
-		opacity: 0.4
-	}),
+	
 	
 	areaSel: new THREE.MeshStandardMaterial( {
 		name: "materiale Area SEL",
@@ -351,83 +389,5 @@ SET.MAT = {
 		needsUpdate: true,
 		bumpScale: 0.006
 	} ),
-	mappe: {},
-	mappaAree: function( ini=false ){
-		// carico tutte le mappe
-		nImg = 0;
-		var els = GEOMETRIE.mappe;
-		for(e=0;e<els.length;e++){
-			var imageEar = new Image();
-			imageEar.src = els[e].img;
-			SET.MAT.mappe[els[e].name] = new THREE.Texture();
-			SET.MAT.mappe[els[e].name].image = imageEar;
-			imageEar.onload = (function() {
-				SET.MAT.mappe[els[e].name].needsUpdate = true;
-			})(els[e]);
-			if(__(els[e].imgFlip,'')){
-				var imageEarFlip = new Image();
-				imageEarFlip.src = els[e].imgFlip;
-				SET.MAT.mappe[els[e].name+"Flip"] = new THREE.Texture();
-				SET.MAT.mappe[els[e].name+"Flip"].image = imageEarFlip;
-				imageEarFlip.onload = (function() {
-					SET.MAT.mappe[els[e].name+"Flip"].needsUpdate = true;
-				})(els[e]);
-			}
-		}
-		if(ini)SET.MAT.applicaMappa(localStorage.imgMappa,ini);
-	},
-	applicaMappa: function( id, ini ){
-		if(!globals.modello.cartella)return;
-		var el = SET.MAT.mappe[id];
-		if(MODELLO.flip){
-			if(SET.MAT.mappe[id+"Flip"])el = SET.MAT.mappe[id+"Flip"];
-		}
-		el.needsUpdate = true;
-		MODELLO.MAT.materialAree[0].map = el;
-		MODELLO.swArea(1);
-		if(globals.modello.cartella && ini)setTimeout(function(){MODELLO.op('Pelle',1);},500);
-	},
-	setAlphaMap: function( zona, act ){
-		var pass = false;
-		if(!globals.modello.cartella)return;
-		if(act == 'clic'){
-			if(SET.maskAtt){
-				document.getElementById("zone_"+SET.maskAtt).classList.remove("selectedZone");
-				if(zona != SET.maskAtt){
-					SET.maskAtt = zona;
-					act = 'over';
-					pass = true;
-				}else SET.maskAtt = '';
-			}else SET.maskAtt = zona;
-			if(SET.maskAtt){
-				document.getElementById("e_legenda").classList.add("legendaSelected");
-				document.getElementById("zone_"+SET.maskAtt).classList.add("selectedZone");
-			}else document.getElementById("e_legenda").classList.remove("legendaSelected");
-		}
-		if(!SET.maskAtt || pass){
-			if(act == 'over'){
-				var IMG = 'data:image/jpeg;base64,' + GEOMETRIE.masks[zona];
-				var img = Array();
-				img = new Image();
-				img.src =  IMG;
-				var mask = new THREE.Texture();
-				mask.image = img;
-				img.n = zona;
-				img.onload = function() {
-					var zona = this.n;
-					try{
-						mask.needsUpdate = true;
-						MODELLO.MAT.materialAree[0].alphaMap = mask;
-						MODELLO.meshPelle.children[0].material.alphaMap = mask;
-						MODELLO.meshPelle.children[0].material.needsUpdate = true;
-					} catch(err){};
-				};
-			}
-			if(act == 'out'){
-				MODELLO.MAT.materialAree[0].alphaMap = null;
-				MODELLO.meshPelle.children[0].material.alphaMap = null;
-				MODELLO.meshPelle.children[0].material.needsUpdate = true;
-			}
-		}
-	}
+	
 }

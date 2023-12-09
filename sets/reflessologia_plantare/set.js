@@ -34,10 +34,6 @@ SET = {
 		id: ''
 	},
 	
-	idTeoAnatomia: 0,
-	idTeoLM: '0_2',
-	idTeoCategorie: 2,
-	
 	// FUNZIONI
 	_init: function(){
 		
@@ -48,9 +44,6 @@ SET = {
 		if(!modelloAperto)modelloAperto='piede';
 			
 		
-		var sysMesh = new THREE.Group();
-		sysMesh.name = "GEO";
-		sysMesh.visible = true;
 		
 		// guide (se ci sono)
 		var n=-1;
@@ -68,7 +61,7 @@ SET = {
 					GD.add( mesh );
 					
 				}
-				sysMesh.add( GD );
+				SETS.add( GD );
 			}
 		}
 		
@@ -79,33 +72,27 @@ SET = {
 			var AR = new THREE.Group();
 			AR.name="ARs";
 			AR.visible = true;
-			var area = GEOMETRIE.areaBase;
 			for(a in ARS){ // aggiungo le aree
 				var loader = new THREE.ObjectLoader();
 				var mesh = loader.parse(JSON.parse(LZString.decompressFromBase64(ARS[a].obj)));
-				var name = mesh.name.split("_")[0];
-				
+
+				var name = mesh.name.substr(0,3);
 				var lato = "";
-				if(mesh.name.indexOf("SX")>-1)lato = "SX";
-				if(mesh.name.indexOf("DX")>-1)lato = "DX";
+				if(mesh.name.indexOf("_sx")>-1)lato = "SX";
+				if(mesh.name.indexOf("_dx")>-1)lato = "DX";
+				var apparato = DB.set.aree[name].apparato;
 				
-				var mat = this.MAT["areaBase"];
+				var mat = this.MAT["area"+apparato+"Base"];
 				
 				mesh.material = cloneMAT(mat);
-				if(mesh.name.indexOf("HIDE")>-1){
-					mesh.visible = false;
-					mesh.userData.hidden = true;
-				}
-				if(	(MODELLO.flip && lato == 'DX') ||
-					(!MODELLO.flip && lato == 'SX') )mesh.visible = false;
+
 				mesh.name = name;
 				mesh.userData.apparato = apparato;
 				mesh.userData.lato = lato;
 				mesh.userData.raycastable = true;
-				mesh.userData.type = 'area';
 				AR.add( mesh );
 			}
-			sysMesh.add( AR );
+			SETS.add( AR );
 		}
 		
 		var contPulsanti = 	'<span class="menuElenchi" onclick="MENU.visMM(\'btnCarMapMenu\');"></span>' +
@@ -179,9 +166,9 @@ SET = {
 		
 		manichinoCaricato = true;
 		SET.caricaPunti();
-		SET.componiPatologie();
-		SET.caricaApprofondimenti();
-		if(DB.procedure)SET.car_procedure(-1,1);
+		//SET.componiPatologie();
+		//SET.caricaApprofondimenti();
+		//if(DB.procedure)SET.car_procedure(-1,1);
 		
 		SET.filtraSet();
 		SET.popolaFiltri();
@@ -208,9 +195,6 @@ SET = {
 			}
 		}
 		postApreSet = false;
-		if(scene.getObjectByName('pins_aree') && areasView){
-			scene.getObjectByName('pins_aree').visible = false;
-		}
 
 		if(smartMenu)overInterfaccia=true;
 		SET.chiudiPunto(false,true); // riapre il punto se è aperto
@@ -272,16 +256,12 @@ SET = {
 						SETS.children[i].name.length==3 ){
 						for(let ii in SETS.children[i].children){
 							if(	SETS.children[i].children[ii].visible &&
-								SETS.children[i].children[ii].isGroup &&
 								SETS.children[i].children[ii].name.substr(0,2)!='LN' &&
-								SETS.children[i].children[ii].name.substr(0,2)!='GD' &&
-								SETS.children[i].children[ii].name.substr(0,2)!='LM'){
-								var intersects = raycaster.intersectObjects( SETS.children[i].children[ii].children );
+								SETS.children[i].children[ii].name.substr(0,2)!='GD'){
+								var intersects = raycaster.intersectObjects( SETS.children[i].children );
 								if ( intersects.length > 0 ) { // roll-over
 									for(l in intersects){
-										if(intersects[l].object.name.indexOf("NERVO")==-1){
-											ints.push(intersects[l]);
-										}
+										ints.push(intersects[l]);
 									}
 									objOver=intersects[ 0 ].object;
 								}
@@ -294,7 +274,9 @@ SET = {
 				for(let i in ANATOMIA.children){
 					if(	ANATOMIA.children[i].name.toLowerCase()=='pelle' ||
 						ANATOMIA.children[i].name.toLowerCase()=='ossa' ||
-						ANATOMIA.children[i].name.toLowerCase()=='vasi' ){
+						ANATOMIA.children[i].name.toLowerCase()=='vasi' ||
+						ANATOMIA.children[i].name.toLowerCase()=='legamenti' ||
+						ANATOMIA.children[i].name.toLowerCase()=='muscoli' ){
 						var intersects = raycaster.intersectObject( ANATOMIA.children[i] );
 						if ( intersects.length > 0 ){
 							for(l in intersects)ints.push(intersects[l]);
@@ -304,9 +286,7 @@ SET = {
 								var intersects = raycaster.intersectObject( ANATOMIA.children[i].children[g] );
 								if ( intersects.length > 0 ){
 									for(l in intersects){
-										if(intersects[l].object.name.indexOf("NERVO")==-1){
-											ints.push(intersects[l]);
-										}
+										ints.push(intersects[l]);
 									}
 								}
 							}
@@ -329,9 +309,7 @@ SET = {
 				this.INTERSECTED = objOver;
 				if(this.INTERSECTED.userData.raycastable){
 					var name=this.INTERSECTED.name;
-					if(name.substr(0,1)=='_')name = name.substr(3,name.length-3);
-					else name = name.substr(2,name.length-2);
-					visToolTip(DB.set.punti[name].NomePunto);
+					visToolTip(DB.set.aree[name].NomePunto);
 					renderer.domElement.style.cursor='pointer';
 					SET.coloraPunti(name,'Over');
 				}
@@ -342,38 +320,9 @@ SET = {
 			}
 			make=true;
 		}
-		
-		if(this.ptSel){ // pulse del pallino selezionato
-			if(this.ptSel.userData.type == 'point'){
-				this.pulse+=0.01;
-				if(this.pulse>=1.6)this.pulse=1;
-				var op=1.8-this.pulse;
-				
-				SET.setPulsePt( this.ptSel, this.pulse, op );
-				
-				make=true;
-			}
-		}
-		
-		if(SET.lmVis){
-			// mostro/nascondo i landmarks
-			var nascosto = (manichinoCont.rotation.x>1.5 || 
-							manichinoCont.rotation.x<-1.5 || 
-							manichinoCont.rotation.y>1.3 || 
-							manichinoCont.rotation.y<-1.8 );
-			if(nascosto && !document.getElementById("legende").classList.contains("noLms")){ // nascondo
-				document.getElementById("legende").classList.add("noLms");
-				scene.getObjectByName("LMs").visible = false;
-			}
-			if(!nascosto && document.getElementById("legende").classList.contains("noLms")){ // mostro
-				document.getElementById("legende").classList.remove("noLms");
-				scene.getObjectByName("LMs").visible = true;
-			}
-		}
-		
 		return make;
 	},
-	setPulsePt: function( pt, pulse, op, mat='' ){
+	/* setPulsePt: function( pt, pulse, op, mat='' ){
 		var phs = ["","2","3"];
 		for(let ph in phs){
 			var els = scene.getObjectByName("PTs"+phs[ph]).children;
@@ -385,12 +334,10 @@ SET = {
 			}
 		}
 		SET.MAT.pointSel.setValues( { opacity: op } );
-	},
+	}, */
 	desIntersected: function(objOver){
 		if(this.INTERSECTED && this.INTERSECTED!=objOver){
 			var name=this.INTERSECTED.name;
-			if(name.substr(0,1)=='_')name = name.substr(3,name.length-3);
-			else name = name.substr(2,name.length-2);
 			SET.coloraPunti(name,'Base');
 			this.INTERSECTED = null;
 		}
@@ -445,7 +392,7 @@ SET = {
 			system = this.ptSel.userData.system;
 			var mat = SET.MAT["pointBase"+system];
 			if(this.ptSel.userData.nota)mat=this.MAT.pointNote;
-			SET.setPulsePt( this.ptSel, 1, 1, mat );
+			//SET.setPulsePt( this.ptSel, 1, 1, mat );
 			if(document.getElementById("ts_"+this.ptSel.name.substr(2,3)))document.getElementById("ts_"+this.ptSel.name.substr(2,3)).classList.remove("selElPt");
 			SET.chiudiPunto(true);
 		}
@@ -680,28 +627,24 @@ SET = {
 		//
 	},
 	scriviPunto: function( siglaPunto, esteso=false, noRet=false, col ){
-		
-		var nomePunto = DB.set.punti[siglaPunto].NomePunto;
-		var EL = null;
-		if(scene.getObjectByName( "PT"+siglaPunto ))EL=scene.getObjectByName( "PT"+siglaPunto );
-		if(scene.getObjectByName( "AR"+siglaPunto ))EL=scene.getObjectByName( "AR"+siglaPunto );
+		var nomePunto = DB.set.aree[siglaPunto].NomePunto;
+		var EL = scene.getObjectByName( siglaPunto );
 		
 		var html = '<a class="pallinoPat';
 		if(esteso)html += ' pallinoPatEsteso';
 		if(col)html += ' noPall';
-		if(__(EL.userData.locked,false))html+=' lockedItem';
+		if(EL){
+			if(__(EL.userData.locked,false))html+=' lockedItem';
+		}
 		var ret = '';
 		if(!noRet)ret = SET.chiudiPunto(true);
 		html += '"';
 		if(col)html+= ' style="border-left:6px solid #'+col+'"';
-		html+= ' onClick="SET.apriPunto(\''+EL.name+'\',\''+ret+'\');"';
-		if(noRet)html += '  onMouseOver="SET.overPunto(\''+EL.name+'\',true);"' +
-						 '  onMouseOut="SET.overPunto(\''+EL.name+'\',false);"' +
+		html+= ' onClick="SET.apriPunto(\''+nomePunto+'\',\''+ret+'\');"';
+		if(noRet)html += '  onMouseOver="SET.overPunto(\''+nomePunto+'\',true);"' +
+						 '  onMouseOut="SET.overPunto(\''+nomePunto+'\',false);"' +
 						 '	id="ts_'+siglaPunto.replace('.','_')+'"';
 		html += '>';
-		var system = EL.userData.system;
-		if(!system)system = 'INT';
-		html += '<span class="p'+system+'"></span>';
 		if(esteso)html+='<i>'+nomePunto+'</i>';
 		html+='</a>';
 		return html;
@@ -929,7 +872,7 @@ SET = {
 	},
 	coloraPunti: function( PT_name, tipo ){
 		if(touchable)return;
-		var els = scene.getObjectByName("PTs"+SET.phase).children;
+		/* var els = scene.getObjectByName("PTs"+SET.phase).children;
 		for(let e in els){
 			if(	els[e].name.indexOf("PT"+PT_name) == 0 && 
 				els[e].material.name.indexOf("SEL") == -1 && 
@@ -942,23 +885,21 @@ SET = {
 					}else els[e].material.opacity = 1;
 				}
 			}
-		}
-		var els = scene.getObjectByName("ARs"+SET.phase).children;
+		} */
+		var els = scene.getObjectByName("ARs").children;
 		for(let e in els){
-			if(	els[e].name.indexOf("AR"+PT_name) == 0 && 
+			if(	els[e].name.indexOf(PT_name) == 0 && 
 				els[e].material.name.indexOf("SEL") == -1 && 
 				SET.note.indexOf(PT_name) == -1  ){
-				system = els[e].userData.system;
 				if(els[e].material.name.indexOf('EVI')>-1){
 					system = 'Evi';
-					if(tipo=='Base')tipo='';
 				}
-				if(SET.MAT["area"+tipo+system].name != els[e].material.name){
-					els[e].material = cloneMAT(SET.MAT["area"+tipo+system]);
-					if(SET.puntiEvidenziati.length){
+				if(SET.MAT["area"+els[e].userData.apparato+tipo].name != els[e].material.name){
+					els[e].material = SET.MAT["area"+els[e].userData.apparato+tipo];
+					/* if(SET.puntiEvidenziati.length){
 						if(SET.puntiEvidenziati.indexOf(PT_name)>-1)els[e].material.opacity = 0.7;
 						else els[e].material.opacity = 0.2;
-					}
+					} */
 				}
 			}
 		}
@@ -1093,105 +1034,9 @@ SET = {
 		}
 	},
 	
-	// LM
-	swLM: function(){ // mostra/nasconde i landmarks
-		if(SET.lmVis)SET.nasLM();
-		else SET.visLM();
-	},
-	visLM: function(){ // mostra i landmarks
-		// verifico le autorizzazioni
-		/*if(!SET.verFreePatologia(n*1)){
-			ALERT(TXT("MsgContSoloPay"),true,true);
-			return;
-		}*/
-		// --------------------------
-		// verifico le autorizzazioni
-		if(!DB.login.data.auths.indexOf("auricologia")==-1){
-			ALERT(TXT("MsgFunzioneSoloPay"));
-			return;
-		}
-		// --------------------------
-		document.getElementById("p_lms").classList.add("btnSel");
-		var lms = scene.getObjectByName("LMs");
-		for(l in lms.children){
-			var leg = document.createElement('div');
-			var l = l.toString();
-			if(l.length==1)l="0"+l;
-			leg.id = 'LM'+l;
-			leg.dataset.idObj = leg.id;
-			leg.className = "noFr";
-			leg.style.cursor = "pointer";
-			leg.innerHTML = leg.id;
-			leg.onclick = function(){
-				SET.caricaApprofondimento(	parseInt(SET.idTeoLM.split("_")[0]),
-									parseInt(SET.idTeoLM.split("_")[1]),
-									document.getElementById("btn_teoria_"+SET.idTeoLM));
-			}
-			document.getElementById("legende").appendChild(leg);
-		}
-		lms.visible = true;
-		SET.lmVis = true;
-	},
-	nasLM: function(){ // nasconde i landmarks
-		document.getElementById("p_lms").classList.remove("btnSel");
-		var lms = scene.getObjectByName("LMs");
-		for(l in lms.children){
-			var l = l.toString();
-			if(l.length==1)l="0"+l;
-			document.getElementById("legende").removeChild(document.getElementById('LM'+l));
-		}
-		document.getElementById("legende").classList.remove("noLms");
-		lms.visible = false;
-		SET.lmVis = false;
-	},
-	
-	
-	// EVIDENZIA ZONE
-	eviZone: function( zona, act ){
-		if(!touchable){
-			if(act == 'over' || act == 'clic'){
-				clearTimeout(SET.tmZone);
-				SET.tmZone = null;
-				SET.MAT.setAlphaMap( zona, act );
-			}else{
-				SET.tmZone = setTimeout(function(){
-					SET.MAT.setAlphaMap( zona, act );
-				},200, zona, act );
-			}
-		}
-	},
-	
 	/* FUNZIONI DERIVATE */
 	_rifletti: function(){
-		if(areasView)SET.MAT.applicaMappa(localStorage.imgMappa);
-		var opposite = (MODELLO.flip) ? 'DX' : 'SX';
-		var phs = ["","2","3"];
-		for(let ph in phs){
-			var els = scene.getObjectByName("PTs"+phs[ph]).children;
-			for(e in els){
-				var name = els[e].name.replace("_","").substr(2,3);
-				if(DB.set.punti[name].hidden || __(els[e].userData.hidePunto,'0')=='1')els[e].visible = false;
-				else if(els[e].userData.lato == opposite)els[e].visible = false;
-				else if(!els[e].visible && !__(els[e].userData.locked,false))els[e].visible = true;
-			}
-			var els = scene.getObjectByName("ARs"+phs[ph]).children;
-			for(e in els){
-				var name = els[e].name.replace("_","").substr(2,3);
-				if(DB.set.punti[name].hidden || __(els[e].userData.hidePunto,'0')=='1')els[e].visible = false;
-				else if(els[e].userData.lato == opposite)els[e].visible = false;
-				else if(!els[e].visible && !__(els[e].userData.locked,false))els[e].visible = true;
-			}
-			var els = scene.getObjectByName("LNs"+phs[ph]).children;
-			for(e in els){
-				var name = els[e].name.substr(2,3);
-				if(els[e].name.substr(0,2)=='AG' && name == SET.ptSel.name.substr(2,3)){
-					if(DB.set.punti[name].hidden || __(els[e].userData.hidePunto,'0')=='1')els[e].visible = false;
-					else if(els[e].userData.lato == opposite)els[e].visible = false;
-					else if(!els[e].visible && !__(els[e].userData.locked,false))els[e].visible = true;
-				}
-			}
-		}
-		if(SET.groupSel.id)SET.filtraGruppo( SET.groupSel.type, SET.groupSel.val, SET.groupSel.id, true );
+		
 	},
 	_caricaScheda: function( args ){
 		if( args.classe != 'tab_punti' && args.classe != SCHEDA.classeAperta)SET.pMod = '';
@@ -1203,16 +1048,16 @@ SET = {
 		// risetto la mappa delle aree
 		MODELLO.MAT.mappaAree();
 		if(areasView)MODELLO.meshPelle.children[0].material = MODELLO.MAT.materialAree[0];
-		SET.nasLM(); //  nascondo i landmarks
+
 	},
 	_scaricaModello: function(){
-		SET.nasLM(); //  nascondo i landmarks
+
 	},
 	_torna: function( args ){
 		if(typeof(args.daCarica) == 'undefined')SET.pMod = '';
 	},
 	filtraSet: function( togliLoader=false ){
-		var vis = true;
+		/* var vis = true;
 		if(	DB.login.data.auths.indexOf(globals.set.cartella)==-1 || !LOGIN.logedin())vis = false;
 		for(let c in SETS.children[0].children){
 			var gruppo = SETS.children[0].children[c].children;
@@ -1230,6 +1075,6 @@ SET = {
 		}
 		if(togliLoader){
 			nasLoader();
-		}
+		} */
 	}
 }
