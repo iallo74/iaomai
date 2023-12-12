@@ -124,12 +124,6 @@ body.piedi #pulsante_modello{
     height: 40px !important;
     line-height: 40px !important;
 }
-.pallinoGroup:not(.noPall):not(.selected){
-	padding-left:16px;
-	background-image: url(../../img/pallinoGroup.png) !important;
-    background-position: 5px center !important;
-    background-size: auto 20px;
-}
 .pallinoPat:not(.ptNoSel):not(.pallinoPunto){
 	cursor:pointer;
 }
@@ -161,6 +155,9 @@ body.piedi #pulsante_modello{
 	height: 31px;
     line-height: 27px;
 	margin:0px;
+}
+.elencoPunti p.hideP{
+	display:none;
 }
 #scheda_testo .elencoPunti p:not(.categoriaGruppo){
 	height:25px;
@@ -325,6 +322,53 @@ body.smart #elenchi .listaPunti{
     margin-top: 3px;
     font-size: var(--font-16-93);
 }
+
+.pApp{
+	display: inline-block;
+    vertical-align: middle;
+    width: 14px;
+    height: 14px;
+    border-radius: 7px;
+    margin-right: 5px;
+    margin-top: -3px;
+    border: 1px solid #444;
+}
+.app1{
+	background-color: #0858b1;
+}
+.app2{
+	background-color: #ffffff;
+}
+.app3{
+	background-color: #ff4C00;
+}
+.app4{
+	background-color: #930cca;
+}
+.app5{
+	background-color: #4c3560;
+}
+.app6{
+	background-color: #846a47;
+}
+.app7{
+	background-color: #2dac0b;
+}
+.app8{
+	background-color: #ffcc2f;
+}
+.app9{
+	background-color: #66cccc;
+}
+
+
+
+
+
+
+
+
+
 #e_legenda p{
 	color:#FFF;
 	line-height:22px;
@@ -618,12 +662,6 @@ body:not(.smart) .selElPt{
 }
 #f_filtri p.hide{
 	display:none;
-}
-#f_filtri p.selected .pallinoGroup{
-	background-image: url(../../img/pallinoGroup.png), url(../../img/chMenuB.png) !important;
-    background-position: left center, right center !important;
-    background-size: auto 20px;
-    background-repeat: no-repeat;
 }
 #f_filtri p.selected{
     border-bottom: none !important;
@@ -1071,7 +1109,6 @@ body:not(.bodyStyled2) #filtriSmart_cont{
     background-repeat: no-repeat;
 }
 .smart #filtriSmart_cont div{
-	
     margin: 3px;
 }
 #filtriSmart_cont div.selected{
@@ -1097,11 +1134,51 @@ body:not(.smart) #filtriSmart_cont div:not(.elencoSel):not(.selected):hover{
 	}
 }
 #filtriSmart_cont i{
-	display: block;
-    text-align: center;
-    padding-top: 10px;
-	padding-bottom: 2px;
-    color: rgba(0,0,0,0.6);
+	display:block;
+	font-style:normal;
+    height: 32px;
+    line-height: 32px;
+	text-align:left;
+	padding-left:32px;
+    border-radius: 5px;
+    margin: 1px;
+    cursor: pointer;
+	color:#000;
+	background-color: rgba(255,255,255,0.35);
+    background-position: 2px center;
+    background-repeat: no-repeat;
+	background-image:url(../../img/ico_hideB.png);
+	background-size:auto 23px;
+	overflow:hidden;
+}
+.pallinoGroup{
+	background-image:url(../../img/ico_hideB.png);
+    background-repeat: no-repeat;
+    background-position: 2px center !important;
+	background-size:auto 23px;
+}
+#filtriSmart_cont i:hover{
+	background-color: rgba(255,255,255,0.5);
+}
+#filtriSmart_cont i.hideApp{
+	background-image:url(../../img/ico_showN.png);
+	background-color: rgba(200,200,200,0.2);
+	color:#666;
+}
+.pallinoGroup.hideApp{
+	background-image:url(../../img/ico_showN.png);
+	background-color: rgba(20,20,20,0.1);
+	opacity:0.5;
+}
+#filtriSmart_cont i.hideApp b{
+	opacity:0.4;
+}
+#filtriSmart_cont i b{
+	display:inline-block;
+	vertical-align:middle;
+    width: 12px;
+    height: 32px;
+	float:right;
 }
 #filtriSmart_cont span{
 	display: block;

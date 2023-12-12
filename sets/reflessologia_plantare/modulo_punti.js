@@ -13,7 +13,8 @@ var MODULO_PUNTI = { // extend SET
 				if(!__(DB.set.aree[siglaPunto].hidden,false)){
 					puntiElenco.push({
 						siglaPunto: siglaPunto,
-						NomePunto: DB.set.aree[siglaPunto].NomePunto
+						NomePunto: DB.set.aree[siglaPunto].NomePunto,
+						apparato: DB.set.aree[siglaPunto].apparato
 					});
 				}
 			}
@@ -26,7 +27,7 @@ var MODULO_PUNTI = { // extend SET
 			// verifico le autorizzazioni
 			var addLock =	(!SET.verFreePunti(siglaPunto)) ? ' lockedItem' : '';
 			// --------------------------
-			elencoPunti+='<p>'+this.scriviPunto(siglaPunto,true,true,'')+'</p>';
+			elencoPunti+='<p data-apparato="'+puntiElenco[a].apparato+'">'+this.scriviPunto(siglaPunto,true,true,puntiElenco[a].apparato)+'</p>';
 		}
 		
 		// FILTRI
@@ -43,8 +44,8 @@ var MODULO_PUNTI = { // extend SET
 							'	<div id="groupsList">';
 							
 			for(a in DB.set.apparati){
-				contFiltri +=	'	<p id="f_'+a+'"><a class="pallinoPat pallinoPatEsteso pallinoGroup" '+
-								'					onclick="SET.filtraGruppo(\''+a+'\');">'+
+				contFiltri +=	'	<p id="f_'+a+'" class="pallinoGroup"><a class="pallinoPat pallinoPatEsteso" '+
+								'					onclick="SET.swGruppo('+a+');">'+
 								'			<i>'+htmlEntities(DB.set.apparati[a])+'</i></a></p>';
 			}
 							
@@ -62,12 +63,8 @@ var MODULO_PUNTI = { // extend SET
 		
 		
 		document.getElementById("lista_punti").innerHTML = '<div class="lista listaPunti">'+contElenco+'</div>';
-		
-		
-		if(SET.groupSel.id)SET.filtraGruppo( SET.groupSel.type, SET.groupSel.val, SET.groupSel.id, true );
 	},
 	filtraPunti: function(){ // filtra i punti per testo
-		if(SET.groupSel.id)SET.filtraGruppo();
 		var el = document.getElementById("punti_ricerca");
 		el.classList.toggle("filtro_attivo_bordo",(el.value.trim()!=''));
 		var els = document.getElementById("elencoPunti").getElementsByTagName("p");
@@ -76,76 +73,32 @@ var MODULO_PUNTI = { // extend SET
 			var a = els[e].getElementsByTagName("a")[0];
 			var siglaPunto = a.id.replace("ts_","");
 			var pass = false;
-			if(	DB.set.punti[siglaPunto].NomePunto.toLowerCase().indexOf(el.value.toLowerCase())==-1 &&
-				DB.set.punti[siglaPunto].AzioniPunto.toLowerCase().indexOf(el.value.toLowerCase())==-1 &&
-				DB.set.punti[siglaPunto].ChiaviPunto.toLowerCase().indexOf(el.value.toLowerCase())==-1 ){
+			if(	DB.set.aree[siglaPunto].NomePunto.toLowerCase().indexOf(el.value.toLowerCase())==-1 &&
+				DB.set.aree[siglaPunto].AzioniPunto.toLowerCase().indexOf(el.value.toLowerCase())==-1 &&
+				DB.set.aree[siglaPunto].ChiaviPunto.toLowerCase().indexOf(el.value.toLowerCase())==-1 ){
 					pass = true;
 			}
-			if(!__(DB.set.punti[siglaPunto]["PH"+SET.phase],false) && SET.phase)pass = true;
 			if(!document.getElementById("ts_"+siglaPunto))pass = true;
 			els[e].classList.toggle("nasPT",pass);
 		}
 	},
+	swGruppo: function( app ){
+		SET.hiddenGroups[app] = !SET.hiddenGroups[app];
+		for(a in DB.set.apparati){
+			document.getElementById("f_app"+a).classList.toggle("hideApp",SET.hiddenGroups[a]);
+			document.getElementById("f_"+a).classList.toggle("hideApp",SET.hiddenGroups[a]);
+		}
+		SET.filtraGruppo();
+	},
 	filtraGruppo: function( type='', val='', id ='', forza=false){ // filtra i punti pruppo
-		if(document.getElementById("punti_ricerca").value.trim()!='' && id){
-			document.getElementById("punti_ricerca").value = '';
-			document.getElementById("punti_ricerca").classList.remove("filtro_attivo_bordo");
+		let els = scene.getObjectByName("ARs").children;
+		for(let e in els){
+			els[e].visible = !SET.hiddenGroups[els[e].userData.apparato];
 		}
-		if(SET.groupSel.id == id && !forza){
-			type = '';
-			val = '';
-			id = '';
+		els = document.getElementById("elencoPunti").getElementsByTagName("p");
+		for(let e in els){
+			if(els[e].dataset?.apparato)els[e].classList.toggle("hideP", SET.hiddenGroups[els[e].dataset.apparato] );
 		}
-		var elenchi = ["PTs"+SET.phase,"ARs"+SET.phase];
-		for(a in elenchi){
-			var els = scene.getObjectByName(elenchi[a]).children;
-			for(e in els){
-				var name = els[e].name;
-				if(name.indexOf("_")==0)name = name.substr(3,3);
-				else name = name.substr(2,3);
-				var vis = false;
-				if(type=='group'){
-					if(typeof(GEOMETRIE.gruppi[val])!='undefined')vis = GEOMETRIE.gruppi[val].punti.indexOf(name)>-1;
-				}else{
-					if(type=='freq')vis = (els[e].userData[type].indexOf(val)>-1);
-					else vis = (els[e].userData[type]==val);
-					if(!type && els[e].userData.hidePunto!='1')vis = true;
-				}
-				var visEl = vis;
-				if(	DB.set.punti[name].hidden || 
-					__(els[e].userData.locked,false) )visEl = false;
-				els[e].visible = visEl;
-				if(document.getElementById("ts_"+name)){
-					document.getElementById("ts_"+name).parentElement.classList.toggle("nasPT",!vis);
-				}
-			}
-		}
-		
-		var els = document.getElementById("f_filtri").getElementsByTagName("p");
-		for(e=0;e<els.length;e++){
-			if(id){
-				els[e].classList.toggle("hide",(els[e].id != 'f_'+id));
-				els[e].classList.toggle("selected",(els[e].id == 'f_'+id));
-			}else{
-				els[e].classList.remove("hide");
-				els[e].classList.remove("selected");
-			}
-		}
-		SET.groupSel = {
-			"type": type,
-			"val": val,
-			"id": id
-		}
-		document.getElementById("e_punti").classList.toggle("searched",SET.groupSel.id);
-		var els = document.getElementById("filtriSmart_cont").getElementsByTagName("div");
-		for(e=0;e<els.length;e++){
-			els[e].classList.remove("selected");
-		}
-		if(SET.groupSel.id){
-			document.getElementById("sf_"+SET.groupSel.id).classList.add("selected");
-		}
-		document.getElementById("filtriSmart_ico").classList.toggle("filtered",(SET.groupSel.id));
-		if(!document.getElementById("p_filtri").classList.contains("op"))SET.swFiltri();
 	},
 	swFiltri: function(){ // mostra/nasconde i filtri
 		document.getElementById("p_filtri").classList.toggle("op");
@@ -159,7 +112,7 @@ var MODULO_PUNTI = { // extend SET
 							'<div id="filtriSmart_cont">'+
 							
 							'<span>'+htmlEntities(TXT("Apparati")) + '</span>';
-		for(a in DB.set.apparati)contFiltri += '<i>'+DB.set.apparati[a]+'</i>';
+		for(a in DB.set.apparati)contFiltri += '<i onClick="SET.swGruppo('+a+');"id="f_app'+a+'">'+DB.set.apparati[a]+'<b class="app'+a+'"></b></i>';
 		contFiltri +=		'</div>';
 		document.getElementById("divs").innerHTML = contFiltri;
 	},

@@ -77,6 +77,9 @@ function cloneMAT(mat,par){
 SET.MAT = {
 	opArea: 0.4,
 	opAreaOn: 0.65,
+	opAreaWhenSel: 0.2,
+	opAreaWhenSelOn: 0.37,
+	
 	opAreaSel: 0.85,
 	opAreaEvi: 0.55,
 	opAreaEviOn: 0.76,
@@ -226,7 +229,7 @@ SET.MAT = {
 		roughness:1,
 		metalness:0.3,
 		side: 3,
-		opacity: 0.5
+		opacity: 0.65
 	}),
 	area2Over: new THREE.MeshStandardMaterial( {
 		name: "materiale SISTEMA MUSCOLARE over",
@@ -237,7 +240,7 @@ SET.MAT = {
 		roughness:1,
 		metalness:0.3,
 		side: 3,
-		opacity: 0.5
+		opacity: 0.65
 	}),
 	area3Over: new THREE.MeshStandardMaterial( {
 		name: "materiale SISTEMA CARDIO-CIRCOLATORIO over",
@@ -248,7 +251,7 @@ SET.MAT = {
 		roughness:1,
 		metalness:0.3,
 		side: 3,
-		opacity: 0.5
+		opacity: 0.65
 	}),
 	area4Over: new THREE.MeshStandardMaterial( {
 		name: "materiale SISTEMA LINFATICO over",
@@ -259,7 +262,7 @@ SET.MAT = {
 		roughness:1,
 		metalness:0.3,
 		side: 3,
-		opacity: 0.5
+		opacity: 0.65
 	}),
 	area5Over: new THREE.MeshStandardMaterial( {
 		name: "materiale APPARATO RESPIRATORIO over",
@@ -270,7 +273,7 @@ SET.MAT = {
 		roughness:1,
 		metalness:0.3,
 		side: 3,
-		opacity: 0.5
+		opacity: 0.65
 	}),
 	area6Over: new THREE.MeshStandardMaterial( {
 		name: "materiale APPARATO DIGERENTE over",
@@ -281,7 +284,7 @@ SET.MAT = {
 		roughness:1,
 		metalness:0.3,
 		side: 3,
-		opacity: 0.5
+		opacity: 0.65
 	}),
 	area7Over: new THREE.MeshStandardMaterial( {
 		name: "materiale APPARATO UROGENITALE over",
@@ -292,7 +295,7 @@ SET.MAT = {
 		roughness:1,
 		metalness:0.3,
 		side: 3,
-		opacity: 0.5
+		opacity: 0.65
 	}),
 	area8Over: new THREE.MeshStandardMaterial( {
 		name: "materiale SISTEMA NERVOSO over",
@@ -303,7 +306,7 @@ SET.MAT = {
 		roughness:1,
 		metalness:0.3,
 		side: 3,
-		opacity: 0.5
+		opacity: 0.65
 	}),
 	area9Over: new THREE.MeshStandardMaterial( {
 		name: "materiale SISTEMA ENDOCRINO over",
@@ -314,7 +317,7 @@ SET.MAT = {
 		roughness:1,
 		metalness:0.3,
 		side: 3,
-		opacity: 0.5
+		opacity: 0.65
 	}),
 
 
