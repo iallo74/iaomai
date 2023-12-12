@@ -53,94 +53,18 @@ var MODULO_PUNTI = { // extend SET
 						
 						
 		if(elencoPunti){
-			contElenco +=	'<div onClick="SET.swElencoPt(this,\'punti\');"' +
-							'     id="p_punti"' +
-							'     class="p_punti">'+htmlEntities(TXT("ElencoPunti"))+'<strong></strong></div>' +
-							'<span id="e_punti"' +
+			contElenco +=	'<span id="e_punti"' +
 							'	   class="elencoPunti">'+
 							
 							contFiltri +
 							'<div id="elencoPunti">' + elencoPunti + '</div></span>';
 		}
 		
-		var legenda = [];	
-		var sceltaPuntiTag = 	'<div class="menuElenchi"' +
-								'	  onClick="MENU.visMM(\'sistemaPunti_p\');">' +
-								'</div>';
+		
+		document.getElementById("lista_punti").innerHTML = '<div class="lista listaPunti">'+contElenco+'</div>';
 		
 		
-		
-		
-		
-		
-		// LEGENDA
-		var elencoLegenda = '';
-		for(l=0;l<legenda.length;l++){
-			if(legenda[l].name=='settings'){
-				settings = legenda[l];
-			}else if(legenda[l].type=='dida'){
-				elencoLegenda+='<p class="legendaDida italic">'+htmlEntities(TXT("Legenda_"+legenda[l].name))+'</p>';
-			}else{
-				elencoLegenda+='<p';
-				if(settings.maskable){
-					elencoLegenda+=' id="zone_'+legenda[l].name+'"' +
-								   ' onClick="SET.eviZone(\''+legenda[l].name+'\',\'clic\');"' +
-								   ' onMouseOver="SET.eviZone(\''+legenda[l].name+'\',\'over\');"' +
-								   ' onMouseOut="SET.eviZone(\''+legenda[l].name+'\',\'out\');"';
-				}
-				elencoLegenda+=	'><span class="legendaColor" style="background-color:#';
-				if(__(legenda[l].color,''))elencoLegenda+=legenda[l].color;
-				else elencoLegenda+='fff;color:#000;';
-				elencoLegenda+=';">';
-				if(settings.nameInside)elencoLegenda+=legenda[l].name;
-				elencoLegenda+='</span>';
-				elencoLegenda+=htmlEntities(TXT("Legenda_"+legenda[l].name))+'</p>';
-			}
-		}
-		elencoLegenda+=	'<p class="legendaDida points">'+
-						'<i>' + htmlEntities(TXT("Legenda_DidaPunti_tit")) + '</i>' +
-						'<br><span class="pINT"></span>' + htmlEntities(TXT("Legenda_DidaPunti_INT")) + 
-						'<br><span class="pEUR"></span>' + htmlEntities(TXT("Legenda_DidaPunti_EUR")) + 
-						'<br><span class="pCIN"></span>' + htmlEntities(TXT("Legenda_DidaPunti_CIN")) + 
-						'</p>';
-		if(elencoLegenda){
-			contElenco +=	'<div id="p_legenda"';
-			if(!globals.modello.cartella)contElenco +=	
-							'	  onClick="ALERT(TXT(\'alertApriModello\'));return;"' +
-							'	  style="opacity:0.5;"';
-			else contElenco +=	
-							'	  onClick="SET.swElencoPt(this,\'legenda\');"';
-			contElenco +=	'     class="p_punti">'+htmlEntities(TXT("Legenda"))+'<strong></strong></div>' +
-							'<span id="e_legenda"' +
-							'	   class="elencoPunti">'+
-							elencoLegenda +
-							'</span>';
-		}
-		
-		document.getElementById("lista_punti").innerHTML = sceltaPuntiTag+'<div class="lista listaPunti">'+contElenco+'</div>';
-		
-		var pass = false;
-		for(e in localStorage){
-			if(typeof(e)!='undefined'){
-				if(e.indexOf("auricolo_mn_")==0){
-					if(localStorage[e]!='' && globals.modello.cartella)document.getElementById("p_"+e.replace("auricolo_mn_","")).click();
-					pass = true;
-				}
-			}
-		}
-		if(!pass && globals.modello.cartella)document.getElementById("p_legenda").click();
 		if(SET.groupSel.id)SET.filtraGruppo( SET.groupSel.type, SET.groupSel.val, SET.groupSel.id, true );
-	},
-	swElencoPt: function( el, m, forza=false ){ // mostra/nasconde un elenco (punti e aree, legenda, ecc...)
-		if(!document.getElementById("e_"+m).classList.contains("visElPt") || forza){
-			document.getElementById("e_"+m).classList.add("visElPt");
-			el.classList.add("frSw");
-			localStorage["auricolo_mn_"+m] = 'true';
-		}else{
-			document.getElementById("e_"+m).classList.remove("visElPt")
-			el.classList.remove("frSw");
-			localStorage["auricolo_mn_"+m] = '';
-		}
 	},
 	filtraPunti: function(){ // filtra i punti per testo
 		if(SET.groupSel.id)SET.filtraGruppo();
@@ -234,19 +158,9 @@ var MODULO_PUNTI = { // extend SET
 							
 							'<div id="filtriSmart_cont">'+
 							
-							'<span>'+htmlEntities(TXT("FiltriSmart")) + '</span>' +
-							
-							'<i>'+htmlEntities(TXT("LabelSmart_Sistema")) + '</i>' +
-							
-							
-							
-							'<i>'+htmlEntities(TXT("LabelSmart_Anatomia")) + '</i>';
-						
-		contFiltri +=		'<i>'+htmlEntities(TXT("LabelSmart_Frequenze")) + '</i>' +
-							
-							
-							
-							'</div>';
+							'<span>'+htmlEntities(TXT("Apparati")) + '</span>';
+		for(a in DB.set.apparati)contFiltri += '<i>'+DB.set.apparati[a]+'</i>';
+		contFiltri +=		'</div>';
 		document.getElementById("divs").innerHTML = contFiltri;
 	},
 	

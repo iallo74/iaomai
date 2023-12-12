@@ -12,73 +12,22 @@ var MODULO_PUNTO = { // extend SET
 		}
 		// --------------------------
 		
-		var titolo = DB.set.punti[siglaPunto].NomePunto;
+		var titolo = DB.set.aree[siglaPunto].NomePunto;
 		for(a in DB.set.aree){
 			if(DB.set.aree[a].siglaPunto == siglaPunto)titolo = siglaPunto+". "+titolo;
 		}
 		var HTML = "<h1>"+htmlEntities(titolo)+"</h1>";
 		var HTML_simboli = '';
 		
-		var type = '',
-			master = false,
-			lato = '',
-			system = '';
+		var apparato = '';
 		
-		if(GEOMETRIE.gruppi.FN.punti.indexOf(siglaPunto)>-1)type = 'FN';
-		else type = 'NR';
-		if(GEOMETRIE.gruppi.MASTER.punti.indexOf(siglaPunto)>-1)master = true;
 		
-		var els = scene.getObjectByName("PTs"+SET.phase).children;
+		var els = scene.getObjectByName("ARs").children;
 		for(e in els){
-			if(els[e].name == "PT"+siglaPunto){
-				lato = els[e].userData.lato;
-				system = els[e].userData.system;
+			if(els[e].name == siglaPunto){
+				apparato = els[e].userData.apparato;
 			}
 		}
-		var els = scene.getObjectByName("ARs"+SET.phase).children;
-		for(e in els){
-			if(els[e].name == "AR"+siglaPunto){
-				lato = els[e].userData.lato;
-				system = els[e].userData.system;
-			}
-		}
-		
-		var HTML_setting_text = '';
-		var HTML_setting_symb = '';
-		if(type=='FN'){
-			HTML_setting_text += '- '+TXT("Setting_FN")+'<br>';
-			HTML_setting_symb += '<b>'+TXT("Symb_FN")+'</b>';
-		}
-		if(type=='NR'){
-			HTML_setting_text += '- '+TXT("Setting_NR")+'<br>';
-			HTML_setting_symb += '<b>'+TXT("Symb_NR")+'</b>';
-		}
-		if(lato=='SX'){
-			HTML_setting_text += '- '+TXT("Setting_SX")+'<br>';
-			HTML_setting_symb += '<b>'+TXT("Symb_SX")+'</b>';
-		}
-		if(lato=='DX'){
-			HTML_setting_text += '- '+TXT("Setting_DX")+'<br>';
-			HTML_setting_symb += '<b>'+TXT("Symb_DX")+'</b>';
-		}
-		if(system==''){
-			HTML_setting_text += '- '+TXT("Setting_INT")+'<br>';
-			HTML_setting_symb += '<b>'+TXT("Symb_INT")+'</b>';
-		}
-		if(system=='EUR'){
-			HTML_setting_text += '- '+TXT("Setting_EUR")+'<br>';
-			HTML_setting_symb += '<b>'+TXT("Symb_EUR")+'</b>';
-		}
-		if(system=='CIN'){
-			HTML_setting_text += '- '+TXT("Setting_CIN")+'<br>';
-			HTML_setting_symb += '<b>'+TXT("Symb_CIN")+'</b>';
-		}
-		if(master){
-			HTML_setting_text += '- '+TXT("Setting_MASTER")+'<br>';
-			HTML_setting_symb += '<b>'+TXT("Symb_MASTER")+'</b>';
-		}
-		
-		if(HTML_setting_text)HTML += '<div id="setting_point" onClick="SET.swSettingPoint();">'+HTML_setting_symb+'<div id="setting_point_text">'+HTML_setting_text+'</div></div>';
 		
 		
 		if( ritorno && 
@@ -95,7 +44,7 @@ var MODULO_PUNTO = { // extend SET
 				if(SET.puntiEvidenziati.indexOf(puntoNuovo)==-1){
 					// aggiungi il punto alla procedura
 					txt = TXT("AggiungiPuntoProc");
-					az = "SET.aggiungiDettaglio('A','"+puntoNuovo+"');SCHEDA.torna();";
+					az = "SET.aggiungiDettaglio('R','"+puntoNuovo+"');SCHEDA.torna();";
 					cls = 'spAdd';
 				}else stesso = true;
 			}
@@ -103,72 +52,16 @@ var MODULO_PUNTO = { // extend SET
 				if(SET.puntiEvidenziati.indexOf(puntoNuovo)==-1){
 					// aggiungi il punto al trattamento
 					txt = TXT("AggiungiPuntoTratt");
-					az = "PAZIENTI.aggiungiAuriculoTrattamento('"+puntoNuovo+"');SCHEDA.torna();";
+					az = "PAZIENTI.aggiungiReflexTrattamento('"+puntoNuovo+"');SCHEDA.torna();";
 					cls = 'spAdd';
 				}else stesso = true;
 			}
-			
-			if(!stesso)HTML_simboli += 	'<div id="spSch" class="'+cls+'" onClick="'+az+'">' +
-										htmlEntities(txt) +
-										'</div>';
-										
-			else HTML_simboli += 	'<div id="spStesso">'+
-									htmlEntities(TXT("PuntoSelezionato")) +
-									'</div>';
 		}
-		if(HTML_simboli)HTML += '<div>'+HTML_simboli+'</div>';
 		
 		
 		// aggiungo contenuto custom
-		HTML += CUSTOMS.addContent("punti_"+siglaPunto,SET.convPuntiScheda(DB.set.punti[siglaPunto].AzioniPunto,true));
+		HTML += CUSTOMS.addContent("punti_"+siglaPunto,SET.convPuntiScheda(DB.set.aree[siglaPunto].AzioniPunto,true));
 		
-		//HTML += SET.convPuntiScheda(DB.set.punti[siglaPunto].AzioniPunto,true);
-		
-		
-		
-		// elenco le patolige incluse
-		var elenco = [];
-		for(let x1 in DB.set.schede){
-			for(let x2 in DB.set.schede[x1]){
-				for(let x3 in DB.set.schede[x1][x2]){
-					for(let x4 in DB.set.schede[x1][x2][x3].p){
-						var el = DB.set.schede[x1][x2][x3].p[x4];
-						if(typeof(el)=='string'){
-							if(DB.set.schede[x1][x2][x3].p[x4].indexOf(siglaPunto) >- 1){
-								for(let p in DB.set.patologie){
-									if(DB.set.patologie[p].scheda == x1){
-										if(elenco.indexOf(p)==-1)elenco.push(p);
-									}
-								}
-							}
-						}else{
-							if(typeof(el.length)=='undefined')el = el.p;
-							for(let x5 in el){
-								if(el[x5].indexOf(siglaPunto) >- 1){
-									for(let p in DB.set.patologie){
-										if(DB.set.patologie[p].scheda == x1){
-											if(elenco.indexOf(p)==-1)elenco.push(p);
-										}
-									}
-								}
-							}
-						}
-					}
-				}
-			}
-		}
-		
-		
-		
-		
-		if(elenco.length){
-			HTML += '<div id="patologiePunti">' +
-					'	<div onClick="this.parentElement.classList.toggle(\'vis\');">'+TXT("Patologie")+'</div>';
-			for(e in elenco){
-				HTML += '<p onClick="SET.apriPatologia(\''+elenco[e]+'\',document.getElementById(\'btn_patologia_'+elenco[e]+'\'));"><span>• '+DB.set.patologie[elenco[e]].NomePatologia+'</span></p>';
-			}
-			HTML += '</div>';
-		}
 		
 
 
@@ -178,7 +71,7 @@ var MODULO_PUNTO = { // extend SET
 		// annotazione
 		var TestoAnnotazione = '',
 			hidePunto = '0',
-			cartella = "auricolo";
+			cartella = "reflexology";
 		if(SET.verificaNota(siglaPunto)){
 			let ar = SET.leggiNota( cartella, siglaPunto*1 );
 			TestoAnnotazione = ar[0];

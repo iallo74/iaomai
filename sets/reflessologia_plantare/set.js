@@ -6,7 +6,6 @@ SET = {
 	AR: [],
 	GD: [],
 	time: 0,
-	pulse: 1,
 	ptSel: null,
 	eviPoint: '',
 	diffX: 0,
@@ -16,18 +15,11 @@ SET = {
 	puntiEvidenziati: [],
 	pMod: '',
 	pointEvi: '',
-	geometryPallino: null,
-	geometryPallinoTrasp: null,
 	tmZone: null,
 	groupSel: '',
-	maskAtt: '',
-	lmVis: false,
 	patOp: -1,
 	schEvi: null,
-	testTOT: 0,
 	forzaDissolve: false,
-	mappaOr: '',
-	lmOr: '',
 	groupSel: {
 		type: '',
 		val: '',
@@ -41,7 +33,7 @@ SET = {
 		SETS.name = "SETS";
 		
 		var modelloAperto = globals.modello.cartella;
-		if(!modelloAperto)modelloAperto='piede';
+		if(!modelloAperto)modelloAperto='piedi';
 			
 		
 		
@@ -106,7 +98,7 @@ SET = {
 							'</span></i>' +
 							'<i class="elMenu" id="help_set" onClick="GUIDA.visFumetto(\'guida_set\',true,true);">?</i></span>';
 		var contElenco = '';
-		contPulsanti += '<div id="pulsante_modello" onClick="cambiaModello(\'piede\');">'+TXT("ApriModello3D")+'</div>';
+		contPulsanti += '<div id="pulsante_modello" onClick="cambiaModello(\'piedi\');">'+TXT("ApriModello3D")+'</div>';
 		// punti
 		contPulsanti += '<div id="pulsante_punti" class="frdx" onClick="SCHEDA.selElenco(\'punti\');">'+TXT("Mappa")+'</div>';
 		contElenco += '<div id="lista_punti"></div>';
@@ -126,7 +118,7 @@ SET = {
 		
 		contBtns = 	'<div id="p_contrasto" class="p_noTxt" onClick="SET.swContrastMethod();"></div>';
 		
-		contIcona = '<div id="p_set" onClick="SCHEDA.apriElenco(\'set\',true);"><svg viewBox="0 0 12 48"><polygon points="5,24 12,13 12,35"></polygon></svg><i>'+htmlEntities(TXT("ReflexologyMap"))+'</i></div>';;
+		contIcona = '<div id="p_set" onClick="SCHEDA.apriElenco(\'set\',true);"><svg viewBox="0 0 12 48"><polygon points="5,24 12,13 12,35"></polygon></svg><i>'+htmlEntities(TXT("ReflexologyMap"))+'</i></div>';
 		
 		var preElenco = SCHEDA.elencoSel;
 		SCHEDA.caricaElenco(globals.set.nome,contElenco);
@@ -311,7 +303,7 @@ SET = {
 					var name=this.INTERSECTED.name;
 					visToolTip(DB.set.aree[name].NomePunto);
 					renderer.domElement.style.cursor='pointer';
-					SET.coloraPunti(name,'Over');
+					SET.coloraAree(name,'Over');
 				}
 			}else{
 				this.INTERSECTED=null;
@@ -322,23 +314,10 @@ SET = {
 		}
 		return make;
 	},
-	/* setPulsePt: function( pt, pulse, op, mat='' ){
-		var phs = ["","2","3"];
-		for(let ph in phs){
-			var els = scene.getObjectByName("PTs"+phs[ph]).children;
-			for(e in els){
-				if(els[e].name.indexOf(pt.name)==0){
-					els[e].scale.set(pulse,pulse,pulse);
-					if(mat)els[e].material=mat;
-				}
-			}
-		}
-		SET.MAT.pointSel.setValues( { opacity: op } );
-	}, */
 	desIntersected: function(objOver){
 		if(this.INTERSECTED && this.INTERSECTED!=objOver){
 			var name=this.INTERSECTED.name;
-			SET.coloraPunti(name,'Base');
+			SET.coloraAree(name,'Base');
 			this.INTERSECTED = null;
 		}
 	},
@@ -375,100 +354,45 @@ SET = {
 	
 	
 	apriPunto: function( PT_name, ritorno='', el='' ){
-		var PT=scene.getObjectByName( PT_name );
-		if(typeof(PT)=='undefined')PT = scene.getObjectByName( PT_name.replace("PT","AR") );
-		var type = (PT.userData.type == 'point')?"punti":"aree";
-		name = PT_name.substr(PT_name.length-3,3);
-		
+		var PT = scene.getObjectByName( PT_name );
+
 		// verifico le autorizzazioni
-		if(!SET.verFreePunti(name)){
+		if(!SET.verFreePunti(PT_name)){
 			ALERT(TXT("MsgContSoloPay"),true,true);
 			return;
 		}
 		// --------------------------
 
 		if(this.ptSel){
-			if(name == this.ptSel.name.substr(2,3))return;
-			system = this.ptSel.userData.system;
-			var mat = SET.MAT["pointBase"+system];
-			if(this.ptSel.userData.nota)mat=this.MAT.pointNote;
-			//SET.setPulsePt( this.ptSel, 1, 1, mat );
-			if(document.getElementById("ts_"+this.ptSel.name.substr(2,3)))document.getElementById("ts_"+this.ptSel.name.substr(2,3)).classList.remove("selElPt");
+			if(PT_name == this.ptSel.name)return;
+			var mat = SET.MAT["area"+this.ptSel.userData.apparato+"Base"];
+			//if(this.ptSel.userData.nota)mat=this.MAT.pointNote;
+			
+			if(document.getElementById("ts_"+this.ptSel.name))document.getElementById("ts_"+this.ptSel.name).classList.remove("selElPt");
 			SET.chiudiPunto(true);
 		}
 		
 		this.ptSel=PT;
 		
-		if(document.getElementById("ts_"+name))document.getElementById("ts_"+name).classList.add("selElPt");
+		if(document.getElementById("ts_"+PT_name))document.getElementById("ts_"+PT_name).classList.add("selElPt");
 		
-		var PT_name_first= null;
-		var AR_name_first= null;
-		
-		var mat = this.MAT.pointSel;
-		if(PT.userData.nota)mat = this.MAT.pointSelNote;
-		var phs = ["","2","3"];
-		for(let ph in phs){
-			var els = scene.getObjectByName("PTs"+phs[ph]).children;
-			for(e in els){
-				if(els[e].name.indexOf("PT"+name)==0){
-					els[e].visible = true;
-					els[e].material=mat;
-					if(!PT_name_first && els[e].userData.PH == SET.phase){
-						PT_name_first = "PT"+name;
-						this.ptSel = els[e];
-					}
-				}
-			}
-			var els = scene.getObjectByName("LNs"+phs[ph]).children;
-			for(e in els){
-				if(els[e].name.indexOf("AG"+name)==0){
-					els[e].visible=true;
-				}
-			}
-			var mat = this.MAT.areaSel;
-			var els = scene.getObjectByName("ARs"+phs[ph]).children;
-			for(e in els){
-				if(els[e].name.indexOf("AR"+name)==0){
-					els[e].visible = true;
-					els[e].material=mat;
-					if(els[e].userData.PH == SET.phase)AR_name_first = "AR"+name;
-				}
-			}
-		}
-		
-		var elPin = this.ptSel;
-		if(el)elPin = el;
-		
-		if(!PT.parent.visible){
-			if(PT_name_first)PT = scene.getObjectByName(PT_name_first); 
-			if(AR_name_first)PT = scene.getObjectByName(AR_name_first); 
-		}
 		
 		var x2 = 0;
 		var y2 = 0;
 		var z2 = 0;
 		var vector = null;
-		if(PT.userData.type == 'area'){
-			elPin = scene.getObjectByName( "AR"+name );
-			var center = getCenterPoint(elPin);
-			this.diffX = center.x*1;
-			this.diffY = center.y*1;
-			x2 = ((MODELLO.flip) ? center.x*1 : 0-center.x*1);
-			y2 = 0-center.y*1;
-			z2 = 0-center.z*1;
-			elPin.updateMatrixWorld();
-			vector = center;
-			vector.applyMatrix4( elPin.matrixWorld );
-		}else{
-			this.diffX = elPin.position.x*1;
-			this.diffY = elPin.position.y*1;
-			x2 = ((MODELLO.flip) ? elPin.position.x : 0-elPin.position.x);
-			y2 = 0-elPin.position.y;
-			z2 = 0-elPin.position.z;
-			elPin.updateMatrixWorld();
-			var vector = elPin.geometry.vertices[0].clone();
-			vector.applyMatrix4( elPin.matrixWorld );
-		}
+
+		elPin = scene.getObjectByName( PT_name );
+		var center = getCenterPoint(elPin);
+		this.diffX = center.x*1;
+		this.diffY = center.y*1;
+		x2 = ((MODELLO.flip) ? center.x*1 : 0-center.x*1);
+		y2 = 0-center.y*1;
+		z2 = 0-center.z*1;
+		elPin.updateMatrixWorld();
+		vector = center;
+		vector.applyMatrix4( elPin.matrixWorld );
+
 		panEndZero = { x: x2, y: y2, z: z2 };
 		
 		if(SCHEDA.aggancio.tipo=='libera' && el){
@@ -479,8 +403,8 @@ SET = {
 		
 		if(!el){
 			// posiziono
-			if(GEOMETRIE.posizioni[name] && !SET.phase){
-				var pos = GEOMETRIE.posizioni[name];
+			if(GEOMETRIE.posizioni[PT_name] && !SET.phase){
+				var pos = GEOMETRIE.posizioni[PT_name];
 
 				// cerco la via più breve
 				let diffX = manichinoCont.rotation.x-pos.x,
@@ -508,14 +432,7 @@ SET = {
 			if(manichinoCont.position.z<15 || !zoomEnd || !smothingView)zoomEnd = 15;
 			normalizeRotation();
 		}
-		if(PT_name_first && globals.modello.cartella){
-			SET.addEviPalls(PT_name_first,'Select');
-			this.pulse = 1;
-		}
-		
-		
-		
-		SET.caricaPunto( name, ritorno );
+		SET.caricaPunto( PT_name, ritorno );
 	},
 	chiudiPunto: function( nonChiudereScheda=false, riapri=false ){
 		if(!this.ptSel)return;
@@ -528,55 +445,17 @@ SET = {
 			endChangeDetection();
 			SCHEDA.formModificato = false;
 		}
-		if(this.ptSel.userData.type == 'point'){
-			this.eviPoint.material.visible = false;
-			this.pulse=0;
-			var mat = cloneMAT(SET.MAT["pointBase"+this.ptSel.userData.system]);
-			if(this.ptSel.userData.nota)mat=this.MAT.pointNote;
-			this.ptSel.material=mat;
-			this.ptSel.material.opacity=1;
-			
-			SET.delEviPalls(this.ptSel.name,'Select');
-			SET.delEviPalls("_"+this.ptSel.name,'Over');
-		}
-		exPt = SET.ptSel;
 			
 		// coloro tutti gli altri punti
-		var mat = cloneMAT(SET.MAT["pointBase"+this.ptSel.userData.system]);
-		if(this.ptSel.userData.nota)mat=this.MAT.pointNote;
-		var phs = ["","2","3"];
-		for(let ph in phs){
-			var els = scene.getObjectByName("PTs"+phs[ph]).children;
-			for(e in els){
-				if(els[e].name.indexOf("PT"+this.ptSel.name.substr(2,3))==0){
-					if(__(els[e].userData.hidePunto,'0')=='1')els[e].visible = false;
-					els[e].material=mat;
-					els[e].material.opacity = 1;
-					els[e].scale.set(1,1,1);
-				}
-				if(els[e].name.indexOf("_PT"+this.ptSel.name.substr(2,3))==0){
-					if(__(els[e].userData.hidePunto,'0')=='1')els[e].visible = false;
-				}
-			}
-			var els = scene.getObjectByName("LNs"+phs[ph]).children;
-			for(e in els){
-				if(els[e].name.indexOf("AG")==0){
-					els[e].visible=false;
-				}
-			}
-			var els = scene.getObjectByName("ARs"+phs[ph]).children;
-			for(e in els){
-				if(els[e].name.indexOf("AR"+this.ptSel.name.substr(2,3))==0){
-					if(__(els[e].userData.hidePunto,'0')=='1')els[e].visible = false;
-					system = els[e].userData.system;
-					if(SET.puntiEvidenziati.indexOf(this.ptSel.name.substr(2,3))>-1){
-						system = 'Evi';
-						tipo='';
-					}else tipo='Base';
-					els[e].material = cloneMAT(SET.MAT["area"+tipo+system]);
-				}
+		var els = scene.getObjectByName("ARs").children;
+		for(e in els){
+			if(els[e].name==this.ptSel.name){
+				if(SET.puntiEvidenziati.indexOf(this.ptSel.name)>-1)tipo='';
+				else tipo='Base';
+				els[e].material = SET.MAT["area"+els[e].userData.apparato+tipo];
 			}
 		}
+			
 		if(SET.schEvi)SET.eviPointsPat(SET.schEvi);
 		this.ptSel=null;
 		if(SCHEDA.scheda2Aperta){
@@ -589,22 +468,14 @@ SET = {
 		
 		// ricentro il manichino
 		exPt.updateMatrixWorld();
-		if(exPt.userData.type == 'area'){
-			var center = getCenterPoint(exPt);
-			var vector = new THREE.Vector3( ((MODELLO.flip) ? center.x*1 : 0-center.x*1), 0-center.y*1, 0-center.z*1 );
-		}else{
-			var vector = exPt.geometry.vertices[0].clone();
-		}
+		var center = getCenterPoint(exPt);
+		var vector = new THREE.Vector3( ((MODELLO.flip) ? center.x*1 : 0-center.x*1), 0-center.y*1, 0-center.z*1 );
 		vector.applyMatrix4( exPt.matrixWorld );
 		manichino.position.set( 0, 0, 0 );
 		render();
 		exPt.updateMatrixWorld();
-		if(exPt.userData.type == 'area'){
-			var center = getCenterPoint(exPt);
-			var vector2 = new THREE.Vector3( ((MODELLO.flip) ? center.x*1 : 0-center.x*1), 0-center.y*1, 0-center.z*1 );
-		}else{
-			var vector2 = exPt.geometry.vertices[0].clone();
-		}
+		var center = getCenterPoint(exPt);
+		var vector2 = new THREE.Vector3( ((MODELLO.flip) ? center.x*1 : 0-center.x*1), 0-center.y*1, 0-center.z*1 );
 		vector2.applyMatrix4( exPt.matrixWorld );
 		manichinoCont.position.x = manichinoCont.position.x - (vector2.x-vector.x);
 		manichinoCont.position.y = manichinoCont.position.y - (vector2.y-vector.y);
@@ -615,7 +486,6 @@ SET = {
 		if(riapri){
 			MENU.visModello();
 			setTimeout(function(){
-				SET.swElencoPt(document.getElementById("p_punti"),'punti',true);
 				let nascosta = document.body.classList.contains("nasSch");
 				SET.apriPunto(exPt.name,'');
 				if(nascosta)SCHEDA.nascondiScheda();
@@ -640,9 +510,9 @@ SET = {
 		if(!noRet)ret = SET.chiudiPunto(true);
 		html += '"';
 		if(col)html+= ' style="border-left:6px solid #'+col+'"';
-		html+= ' onClick="SET.apriPunto(\''+nomePunto+'\',\''+ret+'\');"';
-		if(noRet)html += '  onMouseOver="SET.overPunto(\''+nomePunto+'\',true);"' +
-						 '  onMouseOut="SET.overPunto(\''+nomePunto+'\',false);"' +
+		html+= ' onClick="SET.apriPunto(\''+siglaPunto+'\',\''+ret+'\');"';
+		if(noRet)html += '  onMouseOver="SET.overPunto(\''+siglaPunto+'\',true);"' +
+						 '  onMouseOut="SET.overPunto(\''+siglaPunto+'\',false);"' +
 						 '	id="ts_'+siglaPunto.replace('.','_')+'"';
 		html += '>';
 		if(esteso)html+='<i>'+nomePunto+'</i>';
@@ -656,7 +526,7 @@ SET = {
 			return;
 		}
 		// --------------------------
-		SET.apriPunto("PT"+PT,'SET.chiudiPunto(true);');
+		SET.apriPunto(PT,'SET.chiudiPunto(true);');
 	},
 	selArea: function( PT ){
 		SET.selPunto(PT);
@@ -699,19 +569,6 @@ SET = {
 			// --------------------------
 		}
 		SET.applicaEvidenziaPunto(anatomia,mappa,lm);
-		/*
-		//-------------------- MOSTRA LINEE
-		//SET.hideGroupLines();
-		var re = /data-tri="[^"]+"/ig;
-		var result = html.match(re);
-		for(let k in result){
-			var pT=result[k].split('"');
-			var gruppo = pT[1];
-			if(scene.getObjectByName(gruppo)){
-				scene.getObjectByName(gruppo).visible = true;
-			}
-		}
-		//----------------*/
 		SET.settaOverPunto();
 	},
 	evidenziaPuntoMod: function( elenco ){
@@ -769,18 +626,6 @@ SET = {
 				SET.puntiEvidenziati.push("999"); // evita l'illuminazione dei punti al passaggio del mouse
 			}, 200, anatomia);
 		}
-		if(mappa){
-			setTimeout( function(){
-				SET.mappaOr = localStorage.imgMappa;
-				SET.cambiaMappa(mappa);
-			}, 200, mappa);
-		}
-		if(lm!==''){
-			setTimeout( function(){
-				SET.lmOr = SET.lmVis;
-				if(SET.lmVis != lm && globals.modello.cartella)SET.swLM();
-			}, 200, lm);
-		}
 	},
 	annullaEvidenziaPunto: function( forzaDissolve=false ){
 		if(SET.puntiEvidenziati.length || forzaDissolve){
@@ -825,14 +670,6 @@ SET = {
 				MODELLO.op("Visceri",SET.forzaDissolve.Visceri);
 				SET.forzaDissolve = false;
 			}
-			if(SET.mappaOr){
-				SET.cambiaMappa(SET.mappaOr);
-				SET.mappaOr = '';
-			}
-			if(SET.lmOr!==''){
-				if(SET.lmVis != SET.lmOr && globals.modello.cartella)SET.swLM();
-				SET.lmOr = '';
-			}
 		}
 		SET.puntiEvidenziati = [];
 	},
@@ -870,22 +707,8 @@ SET = {
 		SET.evidenziaPuntoMod(elenco);
 		SET.aggiornaDettaglio(el);
 	},
-	coloraPunti: function( PT_name, tipo ){
+	coloraAree: function( PT_name, tipo ){
 		if(touchable)return;
-		/* var els = scene.getObjectByName("PTs"+SET.phase).children;
-		for(let e in els){
-			if(	els[e].name.indexOf("PT"+PT_name) == 0 && 
-				els[e].material.name.indexOf("SEL") == -1 && 
-				SET.note.indexOf(PT_name) == -1 ){
-				system = els[e].userData.system;
-				if(SET.MAT["point"+tipo+system].name != els[e].material.name){
-					els[e].material = cloneMAT(SET.MAT["point"+tipo+system]);
-					if(SET.puntiEvidenziati.length && SET.puntiEvidenziati.indexOf(PT_name)==-1){
-						els[e].material.opacity = 0.5;
-					}else els[e].material.opacity = 1;
-				}
-			}
-		} */
 		var els = scene.getObjectByName("ARs").children;
 		for(let e in els){
 			if(	els[e].name.indexOf(PT_name) == 0 && 
@@ -896,48 +719,29 @@ SET = {
 				}
 				if(SET.MAT["area"+els[e].userData.apparato+tipo].name != els[e].material.name){
 					els[e].material = SET.MAT["area"+els[e].userData.apparato+tipo];
-					/* if(SET.puntiEvidenziati.length){
-						if(SET.puntiEvidenziati.indexOf(PT_name)>-1)els[e].material.opacity = 0.7;
-						else els[e].material.opacity = 0.2;
-					} */
 				}
 			}
 		}
 	},
 	overPunto: function( PT_name, over ){
-		var name = PT_name.split(".")[0];
-		if(name.substr(0,1)=='_')name = name.substr(3,name.length-3);
-		else name = name.substr(2,name.length-2);
 		if(touchable || !name)return;
 		
 		// verifico le autorizzazioni
-		if(!SET.verFreePunti(name)){
+		if(!SET.verFreePunti(PT_name)){
 			return;
 		}
 		// --------------------------
 		
-		var phs = ["","2","3"];
-		for(let ph in phs){
-			var els = scene.getObjectByName("PTs"+phs[ph]).children;
-			for(e in els){
-				if(els[e].name.indexOf("_PT"+name)==0 && els[e].material.name.indexOf("SEL")==-1){
-					if(over)SET.addEviPalls("_PT"+name,'Over');
-					else SET.delEviPalls("_PT"+name,'Over');
+		var els = scene.getObjectByName("ARs").children;
+		for(e in els){
+			if(els[e].name==PT_name && els[e].material.name.indexOf("SEL")==-1){
+				if(els[e].material.name.indexOf('EVI')>-1){
+					system = 'Evi';
+					tipo = (over) ? "Over" : "";
+				}else{
+					tipo = (over) ? "Over" : "Base";
 				}
-			}
-			var tipo = (over) ? "Over" : "";
-			var els = scene.getObjectByName("ARs"+phs[ph]).children;
-			for(e in els){
-				if(els[e].name.indexOf("AR"+name)==0 && els[e].material.name.indexOf("SEL")==-1){
-					system = els[e].userData.system;
-					if(els[e].material.name.indexOf('EVI')>-1){
-						system = 'Evi';
-						tipo = (over) ? "Over" : "";
-					}else{
-						tipo = (over) ? "Over" : "Base";
-					}
-					els[e].material = cloneMAT(SET.MAT["area"+tipo+system]);
-				}
+				els[e].material = SET.MAT["area"+els[e].userData.apparato+tipo];
 			}
 		}
 	},
@@ -989,15 +793,6 @@ SET = {
 			'</div>';
 		document.getElementById("labelImpset").getElementsByTagName("b")[0].innerHTML = TXT("ImpostazioniSet");
 		document.getElementById("contImpset").innerHTML = HTML_imp;
-	},
-	cambiaMappa: function( name, loader ){
-		if(SET.maskAtt){
-			SET.MAT.setAlphaMap( SET.maskAtt, 'clic' );
-			SET.MAT.setAlphaMap( SET.maskAtt, 'out' );
-		}
-		localStorage.imgMappa = name;
-		SET.MAT.mappaAree( true );
-		SET.caricaPunti();
 	},
 	
 	addEviPalls: function( PT_name, tipo ){

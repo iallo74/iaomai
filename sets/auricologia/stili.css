@@ -74,23 +74,9 @@ body.orecchio #pulsante_modello{
 
 
 /* SCHEDE */
-
 .pallinoPunto span{
 	display:none;
 }
-/*.pallinoPat:not(.pallinoPunto){
-	display:inline-block;
-	padding-left:16px;
-	height:16px;
-	line-height:16px;
-	background-image:url(img/pallinoPat.png);
-	background-position:left center;
-	background-repeat:no-repeat;
-	vertical-align:middle;
-	font-weight:bold;
-	text-overflow:ellipsis;
-	overflow:hidden;
-}*/
 .pallinoPunto{
 	color: #366ee1;
 	cursor:default !important;

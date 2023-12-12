@@ -17,7 +17,7 @@
     text-align: right !important;
     margin-bottom: 10px !important;
 }
-body.piede #pulsante_modello{
+body.piedi #pulsante_modello{
 	display:none;
 }
 #p_contrasto{
@@ -27,4 +27,1259 @@ body.piede #pulsante_modello{
 #p_contrasto.btnSel{
 	background-image:url(img/p_contrasto_sel.png) !important;
 	display:none;
+}
+
+
+
+
+
+
+
+
+
+
+
+.simboliPunto{
+	float:right;
+}
+.smart .simboliPunto{
+	margin-top: 20px;
+}
+
+.simboliPunto{
+    width: 45px;
+    height: 45px;
+    margin-left: 10px;
+    background-color: #aec5f1;
+    border-radius: 25px;
+    padding: 5px;
+	background-repeat:no-repeat;
+	background-size:90%;
+	background-position:center center;
+	display:inline-block;
+	vertical-align:middle;
+}
+.zoomPunto{
+	width:371px;
+	height:490px;
+}
+#p_contrasto{
+	background-image:url(img/p_contrasto.png);
+	display:none;
+}
+#p_contrasto.btnSel{
+	background-image:url(img/p_contrasto_sel.png) !important;
+	display:none;
+}
+
+
+
+/* SCHEDE */
+.pallinoPunto span{
+	display:none;
+}
+.pallinoPunto{
+	color: #366ee1;
+	cursor:default !important;
+	display:inline !important;
+	vertical-align:unset !important;
+	padding-left:0px !important;
+	padding-right:0px !important;
+}
+.pallinoNul{
+	display:inline-block;
+	vertical-align:middle;
+	text-overflow:ellipsis;
+	overflow:hidden;
+	padding-left: 7px;
+    padding-right: 7px;
+    height: 22px;
+    line-height: 22px;
+}
+.pallinoPat{
+	display:inline-block;
+	height:16px;
+	line-height:16px;
+	vertical-align:middle;
+	cursor:pointer;
+	text-overflow:ellipsis;
+	overflow:hidden;
+    white-space: nowrap;
+}
+#cont_protocollo .pallinoPat{
+	width: calc(100%);
+}
+.pallinoPat:not(.noPall){
+	padding-left: 7px;
+    padding-right: 7px;
+    background-position: left center;
+    background-repeat: no-repeat;
+    height: 22px;
+    line-height: 22px;
+}
+#elencoPunti .pallinoPat:not(.noPall){
+    line-height: 30px;
+}
+.smart.android .pallinoPat:not(.noPall){
+    height: 40px !important;
+    line-height: 40px !important;
+}
+.pallinoGroup:not(.noPall):not(.selected){
+	padding-left:16px;
+	background-image: url(../../img/pallinoGroup.png) !important;
+    background-position: 5px center !important;
+    background-size: auto 20px;
+}
+.pallinoPat:not(.ptNoSel):not(.pallinoPunto){
+	cursor:pointer;
+}
+.pallinoPat.ptNoSel:not(.pallinoPunto){
+	cursor:default !important;
+}
+.pallinoPat:not(.ptNoSel):not(.pallinoPunto):hover{
+	background-color:rgba(0,0,0,0.1);
+	border-radius:3px;
+}
+.pallinoPatEsteso{
+	text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    width: calc(100% - 20px);
+	height: 30px;
+    line-height: 30px;
+}
+.pallinoPat i,
+.pallinoPunto i{
+	font-weight:normal !important;
+	font-style:normal !important;
+}
+.elencoPunti{
+	margin-top:10px;
+}
+.elencoPunti p{
+	text-align:left;
+	height: 31px;
+    line-height: 27px;
+	margin:0px;
+}
+#scheda_testo .elencoPunti p:not(.categoriaGruppo){
+	height:25px;
+	line-height:25px;
+}
+#scheda_testo .elencoPunti p.categoriaGruppo{
+	margin-top:10px !important;
+}
+.smart.android .elencoPunti p{
+	height:40px !important;
+	line-height:40px !important;
+}
+
+/* STILI DELLE SCHEDE */
+.scheda_meridiano #scheda_titolo{
+	background: #eb9a00 !important;
+    background: -moz-linear-gradient(top, #eb9a00 0%, #ce8707 100%) !important;
+    background: -webkit-linear-gradient(top, #eb9a00 0%,#ce8707 100%) !important;
+    background: linear-gradient(to bottom, #eb9a00 0%,#ce8707 100%) !important;
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#eb9a00', endColorstr='#ce8707',GradientType=0 ) !important;
+}
+.scheda_procedura #scheda_titolo{
+	background: #eb9a00 !important;
+    background: url(../../img/ico_prescrizioneB.png), -moz-linear-gradient(top, #eb9a00 0%, #ce8707 100%) !important;
+    background: url(../../img/ico_prescrizioneB.png), -webkit-linear-gradient(top, #eb9a00 0%,#ce8707 100%) !important;
+    background: url(../../img/ico_prescrizioneB.png), linear-gradient(to bottom, #eb9a00 0%,#ce8707 100%) !important;
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#eb9a00', endColorstr='#ce8707',GradientType=0 ) !important;
+	background-position:5px center, center center !important;
+	background-repeat:no-repeat !important;
+}
+
+.scheda_patologia #scheda_titolo{
+	background: #eb9a00 !important;
+    background: url(../../img/ico_patologie2B.png), -moz-linear-gradient(top, #eb9a00 0%, #ce8707 100%) !important;
+    background: url(../../img/ico_patologie2B.png), -webkit-linear-gradient(top, #eb9a00 0%,#ce8707 100%) !important;
+    background: url(../../img/ico_patologie2B.png), linear-gradient(to bottom, #eb9a00 0%,#ce8707 100%) !important;
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#eb9a00', endColorstr='#ce8707',GradientType=0 ) !important;
+	background-position:5px center, center center !important;
+	background-repeat:no-repeat !important;
+}
+
+.scheda_teoria #scheda_titolo{
+    background: #1d4eaa;
+    background: url(../../img/ico_teoria2B.png), -moz-linear-gradient(top, #1d4eaa 0%, #0a3d96 100%);
+    background: url(../../img/ico_teoria2B.png), url(../img/ico_utente.png)-webkit-linear-gradient(top, #1d4eaa 0%,#0a3d96 100%);
+    background: url(../../img/ico_teoria2B.png), linear-gradient(to bottom, #1d4eaa 0%,#0a3d96 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1d4eaa', endColorstr='#0a3d96',GradientType=0 );
+	background-position:2px center, center center !important;
+	background-repeat:no-repeat !important;
+}
+.scheda_video #scheda_titolo{
+    background: #1d4eaa;
+    background: url(../../img/play.png), -moz-linear-gradient(top, #1d4eaa 0%, #0a3d96 100%);
+    background: url(../../img/play.png), url(../img/ico_utente.png)-webkit-linear-gradient(top, #1d4eaa 0%,#0a3d96 100%);
+    background: url(../../img/play.png), linear-gradient(to bottom, #1d4eaa 0%,#0a3d96 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1d4eaa', endColorstr='#0a3d96',GradientType=0 );
+	background-position:8px center, center center !important;
+	background-repeat:no-repeat !important;
+}
+
+
+/* ELENCHI */
+.smart #p_set{
+	background-image: url(img/logoMenu.png);
+}
+body:not(.smart) #p_set{
+	background: url(img/logoMenu.png), linear-gradient(to bottom, #0f3a89 0%,#1546a1 5px,#1546a1 calc(100% - 5px),#0f3a89 100%);
+}
+#p_set svg polygon{
+	fill: var(--menu-fondino);
+}
+.listaPunti > div strong{
+	float: right;
+    display: inline-block;
+	margin:2px -13px 2px 0px;
+    width:32px;
+	height:32px;
+	border-radius:16px;
+	background-size:auto 40px;
+	background-repeat: no-repeat;
+	background-position:center center;
+}
+.smart .listaPunti > div strong{
+	margin-right: -4px !important;
+}
+.listaPunti > div.frSw strong{
+	background-image:url(../../img/frSuB.png);
+}
+.listaPunti > div:not(.frSw) strong{
+	background-image:url(../../img/frGiuB.png);
+}
+
+.smart.android .listaPunti > div strong{
+	width: 46px;
+    height: 46px;
+    border-radius: 23px;
+}
+.smart.android .listaPunti > div#pEX strong{
+	margin-right: 3px !important;
+}
+.listaPunti > div.frSw strong{
+	background-image:url(../../img/frSuB.png);
+}
+.listaPunti > div:not(.overLight):hover strong{
+	background-color:rgba(0,0,0,0.1);
+}
+#elencoPunti > p > a.lockedItem{
+    cursor: default !important;
+	background-image: url(../../img/lockB.png) !important;
+    background-size: auto 70% !important;
+    background-position: right 5px !important;
+	cursor:default !important;
+}
+#elencoPunti > p > a.lockedItem i{
+	color: rgba(255,255,255,0.2) !important;
+}
+#elencoPunti > p > a.lockedItem span{
+	opacity: 0.3 !important;
+}
+body:not(.smart) .listaPunti,
+body.smart #elenchi .listaPunti{
+	height: 100% !important;
+}
+.elencoPunti{
+    display: block;
+}
+.elencoFiltri,
+.elencoGruppi{
+    display: none;
+}
+.elencoPunti,
+.elencoFiltri,
+.elencoGruppi{
+    width: 100% !important;
+    margin: 0px !important;
+    border: 0px !important;
+	color:#FFF !important;
+    text-align: left;
+    padding-left: 5px;
+    padding-right: 5px;
+    margin-bottom: 10px !important;	
+	height: auto !important;
+}
+.elencoFiltri input,
+.elencoPunti input{
+	width: calc(100% - 30px);
+    border: 1px solid rgba(255,255,255,0.4);
+    border-radius: 3px;
+    background-color: rgba(255,255,255,0.3);
+    height: 26px;
+    line-height: 26px;
+    text-align: center;
+    background-image: url(../../img/lente.png);
+    background-repeat: no-repeat;
+    background-position: left center;
+    background-size: auto 90%;
+}
+.smart.android .elencoPunti input{
+	width: calc(100% - 42px);
+    height: 32px;
+    line-height: 32px;
+    margin-top: 3px;
+    font-size: var(--font-16-93);
+}
+#e_legenda p{
+	color:#FFF;
+	line-height:22px;
+	padding:3px;
+}
+#e_legenda.legendaSelected p:not(.selectedZone):not(.legendaDida){
+	opacity: 0.5;
+}
+#e_legenda.legendaSelected p.selectedZone{
+	background-image:url(../../img/chMenu.png);
+	background-repeat:no-repeat;
+	background-position:right center;
+	background-size:contain;
+}
+#e_legenda p:hover{
+	border-radius:5px;
+	background-color:rgba(255,255,255,0.1);
+}
+#e_legenda p:not(.legendaDida){
+	cursor:pointer;
+}
+.legendaColor{
+	display:inline-block;
+	vertical-align:middle;
+	min-width:20px;
+	height:16px;
+	border-radius:5px;
+	box-shadow:0px 0px 3px #000;
+	margin-right: 5px;
+    margin-top: -1px;
+    font-size: var(--font-11);
+    line-height: 17px;
+    text-align: center;
+    padding-left: 2px;
+    padding-right: 2px;
+}
+.smart.android .legendaColor{
+	height: 27px;
+    line-height: 28px !important;
+    min-width: 36px;
+    margin-right: 10px;
+    font-size: var(--font-14-94) !important;
+    margin-top: -1px;
+}
+.legendaDida{
+    padding: 10px 10px 3px 25px !important;
+	height:auto !important;
+}
+.legendaDida.italic{
+	color: #CCC !important;
+    font-style: italic;
+}
+.legendaDida.points{
+	padding: 10px 14px !important;
+    background-color: rgba(255,255,255,0.3);
+    border-radius: 6px;
+    margin-top: 10px;
+	color:#000 !important;
+}
+.legendaDida.points i{
+	opacity:0.7;
+}
+.pINT,
+.pEUR,
+.pCIN,
+.pNUL{
+	display: inline-block;
+    vertical-align: middle;
+    width: 11px;
+    height: 11px;
+    border-radius: 6px;
+    margin-right: 5px;
+    margin-top: -3px;
+    border: 1px solid #444;
+}
+.smart.android .pINT,
+.smart.android .pEUR,
+.smart.android .pCIN,
+.smart.android .pNUL{
+	width: 14px;
+    height: 14px;
+    border-radius: 7px;
+    margin-right: 8px;
+}
+.pINT{
+	background-color:#333;
+}
+.pEUR{
+	background-color:#06C;
+}
+.pCIN{
+	background-color:#8f3500;/*#960;*/
+}
+.smart.android .lista > div:not(.loading):not(.menuElenchi) {
+	padding-right:7px;
+}
+.tab_punti h1{
+	margin-bottom:10px;
+}
+#setting_point{
+	display: inline-block;
+    background-image: url(../../img/frGiuB_mini.png);
+    background-repeat: no-repeat;
+    background-position: calc(100% - 8px) 12px;
+    cursor: pointer;
+    border-radius: 6px;
+    padding: 6px 28px 7px 7px;
+    margin-bottom: 5px;
+}
+#setting_point:hover,
+#setting_point.vis{
+    background-color: rgba(0,0,0,0.1);
+}
+#setting_point b{
+	display:inline-block;
+	vertical-align:middle;
+	height:16px;
+	line-height:16px;
+	padding-left:4px;
+	padding-right:4px;
+	border-radius:3px;
+	margin-right: 4px;
+	font-size: var(--font-12);
+	color:#FFF;
+	background-color:#646567;
+}
+#setting_point_text{
+	padding: 5px;
+}
+
+#setting_point:not(.vis) #setting_point_text{
+	display:none;
+}
+#setting_point.vis{
+    background-image: url(../../img/chMenuB.png);
+    background-size: 22px;
+    background-position: calc(100% - 3px) 2px;
+}
+
+
+.filtro_attivo_bordo{
+	border-color:#FC0 !important;
+}
+.nasPT{
+	display: none;
+}
+.smart.android .elencoPunti p,
+.smart.android .elencoFiltri p,
+.smart.android .elencoGruppi p{
+	height:41px;
+	border-bottom: 1px solid rgba(0,0,0,0.2);
+}
+.smart.android .elencoFiltri p:last-child,
+.smart.android .elencoPunti p:last-child,
+.smart.android .elencoGruppi p:last-child{
+	border-bottom: none;
+}
+.smart.android .elencoPunti p *,
+.smart.android .elencoFiltri p *,
+.smart.android .elencoGruppi p *{
+	line-height: 37px;
+    font-size: var(--font-16) !important;
+	background-position: 5px 14px !important;
+}
+
+
+.listaPunti{
+    width: 100% !important;
+    margin: 0px !important;
+    border: 0px !important;
+	color:#FFF !important;
+    text-align: left;
+    padding: 5px;
+    margin-bottom: 10px !important;	
+	height: auto !important;
+}
+.listaPunti p{
+	border-bottom: 1px solid rgba(0,0,0,0.1);
+}
+.listaPunti p:last-child{
+	border-bottom: none;
+}
+.smart.android .listaPunti p{
+	height:41px;
+	border-bottom: 1px solid rgba(0,0,0,0.2);
+	font-size: var(--font-14-94);
+    line-height: 32px !important;
+}
+.smart.android .listaPunti p:last-child{
+	border-bottom: none;
+}
+.smart.android .listaPunti p *{
+	line-height: 37px;
+    font-size: var(--font-16) !important;
+	background-position: 5px 14px !important;
+}
+.app_version.bug_font.smart.android .listaPunti p *{
+	line-height: 33.9px !important;
+    font-size: var(--font-14-48) !important;
+}
+.visElPt{
+	display:block !important;
+}
+.listaPunti p{
+	margin:0px;
+}
+.listaPunti a{
+	width: 100% !important;
+	background-position: 5px 9px !important;
+    padding-left: 7px !important;
+	height:28px !important;
+	border-radius:3px !important;
+}
+.smart.android .listaPunti a{
+	height: 34px !important;
+	background-position: 3px center !important;
+}
+body:not(.smart) .listaPunti a,
+body:not(.smart) .listaPunti a *{
+	color: #FFF !important;
+	font-size: var(--font-12) !important;
+}
+.smart .listaPunti a,
+.smart .listaPunti a *{
+	color: #FFF !important;
+	font-size: var(--font-12-94) !important;
+}
+body:not(.smart) .selElPt{
+	background-color:rgba(0,0,0,0.3) !important;
+}
+
+
+#p_filtri{
+	background-color: rgba(255,255,255,0.32);
+    border-radius: 5px;
+    padding-left: 2px;
+    height: 30px;
+    line-height: 30px;
+    margin-top: 5px;
+}
+#btnFiltri{
+	background-image: url(img/filter2N.png);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 17px;
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+    display: inline-block;
+    vertical-align: top;
+    margin-left: -3px;
+	border-radius:5px;
+}
+.smart #btnFiltri{
+    width: 40px;
+    height: 40px;
+}
+#btnFiltri:hover{
+	background-color:rgba(255,255,255,0.1) !important;
+}
+.smart.android #p_filtri{
+    height: 40px;
+    line-height: 40px;
+	padding-left:15px;
+	font-size: var(--font-14-94) !important;
+}
+#p_filtri.op{
+    background-color: #c3c2bf !important;
+	border-bottom-left-radius: 0px !important;
+    border-bottom-right-radius: 0px !important;
+    background-size: 17px;
+	z-index: 1;
+    position: relative;
+}
+#p_filtri.op #btnFiltri{
+	background-image:url(../../img/chMenuB.png) !important;
+    background-size: 25px !important;
+}
+#f_filtri{
+	border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    background-color: rgba(255,255,255,0.5);
+	padding: 0px !important;
+	overflow:hidden;
+	box-shadow: 0px 1px 3px rgb(0 0 0 / 30%);
+    z-index: 0;
+    position: relative;
+}
+#f_filtri *{
+	color:#000 !important;
+}
+#f_filtri p.hide{
+	display:none;
+}
+#f_filtri p.selected .pallinoGroup{
+	background-image: url(../../img/pallinoGroup.png), url(../../img/chMenuB.png) !important;
+    background-position: left center, right center !important;
+    background-size: auto 20px;
+    background-repeat: no-repeat;
+}
+#f_filtri p.selected{
+    border-bottom: none !important;
+}
+
+#groupsList{
+	max-height: 135px !important;
+    overflow-y: auto;
+	padding:5px;
+	background-color:rgba(255,255,255,0.7);
+	border-top: 1px solid #999;
+}
+#groupsList a{
+    padding-left: 27px !important;
+	line-height:30px;
+}
+#e_punti.searched #punti_ricerca,
+#e_punti.searched #p_filtri{
+	display:none;
+}
+#e_punti.searched #groupsList{
+	border-top: none !important;
+}
+#e_punti.searched #f_filtri{
+	border-radius: 5px !important;
+}
+.elencoSel span{
+	border: none !important;
+}
+.elencoSel b{
+	text-shadow:none !important;
+}
+#pEX{
+	padding-right: 0px !important;
+}
+.p_none.elencoSel span,
+.p_legno.elencoSel span,
+.p_fuoco.elencoSel span,
+.p_fuoco_supplementare.elencoSel span,
+.p_acqua.elencoSel span{
+	background-image:url(img/chMenu.png) !important;
+}
+.p_terra.elencoSel span,
+.p_aria.elencoSel span{
+	background-image:url(img/chMenuB.png) !important;
+}
+
+body:not(.smart) .listaPunti .p_none:not(.elencoSel) span:hover,
+body:not(.smart) .listaPunti .p_legno:not(.elencoSel) span:hover,
+body:not(.smart) .listaPunti .p_fuoco:not(.elencoSel) span:hover,
+body:not(.smart) .listaPunti .p_fuoco_supplementare:not(.elencoSel) span:hover,
+body:not(.smart) .listaPunti .p_acqua:not(.elencoSel) span:hover,
+body:not(.smart) .listaPunti .p_terra:not(.elencoSel) span:hover{
+    background-image:url(../../img/ico_lampadinaB.png) !important;
+	background-size:auto !important;
+}
+body:not(.smart) .listaPunti .p_aria:not(.elencoSel) span:hover{
+	background-image:url(../../img/ico_lampadinaN.png) !important;
+	background-size:auto !important;
+}
+
+
+.p_none.elencoSel:not(.frSw) strong,
+.p_acqua.elencoSel:not(.frSw) strong,
+.p_legno.elencoSel:not(.frSw) strong,
+.p_fuoco.elencoSel:not(.frSw) strong,
+.p_fuoco_supplementare.elencoSel:not(.frSw) strong{
+	background-image:url(../../img/frGiu.png) !important;
+}
+.p_none.elencoSel.frSw strong,
+.p_acqua.elencoSel.frSw strong,
+.p_legno.elencoSel.frSw strong,
+.p_fuoco.elencoSel.frSw strong,
+.p_fuoco_supplementare.elencoSel.frSw strong{
+	background-image:url(../../img/frSu.png) !important;
+}
+
+.p_none.elencoSel:not(.overLight):hover strong,
+.p_acqua.elencoSel:not(.overLight):hover strong,
+.p_legno.elencoSel:not(.overLight):hover strong,
+.p_fuoco.elencoSel:not(.overLight):hover strong,
+.p_fuoco_supplementare.elencoSel:not(.overLight):hover strong{
+	background-color:rgba(255,255,255,0.3) !important;
+}
+.p_none span:not(.valMerid),
+.p_none.elencoSel{
+	color:#FFF !important;
+}
+.p_none.elencoSel{
+	background:#006699 !important;
+}
+.p_none span:not(.valMerid){
+	background-color:#006699 !important;
+}
+.p_legno span:not(.valMerid),
+.p_legno.elencoSel{
+	color:#FFF !important;
+}
+.p_legno.elencoSel{
+	background:#009900 !important;
+}
+.p_legno span:not(.valMerid){
+	background-color:#009900 !important;
+}
+.p_fuoco span:not(.valMerid),
+.p_fuoco.elencoSel{
+	color:#FFF !important;
+}
+.p_fuoco.elencoSel{
+	background:#FF0000 !important;
+}
+.p_fuoco span:not(.valMerid){
+	background-color:#FF0000 !important;
+}
+.p_fuoco_supplementare.elencoSel{
+	background:#990000 !important;
+}
+.p_fuoco_supplementare span:not(.valMerid){
+	background-color:#990000 !important;
+}
+.p_terra span:not(.valMerid),
+.p_terra.elencoSel{
+	color:#000 !important;
+}
+.p_terra.elencoSel{
+	background:#FF8800 !important;
+}
+.p_terra span:not(.valMerid){
+	background-color:#FF8800 !important;
+}
+.p_aria span:not(.valMerid),
+.p_aria.elencoSel{
+	color:#000 !important;
+}
+.p_aria.elencoSel{
+	background:#FFFFFF !important;
+}
+.p_aria span:not(.valMerid){
+	background-color:#FFFFFF !important;
+}
+.p_acqua span:not(.valMerid),
+.p_acqua.elencoSel{
+	color:#FFF !important;
+}
+.p_acqua.elencoSel{
+	background:#000000 !important;
+}
+.p_acqua span:not(.valMerid){
+	background-color:#000000 !important;
+}
+.p_acqua.elencoSel b{
+	color:#FFF !important;
+}
+.p_aria.elencoSel b{
+	color:#000 !important;
+}
+@media (max-width: 800px){
+	.touch #elenchi #lista_punti div > div span{
+		height: 50px;
+	}
+	body:not(.smart) #elencoPunti > p > a.lockedItem b {
+		margin-left: 14px;
+	}
+	.smart .listaPunti > div b {
+		padding-left: 0px;
+	}
+}
+
+.mezzoPuntoTratt{
+	width:100px;
+	margin-right: 4px !important;
+    vertical-align: middle;
+	display:inline-block;
+	margin-bottom: 4px;
+}
+#scheda:not(.sch_Max600) .mezzoPuntoTratt{
+	margin-top: 1px !important;
+}
+.mezzoPuntoTratt:required:invalid {
+	color: #666;
+}
+.mezzoPuntoTratt option[value=""][disabled] {
+	display: none;
+}
+
+.textPuntoTratt{
+	margin-top: 0px !important;
+    border: none !important;
+    background: transparent !important;
+    border-radius: 0px !important;
+	height: 24px !important;
+    margin-bottom: 6px;
+	font-style:italic;
+}
+.sch_Max450 .textPuntoTratt{
+    width: 100% !important;
+    background-color: rgba(255,255,255,0.4) !important;
+    border-radius: 4px !important;
+	margin-top:4px !important;
+	margin-bottom:0px !important;
+}
+#scheda:not(.sch_Max600) .textPuntoTratt{
+	margin-top: 0px !important;
+}
+
+.numPoints{
+    width: 107px !important;
+}
+.textPuntoTratt{
+    width: calc(100% - 216px) !important;
+}
+.smart #scheda:not(.sch_Max450) .textPuntoTratt{
+	width: calc(100% - 285px) !important;
+}
+.touch:not(.smart) #scheda:not(.sch_Max450) .textPuntoTratt{
+	width: calc(100% - 301px) !important;
+}
+
+.mezzoPuntoTratt{
+	width:100px;
+	margin-right: 4px !important;
+    vertical-align: middle;
+	display:inline-block;
+	margin-bottom: 4px;
+}
+#scheda:not(.sch_Max600) .mezzoPuntoTratt{
+	margin-top: 1px !important;
+}
+.mezzoPuntoTratt:required:invalid {
+	color: #666;
+}
+.mezzoPuntoTratt option[value=""][disabled] {
+	display: none;
+}
+
+.textPuntoTratt{
+	margin-top: 0px !important;
+    border: none !important;
+    background: transparent !important;
+    border-radius: 0px !important;
+	height: 24px !important;
+    margin-bottom: 3px;
+	font-style:italic;
+}
+#scheda:not(.sch_Max600) .textPuntoTratt{
+	margin-top: 0px !important;
+}
+.textPuntoTratt{
+    width: calc(100% - 238px) !important;
+}
+
+body:not(.bodyModello) #btns_set > div{
+	display:none !important;
+}
+.sm_legno{
+	border:1px solid #009900;
+}
+.sm_legno.elencoSel{
+	background:#009900 !important;
+	color:#FFF !important;
+}
+.sm_acqua{
+	border:1px solid #000000;
+}
+.sm_acqua.elencoSel{
+	background:#000000 !important;
+	color:#FFF !important;
+}
+.sm_aria{
+	border:1px solid #FFFFFF;
+}
+.sm_aria.elencoSel{
+	background:#FFFFFF !important;
+	color:#000 !important;
+}
+.sm_terra{
+	border:1px solid #FF8800;
+}
+.sm_terra.elencoSel{
+	background:#FF8800 !important;
+	color:#FFF !important;
+}
+.sm_fuoco{
+	border:1px solid #FF0000;
+}
+.sm_fuoco.elencoSel{
+	background:#FF0000 !important;
+	color:#FFF !important;
+}
+.sm_fuoco_supplementare{
+	border:1px solid #990000;
+}
+.sm_fuoco_supplementare.elencoSel{
+	background:#990000 !important;
+	color:#FFF !important;
+}
+.sm_none{
+	border:1px solid #006699;
+}
+.sm_none.elencoSel{
+	background:#006699 !important;
+	color:#FFF !important;
+}
+#sistemaPunti_p{
+	margin-top:0px;
+	margin-bottom:0px;
+	text-align:center;
+	height:48px;
+}
+.smart.android #sistemaPunti_p *{
+	font-size: var(--font-14-94);
+    height: 36px;
+    line-height: 36px;
+}
+#sceltaSistemaElenco,
+#sceltaMappaElenco,
+#sceltaPhaseElenco{
+	width: calc(50% - 15px);
+	display: inline-block;
+    height: 30px;
+    line-height: 30px;
+    margin-right: 2px;
+    margin-left: 2px;
+    margin-top: 5px;
+	border-radius:6px;
+	padding-left:35px;	
+	padding-right:30px;	
+	background-image:url(../../img/frGiuB.png);
+	background-size:auto 100%;
+	background-repeat:no-repeat;
+	background-position:right center, left center;
+	background-color:#FFF;
+	appearance:none;
+	-webkit-appearance:none;
+	border:none;
+	box-shadow:0px 0px 3px rgba(0,0,0,0.5);
+	cursor:pointer;
+}
+
+.noPH #sceltaPhaseElenco{
+	display:none;
+}
+.noPH #sceltaMappaElenco{
+	width:calc(100% - 30px) !important;
+}
+#sceltaMappaElenco{
+	background-image:url(../../img/frGiuB.png), url(../../img/p_aree2B.png);
+}
+#sceltaPhaseElenco{
+	background-image:url(../../img/frGiuB.png), url(../../img/p_areeB.png);
+}
+body:not(.smart) #cambioSistemaPunti,
+body.smart #elenchi #cambioSistemaPunti,
+body:not(.smart) #cambioMappaPunti,
+body.smart #elenchi #cambioMappaPunti{
+	display:none;
+}
+
+
+
+
+
+
+#filtriSmart_ico{
+	position: fixed;
+    top: 5px;
+    right: 5px;
+	width:40px;
+	height:40px;
+	/*background-image:url(../../img/jingB.png);*/
+	background-image:url(img/filter2.png);
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-size: 24px;
+	cursor:pointer;
+	border-radius:6px;
+	background-color: rgba(0,0,0,0.2);
+	text-align: right;
+}
+.bodyStampa #filtriSmart_ico{
+	display:none !important;
+}
+#filtriSmart_ico span{
+	display:inline-block;
+	width: 8px;
+    height: 8px;
+    border-radius: 4px;
+	background-color:#1c66ef;/*#FFF;*/
+    box-shadow: 0px 0px 3px rgba(255,255,255,0.8);
+	margin-right:3px;
+}
+#filtriSmart_ico:not(.filtered) span{
+	display:none !important;
+}
+.smart #filtriSmart_ico{
+	width: 50px !important;
+    height: 50px !important;
+	top: 0px !important;
+	right: 0px !important;
+    background-color: #333 !important;
+    border-bottom-left-radius: 54px !important;
+    border-bottom-right-radius: 0px !important;
+    border-top-left-radius: 0px !important;
+    border-top-right-radius: 0px !important;
+    background-position: 19px 9px !important;
+}
+body:not(.bodyModello) #filtriSmart_cont,
+body:not(.bodyModello) #filtriSmart_ico,
+body:not(.bodyModello) #btns_set{
+	display:none !important;
+}
+#filtriSmart_cont{
+	z-index: 10;
+	width:230px;
+	position: fixed;
+    top: 48px;
+    right: 6px;
+    display: none;
+    padding: 2px;
+    text-align: center;
+    border-radius: 6px;
+    background-color: rgba(0,0,0,0.2);
+}
+body:not(.bodyStyled2) #filtriSmart_cont{
+    background-color: rgba(255,255,255,0.5) !important;
+}
+.smart #filtriSmart_cont{
+    top: 50px !important;
+    right: 0px !important;
+	width:350px;
+    padding:10px;
+	background-color: rgba(187,187,187,0.8);
+}
+#filtriSmart_cont div{
+	display:inline-block;
+	width:50px;
+    height: 30px;
+    line-height: 30px;
+    border-radius: 5px;
+    font-size: var(--font-11);
+    margin: 1px;
+    cursor: pointer;
+	background-color: rgba(0,0,0,0.1);
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+.smart #filtriSmart_cont div{
+	
+    margin: 3px;
+}
+#filtriSmart_cont div.selected{
+	background-color: rgba(255,255,255,0.6);
+    box-shadow: 0px 0px 7px rgba(255,255,255,0.8);
+    border: none;
+}
+body:not(.smart) #filtriSmart_cont div:not(.elencoSel):not(.selected):hover{
+	background-color: rgba(255,255,255,0.3) !important;
+}
+.smart #filtriSmart_cont div{
+	width: 40px !important;
+    height: 40px !important;
+    line-height: 40px !important;
+    border-radius: 20px !important;
+    font-size: var(--font-11) !important;
+}
+@media (max-height: 700px){
+	.smart #filtriSmart_cont div{
+		width: 37px !important;
+		height: 37px !important;
+		line-height: 37px !important;
+	}
+}
+#filtriSmart_cont i{
+	display: block;
+    text-align: center;
+    padding-top: 10px;
+	padding-bottom: 2px;
+    color: rgba(0,0,0,0.6);
+}
+#filtriSmart_cont span{
+	display: block;
+    text-align: center;
+    padding: 10px;
+    font-size: var(--font-25);
+    color: #FFF;
+    text-shadow: 0px 0px 3px #000;
+}
+
+
+#add_pat{
+	padding-right:4px !important;
+}
+#pat_ricerca,
+#labelSequenze{
+    width: calc(var(--menu-width) - 44px);
+}
+#labelSequenze{
+	display: inline-block;
+    vertical-align: middle;
+    height: 26px;
+    line-height: 26px;
+    font-size: var(--font-17-6);
+    text-align: left;
+    padding-left: 6px;
+}
+#categoryBtn{
+    width: 28px;
+    height: 28px;
+	margin:1px;
+	display:inline-block;
+	vertical-align:middle;
+	cursor:pointer;
+	border-left:1px solid rgba(0,0,0,0.2);
+	background-position:center center;
+	background-repeat:no-repeat;
+}
+#add_pat.category #categoryBtn{
+	background-image:url(../../img/ico_list.png);
+}
+#add_pat:not(.category) #categoryBtn{
+	background-image:url(../../img/ico_category.png);
+}
+
+/* SHEDA TERAPEUTICA IN PATOLOGIA */
+#schedaTerapeutica{
+    background-color: rgba(0,0,0,0.05);
+    padding: 13px 10px;
+    border-radius: 5px;
+}
+#schedaTerapeutica > p:first-child{
+    text-align: center;
+    margin-top: 0px;	
+}
+#schedaTerapeutica > div{
+	display:inline-block;
+	margin-right:-4px;
+	width:50%;
+	vertical-align:top;
+	border-right:1px solid rgba(0,0,0,0.2);
+}
+.sch_Max450 #schedaTerapeutica > div{
+	display:block !important;
+	margin-right:0px !important;
+	width:100% !important;
+	border-bottom:1px solid rgba(0,0,0,0.2);
+	border-right:none !important;
+	margin-bottom:10px;
+	padding-bottom:10px;
+	padding-left:0px !important;
+}
+#padNoDom{
+	padding-left:20px;
+	border-right:none !important;
+	border-bottom:none !important;
+}
+.schedaSpecifica{
+    background-color: rgba(0,0,0,0.05);
+    padding: 7px 7px;
+    border-radius: 5px;
+	margin-top:15px;
+}
+.schedaSpecifica > p:first-child{
+    font-weight: bold;
+    border-bottom: 1px solid rgba(0,0,0,0.2);
+    margin: 0px 0px 5px 0px;
+    padding: 5px 0px 10px 5px;
+	font-size: var(--font-14-94);
+}
+#causeSpecifiche > p:first-child{
+    text-align: center;
+    margin: 0px;
+}
+#schedaTerapeutica .schDescr{
+	margin-bottom:0px;
+	border-top: 1px solid rgba(0,0,0,0.1);
+    padding-top: 7px;
+}
+.lineaSu{
+	border-top:1px solid rgba(0,0,0,0.2);
+    margin-top: 20px;
+    padding-top: 20px;
+}
+.etPoints{
+	padding: 4px 10px 0px 7px;
+    display: inline-block;
+    min-height: 22px;
+}
+.etTri{
+	padding-top: 5px;
+}
+.sepPoints{
+	width:100%;
+	height:5px;
+    display: block;
+}
+.ptLk{
+	margin: 0px 0px 0px -10px;
+    padding-left: 10px;
+    background-image: url(../../img/ptLk.png);
+    background-repeat: no-repeat;
+    background-position: left center;
+    background-size: 20px 100%;
+}
+.ptTr{
+	overflow-x: hidden;
+    white-space: nowrap;
+}
+.ptTr > div{
+	display: inline-block;
+	vertical-align: middle;
+}
+.ptTr > div:first-child{
+	background-image:url(../../img/graffa.png);
+	background-position:right center;
+	background-repeat:no-repeat;
+	background-size: 7px calc(100% - 6px);
+	padding-right: 10px;
+}
+.ptTr > div:last-child{
+	padding-left: 10px;
+}
+.sch_Max450 .ptTr > div:first-child{
+	width:70%;
+}
+.sch_Max450 .ptTr > div:last-child{
+	width:calc(30% - 4px);
+}
+.eviPtsBtn{
+	display:inline-block;
+	float:right;
+	width:26px;
+	height:26px;
+	border-radius:13px;
+	cursor:pointer;
+	background-image:url(../../img/ico_vedi.png);
+	background-position:center center;
+	background-repeat:no-repeat;
+	margin-top: -5px;
+	opacity:0.4;
+}
+.eviPtsBtn:hover{
+	opacity:1;
+}
+.eviPoints .eviPtsBtn{
+	background-color:#8eb3ff;
+	opacity:1;
+}
+body:not(.piedi) .eviPtsBtn{
+	display:none;
+}
+body.piedi .eviPoints{
+    background-color: rgba(0,0,0,0.1) !important;
+    box-shadow: 0px 0px 2px #89aeff,
+				0px 0px 3px #89aeff,
+				0px 0px 5px rgba(0,0,0,0.3);
+}
+body:not(.piedi) #schedaTerapeutica{
+	background-color: rgba(0,0,0,0.1) !important;
 }
