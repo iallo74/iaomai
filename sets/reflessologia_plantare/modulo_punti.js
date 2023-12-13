@@ -1,7 +1,7 @@
 
 var MODULO_PUNTI = { // extend SET
 	
-	PUNTI_free: [ "000","001","254","003","291","192","165","067","177","060","054","018","093","056","121","111","117","261","151" ],
+	PUNTI_free: [ "001","002","003","004","005","006","007","008","009","010","011","012","013","014","015","016","017","018","019" ],
 	
 	caricaPunti: function(){ // carica l'elenco dei punti e delle aree
 		var n = 0;
@@ -27,7 +27,7 @@ var MODULO_PUNTI = { // extend SET
 			// verifico le autorizzazioni
 			var addLock =	(!SET.verFreePunti(siglaPunto)) ? ' lockedItem' : '';
 			// --------------------------
-			elencoPunti+='<p data-apparato="'+puntiElenco[a].apparato+'">'+this.scriviPunto(siglaPunto,true,true,puntiElenco[a].apparato)+'</p>';
+			elencoPunti+='<p class="'+addLock+'" data-apparato="'+puntiElenco[a].apparato+'">'+this.scriviPunto(siglaPunto,true,true,puntiElenco[a].apparato)+'</p>';
 		}
 		
 		// FILTRI
@@ -43,15 +43,12 @@ var MODULO_PUNTI = { // extend SET
 							'	   class="elencoFiltri">'+
 							'	<div id="groupsList">';
 							
-			for(a in DB.set.apparati){
-				contFiltri +=	'	<p id="f_'+a+'" class="pallinoGroup"><a class="pallinoPat pallinoPatEsteso" '+
-								'					onclick="SET.swGruppo('+a+');">'+
-								'			<i>'+htmlEntities(DB.set.apparati[a])+'</i></a></p>';
-			}
-							
-							
-			contFiltri +=	'</div></span>';
-						
+		for(a in DB.set.apparati){
+			contFiltri +=	'	<p id="f_'+a+'" class="pallinoGroup"><a class="pallinoPat pallinoPatEsteso" '+
+							'					onclick="SET.swGruppo('+a+');">'+
+							'			<i>'+htmlEntities(DB.set.apparati[a])+'</i></a></p>';
+		}			
+		contFiltri +=	'</div></span>';
 						
 		if(elencoPunti){
 			contElenco +=	'<span id="e_punti"' +
@@ -60,7 +57,6 @@ var MODULO_PUNTI = { // extend SET
 							contFiltri +
 							'<div id="elencoPunti">' + elencoPunti + '</div></span>';
 		}
-		
 		
 		document.getElementById("lista_punti").innerHTML = '<div class="lista listaPunti">'+contElenco+'</div>';
 	},

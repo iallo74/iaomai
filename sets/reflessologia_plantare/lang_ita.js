@@ -704,7 +704,7 @@ DB.set = {
                 },
                 {
                     TitoloTeoria: "Crediti",
-                    TestoTeoria: "Xxx"
+                    TestoTeoria: "Xxx [.002.] test [.100.]"
                 }
             ],
             noList: true

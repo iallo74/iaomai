@@ -264,7 +264,7 @@ var sets = {
 		lastVer: 1,
 		opening: true,
 		dataPubblicazione: '',
-		siglaProc: 'RLF',
+		siglaProc: 'RFX',
 		idApple: '',
 		idGoogle: '',
 		pageStore: 'reflexologymap',

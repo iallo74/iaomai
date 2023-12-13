@@ -17,17 +17,9 @@ var MODULO_PUNTO = { // extend SET
 			if(DB.set.aree[a].siglaPunto == siglaPunto)titolo = siglaPunto+". "+titolo;
 		}
 		var HTML = "<h1>"+htmlEntities(titolo)+"</h1>";
-		var HTML_simboli = '';
 		
-		var apparato = '';
-		
-		
-		var els = scene.getObjectByName("ARs").children;
-		for(e in els){
-			if(els[e].name == siglaPunto){
-				apparato = els[e].userData.apparato;
-			}
-		}
+		var apparato = DB.set.aree[siglaPunto].apparato;
+		HTML += '<div class="label_apparato app'+apparato+'"><span>'+DB.set.apparati[apparato]+'</span></div><br><br>';
 		
 		
 		if( ritorno && 
@@ -71,7 +63,7 @@ var MODULO_PUNTO = { // extend SET
 		// annotazione
 		var TestoAnnotazione = '',
 			hidePunto = '0',
-			cartella = "reflexology";
+			cartella = "reflex";
 		if(SET.verificaNota(siglaPunto)){
 			let ar = SET.leggiNota( cartella, siglaPunto*1 );
 			TestoAnnotazione = ar[0];
@@ -108,10 +100,9 @@ var MODULO_PUNTO = { // extend SET
 		var ptSel = SET.ptSel;
 		SET.ptSel = null;
 		
-		var btnAdd = 	'<div class="p_paz_ref_menu" onClick="REF.open(\'sets.auricologia.pointsmap\')">' +
+		var btnAdd = 	'<div class="p_paz_ref_menu" onClick="REF.open(\'sets.reflessologia_plantare.pointsmap\')">' +
 							TXT("ReferenceGuide") +
 						'</div>';
-		if(!ritorno)btnAdd += '<div id="hide_point" onClick="SET.swHidePunto(\''+siglaPunto+'\');"></div>';
 		
 		var finalFunct = '';
 		if(!ritorno || !SCHEDA.formModificato)finalFunct += 'initChangeDetection( "formAnnotazioni");';
@@ -127,7 +118,6 @@ var MODULO_PUNTO = { // extend SET
 								globals.set.cartella+'_punti_'+"_"+siglaPunto,
 								finalFunct );
 		SET.settaOverPunto();
-		if(!ritorno)SET.setHideButton(siglaPunto);
 		SET.ptSel = ptSel;
 		if(!ritorno || !SCHEDA.formModificato)initChangeDetection( "formAnnotazioni" );
 		
@@ -140,7 +130,7 @@ var MODULO_PUNTO = { // extend SET
 		var Q_TestoAnnotazione = document.getElementById("TestoAnnotazione").value;
 		for (p in DB.note.data) {
 			if(DB.note.data.length && typeof(DB.note.data[p].meridiano)=='undefined')DB.note.data.splice(p,p);
-			else if(DB.note.data[p].meridiano=='auricolo' && DB.note.data[p].numeroPunto==siglaPunto && SET.verNotaCli(p)){
+			else if(DB.note.data[p].meridiano=='reflex' && DB.note.data[p].numeroPunto==siglaPunto && SET.verNotaCli(p)){
 				DB.note.data[p].TestoAnnotazione=Q_TestoAnnotazione;
 				DB.note.data[p].DataModifica=parseInt(DataModifica);
 				nota_salvata=true;
@@ -151,11 +141,11 @@ var MODULO_PUNTO = { // extend SET
 			var idPaziente=-1;
 			if(PAZIENTI.idCL>-1)idPaziente=PAZIENTI.idPaziente;
 			JSNPUSH={	"TestoAnnotazione": Q_TestoAnnotazione,
-						"meridiano": "auricolo",
+						"meridiano": "reflex",
 						"numeroPunto": siglaPunto,
 						"idPaziente": idPaziente*1,
 						"idCL": PAZIENTI.idCL*1,
-						"app": "AUR",
+						"app": "RFX",
 						"DataModifica": parseInt(DataModifica) };
 			DB.note.data.push(JSNPUSH);
 			pDef=DB.note.data.length-1;
@@ -170,9 +160,6 @@ var MODULO_PUNTO = { // extend SET
 			SET.leggiNote();
 		});
 	},
-	swSettingPoint: function(){ // switcha la scheda di spiegazione delle sigle (EUR, CIN, INT, ecc)
-		document.getElementById("setting_point").classList.toggle("vis");
-	},
 	verNotaCli: function( p ){ // verifica che ci sia una nota per il cliente attivo
 		var pass=true;
 		if(PAZIENTI.idCL>-1){
@@ -184,6 +171,26 @@ var MODULO_PUNTO = { // extend SET
 			}else pass=(PAZIENTI.idCL*1==DB.note.data[p].idCL*1);
 		}else pass=(DB.note.data[p].idPaziente*1==-1);
 		return pass;
+	},
+	leggiNote: function(){ // estrae l'elenco delle note
+		SET.note = [];
+		if(DB.note){
+			for(let n in DB.note.data){
+				if(DB.note.data[n].app=='RFX'){
+					var pass =false;
+					if(DB.note.data[n].idPaziente > -1){
+						if(DB.note.data[n].idPaziente == PAZIENTI.idPaziente)pass=true;
+					}else{
+						if(DB.note.data[n].idCL == PAZIENTI.idCL)pass=true;
+					}
+					if(pass){
+						if(DB.note.data[n].TestoAnnotazione.trim()!=''){
+							SET.note.push(DB.note.data[n].numeroPunto);
+						}
+					}
+				}
+			}	
+		}
 	},
 	leggiNota: function( mr, pt ){ // legge la nota sul cliente
 		var TestoAnnotazione = '',
@@ -204,133 +211,11 @@ var MODULO_PUNTO = { // extend SET
 		}	
 		return [TestoAnnotazione,hidePunto];
 	},
-	leggiNote: function(){ // estrae l'elenco delle note
-		SET.evidenziaNote(false);
-		SET.note = [];
-		if(DB.note){
-			for(let n in DB.note.data){
-				if(DB.note.data[n].app=='AUR'){
-					var pass =false;
-					if(DB.note.data[n].idPaziente > -1){
-						if(DB.note.data[n].idPaziente == PAZIENTI.idPaziente)pass=true;
-					}else{
-						if(DB.note.data[n].idCL == PAZIENTI.idCL)pass=true;
-					}
-					if(pass){
-						if(DB.note.data[n].TestoAnnotazione.trim()!=''){
-							SET.note.push(DB.note.data[n].numeroPunto);
-						}
-					}
-					if(DB.note.data[n].hidePunto=='1'){
-						SET.setHide3D(DB.note.data[n].numeroPunto,'1');
-					}
-				}
-			}	
-		}
-		SET.evidenziaNote(true);
-	},
-	evidenziaNote: function( az ){ // evidenzia le note con il colore giallo sul modello 3D
-		for(let n in SET.note){
-			var PT = __(manichino.getObjectByName("PT"+SET.note[n]),null);
-			if(PT && typeof(PT)!='undefined'){
-				var mat = SET.MAT.pointBase;
-				if(this.ptSel==PT)mat = SET.MAT.pointSel;
-				if(az){
-					mat = SET.MAT.pointNote;
-					if(this.ptSel==PT)mat = SET.MAT.pointSelNote;
-				}
-				PT.material = mat;
-				PT.userData.nota = az;
-			}
-		}
-	},
 	verificaNota: function( siglaPunto ){ // verifica l'esistenza di una nota sul punto
 		return SET.note.indexOf(siglaPunto)>-1;
 	},
-	swHidePunto: function( siglaPunto ){
-		let nota_salvata = false,
-			hidePunto = '0',
-			DataModifica = DB.note.lastSync+1;
-		for(let nota of DB.note.data){
-			if(siglaPunto == nota.numeroPunto && nota.meridiano=='auriculo' &&  nota.idCL==-1 && nota.app=='AUR'){
-				if(__(nota.hidePunto,'0')=='1')nota.hidePunto = '0';
-				else{
-					nota.hidePunto = '1';
-					hidePunto = '1';
-				}
-				nota.DataModifica = DataModifica;
-				nota_salvata = true;
-			}
-		}
-		if(!nota_salvata){
-			DB.note.data.push({
-				TestoAnnotazione: "",
-				app: "AUR",
-				hidePunto: "1",
-				idCL: -1,
-				idPaziente: -1,
-				meridiano: "auriculo",
-				numeroPunto: siglaPunto,
-				DataModifica: DataModifica
-			});
-			hidePunto = '1';
-		}
-		applicaLoading(document.getElementById("scheda_testo"));
-		localPouchDB.setItem(MD5("DB"+LOGIN._frv()+".note"), IMPORTER.COMPR(DB.note)).then(function(){ // salvo il DB
-			LOGIN.sincronizza(	'rimuoviLoading(document.getElementById("scheda_testo"));' +
-								'SET.setHide3D(\''+siglaPunto+'\',\''+hidePunto+'\');' +
-								'SCHEDA.swMenuScheda();' );
-		});
-	},
-	setHide3D: function( siglaPunto, hidePunto ){
-		var phs = ["","2","3"];
-		for(let ph in phs){
-			var els = scene.getObjectByName("PTs"+phs[ph]).children;
-			for(e in els){
-				if(els[e].name.indexOf("PT"+siglaPunto)==0 || els[e].name.indexOf("_PT"+siglaPunto)==0){
-					els[e].userData.hidePunto = hidePunto;
-					els[e].visible = (hidePunto=='0');
-				}
-			}
-			var els = scene.getObjectByName("LNs"+phs[ph]).children;
-			for(e in els){
-				if(els[e].name.indexOf("AG"+siglaPunto)==0){
-					els[e].userData.hidePunto = hidePunto;
-					els[e].visible = (hidePunto=='0');
-				}
-			}
-			var els = scene.getObjectByName("ARs"+phs[ph]).children;
-			for(e in els){
-				if(els[e].name.indexOf("AR"+siglaPunto)==0){
-					els[e].userData.hidePunto = hidePunto;
-					els[e].visible = (hidePunto=='0');
-				}
-			}
-		}
-		document.getElementById("ts_"+siglaPunto).classList.toggle("hide_point_list",(hidePunto=='1'))
-		if(hidePunto=='0')SET.setHideButton(siglaPunto);
-		else SCHEDA.scaricaScheda();
-	},
-	setHideButton: function( siglaPunto ){
-		document.getElementById("hide_point").className = 'p_hide_point';
-		document.getElementById("hide_point").innerHTML = TXT("NascondiPunto");
-		for(let nota of DB.note.data){
-			if(siglaPunto == nota.numeroPunto && nota.meridiano=='auriculo' &&  nota.idCL==-1 && nota.app=='AUR'){
-				if(__(nota.hidePunto,'0')=='1'){
-					document.getElementById("hide_point").className = 'p_show_point';
-					document.getElementById("hide_point").innerHTML = TXT("MostraPunto");
-				}
-			}
-		}
-	},
-	ptToStr: function( nPunto ){
-		nPunto = nPunto+"";
-		if(nPunto.length == 1)nPunto = "00"+nPunto;
-		if(nPunto.length == 2)nPunto = "0"+nPunto;
-		return nPunto;
-	},
 	azRicercaPunto: function( pt ){ // apre la scheda del p dalla ricerca globale
-		SET.apriPunto("PT"+pt);
+		SET.apriPunto(pt);
 		evidenziaParola();
 		RICERCHE.nascondiGlobal(true); // lasciare qui
 	}

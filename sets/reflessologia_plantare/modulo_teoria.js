@@ -9,7 +9,6 @@ var MODULO_TEORIA = { // extend SET
 	caricaApprofondimenti: function(){
 		// carica la lista degli approfondimenti
 		var contTeoria = '';
-		var contCanali = '';
 		for(let p in DB.set.teoria){
 			
 			var CONT = 	'<div class="cartella" onTouchStart="SCHEDA.setCartella(this);">' +
@@ -40,15 +39,11 @@ var MODULO_TEORIA = { // extend SET
 			}
 			CONT += '</div></div>';
 			
-			if(!__(DB.set.teoria[p].meridiani))contTeoria += CONT;
-			else contCanali += CONT;
+			contTeoria += CONT;
 		}
 		
 		document.getElementById("lista_teoria").innerHTML = '<div class="lista listaTeoria">' +
 																contTeoria +
-															'</div>';
-		document.getElementById("lista_canali").innerHTML = '<div class="lista listaTeoria">' +
-																contCanali +
 															'</div>';
 	},
 	caricaApprofondimento: function( p, t, btn ){
@@ -64,19 +59,6 @@ var MODULO_TEORIA = { // extend SET
 		var meridianiSecondari = __(DB.set.teoria[p].contenuti[t].meridianiSecondari);
 		var html = '';
 		var addTabStyle = '';
-
-		if(meridianiSecondari){
-			let meridiano = meridianiSecondari[0].split("_")[0];
-			let ideogramma = '';
-			let ideogrammaOr = DB.mtc.meridiani?.[meridiano]?.ideogramma || DB.mtc.straordinari?.[meridiano]?.ideogramma;
-			lI = ideogrammaOr.length;
-			for(let l=0;l<lI;l++){
-				ideogramma += ideogrammaOr[l];
-				if(l<lI-1)ideogramma += "<br>";
-			}
-			html += '<div class="ideogrammaMeridianoChar"><img src="img/speach2W.png" onClick="SET.speachName(\''+meridiano+'\');" class="noPrint">'+ideogramma+'</div>';
-			addTabStyle = ' scheda_ideogramma';
-		}
 		
 
 		if(occhiello)html += "<i>"+htmlEntities(occhiello)+"</i>";
@@ -87,8 +69,6 @@ var MODULO_TEORIA = { // extend SET
 		var html_cont = CUSTOMS.addContent("teoria_"+p+"_"+t,SET.convPuntiScheda(DB.set.teoria[p].contenuti[t].TestoTeoria));
 		
 		html += html_cont;
-		var espansa = true;
-		if(meridianiSecondari)espansa = false;
 		
 		var ritorno = false;
 		if(	document.getElementById("scheda").querySelector(".formBtn") &&
@@ -99,28 +79,15 @@ var MODULO_TEORIA = { // extend SET
 							
 		SCHEDA.caricaScheda( 	titolo,
 								html,
-								"SET.annullaEvidenziaPunto();" +
-								"SET.spegniMeridiani(true);" +
-								"SET.spegniMeridianoSecondario('',true);" +
-								"SET.spegniMeridiani(true);",
+								"SET.annullaEvidenziaPunto();",
 								'scheda_teoria'+addTabStyle,
 								ritorno,
-								espansa,
+								true,
 								btn,
 								btnAdd,
 								globals.set.cartella+'_teoria_'+p+"_"+t );
 		SET.convSigleScheda();
 		SET.evidenziaPunto();
-		
-		SET.spegniMeridianoSecondario();
-		setTimeout( function(meridianiSecondari){
-			if(meridianiSecondari){
-				for(let m in meridianiSecondari){
-					if(meridianiSecondari[m].indexOf("_")==-1)SET.accendiMeridiano(meridianiSecondari[m],false,true);
-					SET.accendiMeridianoSecondario(meridianiSecondari[m],true);
-				}
-			}
-		},250,meridianiSecondari);
 	},
 	caricaVideo: function( p, t, btn ){
 		// carica un approfondimento video

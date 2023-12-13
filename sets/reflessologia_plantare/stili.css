@@ -20,12 +20,8 @@
 body.piedi #pulsante_modello{
 	display:none;
 }
-#p_contrasto{
-	background-image:url(img/p_contrasto.png);
-	display:none;
-}
+#p_contrasto,
 #p_contrasto.btnSel{
-	background-image:url(img/p_contrasto_sel.png) !important;
 	display:none;
 }
 
@@ -45,7 +41,6 @@ body.piedi #pulsante_modello{
 .smart .simboliPunto{
 	margin-top: 20px;
 }
-
 .simboliPunto{
     width: 45px;
     height: 45px;
@@ -63,15 +58,6 @@ body.piedi #pulsante_modello{
 	width:371px;
 	height:490px;
 }
-#p_contrasto{
-	background-image:url(img/p_contrasto.png);
-	display:none;
-}
-#p_contrasto.btnSel{
-	background-image:url(img/p_contrasto_sel.png) !important;
-	display:none;
-}
-
 
 
 /* SCHEDE */
@@ -170,6 +156,22 @@ body.piedi #pulsante_modello{
 	height:40px !important;
 	line-height:40px !important;
 }
+.label_apparato{
+	display:inline-block;
+	height:32px;
+	line-height:32px;
+	overflow:hidden;
+	border-radius:6px;
+	padding:0 2px 0 12px;
+}
+.label_apparato span{
+	display:inline-block;
+	height:32px;
+	line-height:32px;
+	padding:0 10px;
+	background-color:#eae8e3;
+	border-radius:5px;
+}
 
 /* STILI DELLE SCHEDE */
 .scheda_meridiano #scheda_titolo{
@@ -229,52 +231,18 @@ body:not(.smart) #p_set{
 #p_set svg polygon{
 	fill: var(--menu-fondino);
 }
-.listaPunti > div strong{
-	float: right;
-    display: inline-block;
-	margin:2px -13px 2px 0px;
-    width:32px;
-	height:32px;
-	border-radius:16px;
-	background-size:auto 40px;
-	background-repeat: no-repeat;
-	background-position:center center;
-}
-.smart .listaPunti > div strong{
-	margin-right: -4px !important;
-}
-.listaPunti > div.frSw strong{
-	background-image:url(../../img/frSuB.png);
-}
-.listaPunti > div:not(.frSw) strong{
-	background-image:url(../../img/frGiuB.png);
-}
-
-.smart.android .listaPunti > div strong{
-	width: 46px;
-    height: 46px;
-    border-radius: 23px;
-}
-.smart.android .listaPunti > div#pEX strong{
-	margin-right: 3px !important;
-}
-.listaPunti > div.frSw strong{
-	background-image:url(../../img/frSuB.png);
-}
-.listaPunti > div:not(.overLight):hover strong{
-	background-color:rgba(0,0,0,0.1);
-}
-#elencoPunti > p > a.lockedItem{
+#elencoPunti > p.lockedItem{
     cursor: default !important;
 	background-image: url(../../img/lockB.png) !important;
     background-size: auto 70% !important;
     background-position: right 5px !important;
+    background-repeat: no-repeat;
 	cursor:default !important;
 }
-#elencoPunti > p > a.lockedItem i{
+#elencoPunti > p.lockedItem i{
 	color: rgba(255,255,255,0.2) !important;
 }
-#elencoPunti > p > a.lockedItem span{
+#elencoPunti > p.lockedItem span{
 	opacity: 0.3 !important;
 }
 body:not(.smart) .listaPunti,
@@ -284,13 +252,11 @@ body.smart #elenchi .listaPunti{
 .elencoPunti{
     display: block;
 }
-.elencoFiltri,
-.elencoGruppi{
+.elencoFiltri{
     display: none;
 }
 .elencoPunti,
-.elencoFiltri,
-.elencoGruppi{
+.elencoFiltri{
     width: 100% !important;
     margin: 0px !important;
     border: 0px !important;
@@ -363,149 +329,11 @@ body.smart #elenchi .listaPunti{
 
 
 
-
-
-
-
-
-
-#e_legenda p{
-	color:#FFF;
-	line-height:22px;
-	padding:3px;
-}
-#e_legenda.legendaSelected p:not(.selectedZone):not(.legendaDida){
-	opacity: 0.5;
-}
-#e_legenda.legendaSelected p.selectedZone{
-	background-image:url(../../img/chMenu.png);
-	background-repeat:no-repeat;
-	background-position:right center;
-	background-size:contain;
-}
-#e_legenda p:hover{
-	border-radius:5px;
-	background-color:rgba(255,255,255,0.1);
-}
-#e_legenda p:not(.legendaDida){
-	cursor:pointer;
-}
-.legendaColor{
-	display:inline-block;
-	vertical-align:middle;
-	min-width:20px;
-	height:16px;
-	border-radius:5px;
-	box-shadow:0px 0px 3px #000;
-	margin-right: 5px;
-    margin-top: -1px;
-    font-size: var(--font-11);
-    line-height: 17px;
-    text-align: center;
-    padding-left: 2px;
-    padding-right: 2px;
-}
-.smart.android .legendaColor{
-	height: 27px;
-    line-height: 28px !important;
-    min-width: 36px;
-    margin-right: 10px;
-    font-size: var(--font-14-94) !important;
-    margin-top: -1px;
-}
-.legendaDida{
-    padding: 10px 10px 3px 25px !important;
-	height:auto !important;
-}
-.legendaDida.italic{
-	color: #CCC !important;
-    font-style: italic;
-}
-.legendaDida.points{
-	padding: 10px 14px !important;
-    background-color: rgba(255,255,255,0.3);
-    border-radius: 6px;
-    margin-top: 10px;
-	color:#000 !important;
-}
-.legendaDida.points i{
-	opacity:0.7;
-}
-.pINT,
-.pEUR,
-.pCIN,
-.pNUL{
-	display: inline-block;
-    vertical-align: middle;
-    width: 11px;
-    height: 11px;
-    border-radius: 6px;
-    margin-right: 5px;
-    margin-top: -3px;
-    border: 1px solid #444;
-}
-.smart.android .pINT,
-.smart.android .pEUR,
-.smart.android .pCIN,
-.smart.android .pNUL{
-	width: 14px;
-    height: 14px;
-    border-radius: 7px;
-    margin-right: 8px;
-}
-.pINT{
-	background-color:#333;
-}
-.pEUR{
-	background-color:#06C;
-}
-.pCIN{
-	background-color:#8f3500;/*#960;*/
-}
 .smart.android .lista > div:not(.loading):not(.menuElenchi) {
 	padding-right:7px;
 }
 .tab_punti h1{
 	margin-bottom:10px;
-}
-#setting_point{
-	display: inline-block;
-    background-image: url(../../img/frGiuB_mini.png);
-    background-repeat: no-repeat;
-    background-position: calc(100% - 8px) 12px;
-    cursor: pointer;
-    border-radius: 6px;
-    padding: 6px 28px 7px 7px;
-    margin-bottom: 5px;
-}
-#setting_point:hover,
-#setting_point.vis{
-    background-color: rgba(0,0,0,0.1);
-}
-#setting_point b{
-	display:inline-block;
-	vertical-align:middle;
-	height:16px;
-	line-height:16px;
-	padding-left:4px;
-	padding-right:4px;
-	border-radius:3px;
-	margin-right: 4px;
-	font-size: var(--font-12);
-	color:#FFF;
-	background-color:#646567;
-}
-#setting_point_text{
-	padding: 5px;
-}
-
-#setting_point:not(.vis) #setting_point_text{
-	display:none;
-}
-#setting_point.vis{
-    background-image: url(../../img/chMenuB.png);
-    background-size: 22px;
-    background-position: calc(100% - 3px) 2px;
 }
 
 
@@ -516,19 +344,16 @@ body.smart #elenchi .listaPunti{
 	display: none;
 }
 .smart.android .elencoPunti p,
-.smart.android .elencoFiltri p,
-.smart.android .elencoGruppi p{
+.smart.android .elencoFiltri p{
 	height:41px;
 	border-bottom: 1px solid rgba(0,0,0,0.2);
 }
 .smart.android .elencoFiltri p:last-child,
-.smart.android .elencoPunti p:last-child,
-.smart.android .elencoGruppi p:last-child{
+.smart.android .elencoPunti p:last-child{
 	border-bottom: none;
 }
 .smart.android .elencoPunti p *,
-.smart.android .elencoFiltri p *,
-.smart.android .elencoGruppi p *{
+.smart.android .elencoFiltri p *{
 	line-height: 37px;
     font-size: var(--font-16) !important;
 	background-position: 5px 14px !important;
@@ -697,132 +522,11 @@ body:not(.smart) .selElPt{
 #pEX{
 	padding-right: 0px !important;
 }
-.p_none.elencoSel span,
-.p_legno.elencoSel span,
-.p_fuoco.elencoSel span,
-.p_fuoco_supplementare.elencoSel span,
-.p_acqua.elencoSel span{
-	background-image:url(img/chMenu.png) !important;
-}
-.p_terra.elencoSel span,
-.p_aria.elencoSel span{
-	background-image:url(img/chMenuB.png) !important;
-}
-
-body:not(.smart) .listaPunti .p_none:not(.elencoSel) span:hover,
-body:not(.smart) .listaPunti .p_legno:not(.elencoSel) span:hover,
-body:not(.smart) .listaPunti .p_fuoco:not(.elencoSel) span:hover,
-body:not(.smart) .listaPunti .p_fuoco_supplementare:not(.elencoSel) span:hover,
-body:not(.smart) .listaPunti .p_acqua:not(.elencoSel) span:hover,
-body:not(.smart) .listaPunti .p_terra:not(.elencoSel) span:hover{
-    background-image:url(../../img/ico_lampadinaB.png) !important;
-	background-size:auto !important;
-}
-body:not(.smart) .listaPunti .p_aria:not(.elencoSel) span:hover{
-	background-image:url(../../img/ico_lampadinaN.png) !important;
-	background-size:auto !important;
-}
-
-
-.p_none.elencoSel:not(.frSw) strong,
-.p_acqua.elencoSel:not(.frSw) strong,
-.p_legno.elencoSel:not(.frSw) strong,
-.p_fuoco.elencoSel:not(.frSw) strong,
-.p_fuoco_supplementare.elencoSel:not(.frSw) strong{
-	background-image:url(../../img/frGiu.png) !important;
-}
-.p_none.elencoSel.frSw strong,
-.p_acqua.elencoSel.frSw strong,
-.p_legno.elencoSel.frSw strong,
-.p_fuoco.elencoSel.frSw strong,
-.p_fuoco_supplementare.elencoSel.frSw strong{
-	background-image:url(../../img/frSu.png) !important;
-}
-
-.p_none.elencoSel:not(.overLight):hover strong,
-.p_acqua.elencoSel:not(.overLight):hover strong,
-.p_legno.elencoSel:not(.overLight):hover strong,
-.p_fuoco.elencoSel:not(.overLight):hover strong,
-.p_fuoco_supplementare.elencoSel:not(.overLight):hover strong{
-	background-color:rgba(255,255,255,0.3) !important;
-}
-.p_none span:not(.valMerid),
-.p_none.elencoSel{
-	color:#FFF !important;
-}
-.p_none.elencoSel{
-	background:#006699 !important;
-}
-.p_none span:not(.valMerid){
-	background-color:#006699 !important;
-}
-.p_legno span:not(.valMerid),
-.p_legno.elencoSel{
-	color:#FFF !important;
-}
-.p_legno.elencoSel{
-	background:#009900 !important;
-}
-.p_legno span:not(.valMerid){
-	background-color:#009900 !important;
-}
-.p_fuoco span:not(.valMerid),
-.p_fuoco.elencoSel{
-	color:#FFF !important;
-}
-.p_fuoco.elencoSel{
-	background:#FF0000 !important;
-}
-.p_fuoco span:not(.valMerid){
-	background-color:#FF0000 !important;
-}
-.p_fuoco_supplementare.elencoSel{
-	background:#990000 !important;
-}
-.p_fuoco_supplementare span:not(.valMerid){
-	background-color:#990000 !important;
-}
-.p_terra span:not(.valMerid),
-.p_terra.elencoSel{
-	color:#000 !important;
-}
-.p_terra.elencoSel{
-	background:#FF8800 !important;
-}
-.p_terra span:not(.valMerid){
-	background-color:#FF8800 !important;
-}
-.p_aria span:not(.valMerid),
-.p_aria.elencoSel{
-	color:#000 !important;
-}
-.p_aria.elencoSel{
-	background:#FFFFFF !important;
-}
-.p_aria span:not(.valMerid){
-	background-color:#FFFFFF !important;
-}
-.p_acqua span:not(.valMerid),
-.p_acqua.elencoSel{
-	color:#FFF !important;
-}
-.p_acqua.elencoSel{
-	background:#000000 !important;
-}
-.p_acqua span:not(.valMerid){
-	background-color:#000000 !important;
-}
-.p_acqua.elencoSel b{
-	color:#FFF !important;
-}
-.p_aria.elencoSel b{
-	color:#000 !important;
-}
 @media (max-width: 800px){
 	.touch #elenchi #lista_punti div > div span{
 		height: 50px;
 	}
-	body:not(.smart) #elencoPunti > p > a.lockedItem b {
+	body:not(.smart) #elencoPunti > p.lockedItem b {
 		margin-left: 14px;
 	}
 	.smart .listaPunti > div b {
@@ -912,112 +616,8 @@ body:not(.smart) .listaPunti .p_aria:not(.elencoSel) span:hover{
 .textPuntoTratt{
     width: calc(100% - 238px) !important;
 }
-
 body:not(.bodyModello) #btns_set > div{
 	display:none !important;
-}
-.sm_legno{
-	border:1px solid #009900;
-}
-.sm_legno.elencoSel{
-	background:#009900 !important;
-	color:#FFF !important;
-}
-.sm_acqua{
-	border:1px solid #000000;
-}
-.sm_acqua.elencoSel{
-	background:#000000 !important;
-	color:#FFF !important;
-}
-.sm_aria{
-	border:1px solid #FFFFFF;
-}
-.sm_aria.elencoSel{
-	background:#FFFFFF !important;
-	color:#000 !important;
-}
-.sm_terra{
-	border:1px solid #FF8800;
-}
-.sm_terra.elencoSel{
-	background:#FF8800 !important;
-	color:#FFF !important;
-}
-.sm_fuoco{
-	border:1px solid #FF0000;
-}
-.sm_fuoco.elencoSel{
-	background:#FF0000 !important;
-	color:#FFF !important;
-}
-.sm_fuoco_supplementare{
-	border:1px solid #990000;
-}
-.sm_fuoco_supplementare.elencoSel{
-	background:#990000 !important;
-	color:#FFF !important;
-}
-.sm_none{
-	border:1px solid #006699;
-}
-.sm_none.elencoSel{
-	background:#006699 !important;
-	color:#FFF !important;
-}
-#sistemaPunti_p{
-	margin-top:0px;
-	margin-bottom:0px;
-	text-align:center;
-	height:48px;
-}
-.smart.android #sistemaPunti_p *{
-	font-size: var(--font-14-94);
-    height: 36px;
-    line-height: 36px;
-}
-#sceltaSistemaElenco,
-#sceltaMappaElenco,
-#sceltaPhaseElenco{
-	width: calc(50% - 15px);
-	display: inline-block;
-    height: 30px;
-    line-height: 30px;
-    margin-right: 2px;
-    margin-left: 2px;
-    margin-top: 5px;
-	border-radius:6px;
-	padding-left:35px;	
-	padding-right:30px;	
-	background-image:url(../../img/frGiuB.png);
-	background-size:auto 100%;
-	background-repeat:no-repeat;
-	background-position:right center, left center;
-	background-color:#FFF;
-	appearance:none;
-	-webkit-appearance:none;
-	border:none;
-	box-shadow:0px 0px 3px rgba(0,0,0,0.5);
-	cursor:pointer;
-}
-
-.noPH #sceltaPhaseElenco{
-	display:none;
-}
-.noPH #sceltaMappaElenco{
-	width:calc(100% - 30px) !important;
-}
-#sceltaMappaElenco{
-	background-image:url(../../img/frGiuB.png), url(../../img/p_aree2B.png);
-}
-#sceltaPhaseElenco{
-	background-image:url(../../img/frGiuB.png), url(../../img/p_areeB.png);
-}
-body:not(.smart) #cambioSistemaPunti,
-body.smart #elenchi #cambioSistemaPunti,
-body:not(.smart) #cambioMappaPunti,
-body.smart #elenchi #cambioMappaPunti{
-	display:none;
 }
 
 
@@ -1195,7 +795,7 @@ body:not(.smart) #filtriSmart_cont div:not(.elencoSel):not(.selected):hover{
 }
 #pat_ricerca,
 #labelSequenze{
-    width: calc(var(--menu-width) - 44px);
+    width: calc(var(--menu-width) - 12px);
 }
 #labelSequenze{
 	display: inline-block;
