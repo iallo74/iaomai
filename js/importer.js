@@ -29,8 +29,8 @@ var	smartphone = false,
 	onlineVersion=false,
 	isTablet = false,
 	globals = {},
-	verApp = '1.4.12',
-	dateEndFeatures = new Date("2023-12-01").getTime(),
+	verApp = '1.5',
+	dateEndFeatures = new Date("2024-01-31").getTime(),
 	
 	// IMPOSTAZIONI DI APP
 	tipoApp = '', // per la demo

@@ -1,5 +1,5 @@
 DB.set = {
-    aree: {
+    punti: {
         "001": {
             NomePunto: "Calotta cranica",
             AzioniPunto: "Xxx",
@@ -667,7 +667,7 @@ DB.set = {
 		},
 		{
 			titolo: "Problemi legati al ciclo femminile, menopausa",
-			testo: ""
+			testo: "Xxx [.002.] test [.100.]"
 		}
 	],
     teoria: [

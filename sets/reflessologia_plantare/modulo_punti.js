@@ -8,13 +8,13 @@ var MODULO_PUNTI = { // extend SET
 		var contElenco = '';
 		var elencoPunti = '';
 		var puntiElenco = [];
-		for(let siglaPunto in DB.set.aree){
-			if(__(DB.set.aree[siglaPunto])){
-				if(!__(DB.set.aree[siglaPunto].hidden,false)){
+		for(let siglaPunto in DB.set.punti){
+			if(__(DB.set.punti[siglaPunto])){
+				if(!__(DB.set.punti[siglaPunto].hidden,false)){
 					puntiElenco.push({
 						siglaPunto: siglaPunto,
-						NomePunto: DB.set.aree[siglaPunto].NomePunto,
-						apparato: DB.set.aree[siglaPunto].apparato
+						NomePunto: DB.set.punti[siglaPunto].NomePunto,
+						apparato: DB.set.punti[siglaPunto].apparato
 					});
 				}
 			}
@@ -69,9 +69,9 @@ var MODULO_PUNTI = { // extend SET
 			var a = els[e].getElementsByTagName("a")[0];
 			var siglaPunto = a.id.replace("ts_","");
 			var pass = false;
-			if(	DB.set.aree[siglaPunto].NomePunto.toLowerCase().indexOf(el.value.toLowerCase())==-1 &&
-				DB.set.aree[siglaPunto].AzioniPunto.toLowerCase().indexOf(el.value.toLowerCase())==-1 &&
-				DB.set.aree[siglaPunto].ChiaviPunto.toLowerCase().indexOf(el.value.toLowerCase())==-1 ){
+			if(	DB.set.punti[siglaPunto].NomePunto.toLowerCase().indexOf(el.value.toLowerCase())==-1 &&
+				DB.set.punti[siglaPunto].AzioniPunto.toLowerCase().indexOf(el.value.toLowerCase())==-1 &&
+				DB.set.punti[siglaPunto].ChiaviPunto.toLowerCase().indexOf(el.value.toLowerCase())==-1 ){
 					pass = true;
 			}
 			if(!document.getElementById("ts_"+siglaPunto))pass = true;
@@ -106,8 +106,8 @@ var MODULO_PUNTI = { // extend SET
 							'     title="'+htmlEntities(TXT("FiltriSmart"))+'"><span></span></div>' +
 							
 							'<div id="filtriSmart_cont">'+
-							
-							'<span>'+htmlEntities(TXT("Apparati")) + '</span>';
+							'<span>'+htmlEntities(TXT("FiltriSmart")) + '</span>'/* +
+							'<em>'+htmlEntities(TXT("Apparati")) + '</em>' */;
 		for(a in DB.set.apparati)contFiltri += '<i onClick="SET.swGruppo('+a+');"id="f_app'+a+'">'+DB.set.apparati[a]+'<b class="app'+a+'"></b></i>';
 		contFiltri +=		'</div>';
 		document.getElementById("divs").innerHTML = contFiltri;

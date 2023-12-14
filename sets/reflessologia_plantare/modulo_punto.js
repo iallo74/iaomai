@@ -12,13 +12,13 @@ var MODULO_PUNTO = { // extend SET
 		}
 		// --------------------------
 		
-		var titolo = DB.set.aree[siglaPunto].NomePunto;
-		for(a in DB.set.aree){
-			if(DB.set.aree[a].siglaPunto == siglaPunto)titolo = siglaPunto+". "+titolo;
+		var titolo = DB.set.punti[siglaPunto].NomePunto;
+		for(a in DB.set.punti){
+			if(DB.set.punti[a].siglaPunto == siglaPunto)titolo = siglaPunto+". "+titolo;
 		}
 		var HTML = "<h1>"+htmlEntities(titolo)+"</h1>";
 		
-		var apparato = DB.set.aree[siglaPunto].apparato;
+		var apparato = DB.set.punti[siglaPunto].apparato;
 		HTML += '<div class="label_apparato app'+apparato+'"><span>'+DB.set.apparati[apparato]+'</span></div><br><br>';
 		
 		
@@ -52,7 +52,7 @@ var MODULO_PUNTO = { // extend SET
 		
 		
 		// aggiungo contenuto custom
-		HTML += CUSTOMS.addContent("punti_"+siglaPunto,SET.convPuntiScheda(DB.set.aree[siglaPunto].AzioniPunto,true));
+		HTML += CUSTOMS.addContent("punti_"+siglaPunto,SET.convPuntiScheda(DB.set.punti[siglaPunto].AzioniPunto,true));
 		
 		
 
@@ -62,12 +62,10 @@ var MODULO_PUNTO = { // extend SET
 		
 		// annotazione
 		var TestoAnnotazione = '',
-			hidePunto = '0',
 			cartella = "reflex";
 		if(SET.verificaNota(siglaPunto)){
 			let ar = SET.leggiNota( cartella, siglaPunto*1 );
-			TestoAnnotazione = ar[0];
-			hidePunto = ar[1];
+			TestoAnnotazione = ar[0]
 		}
 		HTML +=  '<p id="annotazioni_label"><b>'+htmlEntities(TXT("Note"))+'</b></p>';
 		if(!ritorno || !SCHEDA.formModificato){

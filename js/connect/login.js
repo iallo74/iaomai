@@ -1234,6 +1234,7 @@ var LOGIN = {
 							elencoTrattamenti[n].sintomi = JSON.stringify(elencoTrattamenti[n].sintomi);
 							elencoTrattamenti[n].puntiMTC = JSON.stringify(elencoTrattamenti[n].puntiMTC);
 							elencoTrattamenti[n].puntiAuricolari = JSON.stringify(elencoTrattamenti[n].puntiAuricolari);
+							elencoTrattamenti[n].puntiPlantari = JSON.stringify(elencoTrattamenti[n].puntiPlantari);
 							elencoTrattamenti[n].puntiNamikoshi = JSON.stringify(elencoTrattamenti[n].puntiNamikoshi);
 							aggiungereTrattamenti=true;
 						}
@@ -1889,6 +1890,7 @@ var LOGIN = {
 									"Prescrizione": trattamenti[t].Prescrizione,
 									"puntiMTC": toJson(puntiMTC),
 									"puntiAuricolari": toJson(trattamenti[t].puntiAuricolari),
+									"puntiPlantari": toJson(trattamenti[t].puntiPlantari),
 									"puntiNamikoshi": toJson(trattamenti[t].puntiNamikoshi),
 									"meridiani": toJson(trattamenti[t].meridiani),
 									"sintomi": toJson(trattamenti[t].sintomi),
@@ -2655,6 +2657,23 @@ var LOGIN = {
 								}
 								txtPunti=txtPunti.substr(0,txtPunti.length-2);
 								if(txtPunti)LOGIN.addHTML("<i>"+TXT("PuntiAuriculo")+":</i> <div class=\"rientro\">"+txtPunti+"<br></div><br>");
+							}
+							if(trattamenti[t].puntiPlantari){
+								var punti=JSON.parse(trattamenti[t].puntiPlantari);
+								var txtPunti='';
+								for(let f in punti){
+									siglaPunto=punti[f].s;
+									valutazione=__(punti[f].e);
+									mezzo=__(punti[f].z);
+									descrizione=__(punti[f].t);
+									txtPunti+="<b><font color=\"#999999\">•</font> "+punti[f].n+"</b>";
+									if(valutazione=='D')txtPunti+=' (dolorante)';
+									if(mezzo)txtPunti+=' '+mezzo+' - ';
+									if(descrizione)txtPunti+=' '+descrizione;
+									txtPunti+="<br> ";
+								}
+								txtPunti=txtPunti.substr(0,txtPunti.length-2);
+								if(txtPunti)LOGIN.addHTML("<i>"+TXT("PuntiReflex")+":</i> <div class=\"rientro\">"+txtPunti+"<br></div><br>");
 							}
 							LOGIN.addHTML("<br>");
 						}

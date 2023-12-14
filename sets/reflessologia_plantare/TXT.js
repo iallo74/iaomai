@@ -10,6 +10,14 @@ DB.TXT.set = {
     },
 
     
+    FiltriSmart: {
+        ita: "Filtri rapidi",
+        eng: "Smart filters",
+        esp: "Filtros inteligentes",
+        fra: "Filtres intelligents",
+        por: "Filtros inteligentes",
+        deu: "Intelligente Filter"
+    },
     Apparati: {
         ita: "Apparati",
         eng: "Systems",
@@ -17,6 +25,22 @@ DB.TXT.set = {
         fra: "Systèmes",
         por: "Sistemas",
         deu: "Systeme"
+    },
+    Patologie: {
+        ita: "Protocolli",
+		eng: "Protocols",
+		esp: "Protocolos",
+		fra: "Protocoles",
+		por: "Protocolos",
+		deu: "Protocol"
+    },
+    Punto: {
+        ita: "Area",
+		eng: "Area",
+		esp: "Área",
+		fra: "Zone",
+		por: "Área",
+		deu: "Bereich"
     },
 
     Approfondimenti: {

@@ -327,6 +327,7 @@ var PAZIENTI_TRATTAMENTI = {
 			var Prescrizione='';
 			var puntiMTC=[];
 			var puntiAuricolari=[];
+			var puntiPlantari=[];
 			var puntiNamikoshi=[];
 			var TimeTrattamento=0;
 			var CostoTrattamento=0;
@@ -359,6 +360,7 @@ var PAZIENTI_TRATTAMENTI = {
 				meridiani=toJson(__(TR.meridiani,[]));
 				puntiMTC=__(TR.puntiMTC,[]);
 				puntiAuricolari=toJson(__(TR.puntiAuricolari,[]));
+				puntiPlantari=toJson(__(TR.puntiPlantari,[]));
 				puntiNamikoshi=toJson(__(TR.puntiNamikoshi,[]));
 				sintomi=toJson(__(TR.sintomi,[]));
 				gallery=toJson(__(TR.gallery,[]));
@@ -413,6 +415,7 @@ var PAZIENTI_TRATTAMENTI = {
 			PAZIENTI.sintomiEliminati=[];
 			PAZIENTI.puntiProvvisori=clone(puntiMTC);
 			PAZIENTI.auriculoProvvisori=clone(puntiAuricolari);
+			PAZIENTI.reflexProvvisori=clone(puntiPlantari);
 			PAZIENTI.namikoshiProvvisori=clone(puntiNamikoshi);
 			PAZIENTI.sintomiProvvisori=clone(sintomi);
 			PAZIENTI.meridianiProvvisori=clone(meridiani);
@@ -786,6 +789,24 @@ var PAZIENTI_TRATTAMENTI = {
 					'		 class="noPrint"></div>' +
 					'</div>' +
 			
+			// REFLEX
+					'<div id="tratt_cont_reflex"' +
+					'	  class="sezioneTrattamenti divEspansa '+ 
+						((localStorage.getItem("op_reflex")) ? '' : 'sezioneChiusa') +
+						'">' +
+					'	<em id="label_puntiPlantari"' +
+					'		class="labelMobile labelTrattamenti"' +
+					'		onClick="H.swSezione(this);">' +
+					'		<img class="icoLabel"' +
+					'		     src="img/ico_reflex.png">' +
+							TXT("PuntiReflex")+' (<span id="totReflex"></span>)' +
+					'	</em>' +
+					'	<div id="puntiPlantari">' +
+					'	</div>' +
+					'	<div id="tratt_btns_reflex"' +
+					'		 class="noPrint"></div>' +
+					'</div>' +
+			
 			// GALLERY
 					'<div id="tratt_cont_gallery"' +
 					'	  class="sezioneTrattamenti divEspansa '+ 
@@ -955,6 +976,24 @@ var PAZIENTI_TRATTAMENTI = {
 		}
 		document.getElementById("tratt_btns_auriculo").innerHTML = HTML;
 		PAZIENTI.caricaAuriculoTrattamento();
+		
+		// AREE PIEDE
+		var HTML = '';
+		if( globals.set.cartella == 'reflessologia_plantare' ){
+			HTML+=
+				'	<div id="p_add_dett"' +
+				'		 class="noPrint">' +
+				'		<div id="grpRfx"' +
+				'		    class="p_paz_gruppo"' +
+				'		    onClick="PAZIENTI.gruppoPunti(\'R\');">' +
+							htmlEntities(TXT("AggiungiAree")) +
+				'		</div>' +
+				'	</div>';
+		}else{
+			HTML += '<div class="labelModificaCon">'+htmlEntities(TXT("ModificaCon"))+'<br><span onClick="caricaSet(\'reflessologia_plantare\',this);"><img src="sets/reflessologia_plantare/img/logoNero.png" width="25" height="25"> ReflexologyMap</span></div>';
+		}
+		document.getElementById("tratt_btns_reflex").innerHTML = HTML;
+		PAZIENTI.caricaReflexTrattamento();
 	},
 	apriSpostaTrattamento: function( Q_idTratt){
 		applicaLoading(document.getElementById("scheda_testo"),'vuoto');
@@ -1182,6 +1221,7 @@ var PAZIENTI_TRATTAMENTI = {
 							"Prescrizione": document.formMod.Prescrizione.value,
 							"puntiMTC": PAZIENTI.puntiProvvisori,
 							"puntiAuricolari": PAZIENTI.auriculoProvvisori,
+							"puntiPlantari": PAZIENTI.reflexProvvisori,
 							"puntiNamikoshi": PAZIENTI.namikoshiProvvisori,
 							"sintomi": PAZIENTI.sintomiProvvisori,
 							"meridiani": PAZIENTI.meridianiProvvisori,
@@ -1653,6 +1693,7 @@ var PAZIENTI_TRATTAMENTI = {
 					Prescrizione=__(TR.Prescrizione);
 					puntiMTC=__(TR.puntiMTC,[]);
 					puntiAuricolari=__(TR.puntiAuricolari,[]);
+					puntiPlantari=__(TR.puntiPlantari,[]);
 					puntiNamikoshi=__(TR.puntiNamikoshi,[]);
 					meridiani = __(TR.meridiani,[]);
 					sintomi=__(TR.sintomi,[]);
@@ -1754,6 +1795,25 @@ var PAZIENTI_TRATTAMENTI = {
 							valutazione=__(puntiAuricolari[p].e);
 							mezzo=__(puntiAuricolari[p].z);
 							descrizione=__(puntiAuricolari[p].t);
+							
+							HTML += '<span class="tsb"><img src="img/mezzo_'+mezzo+'.png" class="noMod" style="vertical-align: middle;margin-top: -2px;margin-right: -2px;"> ';
+							HTML += '<b>'+nomePunto+'</b>';
+							if(valutazione)HTML += '<img src="img/ico_PV'+valutazione+'.png" class="noMod" style="vertical-align: middle;margin-top: -3px;">';
+							if(descrizione)HTML += ' <span style="font-style:italic;">'+htmlEntities(descrizione)+'</span>';
+							HTML += '</span> '+chr10;
+						}
+						HTML+='</div>';
+						HTML+='</div>';
+					}
+					if(puntiPlantari.length){
+						HTML+='<div class="app_report_sch"> ';
+						HTML+='<br><i>'+TXT_P+':</i> ';
+						HTML+='<div id="puntiCiclo">';
+						for(let p in puntiPlantari){
+							nomePunto=puntiPlantari[p].n;
+							valutazione=__(puntiPlantari[p].e);
+							mezzo=__(puntiPlantari[p].z);
+							descrizione=__(puntiPlantari[p].t);
 							
 							HTML += '<span class="tsb"><img src="img/mezzo_'+mezzo+'.png" class="noMod" style="vertical-align: middle;margin-top: -2px;margin-right: -2px;"> ';
 							HTML += '<b>'+nomePunto+'</b>';

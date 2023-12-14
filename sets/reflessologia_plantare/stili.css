@@ -103,6 +103,9 @@ body.piedi #pulsante_modello{
     height: 22px;
     line-height: 22px;
 }
+#scheda:not(.scheda_procedura) .pallinoPat:not(.noPall){
+	margin: -2px 0px;
+}
 #elencoPunti .pallinoPat:not(.noPall){
     line-height: 30px;
 }
@@ -789,6 +792,14 @@ body:not(.smart) #filtriSmart_cont div:not(.elencoSel):not(.selected):hover{
     text-shadow: 0px 0px 3px #000;
 }
 
+#filtriSmart_cont > em{
+	display:block;
+    height: 32px;
+    line-height: 32px;
+	text-align:left;
+	color:#fff;
+	padding:0 10px;
+}
 
 #add_pat{
 	padding-right:4px !important;

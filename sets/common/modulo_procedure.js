@@ -95,7 +95,9 @@ var MODULO_PROCEDURE = { // extend SET
 	},
 	filtraProcedure: function( event ){
 		var parola = document.getElementById("proc_ricerca").value.trim();
-		let app = (globals.set.cartella=='auricologia')?'AUR':'';
+		let app = '';
+		if(globals.set.cartella=='auricologia')app='AUR';
+		if(globals.set.cartella=='reflessologia_plantare')app='RFX';
 		for(let p in DB.procedure.data){
 			if(DB.procedure.data[p].app == app){
 				if(DB.procedure.data[p].NomeProcedura.toLowerCase().indexOf(parola.toLowerCase()) == -1){
@@ -229,7 +231,7 @@ var MODULO_PROCEDURE = { // extend SET
 					var siglaMeridiano='';
 					var siglaPunto='';
 					var mezzo='';
-					if(TipoDettaglio=='P' || TipoDettaglio=='N' || TipoDettaglio=='A'){	
+					if(TipoDettaglio=='P' || TipoDettaglio=='N' || TipoDettaglio=='A' || TipoDettaglio=='R'){	
 						if(DescrizioneDettaglio){
 							if(DescrizioneDettaglio.indexOf(".")>-1){
 								pP=DescrizioneDettaglio.split(".");
@@ -239,19 +241,19 @@ var MODULO_PROCEDURE = { // extend SET
 									siglaPunto=__(pP[2]);
 									mezzo=__(pP[3]);
 								}
-								if(TipoDettaglio=='A'){
+								if(TipoDettaglio=='A' || TipoDettaglio=='R'){
 									siglaPunto=pP[0];
 									mezzo=__(pP[1]);
 								}
 							}else{
 								if(TipoDettaglio=='P' || TipoDettaglio=='N')nPunto=DescrizioneDettaglio;
-								if(TipoDettaglio=='A')siglaPunto=DescrizioneDettaglio;
+								if(TipoDettaglio=='A' || TipoDettaglio=='R')siglaPunto=DescrizioneDettaglio;
 							}
 						}
 					}
 					
 					HTML += '<div class="rgProc_'+TipoDettaglio+'"';
-					if(!n && (TipoDettaglio=='P' || TipoDettaglio=='N' || TipoDettaglio=='A'))HTML += ' style="margin-top:15px;"';
+					if(!n && (TipoDettaglio=='P' || TipoDettaglio=='N' || TipoDettaglio=='A' || TipoDettaglio=='R'))HTML += ' style="margin-top:15px;"';
 					HTML += '>';
 					if(TipoDettaglio=='T')HTML += '<b>';
 					if(TipoDettaglio=='T' || TipoDettaglio=='D'){
@@ -290,6 +292,10 @@ var MODULO_PROCEDURE = { // extend SET
 								'</span>';
 					}
 					if(TipoDettaglio=='A' && siglaPunto){
+						var NomePunto = DB.set.punti[siglaPunto].NomePunto;
+						HTML += '[.'+siglaPunto+'.]';
+					}
+					if(TipoDettaglio=='R' && siglaPunto){
 						var NomePunto = DB.set.punti[siglaPunto].NomePunto;
 						HTML += '[.'+siglaPunto+'.]';
 					}
@@ -344,7 +350,7 @@ var MODULO_PROCEDURE = { // extend SET
 					'	</div>';
 			}
 			HTML += '</div>';
-			if(globals.set.siglaProc=='AUR')HTML = SET.convPuntiScheda(HTML); // <<<<<<<<<<< VERIFICARE
+			if(globals.set.siglaProc=='AUR' || globals.set.siglaProc=='RFX')HTML = SET.convPuntiScheda(HTML); // <<<<<<<<<<< VERIFICARE
 			if(SCHEDA.btnSel && Q_resta)SCHEDA.btnSel=null;
 			var btnAdd = '';
 			var azElimina = (Q_idProc>-1 && !Q_community) ? 'SET.el_procedura('+Q_idProc+');':'';
@@ -451,6 +457,7 @@ var MODULO_PROCEDURE = { // extend SET
 			var tProc = 0;
 			var app = '';
 			if(globals.set.cartella=='auricologia')app = 'AUR';
+			if(globals.set.cartella=='reflessologia_plantare')app = 'RFX';
 			for(let c in DB.procedure.data){
 				if(DB.procedure.data[c].Cancellato*1==0 && __(DB.procedure.data[c].app) == app)tProc++;
 			}
@@ -567,13 +574,18 @@ var MODULO_PROCEDURE = { // extend SET
 									htmlEntities(TXT("AggiungiMeridiano")) +
 									/*SET.elencoMeridiani(TXT("AggiungiMeridiano")) +*/
 					'			</div>';
-			else HTML +=
-					// punti auricolari
-					'			<div id="grpPt"' +
-					'			    class="p_proc_gruppo"' +
-					'			    onClick="SET.aggiungiDettaglio(\'A\');">' +
-									TXT("Punto") +
-					'			</div>';
+			else{
+				
+				// punti auricolari
+				HTML += '			<div id="grpPt"' +
+				'			    class="p_proc_gruppo"' +
+				'			    onClick="SET.aggiungiDettaglio(\'';
+				if(globals.set.cartella=='auricologia')HTML +='A';
+				if(globals.set.cartella=='reflessologia_plantare')HTML +='R';
+				HTML += '\');">' +
+								TXT("Punto") +
+				'			</div>';
+			}
 					
 			HTML +=	'		</div>' +
 					'		<div class="l sepH"></div>' +
@@ -813,7 +825,7 @@ var MODULO_PROCEDURE = { // extend SET
 		var puntiProvvisoriProc = [];
 		var meridianiProvvisoriProc = [];
 		
-		if(globals.set.siglaProc=='AUR'){
+		if(globals.set.siglaProc=='AUR' || globals.set.siglaProc=='RFX'){
 			var puntiElenco = [];
 			for(let siglaPunto in DB.set.punti){
 				if(__(DB.set.punti[siglaPunto])){
@@ -840,6 +852,7 @@ var MODULO_PROCEDURE = { // extend SET
 						((TipoDettaglio=='N') ? ' dettPunto dettNamikoshi': '') +
 						((TipoDettaglio=='M') ? ' dettMeridiano': '') +
 						((TipoDettaglio=='A') ? ' dettPunto': '') +
+						((TipoDettaglio=='R') ? ' dettPunto': '') +
 						'"';
 				if(mouseDetect && (TipoDettaglio=='P' || TipoDettaglio=='N')){
 					HTML += 
@@ -851,11 +864,12 @@ var MODULO_PROCEDURE = { // extend SET
 						'	  onMouseOver="SET.overPunto(\'_PT'+DescrizioneDettaglio+'\',true);"'+
 						'	  onMouseOut="SET.overPunto(\'_PT'+DescrizioneDettaglio+'\',false);"';
 				}
-				/*if(mouseDetect && TipoDettaglio=='N'){
+				if(mouseDetect && TipoDettaglio=='R' && DescrizioneDettaglio){
 					HTML += 
-						'	  onMouseOver="SET.eviMeridiano(document.getElementById(\'n-mr_'+p+'\').value,true);"'+
-						'	  onMouseOut="SET.eviMeridiano(document.getElementById(\'n-mr_'+p+'\').value,false);"';
-				}*/
+						'	  onMouseOver="SET.overPunto(\''+DescrizioneDettaglio+'\',true);"'+
+						'	  onMouseOut="SET.overPunto(\''+DescrizioneDettaglio+'\',false);"';
+				}
+				
 				HTML += '><div class="grabElement'+((TipoDettaglio=='T' || TipoDettaglio=='D') ? ' rgLabel' : '')+'"' +
 						'	   data-drag-class="lbProc"' +
 						'	   data-drag-family="proc"' +
@@ -888,7 +902,7 @@ var MODULO_PROCEDURE = { // extend SET
 				
 				
 				
-				if(TipoDettaglio=='P' || TipoDettaglio=='N' || TipoDettaglio=='A'){	
+				if(TipoDettaglio=='P' || TipoDettaglio=='N' || TipoDettaglio=='A' || TipoDettaglio=='R'){	
 				
 					var nPunto='';
 					var siglaMeridiano='';
@@ -903,13 +917,13 @@ var MODULO_PROCEDURE = { // extend SET
 								siglaPunto=__(pP[2]);
 								mezzo=__(pP[3]);
 							}
-							if(TipoDettaglio=='A'){
+							if(TipoDettaglio=='A' || TipoDettaglio=='R'){
 								siglaPunto=pP[0];
 								mezzo=__(pP[1]);
 							}
 						}else{
 							if(TipoDettaglio=='P' || TipoDettaglio=='N')nPunto=DescrizioneDettaglio;
-							if(TipoDettaglio=='A')siglaPunto=DescrizioneDettaglio;
+							if(TipoDettaglio=='A' || TipoDettaglio=='R')siglaPunto=DescrizioneDettaglio;
 						}
 					}
 					
@@ -1083,7 +1097,7 @@ var MODULO_PROCEDURE = { // extend SET
 					}
 					HTML += '	</select>';
 				}
-				if(TipoDettaglio=='A'){
+				if(TipoDettaglio=='A' || TipoDettaglio=='R'){
 					puntiProvvisoriProc.push( DescrizioneDettaglio );
 					HTML += '	<select class="numPoints"' +
 							' 			name="pt_'+p+'"' +
@@ -1128,7 +1142,7 @@ var MODULO_PROCEDURE = { // extend SET
 		}catch(err){}
 		if(eviUltimo){
 			if(TipoDettaglio=='P' || TipoDettaglio=='N')document.formMod["mr_"+lastP].focus();
-			else if(TipoDettaglio=='A')document.formMod["pt_"+lastP].focus();
+			else if(TipoDettaglio=='A' || TipoDettaglio=='R')document.formMod["pt_"+lastP].focus();
 			else if(TipoDettaglio!='M')document.formMod["de_"+lastP].focus();
 		}
 	},
@@ -1641,7 +1655,6 @@ var MODULO_PROCEDURE = { // extend SET
 			console.log(SET.idProcCommProvv)
 			console.log(kRic)
 			SET.caricaProceduraCommunity( SET.idProcCommProvv, kRic, document.getElementById("procComm"+SET.idProcCommProvv) );
-			//SET.idProcCommProvv = -1;
 		}
 	},
 	swRicPref: function(){

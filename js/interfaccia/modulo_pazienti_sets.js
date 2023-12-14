@@ -50,6 +50,10 @@ var PAZIENTI_SETS = {
 			"crio",
 			"salasso",
 			"infiltrazione" ],
+		R: ["",
+			"dito",
+			"moxa",
+			"pauper" ],
 		M: []
 	},
 	mezzoProvvisorio: '',
@@ -415,6 +419,19 @@ var PAZIENTI_SETS = {
 					totAggiunti++;
 				}
 			}
+			if(PAZIENTI.tipoGruppo=='R'){
+				var siglaPunto = punti[p].split(".")[0];
+				for(let k in PAZIENTI.reflexProvvisori){
+					if(PAZIENTI.reflexProvvisori[k].siglaMeridiano == siglaPunto){
+						pass=false;
+						presenti=true;
+					}
+				}
+				if(pass){
+					PAZIENTI.aggiungiReflexTrattamento(siglaPunto);
+					totAggiunti++;
+				}
+			}
 			if(PAZIENTI.tipoGruppo=='N'){
 				var siglaPunto = punti[p].split(".")[0];
 				for(let k in PAZIENTI.namikoshiProvvisori){
@@ -445,6 +462,10 @@ var PAZIENTI_SETS = {
 			if(PAZIENTI.tipoGruppo=='A'){
 				PAZIENTI.caricaAuriculoTrattamento();
 				PAZIENTI.evidenziaAggiunti(document.getElementById('puntiAuricolari'),totAggiunti);
+			}
+			if(PAZIENTI.tipoGruppo=='R'){
+				PAZIENTI.caricaReflexTrattamento();
+				PAZIENTI.evidenziaAggiunti(document.getElementById('puntiPlantari'),totAggiunti);
 			}
 			if(PAZIENTI.tipoGruppo=='N'){
 				PAZIENTI.caricaNamikoshiTrattamento();
@@ -926,6 +947,258 @@ var PAZIENTI_SETS = {
 		SCHEDA.formModificato = true;
 	},
 	
+	// aree reflessologia plantare
+	ricReflex: function( frm, n ){ // ricarica tutti i punti
+		SET.overPunto(PAZIENTI.reflexProvvisori[n].s,false);
+		let siglaPunto = document[frm]["pt_"+n].value;
+		PAZIENTI.reflexProvvisori[n].s = siglaPunto;
+		PAZIENTI.reflexProvvisori[n].n = DB.set.punti[siglaPunto].NomePunto;
+		PAZIENTI.reflexProvvisori[n].t = document[frm]["de_"+n].value;
+		try{
+			PAZIENTI.caricaReflexTrattamento();
+		}catch(err){}
+	},
+	caricaReflexTrattamento: function( ev = -1 ){ // carica i punti del trattamento
+		document.getElementById('puntiPlantari').style.display = 'block';
+		document.getElementById('label_puntiPlantari').style.display = 'block';
+		var HTML = '<div></div>'; // serve lasciarlo per il drag&drop
+		var elenco = [];
+		if(PAZIENTI.reflexProvvisori.length){
+			if( globals.set.cartella == 'reflessologia_plantare' ){
+				var puntiElenco = [];
+				for(let siglaPunto in DB.set.punti){
+					if(__(DB.set.punti[siglaPunto])){
+						puntiElenco.push({
+							siglaPunto: siglaPunto,
+							NomePunto: DB.set.punti[siglaPunto].NomePunto
+						});
+					}
+				}
+				puntiElenco.sort(sort_by("NomePunto", false));
+				for(let p in PAZIENTI.reflexProvvisori){
+					
+					valutazione=__(PAZIENTI.reflexProvvisori[p].e);
+					mezzo=__(PAZIENTI.reflexProvvisori[p].z);
+					descrizione=__(PAZIENTI.reflexProvvisori[p].t);
+					siglaPunto=__(PAZIENTI.reflexProvvisori[p].s);
+					nomePunto=__(PAZIENTI.reflexProvvisori[p].n);
+					elenco.push(siglaPunto+"."+valutazione);
+					
+					HTML += '<div class="rgProcMod rgMod dettReflex'+((ev==p)?' eviPunto':'')+'"' +
+							'	  id="rg_'+p+'"';
+					if(mouseDetect && siglaPunto){
+						HTML += 	' onMouseOver="SET.overPunto(\''+siglaPunto+'\',true);"' +
+									' onMouseOut="SET.overPunto(\''+siglaPunto+'\',false);"';
+					}
+					HTML += '><div class="grabElement"' +
+							'	   data-drag-class="lbReflex"' +
+							'	   data-drag-family="reflex"' +
+							'	   data-drag-type="move">' +
+							
+							'	<div class="grabBtn"' +
+							'	     onMouseDown="DRAGGER.startDrag(this.parentElement,\'PAZIENTI.spostaReflex\');"' +
+							'	     onTouchStart="DRAGGER.startDrag(this.parentElement,\'PAZIENTI.spostaReflex\');"></div>' +
+						
+						
+							'	<img src="img/ico_cestino.png"' +
+							'		 width="16"' +
+							'		 height="16"' +
+							'		 align="absmiddle"' +
+							'		 id="ico_vis'+p+'"' +
+							'		 title="'+TXT("DelDett")+'"' +
+							'		 onClick="PAZIENTI.eliminaReflexTrattamento('+p+')"' +
+							'		 class="cestino">';
+					
+					// mezzo
+					var addMezzoTit = '';
+					if(mezzo)addMezzoTit = ': '+PAZIENTI.mezzi[mezzo];
+					HTML += '	<span id="ico_PZ'+p+'"' +
+							'	      class="mezzoPunto"' +
+							'	      onClick="PAZIENTI.selMezzo('+p+',\'R\');">' +
+							'		<img src="img/mezzo_'+mezzo+'.png"' +
+							'	  	     width="20"' +
+							'	  	     height="20"' +
+							'	  	     align="absmiddle"' +
+							'	  	     title="'+htmlEntities(TXT("PZDett"))+'"'+
+							'	  	     class="occhio valEn"> ' +
+							'	</span>';
+							
+					
+					
+					// siglaPunto (.s in puntiProvvisori)
+					HTML += '<input type="hidden" id="hd_'+p+'" name="hd_'+p+'" value="'+siglaPunto+'">';
+					
+					// verifico che esista il punto
+					if(globals.set.cartella != 'reflessologia_plantare'){
+						HTML += '<span class="ptNo" style="text-align:left">'+nomePunto+'</span>' +
+								'<input type="hidden" id="pt_'+p+'" name="pt_'+p+'" value="'+siglaPunto+'">';
+					}else{
+						// punto
+						HTML +=	'	<select class="numPoints"' +
+								'	     	 name="pt_'+p+'"' +
+								'	     	 id="pt_'+p+'"' +
+								'	     	 onChange="this.blur();' +
+								'	     	 		   PAZIENTI.ricReflex(\'formMod\','+p+');' +
+								'	     	 		   SCHEDA.formModificato=true;">' +
+								'		<option></option>';
+						for(let n in puntiElenco){
+							// verifico le autorizzazioni
+							//if(SET.verFreePunti(puntiElenco[n].siglaPunto)){
+								HTML += '<option value="'+puntiElenco[n].siglaPunto+'"';
+								if(siglaPunto==puntiElenco[n].siglaPunto)HTML += ' SELECTED';
+								HTML += '>'+puntiElenco[n].NomePunto+'</option>';
+							//}
+							// --------------------------
+						}
+						HTML += '	</select>';
+					
+						// icona visualizzazione
+						HTML += '	<img src="img/ico_vedi.png"' +
+								'	     width="16"' +
+								'	     height="16"' +
+								'	     align="absmiddle"' +
+								'	     id="ico_vis'+p+'"' +
+								'	     style="' +
+								'				margin-left:5px;' +
+								'				margin-right:7px;' +
+								'				margin-top: -4px;' +
+								'				cursor:pointer;"' +
+								'		 class="occhio"' +
+								'		 title="'+htmlEntities(TXT("VisualizzaPunto"))+'"' +
+								'		 onClick="SET.selPuntoMod(\''+siglaPunto+'\','+p+');">';
+					}
+					
+					
+					
+					
+					// valutazione energetica
+					HTML += '	<span id="ico_PV'+p+'"' +
+							'	      class="valPunto"' +
+							'	      onClick="PAZIENTI.selRV('+p+');">'+
+							'		<img src="img/ico_PV'+valutazione+'.png"' +
+							'	  	     width="16"' +
+							'	  	     height="16"' +
+							'	  	     align="absmiddle"' +
+							'	  	     title="'+htmlEntities(TXT("PVDett"))+'"' +
+							'	  	     class="occhio valEn"> ' +
+							'	</span>';
+					
+					HTML += '<input id="de_'+p+'"' +
+							' 		name="de_'+p+'"' +
+							' 		class="textPuntoTratt okPlaceHolder"' +
+							' 		value="'+htmlEntities(descrizione)+'"' +
+							' 		placeholder="'+htmlEntities(TXT("SpiegazioneReflexTratt"))+'"' +
+							'		onBlur="PAZIENTI.reflexProvvisori['+p+'].t=this.value"' +
+							'		'+H.noAutoGen+'>';
+					HTML += '</div></div>';
+				}
+				HTML +=	'<div style="clear:both;height:1px;"></div>';
+			}else{
+				var HTML_noMod = '';
+				for(let p in PAZIENTI.reflexProvvisori){
+					valutazione=__(PAZIENTI.reflexProvvisori[p].e);
+					mezzo=__(PAZIENTI.reflexProvvisori[p].z);
+					descrizione=__(PAZIENTI.reflexProvvisori[p].t);
+					siglaPunto=__(PAZIENTI.reflexProvvisori[p].s);
+					NomePunto=__(PAZIENTI.reflexProvvisori[p].n);
+					HTML_noMod += '<span class="tsb"><img src="img/mezzo_'+mezzo+'.png" class="noMod" style="vertical-align: middle;margin-top: -2px;margin-right: -2px;"> ';
+					HTML_noMod += NomePunto;
+					if(valutazione)HTML_noMod += '<img src="img/ico_PV'+valutazione+'.png" class="noMod" style="vertical-align: middle;margin-top: -3px;">';
+					if(descrizione)HTML_noMod += ' <span style="font-style:italic;">'+htmlEntities(descrizione)+'</span>';
+					HTML_noMod += '</span> ';
+					elenco.push(siglaPunto);
+				}
+				HTML = '<span style="margin-bottom: 15px;display: inline-block;">'+HTML_noMod+'</span>';
+			}
+		}else{
+			HTML +=	'<div class="noResults"' +
+					'	  style="padding-left:30px;">' +
+						TXT("NoRes") +'...' +
+					'</div>';
+		}
+		document.getElementById('totReflex').innerHTML = PAZIENTI.reflexProvvisori.length;
+		document.getElementById('puntiPlantari').innerHTML=HTML;
+		
+		if(ev>-1){
+			setTimeout(function(){document.getElementById("rg_"+ev).classList.remove("eviPunto")},2000);
+		}
+		try{
+			if( globals.set.cartella == 'reflessologia_plantare' )SET.evidenziaPuntoMod(elenco);
+		}catch(err){}
+		
+		if(PAZIENTI.topAdd)document.getElementById("scheda_testo").scrollTo(0,document.getElementById("scheda_testo").scrollTop+(tCoord(document.getElementById("p_add_dett"),'y')-PAZIENTI.topAdd));
+		PAZIENTI.topAdd = null;
+	},
+	aggiungiReflexTrattamento: function( PT ){ // aggiunge un singolo punto al trattamento;
+		JSNPUSH = {
+			s: PT,
+			n: DB.set.punti[PT].NomePunto,
+			z: PAZIENTI.mezzoProvvisorio,
+			e: "",
+			t: ""
+		}
+		PAZIENTI.reflexProvvisori.push(JSNPUSH);
+		SCHEDA.formModificato = true;
+		PAZIENTI.caricaReflexTrattamento();
+		document.getElementById("grpRfx").selectedIndex = 0;
+	},
+	eliminaReflexTrattamento: function( n ){ // elimina un punto del trattamento
+		SET.overPunto(PAZIENTI.reflexProvvisori[n].s,false);
+		PAZIENTI.reflexProvvisori.splice(n, 1); 
+		PAZIENTI.caricaReflexTrattamento();
+		SCHEDA.formModificato = true;
+	},
+	selRV: function( n ){ // cambia la valutazione energetica
+		var html = '';
+		var pvs = [ '', 'D' ];
+		for(let m=0;m<pvs.length;m++){
+			html += '<span style="background-image:url(img/ico_PV'+pvs[m]+'.png);"' +
+					'	   onClick="PAZIENTI.cambiaRV('+n+',\''+pvs[m]+'\');"' +
+					'	   title="'+htmlEntities(TXT("Valutazione"+pvs[m]))+'"></span>';
+		}
+		H.selTT(n,"ico_PV",html);
+	},
+	cambiaRV: function( n, m ){ // cambia la valutazione energetica su un punto
+		var el = document.getElementById("ico_PV"+n);
+		el.getElementsByTagName("img")[0].src='img/ico_PV'+m+'.png';
+		//SET.overPunto(document.getElementById("pt_"+n).parentElement,false);
+		PAZIENTI.reflexProvvisori[n].e = m;
+		SCHEDA.formModificato = true;
+		PAZIENTI.ricReflex("formMod",n);
+		//SET.overPunto(document.getElementById("pt_"+n).parentElement,true);
+		document.getElementById("tt_mezzival").dataset.on='0';
+		H.removeTT();
+	},
+	cambiaRZ: function( n, m, isProc=false ){ // cambia il mezzo su un punto
+		var el = document.getElementById("ico_PZ"+n);
+		el.getElementsByTagName("img")[0].src='img/mezzo_'+m+'.png';
+		if(globals.modello.cartella)SET.overPunto(m,false);
+		if(!isProc){
+			PAZIENTI.reflexProvvisori[n].z = m;
+		}else{
+			var pD = SET.dettagliProvvisori[n].DescrizioneDettaglio.split(".");
+			SET.dettagliProvvisori[n].DescrizioneDettaglio = __(pD[0])+"."+__(m);
+			SET.caricaDettagli();
+		}
+		SCHEDA.formModificato = true;
+		if(globals.modello.cartella)SET.overPunto(m,true);
+		document.getElementById("tt_mezzival").dataset.on='0';
+		H.removeTT();
+		PAZIENTI.verMezzo(m);
+	},
+	spostaReflex: function( elMove, elTarget ){ // sposta dopo il drag&drop
+		if(	!elTarget ||
+			elMove.parentElement==elTarget)return;
+		var fromIndex = parseInt(elMove.parentElement.id.split("_")[1]);
+		var toIndex = parseInt(elTarget.id.split("_")[1]);
+		if(DRAGGER.pushPos=='after')toIndex++;
+		if(toIndex>fromIndex)toIndex--;
+		var arr2 = PAZIENTI.reflexProvvisori.splice(fromIndex, 1)[0];
+		PAZIENTI.reflexProvvisori.splice(toIndex,0,arr2);
+		PAZIENTI.caricaReflexTrattamento(toIndex);
+		SCHEDA.formModificato = true;
+	},
+	
 	
 	// punti namikoshi
 	ricNamikoshi: function( frm, n ){ // ricarica tutti i punti	
@@ -1068,7 +1341,7 @@ var PAZIENTI_SETS = {
 							' 		name="n-de_'+p+'"' +
 							' 		class="textPuntoTratt okPlaceHolder"' +
 							' 		value="'+htmlEntities(descrizione)+'"' +
-							' 		placeholder="'+htmlEntities(TXT("SpiegazioneAuriculoTratt"))+'"' +
+							' 		placeholder="'+htmlEntities(TXT("SpiegazionePuntoTratt"))+'"' +
 							'		onBlur="PAZIENTI.namikoshiProvvisori['+p+'].t=this.value"' +
 							'		'+H.noAutoGen+'>';
 					HTML += '</div></div>';
@@ -1208,7 +1481,7 @@ var PAZIENTI_SETS = {
 		var presenti = false;
 		
 		// punti da MERIDIANI
-		if(PAZIENTI.tipoGruppo=='P' || PAZIENTI.tipoGruppo=='M' || PAZIENTI.tipoGruppo=='A'){
+		if(PAZIENTI.tipoGruppo=='P' || PAZIENTI.tipoGruppo=='M' || PAZIENTI.tipoGruppo=='A' || PAZIENTI.tipoGruppo=='R'){
 			EL = {};
 			EL.contenuto = [];
 			if(PAZIENTI.tipoGruppo=='P')EL.livello = 2;
@@ -1247,7 +1520,7 @@ var PAZIENTI_SETS = {
 					// --------------------------
 				}
 			}
-			if(PAZIENTI.tipoGruppo=='A'){ // auricolo-punti
+			if(PAZIENTI.tipoGruppo=='A' || PAZIENTI.tipoGruppo=='R'){ // auricolo-punti
 				var puntiElenco = [];
 				for(let siglaPunto in DB.set.punti){
 					// verifico le autorizzazioni
@@ -1263,7 +1536,8 @@ var PAZIENTI_SETS = {
 				}
 				puntiElenco.sort(sort_by("NomePunto", false));
 				
-				EL.titolo = TXT("PuntiAuriculo");
+				if(PAZIENTI.tipoGruppo=='A')EL.titolo = TXT("PuntiAuriculo");
+				if(PAZIENTI.tipoGruppo=='R')EL.titolo = TXT("PuntiReflex");
 				for(a in puntiElenco){
 					if(puntiElenco[a].NomePunto){
 						EL.contenuto.push(puntiElenco[a].siglaPunto);
@@ -1318,6 +1592,7 @@ var PAZIENTI_SETS = {
 					   PAZIENTI.tipoGruppo=='N')re = /\[\.[0-9]{1,2}\.[A-Z]{2}[\.*]+\]/ig;
 					if(PAZIENTI.tipoGruppo=='M')re = /\[\.[A-Z]{2}\.\]/ig;
 					if(PAZIENTI.tipoGruppo=='A')re = /\[\.[0-9]{3}\.\]/ig;
+					if(PAZIENTI.tipoGruppo=='R')re = /\[\.[0-9]{3}\.\]/ig;
 					var result = txtTeo.match(re);
 					for(let k in result){
 						var pP = result[k].split(".");
@@ -1338,7 +1613,7 @@ var PAZIENTI_SETS = {
 							}
 						}
 					}
-					if(PAZIENTI.tipoGruppo=='A'){
+					if(PAZIENTI.tipoGruppo=='A' || PAZIENTI.tipoGruppo=='R'){
 						var gr = DB.set.teoria[t].contenuti[i].gruppo;
 						if(gr){
 							var punti = GEOMETRIE.gruppi[gr].punti;
@@ -1479,7 +1754,7 @@ var PAZIENTI_SETS = {
 				var txtPat=DB.set.patologie[i].TestoPatologia;
 				if(PAZIENTI.tipoGruppo=='P' || PAZIENTI.tipoGruppo=='N')re = /\[\.[0-9]{1,2}\.[A-Z]{2}[\.*]+\]/ig;
 				if(PAZIENTI.tipoGruppo=='M')re = /\[\.[A-Z]{2}\.\]/ig;
-				if(PAZIENTI.tipoGruppo=='A'){
+				if(PAZIENTI.tipoGruppo=='A' || PAZIENTI.tipoGruppo=='R'){
 					var list = SET.getListPointPat(i);
 					for(l in list){
 						if(SET.verFreePunti(list[l])){ // verifico le autorizzazioni
@@ -1657,7 +1932,7 @@ var PAZIENTI_SETS = {
 			if(PAZIENTI.tipoGruppo=='M'){
 				HTML +=	DB.set.meridiani[PT].NomeMeridiano;
 			}
-			if(PAZIENTI.tipoGruppo=='A'){
+			if(PAZIENTI.tipoGruppo=='A' || PAZIENTI.tipoGruppo=='R'){
 				HTML +=	DB.set.punti[pP[0]].NomePunto;
 			}
 			HTML +=	'</label>';

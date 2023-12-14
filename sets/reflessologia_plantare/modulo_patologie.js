@@ -68,20 +68,10 @@ var MODULO_PATOLOGIE = { // extend SET
 								btn,
 								btnAdd,
 								globals.set.cartella+'_patologie_'+n );
-		SET.eviPointsPat(document.getElementById("schedaTerapeutica"));
-		document.getElementById("sez_cont_descrizione").classList.toggle("sezioneChiusa",!op_descrizione);
-		document.getElementById("sez_cont_protocollo").classList.toggle("sezioneChiusa",!op_protocollo)
+								SET.evidenziaPunto();
 	},
 	chiudiPatologia: function(){
 		SET.patOp = -1;
-		SET.schEvi = null;
-	},
-	eviPointsPat: function( el ){
-		if(!el.innerHTML)return;
-		SET.evidenziaPunto(el);
-		if(SET.schEvi)SET.schEvi.classList.remove("eviPoints");
-		el.classList.add("eviPoints");
-		SET.schEvi = el;
 	},
 	filtraPatologie: function( event ){ // filtra le patologie tramite campo di testo
 		var parola = document.getElementById("pat_ricerca").value.trim();

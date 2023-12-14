@@ -1556,6 +1556,14 @@ DB.TXT = {
             por: "Anotações sobre o ponto...",
             deu: "Anmerkungen zum Punkt..."
         },
+        SpiegazioneReflexTratt: {
+            ita: "Annotazioni sull'area ...",
+            eng: "Annotations on the area...",
+            esp: "Anotaciones sobre el área...",
+            fra: "Annotations sur la zone...",
+            por: "Anotações sobre a área...",
+            deu: "Anmerkungen zum Bereich..."
+        },
         AlertMezzoSalasso: {
             ita: "Attenzione!! Non utilizzare il salasso in pazienti sotto terapia anticoagulante. Potrebbe comportare rischio di sanguinamento incontrollato.",
             eng: "Warning! Do not use bloodletting in patients on anticoagulant therapy. This may lead to the risk of uncontrolled bleeding.",
@@ -2922,6 +2930,14 @@ DB.TXT = {
             por: "Pontos auriculares",
             deu: "Aurikuläre Punkte"
         },
+        PuntiReflex: {
+            ita: "Aree plantari",
+            eng: "Plantar areas",
+            esp: "Áreas plantares",
+            fra: "Zones plantaires",
+            por: "Áreas plantares",
+            deu: "Pflanzliche Bereiche"
+        },
         PuntiTrattamento: {
             ita: "Punti trattati",
 			eng: "Treated points",
@@ -2953,6 +2969,14 @@ DB.TXT = {
             fra: "Ajouter un point",
             por: "Adicionar ponto",
             deu: "Punkt hinzufügen"
+        },
+        AggiungiAree: {
+            ita: "Aggiungi area",
+            eng: "Add area",
+            esp: "Agregar área",
+            fra: "Ajouter une zone",
+            por: "Adicionar área",
+            deu: "Bereich hinzufügen"
         },
         AggiungiMeridiani: {
             ita: "Aggiungi meridiani",

@@ -5,6 +5,9 @@ SET = {
 	INTERSECTED: null,
 	AR: [],
 	GD: [],
+	time: 0,
+	pulse: 0.7,
+	step: 0.01,
 	ptSel: null,
 	diffX: 0,
 	diffY: 0,
@@ -63,7 +66,7 @@ SET = {
 				var lato = "";
 				if(mesh.name.indexOf("_sx")>-1)lato = "SX";
 				if(mesh.name.indexOf("_dx")>-1)lato = "DX";
-				var apparato = DB.set.aree[name].apparato;
+				var apparato = DB.set.punti[name].apparato;
 				
 				var mat = this.MAT["area"+apparato+"Base"];
 				
@@ -110,7 +113,7 @@ SET = {
 		
 		contBtns = 	'<div id="p_contrasto" class="p_noTxt" onClick="SET.swContrastMethod();"></div>';
 		
-		contIcona = '<div id="p_set" onClick="SCHEDA.apriElenco(\'set\',true);"><svg viewBox="0 0 12 48"><polygon points="5,24 12,13 12,35"></polygon></svg><i>'+htmlEntities(TXT("ReflexologyMap"))+'</i></div>';
+		contIcona = '<div id="p_set" onClick="SCHEDA.apriElenco(\'set\',true);"><svg viewBox="0 0 12 48"><polygon points="5,24 12,13 12,35"></polygon></svg><i>'+htmlEntities(TXT("ReflessologiaPlantare"))+'</i></div>';
 		
 		var preElenco = SCHEDA.elencoSel;
 		SCHEDA.caricaElenco(globals.set.nome,contElenco);
@@ -152,7 +155,7 @@ SET = {
 		SET.caricaPunti();
 		SET.caricaPatologie();
 		SET.caricaApprofondimenti();
-		//if(DB.procedure)SET.car_procedure(-1,1);
+		if(DB.procedure)SET.car_procedure(-1,1);
 		
 		SET.popolaFiltri();
 		
@@ -290,9 +293,9 @@ SET = {
 				this.INTERSECTED = objOver;
 				if(this.INTERSECTED.userData.raycastable){
 					var name=this.INTERSECTED.name;
-					visToolTip(DB.set.aree[name].NomePunto);
+					visToolTip(DB.set.punti[name].NomePunto);
 					renderer.domElement.style.cursor='pointer';
-					SET.coloraAree(name,'Over');
+					SET.overPunto(name,true);
 				}
 			}else{
 				this.INTERSECTED=null;
@@ -301,12 +304,18 @@ SET = {
 			}
 			make=true;
 		}
+		if(this.ptSel){ // pulse dell'area selezionata
+			this.pulse-=this.step;
+			if(this.pulse<=0.4 || this.pulse>=0.7)this.step=0-this.step;
+			SET.MAT.areaSel.opacity = this.pulse;
+			make=true;
+		}
 		return make;
 	},
 	desIntersected: function(objOver){
 		if(this.INTERSECTED && this.INTERSECTED!=objOver){
 			var name=this.INTERSECTED.name;
-			SET.coloraAree(name,'Base');
+			SET.overPunto(name,false);
 			this.INTERSECTED = null;
 		}
 	},
@@ -440,10 +449,12 @@ SET = {
 			SCHEDA.formModificato = false;
 		}
 		exPt = SET.ptSel;
-			
-		for(let a in DB.set.apparati){
-			SET.MAT["area"+a+"Base"].opacity = SET.MAT.opArea;
-			SET.MAT["area"+a+"Over"].opacity = SET.MAT.opAreaOn;
+		//if(!SET.puntiEvidenziati){
+		if(!document.getElementById("puntiPlantari")){
+			for(let a in DB.set.apparati){
+				SET.MAT["area"+a+"Base"].opacity = SET.MAT.opArea;
+				SET.MAT["area"+a+"Over"].opacity = SET.MAT.opAreaOn;
+			}
 		}
 		// coloro tutti gli altri punti
 		var els = scene.getObjectByName("ARs").children;
@@ -463,6 +474,12 @@ SET = {
 		}
 		if(!nonChiudereScheda){
 			SCHEDA.scaricaScheda(); 
+		}else{
+			if(document.getElementById("puntiPlantari")){
+				exPt.material =  SET.MAT.areaEvi;
+			}else{
+				SET.evidenziaPunto();
+			}
 		}
 		
 		// ricentro il manichino
@@ -494,7 +511,7 @@ SET = {
 		//
 	},
 	scriviPunto: function( siglaPunto, esteso=false, noRet=false, apparato ){
-		var nomePunto = DB.set.aree[siglaPunto].NomePunto;
+		var nomePunto = DB.set.punti[siglaPunto].NomePunto;
 		var EL = scene.getObjectByName( siglaPunto );
 		
 		var html = '<a class="pallinoPat';
@@ -545,10 +562,10 @@ SET = {
 		SCHEDA.torna();
 		SCHEDA.formModificato = true;
 	},
-	evidenziaPunto: function( el, anatomia='' ){
+	evidenziaPunto: function( el ){
 		if(!el || typeof(el)=='undefined') var el = document.getElementById("scheda_testo");
 		let html = el.innerHTML;
-		SET.annullaEvidenziaPunto(true);
+		SET.annullaEvidenziaPunto();
 		var re = /selPunto\([^\)]+\)/ig;
 		
 		var result = html.match(re);
@@ -562,7 +579,7 @@ SET = {
 			}
 			// --------------------------
 		}
-		SET.applicaEvidenziaPunto(anatomia);
+		SET.applicaEvidenziaPunto();
 		SET.settaOverPunto();
 	},
 	evidenziaPuntoMod: function( elenco ){
@@ -571,72 +588,46 @@ SET = {
 			var pp=elenco[k].split(".");
 			var mat = SET.MAT.pointEvi;
 			if(pp[1]=='D')mat = SET.MAT.pointDolore;
-			if(scene.getObjectByName("_PT"+pp[0])){
-				scene.getObjectByName("_PT"+pp[0]).material=mat;
-				siglaPunto = elenco[k].split(".")[0];
+			if(scene.getObjectByName(pp[0])){
+				scene.getObjectByName(pp[0]).material=mat;
+				siglaPunto = pp[0];
 				SET.puntiEvidenziati.push(siglaPunto);
 			}
 		}
 		SET.applicaEvidenziaPunto();
 	},
-	applicaEvidenziaPunto: function( anatomia ){
-		if(SET.puntiEvidenziati.length || anatomia){
+	applicaEvidenziaPunto: function(){
+		if(SET.puntiEvidenziati.length){
 			var els = scene.getObjectByName("ARs").children;
 			for(e in els){
 				var siglaPunto = els[e].name;
 				if(SET.puntiEvidenziati.indexOf(siglaPunto)>-1){
 					els[e].material=SET.MAT.areaEvi;
-					els[e].material.opacity = 0.7;
-					els[e].visible = true;
-				}else{
-					els[e].material.opacity = 0.2;
 				}
 			}
-		}
-		if(anatomia){
-			setTimeout( function(){
-				SET.forzaDissolve = {
-					"Pelle": localStorage.opPelle,
-					"Vasi": localStorage.opVasi,
-					"Muscoli": localStorage.opMuscoli,
-					"Ossa": localStorage.opOssa,
-					"Legamenti": localStorage.opLegamenti
-				};
-				MODELLO.op("Pelle",parseFloat(anatomia.Pelle));
-				MODELLO.op("Vasi",parseFloat(anatomia.Vasi));
-				MODELLO.op("Muscoli",parseFloat(anatomia.Muscoli));
-				MODELLO.op("Ossa",parseFloat(anatomia.Ossa));
-				MODELLO.op("Legamenti",parseFloat(anatomia.Legamenti));
-				SET.puntiEvidenziati.push("999"); // evita l'illuminazione dei punti al passaggio del mouse
-			}, 200, anatomia);
+			for(let a in DB.set.apparati){
+				SET.MAT["area"+a+"Base"].opacity = SET.MAT.opAreaWhenSel;
+				SET.MAT["area"+a+"Over"].opacity = SET.MAT.opAreaWhenSelOn;
+			}
 		}
 	},
-	annullaEvidenziaPunto: function( forzaDissolve=false ){
-		if(SET.puntiEvidenziati.length || forzaDissolve){
+	annullaEvidenziaPunto: function(){
+		if(SET.puntiEvidenziati.length){
 			var els = scene.getObjectByName("ARs").children;
 			for(e in els){
 				var siglaPunto = els[e].name;
-				//var vis = !__(DB.set.aree[siglaPunto].hidden,false) && __(els[e].userData.hidePunto,'0')=='0';
 				if(SET.puntiEvidenziati.indexOf(siglaPunto)>-1){
 					if(els[e].name == siglaPunto){
-						els[e].material=SET.MAT["area"+els[e].userData.apparato]+"Base";
-						//els[e].visible = vis;
+						els[e].material=SET.MAT["area"+els[e].userData.apparato+"Base"];
 					}
 				}
-				//els[e].material.opacity = 0.4;
-			}
-		}
-		if(forzaDissolve){
-			if(SET.forzaDissolve){
-				MODELLO.op("Pelle",SET.forzaDissolve.Pelle);
-				MODELLO.op("Vasi",SET.forzaDissolve.Vasi);
-				MODELLO.op("Muscoli",SET.forzaDissolve.Muscoli);
-				MODELLO.op("Legamenti",SET.forzaDissolve.Legamenti);
-				MODELLO.op("Ossa",SET.forzaDissolve.Ossa);
-				SET.forzaDissolve = false;
 			}
 		}
 		SET.puntiEvidenziati = [];
+		for(let a in DB.set.apparati){
+			SET.MAT["area"+a+"Base"].opacity = SET.MAT.opArea;
+			SET.MAT["area"+a+"Over"].opacity = SET.MAT.opAreaOn;
+		}
 	},
 	settaOverPunto: function(){
 		if(!touchable){
@@ -669,21 +660,6 @@ SET = {
 		SET.evidenziaPuntoMod(elenco);
 		SET.aggiornaDettaglio(el);
 	},
-	coloraAree: function( PT_name, tipo ){
-		if(touchable)return;
-		var els = scene.getObjectByName("ARs").children;
-		for(let e in els){
-			if(	els[e].name == PT_name && 
-				els[e].material.name.indexOf("SEL") == -1 ){
-				if(els[e].material.name.indexOf('EVI')==-1){
-					if(SET.MAT["area"+els[e].userData.apparato+tipo].name != els[e].material.name){
-						els[e].material = SET.MAT["area"+els[e].userData.apparato+tipo];
-					}
-				}
-				
-			}
-		}
-	},
 	overPunto: function( PT_name, over ){
 		if(touchable || !PT_name)return;
 		
@@ -703,31 +679,6 @@ SET = {
 			}
 		}
 	},
-	convSigleScheda: function(){
-		if(!SCHEDA.schedaAperta && !SCHEDA.scheda2Aperta)return;
-		var nScheda = '';
-		if(SCHEDA.scheda2Aperta)nScheda='2';
-		
-		var regexp = /\[\.[^\]]+\.\]/ig;
-		var str = document.getElementById("scheda_testo"+nScheda).innerHTML;
-		var pts = str.match(regexp);
-		for(let p in pts){
-			console.log(pts[p])
-			str = str.replace(pts[p], pP[0]+"."+SET.convSigla(pP[1].substr(0,2))+pP[1].substr(2,1));
-		}
-		document.getElementById("scheda_testo"+nScheda).innerHTML = str;
-		if(!nScheda){
-			var str = document.getElementById("scheda_titolo"+nScheda).innerHTML;
-			var pts = str.match(regexp);
-			for(let p in pts){
-				siglaPunto = pts[p].replace("[.","").replace(".]","");
-				console.log(siglaPunto)
-				NomePunto = DB.set.aree[siglaPunto].NomePunto;
-				str = str.replace(pts[p], NomePunto);
-			}
-			document.getElementById("scheda_titolo"+nScheda).innerHTML = str;
-		}
-	},
 	convPuntiScheda: function( html, noPall=false ){
 		var nScheda = '';
 		if(SCHEDA.scheda2Aperta)nScheda='2';
@@ -735,7 +686,8 @@ SET = {
 		var pts = html.match(regexp);
 		for(let p in pts){
 			siglaPunto = pts[p].split(".")[1];
-			NomePunto = DB.set.aree[siglaPunto].NomePunto;
+			NomePunto = DB.set.punti[siglaPunto].NomePunto;
+			apparato = DB.set.punti[siglaPunto].apparato;
 			var EL = null;
 			if(scene.getObjectByName( siglaPunto ))EL=scene.getObjectByName( siglaPunto );
 			var pallClass = 'pallinoPat';
@@ -744,7 +696,7 @@ SET = {
 				pallClass += ' pallinoPunto';
 				addClick = 'return;';
 			}
-			html = html.replace(pts[p], '<span class="'+pallClass+'" onClick="'+addClick+'SET.selPunto(\''+siglaPunto+'\')">'+NomePunto+'</span>');
+			html = html.replace(pts[p], '<span class="'+pallClass+'" onClick="'+addClick+'SET.selPunto(\''+siglaPunto+'\')"><span class="pApp app'+apparato+'"></span>'+NomePunto+'</span>');
 		}
 		
 		return html;
