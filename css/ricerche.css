@@ -232,7 +232,9 @@ body:not(.smart) #globalTesta{
 }
 .risGlob.selO,
 .risGlob.selV,
-.risGlob.selM{
+.risGlob.selM,
+.risGlob.selN,
+.risGlob.selL{
 	background-size:auto 80%;
 	background-repeat:no-repeat;
 	background-position:-500px center, 5px center;

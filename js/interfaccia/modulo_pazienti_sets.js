@@ -1701,7 +1701,7 @@ var PAZIENTI_SETS = {
 		if(txt.substr(0,3) != '404' && txt != 'vuoto'){
 			
 			
-			if(PAZIENTI.tipoGruppo=='P' || PAZIENTI.tipoGruppo=='N' || PAZIENTI.tipoGruppo=='A'){ // DA RIVEDERE <<<<<<<<<<<<<<<<<<<<<<<<<<<<<|!!!!!!!!!!!!!!!!
+			if(PAZIENTI.tipoGruppo=='P' || PAZIENTI.tipoGruppo=='N' || PAZIENTI.tipoGruppo=='A' || PAZIENTI.tipoGruppo=='R'){ // DA RIVEDERE <<<<<<<<<<<<<<<<<<<<<<<<<<<<<|!!!!!!!!!!!!!!!!
 				
 				
 				EL = {};
@@ -1754,7 +1754,7 @@ var PAZIENTI_SETS = {
 				var txtPat=DB.set.patologie[i].TestoPatologia;
 				if(PAZIENTI.tipoGruppo=='P' || PAZIENTI.tipoGruppo=='N')re = /\[\.[0-9]{1,2}\.[A-Z]{2}[\.*]+\]/ig;
 				if(PAZIENTI.tipoGruppo=='M')re = /\[\.[A-Z]{2}\.\]/ig;
-				if(PAZIENTI.tipoGruppo=='A' || PAZIENTI.tipoGruppo=='R'){
+				if(PAZIENTI.tipoGruppo=='A'){
 					var list = SET.getListPointPat(i);
 					for(l in list){
 						if(SET.verFreePunti(list[l])){ // verifico le autorizzazioni
@@ -1763,6 +1763,7 @@ var PAZIENTI_SETS = {
 					}
 					re = /\[\.[0-9]{3}\.\]/ig;
 				}
+				if(PAZIENTI.tipoGruppo=='R')re = /\[\.[0-9]{3}\.\]/ig;
 				var result = txtPat.match(re);
 				for(let k in result){
 					let pP = result[k].split(".");
@@ -1775,9 +1776,10 @@ var PAZIENTI_SETS = {
 						if(PAZIENTI.tipoGruppo=='M')pass = SET.verFreeMeridiani(PT)
 						else pass = SET.verFreePunti(PT);
 						// --------------------------
+						
 						if(pass && 
 							((PAZIENTI.tipoGruppo=='P' && pP[2]!='NK') ||
-							 (PAZIENTI.tipoGruppo=='N' && pP[2]=='NK')))EL2.contenuto.push(PT);
+							 (PAZIENTI.tipoGruppo=='N' && pP[2]=='NK') || PAZIENTI.tipoGruppo=='A' || PAZIENTI.tipoGruppo=='R'))EL2.contenuto.push(PT);
 					}
 				}
 				if(EL2.contenuto.length){
@@ -1856,6 +1858,7 @@ var PAZIENTI_SETS = {
 			if( globals.set.cartella=='meridiani_cinesi' || 
 				globals.set.cartella=='meridiani_shiatsu' )mzs = PAZIENTI.mezziSet.P;
 			if(globals.set.cartella=='auricologia')mzs = PAZIENTI.mezziSet.A;
+			if(globals.set.cartella=='reflessologia_plantare')mzs = PAZIENTI.mezziSet.R;
 			if(mzs.length && PAZIENTI.mezziSet[PAZIENTI.tipoGruppo].length){
 				HTML += '	<span class="separatorePulsanti"></span><div id="tt_mezzival2">';
 				for(let m in mzs){
@@ -1910,6 +1913,7 @@ var PAZIENTI_SETS = {
 			mer = pP[1];
 			nPunto = SET.ptToStr(pP[0]);
 		}
+		if(PAZIENTI.tipoGruppo=='A' || PAZIENTI.tipoGruppo=='R')pP[1]='';
 		if((pP[0] && __(DB.set?.meridiani?.[mer])) || !pP[1]){
 			HTML += '<label class="gr_3"' +
 					'		for="'+n+'">' +

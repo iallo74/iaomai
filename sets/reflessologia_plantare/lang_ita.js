@@ -636,38 +636,38 @@ DB.set = {
 		8: "Sistema nervoso e sensi",
 		9: "Sistema endocrino"
 	},
-	protocolli: [
+	patologie: [
 		{
-			titolo: "Riequilibrio generale",
-			testo: ""
+			NomePatologia: "Riequilibrio generale",
+			TestoPatologia: ""
 		},
 		{
-			titolo: "Disequilibri di natura nervosa: ansia, insonnia e stress",
-			testo: ""
+			NomePatologia: "Disequilibri di natura nervosa: ansia, insonnia e stress",
+			TestoPatologia: ""
 		},
 		{
-			titolo: "Problemi di digestione",
-			testo: ""
+			NomePatologia: "Problemi di digestione",
+			TestoPatologia: ""
 		},
 		{
-			titolo: "Problemi intestinali in genere",
-			testo: ""
+			NomePatologia: "Problemi intestinali in genere",
+			TestoPatologia: ""
 		},
 		{
-			titolo: "Dolori alla schiena",
-			testo: ""
+			NomePatologia: "Dolori alla schiena",
+			TestoPatologia: ""
 		},
 		{
-			titolo: "Problemi alle cervicali",
-			testo: ""
+			NomePatologia: "Problemi alle cervicali",
+			TestoPatologia: ""
 		},
 		{
-			titolo: "Debolezza generale e astenia",
-			testo: ""
+			NomePatologia: "Debolezza generale e astenia",
+			TestoPatologia: ""
 		},
 		{
-			titolo: "Problemi legati al ciclo femminile, menopausa",
-			testo: "Xxx [.002.] test [.100.]"
+			NomePatologia: "Problemi legati al ciclo femminile, menopausa",
+			TestoPatologia: "Xxx [.002.] test [.100.]"
 		}
 	],
     teoria: [

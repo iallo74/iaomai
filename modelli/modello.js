@@ -1633,17 +1633,18 @@ var MODELLO = {
 		}
 	},
 	azRicercaAnatomia: function( ELEM, tipo, pin ){
-		if(tipo == 'osso')tipo = 'ossa';
-		if(tipo == 'muscolo3d')tipo = 'muscoli3d';
-		if(tipo == 'legamento')tipo = 'legamenti';
-		if(tipo == 'organo')tipo = 'visceri';
-		if(tipo == 'vaso')tipo = 'vasi';
+		let tipoAnat = '';
+		if(tipo == 'Osso')tipoAnat = 'ossa';
+		if(tipo == 'Muscolo')tipoAnat = 'muscoli3d';
+		if(tipo == 'Legamento')tipoAnat = 'legamenti';
+		if(tipo == 'Organo')tipoAnat = 'visceri';
+		if(tipo == 'Vaso')tipoAnat = 'vasi';
 		if(tipo == 'area'){
 			tipo = 'aree';
 			if(MODELLO.meshPelle.children[0].material.name.indexOf('pelle') > -1)MODELLO.swArea(true);
 		}
 		if(globals.pezziSelezionati.indexOf(ELEM) == -1){
-			document.getElementById("el_"+tipo+"_cont").getElementsByTagName("p")[ELEM].click();
+			document.getElementById("el_"+tipoAnat+"_cont").getElementsByTagName("p")[tipo+"_"+ELEM].click();
 		}
 		MODELLO.centraAnatomia( pin );
 		RICERCHE.nascondiGlobal();

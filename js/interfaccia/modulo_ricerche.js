@@ -72,11 +72,11 @@ var RICERCHE = {
 		}
 		
 		
-		// AuriculoMap
-		if(	globals.set.cartella == 'auricologia' ){
+		// AuriculoMap e ReflexologyMap
+		if(	globals.set.cartella == 'auricologia' || globals.set.cartella == 'reflessologia_plantare' ){
 			var R_parz='';
 			var nRisParz = 0;
-			// CERCO nei PUNTI AURICOLARI
+			// CERCO nei PUNTI AURICOLARI e nei PUNTI PLANTARI
 			for (siglaPunto in DB.set.punti) {
 				var PT = DB.set.punti[siglaPunto];
 				var testo = PT.AzioniPunto+" "+PT.NomePunto+" "+PT.ChiaviPunto;
@@ -108,13 +108,14 @@ var RICERCHE = {
 		var nRisParz = 0;
 		if(DB.note && (	globals.set.cartella == 'meridiani_cinesi' || 
 						globals.set.cartella == 'meridiani_shiatsu' || 
-						globals.set.cartella == 'auricologia' ) ){
+						globals.set.cartella == 'auricologia' || 
+						globals.set.cartella == 'reflessologia_plantare' ) ){
 			for (p in DB.note.data) {
 				var NT = DB.note.data[p];
 				var testo=NT.TestoAnnotazione;
 				var NomePunto = siglaPunto = '';
 				testo=RICERCHE.pulisciTesto(testo);
-				var puntiPass = (globals.set.cartella == 'auricologia') ? (NT.numeroPunto) : (NT.numeroPunto*1-1>-1);
+				var puntiPass = (globals.set.cartella == 'auricologia' || globals.set.cartella == 'reflessologia_plantare') ? (NT.numeroPunto) : (NT.numeroPunto*1-1>-1);
 				if(testo.toUpperCase().indexOf(parola.toUpperCase())>-1 && NT.Cancellato!='1' && puntiPass){
 					
 					if(	( globals.set.cartella == 'meridiani_cinesi' || 
@@ -129,7 +130,8 @@ var RICERCHE = {
 						if(partiNT[0].length == 1)partiNT[0]='0'+partiNT[0];
 						siglaPunto = partiNT[1]+"."+partiNT[0];
 					}
-					if(	globals.set.cartella == 'auricologia' && __(NT.app,'') == 'AUR'){
+					if(	(globals.set.cartella == 'auricologia' && __(NT.app,'') == 'AUR') ||
+						(globals.set.cartella == 'reflessologia_plantare' && __(NT.app,'') == 'RFX')){
 						NomePunto='<b>'+htmlEntities(DB.set.punti[NT.numeroPunto].NomePunto)+"</b>";
 						siglaPunto = "PT"+NT.numeroPunto;
 					}
@@ -166,7 +168,8 @@ var RICERCHE = {
 		var kS=0;
 		if(DB.set.patologie && (globals.set.cartella == 'meridiani_cinesi' || 
 								globals.set.cartella == 'meridiani_shiatsu' || 
-								globals.set.cartella == 'auricologia') ){
+								globals.set.cartella == 'auricologia' || 
+								globals.set.cartella == 'reflessologia_plantare') ){
 			for (p in DB.set.patologie) {
 				var PT = DB.set.patologie[p];
 				var testo=PT.NomePatologia+" "+PT.TestoPatologia+" "+PT.chiaviPatologia;
@@ -194,7 +197,8 @@ var RICERCHE = {
 		var kS=0;
 		if(DB.set.teoria && (	globals.set.cartella == 'meridiani_cinesi' || 
 								globals.set.cartella == 'meridiani_shiatsu' || 
-								globals.set.cartella == 'auricologia')){
+								globals.set.cartella == 'auricologia' || 
+								globals.set.cartella == 'reflessologia_plantare')){
 			for (i in DB.set.teoria) {
 				for (p in DB.set.teoria[i].contenuti) {
 					var TEO = DB.set.teoria[i].contenuti[p];
@@ -224,7 +228,8 @@ var RICERCHE = {
 		var kS=-1;
 		if(DB.procedure && (globals.set.cartella == 'meridiani_cinesi' || 
 							globals.set.cartella == 'meridiani_shiatsu' || 
-							globals.set.cartella == 'auricologia') ){
+							globals.set.cartella == 'auricologia' || 
+							globals.set.cartella == 'reflessologia_plantare') ){
 			for (p in DB.procedure.data) {
 				var PR = DB.procedure.data[p]
 				var testo = PR.NomeProcedura;
@@ -296,40 +301,61 @@ var RICERCHE = {
 			var nRisParz = 0;
 			var kS=0;
 			var pAnat = [];
-			for (p in ANATOMIA.children[3].children) {
-				var pA = ANATOMIA.children[3].children[p].name.split("(");
-				var txt = pA[0].replace("_SX","").replace("_DX","").split(".")[0];
-				if(txt.substr(txt.length-1,1)=='_')txt = txt.substr(0,txt.length-1);
-				var pass = false;
-				var ELEM = txt; 
-				var testo = stripslashes(TXT(""+txt)).toLowerCase();
-				if(testo.indexOf(parola.toLowerCase()) > -1)pass = true;
-				if(pA[1]){
-					var txt = pA[1].replace(")","").replace("_SX","").replace("_DX","").split(".")[0];
+			for (c=0;c<=4;c++) {
+				var tipoAnat = '',
+					iconaTipo = '';
+				if(ANATOMIA.children[c].name == 'Visceri'){
+					tipoAnat = 'Organo';
+					iconaTipo = 'V';
+				}
+				if(ANATOMIA.children[c].name == 'Ossa'){
+					tipoAnat = 'Osso';
+					iconaTipo = 'O';
+				}
+				if(ANATOMIA.children[c].name == 'Muscoli3d'){
+					tipoAnat = 'Muscolo';
+					iconaTipo = 'M';
+				}
+				if(ANATOMIA.children[c].name == 'Legamenti'){
+					tipoAnat = 'Legamento';
+					iconaTipo = 'L';
+				}
+				if(ANATOMIA.children[c].name == 'Vasi'){
+					tipoAnat = 'Vaso';
+					iconaTipo = 'N';
+				}
+				for (p in ANATOMIA.children[c].children) {
+					var pA = ANATOMIA.children[c].children[p].name.split("(");
+					var txt = pA[0].replace("_SX","").replace("_DX","").split(".")[0];
 					if(txt.substr(txt.length-1,1)=='_')txt = txt.substr(0,txt.length-1);
-					var testo = stripslashes(TXT(""+txt)).toLowerCase();
+					var pass = false;
+					var ELEM = txt; 
+					var testo = stripslashes(TXT(tipoAnat+"_"+txt)).toLowerCase();
 					if(testo.indexOf(parola.toLowerCase()) > -1)pass = true;
-				}
-				// cerco anche nelle schede di DB_anatomia
-				if(DB_anatomia[ELEM]){
-					if(DB_anatomia[ELEM].Titolo.toLowerCase().indexOf(parola.toLowerCase()) > -1)pass = true;
-					if(DB_anatomia[ELEM].Descrizione.toLowerCase().indexOf(parola.toLowerCase()) > -1)pass = true;
-				}
-				if(pAnat.indexOf(ELEM) >- 1)pass = false;
-				if(pass){
-					pAnat.push(ELEM);
-					var tipo = ELEM.split("_")[0].toLowerCase();
-					var Tipo = tipo.charAt(0).toUpperCase() + tipo.slice(1);
-					var iconaTipo = '';
-					if(tipo == 'osso')iconaTipo = 'O';
-					if(tipo == 'organo')iconaTipo = 'V';
-					if(tipo == 'area')iconaTipo = 'M';
-					R_parz += RICERCHE.wR({ az: "MODELLO.azRicercaAnatomia('"+ELEM+"','"+tipo+"','"+ANATOMIA.children[3].children[p].name+"');",
-											cont: htmlEntities(stripslashes(TXT(""+ELEM))),
-											class: "sel"+iconaTipo,
-											style: "padding-left:30px;" });
-					nRisParz++;
-					nRis++;
+				
+					if(pA[1]){
+						var txt = pA[1].replace(")","").replace("_SX","").replace("_DX","").split(".")[0];
+						if(txt.substr(txt.length-1,1)=='_')txt = txt.substr(0,txt.length-1);
+						var testo = stripslashes(TXT(tipoAnat+"_"+txt)).toLowerCase();
+						if(testo.indexOf(parola.toLowerCase()) > -1)pass = true;
+					}
+					// cerco anche nelle schede di DB_anatomia
+					if(DB_anatomia[ELEM]){
+						if(DB_anatomia[ELEM].Titolo.toLowerCase().indexOf(parola.toLowerCase()) > -1)pass = true;
+						if(DB_anatomia[ELEM].Descrizione.toLowerCase().indexOf(parola.toLowerCase()) > -1)pass = true;
+					}
+					if(pAnat.indexOf(ELEM) >- 1)pass = false;
+					if(pass){
+						pAnat.push(ELEM);
+						//var tipo = ELEM.split("_")[0].toLowerCase();
+						//var Tipo = tipo.charAt(0).toUpperCase() + tipo.slice(1);
+						R_parz += RICERCHE.wR({ az: "MODELLO.azRicercaAnatomia('"+ELEM+"','"+tipoAnat+"','"+ANATOMIA.children[c].children[p].name+"');",
+												cont: htmlEntities(stripslashes(TXT(tipoAnat+"_"+ELEM))),
+												class: "sel"+iconaTipo,
+												style: "padding-left:30px;" });
+						nRisParz++;
+						nRis++;
+					}
 				}
 			}
 			if(R_parz){

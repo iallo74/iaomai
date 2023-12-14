@@ -212,6 +212,12 @@ var MODULO_PUNTO = { // extend SET
 	verificaNota: function( siglaPunto ){ // verifica l'esistenza di una nota sul punto
 		return SET.note.indexOf(siglaPunto)>-1;
 	},
+	ptToStr: function( nPunto ){
+		nPunto = nPunto+"";
+		if(nPunto.length == 1)nPunto = "00"+nPunto;
+		if(nPunto.length == 2)nPunto = "0"+nPunto;
+		return nPunto;
+	},
 	azRicercaPunto: function( pt ){ // apre la scheda del p dalla ricerca globale
 		SET.apriPunto(pt);
 		evidenziaParola();

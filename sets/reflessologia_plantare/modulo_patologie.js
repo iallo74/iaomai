@@ -16,7 +16,7 @@ var MODULO_PATOLOGIE = { // extend SET
 						'<div class="lista listaPatologie">';
 		
 		// lista				
-		for(let p in DB.set.protocolli){
+		for(let p in DB.set.patologie){
 			
 			// verifico le autorizzazioni
 			var addLock =	(!SET.verFreePatologia(p*1)) ? ' lockedItem' : '';
@@ -25,7 +25,7 @@ var MODULO_PATOLOGIE = { // extend SET
 			contPatologie +=	'<div id="btn_patologia_'+p+'"' +
 								'     class="base'+addLock+((p==SET.patOp)?' elencoSel':'')+'"' +
 								'     onClick="SET.apriPatologia(\''+p+'\',this);">' +
-									DB.set.protocolli[p].titolo +
+									DB.set.patologie[p].NomePatologia +
 								'</div>';
 		}
 		
@@ -44,11 +44,11 @@ var MODULO_PATOLOGIE = { // extend SET
 		}
 		// --------------------------
 		
-		var titolo = DB.set.protocolli[n].titolo;
-		var html = 	"<h1>"+htmlEntities(titolo)+"</h1>" +
+		var NomePatologia = DB.set.patologie[n].NomePatologia;
+		var html = 	"<h1>"+htmlEntities(NomePatologia)+"</h1>" +
 		
 		// aggiungo contenuto custom
-		CUSTOMS.addContent("patologie_"+n,SET.convPuntiScheda(DB.set.protocolli[n].testo));
+		CUSTOMS.addContent("patologie_"+n,SET.convPuntiScheda(DB.set.patologie[n].TestoPatologia));
 
 
 		var ritorno = false;
@@ -58,7 +58,7 @@ var MODULO_PATOLOGIE = { // extend SET
 		
 		var btnAdd = 	'';
 			
-		SCHEDA.caricaScheda(	titolo,
+		SCHEDA.caricaScheda(	NomePatologia,
 								html,
 								'SET.chiudiPatologia();' +
 								'SET.annullaEvidenziaPunto();',
@@ -75,8 +75,8 @@ var MODULO_PATOLOGIE = { // extend SET
 	},
 	filtraPatologie: function( event ){ // filtra le patologie tramite campo di testo
 		var parola = document.getElementById("pat_ricerca").value.trim();
-		for(let p in DB.set.protocolli){
-			if(DB.set.protocolli[p].titolo.toLowerCase().indexOf(parola.toLowerCase()) == -1){
+		for(let p in DB.set.patologie){
+			if(DB.set.patologie[p].NomePatologia.toLowerCase().indexOf(parola.toLowerCase()) == -1){
 				document.getElementById("btn_patologia_"+p).classList.add("nasPazRic");
 			}else{
 				document.getElementById("btn_patologia_"+p).classList.remove("nasPazRic");
