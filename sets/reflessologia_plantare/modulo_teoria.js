@@ -56,6 +56,7 @@ var MODULO_TEORIA = { // extend SET
 		// --------------------------
 		var titolo = DB.set.teoria[p].contenuti[t].TitoloTeoria;
 		var occhiello = __(DB.set.teoria[p].contenuti[t].OcchielloTeoria);
+		var apparato = __(DB.set.teoria[p].contenuti[t].apparato);
 		var meridianiSecondari = __(DB.set.teoria[p].contenuti[t].meridianiSecondari);
 		var html = '';
 		var addTabStyle = '';
@@ -78,7 +79,7 @@ var MODULO_TEORIA = { // extend SET
 							
 		SCHEDA.caricaScheda( 	titolo,
 								html,
-								"SET.annullaEvidenziaPunto();",
+								"SET.ripristinaHiddenGroups();SET.annullaEvidenziaPunto();",
 								'scheda_teoria'+addTabStyle,
 								ritorno,
 								true,
@@ -86,6 +87,21 @@ var MODULO_TEORIA = { // extend SET
 								btnAdd,
 								globals.set.cartella+'_teoria_'+p+"_"+t );
 		SET.evidenziaPunto();
+		SET.ripristinaHiddenGroups();
+		if(apparato){
+			SET.hiddenGroups_safe = clone(SET.hiddenGroups);
+			for(let t=1;t<=9;t++)SET.hiddenGroups[t] = true;
+			SET.swGruppo(apparato);
+			SET.filtraGruppo();
+		}
+	},
+	ripristinaHiddenGroups: function(){
+		if(SET.hiddenGroups_safe){
+			for(let t=1;t<=9;t++){
+				if(SET.hiddenGroups[t] != SET.hiddenGroups_safe[t])SET.swGruppo(t);
+			}
+			SET.hiddenGroups_safe = null;
+		}
 	},
 	caricaVideo: function( p, t, btn ){
 		// carica un approfondimento video

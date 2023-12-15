@@ -18,6 +18,7 @@ SET = {
 	pointEvi: '',
 	tmZone: null,
 	hiddenGroups: [],
+	hiddenGroups_safe: null,
 	patOp: -1,
 	schEvi: null,
 	forzaDissolve: false,

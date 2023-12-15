@@ -861,6 +861,9 @@ body:not(.bodyStyled2) #st_anatomy > div > div:first-child{
 .bodyStyled2 #st_orecchio {
     background-image:url(../img/pG_orecchioN.png);
 }
+.bodyStyled2 #st_piedi {
+    background-image:url(../img/pG_piediN.png);
+}
 body:not(.bodyStyled2) #st_donna {
     background-image:url(../img/pG_donna.png);
 }
@@ -872,4 +875,7 @@ body:not(.bodyStyled2) #st_piede {
 }
 body:not(.bodyStyled2) #st_orecchio {
     background-image:url(../img/pG_orecchio.png);
+}
+body:not(.bodyStyled2) #st_piedi {
+    background-image:url(../img/pG_piedi.png);
 }

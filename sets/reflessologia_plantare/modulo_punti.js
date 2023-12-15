@@ -19,7 +19,7 @@ var MODULO_PUNTI = { // extend SET
 				}
 			}
 		}
-		puntiElenco.sort(sort_by("NomePunto", false));
+		puntiElenco.sort(sort_by("siglaPunto", false));
 		for(a=0;a<puntiElenco.length;a++){
 			var siglaPunto = puntiElenco[a].siglaPunto;
 			n++;
@@ -86,7 +86,7 @@ var MODULO_PUNTI = { // extend SET
 		}
 		SET.filtraGruppo();
 	},
-	filtraGruppo: function( type='', val='', id ='', forza=false){ // filtra i punti pruppo
+	filtraGruppo: function(){ // filtra i punti pruppo
 		let els = scene.getObjectByName("ARs").children;
 		for(let e in els){
 			els[e].visible = !SET.hiddenGroups[els[e].userData.apparato];
