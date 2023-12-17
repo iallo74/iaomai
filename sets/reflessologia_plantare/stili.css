@@ -971,3 +971,24 @@ body.piedi .eviPoints{
 body:not(.piedi) #schedaTerapeutica{
 	background-color: rgba(0,0,0,0.1) !important;
 }
+.titTeo{
+	display: inline-block;
+    margin-bottom: 7px;
+    margin-top: 10px;
+}
+.titTeo,
+.titTeo *:not(.subTeo){
+	font-size: var(--font-16);
+}
+.img_dida{
+	text-align:center;
+	margin:20px 0;
+}
+.img_dida img{
+	width:100%;
+	max-width:600px;
+}
+.img_dida span{
+	display:block;
+	padding:10px 0;
+}
