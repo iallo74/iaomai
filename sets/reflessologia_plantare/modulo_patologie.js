@@ -45,6 +45,7 @@ var MODULO_PATOLOGIE = { // extend SET
 		// --------------------------
 		
 		var NomePatologia = DB.set.patologie[n].NomePatologia;
+		var apparati = DB.set.patologie[n].apparati;
 		var html = 	"<h1>"+htmlEntities(NomePatologia)+"</h1>" +
 		
 		// aggiungo contenuto custom
@@ -60,6 +61,7 @@ var MODULO_PATOLOGIE = { // extend SET
 			
 		SCHEDA.caricaScheda(	NomePatologia,
 								html,
+								'SET.ripristinaVisibili();' +
 								'SET.chiudiPatologia();' +
 								'SET.annullaEvidenziaPunto();',
 								'scheda_patologia',
@@ -69,6 +71,24 @@ var MODULO_PATOLOGIE = { // extend SET
 								btnAdd,
 								globals.set.cartella+'_patologie_'+n );
 								SET.evidenziaPunto();
+		
+		SET.ripristinaVisibili();
+		let els = SETS.children[0].children;
+		for(let e in els){
+			if(apparati.indexOf(els[e].userData.apparato)==-1 && els[e].material.name.indexOf("EVI")==-1)els[e].visible = false;
+			if(apparati.indexOf(els[e].userData.apparato)>-1 || els[e].material.name.indexOf("EVI")>-1){
+				els[e].material.opacity = SET.MAT.opAreaPat;
+				if(SET.apparatiPats.indexOf(parseInt(els[e].userData.apparato))==-1)SET.apparatiPats.push(els[e].userData.apparato);
+			}
+		}
+	},
+	ripristinaVisibili: function(){
+		let els = SETS.children[0].children;
+		for(let e in els){
+			els[e].visible = true;
+		}
+		SET.apparatiPats = [];
+		SET.MAT.areaEvi.opacity = SET.MAT.opAreaEvi;
 	},
 	chiudiPatologia: function(){
 		SET.patOp = -1;

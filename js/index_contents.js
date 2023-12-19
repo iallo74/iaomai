@@ -403,22 +403,22 @@ var modelli = {
 			'Muscle_Leg.js',
 			'mappa_muscoli3d.js',
 			'pelle_compr.js',
+			'vasi_compr.js',
+			'muscoli3d_compr.js',
 			'ossa_compr.js',
 			'legamenti_compr.js',
-			'muscoli3d_compr.js',
-			'vasi_compr.js',
 			'guide_compr.js'
 		],
 		dims: [
 			635,
 			290,
 			1,
-			1706,
-			2015,
-			726,
-			1376,
-			1215,
-			15
+			3187,
+			2282,
+			2555,
+			3710,
+			1344,
+			57
 		],
 		livelli: [
 			'pelle',

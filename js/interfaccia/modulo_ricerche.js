@@ -301,32 +301,45 @@ var RICERCHE = {
 			var nRisParz = 0;
 			var kS=0;
 			var pAnat = [];
-			for (c=0;c<=4;c++) {
+			let livs = [0,1,2,3,4,7];
+			for (l in livs) {
+				let c = livs[l];
 				var tipoAnat = '',
 					iconaTipo = '';
 				if(ANATOMIA.children[c].name == 'Visceri'){
 					tipoAnat = 'Organo';
+					tipo = tipoAnat;
 					iconaTipo = 'V';
 				}
 				if(ANATOMIA.children[c].name == 'Ossa'){
 					tipoAnat = 'Osso';
+					tipo = tipoAnat;
 					iconaTipo = 'O';
 				}
 				if(ANATOMIA.children[c].name == 'Muscoli3d'){
 					tipoAnat = 'Muscolo';
+					tipo = tipoAnat;
+					iconaTipo = 'M';
+				}
+				if(ANATOMIA.children[c].name == 'pins_aree'){
+					tipoAnat = 'Muscolo';
+					tipo = 'area';
 					iconaTipo = 'M';
 				}
 				if(ANATOMIA.children[c].name == 'Legamenti'){
 					tipoAnat = 'Legamento';
+					tipo = tipoAnat;
 					iconaTipo = 'L';
 				}
 				if(ANATOMIA.children[c].name == 'Vasi'){
 					tipoAnat = 'Vaso';
+					tipo = tipoAnat;
 					iconaTipo = 'N';
 				}
 				for (p in ANATOMIA.children[c].children) {
 					var pA = ANATOMIA.children[c].children[p].name.split("(");
 					var txt = pA[0].replace("_SX","").replace("_DX","").split(".")[0];
+					if(ANATOMIA.children[c].name == 'pins_aree')txt = txt.replace("PIN_Muscolo_","");
 					if(txt.substr(txt.length-1,1)=='_')txt = txt.substr(0,txt.length-1);
 					var pass = false;
 					var ELEM = txt; 
@@ -349,7 +362,7 @@ var RICERCHE = {
 						pAnat.push(ELEM);
 						//var tipo = ELEM.split("_")[0].toLowerCase();
 						//var Tipo = tipo.charAt(0).toUpperCase() + tipo.slice(1);
-						R_parz += RICERCHE.wR({ az: "MODELLO.azRicercaAnatomia('"+ELEM+"','"+tipoAnat+"','"+ANATOMIA.children[c].children[p].name+"');",
+						R_parz += RICERCHE.wR({ az: "MODELLO.azRicercaAnatomia('"+ELEM+"','"+tipo+"','"+ANATOMIA.children[c].children[p].name+"');",
 												cont: htmlEntities(stripslashes(TXT(tipoAnat+"_"+ELEM))),
 												class: "sel"+iconaTipo,
 												style: "padding-left:30px;" });
@@ -358,6 +371,7 @@ var RICERCHE = {
 					}
 				}
 			}
+			
 			if(R_parz){
 				sezioni++;
 				HTML_index+='<div class="labelGlobal" id="lb'+sezioni+'" onClick="RICERCHE.swCartGlob('+sezioni+');">'+TXT("Anatomia")+' ('+nRisParz+')</div>';

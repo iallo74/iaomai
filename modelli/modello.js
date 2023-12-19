@@ -88,55 +88,6 @@ var MODELLO = {
 			visceri.name = 'VISCERI';
 			ANATOMIA.add( visceri );
 		}
-
-		if(globals.modello.livelli.indexOf("vasi") > -1){
-			obj_vasi = JSON.parse(LZString.decompressFromBase64(obj_vasi));
-			
-			var loader = new THREE.ObjectLoader(); // VASI
-			this.meshVasi = loader.parse( obj_vasi );
-			for(let n=0;n<this.meshVasi.children.length;n++){
-				this.meshVasi.children[n].userData.matAdd = '';
-				var mat = MODELLO.MAT.materialVasi;
-				if(eval("MODELLO.MAT.material"+this.meshVasi.children[n].name.replace(rgMat,""))){
-					mat = eval("MODELLO.MAT.material"+this.meshVasi.children[n].name);
-				}
-				let matches = this.meshVasi.children[n].name.match(rgMat);
-				if(matches){
-					mat = eval("MODELLO.MAT.materialVasi"+matches[1]);
-					this.meshVasi.children[n].userData.matAdd = matches[1];
-				}
-				this.meshVasi.children[n].material = mat;
-				this.meshVasi.children[n].name = this.meshVasi.children[n].name.replace(rgMat,"");
-			}
-			this.meshVasi.name = 'Vasi';
-			ANATOMIA.add( this.meshVasi );
-
-			MODELLO.op('Vasi',MENU.getOp('Vasi')); // ri-setto al cambio del modello
-			
-			/* elenco organi */
-			var arrayVasi = [];
-			if(this.meshVasi.children.length > 0){
-				for(let o in MODELLO.meshVasi.children){
-					arrayVasi.push({
-						vaso: MODELLO.meshVasi.children[o].name,
-						nome: TXT("Vaso_"+MODELLO.meshVasi.children[o].name)
-					});
-				}
-				arrayVasi.sort(function(a,b){
-					return a.nome.localeCompare(b.nome);
-				})
-				var htmlVasi = '';
-				for(let o in arrayVasi){
-					htmlVasi += '<p id="Vaso_'+arrayVasi[o].vaso+'" onMouseOver="MODELLO.isolaVaso(this,\'over\');" onMouseOut="MODELLO.isolaVaso(this,\'out\');" onClick="MODELLO.isolaVaso(this)">'+stripslashes(arrayVasi[o].nome)+'</p>';
-				}
-				document.getElementById("p_vasi").classList.add("livelli_listed");
-			}
-			document.getElementById("el_vasi").innerHTML = __(htmlVasi,'');
-		}else{
-			vasi = new THREE.Group();
-			vasi.name = 'VASI';
-			ANATOMIA.add( vasi );
-		}
 		
 		if(globals.modello.livelli.indexOf("ossa") > -1){
 			obj_ossa = JSON.parse(LZString.decompressFromBase64(obj_ossa));
@@ -181,52 +132,6 @@ var MODELLO = {
 			ossa = new THREE.Group();
 			ossa.name = 'OSSA';
 			ANATOMIA.add( ossa );
-		}
-
-
-		if(globals.modello.livelli.indexOf("legamenti") > -1){
-			obj_legamenti = JSON.parse(LZString.decompressFromBase64(obj_legamenti));
-			var loader = new THREE.ObjectLoader(); // LEGAMENTI
-			this.meshLegamenti = loader.parse( obj_legamenti );
-			for(let n=0;n<this.meshLegamenti.children.length;n++){
-				this.meshLegamenti.children[n].userData.matAdd = '';
-				let mat = this.MAT.materialLegamenti;
-				let matches = this.meshLegamenti.children[n].name.match(rgMat);
-				if(matches){
-					mat = eval("MODELLO.MAT.materialLegamenti"+matches[1]);
-					this.meshLegamenti.children[n].userData.matAdd = matches[1];
-				}
-				this.meshLegamenti.children[n].material = mat;
-				this.meshLegamenti.children[n].name = this.meshLegamenti.children[n].name.replace(rgMat,"");
-			}
-			this.meshLegamenti.name = 'Legamenti';
-			ANATOMIA.add( this.meshLegamenti );
-			MODELLO.op('Legamenti',MENU.getOp('Legamenti')); // ri-setto al cambio del modello
-			
-			/* elenco legamenti */
-			var arrayLegamenti = [];
-			if(this.meshLegamenti.children.length > 0){
-				for(let o in MODELLO.meshLegamenti.children){
-					arrayLegamenti.push({
-						legamento: MODELLO.meshLegamenti.children[o].name,
-						nome: TXT("Legamento_"+MODELLO.meshLegamenti.children[o].name)
-					});
-				}
-				arrayLegamenti.sort(function(a,b){
-					return a.nome.localeCompare(b.nome);
-				})
-				var htmlLegamenti = '';
-				for(let o in arrayLegamenti){
-					htmlLegamenti += '<p id="Legamento_'+arrayLegamenti[o].legamento+'" onMouseOver="MODELLO.isolaLegamento(this,\'over\');" onMouseOut="MODELLO.isolaLegamento(this,\'out\');" onClick="MODELLO.isolaLegamento(this);">'+stripslashes(arrayLegamenti[o].nome)+'</p>';
-				}
-				document.getElementById("p_legamenti").classList.add("livelli_listed");
-			}
-			document.getElementById("el_legamenti").innerHTML = __(htmlLegamenti,'');
-			
-		}else{
-			legamenti = new THREE.Group();
-			legamenti.name = 'LEGAMENTI';
-			ANATOMIA.add( legamenti );
 		}
 
 
@@ -278,6 +183,101 @@ var MODELLO = {
 			ANATOMIA.add( muscoli3d );
 		}
 
+
+		if(globals.modello.livelli.indexOf("legamenti") > -1){
+			obj_legamenti = JSON.parse(LZString.decompressFromBase64(obj_legamenti));
+			var loader = new THREE.ObjectLoader(); // LEGAMENTI
+			this.meshLegamenti = loader.parse( obj_legamenti );
+			for(let n=0;n<this.meshLegamenti.children.length;n++){
+				this.meshLegamenti.children[n].userData.matAdd = '';
+				let mat = this.MAT.materialLegamenti;
+				let matches = this.meshLegamenti.children[n].name.match(rgMat);
+				if(matches){
+					mat = eval("MODELLO.MAT.materialLegamenti"+matches[1]);
+					this.meshLegamenti.children[n].userData.matAdd = matches[1];
+				}
+				this.meshLegamenti.children[n].material = mat;
+				this.meshLegamenti.children[n].name = this.meshLegamenti.children[n].name.replace(rgMat,"");
+			}
+			this.meshLegamenti.name = 'Legamenti';
+			ANATOMIA.add( this.meshLegamenti );
+			MODELLO.op('Legamenti',MENU.getOp('Legamenti')); // ri-setto al cambio del modello
+			
+			/* elenco legamenti */
+			var arrayLegamenti = [];
+			if(this.meshLegamenti.children.length > 0){
+				for(let o in MODELLO.meshLegamenti.children){
+					arrayLegamenti.push({
+						legamento: MODELLO.meshLegamenti.children[o].name,
+						nome: TXT("Legamento_"+MODELLO.meshLegamenti.children[o].name)
+					});
+				}
+				arrayLegamenti.sort(function(a,b){
+					return a.nome.localeCompare(b.nome);
+				})
+				var htmlLegamenti = '';
+				for(let o in arrayLegamenti){
+					htmlLegamenti += '<p id="Legamento_'+arrayLegamenti[o].legamento+'" onMouseOver="MODELLO.isolaLegamento(this,\'over\');" onMouseOut="MODELLO.isolaLegamento(this,\'out\');" onClick="MODELLO.isolaLegamento(this);">'+stripslashes(arrayLegamenti[o].nome)+'</p>';
+				}
+				document.getElementById("p_legamenti").classList.add("livelli_listed");
+			}
+			document.getElementById("el_legamenti").innerHTML = __(htmlLegamenti,'');
+			
+		}else{
+			legamenti = new THREE.Group();
+			legamenti.name = 'LEGAMENTI';
+			ANATOMIA.add( legamenti );
+		}
+
+
+		if(globals.modello.livelli.indexOf("vasi") > -1){
+			obj_vasi = JSON.parse(LZString.decompressFromBase64(obj_vasi));
+			
+			var loader = new THREE.ObjectLoader(); // VASI
+			this.meshVasi = loader.parse( obj_vasi );
+			for(let n=0;n<this.meshVasi.children.length;n++){
+				this.meshVasi.children[n].userData.matAdd = '';
+				var mat = MODELLO.MAT.materialVasi;
+				if(eval("MODELLO.MAT.material"+this.meshVasi.children[n].name.replace(rgMat,""))){
+					mat = eval("MODELLO.MAT.material"+this.meshVasi.children[n].name);
+				}
+				let matches = this.meshVasi.children[n].name.match(rgMat);
+				if(matches){
+					mat = eval("MODELLO.MAT.materialVasi"+matches[1]);
+					this.meshVasi.children[n].userData.matAdd = matches[1];
+				}
+				this.meshVasi.children[n].material = mat;
+				this.meshVasi.children[n].name = this.meshVasi.children[n].name.replace(rgMat,"");
+			}
+			this.meshVasi.name = 'Vasi';
+			ANATOMIA.add( this.meshVasi );
+
+			MODELLO.op('Vasi',MENU.getOp('Vasi')); // ri-setto al cambio del modello
+			
+			/* elenco organi */
+			var arrayVasi = [];
+			if(this.meshVasi.children.length > 0){
+				for(let o in MODELLO.meshVasi.children){
+					arrayVasi.push({
+						vaso: MODELLO.meshVasi.children[o].name,
+						nome: TXT("Vaso_"+MODELLO.meshVasi.children[o].name)
+					});
+				}
+				arrayVasi.sort(function(a,b){
+					return a.nome.localeCompare(b.nome);
+				})
+				var htmlVasi = '';
+				for(let o in arrayVasi){
+					htmlVasi += '<p id="Vaso_'+arrayVasi[o].vaso+'" onMouseOver="MODELLO.isolaVaso(this,\'over\');" onMouseOut="MODELLO.isolaVaso(this,\'out\');" onClick="MODELLO.isolaVaso(this)">'+stripslashes(arrayVasi[o].nome)+'</p>';
+				}
+				document.getElementById("p_vasi").classList.add("livelli_listed");
+			}
+			document.getElementById("el_vasi").innerHTML = __(htmlVasi,'');
+		}else{
+			vasi = new THREE.Group();
+			vasi.name = 'VASI';
+			ANATOMIA.add( vasi );
+		}
 
 
 		
@@ -1530,7 +1530,8 @@ var MODELLO = {
 				if(globals.pezziSelezionati[m].indexOf("Muscolo_") > -1)MODELLO.areaSel = true;
 			}
 		}
-		MODELLO.op("Aree",MENU.getOp("Aree"));
+		//MODELLO.op("Aree",MENU.getOp("Aree"));
+		MODELLO.op("Aree",1);
 		MENU.verSelected();
 		//if(!MODELLO.areaSel)MODELLO.tutteAree();
 	},
@@ -1633,6 +1634,8 @@ var MODELLO = {
 		}
 	},
 	azRicercaAnatomia: function( ELEM, tipo, pin ){
+		SCHEDA.scaricaScheda();
+		MENU.chiudiAllSelected();
 		let tipoAnat = '';
 		if(tipo == 'Osso')tipoAnat = 'ossa';
 		if(tipo == 'Muscolo')tipoAnat = 'muscoli3d';
@@ -1640,14 +1643,16 @@ var MODELLO = {
 		if(tipo == 'Organo')tipoAnat = 'visceri';
 		if(tipo == 'Vaso')tipoAnat = 'vasi';
 		if(tipo == 'area'){
-			tipo = 'aree';
+			tipoAnat = 'aree';
+			tipo = 'Muscolo';
 			if(MODELLO.meshPelle.children[0].material.name.indexOf('pelle') > -1)MODELLO.swArea(true);
 		}
 		if(globals.pezziSelezionati.indexOf(ELEM) == -1){
 			document.getElementById("el_"+tipoAnat+"_cont").getElementsByTagName("p")[tipo+"_"+ELEM].click();
 		}
-		MODELLO.centraAnatomia( pin );
-		RICERCHE.nascondiGlobal();
+		//MODELLO.centraAnatomia( pin );
+		//RICERCHE.nascondiGlobal();
+		RICERCHE.historyGlobal();
 	},
 	cambiaTipoPelle: function( tipo ){
 		if(globals.modello.cartella == 'orecchio' && tipo){

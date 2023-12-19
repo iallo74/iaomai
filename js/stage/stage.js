@@ -19,6 +19,7 @@ var rotateStart=panStart=panStartZero=zoomStart=null;
 var noAnimate = true;
 var postApreSet = false;
 var ctrl_pressed = false;
+var ctrl_fixed = false;
 /*var colori = [ 
 	"#333",
 	"#076baa",
@@ -172,7 +173,7 @@ function init() {
 }
 
 function keyDownStage( event ){
-	if(event.keyCode==17){
+	if(event.keyCode==17 || ctrl_fixed){
 		ctrl_pressed = true;
 		if(	globals.set.cartella && 
 			globals.modello.cartella &&
@@ -187,7 +188,7 @@ function keyDownStage( event ){
 	}
 }
 function keyUpStage( event ){
-	if(event.keyCode==17){
+	if(event.keyCode==17 && !ctrl_fixed){
 		ctrl_pressed = false;
 		if(	globals.set.cartella && 
 			globals.modello.cartella &&
@@ -576,7 +577,7 @@ function onMouseMove( event ) {
 }
 
 function render(forza=false) {
-	if(globals.set.cartella && !ctrl_pressed){
+	if(globals.set.cartella && !ctrl_pressed && !ctrl_fixed){
 		try{
 			make = SET._render();
 		}catch(err){
@@ -769,7 +770,7 @@ function normalizeRotation(){
 	manichinoCont.rotation.set( newX, newY, 0 );
 }
 function onClick(){
-	if(globals.set.cartella && !ctrl_pressed){
+	if(globals.set.cartella && !ctrl_pressed && !ctrl_fixed){
 		try{
 			SET._onClick(event);
 		}catch(err){

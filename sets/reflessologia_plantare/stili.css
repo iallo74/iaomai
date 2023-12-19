@@ -992,3 +992,20 @@ body:not(.piedi) #schedaTerapeutica{
 	display:block;
 	padding:10px 0;
 }
+.clickableAnatomy{
+	display:inline-block;
+	line-height:20px;
+	height:20px;
+	cursor:pointer;
+	text-decoration:underline;
+	text-decoration-color: #e63314;
+	-moz-text-decoration-color: #e63314;
+	/* background-image: url(../../img/p_isola.png);
+	background-repeat: no-repeat;
+	background-position: left center;
+	background-size: auto 16px;
+	padding-left:18px; */
+}
+.hiddenDiv{
+	display:none;
+}

@@ -19,6 +19,8 @@ SET = {
 	tmZone: null,
 	hiddenGroups: [],
 	hiddenGroups_safe: null,
+	opAnatomy_safe: null,
+	apparatiPats: [],
 	patOp: -1,
 	schEvi: null,
 	forzaDissolve: false,
@@ -373,7 +375,7 @@ SET = {
 		
 		this.ptSel=PT;
 		for(let a in DB.set.apparati){
-			SET.MAT["area"+a+"Base"].opacity = SET.MAT.opAreaWhenSel;
+			SET.MAT["area"+a+"Base"].opacity = SET.apparatiPats.indexOf(parseInt(a))>-1?SET.MAT.opAreaPat:SET.MAT.opAreaWhenSel;
 			SET.MAT["area"+a+"Over"].opacity = SET.MAT.opAreaWhenSelOn;
 		}
 		PT.material = SET.MAT.areaSel;
@@ -433,7 +435,7 @@ SET = {
 				normalizeRotation();
 				rotateEnd = { x:pos.x, y: pos.y, z:0 };
 			}
-			if(manichinoCont.position.z<15 || !zoomEnd || !smothingView)zoomEnd = 15;
+			//if(manichinoCont.position.z<15 || !zoomEnd || !smothingView)zoomEnd = 15;
 			normalizeRotation();
 		}
 		SET.caricaPunto( PT_name, ritorno );
@@ -453,7 +455,7 @@ SET = {
 		//if(!SET.puntiEvidenziati){
 		if(!document.getElementById("puntiPlantari")){
 			for(let a in DB.set.apparati){
-				SET.MAT["area"+a+"Base"].opacity = SET.MAT.opArea;
+				SET.MAT["area"+a+"Base"].opacity = SET.apparatiPats.indexOf(parseInt(a))>-1?SET.MAT.opAreaPat:SET.MAT.opArea;
 				SET.MAT["area"+a+"Over"].opacity = SET.MAT.opAreaOn;
 			}
 		}
@@ -607,7 +609,7 @@ SET = {
 				}
 			}
 			for(let a in DB.set.apparati){
-				SET.MAT["area"+a+"Base"].opacity = SET.MAT.opAreaWhenSel;
+				SET.MAT["area"+a+"Base"].opacity = SET.apparatiPats.indexOf(parseInt(a))>-1?SET.MAT.opAreaPat:SET.MAT.opAreaWhenSel;
 				SET.MAT["area"+a+"Over"].opacity = SET.MAT.opAreaWhenSelOn;
 			}
 		}
@@ -626,7 +628,7 @@ SET = {
 		}
 		SET.puntiEvidenziati = [];
 		for(let a in DB.set.apparati){
-			SET.MAT["area"+a+"Base"].opacity = SET.MAT.opArea;
+			SET.MAT["area"+a+"Base"].opacity = SET.apparatiPats.indexOf(parseInt(a))>-1?SET.MAT.opAreaPat:SET.MAT.opArea;
 			SET.MAT["area"+a+"Over"].opacity = SET.MAT.opAreaOn;
 		}
 	},

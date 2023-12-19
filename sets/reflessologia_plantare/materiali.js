@@ -34,6 +34,7 @@ function cloneMAT(mat,par){
 // LINEE
 SET.MAT = {
 	opArea: 0.4,
+	opAreaPat: 0.4,
 	opAreaOn: 0.65,
 	opAreaWhenSel: 0.2,
 	opAreaWhenSelOn: 0.37,
@@ -306,7 +307,7 @@ SET.MAT = {
 		roughness:1,
 		metalness:0.3,
 		side: 3,
-		opacity: 0.7
+		opacity: 0.8
 	}),
 	
 }

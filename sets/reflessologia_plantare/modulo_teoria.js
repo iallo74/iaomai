@@ -2,8 +2,7 @@
 var MODULO_TEORIA = { // extend SET
 
 	TEORIA_free: [
-		"0_0", "0_1", "0_2", "0_3", "0_4", "0_5", "0_6", "0_7", "0_8", "0_9", "0_10",
-		"1_4", "2_0", "3_0", "4_0", "5_0", "6_0", "7_0", "8_0", "8_1", "8_2", "8_3", "8_4"
+		"0_0", "0_1", "2_1", "4_0", "4_1", "4_2"
 	],
 	
 	caricaApprofondimenti: function(){
@@ -57,6 +56,7 @@ var MODULO_TEORIA = { // extend SET
 		var titolo = DB.set.teoria[p].contenuti[t].TitoloTeoria;
 		var occhiello = __(DB.set.teoria[p].contenuti[t].OcchielloTeoria);
 		var apparato = __(DB.set.teoria[p].contenuti[t].apparato);
+		var anatomia = __(DB.set.teoria[p].contenuti[t].anatomia);
 		var meridianiSecondari = __(DB.set.teoria[p].contenuti[t].meridianiSecondari);
 		var html = '';
 		var addTabStyle = '';
@@ -79,7 +79,7 @@ var MODULO_TEORIA = { // extend SET
 							
 		SCHEDA.caricaScheda( 	titolo,
 								html,
-								"SET.ripristinaHiddenGroups();SET.annullaEvidenziaPunto();",
+								"SET.ripristinaHiddenGroups();SET.ripristinaOpAnatomy();SET.annullaEvidenziaPunto();",
 								'scheda_teoria'+addTabStyle,
 								ritorno,
 								true,
@@ -93,6 +93,89 @@ var MODULO_TEORIA = { // extend SET
 			for(let t=1;t<=9;t++)SET.hiddenGroups[t] = true;
 			SET.swGruppo(apparato);
 			SET.filtraGruppo();
+		}
+		SET.ripristinaOpAnatomy();
+		if(anatomia){
+			SET.opAnatomy_safe = {
+				pelle: 		MENU.getOp("pelle"),
+				ossa: 		MENU.getOp("ossa"),
+				vasi: 		MENU.getOp("vasi"),
+				muscoli: 	MENU.getOp("muscoli3d"),
+				legamenti: 	MENU.getOp("legamenti")
+			}
+			switch(anatomia){
+				case "Vasi":
+					MODELLO.op("Pelle",0.166);
+					MODELLO.op("Muscoli3d",0);
+					MODELLO.op("Ossa",0.5);
+					MODELLO.op("Legamenti",0);
+					MODELLO.op("Vasi",1);
+					break;
+				case "Ossa":
+					MODELLO.op("Pelle",0.166);
+					MODELLO.op("Muscoli3d",0);
+					MODELLO.op("Ossa",1);
+					MODELLO.op("Legamenti",0);
+					MODELLO.op("Vasi",0);
+					break;
+				case "Muscoli":
+					MODELLO.op("Pelle",0.166);
+					MODELLO.op("Muscoli3d",1);
+					MODELLO.op("Ossa",0.5);
+					MODELLO.op("Legamenti",0);
+					MODELLO.op("Vasi",0);
+					break;
+				case "Legamenti":
+					MODELLO.op("Pelle",0.166);
+					MODELLO.op("Muscoli3d",0);
+					MODELLO.op("Ossa",0.5);
+					MODELLO.op("Legamenti",1);
+					MODELLO.op("Vasi",0);
+					break;
+			}
+			SETS.children[0].visible = false;
+			MENU.aggiornaIconeModello();
+			ctrl_fixed = true;
+			keyDownStage({keyCode:0});
+		}
+	},
+	selAnatomy: function( tipo, ids ){
+		if(typeof(ids)!='object')ids = [ids];
+		MENU.chiudiAllSelected();
+		switch(tipo){
+			case "Muscolo":
+				for(id in ids){
+					MODELLO.isolaMuscolo3d(document.getElementById('Muscolo_'+ids[id]), '', true);
+					MODELLO.isolaAnatomia('Muscolo3d','Muscolo_'+ids[id]+'_DX');
+				}
+				break;
+			case "Osso":
+				console.log(ids)
+				console.log(typeof(ids))
+				for(id in ids)MODELLO.isolaOsso(document.getElementById('Osso_'+ids[id]), '', true);
+				break;
+			case "Legamento":
+				for(id in ids)MODELLO.isolaLegamento(document.getElementById('Legamento_'+ids[id]), '', true);
+				break;
+			case "Vaso":
+				for(id in ids)MODELLO.isolaVaso(document.getElementById('Vaso_'+ids[id]), '', true);
+				break;
+		}
+		
+	},
+	ripristinaOpAnatomy: function(){
+		if(SET.opAnatomy_safe){
+			MENU.chiudiAllSelected();
+			ctrl_fixed = false;
+			keyUpStage({keyCode:17});
+			MODELLO.op("Pelle",		SET.opAnatomy_safe["pelle"]);
+			MODELLO.op("Muscoli3d",	SET.opAnatomy_safe["muscoli"]);
+			MODELLO.op("Ossa",		SET.opAnatomy_safe["ossa"]);
+			MODELLO.op("Legamenti",	SET.opAnatomy_safe["legamenti"]);
+			MODELLO.op("Vasi",		SET.opAnatomy_safe["vasi"]);
+			SET.opAnatomy_safe = null;
+			SETS.children[0].visible = true;
+			MENU.aggiornaIconeModello();
 		}
 	},
 	ripristinaHiddenGroups: function(){
