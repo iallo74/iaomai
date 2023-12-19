@@ -7,7 +7,7 @@
 }
 
 #pulsante_modello{
-	background-image: url(../reflessologia_plantare/img/logoMenuN.png) !important;
+	background-image: url(../../img/pG_piediN.png) !important;
     background-repeat: no-repeat !important;
     background-position: calc(100% - 10px)center !important;
     background-size: auto 32px!important;
@@ -447,7 +447,7 @@ body:not(.smart) .selElPt{
     height: 30px;
     display: inline-block;
     vertical-align: top;
-    margin-left: -3px;
+    margin-left: -4px;
 	border-radius:5px;
 }
 .smart #btnFiltri{

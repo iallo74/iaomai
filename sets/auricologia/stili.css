@@ -644,7 +644,7 @@ body:not(.smart) .selElPt{
     height: 30px;
     display: inline-block;
     vertical-align: top;
-    margin-left: -3px;
+    margin-left: -4px;
 	border-radius:5px;
 }
 .smart #btnFiltri{

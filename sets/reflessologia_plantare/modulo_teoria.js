@@ -163,6 +163,10 @@ var MODULO_TEORIA = { // extend SET
 		}
 		
 	},
+	linkTeo: function(s,t){
+		SET.caricaApprofondimento(s,t,document.getElementById("btn_teoria_"+s+"_"+t));
+		SCHEDA.swCartella(document.getElementById("btn_teoria_cart_"+s),true);
+	},
 	ripristinaOpAnatomy: function(){
 		if(SET.opAnatomy_safe){
 			MENU.chiudiAllSelected();
