@@ -147,6 +147,10 @@ var MODULO_TEORIA = { // extend SET
 				for(id in ids){
 					MODELLO.isolaMuscolo3d(document.getElementById('Muscolo_'+ids[id]), '', true);
 					MODELLO.isolaAnatomia('Muscolo3d','Muscolo_'+ids[id]+'_DX');
+					MODELLO.op("Pelle",0.166);
+					MODELLO.op("Ossa",0.5);
+					MODELLO.op("Legamenti",0);
+					MODELLO.op("Vasi",0);
 				}
 				break;
 			case "Osso":

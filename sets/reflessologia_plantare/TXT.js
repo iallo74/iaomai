@@ -27,12 +27,12 @@ DB.TXT.set = {
         deu: "Systeme"
     },
     Patologie: {
-        ita: "Protocolli",
-		eng: "Protocols",
-		esp: "Protocolos",
-		fra: "Protocoles",
-		por: "Protocolos",
-		deu: "Protocol"
+        ita: "Ipotesi di trattamento",
+		eng: "Hypothesis of treatment",
+        esp: "Hipótesis de tratamiento",
+        fra: "Hypothèse de traitement",
+        por: "Hipótese de tratamento",
+        deu: "Behandlungshypothese"
     },
     Punto: {
         ita: "Area",
