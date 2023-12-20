@@ -12,7 +12,7 @@ SET.COL = {
 	col6: 0x846a47,
 	col7: 0x2dac0b,
 	col8: 0xffcc2f,
-	col9: 0x66cccc,
+	col9: 0x33b2b2,
 	
 	selAR: 0xFF0000,
 	overAR: 0x666666,

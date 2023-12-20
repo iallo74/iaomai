@@ -6088,6 +6088,14 @@ DB.TXT = {
             por: "NERVO PLANTAR MEDIAL",
             deu: "MEDIALER PLANTARNERV"
         },
+        Vaso_NERVO_PLANTARE_LATERALE: {
+            ita: "NERVO PLANTARE LATERALE",
+            eng: "LATERAL PLANTAR NERVE",
+            esp: "NERVIO PLANTAR LATERAL",
+            fra: "NERF PLANTAIRE LATÉRAL",
+            por: "NERVO PLANTAR LATERAL",
+            deu: "LATERALER PLANTARNERV"
+        },
         Vaso_NERVO_SAFENO: {
             ita: "NERVO SAFENO",
             eng: "SAPHENOUS NERVE",
@@ -6096,13 +6104,13 @@ DB.TXT = {
             por: "NERVO SAFENO",
             deu: "SAFENUSNERV"
         },
-        Vaso_NERVO_SCIATICO: {
-            ita: "NERVO SCIATICO",
-            eng: "SCIATIC NERVE",
-            esp: "NERVIO CIÁTICO",
-            fra: "NERF SCIAITIQUE",
-            por: "NERVO CIÁTICO",
-            deu: "ISCHIASNERV"
+        Vaso_NERVO_SURALE: {
+            ita: "NERVO SURALE",
+            eng: "SURAL NERVE",
+            esp: "NERVIO SURAL",
+            fra: "NERF SURAL",
+            por: "NERVO SURAL",
+            deu: "SURANERVEN"
         },
         Vaso_NERVO_TIBIALE_POSTERIORE: {
             ita: "NERVO TIBIALE POSTERIORE",

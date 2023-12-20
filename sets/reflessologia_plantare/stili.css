@@ -327,7 +327,7 @@ body.smart #elenchi .listaPunti{
 	background-color: #ffcc2f;
 }
 .app9{
-	background-color: #66cccc;
+	background-color: #33b2b2;
 }
 
 
@@ -993,18 +993,22 @@ body:not(.piedi) #schedaTerapeutica{
 	padding:10px 0;
 }
 .clickableAnatomy{
-	display:inline-block;
-	line-height:20px;
-	height:20px;
-	cursor:pointer;
-	text-decoration:underline;
-	text-decoration-color: #e63314;
-	-moz-text-decoration-color: #e63314;
+	display: inline-block;
+    line-height: 20px;
+    height: 20px;
+    cursor: pointer;
+    text-decoration: underline;
+    text-decoration-color: #f500cf;
+    -moz-text-decoration-color: #f500cf;
+    background-color: rgba(195,100,200,0.2);
 	/* background-image: url(../../img/p_isola.png);
 	background-repeat: no-repeat;
 	background-position: left center;
 	background-size: auto 16px;
 	padding-left:18px; */
+}
+.clickableAnatomy:hover{
+    background-color: rgba(195,100,200,0.3);
 }
 .hiddenDiv{
 	display:none;
