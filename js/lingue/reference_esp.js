@@ -123,7 +123,28 @@ DB.reference = {
 			  "cont": "AuriculoMap cuenta con 254 patologías que comparten 103 protocolos terapéuticos. Cada protocolo se divide en varias tarjetas según la etiología. Para facilitar su uso, las patologías se dividen por defecto en categorías.<br><br><b>Gestión de la lista</b><br>Al abrir el menú \"Patologías y protocolos\", se muestra una lista de categorías que contienen patologías. Para ver la tarjeta de una patología, abre la categoría haciendo clic en su nombre (<b>1</b>) y luego haz clic en el nombre de la patología (<b>2</b>).<br>Si prefieres ver la lista en orden alfabético, puedes hacerlo haciendo clic en el ícono de categorías (<b>3</b>) en la esquina superior derecha del menú. Esta vista también permite realizar búsquedas de texto.<br><br><img src=\"img/reference/esp/auriculomap_menu.jpg\"><br><br><br><b>Tarjeta de patología</b><br>Esta tarjeta se divide en 2 secciones, cada una expandible (el sistema recuerda esta elección para futuras veces):<br>- La <i>descripción</i> (<b>5</b>), que es un recordatorio de qué es la patología en términos generales<br>- El <i>protocolo terapéutico</i> (<b>6</b>), donde se encuentran todas las tarjetas necesarias para el tratamiento<br>El protocolo terapéutico se divide en tablas según la función o etiología del trastorno tratado. Cuando el modelo 3D está abierto, en la esquina superior derecha de cada una de estas tablas, se muestra un ícono de ojo (<b>7</b>) que al hacer clic activa la destacación de los puntos incluidos en el modelo. La tarjeta destacada cambia de apariencia, con un borde azul y el ícono del ojo se colorea de azul.<br>N.B. Al abrir la tarjeta de patología, siempre se destaca automáticamente la primera tabla en la parte superior.<br>El último elemento de la tarjeta es una lista de otras patologías que comparten el protocolo terapéutico.<br><br><img src=\"img/reference/esp/auriculomap_scheda.jpg\"><br>"
 			}
           }
-        }
+        },
+        "reflexologia_plantare": {
+		  "title": "ReflexologyMap",
+		  "cont": {
+		    "overview": {
+		      "title": "Visión general",
+		      "cont": "ReflexologyMap es el mapa dedicado a la reflexología podal. Al abrir el mapa, se cargarán áreas interactivas, información textual y contenido multimedia relacionado con esta disciplina en el entorno.<br><br><b>Contenidos del menú</b><br><i>- Mapa de áreas</i><br>En este menú se encuentran todas las áreas correspondientes a los reflejos presentes en el pie. Desde aquí, puede gestionar la visualización de sistemas, filtrar zonas y ver sus pestañas.<br><br><i>- Hipótesis de tratamiento</i><br>Lista de desequilibrios con pestañas relacionadas<br><br><i>- Procedimientos personalizados</i><br>Para crear y compartir protocolos terapéuticos personalizados.<br><br><i>- Información detallada</i><br>Sección dedicada a conocimientos teóricos.<br><br><b>Modelos anatómicos</b><br>Con ReflexologyMap, solo puede abrir el modelo del pie <img src=\"img/reference/p_piedi.png\" style=\"vertical-align: middle; height: 24px;\">.<br>Si intenta abrir otro modelo, ReflexologyMap se cerrará automáticamente."
+		    },
+		    "pointsmap": {
+		      "title": "Mapa de áreas",
+		      "cont": "Este menú contiene la lista de áreas sensibles y tratables de los pies (<b>1</b>), ordenadas alfabéticamente y distinguibles por el color del punto. Cada color indica un sistema.<br>Aquí también se incluye la herramienta de filtro (<b>2</b>).<br><br><img src=\"img/reference/ita/reflexologymap_punti.jpg\"><br><br><b>Seleccionar un área</b><br>La selección de un área y la apertura de su pestaña es posible de dos maneras:<br>- Haciendo clic en el elemento de la lista<br>- Haciendo clic directamente en el maniquí<br><br><b>Pestaña del área</b><br>La pestaña del área contiene los siguientes elementos, dispuestos de arriba a abajo:<br>- Nombre<br>- Sistema<br>- Ubicación<br>- Técnica de tratamiento<br>- Indicaciones sobre cuándo tratar<br>- Notas personales<br>Las notas personales están vinculadas solo a los pacientes (ver más adelante <a onclick=\"REF.open('archives.patients.overview');\" style=\"cursor:pointer;\">Archivos &gt; Pacientes</a>), por lo que hay diferencia entre el modelo genérico y los pacientes. Si cambia al paciente o trabaja en el modelo genérico, los contenidos de las notas cambiarán.<br><br><img src=\"img/reference/ita/reflexologymap_punto.jpg\"><br>"
+		    },
+		    "smart": {
+		      "title": "Filtros rápidos",
+		      "cont": "Para filtrar rápidamente las áreas en el modelo 3D y en la lista del menú, puede utilizar filtros rápidos, disponibles solo cuando el modelo 3D está abierto. Para abrir esta herramienta, haga clic en el icono de filtro (<b>1</b>), en la esquina superior derecha de la pantalla.<br>En la pestaña de filtros se enumeran todos los sistemas. Desde aquí, puede ocultarlos uno por uno.<br><br><img src=\"img/reference/ita/reflexologymap_filtri_rapidi.jpg\"><br>"
+		    },
+		    "pathologies": {
+		      "title": "Hipótesis de tratamiento",
+		      "cont": "En ReflexologyMap hay 8 hipótesis de tratamiento, propuestas de reequilibrio basadas en casos específicos.<br><br><b>Investigación</b><br><br><b>Pestaña de tratamiento<br></b>Esta pestaña se divide en 4 secciones:<br>- La <i>descripción</i> (<b>1</b>), una visión general;<br>- Las <i>técnicas de apertura</i> del tratamiento (<b>2</b>);<br>- Las <i>áreas a tratar</i> (<b>3</b>), en orden cronológico de tratamiento;<br>- Los <i>consejos adicionales</i> (<b>4</b>).<br>Cuando la pestaña está abierta, las áreas y sistemas resaltados se muestran en el modelo 3D (<b>5</b>).<br><br><img src=\"img/reference/ita/reflexologymap_scheda.jpg\"><br>"
+		    }
+		  }
+		}
       }
     },
     "archives": {

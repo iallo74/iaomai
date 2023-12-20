@@ -123,7 +123,28 @@ DB.reference = {
 			  "cont": "AuriculoMap features 254 pathologies that share 103 therapeutic protocols. Each protocol is further divided into various files based on etiology. To facilitate use, pathologies are divided into categories by default.<br><br><b>List Management</b><br>When opening the \"Pathologies and Protocols\" menu, a list of categories containing pathologies is displayed. To view a pathology file, open the category by clicking on its name (<b>1</b>) and then click on the name of the pathology (<b>2</b>).<br>If you prefer to view the list in alphabetical order, you can do so by clicking on the categories icon (<b>3</b>) at the top right of the menu. This view also allows for text searches.<br><br><img src=\"img/reference/eng/auriculomap_menu.jpg\"><br><br><br><b>Pathology File<br></b>This file is divided into 2 sections, each expandable (the system remembers this choice for future times):<br>- The <i>description</i> (<b>5</b>), which is a reminder of what the pathology is in general terms<br>- The <i>therapeutic protocol</i> (<b>6</b>), where all the necessary files for treatment are located<br>The therapeutic protocol is divided into tables based on the function or etiology of the treated pathology. When the 3D model is open, in the top right corner of each of these tables, there is a visible eye icon (<b>7</b>). Clicking on it activates the highlighting of the included points on the model. The highlighted file changes appearance, being bordered in blue, and the eye icon is colored blue.<br>Please note: when opening the pathology file, the first table at the top is always automatically highlighted.<br>The last element of the file is a list of other pathologies that share the same therapeutic protocol.<br><br><img src=\"img/reference/eng/auriculomap_scheda.jpg\"><br>"
 			}
           }
-        }
+        },
+        "reflexologia_plantare": {
+		  "title": "ReflexologyMap",
+		  "cont": {
+			"overview": {
+			  "title": "Overview",
+			  "cont": "ReflexologyMap is the map dedicated to foot reflexology. Opening the map will load interactive areas, textual information, and multimedia content related to this discipline into the environment.<br><br><b>Menu Contents</b><br><i>- Area Map</i><br>This menu includes all areas corresponding to reflexes on the foot. From here, you can manage the display of systems, filter zones, and view their tabs.<br><br><i>- Treatment Hypotheses</i><br>List of imbalances with related tabs<br><br><i>- Custom Procedures</i><br>To create and share personalized therapeutic protocols.<br><br><i>- In-depth Information</i><br>Section dedicated to theoretical insights.<br><br><b>Anatomical Models</b><br>With ReflexologyMap, you can only open the foot model <img src=\"img/reference/p_piedi.png\" style=\"vertical-align: middle; height: 24px;\">.<br>If you try to open another model, ReflexologyMap will be automatically closed."
+			},
+			"pointsmap": {
+			  "title": "Area Map",
+			  "cont": "This menu contains the list of sensitive and treatable areas of the feet (<b>1</b>), sorted alphabetically and distinguished by the color of the dot. Each color indicates a system.<br>Also included here is the filter tool (<b>2</b>).<br><br><img src=\"img/reference/ita/reflexologymap_punti.jpg\"><br><br><b>Selecting an Area</b><br>Selecting an area and opening its tab is possible in two ways:<br>- Clicking on the item in the list<br>- Clicking directly on the mannequin<br><br><b>Area Tab</b><br>The area tab contains the following elements, arranged from top to bottom:<br>- Name<br>- System<br>- Location<br>- Treatment technique<br>- Indications on when to treat<br>- Personal notes<br>Personal notes are only linked to patients (see later <a onclick=\"REF.open('archives.patients.overview');\" style=\"cursor:pointer;\">Archives &gt; Patients</a>), so there is a difference between the generic model and patients. If you change the patient or work on the generic model, the contents of the notes will change.<br><br><img src=\"img/reference/ita/reflexologymap_punto.jpg\"><br>"
+			},
+			"smart": {
+			  "title": "Quick Filters",
+			  "cont": "To quickly filter areas on the 3D model and in the menu list, you can use quick filters, available only when the 3D model is open. To open this tool, click on the filter icon (<b>1</b>), in the top right of the screen.<br>All systems are listed in the filter tab. From here, you can hide them one by one.<br><br><img src=\"img/reference/ita/reflexologymap_filtri_rapidi.jpg\"><br>"
+			},
+			"pathologies": {
+			  "title": "Treatment Hypotheses",
+			  "cont": "ReflexologyMap features 8 treatment hypotheses, proposed rebalancing based on specific cases.<br><br><b>Research</b><br><br><b>Treatment Tab<br></b>This tab is divided into 4 sections:<br>- The <i>description</i> (<b>1</b>), a general overview;<br>- The <i>opening techniques</i> of the treatment (<b>2</b>);<br>- The <i>areas to be treated</i> (<b>3</b>), in chronological order of treatment;<br>- Additional <i>advice</i> (<b>4</b>).<br>When the tab is open, the highlighted areas and systems are displayed on the 3D model (<b>5</b>).<br><br><img src=\"img/reference/ita/reflexologymap_scheda.jpg\"><br>"
+			}
+		  }
+		}
       }
     },
     "archives": {

@@ -4,9 +4,9 @@
 /* INFORMAZIONI SULLE LINGUE */
 #infolingue{
 	width: 320px;
-    height: 380px;
+    height: 420px;
     margin-left: -160px;
-    margin-top: -190px;
+    margin-top: -210px;
 }
 #labelInfolingue{
 	background-image:url(../img/ico_linguaprefN.png);
@@ -50,7 +50,7 @@
 }
 #tabLingue > div > div{
 	text-align:right;
-	width:35px;
+	width:32px;
 	height:25px;
 	line-height:25px;
 	display:inline-block;
@@ -62,7 +62,7 @@
 }
 #tabLingue > div > div:first-child{
 	text-align:left !important;
-	width:calc(100% - 207px);
+	width: calc(100% - 189px);
 	border-left:none !important;
 	margin-right: -6px;
 	font-weight:bold;

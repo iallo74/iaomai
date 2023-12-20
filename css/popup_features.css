@@ -56,7 +56,13 @@
     background-color: rgba(0,0,0,0.1);
     border-radius: 0px 0px 5px 5px;
 }
-
+.logoApp{
+	width:50px;
+	height:50px;
+	background-color: #005ca6;
+	border-radius: 16px;
+	padding: 3px;
+}
 #contFeatures{
 	padding: 10px 20px 10px 20px;
     position: absolute;
@@ -65,6 +71,18 @@
     width: 100%;
 	overflow-y:auto;
 	text-align:left;
+}
+body:not(.smart) #contFeatures{
+	background-image: url(../sets/reflessologia_plantare/img/piedi_riflessi_anatomia.png), url(../sets/reflessologia_plantare/img/linea_sfum.png);
+    background-repeat: no-repeat, repeat-x;
+    background-size: auto 400px, auto;
+    background-position: center calc(100% + 64px), center calc(100% + 30px);
+}
+body.smart #contFeatures{
+	background-image: url(../sets/reflessologia_plantare/img/piedi_riflessi.png), url(../sets/reflessologia_plantare/img/linea_sfum.png);
+    background-repeat: no-repeat, repeat-x;
+    background-size: auto, auto;
+    background-position: center calc(100% + 34px), center calc(100% + 30px);
 }
 #contFeatures h2{
 	font-size: var(--font-24-2);

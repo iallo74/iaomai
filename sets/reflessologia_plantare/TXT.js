@@ -8,6 +8,54 @@ DB.TXT.set = {
         por: "Mapa das áreas",
         deu: "Karte der Gebiete"
     },
+    Annotazioni: {
+        ita: "Annotazioni sul punto",
+        eng: "Comments on point",
+        esp: "Comentarios sobre el punto",
+        fra: "Commentaires sur le point",
+        por: "Comentários sobre o ponto",
+        deu: "Kommentare zum Punkt"
+    },
+    NessunaAnnotazione: {
+        ita: "Nessuna annotazione",
+        eng: "No comments",
+        esp: "Sin comentarios",
+        fra: "Aucun commentaire",
+        por: "Sem comentários",
+        deu: "Keine Kommentare"
+    },
+    PuntoSelezionato: {
+        ita: "Area selezionata",
+        eng: "Selected area",
+        esp: "Área seleccionada",
+        fra: "Zone sélectionnée",
+        por: "Área selecionada",
+        deu: "Ausgewählter Bereich"
+    },
+    SostituisciPunto: {
+        ita: "Sostituisci [t] con questa area",
+        eng: "Replace [t] with this area",
+        esp: "Reemplazar [t] con esta área",
+        fra: "Remplacer [t] par cette zone",
+        por: "Substituir [t] por esta área",
+        deu: "Ersetze [t] durch diesen Bereich"
+    },      
+    AggiungiPuntoProc: {
+        ita: "Aggiungi alla procedura",
+        eng: "Add to procedure",
+        esp: "Agregar al procedimiento",
+        fra: "Ajouter à la procédure",
+        por: "Adicionar à procedimento",
+        deu: "Zur Prozedur hinzufügen"
+    },
+    AggiungiPuntoTratt: {
+        ita: "Aggiungi al trattamento",
+        eng: "Add to treatment",
+        esp: "Agregar al tratamiento",
+        fra: "Ajouter au traitement",
+        por: "Adicionar ao tratamento",
+        deu: "Zur Behandlung hinzufügen"
+    },
 
     
     FiltriSmart: {
