@@ -268,7 +268,12 @@ var sets = {
 		idGoogle: '',
 		pageStore: 'reflexologymap',
 		lingueCont: [
-			"ita"
+			"ita",
+			"eng",
+			"esp",
+			"fra",
+			"por",
+			"deu"
 		],
 		lingueAI: [
 			"eng",

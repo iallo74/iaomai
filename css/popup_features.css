@@ -72,17 +72,21 @@
 	overflow-y:auto;
 	text-align:left;
 }
-body:not(.smart) #contFeatures{
-	background-image: url(../sets/reflessologia_plantare/img/piedi_riflessi_anatomia.png), url(../sets/reflessologia_plantare/img/linea_sfum.png);
-    background-repeat: no-repeat, repeat-x;
-    background-size: auto 400px, auto;
-    background-position: center calc(100% + 64px), center calc(100% + 30px);
+@media (min-width: 601px){
+	#contFeatures{
+		background-image: url(../sets/reflessologia_plantare/img/piedi_riflessi_anatomia.png), url(../sets/reflessologia_plantare/img/linea_sfum.png);
+		background-repeat: no-repeat, repeat-x;
+		background-size: auto 400px, auto;
+		background-position: center calc(100% + 64px), center calc(100% + 30px);
+	}
 }
-body.smart #contFeatures{
-	background-image: url(../sets/reflessologia_plantare/img/piedi_riflessi.png), url(../sets/reflessologia_plantare/img/linea_sfum.png);
-    background-repeat: no-repeat, repeat-x;
-    background-size: auto, auto;
-    background-position: center calc(100% + 34px), center calc(100% + 30px);
+@media (max-width: 600px){
+	#contFeatures{
+		background-image: url(../sets/reflessologia_plantare/img/piedi_riflessi.png), url(../sets/reflessologia_plantare/img/linea_sfum.png);
+		background-repeat: no-repeat, repeat-x;
+		background-size: auto, auto;
+		background-position: center calc(100% + 64px), center calc(100% + 30px);
+	}
 }
 #contFeatures h2{
 	font-size: var(--font-24-2);
