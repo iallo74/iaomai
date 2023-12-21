@@ -148,7 +148,12 @@ var sets = {
 		idGoogle: 'sm22',
 		pageStore: 'shiatsumap',
 		lingueCont: [
-			"ita"
+			"ita",
+			"eng",
+			"esp",
+			"fra",
+			"por",
+			"deu"
 		],
 		lingueAI: [
 			"eng",

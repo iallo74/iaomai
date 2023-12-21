@@ -342,6 +342,7 @@ var LINGUE = {
 		for(let p in LINGUE.NLS){
 			if(l==LINGUE.NLS[p].sigla)ai = __(LINGUE.NLS[p].ai,false);
 		}
+		if(globals.set?.lingueAI?.indexOf(localStorage.getItem("siglaLingua"))>-1)ai = true;
 		return ai;
 	},
 	addAiMsg: function( l='' ){
