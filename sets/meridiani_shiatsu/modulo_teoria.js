@@ -208,5 +208,5 @@ var MODULO_TEORIA = { // extend SET
 	},
 	verFreeTeoria: function( t ){
 		return !(SET.TEORIA_free.indexOf(t)==-1 && (DB.login.data.auths.indexOf(globals.set.cartella)==-1 || !LOGIN.logedin()));
-	}
+	} 
 }
