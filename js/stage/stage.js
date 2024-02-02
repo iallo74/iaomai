@@ -378,7 +378,7 @@ function cambiaModello( cartella ){
 
 
 // CARICAMENTO DEI SETS
-function caricaSet( cartella, el ){
+function caricaSet( cartella, el, forzaModello='' ){
 	var daScheda = (SCHEDA.classeAperta == 'scheda_A' || SCHEDA.classeAperta == 'scheda_B' );
 	if(globals.modello.cartella)startAnimate();
 	if(el)postApreSet = true;
@@ -401,8 +401,10 @@ function caricaSet( cartella, el ){
 		globals.set.setSel = el;
 		if(areasView)MODELLO.swArea();
 		var modelli = filtraModelli(cartella);
-		if(modelli.indexOf(globals.modello.cartella) == -1 && globals.modello.cartella){
-			caricaModello(modelli[0]);
+		if(modelli.indexOf(globals.modello.cartella) == -1 && globals.modello.cartella)forzaModello = modelli[0];
+		
+		if(forzaModello && forzaModello!=globals.modello.cartella){
+			caricaModello(forzaModello);
 			return;
 		}
 		//globals.set.imports.push("lang_"+LINGUE.getLinguaCont(cartella)+".js");
@@ -412,9 +414,11 @@ function caricaSet( cartella, el ){
 			if(imports[i].indexOf("/")==-1)imports[i]='sets/'+cartella+'/'+imports[i];
 			imports[i]=imports[i].replace("[lang]",LINGUE.getLinguaCont(cartella));
 		}
+		//if(el?.parentElement?.id=="guida_generica_sets")MENU.visSets();
+		
 		IMPORTER.importaFiles(	0,
 								imports,
-								'SET._init();MENU.aggiornaIconeModello();',
+								'SET._init();MENU.aggiornaIconeModello();if(smartMenu && document.getElementById("sets").classList.contains("visSch")){SCHEDA.chiudiElenco();MENU.visSets();}',
 								document.getElementById("scripts") );
 		if(el)el.classList.add("btnSetSel");
 		if(globals.modello.cartella){
@@ -425,7 +429,7 @@ function caricaSet( cartella, el ){
 		document.getElementById("pulsanti_set").classList.add("setAperto");
 		document.getElementById("btns_set").classList.add("visBtn");
 		document.body.classList.add('bodySet');
-		updateModels()
+		updateModels();
 	}
 	try{
 		SET.leggiNote();

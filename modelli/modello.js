@@ -833,7 +833,7 @@ var MODELLO = {
 						) ||  */(
 							t2 == 'Aree' && els[e].id.indexOf("Muscolo_") > -1 && o < 0.2
 						) || (
-							( ( t2 == 'Pelle' && o > 0.95 ) || ( t2 == 'Aree' && o > 0.6 ) ) &&
+							( ( t2 == 'Pelle' && o > 0.95 ) || ( t2 == 'Aree' && o > 0.95 ) ) &&
 							( idContr.indexOf("Osso_") > -1 || idContr.indexOf("Organo_") > -1 || idContr.indexOf("Legamento_") > -1 || idContr.indexOf("Area_") > -1 || idContr.indexOf("Vaso_") > -1)
 						) || (
 							t2 == 'Visceri' && els[e].id.indexOf("Organo_") > -1 && o == 0

@@ -228,6 +228,7 @@ var SCHEDA = {
 		GUIDA.nasFumetto();
 		SCHEDA.riapriScheda();
 		SCHEDA.swMenuScheda('chiudi');
+		MENU.comprimiIcone(true);
 		if(!ritorno)document.getElementById("scheda_testo").scrollTo(0,0);
 		if(codiceTranslate && LINGUE.googleLangSel && LINGUE.googleLangSel!=LINGUE.getSigla2()){
 			LINGUE.googleTranslate(LINGUE.googleLangSel,codiceTranslate);
@@ -652,13 +653,14 @@ var SCHEDA = {
 		var annoAtt=d.getFullYear();
 		var cartaIntestata = false;
 		var TITOLO_PAGINA = document.title;
+		var nScheda = SCHEDA.scheda2Aperta ? "2" : "";
 		var sch = document.getElementById("scheda");
 		/*if(	sch.classList.contains("scheda_A") || 
 			sch.classList.contains("scheda_B") || 
 			sch.classList.contains("scheda_Riepi") )obj = {};*/
 		if(	typeof(obj)=='undefined'){
 			var titolo = document.getElementById("scheda_titolo").innerHTML;
-			var corpo = document.getElementById("scheda_testo").querySelector(".scheda_stampa").outerHTML;
+			var corpo = document.getElementById("scheda_testo"+nScheda).querySelector(".scheda_stampa").outerHTML;
 		}else{
 			cartaIntestata = true;
 			var titolo = '';
@@ -675,7 +677,7 @@ var SCHEDA = {
 				var corpo = dati;
 			}else{
 				var titolo = document.getElementById("scheda_titolo").innerHTML;
-				var corpo = document.getElementById("scheda_testo").querySelector(".scheda_stampa").outerHTML;
+				var corpo = document.getElementById("scheda_testo"+nScheda).querySelector(".scheda_stampa").outerHTML;
 			}
 		}
 		

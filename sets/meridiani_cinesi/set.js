@@ -246,14 +246,15 @@ SET = {
 			if(	SCHEDA.livelloApertura!=3 ){
 				
 				if(	SCHEDA.classeAperta != 'scheda_A' &&
-					SCHEDA.classeAperta != 'scheda_B' )SCHEDA.apriElenco('set');
-				else{
+					SCHEDA.classeAperta != 'scheda_B' ){
+						if(!smartMenu)SCHEDA.apriElenco('set');
+				}else{
 					SCHEDA.apriElenco('base');
 					PAZIENTI.caricaDettagliSet();
 				}
 				
 			}else{
-				if(!SET.ptSel)GUIDA.visFumetto("guida_set_mini",false,true);
+				if(!SET.ptSel && !smartMenu)GUIDA.visFumetto("guida_set_mini",false,true);
 				SCHEDA.chiudiElenco();
 				MENU.chiudiMenu();
 			}

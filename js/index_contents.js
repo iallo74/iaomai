@@ -88,7 +88,6 @@ var sets = {
 			"deu"
 		],
 		lingueAI: [
-			"fra",
 			"por",
 			"deu"
 		]
@@ -156,9 +155,6 @@ var sets = {
 			"deu"
 		],
 		lingueAI: [
-			"eng",
-			"esp",
-			"fra",
 			"por",
 			"deu"
 		]
@@ -220,7 +216,6 @@ var sets = {
 			"deu"
 		],
 		lingueAI: [
-			"fra",
 			"por",
 			"deu"
 		]
@@ -269,8 +264,8 @@ var sets = {
 		opening: true,
 		dataPubblicazione: '',
 		siglaProc: 'RFX',
-		idApple: '',
-		idGoogle: '',
+		idApple: 'RM24',
+		idGoogle: 'rm24',
 		pageStore: 'reflexologymap',
 		lingueCont: [
 			"ita",

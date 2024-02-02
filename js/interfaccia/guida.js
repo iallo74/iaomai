@@ -44,6 +44,7 @@ var GUIDA = {
 		document.getElementById("guida_cont").classList.add("guida"+GUIDA.nGuida+g);
 	},
 	visFumetto: function( n, forza=false, noFr=false ){
+		if(GUIDA.fumettoAperto=='guida_generica')return;
 		var noGuida = (__(localStorage.getItem("no_"+n),"false"));
 		if(!noGuida || forza){
 			if(GUIDA.fumettoAperto){
@@ -79,12 +80,31 @@ var GUIDA = {
 				document.getElementById(n).classList.add("vis");
 			},200, n);
 			GUIDA.fumettoAperto = n;
-			window.addEventListener("mouseup", GUIDA.nasFumetto, false);
+			if(n!='guida_generica')window.addEventListener("mouseup", GUIDA.nasFumetto, false);
+			else{
+				var HTML_elenco = 	'';
+				for(let cartella in sets){
+					if(	cartella != 'anatomy_full' &&
+						cartella != 'clients_full'){
+						var linkSet = 'caricaSet(\''+cartella+'\',this,\''+sets[cartella].modelli[0]+'\');MENU.visSets();';
+						if(cartella == globals.set.cartella)linkSet = 'SCHEDA.apriElenco(\'set\')';
+						if(!sets[cartella].locked){
+							HTML_elenco += 	'<div onClick="'+linkSet+'">' +
+											'<div><img src="sets/'+cartella+'/img/logoNero.png"></div>' +
+											htmlEntities(sets[cartella].nome) +
+											'<br><span>' + htmlEntities(sets[cartella].sottotitolo) + '</span>' +
+										'</div>';
+						}
+					}
+				}
+				document.getElementById("guida_generica_sets").innerHTML = HTML_elenco;
+			}
 			document.getElementById("container").addEventListener("touchstart", GUIDA.nasFumetto, false);
 			document.getElementById("interfaccia").addEventListener("touchstart", GUIDA.nasFumetto, false);
 		}
 	},
 	nasFumetto: function(forza=true){
+		if(GUIDA.fumettoAperto=='guida_generica' && !forza)return;
 		if(GUIDA.fumettoAperto && (!GUIDA.overFumetto || GUIDA.overChiudi || forza)){
 			document.getElementById(GUIDA.fumettoAperto).classList.remove("vis");
 			document.getElementById(GUIDA.fumettoAperto).classList.remove("noFr");
@@ -97,10 +117,24 @@ var GUIDA = {
 			window.removeEventListener("mouseup", GUIDA.nasFumetto, false);
 			document.getElementById("container").removeEventListener("touchstart", GUIDA.nasFumetto, false);
 			document.getElementById("interfaccia").removeEventListener("touchstart", GUIDA.nasFumetto, false);
+			if(GUIDA.fumettoAperto=='guida_generica' && document.getElementById("no_guida_generica").checked)GUIDA.noVis(document.getElementById("no_guida_generica"));
 		}
 	},
 	noVis: function( el ){
 		localStorage.setItem(document.getElementById("no_guida").dataset.name,el.checked);
+	},
+	swGuide: function( el ){
+		if(el.checked){
+			delete(localStorage.no_guida_generica);
+			document.getElementById("no_guida_generica").checked = false;
+		}else{
+			localStorage.no_guida_generica = 'true';
+			document.getElementById("no_guida_generica").checked = true;
+		}
+	},
+	showNow: function( el ){
+		MENU.chiudiMenu();
+		GUIDA.visFumetto("guida_generica");
 	},
 	visGuida: function( id ){
 		document.getElementById(id).style.display = 'block';

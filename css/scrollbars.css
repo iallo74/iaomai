@@ -15,9 +15,9 @@
 ::-webkit-scrollbar-thumb:hover {
 	background-color: #444;
 }
-html{
+/* html{
 	scrollbar-color: #666 #000;
-}
+} */
 .scrb_scura::-webkit-scrollbar {
 	padding:1px;
 }

@@ -416,11 +416,11 @@ body:not(.smart) #scheda_cont{
 	line-height:36.64px !important;
 }
 body:not(.smart) #scheda.schForm:not(.schedaRitorno):not(.minimized):not(.tab_punti):not(.scheda_marketing) #scheda_titolo{
-	width: calc(100% - 179px) !important;
+	width: calc(100% - 186px) !important;
 }
 .smart #scheda_titolo{
 	/* width: calc(100% - 75px); */
-		width: calc(100% - 120px) !important;
+	width: calc(100% - 120px) !important;
     cursor: default !important;
     text-align: center !important;
 	padding-left: 44px !important;
@@ -591,7 +591,7 @@ body:not(.bodyStyled2):not(.smart) .schedaRitorno #scheda_ritorno svg line{
     stroke:#FFF !important;
 }
 .schedaRitorno #scheda_titolo{
-	width: calc(100% - 152px);
+	width: calc(100% - 159px);
 	display: inline-block;
 	margin-left: 0px;
 	text-align: left;
@@ -604,11 +604,11 @@ body:not(.smart) .schedaRitorno #scheda_titolo{
 	float:right;
 }
 .schLato.schedaRitorno #scheda_titolo{
-	width: calc(100% - 153px) !important;
+	width: calc(100% - 160px) !important;
 	margin-right:26px;
 }
 .smart #scheda.schedaRitorno #scheda_titolo{
-	width: calc(100% - 210px) !important;
+	width: calc(100% - 217px) !important;
 }
 /* .smart.bodyModello #scheda.schedaRitorno #scheda_titolo{
 	width: calc(100% - 210px) !important;

@@ -301,7 +301,7 @@ var LOGIN = {
 			document.getElementById("btn_logout").style.display = 'inline-block';
 			document.getElementById("btn_logout").classList.add("btn_logout_mini");
 			document.getElementById("btn_logout").title='LOGOUT';
-			document.getElementById("loginGuida").style.display = 'none';
+			//document.getElementById("btn_loginGuida").classList.add("nasBtnLogin");
 			document.getElementById("notLogged").classList.remove("visSch");
 			CUSTOMS._init();
 		}else{
@@ -309,14 +309,14 @@ var LOGIN = {
 				document.getElementById("utDisc").style.display = 'block';
 				document.getElementById("btn_login").classList.add("btn_login_mini");
 				document.getElementById("btn_login").title='LOGIN';
-				document.getElementById("loginGuida").style.display = 'none';
+				//document.getElementById("btn_loginGuida").classList.add("nasBtnLogin");
 				CUSTOMS._init();
 			}else{
 				document.getElementById("p_reg").style.display = 'block';
 				document.getElementById("utDisc").style.display = 'none';
 				NN=TXT("NessunUtente");
 				document.getElementById("btn_modut").style.display = 'none';
-				document.getElementById("loginGuida").style.display = 'block';
+				//document.getElementById("btn_loginGuida").classList.remove("nasBtnLogin");
 				CUSTOMS._end();
 			}
 			document.getElementById("p_cartella").classList.remove("clientAtt");
@@ -324,6 +324,7 @@ var LOGIN = {
 			document.getElementById("btn_logout").style.display = 'none';
 			document.getElementById("notLogged").classList.add("visSch");
 		}
+		document.getElementById("btn_loginGuida").classList.toggle("nasBtnLogin",LOGIN.logedin());
 		document.getElementById("nomeUtente").innerHTML=NN;
 		let lg = document.getElementById("logoSovra"),
 			lp = document.getElementById("logoPartner");

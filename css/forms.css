@@ -70,7 +70,7 @@ textarea{
 .submitBtn,
 .annullaBtn,
 .stampaBtn{
-	min-width: 100px;
+	/* min-width: 100px; */
 	padding-left:15px;
 	padding-right:15px;
 	clear: both;
@@ -85,19 +85,23 @@ textarea{
 	text-align: center;
 	-webkit-appearance: none;
 	
+	
 }
 body:not(.smart) #scheda.schForm .submitBtn,
 body:not(.smart) #scheda.schForm .annullaBtn{
-	padding-left:10px !important;
-	padding-right:10px !important;
+	padding-left:5px !important;
+	padding-right:5px !important;
 	height: 30px !important;
 	line-height: 30px !important;
+	overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 body:not(.smart) #scheda.schForm .submitBtn{
 	min-width: 60px !important;
 }
 body:not(.smart) #scheda.schForm .annullaBtn{
-	min-width: 75px !important;
+	/* min-width: 75px !important; */
 	margin-left:0px !important;
 }
 .stampaBtn{
@@ -206,7 +210,7 @@ body:not(.smart) #scheda .formBtn{
     position: absolute !important;
     top: 0px;
     right: 22px !important;
-    width: 150px !important;
+    width: 154px !important;
     padding: 8px 5px 0px 0px !important;
     border-top: none !important;
     margin: 0px !important;
@@ -218,12 +222,12 @@ body:not(.smart) #scheda:not(.schLato) .formBtn{
 body:not(.smart) .submitBtn,
 body:not(.smart) .annullaBtn,
 body:not(.smart) .stampaBtn{
-    width: auto !important;
+    width: 72px !important;
     height: 32px !important;
     line-height: 32px !important;
     margin-top: 0px !important;
-    padding-left: 15px !important;
-    padding-right: 15px !important;
+    padding-left: 5px !important;
+    padding-right: 5px !important;
 }
 .contStampa .stampaBtn{
 	display: none !important;

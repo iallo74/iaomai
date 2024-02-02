@@ -1593,7 +1593,7 @@ body.bodyStyled2 #p_versione{
 #loginGuida{
 	margin-top: 56px;
     padding-top: 10px;
-    border-top: 1px solid rgba(0,0,0,0.2);
+    /* border-top: 1px solid rgba(0,0,0,0.2); */
     text-align: right;
     margin-bottom: -28px;
 	color: rgba(0,0,0,0.6);

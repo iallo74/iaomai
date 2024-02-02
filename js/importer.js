@@ -30,7 +30,7 @@ var	smartphone = false,
 	isTablet = false,
 	globals = {},
 	verApp = '1.5',
-	dateEndFeatures = new Date("2024-01-31").getTime(),
+	dateEndFeatures = new Date("2024-01-01").getTime(),
 	
 	// IMPOSTAZIONI DI APP
 	tipoApp = '', // per la demo

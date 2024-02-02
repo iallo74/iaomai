@@ -21,8 +21,7 @@ var LINGUE = {
 		"4": {
 			sigla: "fra",
 			sigla2: "fr",
-			text: "Français",
-			ai: true
+			text: "Français"
 		},
 		"5": {
 			sigla: "por",

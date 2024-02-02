@@ -672,6 +672,22 @@ DB.TXT = {
             por: "Foi identificado um dispositivo que possui tanto mouse quanto tela sensível ao toque ao mesmo tempo. O TOUCH é usado por padrão. Se você quiser alterá-lo, vá para Configurações > Personalização e altere o tipo de ponteiro.",
             deu: "Es wurde ein Gerät identifiziert, das sowohl eine Maus als auch einen Touchscreen gleichzeitig hat. STANDARDMÄSSIG wird TOUCH verwendet. Wenn Sie es ändern möchten, gehen Sie zu Einstellungen > Anpassung und ändern Sie den Typ des Zeigers."
         },
+        ShowGuide: {
+            ita: "Mostra guida iniziale",
+            eng: "Show initial guide",
+            esp: "Mostrar guía inicial",
+            fra: "Afficher le guide initial",
+            por: "Mostrar guia inicial",
+            deu: "Initiale Anleitung anzeigen"
+        },
+        ShowNow: {
+            ita: "Mostra ora",
+            eng: "Show now",
+            esp: "Mostrar ahora",
+            fra: "Afficher maintenant",
+            por: "Mostrar agora",
+            deu: "Jetzt anzeigen"
+        },
         PatientType: {
             ita: "Tipo di utilizzo",
             eng: "Type of use",
@@ -4795,12 +4811,12 @@ DB.TXT = {
             deu: "AcupointsMap"
         },
         AcupointsMapST: {
-            ita: "Atlante dei punti agopuntura",
-            eng: "Acupuncture points atlas",
-            esp: "Atlas de puntos de acupuntura",
-            fra: "Atlas des points d'acupuncture",
-            por: "Atlas de pontos de acupuntura",
-            deu: "Akupunkturpunkte-Atlas"
+            ita: "Atlante di agopuntura",
+            eng: "Acupuncture atlas",
+            esp: "Atlas de acupuntura",
+            fra: "Atlas d'acupuncture",
+            por: "Atlas de acupuntura",
+            deu: "Akupunktur-Atlas"
         },
         AcupointsMapDESCR: {
             ita: "AcupointsMap è il set che ti consente di studiare i concetti della Medicina Tradizionale Cinese applicati ai punti agopuntura e i meridiani energetici. Oltre all'anatomia completa e la gestione dei pazienti, è a tua disposizione un elenco di più di 130 patologie preconfigurate e il relativo trattamento secondo la MTC. Potrai inoltre elaborare procedure di trattamento personalizzate e condividerle nella Community.\n\nIl set include anche:\n[anatomy_full]",
@@ -4977,6 +4993,14 @@ DB.TXT = {
             fra: "Voulez-vous vraiment quitter [mappa] ?",
             por: "Você realmente deseja sair de [mappa]?",
             deu: "Möchten Sie wirklich [mappa] verlassen?"
+        },
+        LinkRapidi: {
+            ita: "Link rapidi",
+            eng: "Quick links",
+            esp: "Enlaces rápidos",
+            fra: "Liens rapides",
+            por: "Links rápidos",
+            deu: "Schnelllinks"
         },
 
         // popup SETS

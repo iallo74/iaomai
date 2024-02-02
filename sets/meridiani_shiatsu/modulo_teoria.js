@@ -96,6 +96,7 @@ var MODULO_TEORIA = { // extend SET
 		}
 		// --------------------------
 		var titolo = DB.set.teoria[p].contenuti[t].TitoloTeoria;
+		var subsect = __(DB.set.teoria[p].contenuti[t].subsect);
 		var meridianiSecondari = __(DB.set.teoria[p].contenuti[t].meridianiSecondari);
 		var html = '';
 		var addTabStyle = '';
@@ -138,7 +139,8 @@ var MODULO_TEORIA = { // extend SET
 								btnAdd,
 								globals.set.cartella+'_teoria_'+p+"_"+t );
 		SET.convSigleScheda();
-		SET.evidenziaPunto();
+		let elsSzTeo = document.getElementById("scheda_testo").getElementsByClassName("szTeo");
+		if(elsSzTeo.length == -1)SET.evidenziaPunto();
 		
 		SET.spegniMeridianoSecondario();
 		setTimeout( function(meridianiSecondari){
@@ -185,8 +187,15 @@ var MODULO_TEORIA = { // extend SET
 								btnAdd );
 	},
 	swSz: function( el, n ){
+		let elsSzVis = document.getElementById("scheda_testo").getElementsByClassName("szVis");
+		if(elsSzVis.length > -1){
+			for(e=elsSzVis.length-1;e>=0;e--){
+				elsSzVis[e].classList.remove("szVis");
+			}
+		}
 		document.getElementById("sz"+n).classList.toggle("szVis");
 		el.classList.toggle("szVis");
+		SET.evidenziaPunto(document.getElementById("sz"+n));
 	},
 	azRicercaTeoria: function( i, p ){
 		// apre una scheda di approfondimento dalla ricerca globale

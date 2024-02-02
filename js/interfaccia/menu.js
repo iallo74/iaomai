@@ -431,6 +431,7 @@ var MENU = {
 			if(mouseDetect)els[0].classList.add("a_SEL");
 			else els[1].classList.add("a_SEL");
 		}
+		document.getElementById("no_guida_settings").checked = (localStorage.no_guida_generica!='true');
 		
 		if(document.getElementById("colori").className.indexOf("visSch") > -1)visLoader('');
 		else nasLoader();
