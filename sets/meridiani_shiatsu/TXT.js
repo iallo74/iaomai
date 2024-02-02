@@ -30,7 +30,7 @@ DB.TXT.set = {
 		fra: "Pas de commentaires",
 		por: "Sem comentários",
 		deu: "Keine Kommentare"
-	},
+	}, 
     PuntoSelezionato: {
         ita: "Punto selezionato",
         eng: "Selected point",
