@@ -1267,6 +1267,7 @@ cont_p_paz_label{
 }
 #scheda:not(.sch_Max600) #formMod div:not(.labelSx) > i{  /* PAZIENTI */
     overflow: hidden;
+	display: block;
 }
 
 #scheda:not(.sch_Max600) #formMod div.labelSx > i{  /* PAZIENTI */

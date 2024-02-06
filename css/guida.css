@@ -310,6 +310,10 @@
     cursor: pointer;
     margin-bottom: -21px;
     float: left;
+    max-width: 125px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 .btnFeedback{
 	display: inline-block;
@@ -326,10 +330,14 @@
     padding-left: 36px;
     color: #FFF;
     margin-top: 10px;
-    margin-left: 10px;
+    margin-left: 7px;
     cursor: pointer;
     margin-bottom: -21px;
     float: left;
+    max-width: 114px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 #guida_generica .btnReference{
 	/* opacity:0.6 !important; */
@@ -963,7 +971,7 @@ body:not(.smart) .guida_set .fumetti_freccia:last-child{
     margin-right: -4px;
 }
 #guida_generica_mappe{
-	width: 221px;
+	width: 220px;
     text-align: left;
     display: inline-block;
     vertical-align: top;

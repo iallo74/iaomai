@@ -88,7 +88,7 @@ body:not(.smart) #guida_generica #colSel{
 }
 #guideSel > span{
 	padding:6px 0;
-	width: calc(100% - 155px);
+	width: calc(100% - 159px);
 }
 #guideSel input[type=checkbox]{
 	width: 20px;

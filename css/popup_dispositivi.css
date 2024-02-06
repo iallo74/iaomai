@@ -36,7 +36,7 @@ z-index:100 !important;
     padding-right: 10px;
     padding-left: 80px;
     border-bottom: 1px solid rgba(0,0,0,0.2);
-    background-position: 16px 18px, left center;
+    background-position: 16px 18px, left 9px;
     background-repeat: no-repeat;
     background-size: auto 34px, auto 70px;
 }

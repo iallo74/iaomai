@@ -79,7 +79,7 @@
 	height:32px;
 	line-height:32px;
 	cursor:pointer;
-	width: calc(100% - 228px);
+	width: calc(100% - 230px);
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
