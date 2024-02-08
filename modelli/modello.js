@@ -521,6 +521,7 @@ var MODELLO = {
 				if(getVar("demo")=='acupointsmap')caricaSet('meridiani_cinesi');
 				if(getVar("demo")=='shiatsumap')caricaSet('meridiani_shiatsu');
 				if(getVar("demo")=='auriculomap')caricaSet('auricologia');
+				if(getVar("demo")=='reflexologymap')caricaSet('reflessologia_plantare');
 			}else{
 				setTimeout( function(){
 					GUIDA.visFumetto("guida_generica");

@@ -132,7 +132,7 @@ function init() {
 			localStorage.open3d = 'true';
 		}
 		
-		if(localStorage.modello && globals.open3d)caricaModello(localStorage.modello);
+		if(localStorage.modello && globals.open3d && !getVar("demo"))caricaModello(localStorage.modello);
 		else if(globals.openMap && globals.mapOpened)caricaSet(globals.mapOpened);
 		else{
 			inizio = false;
@@ -142,6 +142,7 @@ function init() {
 					getVar("demo")=='acupointsmap' ||
 					getVar("demo")=='shiatsumap')cambiaModello('donna');
 				if(getVar("demo")=='auriculomap' )caricaModello('orecchio');
+				if(getVar("demo")=='reflexologymap' )caricaModello('piedi');
 				
 				/*if(getVar("demo")=='acupointsmap')caricaSet('meridiani_cinesi');
 				if(getVar("demo")=='shiatsumap')caricaSet('meridiani_shiatsu');
