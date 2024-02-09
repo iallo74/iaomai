@@ -44,6 +44,10 @@ var GUIDA = {
 		document.getElementById("guida_cont").classList.add("guida"+GUIDA.nGuida+g);
 	},
 	visFumetto: function( n, forza=false, noFr=false ){
+		if(n=='guida_generica' && !__(localStorage["flag_guida_generica"+verApp])){
+			localStorage["flag_guida_generica"+verApp]="true";
+			delete(localStorage.no_guida_generica);
+		}
 		if(GUIDA.fumettoAperto=='guida_generica')return;
 		var noGuida = (__(localStorage.getItem("no_"+n),"false"));
 		if(!noGuida || forza){
@@ -134,7 +138,7 @@ var GUIDA = {
 	},
 	showNow: function( el ){
 		MENU.chiudiMenu();
-		GUIDA.visFumetto("guida_generica");
+		GUIDA.visFumetto("guida_generica",true);
 	},
 	visGuida: function( id ){
 		document.getElementById(id).style.display = 'block';
