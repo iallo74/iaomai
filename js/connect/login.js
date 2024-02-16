@@ -203,7 +203,6 @@ var LOGIN = {
 			CONN.caricaUrl(	"login.php",
 							"USR="+encodeURIComponent(window.localStorage.buy_USRReg)+
 							"&PWD="+encodeURIComponent(window.localStorage.buy_PWD)+
-							"&p5="+MD5(window.localStorage.buy_PWD)+
 							"&DVI="+encodeURIComponent(window.btoa(LOGIN.getDeviceInfo())),
 							"LOGIN.setLogin");
 		}
