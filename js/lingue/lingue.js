@@ -442,11 +442,11 @@ function evidenziaParola( el = document.getElementById("scheda_testo"), parola =
 	var cls = 'fraseEvi';
 	if(searchArray2.length == 1)cls = 'parolaEvi';
 	for (i=0;i<searchArray.length;i++){
-		html = doHighlight( html, searchArray[i], cls );
+		if(searchArray2[i].trim())html = doHighlight( html, searchArray[i], cls );
 	}
 	if(searchArray2.length > 1){
 		for (i=0;i<searchArray2.length;i++){
-			html = doHighlight( html, searchArray2[i], 'parolaEvi' );
+			if(searchArray2[i].trim())html = doHighlight( html, searchArray2[i], 'parolaEvi' );
 		}
 	}
 	el.innerHTML = html;
