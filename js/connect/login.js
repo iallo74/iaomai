@@ -197,6 +197,18 @@ var LOGIN = {
 		}
 		return false;
 	},
+	autoLogin: function(){ // avviato quando si preme il pulsante Accedi nel popup LOGIN
+		if(CONN.retNoConn() && window.localStorage.buy_USRReg.trim()!='' && window.localStorage.buy_PWD.trim()!=''){
+			document.getElementById("stayConnected").checked = true;
+			CONN.caricaUrl(	"login.php",
+							"USR="+encodeURIComponent(window.localStorage.buy_USRReg)+
+							"&PWD="+encodeURIComponent(window.localStorage.buy_PWD)+
+							"&p5="+MD5(window.localStorage.buy_PWD)+
+							"&DVI="+encodeURIComponent(window.btoa(LOGIN.getDeviceInfo())),
+							"LOGIN.setLogin");
+		}
+		return false;
+	},
 	setLogin: function(txt){ // la risposta di getLogin()
 		if(!txt || txt.substr(0,3)=='404'){
 			if(!LOGIN.logedout){
@@ -2104,6 +2116,7 @@ var LOGIN = {
 	},
 	pulisciTabelle: function(){ // elimina gli elementi "Cancellati"
 		if(!BACKUPS.bkpProvv){
+			DB.pazienti.data = __(DB.pazienti.data,[]);
 			PZS = DB.pazienti.data;
 			tot = PZS.length;
 			for(let p=tot-1;p>=0;p--){
@@ -2124,26 +2137,31 @@ var LOGIN = {
 					if(SAS[s].Cancellato=='1' || __(SAS[s].frv))SAS.splice(s, 1);
 				}
 			}
+			DB.fornitori.data = __(DB.fornitori.data,[]);
 			FRS = DB.fornitori.data;
 			tot = FRS.length;
 			for(let p=tot-1;p>=0;p--){
 				if(FRS[p].Cancellato=='1' || __(FRS[p].frv))FRS.splice(p, 1)
 			}
+			DB.servizi.data = __(DB.servizi.data,[]);
 			SRS = DB.servizi.data;
 			tot = SRS.length;
 			for(let p=tot-1;p>=0;p--){
 				if(SRS[p].Cancellato=='1' || __(SRS[p].frv))SRS.splice(p, 1)
 			}
+			DB.appuntamenti.data = __(DB.appuntamenti.data,[]);
 			APS = DB.appuntamenti.data;
 			tot = APS.length;
 			for(let p=tot-1;p>=0;p--){
 				if(APS[p].Cancellato=='1' || __(APS[p].frv))APS.splice(p, 1)
 			}
+			DB.annotazioni.data = __(DB.annotazioni.data,[]);
 			ANS = DB.annotazioni.data;
 			tot = ANS.length;
 			for(let p=tot-1;p>=0;p--){
 				if(ANS[p].Cancellato=='1' || __(ANS[p].frv))ANS.splice(p, 1)
 			}
+			DB.procedure.data = __(DB.procedure.data,[]);
 			PRS = DB.procedure.data;
 			tot = PRS.length;
 			for(let p=tot-1;p>=0;p--){

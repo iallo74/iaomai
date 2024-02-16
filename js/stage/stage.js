@@ -152,6 +152,7 @@ function init() {
 						SCHEDA.apriElenco('base');
 					},1000);
 				}
+				if(getVar("aL") && !LOGIN.logedin())LOGIN.autoLogin();
 			}else{
 				setTimeout( function(){
 					GUIDA.visFumetto("guida_generica");
