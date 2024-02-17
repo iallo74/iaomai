@@ -601,7 +601,7 @@ var MENU = {
 		var A = document.getElementById("divTrattamentoDati").getElementsByTagName("a")[0];
 		A.href=CONN.linkPrivacy+"?siglaLingua="+globals.siglaLingua;
 		A.target = H.target;
-		if(mouseDetect && !touchable)document.registrazioneForm.Nominativo.focus();
+		if(mouseDetect && !touchable)document.registrazioneForm.Nome.focus();
 	},
 	visImpset: function( archivi=false ){
 		MENU.chiudiMenu("impset");

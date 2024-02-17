@@ -243,19 +243,19 @@ var sets = {
 			'lang_[lang].js'
 		],
 		dims: [
-			11,
-			3569,
+			13,
+			3480,
 			22,
 			5,
 			5,
 			8,
 			8,
-			61,
+			58,
 			7,
 			23,
-			7,
+			8,
 			3,
-			13
+			290
 		],
 		txtLoading: stripslashes(TXT("CaricamentoMappe")),
 		auth: false,

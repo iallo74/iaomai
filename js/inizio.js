@@ -127,7 +127,7 @@ function INIT(){
 		SCHEDA.verPosScheda();
 	},false);
 	// DEMO
-	if(onlineVersion){
+	/* if(onlineVersion){
 		setTimeout( function(){
 			if(getVar('demo') && !LOGIN.reg()){
 				
@@ -145,7 +145,7 @@ function INIT(){
 				
 			}
 		},2000);
-	}
+	} */
 		
 				
 	/*

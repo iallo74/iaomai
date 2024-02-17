@@ -162,7 +162,7 @@ var BACKUPS = {
 		DB.pazienti.lastSync = 0;
 		DB.note.lastSync = 0;
 		DB.procedure.lastSync = 0;
-		//DB.ricerche.lastSync = 0;
+		DB.ricerche.lastSync = 0;
 		BACKUPS.bkpProvv.JSNPOST.lastSync = lastSync;
 		var txt = JSON.stringify(BACKUPS.bkpProvv.JSNPOST);
 		LOGIN.retGlobalSyncro(txt);

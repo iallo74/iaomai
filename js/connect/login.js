@@ -285,14 +285,34 @@ var LOGIN = {
 				}
 				LOGIN.scriviUtente();
 				if(funct)eval(funct);
-				if(location.href.indexOf("https://www.iaomai.app")==0 && !LOGIN.logedin()){
+				if(location.href.indexOf("https://www.iaomai.app")==0 && getVar("aL") && !DB.login.data.idUtente)LOGIN.autoLogin();
+				if(onlineVersion){
+					setTimeout( function(){
+						if(getVar('demo') && !LOGIN.reg()){
+							
+							var boxProva = document.createElement('div');
+							boxProva.onclick = function(){
+								if(!overChiudiProva)MENU.visRegistrazione();
+								document.body.removeChild(boxProva);
+							};
+							boxProva.id = 'boxProvaDemo';
+							boxProva.innerHTML = 
+										'	<div onMouseOver="overChiudiProva=true;"' +
+										'		 onMouseOut="overChiudiProva=false;"></div>' +
+										'	<b>Prova GRATUITA di tutte le app per 10 giorni.</b><br>Clicca qui per registrarti e iniziare subito!';
+							document.body.appendChild(boxProva);
+							
+						}
+					},2000);
+				}
+				/* if(location.href.indexOf("https://www.iaomai.app")==0 && !LOGIN.logedin()){
 					// autologin
 					if(!DB.login.data.UsernameU || DB.login.data.UsernameU==localStorage.getItem("u4ia")){
 						document.loginFrom.USR.value = localStorage.getItem("u4ia");
 						document.loginFrom.PWD.value = localStorage.getItem("p4ia");
 						LOGIN.getLogin('1');
 					}
-				}
+				} */
 			}
 		});
 	},
@@ -603,8 +623,9 @@ var LOGIN = {
 		if(CONN.retNoConn()){
 			if(verifica_form(document.registrazioneForm)){
 
-				var JSNPOST={	"Nominativo": document.registrazioneForm.Nominativo.value,
+				var JSNPOST={	"Nominativo": document.registrazioneForm.Cognome.value+" "+document.registrazioneForm.Nome.value,
 								"Email": document.registrazioneForm.Email.value,
+								"Telefono": document.registrazioneForm.Telefono.value,
 								"USR": document.registrazioneForm.USR.value,
 								"PWD": document.registrazioneForm.PWD.value,
 								"app": document.registrazioneForm.app.value,
@@ -635,6 +656,7 @@ var LOGIN = {
 			document.loginFrom.PWD.value = document.registrazioneForm.PWD.value;
 			LOGIN.getLogin();
 			MENU.chiudiMenu();
+			GUIDA.visFumetto("guida_generica");
 		}
 		document.getElementById("registrazione").classList.remove("popup_back");
 		return;
@@ -1330,6 +1352,7 @@ var LOGIN = {
 				else syncJSN += '"'+window.btoa(encodeURIComponent(elenco))+'"';
 				
 				syncJSN += '}';
+				if(elenco)console.log(JSON.parse(syncJSN))
 				if(!dwnl){
 					CONN.caricaUrl(	"sincro_GLOBAL.php",
 									"b64=1&JSNPOST="+window.btoa(encodeURIComponent(syncJSN)), 
@@ -1382,6 +1405,7 @@ var LOGIN = {
 			for(let p in elenco.ricerche){
 				// per ogni novità verifico l'esistenza
 				esiste=false;
+				if(BACKUPS.bkpProvv)elenco.ricerche[p].DataModifica = lastSync*1+1;
 				JSNPUSH={	"TestoRicerca": elenco.ricerche[p].TestoRicerca,
 							"DataModifica": elenco.ricerche[p].DataModifica*1 };
 				for(let k in DB.ricerche.data){
@@ -1396,6 +1420,28 @@ var LOGIN = {
 				}
 			}
 			DB.ricerche.lastSync=lastSync;
+			
+			if(BACKUPS.bkpProvv){ // <<<<<<< per il backup
+				for(let k in DB.ricerche.data){
+					var trovato = false;
+					var RC = DB.ricerche.data[k];
+					for(let p in elenco.ricerche){
+						/*
+							se sto ripristinando un backup
+							se non trovo l'elemento del DB locale nel DB backuppato
+							oppure non è mai stato backuppato
+							cancello l'elemento locale
+						*/
+						if(	RC.TestoRicerca==elenco.ricerche[p].TestoRicerca){
+							trovato = true;
+						}
+					}
+					if(!trovato){
+						DB.ricerche.data[k].TestoRicerca = '';
+						DB.ricerche.data[k].DataModifica = lastSync + 1;
+					}
+				}
+			}
 			
 			localPouchDB.setItem(MD5("DB"+LOGIN._frv()+".ricerche"), IMPORTER.COMPR(DB.ricerche)).then(function(){ // salvo il DB
 				LOGIN.verSincro('ricerche');
@@ -2187,6 +2233,7 @@ var LOGIN = {
 			localPouchDB.setItem(MD5("DB"+LOGIN._frv()+".annotazioni"), IMPORTER.COMPR(DB.annotazioni)),
 			localPouchDB.setItem(MD5("DB"+LOGIN._frv()+".appuntamenti"), IMPORTER.COMPR(DB.appuntamenti)),
 			localPouchDB.setItem(MD5("DB"+LOGIN._frv()+".procedure"), IMPORTER.COMPR(DB.procedure)),
+			localPouchDB.setItem(MD5("DB"+LOGIN._frv()+".ricerche"), IMPORTER.COMPR(DB.ricerche)),
 			localPouchDB.setItem(MD5("DB"+LOGIN._frv()+".files"), IMPORTER.COMPR(DB.files))
 		]).then(function( dbs ){
 			if(LOGIN.afterFunct){
