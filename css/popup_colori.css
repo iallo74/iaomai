@@ -128,8 +128,12 @@ body:not(.smart) #guida_generica #colSel{
 }
 #patientSel > span b{
 	font-weight:normal !important;
-	padding-left:10px;
-	padding-right:10px;
+	/*padding-left:10px;
+	padding-right:10px;*/
+	width: 73px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+	text-align:center;
 }
 #patientSel > span,
 #patientPwd > span{
@@ -152,6 +156,9 @@ body:not(.smart) #guida_generica #colSel{
 	width:120px;
 	margin-right:-4px;
 	text-align:right;
+	overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
 }
 .patientValuta,
 .patientMisura{
