@@ -198,11 +198,13 @@ var LOGIN = {
 		return false;
 	},
 	autoLogin: function(){ // avviato quando si preme il pulsante Accedi nel popup LOGIN
-		if(CONN.retNoConn() && window.localStorage.buy_USRReg.trim()!='' && window.localStorage.buy_PWD.trim()!=''){
+		arr_decpy = decLG();
+		if(CONN.retNoConn() && arr_decpy[0].trim()!='' && (arr_decpy[1].trim()!='' || arr_decpy[2].trim()!='')){
 			document.getElementById("stayConnected").checked = true;
 			CONN.caricaUrl(	"login.php",
-							"USR="+encodeURIComponent(window.localStorage.buy_USRReg)+
-							"&PWD="+encodeURIComponent(window.localStorage.buy_PWD)+
+							"USR="+encodeURIComponent(arr_decpy[0]) +
+							"&PWD="+encodeURIComponent(arr_decpy[2] ? arr_decpy[2] : arr_decpy[1]) +
+							(arr_decpy[2] ? "&p5=1" : "") +
 							"&DVI="+encodeURIComponent(window.btoa(LOGIN.getDeviceInfo())),
 							"LOGIN.setLogin");
 		}
@@ -285,7 +287,7 @@ var LOGIN = {
 				}
 				LOGIN.scriviUtente();
 				if(funct)eval(funct);
-				if(location.href.indexOf("https://www.iaomai.app")==0 && getVar("aL") && !DB.login.data.idUtente)LOGIN.autoLogin();
+				if(location.href.indexOf("https://www.iaomai.app")==0 && getVar("aL") && (!DB.login.data.idUtente || !LOGIN.logedin()))LOGIN.autoLogin();
 				if(onlineVersion){
 					setTimeout( function(){
 						if(getVar('demo') && !LOGIN.reg()){
