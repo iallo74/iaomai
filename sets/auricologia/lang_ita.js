@@ -199,7 +199,7 @@ DB.set = {
         },
         "154": {
             NomePunto: "Subcortex",
-            AzioniPunto: "<p><b>Altri nomi</b><br>- Eccitazione<br>- Punto epiplessia<br>- Ghiandole salivari</p><p><b>Azione</b><br>Questo punto viene utilizzato per il trattamento delle patologie neurologiche acute e croniche. È inoltre indicato per ridurre i sintomi da depressione, ansia e disturbi circolatori.</p><p><b>Ubicazione</b><br>CW2, al centro dell'avanmuro dell'antitrago.</p>",
+            AzioniPunto: "<p><b>Altri nomi</b><br>- Eccitazione<br>- Punto epilessia<br>- Ghiandole salivari</p><p><b>Azione</b><br>Questo punto viene utilizzato per il trattamento delle patologie neurologiche acute e croniche. È inoltre indicato per ridurre i sintomi da depressione, ansia e disturbi circolatori.</p><p><b>Ubicazione</b><br>CW2, al centro dell'avanmuro dell'antitrago.</p>",
             ChiaviPunto: ""
         },
         "155": {
