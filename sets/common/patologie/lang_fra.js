@@ -1,53 +1,53 @@
 var DB_patologie = {
     "100": {
         "nomi": [
-            "Insect bites"
+            "Piqûres d'insectes"
         ],
         "descrizione": "",
         "categoria": 5
     },
     "101": {
         "nomi": [
-            "Common cold",
-            "Viral rhinitis",
-            "Acute rhinitis",
-            "Upper respiratory tract infection"
+            "Rhume",
+            "Rhinite virale",
+            "Rhinite aiguë",
+            "Infection des voies respiratoires supérieures"
         ],
-        "descrizione": "A common viral infection of the upper respiratory tract, mainly involving the nose and throat. It is primarily caused by different types of viruses, including rhinovirus, and spreads easily through direct contact with infected individuals or contaminated surfaces.<br>Typical symptoms of the common cold include nasal congestion, mucous discharge, sneezing, sore throat, cough, a feeling of general discomfort, and sometimes mild fever. The duration of the cold can vary from a few days to one or two weeks.",
-        "consigli": "Warm foot bath with water and salt to warm the Spleen and Gallbladder meridians.",
+        "descrizione": "<p>Infection virale courante des voies respiratoires supérieures, touchant principalement le nez et la gorge. Elle est principalement causée par différents types de virus, dont le rhinovirus, et se transmet facilement par contact direct avec des personnes infectées ou des surfaces contaminées.</p><p>Les symptômes typiques du rhume sont la congestion nasale, les sécrétions muqueuses, les éternuements, les maux de gorge, la toux, un malaise général et parfois une légère fièvre. La durée d'un rhume peut varier de quelques jours à une ou deux semaines.</p>",
+        "consigli": "Bain de pieds chaud avec de l'eau et du sel pour réchauffer les méridiens de la Rate et de la Vésicule biliaire.",
         "categoria": 1
     },
     "103": {
         "nomi": [
-            "Rheumatism"
+            "Rhumatisme"
         ],
-        "descrizione": "The term \"rheumatism\" has historically been used to describe a group of diseases and disorders that involve the musculoskeletal system and connective tissues. Today, the term is commonly used to refer to rheumatic diseases that cause pain, inflammation, and stiffness in the joints, muscles, tendons, or soft tissues of the body.<br>The most common rheumatic diseases include rheumatoid arthritis, osteoarthritis, fibromyalgia, ankylosing spondylitis, and systemic lupus erythematosus. These conditions can vary significantly in their cause, symptoms, severity, and treatment methods.<br>Typical symptoms of rheumatism may include joint pain, swelling, stiffness, muscle weakness, fatigue, and restricted movement. Rheumatism can impact the quality of life of affected individuals and often requires long-term management to alleviate symptoms and prevent complications.",
-        "consigli": "Avoid exposure to cold, do warm sand baths, take care of nutrition, and keep the joints active by avoiding a sedentary lifestyle.",
+        "descrizione": "<div>Le terme \"rhumatisme\" a historiquement été utilisé pour décrire un groupe de maladies et de troubles impliquant le système musculo-squelettique et les tissus conjonctifs. Aujourd'hui, le terme est couramment utilisé pour faire référence aux maladies rhumatismales qui provoquent des douleurs, une inflammation et une raideur dans les articulations, les muscles, les tendons ou les tissus mous du corps.</div><div>Les maladies rhumatismales les plus courantes comprennent la polyarthrite rhumatoïde, l'ostéoarthrite, la fibromyalgie, la spondylarthrite ankylosante et le lupus érythémateux systémique. Ces conditions peuvent varier considérablement en termes de cause, de symptômes, de gravité et de méthodes de traitement.</div><div>Les symptômes typiques du rhumatisme peuvent inclure des douleurs articulaires, des gonflements, des raideurs, des faiblesses musculaires, de la fatigue et des restrictions des mouvements. Le rhumatisme peut affecter la qualité de vie des personnes touchées et nécessite souvent une prise en charge à long terme pour soulager les symptômes et prévenir les complications.</div>",
+        "consigli": "Éviter l'exposition au froid, prendre des bains de sable chauds, veiller à une bonne nutrition et maintenir l'activité des articulations en évitant un mode de vie sédentaire.",
         "categoria": 12
     },
     "105": {
         "nomi": [
-            "Allergic rhinitis",
-            "Atopic rhinitis",
-            "Nasal allergy",
-            "Hay fever"
+            "Rhinite allergique",
+            "Rhinite atopique",
+            "Allergie nasale",
+            "Rhume des foins"
         ],
-        "descrizione": "Nasal result of a type I antigen-antibody reaction (IgE antibody).<br>It can be seasonal (grasses, pollen), perennial (parietaria, house dust mite), or aperiodic (animal-derived such as cat fur or food).<br>It manifests with nasal itching, sneezing, abundant watery discharge, nasal obstruction, hyposmia, headache, and conjunctivitis.",
-        "consigli": "Reduce contact with allergens as much as possible.",
+        "descrizione": "<div>Résultat nasal d'une réaction antigène-anticorps de type I (anticorps IgE).</div><div>Il peut être saisonnier (herbes, pollen), perpétuel (pariétaire, acariens de la poussière domestique), ou apériodique (d'origine animale tels que les poils de chat ou les aliments).</div><div>Il se manifeste par des démangeaisons nasales, des éternuements, un écoulement abondant d'eau, une obstruction nasale, une hyposmie, des maux de tête et une conjonctivite.</div>",
+        "consigli": "Réduisez autant que possible le contact avec les allergènes.",
         "categoria": 1
     },
     "106": {
         "nomi": [
-            "Urinary retention"
+            "La rétention urinaire"
         ],
-        "descrizione": "Medical condition in which a person has difficulty emptying the bladder completely or experiences the inability to urinate despite the urge to do so. This condition can occur due to various reasons, including anatomical problems, urinary tract obstructions, neurological disorders, side effects of medications, or other medical conditions.<br>Common symptoms of urinary retention include a sense of urgency to urinate, but only a limited or interrupted urine flow, pain or discomfort in the lower abdomen, and the need to strain to start or complete urination.<br>Urinary retention can be classified as acute or chronic. Acute retention occurs suddenly and requires urgent treatment, as it can be caused by urinary tract obstruction or other serious medical conditions. Chronic retention, on the other hand, develops gradually and may be related to conditions such as prostate enlargement in men or neurological dysfunction.",
-        "consigli": "Moxibustion is not effective in urinary retention due to obstruction from prostate problems.<br>It is very effective in cases of reflexogenic and nervous type of retention.",
+        "descrizione": "<div>Trouble médical dans lequel une personne a des difficultés à vider complètement la vessie ou éprouve l'incapacité d'uriner malgré le besoin de le faire. Cette condition peut survenir pour diverses raisons, notamment des problèmes anatomiques, des obstructions des voies urinaires, des troubles neurologiques, des effets secondaires de médicaments ou d'autres conditions médicales.</div><div>Les symptômes courants de la rétention urinaire comprennent une sensation d'urgence à uriner, mais seulement un écoulement d'urine limité ou interrompu, des douleurs ou des inconforts dans le bas de l'abdomen, et le besoin de se forcer pour commencer ou compléter l'acte d'uriner.</div><div>La rétention urinaire peut être classée comme aiguë ou chronique. La rétention aiguë survient soudainement et nécessite un traitement urgent, car elle peut être causée par une obstruction des voies urinaires ou d'autres affections médicales graves. La rétention chronique, en revanche, se développe progressivement et peut être liée à des conditions telles que l'hypertrophie de la prostate chez les hommes ou à des dysfonctionnements neurologiques.</div>",
+        "consigli": "La moxibustion n'est pas efficace dans les cas de rétention urinaire due à une obstruction liée à des problèmes de prostate. Elle est très efficace dans les cas de rétention de type réflexogène et nerveuse.Moxibustion is not effective in urinary retention due to obstruction from prostate problems.<br>It is very effective in cases of reflexogenic and nervous type of retention.",
         "categoria": 3
     },
     "108": {
         "nomi": [
-            "Salmonellosis",
-            "Salmonella gastroenteritis"
+            "Salmonellose",
+            "Gastro-entérite"
         ],
         "descrizione": "Maladie infectieuse causée par une contamination par des bactéries du genre Salmonella. Cette infection est généralement associée à la consommation d'aliments contaminés, tels que de la viande crue ou insuffisamment cuite, des œufs non pasteurisés, du lait non traité ou des fruits et légumes contaminés par des matières fécales animales ou humaines.<br> Les symptômes de la salmonellose peuvent varier de légers à graves et comprennent des nausées, des vomissements, de la diarrhée, des crampes abdominales et de la fièvre. La plupart des gens se rétablissent complètement sans avoir besoin de traitement médical, mais dans les cas graves ou chez les patients immunodéprimés, l'infection peut nécessiter une intervention médicale.",
         "consigli": "Selon la cause, apporter des corrections diététiques, boire beaucoup de liquides pour éviter la déshydratation, effectuer des traitements spécifiques en cas de causes parasitaires, éviter d'exposer la zone viscérale au froid.",
@@ -66,7 +66,7 @@ var DB_patologie = {
         "nomi": [
             "Hoquet"
         ],
-        "descrizione": "Le hoquet est un réflexe involontaire du corps impliquant une contraction rythmique et répétitive du diaphragme, le muscle qui sépare la poitrine de l'abdomen, suivie de la fermeture soudaine des cordes vocales. Cela produit le son caractéristique &quot;hic&quot; ou &quot;hiccup&quot;. Cette condition peut être ressentie par des personnes de tous âges et n'est pas considérée comme une maladie en soi, mais plutôt comme une réponse normale du corps.<br> Le hoquet peut être déclenché par divers facteurs, tels que manger trop vite, boire des boissons gazeuses, consommer des aliments épicés, boire de l'alcool, de l'anxiété ou de la tension émotionnelle, des changements de température ou même une déglutition excessive d'air.",
+        "descrizione": "Le hoquet est un réflexe involontaire du corps impliquant une contraction rythmique et répétitive du diaphragme, le muscle qui sépare la poitrine de l'abdomen, suivie de la fermeture soudaine des cordes vocales. Cela produit le son caractéristique \"hic\" ou \"hiccup\". Cette condition peut être ressentie par des personnes de tous âges et n'est pas considérée comme une maladie en soi, mais plutôt comme une réponse normale du corps.<br> Le hoquet peut être déclenché par divers facteurs, tels que manger trop vite, boire des boissons gazeuses, consommer des aliments épicés, boire de l'alcool, de l'anxiété ou de la tension émotionnelle, des changements de température ou même une déglutition excessive d'air.",
         "consigli": "Il y a une légende urbaine qui dit que pour stopper une crise de hoquet, il faut faire peur à la personne, et si on raisonne en termes de MTC, on voit que ce n'est pas tout à fait faux puisque le déséquilibre vient aussi d'un Shen (esprit) altéré; eh bien, une peur peut donner à Shen cette secousse qui le ramène à l'équilibre et, par conséquent, arrête le hoquet.<br> La plupart des cas de hoquet sont brefs et disparaissent d'eux-mêmes sans nécessiter de traitements spécifiques. Cependant, dans de rares cas où le hoquet persiste pendant une période prolongée ou devient gênant et interfère avec les activités quotidiennes, des techniques comme boire de l'eau froide, retenir sa respiration, stimuler les nerfs du palais avec des cuillères à sucre ou prendre des respirations lentes et profondes peuvent être utilisées pour soulager la condition.",
         "categoria": 4
     },
@@ -127,7 +127,7 @@ var DB_patologie = {
             "Raideur de la nuque"
         ],
         "descrizione": "Affection médicale caractérisée par une raideur et une douleur dans le cou, souvent accompagnées de mouvements limités du cou. Cette condition peut être causée par divers facteurs, notamment la tension musculaire, les contractions, les entorses, les infections, les inflammations, une mauvaise posture ou des blessures à la colonne vertébrale.<br> Les symptômes typiques de la raideur de la nuque comprennent une sensation de tiraillement ou une douleur dans la région du cou, une difficulté à tourner ou à incliner la tête, et parfois des maux de tête ou des douleurs irradiantes dans les épaules ou les bras.",
-        "consigli": "Méfiez-vous des courants d'air froids et des courants d'air, et faites attention aux vitres de voiture mal fermées.",
+        "consigli": "Méfiez-vous des coups de froid et des courants d'air, et faites attention aux vitres de voiture mal fermées.",
         "categoria": 13
     },
     "127": {
@@ -153,7 +153,7 @@ var DB_patologie = {
             "Thrombophlébite superficielle"
         ],
         "descrizione": "Inflammation d'une veine superficielle, accompagnée de la formation d'un caillot sanguin (thrombus) à l'intérieur de la veine affectée. Cette condition affecte généralement les veines près de la surface de la peau, souvent dans les jambes ou les bras.<br> La thrombophlébite superficielle peut présenter des symptômes tels que douleur, gonflement et rougeur le long du trajet de la veine impliquée. Cependant, elle est généralement moins grave que la thrombophlébite profonde, où le caillot se développe dans une veine plus profonde du corps.",
-        "consigli": "Combinez la pharmacothérapie allopathique avec les traitements.",
+        "consigli": "<p>Combiner les traitements avec la pharmacothérapie allopathique.</p>",
         "categoria": 11
     },
     "130": {
@@ -161,7 +161,7 @@ var DB_patologie = {
             "Tuberculose pulmonaire"
         ],
         "descrizione": "Une forme de tuberculose qui affecte directement les poumons. Elle est causée par la bactérie Mycobacterium tuberculosis, également connue sous le nom de bacille de Koch. Ce micro-organisme se propage dans l'air, principalement lorsqu'une personne infectée tousse, éternue ou parle, et peut être transmis à des personnes non immunisées.<br> La tuberculose pulmonaire peut présenter des symptômes tels qu'une toux persistante, souvent accompagnée d'expectorations ou de production de sang, de la fièvre, des sueurs nocturnes, de la fatigue, une perte de poids et une perte d'appétit. La maladie peut progresser lentement et peut être asymptomatique chez certaines personnes, tandis que chez d'autres, elle peut provoquer des symptômes graves.",
-        "consigli": "La condition est très contagieuse, alors prenez les précautions nécessaires.",
+        "consigli": "<p>La maladie est facilement contagieuse, il convient donc d'être prudent.</p>",
         "categoria": 2
     },
     "131": {
@@ -178,14 +178,14 @@ var DB_patologie = {
             "Verrues vulgaires"
         ],
         "descrizione": "Lésions cutanées bénignes causées par une infection virale du papillomavirus humain (HPV). Ces verrues apparaissent comme de petites excroissances saillantes, généralement de couleur grisâtre ou brune, avec une surface rugueuse. On les trouve le plus souvent sur les mains, les doigts et d'autres zones de la peau soumises à des frottements ou à des pressions.<br> Les verrues communes sont contagieuses et se transmettent par contact direct avec de la peau infectée ou des objets contaminés par le virus. Ils peuvent apparaître individuellement ou en grappes.<br> Bien que les verrues communes soient généralement inoffensives et ne causent pas de problèmes de santé graves, elles peuvent être gênantes ou embarrassantes pour certaines personnes. De plus, s'ils sont rayés ou endommagés, ils peuvent se propager à d'autres parties du corps ou à d'autres personnes.",
-        "consigli": "Utilisez des sandales couvertes dans la piscine, qui est l'endroit le plus contagieux et où les verrues sont le plus souvent transmises aux pieds.<br> Se laver les mains fréquemment si dans des environnements avec des personnes porteuses.",
+        "consigli": "Utilisez des sandales couvertes dans la piscine, qui est l'endroit le plus contagieux et où les verrues plantaires se transmettent le plus souvent.<br>Lavez-vous les mains fréquemment si vous êtes en contact avec des personnes porteuses de verrues.<br>",
         "categoria": 5
     },
     "133": {
         "nomi": [
             "Acné"
         ],
-        "descrizione": "Inflammation de l'unité pilo-sébacée avec apparition de points blancs, de points noirs et de papules, et dans les cas plus avancés avec des kystes, des pustules, des nodules et des cicatrices hypertrophiques.<br> L'acné des adolescents affecte la tranche d'âge comprise entre 10 et 14 ans chez les femmes et entre 13 et 20 ans chez les hommes; au-delà de ce stade, on parle d'acné tardive.<br> Généralement, les hommes sont plus touchés que les femmes.<br> Il existe une forte prédisposition héréditaire.<br> L'inflammation est généralement causée par la bactérie Staphylococcus.",
+        "descrizione": "Inflammation de l'unité pilo-sébacée avec apparition de points blancs, de points noirs et de papules, et dans les cas plus avancés avec des kystes, des pustules, des nodules et des cicatrices hypertrophiques.<br> L'acné des adolescents affecte la tranche d'âge comprise entre 10 et 14 ans chez les femmes et entre 13 et 20 ans chez les hommes; au-delà de ce stade, on parle d'acné tardive.<br> Généralement, les hommes sont plus touchés que les femmes.<br> Il existe une forte prédisposition héréditaire.<br> L'inflammation est généralement causée par la bactérie Staphylocoque.",
         "categoria": 5
     },
     "134": {
@@ -284,9 +284,9 @@ var DB_patologie = {
     },
     "148": {
         "nomi": [
-            "Bronchite obstructive chronique (COB)"
+            "Bronchopneumopathie chronique obstructive (BPCO)"
         ],
-        "descrizione": "Affection respiratoire caractérisée par une inflammation chronique des voies respiratoires, en particulier des bronches, entraînant un rétrécissement et une obstruction du flux d'air. Elle est souvent associée au tabagisme ou à l'exposition à des irritants dans l'environnement de travail.<br> Les symptômes typiques comprennent une toux persistante avec production de mucus, une respiration sifflante et des difficultés respiratoires, en particulier pendant l'activité physique. Le COB est une maladie évolutive et son aggravation peut entraîner des lésions pulmonaires permanentes.",
+        "descrizione": "Affection respiratoire caractérisée par une inflammation chronique des voies respiratoires, en particulier des bronches, entraînant un rétrécissement et une obstruction du flux d'air. Elle est souvent associée au tabagisme ou à l'exposition à des irritants dans l'environnement de travail.<br> Les symptômes typiques comprennent une toux persistante avec production de mucus, une respiration sifflante et des difficultés respiratoires, en particulier pendant l'activité physique. La BPCO est une maladie évolutive et son aggravation peut entraîner des lésions pulmonaires permanentes.",
         "categoria": 2
     },
     "149": {
@@ -314,7 +314,7 @@ var DB_patologie = {
     },
     "152": {
         "nomi": [
-            "Cervicalgie sur une base arthritique"
+            "Cervicalgie d'origine arthritique<br>"
         ],
         "descrizione": "Terme médical utilisé pour décrire la douleur localisée dans la région du cou. Cette condition peut provenir de diverses causes, notamment des problèmes musculaires ou de l'arthrite cervicale.<br> La cervicalgie d'origine arthritique est spécifiquement associée à des problèmes structurels de la colonne cervicale, tels que l'arthrite cervicale. L'arthrite est une affection dans laquelle les articulations entre les vertèbres se détériorent avec le temps, provoquant des douleurs, des raideurs et des mouvements limités du cou. Le traitement peut impliquer des analgésiques, une thérapie physique, des injections et, dans les cas graves, des interventions chirurgicales.",
         "categoria": 13
@@ -364,9 +364,9 @@ var DB_patologie = {
     },
     "159": {
         "nomi": [
-            "Coup de fouet"
+            "Coup du lapin"
         ],
-        "descrizione": "Le coup de fouet cervical est une blessure qui affecte la partie supérieure de la colonne vertébrale. Elle affecte les vertèbres cervicales, les muscles et le cou.<br> Elle est due à un mouvement brusque de la tête, typique des collisions par l'arrière, au cours duquel le cou dépasse les limites physiologiques du mouvement: elle se produit lorsque la tête recule brusquement puis fléchit à nouveau vers l'avant, tout aussi brusquement. C'est une déformation de la colonne cervicale.<br> Le coup de fouet cervical peut varier en gravité: dans certains cas, les symptômes douloureux associés peuvent régresser en quelques semaines, tandis que dans d'autres cas, des résultats permanents (comme une hernie discale) peuvent survenir, entraînant des symptômes douloureux chroniques.",
+        "descrizione": "Le coup de lapin cervical est une blessure qui affecte la partie supérieure de la colonne vertébrale. Elle affecte les vertèbres cervicales, les muscles et le cou.<br> Elle est due à un mouvement brusque de la tête, typique des collisions par l'arrière, au cours duquel le cou dépasse les limites physiologiques du mouvement: elle se produit lorsque la tête recule brusquement puis fléchit à nouveau vers l'avant, tout aussi brusquement. C'est une déformation de la colonne cervicale.<br> Le coup de lapin cervical peut varier en gravité: dans certains cas, les symptômes douloureux associés peuvent régresser en quelques semaines, tandis que dans d'autres cas, des résultats permanents (comme une hernie discale) peuvent survenir, entraînant des symptômes douloureux chroniques.",
         "categoria": 13
     },
     "160": {
@@ -378,9 +378,9 @@ var DB_patologie = {
     },
     "161": {
         "nomi": [
-            "Chorioblastome de l'utérus"
+            "Choristoblastome de l'utérus"
         ],
-        "descrizione": "Le chorioblastome est une tumeur qui peut se former dans l'utérus. Les tumeurs gynécologiques affectent le système reproducteur féminin et sont divisées en tumeurs utérines (tumeurs de l'endomètre et tumeurs du col de l'utérus) et tumeurs de l'ovaire. La tumeur utérine la plus rare est le sarcome (5%), tandis que la plus fréquente est le cancer de l'endomètre (80%) avec près de 9 000 cas par an, surtout après la ménopause entre 50 et 70 ans. Le cancer du col de l'utérus, la partie inférieure de l'utérus, est le troisième néoplasme gynécologique le plus fréquent, le cinquième cancer le plus fréquent au monde, avec un âge moyen au diagnostic de 50 ans, mais il peut aussi survenir à un jeune âge. Le cancer du col de l'utérus est la première cause de décès par cancer gynécologique dans le monde. Cependant, grâce au dépistage, le cancer du col de l'utérus peut être prévenu et guéri lorsqu'il est détecté à un stade précoce, ce qui augmente la probabilité de survie et le pronostic au moment du diagnostic.",
+        "descrizione": "Le choristoblastome est une tumeur qui peut se former dans l'utérus. Les tumeurs gynécologiques affectent le système reproducteur féminin et sont divisées en tumeurs utérines (tumeurs de l'endomètre et tumeurs du col de l'utérus) et tumeurs de l'ovaire. La tumeur utérine la plus rare est le sarcome (5%), tandis que la plus fréquente est le cancer de l'endomètre (80%) avec près de 9 000 cas par an, surtout après la ménopause entre 50 et 70 ans. Le cancer du col de l'utérus, la partie inférieure de l'utérus, est le troisième néoplasme gynécologique le plus fréquent, le cinquième cancer le plus fréquent au monde, avec un âge moyen au diagnostic de 50 ans, mais il peut aussi survenir à un jeune âge. Le cancer du col de l'utérus est la première cause de décès par cancer gynécologique dans le monde. Cependant, grâce au dépistage, le cancer du col de l'utérus peut être prévenu et guéri lorsqu'il est détecté à un stade précoce, ce qui augmente la probabilité de survie et le pronostic au moment du diagnostic.",
         "sesso": "f",
         "categoria": 7
     },
@@ -414,9 +414,9 @@ var DB_patologie = {
     },
     "167": {
         "nomi": [
-            "Trouble de l'articulation"
+            "Dyslalie"
         ],
-        "descrizione": "Le trouble de l'articulation est un trouble du langage dans lequel les personnes concernées ont des difficultés évidentes à prononcer correctement les mots et à articuler clairement le discours.<br> Souvent, le trouble de l'articulation est causé par des défauts des muscles de la cavité buccale et des organes impliqués dans la résonance vocale et l'articulation.",
+        "descrizione": "La dyslalie de l'articulation est un trouble du langage dans lequel les personnes concernées ont des difficultés évidentes à prononcer correctement les mots et à articuler clairement le discours.<br> Souvent, la dyslalie est causée par des défauts des muscles de la cavité buccale et des organes impliqués dans la résonance vocale et l'articulation.<br>",
         "categoria": 4
     },
     "168": {
@@ -534,7 +534,7 @@ var DB_patologie = {
     },
     "184": {
         "nomi": [
-            "Douleurs musculaires de la colonne vertébrale - Aperçu général"
+            "Douleurs musculaires de la colonne vertébrale - Généralités"
         ],
         "descrizione": "Les douleurs musculaires impliquant la colonne vertébrale sont communément appelées maux de dos. Dans la plupart des cas, elle affecte les muscles cervicaux et lombaires, irradiant vers les muscles environnants. Les facteurs déclenchants sont généralement une mauvaise posture pendant les heures de travail, un effort particulièrement intense ou un manque de repos. Les patients peuvent ressentir une douleur aiguë, qui ne dépasse généralement pas 30 jours, ou une douleur chronique, où les symptômes persistent pendant trois à six mois.",
         "categoria": 13
@@ -708,7 +708,7 @@ var DB_patologie = {
         "nomi": [
             "Hypotrichose"
         ],
-        "descrizione": "L'hypotrichose est un trouble de perte de cheveux autosomique dominant rare caractérisé par l'absence ou l'amincissement des cheveux, des sourcils et des cils à la naissance; cheveux grossiers en forme de fil pendant la petite enfance; et la perte de cheveux progressive à partir de la puberté.<br> Les individus affectés des deux sexes ont généralement l'absence ou l'amincissement des cheveux, des sourcils et des cils à la naissance. Dans la petite enfance, les cheveux deviennent grossiers et &quot;ressemblant à des fils&quot;. La perte de cheveux commence autour de la puberté, similaire au schéma observé dans l'alopécie androgénétique, et progresse vers une alopécie quasi totale. Les poils axillaires et pubiens peuvent être clairsemés ou absents, ainsi que les poils de barbe chez les hommes et les adolescents. Aucune autre anomalie ectodermique n'est présente.",
+        "descrizione": "L'hypotrichose est un trouble de perte de cheveux autosomique dominant rare caractérisé par l'absence ou l'amincissement des cheveux, des sourcils et des cils à la naissance; cheveux grossiers en forme de fil pendant la petite enfance; et la perte de cheveux progressive à partir de la puberté.<br> Les individus affectés des deux sexes ont généralement l'absence ou l'amincissement des cheveux, des sourcils et des cils à la naissance. Dans la petite enfance, les cheveux deviennent grossiers et \"ressemblant à des fils\". La perte de cheveux commence autour de la puberté, similaire au schéma observé dans l'alopécie androgénétique, et progresse vers une alopécie quasi totale. Les poils axillaires et pubiens peuvent être clairsemés ou absents, ainsi que les poils de barbe chez les hommes et les adolescents. Aucune autre anomalie ectodermique n'est présente.",
         "categoria": 5
     },
     "213": {
@@ -749,7 +749,7 @@ var DB_patologie = {
     },
     "218": {
         "nomi": [
-            "Ménière's disease"
+            "Maladie de Ménière"
         ],
         "descrizione": "La maladie de Ménière est une affection de l'oreille interne caractérisée par des crises de vertiges récurrentes d'une durée variable, de quelques minutes à plusieurs heures, associées à des acouphènes et une surdité fluctuante le plus souvent unilatérale, des nausées et des vomissements.",
         "categoria": 1
@@ -903,9 +903,9 @@ var DB_patologie = {
     },
     "241": {
         "nomi": [
-            "Otolithopathie"
+            "Otolithe"
         ],
-        "descrizione": "Les otolithes sont de minuscules amas d'oxalate et de carbonate de calcium, intégrés dans une matrice gélatineuse située dans l'oreille interne. Ces formations contribuent au maintien de l'équilibre et, en réponse aux mouvements de la tête, transmettent la sensation d'accélération aux organes otolithiques du système vestibulaire (l'utricule et le saccule). Étant plus lourds que la matrice qui les contient, les otolithes stimulent les cellules ciliées sensorielles de l'oreille lorsque la position de la tête change ou qu'un mouvement est initié. Ces cellules envoient ensuite des signaux au cerveau, l'informant des changements de position du corps dans l'espace. L'otolithopathie est causée par un décollement anormal qui déplace certains otolithes de leur position naturelle. Ces otolithes déplacés se déposent au fond de l'ampoule entre les récepteurs sensoriels, et tant que nous restons en position verticale, ils ne causent aucune perturbation. Cependant, chaque fois que nous nous couchons ou nous levons, les otolithes se déplacent à l'intérieur de l'ampoule, déclenchant une forte impulsion aux capteurs, qui à leur tour envoient un signal de rotation soudain au cerveau. Cela provoque des vertiges gênants, surtout en position couchée. Le terme médical pour ce trouble est le vertige positionnel paroxystique bénin (VPPB), et les épisodes se répètent chaque fois que la tête change de position, en particulier lorsqu'elle est allongée ou tournée sur le côté, en particulier la nuit. En position debout pendant la journée, il n'y a qu'un vague sentiment d'instabilité sans vertiges.",
+        "descrizione": "Les otolithes sont de minuscules amas d'oxalate et de carbonate de calcium, intégrés dans une matrice gélatineuse située dans l'oreille interne. Ces formations contribuent au maintien de l'équilibre et, en réponse aux mouvements de la tête, transmettent la sensation d'accélération aux organes otolithiques du système vestibulaire (l'utricule et le saccule). Étant plus lourds que la matrice qui les contient, les otolithes stimulent les cellules ciliées sensorielles de l'oreille lorsque la position de la tête change ou qu'un mouvement est initié. Ces cellules envoient ensuite des signaux au cerveau, l'informant des changements de position du corps dans l'espace. L'otolithe est causée par un décollement anormal qui déplace certains otolithes de leur position naturelle. Ces otolithes déplacés se déposent au fond de l'ampoule entre les récepteurs sensoriels, et tant que nous restons en position verticale, ils ne causent aucune perturbation. Cependant, chaque fois que nous nous couchons ou nous levons, les otolithes se déplacent à l'intérieur de l'ampoule, déclenchant une forte impulsion aux capteurs, qui à leur tour envoient un signal de rotation soudain au cerveau. Cela provoque des vertiges gênants, surtout en position couchée. Le terme médical pour ce trouble est le vertige positionnel paroxystique bénin (VPPB), et les épisodes se répètent chaque fois que la tête change de position, en particulier lorsqu'elle est allongée ou tournée sur le côté, en particulier la nuit. En position debout pendant la journée, il n'y a qu'un vague sentiment d'instabilité sans vertiges.",
         "categoria": 1
     },
     "242": {
@@ -1088,7 +1088,7 @@ var DB_patologie = {
         "nomi": [
             "Rosacée"
         ],
-        "descrizione": "La rosacée, également connue sous le nom d'acné rosacée, est une dermatite faciale chronique caractérisée par une rougeur de la zone touchée, de petits boutons et des vaisseaux sanguins visibles, généralement dans la partie centrale du visage, qui peuvent se manifester par un gonflement et une rougeur.<br /> Elle touche principalement les femmes (incidence trois fois plus élevée que chez les hommes) entre 30 et 50 ans, en particulier les personnes de race blanche et celles à peau claire.<br> Les causes n'ont pas été entièrement élucidées. L'hypothèse la plus probable est qu'il s'agit d'une réponse du système immunitaire inné (la première ligne de défense) à une série de stimuli, notamment de nature infectieuse. Il existe une réponse exagérée, vraisemblablement d'origine héréditaire, aux micro-organismes normalement présents sur la peau de chacun. Cette hypothèse est confirmée par la réponse à certains traitements anti-infectieux.<br> Lorsque les premiers symptômes apparaissent, le diagnostic est basé sur l'aspect typique de l'éruption cutanée et sur l'âge de la personne.<br> L'aggravation de la rosacée peut être évitée en évitant certains aliments, l'alcool, les boissons chaudes, l'exposition au soleil, les températures extrêmes, le vent et les cosmétiques.<br> Le traitement comprend des antibiotiques appliqués sur la peau ou, dans certains cas, pris par voie orale.",
+        "descrizione": "La rosacée, également connue sous le nom d'acné rosacée, est une dermatite faciale chronique caractérisée par une rougeur de la zone touchée, de petits boutons et des vaisseaux sanguins visibles, généralement dans la partie centrale du visage, qui peuvent se manifester par un gonflement et une rougeur.<br> Elle touche principalement les femmes (incidence trois fois plus élevée que chez les hommes) entre 30 et 50 ans, en particulier les personnes de race blanche et celles à peau claire.<br> Les causes n'ont pas été entièrement élucidées. L'hypothèse la plus probable est qu'il s'agit d'une réponse du système immunitaire inné (la première ligne de défense) à une série de stimuli, notamment de nature infectieuse. Il existe une réponse exagérée, vraisemblablement d'origine héréditaire, aux micro-organismes normalement présents sur la peau de chacun. Cette hypothèse est confirmée par la réponse à certains traitements anti-infectieux.<br> Lorsque les premiers symptômes apparaissent, le diagnostic est basé sur l'aspect typique de l'éruption cutanée et sur l'âge de la personne.<br> L'aggravation de la rosacée peut être évitée en évitant certains aliments, l'alcool, les boissons chaudes, l'exposition au soleil, les températures extrêmes, le vent et les cosmétiques.<br> Le traitement comprend des antibiotiques appliqués sur la peau ou, dans certains cas, pris par voie orale.",
         "categoria": 5
     },
     "269": {
@@ -1320,7 +1320,7 @@ var DB_patologie = {
             "Paralysie du nerf médian",
             "Main de singe"
         ],
-        "descrizione": "Condition médicale dans laquelle le nerf médian, l'un des principaux nerfs du bras, subit des dommages ou une compression, provoquant des symptômes tels que des picotements, un engourdissement, une faiblesse musculaire et une difficulté à bouger la main et les doigts. Ce nerf s'étend le long de l'avant-bras et traverse le poignet par un passage étroit appelé &quot;tunnel carpien&quot;.<br> La paralysie du nerf médian peut être causée par diverses raisons, notamment un traumatisme, des activités répétitives ou des positions où le poignet est plié de manière excessive et pendant des périodes prolongées. D'autres causes peuvent inclure l'arthrite, les kystes ou les tumeurs comprimant le nerf et des conditions telles que le syndrome du canal carpien.<br> Les symptômes typiques comprennent des picotements et des engourdissements dans la main et les doigts, en particulier dans le pouce, l'index, le majeur et une partie de l'annulaire. La force de préhension peut diminuer et il peut parfois devenir difficile de saisir des objets ou d'effectuer des mouvements précis avec la main.<br> Le diagnostic repose sur un examen clinique, des tests diagnostiques tels que des études de conduction nerveuse et, dans certains cas, des études d'imagerie pour évaluer la cause et l'étendue de la paralysie.",
+        "descrizione": "Condition médicale dans laquelle le nerf médian, l'un des principaux nerfs du bras, subit des dommages ou une compression, provoquant des symptômes tels que des picotements, un engourdissement, une faiblesse musculaire et une difficulté à bouger la main et les doigts. Ce nerf s'étend le long de l'avant-bras et traverse le poignet par un passage étroit appelé \"tunnel carpien\".<br> La paralysie du nerf médian peut être causée par diverses raisons, notamment un traumatisme, des activités répétitives ou des positions où le poignet est plié de manière excessive et pendant des périodes prolongées. D'autres causes peuvent inclure l'arthrite, les kystes ou les tumeurs comprimant le nerf et des conditions telles que le syndrome du canal carpien.<br> Les symptômes typiques comprennent des picotements et des engourdissements dans la main et les doigts, en particulier dans le pouce, l'index, le majeur et une partie de l'annulaire. La force de préhension peut diminuer et il peut parfois devenir difficile de saisir des objets ou d'effectuer des mouvements précis avec la main.<br> Le diagnostic repose sur un examen clinique, des tests diagnostiques tels que des études de conduction nerveuse et, dans certains cas, des études d'imagerie pour évaluer la cause et l'étendue de la paralysie.",
         "categoria": 4
     },
     "328": {
@@ -1435,7 +1435,7 @@ var DB_patologie = {
         "nomi": [
             "Scoliose idiopathique"
         ],
-        "descrizione": "Affection médicale caractérisée par une courbure latérale anormale de la colonne vertébrale, qui se développe pendant la croissance et pour laquelle une cause spécifique ne peut être identifiée. Le terme &quot;idiopathique&quot; indique que la cause de la scoliose est inconnue ou non attribuable à des facteurs spécifiques.<br> Cette condition affecte principalement les enfants et les adolescents, en particulier pendant la phase de croissance rapide de l'adolescence. La courbure de la colonne vertébrale peut être légère ou plus sévère et peut être localisée dans différentes régions du dos.<br> La scoliose idiopathique peut progresser lentement au fil du temps et peut entraîner des problèmes tels que des maux de dos, des altérations de l'apparence esthétique et, dans les cas graves, des limitations de la fonction pulmonaire en raison de la compression des organes internes.<br> Le diagnostic repose sur un examen physique et des tests d'imagerie, tels que des rayons X, pour mesurer l'étendue et l'emplacement de la courbure. Le traitement dépend de la gravité de la scoliose et peut inclure une observation périodique, une thérapie physique, l'utilisation d'appareils orthopédiques ou, dans les cas graves, une intervention chirurgicale pour corriger la courbure.<br> Avec un diagnostic précoce et un traitement approprié, de nombreux patients atteints de scoliose idiopathique peuvent avoir une bonne qualité de vie et maintenir une bonne fonctionnalité du dos.",
+        "descrizione": "Affection médicale caractérisée par une courbure latérale anormale de la colonne vertébrale, qui se développe pendant la croissance et pour laquelle une cause spécifique ne peut être identifiée. Le terme \"idiopathique\" indique que la cause de la scoliose est inconnue ou non attribuable à des facteurs spécifiques.<br> Cette condition affecte principalement les enfants et les adolescents, en particulier pendant la phase de croissance rapide de l'adolescence. La courbure de la colonne vertébrale peut être légère ou plus sévère et peut être localisée dans différentes régions du dos.<br> La scoliose idiopathique peut progresser lentement au fil du temps et peut entraîner des problèmes tels que des maux de dos, des altérations de l'apparence esthétique et, dans les cas graves, des limitations de la fonction pulmonaire en raison de la compression des organes internes.<br> Le diagnostic repose sur un examen physique et des tests d'imagerie, tels que des rayons X, pour mesurer l'étendue et l'emplacement de la courbure. Le traitement dépend de la gravité de la scoliose et peut inclure une observation périodique, une thérapie physique, l'utilisation d'appareils orthopédiques ou, dans les cas graves, une intervention chirurgicale pour corriger la courbure.<br> Avec un diagnostic précoce et un traitement approprié, de nombreux patients atteints de scoliose idiopathique peuvent avoir une bonne qualité de vie et maintenir une bonne fonctionnalité du dos.",
         "categoria": 13
     },
     "000": {
@@ -1452,7 +1452,7 @@ var DB_patologie = {
             "Acouphène",
             "Bourdonnement dans les oreilles"
         ],
-        "descrizione": "Communément appelé &quot;sifflement&quot; ou &quot;bourdonnement&quot; dans les oreilles, l'acouphène est une condition médicale caractérisée par la perception de sons ou de bruits en l'absence de sources externes. Ces sons peuvent être intermittents ou constants et peuvent varier d'un sifflement à une sonnerie. Les acouphènes peuvent être entendus dans une ou les deux oreilles et peuvent varier en intensité.<br> Les causes des acouphènes peuvent être diverses, y compris les dommages auditifs dus à l'exposition à des sons forts, les otites, l'accumulation de cérumen, les modifications vasculaires ou les problèmes de l'oreille interne. Dans certains cas, les acouphènes peuvent être associés à d'autres conditions médicales, telles que l'hypertension ou le trouble de l'articulation temporo-mandibulaire (ATM).",
+        "descrizione": "Communément appelé \"sifflement\" ou \"bourdonnement\" dans les oreilles, l'acouphène est une condition médicale caractérisée par la perception de sons ou de bruits en l'absence de sources externes. Ces sons peuvent être intermittents ou constants et peuvent varier d'un sifflement à une sonnerie. Les acouphènes peuvent être entendus dans une ou les deux oreilles et peuvent varier en intensité.<br> Les causes des acouphènes peuvent être diverses, y compris les dommages auditifs dus à l'exposition à des sons forts, les otites, l'accumulation de cérumen, les modifications vasculaires ou les problèmes de l'oreille interne. Dans certains cas, les acouphènes peuvent être associés à d'autres conditions médicales, telles que l'hypertension ou le trouble de l'articulation temporo-mandibulaire (ATM).",
         "consigli": "Effectuez 30 pressions sur le tragus correspondant pendant 5 secondes chacune avec un intervalle de 3 secondes; cette manœuvre atténue l'inconfort et, combinée à d'autres techniques, contribue à la résolution.<br> Consulter un médecin ou un oto-rhino-laryngologiste est important pour un diagnostic précis et pour identifier les meilleures options de traitement pour soulager les symptômes et améliorer la qualité de vie du patient.",
         "categoria": 1
     },
@@ -1616,8 +1616,8 @@ var DB_patologie = {
         "nomi": [
             "Azoospermie",
             "Aspermie",
-            "Gares",
-            "Absence de sperme"
+            "Absence de sperme",
+            "Absence de spermatozoïdes"
         ],
         "descrizione": "Condition médicale dans laquelle le sperme d'un homme ne contient pas de spermatozoïdes. Cela signifie que l'homme est incapable de produire du sperme ou que la quantité produite est si faible qu'elle n'est pas détectable dans le sperme. L'azoospermie peut être de deux types: obstructive et non obstructive.<br> L'azoospermie obstructive est causée par un blocage physique des canaux transportant les spermatozoïdes, empêchant le passage des spermatozoïdes. L'azoospermie non obstructive, quant à elle, résulte de problèmes de production de sperme au niveau testiculaire.<br> Les causes de l'azoospermie peuvent être variées, y compris des conditions génétiques, des infections, des traumatismes ou des problèmes hormonaux. Le diagnostic d'azoospermie nécessite une analyse de sperme et une évaluation médicale appropriée. La fertilité d'un homme atteint d'azoospermie dépend de la cause sous-jacente et des options de traitement disponibles, telles que la chirurgie corrective ou les techniques de procréation assistée.",
         "consigli": "Pendant la période de traitement, l'individu doit s'abstenir de rapports sexuels.",
@@ -1638,7 +1638,7 @@ var DB_patologie = {
             "Bronchite"
         ],
         "descrizione": "Affection médicale caractérisée par une inflammation des voies respiratoires appelées bronches, qui transportent l'air des poumons vers la trachée. Cette inflammation peut être causée par des infections virales ou bactériennes, des irritants inhalés ou d'autres facteurs déclenchants. Les symptômes typiques de la bronchite comprennent une toux persistante, la production de mucus et des difficultés respiratoires. La bronchite peut être de deux types: aiguë ou chronique. La bronchite aiguë est souvent causée par des infections virales courantes et est généralement de courte durée, tandis que la bronchite chronique peut résulter d'une affection plus grave comme le tabagisme ou la pollution de l'air.",
-        "consigli": "Éliminez la fumée de cigarette, évitez les environnements avec du smog, de la poussière ou des polluants toxiques.<br> La prise en charge de la bronchite doit inclure du repos et un apport hydrique.",
+        "consigli": "Il faut éviter de fumer, de vivre dans des environnements où il y a du smog, de la poussière ou des matières polluantes ou toxiques.<div>La prise en charge de la bronchite doit inclure le repos et l'absorption de liquides.</div>",
         "categoria": 2
     },
     "022": {
@@ -1666,8 +1666,8 @@ var DB_patologie = {
         "nomi": [
             "Cataracte sénile"
         ],
-        "descrizione": "Une affection oculaire courante qui affecte le cristallin de l'œil, le cristallin transparent naturel appelé cristallin. Avec l'âge, le cristallin peut devenir opaque et brouiller la vision, entraînant une perte progressive de la netteté visuelle. Cela peut avoir un impact sur les activités quotidiennes telles que conduire, lire et voir des détails. La cataracte sénile est une conséquence naturelle du vieillissement et peut être exacerbée par des facteurs tels que l'exposition à la lumière ultraviolette et l'utilisation de médicaments spécifiques.",
-        "consigli": "Dans ce cas, le seul conseil judicieux est de recommander au patient de se soumettre à un examen spécialisé.",
+        "descrizione": "<p>Il s'agit d'une affection oculaire courante qui touche la lentille de l'œil, naturellement transparente et appelée cristallin. Avec l'âge, le cristallin peut s'opacifier et brouiller la vision, entraînant une perte progressive de la clarté visuelle. Cela peut affecter les activités quotidiennes telles que la conduite, la lecture et la perception des détails. La cataracte liée à l'âge est une conséquence naturelle du vieillissement et peut être accentuée par des facteurs tels que l'exposition aux rayons ultraviolets et l'utilisation de certains médicaments.</p>",
+        "consigli": "<p>Dans ce cas, le seul conseil raisonnable est de conseiller au patient de se soumettre à un examen spécialisé.</p>",
         "categoria": 6
     },
     "025": {
@@ -1675,17 +1675,17 @@ var DB_patologie = {
             "Dyspepsie",
             "Indigestion"
         ],
-        "descrizione": "Affection médicale caractérisée par une sensation d'inconfort ou de brûlure dans la partie supérieure de l'abdomen. Ce symptôme peut s'accompagner de ballonnements, d'éructations et d'une sensation de satiété après les repas. La dyspepsie peut être causée par diverses raisons, notamment une production excessive d'acide gastrique, une mauvaise alimentation, le stress, la suralimentation, la consommation de boissons gazeuses, le tabagisme ou l'alcool. Dans certains cas, la dyspepsie peut être liée à des problèmes plus graves tels qu'un ulcère gastrique ou un reflux gastro-œsophagien.",
-        "consigli": "Surveillez votre alimentation, évitez la sédentarité et si le malaise persiste, consultez un médecin.",
+        "descrizione": "État pathologique caractérisé par une sensation d'inconfort ou de brûlure dans la partie supérieure de l'abdomen. Ce symptôme peut s'accompagner de ballonnements, d'éructations et d'une sensation de plénitude après les repas. La dyspepsie peut avoir plusieurs causes, notamment une production excessive d'acide gastrique, une mauvaise alimentation, le stress, une surconsommation de nourriture ou de boissons gazeuses, le tabagisme ou l'alcool. Dans certains cas, la dyspepsie peut être liée à des problèmes plus graves tels que l'ulcère gastrique ou le reflux gastro-œsophagien.",
+        "consigli": "Surveillez votre alimentation, évitez la sédentarité et si le trouble persiste, consultez un médecin.",
         "categoria": 9
     },
     "026": {
         "nomi": [
-            "Mal de tête",
+            "Mal de tête (Céphalée)",
             "Migraine"
         ],
-        "descrizione": "Affection médicale caractérisée par une douleur ou un inconfort localisé dans la région de la tête ou du cou. Il existe plusieurs types de maux de tête<br> - Céphalée de tension: caractérisée par une sensation bilatérale de pression ou d'oppression sur la tête, souvent causée par le stress, une tension musculaire ou une mauvaise posture. Il peut être soulagé par le repos, la relaxation et le massage.<br> - Céphalée vasculaire de la face: extrêmement intense et douloureuse, localisée autour de l'œil, souvent accompagnée de larmoiement et de congestion nasale. Les crises peuvent durer des semaines à des mois, suivies de périodes de rémission.<br> - Migraine: douleur intense et lancinante, souvent unilatérale, accompagnée de nausées, de vomissements et d'une sensibilité à la lumière et au son. Elle peut durer des heures ou des jours et peut être déclenchée par divers facteurs tels que certains aliments, le stress ou des changements hormonaux.<br> - Migraine menstruelle: liée au cycle menstruel, les femmes peuvent ressentir des maux de tête avant, pendant ou après les règles. Elle est causée par des fluctuations hormonales.<br> - Céphalée de tension: caractérisée par une douleur constante et diffuse, causée par une tension musculaire prolongée, le stress ou l'anxiété. Il n'est généralement pas grave mais peut être gênant et persistant. Le repos et la relaxation peuvent aider à améliorer la situation.",
-        "consigli": "Dans les maux de tête liés au stress, évitez les facteurs déclenchants; dans tous les cas, si les causes ne sont pas organiques, menez une vie modérée et évitez les excès.",
+        "descrizione": "Affection médicale caractérisée par une douleur ou un inconfort localisé dans la région de la tête ou du cou. Il existe plusieurs types de maux de tête<br> - Céphalée de tension : caractérisée par une sensation bilatérale de pression ou d'oppression sur la tête, souvent causée par le stress, une tension musculaire ou une mauvaise posture. Il peut être soulagé par le repos, la relaxation et le massage.<br> - Céphalée vasculaire de la face : extrêmement intense et douloureuse, localisée autour de l'œil, souvent accompagnée de larmoiement et de congestion nasale. Les crises peuvent durer des semaines à des mois, suivies de périodes de rémission.<br> - Migraine : douleur intense et lancinante, souvent unilatérale, accompagnée de nausées, de vomissements et d'une sensibilité à la lumière et au son. Elle peut durer des heures ou des jours et peut être déclenchée par divers facteurs tels que certains aliments, le stress ou des changements hormonaux.<br> - Migraine menstruelle : liée au cycle menstruel, les femmes peuvent ressentir des maux de tête avant, pendant ou après les règles. Elle est causée par des fluctuations hormonales.<br> - Céphalée de tension : caractérisée par une douleur constante et diffuse, causée par une tension musculaire prolongée, le stress ou l'anxiété. Il n'est généralement pas grave mais peut être gênant et persistant. Le repos et la relaxation peuvent aider à améliorer la situation.",
+        "consigli": "En cas de maux de tête dus au stress, il faut éviter les effets déclencheurs, mais si les causes ne sont pas organiques, il faut mener une vie modérée en évitant les excès.",
         "categoria": 4
     },
     "027": {
@@ -1694,7 +1694,7 @@ var DB_patologie = {
             "Spasmes abdominaux"
         ],
         "descrizione": "Affection caractérisée par des douleurs aiguës, des crampes ou des spasmes dans l'abdomen, souvent associés à des troubles du tractus intestinal. Cette douleur peut être localisée dans diverses zones de l'abdomen et peut varier en intensité et en durée. Les causes des coliques intestinales peuvent inclure des troubles gastro-intestinaux tels que le syndrome du côlon irritable (IBS), les gaz intestinaux, la constipation ou la diarrhée. Parfois, la douleur peut être déclenchée par des aliments spécifiques, le stress ou des changements dans les routines quotidiennes.",
-        "consigli": "Surveillez et, si nécessaire, améliorez votre alimentation; éviter un mode de vie sédentaire. Si la cause est liée aux nerfs, éliminez les facteurs déclenchants ou au moins réduisez le stress qui y est associé et établissez des habitudes pour un mode de vie plus régulier.",
+        "consigli": "Surveillez et, si nécessaire, améliorez votre alimentation ; éviter un mode de vie sédentaire. Si la cause est liée aux nerfs, éliminez les facteurs déclenchants ou au moins réduisez le stress qui y est associé et établissez des habitudes pour un mode de vie plus régulier.",
         "categoria": 9
     },
     "028": {
@@ -1707,8 +1707,8 @@ var DB_patologie = {
     },
     "029": {
         "nomi": [
-            "Effondrement vasomoteur",
-            "Effondrement cardiocirculatoire",
+            "Trouble vasomoteur",
+            "Collapsus cardiovasculaire",
             "Évanouissement",
             "Syncope",
             "Perte de conscience"
@@ -1771,10 +1771,10 @@ var DB_patologie = {
     },
     "036": {
         "nomi": [
-            "Dermatite érythémateuse-squameuse"
+            "Dermatose érythémato-squameuse"
         ],
         "descrizione": "Affection cutanée caractérisée par un érythème (rougeur) et une desquamation (élimination des cellules mortes de la peau). Cette forme de dermatite est souvent associée à une réponse inflammatoire de la peau à des irritants, des allergènes ou des facteurs environnementaux. Les symptômes courants comprennent des démangeaisons, des rougeurs et une desquamation de la peau, avec formation d'écailles ou de croûtes. La dermatite érythémateuse-squameuse peut affecter différentes parties du corps, telles que le cuir chevelu, le visage, les mains, les bras ou les jambes. Les causes peuvent être diverses, notamment le contact avec des allergènes, des produits chimiques, des agents infectieux ou des facteurs génétiques.",
-        "consigli": "Exposition au soleil recommandée, alternativement lampes de bronzage.",
+        "consigli": "<p>Il est recommandé de s'exposer au soleil ou d'utiliser des lampes de bronzage.</p>",
         "categoria": 5
     },
     "037": {
@@ -1925,10 +1925,10 @@ var DB_patologie = {
     "056": {
         "nomi": [
             "Zona",
-            "Feu de st. Antoine",
+            "Feu de Saint-Antoine (FSA)",
             "Zona"
         ],
-        "descrizione": "Affection virale douloureuse de la peau et des nerfs causée par le virus varicelle-zona, le même virus responsable de la varicelle. Après avoir contracté la varicelle, le virus peut rester dormant dans les nerfs pendant des années et se réactiver plus tard dans la vie, provoquant le zona.<br> Les symptômes du zona comprennent une éruption vésiculeuse qui suit le trajet d'un nerf, souvent accompagnée d'une douleur brûlante ou lancinante dans la zone touchée. Cette éruption cutanée se développe sous la forme d'une bande ou d'un groupe de cloques sur un côté du corps, généralement sur la poitrine, l'abdomen ou le visage. La condition peut être accompagnée de fièvre, de maux de tête et d'un malaise général.<br> Le zona est plus fréquent chez les adultes et les personnes dont le système immunitaire est affaibli. Un traitement rapide peut aider à réduire la durée et l'intensité de la maladie. Des médicaments antiviraux et analgésiques peuvent être prescrits pour soulager les symptômes. Dans certains cas, des complications telles qu'une douleur persistante après la résolution de l'éruption cutanée, connue sous le nom de &quot;névralgie post-zostérienne&quot;, peuvent survenir. La vaccination contre le zona est recommandée pour les personnes à risque à titre préventif.",
+        "descrizione": "Affection virale douloureuse de la peau et des nerfs causée par le virus varicelle-zona, le même virus responsable de la varicelle. Après avoir contracté la varicelle, le virus peut rester dormant dans les nerfs pendant des années et se réactiver plus tard dans la vie, provoquant le zona.<br> Les symptômes du zona comprennent une éruption vésiculeuse qui suit le trajet d'un nerf, souvent accompagnée d'une douleur brûlante ou lancinante dans la zone touchée. Cette éruption cutanée se développe sous la forme d'une bande ou d'un groupe de cloques sur un côté du corps, généralement sur la poitrine, l'abdomen ou le visage. La condition peut être accompagnée de fièvre, de maux de tête et d'un malaise général.<br> Le zona est plus fréquent chez les adultes et les personnes dont le système immunitaire est affaibli. Un traitement rapide peut aider à réduire la durée et l'intensité de la maladie. Des médicaments antiviraux et analgésiques peuvent être prescrits pour soulager les symptômes. Dans certains cas, des complications telles qu'une douleur persistante après la résolution de l'éruption cutanée, connue sous le nom de \"névralgie post-zostérienne\", peuvent survenir. La vaccination contre le zona est recommandée pour les personnes à risque à titre préventif.",
         "consigli": "Chez l'enfant atteint d'herpès zoster (dont fait également partie la varicelle), il est préférable d'appliquer un traitement modéré sur les points situés entre les lésions.",
         "categoria": 5
     },
@@ -1965,7 +1965,7 @@ var DB_patologie = {
             "Herpès simplex",
             "Herpès labial"
         ],
-        "descrizione": "Infection virale courante causée par les virus de l'herpès simplex (HSV) de type 1 et de type 2. Le type 1 (HSV-1) est souvent associé à des lésions qui se produisent autour de la bouche et des lèvres, communément appelées boutons de fièvre ou &quot;boutons de fièvre&quot; sur les lèvres. Le type 2 (HSV-2) est généralement responsable de lésions génitales, telles que l'herpès génital.<br> Ce virus peut être transmis par contact direct avec des lésions actives ou des fluides corporels infectés. Une fois contracté, le HSV reste dans le corps à vie et peut périodiquement se réactiver, provoquant de nouvelles lésions.<br> Les symptômes de l'herpès simplex comprennent des picotements ou des démangeaisons suivis de l'apparition de cloques douloureuses remplies de liquide. Les lésions peuvent être accompagnées de fièvre, de malaise et de ganglions lymphatiques enflés.",
+        "descrizione": "Infection virale courante causée par les virus de l'herpès simplex (HSV) de type 1 et de type 2. Le type 1 (HSV-1) est souvent associé à des lésions qui se produisent autour de la bouche et des lèvres, communément appelées boutons de fièvre ou \"boutons de fièvre\" sur les lèvres. Le type 2 (HSV-2) est généralement responsable de lésions génitales, telles que l'herpès génital.<br> Ce virus peut être transmis par contact direct avec des lésions actives ou des fluides corporels infectés. Une fois contracté, le HSV reste dans le corps à vie et peut périodiquement se réactiver, provoquant de nouvelles lésions.<br> Les symptômes de l'herpès simplex comprennent des picotements ou des démangeaisons suivis de l'apparition de cloques douloureuses remplies de liquide. Les lésions peuvent être accompagnées de fièvre, de malaise et de ganglions lymphatiques enflés.",
         "consigli": "N'embrassez pas une personne atteinte d'herpès et ne partagez pas le même verre; éviter les situations qui peuvent déclencher des récidives comme les émotions fortes, les traumatismes, l'exposition excessive au soleil, etc.",
         "categoria": 5
     },
@@ -1974,7 +1974,7 @@ var DB_patologie = {
             "Accident vasculaire cérébral",
             "Accident vasculaire cérébral",
             "Accident vasculaire cérébral",
-            "Insulte cérébrovasculaire"
+            "Attaque cérébrovasculaire"
         ],
         "descrizione": "Affection médicale grave qui survient lorsque le flux sanguin vers le cerveau est interrompu ou considérablement réduit. Cela peut être causé par un blocage d'un vaisseau sanguin dans le cerveau (AVC ischémique) ou par une rupture d'un vaisseau sanguin entraînant un saignement (AVC hémorragique).<br> Un accident vasculaire cérébral peut entraîner des lésions cérébrales permanentes en raison du manque d'oxygène et de nutriments vitaux. Les symptômes courants comprennent une faiblesse ou une paralysie soudaine d'un côté du corps, des difficultés à parler, une vision floue ou une perte de vision, des étourdissements et de graves maux de tête.<br> Une intervention rapide est cruciale car un traitement rapide peut aider à réduire les lésions cérébrales et à améliorer les perspectives de récupération. La prévention est tout aussi importante, et des modes de vie sains, le contrôle des facteurs de risque tels que l'hypertension, le diabète et le cholestérol, et l'adoption d'habitudes saines peuvent réduire le risque d'AVC. En cas de suspicion d'AVC, il est indispensable d'appeler immédiatement les soins médicaux d'urgence.",
         "consigli": "Prendre soin d'une personne ne devrait être qu'une thérapie complémentaire au travail du médecin traitant, qui devrait être au courant du type de traitement que nous décidons d'entreprendre.",
@@ -2012,7 +2012,7 @@ var DB_patologie = {
             "Grippe",
             "Syndrome grippal"
         ],
-        "descrizione": "Communément appelée &quot;grippe&quot;, c'est une maladie virale très contagieuse qui touche principalement le système respiratoire. Elle est causée par les virus de la grippe, principalement les sous-types A, B et C. La maladie se caractérise par des symptômes tels qu'une fièvre soudaine, des frissons, des maux de tête, de la fatigue, des douleurs musculaires et des symptômes respiratoires tels que toux, mal de gorge et congestion nasale.<br> La grippe se propage facilement par les gouttelettes de salive qui sont dispersées dans l'air lorsqu'une personne infectée tousse, éternue ou parle. Le virus peut également être transmis en touchant des surfaces contaminées puis en touchant le visage.<br> La plupart des gens se remettent de la grippe sans aucun problème, mais dans certains cas, cela peut entraîner de graves complications, en particulier chez les personnes âgées, les jeunes enfants, les femmes enceintes et les personnes dont le système immunitaire est affaibli. Les complications peuvent inclure une pneumonie, des otites, une sinusite et une aggravation de problèmes de santé préexistants.",
+        "descrizione": "Communément appelée \"grippe\", c'est une maladie virale très contagieuse qui touche principalement le système respiratoire. Elle est causée par les virus de la grippe, principalement les sous-types A, B et C. La maladie se caractérise par des symptômes tels qu'une fièvre soudaine, des frissons, des maux de tête, de la fatigue, des douleurs musculaires et des symptômes respiratoires tels que toux, mal de gorge et congestion nasale.<br> La grippe se propage facilement par les gouttelettes de salive qui sont dispersées dans l'air lorsqu'une personne infectée tousse, éternue ou parle. Le virus peut également être transmis en touchant des surfaces contaminées puis en touchant le visage.<br> La plupart des gens se remettent de la grippe sans aucun problème, mais dans certains cas, cela peut entraîner de graves complications, en particulier chez les personnes âgées, les jeunes enfants, les femmes enceintes et les personnes dont le système immunitaire est affaibli. Les complications peuvent inclure une pneumonie, des otites, une sinusite et une aggravation de problèmes de santé préexistants.",
         "consigli": "Consommer des aliments épicés est recommandé pour refroidir le corps et libérer la chaleur de surface.",
         "categoria": 1
     },
@@ -2078,7 +2078,7 @@ var DB_patologie = {
             "Leucorrhée",
             "Écoulement vaginal",
             "Fluorescéine vaginale",
-            "Albus fluoré"
+            "Fluor Albus"
         ],
         "descrizione": "Affection médicale caractérisée par la sécrétion anormale d'un liquide blanc ou jaunâtre par le vagin. Cette décharge est une partie normale du système reproducteur féminin et est produite par les glandes du vagin et du col de l'utérus pour maintenir un environnement vaginal sain et lubrifié.<br> La leucorrhée devient une préoccupation lorsque la quantité, la consistance ou la couleur de la décharge change de manière significative par rapport à la norme. Les causes possibles de leucorrhée anormale comprennent les infections vaginales, telles que les infections fongiques ou bactériennes, la vaginose bactérienne, les infections sexuellement transmissibles ou d'autres affections gynécologiques, telles que les kystes ou les tumeurs.<br> Les symptômes associés à la leucorrhée peuvent varier d'aucun symptôme à des démangeaisons, des brûlures, des irritations, des gonflements ou des douleurs dans la région vaginale.",
         "consigli": "Dans tous les cas, convaincre la femme de se soumettre à un dépistage gynécologique pour en déterminer la cause.",
@@ -2097,10 +2097,10 @@ var DB_patologie = {
     },
     "076": {
         "nomi": [
-            "Maladie de Bekhterev",
+            "Maladie de Bechterew",
             "Spondylarthrite ankylosante"
         ],
-        "descrizione": "Pathologie inflammatoire chronique qui touche principalement les articulations de la colonne vertébrale et du bassin. Cette maladie entre dans la catégorie des spondylarthropathies, un groupe de troubles rhumatismaux qui impliquent le système musculo-squelettique.<br> La spondylarthrite ankylosante provoque une inflammation des vertèbres, entraînant des douleurs et des raideurs dans la région lombaire et la colonne vertébrale. Au fil du temps, l'inflammation peut entraîner une fusion des vertèbres, limitant la mobilité et provoquant une posture rigide et courbée, connue sous le nom de &quot;posture de flexion&quot;.<br> Les symptômes de la spondylarthrite ankylosante peuvent varier d'une personne à l'autre, mais comprennent souvent des douleurs chroniques dans le bas du dos, une raideur matinale, de la fatigue et une perte de flexibilité de la colonne vertébrale. De plus, la maladie peut également impliquer d'autres articulations et se manifester par une inflammation des yeux (uvéite), des douleurs articulaires et des problèmes gastro-intestinaux.<br> Bien que la cause exacte soit encore inconnue, on pense que la prédisposition génétique joue un rôle important dans le développement de la spondylarthrite ankylosante. Le traitement vise à gérer les symptômes et à prévenir la progression de la maladie. Cela peut inclure des médicaments anti-inflammatoires, des médicaments biologiques, de la physiothérapie, des exercices d'étirement et du renforcement musculaire.<br> Un diagnostic rapide et un traitement approprié sont essentiels pour réduire les symptômes et améliorer la qualité de vie des personnes touchées par cette maladie.",
+        "descrizione": "Pathologie inflammatoire chronique qui touche principalement les articulations de la colonne vertébrale et du bassin. Cette maladie entre dans la catégorie des spondylarthropathies, un groupe de troubles rhumatismaux qui impliquent le système musculo-squelettique.<br> La spondylarthrite ankylosante provoque une inflammation des vertèbres, entraînant des douleurs et des raideurs dans la région lombaire et la colonne vertébrale. Au fil du temps, l'inflammation peut entraîner une fusion des vertèbres, limitant la mobilité et provoquant une posture rigide et courbée, connue sous le nom de \"posture de flexion\".<br> Les symptômes de la spondylarthrite ankylosante peuvent varier d'une personne à l'autre, mais comprennent souvent des douleurs chroniques dans le bas du dos, une raideur matinale, de la fatigue et une perte de flexibilité de la colonne vertébrale. De plus, la maladie peut également impliquer d'autres articulations et se manifester par une inflammation des yeux (uvéite), des douleurs articulaires et des problèmes gastro-intestinaux.<br> Bien que la cause exacte soit encore inconnue, on pense que la prédisposition génétique joue un rôle important dans le développement de la spondylarthrite ankylosante. Le traitement vise à gérer les symptômes et à prévenir la progression de la maladie. Cela peut inclure des médicaments anti-inflammatoires, des médicaments biologiques, de la physiothérapie, des exercices d'étirement et du renforcement musculaire.<br> Un diagnostic rapide et un traitement approprié sont essentiels pour réduire les symptômes et améliorer la qualité de vie des personnes touchées par cette maladie.",
         "consigli": "D'excellents résultats peuvent être obtenus en combinant le shiatsu, l'acupuncture, la moxibustion et le tuina, en particulier dans les cas graves.",
         "categoria": 12
     },
@@ -2150,10 +2150,10 @@ var DB_patologie = {
     },
     "083": {
         "nomi": [
-            "Névralgie crânienne"
+            "Névralgie de la tête"
         ],
-        "descrizione": "Affection caractérisée par des épisodes aigus et douloureux de douleur lancinante ou perçante affectant la région de la tête, y compris le cuir chevelu, le front, les tempes et la région occipitale. Ce type de douleur est causé par une irritation ou une compression des nerfs crâniens, qui peut être déclenchée par diverses causes telles qu'une tension musculaire, une inflammation nerveuse, des infections ou un traumatisme.<br> Les symptômes de la névralgie crânienne peuvent varier en intensité et en durée, mais ils sont souvent décrits comme des décharges électriques ou des douleurs lancinantes aiguës. Les patients peuvent ressentir une sensation de brûlure ou un engourdissement dans la zone touchée.<br> Bien qu'elle puisse être inconfortable, la névralgie crânienne n'est généralement pas associée à des affections graves ou potentiellement mortelles. Cependant, comme les causes peuvent être diverses, il est important de consulter un médecin pour une évaluation précise et déterminer le traitement approprié. Les approches thérapeutiques peuvent inclure des analgésiques, des thérapies physiques ou d'autres options en fonction de la cause sous-jacente de la névralgie crânienne.",
-        "consigli": "Dans les maux de tête de stress, évitez les facteurs déclenchants, et dans tous les cas, si les causes ne sont pas organiques, menez une vie modérée, en évitant les excès.",
+        "descrizione": "Affection caractérisée par des épisodes aigus et douloureux de douleur lancinante ou piquante affectant la région de la tête, notamment le cuir chevelu, le front, les tempes et la région occipitale. Ce type de douleur est causé par l'irritation ou la compression des nerfs crâniens, qui peut être déclenchée par diverses causes telles que la tension musculaire, l'inflammation des nerfs, l'infection ou le traumatisme.<br><br><div>Les symptômes de la névralgie de la tête peuvent varier en intensité et en durée, mais sont souvent décrits comme des décharges électriques ou des élancements brusques. Les patients peuvent ressentir une sensation de brûlure ou d'engourdissement dans la zone affectée.</div><div><br></div><div>Malgré la gêne qu'elle peut occasionner, la névralgie de la tête n'est généralement pas associée à des affections graves ou potentiellement mortelles. Toutefois, les causes pouvant être différentes, il est important de consulter un médecin pour une évaluation précise et pour déterminer le traitement approprié. L'approche thérapeutique peut inclure des médicaments contre la douleur, une thérapie physique ou d'autres options en fonction de la cause sous-jacente de la névralgie de la tête.</div>",
+        "consigli": "En cas de maux de tête dus au stress, il faut éviter les effets déclencheurs, mais si les causes ne sont pas organiques, il faut mener une vie modérée en évitant les excès.",
         "categoria": 4
     },
     "084": {
@@ -2178,7 +2178,7 @@ var DB_patologie = {
             "Oreillons",
             "Parotidite épidémique"
         ],
-        "descrizione": "Maladie infectieuse virale également connue sous le nom de &quot;parotidite épidémique&quot;. Il s'agit d'une infection très contagieuse causée par le virus des oreillons, qui affecte principalement les glandes salivaires, en particulier les glandes parotides situées derrière et sous les oreilles.<br> Les symptômes typiques des oreillons comprennent un gonflement douloureux des glandes parotides, qui peut provoquer une hypertrophie de la région des joues ou du cou. D'autres symptômes peuvent inclure de la fièvre, des maux de tête, de la fatigue et des douleurs lors de la mastication ou de la déglutition.<br> Les oreillons se transmettent par les gouttelettes de salive d'une personne infectée, souvent par la toux, les éternuements ou le contact direct avec des objets contaminés. Étant donné que le virus est très contagieux, il peut se propager rapidement au sein des communautés, en particulier dans les environnements surpeuplés.<br> Alors que la plupart des cas d'oreillons disparaissent spontanément sans complications graves, dans certains cas, des complications telles qu'une inflammation du pancréas (pancréatite), du cerveau (encéphalite) ou des testicules chez l'homme (orchite) peuvent survenir.",
+        "descrizione": "Maladie infectieuse virale également connue sous le nom de \"parotidite épidémique\". Il s'agit d'une infection très contagieuse causée par le virus des oreillons, qui affecte principalement les glandes salivaires, en particulier les glandes parotides situées derrière et sous les oreilles.<br> Les symptômes typiques des oreillons comprennent un gonflement douloureux des glandes parotides, qui peut provoquer une hypertrophie de la région des joues ou du cou. D'autres symptômes peuvent inclure de la fièvre, des maux de tête, de la fatigue et des douleurs lors de la mastication ou de la déglutition.<br> Les oreillons se transmettent par les gouttelettes de salive d'une personne infectée, souvent par la toux, les éternuements ou le contact direct avec des objets contaminés. Étant donné que le virus est très contagieux, il peut se propager rapidement au sein des communautés, en particulier dans les environnements surpeuplés.<br> Alors que la plupart des cas d'oreillons disparaissent spontanément sans complications graves, dans certains cas, des complications telles qu'une inflammation du pancréas (pancréatite), du cerveau (encéphalite) ou des testicules chez l'homme (orchite) peuvent survenir.",
         "consigli": "Dans tous les cas, consultez un médecin.",
         "categoria": 1
     },
@@ -2205,7 +2205,7 @@ var DB_patologie = {
             "Infection de l'oreille moyenne",
             "Otite moyenne"
         ],
-        "descrizione": "Affection médicale caractérisée par l'inflammation de l'oreille moyenne, la partie de l'oreille située derrière le tympan. Cette inflammation peut être causée par des infections bactériennes ou virales ou par une accumulation de liquide due à une infection des voies respiratoires supérieures.<br> Les symptômes typiques de l'otite moyenne comprennent une douleur à l'oreille, une audition réduite, une sensation d'oreille &quot;bouchée&quot;, une sensation de pression dans l'oreille, de la fièvre et parfois un écoulement de liquide de l'oreille.<br> L'otite moyenne est fréquente chez les enfants, mais peut également survenir chez les adultes. Dans l'enfance, l'oreille moyenne est plus sensible aux infections car les trompes d'Eustache, qui relient l'oreille moyenne à l'arrière de la gorge, sont plus courtes et plus horizontales.",
+        "descrizione": "Affection médicale caractérisée par l'inflammation de l'oreille moyenne, la partie de l'oreille située derrière le tympan. Cette inflammation peut être causée par des infections bactériennes ou virales ou par une accumulation de liquide due à une infection des voies respiratoires supérieures.<br> Les symptômes typiques de l'otite moyenne comprennent une douleur à l'oreille, une audition réduite, une sensation d'oreille \"bouchée\", une sensation de pression dans l'oreille, de la fièvre et parfois un écoulement de liquide de l'oreille.<br> L'otite moyenne est fréquente chez les enfants, mais peut également survenir chez les adultes. Dans l'enfance, l'oreille moyenne est plus sensible aux infections car les trompes d'Eustache, qui relient l'oreille moyenne à l'arrière de la gorge, sont plus courtes et plus horizontales.",
         "consigli": "Il est conseillé de faire contrôler le patient par un spécialiste (oto-rhino-laryngologiste).",
         "categoria": 1
     },
@@ -2235,7 +2235,7 @@ var DB_patologie = {
             "Frayeur",
             "Terreur"
         ],
-        "descrizione": "La peur est une émotion fondamentale et instinctive qui surgit face à des situations perçues comme menaçantes ou dangereuses. C'est une réponse naturelle de notre corps et de notre esprit, conçue pour nous protéger et nous aider à survivre. Lorsqu'il est confronté à une situation potentiellement dangereuse, notre système nerveux déclenche une réaction de &quot;combat ou fuite&quot;, préparant le corps à affronter la menace ou à s'en échapper.<br> La peur peut être à la fois une réponse appropriée et protectrice, comme lorsqu'elle nous aide à éviter des situations dangereuses, et une réponse excessive ou irrationnelle, comme dans le cas des phobies. Lorsque la peur devient persistante, disproportionnée ou interfère avec la vie quotidienne, elle peut devenir un problème de santé mentale, comme un trouble anxieux ou un trouble panique.<br> Comprendre et gérer la peur sont essentiels au bien-être psychologique. L'aide de professionnels de la santé mentale, les techniques de relaxation et la thérapie peuvent être utiles pour faire face aux peurs irrationnelles et permettre aux individus de faire face aux défis de la vie avec une plus grande sérénité.",
+        "descrizione": "La peur est une émotion fondamentale et instinctive qui surgit face à des situations perçues comme menaçantes ou dangereuses. C'est une réponse naturelle de notre corps et de notre esprit, conçue pour nous protéger et nous aider à survivre. Lorsqu'il est confronté à une situation potentiellement dangereuse, notre système nerveux déclenche une réaction de \"combat ou fuite\", préparant le corps à affronter la menace ou à s'en échapper.<br> La peur peut être à la fois une réponse appropriée et protectrice, comme lorsqu'elle nous aide à éviter des situations dangereuses, et une réponse excessive ou irrationnelle, comme dans le cas des phobies. Lorsque la peur devient persistante, disproportionnée ou interfère avec la vie quotidienne, elle peut devenir un problème de santé mentale, comme un trouble anxieux ou un trouble panique.<br> Comprendre et gérer la peur sont essentiels au bien-être psychologique. L'aide de professionnels de la santé mentale, les techniques de relaxation et la thérapie peuvent être utiles pour faire face aux peurs irrationnelles et permettre aux individus de faire face aux défis de la vie avec une plus grande sérénité.",
         "consigli": "En cas de crises de panique, appliquez une pression sur le diaphragme en insérant les doigts sur le côté de la cage thoracique, réglez la respiration avec des respirations longues et profondes, et rassurez-vous mentalement que tout est sous contrôle, que ça va passer, et que le cœur va revenir à son rythme normal.<br> Essayez d'avoir une vie active et engagée avec des moments personnels (par exemple, s'adonner à l'art, jouer d'un instrument de musique, apprendre une langue, faire du sport...)",
         "categoria": 4
     },
@@ -2261,7 +2261,7 @@ var DB_patologie = {
         "nomi": [
             "Prolapsus utérin"
         ],
-        "descrizione": "Affection médicale dans laquelle l'utérus descend et fait saillie dans le vagin en raison de la détérioration ou du relâchement des tissus et des muscles qui soutiennent normalement l'organe. Cela peut se produire lorsque les ligaments et les tissus conjonctifs qui maintiennent l'utérus en place s'affaiblissent, souvent à la suite de grossesses, d'accouchements vaginaux, de la ménopause ou d'efforts prolongés.<br> Le prolapsus utérin peut être classé en différents degrés en fonction de sa gravité. Dans les cas moins graves, l'utérus peut ne dépasser que légèrement dans le vagin. Dans les cas plus graves, l'utérus peut complètement dépasser du vagin.<br> Les symptômes du prolapsus utérin peuvent inclure une sensation de lourdeur ou de pression dans le bassin, des douleurs lombaires, une sensation de &quot;boule&quot; ou de &quot;masse&quot; dans le vagin, des difficultés à uriner ou à vider complètement la vessie et des problèmes d'incontinence urinaire ou fécale.",
+        "descrizione": "Affection médicale dans laquelle l'utérus descend et fait saillie dans le vagin en raison de la détérioration ou du relâchement des tissus et des muscles qui soutiennent normalement l'organe. Cela peut se produire lorsque les ligaments et les tissus conjonctifs qui maintiennent l'utérus en place s'affaiblissent, souvent à la suite de grossesses, d'accouchements vaginaux, de la ménopause ou d'efforts prolongés.<br> Le prolapsus utérin peut être classé en différents degrés en fonction de sa gravité. Dans les cas moins graves, l'utérus peut ne dépasser que légèrement dans le vagin. Dans les cas plus graves, l'utérus peut complètement dépasser du vagin.<br> Les symptômes du prolapsus utérin peuvent inclure une sensation de lourdeur ou de pression dans le bassin, des douleurs lombaires, une sensation de \"boule\" ou de \"masse\" dans le vagin, des difficultés à uriner ou à vider complètement la vessie et des problèmes d'incontinence urinaire ou fécale.",
         "consigli": "Renforcer les muscles abdominaux en cas de prolapsus dû à l'atonie, et suivre un régime alimentaire adapté.",
         "sesso": "f",
         "categoria": 7

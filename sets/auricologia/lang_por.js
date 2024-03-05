@@ -2,7 +2,7 @@ DB.set = {
     "punti": {
         "101": {
             "NomePunto": "Duodeno",
-            "AzioniPunto": "<p><b>Ação<br></b> Ponto indicado por sua eficácia na redução de distúrbios digestivos, distúrbios alimentares, diarreia e úlceras duodenais.</p><p> <b>Localização</b><br> SC1-PC3, na concha superior, logo acima da crista da concha. Logo atrás do [.000.].</p>",
+            "AzioniPunto": "<p><b>Ação</b><br> Ponto indicado por sua eficácia na redução de distúrbios digestivos, distúrbios alimentares, diarreia e úlceras duodenais.</p><p> <b>Localização</b><br> SC1-PC3, na concha superior, logo acima da crista da concha. Logo atrás do [.000.].</p>",
             "ChiaviPunto": ""
         },
         "104": {
@@ -12,7 +12,7 @@ DB.set = {
         },
         "105": {
             "NomePunto": "Ureter EUR",
-            "AzioniPunto": "<p><b>Ação<br></b> O Ureter Point é eficaz em todas as patologias relacionadas com o trato urinário, nomeadamente as vias excretoras.</p><p> <b>Localização</b><br> IH4, na parte interna da hélice ao nível da raiz da anti-hélice, logo acima.</p>",
+            "AzioniPunto": "<p><b>Ação</b><br> O Ureter Point é eficaz em todas as patologias relacionadas com o trato urinário, nomeadamente as vias excretoras.</p><p> <b>Localização</b><br> IH4, na parte interna da hélice ao nível da raiz da anti-hélice, logo acima.</p>",
             "ChiaviPunto": ""
         },
         "106": {
@@ -22,12 +22,12 @@ DB.set = {
         },
         "108": {
             "NomePunto": "Próstata",
-            "AzioniPunto": "<p><b>Ação<br></b> Segundo a Escola Chinesa, este ponto é utilizado para tratar patologias urinárias e prostáticas; tem excelente eficácia para distúrbios do sistema reprodutivo.</p><p> <b>Localização</b><br> SC4, na concha superior, onde a raiz inferior da anti-hélice encontra a hélice.</p>",
+            "AzioniPunto": "<p><b>Ação</b><br> Segundo a Escola Chinesa, este ponto é utilizado para tratar patologias urinárias e prostáticas; tem excelente eficácia para distúrbios do sistema reprodutivo.</p><p> <b>Localização</b><br> SC4, na concha superior, onde a raiz inferior da anti-hélice encontra a hélice.</p>",
             "ChiaviPunto": ""
         },
         "109": {
             "NomePunto": "Uretra EUR",
-            "AzioniPunto": "<p><b>Ação<br></b> O Uretra Point é eficaz em todas as patologias relacionadas com o trato urinário.</p><p> <b>Localização</b><br> SC4, na concha superior próximo ao ponto de encontro entre a hélice e a raiz inferior da anti-hélice.</p>",
+            "AzioniPunto": "<p><b>Ação</b><br> O Uretra Point é eficaz em todas as patologias relacionadas com o trato urinário.</p><p> <b>Localização</b><br> SC4, na concha superior próximo ao ponto de encontro entre a hélice e a raiz inferior da anti-hélice.</p>",
             "ChiaviPunto": ""
         },
         "110": {
@@ -37,18 +37,18 @@ DB.set = {
         },
         "111": {
             "NomePunto": "Rim CHN",
-            "AzioniPunto": "<p><b>Ação<br></b> O ponto do Rim é utilizado pela Escola Chinesa por sua ação equilibrante tanto no aspecto físico quanto no emocional. É muito útil na redução de dores e distúrbios relacionados aos rins, especialmente ao sistema urinário. Também é indicado para o tratamento de estresse, astenia, depressão e zumbido.</p><p> <b>Localização</b><br> SC6-CW8, na fronteira entre a concha superior e a parede da concha, logo anteriormente onde começa a raiz inferior da anti-hélice.</p>",
+            "AzioniPunto": "<p><b>Ação</b><br> O ponto do Rim é utilizado pela Escola Chinesa por sua ação equilibrante tanto no aspecto físico quanto no emocional. É muito útil na redução de dores e distúrbios relacionados aos rins, especialmente ao sistema urinário. Também é indicado para o tratamento de estresse, astenia, depressão e zumbido.</p><p> <b>Localização</b><br> SC6-CW8, na fronteira entre a concha superior e a parede da concha, logo anteriormente onde começa a raiz inferior da anti-hélice.</p>",
             "ChiaviPunto": ""
         },
         "112": {
             "NomePunto": "Comissura Rinencefálica",
-            "AzioniPunto": "<p><b>Ação<br></b> Em combinação com [.113.] e [.254.], promove conexões cerebrais intra-hemisféricas.</p><p> <b>Localização</b><br> Na fronteira entre a bochecha e o tragus, perto do ponto [.195.].</p>",
+            "AzioniPunto": "<p><b>Ação</b><br> Em combinação com [.113.] e [.254.], promove conexões cerebrais intra-hemisféricas.</p><p> <b>Localização</b><br> Na fronteira entre a bochecha e o tragus, perto do ponto [.195.].</p>",
             "ChiaviPunto": "",
             "hidden": true
         },
         "113": {
             "NomePunto": "Comissura abenular",
-            "AzioniPunto": "<p><b>Ação<br></b> Em combinação com [.112.] e [.254.], promove conexões cerebrais intra-hemisféricas.</p><p> <b>Localização</b><br> Na fronteira entre a bochecha e o tragus, perto da área TG5.</p>",
+            "AzioniPunto": "<p><b>Ação</b><br> Em combinação com [.112.] e [.254.], promove conexões cerebrais intra-hemisféricas.</p><p> <b>Localização</b><br> Na fronteira entre a bochecha e o tragus, perto da área TG5.</p>",
             "ChiaviPunto": "",
             "hidden": true
         },
@@ -59,12 +59,12 @@ DB.set = {
         },
         "115": {
             "NomePunto": "Baço EUR",
-            "AzioniPunto": "<p><b>Ação<br></b> Segundo a Escola Francesa, este ponto é utilizado para tratar todas as patologias relacionadas com os sistemas imunológico e linfático. Também é benéfico para distúrbios digestivos.</p><p> <b>Localização</b><br> SC8, na fronteira entre a concha superior e a crista da concha, próximo à parede da concha.<br> Atenção: apenas na orelha esquerda.</p>",
+            "AzioniPunto": "<p><b>Ação</b><br> Segundo a Escola Francesa, este ponto é utilizado para tratar todas as patologias relacionadas com os sistemas imunológico e linfático. Também é benéfico para distúrbios digestivos.</p><p> <b>Localização</b><br> SC8, na fronteira entre a concha superior e a crista da concha, próximo à parede da concha.<br> Atenção: apenas na orelha esquerda.</p>",
             "ChiaviPunto": ""
         },
         "116": {
             "NomePunto": "Pâncreas",
-            "AzioniPunto": "<p><b>Ação<br></b> O Ponto Pâncreas tem ação equilibrante nas funções digestivas, principalmente no tratamento de distúrbios relacionados ao pâncreas.</p><p> <b>Localização</b><br> CR2-SC8, na fronteira entre a crista da concha e a concha superior, próximo à hélice.<br> Atenção: apenas na orelha esquerda.</p>",
+            "AzioniPunto": "<p><b>Ação</b><br> O Ponto Pâncreas tem ação equilibrante nas funções digestivas, principalmente no tratamento de distúrbios relacionados ao pâncreas.</p><p> <b>Localização</b><br> CR2-SC8, na fronteira entre a crista da concha e a concha superior, próximo à hélice.<br> Atenção: apenas na orelha esquerda.</p>",
             "ChiaviPunto": ""
         },
         "117": {
@@ -89,17 +89,17 @@ DB.set = {
         },
         "121": {
             "NomePunto": "Fígado",
-            "AzioniPunto": "<p><b>Ação<br></b> O ponto Fígado é indicado para distúrbios anêmicos, ansiedade, estresse e hipertensão. É recomendado para o tratamento de distúrbios do fígado e do sistema digestivo.</p><p> <b>Localização</b><br> CR2-SC8, na fronteira entre a concha superior e a crista da concha.<br> Atenção: apenas na orelha direita.</p>",
+            "AzioniPunto": "<p><b>Ação</b><br> O ponto Fígado é indicado para distúrbios anêmicos, ansiedade, estresse e hipertensão. É recomendado para o tratamento de distúrbios do fígado e do sistema digestivo.</p><p> <b>Localização</b><br> CR2-SC8, na fronteira entre a concha superior e a crista da concha.<br> Atenção: apenas na orelha direita.</p>",
             "ChiaviPunto": ""
         },
         "122": {
             "NomePunto": "Baço CHN",
-            "AzioniPunto": "<p><b>Ação<br></b> Segundo a Escola Chinesa, este ponto é utilizado para tratar todas as patologias relacionadas com os sistemas imunitário e linfático. Também é benéfico para o tratamento de distúrbios musculares e tendinosos.</p><p> <b>Localização</b><br> IC8-PC2, na fronteira entre a concha inferior e a crista da concha, próximo à parede da concha.<br> Atenção: apenas na orelha esquerda.</p>",
+            "AzioniPunto": "<p><b>Ação</b><br> Segundo a Escola Chinesa, este ponto é utilizado para tratar todas as patologias relacionadas com os sistemas imunitário e linfático. Também é benéfico para o tratamento de distúrbios musculares e tendinosos.</p><p> <b>Localização</b><br> IC8-PC2, na fronteira entre a concha inferior e a crista da concha, próximo à parede da concha.<br> Atenção: apenas na orelha esquerda.</p>",
             "ChiaviPunto": ""
         },
         "123": {
             "NomePunto": "Diafragma EUR",
-            "AzioniPunto": "<p><b>Ação<br></b> Esse ponto é indicado pela Escola Francesa por sua eficácia na redução de vômitos, dores e espasmos diafragmáticos e soluços.</p><p> <b>Localização</b><br> IC8-CR2, na fronteira entre a crista da concha e a concha inferior.</p>",
+            "AzioniPunto": "<p><b>Ação</b><br> Esse ponto é indicado pela Escola Francesa por sua eficácia na redução de vômitos, dores e espasmos diafragmáticos e soluços.</p><p> <b>Localização</b><br> IC8-CR2, na fronteira entre a crista da concha e a concha inferior.</p>",
             "ChiaviPunto": ""
         },
         "124": {
@@ -109,7 +109,7 @@ DB.set = {
         },
         "126": {
             "NomePunto": "Brônquios",
-            "AzioniPunto": "<p><b>Ação<br></b> O ponto Brônquio é muito útil no tratamento de doenças como asma e bronquite. Segundo a Escola Chinesa, também é eficaz em casos de DPOC (doença pulmonar obstrutiva crônica), uma doença progressiva e irreversível do sistema respiratório que afeta os brônquios e os pulmões, causada principalmente pelo tabagismo.</p><p> <b>Localização</b><br> IC7, na concha superior, logo acima do ponto mais profundo correspondente ao coração.</p>",
+            "AzioniPunto": "<p><b>Ação</b><br> O ponto Brônquio é muito útil no tratamento de doenças como asma e bronquite. Segundo a Escola Chinesa, também é eficaz em casos de DPOC (doença pulmonar obstrutiva crônica), uma doença progressiva e irreversível do sistema respiratório que afeta os brônquios e os pulmões, causada principalmente pelo tabagismo.</p><p> <b>Localização</b><br> IC7, na concha superior, logo acima do ponto mais profundo correspondente ao coração.</p>",
             "ChiaviPunto": ""
         },
         "127": {
@@ -119,7 +119,7 @@ DB.set = {
         },
         "128": {
             "NomePunto": "Esôfago",
-            "AzioniPunto": "<p><b>Ação<br></b> O ponto Esôfago é usado internacionalmente para tratar todos os distúrbios esofágicos. É indicado principalmente para reequilibrar distúrbios do esôfago, estômago, duodeno e cólon.</p><p> <b>Localização</b><br> IC6-IC7, na concha inferior logo abaixo de [.000.].</p>",
+            "AzioniPunto": "<p><b>Ação</b><br> O ponto Esôfago é usado internacionalmente para tratar todos os distúrbios esofágicos. É indicado principalmente para reequilibrar distúrbios do esôfago, estômago, duodeno e cólon.</p><p> <b>Localização</b><br> IC6-IC7, na concha inferior logo abaixo de [.000.].</p>",
             "ChiaviPunto": ""
         },
         "129": {
@@ -144,7 +144,7 @@ DB.set = {
         },
         "134": {
             "NomePunto": "Traquéia",
-            "AzioniPunto": "<p><b>Outros nomes</b><br> - Laringe EUR</p><p> <b>Ação<br></b> O Trachea Point é indicado para tratar todos os indivíduos com distúrbios da laringe, traqueia e brônquios.</p><p> <b>Localização</b><br> IC3, na concha inferior, centralmente, próximo ao meato acústico externo.</p>",
+            "AzioniPunto": "<p><b>Outros nomes</b><br> - Laringe EUR</p><p> <b>Ação</b><br> O Trachea Point é indicado para tratar todos os indivíduos com distúrbios da laringe, traqueia e brônquios.</p><p> <b>Localização</b><br> IC3, na concha inferior, centralmente, próximo ao meato acústico externo.</p>",
             "ChiaviPunto": ""
         },
         "135": {
@@ -294,7 +294,7 @@ DB.set = {
         },
         "182": {
             "NomePunto": "Ouvido Externo CHN",
-            "AzioniPunto": "<p><b>Ação<br></b> Este ponto é indicado para reduzir distúrbios do ouvido externo e dor.</p><p> <b>Localização</b><br> TG5, no centro do tragus, logo acima de uma linha horizontal imaginária passando por <span class='LMtxt'>LM11</span> .</p>",
+            "AzioniPunto": "<p><b>Ação</b><br> Este ponto é indicado para reduzir distúrbios do ouvido externo e dor.</p><p> <b>Localização</b><br> TG5, no centro do tragus, logo acima de uma linha horizontal imaginária passando por <span class='LMtxt'>LM11</span> .</p>",
             "ChiaviPunto": ""
         },
         "183": {
@@ -304,12 +304,12 @@ DB.set = {
         },
         "184": {
             "NomePunto": "Vitality point",
-            "AzioniPunto": "<p><b>Outros nomes</b><br> - Ponto de Frustração<br> - Ponto de Interferon<br> - Ponto Coração</p><p> <b>Ação<br></b> A Escola Francesa indica este ponto por sua poderosa ação energética, psicológica e física. É usado para tonificar casos de apatia, baixa aptidão física e depressão.</p><p> <b>Localização</b><br> TG4, no centro do tragus, imediatamente anterior a <span class='LMtxt'>LM11</span> .</p>",
+            "AzioniPunto": "<p><b>Outros nomes</b><br> - Ponto de Frustração<br> - Ponto de Interferon<br> - Ponto Coração</p><p> <b>Ação</b><br> A Escola Francesa indica este ponto por sua poderosa ação energética, psicológica e física. É usado para tonificar casos de apatia, baixa aptidão física e depressão.</p><p> <b>Localização</b><br> TG4, no centro do tragus, imediatamente anterior a <span class='LMtxt'>LM11</span> .</p>",
             "ChiaviPunto": ""
         },
         "185": {
             "NomePunto": "Nariz Externo CHN",
-            "AzioniPunto": "<p><b>Ação<br></b> A Escola Chinesa distingue os pontos Nariz Externo e Nariz Interno por suas diferentes aplicações terapêuticas. Este ponto é indicado para tratar todos os distúrbios nasais, principalmente a congestão nasal.</p><p> <b>Localização</b><br> TG3, na linha limítrofe entre o Tragus e a bochecha, a meio caminho entre as proeminências superior e inferior do Tragus ( <span class='LMtxt'>LM10</span> e <span class='LMtxt'>LM11</span> ). Corresponde a <span class='LMtxt'>LM23</span> .</p>",
+            "AzioniPunto": "<p><b>Ação</b><br> A Escola Chinesa distingue os pontos Nariz Externo e Nariz Interno por suas diferentes aplicações terapêuticas. Este ponto é indicado para tratar todos os distúrbios nasais, principalmente a congestão nasal.</p><p> <b>Localização</b><br> TG3, na linha limítrofe entre o Tragus e a bochecha, a meio caminho entre as proeminências superior e inferior do Tragus ( <span class='LMtxt'>LM10</span> e <span class='LMtxt'>LM11</span> ). Corresponde a <span class='LMtxt'>LM23</span> .</p>",
             "ChiaviPunto": ""
         },
         "186": {
@@ -404,7 +404,7 @@ DB.set = {
         },
         "229": {
             "NomePunto": "Prostaglandinas",
-            "AzioniPunto": "<p><b>Ação<br></b> O Prostaglandins Point é indicado para o tratamento de casos com componente inflamatório e doloroso.</p><p> <b>Localização</b><br> PL1-LO1, na superfície medial do lobo, próximo <span class='LMtxt'>a LM8</span> .</p>",
+            "AzioniPunto": "<p><b>Ação</b><br> O Prostaglandins Point é indicado para o tratamento de casos com componente inflamatório e doloroso.</p><p> <b>Localização</b><br> PL1-LO1, na superfície medial do lobo, próximo <span class='LMtxt'>a LM8</span> .</p>",
             "ChiaviPunto": ""
         },
         "230": {
@@ -424,12 +424,12 @@ DB.set = {
         },
         "243": {
             "NomePunto": "Hipertensão 3",
-            "AzioniPunto": "<p><b>Ação<br></b> A Escola Chinesa distingue o tratamento da Hipertensão com três pontos diferentes. Hipertensão Ponto 3 é indicado para o tratamento da hipertensão e para reduzir a ansiedade e o estresse.</p><p> <b>Localização</b><br> PG4-PG8, ampla área no sulco posterior, onde se divide em forma de Y e em direção ao seu ramo superior.</p>",
+            "AzioniPunto": "<p><b>Ação</b><br> A Escola Chinesa distingue o tratamento da Hipertensão com três pontos diferentes. Hipertensão Ponto 3 é indicado para o tratamento da hipertensão e para reduzir a ansiedade e o estresse.</p><p> <b>Localização</b><br> PG4-PG8, ampla área no sulco posterior, onde se divide em forma de Y e em direção ao seu ramo superior.</p>",
             "ChiaviPunto": ""
         },
         "244": {
             "NomePunto": "Pulmão CHN",
-            "AzioniPunto": "<p><b>Ação<br></b> O Ponto do Pulmão é utilizado pelas Escolas Chinesa e Francesa pela sua ação reequilibrante do sistema respiratório, principalmente em casos de bronquite, enfisema e dores no peito.</p><p> <b>Localização</b><br> IC2-IC4-IC5, grande área na concha inferior, em direção à parede da concha.</p>",
+            "AzioniPunto": "<p><b>Ação</b><br> O Ponto do Pulmão é utilizado pelas Escolas Chinesa e Francesa pela sua ação reequilibrante do sistema respiratório, principalmente em casos de bronquite, enfisema e dores no peito.</p><p> <b>Localização</b><br> IC2-IC4-IC5, grande área na concha inferior, em direção à parede da concha.</p>",
             "ChiaviPunto": ""
         },
         "245": {
@@ -439,7 +439,7 @@ DB.set = {
         },
         "246": {
             "NomePunto": "Músculos da cintura escapular",
-            "AzioniPunto": "<p><b>Ação<br></b> Este ponto é muito eficaz na redução de distúrbios relacionados aos músculos da cintura escapular.</p><p> <b>Localização</b><br> PP1-PP3, entre a proeminência do escafoide e o sulco posterior.</p>",
+            "AzioniPunto": "<p><b>Ação</b><br> Este ponto é muito eficaz na redução de distúrbios relacionados aos músculos da cintura escapular.</p><p> <b>Localização</b><br> PP1-PP3, entre a proeminência do escafoide e o sulco posterior.</p>",
             "ChiaviPunto": ""
         },
         "247": {
@@ -454,12 +454,12 @@ DB.set = {
         },
         "249": {
             "NomePunto": "Pulmão EUR",
-            "AzioniPunto": "<p><b>Ação<br></b> O Ponto do Pulmão é utilizado pelas Escolas Chinesa e Francesa pela sua ação reequilibrante do sistema respiratório, principalmente em casos de bronquite, enfisema e dores no peito.</p><p> <b>Localização</b><br> IC2-IC4-IC5-IC7, grande área na concha inferior, em direção à parede da comcha.</p>",
+            "AzioniPunto": "<p><b>Ação</b><br> O Ponto do Pulmão é utilizado pelas Escolas Chinesa e Francesa pela sua ação reequilibrante do sistema respiratório, principalmente em casos de bronquite, enfisema e dores no peito.</p><p> <b>Localização</b><br> IC2-IC4-IC5-IC7, grande área na concha inferior, em direção à parede da comcha.</p>",
             "ChiaviPunto": ""
         },
         "251": {
             "NomePunto": "Ureter CHN",
-            "AzioniPunto": "<p><b>Ação<br></b> O Ureter Point é eficaz em todas as patologias relacionadas com o trato urinário, particularmente o trato excretor.</p><p> <b>Localização</b><br> SC6, na concha superior, no limite com a parede da concha superior, correspondendo ao terço posterior da raiz inferior da anti-hélice.</p>",
+            "AzioniPunto": "<p><b>Ação</b><br> O Ureter Point é eficaz em todas as patologias relacionadas com o trato urinário, particularmente o trato excretor.</p><p> <b>Localização</b><br> SC6, na concha superior, no limite com a parede da concha superior, correspondendo ao terço posterior da raiz inferior da anti-hélice.</p>",
             "ChiaviPunto": ""
         },
         "252": {
@@ -634,22 +634,22 @@ DB.set = {
         },
         "286": {
             "NomePunto": "Musculatura Paravertebral Dorsal",
-            "AzioniPunto": "<p><b>Ação<br></b> Este ponto, segundo a Escola Francesa, é utilizado por sua função miorrelaxante paravertebral.</p><p> <b>Localização</b><br> AH3-AH4, nos dois terços superiores do corpo da ante-hélice, antes de se bifurcar em 2 ramos, no lado em direção à fossa do escafoide.</p>",
+            "AzioniPunto": "<p><b>Ação</b><br> Este ponto, segundo a Escola Francesa, é utilizado por sua função miorrelaxante paravertebral.</p><p> <b>Localização</b><br> AH3-AH4, nos dois terços superiores do corpo da ante-hélice, antes de se bifurcar em 2 ramos, no lado em direção à fossa do escafoide.</p>",
             "ChiaviPunto": ""
         },
         "287": {
             "NomePunto": "Musculatura Paravertebral Lombossacral",
-            "AzioniPunto": "<p><b>Ação<br></b> Este ponto internacional é utilizado pela sua função miorrelaxante paravertebral.</p><p> <b>Localização</b><br> AH5-AH6-AH7, na raiz inferior da ante-hélice na borda com a fossa triangular.</p>",
+            "AzioniPunto": "<p><b>Ação</b><br> Este ponto internacional é utilizado pela sua função miorrelaxante paravertebral.</p><p> <b>Localização</b><br> AH5-AH6-AH7, na raiz inferior da ante-hélice na borda com a fossa triangular.</p>",
             "ChiaviPunto": ""
         },
         "288": {
             "NomePunto": "Músculos do pescoço",
-            "AzioniPunto": "<p><b>Ação<br></b> Este ponto internacional é usado por sua função relaxante nos músculos do pescoço.</p><p> <b>Localização</b><br> PP3-PG3, entre a eminência do escafoide e o sulco posterior.</p>",
+            "AzioniPunto": "<p><b>Ação</b><br> Este ponto internacional é usado por sua função relaxante nos músculos do pescoço.</p><p> <b>Localização</b><br> PP3-PG3, entre a eminência do escafoide e o sulco posterior.</p>",
             "ChiaviPunto": ""
         },
         "289": {
             "NomePunto": "Músculos das costas",
-            "AzioniPunto": "<p><b>Ação<br></b> Ponto utilizado pela Escola Francesa pela sua ação relaxante nos músculos dorsais.</p><p> <b>Localização</b><br> PP3-PP5-PG3-PG4-PG5, entre a eminência do escafoide e o sulco posterior.</p>",
+            "AzioniPunto": "<p><b>Ação</b><br> Ponto utilizado pela Escola Francesa pela sua ação relaxante nos músculos dorsais.</p><p> <b>Localização</b><br> PP3-PP5-PG3-PG4-PG5, entre a eminência do escafoide e o sulco posterior.</p>",
             "ChiaviPunto": ""
         },
         "291": {
@@ -719,12 +719,12 @@ DB.set = {
         },
         "007": {
             "NomePunto": "Reto CHN",
-            "AzioniPunto": "<p><b>Ação<br></b> O Ponto do Reto é muito útil na redução dos sintomas da síndrome do intestino irritável, disenteria, hemorróidas, diarréia, constipação e dor retal.</p><p> <b>Localização</b><br> HX3, no joelho da hélice, abaixo do ponto onde a hélice encontra a raiz inferior da anti-hélice.</p>",
+            "AzioniPunto": "<p><b>Ação</b><br> O Ponto do Reto é muito útil na redução dos sintomas da síndrome do intestino irritável, disenteria, hemorróidas, diarréia, constipação e dor retal.</p><p> <b>Localização</b><br> HX3, no joelho da hélice, abaixo do ponto onde a hélice encontra a raiz inferior da anti-hélice.</p>",
             "ChiaviPunto": ""
         },
         "008": {
             "NomePunto": "Uretra CHN",
-            "AzioniPunto": "<p><b>Ação<br></b> O Uretra Point é eficaz em todas as patologias relacionadas com o trato urinário.</p><p> <b>Localização</b><br> HX3, no joelho da hélice, logo abaixo do ponto onde a hélice encontra a raiz inferior da anti-hélice.</p>",
+            "AzioniPunto": "<p><b>Ação</b><br> O Uretra Point é eficaz em todas as patologias relacionadas com o trato urinário.</p><p> <b>Localização</b><br> HX3, no joelho da hélice, logo abaixo do ponto onde a hélice encontra a raiz inferior da anti-hélice.</p>",
             "ChiaviPunto": ""
         },
         "009": {
@@ -9314,7 +9314,7 @@ DB.set = {
                 },
                 {
                     "TitoloTeoria": "Zonas de frequência",
-                    "TestoTeoria": "Como argumentou Paul Nogier, existem sete regiões distintas do corpo que ressoam com frequências básicas correspondentes, classificadas com as letras de A a G. As letras também indicam certas condições de saúde relacionadas ao tipo de tecido de uma região de órgão específica.<br> Cada cor corresponde a uma frequência de fótons de luz oscilantes: variando da frequência mais baixa do vermelho até as frequências progressivamente mais altas do prisma. Os mesmos efeitos produzidos por comprimentos de onda progressivamente mais curtos de diferentes filtros de luz coloridos nos tecidos do corpo também podem ser observados com frequências gradualmente mais altas de luz intermitente (frequências mais rápidas de impulsos elétricos ou frequências mais altas de estimulação a laser).<br><br><br> <b>Zona A - Vitalidade Celular<br></b> <i>Cor:</i> <span style='color:#e3a15d;'>Laranja</span><br> <i>Frequência elétrica:</i> 2,3 Hz<br> <i>Frequência do Laser:</i> 292Hz<br><br> Esta zona corresponde à linha média do corpo físico, como na Medicina Tradicional Chinesa (MTC) com os meridianos de acupuntura do Vaso da Concepção e do Vaso Governante, e influencia a energia reticular primitiva e as forças primordiais que condicionam a organização celular.<br> Essa frequência é frequentemente encontrada em tecidos marcados por cicatrizes ou distúrbios e está relacionada à organização embrionária do tecido celular. É usado para tratar hiperatividade e proliferação celular, inflamações ou processos neoplásicos.<br><br><br> <b>Zona B - Metabolismo Nutricional<br></b> <i>Cor:</i> <span style='color:#da554d;'>Vermelho</span><br> <i>Frequência elétrica:</i> 5,0 Hz<br> <i>Frequência do Laser:</i> 584Hz<br><br> Esta zona corresponde aos órgãos internos. A velocidade ideal para estimular pontos no pavilhão auricular é a frequência de 5 Hz. É usado para tratar distúrbios nutricionais e de assimilação, desnutrição tecidual, disfunções neurovegetativas, alergias orgânicas, anormalidades constitucionais, desequilíbrio parassimpático e tratamento endodérmico de órgãos viscerais conectados com a segunda e terceira fases de Nogier.<br><br><br> <b>Zona C - Movimentos Cinéticos<br></b> <i>Cor:</i> <span style='color:#dfbc4e;'>Amarelo</span><br> <i>Frequência elétrica:</i> 10,0 Hz<br> <i>Frequência do Laser:</i> 1168Hz<br><br> Essa zona está relacionada à propriocepção, que é o movimento cinético do sistema musculoesquelético. A frequência é de 10 Hz e é utilizada para tratar pontos auriculares na anti-hélice e áreas adjacentes do pavilhão auricular, como fossa escafóide e fossa triangular, em casos de dor miofascial, excitação do sistema nervoso simpático, distúrbios de somatização, alergias cutâneas, espasmos motores , patologias musculares e qualquer condição agravada pelo movimento cinético ou em tratamentos músculo-esqueléticos mesodérmicos ligados à segunda e terceira fases de Nogier.<br><br><br> <b>Zona D - Coordenação Global<br></b> <i>Cor:</i> <span style='color:#df8b5c;'>Vermelho-Laranja</span><br> <i>Frequência elétrica:</i> 20,0 Hz<br> <i>Frequência do Laser:</i> 2336Hz<br><br> Essa zona corresponde ao corpo caloso e às comissuras anteriores, que conectam as associações entre os dois lados do cérebro, e está localizada no tragus externo do pavilhão auricular. A frequência é utilizada em casos de disfunções transversais, problemas de simetria cerebral, contradivergência, distúrbios de coordenação entre os dois lados do corpo, disfunções bilaterais e dores medianas.<br> Em um indivíduo destro, o tragus direito corresponde ao Vaso da Concepção, e o tragus esquerdo corresponde ao Vaso Governante na MTC, e vice-versa em um indivíduo canhoto.<br><br><br> <b>Zona E - Interações Neurológicas</b><br> <i>Cor:</i> <span style='color:#86a050;'>Verde</span><br> <i>Frequência elétrica:</i> 40,0 Hz<br> <i>Frequência do Laser:</i> 4672Hz<br><br> Essa zona corresponde à medula espinhal e aos nervos periféricos e está localizada na cauda helicoidal do pavilhão auricular.<br> A frequência é utilizada em casos de distúrbios da coluna vertebral, problemas de pele, dermatites, cicatrizes cutâneas, neuropatias, neuralgias e herpes zoster.<br><br><br> <b>Zona F - Reações Emocionais</b><br> <i>Cor:</i> <span style='color:#a287b0;'>Azul</span><br> <i>Frequência elétrica:</i> 80,0 Hz<br> <i>Frequência do Laser:</i> 9334Hz<br><br> Essa zona está conectada ao tronco encefálico, tálamo, sistema límbico e corpo estriado e está localizada no lobo periférico do pavilhão auricular.<br> A frequência é usada para tratar questões relacionadas a posturas inconscientes, reflexos incondicionados, tiques, espasmos musculares, gagueira, dores de cabeça, dores faciais, depressão clínica e distúrbios emocionais na terapia de pontos neuroendócrinos ectodérmicos conectados à segunda e terceira fases de Nogier.<br><br><br> <b>Zona G - Organização Intelectual</b><br> <i>Cor:</i> <span style='color:#bb5eae;'>Roxo</span><br> <i>Frequência elétrica:</i> 160,0 Hz<br> <i>Frequência do Laser:</i> 18688Hz<br><br> Esta zona corresponde a funções psicológicas relacionadas com o córtex frontal. Está localizado na parte medial do lobo.<br> A frequência é usada para distúrbios do sistema piramidal, deficiências de memória, disfunções intelectuais, reações psicossomáticas, nervosismo obsessivo, preocupação crônica, reflexos condicionados disfuncionais, psicopatologia profunda e no tratamento de pontos ectodérmicos do córtex cerebral conectados à segunda e terceira fases do Nogier.",
+                    "TestoTeoria": "Como argumentou Paul Nogier, existem sete regiões distintas do corpo que ressoam com frequências básicas correspondentes, classificadas com as letras de A a G. As letras também indicam certas condições de saúde relacionadas ao tipo de tecido de uma região de órgão específica.<br> Cada cor corresponde a uma frequência de fótons de luz oscilantes: variando da frequência mais baixa do vermelho até as frequências progressivamente mais altas do prisma. Os mesmos efeitos produzidos por comprimentos de onda progressivamente mais curtos de diferentes filtros de luz coloridos nos tecidos do corpo também podem ser observados com frequências gradualmente mais altas de luz intermitente (frequências mais rápidas de impulsos elétricos ou frequências mais altas de estimulação a laser).<br><br><br> <b>Zona A - Vitalidade Celular</b><br> <i>Cor:</i> <span style='color:#e3a15d;'>Laranja</span><br> <i>Frequência elétrica:</i> 2,3 Hz<br> <i>Frequência do Laser:</i> 292Hz<br><br> Esta zona corresponde à linha média do corpo físico, como na Medicina Tradicional Chinesa (MTC) com os meridianos de acupuntura do Vaso da Concepção e do Vaso Governante, e influencia a energia reticular primitiva e as forças primordiais que condicionam a organização celular.<br> Essa frequência é frequentemente encontrada em tecidos marcados por cicatrizes ou distúrbios e está relacionada à organização embrionária do tecido celular. É usado para tratar hiperatividade e proliferação celular, inflamações ou processos neoplásicos.<br><br><br> <b>Zona B - Metabolismo Nutricional</b><br> <i>Cor:</i> <span style='color:#da554d;'>Vermelho</span><br> <i>Frequência elétrica:</i> 5,0 Hz<br> <i>Frequência do Laser:</i> 584Hz<br><br> Esta zona corresponde aos órgãos internos. A velocidade ideal para estimular pontos no pavilhão auricular é a frequência de 5 Hz. É usado para tratar distúrbios nutricionais e de assimilação, desnutrição tecidual, disfunções neurovegetativas, alergias orgânicas, anormalidades constitucionais, desequilíbrio parassimpático e tratamento endodérmico de órgãos viscerais conectados com a segunda e terceira fases de Nogier.<br><br><br> <b>Zona C - Movimentos Cinéticos</b><br> <i>Cor:</i> <span style='color:#dfbc4e;'>Amarelo</span><br> <i>Frequência elétrica:</i> 10,0 Hz<br> <i>Frequência do Laser:</i> 1168Hz<br><br> Essa zona está relacionada à propriocepção, que é o movimento cinético do sistema musculoesquelético. A frequência é de 10 Hz e é utilizada para tratar pontos auriculares na anti-hélice e áreas adjacentes do pavilhão auricular, como fossa escafóide e fossa triangular, em casos de dor miofascial, excitação do sistema nervoso simpático, distúrbios de somatização, alergias cutâneas, espasmos motores , patologias musculares e qualquer condição agravada pelo movimento cinético ou em tratamentos músculo-esqueléticos mesodérmicos ligados à segunda e terceira fases de Nogier.<br><br><br> <b>Zona D - Coordenação Global</b><br> <i>Cor:</i> <span style='color:#df8b5c;'>Vermelho-Laranja</span><br> <i>Frequência elétrica:</i> 20,0 Hz<br> <i>Frequência do Laser:</i> 2336Hz<br><br> Essa zona corresponde ao corpo caloso e às comissuras anteriores, que conectam as associações entre os dois lados do cérebro, e está localizada no tragus externo do pavilhão auricular. A frequência é utilizada em casos de disfunções transversais, problemas de simetria cerebral, contradivergência, distúrbios de coordenação entre os dois lados do corpo, disfunções bilaterais e dores medianas.<br> Em um indivíduo destro, o tragus direito corresponde ao Vaso da Concepção, e o tragus esquerdo corresponde ao Vaso Governante na MTC, e vice-versa em um indivíduo canhoto.<br><br><br> <b>Zona E - Interações Neurológicas</b><br> <i>Cor:</i> <span style='color:#86a050;'>Verde</span><br> <i>Frequência elétrica:</i> 40,0 Hz<br> <i>Frequência do Laser:</i> 4672Hz<br><br> Essa zona corresponde à medula espinhal e aos nervos periféricos e está localizada na cauda helicoidal do pavilhão auricular.<br> A frequência é utilizada em casos de distúrbios da coluna vertebral, problemas de pele, dermatites, cicatrizes cutâneas, neuropatias, neuralgias e herpes zoster.<br><br><br> <b>Zona F - Reações Emocionais</b><br> <i>Cor:</i> <span style='color:#a287b0;'>Azul</span><br> <i>Frequência elétrica:</i> 80,0 Hz<br> <i>Frequência do Laser:</i> 9334Hz<br><br> Essa zona está conectada ao tronco encefálico, tálamo, sistema límbico e corpo estriado e está localizada no lobo periférico do pavilhão auricular.<br> A frequência é usada para tratar questões relacionadas a posturas inconscientes, reflexos incondicionados, tiques, espasmos musculares, gagueira, dores de cabeça, dores faciais, depressão clínica e distúrbios emocionais na terapia de pontos neuroendócrinos ectodérmicos conectados à segunda e terceira fases de Nogier.<br><br><br> <b>Zona G - Organização Intelectual</b><br> <i>Cor:</i> <span style='color:#bb5eae;'>Roxo</span><br> <i>Frequência elétrica:</i> 160,0 Hz<br> <i>Frequência do Laser:</i> 18688Hz<br><br> Esta zona corresponde a funções psicológicas relacionadas com o córtex frontal. Está localizado na parte medial do lobo.<br> A frequência é usada para distúrbios do sistema piramidal, deficiências de memória, disfunções intelectuais, reações psicossomáticas, nervosismo obsessivo, preocupação crônica, reflexos condicionados disfuncionais, psicopatologia profunda e no tratamento de pontos ectodérmicos do córtex cerebral conectados à segunda e terceira fases do Nogier.",
                     "mappa": "FREQ"
                 },
                 {

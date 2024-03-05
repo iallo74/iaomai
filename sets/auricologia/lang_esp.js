@@ -2,7 +2,7 @@ DB.set = {
     punti: {
         "101": {
             NomePunto: "Duodeno",
-            AzioniPunto: "<p><b>Acción<br></b>Punto indicado por su eficacia en la reducción de trastornos relacionados con la digestión, trastornos alimentarios, diarrea y úlceras duodenales.</p><p><b>Ubicación</b><br>SC1-PC3, en el hemicono superior, justo encima del hueco rígido. Justo detrás del [.000.].</p>",
+            AzioniPunto: "<p><b>Acción</b><br>Punto indicado por su eficacia en la reducción de trastornos relacionados con la digestión, trastornos alimentarios, diarrea y úlceras duodenales.</p><p><b>Ubicación</b><br>SC1-PC3, en el hemicono superior, justo encima del hueco rígido. Justo detrás del [.000.].</p>",
             ChiaviPunto: ""
         },
         "104": {
@@ -12,7 +12,7 @@ DB.set = {
         },
         "105": {
             NomePunto: "Uréter EUR",
-            AzioniPunto: "<p><b>Acción<br></b>El Punto Uréter encuentra su eficacia en todas las patologías relacionadas con las vías urinarias, especialmente las vías excretoras.</p><p><b>Ubicación</b><br>IH4, en la parte interna de la hélice a la altura de la raíz de la antihélice, un poco por encima.</p>",
+            AzioniPunto: "<p><b>Acción</b><br>El Punto Uréter encuentra su eficacia en todas las patologías relacionadas con las vías urinarias, especialmente las vías excretoras.</p><p><b>Ubicación</b><br>IH4, en la parte interna de la hélice a la altura de la raíz de la antihélice, un poco por encima.</p>",
             ChiaviPunto: ""
         },
         "106": {
@@ -22,12 +22,12 @@ DB.set = {
         },
         "108": {
             NomePunto: "Próstata",
-            AzioniPunto: "<p><b>Acción<br></b>Según la Escuela China, este punto se utiliza para tratar las patologías urinarias y de la próstata; tiene una gran eficacia en los trastornos del aparato reproductor.</p><p><b>Ubicación</b><br>SC4, en el hemicono superior, hacia el punto donde la raíz inferior de la antihélice se encuentra con la hélice.</p>",
+            AzioniPunto: "<p><b>Acción</b><br>Según la Escuela China, este punto se utiliza para tratar las patologías urinarias y de la próstata; tiene una gran eficacia en los trastornos del aparato reproductor.</p><p><b>Ubicación</b><br>SC4, en el hemicono superior, hacia el punto donde la raíz inferior de la antihélice se encuentra con la hélice.</p>",
             ChiaviPunto: ""
         },
         "109": {
             NomePunto: "Uretra EUR",
-            AzioniPunto: "<p><b>Acción<br></b>El Punto Uretra encuentra su eficacia en todas las patologías relacionadas con las vías urinarias.</p><p><b>Ubicación</b><br>SC4, en el hemicono superior cerca del punto de encuentro entre la hélice y la raíz inferior de la antihélice.</p>",
+            AzioniPunto: "<p><b>Acción</b><br>El Punto Uretra encuentra su eficacia en todas las patologías relacionadas con las vías urinarias.</p><p><b>Ubicación</b><br>SC4, en el hemicono superior cerca del punto de encuentro entre la hélice y la raíz inferior de la antihélice.</p>",
             ChiaviPunto: ""
         },
         "110": {
@@ -37,18 +37,18 @@ DB.set = {
         },
         "111": {
             NomePunto: "Riñón CIN",
-            AzioniPunto: "<p><b>Acción<br></b>El punto Riñón, utilizado por la Escuela China, tiene un efecto de equilibrio tanto en el aspecto físico como emocional. Es muy útil para reducir los dolores y trastornos relacionados con los riñones, especialmente en el sistema urinario. También se indica para el tratamiento del estrés, la astenia, la depresión y los acúfenos.</p><p><b>Ubicación</b><br>SC6-CW8, en la frontera entre el hemicono superior y el muro anterior, un poco anteriormente al inicio de la raíz inferior de la antihélice.</p>",
+            AzioniPunto: "<p><b>Acción</b><br>El punto Riñón, utilizado por la Escuela China, tiene un efecto de equilibrio tanto en el aspecto físico como emocional. Es muy útil para reducir los dolores y trastornos relacionados con los riñones, especialmente en el sistema urinario. También se indica para el tratamiento del estrés, la astenia, la depresión y los acúfenos.</p><p><b>Ubicación</b><br>SC6-CW8, en la frontera entre el hemicono superior y el muro anterior, un poco anteriormente al inicio de la raíz inferior de la antihélice.</p>",
             ChiaviPunto: ""
         },
         "112": {
             NomePunto: "Comisura Riencefálica",
-            AzioniPunto: "<p><b>Acción<br></b>En combinación con el [.113.] y el [.254.], favorece las conexiones intra-hemisféricas cerebrales.</p><p><b>Ubicación</b><br>En la frontera entre la mejilla y el trago, cerca del punto [.195.].</p>",
+            AzioniPunto: "<p><b>Acción</b><br>En combinación con el [.113.] y el [.254.], favorece las conexiones intra-hemisféricas cerebrales.</p><p><b>Ubicación</b><br>En la frontera entre la mejilla y el trago, cerca del punto [.195.].</p>",
             ChiaviPunto: "",
             "hidden": true
         },
         "113": {
             NomePunto: "Comisura Abenular",
-            AzioniPunto: "<p><b>Acción<br></b>En combinación con el [.112.] y el [.254.], favorece las conexiones intra-hemisféricas cerebrales.</p><p><b>Ubicación</b><br>En la frontera entre la mejilla y el trago, cerca del área TG5.</p>",
+            AzioniPunto: "<p><b>Acción</b><br>En combinación con el [.112.] y el [.254.], favorece las conexiones intra-hemisféricas cerebrales.</p><p><b>Ubicación</b><br>En la frontera entre la mejilla y el trago, cerca del área TG5.</p>",
             ChiaviPunto: "",
             "hidden": true
         },
@@ -59,12 +59,12 @@ DB.set = {
         },
         "115": {
             NomePunto: "Bazo EUR",
-            AzioniPunto: "<p><b>Acción<br></b>Según la Escuela Francesa, este punto se utiliza para tratar todas las patologías relacionadas con el sistema inmunológico y linfático. También es muy útil para tratar los trastornos digestivos.</p><p><b>Ubicación</b><br>SC8, en la frontera entre el hemicono superior y el hueco rígido, cerca del muro anterior.<br>Nota: Solo en la oreja izquierda.</p>",
+            AzioniPunto: "<p><b>Acción</b><br>Según la Escuela Francesa, este punto se utiliza para tratar todas las patologías relacionadas con el sistema inmunológico y linfático. También es muy útil para tratar los trastornos digestivos.</p><p><b>Ubicación</b><br>SC8, en la frontera entre el hemicono superior y el hueco rígido, cerca del muro anterior.<br>Nota: Solo en la oreja izquierda.</p>",
             ChiaviPunto: ""
         },
         "116": {
             NomePunto: "Páncreas",
-            AzioniPunto: "<p><b>Acción<br></b>El Punto Páncreas tiene un efecto equilibrante en las funciones digestivas, especialmente para tratar los trastornos relacionados con el páncreas.</p><p><b>Ubicación</b><br>CR2-SC8, en la frontera entre el hueco rígido y el hemicono superior, cerca de la hélice.<br>Nota: Solo en la oreja izquierda.</p>",
+            AzioniPunto: "<p><b>Acción</b><br>El Punto Páncreas tiene un efecto equilibrante en las funciones digestivas, especialmente para tratar los trastornos relacionados con el páncreas.</p><p><b>Ubicación</b><br>CR2-SC8, en la frontera entre el hueco rígido y el hemicono superior, cerca de la hélice.<br>Nota: Solo en la oreja izquierda.</p>",
             ChiaviPunto: ""
         },
         "117": {
@@ -89,17 +89,17 @@ DB.set = {
         },
         "121": {
             NomePunto: "Hígado",
-            AzioniPunto: "<p><b>Acción<br></b>El punto Hígado está indicado en caso de trastornos anémicos, ansiedad, estrés e hipertensión. Se recomienda en el tratamiento de trastornos hepáticos y del aparato digestivo.</p><p><b>Ubicación</b><br>CR2-SC8, en la frontera entre el hemicono superior y el hueco rígido.<br>Nota: Solo en la oreja derecha.</p>",
+            AzioniPunto: "<p><b>Acción</b><br>El punto Hígado está indicado en caso de trastornos anémicos, ansiedad, estrés e hipertensión. Se recomienda en el tratamiento de trastornos hepáticos y del aparato digestivo.</p><p><b>Ubicación</b><br>CR2-SC8, en la frontera entre el hemicono superior y el hueco rígido.<br>Nota: Solo en la oreja derecha.</p>",
             ChiaviPunto: ""
         },
         "122": {
             NomePunto: "Bazo CIN",
-            AzioniPunto: "<p><b>Acción<br></b>Según la escuela china, este punto se utiliza para tratar todos los trastornos relacionados con el sistema inmunológico y linfático. También se aplica en el tratamiento de trastornos musculares y tendinosos.</p><p><b>Ubicación</b><br>IC8-PC2, en la frontera entre el hemicono inferior y el hueco rígido, cerca del muro anterior.<br>Nota: Solo en la oreja izquierda.</p>",
+            AzioniPunto: "<p><b>Acción</b><br>Según la escuela china, este punto se utiliza para tratar todos los trastornos relacionados con el sistema inmunológico y linfático. También se aplica en el tratamiento de trastornos musculares y tendinosos.</p><p><b>Ubicación</b><br>IC8-PC2, en la frontera entre el hemicono inferior y el hueco rígido, cerca del muro anterior.<br>Nota: Solo en la oreja izquierda.</p>",
             ChiaviPunto: ""
         },
         "123": {
             NomePunto: "Diafragma EUR",
-            AzioniPunto: "<p><b>Acción<br></b>Punto indicado por la escuela francesa por su eficacia en la reducción de los vómitos, los dolores y los espasmos diafragmáticos y el hipo.</p><p><b>Ubicación</b><br>IC8-CR2, en la frontera entre el hueco rígido y el hemicono inferior.</p>",
+            AzioniPunto: "<p><b>Acción</b><br>Punto indicado por la escuela francesa por su eficacia en la reducción de los vómitos, los dolores y los espasmos diafragmáticos y el hipo.</p><p><b>Ubicación</b><br>IC8-CR2, en la frontera entre el hueco rígido y el hemicono inferior.</p>",
             ChiaviPunto: ""
         },
         "124": {
@@ -109,7 +109,7 @@ DB.set = {
         },
         "126": {
             NomePunto: "Bronquios",
-            AzioniPunto: "<p><b>Acción<br></b>El punto de los Bronquios es muy útil para tratar trastornos como el asma y la bronquitis. Según la escuela china, también es efectivo en casos de EPOC (enfermedad pulmonar obstructiva crónica), una enfermedad del sistema respiratorio que afecta a los bronquios y los pulmones, irreversible y progresiva, causada principalmente por el tabaquismo.</p><p><b>Ubicación</b><br>IC7, en el hemicono superior, justo por encima del punto más profundo correspondiente al corazón.</p>",
+            AzioniPunto: "<p><b>Acción</b><br>El punto de los Bronquios es muy útil para tratar trastornos como el asma y la bronquitis. Según la escuela china, también es efectivo en casos de EPOC (enfermedad pulmonar obstructiva crónica), una enfermedad del sistema respiratorio que afecta a los bronquios y los pulmones, irreversible y progresiva, causada principalmente por el tabaquismo.</p><p><b>Ubicación</b><br>IC7, en el hemicono superior, justo por encima del punto más profundo correspondiente al corazón.</p>",
             ChiaviPunto: ""
         },
         "127": {
@@ -119,7 +119,7 @@ DB.set = {
         },
         "128": {
             NomePunto: "Esófago",
-            AzioniPunto: "<p><b>Acción<br></b>Punto auricular utilizado internacionalmente para tratar todos los trastornos esofágicos. Indicado principalmente para equilibrar los trastornos del esófago, el estómago, el duodeno y el colon.</p><p><b>Ubicación</b><br>IC6-IC7, en el hemicono inferior justo debajo del [.000.].</p>",
+            AzioniPunto: "<p><b>Acción</b><br>Punto auricular utilizado internacionalmente para tratar todos los trastornos esofágicos. Indicado principalmente para equilibrar los trastornos del esófago, el estómago, el duodeno y el colon.</p><p><b>Ubicación</b><br>IC6-IC7, en el hemicono inferior justo debajo del [.000.].</p>",
             ChiaviPunto: ""
         },
         "129": {
@@ -144,7 +144,7 @@ DB.set = {
         },
         "134": {
             NomePunto: "Tráquea",
-            AzioniPunto: "<p><b>Otros nombres</b><br>- Laringe EUR</p><p><b>Acción<br></b>El punto de la tráquea está indicado para tratar todos los casos de trastornos de la laringe, tráquea y bronquios.</p><p><b>Ubicación</b><br>IC3, en el hemicono inferior, en el centro, cerca del meato auditivo externo.</p>",
+            AzioniPunto: "<p><b>Otros nombres</b><br>- Laringe EUR</p><p><b>Acción</b><br>El punto de la tráquea está indicado para tratar todos los casos de trastornos de la laringe, tráquea y bronquios.</p><p><b>Ubicación</b><br>IC3, en el hemicono inferior, en el centro, cerca del meato auditivo externo.</p>",
             ChiaviPunto: ""
         },
         "135": {
@@ -169,7 +169,7 @@ DB.set = {
         },
         "143": {
             NomePunto: "Hipotálamo posterior",
-            AzioniPunto: "<p><b>Acción<br></b>La Escuela Francesa distingue los Puntos Hipotálamo en Anterior y Posterior por sus diferentes propiedades. El Punto Hipotálamo Posterior está indicado para equilibrar el sistema nervioso autónomo y la secreción de adrenalina. También regula las funciones del sistema ortosimpático-tonico y apoya el umbral de vigilancia y atención.</p><p><b>Ubicación</b><br>IC5-CW3, en la frontera entre el antemuro del antitrago y el hemicono inferior, a la altura del área de paso del antitrago a la antélice.</p>",
+            AzioniPunto: "<p><b>Acción</b><br>La Escuela Francesa distingue los Puntos Hipotálamo en Anterior y Posterior por sus diferentes propiedades. El Punto Hipotálamo Posterior está indicado para equilibrar el sistema nervioso autónomo y la secreción de adrenalina. También regula las funciones del sistema ortosimpático-tonico y apoya el umbral de vigilancia y atención.</p><p><b>Ubicación</b><br>IC5-CW3, en la frontera entre el antemuro del antitrago y el hemicono inferior, a la altura del área de paso del antitrago a la antélice.</p>",
             ChiaviPunto: ""
         },
        "144": {
@@ -209,7 +209,7 @@ DB.set = {
         },
         "157": {
 			NomePunto: "Hipotálamo anterior",
-			AzioniPunto: "<p><b>Acción<br></b>La Escuela Francesa distingue los Puntos Hipotálamo en Anterior y Posterior por sus diferentes propiedades. El Punto Hipotálamo Anterior se indica para el reequilibrio del sistema nervioso autónomo y el deseo sexual. Además, regula las funciones del sistema parasimpático tónico.</p><p><b>Ubicación</b><br>IC2-CW1, en el límite entre el antitrago y la emiconca inferior, cerca de la incisura intertragica.</p>",
+			AzioniPunto: "<p><b>Acción</b><br>La Escuela Francesa distingue los Puntos Hipotálamo en Anterior y Posterior por sus diferentes propiedades. El Punto Hipotálamo Anterior se indica para el reequilibrio del sistema nervioso autónomo y el deseo sexual. Además, regula las funciones del sistema parasimpático tónico.</p><p><b>Ubicación</b><br>IC2-CW1, en el límite entre el antitrago y la emiconca inferior, cerca de la incisura intertragica.</p>",
 			ChiaviPunto: ""
 		},
 		"159": {
@@ -309,7 +309,7 @@ DB.set = {
 		},
 		"185": {
 			NomePunto: "Nariz externa CIN",
-			AzioniPunto: "<p><b>Acción<br></b>La Medicina China distingue los Puntos de Nariz Externa y Nariz Interna por sus diferentes aplicaciones terapéuticas. Este punto está indicado para tratar todos los trastornos nasales, especialmente la obstrucción nasal.</p><p><b>Ubicación</b><br>TG3, en la línea de frontera entre el Trago y la mejilla, a mitad de camino entre la prominencia superior e inferior del Trago, es decir, <span class='LMtxt'>LM10</span> y <span class='LMtxt'>LM11</span>. Corresponde a <span class='LMtxt'>LM23</span>.</p>",
+			AzioniPunto: "<p><b>Acción</b><br>La Medicina China distingue los Puntos de Nariz Externa y Nariz Interna por sus diferentes aplicaciones terapéuticas. Este punto está indicado para tratar todos los trastornos nasales, especialmente la obstrucción nasal.</p><p><b>Ubicación</b><br>TG3, en la línea de frontera entre el Trago y la mejilla, a mitad de camino entre la prominencia superior e inferior del Trago, es decir, <span class='LMtxt'>LM10</span> y <span class='LMtxt'>LM11</span>. Corresponde a <span class='LMtxt'>LM23</span>.</p>",
 			ChiaviPunto: ""
 		},
 		"186": {
@@ -364,12 +364,12 @@ DB.set = {
 		},
 		"209": {
 			NomePunto: "Lengua CIN",
-			AzioniPunto: "<p><b>Acción<br></b>Como su nombre indica, este punto es muy efectivo en el tratamiento de todos los trastornos relacionados con la lengua y la cavidad oral.</p><p><b>Ubicación</b><br>LO4, en el punto medio entre la punta del trago y el punto [.222.].</p>",
+			AzioniPunto: "<p><b>Acción</b><br>Como su nombre indica, este punto es muy efectivo en el tratamiento de todos los trastornos relacionados con la lengua y la cavidad oral.</p><p><b>Ubicación</b><br>LO4, en el punto medio entre la punta del trago y el punto [.222.].</p>",
 			ChiaviPunto: ""
 		},
 		"211": {
 			NomePunto: "Lengua EUR",
-			AzioniPunto: "<p><b>Acción<br></b>Como su nombre indica, este punto es muy efectivo en el tratamiento de todos los trastornos relacionados con la lengua y la cavidad oral.</p><p><b>Ubicación</b><br>LO5-PL6, en el punto medio entre el punto de la cara y el punto de la mandíbula superior.</p>",
+			AzioniPunto: "<p><b>Acción</b><br>Como su nombre indica, este punto es muy efectivo en el tratamiento de todos los trastornos relacionados con la lengua y la cavidad oral.</p><p><b>Ubicación</b><br>LO5-PL6, en el punto medio entre el punto de la cara y el punto de la mandíbula superior.</p>",
 			ChiaviPunto: ""
 		},
 		"213": {
@@ -384,7 +384,7 @@ DB.set = {
 		},
 		"221": {
 			NomePunto: "Reflejo del Vómito",
-			AzioniPunto: "<p><b>Acción<br></b>El Punto Reflejo del Vómito, como su nombre indica, tiene una fuerte acción contra las náuseas y los vómitos.</p><p><b>Ubicación</b><br>LO7, en la cara lateral posterior del lóbulo, cerca de la cola de la hélice.</p>",
+			AzioniPunto: "<p><b>Acción</b><br>El Punto Reflejo del Vómito, como su nombre indica, tiene una fuerte acción contra las náuseas y los vómitos.</p><p><b>Ubicación</b><br>LO7, en la cara lateral posterior del lóbulo, cerca de la cola de la hélice.</p>",
 			ChiaviPunto: ""
 		},
 		"222": {
@@ -404,7 +404,7 @@ DB.set = {
 		},
 		"229": {
 			NomePunto: "Prostaglandinas",
-			AzioniPunto: "<p><b>Acción<br></b>El Punto de las Prostaglandinas está indicado para el tratamiento de los casos con componente inflamatorio y doloroso.</p><p><b>Ubicación</b><br>PL1-LO1, en la superficie medial del lóbulo, cerca de <span class='LMtxt'>LM8</span>.</p>",
+			AzioniPunto: "<p><b>Acción</b><br>El Punto de las Prostaglandinas está indicado para el tratamiento de los casos con componente inflamatorio y doloroso.</p><p><b>Ubicación</b><br>PL1-LO1, en la superficie medial del lóbulo, cerca de <span class='LMtxt'>LM8</span>.</p>",
 			ChiaviPunto: ""
 		},
 		"230": {
@@ -424,12 +424,12 @@ DB.set = {
 		},
 		"243": {
 			NomePunto: "Hipertensión 3",
-			AzioniPunto: "<p><b>Acción<br></b>La Escuela China distingue el tratamiento de la hipertensión con tres puntos diferentes. El Punto Hipertensión 3 se indica para el tratamiento de la hipertensión y reducir la ansiedad y el estrés.</p><p><b>Ubicación</b><br>PG4-PG8, área amplia en la hendidura longitudinal posterior, en el punto donde se divide en forma de Y y hacia su rama superior.</p>",
+			AzioniPunto: "<p><b>Acción</b><br>La Escuela China distingue el tratamiento de la hipertensión con tres puntos diferentes. El Punto Hipertensión 3 se indica para el tratamiento de la hipertensión y reducir la ansiedad y el estrés.</p><p><b>Ubicación</b><br>PG4-PG8, área amplia en la hendidura longitudinal posterior, en el punto donde se divide en forma de Y y hacia su rama superior.</p>",
 			ChiaviPunto: ""
 		},
 		"244": {
 			NomePunto: "Pulmón CIN",
-			AzioniPunto: "<p><b>Acción<br></b>El Punto Pulmón es adoptado tanto por la Escuela China como por la Francesa por su acción de reequilibrio del sistema respiratorio, especialmente en casos de bronquitis, enfisema y dolores en el pecho.</p><p><b>Ubicación</b><br>IC2-IC4-IC5, área amplia en la mitad inferior, hacia el antemuro.</p>",
+			AzioniPunto: "<p><b>Acción</b><br>El Punto Pulmón es adoptado tanto por la Escuela China como por la Francesa por su acción de reequilibrio del sistema respiratorio, especialmente en casos de bronquitis, enfisema y dolores en el pecho.</p><p><b>Ubicación</b><br>IC2-IC4-IC5, área amplia en la mitad inferior, hacia el antemuro.</p>",
 			ChiaviPunto: ""
 		},
 		"245": {
@@ -439,7 +439,7 @@ DB.set = {
 		},
 		"246": {
 			NomePunto: "Músculos del cinturón escapular",
-			AzioniPunto: "<p><b>Acción<br></b>Este punto es muy eficaz para reducir los trastornos relacionados con los músculos del cinturón escapular.</p><p><b>Ubicación</b><br>PP1-PP3, entre la eminencia escafoides y la hendidura longitudinal posterior.</p>",
+			AzioniPunto: "<p><b>Acción</b><br>Este punto es muy eficaz para reducir los trastornos relacionados con los músculos del cinturón escapular.</p><p><b>Ubicación</b><br>PP1-PP3, entre la eminencia escafoides y la hendidura longitudinal posterior.</p>",
 			ChiaviPunto: ""
 		},
 		"247": {
@@ -454,22 +454,22 @@ DB.set = {
 		},
 		"249": {
 			NomePunto: "Pulmón EUR",
-			AzioniPunto: "<p><b>Acción<br></b>El Punto Pulmón es adoptado tanto por la Escuela China como por la Francesa por su acción de reequilibrio del sistema respiratorio, especialmente en casos de bronquitis, enfisema y dolores en el pecho.</p><p><b>Ubicación</b><br>IC2-IC4-IC5-IC7, área amplia en la mitad inferior, hacia el antemuro.</p>",
+			AzioniPunto: "<p><b>Acción</b><br>El Punto Pulmón es adoptado tanto por la Escuela China como por la Francesa por su acción de reequilibrio del sistema respiratorio, especialmente en casos de bronquitis, enfisema y dolores en el pecho.</p><p><b>Ubicación</b><br>IC2-IC4-IC5-IC7, área amplia en la mitad inferior, hacia el antemuro.</p>",
 			ChiaviPunto: ""
 		},
 		"251": {
 			NomePunto: "Uréter CIN",
-			AzioniPunto: "<p><b>Acción<br></b>El Punto Uréter encuentra su eficacia en todas las patologías relacionadas con las vías urinarias, en particular las vías excretoras.</p><p><b>Ubicación</b><br>SC6, en la mitad superior, en el límite con el antemuro superior, en el tercio posterior de la raíz inferior de la antélice.</p>",
+			AzioniPunto: "<p><b>Acción</b><br>El Punto Uréter encuentra su eficacia en todas las patologías relacionadas con las vías urinarias, en particular las vías excretoras.</p><p><b>Ubicación</b><br>SC6, en la mitad superior, en el límite con el antemuro superior, en el tercio posterior de la raíz inferior de la antélice.</p>",
 			ChiaviPunto: ""
 		},
 		"252": {
 			NomePunto: "Punto maestro de la piel",
-			AzioniPunto: "<p><b>Acción<br></b>La Escuela Francesa indica este punto Maestro para el reequilibrio y tratamiento de todos los trastornos relacionados con la piel.</p><p><b>Ubicación</b><br>ST2-ST3, en la superficie interna del Trago, en un área ubicada a mitad de camino entre <span class='LMtxt'>LM10</span> e incisura intertragica.</p>",
+			AzioniPunto: "<p><b>Acción</b><br>La Escuela Francesa indica este punto Maestro para el reequilibrio y tratamiento de todos los trastornos relacionados con la piel.</p><p><b>Ubicación</b><br>ST2-ST3, en la superficie interna del Trago, en un área ubicada a mitad de camino entre <span class='LMtxt'>LM10</span> e incisura intertragica.</p>",
 			ChiaviPunto: ""
 		},
 		"253": {
 			NomePunto: "Mesonéfro",
-			AzioniPunto: "<p><b>Acción<br></b>El Punto Mesonéfro tiene la propiedad de reducir los efectos de los edemas de diversas naturalezas.</p><p><b>Ubicación</b><br>IH5-IH6-IH7-IH8, amplia área lineal situada en la parte oculta de la antélice y que se extiende desde el ápice de la oreja hasta la raíz inferior de la antélice.</p>",
+			AzioniPunto: "<p><b>Acción</b><br>El Punto Mesonéfro tiene la propiedad de reducir los efectos de los edemas de diversas naturalezas.</p><p><b>Ubicación</b><br>IH5-IH6-IH7-IH8, amplia área lineal situada en la parte oculta de la antélice y que se extiende desde el ápice de la oreja hasta la raíz inferior de la antélice.</p>",
 			ChiaviPunto: ""
 		},
 		"254": {
@@ -489,27 +489,27 @@ DB.set = {
 		},
 		"257": {
 			NomePunto: "Músculos y tendones del codo",
-			AzioniPunto: "<p><b>Acción<br></b>Este punto se utiliza por sus propiedades en el tratamiento de los trastornos musculotendinosos del codo.</p><p><b>Ubicación</b><br>PP5, encontrando el punto [.054.] en la superficie lateral, este punto se encuentra especularmente en la superficie medial.</p>",
+			AzioniPunto: "<p><b>Acción</b><br>Este punto se utiliza por sus propiedades en el tratamiento de los trastornos musculotendinosos del codo.</p><p><b>Ubicación</b><br>PP5, encontrando el punto [.054.] en la superficie lateral, este punto se encuentra especularmente en la superficie medial.</p>",
 			ChiaviPunto: ""
 		},
 		"258": {
 			NomePunto: "Músculos y tendones de la muñeca",
-			AzioniPunto: "<p><b>Acción<br></b>Este punto internacional se utiliza por su función en el tratamiento de los trastornos musculotendinosos de la muñeca.</p><p><b>Ubicación</b><br>PP7, encontrando el punto [.065.] en la superficie lateral, este punto se encuentra especularmente en la superficie medial.</p>",
+			AzioniPunto: "<p><b>Acción</b><br>Este punto internacional se utiliza por su función en el tratamiento de los trastornos musculotendinosos de la muñeca.</p><p><b>Ubicación</b><br>PP7, encontrando el punto [.065.] en la superficie lateral, este punto se encuentra especularmente en la superficie medial.</p>",
 			ChiaviPunto: ""
 		},
 		"259": {
 			NomePunto: "Músculos y tendones del antebrazo",
-			AzioniPunto: "<p><b>Acción<br></b>Este punto internacional se utiliza por su acción en todos los trastornos musculotendinosos del antebrazo.</p><p><b>Ubicación</b><br>PP5, encontrando el punto [.055.] en la superficie lateral, este punto se encuentra especularmente en la superficie medial.</p>",
+			AzioniPunto: "<p><b>Acción</b><br>Este punto internacional se utiliza por su acción en todos los trastornos musculotendinosos del antebrazo.</p><p><b>Ubicación</b><br>PP5, encontrando el punto [.055.] en la superficie lateral, este punto se encuentra especularmente en la superficie medial.</p>",
 			ChiaviPunto: ""
 		},
 		"260": {
 			NomePunto: "Ganglios simpáticos torácicos",
-			AzioniPunto: "<p><b>Acción<br></b>La escuela francesa indica este punto por su eficacia en la reducción de los trastornos neurológicos de la periferia dorsal y todos los dolores neuropáticos relacionados con el miembro superior y el tronco.</p><p><b>Ubicación</b><br>CW6-CW7, en el antemuro cerca de la zona refleja de la columna dorsal.</p>",
+			AzioniPunto: "<p><b>Acción</b><br>La escuela francesa indica este punto por su eficacia en la reducción de los trastornos neurológicos de la periferia dorsal y todos los dolores neuropáticos relacionados con el miembro superior y el tronco.</p><p><b>Ubicación</b><br>CW6-CW7, en el antemuro cerca de la zona refleja de la columna dorsal.</p>",
 			ChiaviPunto: ""
 		},
 		"261": {
 			NomePunto: "Ganglio simpático lumbar",
-			AzioniPunto: "<p><b>Acción<br></b>La escuela francesa indica este punto por su eficacia en la reducción de los trastornos neurológicos de la periferia dorsal y todos los dolores neuropáticos relacionados con el miembro superior y el tronco.</p><p><b>Ubicación</b><br>CW8-CW9, en el antemuro en correspondencia con el tercio inferior de la raíz inferior de la antelice.</p>",
+			AzioniPunto: "<p><b>Acción</b><br>La escuela francesa indica este punto por su eficacia en la reducción de los trastornos neurológicos de la periferia dorsal y todos los dolores neuropáticos relacionados con el miembro superior y el tronco.</p><p><b>Ubicación</b><br>CW8-CW9, en el antemuro en correspondencia con el tercio inferior de la raíz inferior de la antelice.</p>",
 			ChiaviPunto: ""
 		},
 		"262": {
@@ -887,7 +887,7 @@ DB.set = {
 		},
 		"056": {
 			NomePunto: "Corazón EUR",
-			AzioniPunto: "<p><b>Acción<br></b>Según la Escuela Francesa, este punto está indicado para el tratamiento de patologías y trastornos cardíacos. Por lo tanto, se recomienda tratar el punto Corazón en caso de dolor torácico, hipertensión e hipotensión, taquicardia y diversas arritmias.</p><p><b>Ubicación</b><br>AH3-PG4, en el antehélix en la frontera con el antemuro, a la altura del [.000.].</p>",
+			AzioniPunto: "<p><b>Acción</b><br>Según la Escuela Francesa, este punto está indicado para el tratamiento de patologías y trastornos cardíacos. Por lo tanto, se recomienda tratar el punto Corazón en caso de dolor torácico, hipertensión e hipotensión, taquicardia y diversas arritmias.</p><p><b>Ubicación</b><br>AH3-PG4, en el antehélix en la frontera con el antemuro, a la altura del [.000.].</p>",
 			ChiaviPunto: ""
 		},
 		"058": {
@@ -922,22 +922,22 @@ DB.set = {
 		},
 		"069": {
 			NomePunto: "Vértebras cervicales EUR",
-			AzioniPunto: "<p><b>Acción<br></b>El Punto Vértebras Cervicales es reconocido tanto por la Escuela China como por la Escuela Francesa por su eficacia en todas las patologías relacionadas con las vértebras cervicales.</p><p><b>Ubicación</b><br>AH1-AH2, en la cresta del antehélix, se extiende aproximadamente hasta la mitad inferior del cuerpo del antehélix.</p>",
+			AzioniPunto: "<p><b>Acción</b><br>El Punto Vértebras Cervicales es reconocido tanto por la Escuela China como por la Escuela Francesa por su eficacia en todas las patologías relacionadas con las vértebras cervicales.</p><p><b>Ubicación</b><br>AH1-AH2, en la cresta del antehélix, se extiende aproximadamente hasta la mitad inferior del cuerpo del antehélix.</p>",
 			ChiaviPunto: ""
 		},
 		"070": {
 			NomePunto: "Vértebras dorsales EUR",
-			AzioniPunto: "<p><b>Acción<br></b>Los puntos Vértebras Dorsales son reconocidos tanto por la Escuela China como por la Escuela Francesa por su eficacia en todas las patologías relacionadas con las vértebras dorsales.</p><p><b>Ubicación</b><br>AH3-AH4-AH5, en la cresta del cuerpo del antehélix en su parte más alta.</p>",
+			AzioniPunto: "<p><b>Acción</b><br>Los puntos Vértebras Dorsales son reconocidos tanto por la Escuela China como por la Escuela Francesa por su eficacia en todas las patologías relacionadas con las vértebras dorsales.</p><p><b>Ubicación</b><br>AH3-AH4-AH5, en la cresta del cuerpo del antehélix en su parte más alta.</p>",
 			ChiaviPunto: ""
 		},
 		"071": {
 			NomePunto: "Vértebras lumbares EUR",
-			AzioniPunto: "<p><b>Acción<br></b>Los puntos Vértebras Lumbares son reconocidos tanto por la Escuela China como por la Escuela Francesa por su eficacia en todas las patologías relacionadas con las vértebras lumbares.</p><p><b>Ubicación</b><br>AH5-AH6,&nbsp;en la cresta de la raíz inferior del antehélix en los dos tercios posteriores.</p>",
+			AzioniPunto: "<p><b>Acción</b><br>Los puntos Vértebras Lumbares son reconocidos tanto por la Escuela China como por la Escuela Francesa por su eficacia en todas las patologías relacionadas con las vértebras lumbares.</p><p><b>Ubicación</b><br>AH5-AH6,&nbsp;en la cresta de la raíz inferior del antehélix en los dos tercios posteriores.</p>",
 			ChiaviPunto: ""
 		},
 		"072": {
 			NomePunto: "Vértebras sacras y coccígeas",
-			AzioniPunto: "<p><b>Acción<br></b>Este punto es reconocido por la Escuela Francesa por su eficacia en el tratamiento de trastornos relacionados con las vértebras sacras y el cóccix.</p><p><b>Ubicación</b><br>AH6-AH7, en la cresta de la raíz inferior del antehélix, en su parte parcialmente oculta por el hélix, donde la raíz se encuentra con el hélix.</p>",
+			AzioniPunto: "<p><b>Acción</b><br>Este punto es reconocido por la Escuela Francesa por su eficacia en el tratamiento de trastornos relacionados con las vértebras sacras y el cóccix.</p><p><b>Ubicación</b><br>AH6-AH7, en la cresta de la raíz inferior del antehélix, en su parte parcialmente oculta por el hélix, donde la raíz se encuentra con el hélix.</p>",
 			ChiaviPunto: ""
 		},
 		"073": {
@@ -957,7 +957,7 @@ DB.set = {
 		},
 		"078": {
 			NomePunto: "Punto Antihistamínico",
-			AzioniPunto: "<p><b>Acción<br></b>El Punto Antihistamínico se utiliza para tratar trastornos relacionados con los pulmones, especialmente síntomas de resfriado, bronquitis, asma y alergias.</p><p><b>Ubicación</b><br>TF3-TF4, en el centro del foso triangular.</p>",
+			AzioniPunto: "<p><b>Acción</b><br>El Punto Antihistamínico se utiliza para tratar trastornos relacionados con los pulmones, especialmente síntomas de resfriado, bronquitis, asma y alergias.</p><p><b>Ubicación</b><br>TF3-TF4, en el centro del foso triangular.</p>",
 			ChiaviPunto: ""
 		},
 		"080": {
@@ -977,12 +977,12 @@ DB.set = {
 		},
 		"084": {
 			NomePunto: "Pulgar CIN",
-			AzioniPunto: "<p><b>Acción<br></b>Como indica su nombre, este punto es muy efectivo para reducir todos los trastornos relacionados con el pulgar, especialmente las patologías asociadas al primer metacarpiano.</p><p><b>Ubicación</b><br>SF5-AH16, amplia área que incluye una parte de la raíz superior del antehélix y una parte del foso escafoides.</p>",
+			AzioniPunto: "<p><b>Acción</b><br>Como indica su nombre, este punto es muy efectivo para reducir todos los trastornos relacionados con el pulgar, especialmente las patologías asociadas al primer metacarpiano.</p><p><b>Ubicación</b><br>SF5-AH16, amplia área que incluye una parte de la raíz superior del antehélix y una parte del foso escafoides.</p>",
 			ChiaviPunto: ""
 		},
 		"085": {
 			NomePunto: "Útero EUR",
-			AzioniPunto: "<p><b>Acción<br></b>El Punto Útero es reconocido tanto por la Escuela China como por la Escuela Francesa por su eficacia en todas las patologías relacionadas con las vías urinarias, especialmente el sistema ginecológico y reproductivo.</p><p><b>Ubicación</b><br>IH3, en la superficie oculta del hélix justo debajo del punto de encuentro entre el hélix y la raíz inferior del antehélix.</p>",
+			AzioniPunto: "<p><b>Acción</b><br>El Punto Útero es reconocido tanto por la Escuela China como por la Escuela Francesa por su eficacia en todas las patologías relacionadas con las vías urinarias, especialmente el sistema ginecológico y reproductivo.</p><p><b>Ubicación</b><br>IH3, en la superficie oculta del hélix justo debajo del punto de encuentro entre el hélix y la raíz inferior del antehélix.</p>",
 			ChiaviPunto: ""
 		},
 		"087": {

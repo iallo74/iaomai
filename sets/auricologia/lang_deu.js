@@ -2,7 +2,7 @@ DB.set = {
     "punti": {
         "101": {
             "NomePunto": "Zwölffingerdarm",
-            "AzioniPunto": "<p><b>Aktion<br></b> Point ist für seine Wirksamkeit bei der Linderung von Verdauungsstörungen, Essstörungen, Durchfall und Zwölffingerdarmgeschwüren bekannt.</p><p> <b>Standort</b><br> SC1-PC3, in der oberen Muschel, direkt über dem Muschelkamm. Direkt hinter dem [.000.].</p>",
+            "AzioniPunto": "<p><b>Aktion</b><br> Point ist für seine Wirksamkeit bei der Linderung von Verdauungsstörungen, Essstörungen, Durchfall und Zwölffingerdarmgeschwüren bekannt.</p><p> <b>Standort</b><br> SC1-PC3, in der oberen Muschel, direkt über dem Muschelkamm. Direkt hinter dem [.000.].</p>",
             "ChiaviPunto": ""
         },
         "104": {
@@ -12,7 +12,7 @@ DB.set = {
         },
         "105": {
             "NomePunto": "Ureter EUR",
-            "AzioniPunto": "<p><b>Aktion<br></b> Der Ureterpunkt ist wirksam bei allen Pathologien im Zusammenhang mit den Harnwegen, insbesondere den Ausscheidungswegen.</p><p> <b>Standort</b><br> IH4, im inneren Teil der Helix auf Höhe der Wurzel der Anthelix, knapp darüber.</p>",
+            "AzioniPunto": "<p><b>Aktion</b><br> Der Ureterpunkt ist wirksam bei allen Pathologien im Zusammenhang mit den Harnwegen, insbesondere den Ausscheidungswegen.</p><p> <b>Standort</b><br> IH4, im inneren Teil der Helix auf Höhe der Wurzel der Anthelix, knapp darüber.</p>",
             "ChiaviPunto": ""
         },
         "106": {
@@ -22,12 +22,12 @@ DB.set = {
         },
         "108": {
             "NomePunto": "Prostata",
-            "AzioniPunto": "<p><b>Aktion<br></b> Nach Angaben der Chinesischen Schule wird dieser Punkt zur Behandlung von Harn- und Prostataerkrankungen eingesetzt; Es hat eine ausgezeichnete Wirksamkeit bei Störungen des Fortpflanzungssystems.</p><p> <b>Standort</b><br> SC4, in der oberen Concha, wo die untere Wurzel der Anthelix auf die Helix trifft.</p>",
+            "AzioniPunto": "<p><b>Aktion</b><br> Nach Angaben der Chinesischen Schule wird dieser Punkt zur Behandlung von Harn- und Prostataerkrankungen eingesetzt; Es hat eine ausgezeichnete Wirksamkeit bei Störungen des Fortpflanzungssystems.</p><p> <b>Standort</b><br> SC4, in der oberen Concha, wo die untere Wurzel der Anthelix auf die Helix trifft.</p>",
             "ChiaviPunto": ""
         },
         "109": {
             "NomePunto": "Harnröhre EUR",
-            "AzioniPunto": "<p><b>Aktion<br></b> Der Harnröhrenpunkt ist wirksam bei allen Pathologien im Zusammenhang mit den Harnwegen.</p><p> <b>Standort</b><br> SC4, in der oberen Concha nahe dem Treffpunkt zwischen der Helix und der unteren Wurzel der Anthelix.</p>",
+            "AzioniPunto": "<p><b>Aktion</b><br> Der Harnröhrenpunkt ist wirksam bei allen Pathologien im Zusammenhang mit den Harnwegen.</p><p> <b>Standort</b><br> SC4, in der oberen Concha nahe dem Treffpunkt zwischen der Helix und der unteren Wurzel der Anthelix.</p>",
             "ChiaviPunto": ""
         },
         "110": {
@@ -37,18 +37,18 @@ DB.set = {
         },
         "111": {
             "NomePunto": "Nieren-CHN",
-            "AzioniPunto": "<p><b>Aktion<br></b> Der Nierenpunkt wird von der Chinesischen Schule für seine ausgleichende Wirkung sowohl auf körperlicher als auch auf emotionaler Ebene genutzt. Es ist sehr nützlich bei der Linderung von Schmerzen und Störungen im Zusammenhang mit den Nieren, insbesondere dem Harnsystem. Es ist auch zur Behandlung von Stress, Asthenie, Depression und Tinnitus geeignet.</p><p> <b>Standort</b><br> SC6-CW8, an der Grenze zwischen der oberen Concha und der Concha-Wand, direkt vor der Stelle, an der die untere Wurzel der Anthelix beginnt.</p>",
+            "AzioniPunto": "<p><b>Aktion</b><br> Der Nierenpunkt wird von der Chinesischen Schule für seine ausgleichende Wirkung sowohl auf körperlicher als auch auf emotionaler Ebene genutzt. Es ist sehr nützlich bei der Linderung von Schmerzen und Störungen im Zusammenhang mit den Nieren, insbesondere dem Harnsystem. Es ist auch zur Behandlung von Stress, Asthenie, Depression und Tinnitus geeignet.</p><p> <b>Standort</b><br> SC6-CW8, an der Grenze zwischen der oberen Concha und der Concha-Wand, direkt vor der Stelle, an der die untere Wurzel der Anthelix beginnt.</p>",
             "ChiaviPunto": ""
         },
         "112": {
             "NomePunto": "Rheinzephale Kommissur",
-            "AzioniPunto": "<p><b>Aktion<br></b> In Kombination mit [.113.] und [.254.] fördert es intrahemisphärische Gehirnverbindungen.</p><p> <b>Standort</b><br> An der Grenze zwischen Wange und Tragus, nahe Punkt [.195.].</p>",
+            "AzioniPunto": "<p><b>Aktion</b><br> In Kombination mit [.113.] und [.254.] fördert es intrahemisphärische Gehirnverbindungen.</p><p> <b>Standort</b><br> An der Grenze zwischen Wange und Tragus, nahe Punkt [.195.].</p>",
             "ChiaviPunto": "",
             "hidden": true
         },
         "113": {
             "NomePunto": "Abenularkommissur",
-            "AzioniPunto": "<p><b>Aktion<br></b> In Kombination mit [.112.] und [.254.] fördert es intrahemisphärische Gehirnverbindungen.</p><p> <b>Standort</b><br> An der Grenze zwischen Wange und Tragus, nahe Bereich TG5.</p>",
+            "AzioniPunto": "<p><b>Aktion</b><br> In Kombination mit [.112.] und [.254.] fördert es intrahemisphärische Gehirnverbindungen.</p><p> <b>Standort</b><br> An der Grenze zwischen Wange und Tragus, nahe Bereich TG5.</p>",
             "ChiaviPunto": "",
             "hidden": true
         },
@@ -59,12 +59,12 @@ DB.set = {
         },
         "115": {
             "NomePunto": "Milz EUR",
-            "AzioniPunto": "<p><b>Aktion<br></b> Nach Angaben der französischen Schule wird dieser Punkt zur Behandlung aller Pathologien im Zusammenhang mit dem Immun- und Lymphsystem eingesetzt. Es ist auch hilfreich bei Verdauungsstörungen.</p><p> <b>Standort</b><br> SC8, an der Grenze zwischen der oberen Concha und dem Concha-Kamm, in der Nähe der Concha-Wand.<br> Bitte beachten: Nur im linken Ohr.</p>",
+            "AzioniPunto": "<p><b>Aktion</b><br> Nach Angaben der französischen Schule wird dieser Punkt zur Behandlung aller Pathologien im Zusammenhang mit dem Immun- und Lymphsystem eingesetzt. Es ist auch hilfreich bei Verdauungsstörungen.</p><p> <b>Standort</b><br> SC8, an der Grenze zwischen der oberen Concha und dem Concha-Kamm, in der Nähe der Concha-Wand.<br> Bitte beachten: Nur im linken Ohr.</p>",
             "ChiaviPunto": ""
         },
         "116": {
             "NomePunto": "Pankreas",
-            "AzioniPunto": "<p><b>Aktion<br></b> Der Pankreaspunkt hat eine ausgleichende Wirkung auf die Verdauungsfunktionen, insbesondere bei der Behandlung von Erkrankungen der Bauchspeicheldrüse.</p><p> <b>Standort</b><br> CR2-SC8, an der Grenze zwischen dem Concha-Kamm und der oberen Concha, in der Nähe der Helix.<br> Bitte beachten: Nur im linken Ohr.</p>",
+            "AzioniPunto": "<p><b>Aktion</b><br> Der Pankreaspunkt hat eine ausgleichende Wirkung auf die Verdauungsfunktionen, insbesondere bei der Behandlung von Erkrankungen der Bauchspeicheldrüse.</p><p> <b>Standort</b><br> CR2-SC8, an der Grenze zwischen dem Concha-Kamm und der oberen Concha, in der Nähe der Helix.<br> Bitte beachten: Nur im linken Ohr.</p>",
             "ChiaviPunto": ""
         },
         "117": {
@@ -89,17 +89,17 @@ DB.set = {
         },
         "121": {
             "NomePunto": "Leber",
-            "AzioniPunto": "<p><b>Aktion<br></b> Der Leberpunkt ist bei anämischen Störungen, Angstzuständen, Stress und Bluthochdruck angezeigt. Es wird zur Behandlung von Lebererkrankungen und des Verdauungssystems empfohlen.</p><p> <b>Standort</b><br> CR2-SC8, an der Grenze zwischen der oberen Concha und dem Concha-Kamm.<br> Bitte beachten: Nur im rechten Ohr.</p>",
+            "AzioniPunto": "<p><b>Aktion</b><br> Der Leberpunkt ist bei anämischen Störungen, Angstzuständen, Stress und Bluthochdruck angezeigt. Es wird zur Behandlung von Lebererkrankungen und des Verdauungssystems empfohlen.</p><p> <b>Standort</b><br> CR2-SC8, an der Grenze zwischen der oberen Concha und dem Concha-Kamm.<br> Bitte beachten: Nur im rechten Ohr.</p>",
             "ChiaviPunto": ""
         },
         "122": {
             "NomePunto": "Milz CHN",
-            "AzioniPunto": "<p><b>Aktion<br></b> Nach Angaben der Chinesischen Schule wird dieser Punkt zur Behandlung aller Pathologien im Zusammenhang mit dem Immun- und Lymphsystem eingesetzt. Es eignet sich auch zur Behandlung von Muskel- und Sehnenbeschwerden.</p><p> <b>Standort</b><br> IC8-PC2, an der Grenze zwischen der unteren Muschel und dem Muschelrücken, nahe der Muschelwand.<br> Bitte beachten: Nur im linken Ohr.</p>",
+            "AzioniPunto": "<p><b>Aktion</b><br> Nach Angaben der Chinesischen Schule wird dieser Punkt zur Behandlung aller Pathologien im Zusammenhang mit dem Immun- und Lymphsystem eingesetzt. Es eignet sich auch zur Behandlung von Muskel- und Sehnenbeschwerden.</p><p> <b>Standort</b><br> IC8-PC2, an der Grenze zwischen der unteren Muschel und dem Muschelrücken, nahe der Muschelwand.<br> Bitte beachten: Nur im linken Ohr.</p>",
             "ChiaviPunto": ""
         },
         "123": {
             "NomePunto": "Membran EUR",
-            "AzioniPunto": "<p><b>Aktion<br></b> Dieser Punkt wird von der Französischen Schule wegen seiner Wirksamkeit bei der Reduzierung von Erbrechen, Zwerchfellschmerzen und -krämpfen sowie Schluckauf angegeben.</p><p> <b>Standort</b><br> IC8-CR2, an der Grenze zwischen dem Concha-Kamm und der unteren Concha.</p>",
+            "AzioniPunto": "<p><b>Aktion</b><br> Dieser Punkt wird von der Französischen Schule wegen seiner Wirksamkeit bei der Reduzierung von Erbrechen, Zwerchfellschmerzen und -krämpfen sowie Schluckauf angegeben.</p><p> <b>Standort</b><br> IC8-CR2, an der Grenze zwischen dem Concha-Kamm und der unteren Concha.</p>",
             "ChiaviPunto": ""
         },
         "124": {
@@ -109,7 +109,7 @@ DB.set = {
         },
         "126": {
             "NomePunto": "Bronchien",
-            "AzioniPunto": "<p><b>Aktion<br></b> Der Bronchi-Punkt ist sehr nützlich bei der Behandlung von Erkrankungen wie Asthma und Bronchitis. Nach Angaben der Chinesischen Schule ist es auch wirksam bei COPD (chronisch obstruktive Lungenerkrankung), einer fortschreitenden und irreversiblen Erkrankung der Atemwege, die die Bronchien und die Lunge befällt und hauptsächlich durch Rauchen verursacht wird.</p><p> <b>Standort</b><br> IC7, in der oberen Concha, direkt über dem tiefsten Punkt, der dem Herzen entspricht.</p>",
+            "AzioniPunto": "<p><b>Aktion</b><br> Der Bronchi-Punkt ist sehr nützlich bei der Behandlung von Erkrankungen wie Asthma und Bronchitis. Nach Angaben der Chinesischen Schule ist es auch wirksam bei COPD (chronisch obstruktive Lungenerkrankung), einer fortschreitenden und irreversiblen Erkrankung der Atemwege, die die Bronchien und die Lunge befällt und hauptsächlich durch Rauchen verursacht wird.</p><p> <b>Standort</b><br> IC7, in der oberen Concha, direkt über dem tiefsten Punkt, der dem Herzen entspricht.</p>",
             "ChiaviPunto": ""
         },
         "127": {
@@ -119,7 +119,7 @@ DB.set = {
         },
         "128": {
             "NomePunto": "Speiseröhre",
-            "AzioniPunto": "<p><b>Aktion<br></b> Der Ösophaguspunkt wird international zur Behandlung aller Erkrankungen der Speiseröhre eingesetzt. Es ist vor allem zur Wiederherstellung des Gleichgewichts von Speiseröhre, Magen, Zwölffingerdarm und Dickdarm geeignet.</p><p> <b>Standort</b><br> IC6-IC7, in der unteren Concha knapp unter [.000.].</p>",
+            "AzioniPunto": "<p><b>Aktion</b><br> Der Ösophaguspunkt wird international zur Behandlung aller Erkrankungen der Speiseröhre eingesetzt. Es ist vor allem zur Wiederherstellung des Gleichgewichts von Speiseröhre, Magen, Zwölffingerdarm und Dickdarm geeignet.</p><p> <b>Standort</b><br> IC6-IC7, in der unteren Concha knapp unter [.000.].</p>",
             "ChiaviPunto": ""
         },
         "129": {
@@ -144,7 +144,7 @@ DB.set = {
         },
         "134": {
             "NomePunto": "Luftröhre",
-            "AzioniPunto": "<p><b>Andere Namen</b><br> - Kehlkopf EUR</p><p> <b>Aktion<br></b> Der Trachea Point ist für die Behandlung aller Patienten mit Erkrankungen des Kehlkopfes, der Luftröhre und der Bronchien geeignet.</p><p> <b>Standort</b><br> IC3, in der unteren Concha, zentral, in der Nähe des äußeren Gehörgangs.</p>",
+            "AzioniPunto": "<p><b>Andere Namen</b><br> - Kehlkopf EUR</p><p> <b>Aktion</b><br> Der Trachea Point ist für die Behandlung aller Patienten mit Erkrankungen des Kehlkopfes, der Luftröhre und der Bronchien geeignet.</p><p> <b>Standort</b><br> IC3, in der unteren Concha, zentral, in der Nähe des äußeren Gehörgangs.</p>",
             "ChiaviPunto": ""
         },
         "135": {
@@ -294,7 +294,7 @@ DB.set = {
         },
         "182": {
             "NomePunto": "Äußeres Ohr CHN",
-            "AzioniPunto": "<p><b>Aktion<br></b> Dieser Punkt ist zur Linderung von Störungen und Schmerzen im Außenohr geeignet.</p><p> <b>Standort</b><br> TG5, im Zentrum des Tragus, direkt über einer imaginären horizontalen Linie, die durch <span class='LMtxt'>LM11</span> verläuft.</p>",
+            "AzioniPunto": "<p><b>Aktion</b><br> Dieser Punkt ist zur Linderung von Störungen und Schmerzen im Außenohr geeignet.</p><p> <b>Standort</b><br> TG5, im Zentrum des Tragus, direkt über einer imaginären horizontalen Linie, die durch <span class='LMtxt'>LM11</span> verläuft.</p>",
             "ChiaviPunto": ""
         },
         "183": {
@@ -304,12 +304,12 @@ DB.set = {
         },
         "184": {
             "NomePunto": "Vitality point",
-            "AzioniPunto": "<p><b>Andere Namen</b><br> - Vitalitätspunkt<br> - Frustrationspunkt<br> - Interferonpunkt<br> - Herzpunkt</p><p> <b>Aktion<br></b> Die Französische Schule weist auf diesen Punkt aufgrund seiner kraftvollen energetischen, psychologischen und physischen Wirkung hin. Es wird zur Stärkung bei Apathie, geringer körperlicher Leistungsfähigkeit und Depression eingesetzt.</p><p> <b>Standort</b><br> TG4, in der Mitte des Tragus, direkt vor <span class='LMtxt'>LM11</span> .</p>",
+            "AzioniPunto": "<p><b>Andere Namen</b><br> - Vitalitätspunkt<br> - Frustrationspunkt<br> - Interferonpunkt<br> - Herzpunkt</p><p> <b>Aktion</b><br> Die Französische Schule weist auf diesen Punkt aufgrund seiner kraftvollen energetischen, psychologischen und physischen Wirkung hin. Es wird zur Stärkung bei Apathie, geringer körperlicher Leistungsfähigkeit und Depression eingesetzt.</p><p> <b>Standort</b><br> TG4, in der Mitte des Tragus, direkt vor <span class='LMtxt'>LM11</span> .</p>",
             "ChiaviPunto": ""
         },
         "185": {
             "NomePunto": "Äußere Nase CHN",
-            "AzioniPunto": "<p><b>Aktion<br></b> Die Chinesische Schule unterscheidet die Punkte „Externe Nase“ und „Innere Nase“ aufgrund ihrer unterschiedlichen therapeutischen Anwendungen. Dieser Punkt ist für die Behandlung aller Nasenerkrankungen, insbesondere einer verstopften Nase, geeignet.</p><p> <b>Standort</b><br> TG3, an der Grenzlinie zwischen Tragus und Wange, auf halber Strecke zwischen dem oberen und unteren Vorsprung des Tragus ( <span class='LMtxt'>LM10</span> und <span class='LMtxt'>LM11</span> ). Entspricht <span class='LMtxt'>LM23</span> .</p>",
+            "AzioniPunto": "<p><b>Aktion</b><br> Die Chinesische Schule unterscheidet die Punkte „Externe Nase“ und „Innere Nase“ aufgrund ihrer unterschiedlichen therapeutischen Anwendungen. Dieser Punkt ist für die Behandlung aller Nasenerkrankungen, insbesondere einer verstopften Nase, geeignet.</p><p> <b>Standort</b><br> TG3, an der Grenzlinie zwischen Tragus und Wange, auf halber Strecke zwischen dem oberen und unteren Vorsprung des Tragus ( <span class='LMtxt'>LM10</span> und <span class='LMtxt'>LM11</span> ). Entspricht <span class='LMtxt'>LM23</span> .</p>",
             "ChiaviPunto": ""
         },
         "186": {
@@ -404,7 +404,7 @@ DB.set = {
         },
         "229": {
             "NomePunto": "Prostaglandine",
-            "AzioniPunto": "<p><b>Aktion<br></b> Der Prostaglandin-Punkt ist für die Behandlung von Fällen mit entzündlicher und schmerzbedingter Komponente indiziert.</p><p> <b>Standort</b><br> PL1-LO1, auf der medialen Oberfläche des Lappens, in der Nähe von <span class='LMtxt'>LM8</span> .</p>",
+            "AzioniPunto": "<p><b>Aktion</b><br> Der Prostaglandin-Punkt ist für die Behandlung von Fällen mit entzündlicher und schmerzbedingter Komponente indiziert.</p><p> <b>Standort</b><br> PL1-LO1, auf der medialen Oberfläche des Lappens, in der Nähe von <span class='LMtxt'>LM8</span> .</p>",
             "ChiaviPunto": ""
         },
         "230": {
@@ -424,12 +424,12 @@ DB.set = {
         },
         "243": {
             "NomePunto": "Bluthochdruck 3",
-            "AzioniPunto": "<p><b>Aktion<br></b> Die Chinesische Schule unterscheidet die Behandlung von Bluthochdruck nach drei verschiedenen Punkten. Hypertension Point 3 ist zur Behandlung von Bluthochdruck und zur Reduzierung von Angstzuständen und Stress indiziert.</p><p> <b>Standort</b><br> PG4-PG8, breiter Bereich in der hinteren Furche, wo er sich in eine Y-Form und in Richtung seines oberen Zweigs teilt.</p>",
+            "AzioniPunto": "<p><b>Aktion</b><br> Die Chinesische Schule unterscheidet die Behandlung von Bluthochdruck nach drei verschiedenen Punkten. Hypertension Point 3 ist zur Behandlung von Bluthochdruck und zur Reduzierung von Angstzuständen und Stress indiziert.</p><p> <b>Standort</b><br> PG4-PG8, breiter Bereich in der hinteren Furche, wo er sich in eine Y-Form und in Richtung seines oberen Zweigs teilt.</p>",
             "ChiaviPunto": ""
         },
         "244": {
             "NomePunto": "Lunge CHN",
-            "AzioniPunto": "<p><b>Aktion<br></b> Der Lungenpunkt wird sowohl von der chinesischen als auch der französischen Schule für seine ausgleichende Wirkung auf die Atemwege genutzt, insbesondere bei Bronchitis, Emphysem und Brustschmerzen.</p><p> <b>Standort</b><br> IC2-IC4-IC5, großer Bereich in der unteren Concha, zur Concha-Wand hin.</p>",
+            "AzioniPunto": "<p><b>Aktion</b><br> Der Lungenpunkt wird sowohl von der chinesischen als auch der französischen Schule für seine ausgleichende Wirkung auf die Atemwege genutzt, insbesondere bei Bronchitis, Emphysem und Brustschmerzen.</p><p> <b>Standort</b><br> IC2-IC4-IC5, großer Bereich in der unteren Concha, zur Concha-Wand hin.</p>",
             "ChiaviPunto": ""
         },
         "245": {
@@ -439,7 +439,7 @@ DB.set = {
         },
         "246": {
             "NomePunto": "Schulterblattgürtelmuskeln",
-            "AzioniPunto": "<p><b>Aktion<br></b> Dieser Punkt ist sehr wirksam bei der Linderung von Störungen der Schulterblattgürtelmuskulatur.</p><p> <b>Standort</b><br> PP1-PP3, zwischen dem Kahnbeinvorsprung und der hinteren Furche.</p>",
+            "AzioniPunto": "<p><b>Aktion</b><br> Dieser Punkt ist sehr wirksam bei der Linderung von Störungen der Schulterblattgürtelmuskulatur.</p><p> <b>Standort</b><br> PP1-PP3, zwischen dem Kahnbeinvorsprung und der hinteren Furche.</p>",
             "ChiaviPunto": ""
         },
         "247": {
@@ -454,12 +454,12 @@ DB.set = {
         },
         "249": {
             "NomePunto": "Lunge EUR",
-            "AzioniPunto": "<p><b>Aktion<br></b> Der Lungenpunkt wird sowohl von der chinesischen als auch von der französischen Schule wegen seiner ausgleichenden Wirkung auf das Atmungssystem verwendet, insbesondere bei Bronchitis, Emphysem und Brustschmerzen.</p><p> <b>Standort</b><br> IC2-IC4-IC5-IC7, großer Bereich in der unteren Concha, zur Comcha-Wand hin.</p>",
+            "AzioniPunto": "<p><b>Aktion</b><br> Der Lungenpunkt wird sowohl von der chinesischen als auch von der französischen Schule wegen seiner ausgleichenden Wirkung auf das Atmungssystem verwendet, insbesondere bei Bronchitis, Emphysem und Brustschmerzen.</p><p> <b>Standort</b><br> IC2-IC4-IC5-IC7, großer Bereich in der unteren Concha, zur Comcha-Wand hin.</p>",
             "ChiaviPunto": ""
         },
         "251": {
             "NomePunto": "Ureter CHN",
-            "AzioniPunto": "<p><b>Aktion<br></b> Der Ureterpunkt ist wirksam bei allen Pathologien im Zusammenhang mit den Harnwegen, insbesondere dem Ausscheidungstrakt.</p><p> <b>Standort</b><br> SC6, in der oberen Concha, an der Grenze zur oberen Conchawand, entsprechend dem hinteren Drittel der unteren Wurzel der Anthelix.</p>",
+            "AzioniPunto": "<p><b>Aktion</b><br> Der Ureterpunkt ist wirksam bei allen Pathologien im Zusammenhang mit den Harnwegen, insbesondere dem Ausscheidungstrakt.</p><p> <b>Standort</b><br> SC6, in der oberen Concha, an der Grenze zur oberen Conchawand, entsprechend dem hinteren Drittel der unteren Wurzel der Anthelix.</p>",
             "ChiaviPunto": ""
         },
         "252": {
@@ -634,22 +634,22 @@ DB.set = {
         },
         "286": {
             "NomePunto": "Dorsale paravertebrale Muskulatur",
-            "AzioniPunto": "<p><b>Aktion<br></b> Nach Angaben der Französischen Schule wird dieser Punkt für seine paravertebrale myorelaxierende Funktion genutzt.</p><p> <b>Standort</b><br> AH3-AH4, in den oberen zwei Dritteln des Antehelixkörpers, bevor er sich in zwei Äste gabelt, auf der Seite zur Fossa scaphoidea.</p>",
+            "AzioniPunto": "<p><b>Aktion</b><br> Nach Angaben der Französischen Schule wird dieser Punkt für seine paravertebrale myorelaxierende Funktion genutzt.</p><p> <b>Standort</b><br> AH3-AH4, in den oberen zwei Dritteln des Antehelixkörpers, bevor er sich in zwei Äste gabelt, auf der Seite zur Fossa scaphoidea.</p>",
             "ChiaviPunto": ""
         },
         "287": {
             "NomePunto": "Lumbosakrale paravertebrale Muskulatur",
-            "AzioniPunto": "<p><b>Aktion<br></b> Dieser internationale Punkt wird wegen seiner paravertebralen myorelaxierenden Funktion verwendet.</p><p> <b>Standort</b><br> AH5-AH6-AH7, an der unteren Wurzel der Antehelix an der Grenze zur dreieckigen Fossa.</p>",
+            "AzioniPunto": "<p><b>Aktion</b><br> Dieser internationale Punkt wird wegen seiner paravertebralen myorelaxierenden Funktion verwendet.</p><p> <b>Standort</b><br> AH5-AH6-AH7, an der unteren Wurzel der Antehelix an der Grenze zur dreieckigen Fossa.</p>",
             "ChiaviPunto": ""
         },
         "288": {
             "NomePunto": "Nackenmuskulatur",
-            "AzioniPunto": "<p><b>Aktion<br></b> Dieser internationale Punkt wird wegen seiner entspannenden Funktion auf die Nackenmuskulatur verwendet.</p><p> <b>Standort</b><br> PP3-PG3, zwischen der Eminenz des Kahnbeins und der hinteren Rinne.</p>",
+            "AzioniPunto": "<p><b>Aktion</b><br> Dieser internationale Punkt wird wegen seiner entspannenden Funktion auf die Nackenmuskulatur verwendet.</p><p> <b>Standort</b><br> PP3-PG3, zwischen der Eminenz des Kahnbeins und der hinteren Rinne.</p>",
             "ChiaviPunto": ""
         },
         "289": {
             "NomePunto": "Rückenmuskulatur",
-            "AzioniPunto": "<p><b>Aktion<br></b> Punkt, der von der Französischen Schule wegen seiner entspannenden Wirkung auf die Rückenmuskulatur verwendet wird.</p><p> <b>Standort</b><br> PP3-PP5-PG3-PG4-PG5, zwischen der Eminenz des Kahnbeins und der hinteren Furche.</p>",
+            "AzioniPunto": "<p><b>Aktion</b><br> Punkt, der von der Französischen Schule wegen seiner entspannenden Wirkung auf die Rückenmuskulatur verwendet wird.</p><p> <b>Standort</b><br> PP3-PP5-PG3-PG4-PG5, zwischen der Eminenz des Kahnbeins und der hinteren Furche.</p>",
             "ChiaviPunto": ""
         },
         "291": {
@@ -719,12 +719,12 @@ DB.set = {
         },
         "007": {
             "NomePunto": "Rektum CHN",
-            "AzioniPunto": "<p><b>Aktion<br></b> Der Rektumpunkt ist sehr nützlich bei der Linderung der Symptome von Reizdarmsyndrom, Ruhr, Hämorrhoiden, Durchfall, Verstopfung und rektalen Schmerzen.</p><p> <b>Standort</b><br> HX3, am Helixknie, unterhalb des Punktes, an dem die Helix auf die untere Wurzel der Anthelix trifft.</p>",
+            "AzioniPunto": "<p><b>Aktion</b><br> Der Rektumpunkt ist sehr nützlich bei der Linderung der Symptome von Reizdarmsyndrom, Ruhr, Hämorrhoiden, Durchfall, Verstopfung und rektalen Schmerzen.</p><p> <b>Standort</b><br> HX3, am Helixknie, unterhalb des Punktes, an dem die Helix auf die untere Wurzel der Anthelix trifft.</p>",
             "ChiaviPunto": ""
         },
         "008": {
             "NomePunto": "Harnröhre CHN",
-            "AzioniPunto": "<p><b>Aktion<br></b> Der Harnröhrenpunkt ist wirksam bei allen Pathologien im Zusammenhang mit den Harnwegen.</p><p> <b>Standort</b><br> HX3, am Helixknie, direkt unterhalb des Punktes, an dem die Helix auf die untere Wurzel der Anthelix trifft.</p>",
+            "AzioniPunto": "<p><b>Aktion</b><br> Der Harnröhrenpunkt ist wirksam bei allen Pathologien im Zusammenhang mit den Harnwegen.</p><p> <b>Standort</b><br> HX3, am Helixknie, direkt unterhalb des Punktes, an dem die Helix auf die untere Wurzel der Anthelix trifft.</p>",
             "ChiaviPunto": ""
         },
         "009": {
@@ -9314,7 +9314,7 @@ DB.set = {
                 },
                 {
                     "TitoloTeoria": "Frequenzzonen",
-                    "TestoTeoria": "Wie Paul Nogier argumentierte, gibt es sieben verschiedene Körperregionen, die mit entsprechenden Grundfrequenzen in Resonanz stehen und mit den Buchstaben A bis G klassifiziert werden. Die Buchstaben weisen auch auf bestimmte Gesundheitszustände hin, die mit dem Gewebetyp einer bestimmten Organregion zusammenhängen.<br> Jede Farbe entspricht einer Frequenz oszillierender Lichtphotonen: von der niedrigsten Frequenz von Rot bis zu zunehmend höheren Frequenzen des Prismas. Die gleichen Effekte, die durch zunehmend kürzere Wellenlängen verschiedenfarbiger Lichtfilter auf Körpergewebe hervorgerufen werden, können auch bei allmählich höheren Frequenzen von Blitzlicht (schnellere Frequenzen elektrischer Impulse oder höhere Frequenzen der Laserstimulation) beobachtet werden.<br><br><br> <b>Zone A – Zellvitalität<br></b> <i>Farbe:</i> <span style='color:#e3a15d;'>Orange</span><br> <i>Elektrische Frequenz:</i> 2,3 Hz<br> <i>Laserfrequenz:</i> 292 Hz<br><br> Diese Zone entspricht der Mittellinie des physischen Körpers, wie in der Traditionellen Chinesischen Medizin (TCM) mit den Akupunkturmeridianen Empfängnisgefäß und Leitgefäß, und beeinflusst die primitive retikuläre Energie und die Urkräfte, die die Zellorganisation bestimmen.<br> Diese Häufigkeit findet sich häufig in Geweben, die durch Narben oder Störungen gekennzeichnet sind, und hängt mit der embryonalen Organisation des Zellgewebes zusammen. Es wird zur Behandlung von Hyperaktivität und Zellproliferation, Entzündungen oder neoplastischen Prozessen eingesetzt.<br><br><br> <b>Zone B – Ernährungsstoffwechsel<br></b> <i>Farbe:</i> <span style='color:#da554d;'>Rot</span><br> <i>Elektrische Frequenz:</i> 5,0 Hz<br> <i>Laserfrequenz:</i> 584 Hz<br><br> Diese Zone entspricht den inneren Organen. Die ideale Geschwindigkeit zur Stimulation von Punkten am Ohrmuschelpavillon liegt bei einer Frequenz von 5 Hz. Es wird zur Behandlung von Ernährungs- und Assimilationsstörungen, Gewebemangelernährung, neurovegetativen Dysfunktionen, organischen Allergien, Konstitutionsstörungen, parasympathischem Ungleichgewicht und der endodermalen Behandlung viszeraler Organe im Zusammenhang mit der zweiten und dritten Nogier-Phase eingesetzt.<br><br><br> <b>Zone C – Kinetische Bewegungen<br></b> <i>Farbe:</i> <span style='color:#dfbc4e;'>Gelb</span><br> <i>Elektrische Frequenz:</i> 10,0 Hz<br> <i>Laserfrequenz:</i> 1168 Hz<br><br> Diese Zone bezieht sich auf die Propriozeption, also die kinetische Bewegung des Bewegungsapparates. Die Frequenz beträgt 10 Hz und wird zur Behandlung von Ohrmuschelpunkten auf der Anthelix und umliegenden Bereichen des Ohrmuschelpavillons, wie z. B. der Fossa scaphoidea und der Fossa triangularis, bei myofaszialen Schmerzen, Erregung des sympathischen Nervensystems, Somatisierungsstörungen, Hautallergien und motorischen Krämpfen eingesetzt , Muskelpathologien und alle Zustände, die durch kinetische Bewegung oder bei mesodermalen Muskel-Skelett-Behandlungen im Zusammenhang mit der zweiten und dritten Phase von Nogier verschlechtert werden.<br><br><br> <b>Zone D – Globale Koordination<br></b> <i>Farbe:</i> <span style='color:#df8b5c;'>Rot-Orange</span><br> <i>Elektrische Frequenz:</i> 20,0 Hz<br> <i>Laserfrequenz:</i> 2336 Hz<br><br> Diese Zone entspricht dem Corpus callosum und den vorderen Kommissuren, die die Verbindungen zwischen den beiden Gehirnhälften verbinden, und befindet sich am äußeren Tragus des Ohrmuschelpavillons. Die Frequenz wird bei transversalen Dysfunktionen, Problemen mit der Gehirnsymmetrie, Gegendivergenz, Koordinationsstörungen zwischen den beiden Körperseiten, bilateralen Dysfunktionen und medianen Schmerzen eingesetzt.<br> Bei einem Rechtshänder entspricht der rechte Tragus dem Empfängnisgefäß und der linke Tragus dem Leitgefäß in der TCM und umgekehrt bei einem Linkshänder.<br><br><br> <b>Zone E – Neurologische Interaktionen</b><br> <i>Farbe:</i> <span style='color:#86a050;'>Grün</span><br> <i>Elektrische Frequenz:</i> 40,0 Hz<br> <i>Laserfrequenz:</i> 4672 Hz<br><br> Diese Zone entspricht dem Rückenmark und den peripheren Nerven und befindet sich am spiralförmigen Schwanz des Ohrmuschelpavillons.<br> Die Frequenz wird bei Wirbelsäulenerkrankungen, Hautproblemen, Dermatitis, Hautnarben, Neuropathien, Neuralgien und Herpes Zoster eingesetzt.<br><br><br> <b>Zone F – Emotionale Reaktionen</b><br> <i>Farbe:</i> <span style='color:#a287b0;'>Blau</span><br> <i>Elektrische Frequenz:</i> 80,0 Hz<br> <i>Laserfrequenz:</i> 9334 Hz<br><br> Diese Zone ist mit dem Hirnstamm, dem Thalamus, dem limbischen System und dem Striatum verbunden und befindet sich am peripheren Lappen des Ohrmuschelpavillons.<br> Die Frequenz wird zur Behandlung von Problemen im Zusammenhang mit unbewussten Körperhaltungen, unbedingten Reflexen, Tics, Muskelkrämpfen, Stottern, Kopfschmerzen, Gesichtsschmerzen, klinischen Depressionen und emotionalen Störungen bei der Therapie ektodermaler neuroendokriner Punkte im Zusammenhang mit der zweiten und dritten Phase von Nogier eingesetzt.<br><br><br> <b>Zone G – Intellektuelle Organisation</b><br> <i>Farbe:</i> <span style='color:#bb5eae;'>Lila</span><br> <i>Elektrische Frequenz:</i> 160,0 Hz<br> <i>Laserfrequenz:</i> 18688 Hz<br><br> Diese Zone entspricht psychologischen Funktionen im Zusammenhang mit der Frontalrinde. Es befindet sich im medialen Teil des Lappens.<br> Die Frequenz wird bei Störungen des Pyramidensystems, Gedächtnisstörungen, intellektuellen Funktionsstörungen, psychosomatischen Reaktionen, zwanghafter Nervosität, chronischer Beschäftigung, fehlerhaften konditionierten Reflexen, tiefgreifender Psychopathologie und bei der Behandlung von ektodermalen Punkten der Großhirnrinde im Zusammenhang mit der zweiten und dritten Phase eingesetzt Nogier.",
+                    "TestoTeoria": "Wie Paul Nogier argumentierte, gibt es sieben verschiedene Körperregionen, die mit entsprechenden Grundfrequenzen in Resonanz stehen und mit den Buchstaben A bis G klassifiziert werden. Die Buchstaben weisen auch auf bestimmte Gesundheitszustände hin, die mit dem Gewebetyp einer bestimmten Organregion zusammenhängen.<br> Jede Farbe entspricht einer Frequenz oszillierender Lichtphotonen: von der niedrigsten Frequenz von Rot bis zu zunehmend höheren Frequenzen des Prismas. Die gleichen Effekte, die durch zunehmend kürzere Wellenlängen verschiedenfarbiger Lichtfilter auf Körpergewebe hervorgerufen werden, können auch bei allmählich höheren Frequenzen von Blitzlicht (schnellere Frequenzen elektrischer Impulse oder höhere Frequenzen der Laserstimulation) beobachtet werden.<br><br><br> <b>Zone A – Zellvitalität</b><br> <i>Farbe:</i> <span style='color:#e3a15d;'>Orange</span><br> <i>Elektrische Frequenz:</i> 2,3 Hz<br> <i>Laserfrequenz:</i> 292 Hz<br><br> Diese Zone entspricht der Mittellinie des physischen Körpers, wie in der Traditionellen Chinesischen Medizin (TCM) mit den Akupunkturmeridianen Empfängnisgefäß und Leitgefäß, und beeinflusst die primitive retikuläre Energie und die Urkräfte, die die Zellorganisation bestimmen.<br> Diese Häufigkeit findet sich häufig in Geweben, die durch Narben oder Störungen gekennzeichnet sind, und hängt mit der embryonalen Organisation des Zellgewebes zusammen. Es wird zur Behandlung von Hyperaktivität und Zellproliferation, Entzündungen oder neoplastischen Prozessen eingesetzt.<br><br><br> <b>Zone B – Ernährungsstoffwechsel</b><br> <i>Farbe:</i> <span style='color:#da554d;'>Rot</span><br> <i>Elektrische Frequenz:</i> 5,0 Hz<br> <i>Laserfrequenz:</i> 584 Hz<br><br> Diese Zone entspricht den inneren Organen. Die ideale Geschwindigkeit zur Stimulation von Punkten am Ohrmuschelpavillon liegt bei einer Frequenz von 5 Hz. Es wird zur Behandlung von Ernährungs- und Assimilationsstörungen, Gewebemangelernährung, neurovegetativen Dysfunktionen, organischen Allergien, Konstitutionsstörungen, parasympathischem Ungleichgewicht und der endodermalen Behandlung viszeraler Organe im Zusammenhang mit der zweiten und dritten Nogier-Phase eingesetzt.<br><br><br> <b>Zone C – Kinetische Bewegungen</b><br> <i>Farbe:</i> <span style='color:#dfbc4e;'>Gelb</span><br> <i>Elektrische Frequenz:</i> 10,0 Hz<br> <i>Laserfrequenz:</i> 1168 Hz<br><br> Diese Zone bezieht sich auf die Propriozeption, also die kinetische Bewegung des Bewegungsapparates. Die Frequenz beträgt 10 Hz und wird zur Behandlung von Ohrmuschelpunkten auf der Anthelix und umliegenden Bereichen des Ohrmuschelpavillons, wie z. B. der Fossa scaphoidea und der Fossa triangularis, bei myofaszialen Schmerzen, Erregung des sympathischen Nervensystems, Somatisierungsstörungen, Hautallergien und motorischen Krämpfen eingesetzt , Muskelpathologien und alle Zustände, die durch kinetische Bewegung oder bei mesodermalen Muskel-Skelett-Behandlungen im Zusammenhang mit der zweiten und dritten Phase von Nogier verschlechtert werden.<br><br><br> <b>Zone D – Globale Koordination</b><br> <i>Farbe:</i> <span style='color:#df8b5c;'>Rot-Orange</span><br> <i>Elektrische Frequenz:</i> 20,0 Hz<br> <i>Laserfrequenz:</i> 2336 Hz<br><br> Diese Zone entspricht dem Corpus callosum und den vorderen Kommissuren, die die Verbindungen zwischen den beiden Gehirnhälften verbinden, und befindet sich am äußeren Tragus des Ohrmuschelpavillons. Die Frequenz wird bei transversalen Dysfunktionen, Problemen mit der Gehirnsymmetrie, Gegendivergenz, Koordinationsstörungen zwischen den beiden Körperseiten, bilateralen Dysfunktionen und medianen Schmerzen eingesetzt.<br> Bei einem Rechtshänder entspricht der rechte Tragus dem Empfängnisgefäß und der linke Tragus dem Leitgefäß in der TCM und umgekehrt bei einem Linkshänder.<br><br><br> <b>Zone E – Neurologische Interaktionen</b><br> <i>Farbe:</i> <span style='color:#86a050;'>Grün</span><br> <i>Elektrische Frequenz:</i> 40,0 Hz<br> <i>Laserfrequenz:</i> 4672 Hz<br><br> Diese Zone entspricht dem Rückenmark und den peripheren Nerven und befindet sich am spiralförmigen Schwanz des Ohrmuschelpavillons.<br> Die Frequenz wird bei Wirbelsäulenerkrankungen, Hautproblemen, Dermatitis, Hautnarben, Neuropathien, Neuralgien und Herpes Zoster eingesetzt.<br><br><br> <b>Zone F – Emotionale Reaktionen</b><br> <i>Farbe:</i> <span style='color:#a287b0;'>Blau</span><br> <i>Elektrische Frequenz:</i> 80,0 Hz<br> <i>Laserfrequenz:</i> 9334 Hz<br><br> Diese Zone ist mit dem Hirnstamm, dem Thalamus, dem limbischen System und dem Striatum verbunden und befindet sich am peripheren Lappen des Ohrmuschelpavillons.<br> Die Frequenz wird zur Behandlung von Problemen im Zusammenhang mit unbewussten Körperhaltungen, unbedingten Reflexen, Tics, Muskelkrämpfen, Stottern, Kopfschmerzen, Gesichtsschmerzen, klinischen Depressionen und emotionalen Störungen bei der Therapie ektodermaler neuroendokriner Punkte im Zusammenhang mit der zweiten und dritten Phase von Nogier eingesetzt.<br><br><br> <b>Zone G – Intellektuelle Organisation</b><br> <i>Farbe:</i> <span style='color:#bb5eae;'>Lila</span><br> <i>Elektrische Frequenz:</i> 160,0 Hz<br> <i>Laserfrequenz:</i> 18688 Hz<br><br> Diese Zone entspricht psychologischen Funktionen im Zusammenhang mit der Frontalrinde. Es befindet sich im medialen Teil des Lappens.<br> Die Frequenz wird bei Störungen des Pyramidensystems, Gedächtnisstörungen, intellektuellen Funktionsstörungen, psychosomatischen Reaktionen, zwanghafter Nervosität, chronischer Beschäftigung, fehlerhaften konditionierten Reflexen, tiefgreifender Psychopathologie und bei der Behandlung von ektodermalen Punkten der Großhirnrinde im Zusammenhang mit der zweiten und dritten Phase eingesetzt Nogier.",
                     "mappa": "FREQ"
                 },
                 {

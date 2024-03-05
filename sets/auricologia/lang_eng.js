@@ -2,7 +2,7 @@ DB.set = {
 	punti: {
 		"101": {
 			NomePunto: "Duodenum",
-			AzioniPunto: "<p><b>Action<br></b>Point indicated for its effectiveness in reducing digestive disorders, eating disorders, diarrhea, and duodenal ulcers.</p><p><b>Location</b><br>SC1-PC3, in the superior concha, just above the concha ridge. Just behind the [.000.].</p>",
+			AzioniPunto: "<p><b>Action</b><br>Point indicated for its effectiveness in reducing digestive disorders, eating disorders, diarrhea, and duodenal ulcers.</p><p><b>Location</b><br>SC1-PC3, in the superior concha, just above the concha ridge. Just behind the [.000.].</p>",
 			ChiaviPunto: ""
 		},
 		"104": {
@@ -12,7 +12,7 @@ DB.set = {
 		},
 		"105": {
 			NomePunto: "Ureter EUR",
-			AzioniPunto: "<p><b>Action<br></b>The Ureter Point is effective in all pathologies related to the urinary tract, particularly the excretory pathways.</p><p><b>Location</b><br>IH4, on the inner part of the helix at the level of the root of the antihelix, just above.</p>",
+			AzioniPunto: "<p><b>Action</b><br>The Ureter Point is effective in all pathologies related to the urinary tract, particularly the excretory pathways.</p><p><b>Location</b><br>IH4, on the inner part of the helix at the level of the root of the antihelix, just above.</p>",
 			ChiaviPunto: ""
 		},
 		"106": {
@@ -22,12 +22,12 @@ DB.set = {
 		},
 		"108": {
 			NomePunto: "Prostate",
-			AzioniPunto: "<p><b>Action<br></b>According to the Chinese School, this point is used to treat urinary and prostate pathologies; it has excellent efficacy for disorders of the reproductive system.</p><p><b>Location</b><br>SC4, in the superior concha, where the lower root of the antihelix meets the helix.</p>",
+			AzioniPunto: "<p><b>Action</b><br>According to the Chinese School, this point is used to treat urinary and prostate pathologies; it has excellent efficacy for disorders of the reproductive system.</p><p><b>Location</b><br>SC4, in the superior concha, where the lower root of the antihelix meets the helix.</p>",
 			ChiaviPunto: ""
 		},
 		"109": {
 			NomePunto: "Urethra EUR",
-			AzioniPunto: "<p><b>Action<br></b>The Urethra Point is effective in all pathologies related to the urinary tract.</p><p><b>Location</b><br>SC4, in the superior concha near the meeting point between the helix and the lower root of the antihelix.</p>",
+			AzioniPunto: "<p><b>Action</b><br>The Urethra Point is effective in all pathologies related to the urinary tract.</p><p><b>Location</b><br>SC4, in the superior concha near the meeting point between the helix and the lower root of the antihelix.</p>",
 			ChiaviPunto: ""
 		},
 		"110": {
@@ -37,18 +37,18 @@ DB.set = {
 		},
 		"111": {
 			NomePunto: "Kidney CHN",
-			AzioniPunto: "<p><b>Action<br></b>The Kidney point is used by the Chinese School for its balancing action on both the physical and emotional aspects. It is very useful in reducing pain and disorders related to the kidneys, especially the urinary system. It is also indicated for the treatment of stress, asthenia, depression, and tinnitus.</p><p><b>Location</b><br>SC6-CW8, at the border between the superior concha and the concha wall, just anteriorly from where the lower root of the antihelix begins.</p>",
+			AzioniPunto: "<p><b>Action</b><br>The Kidney point is used by the Chinese School for its balancing action on both the physical and emotional aspects. It is very useful in reducing pain and disorders related to the kidneys, especially the urinary system. It is also indicated for the treatment of stress, asthenia, depression, and tinnitus.</p><p><b>Location</b><br>SC6-CW8, at the border between the superior concha and the concha wall, just anteriorly from where the lower root of the antihelix begins.</p>",
 			ChiaviPunto: ""
 		},
 		"112": {
 			NomePunto: "Rhinencephalic Commissure",
-			AzioniPunto: "<p><b>Action<br></b>In combination with [.113.] and [.254.], it promotes intrahemispheric brain connections.</p><p><b>Location</b><br>At the border between the cheek and the tragus, near point [.195.].</p>",
+			AzioniPunto: "<p><b>Action</b><br>In combination with [.113.] and [.254.], it promotes intrahemispheric brain connections.</p><p><b>Location</b><br>At the border between the cheek and the tragus, near point [.195.].</p>",
 			ChiaviPunto: "",
 			"hidden": true
 		},
 		"113": {
 			NomePunto: "Abenular Commissure",
-			AzioniPunto: "<p><b>Action<br></b>In combination with [.112.] and [.254.], it promotes intrahemispheric brain connections.</p><p><b>Location</b><br>At the border between the cheek and the tragus, near area TG5.</p>",
+			AzioniPunto: "<p><b>Action</b><br>In combination with [.112.] and [.254.], it promotes intrahemispheric brain connections.</p><p><b>Location</b><br>At the border between the cheek and the tragus, near area TG5.</p>",
 			ChiaviPunto: "",
 			"hidden": true
 		},
@@ -59,12 +59,12 @@ DB.set = {
 		},
 		"115": {
 			NomePunto: "Spleen EUR",
-			AzioniPunto: "<p><b>Action<br></b>According to the French School, this point is used to treat all pathologies related to the immune and lymphatic systems. It is also beneficial for digestive disorders.</p><p><b>Location</b><br>SC8, at the border between the superior concha and the concha ridge, near the concha wall.<br>Please note: only in the left ear.</p>",
+			AzioniPunto: "<p><b>Action</b><br>According to the French School, this point is used to treat all pathologies related to the immune and lymphatic systems. It is also beneficial for digestive disorders.</p><p><b>Location</b><br>SC8, at the border between the superior concha and the concha ridge, near the concha wall.<br>Please note: only in the left ear.</p>",
 			ChiaviPunto: ""
 		},
 		"116": {
 			NomePunto: "Pancreas",
-			AzioniPunto: "<p><b>Action<br></b>The Pancreas Point has a balancing action on digestive functions, particularly in treating disorders related to the pancreas.</p><p><b>Location</b><br>CR2-SC8, at the border between the concha ridge and the superior concha, near the helix.<br>Please note: only in the left ear.</p>",
+			AzioniPunto: "<p><b>Action</b><br>The Pancreas Point has a balancing action on digestive functions, particularly in treating disorders related to the pancreas.</p><p><b>Location</b><br>CR2-SC8, at the border between the concha ridge and the superior concha, near the helix.<br>Please note: only in the left ear.</p>",
 			ChiaviPunto: ""
 		},
 		"117": {
@@ -89,17 +89,17 @@ DB.set = {
 		},
 		"121": {
 			NomePunto: "Liver",
-			AzioniPunto: "<p><b>Action<br></b>The Liver point is indicated for anemic disorders, anxiety, stress, and hypertension. It is recommended for treating liver disorders and the digestive system.</p><p><b>Location</b><br>CR2-SC8, at the border between the superior concha and the concha ridge.<br>Please note: only in the right ear.</p>",
+			AzioniPunto: "<p><b>Action</b><br>The Liver point is indicated for anemic disorders, anxiety, stress, and hypertension. It is recommended for treating liver disorders and the digestive system.</p><p><b>Location</b><br>CR2-SC8, at the border between the superior concha and the concha ridge.<br>Please note: only in the right ear.</p>",
 			ChiaviPunto: ""
 		},
 		"122": {
 			NomePunto: "Spleen CHN",
-			AzioniPunto: "<p><b>Action<br></b>According to the Chinese School, this point is used to treat all pathologies related to the immune and lymphatic systems. It is also beneficial for treating muscular and tendon disorders.</p><p><b>Location</b><br>IC8-PC2, at the border between the inferior concha and the concha ridge, near the concha wall.<br>Please note: only in the left ear.</p>",
+			AzioniPunto: "<p><b>Action</b><br>According to the Chinese School, this point is used to treat all pathologies related to the immune and lymphatic systems. It is also beneficial for treating muscular and tendon disorders.</p><p><b>Location</b><br>IC8-PC2, at the border between the inferior concha and the concha ridge, near the concha wall.<br>Please note: only in the left ear.</p>",
 			ChiaviPunto: ""
 		},
 		"123": {
 			NomePunto: "Diaphragm EUR",
-			AzioniPunto: "<p><b>Action<br></b>This point is indicated by the French School for its effectiveness in reducing vomiting, diaphragmatic pain and spasms, and hiccups.</p><p><b>Location</b><br>IC8-CR2, at the border between the concha ridge and the inferior concha.</p>",
+			AzioniPunto: "<p><b>Action</b><br>This point is indicated by the French School for its effectiveness in reducing vomiting, diaphragmatic pain and spasms, and hiccups.</p><p><b>Location</b><br>IC8-CR2, at the border between the concha ridge and the inferior concha.</p>",
 			ChiaviPunto: ""
 		},
 		"124": {
@@ -109,7 +109,7 @@ DB.set = {
 		},
 		"126": {
 			NomePunto: "Bronchi",
-			AzioniPunto: "<p><b>Action<br></b>The Bronchi point is very useful in treating disorders such as asthma and bronchitis. According to the Chinese School, it is also effective in cases of COPD (chronic obstructive pulmonary disease), a progressive and irreversible disease of the respiratory system affecting the bronchi and lungs, mainly caused by smoking.</p><p><b>Location</b><br>IC7, in the superior concha, just above the deepest point corresponding to the heart.</p>",
+			AzioniPunto: "<p><b>Action</b><br>The Bronchi point is very useful in treating disorders such as asthma and bronchitis. According to the Chinese School, it is also effective in cases of COPD (chronic obstructive pulmonary disease), a progressive and irreversible disease of the respiratory system affecting the bronchi and lungs, mainly caused by smoking.</p><p><b>Location</b><br>IC7, in the superior concha, just above the deepest point corresponding to the heart.</p>",
 			ChiaviPunto: ""
 		},
 		"127": {
@@ -119,7 +119,7 @@ DB.set = {
 		},
 		"128": {
 			NomePunto: "Esophagus",
-			AzioniPunto: "<p><b>Action<br></b>The Esophagus point is internationally used to treat all esophageal disorders. It is mainly indicated for rebalancing disorders of the esophagus, stomach, duodenum, and colon.</p><p><b>Location</b><br>IC6-IC7, in the inferior concha just below [.000.].</p>",
+			AzioniPunto: "<p><b>Action</b><br>The Esophagus point is internationally used to treat all esophageal disorders. It is mainly indicated for rebalancing disorders of the esophagus, stomach, duodenum, and colon.</p><p><b>Location</b><br>IC6-IC7, in the inferior concha just below [.000.].</p>",
 			ChiaviPunto: ""
 		},
 		"129": {
@@ -144,7 +144,7 @@ DB.set = {
 		},
 		"134": {
 			NomePunto: "Trachea",
-			AzioniPunto: "<p><b>Other names</b><br>- Larynx EUR</p><p><b>Action<br></b>The Trachea Point is indicated to treat all subjects with disorders of the larynx, trachea, and bronchi.</p><p><b>Location</b><br>IC3, in the inferior concha, centrally, near the external auditory meatus.</p>",
+			AzioniPunto: "<p><b>Other names</b><br>- Larynx EUR</p><p><b>Action</b><br>The Trachea Point is indicated to treat all subjects with disorders of the larynx, trachea, and bronchi.</p><p><b>Location</b><br>IC3, in the inferior concha, centrally, near the external auditory meatus.</p>",
 			ChiaviPunto: ""
 		},
 		"135": {
@@ -294,7 +294,7 @@ DB.set = {
 		},
 		"182": {
 			NomePunto: "External Ear CHN",
-			AzioniPunto: "<p><b>Action<br></b>This point is indicated for reducing external ear disorders and pain.</p><p><b>Location</b><br>TG5, at the center of the tragus, just above an imaginary horizontal line passing through <span class='LMtxt'>LM11</span>.</p>",
+			AzioniPunto: "<p><b>Action</b><br>This point is indicated for reducing external ear disorders and pain.</p><p><b>Location</b><br>TG5, at the center of the tragus, just above an imaginary horizontal line passing through <span class='LMtxt'>LM11</span>.</p>",
 			ChiaviPunto: ""
 		},
 		"183": {
@@ -304,12 +304,12 @@ DB.set = {
 		},
 		"184": {
 			NomePunto: "Vitality Point",
-			AzioniPunto: "<p><b>Other names</b><br>- Frustration Point<br>- Interferon Point<br>- Heart Point</p><p><b>Action<br></b>The French School indicates this point for its powerful energetic, psychological, and physical action. It is used for tonifying cases with apathy, low physical aptitude, and depression.</p><p><b>Location</b><br>TG4, at the center of the tragus, just anteriorly to <span class='LMtxt'>LM11</span>.</p>",
+			AzioniPunto: "<p><b>Other names</b><br>- Frustration Point<br>- Interferon Point<br>- Heart Point</p><p><b>Action</b><br>The French School indicates this point for its powerful energetic, psychological, and physical action. It is used for tonifying cases with apathy, low physical aptitude, and depression.</p><p><b>Location</b><br>TG4, at the center of the tragus, just anteriorly to <span class='LMtxt'>LM11</span>.</p>",
 			ChiaviPunto: ""
 		},
 		"185": {
 			NomePunto: "External Nose CHN",
-			AzioniPunto: "<p><b>Action<br></b>The Chinese School distinguishes the External Nose and Internal Nose points for their different therapeutic applications. This point is indicated for treating all nasal disorders, particularly nasal congestion.</p><p><b>Location</b><br>TG3, on the border line between the Tragus and the cheek, halfway between the upper and lower prominences of the Tragus (<span class='LMtxt'>LM10</span> and <span class='LMtxt'>LM11</span>). Corresponds to <span class='LMtxt'>LM23</span>.</p>",
+			AzioniPunto: "<p><b>Action</b><br>The Chinese School distinguishes the External Nose and Internal Nose points for their different therapeutic applications. This point is indicated for treating all nasal disorders, particularly nasal congestion.</p><p><b>Location</b><br>TG3, on the border line between the Tragus and the cheek, halfway between the upper and lower prominences of the Tragus (<span class='LMtxt'>LM10</span> and <span class='LMtxt'>LM11</span>). Corresponds to <span class='LMtxt'>LM23</span>.</p>",
 			ChiaviPunto: ""
 		},
 		"186": {
@@ -404,7 +404,7 @@ DB.set = {
 		},
 		"229": {
 			NomePunto: "Prostaglandins",
-			AzioniPunto: "<p><b>Action<br></b>The Prostaglandins Point is indicated for the treatment of cases with an inflammatory and pain component.</p><p><b>Location</b><br>PL1-LO1, on the medial surface of the lobe, near <span class='LMtxt'>LM8</span>.</p>",
+			AzioniPunto: "<p><b>Action</b><br>The Prostaglandins Point is indicated for the treatment of cases with an inflammatory and pain component.</p><p><b>Location</b><br>PL1-LO1, on the medial surface of the lobe, near <span class='LMtxt'>LM8</span>.</p>",
 			ChiaviPunto: ""
 		},
 		"230": {
@@ -424,12 +424,12 @@ DB.set = {
 		},
 		"243": {
 			NomePunto: "Hypertension 3",
-			AzioniPunto: "<p><b>Action<br></b>The Chinese School distinguishes the treatment of Hypertension with three different points. Hypertension Point 3 is indicated for the treatment of hypertension and to reduce anxiety and stress.</p><p><b>Location</b><br>PG4-PG8, wide area in the posterior groove, where it divides into a Y shape and towards its upper branch.</p>",
+			AzioniPunto: "<p><b>Action</b><br>The Chinese School distinguishes the treatment of Hypertension with three different points. Hypertension Point 3 is indicated for the treatment of hypertension and to reduce anxiety and stress.</p><p><b>Location</b><br>PG4-PG8, wide area in the posterior groove, where it divides into a Y shape and towards its upper branch.</p>",
 			ChiaviPunto: ""
 		},
 		"244": {
 			NomePunto: "Lung CHN",
-			AzioniPunto: "<p><b>Action<br></b>The Lung Point is used by both the Chinese and French Schools for its rebalancing action on the respiratory system, particularly in cases of bronchitis, emphysema, and chest pains.</p><p><b>Location</b><br>IC2-IC4-IC5, large area in the inferior concha, towards the concha wall.</p>",
+			AzioniPunto: "<p><b>Action</b><br>The Lung Point is used by both the Chinese and French Schools for its rebalancing action on the respiratory system, particularly in cases of bronchitis, emphysema, and chest pains.</p><p><b>Location</b><br>IC2-IC4-IC5, large area in the inferior concha, towards the concha wall.</p>",
 			ChiaviPunto: ""
 		},
 		"245": {
@@ -439,7 +439,7 @@ DB.set = {
 		},
 		"246": {
 			NomePunto: "Scapular Girdle Muscles",
-			AzioniPunto: "<p><b>Action<br></b>This point is very effective in reducing disorders related to the scapular girdle muscles.</p><p><b>Location</b><br>PP1-PP3, between the scaphoid prominence and the posterior groove.</p>",
+			AzioniPunto: "<p><b>Action</b><br>This point is very effective in reducing disorders related to the scapular girdle muscles.</p><p><b>Location</b><br>PP1-PP3, between the scaphoid prominence and the posterior groove.</p>",
 			ChiaviPunto: ""
 		},
 		"247": {
@@ -454,12 +454,12 @@ DB.set = {
 		},
 		"249": {
 			NomePunto: "Lung EUR",
-			AzioniPunto: "<p><b>Action<br></b>The Lung Point is used by both the Chinese and French Schools for its rebalancing action on the respiratory system, particularly in cases of bronchitis, emphysema, and chest pains.</p><p><b>Location</b><br>IC2-IC4-IC5-IC7, large area in the inferior concha, towards the comcha wall.</p>",
+			AzioniPunto: "<p><b>Action</b><br>The Lung Point is used by both the Chinese and French Schools for its rebalancing action on the respiratory system, particularly in cases of bronchitis, emphysema, and chest pains.</p><p><b>Location</b><br>IC2-IC4-IC5-IC7, large area in the inferior concha, towards the comcha wall.</p>",
 			ChiaviPunto: ""
 		},
 		"251": {
 			NomePunto: "Ureter CHN",
-			AzioniPunto: "<p><b>Action<br></b>The Ureter Point is effective in all pathologies related to the urinary tract, particularly the excretory tract.</p><p><b>Location</b><br>SC6, in the superior concha, at the border with the upper concha wall, corresponding to the posterior third of the lower root of the antihelix.</p>",
+			AzioniPunto: "<p><b>Action</b><br>The Ureter Point is effective in all pathologies related to the urinary tract, particularly the excretory tract.</p><p><b>Location</b><br>SC6, in the superior concha, at the border with the upper concha wall, corresponding to the posterior third of the lower root of the antihelix.</p>",
 			ChiaviPunto: ""
 		},
 		"252": {
@@ -634,22 +634,22 @@ DB.set = {
 		},
 		"286": {
 			NomePunto: "Dorsal Paravertebral Musculature",
-			AzioniPunto: "<p><b>Action<br></b>This point, according to the French School, is used for its paravertebral myorelaxant function.</p><p><b>Location</b><br>AH3-AH4, in the upper two-thirds of the antehelix body, before it bifurcates into 2 branches, on the side towards the scaphoid fossa.</p>",
+			AzioniPunto: "<p><b>Action</b><br>This point, according to the French School, is used for its paravertebral myorelaxant function.</p><p><b>Location</b><br>AH3-AH4, in the upper two-thirds of the antehelix body, before it bifurcates into 2 branches, on the side towards the scaphoid fossa.</p>",
 			ChiaviPunto: ""
 		},
 		"287": {
 			NomePunto: "Lumbosacral Paravertebral Musculature",
-			AzioniPunto: "<p><b>Action<br></b>This international point is used for its paravertebral myorelaxant function.</p><p><b>Location</b><br>AH5-AH6-AH7, on the lower root of the antehelix at the border with the triangular fossa.</p>",
+			AzioniPunto: "<p><b>Action</b><br>This international point is used for its paravertebral myorelaxant function.</p><p><b>Location</b><br>AH5-AH6-AH7, on the lower root of the antehelix at the border with the triangular fossa.</p>",
 			ChiaviPunto: ""
 		},
 		"288": {
 			NomePunto: "Neck Muscles",
-			AzioniPunto: "<p><b>Action<br></b>This international point is used for its relaxing function on the neck muscles.</p><p><b>Location</b><br>PP3-PG3, between the scaphoid eminence and the posterior groove.</p>",
+			AzioniPunto: "<p><b>Action</b><br>This international point is used for its relaxing function on the neck muscles.</p><p><b>Location</b><br>PP3-PG3, between the scaphoid eminence and the posterior groove.</p>",
 			ChiaviPunto: ""
 		},
 		"289": {
 			NomePunto: "Back Muscles",
-			AzioniPunto: "<p><b>Action<br></b>Point used by the French School for its relaxing action on the dorsal muscles.</p><p><b>Location</b><br>PP3-PP5-PG3-PG4-PG5, between the scaphoid eminence and the posterior groove.</p>",
+			AzioniPunto: "<p><b>Action</b><br>Point used by the French School for its relaxing action on the dorsal muscles.</p><p><b>Location</b><br>PP3-PP5-PG3-PG4-PG5, between the scaphoid eminence and the posterior groove.</p>",
 			ChiaviPunto: ""
 		},
 		"291": {
@@ -719,12 +719,12 @@ DB.set = {
 		},
 		"007": {
 			NomePunto: "Rectum CHN",
-			AzioniPunto: "<p><b>Action<br></b>The Rectum Point is very useful in reducing symptoms of irritable bowel syndrome, dysentery, hemorrhoids, diarrhea, constipation, and rectal pain.</p><p><b>Location</b><br>HX3, on the helix knee, below the point where the helix meets the lower root of the antihelix.</p>",
+			AzioniPunto: "<p><b>Action</b><br>The Rectum Point is very useful in reducing symptoms of irritable bowel syndrome, dysentery, hemorrhoids, diarrhea, constipation, and rectal pain.</p><p><b>Location</b><br>HX3, on the helix knee, below the point where the helix meets the lower root of the antihelix.</p>",
 			ChiaviPunto: ""
 		},
 		"008": {
 			NomePunto: "Urethra CHN",
-			AzioniPunto: "<p><b>Action<br></b>The Urethra Point is effective in all pathologies related to the urinary tract.</p><p><b>Location</b><br>HX3, on the helix knee, just below the point where the helix meets the lower root of the antihelix.</p>",
+			AzioniPunto: "<p><b>Action</b><br>The Urethra Point is effective in all pathologies related to the urinary tract.</p><p><b>Location</b><br>HX3, on the helix knee, just below the point where the helix meets the lower root of the antihelix.</p>",
 			ChiaviPunto: ""
 		},
 		"009": {
@@ -8895,7 +8895,7 @@ DB.set = {
 				}, 
 				{
 					TitoloTeoria: "Frequency Zones",
-					TestoTeoria: "As Paul Nogier argued, there are seven distinct regions of the body that resonate with corresponding base frequencies, classified with the letters A to G. The letters also indicate certain health conditions related to the tissue type of a specific organ region.<br>Each color corresponds to a frequency of oscillating light photons: ranging from the lowest frequency of red to progressively higher frequencies of the prism. The same effects produced by progressively shorter wavelengths of different colored light filters on body tissues can also be observed with gradually higher frequencies of flashing light (faster frequencies of electrical impulses or higher frequencies of laser stimulation).<br><br><br><b>Zone A - Cellular Vitality<br></b><i>Color: </i><span style='color:#e3a15d;'>Orange</span><br><i>Electrical Frequency: </i>2.3Hz<br> <i>Laser Frequency: </i>292Hz<br><br>This zone corresponds to the midline of the physical body, as in Traditional Chinese Medicine (TCM) with the Conception Vessel and Governing Vessel acupuncture meridians, and influences the primitive reticular energy and primordial forces that condition cellular organization.<br>This frequency is often found in tissues marked by scars or disorders and relates to the embryonic organization of cellular tissue. It is used to treat hyperactivity and cellular proliferation, inflammations, or neoplastic processes.<br><br><br><b>Zone B - Nutritional Metabolism<br></b><i>Color: </i><span style='color:#da554d;'>Red</span><br><i>Electrical Frequency: </i>5.0Hz<br> <i>Laser Frequency: </i>584Hz<br><br>This zone corresponds to the internal organs. The ideal speed for stimulating points on the auricular pavilion is the frequency of 5Hz. It is used to treat nutritional and assimilation disorders, tissue malnutrition, neurovegetative dysfunctions, organic allergies, constitutional abnormalities, parasympathetic imbalance, and the endodermal treatment of visceral organs connected with the second and third phases of Nogier.<br><br><br><b>Zone C - Kinetic Movements<br></b><i>Color: </i><span style='color:#dfbc4e;'>Yellow</span><br><i>Electrical Frequency: </i>10.0Hz<br> <i>Laser Frequency: </i>1168Hz<br><br>This zone relates to proprioception, which is the kinetic movement of the musculoskeletal system. The frequency is 10Hz and is used to treat auricular points on the antihelix and surrounding areas of the auricular pavilion, such as the scaphoid fossa and triangular fossa, in cases of myofascial pain, sympathetic nervous system excitation, somatization disorders, cutaneous allergies, motor spasms, muscular pathologies, and any condition worsened by kinetic movement or in mesodermal musculoskeletal treatments connected to the second and third phases of Nogier.<br><br><br><b>Zone D - Global Coordination<br></b><i>Color: </i><span style='color:#df8b5c;'>Red-Orange</span><br><i>Electrical Frequency: </i>20.0Hz<br> <i>Laser Frequency: </i>2336Hz<br><br>This zone corresponds to the corpus callosum and anterior commissures, which connect the associations between the two sides of the brain, and is located on the external tragus of the auricular pavilion. The frequency is used in cases of transversal dysfunctions, problems with cerebral symmetry, counter-divergence, coordination disorders between the two sides of the body, bilateral dysfunctions, and median pain.<br>In a right-handed individual, the right tragus corresponds to the Conception Vessel, and the left tragus corresponds to the Governing Vessel in TCM, and vice versa in a left-handed individual.<br><br><br><b>Zone E - Neurological Interactions</b><br> <i>Color: </i><span style='color:#86a050;'>Green</span><br><i>Electrical Frequency: </i>40.0Hz<br> <i>Laser Frequency: </i>4672Hz<br><br>This zone corresponds to the spinal cord and peripheral nerves and is located on the helical tail of the auricular pavilion.<br>The frequency is used in cases of spinal disorders, skin issues, dermatitis, cutaneous scars, neuropathies, neuralgia, and herpes zoster.<br><br><br><b>Zone F - Emotional Reactions</b><br><i>Color: </i><span style='color:#a287b0;'>Blue</span><br><i>Electrical Frequency: </i>80.0Hz<br><i>Laser Frequency: </i>9334Hz<br><br>This zone is connected to the brainstem, thalamus, limbic system, and striatum and is located on the peripheral lobe of the auricular pavilion. <br>The frequency is used to treat issues related to unconscious postures, unconditioned reflexes, tics, muscle spasms, stuttering, headaches, facial pain, clinical depression, and emotional disorders in the therapy of ectodermal neuroendocrine points connected to the second and third phases of Nogier.<br><br><br><b>Zone G - Intellectual Organization</b><br><i>Color: </i><span style='color:#bb5eae;'>Purple</span><br><i>Electrical Frequency: </i>160.0Hz<br> <i>Laser Frequency: </i>18688Hz<br><br>This zone corresponds to psychological functions related to the frontal cortex. It is located on the medial part of the lobe.<br>The frequency is used for disorders of the pyramidal system, memory impairments, intellectual dysfunctions, psychosomatic reactions, obsessive nervousness, chronic preoccupation, malfunctioning conditioned reflexes, profound psychopathology, and in the treatment of ectodermal cerebral cortex points connected to the second and third phases of Nogier.",
+					TestoTeoria: "As Paul Nogier argued, there are seven distinct regions of the body that resonate with corresponding base frequencies, classified with the letters A to G. The letters also indicate certain health conditions related to the tissue type of a specific organ region.<br>Each color corresponds to a frequency of oscillating light photons: ranging from the lowest frequency of red to progressively higher frequencies of the prism. The same effects produced by progressively shorter wavelengths of different colored light filters on body tissues can also be observed with gradually higher frequencies of flashing light (faster frequencies of electrical impulses or higher frequencies of laser stimulation).<br><br><br><b>Zone A - Cellular Vitality</b><br><i>Color: </i><span style='color:#e3a15d;'>Orange</span><br><i>Electrical Frequency: </i>2.3Hz<br> <i>Laser Frequency: </i>292Hz<br><br>This zone corresponds to the midline of the physical body, as in Traditional Chinese Medicine (TCM) with the Conception Vessel and Governing Vessel acupuncture meridians, and influences the primitive reticular energy and primordial forces that condition cellular organization.<br>This frequency is often found in tissues marked by scars or disorders and relates to the embryonic organization of cellular tissue. It is used to treat hyperactivity and cellular proliferation, inflammations, or neoplastic processes.<br><br><br><b>Zone B - Nutritional Metabolism</b><br><i>Color: </i><span style='color:#da554d;'>Red</span><br><i>Electrical Frequency: </i>5.0Hz<br> <i>Laser Frequency: </i>584Hz<br><br>This zone corresponds to the internal organs. The ideal speed for stimulating points on the auricular pavilion is the frequency of 5Hz. It is used to treat nutritional and assimilation disorders, tissue malnutrition, neurovegetative dysfunctions, organic allergies, constitutional abnormalities, parasympathetic imbalance, and the endodermal treatment of visceral organs connected with the second and third phases of Nogier.<br><br><br><b>Zone C - Kinetic Movements</b><br><i>Color: </i><span style='color:#dfbc4e;'>Yellow</span><br><i>Electrical Frequency: </i>10.0Hz<br> <i>Laser Frequency: </i>1168Hz<br><br>This zone relates to proprioception, which is the kinetic movement of the musculoskeletal system. The frequency is 10Hz and is used to treat auricular points on the antihelix and surrounding areas of the auricular pavilion, such as the scaphoid fossa and triangular fossa, in cases of myofascial pain, sympathetic nervous system excitation, somatization disorders, cutaneous allergies, motor spasms, muscular pathologies, and any condition worsened by kinetic movement or in mesodermal musculoskeletal treatments connected to the second and third phases of Nogier.<br><br><br><b>Zone D - Global Coordination</b><br><i>Color: </i><span style='color:#df8b5c;'>Red-Orange</span><br><i>Electrical Frequency: </i>20.0Hz<br> <i>Laser Frequency: </i>2336Hz<br><br>This zone corresponds to the corpus callosum and anterior commissures, which connect the associations between the two sides of the brain, and is located on the external tragus of the auricular pavilion. The frequency is used in cases of transversal dysfunctions, problems with cerebral symmetry, counter-divergence, coordination disorders between the two sides of the body, bilateral dysfunctions, and median pain.<br>In a right-handed individual, the right tragus corresponds to the Conception Vessel, and the left tragus corresponds to the Governing Vessel in TCM, and vice versa in a left-handed individual.<br><br><br><b>Zone E - Neurological Interactions</b><br> <i>Color: </i><span style='color:#86a050;'>Green</span><br><i>Electrical Frequency: </i>40.0Hz<br> <i>Laser Frequency: </i>4672Hz<br><br>This zone corresponds to the spinal cord and peripheral nerves and is located on the helical tail of the auricular pavilion.<br>The frequency is used in cases of spinal disorders, skin issues, dermatitis, cutaneous scars, neuropathies, neuralgia, and herpes zoster.<br><br><br><b>Zone F - Emotional Reactions</b><br><i>Color: </i><span style='color:#a287b0;'>Blue</span><br><i>Electrical Frequency: </i>80.0Hz<br><i>Laser Frequency: </i>9334Hz<br><br>This zone is connected to the brainstem, thalamus, limbic system, and striatum and is located on the peripheral lobe of the auricular pavilion. <br>The frequency is used to treat issues related to unconscious postures, unconditioned reflexes, tics, muscle spasms, stuttering, headaches, facial pain, clinical depression, and emotional disorders in the therapy of ectodermal neuroendocrine points connected to the second and third phases of Nogier.<br><br><br><b>Zone G - Intellectual Organization</b><br><i>Color: </i><span style='color:#bb5eae;'>Purple</span><br><i>Electrical Frequency: </i>160.0Hz<br> <i>Laser Frequency: </i>18688Hz<br><br>This zone corresponds to psychological functions related to the frontal cortex. It is located on the medial part of the lobe.<br>The frequency is used for disorders of the pyramidal system, memory impairments, intellectual dysfunctions, psychosomatic reactions, obsessive nervousness, chronic preoccupation, malfunctioning conditioned reflexes, profound psychopathology, and in the treatment of ectodermal cerebral cortex points connected to the second and third phases of Nogier.",
 					mappa: "FREQ"
 				}, 
 				{

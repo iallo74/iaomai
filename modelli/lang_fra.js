@@ -1,7 +1,7 @@
 var DB_anatomia = {
     "Osso_ILIACO": {
         "Titolo": "Os iliaque",
-        "Descrizione": "<p>L'os iliaque est le principal os de la hanche et représente l'un des os du bassin, avec le sacrum et le coccyx.&nbsp;D'un point de vue anatomique, l'os iliaque peut être divisé en trois régions : une région supérieure appelée ilium, une région inférieure-postérieure appelée ischion et une région inférieure-antérieure identifiée comme le pubis.<br> Chaque os iliaque forme trois articulations : l'articulation sacro-iliaque avec le sacrum, l'articulation de la hanche avec le fémur et la symphyse pubienne avec l'os iliaque controlatéral.</p><p> <i>Localisation :</i> entre le sacrum et le membre inférieur (fémur)<br> <i>Action :</i> en plus de contribuer à une articulation cruciale comme la hanche, l'os iliaque donne origine et insertion aux muscles dans différentes zones, y compris l'abdomen, le dos et la cuisse.<br> <i>Classification :</i> os plats.</p>"
+        "Descrizione": "<p>L'os iliaque est le principal os de la hanche et représente l'un des os du bassin, avec le sacrum et le coccyx. D'un point de vue anatomique, l'os iliaque peut être divisé en trois régions : une région supérieure appelée ilium, une région inférieure-postérieure appelée ischion et une région inférieure-antérieure identifiée comme le pubis.<br> Chaque os iliaque forme trois articulations : l'articulation sacro-iliaque avec le sacrum, l'articulation de la hanche avec le fémur et la symphyse pubienne avec l'os iliaque controlatéral.</p><p> <i>Localisation :</i> entre le sacrum et le membre inférieur (fémur)<br> <i>Action :</i> en plus de contribuer à une articulation cruciale comme la hanche, l'os iliaque donne origine et insertion aux muscles dans différentes zones, y compris l'abdomen, le dos et la cuisse.<br> <i>Classification :</i> os plats.</p>"
     },
     "Osso_CRANIO": {
         "Titolo": "Crâne",
@@ -105,7 +105,7 @@ var DB_anatomia = {
     },
     "Osso_SACRO": {
         "Titolo": "Sacrum et coccyx",
-        "Descrizione": "<p>Le sacrum est un os irrégulier, asymétrique et de forme triangulaire.</p><p> <i>Localisation :</i> il réside dans la partie inférieure de la colonne vertébrale, précisément entre la région lombaire et le coccyx. En fait, le sacrum représente la partie postérieure et centrale du bassin.<br> <i>Fonction :</i>&nbsp;permet à l'humain de faire une rotation externe, d'enlever, d'étendre et de stabiliser l'articulation de la hanche.<br> <i>Classification :</i> os plat.</p>"
+        "Descrizione": "<p>Le sacrum est un os irrégulier, asymétrique et de forme triangulaire.</p><p> <i>Localisation :</i> il réside dans la partie inférieure de la colonne vertébrale, précisément entre la région lombaire et le coccyx. En fait, le sacrum représente la partie postérieure et centrale du bassin.<br> <i>Fonction :</i> permet à l'humain de faire une rotation externe, d'enlever, d'étendre et de stabiliser l'articulation de la hanche.<br> <i>Classification :</i> os plat.</p>"
     },
     "Osso_COCCIGE": {
         "Titolo": "Coccyx",
@@ -145,12 +145,12 @@ var DB_anatomia = {
     },
     "Muscolo_FRONTALE": {
         "Titolo": "Muscle épicranien (occipitofrontal ou peaucier)",
-        "Descrizione": "<p><i>Origine (occipitale) :</i> os occipital, processus mastoïdien de l'os temporal.<br> <i>Insertion (occipitale) :</i> galéa aponévrotique (aponévrose).<br> <i>Origine (frontale) :</i> galéa&nbsp;<span style=\"color: rgb(0, 0, 0);\">aponévrotique (aponévrose).</span><br> <i>Insertion (frontale) :</i> peau et fascia au-dessus des yeux et du nez.<br> <i>Action (occipitale) :</i> recule le cuir chevelu, plisse le front et hausse les sourcils.<br> <i>Action (frontale) :</i> tire le cuir chevelu vers l'avant, soulève les sourcils et plisse le front horizontalement.<br> <i>Innervation :</i> nerf facial VII.<br> <i>Vascularisation :</i> artère occipitale.</p>",
+        "Descrizione": "<p><i>Origine (occipitale) :</i> os occipital, processus mastoïdien de l'os temporal.<br> <i>Insertion (occipitale) :</i> galéa aponévrotique (aponévrose).<br> <i>Origine (frontale) :</i> galéa aponévrotique (aponévrose).<br> <i>Insertion (frontale) :</i> peau et fascia au-dessus des yeux et du nez.<br> <i>Action (occipitale) :</i> recule le cuir chevelu, plisse le front et hausse les sourcils.<br> <i>Action (frontale) :</i> tire le cuir chevelu vers l'avant, soulève les sourcils et plisse le front horizontalement.<br> <i>Innervation :</i> nerf facial VII.<br> <i>Vascularisation :</i> artère occipitale.</p>",
         "baseImg": true
     },
     "Muscolo_OCCIPITALE": {
         "Titolo": "Muscle épicranien (occipitofrontal)",
-        "Descrizione": "<i>Origine (occipitale) :</i> os occipital, processus mastoïdien de l'os temporal<br> <i>Insertion (occipitale) :</i> galéa aponévrotique.<br> <i>Origine (frontale) :</i> galea&nbsp;<span style=\"color: rgb(0, 0, 0);\">aponévrotique.</span><br> <i>Insertion (frontale) :</i> peau et fascia au-dessus des yeux et du nez<br> <i>Action (occipitale) :</i> recule le cuir chevelu, plisse le front et hausse les sourcils.<br> <i>Action (frontale) :</i> tire le cuir chevelu vers l'avant, soulève les sourcils et plisse le front horizontalement.<br> <i>Innervation :</i> nerf facial VII.<br> <i>Vascularisation :</i> artère occipitale.",
+        "Descrizione": "<i>Origine (occipitale) :</i> os occipital, processus mastoïdien de l'os temporal<br> <i>Insertion (occipitale) :</i> galéa aponévrotique.<br> <i>Origine (frontale) :</i> galea aponévrotique.<br> <i>Insertion (frontale) :</i> peau et fascia au-dessus des yeux et du nez<br> <i>Action (occipitale) :</i> recule le cuir chevelu, plisse le front et hausse les sourcils.<br> <i>Action (frontale) :</i> tire le cuir chevelu vers l'avant, soulève les sourcils et plisse le front horizontalement.<br> <i>Innervation :</i> nerf facial VII.<br> <i>Vascularisation :</i> artère occipitale.",
         "baseImg": true
     },
     "Muscolo_ORBICOLARE_DELL_OCCHIO": {
@@ -295,7 +295,7 @@ var DB_anatomia = {
     },
     "Muscolo_ESTENSORE_RADIALE_LUNGO_CARPO": {
         "Titolo": "Muscle long extenseur radial du carpe",
-        "Descrizione": "<i>Origine :</i> humérus, crête&nbsp;<span style=\"color: rgb(0, 0, 0);\">supra-épicondylaire latérale.</span><br> <i>Insertion :</i> 2ème os métacarpien, face dorsale.<br> <i>Action :</i> abduction et extension du poignet.<br> <i>Innervation :</i> nerf radial C6-C7.<br> <i>Vascularisation :</i> artère radiale.",
+        "Descrizione": "<i>Origine :</i> humérus, crête supra-épicondylaire latérale.<br> <i>Insertion :</i> 2ème os métacarpien, face dorsale.<br> <i>Action :</i> abduction et extension du poignet.<br> <i>Innervation :</i> nerf radial C6-C7.<br> <i>Vascularisation :</i> artère radiale.",
         "baseImg": true
     },
     "Muscolo_ESTENSORE_RADIALE_BREVE_CARPO": {
@@ -393,7 +393,7 @@ var DB_anatomia = {
     },
     "Muscolo_RETTO": {
         "Titolo": "Muscle droit fémoral (ou muscle droit antérieur de la cuisse)<br>",
-        "Descrizione": "<p><i>Origine :</i> provient de l'épine iliaque antérieure inférieure.<br> <i>Insertion :</i> s'insère dans la tubérosité tibiale (avec les trois autres têtes du quadriceps fémoral).<br> <i>Action :</i>&nbsp;il sert à fléchir la cuisse au niveau de la hanche et à étendre la jambe au niveau du genou. Il jouant un rôle important pour la marche et le maintien d'une posture droite. C'est un muscle extenseur.<br> <i>Innervation :</i> innervé par le nerf fémoral (L2, L4).<br> <i>Vascularisation :</i> alimentée par l'artère fémorale.</p>",
+        "Descrizione": "<p><i>Origine :</i> provient de l'épine iliaque antérieure inférieure.<br> <i>Insertion :</i> s'insère dans la tubérosité tibiale (avec les trois autres têtes du quadriceps fémoral).<br> <i>Action :</i> il sert à fléchir la cuisse au niveau de la hanche et à étendre la jambe au niveau du genou. Il jouant un rôle important pour la marche et le maintien d'une posture droite. C'est un muscle extenseur.<br> <i>Innervation :</i> innervé par le nerf fémoral (L2, L4).<br> <i>Vascularisation :</i> alimentée par l'artère fémorale.</p>",
         "baseImg": "Muscolo_QUADRICIPITE_FEMORALE"
     },
     "Muscolo_VASTO_LATERALE": {
@@ -402,7 +402,7 @@ var DB_anatomia = {
         "baseImg": "Muscolo_QUADRICIPITE_FEMORALE"
     },
     "Muscolo_VASTO_MEDIALE": {
-        "Titolo": "Muscle vaste médial&nbsp;<span style=\"color: rgb(0, 0, 0);\">(ou muscle vaste interne)</span>",
+        "Titolo": "Muscle vaste médial (ou muscle vaste interne)",
         "Descrizione": "<p><i>Origine :</i> provient de la lèvre médiale de la ligne âpre.<br> <i>Insertion :</i> s'insère dans la rotule avec un tendon commun partagé avec les autres têtes.<br> <i>Action :</i> avec son action, il allonge la jambe et stabilise la rotule, empêchant la luxation latérale.<br> <i>Innervation :</i> innervé par le nerf fémoral (L2, L4).<br> <i>Vascularisation :</i> alimentée par l'artère fémorale.</p>",
         "baseImg": "Muscolo_QUADRICIPITE_FEMORALE"
     },
@@ -485,7 +485,7 @@ var DB_anatomia = {
         "Descrizione": "<p><i>Origine :</i> provient de la face médiale de la fosse iliaque.<br> <i>Insertion :</i> inserts à fibres convergentes sur le grand trochanter, sur la face latérale.<br> <i>Action :</i> lorsque le bassin est fixe, son action principale est l'abduction de la hanche. De plus, ses fibres antérieures contribuent à la flexion de la hanche et ses fibres postérieures contribuent à l'extension de la hanche. Lorsque les deux côtés se contractent, il stabilise le bassin et le met en antéversion avec ses fibres antérieures ou en rétroversion avec ses fibres postérieures. La contraction d'un côté provoque une inclinaison du bassin.<br> <i>Innervation :</i> innervée par le nerf fessier supérieur (L4, L5, S1).<br> <i>Vascularisation :</i> alimentée par des branches de l'artère fessière supérieure.</p>"
     },
     "Muscolo_TIROIDEO": {
-        "Titolo": "Muscle thyro-hyoïdien&nbsp;",
+        "Titolo": "Muscle thyro-hyoïdien",
         "Descrizione": "<p><i>Origine :</i> provient du sternum et du cartilage thyroïde<br> <i>Insertion :</i> inserts sur l'os hyoïde.<br> <i>Action :</i> son action est d'abaisser l'os hyoïde et d'élever le larynx.<br> <i>Innervation :</i> innervé par le plexus cervical et le nerf hypoglosse.<br> <i>Vascularisation :</i> alimenté par les artères thyroïdiennes (branches de l'artère carotide externe) et les veines thyroïdiennes.</p>"
     },
     "Muscolo_STERNOIOIDEO": {
@@ -514,11 +514,11 @@ var DB_anatomia = {
     },
     "Muscolo_DEPRESSORE_ANGOLO_BOCCA": {
         "Titolo": "Muscle abaisseur de l'angle de la bouche",
-        "Descrizione": "<p><i>Origine :</i> provient de la partie inférieure de la face externe du corps de la mandibule; puis il s'étend vers le haut et médialement pour se confondre avec le muscle orbiculaire de la bouche.<br> <i>Insertion :</i> s'insère dans la peau de la lèvre supérieure.<br> <i>Action :</i> sert à déprimer la lèvre inférieure et la commissure labiale.<br> <i>Innervation :</i> innervé par le nerf facial.<br> <i>Vascularisation :</i> alimenté par l'artère faciale.</p>"
+        "Descrizione": "<p><i>Origine :</i> provient de la partie inférieure de la face externe du corps de la mandibule ; puis il s'étend vers le haut et médialement pour se confondre avec le muscle orbiculaire de la bouche.<br> <i>Insertion :</i> s'insère dans la peau de la lèvre supérieure.<br> <i>Action :</i> sert à déprimer la lèvre inférieure et la commissure labiale.<br> <i>Innervation :</i> innervé par le nerf facial.<br> <i>Vascularisation :</i> alimenté par l'artère faciale.</p>"
     },
     "Muscolo_DEPRESSORE_LABBRO": {
         "Titolo": "Muscle abaisseur de la lèvre inférieure",
-        "Descrizione": "<p><i>Origine :</i> provient de la partie inférieure de la face externe du corps de la mandibule; puis il s'étend vers le haut et médialement pour se confondre avec le muscle orbiculaire de la bouche.<br> <i>Insertion :</i> insère ses fibres dans la peau de la lèvre supérieure.<br> <i>Action :</i> sert à déprimer et éverser la lèvre inférieure.<br> <i>Innervation :</i> innervé par la branche buccale du nerf facial.<br> <i>Vascularisation :</i> alimenté par l'artère faciale.</p>"
+        "Descrizione": "<p><i>Origine :</i> provient de la partie inférieure de la face externe du corps de la mandibule ; puis il s'étend vers le haut et médialement pour se confondre avec le muscle orbiculaire de la bouche.<br> <i>Insertion :</i> insère ses fibres dans la peau de la lèvre supérieure.<br> <i>Action :</i> sert à déprimer et éverser la lèvre inférieure.<br> <i>Innervation :</i> innervé par la branche buccale du nerf facial.<br> <i>Vascularisation :</i> alimenté par l'artère faciale.</p>"
     },
     "Muscolo_ORBICOLARE_BOCCA": {
         "Titolo": "Muscle orbiculaire de la bouche",
@@ -534,7 +534,7 @@ var DB_anatomia = {
     },
     "Muscolo_PROCERO": {
         "Titolo": "Muscle procérus",
-        "Descrizione": "<p><i>Origine :</i> il provient de l'os frontal.<br> <i>Insertion :</i> il s'insère sur la partie supérieure du nez.<br> <i>Action :</i> c'est un muscle facial qui mobilise la partie molle du nez, provoquant des rides près de la racine du nez lorsqu'il est contracté. Il est impliqué dans l'expression typique du froncement des sourcils lors de la réflexion.<br> <i>Innervation :</i>&nbsp;il est innervé par le septième nerf crânien.<br> <i>Vascularisation :</i>&nbsp;il est alimenté par l'artère faciale.</p>"
+        "Descrizione": "<p><i>Origine :</i> il provient de l'os frontal.<br> <i>Insertion :</i> il s'insère sur la partie supérieure du nez.<br> <i>Action :</i> c'est un muscle facial qui mobilise la partie molle du nez, provoquant des rides près de la racine du nez lorsqu'il est contracté. Il est impliqué dans l'expression typique du froncement des sourcils lors de la réflexion.<br> <i>Innervation :</i> il est innervé par le septième nerf crânien.<br> <i>Vascularisation :</i> il est alimenté par l'artère faciale.</p>"
     },
     "Muscolo_CORRUGATORE": {
         "Titolo": "Muscle corrugateur du sourcil",
@@ -570,7 +570,7 @@ var DB_anatomia = {
     },
     "Muscolo_ESTENSORE_PROPRIO_MIGNOLO": {
         "Titolo": "Muscle extenseur de l'auriculaire (petit doigt)",
-        "Descrizione": "<p><i>Origine :</i>&nbsp;il naît de la face postérieure de l'épicondyle huméral et de sa face antéro brachiale.<br> <i>Insertion :</i> traversant le cinquième compartiment du rétinaculum des extenseurs, il rejoint le tendon de l'extenseur commun des doigts au niveau du cinquième métacarpien.<br> <i>Action :</i> il prolonge le petit doigt et contribue à l'abduction ulnaire et à l'extension de la main.<br> <i>Innervation :</i> il est innervé par le nerf radial (C6, C8)<br> <i>Vascularisation :</i> artère interosseuse commune.</p>"
+        "Descrizione": "<p><i>Origine :</i> il naît de la face postérieure de l'épicondyle huméral et de sa face antéro brachiale.<br> <i>Insertion :</i> traversant le cinquième compartiment du rétinaculum des extenseurs, il rejoint le tendon de l'extenseur commun des doigts au niveau du cinquième métacarpien.<br> <i>Action :</i> il prolonge le petit doigt et contribue à l'abduction ulnaire et à l'extension de la main.<br> <i>Innervation :</i> il est innervé par le nerf radial (C6, C8)<br> <i>Vascularisation :</i> artère interosseuse commune.</p>"
     },
     "Muscolo_ABDUTTORE_LUNGO_POLLICE": {
         "Titolo": "Muscle long abducteur du pouce",
@@ -598,7 +598,7 @@ var DB_anatomia = {
     },
     "Muscolo_FLESSORE_BREVE_POLLICE": {
         "Titolo": "Muscle court fléchisseur du pouce",
-        "Descrizione": "<p><i>Origines :</i> il prend naissance, avec la tête superficielle, du tubercule du trapèze et du ligament transverse du carpe. Avec la tête profonde, il prend naissance dans les os trapézoïdaux et capités du carpe.<br> <i>Insertion :</i> il termine sa course par une seule tête à la base de l'éminence thénar.<br> <i>Action :</i> il permet le mouvement où l'humain plie le pouce au niveau de l'articulation métacarpo-phalangienne (l'articulation entre le premier métacarpien et la phalange proximale du pouce).<br> <i>Innervation :</i>&nbsp;il est innervé par le nerf médian (chef superficiel) et le nerf ulnaire (chef profond) (C6, C7).<br> <i>Vascularisation :</i> artère principale du pouce et artère radiale de l'index (ce sont des branches de l'artère radiale).</p>"
+        "Descrizione": "<p><i>Origines :</i> il prend naissance, avec la tête superficielle, du tubercule du trapèze et du ligament transverse du carpe. Avec la tête profonde, il prend naissance dans les os trapézoïdaux et capités du carpe.<br> <i>Insertion :</i> il termine sa course par une seule tête à la base de l'éminence thénar.<br> <i>Action :</i> il permet le mouvement où l'humain plie le pouce au niveau de l'articulation métacarpo-phalangienne (l'articulation entre le premier métacarpien et la phalange proximale du pouce).<br> <i>Innervation :</i> il est innervé par le nerf médian (chef superficiel) et le nerf ulnaire (chef profond) (C6, C7).<br> <i>Vascularisation :</i> artère principale du pouce et artère radiale de l'index (ce sont des branches de l'artère radiale).</p>"
     },
     "Muscolo_FLESSORE_MIGNOLO_PIEDE": {
         "Titolo": "Muscle court fléchisseur du petit orteil",
@@ -614,7 +614,7 @@ var DB_anatomia = {
     },
     "Organo_INTESTINO_TENUE": {
         "Titolo": "Intestin grêle",
-        "Descrizione": "<p><i>Localisation :</i> il est situé dans la cavité abdominale. L'intestin grêle commence au niveau de la valvule pylorique, qui le sépare de l'estomac, et se termine au niveau de la valvule iléo-colique.<br> <i>Fonction :</i>&nbsp;la digestion des aliments est achevée dans l'intestin grêle&nbsp; et la plupart des nutriments obtenus sont absorbés.</p>"
+        "Descrizione": "<p><i>Localisation :</i> il est situé dans la cavité abdominale. L'intestin grêle commence au niveau de la valvule pylorique, qui le sépare de l'estomac, et se termine au niveau de la valvule iléo-colique.<br> <i>Fonction :</i> la digestion des aliments est achevée dans l'intestin grêle et la plupart des nutriments obtenus sont absorbés.</p>"
     },
     "Organo_DUODENO": {
         "Titolo": "Duodénum",
@@ -638,7 +638,7 @@ var DB_anatomia = {
     },
     "Organo_COLON_TRASVERSO": {
         "Titolo": "Côlon transverse",
-        "Descrizione": "<p><i>Emplacement :</i> il est situé dans la cavité abdominale. Le côlon transverse, qui mesure environ un mètre et demi de long, s'étend de la valvule iléo-colique au rectum et au canal anal.<br> <i>Fonction :</i>&nbsp;c'est dans le côlon transverse que s'achève le processus de digestion. Il se produit par l'absorption d'eau et de sels minéraux. La sécrétion d'une substance muqueuse et visqueuse dans la lumière a lieu dans ce tractus, afin de le lubrifier et de faciliter le transit des matières fécales.</p>"
+        "Descrizione": "<p><i>Emplacement :</i> il est situé dans la cavité abdominale. Le côlon transverse, qui mesure environ un mètre et demi de long, s'étend de la valvule iléo-colique au rectum et au canal anal.<br> <i>Fonction :</i> c'est dans le côlon transverse que s'achève le processus de digestion. Il se produit par l'absorption d'eau et de sels minéraux. La sécrétion d'une substance muqueuse et visqueuse dans la lumière a lieu dans ce tractus, afin de le lubrifier et de faciliter le transit des matières fécales.</p>"
     },
     "Organo_COLON_DISCENDENTE": {
         "Titolo": "Côlon descendant",
@@ -769,7 +769,7 @@ var DB_anatomia = {
         "Descrizione": "<p><i>Localisation :</i> la thyroïde est positionnée dans la région antérieure du cou, devant et latéralement au larynx et à la trachée. Il est situé au niveau du C5. Sa forme ressemble à la lettre \"H\", avec les lobes reliés par l'isthme.<br> <i>Fonction :</i> la thyroïde produit des hormones appelées hormones thyroïdiennes, qui contrôlent les activités métaboliques et sont responsables du bon fonctionnement de nombreuses cellules du corps.</p>"
     },
     "Organo_FLESSURA_SIGMOIDEA": {
-        "Titolo": "Extension&nbsp;sigmoïde",
+        "Titolo": "Extension sigmoïde",
         "Descrizione": ""
     },
     "Organo_FOSSA_EPIGASTRICA": {
