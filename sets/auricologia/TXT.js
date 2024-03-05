@@ -1053,7 +1053,7 @@ DB.TXT.set = {
         ita: "Approfondimenti",
         eng: "In-depth Studies",
         esp: "Detalles adicionales",
-        fra: "Plus de détails",
+        fra: "Informations complémentaires",
         por: "Mais detalhes",
         deu: "Weitere Details"
     },

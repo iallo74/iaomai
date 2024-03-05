@@ -1,7 +1,7 @@
 var DB_anatomia = {
     "Osso_ILIACO": {
         "Titolo": "Os iliaque",
-        "Descrizione": "<p>L'os iliaque est le principal os de la hanche et représente l'un des os du bassin, avec le sacrum et le coccyx.&nbsp;D'un point de vue anatomique, l'os iliaque peut être divisé en trois régions : une région supérieure appelée ilium, une région inférieure-postérieure appelée ischion et une région inférieure-antérieure identifiée comme le pubis.<br> Chaque os iliaque forme trois articulations: l'articulation sacro-iliaque avec le sacrum, l'articulation de la hanche avec le fémur et la symphyse pubienne avec l'os iliaque controlatéral.</p><p> <i>Localisation :</i> entre le sacrum et le membre inférieur (fémur)<br> <i>Action :</i> en plus de contribuer à une articulation cruciale comme la hanche, l'os iliaque donne origine et insertion aux muscles dans différentes zones, y compris l'abdomen, le dos et la cuisse.<br> <i>Classification :</i> os plats.</p>"
+        "Descrizione": "<p>L'os iliaque est le principal os de la hanche et représente l'un des os du bassin, avec le sacrum et le coccyx.&nbsp;D'un point de vue anatomique, l'os iliaque peut être divisé en trois régions : une région supérieure appelée ilium, une région inférieure-postérieure appelée ischion et une région inférieure-antérieure identifiée comme le pubis.<br> Chaque os iliaque forme trois articulations : l'articulation sacro-iliaque avec le sacrum, l'articulation de la hanche avec le fémur et la symphyse pubienne avec l'os iliaque controlatéral.</p><p> <i>Localisation :</i> entre le sacrum et le membre inférieur (fémur)<br> <i>Action :</i> en plus de contribuer à une articulation cruciale comme la hanche, l'os iliaque donne origine et insertion aux muscles dans différentes zones, y compris l'abdomen, le dos et la cuisse.<br> <i>Classification :</i> os plats.</p>"
     },
     "Osso_CRANIO": {
         "Titolo": "Crâne",
@@ -13,11 +13,11 @@ var DB_anatomia = {
     },
     "Osso_OMERO": {
         "Titolo": "Humérus",
-        "Descrizione": "<p>L'humérus est l'os pair du corps humain qui constitue le squelette de chaque bras.</p><p> <i>Emplacement :</i> il est situé entre l'omoplate (l'os principal de l'épaule) et les os de l'avant-bras (radius et cubitus)<br> <i>Action :</i> il participe à la formation de deux articulations importantes du membre supérieur: l'articulation de l'épaule et l'articulation du coude<br> <i>Classification :</i> os longs.</p>"
+        "Descrizione": "<p>L'humérus est l'os pair du corps humain qui constitue le squelette de chaque bras.</p><p> <i>Emplacement :</i> il est situé entre l'omoplate (l'os principal de l'épaule) et les os de l'avant-bras (radius et cubitus)<br> <i>Action :</i> il participe à la formation de deux articulations importantes du membre supérieur : l'articulation de l'épaule et l'articulation du coude<br> <i>Classification :</i> os longs.</p>"
     },
     "Osso_CARTILAGINE_PUBICA": {
         "Titolo": "Symphyse pubienne",
-        "Descrizione": "<p>La symphyse pubienne est l'articulation cartilagineuse qui relie l'os pubien droit à l'os pubien gauche. L'os pubien, avec l'ilium et l'ischion, est l'un des trois composants osseux de l'os de la hanche, qui est une structure anatomique paire.</p><p> <i>Localisation :</i> la symphyse pubienne est située devant et légèrement au-dessus de la vessie<br> <i>Action:</i> la fonction de la symphyse pubienne est d'aider les os du bassin à soutenir le tronc<br> <i>Classification :</i> os plats.</p>"
+        "Descrizione": "<p>La symphyse pubienne est l'articulation cartilagineuse qui relie l'os pubien droit à l'os pubien gauche. L'os pubien, avec l'ilium et l'ischion, est l'un des trois composants osseux de l'os de la hanche, qui est une structure anatomique paire.</p><p> <i>Localisation :</i> la symphyse pubienne est située devant et légèrement au-dessus de la vessie<br> <i>Action :</i> la fonction de la symphyse pubienne est d'aider les os du bassin à soutenir le tronc<br> <i>Classification :</i> os plats.</p>"
     },
     "Osso_CARPO": {
         "Titolo": "Carpe",
@@ -29,11 +29,11 @@ var DB_anatomia = {
     },
     "Osso_ASTRAGALO": {
         "Titolo": "Astragale (ou talus)",
-        "Descrizione": "<p>L'astragale est le deuxième plus grand os du pied et est anatomiquement composé de trois parties: le corps, le cou et la tête.</p><p> <i>Emplacement :</i> le corps de l'astragale s'articule en haut avec le tibia et le péroné pour former l'articulation de la cheville et en bas avec le calcanéum pour former l'articulation sous-talienne<br> <i>Action :</i> le rôle fondamental de l'astragale est de transférer la force de tout le corps vers le pied par l'articulation de la cheville<br> <i>Classification :</i> os courts.</p>"
+        "Descrizione": "<p>L'astragale est le deuxième plus grand os du pied et est anatomiquement composé de trois parties : le corps, le cou et la tête.</p><p> <i>Emplacement :</i> le corps de l'astragale s'articule en haut avec le tibia et le péroné pour former l'articulation de la cheville et en bas avec le calcanéum pour former l'articulation sous-talienne<br> <i>Action :</i> le rôle fondamental de l'astragale est de transférer la force de tout le corps vers le pied par l'articulation de la cheville<br> <i>Classification :</i> os courts.</p>"
     },
     "Osso_CALCAGNO": {
         "Titolo": "Calcanéus",
-        "Descrizione": "<p>Le calcanéus est est le plus volumineux des os qui compose le pied (tarse).</p><p> <i>Localisation :</i> il est situé dans la région postérieure (talon) et s'articule avec deux os: l'astragale, formant l'articulation sous-talienne, et le cuboïde, formant l'articulation calcanéocuboïde.<br> <i>Action :</i> le calcanéum sert de point d'insertion à trois muscles: les deux composants du triceps sural, à savoir le gastrocnémien et le soléaire, et le muscle plantaire. Ces muscles, tout en ayant également une faible action sur l'articulation du genou, agissent principalement sur la cheville en tant que fléchisseurs plantaires du pied.<br> <i>Classification :</i> os courts.</p>"
+        "Descrizione": "<p>Le calcanéus est est le plus volumineux des os qui compose le pied (tarse).</p><p> <i>Localisation :</i> il est situé dans la région postérieure (talon) et s'articule avec deux os : l'astragale, formant l'articulation sous-talienne, et le cuboïde, formant l'articulation calcanéocuboïde.<br> <i>Action :</i> le calcanéum sert de point d'insertion à trois muscles : les deux composants du triceps sural, à savoir le gastrocnémien et le soléaire, et le muscle plantaire. Ces muscles, tout en ayant également une faible action sur l'articulation du genou, agissent principalement sur la cheville en tant que fléchisseurs plantaires du pied.<br> <i>Classification :</i> os courts.</p>"
     },
     "Osso_CARTILAGINI_STERNOCOSTALI": {
         "Titolo": "Cartilages sternocostaux",
@@ -41,7 +41,7 @@ var DB_anatomia = {
     },
     "Osso_CLAVICOLA": {
         "Titolo": "Clavicule",
-        "Descrizione": "<p>La clavicule est un os pair en forme de S, convexe médialement et concave latéralement.</p><p> <i>Localisation :</i> il est situé dans la partie antéropostérieure du thorax, reliant le manubrium du sternum à l'acromion de l'omoplate. Il peut être divisé en trois régions principales: le corps, l'extrémité sternale et l'extrémité acromiale.<br> <i>Action :</i> la clavicule remplit trois fonctions d'égale importance: elle assure le soutien du bras et de l'omoplate, leur permettant d'être reliés au tronc. En raison des ligaments auxquels il s'attache et de son anatomie unique, il permet une large gamme de mouvements de bras.<br> <i>Classification :</i> os longs.</p>"
+        "Descrizione": "<p>La clavicule est un os pair en forme de S, convexe médialement et concave latéralement.</p><p> <i>Localisation :</i> il est situé dans la partie antéropostérieure du thorax, reliant le manubrium du sternum à l'acromion de l'omoplate. Il peut être divisé en trois régions principales : le corps, l'extrémité sternale et l'extrémité acromiale.<br> <i>Action :</i> la clavicule remplit trois fonctions d'égale importance : elle assure le soutien du bras et de l'omoplate, leur permettant d'être reliés au tronc. En raison des ligaments auxquels il s'attache et de son anatomie unique, il permet une large gamme de mouvements de bras.<br> <i>Classification :</i> os longs.</p>"
     },
     "Osso_COSTE": {
         "Titolo": "Côtes",
@@ -117,11 +117,11 @@ var DB_anatomia = {
     },
     "Osso_STERNO": {
         "Titolo": "Sternum",
-        "Descrizione": "<p>Le sternum est un os long, plat et étroit où les 7 premières paires de côtes se fixent à travers les cartilages costaux. Par convention, les anatomistes le divisent en trois régions: le manubrium, le corps et le processus xiphoïde.</p><p> <i>Emplacement :</i> situé au centre de la poitrine.<br> <i>Fonction :</i> le sternum, avec les autres éléments de la cage thoracique, protège le cœur, les poumons, l'œsophage et les vaisseaux sanguins thoraciques.<br> <i>Classification :</i> os plat.</p>"
+        "Descrizione": "<p>Le sternum est un os long, plat et étroit où les 7 premières paires de côtes se fixent à travers les cartilages costaux. Par convention, les anatomistes le divisent en trois régions : le manubrium, le corps et le processus xiphoïde.</p><p> <i>Emplacement :</i> situé au centre de la poitrine.<br> <i>Fonction :</i> le sternum, avec les autres éléments de la cage thoracique, protège le cœur, les poumons, l'œsophage et les vaisseaux sanguins thoraciques.<br> <i>Classification :</i> os plat.</p>"
     },
     "Osso_TARSO": {
         "Titolo": "Tarse",
-        "Descrizione": "<p>Les os du tarse sont au nombre de sept: talus, calcanéus, cuboïde, naviculaire et les premier, deuxième et troisième os cunéiformes. Le tarse a une forme concave en forme de voûte tournée vers le bas.</p><p> <i>Localisation :</i> les os du tarse sont situés dans le pied entre la cheville et les os métatarsiens.<br> <i>Fonction :</i> ils permettent la dorsiflexion, la flexion plantaire, l'éversion et l'inversion du pied.<br> <i>Classification :</i> os courts.</p>"
+        "Descrizione": "<p>Les os du tarse sont au nombre de sept : talus, calcanéus, cuboïde, naviculaire et les premier, deuxième et troisième os cunéiformes. Le tarse a une forme concave en forme de voûte tournée vers le bas.</p><p> <i>Localisation :</i> les os du tarse sont situés dans le pied entre la cheville et les os métatarsiens.<br> <i>Fonction :</i> ils permettent la dorsiflexion, la flexion plantaire, l'éversion et l'inversion du pied.<br> <i>Classification :</i> os courts.</p>"
     },
     "Osso_TIBIA": {
         "Titolo": "Tibia",
@@ -180,7 +180,7 @@ var DB_anatomia = {
     },
     "Muscolo_STERNOCLEIDOMASTOIDEO": {
         "Titolo": "Muscle sterno-cléido-mastoïdien",
-        "Descrizione": "<i>Origine (tête sternale) :</i> manubrium du sternum.<br> <i>Origine (tête claviculaire) :</i> tiers médial de la clavicule.<br> <i>Insertion:</i> processus mastoïdien de l'os temporal, os occipital.<br> <i>Action (bilatérale) :</i> flexion du cou, protraction de la tête et élévation du sternum et des côtes pendant l'inspiration.<br> <i>Action (unilatérale) :</i> inclinaison ipsilatérale et rotation controlatérale de la tête.<br> <i>Innervation :</i> nerf accessoire XI.<br> <i>Vascularisation :</i> artère thyroïdienne supérieure.",
+        "Descrizione": "<i>Origine (tête sternale) :</i> manubrium du sternum.<br> <i>Origine (tête claviculaire) :</i> tiers médial de la clavicule.<br> <i>Insertion :</i> processus mastoïdien de l'os temporal, os occipital.<br> <i>Action (bilatérale) :</i> flexion du cou, protraction de la tête et élévation du sternum et des côtes pendant l'inspiration.<br> <i>Action (unilatérale) :</i> inclinaison ipsilatérale et rotation controlatérale de la tête.<br> <i>Innervation :</i> nerf accessoire XI.<br> <i>Vascularisation :</i> artère thyroïdienne supérieure.",
         "baseImg": true
     },
     "Muscolo_SPLENIO_DELLA_TESTA": {
@@ -225,7 +225,7 @@ var DB_anatomia = {
     },
     "Muscolo_PETTORALE": {
         "Titolo": "Muscle grand pectoral",
-        "Descrizione": "<i>Origine:</i> bord antérieur de la clavicule, face antérieure du sternum, cartilages costaux 1er à 6e<br> <i>Insertion:</i> crête du tubercule majeur et lèvre latérale du sillon bicipital de l'humérus<br> <i>Action:</i> adduction horizontale et oblique du bras, flexion et rotation médiale de l'épaule<br> <i>Innervation:</i> nerf pectoral latéral (C5-C7), nerfs pectoraux médiaux (C6-T1)<br> <i>Vascularisation:</i> branche pectorale de l'artère thoracoacromiale",
+        "Descrizione": "<i>Origine :</i> bord antérieur de la clavicule, face antérieure du sternum, cartilages costaux 1er à 6e<br> <i>Insertion :</i> crête du tubercule majeur et lèvre latérale du sillon bicipital de l'humérus<br> <i>Action :</i> adduction horizontale et oblique du bras, flexion et rotation médiale de l'épaule<br> <i>Innervation :</i> nerf pectoral latéral (C5-C7), nerfs pectoraux médiaux (C6-T1)<br> <i>Vascularisation :</i> branche pectorale de l'artère thoracoacromiale",
         "baseImg": true
     },
     "Muscolo_GRAN_DORSALE": {
@@ -270,7 +270,7 @@ var DB_anatomia = {
     },
     "Muscolo_PALMARE_LUNGO": {
         "Titolo": "Muscle long palmaire",
-        "Descrizione": "<i>Origine :</i> humérus, épicondyle médial.<br> <i>Insertion :</i> aponévrose palmaire et rétinaculum des fléchisseurs.<br> <i>Action :</i> flexion de la main et tension du rétinaculum.<br> <i>Innervation:</i> nerf médian C6-C7.<br> <i>Vascularisation :</i> artère ulnaire.",
+        "Descrizione": "<i>Origine :</i> humérus, épicondyle médial.<br> <i>Insertion :</i> aponévrose palmaire et rétinaculum des fléchisseurs.<br> <i>Action :</i> flexion de la main et tension du rétinaculum.<br> <i>Innervation :</i> nerf médian C6-C7.<br> <i>Vascularisation :</i> artère ulnaire.",
         "baseImg": true
     },
     "Muscolo_FLESSORI_SUPERFICIALI_DITA": {
@@ -364,7 +364,7 @@ var DB_anatomia = {
     },
     "Muscolo_BICIPITE_FEMORALE": {
         "Titolo": "Muscle biceps fémoral",
-        "Descrizione": "<i>Origine (tête courte):</i> fémur, ligne âpre.<br> <i>Origine (tête longue):</i> tubérosité ischiatique.<br> <i>Insertion :</i> tête du péroné, face latérale.<br> <i>Action :</i> flexion et rotation latérale de la jambe.<br> <i>Innervation :</i> nerf péronier L5-S2, nerf tibial S1-S3.<br> <i>Vascularisation:</i> artère fémorale profonde et artère fessière inférieure.",
+        "Descrizione": "<i>Origine (tête courte) :</i> fémur, ligne âpre.<br> <i>Origine (tête longue)  :</i> tubérosité ischiatique.<br> <i>Insertion :</i> tête du péroné, face latérale.<br> <i>Action :</i> flexion et rotation latérale de la jambe.<br> <i>Innervation :</i> nerf péronier L5-S2, nerf tibial S1-S3.<br> <i>Vascularisation :</i> artère fémorale profonde et artère fessière inférieure.",
         "baseImg": true
     },
     "Muscolo_GRANDE_ADDUTTORE": {
@@ -393,7 +393,7 @@ var DB_anatomia = {
     },
     "Muscolo_RETTO": {
         "Titolo": "Muscle droit fémoral (ou muscle droit antérieur de la cuisse)<br>",
-        "Descrizione": "<p><i>Origine :</i> provient de l'épine iliaque antérieure inférieure.<br> <i>Insertion:</i> s'insère dans la tubérosité tibiale (avec les trois autres têtes du quadriceps fémoral).<br> <i>Action :</i>&nbsp;il sert à fléchir la cuisse au niveau de la hanche et à étendre la jambe au niveau du genou. Il jouant un rôle important pour la marche et le maintien d'une posture droite. C'est un muscle extenseur.<br> <i>Innervation :</i> innervé par le nerf fémoral (L2, L4).<br> <i>Vascularisation :</i> alimentée par l'artère fémorale.</p>",
+        "Descrizione": "<p><i>Origine :</i> provient de l'épine iliaque antérieure inférieure.<br> <i>Insertion :</i> s'insère dans la tubérosité tibiale (avec les trois autres têtes du quadriceps fémoral).<br> <i>Action :</i>&nbsp;il sert à fléchir la cuisse au niveau de la hanche et à étendre la jambe au niveau du genou. Il jouant un rôle important pour la marche et le maintien d'une posture droite. C'est un muscle extenseur.<br> <i>Innervation :</i> innervé par le nerf fémoral (L2, L4).<br> <i>Vascularisation :</i> alimentée par l'artère fémorale.</p>",
         "baseImg": "Muscolo_QUADRICIPITE_FEMORALE"
     },
     "Muscolo_VASTO_LATERALE": {
@@ -428,7 +428,7 @@ var DB_anatomia = {
     },
     "Muscolo_PERONEO_BREVE": {
         "Titolo": "Muscle court péronier",
-        "Descrizione": "<i>Origine :</i> péroné, face latérale du tiers distal et muscles adjacents.<br> <i>Insertion:</i> 5e métatarsien, tubérosité latérale.<br> <i>Action :</i> éversion et flexion plantaire du pied.<br> <i>Innervation :</i> nerf péronier superficiel (L4-S1).<br> <i>Vascularisation :</i> artère péronière.",
+        "Descrizione": "<i>Origine :</i> péroné, face latérale du tiers distal et muscles adjacents.<br> <i>Insertion :</i> 5e métatarsien, tubérosité latérale.<br> <i>Action :</i> éversion et flexion plantaire du pied.<br> <i>Innervation :</i> nerf péronier superficiel (L4-S1).<br> <i>Vascularisation :</i> artère péronière.",
         "baseImg": true
     },
     "Muscolo_GASTROCNEMIO": {
@@ -443,7 +443,7 @@ var DB_anatomia = {
     },
     "Muscolo_SOLEO": {
         "Titolo": "Muscle soléaire",
-        "Descrizione": "<i>Origine :</i> tibia, face postérieure et diaphyse proximale.<br> <i>Insertion:</i> calcanéum, partie postérieure, via le tendon d'Achille.<br> <i>Action :</i> flexion plantaire du pied.<br> <i>Innervation :</i> nerf tibial (S1-S2).<br> <i>Vascularisation :</i> artère surale et artère tibiale postérieure.",
+        "Descrizione": "<i>Origine :</i> tibia, face postérieure et diaphyse proximale.<br> <i>Insertion :</i> calcanéum, partie postérieure, via le tendon d'Achille.<br> <i>Action :</i> flexion plantaire du pied.<br> <i>Innervation :</i> nerf tibial (S1-S2).<br> <i>Vascularisation :</i> artère surale et artère tibiale postérieure.",
         "baseImg": true
     },
     "Muscolo_FLESSORE_LUNGO_DITA": {
@@ -478,7 +478,7 @@ var DB_anatomia = {
     },
     "Muscolo_OBLIQUO_INTERNO_ADDOME": {
         "Titolo": "Muscle oblique interne de l'abdomen",
-        "Descrizione": "<p><i>Origine :</i> en bas sur le ligament inguinal, la crête iliaque et l'aponévrose lombo-dorsale.<br> <i>Insertion:</i> en haut sur les cartilages costaux, en bas sur le pubis et le sternum.<br> <i>Action :</i> en se contractant d'un côté, il provoque une inclinaison latérale et une rotation du tronc vers ce côté. Si le bassin est fixe, il agit sur les côtes et inversement. Lorsqu'il est contracté bilatéralement, il stabilise le bassin et fléchit le tronc vers l'avant. Il est également impliqué dans l'expiration<br> <i>Innervation :</i> innervée par les nerfs intercostaux inférieurs (T8-T12) et les nerfs ilio-hypogastriques et ilio-inguinal (L1)<br> <i>Vascularisation :</i> alimentée par des branches de l'artère fessière supérieure.</p>"
+        "Descrizione": "<p><i>Origine :</i> en bas sur le ligament inguinal, la crête iliaque et l'aponévrose lombo-dorsale.<br> <i>Insertion :</i> en haut sur les cartilages costaux, en bas sur le pubis et le sternum.<br> <i>Action :</i> en se contractant d'un côté, il provoque une inclinaison latérale et une rotation du tronc vers ce côté. Si le bassin est fixe, il agit sur les côtes et inversement. Lorsqu'il est contracté bilatéralement, il stabilise le bassin et fléchit le tronc vers l'avant. Il est également impliqué dans l'expiration<br> <i>Innervation :</i> innervée par les nerfs intercostaux inférieurs (T8-T12) et les nerfs ilio-hypogastriques et ilio-inguinal (L1)<br> <i>Vascularisation :</i> alimentée par des branches de l'artère fessière supérieure.</p>"
     },
     "Muscolo_MEDIO_GLUTEO": {
         "Titolo": "Muscle moyen fessier",
@@ -510,7 +510,7 @@ var DB_anatomia = {
     },
     "Muscolo_MENTALE": {
         "Titolo": "Muscle mentonnier",
-        "Descrizione": "<p><i>Origine :</i> provient du processus alvéolaire de l'incisive médiale inférieure.<br> <i>Insertion :</i> s'insère dans la peau du menton.<br> <i>Action :</i> sert à élever et à plisser la peau du menton.<br> <i>Innervation:</i> innervé par la branche mandibulaire du nerf facial.<br> <i>Vascularisation :</i> alimenté par l'artère faciale.</p>"
+        "Descrizione": "<p><i>Origine :</i> provient du processus alvéolaire de l'incisive médiale inférieure.<br> <i>Insertion :</i> s'insère dans la peau du menton.<br> <i>Action :</i> sert à élever et à plisser la peau du menton.<br> <i>Innervation :</i> innervé par la branche mandibulaire du nerf facial.<br> <i>Vascularisation :</i> alimenté par l'artère faciale.</p>"
     },
     "Muscolo_DEPRESSORE_ANGOLO_BOCCA": {
         "Titolo": "Muscle abaisseur de l'angle de la bouche",
@@ -537,7 +537,7 @@ var DB_anatomia = {
         "Descrizione": "<p><i>Origine :</i> il provient de l'os frontal.<br> <i>Insertion :</i> il s'insère sur la partie supérieure du nez.<br> <i>Action :</i> c'est un muscle facial qui mobilise la partie molle du nez, provoquant des rides près de la racine du nez lorsqu'il est contracté. Il est impliqué dans l'expression typique du froncement des sourcils lors de la réflexion.<br> <i>Innervation :</i>&nbsp;il est innervé par le septième nerf crânien.<br> <i>Vascularisation :</i>&nbsp;il est alimenté par l'artère faciale.</p>"
     },
     "Muscolo_CORRUGATORE": {
-        "Titolo": "<span style=\"color: rgb(32, 33, 36); font-family: &quot;Google Sans&quot;, arial, sans-serif; font-size: 20px;\">Muscle corrugateur du sourcil</span>",
+        "Titolo": "Muscle corrugateur du sourcil",
         "Descrizione": "<p><i>Origine :</i> il prend naissance à l'extrémité médiale de l'arcade sourcilière. Ses fibres passent au-dessus et latéralement, entre la paupière et la partie orbitaire du muscle orbicularis oculi.<br> <i>Insertion :</i> il s'insère sur la partie profonde de la peau, au-dessus du centre de l'arc orbitaire.<br> <i>Action :</i> il sert à sillonner le front.<br> <i>Innervation :</i> il est innervé par la branche buccale du nerf facial.<br> <i>Vascularisation :</i> il est alimenté par l'artère faciale.</p>"
     },
     "Muscolo_BUCCINATORE": {
@@ -550,11 +550,11 @@ var DB_anatomia = {
     },
     "Muscolo_ELEVATORE_DEL_LABBRO": {
         "Titolo": "Muscle élévateur de la lèvre supérieure",
-        "Descrizione": "<p><i>Origine et insertion :</i> il est formé de trois parties: zygomatique, infraorbitaire et angulaire. La partie zygomatique provient de la surface latérale de l'os zygomatique et s'insère sur la peau de la lèvre supérieure au-dessus de la commissure. La partie infraorbitaire prend naissance au bord infraorbitaire et s'insère sur la peau de la lèvre supérieure, du côté médial de la terminaison de la partie zygomatique. La partie angulaire provient du processus frontal du maxillaire et de l'os nasal et s'insère dans la peau de l'aile nasale et de la lèvre supérieure.<br> <i>Action :</i> en contractant l'élévateur du muscle de la lèvre supérieure, la lèvre supérieure et l'aile du nez sont soulevées.<br> <i>Innervation :</i> il est innervé par la branche buccale du nerf facial.<br> <i>Vascularisation :</i> il est alimenté par l'artère faciale.</p>"
+        "Descrizione": "<p><i>Origine et insertion :</i> il est formé de trois parties : zygomatique, infraorbitaire et angulaire. La partie zygomatique provient de la surface latérale de l'os zygomatique et s'insère sur la peau de la lèvre supérieure au-dessus de la commissure. La partie infraorbitaire prend naissance au bord infraorbitaire et s'insère sur la peau de la lèvre supérieure, du côté médial de la terminaison de la partie zygomatique. La partie angulaire provient du processus frontal du maxillaire et de l'os nasal et s'insère dans la peau de l'aile nasale et de la lèvre supérieure.<br> <i>Action :</i> en contractant l'élévateur du muscle de la lèvre supérieure, la lèvre supérieure et l'aile du nez sont soulevées.<br> <i>Innervation :</i> il est innervé par la branche buccale du nerf facial.<br> <i>Vascularisation :</i> il est alimenté par l'artère faciale.</p>"
     },
     "Muscolo_RISORIO": {
         "Titolo": "Muscle risorius",
-        "Descrizione": "<p><i>Origine:</i> il naît du fascia parotidien et s'étend en avant jusqu'à la commissure de la bouche.<br> <i>Insertion:</i> il s'insère profondément dans la peau.<br> <i>Action:</i> il tire le coin de la bouche en arrière, jouant un rôle dans le sourire et le rire.<br> <i>Innervation:</i> il est innervé par le nerf facial.<br> <i>Vascularisation:</i> il est alimenté par l'artère faciale.</p>"
+        "Descrizione": "<p><i>Origine :</i> il naît du fascia parotidien et s'étend en avant jusqu'à la commissure de la bouche.<br> <i>Insertion :</i> il s'insère profondément dans la peau.<br> <i>Action :</i> il tire le coin de la bouche en arrière, jouant un rôle dans le sourire et le rire.<br> <i>Innervation :</i> il est innervé par le nerf facial.<br> <i>Vascularisation :</i> il est alimenté par l'artère faciale.</p>"
     },
     "Muscolo_CORACOBRACHIALE": {
         "Titolo": "Muscle coraco-brachial",
@@ -566,11 +566,11 @@ var DB_anatomia = {
     },
     "Muscolo_ANCONEO": {
         "Titolo": "Muscle anconé",
-        "Descrizione": "<p><i>Origine :</i> il prend naissance à la face postérieure de l'épicondyle huméral.<br> <i>Insertion:</i> il s'insère sur le quart proximal de la face dorsale de l'ulna.<br> <i>Action :</i> le muscle anconé collabore avec le muscle triceps brachial dans l'extension de l'avant-bras, et il enlève et stabilise également l'ulna.<br> <i>Innervation :</i> il est innervé par le nerf radial (C7, C8).<br> <i>Vascularisation :</i> il est alimenté à la fois par la branche collatérale moyenne de l'artère brachiale profonde et par l'artère interosseuse récurrente.</p>"
+        "Descrizione": "<p><i>Origine :</i> il prend naissance à la face postérieure de l'épicondyle huméral.<br> <i>Insertion :</i> il s'insère sur le quart proximal de la face dorsale de l'ulna.<br> <i>Action :</i> le muscle anconé collabore avec le muscle triceps brachial dans l'extension de l'avant-bras, et il enlève et stabilise également l'ulna.<br> <i>Innervation :</i> il est innervé par le nerf radial (C7, C8).<br> <i>Vascularisation :</i> il est alimenté à la fois par la branche collatérale moyenne de l'artère brachiale profonde et par l'artère interosseuse récurrente.</p>"
     },
     "Muscolo_ESTENSORE_PROPRIO_MIGNOLO": {
         "Titolo": "Muscle extenseur de l'auriculaire (petit doigt)",
-        "Descrizione": "<p><i>Origine :</i>&nbsp;il naît de la face postérieure de l'épicondyle huméral et de sa face antéro brachiale.<br> <i>Insertion :</i> traversant le cinquième compartiment du rétinaculum des extenseurs, il rejoint le tendon de l'extenseur commun des doigts au niveau du cinquième métacarpien.<br> <i>Action :</i> il prolonge le petit doigt et contribue à l'abduction ulnaire et à l'extension de la main.<br> <i>Innervation :</i> il est innervé par le nerf radial (C6, C8)<br> <i>Vascularisation:</i> artère interosseuse commune.</p>"
+        "Descrizione": "<p><i>Origine :</i>&nbsp;il naît de la face postérieure de l'épicondyle huméral et de sa face antéro brachiale.<br> <i>Insertion :</i> traversant le cinquième compartiment du rétinaculum des extenseurs, il rejoint le tendon de l'extenseur commun des doigts au niveau du cinquième métacarpien.<br> <i>Action :</i> il prolonge le petit doigt et contribue à l'abduction ulnaire et à l'extension de la main.<br> <i>Innervation :</i> il est innervé par le nerf radial (C6, C8)<br> <i>Vascularisation :</i> artère interosseuse commune.</p>"
     },
     "Muscolo_ABDUTTORE_LUNGO_POLLICE": {
         "Titolo": "Muscle long abducteur du pouce",
@@ -586,7 +586,7 @@ var DB_anatomia = {
     },
     "Muscolo_PALMARE_BREVE": {
         "Titolo": "Muscle court palmaire",
-        "Descrizione": "<p><i>Origines :</i> il prend naissance au bord médial de l'aponévrose palmaire.<br> <i>Insertion :</i> il s'insère dans le derme au bord médial de l'éminence hypothénar.<br> <i>Action :</i> il ride la peau recouvrant l'éminence hypothénar<br> <i>Innervation:</i> il est innervé par le nerf cubital (C8, T1)<br> <i>Vascularisation :</i> alimenté par l'artère ulnaire.</p>"
+        "Descrizione": "<p><i>Origines :</i> il prend naissance au bord médial de l'aponévrose palmaire.<br> <i>Insertion :</i> il s'insère dans le derme au bord médial de l'éminence hypothénar.<br> <i>Action :</i> il ride la peau recouvrant l'éminence hypothénar<br> <i>Innervation :</i> il est innervé par le nerf cubital (C8, T1)<br> <i>Vascularisation :</i> alimenté par l'artère ulnaire.</p>"
     },
     "Muscolo_FLESSORE_MIGNOLO_MANO": {
         "Titolo": "Muscle court fléchisseur du petit doigt de la main",
@@ -606,7 +606,7 @@ var DB_anatomia = {
     },
     "Muscolo_ESTENSORE_BREVE_ALLUCE": {
         "Titolo": "Muscle court extenseur de l'hallux",
-        "Descrizione": "<p><i>Origines :</i> il provient de l'os calcanéum et forme un tendon qui s'insère dans la phalange proximale du gros orteil.<br> <i>Insertion:</i> il s'insère dans la phalange proximale du gros orteil<br> <i>Action :</i> il aide à allonger le gros orteil.<br> <i>Innervation :</i> innervé par le nerf péronier profond<br> <i>Vascularisation :</i> artère tibiale.</p>"
+        "Descrizione": "<p><i>Origines :</i> il provient de l'os calcanéum et forme un tendon qui s'insère dans la phalange proximale du gros orteil.<br> <i>Insertion :</i> il s'insère dans la phalange proximale du gros orteil<br> <i>Action :</i> il aide à allonger le gros orteil.<br> <i>Innervation :</i> innervé par le nerf péronier profond<br> <i>Vascularisation :</i> artère tibiale.</p>"
     },
     "Organo_MAMMELLE": {
         "Titolo": "Seins",
@@ -618,7 +618,7 @@ var DB_anatomia = {
     },
     "Organo_DUODENO": {
         "Titolo": "Duodénum",
-        "Descrizione": "<p><i>Emplacement :</i> il est situé entre l'estomac et l'intestin grêle et peut être considéré comme la partie initiale de l'intestin grêle.<br> <i>Fonction :</i> le duodénum joue un rôle crucial dans la bonne digestion des aliments. En entrant dans le duodénum, le bolus, qui est maintenant appelé chyme, est exposé aux enzymes produites par deux organes importants: le pancréas (sucs pancréatiques) et le foie (bile).</p>"
+        "Descrizione": "<p><i>Emplacement :</i> il est situé entre l'estomac et l'intestin grêle et peut être considéré comme la partie initiale de l'intestin grêle.<br> <i>Fonction :</i> le duodénum joue un rôle crucial dans la bonne digestion des aliments. En entrant dans le duodénum, le bolus, qui est maintenant appelé chyme, est exposé aux enzymes produites par deux organes importants : le pancréas (sucs pancréatiques) et le foie (bile).</p>"
     },
     "Organo_TIMO": {
         "Titolo": "Thymus",
@@ -654,7 +654,7 @@ var DB_anatomia = {
     },
     "Organo_STOMACO": {
         "Titolo": "Estomac",
-        "Descrizione": "<p><i>Localisation:</i> l'estomac est situé entre l'œsophage et le duodénum dans la cavité thoracique<br> <i>Fonction:</i> l'estomac remplit de nombreuses fonctions importantes. Il sert de réservoir pour le bolus qui arrive de l'œsophage. Il stocke le bolus jusqu'à ce qu'il soit complètement attaqué par les sucs gastriques. L'estomac sécrète du suc gastrique, un liquide visqueux produit par les glandes gastriques situées le long de la paroi du fond d'œil et du corps. Par l'action de l'acide chlorhydrique et de la pepsine, il participe à la digestion des protéines.</p>"
+        "Descrizione": "<p><i>Localisation :</i> l'estomac est situé entre l'œsophage et le duodénum dans la cavité thoracique<br> <i>Fonction :</i> l'estomac remplit de nombreuses fonctions importantes. Il sert de réservoir pour le bolus qui arrive de l'œsophage. Il stocke le bolus jusqu'à ce qu'il soit complètement attaqué par les sucs gastriques. L'estomac sécrète du suc gastrique, un liquide visqueux produit par les glandes gastriques situées le long de la paroi du fond d'œil et du corps. Par l'action de l'acide chlorhydrique et de la pepsine, il participe à la digestion des protéines.</p>"
     },
     "Organo_MILZA": {
         "Titolo": "Rate",
@@ -674,7 +674,7 @@ var DB_anatomia = {
     },
     "Organo_OVAIE": {
         "Titolo": "Ovaires",
-        "Descrizione": "<p><i>Localisation :</i> il y a deux ovaires, de forme similaire à des haricots, situés dans le bassin de chaque côté de l'utérus, dans une région appelée la fosse ovarienne.<br> <i>Fonction :</i> leur tâche est de sécréter les ovules, les gamètes femelles et les hormones sexuelles femelles: les œstrogènes et la progestérone.</p>"
+        "Descrizione": "<p><i>Localisation :</i> il y a deux ovaires, de forme similaire à des haricots, situés dans le bassin de chaque côté de l'utérus, dans une région appelée la fosse ovarienne.<br> <i>Fonction :</i> leur tâche est de sécréter les ovules, les gamètes femelles et les hormones sexuelles femelles : les œstrogènes et la progestérone.</p>"
     },
     "Organo_DOTTI_DEFERENTI": {
         "Titolo": "Canal déférent",
@@ -710,7 +710,7 @@ var DB_anatomia = {
     },
     "Organo_PANCREAS": {
         "Titolo": "Pancréas",
-        "Descrizione": "<p><i>Localisation :</i> le pancréas est composé de trois parties distinctes. La tête, la partie la plus grande et la plus épaisse, est en contact avec le duodénum. Le corps, légèrement oblique de bas en haut, est le segment intermédiaire et est situé en avant de l'aorte et de la veine cave. La queue du pancréas est en contact avec la rate et représente la partie terminale effilée.<br> <i>Fonction :</i> le pancréas a une double fonction: endocrine et exocrine. La fonction endocrinienne fait référence à sa capacité à sécréter les hormones qu'elle synthétise dans la circulation sanguine, tandis que la fonction exocrine consiste à produire des enzymes digestives à libérer dans le tube digestif.</p>"
+        "Descrizione": "<p><i>Localisation :</i> le pancréas est composé de trois parties distinctes. La tête, la partie la plus grande et la plus épaisse, est en contact avec le duodénum. Le corps, légèrement oblique de bas en haut, est le segment intermédiaire et est situé en avant de l'aorte et de la veine cave. La queue du pancréas est en contact avec la rate et représente la partie terminale effilée.<br> <i>Fonction :</i> le pancréas a une double fonction : endocrine et exocrine. La fonction endocrinienne fait référence à sa capacité à sécréter les hormones qu'elle synthétise dans la circulation sanguine, tandis que la fonction exocrine consiste à produire des enzymes digestives à libérer dans le tube digestif.</p>"
     },
     "Organo_RENI": {
         "Titolo": "Reins",
@@ -718,7 +718,7 @@ var DB_anatomia = {
     },
     "Organo_URETERE": {
         "Titolo": "Uretère",
-        "Descrizione": "<p><i>Emplacement :</i> l'uretère est un organe pair, composé de canaux tubulaires qui partent de chaque rein et mènent à la vessie. Il comporte trois parties: abdominale, pelvienne et vésicale.<br> <i>Fonction :</i> les uretères transportent l'urine, qui est produite par les reins, vers la vessie.</p>"
+        "Descrizione": "<p><i>Emplacement :</i> l'uretère est un organe pair, composé de canaux tubulaires qui partent de chaque rein et mènent à la vessie. Il comporte trois parties : abdominale, pelvienne et vésicale.<br> <i>Fonction :</i> les uretères transportent l'urine, qui est produite par les reins, vers la vessie.</p>"
     },
     "Organo_SURRENALI": {
         "Titolo": "Glandes surrénales",
@@ -754,11 +754,11 @@ var DB_anatomia = {
     },
     "Organo_LARINGE": {
         "Titolo": "Larynx",
-        "Descrizione": "<p><i>Localisation :</i> le larynx est situé dans la partie médiane du cou, dans la partie supérieure de la région sous-hyoïdienne. Il est constitué d'un squelette cartilagineux attaché à l'os hyoïde.<br> <i>Fonction:</i> le larynx abrite les cordes vocales et régule le passage de l'air dans et hors de la trachée.</p>"
+        "Descrizione": "<p><i>Localisation :</i> le larynx est situé dans la partie médiane du cou, dans la partie supérieure de la région sous-hyoïdienne. Il est constitué d'un squelette cartilagineux attaché à l'os hyoïde.<br> <i>Fonction :</i> le larynx abrite les cordes vocales et régule le passage de l'air dans et hors de la trachée.</p>"
     },
     "Organo_LINGUA": {
         "Titolo": "Langue",
-        "Descrizione": "<p><i>Localisation :</i> la langue est située à l'intérieur de la bouche<br> <i>Fonction:</i> elle est constituée d'une racine, d'une face dorsale (convexe), d'une face inférieure et d'une pointe. La langue est un organe essentiel impliqué dans diverses fonctions, notamment la déglutition, la parole et la perception du goût.</p>"
+        "Descrizione": "<p><i>Localisation :</i> la langue est située à l'intérieur de la bouche<br> <i>Fonction :</i> elle est constituée d'une racine, d'une face dorsale (convexe), d'une face inférieure et d'une pointe. La langue est un organe essentiel impliqué dans diverses fonctions, notamment la déglutition, la parole et la perception du goût.</p>"
     },
     "Organo_OCCHI": {
         "Titolo": "Yeux",

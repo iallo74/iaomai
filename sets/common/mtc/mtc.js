@@ -623,7 +623,7 @@ DB.mtc= {
 				"INT": "KI",
 				"OMS": "K",
 				"ITA": "R",
-				"FRA": "RP",
+				"FRA": "R",
 				"VOLL": "R"
 			},
 			"pinyin": "Zúshàoyīnshènjīng",
@@ -2052,7 +2052,7 @@ DB.mtc= {
 				"INT": "SI",
 				"OMS": "SI",
 				"ITA": "IT",
-				"FRA": "IT",
+				"FRA": "IG",
 				"VOLL": "IT"
 			},
 			"pinyin": "Shǒutàiyángxiǎochángjīng",
@@ -3452,7 +3452,7 @@ DB.mtc= {
 				"INT": "EX",
 				"OMS": "EX",
 				"ITA": "EX",
-				"FRA": "EX",
+				"FRA": "HM",
 				"VOLL": "EX"
 			},
 			"punti": {
