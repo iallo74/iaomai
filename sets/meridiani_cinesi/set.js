@@ -488,7 +488,7 @@ SET = {
 	apriPunto: function( PT_name, ritorno='', el='' ){
 
 		// verifico le autorizzazioni
-		if(!SET.verFreeMeridiani(siglaMeridiano)){
+		if(!SET.verFreeMeridiani(PT_name.split(".")[0])){
 			ALERT(TXT("MsgContSoloPay"),true,true);
 			return;
 		}

@@ -231,6 +231,7 @@ var MODULO_MERIDIANI = { // extend SET
 		if(	DB.login.data.modls.indexOf("CIN")>-1 ||
 			DB.login.data.modls.indexOf("MAS")>-1/*  ||
 			DB.login.data.modls.indexOf("NMK")>-1 */)ret = false;
+		if(!LOGIN.logedin())ret = false;
 		return ret;
 	}
 	

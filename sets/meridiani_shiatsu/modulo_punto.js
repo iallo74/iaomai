@@ -151,9 +151,10 @@ var MODULO_PUNTO = { // extend SET
 		var rp = wCont/370;
 		let bluring = '';
 		let onlyForPro = ''
-		if(SET.verLightVersion() && SET.PUNTI_free.indexOf(siglaMeridiano+"."+nPunto)==-1){
+		//if(SET.verLightVersion() && SET.PUNTI_free.indexOf(siglaMeridiano+"."+nPunto)==-1){
+		if(SET.verLightVersion()){
 			bluring = 'filter: blur(10px);';
-			onlyForPro = '<span style="display: block;z-index: 1;margin-top: -40px;transform: rotate(20deg);background-color: #FC0;width: 140px;text-align: center;line-height: 30px;border-radius: 8px;">Only for PRO version</span>';
+			onlyForPro = '<span>Only for the PRO version</span>';
 		}
 		if(coordZoom.length>1){
 			var pC=coordZoom.split("|");
@@ -470,6 +471,8 @@ var MODULO_PUNTO = { // extend SET
 			!SET.snd.paused && 
 			!SET.snd.ended &&
 			SET.snd.readyState > 2)return;
+		//if((SET.verLightVersion() || !LOGIN.logedin()) && SET.MERIDIANI_free.indexOf(txt.substr(0,2))==-1)txt='onlyPRO';
+		if(SET.verLightVersion() || (!LOGIN.logedin() && SET.MERIDIANI_free.indexOf(txt.substr(0,2))==-1))txt='onlyPRO';
 		SET.snd = new Audio("sets/common/mtc/audio/"+txt+".mp3");
 		SET.snd.play();
 	},

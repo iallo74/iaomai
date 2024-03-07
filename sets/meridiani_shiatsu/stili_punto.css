@@ -10,6 +10,17 @@
 #imgDettPunto{
     max-width: calc(100%);
 }
+#cont_imgDettPunto span{
+	display: block;
+	z-index: 1;
+	margin-top: -40px;
+	transform: rotate(20deg);
+	background-color: #adc3da;/*#FC0;*/
+	width: 140px;
+	text-align: center;
+	line-height: 30px;border-radius: 8px;
+	box-shadow: 0 0 2px rgba(0,0,0,0.3);
+}
 #patologiePunti{
 	margin-top:13px;
 	margin-bottom:13px;

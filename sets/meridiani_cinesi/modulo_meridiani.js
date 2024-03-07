@@ -57,7 +57,8 @@ var MODULO_MERIDIANI = { // extend SET
 				elencoPunti+='<p>'+this.scriviPunto(TS.NomePunto,true,true,__(TS.siglaPunto))+'</p>';
 			}
 			var siglaMeridiano = m;
-			if(m!='EX')siglaMeridiano = SET.convSigla(m);
+			//if(m!='EX')
+			siglaMeridiano = SET.convSigla(m);
 			
 			contElencoMeridiani +=	
 				'<div onMouseEnter="SET.eviMeridiano(\''+m+'\',true);"' +
