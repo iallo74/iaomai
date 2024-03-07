@@ -486,6 +486,14 @@ SET = {
 		controlsM.yEnd=-1;
 	},
 	apriPunto: function( PT_name, ritorno='', el='' ){
+
+		// verifico le autorizzazioni
+		if(!SET.verFreeMeridiani(siglaMeridiano)){
+			ALERT(TXT("MsgContSoloPay"),true,true);
+			return;
+		}
+		// --------------------------
+		
 		if(this.ptSel){
 			var mat=this.MAT.pointOn;
 			if(this.ptSel.userData.nota)mat=this.MAT.pointNote;

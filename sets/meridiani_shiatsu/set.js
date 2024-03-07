@@ -27,7 +27,7 @@ SET = {
 	meridianiOn: false,
 	geometryPallino: null,
 	geometryPallinoTrasp: null,
-	allMeridiansFree: true,
+	allMeridiansFree: false, // sceglie se visualizzare SEMPRE tutti i meridiani nel 3D
 	snd: null,
 	
 	// FUNZIONI
@@ -36,6 +36,7 @@ SET = {
 			localStorage.sistemaMeridiani = "";
 			localStorage.sistemaMeridianiAdd = "";
 		}
+
 		SETS = new THREE.Group();
 		SETS.name = "SETS";
 		
@@ -610,6 +611,21 @@ SET = {
 		return ret;
 	},
 	apriPunto: function( PT_name, ritorno='', el='', gruppo='', btn=null ){
+		
+		// verifico le autorizzazioni
+		
+		/* if(	(!SET.verFreePunti(PT_name) ||
+			(SET.PUNTI_free.indexOf(PT_name)==-1 && !SET.verAttModule())) && !SET.verLightVersion() ){ */
+		let block = (!SET.verFreePunti(PT_name) ||
+					(SET.PUNTI_free.indexOf(PT_name)==-1 && !SET.verAttModule()));
+		if(SET.verLightVersion() && localStorage.sistemaMeridiani!='NMK')block = false
+		if(	block ){
+			ALERT(TXT("MsgContSoloPay"),true,true);
+			SET.chiudiPunto();
+			return;
+		}
+		// --------------------------
+
 		if(localStorage.sistemaMeridiani=='MAS'){
 			var sm = '';
 			if(PT_name.substr(0,2)=='NK')sm = 'NMK';
@@ -1003,11 +1019,12 @@ SET = {
 			}
 		}
 	},
-	accendiMeridiano: function( siglaMeridiano, g=false ){
+	accendiMeridiano: function( siglaMeridiano, g=false, noVer=false ){
 		// verifico le autorizzazioni
 		if(!globals.modello.cartella)return;
-		if(!SET.verFreeMeridiani(siglaMeridiano) && !SET.allMeridiansFree){
-			ALERT(TXT("MsgFunzioneSoloPay"),true,true);
+		if( ((!SET.verFreeMeridiani(siglaMeridiano) && !SET.allMeridiansFree) || 
+			(SET.MERIDIANI_free.indexOf(siglaMeridiano)==-1 && !SET.verAttModule())) && !SET.verLightVersion() ){
+			if(!noVer)ALERT(TXT("MsgFunzioneSoloPay"),true,true);
 			controlsM._MM = true;
 			return;
 		}
@@ -1087,7 +1104,7 @@ SET = {
 				if(MERIDIANI[m].meridianoAcceso){
 					var mer = m.substr(0,2);
 					
-					SET.accendiMeridiano(mer,true);
+					SET.accendiMeridiano(mer,true,true);
 					SET.coloraMeridiano(mer,'','Base');
 				}
 			}
@@ -1270,7 +1287,7 @@ SET = {
 		var result = html.match(re);
 		for(let k in result){
 			var siglaMeridiano=result[k].split("'")[1];
-			SET.accendiMeridiano(siglaMeridiano,true);
+			SET.accendiMeridiano(siglaMeridiano,true,true);
 		}
 	},
 	evidenziaPuntoMod: function( elenco ){
@@ -1688,7 +1705,7 @@ SET = {
 
 	filtraSet: function( togliLoader=false ){
 		var vis = true;
-		if(	DB.login.data.auths.indexOf(globals.set.cartella)==-1 || !LOGIN.logedin())vis = false;
+		if(	(DB.login.data.auths.indexOf(globals.set.cartella)==-1 || !LOGIN.logedin() || !SET.verAttModule()) && !SET.verLightVersion() )vis = false;
 		for(let m in SETS.children){
 			var visMer = vis;
 			if(	SET.MERIDIANI_free.indexOf(SETS.children[m].name.split("_")[1])!=-1 )visMer = true;
@@ -1696,6 +1713,13 @@ SET = {
 			if( SETS.children[m].userData.categoria != localStorage.sistemaMeridiani )visMer = false;
 			if(	SETS.children[m].name.substr(0,2)=='AR' &&  localStorage.sistemaMeridiani=='MAS')visMer = true;
 			SETS.children[m].visible = visMer;
+			if(SETS.children[m].name=='PT_NK'){
+				for(let s in SETS.children[m].children){
+					let siglaPunto = SETS.children[m].children[s].name.replace("_","");
+					let pP = siglaPunto.split(".");
+					SETS.children[m].children[s].visible = SET.PUNTI_free.indexOf(pP[0]+"."+pP[1])>-1 || SET.verAttModule();
+				}
+			}
 		}
 		var ME = document.getElementById("lista_meridiani").getElementsByClassName("listaMeridiani")[0].getElementsByTagName("div");
 		for(let m in ME){
@@ -1743,6 +1767,7 @@ SET = {
 			if(localStorage.sistemaMeridiani)localStorage.sistemaMeridianiAdd = "_"+localStorage.sistemaMeridiani.toLowerCase();
 			else localStorage.sistemaMeridianiAdd = '';
 			SET.filtraMeridiani();
+			SET.componiPatologie();
 		},t2,sistema);
 		setTimeout(function(loader){
 			SET.filtraSet(loader);

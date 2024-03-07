@@ -42,7 +42,8 @@ var LOGIN = {
 				"password_pazienti": "",
 				"valuta": "EUR",
 				"sistema_misure": "",
-				"auths": []
+				"auths": [],
+				"modls": []
 			}
 		};
 		localPouchDB.setItem(MD5("DB.login"), IMPORTER.COMPR(DB.login));
@@ -278,7 +279,11 @@ var LOGIN = {
 						DB.login.data.TOKEN='';
 						DB.login.data.ExpDate=0;
 						if(!DB.login.data.auths)DB.login.data.auths = [];
-						if(typeof(DB.login.data)=='undefined')DB.login.data.auths=[];
+						if(!DB.login.data.modls)DB.login.data.modls = [];
+						if(typeof(DB.login.data)=='undefined'){
+							DB.login.data.auths=[];
+							DB.login.data.modls=[];
+						}
 						LOGIN.getDB();
 					}
 				}else{
@@ -533,6 +538,16 @@ var LOGIN = {
 						PURCHASES.updateProducts();
 					}
 				}
+				// se ci sono moduli nuovi
+				if(__(elenco.modls,false)){
+					var modified = false;
+					DB.login.data.modls.sort();
+					elenco.modls.sort();
+					if(!(JSON.stringify(DB.login.data.modls) === JSON.stringify(elenco.modls))){
+						DB.login.data.modls = elenco.modls;
+						//PURCHASES.updateProducts();
+					}
+				}
 			}
 		}
 	},
@@ -559,6 +574,7 @@ var LOGIN = {
 		DB.login.data.TOKEN = '';
 		DB.login.data.ExpDate = 0;
 		DB.login.data.auths = [];
+		DB.login.data.modls = [];
 			
 		LOGIN.scriviUtente();
 		

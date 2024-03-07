@@ -5,22 +5,12 @@ var MODULO_TEORIA = { // extend SET
 		"0_0",
 		"0_1",
 		"0_2",
-		"0_3",
-		"0_4",
-		"0_5",
-		"0_6",
-		"0_7",
-		"0_8",
-		"0_9",
-		"0_10",
-		"1_3",
+		/*"1_0",
 		"2_0",
-		"3_0",
-		"4_0",
-		"4_1",
-		"4_2",
+		"3_0",*/
 		"4_3",
-		"4_4"
+		"6_0",
+		"6_1"
 	],
 	
 	aggiungiPuntiParticolari: function(){
@@ -64,6 +54,9 @@ var MODULO_TEORIA = { // extend SET
 					
 					// verifico le autorizzazioni
 					var addLock = 	(!SET.verFreeTeoria(p+"_"+t))? ' lockedItem' : '';
+					if(	(DB.login.data.modls.indexOf("CIN")==-1 && p==1) ||
+						(DB.login.data.modls.indexOf("NMK")==-1 && p==2) ||
+						(DB.login.data.modls.indexOf("MAS")==-1 && p==3) )addLock = ' lockedItem';
 					// --------------------------
 					TitoloTeoria = DB.set.teoria[p].contenuti[t].TitoloTeoria;
 					funct = 'Approfondimento';
@@ -90,7 +83,11 @@ var MODULO_TEORIA = { // extend SET
 	caricaApprofondimento: function( p, t, btn ){
 		// apre la scheda di un approfondimento
 		// verifico le autorizzazioni
-		if(!SET.verFreeTeoria(p+"_"+t)){
+		var pass = !SET.verFreeTeoria(p+"_"+t);
+		if(	(DB.login.data.modls.indexOf("CIN")==-1 && p==1) ||
+			(DB.login.data.modls.indexOf("NMK")==-1 && p==2) ||
+			(DB.login.data.modls.indexOf("MAS")==-1 && p==3) )pass = true;
+		if( pass ){
 			ALERT(TXT("MsgContSoloPay"),true,true);
 			return;
 		}

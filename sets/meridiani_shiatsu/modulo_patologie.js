@@ -163,7 +163,8 @@ var MODULO_PATOLOGIE = { // extend SET
 					if(cin)addSys += ' patsCIN';
 					
 					// verifico le autorizzazioni
-					var addLock =	(!SET.verFreePatologia(DB.set.patologie[p].siglaPatologia)) ? ' lockedItem' : '';
+					var addLock =	(	!SET.verFreePatologia(DB.set.patologie[p].siglaPatologia) || (SET.PATOLOGIE_free.indexOf(DB.set.patologie[p].siglaPatologia)==-1 && !SET.verAttModule()) ) ? ' lockedItem' : '';
+					if(SET.verAttModule())addLock = '';
 					// --------------------------
 					
 					vuota = false;
@@ -185,8 +186,13 @@ var MODULO_PATOLOGIE = { // extend SET
 	apriPatologia: function( n, btn ){
 		// apre la scheda della patologia
 		var siglaPatologia = DB.set.patologie[n].siglaPatologia;
+		
 		// verifico le autorizzazioni
-		if(!SET.verFreePatologia(siglaPatologia)){
+		var pass = false;
+		if(	!SET.verFreePatologia(siglaPatologia) ||
+			(SET.PATOLOGIE_free.indexOf(siglaPatologia)==-1 && !SET.verAttModule()) )pass = true;
+		if(SET.verAttModule())pass = false;
+		if(	pass ){
 			ALERT(TXT("MsgContSoloPay"),true,true);
 			return;
 		}
@@ -212,7 +218,7 @@ var MODULO_PATOLOGIE = { // extend SET
 		var btnAdd = 	'';/*'<div class="p_paz_ref_menu" onClick="REF.open(\'sets.meridiani_shiatsu.pathologies\')">' +
 							TXT("ReferenceGuide") +
 						'</div>';*/
-						
+			
 		SCHEDA.caricaScheda(	titolo,
 								html,
 								'SET.annullaEvidenziaPunto();SET.spegniMeridiani(true);',

@@ -1,7 +1,7 @@
 
 var MODULO_MERIDIANI = { // extend SET
 	
-	MERIDIANI_free: [ "LR" ],
+	MERIDIANI_free: [ "LR", "NK" ],
 	
 	componiMeridiani: function(){
 		for(let m in DB.set.meridiani){
@@ -42,7 +42,7 @@ var MODULO_MERIDIANI = { // extend SET
 					
 				
 				// verifico le autorizzazioni
-				var addLock =	(!SET.verFreeMeridiani(m)) ? ' lockedItem' : '';
+				var addLock =	(	(!SET.verFreeMeridiani(m) || !SET.verAttModule()) && !SET.verLightVersion() ) ? ' lockedItem' : '';
 				// --------------------------
 				
 				if(m=='KI' || m=='LR' || m=='SP' || m=='HT' || m=='PC' || m=='LU' || m=='CV'){
@@ -64,6 +64,9 @@ var MODULO_MERIDIANI = { // extend SET
 						let nPunto = keys[i];
 						var TS = DB.set.meridiani[m].punti[nPunto];
 						var elemento = (!__(DB.set.meridiani[m].punti[nPunto].nascosto,false)) ? '<p>'+this.scriviPunto(TS.NomePunto,true,true,__(TS.siglaPunto),m)+'</p>' : "";
+						if(	(!SET.verFreePunti(m+"."+nPunto) || (SET.PUNTI_free.indexOf(m+"."+nPunto)==-1 && !SET.verAttModule())) && !SET.verLightVersion() ){
+							elemento = elemento.replace("pallinoPat","pallinoPat lockedItem");
+						}
 						elencoPunti += elemento;
 					}
 					
@@ -98,7 +101,8 @@ var MODULO_MERIDIANI = { // extend SET
 							
 							// verifico le autorizzazioni
 						
-							if(!SET.verFreePunti("NK."+nPunto)){
+							if(	!SET.verFreePunti("NK."+nPunto) ||
+								(SET.PUNTI_free.indexOf("NK."+nPunto)==-1 && !SET.verAttModule()) ){
 								pulsantePunto = pulsantePunto.replace("pallinoPat","pallinoPat lockedItem");
 							}
 							// --------------------------
@@ -218,6 +222,16 @@ var MODULO_MERIDIANI = { // extend SET
 	},
 	verFreePunti: function( siglaPunto ){
 		return !(SET.PUNTI_free.indexOf(siglaPunto)==-1 && (DB.login.data.auths.indexOf(globals.set.cartella)==-1 || !LOGIN.logedin()));
+	},
+	verAttModule: function(){
+		return DB.login.data.modls.indexOf(localStorage.sistemaMeridiani==''?'CIN':localStorage.sistemaMeridiani)>-1;
+	},
+	verLightVersion: function(){
+		let ret = DB.login.data.modls.indexOf("light")>-1;
+		if(	DB.login.data.modls.indexOf("CIN")>-1 ||
+			DB.login.data.modls.indexOf("MAS")>-1/*  ||
+			DB.login.data.modls.indexOf("NMK")>-1 */)ret = false;
+		return ret;
 	}
 	
 }

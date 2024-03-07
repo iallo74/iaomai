@@ -11,8 +11,10 @@ var MODULO_PUNTO = { // extend SET
 		// apre la scheda di un punto
 		
 		// verifico le autorizzazioni
-		//if(!SET.verFreeMeridiani(siglaMeridiano)){
-		if(!SET.verFreePunti(siglaMeridiano+"."+nPunto)){
+		let block = (!SET.verFreePunti(siglaMeridiano+"."+nPunto) ||
+					(SET.PUNTI_free.indexOf(siglaMeridiano+"."+nPunto)==-1 && !SET.verAttModule()));
+		if(SET.verLightVersion() && localStorage.sistemaMeridiani!='NMK')block = false
+		if(	block ){
 			ALERT(TXT("MsgContSoloPay"),true,true);
 			SET.chiudiPunto();
 			return;
@@ -116,6 +118,7 @@ var MODULO_PUNTO = { // extend SET
 		
 		HTML += DB.set.meridiani[siglaMeridiano].punti[nPunto].AzioniPunto;
 		
+		let imgDettaglio='';
 		// elenco le patologie incluse
 		var elenco = [];
 		for(let p in DB.set.patologie){
@@ -138,8 +141,6 @@ var MODULO_PUNTO = { // extend SET
 			HTML += '</div>';
 		}
 		
-		
-		imgDettaglio='';
 		posPunti='';
 		var wCont = 370;
 		var marginLeft = 0;
@@ -148,14 +149,22 @@ var MODULO_PUNTO = { // extend SET
 			//marginLeft = 20;
 		}
 		var rp = wCont/370;
+		let bluring = '';
+		let onlyForPro = ''
+		if(SET.verLightVersion() && SET.PUNTI_free.indexOf(siglaMeridiano+"."+nPunto)==-1){
+			bluring = 'filter: blur(10px);';
+			onlyForPro = '<span style="display: block;z-index: 1;margin-top: -40px;transform: rotate(20deg);background-color: #FC0;width: 140px;text-align: center;line-height: 30px;border-radius: 8px;">Only for PRO version</span>';
+		}
 		if(coordZoom.length>1){
 			var pC=coordZoom.split("|");
 			for(let pu in pC){
 				pC2=pC[pu].split(",");
-				posPunti+='<img src="sets/common/mtc/img/zoom/punto.png" width="'+parseInt(43*rp)+'" height="'+parseInt(40*rp)+'" style="position:absolute;left:'+parseInt((pC2[0]-7)*rp-marginLeft)+'px;top:'+parseInt((pC2[1]-7)*rp)+'px;">';
+				posPunti+='<img src="sets/common/mtc/img/zoom/punto.png" width="'+parseInt(43*rp)+'" height="'+parseInt(40*rp)+'" style="position:absolute;left:'+parseInt((pC2[0]-7)*rp-marginLeft)+'px;top:'+parseInt((pC2[1]-7)*rp)+'px;'+bluring+'">';
 			}
 		}
-		if(imgZoom)imgDettaglio='<div id="cont_imgDettPunto" style="width:'+wCont+'px;"><img src="sets/common/mtc/img/zoom/'+imgZoom+'" border="0" width="'+wCont+'" id="imgDettPunto">'+posPunti+'</div>';
+		if(imgZoom){
+			imgDettaglio = '<div id="cont_imgDettPunto" style="width:'+wCont+'px;"><img src="sets/common/mtc/img/zoom/'+imgZoom+'" border="0" width="'+wCont+'" id="imgDettPunto" style="'+bluring+'">'+posPunti+onlyForPro+'</div>';
+		}
 		
 		// aggiungo contenuto custom
 		HTML = CUSTOMS.addContent("meridiani_"+siglaMeridiano+"_"+nPunto,HTML);
