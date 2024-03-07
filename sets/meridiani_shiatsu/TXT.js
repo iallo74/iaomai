@@ -211,8 +211,8 @@ DB.TXT.set = {
 	Approfondimenti: {
 		ita: "Approfondimenti",
 		eng: "In-depth Studies",
-		 esp: "Más detalles",
-		fra: "Informations complémentaires",
+		esp: "Profundizaciones",
+		fra: "Approfondissements",
 		por: "Mais detalhes",
 		deu: "Weitere Details"
 	},
