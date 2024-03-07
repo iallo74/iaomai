@@ -15,7 +15,7 @@ var MODULO_PUNTO = { // extend SET
 					(SET.PUNTI_free.indexOf(siglaMeridiano+"."+nPunto)==-1 && !SET.verAttModule()));
 		if(SET.verLightVersion() && localStorage.sistemaMeridiani!='NMK')block = false
 		if(	block ){
-			ALERT(TXT("MsgContSoloPay"),true,true);
+			ALERT(TXT("MsgContSoloLicensed"),true,true);
 			SET.chiudiPunto();
 			return;
 		}

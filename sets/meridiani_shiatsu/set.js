@@ -620,7 +620,7 @@ SET = {
 					(SET.PUNTI_free.indexOf(PT_name)==-1 && !SET.verAttModule()));
 		if(SET.verLightVersion() && localStorage.sistemaMeridiani!='NMK')block = false
 		if(	block ){
-			ALERT(TXT("MsgContSoloPay"),true,true);
+			ALERT(TXT("MsgContSoloLicensed"),true,true);
 			SET.chiudiPunto();
 			return;
 		}
@@ -1178,7 +1178,7 @@ SET = {
 		
 		// verifico le autorizzazioni
 		if(!SET.verFreeMeridiani(siglaMeridiano)){
-			ALERT(TXT("MsgContSoloPay"),true,true);
+			ALERT(TXT("MsgContSoloLicensed"),true,true);
 			return;
 		}
 		// --------------------------

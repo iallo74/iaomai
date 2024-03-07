@@ -4734,6 +4734,14 @@ DB.TXT = {
             por: "Você não pode visualizar este conteúdo com a versão gratuita.",
             deu: "Sie können diesen Inhalt nicht mit der kostenlosen Version anzeigen."
         },
+        MsgContSoloLicensed: {
+            ita: "Con la tua licenza non è possibile visualizzare questo contenuto.",
+            eng: "With your license you cannot view this content.",
+            esp: "Con su licencia no puede ver este contenido.",
+            fra: "Avec votre licence, vous ne pouvez pas voir ce contenu.",
+            por: "Com sua licença você não pode ver este conteúdo.",
+            deu: "Mit Ihrer Lizenz können Sie diesen Inhalt nicht anzeigen."
+        },
         MsgModelloSoloPay: {
             ita: "Con la versione gratuita è possibile visualizzare solo il manichino maschile.",
             eng: "With the free version you can only view the male 3D model.",

@@ -88,7 +88,7 @@ var MODULO_TEORIA = { // extend SET
 			(DB.login.data.modls.indexOf("NMK")==-1 && p==2) ||
 			(DB.login.data.modls.indexOf("MAS")==-1 && p==3) )pass = true;
 		if( pass ){
-			ALERT(TXT("MsgContSoloPay"),true,true);
+			ALERT(TXT("MsgContSoloLicensed"),true,true);
 			return;
 		}
 		// --------------------------
