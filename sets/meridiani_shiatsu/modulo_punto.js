@@ -15,7 +15,8 @@ var MODULO_PUNTO = { // extend SET
 					(SET.PUNTI_free.indexOf(siglaMeridiano+"."+nPunto)==-1 && !SET.verAttModule()));
 		if(SET.verLightVersion() && localStorage.sistemaMeridiani!='NMK')block = false
 		if(	block ){
-			ALERT(TXT("MsgContSoloLicensed"),true,true);
+			if(SET.verLicenses())ALERT(TXT("MsgContSoloLicensed"));
+			else ALERT(TXT("MsgContSoloPay"),true,true);
 			SET.chiudiPunto();
 			return;
 		}
@@ -150,11 +151,14 @@ var MODULO_PUNTO = { // extend SET
 		}
 		var rp = wCont/370;
 		let bluring = '';
-		let onlyForPro = ''
+		let addNo = '';
+		//let onlyForPro = ''
 		//if(SET.verLightVersion() && SET.PUNTI_free.indexOf(siglaMeridiano+"."+nPunto)==-1){
 		if(SET.verLightVersion()){
 			bluring = 'filter: blur(10px);';
-			onlyForPro = '<span>Only for the PRO version</span>';
+			//onlyForPro = '<span>Only for the PRO version</span>';
+			let txtNo = (SET.verLicenses())?TXT("MsgContSoloLicensed"):TXT("MsgContSoloPay");
+			addNo = ' title="'+htmlEntities(txtNo)+'" onClick="ALERT(\''+txtNo+'\');"';
 		}
 		if(coordZoom.length>1){
 			var pC=coordZoom.split("|");
@@ -164,7 +168,7 @@ var MODULO_PUNTO = { // extend SET
 			}
 		}
 		if(imgZoom){
-			imgDettaglio = '<div id="cont_imgDettPunto" style="width:'+wCont+'px;"><img src="sets/common/mtc/img/zoom/'+imgZoom+'" border="0" width="'+wCont+'" id="imgDettPunto" style="'+bluring+'">'+posPunti+onlyForPro+'</div>';
+			imgDettaglio = '<div id="cont_imgDettPunto" style="width:'+wCont+'px;"><img src="sets/common/mtc/img/zoom/'+imgZoom+'" border="0" width="'+wCont+'" id="imgDettPunto" style="'+bluring+'"'+addNo+'>'+posPunti/*+onlyForPro*/+'</div>';
 		}
 		
 		// aggiungo contenuto custom
@@ -472,7 +476,12 @@ var MODULO_PUNTO = { // extend SET
 			!SET.snd.ended &&
 			SET.snd.readyState > 2)return;
 		//if((SET.verLightVersion() || !LOGIN.logedin()) && SET.MERIDIANI_free.indexOf(txt.substr(0,2))==-1)txt='onlyPRO';
-		if(SET.verLightVersion() || (!LOGIN.logedin() && SET.MERIDIANI_free.indexOf(txt.substr(0,2))==-1))txt='onlyPRO';
+		if(SET.verLightVersion() || (!LOGIN.logedin() && SET.MERIDIANI_free.indexOf(txt.substr(0,2))==-1)){
+			if(SET.verLicenses())ALERT(TXT("MsgContSoloLicensed"));
+			else ALERT(TXT("MsgContSoloPay"),true,true);
+			return;
+			//txt='onlyPRO';
+		}
 		SET.snd = new Audio("sets/common/mtc/audio/"+txt+".mp3");
 		SET.snd.play();
 	},

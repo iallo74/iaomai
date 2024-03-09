@@ -193,7 +193,8 @@ var MODULO_PATOLOGIE = { // extend SET
 			(SET.PATOLOGIE_free.indexOf(siglaPatologia)==-1 && !SET.verAttModule()) )pass = true;
 		if(SET.verAttModule())pass = false;
 		if(	pass ){
-			ALERT(TXT("MsgContSoloLicensed"),true,true);
+			if(SET.verLicenses())ALERT(TXT("MsgContSoloLicensed"));
+			else ALERT(TXT("MsgContSoloPay"),true,true);
 			return;
 		}
 		// --------------------------
