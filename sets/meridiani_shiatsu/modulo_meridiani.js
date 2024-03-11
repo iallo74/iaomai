@@ -101,8 +101,8 @@ var MODULO_MERIDIANI = { // extend SET
 							
 							// verifico le autorizzazioni
 						
-							if(	!SET.verFreePunti("NK."+nPunto) ||
-								(SET.PUNTI_free.indexOf("NK."+nPunto)==-1 && !SET.verAttModule()) ){
+							if(	(!SET.verFreePunti("NK."+nPunto) ||
+								(SET.PUNTI_free.indexOf("NK."+nPunto)==-1 && !SET.verAttModule())) && !SET.verLightVersion() ){
 								pulsantePunto = pulsantePunto.replace("pallinoPat","pallinoPat lockedItem");
 							}
 							// --------------------------

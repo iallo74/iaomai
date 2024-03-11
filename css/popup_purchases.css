@@ -5,8 +5,8 @@
 #purchases{
 	width:340px;
 	margin-left:-170px;
-	height:460px;
-	margin-top:-230px;
+	height:540px;
+	margin-top:-270px;
 }
 #labelPurchases{
 	background-image:url(../img/ico_purchasesN.png);
@@ -74,6 +74,7 @@
 }
 #prList > div.acqOk{
 	width: 100%;
+	padding-top: 9px;
 }
 #prList > div.acqOk:hover{
     background-color:rgba(0,0,0,0.05);
@@ -98,7 +99,9 @@
 #prList > div > div{
     display:inline-block;
     vertical-align:middle;
-    line-height:50px;
+}
+#prList > div > div:not(.module){
+    line-height:32px;
 }
 #prList > div > div.tit{
     width:calc(100% - 156px);
@@ -106,7 +109,7 @@
     overflow:hidden;
     text-overflow:ellipsis;
     white-space:nowrap;
-	font-weight: bold;
+	/* font-weight: bold; */
 }
 #prList > div > div.tit img{
     width:32px;
@@ -114,6 +117,9 @@
     vertical-align:middle;
     margin-left:-5px;
     margin-right:5px;
+}
+#prList > div > div.tit.module img{
+	float:left;
 }
 #prList > div:not(.acqOk) > div.tit{
     width:calc(100% - 142px);
@@ -153,7 +159,7 @@
 #titLicenze{
     height:50px;
     line-height:40px;
-    font-size:var(--font-20-5);
+    font-size:20px;/* var(--font-20-5); */
     font-weight:bold;
 }
 #titLicenze img{

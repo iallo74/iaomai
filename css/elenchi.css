@@ -79,6 +79,18 @@ body:not(.smart) #impostazioniArchivi,
     cursor: pointer;
     opacity: 0.5;
 }
+#licenzeSet{
+	float: right;
+    display: inline-block;
+    vertical-align: middle;
+    width: 32px;
+    height: 32px;
+    background-image: url("../img/ico_modulesN.png");
+	background-repeat: no-repeat;
+	background-position: left center;
+    cursor: pointer;
+    opacity: 0.5;
+}
 .smart #elenchi #impostazioniSet,
 .smart #elenchi #impostazioniArchivi{
 	background-size: auto 32px;

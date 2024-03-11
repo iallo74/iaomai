@@ -13,7 +13,8 @@ var MODULO_PUNTO = { // extend SET
 		// verifico le autorizzazioni
 		let block = (!SET.verFreePunti(siglaMeridiano+"."+nPunto) ||
 					(SET.PUNTI_free.indexOf(siglaMeridiano+"."+nPunto)==-1 && !SET.verAttModule()));
-		if(SET.verLightVersion() && localStorage.sistemaMeridiani!='NMK')block = false
+		//if(SET.verLightVersion() && localStorage.sistemaMeridiani!='NMK')block = false;
+		if(SET.verLightVersion())block = false;
 		if(	block ){
 			if(SET.verLicenses())ALERT(TXT("MsgContSoloLicensed"));
 			else ALERT(TXT("MsgContSoloPay"),true,true);
@@ -159,6 +160,11 @@ var MODULO_PUNTO = { // extend SET
 			//onlyForPro = '<span>Only for the PRO version</span>';
 			let txtNo = (SET.verLicenses())?TXT("MsgContSoloLicensed"):TXT("MsgContSoloPay");
 			addNo = ' title="'+htmlEntities(txtNo)+'" onClick="ALERT(\''+txtNo+'\');"';
+
+			HTML = HTML.replace(/class="dis_ric"/g,'class="dis_ric bluring"'+addNo);
+			HTML = HTML.replace(/class="dis_ter"/g,'class="dis_ter bluring"'+addNo);
+			HTML = HTML.replace(/class="dis_prs"/g,'class="dis_prs bluring"'+addNo);
+
 		}
 		if(coordZoom.length>1){
 			var pC=coordZoom.split("|");

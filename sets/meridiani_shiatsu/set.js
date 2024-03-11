@@ -234,13 +234,14 @@ SET = {
 							'</span></i><i class="elMenu" id="impostazioniSet" onClick="MENU.visImpset();" title="'+htmlEntities(TXT("ImpostazioniSet"))+'"><span>' +
 								htmlEntities(TXT("ImpostazioniSet")) +
 							'</span></i>' +
-							'<i class="elMenu" id="help_set" onClick="GUIDA.visFumetto(\'guida_set\',true,true);">?</i></span>';
+							'<i class="elMenu" id="help_set" onClick="GUIDA.visFumetto(\'guida_set\',true,true);">?</i>' +
+							'<i class="elMenu" id="licenzeSet" onClick=""></i></span>';
 		var contElenco = '';
 		
 		contPulsanti += '<div id="pulsante_modello" onClick="cambiaModello(\'donna\');">'+TXT("ApriModello3D")+'</div>';
 
 		// scelta sistema
-		contPulsanti += '<p class="sistemaMeridiani_p"><span class="selectCambioMeridiani"><i>'+htmlEntities(TXT("SistemaMeridiani"))+':</i><select class="sceltaMeridianiElenco" onChange="SET.cambiaSistema(this.value,true);">'+
+		contPulsanti += '<p class="sistemaMeridiani_p"><span class="selectCambioMeridiani"><i>'+htmlEntities(TXT("SistemaMeridiani"))+':</i><select id="sceltaMeridianiElenco1" class="sceltaMeridianiElenco" onChange="SET.cambiaSistema(this.value,true);">'+
 		'  <option value=""';
 		if(localStorage.sistemaMeridiani == '' || !__(localStorage.sistemaMeridiani) )contPulsanti += ' SELECTED';
 		contPulsanti += 	'>'+htmlEntities(TXT("MeridianiCinesi"))+'</option>' +
@@ -360,6 +361,25 @@ SET = {
 		if(smartMenu)overInterfaccia=true;
 		SET.riapriPunto();
 		CUSTOMS._init();
+
+		// verifico che il sistema sia un modulo in possesso
+		if(!SET.verAttModule() && !SET.verLightVersion()){
+			var select = document.getElementById("sceltaMeridianiElenco1");
+			let n = -1;
+			switch(DB.login.data.modls[0]){
+				case "CIN":
+					n = 0;
+					break;
+				case "MAS":
+					n = 1;
+					break;
+				case "NMK":
+					n = 2;
+					break;
+			}
+			select.selectedIndex =  n;
+			SET.cambiaSistema(select.value,true)
+		}
 		
 		/*
 		Decommentare per salvare in localSorage.POS la posizione del manichino
@@ -618,7 +638,8 @@ SET = {
 			(SET.PUNTI_free.indexOf(PT_name)==-1 && !SET.verAttModule())) && !SET.verLightVersion() ){ */
 		let block = (!SET.verFreePunti(PT_name) ||
 					(SET.PUNTI_free.indexOf(PT_name)==-1 && !SET.verAttModule()));
-		if(SET.verLightVersion() && localStorage.sistemaMeridiani!='NMK')block = false
+		//if(SET.verLightVersion() && localStorage.sistemaMeridiani!='NMK')block = false
+		if(SET.verLightVersion())block = false;
 		if(	block ){
 			if(SET.verLicenses())ALERT(TXT("MsgContSoloLicensed"));
 			else ALERT(TXT("MsgContSoloPay"),true,true);
@@ -1025,7 +1046,7 @@ SET = {
 		if(!globals.modello.cartella)return;
 		if( ((!SET.verFreeMeridiani(siglaMeridiano) && !SET.allMeridiansFree) || 
 			(SET.MERIDIANI_free.indexOf(siglaMeridiano)==-1 && !SET.verAttModule())) && !SET.verLightVersion() ){
-			if(!noVer)ALERT(TXT("MsgFunzioneSoloPay"),true,true);
+			if(!noVer && !DB.login.data.modls.length)ALERT(TXT("MsgFunzioneSoloPay"),true,true);
 			controlsM._MM = true;
 			return;
 		}
@@ -1708,6 +1729,7 @@ SET = {
 	filtraSet: function( togliLoader=false ){
 		var vis = true;
 		if(	(DB.login.data.auths.indexOf(globals.set.cartella)==-1 || !LOGIN.logedin() || !SET.verAttModule()) && !SET.verLightVersion() )vis = false;
+		
 		for(let m in SETS.children){
 			var visMer = vis;
 			if(	SET.MERIDIANI_free.indexOf(SETS.children[m].name.split("_")[1])!=-1 )visMer = true;
@@ -1719,7 +1741,9 @@ SET = {
 				for(let s in SETS.children[m].children){
 					let siglaPunto = SETS.children[m].children[s].name.replace("_","");
 					let pP = siglaPunto.split(".");
-					SETS.children[m].children[s].visible = SET.PUNTI_free.indexOf(pP[0]+"."+pP[1])>-1 || SET.verAttModule();
+					SETS.children[m].children[s].visible = 	SET.PUNTI_free.indexOf(pP[0]+"."+pP[1])>-1 || 
+															SET.verAttModule() || 
+															SET.verLightVersion();
 				}
 			}
 		}

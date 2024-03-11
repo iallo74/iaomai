@@ -905,9 +905,9 @@ var PAZIENTI_TRATTAMENTI = {
 	caricaDettagliSet: function(){ // carica i dettagli trattamento dei singoli set
 		// PUNTI
 		var HTML = '';
-		var html_caricaPunti = '<div class="labelModificaCon">'+htmlEntities(TXT("ModificaCon"))+'<br><span onClick="caricaSet(\'meridiani_cinesi\',this);"><img src="sets/meridiani_cinesi/img/logoNero.png" width="25" height="25"> AcupointsMap</span> o <span onClick="caricaSet(\'meridiani_shiatsu\',this);"><img src="sets/meridiani_shiatsu/img/logoNero.png" width="25" height="25"> ShiatsuMap</span></div>';
+		var html_licenzaNonPermette = '<div class="labelModificaCon">'+htmlEntities(TXT("LicenzaNonPermette"))+'</div>';
 		if( globals.set.cartella == 'meridiani_cinesi' ||
-			globals.set.cartella == 'meridiani_shiatsu' ){
+			(globals.set.cartella == 'meridiani_shiatsu' && (LOGIN.verModule("CIN") || LOGIN.verModule("light"))) ){
 			HTML+=
 				'	<div id="p_add_dett"' +
 				'		 class="noPrint">' +
@@ -917,15 +917,21 @@ var PAZIENTI_TRATTAMENTI = {
 							htmlEntities(TXT("AggiungiPunti")) +
 				'		</div>' +
 				'	</div>';
+		}else if(LOGIN.logedin() && (LOGIN.verModule("CIN") || LOGIN.verAuth('meridiani_cinesi'))){
+			HTML += '<div class="labelModificaCon">'+htmlEntities(TXT("ModificaCon"))+'<br>';
+			if(LOGIN.verAuth('meridiani_cinesi'))HTML += '<span onClick="caricaSet(\'meridiani_cinesi\',this);"><img src="sets/meridiani_cinesi/img/logoNero.png" width="25" height="25"> AcupointsMap</span>';
+			if(LOGIN.verModule("CIN") && LOGIN.verAuth('meridiani_cinesi'))HTML += ' o ';
+			if(LOGIN.verModule("CIN"))HTML += '<span onClick="caricaSet(\'meridiani_shiatsu\',this);"><img src="sets/meridiani_shiatsu/img/logoNero.png" width="25" height="25"> ShiatsuMap</span>';
+			HTML += '</div>';
 		}else{
-			HTML += html_caricaPunti;
+			HTML += html_licenzaNonPermette;
 		}
 		document.getElementById("tratt_btns_punti").innerHTML = HTML;
 		PAZIENTI.caricaPuntiTrattamento();
 		
 		// PUNTI NAMIKOSHI
 		var HTML = '';
-		if( globals.set.cartella == 'meridiani_shiatsu' ){
+		if( globals.set.cartella == 'meridiani_shiatsu' && (LOGIN.verModule("NMK") || LOGIN.verModule("light"))){
 			HTML+=
 				'	<div id="p_add_dett"' +
 				'		 class="noPrint">' +
@@ -935,8 +941,10 @@ var PAZIENTI_TRATTAMENTI = {
 							htmlEntities(TXT("AggiungiPunti")) +
 				'		</div>' +
 				'	</div>';
-		}else{
+		}else if(LOGIN.logedin() && (LOGIN.verModule("NMK") || LOGIN.verModule("light"))){
 			HTML += '<div class="labelModificaCon">'+htmlEntities(TXT("ModificaCon"))+'<br><span onClick="caricaSet(\'meridiani_shiatsu\',this);"><img src="sets/meridiani_shiatsu/img/logoNero.png" width="25" height="25"> ShiatsuMap</span></div>';
+		}else{
+			HTML += html_licenzaNonPermette;
 		}
 		document.getElementById("tratt_btns_namikoshi").innerHTML = HTML;
 		PAZIENTI.caricaNamikoshiTrattamento();
@@ -944,7 +952,7 @@ var PAZIENTI_TRATTAMENTI = {
 		// MERIDIANI
 		var HTML = '';
 		if( globals.set.cartella == 'meridiani_cinesi' || 
-			globals.set.cartella == 'meridiani_shiatsu' ){
+			(globals.set.cartella == 'meridiani_shiatsu' && (LOGIN.verModule("CIN") || LOGIN.verModule("MAS") || LOGIN.verModule("light"))) ){
 			HTML+=
 				'	<div id="p_add_dett">' +
 				'		<div id="grpMrd"' +
@@ -953,8 +961,14 @@ var PAZIENTI_TRATTAMENTI = {
 							htmlEntities(TXT("AggiungiMeridiani")) +
 				'		</div>' +
 				'	</div>';
+		}else if(LOGIN.logedin() && (LOGIN.verModule("CIN") || LOGIN.verModule("MAS") || LOGIN.verAuth('meridiani_cinesi'))){
+			HTML += '<div class="labelModificaCon">'+htmlEntities(TXT("ModificaCon"))+'<br>';
+			if(LOGIN.verAuth('meridiani_cinesi'))HTML += '<span onClick="caricaSet(\'meridiani_cinesi\',this);"><img src="sets/meridiani_cinesi/img/logoNero.png" width="25" height="25"> AcupointsMap</span>';
+			if((LOGIN.verModule("CIN") || LOGIN.verModule("MAS")) && LOGIN.verAuth('meridiani_cinesi'))HTML += ' o ';
+			if(LOGIN.verModule("CIN") || LOGIN.verModule("MAS"))HTML += '<span onClick="caricaSet(\'meridiani_shiatsu\',this);"><img src="sets/meridiani_shiatsu/img/logoNero.png" width="25" height="25"> ShiatsuMap</span>';
+			HTML += '</div>';
 		}else{
-			HTML += html_caricaPunti;
+			HTML += html_licenzaNonPermette;
 		}
 		document.getElementById("tratt_btns_meridiani").innerHTML = HTML;
 		PAZIENTI.caricaMeridianiTrattamento();
@@ -971,8 +985,10 @@ var PAZIENTI_TRATTAMENTI = {
 							htmlEntities(TXT("AggiungiPunti")) +
 				'		</div>' +
 				'	</div>';
-		}else{
+		}else if(LOGIN.logedin() && LOGIN.verAuth('auricologia')){
 			HTML += '<div class="labelModificaCon">'+htmlEntities(TXT("ModificaCon"))+'<br><span onClick="caricaSet(\'auricologia\',this);"><img src="sets/auricologia/img/logoNero.png" width="25" height="25"> AuriculoMap</span></div>';
+		}else{
+			HTML += html_licenzaNonPermette;
 		}
 		document.getElementById("tratt_btns_auriculo").innerHTML = HTML;
 		PAZIENTI.caricaAuriculoTrattamento();
@@ -989,8 +1005,10 @@ var PAZIENTI_TRATTAMENTI = {
 							htmlEntities(TXT("AggiungiAree")) +
 				'		</div>' +
 				'	</div>';
-		}else{
+		}else if(LOGIN.logedin() && LOGIN.verAuth('reflessologia_plantare')){
 			HTML += '<div class="labelModificaCon">'+htmlEntities(TXT("ModificaCon"))+'<br><span onClick="caricaSet(\'reflessologia_plantare\',this);"><img src="sets/reflessologia_plantare/img/logoNero.png" width="25" height="25"> ReflexologyMap</span></div>';
+		}else{
+			HTML += html_licenzaNonPermette;
 		}
 		document.getElementById("tratt_btns_reflex").innerHTML = HTML;
 		PAZIENTI.caricaReflexTrattamento();

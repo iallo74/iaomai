@@ -1074,6 +1074,23 @@ body:not(.Muscles) #i_aree{
     padding-right: 9px;
 	margin-top: 4px;
 }
+#tueLicenze{
+    text-align: left;
+	padding-top: 16px;
+    padding-left: 8px;
+}
+#tueLicenze span{
+	display:inline-block;
+	margin-bottom: 6px;
+	height:24px;
+	line-height:24px;
+    padding-left: 26px;
+	background-image: url(../img/ico_modulesB.png);
+	background-repeat: no-repeat;
+	background-position: left center;
+	cursor:pointer;
+}
+
 #mem_open3d,
 #mem_openMap{
 	vertical-align: middle;

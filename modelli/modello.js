@@ -524,7 +524,7 @@ var MODELLO = {
 				if(getVar("demo")=='reflexologymap')caricaSet('reflessologia_plantare');
 			}else{
 				setTimeout( function(){
-					GUIDA.visFumetto("guida_generica");
+					if(!globals.set.cartella)GUIDA.visFumetto("guida_generica");
 				}, 1000 );
 				
 				if(!__(localStorage.firstAccess)){

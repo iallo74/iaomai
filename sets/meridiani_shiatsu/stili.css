@@ -1143,6 +1143,11 @@ body.smart #elenchi #cambioSistemaMeridiani{
 	clear:both;
 	margin-top: 20px;
 }
+.dis_ric.bluring img,
+.dis_ter.bluring img,
+.dis_prs.bluring img{
+	filter: blur(10px);
+}
 .dis_ric img,
 .dis_prs img{
     float: left;

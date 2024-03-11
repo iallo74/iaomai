@@ -3034,6 +3034,14 @@ DB.TXT = {
             por: "Para editar esta seção, você deve abrir ",
             deu: "Um diesen Abschnitt zu bearbeiten, musst du öffnen "
         },
+        LicenzaNonPermette: {
+            ita: "Con la tua licenza non puoi utilizzare questo menu",
+            "eng": "With your license you cannot use this menu",
+            "esp": "Con tu licencia no puedes usar este menú",
+            "fra": "Avec votre licence, vous ne pouvez pas utiliser ce menu",
+            "por": "Com sua licença você não pode usar este menu",
+            "deu": "Mit Ihrer Lizenz können Sie dieses Menü nicht verwenden"
+        },
         PuntiAnamnesi: {
             ita: "Valutazione sui punti",
 			eng: "Evaluation on points",
@@ -4858,6 +4866,14 @@ DB.TXT = {
             por: "O conjunto contém os percursos dos meridianos de Shiatsu de acordo com a teoria de Shizuto Masunaga e as informações teóricas sobre os elementos.\n\nO conjunto também inclui:\n[anatomy_full]",
             deu: "Das Set enthält die Pfade der Shiatsu-Meridiane nach der Theorie von Shizuto Masunaga und die theoretischen Informationen über die Elemente.\n\nDas Set beinhaltet auch:\n[anatomy_full]"
         },
+        Modulo_CIN: {
+            ita: "Cinese",
+            eng: "Chinese",
+            esp: "Chino",
+            fra: "Chinois",
+            por: "Chinês",
+            deu: "Chinesische"
+        },
         ReflessologiaPlantare: {
             ita: "ReflexologyMap",
             eng: "ReflexologyMap",
@@ -4977,6 +4993,14 @@ DB.TXT = {
             fra: "Gestion complète de vos patients avec dossiers médicaux, traitements, soldes et agenda des rendez-vous",
             por: "Gestão completa dos seus pacientes com prontuários médicos, tratamentos, saldos e agenda de consultas",
             deu: "Vollständige Verwaltung Ihrer Patienten mit medizinischen Aufzeichnungen, Behandlungen, Salden und Terminplanung"
+        },
+        Modulo:  {
+            ita: "Modulo",
+            eng: "Module",
+            esp: "Módulo",
+            fra: "Module",
+            por: "Módulo",
+            deu: "Modul"
         },
         CaricaMappa: {
             ita: "Carica una mappa",
@@ -5607,6 +5631,16 @@ DB.TXT = {
             fra: "PAYER MAINTENANT",
             por: "PAGAR AGORA",
             deu: "JETZT BEZAHLEN"
+        },
+
+        // LICENZE
+        TueLicenze: {
+            ita: "Le tue licenze",
+            eng: "Your licenses",
+            esp: "Tus licencias",
+            fra: "Tes licences",
+            por: "Suas licenças",
+            deu: "Ihre lizenzen"
         },
 
         // PATOLOGIE

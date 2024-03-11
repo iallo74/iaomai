@@ -84,12 +84,13 @@ var CONFIRM = {
 		}
 	}
 }
-function ALERT( msg, login=false, purchase=false ){
+function ALERT( msg, login=false, purchase=false, licenses=false ){
 	CONFIRM.type = 'alert';
 	document.getElementById("CNF_titolo").innerHTML = stripslashes(msg.replace(/\n/g,"<br>"));
 	document.getElementById("CNF").classList.add("visCNF");
 	if(login)document.getElementById("CNF").classList.add("CNF_login");
 	if(purchase)document.getElementById("CNF").classList.add("CNF_purchase");
+	if(licenses)document.getElementById("CNF").classList.add("CNF_licenses");
 	setTimeout(function(){
 		document.getElementById("CNF_dialog").classList.add("visCNF_dialog");
 		document.getElementById("CNF").classList.add("opCNF");

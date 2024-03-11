@@ -10,18 +10,22 @@ var PURCHASES  = {
 	init: function(){
 		// inizializza il catalogo
 		for(let s in sets){
-			if((!android && sets[s].idApple) || (android && sets[s].idGoogle)){
-				if(android)idStore = sets[s].idGoogle;
-				else idStore = sets[s].idApple;
-				PURCHASES.product_list.push({
-					idStore: idStore,
-					folder: s,
-					title: sets[s].nome,
-					description: TXT("LicenzaIllimitata"),
-					price: '',
-					owned: false,
-					pageStore: sets[s].pageStore
-					});
+			for(let m in sets[s].modls){
+				if((!android && sets[s].modls[m].idApple) || (android && sets[s].modls[m].idGoogle)){
+					if(android)idStore = sets[s].modls[m].idGoogle;
+					else idStore = sets[s].modls[m].idApple;
+					PURCHASES.product_list.push({
+						idStore: idStore,
+						folder: s,
+						title: sets[s].nome,
+						name: __(sets[s].modls[m].name,''),
+						code: __(sets[s].modls[m].code,''),
+						description: TXT("LicenzaIllimitata"),
+						price: '',
+						owned: false,
+						pageStore: sets[s].pageStore
+						});
+				}
 			}
 		}
 		PURCHASES.initStore();
@@ -86,7 +90,7 @@ var PURCHASES  = {
 			store.get(PURCHASES.productId)?.getOffer()?.order();
 		}else{
 			var tk = encodeURIComponent(window.btoa(LOGIN.logedin() + MD5(DB.login.data.idUtente)));
-			var fl = encodeURIComponent(window.btoa(PURCHASES.getProdById(PURCHASES.productId).folder));
+			var fl = encodeURIComponent(window.btoa(PURCHASES.getProdById(PURCHASES.productId).folder+" "+PURCHASES.getProdById(PURCHASES.productId).code));
 			CONN.openUrl(convLangPath(CONN.urlStore)+"in_app_purchase?tk="+tk+"&mp="+fl);
 			
 		}
@@ -131,10 +135,13 @@ var PURCHASES  = {
 		var canPurchase = true;
 		var owned = false;
 		var loadingPurchase = false;
-		var price = product.offers[0].pricingPhases[0].price;
 		var folder = '';
+		var price = 0;
+		var code = product.code;
+		var nameModule = product.name;
 		if(!price)TXT("AccediAlloStore");
 		if(window.store){
+			price = product.offers[0].pricingPhases[0].price;
 			if(product.state == 'requested' || product.state == 'initiated')visRet = false;
 			loaded = product.loaded;
 			canPurchase = product.canPurchase;
@@ -143,13 +150,15 @@ var PURCHASES  = {
 			if(product.price)price = product.price;
 			folder = PURCHASES.getProdById(product.id).folder;
 		}else{
+			price = product.price;
 			folder = product.folder;
 		}
-		if(!owned)owned = (DB.login.data.auths.indexOf(folder)>-1) ? true : false;
+		
+		if(!owned)owned = (DB.login.data.auths.indexOf(folder)>-1 && (!code || DB.login.data.modls.indexOf(code))) ? true : false;
 		var info = '<div id="copertinaPurchase" style="background-image:url(sets/'+folder+'/img/copertina.png);"></div>';
 		var button = '...';
 		//if(loaded){
-			info += '<b id="titLicenze"><img src="sets/'+folder+'/img/logoMenuN.png"> '+product.title+'</b><br/>' +
+			info += '<b id="titLicenze"><img src="sets/'+folder+'/img/logoMenuN.png"> '+product.title+' '+nameModule+'</b><br/>' +
 					product.description+'<br/>' +
 					price+'<br/>';
 		//}
@@ -157,7 +166,7 @@ var PURCHASES  = {
 		if(canPurchase){
 			button = '';
 			if(visRet)button += '<div class="ann" onClick="PURCHASES.productList();">'+TXT("Annulla")+'</div> ';
-			button += '<div class="btn" onClick="PURCHASES.purchaseLicense(\''+product.id+'\')">'+TXT("CompraOra")+'</div>';
+			button += '<div class="btn" onClick="PURCHASES.purchaseLicense(\''+PURCHASES.productId+'\')">'+TXT("CompraOra")+'</div>';
 		}else if(owned){
 			button = '<div>'+TXT("Acquistato")+'</div>';
 		}else if(loadingPurchase){
@@ -200,13 +209,17 @@ var PURCHASES  = {
 				var title = PURCHASES.product_list[id].title;
 				var price = PURCHASES.product_list[id].price;
 				var folder = PURCHASES.product_list[id].folder;
+				var code = PURCHASES.product_list[id].code;
+				var nameModule = PURCHASES.product_list[id].name;
 				var owned = PURCHASES.product_list[id].owned;
-				if(!owned && LOGIN.logedin()!='')owned = (DB.login.data.auths.indexOf(folder)>-1) ? true : false;
+				if(!owned && LOGIN.logedin()!='')owned = (DB.login.data.auths.indexOf(folder)>-1 && (!code || LOGIN.verModule(code))) ? true : false;
 				html_provv += '<div';
 				if(!owned)html_provv += ' class="acqOk"';
-				html_provv += '><div class="tit">';
+				html_provv += '><div class="tit'+(nameModule?' module':'')+'">';
 				html_provv += '<img src="sets/'+folder+'/img/logoNero.png">';
-				html_provv += title + '</div><div class="price">';
+				html_provv += '<b>'+title+'</b>';
+				if(nameModule)html_provv += '<br>'+/* TXT("Modulo")+ */'- '+nameModule;
+				html_provv += '</div><div class="price">';
 				if(!owned)html_provv += price;
 				html_provv += '</div>';
 				if(owned)html_provv += '<span>'+TXT("Acquistato")+'</span>';
@@ -234,10 +247,10 @@ var PURCHASES  = {
 			ALERT("An error has occurred");
 		}else{
 			var prices = JSON.parse( txt );
-			console.log(prices);
 			for(let p in PURCHASES.product_list){
 				for(e in prices){
-					if(PURCHASES.product_list[p].folder == e)PURCHASES.product_list[p].price =  prices[e]+getValuta();
+					if(	PURCHASES.product_list[p].folder == e.split(" ")[0] &&
+						(!e.split(" ")[1] || e.split(" ")[1]==PURCHASES.product_list[p].code) )PURCHASES.product_list[p].price =  prices[e]+getValuta();
 				}
 			}
 			PURCHASES.productList();

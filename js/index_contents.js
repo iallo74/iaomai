@@ -76,9 +76,13 @@ var sets = {
 		opening: true,
 		dataPubblicazione: '',
 		siglaProc: '',
-		idApple: 'TM22',
-		idGoogle: 'tm22',
-		pageStore: 'acupointsmap',
+		modls: [
+			{
+				idApple: 'TM22',
+				idGoogle: 'tm22',
+				pageStore: 'acupointsmap',
+			}
+		],
 		lingueCont: [
 			"ita",
 			"eng",
@@ -143,9 +147,36 @@ var sets = {
 		opening: true,
 		dataPubblicazione: '',
 		siglaProc: '',
-		idApple: 'SM22',
-		idGoogle: 'sm22',
-		pageStore: 'shiatsumap',
+		modls: [
+			{
+				name: " PRO "+TXT("Modulo_CIN"),
+				code: "CIN",
+				idApple: 'SMCIN24',
+				idGoogle: 'smcin24',
+				pageStore: 'shiatsumap'
+			},
+			{
+				name: " PRO Masunaga",
+				code: "MAS",
+				idApple: 'SMMAS24',
+				idGoogle: 'smmas24',
+				pageStore: 'shiatsumap'
+			},
+			{
+				name: " PRO Namikoshi",
+				code: "NMK",
+				idApple: 'SMNMK24',
+				idGoogle: 'smnmk24',
+				pageStore: 'shiatsumap'
+			},
+			{
+				name: " Light",
+				code: "light",
+				idApple: 'SMlight24',
+				idGoogle: 'smlight24',
+				pageStore: 'shiatsumap'
+			}
+		],
 		lingueCont: [
 			"ita",
 			"eng",
@@ -204,9 +235,13 @@ var sets = {
 		opening: true,
 		dataPubblicazione: '',
 		siglaProc: 'AUR',
-		idApple: 'AU23',
-		idGoogle: 'au23',
-		pageStore: 'auriculomap',
+		modls: [
+			{
+				idApple: 'AU23',
+				idGoogle: 'au23',
+				pageStore: 'auriculomap',
+			}
+		],
 		lingueCont: [
 			"ita",
 			"eng",
@@ -264,9 +299,13 @@ var sets = {
 		opening: true,
 		dataPubblicazione: '',
 		siglaProc: 'RFX',
-		idApple: 'RM24',
-		idGoogle: 'rm24',
-		pageStore: 'reflexologymap',
+		modls: [
+			{
+				idApple: 'RM24',
+				idGoogle: 'rm24',
+				pageStore: 'reflexologymap',
+			}
+		],
 		lingueCont: [
 			"ita",
 			"eng",

@@ -2868,6 +2868,14 @@ var LOGIN = {
 		localStorage.open3d= 'false';
 		localStorage.openMap= 'false';
 
+	},
+
+	/* MODULI */
+	verAuth: function( n ){
+		return DB.login.data.auths.indexOf(n)>-1;
+	},
+	verModule: function( n ){
+		return DB.login.data.modls.indexOf(n)>-1;
 	}
 	
 };

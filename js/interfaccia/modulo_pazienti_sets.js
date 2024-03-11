@@ -139,7 +139,7 @@ var PAZIENTI_SETS = {
 		
 		if(PAZIENTI.puntiProvvisori.length){
 			if( globals.set.cartella == 'meridiani_cinesi' || 
-				globals.set.cartella == 'meridiani_shiatsu' ){
+				(globals.set.cartella == 'meridiani_shiatsu' && LOGIN.verModule("CIN")) ){
 				for(let p in PAZIENTI.puntiProvvisori){
 					nPunto=SET.ptToStr(PAZIENTI.puntiProvvisori[p].n);
 					siglaMeridiano=PAZIENTI.puntiProvvisori[p].m;
@@ -323,7 +323,7 @@ var PAZIENTI_SETS = {
 		
 		try{
 			if( (globals.set.cartella == 'meridiani_cinesi' || 
-				globals.set.cartella == 'meridiani_shiatsu' && localStorage.sistemaMeridiani!='NMK') && 
+				(globals.set.cartella == 'meridiani_shiatsu' && localStorage.sistemaMeridiani!='NMK' && LOGIN.verModule("CIN"))) && 
 				elenco)SET.evidenziaPuntoMod(elenco);
 		}catch(err){}
 		if(PAZIENTI.topAdd)document.getElementById("scheda_testo").scrollTo(0,document.getElementById("scheda_testo").scrollTop+(tCoord(document.getElementById("p_add_dett"),'y')-PAZIENTI.topAdd));
@@ -331,7 +331,7 @@ var PAZIENTI_SETS = {
 	},
 	ricPuntiTratt: function(){ // ricarica i punti del trattamento (dopo un'azione es. elimina o nuovo)
 		if(	PAZIENTI.puntiProvvisori.length && 
-			(globals.set.cartella == 'meridiani_cinesi' || globals.set.cartella == 'meridiani_shiatsu') ){
+			(globals.set.cartella == 'meridiani_cinesi' || (globals.set.cartella == 'meridiani_shiatsu') && LOGIN.verModule("CIN")) ){
 			var puntiProvvisori='';
 			for(let p in PAZIENTI.puntiProvvisori){
 				var im=document.getElementById("ico_PV"+p).getElementsByTagName("img")[0].src;
@@ -540,7 +540,7 @@ var PAZIENTI_SETS = {
 		
 		if( PAZIENTI.meridianiProvvisori.length ){
 			if( globals.set.cartella == 'meridiani_cinesi' || 
-				globals.set.cartella == 'meridiani_shiatsu' ){
+				(globals.set.cartella == 'meridiani_shiatsu' && (LOGIN.verModule("CIN") || LOGIN.verModule("MAS"))) ){
 				var p = -1;
 				for(let m in PAZIENTI.meridianiProvvisori){
 					p++;
@@ -1218,7 +1218,7 @@ var PAZIENTI_SETS = {
 		var HTML = '<div></div>'; // serve lasciarlo per il drag&drop
 		var elenco = [];
 		if(PAZIENTI.namikoshiProvvisori.length){
-			if( globals.set.cartella == 'meridiani_shiatsu' ){
+			if( globals.set.cartella == 'meridiani_shiatsu' && LOGIN.verModule("NMK") ){
 				var puntiElenco = [];
 				for(let siglaPunto in DB.set.meridiani.NK.punti){
 					if(__(DB.set.meridiani.NK.punti[siglaPunto])){
@@ -1286,7 +1286,7 @@ var PAZIENTI_SETS = {
 							'<input type="hidden" id="n-mr_'+p+'" name="n-mr_'+p+'" value="NK" class="selectTratt">';
 					
 					// verifico che esista il punto
-					if(globals.set.cartella != 'meridiani_shiatsu'){
+					if( globals.set.cartella != 'meridiani_shiatsu' && LOGIN.verModule("NMK") ){
 						HTML += '<span class="ptNo" style="text-align:left">'+nomePunto+'</span>' +
 								'<input type="hidden" id="n-pt_'+p+'" name="n-pt_'+p+'" value="'+siglaPunto+'">';
 					}else{
@@ -1380,6 +1380,7 @@ var PAZIENTI_SETS = {
 		}
 		try{
 			if( globals.set.cartella == 'meridiani_shiatsu' && 
+			LOGIN.verModule("NMK") &&
 				elenco &&
 				localStorage.sistemaMeridiani=='NMK')SET.evidenziaPuntoMod(elenco);
 		}catch(err){}

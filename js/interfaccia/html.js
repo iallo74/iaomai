@@ -22,6 +22,7 @@ var H = {
 	chr10: String.fromCharCode(10),
 	chr13: String.fromCharCode(13),
 	tab: String.fromCharCode(9),
+	spunta: '&#10004;',
 	elCombo: null,
 	comboOver: false,
 	etichetteProvvisorie: [],
