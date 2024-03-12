@@ -117,6 +117,7 @@
 }
 #CNF:not(.CNF_login) #CNF_lg,
 #CNF:not(.CNF_login) #CNF_pr,
+#CNF:not(.CNF_login) #CNF_lc,
 #CNF:not(.CNF_login) #CNF_an{
 	display:none;
 }
