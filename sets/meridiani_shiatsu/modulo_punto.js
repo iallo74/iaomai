@@ -16,7 +16,7 @@ var MODULO_PUNTO = { // extend SET
 		//if(SET.verLightVersion() && localStorage.sistemaMeridiani!='NMK')block = false;
 		if(SET.verLightVersion())block = false;
 		if(	block ){
-			if(SET.verLicenses())ALERT(TXT("MsgContSoloLicensed"));
+			if(SET.verLicenses())ALERT(TXT("MsgContSoloLicensed"),false,false,true);
 			else ALERT(TXT("MsgContSoloPay"),true,true);
 			SET.chiudiPunto();
 			return;
@@ -160,11 +160,11 @@ var MODULO_PUNTO = { // extend SET
 			//onlyForPro = '<span>Only for the PRO version</span>';
 			let txtNo = (SET.verLicenses())?TXT("MsgContSoloLicensed"):TXT("MsgContSoloPay");
 			addNo = ' title="'+htmlEntities(txtNo)+'" onClick="ALERT(\''+txtNo+'\');"';
-
-			HTML = HTML.replace(/class="dis_ric"/g,'class="dis_ric bluring"'+addNo);
-			HTML = HTML.replace(/class="dis_ter"/g,'class="dis_ter bluring"'+addNo);
-			HTML = HTML.replace(/class="dis_prs"/g,'class="dis_prs bluring"'+addNo);
-
+			if(!SET.verAttModule()){
+				HTML = HTML.replace(/class="dis_ric"/g,'class="dis_ric bluring"'+addNo);
+				HTML = HTML.replace(/class="dis_ter"/g,'class="dis_ter bluring"'+addNo);
+				HTML = HTML.replace(/class="dis_prs"/g,'class="dis_prs bluring"'+addNo);
+			}
 		}
 		if(coordZoom.length>1){
 			var pC=coordZoom.split("|");
@@ -483,7 +483,7 @@ var MODULO_PUNTO = { // extend SET
 			SET.snd.readyState > 2)return;
 		//if((SET.verLightVersion() || !LOGIN.logedin()) && SET.MERIDIANI_free.indexOf(txt.substr(0,2))==-1)txt='onlyPRO';
 		if(SET.verLightVersion() || (!LOGIN.logedin() && SET.MERIDIANI_free.indexOf(txt.substr(0,2))==-1)){
-			if(SET.verLicenses())ALERT(TXT("MsgContSoloLicensed"));
+			if(SET.verLicenses())ALERT(TXT("MsgContSoloLicensed"),false,false,true);
 			else ALERT(TXT("MsgContSoloPay"),true,true);
 			return;
 			//txt='onlyPRO';

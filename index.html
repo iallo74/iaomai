@@ -596,10 +596,14 @@
             	<div id="labelPurchases" class="popup_label">{{TXT_AcquistaLicenza}}<div class="popup_chiudi" onClick="MENU.chiudiMenu();"></div></div>
             	<div id="contPurchases" class="popup_cont ini"></div>
             </div>
-            
             <div id="infolingue" class="popup"> <!-- INFO LINGUE -->
             	<div id="labelInfolingue" class="popup_label">{{TXT_InfoLingue}}<div class="popup_chiudi" onClick="MENU.chiudiMenu();"></div></div>
             	<div id="contInfolingue" class="popup_cont"></div>
+            </div>
+            
+            <div id="licenze" class="popup"> <!-- LE TUE LICENZE -->
+            	<div id="labelLicenze" class="popup_label">{{TXT_TueLicenze}}<div class="popup_chiudi" onClick="MENU.chiudiMenu();"></div></div>
+            	<div id="contLicenze" class="popup_cont"></div>
             </div>
            	<!---------------------------- fine popups ... -->
             
@@ -742,13 +746,12 @@
         
             <div id="cont_menu">
                 <div id="sets"> <!-- MENU SETS -->
-                    <div id="labelSets">{{TXT_Mappe}}<div id="chiudi_sets" onClick="MENU.visSets();"></div><i class="elMenu" id="help_set" style="margin-right: 38px;margin-top: 10px;margin-left: -45px;" onClick="REF.open('sets.overview');">?</i>
+                    <div id="labelSets">{{TXT_Mappe}}<div id="chiudi_sets" onClick="MENU.visSets();"></div><i class="elMenu" id="help_set" onClick="REF.open('sets.overview');">?</i>
                     </div>
                     <div id="sets_elenco">
                         <!-- da popolare -->
                     </div>
                     <div id="memorizzaOpenMap">{{TXT_ApriMappa}} <input type="checkbox" id="mem_openMap" name="mem_openMap" value="1" onClick="set_memOpenMap();"></div>
-                    <div id="tueLicenze"><span>{{TXT_TueLicenze}}</span></div>
                 </div>
                 <div id="impostazioni"> <!-- MENU IMPOSTAZIONI -->
                     <div id="labelImpostazioni">{{TXT_Impostazioni}}<div id="chiudi_impostazioni" onClick="MENU.visImpostazioni();"></div>
@@ -763,6 +766,7 @@
                         <div id="p_download" onClick="MENU.visBackups();">{{TXT_Download}}</div>
                         <div id="p_feedback" onClick="MENU.visFeedback();">{{TXT_Feedback}}</div>
                         <div id="p_guide" onClick="REF.open();MENU.visImpostazioni();">{{TXT_ReferenceGuide}}</div>
+                        <div id="p_licenze" onClick="MENU.visLicenze();">{{TXT_TueLicenze}}</div>
                         <div id="p_purchases" onClick="MENU.visPurchases(true);">{{TXT_AcquistaLicenza}}</div>
                         <div id="p_features" onClick="MENU.visFeatures(true);">{{TXT_NuoveCaratteristiche}}</div>
                         <div id="p_versione" onClick="MENU.visVersione();">{{TXT_Versione}}</div>
@@ -804,7 +808,7 @@
                         <button id="CNF_ok" onClick="CONFIRM.nascondi();">{{TXT_OK}}</button>
                         <button id="CNF_lg" onClick="CONFIRM.nascondi();MENU.visLogin();">{{TXT_ACCEDI}}</button>
                         <button id="CNF_pr" onClick="CONFIRM.nascondi();MENU.visPurchases();">{{TXT_ACQUISTA}}</button>
-                        <button id="CNF_lc" onClick="">{{TXT_TueLicenze}}</button>
+                        <button id="CNF_lc" onClick="CONFIRM.nascondi();MENU.visLicenze();">{{TXT_TueLicenze}}</button>
                         <button id="CNF_an" onClick="CONFIRM.nascondi();">{{TXT_Annulla}}</button>
                     </div>
                 </div>
@@ -913,7 +917,8 @@
                 	<h1 id="fumetti_titolo"></h1>
                     <p id="fumetti_testo"></p>
                 </div>
-        		<div class="noVisPiu"><div class="btnReference" onClick="REF.open();">{{TXT_ReferenceGuide}}</div>{{TXT_noVisPiu}} <input type="checkbox" id="no_guida" name="no_guida" value="1" onClick="GUIDA.noVis(this);"></div>
+        		<div class="btnsGuide"><div class="btnReference" onClick="REF.open();">{{TXT_ReferenceGuide}}</div><!-- <div class="btnLicenze" onClick="MENU.visLicenze();">{{TXT_TueLicenze}}</div> --></div>
+        		<div class="noVisPiu">{{TXT_noVisPiu}} <input type="checkbox" id="no_guida" name="no_guida" value="1" onClick="GUIDA.noVis(this);"></div>
             </div>
             <div class="fumetti_freccia"></div>
         </div>

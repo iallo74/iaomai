@@ -1,0 +1,81 @@
+@charset "utf-8";
+/* CSS Document */
+
+/* IMPOSTAZIONIE DEL SET */
+#licenze{
+	width: 400px;
+    height: 500px;
+    margin-left: -200px;
+    margin-top: -250px;
+}
+#labelLicenze{
+	background-image:url(../img/ico_puzzleN.png);
+	background-position:10px center;
+}
+#contLicenze{
+	overflow-y:auto;
+	height: 460px;
+	padding:20px;
+	text-align:left;
+}
+.listLicenze{
+	margin-bottom:10px;
+}
+.listLicenze > div{
+	padding:10px;
+	font-weight:bold;
+	line-height:20px;
+}
+#contLicenze .rowLicenza:first-child{
+	border-top:1px solid rgba(0,0,0,0.2);
+}
+#contLicenze .rowLicenza div{
+	display:inline-block;
+	border-bottom:1px solid rgba(0,0,0,0.2);
+	padding:5px 0;
+}
+#contLicenze .rowLicenza div b{
+	font-size: 18px;
+	line-height: 14px;
+}
+#contLicenze .rowLicenza div:first-child{
+	width:calc(100% - 100px);
+	text-align:left;
+	/* border-right:1px solid rgba(0,0,0,0.1); */
+}
+#contLicenze .rowLicenza div:last-child{
+	width:100px;
+	margin-left:-4px;
+	text-align:right;
+}
+#contLicenze .rowLicenza.header div{
+	background-color:rgba(0,0,0,0.05);
+	font-style:italic;
+}
+#contLicenze .rowLicenza.label div{
+	font-style:italic;
+	font-weight:bold;
+	padding-left:10px;
+}
+#contLicenze .rowLicenza.appLicenza{
+	background-color: rgba(0, 0, 0, 0.6);
+    color: #FFF;
+    font-weight: bold;
+    line-height: 32px;
+    text-align: left;
+    margin-top: 25px;
+    margin-bottom: 5px;
+    border-radius: 6px;
+    margin-left: -5px;
+    padding: 5px;
+    width: calc(100% + 10px);
+    margin-right: -5px;
+}
+#contLicenze .rowLicenza.appLicenza:first-child{
+    margin-top: 0px !important;
+}
+#contLicenze .rowLicenza.appLicenza img{
+	display:inline-block;
+	vertical-align:middle;
+	height:32px;
+}

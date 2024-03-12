@@ -103,6 +103,7 @@ var MENU = {
 		if(n!="archives")document.getElementById("archives").classList.remove("visSch");
 		if(n!="purchases")document.getElementById("purchases").classList.remove("visSch");
 		if(n!="infolingue")document.getElementById("infolingue").classList.remove("visSch");
+		if(n!="licenze")document.getElementById("licenze").classList.remove("visSch");
 		if(n!="ag")document.getElementById("ag").classList.remove("visSch");
 		if( n=='pulsanti_modello' ||
 			n=='impostazioni' ||
@@ -367,6 +368,17 @@ var MENU = {
 		visLoader("");
 		document.getElementById("infolingue").classList.toggle("visSch");
 		if(document.getElementById("infolingue").className.indexOf("visSch") > -1){
+			visLoader('');
+		}else{
+			nasLoader();
+		}
+	},
+	visLicenze: function(){
+		MENU.chiudiMenu("licenze");
+		visLoader("");
+		document.getElementById("licenze").classList.toggle("visSch");
+		if(document.getElementById("licenze").className.indexOf("visSch") > -1){
+			LICENZE.visLicenses();
 			visLoader('');
 		}else{
 			nasLoader();

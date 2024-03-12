@@ -490,7 +490,7 @@ function scaricaSet( notInit=false ){
 }
 function chiudiSet(){
 	var procOp = document.getElementById("scheda").classList.contains("scheda_procedura");
-	CONFIRM.vis(	TXT("ChiediEsciMappa").replace("[mappa]",globals.set.nome) ).then(function(pass){if(pass){
+	//CONFIRM.vis(	TXT("ChiediEsciMappa").replace("[mappa]",globals.set.nome) ).then(function(pass){if(pass){
 		CONFIRM.vis(	TXT("UscireSenzaSalvare"),
 						!SCHEDA.verificaSchedaRet() && !procOp, 
 						arguments ).then(function(pass){if(pass){
@@ -507,7 +507,7 @@ function chiudiSet(){
 				document.getElementById("sc").dataset.funct = '';
 			},500);
 		}});
-	}});
+	//}});
 }
 function updateModels(){
 	let html = '';

@@ -88,15 +88,18 @@ SET = {
 		var contPulsanti = 	'<span class="menuElenchi" onclick="MENU.visMM(\'btnCarMapMenu\');"></span>' +
 							'<span id="btnCarMapMenu" class="btn_meridiani_shiatsu titolo_set">' +
 							'<span>ReflexologyMap</span>' +
-							'<i class="elMenu" id="chiudiSet" onClick="chiudiSet();" title="'+htmlEntities(TXT("ChiudiSet"))+'"><span>' +
+							/* '<i class="elMenu" id="chiudiSet" onClick="chiudiSet();" title="'+htmlEntities(TXT("ChiudiSet"))+'"><span>' +
 								htmlEntities(TXT("ChiudiSet")) +
-							'</span></i>' +
+							'</span></i>' + */
 							'<i class="elMenu" id="impostazioniSet" onClick="MENU.visImpset();" title="'+htmlEntities(TXT("ImpostazioniSet"))+'"><span>' +
 								htmlEntities(TXT("ImpostazioniSet")) +
 							'</span></i>' +
 							'<i class="elMenu" id="help_set" onClick="GUIDA.visFumetto(\'guida_set\',true,true);">?</i></span>';
 		var contElenco = '';
 		contPulsanti += '<div id="pulsante_modello" onClick="cambiaModello(\'piedi\');">'+TXT("ApriModello3D")+'</div>';
+
+		contPulsanti += '<span id="demoVersion" onClick="MENU.visLogin();">'+TXT("demoVersion")+'</span>';
+
 		// punti
 		contPulsanti += '<div id="pulsante_punti" class="frdx" onClick="SCHEDA.selElenco(\'punti\');">'+TXT("Mappa")+'</div>';
 		contElenco += '<div id="lista_punti"></div>';
@@ -113,6 +116,10 @@ SET = {
 		// teoria
 		contPulsanti += '<div id="pulsante_teoria" class="frdx" onClick="SCHEDA.selElenco(\'teoria\');">'+TXT("Approfondimenti")+'</div>';
 		contElenco += '<div id="lista_teoria"></div>';
+		
+		contPulsanti += '<span id="quitSet" onClick="chiudiSet();">'+TXT("EsciDa")+' ReflexologyMap</span>';
+
+		//contPulsanti += '<span id="tueLicenzeMappa" class="tueLicenze"><span onClick="MENU.visLicenze();">'+TXT("TueLicenze")+'</span></span>';
 		
 		contBtns = 	'<div id="p_contrasto" class="p_noTxt" onClick="SET.swContrastMethod();"></div>';
 		
@@ -189,6 +196,7 @@ SET = {
 		if(smartMenu)overInterfaccia=true;
 		SET.chiudiPunto(false,true); // riapre il punto se è aperto
 		CUSTOMS._init();
+		SET.verSistema();
 		
 		/*
 		Decommentare per salvare in localSorage.POS la posizione del manichino
@@ -729,6 +737,9 @@ SET = {
 			'</div>';
 		document.getElementById("labelImpset").getElementsByTagName("b")[0].innerHTML = TXT("ImpostazioniSet");
 		document.getElementById("contImpset").innerHTML = HTML_imp;
+	},
+	verSistema: function(){
+		document.getElementById("demoVersion").classList.toggle("vis",!LOGIN.logedin());
 	},
 	
 	/* FUNZIONI DERIVATE */

@@ -71,11 +71,12 @@
 	background-image: url(../img/ico_utente.png);
 }
 #CNF_lc{
-	background-size: auto !important;
+	background-size: auto 28px !important;
 	border:none;
-	background-image: url(../img/ico_modulesB.png);
-	background-position:6px center !important;
-	background-color: #cfcfcf;
+	/* background-image: url(../img/ico_modulesB.png); */
+	background-image: url(../img/ico_puzzleB.png);
+	background-position:1px center !important;
+	/* background-color: #cfcfcf; */
 	height:30px;
 	margin-left:5px !important;
 }

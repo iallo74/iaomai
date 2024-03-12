@@ -37,6 +37,31 @@ body:not(.smart) #btnCarMapMenu i span,
     font-size: var(--font-23-1) !important;
     color: rgba(0,0,0,0.6);
 }
+#btnCarMapMenu > span{
+    display: inline-block;
+    /* width: 175px; */
+    width: 215px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.smart #btnCarMapMenu > span{
+	width: calc(100% - 120px);
+}
+#quitSet{
+	display: block;
+    text-align: left;
+    /* padding: 0 19px; */
+    line-height: 49px;
+    color: #000;
+    background-image: url(../img/ico_quit5.png);
+    background-repeat: no-repeat;
+    background-size: auto 30px;
+    background-position: 9px center;
+    padding-left: 43px;
+    cursor: pointer;
+    width: 180px;
+}
 body:not(.smart) #chiudiSet,
 body:not(.smart) #chiudiCliente,
 .smart #elenchi #chiudiSet,
@@ -83,11 +108,13 @@ body:not(.smart) #impostazioniArchivi,
 	float: right;
     display: inline-block;
     vertical-align: middle;
-    width: 32px;
+    width: 30px;
     height: 32px;
-    background-image: url("../img/ico_modulesN.png");
-	background-repeat: no-repeat;
-	background-position: left center;
+    /* background-image: url(../img/ico_modulesN.png); */
+    background-image: url(../img/ico_puzzleN.png);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: auto 26px;
     cursor: pointer;
     opacity: 0.5;
 }
@@ -122,8 +149,8 @@ body:not(.smart) #help_set,
     border: 1px solid rgba(0,0,0,0.35);
 	cursor:pointer;
     margin-top: 7px;
-    margin-right: 4px;
-    margin-left: 10x;
+    margin-right: 0px;
+    margin-left: 0px;
 	font-size: var(--font-18-7) !important;
 	font-weight:bold !important;
 	font-style: normal !important;
@@ -151,8 +178,14 @@ body:not(.smart) #help_set,
 }
 #help_clienti,
 .smart #help_set{
-    margin-top: 11px;
+    /* margin-top: 11px; */
     /*margin-right: -13px;*/
+	margin: 7px 5px 0px 5px !important;
+}
+#labelSets #help_set{
+	margin-right: 38px !important;
+    margin-top: 9px !important;
+    margin-left: -45px !important;
 }
 .smart #help_clienti{
     margin-top: 5px;

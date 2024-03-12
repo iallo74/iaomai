@@ -834,6 +834,22 @@ DB.TXT = {
             por: "ATENÇÃO! Você está usando a versão de demonstração do aplicativo. Clique para fazer login.",
             deu: "BITTE BEACHTEN SIE! Sie verwenden die Demo-Version der App. Klicken Sie hier, um sich anzumelden."
         },
+        demoVersion: {
+            ita: "Stai utilizzando la versione demo.<br>Clicca per effettuare il login.",
+            eng: "You are using the demo version.<br>Click to login.",
+            esp: "Estás usando la versión demo.<br>Haz clic para iniciar sesión.",
+            fra: "Vous utilisez la version demo.<br>Cliquez pour vous connecter.",
+            por: "Você está usando a versão demon.<br>Clique para fazer login.",
+            deu: "Sie verwenden die Demo-Version.<br>Klicken Sie hier, um sich anzumelden."
+        },
+        EsciDa: {
+            ita: "Esci da",
+            eng: "Quit",
+            esp: "Salir de",
+            fra: "Quitter",
+            por: "Saia do",
+            deu: "Beenden Sie"
+        },
         HoCapito: {
             ita: "Ho capito",
             eng: "I understand",
@@ -5641,6 +5657,350 @@ DB.TXT = {
             fra: "Tes licences",
             por: "Suas licenças",
             deu: "Ihre lizenzen"
+        },
+        noLicenze: {
+            ita: "Questo modulo non è tra le tue licenze<br>Clicca per maggiori info",
+            eng: "This module is not among your licenses<br>Click for more info",
+            esp: "Este módulo no está entre tus licencias<br>Haga clic para más info",
+            fra: "Ce module n’est pas dans vos licences<br>Cliquez pour plus d’infos",
+            por: "Este módulo não está entre suas licenças<br>Clique para mais info",
+            deu: "Dieses Modul ist nicht in Ihren Lizenzen<br>Klicken Sie hier für mehr Info"
+        },
+        Lic_PossessoLicenze: {
+            ita: "Sei in possesso delle seguenti licenze",
+            eng: "You have the following licenses",
+            esp: "Tienes las siguientes licencias",
+            fra: "Vous avez les licences suivantes",
+            por: "Você tem as seguintes licenças",
+            deu: "Sie haben die folgenden Lizenzen"
+        },
+        Lic_FreeVersion: {
+            ita: "Stai utilizzando la versione demo dell'app.",
+            eng: "You are using the demo version of the app.",
+            esp: "Estás usando la versión de demostración de la aplicación.",
+            fra: "Vous utilisez la version de démonstration de l'application.",
+            por: "Você está usando a versão de demonstração do aplicativo.",
+            deu: "Sie verwenden die Demo-Version der App."
+        },
+        Lic_SchedarioPazienti: {
+            ita: "Schedario pazienti",
+            eng: "Medical file",
+            esp: "Registro pacientes",
+            fra: "Fichier patient",
+            por: "Ficha do paciente",
+            deu: "Patientenakte"
+        },
+        Lic_ElencaCaratteristiche: {
+            ita: "Qui di seguito trovi elencate le caratteristiche attive per ogni mappa tematica in base alle tue licenze.",
+            eng: "Below you will find listed the active features for each thematic map based on your licenses.",
+            esp: "A continuación encontrarás enumeradas las características activas para cada mapa temático según tus licencias.",
+            fra: "Ci-dessous, vous trouverez répertoriées les fonctionnalités actives pour chaque carte thématique en fonction de vos licences.",
+            por: "Abaixo, você encontrará listadas as características ativas para cada mapa temático com base em suas licenças.",
+            deu: "Im Folgenden finden Sie die aktiven Funktionen für jede thematische Karte basierend auf Ihren Lizenzen aufgeführt."
+        },
+        Lic_PercorsiMeridiani3D: {
+            ita: "Percorsi dei meridiani in 3D",
+            eng: "3D meridian pathways",
+            esp: "Vías meridianas en 3D",
+            fra: "Parcours des méridiens en 3D",
+            por: "Caminhos meridianos em 3D",
+            deu: "3D-Meridianpfade"
+        },
+        Lic_SchedeAgopunti: {
+            ita: "Schede degli agopunti",
+            eng: "Acupuncture point sheets",
+            esp: "Tarjetas de puntos de acupuntura",
+            fra: "Cartes des points d'acupuncture",
+            por: "Cartões de pontos de acupuntura",
+            deu: "Akupunkturpunkt-Karten"
+        },
+        Lic_Cinesi: {
+            ita: "Cinesi",
+            eng: "Chinese",
+            esp: "Chinos",
+            fra: "Chinois",
+            por: "Chinês",
+            deu: "Chinesischen"
+        },
+        Lic_Patologie: {
+            ita: "Patologie",
+            eng: "Pathologies",
+            esp: "Patologías",
+            fra: "Pathologies",
+            por: "Patologias",
+            deu: "Pathologien"
+        },
+        Lic_Approfondimenti: {
+            ita: "Approfondimenti teorici",
+            eng: "In-depth Studies",
+            esp: "Profundizaciones",
+            fra: "Informations complémentaires",
+            por: "Conhecimentos teóricos",
+            deu: "Theoretische Erkenntnisse"
+        },
+        Lic_AggiuntaAgopunti: {
+            ita: "Aggiunta degli agopunti punti a trattamenti e procedure",
+            eng: "Addition of acupuncture points to treatments and procedures",
+            esp: "Adición de puntos de acupuntura a tratamientos y procedimientos",
+            fra: "Ajout de points d'acupuncture aux traitements et procédures",
+            por: "Adição de pontos de acupuntura a tratamentos e procedimentos",
+            deu: "Hinzufügen von Akupunkturpunkten zu Behandlungen und Verfahren"
+        },
+        Lic_SchedeTsubo: {
+            ita: "Schede degli tsubo",
+            eng: "Tsubo sheets",
+            esp: "Fichas de los tsubos",
+            fra: "Fiches des tsubo",
+            por: "Fichas de tsubo",
+            deu: "Karten der Tsubos"
+        },
+        Lic_DettagliAnatomici: {
+            ita: "Disegni dei dettagli anatomici",
+            eng: "Drawings of anatomical details",
+            esp: "Dibujos de los detalles anatómicos",
+            fra: "Dessins des détails anatomiques",
+            por: "Desenhos de detalhes anatômicos",
+            deu: "Zeichnungen der anatomischen Details"
+        },
+        Lic_PronunciaCinese: {
+            ita: "Pronuncia in cinese",
+            eng: "Chinese pronunciation",
+            esp: "Pronunciación en chino",
+            fra: "Prononciation en chinois",
+            por: "Pronúncia chinesa",
+            deu: "Aussprache auf Chinesisch"
+        },
+        Lic_EstensioniMasunaga: {
+            ita: "Estensioni Masunaga",
+            eng: "Masunaga Extensions",
+            esp: "Extensiones de Masunaga",
+            fra: "Extensions Masunaga",
+            por: "Extensões Masunaga",
+            deu: "Masunaga Erweiterungen"
+        },
+        Lic_ZoneNamikoshi: {
+            ita: "Zone Namikoshi",
+            eng: "Namikoshi Areas",
+            esp: "Áreas Namikoshi",
+            fra: "Zones Namikoshi",
+            por: "Áreas Namikoshi",
+            deu: "Gebiete Namikoshi"
+        },
+        Lic_DisegniPosizioni: {
+            ita: "Disegni delle posizioni",
+            eng: "Drawings of positions",
+            esp: "Dibujos de las posiciones",
+            fra: "Dessins des positions",
+            por: "Desenhos de posições",
+            deu: "Zeichnungen der Positionen"
+        },
+        Lic_ProtocolliMTC: {
+            ita: "Protocolli MTC",
+            eng: "TCM Protocols",
+            esp: "Protocolos MTC",
+            fra: "Protocoles de MTC",
+            por: "Protocolos MTC",
+            deu: "TCM-Protokolle"
+        },
+        Lic_ProtocolliMasunaga: {
+            ita: "Protocolli Masunaga",
+            eng: "Masunaga Protocols",
+            esp: "Protocolos Masunaga",
+            fra: "Protocoles de Masunaga",
+            por: "Protocolos Masunaga",
+            deu: "Masunaga-Protokolle"
+        },
+        Lic_ProtocolliNamikoshi: {
+            ita: "Protocolli Namikoshi",
+            eng: "Namikoshi Protocols",
+            esp: "Protocolos Namikoshi",
+            fra: "Protocoles de Namikoshi",
+            por: "Protocolos Namikoshi",
+            deu: "Namikoshi-Protokolle"
+        },
+        Lic_AggiuntaPuntiMTC: {
+            ita: "Aggiunta dei punti MTC a trattamenti e procedure",
+            eng: "Adding MTC points to treatments and procedures",
+            esp: "Adición de puntos MTC a tratamientos y procedimientos",
+            fra: "Ajout de points MTC aux traitements et procédures",
+            por: "Adicionando pontos de MTC aos tratamentos e procedimentos",
+            deu: "Hinzufügung von TCM-Punkten zu Behandlungen und Verfahren"
+        },
+        Lic_AggiuntaAreeNamikoshi: {
+            ita: "Aggiunta delle aree Namikoshi a trattamenti e procedure",
+            eng: "Addition of Namikoshi areas to treatments and procedures",
+            esp: "Adición de áreas Namikoshi a tratamientos y procedimientos",
+            fra: "Ajout des zones Namikoshi aux traitements et procédures",
+            por: "Adição de áreas de Namikoshi aos tratamentos e procedimentos",
+            deu: "Hinzufügen von Namikoshi-Bereichen zu Behandlungen und Verfahren"
+        },
+        Lic_AggiuntaMeridiani: {
+            ita: "Aggiunta dei meridiani a trattamenti e procedure",
+            eng: "Addition of meridians to treatments and procedures",
+            esp: "Adición de meridianos a tratamientos y procedimientos",
+            fra: "Ajout de méridiens aux traitements et procédures",
+            por: "Adição de meridianos aos tratamentos e procedimentos",
+            deu: "Hinzufügen von Meridianen zu Behandlungen und Verfahren"
+        },
+        Lic_PuntiAree: {
+            ita: "Punti e aree",
+            eng: "Points and Areas",
+            esp: "Puntos y áreas",
+            fra: "Points et zones",
+            por: "Pontos e áreas",
+            deu: "Punkte und Bereiche"
+        },
+        Lic_SchedePunti: {
+            ita: "Schede dei punti",
+            eng: "Points sheets",
+            esp: "Fichas de puntos",
+            fra: "Fiches de points",
+            por: "Cartões de pontos",
+            deu: "Karteikarten zu den Punkten"
+        },
+        Lic_Settori: {
+            ita: "Settori",
+            eng: "Sectors",
+            esp: "Sectores",
+            fra: "Secteurs",
+            por: "Setores ",
+            deu: "Sektoren"
+        },
+        Lic_FiltriAree: {
+            ita: "Filtri per area",
+            eng: "Area filters",
+            esp: "Filtros de las áreas",
+            fra: "Filtres des zones",
+            por: "Filtros de área",
+            deu: "Filter nach Bereich"
+        },
+        Lic_ProtocolliTerapeutici: {
+            ita: "Protocolli terapeutici",
+            eng: "Therapeutic protocols",
+            esp: "Protocolos terapéuticos",
+            fra: "Protocoles thérapeutiques",
+            por: "Protocolos terapêuticos",
+            deu: "Therapiepläne"
+        },
+        Lic_AggiuntaPunti: {
+            ita: "Aggiunta dei punti a trattamenti e procedure",
+            eng: "Adding points to treatments and procedures",
+            esp: "Adición de puntos a tratamientos y procedimientos",
+            fra: "Ajout de points aux traitements et procédures",
+            por: "Adicionar pontos aos tratamentos e procedimentos",
+            deu: "Hinzufügen von Punkten zu Behandlungen und Verfahren"
+        },
+        Lic_MappaAree: {
+            ita: "Mappa 3D delle aree",
+            eng: "3D map of areas",
+            esp: "Mapa 3D de las áreas",
+            fra: "Carte 3D des zones",
+            por: "Mapa 3D das áreas",
+            deu: "3D Karte der Bereiche"
+        },
+        Lic_SchedeAree: {
+            ita: "Schede delle aree",
+            eng: "Area sheets",
+            esp: "Fichas de las áreas",
+            fra: "Fiches des zones",
+            por: "Lençóis de área",
+            deu: "Karten der Bereiche"
+        },
+        Lic_FiltriApparati: {
+            ita: "Filtri per apparato",
+            eng: "Apparatus filters",
+            esp: "Filtros para aparatos",
+            fra: "Filtres pour appareil",
+            por: "Filtros de aparelhos",
+            deu: "Filter für Apparate"
+        },
+        Lic_ProtocolliTrattamento: {
+            ita: "Protocolli di trattamento",
+            eng: "Treatment protocols",
+            esp: "Protocolos de tratamiento",
+            fra: "Protocoles de traitement",
+            por: "Protocolos de tratamento",
+            deu: "Behandlungsprotokollen"
+        },
+        Lic_AggiuntaAree: {
+            ita: "Aggiunta delle aree a trattamenti e procedure",
+            eng: "Adding areas to treatments and procedures",
+            esp: "Adición de áreas a tratamientos y procedimientos",
+            fra: "Ajout de zones aux traitements et procédures",
+            por: "Adicionar áreas aos tratamentos e procedimentos",
+            deu: "Hinzufügen von Bereichen zu Behandlungen und Verfahren"
+        },
+        Lic_CaratteristicheGeneriche: {
+            ita: "Caratteristiche generiche",
+            eng: "Generic features",
+            esp: "Características genéricas",
+            fra: "Caractéristiques génériques",
+            por: "Características genéricas",
+            deu: "Allgemeinen Eigenschaften"
+        },
+        Lic_ProcedurePersonali: {
+            ita: "Procedure personali",
+            eng: "Custom Procedures",
+            esp: "Procedimientos personalizados",
+            fra: "Procédures personalisées",
+            por: "Procedimentos pessoais",
+            deu: "Persönliche Verfahren"
+        },
+        Lic_Pazienti: {
+            ita: "Pazienti",
+            eng: "Patients",
+            esp: "Pacientes",
+            fra: "Patients",
+            por: "Pacientes",
+            deu: "Patienten"
+        },
+        Lic_TraduzioneAutomatica: {
+            ita: "Traduzione automatica",
+            eng: "Machine translation",
+            esp: "Traducción automática",
+            fra: "Traduction automatique",
+            por: "Tradução automática",
+            deu: "Maschinelle Übersetzung"
+        },
+        Lic_BackupDati: {
+            ita: "Backup dei dati",
+            eng: "Data backup",
+            esp: "Backup de datos",
+            fra: "Sauvegarde des données",
+            por: "Backup de dados",
+            deu: "Sichern Sie Ihre Daten"
+        },
+        Lic_NotifichePersonalizzate: {
+            ita: "Notifiche personalizzate",
+            eng: "Personalized notifications",
+            esp: "Notificaciones personalizadas",
+            fra: "Notifications personnalisées",
+            por: "Notificações personalizadas",
+            deu: "Personalisierte Benachrichtigungen"
+        },
+        Lic_estratto: {
+            ita: "un estratto",
+            eng: "an extract",
+            esp: "un extracto",
+            fra: "un extrait",
+            por: "um extrato",
+            deu: "einen Auszug"
+        },
+        Lic_rene: {
+            ita: "rene",
+            eng: "kidney",
+            esp: "riñón",
+            fra: "rein",
+            por: "rim",
+            deu: "rene"
+        },
+        Lic_osteoarticolare: {
+            ita: "osteoarticolare",
+            eng: "osteoarticular",
+            esp: "osteoarticular",
+            fra: "ostéo-articulaire",
+            por: "osteoarticular",
+            deu: "osteoartikulär"
         },
 
         // PATOLOGIE

@@ -1074,21 +1074,61 @@ body:not(.Muscles) #i_aree{
     padding-right: 9px;
 	margin-top: 4px;
 }
-#tueLicenze{
+/* .tueLicenze{
     text-align: left;
 	padding-top: 16px;
-    padding-left: 8px;
+    padding: 0 8px;
+	width:100%;
 }
-#tueLicenze span{
-	display:inline-block;
-	margin-bottom: 6px;
-	height:24px;
-	line-height:24px;
-    padding-left: 26px;
-	background-image: url(../img/ico_modulesB.png);
-	background-repeat: no-repeat;
-	background-position: left center;
+.tueLicenze span{
+	display: inline-block;
+    margin-bottom: 6px;
+    height: 31px;
+    line-height: 31px;
+    background-image: url(../img/ico_puzzleB.png);
+    background-repeat: no-repeat;
+    background-position: left center;
+    background-size: auto 27px;
+    cursor: pointer;
+    padding-left: 35px;
+}
+.smart .tueLicenze span,
+#elenchi_pulsanti .tueLicenze span{
+	background-position: right center;
+	float:right;
+	font-size: var(--font-15-39) !important;
+    width: 35px;
+    border-left: 1px solid rgba(0, 0, 0, 0.1);
+	overflow: hidden;
+}
+#tueLicenzeMappa,
+.smart .tueLicenze{
+	display:block;
+	margin-top: -43px;
+} */
+
+#noLicenze,
+#demoVersion{
+	display: none;
+    width: calc(100% - 16px);
+    /* height: 40px; */
+    border-radius: 6px;
+    background-color: #407ace;
+    color: #FFF;
+    padding-left: 50px;
+    padding-top: 13px;
+    padding-bottom: 13px;
+    background-image: url(../img/alert.png);
+    background-repeat: no-repeat;
+    background-position: 5px center;
+    background-size: auto 38px;
+    margin: 0 8px 10px 8px;
+    text-align: left;
 	cursor:pointer;
+}
+#noLicenze.vis,
+#demoVersion.vis{
+	display:block !important;
 }
 
 #mem_open3d,
@@ -1571,6 +1611,17 @@ body:not(.bodyStyled2) #btn_modut{
 	background-image:url(../img/ico_purchases.png),url(../img/frDx.png);
 }
 #p_purchases:hover{
+	background-color:rgba(255,255,255,0.1);
+}
+
+#p_licenze{
+	background-image:url(../img/ico_licenzeN.png),url(../img/frDxB.png);
+	cursor:pointer;
+}
+.bodyStyled2 #p_licenze{
+	background-image:url(../img/ico_licenze.png),url(../img/frDx.png);
+}
+#p_licenze:hover{
 	background-color:rgba(255,255,255,0.1);
 }
 
