@@ -907,7 +907,7 @@ var PAZIENTI_TRATTAMENTI = {
 		var HTML = '';
 		var html_licenzaNonPermette = '<div class="labelModificaCon">'+htmlEntities(TXT("LicenzaNonPermette"))+'</div>';
 		if( globals.set.cartella == 'meridiani_cinesi' ||
-			(globals.set.cartella == 'meridiani_shiatsu' && (LOGIN.verModule("CIN") || LOGIN.verModule("light"))) ){
+			(globals.set.cartella == 'meridiani_shiatsu' && LOGIN.verModule("CIN")) ){
 			HTML+=
 				'	<div id="p_add_dett"' +
 				'		 class="noPrint">' +
@@ -931,7 +931,7 @@ var PAZIENTI_TRATTAMENTI = {
 		
 		// PUNTI NAMIKOSHI
 		var HTML = '';
-		if( globals.set.cartella == 'meridiani_shiatsu' && (LOGIN.verModule("NMK") || LOGIN.verModule("light"))){
+		if( globals.set.cartella == 'meridiani_shiatsu' && LOGIN.verModule("NMK") ){
 			HTML+=
 				'	<div id="p_add_dett"' +
 				'		 class="noPrint">' +
@@ -941,7 +941,7 @@ var PAZIENTI_TRATTAMENTI = {
 							htmlEntities(TXT("AggiungiPunti")) +
 				'		</div>' +
 				'	</div>';
-		}else if(LOGIN.logedin() && (LOGIN.verModule("NMK") || LOGIN.verModule("light"))){
+		}else if(LOGIN.logedin() && (LOGIN.verModule("NMK") || LOGIN.verAuth('meridiani_cinesi'))){
 			HTML += '<div class="labelModificaCon">'+htmlEntities(TXT("ModificaCon"))+'<br><span onClick="caricaSet(\'meridiani_shiatsu\',this);"><img src="sets/meridiani_shiatsu/img/logoNero.png" width="25" height="25"> ShiatsuMap</span></div>';
 		}else{
 			HTML += html_licenzaNonPermette;
@@ -952,7 +952,7 @@ var PAZIENTI_TRATTAMENTI = {
 		// MERIDIANI
 		var HTML = '';
 		if( globals.set.cartella == 'meridiani_cinesi' || 
-			(globals.set.cartella == 'meridiani_shiatsu' && (LOGIN.verModule("CIN") || LOGIN.verModule("MAS") || LOGIN.verModule("light"))) ){
+			(globals.set.cartella == 'meridiani_shiatsu' && (LOGIN.verModule("CIN") || LOGIN.verModule("MAS"))) ){
 			HTML+=
 				'	<div id="p_add_dett">' +
 				'		<div id="grpMrd"' +
