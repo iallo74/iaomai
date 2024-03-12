@@ -835,12 +835,12 @@ DB.TXT = {
             deu: "BITTE BEACHTEN SIE! Sie verwenden die Demo-Version der App. Klicken Sie hier, um sich anzumelden."
         },
         demoVersion: {
-            ita: "Stai utilizzando la versione demo.<br>Clicca per effettuare il login.",
-            eng: "You are using the demo version.<br>Click to login.",
-            esp: "Estás usando la versión demo.<br>Haz clic para iniciar sesión.",
-            fra: "Vous utilisez la version demo.<br>Cliquez pour vous connecter.",
-            por: "Você está usando a versão demon.<br>Clique para fazer login.",
-            deu: "Sie verwenden die Demo-Version.<br>Klicken Sie hier, um sich anzumelden."
+            ita: "Stai utilizzando la versione demo.<br><u>Clicca per effettuare il login</u>",
+            eng: "You are using the demo version.<br><u>Click to login</u>",
+            esp: "Estás usando la versión demo.<br><u>Haz clic para iniciar sesión</u>",
+            fra: "Vous utilisez la version demo.<br><u>Cliquez pour vous connecter</u>",
+            por: "Você está usando a versão demon.<br><u>Clique para fazer login</u>",
+            deu: "Sie verwenden die Demo-Version.<br><u>Klicken Sie hier, um sich anzumelden</u>"
         },
         EsciDa: {
             ita: "Esci da",
@@ -5659,12 +5659,12 @@ DB.TXT = {
             deu: "Ihre lizenzen"
         },
         noLicenze: {
-            ita: "Questo modulo non è tra le tue licenze<br>Clicca per maggiori info",
-            eng: "This module is not among your licenses<br>Click for more info",
-            esp: "Este módulo no está entre tus licencias<br>Haga clic para más info",
-            fra: "Ce module n’est pas dans vos licences<br>Cliquez pour plus d’infos",
-            por: "Este módulo não está entre suas licenças<br>Clique para mais info",
-            deu: "Dieses Modul ist nicht in Ihren Lizenzen<br>Klicken Sie hier für mehr Info"
+            ita: "Questo modulo non è tra le tue licenze<br><u>Clicca per maggiori info</u>",
+            eng: "This module is not among your licenses<br><u>Click for more info</u>",
+            esp: "Este módulo no está entre tus licencias<br><u>Haga clic para más info</u>",
+            fra: "Ce module n’est pas dans vos licences<br><u>Cliquez pour plus d’infos</u>",
+            por: "Este módulo não está entre suas licenças<br><u>Clique para mais info</u>",
+            deu: "Dieses Modul ist nicht in Ihren Lizenzen<br><u>Klicken Sie hier für mehr Info</u>"
         },
         Lic_PossessoLicenze: {
             ita: "Sei in possesso delle seguenti licenze",

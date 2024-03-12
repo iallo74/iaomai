@@ -1126,6 +1126,10 @@ body:not(.Muscles) #i_aree{
     text-align: left;
 	cursor:pointer;
 }
+#noLicenze *,
+#demoVersion *{
+    color: #FFF;
+}
 #noLicenze.vis,
 #demoVersion.vis{
 	display:block !important;

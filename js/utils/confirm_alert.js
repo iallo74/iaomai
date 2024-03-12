@@ -68,6 +68,8 @@ var CONFIRM = {
 			if(!CONFIRM.type){
 				document.getElementById("CNF").classList.remove("visCNF");
 				document.getElementById("CNF").classList.remove("CNF_login");
+				document.getElementById("CNF").classList.remove("CNF_purchase");
+				document.getElementById("CNF").classList.remove("CNF_licenses");
 				document.getElementById("CNF_titolo").innerHTML = '';
 			}
 		}, 500, bypass);

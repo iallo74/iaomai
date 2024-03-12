@@ -62,6 +62,9 @@ body:not(.smart) #btnCarMapMenu i span,
     cursor: pointer;
     width: 180px;
 }
+#quitSet:hover{
+	background-image: url(../img/ico_quit5On.png);
+}
 body:not(.smart) #chiudiSet,
 body:not(.smart) #chiudiCliente,
 .smart #elenchi #chiudiSet,

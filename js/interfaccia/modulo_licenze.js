@@ -13,6 +13,11 @@ var LICENZE  = {
 				' '+app +
 				'</div>'+H.chr10;
 	},
+	visLicenza: function( name, cond){
+		let spunta = '<b style="color:#0b8dca;">'+H.spunta+'</b>',
+			ics = '<b style="color:#C00;">'+H.ics+'</b>';
+		return (cond?spunta:ics)+'<span'+(cond?'':' style="color:#888;"')+'> '+name+'</span><br>';
+	},
 	red: function( html ){
 		return '<span style="color:#a4542a;">'+html+'</span>';
 	},
@@ -32,21 +37,21 @@ var LICENZE  = {
 		HTML += '<div class="listLicenze">';
 		if(LOGIN.logedin()){
 			HTML += TXT("Lic_PossessoLicenze")+':<div>';
-			if(LOGIN.logedin() && LOGIN.verAuth("meridiani_cinesi"))HTML += spunta+' AcupointsMap<br>';
-			if(LOGIN.logedin() && okCIN)HTML += spunta+' ShiatsuMap PRO '+TXT("Lic_Cinesi")+'<br>';
-			if(LOGIN.logedin() && okMAS)HTML += spunta+' ShiatsuMap PRO Masunaga<br>';
-			if(LOGIN.logedin() && okNMK)HTML += spunta+' ShiatsuMap PRO Namikoshi<br>';
-			if(LOGIN.logedin() && okLGT)HTML += spunta+' ShiatsuMap Light<br>';
-			if(LOGIN.logedin() && LOGIN.verAuth("auricologia"))HTML += spunta+' AuriculoMap<br>';
-			if(LOGIN.logedin() && LOGIN.verAuth("reflessologia_plantare"))HTML += spunta+' ReflexologyMap<br>';
-			if(LOGIN.logedin() && LOGIN.verAuth("clients_full"))HTML += spunta+' '+TXT("Lic_SchedarioPazienti")+'<br>';
+			HTML += LICENZE.visLicenza('AcupointsMap',(LOGIN.logedin() && LOGIN.verAuth("meridiani_cinesi")));
+			HTML += LICENZE.visLicenza('ShiatsuMap PRO '+TXT("Lic_Cinesi"),(LOGIN.logedin() && okCIN));
+			HTML += LICENZE.visLicenza('ShiatsuMap PRO Masunaga',(LOGIN.logedin() && okMAS));
+			HTML += LICENZE.visLicenza('ShiatsuMap PRO Namikoshi',(LOGIN.logedin() && okNMK));
+			HTML += LICENZE.visLicenza('ShiatsuMap Light',(LOGIN.logedin() && okLGT));
+			HTML += LICENZE.visLicenza('AuriculoMap',(LOGIN.logedin() && LOGIN.verAuth("auricologia")));
+			HTML += LICENZE.visLicenza('ReflexologyMap',(LOGIN.logedin() && LOGIN.verAuth("reflessologia_plantare")));
+			HTML += LICENZE.visLicenza(TXT("Lic_SchedarioPazienti"),(LOGIN.logedin() && LOGIN.verAuth("clients_full")));
 			HTML += '</div>';
 		}else{
 			HTML += '<span id="demoVersion" style="display:block;">'+TXT("Lic_FreeVersion")+'</span>';
 		}
 		HTML += '</div>';
 		
-		HTML += '<div>'+TXT("Lic_ElencaCaratteristiche")+'</div>';
+		HTML += '<div class="txtFeatures">'+TXT("Lic_ElencaCaratteristiche")+'</div>';
 
 
 		// AcupointsMap

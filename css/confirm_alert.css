@@ -117,13 +117,11 @@
 }
 #CNF:not(.CNF_login) #CNF_lg,
 #CNF:not(.CNF_login) #CNF_pr,
-#CNF:not(.CNF_login) #CNF_lc,
 #CNF:not(.CNF_login) #CNF_an{
 	display:none;
 }
 .CNF_login #CNF_lg,
 .CNF_login #CNF_pr,
-.CNF_login #CNF_lc,
 .CNF_login #CNF_an{
 	display: inline-block !important;
 }

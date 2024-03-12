@@ -5,9 +5,6 @@ var MODULO_TEORIA = { // extend SET
 		"0_0",
 		"0_1",
 		"0_2",
-		/*"1_0",
-		"2_0",
-		"3_0",*/
 		"4_3",
 		"6_0",
 		"6_1"
@@ -56,7 +53,10 @@ var MODULO_TEORIA = { // extend SET
 					var addLock = 	(!SET.verFreeTeoria(p+"_"+t))? ' lockedItem' : '';
 					if(	(DB.login.data.modls.indexOf("CIN")==-1 && p==1) ||
 						(DB.login.data.modls.indexOf("NMK")==-1 && p==2) ||
-						(DB.login.data.modls.indexOf("MAS")==-1 && p==3) )addLock = ' lockedItem';
+						(DB.login.data.modls.indexOf("MAS")==-1 && p==3) ||
+						(	DB.login.data.modls.indexOf("CIN")==-1 && 
+							DB.login.data.modls.indexOf("MAS")==-1 && 
+							DB.login.data.modls.indexOf("NMK")==-1 && (p==4 || p==5) ) )addLock = ' lockedItem';
 					// --------------------------
 					TitoloTeoria = DB.set.teoria[p].contenuti[t].TitoloTeoria;
 					funct = 'Approfondimento';
@@ -83,11 +83,14 @@ var MODULO_TEORIA = { // extend SET
 	caricaApprofondimento: function( p, t, btn ){
 		// apre la scheda di un approfondimento
 		// verifico le autorizzazioni
-		var pass = !SET.verFreeTeoria(p+"_"+t);
+		let block = !SET.verFreeTeoria(p+"_"+t);
 		if(	(DB.login.data.modls.indexOf("CIN")==-1 && p==1) ||
 			(DB.login.data.modls.indexOf("NMK")==-1 && p==2) ||
-			(DB.login.data.modls.indexOf("MAS")==-1 && p==3) )pass = true;
-		if( pass ){
+			(DB.login.data.modls.indexOf("MAS")==-1 && p==3) ||
+			(	DB.login.data.modls.indexOf("CIN")==-1 && 
+				DB.login.data.modls.indexOf("MAS")==-1 && 
+				DB.login.data.modls.indexOf("NMK")==-1 && p==4 ) )block = true;
+		if( block ){
 			if(SET.verLicenses())ALERT(TXT("MsgContSoloLicensed"),false,false,true);
 			else ALERT(TXT("MsgContSoloPay"),true,true);
 			return;
@@ -153,8 +156,14 @@ var MODULO_TEORIA = { // extend SET
 	caricaVideo: function( p, t, btn ){
 		// carica un approfondimento video
 		// verifico le autorizzazioni
-		if(!SET.verFreeTeoria(p+"_"+t)){
-			ALERT(TXT("MsgContSoloPay"),true,true);
+		let block = !SET.verFreeTeoria(p+"_"+t);
+		if(	DB.login.data.modls.indexOf("CIN")==-1 && 
+			DB.login.data.modls.indexOf("MAS")==-1 && 
+			DB.login.data.modls.indexOf("NMK")==-1 && 
+			p==5 )block = true;
+		if(block){
+			if(SET.verLicenses())ALERT(TXT("MsgContSoloLicensed"),false,false,true);
+			else ALERT(TXT("MsgContSoloPay"),true,true);
 			return;
 		}
 		// --------------------------
