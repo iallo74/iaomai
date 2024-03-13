@@ -183,12 +183,12 @@ body:not(.smart) #help_set,
 .smart #help_set{
     /* margin-top: 11px; */
     /*margin-right: -13px;*/
-	margin: 7px 5px 0px 5px !important;
+	margin: 11px 2px 0px 2px !important;
 }
 #labelSets #help_set{
 	margin-right: 38px !important;
-    margin-top: 9px !important;
-    margin-left: -45px !important;
+    margin-top: 10px !important;
+    margin-left: -70px !important;
 }
 .smart #help_clienti{
     margin-top: 5px;
