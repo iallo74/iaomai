@@ -1071,6 +1071,21 @@ body:not(.smart) .guida_set .fumetti_freccia:last-child{
     opacity: 0.7;
     color: #CCC;
 }
+
+.body_meridiani_cinesi #btnGuida_meridiani_cinesi > div,
+.body_meridiani_shiatsu #btnGuida_meridiani_shiatsu > div,
+.body_auricologia #btnGuida_auricologia > div,
+.body_reflessologia_plantare #btnGuida_reflessologia_plantare > div{
+	background-color: #FFF;
+    box-shadow: 0 0 4px;
+}
+.body_meridiani_cinesi #btnGuida_meridiani_cinesi,
+.body_meridiani_shiatsu #btnGuida_meridiani_shiatsu,
+.body_auricologia #btnGuida_auricologia,
+.body_reflessologia_plantare #btnGuida_reflessologia_plantare{
+	background-color: #0050a0;
+}
+
 @media (max-width: 820px){	
 	body:not(.smart) .guida_anatomia .fumetti_cont,
 	body:not(.smart) .guida_archivi .fumetti_cont,

@@ -698,8 +698,8 @@ var LOGIN = {
 									true,
 									'',
 									btnAdd );
-			applicaLoading(document.getElementById("scheda_testo"));
 			MENU.chiudiMenu();
+			applicaLoading(document.getElementById("scheda_testo"));
 			
 			/* var btnAdd = 	'<div class="p_paz_ref_menu" onClick="REF.open(\'feature.login\')">' +
 								TXT("ReferenceGuide") +

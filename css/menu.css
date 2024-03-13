@@ -1533,6 +1533,7 @@ body:not(.bodyStyled2) #btn_modut{
 #p_guide{
 	background-image:url(../img/m_referenceN.png),url(../img/frDxB.png);
 	cursor:pointer;
+	background-position: 2px center, right center !important;
 }
 #p_guide:hover{
 	background-color:rgba(255,255,255,0.1);
@@ -1588,6 +1589,7 @@ body:not(.bodyStyled2) #btn_modut{
 #p_feedback{
 	background-image:url(../img/ico_feedbackN.png),url(../img/frDxB.png);
 	cursor:pointer;
+	background-position: 6px center, right center !important;
 }
 .bodyStyled2 #p_feedback{
 	background-image:url(../img/ico_feedback.png),url(../img/frDx.png);

@@ -559,32 +559,65 @@ var MODULO_PROCEDURE = { // extend SET
 					'				 onClick="SET.aggiungiDettaglio(\'D\');">' +
 									TXT("Descrizione") +
 					'			</div>';
-			if(!globals.set.siglaProc)HTML += 
+			let disabledP = '',
+				disabledM = '';
+			if(	!(	(globals.set.cartella=="meridiani_cinesi" && LOGIN.verAuth("meridiani_cinesi")) ||
+					(globals.set.cartella=="meridiani_shiatsu" && LOGIN.verAuth("meridiani_shiatsu") && (LOGIN.verModule("CIN") && localStorage.sistemaMeridiani=='' || LOGIN.verModule("NMK") && localStorage.sistemaMeridiani=='NMK')) ) )disabledP = ' disabled';
+
+			if( !(	(globals.set.cartella=="meridiani_cinesi" && LOGIN.verAuth("meridiani_cinesi")) ||
+					(globals.set.cartella=="meridiani_shiatsu" && LOGIN.verAuth("meridiani_shiatsu") && 
+						(LOGIN.verModule("CIN") && localStorage.sistemaMeridiani=='' || LOGIN.verModule("MAS") && localStorage.sistemaMeridiani=='MAS' ) ) ) )disabledM = ' disabled';
+
+			if(	globals.set.cartella=="auricologia" && LOGIN.verAuth("auricologia") || 
+				globals.set.cartella=="reflessologia_plantare" && LOGIN.verAuth("reflessologia_plantare") )disabledP = '';		
+			
+			if( !LOGIN.logedin() ){
+				disabledP = ' disabled';
+				disabledM = ' disabled';
+			}
+			
+
+			if(!globals.set.siglaProc){
+				
+				if(	globals.set.cartella=="meridiani_cinesi" || 
+					(globals.set.cartella=="meridiani_shiatsu" && 
+						(localStorage.sistemaMeridiani=='' ||localStorage.sistemaMeridiani=='NMK'))) HTML +=
 					// punti
 					'			<div id="grpPt"' +
-					'			    class="p_proc_gruppo"' +
-					'			    onClick="PAZIENTI.gruppoPunti((localStorage.sistemaMeridiani==\'NMK\' && globals.set.cartella==\'meridiani_shiatsu\')?\'N\':\'P\');">' +
+					'			    class="p_proc_gruppo'+(disabledP?' disabled':'')+'"' +
+					(!disabledP?'			    onClick="PAZIENTI.gruppoPunti((localStorage.sistemaMeridiani==\'NMK\' && globals.set.cartella==\'meridiani_shiatsu\')?\'N\':\'P\');"':'') +
+					
+					'>' +
 									htmlEntities(TXT("Punto")) +
-					'			</div>' +
-			
+					'			</div>';
+				
+				if(	globals.set.cartella=="meridiani_cinesi" || 
+					(globals.set.cartella=="meridiani_shiatsu" && 
+						(localStorage.sistemaMeridiani=='' ||localStorage.sistemaMeridiani=='MAS'))) HTML +=
 					// meridiani
 					'			<div id="grpMrd"' +
-					'				 class="p_proc_meridiani"' +
-					'				 onClick="PAZIENTI.gruppoPunti(\'M\');">' +
+					'				 class="p_proc_meridiani'+(disabledM?' disabled':'')+'"' +
+					(!disabledM?'				 onClick="PAZIENTI.gruppoPunti(\'M\');"':'') +
+					'>' +
 									htmlEntities(TXT("AggiungiMeridiano")) +
 									/*SET.elencoMeridiani(TXT("AggiungiMeridiano")) +*/
 					'			</div>';
-			else{
+			}else{
 				
 				// punti auricolari
-				HTML += '			<div id="grpPt"' +
-				'			    class="p_proc_gruppo"' +
-				'			    onClick="SET.aggiungiDettaglio(\'';
-				if(globals.set.cartella=='auricologia')HTML +='A';
-				if(globals.set.cartella=='reflessologia_plantare')HTML +='R';
-				HTML += '\');">' +
-								TXT("Punto") +
-				'			</div>';
+				HTML += '		<div id="grpPt"' +
+				'			    	 class="p_proc_gruppo'+(disabledP?' disabled':'')+'"';
+
+				if(!disabledP){
+					HTML += '			    	 onClick="SET.aggiungiDettaglio(\'';
+					if(globals.set.cartella=='auricologia')HTML +='A';
+					if(globals.set.cartella=='reflessologia_plantare')HTML +='R';
+					HTML += '\');"';
+				}
+				
+				HTML += '>' +
+									TXT("Punto") +
+				'				</div>';
 			}
 					
 			HTML +=	'		</div>' +
@@ -868,8 +901,8 @@ var MODULO_PROCEDURE = { // extend SET
 				}
 				if(mouseDetect && TipoDettaglio=='R' && DescrizioneDettaglio){
 					HTML += 
-						'	  onMouseOver="SET.overPunto(\''+DescrizioneDettaglio+'\',true);"'+
-						'	  onMouseOut="SET.overPunto(\''+DescrizioneDettaglio+'\',false);"';
+						'	  onMouseOver="SET.overPunto(\''+DescrizioneDettaglio.split(".")[0]+'\',true);"'+
+						'	  onMouseOut="SET.overPunto(\''+DescrizioneDettaglio.split(".")[0]+'\',false);"';
 				}
 				
 				HTML += '><div class="grabElement'+((TipoDettaglio=='T' || TipoDettaglio=='D') ? ' rgLabel' : '')+'"' +
@@ -930,17 +963,27 @@ var MODULO_PROCEDURE = { // extend SET
 					
 					disabledP = '';
 					disabledM = '';
+					
+						/* if(	!(	(globals.set.cartella=="meridiani_cinesi" && LOGIN.verAuth("meridiani_cinesi")) ||
+							(globals.set.cartella=="meridiani_shiatsu" && LOGIN.verAuth("meridiani_shiatsu") && (LOGIN.verModule("CIN") && localStorage.sistemaMeridiani=='' || LOGIN.verModule("NMK") && localStorage.sistemaMeridiani=='NMK')) ) )disabledP = ' disabled'; */
+					
 					if(TipoDettaglio=='P'){
-						if(	!(	globals.set.cartella=="meridiani_cinesi" ||
-								(globals.set.cartella=="meridiani_shiatsu" && LOGIN.verModule("CIN")) ) )disabledP = ' disabled';
+						if(	!(	globals.set.cartella=="meridiani_cinesi" && LOGIN.verAuth("meridiani_cinesi") ||
+								(globals.set.cartella=="meridiani_shiatsu" && LOGIN.verModule("CIN") && localStorage.sistemaMeridiani=='') ) )disabledP = ' disabled';
 					}
 					if(TipoDettaglio=='N'){
-						if(	!(	globals.set.cartella=="meridiani_shiatsu" && 
-								LOGIN.verModule("NMK") ) )disabledP = ' disabled';
+						if(	!(	globals.set.cartella=="meridiani_shiatsu" && LOGIN.verAuth("meridiani_shiatsu") && 
+								LOGIN.verModule("NMK") && localStorage.sistemaMeridiani=='NMK' ) )disabledP = ' disabled';
 					}
-					if( !(	globals.set.cartella=="meridiani_cinesi" ||
-							(	globals.set.cartella=="meridiani_shiatsu" && 
-								(LOGIN.verModule("CIN") || LOGIN.verModule("MAS") ) ) ) )disabledM = ' disabled';
+					if(TipoDettaglio=='A'){
+						if(	!(	globals.set.cartella=="auricologia" && LOGIN.verAuth("auricologia") ) )disabledP = ' disabled';
+					}
+					if(TipoDettaglio=='R'){
+						if(	!(	globals.set.cartella=="reflessologia_plantare" && LOGIN.verAuth("reflessologia_plantare") ) )disabledP = ' disabled';
+					}
+					if( !(	globals.set.cartella=="meridiani_cinesi" && LOGIN.verAuth("meridiani_cinesi") ||
+							(	globals.set.cartella=="meridiani_shiatsu" && LOGIN.verAuth("meridiani_shiatsu") && 
+								(LOGIN.verModule("CIN") && localStorage.sistemaMeridiani=='' || LOGIN.verModule("MAS") && localStorage.sistemaMeridiani=='MAS' ) ) ) )disabledM = ' disabled';
 
 					// mezzo
 					var addMezzoTit = '';
@@ -1128,15 +1171,16 @@ var MODULO_PROCEDURE = { // extend SET
 					HTML += '	<select class="numPoints"' +
 							' 			name="pt_'+p+'"' +
 							' 			id="pt_'+p+'"' +
+							(disabledP?' disabled':'') +
 							' 			onChange="SET.ritOverPunto(\'dettagliCont\','+p+');this.blur();"><option></option>';
 					
 					for(let a=0;a<puntiElenco.length;a++){
 						// verifico le autorizzazioni
-						if(SET.verFreePunti(puntiElenco[a].siglaPunto)){
+						//if(SET.verFreePunti(puntiElenco[a].siglaPunto)){
 							HTML += '	<option value="'+puntiElenco[a].siglaPunto+'"';
 							if(siglaPunto==puntiElenco[a].siglaPunto)HTML += ' SELECTED';
 							HTML += '>'+puntiElenco[a].NomePunto+'</option>';
-						}
+						//}
 						// --------------------------
 					}
 					HTML += '	</select>' +
@@ -1146,11 +1190,11 @@ var MODULO_PROCEDURE = { // extend SET
 							' 		 align="absmiddle"' +
 							' 		 id="ico_vis'+p+'"' +
 							' 		 style="margin-left:5px;' +
-							(!disabled?'cursor:pointer;':'') +
+							(!disabledP?'cursor:pointer;':'opacity:0.5;') +
 							'				margin-top: -5px;""' +
 							' 		 class="occhio"' +
 							' 		 title="'+TXT("VisualizzaPunto")+'"' +
-							(!disabled?'onClick="SET.selPuntoMod(document.getElementById(\'pt_'+p+'\').value,'+p+')"':'') +
+							(!disabledP?'onClick="SET.selPuntoMod(document.getElementById(\'pt_'+p+'\').value,'+p+')"':'') +
 							'>';
 				}
 				

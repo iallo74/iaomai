@@ -763,15 +763,22 @@ body:not(.smart) #filtriSmart_cont div:not(.elencoSel):not(.selected):hover{
 #filtriSmart_cont i:hover{
 	background-color: rgba(255,255,255,0.5);
 }
-#filtriSmart_cont i.hideApp{
+#filtriSmart_cont i.hideApp,
+#filtriSmart_cont i.disabled{
 	background-image:url(../../img/ico_showN.png);
 	background-color: rgba(200,200,200,0.2);
 	color:#666;
 }
-.pallinoGroup.hideApp{
+.pallinoGroup.hideApp,
+.pallinoGroup.disabled{
 	background-image:url(../../img/ico_showN.png);
 	background-color: rgba(20,20,20,0.1);
 	opacity:0.5;
+}
+#filtriSmart_cont i.disabled,
+.pallinoGroup.disabled{
+	cursor:default !important;
+	opacity:0.4;
 }
 #filtriSmart_cont i.hideApp b{
 	opacity:0.4;

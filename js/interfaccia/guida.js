@@ -93,7 +93,7 @@ var GUIDA = {
 						var linkSet = 'caricaSet(\''+cartella+'\',this,\''+sets[cartella].modelli[0]+'\');MENU.visSets();';
 						if(cartella == globals.set.cartella)linkSet = 'SCHEDA.apriElenco(\'set\')';
 						if(!sets[cartella].locked){
-							HTML_elenco += 	'<div onClick="'+linkSet+'">' +
+							HTML_elenco += 	'<div onClick="'+linkSet+'" id="btnGuida_'+cartella+'">' +
 											'<div><img src="sets/'+cartella+'/img/logoNero.png"></div>' +
 											htmlEntities(sets[cartella].nome) +
 											'<br><span>' + htmlEntities(sets[cartella].sottotitolo) + '</span>' +

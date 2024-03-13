@@ -738,6 +738,18 @@ SET = {
 		document.getElementById("labelImpset").getElementsByTagName("b")[0].innerHTML = TXT("ImpostazioniSet");
 		document.getElementById("contImpset").innerHTML = HTML_imp;
 	},
+	filtraSet: function(){
+		for(let m in SETS.children[0].children){
+			SETS.children[0].children[m].visible = SET.verFreePunti(SETS.children[0].children[m].name);
+		}
+		let els = document.getElementById("filtriSmart_cont").getElementsByTagName("i");
+		for(let e=0;e<els.length;e++){
+			let app = parseInt(els[e].id.replace("f_app",""));
+			let dis = SET.APPARATI_free.indexOf(app)==-1 && (DB.login.data.auths.indexOf(globals.set.cartella)==-1 || !LOGIN.logedin());
+			els[e].classList.toggle("disabled", dis );
+			document.getElementById("f_"+app).classList.toggle("disabled", dis );
+		}
+	},
 	verSistema: function(){
 		document.getElementById("demoVersion").classList.toggle("vis",!LOGIN.logedin());
 	},

@@ -1830,3 +1830,13 @@ body:not(.smart) #rgApplicaFiltri{
 	font-size:inherit;
 	cursor:pointer;
 }
+.labelNoLicenza{
+	line-height: normal !important;
+    padding-top: 10px;
+	cursor:pointer;
+}
+.labelNoLicenza u{
+	font-size: inherit;
+    color: inherit;
+    font-style: normal;
+}

@@ -905,7 +905,7 @@ var PAZIENTI_TRATTAMENTI = {
 	caricaDettagliSet: function(){ // carica i dettagli trattamento dei singoli set
 		// PUNTI
 		var HTML = '';
-		var html_licenzaNonPermette = '<div class="labelModificaCon">'+htmlEntities(TXT("LicenzaNonPermette"))+'</div>';
+		var html_licenzaNonPermette = '<div class="labelModificaCon labelNoLicenza" onClick="MENU.visLicenze();">'+TXT("LicenzaNonPermette")+'</div>';
 		if( globals.set.cartella == 'meridiani_cinesi' ||
 			(globals.set.cartella == 'meridiani_shiatsu' && LOGIN.verModule("CIN")) ){
 			HTML+=
@@ -941,7 +941,7 @@ var PAZIENTI_TRATTAMENTI = {
 							htmlEntities(TXT("AggiungiPunti")) +
 				'		</div>' +
 				'	</div>';
-		}else if(LOGIN.logedin() && (LOGIN.verModule("NMK") || LOGIN.verAuth('meridiani_cinesi'))){
+		}else if(LOGIN.logedin() && LOGIN.verModule("NMK")){
 			HTML += '<div class="labelModificaCon">'+htmlEntities(TXT("ModificaCon"))+'<br><span onClick="caricaSet(\'meridiani_shiatsu\',this);"><img src="sets/meridiani_shiatsu/img/logoNero.png" width="25" height="25"> ShiatsuMap</span></div>';
 		}else{
 			HTML += html_licenzaNonPermette;

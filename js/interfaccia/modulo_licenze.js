@@ -109,7 +109,7 @@ var LICENZE  = {
 		ok = LOGIN.logedin() && LOGIN.verAuth("reflessologia_plantare");
 		HTML +=	
 		LICENZE.appLicenza( 'ReflexologyMap', 'sets/reflessologia_plantare/img/logoMenu.png' ) +
-		LICENZE.rowLicenza( TXT("Lic_MappaAree"),						spunta ) +
+		LICENZE.rowLicenza( TXT("Lic_MappaAree"),						ok?spunta			:this.red(TXT("Lic_osteoarticolare")) ) +
 		LICENZE.rowLicenza( TXT("Lic_SchedeAree"), 						ok?spunta			:this.red(TXT("Lic_osteoarticolare")) ) +
 		LICENZE.rowLicenza( TXT("Lic_FiltriApparati"), 					spunta ) +
 		LICENZE.rowLicenza( TXT("Lic_ProtocolliTrattamento"),			ok?spunta			:ics ) +

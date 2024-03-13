@@ -1171,17 +1171,17 @@ var PAZIENTI_SETS = {
 	},
 	cambiaRZ: function( n, m, isProc=false ){ // cambia il mezzo su un punto
 		var el = document.getElementById("ico_PZ"+n);
+		var pD = SET.dettagliProvvisori[n].DescrizioneDettaglio.split(".");
 		el.getElementsByTagName("img")[0].src='img/mezzo_'+m+'.png';
-		if(globals.modello.cartella)SET.overPunto(m,false);
+		if(globals.modello.cartella)SET.overPunto(__(pD[0]),false);
 		if(!isProc){
 			PAZIENTI.reflexProvvisori[n].z = m;
 		}else{
-			var pD = SET.dettagliProvvisori[n].DescrizioneDettaglio.split(".");
 			SET.dettagliProvvisori[n].DescrizioneDettaglio = __(pD[0])+"."+__(m);
 			SET.caricaDettagli();
 		}
 		SCHEDA.formModificato = true;
-		if(globals.modello.cartella)SET.overPunto(m,true);
+		if(globals.modello.cartella)SET.overPunto(__(pD[0]),true);
 		document.getElementById("tt_mezzival").dataset.on='0';
 		H.removeTT();
 		PAZIENTI.verMezzo(m);

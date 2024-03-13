@@ -284,9 +284,9 @@ ul{
 body:not(.smart) #p_set{
 	background: url(img/logoMenu.png), linear-gradient(to bottom, #0f3a89 0%,#1546a1 5px,#1546a1 calc(100% - 5px),#0f3a89 100%);
 }
-body:not(.bodyStyled1):not(.bodyStyled2):not(.smart) #p_set{
+/* body:not(.bodyStyled1):not(.bodyStyled2):not(.smart) #p_set{
 	background-image: url(img/logoMenuN.png);
-}
+} */
 /*body:not(.touch) */#p_set svg polygon{
 	fill: var(--menu-fondino);
 }
@@ -915,8 +915,8 @@ body:not(.smart) #meridianiSmart_cont div:not(.elencoSel):hover{
     height: 36px;
     line-height: 36px;
 }
-.sceltaMeridianiElenco,
-#sceltaMeridianiElenco_smart{
+.sceltaMeridianiElenco/* ,
+#sceltaMeridianiElenco_smart */{
 	display: inline-block;
     height: 30px;
     line-height: 30px;
@@ -937,7 +937,7 @@ body:not(.smart) #meridianiSmart_cont div:not(.elencoSel):hover{
 	box-shadow:0px 0px 3px rgba(0,0,0,0.5);
 	cursor:pointer;
 }
-#sceltaMeridianiElenco_smart{
+/* #sceltaMeridianiElenco_smart{
     margin-right: 0px;
     margin-left: 0px;
     width: 160px;
@@ -951,7 +951,7 @@ body:not(.smart) #meridianiSmart_cont div:not(.elencoSel):hover{
     background-size: 40px;
     background-position: calc(100% - -3px) center;
     text-align: right;
-}
+} */
 /*.listaPatologie{
 	height: calc(100% - 87px);
 }*/

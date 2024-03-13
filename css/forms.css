@@ -948,10 +948,15 @@ cont_p_paz_label{
     padding-left: 13px !important;
     padding-right: 13px !important;
 }
+.p_proc_gruppo.disabled,
+.p_proc_meridiani.disabled{
+	opacity:0.4;
+	cursor:default;
+}
 .p_paz_gruppo:hover, /* PAZIENTI */
 .p_paz_meridiani:hover, /* PAZIENTI */
-.p_proc_meridiani:hover, /* procedura */
-.p_proc_gruppo:hover{ /* procedura */
+.p_proc_meridiani:not(.disabled):hover, /* procedura */
+.p_proc_gruppo:not(.disabled):hover{ /* procedura */
 	background-color:#ffd8af !important
 }
 .p_sch_tit{ /* procedura */

@@ -1,6 +1,7 @@
 
 var MODULO_PUNTI = { // extend SET
 	
+	APPARATI_free: [ 1, 2 ],
 	PUNTI_free: [ "001","002","003","004","005","006","007","008","009","010","011","012","013","014","015","016","017","018","019" ],
 	
 	caricaPunti: function(){ // carica l'elenco dei punti e delle aree
@@ -81,19 +82,25 @@ var MODULO_PUNTI = { // extend SET
 	swGruppo: function( app ){
 		SET.hiddenGroups[app] = !SET.hiddenGroups[app];
 		for(a in DB.set.apparati){
-			document.getElementById("f_app"+a).classList.toggle("hideApp",SET.hiddenGroups[a]);
-			document.getElementById("f_"+a).classList.toggle("hideApp",SET.hiddenGroups[a]);
+			if(!document.getElementById("f_app"+a).classList.contains("disabled")){
+				document.getElementById("f_app"+a).classList.toggle("hideApp",SET.hiddenGroups[a]);
+				document.getElementById("f_"+a).classList.toggle("hideApp",SET.hiddenGroups[a]);
+			}
 		}
 		SET.filtraGruppo();
 	},
 	filtraGruppo: function(){ // filtra i punti pruppo
 		let els = scene.getObjectByName("ARs").children;
 		for(let e in els){
-			els[e].visible = !SET.hiddenGroups[els[e].userData.apparato];
+			if(!document.getElementById("f_app"+els[e].userData.apparato).classList.contains("disabled"))els[e].visible = !SET.hiddenGroups[els[e].userData.apparato];
 		}
 		els = document.getElementById("elencoPunti").getElementsByTagName("p");
 		for(let e in els){
-			if(els[e].dataset?.apparato)els[e].classList.toggle("hideP", SET.hiddenGroups[els[e].dataset.apparato] );
+			if(els[e].dataset?.apparato){
+				if(!document.getElementById("f_app"+els[e].dataset.apparato).classList.contains("disabled")){
+					els[e].classList.toggle("hideP", SET.hiddenGroups[els[e].dataset.apparato] );
+				}
+			}
 		}
 	},
 	swFiltri: function(){ // mostra/nasconde i filtri
@@ -111,12 +118,13 @@ var MODULO_PUNTI = { // extend SET
 		for(a in DB.set.apparati)contFiltri += '<i onClick="SET.swGruppo('+a+');"id="f_app'+a+'">'+DB.set.apparati[a]+'<b class="app'+a+'"></b></i>';
 		contFiltri +=		'</div>';
 		document.getElementById("divs").innerHTML = contFiltri;
+		SET.filtraSet();
 	},
 	
 	swFiltriSmart: function(){ // visualizza/nasconde il menu rapido dei filtri (in alto a SX)
 		document.getElementById("filtriSmart_cont").classList.toggle("visSch");
 	},
 	verFreePunti: function( siglaPunto ){
-		return !(SET.PUNTI_free.indexOf(siglaPunto)==-1 && (DB.login.data.auths.indexOf(globals.set.cartella)==-1 || !LOGIN.logedin()));
+		return !(SET.APPARATI_free.indexOf(scene.getObjectByName(siglaPunto).userData.apparato)==-1 && (DB.login.data.auths.indexOf(globals.set.cartella)==-1 || !LOGIN.logedin()));
 	}
 }

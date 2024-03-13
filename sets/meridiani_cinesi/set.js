@@ -724,11 +724,11 @@ SET = {
 			}
 		}
 	},
-	accendiMeridiano: function( siglaMeridiano, g=false, noSw=false ){
+	accendiMeridiano: function( siglaMeridiano, g=false, noSw=false, noVer=false ){
 		if(!globals.modello.cartella)return;
 		// verifico le autorizzazioni
 		if(!SET.verFreeMeridiani(siglaMeridiano)){
-			ALERT(TXT("MsgFunzioneSoloPay"));
+			if(!noVer)ALERT(TXT("MsgFunzioneSoloPay"),true,true);
 			return;
 		}
 		// --------------------------
@@ -799,7 +799,7 @@ SET = {
 			for(let m in MERIDIANI){
 				if(MERIDIANI[m].meridianoAcceso){
 					var mer = m;
-					SET.accendiMeridiano(m,true);
+					SET.accendiMeridiano(m,true,false,true);
 					SET.coloraMeridiano(mer,'','Base');
 				}
 			}
@@ -938,7 +938,7 @@ SET = {
 		var result = html.match(re);
 		for(let k in result){
 			var siglaMeridiano=result[k].split("'")[1];
-			SET.accendiMeridiano(siglaMeridiano,true);
+			SET.accendiMeridiano(siglaMeridiano,true,false,true);
 		}
 	},
 	evidenziaPuntoMod: function( elenco ){ 
@@ -963,7 +963,7 @@ SET = {
 	evidenziaMeridianiMod: function( elenco ){
 		SET.spegniMeridiani(true);
 		for(let k in elenco){
-			SET.accendiMeridiano(elenco[k],true);
+			SET.accendiMeridiano(elenco[k],true,false,true);
 		}
 	},
 	annullaEvidenziaPunto: function(){
@@ -1054,7 +1054,6 @@ SET = {
 		var str = document.getElementById("scheda_testo"+nScheda).innerHTML;
 		var pts = str.match(regexp);
 		for(let p in pts){
-			console.log(pts[p])
 			var pP = pts[p].split(".");
 			str = str.replace(pts[p], pP[0]+"."+SET.convSigla(pP[1].substr(0,2))+pP[1].substr(2,1));
 		}

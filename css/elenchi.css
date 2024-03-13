@@ -16,7 +16,7 @@ body:not(.smart) #btnCarMapMenu,
 	line-height:40px;
 	color:#666;
 	margin:4px;
-	cursor:pointer;
+	/* cursor:pointer; */
 }
 .smart.android #elenchi #btnCarMapMenu{
 	margin-bottom: 20px;

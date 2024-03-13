@@ -475,7 +475,7 @@ var modelli = {
 			"y": -0.2381679067910409,
 			"z": 10.835390371711297
 		},
-		areaName: 'Muscles', // per le icone
+		areaName: '', // per le icone
 		rifletti: false,
 		muscles3d: true,
 		txtLoading: stripslashes(TXT("CaricamentoModelloPiede")),

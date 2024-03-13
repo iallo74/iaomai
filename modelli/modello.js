@@ -39,6 +39,7 @@ var MODELLO = {
 		let rgMat = /\[([^\]]+)\]/; // RegularExpression per addMat
 		
 		if(localStorage.tipoPelle)MODELLO.tipoPelle = localStorage.tipoPelle;
+		if(!globals.modello.areaName)localStorage.areasView = '';
 		
 		if(globals.modello.livelli.indexOf("visceri") > -1){
 			obj_visceri = JSON.parse(LZString.decompressFromBase64(obj_visceri));

@@ -419,7 +419,7 @@ function caricaSet( cartella, el, forzaModello='' ){
 		
 		IMPORTER.importaFiles(	0,
 								imports,
-								'SET._init();MENU.aggiornaIconeModello();if(smartMenu && document.getElementById("sets").classList.contains("visSch")){SCHEDA.chiudiElenco();MENU.visSets();}',
+								'SET._init();MENU.aggiornaIconeModello();if(smartMenu && document.getElementById("sets").classList.contains("visSch")){SCHEDA.chiudiElenco();MENU.visSets();}if(!globals.modello.cartella){GUIDA.visFumetto("guida_generica");}',
 								document.getElementById("scripts") );
 		if(el)el.classList.add("btnSetSel");
 		if(globals.modello.cartella){
@@ -430,6 +430,7 @@ function caricaSet( cartella, el, forzaModello='' ){
 		document.getElementById("pulsanti_set").classList.add("setAperto");
 		document.getElementById("btns_set").classList.add("visBtn");
 		document.body.classList.add('bodySet');
+		document.body.classList.add('body_'+globals.set.cartella);
 		updateModels();
 	}
 	try{
@@ -445,6 +446,7 @@ function scaricaSet( notInit=false ){
 	var daScheda = (SCHEDA.classeAperta == 'scheda_A' ||
 					SCHEDA.classeAperta == 'scheda_B');
 	CUSTOMS._end();
+	document.body.classList.remove('body_'+globals.set.cartella);
 	try{SET._scaricaSet();}catch(err){};
 	RICERCHE.annullaGlobal();
 	if(	!daScheda )SCHEDA.scaricaScheda();
