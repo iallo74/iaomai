@@ -487,6 +487,8 @@ SET = {
 				SCHEDA.chiudiElenco();
 				MENU.chiudiMenu();
 			}
+		}if(!globals.modello.cartella){
+			GUIDA.visFumetto("guida_generica");
 		}
 		postApreSet = false;
 		if(scene.getObjectByName('pins_aree') && areasView){

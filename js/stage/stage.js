@@ -419,7 +419,7 @@ function caricaSet( cartella, el, forzaModello='' ){
 		
 		IMPORTER.importaFiles(	0,
 								imports,
-								'SET._init();MENU.aggiornaIconeModello();if(smartMenu && document.getElementById("sets").classList.contains("visSch")){SCHEDA.chiudiElenco();MENU.visSets();}if(!globals.modello.cartella){GUIDA.visFumetto("guida_generica");}',
+								'SET._init();MENU.aggiornaIconeModello();if(smartMenu && document.getElementById("sets").classList.contains("visSch")){SCHEDA.chiudiElenco();MENU.visSets();}',//if(!globals.modello.cartella){GUIDA.visFumetto("guida_generica");}',
 								document.getElementById("scripts") );
 		if(el)el.classList.add("btnSetSel");
 		if(globals.modello.cartella){

@@ -190,6 +190,8 @@ SET = {
 					MENU.chiudiMenu();
 				}
 			}
+		}if(!globals.modello.cartella){
+			GUIDA.visFumetto("guida_generica");
 		}
 		postApreSet = false;
 

@@ -363,6 +363,8 @@ SET = {
 				SCHEDA.chiudiElenco();
 				MENU.chiudiMenu();
 			}
+		}if(!globals.modello.cartella){
+			GUIDA.visFumetto("guida_generica");
 		}
 		if(smartMenu)GUIDA.visFumetto("guida_set_mini",false,false);
 		postApreSet = false;
