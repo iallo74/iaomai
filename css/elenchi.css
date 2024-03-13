@@ -179,11 +179,11 @@ body:not(.smart) #help_set,
     line-height: 15.57px !important;
 	font-size: var(--font-16-93) !important;
 }
-#help_clienti,
+body:not(.smart) #help_clienti{
+	margin-top: 11px !important;
+}
 .smart #help_set{
-    /* margin-top: 11px; */
-    /*margin-right: -13px;*/
-	margin: 11px 2px 0px 2px !important;
+	margin-right: 5px !important;
 }
 #labelSets #help_set{
 	margin-right: 38px !important;
@@ -192,6 +192,7 @@ body:not(.smart) #help_set,
 }
 .smart #help_clienti{
     margin-top: 5px;
+	margin-right: 5px !important;
 }
 .help_sets{
     margin-top: 0px;
