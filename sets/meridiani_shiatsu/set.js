@@ -620,7 +620,6 @@ SET = {
 					if(this.INTERSECTED.name.indexOf("NK")==-1)SET.apriPunto(n[1],ritorno, this.INTERSECTED);
 					else{
 						let pP = n[1].split(".");
-						console.log(n[1])
 						let lato ='';
 						if(pP[2]=='DX')lato = 'x';
 						if(pP[2]=='SX')lato = 'y';
@@ -1784,6 +1783,7 @@ SET = {
 				}
 			}
 		}
+		document.getElementById("meridianiSmart_ico").classList.toggle('nas',localStorage.sistemaMeridiani=='NMK');
 		var titPoints = TXT("MeridianiPunti");
 		if(localStorage.sistemaMeridiani=='NMK')titPoints = TXT("RegioniAnatomiche");
 		if(localStorage.sistemaMeridiani=='MAS')titPoints = TXT("Meridiani");
