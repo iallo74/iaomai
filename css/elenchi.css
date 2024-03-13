@@ -60,7 +60,7 @@ body:not(.smart) #btnCarMapMenu i span,
     background-position: 9px center;
     padding-left: 43px;
     cursor: pointer;
-    width: 180px;
+    /* width: 180px; */
 }
 #quitSet:hover{
 	background-image: url(../img/ico_quit5On.png);

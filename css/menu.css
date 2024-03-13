@@ -1125,10 +1125,12 @@ body:not(.Muscles) #i_aree{
     margin: 0 8px 10px 8px;
     text-align: left;
 	cursor:pointer;
+	font-size: 13.2px;
 }
 #noLicenze *,
 #demoVersion *{
     color: #FFF;
+	font-size: inherit;
 }
 #noLicenze.vis,
 #demoVersion.vis{
