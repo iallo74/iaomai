@@ -1768,9 +1768,9 @@ SET = {
 				for(let s in SETS.children[m].children){
 					let siglaPunto = SETS.children[m].children[s].name.replace("_","");
 					let pP = siglaPunto.split(".");
-					SETS.children[m].children[s].visible = 	SET.PUNTI_free.indexOf(pP[0]+"."+pP[1])>-1 || 
+					SETS.children[m].children[s].visible = 	(SET.PUNTI_free.indexOf(pP[0]+"."+pP[1])>-1 || 
 															SET.verAttModule() || 
-															SET.verLightVersion();
+															SET.verLightVersion()) && !SETS.children[m].children[s].userData.hidden;
 				}
 			}
 		}
