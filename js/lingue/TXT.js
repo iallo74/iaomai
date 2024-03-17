@@ -895,7 +895,7 @@ DB.TXT = {
             eng: "Change user",
             esp: "Cambiar usuario",
             fra: "Changer d'usager",
-            por: "Alterar usuário",
+            por: "Muda usuário",
             deu: "Benutzer wechseln"
         },
         "StaiConnesso": {
@@ -3678,7 +3678,7 @@ DB.TXT = {
             ita: "Incassi",
             eng: "Payments",
             esp: "Pagos",
-            fra: "Paiements",
+            fra: "Entrées",
             por: "Pagamentos",
             deu: "Zahlungen"
         },

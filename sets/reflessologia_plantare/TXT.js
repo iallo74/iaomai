@@ -76,10 +76,10 @@ DB.TXT.set = {
     },
     Patologie: {
         ita: "Protocolli di trattamento",
-		eng: "Shiatsu Protocols",
-		esp: "Protocolos Shiatsu",
-		fra: "Protocoles Shiatsu",
-		por: "Protocolos shiatsu",
+		eng: "Treatment Protocols",
+		esp: "Protocolos de tratamiento",
+		fra: "Protocoles de traitement",
+		por: "Protocolos de tratamento",
 		deu: "Behandlungsprotokollen"
     },
     Punto: {

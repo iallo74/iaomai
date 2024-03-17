@@ -1012,7 +1012,7 @@ DB.TXT.set = {
         ita: "MASTER",
         eng: "MASTER",
         esp: "MASTER",
-        fra: "MAÎTRE",
+        fra: "MASTER",
         por: "MASTER",
         deu: "MASTER"
     },
