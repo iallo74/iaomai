@@ -19,7 +19,7 @@ DB.TXT.set = {
 		ita: "Annotazioni sul punto",
 		eng: "Comments on point",
 		esp: "Comentarios sobre el punto",
-		fra: "Commentaires sur le point",
+		fra: "Annotations sur le point",
 		por: "Comentários sobre o ponto",
 		deu: "Kommentare zum Punkt"
 	},
@@ -27,7 +27,7 @@ DB.TXT.set = {
 		ita: "Nessuna annotazione",
 		eng: "No comments",
 		esp: "Sin comentarios",
-		fra: "Pas de commentaires",
+		fra: "Aucun annotation",
 		por: "Sem comentários",
 		deu: "Keine Kommentare"
 	}, 
@@ -48,12 +48,12 @@ DB.TXT.set = {
         deu: "Ersetze [t] durch diesen Punkte"
     },
 	CambiaMeridiani: {
-		ita: "Cambia sistema di meridiani ( cinesi / masunaga )",
-		eng: "Change meridian system (Chinese/Masunaga)",
-		esp: "Cambiar sistema de meridianos (chinos/Masunaga)",
-		fra: "Changer de système de méridiens (chinois/Masunaga)",
-		por: "Mudar o sistema de meridianos (chinês/Masunaga)",
-		deu: "Ändere Meridiansystem (chinesisch/Masunaga)"
+		ita: "Cambia sistema di meridiani ( cinesi / masunaga namikoshi  )",
+		eng: "Change meridian system (Chinese/Masunaga/Namikoshi)",
+		esp: "Cambiar sistema de meridianos (chinos/Masunaga/Namikoshi)",
+		fra: "Changer de système de méridiens (chinois/Masunaga/Namikoshi)",
+		por: "Mudar o sistema de meridianos (chinês/Masunaga/Namikoshi)",
+		deu: "Ändere Meridiansystem (chinesisch/Masunaga/Namikoshi)"
 	},
 	
 	ProtocolloTrattamento: {
@@ -124,7 +124,7 @@ DB.TXT.set = {
 		ita: "Selettore rapido meridiani",
 		eng: "Meridians smart view",
 		esp: "Vista inteligente de meridianos",
-		fra: "Vue intelligente des méridiens",
+		fra: "Sélecteur rapide des méridiens",
 		por: "Visão inteligente de meridianos",
 		deu: "Intelligente Meridiane-Ansicht"
 	},

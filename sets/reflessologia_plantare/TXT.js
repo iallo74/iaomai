@@ -12,7 +12,7 @@ DB.TXT.set = {
         ita: "Annotazioni sul punto",
         eng: "Comments on point",
         esp: "Comentarios sobre el punto",
-        fra: "Commentaires sur le point",
+        fra: "Annotations sur le point",
         por: "Comentários sobre o ponto",
         deu: "Kommentare zum Punkt"
     },
@@ -20,7 +20,7 @@ DB.TXT.set = {
         ita: "Nessuna annotazione",
         eng: "No comments",
         esp: "Sin comentarios",
-        fra: "Aucun commentaire",
+        fra: "Aucun annotation",
         por: "Sem comentários",
         deu: "Keine Kommentare"
     },
@@ -62,7 +62,7 @@ DB.TXT.set = {
         ita: "Filtri rapidi",
         eng: "Smart filters",
         esp: "Filtros inteligentes",
-        fra: "Filtres intelligents",
+        fra: "Filtres rapides",
         por: "Filtros inteligentes",
         deu: "Intelligente Filter"
     },
@@ -75,12 +75,12 @@ DB.TXT.set = {
         deu: "Systeme"
     },
     Patologie: {
-        ita: "Ipotesi di trattamento",
-		eng: "Hypothesis of treatment",
-        esp: "Hipótesis de tratamiento",
-        fra: "Hypothèse de traitement",
-        por: "Hipótese de tratamento",
-        deu: "Behandlungshypothese"
+        ita: "Protocolli di trattamento",
+		eng: "Shiatsu Protocols",
+		esp: "Protocolos Shiatsu",
+		fra: "Protocoles Shiatsu",
+		por: "Protocolos shiatsu",
+		deu: "Behandlungsprotokollen"
     },
     Punto: {
         ita: "Area",

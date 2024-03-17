@@ -11,7 +11,7 @@ DB.TXT.set = {
         ita: "Annotazioni sul punto",
         eng: "Comments on point",
         esp: "Comentarios sobre el punto",
-        fra: "Commentaires sur le point",
+        fra: "Annotations sur le point",
         por: "Comentários sobre o ponto",
         deu: "Kommentare zum Punkt"
     },
@@ -19,7 +19,7 @@ DB.TXT.set = {
         ita: "Nessuna annotazione",
         eng: "No comments",
         esp: "Sin comentarios",
-        fra: "Aucun commentaire",
+        fra: "Aucun annotation",
         por: "Sem comentários",
         deu: "Keine Kommentare"
     },
@@ -99,7 +99,7 @@ DB.TXT.set = {
         ita: "Selettore rapido meridiani",
         eng: "Meridians smart view",
         esp: "Selección rápida de meridianos",
-        fra: "Vue intelligente des méridiens",
+        fra: "Sélecteur rapide des méridiens",
         por: "Visão inteligente dos meridianos",
         deu: "Smart-Ansicht der Meridiane"
     },
