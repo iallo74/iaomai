@@ -8336,7 +8336,7 @@ DB.TXT = {
             ita: "DOCCIA SCAFOIDE",
             eng: "SCAPHOID FOSSA",
 			esp: "FOSA ESCAFOIDEA",
-			fra: "FOSSA SCAPHOÏDE",
+			fra: "FOSSE SCAPHOÏDE",
 			por: "FOSSA ESCAFÓIDEA",
 			deu: "SKAPHOID-GRUBE"
         },
@@ -8352,7 +8352,7 @@ DB.TXT = {
             ita: "FOSSETTA TRIANGOLARE",
             eng: "TRIANGULAR FOSSA",
             esp: "CUEVA TRIANGULAR",
-            fra: "FOSSA TRIANGULAIRE",
+            fra: "FOSSE TRIANGULAIRE",
             por: "FOSSA TRIANGULAR",
             deu: "DREIECKSGRUBE"
         },

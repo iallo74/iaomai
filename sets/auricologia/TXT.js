@@ -235,7 +235,7 @@ DB.TXT.set = {
         ita: "Conca rigida",
         eng: "Rigid concha",
         esp: "Concha rígida",
-        fra: "Conque rigide",
+        fra: "Crête de la conque",
         por: "Concha rígida",
         deu: "Starre Muschel"
     },
