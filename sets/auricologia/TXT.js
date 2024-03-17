@@ -35,7 +35,7 @@ DB.TXT.set = {
         ita: "Annotazioni sul punto",
         eng: "Comments on point",
         esp: "Comentarios sobre el punto",
-        fra: "Commentaires sur le point",
+        fra: "Annotations sur le point",
         por: "Comentários sobre o ponto",
         deu: "Kommentare zum Punkt"
     },
@@ -43,7 +43,7 @@ DB.TXT.set = {
         ita: "Nessuna annotazione",
         eng: "No comments",
         esp: "Sin comentarios",
-        fra: "Aucun commentaire",
+        fra: "Aucun annotation",
         por: "Sem comentários",
         deu: "Keine Kommentare"
     },
@@ -227,7 +227,7 @@ DB.TXT.set = {
         ita: "Incisura intertragica",
         eng: "Intertragic notch",
         esp: "Escotadura intertrágica",
-        fra: "Échancrure intertragique",
+        fra: "Incisure intertragique",
         por: "Entalhe intertragal",
         deu: "Intertragic-Kerbe"
     },
@@ -275,7 +275,7 @@ DB.TXT.set = {
         ita: "Lobulo",
         eng: "Lobe",
         esp: "Lóbulo",
-        fra: "Lobe",
+        fra: "Lobule",
         por: "Lóbulo",
         deu: "Läppchen"
     },
@@ -283,7 +283,7 @@ DB.TXT.set = {
         ita: "Lobulo posteriore",
         eng: "Posterior lobe",
         esp: "Lóbulo posterior",
-        fra: "Lobe postérieur",
+        fra: "Lobule postérieur",
         por: "Lóbulo posterior",
         deu: "Hinteres Läppchen"
     },
@@ -443,7 +443,7 @@ DB.TXT.set = {
         ita: "Filtri rapidi",
         eng: "Smart filters",
         esp: "Filtros inteligentes",
-        fra: "Filtres intelligents",
+        fra: "Filtres rapides",
         por: "Filtros inteligentes",
         deu: "Intelligente Filter"
     },
@@ -648,11 +648,11 @@ DB.TXT.set = {
         deu: "Protokoll zum plötzlichen Beenden von Lovato"
     },
     ProtocolloRossato: {
-        ita: "Protocollo antitabacco di Rossato",
+        ita: "Protocollo antitabacco, di Rossato",
         eng: "Rossato's tobacco control protocol",
-        esp: "Protocolo de control del tabaco de Rossato",
-        fra: "Protocole de contrôle du tabac de Rossato",
-        por: "Protocolo de controle do tabaco de Rossato",
+        esp: "Protocolo de control del tabaco, de Rossato",
+        fra: "Protocole de contrôle du tabac, de Rossato",
+        por: "Protocolo de controle do tabaco, de Rossato",
         deu: "Rossatos Tabakkontrollprotokoll"
     },
     ProtocolloNada: {
@@ -664,11 +664,11 @@ DB.TXT.set = {
         deu: "NADA-Protokoll"
     },
     ProtocolloNogier: {
-        ita: "Programma antitabacco classico di Nogier",
+        ita: "Programma antitabacco classico, di Nogier",
         eng: "Nogier's classic tobacco control program",
-        esp: "Programa clásico de control del tabaco de Nogier",
-        fra: "Programme classique de lutte contre le tabagisme de Nogier",
-        por: "Programa clássico de controle do tabaco de Nogier",
+        esp: "Programa clásico de control del tabaco, de Nogier",
+        fra: "Programme classique de lutte contre le tabagisme, de Nogier",
+        por: "Programa clássico de controle do tabaco, de Nogier",
         deu: "Nogiers klassisches Tabakkontrollprogramm"
     },
     SalvaProsegui: {
@@ -747,7 +747,7 @@ DB.TXT.set = {
         ita: "Punti MASTER",
         eng: "MASTER points",
         esp: "Puntos MASTER",
-        fra: "Points MASTER",
+        fra: "Points MAÎTRE",
         por: "Pontos MASTER",
         deu: "MASTER-Punkte"
     },
@@ -947,7 +947,7 @@ DB.TXT.set = {
         ita: "Punto MASTER",
         eng: "MASTER point",
         esp: "Punto MASTER",
-        fra: "Point MASTER",
+        fra: "Point MAÎTRE",
         por: "Ponto MASTER",
         deu: "MASTER-Punkt"
     },
@@ -1012,7 +1012,7 @@ DB.TXT.set = {
         ita: "MASTER",
         eng: "MASTER",
         esp: "MASTER",
-        fra: "MASTER",
+        fra: "MAÎTRE",
         por: "MASTER",
         deu: "MASTER"
     },

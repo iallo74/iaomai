@@ -806,7 +806,7 @@ DB.TXT = {
             ita: "ATTENZIONE! Hai richiesto di eliminare il tuo account. Questa operazione comporta la perdita totale di tutti i dati e di tutti i tuoi servizi. Vuoi davvero procedere con l'eliminazione del tuo account?",
             eng: "PLEASE NOTE! You have requested to delete your account. This operation results in the total loss of all your data and services. Do you really want to delete your account?",
             esp: "¡ATENCIÓN! Has solicitado eliminar tu cuenta. Esta operación resulta en la pérdida total de todos tus datos y servicios. ¿Realmente deseas eliminar tu cuenta?",
-            fra: "NOTE! Vous avez demandé la suppression de votre compte. Cette opération entraîne la perte totale de toutes vos données et services. Voulez-vous vraiment supprimer votre compte ?",
+            fra: "NOTE ! Vous avez demandé la suppression de votre compte. Cette opération entraîne la perte totale de toutes vos données et services. Voulez-vous vraiment supprimer votre compte ?",
             por: "ATENÇÃO! Você solicitou a exclusão da sua conta. Essa operação resulta na perda total de todos os seus dados e serviços. Você realmente deseja excluir sua conta?",
             deu: "BITTE BEACHTEN SIE! Sie haben beantragt, Ihr Konto zu löschen. Dieser Vorgang führt zum vollständigen Verlust aller Ihrer Daten und Dienste. Möchten Sie Ihr Konto wirklich löschen?"
         },
@@ -830,7 +830,7 @@ DB.TXT = {
             ita: "ATTENZIONE! Stai utilizzando la versione demo dell'app. Clicca per effettuare il login.",
             eng: "PLEASE NOTE! You are using the demo version of the app. Click to login.",
             esp: "¡ATENCIÓN! Estás usando la versión de demostración de la aplicación. Haz clic para iniciar sesión.",
-            fra: "NOTE! Vous utilisez la version de démonstration de l'application. Cliquez pour vous connecter.",
+            fra: "NOTE ! Vous utilisez la version de démonstration de l'application. Cliquez pour vous connecter.",
             por: "ATENÇÃO! Você está usando a versão de demonstração do aplicativo. Clique para fazer login.",
             deu: "BITTE BEACHTEN SIE! Sie verwenden die Demo-Version der App. Klicken Sie hier, um sich anzumelden."
         },
@@ -1637,12 +1637,12 @@ DB.TXT = {
             deu: "Geteilt"
         },
         ANNOTAZIONI_GENERICO: {
-            ita: "ANNOTAZIONI SUL MANICHINO GENERICO",
-            eng: "COMMENTS ON 3D MODEL",
-            esp: "COMENTARIOS SOBRE EL MODELO 3D",
-            fra: "COMMENTAIRES SUR LE MODÈLE 3D",
-            por: "COMENTÁRIOS SOBRE O MODELO 3D",
-            deu: "KOMMENTARE ZUM 3D-MODELL"
+            ita: "ANNOTAZIONI SUL MODELLO GENERICO",
+            eng: "COMMENTS ON GENERIC MODEL",
+            esp: "COMENTARIOS SOBRE EL MODELO GENÉRICO",
+            fra: "COMMENTAIRES SUR LE MODÈLE GÉNÉRIQUE",
+            por: "COMENTÁRIOS SOBRE O MODELO GENÉRICO",
+            deu: "KOMMENTARE ZUM GENERISCHEN MODELL"
         },
         m: {
             ita: "maschio",
@@ -1866,7 +1866,7 @@ DB.TXT = {
             ita: "Nessun pacchetto",
             eng: "No packages",
             esp: "No hay paquetes",
-            fra: "Aucun forfait",
+            fra: "Aucun paquet",
             por: "Sem pacotes",
             deu: "Keine Pakete"
         },
@@ -1874,7 +1874,7 @@ DB.TXT = {
             ita: "Vuoi davvero eliminare il pacchetto? N.B. Non sarà più possibile recuperarlo.",
             eng: "Do you really want to delete the package? Please note! It won't be possible to recover it anymore.",
             esp: "¿Realmente deseas eliminar el paquete? ¡Ten en cuenta! No se podrá recuperar.",
-            fra: "Voulez-vous vraiment supprimer le forfait ? Notez bien! Il ne sera plus possible de le récupérer.",
+            fra: "Voulez-vous vraiment supprimer le paquet ? Notez bien! Il ne sera plus possible de le récupérer.",
             por: "Você realmente deseja excluir o pacote? Observação! Não será possível recuperá-lo posteriormente.",
             deu: "Möchten Sie das Paket wirklich löschen? Hinweis! Es wird nicht mehr möglich sein, es wiederherzustellen."
         },
@@ -1882,7 +1882,7 @@ DB.TXT = {
             ita: "Pacchetti di sedute",
             eng: "Session packages",
             esp: "Paquetes de sesiones",
-            fra: "Forfaits de séances",
+            fra: "Paquets de séances",
             por: "Pacotes de sessões",
             deu: "Sitzungspakete"
         },
@@ -1890,7 +1890,7 @@ DB.TXT = {
             ita: "Aggiungi un pacchetto di sedute",
             eng: "Add a session package",
             esp: "Agregar un paquete de sesiones",
-            fra: "Ajouter un forfait de séances",
+            fra: "Ajouter un paquet de séances",
             por: "Adicionar um pacote de sessões",
             deu: "Sitzungspaket hinzufügen"
         },
@@ -1898,7 +1898,7 @@ DB.TXT = {
             ita: "Scheda pacchetto di sedute",
             eng: "Session package details",
             esp: "Detalles del paquete de sesiones",
-            fra: "Détails du forfait de séances",
+            fra: "Détails du paquet de séances",
             por: "Detalhes do pacote de sessões",
             deu: "Details zum Sitzungspaket"
         },
@@ -1906,7 +1906,7 @@ DB.TXT = {
             ita: "Nuovo pacchetto di sedute",
             eng: "New session package",
             esp: "Nuevo paquete de sesiones",
-            fra: "Nouveau forfait de séances",
+            fra: "Nouveau paquet de séances",
             por: "Novo pacote de sessões",
             deu: "Neues Sitzungspaket"
         },
@@ -1914,7 +1914,7 @@ DB.TXT = {
             ita: "Nome del pacchetto di sedute",
             eng: "Session package name",
             esp: "Nombre del paquete de sesiones",
-            fra: "Nom du forfait de séances",
+            fra: "Nom du paquet de séances",
             por: "Nome do pacote de sessões",
             deu: "Name des Sitzungspakets"
         },
@@ -1922,7 +1922,7 @@ DB.TXT = {
             ita: "Scrivi qualche parola per descrivere il pacchetto di sedute ...",
             eng: "Write a few words to describe the offered session package...",
             esp: "Escribe algunas palabras para describir el paquete de sesiones ofrecido ...",
-            fra: "Écrivez quelques mots pour décrire le forfait de séances proposé...",
+            fra: "Écrivez quelques mots pour décrire le paquet de séances proposé...",
             por: "Escreva algumas palavras para descrever o pacote de sessões oferecido...",
             deu: "Schreiben Sie ein paar Worte, um das angebotene Sitzungspaket zu beschreiben..."
         },
@@ -1978,7 +1978,7 @@ DB.TXT = {
             ita: "Seleziona un pacchetto di sedute da aggiungere al paziente",
             eng: "Select a session package to add to the patient",
             esp: "Selecciona un paquete de sesiones para agregar al paciente",
-            fra: "Sélectionnez un forfait de séances à ajouter au patient",
+            fra: "Sélectionnez un paquet de séances à ajouter au patient",
             por: "Selecione um pacote de sessões para adicionar ao paciente",
             deu: "Wählen Sie ein Sitzungspaket aus, um es dem Patienten hinzuzufügen"
         },
@@ -1986,7 +1986,7 @@ DB.TXT = {
             ita: "Seleziona o aggiungi la cartella in cui inserire il pacchetto di sedute",
             eng: "Select or add the folder to place the session package",
             esp: "Selecciona o agrega la carpeta en la que colocar el paquete de sesiones",
-            fra: "Sélectionnez ou ajoutez le dossier dans lequel placer le forfait de séances",
+            fra: "Sélectionnez ou ajoutez le dossier dans lequel placer le paquet de séances",
             por: "Selecione ou adicione a pasta onde colocar o pacote de sessões",
             deu: "Wählen Sie den Ordner aus oder fügen Sie ihn hinzu, um das Sitzungspaket zu platzieren"
         },
@@ -1994,7 +1994,7 @@ DB.TXT = {
             ita: "Torna ai pacchetti di sedute",
             eng: "Go back to session packages",
             esp: "Volver a los paquetes de sesiones",
-            fra: "Retourner aux forfaits de séances",
+            fra: "Retourner aux paquet de séances",
             por: "Voltar aos pacotes de sessões",
             deu: "Zurück zu den Sitzungspaketen"
         },
@@ -2002,7 +2002,7 @@ DB.TXT = {
             ita: "Vuoi davvero aggiungere il pacchetto di sedute al paziente?",
             eng: "Do you really want to add the session package to the patient?",
             esp: "¿Realmente deseas agregar el paquete de sesiones al paciente?",
-            fra: "Voulez-vous vraiment ajouter le forfait de séances au patient ?",
+            fra: "Voulez-vous vraiment ajouter le paquet de séances au patient ?",
             por: "Você realmente deseja adicionar o pacote de sessões ao paciente?",
             deu: "Möchten Sie das Sitzungspaket wirklich dem Patienten hinzufügen?"
         },
@@ -2010,7 +2010,7 @@ DB.TXT = {
             ita: "Vuoi davvero aggiungere il pacchetto composto di [n] sedute al paziente?",
             eng: "Do you really want to add the package consisting of [n] sessions to the patient?",
             esp: "¿Realmente deseas agregar el paquete compuesto de [n] sesiones al paciente?",
-            fra: "Voulez-vous vraiment ajouter le forfait composé de [n] séances au patient ?",
+            fra: "Voulez-vous vraiment ajouter le paquet composé de [n] séances au patient ?",
             por: "Você realmente deseja adicionar o pacote composto por [n] sessões ao paciente?",
             deu: "Möchten Sie das Paket mit [n] Sitzungen wirklich dem Patienten hinzufügen?"
         },
@@ -2026,7 +2026,7 @@ DB.TXT = {
             ita: "Cerca un pacchetto ...",
             eng: "Search for a package ...",
             esp: "Buscar un paquete ...",
-            fra: "Rechercher un forfait ...",
+            fra: "Rechercher un paquet ...",
             por: "Buscar um pacote ...",
             deu: "Nach einem Paket suchen ..."
         },
@@ -2527,7 +2527,7 @@ DB.TXT = {
             ita: "testuale",
             eng: "string",
             esp: "texto",
-            fra: "chaîne de caractères",
+            fra: "texte",
             por: "string",
             deu: "Zeichenkette"
         },
@@ -3014,7 +3014,7 @@ DB.TXT = {
             ita: "Aggiungi meridiani",
             eng: "Add meridians",
             esp: "Agregar meridianos",
-            fra: "Ajouter des méridiens",
+            fra: "Ajouter méridiens",
             por: "Adicionar meridianos",
             deu: "Meridiane hinzufügen"
         },
@@ -3030,7 +3030,7 @@ DB.TXT = {
             ita: "Importa punto da...",
 			eng: "Import point from...",
 			esp: "Importar punto desde...",
-			fra: "Importer le point depuis...",
+			fra: "Importer point depuis...",
 			por: "Importar ponto de...",
 			deu: "Punkt importieren von..."
         },
@@ -3038,7 +3038,7 @@ DB.TXT = {
             ita: "Importa meridiani da...",
             eng: "Import meridians from...",
             esp: "Importar meridianos desde...",
-            fra: "Importer des méridiens depuis...",
+            fra: "Importer méridiens depuis...",
             por: "Importar meridianos de...",
             deu: "Meridiane importieren aus..."
         },
@@ -3052,11 +3052,11 @@ DB.TXT = {
         },
         LicenzaNonPermette: {
             ita: "Con la tua licenza non puoi utilizzare questo menu<br><u>Clicca per maggiori info</u>",
-            "eng": "With your license you cannot use this menu<br><u>Click for more info</u>",
-            "esp": "Con tu licencia no puedes usar este menú<br><u>Haga clic para más info</u>",
-            "fra": "Avec votre licence, vous ne pouvez pas utiliser ce menu<br><u>Cliquez pour plus d’infos</u>",
-            "por": "Com sua licença você não pode usar este menu<br><u>Clique para mais info</u>",
-            "deu": "Mit Ihrer Lizenz können Sie dieses Menü nicht verwenden<br><u>Klicken Sie hier für mehr Info</u>"
+            eng: "With your license you cannot use this menu<br><u>Click for more info</u>",
+            esp: "Con tu licencia no puedes usar este menú<br><u>Haga clic para más info</u>",
+            fra: "Avec votre licence, vous ne pouvez pas utiliser ce menu<br><u>Cliquez pour plus d’infos</u>",
+            por: "Com sua licença você não pode usar este menu<br><u>Clique para mais info</u>",
+            deu: "Mit Ihrer Lizenz können Sie dieses Menü nicht verwenden<br><u>Klicken Sie hier für mehr Info</u>"
         },
         PuntiAnamnesi: {
             ita: "Valutazione sui punti",
@@ -3386,7 +3386,7 @@ DB.TXT = {
             ita: "Vuoi davvero eliminare la foto?",
             eng: "Do you really want to delete the photo?",
             esp: "¿Realmente quieres eliminar la foto?",
-            fra: "Voulez-vous vraiment supprimer la photo?",
+            fra: "Voulez-vous vraiment supprimer la photo ?",
             por: "Deseja realmente excluir a foto?",
             deu: "Möchten Sie das Foto wirklich löschen?"
         },
@@ -3450,7 +3450,7 @@ DB.TXT = {
             ita: "Posizione",
             eng: "Location",
             esp: "Ubicación",
-            fra: "Lieu",
+            fra: "Emplacement",
             por: "Localização",
             deu: "Ort"
         },
@@ -3458,7 +3458,7 @@ DB.TXT = {
             ita: "Nessuna posizione trovata...",
             eng: "No location found...",
             esp: "No se encontró ubicación...",
-            fra: "Aucun lieu trouvé...",
+            fra: "Aucun emplacement trouvé...",
             por: "Nenhuma localização encontrada...",
             deu: "Kein Ort gefunden..."
         },
@@ -4248,7 +4248,7 @@ DB.TXT = {
             por: "Você deve inserir algum texto para o compromisso",
             deu: "Du musst einen Text für den Termin eingeben"
         },
-
+///----------------------------
         // COMMUNITY
         Pseudonimo: {
             ita: "Pseudonimo",
@@ -4299,12 +4299,12 @@ DB.TXT = {
             deu: "- Mir ist bewusst, dass alle geteilten Informationen, einschließlich des oben genannten Spitznamens, für andere Benutzer der Community sichtbar sein werden<br>- Ich verpflichte mich, sensible Daten meiner Patienten nicht an andere Benutzer der Community weiterzugeben, insbesondere solche, die ihre Gesundheit betreffen, und übernehme die volle Verantwortung für etwaige Informationslecks."
         },
         ElementoCondiviso: {
-            ita: "Questo elemento è condiviso con la Community di iaomai, quindi può essere letto da chiunque.",
-            eng: "This item is shared with the iaomai Community, so it can be read by anyone.",
-            esp: "Este elemento se comparte con la comunidad de iaomai, por lo que puede ser leído por cualquier persona.",
-            fra: "Cet élément est partagé avec la communauté iaomai, donc il peut être lu par n'importe qui.",
-            por: "Este item é compartilhado com a Comunidade iaomai, portanto, pode ser lido por qualquer pessoa.",
-            deu: "Dieser Artikel wird mit der iaomai-Community geteilt und kann daher von jedem gelesen werden."
+            ita: "Questo elemento è condiviso con la Community di iáomai, quindi può essere letto da chiunque.",
+            eng: "This item is shared with the iáomai Community, so it can be read by anyone.",
+            esp: "Este elemento se comparte con la comunidad de iáomai, por lo que puede ser leído por cualquier persona.",
+            fra: "Cet élément est partagé avec la communauté iáomai, donc il peut être lu par n'importe qui.",
+            por: "Este item é compartilhado com a Comunidade iáomai, portanto, pode ser lido por qualquer pessoa.",
+            deu: "Dieser Artikel wird mit der iáomai-Community geteilt und kann daher von jedem gelesen werden."
         },
 		
         // STATS
@@ -4368,7 +4368,7 @@ DB.TXT = {
             ita: "Pacchetti di sedute",
             eng: "Session packages",
             esp: "Paquetes de sesiones",
-            fra: "Forfaits de séances",
+            fra: "Paquets de séances",
             por: "Pacotes de sessões",
             deu: "Sitzungspakete"
         },
@@ -4500,7 +4500,7 @@ DB.TXT = {
             ita: "Hai già una licenza?",
             eng: "Do you already have a license?",
             esp: "¿Ya tienes una licencia?",
-            fra: "Possédez-vous déjà une licence?",
+            fra: "Possédez-vous déjà une licence ?",
             por: "Você já possui uma licença?",
             deu: "Hast du bereits eine Lizenz?"
         },
@@ -4526,7 +4526,7 @@ DB.TXT = {
             ita: "Provincia di nascita",
             eng: "Region of birth",
             esp: "Provincia de nacimiento",
-            fra: "Province naissance",
+            fra: "Province de naissance",
             por: "Província de nascimento",
             deu: "Geburtsprovinz"
         },
@@ -4714,7 +4714,7 @@ DB.TXT = {
             ita: "Con la versione gratuita puoi gestire un solo pacchetto. Registrati gratuitamente per gestire fino a 5 pacchetti o acquista il modulo Schedario Pazienti con archivi illimitati!.",
             eng: "With the free version you can manage only one pack. Register for free to manage up to 5 packs or purchase Medical File module with unlimited archives!",
             esp: "Con la versión gratuita solo puedes gestionar un paquete. ¡Regístrate gratis para gestionar hasta 5 paquetes o compra el módulo de Archivo Médico con archivos ilimitados!",
-            fra: "Avec la version gratuite, vous ne pouvez gérer qu'un seul pack. Inscrivez-vous gratuitement pour gérer jusqu'à 5 packs ou achetez le module Fichier Médical avec des fichiers illimités !",
+            fra: "Avec la version gratuite, vous ne pouvez gérer qu'un seul paquet. Inscrivez-vous gratuitement pour gérer jusqu'à 5 paquets ou achetez le module Fichier Médical avec des fichiers illimités !",
             por: "Com a versão gratuita, você só pode gerenciar um pacote. Cadastre-se gratuitamente para gerenciar até 5 pacotes ou adquira o módulo de Arquivo Médico com arquivos ilimitados!",
             deu: "Mit der kostenlosen Version können Sie nur ein Paket verwalten. Registrieren Sie sich kostenlos, um bis zu 5 Pakete zu verwalten oder erwerben Sie das Medizinische Akten-Modul mit unbegrenzten Dateien!"
         },
@@ -4722,7 +4722,7 @@ DB.TXT = {
             ita: "Con la registrazione gratuita puoi gestire fino a 5 pacchetti. Acquista il modulo Schedario Pazienti per archivi illimitati!.",
             eng: "With the free registration you can manage up to 5 packs. Purchase Medical File module for unlimited files!",
             esp: "Con el registro gratuito puedes gestionar hasta 5 paquetes. ¡Adquiere el módulo de Archivo Médico para archivos ilimitados!",
-            fra: "Avec l'inscription gratuite, vous pouvez gérer jusqu'à 5 packs. Achetez le module Fichier Médical pour des fichiers illimités !",
+            fra: "Avec l'inscription gratuite, vous pouvez gérer jusqu'à 5 paquets. Achetez le module Fichier Médical pour des fichiers illimités !",
             por: "Com o registro gratuito, você pode gerenciar até 5 pacotes. Adquira o módulo de Arquivo Médico para arquivos ilimitados!",
             deu: "Mit der kostenlosen Registrierung können Sie bis zu 5 Pakete verwalten. Kaufen Sie das Medizinische Akten-Modul für unbegrenzte Dateien!"
         },
@@ -4854,7 +4854,7 @@ DB.TXT = {
             ita: "AcupointsMap è il set che ti consente di studiare i concetti della Medicina Tradizionale Cinese applicati ai punti agopuntura e i meridiani energetici. Oltre all'anatomia completa e la gestione dei pazienti, è a tua disposizione un elenco di più di 130 patologie preconfigurate e il relativo trattamento secondo la MTC. Potrai inoltre elaborare procedure di trattamento personalizzate e condividerle nella Community.\n\nIl set include anche:\n[anatomy_full]",
             eng: "AcupointsMap is the set that allows you to study the concepts of Traditional Chinese Medicine applied to acupuncture points and energy meridians. In addition to complete anatomy and patient management, a list of more than 130 preconfigured pathologies and their treatment according to TCM is available to you. You will also be able to develop customized treatment procedures and share them in the Community.",
             esp: "AcupointsMap es el set que te permite estudiar los conceptos de la Medicina Tradicional China aplicados a los puntos de acupuntura y meridianos de energía. Además de la anatomía completa y la gestión de pacientes, tendrás a tu disposición una lista de más de 130 patologías preconfiguradas y su tratamiento según la MTC. También podrás desarrollar procedimientos de tratamiento personalizados y compartirlos en la comunidad.",
-            fra: "AcupointsMap est l'ensemble qui vous permet d'étudier les concepts de la médecine traditionnelle chinoise appliqués aux points d'acupuncture et aux méridiens d'énergie. En plus de l'anatomie complète et de la gestion des patients, une liste de plus de 130 pathologies préconfigurées et leur traitement selon la MTC est à votre disposition. Vous pourrez également développer des procédures de traitement personnalisées et les partager dans la communauté.",
+            fra: "AcupointsMap est l'ensemble qui vous permet d'étudier les concepts de la Médecine Traditionnelle Chinoise appliqués aux points d'acupuncture et aux méridiens d'énergie. En plus de l'anatomie complète et de la gestion des patients, une liste de plus de 130 pathologies préconfigurées et leur traitement selon la MTC est à votre disposition. Vous pourrez également développer des procédures de traitement personnalisées et les partager dans la communauté.",
             por: "AcupointsMap é o conjunto que permite estudar os conceitos da Medicina Tradicional Chinesa aplicados aos pontos de acupuntura e meridianos de energia. Além da anatomia completa e do gerenciamento de pacientes, você terá acesso a uma lista com mais de 130 patologias preconfiguradas e seus respectivos tratamentos de acordo com a MTC. Você também poderá desenvolver procedimentos de tratamento personalizados e compartilhá-los na Comunidade.",
             deu: "AcupointsMap ist das Set, das es Ihnen ermöglicht, die Konzepte der Traditionellen Chinesischen Medizin zu studieren, die auf Akupunkturpunkte und Energie-Meridiane angewendet werden. Neben der vollständigen Anatomie und der Patientenverwaltung steht Ihnen eine Liste mit über 130 vorkonfigurierten Pathologien und deren Behandlung nach der TCM zur Verfügung. Sie können auch maßgeschneiderte Behandlungsverfahren entwickeln und sie in der Community teilen."
         },
@@ -5522,7 +5522,7 @@ DB.TXT = {
             ita: "ATTENZIONE!<br>IAOMAI richiede un importante aggiornamento.",
             eng: "WARNING!<br>IAOMAI requires an important update.",
             esp: "¡ADVERTENCIA!<br>IAOMAI requiere una actualización importante.",
-            fra: "ATTENTION!<br>IAOMAI nécessite une mise à jour importante.",
+            fra: "ATTENTION !<br>IAOMAI nécessite une mise à jour importante.",
             por: "ATENÇÃO!<br>O IAOMAI requer uma atualização importante.",
             deu: "WARNUNG!<br>IAOMAI erfordert ein wichtiges Update."
         },
@@ -8336,7 +8336,7 @@ DB.TXT = {
             ita: "DOCCIA SCAFOIDE",
             eng: "SCAPHOID FOSSA",
 			esp: "FOSA ESCAFOIDEA",
-			fra: "FOSSA DU SCAPHOÏDE",
+			fra: "FOSSA SCAPHOÏDE",
 			por: "FOSSA ESCAFÓIDEA",
 			deu: "SKAPHOID-GRUBE"
         },
@@ -8504,7 +8504,7 @@ DB.TXT = {
             ita: "ANTELICE",
             eng: "ANTHELIX",
             esp: "ANTÉLICE",
-            fra: "ANTÉLIX",
+            fra: "ANTÉLICE",
             por: "ANTÉLICE",
             deu: "ANTHELIX"
         },
