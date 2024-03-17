@@ -19,7 +19,6 @@ var sets = {
 			"deu"
 		],
 		lingueAI: [
-			"fra",
 			"por",
 			"deu"
 		]
