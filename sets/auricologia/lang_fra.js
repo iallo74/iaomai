@@ -589,17 +589,17 @@ DB.set = {
         },
         "277": {
             "NomePunto": "Vertèbres cervicales CHN",
-            "AzioniPunto": "<p><b>Action</b><br>Les points de vertèbres cervicales est reconnu à la fois par l’École chinoise et l’École française, bien que dans différentes localisations, pour son efficacité dans toutes les pathologies liées aux vertèbres cervicales.</p><p> <b>Emplacement</b><br> AH8, dans le tiers inférieur du corps de l'antihélice, vers la fosse scaphoïde.</p>",
+            "AzioniPunto": "<p><b>Action</b><br>Les points Vertèbres cervicales sont reconnus à la fois par l’École Chinoise et l’École française, bien que dans différentes localisations, pour son efficacité dans toutes les pathologies liées aux vertèbres cervicales.</p><p> <b>Emplacement</b><br> AH8, dans le tiers inférieur du corps de l'antihélice, vers la fosse scaphoïde.</p>",
             "ChiaviPunto": ""
         },
         "278": {
             "NomePunto": "Vertèbres dorsales CHN",
-            "AzioniPunto": "<p><b>Action</b><br>Les points Vertèbres dorsales sont reconnus tant par l’École Chinoise que par l’École Française, bien que dans différentes localisations, pour son efficacité dans toutes les pathologies liées aux vertèbres dorsales.</p><p> <b>Emplacement</b><br> AH9-AH10, dans les tiers moyen et supérieur du corps de l'antihélice, vers la fosse scaphoïde.</p>",
+            "AzioniPunto": "<p><b>Action</b><br>Les points Vertèbres dorsales sont reconnus à la fois par l’École Chinoise et par l’École Française, bien que dans différentes localisations, pour son efficacité dans toutes les pathologies liées aux vertèbres dorsales.</p><p> <b>Emplacement</b><br> AH9-AH10, dans les tiers moyen et supérieur du corps de l'antihélice, vers la fosse scaphoïde.</p>",
             "ChiaviPunto": ""
         },
         "279": {
             "NomePunto": "Vertèbres lombaires CHN",
-            "AzioniPunto": "<p><b>Action</b><br>Les points Vertèbres lombaires sont reconnus à la fois par l’École chinoise et par l’École française, bien que dans différentes localisations, pour son efficacité dans toutes les pathologies liées aux vertèbres lombaires.</p><p> <b>Emplacement</b><br> AH1, dans la partie supérieure du corps de l'antihélice, avant qu'il ne se divise en racines supérieure et inférieure de l'antihélice.</p>",
+            "AzioniPunto": "<p><b>Action</b><br>Les points Vertèbres lombaires sont reconnus à la fois par l’École Chinoise et par l’École française, bien que dans différentes localisations, pour son efficacité dans toutes les pathologies liées aux vertèbres lombaires.</p><p> <b>Emplacement</b><br> AH1, dans la partie supérieure du corps de l'antihélice, avant qu'il ne se divise en racines supérieure et inférieure de l'antihélice.</p>",
             "ChiaviPunto": ""
         },
         "280": {
@@ -922,17 +922,17 @@ DB.set = {
         },
         "069": {
             "NomePunto": "Vertèbres cervicales EUR",
-            "AzioniPunto": "<p><b>Action</b><br>Les points de vertèbres cervicales sont reconnus à la fois par l’École chinoise et par l’École française, bien que dans différentes localisations, pour leur efficacité dans toutes les pathologies liées aux vertèbres cervicales.</p><p> <b>Emplacement</b><br> AH1-AH2, dans la crête de l'antihélice, s'étendant sur environ la moitié du bas du corps de l'antihélice.</p>",
+            "AzioniPunto": "<p><b>Action</b><br>Les points de Vertèbres cervicales sont reconnus à la fois par l’École Chinoise et par l’École Française, bien que dans différentes localisations, pour leur efficacité dans toutes les pathologies liées aux vertèbres cervicales.</p><p> <b>Emplacement</b><br> AH1-AH2, dans la crête de l'antihélice, s'étendant sur environ la moitié du bas du corps de l'antihélice.</p>",
             "ChiaviPunto": ""
         },
         "070": {
             "NomePunto": "Vertèbres thoraciques EUR",
-            "AzioniPunto": "<p><b>Action</b><br>Les points de vertèbres dorsales sont reconnus à la fois par l’École chinoise et par l’École française, bien que dans différentes localisations, pour leur efficacité dans toutes les pathologies liées aux vertèbres dorsales.</p><p> <b>Emplacement</b><br> AH3-AH4-AH5, sur la crête du corps de l'antihélice dans sa moitié supérieure.</p>",
+            "AzioniPunto": "<p><b>Action</b><br>Les points de Vertèbres dorsales sont reconnus à la fois par l’École Chinoise et par l’École Française, bien que dans différentes localisations, pour leur efficacité dans toutes les pathologies liées aux vertèbres dorsales.</p><p> <b>Emplacement</b><br> AH3-AH4-AH5, sur la crête du corps de l'antihélice dans sa moitié supérieure.</p>",
             "ChiaviPunto": ""
         },
         "071": {
             "NomePunto": "Vertèbres lombaires EUR",
-            "AzioniPunto": "<p><b>Action</b><br>Les points de vertèbres lombaires sont reconnus à la fois par l’École chinoise et l’École française, bien que dans différentes localisations, pour leur efficacité dans toutes les pathologies liées aux vertèbres lombaires.</p><p> <b>Emplacement</b><br> AH5-AH6, sur la crête de la racine inférieure de l'antihélice dans les deux tiers postérieurs.</p>",
+            "AzioniPunto": "<p><b>Action</b><br>Les points de Vertèbres lombaires sont reconnus à la fois par l’École Chinoise et par l’École Française, bien que dans différentes localisations, pour leur efficacité dans toutes les pathologies liées aux vertèbres lombaires.</p><p> <b>Emplacement</b><br> AH5-AH6, sur la crête de la racine inférieure de l'antihélice dans les deux tiers postérieurs.</p>",
             "ChiaviPunto": ""
         },
         "072": {
