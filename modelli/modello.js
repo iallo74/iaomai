@@ -518,7 +518,6 @@ var MODELLO = {
 					
 				},300);
 			}else if(getVar("demo")){
-				console.log(getVar("demo"))
 				if(getVar("demo")=='acupointsmap')caricaSet('meridiani_cinesi');
 				if(getVar("demo")=='shiatsumap')caricaSet('meridiani_shiatsu');
 				if(getVar("demo")=='auriculomap')caricaSet('auricologia');
@@ -545,6 +544,7 @@ var MODELLO = {
 				var position = JSON.parse(localStorage.modelPosition);
 				var rotation = JSON.parse(localStorage.modelRotation);
 				var zoom = parseFloat(localStorage.modelZoom);
+				if(__(globals.modello.minZoom,0)>zoom)zoom = globals.modello.minZoom;
 				if( (localStorage.areasView == '1' && !areasView) || 
 					(localStorage.areasView != '1' && areasView))MODELLO.swArea();
 				
@@ -579,6 +579,8 @@ var MODELLO = {
 				MODELLO.op("Vasi",opVasi);
 			}
 		}
+		if(!inizio)zoomEnd = globals.modello.minZoom;
+
 		if(globals.modello.cartella == 'orecchio' && MODELLO.tipoPelle){
 			MODELLO.cambiaTipoPelle(''); // metto la pelle chiare se si tratta dell'orecchio
 		}

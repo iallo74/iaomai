@@ -801,9 +801,14 @@ function centro(){ // riporta al centro
 	camera.lookAt(camera.position);
 	MENU.disBtnCentro();
 }
+function verMinZoom(){
+	if(__(globals.modello.minZoom))return globals.modello.minZoom;
+	else return controlsM.minZoom;
+}
 function zoom(n){
 	var zoomAtt = Math.round(manichinoCont.position.z)+n*2;
-	if(zoomAtt<controlsM.minZoom)zoomAtt=controlsM.minZoom;
+	/* if(zoomAtt<controlsM.minZoom)zoomAtt=controlsM.minZoom; */
+	if(zoomAtt<verMinZoom())zoomAtt=verMinZoom();
 	if(zoomAtt>controlsM.maxZoom)zoomAtt=controlsM.maxZoom;
 	zoomEnd = zoomAtt;
 	localStorage.modelZoom = zoomEnd;

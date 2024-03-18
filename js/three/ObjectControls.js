@@ -38,7 +38,7 @@ THREE.ObjectControls = function ( object, domElement ) {
 	this._premuto=false;
 	this._inMovimento=false;
 	var scope = this;
-	
+
 	// MOUSE
 	function onMouseDown2( event ) {
 		if(noAnimate)return;
@@ -180,7 +180,7 @@ THREE.ObjectControls = function ( object, domElement ) {
 		var scaleAtt=manichinoCont.position.z;
 		var step=2 - ( scaleAtt / ( scope.maxZoom - scope.minZoom ) ) * 1.9;
 		scaleAtt+=incr*step
-		if(scaleAtt<scope.minZoom)scaleAtt=scope.minZoom;
+		if(scaleAtt<verMinZoom())scaleAtt=verMinZoom();
 		if(scaleAtt>scope.maxZoom)scaleAtt=scope.maxZoom;
 		
 		var diff = scaleAtt-manichinoCont.position.z;
@@ -299,7 +299,7 @@ THREE.ObjectControls = function ( object, domElement ) {
 				var distance = Math.sqrt( dx * dx + dy * dy );
 				var nDist=(this.sIni-distance)/22;
 				var scaleAtt=this._zIni-nDist;
-				if(scaleAtt<scope.minZoom)scaleAtt=scope.minZoom;
+				if(scaleAtt<scope.verMinZoom())scaleAtt=scope.verMinZoom();
 				if(scaleAtt>scope.maxZoom)scaleAtt=scope.maxZoom;
 				zoomEnd=scaleAtt;
 			}

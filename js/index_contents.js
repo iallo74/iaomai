@@ -477,6 +477,7 @@ var modelli = {
 		areaName: '', // per le icone
 		rifletti: false,
 		muscles3d: true,
+		minZoom: 13,
 		txtLoading: stripslashes(TXT("CaricamentoModelloPiede")),
 		lastVer: 1
 	},
@@ -511,6 +512,7 @@ var modelli = {
 		},
 		areaName: 'Aree',
 		rifletti: true,
+		minZoom: 6,
 		txtLoading: stripslashes(TXT("CaricamentoModelloOrecchio")),
 		lastVer: 1
 	}
