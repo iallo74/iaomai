@@ -544,7 +544,6 @@ var MODELLO = {
 				var position = JSON.parse(localStorage.modelPosition);
 				var rotation = JSON.parse(localStorage.modelRotation);
 				var zoom = parseFloat(localStorage.modelZoom);
-				if(__(globals.modello.minZoom,0)>zoom)zoom = globals.modello.minZoom;
 				if( (localStorage.areasView == '1' && !areasView) || 
 					(localStorage.areasView != '1' && areasView))MODELLO.swArea();
 				

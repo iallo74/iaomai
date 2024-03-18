@@ -805,11 +805,14 @@ function verMinZoom(){
 	if(__(globals.modello.minZoom))return globals.modello.minZoom;
 	else return controlsM.minZoom;
 }
+function verMaxZoom(){
+	if(__(globals.modello.maxZoom))return globals.modello.maxZoom;
+	else return controlsM.maxZoom;
+}
 function zoom(n){
 	var zoomAtt = Math.round(manichinoCont.position.z)+n*2;
-	/* if(zoomAtt<controlsM.minZoom)zoomAtt=controlsM.minZoom; */
 	if(zoomAtt<verMinZoom())zoomAtt=verMinZoom();
-	if(zoomAtt>controlsM.maxZoom)zoomAtt=controlsM.maxZoom;
+	if(zoomAtt<verMaxZoom())zoomAtt=verMaxZoom();
 	zoomEnd = zoomAtt;
 	localStorage.modelZoom = zoomEnd;
 }

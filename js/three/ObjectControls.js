@@ -181,7 +181,7 @@ THREE.ObjectControls = function ( object, domElement ) {
 		var step=2 - ( scaleAtt / ( scope.maxZoom - scope.minZoom ) ) * 1.9;
 		scaleAtt+=incr*step
 		if(scaleAtt<verMinZoom())scaleAtt=verMinZoom();
-		if(scaleAtt>scope.maxZoom)scaleAtt=scope.maxZoom;
+		if(scaleAtt>verMaxZoom())scaleAtt=verMaxZoom();
 		
 		var diff = scaleAtt-manichinoCont.position.z;
 		var preX = manichinoCont.position.x;
