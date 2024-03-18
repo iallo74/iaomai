@@ -23,7 +23,6 @@ SET = {
 	apparatiPats: [],
 	patOp: -1,
 	schEvi: null,
-	forzaDissolve: false,
 	
 	// FUNZIONI
 	_init: function(){
