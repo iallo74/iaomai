@@ -1103,13 +1103,13 @@ SET = {
 				SET.forzaDissolve = {
 					"Pelle": localStorage.opPelle,
 					"Ossa": localStorage.opOssa,
-					"Visceri": localStorage.opVisceri
+					"Vasi": localStorage.opVasi
 				};
 				MODELLO.op("Pelle",parseFloat(anatomia.Pelle));
 				MODELLO.op("Ossa",parseFloat(anatomia.Ossa));
 				MODELLO.op("Visceri",parseFloat(anatomia.Visceri));
 				SET.puntiEvidenziati.push("999"); // evita l'illuminazione dei punti al passaggio del mouse
-			}, 200, anatomia);
+			}, 500, anatomia);
 		}
 		if(mappa){
 			setTimeout( function(){
@@ -1164,7 +1164,7 @@ SET = {
 			if(SET.forzaDissolve){
 				MODELLO.op("Pelle",SET.forzaDissolve.Pelle);
 				MODELLO.op("Ossa",SET.forzaDissolve.Ossa);
-				MODELLO.op("Visceri",SET.forzaDissolve.Visceri);
+				MODELLO.op("Vasi",SET.forzaDissolve.Vasi);
 				SET.forzaDissolve = false;
 			}
 			if(SET.mappaOr){
