@@ -29,7 +29,10 @@ var MODULO_PUNTO = { // extend SET
 		
 		HTML_tit += ". "+htmlEntities(DB.mtc.meridiani[siglaMeridiano].punti[nPunto].pinyin)+"</h1>";
 		
-		HTML += "<i>"+htmlEntities(titolo.replace(pattern,"$1"))+"</i></h1>";
+		HTML += "<i";
+		//aggiunto per un bug strano su android compilata
+		if(android && smartMenu && !onlineVersion)HTML += ' style="font-size:inherit !important;"';
+		HTML += ">"+htmlEntities(titolo.replace(pattern,"$1"))+"</i></h1>";
 
 
 		var HTML_simboli = '';
@@ -149,7 +152,16 @@ var MODULO_PUNTO = { // extend SET
 			ideogramma += ideogrammaOr[l];
 			if(l<lI-1)ideogramma += "<br>";
 		}
-		HTML_tit = 	'<div class="ideogrammaPuntoChar">'+ideogramma+'</div><img src="img/speach2W.png" onClick="SET.speachName(\''+siglaMeridiano+nPunto+'\');" class="speach_icon noPrint">'+HTML_tit;
+		//HTML_tit = 	'<div class="ideogrammaPuntoChar">'+ideogramma+'</div><img src="img/speach2W.png" onClick="SET.speachName(\''+siglaMeridiano+nPunto+'\');" class="speach_icon noPrint">'+HTML_tit;
+
+		
+		HTML_ideo = '<div class="ideogrammaPuntoChar"';
+
+		//aggiunto per un bug strano su android compilata
+		if(android && smartMenu && !onlineVersion)HTML_ideo += ' style="font-size: 40px !important;line-height:40px !important;"';
+
+		HTML_ideo += '>'+ideogramma+'</div><img src="img/speach2W.png" onClick="SET.speachName(\''+siglaMeridiano+nPunto+'\');" class="speach_icon noPrint">';
+		HTML_tit = HTML_ideo+HTML_tit;
 
 
 		
@@ -207,11 +219,13 @@ var MODULO_PUNTO = { // extend SET
 		var finalFunct = '';
 		if(!ritorno || !SCHEDA.formModificato)finalFunct += 'initChangeDetection( "formAnnotazioni");';
 
-		
-		
+		/* var closeFunct = '';
+		if(!SCHEDA.scheda2Aperta){
+			closeFunct += 'SWIPE.dismis();';
+		} */
 		SCHEDA.caricaScheda(	titolo,
 								HTML,
-								"if(SET.ptSel)SET.chiudiPunto()",
+								"SWIPE.dismis();if(SET.ptSel)SET.chiudiPunto();",
 								"tab_punti",
 								ritorno,
 								false,
@@ -234,18 +248,27 @@ var MODULO_PUNTO = { // extend SET
 			var nPuntoSu = SET.ptToStr(+nPunto + 1);
 			// evidenzio i pulsanti su e giù
 			
+			let swFnSu = '',
+				swFnGiu = '';
 			if(+nPunto > 1){ // attiva giù
 				classFr += "frGiu ";
+				swFnGiu = 'SET.apriPunto(\''+siglaMeridiano+"."+nPuntoGiu+'\',\'\');';
 				document.getElementById("frSchGiu").onclick = function(){
 					SET.apriPunto(siglaMeridiano+"."+nPuntoGiu,'');
 				};
 			}
 			if(+nPunto < Object.keys(meridiano.punti).length){ // attiva su
 				classFr += "frSu ";
+				swFnSu = 'SET.apriPunto(\''+siglaMeridiano+"."+nPuntoSu+'\',\'\');';
 				document.getElementById("frSchSu").onclick = function(){
 					SET.apriPunto(siglaMeridiano+"."+nPuntoSu,'');
 				};
 			}
+			SWIPE.init(	'scheda_testo',
+						swFnGiu,
+						swFnSu,
+						'document.getElementById(\'scheda_back\').click();',
+						'document.getElementsByClassName("scheda_stampa")[0].getBoundingClientRect().y==document.getElementById("scheda_testo").getBoundingClientRect().y');
 		}
 		document.getElementById("frSch").className = classFr;
 	},

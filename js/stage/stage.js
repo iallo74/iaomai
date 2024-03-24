@@ -812,7 +812,7 @@ function verMaxZoom(){
 function zoom(n){
 	var zoomAtt = Math.round(manichinoCont.position.z)+n*2;
 	if(zoomAtt<verMinZoom())zoomAtt=verMinZoom();
-	if(zoomAtt<verMaxZoom())zoomAtt=verMaxZoom();
+	if(zoomAtt>verMaxZoom())zoomAtt=verMaxZoom();
 	zoomEnd = zoomAtt;
 	localStorage.modelZoom = zoomEnd;
 }

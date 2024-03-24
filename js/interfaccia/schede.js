@@ -71,7 +71,7 @@ var SCHEDA = {
 							btn,     		// pulsante da accendere in caso di menu a elenco
 							btnAdd,  		// aggiunte al pulsante
 							codiceTranslate, // codice per il db traduzioni che visualizza il pulsante di google translate
-							finalFunct		// funzione da eseguire alla fine
+							finalFunct		// funzione da eseguire alla fine del caricacmento della scheda
 						   ){
 							   
 		/*

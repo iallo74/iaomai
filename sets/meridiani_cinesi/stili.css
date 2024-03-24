@@ -368,6 +368,7 @@ body:not(.smart) #p_set{
 	line-height: 37px !important;
     font-size: var(--font-16) !important;
 	background-position: 5px 14px !important;
+	height: 37px !important;
 }
 .app_version.bug_font.smart.android .elencoPunti p *{
 	line-height: 33.9px !important;
@@ -390,6 +391,9 @@ body:not(.smart) .elencoPunti a,
 body:not(.smart) .elencoPunti a *{
 	color: #FFF !important;
 	font-size: var(--font-12) !important;
+}
+.smart .elencoPunti a{
+	height:37px !important;
 }
 .smart .elencoPunti a,
 .smart .elencoPunti a *{

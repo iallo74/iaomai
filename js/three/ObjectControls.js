@@ -299,8 +299,8 @@ THREE.ObjectControls = function ( object, domElement ) {
 				var distance = Math.sqrt( dx * dx + dy * dy );
 				var nDist=(this.sIni-distance)/22;
 				var scaleAtt=this._zIni-nDist;
-				if(scaleAtt<scope.verMinZoom())scaleAtt=scope.verMinZoom();
-				if(scaleAtt>scope.maxZoom)scaleAtt=scope.maxZoom;
+				if(scaleAtt<verMinZoom())scaleAtt=verMinZoom();
+				if(scaleAtt>verMaxZoom())scaleAtt=verMaxZoom();
 				zoomEnd=scaleAtt;
 			}
 			MODELLO.INTERSECTED=null;

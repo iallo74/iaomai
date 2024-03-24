@@ -30,6 +30,10 @@
 	background-repeat:no-repeat;
 	background-size: auto 40px;
 }
+.smart #patologiePunti div:first-child {
+	line-height:37px !important;
+	height: 37px !important;
+}
 #patologiePunti.vis div:first-child{
 	background-image:url(../../img/frSuB.png) !important;
 }

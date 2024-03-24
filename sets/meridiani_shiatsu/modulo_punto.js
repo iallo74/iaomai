@@ -47,7 +47,10 @@ var MODULO_PUNTO = { // extend SET
 		}else{
 			let pattern = /[0-9]{1,2}\.[A-Z]{2}\.\s[^\(]+\(([^\)]+)\)/g;
 			HTML_tit += "<h1>"+ +nPunto +"."+siglaMeridiano+". "+htmlEntities(DB.mtc.meridiani[siglaMeridiano].punti[nPunto].pinyin)+"</h1>";
-			HTML += "<h1><i>"+htmlEntities(titolo.replace(pattern,"$1"))+"</i></h1>";
+			HTML += "<h1><i";
+			//aggiunto per un bug strano su android compilata
+			if(android && smartMenu && !onlineVersion)HTML += ' style="font-size:inherit !important;"';
+			HTML += ">"+htmlEntities(titolo.replace(pattern,"$1"))+"</i></h1>";
 		}
 
 
@@ -190,7 +193,13 @@ var MODULO_PUNTO = { // extend SET
 				ideogramma += ideogrammaOr[l];
 				if(l<lI-1)ideogramma += "<br>";
 			}
-			HTML = 	'<div class="ideogrammaPuntoChar">'+ideogramma+'</div><img src="img/speach2W.png" onClick="SET.speachName(\''+siglaMeridiano+nPunto+'\');" class="speach_icon noPrint">'+HTML;
+			HTML_ideo = '<div class="ideogrammaPuntoChar"';
+
+			//aggiunto per un bug strano su android compilata
+			if(android && smartMenu && !onlineVersion)HTML_ideo += ' style="font-size: 40px !important;line-height:40px !important;"';
+
+			HTML_ideo += '>'+ideogramma+'</div><img src="img/speach2W.png" onClick="SET.speachName(\''+siglaMeridiano+nPunto+'\');" class="speach_icon noPrint">';
+			HTML = HTML_ideo+HTML;
 		}
 		
 
@@ -249,9 +258,13 @@ var MODULO_PUNTO = { // extend SET
 		var finalFunct = '';
 		if(!ritorno || !SCHEDA.formModificato)finalFunct += 'initChangeDetection( "formAnnotazioni");';
 
+		/* var closeFunct = '';
+		if(!SCHEDA.scheda2Aperta && siglaMeridiano!='NK'){
+			closeFunct += 'SWIPE.dismis();';
+		} */
 		SCHEDA.caricaScheda(	titolo,
 								HTML,
-								"if(SET.ptSel)SET.chiudiPunto()",
+								"SWIPE.dismis();if(SET.ptSel)SET.chiudiPunto();",
 								"tab_punti",
 								ritorno,
 								false,
@@ -305,18 +318,27 @@ var MODULO_PUNTO = { // extend SET
 					}
 				}
 			}
+			let swFnSu = '',
+				swFnGiu = '';
 			if(nPuntoGiu){ // attiva giù
 				classFr += "frGiu ";
 				document.getElementById("frSchGiu").onclick = function(){
 					SET.apriPunto(siglaMeridiano+"."+nPuntoGiu,'','',gruppoGiu,puntoGiu);
 				};
+				swFnGiu = 'SET.apriPunto(\''+siglaMeridiano+"."+nPuntoGiu+'\',\'\',\'\',\''+gruppoGiu+'\',document.getElementById(\''+puntoGiu.id+'\'));';
 			}
 			if(nPuntoSu){ // attiva su
 				classFr += "frSu ";
 				document.getElementById("frSchSu").onclick = function(){
 					SET.apriPunto(siglaMeridiano+"."+nPuntoSu,'','',gruppoSu,puntoSu);
 				};
+				swFnSu = 'SET.apriPunto(\''+siglaMeridiano+"."+nPuntoSu+'\',\'\',\'\',\''+gruppoSu+'\',document.getElementById(\''+puntoSu.id+'\'));';
 			}
+			SWIPE.init(	'scheda_testo',
+						swFnGiu,
+						swFnSu,
+						'document.getElementById(\'scheda_back\').click();',
+						'document.getElementsByClassName("scheda_stampa")[0].getBoundingClientRect().y==document.getElementById("scheda_testo").getBoundingClientRect().y');
 		}
 		document.getElementById("frSch").className = classFr;
 	},
