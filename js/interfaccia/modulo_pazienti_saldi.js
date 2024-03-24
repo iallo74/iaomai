@@ -5,10 +5,10 @@ var PAZIENTI_SALDI = {
 		if(PAZIENTI.idCL>-1){
 			Q_resta = __(Q_resta,false); // prefefinito
 			
-			var PZ = DB.pazienti.data[PAZIENTI.idCL];
-			var HTML='';
-			var vuoto=true;
-			var DaSaldare=Saldato=0;
+			let PZ = DB.pazienti.data[PAZIENTI.idCL],
+				HTML='',
+				vuoto=true,
+				DaSaldare=Saldato=0;
 			if(typeof(PZ.saldi)!='undefined'){
 				cloneSALDI = clone(PZ.saldi);
 				for(let p in cloneSALDI){
@@ -16,7 +16,7 @@ var PAZIENTI_SALDI = {
 				}
 				cloneSALDI.sort(sort_by("DataSaldo", true, parseInt));
 				for(let p in cloneSALDI){
-					var SA = cloneSALDI[p];
+					let SA = cloneSALDI[p];
 					if(!PAZIENTI.saldoOp)SA.md5='';
 					if(!SA.Cancellato){
 						HTML += '<div class="base"' +
@@ -34,12 +34,12 @@ var PAZIENTI_SALDI = {
 			
 			if(typeof(PZ.trattamenti)!='undefined'){
 				for(let p in PZ.trattamenti){
-					var TR = PZ.trattamenti[p];
+					let TR = PZ.trattamenti[p];
 					if(!TR.Cancellato && typeof(TR.CostoTrattamento)!='undefined')DaSaldare+=TR.CostoTrattamento;
 				}
 			}
-			var RIS=DaSaldare-Saldato;
-			var HTML_provv = 	'<p id="totSaldi">' +
+			let RIS = DaSaldare-Saldato;
+			let HTML_provv = 	'<p id="totSaldi">' +
 								'	<i>'+htmlEntities(TXT("AncoraSaldare"))+':</i> ' +
 								'	<span';
 			if(RIS<0)HTML_provv += 	' style="background-color:#F00;' +
@@ -56,7 +56,7 @@ var PAZIENTI_SALDI = {
 			}
 			
 			
-			var HTML_pre = '';
+			let HTML_pre = '';
 			HTML_pre += PAZIENTI.intestazionePaziente("s");
 			HTML_pre += '<div class="menuElenchi"' +
 						'	  onClick="MENU.visMM(\'add_saldo\');">' +
@@ -91,19 +91,19 @@ var PAZIENTI_SALDI = {
 		CONFIRM.vis(	TXT("UscireSenzaSalvare"),
 						!SCHEDA.verificaSchedaRet(),
 						arguments ).then(function(pass){if(pass){
-						var v = getParamNames(CONFIRM.args.callee.toString());
+						let v = getParamNames(CONFIRM.args.callee.toString());
 						for(let i in v)eval(getArguments(v,i));
 						Q_idSaldo = __(Q_idSaldo,-1); // prefefinito
 			
 			MENU.nasMM();
-			var idSaldo=0;
-			var MotivoSaldo='';
-			var RicevutaSaldo='';
-			var ValoreSaldo=0;
-			var DataSaldo=0;
-			var PZ = DB.pazienti.data[PAZIENTI.idCL];
+			let idSaldo = 0,
+				MotivoSaldo = '',
+				RicevutaSaldo = '',
+				ValoreSaldo = 0,
+				DataSaldo = 0,
+				PZ = DB.pazienti.data[PAZIENTI.idCL];
 			if(Q_idSaldo>-1){
-				var SA = PZ.saldi[Q_idSaldo];
+				let SA = PZ.saldi[Q_idSaldo];
 				for(let i in PZ.saldi)PZ.saldi[i].md5='';
 				idSaldo=SA.idSaldo*1;
 				MotivoSaldo=SA.MotivoSaldo;
@@ -117,7 +117,7 @@ var PAZIENTI_SALDI = {
 				DataSaldo = new Date()*1;
 				DataSaldo /= 1000;
 			}
-			var HTML='';
+			let HTML='';
 			if(typeof(DB.login.data.Intestazione)=='undefined')DB.login.data.Intestazione='';
 			Intestazione = htmlEntities(DB.login.data.Intestazione);
 			while(Intestazione.indexOf(H.chr10)>-1)Intestazione = Intestazione.replace(H.chr10,'<br>');
@@ -235,9 +235,9 @@ var PAZIENTI_SALDI = {
 		if(PAZIENTI.idCL>-1){
 			stopAnimate(true);
 			visLoader(TXT("SalvataggioInCorso"),'loadingLight');
-			var PZ = DB.pazienti.data[PAZIENTI.idCL];
+			let PZ = DB.pazienti.data[PAZIENTI.idCL];
 			if(!ControllaNumero(document.formMod.ValoreSaldo,stripslashes(TXT("ValoreSaldo"))))return;
-			var DataModifica = DB.pazienti.lastSync+1;
+			let DataModifica = DB.pazienti.lastSync+1;
 			DataSaldo=new Date(	document.formMod.annoDataSaldo.value*1,
 								document.formMod.meseDataSaldo.value*1-1,
 								document.formMod.giornoDataSaldo.value*1);
@@ -287,8 +287,9 @@ var PAZIENTI_SALDI = {
 			stopAnimate(true);
 			visLoader(TXT("SalvataggioInCorso"),'loadingLight');
 			
-			var PZ = DB.pazienti.data[PAZIENTI.idCL];
-			var DataModifica = DB.pazienti.lastSync+1;
+			let PZ = DB.pazienti.data[PAZIENTI.idCL],
+				DataModifica = DB.pazienti.lastSync+1;
+
 			PZ.DataModifica=parseInt(DataModifica);
 			PZ.saldi[Q_idSaldo].DataModifica=parseInt(DataModifica);
 			PZ.saldi[Q_idSaldo].Cancellato=1;
