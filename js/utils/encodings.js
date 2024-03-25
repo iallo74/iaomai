@@ -18,7 +18,7 @@ var baseReverseDic = {};
 function getBaseValue(alphabet, character) {
   if (!baseReverseDic[alphabet]) {
     baseReverseDic[alphabet] = {};
-    for (var i=0 ; i<alphabet.length ; i++) {
+    for (let i=0 ; i<alphabet.length ; i++) {
       baseReverseDic[alphabet][alphabet.charAt(i)] = i;
     }
   }
@@ -28,7 +28,7 @@ function getBaseValue(alphabet, character) {
 var LZString = {
   compressToBase64 : function (input) {
     if (input == null) return "";
-    var res = LZString._compress(input, 6, function(a){return keyStrBase64.charAt(a);});
+    let res = LZString._compress(input, 6, function(a){return keyStrBase64.charAt(a);});
     switch (res.length % 4) { // To produce valid Base64
     default: // When could this happen ?
     case 0 : return res;
@@ -57,11 +57,11 @@ var LZString = {
 
   //compress into uint8array (UCS-2 big endian format)
   compressToUint8Array: function (uncompressed) {
-    var compressed = LZString.compress(uncompressed);
-    var buf=new Uint8Array(compressed.length*2); // 2 bytes per character
+    let compressed = LZString.compress(uncompressed),
+        buf=new Uint8Array(compressed.length*2); // 2 bytes per character
 
-    for (var i=0, TotalLen=compressed.length; i<TotalLen; i++) {
-      var current_value = compressed.charCodeAt(i);
+    for (let i=0, TotalLen=compressed.length; i<TotalLen; i++) {
+      let current_value = compressed.charCodeAt(i);
       buf[i*2] = current_value >>> 8;
       buf[i*2+1] = current_value % 256;
     }
@@ -73,12 +73,12 @@ var LZString = {
     if (compressed===null || compressed===undefined){
         return LZString.decompress(compressed);
     } else {
-        var buf=new Array(compressed.length/2); // 2 bytes per character
-        for (var i=0, TotalLen=buf.length; i<TotalLen; i++) {
+        let buf=new Array(compressed.length/2); // 2 bytes per character
+        for (let i=0, TotalLen=buf.length; i<TotalLen; i++) {
           buf[i]=compressed[i*2]*256+compressed[i*2+1];
         }
 
-        var result = [];
+        let result = [];
         buf.forEach(function (c) {
           result.push(f(c));
         });
@@ -108,7 +108,7 @@ var LZString = {
   },
   _compress: function (uncompressed, bitsPerChar, getCharFromInt) {
     if (uncompressed == null) return "";
-    var i, value,
+    let i, value,
         context_dictionary= {},
         context_dictionaryToCreate= {},
         context_c="",
@@ -330,7 +330,7 @@ var LZString = {
   },
 
   _decompress: function (length, resetValue, getNextValue) {
-    var dictionary = [],
+    let dictionary = [],
         next,
         enlargeIn = 4,
         dictSize = 4,
@@ -516,7 +516,7 @@ function is_array(input) {
   return typeof(input) === "object" && (input instanceof Array);
 }
 function convert_formated_hex_to_bytes(hex_str) {
-  var count = 0,
+  let count = 0,
       hex_arr,
       hex_data = [],
       hex_len,
@@ -543,17 +543,17 @@ function convert_formated_hex_to_bytes(hex_str) {
   return hex_data;
 }
 function convert_formated_hex_to_string(s) {
-  var byte_arr = convert_formated_hex_to_bytes(s);
-  var res = "";
-  for (var i = 0 ; i<byte_arr.length ; i+=2) {
+  let byte_arr = convert_formated_hex_to_bytes(s),
+      res = "";
+  for (let i = 0 ; i<byte_arr.length ; i+=2) {
     res += String.fromCharCode(byte_arr[i] | (byte_arr[i+1]<<8));
   }
   return res;
 }
 function convert_string_to_hex(s) {
-  var byte_arr = [];
-  for (var i = 0 ; i<s.length ; i++) {
-    var value = s.charCodeAt(i);
+  let byte_arr = [];
+  for (let i = 0 ; i<s.length ; i++) {
+    let value = s.charCodeAt(i);
     byte_arr.push(value & 255);
     byte_arr.push((value>>8) & 255);
   }
@@ -561,7 +561,7 @@ function convert_string_to_hex(s) {
 }
 
 function convert_to_formated_hex(byte_arr) {
-  var hex_str = "",
+  let hex_str = "",
       i,
       len,
       tmp_hex;
@@ -606,7 +606,7 @@ var MD5 = function (string) {
    }
 
    function AddUnsigned(lX,lY) {
-           var lX4,lY4,lX8,lY8,lResult;
+           let lX4,lY4,lX8,lY8,lResult;
            lX8 = (lX & 0x80000000);
            lY8 = (lY & 0x80000000);
            lX4 = (lX & 0x40000000);
@@ -652,14 +652,14 @@ var MD5 = function (string) {
    };
 
    function ConvertToWordArray(string) {
-           var lWordCount;
-           var lMessageLength = string.length;
-           var lNumberOfWords_temp1=lMessageLength + 8;
-           var lNumberOfWords_temp2=(lNumberOfWords_temp1-(lNumberOfWords_temp1 % 64))/64;
-           var lNumberOfWords = (lNumberOfWords_temp2+1)*16;
-           var lWordArray=Array(lNumberOfWords-1);
-           var lBytePosition = 0;
-           var lByteCount = 0;
+           let  lWordCount,
+                lMessageLength = string.length,
+                lNumberOfWords_temp1=lMessageLength + 8,
+                lNumberOfWords_temp2=(lNumberOfWords_temp1-(lNumberOfWords_temp1 % 64))/64,
+                lNumberOfWords = (lNumberOfWords_temp2+1)*16,
+                lWordArray=Array(lNumberOfWords-1),
+                lBytePosition = 0,
+                lByteCount = 0;
            while ( lByteCount < lMessageLength ) {
                    lWordCount = (lByteCount-(lByteCount % 4))/4;
                    lBytePosition = (lByteCount % 4)*8;
@@ -675,7 +675,7 @@ var MD5 = function (string) {
    };
 
    function WordToHex(lValue) {
-           var WordToHexValue="",WordToHexValue_temp="",lByte,lCount;
+           let WordToHexValue="",WordToHexValue_temp="",lByte,lCount;
            for (lCount = 0;lCount<=3;lCount++) {
                    lByte = (lValue>>>(lCount*8)) & 255;
                    WordToHexValue_temp = "0" + lByte.toString(16);
@@ -686,11 +686,11 @@ var MD5 = function (string) {
 
    function Utf8Encode(string) {
            string = string.replace(/\r\n/g,"\n");
-           var utftext = "";
+           let utftext = "";
 
-           for (var n = 0; n < string.length; n++) {
+           for (let n = 0; n < string.length; n++) {
 
-                   var c = string.charCodeAt(n);
+                   let c = string.charCodeAt(n);
 
                    if (c < 128) {
                            utftext += String.fromCharCode(c);
@@ -795,7 +795,7 @@ var MD5 = function (string) {
            d=AddUnsigned(d,DD);
    		}
 
-   	var temp = WordToHex(a)+WordToHex(b)+WordToHex(c)+WordToHex(d);
+   	let temp = WordToHex(a)+WordToHex(b)+WordToHex(c)+WordToHex(d);
 
    	return temp.toLowerCase();
 }

@@ -94,13 +94,13 @@ THREE.ObjectControls = function ( object, domElement ) {
 				MENU.attBtnCentro();
 				scope._ZPR=true;
 				scope._inMovimento=true;
-				var element = scope.domElement === document ? scope.domElement.body : scope.domElement;
-				var deltaX = this.xIni - event.clientX ;
-				var deltaY = this.yIni - event.clientY ;
-				var left = 0-(2 * Math.PI * deltaX / element.clientWidth) ;
-				var up =0-(1 * Math.PI * deltaY / element.clientHeight) ;
-				var xTarget=this._xIni+up;
-				var yTarget=this._yIni+left;
+				let element = scope.domElement === document ? scope.domElement.body : scope.domElement,
+					deltaX = this.xIni - event.clientX,
+					deltaY = this.yIni - event.clientY,
+					left = 0-(2 * Math.PI * deltaX / element.clientWidth),
+					up =0-(1 * Math.PI * deltaY / element.clientHeight),
+					xTarget=this._xIni+up,
+					yTarget=this._yIni+left;
 				rotateEnd = { x: xTarget, y: yTarget, z: 0 };
 				MODELLO.INTERSECTED=null;
 				try{ SET.INTERSECTED=null; }catch(err){}
@@ -111,23 +111,21 @@ THREE.ObjectControls = function ( object, domElement ) {
 				MENU.attBtnCentro();
 				scope._ZPR=true;
 				scope._inMovimento=true;
-				var r = 1.3;
+				let r = 1.3;
 				
 				// riduttore in base alla vicinanza
-				var a = ( scope.object.position.x * (22-this._zIni) ) / 22;
+				let a = ( scope.object.position.x * (22-this._zIni) ) / 22;
 				if(a)r = (a*r) / scope.object.position.x;
 				// --------------------------------
 				
-				var deltaX = ((this.xIni - event.clientX) / 100) * r;
-				var deltaY = ((this.yIni - event.clientY) / 100) * r ;
-				
-				var xTarget = this._xIni-deltaX;
-				var yTarget = this._yIni+deltaY;
-				
-				var x0 = scope.panLimits.x[0]-manichino.position.x/2;
-				var x1 = scope.panLimits.x[1]-manichino.position.x/2;
-				var y0 = scope.panLimits.y[0]-manichino.position.y/2;
-				var y1 = scope.panLimits.y[1]-manichino.position.y/2;
+				let deltaX = ((this.xIni - event.clientX) / 100) * r,
+					deltaY = ((this.yIni - event.clientY) / 100) * r,
+					xTarget = this._xIni-deltaX,
+					yTarget = this._yIni+deltaY,
+					x0 = scope.panLimits.x[0]-manichino.position.x/2,
+					x1 = scope.panLimits.x[1]-manichino.position.x/2,
+					y0 = scope.panLimits.y[0]-manichino.position.y/2,
+					y1 = scope.panLimits.y[1]-manichino.position.y/2;
 				
 				if(xTarget<x0)xTarget=x0;
 				if(xTarget>x1)xTarget=x1;
@@ -177,17 +175,17 @@ THREE.ObjectControls = function ( object, domElement ) {
 	}
 	function zoom( incr ) {
 		if(noAnimate)return;
-		var scaleAtt=manichinoCont.position.z;
-		var step=2 - ( scaleAtt / ( scope.maxZoom - scope.minZoom ) ) * 1.9;
-		scaleAtt+=incr*step
+		let scaleAtt = manichinoCont.position.z,
+			step = 2 - ( scaleAtt / ( scope.maxZoom - scope.minZoom ) ) * 1.9;
+		scaleAtt += incr*step
 		if(scaleAtt<verMinZoom())scaleAtt=verMinZoom();
 		if(scaleAtt>verMaxZoom())scaleAtt=verMaxZoom();
 		
-		var diff = scaleAtt-manichinoCont.position.z;
-		var preX = manichinoCont.position.x;
-		var preY = manichinoCont.position.y;
-		var preZ = manichinoCont.position.z;
-		var newZ = preZ + diff;
+		let diff = scaleAtt-manichinoCont.position.z,
+			preX = manichinoCont.position.x,
+			preY = manichinoCont.position.y,
+			preZ = manichinoCont.position.z,
+			newZ = preZ + diff;
 		localStorage.modelZoom = newZ;
 		manichinoCont.position.set( preX , preY ,newZ );
 		zoomEnd = null;
@@ -232,8 +230,8 @@ THREE.ObjectControls = function ( object, domElement ) {
 		if(noAnimate)return;
 		this.xIni = 0.5 * ( event.touches[ 0 ].pageX + event.touches[ 1 ].pageX );
 		this.yIni = 0.5 * ( event.touches[ 0 ].pageY + event.touches[ 1 ].pageY );
-		var dx = event.touches[ 0 ].pageX - event.touches[ 1 ].pageX;
-		var dy = event.touches[ 0 ].pageY - event.touches[ 1 ].pageY;
+		let dx = event.touches[ 0 ].pageX - event.touches[ 1 ].pageX,
+			dy = event.touches[ 0 ].pageY - event.touches[ 1 ].pageY;
 		this.sIni=Math.sqrt( dx * dx + dy * dy );
 		this._xIni=object.position.x;
 		this._yIni=object.position.y;
@@ -241,17 +239,17 @@ THREE.ObjectControls = function ( object, domElement ) {
 	}
 	function handleTouchMoveRotate( event ) {
 		if(noAnimate)return;
-		var element = scope.domElement === document ? scope.domElement.body : scope.domElement;
+		let element = scope.domElement === document ? scope.domElement.body : scope.domElement;
 		this.xAtt=event.touches[ 0 ].pageX;
 		this.yAtt=event.touches[ 0 ].pageY;
-		var deltaX = this.xIni - this.xAtt ;
-		var deltaY = this.yIni - this.yAtt ;
+		let deltaX = this.xIni - this.xAtt,
+			deltaY = this.yIni - this.yAtt ;
 		//if(Math.abs(deltaX) > 10 && Math.abs(deltaY) > 10){
 		if(Math.abs(deltaX) > 1 && Math.abs(deltaY) > 1){
-			var left = 0-(2 * Math.PI * deltaX / element.clientWidth) ;
-			var up =0-(1 * Math.PI * deltaY / element.clientHeight) ;
-			var xTarget=this._xIni+up;
-			var yTarget=this._yIni+left;
+			let left = 0-(2 * Math.PI * deltaX / element.clientWidth),
+				up =0-(1 * Math.PI * deltaY / element.clientHeight),
+				xTarget=this._xIni+up,
+				yTarget=this._yIni+left;
 			rotateEnd = { x: xTarget, y: yTarget, z: 0 };
 			/*mouse.x=this.xAtt;
 			mouse.y=this.yAtt;*/
@@ -270,44 +268,38 @@ THREE.ObjectControls = function ( object, domElement ) {
 	}
 	function handleTouchMoveDollyPan( event ) {
 		if(noAnimate)return;
-		var x = 0.5 * ( event.touches[ 0 ].pageX + event.touches[ 1 ].pageX );
-		var y = 0.5 * ( event.touches[ 0 ].pageY + event.touches[ 1 ].pageY );
-			var r = 0.4;
+		let x = 0.5 * ( event.touches[ 0 ].pageX + event.touches[ 1 ].pageX ),
+			y = 0.5 * ( event.touches[ 0 ].pageY + event.touches[ 1 ].pageY ),
+			r = 0.4,
+			a = ( scope.object.position.x * (22-this._zIni) ) / 22, // riduttore in base alla vicinanza
+			deltaX = ((this.xIni - x) /50) *r,
+			deltaY = ((this.yIni - y) /50) *r,
+			dist = Math.sqrt(this.xIni - x)*(this.yIni - y),
+			xTarget = this._xIni-deltaX,
+			yTarget = this._yIni+deltaY;
+
+		if(a)r = (a*r) / scope.object.position.x;
+		if(xTarget<scope.panLimits.x[0])xTarget=scope.panLimits.x[0];
+		if(xTarget>scope.panLimits.x[1])xTarget=scope.panLimits.x[1];
+		if(yTarget<scope.panLimits.y[0])yTarget=scope.panLimits.y[0];
+		if(yTarget>scope.panLimits.y[1])yTarget=scope.panLimits.y[1];
 			
-			// riduttore in base alla vicinanza
-			var a = ( scope.object.position.x * (22-this._zIni) ) / 22;
-			if(a)r = (a*r) / scope.object.position.x;
-			// --------------------------------
-		var deltaX = ((this.xIni - x) /50) *r ;
-		var deltaY = ((this.yIni - y) /50) *r ;
-		//if(Math.abs(deltaX) > 10 && Math.abs(deltaY) > 10){
-			var dist = Math.sqrt(this.xIni - x)*(this.yIni - y) ;
-			
-			
-			var xTarget = this._xIni-deltaX;
-			var yTarget = this._yIni+deltaY;
-			if(xTarget<scope.panLimits.x[0])xTarget=scope.panLimits.x[0];
-			if(xTarget>scope.panLimits.x[1])xTarget=scope.panLimits.x[1];
-			if(yTarget<scope.panLimits.y[0])yTarget=scope.panLimits.y[0];
-			if(yTarget>scope.panLimits.y[1])yTarget=scope.panLimits.y[1];
-				
-			panEnd = { x: xTarget, y: yTarget, z: this._zIni };
-			
-			if(typeof(dist)!='NaN'){ // con TOUCH o pan o zoom
-				var dx = event.touches[ 0 ].pageX - event.touches[ 1 ].pageX;
-				var dy = event.touches[ 0 ].pageY - event.touches[ 1 ].pageY;
-				var distance = Math.sqrt( dx * dx + dy * dy );
-				var nDist=(this.sIni-distance)/22;
-				var scaleAtt=this._zIni-nDist;
-				if(scaleAtt<verMinZoom())scaleAtt=verMinZoom();
-				if(scaleAtt>verMaxZoom())scaleAtt=verMaxZoom();
-				zoomEnd=scaleAtt;
-			}
-			MODELLO.INTERSECTED=null;
-			try{ if(Math.abs(deltaX) > 10 && Math.abs(deltaY) > 10)SET.INTERSECTED=null; }catch(err){}
-			nasToolTip();
-			renderer.domElement.style.cursor='default';
-		//}
+		panEnd = { x: xTarget, y: yTarget, z: this._zIni };
+		
+		if(typeof(dist)!='NaN'){ // con TOUCH o pan o zoom
+			let dx = event.touches[ 0 ].pageX - event.touches[ 1 ].pageX,
+				dy = event.touches[ 0 ].pageY - event.touches[ 1 ].pageY,
+				distance = Math.sqrt( dx * dx + dy * dy ),
+				nDist=(this.sIni-distance)/22,
+				scaleAtt=this._zIni-nDist;
+			if(scaleAtt<verMinZoom())scaleAtt=verMinZoom();
+			if(scaleAtt>verMaxZoom())scaleAtt=verMaxZoom();
+			zoomEnd=scaleAtt;
+		}
+		MODELLO.INTERSECTED=null;
+		try{ if(Math.abs(deltaX) > 10 && Math.abs(deltaY) > 10)SET.INTERSECTED=null; }catch(err){}
+		nasToolTip();
+		renderer.domElement.style.cursor='default';
 	}
 	function handleTouchEnd( event ) {
 		if(noAnimate)return;
