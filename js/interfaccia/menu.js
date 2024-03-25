@@ -29,9 +29,9 @@ var MENU = {
 		}
 	},
 	aggiornaIconeModello: function(){
-		var els = document.getElementById("p1").getElementsByTagName("div");
+		let els = document.getElementById("p1").getElementsByTagName("div");
 		for(let e=0;e<els.length;e++){
-			var pass = true;
+			let pass = true;
 			if(globals.set.cartella){
 				modello = els[e].id.replace("p_","");
 				if(globals.set.modelli.indexOf(modello) == -1)pass = false;
@@ -54,19 +54,19 @@ var MENU = {
 			}else{
 				document.getElementById("p_rifletti").classList.remove("visBtn");
 			}
-			var els = document.getElementById("livelli_cont").getElementsByTagName("div");
+			els = document.getElementById("livelli_cont").getElementsByTagName("div");
 			for(let e=0;e<els.length;e++){
-				var preVis = document.getElementById("pulsanti_modello").classList.contains("visSch");
+				let preVis = document.getElementById("pulsanti_modello").classList.contains("visSch");
 				if(!preVis)document.getElementById("pulsanti_modello").classList.add("visSch");
 				if(els[e].id.indexOf("p_")>-1){
-					var livello=els[e].id.replace("p_","");
+					let livello=els[e].id.replace("p_","");
 					if(globals.modello.livelli.indexOf(livello) > -1){
 						document.getElementById("p_liv_"+livello).classList.add("visBtn");
 						els[e].getElementsByClassName("slider_btn")[0].style.marginLeft='0px';
 						livello=livello.substr(0,1).toUpperCase()+livello.substr(1,livello.length-1);
 						els[e].classList.add("visSch");
-						var perc = MENU.getOp(livello);
-						var maxVal = els[e].getElementsByClassName("slider")[0].scrollWidth-els[e].getElementsByClassName("slider_btn")[0].scrollWidth;
+						let perc = MENU.getOp(livello),
+							maxVal = els[e].getElementsByClassName("slider")[0].scrollWidth-els[e].getElementsByClassName("slider_btn")[0].scrollWidth;
 						mL=perc*maxVal;
 						els[e].getElementsByClassName("slider_btn")[0].style.marginLeft=mL+'px';
 					}else{
@@ -82,7 +82,7 @@ var MENU = {
 		//return (SCHEDA.classeAperta == 'scheda_A' ||SCHEDA.classeAperta == 'scheda_B');
 		return document.getElementById("scheda").classList.contains("visSch") && SCHEDA.aggancio.tipo=="lato";
 	},
-	chiudiMenu: function( n, stage=false ){
+	chiudiMenu: function( n, stage = false ){
 		if(stage && !CONN.online)return;
 		if(n!="pulsanti_modello")document.getElementById("pulsanti_modello").classList.remove("visSch");
 		if(n!="sets")document.getElementById("sets").classList.remove("visSch");
@@ -136,8 +136,8 @@ var MENU = {
 		}
 		//verAnimate();
 	},
-	visModello: function( forza=false ){
-		var daScheda = (MENU.verOp() && !smartMenu);
+	visModello: function( forza = false ){
+		let daScheda = (MENU.verOp() && !smartMenu);
 						
 		if(!daScheda){
 			if(!document.getElementById("pulsanti_modello").classList.contains("visSch") && !globals.modello.cartella){
@@ -152,8 +152,8 @@ var MENU = {
 		else document.getElementById("pulsanti_modello").classList.add("visSch");
 		this.aggiornaIconeModello();
 		if(!globals.modello.cartella && document.getElementById("pulsanti_modello").classList.contains("visSch")){
-			var mods = ['donna','uomo','piedi','orecchio'];
-			var vel = 3.5;
+			let mods = ['donna','uomo','piedi','orecchio'],
+				vel = 3.5;
 			for(let m=0;m<mods.length;m++){
 				setTimeout( function(g) {
 					document.getElementById("p_"+mods[g]).classList.add("pModsEvi");
@@ -174,7 +174,7 @@ var MENU = {
 			if(document.getElementById("pulsanti_modello").classList.contains("visSch")){
 				applicaLoading( document.getElementById("elenchi_cont"));
 			}else{
-				var classList = document.getElementById("elenchi").classList;
+				let classList = document.getElementById("elenchi").classList;
 				if(classList.contains("visSch")){
 					if(classList.contains("vis_base"))SCHEDA.apriElenco('base');
 					if(classList.contains("vis_set"))SCHEDA.apriElenco('set');
@@ -188,7 +188,7 @@ var MENU = {
 		MENU.nasTT();
 	},
 	visSets: function(){
-		var daScheda = (MENU.verOp() && !smartMenu);
+		let daScheda = (MENU.verOp() && !smartMenu);
 
 		if(!daScheda)MENU.chiudiMenu("sets");
 		else document.getElementById("p_cartella").classList.remove("p_sel");
@@ -268,29 +268,29 @@ var MENU = {
 		document.getElementById("fr_vasi").classList.toggle("frOpened");
 		document.getElementById("el_vasi_cont").classList.toggle("elOpened");
 	},
-	swElAree: function(forza=false){
+	swElAree: function( forza = false ){
 		if(!areasView && !forza)MODELLO.swArea(1);
 		this.chEls('aree');
 		document.getElementById("fr_aree").classList.toggle("frOpened");
 		document.getElementById("el_aree_cont").classList.toggle("elOpened");
 	},
-	swElMuscoli3d: function(forza=false){
+	swElMuscoli3d: function( forza = false ){
 		this.chEls('muscoli3d');
 		document.getElementById("fr_muscoli3d").classList.toggle("frOpened");
 		document.getElementById("el_muscoli3d_cont").classList.toggle("elOpened");
 	},
 	
-	setOp: function(livello, op){
+	setOp: function( livello, op ){
 		return document.getElementById("p_"+livello.toLowerCase()).dataset.op = op * 1;
 	},
-	getOp: function(livello){
+	getOp: function( livello ){
 		return document.getElementById("p_"+livello.toLowerCase()).dataset.op * 1;
 	},
 	
-	filtra: function(el){
-		var t = el.id.replace("filtro_","");
-		var d = el.value.trim().toLowerCase();
-		var els = document.getElementById("el_"+t).getElementsByTagName("p");
+	filtra: function( el ){
+		let t = el.id.replace("filtro_",""),
+			d = el.value.trim().toLowerCase(),
+			els = document.getElementById("el_"+t).getElementsByTagName("p");
 		
 		for(let p=0;p<els.length;p++){
 			if(els[p].innerText.toLowerCase().indexOf(d)>-1 || d=='')els[p].classList.remove("elNasc");
@@ -299,19 +299,19 @@ var MENU = {
 		if(d!='')document.getElementById("ch_"+t).classList.add("visChFiltro");
 		else document.getElementById("ch_"+t).classList.remove("visChFiltro");
 	},
-	annullaFiltro: function(el){
-		var t = el.id.replace("ch_","");
+	annullaFiltro: function( el ){
+		let t = el.id.replace("ch_","");
 		document.getElementById("filtro_"+t).value='';
 		MENU.filtra(document.getElementById("filtro_"+t));
 	},
-	addSelected: function(el,C){
+	addSelected: function( el, C ){
 		globals.pezziSelezionati.push(el.id);
-		var html = document.getElementById("contSelected").innerHTML;
+		let html = document.getElementById("contSelected").innerHTML;
 		html += '<p id="SEL_'+el.id+'" class="sel'+C+'" onClick="document.getElementById(\''+el.id+'\').click();">'+stripslashes(TXT(""+el.id))+'</p>';
 		document.getElementById("contSelected").innerHTML = html;
 	},
-	removeSelected: function(el){
-		var element = document.getElementById("SEL_"+el.id);
+	removeSelected: function( el ){
+		let element = document.getElementById("SEL_"+el.id);
 		element.parentNode.removeChild(element);
 		removeA(globals.pezziSelezionati, el.id);
 		if(!globals.pezziSelezionati.length)document.getElementById("elencoSelected").classList.remove("visSch");
@@ -410,12 +410,12 @@ var MENU = {
 		MENU.chiudiMenu("colori");
 		visLoader("");
 		document.getElementById("colori").classList.toggle("visSch");
-		var els = document.getElementById("colSel").getElementsByTagName("span");
+		let els = document.getElementById("colSel").getElementsByTagName("span");
 		for(let i = 0; i<els.length; i++){
 			if(localStorage.colore == 2-i)els[i].classList.add("cSel");
 			else els[i].classList.remove("cSel");
 		}
-		var els = document.getElementById("skinSel").getElementsByTagName("span");
+		els = document.getElementById("skinSel").getElementsByTagName("span");
 		for(let i = 0; i<els.length; i++){
 			els[i].classList.remove("cSel");
 		}
@@ -423,13 +423,13 @@ var MENU = {
 		if(localStorage.tipoPelle == '_mulatta')els[1].classList.add("cSel");
 		if(localStorage.tipoPelle == '_nera')els[2].classList.add("cSel");
 		
-		var els = document.getElementById("sizeSel").getElementsByTagName("b");
+		els = document.getElementById("sizeSel").getElementsByTagName("b");
 		for(let i = 0; i<els.length; i++){
 			if(localStorage.textSize == els[i].dataset.value)els[i].classList.add("a_SEL");
 			else els[i].classList.remove("a_SEL");
 		}
 		
-		var els = document.getElementById("pointerSel").getElementsByTagName("b");
+		els = document.getElementById("pointerSel").getElementsByTagName("b");
 		for(let i = 0; i<els.length; i++){
 			els[i].classList.remove("a_SEL");
 			els[i].classList.remove("t_DES");
@@ -472,8 +472,9 @@ var MENU = {
 		DISPOSITIVI.carica(jsn);
 	},
 	visFeatures: function( forza=false ){
-		var maxDate = dateEndFeatures;
-		var now = new Date().getTime();
+		let maxDate = dateEndFeatures,
+			now = new Date().getTime(),
+			tmRit = forza?10:6500;
 		if(	(!__(localStorage.getItem("no_info_features_"+verApp.replace(".","_")),'') &&
 			!__(MENU["no_info_features_"+verApp.replace(".","_")],false) &&
 			LOGIN.logedin() &&
@@ -483,8 +484,6 @@ var MENU = {
 				visLoader("");
 				MENU.chiudiMenu("features");
 			}
-			var tmRit = 6500;
-			if(forza)tmRit = 10;
 			setTimeout(function(){
 				visLoader("");
 				document.getElementById("features").classList.add("visSch");
@@ -524,17 +523,15 @@ var MENU = {
 			}
 		}
 	},
-	visAgenda: function( data, mantieni ){
-		if(typeof(mantieni) == 'undefined')var mantieni = false;
-		var mod = SCHEDA.verificaSchedaRet();
+	visAgenda: function( data, mantieni = false ){
+		let mod = SCHEDA.verificaSchedaRet();
 		if(!document.getElementById("ag").classList.contains("visSch") || mantieni){
 			CONFIRM.vis(	TXT("UscireSenzaSalvare"),
 						!mod,
 						arguments ).then(function(pass){if(pass){
-						var v = getParamNames(CONFIRM.args.callee.toString());
+						let v = getParamNames(CONFIRM.args.callee.toString());
 						for(let i in v)eval(getArguments(v,i));
-				var tm=10;
-				if(mod)tm=200;
+				let tm = mod ? 200 : 10;
 				if(smartMenu)SCHEDA.chiudiElenco();
 				MENU.chiudiMenu("ag");
 				endChangeDetection();
@@ -543,7 +540,7 @@ var MENU = {
 					document.getElementById("ag").classList.add("visSch");
 					MENU.icoSelected = document.getElementById("p_agenda");
 					MENU.icoSelected.classList.add("p_sel");
-					if(typeof(data) == 'undefined')var data = oggi;
+					if(typeof(data) == 'undefined')data = oggi;
 					else data = new Date(data);
 					HTML = 	'<div id="cont_sceltaAppuntamento">' +
 							'</div>' +
@@ -601,7 +598,7 @@ var MENU = {
 		document.getElementById("stayConnected").checked = eval(__(localStorage.RimaniConnesso,'true'));
 		LOGIN.swVisPwd(true);
 		LOGIN.attivaX();
-		var USRprovv=DB.login.data.UsernameU;
+		let USRprovv=DB.login.data.UsernameU;
 		if(typeof(USRprovv)=='undefined')USRprovv='';
 		if(!USRprovv.trim() && mouseDetect && !touchable)document.getElementById("USR").focus();
 	},
@@ -610,7 +607,7 @@ var MENU = {
 		MENU.chiudiMenu("registrazione");
 		visLoader("");
 		document.getElementById("registrazione").classList.toggle("visSch");
-		var A = document.getElementById("divTrattamentoDati").getElementsByTagName("a")[0];
+		let A = document.getElementById("divTrattamentoDati").getElementsByTagName("a")[0];
 		A.href=CONN.linkPrivacy+"?siglaLingua="+globals.siglaLingua;
 		A.target = H.target;
 		if(mouseDetect && !touchable)document.registrazioneForm.Nome.focus();
@@ -627,10 +624,9 @@ var MENU = {
 		}
 	},
 	salvaImpSet: function(){
-		var pass = true;
 		if(LOGIN.logedin()){
 			// se NON è una versione FREE
-			var pwd = document.getElementById("patientPwdField");
+			let pwd = document.getElementById("patientPwdField");
 			if(pwd.classList.contains("visSch")){ // se è presente il campo PWD
 				if(!pwd.value.trim()){ // se è vuota
 					ALERT(TXT("PatientPwdAlert"));
@@ -647,14 +643,14 @@ var MENU = {
 			DB.login.data.password_pazienti = '0';
 			if(document.getElementById("patientPwdCheck").checked)DB.login.data.password_pazienti = '1';
 		}
-		var naming = '';
+		let naming = '';
 		if(document.getElementById("t_OLISTICO").classList.contains("a_SEL"))naming = 'O';
 		if(document.getElementById("t_SHIATSU").classList.contains("a_SEL"))naming = 'S';
 		localStorage.tipo_utilizzo = naming;
 		DB.login.data.valuta = document.getElementById("valuta").value;
 		DB.login.data.sistema_misure = document.getElementById("sistema_misure").value;
 		
-		var JSNPOST = {
+		let JSNPOST = {
 			password_pazienti: DB.login.data.password_pazienti,
 			valuta: DB.login.data.valuta,
 			sistema_misure: DB.login.data.sistema_misure
@@ -689,7 +685,7 @@ var MENU = {
 		MENU.chiudiMenu();
 	},
 	popolaImpSet: function(){
-		var HTML_imp = 
+		let HTML_imp = 
 			'<p id="patientSel">' +
             '	<i>'+TXT("PatientType")+':</i>' +
             '	<span>' +
@@ -707,9 +703,9 @@ var MENU = {
 
 			
 
-		var valuta = __(DB.login.data.valuta,'EUR');
-		var sistema_misure = __(DB.login.data.sistema_misure,'i');
-		var elenco = {};
+		let valuta = __(DB.login.data.valuta,'EUR'),
+			sistema_misure = __(DB.login.data.sistema_misure,'i'),
+			elenco = {};
 		for(v in DB.INT.valute){
 			elenco[v] = DB.INT.valute[v].simbolo+" ("+DB.INT.valute[v][globals.siglaLingua]+")";
 		}
@@ -757,7 +753,7 @@ var MENU = {
 		}
 	},
 	setPatientType: function( type ){
-		var contr = '';
+		let contr = '';
 		if(type=='M'){
 			document.getElementById("t_OLISTICO").classList.remove("a_SEL");
 			document.getElementById("t_MEDICO").classList.add("a_SEL");
@@ -779,7 +775,7 @@ var MENU = {
 		//if(__(localStorage.tipo_utilizzo) != contr)ALERT(TXT("AlertNecessarioRiavvio"));
 	},
 	patientPwdConf: function(){
-		var pwd = document.getElementById("patientPwdRequest");
+		let pwd = document.getElementById("patientPwdRequest");
 		if(!pwd.value.trim()){ // se è vuota
 			ALERT(TXT("PatientPwdAlert"));
 			return;
@@ -836,15 +832,14 @@ var MENU = {
 		// --------------------------
 		MENU.visStampa();
 		document.body.classList.add("bodyStampa");
-		var rapp = window.innerWidth / window.innerHeight;
-		var bw = 28;
-		var bh = 21;
+		let rapp = window.innerWidth / window.innerHeight,
+			bw = 28,
+			bh = 21,
+			h = window.innerHeight+210,
+			w = (window.innerHeight * (bw+10) ) / bh;
 		if(rapp > bw/bh ){
-			var w = window.innerWidth;
-			var h = (window.innerWidth * bh ) / (bw+2);
-		}else{
-			var h = window.innerHeight+210;
-			var w = (window.innerHeight * (bw+10) ) / bh;
+			w = window.innerWidth;
+			h = (window.innerWidth * bh ) / (bw+2);
 		}
 		camera.aspect =  w / h;
 		camera.updateProjectionMatrix();
@@ -872,7 +867,7 @@ var MENU = {
 	},
 	
 	espandiIcone: function(){
-		var schedaModificaLato = false;
+		let schedaModificaLato = false;
 		if(	document.getElementById("scheda").classList.contains("schLato") &&
 			document.getElementById("scheda_testo").querySelector(".formBtn") )schedaModificaLato = true;
 		if(!MENU.icoSelected && !schedaModificaLato && !document.getElementById("scheda").classList.contains("visSch")){
@@ -888,8 +883,7 @@ var MENU = {
 			MENU.setTT();
 		}
 		if(!MENU.inizio){
-			var tm = 0;
-			if(!netto)tm = 300;
+			let tm = netto ? 0 : 300;
 			clearTimeout(MENU.tmIcone);
 			document.getElementById("icone").classList.remove("iconeEspanse");
 			setTimeout( function(){
@@ -899,9 +893,9 @@ var MENU = {
 	},
 	setTT: function(){
 		// verifico i tooltips del menu
-		var divs = document.getElementById("icone").getElementsByTagName("div");
+		let divs = document.getElementById("icone").getElementsByTagName("div");
 		for(let i=0;i<divs.length;i++){
-			var labels = divs[i].getElementsByTagName("i");
+			let labels = divs[i].getElementsByTagName("i");
 			if(labels.length){
 				if((MENU.icoSelected || document.getElementById("scheda").classList.contains("visSch")) && MENU.icoSelected!=divs[i]){
 					divs[i].onmouseenter = function(){
@@ -999,7 +993,7 @@ var DRAGGER = {
 		}
 		DRAGGER.posIni.x = touchable ? event.touches[ 0 ].pageX : event.clientX;
 		DRAGGER.posIni.y = touchable ? event.touches[ 0 ].pageY : event.clientY;
-		var target = el;
+		let target = el;
 		while(target.tagName!='HTML' && target.id!="scheda_testo"){
 			target = target.parentElement;
 		}
@@ -1114,8 +1108,8 @@ var DRAGGER = {
 	},
 	posLB: function(){
 		if(!DRAGGER.att)return;
-		var l = DRAGGER.posAtt.x-35;
-		var t = DRAGGER.posAtt.y-50;
+		let l = DRAGGER.posAtt.x-35,
+			t = DRAGGER.posAtt.y-50;
 		if(touchable){
 			l -= 35;
 			t -= 40;
@@ -1176,10 +1170,10 @@ var DRAGGER = {
 	pushDrag: function( el ){
 		if(DRAGGER.moved && el!=DRAGGER.elCont){
 			DRAGGER.overEl = el;
-			var t = 0;
-			var ST = 0;
-			var b = 3;
-			var a = 1;
+			let t = 0,
+				ST = 0,
+				b = 3,
+				a = 1;
 			target = DRAGGER.overEl.parentElement;
 			while(target.tagName!='HTML' && target.id!="scheda_testo"){
 				target = target.parentElement;
@@ -1255,7 +1249,7 @@ var SLIDER = {
 			document.body.addEventListener("touchend", SLIDER.arrestaSlide, false );
 			document.body.addEventListener("touchmove", SLIDER.moveSlider, false );	
 		}
-		var mL = "0"+SLIDER.slider_btn.style.marginLeft.replace("px","")+"";
+		let mL = "0"+SLIDER.slider_btn.style.marginLeft.replace("px","")+"";
 		SLIDER.mIni = parseInt(mL);
 		if(touchable){
 			try{ SLIDER.xIni = event.touches[ 0 ].pageX; }catch(err){};
@@ -1267,15 +1261,15 @@ var SLIDER = {
 	moveSlider: function(event){
 		event.preventDefault();
 		SLIDER.xAtt = touchable ? event.touches[ 0 ].pageX : event.clientX;
-		var diffX = SLIDER.xAtt - SLIDER.xIni
-		var mL = SLIDER.mIni/SLIDER.demolt + diffX;
+		let diffX = SLIDER.xAtt - SLIDER.xIni,
+			mL = SLIDER.mIni/SLIDER.demolt + diffX;
 		if(mL<0)mL = 0;
 		if(mL>SLIDER.maxVal/SLIDER.demolt)mL = SLIDER.maxVal/SLIDER.demolt;
 		SLIDER.slider_btn.style.marginLeft = (mL*SLIDER.demolt)+'px';
-		var btnSlideAnat = document.getElementById("sliderAnatomia").querySelector(".slider").getElementsByTagName("div")[0];
+		let btnSlideAnat = document.getElementById("sliderAnatomia").querySelector(".slider").getElementsByTagName("div")[0];
 		btnSlideAnat.style.marginLeft = (mL)+'px';
 		perc=(mL/SLIDER.maxVal)*SLIDER.demolt;
-		var l = SLIDER.livelloSel.substr(0,1).toUpperCase()+SLIDER.livelloSel.substr(1,SLIDER.livelloSel.length-1);
+		let l = SLIDER.livelloSel.substr(0,1).toUpperCase()+SLIDER.livelloSel.substr(1,SLIDER.livelloSel.length-1);
 		MODELLO.op(l,perc);
 		raycastDisable = true;
 	},

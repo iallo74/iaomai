@@ -24,7 +24,7 @@ var NOTIFICHE = {
 	},
 	car_notifiche: function( txt ){ // carica la lista delle notifiche
 		if(txt)DB.notifiche = JSON.parse(txt).notifiche;
-		var HTML = '';
+		let HTML = '';
 		if(!DB.notifiche)DB.notifiche = [];
 		//console.log(DB.notifiche);
 		if(DB.notifiche.length){
@@ -41,7 +41,7 @@ var NOTIFICHE = {
 	},
 	
 	car_notifica: function( n ){ // apre una notifica
-		var HTML = 	'<span id="elNotifica"' +
+		let HTML = 	'<span id="elNotifica"' +
 					'	   onClick="CONFIRM.vis( TXT(\'EliminaNotifica\') ).then(function(pass){' +
 					'	   				if(pass){' +
 					'	   					NOTIFICHE.el_notifica('+n+');' +
@@ -57,10 +57,10 @@ var NOTIFICHE = {
 							htmlEntities(DB.notifiche[n].NomeNotifica) +
 					'	</h1>';
 		
-		var TestoNotifica = DB.notifiche[n].TestoNotifica;
+		let TestoNotifica = DB.notifiche[n].TestoNotifica;
 		
-		var pattern = /(\[proceduraPriv:)([0-9]+)(\])/;
-		var sost='';
+		let pattern = /(\[proceduraPriv:)([0-9]+)(\])/;
+		let sost='';
 		if(	globals.set.cartella == 'meridiani_cinesi' ||
 			globals.set.cartella == 'meridiani_shiatsu'){
 			sost = 	'<div class="submitBtn"' +
@@ -72,8 +72,8 @@ var NOTIFICHE = {
 		}
 		TestoNotifica = TestoNotifica.replace(pattern, sost);
 		
-		var pattern = /(\[proceduraComm:)([0-9]+)(\])/;
-		var sost='';
+		pattern = /(\[proceduraComm:)([0-9]+)(\])/;
+		sost='';
 		if(	globals.set.cartella == 'meridiani_cinesi' || 
 			globals.set.cartella == 'meridiani_shiatsu' ){
 			sost = 	'<div class="submitBtn"' +

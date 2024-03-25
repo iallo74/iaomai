@@ -15,7 +15,7 @@ var COMMUNITY = {
 			regMod=(document.formCommunity.okRegComm.checked)?1:0;
 			PSD=document.formCommunity.PseudonimoN.value;
 		}
-		var JSNPOST={	"PseudonimoN": PSD,
+		let JSNPOST={	"PseudonimoN": PSD,
 						"okRegComm": regMod*1 };
 		
 		CONN.caricaUrl(	"community_att.php",

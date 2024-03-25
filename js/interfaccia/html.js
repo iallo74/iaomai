@@ -2,7 +2,7 @@ var H = {
 	noAutoGen: ' autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"',
 	sl: '<span class="nb">/</span>',
 	imgSyncro: function(){
-		var HTML = '';
+		let HTML = '';
 		if(LOGIN.reg()){
 			HTML = '';
 			/*HTML = 	'<img src="img/ico_connessioneAssente.png"' +//alertmini.png"' +
@@ -66,16 +66,16 @@ var H = {
 		
 		if(typeof(obj.ver) == 'undefined')obj.ver = '';
 		else obj.ver = '@|'+obj.label+'|'+obj.ver;
-		var id = obj.name;
+		let id = obj.name;
 		if(obj.ver)id = obj.ver;
-		var addCampo = '';
+		let addCampo = '';
 		if(obj.classCampo)addCampo += ' class="'+obj.classCampo+'"';
 		if(obj.styleCampo)addCampo += ' style="'+obj.styleCampo+'"';
 		if(obj.keyupCampo)addCampo += ' onKeyUp="'+obj.keyupCampo+'"';
 		if(obj.clickCampo)addCampo += ' onClick="'+obj.clickCampo+'"';
 		if(obj.focusCampo)addCampo += ' onFocus="'+obj.focusCampo+'"';
 		
-		var html = '';
+		let html = '';
 		
 		// inizializzo la riga
 		if(obj.t != 'h'){
@@ -158,10 +158,10 @@ var H = {
 			case "d": // data
 				if(!obj.noLabel)html += '<i class="vis">'+obj.label+':</i> ';
 				
-				var giorno = '',
+				let giorno = '',
 					mese = '',
-					anno = '';
-				var Data = obj.value;
+					anno = '',
+					Data = obj.value;
 				if(Data){
 					Data = new Date(Data*1000);
 					giorno = Data.getDate();
@@ -239,15 +239,15 @@ var H = {
 	},
 	
 	keyData: function( event, el ){
-		var id = el.parentElement.id;
-		var giorno=document.getElementById("giorno" + id).value;
-		var mese=document.getElementById("mese" + id).value;
-		var anno=document.getElementById("anno" + id).value;
-		var maxGiorni = 31;
-		var errore = false;
+		let id = el.parentElement.id,
+			giorno=document.getElementById("giorno" + id).value,
+			mese=document.getElementById("mese" + id).value,
+			anno=document.getElementById("anno" + id).value,
+			maxGiorni = 31,
+			errore = false;
 		if( mese*1 > 0 && anno*1 > 0 ){
-			var d = new Date(anno*1,mese*1,0);
-			var maxGiorni=d.getDate();	
+			let d = new Date(anno*1,mese*1,0);
+			maxGiorni = d.getDate();	
 		}
 		Filtro = /^[\d]+$/;
 		if(!el.value.trim()){
@@ -305,14 +305,14 @@ var H = {
 		}
 	},
 	verData: function( id, notNull=false ){ 
-		var giorno=document.getElementById("giorno" + id).value;
-		var mese=document.getElementById("mese" + id).value;
-		var anno=document.getElementById("anno" + id).value;
-		var i=0;
+		let giorno = document.getElementById("giorno" + id).value,
+			mese = document.getElementById("mese" + id).value,
+			anno = document.getElementById("anno" + id).value,
+			i = 0,
+			m = 0;
 		if(giorno.trim()*1)i++;
 		if(mese.trim()*1)i++;
 		if(anno.trim()*1)i++;
-		var m = 0;
 		if(notNull)m = -1;
 		if(i>m && i<3){
 			// data non valida
@@ -324,7 +324,7 @@ var H = {
 	},
 	
 	keyTelefono: function( el, cell ){
-		var cell = __(cell);
+		cell = __(cell);
 		if(!cell)Filtro = /^[\d\+\.\s]+$/;
 		else Filtro = /^\+[\d\.\s]*$/;
 		if(!el.value.trim()){
@@ -376,8 +376,8 @@ var H = {
 			if(H.elCombo)H.rimuoviCombo();
 			H.elCombo = el;
 			
-			var HTML = '';
-			var sch = document.getElementById("scheda_testo");
+			let HTML = '';
+			let sch = document.getElementById("scheda_testo");
 			for(l in lista){
 				if(lista[l].trim())HTML += 
 					'<span onMouseUp="H.selComboVal(this);"' +
@@ -403,7 +403,7 @@ var H = {
 	rimuoviCombo: function(){
 		if(!H.comboOver || touchable){
 			H.nasCombo();
-			var sch = document.getElementById("scheda_testo");
+			let sch = document.getElementById("scheda_testo");
 			sch.removeEventListener("scroll", H.rimuoviCombo);
 			window.removeEventListener("mouseup", H.rimuoviCombo);
 			if(H.elCombo){
@@ -421,7 +421,7 @@ var H = {
 		H.elCombo = null;
 	},
 	riposCombo: function(){
-		var sch = document.getElementById("scheda_testo");
+		let sch = document.getElementById("scheda_testo");
 		document.getElementById("combo").style.top = (	tCoord(H.elCombo,'y') - 
 														tCoord(document.getElementById("scheda"),'y') -
 														sch.scrollTop +
@@ -437,9 +437,9 @@ var H = {
 				return;
 			}
 		}
-		var val = H.elCombo.value.toLowerCase();
-		var els = document.getElementById("combo").getElementsByTagName("span");
-		var pres = false;
+		let val = H.elCombo.value.toLowerCase(),
+			els = document.getElementById("combo").getElementsByTagName("span"),
+			pres = false;
 		for(e=0;e<els.length;e++){
 			if(els[e].innerText.toLowerCase().indexOf(val)==-1)els[e].classList.remove("comboElVis");
 			else{
@@ -469,7 +469,7 @@ var H = {
 		document.getElementById("combo").style.display = 'none';
 	},
 	getElencoDB: function( db, campo ){
-		var EL = [];	
+		let EL = [];	
 		for(let p in db){
 			if( db[p][campo.name].trim() &&
 				EL.indexOf(db[p][campo.name]) == -1 &&
@@ -479,7 +479,7 @@ var H = {
 		return EL;
 	},
 	getElenco: function( elenco, campo ){
-		var EL = [];	
+		let EL = [];	
 		for(e in elenco){
 			if(EL.indexOf(elenco[e]) == -1)EL.push(elenco[e]);
 		}
@@ -499,9 +499,9 @@ var H = {
 		
 		*/
 		if( localStorage.getItem("op_"+obj.nome) )obj.aperta = true;
-		var img = obj.nome;
+		let img = obj.nome,
+			HTML = '';
 		if(obj.img)img = obj.img;
-		var HTML = '';
 		HTML += '<div id="sez_cont_'+obj.nome+'"' +
 				'	  class="sezioneTrattamenti divEspansa'+(!__(obj.aperta) ? ' sezioneChiusa' : '' )+'">' +	
 				'	<em class="labelMobile labelTrattamenti"' +
@@ -566,7 +566,7 @@ var H = {
 	
 	// etichette aggiuntive delle anagrafiche (clienti e fornitori)
 	caricaEtichette: function( sezione ){ // carica le etichette personalizzate del paziente
-		var HTML='';
+		let HTML='';
 		if(H.etichetteProvvisorie.length>0){
 			for(let p in H.etichetteProvvisorie){
 				if(H.etichetteProvvisorie[p].sezione == sezione){
@@ -597,18 +597,17 @@ var H = {
 		document.getElementById('elencoEtichette_'+sezione).classList.remove("visSch");
 	},
 	aggiungiEtichetta: function( sezione, el ){ // aggiunge un'etichetta personalizzata al paziente
-		var txt=document.getElementById("label_add_"+sezione).value;
-		var globalEtichette = H.getEtichette(sezione);
-		var pass = true;
+		let txt=document.getElementById("label_add_"+sezione).value,
+			pass = true,
+			oldValue = '';
 		if(txt.trim()=='')pass=false;
-		var oldValue = '';
 		if(document.getElementById("label_add_"+sezione).dataset.oldValue){ // verifico se è in modifica con oldValue
 			oldValue = document.getElementById("label_add_"+sezione).dataset.oldValue;
 		}
-		var els = document.getElementById("elencoEtichette_"+sezione).getElementsByClassName("elMod");
+		let els = document.getElementById("elencoEtichette_"+sezione).getElementsByClassName("elMod");
 		for(e in els){
 			if(els[e].dataset){
-				var val = els[e].dataset.value.toLowerCase();
+				let val = els[e].dataset.value.toLowerCase();
 				if(	val.trim() == txt.toLowerCase().trim() && !oldValue ){
 					H.selezionaEtichetta(e,sezione);
 					return;
@@ -625,7 +624,7 @@ var H = {
 				}
 			}
 		}
-		var id=0;
+		let id=0;
 		if(pass){
 			
 			JSNPUSH={	"idEtichetta": id*1,
@@ -640,13 +639,13 @@ var H = {
 				H.caricaEtichette(sezione);
 			}else{
 				if(oldValue!=txt){
-					var modificato = false;
-					var DataModifica = DB.pazienti.lastSync+1;
-					var PZ = [ DB.pazienti.data, DB.fornitori.data];
+					let modificato = false,
+						DataModifica = DB.pazienti.lastSync+1,
+						PZ = [ DB.pazienti.data, DB.fornitori.data];
 					for(let d in PZ){
 						for(let p in PZ[d]){
-							var etichette = toJson(PZ[d][p].etichette);
-							var etMod = false;
+							let etichette = toJson(PZ[d][p].etichette),
+								etMod = false;
 							if(etichette.length){
 								for(e in etichette){
 									if(	etichette[e].NomeEtichetta == oldValue &&
@@ -692,7 +691,7 @@ var H = {
 		if(oldValue)H.annullaEtichetta(sezione);
 	},
 	aggiornaEtichette: function( el ){
-		var etichetta = el.id.replace("CSTMZ_","");
+		let etichetta = el.id.replace("CSTMZ_","");
 		for(e in H.etichetteProvvisorie){
 			if(H.etichetteProvvisorie[e].NomeEtichetta == etichetta){
 				H.etichetteProvvisorie[e].ValoreEtichetta = el.value;
@@ -700,7 +699,7 @@ var H = {
 		}
 	},
 	eliminaEtichetta: function( n ){ // elimina un'etichetta personalizzata del paziente
-		var sezione = H.etichetteProvvisorie[n].sezione;
+		let sezione = H.etichetteProvvisorie[n].sezione;
 		H.etichetteProvvisorie.splice(n, 1); 
 		H.caricaEtichette(sezione);
 		H.popolaEtichette(sezione);
@@ -708,17 +707,17 @@ var H = {
 		SCHEDA.formModificato = true;
 	},
 	getEtichette: function( sezione, elenchi ){ // restituisce l'elenco globale delle etichette personalizzate
-		var sezione = __(sezione);
-		var elenchi = __(elenchi,[ DB.pazienti.data, DB.fornitori.data]); 
-		var ETICHETTE = [];
-		var PZ = elenchi;
+		elenchi = __(elenchi,[ DB.pazienti.data, DB.fornitori.data]); 
+		sezione = __(sezione);
+		let ETICHETTE = [],
+			PZ = elenchi;
 		for(let d in PZ){
 			for(let p in PZ[d]){
-				var etichette = toJson(__(PZ[d][p].etichette,[]));
+				let etichette = toJson(__(PZ[d][p].etichette,[]));
 				if(etichette.length){
 					for(t in etichette){
 						if(!__(etichette[t].sezione))etichette[t].sezione='aggiuntive';
-						var pass = true;
+						let pass = true;
 						for(T in ETICHETTE){
 							if(ETICHETTE[T]==etichette[t].NomeEtichetta)pass = false;
 						}
@@ -732,8 +731,8 @@ var H = {
 		}
 		if(sezione && etichette_campi[sezione].length){
 			for(e in etichette_campi[sezione]){
-				var etichetta = etichette_campi[sezione][e][globals.siglaLingua];
-				var pass = true;
+				let etichetta = etichette_campi[sezione][e][globals.siglaLingua];
+				let pass = true;
 				for(T in ETICHETTE){
 					if(ETICHETTE[T]==etichetta)pass = false;
 				}
@@ -743,8 +742,8 @@ var H = {
 		return ETICHETTE;
 	},
 	selezionaEtichetta: function( t, sezione ){
-		if(typeof(id)=='undefined')var id=0;
-		var globalEtichette = H.getEtichette(sezione);
+		let id=0;
+		let globalEtichette = H.getEtichette(sezione);
 		JSNPUSH={	"idEtichetta": id*1,
 					"NomeEtichetta": globalEtichette[t].trim(),
 					"ValoreEtichetta": "",
@@ -760,10 +759,10 @@ var H = {
 		H.annullaEtichetta(sezione);
 	},
 	popolaEtichette: function( sezione ){
-		var HTML = '';
-		var globalEtichette = H.getEtichette(sezione);
+		let HTML = '',
+			globalEtichette = H.getEtichette(sezione);
 		for(t in globalEtichette){
-			var pass = true;
+			let pass = true;
 			for(e in H.etichetteProvvisorie){
 				if(H.etichetteProvvisorie[e].NomeEtichetta == globalEtichette[t])pass = false;
 			}
@@ -782,12 +781,12 @@ var H = {
 		if(!HTML)document.getElementById("elencoEtichette_"+sezione).style.display = 'none';
 	},
 	getValoriEtichetta: function( campo, sezione ){ // restituisce l'elenco globale dei valori delle etichette personalizzate
-		var etichetta = campo.name.replace("CSTMZ_","");
-		var VALORI = [];
-		var PZ = [ DB.pazienti.data, DB.fornitori.data ];
+		let etichetta = campo.name.replace("CSTMZ_",""),
+			VALORI = [],
+			PZ = [ DB.pazienti.data, DB.fornitori.data ];
 		for(let d in PZ){
 			for(let p in PZ[d]){
-				var etichette = toJson(__(PZ[d][p].etichette,[]));
+				let etichette = toJson(__(PZ[d][p].etichette,[]));
 				if(typeof(etichette)=='string')etichette = JSON.parse(etichette)
 				if(etichette.length){
 					for(t in etichette){
@@ -804,13 +803,13 @@ var H = {
 		return VALORI;
 	},
 	swSezione: function( el ){
-		var sezione = el.parentElement.id.split("_")[2];
+		let sezione = el.parentElement.id.split("_")[2],
+			op = el.parentElement.classList.contains('sezioneChiusa') ? '' : '1';
 		el.parentElement.classList.toggle('sezioneChiusa');
-		var op = el.parentElement.classList.contains('sezioneChiusa') ? '' : '1';
 		localStorage.setItem("op_"+sezione,op);
 	},
 	scriviEtichette: function( sezione ){
-		var HTML = '';
+		let HTML = '';
 		for(let p in etichette){
 			if(etichette[p].sezione == sezione){
 				HTML += '<div><i>'+htmlEntities(etichette[p].NomeEtichetta)+':</i> ' + htmlEntities(etichette[p].ValoreEtichetta)+'</div>';
@@ -820,11 +819,11 @@ var H = {
 	},
 	modificaEtichetta: function( el, sezione ){
 		H.visAggiungiEtichetta(sezione);
-		var valore = el.dataset.value;
-		var cont = document.getElementById("cont_label_add_"+sezione);
-		var campo = cont.getElementsByTagName("input")[0];
-		var pulsanteModifica = cont.getElementsByTagName("div")[0];
-		var pulsanteAnnulla = cont.getElementsByTagName("div")[1];
+		let valore = el.dataset.value,
+			cont = document.getElementById("cont_label_add_"+sezione),
+			campo = cont.getElementsByTagName("input")[0],
+			pulsanteModifica = cont.getElementsByTagName("div")[0],
+			pulsanteAnnulla = cont.getElementsByTagName("div")[1];
 		campo.value = valore;
 		campo.dataset.oldValue = valore;
 		pulsanteModifica.dataset.oldName = pulsanteModifica.innerHTML;
@@ -834,10 +833,10 @@ var H = {
 		campo.focus();
 	},
 	annullaEtichetta: function( sezione ){
-		var cont = document.getElementById("cont_label_add_"+sezione);
-		var campo = cont.getElementsByTagName("input")[0];
-		var pulsanteModifica = cont.getElementsByTagName("div")[0];
-		var pulsanteAnnulla = cont.getElementsByTagName("div")[1];
+		let cont = document.getElementById("cont_label_add_"+sezione),
+			campo = cont.getElementsByTagName("input")[0],
+			pulsanteModifica = cont.getElementsByTagName("div")[0],
+			pulsanteAnnulla = cont.getElementsByTagName("div")[1];
 		campo.value = '';
 		campo.dataset.oldValue = '';
 		if(pulsanteModifica.dataset.oldName)pulsanteModifica.innerHTML = pulsanteModifica.dataset.oldName;
@@ -850,14 +849,14 @@ var H = {
 			el.blur();
 			H.aggiungiEtichetta(sezione,el);
 		}else{
-			var elenco = document.getElementById("elencoEtichette_"+sezione);
-			var els = elenco.getElementsByClassName("elMod");
-			var campo = document.getElementById("label_add_"+sezione);
-			var oldValue = campo.dataset.oldValue;
+			let elenco = document.getElementById("elencoEtichette_"+sezione),
+				els = elenco.getElementsByClassName("elMod"),
+				campo = document.getElementById("label_add_"+sezione),
+				oldValue = campo.dataset.oldValue;
 			if(typeof(oldValue)=='undefined')oldValue = '';
 			if(oldValue==''){
-				var txt = campo.value.toLowerCase().trim();
-				var presenti = false;
+				let txt = campo.value.toLowerCase().trim(),
+					presenti = false;
 				for(e in els){
 					if(els[e].dataset){
 						if(els[e].dataset.value.toLowerCase().indexOf(txt)>-1 || txt==''){
@@ -878,8 +877,8 @@ var H = {
 	// gestione dei menu a icona (es. mezzo su trattamento 
 	selTT: function( n, id, html ){ // crea il menu
 		H.removeTT();
-		var tt = document.createElement("span");
-		var el = document.getElementById(id+n);
+		let tt = document.createElement("span"),
+			el = document.getElementById(id+n);
 		el.classList.add("tt_on");
 		tt.id = 'tt_mezzival';
 		tt.dataset.n = n;
@@ -899,9 +898,9 @@ var H = {
 	},
 	removeTT: function(){ // rimuove il menu
 		if(!document.getElementById("tt_mezzival"))return;
-		var tt = document.getElementById("tt_mezzival");
+		let tt = document.getElementById("tt_mezzival");
 		if(tt.dataset.on=='0'){
-			var el = document.getElementById(tt.dataset.el+tt.dataset.n);
+			let el = document.getElementById(tt.dataset.el+tt.dataset.n);
 			el.classList.remove("tt_on");
 			document.getElementById("scheda_testo").removeChild(tt);
 			document.getElementById("scheda_testo").removeEventListener("scroll",H.removeTT,false);
@@ -909,8 +908,8 @@ var H = {
 		}
 	},
 	riposTT: function(){ // riposizione il menu
-		var tt = document.getElementById("tt_mezzival");
-		var el = document.getElementById(tt.dataset.el+tt.dataset.n);
+		let tt = document.getElementById("tt_mezzival"),
+			el = document.getElementById(tt.dataset.el+tt.dataset.n);
 		tt.style.top = (tCoord(el,'y') - tCoord(document.getElementById("scheda"),'y') - document.getElementById("scheda_testo").scrollTop + 27)+'px';
 		tt.style.left = (tCoord(el) - tCoord(document.getElementById("scheda")) - 18)+'px';
 	},

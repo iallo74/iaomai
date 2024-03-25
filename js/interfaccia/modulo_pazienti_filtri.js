@@ -10,11 +10,11 @@ var PAZIENTI_FILTRI = {
 		CONFIRM.vis(	TXT("UscireSenzaSalvare"),
 						!SCHEDA.verificaSchedaRet(),
 						arguments ).then(function(pass){if(pass){
-						var v = getParamNames(CONFIRM.args.callee.toString());
+						let v = getParamNames(CONFIRM.args.callee.toString());
 						for(let i in v)eval(getArguments(v,i));
 						
 			if(typeof(salvato) == 'undefined')var salvato = false;
-			if(typeof(aggiorna) == 'undefined')var aggiorna = false;
+			if(typeof(aggiorna) == 'undefined')aggiorna = false;
 			endChangeDetection( "formMod" );
 			SCHEDA.formModificato = false;
 			
@@ -944,7 +944,7 @@ var PAZIENTI_FILTRI = {
 			}
 		}});
 	},
-	statsFiltra: function( applica=false ){
+	statsFiltra: function( applica = false ){
 		var els = document.getElementById("pazienti_stats").getElementsByTagName("input");
 		var elenco = [];
 		PAZIENTI.parametriFiltri = [];

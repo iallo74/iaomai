@@ -4,7 +4,7 @@ var FORNITORI = {
 	maxFornitoriLogged: 5,
 		
 	caricaFornitori: function(){ // carica l'elenco dei fornitori
-		var HTML = '';
+		let HTML = '';
 		
 		// pulsante aggiungi fornitore
 		HTML += '<div class="menuElenchi"' +
@@ -23,15 +23,15 @@ var FORNITORI = {
 				'	</i>' +
 				'</p>' +
 				'<div class="lista listaFornitori">';
-		var noForn = true;
+		let noForn = true;
 		if(DB.fornitori.data.length){
-			var cloneFORNITORI = clone(DB.fornitori.data);
+			let cloneFORNITORI = clone(DB.fornitori.data);
 			for(let p in cloneFORNITORI){
 				cloneFORNITORI[p].p = p;
 			}
 			cloneFORNITORI.sort(sort_by("RagioneSociale", false));
 			for(let p in cloneFORNITORI){
-				var FR = cloneFORNITORI[p];
+				let FR = cloneFORNITORI[p];
 				
 				if(!FR.Cancellato){
 					noForn = false;
@@ -41,7 +41,7 @@ var FORNITORI = {
 					'		 onClick="FORNITORI.car_fornitore('+FR.p+');">';
 					
 					// verifico se è stato modificato e non sincronizzato
-					var mdT=false;
+					let mdT=false;
 					if(FR.DataModifica > DB.fornitori.lastSync)mdT=true;
 					
 					if(mdT)HTML += H.imgSyncro();
@@ -64,7 +64,7 @@ var FORNITORI = {
 		document.getElementById("lista_fornitori").innerHTML = HTML;
 	},
 	filtra: function( event ){ // filtra l'elenco dei fornitori
-		var parola = document.getElementById("forn_ricerca").value;
+		let parola = document.getElementById("forn_ricerca").value;
 		for(let p in DB.fornitori.data){
 			if(!DB.fornitori.data[p].Cancellato*1){
 				if(DB.fornitori.data[p].RagioneSociale.toLowerCase().indexOf(parola.toLowerCase()) == -1){
@@ -80,8 +80,9 @@ var FORNITORI = {
 	car_fornitore: function( Q_idForn, salvato ){ // carica la scheda anagrafica del fornitore
 		// verifico le autorizzazioni
 		if(__(Q_idForn,-1)==-1){
-			var maxFornitori = FORNITORI.maxFornitoriFree;
-			var addMaxTxt = 'Free';
+			let maxFornitori = FORNITORI.maxFornitoriFree,
+				addMaxTxt = 'Free',
+				tForn = 0;
 			if(LOGIN.reg() && LOGIN.logedin()){
 				if(DB.login.data.auths.indexOf("clients_full")>-1)maxFornitori = -1;
 				else{
@@ -90,7 +91,6 @@ var FORNITORI = {
 				}
 			}
 			if(maxFornitori>-1){
-				var tForn = 0;
 				for(let c in DB.fornitori.data){
 					if(DB.fornitori.data[c].Cancellato*1==0)tForn++;
 				}
@@ -104,28 +104,28 @@ var FORNITORI = {
 		CONFIRM.vis(	TXT("UscireSenzaSalvare"),
 						!SCHEDA.verificaSchedaRet(),
 						arguments ).then(function(pass){if(pass){
-						var v = getParamNames(CONFIRM.args.callee.toString());
+						let v = getParamNames(CONFIRM.args.callee.toString());
 						for(let i in v)eval(getArguments(v,i));
 			
-			var Q_idForn = __(Q_idForn, -1);
-			var salvato = __(salvato, false);
+			Q_idForn = __(Q_idForn, -1);
+			salvato = __(salvato, false);
 			MENU.nasMM();
-			var idFornitore=0;
-			var RagioneSociale='';
-			var Intestazione='';
-			var PartitaIva='';
-			var CodiceFiscale='';
-			var Indirizzo='';
-			var CAP='';
-			var Citta='';
-			var Provincia='';
-			var Stato='';
-			var Telefono='';
-			var Email='';
-			var NoteFornitore='';
-			var etichette=[];
+			let idFornitore=0,
+				RagioneSociale='',
+				Intestazione='',
+				PartitaIva='',
+				CodiceFiscale='',
+				Indirizzo='',
+				CAP='',
+				Citta='',
+				Provincia='',
+				Stato='',
+				Telefono='',
+				Email='',
+				NoteFornitore='',
+				etichette=[];
 			if(Q_idForn>-1){
-				var FR = DB.fornitori.data[Q_idForn];
+				let FR = DB.fornitori.data[Q_idForn];
 				idFornitore = FR.idFornitore;
 				RagioneSociale = FR.RagioneSociale;
 				Intestazione = __(FR.Intestazione);
@@ -143,7 +143,7 @@ var FORNITORI = {
 			}
 			H.etichetteProvvisorie = clone(etichette);
 			
-			var HTML = '';
+			let HTML = '';
 			HTML += '<form id="formMod"' +
 					'	   name="formMod"' +
 					'	   method="post"' +
@@ -172,7 +172,7 @@ var FORNITORI = {
 					'	  padding: 8px;"></div>';
 					
 			// sezione INDIRIZZO
-			var cont = '';
+			let cont = '';
 			cont += H.r({	t: "r", name: "Indirizzo",	value: Indirizzo,	classCampo: 'styled' });
 			
 			cont += '<div>';
@@ -208,7 +208,7 @@ var FORNITORI = {
 						});
 			
 			// sezione CONTATTI
-			var cont = '';
+			cont = '';
 			cont += H.r({	t: "r",
 							name: "Telefono",
 							value: Telefono,
@@ -229,7 +229,7 @@ var FORNITORI = {
 										
 			
 			// sezione FATTURAZIONE
-			var cont = '';
+			cont = '';
 			cont += H.r({	t: "t", 
 							name: "Intestazione",
 							classCampo: "Intestazione",
@@ -248,7 +248,7 @@ var FORNITORI = {
 						});	
 					
 			// sezione ANNOTAZIONI
-			var cont = '';
+			cont = '';
 			cont += H.r({	t: "t", 
 							name: "NoteFornitore",
 							value: NoteFornitore,
@@ -262,10 +262,9 @@ var FORNITORI = {
 				html: cont
 						});	
 			
-			var azAnnulla = "SCHEDA.scaricaScheda();";
-			if(Q_idForn>-1)azAnnulla = "SCHEDA.scaricaScheda();";
-			var azElimina = Q_idForn>-1 ? "FORNITORI.el_fornitore("+Q_idForn+");":"";
-			var btnAdd = '';
+			let azAnnulla = Q_idForn>-1 ? "SCHEDA.scaricaScheda();" : "SCHEDA.scaricaScheda();",
+				azElimina = Q_idForn>-1 ? "FORNITORI.el_fornitore("+Q_idForn+");" : "",
+				btnAdd = '';
 			if(azElimina){
 				btnAdd += '<div class="p_paz_el_menu" onClick="'+azElimina+'">'+TXT("EliminaScheda")+'</div>';
 			}
@@ -281,7 +280,7 @@ var FORNITORI = {
 			HTML += '</form>';
 			
 			
-			var titoloDef=TXT("ModificaFornitore");
+			let titoloDef=TXT("ModificaFornitore");
 			if(Q_idForn==-1)titoloDef=TXT("CreaFornitore");
 			
 			SCHEDA.caricaScheda(	stripslashes(titoloDef),
@@ -321,10 +320,9 @@ var FORNITORI = {
 	},
 	mod_fornitore: function( Q_idForn ){ //salva l'anagrafica fornitore
 		if(!verifica_form(document.getElementById("formMod")))return;
-		var DataModifica = DB.fornitori.lastSync+1;
+		let DataModifica = DB.fornitori.lastSync+1;
 		if(document.formMod.idFornitore.value*1>-1)DataCreazione=DataModifica;
 		else DataCreazione = DB.fornitori.data[Q_idForn].DataCreazione;
-		var d=new Date();
 		
 		JSNPUSH={ 	"idFornitore": document.formMod.idFornitore.value*1,
 					"RagioneSociale": document.formMod.RagioneSociale.value,
@@ -354,8 +352,7 @@ var FORNITORI = {
 			Q_idForn = DB.fornitori.data.length-1;
 		}
 		
-		var postAction = '';
-		if(!LOGIN.logedin())postAction = 'FORNITORI.caricaFornitori()';
+		let postAction = !LOGIN.logedin() ? 'FORNITORI.caricaFornitori()' : '';
 		endChangeDetection();
 		SCHEDA.formModificato = false;
 		applicaLoading(document.getElementById("scheda_testo"));
@@ -374,11 +371,11 @@ var FORNITORI = {
 		CONFIRM.vis(	TXT("ChiediEliminaFornitore"),
 						false,
 						arguments ).then(function(pass){if(pass){
-						var v = getParamNames(CONFIRM.args.callee.toString());
+						let v = getParamNames(CONFIRM.args.callee.toString());
 						for(let i in v)eval(getArguments(v,i));
 			
 			if(Q_idForn>-1){
-				var DataModifica = DB.fornitori.lastSync+1;
+				let DataModifica = DB.fornitori.lastSync+1;
 				DB.fornitori.data[Q_idForn].DataModifica=parseInt(DataModifica);
 				DB.fornitori.data[Q_idForn].Cancellato=1;
 				idFornitore = __(DB.fornitori.data[Q_idForn].idFornitore,0);

@@ -23,16 +23,16 @@ var BACKUPS = {
 	},
 	caricaBackups: function( bkps ){
 		BACKUPS.bkpProvv = null;
-		var HTML = '';
+		let HTML = '';
 		if(CONN.getConn()){
 			if(!bkps)bkps = [];
 			else bkps = JSON.parse(bkps);
 			BACKUPS.totBackups = bkps.length;
 			if(BACKUPS.totBackups){
 				for(let n in bkps){
-					var title = bkps[n].title;
-					var file = bkps[n].name.split(".")[0];
-					var d = file.split("-")[1]*1;
+					let title = bkps[n].title,
+						file = bkps[n].name.split(".")[0],
+						d = file.split("-")[1]*1;
 					
 					HTML += '<div class="elsBackups"' +
 							'	  onClick="BACKUPS.downloadBackup(\''+file+'\');">';
@@ -64,10 +64,9 @@ var BACKUPS = {
 		BACKUPS.bkpProvv.JSNPOST = JSON.parse(decodeURIComponent(window.atob( BACKUPS.bkpProvv.JSNPOST )));
 		
 		
-		var d = BACKUPS.fileProvv.split(".")[0].split("-")[1]*1;
-		
-		var HTML = '';
-		HTML += '<h1>'+BACKUPS.bkpProvv.title+'</h1>' +
+		let d = BACKUPS.fileProvv.split(".")[0].split("-")[1]*1,
+			HTML = 
+				'<h1>'+BACKUPS.bkpProvv.title+'</h1>' +
 				'<p>'+getFullDataTS(d)+" - "+getOraTS(d)+'</p>' +
 				'<div>' +
 				'	<div class="btn_annulla" onClick="BACKUPS.el_backup();">' +
@@ -104,8 +103,8 @@ var BACKUPS = {
 			document.getElementById("toolsBackups").style.display = 'none';
 			document.getElementById("titBackups").style.display = 'block';
 			
-			var HTML = '';
-			HTML += '<h1>'+htmlEntities(TXT("CreaBackup"))+'</h1>' +
+			let HTML = 
+					'<h1>'+htmlEntities(TXT("CreaBackup"))+'</h1>' +
 					'<div>' +
 					'	<div>' +
 					'		<input type="text"' +
@@ -164,7 +163,7 @@ var BACKUPS = {
 		DB.procedure.lastSync = 0;
 		DB.ricerche.lastSync = 0;
 		BACKUPS.bkpProvv.JSNPOST.lastSync = lastSync;
-		var txt = JSON.stringify(BACKUPS.bkpProvv.JSNPOST);
+		let txt = JSON.stringify(BACKUPS.bkpProvv.JSNPOST);
 		LOGIN.retGlobalSyncro(txt);
 	},
 	ripristinoTerminato: function(){

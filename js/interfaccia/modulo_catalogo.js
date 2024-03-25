@@ -1,12 +1,12 @@
 var CATALOGO = {
 	//
 	scriviListaSets: function(){
-		var HTML_elenco = 	'';
+		let HTML_elenco = 	'';
 		for(let cartella in sets){
 			if(	cartella != 'anatomy_full' &&
 				cartella != 'clients_full'){
-				var addClass = '';
-				var linkSet = 'caricaSet(\''+cartella+'\',this);MENU.visSets();';
+				let addClass = '',
+					linkSet = 'caricaSet(\''+cartella+'\',this);MENU.visSets();';
 				if(cartella == globals.set.cartella)linkSet = 'SCHEDA.apriElenco(\'set\')';
 				if(sets[cartella].locked){
 					//linkSet = 'MENU.visElencoSets(\''+cartella+'\');';
@@ -26,9 +26,9 @@ var CATALOGO = {
 		document.getElementById("sets_elenco").innerHTML = HTML_elenco;
 	},
 	scriviElencoSets: function( set ){
-		var HTML_elenco = 	'';
-		var HTML_cont = '';
-		var HTML_imgs = '';
+		let HTML_elenco = 	'',
+			HTML_cont = '',
+			HTML_imgs = '';
 		for(let cartella in sets){
 			HTML_elenco += 	'<div id="e_'+cartella+'"' +
 							' 	  style="background-image:url(sets/'+cartella+'/img/logoNero.png);"' +
@@ -47,10 +47,10 @@ var CATALOGO = {
 							 	htmlEntities(TXT("SetAcquistato")) +
 							 '</span></span>';
 			}
-			var ChiediInfo = htmlEntities(TXT("ComeAttivare"));
+			let ChiediInfo = htmlEntities(TXT("ComeAttivare"));
 			if(sets[cartella].locked && sets[cartella].dataPubblicazione){
-				var aaaa = sets[cartella].dataPubblicazione.split("-")[0]*1;
-				var mm = sets[cartella].dataPubblicazione.split("-")[1]*1;
+				let aaaa = sets[cartella].dataPubblicazione.split("-")[0]*1,
+					mm = sets[cartella].dataPubblicazione.split("-")[1]*1;
 				HTML_cont += '<span class="pubblSet">' +
 							 '	<i>'+htmlEntities(TXT("DataPubblicazione"))+'</i><br>' +
 							 	DB.TXT.base.nomiMesi[globals.siglaLingua][mm-1]+" "+aaaa +

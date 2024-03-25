@@ -5,7 +5,7 @@ var FEEDBACK = {
 		
 			if(verifica_form(document.feedbackForm)){
 				applicaLoading(document.getElementById("feedback"));
-				var JSNPOST={	"Oggetto": document.feedbackForm.Oggetto.value,
+				let JSNPOST={	"Oggetto": document.feedbackForm.Oggetto.value,
 								"Messaggio": document.feedbackForm.Messaggio.value,
 								"Nominativo": document.feedbackForm.Nominativo.value,
 								"Email": document.feedbackForm.Email.value };
@@ -15,9 +15,9 @@ var FEEDBACK = {
 								function(txt){
 									// conferma l'invio di un feedback
 									rimuoviLoading(document.getElementById("feedback"))
-									var err=false;
+									let err=false;
 									if(txt.substr(0,3)!='404'){
-										var ris=JSON.parse(txt);
+										let ris=JSON.parse(txt);
 										if(ris.Conferma=='1'){
 											ALERT(TXT("FeedbackInviato"));
 											document.feedbackForm.Nominativo.value = "";

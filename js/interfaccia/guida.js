@@ -4,11 +4,11 @@ var GUIDA = {
 	overChiudi: false,
 	tmFumetto: null,
 	init: function( n ){
-		var els = document.getElementById("guida"+n).getElementsByClassName("guida_el");
+		let els = document.getElementById("guida"+n).getElementsByClassName("guida_el");
 		for(let n=0;n<els.length;n++){
-			var nav = document.createElement('div');
+			let nav = document.createElement('div');
 			nav.className = 'guida_nav';
-			var html = '<span class="guida_btn_';
+			let html = '<span class="guida_btn_';
 			if(n>0)html +='sx" onClick="GUIDA.vai('+(n-1)+');';
 			else html +='void';
 			html +='"></span>';
@@ -20,8 +20,7 @@ var GUIDA = {
 			nav.innerHTML = html;
 			els[n].appendChild(nav);
 			if(els[n].dataset.tipo == 'guida'){
-				var tech = 'mouse';
-				if(touchable)tech = 'gesture';
+				let tech = touchable ? 'gesture' : 'mouse';
 				els[n].style.backgroundImage = 'url(img/guida-'+tech+'-'+globals.siglaLingua+'.png)';
 			}
 		}
@@ -37,7 +36,7 @@ var GUIDA = {
 		document.getElementById("guida_cont").className = '';
 	},
 	vai: function( g ){
-		var els = document.getElementById("guida"+GUIDA.nGuida).getElementsByClassName("guida_el");
+		let els = document.getElementById("guida"+GUIDA.nGuida).getElementsByClassName("guida_el");
 		for(let n=0;n<els.length;n++){
 			document.getElementById("guida_cont").classList.remove("guida"+GUIDA.nGuida+n);
 		}
@@ -49,7 +48,7 @@ var GUIDA = {
 			delete(localStorage.no_guida_generica);
 		}
 		if(GUIDA.fumettoAperto=='guida_generica')return;
-		var noGuida = (__(localStorage.getItem("no_"+n),"false"));
+		let noGuida = (__(localStorage.getItem("no_"+n),"false"));
 		if(!noGuida || forza){
 			if(GUIDA.fumettoAperto){
 				document.getElementById(GUIDA.fumettoAperto).classList.remove("vis","visSch","noFr");
@@ -60,10 +59,9 @@ var GUIDA = {
 			if(!document.getElementById(n)){
 				document.getElementById('guida_def').className = 'fumetti '+n;
 				document.getElementById('fumetti_titolo').innerHTML = guide[n].titolo[globals.siglaLingua];
-				var cont = '';
 				if(typeof(guide[n].reference)!='undefined'){
 					if(guide[n].reference){
-						var reference = guide[n].reference;
+						let reference = guide[n].reference;
 						if(globals.set.cartella)reference = reference.replace("[set]",globals.set.cartella);
 						document.getElementById("guida_def").querySelector(".btnReference").onclick = function(){
 							REF.open(reference);
@@ -86,11 +84,11 @@ var GUIDA = {
 			GUIDA.fumettoAperto = n;
 			if(n!='guida_generica')window.addEventListener("mouseup", GUIDA.nasFumetto, false);
 			else{
-				var HTML_elenco = 	'';
+				let HTML_elenco = 	'';
 				for(let cartella in sets){
 					if(	cartella != 'anatomy_full' &&
 						cartella != 'clients_full'){
-						var linkSet = 'caricaSet(\''+cartella+'\',this,\''+sets[cartella].modelli[0]+'\');MENU.visSets();';
+						let linkSet = 'caricaSet(\''+cartella+'\',this,\''+sets[cartella].modelli[0]+'\');MENU.visSets();';
 						if(cartella == globals.set.cartella)linkSet = 'SCHEDA.apriElenco(\'set\')';
 						if(!sets[cartella].locked){
 							HTML_elenco += 	'<div onClick="'+linkSet+'" id="btnGuida_'+cartella+'">' +
@@ -201,9 +199,9 @@ var REF = {
 			REF.frSel = [];
 		}
 		REF.explode();
-		var level = REF.levelTxt;
+		level = REF.levelTxt;
 		if(level.indexOf(".")>-1){
-			var pL = level.split(".");
+			let pL = level.split(".");
 			level = '';
 			for(l in pL)level += ".cont."+pL[l];
 		}else{
@@ -211,12 +209,12 @@ var REF = {
 			else level = '.cont.overview';
 		}
 		REF.level = eval('DB.reference'+level);
-		var cont = REF.level.cont;
+		let cont = REF.level.cont;
 		if(!cont)cont = '<i style="opacity:0.7;">'+TXT("NoRes")+'</i>';
-		var nav = '';
+		let nav = '';
 		if(REF.elSel){
-			var pL = REF.elSel.dataset.level.split(".");
-			var el = DB.reference.cont;
+			let pL = REF.elSel.dataset.level.split("."),
+				el = DB.reference.cont;
 			if(pL.length>1){
 				for(e=0;e<pL.length-1;e++){
 					nav += el[pL[e]].title;
@@ -233,10 +231,10 @@ var REF = {
 	},
 	cont: function( level, p='' ){
 		if(p)p += '.';
-		var html = '';
+		let html = '';
 		for(let i in level.cont){
-			var l = p+i;
-			var pL = l.split(".");
+			let l = p+i,
+				pL = l.split(".");
 			if(typeof(level.cont[i].cont)=='object'){
 				html += '<div class="fr lv'+(pL.length-1)+'">' +
 						'	<a onClick="REF.sw(this);">'+level.cont[i].title+'</a>' +
@@ -253,9 +251,9 @@ var REF = {
 		return html;
 	},
 	tree: function(){
-		var html = '<div id="ref_tree">';
-		html += REF.cont(DB.reference)
-		html += '</div>';
+		let html = 	'<div id="ref_tree">' +
+					REF.cont(DB.reference) +
+					'</div>';
 		document.getElementById("reference_tree").innerHTML = html;
 		document.getElementById("reference_cont").classList.remove("opTree");
 		REF.navigate();
@@ -264,7 +262,7 @@ var REF = {
 		el.parentElement.classList.toggle("op");
 	},
 	explode: function(){
-		var els = document.getElementById("ref_tree").getElementsByTagName("a");
+		let els = document.getElementById("ref_tree").getElementsByTagName("a");
 		for(e in els){
 			if(els[e].dataset){
 				if(__(els[e].dataset.level) && els[e].dataset.level == REF.levelTxt){
@@ -274,7 +272,7 @@ var REF = {
 			}
 		}
 		if(!REF.elSel)return;
-		var el = REF.elSel;
+		let el = REF.elSel;
 		while(el.parentElement.id!='ref_tree'){
 			el = el.parentElement;
 			if(el.classList.contains("fr")){
