@@ -23,7 +23,7 @@ var CONSOLE = {
 	},
 	_log: function( msg, fromCMD=false ){
 		if(this.creata){
-			var logHTML='';
+			let logHTML='';
 			logHTML+='<b';
 			if(!fromCMD)logHTML+=' style="opacity:0;"';
 			logHTML+='>&gt;</b> ';
@@ -42,21 +42,20 @@ var CONSOLE = {
 		visLoader("Refresh scripts...");
 		this.chiudiConsole();
 		this.jss = [];
-		var pattern='';
-		var pH = location.href.split("/");
+		let pattern='',
+			pH = location.href.split("/");
 		for(e=0;e<pH.length-1;e++){
 			pattern+=pH[e]+"/";
 		}
-		var imports = [];
-		var els = document.getElementById("scriptsBase").getElementsByTagName("script");
+		let els = document.getElementById("scriptsBase").getElementsByTagName("script");
 		for(e=0;e<els.length;e++){
 			this.imports.push(els[e].src.replace(pattern,''));
 		}
-		var els = document.head.getElementsByTagName("script");
+		els = document.head.getElementsByTagName("script");
 		for(e=0;e<els.length;e++){
 			this.imports.push(els[e].src.replace(pattern,''));
 		}
-		var els = document.head.getElementsByTagName("link");
+		els = document.head.getElementsByTagName("link");
 		for(e=0;e<els.length;e++){
 			this.imports.push(els[e].href.replace(pattern,''));
 		}
@@ -64,7 +63,7 @@ var CONSOLE = {
 		else ALERT("Nessun file da aggiornare!");
 	},
 	importScriptsRefreshed: function(n){
-		var tI = this.imports.length;
+		let tI = this.imports.length;
 		if(this.imports[n].indexOf("console.js")>-1)n++;
 		if(this.imports[n].substr(this.imports[n].length-2,2)=='js'){
 			this.jss[n] 	= document.createElement('script');
@@ -90,7 +89,7 @@ var CONSOLE = {
 		document.getElementById("scripts").appendChild(this.jss[n]);
 	},
 	verConsoleInvio: function(e){
-		var js = document.getElementById("command").value;
+		let js = document.getElementById("command").value;
 		if(js.trim().length==0)return;
 		document.getElementById("command").value='';
 		this._log(js,true);

@@ -102,11 +102,11 @@ function ALERT( msg, login=false, purchase=false, licenses=false ){
 }
 
 // Funzioni per il controllo del passaggio degli argomenti
-var STRIP_COMMENTS = /((\/\/.*$)|(\/\*[\s\S]*?\*\/))/mg;
-var ARGUMENT_NAMES = /([^\s,]+)/g;
 function getParamNames(funct) {
-	var fnStr = funct.toString().replace(STRIP_COMMENTS, '');
-	var result = fnStr.slice(fnStr.indexOf('(')+1, fnStr.indexOf(')')).match(ARGUMENT_NAMES);
+	let STRIP_COMMENTS = /((\/\/.*$)|(\/\*[\s\S]*?\*\/))/mg,
+		ARGUMENT_NAMES = /([^\s,]+)/g,
+		fnStr = funct.toString().replace(STRIP_COMMENTS, ''),
+		result = fnStr.slice(fnStr.indexOf('(')+1, fnStr.indexOf(')')).match(ARGUMENT_NAMES);
 	if(result === null)result = [];
 	return result;
 	v = g ? a : b;

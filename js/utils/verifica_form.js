@@ -50,8 +50,7 @@ function ControllaNumero(frmNum,NCampo,nt){
 		}
 	}else return true;
 }
-function ControllaTelefono(frmNum,NCampo,cell){
-	var cell = __(cell);
+function ControllaTelefono( frmNum, NCampo, cell = '' ){
 	NumVal = frmNum.value;
 	if (frmNum.value.length>0){		
 		if(!cell)Filtro = /[\d\+\.\s]+/;

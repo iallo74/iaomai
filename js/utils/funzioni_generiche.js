@@ -1,7 +1,7 @@
 
 function tCoord(obj,q){
-	var c=0;
-	var L='Left';
+	let c=0,
+		L='Left';
 	if(q=='y')L='Top';
 	if(brw_OPERA){
 		if(L=='Left')c=obj.getBoundingClientRect().left;
@@ -14,7 +14,7 @@ function tCoord(obj,q){
 }
 
 function tPixel(t,c){
-	var txt=eval("t.style."+c);
+	let txt=eval("t.style."+c);
 	txt=txt.substr(0,txt.length-2);
 	return txt*1;
 }
@@ -39,7 +39,7 @@ function visToolTip(txt){
 	if(touchable)return;
 	document.getElementById("tooltip").classList.add("tooltipVis");
 	document.getElementById("tooltip").innerHTML=txt;
-	var x = mouse.xAbs+15;
+	let x = mouse.xAbs+15;
 	if(x + document.getElementById("tooltip").scrollWidth > WF())x = WF() - document.getElementById("tooltip").scrollWidth;
 	document.getElementById("tooltip").style.left=x+'px';
 	document.getElementById("tooltip").style.top=(mouse.yAbs+20)+'px';
@@ -72,7 +72,7 @@ function nasLoader(){
 	document.getElementById("loader").getElementsByTagName("div")[0].innerHTML='';
 }
 function applicaLoading( el, style='' ){
-	var loading = document.createElement("DIV");
+	let loading = document.createElement("DIV");
 	loading.className='loading';
 	if(el.id == "scheda_testo")loading.className += ' loadingScheda';
 	if(style)loading.className+=' '+style;
@@ -80,14 +80,14 @@ function applicaLoading( el, style='' ){
 	if(!document.getElementById(loading.id))el.appendChild(loading); 	
 }
 function rimuoviLoading( el ){
-	var id='LL'+el.className;
+	let id='LL'+el.className;
 	if(document.getElementById(id))document.getElementById(id).remove();
 	if(document.getElementById("LL"))document.getElementById("LL").remove();
 }
 
 function getVar(n){ // legge una variabile nella querystring
 	if(location.search){
-		var vDef='';
+		let vDef='';
 		str=location.search.substr(1,location.search.length-1);
 		pQ=str.split("&");
 		if(pQ.length>1){
@@ -104,7 +104,7 @@ function getVar(n){ // legge una variabile nella querystring
 }
 
 function removeA(arr) { // per rimuovere un oggetto da un array
-    var what, a = arguments, L = a.length, ax;
+    let what, a = arguments, L = a.length, ax;
     while (L > 1 && arr.length) {
         what = a[--L];
         while ((ax= arr.indexOf(what)) !== -1) {
@@ -115,42 +115,42 @@ function removeA(arr) { // per rimuovere un oggetto da un array
 }
 
 function radians_to_degrees(radians){ // trasforma in gradi un radian
-  var pi = Math.PI;
+  let pi = Math.PI;
   return radians * (180/pi);
 }
 
 function getFullDataTS(d){ // legge la data completa
-	var opzioni = {  
+	let opzioni = {  
 		year: "numeric",
 		month: "long",  
 		day: "numeric"  
 	}; 
 	d=new Date(d*1000);
-	var s=globals.siglaLingua.substr(0,2)+"-"+globals.siglaLingua.substr(0,2).toUpperCase();
+	let s=globals.siglaLingua.substr(0,2)+"-"+globals.siglaLingua.substr(0,2).toUpperCase();
 	return d.toLocaleDateString(s,opzioni);
 	
 }
 
 function getDataTS(d){ // legge la data breve
 	d=new Date(d*1000);
-	var dd=LINGUE.formatDate;
+	let dd=LINGUE.formatDate;
 	return dd.replace(/%D/,d.getDate()).replace(/%M/,d.getMonth()+1).replace(/%Y/,d.getFullYear());
 	
 }
 function getOraTS(d){ // legge l'ora
 	d=new Date(d*1000);
-	var s=globals.siglaLingua.substr(0,2)+"-"+globals.siglaLingua.substr(0,2).toUpperCase();
+	let s=globals.siglaLingua.substr(0,2)+"-"+globals.siglaLingua.substr(0,2).toUpperCase();
 	return d.toLocaleTimeString(s);
 }
 
 Date.prototype.addDays = function(days) { // aggiunge una funzione per sommare un giorno a un altro
-    var date = new Date(this.valueOf());
+    let date = new Date(this.valueOf());
     date.setDate(date.getDate() + days);
     return date;
 }
 
 var sort_by = function(field, reverse, primer){ // ordina un elenco
-   var key = primer ? 
+   let key = primer ? 
        function(x) {return primer(x[field])} : 
        function(x) {return x[field].toUpperCase();};
 
@@ -170,7 +170,7 @@ function sortObject(o){
 	);
 }
 function removeByAttr(arr, attr, value){
-    var i = arr.length;
+    let i = arr.length;
     while(i--){
        if( arr[i] 
            && arr[i].hasOwnProperty(attr) 
@@ -204,7 +204,7 @@ function clone(obj) {
 	return JSON.parse(JSON.stringify(obj));
 }
 function __( txt, def='' ){
-	if(typeof(txt) == 'undefined')var txt = def;
+	if(typeof(txt) == 'undefined')txt = def;
 	return txt;
 }
 function toJson( txt ){
@@ -216,7 +216,7 @@ function toJson( txt ){
 	return txt;
 }
 function hexToRgb(hex) {
-  var result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
+  let result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
   return result ? {
     r: parseInt(result[1], 16),
     g: parseInt(result[2], 16),
@@ -230,12 +230,12 @@ function incrDebug(){
 	setTimeout(function(){debugTimes--;},3000);
 	if(debugTimes>=5)visDebug();
 }
-function visDebug(){
+function visDebug(){ // mostra il DB in JSON in una finestra
 	MENU.chiudiMenu();
 	document.getElementById("cont_debug_db_cont").classList.add("visSch");
 	document.getElementById("cont_debug_db").classList.add("loading");
 	setTimeout(function(){
-		var JSNTXT = JSON.stringify(DB);
+		let JSNTXT = JSON.stringify(DB);
 		//console.log(JSNTXT);
 		document.getElementById("cont_debug_db").innerHTML = JSNTXT;
 		document.getElementById("cont_debug_db").classList.remove("loading");

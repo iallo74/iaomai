@@ -28,21 +28,20 @@ var SWIPE = {
 		}
 	},
 	start: function(event){
-		var x = event.touches[ 0 ].pageX;
-		var y = event.touches[ 0 ].pageY;
-		var el = document.getElementById(SWIPE.box);
-		var limitLeft = tCoord(el);
-		var limitRight = limitLeft+el.scrollWidth;
-		var limitTop = tCoord(el,'y');
-		var limitBottom = limitTop+el.scrollHeight;
+		let x = event.touches[ 0 ].pageX,
+			y = event.touches[ 0 ].pageY,
+			el = document.getElementById(SWIPE.box),
+			limitLeft = tCoord(el),
+			limitRight = limitLeft+el.scrollWidth,
+			limitTop = tCoord(el,'y'),
+			limitBottom = limitTop+el.scrollHeight;
 		if(x>=limitLeft && x<=limitRight && y>=limitTop && y<=limitBottom){
 			SWIPE.xIni = x;
 			console.log(SWIPE.closeCondition)
 			console.log(eval(SWIPE.closeCondition))
 			if(eval(SWIPE.closeCondition))SWIPE.yIni = y;
-			//var W = WF();
-			var W = limitRight - limitLeft;
-			var area = parseInt(W/3);
+			let W = limitRight - limitLeft,
+				area = parseInt(W/3);
 			document.addEventListener("touchmove", SWIPE.move, false );
 			document.addEventListener("touchend", SWIPE.end, false );
 			if(SWIPE.xIni<area+limitLeft || SWIPE.xIni>(W-area)+limitLeft){
@@ -56,8 +55,8 @@ var SWIPE = {
 		SWIPE.yAtt = event.touches[ 0 ].pageY;
 	},
 	end: function(event){
-		var diffX = Math.abs(SWIPE.xAtt - SWIPE.xIni);
-		var diffY = SWIPE.yAtt - SWIPE.yIni;
+		let diffX = Math.abs(SWIPE.xAtt - SWIPE.xIni),
+			diffY = SWIPE.yAtt - SWIPE.yIni;
 		if(SWIPE.xAtt==-1)diffX = 0;
 		if(diffX > 50){
 			if(SWIPE.xIni<SWIPE.xAtt && SWIPE.verso=='R')eval(SWIPE.functAvanti);
