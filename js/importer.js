@@ -29,7 +29,7 @@ var	smartphone = false,
 	onlineVersion=false,
 	isTablet = false,
 	globals = {},
-	verApp = '1.6',
+	verApp = '1.6.1',
 	dateEndFeatures = new Date("2024-01-01").getTime(),
 	
 	// IMPOSTAZIONI DI APP
