@@ -285,6 +285,7 @@ var SCHEDA = {
 			SCHEDA.espandiElenco();
 			livello = 3;
 			SCHEDA.setMenuDim();
+			overInterfaccia=false;
 		}});
 	},
 	nasScheda: function(){
