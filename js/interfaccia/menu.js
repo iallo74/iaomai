@@ -523,15 +523,15 @@ var MENU = {
 			}
 		}
 	},
-	visAgenda: function( data, mantieni = false ){
+	visAgenda: function( data, mantieni ){
 		let mod = SCHEDA.verificaSchedaRet();
 		if(!document.getElementById("ag").classList.contains("visSch") || mantieni){
 			CONFIRM.vis(	TXT("UscireSenzaSalvare"),
 						!mod,
 						arguments ).then(function(pass){if(pass){
-						let v = getParamNames(CONFIRM.args.callee.toString());
+						var v = getParamNames(CONFIRM.args.callee.toString());
 						for(let i in v)eval(getArguments(v,i));
-				let tm = mod ? 200 : 10;
+				if(typeof(mantieni)=='indefined')mantieni = false;
 				if(smartMenu)SCHEDA.chiudiElenco();
 				MENU.chiudiMenu("ag");
 				endChangeDetection();
