@@ -33,7 +33,7 @@ var MENU = {
 		for(let e=0;e<els.length;e++){
 			let pass = true;
 			if(globals.set.cartella){
-				modello = els[e].id.replace("p_","");
+				let modello = els[e].id.replace("p_","");
 				if(globals.set.modelli.indexOf(modello) == -1)pass = false;
 			}
 			if(els[e].id!="scarica_modello"){
@@ -67,7 +67,7 @@ var MENU = {
 						els[e].classList.add("visSch");
 						let perc = MENU.getOp(livello),
 							maxVal = els[e].getElementsByClassName("slider")[0].scrollWidth-els[e].getElementsByClassName("slider_btn")[0].scrollWidth;
-						mL=perc*maxVal;
+						let mL=perc*maxVal;
 						els[e].getElementsByClassName("slider_btn")[0].style.marginLeft=mL+'px';
 					}else{
 						els[e].classList.remove("visSch");

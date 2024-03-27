@@ -71,7 +71,7 @@ SET.colsElementi = {
 }
 
 function cloneMAT(mat,par){
-	var matCloned = mat.clone();
+	let matCloned = mat.clone();
 	matCloned.setValues(par);
 	return matCloned;
 }
@@ -241,15 +241,15 @@ SET.MAT.lineYinOver = cloneMAT(SET.MAT.lineYin,{color: SET.COL.over});
 SET.MAT.lineYinIntOver = cloneMAT(SET.MAT.lineYinInt,{color: SET.COL.over, depthFunc: 1, visible: false});
 
 SET._setLineMaterials = function(){
-	for(elemento in SET.colsElementi){
+	for(let elemento in SET.colsElementi){
 		
-		var col =  SET.colsElementi[elemento];
+		let col =  SET.colsElementi[elemento],
+			col3 = SET.COL.basePT,
+			col4 = SET.COL.base;
 		if( SET.COL.contrastMethod){
 			if(!areasView)col =  SET.COL.sel;
 			else col =  SET.COL.musc;
 		}
-		var col3 = SET.COL.basePT;
-		var col4 = SET.COL.base;
 		if(areasView){
 			col3 = SET.COL.basePTmusc;
 			col4 = SET.COL.lineMusc;
@@ -294,7 +294,7 @@ SET._setLineMaterials = function(){
 	
 SET._setLineTrasp = function(depthFunc){
 	
-	for(elemento in SET.colsElementi){
+	for(let elemento in SET.colsElementi){
 	
 		SET.MAT.lineOn[elemento].depthFunc = depthFunc;
 		SET.MAT.lineIntOn[elemento].depthFunc = depthFunc;

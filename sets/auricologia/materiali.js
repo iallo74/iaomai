@@ -56,7 +56,7 @@ SET.COL = {
 }
 
 function cloneMAT(mat,par){
-	var matCloned = mat.clone();
+	let matCloned = mat.clone();
 	matCloned.setValues(par);
 	return matCloned;
 }
@@ -355,9 +355,9 @@ SET.MAT = {
 	mappaAree: function( ini=false ){
 		// carico tutte le mappe
 		nImg = 0;
-		var els = GEOMETRIE.mappe;
-		for(e=0;e<els.length;e++){
-			var imageEar = new Image();
+		let els = GEOMETRIE.mappe;
+		for(let e=0;e<els.length;e++){
+			let imageEar = new Image();
 			imageEar.src = els[e].img;
 			SET.MAT.mappe[els[e].name] = new THREE.Texture();
 			SET.MAT.mappe[els[e].name].image = imageEar;
@@ -365,7 +365,7 @@ SET.MAT = {
 				SET.MAT.mappe[els[e].name].needsUpdate = true;
 			})(els[e]);
 			if(__(els[e].imgFlip,'')){
-				var imageEarFlip = new Image();
+				let imageEarFlip = new Image();
 				imageEarFlip.src = els[e].imgFlip;
 				SET.MAT.mappe[els[e].name+"Flip"] = new THREE.Texture();
 				SET.MAT.mappe[els[e].name+"Flip"].image = imageEarFlip;
@@ -378,7 +378,7 @@ SET.MAT = {
 	},
 	applicaMappa: function( id, ini ){
 		if(!globals.modello.cartella)return;
-		var el = SET.MAT.mappe[id];
+		let el = SET.MAT.mappe[id];
 		if(MODELLO.flip){
 			if(SET.MAT.mappe[id+"Flip"])el = SET.MAT.mappe[id+"Flip"];
 		}
@@ -388,7 +388,7 @@ SET.MAT = {
 		if(globals.modello.cartella && ini)setTimeout(function(){MODELLO.op('Pelle',1);},500);
 	},
 	setAlphaMap: function( zona, act ){
-		var pass = false;
+		let pass = false;
 		if(!globals.modello.cartella)return;
 		if(act == 'clic'){
 			if(SET.maskAtt){
@@ -406,15 +406,15 @@ SET.MAT = {
 		}
 		if(!SET.maskAtt || pass){
 			if(act == 'over'){
-				var IMG = 'data:image/jpeg;base64,' + GEOMETRIE.masks[zona];
-				var img = Array();
+				let IMG = 'data:image/jpeg;base64,' + GEOMETRIE.masks[zona],
+					img = Array();
 				img = new Image();
 				img.src =  IMG;
-				var mask = new THREE.Texture();
+				let mask = new THREE.Texture();
 				mask.image = img;
 				img.n = zona;
 				img.onload = function() {
-					var zona = this.n;
+					let zona = this.n;
 					try{
 						mask.needsUpdate = true;
 						MODELLO.MAT.materialAree[0].alphaMap = mask;

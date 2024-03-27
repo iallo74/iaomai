@@ -18,7 +18,7 @@ var MODULO_PROCEDURE = { // extend SET
 	maxProcedureFree: 1,
 	
 	intestazioneProcedure: function( Q_tue){
-		var HTML = '';
+		let HTML = '';
 		HTML += '<p class="trattBtns" style="margin-top:10px;"><span id="procBtnTue" ';
 		if(Q_tue)HTML += 'class="selBtn" ';
 		else HTML += 'onClick="SET.car_procedure(-1,1);"';
@@ -34,21 +34,20 @@ var MODULO_PROCEDURE = { // extend SET
 			SET.caricaCommunity();
 			return;
 		}
-		var HTML =	'';
-			
-		var presente=false;
+		let HTML =	'',
+			presente = false;
 		
 		//if(typeof(DB.procedure.data) != 'undefined')DB.procedure.data.sort(sort_by("NomeProcedura", false));
-		
+		let clonePROCEDURE;
 		if(typeof(DB.procedure.data) != 'undefined'){
-			var clonePROCEDURE = clone(DB.procedure.data);
+			clonePROCEDURE = clone(DB.procedure.data);
 			for (p in clonePROCEDURE) {
 				clonePROCEDURE[p].p = p;
 			}
 			clonePROCEDURE.sort(sort_by("NomeProcedura", false));
 		}else clonePROCEDURE = [];
 		for (p in clonePROCEDURE) {
-			PR = clonePROCEDURE[p];
+			let PR = clonePROCEDURE[p];
 			if(!PR.Cancellato && __(PR.app)==globals.set.siglaProc){
 				HTML += '<div id="btn_procedura_'+PR.p+'" class="base';
 				if(Q_idProc*1==PR.p*1)HTML += ' elencoSel';
@@ -64,7 +63,7 @@ var MODULO_PROCEDURE = { // extend SET
 				if(PR.DataModifica>DB.procedure.lastSync)HTML += H.imgSyncro();
 				HTML+=htmlEntities(PR.NomeProcedura);
 				
-				DataCreazione=getDataTS(PR.DataCreazione);
+				let DataCreazione = getDataTS(PR.DataCreazione);
 				if(!Q_tue)HTML += '<br><span>'+PR.Pseudonimo+' ('+DataCreazione+')</span>';
 				HTML += '</div>';
 				presente = true;
@@ -94,7 +93,7 @@ var MODULO_PROCEDURE = { // extend SET
 		if(Q_idProc>-1)SCHEDA.btnSel = document.getElementById("btn_procedura_"+Q_idProc);
 	},
 	filtraProcedure: function( event ){
-		var parola = document.getElementById("proc_ricerca").value.trim();
+		let parola = document.getElementById("proc_ricerca").value.trim();
 		let app = '';
 		if(globals.set.cartella=='auricologia')app='AUR';
 		if(globals.set.cartella=='reflessologia_plantare')app='RFX';
@@ -114,28 +113,28 @@ var MODULO_PROCEDURE = { // extend SET
 		CONFIRM.vis(	TXT("UscireSenzaSalvare"),
 						!SCHEDA.verificaSchedaRet(), 
 						arguments ).then(function(pass){if(pass){
-						var v = getParamNames(CONFIRM.args.callee.toString());
+						let v = getParamNames(CONFIRM.args.callee.toString());
 						for(let i in v)eval(getArguments(v,i));
 			
-			if(typeof(Q_idProc)=='undefined')var Q_idProc=-1;
-			if(typeof(Q_resta)=='undefined')var Q_resta=false;
-			if(typeof(Q_community)=='undefined')var Q_community=false;
-			if(typeof(btn)=='undefined')var btn=null;
+			if(typeof(Q_idProc)=='undefined')Q_idProc=-1;
+			if(typeof(Q_resta)=='undefined')Q_resta=false;
+			if(typeof(Q_community)=='undefined')Q_community=false;
+			if(typeof(btn)=='undefined')btn=null;
 			
-			var idProcedura=0;
-			var idUtenteProcedura=0;
-			var Autore=''; // solo community
-			var NomeProcedura='';
-			var dettagliProcedura=[];
-			//var commentiProcedura=[];
-			var DataCreazione=0;
-			var DataModifica=0;
-			var Preferito=0; // solo community
-			var Condiviso=0;
-			var gallery=[];
+			let idProcedura = 0,
+				idUtenteProcedura = 0,
+				Autore = '', // solo community
+				NomeProcedura = '',
+				dettagliProcedura = [],
+			//	commentiProcedura = [],
+				DataCreazione = 0,
+				DataModifica = 0,
+				Preferito = 0, // solo community
+				Condiviso = 0,
+				gallery = [];
 			if(!Q_community){
 				if(Q_idProc>-1){
-					var PR = DB.procedure.data[Q_idProc];
+					let PR = DB.procedure.data[Q_idProc];
 					PR.i_interno=Q_idProc;
 					idProcedura=PR.idProcedura*1;
 					Autore=TXT("Tu");
@@ -151,7 +150,7 @@ var MODULO_PROCEDURE = { // extend SET
 			}else{
 				for(let p in SET.community_elenco){
 					if(SET.community_elenco[p].idProcedura*1==Q_idProc*1){
-						var PR = SET.community_elenco[p];
+						let PR = SET.community_elenco[p];
 						idProcedura=PR.idProcedura*1;
 						idUtenteProcedura=PR.idUtenteProcedura*1;
 						Autore=PR.Pseudonimo;
@@ -170,14 +169,14 @@ var MODULO_PROCEDURE = { // extend SET
 			if(Preferito*1==1)TXT_AggiungiPreferitiDEF=TXT("EliminaPreferiti");
 			else TXT_AggiungiPreferitiDEF=TXT("AggiungiPreferiti");
 			
-			var HTML = '';
+			let HTML = '';
 			HTML += '<h1>'+htmlEntities(NomeProcedura)+'</h1>' +
 					'<div id="mdProc">' +
 		
 					// AUTORE E DATA
 					'	<div class="p_sch_label2">' +
 					'	<span class="commAvatar';
-			var dt = new Date().getTime();
+			let dt = new Date().getTime();
 			//if(CONN.getConn() && idUtenteProcedura)HTML += '" style="background-image:url(' + CONN.APIfolder+'getAvatarMini.php?idU='+idUtenteProcedura+'&t='+dt+');';
 			if(CONN.getConn())HTML += '" style="background-image:url(' + CONN.APIfolder+'getAvatarMini.php?idU='+idUtenteProcedura+'&t='+dt+');';
 			else HTML += ' commNoAvatar"';
@@ -216,8 +215,8 @@ var MODULO_PROCEDURE = { // extend SET
 			if(Condiviso==1 && !Q_community)HTML += '<div class="shared_element">'+TXT("ElementoCondiviso")+'</div>'
 					
 			// elenco dei dettagli procedura
-			var presente=false;
-			var n = -1;
+			let presente=false,
+				n = -1;
 			
 			for(let p in dettagliProcedura){
 				if(!dettagliProcedura[p].Cancellato){
@@ -227,10 +226,10 @@ var MODULO_PROCEDURE = { // extend SET
 					OrdineDettaglio=dettagliProcedura[p].OrdineDettaglio*1;
 					
 					
-					var nPunto='';
-					var siglaMeridiano='';
-					var siglaPunto='';
-					var mezzo='';
+					let nPunto='',
+						siglaMeridiano='',
+						siglaPunto='',
+						mezzo='';
 					if(TipoDettaglio=='P' || TipoDettaglio=='N' || TipoDettaglio=='A' || TipoDettaglio=='R'){	
 						if(DescrizioneDettaglio){
 							if(DescrizioneDettaglio.indexOf(".")>-1){
@@ -277,9 +276,9 @@ var MODULO_PROCEDURE = { // extend SET
 						}
 					}
 					if(TipoDettaglio=='M'){
-						var siglaMeridiano = DescrizioneDettaglio.split(".")[0]
+						let siglaMeridiano = DescrizioneDettaglio.split(".")[0]
 						HTML += '<span class="rgProcMod dettMeridiano' +
-								(MERIDIANI[siglaMeridiano].meridianoAcceso ? ' p_'+MERIDIANI[DescrizioneDettaglio].elemento : '') +
+								(MERIDIANI[siglaMeridiano].meridianoAcceso ? ' p_'+MERIDIANI[siglaMeridiano].elemento : '') +
 								'"' +
 								'	   id="tr_p'+siglaMeridiano+'"' +
 								'	   style="cursor:pointer;"' +
@@ -292,11 +291,11 @@ var MODULO_PROCEDURE = { // extend SET
 								'</span>';
 					}
 					if(TipoDettaglio=='A' && siglaPunto){
-						var NomePunto = DB.set.punti[siglaPunto].NomePunto;
+						//let NomePunto = DB.set.punti[siglaPunto].NomePunto;
 						HTML += '[.'+siglaPunto+'.]';
 					}
 					if(TipoDettaglio=='R' && siglaPunto){
-						var NomePunto = DB.set.punti[siglaPunto].NomePunto;
+						//let NomePunto = DB.set.punti[siglaPunto].NomePunto;
 						HTML += '[.'+siglaPunto+'.]';
 					}
 					if(mezzo)HTML += '<img src="img/mezzo_'+mezzo+'.png" class="noMod" style="vertical-align: middle;margin-top: -3px;margin-left: 5px;">';
@@ -352,8 +351,8 @@ var MODULO_PROCEDURE = { // extend SET
 			HTML += '</div>';
 			if(globals.set.siglaProc=='AUR' || globals.set.siglaProc=='RFX')HTML = SET.convPuntiScheda(HTML); // <<<<<<<<<<< VERIFICARE
 			if(SCHEDA.btnSel && Q_resta)SCHEDA.btnSel=null;
-			var btnAdd = '';
-			var azElimina = (Q_idProc>-1 && !Q_community) ? 'SET.el_procedura('+Q_idProc+');':'';
+			let btnAdd = '',
+				azElimina = (Q_idProc>-1 && !Q_community) ? 'SET.el_procedura('+Q_idProc+');':'';
 			if(azElimina){
 				btnAdd += '<div class="p_paz_el_menu" onClick="'+azElimina+'">'+TXT("EliminaScheda")+'</div>';
 			}
@@ -396,7 +395,7 @@ var MODULO_PROCEDURE = { // extend SET
 			return false;
 		}
 		if(!COMMUNITY.verifica())return;
-		var DataModifica = DB.procedure.lastSync+1;
+		let DataModifica = DB.procedure.lastSync+1;
 		if(DB.procedure.data[Q_idProc].Condiviso==1)DB.procedure.data[Q_idProc].Condiviso=0;
 		else DB.procedure.data[Q_idProc].Condiviso=1;
 		DB.procedure.data[Q_idProc].DataModifica = DataModifica;
@@ -407,13 +406,13 @@ var MODULO_PROCEDURE = { // extend SET
 		});
 	},
 	swPref: function( Q_idProc='', el ){ // setta sì/no come preferita una procedura della community
-		var Q_pref=0;
+		let Q_pref=0;
 		if(el.classList.contains("p_sch_pref"))Q_pref=1;
 		
 		//retNoFree();
 		CONN.retNoConn();
 	
-		var JSNPOST={	"idLinguaRic": document.formRicProc.idLinguaRic.value*1,
+		let JSNPOST={	"idLinguaRic": document.formRicProc.idLinguaRic.value*1,
 						"parolaRic": document.formRicProc.parolaRic.value,
 						"parolaRicCrypt": document.formRicProc.parolaRic.value,
 						"prefRic": document.formRicProc.prefRic.value,
@@ -434,7 +433,7 @@ var MODULO_PROCEDURE = { // extend SET
 			document.getElementById("prefProcBtn").classList.remove("p_sch_no_pref");
 			document.getElementById("prefProcBtn").classList.add("p_sch_pref");
 		}
-		for(let f in SET.community_elenco){
+		for(let i in SET.community_elenco){
 			if(SET.community_elenco[i].idProcedura == Q_idProc){
 				if(Q_pref=='1')SET.community_elenco[i].Preferito = '0';
 				else SET.community_elenco[i].Preferito = '1';
@@ -446,16 +445,16 @@ var MODULO_PROCEDURE = { // extend SET
 		if(txt.substr(0,3)=='404')ALERT(TXT("ProcedureErrore"));
 	},
 	mod_procedura: function( Q_idProc, Q_pre ){ // scheda di modifica della procedura
-		if(typeof(Q_idProc)=='undefined')var Q_idProc=-1;
+		if(typeof(Q_idProc)=='undefined')Q_idProc=-1;
 		if(Q_idProc.toString()=='')Q_idProc=-1;
 		// verifico le autorizzazioni
-		var maxProcedure = SET.maxProcedureFree;
+		let maxProcedure = SET.maxProcedureFree;
 		if(LOGIN.reg() && LOGIN.logedin()){
 			if(DB.login.data.auths.indexOf(globals.set.cartella)>-1)maxProcedure = -1;
 		}
 		if(maxProcedure>-1 && Q_idProc==-1){
-			var tProc = 0;
-			var app = '';
+			let tProc = 0,
+				app = '';
 			if(globals.set.cartella=='auricologia')app = 'AUR';
 			if(globals.set.cartella=='reflessologia_plantare')app = 'RFX';
 			for(let c in DB.procedure.data){
@@ -471,23 +470,23 @@ var MODULO_PROCEDURE = { // extend SET
 		CONFIRM.vis(	TXT("UscireSenzaSalvare"),
 						!SCHEDA.verificaSchedaRet(), 
 						arguments ).then(function(pass){if(pass){
-						var v = getParamNames(CONFIRM.args.callee.toString());
+						let v = getParamNames(CONFIRM.args.callee.toString());
 						for(let i in v)eval(getArguments(v,i));
-			if(typeof(Q_idProc)=='undefined')var Q_idProc=-1;
+			if(typeof(Q_idProc)=='undefined')Q_idProc=-1;
 			if(Q_idProc.toString()=='')Q_idProc=-1;
-			if(typeof(Q_pre)=='undefined')var Q_pre=0; // <<<< FORSE DA TOGLIERE
+			if(typeof(Q_pre)=='undefined')Q_pre=0; // <<<< FORSE DA TOGLIERE
 			
 			MENU.nasMM();
 			
-			var idProcedura=0;
-			var idLinguaProcedura=0;
-			var NomeProcedura='';
-			var dettagliProcedura='';
-			var Condiviso=0;
-			var gallery=[];
+			let idProcedura = 0,
+				idLinguaProcedura = 0,
+				NomeProcedura = '',
+				dettagliProcedura = '',
+				Condiviso = 0,
+				gallery = [];
 		
 			if(Q_idProc>-1){
-				var PR = DB.procedure.data[Q_idProc];
+				let PR = DB.procedure.data[Q_idProc];
 				idProcedura=PR.idProcedura*1;
 				idLinguaProcedura=PR.idLinguaProcedura*1;
 				NomeProcedura=PR.NomeProcedura;
@@ -498,11 +497,11 @@ var MODULO_PROCEDURE = { // extend SET
 			
 			if(!dettagliProcedura)dettagliProcedura=[];
 			SET.dettagliProvvisori=JSON.parse(JSON.stringify(dettagliProcedura));
-			var siglaLinguaProcedura='';
+			let siglaLinguaProcedura='';
 			if(idLinguaProcedura)siglaLinguaProcedura=DB.lingueProcedure[idLinguaProcedura];
 			PH.galleryProvvisoria=gallery;
 			
-			var HTML = '';
+			let HTML = '';
 			// intestazione se la procedura è dell'utente
 			//if(frv)HTML+=box_frv3;
 			HTML += '<form id="formMod" name="formMod" method="post" onSubmit="return SET.verFormProc();"><div>';
@@ -629,7 +628,7 @@ var MODULO_PROCEDURE = { // extend SET
 					'	</div>';
 			
 			// GALLERY
-			var cont = '	<div id="contGallery"' +
+			let cont = '	<div id="contGallery"' +
 						'		 class="divEspansa contGallery">' +
 						'	</div>' +
 						'	<div id="p_add_dett"' +
@@ -665,11 +664,11 @@ var MODULO_PROCEDURE = { // extend SET
 			HTML += '	<div class="l"></div>';
 			HTML += '</form>';
 			
-			var titDef=TXT("ModificaProcedura");
+			let titDef=TXT("ModificaProcedura");
 			if(Q_idProc==-1)titDef=TXT("CreaProcedura");
 			
-			var btnAdd = '';
-			var azElimina = (Q_idProc>-1) ? 'SET.el_procedura('+Q_idProc+');':'';
+			let btnAdd = '',
+				azElimina = (Q_idProc>-1) ? 'SET.el_procedura('+Q_idProc+');':'';
 			if(azElimina){
 				btnAdd += '<div class="p_paz_el_menu" onClick="'+azElimina+'">'+TXT("EliminaScheda")+'</div>';
 			}
@@ -712,11 +711,11 @@ var MODULO_PROCEDURE = { // extend SET
 	salvaProcedura: function(){ // salva una procedura
 		stopAnimate(true);
 		visLoader(TXT("SalvataggioInCorso"),'loadingLight');
-		var DataModifica = DB.procedure.lastSync+1;
+		let DataModifica = DB.procedure.lastSync+1;
 		if(!document.formMod.idProc.value*1>-1)DataCreazione=DataModifica;	
 		
 		// salvo le immagini
-		var GA = PH.galleryProvvisoria;
+		let GA = PH.galleryProvvisoria;
 		for(let i in GA){
 			GA[i].Dida = document.getElementById("Dida"+i).value;
 			if(typeof(GA[i].imgMini) != 'undefined' && GA[i]!=null && GA[i].imgMini!=null){
@@ -775,12 +774,12 @@ var MODULO_PROCEDURE = { // extend SET
 		CONFIRM.vis(	TXT("VerElProc"),
 						false,
 						arguments ).then(function(pass){if(pass){
-						var v = getParamNames(CONFIRM.args.callee.toString());
+						let v = getParamNames(CONFIRM.args.callee.toString());
 						for(let i in v)eval(getArguments(v,i));
 			
 			stopAnimate(true);
 			visLoader(TXT("SalvataggioInCorso"),'loadingLight');
-			var DataModifica = DB.procedure.lastSync+1;
+			let DataModifica = DB.procedure.lastSync+1;
 			DB.procedure.data[Q_idProc].DataModifica=parseInt(DataModifica);
 			DB.procedure.data[Q_idProc].Cancellato=1;
 			if(SET.tipoProc=='Tue')addT=1;
@@ -797,13 +796,13 @@ var MODULO_PROCEDURE = { // extend SET
 		}});
 	},
 	modNumPunti: function(frm,n){
-		var mr=document[frm]["mr_"+n];
-		var punto=document[frm]["pt_"+n];
-		var maxL=punto.options.length;
+		let mr=document[frm]["mr_"+n],
+			punto=document[frm]["pt_"+n],
+			maxL=punto.options.length;
 		for(a=maxL;a>=0;a--){
 			punto.options[a]=null;
 		}
-		var mrProc=new Array();
+		let mrProc=new Array();
 		for(let k in DB.set.meridiani){
 			mrProc[k]=Object.keys(DB.set.meridiani[k].punti).length;
 		}
@@ -849,19 +848,24 @@ var MODULO_PROCEDURE = { // extend SET
 	
 	// DETTAGLI
 	caricaDettagli: function( eviUltimo ){ // carica i dettagli della procedura
-		var HTML = '<div class="rgProcMod"></div>'; // serve lasciarlo per il drag&drop
-		var presente = false;
-		var nD = -1;
-		var lastP = -1;
-		var txareas = ''; // per il resize su tochable
-		var OrdineDettaglio = -1
-		var puntiProvvisoriProc = [];
-		var meridianiProvvisoriProc = [];
-		let disabledP = '',
-			disabledM = '';
+		let HTML = '<div class="rgProcMod"></div>', // serve lasciarlo per il drag&drop
+			presente = false,
+			nD = -1,
+			lastP = -1,
+			txareas = '', // per il resize su tochable
+			OrdineDettaglio = -1,
+			puntiProvvisoriProc = [],
+			meridianiProvvisoriProc = [],
+			disabledP = '',
+			disabledM = '',
+			puntiElenco = [],
+			nPunto = '',
+			siglaMeridiano = '',
+			siglaPunto = '',
+			mezzo = '';
 		
 		if(globals.set.siglaProc=='AUR' || globals.set.siglaProc=='RFX'){
-			var puntiElenco = [];
+			puntiElenco = [];
 			for(let siglaPunto in DB.set.punti){
 				if(__(DB.set.punti[siglaPunto])){
 					puntiElenco.push({
@@ -874,7 +878,7 @@ var MODULO_PROCEDURE = { // extend SET
 		}
 		
 		for(let p in SET.dettagliProvvisori){
-			var DT = SET.dettagliProvvisori[p];
+			let DT = SET.dettagliProvvisori[p];
 			OrdineDettaglio++;
 			if(!DT.Cancellato){
 				TipoDettaglio=DT.TipoDettaglio;
@@ -938,26 +942,26 @@ var MODULO_PROCEDURE = { // extend SET
 				
 				if(TipoDettaglio=='P' || TipoDettaglio=='N' || TipoDettaglio=='A' || TipoDettaglio=='R'){	
 				
-					var nPunto='';
-					var siglaMeridiano='';
-					var siglaPunto='';
-					var mezzo='';
+					nPunto='';
+					siglaMeridiano='';
+					siglaPunto='';
+					mezzo='';
 					if(DescrizioneDettaglio){
 						if(DescrizioneDettaglio.indexOf(".")>-1){
 							pP=DescrizioneDettaglio.split(".");
 							if(TipoDettaglio=='P' || TipoDettaglio=='N'){
-								nPunto=SET.ptToStr(pP[0]);
-								siglaMeridiano=pP[1];
-								siglaPunto=__(pP[2]);
-								mezzo=__(pP[3]);
+								nPunto = SET.ptToStr(pP[0]);
+								siglaMeridiano = pP[1];
+								siglaPunto = __(pP[2]);
+								mezzo = __(pP[3]);
 							}
 							if(TipoDettaglio=='A' || TipoDettaglio=='R'){
-								siglaPunto=pP[0];
-								mezzo=__(pP[1]);
+								siglaPunto = pP[0];
+								mezzo = __(pP[1]);
 							}
 						}else{
-							if(TipoDettaglio=='P' || TipoDettaglio=='N')nPunto=DescrizioneDettaglio;
-							if(TipoDettaglio=='A' || TipoDettaglio=='R')siglaPunto=DescrizioneDettaglio;
+							if(TipoDettaglio=='P' || TipoDettaglio=='N')nPunto = DescrizioneDettaglio;
+							if(TipoDettaglio=='A' || TipoDettaglio=='R')siglaPunto = DescrizioneDettaglio;
 						}
 					}
 					
@@ -986,7 +990,7 @@ var MODULO_PROCEDURE = { // extend SET
 								(LOGIN.verModule("CIN") && localStorage.sistemaMeridiani=='' || LOGIN.verModule("MAS") && localStorage.sistemaMeridiani=='MAS' ) ) ) )disabledM = ' disabled';
 
 					// mezzo
-					var addMezzoTit = '';
+					let addMezzoTit = '';
 					if(mezzo)addMezzoTit = ': '+PAZIENTI.mezzi[mezzo];
 					HTML += '	<span id="ico_PZ'+p+'"' +
 							'	      class="mezzoPunto"' +
@@ -1028,8 +1032,9 @@ var MODULO_PROCEDURE = { // extend SET
 
 					
 					puntiProvvisoriProc.push( DescrizioneDettaglio );
-					if(typeof(DB.set.meridiani[siglaMeridiano])=='undefined'){
-						var siglaPunto = __(siglaPunto, nPunto+"."+siglaMeridiano);
+					if(	typeof(DB.set.meridiani[siglaMeridiano])=='undefined' || 
+						(globals.set.cartella=="meridiani_shiatsu" && siglaMeridiano=='EX') ){
+						if(!siglaPunto)siglaPunto = nPunto+"."+siglaMeridiano;
 						HTML += '<span class="ptNo">'+siglaPunto+'</span>';
 					}else{
 						if(TipoDettaglio=='P'){
@@ -1040,7 +1045,7 @@ var MODULO_PROCEDURE = { // extend SET
 								'		    onChange="this.blur();SET.modNumPunti(\'formMod\','+p+');' +
 								'		    		  SET.ritOverPunto(\'dettagliCont\','+p+');" class="selectTratt">';
 							
-							var totPunti=0;
+							let totPunti=0;
 							if(siglaMeridiano=='')HTML +=
 								'		<option value="">- '+TXT("ScegliMeridiano")+' -</option>';
 								
@@ -1072,9 +1077,9 @@ var MODULO_PROCEDURE = { // extend SET
 								len = keys.length;
 							keys.sort();
 							for (let i=0; i<len; i++) {	
-								let s = keys[i];
-								var TS = myObj[s];	
-								let siglaPunto = +s;
+								let s = keys[i],
+									TS = myObj[s];	
+								siglaPunto = +s;
 								if(__(TS.siglaPunto)){
 									siglaPunto = __(TS.siglaPunto);
 									siglaPunto = siglaPunto.substr(3,siglaPunto.length-3);
@@ -1086,11 +1091,11 @@ var MODULO_PROCEDURE = { // extend SET
 							HTML += '	</select>';
 						}
 						if(TipoDettaglio=='N'){
-							var puntiElenco = [];
+							puntiElenco = [];
 							for(let siglaPunto in DB.set.meridiani.NK.punti){
 								if(__(DB.set.meridiani.NK.punti[siglaPunto])){
 									if(	DB.set.meridiani.NK.punti[siglaPunto].NomePunto){
-										var pP = DB.set.meridiani.NK.punti[siglaPunto].siglaPunto.split("-");
+										let pP = DB.set.meridiani.NK.punti[siglaPunto].siglaPunto.split("-");
 										puntiElenco.push({
 											siglaPunto: pP[1]*1,
 											NomePunto: DB.set.meridiani.NK.punti[siglaPunto].NomePunto
@@ -1145,7 +1150,7 @@ var MODULO_PROCEDURE = { // extend SET
 						'		    onChange="SET.aggiornaDettaglio(this);"' +
 						'			onClick="SET.eviMeridiano(this.value,false);">';
 					
-					var totPunti=0;
+					let totPunti=0;
 						
 					for(let k in DB.set.meridiani){
 						// verifico le autorizzazioni
@@ -1221,8 +1226,8 @@ var MODULO_PROCEDURE = { // extend SET
 		//PAZIENTI.mezzoProvvisorio
 		SET.topAdd = tCoord(document.getElementById("p_add_dett"),'y');
 		//SET.salvaDettagli();
-		var maxOrd=0;
-		var DataModifica = DB.procedure.lastSync+1;
+		let maxOrd=0,
+			DataModifica = DB.procedure.lastSync+1;
 		for(let p in SET.dettagliProvvisori){
 			if(SET.dettagliProvvisori[p].OrdineDettaglio>maxOrd)maxOrd=SET.dettagliProvvisori[p].OrdineDettaglio;
 		}
@@ -1251,9 +1256,9 @@ var MODULO_PROCEDURE = { // extend SET
 	spostaDettaglio: function( elMove, elTarget ){
 		if(	!elTarget ||
 			elMove.parentElement==elTarget)return;
-		var fromIndex = parseInt(elMove.parentElement.id.split("rg")[1]);
-		var toIndex = parseInt(elTarget.id.split("rg")[1]);
-		var arr2 = SET.dettagliProvvisori.splice(fromIndex, 1)[0];
+		let fromIndex = parseInt(elMove.parentElement.id.split("rg")[1]),
+			toIndex = parseInt(elTarget.id.split("rg")[1]),
+			arr2 = SET.dettagliProvvisori.splice(fromIndex, 1)[0];
 		SET.dettagliProvvisori.splice(toIndex,0,arr2);
 		for(let d in SET.dettagliProvvisori){
 			SET.dettagliProvvisori[d].OrdineDettaglio = d;
@@ -1262,21 +1267,21 @@ var MODULO_PROCEDURE = { // extend SET
 		SCHEDA.formModificato = true;
 	},
 	aggiornaDettaglio: function( el ){
-		var pId = el.id.split("_");
-		var n = pId[1];
-		var DP = SET.dettagliProvvisori[n].DescrizioneDettaglio.split(".");
-		var val = el.value;
+		let pId = el.id.split("_"),
+			n = pId[1],
+			DP = SET.dettagliProvvisori[n].DescrizioneDettaglio.split("."),
+			val = el.value;
 		if(document.getElementById("pt_"+n)){
 			if(!globals.set.siglaProc){
-				var mer = document.getElementById("mr_"+n).value;
-				var nPunto = document.getElementById("pt_"+n).value;
+				let mer = document.getElementById("mr_"+n).value,
+					nPunto = document.getElementById("pt_"+n).value;
 				val = nPunto+"."+mer;
-				/*var sg = val.replace(/\./g,"-");
+				/*let sg = val.replace(/\./g,"-");
 				if(__(DB.set.meridiani[mer].punti[nPunto].siglaPunto)){
 					sg = __(DB.set.meridiani[mer].punti[nPunto].siglaPunto);
 				}*/
-				var sg = __(DB.set.meridiani[mer].punti[nPunto].siglaPunto,'');
-				var mz = __(DP[2]);
+				let sg = __(DB.set.meridiani[mer].punti[nPunto].siglaPunto,''),
+					mz = __(DP[2]);
 				if(SET.dettagliProvvisori[n].TipoDettaglio=='N'){
 					sg = DB.set.meridiani[mer].punti[nPunto].NomePunto;
 					mz = __(DP[3]);
@@ -1294,7 +1299,7 @@ var MODULO_PROCEDURE = { // extend SET
 	// COMMUNITY
 	swNotificabile: function( idProcedura ){
 		if(CONN.retNoConn()){
-			var JSNPOST={	"idProcedura": idProcedura*1 };
+			let JSNPOST={	"idProcedura": idProcedura*1 };
 			
 			CONN.caricaUrl(	"community_swnot_commenti.php",
 							"b64=1&JSNPOST="+window.btoa(encodeURIComponent(JSON.stringify(JSNPOST))),
@@ -1302,8 +1307,8 @@ var MODULO_PROCEDURE = { // extend SET
 		}
 	},
 	setNotificabile: function( notificabile ){
-		if(notificabile != '404' && typeof(notificabile)!='undefined'){
-			var elNot = document.getElementById("notificaCommenti");
+		if(notificabile != '404' && typeof(notificabile)!='undefined' && document.getElementById("notificaCommenti")){
+			let elNot = document.getElementById("notificaCommenti");
 			if(notificabile*1){
 				elNot.innerHTML = htmlEntities(TXT("DisattivaNotificheProcedura"));
 				elNot.classList.remove("notificheDisattivate");
@@ -1315,7 +1320,7 @@ var MODULO_PROCEDURE = { // extend SET
 	},
 	car_commenti: function( idProcedura ){
 		if(CONN.getConn()){
-			var JSNPOST={	"idProcedura": idProcedura*1 };
+			let JSNPOST={	"idProcedura": idProcedura*1 };
 			
 			CONN.caricaUrl(	"community_proc_commenti.php",
 							"b64=1&JSNPOST="+window.btoa(encodeURIComponent(JSON.stringify(JSNPOST))),
@@ -1325,7 +1330,7 @@ var MODULO_PROCEDURE = { // extend SET
 		}
 	},
 	scrivi_commento: function( el, reply=false ){
-		var HTML = 
+		let HTML = 
 			'<div class="commRG';
 		if(reply)HTML += ' commReply'
 		HTML +=	
@@ -1335,7 +1340,7 @@ var MODULO_PROCEDURE = { // extend SET
 		/*if(el.avatar){// && CONN.getConn()){
 			HTML += '" style="background-image:url(\'' + el.avatar+'\');';*/
 			
-		var dt = new Date().getTime();
+		let dt = new Date().getTime();
 		if(CONN.getConn()){
 			HTML += '" style="background-image:url(' + CONN.APIfolder+'getAvatarMini.php?idU='+el.idUtente+'&t='+dt+');';
 		}else HTML += ' commNoAvatar"';
@@ -1387,13 +1392,13 @@ var MODULO_PROCEDURE = { // extend SET
 	scrivi_commenti: function( txt ){
 		if(txt=='vuota' || txt.substr(0,3)=='404' || typeof(txt)=='undefined')txt = '{"commenti":[]}';
 		txt = JSON.parse(txt);
-		var commentiProcedura = txt.commenti;
-		var elNot = document.getElementById("notificaCommenti");
+		let commentiProcedura = txt.commenti,
+			elNot = document.getElementById("notificaCommenti"),
+			presente=false,
+			HTML = '',
+			totComm = commentiProcedura.length;
 		SET.setNotificabile(txt.notificabile);
-		var presente=false;
-		var HTML = '';
 		commentiProcedura.sort(sort_by("DataCommento", true, parseInt));
-		var totComm = commentiProcedura.length;
 		for(let p in commentiProcedura){
 			HTML += SET.scrivi_commento(commentiProcedura[p]);
 			if(commentiProcedura[p].risposte)totComm += commentiProcedura[p].risposte.length;
@@ -1411,7 +1416,7 @@ var MODULO_PROCEDURE = { // extend SET
 	ins_commento: function( idProcedura, idCommento=0, reply=0 ){ // inserisce un commento ad una procedura condivisa
 		//retNoFree();
 		if(CONN.retNoConn() && LOGIN.logedin() && verifica_form(document.formCommenti)){
-			var JSNPOST={	"idProcedura": document.formCommenti.idProcedura.value*1,
+			let JSNPOST={	"idProcedura": document.formCommenti.idProcedura.value*1,
 							"idCommento": document.formCommenti.idCommento.value*1,
 							"reply": document.formCommenti.reply.value*1,
 							"TestoCommento": addslashes(document.formCommenti.TestoCommento.value) };
@@ -1437,10 +1442,10 @@ var MODULO_PROCEDURE = { // extend SET
 		CONFIRM.vis(	TXT("ChiediEliminaCommento"),
 						false, 
 						arguments ).then(function(pass){if(pass){
-						var v = getParamNames(CONFIRM.args.callee.toString());
+						let v = getParamNames(CONFIRM.args.callee.toString());
 						for(let i in v)eval(getArguments(v,i));
 			if(CONN.getConn()){
-				var JSNPOST={	"idCommento": idCommento*1 };
+				let JSNPOST={	"idCommento": idCommento*1 };
 				
 				CONN.caricaUrl(	"community_proc_commenti_el.php",
 								"b64=1&JSNPOST="+window.btoa(encodeURIComponent(JSON.stringify(JSNPOST))),
@@ -1452,15 +1457,14 @@ var MODULO_PROCEDURE = { // extend SET
 		if(txt=='404'){
 			
 		}else{
-			console.log(txt)
-			var res = JSON.parse(txt);
+			let res = JSON.parse(txt);
 			document.getElementById("comm_"+res.idCommento).remove();	
 		}
 	},
 	attivaCommento: function( idProcedura, idCommento='', reply=0 ){
 		SET.disattivaCommento();
-		var TIT = TXT("AddCommento");
-		var classCommento = '';
+		let TIT = TXT("AddCommento"),
+			classCommento = '';
 		if(idCommento){
 			if(reply){
 				TIT = TXT("ReplyCommento");
@@ -1470,7 +1474,7 @@ var MODULO_PROCEDURE = { // extend SET
 				classCommento = 'modCommento';
 			}
 		}
-		var HTML =
+		let HTML =
 			'<form id="formCommenti"' +
 			'      class="'+classCommento+'"' +
 			'      name="formCommenti"' +
@@ -1528,8 +1532,8 @@ var MODULO_PROCEDURE = { // extend SET
 		}
 	},
 	confermaProceduraCommunity: function( txt ){
-		var err=false;
-		var record_tot=0;
+		/* let err=false,
+			record_tot=0; */
 		if(txt.substr(0,3)!='404'){
 			//console.log(txt)
 			elenco='';
@@ -1550,7 +1554,7 @@ var MODULO_PROCEDURE = { // extend SET
 		//retNoFree();
 		CONN.retNoConn();
 						
-		var JSNPOST={	"idLinguaRic": 1,
+		let JSNPOST={	"idLinguaRic": 1,
 						"parolaRic": "",
 						"parolaRicCrypt": "",
 						"prefRic": "",
@@ -1558,7 +1562,7 @@ var MODULO_PROCEDURE = { // extend SET
 						"record": 0 };
 						
 		if(document.formRicProc){
-			var JSNPOST={	"idLinguaRic": document.formRicProc.idLinguaRic.value*1,
+			JSNPOST={	"idLinguaRic": document.formRicProc.idLinguaRic.value*1,
 							"parolaRic": document.formRicProc.parolaRic.value,
 							"parolaRicCrypt": document.formRicProc.parolaRic.value,
 							"prefRic": document.formRicProc.prefRic.value,
@@ -1582,7 +1586,7 @@ var MODULO_PROCEDURE = { // extend SET
 		SET.idProcCommOp=k;
 		SET.elProcCommOp=el;
 		//loadingScheda('Procedura');
-		var JSNPOST={	"idProcedura": Q_idProc*1 };
+		let JSNPOST={	"idProcedura": Q_idProc*1 };
 		
 		CONN.caricaUrl(	"community_proc.php",
 						"b64=1&JSNPOST="+window.btoa(encodeURIComponent(JSON.stringify(JSNPOST))),
@@ -1590,24 +1594,26 @@ var MODULO_PROCEDURE = { // extend SET
 		return false;
 	},
 	confermaCommunity: function( txt ){
-		var err=false;
-		var record_tot=0;
-		var presente=false;
-		var kRic = -1;
+		let err=false,
+			record_tot=0,
+			record_vis=0,
+			record=0,	
+			presente=false,
+			kRic = -1,
+			HTML = '';
 		if(txt.substr(0,3)!='404'){
 			if(txt=='vuoto')SET.community_elenco=[];
 			else{
 				if(debug)console.log(txt)
-				elenco=JSON.parse(txt);
-				record_tot=elenco.record_tot;
-				record_vis=elenco.record_vis;
-				record=elenco.record;
+				let elenco = JSON.parse(txt);
+				record_tot = elenco.record_tot;
+				record_vis = elenco.record_vis;
+				record = elenco.record;
 				SET.community_elenco=elenco.dati;
-				var HTML='';
-				
-				var pagine_tot=parseInt(record_tot/record_vis);
+				HTML = '',
+				pagine_tot = parseInt(record_tot/record_vis);
 				if(record_tot/record_vis>pagine_tot)pagine_tot++;
-				var pagina_attuale=parseInt(record/record_vis);
+				//let pagina_attuale=parseInt(record/record_vis);
 	
 				if(record_tot>0){	
 				
@@ -1617,13 +1623,13 @@ var MODULO_PROCEDURE = { // extend SET
 								'	     	   SET.caricaCommunity();"></span>';
 					
 					for(let k in SET.community_elenco){
-						idProcedura=SET.community_elenco[k].idProcedura*1;
-						Condiviso=SET.community_elenco[k].Condiviso*1;
-						NomeProcedura=SET.community_elenco[k].NomeProcedura;
-						DataCreazione=SET.community_elenco[k].DataCreazione*1;
-						Preferito=SET.community_elenco[k].Preferito*1;
-						visto=SET.community_elenco[k].visto*1;
-						Pseudonimo=SET.community_elenco[k].Pseudonimo;
+						let idProcedura = SET.community_elenco[k].idProcedura*1,
+							Condiviso = SET.community_elenco[k].Condiviso*1,
+							NomeProcedura = SET.community_elenco[k].NomeProcedura,
+							DataCreazione = SET.community_elenco[k].DataCreazione*1,
+							Preferito = SET.community_elenco[k].Preferito*1,
+							visto = SET.community_elenco[k].visto*1,
+							Pseudonimo = SET.community_elenco[k].Pseudonimo;
 						Condiviso=1;
 						HTML += '<div class="base cnmty';
 						if(Preferito!=0)HTML+=' procPref';
@@ -1645,13 +1651,13 @@ var MODULO_PROCEDURE = { // extend SET
 								'</span>';
 					HTML += '<span class="lastComm"></span>';
 					
-					presente=true;
+					presente = true;
 				}
 			}
 			if(!presente)HTML = '<div class="noResults">'+TXT("NoResProcedure")+'...</div>';
 			HTML = '<div class="lista listaProcedure">'+HTML+'</div>';
 		
-			var HTML_pre =	SET.intestazioneProcedure(false) +
+			let HTML_pre =	SET.intestazioneProcedure(false) +
 							'<div id="filtroCond">';
 			HTML_pre += 	'	<div id="p_swRicComm"' +
 							'		 onClick="document.getElementById(\'filtroCond\').classList.toggle(\'vis\');">' +
@@ -1697,10 +1703,8 @@ var MODULO_PROCEDURE = { // extend SET
 							'		</div>' +
 							'	</form>' +
 							'</div>';
-							
-			HTML = HTML_pre + HTML;
 			
-			document.getElementById("lista_procedure").innerHTML=HTML;
+			document.getElementById("lista_procedure").innerHTML = HTML_pre + HTML;
 			
 			
 			vElProc=parent.document.getElementById("eviProc");

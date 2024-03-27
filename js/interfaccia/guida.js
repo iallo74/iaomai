@@ -216,7 +216,7 @@ var REF = {
 			let pL = REF.elSel.dataset.level.split("."),
 				el = DB.reference.cont;
 			if(pL.length>1){
-				for(e=0;e<pL.length-1;e++){
+				for(let e=0;e<pL.length-1;e++){
 					nav += el[pL[e]].title;
 					if(e<pL.length-2)nav += ' &gt; ';
 					el = el[pL[e]].cont;
@@ -263,7 +263,7 @@ var REF = {
 	},
 	explode: function(){
 		let els = document.getElementById("ref_tree").getElementsByTagName("a");
-		for(e in els){
+		for(let e in els){
 			if(els[e].dataset){
 				if(__(els[e].dataset.level) && els[e].dataset.level == REF.levelTxt){
 					els[e].classList.add("refSel");

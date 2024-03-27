@@ -33,11 +33,10 @@ var	smartphone = false,
 	dateEndFeatures = new Date("2024-01-01").getTime(),
 	
 	// IMPOSTAZIONI DI APP
-	tipoApp = '', // per la demo
-	chr10 = String.fromCharCode(10);
+	tipoApp = ''; // per la demo
 	
 if(location.search){
-	var vDef='';
+	let vDef='';
 	str=location.search.substr(1,location.search.length-1);
 	pQ=str.split("&");
 	if(pQ.length>1){
@@ -56,7 +55,7 @@ if(location.search){
 
 /*const checkOnlineStatus = async () => {
 	try{
-		var t = new Date().getTime();
+		let t = new Date().getTime();
 		const online = await fetch("https://www.iaomai.app/app/v1_3/img/checker_di_connessione_non_cancellare.png?v="+t);
 		return online.status >= 200 && online.status < 300;
 	}catch(err) {
@@ -116,6 +115,8 @@ var IMPORTER = {
 		'js/utils/confirm_alert.js',
 		'js/utils/swipe.js',
         
+        'js/interfaccia/html.js', // lasciare qui
+
         'js/lingue/etichette.js',
         'js/lingue/TXT.js',
         'js/lingue/paesi.js',
@@ -127,7 +128,6 @@ var IMPORTER = {
 		'js/three/three.js',
         'js/three/ObjectControls.js',
         
-        'js/interfaccia/html.js',
         'js/interfaccia/guida.js',
         'js/interfaccia/menu.js',
         'js/interfaccia/schede.js',
@@ -182,7 +182,7 @@ var IMPORTER = {
 		document.getElementById("partner_inizio").style.backgroundImage = "url("+localStorage.logoConv+")";
 		//if(window.cordova)this.produzione = true;
 		if(isCordova)this.produzione = true;
-		var UA=navigator.userAgent;
+		let UA=navigator.userAgent;
 		if(UA.toLowerCase().indexOf("ipad")>-1)iPad=1;
 		if(UA.toLowerCase().indexOf("iphone")>-1)iPhone=1;
 		if(UA.toLowerCase().indexOf("mac")>-1)isMacUA=1;
@@ -199,7 +199,7 @@ var IMPORTER = {
 		document.getElementById("no_info_features").name = 'no_info_features_'+verApp.replace(".","_");
 		document.getElementById("no_info_features").dataset.name = 'no_info_features_'+verApp.replace(".","_");
 		/*
-		var el = document.getElementById('scripts');
+		let el = document.getElementById('scripts');
 		el.setAttribute('ontouchstart', 'return;');
 		if(typeof el.ontouchstart == "function"){
 			//if(iPad || iPhone || android)
@@ -209,7 +209,7 @@ var IMPORTER = {
     		(navigator.maxTouchPoints > 0) ||
      		(navigator.msMaxTouchPoints > 0) )touchable = true;
 		touchDetect = touchable;
-		var userAgent = navigator.userAgent.toLowerCase();
+		let userAgent = navigator.userAgent.toLowerCase();
 		isTablet = /(ipad|tablet|(android(?!.*mobile))|(windows(?!.*phone)(.*touch))|kindle|playbook|silk|(puffin(?!.*(IP|AP|WP))))/.test(userAgent);
 		mouseDetect = ('ontouchstart' in window ? false : true);
 		if(mouseDetect){
@@ -242,7 +242,7 @@ var IMPORTER = {
 			window.resizeTo(screen.availWidth,screen.availHeight);
 		}
 		// blocco IOS
-		var lang = navigator.language || navigator.userLanguage;
+		//let lang = navigator.language || navigator.userLanguage;
 		if((iPad || iPhone || isMacUA) && !onlineVersion)document.body.classList.add("ios");
 		if(typeof(localStorage.sbl_pplhd)=='undefined')localStorage.sbl_pplhd = 'true';
 		if(typeof(localStorage.sbl_pplhd)=='undefined' || localStorage.sbl_pplhd.toString()!='true')document.body.classList.add("pplhd");
@@ -286,7 +286,7 @@ var IMPORTER = {
 		
 		localPouchDB.getItem(MD5("FILES")).then(function(dbCont){ // leggo il DB
 			if(typeof(dbCont)!='undefined'){
-				res=JSON.parse(IMPORTER.DECOMPR(dbCont));
+				let res = JSON.parse(IMPORTER.DECOMPR(dbCont));
 				if(typeof(res)!='undefined')FILES = res;
 			}
 			IMPORTER.verificaAggiornamenti();
@@ -295,17 +295,17 @@ var IMPORTER = {
 	verificaAggiornamenti: function( ){ // funzione iniziale per aggiornare tutti i files
 		if(this.produzione && CONN.getConn()){
 			// verifico la presenza di aggiornamenti di versione (solo in "produzione")
-			var versioni = {};
+			let versioni = {};
 			if(!FILES[verApp])FILES[verApp]={};
 			for(let f in FILES[verApp]){
 				versioni[f] = FILES[verApp][f].lastVer;
 			}
-			var JSNPOST = JSON.stringify( versioni );
+			let JSNPOST = JSON.stringify( versioni );
 			while(JSNPOST.indexOf("/")>-1)JSNPOST=JSNPOST.replace("/","_");
 			while(JSNPOST.indexOf(".")>-1)JSNPOST=JSNPOST.replace(".","_");
 			console.log("Sto inviando: "+JSNPOST);
 			localPouchDB.getItem(MD5("DB.login")).then(function(dbCont){
-				id=IMPORTER.DECOMPR(dbCont).data.idUtente;
+				let id = IMPORTER.DECOMPR(dbCont).data.idUtente;
 				IMPORTER.id = id;
 				if(typeof(id)=='undefined')id = '';
 				CONN.caricaUrl(	"verificaScripts.php",
@@ -317,7 +317,7 @@ var IMPORTER = {
 	applicaAggiornamenti: function( txt ){
 		if(txt!='' && txt!='404' && txt!='404-1' && txt!='undefined' && typeof(txt)!='undefined'){
 			
-			modificati = JSON.parse(txt);
+			let modificati = JSON.parse(txt);
 			if(modificati){
 				if(typeof(modificati["sbl_pplhd"])!='undefined'){
 					if(modificati.sbl_pplhd == 'sb'){
@@ -344,7 +344,7 @@ var IMPORTER = {
 		if(window.hasOwnProperty("cordova"))document.body.classList.add("app_version");
 		
 		// inserito per bug sui fonts su app android smart
-		var dvf = document.createElement('p');
+		let dvf = document.createElement('p');
 		dvf.id = 'dvf';
 		dvf.style.margin = '0px';
 		dvf.style.lineHeight = '50px';
@@ -358,45 +358,43 @@ var IMPORTER = {
 		IMPORTER.importaFiles( 0, IMPORTER.files, 'INIT();', document.head );
 	},
 	importaFiles: function( n=0, lista, funct, dest ){
-		var file = lista[n];
-		
-		var isModello = (file.indexOf("modelli/")==0 && typeof(modelli)!='undefined');
-		var isSet = (file.indexOf("sets/")==0 && typeof(sets)!='undefined');
+		let file = lista[n],
+			isModello = (file.indexOf("modelli/")==0 && typeof(modelli)!='undefined'),
+			isSet = (file.indexOf("sets/")==0 && typeof(sets)!='undefined');
 		if( isModello || isSet ){
 			if(!n)this.dimProgr = 0;
-			var totDim = 0;
-			var pF = file.split("/");
+			let totDim = 0,
+				pF = file.split("/");
 			if(file.indexOf("common")>-1 && isSet){
 				pF[1] = globals.set.cartella;
 			}
 			if(n < lista.length-1){
 				for(l=0;l<lista.length-1;l++){
-					var dims = eval(pF[0]+"."+pF[1]+".dims");
+					let dims = eval(pF[0]+"."+pF[1]+".dims");
 					if(globals.set.cartella || pF[0]=='modelli'){
 						if(dims){
 							totDim += dims[l];
 						}
 					}
 				}
-				var dim = eval(pF[0]+"."+pF[1]+".dims["+n+"]");
+				let dim = eval(pF[0]+"."+pF[1]+".dims["+n+"]");
 				this.dimProgr += dim;
-				var perc = parseInt((this.dimProgr*100) / totDim);
+				let perc = parseInt((this.dimProgr*100) / totDim);
 				if(isModello)visLoader(globals.modello.txtLoading + " " + perc + "%");
 				if(isSet)visLoader(globals.set.txtLoading + " " + perc + "%");
 			}
 		}
 		
-		var pF = file.split(".");
-		var ext = pF[pF.length-1];
-		var nomeFile = file;
+		let pF = file.split("."),
+			ext = pF[pF.length-1],
+			nomeFile = file;
 		while(nomeFile.indexOf("/")>-1)nomeFile=nomeFile.replace("/","_");
 		while(nomeFile.indexOf(".")>-1)nomeFile=nomeFile.replace(".","_");
-		var pPth = nomeFile.split("_");
-		var path = pPth[pPth.length-2];
-		
-		var content = '';
+		let pPth = nomeFile.split("_"),
+			path = pPth[pPth.length-2],
+			content = ''/* ,
+			pass = true */;
 		if(path=="addings")content = window.btoa('/* ADDINGS */');
-		var pass = true;
 		if(this.produzione){
 			// verifico la presenza in FILES (solo in versione "produzione")
 			if( FILES[verApp][nomeFile] ){
@@ -404,7 +402,7 @@ var IMPORTER = {
 			}
 		}
 		if(!isModello){
-			var versionUpdate = (new Date()).getTime();  
+			let versionUpdate = (new Date()).getTime();  
 			file += '?v='+versionUpdate;
 		}
 		if(ext=='js'){
@@ -467,17 +465,17 @@ var IMPORTER = {
 		else return document.body.clientWidth;
 	},
 	detectIE: function(){ // verifica se il browser è INTERNET EXPLORER
-		var ua=window.navigator.userAgent;
-		var b=ua.indexOf("MSIE ");
+		let ua=window.navigator.userAgent,
+			b=ua.indexOf("MSIE "),
+			a=ua.indexOf("Trident/"),
+			edge = ua.indexOf('Edge/');
 		if(b>0){
 			return parseInt(ua.substring(b+5,ua.indexOf(".",b)),10);
 		}
-		var a=ua.indexOf("Trident/");
 		if(a>0){
-			var d=ua.indexOf("rv:");
+			let d=ua.indexOf("rv:");
 			return parseInt(ua.substring(d+3,ua.indexOf(".",d)),10);
 		}
-		var edge = ua.indexOf('Edge/');
 		if (edge > 0) {
 			return parseInt(ua.substring(edge + 5, ua.indexOf('.', edge)), 10);
 		}
@@ -572,9 +570,9 @@ function ver_electron() {
 
 
 /*window.onerror = (message, source, lineno, colno, error) => {
-	if(error==null)var error = '';
-	var maxErrors = 10;
-	var errori = JSON.parse(__(localStorage.errors,"[]"));
+	if(error==null)error = '';
+	let maxErrors = 10;
+	let errori = JSON.parse(__(localStorage.errors,"[]"));
 	if(errori.length>=maxErrors)errori.splice(0,errori.length-maxErrors+1);
 	d = new Date();
 	errori.push({

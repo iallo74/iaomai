@@ -12,13 +12,12 @@ var MODULO_PUNTO = { // extend SET
 		}
 		// --------------------------
 		
-		var titolo = DB.set.punti[siglaPunto].NomePunto;
+		let titolo = DB.set.punti[siglaPunto].NomePunto;
 		for(a in DB.set.punti){
 			if(DB.set.punti[a].siglaPunto == siglaPunto)titolo = siglaPunto+". "+titolo;
 		}
-		var HTML = "<h1>"+htmlEntities(titolo)+"</h1>";
-		
-		var apparato = DB.set.punti[siglaPunto].apparato;
+		let HTML = "<h1>"+htmlEntities(titolo)+"</h1>",
+			apparato = DB.set.punti[siglaPunto].apparato;
 		HTML += '<div class="label_apparato app'+apparato+'"><span>'+DB.set.apparati[apparato]+'</span></div><br><br>';
 		
 		
@@ -27,11 +26,11 @@ var MODULO_PUNTO = { // extend SET
 			SCHEDA.classeAperta != "tab_punti" ){
 				
 			// pulsante per la scelta del punto su trattamenti e procedure
-			var az = '';
-			var txt = '';
-			var cls = '';
-			var stesso = false;
-			var puntoNuovo = siglaPunto;
+			let az = '',
+				txt = '',
+				cls = '',
+				stesso = false,
+				puntoNuovo = siglaPunto;
 			if( SCHEDA.classeAperta == 'scheda_procedura' ){
 				if(SET.puntiEvidenziati.indexOf(puntoNuovo)==-1){
 					// aggiungi il punto alla procedura
@@ -61,7 +60,7 @@ var MODULO_PUNTO = { // extend SET
 		
 		
 		// annotazione
-		var TestoAnnotazione = '',
+		let TestoAnnotazione = '',
 			cartella = "reflex";
 		if(SET.verificaNota(siglaPunto)){
 			let ar = SET.leggiNota( cartella, siglaPunto*1 );
@@ -95,14 +94,14 @@ var MODULO_PUNTO = { // extend SET
 		}
 		
 		
-		var ptSel = SET.ptSel;
+		let ptSel = SET.ptSel;
 		SET.ptSel = null;
 		
-		var btnAdd = 	'<div class="p_paz_ref_menu" onClick="REF.open(\'sets.reflessologia_plantare.pointsmap\')">' +
+		let btnAdd = 	'<div class="p_paz_ref_menu" onClick="REF.open(\'sets.reflessologia_plantare.pointsmap\')">' +
 							TXT("ReferenceGuide") +
 						'</div>';
 		
-		var finalFunct = '';
+		let finalFunct = '';
 		if(!ritorno || !SCHEDA.formModificato)finalFunct += 'initChangeDetection( "formAnnotazioni");';
 						
 		SCHEDA.caricaScheda(	titolo,
@@ -122,10 +121,10 @@ var MODULO_PUNTO = { // extend SET
 		if(ritorno && !SCHEDA.aggancio.tipo == 'libera')SCHEDA.nasScheda();
 	},
 	mod_nota: function( siglaPunto ){ // salva la nota di un punto
-		let nota_salvata=false;
-		var DataModifica = DB.note.lastSync+1;
-		var pDef=-1;
-		var Q_TestoAnnotazione = document.getElementById("TestoAnnotazione").value;
+		let nota_salvata=false,
+			DataModifica = DB.note.lastSync+1,
+			pDef=-1,
+			Q_TestoAnnotazione = document.getElementById("TestoAnnotazione").value;
 		for (p in DB.note.data) {
 			if(DB.note.data.length && typeof(DB.note.data[p].meridiano)=='undefined')DB.note.data.splice(p,p);
 			else if(DB.note.data[p].meridiano=='reflex' && DB.note.data[p].numeroPunto==siglaPunto && SET.verNotaCli(p)){
@@ -135,8 +134,8 @@ var MODULO_PUNTO = { // extend SET
 				pDef=p;
 			}
 		}
-		if(!nota_salvata && Q_TestoAnnotazione.trim()!=''){
-			var idPaziente=-1;
+		if(!nota_salvata /* && Q_TestoAnnotazione.trim()!='' */){
+			let idPaziente=-1;
 			if(PAZIENTI.idCL>-1)idPaziente=PAZIENTI.idPaziente;
 			JSNPUSH={	"TestoAnnotazione": Q_TestoAnnotazione,
 						"meridiano": "reflex",
@@ -159,10 +158,10 @@ var MODULO_PUNTO = { // extend SET
 		});
 	},
 	verNotaCli: function( p ){ // verifica che ci sia una nota per il cliente attivo
-		var pass=true;
+		let pass=true;
 		if(PAZIENTI.idCL>-1){
 			pass=false;
-			var idPaziente=DB.pazienti.data[PAZIENTI.idCL].idPaziente*1;
+			let idPaziente=DB.pazienti.data[PAZIENTI.idCL].idPaziente*1;
 			if(idPaziente){
 				if(DB.pazienti.data[PAZIENTI.idCL].Cancellato*1!=1)pass=(DB.note.data[p].idPaziente*1==idPaziente);
 				else pass=false;
@@ -175,7 +174,7 @@ var MODULO_PUNTO = { // extend SET
 		if(DB.note){
 			for(let n in DB.note.data){
 				if(DB.note.data[n].app=='RFX'){
-					var pass =false;
+					let pass =false;
 					if(DB.note.data[n].idPaziente > -1){
 						if(DB.note.data[n].idPaziente == PAZIENTI.idPaziente)pass=true;
 					}else{
@@ -191,10 +190,10 @@ var MODULO_PUNTO = { // extend SET
 		}
 	},
 	leggiNota: function( mr, pt ){ // legge la nota sul cliente
-		var TestoAnnotazione = '',
+		let TestoAnnotazione = '',
 			hidePunto = '0';
 		for(let n in DB.note.data){
-			var pass =false;
+			let pass =false;
 			if(DB.note.data[n].idPaziente > -1){
 				if(DB.note.data[n].idPaziente == PAZIENTI.idPaziente)pass=true;
 			}else{

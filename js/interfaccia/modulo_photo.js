@@ -35,15 +35,15 @@ var PH = {
 	maxFileSize: 20*1000*1000, // 20MB
 	
 	encodeImageFileAsURL: function( element, resizable=false, makeBig=false, functPH='', listaEstensioni ) { // trasforma l'immagine in base64
-		var verSize = false;
+		/* let verSize = false; */
 		if(typeof(listaEstensioni) == 'undefined'){
-			var listaEstensioni = PH.listaEstensioni;
+			listaEstensioni = PH.listaEstensioni;
 			if(LOGIN.logedin() && !resizable){
 				listaEstensioni = listaEstensioni.concat(PH.listaEstensioniFiles);
 			}
 		}
-		var ext = "";
-		for(e in listaEstensioni){
+		let ext = "";
+		for(let e in listaEstensioni){
 			ext += listaEstensioni[e].toUpperCase().split("/")[1]+", ";
 		}
 		ext = ext.substr(0,ext.length-2);
@@ -60,7 +60,7 @@ var PH = {
 			ALERT(TXT("DimensioneNonConsentita").replace("[maxSize]",PH.maxFileSize*.000001).replace("[size]",ArrotondaEuro(file.size*.000001)));
 			return;
 		}
-		var reader = new FileReader();
+		let reader = new FileReader();
 		if(PH.listaEstensioniFiles.indexOf(file.type)==-1){
 			// se è un'immagine
 			reader.onloadend = function() {
@@ -95,7 +95,7 @@ var PH = {
 				// se c'è connessione
 				reader.onloadend = function() {
 					// carico il file sul server
-					var d = new Date()*1
+					let d = new Date()*1
 					
 					CONN.caricaUrl(	"putFile.php",
 									"b64=1&JSNPOST="+encodeURIComponent(window.btoa(JSON.stringify({
@@ -141,22 +141,19 @@ var PH = {
 			PH.xMouseAtt = event.targetTouches[0].pageX;
 			PH.yMouseAtt = event.targetTouches[0].pageY;
 		}	
-		var diffW = PH.xMouseIni - PH.xMouseAtt;
-		var diffH = PH.yMouseIni - PH.yMouseAtt;
-		var diff = diffW;
-		if(diffH>diffW)diff=diffH;
-		var newDim = PH.orDim - diff;
-		
-		var dimDef = (PH.img_hOr * document.getElementById("img_resizer").scrollHeight) / PH.img.scrollHeight;
+		let diffW = PH.xMouseIni - PH.xMouseAtt,
+			diffH = PH.yMouseIni - PH.yMouseAtt,
+			diff = diffH>diffW ? diffH : diffW,
+			newDim = PH.orDim - diff,
+			dimDef = (PH.img_hOr * document.getElementById("img_resizer").scrollHeight) / PH.img.scrollHeight,
+			nW = PH.img.scrollWidth,
+			nH = PH.img.scrollHeight;
 		
 		//console.log(PH.oldDim + " - " + newDim)
 		if(newDim < PH.oldDim){
 			if(dimDef < 200)newDim = (200 * PH.img.scrollHeight) / PH.img_hOr;
 		}
 		if(newDim > PH.maxDim)newDim = PH.maxDim;
-		
-		var nW = PH.img.scrollWidth;
-		var nH = PH.img.scrollHeight;
 		if(newDim + PH.getRes().left > nW)newDim = nW - PH.getRes().left;
 		if(newDim + PH.getRes().top > nH)newDim = nH - PH.getRes().top;
 		
@@ -216,16 +213,14 @@ var PH = {
 			PH.xMouseAtt = event.targetTouches[0].pageX;
 			PH.yMouseAtt = event.targetTouches[0].pageY;
 		}	
-		var diffW = PH.xMouseIni - PH.xMouseAtt;
-		var diffH = PH.yMouseIni - PH.yMouseAtt;
+		let diffW = PH.xMouseIni - PH.xMouseAtt,
+			diffH = PH.yMouseIni - PH.yMouseAtt,
+			nW = PH.img.scrollWidth,
+			nH = PH.img.scrollHeight,
+			dimCrop = document.getElementById("img_resizer").scrollWidth;
 		
 		PH.newLeft = PH.getRes().left - diffW;
 		PH.newTop = PH.getRes().top - diffH;
-		
-		//console.log(PH.newLeft)
-		var nW = PH.img.scrollWidth;
-		var nH = PH.img.scrollHeight;
-		var dimCrop = document.getElementById("img_resizer").scrollWidth;
 		
 		if(PH.newLeft < 0)PH.newLeft = 0;
 		if(PH.newTop < 0)PH.newTop = 0;
@@ -255,7 +250,7 @@ var PH = {
 	
 	
 	setRes: function( obj ){
-		var rapp = PH.img_wOr / PH.img.scrollWidth;
+		let rapp = PH.img_wOr / PH.img.scrollWidth;
 		if(typeof(obj.dim) != 'undefined'){
 			PH.res.dim = obj.dim * rapp;
 		}
@@ -267,7 +262,7 @@ var PH = {
 		}
 	},
 	getRes: function(){
-		var rapp = PH.img_wOr / PH.img.scrollWidth;
+		let rapp = PH.img_wOr / PH.img.scrollWidth;
 		return {
 			left: PH.res.left / rapp,
 			top: PH.res.top / rapp,
@@ -275,10 +270,10 @@ var PH = {
 		}
 	},
 	resizeW: function(){
-		var rapp = PH.img.width / PH.img.height;
-		var rappW = WF() / (HF()-40);
-		var nW = 0;
-		var nH = 0;
+		let rapp = PH.img.width / PH.img.height,
+			rappW = WF() / (HF()-40),
+			nW = 0,
+			nH = 0;
 		PH.maxDim = '';
 		
 		if(rappW > rapp){ // fisso il verticale
@@ -326,10 +321,10 @@ var PH = {
 	draw: function(img){ // disegna sull'immagine
 		PH.img_wOr = PH.img.width;
 		PH.img_hOr = PH.img.height;
-		var rapp = PH.img.width / PH.img.height;
-		var rappW = WF() / (HF()-40);
-		var nW = 0;
-		var nH = 0;
+		let rapp = PH.img.width / PH.img.height,
+			rappW = WF() / (HF()-40),
+			nW = 0,
+			nH = 0;
 		PH.maxDim = '';
 		
 		if(rappW > rapp){ // fisso il verticale
@@ -375,24 +370,23 @@ var PH = {
 	},
 	salva: function(){ // salva l'immagine che si sta caricando (e nel caso ritaliando)
 		if(!PH.res)PH.modify(); // se non ridimensiono
-		var imgMini = PH.returnImageConverted();
-		var obj = {
-			imgMini: imgMini,
-			imgBig: (PH.makeBig) ? PH.returnImageConverted( true ) : '',
-			fileType: imgMini.split("data:")[1].split(";")[0]
-		};
+		let imgMini = PH.returnImageConverted(),
+			obj = {
+				imgMini: imgMini,
+				imgBig: (PH.makeBig) ? PH.returnImageConverted( true ) : '',
+				fileType: imgMini.split("data:")[1].split(";")[0]
+			};
 		eval(PH.functPH+"('"+JSON.stringify(obj)+"')");
 		PH.chiudi();
 	},
 	salvaFile: function( txt ){
-		var obj = JSON.parse(txt);
+		let obj = JSON.parse(txt);
 		eval(PH.functPH+"('"+JSON.stringify(obj)+"')");
 		PH.chiudi();
 	},
 	returnImageConverted: function( isBig=false ){ // restituisce l'immagine conveertita in base64
-		var maxDim = 1000;
-		
-		var canvas = document.getElementById("img_CV");
+		let maxDim = 1000,
+			canvas = document.getElementById("img_CV");
 		if(!isBig){
 			canvas.width = 200;
 			canvas.height = 200;
@@ -405,12 +399,9 @@ var PH = {
 				canvas.height = canvas.width * (PH.img_hOr / PH.img_wOr);
 			}
 		}
-		//console.log(canvas.width+" - "+canvas.height);
-		var ctx = canvas.getContext("2d");
-			
-		// nuovo oggetto immagine per la copia
-		var oc = document.createElement('canvas'),
-		octx = oc.getContext('2d');
+		let ctx = canvas.getContext("2d"),
+			oc = document.createElement('canvas'), // nuovo oggetto immagine per la copia
+			octx = oc.getContext('2d');
 		
 		// ridimensiono il canvas per mettere l'immagine originale
 		if(!isBig){
@@ -426,7 +417,7 @@ var PH = {
 		if(!isBig)ctx.drawImage(oc, PH.res.left, PH.res.top, PH.res.dim, PH.res.dim, 0, 0, 200, 200 );
 		else ctx.drawImage(oc, 0, 0, oc.width, oc.height, 0, 0, oc.width, oc.height );
 		
-		var quality = .3;
+		let quality = .3;
 		if(isBig)quality = .8;
 		base64 = canvas.toDataURL('image/jpeg', quality); // converto tutto in JPG
 		return base64;
@@ -435,18 +426,18 @@ var PH = {
 	
 	// gallery
 	caricaGallery: function( vis=false, idU='', dett=false, hideNoCont=false ){ // carica la gallery in contGallery
-		var HTML='';
-		var totFiles = 0;
-		var afterFunct = '';
+		let HTML = '',
+			totFiles = 0,
+			afterFunct = '';
 		if(!idU)idU = DB.login.data.idUtente;
 		PH.idU = idU;
 		if(PH.galleryProvvisoria.length){
 			for(let i in PH.galleryProvvisoria){
 				totFiles++;
-				var src = '';
-				var cls = '';
-				var name = '';
-				var locale = false;
+				let src = '',
+					cls = '',
+					name = '',
+					locale = false;
 				if(__(PH.galleryProvvisoria[i].nuova)){
 					locale = true;
 					src = PH.galleryProvvisoria[i].imgMini;
@@ -465,7 +456,7 @@ var PH = {
 				if(__(PH.galleryProvvisoria[i].imgMini)){
 					if(!src && PH.galleryProvvisoria[i].imgMini.indexOf("data:")!=0)src = PH.galleryProvvisoria[i].imgMini;
 				}
-				var isFile = false;
+				let isFile = false;
 				if(src && src.indexOf("data:")!=0){
 					isFile = true;
 					type = src;
@@ -514,7 +505,7 @@ var PH = {
 						'			 	 onClick="PH.eliminaFile('+i+');">';
 				HTML += '		</div>' +
 						'	</div>';
-				var Dida = __(PH.galleryProvvisoria[i].Dida);
+				let Dida = __(PH.galleryProvvisoria[i].Dida);
 				if(vis && Dida)HTML +='	<span class="noDefault DidaFile">'+Dida+'</span>';
 				if(!vis)HTML += H.r({	t: "t",	
 								name: "Dida"+i,	
@@ -542,10 +533,10 @@ var PH = {
 			}
 			if(dett && !PH.actionClick){
 				setTimeout( function(){
-					var procs = [];
+					let procs = [];
 					for(let s in sets){
-						var siglaProc = sets[s].siglaProc;
-						var nome = sets[s].nome;
+						let siglaProc = sets[s].siglaProc,
+							nome = sets[s].nome;
 						if(!procs[siglaProc] && typeof(siglaProc)!='undefined')procs[siglaProc] = [];
 						if(typeof(procs[siglaProc])!='undefined'){
 							if(procs[siglaProc].indexOf(nome)==-1)procs[siglaProc].push(nome);
@@ -555,7 +546,7 @@ var PH = {
 					for(let f in DB.files.data){
 						if(__(DB.files.data[f].frv,false)==(LOGIN._frv()=='frv')){
 							n++;
-							var dim = DB._getStringMemorySize(IMPORTER.COMPR(DB.files.data[f].imgMini));
+							let dim = DB._getStringMemorySize(IMPORTER.COMPR(DB.files.data[f].imgMini));
 							if(dim<1000*1000){
 								dimTxt = parseInt(dim/(1000))+"KB";
 							}else{
@@ -565,11 +556,11 @@ var PH = {
 							document.getElementById('dt'+n).innerHTML =  getDataTS(parseInt(DB.files.data[f].idFile.split("_")[1]/1000));
 							
 							
-							var ubicazione = "";
-							var u = 0;
+							let ubicazione = "",
+								u = 0;
 							for(let p in DB.pazienti.data){
 								// verifico nel paziente
-								var gallery =  __(DB.pazienti.data[p].gallery,[]);
+								let gallery =  __(DB.pazienti.data[p].gallery,[]);
 								if(gallery.length){
 									for(let g in gallery){
 										if(DB.files.data[f].idFile == gallery[g].idFile){
@@ -581,11 +572,11 @@ var PH = {
 								// verifico nei trattamenti
 								for(t in DB.pazienti.data[p].trattamenti){
 									if(DB.pazienti.data[p].trattamenti[t].gallery){
-										var gallery =  clone(DB.pazienti.data[p].trattamenti[t].gallery);
+										let gallery =  clone(DB.pazienti.data[p].trattamenti[t].gallery);
 										if(gallery.length){
 											for(let g in gallery){
 												if(DB.files.data[f].idFile == gallery[g].idFile){
-													var tit = DB.pazienti.data[p].trattamenti[t].TitoloTrattamento;
+													let tit = DB.pazienti.data[p].trattamenti[t].TitoloTrattamento;
 													if(!tit)tit = '...';
 													u++;
 													ubicazione += "<p><b>"+u+"</b> ) <i>"+TXT("EtTrattamentoGallery")+"</i> "+DB.pazienti.data[p].Nome+" "+DB.pazienti.data[p].Cognome + ' &gt; ' + tit + '</p>';
@@ -597,7 +588,7 @@ var PH = {
 							}
 							for(let p in DB.procedure.data){
 								// verifico nella procedura
-								var gallery =  __(DB.procedure.data[p].gallery,[]);
+								let gallery =  __(DB.procedure.data[p].gallery,[]);
 								if(gallery.length){
 									for(let g in gallery){
 										if(DB.files.data[f].idFile == gallery[g].idFile){
@@ -645,7 +636,7 @@ var PH = {
 	},
 	scriviFile: function( res ){ // scrive la miniatura
 		res = JSON.parse( res );
-		var presente = false;
+		let presente = false;
 		for(let f in DB.files.data){
 			if(res.idFile == DB.files.data[f].idFile){
 				presente = f;
@@ -681,12 +672,12 @@ var PH = {
 	},
 	aggiungiFile: function( obj ){ // carica un nuova file nella gallery
 		obj = JSON.parse(obj);
-		var d = new Date()*1;
-		var nuova = true;
+		let d = new Date()*1;
+		/* let nuova = true; */
 		if(__(obj.idFile)){
 			d = obj.idFile;
 		}
-		var JSNPUSH = {	idFile: "file_"+d,
+		let JSNPUSH = {	idFile: "file_"+d,
 						imgMini: obj.imgMini,
 						imgBig: obj.imgBig,
 						nuova: true }
@@ -699,7 +690,7 @@ var PH = {
 		CONFIRM.vis(	TXT("ChiediEliminaFile"),
 						false,
 						arguments ).then(function(pass){if(pass){
-						var v = getParamNames(CONFIRM.args.callee.toString());
+						let v = getParamNames(CONFIRM.args.callee.toString());
 						for(let i in v)eval(getArguments(v,i));
 
 			PH.galleryProvvisoria.splice(f,1);
@@ -712,7 +703,7 @@ var PH = {
 		CONFIRM.vis(	TXT("ChiediEliminaFile"),
 						false,
 						arguments ).then(function(pass){if(pass){
-						var v = getParamNames(CONFIRM.args.callee.toString());
+						let v = getParamNames(CONFIRM.args.callee.toString());
 						for(let i in v)eval(getArguments(v,i));
 			CONN.caricaUrl(	'delImgGallery.php',
 							'iU='+PH.idU+'&idFile='+idFile,
@@ -721,7 +712,8 @@ var PH = {
 		}});
 	},
 	fullPhoto: function( i, locale, elenco = PH.galleryProvvisoria ){ // elabora la richiesta di mostrare il file BIG
-		var locale = false;
+		locale = false;
+		let pass = true;
 		if(__(elenco[i].nuova)){
 			locale = true;
 			src = elenco[i].imgBig;
@@ -736,7 +728,6 @@ var PH = {
 				}
 			}
 		}
-		var pass = true;
 		//if(!locale)pass = CONN.retNoConn();
 		if(pass){
 			visLoader("");
@@ -748,7 +739,7 @@ var PH = {
 								'big=1&n='+i+'&iU='+idU+'&idFile='+elenco[i].idFile,
 								'PH.scriviPhotoBig');
 			}else{
-				var locale = false;
+				let locale = false;
 				if(__(elenco[i].nuova)){
 					locale = true;
 					files = elenco[i];
@@ -777,8 +768,8 @@ var PH = {
 	},
 	scriviPhotoBig: function( res ){ // scrive il file BIG
 		res = JSON.parse( res );
-		var lowRes = false;
-		var urlImg = res.imgBig;
+		let lowRes = false,
+			urlImg = res.imgBig;
 		if(!urlImg || urlImg=='404'){
 			for(let f in DB.files.data){
 				if(DB.files.data[f].idFile == res.idFile){
@@ -813,10 +804,10 @@ var PH = {
 			return;
 		}
 		// --------------------------
-		var space = DB._getStringMemorySize(IMPORTER.COMPR(DB.files));
-		var spaceAvail = (45*1000*1000 - DB.__sizeDb);
-		var perc = (space*100) / spaceAvail;
-		var spaceTxt = '<b>';
+		let space = DB._getStringMemorySize(IMPORTER.COMPR(DB.files)),
+			spaceAvail = (45*1000*1000 - DB.__sizeDb),
+			perc = (space*100) / spaceAvail,
+			spaceTxt = '<b>';
 		if(space<1000*1000){
 			spaceTxt += parseInt(space/(1000))+"KB";
 		}else{
@@ -824,15 +815,15 @@ var PH = {
 		}
 		spaceTxt += '</b> ('+parseInt(perc)+'%)'
 		
-		var number = DB.files.data.length;
-		var HTML = 	'<p>'+htmlEntities(TXT("SpiegazioneGallery"))+'</p>' +
+		let number = DB.files.data.length,
+			HTML = 	'<p>'+htmlEntities(TXT("SpiegazioneGallery"))+'</p>' +
 					'<div>'+htmlEntities(TXT("NumberGallery"))+': <b>'+number+'</b><br>' +
 					htmlEntities(TXT("SpaceGallery"))+': '+spaceTxt+'</div>' +
 					'<div id="perc_cont"><div style="width:'+perc+'%"></div></div>';
 		
 		
 		
-		var btnAdd = '';
+		let btnAdd = '';
 		btnAdd += 	'<div class="p_paz_ref_menu" onClick="REF.open(\'archives.suppliers.overview\')">' +
 						TXT("ReferenceGuide") +
 					'</div>';
@@ -846,7 +837,7 @@ var PH = {
 		'	  margin-top:20px;' +
 		'	  padding: 0px;' +
 		'	  background-color: rgba(0,0,0,0.15);"></div>';
-		var cont = '<div id="contGalleryOnline" class="contGallery">'+TXT("Caricamento")+'...</div>';
+		let cont = '<div id="contGalleryOnline" class="contGallery">'+TXT("Caricamento")+'...</div>';
 		
 		HTML += H.sezione({
 			label: TXT("GalleryCestinate"),
@@ -883,7 +874,7 @@ var PH = {
 		HTML = '';
 		PH.galleryOnline = [];
 		if(res){
-			var files = JSON.parse(res);
+			let files = JSON.parse(res);
 			for(let f=files.length-1;f>=0;f--){
 				presente = false;
 				for(let i in DB.files.data){
@@ -895,9 +886,9 @@ var PH = {
 		}
 		if(PH.galleryOnline.length){
 			for(let f in PH.galleryOnline){
-				var src = PH.galleryOnline[f].imgMini;
-				var isFile = false;
-				var type = '';
+				let src = PH.galleryOnline[f].imgMini,
+					isFile = false,
+					type = '';
 				if(src && src.indexOf("data:")!=0){
 					isFile = true;
 					type = src;
@@ -980,16 +971,16 @@ var PH = {
 	},
 	selFile: function( el ){ // seleziona un file nel popup di scelta file
 		el.classList.toggle("sel");
-		var els = document.getElementById("listsArchives").querySelectorAll(".sel");
+		let els = document.getElementById("listsArchives").querySelectorAll(".sel");
 		document.getElementById("btnArImport").getElementsByTagName("span")[0].innerHTML = els.length;
 		document.getElementById("btnArImport").classList.toggle("act",(els.length));
 	},
 	importaFile: function(){ // importa o nella gallery della scheda aperta
-		var els = document.getElementById("listsArchives").querySelectorAll(".sel");
+		let els = document.getElementById("listsArchives").querySelectorAll(".sel");
 		if(!els.length)return;
 		newGallery = PH.oldGallery;
-		for(e=0;e<els.length;e++){
-			var JSNPUSH = {	
+		for(let e=0;e<els.length;e++){
+			let JSNPUSH = {	
 				idFile: els[e].dataset.id,
 				imported: true
 			};
@@ -1003,12 +994,12 @@ var PH = {
 	},
 
 	screenShot: function(){ // acquisisce lo screenshot del manichino
-		var srcCanvas = document.getElementById("container").getElementsByTagName("canvas")[0];
-		var destinationCanvas = document.createElement("canvas");
+		let srcCanvas = document.getElementById("container").getElementsByTagName("canvas")[0],
+			destinationCanvas = document.createElement("canvas");
 		destinationCanvas.width = srcCanvas.width;
 		destinationCanvas.height = srcCanvas.height;
 
-		var destCtx = destinationCanvas.getContext('2d');
+		let destCtx = destinationCanvas.getContext('2d');
 
 		//create a rectangle with the desired color
 		destCtx.fillStyle = "#FFFFFF";
@@ -1023,8 +1014,8 @@ var PH = {
 	},
 	aggiungiScreenshot: function( obj ){ // aggiunge lo screenshot alla gallery
 		PH.img.src = DW.destImg.src;
-		var imgMini = PH.returnImageConverted();
-		var obj = {
+		let imgMini = PH.returnImageConverted();
+		obj = {
 			imgMini: imgMini,
 			imgBig: (PH.makeBig) ? PH.returnImageConverted( true ) : '',
 			fileType: imgMini.split("data:")[1].split(";")[0]
@@ -1049,7 +1040,7 @@ var PH = {
 			document.getElementById("img_draw_tools").classList.remove("nasRes");
 			document.getElementById("photo").classList.add("visPHop");
 		};
-		var el = document.getElementById("fileBig");
+		let el = document.getElementById("fileBig");
 		PH.img.src = screenshot ? PH.screenShot() : el.style.backgroundImage.replace('url("','').replace('")','');
 		el.classList.add("noLoader");
 		el.style.backgroundImage = '';
@@ -1058,8 +1049,8 @@ var PH = {
 	},
 	aggiungiScreenshot: function( obj ){ // aggiunge lo screenshot alla gallery
 		PH.img.src = DW.destImg.src;
-		var imgMini = PH.returnImageConverted();
-		var obj = {
+		let imgMini = PH.returnImageConverted();
+		obj = {
 			imgMini: imgMini,
 			imgBig: (PH.makeBig) ? PH.returnImageConverted( true ) : '',
 			fileType: imgMini.split("data:")[1].split(";")[0]
@@ -1121,7 +1112,7 @@ var DW = {
 			this.initialized = true;
 		}
 		document.querySelector(".cont_canvasImmagine").classList.add("canvas_big");
-		//var ctx = this.canvas.getContext('2d');
+		//let ctx = this.canvas.getContext('2d');
 		this.context = this.canvas.getContext('2d');
 		this.canvas.width = this.canvas.scrollWidth;
 		this.canvas.height = this.canvas.scrollHeight;
@@ -1261,13 +1252,14 @@ var DW = {
 		this.detectProperties();
 	},
 	detectProperties: function(){ // legge le proprietà del disegno
-		var els = document.getElementById("img_draw_tools").getElementsByTagName("span");
+		let els;
+		els = document.getElementById("img_draw_tools").getElementsByTagName("span");
 		for(let e=0;e<els.length;e++){
 			if(els[e].dataset.value){
 				els[e].classList.remove("elSel");
 			}
 		}
-		var els = document.getElementById("img_draw_dims").getElementsByTagName("span");
+		els = document.getElementById("img_draw_dims").getElementsByTagName("span");
 		for(let e=0;e<els.length;e++){
 			if(els[e].dataset.value){
 				if(els[e].dataset.value!='smoth'){
@@ -1277,7 +1269,7 @@ var DW = {
 				}
 			}
 		}
-		var els = document.getElementById("img_draw_cols").getElementsByTagName("span");
+		els = document.getElementById("img_draw_cols").getElementsByTagName("span");
 		for(let e=0;e<els.length;e++){
 			if(els[e].dataset.value){
 				els[e].classList.toggle("elSel",this.drawColor==els[e].dataset.value);

@@ -5,10 +5,10 @@ var MODULO_PUNTI = { // extend SET
 	PUNTI_free: [ "001","002","003","004","005","006","007","008","009","010","011","012","013","014","015","016","017","018","019" ],
 	
 	caricaPunti: function(){ // carica l'elenco dei punti e delle aree
-		var n = 0;
-		var contElenco = '';
-		var elencoPunti = '';
-		var puntiElenco = [];
+		let n = 0,
+			contElenco = '',
+			elencoPunti = '',
+			puntiElenco = [];
 		for(let siglaPunto in DB.set.punti){
 			if(__(DB.set.punti[siglaPunto])){
 				if(!__(DB.set.punti[siglaPunto].hidden,false)){
@@ -22,17 +22,17 @@ var MODULO_PUNTI = { // extend SET
 		}
 		puntiElenco.sort(sort_by("siglaPunto", false));
 		for(a=0;a<puntiElenco.length;a++){
-			var siglaPunto = puntiElenco[a].siglaPunto;
+			let siglaPunto = puntiElenco[a].siglaPunto;
 			n++;
 			
 			// verifico le autorizzazioni
-			var addLock =	(!SET.verFreePunti(siglaPunto)) ? ' lockedItem' : '';
+			let addLock =	(!SET.verFreePunti(siglaPunto)) ? ' lockedItem' : '';
 			// --------------------------
 			elencoPunti+='<p class="'+addLock+'" data-apparato="'+puntiElenco[a].apparato+'">'+this.scriviPunto(siglaPunto,true,true,puntiElenco[a].apparato)+'</p>';
 		}
 		
 		// FILTRI
-		var contFiltri =	'<div id="p_filtri">' +//+htmlEntities(TXT("Filtri"))+
+		let contFiltri =	'<div id="p_filtri">' +//+htmlEntities(TXT("Filtri"))+
 							'	<input id="punti_ricerca"' +
 							'		   onKeyUp="SET.filtraPunti();"' +
 							'		   class="okPlaceHolder"' +
@@ -62,14 +62,14 @@ var MODULO_PUNTI = { // extend SET
 		document.getElementById("lista_punti").innerHTML = '<div class="lista listaPunti">'+contElenco+'</div>';
 	},
 	filtraPunti: function(){ // filtra i punti per testo
-		var el = document.getElementById("punti_ricerca");
+		let el = document.getElementById("punti_ricerca");
 		el.classList.toggle("filtro_attivo_bordo",(el.value.trim()!=''));
-		var els = document.getElementById("elencoPunti").getElementsByTagName("p");
-		for(e=0;e<els.length;e++){
-			var i = els[e].getElementsByTagName("i")[0];
-			var a = els[e].getElementsByTagName("a")[0];
-			var siglaPunto = a.id.replace("ts_","");
-			var pass = false;
+		let els = document.getElementById("elencoPunti").getElementsByTagName("p");
+		for(let e=0;e<els.length;e++){
+			let i = els[e].getElementsByTagName("i")[0],
+				a = els[e].getElementsByTagName("a")[0],
+				siglaPunto = a.id.replace("ts_",""),
+				pass = false;
 			if(	DB.set.punti[siglaPunto].NomePunto.toLowerCase().indexOf(el.value.toLowerCase())==-1 &&
 				DB.set.punti[siglaPunto].AzioniPunto.toLowerCase().indexOf(el.value.toLowerCase())==-1 &&
 				DB.set.punti[siglaPunto].ChiaviPunto.toLowerCase().indexOf(el.value.toLowerCase())==-1 ){
@@ -108,7 +108,7 @@ var MODULO_PUNTI = { // extend SET
 		document.getElementById("f_filtri").classList.toggle("visElPt");
 	},
 	popolaFiltri: function(){ // popola il menu rapido dei filtri (in alto a SX)
-		var contFiltri =	'<div id="filtriSmart_ico"'+
+		let contFiltri =	'<div id="filtriSmart_ico"'+
 							'	  onClick="SET.swFiltriSmart();"' +
 							'     title="'+htmlEntities(TXT("FiltriSmart"))+'"><span></span></div>' +
 							

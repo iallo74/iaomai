@@ -249,7 +249,7 @@ var H = {
 			let d = new Date(anno*1,mese*1,0);
 			maxGiorni = d.getDate();	
 		}
-		Filtro = /^[\d]+$/;
+		let Filtro = /^[\d]+$/;
 		if(!el.value.trim()){
 			el.value = '';
 			el.dataset.preValue = '';
@@ -342,7 +342,7 @@ var H = {
 	
 	keyPrezzo: function( el ){
 		if(!el.dataset.preValue)el.dataset.preValue = el.dataset.origValue;
-		Filtro = /^[\d]+[\.,]{0,1}[\d]*$/;
+		let Filtro = /^[\d]+[\.,]{0,1}[\d]*$/;
 		if(!el.value.trim()){
 			el.value = '';
 			el.dataset.preValue = '';
@@ -440,7 +440,7 @@ var H = {
 		let val = H.elCombo.value.toLowerCase(),
 			els = document.getElementById("combo").getElementsByTagName("span"),
 			pres = false;
-		for(e=0;e<els.length;e++){
+		for(let e=0;e<els.length;e++){
 			if(els[e].innerText.toLowerCase().indexOf(val)==-1)els[e].classList.remove("comboElVis");
 			else{
 				els[e].classList.add("comboElVis");
@@ -480,7 +480,7 @@ var H = {
 	},
 	getElenco: function( elenco, campo ){
 		let EL = [];	
-		for(e in elenco){
+		for(let e in elenco){
 			if(EL.indexOf(elenco[e]) == -1)EL.push(elenco[e]);
 		}
 		return EL;
@@ -605,7 +605,7 @@ var H = {
 			oldValue = document.getElementById("label_add_"+sezione).dataset.oldValue;
 		}
 		let els = document.getElementById("elencoEtichette_"+sezione).getElementsByClassName("elMod");
-		for(e in els){
+		for(let e in els){
 			if(els[e].dataset){
 				let val = els[e].dataset.value.toLowerCase();
 				if(	val.trim() == txt.toLowerCase().trim() && !oldValue ){
@@ -616,7 +616,7 @@ var H = {
 		}
 		// verifico doppione
 		if(!oldValue){
-			for(e in H.etichetteProvvisorie){
+			for(let e in H.etichetteProvvisorie){
 				if(	txt.trim() == H.etichetteProvvisorie[e]["NomeEtichetta"] && 
 					sezione == H.etichetteProvvisorie[e]["sezione"]){
 					ALERT(TXT("erroreDuplicazioneElemento"))
@@ -647,7 +647,7 @@ var H = {
 							let etichette = toJson(PZ[d][p].etichette),
 								etMod = false;
 							if(etichette.length){
-								for(e in etichette){
+								for(let e in etichette){
 									if(	etichette[e].NomeEtichetta == oldValue &&
 										etichette[e].sezione == sezione ){
 										etichette[e].NomeEtichetta = txt.trim();
@@ -692,7 +692,7 @@ var H = {
 	},
 	aggiornaEtichette: function( el ){
 		let etichetta = el.id.replace("CSTMZ_","");
-		for(e in H.etichetteProvvisorie){
+		for(let e in H.etichetteProvvisorie){
 			if(H.etichetteProvvisorie[e].NomeEtichetta == etichetta){
 				H.etichetteProvvisorie[e].ValoreEtichetta = el.value;
 			}
@@ -730,7 +730,7 @@ var H = {
 			}
 		}
 		if(sezione && etichette_campi[sezione].length){
-			for(e in etichette_campi[sezione]){
+			for(let e in etichette_campi[sezione]){
 				let etichetta = etichette_campi[sezione][e][globals.siglaLingua];
 				let pass = true;
 				for(T in ETICHETTE){
@@ -763,7 +763,7 @@ var H = {
 			globalEtichette = H.getEtichette(sezione);
 		for(t in globalEtichette){
 			let pass = true;
-			for(e in H.etichetteProvvisorie){
+			for(let e in H.etichetteProvvisorie){
 				if(H.etichetteProvvisorie[e].NomeEtichetta == globalEtichette[t])pass = false;
 			}
 			if(pass)HTML += '<div id="label_'+sezione+'_'+t+'">' +
@@ -804,7 +804,7 @@ var H = {
 	},
 	swSezione: function( el ){
 		let sezione = el.parentElement.id.split("_")[2],
-			op = el.parentElement.classList.contains('sezioneChiusa') ? '' : '1';
+			op = el.parentElement.classList.contains('sezioneChiusa') ? '1' : '';
 		el.parentElement.classList.toggle('sezioneChiusa');
 		localStorage.setItem("op_"+sezione,op);
 	},
@@ -857,7 +857,7 @@ var H = {
 			if(oldValue==''){
 				let txt = campo.value.toLowerCase().trim(),
 					presenti = false;
-				for(e in els){
+				for(let e in els){
 					if(els[e].dataset){
 						if(els[e].dataset.value.toLowerCase().indexOf(txt)>-1 || txt==''){
 							els[e].parentElement.style.display = 'block';

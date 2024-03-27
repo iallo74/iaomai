@@ -1,31 +1,26 @@
 
-var camera, scene, renderer;
-var manichino, ANATOMIA, SETS;
-var SET = null;
-var obj_guide = null;
-var obj_guide_fisse = null;
-var mouse, raycaster, mouse_lb;
-var manichinoCaricato=false;
-var clock = new THREE.Clock();
-var smothingView = true;
-var raycastDisable = false;
-var areasView = false;
-var jss = [];
-var elAtt = null;
-var overLegenda = false;
-var overInterfaccia = false;
-var rotateEnd=panEnd=panEndZero=zoomEnd=null;
-var rotateStart=panStart=panStartZero=zoomStart=null;
-var noAnimate = true;
-var postApreSet = false;
-var ctrl_pressed = false;
-var ctrl_fixed = false;
-/*var colori = [ 
-	"#333",
-	"#076baa",
-	"#eae3d3"
-];*/
-var inizio = true;
+var camera, scene, renderer,
+	manichino, ANATOMIA, SETS,
+	SET = null,
+	obj_guide = null,
+	obj_guide_fisse = null,
+	mouse, raycaster, mouse_lb,
+	manichinoCaricato=false,
+	clock = new THREE.Clock(),
+	smothingView = true,
+	raycastDisable = false,
+	areasView = false,
+	jss = [],
+	elAtt = null,
+	overLegenda = false,
+	overInterfaccia = false,
+	rotateEnd=panEnd=panEndZero=zoomEnd=null,
+	rotateStart=panStart=panStartZero=zoomStart=null,
+	noAnimate = true,
+	postApreSet = false,
+	ctrl_pressed = false,
+	ctrl_fixed = false,
+	inizio = true;
 
 
 function init() {
@@ -48,32 +43,32 @@ function init() {
 	camera.lookAt(camera.position);
 	
 	// LUCE AMBIENTE
-	var ambientLight = new THREE.AmbientLight( 0xffffff, 0.6 );
+	let ambientLight = new THREE.AmbientLight( 0xffffff, 0.6 );
 	scene.add( ambientLight );
 	
 	// LUCE SULLA CAMERA
-	var pointLight = new THREE.PointLight( 0xffffff, 0.3 );
+	let pointLight = new THREE.PointLight( 0xffffff, 0.3 );
 	scene.add( camera );
 	camera.add( pointLight );
 	
 	// LUCE 1 (verticale dall'alto)
-	var directionalLight = new THREE.DirectionalLight( 0xffffff, 0.3 );
-	directionalLight.position.set( 17, 9, 30 );
-	scene.add( directionalLight );
+	let directionalLight1 = new THREE.DirectionalLight( 0xffffff, 0.3 );
+	directionalLight1.position.set( 17, 9, 30 );
+	scene.add( directionalLight1 );
 	
 	// LUCE 2 (destra)
-	var directionalLight = new THREE.DirectionalLight( 0xffffff, 0.3 );
-	directionalLight.position.set( 20, 1, 0 );
-	scene.add( directionalLight );
+	let directionalLight2 = new THREE.DirectionalLight( 0xffffff, 0.3 );
+	directionalLight2.position.set( 20, 1, 0 );
+	scene.add( directionalLight2 );
 	
 	// LUCE 3 (sinistra)
-	var directionalLight = new THREE.DirectionalLight( 0xffffff, 0.4 );
-	directionalLight.position.set( -100, 9, 30 );
-	scene.add( directionalLight );
+	let directionalLight3 = new THREE.DirectionalLight( 0xffffff, 0.4 );
+	directionalLight3.position.set( -100, 9, 30 );
+	scene.add( directionalLight3 );
 	
 	if(!isTablet){
 		// LUCE 4 (posteriore sinistra)
-		var directionalLight = new THREE.DirectionalLight( 0xffffff, 0.1 );
+		directionalLight = new THREE.DirectionalLight( 0xffffff, 0.1 );
 		directionalLight.position.set( -100, 9, -530 );
 		scene.add( directionalLight );
 	}
@@ -90,7 +85,7 @@ function init() {
 	renderer = new THREE.WebGLRenderer( { alpha: true, antialias: true, preserveDrawingBuffer: true  } );
 	renderer.setClearColor(0x000000, 0);
 	
-	var aspectRatio = window.devicePixelRatio;
+	let aspectRatio = window.devicePixelRatio;
 	if(isTablet)aspectRatio/=2;
 	//aspectRatio = 1;
 	renderer.setPixelRatio( aspectRatio );
@@ -116,9 +111,9 @@ function init() {
 	document.addEventListener( 'mousemove', onMouseMove, false );
 	document.addEventListener( 'mouseup', onClick, false );
 	if(!touchable){
-		var els = document.getElementById("interfaccia").getElementsByTagName("div");
-		var tE=els.length;
-		for(e=0;e<tE;e++){
+		let els = document.getElementById("interfaccia").getElementsByTagName("div");
+		let tE=els.length;
+		for(let e=0;e<tE;e++){
 			els[e].addEventListener("mouseover",function(){raycastDisable=true;},false);
 			els[e].addEventListener("mouseout",function(){raycastDisable=false;},false);
 		}
@@ -232,7 +227,7 @@ function caricaModello( cartella ){
 	globals.modello=JSON.parse(JSON.stringify(modelli[cartella]));
 	globals.modello.cartella=cartella;
 	visLoader(globals.modello.txtLoading);
-	var imports = clone(globals.modello.imports);
+	let imports = clone(globals.modello.imports);
 	for(let i in imports)imports[i]='modelli/'+cartella+'/'+imports[i];
 	imports.push("modelli/lang_"+LINGUE.getLinguaCont('anatomy_full')+".js");
 	IMPORTER.importaFiles( 	0, 
@@ -241,7 +236,7 @@ function caricaModello( cartella ){
 							document.getElementById("scripts") );
 	document.body.classList.add(globals.modello.cartella);
 	if(__(globals.modello.areaName,''))document.body.classList.add(__(globals.modello.areaName,''));
-	var els = document.getElementById("p1").getElementsByTagName("div");
+	let els = document.getElementById("p1").getElementsByTagName("div");
 	for(let e=0;e<els.length;e++){
 		els[e].classList.remove("btnSel");
 	}
@@ -255,10 +250,7 @@ function caricaModello( cartella ){
 }
 function scaricaModello( esci ){
 	try{SET._scaricaModello();}catch(err){};
-	var elencoSel = SCHEDA.elencoSel;
-	/*var notInit = false;
-	if(globals.set.cartella)notInit = true;
-	scaricaSet(notInit);*/
+	let elencoSel = SCHEDA.elencoSel;
 	if(globals.modello.cartella && MODELLO.flip)MODELLO.rifletti();
 	obj_guide = null;
 	manichinoCaricato = false;
@@ -336,8 +328,8 @@ function scaricaModello( esci ){
 	if(smartMenu && elencoSel && !globals.set.cartella)SCHEDA.apriElenco('base');
 }
 function cambiaModello( cartella ){
-	var chiedi = false;
-	var ChiediUscitaSet = ''
+	let chiedi = false,
+		ChiediUscitaSet = ''
 	if(globals.set.cartella!='' && cartella){
 		if(sets[globals.set.cartella].modelli.indexOf(cartella)==-1){
 			if(!cartella){
@@ -351,9 +343,9 @@ function cambiaModello( cartella ){
 	CONFIRM.vis(	ChiediUscitaSet,
 					!chiedi,
 					arguments ).then(function(pass){if(pass){
-					var v = getParamNames(CONFIRM.args.callee.toString());
+					let v = getParamNames(CONFIRM.args.callee.toString());
 					for(let i in v)eval(getArguments(v,i));
-		if(typeof(cartella)=='undefined')var cartella ='';
+		if(typeof(cartella)=='undefined')cartella ='';
 		if(chiedi){
 			scaricaSet();
 		}
@@ -380,7 +372,7 @@ function cambiaModello( cartella ){
 
 // CARICAMENTO DEI SETS
 function caricaSet( cartella, el, forzaModello='' ){
-	var daScheda = (SCHEDA.classeAperta == 'scheda_A' || SCHEDA.classeAperta == 'scheda_B' );
+	let daScheda = (SCHEDA.classeAperta == 'scheda_A' || SCHEDA.classeAperta == 'scheda_B' );
 	if(globals.modello.cartella)startAnimate();
 	if(el)postApreSet = true;
 	if(cartella == globals.set.cartella){
@@ -401,7 +393,7 @@ function caricaSet( cartella, el, forzaModello='' ){
 		globals.set.cartella = cartella;
 		globals.set.setSel = el;
 		if(areasView)MODELLO.swArea();
-		var modelli = filtraModelli(cartella);
+		let modelli = filtraModelli(cartella);
 		if(modelli.indexOf(globals.modello.cartella) == -1 && globals.modello.cartella)forzaModello = modelli[0];
 		
 		if(forzaModello && forzaModello!=globals.modello.cartella){
@@ -410,7 +402,7 @@ function caricaSet( cartella, el, forzaModello='' ){
 		}
 		//globals.set.imports.push("lang_"+LINGUE.getLinguaCont(cartella)+".js");
 		visLoader(globals.set.txtLoading);
-		var imports = clone(globals.set.imports);
+		let imports = clone(globals.set.imports);
 		for(let i in imports){
 			if(imports[i].indexOf("/")==-1)imports[i]='sets/'+cartella+'/'+imports[i];
 			imports[i]=imports[i].replace("[lang]",LINGUE.getLinguaCont(cartella));
@@ -443,7 +435,7 @@ function caricaSet( cartella, el, forzaModello='' ){
 	MENU.updateNaming();
 }
 function scaricaSet( notInit=false ){
-	var daScheda = (SCHEDA.classeAperta == 'scheda_A' ||
+	let daScheda = (SCHEDA.classeAperta == 'scheda_A' ||
 					SCHEDA.classeAperta == 'scheda_B');
 	CUSTOMS._end();
 	document.body.classList.remove('body_'+globals.set.cartella);
@@ -456,9 +448,9 @@ function scaricaSet( notInit=false ){
 	if(	!daScheda )SCHEDA.scaricaScheda();
 	if(!notInit){
 		if(SETS){
-			var els = document.getElementById("scripts").getElementsByTagName("script");
+			let els = document.getElementById("scripts").getElementsByTagName("script");
 			while(els.length)document.getElementById("scripts").removeChild(els[0]);
-			var els = document.getElementById("scripts").getElementsByTagName("link");
+			els = document.getElementById("scripts").getElementsByTagName("link");
 			while(els.length)document.getElementById("scripts").removeChild(els[0]);
 			document.getElementById("divs").innerHTML = '';
 		}
@@ -491,12 +483,12 @@ function scaricaSet( notInit=false ){
 	MENU.updateNaming();
 }
 function chiudiSet(){
-	var procOp = document.getElementById("scheda").classList.contains("scheda_procedura");
+	let procOp = document.getElementById("scheda").classList.contains("scheda_procedura");
 	//CONFIRM.vis(	TXT("ChiediEsciMappa").replace("[mappa]",globals.set.nome) ).then(function(pass){if(pass){
 		CONFIRM.vis(	TXT("UscireSenzaSalvare"),
 						!SCHEDA.verificaSchedaRet() && !procOp, 
 						arguments ).then(function(pass){if(pass){
-						var v = getParamNames(CONFIRM.args.callee.toString());
+						let v = getParamNames(CONFIRM.args.callee.toString());
 						for(let i in v)eval(getArguments(v,i));
 			if(procOp){
 				SCHEDA.formModificato = false;
@@ -520,9 +512,9 @@ function updateModels(){
 }
 
 function cambiaLingua(nLingua){
-	var l = location.href;
-	var urlPagina=l.substr(l.lastIndexOf("/")+1).split(/[?#]/)[0];
-	var FL=''
+	let l = location.href,
+		urlPagina=l.substr(l.lastIndexOf("/")+1).split(/[?#]/)[0],
+		FL=''
 	if(forzalogin)FL='?FL=1';
 	localStorage.siglaLingua = nLingua
 	location.replace(urlPagina);
@@ -531,26 +523,26 @@ function cambiaLingua(nLingua){
 
 // FILTRI SET
 function filtraSets(modello){
-	var res = []
+	let res = []
 	for(let s in sets){
 		if(sets[s].modelli.indexOf(modello) != -1)res.push(s);
 	}
 	return res;
 }
 function filtraModelli(cartella){
-	var res = []
+	let res = []
 	try{res = sets[cartella].modelli;}catch(err){}
 	return res;
 }
 
 // GESTORI EVENTI
-var stopOnResize = false;
-var traslStage = 0;
+var stopOnResize = false,
+	traslStage = 0;
 function onWindowResize(){
 	if(stopOnResize)return;
-	var w = window.innerWidth;
-	var s = window.innerWidth;
-	var h = window.innerHeight;
+	let w = window.innerWidth,
+		s = window.innerWidth,
+		h = window.innerHeight;
 	if(SCHEDA.aggancio.tipo == 'lato'){
 		/*w -= 20;
 		if(document.getElementById("elenchi_cont").classList.contains("visSch"))w -= document.getElementById("elenchi_cont").scrollWidth;
@@ -584,6 +576,7 @@ function onMouseMove( event ) {
 }
 
 function render(forza=false) {
+	let make;
 	if(globals.set.cartella && !ctrl_pressed && !ctrl_fixed){
 		try{
 			make = SET._render();
@@ -608,15 +601,14 @@ function animate() {
 		try{ SET._animate(); }catch(err){ if(SET)console.log(err); };
 		if(rotateEnd!=null){
 			if(!rotateStart)rotateStart = Date.now();
-			var coeff = 0.2;
-			if(!smothingView)coeff = 1;
-			var diffX = (rotateEnd.x-manichinoCont.rotation.x)*coeff;
-			var diffY = (rotateEnd.y-manichinoCont.rotation.y)*coeff;
-			var diffZ = (rotateEnd.z-manichinoCont.rotation.z)*coeff;
+			let coeff = !smothingView ? 1 : 0.2,
+				diffX = (rotateEnd.x-manichinoCont.rotation.x)*coeff,
+				diffY = (rotateEnd.y-manichinoCont.rotation.y)*coeff,
+				diffZ = (rotateEnd.z-manichinoCont.rotation.z)*coeff;
 			manichinoCont.rotation.set( manichinoCont.rotation.x+diffX, manichinoCont.rotation.y+diffY, manichinoCont.rotation.z+diffZ );
 			if(diffX<0.001 && diffX>-0.001 && diffY<0.001 && diffY>-0.001 && diffZ<0.001 && diffZ>-0.001){
 				rotateEnd=null;
-				var end = Date.now();
+				let end = Date.now();
 				if(end-rotateStart>5000)smothingView=false;
 				rotateStart=null;
 				if(!controlsM._premuto)normalizeRotation();
@@ -624,21 +616,19 @@ function animate() {
 					controlsM._ZPR=false;
 					controlsM._inMovimento=false;
 					saveRotationPosition();
-					//localStorage.modelRotation = JSON.stringify({x: manichinoCont.rotation.x, y: manichinoCont.rotation.y, z: manichinoCont.rotation.z});
 				}
 			}
 		}
 		if(panEnd!=null){
 			if(!panStart)panStart = Date.now();
-			var coeff = 0.2;
-			if(!smothingView)coeff = 1;
-			var diffX = (panEnd.x-manichinoCont.position.x)*coeff;
-			var diffY = (panEnd.y-manichinoCont.position.y)*coeff;
-			var diffZ = (panEnd.z-manichinoCont.position.z)*coeff;
+			let coeff = !smothingView ? 1 : 0.2,
+				diffX = (panEnd.x-manichinoCont.position.x)*coeff,
+				diffY = (panEnd.y-manichinoCont.position.y)*coeff,
+				diffZ = (panEnd.z-manichinoCont.position.z)*coeff;
 			manichinoCont.position.set(manichinoCont.position.x+diffX, manichinoCont.position.y+diffY, manichinoCont.position.z);
 			if(diffX<0.001 && diffX>-0.001 && diffY<0.001 && diffY>-0.001){
 				panEnd=null;
-				var end = Date.now();
+				let end = Date.now();
 				if(end-panStart>5000)smothingView=false;
 				panStart=null;
 				if(!controlsM._premuto){
@@ -651,15 +641,14 @@ function animate() {
 		}
 		if(panEndZero!=null){
 			if(!panStartZero)panStartZero = Date.now();
-			var coeff = 0.2;
-			if(!smothingView)coeff = 1;
-			var diffX = (panEndZero.x-manichino.position.x)*coeff;
-			var diffY = (panEndZero.y-manichino.position.y)*coeff;
-			var diffZ = (panEndZero.z-manichino.position.z)*coeff;
+			let coeff = !smothingView ? 1 : 0.2,
+				diffX = (panEndZero.x-manichino.position.x)*coeff,
+				diffY = (panEndZero.y-manichino.position.y)*coeff,
+				diffZ = (panEndZero.z-manichino.position.z)*coeff;
 			manichino.position.set( manichino.position.x+diffX, manichino.position.y+diffY, manichino.position.z+diffZ );
 			if(diffX<0.001 && diffX>-0.001 && diffY<0.001 && diffY>-0.001){
 				panEndZero=null;
-				var end = Date.now();
+				let end = Date.now();
 				if(end-panStartZero>5000)smothingView=false;
 				panStartZero=null;
 				if(!controlsM._premuto){
@@ -672,17 +661,16 @@ function animate() {
 		}
 		if(zoomEnd!=null){
 			if(!zoomStart)zoomStart = Date.now();
-			var coeff = 0.2;
-			if(!smothingView)coeff = 1;
-			var diff = (zoomEnd-manichinoCont.position.z)*coeff;
-			var preX = manichinoCont.position.x;
-			var preY = manichinoCont.position.y;
-			var preZ = manichinoCont.position.z;
-			var newZ = preZ + diff;
+			let coeff = !smothingView ? 1 : 0.2,
+				diff = (zoomEnd-manichinoCont.position.z)*coeff,
+				preX = manichinoCont.position.x,
+				preY = manichinoCont.position.y,
+				preZ = manichinoCont.position.z,
+				newZ = preZ + diff;
 			manichinoCont.position.set( preX , preY ,newZ );
 			if(diff<0.001 && diff>-0.001){
 				zoomEnd=null;
-				var end = Date.now();
+				let end = Date.now();
 				if(end-zoomStart>5000)smothingView=false;
 				zoomStart=null;
 				controlsM._ZPR=false;
@@ -768,8 +756,8 @@ function startAnimate(){
 	}
 }
 function normalizeRotation(){
-	var newX=(manichinoCont.rotation.x-((Math.PI*2)*parseInt(manichinoCont.rotation.x/(Math.PI*2))));
-	var newY=(manichinoCont.rotation.y-((Math.PI*2)*parseInt(manichinoCont.rotation.y/(Math.PI*2))));
+	let newX=(manichinoCont.rotation.x-((Math.PI*2)*parseInt(manichinoCont.rotation.x/(Math.PI*2)))),
+		newY=(manichinoCont.rotation.y-((Math.PI*2)*parseInt(manichinoCont.rotation.y/(Math.PI*2))));
 	if(newX>Math.PI)newX = 0 - (Math.PI - ( newX - Math.PI ));
 	if(newY>Math.PI)newY = 0 - (Math.PI - ( newY - Math.PI ));
 	if(newX<0-Math.PI)newX = (Math.PI - ( (0-newX) - Math.PI ));
@@ -789,8 +777,8 @@ function onClick(){
 	}
 }
 function centro(){ // riporta al centro
-	var centro = __(globals.modello.centro,{ x: 0, y: 0.7, z: 0 });
-	var zoom = centro.z;
+	let centro = __(globals.modello.centro,{ x: 0, y: 0.7, z: 0 }),
+		zoom = centro.z;
 	if(!centro.z)zoom = 0.5;
 	panEndZero = { x: 0, y: 0, z: 0 };
 	panEnd = centro;
@@ -810,7 +798,7 @@ function verMaxZoom(){
 	else return controlsM.maxZoom;
 }
 function zoom(n){
-	var zoomAtt = Math.round(manichinoCont.position.z)+n*2;
+	let zoomAtt = Math.round(manichinoCont.position.z)+n*2;
 	if(zoomAtt<verMinZoom())zoomAtt=verMinZoom();
 	if(zoomAtt>verMaxZoom())zoomAtt=verMaxZoom();
 	zoomEnd = zoomAtt;
@@ -820,14 +808,12 @@ function Canvas2Img(){
 	return renderer.domElement.toDataURL();
 }
 function toScreenPosition( obj, camera ){ // funzione per individuare la posizione sullo schermo di un oggetto
-    var vector = new THREE.Vector3();
-
-    var widthHalf = 0.5*renderer.context.canvas.scrollWidth;
-    var heightHalf = 0.5*renderer.context.canvas.scrollHeight;
+    let vector = new THREE.Vector3(),
+		widthHalf = 0.5*renderer.context.canvas.scrollWidth,
+		heightHalf = 0.5*renderer.context.canvas.scrollHeight;
     obj.updateMatrixWorld();
     vector.setFromMatrixPosition(obj.matrixWorld);
     vector.project(camera);
-
     vector.x = ( vector.x * widthHalf ) + widthHalf;
     vector.y = - ( vector.y * heightHalf ) + heightHalf;
 
@@ -838,12 +824,11 @@ function toScreenPosition( obj, camera ){ // funzione per individuare la posizio
 }
 function toScreenPosition2( obj, n ){ // il punto "n" della geometria nello schermo
 	if(typeof(obj) == 'undefined')return;
-	var widthHalf = 0.5*renderer.context.canvas.scrollWidth;
-	var heightHalf = 0.5*renderer.context.canvas.scrollHeight;
-	   
-	obj.updateMatrixWorld();
+	let vector = new THREE.Vector3(),
+	widthHalf = 0.5*renderer.context.canvas.scrollWidth,
+		heightHalf = 0.5*renderer.context.canvas.scrollHeight;
 	
-	var vector = new THREE.Vector3();
+	obj.updateMatrixWorld();
 	vector.x = obj.geometry.attributes.position.array[0 + (n * 3)];
 	vector.y = obj.geometry.attributes.position.array[1 + (n * 3)];
 	vector.z = obj.geometry.attributes.position.array[2 + (n * 3)];
@@ -860,7 +845,7 @@ function toScreenPosition2( obj, n ){ // il punto "n" della geometria nello sche
 function selCol(n){
 	if(localStorage.colore)document.body.classList.remove('bodyStyled'+localStorage.colore);
 	localStorage.colore = n;
-	var els = document.getElementById("colSel").getElementsByTagName("span");
+	let els = document.getElementById("colSel").getElementsByTagName("span");
 	for(let i = 0; i<els.length; i++){
 		if(localStorage.colore == 2-i)els[i].classList.add("cSel");
 		else els[i].classList.remove("cSel");
@@ -870,9 +855,9 @@ function selCol(n){
 	MODELLO.MAT.materialPelle.color = new THREE.Color( MODELLO.MAT.colsPelle[localStorage.colore] );
 }
 function getCenterPoint( mesh ){ // trova il punto centrale di una mesh
-    var geometry = mesh.geometry;
+    let geometry = mesh.geometry,
+		center = new THREE.Vector3();
     geometry.computeBoundingBox();
-    var center = new THREE.Vector3();
     geometry.boundingBox.getCenter( center );
     //mesh.localToWorld( center );
     return center;
@@ -884,7 +869,7 @@ function setPointerType( type ){
 		(type == 'TOUCH' && !touchDetect) || 
 		!(mouseDetect && touchDetect) )return;
 	localStorage.pointerType = type;
-	var els = document.getElementById("pointerSel").getElementsByTagName("b");
+	let els = document.getElementById("pointerSel").getElementsByTagName("b");
 	els[0].classList.remove("a_SEL");
 	els[1].classList.remove("a_SEL");
 	if(__(localStorage.pointerType,'') == 'MOUSE'){

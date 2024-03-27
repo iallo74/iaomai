@@ -15,8 +15,8 @@ var LOGIN = {
 	HTML: '',
 	daSync: false,
 	getUniqueId: function(){ // restituisce un ID unico come 1234-1234567890123
-		var t = new Date().getTime()+"";
-		var r = (Math.floor(Math.random() * (9999 - 1000 + 1)) + 1000)+"";
+		let t = new Date().getTime()+"",
+			r = (Math.floor(Math.random() * (9999 - 1000 + 1)) + 1000)+"";
 		return(r+"-"+t);
 	},
 	_init: function(){ // inizializza il DB.login
@@ -52,7 +52,7 @@ var LOGIN = {
 	},
 	
 	_frv: function(){ // restituisce 'frv' se non si è loggati
-		var str = '';
+		let str = '';
 		if(!LOGIN.logedin())str = 'frv';
 		return str;
 	},
@@ -114,7 +114,7 @@ var LOGIN = {
 		return;
 	},
 	recuperaPwd: function(){ // apre il link di recuper password (INSERIRE NELL'APP)
-		var url=CONN.linkReqPwd+'?l='+globals.siglaLingua.toLowerCase()+"&app="+tipoApp;
+		let url=CONN.linkReqPwd+'?l='+globals.siglaLingua.toLowerCase()+"&app="+tipoApp;
 		//if(window.cordova && window.cordova.platformId !== 'windows')window.open(url,'_system');
 		if(isCordova)window.open(url,'_system');
 		else window.open(url,'_blank');
@@ -129,17 +129,13 @@ var LOGIN = {
 		}
 	},
 	logedin: function(){ // restituisce il TOKEN, indicando che si è connessi
-		var TOKEN=DB.login.data.TOKEN;
-		if(typeof(TOKEN)=='undefined')TOKEN='';
-		return TOKEN;
+		return __(DB.login.data.TOKEN);
 	},
 	reg: function(){ // restituisce l'idUtente
-		var idUtente=DB.login.data.idUtente;
-		if(typeof(idUtente)=='undefined')idUtente='';
-		return idUtente;
+		return __(DB.login.data.idUtente);
 	},
 	getOS: function() { // restituisce il sistema operativo
-		var userAgent = window.navigator.userAgent,
+		let userAgent = window.navigator.userAgent,
 		platform = window.navigator.platform,
 		macosPlatforms = ['Macintosh', 'MacIntel', 'MacPPC', 'Mac68K'],
 		windowsPlatforms = ['Win32', 'Win64', 'Windows', 'WinCE'],
@@ -162,7 +158,7 @@ var LOGIN = {
 		return os;
 	},
 	getDeviceInfo: function(){ // restituisce un array con le caratteristiche del dispositivo
-		var device = {};
+		let device = {};
 		device.platform = "Unknown OS";
 		if (navigator.userAgent.indexOf("Win") != -1) device.platform = "Windows";
 		if (navigator.userAgent.indexOf("Mac") != -1) device.platform = "Macintosh";
@@ -219,13 +215,11 @@ var LOGIN = {
 				LOGIN.logedout=false;
 			}
 			document.getElementById("login").classList.remove("popup_back");
-			var USRprovv=DB.login.data.UsernameU;
-			if(typeof(USRprovv)=='undefined')USRprovv='';
 			document.getElementById("btnRecupero").style.display='block';
 		}else{
-			var jsn = JSON.parse(txt);
+			let jsn = JSON.parse(txt);
 			if(__(jsn.nuova_versione_presente))LOGIN.showUpgradeBox();
-			var Nuovo = jsn.data.Nuovo;
+			let Nuovo = jsn.data.Nuovo;
 			if(__(jsn.upgrade_info,false))MENU.visFeatures();
 			delete jsn.data.Nuovo;
 			if(__(jsn.errConn)){
@@ -254,7 +248,7 @@ var LOGIN = {
 											try{ SET.filtraSet(); }catch(err){}
 											PAZIENTI.deselPaziente();
 											if(globals.set.cartella){
-												var vSet = globals.set.cartella;
+												let vSet = globals.set.cartella;
 												scaricaSet();
 												caricaSet(vSet);
 											}
@@ -266,12 +260,12 @@ var LOGIN = {
 	},
 	verLogin: function( funct='' ){ // verifica se si è loggati (solo all'inizio)
 		localPouchDB.getItem(MD5("DB.login")).then(function(dbCont){ // leggo il DB
-			loginProvv=IMPORTER.DECOMPR(dbCont);
+			let loginProvv = IMPORTER.DECOMPR(dbCont);
 			if(loginProvv!=null){
-				DB.login=loginProvv;
+				DB.login = loginProvv;
 				localStorage.UniqueId = __(localStorage.UniqueId,LOGIN.getUniqueId());
-				var dateStored=DB.login.data.ExpDate*1;
-				var dateNow = new Date();
+				let dateStored=DB.login.data.ExpDate*1,
+					dateNow = new Date();
 				dateNow=dateNow.getTime()/1000;
 				dateNow=parseInt(dateNow);
 				if((dateStored<dateNow || dateStored==0 || isNaN(dateStored) || !eval(__(localStorage.RimaniConnesso,'false')))){
@@ -297,7 +291,7 @@ var LOGIN = {
 					setTimeout( function(){
 						if(getVar('demo') && !LOGIN.reg()){
 							
-							var boxProva = document.createElement('div');
+							let boxProva = document.createElement('div');
 							boxProva.onclick = function(){
 								if(!overChiudiProva)MENU.visRegistrazione();
 								document.body.removeChild(boxProva);
@@ -324,8 +318,8 @@ var LOGIN = {
 		});
 	},
 	scriviUtente: function(){ // scrive il nome utente nel menu impostazioni
-		var NN=LOGIN.getLS("Nominativo");
-		var EE=LOGIN.getLS("Email");
+		let NN = LOGIN.getLS("Nominativo")/* ,
+			EE=LOGIN.getLS("Email") */;
 		if(typeof(NN)=='undefined')NN='';
 		document.getElementById("p_reg").style.display = 'none';
 		document.getElementById("btn_login").classList.remove("btn_login_mini");
@@ -380,8 +374,7 @@ var LOGIN = {
 		//document.getElementById("js_interfaccia_modulo_customs_js").src = __(localStorage.customScript)?eval(atob(localStorage.customScript)):eval('CUSTOMS._init=function(){};CUSTOMS._end=function(){};CUSTOMS._conts={};');
 	},
 	attivaX: function(){ // attiva il pulsante X nel login
-		var USRprovv = DB.login.data.UsernameU;
-		if(typeof(USRprovv)=='undefined')USRprovv='';
+		let USRprovv = __(DB.login.data.UsernameU);
 		if(USRprovv.trim()!=''){
 			document.getElementById("USR").type='hidden';
 			document.getElementById("USR").value=DB.login.data.UsernameU;
@@ -434,7 +427,7 @@ var LOGIN = {
 			// se c'è connessione e ho il TOKEN
 			
 			// invio di dati di sincro per verificare modifiche
-			var JSNPOST = {
+			let JSNPOST = {
 				"note": DB.note.lastSync,
 				"procedure": DB.procedure.lastSync,
 				"servizi": DB.servizi.lastSync,
@@ -501,7 +494,7 @@ var LOGIN = {
 		LINGUE.getGoogleLanguages();
 	},
 	avviaVerToken: function(){ // Avvia la verifica del TOKEN ogni 10 secondi
-		tmVerT=setInterval(function(){LOGIN.verificaToken();},10000); // verifico ogni 10 secondi
+		LOGIN.tmVerT = setInterval(function(){LOGIN.verificaToken();},10000); // verifico ogni 10 secondi
 	},
 	resToken: function(txt){ // Risposta dalla verifica del TOKEN
 		if(typeof(txt) != 'undefined'){;
@@ -529,7 +522,6 @@ var LOGIN = {
 				
 				// se ci sono autorizzazioni nuove
 				if(__(elenco.auths,false)){
-					var modified = false;
 					if(elenco.auths.indexOf("anatomy_full")==-1)elenco.auths.push("anatomy_full");
 					DB.login.data.auths.sort();
 					elenco.auths.sort();
@@ -540,7 +532,6 @@ var LOGIN = {
 				}
 				// se ci sono moduli nuovi
 				if(__(elenco.modls,false)){
-					var modified = false;
 					DB.login.data.modls.sort();
 					elenco.modls.sort();
 					if(!(JSON.stringify(DB.login.data.modls) === JSON.stringify(elenco.modls))){
@@ -612,7 +603,7 @@ var LOGIN = {
 		}});
 	},
 	verInternationals: function(){
-		mod = false;
+		let mod = false;
 		if(!DB.login.data.valuta){
 			DB.login.data.valuta = DB.INT.paesi[DB.login.data.siglaPaese].valuta;
 			mod = true;
@@ -622,7 +613,7 @@ var LOGIN = {
 			mod = true;
 		}
 		if(mod){
-			var JSNPOST = {
+			let JSNPOST = {
 				password_pazienti: DB.login.data.password_pazienti,
 				valuta: DB.login.data.valuta,
 				sistema_misure: DB.login.data.sistema_misure
@@ -641,7 +632,7 @@ var LOGIN = {
 		if(CONN.retNoConn()){
 			if(verifica_form(document.registrazioneForm)){
 
-				var JSNPOST={	"Nominativo": document.registrazioneForm.Cognome.value+" "+document.registrazioneForm.Nome.value,
+				let JSNPOST={	"Nominativo": document.registrazioneForm.Cognome.value+" "+document.registrazioneForm.Nome.value,
 								"Email": document.registrazioneForm.Email.value,
 								"Telefono": document.registrazioneForm.Telefono.value,
 								"USR": document.registrazioneForm.USR.value,
@@ -686,7 +677,7 @@ var LOGIN = {
 		}
 		if(CONN.retNoConn()){
 			
-			var btnAdd = 	'<div class="p_paz_ref_menu" onClick="REF.open(\'feature.login\')">' +
+			let btnAdd = 	'<div class="p_paz_ref_menu" onClick="REF.open(\'feature.login\')">' +
 								TXT("ReferenceGuide") +
 							'</div>';
 						
@@ -701,7 +692,7 @@ var LOGIN = {
 			MENU.chiudiMenu();
 			applicaLoading(document.getElementById("scheda_testo"));
 			
-			/* var btnAdd = 	'<div class="p_paz_ref_menu" onClick="REF.open(\'feature.login\')">' +
+			/* let btnAdd = 	'<div class="p_paz_ref_menu" onClick="REF.open(\'feature.login\')">' +
 								TXT("ReferenceGuide") +
 							'</div>'; */
 							
@@ -716,23 +707,21 @@ var LOGIN = {
 		}
 	},
 	car_utente: function( txt ){ // risposta da modUtente: carica i dati dell'utente nella scheda
-		if(typeof(txt)=='undefined')var txt = '';
 		if(txt.substr(0,3)=='404'){
 			
 		}else{
 			CONFIRM.vis(	TXT("UscireSenzaSalvare"),
 							!SCHEDA.verificaSchedaRet(),
 							arguments ).then(function(pass){if(pass){
-							var v = getParamNames(CONFIRM.args.callee.toString());
+							let v = getParamNames(CONFIRM.args.callee.toString());
 							for(let i in v)eval(getArguments(v,i));
-							
+				
+				if(typeof(txt)=='undefined')txt = '';		
 				rimuoviLoading(document.getElementById("scheda_testo"));
-				var UT = JSON.parse(txt);
-				
-				var DataNascita = 0;
+				let UT = JSON.parse(txt),
+					DataNascita = 0,
+					HTML = '';
 				if(UT.DataNascita!='0000-00-00')DataNascita = new Date(UT.DataNascita);
-				
-				var HTML = '';
 				HTML += '<form id="formMod"' +
 						'	   name="formMod"' +
 						'	   method="post"' +
@@ -893,7 +882,7 @@ var LOGIN = {
 				
 				HTML += '</form>';
 				
-				var btnAdd = 	'<div class="p_paz_ref_menu" onClick="REF.open(\'feature.login\')">' +
+				let btnAdd = 	'<div class="p_paz_ref_menu" onClick="REF.open(\'feature.login\')">' +
 									TXT("ReferenceGuide") +
 								'</div>';
 				
@@ -933,29 +922,28 @@ var LOGIN = {
 		if(!verifica_form(document.getElementById("formMod")))return;
 		stopAnimate(true);
 		visLoader(TXT("SalvataggioInCorso"),'loadingLight');
-		var postAction = '';
 		
-		var imgAvatar = document.getElementById("avatarUtente").getElementsByTagName("div")[0].style.backgroundImage;
+		let imgAvatar = document.getElementById("avatarUtente").getElementsByTagName("div")[0].style.backgroundImage;
 		if(imgAvatar)imgAvatar = imgAvatar.split(imgAvatar[4])[1].replace(location.origin+location.pathname,'');
 		if(typeof(imgAvatar) == 'undefined')imgAvatar = '';
 		
-		var logoAzienda = document.getElementById("logoAzienda").getElementsByTagName("div")[0].style.backgroundImage;
+		let logoAzienda = document.getElementById("logoAzienda").getElementsByTagName("div")[0].style.backgroundImage;
 		if(logoAzienda)logoAzienda = logoAzienda.split(logoAzienda[4])[1];
 		if(typeof(logoAzienda) == 'undefined')logoAzienda = '';
 		
-		var aaaa = document.formMod.annoDataNascita.value;
-		var mm = document.formMod.meseDataNascita.value;
-		var gg = document.formMod.giornoDataNascita.value;
+		let aaaa = document.formMod.annoDataNascita.value,
+			mm = document.formMod.meseDataNascita.value,
+			gg = document.formMod.giornoDataNascita.value;
 		if(aaaa.length<4){
-			var l = aaaa.length;
+			let l = aaaa.length;
 			for(let n=l;n<4;n++)aaaa='0'+aaaa;
 		}
 		if(mm.length<2){
-			var l = mm.length;
+			let l = mm.length;
 			for(let n=l;n<2;n++)mm='0'+mm;
 		}
 		if(gg.length<2){
-			var l = gg.length;
+			let l = gg.length;
 			for(let n=l;n<2;n++)gg='0'+gg;
 		}
 		DataNascita = aaaa+"-"+mm+"-"+gg;
@@ -1006,7 +994,7 @@ var LOGIN = {
 			startAnimate();
 			nasLoader();
 		}else{
-			var UT = JSON.parse(txt);
+			let UT = JSON.parse(txt);
 			DB.login.data.Nominativo=UT.Nominativo;
 			DB.login.data.Email=UT.Email;
 			DB.login.data.Pseudonimo=UT.Pseudonimo;
@@ -1077,7 +1065,7 @@ var LOGIN = {
 				
 				LOGIN.totSinc = dbs.length-1; /* i files non contano perché sono solo in upload */
 				
-				var elenco='';				
+				let elenco='';				
 				if(Nuovo){ // se è un account nuovo popolo i DB con quelli DEMO
 					DB.pazienti.data = DB._pulisciFRV(archiviDemo.pazienti);
 					DB.fornitori.data = DB._pulisciFRV(archiviDemo.fornitori);
@@ -1085,7 +1073,7 @@ var LOGIN = {
 					DB.files.data = DB._pulisciFRV(archiviDemo.files);
 				}
 				
-				elencoFiles='';
+				let elencoFiles='';
 				for(let k in DB.files.data){
 					if(DB.files.data[k]){
 						if(	!__(DB.files.data[k].frv) && 
@@ -1097,7 +1085,7 @@ var LOGIN = {
 				}
 				if(elencoFiles)elenco+='"files": ['+elencoFiles.substr(0,elencoFiles.length-2)+'], ';
 				
-				elencoRicerche='';
+				let elencoRicerche='';
 				for(let k in DB.ricerche.data){
 					if(DB.ricerche.data[k].DataModifica*1>DB.ricerche.lastSync*1 || dwnl || bkp){
 						elencoRicerche+=JSON.stringify(DB.ricerche.data[k])+", ";
@@ -1105,7 +1093,7 @@ var LOGIN = {
 				}
 				if(elencoRicerche)elenco+='"ricerche": ['+elencoRicerche.substr(0,elencoRicerche.length-2)+'], ';
 				
-				elencoNote='';
+				let elencoNote='';
 				for(let k in DB.note.data){
 					if(DB.note.data[k].DataModifica*1>DB.note.lastSync*1 || dwnl || bkp){
 						elencoNote+=JSON.stringify(DB.note.data[k])+", ";
@@ -1113,9 +1101,9 @@ var LOGIN = {
 				}
 				if(elencoNote)elenco+='"note": ['+elencoNote.substr(0,elencoNote.length-2)+'], ';
 
-				elencoProcedure='';
+				let elencoProcedure='';
 				for(let k in DB.procedure.data){
-					var db={ 	"idProcedura": DB.procedure.data[k].idProcedura*1,
+					let db={ 	"idProcedura": DB.procedure.data[k].idProcedura*1,
 								"NomeProcedura": DB.procedure.data[k].NomeProcedura,
 								"app": DB.procedure.data[k].app,
 								"idLinguaProcedura": DB.procedure.data[k].idLinguaProcedura*1,
@@ -1126,7 +1114,7 @@ var LOGIN = {
 								"Condiviso": DB.procedure.data[k].Condiviso*1,
 								"Cancellato": DB.procedure.data[k].Cancellato*1 };
 
-					var aggiungere=false;
+					let aggiungere=false;
 					if((DB.procedure.data[k].DataModifica*1>DB.procedure.lastSync*1 || dwnl || bkp) && !__(DB.procedure.data[k].frv)){
 						aggiungere=true;
 					}
@@ -1142,9 +1130,9 @@ var LOGIN = {
 				}
 				if(elencoProcedure)elenco+='"procedure": ['+elencoProcedure.substr(0,elencoProcedure.length-2)+'], ';
 				
-				elencoAppuntamenti='';
+				let elencoAppuntamenti='';
 				for(let k in DB.appuntamenti.data){
-					var db={ 	"idAppuntamento": DB.appuntamenti.data[k].idAppuntamento*1,
+					let db={ 	"idAppuntamento": DB.appuntamenti.data[k].idAppuntamento*1,
 								"TestoAppuntamento": DB.appuntamenti.data[k].TestoAppuntamento,
 								"TimeAppuntamento": DB.appuntamenti.data[k].TimeAppuntamento*1,
 								"oraInizio": DB.appuntamenti.data[k].oraInizio*1,
@@ -1155,7 +1143,7 @@ var LOGIN = {
 								"DataCreazione":DB.appuntamenti.data[k].DataCreazione*1,
 								"Cancellato": DB.appuntamenti.data[k].Cancellato*1 };
 								
-					var aggiungere=false;
+					let aggiungere=false;
 					
 					if((DB.appuntamenti.data[k].DataModifica*1>DB.appuntamenti.lastSync*1 || dwnl || bkp) && !__(DB.appuntamenti.data[k].frv))aggiungere=true;
 					if(aggiungere){
@@ -1164,16 +1152,16 @@ var LOGIN = {
 				}
 				if(elencoAppuntamenti)elenco+='"appuntamenti": ['+elencoAppuntamenti.substr(0,elencoAppuntamenti.length-2)+'], ';
 				
-				elencoAnnotazioni='';
+				let elencoAnnotazioni='';
 				for(let k in DB.annotazioni.data){
-					var db={ 	"idAnnotazione": DB.annotazioni.data[k].idAnnotazione*1,
+					let db={ 	"idAnnotazione": DB.annotazioni.data[k].idAnnotazione*1,
 								"TitoloAnnotazione": DB.annotazioni.data[k].TitoloAnnotazione,
 								"TestoAnnotazione": DB.annotazioni.data[k].TestoAnnotazione,
 								"DataModifica":DB.annotazioni.data[k].DataModifica*1,
 								"DataCreazione":DB.annotazioni.data[k].DataCreazione*1,
 								"Cancellato": DB.annotazioni.data[k].Cancellato*1 };
 					
-					var aggiungere=false;
+					let aggiungere=false;
 					
 					if((DB.annotazioni.data[k].DataModifica*1>DB.annotazioni.lastSync*1 || dwnl || bkp) && !__(DB.annotazioni.data[k].frv))aggiungere=true;
 					if(aggiungere){
@@ -1182,9 +1170,9 @@ var LOGIN = {
 				}
 				if(elencoAnnotazioni)elenco+='"annotazioni": ['+elencoAnnotazioni.substr(0,elencoAnnotazioni.length-2)+'], ';
 				
-				elencoServizi='';
+				let elencoServizi='';
 				for(let k in DB.servizi.data){
-					var db={ 	"idServizio": DB.servizi.data[k].idServizio*1,
+					let db={ 	"idServizio": DB.servizi.data[k].idServizio*1,
 								"NomeServizio": DB.servizi.data[k].NomeServizio,
 								"DescrizioneServizio": DB.servizi.data[k].DescrizioneServizio,
 								"CostoServizio": DB.servizi.data[k].CostoServizio*1,
@@ -1193,7 +1181,7 @@ var LOGIN = {
 								"DataCreazione":DB.servizi.data[k].DataCreazione*1,
 								"Cancellato": DB.servizi.data[k].Cancellato*1 };
 					
-					var aggiungere=false;
+					let aggiungere=false;
 					
 					if((DB.servizi.data[k].DataModifica*1>DB.servizi.lastSync*1 || dwnl || bkp) && !__(DB.servizi.data[k].frv))aggiungere=true;
 					if(aggiungere){
@@ -1202,9 +1190,9 @@ var LOGIN = {
 				}
 				if(elencoServizi)elenco+='"servizi": ['+elencoServizi.substr(0,elencoServizi.length-2)+'], ';
 				
-				elencoFornitori='';
+				let elencoFornitori='';
 				for(let k in DB.fornitori.data){
-					var db={ 	"idFornitore": DB.fornitori.data[k].idFornitore*1,
+					let db={ 	"idFornitore": DB.fornitori.data[k].idFornitore*1,
 								"RagioneSociale": DB.fornitori.data[k].RagioneSociale,
 								"Intestazione": DB.fornitori.data[k].Intestazione,
 								"PartitaIva": DB.fornitori.data[k].PartitaIva,
@@ -1222,7 +1210,7 @@ var LOGIN = {
 								"DataCreazione":DB.fornitori.data[k].DataCreazione*1,
 								"Cancellato": DB.fornitori.data[k].Cancellato*1 };
 					
-					var aggiungere=false;
+					let aggiungere=false;
 					
 					if((DB.fornitori.data[k].DataModifica*1>DB.fornitori.lastSync*1 || dwnl || bkp) && !__(DB.fornitori.data[k].frv))aggiungere=true;
 					if(aggiungere){
@@ -1231,9 +1219,9 @@ var LOGIN = {
 				}
 				if(elencoFornitori)elenco+='"fornitori": ['+elencoFornitori.substr(0,elencoFornitori.length-2)+'], ';
 
-				elencoPazienti='';
+				let elencoPazienti='';
 				for(let k in DB.pazienti.data){
-					var db={ 	"idPaziente": DB.pazienti.data[k].idPaziente*1,
+					let db={ 	"idPaziente": DB.pazienti.data[k].idPaziente*1,
 								"Nome": DB.pazienti.data[k].Nome,
 								"Cognome": DB.pazienti.data[k].Cognome,
 								"Indirizzo": DB.pazienti.data[k].Indirizzo,
@@ -1271,12 +1259,12 @@ var LOGIN = {
 								"Cancellato": DB.pazienti.data[k].Cancellato*1,
 								"id_interno": k*1 };
 					
-					var aggiungere=false;
+					let aggiungere=false;
 					
 					db.trattamenti=[];
-					var n=-1;
-					var aggiungereTrattamenti=false;
-					var elencoTrattamenti=[];
+					let n=-1,
+						aggiungereTrattamenti=false,
+						elencoTrattamenti=[];
 					for(t in DB.pazienti.data[k].trattamenti){
 						if(DB.pazienti.data[k].trattamenti[t].DataModifica*1>DB.pazienti.lastSync*1 || dwnl || bkp){
 							DB.pazienti.data[k].trattamenti[t].id_interno=t*1;
@@ -1297,9 +1285,9 @@ var LOGIN = {
 					}
 					
 					db.saldi=[];
-					var n=-1;
-					var aggiungereSaldi=false;
-					var elencoSaldi=[];
+					n=-1;
+					let	aggiungereSaldi=false,
+						elencoSaldi=[];
 					for(t in DB.pazienti.data[k].saldi){
 						if(DB.pazienti.data[k].saldi[t].DataModifica*1>DB.pazienti.lastSync*1 || dwnl || bkp){
 							DB.pazienti.data[k].saldi[t].id_interno=t*1;
@@ -1354,7 +1342,7 @@ var LOGIN = {
 					DB.cicli.lastSync=0;
 					localPouchDB.setItem(MD5("DB"+LOGIN._frv()+".cicli"), IMPORTER.COMPR(DB.cicli));
 				}
-				syncJSN='{';
+				let syncJSN = '{';
 				if(BACKUPS.titleProvv)syncJSN += '"title":"'+BACKUPS.titleProvv.replace(/"/,'\"')+'",';
 				syncJSN += 	'"note":"'+DB.note.lastSync+'",' +
 							'"procedure":"'+DB.procedure.lastSync+'",' +
@@ -1376,7 +1364,7 @@ var LOGIN = {
 									"b64=1&JSNPOST="+window.btoa(encodeURIComponent(syncJSN)), 
 									"LOGIN.retGlobalSyncro");
 				}else{
-					var dateNow = new Date();
+					let dateNow = new Date();
 					dateNow=dateNow.getTime()/1000;
 					dateNow=parseInt(dateNow);
 					
@@ -1401,8 +1389,9 @@ var LOGIN = {
 			return;
 		}
 		if(SCHEDA.btnSel)SCHEDA.btnSel_id = SCHEDA.btnSel.id;
-		nSinc=0;
-		var syncUp=false;
+		LOGIN.nSinc=0;
+		let syncUp=false,
+			passato;
 		elenco=JSON.parse(txt);
 		
 		lastSync=elenco.lastSync;
@@ -1441,8 +1430,8 @@ var LOGIN = {
 			
 			if(BACKUPS.bkpProvv){ // <<<<<<< per il backup
 				for(let k in DB.ricerche.data){
-					var trovato = false;
-					var RC = DB.ricerche.data[k];
+					let trovato = false,
+						RC = DB.ricerche.data[k];
 					for(let p in elenco.ricerche){
 						/*
 							se sto ripristinando un backup
@@ -1472,7 +1461,7 @@ var LOGIN = {
 			for(let p in elenco.note){
 				// per ogni novità verifico l'esistenza
 				passato=false;
-				var id_interno=-1;
+				let id_interno=-1;
 				if(BACKUPS.bkpProvv)elenco.note[p].DataModifica = lastSync*1;
 				JSNPUSH={	"TestoAnnotazione": elenco.note[p].TestoAnnotazione,
 							"hidePunto": elenco.note[p].hidePunto,
@@ -1484,7 +1473,7 @@ var LOGIN = {
 							"DataModifica": elenco.note[p].DataModifica*1 };
 							
 				for(let k in DB.note.data){
-					var NT = DB.note.data[k];
+					let NT = DB.note.data[k];
 					if(	NT.meridiano==elenco.note[p].meridiano && 
 						NT.numeroPunto+''==elenco.note[p].numeroPunto+'' && 
 						NT.idPaziente==elenco.note[p].idPaziente){
@@ -1504,8 +1493,8 @@ var LOGIN = {
 			
 			if(BACKUPS.bkpProvv){ // <<<<<<< per il backup
 				for(let k in DB.note.data){
-					var trovato = false;
-					var NT = DB.note.data[k];
+					let trovato = false,
+						NT = DB.note.data[k];
 					for(let p in elenco.note){
 						/*
 							se sto ripristinando un backup
@@ -1557,7 +1546,7 @@ var LOGIN = {
 				}
 				
 				for(let k in DB.procedure.data){
-					var PR = DB.procedure.data[k];
+					let PR = DB.procedure.data[k];
 					if(	( PR.idProcedura*1>0 && PR.idProcedura*1==elenco.procedure[p].idProcedura*1 ) || 
 						(	PR.idProcedura*1==0 &&
 							PR.NomeProcedura==elenco.procedure[p].NomeProcedura && 
@@ -1574,8 +1563,8 @@ var LOGIN = {
 			
 			if(BACKUPS.bkpProvv){ // <<<<<<< per il backup
 				for(let k in DB.procedure.data){
-					var trovato = false;
-					var PR = DB.procedure.data[k];
+					let trovato = false,
+						PR = DB.procedure.data[k];
 					for(let p in elenco.procedure){
 						/*
 							se sto ripristinando un backup
@@ -1619,7 +1608,7 @@ var LOGIN = {
 							"frv": false };
 				
 				for(let k in DB.servizi.data){
-					var SR = DB.servizi.data[k];
+					let SR = DB.servizi.data[k];
 					if(	( SR.idServizio*1>0 && SR.idServizio*1==elenco.servizi[p].idServizio*1 ) || 
 						(	SR.idServizio*1==0 &&
 							SR.NomeServizio==elenco.servizi[p].NomeServizio && 
@@ -1636,8 +1625,8 @@ var LOGIN = {
 			
 			if(BACKUPS.bkpProvv){ // <<<<<<< per il backup
 				for(let k in DB.servizi.data){
-					var trovato = false;
-					var SR = DB.servizi.data[k];
+					let trovato = false,
+						SR = DB.servizi.data[k];
 					for(let p in elenco.servizi){
 						/*
 							se sto ripristinando un backup
@@ -1690,7 +1679,7 @@ var LOGIN = {
 							"frv": false };
 				
 				for(let k in DB.fornitori.data){
-					var FR = DB.fornitori.data[k];
+					let FR = DB.fornitori.data[k];
 					if(	( FR.idFornitore*1>0 && FR.idFornitore*1==elenco.fornitori[p].idFornitore*1 ) || 
 						(	FR.idFornitore*1==0 &&
 							FR.RagioneSociale==elenco.fornitori[p].RagioneSociale && 
@@ -1707,8 +1696,8 @@ var LOGIN = {
 			
 			if(BACKUPS.bkpProvv){ // <<<<<<< per il backup
 				for(let k in DB.fornitori.data){
-					var trovato = false;
-					var FR = DB.fornitori.data[k];
+					let trovato = false,
+						FR = DB.fornitori.data[k];
 					for(let p in elenco.fornitori){
 						/*
 							se sto ripristinando un backup
@@ -1753,7 +1742,7 @@ var LOGIN = {
 							"frv": false };
 				
 				for(let k in DB.appuntamenti.data){
-					var AP = DB.appuntamenti.data[k];
+					let AP = DB.appuntamenti.data[k];
 					if(	( AP.idAppuntamento*1>-1 && AP.idAppuntamento*1==elenco.appuntamenti[p].idAppuntamento*1 ) || 
 						(	AP.idAppuntamento*1==-1 &&
 							AP.TestoAppuntamento==elenco.appuntamenti[p].TestoAppuntamento && 
@@ -1770,8 +1759,8 @@ var LOGIN = {
 			
 			if(BACKUPS.bkpProvv){ // <<<<<<< per il backup
 				for(let k in DB.appuntamenti.data){
-					var trovato = false;
-					var AP = DB.appuntamenti.data[k];
+					let trovato = false,
+						AP = DB.appuntamenti.data[k];
 					for(let p in elenco.appuntamenti){
 						/*
 							se sto ripristinando un backup
@@ -1814,7 +1803,7 @@ var LOGIN = {
 							"frv": false };
 				
 				for(let k in DB.annotazioni.data){
-					var AN = DB.annotazioni.data[k];
+					let AN = DB.annotazioni.data[k];
 					if(	( AN.idAnnotazione*1>0 && AN.idAnnotazione*1==elenco.annotazioni[p].idAnnotazione*1 ) || 
 						(	AN.idAnnotazione*1==0 &&
 							AN.TitoloAnnotazione==elenco.annotazioni[p].TitoloAnnotazione && 
@@ -1831,8 +1820,8 @@ var LOGIN = {
 			
 			if(BACKUPS.bkpProvv){ // <<<<<<< per il backup
 				for(let k in DB.annotazioni.data){
-					var trovato = false;
-					var AN = DB.annotazioni.data[k];
+					let trovato = false,
+						AN = DB.annotazioni.data[k];
 					for(let p in elenco.annotazioni){
 						/*
 							se sto ripristinando un backup
@@ -1904,8 +1893,8 @@ var LOGIN = {
 							"Cancellato": elenco.pazienti[p].Cancellato*1,
 							"frv": false };
 	
-				var trattamentiProvvisori=[];
-				var saldiProvvisori=[];
+				let trattamentiProvvisori=[],
+					saldiProvvisori=[];
 				kDef=-1; // il paziente di riferimento su cui lavorare per i trattamenti
 				for(let k in DB.pazienti.data){
 					PZ = DB.pazienti.data[k];
@@ -1918,7 +1907,7 @@ var LOGIN = {
 						if(typeof(PZ.saldi)=='undefined')PZ.saldi=[];
 						trattamentiProvvisori=JSON.parse(JSON.stringify(PZ.trattamenti));
 						saldiProvvisori=JSON.parse(JSON.stringify(PZ.saldi));
-						var md5='';
+						let md5 = '';
 						if(typeof(DB.pazienti.data[k].md5)!='undefined')md5=PZ.md5;
 						DB.pazienti.data[k] = JSNPUSH;
 						DB.pazienti.data[k].md5=md5;
@@ -1935,19 +1924,19 @@ var LOGIN = {
 				
 				// TRATTAMENTI x ogni paziente
 				if(elenco.pazienti[p].Cancellato*1!=1){ // se il paziente NON è cancellato
-					var trattamenti=JSON.parse(JSON.stringify(elenco.pazienti[p].trattamenti)); // elenco trattamenti arrivati nuovi
+					let trattamenti=JSON.parse(JSON.stringify(elenco.pazienti[p].trattamenti)); // elenco trattamenti arrivati nuovi
 					
 					for(t in trattamenti){ // in tutti i trattamenti arrivati
 						passato=false;
 						
-						var puntiMTC = trattamenti[t].puntiMTC;
+						let puntiMTC = trattamenti[t].puntiMTC;
 						
 						if(puntiMTC.substr(0,1)!="["){ // per i dati che arrivano da TM15
 							if(puntiMTC.indexOf(".")>-1){
-								var puntiProvvisori = [];
-								var parti=puntiMTC.split("|");
+								let puntiProvvisori = [],
+									parti = puntiMTC.split("|");
 								for(let pt in parti){
-									var ppp = parti[pt].split(".");
+									let ppp = parti[pt].split(".");
 									puntiProvvisori.push({
 										n: ppp[0],
 										m: ppp[1],
@@ -1982,8 +1971,8 @@ var LOGIN = {
 									"Cancellato": trattamenti[t].Cancellato*1,
 									"frv": false };		
 						for(let g in trattamentiProvvisori){ // in quelli esistenti ...
-							var TR = trattamentiProvvisori[g];
-							var md5='';
+							let TR = trattamentiProvvisori[g],
+								md5='';
 							if(typeof(trattamentiProvvisori[g].md5)!='undefined')md5=trattamentiProvvisori[g].md5;
 							//console.log(md5)
 							if(	(TR.idTrattamento*1>0 && TR.idTrattamento*1==trattamenti[t].idTrattamento*1) ||
@@ -2002,8 +1991,8 @@ var LOGIN = {
 					
 					if(BACKUPS.bkpProvv){ // <<<<<<< per il backup
 						for(let g in trattamentiProvvisori){ 
-							var trovato = false;
-							var TR = trattamentiProvvisori[g];
+							let trovato = false,
+								TR = trattamentiProvvisori[g];
 							for(t in trattamenti){
 								/*
 									se sto ripristinando un backup
@@ -2027,7 +2016,7 @@ var LOGIN = {
 				}
 				// SALDI x ogni paziente
 				if(elenco.pazienti[p].Cancellato*1!=1){ // se il paziente NON è cancellato
-					var saldi=JSON.parse(JSON.stringify(elenco.pazienti[p].saldi)); // elenco trattamenti arrivati nuovi
+					let saldi=JSON.parse(JSON.stringify(elenco.pazienti[p].saldi)); // elenco trattamenti arrivati nuovi
 					
 					for(t in saldi){ // in tutti i trattamenti arrivati
 						passato=false;
@@ -2044,12 +2033,12 @@ var LOGIN = {
 									
 						if(debug)console.log(JSNPUSH);
 						for(let g in saldiProvvisori){ // in quelli esistenti ...
-							var SL = saldiProvvisori[g];
+							let SL = saldiProvvisori[g];
 							if(	( SL.idSaldo*1>0 && SL.idSaldo*1==saldi[t].idSaldo*1) ||
 								  SL.id_interno*1==saldi[t].p*1 ){ // verifico l'esistenza
 								
 								// se esiste aggiorna
-								var md5='';
+								let md5='';
 								if(typeof(saldi[t].md5)!='undefined')md5=saldi[t].md5;
 								saldiProvvisori[g]=JSNPUSH;
 								saldiProvvisori[g].md5=md5;
@@ -2064,8 +2053,8 @@ var LOGIN = {
 					
 					if(BACKUPS.bkpProvv){ // <<<<<<< per il backup
 						for(let g in saldiProvvisori){ 
-							var trovato = false;
-							var SA = saldiProvvisori[g];
+							let trovato = false,
+								SA = saldiProvvisori[g];
 							for(t in saldi){
 								/*
 									se sto ripristinando un backup
@@ -2096,8 +2085,8 @@ var LOGIN = {
 			
 			if(BACKUPS.bkpProvv){ // <<<<<<< per il backup
 				for(let k in DB.pazienti.data){
-					var trovato = false;
-					var PZ = DB.pazienti.data[k];
+					let trovato = false,
+						PZ = DB.pazienti.data[k];
 					for(let p in elenco.pazienti){
 						/*
 							se sto ripristinando un backup
@@ -2133,7 +2122,7 @@ var LOGIN = {
 		LINGUE.getGoogleLanguages();
 	},
 	verSincro: function ( txt ){ // verifica la sincronizzazione della tabella txt
-		nSinc++;
+		LOGIN.nSinc++;
 		if(LOGIN.afterFunct && LOGIN.afterFunct.indexOf('/*noRic*/')==-1) {
 			switch(txt){
 				
@@ -2172,7 +2161,7 @@ var LOGIN = {
 					
 			}
 		}
-		if(nSinc == LOGIN.totSinc){ // pazienti | procedure | note | ricerche
+		if(LOGIN.nSinc == LOGIN.totSinc){ // pazienti | procedure | note | ricerche
 			LOGIN.pulisciTabelle();
 			DB._verDbSize();
 		}
@@ -2180,52 +2169,54 @@ var LOGIN = {
 	pulisciTabelle: function(){ // elimina gli elementi "Cancellati"
 		if(!BACKUPS.bkpProvv){
 			DB.pazienti.data = __(DB.pazienti.data,[]);
-			PZS = DB.pazienti.data;
+			let PZS = DB.pazienti.data,
+				tot,
+				tot2;
 			tot = PZS.length;
 			for(let p=tot-1;p>=0;p--){
 				if(PZS[p].Cancellato=='1' || __(PZS[p].frv))PZS.splice(p, 1)
 			}
 			tot = PZS.length;
 			for(let p=tot-1;p>=0;p--){
-				TRS = DB.pazienti.data[p].trattamenti;
+				let TRS = DB.pazienti.data[p].trattamenti;
 				tot2 = TRS.length;
 				for(t=tot2-1;t>=0;t--){
 					if(TRS[t].Cancellato=='1' || __(TRS[t].frv))TRS.splice(t, 1);
 				}
 			}
 			for(let p=tot-1;p>=0;p--){
-				SAS = DB.pazienti.data[p].saldi;
+				let SAS = DB.pazienti.data[p].saldi;
 				tot2 = SAS.length;
 				for(let s=tot2-1;s>=0;s--){
 					if(SAS[s].Cancellato=='1' || __(SAS[s].frv))SAS.splice(s, 1);
 				}
 			}
 			DB.fornitori.data = __(DB.fornitori.data,[]);
-			FRS = DB.fornitori.data;
+			let FRS = DB.fornitori.data;
 			tot = FRS.length;
 			for(let p=tot-1;p>=0;p--){
 				if(FRS[p].Cancellato=='1' || __(FRS[p].frv))FRS.splice(p, 1)
 			}
 			DB.servizi.data = __(DB.servizi.data,[]);
-			SRS = DB.servizi.data;
+			let SRS = DB.servizi.data;
 			tot = SRS.length;
 			for(let p=tot-1;p>=0;p--){
 				if(SRS[p].Cancellato=='1' || __(SRS[p].frv))SRS.splice(p, 1)
 			}
 			DB.appuntamenti.data = __(DB.appuntamenti.data,[]);
-			APS = DB.appuntamenti.data;
+			let APS = DB.appuntamenti.data;
 			tot = APS.length;
 			for(let p=tot-1;p>=0;p--){
 				if(APS[p].Cancellato=='1' || __(APS[p].frv))APS.splice(p, 1)
 			}
 			DB.annotazioni.data = __(DB.annotazioni.data,[]);
-			ANS = DB.annotazioni.data;
+			let ANS = DB.annotazioni.data;
 			tot = ANS.length;
 			for(let p=tot-1;p>=0;p--){
 				if(ANS[p].Cancellato=='1' || __(ANS[p].frv))ANS.splice(p, 1)
 			}
 			DB.procedure.data = __(DB.procedure.data,[]);
-			PRS = DB.procedure.data;
+			let PRS = DB.procedure.data;
 			tot = PRS.length;
 			for(let p=tot-1;p>=0;p--){
 				if(PRS[p].Cancellato=='1' || __(PRS[p].frv))PRS.splice(p, 1)
@@ -2233,7 +2224,7 @@ var LOGIN = {
 			PRS = DB.procedure.data;
 			tot = PRS.length;
 			for(let p=tot-1;p>=0;p--){
-				DTS = DB.procedure.data[p].dettagliProcedura;
+				let DTS = DB.procedure.data[p].dettagliProcedura;
 				tot2 = DTS.length;
 				for(let d=tot2-1;d>=0;d--){
 					if(DTS[d].Cancellato=='1' || __(DTS[d].frv))DTS.splice(d, 1);
@@ -2275,7 +2266,7 @@ var LOGIN = {
 			SERVIZI.caricaServizi();
 			ANNOTAZIONI.caricaAnnotazioni();
 			if(	SCHEDA.elencoSel == 'pazienti'){	
-				var lista = document.getElementById("lista_pazienti").querySelector(".lista");
+				let lista = document.getElementById("lista_pazienti").querySelector(".lista");
 				if(lista.classList.contains("listaTrattamenti"))PAZIENTI.caricaTrattamenti( true ); // true serve per ...
 				if(lista.classList.contains("listaSaldi"))PAZIENTI.caricaSaldi( true ); //    ... riaccendere il pulsante
 			}
@@ -2292,7 +2283,7 @@ var LOGIN = {
 		});
 	},
 	download:function( filename, text ){ // scarica un file
-		var element = document.createElement('a');
+		let element = document.createElement('a');
 		element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(text));
 		element.setAttribute('download', filename);	
 		element.style.display = 'none';
@@ -2309,14 +2300,14 @@ var LOGIN = {
 	},
 	updateGallery: function(){ // aggiorna la Gallery e richiama l'API url
 		if(CONN.getConn() && LOGIN.logedin()!=''){
-			var elenco = [];
+			let elenco = [];
 			for(let p in DB.pazienti.data){
 				// verifico nel paziente
-				var gallery =  __(DB.pazienti.data[p].gallery,[]);
+				let gallery =  __(DB.pazienti.data[p].gallery,[]);
 				if(gallery.length){
 					for(let g in gallery){
 						if(!__(gallery[g].imgMini)){
-							var add = true;
+							let add = true;
 							for(let f in DB.files.data){
 								if(DB.files.data[f].idFile==gallery[g].idFile && __(DB.files.data[f].imgMini))add = false;
 							}
@@ -2327,11 +2318,11 @@ var LOGIN = {
 				// verifico nei trattamenti
 				for(t in DB.pazienti.data[p].trattamenti){
 					if(DB.pazienti.data[p].trattamenti[t].gallery){
-						var gallery =  DB.pazienti.data[p].trattamenti[t].gallery;
+						let gallery =  DB.pazienti.data[p].trattamenti[t].gallery;
 						if(gallery.length){
 							for(let g in gallery){
 								if(!__(gallery[g].imgMini)){
-									var add = true;
+									let add = true;
 									for(let f in DB.files.data){
 										if(DB.files.data[f].idFile==gallery[g].idFile && __(DB.files.data[f].imgMini))add = false;
 									}
@@ -2344,11 +2335,11 @@ var LOGIN = {
 			}
 			for(let p in DB.procedure.data){
 				// verifico nella procedura
-				var gallery =  __(DB.procedure.data[p].gallery,[]);
+				let gallery =  __(DB.procedure.data[p].gallery,[]);
 				if(gallery.length){
 					for(let g in gallery){
 						if(!__(gallery[g].imgMini)){
-							var add = true;
+							let add = true;
 							for(let f in DB.files.data){
 								if(DB.files.data[f].idFile==gallery[g].idFile && __(DB.files.data[f].imgMini))add = false;
 							}
@@ -2362,10 +2353,10 @@ var LOGIN = {
 	},
 	updateGallery_save: function( res ){ // risposta dall'API url dell'aggiornamento gallery
 		if(res){
-			var modificato = false;
-			var files = JSON.parse(res);
+			let modificato = false,
+				files = JSON.parse(res);
 			for(let f in files){
-				var presente = false;
+				let presente = false;
 				for(let g in DB.files.data){
 					if(DB.files.data[g].idFile == files[f].idFile){
 						DB.files.data[g].imgMini = files[f].imgMini;
@@ -2387,7 +2378,7 @@ var LOGIN = {
 			presente = false;
 			for(let p in DB.pazienti.data){
 				// verifico nel paziente
-				var gallery =  __(DB.pazienti.data[p].gallery,[]);
+				let gallery =  __(DB.pazienti.data[p].gallery,[]);
 				if(gallery.length){
 					for(let g in gallery){
 						if(DB.files.data[f].idFile == gallery[g].idFile)presente = true;
@@ -2396,7 +2387,7 @@ var LOGIN = {
 				// verifico nei trattamenti
 				for(t in DB.pazienti.data[p].trattamenti){
 					if(DB.pazienti.data[p].trattamenti[t].gallery){
-						var gallery =  DB.pazienti.data[p].trattamenti[t].gallery;
+						let gallery =  DB.pazienti.data[p].trattamenti[t].gallery;
 						if(gallery.length){
 							for(let g in gallery){
 								if(DB.files.data[f].idFile == gallery[g].idFile)presente = true;
@@ -2407,7 +2398,7 @@ var LOGIN = {
 			}
 			for(let p in DB.procedure.data){
 				// verifico nella procedura
-				var gallery =  __(DB.procedure.data[p].gallery,[]);
+				let gallery =  __(DB.procedure.data[p].gallery,[]);
 				if(gallery.length){
 					for(let g in gallery){
 						if(DB.files.data[f].idFile == gallery[g].idFile)presente = true;
@@ -2461,7 +2452,7 @@ var LOGIN = {
 		}
 		backup.pazienti.sort(sort_by("Cognome" ));
 		backup.pazienti.sort(sort_by("Nome" ));
-		var nr = 0;
+		let nr = 0;
 		for(let p in backup.pazienti){
 			let PZ = backup.pazienti[p];
 			if((PZ.Nome || PZ.Cognome) && PZ.Cancellato!='1'){
@@ -2575,8 +2566,8 @@ var LOGIN = {
 					LOGIN.addHTML("<br><div>");
 					
 					
-					var cicli=[];
-					var n=0;
+					let cicli=[],
+						n=0;
 					for(let i in PZ.trattamenti){
 						esiste=false;
 						for(let c in cicli){
@@ -2592,14 +2583,14 @@ var LOGIN = {
 						}
 					}
 					cicli.sort(sort_by("ordine", false, parseInt));
-					var vuoto=true;
+					let vuoto=true;
 					for(let c in cicli){
 						vuoto=false;
-						var noName=false;
+						//let noName=false;
 						NomeCiclo=cicli[c].NomeCiclo;
 						if(NomeCiclo=='0' || NomeCiclo=='')NomeCiclo=TXT("CicloSenzaNome");
 						
-						var trattamenti=[];
+						let trattamenti=[];
 						for(t in PZ.trattamenti){
 							if(PZ.trattamenti[t].LabelCiclo==cicli[c].NomeCiclo && PZ.trattamenti[t].Cancellato!='1'){
 								trattamenti.push(PZ.trattamenti[t]);
@@ -2611,16 +2602,16 @@ var LOGIN = {
 						LOGIN.addHTML("<h3><i style=\"font-weight:normal;color:#666;\">"+TXT("CicloTrattamenti")+":</i> "+NomeCiclo+"</h3><div class=\"rientro\">");
 						let isCiclo = false;
 						for(t in trattamenti){
-							var oI=trattamenti[t].oraInizio;
-							var oF=trattamenti[t].oraFine;
-							var orario=txtOrario='';
+							let oI=trattamenti[t].oraInizio,
+								oF=trattamenti[t].oraFine,
+								orario=txtOrario='';
 							if(oI*1>0 || oF*1>0){
 								if(oI.toString().indexOf(".")>-1){
-									var pO=oI.toString().split(".");
+									let pO=oI.toString().split(".");
 									oI=pO[0]+":30";
 								}else oI+=":00";
 								if(oF.toString().indexOf(".")>-1){
-									var pO=oF.toString().split(".");
+									let pO=oF.toString().split(".");
 									oF=pO[0]+":30";
 								}else oF+=":00";
 								orario=oI+"-"+oF;
@@ -2637,7 +2628,7 @@ var LOGIN = {
 							if(trattamenti[t].TimeTrattamento)LOGIN.addHTML("<i>"+TXT("Data")+txtOrario+": </i> "+getFullDataTS(trattamenti[t].TimeTrattamento)+" "+orario+"<br>");
 							LOGIN.addHTML("<i>"+TXT("Titolo")+":</i> <b>"+trattamenti[t].TitoloTrattamento+"</b><br>");
 							LOGIN.addHTML("<i>"+TXT("Costo")+":</i> <b>"+ArrotondaEuro(trattamenti[t].CostoTrattamento)+"</b><br>");
-							var TT=trattamenti[t].TestoTrattamento;
+							let TT=trattamenti[t].TestoTrattamento;
 							if(trattamenti[t].TipoTrattamento=='A'){
 								//console.log(TT)
 								if(TT){
@@ -2655,7 +2646,7 @@ var LOGIN = {
 								sintomi = PAZIENTI.getSintomiCiclo(trattamenti[t].LabelCiclo,PZ.p);
 							}
 							if(sintomi.length>0){
-								var txtSintomi='';
+								let txtSintomi='';
 								for(let s in sintomi){
 									txtSintomi+="- "+sintomi[s].NomeSintomo+" <b> (";
 									if(sintomi[s].score>-1)txtSintomi+=sintomi[s].score;
@@ -2666,8 +2657,8 @@ var LOGIN = {
 								LOGIN.addHTML("<i>"+TXT("Sintomi")+":</i> <div class=\"rientro\">"+txtSintomi+"<br></div><br>");
 							}
 							if(trattamenti[t].puntiMTC){
-								var punti=JSON.parse(trattamenti[t].puntiMTC);
-								var txtPunti='';
+								let punti=JSON.parse(trattamenti[t].puntiMTC),
+									txtPunti='';
 								for(let f in punti){
 									nPunto=punti[f].n;
 									siglaMeridiano=punti[f].m;
@@ -2690,8 +2681,8 @@ var LOGIN = {
 								if(txtPunti)LOGIN.addHTML("<i>"+TXT("PuntiTrattamento")+":</i> <div class=\"rientro\">"+txtPunti+"<br></div><br>");
 							}
 							if(trattamenti[t].puntiNamikoshi){
-								var punti=JSON.parse(trattamenti[t].puntiNamikoshi);
-								var txtPunti='';
+								let punti=JSON.parse(trattamenti[t].puntiNamikoshi),
+									txtPunti='';
 								for(let f in punti){
 									siglaPunto=punti[f].s;
 									valutazione=__(punti[f].e);
@@ -2707,8 +2698,8 @@ var LOGIN = {
 								if(txtPunti)LOGIN.addHTML("<i>"+TXT("PuntiNamikoshi")+":</i> <div class=\"rientro\">"+txtPunti+"<br></div><br>");
 							}
 							if(trattamenti[t].meridiani){
-								var meridiani=JSON.parse(trattamenti[t].meridiani);
-								var txtMeridiani='';
+								let meridiani=JSON.parse(trattamenti[t].meridiani),
+									txtMeridiani='';
 								for(let m in meridiani){
 									siglaMeridiano=meridiani[m].siglaMeridiano;
 									NomeMeridiano=__(meridiani[m].NomeMeridiano);
@@ -2725,8 +2716,8 @@ var LOGIN = {
 								if(txtMeridiani)LOGIN.addHTML("<i>"+TXT("MeridianiTrattamento")+":</i> <div class=\"rientro\">"+txtMeridiani+"<br></div><br>");
 							}
 							if(trattamenti[t].puntiAuricolari){
-								var punti=JSON.parse(trattamenti[t].puntiAuricolari);
-								var txtPunti='';
+								let punti=JSON.parse(trattamenti[t].puntiAuricolari),
+									txtPunti='';
 								for(let f in punti){
 									siglaPunto=punti[f].s;
 									valutazione=__(punti[f].e);
@@ -2742,8 +2733,8 @@ var LOGIN = {
 								if(txtPunti)LOGIN.addHTML("<i>"+TXT("PuntiAuriculo")+":</i> <div class=\"rientro\">"+txtPunti+"<br></div><br>");
 							}
 							if(trattamenti[t].puntiPlantari){
-								var punti=JSON.parse(trattamenti[t].puntiPlantari);
-								var txtPunti='';
+								let punti=JSON.parse(trattamenti[t].puntiPlantari),
+									txtPunti='';
 								for(let f in punti){
 									siglaPunto=punti[f].s;
 									valutazione=__(punti[f].e);
@@ -2769,7 +2760,7 @@ var LOGIN = {
 				
 				if(PZ.saldi.length>0){
 					LOGIN.addHTML("<br><i>"+TXT("ElSaldi").toUpperCase()+":</i><br><div class=\"rientro\">");
-					var saldi=JSON.parse(JSON.stringify(PZ.saldi));
+					let saldi=JSON.parse(JSON.stringify(PZ.saldi));
 					saldi.sort(sort_by("DataSaldo", true, parseInt ));
 					for(let s in saldi){
 						if(saldi[s].Cancellato!='1')LOGIN.addHTML("<i>"+getFullDataTS(saldi[s].DataSaldo)+"</i>: <b>"+getValuta()+" "+ArrotondaEuro(saldi[s].ValoreSaldo)+"</b><br>");
@@ -2777,7 +2768,7 @@ var LOGIN = {
 					LOGIN.addHTML("</div>");
 				}
 				
-				var note=[];
+				let note=[];
 				for(let n in backup.note){
 					if(	backup.note[n].TestoAnnotazione && 
 						backup.note[n].idPaziente==PZ.idPaziente && 
@@ -2806,11 +2797,11 @@ var LOGIN = {
 				htmlProvv += "<b class=\"tits\">"+backup.procedure[n].NomeProcedura+"</b><div class=\"rientro\">";
 				htmlProvv += "<i>"+TXT("Data")+": </i> "+getFullDataTS(backup.procedure[n].DataCreazione)+"<br>";
 				for(let d in backup.procedure[n].dettagliProcedura){
-					var TD=backup.procedure[n].dettagliProcedura[d].TipoDettaglio;
+					let TD=backup.procedure[n].dettagliProcedura[d].TipoDettaglio;
 					if(TD=='P')htmlProvv += "<i>"+TXT("Punti")+": </i>";
 					if(TD=='M')htmlProvv += "<i>"+TXT("AggiungiMeridiano"+": </i>");
 					if(TD=='T' || TD=='P' || TD=='M')htmlProvv += "<b>";
-					var descrizione = backup.procedure[n].dettagliProcedura[d].DescrizioneDettaglio.replace(/\n/gi,"<br>");
+					let descrizione = backup.procedure[n].dettagliProcedura[d].DescrizioneDettaglio.replace(/\n/gi,"<br>");
 					htmlProvv += descrizione;
 					if(TD=='T' || TD=='P' || TD=='M')htmlProvv += "</b>";
 					htmlProvv += "<br>";
@@ -2848,15 +2839,14 @@ var LOGIN = {
 	/* UPGRADE */
 	showUpgradeBox: function(){ // mostra il box di UPGRADE quando gestito da API (per blocco su nuove versioni)
 		if(document.getElementById("upgrade_box"))return;
-		var dvUpdate = document.createElement('div');
+		let dvUpdate = document.createElement('div');
 		dvUpdate.id = 'upgrade_box';
 		document.body.appendChild(dvUpdate);
-		var html = '<div id=upgrade_content">'+stripslashes(TXT("UpgradeIntro"))+'<br><br>';
-		var txtClick = TXT("CliccaQui");
-		var langWeb = LINGUE.getSigla2();
-		if(langWeb!='it' && langWeb!='en' && langWeb!='es')langWeb = 'it';
-		var UA=navigator.userAgent;
-		var isMacUA = 0;
+		let html = '<div id=upgrade_content">'+stripslashes(TXT("UpgradeIntro"))+'<br><br>',
+			txtClick = TXT("CliccaQui"),
+			langWeb = (langWeb!='it' && langWeb!='en' && langWeb!='es') ? 'it' : LINGUE.getSigla2(),
+			UA=navigator.userAgent,
+			isMacUA = 0;
 		if(UA.toLowerCase().indexOf("mac")>-1)isMacUA=1;
 		if(android)html += stripslashes(TXT("UpgradeInfoAndroid")) + '<br><a id="upgrade_button" href="https://play.google.com/store/apps/details?id=app.iaomai.app&pli=1" target="_system">'+txtClick+'</a>';
 		else if((iPad || iPhone || isMacUA) && touchable)html += stripslashes(TXT("UpgradeInfoApple"))+'<br><a id="upgrade_button" href="https://apps.apple.com/it/app/i%C3%A1omai/id1588705898?ign-mpt=uo%3D4" target="_system">'+txtClick+'</a>';

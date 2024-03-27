@@ -1,5 +1,5 @@
 
-SET = {
+var SET = {
 	
 	// VARIABILI
 	INTERSECTED: null,
@@ -30,21 +30,20 @@ SET = {
 		SETS = new THREE.Group();
 		SETS.name = "SETS";
 		
-		var modelloAperto = globals.modello.cartella;
-		if(!modelloAperto)modelloAperto='piedi';
-		
+		let n=-1,
+			modelloAperto = globals.modello.cartella;
+		if(!modelloAperto)modelloAperto = 'piedi';
+
 		// guide (se ci sono)
-		var n=-1;
-		var GDS=GEOMETRIE.guide;
+		let GDS=GEOMETRIE.guide;
 		if(GDS){
 			if(GDS.length){
-				var GD = new THREE.Group();
+				let GD = new THREE.Group();
 				GD.name="GDs";
 				for(l in GDS){ // aggiungo le guide
 					
-					var loader = new THREE.ObjectLoader();
-					
-					var mesh =  loader.parse(JSON.parse(LZString.decompressFromBase64(GDS[l].obj)));
+					let loader = new THREE.ObjectLoader(),
+						mesh =  loader.parse(JSON.parse(LZString.decompressFromBase64(GDS[l].obj)));
 					mesh.material = this.MAT.lineGuide;
 					GD.add( mesh );
 					
@@ -54,23 +53,21 @@ SET = {
 		}
 		
 		// aree
-		var ARS = GEOMETRIE.aree;
+		let ARS = GEOMETRIE.aree;
 		if(ARS){
-			var n=-1;
-			var AR = new THREE.Group();
+			n=-1;
+			let AR = new THREE.Group();
 			AR.name="ARs";
 			AR.visible = true;
 			for(a in ARS){ // aggiungo le aree
-				var loader = new THREE.ObjectLoader();
-				var mesh = loader.parse(JSON.parse(LZString.decompressFromBase64(ARS[a].obj)));
-
-				var name = mesh.name.substr(0,3);
-				var lato = "";
+				let loader = new THREE.ObjectLoader(),
+					mesh = loader.parse(JSON.parse(LZString.decompressFromBase64(ARS[a].obj))),
+					name = mesh.name.substr(0,3),
+					lato = "";
 				if(mesh.name.indexOf("_sx")>-1)lato = "SX";
 				if(mesh.name.indexOf("_dx")>-1)lato = "DX";
-				var apparato = DB.set.punti[name].apparato;
-				
-				var mat = this.MAT["area"+apparato+"Base"];
+				let apparato = DB.set.punti[name].apparato,
+					mat = this.MAT["area"+apparato+"Base"];
 				
 				mesh.material = mat;
 
@@ -84,7 +81,7 @@ SET = {
 		}
 
 		for(a in DB.set.apparati)SET.hiddenGroups[a]=false;
-		var contPulsanti = 	'<span class="menuElenchi" onclick="MENU.visMM(\'btnCarMapMenu\');"></span>' +
+		let contPulsanti = 	'<span class="menuElenchi" onclick="MENU.visMM(\'btnCarMapMenu\');"></span>' +
 							'<span id="btnCarMapMenu" class="btn_meridiani_shiatsu titolo_set">' +
 							'<span>ReflexologyMap</span>' +
 							/* '<i class="elMenu" id="chiudiSet" onClick="chiudiSet();" title="'+htmlEntities(TXT("ChiudiSet"))+'"><span>' +
@@ -94,7 +91,7 @@ SET = {
 								htmlEntities(TXT("ImpostazioniSet")) +
 							'</span></i>' +
 							'<i class="elMenu" id="help_set" onClick="GUIDA.visFumetto(\'guida_set\',true,true);">?</i></span>';
-		var contElenco = '';
+		let contElenco = '';
 		contPulsanti += '<div id="pulsante_modello" onClick="cambiaModello(\'piedi\');">'+TXT("ApriModello3D")+'</div>';
 
 		contPulsanti += '<span id="demoVersion" onClick="MENU.visLogin();">'+TXT("demoVersion")+'</span>';
@@ -108,7 +105,7 @@ SET = {
 		contElenco += '<div id="lista_patologie"></div>';
 		
 		// procedure personalizzare
-		var contProcedure = '';
+		let contProcedure = '';
 		contPulsanti += '<div id="pulsante_procedure" class="frdx" onClick="SCHEDA.selElenco(\'procedure\');">'+TXT("Procedure")+'</div>';
 		contElenco += '<div id="lista_procedure"></div>';
 		
@@ -120,11 +117,11 @@ SET = {
 
 		//contPulsanti += '<span id="tueLicenzeMappa" class="tueLicenze"><span onClick="MENU.visLicenze();">'+TXT("TueLicenze")+'</span></span>';
 		
-		contBtns = 	'<div id="p_contrasto" class="p_noTxt" onClick="SET.swContrastMethod();"></div>';
+		let contBtns = 	'<div id="p_contrasto" class="p_noTxt" onClick="SET.swContrastMethod();"></div>';
 		
-		contIcona = '<div id="p_set" onClick="SCHEDA.apriElenco(\'set\',true);"><svg viewBox="0 0 12 48"><polygon points="5,24 12,13 12,35"></polygon></svg><i>'+htmlEntities(TXT("ReflessologiaPlantare"))+'</i></div>';
+		let contIcona = '<div id="p_set" onClick="SCHEDA.apriElenco(\'set\',true);"><svg viewBox="0 0 12 48"><polygon points="5,24 12,13 12,35"></polygon></svg><i>'+htmlEntities(TXT("ReflessologiaPlantare"))+'</i></div>';
 		
-		var preElenco = SCHEDA.elencoSel;
+		let preElenco = SCHEDA.elencoSel;
 		SCHEDA.caricaElenco(globals.set.nome,contElenco);
 		SCHEDA.caricaPulsanti(contPulsanti);
 		SCHEDA.caricaBtns(contBtns,contIcona);
@@ -209,7 +206,7 @@ SET = {
 	
 	iniPos: function(){
 		SET.POS = JSON.parse(__(localStorage.POS,'{}'));
-		for(e in SET.POS){
+		for(let e in SET.POS){
 			//SET.nasELS(e);
 		}
 		document.addEventListener("keyup", SET.keyUpPos, false );
@@ -217,9 +214,9 @@ SET = {
 	keyUpPos: function(event){
 		if(event.keyCode==81){
 			normalizeRotation();
-			var el = {x: manichinoCont.rotation.x, y: manichinoCont.rotation.y };
+			let el = {x: manichinoCont.rotation.x, y: manichinoCont.rotation.y };
 			if(SET.ptSel){
-				var name = SET.ptSel.name;
+				let name = SET.ptSel.name;
 				if(!SET.POS[name]){
 					
 					SET.POS[name] = el;
@@ -239,14 +236,14 @@ SET = {
 	
 	// RENDER SET
 	_render: function(){
-		var make=true;
+		let make = true;
 		if(manichinoCaricato && !raycastDisable && !controlsM._ZPR && !controlsM._premuto){
 			camera.updateMatrixWorld();
 			raycaster.setFromCamera( mouse, camera );
 			raycaster.params.Points.threshold = 20;
 			
-			var objOver='';
-			var ints = [];
+			let objOver = '',
+				ints = [];
 			if(SETS){
 				for(let i in SETS.children){
 					if(	SETS.children[i].visible &&
@@ -255,7 +252,7 @@ SET = {
 							if(	SETS.children[i].children[ii].visible &&
 								SETS.children[i].children[ii].name.substr(0,2)!='LN' &&
 								SETS.children[i].children[ii].name.substr(0,2)!='GD'){
-								var intersects = raycaster.intersectObjects( SETS.children[i].children );
+									let intersects = raycaster.intersectObjects( SETS.children[i].children );
 								if ( intersects.length > 0 ) { // roll-over
 									for(l in intersects){
 										ints.push(intersects[l]);
@@ -274,13 +271,13 @@ SET = {
 						ANATOMIA.children[i].name.toLowerCase()=='vasi' ||
 						ANATOMIA.children[i].name.toLowerCase()=='legamenti' ||
 						ANATOMIA.children[i].name.toLowerCase()=='muscoli' ){
-						var intersects = raycaster.intersectObject( ANATOMIA.children[i] );
+						let intersects = raycaster.intersectObject( ANATOMIA.children[i] );
 						if ( intersects.length > 0 ){
 							for(l in intersects)ints.push(intersects[l]);
 						}
 						if(ANATOMIA.children[i].type=='Group'){
 							for(let g in ANATOMIA.children[i].children){
-								var intersects = raycaster.intersectObject( ANATOMIA.children[i].children[g] );
+								let intersects = raycaster.intersectObject( ANATOMIA.children[i].children[g] );
 								if ( intersects.length > 0 ){
 									for(l in intersects){
 										ints.push(intersects[l]);
@@ -293,19 +290,18 @@ SET = {
 			}
 			// impedisco l'attraversamento della pelle
 			if(ints.length){
-				var near = ints[0];
+				let near = ints[0];
 				for(l in ints){
 					if(ints[l].distance<near.distance)near=ints[l];
 				}
 				if(near.object.userData.raycastable!=true)objOver='';
 				else objOver=near.object;
 			}
-			var n1=n2='';
 			SET.desIntersected(objOver);
 			if(objOver){
 				this.INTERSECTED = objOver;
 				if(this.INTERSECTED.userData.raycastable){
-					var name=this.INTERSECTED.name;
+					let name=this.INTERSECTED.name;
 					visToolTip(DB.set.punti[name].NomePunto);
 					renderer.domElement.style.cursor='pointer';
 					SET.overPunto(name,true);
@@ -327,7 +323,7 @@ SET = {
 	},
 	desIntersected: function(objOver){
 		if(this.INTERSECTED && this.INTERSECTED!=objOver){
-			var name=this.INTERSECTED.name;
+			let name = this.INTERSECTED.name;
 			SET.overPunto(name,false);
 			this.INTERSECTED = null;
 		}
@@ -339,8 +335,8 @@ SET = {
 	
 	// CLICK sul punto
 	_onClick: function( e ){
-		var btn=0;
-		if(!touchable)btn=e.button;
+		let btn=0;
+		if(!touchable)btn = e.button;
 		if(!btn && !raycastDisable && ((controlsM.xIni==controlsM.xEnd && controlsM.yIni==controlsM.yEnd) || touchable)){
 			if(this.INTERSECTED){
 				if(!touchable && this.INTERSECTED.userData.type == 'point'){
@@ -349,9 +345,9 @@ SET = {
 					controlsM._MM=false;
 				}
 				if(this.INTERSECTED.userData.raycastable){
-					var name=this.INTERSECTED.name;
+					let name = this.INTERSECTED.name;
 					if(name.substr(0,1)=='_')name = name.substr(1,name.length-1);
-					var ritorno = '';
+					let ritorno = '';
 					if(SCHEDA.classeAperta && SCHEDA.classeAperta!='tab_punti')ritorno = 'SET.chiudiPunto(true)';
 					SET.apriPunto(name,ritorno,this.INTERSECTED);
 				}
@@ -365,7 +361,7 @@ SET = {
 	
 	
 	apriPunto: function( PT_name, ritorno='', el='' ){
-		var PT = scene.getObjectByName( PT_name );
+		let PT = scene.getObjectByName( PT_name );
 
 		// verifico le autorizzazioni
 		if(!SET.verFreePunti(PT_name)){
@@ -376,7 +372,7 @@ SET = {
 
 		if(this.ptSel){
 			if(PT_name == this.ptSel.name)return;
-			var mat = SET.MAT["area"+this.ptSel.userData.apparato+"Base"];
+			let mat = SET.MAT["area"+this.ptSel.userData.apparato+"Base"];
 			//if(this.ptSel.userData.nota)mat=this.MAT.pointNote;
 			
 			if(document.getElementById("ts_"+this.ptSel.name))document.getElementById("ts_"+this.ptSel.name).classList.remove("selElPt");
@@ -393,13 +389,13 @@ SET = {
 		if(document.getElementById("ts_"+PT_name))document.getElementById("ts_"+PT_name).classList.add("selElPt");
 		
 		
-		var x2 = 0;
-		var y2 = 0;
-		var z2 = 0;
-		var vector = null;
-
 		elPin = scene.getObjectByName( PT_name );
-		var center = getCenterPoint(elPin);
+		let x2 = 0,
+			y2 = 0,
+			z2 = 0,
+			vector = null,
+			center = getCenterPoint(elPin);
+
 		this.diffX = center.x*1;
 		this.diffY = center.y*1;
 		x2 = 0-center.x*1;
@@ -420,7 +416,7 @@ SET = {
 		if(!el){
 			// posiziono
 			if(GEOMETRIE.posizioni[PT_name]){
-				var pos = GEOMETRIE.posizioni[PT_name];
+				let pos = GEOMETRIE.posizioni[PT_name];
 
 				// cerco la via più breve
 				let diffX = manichinoCont.rotation.x-pos.x,
@@ -470,8 +466,8 @@ SET = {
 			}
 		}
 		// coloro tutti gli altri punti
-		var els = scene.getObjectByName("ARs").children;
-		for(e in els){
+		let els = scene.getObjectByName("ARs").children;
+		for(let e in els){
 			if(els[e].name==this.ptSel.name){
 				/* if(SET.puntiEvidenziati.indexOf(this.ptSel.name)>-1)tipo='';
 				else tipo='Base'; */
@@ -497,14 +493,14 @@ SET = {
 		
 		// ricentro il manichino
 		exPt.updateMatrixWorld();
-		var center = getCenterPoint(exPt);
-		var vector = new THREE.Vector3( 0-center.x*1, 0-center.y*1, 0-center.z*1 );
+		let center = getCenterPoint(exPt);
+		let vector = new THREE.Vector3( 0-center.x*1, 0-center.y*1, 0-center.z*1 );
 		vector.applyMatrix4( exPt.matrixWorld );
 		manichino.position.set( 0, 0, 0 );
 		render();
 		exPt.updateMatrixWorld();
-		var center = getCenterPoint(exPt);
-		var vector2 = new THREE.Vector3( 0-center.x*1, 0-center.y*1, 0-center.z*1 );
+		center = getCenterPoint(exPt);
+		let vector2 = new THREE.Vector3( 0-center.x*1, 0-center.y*1, 0-center.z*1 );
 		vector2.applyMatrix4( exPt.matrixWorld );
 		manichinoCont.position.x = manichinoCont.position.x - (vector2.x-vector.x);
 		manichinoCont.position.y = manichinoCont.position.y - (vector2.y-vector.y);
@@ -524,16 +520,15 @@ SET = {
 		//
 	},
 	scriviPunto: function( siglaPunto, esteso=false, noRet=false, apparato ){
-		var nomePunto = DB.set.punti[siglaPunto].NomePunto;
-		var EL = scene.getObjectByName( siglaPunto );
-		
-		var html = '<a class="pallinoPat';
+		let nomePunto = DB.set.punti[siglaPunto].NomePunto,
+			EL = scene.getObjectByName( siglaPunto ),
+			html = '<a class="pallinoPat';
 		if(esteso)html += ' pallinoPatEsteso';
 		if(apparato)html += ' noPall';
 		if(EL){
 			if(__(EL.userData.locked,false))html+=' lockedItem';
 		}
-		var ret = '';
+		let ret = '';
 		if(!noRet)ret = SET.chiudiPunto(true);
 		html += '"';
 		html+= ' onClick="SET.apriPunto(\''+siglaPunto+'\',\''+ret+'\');"';
@@ -562,7 +557,7 @@ SET = {
 		SET.selPunto( PT );
 	},
 	setPuntoFrm: function(){
-		var ptP = SET.ptSel.name;
+		let ptP = SET.ptSel.name;
 		if( SCHEDA.classeAperta == 'scheda_procedura' ){
 			SET.dettagliProvvisori[SET.pMod].DescrizioneDettaglio = ptP;
 			SET.caricaDettagli();
@@ -576,15 +571,14 @@ SET = {
 		SCHEDA.formModificato = true;
 	},
 	evidenziaPunto: function( el ){
-		if(!el || typeof(el)=='undefined') var el = document.getElementById("scheda_testo");
+		if(!el || typeof(el)=='undefined')el = document.getElementById("scheda_testo");
 		let html = el.innerHTML;
 		SET.annullaEvidenziaPunto();
-		var re = /selPunto\([^\)]+\)/ig;
-		
-		var result = html.match(re);
+		let re = /selPunto\([^\)]+\)/ig,
+			result = html.match(re);
 		for(let k in result){
-			var pT=result[k].split("'");
-			var siglaPunto = pT[1];
+			let pT=result[k].split("'"),
+				siglaPunto = pT[1];
 			
 			// verifico le autorizzazioni
 			if(SET.verFreePunti(siglaPunto)){
@@ -598,8 +592,8 @@ SET = {
 	evidenziaPuntoMod: function( elenco ){
 		SET.annullaEvidenziaPunto();
 		for(let k in elenco){
-			var pp=elenco[k].split(".");
-			var mat = SET.MAT.pointEvi;
+			let pp=elenco[k].split("."),
+				mat = SET.MAT.pointEvi;
 			if(pp[1]=='D')mat = SET.MAT.pointDolore;
 			if(scene.getObjectByName(pp[0])){
 				scene.getObjectByName(pp[0]).material=mat;
@@ -611,9 +605,9 @@ SET = {
 	},
 	applicaEvidenziaPunto: function(){
 		if(SET.puntiEvidenziati.length){
-			var els = scene.getObjectByName("ARs").children;
-			for(e in els){
-				var siglaPunto = els[e].name;
+			let els = scene.getObjectByName("ARs").children;
+			for(let e in els){
+				let siglaPunto = els[e].name;
 				if(SET.puntiEvidenziati.indexOf(siglaPunto)>-1){
 					els[e].material=SET.MAT.areaEvi;
 				}
@@ -626,9 +620,9 @@ SET = {
 	},
 	annullaEvidenziaPunto: function(){
 		if(SET.puntiEvidenziati.length){
-			var els = scene.getObjectByName("ARs").children;
-			for(e in els){
-				var siglaPunto = els[e].name;
+			let els = scene.getObjectByName("ARs").children;
+			for(let e in els){
+				let siglaPunto = els[e].name;
 				if(SET.puntiEvidenziati.indexOf(siglaPunto)>-1){
 					if(els[e].name == siglaPunto){
 						els[e].material=SET.MAT["area"+els[e].userData.apparato+"Base"];
@@ -644,9 +638,9 @@ SET = {
 	},
 	settaOverPunto: function(){
 		if(!touchable){
-			var els = document.getElementById("scheda_testo").getElementsByClassName("pallinoPat");
-			for(e=0;e<els.length;e++){
-				var onclick = els[e].onclick.toString();
+			let els = document.getElementById("scheda_testo").getElementsByClassName("pallinoPat");
+			for(let e=0;e<els.length;e++){
+				let onclick = els[e].onclick.toString();
 				if(onclick.indexOf("SET.selPunto('")>-1){
 					els[e].dataset.siglaPunto = onclick.split("SET.selPunto('")[1].split("')")[0];
 				}
@@ -660,14 +654,14 @@ SET = {
 		}
 	},
 	ritOverPunto: function( id, p ){
-		var el = document.getElementById("pt_"+p);
-		var siglaPunto = el.value;
+		let el = document.getElementById("pt_"+p),
+			siglaPunto = el.value,
+			elenco = [],
+			els = document.getElementById(id).getElementsByClassName("dettPunto"),
+			tot = els.length;
 		SET.overPunto(siglaPunto,false);
-		var elenco = [];
-		var els = document.getElementById(id).getElementsByClassName("dettPunto");
-		var tot = els.length;
-		for(e=0;e<tot;e++){
-			var sl = els[e].getElementsByTagName("select");
+		for(let e=0;e<tot;e++){
+			let sl = els[e].getElementsByTagName("select");
 			elenco.push(sl[0].value);
 		}
 		SET.evidenziaPuntoMod(elenco);
@@ -682,8 +676,8 @@ SET = {
 		}
 		// --------------------------
 		
-		var els = scene.getObjectByName("ARs").children;
-		for(e in els){
+		let els = scene.getObjectByName("ARs").children;
+		for(let e in els){
 			if(els[e].name==PT_name && els[e].material.name.indexOf("SEL")==-1){
 				if(els[e].material.name.indexOf('EVI')==-1){
 					tipo = (over) ? "Over" : "Base";
@@ -693,18 +687,17 @@ SET = {
 		}
 	},
 	convPuntiScheda: function( html, noPall=false ){
-		var nScheda = '';
-		if(SCHEDA.scheda2Aperta)nScheda='2';
-		var regexp = /\[\.[^\]]+\.\]/ig;
-		var pts = html.match(regexp);
+		let nScheda = SCHEDA.scheda2Aperta ? '2' : '',
+			regexp = /\[\.[^\]]+\.\]/ig,
+			pts = html.match(regexp);
 		for(let p in pts){
 			siglaPunto = pts[p].split(".")[1];
 			NomePunto = DB.set.punti[siglaPunto].NomePunto;
 			apparato = DB.set.punti[siglaPunto].apparato;
-			var EL = null;
-			if(scene.getObjectByName( siglaPunto ))EL=scene.getObjectByName( siglaPunto );
-			var pallClass = 'pallinoPat';
-			var addClick = '';
+			let EL = null;
+			if(scene.getObjectByName( siglaPunto ))EL = scene.getObjectByName( siglaPunto );
+			let pallClass = 'pallinoPat',
+				addClick = '';
 			if(noPall){
 				pallClass += ' pallinoPunto';
 				addClick = 'return;';
@@ -719,8 +712,8 @@ SET = {
 		MENU.chiudiImpSet();
 	},
 	popolaImpSet: function(){
-		var mzs = PAZIENTI.mezziSet.A;
-		var HTML_imp = 
+		let mzs = PAZIENTI.mezziSet.A,
+			HTML_imp = 
 			'<div><i>'+htmlEntities(TXT("MezzoDefault"))+':</i></div><div id="tt_mezzival2">';
 		for(let m in mzs){
 			HTML_imp += '<span style="background-image:url(img/mezzo_'+mzs[m]+'.png);"' +

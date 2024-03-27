@@ -66,7 +66,7 @@ var sessi = {
 }
 var oggi=new Date(),
 oggi=new Date(oggi.getFullYear(),oggi.getMonth(),oggi.getDate(),0,0,0,0);
-var elTXprovv=null;
+//var elTXprovv = null;
 var overChiudiProva = false;
 
 
@@ -131,7 +131,7 @@ function INIT(){
 		setTimeout( function(){
 			if(getVar('demo') && !LOGIN.reg()){
 				
-				var boxProva = document.createElement('div');
+				let boxProva = document.createElement('div');
 				boxProva.onclick = function(){
 					if(!overChiudiProva)MENU.visRegistrazione();
 					document.body.removeChild(boxProva);

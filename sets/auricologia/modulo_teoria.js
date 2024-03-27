@@ -4,7 +4,7 @@ var MODULO_TEORIA = { // extend SET
 	TEORIA_free: [ "0_0", "0_1", "4_0", "4_1", "4_2" ],
 	
 	caricaApprofondimenti: function(){ // carica la lista degli approfondimenti
-		var contTeoria = '';
+		let contTeoria = '';
 		for(let p in DB.set.teoria){
 			contTeoria += 	'<div class="cartella" onTouchStart="SCHEDA.setCartella(this);">' +
 							'	<span id="btn_teoria_cart_'+p+'" onClick="SCHEDA.swCartella(this);">' +
@@ -15,13 +15,13 @@ var MODULO_TEORIA = { // extend SET
 			for(t in DB.set.teoria[p].contenuti){
 				
 				// verifico le autorizzazioni
-				var addLock = 	(!SET.verFreeTeoria(p+"_"+t))? ' lockedItem' : '';
+				let addLock = 	(!SET.verFreeTeoria(p+"_"+t))? ' lockedItem' : '';
 				// --------------------------
-				TitoloTeoria = DB.set.teoria[p].contenuti[t].TitoloTeoria;
+				let TitoloTeoria = DB.set.teoria[p].contenuti[t].TitoloTeoria;
 				funct = 'Approfondimento';
-				addClass = '';
+				let addClass = '';
 				if(TitoloTeoria.indexOf("[video]")>-1){
-					var pT = TitoloTeoria.split("[video]");
+					let pT = TitoloTeoria.split("[video]");
 					TitoloTeoria = pT[0];
 					funct = 'Video';
 					addClass = 'cart_video';
@@ -45,17 +45,17 @@ var MODULO_TEORIA = { // extend SET
 			return;
 		}
 		// --------------------------
-		var addClose = '';
-		var titolo = DB.set.teoria[p].contenuti[t].TitoloTeoria;
-		var test = __(DB.set.teoria[p].contenuti[t].test);
-		var flowchart = __(DB.set.teoria[p].contenuti[t].flowchart);
-		var gruppo = __(DB.set.teoria[p].contenuti[t].gruppo);
-		var forzaHidden = __(DB.set.teoria[p].contenuti[t].forzaHidden);
-		var html = "<h1>"+htmlEntities(titolo)+"</h1>";
-		var html_cont = SET.convPuntiScheda(DB.set.teoria[p].contenuti[t].TestoTeoria);
-		var anatomia = __(DB.set.teoria[p].contenuti[t].anatomia,'');
-		var mappa = __(DB.set.teoria[p].contenuti[t].mappa,'');
-		var lm = __(DB.set.teoria[p].contenuti[t].lm,'');
+		let addClose = '',
+			titolo = DB.set.teoria[p].contenuti[t].TitoloTeoria,
+			test = __(DB.set.teoria[p].contenuti[t].test),
+			flowchart = __(DB.set.teoria[p].contenuti[t].flowchart),
+			gruppo = __(DB.set.teoria[p].contenuti[t].gruppo),
+			forzaHidden = __(DB.set.teoria[p].contenuti[t].forzaHidden),
+			html = "<h1>"+htmlEntities(titolo)+"</h1>",
+			html_cont = SET.convPuntiScheda(DB.set.teoria[p].contenuti[t].TestoTeoria),
+			anatomia = __(DB.set.teoria[p].contenuti[t].anatomia,''),
+			mappa = __(DB.set.teoria[p].contenuti[t].mappa,''),
+			lm = __(DB.set.teoria[p].contenuti[t].lm,'');
 		if(SET.forzaDissolve){
 			MODELLO.op("Pelle",SET.forzaDissolve.Pelle);
 			MODELLO.op("Ossa",SET.forzaDissolve.Ossa);
@@ -76,19 +76,17 @@ var MODULO_TEORIA = { // extend SET
 		if(gruppo){
 			document.getElementById("sceltaPhaseElenco").selectedIndex = 0;
 			if(SET.phase)setTimeout(function(){SET.setPhase('');},500);
-			var mAtt=DB.set.teoria[SET.idTeoCategorie].contenuti[t].sigla;
-			var elencoPunti='<br><b>'+htmlEntities(TXT("ElencoPunti"))+'</b>';
-			var priority = __(GEOMETRIE.gruppi[gruppo].priority,false);
-			
-			var puntiElenco = [];
+			let mAtt=DB.set.teoria[SET.idTeoCategorie].contenuti[t].sigla,
+				elencoPunti='<br><b>'+htmlEntities(TXT("ElencoPunti"))+'</b>',
+				priority = __(GEOMETRIE.gruppi[gruppo].priority,false),
+				puntiElenco = [];
 			for(let g in GEOMETRIE.gruppi[gruppo].punti){
-				var siglaPunto = GEOMETRIE.gruppi[gruppo].punti[g];
+				let siglaPunto = GEOMETRIE.gruppi[gruppo].punti[g];
 				if(siglaPunto.length==3 && DB.set.punti[siglaPunto]){
 					if(!__(DB.set.punti[siglaPunto].hidden,false) || forzaHidden){
-						var NomePunto = siglaPunto;
-						if(siglaPunto.length==3)NomePunto = DB.set.punti[siglaPunto].NomePunto;
-						var ordine = NomePunto;
-						var categoria = '';
+						let NomePunto = siglaPunto.length==3 ? DB.set.punti[siglaPunto].NomePunto : siglaPunto,
+							ordine = NomePunto,
+							categoria = '';
 						if(priority){
 							if(priority.punti.indexOf(siglaPunto)>-1){
 								ordine = siglaPunto + ": " + ordine;
@@ -108,13 +106,13 @@ var MODULO_TEORIA = { // extend SET
 			}
 			if(__(GEOMETRIE.gruppi[gruppo].ordine)=='alfabetico')puntiElenco.sort(sort_by("ordine", false));
 
-			var catV = categoria = '';
+			let catV = categoria = '';
 			for(let g in puntiElenco){
 				if(puntiElenco[g].categoria && puntiElenco[g].categoria != catV){
 					elencoPunti+='<p class="categoriaGruppo"><i>'+TXT("Gruppi_"+puntiElenco[g].categoria)+'</i></p>';
 				}
 				catV = puntiElenco[g].categoria;
-				var TS = puntiElenco[g].siglaPunto;
+				let TS = puntiElenco[g].siglaPunto;
 				if(TS.length==3){
 					elencoPunti+='<p>[.'+TS+'.]</p>';
 				}
@@ -126,14 +124,14 @@ var MODULO_TEORIA = { // extend SET
 							SET.convPuntiScheda(elencoPunti) +
 						'</div>';
 			if(GEOMETRIE.gruppi[gruppo].posizione){
-				var pos = GEOMETRIE.gruppi[gruppo].posizione;
+				let pos = GEOMETRIE.gruppi[gruppo].posizione;
 				normalizeRotation();
 				rotateEnd = { x:pos.x, y: ((MODELLO.flip) ? 0-pos.y : pos.y), z:0 };
 			}
 			if(scene.getObjectByName(gruppo)){
 				elPin = scene.getObjectByName(gruppo);
 				elPin.visible = true;
-				var center = getCenterPoint(elPin);
+				let center = getCenterPoint(elPin);
 				this.diffX = center.x*1;
 				this.diffY = center.y*1;
 				panEndZero = { x: ((MODELLO.flip) ? center.x*1 : 0-center.x*1), y: 0-center.y*1, z: 0-center.z*1 };
@@ -149,12 +147,12 @@ var MODULO_TEORIA = { // extend SET
 		if(test)html += SET.scriviTest(test);
 		if(flowchart)html += SET.scriviFlowChart();
 		
-		var ritorno = false;
+		let ritorno = false;
 		if(	document.getElementById("scheda").querySelector(".formBtn") &&
 			document.getElementById("scheda").classList.contains("visSch") &&
 			SCHEDA.verificaSchedaRet() )ritorno = "document.getElementById('scheda').classList.remove('scheda_teoria')";
 			
-		var btnAdd = 	'';
+		let btnAdd = 	'';
 							
 		SCHEDA.caricaScheda( 	titolo,
 								html,
@@ -185,9 +183,9 @@ var MODULO_TEORIA = { // extend SET
 		}
 		if(test){
 			if(SET.risTest[test].tot > -1){
-				var els = document.getElementById("test_cont").getElementsByTagName("select");
+				let els = document.getElementById("test_cont").getElementsByTagName("select");
 				for(let e=0;e<els.length;e++){
-					var vals = els[e].options;
+					let vals = els[e].options;
 					for(v=0;v<vals.length;v++){
 						if(SET.risTest[test].vals[e] == parseInt("0"+vals[v].value)){
 							els[e].selectedIndex = v;
@@ -221,8 +219,8 @@ var MODULO_TEORIA = { // extend SET
 	scriviTest: function( test ){
 		SET.testTOT = 0;
 		SET.test = test;
-		var obj = DB.set.tests[test];
-		var html = '<div id="test_cont">';
+		let obj = DB.set.tests[test],
+			html = '<div id="test_cont">';
 		
 		for(let q in obj.q){
 			html += '<div class="test_q">'	+
@@ -250,9 +248,9 @@ var MODULO_TEORIA = { // extend SET
 	},
 	setTestVal: function( el ){
 		if(typeof(el)!='undefined')el.parentElement.classList.toggle("checked",(el.selectedIndex>0));
-		var pass = true;
+		let pass = true,
+			els = document.getElementById("test_cont").getElementsByTagName("select");
 		SET.testTOT = 0;
-		var els = document.getElementById("test_cont").getElementsByTagName("select");
 		for(let e=0;e<els.length;e++){
 			SET.testTOT += parseInt("0"+els[e].value);
 			if(els[e].selectedIndex<1)pass = false;
@@ -273,9 +271,9 @@ var MODULO_TEORIA = { // extend SET
 	},
 	salvaTest: function(){
 		if(!document.getElementById("test_cont").classList.contains("full"))return;
-		var valori = {};
-		var els = document.getElementById("test_cont").getElementsByTagName("select");
-		for(e=0;e<els.length;e++){
+		let valori = {},
+			els = document.getElementById("test_cont").getElementsByTagName("select");
+		for(let e=0;e<els.length;e++){
 			valori[e] = parseInt( els[e].value);
 		}
 		SET.risTest[SET.test].vals = valori;
@@ -295,16 +293,16 @@ var MODULO_TEORIA = { // extend SET
 	},
 	
 	scriviFlowChart: function(){
-		var dipendenze = '';
+		let dipendenze = '';
 		for(let d in DB.set.tests["dipendenza"].ris){
 			dipendenze += '<option value="'+d+'">'+htmlEntities(DB.set.tests["dipendenza"].ris[d])+'</option>';
 		}
 		
-		var motivazioni = '';
+		let motivazioni = '';
 		for(let d in DB.set.tests["motivazione"].ris){
 			motivazioni += '<option value="'+d+'">'+htmlEntities(DB.set.tests["motivazione"].ris[d])+'</option>';
 		}
-		var html =
+		let html =
 			'<div id="flowchart_cont">' +
 			'	<div>' +
 			'		<span>'+TXT("Obiettivo")+':</span>' +
@@ -387,13 +385,13 @@ var MODULO_TEORIA = { // extend SET
 		return html;
 	},
 	ricalcFlowChart: function(){
-		for(r=1;r<=4;r++)document.getElementById("R"+r).classList.remove("vis");
+		for(let r=1;r<=4;r++)document.getElementById("R"+r).classList.remove("vis");
 		document.getElementById("props_labels").classList.remove("vis");
 		document.getElementById("props_noterapia").classList.remove("vis");
 		document.getElementById("props_nocont").classList.add("noVis");
-		var r = 0;
-		var d = parseInt("0"+document.getElementById("dipendenze").value);
-		var m = parseInt("0"+document.getElementById("motivazioni").value);
+		let r = 0,
+			d = parseInt("0"+document.getElementById("dipendenze").value),
+			m = parseInt("0"+document.getElementById("motivazioni").value);
 		if(d>=6 && m==16)r = 1;
 		if(d>=6 && (m==6 || m==12))r = 2;
 		if(d==3 && m==16)r = 3;
@@ -411,7 +409,7 @@ var MODULO_TEORIA = { // extend SET
 		}
 	},
 	scriviProtocollo: function( protocollo ){
-		var protocolli = {
+		let protocolli = {
 			"lovato_g": {
 				t: TXT("ProtocolloLovatoG"),
 				p: SET.getPatFromScheda(102)
@@ -438,8 +436,8 @@ var MODULO_TEORIA = { // extend SET
 	},
 	
 	hideGroupLines: function(){ // nasconde le linee guida dei gruppi
-		var els = scene.getObjectByName("LNs"+SET.phase).children;
-		for(e in els){
+		let els = scene.getObjectByName("LNs"+SET.phase).children;
+		for(let e in els){
 			if(__(els[e].userData.gruppo,false)){
 				els[e].visible = false;
 			}

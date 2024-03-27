@@ -67,7 +67,10 @@ var DB = {
 		return jsn;
 	},
 	_reset: function(){
-		var pazientiBase = filesBase = serviziBase = fornitoriBase = [];
+		let pazientiBase = [],
+			filesBase = [],
+			serviziBase = [],
+			fornitoriBase = [];
 		if(typeof(localStorage.dbInizializzato) == 'undefined'){
 			pazientiBase = archiviDemo[globals.siglaLingua].pazienti;
 			serviziBase = archiviDemo[globals.siglaLingua].servizi;
@@ -162,8 +165,9 @@ var DB = {
 	},
 	_getStringMemorySize: function( _string ) {
         "use strict";
-        var codePoint, accum = 0;
-        for(var stringIndex=0, endOfString=_string.length; stringIndex<endOfString; stringIndex++) {
+        let codePoint,
+			accum = 0;
+        for(let stringIndex=0, endOfString=_string.length; stringIndex<endOfString; stringIndex++) {
             codePoint = _string.charCodeAt( stringIndex );
             if( codePoint < 0x100 ) {
                 accum += 1;

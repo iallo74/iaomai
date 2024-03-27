@@ -49,7 +49,7 @@ var LINGUE = {
 			}
 		}
 		if(typeof(localStorage.siglaLingua)=='undefined')localStorage.setItem("siglaLingua",'eng');
-		var gC=localStorage.getItem("siglaLingua"); // OK localStorage
+		let gC=localStorage.getItem("siglaLingua"); // OK localStorage
 		if(typeof(gC)!='undefined' && gC!='')globals.siglaLingua=gC;
 		
 		if(LINGUE.getAi(globals.siglaLingua)){
@@ -59,19 +59,19 @@ var LINGUE = {
 		this.formatDate='%D/%M/%Y';
 		if(globals.siglaLingua=="eng")this.formatDate='%M/%D/%Y';
 		
-		var tags=["td","table","p","span","div","b","font","li","ul","strong","em","u","span"];
-		for(tg=0;tg<tags.length;tg++){
-			var coll=document.getElementsByTagName(tags[tg]);
+		let tags=["td","table","p","span","div","b","font","li","ul","strong","em","u","span"];
+		for(let tg=0;tg<tags.length;tg++){
+			let coll=document.getElementsByTagName(tags[tg]);
 			for(let k=0; k<coll.length;k++){
 				this.convTitle(coll[k]);
 				this.convHTML(coll[k]);
 			}
 		}
-		coll=document.getElementsByTagName("input");
+		let coll = document.getElementsByTagName("input");
 		for(let k=0; k<coll.length;k++)this.convTitle(coll[k]);
 		
 		// POPOLO in popup info-lingue e il menu delle lingue
-		var aiPres = false;
+		let aiPres = false,
 			htmlInt = '',
 			htmlSel = '',
 			htmlNote = '',
@@ -128,9 +128,9 @@ var LINGUE = {
 			txt=eval(element.title);
 			if(debug)console.log(txt);
 			
-			var testo = '';
-			var strBase = __(DB.TXT.base[txt.substr(6,txt.length-8)],'');
-			var strSet = __(DB.TXT.set[txt.substr(6,txt.length-8)],'');
+			let testo = '',
+				strBase = __(DB.TXT.base[txt.substr(6,txt.length-8)],''),
+				strSet = __(DB.TXT.set[txt.substr(6,txt.length-8)],'');
 			if(strBase){
 				testo = strBase[globals.siglaLingua];
 				if(!testo)testo = strBase["eng"];
@@ -147,14 +147,13 @@ var LINGUE = {
 	},
 	convHTML: function(element){
 		if(element.innerHTML.indexOf('{{TXT_')>-1){
-			var str = element.innerHTML;
-			var txt='';
+			let str = element.innerHTML,
+				txt='';
 			while(txt=/\{\{TXT_[^\}\}]+\}\}/.exec(str)){
 				txt=txt+"";
-				var testo = '';
-				
-				var strBase = __(DB.TXT.base[txt.substr(6,txt.length-8)],'');
-				var strSet = __(DB.TXT.set[txt.substr(6,txt.length-8)],'');
+				let testo = '',
+					strBase = __(DB.TXT.base[txt.substr(6,txt.length-8)],''),
+					strSet = __(DB.TXT.set[txt.substr(6,txt.length-8)],'');
 				if(strBase){
 					testo = strBase[globals.siglaLingua];
 					if(!testo)testo = strBase["eng"];
@@ -177,54 +176,52 @@ var LINGUE = {
 	},
 	
 	linguaBrowser: function(){ // legge la lingua di default del browser
-		var l_lang = "it";
-		
-		// Sospesa momentaneamente perché siam pronti col solo italiano
-		
+		let l_lang = "it";
 		if (navigator.userLanguage)  l_lang = navigator.userLanguage;
 		else if (navigator.language)  l_lang = navigator.language;
 		return l_lang.substring(0,2);
 	},
 	convPaziente: function( str ){
-		var cartOp = '';
+		let cartOp = '';
 		if(__(globals.set))cartOp = __(globals.set.cartella);
 		if(__(localStorage.tipo_utilizzo) || cartOp=='meridiani_shiatsu'){
-			//var dest = (__(localStorage.tipo_utilizzo)=='S')?"S":"C";
-			var dest = (__(localStorage.tipo_utilizzo)=='S' || 
-						cartOp=='meridiani_shiatsu' ) ? "S" : "C";
+			//let dest = (__(localStorage.tipo_utilizzo)=='S')?"S":"C";
+			let dest = (__(localStorage.tipo_utilizzo)=='S' || 
+						cartOp=='meridiani_shiatsu' ) ? "S" : "C",
+				re;
 			
-			var re = new RegExp(DB.TXT.base["_Cliente_P"][globals.siglaLingua], 'g');
+			re = new RegExp(DB.TXT.base["_Cliente_P"][globals.siglaLingua], 'g');
 			str = str.replace(re,DB.TXT.base["_Cliente_"+dest][globals.siglaLingua]);
 			
-			var re = new RegExp(DB.TXT.base["_Clienti_P"][globals.siglaLingua], 'g');
+			re = new RegExp(DB.TXT.base["_Clienti_P"][globals.siglaLingua], 'g');
 			str = str.replace(re,DB.TXT.base["_Clienti_"+dest][globals.siglaLingua]);
 			
-			var re = new RegExp(DB.TXT.base["_cliente_P"][globals.siglaLingua], 'g');
+			re = new RegExp(DB.TXT.base["_cliente_P"][globals.siglaLingua], 'g');
 			str = str.replace(re,DB.TXT.base["_cliente_"+dest][globals.siglaLingua]);
 			
-			var re = new RegExp(DB.TXT.base["_clienti_P"][globals.siglaLingua], 'g');
+			re = new RegExp(DB.TXT.base["_clienti_P"][globals.siglaLingua], 'g');
 			str = str.replace(re,DB.TXT.base["_clienti_"+dest][globals.siglaLingua]);
 			
-			var re = new RegExp(DB.TXT.base["_un_ciclo_P"][globals.siglaLingua], 'g');
+			re = new RegExp(DB.TXT.base["_un_ciclo_P"][globals.siglaLingua], 'g');
 			str = str.replace(re,DB.TXT.base["_un_ciclo_"+dest][globals.siglaLingua]);
 			
-			var re = new RegExp(DB.TXT.base["_il_ciclo_P"][globals.siglaLingua], 'g');
+			re = new RegExp(DB.TXT.base["_il_ciclo_P"][globals.siglaLingua], 'g');
 			str = str.replace(re,DB.TXT.base["_il_ciclo_"+dest][globals.siglaLingua]);
 			
-			var re = new RegExp(DB.TXT.base["_Ciclo_P"][globals.siglaLingua], 'g');
+			re = new RegExp(DB.TXT.base["_Ciclo_P"][globals.siglaLingua], 'g');
 			str = str.replace(re,DB.TXT.base["_Ciclo_"+dest][globals.siglaLingua]);
 			
-			var re = new RegExp(DB.TXT.base["_ciclo_P"][globals.siglaLingua], 'g');
+			re = new RegExp(DB.TXT.base["_ciclo_P"][globals.siglaLingua], 'g');
 			str = str.replace(re,DB.TXT.base["_ciclo_"+dest][globals.siglaLingua]);
 			
-			var re = new RegExp(DB.TXT.base["_cicli_P"][globals.siglaLingua], 'g');
+			re = new RegExp(DB.TXT.base["_cicli_P"][globals.siglaLingua], 'g');
 			str = str.replace(re,DB.TXT.base["_cicli_"+dest][globals.siglaLingua]);
 			
 		}
 		return str;
 	},
 	getLinguaCont: function( folder ){
-		var linguaRet = globals.siglaLingua;
+		let linguaRet = globals.siglaLingua;
 		if(sets[folder].lingueCont.indexOf(globals.siglaLingua)==-1){
 			if(sets[folder].lingueCont.indexOf('eng')==-1)linguaRet = 'ita';
 			else linguaRet = 'eng';
@@ -246,16 +243,16 @@ var LINGUE = {
 	},
 	resGoogleLanguages: function( txt ){
 		if(txt!='404'){
-			var languages = JSON.parse( txt );
+			let languages = JSON.parse( txt );
 			for(let l in languages){
-				var addAlph = '2_';
+				let addAlph = '2_';
 				for(let n in LINGUE.NLS){
 					if(LINGUE.NLS[n].sigla2 == l){
 						if(!__(LINGUE.NLS[n].ai))addAlph = '0_';
 						else addAlph = '1_';
 					}
 				}
-				var json = {
+				let json = {
 					sigla: l,
 					alph: addAlph + languages[l],
 					name: languages[l]
@@ -274,7 +271,7 @@ var LINGUE = {
 			
 			return;
 		}
-		var elText = document.getElementById("scheda_testo"),
+		let elText = document.getElementById("scheda_testo"),
 			txt = SCHEDA.htmlOr;
 		if(SCHEDA.scheda2Aperta){
 			txt = SCHEDA.htmlOr2;
@@ -297,18 +294,17 @@ var LINGUE = {
 	},
 	resGoogleTranslate: function( txt ){
 		if(txt.substr(0,3)!='404'){
-			var jsn = JSON.parse(txt);
-			var elText = document.getElementById("scheda_testo"+(SCHEDA.scheda2Aperta?"2":""));
+			let jsn = JSON.parse(txt),
+				elText = document.getElementById("scheda_testo"+(SCHEDA.scheda2Aperta?"2":""));
 			if(!elText.querySelector(".translate_note")){
-				var newNode = document.createElement('div');
+				let newNode = document.createElement('div');
 				newNode.className = 'translate_note';
 				newNode.innerHTML = jsn.txt_note+'<span onClick="LINGUE.annGoogleTranslate();">'+jsn.txt_cancel+'</span>';
-				var parentNode = elText.querySelector('.scheda_stampa');
+				let parentNode = elText.querySelector('.scheda_stampa');
 				parentNode.insertBefore(newNode, parentNode.firstChild);
 			}
 
 			elText.querySelector(".translatable").innerHTML = jsn.txt_dest;
-			//elText.querySelector(".translatable").innerHTML = '<div class="translate_note">'+jsn.txt_note+'<span onClick="LINGUE.annGoogleTranslate();">'+jsn.txt_cancel+'</span></div>' + jsn.txt_dest;
 			rimuoviLoading( elText );
 			eval(SCHEDA.addFunct);
 			SCHEDA.addFunct = null;
@@ -327,7 +323,7 @@ var LINGUE = {
 		LINGUE.resetGoogleTranslate();
 	},
 	resetGoogleTranslate: function(){
-		var langsEl = document.getElementById("languages").options;
+		let langsEl = document.getElementById("languages").options;
 		for(let e=0;e<langsEl.length;e++){
 			if(langsEl[e].value==LINGUE.getSigla2()){
 				document.getElementById("languages").selectedIndex=e;
@@ -346,12 +342,12 @@ var LINGUE = {
 	},
 	addAiMsg: function( l='' ){
 		if(LINGUE.getAi() && !__(globals.disAiMsg,false)){
-			var elText = document.getElementById("scheda_testo"+(SCHEDA.scheda2Aperta?"2":""));
+			let elText = document.getElementById("scheda_testo"+(SCHEDA.scheda2Aperta?"2":""));
 			if(!elText.querySelector(".translate_note")){
-				var newNode = document.createElement('div');
+				let newNode = document.createElement('div');
 				newNode.className = 'translate_note';
 				newNode.innerHTML = TXT("msgAiLang")+'<span class="translate_close" onClick="LINGUE.disAiMsg();"></span><span onClick="MENU.visFeedback(\''+addslashes(TXT("signAiLang"))+'\',\'\',true);">'+TXT("btnAiLang")+'</span>';
-				var parentNode = elText.querySelector('.scheda_stampa');
+				let parentNode = elText.querySelector('.scheda_stampa');
 				parentNode.insertBefore(newNode, parentNode.firstChild);
 			}
 			//elText.querySelector(".translatable").innerHTML = jsn.txt_dest;
@@ -385,9 +381,9 @@ function htmlRev(str) {
 	return String(str).replace('&amp;', '&').replace('&lt;', '<').replace('&gt;', '>').replace('&quot;', '"');
 }
 function TXT(txt){
-	var str = '';
-	var strBase = __(DB.TXT.base[txt],'');
-	var strSet = __(DB.TXT.set[txt],'');
+	let str = '',
+		strBase = __(DB.TXT.base[txt],''),
+		strSet = __(DB.TXT.set[txt],'');
 	if(strBase){
 		str = strBase[localStorage.siglaLingua];
 		if(!str)str = strBase["eng"];
@@ -407,13 +403,12 @@ function convLangPath( path ){
 	return path.replace("[lang]",lang);
 }
 function doHighlight( html, parola, cls ){
-	var t1 = '<font class="'+cls+'">';
-	var t2 = '</font>';
-	var txt = "";
-	var i = -1;
-	var lcParola = parola.toLowerCase();
-	var lcHtml = html.toLowerCase();
-	//console.log(parola)
+	let t1 = '<font class="'+cls+'">',
+		t2 = '</font>',
+		txt = "",
+		i = -1,
+		lcParola = parola.toLowerCase(),
+		lcHtml = html.toLowerCase();
 	while(html.length > 0){
 		i = lcHtml.indexOf(lcParola, i+1);
 		if(i < 0){
@@ -434,12 +429,10 @@ function doHighlight( html, parola, cls ){
 }
 function evidenziaParola( el = document.getElementById("scheda_testo"), parola = document.getElementById("parolaGlobal").value ){
 	parola = htmlEntities( parola );
-	if(typeof(frase)=='undefined')var frase = false;
-	var searchArray = [];
-	var html = el.innerHTML;
-	var searchArray = [parola];
-	var searchArray2 = parola.split(" ");
-	var cls = 'fraseEvi';
+	let html = el.innerHTML,
+		searchArray = [parola],
+		searchArray2 = parola.split(" "),
+		cls = 'fraseEvi';
 	if(searchArray2.length == 1)cls = 'parolaEvi';
 	for (i=0;i<searchArray.length;i++){
 		if(searchArray2[i].trim())html = doHighlight( html, searchArray[i], cls );
@@ -475,9 +468,8 @@ function convertMisure( txt ){
     }
     return txt;
 }
-function elencaPaesi( prefissi ){
-	var prefissi = __(prefissi);
-	var elenco = {"":""};
+function elencaPaesi( prefissi = false ){
+	let elenco = {"":""};
 	for(let p in DB.INT.paesi){
 		var paese = DB.INT.paesi[p][globals.siglaLingua];
 		if(prefissi)paese += ' ('+DB.INT.paesi[p].prefisso+')';

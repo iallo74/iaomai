@@ -457,7 +457,7 @@ var MODELLO = {
 		// riseleziono i pezzi (organi, ossa, muscoli e legamenti) selezionati su un altro manichino
 		let pezziSelezionati = JSON.parse(JSON.stringify(globals.pezziSelezionati));
 		globals.pezziSelezionati = [];
-		for(e in pezziSelezionati){
+		for(let e in pezziSelezionati){
 			if(document.getElementById(pezziSelezionati[e])){
 				if(pezziSelezionati[e].indexOf("Organo_") == 0)MODELLO.isolaOrgano(document.getElementById(pezziSelezionati[e]));
 				if(pezziSelezionati[e].indexOf("Vaso_") == 0)MODELLO.isolaVaso(document.getElementById(pezziSelezionati[e]));
@@ -825,7 +825,7 @@ var MODELLO = {
 			// gestisco i pins
 			if(globals.pezziSelezionati.length){
 				let els = document.getElementById("legende").getElementsByTagName("div");
-				for(e=0;e<els.length;e++){
+				for(let e=0;e<els.length;e++){
 					let idContr = els[e].id;
 					//if(idContr.indexOf('Muscolo_')>-1 && (t2=='Area' || t2=='Pelle'))idContr = 'Area_';
 					if( 
@@ -970,7 +970,7 @@ var MODELLO = {
 	},
 	riposLegenda: function(){
 		let els = document.getElementById("legende").getElementsByTagName("div");
-		for(e=0;e<els.length;e++){
+		for(let e=0;e<els.length;e++){
 			let obj = scene.getObjectByName( els[e].dataset.idObj ),
 				pos1 = toScreenPosition2( obj, 0 ),
 				pos2 = toScreenPosition2( obj, 1 ),
@@ -1061,7 +1061,7 @@ var MODELLO = {
 		/* let p = ''; */
 		try{
 			let els = MODELLO.MAT.masks[ id.substr(id.indexOf("_")+1,id.length-id.indexOf("_")-1) ].masks;
-			for(e=0;e<els.length;e++){
+			for(let e=0;e<els.length;e++){
 				if(els[e] != '')noIsola=false;
 			}
 		}catch(error){
@@ -1669,8 +1669,8 @@ var MODELLO = {
 		if(localStorage.tipoPelle == '_mulatta')els[1].classList.add("cSel");
 		if(localStorage.tipoPelle == '_nera')els[2].classList.add("cSel");
 		if(globals.modello.cartella){
-			for(let p in ANATOMIA.children[2].children){
-				ANATOMIA.children[2].children[p].material = MODELLO.MAT["materialPelle"+MODELLO.tipoPelle];
+			for(let p in scene.getObjectByName('PELLE').children){
+				scene.getObjectByName('PELLE').children[p].material = MODELLO.MAT["materialPelle"+MODELLO.tipoPelle];
 			}
 		}
 	}

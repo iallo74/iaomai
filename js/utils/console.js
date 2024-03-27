@@ -44,19 +44,19 @@ var CONSOLE = {
 		this.jss = [];
 		let pattern='',
 			pH = location.href.split("/");
-		for(e=0;e<pH.length-1;e++){
+		for(let e=0;e<pH.length-1;e++){
 			pattern+=pH[e]+"/";
 		}
 		let els = document.getElementById("scriptsBase").getElementsByTagName("script");
-		for(e=0;e<els.length;e++){
+		for(let e=0;e<els.length;e++){
 			this.imports.push(els[e].src.replace(pattern,''));
 		}
 		els = document.head.getElementsByTagName("script");
-		for(e=0;e<els.length;e++){
+		for(let e=0;e<els.length;e++){
 			this.imports.push(els[e].src.replace(pattern,''));
 		}
 		els = document.head.getElementsByTagName("link");
-		for(e=0;e<els.length;e++){
+		for(let e=0;e<els.length;e++){
 			this.imports.push(els[e].href.replace(pattern,''));
 		}
 		if(this.imports.length)this.importScriptsRefreshed(0);

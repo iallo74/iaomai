@@ -30,19 +30,20 @@ var MODULO_MERIDIANI = { // extend SET
 	},
 	caricaMeridiani: function(){
 		// carica la lista dei meridiani
-		var contElencoMeridiani = contSmart = '';
+		let contElencoMeridiani = contSmart = '';
 		for(let a in DB.set.apparatiNMK){
 			DB.set.apparatiNMK[a].html = '';
 		}
-		var n = 0;
+		let n = 0;
 		for(let m in DB.set.meridiani){
 			if(m!='EX'){
 				n++;
-				var addClass = addClassEl = '';
+				let addClass = '',
+					addClassEl = '';
 					
 				
 				// verifico le autorizzazioni
-				var addLock =	(	(!SET.verFreeMeridiani(m) || !SET.verAttModule()) && !SET.verLightVersion() ) ? ' lockedItem' : '';
+				let addLock =	(	(!SET.verFreeMeridiani(m) || !SET.verAttModule()) && !SET.verLightVersion() ) ? ' lockedItem' : '';
 				// --------------------------
 				
 				if(m=='KI' || m=='LR' || m=='SP' || m=='HT' || m=='PC' || m=='LU' || m=='CV'){
@@ -50,7 +51,7 @@ var MODULO_MERIDIANI = { // extend SET
 					addClassEl = ' spazioPrima';
 				}
 				
-				var elencoPunti = '';
+				let elencoPunti = '';
 				if(m=='CV' || m=='GV' || m=='NK')addClass +=	' noMAS';
 				if(m!='NK')addClass +=	' noNMK';
 				else addClass += ' NMK';
@@ -61,9 +62,9 @@ var MODULO_MERIDIANI = { // extend SET
 				
 				if(m!='NK'){
 					for (let i=0; i<len; i++) {	
-						let nPunto = keys[i];
-						var TS = DB.set.meridiani[m].punti[nPunto];
-						var elemento = (!__(DB.set.meridiani[m].punti[nPunto].nascosto,false)) ? '<p>'+this.scriviPunto(TS.NomePunto,true,true,__(TS.siglaPunto),m)+'</p>' : "";
+						let nPunto = keys[i],
+							TS = DB.set.meridiani[m].punti[nPunto],
+							elemento = (!__(DB.set.meridiani[m].punti[nPunto].nascosto,false)) ? '<p>'+this.scriviPunto(TS.NomePunto,true,true,__(TS.siglaPunto),m)+'</p>' : "";
 						if(	(!SET.verFreePunti(m+"."+nPunto) || (SET.PUNTI_free.indexOf(m+"."+nPunto)==-1 && !SET.verAttModule())) && !SET.verLightVersion() ){
 							elemento = elemento.replace("pallinoPat","pallinoPat lockedItem");
 						}
@@ -72,7 +73,7 @@ var MODULO_MERIDIANI = { // extend SET
 					
 				}
 				if(m=='NK'){
-					var seq = 0;
+					let seq = 0;
 					for(a in DB.set.sequenzaNMK){
 						if(DB.set.sequenzaNMK[a].label)elencoPunti += '<i class="labelSequenzaNMK">'+DB.set.sequenzaNMK[a].label+'</i>';
 						elencoPunti += '<div class="sequenze_nmk" id="apr_'+a+'"><p class="labelSequenza" onClick="SET.swSequenze(this);">'+DB.set.sequenzaNMK[a].tit+'</p>';
@@ -83,7 +84,7 @@ var MODULO_MERIDIANI = { // extend SET
 								gruppoForzato = '';
 
 							if(DB.set.sequenzaNMK[a].gruppo)gruppo = DB.set.sequenzaNMK[a].gruppo;
-							var nPunto = DB.set.sequenzaNMK[a].punti[i];
+							let nPunto = DB.set.sequenzaNMK[a].punti[i];
 							
 							if(nPunto.indexOf(".")>-1){
 								gruppoForzato = nPunto.split(".")[1];
@@ -91,7 +92,7 @@ var MODULO_MERIDIANI = { // extend SET
 								nPunto = nPunto.split(".")[0];
 							}
 
-							var TS = DB.set.meridiani[m].punti[nPunto];
+							let TS = DB.set.meridiani[m].punti[nPunto];
 							if(__(TS.rif,'')){
 								nPunto = TS.rif.split(".")[0];
 								if(!gruppoForzato)gruppo += TS.rif.split(".")[1];
@@ -112,7 +113,7 @@ var MODULO_MERIDIANI = { // extend SET
 						elencoPunti += '</div>';
 					}
 				}
-				var siglaMeridiano = m;
+				let siglaMeridiano = m;
 				if(m!='NK')siglaMeridiano = SET.convSigla(m);
 				
 				contElencoMeridiani +=	'<div onMouseOver="SET.eviMeridiano(\''+m+'\',true);"' +

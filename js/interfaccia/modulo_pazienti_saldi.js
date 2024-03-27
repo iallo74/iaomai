@@ -192,8 +192,8 @@ var PAZIENTI_SALDI = {
 			HTML += '		<span id="btn_stampa" class="stampaBtn noPrint" onclick="SCHEDA.stampaScheda({});">'+TXT("StampaRicevuta")+'</span>' +
 					'	</div>';
 			
-			var azElimina = Q_idSaldo>-1 ? 'PAZIENTI.el_saldo('+Q_idSaldo+')':"";
-			var btnAdd = '';
+			let azElimina = Q_idSaldo>-1 ? 'PAZIENTI.el_saldo('+Q_idSaldo+')' : "",
+				btnAdd = '';
 			if(azElimina){
 				btnAdd += '<div class="p_paz_el_menu" onClick="'+azElimina+'">'+TXT("EliminaScheda")+'</div>';
 			}
@@ -281,7 +281,7 @@ var PAZIENTI_SALDI = {
 		CONFIRM.vis(	TXT("ChiediEliminaSaldo"),
 						false,
 						arguments ).then(function(pass){if(pass){
-						var v = getParamNames(CONFIRM.args.callee.toString());
+						let v = getParamNames(CONFIRM.args.callee.toString());
 						for(let i in v)eval(getArguments(v,i));
 						
 			stopAnimate(true);

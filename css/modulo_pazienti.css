@@ -1448,8 +1448,8 @@ body:not(.smart) #rgApplicaFiltri{
 	margin-top: 0px !important;
 }
 #marketingElenchi{
-	padding-left: 0px !important;
-    padding-right: 0px !important;
+	padding-left: 20px !important;
+    padding-right: 10px !important;
 }
 #marketingElenchi_btns{
     text-align: right;

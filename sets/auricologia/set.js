@@ -1,5 +1,5 @@
 
-SET = {
+var SET = {
 	
 	// VARIABILI
 	INTERSECTED: null,
@@ -73,34 +73,33 @@ SET = {
 		SETS = new THREE.Group();
 		SETS.name = "SETS";
 		
-		var facce = 10;
-		var facceTrasp = 14;
+		let facce = 10,
+			facceTrasp = 14;
 		if(isTablet){
 			facce = 8;
 			facceTrasp = 12;
 		}
-		var modelloAperto = globals.modello.cartella;
+		let modelloAperto = globals.modello.cartella;
 		if(!modelloAperto)modelloAperto='orecchio';
 		this.geometryPallino = new THREE.SphereGeometry( 0.04, facce, facce );
 		this.geometryPallinoTrasp = new THREE.SphereGeometry( 0.08, facceTrasp, facceTrasp );
 			
 		
-		var sysMesh = new THREE.Group();
+		let sysMesh = new THREE.Group();
 		sysMesh.name = "GEO";
 		sysMesh.visible = true;
 		
 		// guide (se ci sono)
-		var n=-1;
-		var GDS=GEOMETRIE.guide;
+		let n=-1,
+			GDS=GEOMETRIE.guide;
 		if(GDS){
 			if(GDS.length){
-				var GD = new THREE.Group();
+				let GD = new THREE.Group();
 				GD.name="GDs";
 				for(l in GDS){ // aggiungo le guide
 					
-					var loader = new THREE.ObjectLoader();
-					
-					var mesh =  loader.parse(JSON.parse(LZString.decompressFromBase64(GDS[l].obj)));
+					let loader = new THREE.ObjectLoader(),
+						mesh =  loader.parse(JSON.parse(LZString.decompressFromBase64(GDS[l].obj)));
 					mesh.material = this.MAT.lineGuide;
 					GD.add( mesh );
 					
@@ -110,13 +109,13 @@ SET = {
 		}
 		
 		// linee di conterno
-		var LNS=GEOMETRIE.linee;
+		let LNS=GEOMETRIE.linee;
 		if(LNS){
 			if(LNS.length){
-				var LN = new THREE.Group();
-				var LN2 = new THREE.Group();
-				var LN3 = new THREE.Group();
-				var LM = new THREE.Group();
+				let LN = new THREE.Group(),
+					LN2 = new THREE.Group(),
+					LN3 = new THREE.Group(),
+					LM = new THREE.Group();
 				LN.name="LNs";
 				LN2.name="LNs2";
 				LN3.name="LNs3";
@@ -126,15 +125,14 @@ SET = {
 				LN3.visible=false;
 				LM.visible=false;
 				for(l in LNS){ // aggiungo le guide
-					var loader = new THREE.ObjectLoader();
-					var mesh =  loader.parse(JSON.parse(LZString.decompressFromBase64(LNS[l].obj)));
-					
-					var name = mesh.name.split(" ")[0];
-					var orName = mesh.name;
+					let loader = new THREE.ObjectLoader(),
+						mesh =  loader.parse(JSON.parse(LZString.decompressFromBase64(LNS[l].obj))),
+						name = mesh.name.split(" ")[0],
+						orName = mesh.name,
+						vis = true,
+						PH = '',
+						type = '';
 					mesh.name = name;
-					var vis = true;
-					var PH = '';
-					var type = '';
 					if(	orName.indexOf("AG")==0 ||
 						orName.indexOf("(GRUPPO)")>-1){
 						mesh.visible = false;
@@ -148,7 +146,7 @@ SET = {
 								vis = false;
 								PH = '3';
 							}
-							var lato = "";
+							let lato = "";
 							if(orName.indexOf("SX")>-1)lato = "SX";
 							if(orName.indexOf("DX")>-1)lato = "DX";
 							mesh.userData.lato = lato;
@@ -179,41 +177,40 @@ SET = {
 		}
 		
 		// aree
-		var ARS = GEOMETRIE.aree;
+		let ARS = GEOMETRIE.aree;
 		if(ARS){
-			var n=-1;
-			var AR = new THREE.Group();
-			var AR2 = new THREE.Group();
-			var AR3 = new THREE.Group();
+			n=-1;
+			let AR = new THREE.Group(),
+				AR2 = new THREE.Group(),
+				AR3 = new THREE.Group();
 			AR.name="ARs";
 			AR2.name="ARs2";
 			AR3.name="ARs3";
 			AR.visible = true;
 			AR2.visible = false;
 			AR3.visible = false;
-			var area = GEOMETRIE.areaBase;
+			let area = GEOMETRIE.areaBase;
 			for(a in ARS){ // aggiungo le aree
-				var loader = new THREE.ObjectLoader();
-				var mesh = loader.parse(JSON.parse(LZString.decompressFromBase64(ARS[a].obj)));
-				var name = mesh.name.split("_")[0];
+				let loader = new THREE.ObjectLoader(),
+					mesh = loader.parse(JSON.parse(LZString.decompressFromBase64(ARS[a].obj))),
+					name = mesh.name.split("_")[0];
 				
 				
-				var system = "";
+				let system = "";
 				if(mesh.name.indexOf("EUR")>-1)system = "EUR";
 				if(mesh.name.indexOf("CIN")>-1)system = "CIN";
 				if(mesh.name.indexOf("INT")>-1)system = "";
-				var lato = "";
+				let lato = "";
 				if(mesh.name.indexOf("SX")>-1)lato = "SX";
 				if(mesh.name.indexOf("DX")>-1)lato = "DX";
 				
-				var PH = '';
+				let PH = '';
 				if(mesh.name.indexOf("PH2")>-1)PH = '2';
 				if(mesh.name.indexOf("PH3")>-1)PH = '3';
 				
-				var FN = (GEOMETRIE.gruppi.FN.punti.indexOf(name.substr(2,3))>-1);
-				var master = (GEOMETRIE.gruppi.MASTER.punti.indexOf(name.substr(2,3))>-1);
-				
-				var freq = [];
+				let FN = (GEOMETRIE.gruppi.FN.punti.indexOf(name.substr(2,3))>-1),
+					master = (GEOMETRIE.gruppi.MASTER.punti.indexOf(name.substr(2,3))>-1),
+					freq = [];
 				for(let f in SET.frequenze){
 					if(mesh.name.indexOf("_"+SET.frequenze[f])>-1)freq.push( SET.frequenze[f] );
 				}
@@ -222,7 +219,7 @@ SET = {
 					if(PH=='2')DB.set.punti[name.substr(2,3)].PH2 = true;
 					if(PH=='3')DB.set.punti[name.substr(2,3)].PH3 = true;
 				}
-				var mat = this.MAT["areaBase"+system];
+				let mat = this.MAT["areaBase"+system];
 				
 				mesh.material = cloneMAT(mat);
 				if(mesh.name.indexOf("HIDE")>-1){
@@ -250,15 +247,15 @@ SET = {
 		}
 		
 		// pins delle aree
-		var PN = new THREE.Group();
+		let PN = new THREE.Group();
 		PN.name="PNs";
-		var n=-1;
-		var PNS=GEOMETRIE.pins;
+		n=-1;
+		let PNS=GEOMETRIE.pins;
 		for(let p in PNS){
 			if(PNS[p]!=''){
-				var x=PNS[p].array[0];
-				var y=PNS[p].array[1];
-				var z=PNS[p].array[2];
+				let x = PNS[p].array[0],
+					y = PNS[p].array[1],
+					z = PNS[p].array[2];
 					
 				// pallino trasparente
 				n++;
@@ -272,9 +269,9 @@ SET = {
 		sysMesh.add( PN );
 		
 		// PUNTI
-		var PT = new THREE.Group();
-		var PT2 = new THREE.Group();
-		var PT3 = new THREE.Group();
+		let PT = new THREE.Group(),
+			PT2 = new THREE.Group(),
+			PT3 = new THREE.Group();
 		PT.name="PTs";
 		PT2.name="PTs2";
 		PT3.name="PTs3";
@@ -282,35 +279,34 @@ SET = {
 		PT2.visible = false;
 		PT3.visible = false;
 		// carico i punti parametrizzati
-		var n=-1;
-		var PTS=GEOMETRIE.punti;
+		n=-1;
+		let PTS=GEOMETRIE.punti;
 		for(let p in PTS){
 			if(PTS[p]!=''){
-				var x=PTS[p].array[0];
-				var y=PTS[p].array[1];
-				var z=PTS[p].array[2];
-				var name = PTS[p].nome.split("(")[0].trim();
-				
-				var system = "";
+				let x = PTS[p].array[0],
+					y = PTS[p].array[1],
+					z = PTS[p].array[2],
+					name = PTS[p].nome.split("(")[0].trim(),
+					system = "";
 				if(PTS[p].nome.indexOf("EUR")>-1)system = "EUR";
 				if(PTS[p].nome.indexOf("CIN")>-1)system = "CIN";
 				if(PTS[p].nome.indexOf("INT")>-1)system = "";
-				var lato = "";
+				let lato = "";
 				if(PTS[p].nome.indexOf("SX")>-1)lato = "SX";
 				if(PTS[p].nome.indexOf("DX")>-1)lato = "DX";
 				
-				var PH = '';
+				let PH = '';
 				if(PTS[p].nome.indexOf("PH2")>-1)PH = '2';
 				if(PTS[p].nome.indexOf("PH3")>-1)PH = '3';
 				
-				var freq = [];
+				let freq = [];
 				for(let f in SET.frequenze){
 					if(PTS[p].nome.indexOf(" "+SET.frequenze[f])>-1)freq.push( SET.frequenze[f] );
 				}
 				
 				
-				var FN = (GEOMETRIE.gruppi.FN.punti.indexOf(name.substr(2,3))>-1);
-				var master = (GEOMETRIE.gruppi.MASTER.punti.indexOf(name.substr(2,3))>-1);
+				let FN = (GEOMETRIE.gruppi.FN.punti.indexOf(name.substr(2,3))>-1),
+					master = (GEOMETRIE.gruppi.MASTER.punti.indexOf(name.substr(2,3))>-1);
 				
 				
 				// pallino colorato
@@ -320,7 +316,7 @@ SET = {
 					if(PH=='2')DB.set.punti[name.substr(2,3)].PH2 = true;
 					if(PH=='3')DB.set.punti[name.substr(2,3)].PH3 = true;
 				}
-				var mat = this.MAT["pointBase"+system];
+				let mat = this.MAT["pointBase"+system];
 				
 				this.P[n] = new THREE.Mesh( this.geometryPallino, cloneMAT(mat) );
 				
@@ -373,7 +369,7 @@ SET = {
 		
 		SET.MAT.mappaAree(true);
 		
-		var contPulsanti = 	'<span class="menuElenchi" onclick="MENU.visMM(\'btnCarMapMenu\');"></span>' +
+		let contPulsanti = 	'<span class="menuElenchi" onclick="MENU.visMM(\'btnCarMapMenu\');"></span>' +
 							'<span id="btnCarMapMenu" class="btn_meridiani_shiatsu titolo_set">' +
 							'<span>AuriculoMap</span>' +
 							/* '<i class="elMenu" id="chiudiSet" onClick="chiudiSet();" title="'+htmlEntities(TXT("ChiudiSet"))+'"><span>' +
@@ -383,7 +379,7 @@ SET = {
 								htmlEntities(TXT("ImpostazioniSet")) +
 							'</span></i>' +
 							'<i class="elMenu" id="help_set" onClick="GUIDA.visFumetto(\'guida_set\',true,true);">?</i></span>';
-		var contElenco = '';
+		let contElenco = '';
 		
 		contPulsanti += '<div id="pulsante_modello" onClick="cambiaModello(\'orecchio\');">'+TXT("ApriModello3D")+'</div>';
 
@@ -399,7 +395,7 @@ SET = {
 		contElenco += '<div id="lista_patologie"></div>';
 		
 		// procedure personalizzare
-		var contProcedure = '';
+		let contProcedure = '';
 		contPulsanti += '<div id="pulsante_procedure" class="frdx" onClick="SCHEDA.selElenco(\'procedure\');">'+TXT("Procedure")+'</div>';
 		contElenco += '<div id="lista_procedure"></div>';
 		
@@ -411,12 +407,12 @@ SET = {
 		
 		//contPulsanti += '<span id="tueLicenzeMappa" class="tueLicenze"><span onClick="MENU.visLicenze();">'+TXT("TueLicenze")+'</span></span>';
 		
-		contBtns = 	'<div id="p_contrasto" class="p_noTxt" onClick="SET.swContrastMethod();"></div>' +
-					'<div id="p_lms" class="p_noTxt" onClick="SET.swLM();" title="'+htmlEntities(TXT("MostraLM"))+'"></div>';
+		let contBtns = 	'<div id="p_contrasto" class="p_noTxt" onClick="SET.swContrastMethod();"></div>' +
+						'<div id="p_lms" class="p_noTxt" onClick="SET.swLM();" title="'+htmlEntities(TXT("MostraLM"))+'"></div>';
 		
-		contIcona = '<div id="p_set" onClick="SCHEDA.apriElenco(\'set\',true);"><svg viewBox="0 0 12 48"><polygon points="5,24 12,13 12,35"></polygon></svg><i>'+htmlEntities(TXT("AuriculoMap"))+'</i></div>';;
+		let contIcona = '<div id="p_set" onClick="SCHEDA.apriElenco(\'set\',true);"><svg viewBox="0 0 12 48"><polygon points="5,24 12,13 12,35"></polygon></svg><i>'+htmlEntities(TXT("AuriculoMap"))+'</i></div>';;
 		
-		var preElenco = SCHEDA.elencoSel;
+		let preElenco = SCHEDA.elencoSel;
 		SCHEDA.caricaElenco(globals.set.nome,contElenco);
 		SCHEDA.caricaPulsanti(contPulsanti);
 		SCHEDA.caricaBtns(contBtns,contIcona);
@@ -425,7 +421,7 @@ SET = {
 		if(preElenco)SCHEDA.selElenco(preElenco);
 		
 		// pallini di evidenza
-		var geoPoint =  new THREE.SphereGeometry( 0.11, 16, 16 );
+		let geoPoint =  new THREE.SphereGeometry( 0.11, 16, 16 );
 		this.eviPoint =  new THREE.Mesh( geoPoint, this.MAT.pointSel2.clone() );
 		this.eviPoint.name='Selected point 1';
 		this.eviPoint.userData.categoria='';
@@ -511,7 +507,7 @@ SET = {
 	
 	iniPos: function(){
 		SET.POS = JSON.parse(__(localStorage.POS,'{}'));
-		for(e in SET.POS){
+		for(let e in SET.POS){
 			//SET.nasELS(e);
 		}
 		document.addEventListener("keyup", SET.keyUpPos, false );
@@ -519,9 +515,9 @@ SET = {
 	keyUpPos: function(event){
 		if(event.keyCode==81){
 			normalizeRotation();
-			var el = {x: manichinoCont.rotation.x, y: manichinoCont.rotation.y };
+			let el = {x: manichinoCont.rotation.x, y: manichinoCont.rotation.y };
 			if(SET.ptSel){
-				var name = SET.ptSel.name.substr(2,3);
+				let name = SET.ptSel.name.substr(2,3);
 				if(!SET.POS[name]){
 					
 					SET.POS[name] = el;
@@ -543,14 +539,14 @@ SET = {
 	
 	// RENDER SET
 	_render: function(){
-		var make=true;
+		let make = true;
 		if(manichinoCaricato && !raycastDisable && !controlsM._ZPR && !controlsM._premuto){
 			camera.updateMatrixWorld();
 			raycaster.setFromCamera( mouse, camera );
 			raycaster.params.Points.threshold = 20;
 			
-			var objOver='';
-			var ints = [];
+			let objOver='',
+				ints = [];
 			if(SETS){
 				for(let i in SETS.children){
 					if(	SETS.children[i].visible &&
@@ -561,7 +557,7 @@ SET = {
 								SETS.children[i].children[ii].name.substr(0,2)!='LN' &&
 								SETS.children[i].children[ii].name.substr(0,2)!='GD' &&
 								SETS.children[i].children[ii].name.substr(0,2)!='LM'){
-								var intersects = raycaster.intersectObjects( SETS.children[i].children[ii].children );
+								let intersects = raycaster.intersectObjects( SETS.children[i].children[ii].children );
 								if ( intersects.length > 0 ) { // roll-over
 									for(l in intersects){
 										if(intersects[l].object.name.indexOf("NERVO")==-1){
@@ -580,13 +576,13 @@ SET = {
 					if(	ANATOMIA.children[i].name.toLowerCase()=='pelle' ||
 						ANATOMIA.children[i].name.toLowerCase()=='ossa' ||
 						ANATOMIA.children[i].name.toLowerCase()=='vasi' ){
-						var intersects = raycaster.intersectObject( ANATOMIA.children[i] );
+						let intersects = raycaster.intersectObject( ANATOMIA.children[i] );
 						if ( intersects.length > 0 ){
 							for(l in intersects)ints.push(intersects[l]);
 						}
 						if(ANATOMIA.children[i].type=='Group'){
 							for(let g in ANATOMIA.children[i].children){
-								var intersects = raycaster.intersectObject( ANATOMIA.children[i].children[g] );
+								let intersects = raycaster.intersectObject( ANATOMIA.children[i].children[g] );
 								if ( intersects.length > 0 ){
 									for(l in intersects){
 										if(intersects[l].object.name.indexOf("NERVO")==-1){
@@ -601,19 +597,20 @@ SET = {
 			}
 			// impedisco l'attraversamento della pelle
 			if(ints.length){
-				var near = ints[0];
+				let near = ints[0];
 				for(l in ints){
 					if(ints[l].distance<near.distance)near=ints[l];
 				}
 				if(near.object.userData.raycastable!=true)objOver='';
 				else objOver=near.object;
 			}
-			var n1=n2='';
+			/* let n1 = '',
+				n2 = ''; */
 			SET.desIntersected(objOver);
 			if(objOver){
 				this.INTERSECTED = objOver;
 				if(this.INTERSECTED.userData.raycastable){
-					var name=this.INTERSECTED.name;
+					let name=this.INTERSECTED.name;
 					if(name.substr(0,1)=='_')name = name.substr(3,name.length-3);
 					else name = name.substr(2,name.length-2);
 					visToolTip(DB.set.punti[name].NomePunto);
@@ -632,7 +629,7 @@ SET = {
 			if(this.ptSel.userData.type == 'point'){
 				this.pulse+=0.01;
 				if(this.pulse>=1.6)this.pulse=1;
-				var op=1.8-this.pulse;
+				let op=1.8-this.pulse;
 				
 				SET.setPulsePt( this.ptSel, this.pulse, op );
 				
@@ -642,7 +639,7 @@ SET = {
 		
 		if(SET.lmVis){
 			// mostro/nascondo i landmarks
-			var nascosto = (manichinoCont.rotation.x>1.5 || 
+			let nascosto = (manichinoCont.rotation.x>1.5 || 
 							manichinoCont.rotation.x<-1.5 || 
 							manichinoCont.rotation.y>1.3 || 
 							manichinoCont.rotation.y<-1.8 );
@@ -659,10 +656,10 @@ SET = {
 		return make;
 	},
 	setPulsePt: function( pt, pulse, op, mat='' ){
-		var phs = ["","2","3"];
+		let phs = ["","2","3"];
 		for(let ph in phs){
-			var els = scene.getObjectByName("PTs"+phs[ph]).children;
-			for(e in els){
+			let els = scene.getObjectByName("PTs"+phs[ph]).children;
+			for(let e in els){
 				if(els[e].name.indexOf(pt.name)==0){
 					els[e].scale.set(pulse,pulse,pulse);
 					if(mat)els[e].material=mat;
@@ -673,7 +670,7 @@ SET = {
 	},
 	desIntersected: function(objOver){
 		if(this.INTERSECTED && this.INTERSECTED!=objOver){
-			var name=this.INTERSECTED.name;
+			let name=this.INTERSECTED.name;
 			if(name.substr(0,1)=='_')name = name.substr(3,name.length-3);
 			else name = name.substr(2,name.length-2);
 			SET.coloraPunti(name,'Base');
@@ -687,7 +684,7 @@ SET = {
 	
 	// CLICK sul punto
 	_onClick: function( e ){
-		var btn=0;
+		let btn=0;
 		if(!touchable)btn=e.button;
 		if(!btn && !raycastDisable && ((controlsM.xIni==controlsM.xEnd && controlsM.yIni==controlsM.yEnd) || touchable)){
 			if(this.INTERSECTED){
@@ -697,9 +694,9 @@ SET = {
 					controlsM._MM=false;
 				}
 				if(this.INTERSECTED.userData.raycastable){
-					var name=this.INTERSECTED.name;
+					let name=this.INTERSECTED.name;
 					if(name.substr(0,1)=='_')name = name.substr(1,name.length-1);
-					var ritorno = '';
+					let ritorno = '';
 					if(SCHEDA.classeAperta && SCHEDA.classeAperta!='tab_punti')ritorno = 'SET.chiudiPunto(true)';
 					SET.apriPunto(name,ritorno,this.INTERSECTED);
 				}
@@ -713,9 +710,10 @@ SET = {
 	
 	
 	apriPunto: function( PT_name, ritorno='', el='' ){
-		var PT=scene.getObjectByName( PT_name );
+		let PT=scene.getObjectByName( PT_name ),
+			mat;
 		if(typeof(PT)=='undefined')PT = scene.getObjectByName( PT_name.replace("PT","AR") );
-		var type = (PT.userData.type == 'point')?"punti":"aree";
+		let type = (PT.userData.type == 'point')?"punti":"aree";
 		name = PT_name.substr(PT_name.length-3,3);
 		
 		// verifico le autorizzazioni
@@ -728,7 +726,7 @@ SET = {
 		if(this.ptSel){
 			if(name == this.ptSel.name.substr(2,3))return;
 			system = this.ptSel.userData.system;
-			var mat = SET.MAT["pointBase"+system];
+			mat = SET.MAT["pointBase"+system];
 			if(this.ptSel.userData.nota)mat=this.MAT.pointNote;
 			SET.setPulsePt( this.ptSel, 1, 1, mat );
 			if(document.getElementById("ts_"+this.ptSel.name.substr(2,3)))document.getElementById("ts_"+this.ptSel.name.substr(2,3)).classList.remove("selElPt");
@@ -739,15 +737,14 @@ SET = {
 		
 		if(document.getElementById("ts_"+name))document.getElementById("ts_"+name).classList.add("selElPt");
 		
-		var PT_name_first= null;
-		var AR_name_first= null;
-		
-		var mat = this.MAT.pointSel;
+		let PT_name_first= null,
+			AR_name_first= null;
+		mat = this.MAT.pointSel;
 		if(PT.userData.nota)mat = this.MAT.pointSelNote;
-		var phs = ["","2","3"];
+		let phs = ["","2","3"];
 		for(let ph in phs){
-			var els = scene.getObjectByName("PTs"+phs[ph]).children;
-			for(e in els){
+			let els = scene.getObjectByName("PTs"+phs[ph]).children;
+			for(let e in els){
 				if(els[e].name.indexOf("PT"+name)==0){
 					els[e].visible = true;
 					els[e].material=mat;
@@ -757,15 +754,15 @@ SET = {
 					}
 				}
 			}
-			var els = scene.getObjectByName("LNs"+phs[ph]).children;
-			for(e in els){
+			els = scene.getObjectByName("LNs"+phs[ph]).children;
+			for(let e in els){
 				if(els[e].name.indexOf("AG"+name)==0){
 					els[e].visible=true;
 				}
 			}
-			var mat = this.MAT.areaSel;
-			var els = scene.getObjectByName("ARs"+phs[ph]).children;
-			for(e in els){
+			mat = this.MAT.areaSel;
+			els = scene.getObjectByName("ARs"+phs[ph]).children;
+			for(let e in els){
 				if(els[e].name.indexOf("AR"+name)==0){
 					els[e].visible = true;
 					els[e].material=mat;
@@ -774,7 +771,7 @@ SET = {
 			}
 		}
 		
-		var elPin = this.ptSel;
+		let elPin = this.ptSel;
 		if(el)elPin = el;
 		
 		if(!PT.parent.visible){
@@ -782,13 +779,13 @@ SET = {
 			if(AR_name_first)PT = scene.getObjectByName(AR_name_first); 
 		}
 		
-		var x2 = 0;
-		var y2 = 0;
-		var z2 = 0;
-		var vector = null;
+		let x2 = 0,
+			y2 = 0,
+			z2 = 0,
+			vector = null;
 		if(PT.userData.type == 'area'){
 			elPin = scene.getObjectByName( "AR"+name );
-			var center = getCenterPoint(elPin);
+			let center = getCenterPoint(elPin);
 			this.diffX = center.x*1;
 			this.diffY = center.y*1;
 			x2 = ((MODELLO.flip) ? center.x*1 : 0-center.x*1);
@@ -804,7 +801,7 @@ SET = {
 			y2 = 0-elPin.position.y;
 			z2 = 0-elPin.position.z;
 			elPin.updateMatrixWorld();
-			var vector = elPin.geometry.vertices[0].clone();
+			vector = elPin.geometry.vertices[0].clone();
 			vector.applyMatrix4( elPin.matrixWorld );
 		}
 		panEndZero = { x: x2, y: y2, z: z2 };
@@ -818,7 +815,7 @@ SET = {
 		if(!el){
 			// posiziono
 			if(GEOMETRIE.posizioni[name] && !SET.phase){
-				var pos = GEOMETRIE.posizioni[name];
+				let pos = GEOMETRIE.posizioni[name];
 
 				// cerco la via più breve
 				let diffX = manichinoCont.rotation.x-pos.x,
@@ -866,10 +863,11 @@ SET = {
 			endChangeDetection();
 			SCHEDA.formModificato = false;
 		}
+		let mat;
 		if(this.ptSel.userData.type == 'point'){
 			this.eviPoint.material.visible = false;
 			this.pulse=0;
-			var mat = cloneMAT(SET.MAT["pointBase"+this.ptSel.userData.system]);
+			mat = cloneMAT(SET.MAT["pointBase"+this.ptSel.userData.system]);
 			if(this.ptSel.userData.nota)mat=this.MAT.pointNote;
 			this.ptSel.material=mat;
 			this.ptSel.material.opacity=1;
@@ -880,12 +878,12 @@ SET = {
 		exPt = SET.ptSel;
 			
 		// coloro tutti gli altri punti
-		var mat = cloneMAT(SET.MAT["pointBase"+this.ptSel.userData.system]);
+		mat = cloneMAT(SET.MAT["pointBase"+this.ptSel.userData.system]);
 		if(this.ptSel.userData.nota)mat=this.MAT.pointNote;
-		var phs = ["","2","3"];
+		let phs = ["","2","3"];
 		for(let ph in phs){
-			var els = scene.getObjectByName("PTs"+phs[ph]).children;
-			for(e in els){
+			let els = scene.getObjectByName("PTs"+phs[ph]).children;
+			for(let e in els){
 				if(els[e].name.indexOf("PT"+this.ptSel.name.substr(2,3))==0){
 					if(__(els[e].userData.hidePunto,'0')=='1')els[e].visible = false;
 					els[e].material=mat;
@@ -896,14 +894,14 @@ SET = {
 					if(__(els[e].userData.hidePunto,'0')=='1')els[e].visible = false;
 				}
 			}
-			var els = scene.getObjectByName("LNs"+phs[ph]).children;
-			for(e in els){
+			els = scene.getObjectByName("LNs"+phs[ph]).children;
+			for(let e in els){
 				if(els[e].name.indexOf("AG")==0){
 					els[e].visible=false;
 				}
 			}
-			var els = scene.getObjectByName("ARs"+phs[ph]).children;
-			for(e in els){
+			els = scene.getObjectByName("ARs"+phs[ph]).children;
+			for(let e in els){
 				if(els[e].name.indexOf("AR"+this.ptSel.name.substr(2,3))==0){
 					if(__(els[e].userData.hidePunto,'0')=='1')els[e].visible = false;
 					system = els[e].userData.system;
@@ -927,21 +925,24 @@ SET = {
 		
 		// ricentro il manichino
 		exPt.updateMatrixWorld();
+		let vector,
+			vector2,
+			center;
 		if(exPt.userData.type == 'area'){
-			var center = getCenterPoint(exPt);
-			var vector = new THREE.Vector3( ((MODELLO.flip) ? center.x*1 : 0-center.x*1), 0-center.y*1, 0-center.z*1 );
+			center = getCenterPoint(exPt);
+			vector = new THREE.Vector3( ((MODELLO.flip) ? center.x*1 : 0-center.x*1), 0-center.y*1, 0-center.z*1 );
 		}else{
-			var vector = exPt.geometry.vertices[0].clone();
+			vector = exPt.geometry.vertices[0].clone();
 		}
 		vector.applyMatrix4( exPt.matrixWorld );
 		manichino.position.set( 0, 0, 0 );
 		render();
 		exPt.updateMatrixWorld();
 		if(exPt.userData.type == 'area'){
-			var center = getCenterPoint(exPt);
-			var vector2 = new THREE.Vector3( ((MODELLO.flip) ? center.x*1 : 0-center.x*1), 0-center.y*1, 0-center.z*1 );
+			center = getCenterPoint(exPt);
+			vector2 = new THREE.Vector3( ((MODELLO.flip) ? center.x*1 : 0-center.x*1), 0-center.y*1, 0-center.z*1 );
 		}else{
-			var vector2 = exPt.geometry.vertices[0].clone();
+			vector2 = exPt.geometry.vertices[0].clone();
 		}
 		vector2.applyMatrix4( exPt.matrixWorld );
 		manichinoCont.position.x = manichinoCont.position.x - (vector2.x-vector.x);
@@ -966,16 +967,16 @@ SET = {
 	},
 	scriviPunto: function( siglaPunto, esteso=false, noRet=false, col ){
 		
-		var nomePunto = DB.set.punti[siglaPunto].NomePunto;
-		var EL = null;
+		let nomePunto = DB.set.punti[siglaPunto].NomePunto;
+		let EL = null;
 		if(scene.getObjectByName( "PT"+siglaPunto ))EL=scene.getObjectByName( "PT"+siglaPunto );
 		if(scene.getObjectByName( "AR"+siglaPunto ))EL=scene.getObjectByName( "AR"+siglaPunto );
 		
-		var html = '<a class="pallinoPat';
+		let html = '<a class="pallinoPat';
 		if(esteso)html += ' pallinoPatEsteso';
 		if(col)html += ' noPall';
 		if(__(EL.userData.locked,false))html+=' lockedItem';
-		var ret = '';
+		let ret = '';
 		if(!noRet)ret = SET.chiudiPunto(true);
 		html += '"';
 		if(col)html+= ' style="border-left:6px solid #'+col+'"';
@@ -984,7 +985,7 @@ SET = {
 						 '  onMouseOut="SET.overPunto(\''+EL.name+'\',false);"' +
 						 '	id="ts_'+siglaPunto.replace('.','_')+'"';
 		html += '>';
-		var system = EL.userData.system;
+		let system = EL.userData.system;
 		if(!system)system = 'INT';
 		html += '<span class="p'+system+'"></span>';
 		if(esteso)html+='<i>'+nomePunto+'</i>';
@@ -1010,7 +1011,7 @@ SET = {
 		SET.selPunto( PT );
 	},
 	setPuntoFrm: function(){
-		var ptP = SET.ptSel.name;
+		let ptP = SET.ptSel.name;
 		if( SCHEDA.classeAperta == 'scheda_procedura' ){
 			SET.dettagliProvvisori[SET.pMod].DescrizioneDettaglio = ptP;
 			SET.caricaDettagli();
@@ -1024,15 +1025,15 @@ SET = {
 		SCHEDA.formModificato = true;
 	},
 	evidenziaPunto: function( el, anatomia='', mappa='', lm='' ){
-		if(!el || typeof(el)=='undefined') var el = document.getElementById("scheda_testo");
+		if(!el || typeof(el)=='undefined')el = document.getElementById("scheda_testo");
 		let html = el.innerHTML;
 		SET.annullaEvidenziaPunto(true);
-		var re = /selPunto\([^\)]+\)/ig;
+		let re = /selPunto\([^\)]+\)/ig;
 		
-		var result = html.match(re);
+		let result = html.match(re);
 		for(let k in result){
-			var pT=result[k].split("'");
-			var siglaPunto = pT[1];
+			let pT=result[k].split("'"),
+				siglaPunto = pT[1];
 			
 			// verifico le autorizzazioni
 			if(SET.verFreePunti(siglaPunto)){
@@ -1044,11 +1045,11 @@ SET = {
 		/*
 		//-------------------- MOSTRA LINEE
 		//SET.hideGroupLines();
-		var re = /data-tri="[^"]+"/ig;
-		var result = html.match(re);
+		let re = /data-tri="[^"]+"/ig;
+		let result = html.match(re);
 		for(let k in result){
-			var pT=result[k].split('"');
-			var gruppo = pT[1];
+			let pT=result[k].split('"');
+			let gruppo = pT[1];
 			if(scene.getObjectByName(gruppo)){
 				scene.getObjectByName(gruppo).visible = true;
 			}
@@ -1059,8 +1060,8 @@ SET = {
 	evidenziaPuntoMod: function( elenco ){
 		SET.annullaEvidenziaPunto();
 		for(let k in elenco){
-			var pp=elenco[k].split(".");
-			var mat = SET.MAT.pointEvi;
+			let pp=elenco[k].split("."),
+				mat = SET.MAT.pointEvi;
 			if(pp[1]=='D')mat = SET.MAT.pointDolore;
 			if(scene.getObjectByName("_PT"+pp[0])){
 				scene.getObjectByName("_PT"+pp[0]).material=mat;
@@ -1072,11 +1073,11 @@ SET = {
 	},
 	applicaEvidenziaPunto: function( anatomia, mappa, lm='' ){
 		if(SET.puntiEvidenziati.length || anatomia){
-			var phs = ["","2","3"];
+			let phs = ["","2","3"];
 			for(let ph in phs){
-				var els = scene.getObjectByName("PTs"+phs[ph]).children;
-				for(e in els){
-					var siglaPunto = els[e].name.replace("_","").substr(2,3);
+				let els = scene.getObjectByName("PTs"+phs[ph]).children;
+				for(let e in els){
+					let siglaPunto = els[e].name.replace("_","").substr(2,3);
 					if(SET.puntiEvidenziati.indexOf(siglaPunto)>-1){
 						if(els[e].name.substr(0,1)=='_')els[e].material=SET.MAT.pointEvi;
 						else els[e].material.opacity = 1;
@@ -1085,9 +1086,9 @@ SET = {
 						if(els[e].name.substr(0,1)!='_')els[e].material.opacity = 0.5;
 					}
 				}
-				var els = scene.getObjectByName("ARs"+phs[ph]).children;
-				for(e in els){
-					var siglaPunto = els[e].name.substr(2,3);
+				els = scene.getObjectByName("ARs"+phs[ph]).children;
+				for(let e in els){
+					let siglaPunto = els[e].name.substr(2,3);
 					if(SET.puntiEvidenziati.indexOf(siglaPunto)>-1){
 						els[e].material=SET.MAT.areaEvi;
 						els[e].material.opacity = 0.7;
@@ -1126,13 +1127,13 @@ SET = {
 	},
 	annullaEvidenziaPunto: function( forzaDissolve=false ){
 		if(SET.puntiEvidenziati.length || forzaDissolve){
-			var phs = ["","2","3"];
+			let phs = ["","2","3"];
 			for(let ph in phs){
 				
-				var els = scene.getObjectByName("PTs"+phs[ph]).children;
-				for(e in els){
-					var siglaPunto = els[e].name.replace("_","").substr(2,3);
-					var vis = !__(DB.set.punti[siglaPunto].hidden,false) && __(els[e].userData.hidePunto,'0')=='0';
+				let els = scene.getObjectByName("PTs"+phs[ph]).children;
+				for(let e in els){
+					let siglaPunto = els[e].name.replace("_","").substr(2,3),
+						vis = !__(DB.set.punti[siglaPunto].hidden,false) && __(els[e].userData.hidePunto,'0')=='0';
 					if(SET.puntiEvidenziati.indexOf(siglaPunto)>-1){
 						if(els[e].name.indexOf("_PT"+siglaPunto)==0){
 							els[e].material=SET.MAT.pointTrasp;
@@ -1146,10 +1147,10 @@ SET = {
 						els[e].material.opacity = 1;
 					}
 				}
-				var els = scene.getObjectByName("ARs"+phs[ph]).children;
-				for(e in els){
-					var siglaPunto = els[e].name.substr(2,3);
-					var vis = !__(DB.set.punti[siglaPunto].hidden,false) && __(els[e].userData.hidePunto,'0')=='0';
+				els = scene.getObjectByName("ARs"+phs[ph]).children;
+				for(let e in els){
+					let siglaPunto = els[e].name.substr(2,3);
+					let vis = !__(DB.set.punti[siglaPunto].hidden,false) && __(els[e].userData.hidePunto,'0')=='0';
 					if(SET.puntiEvidenziati.indexOf(siglaPunto)>-1){
 						if(els[e].name.indexOf("AR"+siglaPunto)==0){
 							els[e].material=cloneMAT(SET.MAT["areaBase"+els[e].userData.system]);
@@ -1180,9 +1181,9 @@ SET = {
 	},
 	settaOverPunto: function(){
 		if(!touchable){
-			var els = document.getElementById("scheda_testo").getElementsByClassName("pallinoPat");
-			for(e=0;e<els.length;e++){
-				var onclick = els[e].onclick.toString();
+			let els = document.getElementById("scheda_testo").getElementsByClassName("pallinoPat");
+			for(let e=0;e<els.length;e++){
+				let onclick = els[e].onclick.toString();
 				if(onclick.indexOf("SET.selPunto('")>-1){
 					els[e].dataset.siglaPunto = onclick.split("SET.selPunto('")[1].split("')")[0];
 				}
@@ -1199,14 +1200,14 @@ SET = {
 		}
 	},
 	ritOverPunto: function( id, p ){
-		var el = document.getElementById("pt_"+p);
-		var siglaPunto = el.value;
+		let el = document.getElementById("pt_"+p),
+			siglaPunto = el.value;
 		SET.overPunto("PT"+siglaPunto,false);
-		var elenco = [];
-		var els = document.getElementById(id).getElementsByClassName("dettPunto");
-		var tot = els.length;
-		for(e=0;e<tot;e++){
-			var sl = els[e].getElementsByTagName("select");
+		let elenco = [],
+			els = document.getElementById(id).getElementsByClassName("dettPunto"),
+			tot = els.length;
+		for(let e=0;e<tot;e++){
+			let sl = els[e].getElementsByTagName("select");
 			elenco.push(sl[0].value);
 		}
 		SET.evidenziaPuntoMod(elenco);
@@ -1214,7 +1215,7 @@ SET = {
 	},
 	coloraPunti: function( PT_name, tipo ){
 		if(touchable)return;
-		var els = scene.getObjectByName("PTs"+SET.phase).children;
+		let els = scene.getObjectByName("PTs"+SET.phase).children;
 		for(let e in els){
 			if(	els[e].name.indexOf("PT"+PT_name) == 0 && 
 				els[e].material.name.indexOf("SEL") == -1 && 
@@ -1228,7 +1229,7 @@ SET = {
 				}
 			}
 		}
-		var els = scene.getObjectByName("ARs"+SET.phase).children;
+		els = scene.getObjectByName("ARs"+SET.phase).children;
 		for(let e in els){
 			if(	els[e].name.indexOf("AR"+PT_name) == 0 && 
 				els[e].material.name.indexOf("SEL") == -1 && 
@@ -1249,7 +1250,7 @@ SET = {
 		}
 	},
 	overPunto: function( PT_name, over ){
-		var name = PT_name.split(".")[0];
+		let name = PT_name.split(".")[0];
 		if(name.substr(0,1)=='_')name = name.substr(3,name.length-3);
 		else name = name.substr(2,name.length-2);
 		if(touchable || !name)return;
@@ -1260,18 +1261,18 @@ SET = {
 		}
 		// --------------------------
 		
-		var phs = ["","2","3"];
+		let phs = ["","2","3"];
 		for(let ph in phs){
-			var els = scene.getObjectByName("PTs"+phs[ph]).children;
-			for(e in els){
+			let els = scene.getObjectByName("PTs"+phs[ph]).children;
+			for(let e in els){
 				if(els[e].name.indexOf("_PT"+name)==0 && els[e].material.name.indexOf("SEL")==-1){
 					if(over)SET.addEviPalls("_PT"+name,'Over');
 					else SET.delEviPalls("_PT"+name,'Over');
 				}
 			}
-			var tipo = (over) ? "Over" : "";
-			var els = scene.getObjectByName("ARs"+phs[ph]).children;
-			for(e in els){
+			let tipo = (over) ? "Over" : "";
+			els = scene.getObjectByName("ARs"+phs[ph]).children;
+			for(let e in els){
 				if(els[e].name.indexOf("AR"+name)==0 && els[e].material.name.indexOf("SEL")==-1){
 					system = els[e].userData.system;
 					if(els[e].material.name.indexOf('EVI')>-1){
@@ -1286,20 +1287,20 @@ SET = {
 		}
 	},
 	convPuntiScheda: function( html, noPall=false ){
-		var nScheda = '';
+		let nScheda = '';
 		if(SCHEDA.scheda2Aperta)nScheda='2';
-		var regexp = /\[\.[^\]]+\.\]/ig;
-		var pts = html.match(regexp);
+		let regexp = /\[\.[^\]]+\.\]/ig,
+			pts = html.match(regexp);
 		for(let p in pts){
 			siglaPunto = pts[p].split(".")[1];
 			NomePunto = DB.set.punti[siglaPunto].NomePunto;
-			var EL = null;
+			let EL = null;
 			if(scene.getObjectByName( "PT"+siglaPunto ))EL=scene.getObjectByName( "PT"+siglaPunto );
 			if(scene.getObjectByName( "AR"+siglaPunto ))EL=scene.getObjectByName( "AR"+siglaPunto );
-			var system = EL.userData.system;
+			let system = EL.userData.system;
 			if(!system)system = 'INT';
-			var pallClass = 'pallinoPat';
-			var addClick = '';
+			let pallClass = 'pallinoPat',
+				addClick = '';
 			if(noPall){
 				pallClass += ' pallinoPunto';
 				addClick = 'return;';
@@ -1314,8 +1315,8 @@ SET = {
 		MENU.chiudiImpSet();
 	},
 	popolaImpSet: function(){
-		var mzs = PAZIENTI.mezziSet.A;
-		var HTML_imp = 
+		let mzs = PAZIENTI.mezziSet.A,
+			HTML_imp = 
 			'<div><i>'+htmlEntities(TXT("MezzoDefault"))+':</i></div><div id="tt_mezzival2">';
 		for(let m in mzs){
 			HTML_imp += '<span style="background-image:url(img/mezzo_'+mzs[m]+'.png);"' +
@@ -1345,13 +1346,13 @@ SET = {
 	},
 	
 	addEviPalls: function( PT_name, tipo ){
-		var els = scene.getObjectByName("PTs"+SET.phase).children;
-		for(e in els){
+		let els = scene.getObjectByName("PTs"+SET.phase).children;
+		for(let e in els){
 			if(els[e].name.indexOf(PT_name)==0){
-				var name = ' point: '+els[e].name+"_"+e;
+				let name = ' point: '+els[e].name+"_"+e;
 				if(!scene.getObjectByName(tipo+name)){
-					var geoPoint =  new THREE.SphereGeometry( 0.11, 16, 16 );
-					var eviPoint;
+					let geoPoint =  new THREE.SphereGeometry( 0.11, 16, 16 ),
+						eviPoint;
 					eviPoint =  new THREE.Mesh( geoPoint, this.MAT.pointSel2.clone() );
 					eviPoint.name=tipo+name;
 					eviPoint.material.visible=true;
@@ -1362,16 +1363,16 @@ SET = {
 		}
 	},
 	delEviPalls: function( PT_name, tipo ){
-		var els = SETS.children;
-		for(e=els.length-1;e>=0;e--){
+		let els = SETS.children;
+		for(let e=els.length-1;e>=0;e--){
 			if(els[e].name.indexOf(tipo+' point: '+PT_name)==0){
 				SETS.remove( els[e] );
 			}
 		}
 	},
 	delAllEviPalls: function(tipo){_
-		var els = SETS.children;
-		for(e=els.length-1;e>=0;e--){
+		let els = SETS.children;
+		for(let e=els.length-1;e>=0;e--){
 			if(els[e].name.indexOf(tipo+' point: ')==0){
 				SETS.remove( els[e] );
 			}
@@ -1397,12 +1398,12 @@ SET = {
 		}
 		// --------------------------
 		document.getElementById("p_lms").classList.add("btnSel");
-		var lms = scene.getObjectByName("LMs");
-		for(l in lms.children){
-			var leg = document.createElement('div');
-			var l = l.toString();
-			if(l.length==1)l="0"+l;
-			leg.id = 'LM'+l;
+		let lms = scene.getObjectByName("LMs");
+		for(let l in lms.children){
+			let leg = document.createElement('div'),
+				l2 = l.toString();
+			if(l2.length==1)l2="0"+l2;
+			leg.id = 'LM'+l2;
 			leg.dataset.idObj = leg.id;
 			leg.className = "noFr";
 			leg.style.cursor = "pointer";
@@ -1419,11 +1420,11 @@ SET = {
 	},
 	nasLM: function(){ // nasconde i landmarks
 		document.getElementById("p_lms").classList.remove("btnSel");
-		var lms = scene.getObjectByName("LMs");
-		for(l in lms.children){
-			var l = l.toString();
-			if(l.length==1)l="0"+l;
-			document.getElementById("legende").removeChild(document.getElementById('LM'+l));
+		let lms = scene.getObjectByName("LMs");
+		for(let l in lms.children){
+			let l2 = l.toString();
+			if(l2.length==1)l2="0"+l2;
+			document.getElementById("legende").removeChild(document.getElementById('LM'+l2));
 		}
 		document.getElementById("legende").classList.remove("noLms");
 		lms.visible = false;
@@ -1452,26 +1453,26 @@ SET = {
 	/* FUNZIONI DERIVATE */
 	_rifletti: function(){
 		if(areasView)SET.MAT.applicaMappa(localStorage.imgMappa);
-		var opposite = (MODELLO.flip) ? 'DX' : 'SX';
-		var phs = ["","2","3"];
+		let opposite = (MODELLO.flip) ? 'DX' : 'SX',
+			phs = ["","2","3"];
 		for(let ph in phs){
-			var els = scene.getObjectByName("PTs"+phs[ph]).children;
-			for(e in els){
-				var name = els[e].name.replace("_","").substr(2,3);
+			let els = scene.getObjectByName("PTs"+phs[ph]).children;
+			for(let e in els){
+				let name = els[e].name.replace("_","").substr(2,3);
 				if(DB.set.punti[name].hidden || __(els[e].userData.hidePunto,'0')=='1')els[e].visible = false;
 				else if(els[e].userData.lato == opposite)els[e].visible = false;
 				else if(!els[e].visible && !__(els[e].userData.locked,false))els[e].visible = true;
 			}
-			var els = scene.getObjectByName("ARs"+phs[ph]).children;
-			for(e in els){
-				var name = els[e].name.replace("_","").substr(2,3);
+			els = scene.getObjectByName("ARs"+phs[ph]).children;
+			for(let e in els){
+				let name = els[e].name.replace("_","").substr(2,3);
 				if(DB.set.punti[name].hidden || __(els[e].userData.hidePunto,'0')=='1')els[e].visible = false;
 				else if(els[e].userData.lato == opposite)els[e].visible = false;
 				else if(!els[e].visible && !__(els[e].userData.locked,false))els[e].visible = true;
 			}
-			var els = scene.getObjectByName("LNs"+phs[ph]).children;
-			for(e in els){
-				var name = els[e].name.substr(2,3);
+			els = scene.getObjectByName("LNs"+phs[ph]).children;
+			for(let e in els){
+				let name = els[e].name.substr(2,3);
 				if(els[e].name.substr(0,2)=='AG' && name == SET.ptSel.name.substr(2,3)){
 					if(DB.set.punti[name].hidden || __(els[e].userData.hidePunto,'0')=='1')els[e].visible = false;
 					else if(els[e].userData.lato == opposite)els[e].visible = false;
@@ -1500,12 +1501,12 @@ SET = {
 		if(typeof(args.daCarica) == 'undefined')SET.pMod = '';
 	},
 	filtraSet: function( togliLoader=false ){
-		var vis = true;
+		let vis = true;
 		if(	DB.login.data.auths.indexOf(globals.set.cartella)==-1 || !LOGIN.logedin())vis = false;
 		for(let c in SETS.children[0].children){
-			var gruppo = SETS.children[0].children[c].children;
+			let gruppo = SETS.children[0].children[c].children;
 			for(let g in gruppo){
-				var name = gruppo[g].name.replace("_","");
+				let name = gruppo[g].name.replace("_","");
 				// verifico le autorizzazioni
 				if(	!SET.verFreePunti(name.substr(2,3))){
 					gruppo[g].visible = vis;

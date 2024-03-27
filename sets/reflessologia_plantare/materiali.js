@@ -25,7 +25,7 @@ SET.COL = {
 }
 
 function cloneMAT(mat,par){
-	var matCloned = mat.clone();
+	let matCloned = mat.clone();
 	matCloned.setValues(par);
 	return matCloned;
 }

@@ -8,31 +8,32 @@ var RICERCHE = {
 	
 	car_global: function( parola=document.getElementById("parolaGlobal").value ){ // ricerca una parola
 	
-		var parolaOr=parola;
+		let parolaOr = parola,
+			nRis = 0, // numero di risultati
+			nRisBase = 0, // numero di risultati nei testi base dell'app (importante per capire se dobbiamo inserire contenuti)
+			HTML = '',
+			HTML_index = '',
+			HTML_list = '',
+			sezioni = 0;
 		RICERCHE.cSel = -1;
-		var nRis=0; // numero di risultati
-		var nRisBase=0;
-		/* 	nRisBase è il numero di risultati nei testi base dell'app
-			(importante per capire se dobbiamo inserire contenuti) */
+		
 		parola=RICERCHE.pulisciTesto(parola);
 		
-		var HTML=HTML_index=HTML_list='';
-		var sezioni = 0;
 		
 		
 		
 		// AMap e ShiatsuMap
 		if(	globals.set.cartella == 'meridiani_cinesi' ||
 			globals.set.cartella == 'meridiani_shiatsu' ){
-			var R_parz='';
-			var nRisParz = 0;
+			let R_parz='',
+				nRisParz = 0;
 			
 			// CERCO nei PUNTI e nei MERIDIANI
 			for (k in DB.set.meridiani) {
 				if(!(globals.set.cartella == 'meridiani_shiatsu' && k=='EX')){
 					for (p in DB.set.meridiani[k].punti) {
-						var MER = DB.set.meridiani[k].punti[p];
-						var testo = MER.AzioniPunto+" "+MER.NomePunto+" "+MER.ChiaviPunto;
+						let MER = DB.set.meridiani[k].punti[p],
+							testo = MER.AzioniPunto+" "+MER.NomePunto+" "+MER.ChiaviPunto;
 							
 						testo = RICERCHE.pulisciTesto(testo);
 						
@@ -40,7 +41,7 @@ var RICERCHE = {
 							NT = MER.NomePunto;
 							partiNT=NT.split(".");
 							siglaPunto = partiNT[0];
-							var nomePunto = partiNT[0];
+							let nomePunto = partiNT[0];
 							if(k!='NK')nomePunto += "."+partiNT[1]
 							if(globals.set.cartella == 'meridiani_cinesi'){
 								if(__(MER.siglaPunto))nomePunto = MER.siglaPunto;
@@ -74,12 +75,12 @@ var RICERCHE = {
 		
 		// AuriculoMap e ReflexologyMap
 		if(	globals.set.cartella == 'auricologia' || globals.set.cartella == 'reflessologia_plantare' ){
-			var R_parz='';
-			var nRisParz = 0;
+			let R_parz='',
+				nRisParz = 0;
 			// CERCO nei PUNTI AURICOLARI e nei PUNTI PLANTARI
 			for (siglaPunto in DB.set.punti) {
-				var PT = DB.set.punti[siglaPunto];
-				var testo = PT.AzioniPunto+" "+PT.NomePunto+" "+PT.ChiaviPunto;
+				let PT = DB.set.punti[siglaPunto],
+					testo = PT.AzioniPunto+" "+PT.NomePunto+" "+PT.ChiaviPunto;
 					
 				testo = RICERCHE.pulisciTesto(testo);
 				
@@ -104,18 +105,19 @@ var RICERCHE = {
 			
 			
 		// CERCO nelle NOTE
-		var R_parz='';
-		var nRisParz = 0;
+		let R_parz = '',
+			nRisParz = 0,
+			kS = 0;
+
 		if(DB.note && (	globals.set.cartella == 'meridiani_cinesi' || 
 						globals.set.cartella == 'meridiani_shiatsu' || 
 						globals.set.cartella == 'auricologia' || 
 						globals.set.cartella == 'reflessologia_plantare' ) ){
 			for (p in DB.note.data) {
-				var NT = DB.note.data[p];
-				var testo=NT.TestoAnnotazione;
-				var NomePunto = siglaPunto = '';
-				testo=RICERCHE.pulisciTesto(testo);
-				var puntiPass = (globals.set.cartella == 'auricologia' || globals.set.cartella == 'reflessologia_plantare') ? (NT.numeroPunto) : (NT.numeroPunto*1-1>-1);
+				let NT = DB.note.data[p],
+					testo = RICERCHE.pulisciTesto(NT.TestoAnnotazione()),
+					NomePunto = siglaPunto = '',
+					puntiPass = (globals.set.cartella == 'auricologia' || globals.set.cartella == 'reflessologia_plantare') ? (NT.numeroPunto) : (NT.numeroPunto*1-1>-1);
 				if(testo.toUpperCase().indexOf(parola.toUpperCase())>-1 && NT.Cancellato!='1' && puntiPass){
 					
 					if(	( globals.set.cartella == 'meridiani_cinesi' || 
@@ -136,7 +138,7 @@ var RICERCHE = {
 						siglaPunto = "PT"+NT.numeroPunto;
 					}
 					
-					var pass = true;
+					let pass = true;
 					if(DB.note.data[p].idPaziente>-1 && siglaPunto){
 						pass = false;
 						for(let paz in DB.pazienti.data){
@@ -163,16 +165,16 @@ var RICERCHE = {
 		}
 		
 		// CERCO nelle PATOLOGIE
-		var R_parz='';
-		var nRisParz = 0;
-		var kS=0;
+		R_parz='';
+		nRisParz = 0;
+		kS=0;
 		if(DB.set.patologie && (globals.set.cartella == 'meridiani_cinesi' || 
 								globals.set.cartella == 'meridiani_shiatsu' || 
 								globals.set.cartella == 'auricologia' || 
 								globals.set.cartella == 'reflessologia_plantare') ){
 			for (p in DB.set.patologie) {
-				var PT = DB.set.patologie[p];
-				var testo=PT.NomePatologia+" "+PT.TestoPatologia+" "+PT.chiaviPatologia;
+				let PT = DB.set.patologie[p],
+					testo=PT.NomePatologia+" "+PT.TestoPatologia+" "+PT.chiaviPatologia;
 				testo=RICERCHE.pulisciTesto(testo);
 				kS++;
 				if(testo.toUpperCase().indexOf(parola.toUpperCase())>-1){
@@ -192,17 +194,17 @@ var RICERCHE = {
 		}
 			
 		// CERCO negli APPROFONDIMENTI
-		var R_parz='';
-		var nRisParz = 0;
-		var kS=0;
+		R_parz='';
+		nRisParz = 0;
+		kS=0;
 		if(DB.set.teoria && (	globals.set.cartella == 'meridiani_cinesi' || 
 								globals.set.cartella == 'meridiani_shiatsu' || 
 								globals.set.cartella == 'auricologia' || 
 								globals.set.cartella == 'reflessologia_plantare')){
 			for (i in DB.set.teoria) {
 				for (p in DB.set.teoria[i].contenuti) {
-					var TEO = DB.set.teoria[i].contenuti[p];
-					var testo=TEO.TitoloTeoria+" "+TEO.TestoTeoria;
+					let TEO = DB.set.teoria[i].contenuti[p],
+						testo=TEO.TitoloTeoria+" "+TEO.TestoTeoria;
 					testo=RICERCHE.pulisciTesto(testo);
 					kS++;
 					if(testo.toUpperCase().indexOf(parola.toUpperCase())>-1){
@@ -223,16 +225,16 @@ var RICERCHE = {
 		}
 			
 		// CERCO nelle PROCEDURE
-		var R_parz='';
-		var nRisParz = 0;
-		var kS=-1;
+		R_parz='';
+		nRisParz = 0;
+		kS=-1;
 		if(DB.procedure && (globals.set.cartella == 'meridiani_cinesi' || 
 							globals.set.cartella == 'meridiani_shiatsu' || 
 							globals.set.cartella == 'auricologia' || 
 							globals.set.cartella == 'reflessologia_plantare') ){
 			for (p in DB.procedure.data) {
-				var PR = DB.procedure.data[p]
-				var testo = PR.NomeProcedura;
+				let PR = DB.procedure.data[p],
+					testo = PR.NomeProcedura;
 				for (d in PR.dettagliProcedura){
 					testo+=" "+PR.dettagliProcedura[d].DescrizioneDettaglio;
 				}
@@ -253,14 +255,13 @@ var RICERCHE = {
 		}
 			
 		// CERCO nei CLIENTI
-		var R_parz='';
-		var nRisParz = 0;
-		var kS=-1;
+		R_parz='';
+		nRisParz = 0;
+		kS=-1;
 		if(DB.pazienti){
 			for (p in DB.pazienti.data) {
-				var PZ = DB.pazienti.data[p];
-				var testo = PZ.Nome+" "+PZ.Cognome+" "+PZ.NotePaziente;
-				testo=RICERCHE.pulisciTesto(testo);
+				let PZ = DB.pazienti.data[p],
+					testo = RICERCHE.pulisciTesto(PZ.Nome+" "+PZ.Cognome+" "+PZ.NotePaziente);
 				kS++;
 				if(testo.toUpperCase().indexOf(parola.toUpperCase())>-1 && PZ.Cancellato!='1'){
 					if(PZ.sesso=='m')sesso='uomo';
@@ -273,9 +274,8 @@ var RICERCHE = {
 				
 				// CERCO nei TRATTAMENTI
 				for (d in PZ.trattamenti){
-					var TR = PZ.trattamenti[d];
-					var testo=TR.TitoloTrattamento+" "+TR.TestoTrattamento+" "+TR.Prescrizione+" "+TR.sintomi;
-					testo=RICERCHE.pulisciTesto(testo);
+					let TR = PZ.trattamenti[d],
+						testo = RICERCHE.pulisciTesto(TR.TitoloTrattamento+" "+TR.TestoTrattamento+" "+TR.Prescrizione+" "+TR.sintomi);
 					kS++;
 					if(testo.toUpperCase().indexOf(parola.toUpperCase())>-1 && TR.Cancellato!='1'){
 						Titolo = TR.TitoloTrattamento;
@@ -297,14 +297,14 @@ var RICERCHE = {
 		
 		// CERCO nell'ANATOMIA
 		if(globals.modello.cartella){
-			var R_parz='';
-			var nRisParz = 0;
-			var kS=0;
-			var pAnat = [];
-			let livs = [0,1,2,3,4,7];
+			R_parz='';
+			nRisParz = 0;
+			kS=0;
+			let pAnat = [],
+				livs = [0,1,2,3,4,7];
 			for (l in livs) {
 				let c = livs[l];
-				var tipoAnat = '',
+				let tipoAnat = '',
 					iconaTipo = '';
 				if(ANATOMIA.children[c].name == 'Visceri'){
 					tipoAnat = 'Organo';
@@ -337,19 +337,19 @@ var RICERCHE = {
 					iconaTipo = 'N';
 				}
 				for (p in ANATOMIA.children[c].children) {
-					var pA = ANATOMIA.children[c].children[p].name.split("(");
-					var txt = pA[0].replace("_SX","").replace("_DX","").split(".")[0];
+					let pA = ANATOMIA.children[c].children[p].name.split("("),
+						txt = pA[0].replace("_SX","").replace("_DX","").split(".")[0];
 					if(ANATOMIA.children[c].name == 'pins_aree')txt = txt.replace("PIN_Muscolo_","");
 					if(txt.substr(txt.length-1,1)=='_')txt = txt.substr(0,txt.length-1);
-					var pass = false;
-					var ELEM = txt; 
-					var testo = stripslashes(TXT(tipoAnat+"_"+txt)).toLowerCase();
+					let pass = false,
+						ELEM = txt, 
+						testo = stripslashes(TXT(tipoAnat+"_"+txt)).toLowerCase();
 					if(testo.indexOf(parola.toLowerCase()) > -1)pass = true;
 				
 					if(pA[1]){
-						var txt = pA[1].replace(")","").replace("_SX","").replace("_DX","").split(".")[0];
+						let txt = pA[1].replace(")","").replace("_SX","").replace("_DX","").split(".")[0];
 						if(txt.substr(txt.length-1,1)=='_')txt = txt.substr(0,txt.length-1);
-						var testo = stripslashes(TXT(tipoAnat+"_"+txt)).toLowerCase();
+						let testo = stripslashes(TXT(tipoAnat+"_"+txt)).toLowerCase();
 						if(testo.indexOf(parola.toLowerCase()) > -1)pass = true;
 					}
 					// cerco anche nelle schede di DB_anatomia
@@ -360,8 +360,8 @@ var RICERCHE = {
 					if(pAnat.indexOf(ELEM) >- 1)pass = false;
 					if(pass){
 						pAnat.push(ELEM);
-						//var tipo = ELEM.split("_")[0].toLowerCase();
-						//var Tipo = tipo.charAt(0).toUpperCase() + tipo.slice(1);
+						//let tipo = ELEM.split("_")[0].toLowerCase();
+						//let Tipo = tipo.charAt(0).toUpperCase() + tipo.slice(1);
 						R_parz += RICERCHE.wR({ az: "MODELLO.azRicercaAnatomia('"+ELEM+"','"+tipo+"','"+ANATOMIA.children[c].children[p].name+"');",
 												cont: htmlEntities(stripslashes(TXT(tipoAnat+"_"+ELEM))),
 												class: "sel"+iconaTipo,
@@ -388,7 +388,7 @@ var RICERCHE = {
 		}
 		
 		
-		document.getElementById("globalTesto").innerHTML=HTML;
+		document.getElementById("globalTesto").innerHTML = HTML;
 		document.getElementById("globalTesto").style.background='none';
 		document.getElementById("globalTesto").classList.remove("globalHistory");
 		applicaLoading(document.getElementById("globalTesto"));
@@ -409,7 +409,7 @@ var RICERCHE = {
 		return '<div class="risGlob '+obj.class+'"'+obj.style+' onClick="'+obj.az+'">'+obj.bull+' '+obj.cont+'</div>';
 	},
 	swCartGlob: function( n ){
-		var pass = true;
+		let pass = true;
 		if(WF()<=600 && !document.getElementById("globalIndex").classList.contains("visIndex")){
 			document.getElementById("globalIndex").classList.add("visIndex");
 			pass = false;
@@ -426,25 +426,25 @@ var RICERCHE = {
 		}
 	},
 	car_historyGlobal: function(){ // carica la storia delle ricerche
-		HTML='';
+		let HTML = '';
 		RICERCHE.overElRis=false;
 		RICERCHE.parolaProvv='';
 		DB.ricerche.data.sort(sort_by("DataModifica", true, parseInt));
-		var btnSvuota = '';
+		let btnSvuota = '';
 		for(let k in DB.ricerche.data){
 			RICERCHE.parolaProvv=DB.ricerche.data[k].TestoRicerca.replace(/\'/g, '\\\'');
 			if(DB.ricerche.data[k].Cancellato!=1){
-				if(smartphone)HTML+='<img src="img/chiusuraSmartPhoneBlack.png" align="right" title="'+stripslashes(TXT("EliminaParola"))+'" onClick="RICERCHE.eliminaRicerca('+k+');" class="imgDelRes"/>';
-				HTML+='<div ';
-				if(smartphone)HTML+='style="margin-right:30px;"';
-				HTML+=' class="risGlob risLente" onClick="if(!RICERCHE.overElRis){document.getElementById(\'parolaGlobal\').value=\''+addslashes(htmlEntities(RICERCHE.parolaProvv))+'\';RICERCHE.globalSubmit();}';
-				if(!smartphone)HTML+='else{RICERCHE.eliminaRicerca('+k+');}';
-				HTML+='">';
-				if(!smartphone)HTML+='<img src="img/chiusuraSmartPhoneBlack.png" align="right" title="'+stripslashes(TXT("EliminaParola"))+'" onMouseOver="RICERCHE.overElRis=true;" onMouseOut="RICERCHE.overElRis=false;" />';
-				HTML+=htmlEntities(DB.ricerche.data[k].TestoRicerca)+'</div>';
+				if(smartphone)HTML += '<img src="img/chiusuraSmartPhoneBlack.png" align="right" title="'+stripslashes(TXT("EliminaParola"))+'" onClick="RICERCHE.eliminaRicerca('+k+');" class="imgDelRes"/>';
+				HTML += '<div ';
+				if(smartphone)HTML += 'style="margin-right:30px;"';
+				HTML += ' class="risGlob risLente" onClick="if(!RICERCHE.overElRis){document.getElementById(\'parolaGlobal\').value=\''+addslashes(htmlEntities(RICERCHE.parolaProvv))+'\';RICERCHE.globalSubmit();}';
+				if(!smartphone)HTML += 'else{RICERCHE.eliminaRicerca('+k+');}';
+				HTML += '">';
+				if(!smartphone)HTML += '<img src="img/chiusuraSmartPhoneBlack.png" align="right" title="'+stripslashes(TXT("EliminaParola"))+'" onMouseOver="RICERCHE.overElRis=true;" onMouseOut="RICERCHE.overElRis=false;" />';
+				HTML += htmlEntities(DB.ricerche.data[k].TestoRicerca)+'</div>';
 			}
 		}
-		if(!HTML)HTML='<div class="noResGlob" id="noResGlob">'+TXT("NessunRisultato")+'</div>';
+		if(!HTML)HTML = '<div class="noResGlob" id="noResGlob">'+TXT("NessunRisultato")+'</div>';
 		else btnSvuota = '<span onClick="RICERCHE.clear_historyGlobal();">'+TXT("SvuotaCronologia")+'</span>';
 		document.getElementById("globalTesto").innerHTML='<p id="titHistoryGlobal"><b>'+TXT("TueRicerche")+'</b>'+btnSvuota+'</p>'+HTML;
 		document.getElementById("globalTesto").classList.add("globalHistory");
@@ -453,7 +453,7 @@ var RICERCHE = {
 		CONFIRM.vis(	TXT("ConfSvuotaCronologia"),
 						false,
 						arguments ).then(function(pass){if(pass){
-						var v = getParamNames(CONFIRM.args.callee.toString());
+						let v = getParamNames(CONFIRM.args.callee.toString());
 						for(let i in v)eval(getArguments(v,i));
 			DB.ricerche.data=[];
 			localPouchDB.setItem(MD5("DB"+LOGIN._frv()+".ricerche"), IMPORTER.COMPR(DB.ricerche)).then(function(){ // salvo il DB
@@ -463,7 +463,7 @@ var RICERCHE = {
 		}});
 	},
 	eliminaRicerca: function( n ){ // elimina una ricerca dalla storia
-		var DataModifica = DB.ricerche.lastSync+1;
+		let DataModifica = DB.ricerche.lastSync+1;
 		JSNPUSH={	"TestoRicerca": DB.ricerche.data[n].TestoRicerca,
 					"DataModifica": parseInt(DataModifica),
 					"Cancellato": 1,
@@ -476,12 +476,12 @@ var RICERCHE = {
 	},
 	salvaRicerca: function( parola, nRis, nRisBase ){ // salva una ricerca
 		// verifico che la parola non esista già
-		var nPres=false;
+		let nPres=false;
 		for(let k in DB.ricerche.data){
 			if(DB.ricerche.data[k].TestoRicerca==parola)nPres=k;
 		}
 		
-		var DataModifica = DB.ricerche.lastSync+1;
+		let DataModifica = DB.ricerche.lastSync+1;
 		JSNPUSH={	"TestoRicerca": parola,
 					"DataModifica": parseInt(DataModifica),
 					"nRis": parseInt(nRis),
@@ -523,7 +523,7 @@ var RICERCHE = {
 		if(smartMenu && document.getElementById("scheda").classList.contains("scheda_agenda"))SCHEDA.scaricaScheda();
 	},
 	globalSubmit: function( passa=false ){
-		var parola=document.formGlobal.parolaGlobal.value;
+		let parola=document.formGlobal.parolaGlobal.value;
 		if(parola.length>=3 || passa){
 			RICERCHE.apriGlobal(passa);
 			document.getElementById("annGlobal").style.display='inline-block';

@@ -22,15 +22,13 @@ var MODULO_PUNTO = { // extend SET
 			return;
 		}
 		// --------------------------
-		var titolo = DB.set.meridiani[siglaMeridiano].punti[nPunto].NomePunto;
-		var meridiano = DB.set.meridiani[siglaMeridiano];
-		
-		
-		var coordZoom = [];
-		var cartella = __(DB.mtc.meridiani[siglaMeridiano].cartella,'');
-		var imgZoom = "";
-		var noMoxa = "";
-		var noGravidanza = "";
+		let titolo = DB.set.meridiani[siglaMeridiano].punti[nPunto].NomePunto,
+			meridiano = DB.set.meridiani[siglaMeridiano],
+			coordZoom = [],
+			cartella = __(DB.mtc.meridiani[siglaMeridiano].cartella,''),
+			imgZoom = "",
+			noMoxa = "",
+			noGravidanza = "";
 		
 		if(__(DB.mtc.meridiani[siglaMeridiano].punti)){
 			coordZoom = __(DB.mtc.meridiani[siglaMeridiano].punti[nPunto].coordZoom);
@@ -39,7 +37,7 @@ var MODULO_PUNTO = { // extend SET
 			noGravidanza = __(DB.mtc.meridiani[siglaMeridiano].punti[nPunto].noGravidanza,'');
 		}
 		
-		var HTML = '',
+		let HTML = '',
 			HTML_tit='';
 		if(siglaMeridiano=='NK'){
 			HTML_tit+= "<h1>"+htmlEntities(titolo)+"</h1>";
@@ -55,7 +53,7 @@ var MODULO_PUNTO = { // extend SET
 
 
 
-		var HTML_simboli = '';
+		let HTML_simboli = '';
 		
 		// noMoxa
 		if(noMoxa)HTML_simboli += 	'<div style="background-image:url(sets/meridiani_shiatsu/img/nomoxa.png);"' +
@@ -70,15 +68,15 @@ var MODULO_PUNTO = { // extend SET
 			SCHEDA.classeAperta != "tab_punti" ){
 				
 			// pulsante per la scelta del punto su trattamenti e procedure
-			var az = '';
-			var txt = '';
-			var cls = '';
-			var stesso = false;
-			var puntoNuovo = nPunto +"."+siglaMeridiano;
+			let az = '',
+				txt = '',
+				cls = '',
+				stesso = false,
+				puntoNuovo = nPunto +"."+siglaMeridiano;
 			if( SCHEDA.classeAperta == 'scheda_procedura' ){
 				if(SET.pMod > -1){
-					var puntoOr = SET.dettagliProvvisori[SET.pMod].DescrizioneDettaglio;
-					if( puntoOr == puntoNuovo)stesso = true;
+					let puntoOr = SET.dettagliProvvisori[SET.pMod].DescrizioneDettaglio;
+					if(puntoOr == puntoNuovo)stesso = true;
 					else{
 						// cambia il punto
 						txt = TXT("SostituisciPunto").replace("[t]",puntoOr);
@@ -95,7 +93,7 @@ var MODULO_PUNTO = { // extend SET
 				if(SET.pMod > -1){
 					if(siglaMeridiano!='NK')pP = PAZIENTI.puntiProvvisori[SET.pMod];
 					else pP = PAZIENTI.namikoshiProvvisori[SET.pMod];
-					var puntoOr = pP.n+"."+pP.m;
+					let puntoOr = pP.n+"."+pP.m;
 					if(puntoOr == puntoNuovo)stesso = true;
 					else{
 						// cambia il punto
@@ -125,14 +123,16 @@ var MODULO_PUNTO = { // extend SET
 		
 		let imgDettaglio='';
 		// elenco le patologie incluse
-		var elenco = [];
+		let elenco = [];
 		for(let p in DB.set.patologie){
-			var regexp = /[\s>\(\.\,]{0,1}[0-9]{1,2}\.[A-Z]{2}[\s<\.,\)]{1}/ig;
-			var pts = DB.set.patologie[p].TestoPatologia.match(regexp);
+			let regexp = /[\s>\(\.\,]{0,1}[0-9]{1,2}\.[A-Z]{2}[\s<\.,\)]{1}/ig,
+				pts = DB.set.patologie[p].TestoPatologia.match(regexp);
 			for(let i in pts){
 				if(pts[i]=='.'+nPunto+'.'+siglaMeridiano+'.'){
-					var JSNPUSH = {"p": p, "NomePatologia": DB.set.patologie[p].NomePatologia} 
-					
+					let JSNPUSH = {
+							"p": p,
+							"NomePatologia": DB.set.patologie[p].NomePatologia
+						};
 					if(elenco.indexOf(JSNPUSH)==-1)elenco.push(JSNPUSH);
 				}
 			}
@@ -140,22 +140,22 @@ var MODULO_PUNTO = { // extend SET
 		if(elenco.length){
 			HTML += '<div id="patologiePunti">' +
 					'	<div onClick="this.parentElement.classList.toggle(\'vis\');">'+TXT("Patologie")+'</div>';
-			for(e in elenco){
+			for(let e in elenco){
 				HTML += '<p onClick="SET.apriPatologia(\''+elenco[e].p+'\',document.getElementById(\'btn_patologia_'+elenco[e].p+'\'));"><span>• '+elenco[e].NomePatologia+'</span></p>';
 			}
 			HTML += '</div>';
 		}
 		
 		posPunti='';
-		var wCont = 370;
-		var marginLeft = 0;
+		let wCont = 370,
+			marginLeft = 0;
 		if(touchable && smartphone){
 			wCont = WF()-40;
 			//marginLeft = 20;
 		}
-		var rp = wCont/370;
-		let bluring = '';
-		let addNo = '';
+		let rp = wCont/370,
+			bluring = '',
+			addNo = '';
 		//let onlyForPro = ''
 		//if(SET.verLightVersion() && SET.PUNTI_free.indexOf(siglaMeridiano+"."+nPunto)==-1){
 		if(SET.verLightVersion()){
@@ -170,7 +170,7 @@ var MODULO_PUNTO = { // extend SET
 			}
 		}
 		if(coordZoom.length>1){
-			var pC=coordZoom.split("|");
+			let pC = coordZoom.split("|");
 			for(let pu in pC){
 				pC2=pC[pu].split(",");
 				posPunti+='<img src="sets/common/mtc/img/zoom/punto.png" width="'+parseInt(43*rp)+'" height="'+parseInt(40*rp)+'" style="position:absolute;left:'+parseInt((pC2[0]-7)*rp-marginLeft)+'px;top:'+parseInt((pC2[1]-7)*rp)+'px;'+bluring+'">';
@@ -208,7 +208,7 @@ var MODULO_PUNTO = { // extend SET
 		if(siglaMeridiano!='NK')HTML += imgDettaglio;
 		
 		// annotazione
-		var TestoAnnotazione = '',
+		let TestoAnnotazione = '',
 			hidePunto;
 		if(SET.verificaNota(siglaMeridiano+"."+nPunto)){
 			TestoAnnotazione = SET.leggiNota( cartella, +nPunto );
@@ -248,17 +248,17 @@ var MODULO_PUNTO = { // extend SET
 			}
 		}
 		
-		var ptSel = SET.ptSel;
+		let ptSel = SET.ptSel;
 		SET.ptSel = null;
 		
-		var btnAdd = 	'<div class="p_paz_ref_menu" onClick="REF.open(\'sets.meridiani_shiatsu.meridians\')">' +
+		let btnAdd = 	'<div class="p_paz_ref_menu" onClick="REF.open(\'sets.meridiani_shiatsu.meridians\')">' +
 							TXT("ReferenceGuide") +
 						'</div>';
 		
-		var finalFunct = '';
+		let finalFunct = '';
 		if(!ritorno || !SCHEDA.formModificato)finalFunct += 'initChangeDetection( "formAnnotazioni");';
 
-		/* var closeFunct = '';
+		/* let closeFunct = '';
 		if(!SCHEDA.scheda2Aperta && siglaMeridiano!='NK'){
 			closeFunct += 'SWIPE.dismis();';
 		} */
@@ -282,7 +282,7 @@ var MODULO_PUNTO = { // extend SET
 		// gestione e visualizzazione delle frecce di navigazione
 		document.getElementById("frSchSu").onclick = '';
 		document.getElementById("frSchGiu").onclick = '';
-		var classFr = '';
+		let classFr = '';
 		if(!SCHEDA.scheda2Aperta && localStorage.sistemaMeridiani!='MAS'){
 			let totPunti = 0,
 				nPuntoSu = '',
@@ -344,21 +344,21 @@ var MODULO_PUNTO = { // extend SET
 	},
 	mod_nota: function( Q_nome_meridiano, Q_p ){
 		// salva la nota di un punto
-		var nota_salvata=false;
-		var DataModifica = DB.note.lastSync+1;
-		var pDef=-1;
-		var Q_TestoAnnotazione = document.getElementById("TestoAnnotazione").value;
+		let nota_salvata = false,
+			DataModifica = DB.note.lastSync+1,
+			pDef = -1,
+			Q_TestoAnnotazione = document.getElementById("TestoAnnotazione").value;
 		for (p in DB.note.data) {
 			if(DB.note.data.length && typeof(DB.note.data[p].meridiano)=='undefined')DB.note.data.splice(p,p);
-			else if(DB.note.data[p].meridiano==Q_nome_meridiano && DB.note.data[p].numeroPunto==Q_p && SET.verNotaCli(p)){
+			else if(DB.note.data[p].meridiano==Q_nome_meridiano && +DB.note.data[p].numeroPunto==Q_p && SET.verNotaCli(p)){
 				DB.note.data[p].TestoAnnotazione=Q_TestoAnnotazione;
 				DB.note.data[p].DataModifica=parseInt(DataModifica);
 				nota_salvata=true;
 				pDef=p;
 			}
 		}
-		if(!nota_salvata && Q_TestoAnnotazione.trim()!=''){
-			var idPaziente=-1;
+		if(!nota_salvata /* && Q_TestoAnnotazione.trim()!='' */){
+			let idPaziente = -1;
 			if(PAZIENTI.idCL>-1)idPaziente=PAZIENTI.idPaziente;
 			JSNPUSH={	"TestoAnnotazione": Q_TestoAnnotazione,
 						"meridiano": Q_nome_meridiano,
@@ -381,10 +381,10 @@ var MODULO_PUNTO = { // extend SET
 	},
 	verNotaCli: function( p ){
 		// verifica che ci sia una nota per il cliente attivo
-		var pass=true;
+		let pass = true;
 		if(PAZIENTI.idCL>-1){
 			pass=false;
-			var idPaziente=DB.pazienti.data[PAZIENTI.idCL].idPaziente*1;
+			let idPaziente=DB.pazienti.data[PAZIENTI.idCL].idPaziente*1;
 			if(idPaziente){
 				if(DB.pazienti.data[PAZIENTI.idCL].Cancellato*1!=1)pass=(DB.note.data[p].idPaziente*1==idPaziente);
 				else pass=false;
@@ -394,9 +394,9 @@ var MODULO_PUNTO = { // extend SET
 	},
 	leggiNota: function( mr, pt ){
 		// restituisce il testo della nota
-		var TestoAnnotazione = '';
+		let TestoAnnotazione = '';
 		for(let n in DB.note.data){
-			var pass =false;
+			let pass = false;
 			if(DB.note.data[n].idPaziente > -1){
 				if(DB.note.data[n].idPaziente == PAZIENTI.idPaziente)pass=true;
 			}else{
@@ -417,15 +417,15 @@ var MODULO_PUNTO = { // extend SET
 		SET.note = [];
 		if(DB.note){
 			for(let n in DB.note.data){
-				var pass =false;
+				let pass = false;
 				if(DB.note.data[n].idPaziente > -1){
 					if(DB.note.data[n].idPaziente == PAZIENTI.idPaziente)pass=true;
 				}else{
 					if(DB.note.data[n].idCL == PAZIENTI.idCL)pass=true;
 				}
 				if(pass){
-					var mr ='';
-					var pt = DB.note.data[n].numeroPunto + "";
+					let mr = '',
+						pt = DB.note.data[n].numeroPunto + "";
 					if(pt.length == 1)pt='0'+pt;
 					mr = SET.leggiSiglaMeridiano(DB.note.data[n].meridiano);
 					if(DB.note.data[n].TestoAnnotazione.trim()!='')SET.note.push(mr+"."+pt);
@@ -437,13 +437,13 @@ var MODULO_PUNTO = { // extend SET
 	evidenziaNote: function( az ){
 		// evidenzia le note sul manichino
 		for(let n in SET.note){
-			var pP = SET.note[n].split(".");
+			let pP = SET.note[n].split(".");
 			for(let m in SETS.children){
 				if(SETS.children[m].name.substr(0,5) == 'PT_'+pP[0]){
 					for(let p in SETS.children[m].children){
 						if(SETS.children[m].children[p].name.substr(0,5)==SET.note[n]){
-							var mr = SETS.children[m].children[p].name.substr(0,2);
-							var mat = SET.MAT.pointBase;
+							let mr = SETS.children[m].children[p].name.substr(0,2),
+								mat = SET.MAT.pointBase;
 							if(MERIDIANI[mr].meridianoAcceso)mat = SET.MAT.pointSel;
 							if(az){
 								mat = SET.MAT.pointNote;
@@ -481,7 +481,8 @@ var MODULO_PUNTO = { // extend SET
 				valutazione: '',
 				pinyin: '',
 				gruppo: ''
-			};
+			},
+			Filtro;
 		Filtro = /[0-9]{1,2}/;
 		if (Filtro.test(pP[0]))el.nPunto = pP[0];
 		if (Filtro.test(pP[1]))el.nPunto = pP[1];

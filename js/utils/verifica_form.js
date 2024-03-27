@@ -22,7 +22,7 @@ l'id deve essere suddiviso in valori dal segno |
 function ControllaMail(frmMail,NCampo){
 	EmailAddr = frmMail.value;
 	if (EmailAddr!=""){		
-		Filtro = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-]{2,})+\.)+([a-zA-Z0-9]{2,})+$/;
+		let Filtro = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-]{2,})+\.)+([a-zA-Z0-9]{2,})+$/;
 		if (Filtro.test(EmailAddr)) return true;
 		else{
 			ALERT(TXT("ATTENZIONE")+"! "+TXT("erroreFormatoEmail").replace("[1]"," '"+NCampo+"' "));
@@ -33,7 +33,8 @@ function ControllaMail(frmMail,NCampo){
 }
 function ControllaNumero(frmNum,NCampo,nt){
 	NumVal = frmNum.value;
-	if (frmNum.value.length>0){		
+	if (frmNum.value.length>0){
+		let Filtro;	
 		if(!nt){
 			//Filtro = /[^\d\.,-]+/;
 			Filtro = /^[\d]+[\.,]{0,1}[\d]*$/;

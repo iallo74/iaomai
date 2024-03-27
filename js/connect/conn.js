@@ -8,7 +8,7 @@ var CONN = {
 	online: true,
 	caricaUrl: function(url, qs='', funzione){ // carica un API url e richiama la funzione
 		if(CONN.getConn()){
-			var x;
+			let x;
 			if(typeof XMLHttpRequest!="undefined"){
 				x=new XMLHttpRequest();
 			}else{
@@ -34,7 +34,7 @@ var CONN = {
 						}
 					}
 				}
-				var tm = Number(new Date());
+				let tm = Number(new Date());
 				if(qs)qs+='&';
 				qs+="tm="+tm;
 				if(typeof(DB)!='undefined')qs+="&ui="+encodeURIComponent(window.btoa(__(localStorage.UniqueId)));

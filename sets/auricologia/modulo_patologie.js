@@ -25,8 +25,8 @@ var MODULO_PATOLOGIE = { // extend SET
 		SET.caricaPatologie();
 	},
 	caricaPatologie: function(){ // carica l'elenco delle patologie
-		var crtOp = -1;
-		var contPatologie = 
+		let crtOp = -1,
+			contPatologie = 
 						'<div id="add_pat"' +
 						((__(localStorage.listPatType)=='category')?' class="category"':'') +
 						'>';
@@ -57,10 +57,10 @@ var MODULO_PATOLOGIE = { // extend SET
 					
 					if(DB.set.patologie[p].apparato == a){
 						// verifico le autorizzazioni
-						var addLock =	(!SET.verFreePatologia(p*1)) ? ' lockedItem' : '';
+						let addLock =	(!SET.verFreePatologia(p*1)) ? ' lockedItem' : '';
 						// --------------------------
 						
-						var addClass = '';
+						let addClass = '';
 						if(p==SET.patOp){
 							addClass=' elencoSel';
 							crtOp = a;
@@ -79,7 +79,7 @@ var MODULO_PATOLOGIE = { // extend SET
 			for(let p in DB.set.patologie){
 				
 				// verifico le autorizzazioni
-				var addLock =	(!SET.verFreePatologia(p*1)) ? ' lockedItem' : '';
+				let addLock =	(!SET.verFreePatologia(p*1)) ? ' lockedItem' : '';
 				// --------------------------
 							
 				contPatologie +=	'<div id="btn_patologia_'+p+'"' +
@@ -98,7 +98,7 @@ var MODULO_PATOLOGIE = { // extend SET
 		}
 	},
 	getPointPat: function( el ){
-		var ST = '';
+		let ST = '';
 		if(typeof(el)=='object'){
 			if(typeof(el.length)=='undefined'){
 				ST += '<div class="ptTr" data-tri="'+el.l+'"><div>';
@@ -125,13 +125,13 @@ var MODULO_PATOLOGIE = { // extend SET
 		return ST;
 	},
 	getListPointPat: function( n ){
-		var EL = [];
+		let EL = [];
 		function getPT( obj ){
 			for(let o in obj){
 				if(typeof(obj[o])=='object'){
 					getPT(obj[o]);
 				}else if(obj[0]){
-					var re = /[0-9]{3}/ig;
+					let re = /[0-9]{3}/ig;
 					if(obj[o].match(re) && EL.indexOf(obj[o])==-1)EL.push(obj[o]);
 				}
 			}
@@ -151,10 +151,10 @@ var MODULO_PATOLOGIE = { // extend SET
 		SET.schEvi = null;
 		SET.hideGroupLines();
 		
-		var objTer = DB.set.schede[DB.set.patologie[n].scheda];
-		var ST = '';
+		let objTer = DB.set.schede[DB.set.patologie[n].scheda],
+			ST = '';
 		if(Object.keys(objTer).length){
-			var titGen = TXT("TrattamentoGenerico");
+			let titGen = TXT("TrattamentoGenerico");
 			if(__(objTer.tit))titGen = htmlEntities(objTer.tit)
 			ST +=
 			'<br>' +
@@ -237,7 +237,7 @@ var MODULO_PATOLOGIE = { // extend SET
 		// aggiungo contenuto custom
 		ST = CUSTOMS.addContent("patologie_"+n,ST);
 
-		var elencoAltre = '';
+		let elencoAltre = '';
 		for(let p in DB.set.patologie){
 			if(p != n && DB.set.patologie[p].scheda == DB.set.patologie[n].scheda){
 				elencoAltre += '<p onClick="SET.apriPatologia(\''+p+'\',document.getElementById(\'btn_patologia_'+p+'\'));"><span>• '+DB.set.patologie[p].NomePatologia+'</span></p>';
@@ -250,11 +250,11 @@ var MODULO_PATOLOGIE = { // extend SET
 					'</div>';
 		}
 		
-		var op_descrizione = true;
+		let op_descrizione = true,
+			op_protocollo = true,
+			labelDescrizione = TXT("DescrizionePatologia");
 		if(typeof(localStorage.op_descrizione)!='undefined')op_descrizione = (__(localStorage.op_descrizione)=='1');
-		var op_protocollo = true;
 		if(typeof(localStorage.op_protocollo)!='undefined')op_protocollo = (__(localStorage.op_protocollo)=='1');
-		var labelDescrizione = TXT("DescrizionePatologia");
 		if(DB.set.patologie[n].apparato==11)labelDescrizione = TXT("DescrizioneProtocollo");
 
 		let sinonimi = clone(DB.set.patologie[n].sinonimi);
@@ -266,7 +266,7 @@ var MODULO_PATOLOGIE = { // extend SET
 			TestoSinonimi = '<b>'+TXT("AltriNomi")+'</b><br>'+TestoSinonimi+'<br>';
 		}
 		
-		var TestoPatologia = TestoSinonimi + H.sezione({
+		let TestoPatologia = TestoSinonimi + H.sezione({
 			label: labelDescrizione,
 			nome: 'descrizione',
 			aperta: '0',//op_descrizione,
@@ -279,8 +279,8 @@ var MODULO_PATOLOGIE = { // extend SET
 			html: SET.convPuntiScheda(ST)
 					});
 
-		var titolo = DB.set.patologie[n].NomePatologia;
-		var html = 	"<h1>"+htmlEntities(titolo)+"</h1>" + TestoPatologia;
+		let titolo = DB.set.patologie[n].NomePatologia,
+			html = 	"<h1>"+htmlEntities(titolo)+"</h1>" + TestoPatologia;
 		
 		// sesso
 		if(DB.set.patologie[n].sessoPatologia){
@@ -288,15 +288,13 @@ var MODULO_PATOLOGIE = { // extend SET
 					'		class="simboliPunto">'+html;
 		}
 		
-		var ritorno = false;
+		let ritorno = false;
 		if(	document.getElementById("scheda").querySelector(".formBtn") &&
 			document.getElementById("scheda").classList.contains("visSch") &&
 			SCHEDA.verificaSchedaRet() )ritorno = "document.getElementById('scheda').classList.remove('scheda_patologia')";
 		
-		var btnAdd = 	'';/*'<div class="p_paz_ref_menu" onClick="REF.open(\'sets.auricologia.pathologies\')">' +
-							TXT("ReferenceGuide") +
-						'</div>';*/
-		var addClose = '';
+		let btnAdd = 	'',
+			addClose = '';
 			
 		SCHEDA.caricaScheda(	titolo,
 								html,
@@ -331,7 +329,7 @@ var MODULO_PATOLOGIE = { // extend SET
 		SET.schEvi = el;
 	},
 	filtraPatologie: function( event ){ // filtra le patologie tramite campo di testo
-		var parola = document.getElementById("pat_ricerca").value.trim();
+		let parola = document.getElementById("pat_ricerca").value.trim();
 		for(let p in DB.set.patologie){
 			if(DB.set.patologie[p].NomePatologia.toLowerCase().indexOf(parola.toLowerCase()) == -1){
 				document.getElementById("btn_patologia_"+p).classList.add("nasPazRic");

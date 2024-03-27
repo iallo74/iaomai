@@ -59,25 +59,25 @@ var PAZIENTI_SETS = {
 	mezzoProvvisorio: '',
 	elencoGruppoPunti: {},
 	elencoGruppoAtt: {},
-	tipoGruppo: '', // M (meridiani) - P (punti) - A (auricolo-punti)
+	tipoGruppo: '', // M (meridiani) - P (punti) - A (auricolo-punti) - R (zone-reflessologia-plantare)
 	
 	// punti
 	modNumPunti: function( frm, n ){ // al cambio di punti o meridiano
-		var mr=document[frm]["mr_"+n];
+		let mr=document[frm]["mr_"+n];
 		if(typeof(DB.set.meridiani[mr.value])!='undefined'){
-			var punto=document[frm]["pt_"+n];
-			var preVal = punto.selectedIndex;
-			var maxL=punto.options.length;
+			let punto=document[frm]["pt_"+n],
+				preVal = punto.selectedIndex,
+				maxL=punto.options.length,
+				mrProc=new Array();
 			for(a=maxL;a>=0;a--){
 				punto.options[a]=null;
 			}
-			var mrProc=new Array();
 			for(let k in DB.set.meridiani){
 				mrProc[k]=Object.keys(DB.set.meridiani[k].punti).length;
 			}
 			for(a=mrProc[mr.value];a>=1;a--){
 				punto.options[a]=new Option('',encodeURIComponent(SET.ptToStr(a)),false,false);
-				var siglaPunto = a;
+				let siglaPunto = a;
 				if(DB.set.meridiani[mr.value].punti[SET.ptToStr(a)].siglaPunto){
 					siglaPunto = DB.set.meridiani[mr.value].punti[SET.ptToStr(a)].siglaPunto;
 					siglaPunto = siglaPunto.substr(3,siglaPunto.length-3);
@@ -93,16 +93,16 @@ var PAZIENTI_SETS = {
 	},
 	ricGroup: function( frm, n, addN='' ){
 		SET.delAllEviPalls("Over");
-		var mr=document[frm][addN+"mr_"+n].value;
-		var pt=document[frm][addN+"pt_"+n].value;
-		var de=document[frm][addN+"de_"+n].value;
+		let mr=document[frm][addN+"mr_"+n].value,
+			pt=document[frm][addN+"pt_"+n].value,
+			de=document[frm][addN+"de_"+n].value;
 		if(DB.set.meridiani[mr]){
-			var siglaPunto = __(DB.set.meridiani[mr].punti[SET.ptToStr(pt)]?.siglaPunto, pt+"."+mr);
+			let siglaPunto = __(DB.set.meridiani[mr].punti[SET.ptToStr(pt)]?.siglaPunto, pt+"."+mr);
 			document[frm][addN+"hd_"+n].value=siglaPunto;
 		}
 		
-		var hd=document[frm][addN+"hd_"+n].value;
-		var elenco = [];
+		/* let hd=document[frm][addN+"hd_"+n].value; */
+		let elenco = [];
 		for(let p in PAZIENTI.puntiProvvisori){
 			if(p == n){
 				PAZIENTI.puntiProvvisori[p].n = pt;
@@ -120,8 +120,8 @@ var PAZIENTI_SETS = {
 		}catch(err){}
 	},
 	selMezzo: function( n, tipo, isProc=false ){
-		var html = '';
-		var mzs = PAZIENTI.mezziSet[tipo];
+		let html = '',
+			mzs = PAZIENTI.mezziSet[tipo];
 		for(let m in mzs){
 			html += '<span style="background-image:url(img/mezzo_'+mzs[m]+'.png);"' +
 					'	   onClick="PAZIENTI.cambia'+tipo+'Z('+n+',\''+mzs[m]+'\','+isProc+');"' +
@@ -133,9 +133,9 @@ var PAZIENTI_SETS = {
 	caricaPuntiTrattamento: function( ev = -1 ){ // carica i punti del trattamento
 		document.getElementById('puntiMTC').style.display = 'block';
 		document.getElementById('label_puntiMTC').style.display = 'block';
-		var elenco = [];
-		var HTML = '<div></div>'; // serve lasciarlo per il drag&drop
-		var HTML_noMod = '';
+		let elenco = [],
+			HTML = '<div></div>', // serve lasciarlo per il drag&drop
+			HTML_noMod = '';
 		
 		if(PAZIENTI.puntiProvvisori.length){
 			if( globals.set.cartella == 'meridiani_cinesi' || 
@@ -175,7 +175,7 @@ var PAZIENTI_SETS = {
 							'		 class="cestino">';
 					
 					// mezzo
-					var addMezzoTit = '';
+					let addMezzoTit = '';
 					if(mezzo)addMezzoTit = ': '+PAZIENTI.mezzi[mezzo];
 					HTML += '	<span id="ico_PZ'+p+'"' +
 							'	      class="mezzoPunto"' +
@@ -234,10 +234,10 @@ var PAZIENTI_SETS = {
 							len = keys.length;
 						keys.sort();		
 						for (let i=0; i<len; i++) {	
-							let s = keys[i];
-							var TS = DB.set.meridiani[siglaMeridiano].punti[s];
-							
-							var siglaPunto = +s;
+							let s = keys[i],
+								siglaPunto = +s;
+							/* let TS = DB.set.meridiani[siglaMeridiano].punti[s]; */
+							 
 							if(DB.set.meridiani[siglaMeridiano].punti[s].siglaPunto){
 								siglaPunto = DB.set.meridiani[siglaMeridiano].punti[s].siglaPunto;
 								siglaPunto = siglaPunto.substr(3,siglaPunto.length-3);
@@ -318,7 +318,7 @@ var PAZIENTI_SETS = {
 		
 		
 		if(ev>-1){
-			setTimeout(function(){document.getElementById("rg_"+ev).classList.remove("eviPunto")},2000);
+			setTimeout(function(){document.getElementById("rg_"+ev)?.classList.remove("eviPunto");},2000);
 		}
 		
 		try{
@@ -332,9 +332,9 @@ var PAZIENTI_SETS = {
 	ricPuntiTratt: function(){ // ricarica i punti del trattamento (dopo un'azione es. elimina o nuovo)
 		if(	PAZIENTI.puntiProvvisori.length && 
 			(globals.set.cartella == 'meridiani_cinesi' || (globals.set.cartella == 'meridiani_shiatsu') && LOGIN.verModule("CIN")) ){
-			var puntiProvvisori='';
+			/* let puntiProvvisori=''; */
 			for(let p in PAZIENTI.puntiProvvisori){
-				var im=document.getElementById("ico_PV"+p).getElementsByTagName("img")[0].src;
+				let im = document.getElementById("ico_PV"+p).getElementsByTagName("img")[0].src;
 				if(im.indexOf("ico_PV.")!==-1)imPV='';
 				else if(im.indexOf("ico_PVV.")!==-1)imPV='V';
 				else if(im.indexOf("ico_PVP.")!==-1)imPV='P';
@@ -343,7 +343,7 @@ var PAZIENTI_SETS = {
 				PAZIENTI.puntiProvvisori[p].m = document.getElementById('mr_'+p).value;
 				PAZIENTI.puntiProvvisori[p].s = document.getElementById('hd_'+p).value;
 				PAZIENTI.puntiProvvisori[p].e = imPV;
-				/*var n=0;
+				/*let n=0;
 				for(let m in DB.set.meridiani){
 					if(DB.set.meridiani[m].siglaMeridiano==document.getElementById('mr_'+p).value){
 						n=(document.getElementById('pt_'+p).value*1+DB.set.meridiani[m].iniMerid*1)-1;
@@ -354,9 +354,9 @@ var PAZIENTI_SETS = {
 	},
 	aggiungiPuntoTrattamento: function( PT='0.' ){ // aggiunge un singolo punto al trattamento
 		PAZIENTI.ricPuntiTratt();
-		var n = PT.split(".")[0];
-		var siglaMeridiano = PT.split(".")[1];
-		var siglaPunto = __(DB.set.meridiani[siglaMeridiano].punti[SET.ptToStr(n)].siglaPunto, PT);
+		let n = PT.split(".")[0],
+			siglaMeridiano = PT.split(".")[1],
+			siglaPunto = __(DB.set.meridiani[siglaMeridiano].punti[SET.ptToStr(n)].siglaPunto, PT);
 		PAZIENTI.puntiProvvisori.push({
 			n: n,
 			m: siglaMeridiano,
@@ -372,15 +372,15 @@ var PAZIENTI_SETS = {
 		PAZIENTI.topAdd = tCoord(document.getElementById("p_add_dett"),'y');
 		SCHEDA.formModificato=true;
 		if(PAZIENTI.tipoGruppo=='P' || PAZIENTI.tipoGruppo=='N')PAZIENTI.ricPuntiTratt();
-		var presenti=false;
-		var pass=true;
-		var totAggiunti = 0;
+		let presenti=false,
+			pass=true,
+			totAggiunti = 0;
 		for(let p in punti){
 			// verifico che non ci sia già
 			pass=true;
 			if(PAZIENTI.tipoGruppo=='P'){
-				var n = punti[p].split(".")[0];
-				var siglaMeridiano = punti[p].split(".")[1];
+				let n = punti[p].split(".")[0],
+					siglaMeridiano = punti[p].split(".")[1];
 				for(let k in PAZIENTI.puntiProvvisori){
 					if(	PAZIENTI.puntiProvvisori[k].n == n && 
 						PAZIENTI.puntiProvvisori[k].m == siglaMeridiano){
@@ -394,7 +394,7 @@ var PAZIENTI_SETS = {
 				}
 			}
 			if(PAZIENTI.tipoGruppo=='M'){
-				var siglaMeridiano = punti[p].split(".")[0];
+				let siglaMeridiano = punti[p].split(".")[0];
 				for(let k in PAZIENTI.meridianiProvvisori){
 					if(PAZIENTI.meridianiProvvisori[k].siglaMeridiano == siglaMeridiano){
 						pass=false;
@@ -407,7 +407,7 @@ var PAZIENTI_SETS = {
 				}
 			}
 			if(PAZIENTI.tipoGruppo=='A'){
-				var siglaPunto = punti[p].split(".")[0];
+				let siglaPunto = punti[p].split(".")[0];
 				for(let k in PAZIENTI.auriculoProvvisori){
 					if(PAZIENTI.auriculoProvvisori[k].siglaMeridiano == siglaPunto){
 						pass=false;
@@ -420,7 +420,7 @@ var PAZIENTI_SETS = {
 				}
 			}
 			if(PAZIENTI.tipoGruppo=='R'){
-				var siglaPunto = punti[p].split(".")[0];
+				let siglaPunto = punti[p].split(".")[0];
 				for(let k in PAZIENTI.reflexProvvisori){
 					if(PAZIENTI.reflexProvvisori[k].siglaMeridiano == siglaPunto){
 						pass=false;
@@ -433,7 +433,7 @@ var PAZIENTI_SETS = {
 				}
 			}
 			if(PAZIENTI.tipoGruppo=='N'){
-				var siglaPunto = punti[p].split(".")[0];
+				let siglaPunto = punti[p].split(".")[0];
 				for(let k in PAZIENTI.namikoshiProvvisori){
 					if(PAZIENTI.namikoshiProvvisori[k].siglaMeridiano == siglaPunto){
 						pass=false;
@@ -480,7 +480,7 @@ var PAZIENTI_SETS = {
 		SCHEDA.formModificato = true;
 	},
 	cambiaPV: function( n, m ){ // cambia la valutazione energetica su un punto
-		var el = document.getElementById("ico_PV"+n);
+		let el = document.getElementById("ico_PV"+n);
 		el.getElementsByTagName("img")[0].src='img/ico_PV'+m+'.png';
 		if(globals.modello.cartella)SET.overPunto(document.getElementById("pt_"+n).parentElement,false);
 		PAZIENTI.puntiProvvisori[n].e = m;
@@ -491,14 +491,14 @@ var PAZIENTI_SETS = {
 		H.removeTT();
 	},
 	cambiaPZ: function( n, m, isProc=false ){ // cambia il mezzo su un punto
-		var el = document.getElementById("ico_PZ"+n);
+		let el = document.getElementById("ico_PZ"+n);
 		el.getElementsByTagName("img")[0].src='img/mezzo_'+m+'.png';
 		if(globals.modello.cartella)SET.overPunto(document.getElementById("pt_"+n).parentElement.parentElement,false);
 		if(!isProc){
 			PAZIENTI.puntiProvvisori[n].z = m;
 			PAZIENTI.ricGroup("formMod",n);
 		}else{
-			var pD = SET.dettagliProvvisori[n].DescrizioneDettaglio.split(".");
+			let pD = SET.dettagliProvvisori[n].DescrizioneDettaglio.split(".");
 			SET.dettagliProvvisori[n].DescrizioneDettaglio = __(pD[0])+"."+__(pD[1])+".."+m;
 			SET.caricaDettagli();
 		}
@@ -509,8 +509,8 @@ var PAZIENTI_SETS = {
 		PAZIENTI.verMezzo(m);
 	},
 	selPV: function( n ){ // cambia la valutazione energetica
-		var html = '';
-		var pvs = [ '', 'V', 'P', 'D' ];
+		let html = '',
+			pvs = [ '', 'V', 'P', 'D' ];
 		for(let m=0;m<pvs.length;m++){
 			html += '<span style="background-image:url(img/ico_PV'+pvs[m]+'.png);"' +
 					'	   onClick="PAZIENTI.cambiaPV('+n+',\''+pvs[m]+'\');"' +
@@ -521,11 +521,11 @@ var PAZIENTI_SETS = {
 	spostaPunto: function( elMove, elTarget ){ // sposta dopo il drag&drop
 		if(	!elTarget ||
 			elMove.parentElement==elTarget)return;
-		var fromIndex = parseInt(elMove.parentElement.id.split("_")[1]);
-		var toIndex = parseInt(elTarget.id.split("_")[1]);
+		let fromIndex = parseInt(elMove.parentElement.id.split("_")[1]),
+			toIndex = parseInt(elTarget.id.split("_")[1]),
+			arr2 = PAZIENTI.puntiProvvisori.splice(fromIndex, 1)[0]; // l'elemento che tolgo va in arr2
 		if(DRAGGER.pushPos=='after')toIndex++;
 		if(toIndex>fromIndex)toIndex--;
-		var arr2 = PAZIENTI.puntiProvvisori.splice(fromIndex, 1)[0];
 		PAZIENTI.puntiProvvisori.splice(toIndex,0,arr2);
 		PAZIENTI.caricaPuntiTrattamento(toIndex);
 		SCHEDA.formModificato = true;
@@ -535,18 +535,18 @@ var PAZIENTI_SETS = {
 	caricaMeridianiTrattamento: function( ev = -1 ){ // carica i punti del trattamento
 		document.getElementById('meridianiMTC').style.display = 'block';
 		document.getElementById('label_meridianiMTC').style.display = 'block';
-		var HTML = '<div></div>'; // serve lasciarlo per il drag&drop
-		var elenco = [];
+		let HTML = '<div></div>', // serve lasciarlo per il drag&drop
+			elenco = [];
 		
 		if( PAZIENTI.meridianiProvvisori.length ){
 			if( globals.set.cartella == 'meridiani_cinesi' || 
 				(globals.set.cartella == 'meridiani_shiatsu' && (LOGIN.verModule("CIN") || LOGIN.verModule("MAS"))) ){
-				var p = -1;
+				let p = -1;
 				for(let m in PAZIENTI.meridianiProvvisori){
 					p++;
 					elenco.push(PAZIENTI.meridianiProvvisori[m].siglaMeridiano);
-					var m2 = __(PAZIENTI.meridianiProvvisori[m].valEnergetica);
-					var descrizione = __(PAZIENTI.meridianiProvvisori[m].descrizione);
+					let m2 = __(PAZIENTI.meridianiProvvisori[m].valEnergetica),
+						descrizione = __(PAZIENTI.meridianiProvvisori[m].descrizione);
 					HTML += '<div class="rgProcMod rgMod dettMeridiano'+((ev==m)?' eviPunto':'');
 					if(typeof(MERIDIANI) != 'undefined'){
 						if(MERIDIANI[PAZIENTI.meridianiProvvisori[m].siglaMeridiano].meridianoAcceso){
@@ -611,7 +611,7 @@ var PAZIENTI_SETS = {
 				}
 				HTML +='<p style="height:5px;"></p>';
 			}else{
-				var HTML_noMod = '';
+				let HTML_noMod = '';
 				for(let m in PAZIENTI.meridianiProvvisori){
 					NomeMeridiano=PAZIENTI.meridianiProvvisori[m].NomeMeridiano;
 					siglaMeridiano=PAZIENTI.meridianiProvvisori[m].siglaMeridiano;
@@ -635,7 +635,7 @@ var PAZIENTI_SETS = {
 		document.getElementById('meridianiMTC').innerHTML=HTML;
 		
 		if(ev>-1){
-			setTimeout(function(){document.getElementById("tr_p"+ev).classList.remove("eviPunto")},2000);
+			setTimeout(function(){document.getElementById("tr_p"+ev)?.classList.remove("eviPunto");},2000);
 		}
 		
 		try{
@@ -650,7 +650,7 @@ var PAZIENTI_SETS = {
 			NomeMeridiano: DB.set.meridiani[siglaMeridiano].NomeMeridiano,
 			valEnergetica: ""
 		}
-		var presente = false;
+		let presente = false;
 		for(let m in PAZIENTI.meridianiProvvisori){
 			if(PAZIENTI.meridianiProvvisori[m].siglaMeridiano == siglaMeridiano)presente = true;
 		}
@@ -665,7 +665,7 @@ var PAZIENTI_SETS = {
 		SCHEDA.formModificato = true;
 	},
 	cambiaMV: function( n, m ){ // cambia la valutazione energetica su un punto
-		var el = document.getElementById("ico_MV"+n);
+		let el = document.getElementById("ico_MV"+n);
 		el.getElementsByTagName("img")[0].src='img/ico_PV'+m+'.png';
 		PAZIENTI.meridianiProvvisori[n].valEnergetica = m;
 		SCHEDA.formModificato = true;
@@ -673,8 +673,8 @@ var PAZIENTI_SETS = {
 		H.removeTT();
 	},
 	selMV: function( n ){ // cambia la valutazione energetica
-		var html = '';
-		var pvs = [ '', 'V', 'P', 'D' ];
+		let html = '',
+			pvs = [ '', 'V', 'P', 'D' ];
 		for(let m=0;m<pvs.length;m++){
 			html += '<span style="background-image:url(img/ico_PV'+pvs[m]+'.png);"' +
 					'	   onClick="PAZIENTI.cambiaMV('+n+',\''+pvs[m]+'\');"' +
@@ -685,11 +685,11 @@ var PAZIENTI_SETS = {
 	spostaMeridiano: function( elMove, elTarget ){ // sposta dopo il drag&drop
 		if(	!elTarget ||
 			elMove.parentElement==elTarget)return;
-		var fromIndex = parseInt(elMove.dataset.dragEl);
-		var toIndex = parseInt(elTarget.getElementsByTagName("div")[0].dataset.dragEl);
+		let fromIndex = parseInt(elMove.dataset.dragEl),
+			toIndex = parseInt(elTarget.getElementsByTagName("div")[0].dataset.dragEl),
+			arr2 = PAZIENTI.meridianiProvvisori.splice(fromIndex, 1)[0]; // l'elemento cancellato va in arr2
 		if(DRAGGER.pushPos=='after')toIndex++;
 		if(toIndex>fromIndex)toIndex--;
-		var arr2 = PAZIENTI.meridianiProvvisori.splice(fromIndex, 1)[0];
 		PAZIENTI.meridianiProvvisori.splice(toIndex,0,arr2);
 		PAZIENTI.caricaMeridianiTrattamento(toIndex);
 		SCHEDA.formModificato = true;
@@ -709,11 +709,11 @@ var PAZIENTI_SETS = {
 	caricaAuriculoTrattamento: function( ev = -1 ){ // carica i punti del trattamento
 		document.getElementById('puntiAuricolari').style.display = 'block';
 		document.getElementById('label_puntiAuricolari').style.display = 'block';
-		var HTML = '<div></div>'; // serve lasciarlo per il drag&drop
-		var elenco = [];
+		let HTML = '<div></div>', // serve lasciarlo per il drag&drop
+			elenco = [];
 		if(PAZIENTI.auriculoProvvisori.length){
 			if( globals.set.cartella == 'auricologia' ){
-				var puntiElenco = [];
+				let puntiElenco = [];
 				for(let siglaPunto in DB.set.punti){
 					if(__(DB.set.punti[siglaPunto])){
 						puntiElenco.push({
@@ -758,7 +758,7 @@ var PAZIENTI_SETS = {
 							'		 class="cestino">';
 					
 					// mezzo
-					var addMezzoTit = '';
+					let addMezzoTit = '';
 					if(mezzo)addMezzoTit = ': '+PAZIENTI.mezzi[mezzo];
 					HTML += '	<span id="ico_PZ'+p+'"' +
 							'	      class="mezzoPunto"' +
@@ -842,7 +842,7 @@ var PAZIENTI_SETS = {
 				}
 				HTML +=	'<div style="clear:both;height:1px;"></div>';
 			}else{
-				var HTML_noMod = '';
+				let HTML_noMod = '';
 				for(let p in PAZIENTI.auriculoProvvisori){
 					valutazione=__(PAZIENTI.auriculoProvvisori[p].e);
 					mezzo=__(PAZIENTI.auriculoProvvisori[p].z);
@@ -868,7 +868,7 @@ var PAZIENTI_SETS = {
 		document.getElementById('puntiAuricolari').innerHTML=HTML;
 		
 		if(ev>-1){
-			setTimeout(function(){document.getElementById("rg_"+ev).classList.remove("eviPunto")},2000);
+			setTimeout(function(){document.getElementById("rg_"+ev)?.classList.remove("eviPunto");},2000);
 		}
 		try{
 			if( globals.set.cartella == 'auricologia' )SET.evidenziaPuntoMod(elenco);
@@ -897,8 +897,8 @@ var PAZIENTI_SETS = {
 		SCHEDA.formModificato = true;
 	},
 	selAV: function( n ){ // cambia la valutazione energetica
-		var html = '';
-		var pvs = [ '', 'D' ];
+		let html = '',
+			pvs = [ '', 'D' ];
 		for(let m=0;m<pvs.length;m++){
 			html += '<span style="background-image:url(img/ico_PV'+pvs[m]+'.png);"' +
 					'	   onClick="PAZIENTI.cambiaAV('+n+',\''+pvs[m]+'\');"' +
@@ -907,7 +907,7 @@ var PAZIENTI_SETS = {
 		H.selTT(n,"ico_PV",html);
 	},
 	cambiaAV: function( n, m ){ // cambia la valutazione energetica su un punto
-		var el = document.getElementById("ico_PV"+n);
+		let el = document.getElementById("ico_PV"+n);
 		el.getElementsByTagName("img")[0].src='img/ico_PV'+m+'.png';
 		//SET.overPunto(document.getElementById("pt_"+n).parentElement,false);
 		PAZIENTI.auriculoProvvisori[n].e = m;
@@ -918,13 +918,13 @@ var PAZIENTI_SETS = {
 		H.removeTT();
 	},
 	cambiaAZ: function( n, m, isProc=false ){ // cambia il mezzo su un punto
-		var el = document.getElementById("ico_PZ"+n);
+		let el = document.getElementById("ico_PZ"+n);
 		el.getElementsByTagName("img")[0].src='img/mezzo_'+m+'.png';
 		if(globals.modello.cartella)SET.overPunto("_PT"+m,false);
 		if(!isProc){
 			PAZIENTI.auriculoProvvisori[n].z = m;
 		}else{
-			var pD = SET.dettagliProvvisori[n].DescrizioneDettaglio.split(".");
+			let pD = SET.dettagliProvvisori[n].DescrizioneDettaglio.split(".");
 			SET.dettagliProvvisori[n].DescrizioneDettaglio = __(pD[0])+"."+__(m);
 			SET.caricaDettagli();
 		}
@@ -937,11 +937,11 @@ var PAZIENTI_SETS = {
 	spostaAuriculo: function( elMove, elTarget ){ // sposta dopo il drag&drop
 		if(	!elTarget ||
 			elMove.parentElement==elTarget)return;
-		var fromIndex = parseInt(elMove.parentElement.id.split("_")[1]);
-		var toIndex = parseInt(elTarget.id.split("_")[1]);
+		let fromIndex = parseInt(elMove.parentElement.id.split("_")[1]),
+			toIndex = parseInt(elTarget.id.split("_")[1]),
+			arr2 = PAZIENTI.auriculoProvvisori.splice(fromIndex, 1)[0]; // l'elemento eliminato va in arr2
 		if(DRAGGER.pushPos=='after')toIndex++;
 		if(toIndex>fromIndex)toIndex--;
-		var arr2 = PAZIENTI.auriculoProvvisori.splice(fromIndex, 1)[0];
 		PAZIENTI.auriculoProvvisori.splice(toIndex,0,arr2);
 		PAZIENTI.caricaAuriculoTrattamento(toIndex);
 		SCHEDA.formModificato = true;
@@ -961,11 +961,11 @@ var PAZIENTI_SETS = {
 	caricaReflexTrattamento: function( ev = -1 ){ // carica i punti del trattamento
 		document.getElementById('puntiPlantari').style.display = 'block';
 		document.getElementById('label_puntiPlantari').style.display = 'block';
-		var HTML = '<div></div>'; // serve lasciarlo per il drag&drop
-		var elenco = [];
+		let HTML = '<div></div>', // serve lasciarlo per il drag&drop
+			elenco = [];
 		if(PAZIENTI.reflexProvvisori.length){
 			if( globals.set.cartella == 'reflessologia_plantare' ){
-				var puntiElenco = [];
+				let puntiElenco = [];
 				for(let siglaPunto in DB.set.punti){
 					if(__(DB.set.punti[siglaPunto])){
 						puntiElenco.push({
@@ -1010,7 +1010,7 @@ var PAZIENTI_SETS = {
 							'		 class="cestino">';
 					
 					// mezzo
-					var addMezzoTit = '';
+					let addMezzoTit = '';
 					if(mezzo)addMezzoTit = ': '+PAZIENTI.mezzi[mezzo];
 					HTML += '	<span id="ico_PZ'+p+'"' +
 							'	      class="mezzoPunto"' +
@@ -1094,7 +1094,7 @@ var PAZIENTI_SETS = {
 				}
 				HTML +=	'<div style="clear:both;height:1px;"></div>';
 			}else{
-				var HTML_noMod = '';
+				let HTML_noMod = '';
 				for(let p in PAZIENTI.reflexProvvisori){
 					valutazione=__(PAZIENTI.reflexProvvisori[p].e);
 					mezzo=__(PAZIENTI.reflexProvvisori[p].z);
@@ -1120,7 +1120,7 @@ var PAZIENTI_SETS = {
 		document.getElementById('puntiPlantari').innerHTML=HTML;
 		
 		if(ev>-1){
-			setTimeout(function(){document.getElementById("rg_"+ev).classList.remove("eviPunto")},2000);
+			setTimeout(function(){document.getElementById("rg_"+ev)?.classList.remove("eviPunto");},2000);
 		}
 		try{
 			if( globals.set.cartella == 'reflessologia_plantare' )SET.evidenziaPuntoMod(elenco);
@@ -1149,8 +1149,8 @@ var PAZIENTI_SETS = {
 		SCHEDA.formModificato = true;
 	},
 	selRV: function( n ){ // cambia la valutazione energetica
-		var html = '';
-		var pvs = [ '', 'D' ];
+		let html = '',
+			pvs = [ '', 'D' ];
 		for(let m=0;m<pvs.length;m++){
 			html += '<span style="background-image:url(img/ico_PV'+pvs[m]+'.png);"' +
 					'	   onClick="PAZIENTI.cambiaRV('+n+',\''+pvs[m]+'\');"' +
@@ -1159,7 +1159,7 @@ var PAZIENTI_SETS = {
 		H.selTT(n,"ico_PV",html);
 	},
 	cambiaRV: function( n, m ){ // cambia la valutazione energetica su un punto
-		var el = document.getElementById("ico_PV"+n);
+		let el = document.getElementById("ico_PV"+n);
 		el.getElementsByTagName("img")[0].src='img/ico_PV'+m+'.png';
 		//SET.overPunto(document.getElementById("pt_"+n).parentElement,false);
 		PAZIENTI.reflexProvvisori[n].e = m;
@@ -1170,18 +1170,18 @@ var PAZIENTI_SETS = {
 		H.removeTT();
 	},
 	cambiaRZ: function( n, m, isProc=false ){ // cambia il mezzo su un punto
-		var el = document.getElementById("ico_PZ"+n);
-		var pD = SET.dettagliProvvisori[n].DescrizioneDettaglio.split(".");
+		let el = document.getElementById("ico_PZ"+n);
 		el.getElementsByTagName("img")[0].src='img/mezzo_'+m+'.png';
-		if(globals.modello.cartella)SET.overPunto(__(pD[0]),false);
+		if(globals.modello.cartella)SET.overPunto(document.getElementById("pt_"+n).value,false);
 		if(!isProc){
 			PAZIENTI.reflexProvvisori[n].z = m;
 		}else{
+			let pD = SET.dettagliProvvisori[n].DescrizioneDettaglio.split(".");
 			SET.dettagliProvvisori[n].DescrizioneDettaglio = __(pD[0])+"."+__(m);
 			SET.caricaDettagli();
 		}
 		SCHEDA.formModificato = true;
-		if(globals.modello.cartella)SET.overPunto(__(pD[0]),true);
+		if(globals.modello.cartella)SET.overPunto(document.getElementById("pt_"+n).value,true);
 		document.getElementById("tt_mezzival").dataset.on='0';
 		H.removeTT();
 		PAZIENTI.verMezzo(m);
@@ -1189,11 +1189,11 @@ var PAZIENTI_SETS = {
 	spostaReflex: function( elMove, elTarget ){ // sposta dopo il drag&drop
 		if(	!elTarget ||
 			elMove.parentElement==elTarget)return;
-		var fromIndex = parseInt(elMove.parentElement.id.split("_")[1]);
-		var toIndex = parseInt(elTarget.id.split("_")[1]);
+		let fromIndex = parseInt(elMove.parentElement.id.split("_")[1]),
+			toIndex = parseInt(elTarget.id.split("_")[1]),
+			arr2 = PAZIENTI.reflexProvvisori.splice(fromIndex, 1)[0]; // l'elemento eliminato va in arr2
 		if(DRAGGER.pushPos=='after')toIndex++;
 		if(toIndex>fromIndex)toIndex--;
-		var arr2 = PAZIENTI.reflexProvvisori.splice(fromIndex, 1)[0];
 		PAZIENTI.reflexProvvisori.splice(toIndex,0,arr2);
 		PAZIENTI.caricaReflexTrattamento(toIndex);
 		SCHEDA.formModificato = true;
@@ -1215,15 +1215,15 @@ var PAZIENTI_SETS = {
 	caricaNamikoshiTrattamento: function( ev = -1 ){ // carica i punti del trattamento
 		document.getElementById('puntiNamikoshi').style.display = 'block';
 		document.getElementById('label_puntiNamikoshi').style.display = 'block';
-		var HTML = '<div></div>'; // serve lasciarlo per il drag&drop
-		var elenco = [];
+		let HTML = '<div></div>', // serve lasciarlo per il drag&drop
+			elenco = [];
 		if(PAZIENTI.namikoshiProvvisori.length){
 			if( globals.set.cartella == 'meridiani_shiatsu' && LOGIN.verModule("NMK") ){
-				var puntiElenco = [];
+				let puntiElenco = [];
 				for(let siglaPunto in DB.set.meridiani.NK.punti){
 					if(__(DB.set.meridiani.NK.punti[siglaPunto])){
 						if(	DB.set.meridiani.NK.punti[siglaPunto].NomePunto){
-							var pP = DB.set.meridiani.NK.punti[siglaPunto].siglaPunto.split("-");
+							let pP = DB.set.meridiani.NK.punti[siglaPunto].siglaPunto.split("-");
 							puntiElenco.push({
 								siglaPunto: pP[1],
 								NomePunto: DB.set.meridiani.NK.punti[siglaPunto].NomePunto
@@ -1266,7 +1266,7 @@ var PAZIENTI_SETS = {
 							'		 class="cestino">';
 					
 					// mezzo
-					var addMezzoTit = '';
+					let addMezzoTit = '';
 					if(mezzo)addMezzoTit = ': '+PAZIENTI.mezzi[mezzo];
 					HTML += '	<span id="n-ico_PZ'+p+'"' +
 							'	      class="mezzoPunto"' +
@@ -1348,7 +1348,7 @@ var PAZIENTI_SETS = {
 				}
 				HTML +=	'<div style="clear:both;height:1px;"></div>';
 			}else{
-				var HTML_noMod = '';
+				let HTML_noMod = '';
 				for(let p in PAZIENTI.namikoshiProvvisori){
 					valutazione=__(PAZIENTI.namikoshiProvvisori[p].e);
 					mezzo=__(PAZIENTI.namikoshiProvvisori[p].z);
@@ -1376,7 +1376,7 @@ var PAZIENTI_SETS = {
 		document.getElementById('puntiNamikoshi').innerHTML=HTML;
 		
 		if(ev>-1){
-			setTimeout(function(){document.getElementById("rg_"+ev).classList.remove("eviPunto")},2000);
+			setTimeout(function(){document.getElementById("rg_"+ev)?.classList.remove("eviPunto");},2000);
 		}
 		try{
 			if( globals.set.cartella == 'meridiani_shiatsu' && 
@@ -1409,8 +1409,8 @@ var PAZIENTI_SETS = {
 		SCHEDA.formModificato = true;
 	},
 	selNV: function( n ){ // cambia la valutazione energetica
-		var html = '';
-		var pvs = [ '', 'D' ];
+		let html = '',
+			pvs = [ '', 'D' ];
 		for(let m=0;m<pvs.length;m++){
 			html += '<span style="background-image:url(img/ico_PV'+pvs[m]+'.png);"' +
 					'	   onClick="PAZIENTI.cambiaNV('+n+',\''+pvs[m]+'\');"' +
@@ -1419,7 +1419,7 @@ var PAZIENTI_SETS = {
 		H.selTT(n,"n-ico_PV",html);
 	},
 	cambiaNV: function( n, m ){ // cambia la valutazione energetica su un punto
-		var el = document.getElementById("n-ico_PV"+n);
+		let el = document.getElementById("n-ico_PV"+n);
 		el.getElementsByTagName("img")[0].src='img/ico_PV'+m+'.png';
 		PAZIENTI.namikoshiProvvisori[n].e = m;
 		SCHEDA.formModificato = true;
@@ -1428,13 +1428,13 @@ var PAZIENTI_SETS = {
 		H.removeTT();
 	},
 	cambiaNZ: function( n, m, isProc=false ){ // cambia il mezzo su un punto
-		var el = document.getElementById((isProc?'':'n-')+"ico_PZ"+n);
+		let el = document.getElementById((isProc?'':'n-')+"ico_PZ"+n);
 		el.getElementsByTagName("img")[0].src='img/mezzo_'+m+'.png';
 		if(globals.modello.cartella)SET.overPunto(el.parentElement.parentElement,false);
 		if(!isProc){
 			PAZIENTI.namikoshiProvvisori[n].z = m;
 		}else{
-			var pD = SET.dettagliProvvisori[n].DescrizioneDettaglio.split(".");
+			let pD = SET.dettagliProvvisori[n].DescrizioneDettaglio.split(".");
 			SET.dettagliProvvisori[n].DescrizioneDettaglio = __(pD[0])+"."+__(pD[1])+"."+__(pD[2])+"."+__(m);
 			SET.caricaDettagli();
 		}
@@ -1447,11 +1447,11 @@ var PAZIENTI_SETS = {
 	spostaNamikoshi: function( elMove, elTarget ){ // sposta dopo il drag&drop
 		if(	!elTarget ||
 			elMove.parentElement==elTarget)return;
-		var fromIndex = parseInt(elMove.parentElement.id.split("_")[1]);
-		var toIndex = parseInt(elTarget.id.split("_")[1]);
+		let fromIndex = parseInt(elMove.parentElement.id.split("_")[1]),
+			toIndex = parseInt(elTarget.id.split("_")[1]),
+			arr2 = PAZIENTI.namikoshiProvvisori.splice(fromIndex, 1)[0]; // l'elemento eliminato va in arr2
 		if(DRAGGER.pushPos=='after')toIndex++;
 		if(toIndex>fromIndex)toIndex--;
-		var arr2 = PAZIENTI.namikoshiProvvisori.splice(fromIndex, 1)[0];
 		PAZIENTI.namikoshiProvvisori.splice(toIndex,0,arr2);
 		PAZIENTI.caricaNamikoshiTrattamento(toIndex);
 		SCHEDA.formModificato = true;
@@ -1479,7 +1479,7 @@ var PAZIENTI_SETS = {
 		PAZIENTI.elencoGruppoPunti.titolo = "";
 		PAZIENTI.elencoGruppoPunti.contenuto = [];
 		PAZIENTI.elencoGruppoPunti.livello = 1;
-		var presenti = false;
+		let presenti = false;
 		
 		// punti da MERIDIANI
 		if(PAZIENTI.tipoGruppo=='P' || PAZIENTI.tipoGruppo=='M' || PAZIENTI.tipoGruppo=='A' || PAZIENTI.tipoGruppo=='R'){
@@ -1488,7 +1488,7 @@ var PAZIENTI_SETS = {
 			if(PAZIENTI.tipoGruppo=='P')EL.livello = 2;
 			else EL.livello = 3;
 			EL.parent = PAZIENTI.elencoGruppoPunti;
-			var n = -1;
+			let n = -1;
 			if(PAZIENTI.tipoGruppo=='P' || PAZIENTI.tipoGruppo=='M'){
 				EL.titolo = TXT("MeridianiTrattamento");
 				for(let m in DB.set.meridiani){
@@ -1509,7 +1509,7 @@ var PAZIENTI_SETS = {
 							for (let i=0; i<len; i++) {	
 								let pm = keys[i];
 								if(DB.set.meridiani[m].punti[pm].NomePunto){
-									var pt = DB.set.meridiani[m].punti[pm].NomePunto.split(". ")[0];
+									let pt = DB.set.meridiani[m].punti[pm].NomePunto.split(". ")[0];
 									EL.contenuto[n].contenuto.push(pt);
 								}
 							}	
@@ -1522,7 +1522,7 @@ var PAZIENTI_SETS = {
 				}
 			}
 			if(PAZIENTI.tipoGruppo=='A' || PAZIENTI.tipoGruppo=='R'){ // auricolo-punti
-				var puntiElenco = [];
+				let puntiElenco = [];
 				for(let siglaPunto in DB.set.punti){
 					// verifico le autorizzazioni
 					if(SET.verFreePunti(siglaPunto)){ // verifico le autorizzazioni
@@ -1554,7 +1554,7 @@ var PAZIENTI_SETS = {
 			EL.contenuto = [];
 			EL.livello = 3;
 			EL.parent = PAZIENTI.elencoGruppoPunti;
-			var n = -1;
+			/* let n = -1; */
 			EL.titolo = TXT("PuntiNamikoshi");
 
 			let myObj = DB.set.meridiani['NK'].punti,
@@ -1565,7 +1565,7 @@ var PAZIENTI_SETS = {
 			for (let i=0; i<len; i++) {	
 				let pm = keys[i];
 				if(DB.set.meridiani['NK'].punti[pm].NomePunto){
-					var pP = DB.set.meridiani['NK'].punti[pm].siglaPunto.split("-");
+					let pP = DB.set.meridiani['NK'].punti[pm].siglaPunto.split("-");
 					//EL.contenuto.push(pP[1]+"."+pP[0]+"."+DB.set.meridiani['NK'].punti[pm].siglaPunto);
 					EL.contenuto.push(pP[1]+"."+pP[0]);
 				}
@@ -1588,20 +1588,20 @@ var PAZIENTI_SETS = {
 					EL2.livello = 3;
 					EL2.parent = EL;
 					// scansiono il testo
-					var txtTeo=DB.set.teoria[t].contenuti[i].TestoTeoria;
+					let txtTeo=DB.set.teoria[t].contenuti[i].TestoTeoria;
 					if(PAZIENTI.tipoGruppo=='P' ||
 					   PAZIENTI.tipoGruppo=='N')re = /\[\.[0-9]{1,2}\.[A-Z]{2}[\.*]+\]/ig;
 					if(PAZIENTI.tipoGruppo=='M')re = /\[\.[A-Z]{2}\.\]/ig;
 					if(PAZIENTI.tipoGruppo=='A')re = /\[\.[0-9]{3}\.\]/ig;
 					if(PAZIENTI.tipoGruppo=='R')re = /\[\.[0-9]{3}\.\]/ig;
-					var result = txtTeo.match(re);
+					let result = txtTeo.match(re);
 					for(let k in result){
-						var pP = result[k].split(".");
+						let pP = result[k].split(".");
 						PT=pP[1];
 						if(PAZIENTI.tipoGruppo=='P' || PAZIENTI.tipoGruppo=='N')PT += '.'+pP[2];
 						if(EL2.contenuto.indexOf(PT)===-1 && 
 						   ((PAZIENTI.tipoGruppo=='P' && pP[2]!='NK') || (PAZIENTI.tipoGruppo=='N' && pP[2]=='NK')) ){
-							var pass = true;
+							let pass = true;
 							
 							// verifico le autorizzazioni
 							if(PAZIENTI.tipoGruppo=='M')pass = SET.verFreeMeridiani(PT)
@@ -1615,11 +1615,11 @@ var PAZIENTI_SETS = {
 						}
 					}
 					if(PAZIENTI.tipoGruppo=='A' || PAZIENTI.tipoGruppo=='R'){
-						var gr = DB.set.teoria[t].contenuti[i].gruppo;
+						let gr = DB.set.teoria[t].contenuti[i].gruppo;
 						if(gr){
-							var punti = GEOMETRIE.gruppi[gr].punti;
+							let punti = GEOMETRIE.gruppi[gr].punti;
 							for(let k in punti){
-								var PT = punti[k];
+								let PT = punti[k];
 								// verifico le autorizzazioni
 								if(SET.verFreePunti(PT)){
 									if(EL2.contenuto.indexOf(PT)===-1){
@@ -1651,9 +1651,9 @@ var PAZIENTI_SETS = {
 			EL.livello = 2;
 			EL.parent = PAZIENTI.elencoGruppoPunti;
 			
-			var PRS = clone(DB.procedure.data);
+			let PRS = clone(DB.procedure.data);
 			PRS.sort(sort_by("NomeProcedura", false));
-			var presenti=false;
+			presenti=false;
 			for(let p in PRS){
 				if(!PRS[p].Cancellato){
 					EL2 = {};
@@ -1663,7 +1663,7 @@ var PAZIENTI_SETS = {
 					EL2.parent = EL;
 					// scansiono i dettagli
 					for(let i in PRS[p].dettagliProcedura){
-						var DT = PRS[p].dettagliProcedura[i];
+						let DT = PRS[p].dettagliProcedura[i];
 						if(DT.TipoDettaglio==PAZIENTI.tipoGruppo){
 							if(DT.DescrizioneDettaglio.length>1){
 								EL2.contenuto.push(DT.DescrizioneDettaglio);
@@ -1683,7 +1683,7 @@ var PAZIENTI_SETS = {
 		setTimeout(function(){
 			if(CONN.getConn() && (DB.login.data.auths.indexOf(globals.set.cartella)==-1 || !LOGIN.logedin())){
 				// carico i preferiti della community
-				var JSNPOST={	"idLinguaRic": 0,
+				let JSNPOST={	"idLinguaRic": 0,
 								"parolaRic": "",
 								"parolaRicCrypt": "",
 								"prefRic": "1",
@@ -1696,9 +1696,9 @@ var PAZIENTI_SETS = {
 		}, 500 );
 	},
 	caricaPuntiPreferiti: function(txt){ // importa i punti delle procedure preferite nella community
-		var err=false;
-		var record_tot=0;
-		var presente=false;
+		/* let err=false,
+			record_tot=0,
+			presente=false; */
 		if(txt.substr(0,3) != '404' && txt != 'vuoto'){
 			
 			
@@ -1710,8 +1710,8 @@ var PAZIENTI_SETS = {
 				EL.contenuto = [];
 				EL.livello = 2;
 				EL.parent = PAZIENTI.elencoGruppoPunti;
-				var presenti = false;
-				var preferiti = JSON.parse(txt);
+				let presenti = false,
+					preferiti = JSON.parse(txt);
 				for(let p in preferiti.dati){
 					EL2 = {};
 					EL2.titolo = preferiti.dati[p].NomeProcedura+' ('+htmlEntities(preferiti.dati[p].Pseudonimo);
@@ -1719,10 +1719,10 @@ var PAZIENTI_SETS = {
 					EL2.livello = 3;
 					EL2.parent = EL;
 					if(preferiti.dati[p].elencoPunti.length>1){
-						var elenco = preferiti.dati[p].elencoPunti.split("|");
+						let elenco = preferiti.dati[p].elencoPunti.split("|");
 						if(PAZIENTI.tipoGruppo=='M')elenco = preferiti.dati[p].elencoMeridiani.split("|");
 						for(let pr in elenco){
-							var PT = elenco[pr];
+							let PT = elenco[pr];
 							if(PT){
 								EL2.contenuto.push(PT);
 								presenti=true;
@@ -1737,7 +1737,7 @@ var PAZIENTI_SETS = {
 		PAZIENTI.caricaPuntiPatologie();
 	},
 	caricaPuntiPatologie: function(){ // importa i punti delle schede patologie 
-		var totPatologie = 0;
+		let totPatologie = 0;
 		EL = {};
 		EL.titolo = TXT("Patologie");
 		EL.contenuto = [];
@@ -1752,11 +1752,11 @@ var PAZIENTI_SETS = {
 				EL2.livello = 3;
 				EL2.parent = EL;
 				// scansiono il testo
-				var txtPat=DB.set.patologie[i].TestoPatologia;
+				let txtPat = DB.set.patologie[i].TestoPatologia;
 				if(PAZIENTI.tipoGruppo=='P' || PAZIENTI.tipoGruppo=='N')re = /\[\.[0-9]{1,2}\.[A-Z]{2}[\.*]+\]/ig;
 				if(PAZIENTI.tipoGruppo=='M')re = /\[\.[A-Z]{2}\.\]/ig;
 				if(PAZIENTI.tipoGruppo=='A'){
-					var list = SET.getListPointPat(i);
+					let list = SET.getListPointPat(i);
 					for(l in list){
 						if(SET.verFreePunti(list[l])){ // verifico le autorizzazioni
 							EL2.contenuto.push(list[l]);
@@ -1765,13 +1765,13 @@ var PAZIENTI_SETS = {
 					re = /\[\.[0-9]{3}\.\]/ig;
 				}
 				if(PAZIENTI.tipoGruppo=='R')re = /\[\.[0-9]{3}\.\]/ig;
-				var result = txtPat.match(re);
+				let result = txtPat.match(re);
 				for(let k in result){
 					let pP = result[k].split(".");
 					let PT = pP[1];
 					if(PAZIENTI.tipoGruppo=='P' || PAZIENTI.tipoGruppo=='N')PT += '.'+pP[2];
 					if(EL2.contenuto.indexOf(PT)==-1){
-						var pass = true;
+						let pass = true;
 						
 						// verifico le autorizzazioni
 						if(PAZIENTI.tipoGruppo=='M')pass = SET.verFreeMeridiani(PT)
@@ -1799,9 +1799,9 @@ var PAZIENTI_SETS = {
 			rimuoviLoading(document.getElementById("scheda_testo"));
 			applicaLoading(document.getElementById("scheda_testo"),'vuoto');
 			document.getElementById("LL").onclick = function(){PAZIENTI.swGruppoPunti();};
-			var w = (document.getElementById("scheda_testo").scrollWidth-60);
-			var l = 30;
-			var maxW = 400;
+			let w = (document.getElementById("scheda_testo").scrollWidth-60),
+				l = 30,
+				maxW = 400;
 			if(w>maxW){
 				w = maxW;
 				l = (document.getElementById("scheda").scrollWidth/2-maxW/2);
@@ -1818,8 +1818,8 @@ var PAZIENTI_SETS = {
 		}
 	},
 	popolaGruppoPunti: function(){ // popola il menu dei gruppi di punti in base al JSON creato
-		var HTML = '';
-		var txt = htmlEntities(TXT("ImportaPunti"));
+		let HTML = '',
+			txt = htmlEntities(TXT("ImportaPunti"));
 		if(PAZIENTI.tipoGruppo=='M')txt = htmlEntities(TXT("ImportaMeridiani"));
 		HTML += '<div class="gr_tit">' +
 					txt +
@@ -1827,7 +1827,7 @@ var PAZIENTI_SETS = {
 				'</span>' +
 				'</div>';
 		if(PAZIENTI.elencoGruppoAtt.livello>1){
-			var titRet = htmlEntities(PAZIENTI.elencoGruppoAtt.titolo);
+			let titRet = htmlEntities(PAZIENTI.elencoGruppoAtt.titolo);
 			HTML += '<div class="gr_ret">' +
 					'	<div class="gr_ret_img" onClick="PAZIENTI.swGrLabel(-1);"></div>' +
 					'	<div class="gr_ret_txt">'+titRet+'</div>' +
@@ -1855,7 +1855,7 @@ var PAZIENTI_SETS = {
 					'	<span id="grImporta" onClick="PAZIENTI.ptGruppoImporta();">' +
 							htmlEntities(TXT("Importa")) +
 					'	</span>';
-			var mzs = [];
+			let mzs = [];
 			if( globals.set.cartella=='meridiani_cinesi' || 
 				globals.set.cartella=='meridiani_shiatsu' )mzs = PAZIENTI.mezziSet.P;
 			if(globals.set.cartella=='auricologia')mzs = PAZIENTI.mezziSet.A;
@@ -1881,17 +1881,17 @@ var PAZIENTI_SETS = {
 		if(document.getElementById("gr_ret_ric"))document.getElementById("gr_ret_ric").focus();
 	},
 	filtraGruppoPunti: function(){
-		var tag = 'div';
-		var lista = '.gr_1';
-		var cont = document.getElementById("gruppoPunti_cont");
+		let tag = 'div',
+			lista = '.gr_1',
+			cont = document.getElementById("gruppoPunti_cont"),
+			val = document.getElementById("gr_ret_ric").value.toLowerCase().trim(),
+			tags = document.querySelector(lista).getElementsByTagName(tag);
 		if(cont.getElementsByClassName("gr_2").length){
 			tag = 'label';
 			lista = '.gr_2';
 		}
-		var val = document.getElementById("gr_ret_ric").value.toLowerCase().trim();
-		var tags = document.querySelector(lista).getElementsByTagName(tag);
 		for(t=0;t<tags.length;t++){
-			var txt = tags[t].innerText+"";
+			let txt = tags[t].innerText+"";
 			if(txt.toLowerCase().indexOf(val)>-1 || !val)tags[t].classList.remove("hide");
 			else{
 				//if(tag=='label')tags[t].getElementsByTagName("input")[0].checked = false;
@@ -1906,10 +1906,11 @@ var PAZIENTI_SETS = {
 		PAZIENTI.popolaGruppoPunti();
 	},
 	ptGruppo: function( PT, n ){ // scrive la riga del punto da selezionare nel menu dei gruppi di punti
-		var pP = PT.split(".");
-		var HTML = '';
-		var nPunto = '';
-		var mer = pP[0];
+		let pP = PT.split("."),
+			HTML = '',
+			nPunto = '',
+			mer = pP[0],
+			siglaPT;
 		if(pP[1]){
 			mer = pP[1];
 			nPunto = SET.ptToStr(pP[0]);
@@ -1922,7 +1923,7 @@ var PAZIENTI_SETS = {
 					'		   id="'+n+'"' +
 					'		   value="'+PT+'"';
 			if(PAZIENTI.tipoGruppo=='P' || (PAZIENTI.tipoGruppo=='N' && __(DB.set.meridiani[mer].punti[nPunto]))){
-				var siglaPT = __(DB.set.meridiani[mer].punti[nPunto].siglaPunto,nPunto+"."+SET.convSigla(mer));
+				siglaPT = __(DB.set.meridiani[mer].punti[nPunto].siglaPunto,nPunto+"."+SET.convSigla(mer));
 				if(mer=='EX')HTML += '		   data-sigla-punto="'+siglaPT+'"';
 				if(mer=='NK')HTML += '		   data-sigla-punto="'+DB.set.meridiani[mer].punti[nPunto].NomePunto+'"';
 			}
@@ -1935,7 +1936,7 @@ var PAZIENTI_SETS = {
 				HTML +=	'<b>'+DB.set.meridiani[mer].punti[nPunto].NomePunto+'</b>';
 			}
 			if(PAZIENTI.tipoGruppo=='M'){
-				HTML +=	DB.set.meridiani[PT].NomeMeridiano;
+				HTML +=	DB.set.meridiani[pP[0]].NomeMeridiano;
 			}
 			if(PAZIENTI.tipoGruppo=='A' || PAZIENTI.tipoGruppo=='R'){
 				HTML +=	DB.set.punti[pP[0]].NomePunto;
@@ -1945,9 +1946,9 @@ var PAZIENTI_SETS = {
 		return HTML;
 	},
 	ptGruppoSelAll: function( el ){ // seleziona tutti i punti visualizzati del menu dei gruppi di punti
-		var els = el.parentElement.parentElement.getElementsByTagName("input");
-		var sel = '';
-		for(e in els){
+		let els = el.parentElement.parentElement.getElementsByTagName("input"),
+			sel = '';
+		for(let e in els){
 			if(els[e].type=='checkbox'){
 				if(!els[e].parentElement.classList.contains("hide")){
 					if(sel==''){
@@ -1960,10 +1961,10 @@ var PAZIENTI_SETS = {
 		}
 	},
 	ptGruppoImporta: function(){ // importa il gruppo dei punti nel trattamento
-		var isProc = (document.getElementById("scheda").classList.contains("scheda_procedura"));
-		var els = document.getElementById("gruppoPunti_cont").getElementsByTagName("input");
+		let isProc = (document.getElementById("scheda").classList.contains("scheda_procedura")),
+			els = document.getElementById("gruppoPunti_cont").getElementsByTagName("input");
 		let punti = [];
-		for(e in els){
+		for(let e in els){
 			if(els[e].checked && els[e].type=='checkbox'){
 				let punto = els[e].value;
 				if(	globals.set.cartella == 'meridiani_cinesi' ||
@@ -1983,8 +1984,8 @@ var PAZIENTI_SETS = {
 		}else ALERT(TXT("ErroreImportaPunti"));
 	},
 	evidenziaAggiunti: function( cont, n ){ // evidenzia in blu i punti aggiunti
-		var els = cont.getElementsByClassName("rgProcMod");
-		for(e=els.length-1;e>=0;e--){
+		let els = cont.getElementsByClassName("rgProcMod");
+		for(let e=els.length-1;e>=0;e--){
 			if(n>0){
 				els[e].classList.add("aggiunti");
 				n--;
@@ -1992,8 +1993,8 @@ var PAZIENTI_SETS = {
 		}
 		setTimeout(function(cont){
 			if(cont){
-				var els = cont.getElementsByClassName("rgProcMod");
-				for(e=els.length-1;e>=0;e--){
+				let els = cont.getElementsByClassName("rgProcMod");
+				for(let e=els.length-1;e>=0;e--){
 					els[e].classList.remove("aggiunti");
 				}
 			}
@@ -2002,8 +2003,8 @@ var PAZIENTI_SETS = {
 	cambiaGZ: function( mezzo, setDefault=false ){ // cambia il mezzo sui punti aggiunti da popup
 		if(setDefault)localStorage["mezzoDefault"+globals.set.cartella] = mezzo;
 		else PAZIENTI.mezzoProvvisorio = mezzo;
-		var els = document.getElementById("tt_mezzival2").getElementsByTagName("span");
-		for(e=0;e<els.length;e++){
+		let els = document.getElementById("tt_mezzival2").getElementsByTagName("span");
+		for(let e=0;e<els.length;e++){
 			els[e].classList.toggle("mzSel",(els[e].dataset.mezzo == mezzo));
 		}
 		PAZIENTI.verMezzo(mezzo);

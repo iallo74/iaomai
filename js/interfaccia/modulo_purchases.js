@@ -68,7 +68,7 @@ var PURCHASES  = {
 		// mostra il prodotto
 		PURCHASES.list_view = false;
 		PURCHASES.productId = id;
-		var p;
+		let p;
 		if(window.store)p = store.get(PURCHASES.productId);
 		else p = PURCHASES.getProdById(PURCHASES.productId);
 		PURCHASES.viewProduct(p);
@@ -89,8 +89,8 @@ var PURCHASES  = {
             PURCHASES.idBuying = id;
 			store.get(PURCHASES.productId)?.getOffer()?.order();
 		}else{
-			var tk = encodeURIComponent(window.btoa(LOGIN.logedin() + MD5(DB.login.data.idUtente)));
-			var fl = encodeURIComponent(window.btoa(PURCHASES.getProdById(PURCHASES.productId).folder+" "+PURCHASES.getProdById(PURCHASES.productId).code));
+			let tk = encodeURIComponent(window.btoa(LOGIN.logedin() + MD5(DB.login.data.idUtente))),
+				fl = encodeURIComponent(window.btoa(PURCHASES.getProdById(PURCHASES.productId).folder+" "+PURCHASES.getProdById(PURCHASES.productId).code));
 			CONN.openUrl(convLangPath(CONN.urlStore)+"in_app_purchase?tk="+tk+"&mp="+fl);
 			
 		}
@@ -100,7 +100,7 @@ var PURCHASES  = {
         if(p.products[0].id = PURCHASES.idBuying){
             PURCHASES.idBuying = '';
 		    p.finish();
-		    var pr = PURCHASES.getProdById(p.products[0].id);
+		    let pr = PURCHASES.getProdById(p.products[0].id);
 		    CONN.caricaUrl(	"purchases_activate.php",
 				    	"folder="+pr.folder+"&price="+pr.price+"&siglaLingua="+globals.siglaLingua,
 				     	"PURCHASES.ret_activate");
@@ -130,15 +130,15 @@ var PURCHASES  = {
 			ALERT(TXT("AlertNoLogPuchase"));
 			return;
 		}
-		var visRet = true;
-		var loaded = true;
-		var canPurchase = true;
-		var owned = false;
-		var loadingPurchase = false;
-		var folder = '';
-		var price = 0;
-		var code = product.code;
-		var nameModule = product.name;
+		let visRet = true,
+			loaded = true,
+			canPurchase = true,
+			owned = false,
+			loadingPurchase = false,
+			folder = '',
+			price = 0,
+			code = product.code,
+			nameModule = product.name;
 		if(!price)TXT("AccediAlloStore");
 		if(window.store){
 			price = product.offers[0].pricingPhases[0].price;
@@ -155,14 +155,11 @@ var PURCHASES  = {
 		}
 		
 		if(!owned)owned = (DB.login.data.auths.indexOf(folder)>-1 && (!code || DB.login.data.modls.indexOf(code))) ? true : false;
-		var info = '<div id="copertinaPurchase" style="background-image:url(sets/'+folder+'/img/copertina.png);"></div>';
-		var button = '...';
-		//if(loaded){
-			info += '<b id="titLicenze"><img src="sets/'+folder+'/img/logoMenuN.png"> '+product.title+' '+nameModule+'</b><br/>' +
-					product.description+'<br/>' +
-					price+'<br/>';
-		//}
-		var button = '';
+		let info = '<div id="copertinaPurchase" style="background-image:url(sets/'+folder+'/img/copertina.png);"></div>' +
+					'<b id="titLicenze"><img src="sets/'+folder+'/img/logoMenuN.png"> '+product.title+' '+nameModule+'</b><br/>' +
+						product.description+'<br/>' +
+						price+'<br/>';
+		let button = '';
 		if(canPurchase){
 			button = '';
 			if(visRet)button += '<div class="ann" onClick="PURCHASES.productList();">'+TXT("Annulla")+'</div> ';
@@ -172,13 +169,13 @@ var PURCHASES  = {
 		}else if(loadingPurchase){
 			button = '<div><img src="img/loadingWhite2.gif" id="imgLoadingPurchase">'+stripslashes(TXT("CaricamentoAcquisto"))+'...</div>';
 		}
-		var el = document.getElementById('contPurchases');
+		let el = document.getElementById('contPurchases');
 		el.classList.remove("ini");
 		el.innerHTML = info + '<div class="btn_cont">' + button + '</div>';
 	},
 	getProdById: function( idStore ){
 		// ottiene un prodotto tramite ID
-		var el = null;
+		let el = null;
 		for(let id in PURCHASES.product_list){
 			if(PURCHASES.product_list[id].idStore == idStore)el = PURCHASES.product_list[id];
 		}
@@ -187,7 +184,7 @@ var PURCHASES  = {
 	makeProductList: function( product ){
 		// crea la lista prodotti (solo per Cordova)
 		if(!PURCHASES.list_view)return;
-		var el = PURCHASES.getProdById(product.id);
+		let el = PURCHASES.getProdById(product.id);
 		el.title = product.title;
 		el.price = product.pricing?.price;
 		el.owned = product.owned;
@@ -196,22 +193,22 @@ var PURCHASES  = {
 	productList: function(){
 		// elenco i prodotti
 		PURCHASES.list_view = true;
-		var addApple = (!onlineVersion && (iPad || iPhone || isMacUA)) ? 'Apple' : '';
-		var html =  '<div id="descrLicenze">' +
+		let addApple = (!onlineVersion && (iPad || iPhone || isMacUA)) ? 'Apple' : '',
+			html =  '<div id="descrLicenze">' +
 					TXT("DescrPurchase") +
-					'</div><div><img src="img/storesSystems'+addApple+'.png"></div><div id="prList">';
-	    var html_ok = '';
-	    var html_no = '';
+					'</div><div><img src="img/storesSystems'+addApple+'.png"></div><div id="prList">',
+	    	html_ok = '',
+	    	html_no = '';
 		for(let id in PURCHASES.product_list){
 			if(PURCHASES.product_list[id].title && PURCHASES.product_list[id].title!='undefined'){
-				var html_provv = '';
-				var idStore = PURCHASES.product_list[id].idStore;
-				var title = PURCHASES.product_list[id].title;
-				var price = PURCHASES.product_list[id].price;
-				var folder = PURCHASES.product_list[id].folder;
-				var code = PURCHASES.product_list[id].code;
-				var nameModule = PURCHASES.product_list[id].name;
-				var owned = PURCHASES.product_list[id].owned;
+				let html_provv = '',
+					idStore = PURCHASES.product_list[id].idStore,
+					title = PURCHASES.product_list[id].title,
+					price = PURCHASES.product_list[id].price,
+					folder = PURCHASES.product_list[id].folder,
+					code = PURCHASES.product_list[id].code,
+					nameModule = PURCHASES.product_list[id].name,
+					owned = PURCHASES.product_list[id].owned;
 				if(!owned && LOGIN.logedin()!='')owned = (DB.login.data.auths.indexOf(folder)>-1 && (!code || LOGIN.verModule(code))) ? true : false;
 				html_provv += '<div';
 				if(!owned)html_provv += ' class="acqOk"';
@@ -231,7 +228,7 @@ var PURCHASES  = {
 		}
 		html += html_ok + html_no;
 		html += '</div>';
-		var el = document.getElementById('contPurchases');
+		let el = document.getElementById('contPurchases');
 		el.classList.remove("ini");
 		el.innerHTML = html;
 	},
@@ -246,9 +243,9 @@ var PURCHASES  = {
 		if(txt=='404'){
 			ALERT("An error has occurred");
 		}else{
-			var prices = JSON.parse( txt );
+			let prices = JSON.parse( txt );
 			for(let p in PURCHASES.product_list){
-				for(e in prices){
+				for(let e in prices){
 					if(	PURCHASES.product_list[p].folder == e.split(" ")[0] &&
 						(!e.split(" ")[1] || e.split(" ")[1]==PURCHASES.product_list[p].code) )PURCHASES.product_list[p].price =  prices[e]+getValuta();
 				}

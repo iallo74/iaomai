@@ -4,8 +4,8 @@ var MODULO_PATOLOGIE = { // extend SET
 	PATOLOGIE_free: [ 12, 18, 26, 46, 104 ],
 	
 	caricaPatologie: function(){ // carica l'elenco delle patologie
-		var crtOp = -1;
-		var contPatologie = 
+		let crtOp = -1,
+			contPatologie = 
 						'<div id="add_pat"' +
 						'>'+
 						'	<input id="pat_ricerca"' +
@@ -19,7 +19,7 @@ var MODULO_PATOLOGIE = { // extend SET
 		for(let p in DB.set.patologie){
 			
 			// verifico le autorizzazioni
-			var addLock =	(!SET.verFreePatologia(p*1)) ? ' lockedItem' : '';
+			let addLock =	(!SET.verFreePatologia(p*1)) ? ' lockedItem' : '';
 			// --------------------------
 						
 			contPatologie +=	'<div id="btn_patologia_'+p+'"' +
@@ -44,20 +44,20 @@ var MODULO_PATOLOGIE = { // extend SET
 		}
 		// --------------------------
 		
-		var NomePatologia = DB.set.patologie[n].NomePatologia;
-		var apparati = DB.set.patologie[n].apparati;
-		var html = 	"<h1>"+htmlEntities(NomePatologia)+"</h1>" +
+		let NomePatologia = DB.set.patologie[n].NomePatologia,
+			apparati = DB.set.patologie[n].apparati,
+			html = 	"<h1>"+htmlEntities(NomePatologia)+"</h1>" +
 		
 		// aggiungo contenuto custom
 		CUSTOMS.addContent("patologie_"+n,SET.convPuntiScheda(DB.set.patologie[n].TestoPatologia));
 
 
-		var ritorno = false;
+		let ritorno = false;
 		if(	document.getElementById("scheda").querySelector(".formBtn") &&
 			document.getElementById("scheda").classList.contains("visSch") &&
 			SCHEDA.verificaSchedaRet() )ritorno = "document.getElementById('scheda').classList.remove('scheda_patologia')";
 		
-		var btnAdd = 	'';
+		let btnAdd = 	'';
 			
 		SCHEDA.caricaScheda(	NomePatologia,
 								html,
@@ -94,7 +94,7 @@ var MODULO_PATOLOGIE = { // extend SET
 		SET.patOp = -1;
 	},
 	filtraPatologie: function( event ){ // filtra le patologie tramite campo di testo
-		var parola = document.getElementById("pat_ricerca").value.trim();
+		let parola = document.getElementById("pat_ricerca").value.trim();
 		for(let p in DB.set.patologie){
 			if(DB.set.patologie[p].NomePatologia.toLowerCase().indexOf(parola.toLowerCase()) == -1){
 				document.getElementById("btn_patologia_"+p).classList.add("nasPazRic");

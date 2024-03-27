@@ -36,8 +36,8 @@ var MODULO_PATOLOGIE = { // extend SET
 				let nomi = clone(DB_patologie[p].nomi);
 				let categoria = DB_patologie[p].categoria;
 				for(let n in nomi){
-					sinonimi = clone(nomi);
-					TestoSinonimi = '';
+					let sinonimi = clone(nomi),
+						TestoSinonimi = '';
 					if(sinonimi.length>1){
 						TestoSinonimi += '<b>'+TXT("AltriNomi")+'</b><br>';
 						for(let s in sinonimi){
@@ -62,7 +62,7 @@ var MODULO_PATOLOGIE = { // extend SET
 		SET.caricaPatologie();
 	},
 	caricaPatologie: function(){
-		var contPatologie = 
+		let contPatologie = 
 					'<div id="add_pat"' +
 					((__(localStorage.listPatType)=='category')?' class="category"':'') +
 					'>';
@@ -97,7 +97,7 @@ var MODULO_PATOLOGIE = { // extend SET
 				if(DB.set.patologie[p].categoria == a || __(localStorage.listPatType)!='category'){
 		
 					// verifico le autorizzazioni
-					var addLock =	(!SET.verFreePatologia(DB.set.patologie[p].siglaPatologia)) ? ' lockedItem' : '';
+					let addLock =	(!SET.verFreePatologia(DB.set.patologie[p].siglaPatologia)) ? ' lockedItem' : '';
 					// --------------------------
 					vuota = false;		
 					contCartella +=	'<div id="btn_patologia_'+p+'"' +
@@ -121,7 +121,7 @@ var MODULO_PATOLOGIE = { // extend SET
 	},
 	apriPatologia: function( n, btn ){
 		// apre la scheda della patologia
-		var siglaPatologia = DB.set.patologie[n].siglaPatologia;
+		let siglaPatologia = DB.set.patologie[n].siglaPatologia;
 		// verifico le autorizzazioni
 		if(!SET.verFreePatologia(siglaPatologia)){
 			ALERT(TXT("MsgContSoloPay"),true,true);
@@ -129,8 +129,8 @@ var MODULO_PATOLOGIE = { // extend SET
 		}
 		// --------------------------
 		
-		var titolo = DB.set.patologie[n].NomePatologia;
-		var html = 	"<h1>"+htmlEntities(titolo)+"</h1>" +
+		let titolo = DB.set.patologie[n].NomePatologia,
+			html = 	"<h1>"+htmlEntities(titolo)+"</h1>" +
 					// aggiungo contenuto custom
 					CUSTOMS.addContent("patologie_"+n,SET.convPuntiScheda(DB.set.patologie[n].TestoPatologia));
 					//SET.convPuntiScheda(DB.set.patologie[n].TestoPatologia);
@@ -141,12 +141,12 @@ var MODULO_PATOLOGIE = { // extend SET
 					'		class="simboliPatologia">'+html;
 		}
 		
-		var ritorno = false;
+		let ritorno = false;
 		if(	document.getElementById("scheda").querySelector(".formBtn") &&
 			document.getElementById("scheda").classList.contains("visSch") &&
 			SCHEDA.verificaSchedaRet() )ritorno = "document.getElementById('scheda').classList.remove('scheda_patologia')";
 		
-		var btnAdd = 	'';/*'<div class="p_paz_ref_menu" onClick="REF.open(\'sets.meridiani_cinesi.pathologies\')">' +
+		let btnAdd = 	'';/*'<div class="p_paz_ref_menu" onClick="REF.open(\'sets.meridiani_cinesi.pathologies\')">' +
 							TXT("ReferenceGuide") +
 						'</div>';*/
 		SCHEDA.caricaScheda(	titolo,
@@ -164,7 +164,7 @@ var MODULO_PATOLOGIE = { // extend SET
 	},
 	filtraPatologie: function( event ){
 		// filtra le patologie con il campo testuale
-		var parola = document.getElementById("pat_ricerca").value.trim();
+		let parola = document.getElementById("pat_ricerca").value.trim();
 		for(let p in DB.set.patologie){
 			if(DB.set.patologie[p].NomePatologia.toLowerCase().indexOf(parola.toLowerCase()) == -1){
 				document.getElementById("btn_patologia_"+p).classList.add("nasPazRic");
@@ -190,7 +190,7 @@ var MODULO_PATOLOGIE = { // extend SET
 		SCHEDA.individuaElemento( "btn_patologia_"+p, "listaPatologie" );
 	},
 	verFreePatologia: function( p ){
-		var pass = true;
+		let pass = true;
 		for(t in DB.set.patologie){
 			if(DB.set.patologie[t].siglaPatologia == p){
 				pass = SET.PATOLOGIE_free.indexOf(DB.set.patologie[t].siglaPatologia)==-1;

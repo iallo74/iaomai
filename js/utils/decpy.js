@@ -39,7 +39,7 @@ function decLG(){
 function getdecpy(){
 	let decpy = '';
 	let els = JSON.parse(atob(arpy));
-	for(e=0;e<els.length;e++){
+	for(let e=0;e<els.length;e++){
 		decpy += String.fromCharCode(els[e]);
 	}
 	return decpy;

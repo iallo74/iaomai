@@ -4,7 +4,7 @@ var SERVIZI = {
 	maxServiziLogged: 5,
 	
 	caricaServizi: function(){ // carica l'elenco dei servizi
-		var HTML = '';
+		let HTML = '';
 		
 		// pulsante aggiungi servizio
 		HTML += '<div class="menuElenchi"' +
@@ -22,15 +22,15 @@ var SERVIZI = {
 				'	</i>' +
 				'</p>' +
 				'<div class="lista listaServizi">';
-		var noServ = true;
+		let noServ = true;
 		if(DB.servizi.data.length){
-			var cloneSERVIZI = clone(DB.servizi.data);
+			let cloneSERVIZI = clone(DB.servizi.data);
 			for(let p in cloneSERVIZI){
 				cloneSERVIZI[p].p = p;
 			}
 			cloneSERVIZI.sort(sort_by("NomeServizio", false));
 			for(let p in cloneSERVIZI){
-				var SR = cloneSERVIZI[p];
+				let SR = cloneSERVIZI[p];
 				
 				if(!SR.Cancellato){
 					noServ = false;
@@ -40,7 +40,7 @@ var SERVIZI = {
 					'		 onClick="SERVIZI.car_servizio('+SR.p+');">';
 					
 					// verifico se è stato modificato e non sincronizzato
-					var mdT=false;
+					let mdT=false;
 					if(SR.DataModifica > DB.servizi.lastSync)mdT=true;
 					
 					if(mdT)HTML += H.imgSyncro();
@@ -63,7 +63,7 @@ var SERVIZI = {
 		document.getElementById("lista_servizi").innerHTML = HTML;
 	},
 	filtra: function( event ){
-		var parola = document.getElementById("serv_ricerca").value;
+		let parola = document.getElementById("serv_ricerca").value;
 		for(let p in DB.servizi.data){
 			if(!DB.servizi.data[p].Cancellato*1){
 				if(DB.servizi.data[p].NomeServizio.toLowerCase().indexOf(parola.toLowerCase()) == -1){
@@ -79,8 +79,8 @@ var SERVIZI = {
 	car_servizio: function( Q_idServ, salvato ){ // carica la scheda del servizio
 		// verifico le autorizzazioni
 		if(__(Q_idServ,-1)==-1){
-			var maxServizi = SERVIZI.maxServiziFree;
-			var addMaxTxt = 'Free';
+			let maxServizi = SERVIZI.maxServiziFree,
+				addMaxTxt = 'Free';
 			if(LOGIN.reg() && LOGIN.logedin()){
 				if(DB.login.data.auths.indexOf("clients_full")>-1)maxServizi = -1;
 				else{
@@ -89,7 +89,7 @@ var SERVIZI = {
 				}
 			}
 			if(maxServizi>-1){
-				var tServ = 0;
+				let tServ = 0;
 				for(let c in DB.servizi.data){
 					if(DB.servizi.data[c].Cancellato*1==0)tServ++;
 				}
@@ -103,19 +103,19 @@ var SERVIZI = {
 		CONFIRM.vis(	TXT("UscireSenzaSalvare"),
 						!SCHEDA.verificaSchedaRet(),
 						arguments ).then(function(pass){if(pass){
-						var v = getParamNames(CONFIRM.args.callee.toString());
+						let v = getParamNames(CONFIRM.args.callee.toString());
 						for(let i in v)eval(getArguments(v,i));
 			
-			var Q_idServ = __(Q_idServ, -1);
-			var salvato = __(salvato, false);
+			Q_idServ = __(Q_idServ, -1);
+			salvato = __(salvato, false);
 			MENU.nasMM();
-			var idServizio=0;
-			var NomeServizio='';
-			var CostoServizio=0;
-			var NumeroSedute=1;
-			var DescrizioneServizio='';
+			let idServizio = 0,
+				NomeServizio = '',
+				CostoServizio = 0,
+				NumeroSedute = 1,
+				DescrizioneServizio = '';
 			if(Q_idServ>-1){
-				var SR = DB.servizi.data[Q_idServ];
+				let SR = DB.servizi.data[Q_idServ];
 				idServizio = SR.idServizio;
 				NomeServizio = SR.NomeServizio;
 				CostoServizio = SR.CostoServizio*1;
@@ -123,7 +123,7 @@ var SERVIZI = {
 				DescrizioneServizio = SR.DescrizioneServizio;
 			}
 			
-			var HTML = '';
+			let HTML = '';
 			HTML += '<form id="formMod"' +
 					'	   name="formMod"' +
 					'	   method="post"' +
@@ -167,12 +167,12 @@ var SERVIZI = {
 								styleRiga: "text-align:right;" });
 			
 			
-			var azElimina = Q_idServ>-1 ? "SERVIZI.el_servizio("+Q_idServ+");":"";
-			var btnAdd = '';
+			let azElimina = Q_idServ>-1 ? "SERVIZI.el_servizio("+Q_idServ+");" : "",
+				btnAdd = '';
 			if(azElimina){
 				btnAdd += '<div class="p_paz_el_menu" onClick="'+azElimina+'">'+TXT("EliminaScheda")+'</div>';
 			}
-			btnAdd += 	'<div class="p_paz_ref_menu" onClick="REF.open(\'archives.services.overview\')">' +
+			btnAdd += 	'<div class="p_paz_ref_menu" onClick="REF.open(\'archives.services\')">' +
 							TXT("ReferenceGuide") +
 						'</div>';
 								
@@ -184,7 +184,7 @@ var SERVIZI = {
 			HTML += '</form>';
 			
 			
-			var titoloDef=TXT("ModificaServizio");
+			let titoloDef=TXT("ModificaServizio");
 			if(Q_idServ==-1)titoloDef=TXT("CreaServizio");
 			
 			SCHEDA.caricaScheda(	stripslashes(titoloDef),
@@ -220,10 +220,10 @@ var SERVIZI = {
 			return;
 		}
 		if(!verifica_form(document.getElementById("formMod")))return;
-		var DataModifica = DB.servizi.lastSync+1;
+		let DataModifica = DB.servizi.lastSync+1;
 		if(document.formMod.idServizio.value*1>-1)DataCreazione=DataModifica;
 		else DataCreazione = DB.servizi.data[Q_idServ].DataCreazione;
-		var d=new Date();
+		/* let d=new Date(); */
 		
 		JSNPUSH={ 	"idServizio": document.formMod.idServizio.value*1,
 					"NomeServizio": document.formMod.NomeServizio.value,
@@ -243,7 +243,7 @@ var SERVIZI = {
 			DB.servizi.data.push(JSNPUSH);
 			Q_idServ = DB.servizi.data.length-1;
 		}
-		var postAction = '';
+		let postAction = '';
 		if(!LOGIN.logedin())postAction = 'SERVIZI.caricaServizi()';
 		endChangeDetection();
 		SCHEDA.formModificato = false;
@@ -262,11 +262,11 @@ var SERVIZI = {
 		CONFIRM.vis(	TXT("ChiediEliminaServizio"),
 						false,
 						arguments ).then(function(pass){if(pass){
-						var v = getParamNames(CONFIRM.args.callee.toString());
+						let v = getParamNames(CONFIRM.args.callee.toString());
 						for(let i in v)eval(getArguments(v,i));
 			
 			if(Q_idServ>-1){
-				var DataModifica = DB.servizi.lastSync+1;
+				let DataModifica = DB.servizi.lastSync+1;
 				DB.servizi.data[Q_idServ].DataModifica=parseInt(DataModifica);
 				DB.servizi.data[Q_idServ].Cancellato=1;
 				idServizio = __(DB.servizi.data[Q_idServ].idServizio,0);
@@ -286,16 +286,16 @@ var SERVIZI = {
 		CONFIRM.vis(	TXT("UscireSenzaSalvare"),
 						!SCHEDA.verificaSchedaRet(),
 						arguments ).then(function(pass){if(pass){
-						var v = getParamNames(CONFIRM.args.callee.toString());
+						let v = getParamNames(CONFIRM.args.callee.toString());
 						for(let i in v)eval(getArguments(v,i));
 		
-			var HTML = '';
+			let HTML = '';
 			HTML += '<div id="serv_spiegazione">' +
 						htmlEntities(TXT("AddServiziSpiegazione1")+" "+DB.pazienti.data[PAZIENTI.idCL].Nome+" "+DB.pazienti.data[PAZIENTI.idCL].Cognome) +
 					'</div>' +
 					'<div id="app_elenco"' +
 					'	  class="serv_elenco">';
-			var noServ = true;
+			let noServ = true;
 			for(let p in DB.servizi.data){
 				if(!DB.servizi.data[p].Cancellato){
 					noServ = false;
@@ -334,7 +334,7 @@ var SERVIZI = {
 		}});
 	},
 	sel_cartella: function( p ){
-		var HTML = '';
+		let HTML = '';
 		HTML += '<div id="serv_spiegazione">' +
 					htmlEntities(TXT("AddServiziSpiegazione2")) +
 				'</div>' +
@@ -385,18 +385,18 @@ var SERVIZI = {
 								true );
 	},
 	aggiungi: function( p, t ){
-		var ConfermaAddServizio = TXT("ConfermaAddServizio1");
+		let ConfermaAddServizio = TXT("ConfermaAddServizio1");
 		if(DB.servizi.data[p].NumeroSedute>1)ConfermaAddServizio = TXT("ConfermaAddServizio2").replace("[n]",DB.servizi.data[p].NumeroSedute);
 		CONFIRM.vis(	ConfermaAddServizio,
 						false,
 						arguments ).then(function(pass){if(pass){
-						var v = getParamNames(CONFIRM.args.callee.toString());
+						let v = getParamNames(CONFIRM.args.callee.toString());
 						for(let i in v)eval(getArguments(v,i));
 						
-			var NomeServizio = DB.servizi.data[p].NomeServizio;
-			var CostoServizio = DB.servizi.data[p].CostoServizio;
-			var DataModifica = DB.pazienti.lastSync+1;
-			var NomeSeduta = TXT("Seduta");
+			let NomeServizio = DB.servizi.data[p].NomeServizio,
+				CostoServizio = DB.servizi.data[p].CostoServizio,
+				DataModifica = DB.pazienti.lastSync+1,
+				NomeSeduta = TXT("Seduta");
 			
 			if(t<0){ // se creo una cartella nuova
 				
@@ -441,7 +441,7 @@ var SERVIZI = {
 			
 			
 			for(let s=0;s<DB.servizi.data[p].NumeroSedute;s++){
-				var TitoloTrattamento = NomeSeduta;
+				let TitoloTrattamento = NomeSeduta;
 				if(DB.servizi.data[p].NumeroSedute>1)TitoloTrattamento += " "+(s+1)
 				JSNPUSH={	"idTrattamento": 0,
 							"TitoloTrattamento": TitoloTrattamento,

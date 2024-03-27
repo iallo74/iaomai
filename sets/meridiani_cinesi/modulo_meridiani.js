@@ -29,23 +29,23 @@ var MODULO_MERIDIANI = { // extend SET
 	},
 	caricaMeridiani: function(){
 		// carica i meridiani nell'elenco del menu
-		var contElencoMeridiani = '',
+		let contElencoMeridiani = '',
 			contSmart = '',
 			n = 0;
 		for(let m in DB.set.meridiani){
 			n++;
-			var addClass = '',
+			let addClass = '',
 				addClassEl = '';
 			
 			// verifico le autorizzazioni
-			var addLock =	(!SET.verFreeMeridiani(m)) ? ' lockedItem' : '';
+			let addLock =	(!SET.verFreeMeridiani(m)) ? ' lockedItem' : '';
 			// --------------------------
 			
 			if(m=='KI' || m=='LR' || m=='SP' || m=='HT' || m=='PC' || m=='LU' || m=='CV'){
 				addClass = ' spazioDopo';
 				addClassEl = ' spazioPrima';
 			}
-			var elencoPunti = '';
+			let elencoPunti = '';
 			let myObj = DB.set.meridiani[m].punti,
 				keys = 	Object.keys(myObj),
 				len = keys.length;
@@ -53,10 +53,10 @@ var MODULO_MERIDIANI = { // extend SET
 			//for(let s in DB.set.meridiani[m].punti){
 			for (let i=0; i<len; i++) {	
 				let s = keys[i];
-				var TS = DB.set.meridiani[m].punti[s];
+				let TS = DB.set.meridiani[m].punti[s];
 				elencoPunti+='<p>'+this.scriviPunto(TS.NomePunto,true,true,__(TS.siglaPunto))+'</p>';
 			}
-			var siglaMeridiano = m;
+			let siglaMeridiano = m;
 			//if(m!='EX')
 			siglaMeridiano = SET.convSigla(m);
 			
@@ -115,7 +115,7 @@ var MODULO_MERIDIANI = { // extend SET
 		return !(SET.MERIDIANI_free.indexOf(m)==-1 && (DB.login.data.auths.indexOf(globals.set.cartella)==-1 || !LOGIN.logedin()));
 	},
 	verFreePunti: function( siglaPunto ){
-		var siglaMeridiano = siglaPunto.split(".")[1];
+		let siglaMeridiano = siglaPunto.split(".")[1];
 		return SET.verFreeMeridiani(siglaMeridiano);
 	}
 	

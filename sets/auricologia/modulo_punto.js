@@ -12,14 +12,13 @@ var MODULO_PUNTO = { // extend SET
 		}
 		// --------------------------
 		
-		var titolo = DB.set.punti[siglaPunto].NomePunto;
+		let titolo = DB.set.punti[siglaPunto].NomePunto;
 		for(a in DB.set.aree){
 			if(DB.set.aree[a].siglaPunto == siglaPunto)titolo = siglaPunto+". "+titolo;
 		}
-		var HTML = "<h1>"+htmlEntities(titolo)+"</h1>";
-		var HTML_simboli = '';
-		
-		var type = '',
+		let HTML = "<h1>"+htmlEntities(titolo)+"</h1>",
+			HTML_simboli = '',
+			type = '',
 			master = false,
 			lato = '',
 			system = '';
@@ -28,23 +27,23 @@ var MODULO_PUNTO = { // extend SET
 		else type = 'NR';
 		if(GEOMETRIE.gruppi.MASTER.punti.indexOf(siglaPunto)>-1)master = true;
 		
-		var els = scene.getObjectByName("PTs"+SET.phase).children;
-		for(e in els){
+		let els = scene.getObjectByName("PTs"+SET.phase).children;
+		for(let e in els){
 			if(els[e].name == "PT"+siglaPunto){
 				lato = els[e].userData.lato;
 				system = els[e].userData.system;
 			}
 		}
-		var els = scene.getObjectByName("ARs"+SET.phase).children;
-		for(e in els){
+		els = scene.getObjectByName("ARs"+SET.phase).children;
+		for(let e in els){
 			if(els[e].name == "AR"+siglaPunto){
 				lato = els[e].userData.lato;
 				system = els[e].userData.system;
 			}
 		}
 		
-		var HTML_setting_text = '';
-		var HTML_setting_symb = '';
+		let HTML_setting_text = '',
+			HTML_setting_symb = '';
 		if(type=='FN'){
 			HTML_setting_text += '- '+TXT("Setting_FN")+'<br>';
 			HTML_setting_symb += '<b>'+TXT("Symb_FN")+'</b>';
@@ -86,11 +85,11 @@ var MODULO_PUNTO = { // extend SET
 			SCHEDA.classeAperta != "tab_punti" ){
 				
 			// pulsante per la scelta del punto su trattamenti e procedure
-			var az = '';
-			var txt = '';
-			var cls = '';
-			var stesso = false;
-			var puntoNuovo = siglaPunto;
+			let az = '',
+				txt = '',
+				cls = '',
+				stesso = false,
+				puntoNuovo = siglaPunto;
 			if( SCHEDA.classeAperta == 'scheda_procedura' ){
 				if(SET.puntiEvidenziati.indexOf(puntoNuovo)==-1){
 					// aggiungi il punto alla procedura
@@ -127,12 +126,12 @@ var MODULO_PUNTO = { // extend SET
 		
 		
 		// elenco le patolige incluse
-		var elenco = [];
+		let elenco = [];
 		for(let x1 in DB.set.schede){
 			for(let x2 in DB.set.schede[x1]){
 				for(let x3 in DB.set.schede[x1][x2]){
 					for(let x4 in DB.set.schede[x1][x2][x3].p){
-						var el = DB.set.schede[x1][x2][x3].p[x4];
+						let el = DB.set.schede[x1][x2][x3].p[x4];
 						if(typeof(el)=='string'){
 							if(DB.set.schede[x1][x2][x3].p[x4].indexOf(siglaPunto) >- 1){
 								for(let p in DB.set.patologie){
@@ -164,7 +163,7 @@ var MODULO_PUNTO = { // extend SET
 		if(elenco.length){
 			HTML += '<div id="patologiePunti">' +
 					'	<div onClick="this.parentElement.classList.toggle(\'vis\');">'+TXT("Patologie")+'</div>';
-			for(e in elenco){
+			for(let e in elenco){
 				HTML += '<p onClick="SET.apriPatologia(\''+elenco[e]+'\',document.getElementById(\'btn_patologia_'+elenco[e]+'\'));"><span>• '+DB.set.patologie[elenco[e]].NomePatologia+'</span></p>';
 			}
 			HTML += '</div>';
@@ -176,7 +175,7 @@ var MODULO_PUNTO = { // extend SET
 		
 		
 		// annotazione
-		var TestoAnnotazione = '',
+		let TestoAnnotazione = '',
 			hidePunto = '0',
 			cartella = "auricolo";
 		if(SET.verificaNota(siglaPunto)){
@@ -212,15 +211,15 @@ var MODULO_PUNTO = { // extend SET
 		}
 		
 		
-		var ptSel = SET.ptSel;
+		let ptSel = SET.ptSel;
 		SET.ptSel = null;
 		
-		var btnAdd = 	'<div class="p_paz_ref_menu" onClick="REF.open(\'sets.auricologia.pointsmap\')">' +
+		let btnAdd = 	'<div class="p_paz_ref_menu" onClick="REF.open(\'sets.auricologia.pointsmap\')">' +
 							TXT("ReferenceGuide") +
 						'</div>';
 		if(!ritorno)btnAdd += '<div id="hide_point" onClick="SET.swHidePunto(\''+siglaPunto+'\');"></div>';
 		
-		var finalFunct = '';
+		let finalFunct = '';
 		if(!ritorno || !SCHEDA.formModificato)finalFunct += 'initChangeDetection( "formAnnotazioni");';
 						
 		SCHEDA.caricaScheda(	titolo,
@@ -242,9 +241,9 @@ var MODULO_PUNTO = { // extend SET
 	},
 	mod_nota: function( siglaPunto ){ // salva la nota di un punto
 		let nota_salvata=false;
-		var DataModifica = DB.note.lastSync+1;
-		var pDef=-1;
-		var Q_TestoAnnotazione = document.getElementById("TestoAnnotazione").value;
+		let DataModifica = DB.note.lastSync+1,
+			pDef=-1,
+			Q_TestoAnnotazione = document.getElementById("TestoAnnotazione").value;
 		for (p in DB.note.data) {
 			if(DB.note.data.length && typeof(DB.note.data[p].meridiano)=='undefined')DB.note.data.splice(p,p);
 			else if(DB.note.data[p].meridiano=='auricolo' && DB.note.data[p].numeroPunto==siglaPunto && SET.verNotaCli(p)){
@@ -254,8 +253,8 @@ var MODULO_PUNTO = { // extend SET
 				pDef=p;
 			}
 		}
-		if(!nota_salvata && Q_TestoAnnotazione.trim()!=''){
-			var idPaziente=-1;
+		if(!nota_salvata /* && Q_TestoAnnotazione.trim()!='' */){
+			let idPaziente=-1;
 			if(PAZIENTI.idCL>-1)idPaziente=PAZIENTI.idPaziente;
 			JSNPUSH={	"TestoAnnotazione": Q_TestoAnnotazione,
 						"meridiano": "auricolo",
@@ -281,10 +280,10 @@ var MODULO_PUNTO = { // extend SET
 		document.getElementById("setting_point").classList.toggle("vis");
 	},
 	verNotaCli: function( p ){ // verifica che ci sia una nota per il cliente attivo
-		var pass=true;
+		let pass=true;
 		if(PAZIENTI.idCL>-1){
 			pass=false;
-			var idPaziente=DB.pazienti.data[PAZIENTI.idCL].idPaziente*1;
+			let idPaziente=DB.pazienti.data[PAZIENTI.idCL].idPaziente*1;
 			if(idPaziente){
 				if(DB.pazienti.data[PAZIENTI.idCL].Cancellato*1!=1)pass=(DB.note.data[p].idPaziente*1==idPaziente);
 				else pass=false;
@@ -293,10 +292,10 @@ var MODULO_PUNTO = { // extend SET
 		return pass;
 	},
 	leggiNota: function( mr, pt ){ // legge la nota sul cliente
-		var TestoAnnotazione = '',
+		let TestoAnnotazione = '',
 			hidePunto = '0';
 		for(let n in DB.note.data){
-			var pass =false;
+			let pass =false;
 			if(DB.note.data[n].idPaziente > -1){
 				if(DB.note.data[n].idPaziente == PAZIENTI.idPaziente)pass=true;
 			}else{
@@ -317,7 +316,7 @@ var MODULO_PUNTO = { // extend SET
 		if(DB.note){
 			for(let n in DB.note.data){
 				if(DB.note.data[n].app=='AUR'){
-					var pass =false;
+					let pass =false;
 					if(DB.note.data[n].idPaziente > -1){
 						if(DB.note.data[n].idPaziente == PAZIENTI.idPaziente)pass=true;
 					}else{
@@ -338,9 +337,9 @@ var MODULO_PUNTO = { // extend SET
 	},
 	evidenziaNote: function( az ){ // evidenzia le note con il colore giallo sul modello 3D
 		for(let n in SET.note){
-			var PT = __(manichino.getObjectByName("PT"+SET.note[n]),null);
+			let PT = __(manichino.getObjectByName("PT"+SET.note[n]),null);
 			if(PT && typeof(PT)!='undefined'){
-				var mat = SET.MAT.pointBase;
+				let mat = SET.MAT.pointBase;
 				if(this.ptSel==PT)mat = SET.MAT.pointSel;
 				if(az){
 					mat = SET.MAT.pointNote;
@@ -390,24 +389,24 @@ var MODULO_PUNTO = { // extend SET
 		});
 	},
 	setHide3D: function( siglaPunto, hidePunto ){
-		var phs = ["","2","3"];
+		let phs = ["","2","3"];
 		for(let ph in phs){
-			var els = scene.getObjectByName("PTs"+phs[ph]).children;
-			for(e in els){
+			let els = scene.getObjectByName("PTs"+phs[ph]).children;
+			for(let e in els){
 				if(els[e].name.indexOf("PT"+siglaPunto)==0 || els[e].name.indexOf("_PT"+siglaPunto)==0){
 					els[e].userData.hidePunto = hidePunto;
 					els[e].visible = (hidePunto=='0');
 				}
 			}
-			var els = scene.getObjectByName("LNs"+phs[ph]).children;
-			for(e in els){
+			els = scene.getObjectByName("LNs"+phs[ph]).children;
+			for(let e in els){
 				if(els[e].name.indexOf("AG"+siglaPunto)==0){
 					els[e].userData.hidePunto = hidePunto;
 					els[e].visible = (hidePunto=='0');
 				}
 			}
-			var els = scene.getObjectByName("ARs"+phs[ph]).children;
-			for(e in els){
+			els = scene.getObjectByName("ARs"+phs[ph]).children;
+			for(let e in els){
 				if(els[e].name.indexOf("AR"+siglaPunto)==0){
 					els[e].userData.hidePunto = hidePunto;
 					els[e].visible = (hidePunto=='0');

@@ -343,7 +343,7 @@ var agenda = {
 	filtraClienti: function(){
 		let parola = document.getElementById("app_ricerca_testo").value.toLowerCase().trim(),
 			els = document.getElementById("app_elenco").getElementsByTagName("div");
-		for(e=0;e<els.length;e++){
+		for(let e=0;e<els.length;e++){
 			if(!els[e].classList.contains("app_top") && els[e].id!='app_ricerca'){
 				if(els[e].innerText.toLowerCase().indexOf(parola)>-1 || !parola){
 					els[e].style.display = 'block';
@@ -746,7 +746,7 @@ var agenda = {
 		}
 	},
 	apri:function( DataPartenza, elemento, funct, el, Q_idTratt ){
-		agendaOp=true;
+		agendaOp = true;
 		// creo l'oggetto appuntamenti
 		this.retFunct=funct;
 		this.elBut=el;
@@ -820,10 +820,10 @@ var agenda = {
 		elemento.className='agOp';
 	},
 	chiudi:function(){
-		this.orarioDef=null;
-		agendaOp=false;
+		this.orarioDef = null;
+		agendaOp = false;
 		agenda.init();
-		this.elCont.className='';
+		this.elCont.className = '';
 		setTimeout(function(){if(!agendaOp)agenda.elCont.innerHTML='';},600);
 		SWIPE.dismis();
 	},

@@ -4,10 +4,10 @@ var MODULO_PUNTI = { // extend SET
 	PUNTI_free: [ "000","001","254","003","291","192","165","067","177","060","054","018","093","056","121","111","117","261","151" ],
 	
 	caricaPunti: function(){ // carica l'elenco dei punti e delle aree
-		var n = 0;
-		var contElenco = '';
-		var elencoPunti = '';
-		var puntiElenco = [];
+		let n = 0,
+			contElenco = '',
+			elencoPunti = '',
+			puntiElenco = [];
 		for(let siglaPunto in DB.set.punti){
 			if(__(DB.set.punti[siglaPunto])){
 				if(!__(DB.set.punti[siglaPunto].hidden,false)){
@@ -20,17 +20,17 @@ var MODULO_PUNTI = { // extend SET
 		}
 		puntiElenco.sort(sort_by("NomePunto", false));
 		for(a=0;a<puntiElenco.length;a++){
-			var siglaPunto = puntiElenco[a].siglaPunto;
+			let siglaPunto = puntiElenco[a].siglaPunto;
 			n++;
 			
 			// verifico le autorizzazioni
-			var addLock =	(!SET.verFreePunti(siglaPunto)) ? ' lockedItem' : '';
+			let addLock =	(!SET.verFreePunti(siglaPunto)) ? ' lockedItem' : '';
 			// --------------------------
 			elencoPunti+='<p>'+this.scriviPunto(siglaPunto,true,true,'')+'</p>';
 		}
 		
 		// FILTRI
-		var contFiltri =	'<div id="p_filtri">' +//+htmlEntities(TXT("Filtri"))+
+		let contFiltri =	'<div id="p_filtri">' +//+htmlEntities(TXT("Filtri"))+
 							'	<input id="punti_ricerca"' +
 							'		   onKeyUp="SET.filtraPunti();"' +
 							'		   class="okPlaceHolder"' +
@@ -67,7 +67,7 @@ var MODULO_PUNTI = { // extend SET
 							'			<i>'+htmlEntities(TXT("Gruppi_NR"))+'</i></a></p>';
 							
 							
-			var groups = [	"BACK_TORSO",
+			let groups = [	"BACK_TORSO",
 							"HEAD_FACE",
 							"LOWER_LIMBS",
 							"UPPER_LIMBS",
@@ -130,8 +130,8 @@ var MODULO_PUNTI = { // extend SET
 							'<div id="elencoPunti">' + elencoPunti + '</div></span>';
 		}
 		
-		var legenda = [];	
-		var sceltaPuntiTag = 	'<div class="menuElenchi"' +
+		let legenda = [],	
+			sceltaPuntiTag = 	'<div class="menuElenchi"' +
 								'	  onClick="MENU.visMM(\'sistemaPunti_p\');">' +
 								'</div><p id="sistemaPunti_p"';
 								
@@ -144,7 +144,7 @@ var MODULO_PUNTI = { // extend SET
 		//sceltaPuntiTag += 	'<i>'+htmlEntities(TXT("PhaseAttiva"))+':</i>';
 		
 		sceltaPuntiTag += 	'<select id="sceltaPhaseElenco" onChange="SET.setPhase(this.value);">';
-		var phases = [	"",
+		let phases = [	"",
 						"2",
 						"3" ];
 		for(let h in phases){
@@ -163,7 +163,7 @@ var MODULO_PUNTI = { // extend SET
 								'		 style="opacity:0.5;"';
 			sceltaPuntiTag += 	'		 onChange="SET.cambiaMappa(this.value);">';
 			for(let m in GEOMETRIE.mappe){
-				var name = GEOMETRIE.mappe[m].name;
+				let name = GEOMETRIE.mappe[m].name;
 				sceltaPuntiTag += 	'  <option value="'+name+'"';
 				if(localStorage.imgMappa == name)sceltaPuntiTag += ' SELECTED';
 				sceltaPuntiTag += 	'>'+htmlEntities(TXT("Mappa_"+name))+'</option>';
@@ -182,7 +182,7 @@ var MODULO_PUNTI = { // extend SET
 		
 		
 		// LEGENDA
-		var elencoLegenda = '';
+		let elencoLegenda = '';
 		for(l=0;l<legenda.length;l++){
 			if(legenda[l].name=='settings'){
 				settings = legenda[l];
@@ -227,8 +227,8 @@ var MODULO_PUNTI = { // extend SET
 		
 		document.getElementById("lista_punti").innerHTML = sceltaPuntiTag+'<div class="lista listaPunti">'+contElenco+'</div>';
 		
-		var pass = false;
-		for(e in localStorage){
+		let pass = false;
+		for(let e in localStorage){
 			if(typeof(e)!='undefined'){
 				if(e.indexOf("auricolo_mn_")==0){
 					if(localStorage[e]!='' && globals.modello.cartella)document.getElementById("p_"+e.replace("auricolo_mn_","")).click();
@@ -252,14 +252,14 @@ var MODULO_PUNTI = { // extend SET
 	},
 	filtraPunti: function(){ // filtra i punti per testo
 		if(SET.groupSel.id)SET.filtraGruppo();
-		var el = document.getElementById("punti_ricerca");
+		let el = document.getElementById("punti_ricerca");
 		el.classList.toggle("filtro_attivo_bordo",(el.value.trim()!=''));
-		var els = document.getElementById("elencoPunti").getElementsByTagName("p");
-		for(e=0;e<els.length;e++){
-			var i = els[e].getElementsByTagName("i")[0];
-			var a = els[e].getElementsByTagName("a")[0];
-			var siglaPunto = a.id.replace("ts_","");
-			var pass = false;
+		let els = document.getElementById("elencoPunti").getElementsByTagName("p");
+		for(let e=0;e<els.length;e++){
+			let i = els[e].getElementsByTagName("i")[0],
+				a = els[e].getElementsByTagName("a")[0],
+				siglaPunto = a.id.replace("ts_",""),
+				pass = false;
 			if(	DB.set.punti[siglaPunto].NomePunto.toLowerCase().indexOf(el.value.toLowerCase())==-1 &&
 				DB.set.punti[siglaPunto].AzioniPunto.toLowerCase().indexOf(el.value.toLowerCase())==-1 &&
 				DB.set.punti[siglaPunto].ChiaviPunto.toLowerCase().indexOf(el.value.toLowerCase())==-1 ){
@@ -280,14 +280,14 @@ var MODULO_PUNTI = { // extend SET
 			val = '';
 			id = '';
 		}
-		var elenchi = ["PTs"+SET.phase,"ARs"+SET.phase];
+		let elenchi = ["PTs"+SET.phase,"ARs"+SET.phase];
 		for(a in elenchi){
-			var els = scene.getObjectByName(elenchi[a]).children;
-			for(e in els){
-				var name = els[e].name;
+			let els = scene.getObjectByName(elenchi[a]).children;
+			for(let e in els){
+				let name = els[e].name;
 				if(name.indexOf("_")==0)name = name.substr(3,3);
 				else name = name.substr(2,3);
-				var vis = false;
+				let vis = false;
 				if(type=='group'){
 					if(typeof(GEOMETRIE.gruppi[val])!='undefined')vis = GEOMETRIE.gruppi[val].punti.indexOf(name)>-1;
 				}else{
@@ -295,7 +295,7 @@ var MODULO_PUNTI = { // extend SET
 					else vis = (els[e].userData[type]==val);
 					if(!type && els[e].userData.hidePunto!='1')vis = true;
 				}
-				var visEl = vis;
+				let visEl = vis;
 				if(	DB.set.punti[name].hidden || 
 					__(els[e].userData.locked,false) )visEl = false;
 				els[e].visible = visEl;
@@ -305,8 +305,8 @@ var MODULO_PUNTI = { // extend SET
 			}
 		}
 		
-		var els = document.getElementById("f_filtri").getElementsByTagName("p");
-		for(e=0;e<els.length;e++){
+		els = document.getElementById("f_filtri").getElementsByTagName("p");
+		for(let e=0;e<els.length;e++){
 			if(id){
 				els[e].classList.toggle("hide",(els[e].id != 'f_'+id));
 				els[e].classList.toggle("selected",(els[e].id == 'f_'+id));
@@ -321,8 +321,8 @@ var MODULO_PUNTI = { // extend SET
 			"id": id
 		}
 		document.getElementById("e_punti").classList.toggle("searched",SET.groupSel.id);
-		var els = document.getElementById("filtriSmart_cont").getElementsByTagName("div");
-		for(e=0;e<els.length;e++){
+		els = document.getElementById("filtriSmart_cont").getElementsByTagName("div");
+		for(let e=0;e<els.length;e++){
 			els[e].classList.remove("selected");
 		}
 		if(SET.groupSel.id){
@@ -336,7 +336,7 @@ var MODULO_PUNTI = { // extend SET
 		document.getElementById("f_filtri").classList.toggle("visElPt");
 	},
 	popolaFiltri: function(){ // popola il menu rapido dei filtri (in alto a SX)
-		var contFiltri =	'<div id="filtriSmart_ico"'+
+		let contFiltri =	'<div id="filtriSmart_ico"'+
 							'	  onClick="SET.swFiltriSmart();"' +
 							'     title="'+htmlEntities(TXT("FiltriSmart"))+'"><span></span></div>' +
 							
@@ -374,7 +374,7 @@ var MODULO_PUNTI = { // extend SET
 							
 							'<i>'+htmlEntities(TXT("LabelSmart_Anatomia")) + '</i>';
 							
-		var groups = [	"BACK_TORSO",
+		let groups = [	"BACK_TORSO",
 						"HEAD_FACE",
 						"LOWER_LIMBS",
 						"UPPER_LIMBS",
@@ -433,7 +433,7 @@ var MODULO_PUNTI = { // extend SET
 		document.getElementById("filtriSmart_cont").classList.toggle("visSch");
 	},
 	setPhase: function( ph ){ // seleziona la fase di Nogier
-		var PT_name = "";
+		let PT_name = "";
 		if(SET.ptSel)PT_name = SET.ptSel.name;
 		SET.chiudiPunto(true);
 		scene.getObjectByName("PTs").visible = false;

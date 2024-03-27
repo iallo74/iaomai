@@ -62,16 +62,16 @@ var SCHEDA = {
 			SCHEDA.verRedim();
 		}, false);
 	},
-	caricaScheda: function( titolo,  		// titolo della scheda	
-							html, 	 		// contenuto della scheda
-							funct, 	 		// funzione da eseguire alla chiusura della scheda
-							classe,  		// la classe della scheda (es. per il colore del titolo)
-							ritorno, 		// indica se ci deve essere un ritorno ad un altra scheda (scrive su scheda_testo2 e visualizza il pulsante di ritorno) [ può contenere la funzione di ritorno ]
-							espansa, 		// apre la scheda non compressa
-							btn,     		// pulsante da accendere in caso di menu a elenco
-							btnAdd,  		// aggiunte al pulsante
-							codiceTranslate, // codice per il db traduzioni che visualizza il pulsante di google translate
-							finalFunct		// funzione da eseguire alla fine del caricacmento della scheda
+	caricaScheda: function( titolo,  				// titolo della scheda	
+							html, 	 				// contenuto della scheda
+							funct = '', 			// funzione da eseguire alla chiusura della scheda
+							classe = '',  			// la classe della scheda (es. per il colore del titolo)
+							ritorno = '', 			// indica se ci deve essere un ritorno ad un altra scheda (scrive su scheda_testo2 e visualizza il pulsante di ritorno) [ può contenere la funzione di ritorno ]
+							espansa = false,		// apre la scheda non compressa
+							btn = null,     		// pulsante da accendere in caso di menu a elenco
+							btnAdd = '',  			// aggiunte al pulsante
+							codiceTranslate = '', 	// codice per il db traduzioni che visualizza il pulsante di google translate
+							finalFunct				// funzione da eseguire alla fine del caricacmento della scheda
 						   ){
 							   
 		/*
@@ -106,13 +106,13 @@ var SCHEDA = {
 			SCHEDA.noChiudi = false;
 		}
 		
-		if(typeof(funct)=='undefined')var funct = '';
-		if(typeof(classe)=='undefined')var classe = '';
-		if(typeof(ritorno)=='undefined')var ritorno = '';
-		if(typeof(espansa)=='undefined')var espansa = false;
-		if(typeof(btn)=='undefined')var btn = null;
-		if(typeof(btnAdd)=='undefined')var btnAdd = '';
-		if(typeof(codiceTranslate)=='undefined')var codiceTranslate = '';
+		/* if(typeof(funct)=='undefined')funct = '';
+		if(typeof(classe)=='undefined')classe = '';
+		if(typeof(ritorno)=='undefined')ritorno = '';
+		if(typeof(espansa)=='undefined')espansa = false;
+		if(typeof(btn)=='undefined')btn = null;
+		if(typeof(btnAdd)=='undefined')btnAdd = '';
+		if(typeof(codiceTranslate)=='undefined')codiceTranslate = ''; */
 		if(typeof(finalFunct)!='undefined')SCHEDA.finalFunct = finalFunct;
 		
 		if(SCHEDA.btnSel && !ritorno){
@@ -120,7 +120,7 @@ var SCHEDA = {
 			SCHEDA.btnSel = null;
 		}
 		
-		var nScheda='';
+		let nScheda='';
 		if(ritorno){ // se è una scheda derivata
 			
 			if(SCHEDA.scheda2Aperta)SCHEDA.torna( true ); // se la scheda 2 è già aperta, prima eseguo il ritorno
@@ -154,10 +154,10 @@ var SCHEDA = {
 		}
 		
 		if(codiceTranslate && LINGUE.googleLanguages.length && CONN.getConn() && !LINGUE.getAi()){
-			var html_langs =
+			let html_langs =
 							'<div class="p_translate">' +
 							'	<select id="languages" name="languages" onChange="LINGUE.googleTranslate(this.value,\''+codiceTranslate+'\');SCHEDA.swMenuScheda();">';
-			var valSel = (LINGUE.googleLangSel)?LINGUE.googleLangSel:LINGUE.getSigla2();
+			let valSel = (LINGUE.googleLangSel)?LINGUE.googleLangSel:LINGUE.getSigla2();
 			for(let l in LINGUE.googleLanguages){
 				html_langs +=	'<option value="'+LINGUE.googleLanguages[l].sigla+'"';
 				if(LINGUE.googleLanguages[l].sigla==valSel)html_langs += ' SELECTED';
@@ -168,7 +168,7 @@ var SCHEDA = {
 			btnAdd = html_langs + btnAdd;
 		}
 		if(LINGUE.getAi()){
-			var html_langs =
+			let html_langs =
 							'<div class="p_translate">' +
 							'	<span id="languages" name="languages" onClick="MENU.visFeedback(\''+addslashes(TXT("signAiLang"))+'\',\'\',true);">'+TXT("btnAiLang")+'</span>';
 			html_langs +=	'</select>' +
@@ -248,7 +248,7 @@ var SCHEDA = {
 		CONFIRM.vis(	TXT("UscireSenzaSalvare"),
 						!SCHEDA.verificaSchedaRet(),
 						arguments ).then(function(pass){if(pass){
-						var v = getParamNames(CONFIRM.args.callee.toString());
+						let v = getParamNames(CONFIRM.args.callee.toString());
 						for(let i in v)eval(getArguments(v,i));
 						
 			try{
@@ -293,8 +293,8 @@ var SCHEDA = {
 		document.getElementById("scheda_testo2").style.height = '0px';
 	},
 	msgSalvataggio: function( generico = document.getElementById("scheda_testo") ){
-		var el = document.body;
-		var msg = document.createElement("DIV");
+		let el = document.body,
+			msg = document.createElement("DIV");
 		msg.id='msgScheda';
 		if(!document.getElementById('msgScheda'))el.appendChild(msg);
 		msg.innerHTML = TXT("SchedaSalvata");
@@ -347,9 +347,8 @@ var SCHEDA = {
 			document.getElementById("scheda").style.top = "";
 			document.getElementById("scheda").style.width = "";
 			
-			var mm = 20;
-			if(smartMenu)mm = 1;
-			var h =(HF()-(SCHEDA.aggancio.sotto.y-SCHEDA.gapScheda)-SCHEDA.getMM()+mm);
+			let mm = smartMenu ? 1 : 20,
+				h =(HF()-(SCHEDA.aggancio.sotto.y-SCHEDA.gapScheda)-SCHEDA.getMM()+mm);
 			
 			//document.getElementById("scheda").classList.remove("h150")
 			document.getElementById("scheda_testo").style.height = h + 'px';
@@ -435,8 +434,8 @@ var SCHEDA = {
 		SCHEDA.xMouseAtt = touchable ? event.touches[ 0 ].pageX : event.clientX;
 		SCHEDA.yMouseAtt = touchable ? event.touches[ 0 ].pageY : event.clientY;
 		if(SCHEDA.aggancio.tipo == 'libera'){
-			var x = SCHEDA.xIni+(SCHEDA.xMouseAtt - SCHEDA.xMouseIni);
-			var y = SCHEDA.yIni+(SCHEDA.yMouseAtt - SCHEDA.yMouseIni);
+			let x = SCHEDA.xIni+(SCHEDA.xMouseAtt - SCHEDA.xMouseIni),
+				y = SCHEDA.yIni+(SCHEDA.yMouseAtt - SCHEDA.yMouseIni);
 			
 			document.getElementById("scheda").style.left = x + 'px';
 			document.getElementById("scheda").style.top = y + 'px';
@@ -444,8 +443,8 @@ var SCHEDA = {
 			SCHEDA.moving = true;
 		}
 		if(SCHEDA.aggancio.tipo == 'sotto'){
-			var h = SCHEDA.tIni-(SCHEDA.yMouseAtt - SCHEDA.yMouseIni);
-			var mm = SCHEDA.getMM()-SCHEDA.gapScheda;
+			let h = SCHEDA.tIni-(SCHEDA.yMouseAtt - SCHEDA.yMouseIni),
+				mm = SCHEDA.getMM()-SCHEDA.gapScheda;
 			if(h>HF()-mm)h = HF()-mm;
 			if(document.getElementById("scheda").scrollHeight<=275){
 				document.getElementById("scheda").classList.add("h150");
@@ -467,8 +466,8 @@ var SCHEDA = {
 	},
 	arrestaMoveScheda: function( event ){
 		event.preventDefault();
-		var x = touchable ? SCHEDA.xMouseAtt : event.clientX;
-		var y = touchable ? SCHEDA.yMouseAtt : event.clientY;
+		let x = touchable ? SCHEDA.xMouseAtt : event.clientX,
+			y = touchable ? SCHEDA.yMouseAtt : event.clientY;
 		if(globals.modello.cartella)noAnimate = false;
 		animate();
 		controlsM._MM = true
@@ -506,8 +505,8 @@ var SCHEDA = {
 	iniziaRedimScheda: function( event, verso, fromMove=false ){
 		if(SCHEDA.aggancio.tipo == 'lato')stopOnResize = true;
 		SCHEDA.versoRedim = verso;
-		var gapH = 0;
-		var gapV = 0;
+		let gapH = 0,
+			gapV = 0;
 		
 		if(SCHEDA.versoRedim.indexOf("l")>-1 || SCHEDA.versoRedim.indexOf("r")>-1)gapH = 5;
 		if(SCHEDA.versoRedim.indexOf("t")>-1 || SCHEDA.versoRedim.indexOf("b")>-1)gapV = 5;
@@ -548,10 +547,10 @@ var SCHEDA = {
 		SCHEDA.xMouseAtt = touchable ? event.touches[ 0 ].pageX : event.clientX;
 		SCHEDA.yMouseAtt = touchable ? event.touches[ 0 ].pageY : event.clientY;
 		
-		var gapX = 0;
-		var gapY = 0;
-		var mX = 1;
-		var mY = 1;
+		let gapX = 0,
+			gapY = 0,
+			mX = 1,
+			mY = 1;
 		if(SCHEDA.versoRedim.indexOf("l")>-1){
 			mX = -1;
 			gapX = 5;
@@ -561,10 +560,10 @@ var SCHEDA = {
 			gapY = 5;
 		}
 		
-		var w = SCHEDA.wIni+(SCHEDA.xMouseAtt - SCHEDA.xMouseIni)*mX  - gapX*2;
-		var h = SCHEDA.hIni+(SCHEDA.yMouseAtt - SCHEDA.yMouseIni)*mY + 12  - gapY*2;
-		var x = SCHEDA.xIni+(SCHEDA.xMouseAtt - SCHEDA.xMouseIni);
-		var y = SCHEDA.yIni+(SCHEDA.yMouseAtt - SCHEDA.yMouseIni);
+		let w = SCHEDA.wIni+(SCHEDA.xMouseAtt - SCHEDA.xMouseIni)*mX  - gapX*2,
+			h = SCHEDA.hIni+(SCHEDA.yMouseAtt - SCHEDA.yMouseIni)*mY + 12  - gapY*2,
+			x = SCHEDA.xIni+(SCHEDA.xMouseAtt - SCHEDA.xMouseIni),
+			y = SCHEDA.yIni+(SCHEDA.yMouseAtt - SCHEDA.yMouseIni);
 
 		if(w<350)w=350;
 		if(h<180)h=180;
@@ -596,8 +595,8 @@ var SCHEDA = {
 	},
 	arrestaRedimScheda: function( event ){
 		event.preventDefault();
-		var x = touchable ? SCHEDA.xMouseAtt : event.clientX;
-		var y = touchable ? SCHEDA.yMouseAtt : event.clientY;
+		/* let x = touchable ? SCHEDA.xMouseAtt : event.clientX,
+			y = touchable ? SCHEDA.yMouseAtt : event.clientY; */
 		SCHEDA.verPosScheda();
 		if(SCHEDA.aggancio.tipo == 'libera'){
 			SCHEDA.aggancio.libera.w = document.getElementById("scheda").scrollWidth;
@@ -630,7 +629,7 @@ var SCHEDA = {
 	
 	swMenuScheda: function( forza=false ){
 		if(!document.getElementById("btnMenuScheda"))return;
-		var aperto = (document.getElementById("menuScheda").className.indexOf("visSch")!=-1);
+		let aperto = (document.getElementById("menuScheda").className.indexOf("visSch")!=-1);
 		if(!aperto || forza==true){
 			document.getElementById("menuScheda").classList.add("visSch");
 		}
@@ -639,7 +638,7 @@ var SCHEDA = {
 		}
 	},
 	stampaScheda: function( obj ){
-		if(typeof(noInt)=='undefined')var noInt = false;
+		/* let noInt = false; */
 		if(document.getElementById("menuScheda").className.indexOf("visSch")>-1)SCHEDA.swMenuScheda();
 		// verifico le autorizzazioni
 		if(!DB.login.data.auths.length){
@@ -650,46 +649,45 @@ var SCHEDA = {
 		}
 		// --------------------------
 		document.getElementById("stampa").classList.toggle("visSch");
-		var d = new Date();
-		var annoAtt=d.getFullYear();
-		var cartaIntestata = false;
-		var TITOLO_PAGINA = document.title;
-		var nScheda = SCHEDA.scheda2Aperta ? "2" : "";
-		var sch = document.getElementById("scheda");
-		/*if(	sch.classList.contains("scheda_A") || 
+		let d = new Date(),
+			annoAtt=d.getFullYear(),
+			cartaIntestata = false,
+			TITOLO_PAGINA = document.title,
+			nScheda = SCHEDA.scheda2Aperta ? "2" : "";
+		/*let sch = document.getElementById("scheda");
+		if(	sch.classList.contains("scheda_A") || 
 			sch.classList.contains("scheda_B") || 
 			sch.classList.contains("scheda_Riepi") )obj = {};*/
-		if(	typeof(obj)=='undefined'){
-			var titolo = document.getElementById("scheda_titolo").innerHTML;
-			var corpo = document.getElementById("scheda_testo"+nScheda).querySelector(".scheda_stampa").outerHTML;
-		}else{
+		let titolo = document.getElementById("scheda_titolo").innerHTML,
+			corpo = document.getElementById("scheda_testo"+nScheda).querySelector(".scheda_stampa").outerHTML;
+		if(	typeof(obj)!='undefined'){
 			cartaIntestata = true;
-			var titolo = '';
+			titolo = '';
 			console.log(obj)
 			if(JSON.stringify(obj)!='{}')TITOLO_PAGINA = htmlEntities(obj.titolo)+" "+htmlEntities(TXT("per"))+" "+htmlEntities(obj.intestazione);
 			console.log(TITOLO_PAGINA);
-			var dati = '<p>'+htmlEntities(TXT("per"))+' '+htmlEntities(obj.intestazione) + '</p>' + 
+			let dati = '<p>'+htmlEntities(TXT("per"))+' '+htmlEntities(obj.intestazione) + '</p>' + 
 						'<p>'+htmlEntities(obj.corpo).replace(/\n/g,'<br>') + '</p>' + 
 						'<p style="padding-left:50px;padding-top:50px;"><i>' + TXT("Data") + ':</i> ' + getFullDataTS(d/1000) + '<br><br>' +
 						'<i style="font-size:15px;">' + DB.login.data.Nominativo + '</i></p>';
 						
 			if(JSON.stringify(obj)!='{}'){
-				var titolo = TITOLO_PAGINA;
-				var corpo = dati;
+				titolo = TITOLO_PAGINA;
+				corpo = dati;
 			}else{
-				var titolo = document.getElementById("scheda_titolo").innerHTML;
-				var corpo = document.getElementById("scheda_testo"+nScheda).querySelector(".scheda_stampa").outerHTML;
+				titolo = document.getElementById("scheda_titolo").innerHTML;
+				corpo = document.getElementById("scheda_testo"+nScheda).querySelector(".scheda_stampa").outerHTML;
 			}
 		}
 		
-		var HTML_styles = '';
-		var lks = document.head.getElementsByTagName("link");
+		let HTML_styles = '',
+			lks = document.head.getElementsByTagName("link");
 		for(l in lks){
 			if(lks[l]){
 				if(lks[l].type=="text/css")HTML_styles+=lks[l].outerHTML;
 			}
 		}
-		var lks = document.getElementById("scripts").getElementsByTagName("link");
+		lks = document.getElementById("scripts").getElementsByTagName("link");
 		for(l in lks){
 			if(lks[l]){
 				if(lks[l].type=="text/css")HTML_styles+=lks[l].outerHTML;
@@ -697,7 +695,7 @@ var SCHEDA = {
 		}
 		HTML_styles = HTML_styles.replace(/\?v=[\d]+"/g,'"').replace(/\ id="[^"]+"/g,'');
 		
-		var HTML = 
+		let HTML = 
 				'<html class="htmlStampa">' +
 				'	<head>' +
 				'		<script language="Javascript">' +
@@ -737,7 +735,7 @@ var SCHEDA = {
 				'			</table>' +
 				'		</div>';
 		else{
-			var logo = __(DB.login.data.logoAzienda);
+			let logo = __(DB.login.data.logoAzienda);
 			//if(!logo)logo = __(DB.login.data.imgAvatar);
 			HTML += '<div style="';
 			//if(logo)
@@ -814,7 +812,7 @@ var SCHEDA = {
 			SCHEDA.chiudiElenco();
 			return;
 		}
-		var visGuida = false;
+		let visGuida = false;
 		if(	!document.getElementById("elenchi_cont").classList.contains("visSch") || 
 			!document.getElementById("elenchi").classList.contains("vis_"+tipo))visGuida=true;
 		document.getElementById("elenchi_cont").classList.add("visSch");
@@ -822,7 +820,7 @@ var SCHEDA = {
 		MENU.desIcona();
 		MENU.chiudiMenu();
 		SCHEDA.setMenuDim();
-		if(typeof(expanded)=='undefined')var expanded = false;
+		/* let expanded = false; */
 		if(tipo){
 			document.getElementById("elenchi").classList.remove("vis_base");
 			document.getElementById("elenchi").classList.remove("vis_set");
@@ -865,7 +863,7 @@ var SCHEDA = {
 		document.getElementById("scheda").classList.toggle("schRid", document.getElementById("elenchi").classList.contains("visSch"));
 	},
 	chiudiElenco: function(){
-		var aperto = document.getElementById("elenchi_cont").classList.contains("visSch");
+		/* let aperto = document.getElementById("elenchi_cont").classList.contains("visSch"); */
 		document.getElementById("elenchi_cont").classList.remove("visSch");
 		document.getElementById("scheda").classList.remove("schOp");
 		document.getElementById("elenchi").classList.remove("visSch");
@@ -896,7 +894,7 @@ var SCHEDA = {
 		}
 	},
 	selElenco: function( elenco, el ){
-		var iconaAdd = '';
+		let iconaAdd = '';
 		//if(elenco == 'pazienti')iconaAdd='<img src="img/ico_cliente.png" id="elenchi_icona">';
 		//if(elenco == 'servizi')iconaAdd='<img src="img/ico_servizio.png" id="elenchi_icona">';
 		//if(elenco == 'fornitori')iconaAdd='<img src="img/ico_fornitore.png" id="elenchi_icona">';
@@ -915,7 +913,7 @@ var SCHEDA = {
 			}
 		}
 		
-		if(typeof(el) == 'undefined')var el = document.getElementById('pulsante_'+elenco);
+		if(typeof(el) == 'undefined')el = document.getElementById('pulsante_'+elenco);
 		document.getElementById("elenchi_lista").classList.remove("triplo");
 		document.getElementById("scheda").classList.remove("triplo");
 		if(SCHEDA.elencoSel){
@@ -934,7 +932,7 @@ var SCHEDA = {
 		document.getElementById("scheda").classList.add("schOp");
 		SCHEDA.elencoSel = elenco;
 		
-		var tipo = el.parentElement.id.split("_")[1];
+		let tipo = el.parentElement.id.split("_")[1];
 		if(tipo=='base')SCHEDA.elencoSelBase = elenco;
 		if(tipo=='set')SCHEDA.elencoSelSet = elenco;
 		SCHEDA.verPosScheda();
@@ -957,10 +955,10 @@ var SCHEDA = {
 	},
 	individuaElemento: function( id, lista ){
 		if(!smartMenu){
-			var y = tCoord(document.getElementById(id),'y')-tCoord(document.querySelector('.'+lista),'y');
+			let y = tCoord(document.getElementById(id),'y')-tCoord(document.querySelector('.'+lista),'y');
 			document.querySelector('.'+lista).scroll(0,y-50);
 		}else{
-			var x = tCoord(document.getElementById(id))-tCoord(document.querySelector('.'+lista));
+			let x = tCoord(document.getElementById(id))-tCoord(document.querySelector('.'+lista));
 			document.querySelector('.'+lista).scroll(x-50,0);
 		}
 	},
@@ -1043,8 +1041,8 @@ var SCHEDA = {
 		return el;
 	},
 	getMM: function(){
-		var addForm = 0;
-		var mm = 90 + addForm;
+		let addForm = 0,
+			mm = 90 + addForm;
 		if(smartMenu)mm += 5 + document.getElementById("elenchi").scrollHeight + document.getElementById("icone").scrollHeight;
 		else if(SCHEDA.aggancio.tipo == 'sotto')mm+=20;
 		else if(SCHEDA.aggancio.tipo == 'lato')mm-=41;
@@ -1054,11 +1052,11 @@ var SCHEDA = {
 		// effettua i controlli quando si ridimensiona la scheda
 		if(document.getElementById("scheda").classList.contains("visSch") && !smartMenu){
 			if(SCHEDA.aggancio.tipo == 'libera'){
-				var limiteW = WF();
-				var limiteH = HF()-SCHEDA.gapScheda;
-				var limiteXmax = WF()-20;
-				var limiteYmax = HF()-63;
-				var limiteXmin = 20 - document.getElementById("scheda").scrollWidth;
+				let limiteW = WF(),
+					limiteH = HF()-SCHEDA.gapScheda,
+					limiteXmax = WF()-20,
+					limiteYmax = HF()-63,
+					limiteXmin = 20 - document.getElementById("scheda").scrollWidth;
 				if(document.getElementById("scheda").scrollWidth > limiteW){
 					document.getElementById("scheda").style.width = limiteW+"px";
 					SCHEDA.aggancio.libera.w = limiteW;
@@ -1093,8 +1091,8 @@ var SCHEDA = {
 				}
 			}
 			if(SCHEDA.aggancio.tipo == 'sotto'){
-				var h = 0;
-				var mm = 20;
+				let h = 0,
+					mm = 20;
 				if(smartMenu)mm = 1;
 				if(tCoord(document.getElementById("scheda"),'y') < mm){
 					h = (HF()-SCHEDA.getMM()+SCHEDA.gapScheda);
@@ -1109,12 +1107,12 @@ var SCHEDA = {
 			if(SCHEDA.aggancio.tipo == 'lato'){
 				document.getElementById("scheda_testo").style.height = (HF() - SCHEDA.getMM()) + "px";
 				document.getElementById("scheda_testo2").style.height = (HF() - SCHEDA.getMM()) + "px";
-				var x = document.getElementById("elenchi_cont").scrollWidth;
+				let x = document.getElementById("elenchi_cont").scrollWidth;
 				if(!document.getElementById("elenchi_cont").classList.contains("visSch"))x = 0;
 				document.getElementById("scheda").style.left = (48 + x) + "px";
 				
 				if(tCoord(document.getElementById("scheda")) + document.getElementById("scheda").scrollWidth > WF()){
-				var w = WF() - tCoord(document.getElementById("scheda"));
+				let w = WF() - tCoord(document.getElementById("scheda"));
 				if(w < 350)w = 350;
 				document.getElementById("scheda").style.width = (w - 31) + "px";
 				
@@ -1128,7 +1126,7 @@ var SCHEDA = {
 	},
 	verRedim: function(){
 		// assegna le classi alla scheda in base alla larghezza (per i CSS)
-		var W = document.getElementById("scheda").scrollWidth;
+		let W = document.getElementById("scheda").scrollWidth;
 		if(	SCHEDA.classeAperta == 'scheda_agenda' || 
 			SCHEDA.classeAperta == 'scheda_A' || 
 			SCHEDA.classeAperta == 'scheda_B'){

@@ -268,7 +268,7 @@ var FORNITORI = {
 			if(azElimina){
 				btnAdd += '<div class="p_paz_el_menu" onClick="'+azElimina+'">'+TXT("EliminaScheda")+'</div>';
 			}
-			btnAdd += 	'<div class="p_paz_ref_menu" onClick="REF.open(\'archives.suppliers.overview\')">' +
+			btnAdd += 	'<div class="p_paz_ref_menu" onClick="REF.open(\'archives.suppliers\')">' +
 							TXT("ReferenceGuide") +
 						'</div>';
 			
