@@ -315,8 +315,8 @@ body:not(.bodyModello).bodyStyled2{
 #logoSovra:not(.logoConv){
     background-image: url(../img/logo_iaomai.png);
     width: 197px;
-    height: 75px;
-    background-size: auto 75px;
+    height: 77px;
+    background-size: auto 77px;
 }
 #logoSovra.logoConv{
     width: 260px;
