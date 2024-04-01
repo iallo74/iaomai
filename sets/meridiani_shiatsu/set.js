@@ -741,7 +741,7 @@ var SET = {
 			if(tCoord(SET.btnSel,'y')-lista.scrollTop>HF())lista.scrollTo(0,lista.scrollTop+(HF()/2));
 			if(tCoord(SET.btnSel,'y')-lista.scrollTop - tCoord(lista,'y')<0)lista.scrollTo(0,lista.scrollTop-(HF()/2)-tCoord(lista,'y'));
 		}else if(document.getElementById("pt_"+pp.nPunto+"_"+pp.siglaMeridiano+((gruppo)?"_"+gruppo:""))){
-			// CIN e MAS
+			// CIN
 			document.getElementById("pt_"+pp.nPunto+"_"+pp.siglaMeridiano+((gruppo)?"_"+gruppo:"")).classList.add("selElPt");
 		}
 
