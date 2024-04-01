@@ -544,9 +544,9 @@ var SET = {
 			els = scene.getObjectByName("PT_"+pp.siglaMeridiano).children;
 		for(let e in els){
 			if(	els[e].name.indexOf(pp.siglaMeridiano+"."+pp.nPunto+".")==0 && 
-				SET.isInGruppo(els[e]) ){
+				(!SET.grSel || SET.isInGruppo(els[e])) ){
 				els[e].scale.set(pulse,pulse,pulse);
-				if(mat)els[e].material=mat;
+				if(mat)els[e].material = mat;
 			}
 		}
 		SET.MAT.pointSel.setValues( { opacity: op } );
