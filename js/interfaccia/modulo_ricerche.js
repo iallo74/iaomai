@@ -457,7 +457,7 @@ var RICERCHE = {
 						for(let i in v)eval(getArguments(v,i));
 			DB.ricerche.data=[];
 			localPouchDB.setItem(MD5("DB"+LOGIN._frv()+".ricerche"), IMPORTER.COMPR(DB.ricerche)).then(function(){ // salvo il DB
-				LOGIN.sincronizza();
+				SYNCRO.sincronizza();
 			});
 			RICERCHE.car_historyGlobal();
 		}});
@@ -470,7 +470,7 @@ var RICERCHE = {
 					"frv": (LOGIN._frv()!='')	};
 		DB.ricerche.data[n]=JSNPUSH;
 		localPouchDB.setItem(MD5("DB"+LOGIN._frv()+".ricerche"), IMPORTER.COMPR(DB.ricerche)).then(function(){ // salvo il DB
-			LOGIN.sincronizza();
+			SYNCRO.sincronizza();
 		});
 		RICERCHE.car_historyGlobal();
 	},
@@ -497,7 +497,7 @@ var RICERCHE = {
 		}
 	
 		localPouchDB.setItem(MD5("DB"+LOGIN._frv()+".ricerche"), IMPORTER.COMPR(DB.ricerche)).then(function(){ // salvo il DB
-			LOGIN.sincronizza();
+			SYNCRO.sincronizza();
 		});
 		return false;
 	},

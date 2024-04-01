@@ -222,6 +222,7 @@ var SET = {
 		Object.assign(SET, MODULO_PUNTO);
 		Object.assign(SET, MODULO_TEORIA);
 		Object.assign(SET, MODULO_PROCEDURE);
+		Object.assign(SET, MODULO_PROCEDURE_COMMUNITY);
 		
 		// svuoto la memoria
 		MODULO_PATOLOGIE = null;
@@ -229,6 +230,7 @@ var SET = {
 		MODULO_PUNTO = null;
 		MODULO_TEORIA = null;
 		MODULO_PROCEDURE = null;
+		MODULO_PROCEDURE_COMMUNITY = null;
 
 		for(let m in DB_addset){
 			if(!DB.set[m])DB.set[m] = {};

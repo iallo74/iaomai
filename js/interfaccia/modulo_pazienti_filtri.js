@@ -1,4 +1,4 @@
-var PAZIENTI_FILTRI = {
+var PAZIENTI_FILTRI = { // extend PAZIENTI
 	maxInvii: 100,
 	maxInviiMese: 1000,
 	coda: 0,

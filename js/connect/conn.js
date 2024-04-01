@@ -1,12 +1,12 @@
 var CONN = {
 	VERSIONE: 1,
-	APIfolder: 'https://www.corpomentespirito.it/__stream/app/030_iaomai/__API/V1.6/',
+	APIfolder: 'https://www.corpomentespirito.it/__stream/app/030_iaomai/__API/V1.7/',
 	FILESfolder: 'https://www.iaomai.app/___API/__files_utenti/files/',
 	urlStore: 'https://www.iaomai.app/[lang]/iaomai/',
 	linkPrivacy: 'https://www.iaomai.app/privacy',
 	linkReqPwd: 'https://www.iaomai.app/account/requestpassword.php',
 	online: true,
-	caricaUrl: function(url, qs='', funzione){ // carica un API url e richiama la funzione
+	caricaUrl: function( url, qs = '', funzione ){ // carica un API url e richiama la funzione
 		if(CONN.getConn()){
 			let x;
 			if(typeof XMLHttpRequest!="undefined"){

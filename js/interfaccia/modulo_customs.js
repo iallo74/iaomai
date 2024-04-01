@@ -1,6 +1,11 @@
 
 var CUSTOMS = {
 	
+	/*
+	ISTRUZIONI per creare contenuti custom:
+	- creare un file .js in 030_iaomai/__customContents (es. 6.js) dove il numero (6) è l'idPartner per il quale si vuole fornire il contenuto custom.
+	*/
+
 	_conts: {},
 	_init: function(){},
 	_end: function(){},

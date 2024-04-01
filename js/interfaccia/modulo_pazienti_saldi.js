@@ -1,4 +1,4 @@
-var PAZIENTI_SALDI = {
+var PAZIENTI_SALDI = { // extend PAZIENTI
 	// SALDI
 	caricaSaldi: function( Q_resta ){
 		// elenco saldi del paziente
@@ -267,7 +267,7 @@ var PAZIENTI_SALDI = {
 			endChangeDetection();
 			SCHEDA.formModificato = false;
 			localPouchDB.setItem(MD5("DB"+LOGIN._frv()+".pazienti"), IMPORTER.COMPR(DB.pazienti)).then(function(){ // salvo il DB
-				LOGIN.sincronizza( 	'PAZIENTI.car_saldo('+pDef+',document.getElementById("btn_saldo_'+pDef+'"),true);' +
+				SYNCRO.sincronizza( 	'PAZIENTI.car_saldo('+pDef+',document.getElementById("btn_saldo_'+pDef+'"),true);' +
 									'if(smartMenu)SCHEDA.scaricaScheda(true);' +/* CHIUSURA DOPO SALVATAGGIO da SMART*//* +*/
 									'PAZIENTI.caricaSaldi('+pDef+');' +
 									'startAnimate();' +
@@ -296,7 +296,7 @@ var PAZIENTI_SALDI = {
 			endChangeDetection();
 			SCHEDA.formModificato = false;
 			localPouchDB.setItem(MD5("DB"+LOGIN._frv()+".pazienti"), IMPORTER.COMPR(DB.pazienti)).then(function(){ // salvo il DB
-				LOGIN.sincronizza( 	'PAZIENTI.caricaSaldi();' +
+				SYNCRO.sincronizza( 	'PAZIENTI.caricaSaldi();' +
 									'SCHEDA.scaricaScheda();' +
 									'nasLoader();' +
 									'startAnimate();' );

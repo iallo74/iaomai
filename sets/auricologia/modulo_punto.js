@@ -271,7 +271,7 @@ var MODULO_PUNTO = { // extend SET
 		SCHEDA.formModificato = false;
 		applicaLoading(document.getElementById("scheda_testo"));
 		localPouchDB.setItem(MD5("DB"+LOGIN._frv()+".note"), IMPORTER.COMPR(DB.note)).then(function(){ // salvo il DB
-			LOGIN.sincronizza(	'rimuoviLoading(document.getElementById("scheda_testo"));' +
+			SYNCRO.sincronizza(	'rimuoviLoading(document.getElementById("scheda_testo"));' +
 								'document.getElementById("pulsantiAnnotazione").style.display="none";' );
 			SET.leggiNote();
 		});
@@ -383,7 +383,7 @@ var MODULO_PUNTO = { // extend SET
 		}
 		applicaLoading(document.getElementById("scheda_testo"));
 		localPouchDB.setItem(MD5("DB"+LOGIN._frv()+".note"), IMPORTER.COMPR(DB.note)).then(function(){ // salvo il DB
-			LOGIN.sincronizza(	'rimuoviLoading(document.getElementById("scheda_testo"));' +
+			SYNCRO.sincronizza(	'rimuoviLoading(document.getElementById("scheda_testo"));' +
 								'SET.setHide3D(\''+siglaPunto+'\',\''+hidePunto+'\');' +
 								'SCHEDA.swMenuScheda();' );
 		});

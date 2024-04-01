@@ -358,7 +358,7 @@ var FORNITORI = {
 		applicaLoading(document.getElementById("scheda_testo"));
 		applicaLoading(document.getElementById("elenchi_lista"));
 		localPouchDB.setItem(MD5("DB"+LOGIN._frv()+".fornitori"), IMPORTER.COMPR(DB.fornitori)).then(function(){ // salvo il DB
-			LOGIN.sincronizza(	'rimuoviLoading(document.getElementById("scheda_testo"));' +
+			SYNCRO.sincronizza(	'rimuoviLoading(document.getElementById("scheda_testo"));' +
 								'rimuoviLoading(document.getElementById("elenchi_lista"));' +
 								'FORNITORI.car_fornitore('+Q_idForn+',true);' +
 								/*'SCHEDA.scaricaScheda(true);' +/* CHIUSURA DOPO SALVATAGGIO da PC*/
@@ -383,7 +383,7 @@ var FORNITORI = {
 			endChangeDetection();
 			SCHEDA.formModificato = false;
 			localPouchDB.setItem(MD5("DB"+LOGIN._frv()+".fornitori"), IMPORTER.COMPR(DB.fornitori)).then(function(){ // salvo il DB
-				LOGIN.sincronizza( 	'FORNITORI.chiudiFornitore('+idFornitore+');' +
+				SYNCRO.sincronizza( 	'FORNITORI.chiudiFornitore('+idFornitore+');' +
 									'FORNITORI.caricaFornitori();' );
 				
 				SCHEDA.scaricaScheda();

@@ -57,7 +57,6 @@ var MODULO_TEORIA = { // extend SET
 			occhiello = __(DB.set.teoria[p].contenuti[t].OcchielloTeoria),
 			apparato = __(DB.set.teoria[p].contenuti[t].apparato),
 			anatomia = __(DB.set.teoria[p].contenuti[t].anatomia),
-			meridianiSecondari = __(DB.set.teoria[p].contenuti[t].meridianiSecondari),
 			html = '',
 			addTabStyle = '';
 		

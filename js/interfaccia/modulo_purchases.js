@@ -7,8 +7,7 @@ var PURCHASES  = {
 	orderState: '',
     idBuying: '',
 	
-	init: function(){
-		// inizializza il catalogo
+	init: function(){ // inizializza il catalogo
 		for(let s in sets){
 			for(let m in sets[s].modls){
 				if((!android && sets[s].modls[m].idApple) || (android && sets[s].modls[m].idGoogle)){
@@ -39,8 +38,7 @@ var PURCHASES  = {
 			PURCHASES.productList();
 		}
 	},
-	initStore: function(){
-		// inizializza l'acquisto
+	initStore: function(){ // inizializza l'acquisto
 		PURCHASES.initiated = true;
 		if(window?.CdvPurchase?.store)window.store = window.CdvPurchase.store;
 		if(window.store){
@@ -64,8 +62,7 @@ var PURCHASES  = {
 			PURCHASES.getPrices();
 		}
 	},
-	showProduct: function( id ){
-		// mostra il prodotto
+	showProduct: function( id ){ // mostra il prodotto
 		PURCHASES.list_view = false;
 		PURCHASES.productId = id;
 		let p;
@@ -73,8 +70,7 @@ var PURCHASES  = {
 		else p = PURCHASES.getProdById(PURCHASES.productId);
 		PURCHASES.viewProduct(p);
 	},
-	purchaseLicense: function( id ){
-		// acquista la licenza
+	purchaseLicense: function( id ){ // acquista la licenza
 		if(window.store){
 			if(!android){ // ritardo per apple
 				let el = document.getElementById('contPurchases');
@@ -90,8 +86,9 @@ var PURCHASES  = {
 			store.get(PURCHASES.productId)?.getOffer()?.order();
 		}else{
 			let tk = encodeURIComponent(window.btoa(LOGIN.logedin() + MD5(DB.login.data.idUtente))),
-				fl = encodeURIComponent(window.btoa(PURCHASES.getProdById(PURCHASES.productId).folder+" "+PURCHASES.getProdById(PURCHASES.productId).code));
-			CONN.openUrl(convLangPath(CONN.urlStore)+"in_app_purchase?tk="+tk+"&mp="+fl);
+			fl = encodeURIComponent(window.btoa(PURCHASES.getProdById(PURCHASES.productId).folder));
+			md = encodeURIComponent(window.btoa(PURCHASES.getProdById(PURCHASES.productId).code));
+			CONN.openUrl(convLangPath(CONN.urlStore)+"in_app_purchase?tk="+tk+"&mp="+fl+"&md="+md);
 			
 		}
 	},
@@ -102,8 +99,8 @@ var PURCHASES  = {
 		    p.finish();
 		    let pr = PURCHASES.getProdById(p.products[0].id);
 		    CONN.caricaUrl(	"purchases_activate.php",
-				    	"folder="+pr.folder+"&price="+pr.price+"&siglaLingua="+globals.siglaLingua,
-				     	"PURCHASES.ret_activate");
+							"folder="+pr.folder+"&module="+__(pr.code,'')+"&price="+pr.price+"&siglaLingua="+globals.siglaLingua,
+							"PURCHASES.ret_activate");
         }
 	},
 	ret_activate: function( txt ){
@@ -116,8 +113,7 @@ var PURCHASES  = {
 	},
 	
 	// visualizzazioni
-	viewProduct: function( product ){
-		// scrive la scheda del prodotto
+	viewProduct: function( product ){ // scrive la scheda del prodotto
 		if(window.store){	
 			if(product.state=='requested')PURCHASES.orderState = 'requested';
 			if(PURCHASES.orderState == 'requested' && product.state=='approved'){
@@ -138,7 +134,7 @@ var PURCHASES  = {
 			folder = '',
 			price = 0,
 			code = product.code,
-			nameModule = product.name;
+			nameModule = __(product.name,'');
 		if(!price)TXT("AccediAlloStore");
 		if(window.store){
 			price = product.offers[0].pricingPhases[0].price;
@@ -173,16 +169,14 @@ var PURCHASES  = {
 		el.classList.remove("ini");
 		el.innerHTML = info + '<div class="btn_cont">' + button + '</div>';
 	},
-	getProdById: function( idStore ){
-		// ottiene un prodotto tramite ID
+	getProdById: function( idStore ){ // ottiene un prodotto tramite ID
 		let el = null;
 		for(let id in PURCHASES.product_list){
 			if(PURCHASES.product_list[id].idStore == idStore)el = PURCHASES.product_list[id];
 		}
 		return el;
 	},
-	makeProductList: function( product ){
-		// crea la lista prodotti (solo per Cordova)
+	makeProductList: function( product ){ // crea la lista prodotti (solo per Cordova)
 		if(!PURCHASES.list_view)return;
 		let el = PURCHASES.getProdById(product.id);
 		el.title = product.title;
@@ -190,8 +184,7 @@ var PURCHASES  = {
 		el.owned = product.owned;
 		PURCHASES.productList();
 	},
-	productList: function(){
-		// elenco i prodotti
+	productList: function(){ // elenca i prodotti
 		PURCHASES.list_view = true;
 		let addApple = (!onlineVersion && (iPad || iPhone || isMacUA)) ? 'Apple' : '',
 			html =  '<div id="descrLicenze">' +

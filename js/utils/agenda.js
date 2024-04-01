@@ -250,7 +250,7 @@ var agenda = {
 			agenda.chiudiScelta();
 			applicaLoading(document.getElementById("ag"));
 			localPouchDB.setItem(MD5("DB"+LOGIN._frv()+".appuntamenti"), IMPORTER.COMPR(DB.appuntamenti)).then(function(){ // salvo il DB
-				LOGIN.sincronizza(	'rimuoviLoading(document.getElementById("ag"));' +
+				SYNCRO.sincronizza(	'rimuoviLoading(document.getElementById("ag"));' +
 									postAction );
 			});
 		}});
@@ -335,7 +335,7 @@ var agenda = {
 				localPouchDB.setItem(MD5("DB"+LOGIN._frv()+".pazienti"), IMPORTER.COMPR(DB.pazienti)),
 				localPouchDB.setItem(MD5("DB"+LOGIN._frv()+".appuntamenti"), IMPORTER.COMPR(DB.appuntamenti))
 			]).then(function(){
-				LOGIN.sincronizza(	'MENU.visAgenda();' +
+				SYNCRO.sincronizza(	'MENU.visAgenda();' +
 									postAction );
 			});
 		}});
@@ -406,7 +406,7 @@ var agenda = {
 		agenda.chiudiScelta();
 		applicaLoading(document.getElementById("scheda_testo"));
 		localPouchDB.setItem(MD5("DB"+LOGIN._frv()+".appuntamenti"), IMPORTER.COMPR(DB.appuntamenti)).then(function(){ // salvo il DB
-			LOGIN.sincronizza(	'rimuoviLoading(document.getElementById("ag"));' +
+			SYNCRO.sincronizza(	'rimuoviLoading(document.getElementById("ag"));' +
 								postAction );
 		});
 	},

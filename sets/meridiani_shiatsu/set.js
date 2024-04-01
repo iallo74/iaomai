@@ -22,7 +22,6 @@ var SET = {
 	puntiEvidenziati: [],
 	pMod: -1,
 	pointEvi: '',
-	meridianiSecondariAccesi: [],
 	meridianiOn: false,
 	geometryPallino: null,
 	geometryPallinoTrasp: null,
@@ -39,8 +38,6 @@ var SET = {
 		SETS = new THREE.Group();
 		SETS.name = "SETS";
 		
-		/*let facce = 6,
-			facceTrasp = 8;*/
 		let facce = 5,
 			facceTrasp = 7;
 		if(isTablet){
@@ -226,8 +223,6 @@ var SET = {
 		let contPulsanti = 	'<span class="menuElenchi" onclick="MENU.visMM(\'btnCarMapMenu\');"></span>' +
 							'<span id="btnCarMapMenu" class="btn_meridiani_shiatsu titolo_set">' +
 							'<span>ShiatsuMap</span>' +
-							/* '<i class="elMenu" id="chiudiSet" onClick="chiudiSet();" title="'+htmlEntities(TXT("ChiudiSet"))+'"><span>' +
-								htmlEntities(TXT("ChiudiSet"))+'</span></i>' + */
 							'<i class="elMenu" id="impostazioniSet" onClick="MENU.visImpset();" title="'+htmlEntities(TXT("ImpostazioniSet"))+'"><span>' +
 								htmlEntities(TXT("ImpostazioniSet")) +
 							'</span></i>' +
@@ -274,8 +269,6 @@ var SET = {
 		
 		contPulsanti += '<span id="quitSet" onClick="chiudiSet();">'+TXT("EsciDa")+' ShiatsuMap</span>';
 
-		//contPulsanti += '<span id="tueLicenzeMappa" class="tueLicenze"><span onClick="MENU.visLicenze();">'+TXT("TueLicenze")+'</span></span>';
-
 		let contBtns = '<div id="p_contrasto" class="p_noTxt" onClick="SET.swContrastMethod();"></div>';
 		
 		let contIcona = '<div id="p_set" onClick="SCHEDA.apriElenco(\'set\',true);"><svg viewBox="0 0 12 48"><polygon points="5,24 12,13 12,35"></polygon></svg><i>'+htmlEntities(TXT("ShiatsuMap"))+'</i></div>';;
@@ -310,6 +303,7 @@ var SET = {
 		Object.assign(SET, MODULO_PUNTO);
 		Object.assign(SET, MODULO_TEORIA);
 		Object.assign(SET, MODULO_PROCEDURE);
+		Object.assign(SET, MODULO_PROCEDURE_COMMUNITY);
 		
 		SET.aggiungiPuntiParticolari();
 		
@@ -319,6 +313,7 @@ var SET = {
 		MODULO_PUNTO = null;
 		MODULO_TEORIA = null;
 		MODULO_PROCEDURE = null;
+		MODULO_PROCEDURE_COMMUNITY = null;
 
 		for(let m in DB_addset){
 			if(!DB.set[m])DB.set[m] = {};
@@ -328,15 +323,8 @@ var SET = {
 		}
 		DB_addset = null;
 		
-		
-		
-		//DB.set.patologie = clone(DB.set.patologie_model);
-		
-		//DB.set.patologie.sort(sort_by("NomePatologia"));
-		
 		manichinoCaricato = true;
 		SET.componiPatologie();
-		//SET.componiMeridiani();
 		SET.caricaApprofondimenti();
 		if(DB.procedure)SET.car_procedure(-1,1);
 		
@@ -1657,96 +1645,13 @@ var SET = {
 		document.getElementById("tbSigleMeridiani").innerHTML = HTML;
 		
 		let selects = document.getElementsByClassName("sceltaMeridianiElenco"),
-			els = selects[0].options;//document.getElementById("sceltaMeridianiElenco").options;
+			els = selects[0].options;
 		for(let e in els){
 			if(els[e].value == localStorage.sistemaMeridiani){
 				for(let s in selects){
 					selects[s].selectedIndex = e;
 				}
 			}
-		}
-	},
-	
-	
-	
-	accendiMeridianoSecondario: function( sigla, mantieni=false ){
-		if(!globals.modello.cartella)return;
-		for(let m in MERIDIANI){
-			if(MERIDIANI[m].categoria == "" ){
-				if(MERIDIANI[m].meridianoAcceso){
-					if(m!=sigla)SET.spegniMeridiano(m);
-				}
-			}	
-		}
-		SET.meridianiSecondariAccesi.push(sigla);
-		
-		let meridiano = scene.getObjectByName( "LN_"+sigla )/* ,
-			percorsoInterno = false */;
-		/* for(let c in meridiano.children){
-			if( __(meridiano.children[c].userData.interno) )percorsoInterno = true;
-		} */
-		if(!SET.COL.contrastMethod)SET.swContrastMethod();
-		
-		let elM = meridiano.children
-		for(let e in elM){
-			elM[e].visible = true
-		}
-		let evidenziati = meridiano.userData.evidenziati;
-		if(meridiano.userData.evidenziati){
-			for(let e in evidenziati){
-				for(let i in evidenziati[e]){
-					scene.getObjectByName( evidenziati[e][i] ).material = MODELLO.MAT.materialVisceriEvi;
-				}
-			}
-		}
-		if(isTablet){
-			SET.MAT.pointBase.visible = false;
-			SET.MAT.lineYang.visible = false;
-			SET.MAT.lineYin.visible = false;
-			MODELLO.MAT.materialVisceri.visible = false;
-		}
-	},
-	spegniMeridianoSecondario: function( sigla='', forza=false ){
-		if(!globals.modello.cartella)return;
-		var meridianoPrincipale = false;
-		for(let m=SET.meridianiSecondariAccesi.length-1;m>-1;m--){
-			if(SET.meridianiSecondariAccesi[m] == sigla || !sigla){
-				var meridiano = scene.getObjectByName( "LN_"+SET.meridianiSecondariAccesi[m] );
-				if(SET.meridianiSecondariAccesi[m].indexOf("_")==-1){
-					var mer = SET.meridianiSecondariAccesi[m];
-					setTimeout(function(mer){SET.eviMeridiano(mer,false);},200,mer);
-					if(forza)SET.accendiMeridiano(SET.meridianiSecondariAccesi[m],true,true);
-					meridianoPrincipale = true;
-				}else{
-					
-					var elM = meridiano.children
-					for(let e in elM){
-						elM[e].visible = false
-					}
-				}
-				var evidenziati = meridiano.userData.evidenziati;
-				if(evidenziati){
-					for(let e in evidenziati){
-						for(let i in evidenziati[e]){
-							var tipo = scene.getObjectByName( evidenziati[e][i] ).parent.name;
-							scene.getObjectByName( evidenziati[e][i] ).material = MODELLO.MAT["material"+tipo];
-						}
-					}
-				}
-				if(SET.meridianiSecondariAccesi.length>1)SET.meridianiSecondariAccesi.splice(m,1);
-				else SET.meridianiSecondariAccesi = [];
-			}
-		}
-		if(!SET.meridianiSecondariAccesi.length){
-			if(SET.COL.contrastMethod){
-				SET.swContrastMethod();
-			}
-		}
-		if(isTablet){
-			SET.MAT.pointBase.visible = true;
-			SET.MAT.lineYang.visible = true;
-			SET.MAT.lineYin.visible = true;
-			MODELLO.MAT.materialVisceri.visible = true;
 		}
 	},
 

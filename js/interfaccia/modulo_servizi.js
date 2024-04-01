@@ -250,7 +250,7 @@ var SERVIZI = {
 		applicaLoading(document.getElementById("scheda_testo"));
 		applicaLoading(document.getElementById("elenchi_lista"));
 		localPouchDB.setItem(MD5("DB"+LOGIN._frv()+".servizi"), IMPORTER.COMPR(DB.servizi)).then(function(){ // salvo il DB
-			LOGIN.sincronizza(	'rimuoviLoading(document.getElementById("scheda_testo"));' +
+			SYNCRO.sincronizza(	'rimuoviLoading(document.getElementById("scheda_testo"));' +
 								'rimuoviLoading(document.getElementById("elenchi_lista"));' +
 								'SERVIZI.car_servizio('+Q_idServ+',true);' +
 								'if(smartMenu)SCHEDA.scaricaScheda(true);' +/* CHIUSURA DOPO SALVATAGGIO da SMART*/
@@ -274,7 +274,7 @@ var SERVIZI = {
 			endChangeDetection();
 			SCHEDA.formModificato = false;
 			localPouchDB.setItem(MD5("DB"+LOGIN._frv()+".servizi"), IMPORTER.COMPR(DB.servizi)).then(function(){ // salvo il DB
-				LOGIN.sincronizza();
+				SYNCRO.sincronizza();
 				SERVIZI.chiudiServizio(idServizio);
 				SERVIZI.caricaServizi();
 				SCHEDA.scaricaScheda();
@@ -467,7 +467,7 @@ var SERVIZI = {
 			applicaLoading(document.querySelector(".listaTrattamenti"));
 			applicaLoading(document.getElementById("scheda_testo"));
 			localPouchDB.setItem(MD5("DB"+LOGIN._frv()+".pazienti"), IMPORTER.COMPR(DB.pazienti)).then(function(){ // salvo il DB
-				LOGIN.sincronizza(	'rimuoviLoading(document.querySelector(".listaTrattamenti"));'+
+				SYNCRO.sincronizza(	'rimuoviLoading(document.querySelector(".listaTrattamenti"));'+
 									'rimuoviLoading(document.getElementById("scheda_testo"));'+
 									'SCHEDA.scaricaScheda();'+
 									'PAZIENTI.caricaTrattamenti();' );

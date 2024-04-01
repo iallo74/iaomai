@@ -7,6 +7,10 @@
 
 */
 
+// IMPORTAZIONI DI VERSIONE
+var verApp = '1.7'; // utilizzata per gli aggiornamenti dei files: FILES[]
+					// N.B. Cambia anche il numero in CONN.APIfolder
+
 // IMPOSTAZIONI DEL DEVICE
 var	smartphone = false,
 	smartMenu = false,
@@ -29,29 +33,7 @@ var	smartphone = false,
 	onlineVersion=false,
 	isTablet = false,
 	globals = {},
-	verApp = '1.6.1', // utilizzata per gli aggiornamenti dei files: FILES[]
-	dateEndFeatures = new Date("2024-01-01").getTime(),
-	
-	// IMPOSTAZIONI DI APP
-	tipoApp = ''; // per la demo
-	
-if(location.search){
-	let vDef='';
-	str=location.search.substr(1,location.search.length-1);
-	pQ=str.split("&");
-	if(pQ.length>1){
-		for(l=0;l<pQ.length;l++){
-			pV=pQ[l].split("=");
-			if(pV[0]=="app")vDef=pV[1];
-		}
-	}else{
-		pV=str.split("=");
-		if(pV[0]=="app")vDef=pV[1];
-	}
-	if(vDef){
-		tipoApp = vDef;
-	}
-}
+	dateEndFeatures = new Date("2024-01-01").getTime();
 
 /*const checkOnlineStatus = async () => {
 	try{
@@ -105,6 +87,7 @@ var IMPORTER = {
     	'css/pplhd.css',
 		
 		'js/connect/login.js',
+		'js/connect/syncro.js',
 		'js/inizio.js',
         
 		'js/utils/funzioni_generiche.js',
@@ -133,7 +116,10 @@ var IMPORTER = {
         'js/interfaccia/schede.js',
         'js/interfaccia/modulo_pazienti.js',
         'js/interfaccia/modulo_pazienti_trattamenti.js',
+        'js/interfaccia/modulo_pazienti_cicli.js',
+        'js/interfaccia/modulo_pazienti_liste.js',
         'js/interfaccia/modulo_pazienti_sets.js',
+        'js/interfaccia/modulo_pazienti_sets_gruppi.js',
         'js/interfaccia/modulo_pazienti_saldi.js',
         'js/interfaccia/modulo_pazienti_filtri.js',
         'js/interfaccia/modulo_fornitori.js',
@@ -161,7 +147,8 @@ var IMPORTER = {
         'js/addings.js'
 	],
 	jss: [],
-	produzione: true, // se settato a false carica solo i files locali (esclusi stores)
+	produzione: true,  	// se settato a false carica solo i files locali (esclusi stores)
+						// N.B. se Android, iOs e Electron produzione diventa true in automatico
 	lista: null,
 	funct: '',
 	dest: null,

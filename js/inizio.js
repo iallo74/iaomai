@@ -81,13 +81,22 @@ function INIT(){
 
 	// unisco i moduli
 	Object.assign(PAZIENTI, PAZIENTI_TRATTAMENTI);
+	Object.assign(PAZIENTI, PAZIENTI_CICLI);
 	Object.assign(PAZIENTI, PAZIENTI_SETS);
+	Object.assign(PAZIENTI, PAZIENTI_SETS_GRUPPI);
 	Object.assign(PAZIENTI, PAZIENTI_SALDI);
 	Object.assign(PAZIENTI, PAZIENTI_FILTRI);
+	Object.assign(PAZIENTI, PAZIENTI_LISTE);
+	
 	// svuoto la memoria
 	PAZIENTI_TRATTAMENTI = null;
+	PAZIENTI_CICLI = null;
+	PAZIENTI_SETS = null;
+	PAZIENTI_SETS_GRUPPI = null;
 	PAZIENTI_SALDI = null;
 	PAZIENTI_FILTRI = null;
+	PAZIENTI_LISTE = null;
+	
 	// elimino gli scripts
 	document.head.removeChild(document.getElementById("js_interfaccia_modulo_pazienti_trattamenti_js"));
 	document.head.removeChild(document.getElementById("js_interfaccia_modulo_pazienti_saldi_js"));

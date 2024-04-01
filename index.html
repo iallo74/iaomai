@@ -130,17 +130,16 @@
         <!-- CONTENITORE DI TUTTI I BOX DELLA UI -->
         <div id="interfaccia"
         	 onMouseOver="
-        
-       if(tipoApp == ''){
+      
         	overInterfaccia=true;
-			MODELLO.INTERSECTED=null;
-			try{ SET.INTERSECTED=null; }catch(err){}
+			try{ 
+                MODELLO.INTERSECTED=null;
+			    SET.INTERSECTED=null;
+            }catch(err){}
 			nasToolTip();
 			renderer.domElement.style.cursor='default';
-       }
-       /*try{SET.scoloraMeridiani();}catch(err){};*/
         
-        " onMouseOut="if(!touchable){overInterfaccia=false;}">
+        " onMouseOut="if(!touchable){ overInterfaccia=false; };">
         	
             <!-- MENU CONTESTUALE (per l'anatomia) -->
 			<div id="context_menu" onMouseDown="raycastDisable=true;"></div>
@@ -376,7 +375,7 @@
                 <div id="toolsBackups">
                 	<div id="creaBackup_btn" onClick="BACKUPS.creaBackup();">{{TXT_CreaBackup}}</div>
                 	<span></span>
-                    <div id="creaDownload_btn" onClick="LOGIN.globalSync('locale');">{{TXT_DownloadDati}}</div>
+                    <div id="creaDownload_btn" onClick="SYNCRO.globalSync('locale');">{{TXT_DownloadDati}}</div>
                 	<span></span>
                     <div id="debug_btn" onClick="incrDebug();">{ }</div>
                 </div>

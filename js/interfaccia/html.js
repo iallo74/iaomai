@@ -676,7 +676,7 @@ var H = {
 							localPouchDB.setItem(MD5("DB"+LOGIN._frv()+".pazienti"), IMPORTER.COMPR(DB.pazienti)),
 							localPouchDB.setItem(MD5("DB"+LOGIN._frv()+".fornitori"), IMPORTER.COMPR(DB.fornitori))
 						]).then(function(){
-							LOGIN.sincronizza(	'rimuoviLoading(document.getElementById("scheda_testo"));' +
+							SYNCRO.sincronizza(	'rimuoviLoading(document.getElementById("scheda_testo"));' +
 												'rimuoviLoading(document.getElementById("elenchi_lista"));' );
 						});
 					}
