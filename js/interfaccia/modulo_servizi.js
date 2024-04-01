@@ -37,15 +37,8 @@ var SERVIZI = {
 					HTML +=
 					'	<div class="base"' +
 					'		 id="servizio_'+SR.p+'"' +
-					'		 onClick="SERVIZI.car_servizio('+SR.p+');">';
-					
-					// verifico se è stato modificato e non sincronizzato
-					let mdT=false;
-					if(SR.DataModifica > DB.servizi.lastSync)mdT=true;
-					
-					if(mdT)HTML += H.imgSyncro();
-					HTML += htmlEntities(SR.NomeServizio);
-					HTML +=
+					'		 onClick="SERVIZI.car_servizio('+SR.p+');">' +
+					htmlEntities(SR.NomeServizio) +
 					'	</div>';
 				}
 			}
@@ -127,25 +120,25 @@ var SERVIZI = {
 			HTML += '<form id="formMod"' +
 					'	   name="formMod"' +
 					'	   method="post"' +
-					'	   onSubmit="return false;">';
+					'	   onSubmit="return false;">' +
 					
-			// Campi hascosti
-			HTML += H.r({	t: "h", name: "stessa",	value: "1" });
-			HTML += H.r({	t: "h", name: "idServizio",	value: idServizio*1 });
+					// Campi nascosti
+					H.r({	t: "h", name: "stessa",	value: "1" }) +
+					H.r({	t: "h", name: "idServizio",	value: idServizio*1 }) +
 			
 			
 			
-			// Campi
-			HTML += H.r({	t: "r", name: "NomeServizio",	value: NomeServizio,	labelOut: true, ver: "1|0" });
+					// Campi
+					H.r({	t: "r", name: "NomeServizio",	value: NomeServizio,	labelOut: true, ver: "1|0" }) +
 					
-			HTML += H.r({	t: "t", 
+					H.r({	t: "t", 
 							name: "DescrizioneServizio",
 							value: DescrizioneServizio,
 							noLabel: true,
 							label: TXT("DescrizioneServizio"),
-							classCampo: 'okPlaceHolder' });
+							classCampo: 'okPlaceHolder' }) +
 							
-			HTML += H.r({	t: "r",	
+					H.r({	t: "r",	
 								name: "CostoServizio",	
 								value: (CostoServizio) ? ArrotondaEuro(CostoServizio) : '',
 								ver: '1|0|num',
@@ -153,9 +146,9 @@ var SERVIZI = {
 								keyupCampo: "H.keyPrezzo(this);",
 								classCampo: 'CostoTrattDx prezzi',
 								classRiga: "labelSx",
-								styleRiga: "text-align:right;" });
+								styleRiga: "text-align:right;" }) +
 							
-			HTML += H.r({	t: "r",	
+					H.r({	t: "r",	
 								name: "NumeroSedute",	
 								value: NumeroSedute,
 								ver: '1|2|int',
@@ -164,7 +157,15 @@ var SERVIZI = {
 								maxChars: 2,
 								classCampo: 'CostoTrattDx prezzi numSedute',
 								classRiga: "labelSx",
-								styleRiga: "text-align:right;" });
+								styleRiga: "text-align:right;" }) +
+								
+					SCHEDA.pulsantiForm(
+									Q_idServ>-1 ? "SERVIZI.el_servizio("+Q_idServ+");":"",
+									"SCHEDA.scaricaScheda();", 
+									"SERVIZI.mod_servizio("+Q_idServ+");" ) +
+			
+					'</form>';
+			
 			
 			
 			let azElimina = Q_idServ>-1 ? "SERVIZI.el_servizio("+Q_idServ+");" : "",
@@ -175,14 +176,6 @@ var SERVIZI = {
 			btnAdd += 	'<div class="p_paz_ref_menu" onClick="REF.open(\'archives.services\')">' +
 							TXT("ReferenceGuide") +
 						'</div>';
-								
-			HTML += SCHEDA.pulsantiForm(
-									Q_idServ>-1 ? "SERVIZI.el_servizio("+Q_idServ+");":"",
-									"SCHEDA.scaricaScheda();", 
-									"SERVIZI.mod_servizio("+Q_idServ+");" );
-			
-			HTML += '</form>';
-			
 			
 			let titoloDef=TXT("ModificaServizio");
 			if(Q_idServ==-1)titoloDef=TXT("CreaServizio");
@@ -223,7 +216,6 @@ var SERVIZI = {
 		let DataModifica = DB.servizi.lastSync+1;
 		if(document.formMod.idServizio.value*1>-1)DataCreazione=DataModifica;
 		else DataCreazione = DB.servizi.data[Q_idServ].DataCreazione;
-		/* let d=new Date(); */
 		
 		JSNPUSH={ 	"idServizio": document.formMod.idServizio.value*1,
 					"NomeServizio": document.formMod.NomeServizio.value,

@@ -42,7 +42,6 @@ var PAZIENTI_TRATTAMENTI = { // extend PAZIENTI
 				UltimaModifica: 99999999999,
 				p: -1
 			});
-			/* let n=0; */
 			let o=0,
 				cartOpened = false;
 			for(let i in cloneTRATTAMENTI){
@@ -104,9 +103,11 @@ var PAZIENTI_TRATTAMENTI = { // extend PAZIENTI
 					if(typeof(PAZIENTI.aperture[NomeCiclo]) != 'undefined' && PAZIENTI.aperture[NomeCiclo])cartOpened = true;
 					
 					let HTMLProvv = '',
-						elAn=-1,
-						dataAn=DataAn=DataMod=DataModAn=CostoAn='',
-						presente=mdT=false,
+						elAn = -1,
+						DataAn = '',
+						DataMod = '',
+						DataModAn = '',
+						presente = false,
 						pr=0;
 					cloneTRATTAMENTI.sort(sort_by("TipoTrattamento", false));
 					
@@ -152,11 +153,6 @@ var PAZIENTI_TRATTAMENTI = { // extend PAZIENTI
 															' onMouseOut="PAZIENTI.desPallStat('+Data+');"';
 								HTMLProvv += ' onClick="PAZIENTI.car_trattamento('+cloneTRATTAMENTI[p].p+',this,\'\',false,'+elAn+');">'; // trattamento
 								
-								if(cloneTRATTAMENTI[p].DataModifica>DB.pazienti.lastSync){
-									mdT=true;
-									HTMLProvv += H.imgSyncro();
-								}
-								
 								HTMLProvv+= data +
 											' <span style="color:rgba(255,255,255,0.5);">-</span> ';
 								if(cloneTRATTAMENTI[p].TitoloTrattamento)HTMLProvv += htmlEntities(cloneTRATTAMENTI[p].TitoloTrattamento);
@@ -198,11 +194,9 @@ var PAZIENTI_TRATTAMENTI = { // extend PAZIENTI
 					HTML +=	'<img src="img/cartellaClinicaG.png"' +
 							'     style="width:32px;' +
 							'     		 margin:-10px;' +
-							'     		 margin-right: 5px;">';
-					
-					if(DataModAn>DB.pazienti.lastSync || mdT)HTML += H.imgSyncro();
-					
-					HTML+='<b class="nomeCiclo">'+htmlEntities(NomeCiclo)+'</b>';
+							'     		 margin-right: 5px;">' +
+							'<b class="nomeCiclo">'+htmlEntities(NomeCiclo)+'</b>';
+
 					NC = NomeCiclo;	
 					
 					HTML+='</span><div class="trattElenco" id="ciclo_'+c+'"';
@@ -272,8 +266,6 @@ var PAZIENTI_TRATTAMENTI = { // extend PAZIENTI
 				try{
 					SCHEDA.btnSel = document.getElementById(SCHEDA.btnSel.id);
 					SCHEDA.btnSel.classList.add("elencoSel");
-					//SCHEDA.scaricaScheda(true); // CHIUDE LA SCHEDA DOPO IL SALVATAGGIO
-					//SCHEDA.btnSel.click(); // riapre il trattamento dopo il salvataggio
 					if(typeof(Q_resta) == 'number' && Q_resta>-1)setTimeout(function(){ SCHEDA.msgSalvataggio(); }, 200 );
 				}catch(err){}
 			}
@@ -283,8 +275,6 @@ var PAZIENTI_TRATTAMENTI = { // extend PAZIENTI
 		if(DRAGGER.moved)return;
 		if(typeof(Q_idTratt)=='undefined')Q_idTratt=-1;
 		if(typeof(LabelCiclo)=='undefined')LabelCiclo='';
-		//if(typeof(an)=='undefined')an=false;
-		//if(typeof(trasforma)=='undefined')trasforma=false;
 
 		// verifico le autorizzazioni
 		if(Q_idTratt==-1 && !LabelCiclo){ // solo se è anamnesi
@@ -718,7 +708,7 @@ var PAZIENTI_TRATTAMENTI = { // extend PAZIENTI
 					// POPUP di caricamento punti e meridiani
 					'<div id="gruppoPunti_cont"></div>' +
 			
-			// PUNTI MTC
+					// PUNTI MTC
 					'<div id="tratt_cont_punti"' +
 					'	  class="sezioneTrattamenti divEspansa '+ 
 						((localStorage.getItem("op_punti")) ? '' : 'sezioneChiusa') +
@@ -736,7 +726,7 @@ var PAZIENTI_TRATTAMENTI = { // extend PAZIENTI
 					'		 class="noPrint"></div>' +
 					'</div>' +
 			
-			// PUNTI NAMIKOSHI
+					// PUNTI NAMIKOSHI
 					'<div id="tratt_cont_namikoshi"' +
 					'	  class="sezioneTrattamenti divEspansa '+ 
 						((localStorage.getItem("op_namikoshi")) ? '' : 'sezioneChiusa') +
@@ -754,7 +744,7 @@ var PAZIENTI_TRATTAMENTI = { // extend PAZIENTI
 					'		 class="noPrint"></div>' +
 					'</div>' +
 			
-			// MERIDIANI
+					// MERIDIANI
 					'<div id="tratt_cont_meridiani"' +
 					'	  class="sezioneTrattamenti divEspansa '+ 
 						((localStorage.getItem("op_meridiani")) ? '' : 'sezioneChiusa') +
@@ -772,7 +762,7 @@ var PAZIENTI_TRATTAMENTI = { // extend PAZIENTI
 					'		 class="noPrint"></div>' +
 					'</div>' +
 			
-			// AURICULO
+					// AURICULO
 					'<div id="tratt_cont_auriculo"' +
 					'	  class="sezioneTrattamenti divEspansa '+ 
 						((localStorage.getItem("op_auriculo")) ? '' : 'sezioneChiusa') +
@@ -790,7 +780,7 @@ var PAZIENTI_TRATTAMENTI = { // extend PAZIENTI
 					'		 class="noPrint"></div>' +
 					'</div>' +
 			
-			// REFLEX
+					// REFLEX
 					'<div id="tratt_cont_reflex"' +
 					'	  class="sezioneTrattamenti divEspansa '+ 
 						((localStorage.getItem("op_reflex")) ? '' : 'sezioneChiusa') +
@@ -808,7 +798,7 @@ var PAZIENTI_TRATTAMENTI = { // extend PAZIENTI
 					'		 class="noPrint"></div>' +
 					'</div>' +
 			
-			// GALLERY
+					// GALLERY
 					'<div id="tratt_cont_gallery"' +
 					'	  class="sezioneTrattamenti divEspansa '+ 
 						((localStorage.getItem("op_gallery")) ? '' : 'sezioneChiusa') +
@@ -887,12 +877,10 @@ var PAZIENTI_TRATTAMENTI = { // extend PAZIENTI
 				if(TipoTrattamento!='A')document.formMod.TitoloTrattamento.focus();
 				else document.formMod.LabelCiclo.focus();
 			}
-			//H.verData();
 			
 			if(TipoTrattamento=='A' || !LabelCiclo)PAZIENTI.popolaSintomi();
 			PAZIENTI.caricaDettagliSet(); // carico le schede dei singoli sets
 			PAZIENTI.caricaSintomi();
-			//PH.caricaGallery( Q_idTratt );
 			PH.caricaGallery();
 			PAZIENTI.trattOp = true;
 			initChangeDetection( "formMod" );
@@ -1152,7 +1140,6 @@ var PAZIENTI_TRATTAMENTI = { // extend PAZIENTI
 			if(TipoTrattamento=='A'){ // verifico non ci sia già LabelCiclo
 				LabelCiclo_C=document.formMod.LabelCiclo_C.value;
 				let presente=false;
-				/* let vercopia=true; */
 				for(let i in DB.pazienti.data[PAZIENTI.idCL].trattamenti){
 					let TR = DB.pazienti.data[PAZIENTI.idCL].trattamenti[i];
 					if(	TR.Cancellato==0 && TR.LabelCiclo==LabelCiclo && (
@@ -1200,7 +1187,6 @@ var PAZIENTI_TRATTAMENTI = { // extend PAZIENTI
 			
 
 			// salvo le immagini
-			//let f = 0;
 			let GA = PH.galleryProvvisoria;
 			for(let i in GA){
 				GA[i].Dida = document.getElementById("Dida"+i).value;
@@ -1367,9 +1353,9 @@ var PAZIENTI_TRATTAMENTI = { // extend PAZIENTI
 				LabelCiclo = t.LabelCiclo;
 				
 			}
-				while(!el.classList.contains("trattElenco"))el = el.parentElement;
-				let pE = el.id.split("_");
-				idCiclo = pE[1]*1;
+			while(!el.classList.contains("trattElenco"))el = el.parentElement;
+			let pE = el.id.split("_");
+			idCiclo = pE[1]*1;
 			
 			PAZIENTI.car_trattamento( d,btn,LabelCiclo,true,idCiclo);
 			SCHEDA.getCartella(document.getElementById('ciclo_'+idCiclo)).classList.add("cartellaAperta");

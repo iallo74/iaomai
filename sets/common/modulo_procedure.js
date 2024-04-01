@@ -58,10 +58,8 @@ var MODULO_PROCEDURE = { // extend SET
 				HTML += '" onClick="SET.car_procedura('+PR.p;
 				if(!Q_tue)HTML += ',false,true';
 				else HTML += ',false,false';
-				HTML += ',this);">';
-				
-				if(PR.DataModifica>DB.procedure.lastSync)HTML += H.imgSyncro();
-				HTML+=htmlEntities(PR.NomeProcedura);
+				HTML += ',this);">' +
+						htmlEntities(PR.NomeProcedura);
 				
 				let DataCreazione = getDataTS(PR.DataCreazione);
 				if(!Q_tue)HTML += '<br><span>'+PR.Pseudonimo+' ('+DataCreazione+')</span>';
@@ -85,7 +83,6 @@ var MODULO_PROCEDURE = { // extend SET
 				'	   onclick="SET.mod_procedura();"' +
 				'	   id="addProcedura"' +
 				'	   title="'+TXT("AggiungiProcedura")+'">' +
-				/*'		<span>'+TXT("AggiungiProcedura")+'</span>' +*/
 				'	</i>' +
 				'</p>' + HTML;
 		
@@ -126,7 +123,6 @@ var MODULO_PROCEDURE = { // extend SET
 				Autore = '', // solo community
 				NomeProcedura = '',
 				dettagliProcedura = [],
-			//	commentiProcedura = [],
 				DataCreazione = 0,
 				DataModifica = 0,
 				Preferito = 0, // solo community
@@ -177,7 +173,6 @@ var MODULO_PROCEDURE = { // extend SET
 					'	<div class="p_sch_label2">' +
 					'	<span class="commAvatar';
 			let dt = new Date().getTime();
-			//if(CONN.getConn() && idUtenteProcedura)HTML += '" style="background-image:url(' + CONN.APIfolder+'getAvatarMini.php?idU='+idUtenteProcedura+'&t='+dt+');';
 			if(CONN.getConn())HTML += '" style="background-image:url(' + CONN.APIfolder+'getAvatarMini.php?idU='+idUtenteProcedura+'&t='+dt+');';
 			else HTML += ' commNoAvatar"';
 			HTML +=	'"></span>' +
@@ -291,11 +286,9 @@ var MODULO_PROCEDURE = { // extend SET
 								'</span>';
 					}
 					if(TipoDettaglio=='A' && siglaPunto){
-						//let NomePunto = DB.set.punti[siglaPunto].NomePunto;
 						HTML += '[.'+siglaPunto+'.]';
 					}
 					if(TipoDettaglio=='R' && siglaPunto){
-						//let NomePunto = DB.set.punti[siglaPunto].NomePunto;
 						HTML += '[.'+siglaPunto+'.]';
 					}
 					if(mezzo)HTML += '<img src="img/mezzo_'+mezzo+'.png" class="noMod" style="vertical-align: middle;margin-top: -3px;margin-left: 5px;">';
@@ -409,7 +402,6 @@ var MODULO_PROCEDURE = { // extend SET
 		let Q_pref=0;
 		if(el.classList.contains("p_sch_pref"))Q_pref=1;
 		
-		//retNoFree();
 		CONN.retNoConn();
 	
 		let JSNPOST={	"idLinguaRic": document.formRicProc.idLinguaRic.value*1,
@@ -444,9 +436,10 @@ var MODULO_PROCEDURE = { // extend SET
 	confermaSwPref: function( txt ){
 		if(txt.substr(0,3)=='404')ALERT(TXT("ProcedureErrore"));
 	},
-	mod_procedura: function( Q_idProc, Q_pre ){ // scheda di modifica della procedura
+	mod_procedura: function( Q_idProc ){ // scheda di modifica della procedura
 		if(typeof(Q_idProc)=='undefined')Q_idProc=-1;
 		if(Q_idProc.toString()=='')Q_idProc=-1;
+		
 		// verifico le autorizzazioni
 		let maxProcedure = SET.maxProcedureFree;
 		if(LOGIN.reg() && LOGIN.logedin()){
@@ -472,9 +465,9 @@ var MODULO_PROCEDURE = { // extend SET
 						arguments ).then(function(pass){if(pass){
 						let v = getParamNames(CONFIRM.args.callee.toString());
 						for(let i in v)eval(getArguments(v,i));
-			if(typeof(Q_idProc)=='undefined')Q_idProc=-1;
-			if(Q_idProc.toString()=='')Q_idProc=-1;
-			if(typeof(Q_pre)=='undefined')Q_pre=0; // <<<< FORSE DA TOGLIERE
+		
+			if(typeof(Q_idProc)=='undefined')Q_idProc = -1;
+			if(Q_idProc.toString()=='')Q_idProc = -1;
 			
 			MENU.nasMM();
 			
@@ -503,7 +496,6 @@ var MODULO_PROCEDURE = { // extend SET
 			
 			let HTML = '';
 			// intestazione se la procedura è dell'utente
-			//if(frv)HTML+=box_frv3;
 			HTML += '<form id="formMod" name="formMod" method="post" onSubmit="return SET.verFormProc();"><div>';
 			
 			// Lingua della procedura
@@ -599,7 +591,6 @@ var MODULO_PROCEDURE = { // extend SET
 					(!disabledM?'				 onClick="PAZIENTI.gruppoPunti(\'M\');"':'') +
 					'>' +
 									htmlEntities(TXT("AggiungiMeridiano")) +
-									/*SET.elencoMeridiani(TXT("AggiungiMeridiano")) +*/
 					'			</div>';
 			}else{
 				
@@ -624,7 +615,6 @@ var MODULO_PROCEDURE = { // extend SET
 					'	</div>';
 			if(!globals.set.siglaProc)HTML +=	
 					'	<div id="gruppoPunti_cont">' +
-							/*PAZIENTI.gruppoPunti() +*/
 					'	</div>';
 			
 			// GALLERY
@@ -785,8 +775,6 @@ var MODULO_PROCEDURE = { // extend SET
 			if(SET.tipoProc=='Tue')addT=1;
 			else addT=0;
 			SET.tipoProc='';
-			/*applicaLoading(document.querySelector(".listaProcedure"));
-			applicaLoading(document.getElementById("scheda_testo"));*/
 			localPouchDB.setItem(MD5("DB"+LOGIN._frv()+".procedure"), IMPORTER.COMPR(DB.procedure)).then(function(){ // salvo il DB
 				SYNCRO.sincronizza(	'startAnimate();' +
 									'nasLoader();' +
@@ -967,9 +955,6 @@ var MODULO_PROCEDURE = { // extend SET
 					
 					disabledP = '';
 					disabledM = '';
-					
-						/* if(	!(	(globals.set.cartella=="meridiani_cinesi" && LOGIN.verAuth("meridiani_cinesi")) ||
-							(globals.set.cartella=="meridiani_shiatsu" && LOGIN.verAuth("meridiani_shiatsu") && (LOGIN.verModule("CIN") && localStorage.sistemaMeridiani=='' || LOGIN.verModule("NMK") && localStorage.sistemaMeridiani=='NMK')) ) )disabledP = ' disabled'; */
 					
 					if(TipoDettaglio=='P'){
 						if(	!(	globals.set.cartella=="meridiani_cinesi" && LOGIN.verAuth("meridiani_cinesi") ||
@@ -1276,10 +1261,6 @@ var MODULO_PROCEDURE = { // extend SET
 				let mer = document.getElementById("mr_"+n).value,
 					nPunto = document.getElementById("pt_"+n).value;
 				val = nPunto+"."+mer;
-				/*let sg = val.replace(/\./g,"-");
-				if(__(DB.set.meridiani[mer].punti[nPunto].siglaPunto)){
-					sg = __(DB.set.meridiani[mer].punti[nPunto].siglaPunto);
-				}*/
 				let sg = __(DB.set.meridiani[mer].punti[nPunto].siglaPunto,''),
 					mz = __(DP[2]);
 				if(SET.dettagliProvvisori[n].TipoDettaglio=='N'){

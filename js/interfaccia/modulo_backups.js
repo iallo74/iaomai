@@ -58,7 +58,6 @@ var BACKUPS = {
 		document.getElementById("contBackups").classList.add("dbBig");
 		document.getElementById("toolsBackups").style.display = 'none';
 		document.getElementById("titBackups").style.display = 'block';
-		//console.log(bkp)
 		
 		BACKUPS.bkpProvv = JSON.parse(bkp);
 		BACKUPS.bkpProvv.JSNPOST = JSON.parse(decodeURIComponent(window.atob( BACKUPS.bkpProvv.JSNPOST )));

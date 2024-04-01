@@ -54,7 +54,7 @@ var RICERCHE = {
 							if(partiNT[0].length == 1)partiNT[0]='0'+partiNT[0];
 							if(k=='NK')partiNT[0] = p;
 							R_parz += RICERCHE.wR({
-								az: "SET.azRicercaPunto('"+k+'.'+partiNT[0]+"');",//RICERCHE.nascondiGlobal(true);",
+								az: "SET.azRicercaPunto('"+k+'.'+partiNT[0]+"');",
 								cont: NT,
 								bull: '<font style="color:#FF0000;">&#8226;</font>' });
 							nRisParz++;
@@ -360,8 +360,6 @@ var RICERCHE = {
 					if(pAnat.indexOf(ELEM) >- 1)pass = false;
 					if(pass){
 						pAnat.push(ELEM);
-						//let tipo = ELEM.split("_")[0].toLowerCase();
-						//let Tipo = tipo.charAt(0).toUpperCase() + tipo.slice(1);
 						R_parz += RICERCHE.wR({ az: "MODELLO.azRicercaAnatomia('"+ELEM+"','"+tipo+"','"+ANATOMIA.children[c].children[p].name+"');",
 												cont: htmlEntities(stripslashes(TXT(tipoAnat+"_"+ELEM))),
 												class: "sel"+iconaTipo,

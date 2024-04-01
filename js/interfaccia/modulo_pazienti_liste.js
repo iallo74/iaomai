@@ -56,7 +56,6 @@ var PAZIENTI_LISTE = {
 			el = document.getElementById("paz_add"),
 			txt = el.value;
 		if(txt.trim()!=''){
-			/* let global = PAZIENTI.sintomiProvvisori; */
 			let pass = txt.trim()=='' ? false : true,
 				oldValue = '';
 			if(el.parentElement.getElementsByTagName("div")[0].dataset.oldName){ // verifico se è in modifica con oldValue
@@ -321,7 +320,6 @@ var PAZIENTI_LISTE = {
 						'			 width="22"' +
 						'			 height="22"' +
 						'			 style="margin-right: -5px;' +
-						/* '		  		    margin-top: -2px;' + */
 						'		  		    cursor: pointer;"' +
 						'			 align="absmiddle"' +
 						'			 onClick="PAZIENTI.modificaTag(this);"' +
@@ -354,7 +352,6 @@ var PAZIENTI_LISTE = {
 	aggiungiTag: function( el ){ // aggiunge un tag al paziente
 		let txt = document.getElementById("tag_add").value,
 			colore = document.getElementById("tag_col").dataset.colore,
-			globalTags = PAZIENTI.getTags(),
 			pass = txt.trim()=='' ? false : true,
 			oldValue = oldColor = '';
 		if(el.parentElement.getElementsByTagName("input")[0].dataset.oldValue){ // verifico se è in modifica con oldValue
@@ -688,7 +685,6 @@ var PAZIENTI_LISTE = {
 					let DataModifica = DB.pazienti.lastSync+1,
 						modificato = false,
 						PZ = DB.pazienti.data;
-					/* obj = PAZIENTI.defElemento( tipo ); */
 					for(let p in PZ){
 						let elenco = toJson(PZ[p][tipo]),
 							pzMod = false;

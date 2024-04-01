@@ -62,20 +62,19 @@ var PAZIENTI_CICLI = { // extend PAZIENTI
 					Data=TimeTrattamento;
 					if(!TimeTrattamento)TimeTrattamento=new Date()/1000;
 					
-					TimeTrattamento=new Date(TimeTrattamento*1);
+					TimeTrattamento = new Date(TimeTrattamento*1);
 					// DATA
-					let data='';
-					if(n)data+='<b style="color: #eaa21d;font-size:inherit;">'+n+')</b> ';
+					let data = '';
+					if(n)data += '<b style="color: #eaa21d;font-size:inherit;">'+n+')</b> ';
 					
 					giorno=TimeTrattamento.getDate();
 					mese=TimeTrattamento.getMonth()+1;
 					anno=TimeTrattamento.getFullYear();
-					if(Data)data+=getFullDataTS(Data);
-					else data+='-';
+					if(Data)data += getFullDataTS(Data);
+					else data += '-';
 					
-					if(i>0)HTML+='<hr>';
-					let TXT_P,
-						XT_M;
+					if(i>0)HTML += '<hr>';
+					let TXT_P;
 					if(TipoTrattamento!='A'){
 						HTML+='<h3>'+data+'</h3><p class="labelCicli"><i>'+htmlEntities(TitoloTrattamento)+'</i></p>';
 						HTML+='<p>'+htmlEntities(TestoTrattamento).replace(/\n/g, '<br>')+'</p>';
@@ -106,88 +105,88 @@ var PAZIENTI_CICLI = { // extend PAZIENTI
 						}
 					}
 					if(puntiMTC.length){
-						HTML+='<div class="app_report_sch"> ';
-						HTML+='<br><i>'+TXT_P+':</i> ';
-						HTML+='<div id="puntiCiclo">';
+						HTML += '<div class="app_report_sch"> ' +
+								'<br><i>'+TXT_P+':</i> ' +
+								'<div id="puntiCiclo">';
 						for(let p in puntiMTC){
-							nPunto=puntiMTC[p].n;
-							siglaMeridiano=puntiMTC[p].m;
-							valutazione=__(puntiMTC[p].e);
-							mezzo=__(puntiMTC[p].z);
-							descrizione=__(puntiMTC[p].t);
-							siglaPunto=__(puntiMTC[p].s);
+							nPunto = puntiMTC[p].n;
+							siglaMeridiano = puntiMTC[p].m;
+							valutazione = __(puntiMTC[p].e);
+							mezzo = __(puntiMTC[p].z);
+							descrizione = __(puntiMTC[p].t);
+							siglaPunto = __(puntiMTC[p].s);
 							if(!siglaPunto)siglaPunto = nPunto+'.'+siglaMeridiano;
 							
-							HTML += '<span class="tsb"><img src="img/mezzo_'+mezzo+'.png" class="noMod" style="vertical-align: middle;margin-top: -2px;margin-right: -2px;"> ';
-							HTML += '<b>'+siglaPunto+'</b>';
+							HTML += '<span class="tsb"><img src="img/mezzo_'+mezzo+'.png" class="noMod" style="vertical-align: middle;margin-top: -2px;margin-right: -2px;"> ' +
+									'<b>'+siglaPunto+'</b>';
 							if(valutazione)HTML += '<img src="img/ico_PV'+valutazione+'.png" class="noMod" style="vertical-align: middle;margin-top: -3px;">';
 							if(descrizione)HTML += ' <span style="font-style:italic;">'+htmlEntities(descrizione)+'</span>';
 							HTML += '</span> '+H.chr10;
 						}
-						HTML+='</div>';
-						HTML+='</div>';
+						HTML +=	'</div>' +
+								'</div>';
 					}
 					if(puntiNamikoshi.length){
-						HTML+='<div class="app_report_sch"> ';
-						HTML+='<br><i>'+TXT("PuntiNamikoshi")+':</i> ';
-						HTML+='<div id="puntiCiclo">';
+						HTML += '<div class="app_report_sch"> ' +
+								'<br><i>'+TXT("PuntiNamikoshi")+':</i> ' +
+								'<div id="puntiCiclo">';
 						for(let p in puntiNamikoshi){
 							nomePunto=puntiNamikoshi[p].s;
 							valutazione=__(puntiNamikoshi[p].e);
 							mezzo=__(puntiNamikoshi[p].z);
 							descrizione=__(puntiNamikoshi[p].t);
 							
-							HTML += '<span class="tsb"><img src="img/mezzo_'+mezzo+'.png" class="noMod" style="vertical-align: middle;margin-top: -2px;margin-right: -2px;"> ';
-							HTML += '<b>'+nomePunto+'</b>';
+							HTML += '<span class="tsb"><img src="img/mezzo_'+mezzo+'.png" class="noMod" style="vertical-align: middle;margin-top: -2px;margin-right: -2px;"> ' +
+									'<b>'+nomePunto+'</b>';
 							if(valutazione)HTML += '<img src="img/ico_PV'+valutazione+'.png" class="noMod" style="vertical-align: middle;margin-top: -3px;">';
 							if(descrizione)HTML += ' <span style="font-style:italic;">'+htmlEntities(descrizione)+'</span>';
 							HTML += '</span> '+H.chr10;
 						}
-						HTML+='</div>';
-						HTML+='</div>';
+						HTML += '</div>' +
+								'</div>';
 					}
 					if(puntiAuricolari.length){
-						HTML+='<div class="app_report_sch"> ';
-						HTML+='<br><i>'+TXT_P+':</i> ';
-						HTML+='<div id="puntiCiclo">';
+						HTML += '<div class="app_report_sch"> ' +
+								'<br><i>'+TXT_P+':</i> ' +
+								'<div id="puntiCiclo">';
 						for(let p in puntiAuricolari){
 							nomePunto=puntiAuricolari[p].n;
 							valutazione=__(puntiAuricolari[p].e);
 							mezzo=__(puntiAuricolari[p].z);
 							descrizione=__(puntiAuricolari[p].t);
 							
-							HTML += '<span class="tsb"><img src="img/mezzo_'+mezzo+'.png" class="noMod" style="vertical-align: middle;margin-top: -2px;margin-right: -2px;"> ';
-							HTML += '<b>'+nomePunto+'</b>';
+							HTML += '<span class="tsb"><img src="img/mezzo_'+mezzo+'.png" class="noMod" style="vertical-align: middle;margin-top: -2px;margin-right: -2px;"> ' +
+									'<b>'+nomePunto+'</b>';
 							if(valutazione)HTML += '<img src="img/ico_PV'+valutazione+'.png" class="noMod" style="vertical-align: middle;margin-top: -3px;">';
 							if(descrizione)HTML += ' <span style="font-style:italic;">'+htmlEntities(descrizione)+'</span>';
 							HTML += '</span> '+H.chr10;
 						}
-						HTML+='</div>';
-						HTML+='</div>';
+						HTML += '</div>' +
+								'</div>';
 					}
 					if(puntiPlantari.length){
-						HTML+='<div class="app_report_sch"> ';
-						HTML+='<br><i>'+TXT_P+':</i> ';
-						HTML+='<div id="puntiCiclo">';
+						HTML += '<div class="app_report_sch"> ' +
+								'<br><i>'+TXT_P+':</i> ' +
+								'<div id="puntiCiclo">';
 						for(let p in puntiPlantari){
 							nomePunto=puntiPlantari[p].n;
 							valutazione=__(puntiPlantari[p].e);
 							mezzo=__(puntiPlantari[p].z);
 							descrizione=__(puntiPlantari[p].t);
 							
-							HTML += '<span class="tsb"><img src="img/mezzo_'+mezzo+'.png" class="noMod" style="vertical-align: middle;margin-top: -2px;margin-right: -2px;"> ';
-							HTML += '<b>'+nomePunto+'</b>';
+							HTML += '<span class="tsb"><img src="img/mezzo_'+mezzo+'.png" class="noMod" style="vertical-align: middle;margin-top: -2px;margin-right: -2px;"> ' +
+									'<b>'+nomePunto+'</b>';
 							if(valutazione)HTML += '<img src="img/ico_PV'+valutazione+'.png" class="noMod" style="vertical-align: middle;margin-top: -3px;">';
 							if(descrizione)HTML += ' <span style="font-style:italic;">'+htmlEntities(descrizione)+'</span>';
 							HTML += '</span> '+H.chr10;
 						}
-						HTML+='</div>';
-						HTML+='</div>';
+						HTML += '</div>' +
+								'</div>';
 					}
 					if(meridiani.length){
-						HTML+='<div class="app_report_sch"> ';
-						HTML+='<br><i>'+TXT_M+':</i> ';
-						HTML+='<div id="meridianiCiclo">';
+						HTML += '<div class="app_report_sch"> ' +
+								'<br><i>'+TXT_M+':</i> ' +
+								'<div id="meridianiCiclo">';
 						for(let m in meridiani){
 							NomeMeridiano=meridiani[m].NomeMeridiano;
 							siglaMeridiano=meridiani[m].siglaMeridiano;
@@ -200,8 +199,8 @@ var PAZIENTI_CICLI = { // extend PAZIENTI
 							if(descrizione)HTML += ' '+descrizione;
 							HTML += '</span>'+H.chr10;
 						}
-						HTML+='</div>';
-						HTML+='</div>';
+						HTML += '</div>' +
+								'</div>';
 					}
 				}
 			}

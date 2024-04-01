@@ -21,9 +21,8 @@ var PAZIENTI_SALDI = { // extend PAZIENTI
 					if(!SA.Cancellato){
 						HTML += '<div class="base"' +
 								'	  id="btn_saldo_'+SA.p+'"' +
-								'	  onClick="PAZIENTI.car_saldo(\''+SA.p+'\',this);">';
-						if(SA.DataModifica*1>DB.pazienti.lastSync)HTML += H.imgSyncro();
-						HTML += getDataTS(SA.DataSaldo)+' - '+getValuta()+' '+ArrotondaEuro(SA.ValoreSaldo) +
+								'	  onClick="PAZIENTI.car_saldo(\''+SA.p+'\',this);">' +
+								getDataTS(SA.DataSaldo)+' - '+getValuta()+' '+ArrotondaEuro(SA.ValoreSaldo) +
 								'</div>';
 						vuoto=false;
 						Saldato+=SA.ValoreSaldo;
@@ -120,10 +119,11 @@ var PAZIENTI_SALDI = { // extend PAZIENTI
 			let HTML='';
 			if(typeof(DB.login.data.Intestazione)=='undefined')DB.login.data.Intestazione='';
 			Intestazione = htmlEntities(DB.login.data.Intestazione);
-			while(Intestazione.indexOf(H.chr10)>-1)Intestazione = Intestazione.replace(H.chr10,'<br>');
-			IntestazioneCliente = PZ.Nome+" "+PZ.Cognome+'<br>'+PZ.Indirizzo+'<br>'+PZ.CAP+' '+PZ.Citta;
+			IntestazioneCliente = PZ.Nome+" "+PZ.Cognome+H.chr10+PZ.Indirizzo+H.chr10+PZ.CAP+' '+PZ.Citta;
 			if(PZ.Provincia)IntestazioneCliente += ' ('+PZ.Provincia+')';
-			IntestazioneCliente += '<br>';
+			IntestazioneCliente += H.chr10;
+			IntestazioneCliente = htmlEntities(IntestazioneCliente);
+			while(IntestazioneCliente.indexOf(H.chr10)>-1)IntestazioneCliente = IntestazioneCliente.replace(H.chr10,'<br>');
 			
 			
 			HTML += '<form id="formMod"' +
@@ -144,42 +144,41 @@ var PAZIENTI_SALDI = { // extend PAZIENTI
 					'				</div>';
 			HTML += '			</div>' +
 					'		</div>' +
-					'		<div class="schDx">';
+					'		<div class="schDx">' +
+
 					// Campi nascosti
-					
-			HTML += H.r({	t: "h", name: "stessa",		value: '1' 					});
-			HTML += H.r({	t: "h", name: "idSaldo",	value: (idSaldo*1) 			});
-			HTML += H.r({	t: "h", name: "idSL",		value: Q_idSaldo 			});
-			HTML += H.r({	t: "h", name: "md5",		value: PAZIENTI.pazSelMD5 	});
+					H.r({	t: "h", name: "stessa",		value: '1' 					}) +
+					H.r({	t: "h", name: "idSaldo",	value: (idSaldo*1) 			}) +
+					H.r({	t: "h", name: "idSL",		value: Q_idSaldo 			}) +
+					H.r({	t: "h", name: "md5",		value: PAZIENTI.pazSelMD5 	}) +
 			
-			HTML += H.r({	t: "d",
+					H.r({	t: "d",
 							name: "DataSaldo",
 							value: DataSaldo,
 							label: TXT("Data"),
-							idRiga: 'dataSaldo' });
+							idRiga: 'dataSaldo' }) +
 			
-			
-			HTML += H.r({	t: "r",
+					H.r({	t: "r",
 							name: "RicevutaSaldo",
 							value: RicevutaSaldo,
 							label: TXT("RicevutaNumero"),
 							classCampo: "RicTrattDx",
 							styleRiga: "text-align:right;",
-							classRiga: "div_saldi" });
+							classRiga: "div_saldi" }) +
 			
-			HTML += '		</div>';
+					'		</div>' +
 					
 			
-			HTML += H.r({	t: "t",
+					H.r({	t: "t",
 							name: "MotivoSaldo",
 							noLabel: true,
 							value: MotivoSaldo,
 							classCampo: "TitTrattDx",
 							styleRiga: "text-align:right;",
-							classRiga: "div_saldi" });
+							classRiga: "div_saldi" }) +
 			
 			
-			HTML += H.r({	t: "r",
+					H.r({	t: "r",
 							name: "ValoreSaldo",
 							value: (ValoreSaldo) ? ArrotondaEuro(ValoreSaldo) : '',
 							label: TXT("ValoreSaldo")+" "+getValuta(),
@@ -187,10 +186,17 @@ var PAZIENTI_SALDI = { // extend PAZIENTI
 							classCampo: "CostoTrattDx",
 							keyupCampo: "H.keyPrezzo(this);",
 							styleRiga: "text-align:right;",
-							classRiga: "div_saldi" });
+							classRiga: "div_saldi" }) +
 							
-			HTML += '		<span id="btn_stampa" class="stampaBtn noPrint" onclick="SCHEDA.stampaScheda({});">'+TXT("StampaRicevuta")+'</span>' +
-					'	</div>';
+					'		<span id="btn_stampa" class="stampaBtn noPrint" onclick="SCHEDA.stampaScheda({});">'+TXT("StampaRicevuta")+'</span>' +
+					'	</div>' +
+					
+					// pulsanti SALVA, ANNULLA e ELIMINA
+					SCHEDA.pulsantiForm( 	Q_idSaldo>-1 ? 'PAZIENTI.el_saldo('+Q_idSaldo+')':"",
+											"SCHEDA.scaricaScheda();", 
+											"if(H.verData(\'DataSaldo\',true))PAZIENTI.mod_saldo();" ) +
+			
+					'</form>';
 			
 			let azElimina = Q_idSaldo>-1 ? 'PAZIENTI.el_saldo('+Q_idSaldo+')' : "",
 				btnAdd = '';
@@ -200,12 +206,6 @@ var PAZIENTI_SALDI = { // extend PAZIENTI
 			btnAdd += 	'<div class="p_paz_ref_menu" onClick="REF.open(\'archives.patients.receipts\')">' +
 							TXT("ReferenceGuide") +
 						'</div>';
-			// pulsanti SALVA, ANNULLA e ELIMINA
-			HTML += SCHEDA.pulsantiForm( 	Q_idSaldo>-1 ? 'PAZIENTI.el_saldo('+Q_idSaldo+')':"",
-											"SCHEDA.scaricaScheda();", 
-											"if(H.verData(\'DataSaldo\',true))PAZIENTI.mod_saldo();" );
-			
-			HTML += '</form>';
 			
 			if(Q_idSaldo>-1)titoloDef=TXT("RicevutaSaldo");
 			else titoloDef=TXT("InserisciSaldo");

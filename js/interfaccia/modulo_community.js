@@ -8,7 +8,6 @@ var COMMUNITY = {
 		}else return true;
 	},
 	attiva: function(){ // attiva le preferenze della community
-		//retNoFree();
 		CONN.retNoConn();
 		regMod=PSD='';
 		if(document.formCommunity.okRegComm){

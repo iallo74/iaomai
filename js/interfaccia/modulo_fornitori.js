@@ -38,15 +38,8 @@ var FORNITORI = {
 					HTML +=
 					'	<div class="base"' +
 					'		 id="fornitore_'+FR.p+'"' +
-					'		 onClick="FORNITORI.car_fornitore('+FR.p+');">';
-					
-					// verifico se è stato modificato e non sincronizzato
-					let mdT=false;
-					if(FR.DataModifica > DB.fornitori.lastSync)mdT=true;
-					
-					if(mdT)HTML += H.imgSyncro();
-					HTML += htmlEntities(FR.RagioneSociale);
-					HTML +=
+					'		 onClick="FORNITORI.car_fornitore('+FR.p+');">' +
+					htmlEntities(FR.RagioneSociale) +
 					'	</div>';
 				}
 			}
@@ -143,62 +136,60 @@ var FORNITORI = {
 			}
 			H.etichetteProvvisorie = clone(etichette);
 			
-			let HTML = '';
+			let HTML = '',
+				cont = '';
 			HTML += '<form id="formMod"' +
 					'	   name="formMod"' +
 					'	   method="post"' +
-					'	   onSubmit="return false;">';
+					'	   onSubmit="return false;">' +
 					
-			// Campi hascosti
-			HTML += H.r({	t: "h", name: "stessa",	value: "1" });
-			HTML += H.r({	t: "h", name: "idFornitore",	value: idFornitore*1 });
+					// Campi hascosti
+					H.r({	t: "h", name: "stessa",	value: "1" }) +
+					H.r({	t: "h", name: "idFornitore",	value: idFornitore*1 }) +
 			
 			
 			
-			// Campi
-			HTML += H.r({	t: "r",
+					// Campi
+					H.r({	t: "r",
 							name: "RagioneSociale",
 							value: RagioneSociale,
 							noLabel: true,
 							label: TXT("RagioneSociale"),
 							classCampo: "okPlaceHolder",
-							ver: "1|0" });
+							ver: "1|0" }) +
 					
-			
-			
-			HTML += '<div class="sezioneTrattamenti divEspansa "' +
+					'<div class="sezioneTrattamenti divEspansa "' +
 					'	  style="background:transparent !important;' +
 					'	  border-top:none !important;' +
 					'	  padding: 8px;"></div>';
 					
 			// sezione INDIRIZZO
-			let cont = '';
-			cont += H.r({	t: "r", name: "Indirizzo",	value: Indirizzo,	classCampo: 'styled' });
+			cont = 	H.r({	t: "r", name: "Indirizzo",	value: Indirizzo,	classCampo: 'styled' }) +
 			
-			cont += '<div>';
-			cont += H.r({	t: "r",
+					'<div>' +
+					H.r({	t: "r",
 							name: "Citta",
 							value: Citta,
 							classRiga: 'contCitta',
-							classCampo: 'styled' });
-			cont += H.r({	t: "r",
+							classCampo: 'styled' }) +
+					H.r({	t: "r",
 							name: "Provincia",
 							value: Provincia,
 							classRiga: 'contProvincia',
-							classCampo: 'styled' });
-			cont += '</div><div>';
-			cont += H.r({	t: "r", name: "CAP",
+							classCampo: 'styled' }) +
+					'</div><div>' +
+					H.r({	t: "r", name: "CAP",
 							value: CAP,
 							classRiga: 'contCAP',
-							classCampo: 'styled' });
-			cont += H.r({	t: "s", 
+							classCampo: 'styled' }) +
+					H.r({	t: "s", 
 							name: "Stato",
 							value: Stato,
 							opts: elencaPaesi(),
 							label: TXT("Stato"),
 							classRiga: 'contStato',
-							classCampo: "selectLargo" });
-			cont += '</div>';
+							classCampo: "selectLargo" }) +
+					'</div>';
 							
 			HTML += H.sezione({
 				label: TXT("LabelIndirizzo"),
@@ -208,14 +199,13 @@ var FORNITORI = {
 						});
 			
 			// sezione CONTATTI
-			cont = '';
-			cont += H.r({	t: "r",
+			cont = 	H.r({	t: "r",
 							name: "Telefono",
 							value: Telefono,
 							classCampo: 'styled',
-							ver: '0|0|tel'});
+							ver: '0|0|tel'}) +
 			
-			cont += H.r({	t: "r",
+					H.r({	t: "r",
 							name: "Email",
 							value: Email,
 							classCampo: 'styled',
@@ -229,16 +219,15 @@ var FORNITORI = {
 										
 			
 			// sezione FATTURAZIONE
-			cont = '';
-			cont += H.r({	t: "t", 
+			cont = 	H.r({	t: "t", 
 							name: "Intestazione",
 							classCampo: "Intestazione",
 							value: Intestazione,
 							label: TXT("IntestazioneSpiegazione"),
 							noLabel: true,
-							classCampo: "okPlaceHolder" });
-			cont += H.r({	t: "r", name: "CodiceFiscale",	value: CodiceFiscale,	classCampo: 'styled' });
-			cont += H.r({	t: "r", name: "PartitaIva",	value: PartitaIva,	classCampo: 'styled' });
+							classCampo: "okPlaceHolder" }) +
+					H.r({	t: "r", name: "CodiceFiscale",	value: CodiceFiscale,	classCampo: 'styled' }) +
+					H.r({	t: "r", name: "PartitaIva",	value: PartitaIva,	classCampo: 'styled' });
 			
 			HTML += H.sezione({
 				label: TXT("LabelFatturazione"),
@@ -248,8 +237,7 @@ var FORNITORI = {
 						});	
 					
 			// sezione ANNOTAZIONI
-			cont = '';
-			cont += H.r({	t: "t", 
+			cont = 	H.r({	t: "t", 
 							name: "NoteFornitore",
 							value: NoteFornitore,
 							label: TXT("InserisciNote"),
@@ -260,7 +248,7 @@ var FORNITORI = {
 				label: TXT("LabelAnnotazioni"),
 				nome: 'annotazioni',
 				html: cont
-						});	
+						});
 			
 			let azAnnulla = Q_idForn>-1 ? "SCHEDA.scaricaScheda();" : "SCHEDA.scaricaScheda();",
 				azElimina = Q_idForn>-1 ? "FORNITORI.el_fornitore("+Q_idForn+");" : "",
@@ -275,9 +263,8 @@ var FORNITORI = {
 			HTML += SCHEDA.pulsantiForm(
 									Q_idForn>-1 ? "FORNITORI.el_fornitore("+Q_idForn+");":"",
 									azAnnulla, 
-									"FORNITORI.mod_fornitore("+Q_idForn+");" );
-			
-			HTML += '</form>';
+									"FORNITORI.mod_fornitore("+Q_idForn+");" ) +
+					'</form>';
 			
 			
 			let titoloDef=TXT("ModificaFornitore");
@@ -302,7 +289,6 @@ var FORNITORI = {
 			H.caricaEtichette('indirizzo');
 			H.caricaEtichette('contatti');
 			H.caricaEtichette('azienda');
-			//H.caricaEtichette('aggiuntive');
 			
 			if(salvato)SCHEDA.msgSalvataggio();
 			
@@ -361,8 +347,7 @@ var FORNITORI = {
 			SYNCRO.sincronizza(	'rimuoviLoading(document.getElementById("scheda_testo"));' +
 								'rimuoviLoading(document.getElementById("elenchi_lista"));' +
 								'FORNITORI.car_fornitore('+Q_idForn+',true);' +
-								/*'SCHEDA.scaricaScheda(true);' +/* CHIUSURA DOPO SALVATAGGIO da PC*/
-								'if(smartMenu)SCHEDA.scaricaScheda(true);' +/* CHIUSURA DOPO SALVATAGGIO da SMART*/
+								'if(smartMenu)SCHEDA.scaricaScheda(true);' +/* CHIUSURA DOPO SALVATAGGIO*/
 								postAction );
 		});
 		return false;

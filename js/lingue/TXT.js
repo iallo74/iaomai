@@ -4883,7 +4883,7 @@ DB.TXT = {
             deu: "Das Set enthält die Pfade der Shiatsu-Meridiane nach der Theorie von Shizuto Masunaga und die theoretischen Informationen über die Elemente.\n\nDas Set beinhaltet auch:\n[anatomy_full]"
         },
         Modulo_CIN: {
-            ita: "Cinese",
+            ita: "Cinesi",
             eng: "Chinese",
             esp: "Chino",
             fra: "Chinois",
@@ -6001,6 +6001,38 @@ DB.TXT = {
             fra: "ostéo-articulaire",
             por: "osteoarticular",
             deu: "osteoartikulär"
+        },
+        Lic_NumeroPazienti: {
+            ita: "Pazienti/Clienti",
+            eng: "Patients/Clients",
+            esp: "Pacientes/Clientes",
+            fra: "Patients/Clients",
+            por: "Pacientes/Clientes",
+            deu: "Patienten/Kunden"
+        },
+        Lic_ProtezionePassword: {
+            ita: "Protezione con password",
+            eng: "Protection with password",
+            esp: "Protección con contraseña",
+            fra: "Protection par mot de passe",
+            por: "Proteção com senha",
+            deu: "Passwortschutz"
+        },
+        Lic_Fornitori: {
+            ita: "Fornitori",
+            eng: "Suppliers",
+            esp: "Proveedores",
+            fra: "Fournisseurs",
+            por: "Fornecedores",
+            deu: "Lieferanten"
+        },
+        Lic_PacchettiSedute: {
+            ita: "Pacchetti di sedute",
+            eng: "Session packages",
+            esp: "Paquetes de sesiones",
+            fra: "Paquets de séances",
+            por: "Pacotes de sessões",
+            deu: "Sitzungspakete"
         },
 
         // PATOLOGIE

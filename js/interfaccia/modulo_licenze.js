@@ -36,22 +36,22 @@ var LICENZE  = {
 		
 		HTML += '<div class="listLicenze">';
 		if(LOGIN.logedin()){
-			HTML += TXT("Lic_PossessoLicenze")+':<div>';
-			HTML += LICENZE.visLicenza('AcupointsMap',(LOGIN.logedin() && LOGIN.verAuth("meridiani_cinesi")));
-			HTML += LICENZE.visLicenza('ShiatsuMap PRO '+TXT("Lic_Cinesi"),(LOGIN.logedin() && okCIN));
-			HTML += LICENZE.visLicenza('ShiatsuMap PRO Masunaga',(LOGIN.logedin() && okMAS));
-			HTML += LICENZE.visLicenza('ShiatsuMap PRO Namikoshi',(LOGIN.logedin() && okNMK));
-			HTML += LICENZE.visLicenza('ShiatsuMap Light',(LOGIN.logedin() && okLGT));
-			HTML += LICENZE.visLicenza('AuriculoMap',(LOGIN.logedin() && LOGIN.verAuth("auricologia")));
-			HTML += LICENZE.visLicenza('ReflexologyMap',(LOGIN.logedin() && LOGIN.verAuth("reflessologia_plantare")));
-			HTML += LICENZE.visLicenza(TXT("Lic_SchedarioPazienti"),(LOGIN.logedin() && LOGIN.verAuth("clients_full")));
-			HTML += '</div>';
+			HTML += 
+			TXT("Lic_PossessoLicenze")+':<div>' +
+			LICENZE.visLicenza('AcupointsMap',(LOGIN.logedin() && LOGIN.verAuth("meridiani_cinesi"))) +
+			LICENZE.visLicenza('ShiatsuMap PRO '+TXT("Lic_Cinesi"),(LOGIN.logedin() && okCIN)) +
+			LICENZE.visLicenza('ShiatsuMap PRO Masunaga',(LOGIN.logedin() && okMAS)) +
+			LICENZE.visLicenza('ShiatsuMap PRO Namikoshi',(LOGIN.logedin() && okNMK)) +
+			LICENZE.visLicenza('ShiatsuMap Light',(LOGIN.logedin() && okLGT)) +
+			LICENZE.visLicenza('AuriculoMap',(LOGIN.logedin() && LOGIN.verAuth("auricologia"))) +
+			LICENZE.visLicenza('ReflexologyMap',(LOGIN.logedin() && LOGIN.verAuth("reflessologia_plantare"))) +
+			LICENZE.visLicenza(TXT("Lic_SchedarioPazienti"),(LOGIN.logedin() && LOGIN.verAuth("clients_full"))) +
+			'</div>';
 		}else{
 			HTML += '<span id="demoVersion" style="display:block;">'+TXT("Lic_FreeVersion")+'</span>';
 		}
-		HTML += '</div>';
-		
-		HTML += '<div class="txtFeatures">'+TXT("Lic_ElencaCaratteristiche")+'</div>';
+		HTML += '</div>' +
+				'<div class="txtFeatures">'+TXT("Lic_ElencaCaratteristiche")+'</div>';
 
 
 		// AcupointsMap
@@ -115,6 +115,15 @@ var LICENZE  = {
 		LICENZE.rowLicenza( TXT("Lic_ProtocolliTrattamento"),			ok?spunta			:ics ) +
 		LICENZE.rowLicenza( TXT("Lic_Approfondimenti"), 				ok?spunta			:this.red(TXT("Lic_estratto")) ) +
 		LICENZE.rowLicenza( TXT("Lic_AggiuntaAree"), 					ok?spunta			:ics );
+		
+		// Shedario pazienti
+		ok = LOGIN.logedin() && LOGIN.verAuth("clients_full");
+		HTML +=	
+		LICENZE.appLicenza( TXT("Lic_SchedarioPazienti"), 'sets/clients_full/img/logoMenu.png' )  +
+		LICENZE.rowLicenza( TXT("Lic_NumeroPazienti"),					ok?spunta			:this.red(15) ) +
+		LICENZE.rowLicenza( TXT("Lic_ProtezionePassword"),				ok?spunta			:ics ) +
+		LICENZE.rowLicenza( TXT("Lic_Fornitori"),						ok?spunta			:this.red(5) ) +
+		LICENZE.rowLicenza( TXT("Lic_PacchettiSedute"),					ok?spunta			:this.red(5) );
 
 
 		// Caratteristiche generiche
@@ -123,9 +132,8 @@ var LICENZE  = {
 		HTML +=	
 		LICENZE.appLicenza( TXT("Lic_CaratteristicheGeneriche"), '' ) +
 		LICENZE.rowLicenza( TXT("Lic_ProcedurePersonali"),				ok?spunta			:this.red('1') ) +
-		LICENZE.rowLicenza( TXT("Lic_Pazienti"),						okPAZ?spunta		:this.red('15') ) +
-		LICENZE.rowLicenza( TXT("Lic_TraduzioneAutomatica"),			ok?spunta			:ics );
-		LICENZE.rowLicenza( TXT("Lic_BackupDati"),						ok?spunta			:ics );
+		LICENZE.rowLicenza( TXT("Lic_TraduzioneAutomatica"),			ok?spunta			:ics ) +
+		LICENZE.rowLicenza( TXT("Lic_BackupDati"),						ok?spunta			:ics ) +
 		LICENZE.rowLicenza( TXT("Lic_NotifichePersonalizzate"),			ok?spunta			:ics );
 
 		document.getElementById("contLicenze").innerHTML = HTML;

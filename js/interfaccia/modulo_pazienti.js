@@ -85,19 +85,8 @@ var PAZIENTI = {
 					'		<img src="img/ico_cliente_'+sessi[PZ.sesso]+'.png"' +
 					'			 class="imgList">';
 					}
-					// verifico se è stato modificato e non sincronizzato
-					let mdT=false;
-					if(PZ.DataModifica > DB.pazienti.lastSync)mdT=true;
-					for(t in PZ.trattamenti){
-						if(PZ.trattamenti[t].DataModifica > DB.pazienti.lastSync)mdT=true;
-					}
-					for(t in PZ.saldi){
-						if(PZ.saldi[t].DataModifica > DB.pazienti.lastSync)mdT=true;
-					}
-					if(mdT)HTML += H.imgSyncro();
-					HTML += htmlEntities(PZ.Nome+" "+PZ.Cognome);
-					HTML +=
-					'	</div>';
+					HTML += htmlEntities(PZ.Nome+" "+PZ.Cognome) +
+							'	</div>';
 				}
 			}
 		}
@@ -157,24 +146,6 @@ var PAZIENTI = {
 			document.getElementById("ico_cliente").style.backgroundImage = "url(img/ico_cliente_"+sesso+"B.png)";
 			document.getElementById("ico_cliente").getElementsByTagName("i")[0].innerHTML = DB.pazienti.data[PAZIENTI.idCL].Nome+" "+DB.pazienti.data[PAZIENTI.idCL].Cognome;
 			
-			// cambio sesso al manichino
-			/*
-			
-				TOLTO PER RENDERLO PIU' smart
-			
-			*/
-			/*let pass = true;
-			if(globals.modello.cartella){
-				if( sesso == globals.modello.cartella ) pass = false;
-				if(typeof(globals.set.modelli)!='undefined'){
-					if( globals.set.modelli.indexOf(sesso) == -1 ) pass = false;
-				}
-			}else pass = false;
-			if( pass ){
-				if(sesso!='altro')cambiaModello( sesso );
-				SCHEDA.selElenco('pazienti');
-			}*/
-			
 			let d=new Date();
 			pazSelMD5=MD5("P"+d);
 			PAZIENTI.caricaTrattamenti();
@@ -212,7 +183,6 @@ var PAZIENTI = {
 				SET.leggiNote();
 			}catch(err){}
 			SCHEDA.setTriploLivello('pazienti');
-			//if(mouseDetect)document.getElementById("paz_ricerca").focus();
 		}});
 	},
 	chiudiPaziente: function( idPaziente ){ // chiude la scheda anagrafica
@@ -223,35 +193,23 @@ var PAZIENTI = {
 		if(typeof(idPaziente)!='undefined')LOGIN.closeLocked("pazienti",idPaziente);
 	},
 	intestazionePaziente: function( tipo ){ // nome e pulsanti in alto quando il paziente e selezionato
-		let PZ = DB.pazienti.data[PAZIENTI.idCL],
-			HTML='';
+		let PZ = DB.pazienti.data[PAZIENTI.idCL];
 		
-		// nome cliente
-		HTML += '<p class="trattNomeCliente' + ( PZ.avatar ? ' conAvatar' : '' ) + '"';
-		if(PZ.sesso){
-			HTML += ' style="background-image:url(img/ico_cliente_'+sessi[PZ.sesso]+'.png);"';
-		}
-		HTML += '><span id="nomeCliente" onClick="PAZIENTI.vis_paziente();" title="'+TXT("Anagrafica")+'">'+htmlEntities(PZ.Nome)+"<br>"+htmlEntities(PZ.Cognome);
-		if(PZ.DataModifica > DB.pazienti.lastSync)HTML += H.imgSyncro();
-		HTML += '</span>';
+		return '<p class="trattNomeCliente' + ( PZ.avatar ? ' conAvatar' : '' ) + '"' +
+				(PZ.sesso ? ' style="background-image:url(img/ico_cliente_'+sessi[PZ.sesso]+'.png);"' : '') +
+				'><span id="nomeCliente" onClick="PAZIENTI.vis_paziente();" title="'+TXT("Anagrafica")+'">'+htmlEntities(PZ.Nome)+"<br>"+htmlEntities(PZ.Cognome) +
+				'</span>' +
+				'<span id="btnAnagraficaCliente" onClick="PAZIENTI.vis_paziente();" title="'+TXT("Anagrafica")+'"></span>' +
+				'<span id="esciCliente" onClick="PAZIENTI.deselPaziente();" title="'+TXT("Chiudi")+'"></span>' +
+				(PZ.avatar ? '<span onClick="PAZIENTI.vis_paziente();" class="avatarMini" style="background-image:url(\''+PZ.avatar+'\');"></span>' : '') +
+				'</p>' +
 		
-		HTML += '<span id="btnAnagraficaCliente" onClick="PAZIENTI.vis_paziente();" title="'+TXT("Anagrafica")+'"></span>' +
-				'<span id="esciCliente" onClick="PAZIENTI.deselPaziente();" title="'+TXT("Chiudi")+'"></span>';
-		if(PZ.avatar){
-			HTML += '<span onClick="PAZIENTI.vis_paziente();" class="avatarMini" style="background-image:url(\''+PZ.avatar+'\');"></span>';
-		}
-		HTML += '</p>';
-		
-		// pulsanti trattamenti e saldi
-		HTML += '<p class="trattBtns"><span id="pazBtnTratt" ';
-		if(tipo == 't')HTML += 'class="selBtn" ';
-		else HTML += 'onClick="PAZIENTI.caricaTrattamenti();"';
-		HTML += '>'+TXT("ElTrattamenti").toUpperCase()+'</span> <span id="pazBtnSaldi" ';
-		if(tipo == 's')HTML += 'class="selBtn" ';
-		else HTML += 'onClick="PAZIENTI.caricaSaldi();"';
-		HTML += '>'+TXT("ElSaldi").toUpperCase()+'</span></p>';
-		
-		return HTML;
+				// pulsanti trattamenti e saldi
+				'<p class="trattBtns"><span id="pazBtnTratt" ' +
+				(tipo == 't' ? 'class="selBtn" ' : 'onClick="PAZIENTI.caricaTrattamenti();"') +
+				'>'+TXT("ElTrattamenti").toUpperCase()+'</span> <span id="pazBtnSaldi" ' +
+				(tipo == 's' ? 'class="selBtn" ' : 'onClick="PAZIENTI.caricaSaldi();"') +
+				'>'+TXT("ElSaldi").toUpperCase()+'</span></p>';
 	},
 	riselSex: function(){
 		let newSex = 'uomo',
@@ -373,20 +331,20 @@ var PAZIENTI = {
 			PAZIENTI.interventiProvvisori = clone(interventi);
 			PH.galleryProvvisoria=gallery;
 			
-			let HTML = '';
+			let HTML = '',
+				cont = '',
+				sessoAvatar = (sesso) ? sessi[sesso] : 'uomo';
 			HTML += '<form id="formMod"' +
 					'	   name="formMod"' +
 					'	   method="post"' +
-					'	   onSubmit="return false;">';
+					'	   onSubmit="return false;">' +
 					
-			// Campi nascosti
-			HTML += H.r({	t: "h", name: "stessa",	value: "1" });
-			HTML += H.r({	t: "h", name: "idPaziente",	value: idPaziente*1 });
+					// Campi nascosti
+					H.r({	t: "h", name: "stessa",	value: "1" }) +
+					H.r({	t: "h", name: "idPaziente",	value: idPaziente*1 }) +
 			
-			// avatar
-			let sessoAvatar = 'uomo';
-			if(sesso)sessoAvatar = sessi[sesso];
-			HTML += '	<div>' +
+					// avatar
+					'	<div>' +
 					'		<div onClick="this.classList.toggle(\'avatarBig\');"' +
 					'		   	 id="avatarPaziente"' +
 					'		   	 class="avatar"'+
@@ -405,16 +363,16 @@ var PAZIENTI = {
 					'			   	 style="'+(!avatar ? 'display:none;' : '')+'"></div>' +
 					'		</div>' +
 					'	</div>' +
-					'	<div class="l"></div>';
+					'	<div class="l"></div>' +
 			
 			
-			// Campi
-			HTML += H.r({	t: "r", name: "Nome",	value: Nome,	classRiga: 'schSx', labelOut: true,	ver: "1|0" });
-			HTML += H.r({	t: "r", name: "Cognome",	value: Cognome,	classRiga: 'schDx', labelOut: true });
-			HTML += '<div class="l"></div>';
+					// Campi
+					H.r({	t: "r", name: "Nome",	value: Nome,	classRiga: 'schSx', labelOut: true,	ver: "1|0" }) +
+					H.r({	t: "r", name: "Cognome",	value: Cognome,	classRiga: 'schDx', labelOut: true }) +
+					'<div class="l"></div>' +
 			
 			
-			HTML += '<div class="sezioneTrattamenti divEspansa "' +
+					'<div class="sezioneTrattamenti divEspansa "' +
 					'	  style="background:transparent !important;' +
 					'	  border-top:none !important;' +
 					'	  padding: 0px;"></div>';
@@ -423,22 +381,21 @@ var PAZIENTI = {
 					
 			
 			// sezione ANAGRAFICI
-			let cont = '';
-			cont += H.r({	t: "s", 
+			cont = 	H.r({	t: "s", 
 							name: "sesso",
 							value: sesso,
 							opts: { "m": TXT("Maschio"), "f": TXT("Femmina"), "a": TXT("Altro") },
 							label: TXT("Sesso"),
 							id: "selectPaz",
 							classRiga: "labelSx",
-							onChange: 'PAZIENTI.riselSex();' });
+							onChange: 'PAZIENTI.riselSex();' }) +
 					
-			cont += H.r({	t: "d",
+					H.r({	t: "d",
 							name: "DataNascita",
 							value: DataNascita,
-							classRiga: "labelSx" });
+							classRiga: "labelSx" }) +
 							
-			cont += H.r({	t: "r", name: "LuogoNascita",	value: LuogoNascita,	classCampo: 'styled' });
+					H.r({	t: "r", name: "LuogoNascita",	value: LuogoNascita,	classCampo: 'styled' });
 							
 			HTML += H.sezione({
 				label: TXT("LabelAnagrafici"),
@@ -448,33 +405,32 @@ var PAZIENTI = {
 						});	
 					
 			// sezione INDIRIZZO
-			cont = '';
-			cont += H.r({	t: "r", name: "Indirizzo",	value: Indirizzo,	classCampo: 'styled' });
+			cont = 	H.r({	t: "r", name: "Indirizzo",	value: Indirizzo,	classCampo: 'styled' }) +
 			
-			cont += '<div>';
-			cont += H.r({	t: "r",
+					'<div>' +
+					H.r({	t: "r",
 							name: "Citta",
 							value: Citta,
 							classRiga: 'contCitta',
-							classCampo: 'styled' });
-			cont += H.r({	t: "r",
+							classCampo: 'styled' }) +
+					H.r({	t: "r",
 							name: "Provincia",
 							value: Provincia,
 							classRiga: 'contProvincia',
-							classCampo: 'styled' });
-			cont += '</div><div>';
-			cont += H.r({	t: "r", name: "CAP",
+							classCampo: 'styled' }) +
+					'</div><div>' +
+					H.r({	t: "r", name: "CAP",
 							value: CAP,
 							classRiga: 'contCAP',
-							classCampo: 'styled' });
-			cont += H.r({	t: "s", 
+							classCampo: 'styled' }) +
+					H.r({	t: "s", 
 							name: "Stato",
 							value: Stato,
 							opts: elencaPaesi(),
 							label: TXT("Stato"),
 							classRiga: 'contStato',
-							classCampo: "selectLargo" });
-			cont += '</div>';
+							classCampo: "selectLargo" }) +
+					'</div>';
 							
 			HTML += H.sezione({
 				label: TXT("LabelIndirizzo"),
@@ -484,15 +440,14 @@ var PAZIENTI = {
 						});		
 			
 			// sezione CONTATTI
-			cont = '';	
-			cont += H.r({	t: "r",
+			cont = 	H.r({	t: "r",
 							name: "Telefono",
 							value: Telefono,
 							classCampo: 'styled',
-							ver: '0|0|tel'});
+							ver: '0|0|tel'}) +
 			
 			
-			cont += '		<div>' +
+					'		<div>' +
 					'			<i>'+htmlEntities(TXT("Cellulare"))+'</i>' +
 					'			<select name="paeseCellulare"' +
 					'					id="paeseCellulare"' +
@@ -518,9 +473,9 @@ var PAZIENTI = {
 					'					data-pre-value="'+htmlEntities(Cellulare)+'"' +
 					'					onKeyUp="return H.keyTelefono(this,false);"' +
 					'					class="cellulare"' + H.noAutoGen+'>' +
-					'		</div>';
+					'		</div>' +
 							
-			cont += H.r({	t: "r",
+					H.r({	t: "r",
 							name: "Email",
 							value: Email,
 							classCampo: 'styled',
@@ -534,16 +489,15 @@ var PAZIENTI = {
 										
 			
 			// sezione FATTURAZIONE
-			cont = '';	
-			cont += H.r({	t: "t", 
+			cont = 	H.r({	t: "t", 
 							name: "Intestazione",
 							classCampo: "Intestazione",
 							value: Intestazione,
 							label: TXT("IntestazioneSpiegazione"),
 							noLabel: true,
-							classCampo: "okPlaceHolder" });
-			cont += H.r({	t: "r", name: "CodiceFiscale",	value: CodiceFiscale,	classCampo: 'styled' });
-			cont += H.r({	t: "r", name: "PartitaIva",	value: PartitaIva,	classCampo: 'styled' });
+							classCampo: "okPlaceHolder" }) +
+					H.r({	t: "r", name: "CodiceFiscale",	value: CodiceFiscale,	classCampo: 'styled' }) +
+					H.r({	t: "r", name: "PartitaIva",	value: PartitaIva,	classCampo: 'styled' });
 			
 			HTML += H.sezione({
 				label: TXT("LabelFatturazione"),
@@ -554,23 +508,22 @@ var PAZIENTI = {
 								
 			
 			// sezione INFO AGGIUNTIVE
-			cont = '';
-			cont += H.r({	t: "r",
+			cont = 	H.r({	t: "r",
 							name: "Provenienza",
 							value: Provenienza,
 							classCampo: 'styled',
 							clickCampo: 'H.creaCombo(this,H.getElencoDB(DB.pazienti.data,this));',
-							focusCampo: 'H.creaCombo(this,H.getElencoDB(DB.pazienti.data,this));' });
+							focusCampo: 'H.creaCombo(this,H.getElencoDB(DB.pazienti.data,this));' }) +
 							
-			cont += H.r({	t: "r",
+					H.r({	t: "r",
 							name: "Professione",
 							value: Professione,
 							classCampo: 'styled',
 							clickCampo: 'H.creaCombo(this,H.getElencoDB(DB.pazienti.data,this));',
-							focusCampo: 'H.creaCombo(this,H.getElencoDB(DB.pazienti.data,this));' });
+							focusCampo: 'H.creaCombo(this,H.getElencoDB(DB.pazienti.data,this));' }) +
 			
 							
-			cont += H.r({	t: "r",
+					H.r({	t: "r",
 							name: "Social",
 							value: Social,
 							classCampo: 'styled',
@@ -585,8 +538,7 @@ var PAZIENTI = {
 						});	
 			
 			// sezione TAGS
-			cont = '';
-			cont += '		<div id="contTags">' +
+			cont = 	'		<div id="contTags">' +
 					'		</div>' +
 					'		<div id="cont_tag_add">' +
 					'			<input type="text"' +
@@ -625,9 +577,8 @@ var PAZIENTI = {
 					'	  background-color: rgba(0,0,0,0.15);"></div>';
 						
 			// sezione BIOMETRICI
-			cont = '';
-			cont += H.r({	t: "r", name: "Altezza",	value: Altezza,	classCampo: 'styled', ver: '0|0|num' });
-			cont += H.r({	t: "r", name: "Peso",	value: Peso,	classCampo: 'styled', ver: '0|0|num' });
+			cont = 	H.r({	t: "r", name: "Altezza",	value: Altezza,	classCampo: 'styled', ver: '0|0|num' }) +
+					H.r({	t: "r", name: "Peso",	value: Peso,	classCampo: 'styled', ver: '0|0|num' });
 							
 			HTML += H.sezione({
 				label: TXT("LabelBiometrici"),
@@ -637,8 +588,7 @@ var PAZIENTI = {
 						});	
 			
 			// sezione MEDICINE
-			cont = '';
-			cont += '		<div id="contMedicine">' +
+			cont = 	'		<div id="contMedicine">' +
 					'		</div>' +
 					'		<div id="cont_medicina_add">' +
 					'			<input type="text"' +
@@ -664,8 +614,7 @@ var PAZIENTI = {
 						});	
 					
 			// sezione ALLERGIE
-			cont = '';
-			cont += '		<div id="contAllergie">' +
+			cont = 	'		<div id="contAllergie">' +
 					'		</div>' +
 					'		<div id="cont_allergia_add">' +
 					'			<input type="text"' +
@@ -691,8 +640,7 @@ var PAZIENTI = {
 						});	
 			
 			// sezione PATOLOGIE
-			cont = '';
-			cont += '		<div id="contPatologie">' +
+			cont = 	'		<div id="contPatologie">' +
 					'		</div>' +
 					'		<div id="cont_patologia_add">' +
 					'			<input type="text"' +
@@ -719,8 +667,7 @@ var PAZIENTI = {
 						});
 			
 			// sezione INTERVENTI
-			cont = '';
-			cont += '		<div id="contInterventi">' +
+			cont = 	'		<div id="contInterventi">' +
 					'		</div>' +
 					'		<div id="cont_intervento_add">' +
 					'			<input type="text"' +
@@ -743,14 +690,14 @@ var PAZIENTI = {
 				label: TXT("Interventi"),
 				nome: 'interventi',
 				html: cont
-						});	
+						}) +
 						
-			HTML += '<div class="sezioneTrattamenti divEspansa "' +
-					'	  style="' +
-					'	  border-top: none !important;' +
-					'	  height:20px;' +
-					'	  padding: 0px;' +
-					'	  background-color: rgba(0,0,0,0.15);"></div>';
+				'<div class="sezioneTrattamenti divEspansa "' +
+				'	  style="' +
+				'	  border-top: none !important;' +
+				'	  height:20px;' +
+				'	  padding: 0px;' +
+				'	  background-color: rgba(0,0,0,0.15);"></div>';
 					
 			
 			
@@ -795,8 +742,7 @@ var PAZIENTI = {
 			
 			
 			// sezione ANNOTAZIONI
-			cont = '';
-			cont += H.r({	t: "t", 
+			cont = 	H.r({	t: "t", 
 							name: "NotePaziente",
 							value: NotePaziente,
 							label: TXT("InserisciNote"),
@@ -1003,9 +949,9 @@ var PAZIENTI = {
 				Provincia.trim() ||
 				Stato.trim() ){
 				H__1 +=	'	<div class="rgAnag rgIndirizzo">' +
-						'			<div class="contAnag">';
+						'			<div class="contAnag">' +
 			
-				H__1 +=	htmlEntities(Indirizzo)+'<br>' +
+						htmlEntities(Indirizzo)+'<br>' +
 						htmlEntities(CAP)+' '+htmlEntities(Citta);
 				if(Provincia)H__1 += ' ('+htmlEntities(Provincia)+')';
 				if(Stato){
@@ -1014,8 +960,8 @@ var PAZIENTI = {
 					else H__1 +=		htmlEntities(Stato);
 					H__1 +=		')';
 				}
-				H__1 += H.scriviEtichette('indirizzo');
-				H__1 += '			</div>' +
+				H__1 += H.scriviEtichette('indirizzo') +
+						'			</div>' +
 						'		<div class="l"></div>' +
 						'	</div>';
 			}
@@ -1180,9 +1126,9 @@ var PAZIENTI = {
 			
 					
 				
-			HTML +=	'<div class="schSx">';	
-			HTML += H__1;	
-			HTML += '	<div class="l"></div>' +
+			HTML +=	'<div class="schSx">' +
+					H__1 +
+					'	<div class="l"></div>' +
 					'</div>';	
 			if(H__2){
 				HTML += '<div class="schDx schMedica">' +
@@ -1244,7 +1190,6 @@ var PAZIENTI = {
 		
 		
 		// salvo le immagini
-		//let f = 0;
 		let GA = PH.galleryProvvisoria;
 		for(let i in GA){
 			GA[i].Dida = document.getElementById("Dida"+i).value;
@@ -1419,8 +1364,6 @@ var PAZIENTI = {
 				'	 style="height:1px !important;"' +
 				'	 data-d="'+(data*1)+'">' +
 				'</div>';
-	
-		//data=oggi;
 		
 		SCHEDA.caricaScheda( stripslashes(TXT("Agenda")), HTML, '', 'scheda_agenda', false, true );
 		

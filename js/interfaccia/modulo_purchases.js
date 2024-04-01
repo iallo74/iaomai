@@ -8,6 +8,7 @@ var PURCHASES  = {
     idBuying: '',
 	
 	init: function(){ // inizializza il catalogo
+		PURCHASES.product_list = [];
 		for(let s in sets){
 			for(let m in sets[s].modls){
 				if((!android && sets[s].modls[m].idApple) || (android && sets[s].modls[m].idGoogle)){
@@ -86,8 +87,8 @@ var PURCHASES  = {
 			store.get(PURCHASES.productId)?.getOffer()?.order();
 		}else{
 			let tk = encodeURIComponent(window.btoa(LOGIN.logedin() + MD5(DB.login.data.idUtente))),
-			fl = encodeURIComponent(window.btoa(PURCHASES.getProdById(PURCHASES.productId).folder));
-			md = encodeURIComponent(window.btoa(PURCHASES.getProdById(PURCHASES.productId).code));
+				fl = encodeURIComponent(window.btoa(PURCHASES.getProdById(PURCHASES.productId).folder)),
+				md = encodeURIComponent(window.btoa(PURCHASES.getProdById(PURCHASES.productId).code));
 			CONN.openUrl(convLangPath(CONN.urlStore)+"in_app_purchase?tk="+tk+"&mp="+fl+"&md="+md);
 			
 		}
@@ -203,24 +204,23 @@ var PURCHASES  = {
 					nameModule = PURCHASES.product_list[id].name,
 					owned = PURCHASES.product_list[id].owned;
 				if(!owned && LOGIN.logedin()!='')owned = (DB.login.data.auths.indexOf(folder)>-1 && (!code || LOGIN.verModule(code))) ? true : false;
-				html_provv += '<div';
-				if(!owned)html_provv += ' class="acqOk"';
-				html_provv += '><div class="tit'+(nameModule?' module':'')+'">';
-				html_provv += '<img src="sets/'+folder+'/img/logoNero.png">';
-				html_provv += '<b>'+title+'</b>';
-				if(nameModule)html_provv += '<br>'+/* TXT("Modulo")+ */'- '+nameModule;
-				html_provv += '</div><div class="price">';
-				if(!owned)html_provv += price;
-				html_provv += '</div>';
-				if(owned)html_provv += '<span>'+TXT("Acquistato")+'</span>';
-				else html_provv += '<div class="btn buy" onClick="PURCHASES.showProduct(\''+idStore+'\');">'+TXT("ACQUISTA")+'</div>';
-				html_provv += '</div>';
+				html_provv += 	'<div' +
+								(!owned ? ' class="acqOk"' : '') +
+								'><div class="tit'+(nameModule?' module':'')+'">' +
+								'<img src="sets/'+folder+'/img/logoNero.png">' +
+								'<b>'+title+'</b>' +
+								(nameModule ? '<br>- '+nameModule : '') +
+								'</div><div class="price">' +
+								(!owned ? price : '') +
+								'</div>' +
+								(owned ? '<span>'+TXT("Acquistato")+'</span>' : '<div class="btn buy" onClick="PURCHASES.showProduct(\''+idStore+'\');">'+TXT("ACQUISTA")+'</div>') +
+								'</div>';
 				if(owned)html_ok += html_provv;
 				else html_no += html_provv;
 			}
 		}
-		html += html_ok + html_no;
-		html += '</div>';
+		html += html_ok + html_no +
+				'</div>';
 		let el = document.getElementById('contPurchases');
 		el.classList.remove("ini");
 		el.innerHTML = html;

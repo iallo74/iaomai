@@ -8,8 +8,7 @@ var sets = {
 		locked: false,
 		opening: false,
 		dataPubblicazione: '',
-		idApple: '',
-		idGoogle: '',
+		modls: [],
 		lingueCont: [
 			"ita",
 			"eng",
@@ -360,9 +359,13 @@ var sets = {
 		locked: false,
 		opening: false,
 		dataPubblicazione: '',
-		idApple: 'SP22',
-		idGoogle: 'sp22',
-		pageStore: 'medicalfile'
+		modls: [
+			{
+				idApple: 'SP22',
+				idGoogle: 'sp22',
+				pageStore: 'medicalfile',
+			}
+		]
 	}
 };
 

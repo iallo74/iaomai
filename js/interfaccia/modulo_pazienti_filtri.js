@@ -30,11 +30,6 @@ var PAZIENTI_FILTRI = { // extend PAZIENTI
 			
 			let totPazienti = 0,
 				etichette = H.getEtichette('',[ DB.pazienti.data ]),
-				tags = PAZIENTI.getTags(),
-				medicine = PAZIENTI.getElementi('medicine'),
-				allergie = PAZIENTI.getElementi('allergie'),
-				patologie = PAZIENTI.getElementi('patologie'),
-				interventi = PAZIENTI.getElementi('interventi');
 				stats = {
 					generi: {},
 					fasce_eta: {},
@@ -142,7 +137,6 @@ var PAZIENTI_FILTRI = { // extend PAZIENTI
 			for(let p in PZ){
 				if(!PZ[p].Cancellato*1){
 					let tg = __(PZ[p].tags,[]);
-					//if(typeof(tg)=='string')tg=JSON.parse(tg)
 					for(t in tg){
 						let tag = tg[t].NomeTag;
 						if(!stats.tags[tag])stats.tags[tag] = [];
@@ -155,7 +149,6 @@ var PAZIENTI_FILTRI = { // extend PAZIENTI
 			for(let p in PZ){
 				if(!PZ[p].Cancellato*1){
 					let md = __(PZ[p].medicine,[]);
-					//if(typeof(md)=='string')md=JSON.parse(md)
 					for(let m in md){
 						let medicina = md[m].NomeMedicina;
 						if(!stats.medicine[medicina])stats.medicine[medicina] = [];
@@ -168,7 +161,6 @@ var PAZIENTI_FILTRI = { // extend PAZIENTI
 			for(let p in PZ){
 				if(!PZ[p].Cancellato*1){
 					let al = __(PZ[p].allergie,[]);
-					//if(typeof(al)=='string')al=JSON.parse(al)
 					for(a in al){
 						let allergia = al[a].NomeAllergia;
 						if(!stats.allergie[allergia])stats.allergie[allergia] = [];
@@ -181,7 +173,6 @@ var PAZIENTI_FILTRI = { // extend PAZIENTI
 			for(let p in PZ){
 				if(!PZ[p].Cancellato*1){
 					let pt = __(PZ[p].patologie,[]);
-					//if(typeof(pt)=='string')pt=JSON.parse(pt)
 					for(t in pt){
 						let patologia = pt[t].NomePatologia;
 						if(!stats.patologie[patologia])stats.patologie[patologia] = [];
@@ -194,7 +185,6 @@ var PAZIENTI_FILTRI = { // extend PAZIENTI
 			for(let p in PZ){
 				if(!PZ[p].Cancellato*1){
 					let int = __(PZ[p].interventi,[]);
-					//if(typeof(int)=='string')int=JSON.parse(int)
 					for(let i in int){
 						let intervento = int[i].NomeIntervento;
 						if(!stats.interventi[intervento])stats.interventi[intervento] = [];
@@ -991,9 +981,6 @@ var PAZIENTI_FILTRI = { // extend PAZIENTI
 		if(applica){
 			SCHEDA.espandiElenco();
 			PAZIENTI.pazientiFiltrati = elenco;
-			/*localPouchDB.setItem(MD5("DB"+LOGIN._frv()+".pazienti"), IMPORTER.COMPR(DB.pazienti)).then(function(){
-				// salvo il DB
-			});*/
 			document.getElementById("paz_filtrati").style.display = 'inline-block';
 			document.getElementById("scheda_testo").scrollTo(0,0)
 			PAZIENTI.car_filtri();
@@ -1481,13 +1468,11 @@ var PAZIENTI_FILTRI = { // extend PAZIENTI
 				Messaggio: document.formMod.MessaggioMarketing.value
 			}
 			
-			//applicaLoading(document.getElementById("scheda_testo"))
 			CONN.caricaUrl(	"marketing_email_salva.php",
 							"b64=1&JSNPOST="+window.btoa(encodeURIComponent(JSON.stringify(JSNPOST))),
 							function(txt){
 								startAnimate();
 								nasLoader();
-								//rimuoviLoading(document.getElementById("scheda_testo"));
 								SCHEDA.formModificato = false;
 								endChangeDetection();
 								if(txt.substr(0,3)!='404')PAZIENTI.dwnl_emails();
@@ -1530,13 +1515,11 @@ var PAZIENTI_FILTRI = { // extend PAZIENTI
 						Messaggio: document.formMod.MessaggioMarketing.value
 					}
 					
-				//applicaLoading(document.getElementById("scheda_testo"))
 				CONN.caricaUrl(	"marketing_email_invia.php",
 								"b64=1&JSNPOST="+window.btoa(encodeURIComponent(JSON.stringify(JSNPOST))),
 								function(txt){
 									startAnimate();
 									nasLoader();
-									//rimuoviLoading(document.getElementById("scheda_testo"))
 									SCHEDA.formModificato = false;
 									endChangeDetection();
 									if(txt.substr(0,3)!='404'){
@@ -1552,13 +1535,11 @@ var PAZIENTI_FILTRI = { // extend PAZIENTI
 			CONFIRM.vis( TXT("ChiediEliminaEmail") ).then(function(pass){if(pass){
 				stopAnimate(true);
 				visLoader(TXT("SalvataggioInCorso"),'loadingLight');
-				//applicaLoading(document.getElementById("scheda_testo"))
 				CONN.caricaUrl(	"marketing_email_elimina.php",
 								"b64=1&idMessaggio="+idMessaggio,
 								function(txt){
 									startAnimate();
 									nasLoader();
-									//rimuoviLoading(document.getElementById("scheda_testo"))
 									SCHEDA.formModificato = false;
 									endChangeDetection();
 									if(txt.substr(0,3)!='404'){

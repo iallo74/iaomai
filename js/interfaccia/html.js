@@ -1,23 +1,6 @@
 var H = {
 	noAutoGen: ' autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"',
 	sl: '<span class="nb">/</span>',
-	imgSyncro: function(){
-		let HTML = '';
-		if(LOGIN.reg()){
-			HTML = '';
-			/*HTML = 	'<img src="img/ico_connessioneAssente.png"' +//alertmini.png"' +
-					'width="11"' +
-					'height="18"' +
-					'align="middle' +
-					'class="alertMini" ' +
-					'style="vertical-align: middle;' +
-					'		margin-top: -1px;' +
-					'		margin-right: 5px;"' +
-					'title="'+TXT("ElementoNonSincronizzato")+'">';*/
-		}
-		return HTML;
-	},
-	//target: (window.cordova && window.cordova.platformId !== 'windows') ? '_system': '_blank',
 	target: (isCordova) ? '_system': '_blank',
 	chr10: String.fromCharCode(10),
 	chr13: String.fromCharCode(13),

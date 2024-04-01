@@ -112,7 +112,10 @@ var IMPORTER = {
         'js/three/ObjectControls.js',
         
         'js/interfaccia/guida.js',
+        'js/interfaccia/reference.js',
         'js/interfaccia/menu.js',
+        'js/interfaccia/dragger.js',
+        'js/interfaccia/slider.js',
         'js/interfaccia/schede.js',
         'js/interfaccia/modulo_pazienti.js',
         'js/interfaccia/modulo_pazienti_trattamenti.js',
@@ -131,6 +134,7 @@ var IMPORTER = {
         'js/interfaccia/modulo_feedback.js',
         'js/interfaccia/modulo_catalogo.js',
         'js/interfaccia/modulo_photo.js',
+        'js/interfaccia/modulo_draw.js',
         'js/interfaccia/modulo_community.js',
         'js/interfaccia/modulo_dispositivi.js',
 		'js/interfaccia/modulo_purchases.js',

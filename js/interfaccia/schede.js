@@ -73,15 +73,7 @@ var SCHEDA = {
 							codiceTranslate = '', 	// codice per il db traduzioni che visualizza il pulsante di google translate
 							finalFunct				// funzione da eseguire alla fine del caricacmento della scheda
 						   ){
-							   
-		/*
-		// forzo il ritorno se la scheda principale è una scheda di modifica
-		/*if(	document.getElementById("scheda_testo").querySelector(".formBtn") && 
-			SCHEDA.schedaAperta ){
-			ritorno = true;
-			funct = '';
-			
-		}*/
+
 		try{
 			SET._caricaScheda({
 				"funct": funct,
@@ -105,14 +97,6 @@ var SCHEDA = {
 			}catch(err){console.log(err);};
 			SCHEDA.noChiudi = false;
 		}
-		
-		/* if(typeof(funct)=='undefined')funct = '';
-		if(typeof(classe)=='undefined')classe = '';
-		if(typeof(ritorno)=='undefined')ritorno = '';
-		if(typeof(espansa)=='undefined')espansa = false;
-		if(typeof(btn)=='undefined')btn = null;
-		if(typeof(btnAdd)=='undefined')btnAdd = '';
-		if(typeof(codiceTranslate)=='undefined')codiceTranslate = ''; */
 		if(typeof(finalFunct)!='undefined')SCHEDA.finalFunct = finalFunct;
 		
 		if(SCHEDA.btnSel && !ritorno){
@@ -187,7 +171,6 @@ var SCHEDA = {
 		
 		document.getElementById("scheda_titolo").innerHTML=htmlEntities(titolo);
 		document.getElementById("scheda_testo"+nScheda).innerHTML=html;
-		//document.getElementById("scheda_testo"+nScheda).classList.remove("translated");
 		
 		if(trans_el = document.getElementById("scheda_testo"+nScheda).querySelector(".translatable")){
 			SCHEDA["htmlOr"+nScheda] = trans_el.innerHTML;
@@ -350,7 +333,6 @@ var SCHEDA = {
 			let mm = smartMenu ? 1 : 20,
 				h =(HF()-(SCHEDA.aggancio.sotto.y-SCHEDA.gapScheda)-SCHEDA.getMM()+mm);
 			
-			//document.getElementById("scheda").classList.remove("h150")
 			document.getElementById("scheda_testo").style.height = h + 'px';
 			document.getElementById("scheda_testo2").style.height = h + 'px';
 			document.getElementById("scheda").classList.remove("schLibera");
@@ -638,7 +620,6 @@ var SCHEDA = {
 		}
 	},
 	stampaScheda: function( obj ){
-		/* let noInt = false; */
 		if(document.getElementById("menuScheda").className.indexOf("visSch")>-1)SCHEDA.swMenuScheda();
 		// verifico le autorizzazioni
 		if(!DB.login.data.auths.length){
@@ -653,19 +634,15 @@ var SCHEDA = {
 			annoAtt=d.getFullYear(),
 			cartaIntestata = false,
 			TITOLO_PAGINA = document.title,
-			nScheda = SCHEDA.scheda2Aperta ? "2" : "";
-		/*let sch = document.getElementById("scheda");
-		if(	sch.classList.contains("scheda_A") || 
-			sch.classList.contains("scheda_B") || 
-			sch.classList.contains("scheda_Riepi") )obj = {};*/
-		let titolo = document.getElementById("scheda_titolo").innerHTML,
+			nScheda = (SCHEDA.scheda2Aperta ? "2" : ""),
+			titolo = document.getElementById("scheda_titolo").innerHTML,
 			corpo = document.getElementById("scheda_testo"+nScheda).querySelector(".scheda_stampa").outerHTML;
 		if(	typeof(obj)!='undefined'){
 			cartaIntestata = true;
 			titolo = '';
-			console.log(obj)
+
 			if(JSON.stringify(obj)!='{}')TITOLO_PAGINA = htmlEntities(obj.titolo)+" "+htmlEntities(TXT("per"))+" "+htmlEntities(obj.intestazione);
-			console.log(TITOLO_PAGINA);
+
 			let dati = '<p>'+htmlEntities(TXT("per"))+' '+htmlEntities(obj.intestazione) + '</p>' + 
 						'<p>'+htmlEntities(obj.corpo).replace(/\n/g,'<br>') + '</p>' + 
 						'<p style="padding-left:50px;padding-top:50px;"><i>' + TXT("Data") + ':</i> ' + getFullDataTS(d/1000) + '<br><br>' +
@@ -721,11 +698,6 @@ var SCHEDA = {
 				'				   cellspacing="0"' +
 				'				   border="0">' +
 				'				<tr>' +
-				/*'					<td>' +
-				'						<img src="img/logo_iaomai_Bucato_Beige.png"' +
-				'				   			 width="125"' +
-				'				   			 height="38" />' +
-				'				   	</td>' +*/
 				'				   	<td align="right"' +
 				'				   		valign="middle"' +
 				'				   		style="font-size:11px;opacity:0.7;">' +
@@ -736,14 +708,12 @@ var SCHEDA = {
 				'		</div>';
 		else{
 			let logo = __(DB.login.data.logoAzienda);
-			//if(!logo)logo = __(DB.login.data.imgAvatar);
-			HTML += '<div style="';
-			//if(logo)
-			HTML += 'text-align:left;';
-			HTML += 'border-bottom:1px solid #DDD;margin-bottom:20px;">';
-			if(logo)HTML += '<img src="'+logo+'" style="height:80px;float:left;margin-right:10px;">';
-			HTML += '<span style="display:inline-block;font-size:11px;">' + DB.login.data.Intestazione.replace(/\n/gi,"<br>") + '</span>';
-			HTML += '<div class="l" style="margin-bottom:20px;"></div></div>';
+			HTML += '<div style="' +
+					'text-align:left;' +
+					'border-bottom:1px solid #DDD;margin-bottom:20px;">';
+					(logo ? '<img src="'+logo+'" style="height:80px;float:left;margin-right:10px;">' : '') +
+					'<span style="display:inline-block;font-size:11px;">' + DB.login.data.Intestazione.replace(/\n/gi,"<br>") + '</span>' +
+					'<div class="l" style="margin-bottom:20px;"></div></div>';
 		}
 		HTML += '		<div id="cont">';
 		if(titolo && corpo.indexOf("<h1")==-1)HTML +=
@@ -754,8 +724,8 @@ var SCHEDA = {
 				'			   		   display: inline-block;' +
 				'			   		   width: calc(100% - 20px);">' +
 								titolo +
-				'			</h1>';
-		HTML +=	'			<div id="scheda"' +
+				'			</h1>' +
+				'			<div id="scheda"' +
 				'			   	 style="display:block;' +
 				'			   	 		position:relative;"' +
 				'			   	 class="schLibera sch_Max800 scheda_paziente schForm contStampa">' +
@@ -765,8 +735,6 @@ var SCHEDA = {
 				'			   	 	  		background-color:#FFF;">' +
 				'			   		<div id="scheda_testo"' +
 				'			   	 	  	 style="background-color:#FFF;' +
-				/* '			   	 	  			padding-left:20px;' +
-				'			   	 	  			padding-right:20px;' + */
 				'			   	 	  			display:block;' +
 				'			   	 	  			height:auto;' +
 				'			   	 	  			overflow:visible;' +
@@ -785,9 +753,7 @@ var SCHEDA = {
 	},
 	
 	initElenco: function(){
-		//document.getElementById("elenchi").classList.add("visSch");
 		document.getElementById("elenchi_pulsanti").classList.add("visSch");
-		//document.getElementById("scheda").classList.add("visSch_1");
 		if(!smartMenu)SCHEDA.chiudiElenco();
 		else onWindowResize();
 	},
@@ -863,7 +829,6 @@ var SCHEDA = {
 		document.getElementById("scheda").classList.toggle("schRid", document.getElementById("elenchi").classList.contains("visSch"));
 	},
 	chiudiElenco: function(){
-		/* let aperto = document.getElementById("elenchi_cont").classList.contains("visSch"); */
 		document.getElementById("elenchi_cont").classList.remove("visSch");
 		document.getElementById("scheda").classList.remove("schOp");
 		document.getElementById("elenchi").classList.remove("visSch");
@@ -895,13 +860,6 @@ var SCHEDA = {
 	},
 	selElenco: function( elenco, el ){
 		let iconaAdd = '';
-		//if(elenco == 'pazienti')iconaAdd='<img src="img/ico_cliente.png" id="elenchi_icona">';
-		//if(elenco == 'servizi')iconaAdd='<img src="img/ico_servizio.png" id="elenchi_icona">';
-		//if(elenco == 'fornitori')iconaAdd='<img src="img/ico_fornitore.png" id="elenchi_icona">';
-		//if(elenco == 'teoria')iconaAdd='<img src="img/ico_teoria2.png" id="elenchi_icona">';
-		//if(elenco == 'patologie')iconaAdd='<img src="img/ico_patologie2.png" id="elenchi_icona">';
-		//if(elenco == 'procedure')iconaAdd='<img src="img/ico_prescrizione.png" id="elenchi_icona">';
-		
 		document.getElementById("lista_base").classList.remove("noPwd");
 		document.getElementById("patientPwdRequest").type = 'text';
 		document.getElementById("patientPwdRequest").value = '';
@@ -936,10 +894,7 @@ var SCHEDA = {
 		if(tipo=='base')SCHEDA.elencoSelBase = elenco;
 		if(tipo=='set')SCHEDA.elencoSelSet = elenco;
 		SCHEDA.verPosScheda();
-		//if(elenco == 'pazienti' && mouseDetect && PAZIENTI.idCL==-1)document.getElementById("paz_ricerca").focus();
-		//if(elenco == 'patologie' && mouseDetect)document.getElementById("pat_ricerca").focus();
-		//if(elenco == 'procedure' && mouseDetect)document.getElementById("proc_ricerca").focus();
-		
+
 		if(document.getElementById("elenchi").classList.contains("LISTE"))SCHEDA.setMenuDim(3);
 	},
 	setTriploLivello: function( elenco ){
@@ -1147,7 +1102,6 @@ var SCHEDA = {
 	pulsantiForm: function( azElimina, azAnnulla, azSubmit ){
 		SCHEDA.comprimiElenco();
 		HTML = '<div class="formBtn noPrint">';
-		//if(azElimina)HTML += '<div class="p_paz_el" onClick="'+azElimina+'">'+TXT("Elimina")+'</div>';
 		HTML += '<span id="btn_annulla" class="annullaBtn" onclick="'+azAnnulla+'">'+TXT("Annulla")+'</span><span class="submitBtn" onclick="if(verifica_form(document.formMod))'+azSubmit+'">'+TXT("Salva")+'</span></div>'+H.chr10;	
 		return HTML;
 	}
