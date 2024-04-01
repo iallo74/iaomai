@@ -1,5 +1,5 @@
 var SYNCRO = {
-	
+	 
 	afterFunct: null,
 	nSinc: 0,
 	totSinc: 0,
