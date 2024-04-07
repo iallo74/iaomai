@@ -526,6 +526,7 @@ function tastiUp(e){
 	if(tasto == 81)prss_Q=false;
 	if(tasto == 65)prss_A=false;
 	if(tasto == 76)prss_L=false;
+	if(tasto==88)MODELLO.creaPunto();
 }
 if(!touchable){	
 	document.onkeydown = tasti;

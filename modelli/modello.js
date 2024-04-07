@@ -21,6 +21,8 @@ var MODELLO = {
 	orOp: -1,
 	tipoPelle: '',
 	flip: false,
+	posOver: null, // test per posizione x,y,z su oggetto
+	editor: false, // test per editor di punti
 	open_x_translate: false,
 	
 	_init: function(modello){
@@ -501,20 +503,11 @@ var MODELLO = {
 				postApreSet = true;
 				caricaSet(globals.mapOpened,document.getElementById("p_"+globals.mapOpened)); // riapro il set al caricamento
 			}
-			/*if(localStorage.set && globals.memorizza){
-				caricaSet(localStorage.set,document.getElementById("p_"+localStorage.set));
-			}//else postApreSet = false;*/
-			//document.getElementById("logo_inizio").style.display = 'none';
 			if(getVar("demo")=='anatomymap'){
 				visLoader('');
 				MODELLO.swArea();
 				setTimeout(function(){
 					nasLoader();
-					/*setTimeout(function(){
-						GUIDA.visFumetto("guida_anatomia");
-					},1200);*/
-					
-					
 				},300);
 			}else if(getVar("demo")){
 				if(getVar("demo")=='acupointsmap')caricaSet('meridiani_cinesi');
@@ -586,7 +579,28 @@ var MODELLO = {
 		inizio = false;
 	},
 	
-	
+	creaPunto: function(){
+		let pointBase = new THREE.MeshStandardMaterial( {
+			color: 0xCC0000,
+			roughness:1,
+			transparent: true,
+			depthWrite: false
+		}),
+			geometryPallino = new THREE.SphereGeometry( 0.02, 5, 5 ),
+			pallino = new THREE.Mesh( geometryPallino, pointBase );
+			pallino.name = 'pallino';
+		ANATOMIA.add( pallino );
+
+		let vector = manichinoCont.worldToLocal(MODELLO.posOver);
+		pallino.position.set(	vector.x,
+								vector.y,
+								vector.z);
+		
+		/* manichinoCont.updateMatrix();
+		let matrix = manichinoCont.matrix;
+		scene.getObjectByName("pallino").applyMatrix(matrix); */
+	},
+
 	// RENDER ANATOMIA (per i rollover sull'anatomia
 	_render: function(){
 		var make=true;
@@ -606,11 +620,15 @@ var MODELLO = {
 					if(MENU.getOp("Legamenti") > 0 && ANATOMIA.children[i].name.toLowerCase()=='legamenti')pass++;
 					if(MENU.getOp("Visceri") > 0 && ANATOMIA.children[i].name.toLowerCase()=='visceri')pass++;
 					if(MENU.getOp("Vasi") > 0 && ANATOMIA.children[i].name.toLowerCase()=='vasi')pass++;
-					if(MENU.getOp("Aree") > 0.6 && areasView && !MODELLO.areaSel)pass = 0;
-					if(MENU.getOp("Aree") > 0 && areasView && ANATOMIA.children[i].name.toLowerCase()=='pins_aree')pass++;
-					//if(MENU.getOp("Aree") < 1 && areasView)pass++;
-					if(MENU.getOp("Pelle") == 1 && !areasView)pass = 0;
-					if(ANATOMIA.children[i].name.toLowerCase()=='pelle')pass = 0;
+
+					if(MODELLO.editor){
+						if(MENU.getOp("Pelle") > 0 && ANATOMIA.children[i].name.toLowerCase()=='pelle')pass++;
+					}else{
+						if(MENU.getOp("Aree") > 0.6 && areasView && !MODELLO.areaSel)pass = 0;
+						if(MENU.getOp("Aree") > 0 && areasView && ANATOMIA.children[i].name.toLowerCase()=='pins_aree')pass++;
+						if(MENU.getOp("Pelle") == 1 && !areasView)pass = 0;
+						if(ANATOMIA.children[i].name.toLowerCase()=='pelle')pass = 0;
+					}
 					if(	pass ){
 						var intersects = raycaster.intersectObject( ANATOMIA.children[i] );
 						if ( intersects.length > 0 ){
@@ -631,13 +649,14 @@ var MODELLO = {
 					}
 				}
 			}
-			var objOver = null;
+			objOver = null;
 			if(ints.length){
 				var near = ints[0];
 				for(l in ints){
 					if(ints[l].distance<near.distance)near=ints[l];
 				}
 				objOver=near.object;
+				MODELLO.posOver=near.point;
 			}
 			if(objOver){
 				var addType = '';
@@ -688,6 +707,7 @@ var MODELLO = {
 				nasToolTip();
 				renderer.domElement.style.cursor='default';
 			}
+			if(!ints.length)MODELLO.posOver=null;
 			make=true;
 		}
 		return make;
@@ -695,10 +715,6 @@ var MODELLO = {
 	_onClick: function(event){
 		if(event.button != 0 && !touchable)return;
 		if(this.INTERSECTED){
-			/*if(touchable){
-				mouse.x = + (event.targetTouches [0] .pageX / window.innerWidth) * 2 + -1;
-				mouse.y = - (event.targetTouches [0] .pageY / window.innerHeight) * 2 + 1;
-			}*/
 			if(this.INTERSECTED.indexOf("Osso_") > -1)MODELLO.isolaOsso(document.getElementById(this.INTERSECTED),'',true);
 			if(this.INTERSECTED.indexOf("Legamento_") > -1)MODELLO.isolaLegamento(document.getElementById(this.INTERSECTED),'',true);
 			if(this.INTERSECTED.indexOf("Organo_") > -1)MODELLO.isolaOrgano(document.getElementById(this.INTERSECTED),'',true);
@@ -707,8 +723,6 @@ var MODELLO = {
 				if(globals.modello.muscles3d)MODELLO.isolaMuscolo3d(document.getElementById(this.INTERSECTED),'',true);
 				else MODELLO.isolaArea(document.getElementById(this.INTERSECTED),'',true);
 			}
-			
-			var id = this.INTERSECTED;
 		}
 	},
 	
@@ -813,13 +827,6 @@ var MODELLO = {
 				MODELLO.MAT.materialVasi.visible = true;
 				MODELLO.MAT.materialOrganoSel.visible = true;
 			}
-			/*if(t=='Pelle'){
-				try{
-					let depthFunc = 3;
-					if(o<1)depthFunc = 1;
-					SET._setLineTrasp(depthFunc);
-				}catch(err){if(SET) console.log(err) }
-			}*/
 			MENU.setOp(t2, o);
 			localStorage["op"+t]=o;
 			// gestisco i pins
@@ -827,11 +834,8 @@ var MODELLO = {
 				let els = document.getElementById("legende").getElementsByTagName("div");
 				for(let e=0;e<els.length;e++){
 					let idContr = els[e].id;
-					//if(idContr.indexOf('Muscolo_')>-1 && (t2=='Area' || t2=='Pelle'))idContr = 'Area_';
 					if( 
-						/* (
-							t2 == 'Pelle' && els[e].id.indexOf("Muscolo_") > -1
-						) ||  */(
+						(
 							t2 == 'Aree' && els[e].id.indexOf("Muscolo_") > -1 && o < 0.2
 						) || (
 							( ( t2 == 'Pelle' && o > 0.95 ) || ( t2 == 'Aree' && o > 0.95 ) ) &&
@@ -887,9 +891,6 @@ var MODELLO = {
 			document.getElementById("pulsanti_modello").classList.remove("visSch");
 			document.getElementById("pulsanti_modello").style.opacity = 1;
 		}
-		
-		/*let x = event.pageX,
-			y = event.pageY;*/
 		
 		let x = touchable ? event.touches[ 0 ].pageX : event.clientX,
 			y = touchable ? event.touches[ 0 ].pageY : event.clientY,
@@ -981,7 +982,6 @@ var MODELLO = {
 			if(centr){
 				// disposizione CENTRATA
 				let spY = 0;
-				//if(pos2.y > pos1.y)spY = els[e].scrollHeight;
 				spY = els[e].scrollHeight / 2;
 				x = pos2.x - (els[e].scrollWidth / 2);
 				y = (pos2.y + spY )- els[e].scrollHeight;
@@ -1001,8 +1001,6 @@ var MODELLO = {
 			for(let g in MODELLO.meshGuide.children){
 				if(MODELLO.meshGuide.children[g].name.indexOf(n) == 0){
 					MODELLO.meshGuide.children[g].visible = vis;
-					/* let array = MODELLO.meshGuide.children[g].geometry.attributes.position.array; */
-					
 					let nome = MODELLO.meshGuide.children[g].name,
 						idObj = nome,
 						txt = n,
@@ -1022,11 +1020,9 @@ var MODELLO = {
 						let addTxt = '';
 						if(txt.indexOf("_SX") > -1){
 							txt = txt.replace("_SX","");
-							//addTxt = 'SX';
 						}
 						if(txt.indexOf("_DX") > -1){
 							txt = txt.replace("_DX","");
-							//addTxt = 'DX';
 						}
 						let html = TXT(""+txt);
 						if(addTxt)html += " ("+TXT(""+addTxt)+")";
@@ -1058,7 +1054,6 @@ var MODELLO = {
 			pN = n.split("_"),
 			id = leg.id.substr(4,leg.id.length-4);
 		if(id.substr(id.length-3,3)=='_SX' || id.substr(id.length-3,3)=='_DX')id=id.substr(0,id.length-3);
-		/* let p = ''; */
 		try{
 			let els = MODELLO.MAT.masks[ id.substr(id.indexOf("_")+1,id.length-id.indexOf("_")-1) ].masks;
 			for(let e=0;e<els.length;e++){
@@ -1067,14 +1062,11 @@ var MODELLO = {
 		}catch(error){
 			noIsola = false;
 		};
-		//console.log(id);
 		let fnc = pN[0];
 		if(fnc=='Muscolo'){
 			if(globals.modello.muscles3d)fnc += '3d';
 			else fnc = 'Area';
 		}
-		/* if(fnc=='Muscolo' && pN[0]!='Area' && globals.modello.muscles3d)fnc += '3d';
-		if(fnc=='Muscolo' && pN[0]!='Area' && !globals.modello.muscles3d)fnc = 'Area'; */
 		if(DB_anatomia[id])txt += '<div class="s" onClick="MODELLO.caricaAnatomia(\''+id+'\',true);">'+TXT("ApriScheda")+'</div>';
 		txt += '<div class="c" onClick="MODELLO.centraAnatomia(\''+leg.dataset.idObj+'\');">'+TXT("CentraDaQui")+'</div>';
 		let isola = 'MODELLO.isola'+fnc+'(document.getElementById(\''+n+'\'))';
@@ -1216,11 +1208,9 @@ var MODELLO = {
 		for(let g in MODELLO.meshGuide.children){
 			if(MODELLO.meshGuide.children[g].name.indexOf(n) == 0){
 				MODELLO.meshGuide.children[g].visible = vis;
-				/* let array = MODELLO.meshGuide.children[g].geometry.attributes.position.array; */
 				
 				let nome = MODELLO.meshGuide.children[g].name,
 					txt = n;
-				/* let idObj = nome; */
 				if(nome.indexOf("(") > -1){
 					let pNome = nome.split("("),
 						pNome2 = pNome[1].split(")");
@@ -1232,7 +1222,6 @@ var MODELLO = {
 		}
 	},
 	swPins: function(){
-		//document.getElementById("legende").classList.toggle("visSch");
 		document.getElementById("legende").classList.toggle("nasPins");
 		document.getElementById("p_pins").classList.toggle("pinsNo");
 		MODELLO.meshGuide.visible = !MODELLO.meshGuide.visible;
@@ -1275,9 +1264,6 @@ var MODELLO = {
 						MENU.addSelected(el,'V');
 						MODELLO.swGuide("Organo_"+organo,true, noCentra);
 						if(WF() < 600)MENU.chiudiMenu();
-						/*if(DB_anatomia[el.id]){
-							MODELLO.caricaAnatomia(el.id,false);
-						}*/
 					}
 				}else if(!modo){
 					let mat = eval("MODELLO.MAT.materialVisceri"+MODELLO.meshVisceri.children[n].userData.matAdd);
@@ -1324,9 +1310,6 @@ var MODELLO = {
 						MENU.addSelected(el,'V');
 						MODELLO.swGuide("Vaso_"+vaso,true, noCentra);
 						if(WF() < 600)MENU.chiudiMenu();
-						/*if(DB_anatomia[el.id]){
-							MODELLO.caricaAnatomia(el.id,false);
-						}*/
 					}
 				}else if(!modo){
 					let mat = eval("MODELLO.MAT.materialVasi"+MODELLO.meshVasi.children[n].userData.matAdd);
@@ -1369,9 +1352,6 @@ var MODELLO = {
 						MENU.addSelected(el,'O');
 						MODELLO.swGuide("Osso_"+osso,true, noCentra);
 						if(WF() < 600)MENU.chiudiMenu();
-						/*if(DB_anatomia[el.id]){
-							MODELLO.caricaAnatomia(el.id,false);
-						}*/
 					}
 				}else if(!modo){
 					MODELLO.meshOssa.children[n].material = eval("MODELLO.MAT.materialOssa"+MODELLO.meshOssa.children[n].userData.matAdd);
@@ -1409,9 +1389,6 @@ var MODELLO = {
 						MENU.addSelected(el,'M');
 						MODELLO.swGuide("Muscolo_"+muscolo3d,true, noCentra);
 						if(WF() < 600)MENU.chiudiMenu();
-						/*if(DB_anatomia[el.id]){
-							MODELLO.caricaAnatomia(el.id,false);
-						}*/
 					}
 				}else if(!modo){
 					MODELLO.meshMuscoli3d.children[n].material = eval("MODELLO.MAT.materialMuscoli3d"+MODELLO.meshMuscoli3d.children[n].userData.matAdd);
@@ -1453,9 +1430,6 @@ var MODELLO = {
 						MENU.addSelected(el,'L');
 						MODELLO.swGuide("Legamento_"+legamento,true, noCentra);
 						if(WF() < 600)MENU.chiudiMenu();
-						/*if(DB_anatomia[el.id]){
-							MODELLO.caricaAnatomia(el.id,false);
-						}*/
 					}
 				}else if(!modo){
 					MODELLO.meshLegamenti.children[n].material = eval("MODELLO.MAT.materialLegamenti"+MODELLO.meshLegamenti.children[n].userData.matAdd);
@@ -1521,9 +1495,6 @@ var MODELLO = {
 			if(!desel){
 				MENU.addSelected(el,'M');
 				el.classList.toggle("p_viscSel");
-				/*if(DB_anatomia[el.id]){
-					MODELLO.caricaAnatomia(el.id,false);
-				}*/
 			}else{
 				MENU.removeSelected(el);
 				if(el.id == MODELLO.schSel)SCHEDA.scaricaScheda();
@@ -1533,10 +1504,8 @@ var MODELLO = {
 				if(globals.pezziSelezionati[m].indexOf("Muscolo_") > -1)MODELLO.areaSel = true;
 			}
 		}
-		//MODELLO.op("Aree",MENU.getOp("Aree"));
 		MODELLO.op("Aree",1);
 		MENU.verSelected();
-		//if(!MODELLO.areaSel)MODELLO.tutteAree();
 	},
 	tutteAree: function(){
 		for(let m=0;m<MODELLO.MAT.materialAree.length;m++){
@@ -1563,7 +1532,6 @@ var MODELLO = {
 		MENU.verSelected();
 	},
 	mergeImages: function( m, IMG, modo, el, globalCompositeOperation = 'lighten' ){
-		/* let selected = el.className.indexOf("p_viscSel"); */
 		let i2 = MODELLO.imgsAtt[m];
 		if(!i2)MODELLO.setAlphaMap( m, IMG, modo ); // se non c'era ancora alphaMap
 		else{ // se devo fondere le mappe alpha
@@ -1650,8 +1618,6 @@ var MODELLO = {
 		if(globals.pezziSelezionati.indexOf(ELEM) == -1){
 			document.getElementById("el_"+tipoAnat+"_cont").getElementsByTagName("p")[tipo+"_"+ELEM].click();
 		}
-		//MODELLO.centraAnatomia( pin );
-		//RICERCHE.nascondiGlobal();
 		RICERCHE.historyGlobal();
 	},
 	cambiaTipoPelle: function( tipo ){
