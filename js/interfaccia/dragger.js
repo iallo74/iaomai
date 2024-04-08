@@ -52,6 +52,7 @@ var DRAGGER = {
 				DRAGGER.att = true;
 				DRAGGER.posLB();
 				document.getElementById("scheda_testo").classList.add("noScroll");
+				document.querySelector(".listaTrattamenti ").classList.add("noScroll");
 			},1000);
 		}else DRAGGER.att = true;
 		DRAGGER.elDrag = el;
@@ -161,6 +162,7 @@ var DRAGGER = {
 			clearTimeout(DRAGGER.tmScroll);
 			DRAGGER.tmScroll = null;
 			document.getElementById("scheda_testo").classList.remove("noScroll");
+			document.querySelector(".listaTrattamenti ").classList.remove("noScroll");
 			window.removeEventListener("touchend", DRAGGER.stopDrag ,false);
 			window.removeEventListener("touchmove", DRAGGER.moveDrag ,false);
 		}

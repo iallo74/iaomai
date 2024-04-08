@@ -914,6 +914,7 @@ var agenda = {
 			agenda.elDrag.classList.add("eviDrag");
 			agenda.elDrag.classList.add("evi_"+agenda.tipoDrag);
 			if(touchable){
+				document.body.classList.add("noScroll");
 				if(!agenda.inTratt)document.getElementById("agCont").classList.add("noScroll");
 				else{
 					document.querySelector(".agendaCol").classList.add("noScroll");
@@ -979,6 +980,7 @@ var agenda = {
 		}else{
 			window.removeEventListener("touchend", agenda.stopDrag ,false);
 			window.removeEventListener("touchmove", agenda.moveDrag ,false);
+			document.body.classList.remove("noScroll");
 			if(!agenda.inTratt)document.getElementById("agCont").classList.remove("noScroll");
 			else{
 				document.querySelector(".agendaCol").classList.remove("noScroll");	
