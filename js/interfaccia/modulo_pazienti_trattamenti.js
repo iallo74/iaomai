@@ -1321,14 +1321,18 @@ var PAZIENTI_TRATTAMENTI = { // extend PAZIENTI
 		JSN=JSON.parse(txt);
 		JSN.data/=1000;
 		if(debug)console.log(JSN)
-		oraInizio=parseInt(JSN.oraInizio/12)+":"+twoDigits(parseInt(JSN.oraInizio%12)*5);
-		oraFine=parseInt(JSN.oraFine/12)+":"+twoDigits(parseInt(JSN.oraFine%12)*5);
 		SCHEDA.formModificato=true;
 		el.dataset.d=txt;
 		document.formMod.TimeTrattamento.value=JSN.data*1;
 		document.formMod.oraInizio.value=JSN.oraInizio;
 		document.formMod.oraFine.value=JSN.oraFine;
-		document.getElementById("dataTxt").innerHTML="<b>"+getFullDataTS(JSN.data)+"</b> ("+oraInizio+" - "+oraFine+")";
+		let DT = '... '+htmlEntities(TXT("ScegliData"));
+		if(JSN.oraInizio>-1){
+			oraInizio=parseInt(JSN.oraInizio/12)+":"+twoDigits(parseInt(JSN.oraInizio%12)*5);
+			oraFine=parseInt(JSN.oraFine/12)+":"+twoDigits(parseInt(JSN.oraFine%12)*5);
+			DT = "<b>"+getFullDataTS(JSN.data)+"</b> ("+oraInizio+" - "+oraFine+")";
+		}
+		document.getElementById("dataTxt").innerHTML=DT;
 	},
 	
 	// ricerca

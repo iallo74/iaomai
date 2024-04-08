@@ -382,6 +382,24 @@ body:not(.smart) .agendaOre div:not(.elApp) span:last-child{
 	margin-top:-3px !important;
 	border:none !important;
 }
+#cancellaOrario{
+	vertical-align: top;
+	display: inline-block;
+	width: 30px;
+	height: 30px;
+	background: url('../img/ico_cestino.png') left center no-repeat;
+	background-position: center;
+	background-repeat: no-repeat;
+	margin-right: 10px;
+	border-radius: 4px;
+	border: 1px solid rgba(0, 0, 0, 0.2);
+	background-color: rgba(255, 151, 0, 0.2);
+	opacity: 0.5;
+	cursor:pointer;
+}
+#cancellaOrario:hover{
+	opacity:0.8 !important;
+}
 
 
 /* calendario */

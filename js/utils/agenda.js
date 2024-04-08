@@ -837,7 +837,7 @@ var agenda = {
 				'<div id="app_generico"' +
 				'	  class="visSch">' +
 				'</div>' +
-				'<p style="text-align:right;margin-bottom: 0px;"><span class="submitBtn annullaBtn" id="annullaOrario" onClick="agenda.chiudiScelta(true);">' +
+				'<p style="text-align:right;margin-bottom: 0px;"><span id="cancellaOrario" onClick="agenda.scegliOrarioTrattamento(true);"></span><span class="submitBtn annullaBtn" id="annullaOrario" onClick="agenda.chiudiScelta(true);">' +
 					htmlEntities(TXT("Annulla")) +
 				'</span><span class="submitBtn salvaBtn" onClick="agenda.scegliOrarioTrattamento();">' +
 					htmlEntities(TXT("Salva")) +
@@ -845,19 +845,21 @@ var agenda = {
 		document.getElementById("cont_sceltaAppuntamento").innerHTML = HTML;
 		document.getElementById("cont_sceltaAppuntamento").style.left = ((tCoord(document.getElementById("scheda_testo"))+document.getElementById("scheda_testo").scrollWidth/2)-150)+'px';
 	},
-	scegliOrarioTrattamento: function(){
+	scegliOrarioTrattamento: function( cancella=false ){
 		this.orarioDef = {
-			data: this.DataPartenza.getTime(),
-			oraInizio: parseInt(document.getElementById("oI").value),
-			oraFine: parseInt(document.getElementById("oF").value)
+			data: cancella ? 0 : this.DataPartenza.getTime(),
+			oraInizio: cancella ? -1 : parseInt(document.getElementById("oI").value),
+			oraFine: cancella ? -1 : parseInt(document.getElementById("oF").value)
 		};
 		let DataPartenza = this.DataPartenza;
 		eval(this.retFunct+"('"+JSON.stringify(this.orarioDef)+"',agenda.elBut)");
 		agenda.chiudiScelta();
 		document.getElementById("dataTxt").click();
-		setTimeout(function(){
-			document.getElementById("dataTxt").click();
-		},400);
+		if(!cancella){
+			setTimeout(function(){
+				document.getElementById("dataTxt").click();
+			},400);
+		}
 	},
 	verOrari: function( el ){ // verifica che oraInizio sia prima di oraFine
 		let oI = parseInt(document.getElementById("oI").value),
