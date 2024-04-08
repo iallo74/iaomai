@@ -275,11 +275,14 @@ body:not(.smart) .agendaOre div:not(.elApp) span:last-child{
 }
 .touch .resizer_cont > span{
 	margin-left: -40px !important;
-	background-color: rgba(0, 100, 100, 0.5) !important;
+	/* background-color: rgba(0, 100, 100, 0.5) !important; */
+	background-image:url('../img/ico_resizeMobile.png') !important;
+	background-position:center bottom;
 	width: 30px !important;
 	height: 30px !important;
 	border-radius: 30px !important;
 	margin-top: -18px;
+	opacity:1 !important;
 }
 .resizer_cont > span:hover{
 	background-color: rgba(0, 0, 0, 0.2);
