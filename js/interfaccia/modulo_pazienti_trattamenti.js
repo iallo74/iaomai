@@ -1065,7 +1065,7 @@ var PAZIENTI_TRATTAMENTI = { // extend PAZIENTI
 						
 			DB.pazienti.data[PAZIENTI.idCL].trattamenti[idTrattamento].LabelCiclo = LabelCiclo;
 			
-			if(document.formMod.idTratt){
+			if(document.formMod?.idTratt){
 				if(document.formMod.idTratt.value && document.formMod.idTratt.value*1 == idTrattamento*1){
 					diffLabel = (document.formMod.LabelCiclo.value != document.formMod.LabelCiclo.dataset.origValue);
 					diffId = (document.formMod.idCiclo.value != document.formMod.idCiclo.dataset.origValue);
