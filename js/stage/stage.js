@@ -25,15 +25,19 @@ var camera, scene, renderer,
 
 function init() {
 	if(typeof(localStorage.colore)=='undefined')localStorage.colore = 2;
+	if(typeof(localStorage.fondino)=='undefined')localStorage.fondino = 'rachide';
 	if(typeof(localStorage.textSize)=='undefined')localStorage.textSize = '';
 	if(typeof(localStorage.tipoPelle)=='undefined')localStorage.tipoPelle = '';
 
 	selCol(localStorage.colore);
+	console.log(localStorage.fondino)
+	selSf(localStorage.fondino);
 	// SCENE
 	scene = new THREE.Scene();
 	scene.userData.BGcolorPrint = new THREE.Color( 0xffffff );
 	//document.body.style.backgroundColor = colori[localStorage.colore];
 	document.body.classList.add("bodyStyled"+localStorage.colore);
+	document.body.classList.add("sf_"+localStorage.fondino);
 	//scene.userData.BGcolorScreen = new THREE.Color( colori[localStorage.colore] );
 	scene.background = null;//scene.userData.BGcolorScreen;
 	
@@ -853,6 +857,15 @@ function selCol(n){
 	document.body.classList.add('bodyStyled'+localStorage.colore);
 	MODELLO.MAT.materialVisceri.color = new THREE.Color( MODELLO.MAT.colsVisceri[localStorage.colore] );
 	MODELLO.MAT.materialPelle.color = new THREE.Color( MODELLO.MAT.colsPelle[localStorage.colore] );
+}
+function selSf(n){
+	if(localStorage.fondino)document.body.classList.remove('sf_'+localStorage.fondino);
+	localStorage.fondino = n;
+	let els = document.getElementById("sfSelect").options;
+	for(let i = 0; i<els.length; i++){
+		if(localStorage.fondino == els[i].value)document.getElementById("sfSelect").selectedIndex = i;
+	}
+	document.body.classList.add('sf_'+localStorage.fondino);
 }
 function getCenterPoint( mesh ){ // trova il punto centrale di una mesh
     let geometry = mesh.geometry,

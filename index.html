@@ -330,12 +330,22 @@
             <div id="colori" class="popup"> <!-- PERSONALIZZAZIONE -->
             	<div id="labelColori" class="popup_label">{{TXT_Personalizzazione}}<div class="popup_chiudi" onClick="MENU.chiudiMenu();"></div></div>
             	<div id="contColori" class="popup_cont">
-               <p id="colSel">
-                   <i>{{TXT_ColoreAmbiente}}:</i>
-                   <span class="c2" onClick="selCol(2);"></span>
-                   <span class="c1" onClick="selCol(1);"></span>
-                   <span class="c0" onClick="selCol(0);"></span>
-               </p>
+                <p id="colSel">
+                    <i>{{TXT_ColoreAmbiente}}:</i>
+                    <span class="c2" onClick="selCol(2);"></span>
+                    <span class="c1" onClick="selCol(1);"></span>
+                    <span class="c0" onClick="selCol(0);"></span>
+                </p>
+                <p id="sfSel">
+                    <i>{{TXT_SfondoAmbiente}}:</i>
+                    <select onChange="selSf(this.value);" id="sfSelect">
+                        <option value="rachide">{{TXT_SfondoRachide}}</option>
+                        <option value="aghi">{{TXT_SfondoAghi}}</option>
+                        <option value="ideogrammi">{{TXT_SfondoIdeogrammi}}</option>
+                        <option value="manichino">{{TXT_SfondoManichino}}</option>
+                        <option value="disegno">{{TXT_SfondoDisegno}}</option>
+                    </select>
+                </p>
                <p id="skinSel">
                    <i>{{TXT_ScegliPelle}}:</i>
                    <span class="p0" onClick="MODELLO.cambiaTipoPelle('');"></span>

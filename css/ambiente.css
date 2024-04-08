@@ -233,6 +233,9 @@ body{
 .bodyModello{
 	background-image:none, url(../img/ombra.png), none;
 }
+
+
+/* RACHIDE */
 body:not(.bodyModello):not(.bodyStyled1):not(.bodyStyled2){
 	background-image:url(../img/logo_iaomai.png), url(../img/ombra.png), url(../img/rachideNeg.png);
 }
@@ -242,6 +245,58 @@ body:not(.bodyModello).bodyStyled1{
 body:not(.bodyModello).bodyStyled2{
 	background-image:url(../img/logo_iaomai_Fondino2.png), url(../img/ombra.png), url(../img/rachideRedBlack.png);
 }
+
+
+/* AGHI */
+body:not(.bodyModello):not(.bodyStyled1):not(.bodyStyled2).sf_aghi{
+	background-image:url(../img/logo_iaomai.png), url(../img/ombra.png), url(../img/aghiNeg.png);
+}
+body:not(.bodyModello).bodyStyled1.sf_aghi{
+	background-image:url(../img/logo_iaomai.png),url(../img/ombra.png),  url(../img/aghiNegxBlu.png);
+}
+body:not(.bodyModello).bodyStyled2.sf_aghi{
+	background-image:url(../img/logo_iaomai_Fondino2.png), url(../img/ombra.png), url(../img/aghiRedBlack.png);
+}
+
+
+/* IDEOGRAMMI */
+body:not(.bodyModello):not(.bodyStyled1):not(.bodyStyled2).sf_ideogrammi{
+	background-image:url(../img/logo_iaomai.png), url(../img/ombra.png), url(../img/ideogrammiNeg.png);
+}
+body:not(.bodyModello).bodyStyled1.sf_ideogrammi{
+	background-image:url(../img/logo_iaomai.png),url(../img/ombra.png),  url(../img/ideogrammiNegxBlu.png);
+}
+body:not(.bodyModello).bodyStyled2.sf_ideogrammi{
+	background-image:url(../img/logo_iaomai_Fondino2.png), url(../img/ombra.png), url(../img/ideogrammiRedBlack.png);
+}
+
+
+/* MANICHINO */
+body:not(.bodyModello):not(.bodyStyled1):not(.bodyStyled2).sf_manichino{
+	background-image:url(../img/logo_iaomai.png), url(../img/ombra.png), url(../img/manichinoNeg.png);
+}
+body:not(.bodyModello).bodyStyled1.sf_manichino{
+	background-image:url(../img/logo_iaomai.png),url(../img/ombra.png),  url(../img/manichinoNegxBlu.png);
+}
+body:not(.bodyModello).bodyStyled2.sf_manichino{
+	background-image:url(../img/logo_iaomai_Fondino2.png), url(../img/ombra.png), url(../img/manichinoRedBlack.png);
+}
+
+
+/* DISEGNO */
+body:not(.bodyModello):not(.bodyStyled1):not(.bodyStyled2).sf_disegno{
+	background-image:url(../img/logo_iaomai.png), url(../img/ombra.png), url(../img/disegnoNeg.png);
+}
+body:not(.bodyModello).bodyStyled1.sf_disegno{
+	background-image:url(../img/logo_iaomai.png),url(../img/ombra.png),  url(../img/disegnoNegxBlu.png);
+}
+body:not(.bodyModello).bodyStyled2.sf_disegno{
+	background-image:url(../img/logo_iaomai_Fondino2.png), url(../img/ombra.png), url(../img/disegnoRedBlack.png);
+}
+
+
+
+
 .bodyStampa{
 	background:#FFF !important;
 }

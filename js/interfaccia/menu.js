@@ -415,6 +415,12 @@ var MENU = {
 			if(localStorage.colore == 2-i)els[i].classList.add("cSel");
 			else els[i].classList.remove("cSel");
 		}
+
+		els = document.getElementById("sfSelect").options;
+		for(let i = 0; i<els.length; i++){
+			if(localStorage.fondino == els[i].value)document.getElementById("sfSelect").selectedIndex = i;
+		}
+
 		els = document.getElementById("skinSel").getElementsByTagName("span");
 		for(let i = 0; i<els.length; i++){
 			els[i].classList.remove("cSel");

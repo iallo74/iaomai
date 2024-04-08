@@ -608,6 +608,57 @@ DB.TXT = {
             por: "Cor do aplicativo",
             deu: "App-Farbe"
         },
+        SfondoAmbiente: {
+            ita: "Sfondo",
+            eng: "Background",
+            esp: "Fondo",
+            fra: "Arrière-plan",
+            por: "Fundo",
+            deu: "Hintergrund"
+        },
+        SfondoRachide: {
+            ita: "Rachide",
+            eng: "Spine",
+            esp: "Columna vertebral",
+            fra: "Épine",
+            por: "Espinha",
+            deu: "Wirbelsäule"
+        },
+        SfondoAghi: {
+            ita: "Aghi",
+            eng: "Needles",
+            esp: "Agujas",
+            fra: "Aiguilles",
+            por: "Agulhas",
+            deu: "Nadeln"
+        },
+        SfondoIdeogrammi: {
+            ita: "Ideogrammi",
+            eng: "Ideograms",
+            esp: "Ideogramas",
+            fra: "Idéogrammes",
+            por: "Ideogramas",
+            deu: "Ideogramme"
+        },
+        SfondoManichino: {
+            ita: "Manichino",
+            eng: "Mannequin",
+            esp: "Maniquí",
+            fra: "Mannequin",
+            por: "Manequim",
+            deu: "Mannequin"
+        },
+        SfondoDisegno: {
+            ita: "Disegno",
+            eng: "Drawing",
+            esp: "Dibujo",
+            fra: "Dessin",
+            por: "Desenho",
+            deu: "Zeichnung"
+        },        
+
+
+
         ScegliPelle: {
             ita: "Tipo di pelle",
             eng: "Skin type",
