@@ -935,7 +935,10 @@ var agenda = {
 			if(agenda.tipoDrag=='resize'){
 				agenda.newInizio = agenda.db.oraInizio;
 				agenda.newFine = agenda.newInizio + parseInt(agenda.elDrag.scrollHeight/4);
-				if(touchable)agenda.newFine-=2;
+				if(touchable){
+					if(!agenda.inTratt)agenda.newFine-=2;
+					else agenda.newFine-=3;
+				}
 				if(agenda.elDrag.id=='inLavorazione')agenda.newFine += 1;
 			}
 			agenda.tt.innerHTML = parseInt(agenda.newInizio/12)+":"+twoDigits(parseInt(agenda.newInizio%12)*5)+" - " +
