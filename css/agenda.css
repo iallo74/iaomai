@@ -328,9 +328,15 @@ body:not(.smart) .agendaOre div:not(.elApp) span:last-child{
 	margin-right: 18px;
 	font-size: var(--font-12-1);
 }
-.touch #ttAgenda,
-.touch #ttLav{
-	margin-right: 88px !important;
+.touch #ttAgenda{
+	position: absolute;
+	display:inline-block;
+	margin-right: 0px !important;
+	margin-left: -5px !important;
+	padding:0px 6px 0px 6px !important;
+	border-radius:6px;
+	text-align: left !important;
+	background-color:rgba(255,255,255,.5);
 }
 #ttLav{
 	font-style:normal !important;
