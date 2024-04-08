@@ -284,6 +284,9 @@ body:not(.smart) .agendaOre div:not(.elApp) span:last-child{
 	margin-top: -18px;
 	opacity:1 !important;
 }
+.touch #inLavorazione .resizer_cont > span{
+	background-image:url('../img/ico_resizeMobileE.png') !important;
+}
 .resizer_cont > span:hover{
 	background-color: rgba(0, 0, 0, 0.2);
 }
