@@ -122,7 +122,7 @@ var SYNCRO = {
 								"DataModifica":DB.appuntamenti.data[k].DataModifica*1,
 								"DataCreazione":DB.appuntamenti.data[k].DataCreazione*1,
 								"Cancellato": DB.appuntamenti.data[k].Cancellato*1 };
-								
+
 					let aggiungere=false;
 					
 					if((DB.appuntamenti.data[k].DataModifica*1>DB.appuntamenti.lastSync*1 || dwnl || bkp) && !__(DB.appuntamenti.data[k].frv))aggiungere=true;
@@ -720,7 +720,7 @@ var SYNCRO = {
 							"DataCreazione": elenco.appuntamenti[p].DataCreazione*1,
 							"Cancellato": elenco.appuntamenti[p].Cancellato*1,
 							"frv": false };
-				
+							
 				for(let k in DB.appuntamenti.data){
 					let AP = DB.appuntamenti.data[k];
 					if(	( AP.idAppuntamento*1>-1 && AP.idAppuntamento*1==elenco.appuntamenti[p].idAppuntamento*1 ) || 

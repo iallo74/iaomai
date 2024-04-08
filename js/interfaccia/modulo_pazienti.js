@@ -1345,7 +1345,7 @@ var PAZIENTI = {
 		document.getElementById('avatarPaziente').getElementsByTagName('div')[0].style.backgroundImage="";
 		document.getElementById('delAvatarPaziente').style.display = 'none';
 		SCHEDA.formModificato = true;
-	},
+	}/* ,
 	
 	// AGENDA GENERICA
 	car_agenda: function( data ){ // scheda dell'agenda
@@ -1369,5 +1369,5 @@ var PAZIENTI = {
 		
 		agenda.apri(data,document.getElementById("agendaPlaceHolder"),null,document.getElementById("agendaPlaceHolder"));
 		MENU.comprimiIcone(true);
-	}
+	} */
 }

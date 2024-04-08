@@ -117,25 +117,30 @@
 .SCH:not(#agCont) .agendaCol{
 	height: 259px;
     overflow-y: auto;	
+	position: relative;
+	width: 100%;
+	background-color: #FFF;
+	border-bottom-left-radius: 6px;
+	border-bottom-right-radius: 6px;
 }
 
 /* le righe */
-body:not(.smart) .agendaOre div,
-body:not(.smart) .agendaOre div span{
-	line-height:20px !important;
-	height:20px !important;
+.agendaOre div:not(.elApp),
+.agendaOre div:not(.elApp) span{
+	line-height:24px !important;
+	height:24px !important;
 }
-body:not(.smart) .agendaOre div span:last-child{
+body:not(.smart) .agendaOre div:not(.elApp) span:last-child{
 	cursor:pointer;
 }
-.smart .agendaOre div,
-.smart .agendaOre div span{
+/* .smart .agendaOre div:not(.elApp),
+.smart .agendaOre div:not(.elApp) span{
 	line-height:28px !important;
 	height:28px !important;
-}
+} */
 
 /* numero del giorno */
-.agendaOre div span:first-child{
+.agendaOre div:not(.elApp) span:first-child{
 	display:inline-block;
 	width:30px;
 	border-right:1px solid rgba(0,0,0,0.06);
@@ -143,13 +148,13 @@ body:not(.smart) .agendaOre div span:last-child{
 	vertical-align: top;
 	background-color: rgba(0,0,0,0.05);
 }
-#agCont .agendaOre div span:first-child{
+#agCont .agendaOre div:not(.elApp) span:first-child{
 	background-color: var(--menu-fondino);
 	border-bottom: 1px solid var(--menu-fondino);
 }
 
 /* contenuto */
-.agendaOre div span:last-child{
+.agendaOre div:not(.elApp) span:last-child{
 	display:inline-block;
 	width:calc(100% - 30px);
 	text-align:left;
@@ -160,16 +165,19 @@ body:not(.smart) .agendaOre div span:last-child{
 	text-overflow: ellipsis;
 	white-space: nowrap;
 }
-.agendaOre div:not(.timeFull):not(.timeFullGen) span:last-child{
+.agendaOre div:not(.timeFull):not(.timeFullGen):not(.elApp) span:last-child{
 	border-bottom: 1px solid rgba(0,0,0,0.04);
 }
-.agendaOre div:not(.timeFull):not(.timeFullGen):not(.selProvv):hover span:last-child{
+.agendaCol:not(.lavorata) .agendaOre div:not(.timeFull):not(.timeFullGen):not(.selProvv):not(.elApp):hover span:last-child{
 	background-color:rgba(0,0,0,0.05) !important;
 }
-.agendaOre div span:last-child i{
+.agendaCol.lavorata .agendaOre div:not(.timeFull):not(.timeFullGen):not(.selProvv):not(.elApp):hover span:last-child{
+	cursor:default !important;
+}
+.agendaOre div:not(.elApp) span:last-child i{
 	margin-top:0px !important;
 }
-.agendaOre div span:last-child button{
+.agendaOre div:not(.elApp) span:last-child button{
 	-webkit-appearance: none;
 	-moz-appearance: none;
 	appearance: none;
@@ -181,30 +189,32 @@ body:not(.smart) .agendaOre div span:last-child{
 	cursor:pointer;
 	margin-left:5px;
 }
-.agendaOre div span:last-child i{
+.agendaOre div:not(.elApp) span:last-child i{
 	float:right;
 }
-.agendaOre div:last-child{
+.agendaOre div:not(.elApp):last-child{
 	border-bottom:none !important;
 }
-.timeFull span{
-	overflow:hidden;
+.timeFull{
 	text-overflow:ellipsis;
 }
-.timeFull span{
+.timeFull{
 	background-color:#cdddf1;
+	border-left: 3px solid #5b7494 !important;
 }
-.timeFullGen span{
+.timeFullGen{
+	text-overflow:ellipsis;
 	background-color:#c2f4cf;
+	border-left: 3px solid #588868 !important;
 }
-.SCH:not(#agCont) .timeFullGen span,
-.SCH:not(#agCont) .timeFull span{
+.SCH:not(#agCont) .timeFullGen,
+.SCH:not(#agCont) .timeFull{
 	cursor:default;
 }
-#agCont .timeFullGen span:last-child,
+/* #agCont .timeFullGen span:last-child,
 #agCont .timeFull span:last-child{
 	cursor:pointer;
-}
+} */
 
 .hSel{
 	background-color:#FC0 !important;
@@ -240,7 +250,126 @@ body:not(.smart) .agendaOre div span:last-child{
 	border-top-right-radius: 6px;
 	margin-right: 10px;
 }
-
+.elApp span{
+	display:block;
+	overflow:hidden;
+}
+.resizer_cont{
+	text-align:right;
+	height:2px;
+}
+.resizer_cont > span{
+	border-top-left-radius:6px;
+	border-bottom-right-radius:4px;
+	position:absolute;
+	display:inline-block !important;
+	background-image:url('../img/ico_resize.png');
+	background-position:center;
+	background-repeat:no-repeat;
+	width: 20px;
+	height:12px;
+	cursor:pointer;
+	margin-top:-10px;
+	margin-left:-15px;
+	opacity:0.5;
+}
+.touch .resizer_cont > span{
+	margin-left: -40px !important;
+	background-color: rgba(0, 100, 100, 0.5) !important;
+	width: 30px !important;
+	height: 30px !important;
+	border-radius: 30px !important;
+	margin-top: -18px;
+}
+.resizer_cont > span:hover{
+	background-color: rgba(0, 0, 0, 0.2);
+}
+.elApp{
+	position:absolute;
+	opacity:0.7;
+	border-radius:5px;
+	border: 1px solid rgba(0, 0, 0, 0.1);
+	cursor:pointer;
+	text-align:left;
+	padding:0 5px;
+	min-height:20px;
+}
+#scheda .elApp:not(#inLavorazione){
+	opacity:0.3 !important;
+}
+#ag .elApp:hover{
+	opacity:1 !important;
+}
+#inLavorazione{
+	z-index:1000 !important;
+	opacity:1 !important;
+	cursor:pointer !important;
+	background-color:rgba(255,204,0,.42) !important;
+	border-left: 3px solid rgb(167, 135, 11) !important;
+	/* background-color:rgba(80,155,255,.42) !important;
+	border-left: 3px solid rgb(11, 115, 167) !important; */
+	font-weight: bold;
+	text-align:left;
+}
+#inLavorazione:hover{
+	background-color:rgba(255,204,0,.62) !important;
+	/* background-color:rgba(80,155,255,.62) !important; */
+}
+#ttAgenda,
+#ttLav{
+	position: relative;
+	margin-top: -22px;
+	height: 22px !important;
+	line-height: 22px !important;
+	text-align: right;
+	margin-right: 18px;
+	font-size: var(--font-12-1);
+}
+.touch #ttAgenda,
+.touch #ttLav{
+	margin-right: 88px !important;
+}
+#ttLav{
+	font-style:normal !important;
+	color:#000 !important;
+	opacity: 1 !important;
+	font-size:inherit !important;
+}
+.eviDrag{
+	box-shadow:0 0 7px rgba(66, 145, 235, 0.45);
+}
+.eviDrag .resizer_cont > span{
+	cursor:ns-resize;
+}
+#inLavorazione.evi_drag,
+.eviDrag.evi_drag{
+	cursor:move !important;
+}
+.eviDrag.evi_resize,
+.resizer_cont > span{
+	cursor:ns-resize !important;
+}
+#agCont.noScroll,
+.agendaCol.noScroll{
+	overflow-y:hidden !important;
+}
+#lineaAdesso{
+	position: absolute;
+	width: calc(100% - 27px);
+	background-color: #C00;
+	text-align: left !important;
+	height: 1px !important;
+	padding:0 !important;
+	margin:0 0 0 27px !important;
+}
+#lineaAdesso > span{
+	width:7px !important;
+	height: 7px !important;
+	border-radius:4px !important;
+	background-color: #C00 !important;
+	margin-top:-3px !important;
+	border:none !important;
+}
 
 
 /* calendario */
@@ -398,7 +527,7 @@ body:not(.smart) #agCont .chiudiCal{
 
 
 /* contenitore agenda generica */
-#agCont #cont_sceltaAppuntamento{
+#cont_sceltaAppuntamento{
 	position: fixed;
     margin-left: 15px !important;
     background-color: #FFF;
@@ -411,14 +540,24 @@ body:not(.smart) #agCont .chiudiCal{
     top: 15px;
 	text-align: left;
 }
-body:not(.smart) #agCont #cont_sceltaAppuntamento{
+body:not(.smart) #cont_sceltaAppuntamento{
     width: 570px;
 }
-.smart #agCont #cont_sceltaAppuntamento{
+.smart #cont_sceltaAppuntamento{
 	width: calc(100% - 30px);
 }
-#agCont #cont_sceltaAppuntamento p{
+#cont_sceltaAppuntamento p{
 	margin-top:0px;
+}
+#scheda_testo #cont_sceltaAppuntamento{
+	width: 300px;
+	top: 69px;
+	margin-left: 0px !important;
+	text-align: center;
+}
+#scheda_testo #cont_sceltaAppuntamento p{
+	line-height:30px;
+	text-align: center !important;
 }
 #app_elenco:not(.serv_elenco){
 	height:150px;

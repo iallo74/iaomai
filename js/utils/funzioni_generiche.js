@@ -143,6 +143,10 @@ function getOraTS(d){ // legge l'ora
 	return d.toLocaleTimeString(s);
 }
 
+function twoDigits( number ){
+	return ("0" + number).slice(-2);
+}
+
 Date.prototype.addDays = function(days) { // aggiunge una funzione per sommare un giorno a un altro
     let date = new Date(this.valueOf());
     date.setDate(date.getDate() + days);

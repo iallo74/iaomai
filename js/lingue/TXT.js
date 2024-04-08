@@ -1668,6 +1668,14 @@ DB.TXT = {
             por: "Tratamento sem nome",
             deu: "Behandlung ohne Namen"
         },
+        OrarioTrattamento: {
+            ita: "Orario del trattamento",
+            eng: "Time of treatment",
+            esp: "Horario del tratamiento",
+            fra: "Heures de traitement",
+            por: "Tempo de tratamento",
+            deu: "Zeitpunkt der Behandlung"
+        },
 
         // per il file "verifica_form.js"
         ATTENZIONE: {

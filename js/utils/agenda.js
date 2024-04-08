@@ -1,22 +1,35 @@
-var agendaOp=false;
 var agenda = {
-	appuntamenti:[],
-	orarioDef:null,
-	elBut:null,
-	elCont:null,
-	msgContinua:'<i class="txtSel" style="margin-top:2px;">'+stripslashes(TXT("FinoAlle"))+'</i>',
-	btnConferma:'<button onClick="agenda.conferma();">'+stripslashes(TXT("Conferma"))+'</button><button onClick="agenda.annulla();">'+TXT("Annulla")+'</button>',
-	txtConferma:"",
-	imgSpunta:'<img src="img/f_spunta.png" width="20" height="20" align="right">',
-	elemento:null,
-	oIor:-1,
-	oFor:-1,
-	gIor:-1,
-	lastSel:-1,
-	DataPartenza:-1,
+
+	opened: false,
+	appuntamenti: [],
+	orarioDef: null,
+	elBut: null,
+	elCont: null,
+	elemento: null,
+	DataPartenza: -1,
 	oraMin: 0,
 	oraMax: 24,
-	init:function(){
+	zIndex: 0,
+	inTratt: false, // indica che l'agenda è aperta in un trattamento
+	elDrag: null,
+	moved: false,
+	posIni: -1,
+	posAtt: -1,
+	posDiff: 0,
+	heightIni: 0,
+	tipoDrag: '',
+	tt: null,
+	db: null,
+	newInizio: -1,
+	newFine: -1,
+	scrollY: 0,
+	tm: null,
+	provv: {
+		oraInizio: -1,
+		oraFine: -1
+	},
+
+	init: function(){
 		this.oraInizio=-1;
 		this.oraFine=-1;
 		this.giornoInizio=-1;
@@ -24,106 +37,43 @@ var agenda = {
 		this.elInizio=null;
 		this.elFine=null;
 		this.orarioDef=null;
+		this.inTratt = false;
+		this.newInizio = -1;
+		this.newFine = -1;
 		SCHEDA.verRedim();
 	},
-	keyup: function( event ){
-		if(event.keyCode==27){
-			if(agenda.lastSel>-1){
-				if(agenda.oraInizio>-1 && agenda.oraFine==-1){
-					let dvs=document.getElementById("day_"+agenda.giornoInizio).getElementsByTagName("div"),
-						st=false;
-					for(let k=agenda.oraInizio;k<=agenda.lastSel;k+=0.5){
-						if( dvs[(k-agenda.oraMin)*2+2].className.indexOf('timeFull')>-1)st=true;
-						if(!st){
-							dvs[(k-agenda.oraMin)*2+2].className='';
-							dvs[(k-agenda.oraMin)*2+2].getElementsByTagName("span")[1].innerHTML='';
-						}
-					}
-				}
-				agenda.lastSel=-1
-			}
-			agenda.init();
-			document.removeEventListener("keyup", agenda.keyup, false );
-		}
-	},
-	selOra:function( h, g ){
+	selOra: function( h, g ){
 		if(this.oraFine != h || this.giornoFine != g){
-			if(this.oraInizio>-1 && this.oraFine>-1){
-				this.orarioDef=null;
-				if(document.getElementById("day_"+this.giornoInizio) && this.oraInizio>=this.oraMin && this.oraInizio<=this.oraMax){
-					document.getElementById("day_"+this.giornoInizio).getElementsByTagName("div")[(this.oraInizio-this.oraMin)*2+2].getElementsByTagName("span")[1].innerHTML='';
-					document.getElementById("day_"+this.giornoInizio).getElementsByTagName("div")[(this.oraFine-this.oraMin)*2+2].getElementsByTagName("span")[1].innerHTML='';
-					for(let k=this.oraInizio;k<=this.oraFine;k+=0.5){
-						document.getElementById("day_"+this.giornoInizio).getElementsByTagName("div")[(k-this.oraMin)*2+2].className='';
-					}
+			this.oraInizio = h;
+			this.giornoInizio = g;
+			this.oraFine = h+12;
+			this.giornoFine = g;
+			this.elFine = document.getElementById("day_"+g).getElementsByTagName("div")[(h-this.oraMin)*2+24];
+			
+			if(this.retFunct==null){
+				this.orarioDef = {
+					data: this.giornoInizio,
+					oraInizio: this.oraInizio,
+					oraFine: this.oraFine
 				}
-				this.init();
-			}
-			if(h<this.oraInizio || this.giornoInizio!=g || this.oraInizio==-1){
-				document.addEventListener("keyup", agenda.keyup, false );
-				if(this.elInizio){
-					this.elInizio.className='';
-					if(document.getElementById("day_"+this.giornoInizio))document.getElementById("day_"+this.giornoInizio).getElementsByTagName("div")[(this.oraInizio-this.oraMin)*2+2].getElementsByTagName("span")[1].innerHTML='';
-				}
-				this.oraInizio=h;
-				this.giornoInizio=g;
-				this.elInizio=document.getElementById("day_"+g).getElementsByTagName("div")[(h-this.oraMin)*2+2];
-				this.elInizio.className='hSel';
-				document.getElementById("day_"+g).getElementsByTagName("div")[(this.oraInizio-this.oraMin)*2+2].getElementsByTagName("span")[1].innerHTML=this.msgContinua;
-			}else{
-				document.removeEventListener("keyup", agenda.keyup, false );
-				this.oraFine=h;
-				this.giornoFine=g;
-				this.elFine=document.getElementById("day_"+g).getElementsByTagName("div")[(h-this.oraMin)*2+2];
-				
-				if(this.retFunct==null){
-					this.conferma();
+				if(this.retFunct){
+					eval(this.retFunct+"('"+JSON.stringify(this.orarioDef)+"',agenda.elBut)");
+					this.chiudi();
 				}else{
-					pass=true;
-					for(let k=this.oraInizio;k<=this.oraFine;k+=0.5){
-						let row = document.getElementById("day_"+g).getElementsByTagName("div")[(k-this.oraMin)*2+2];
-						if(row.className.indexOf('timeFull')>-1){
-							if(pass)this.oraFine=k-0.5;
-							pass=false;
-						}
-						if(pass)document.getElementById("day_"+g).getElementsByTagName("div")[(k-this.oraMin)*2+2].className='hSel';
-					}
-					this.lastSel=this.oraFine;
-					document.getElementById("day_"+g).getElementsByTagName("div")[(this.oraInizio-this.oraMin)*2+2].getElementsByTagName("span")[1].innerHTML='';
-					oI=this.oraInizio+"";
-					if(oI.indexOf(".")>-1)oI=oI.substr(0,oI.indexOf("."))+":30";
-					else oI=oI+":00";
-					
-					oF=(this.oraFine+0.5)+"";
-					if(oF.indexOf(".")>-1)oF=oF.substr(0,oF.indexOf("."))+":30";
-					else oF=oF+":00";
-					this.txtConferma='<i class="nCAg">'+oI+" - "+oF+"?</i> ";
-					document.getElementById("day_"+g).getElementsByTagName("div")[(this.oraFine-this.oraMin)*2+2].getElementsByTagName("span")[1].innerHTML=this.txtConferma+this.btnConferma;
+					agenda.modificaAppuntamento();
 				}
+			}else{
+				if(!document.getElementById("inLavorazione"))this.modificaOrarioTrattamento();
 			}
 		}
 	},
-	conferma:function(){
-		if(this.lastSel==-1)this.lastSel = this.oraFine;
-		this.orarioDef = {
-			data: this.giornoInizio,
-			oraInizio: this.oraInizio,
-			oraFine: this.lastSel+0.5
-		}
-		document.getElementById("day_"+this.giornoInizio).getElementsByTagName("div")[(this.oraFine-this.oraMin)*2+2].getElementsByTagName("span")[1].innerHTML=this.imgSpunta;
-		if(this.retFunct){
-			eval(this.retFunct+"('"+JSON.stringify(this.orarioDef)+"',agenda.elBut)");
-			this.chiudi();
-		}else{
-			agenda.modificaAppuntamento();
-		}
-	},
-	modificaAppuntamento: function( d, a ){
+	modificaAppuntamento: function( d, a ){ // modifica l'appuntamento
 		let TestoAppuntamento = "",
 			idCli = -1,
 			idPaziente = -1,
 			idApp = -1,
-			idAppuntamento = -1;
+			idAppuntamento = -1,
+			tit = TXT("AggiungiAppuntamento");
 		if(typeof(a)!='undefined'){
 			TestoAppuntamento = this.appuntamenti[d][a].TestoAppuntamento;
 			idCli = __(this.appuntamenti[d][a].idCli,-1);
@@ -140,22 +90,40 @@ var agenda = {
 			agenda.giornoInizio = this.appuntamenti[d][a].data;
 			agenda.oraInizio = this.appuntamenti[d][a].timeInizio;
 			agenda.oraFine = this.appuntamenti[d][a].timeFine;
+			tit = TXT("ModificaAppuntamento")
 		}
-		
 		applicaLoading(document.getElementById("ag"));
 		document.getElementById("cont_sceltaAppuntamento").classList.add("visSch");
-		let HTML = '<p><b>'+TXT("AggiungiAppuntamento")+'</b></p>';
-		oI=this.orarioDef.oraInizio+"";
-		if(oI.indexOf(".")>-1)oI=oI.substr(0,oI.indexOf("."))+":30";
-		else oI=oI+":00";
-		
-		oF=(this.orarioDef.oraFine)+"";
-		if(oF.indexOf(".")>-1)oF=oF.substr(0,oF.indexOf("."))+":30";
-		else oF=oF+":00";
+		let HTML = '<p><b>'+tit+'</b></p>';
 		let txtData = TXT("AggiungiAppuntamentoDati");
 		txtData = txtData.replace("[g]",getDataTS(this.orarioDef.data/1000));
-		txtData = txtData.replace("[1]",oI);
-		txtData = txtData.replace("[2]",oF);
+
+		let selectI = '',
+			selectF = '';
+
+		selectI += '<select name="oI" id="oI" class="orariAgenda" onChange="agenda.verOrari(this);">';
+		for(let t=0;t<288;t++){
+			let o = parseInt(t/12),
+				m = twoDigits((t%12) * 5);
+			selectI += '	<option value="'+t+'"';
+			if(this.orarioDef.oraInizio == t)selectI += ' SELECTED';
+			selectI += '>'+o+":"+m+'</option>';
+		}
+		selectI += '</select>';
+
+		selectF += '<select name="oF" id="oF" class="orariAgenda" onChange="agenda.verOrari(this);">';
+		for(let t=0;t<288;t++){
+			let o = parseInt(t/12),
+				m = twoDigits((t%12) * 5);
+			selectF += '	<option value="'+t+'"';
+			if(this.orarioDef.oraFine == t)selectF += ' SELECTED';
+			selectF += '>'+o+":"+m+'</option>';
+		}
+		selectF += '</select>';
+
+		txtData = txtData.replace("[1]",selectI);
+		txtData = txtData.replace("[2]",selectF);
+
 		HTML += '<p>'+txtData+'</p>' +
 				'<div id="app_generico"' +
 				'	  class="visSch">' +
@@ -231,14 +199,14 @@ var agenda = {
 				'</span></p>';
 		HTML += '<p style="text-align:right;margin-bottom: 0px;"><span class="submitBtn annullaBtn" onClick="agenda.chiudiScelta();">' +
 					htmlEntities(TXT("Annulla")) +
-				'</span><span class="submitBtn salvaBtn" onClick="agenda.scegli();">' +
+				'</span><span class="submitBtn salvaBtn" onClick="agenda.salvaAppuntamento();">' +
 					htmlEntities(TXT("Salva")) +
 				'</span></p>';
 		document.getElementById("cont_sceltaAppuntamento").innerHTML = HTML;
 		this.popolaScelta(idCli,idPaziente);
 		if(idCli>-1 || idPaziente>-1)agenda.swClientiApp();
 	},
-	eliminaAppuntamento: function( idApp ){
+	eliminaAppuntamento: function( idApp ){ // elimina l'appuntamento
 		CONFIRM.vis(	TXT("ChiediEliminaAppuntamento"),
 						false,
 						arguments ).then(function(pass){if(pass){
@@ -255,11 +223,11 @@ var agenda = {
 			});
 		}});
 	},
-	swClientiApp: function(){
+	swClientiApp: function(){ // mostra nasconde la lista clienti
 		document.getElementById("app_cliente").classList.toggle("visSch");
 		document.getElementById("app_cliente_btn").classList.toggle("visSch");
 	},
-	popolaScelta: function( Q_id=-1, Q_idPaziente=-1 ){
+	popolaScelta: function( Q_id=-1, Q_idPaziente=-1 ){ // popola il popup di modifica di un appuntameno
 		if(Q_idPaziente){
 			for(let p in DB.pazienti.data){
 				if(DB.pazienti.data[p].idPaziente*1==Q_idPaziente*1)Q_id=p*1;
@@ -291,7 +259,7 @@ var agenda = {
 		document.getElementById("idCli").value = Q_id;
 		document.getElementById("idPaziente").value = Q_idPaziente;
 	},
-	convertiTrattamento: function(){
+	convertiTrattamento: function(){ // converte l'elemento d'agenda in appuntamento
 		CONFIRM.vis(	TXT("ChiediConvertire"),
 						false,
 						arguments ).then(function(pass){if(pass){
@@ -340,7 +308,7 @@ var agenda = {
 			});
 		}});
 	},
-	filtraClienti: function(){
+	filtraClienti: function(){ // filtra i clienti del popup di modifica dell'appuntamento
 		let parola = document.getElementById("app_ricerca_testo").value.toLowerCase().trim(),
 			els = document.getElementById("app_elenco").getElementsByTagName("div");
 		for(let e=0;e<els.length;e++){
@@ -353,7 +321,7 @@ var agenda = {
 			}
 		}
 	},
-	scegli: function(){
+	salvaAppuntamento: function(){ // conferma e salva l'elemento in agenda
 		if(	!document.getElementById("TestoAppuntamento").value.trim() && 
 			document.getElementById("idCli").value=='-1'){
 			ALERT(stripslashes(TXT("ErroreTestoApp")));
@@ -390,33 +358,27 @@ var agenda = {
 					"frv": (LOGIN._frv()!='') };
 					
 		if(document.getElementById("idApp").value!='-1'){
-			// appuntamento esistente
-			for(let p in DB.appuntamenti.data){
-				if(	TimeAppuntamento == DB.appuntamenti.data[p].TimeAppuntamento && 
-					oraInizio == DB.appuntamenti.data[p].oraInizio &&
-					oraFine == DB.appuntamenti.data[p].oraFine ){
-						DB.appuntamenti.data[p]=JSNPUSH;
-					}
-			}
+			DB.appuntamenti.data[ +document.getElementById("idApp").value ]=JSNPUSH;
 		}else{
 			// nuovo appuntamento
 			DB.appuntamenti.data.push(JSNPUSH);
 		}
 		let postAction = 'MENU.visAgenda('+(agenda.DataPartenza*1)+',true);';
+
 		agenda.chiudiScelta();
-		applicaLoading(document.getElementById("scheda_testo"));
+		applicaLoading(document.getElementById("ag"));
 		localPouchDB.setItem(MD5("DB"+LOGIN._frv()+".appuntamenti"), IMPORTER.COMPR(DB.appuntamenti)).then(function(){ // salvo il DB
 			SYNCRO.sincronizza(	'rimuoviLoading(document.getElementById("ag"));' +
 								postAction );
 		});
 	},
-	chiudiScelta: function(){
+	chiudiScelta: function( noAnnulla=false ){ // chiude il popup di modifica dell'appuntamento
 		rimuoviLoading(document.getElementById("ag"));
 		document.getElementById("cont_sceltaAppuntamento").classList.remove("visSch");
 		document.getElementById("cont_sceltaAppuntamento").innerHTML = '';
-		this.annulla(true);
+		if(!noAnnulla)this.annulla(true);
 	},
-	popolaCalendario:function( Y, M ){
+	popolaCalendario:function( Y, M ){ // popola il calendario
 		let HTML = '<div id="calCont">';
 		Y1=Y;
 		M1=M+1;
@@ -445,14 +407,12 @@ var agenda = {
 				'	</div>' +
 				'		<div class="calMese">' +
 							DB.TXT.base.nomiMesi[globals.siglaLingua][d.getMonth()].toUpperCase()+" "+d.getFullYear() +
-							//d.toLocaleDateString(s,{month:"long"}).toUpperCase()+" "+d.getFullYear() +
 				'		</div>' +
 				'	<div id="calNext"' +
 				'		  onClick="agenda.popolaCalendario('+Y1+','+M1+')">' +
 				'		<svg><polyline points="9.125,31.75 20.875,20 9.125,8.25 "/></svg>' +
 				'	</div>' +
 				'</div>';
-		//let s=globals.siglaLingua.substr(0,2)+"-"+globals.siglaLingua.substr(0,2).toUpperCase();
 		HTML += '<div class="calCont">'	+
 				'	<div class="calInt">';
 		for(let g=1;g<=7;g++){
@@ -499,7 +459,6 @@ var agenda = {
 			gT++;
 		}
 		HTML += '</div>';
-		//HTML += '</div></div>';
 		this.elemento.querySelector(".contCal").innerHTML = HTML;
 		
 		if(this.retFunct!=null)applicaLoading(document.getElementById("scheda_testo"),'vuoto');
@@ -508,33 +467,28 @@ var agenda = {
 		SWIPE.dismis();
 		SWIPE.init('calCont','document.getElementById(\'calPre\').click();','document.getElementById(\'calNext\').click();');
 	},
-	chiudiCalendario: function(){
+	chiudiCalendario: function(){ // chiude il calendario
 		if(this.retFunct!=null)rimuoviLoading(document.getElementById("scheda_testo"),'vuoto');
 		else rimuoviLoading(document.getElementById("ag"),'vuoto');
 		this.elemento.querySelector(".contCal").classList.remove("visSch");
 		this.elemento.querySelector(".contCal").innerHTML = '';
 		SWIPE.init('agendaPlaceHolder','document.getElementById(\'agendaPre\').click();','document.getElementById(\'agendaNext\').click();');
 	},
-	popolaAgenda:function( DataPartenza, elemento ){
+	popolaAgenda:function( DataPartenza, elemento ){ // popola l'agenda
 		let icoUtente = '<img src="img/ico_utenteN.png" style="width: 16px;vertical-align: middle;margin-top: -3px;">',
-			valScroll = 0,
-			d = new Date(),
-			TestoAppuntamento = '',
-			add_clsG = '';
-		valScroll = d.getHours();
+			d = new Date();
 		
 		this.DataPartenza = DataPartenza;
-		this.elemento=elemento;
+		this.elemento = elemento;
 		if(this.oraInizio>-1 && this.oraFine==-1){
 			this.oraInizio=-1;
 			this.elInizio=null;
 		}
 		DataPartenza = new Date(DataPartenza.getFullYear(), DataPartenza.getMonth(), DataPartenza.getDate(), 0,0,0,0);
 		
-		d=DataPartenza;
+		d = DataPartenza;
 		giorno=d.getDate();
-		//let s=globals.siglaLingua.substr(0,2)+"-"+globals.siglaLingua.substr(0,2).toUpperCase();
-		mese=DB.TXT.base.nomiMesi[globals.siglaLingua][d.getMonth()].toLowerCase();//d.toLocaleString(s, { month: 'long' });
+		mese=DB.TXT.base.nomiMesi[globals.siglaLingua][d.getMonth()].toLowerCase();
 		anno=d.getFullYear();
 		nomeGiorno=d.getDay();
 		festivo=false;
@@ -542,9 +496,9 @@ var agenda = {
 		let dd=LINGUE.formatDate.replace(/\//," ").replace(/\//," ");
 		
 		
-		let HTML = '<div id="agendaCont">'+
-				'	</span>' +
-				'	<div id="agendaTesta">' +
+		let HTML = 
+				'<div id="agendaCont">'+
+				'	<div id="agendaTesta">' + // calendario e frecce
 				'		<div id="agendaPre">' +
 				'			<svg><polyline points="20.875,31.75 9.125,20 20.875,8.25 "/></svg>' +
 				'		</div>' +
@@ -565,110 +519,122 @@ var agenda = {
 		HTML += '<div class="agendaCol"' +
 				'	  id="day_'+(d*1)+'">' +
 				'	<div></div>' +
-				'	<div class="agendaOre"' +
+				'	<div class="agendaOre"' + // contenitore delle ore
 				'		 id="agOr0">';
-		for(let h=this.oraMin;h<this.oraMax;h++){
-			act='onClick="agenda.selOra('+h+','+(d*1)+');"';
-			cnt='';
-			cls='';
-			clsG='';
-			for(a in this.appuntamenti[d*1]){
-				if(	h>=this.appuntamenti[d*1][a].timeInizio && 
-					h<this.appuntamenti[d*1][a].timeFine){
-					TestoAppuntamento = __(this.appuntamenti[d*1][a].TestoAppuntamento);
-					if(h==this.appuntamenti[d*1][a].timeInizio){
-						cnt=TestoAppuntamento;
-						/*if(this.appuntamenti[d*1][a].timeFine-this.appuntamenti[d*1][a].timeInizio == 0.5 || !cnt){
-							//cnt += ' <i class="nTAg">'+icoUtente+this.appuntamenti[d*1][a].Nominativo+'</i>';
-							cnt += ' <i class="nTAg">'+htmlEntities(TXT("TrattamentoSenzaNome"))+'</i>';
-						}*/
-						if(this.appuntamenti[d*1][a].timeFine-this.appuntamenti[d*1][a].timeInizio == 0.5){
-							cnt += ' <i class="nTAg">'+icoUtente+this.appuntamenti[d*1][a].Nominativo+'</i>';
-						}
-					}
-					if(	this.appuntamenti[d*1][a].Nominativo && 
-						h-0.5==this.appuntamenti[d*1][a].timeInizio){
-						cnt='<i class="nTAg">'+icoUtente+this.appuntamenti[d*1][a].Nominativo+'</i>';
-					}
-					add_clsG = '';
-					if(__(this.appuntamenti[d*1][a].idApp,-1)>-1)add_clsG='Gen';
-					clsG=' class="timeFull'+add_clsG+'"';
-					if(h+0.5==this.appuntamenti[d*1][a].timeFine)clsG=' class="timeFull'+add_clsG+' brdBtm"';
-					if(this.retFunct!=null)act='';
-					else act='onClick="agenda.gestisciAppuntamento('+(d*1)+','+a+');"';
-				}
-			}
-			if(d*1==this.gIor && this.gIor>-1 && h>=this.oIor && h-0.5<this.oFor){
-				clsG += ' style="background-color:#feedba;"';
-			}
-			if(d*1==this.giornoInizio && this.giornoInizio>-1){
-				if(this.oraInizio > -1)valScroll = this.oraInizio;
-				if(h>=this.oraInizio && h-0.5<this.oraFine){
-					clsG+=' class="hSel"';
-					if(!this.orarioDef){
-						if(h==this.oraInizio && this.oraFine==-1)cnt = this.msgContinua;
-						if(h==this.oraFine)cnt = this.txtConferma+this.btnConferma;
-					}else if(h==this.oraFine)cnt = this.imgSpunta;
-				}
-			}
-			HTML += '<div'+clsG+' onMouseOver="agenda.rollOver('+(h)+','+(d*1)+',this)"' +
-					'			  onMouseOut="agenda.rollOut('+(h)+','+(d*1)+',this);">' +
-					'	<span>'+h+'</span><span '+act+cls+'>'+cnt+'</span>' +
-					'</div>';
-					
-			act='onClick="agenda.selOra('+(h+0.5)+','+(d*1)+');"';
-			cnt='';
-			cls='';
-			clsG='';
-			for(a in this.appuntamenti[d*1]){
-				if(	h+0.5>=this.appuntamenti[d*1][a].timeInizio && 
-					h+0.5<this.appuntamenti[d*1][a].timeFine){
-					TestoAppuntamento = __(this.appuntamenti[d*1][a].TestoAppuntamento);
-					if(h+0.5==this.appuntamenti[d*1][a].timeInizio){
-						cnt=TestoAppuntamento;
-						/*if(this.appuntamenti[d*1][a].timeFine-this.appuntamenti[d*1][a].timeInizio == 0.5 || !cnt){
-							//cnt += ' <i class="nTAg">'+icoUtente+this.appuntamenti[d*1][a].Nominativo+'</i>';
-							cnt += ' <i class="nTAg">'+htmlEntities(TXT("TrattamentoSenzaNome"))+'</i>';
-						}*/
-						if(this.appuntamenti[d*1][a].timeFine-this.appuntamenti[d*1][a].timeInizio == 0.5){
-							cnt += ' <i class="nTAg">'+icoUtente+this.appuntamenti[d*1][a].Nominativo+'</i>';
-						}
-					}
-					if(	this.appuntamenti[d*1][a].Nominativo && 
-						h==this.appuntamenti[d*1][a].timeInizio){
-						cnt='<i class="nTAg">'+icoUtente+this.appuntamenti[d*1][a].Nominativo+'</i>';
-					}
-					add_clsG = '';
-					if(__(this.appuntamenti[d*1][a].idApp,-1)>-1)add_clsG='Gen';
-					clsG=' class="timeFull'+add_clsG+'"';
-					if(h+1==this.appuntamenti[d*1][a].timeFine)clsG=' class="timeFull'+add_clsG+' brdBtm"';
-					if(this.retFunct!=null)act='';
-					else act='onClick="agenda.gestisciAppuntamento('+(d*1)+','+a+');"';
-				}
-			}
-			if(d*1==this.gIor && this.gIor>-1 && h+0.5>=this.oIor && h<this.oFor){
-				clsG+=' style="background-color:#feedba;"';
-			}
-			if(d*1==this.giornoInizio && this.giornoInizio>-1){
-				if(h+0.5>=this.oraInizio && h<this.oraFine){
-					clsG+=' class="hSel"';
-					if(!this.orarioDef){
-						if(h+0.5==this.oraInizio && this.oraFine==-1)cnt=this.msgContinua;
-						if(h+0.5==this.oraFine)cnt=this.txtConferma+this.btnConferma;
-					}else if(h+0.5==this.oraFine)cnt=this.imgSpunta;
-				}
-			}
-			if((clsG.indexOf("timeFull")==-1 && clsG.indexOf("timeFullGen")==-1) || h+0.5==this.oraFine){
-				if(!cls)cls=' class="brdBtmSp"';
-				else cls = cls.replace('="','="brdBtmSp ');
-			}
-			HTML += '<div'+clsG+' onMouseOver="agenda.rollOver('+(h+0.5)+','+(d*1)+',this)"' +
-					'			  onMouseOut="agenda.rollOut('+(h+0.5)+','+(d*1)+',this);">' +
-					'	<span class="brdBtmSp"></span><span '+act+cls+'>'+cnt+'</span>' +
+		for(let h=this.oraMin;h<this.oraMax;h++){ // elenco le ore
+			HTML += '<div>' +
+					'	<span>'+h+'</span><span onClick="agenda.selOra('+(h*12)+','+(d*1)+');"></span>' +
+					'</div>' +
+					'<div>' +
+					'	<span class="brdBtmSp"></span><span onClick="agenda.selOra('+(h*12+6)+','+(d*1)+');"></span>' +
 					'</div>';
 		}
+
+		let occ = [],
+			maxLiv = 0;
+		for(let o=0;o<288;o++)occ[o]=0;
+
+		for(a in this.appuntamenti[d*1]){
+			let add_clsG = ''
+				id = '',
+				scost = 30,
+				maxStep = 0,
+				height = 0,
+				lavorata = false,
+				cnt = __(this.appuntamenti[d*1][a].TestoAppuntamento);
+
+			if(	this.appuntamenti[d*1][a].Nominativo){
+				cnt += ' <i class="nTAg">'+icoUtente+this.appuntamenti[d*1][a].Nominativo+'</i>';
+			}
+
+			if(__(this.appuntamenti[d*1][a].idApp,-1)>-1)add_clsG+='Gen';
+			if(__(this.appuntamenti[d*1][a].inLavorazione)){
+				id=' id="inLavorazione"';
+				lavorata = true;
+			}
+			for(let o=this.appuntamenti[d*1][a].timeInizio;o<this.appuntamenti[d*1][a].timeFine;o++){
+				if(occ[o]>maxStep)maxStep=occ[o];
+				occ[o]++;
+			}
+			if(maxStep>maxLiv)maxLiv = maxStep;
+			scost += maxStep*20+2;
+			height = ((4*(this.appuntamenti[d*1][a].timeFine-this.appuntamenti[d*1][a].timeInizio))-2);
+			if(height<16)height=16;
+			HTML += '<div class="elApp elAppSt timeFull'+add_clsG+'"' +
+					id +
+					'	  data-liv="'+maxStep+'"' +
+					'	  data-ini="'+this.appuntamenti[d*1][a].timeInizio+'"' +
+					'	  data-fin="'+this.appuntamenti[d*1][a].timeFine+'"' +
+					'	  style="width: calc(100% - '+(scost+2)+'px);'+
+					'			 left:'+scost+'px;' +
+					'			 top:'+((this.appuntamenti[d*1][a].timeInizio*4)-1)+'px;"' +
+					(!document.getElementById("scheda").classList.contains("visSch") ? '	  onMouseOver="if(!agenda.moved){agenda.zIndex++;this.style.zIndex=agenda.zIndex;}"' : '') +
+					'	  data-id="'+(__(this.appuntamenti[d*1][a].idTratt,'')==''?__(this.appuntamenti[d*1][a].idApp,'0'):this.appuntamenti[d*1][a].idTratt)+'"' +
+					'	  data-idcl="' +(__(this.appuntamenti[d*1][a].idCL,'')?this.appuntamenti[d*1][a].idCL:'')+'">' +
+					'	<span style="height:'+height+'px;"' +
+					'	  	  onMouseDown="agenda.startDrag(this.parentElement,\'drag\');"' +
+					'	  	  onTouchStart="agenda.startDrag(this.parentElement,\'drag\');"' +
+						(!this.retFunct ? ' onClick="agenda.gestisciAppuntamento('+(d*1)+','+a+');"' : '')+'>' +
+							cnt +
+					'	</span>' +
+					'	<span class="resizer_cont">';
+			if(!document.getElementById("scheda").classList.contains("visSch"))HTML += 
+					'		<span onMouseDown="agenda.startDrag(this.parentElement.parentElement,\'resize\');"' +
+					'	  	  	  onTouchStart="agenda.startDrag(this.parentElement.parentElement,\'resize\');"></span>';
+			HTML += '	</span>' +
+					'</div>';
+		}
+
+
+		// aggiungo l'elemento provvisorio
+		if(this.inTratt){
+			if(parseInt(document.getElementById("TimeTrattamento").value)==this.DataPartenza.getTime()/1000){
+				let scost = 30,
+					maxStep = 4,
+					oraInizio = parseInt(document.getElementById("oraInizio").value),
+					oraFine = parseInt(document.getElementById("oraFine").value),
+					cnt = '<img src="img/ico_time.png" width="18" height="18" style="margin-top:-3px;margin-right:5px;vertical-align:middle;"><i id="ttLav">' +
+						(parseInt(oraInizio/12)+':'+twoDigits(parseInt(oraInizio%12)*5)) + " - "+
+						(parseInt(oraFine/12)+':'+twoDigits(parseInt(oraFine%12)*5)) +
+					'</i>';
+				scost += maxStep*20+2;
+				if(document.getElementById("oraInizio").value!='-1'){
+					HTML +=
+						'<div class="elApp"' +
+						'	  id="inLavorazione"' +
+						'	  style="width: calc(100% - 30px);' +
+						'			 left:20px;' +
+						'			 top:'+((oraInizio*4)-1)+'px;">' +
+						'	<span style="height:'+(4*(oraFine-oraInizio)-3)+'px;"' +
+						'	  	  onMouseDown="agenda.startDrag(this.parentElement,\'drag\');"' +
+						'	  	  onTouchStart="agenda.startDrag(this.parentElement,\'drag\');"' +
+						' 		  onClick="agenda.modificaOrarioTrattamento(true);">' +
+								cnt +
+						'	</span>' +
+						'	<span class="resizer_cont">' +
+						'		<span onMouseDown="agenda.startDrag(this.parentElement.parentElement,\'resize\');"' +
+						'	  	  	  onTouchStart="agenda.startDrag(this.parentElement.parentElement,\'resize\');"></span>' +
+						'	</span>' +
+						'</div>';
+				}
+			}
+		}
+
+		// linea rossa del momento attuale
+		let adesso = new Date();
+		if(	agenda.DataPartenza.getFullYear()==adesso.getFullYear() &&
+			agenda.DataPartenza.getMonth()==adesso.getMonth() &&
+			agenda.DataPartenza.getDate()==adesso.getDate()){
+			
+			let pos = ((adesso.getHours()*60 + adesso.getMinutes())/5*4);
+			HTML += '<div id="lineaAdesso"style="top:'+pos+'px;"><span></span></div>';
+		}
+
 		HTML += '</div></div>';
 		HTML += '</div></div><div class="contCal"></div>';
+
+
+
 		this.elemento.innerHTML=HTML;
 		elemento.className='agOp';
 		document.getElementById("agendaPre").onclick=function(){
@@ -678,16 +644,31 @@ var agenda = {
 			agenda.popolaAgenda(DataPartenza.addDays(1),elemento);
 		};
 		agenda.chiudiCalendario();
-		if(valScroll)document.getElementById("agOr0").scrollTo(0,valScroll * 40 - 30);
+		if(agenda.scrollY){
+			document.getElementById("agCont").scrollTo(0,agenda.scrollY);
+			agenda.scrollY = 0;
+		}
+		if(document.getElementById("inLavorazione")){
+			document.querySelector('.agendaCol').scrollTop = tCoord(document.getElementById("inLavorazione"),'y')-250;
+			document.querySelector('.agendaCol').classList.add("lavorata");
+		}
+		
+		// controllo e setto i rientri per non far coprire completamente gli appuntamenti
+		let els = document.querySelector(".agendaCol").getElementsByClassName("elAppSt");
+		for(let e=0;e<els.length;e++){
+			let ini = parseInt(els[e].dataset.ini),
+				fin = parseInt(els[e].dataset.fin)
+				maxRie = 0;
+			for(let n=ini;n<=fin;n++){
+				if(occ[n]>maxRie)maxRie = occ[n];
+			}
+			if(maxRie)maxRie--;
+			if(maxRie)els[e].style.width = 'calc(100% - '+(34+(maxRie*20))+'px)';
+		}
+
+
 	},
 	annulla:function( mod ){
-		let dvs=document.getElementById("day_"+agenda.giornoInizio).getElementsByTagName("div");
-		for(let k=agenda.oraInizio;k<=agenda.oraFine;k+=0.5){
-			if(dvs[(k-agenda.oraMin)*2+2].className.indexOf('timeFull')==-1){
-				dvs[(k-agenda.oraMin)*2+2].className='';
-				dvs[(k-agenda.oraMin)*2+2].getElementsByTagName("span")[1].innerHTML='';
-			}
-		}
 		setTimeout( function(mod){
 			if(!mod){
 				dvs[(k-agenda.oraInizio)*2+2].className='';
@@ -696,57 +677,11 @@ var agenda = {
 			agenda.init();
 		}, 200, mod);
 	},
-	rollOver:function( h, d, el ){
-		let ro = true,
-			hT = h+"";
-		da_aT=TXT("dalle")+" ";
-		if(hT.indexOf(".")>-1)hT=parseInt(h)+":30";
-		else hT=h+":00";
-		if(this.oraInizio>-1 && this.oraFine==-1){
-			if(d*1==this.giornoInizio){
-				da_aT=TXT("alle")+" ";
-				hT=h+"";
-				if(hT.indexOf(".")>-1)hT=parseInt(h+1)+":00";
-				else hT=h+":30";
-				if(h<this.oraInizio)ro=false;
-			}
-			if(d==this.giornoInizio){
-				let dvs=document.getElementById("day_"+d).getElementsByTagName("div"),
-					st=false;
-				for(let k=this.oraInizio;k<=h;k+=0.5){
-					if(dvs[(k-this.oraMin)*2+2].className.indexOf('timeFull')>-1){
-						st=true;
-						ro=false;
-					}
-					if(!st){
-						dvs[(k-this.oraMin)*2+2].className='selProvv';
-						this.lastSel=k;
-					}
-				}
-			}
-		}
-		if((el.className=='' || (el.className=='selProvv' && h>this.oraInizio)) && ro){
-			el.getElementsByTagName('span')[1].innerHTML=da_aT+hT;
-		}
-	},
-	rollOut:function( h, d, el ){
-		if((el.className=='' || el.className=='selProvv') && (h!=this.oraInizio || d!=this.giornoInizio)){
-			el.getElementsByTagName('span')[1].innerHTML='';
-		}
-		if(this.lastSel>-1){
-			if(this.oraInizio>-1 && this.oraFine==-1){
-				let dvs=document.getElementById("day_"+this.giornoInizio).getElementsByTagName("div"),
-					st=false;
-				for(let k=this.oraInizio+0.5;k<=this.lastSel;k+=0.5){
-					if(dvs[(k-this.oraMin)*2+2].className.indexOf('timeFull')>-1)st=true;
-					if(!st)dvs[(k-this.oraMin)*2+2].className='';
-				}
-			}
-			this.lastSel=-1
-		}
-	},
-	apri:function( DataPartenza, elemento, funct, el, Q_idTratt ){
-		agendaOp = true;
+	apri:function( DataPartenza, elemento, funct, el, Q_idTratt=-1 ){ // apre e compone l'agenda
+
+		this.opened = true;
+		this.inTratt = false;
+		
 		// creo l'oggetto appuntamenti
 		this.retFunct=funct;
 		this.elBut=el;
@@ -754,6 +689,7 @@ var agenda = {
 		let d = null;
 		if(el.dataset.d)d=JSON.parse(el.dataset.d);
 		this.init();
+		if(Q_idTratt>-1)this.inTratt = true;
 		this.appuntamenti=[];
 		if(d){
 			this.orarioDef=d;
@@ -762,18 +698,19 @@ var agenda = {
 			this.oraInizio=d.oraInizio;
 			this.oraFine=d.oraFine-0.5;
 			if(this.oraFine<-1)this.oraFine=-1;
-			this.oIor=this.oraInizio;
-			this.oFor=this.oraFine;
-			this.gIor=this.giornoInizio;
 		}
+		
+		// popolo agenda.appuntamenti con i trattamenti
 		for(let i in DB.pazienti.data){
 			for(t in DB.pazienti.data[i].trattamenti){
 				if(!DB.pazienti.data[i].trattamenti[t].Cancellato){
 					if(!this.appuntamenti[DB.pazienti.data[i].trattamenti[t].TimeTrattamento*1000])this.appuntamenti[DB.pazienti.data[i].trattamenti[t].TimeTrattamento*1000]=[];
+					let oraInizio = -1,
+						oraFine = -1;
 					if(typeof(DB.pazienti.data[i].trattamenti[t].oraInizio)!='undefined')oraInizio=DB.pazienti.data[i].trattamenti[t].oraInizio;
-					if(oraInizio<this.oraMin)oraInizio=this.oraMin+2;
+					if(oraInizio<this.oraMin)oraInizio=this.oraMin+24;
 					if(typeof(DB.pazienti.data[i].trattamenti[t].oraFine)!='undefined')oraFine=DB.pazienti.data[i].trattamenti[t].oraFine; 
-					if(oraFine<this.oraMin)oraFine=this.oraMin+3;
+					if(oraFine<this.oraMin)oraFine=this.oraMin+36;
 					JSNPUSH = {
 						"idCL": i,
 						"idTratt": t,
@@ -786,13 +723,17 @@ var agenda = {
 				}
 			}
 		}
+
+		// popolo agenda.appuntamenti con gli appuntamenti
 		for(let i in DB.appuntamenti.data){
 			if(!DB.appuntamenti.data[i].Cancellato){
 				if(!this.appuntamenti[DB.appuntamenti.data[i].TimeTrattamento])this.appuntamenti[DB.appuntamenti.data[i].TimeTrattamento]=[];
+				let oraInizio = -1,
+					oraFine = -1;
 				if(typeof(DB.appuntamenti.data[i].oraInizio)!='undefined')oraInizio=DB.appuntamenti.data[i].oraInizio;
-				if(oraInizio<this.oraMin)oraInizio=this.oraMin+2;
+				if(oraInizio<this.oraMin)oraInizio=this.oraMin+24;
 				if(typeof(DB.appuntamenti.data[i].oraFine)!='undefined')oraFine=DB.appuntamenti.data[i].oraFine; 
-				if(oraFine<this.oraMin)oraFine=this.oraMin+3;
+				if(oraFine<this.oraMin)oraFine=this.oraMin+36;
 				let idCli = DB.appuntamenti.data[i].idCli,
 					Nominativo = '';
 				if(!idCli){
@@ -819,16 +760,16 @@ var agenda = {
 		this.popolaAgenda(DataPartenza,elemento);
 		elemento.className='agOp';
 	},
-	chiudi:function(){
+	chiudi:function(){ // chiude l'agenda
 		this.orarioDef = null;
-		agendaOp = false;
+		this.opened = false;
 		agenda.init();
 		this.elCont.className = '';
-		setTimeout(function(){if(!agendaOp)agenda.elCont.innerHTML='';},600);
+		setTimeout(function(){if(!agenda.opened)agenda.elCont.innerHTML='';},600);
 		SWIPE.dismis();
 	},
-	gestisciAppuntamento: function( d, a ){
-		if(this.oraInizio>-1)return;
+	gestisciAppuntamento: function( d, a ){ // a seconda che sia un apuntamento o un trattamento reindirizza
+		if(this.oraInizio>-1 || agenda.moved)return;
 		let app = this.appuntamenti[d*1][a*1];
 		if(	typeof(app.idCL) != 'undefined' && 
 			typeof(app.idTratt) != 'undefined'){
@@ -847,6 +788,250 @@ var agenda = {
 			},200, idTratt);
 		}else if(typeof(app.TestoAppuntamento) != 'undefined'){
 			this.modificaAppuntamento( d, a );
+		}
+	},
+	modificaOrarioTrattamento: function( mod=false ){ // modifica l'orario del trattamento
+		if(agenda.moved)return;
+		applicaLoading(document.getElementById("scheda_testo"));
+		document.getElementById("cont_sceltaAppuntamento").classList.add("visSch");
+		let HTML = '<p><b>'+TXT("OrarioTrattamento")+'</b></p>',
+			txtData = TXT("AggiungiAppuntamentoDati"),
+			oraInizio = parseInt(document.getElementById("oraInizio").value),
+			oraFine = parseInt(document.getElementById("oraFine").value),
+			d = parseInt(document.getElementById("TimeTrattamento").value)*1000;
+		if(!mod){
+			oraInizio = this.oraInizio;
+			oraFine = oraInizio+12;
+			d = agenda.giornoInizio;
+		}
+		txtData = txtData.replace("[g]",getDataTS(d/1000)+"<br>");
+		let selectI = '',
+			selectF = '';
+
+		selectI += '<select name="oI" id="oI" class="orariAgenda" onChange="agenda.verOrari(this);">';
+		for(let t=0;t<288;t++){
+			let o = parseInt(t/12),
+				m = twoDigits((t%12) * 5);
+			selectI += '	<option value="'+t+'"';
+			if(oraInizio == t)selectI += ' SELECTED';
+			selectI += '>'+o+":"+m+'</option>';
+		}
+		selectI += '</select>';
+
+		selectF += '<select name="oF" id="oF" class="orariAgenda" onChange="agenda.verOrari(this);">';
+		for(let t=0;t<288;t++){
+			let o = parseInt(t/12),
+				m = twoDigits((t%12) * 5);
+			selectF += '	<option value="'+t+'"';
+			if(oraFine == t)selectF += ' SELECTED';
+			selectF += '>'+o+":"+m+'</option>';
+		}
+		selectF += '</select>';
+
+		txtData = txtData.replace("[1]",selectI);
+		txtData = txtData.replace("[2]",selectF);
+
+
+
+		HTML += '<p>'+txtData+'</p>' +
+				'<div id="app_generico"' +
+				'	  class="visSch">' +
+				'</div>' +
+				'<p style="text-align:right;margin-bottom: 0px;"><span class="submitBtn annullaBtn" id="annullaOrario" onClick="agenda.chiudiScelta(true);">' +
+					htmlEntities(TXT("Annulla")) +
+				'</span><span class="submitBtn salvaBtn" onClick="agenda.scegliOrarioTrattamento();">' +
+					htmlEntities(TXT("Salva")) +
+				'</span></p>';
+		document.getElementById("cont_sceltaAppuntamento").innerHTML = HTML;
+		document.getElementById("cont_sceltaAppuntamento").style.left = ((tCoord(document.getElementById("scheda_testo"))+document.getElementById("scheda_testo").scrollWidth/2)-150)+'px';
+	},
+	scegliOrarioTrattamento: function(){
+		this.orarioDef = {
+			data: this.DataPartenza.getTime(),
+			oraInizio: parseInt(document.getElementById("oI").value),
+			oraFine: parseInt(document.getElementById("oF").value)
+		};
+		let DataPartenza = this.DataPartenza;
+		eval(this.retFunct+"('"+JSON.stringify(this.orarioDef)+"',agenda.elBut)");
+		agenda.chiudiScelta();
+		document.getElementById("dataTxt").click();
+		setTimeout(function(){
+			document.getElementById("dataTxt").click();
+		},400);
+	},
+	verOrari: function( el ){ // verifica che oraInizio sia prima di oraFine
+		let oI = parseInt(document.getElementById("oI").value),
+			oF = parseInt(document.getElementById("oF").value),
+			errore = false;
+		if((el.id=='oI' && oI>oF-3) || (el.id=='oF' && oF<oI+3))errore = true;
+		if(errore){
+			ALERT("Non puoi inserire appuntamenti minori di 15 minuti");
+			oF = oI+3;
+			document.getElementById("oF").value = oF;
+		}
+		if(agenda.orarioDef){
+			agenda.orarioDef.oraInizio = oI;
+			agenda.orarioDef.oraFine = oF;
+		}
+	},
+	startDrag: function( el, tipo ){ // inizia a spostare l'appuntamento
+		if(document.getElementById("scheda").classList.contains("visSch") && el.id!='inLavorazione')return;
+		agenda.elDrag = el;
+		agenda.tipoDrag = tipo;
+		agenda.posIni = touchable ? event.touches[ 0 ].pageY : event.clientY;
+		agenda.posAtt = agenda.posIni;
+		agenda.posDiff = 0;
+		agenda.heightIni = el.getElementsByTagName("span")[0].scrollHeight;
+		if(agenda.inTratt){
+			agenda.provv.oraInizio = parseInt(document.getElementById("oraInizio").value);
+			agenda.provv.oraFine = parseInt(document.getElementById("oraFine").value);
+		}
+		if(!touchable){
+			window.addEventListener("mouseup", agenda.stopDrag ,false);
+			window.addEventListener("mousemove", agenda.moveDrag ,false);
+		}else{
+			window.addEventListener("touchend", agenda.stopDrag ,false);
+			window.addEventListener("touchmove", agenda.moveDrag ,false);
+		}
+		agenda.tm = setTimeout(function(){
+			agenda.attDrag(true);
+		},600);
+	},
+	attDrag: function( forza=false ){
+		if((Math.abs(agenda.posDiff)>2 && !agenda.tt) || forza){
+			clearTimeout(agenda.tm);
+			agenda.tm = null;
+			agenda.moved = true;
+			if(!agenda.inTratt){
+				agenda.tt = document.createElement('div');
+				agenda.tt.id = 'ttAgenda';
+				agenda.elDrag.appendChild(agenda.tt);
+			}else{
+				agenda.tt = document.getElementById("ttLav");
+			}
+			agenda.elDrag.classList.add("eviDrag");
+			agenda.elDrag.classList.add("evi_"+agenda.tipoDrag);
+			if(touchable){
+				if(!agenda.inTratt)document.getElementById("agCont").classList.add("noScroll");
+				else{
+					document.querySelector(".agendaCol").classList.add("noScroll");
+					document.getElementById("scheda_testo").classList.add("noScroll");
+				}
+			}
+		}
+		if(agenda.moved && agenda.tt){
+			let id = agenda.elDrag.dataset.id,
+				idCL = agenda.elDrag.dataset.idcl;
+			if(idCL)agenda.db = DB.pazienti.data[idCL].trattamenti[id];
+			else{
+				if(!agenda.inTratt)agenda.db = DB.appuntamenti.data[id];
+				else agenda.db = agenda.provv;
+			}
+			let diffOre = agenda.db.oraFine-agenda.db.oraInizio;
+			if(agenda.tipoDrag=='drag'){
+				agenda.newInizio = agenda.db.oraInizio+Math.round(agenda.posDiff/4);
+				agenda.newFine = agenda.newInizio + diffOre;
+			}
+			if(agenda.tipoDrag=='resize'){
+				agenda.newInizio = agenda.db.oraInizio;
+				agenda.newFine = agenda.newInizio + parseInt(agenda.elDrag.scrollHeight/4);
+				if(touchable)agenda.newFine-=2;
+				if(agenda.elDrag.id=='inLavorazione')agenda.newFine += 1;
+			}
+			agenda.tt.innerHTML = parseInt(agenda.newInizio/12)+":"+twoDigits(parseInt(agenda.newInizio%12)*5)+" - " +
+								  parseInt(agenda.newFine/12)+":"+twoDigits(parseInt(agenda.newFine%12)*5);
+		}
+	},
+	moveDrag: function( event ){ // sposta appuntamento
+		if(touchable && !agenda.moved)agenda.stopDrag();
+		if(!agenda.moved && touchable)return;
+		agenda.posAtt = touchable ? event.changedTouches[ 0 ].pageY : event.clientY;
+		agenda.posDiff = agenda.posAtt-agenda.posIni;
+		if(agenda.tipoDrag=='drag'){
+			if(parseInt(agenda.elDrag.style.top.replace("px",""))+agenda.posDiff<=0){
+				agenda.posDiff = (0-parseInt(agenda.elDrag.style.top.replace("px","")));
+			}
+			if(parseInt(agenda.elDrag.style.top.replace("px",""))+agenda.posDiff>1152-agenda.elDrag.scrollHeight){
+				agenda.posDiff = 1152-parseInt(agenda.elDrag.style.top.replace("px",""))-agenda.elDrag.scrollHeight;
+			}
+			agenda.elDrag.style.marginTop = agenda.posDiff+'px';
+		}
+		if(agenda.tipoDrag=='resize'){
+			if(parseInt(agenda.elDrag.style.top.replace("px",""))+agenda.elDrag.scrollHeight>1152){
+				agenda.posDiff = 1152-parseInt(agenda.elDrag.style.top.replace("px",""))-agenda.heightIni;
+			}
+			let newHeight = agenda.heightIni+agenda.posDiff;
+			if(newHeight<16)newHeight = 16;
+			agenda.elDrag.getElementsByTagName("span")[0].style.height = newHeight+'px';
+		}
+		agenda.attDrag();
+	},
+	stopDrag: function( event='' ){ // fissa appuntamento
+		if(event)agenda.posAtt = touchable ? event.changedTouches[ 0 ].pageY : event.clientY;	
+		if(!touchable){
+			window.removeEventListener("mouseup", agenda.stopDrag ,false);
+			window.removeEventListener("mousemove", agenda.moveDrag ,false);
+		}else{
+			window.removeEventListener("touchend", agenda.stopDrag ,false);
+			window.removeEventListener("touchmove", agenda.moveDrag ,false);
+			if(!agenda.inTratt)document.getElementById("agCont").classList.remove("noScroll");
+			else{
+				document.querySelector(".agendaCol").classList.remove("noScroll");	
+				document.getElementById("scheda_testo").classList.remove("noScroll");
+			}	
+		}
+		clearTimeout(agenda.tm);
+		agenda.tm = null;
+		setTimeout(function(){
+			if(!agenda.inTratt && agenda.tt)agenda.elDrag.removeChild(agenda.tt);
+			agenda.elDrag.classList.remove("eviDrag");
+			agenda.elDrag.classList.remove("evi_"+agenda.tipoDrag);
+			agenda.elDrag = null;
+			agenda.db = null;
+			agenda.tt = null;
+			agenda.tipoDrag = '';
+			agenda.posIni = -1;
+			agenda.posAtt = -1;
+			agenda.heightIni = -1;
+			agenda.newInizio = -1;
+			agenda.newFine = -1;
+			agenda.moved = false;
+		},200);
+		if(agenda.moved && !(agenda.db.oraInizio==agenda.newInizio && agenda.db.oraFine==agenda.newFine)){
+			// aggiorno l'appuntamento
+			applicaLoading(document.getElementById("ag"));
+			agenda.db.oraInizio = agenda.newInizio;
+			agenda.db.oraFine = agenda.newFine;
+			
+			if(!agenda.inTratt){
+
+				if(agenda.elDrag.dataset.idcl)agenda.db.DataModifica = DB.pazienti.lastSync+1;
+				else agenda.db.DataModifica = DB.appuntamenti.lastSync+1;
+
+				agenda.scrollY = document.getElementById("agCont").scrollTop;
+				let postAction = 'MENU.visAgenda('+(agenda.DataPartenza*1)+',true);';
+				localPouchDB.setItem(MD5("DB"+LOGIN._frv()+".pazienti"), IMPORTER.COMPR(DB.pazienti)).then(function(){ // salvo il DB
+					localPouchDB.setItem(MD5("DB"+LOGIN._frv()+".appuntamenti"), IMPORTER.COMPR(DB.appuntamenti)).then(function(){ // salvo il DB
+						SYNCRO.sincronizza(	'rimuoviLoading(document.getElementById("ag"));' +
+											postAction );
+					});
+				});
+			}else{
+				document.getElementById("oraInizio").value = agenda.provv.oraInizio;
+				document.getElementById("oraFine").value = agenda.provv.oraFine;
+				agenda.orarioDef.oraInizio = agenda.provv.oraInizio;
+				agenda.orarioDef.oraFine = agenda.provv.oraFine;
+				let ripos = agenda.provv.oraInizio * 4;
+				agenda.elDrag.style.top = ripos+'px';
+				let resize = (agenda.provv.oraFine-agenda.provv.oraInizio) * 4 - 4;
+				agenda.elDrag.getElementsByTagName("span")[0].style.height = resize+'px';
+				agenda.elDrag.style.marginTop = '0px';
+				eval(agenda.retFunct+"('"+JSON.stringify(agenda.orarioDef)+"',agenda.elBut)");
+			}
+		}else{
+			// riporta in posizione iniziale
+			agenda.elDrag.style.marginTop = '0px';
+			agenda.elDrag.getElementsByTagName("span")[0].style.height = agenda.heightIni+'px';
 		}
 	}
 }

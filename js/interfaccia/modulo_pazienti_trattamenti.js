@@ -243,7 +243,7 @@ var PAZIENTI_TRATTAMENTI = { // extend PAZIENTI
 					if(!touchable)HTML += ' onMouseOver="PAZIENTI.eviPallStat('+DataAn+');"' +
 										  ' onMouseOut="PAZIENTI.desPallStat('+DataAn+');"';
 					HTML += ' 	   onclick="PAZIENTI.car_trattamento(\''+elAn+'\',this,\''+NC+'\',true);">'; // anamnesi
-					if(DataModAn>DB.pazienti.lastSync)HTML += H.imgSyncro();
+					
 					HTML += '	<span>'+htmlEntities(TXT("SchedaAnamnesi"+(globals.set.cartella=='meridiani_shiatsu'?'Shiatsu':'')))+'</span>' +
 							'</div>';
 					}
@@ -335,8 +335,8 @@ var PAZIENTI_TRATTAMENTI = { // extend PAZIENTI
 			}
 			if(Q_idTratt>-1){
 				let TR = DB.pazienti.data[PAZIENTI.idCL].trattamenti[Q_idTratt];
-				oraInizio=10;
-				oraFine=11;
+				oraInizio=120;
+				oraFine=132;
 				TR.id_interno=Q_idTratt;
 				TR.md5=PAZIENTI.pazSelMD5;
 				localPouchDB.setItem(MD5("DB"+LOGIN._frv()+".pazienti"), IMPORTER.COMPR(DB.pazienti));
@@ -359,8 +359,8 @@ var PAZIENTI_TRATTAMENTI = { // extend PAZIENTI
 				if(typeof(TR.CostoTrattamento)!='undefined')CostoTrattamento=TR.CostoTrattamento*1;
 				if(typeof(TR.oraInizio)!='undefined')oraInizio=TR.oraInizio*1;
 				if(typeof(TR.oraFine)!='undefined')oraFine=TR.oraFine*1;
-				if(oraInizio<agenda.oraMin)oraInizio=agenda.oraMin+2;
-				if(oraFine<agenda.oraMin)oraFine=agenda.oraMin+3;
+				if(oraInizio<agenda.oraMin)oraInizio=agenda.oraMin+24;
+				if(oraFine<agenda.oraMin)oraFine=agenda.oraMin+36;
 				if(!TipoTrattamento)TipoTrattamento='B';
 				if(trasforma){
 					TipoTrattamento = 'A';
@@ -522,12 +522,8 @@ var PAZIENTI_TRATTAMENTI = { // extend PAZIENTI
 			let DT;
 			if(!TimeTrattamento)DT='... '+htmlEntities(TXT("ScegliData"));
 			else{
-				oI=oraInizio+"";
-				if(oI.indexOf(".")>-1)oI=oI.substr(0,oI.indexOf("."))+":30";
-				else oI=oI+":00";
-				oF=oraFine+"";
-				if(oF.indexOf(".")>-1)oF=oF.substr(0,oF.indexOf("."))+":30";
-				else oF=oF+":00";
+				oI = parseInt(oraInizio/12)+':'+twoDigits((oraInizio%12)*5)+"";
+				oF = parseInt(oraFine/12)+':'+twoDigits((oraFine%12)*5)+"";
 				DT="<b>"+getFullDataTS(TimeTrattamento)+"</b> ("+oI+" - "+oF+")";
 			}
 			let TM = {
@@ -535,7 +531,7 @@ var PAZIENTI_TRATTAMENTI = { // extend PAZIENTI
 				oraInizio: oraInizio,
 				oraFine: oraFine
 			}
-			agendaOp = false;
+			agenda.opened = false;
 			
 			let separatore = 
 					'<div class="sezioneTrattamenti divEspansa"'+
@@ -837,6 +833,9 @@ var PAZIENTI_TRATTAMENTI = { // extend PAZIENTI
 			
 			if(nuovoCiclo)HTML += '</div>';		 // nascondo tutto se è un nuovo ciclo
 			HTML += '</form>';
+
+			HTML += '<div id="cont_sceltaAppuntamento">' +
+					'</div>';
 			
 			let azElimina = Q_idTratt>-1 ? 'PAZIENTI.el_trattamento('+Q_idTratt+')' : "",
 				btnAdd = '';
@@ -1128,7 +1127,7 @@ var PAZIENTI_TRATTAMENTI = { // extend PAZIENTI
 			stopAnimate(true);
 			visLoader(TXT("SalvataggioInCorso"),'loadingLight');
 			if(!ControllaNumero(document.formMod.CostoTrattamento,stripslashes(TXT("Costo"))))return;
-			if(agenda.oraFine>-1)agenda.conferma();
+			//if(agenda.oraFine>-1)agenda.conferma();
 			LabelCiclo=document.formMod.LabelCiclo.value;
 			TipoTrattamento=document.formMod.TipoTrattamento.value;
 			let DataModifica = DB.pazienti.lastSync+1;
@@ -1310,7 +1309,7 @@ var PAZIENTI_TRATTAMENTI = { // extend PAZIENTI
 			let D=JSON.parse(el.dataset.d);
 			if(typeof(D.data)!='undefined')data=new Date(D.data);
 		}
-		if(!agendaOp){
+		if(!agenda.opened){
 			agenda.apri(data,elemento,funct,el,Q_idTratt);
 			document.getElementById("dataTxt").className='dataOp';
 		}else{
@@ -1322,13 +1321,8 @@ var PAZIENTI_TRATTAMENTI = { // extend PAZIENTI
 		JSN=JSON.parse(txt);
 		JSN.data/=1000;
 		if(debug)console.log(JSN)
-		oraInizio=JSN.oraInizio+"";
-		if(oraInizio.indexOf(".")>-1)oraInizio=oraInizio.substr(0,oraInizio.indexOf("."))+":30";
-		else oraInizio=oraInizio+":00";
-		
-		oraFine=JSN.oraFine+"";
-		if(oraFine.indexOf(".")>-1)oraFine=oraFine.substr(0,oraFine.indexOf("."))+":30";
-		else oraFine=oraFine+":00";
+		oraInizio=parseInt(JSN.oraInizio/12)+":"+twoDigits(parseInt(JSN.oraInizio%12)*5);
+		oraFine=parseInt(JSN.oraFine/12)+":"+twoDigits(parseInt(JSN.oraFine%12)*5);
 		SCHEDA.formModificato=true;
 		el.dataset.d=txt;
 		document.formMod.TimeTrattamento.value=JSN.data*1;

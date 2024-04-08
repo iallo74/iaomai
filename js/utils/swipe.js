@@ -37,8 +37,6 @@ var SWIPE = {
 			limitBottom = limitTop+el.scrollHeight;
 		if(x>=limitLeft && x<=limitRight && y>=limitTop && y<=limitBottom){
 			SWIPE.xIni = x;
-			console.log(SWIPE.closeCondition)
-			console.log(eval(SWIPE.closeCondition))
 			if(eval(SWIPE.closeCondition))SWIPE.yIni = y;
 			let W = limitRight - limitLeft,
 				area = parseInt(W/3);
@@ -51,6 +49,7 @@ var SWIPE = {
 		}
 	},
 	move: function(event){
+		if(agenda.moved)return;
 		SWIPE.xAtt = event.touches[ 0 ].pageX;
 		SWIPE.yAtt = event.touches[ 0 ].pageY;
 	},

@@ -88,7 +88,7 @@ textarea{
 	
 }
 body:not(.smart) #scheda.schForm .submitBtn,
-body:not(.smart) #scheda.schForm .annullaBtn{
+body:not(.smart) #scheda.schForm .annullaBtn:not(#annullaOrario){
 	padding-left:5px !important;
 	padding-right:5px !important;
 	height: 30px !important;
@@ -130,18 +130,18 @@ body:not(.smart) #scheda.schForm .annullaBtn{
 	background: linear-gradient(to bottom, #999 0%,#b0b0b0 100%);
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#999', endColorstr='#b0b0b0',GradientType=0 );
 }
-body.bodyStyled2:not(.smart) #scheda.schForm .annullaBtn{
+body.bodyStyled2:not(.smart) #scheda.schForm .annullaBtn:not(#annullaOrario){
 	color:#FFF !important;
 	background:rgba(255,255,255,0.1);
 }
-body:not(.bodyStyled2):not(.smart) #scheda.schForm .annullaBtn{
+body:not(.bodyStyled2):not(.smart) #scheda.schForm .annullaBtn:not(#annullaOrario){
 	color:#000 !important;
 	background:rgba(0,0,0,0.1);
 }
-body.bodyStyled2:not(.smart) #scheda.schForm .annullaBtn:hover{
+body.bodyStyled2:not(.smart) #scheda.schForm .annullaBtn:not(#annullaOrario):hover{
 	background:rgba(255,255,255,0.2) !important;
 }
-body:not(.bodyStyled2):not(.smart) #scheda.schForm .annullaBtn:hover{
+body:not(.bodyStyled2):not(.smart) #scheda.schForm .annullaBtn:not(#annullaOrario):hover{
 	background:rgba(0,0,0,0.2) !important;
 }
 .smart #scheda.schForm .submitBtn{
@@ -1760,7 +1760,8 @@ body:not(.touch) #puntiPlantari .dettPunto:hover{
 	margin-bottom: -7px;
 }
 #formMod select:not(.p_proc_gruppo):not(.p_paz_gruppo):not(.p_paz_meridiani):not(.p_proc_meridiani), /* PAZIENTI */
-#dataTxt{
+#dataTxt,
+.orariAgenda{
 	border: none;
     background-color: rgba(255,255,255,0.5);
     border-radius: 3px;
@@ -1775,14 +1776,20 @@ body:not(.touch) #puntiPlantari .dettPunto:hover{
     background-size: 15px;
 }
 #formMod select:not(.p_proc_gruppo):not(.p_paz_gruppo):not(.p_paz_meridiani):not(.p_proc_meridiani), /* PAZIENTI */
-#dataTxt{
+#dataTxt,
+.orariAgenda{
 	line-height:28px;/* !important;*/
 	height:30px;
 }
 .smart.android #formMod select:not(.p_proc_gruppo):not(.p_paz_gruppo):not(.p_paz_meridiani):not(.p_proc_meridiani),
-.smart.android #dataTxt{
+.smart.android #dataTxt,
+.smart.orariAgenda{
 	line-height:40px !important;
 	height:40px !important;
+}
+.orariAgenda{
+	margin-left:5px;
+	margin-right:5px;
 }
 .app_version.bug_font.smart.android #formMod select:not(.p_proc_gruppo):not(.p_paz_gruppo):not(.p_paz_meridiani):not(.p_proc_meridiani),
 .app_version.bug_font.smart.android #dataTxt{
