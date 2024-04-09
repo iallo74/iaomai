@@ -323,7 +323,10 @@ var SYNCRO = {
 					localPouchDB.setItem(MD5("DB"+LOGIN._frv()+".cicli"), IMPORTER.COMPR(DB.cicli));
 				}
 				let syncJSN = '{';
-				if(BACKUPS.titleProvv)syncJSN += '"title":"'+BACKUPS.titleProvv.replace(/"/,'\"')+'",';
+				if(BACKUPS.titleProvv){
+					syncJSN += '"title":"'+BACKUPS.titleProvv.replace(/"/,'\"')+'",' +
+							   '"verApp": "'+verApp+'",'
+				}
 				syncJSN += 	'"note":"'+DB.note.lastSync+'",' +
 							'"procedure":"'+DB.procedure.lastSync+'",' +
 							'"servizi":"'+DB.servizi.lastSync+'",' +

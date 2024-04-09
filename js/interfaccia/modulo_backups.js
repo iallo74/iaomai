@@ -7,7 +7,7 @@ var BACKUPS = {
 	bkpProvv: null,
 	maxBackups: 5,
 	totBackups: 0,
-	car_backups: function(){
+	car_backups: function(){ // scarica l'elenco dei backups dal cloud
 		document.getElementById("contBackups").classList.remove("noConn");
 		document.getElementById("contBackups").classList.remove("dbBig");
 		document.getElementById("toolsBackups").style.display = 'block';
@@ -21,7 +21,7 @@ var BACKUPS = {
 			BACKUPS.caricaBackups('[]');
 		}
 	},
-	caricaBackups: function( bkps ){
+	caricaBackups: function( bkps ){ // scrive l'elenco dei backups
 		BACKUPS.bkpProvv = null;
 		let HTML = '';
 		if(CONN.getConn()){
@@ -46,14 +46,14 @@ var BACKUPS = {
 		}
 		document.getElementById("contBackups").innerHTML = HTML;
 	},
-	downloadBackup: function( file ){
+	downloadBackup: function( file ){ // scarica il backup
 		BACKUPS.fileProvv = file;
 		applicaLoading(document.getElementById("contBackups"));
 		CONN.caricaUrl(	"sincro_backups_download.php",
 						"f="+encodeURIComponent(file),
 						"BACKUPS.vis_backup");
 	},
-	vis_backup: function( bkp ){
+	vis_backup: function( bkp ){ // visualizza la scheda del backup
 		document.getElementById("contBackups").classList.remove("noConn");
 		document.getElementById("contBackups").classList.add("dbBig");
 		document.getElementById("toolsBackups").style.display = 'none';
@@ -61,7 +61,6 @@ var BACKUPS = {
 		
 		BACKUPS.bkpProvv = JSON.parse(bkp);
 		BACKUPS.bkpProvv.JSNPOST = JSON.parse(decodeURIComponent(window.atob( BACKUPS.bkpProvv.JSNPOST )));
-		
 		
 		let d = BACKUPS.fileProvv.split(".")[0].split("-")[1]*1,
 			HTML = 
@@ -80,7 +79,7 @@ var BACKUPS = {
 		rimuoviLoading(document.getElementById("contBackups"));
 		document.getElementById("contBackups").innerHTML = HTML;
 	},
-	conf_backup: function( txt ){
+	conf_backup: function( txt ){ // conferma o errore nella creazione del backup
 		if(txt.substr(0,3) == '404'){
 			ALERT(TXT("BackupErrore"));
 			return false;
@@ -91,7 +90,7 @@ var BACKUPS = {
 		}
 	},
 	
-	creaBackup: function(){
+	creaBackup: function(){ // scrive la scheda di creazione di un backup
 		if(BACKUPS.totBackups >= BACKUPS.maxBackups){
 			ALERT(TXT("maxBackups").replace("[n]",BACKUPS.maxBackups));
 			return;
@@ -123,7 +122,7 @@ var BACKUPS = {
 		}
 	},
 	
-	inviaBackup: function(){
+	inviaBackup: function(){ // invia il backup al cloud
 		if(CONN.retNoConn()){
 			BACKUPS.titleProvv = document.getElementById("nomeBackup").value.trim();
 			if(BACKUPS.titleProvv=='')return;
@@ -133,7 +132,7 @@ var BACKUPS = {
 		}
 	},
 	
-	el_backup: function(){
+	el_backup: function(){ // elimina un backup
 		CONFIRM.vis( TXT("ChiediEliminaBackup") ).then(function(pass){if(pass){
 			applicaLoading(document.getElementById("contBackups"));
 			if(CONN.retNoConn()){
@@ -144,7 +143,7 @@ var BACKUPS = {
 		}});
 	},
 	
-	ripristinaBackup_pre: function(){
+	ripristinaBackup_pre: function(){ // avvia il ripristino di un backup
 		CONFIRM.vis(	TXT("ChiediRipristinaBackup") ).then(function(pass){if(pass){
 			setTimeout( function(){
 				CONFIRM.vis(	TXT("SicuroRipristinaBackup") ).then(function(pass){if(pass){
@@ -156,7 +155,7 @@ var BACKUPS = {
 			},500 );
 		}});
 	},
-	ripristinaBackup: function(){
+	ripristinaBackup: function(){ // ripristina un backup
 		DB.pazienti.lastSync = 0;
 		DB.note.lastSync = 0;
 		DB.procedure.lastSync = 0;
@@ -165,7 +164,7 @@ var BACKUPS = {
 		let txt = JSON.stringify(BACKUPS.bkpProvv.JSNPOST);
 		SYNCRO.globalSync(txt);
 	},
-	ripristinoTerminato: function(){
+	ripristinoTerminato: function(){ // avverte che il ripristino è terminato
 		localPouchDB.getItem(MD5("DB"+LOGIN._frv()+".note")).then(function(dbCont){ // leggo il DB
 			DB.note = IMPORTER.DECOMPR(dbCont);
 			try{
@@ -176,8 +175,8 @@ var BACKUPS = {
 		});
 	},
 
-	// download scheda
-	dwnlMakeRow: function( PZ, el, addTxt = '' ){
+	// scheda visiva del backup
+	dwnlMakeRow: function( PZ, el, addTxt = '' ){ // crea una riga della scheda
 		let html = '';
 		if(PZ[el])html += "<i>"+TXT(el)+":</i> "+htmlEntities(addTxt+PZ[el])+"<br>";
 		return html;
