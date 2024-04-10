@@ -30,7 +30,6 @@ function init() {
 	if(typeof(localStorage.tipoPelle)=='undefined')localStorage.tipoPelle = '';
 
 	selCol(localStorage.colore);
-	console.log(localStorage.fondino)
 	selSf(localStorage.fondino);
 	// SCENE
 	scene = new THREE.Scene();
