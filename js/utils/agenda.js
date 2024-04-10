@@ -671,6 +671,9 @@ var agenda = {
 			document.querySelector('.agendaCol').scrollTop = tCoord(document.getElementById("inLavorazione"),'y')-250;
 			document.querySelector('.agendaCol').classList.add("lavorata");
 		}
+		if(document.getElementById("lineaAdesso")){
+			document.getElementById('agCont').scrollTop = tCoord(document.getElementById("lineaAdesso"),'y')-250;
+		}
 		
 		// controllo e setto i rientri per non far coprire completamente gli appuntamenti
 		let els = document.querySelector(".agendaCol").getElementsByClassName("elAppSt");
