@@ -4219,14 +4219,6 @@ DB.TXT = {
             por: "Você realmente deseja excluir este compromisso?",
             deu: "Möchten Sie diesen Termin wirklich löschen?"
         },
-        AggiungiAppuntamentoDati: {
-            ita: "il giorno [g] dalle ore [1] alle ore [2]",
-            eng: "on day [d] from [1] to [2]",
-            esp: "el día [d] desde las [1] hasta las [2]",
-            fra: "le jour [d] de [1] à [2]",
-            por: "no dia [d] das [1] às [2]",
-            deu: "am Tag [d] von [1] bis [2]"
-        },
         TornaAiClienti: {
             ita: "Torna ai pazienti",
             eng: "Back to patients",
@@ -4495,6 +4487,63 @@ DB.TXT = {
             por: "Expiração do token",
             deu: "Ablauf des Tokens"
         },
+        
+        Cestino: {
+            ita: "Cancellati",
+            eng: "Deleted",
+            esp: "Eliminados",
+            fra: "Supprimés",
+            por: "Excluídos",
+            deu: "Gelöschte"
+        },
+        Recupera: {
+            ita: "Recupera",
+            eng: "Recover",
+            esp: "Recuperar",
+            fra: "Récupérer",
+            por: "Recuperar",
+            deu: "Wiederherstellen"
+        },
+        /* DomandaElimina: {
+            ita: "Vuoi davvero eliminare l'elemento? N.B. Non sarà più possibile recuperarlo.",
+            eng: "Do you really want to delete the itme? Please note! It won't be possible to recover it anymore.",
+            esp: "¿Realmente quieres eliminar el elemento? ¡Ten en cuenta! No se podrá recuperar.",
+            fra: "Voulez -vous vraiment supprimer l’élément ? Notez bien! Il ne sera plus possible de le récupérer.",
+            por: "Você realmente deseja excluir o elemento? Observação! Não será possível recuperá-lo posteriormente.",
+            deu: "Möchten Sie das Element wirklich löschen? Hinweis! Es wird nicht mehr möglich sein, es wiederherzustellen."
+        }, */
+        ConfermaRecupera: {
+            ita: "Elemento recuperato con successo.",
+            eng: "Item successfully recovered.",
+            esp: "Elemento recuperado con éxito.",
+            fra: "Élément récupéré avec succès.",
+            por: "Item recuperado com sucesso.",
+            deu: "Element erfolgreich wiederhergestellt."
+        },
+        ErroreRecupera: {
+            ita: "Si è verificato un errore durante il recupero dell'elemento.",
+            eng: "An error occurred while retrieving the item.",
+            esp: "Se produjo un error al recuperar el elemento.",
+            fra: "Une erreur s'est produite lors de la récupération de l'élément.",
+            por: "Ocorreu um erro ao recuperar o item.",
+            deu: "Ein Fehler ist beim Abrufen des Elements aufgetreten."
+        },
+        /* ConfermaElimina: {
+            ita: "Elemento eliminato con successo.",
+            eng: "Item successfully deleted.",
+            esp: "Elemento eliminado con éxito.",
+            fra: "Élément supprimé avec succès.",
+            por: "Item excluído com sucesso.",
+            deu: "Element erfolgreich gelöscht."
+        },
+        ErroreElimina: {
+            ita: "Si è verificato un errore durante l'eliminazione dell'elemento.",
+            eng: "An error occurred while deleting the item.",
+            esp: "Se produjo un error al eliminar el elemento.",
+            fra: "Une erreur s'est produite lors de la suppression de l'élément.",
+            por: "Ocorreu um erro ao excluir o item.",
+            deu: "Ein Fehler ist beim Löschen des Elements aufgetreten."
+        }, */
 
         // Messaggi benvenuto
         MessaggioBenvenuto: {

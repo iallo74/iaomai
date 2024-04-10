@@ -51,7 +51,8 @@ var SERVIZI = {
 						TXT("NoResServizio") +
 				'	</span>';
 		}
-		HTML += '</div>';
+		HTML += MENU.cestinoScrivi('servizi') +
+				'</div>';
 		// scrivo l'elenco
 		document.getElementById("lista_servizi").innerHTML = HTML;
 	},

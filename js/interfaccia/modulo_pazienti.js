@@ -102,7 +102,8 @@ var PAZIENTI = {
 				document.getElementById("elenchi_lista").classList.remove("triplo");
 			}
 		}
-		HTML += '</div>';
+		HTML += MENU.cestinoScrivi('pazienti') +
+				'</div>';
 		// scrivo l'elenco
 		document.getElementById("lista_pazienti").innerHTML = HTML;
 	},

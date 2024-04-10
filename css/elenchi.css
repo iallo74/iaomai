@@ -625,6 +625,86 @@ body:not(.bodyStyled2) #chiudiElenco{
     box-shadow: 0px 0px 3px rgba(0,0,0,0.5);
 }
 
+/* cestino */
+.elCestinoLabel{
+	display:block;
+	background-image:url('../img/ico_cestinoB.png'), url('../img/frGiu.png');
+	background-position: 10px center, calc(100% - 5px) center;
+	background-repeat: no-repeat;
+	background-size: auto, contain;
+	height:32px;
+	line-height:32px;
+	padding:0 0 0 30px;
+	cursor:pointer;
+	text-align:left;
+	color:#FFF;
+}
+.elCestinoCont.op .elCestinoLabel{
+	background-image:url('../img/ico_cestinoB.png'), url('../img/frSu.png') !important;
+}
+.elCestinoCont:not(.op) .elCestinoLabel{
+	opacity:0.7;
+}
+.elCestinoCont:hover .elCestinoLabel{
+	opacity:1 !important;
+}
+.elCestinoCont{
+	display:block;
+	margin: 10px 5px 5px 5px;
+	border-radius:6px;
+}
+.elCestinoCont:not(.op){
+	height:32px;
+	overflow:hidden;
+}
+.elCestinoCont:hover,
+.elCestinoCont.op{
+	background-color:rgba(255,255,255,0.2);
+}
+.elCestinoList{
+	display:block;
+	min-height:100px;
+}
+.elCestinoList.loading{
+	background: url('../img/loadingBlack.gif') no-repeat center 30px;
+}
+.elCestinoList > span{
+	display:block;
+	height:32px;
+	line-height:32px;
+	padding:0 10px 0 10px;;
+	text-align:left;
+	color:#000;
+	border-top:1px solid rgba(0,0,0,0.1);
+	background-color: rgba(255,255,255,0.2);
+}
+.elCestinoList > span:hover{
+	background-color: rgba(255,255,255,0.3);
+}
+.elCestinoList > span img{
+	float:right;
+	vertical-align:middle;
+	width:16px;
+	height:16px;
+	cursor:pointer;
+	margin-left:3px;
+	margin-top:8px;
+	display:none;
+	opacity:0.7;
+}
+.elCestinoList > span:hover img{
+	display:inline !important;
+}
+.elCestinoList > span img:hover{
+	opacity:1 !important;
+}
+.elCestinoList .loading_cestino{
+	mix-blend-mode: multiply;
+	width: 45px;
+	margin-top: 20px;
+	opacity:0.8;
+}
+
 /* CARTELLE */
 .cartelle{
 	background-color:#FFF;

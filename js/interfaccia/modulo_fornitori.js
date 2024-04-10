@@ -52,7 +52,10 @@ var FORNITORI = {
 						TXT("NoResFornitore") +
 				'	</span>';
 		}
-		HTML += '</div>';
+
+		HTML += MENU.cestinoScrivi('fornitori') +
+				'</div>';
+
 		// scrivo l'elenco
 		document.getElementById("lista_fornitori").innerHTML = HTML;
 	},

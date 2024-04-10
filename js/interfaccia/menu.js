@@ -794,7 +794,6 @@ var MENU = {
 		document.getElementById("lista_base").classList.remove("noPwd");
 		document.getElementById("patientPwdRequest").type = 'text';
 	},
-	
 	visArchives: function(){
 		// verifico le autorizzazioni
 		if(!DB.login.data.auths.length){
@@ -815,7 +814,6 @@ var MENU = {
 			nasLoader();
 		}
 	},
-	
 	visPurchases: function(){
 		//if(!PURCHASES.initiated)
 		PURCHASES.init();
@@ -828,7 +826,78 @@ var MENU = {
 			nasLoader();
 		}
 	},
+
+	/* elementi cestinati */
+	cestinoScrivi: function( archivio ){
+		return 	'<span class="elCestinoCont" id="cestino_'+archivio+'">' +
+				'	<span class="elCestinoLabel" onClick="MENU.cestinoSw(\''+archivio+'\');">'+TXT("Cestino")+'</span>' +
+				'	<span class="elCestinoList"></span>' +
+				'</span>';
+	},
+	cestinoSw: function( archivio ){
+		if(!CONN.retNoConn())return;
+		let el = document.getElementById("cestino_"+archivio);
+		el.classList.toggle('op');
+		if(el.classList.contains('op')){
+			el.getElementsByClassName("elCestinoList")[0].innerHTML = '<img src="img/loadingWhite2.gif" class="loading_cestino">';
+			CONN.caricaUrl(	"cestino_elenco.php",
+							"archivio="+archivio,
+							"MENU.cestinoPopola");
+		}else{
+			el.getElementsByClassName("elCestinoList")[0].classList.remove("loading_cestino");
+		}
+	},
+	cestinoPopola: function( txt ){
+		let HTML = '',
+			elenco = JSON.parse(txt).cancellati,
+			archivio = JSON.parse(txt).archivio,
+			el = document.getElementById("cestino_"+archivio);
+			
+		// elenco degli elementi
+		for(e in elenco){
+			HTML += '<span data-id="'+elenco[e].id+'">' +
+						elenco[e].nome +
+						//'<img src="img/ch.png" onClick="MENU.cestinoElimina(this,\''+archivio+'\');" title="'+TXT("Elimina")+'">' +
+						'<img src="img/ico_recupera.png" onClick="MENU.cestinoRecupera(this,\''+archivio+'\');" title="'+TXT("Recupera")+'">' +
+					'</span>';
+		}
+		if(!HTML)HTML = '<div class="noResults">'+TXT("NessunRisultato")+'</div>';
+		el.getElementsByClassName("elCestinoList")[0].innerHTML = HTML;
+	},
+	cestinoRecupera: function( el, archivio ){
+		let id = el.parentElement.dataset.id;
+		CONN.caricaUrl(	"cestino_recupera.php",
+						"archivio="+archivio+"&id="+id,
+						"MENU.cestinoPostAction");
+	},
+	/* cestinoElimina: function( el, archivio ){
+		CONFIRM.vis(	TXT("DomandaElimina"),
+						!SCHEDA.verificaSchedaRet(),
+						arguments ).then(function(pass){if(pass){
+						let v = getParamNames(CONFIRM.args.callee.toString());
+						for(let i in v)eval(getArguments(v,i));
+			let id = el.parentElement.dataset.id;
+			CONN.caricaUrl(	"cestino_elimina.php",
+							"archivio="+archivio+"&id="+id,
+							"MENU.cestinoPostAction");
+						
+		}});
+	}, */
+	cestinoPostAction: function( txt ){
+		let obj = JSON.parse(txt),
+			archivio = obj.archivio,
+			action = obj.action,
+			esito = obj.esito;
+		if(esito=='ok'){
+			ALERT(TXT("Conferma"+action));
+			LOGIN.verificaToken();
+			document.getElementById("cestino_"+archivio).classList.remove('op');
+		}else{
+			ALERT(TXT("Errore"+action));
+		}
+	},
 	
+
 	stampaStage: function(){
 		if(!DB.login.data.auths.length){
 			setTimeout(function(){

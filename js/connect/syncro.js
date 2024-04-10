@@ -327,6 +327,7 @@ var SYNCRO = {
 					syncJSN += '"title":"'+BACKUPS.titleProvv.replace(/"/,'\"')+'",' +
 							   '"verApp": "'+verApp+'",'
 				}
+				
 				syncJSN += 	'"note":"'+DB.note.lastSync+'",' +
 							'"procedure":"'+DB.procedure.lastSync+'",' +
 							'"servizi":"'+DB.servizi.lastSync+'",' +
@@ -341,7 +342,7 @@ var SYNCRO = {
 				else syncJSN += '"'+window.btoa(encodeURIComponent(elenco))+'"';
 				
 				syncJSN += '}';
-				if(elenco)console.log(JSON.parse(syncJSN))
+				//if(elenco)console.log(JSON.parse(syncJSN))
 				if(!dwnl){
 					CONN.caricaUrl(	"sincro_GLOBAL.php",
 									"b64=1&JSNPOST="+window.btoa(encodeURIComponent(syncJSN)), 
@@ -1111,7 +1112,9 @@ var SYNCRO = {
 			switch(txt){
 				
 				case "appuntamenti":
-					//
+					if(agenda.opened){
+						agenda.apri(agenda.DataPartenza,agenda.elemento,null,agenda.elemento);
+					}
 					break;
 				
 				case "annotazioni":
@@ -1135,7 +1138,6 @@ var SYNCRO = {
 					break;
 				
 				case "procedure":
-					//if(globals.set.cartella == 'meridiani_cinesi'){
 					if(globals.set.cartella){
 						try{
 							SET.car_procedure('',true);
@@ -1249,6 +1251,10 @@ var SYNCRO = {
 			FORNITORI.caricaFornitori();
 			SERVIZI.caricaServizi();
 			ANNOTAZIONI.caricaAnnotazioni();
+			
+			if(agenda.opened){
+				agenda.apri(agenda.DataPartenza,agenda.elemento,null,agenda.elemento);
+			}
 			if(	SCHEDA.elencoSel == 'pazienti'){	
 				let lista = document.getElementById("lista_pazienti").querySelector(".lista");
 				if(lista.classList.contains("listaTrattamenti"))PAZIENTI.caricaTrattamenti( true ); // true serve per ...
