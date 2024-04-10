@@ -299,6 +299,7 @@ body:not(.smart) .agendaOre div:not(.elApp) span:last-child{
 	text-align:left;
 	padding:0 5px;
 	min-height:20px;
+	z-index:10;
 }
 #scheda .elApp:not(#inLavorazione){
 	opacity:0.3 !important;
@@ -373,6 +374,7 @@ body:not(.smart) .agendaOre div:not(.elApp) span:last-child{
 	height: 1px !important;
 	padding:0 !important;
 	margin:0 0 0 27px !important;
+	z-index:0;
 }
 #lineaAdesso > span{
 	width:7px !important;
@@ -401,6 +403,25 @@ body:not(.smart) .agendaOre div:not(.elApp) span:last-child{
 	opacity:0.8 !important;
 }
 
+.pallinoAgenda{
+    width: 10px !important;
+    height: 10px !important;
+    background-color: rgb(0, 102, 255) !important;
+    display: inline-block !important;
+    border-radius: 5px !important;
+    float: left !important;
+    margin-top: 5px !important;
+    box-shadow: 0px 0px 3px #000 !important;
+}
+body:not(.smart) #notificaAgenda.pallinoAgenda{
+	margin-left: -16px !important;
+    margin-top: 8px !important;
+}
+.smart .pallinoAgenda{
+	margin-left: 37px !important;
+    margin-top: 3px !important;
+}
+
 
 /* calendario */
 .contCal{
@@ -408,20 +429,30 @@ body:not(.smart) .agendaOre div:not(.elApp) span:last-child{
     z-index: 1500;
     width: 360px;
     left: 168px;
-    box-shadow: 0px 0px 5px #000;
-    border-radius: 3px;
     overflow: hidden;
     background-color: #EEE;
+}
+#calAgenda{
+    box-shadow: 0px 0px 5px #000;
+    border-radius: 3px;
     position: absolute;
 }
-#agCont .contCal{
+#calAppuntamento,
+#calTrattamento{
+	border-radius: 10px;
+	box-shadow: 0 0 6px rgba(0,50,150,0.5);
+	margin-bottom: 20px;
+}
+
+
+#agCont #calAgenda{
 	top:48px;
     position: fixed !important;
 }
-.SCH:not(#agCont) .contCal{
+.SCH:not(#agCont) #calAgenda{
     top: 104px;
 }
-.smart .contCal{
+.smart #calAgenda{
 	left: 50% !important;
 	margin-left:-180px !important;
 }
@@ -429,6 +460,8 @@ body:not(.smart) .agendaOre div:not(.elApp) span:last-child{
 	.smart .contCal{
 		width:100% !important;
 		margin-left:0px !important;
+	}
+	.smart #calAgenda{
 		left:0px !important;
 		border-radius:0px !important;
 		top:48px !important;
@@ -526,6 +559,9 @@ body:not(.smart) #agCont .chiudiCal{
 .smart .chiudiCal{
     left: 50%;
 }
+.contCal:not(#calAgenda) .chiudiCal{
+	display:none;
+}
 
 @media (max-width: 650px){
 	body:not(.smart) #agendaTesta{
@@ -580,7 +616,7 @@ body:not(.smart) #cont_sceltaAppuntamento{
 	margin-top:0px;
 }
 #scheda_testo #cont_sceltaAppuntamento{
-	width: 300px;
+	width: 400px;
 	top: 69px;
 	margin-left: 0px !important;
 	text-align: center;
@@ -714,6 +750,22 @@ body:not(.smart) #cont_sceltaAppuntamento{
 }
 #TestoAppuntamento{
 	width:100%;
+}
+#dataAgenda{
+	display:inline-block;
+	cursor:pointer;
+	border-radius: 3px;
+	padding: 3px;
+	border: 1px solid rgba(0, 0, 0, 0.3);
+	background: rgba(255, 255, 255, 0.5) url(../img/inpbg4.png) no-repeat right bottom;
+	background-size: 15px;
+	padding-top: 0px;
+	padding-left: 8px;
+	padding-right: 21px;
+	margin-left: 5px;
+	margin-right: 5px;
+	line-height: 28px;
+	height: 30px;
 }
 #salvaAppuntamento{
 	width:80px;
