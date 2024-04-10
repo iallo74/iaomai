@@ -662,17 +662,16 @@ var agenda = {
 			agenda.popolaAgenda(DataPartenza.addDays(1),elemento);
 		};
 		agenda.chiudiCalendario();
-		
-		if(agenda.scrollY){
-			document.getElementById("agCont").scrollTo(0,agenda.scrollY);
-			agenda.scrollY = 0;
-		}
 		if(document.getElementById("inLavorazione")){
 			document.querySelector('.agendaCol').scrollTop = tCoord(document.getElementById("inLavorazione"),'y')-250;
 			document.querySelector('.agendaCol').classList.add("lavorata");
-		}
-		if(document.getElementById("lineaAdesso")){
-			document.getElementById('agCont').scrollTop = tCoord(document.getElementById("lineaAdesso"),'y')-250;
+		}else if(agenda.scrollY){
+			document.getElementById("agCont").scrollTo(0,agenda.scrollY);
+			agenda.scrollY = 0;
+		}else{
+			if(document.getElementById("lineaAdesso")){
+				document.getElementById('agCont').scrollTop = tCoord(document.getElementById("lineaAdesso"),'y')-250;
+			}
 		}
 		
 		// controllo e setto i rientri per non far coprire completamente gli appuntamenti
