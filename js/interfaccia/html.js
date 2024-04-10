@@ -22,7 +22,7 @@ var H = {
 			- styleRiga
 			- opts
 			- classCampo
-			- styleRiga
+			- styleCampo
 			- labelOut
 			- maxChars
 		*/

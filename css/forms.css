@@ -1755,6 +1755,16 @@ body:not(.touch) #puntiPlantari .dettPunto:hover{
 #formMod textarea:not(#Intestazione){ /* PAZIENTI */
 	height:200px;
 }
+.txtFull{
+	width: calc(100% - 68px) !important;
+	position: absolute !important;
+}
+#scheda.schLato .txtFull{
+	height: calc(100% - 142px) !important;
+}
+#scheda:not(.schLato) .txtFull{
+	height: calc(100% - 167px) !important;
+}
 #Intestazione{
 	min-height:60px;
 	margin-bottom: -7px;

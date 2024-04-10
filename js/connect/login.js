@@ -228,6 +228,7 @@ var LOGIN = {
 			if(document.querySelector(".listaPazienti"))applicaLoading(document.querySelector(".listaPazienti"));
 			applicaLoading(document.querySelector(".listaFornitori"));
 			applicaLoading(document.querySelector(".listaServizi"));
+			applicaLoading(document.querySelector(".listaAnnotazioni"));
 			localStorage.RimaniConnesso = document.getElementById("stayConnected").checked;
 			LOGIN.salvaToken(txt);
 			LOGIN.tmAttesaLogin = 	setInterval( function(){

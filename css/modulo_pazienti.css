@@ -61,16 +61,25 @@
 .scheda_fornitore #scheda_titolo{
     background: #1d4eaa;
     background: url(../img/ico_fornitoreB.png), -moz-linear-gradient(top, #1d4eaa 0%, #0a3d96 100%);
-    background: url(../img/ico_fornitoreB.png), url(../img/ico_utente.png)-webkit-linear-gradient(top, #1d4eaa 0%,#0a3d96 100%);
+    background: url(../img/ico_fornitoreB.png), -webkit-linear-gradient(top, #1d4eaa 0%,#0a3d96 100%);
     background: url(../img/ico_fornitoreB.png), linear-gradient(to bottom, #1d4eaa 0%,#0a3d96 100%);
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1d4eaa', endColorstr='#0a3d96',GradientType=0 );
+	background-position:left center, center center !important;
+	background-repeat:no-repeat !important;
+}
+.scheda_annotazione #scheda_titolo{
+    background: #1daeaa;
+    background: url(../img/ico_annotazioniB.png), -moz-linear-gradient(top, #1daeaa 0%, #0e7c79 100%);
+    background: url(../img/ico_annotazioniB.png), -webkit-linear-gradient(top, #1daeaa 0%,#0e7c79 100%);
+    background: url(../img/ico_annotazioniB.png), linear-gradient(to bottom, #1daeaa 0%,#0e7c79 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1daeaa', endColorstr='#0e7c79',GradientType=0 );
 	background-position:left center, center center !important;
 	background-repeat:no-repeat !important;
 }
 .scheda_servizio #scheda_titolo{
     background: #1d4eaa;
     background: url(../img/ico_servizioB.png), -moz-linear-gradient(top, #1d4eaa 0%, #0a3d96 100%);
-    background: url(../img/ico_servizioB.png), url(../img/ico_utente.png)-webkit-linear-gradient(top, #1d4eaa 0%,#0a3d96 100%);
+    background: url(../img/ico_servizioB.png), -webkit-linear-gradient(top, #1d4eaa 0%,#0a3d96 100%);
     background: url(../img/ico_servizioB.png), linear-gradient(to bottom, #1d4eaa 0%,#0a3d96 100%);
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1d4eaa', endColorstr='#0a3d96',GradientType=0 );
 	background-position:left center, center center !important;
@@ -79,7 +88,7 @@
 .scheda_stats #scheda_titolo{
     background: #1d4eaa;
     background: url(../img/ico_stats.png), -moz-linear-gradient(top, #1d4eaa 0%, #0a3d96 100%);
-    background: url(../img/ico_stats.png), url(../img/ico_utente.png)-webkit-linear-gradient(top, #1d4eaa 0%,#0a3d96 100%);
+    background: url(../img/ico_stats.png), -webkit-linear-gradient(top, #1d4eaa 0%,#0a3d96 100%);
     background: url(../img/ico_stats.png), linear-gradient(to bottom, #1d4eaa 0%,#0a3d96 100%);
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1d4eaa', endColorstr='#0a3d96',GradientType=0 );
 	background-position:5px center, center center !important;
@@ -88,7 +97,7 @@
 .scheda_marketing #scheda_titolo{
     background: #1d4eaa;
     background: url(../img/ico_marketing.png), -moz-linear-gradient(top, #1d4eaa 0%, #0a3d96 100%);
-    background: url(../img/ico_marketing.png), url(../img/ico_utente.png)-webkit-linear-gradient(top, #1d4eaa 0%,#0a3d96 100%);
+    background: url(../img/ico_marketing.png), -webkit-linear-gradient(top, #1d4eaa 0%,#0a3d96 100%);
     background: url(../img/ico_marketing.png), linear-gradient(to bottom, #1d4eaa 0%,#0a3d96 100%);
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1d4eaa', endColorstr='#0a3d96',GradientType=0 );
 	background-position:5px center, center center !important;
@@ -97,7 +106,7 @@
 .scheda_agenda #scheda_titolo{
     background: #1d4eaa;
     background: url(../img/m_agenda.png), -moz-linear-gradient(top, #1d4eaa 0%, #0a3d96 100%);
-    background: url(../img/m_agenda.png), url(../img/ico_utente.png)-webkit-linear-gradient(top, #1d4eaa 0%,#0a3d96 100%);
+    background: url(../img/m_agenda.png), -webkit-linear-gradient(top, #1d4eaa 0%,#0a3d96 100%);
     background: url(../img/m_agenda.png), linear-gradient(to bottom, #1d4eaa 0%,#0a3d96 100%);
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1d4eaa', endColorstr='#0a3d96',GradientType=0 );
 	background-position:5px center, center center !important;
@@ -637,6 +646,7 @@ body:not(.smart) .trattTools i:not(.infoCiclo):not(.addTrattBtn):hover{
 .addTrattBtn,
 body:not(.smart) #addPaziente,
 body:not(.smart) #addFornitore,
+body:not(.smart) #addAnnotazione,
 body:not(.smart) #addServizio,
 body:not(.smart) #addProcedura,
 body:not(.smart) #add_saldo .elMenu{
@@ -678,6 +688,7 @@ body:not(.smart) .cartellaSingoli .addTrattBtn{
 
 body:not(.smart) #addPaziente:hover,
 body:not(.smart) #addFornitore:hover,
+body:not(.smart) #addAnnotazione:hover,
 body:not(.smart) #addServizio:hover{
     background-color: #337cd7 !important;
 }
@@ -703,6 +714,7 @@ body:not(.smart) #add_saldo .elMenu:hover{
 #add_ciclo,
 #add_paz,
 #add_forn,
+#add_ann,
 #add_serv,
 #add_pat,
 #add_saldo,
@@ -717,6 +729,7 @@ body:not(.smart) #add_saldo .elMenu:hover{
 .smart.android #add_ciclo,
 .smart.android #add_paz,
 .smart.android #add_forn,
+.smart.android #add_ann,
 .smart.android #add_serv,
 .smart.android #add_pat,
 .smart.android #add_saldo,
@@ -729,12 +742,14 @@ body:not(.smart) #add_saldo .elMenu:hover{
 #add_paz,
 .sistemaMeridiani_p,
 #add_forn,
+#add_ann,
 #add_serv,
 #add_pat{
 	padding-left: 6px !important;
 }
 body:not(.smart) #add_paz,
 body:not(.smart) #add_forn,
+body:not(.smart) #add_ann,
 body:not(.smart) #add_serv,
 body:not(.smart) #add_pat{
 	padding-right: 45px;
@@ -743,6 +758,7 @@ body:not(.smart) #add_pat{
 #add_paz i,
 .sistemaMeridiani_p i,
 #add_forn i,
+#add_ann i,
 #add_serv i,
 #add_saldo i,
 #add_proc i{ /* specifico di PROCEDURE */
@@ -756,6 +772,7 @@ body:not(.smart) #add_pat{
 .smart #add_paz i,
 .smart .sistemaMeridiani_p i,
 .smart #add_forn i,
+.smart #add_ann i,
 .smart #add_serv i,
 .smart #add_saldo i,
 .smart #add_proc i{ /* specifico di PROCEDURE */
@@ -766,6 +783,7 @@ body:not(.smart) #add_pat{
 }
 .smart #addPaziente,
 .smart #addFornitore,
+.smart #addAnnotazione,
 .smart #addServizio,
 .smart #addProcedura,
 .smart #add_saldo .elMenu{
@@ -785,6 +803,7 @@ body:not(.smart) #add_pat{
 }
 .smart.android #addPaziente,
 .smart.android #addFornitore,
+.smart.android #addAnnotazione,
 .smart.android #addServizio,
 .smart.android #addProcedura,
 .smart #add_saldo .elMenu{
@@ -795,6 +814,7 @@ body:not(.smart) #add_pat{
 }
 .smart #addPaziente,
 .smart #addFornitore,
+.smart #addAnnotazione,
 .smart #addServizio{
     background-color: #FFF;
     background-image: url(../img/addBlu3.png);
@@ -820,6 +840,7 @@ body:not(.smart) #add_pat{
 #add_paz i span,
 .sistemaMeridiani_p i span,
 #add_forn i span,
+#add_ann i span,
 #add_serv i span{
     font-size: var(--font-12-1);
     color: #525252;
@@ -846,11 +867,13 @@ body:not(.smart) #add_proc{
 #add_paz i,
 .sistemaMeridiani_p i,
 #add_forn i,
+#add_ann i,
 #add_serv i{
     color: #666;
 }
 #add_ciclo img:not(.noBG),
 #add_forn img,
+#add_ann img,
 #add_serv img,
 #add_proc img{ /* specifico di PROCEDURE */
     box-shadow: 0px 0px 3px rgb(0 0 0 / 50%);
@@ -875,6 +898,7 @@ body:not(.smart) #addServizioMenu{
 }
 
 #add_forn img,
+#add_ann img,
 #add_serv img{
 	background-color: #555;
 }
@@ -927,12 +951,14 @@ body:not(.smart) #marketingPazienti{
 
 .listaPazienti,
 .listaFornitori,
+.listaAnnotazioni,
 .listaServizi,
 .listaPatologie{
 	height: calc(100% - 39px);
 }
 body:not(.smart) .listaPazienti,
 body:not(.smart) .listaFornitori,
+body:not(.smart) .listaAnnotazioni,
 body:not(.smart) .listaServizi,
 body:not(.smart) .listaTeoria,
 body:not(.smart) .listaPatologie,
@@ -1306,6 +1332,7 @@ body:not(.smart) #rgApplicaFiltri{
 }
 #paz_ricerca,
 #forn_ricerca,
+#ann_ricerca,
 #serv_ricerca,
 #proc_ricerca,
 #pat_ricerca{
@@ -1324,6 +1351,7 @@ body:not(.smart) #rgApplicaFiltri{
 }
 .smart.android #paz_ricerca,
 .smart.android #forn_ricerca,
+.smart.android #ann_ricerca,
 .smart.android #serv_ricerca,
 .smart.android #proc_ricerca,
 .smart.android #pat_ricerca{
@@ -1334,6 +1362,7 @@ body:not(.smart) #rgApplicaFiltri{
 }
 .app_version.bug_font.smart.android #paz_ricerca,
 .app_version.bug_font.smart.android #forn_ricerca,
+.app_version.bug_font.smart.android #ann_ricerca,
 .app_version.bug_font.smart.android #serv_ricerca,
 .app_version.bug_font.smart.android #proc_ricerca,
 .app_version.bug_font.smart.android #pat_ricerca{
@@ -1342,6 +1371,7 @@ body:not(.smart) #rgApplicaFiltri{
 }
 #paz_ricerca,
 #forn_ricerca,
+#ann_ricerca,
 #serv_ricerca,
 #pat_ricerca{
     border: 1px solid #999;
@@ -1370,10 +1400,12 @@ body:not(.smart) #rgApplicaFiltri{
     width: calc(var(--menu-width) - 13px);
 }
 #forn_ricerca,
+#ann_ricerca,
 #serv_ricerca{
 	width: calc(var(--menu-width) - 48px);
 }
 .smart #forn_ricerca,
+.smart #ann_ricerca,
 .smart #serv_ricerca{
 	width: calc(var(--menu-width) - 6px);
 }

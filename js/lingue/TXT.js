@@ -2140,6 +2140,56 @@ DB.TXT = {
             deu: "Lieferanten suchen..."
         },
 
+        // ANNOTAZIONI
+        NoResAnnotazione: {
+            ita: "Nessuna nota",
+            eng: "No notes",
+            esp: "Sin notas",
+            fra: "Aucune note",
+            por: "Sem notas",
+            deu: "Keine Notizen"
+        },
+        ChiediEliminaAnnotazione: {
+            ita: "Vuoi davvero eliminare la nota? N.B. Non sarà più possibile recuperarla.",
+            eng: "Do you really want to delete the note? Note: It will not be possible to recover it.",
+            esp: "¿Realmente quieres eliminar la nota? Nota: No será posible recuperarla.",
+            fra: "Voulez-vous vraiment supprimer la note? Remarque : Il ne sera pas possible de la récupérer.",
+            por: "Tem certeza de que deseja excluir a nota? Nota: Não será possível recuperá-la.",
+            deu: "Möchtest du die Notiz wirklich löschen? Hinweis: Es wird nicht möglich sein, sie wiederherzustellen."
+        },
+        AggiungiAnnotazione: {
+            ita: "Aggiungi una nota",
+            eng: "Add a note",
+            esp: "Agregar una nota",
+            fra: "Ajouter une note",
+            por: "Adicionar uma nota",
+            deu: "Eine Notiz hinzufügen"
+        },
+        ModificaAnnotazione: {
+            ita: "Nota",
+            eng: "Note",
+            esp: "Nota",
+            fra: "Note",
+            por: "Nota",
+            deu: "Notiz"
+        },
+        CreaAnnotazione: {
+            ita: "Nuova nota",
+            eng: "New note",
+            esp: "Nueva nota",
+            fra: "Nouvelle note",
+            por: "Nova nota",
+            deu: "Neue Notiz"
+        },
+        CercaAnnotazione: {
+            ita: "Cerca una nota...",
+            eng: "Search for a note...",
+            esp: "Buscar una nota...",
+            fra: "Rechercher une note...",
+            por: "Buscar uma nota...",
+            deu: "Suche nach einer Notiz..."
+        },     
+
         // PAZIENTI
         // menu
         Pazienti: {
@@ -4430,6 +4480,14 @@ DB.TXT = {
             fra: "Photos et documents",
             por: "Fotos e documentos",
             deu: "Fotos und Dokumente"
+        },
+        ElNote: {
+            ita: "Note",
+            eng: "Notes",
+            esp: "Notas",
+            fra: "Notes",
+            por: "Notas",
+            deu: "Notizen"
         },
         ElGestionale: {
             ita: "Gestione archivi",

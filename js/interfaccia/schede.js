@@ -943,7 +943,9 @@ var SCHEDA = {
 				}
 				document.getElementById("scheda").classList.remove("triplo");
 				SCHEDA.elencoSel = '';
-				if(SCHEDA.classeAperta=='scheda_fornitore' || SCHEDA.classeAperta=='scheda_servizio')SCHEDA.scaricaScheda();
+				if(	SCHEDA.classeAperta=='scheda_fornitore' || 
+					SCHEDA.classeAperta=='scheda_annotazione' || 
+					SCHEDA.classeAperta=='scheda_servizio')SCHEDA.scaricaScheda();
 				
 				document.getElementById("lista_base").classList.remove("noPwd");
 				document.getElementById("patientPwdRequest").type = 'text';

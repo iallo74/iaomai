@@ -848,6 +848,7 @@ var MENU = {
 		}
 	},
 	cestinoPopola: function( txt ){
+		console.log(txt)
 		let HTML = '',
 			elenco = JSON.parse(txt).cancellati,
 			archivio = JSON.parse(txt).archivio,
