@@ -1056,7 +1056,8 @@ var PAZIENTI_TRATTAMENTI = { // extend PAZIENTI
 		let idTrattamento = el.id.split("_")[2],
 			label = cont.getElementsByTagName("span")[0],
 			idCiclo = label.id.split("_")[1],
-			LabelCiclo = PAZIENTI.cicli[idCiclo].NomeCiclo;
+			LabelCiclo = PAZIENTI.cicli[idCiclo].NomeCiclo,
+			DataModifica = DB.pazienti.lastSync+1;
 		CONFIRM.vis(	TXT("ChiediSpostaTrattamento").replace("[cartella]",LabelCiclo),
 						false, 
 						arguments ).then(function(pass){if(pass){
@@ -1064,6 +1065,8 @@ var PAZIENTI_TRATTAMENTI = { // extend PAZIENTI
 						for(let i in v)eval(getArguments(v,i));
 						
 			DB.pazienti.data[PAZIENTI.idCL].trattamenti[idTrattamento].LabelCiclo = LabelCiclo;
+			DB.pazienti.data[PAZIENTI.idCL].trattamenti[idTrattamento].DataModifica = DataModifica;
+			DB.pazienti.data[PAZIENTI.idCL].DataModifica = DataModifica;
 			
 			if(document.formMod?.idTratt){
 				if(document.formMod.idTratt.value && document.formMod.idTratt.value*1 == idTrattamento*1){
@@ -1317,9 +1320,10 @@ var PAZIENTI_TRATTAMENTI = { // extend PAZIENTI
 			document.getElementById("dataTxt").className='';
 		}
 	},
-	selData: function(txt,el){
+	selData: function( txt, el, cancella=false){
 		JSN=JSON.parse(txt);
-		JSN.data/=1000;
+		if(cancella)JSN.data = 0;
+		else JSN.data /= 1000;
 		if(debug)console.log(JSN)
 		SCHEDA.formModificato=true;
 		el.dataset.d=txt;

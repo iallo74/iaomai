@@ -6,10 +6,12 @@ var agenda = {
 	elBut: null,
 	elCont: null,
 	elemento: null,
+	contCal: null,
+	calFunct: null,
 	DataPartenza: -1,
 	oraMin: 0,
 	oraMax: 24,
-	zIndex: 0,
+	zIndex: 10,
 	inTratt: false, // indica che l'agenda è aperta in un trattamento
 	elDrag: null,
 	moved: false,
@@ -24,6 +26,7 @@ var agenda = {
 	newFine: -1,
 	scrollY: 0,
 	tm: null,
+	tmGlobal: null,
 	provv: {
 		oraInizio: -1,
 		oraFine: -1
@@ -95,36 +98,33 @@ var agenda = {
 		applicaLoading(document.getElementById("ag"));
 		document.getElementById("cont_sceltaAppuntamento").classList.add("visSch");
 		let HTML = '<p><b>'+tit+'</b></p>';
-		let txtData = TXT("AggiungiAppuntamentoDati");
-		txtData = txtData.replace("[g]",getDataTS(this.orarioDef.data/1000));
+		let txtData = '<img src="img/ico_agendaM.png" style="vertical-align:middle;"> ';
 
-		let selectI = '',
-			selectF = '';
 
-		selectI += '<select name="oI" id="oI" class="orariAgenda" onChange="agenda.verOrari(this);">';
+		txtData += '<span id="dataAgenda" onClick="agenda.swCal(\'cont_sceltaAppuntamento\',\'agenda.aggiornaDataAppuntamento\');">'+getDataTS(this.orarioDef.data/1000)+'</span>';
+
+		txtData += TXT("dalle")+'<select name="oI" id="oI" class="orariAgenda" onChange="agenda.verOrari(this);">';
 		for(let t=0;t<288;t++){
 			let o = parseInt(t/12),
 				m = twoDigits((t%12) * 5);
-			selectI += '	<option value="'+t+'"';
-			if(this.orarioDef.oraInizio == t)selectI += ' SELECTED';
-			selectI += '>'+o+":"+m+'</option>';
+			txtData += '	<option value="'+t+'"';
+			if(this.orarioDef.oraInizio == t)txtData += ' SELECTED';
+			txtData += '>'+o+":"+m+'</option>';
 		}
-		selectI += '</select>';
+		txtData += '</select>';
 
-		selectF += '<select name="oF" id="oF" class="orariAgenda" onChange="agenda.verOrari(this);">';
+		txtData += TXT("alle")+'<select name="oF" id="oF" class="orariAgenda" onChange="agenda.verOrari(this);">';
 		for(let t=0;t<288;t++){
 			let o = parseInt(t/12),
 				m = twoDigits((t%12) * 5);
-			selectF += '	<option value="'+t+'"';
-			if(this.orarioDef.oraFine == t)selectF += ' SELECTED';
-			selectF += '>'+o+":"+m+'</option>';
+			txtData += '	<option value="'+t+'"';
+			if(this.orarioDef.oraFine == t)txtData += ' SELECTED';
+			txtData += '>'+o+":"+m+'</option>';
 		}
-		selectF += '</select>';
-
-		txtData = txtData.replace("[1]",selectI);
-		txtData = txtData.replace("[2]",selectF);
+		txtData += '</select>';
 
 		HTML += '<p>'+txtData+'</p>' +
+				'<div class="contCal" id="calAppuntamento"></div>' +
 				'<div id="app_generico"' +
 				'	  class="visSch">' +
 				'	<div>' +
@@ -222,6 +222,12 @@ var agenda = {
 									postAction );
 			});
 		}});
+	},
+	aggiornaDataAppuntamento: function( val ){
+		document.getElementById("dataAppuntamento").value = val*1;
+		document.getElementById("dataAgenda").innerHTML = getDataTS(val*1/1000);
+		agenda.orarioDef.data = val*1;
+		agenda.chiudiCalendario();
 	},
 	swClientiApp: function(){ // mostra nasconde la lista clienti
 		document.getElementById("app_cliente").classList.toggle("visSch");
@@ -363,7 +369,7 @@ var agenda = {
 			// nuovo appuntamento
 			DB.appuntamenti.data.push(JSNPUSH);
 		}
-		let postAction = 'MENU.visAgenda('+(agenda.DataPartenza*1)+',true);';
+		let postAction = 'MENU.visAgenda('+TimeAppuntamento+',true);';
 
 		agenda.chiudiScelta();
 		applicaLoading(document.getElementById("ag"));
@@ -378,7 +384,13 @@ var agenda = {
 		document.getElementById("cont_sceltaAppuntamento").innerHTML = '';
 		if(!noAnnulla)this.annulla(true);
 	},
-	popolaCalendario:function( Y, M ){ // popola il calendario
+	swCal: function( id, funct ){ // apre e chiude il calendario nelle schede appuntamento e trattamento
+		if(agenda.contCal==agenda.elemento)agenda.popolaCalendario( agenda.DataPartenza.getFullYear(), agenda.DataPartenza.getMonth(), document.getElementById(id), funct );
+		else agenda.chiudiCalendario();
+	},
+	popolaCalendario: function( Y, M, cont=agenda.elemento, funct=null ){ // popola il calendario
+		agenda.contCal = cont;
+		agenda.calFunct = funct;
 		let HTML = '<div id="calCont">';
 		Y1=Y;
 		M1=M+1;
@@ -402,14 +414,14 @@ var agenda = {
 				'	  onClick="agenda.chiudiCalendario();"></div>' +
 				'<div id="calTesta">' +
 				'	<div id="calPre"' +
-				'	 	  onClick="agenda.popolaCalendario('+Y2+','+M2+')">' +
+				'	 	  onClick="agenda.popolaCalendario('+Y2+','+M2+',agenda.contCal,agenda.calFunct)">' +
 				'		<svg><polyline points="20.875,31.75 9.125,20 20.875,8.25 "/></svg>' +
 				'	</div>' +
 				'		<div class="calMese">' +
 							DB.TXT.base.nomiMesi[globals.siglaLingua][d.getMonth()].toUpperCase()+" "+d.getFullYear() +
 				'		</div>' +
 				'	<div id="calNext"' +
-				'		  onClick="agenda.popolaCalendario('+Y1+','+M1+')">' +
+				'		  onClick="agenda.popolaCalendario('+Y1+','+M1+',agenda.contCal,agenda.calFunct)">' +
 				'		<svg><polyline points="9.125,31.75 20.875,20 9.125,8.25 "/></svg>' +
 				'	</div>' +
 				'</div>';
@@ -434,7 +446,10 @@ var agenda = {
 					gT++;
 				}
 			}
-			HTML += '<div onClick="agenda.popolaAgenda(new Date('+(d*1)+'),agenda.elemento);"';
+			HTML += '<div onClick="';
+			if(agenda.contCal==agenda.elemento)HTML += 'agenda.popolaAgenda(new Date('+(d*1)+'),agenda.contCal,agenda.calFunct);';
+			else HTML += agenda.calFunct+'(new Date('+(d*1)+'));';
+			HTML += '"';
 			if(d*1==this.giornoInizio*1)HTML+=' class="hSel"';
 			
 			let pieno=0;
@@ -459,20 +474,24 @@ var agenda = {
 			gT++;
 		}
 		HTML += '</div>';
-		this.elemento.querySelector(".contCal").innerHTML = HTML;
+		agenda.contCal.querySelector(".contCal").innerHTML = HTML;
 		
 		if(this.retFunct!=null)applicaLoading(document.getElementById("scheda_testo"),'vuoto');
 		else applicaLoading(document.getElementById("ag"),'vuoto');
-		this.elemento.querySelector(".contCal").classList.add("visSch");
+		agenda.contCal.querySelector(".contCal").classList.add("visSch");
 		SWIPE.dismis();
 		SWIPE.init('calCont','document.getElementById(\'calPre\').click();','document.getElementById(\'calNext\').click();');
 	},
 	chiudiCalendario: function(){ // chiude il calendario
-		if(this.retFunct!=null)rimuoviLoading(document.getElementById("scheda_testo"),'vuoto');
-		else rimuoviLoading(document.getElementById("ag"),'vuoto');
-		this.elemento.querySelector(".contCal").classList.remove("visSch");
-		this.elemento.querySelector(".contCal").innerHTML = '';
+		if(agenda.contCal==agenda.elemento){
+			if(this.retFunct!=null)rimuoviLoading(document.getElementById("scheda_testo"),'vuoto');
+			else rimuoviLoading(document.getElementById("ag"),'vuoto');
+		}
+		agenda.contCal.querySelector(".contCal").classList.remove("visSch");
+		agenda.contCal.querySelector(".contCal").innerHTML = '';
 		SWIPE.init('agendaPlaceHolder','document.getElementById(\'agendaPre\').click();','document.getElementById(\'agendaNext\').click();');
+		agenda.contCal = agenda.elemento;
+		agenda.calFunct = null;
 	},
 	popolaAgenda:function( DataPartenza, elemento ){ // popola l'agenda
 		let icoUtente = '<img src="img/ico_utenteN.png" style="width: 16px;vertical-align: middle;margin-top: -3px;">',
@@ -631,8 +650,7 @@ var agenda = {
 		}
 
 		HTML += '</div></div>';
-		HTML += '</div></div><div class="contCal"></div>';
-
+		HTML += '</div></div><div class="contCal" id="calAgenda"></div>';
 
 
 		this.elemento.innerHTML=HTML;
@@ -644,6 +662,7 @@ var agenda = {
 			agenda.popolaAgenda(DataPartenza.addDays(1),elemento);
 		};
 		agenda.chiudiCalendario();
+		
 		if(agenda.scrollY){
 			document.getElementById("agCont").scrollTo(0,agenda.scrollY);
 			agenda.scrollY = 0;
@@ -677,6 +696,53 @@ var agenda = {
 			agenda.init();
 		}, 200, mod);
 	},
+	verGlobal: function(){ // verifiche ogni minuto sull'agenda
+		 // verifica che sia in corso un appuntamento
+		let adesso = new Date(),
+			adessoStr = adesso.getFullYear()+"-"+adesso.getMonth()+"-"+adesso.getDate(),
+			oggi = new Date(adesso.getFullYear()+"-"+(adesso.getMonth()+1)+"-"+adesso.getDate()),
+			adessoTime = adesso*1,
+			act = false;
+
+		// verifico i trattamenti
+		for(let i in DB.pazienti.data){
+			for(let t in DB.pazienti.data[i].trattamenti){
+				if(!DB.pazienti.data[i].trattamenti[t].Cancellato){
+					let time = new Date(DB.pazienti.data[i].trattamenti[t].TimeTrattamento*1000);
+						timeStr = time.getFullYear()+"-"+time.getMonth()+"-"+time.getDate();
+					if(	adessoStr==timeStr &&
+						adesso*1>=oggi*1+DB.pazienti.data[i].trattamenti[t].oraInizio*5*60*1000 &&
+						adesso*1<oggi*1+DB.pazienti.data[i].trattamenti[t].oraFine*5*60*1000){
+						act = true;
+					}
+				}
+			}
+		}
+
+		// verifico gli appuntamenti generici
+		/* for(let i in DB.appuntamenti.data){
+			if(!DB.appuntamenti.data[i].Cancellato){
+				let time = new Date(DB.appuntamenti.data[i].TimeAppuntamento);
+					timeStr = time.getFullYear()+"-"+time.getMonth()+"-"+time.getDate();
+				if(	adessoStr==timeStr &&
+					adesso*1>=oggi*1+DB.appuntamenti.data[i].oraInizio*5*60*1000 &&
+					adesso*1<oggi*1+DB.appuntamenti.data[i].oraFine*5*60*1000){
+					act = true;
+				}
+			}
+		} */
+		document.getElementById("notificaAgenda").classList.toggle("pallinoAgenda", act);
+
+		// risistema la posizione della linea rossa
+		if(document.getElementById("lineaAdesso")){
+			let adesso = new Date(),
+				pos = ((adesso.getHours()*60 + adesso.getMinutes())/5*4);
+			document.getElementById("lineaAdesso").style.top = pos+'px';
+			if(agenda.DataPartenza.getDate()!=adesso.getDate()){
+				document.querySelector(".agendaOre").removeChild(document.getElementById("lineaAdesso"));
+			}
+		}
+	},
 	apri:function( DataPartenza, elemento, funct, el, Q_idTratt=-1 ){ // apre e compone l'agenda
 
 		this.opened = true;
@@ -686,6 +752,7 @@ var agenda = {
 		this.retFunct=funct;
 		this.elBut=el;
 		this.elCont=elemento;
+		agenda.contCal = elemento;
 		let d = null;
 		if(el.dataset.d)d=JSON.parse(el.dataset.d);
 		this.init();
@@ -702,7 +769,7 @@ var agenda = {
 		
 		// popolo agenda.appuntamenti con i trattamenti
 		for(let i in DB.pazienti.data){
-			for(t in DB.pazienti.data[i].trattamenti){
+			for(let t in DB.pazienti.data[i].trattamenti){
 				if(!DB.pazienti.data[i].trattamenti[t].Cancellato){
 					if(!this.appuntamenti[DB.pazienti.data[i].trattamenti[t].TimeTrattamento*1000])this.appuntamenti[DB.pazienti.data[i].trattamenti[t].TimeTrattamento*1000]=[];
 					let oraInizio = -1,
@@ -795,7 +862,6 @@ var agenda = {
 		applicaLoading(document.getElementById("scheda_testo"));
 		document.getElementById("cont_sceltaAppuntamento").classList.add("visSch");
 		let HTML = '<p><b>'+TXT("OrarioTrattamento")+'</b></p>',
-			txtData = TXT("AggiungiAppuntamentoDati"),
 			oraInizio = parseInt(document.getElementById("oraInizio").value),
 			oraFine = parseInt(document.getElementById("oraFine").value),
 			d = parseInt(document.getElementById("TimeTrattamento").value)*1000;
@@ -804,36 +870,35 @@ var agenda = {
 			oraFine = oraInizio+12;
 			d = agenda.giornoInizio;
 		}
-		txtData = txtData.replace("[g]",getDataTS(d/1000)+"<br>");
-		let selectI = '',
-			selectF = '';
+		let txtData = '<img src="img/ico_agendaM.png" style="vertical-align:middle;"> ';
 
-		selectI += '<select name="oI" id="oI" class="orariAgenda" onChange="agenda.verOrari(this);">';
+		txtData += '<span id="dataAgenda" onClick="agenda.swCal(\'cont_sceltaAppuntamento\',\'agenda.aggiornaDataTrattamento\');">'+getDataTS(d/1000)+'</span> ';
+
+		txtData += TXT("dalle")+'<select name="oI" id="oI" class="orariAgenda" onChange="agenda.verOrari(this);">';
 		for(let t=0;t<288;t++){
 			let o = parseInt(t/12),
 				m = twoDigits((t%12) * 5);
-			selectI += '	<option value="'+t+'"';
-			if(oraInizio == t)selectI += ' SELECTED';
-			selectI += '>'+o+":"+m+'</option>';
+				txtData += '	<option value="'+t+'"';
+			if(oraInizio == t)txtData += ' SELECTED';
+			txtData += '>'+o+":"+m+'</option>';
 		}
-		selectI += '</select>';
+		txtData += '</select>';
 
-		selectF += '<select name="oF" id="oF" class="orariAgenda" onChange="agenda.verOrari(this);">';
+		txtData += TXT("alle")+'<select name="oF" id="oF" class="orariAgenda" onChange="agenda.verOrari(this);">';
 		for(let t=0;t<288;t++){
 			let o = parseInt(t/12),
 				m = twoDigits((t%12) * 5);
-			selectF += '	<option value="'+t+'"';
-			if(oraFine == t)selectF += ' SELECTED';
-			selectF += '>'+o+":"+m+'</option>';
+				txtData += '	<option value="'+t+'"';
+			if(oraFine == t)txtData += ' SELECTED';
+			txtData += '>'+o+":"+m+'</option>';
 		}
-		selectF += '</select>';
+		txtData += '</select>';
 
-		txtData = txtData.replace("[1]",selectI);
-		txtData = txtData.replace("[2]",selectF);
-
+		txtData += '<input type="hidden" id="dT" name="dT" value="'+d+'">';
 
 
 		HTML += '<p>'+txtData+'</p>' +
+				'<div class="contCal" id="calTrattamento"></div>' +
 				'<div id="app_generico"' +
 				'	  class="visSch">' +
 				'</div>' +
@@ -843,16 +908,20 @@ var agenda = {
 					htmlEntities(TXT("Salva")) +
 				'</span></p>';
 		document.getElementById("cont_sceltaAppuntamento").innerHTML = HTML;
-		document.getElementById("cont_sceltaAppuntamento").style.left = ((tCoord(document.getElementById("scheda_testo"))+document.getElementById("scheda_testo").scrollWidth/2)-150)+'px';
+		document.getElementById("cont_sceltaAppuntamento").style.left = ((tCoord(document.getElementById("scheda_testo"))+document.getElementById("scheda_testo").scrollWidth/2)-200)+'px';
+	},
+	aggiornaDataTrattamento: function( val ){
+		document.getElementById("dT").value = val*1;
+		document.getElementById("dataAgenda").innerHTML = getDataTS(val*1/1000);
+		agenda.chiudiCalendario();
 	},
 	scegliOrarioTrattamento: function( cancella=false ){
 		this.orarioDef = {
-			data: cancella ? 0 : this.DataPartenza.getTime(),
+			data: parseInt(document.getElementById("dT").value),//this.DataPartenza.getTime(),
 			oraInizio: cancella ? -1 : parseInt(document.getElementById("oI").value),
 			oraFine: cancella ? -1 : parseInt(document.getElementById("oF").value)
 		};
-		let DataPartenza = this.DataPartenza;
-		eval(this.retFunct+"('"+JSON.stringify(this.orarioDef)+"',agenda.elBut)");
+		eval(this.retFunct+"('"+JSON.stringify(this.orarioDef)+"',agenda.elBut,"+(cancella?"true":"false")+")");
 		agenda.chiudiScelta();
 		document.getElementById("dataTxt").click();
 		if(!cancella){
@@ -1011,18 +1080,19 @@ var agenda = {
 			agenda.db.oraFine = agenda.newFine;
 			
 			if(!agenda.inTratt){
-
-				if(agenda.elDrag.dataset.idcl)agenda.db.DataModifica = DB.pazienti.lastSync+1;
-				else agenda.db.DataModifica = DB.appuntamenti.lastSync+1;
-
 				agenda.scrollY = document.getElementById("agCont").scrollTop;
-				let postAction = 'MENU.visAgenda('+(agenda.DataPartenza*1)+',true);';
-				localPouchDB.setItem(MD5("DB"+LOGIN._frv()+".pazienti"), IMPORTER.COMPR(DB.pazienti)).then(function(){ // salvo il DB
-					localPouchDB.setItem(MD5("DB"+LOGIN._frv()+".appuntamenti"), IMPORTER.COMPR(DB.appuntamenti)).then(function(){ // salvo il DB
-						SYNCRO.sincronizza(	'rimuoviLoading(document.getElementById("ag"));' +
-											postAction );
+				let postAction = 'rimuoviLoading(document.getElementById("ag"));/* MENU.visAgenda('+(agenda.DataPartenza*1)+',true); */';
+				if(agenda.elDrag.dataset.idcl){
+					agenda.db.DataModifica = DB.pazienti.lastSync+1;
+					localPouchDB.setItem(MD5("DB"+LOGIN._frv()+".pazienti"), IMPORTER.COMPR(DB.pazienti)).then(function(){ // salvo il DB
+						SYNCRO.sincronizza(	postAction );
 					});
-				});
+				}else{
+					agenda.db.DataModifica = DB.appuntamenti.lastSync+1;
+					localPouchDB.setItem(MD5("DB"+LOGIN._frv()+".appuntamenti"), IMPORTER.COMPR(DB.appuntamenti)).then(function(){ // salvo il DB
+						SYNCRO.sincronizza(	postAction );
+					});
+				}
 			}else{
 				document.getElementById("oraInizio").value = agenda.provv.oraInizio;
 				document.getElementById("oraFine").value = agenda.provv.oraFine;
