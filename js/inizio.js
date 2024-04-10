@@ -128,10 +128,10 @@ function INIT(){
 	GUIDA.init('');
 	GUIDA.init('_modello');
 
-	//setTimeout(function(){agenda.verGlobal();},5000);
+	setTimeout(function(){agenda.verGlobal();},5000);
 	agenda.tmGlobal = setInterval(function(){
 		agenda.verGlobal();
-	},5000);
+	},60000);
 	
 	//DB._reset();
 	LOGIN.avviaVerToken();

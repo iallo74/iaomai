@@ -1083,7 +1083,7 @@ var agenda = {
 			
 			if(!agenda.inTratt){
 				agenda.scrollY = document.getElementById("agCont").scrollTop;
-				let postAction = 'rimuoviLoading(document.getElementById("ag"));/* MENU.visAgenda('+(agenda.DataPartenza*1)+',true); */';
+				let postAction = 'rimuoviLoading(document.getElementById("ag"));agenda.verGlobal();/* MENU.visAgenda('+(agenda.DataPartenza*1)+',true); */';
 				if(agenda.elDrag.dataset.idcl){
 					agenda.db.DataModifica = DB.pazienti.lastSync+1;
 					localPouchDB.setItem(MD5("DB"+LOGIN._frv()+".pazienti"), IMPORTER.COMPR(DB.pazienti)).then(function(){ // salvo il DB
