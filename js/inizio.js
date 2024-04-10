@@ -127,6 +127,11 @@ function INIT(){
 	SCHEDA.initElenco();
 	GUIDA.init('');
 	GUIDA.init('_modello');
+
+	setTimeout(function(){agenda.verGlobal();},5000);
+	agenda.tmGlobal = setInterval(function(){
+		agenda.verGlobal();
+	},60000);
 	
 	//DB._reset();
 	LOGIN.avviaVerToken();
