@@ -402,6 +402,11 @@ body:not(.smart) .agendaOre div:not(.elApp) span:last-child{
 #cancellaOrario:hover{
 	opacity:0.8 !important;
 }
+.smart #cancellaOrario{
+	padding: 20px;
+    margin-top: 10px;
+	vertical-align:middle;
+}
 
 .pallinoAgenda{
     width: 10px !important;
@@ -561,6 +566,11 @@ body:not(.smart) #agCont .chiudiCal{
 }
 .contCal:not(#calAgenda) .chiudiCal{
 	display:none;
+}
+.smart .contCal:not(#calAgenda){
+	position: relative;
+	left: 50%;
+	margin-left: -180px;
 }
 
 @media (max-width: 650px){
@@ -753,6 +763,7 @@ body:not(.smart) #cont_sceltaAppuntamento{
 }
 #dataAgenda{
 	display:inline-block;
+	vertical-align: middle;
 	cursor:pointer;
 	border-radius: 3px;
 	padding: 3px;
@@ -762,10 +773,16 @@ body:not(.smart) #cont_sceltaAppuntamento{
 	padding-top: 0px;
 	padding-left: 8px;
 	padding-right: 21px;
-	margin-left: 5px;
+	/* margin-left: 5px; */
 	margin-right: 5px;
 	line-height: 28px;
 	height: 30px;
+}
+.smart #dataAgenda{
+	height: 40px;
+	line-height: 40px;
+	padding-right: 11px;
+	font-size:var(--font-16-5);
 }
 #salvaAppuntamento{
 	width:80px;
@@ -952,5 +969,75 @@ body:not(.smart) #agCont{
 .smart #agCont{
     height: calc(100% - 56px);
 }
+
+
+/* TIME BOXES*/
+.inputTimeBox{
+	display:inline-block;
+	vertical-align: middle;
+	width: 66px;
+	height: 30px;
+	line-height: 30px;
+	text-align: center;
+	border-radius: 3px;
+	border: 1px solid rgba(0, 0, 0, 0.3);
+	background: rgba(255, 255, 255, 0.5) url(../img/inpbg4.png) no-repeat right bottom;
+	background-size: 15px;
+}
+.smart .inputTimeBox{
+	height: 40px;
+	line-height: 40px;
+	font-size:var(--font-16-5);
+}
+.inputTimeBox.error{
+	border: 1px solid #C00 !important;
+}
+.inputTimeBox.sel{
+	outline:3px solid rgba(0,100,200,0.3);
+}
+.inputTimeBox.sel.error{
+	outline:3px solid rgba(200,0,0,0.2) !important;
+}
+#elTimeList{
+	position:fixed;
+	z-index:10000;
+	width:66px;
+	height:150px;
+	background-color:#FFF;
+	border:1px solid rgba(0, 0, 0, 0.3);
+	border-radius:3px;
+	overflow-y:auto;
+}
+.smart #elTimeList{
+	height:200px;
+}
+#elTimeList > span{
+	display:block;
+	line-height:30px;
+	height:30px;
+	text-align:center;
+	cursor:pointer;
+}
+.smart #elTimeList > span{
+	line-height:40px;
+	height:40px;
+	font-size:var(--font-16-5);
+}
+#elTimeList > span:hover{
+	background-color: rgba(0, 0, 0, 0.05);
+}
+#elTimeList > span.hidden{
+	display:none;
+}
+#icoTime,
+#frTime{
+	display: inline-block;
+	vertical-align: middle;
+}
+#icoTime{
+	margin:7px;
+}
+
+
 
 -->

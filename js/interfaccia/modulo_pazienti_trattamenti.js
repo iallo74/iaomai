@@ -1135,6 +1135,8 @@ var PAZIENTI_TRATTAMENTI = { // extend PAZIENTI
 			TipoTrattamento=document.formMod.TipoTrattamento.value;
 			let DataModifica = DB.pazienti.lastSync+1;
 			
+			if(agenda.opened)document.getElementById("dataTxt").click();
+
 			// pulisco i sintomi
 			for(let s in PAZIENTI.sintomiProvvisori){
 				delete(PAZIENTI.sintomiProvvisori[s].nuovo);

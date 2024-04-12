@@ -24,13 +24,16 @@ var agenda = {
 	db: null,
 	newInizio: -1,
 	newFine: -1,
-	scrollY: 0,
+	scrollY: -1,
 	tm: null,
 	tmGlobal: null,
 	provv: {
 		oraInizio: -1,
 		oraFine: -1
 	},
+	elTimeList: null,
+	elTimeSel: null,
+	overTimeBox: null,
 
 	init: function(){
 		this.oraInizio=-1;
@@ -103,25 +106,28 @@ var agenda = {
 
 		txtData += '<span id="dataAgenda" onClick="agenda.swCal(\'cont_sceltaAppuntamento\',\'agenda.aggiornaDataAppuntamento\');">'+getDataTS(this.orarioDef.data/1000)+'</span>';
 
-		txtData += TXT("dalle")+'<select name="oI" id="oI" class="orariAgenda" onChange="agenda.verOrari(this);">';
-		for(let t=0;t<288;t++){
-			let o = parseInt(t/12),
-				m = twoDigits((t%12) * 5);
-			txtData += '	<option value="'+t+'"';
-			if(this.orarioDef.oraInizio == t)txtData += ' SELECTED';
-			txtData += '>'+o+":"+m+'</option>';
-		}
-		txtData += '</select>';
 
-		txtData += TXT("alle")+'<select name="oF" id="oF" class="orariAgenda" onChange="agenda.verOrari(this);">';
-		for(let t=0;t<288;t++){
-			let o = parseInt(t/12),
-				m = twoDigits((t%12) * 5);
-			txtData += '	<option value="'+t+'"';
-			if(this.orarioDef.oraFine == t)txtData += ' SELECTED';
-			txtData += '>'+o+":"+m+'</option>';
-		}
-		txtData += '</select>';
+
+
+		let timeBox = 
+			'<input class="inputTimeBox"' +
+			'		id="[id]"' +
+			'		value="[value]"' +
+			'		data-t="[t]"' +
+			'		placeholder="hh : mm"' +
+			'		onFocus="agenda.visTime(this);"' +
+			'		onKeyUp="agenda.verTime(this);"' +
+			'		onKeyDown="agenda.memTime(this);"' +
+			'		onMouseOver="agenda.overTimeBox=this;"' +
+			'		onMouseOut="agenda.overTimeBox=null;"/>';
+			
+		txtData += 
+			'<img src="img/ico_time.png" width="18" height="18" onClick="agenda.selTime(this);" id="icoTime"/>' +
+			timeBox.replace("[id]","time1").replace("[value]",agenda.tToTime(this.orarioDef.oraInizio)).replace("[t]",this.orarioDef.oraInizio) +
+			'<img src="img/frTime.png" width="24" height="30" id="frTime"/>' +
+			timeBox.replace("[id]","time2").replace("[value]",agenda.tToTime(this.orarioDef.oraFine)).replace("[t]",this.orarioDef.oraFine) +
+			'<input type="hidden" name="oI" id="oI" value="'+this.orarioDef.oraInizio+'">' +
+			'<input type="hidden" name="oF" id="oF" value="'+this.orarioDef.oraFine+'">';
 
 		HTML += '<p>'+txtData+'</p>' +
 				'<div class="contCal" id="calAppuntamento"></div>' +
@@ -370,7 +376,7 @@ var agenda = {
 			DB.appuntamenti.data.push(JSNPUSH);
 		}
 		let postAction = 'MENU.visAgenda('+TimeAppuntamento+',true);';
-
+		agenda.scrollY = document.getElementById("agCont").scrollTop;
 		agenda.chiudiScelta();
 		applicaLoading(document.getElementById("ag"));
 		localPouchDB.setItem(MD5("DB"+LOGIN._frv()+".appuntamenti"), IMPORTER.COMPR(DB.appuntamenti)).then(function(){ // salvo il DB
@@ -665,9 +671,9 @@ var agenda = {
 		if(document.getElementById("inLavorazione")){
 			document.querySelector('.agendaCol').scrollTop = tCoord(document.getElementById("inLavorazione"),'y')-250;
 			document.querySelector('.agendaCol').classList.add("lavorata");
-		}else if(agenda.scrollY){
+		}else if(agenda.scrollY>-1){
 			document.getElementById("agCont").scrollTo(0,agenda.scrollY);
-			agenda.scrollY = 0;
+			//agenda.scrollY = 0;
 		}else{
 			if(document.getElementById("lineaAdesso")){
 				document.getElementById('agCont').scrollTop = tCoord(document.getElementById("lineaAdesso"),'y')-250;
@@ -746,7 +752,7 @@ var agenda = {
 		}
 	},
 	apri:function( DataPartenza, elemento, funct, el, Q_idTratt=-1 ){ // apre e compone l'agenda
-
+		
 		this.opened = true;
 		this.inTratt = false;
 		
@@ -758,7 +764,7 @@ var agenda = {
 		let d = null;
 		if(el.dataset.d)d=JSON.parse(el.dataset.d);
 		this.init();
-		if(Q_idTratt>-1)this.inTratt = true;
+		if(Q_idTratt!=-1)this.inTratt = true;
 		this.appuntamenti=[];
 		if(d){
 			this.orarioDef=d;
@@ -876,25 +882,28 @@ var agenda = {
 
 		txtData += '<span id="dataAgenda" onClick="agenda.swCal(\'cont_sceltaAppuntamento\',\'agenda.aggiornaDataTrattamento\');">'+getDataTS(d/1000)+'</span> ';
 
-		txtData += TXT("dalle")+'<select name="oI" id="oI" class="orariAgenda" onChange="agenda.verOrari(this);">';
-		for(let t=0;t<288;t++){
-			let o = parseInt(t/12),
-				m = twoDigits((t%12) * 5);
-				txtData += '	<option value="'+t+'"';
-			if(oraInizio == t)txtData += ' SELECTED';
-			txtData += '>'+o+":"+m+'</option>';
-		}
-		txtData += '</select>';
 
-		txtData += TXT("alle")+'<select name="oF" id="oF" class="orariAgenda" onChange="agenda.verOrari(this);">';
-		for(let t=0;t<288;t++){
-			let o = parseInt(t/12),
-				m = twoDigits((t%12) * 5);
-				txtData += '	<option value="'+t+'"';
-			if(oraFine == t)txtData += ' SELECTED';
-			txtData += '>'+o+":"+m+'</option>';
-		}
-		txtData += '</select>';
+
+		
+		let timeBox = 
+			'<input class="inputTimeBox"' +
+			'		id="[id]"' +
+			'		value="[value]"' +
+			'		data-t="[t]"' +
+			'		placeholder="hh : mm"' +
+			'		onFocus="agenda.visTime(this);"' +
+			'		onKeyUp="agenda.verTime(this);"' +
+			'		onKeyDown="agenda.memTime(this);"' +
+			'		onMouseOver="agenda.overTimeBox=this;"' +
+			'		onMouseOut="agenda.overTimeBox=null;"/>';
+			
+		txtData += 
+			'<img src="img/ico_time.png" width="18" height="18" onClick="agenda.selTime(this);" id="icoTime"/>' +
+			timeBox.replace("[id]","time1").replace("[value]",agenda.tToTime(oraInizio)).replace("[t]",oraInizio) +
+			'<img src="img/frTime.png" width="24" height="30" id="frTime"/>' +
+			timeBox.replace("[id]","time2").replace("[value]",agenda.tToTime(oraFine)).replace("[t]",oraFine) +
+			'<input type="hidden" name="oI" id="oI" value="'+oraInizio+'">' +
+			'<input type="hidden" name="oF" id="oF" value="'+oraFine+'">';
 
 		txtData += '<input type="hidden" id="dT" name="dT" value="'+d+'">';
 
@@ -1112,5 +1121,130 @@ var agenda = {
 			agenda.elDrag.style.marginTop = '0px';
 			agenda.elDrag.getElementsByTagName("span")[0].style.height = agenda.heightIni+'px';
 		}
+	},
+
+	/* TIME BOXES */
+	timeToT: function( time ){
+		let pT = time.split(":");
+		return parseInt(pT[0]*12+pT[1]/5);
+	},
+	tToTime: function( t ){
+		let o = parseInt(t/12),
+			m = twoDigits((t%12) * 5);
+		return o+":"+m;
+	},
+	selTime: function( el ){
+		el.focus();
+	},
+	visTime: function( el ){
+		if(agenda.elTimeSel != el && agenda.elTimeSel){
+			agenda.nasTime(el);
+		}
+		if(agenda.elTimeList)document.body.removeChild(agenda.elTimeList);
+		agenda.elTimeSel = el;
+		if(!touchable)el.select();
+		el.classList.add('sel');
+		agenda.elTimeList = document.createElement('div');
+		agenda.elTimeList.id = "elTimeList";
+		agenda.elTimeList.style.top = (tCoord(el,'y')+el.scrollHeight+4)+'px';
+		agenda.elTimeList.style.left = tCoord(el)+'px';
+		agenda.elTimeList.onmouseover = function(){
+			agenda.overTimeBox = agenda.elTimeSel;
+		}
+		agenda.elTimeList.onmouseout = function(){
+			agenda.overTimeBox = null;
+		}
+		let ini = 0
+			fin = 288,
+			altra = null;	
+		if(el.id=="time1"){
+			altra = document.getElementById("time2");
+			if(altra.dataset.t)fin = parseInt(altra.dataset.t)-3;
+		}else{
+			altra = document.getElementById("time1");
+			if(altra.dataset.t)ini = parseInt(altra.dataset.t)+3;
+		}
+		if(ini<0 || !altra.value)ini=0;
+		if(fin>288 || !altra.value)fin=288;
+		
+		for(let t=ini;t<fin;t++){
+			let o = parseInt(t/12),
+				m = twoDigits((t%12) * 5);
+				agenda.elTimeList.innerHTML +='<span onMouseDown="agenda.setTime(this,'+t+');">'+o+":"+m+'</span>';
+		}
+		document.body.appendChild(agenda.elTimeList);
+		el.dataset.inivalue = el.value;
+		setTimeout(function(){window.addEventListener("mouseup",agenda.nasTime);},200);
+		agenda.verTime(agenda.elTimeSel);
+	},
+	nasTime: function( el ){
+		if(agenda.overTimeBox==agenda.elTimeSel)return;
+		agenda.elTimeSel.classList.remove('sel');
+		document.body.removeChild(agenda.elTimeList);
+		window.removeEventListener("mouseup",agenda.nasTime);
+		let Filtro = /^[0-9]{1,2}\:[0-9]{1}[05]{1}$/;
+		agenda.elTimeSel.classList.toggle("error",!Filtro.test(agenda.elTimeSel.value));
+
+		let t = '';
+		if(agenda.elTimeSel.value && !agenda.elTimeSel.classList.contains("error")){
+			t = agenda.timeToT(agenda.elTimeSel.value);
+		}
+		if(agenda.timeToT(document.getElementById("time1").value)>agenda.timeToT(document.getElementById("time2").value)-3)agenda.elTimeSel.classList.add("error");
+		agenda.elTimeSel.dataset.t = t;
+		if(agenda.elTimeSel.id=='time1')document.getElementById("oI").value = agenda.elTimeSel.dataset.t;
+		if(agenda.elTimeSel.id=='time2')document.getElementById("oF").value = agenda.elTimeSel.dataset.t;
+		agenda.verOrari(agenda.elTimeSel);
+		if(agenda.elTimeSel.classList.contains("error")){
+			agenda.elTimeSel.value = agenda.elTimeSel.dataset.inivalue;
+			agenda.elTimeSel.classList.remove("error");
+		}
+		agenda.elTimeSel.dataset.inivalue = '';
+		agenda.elTimeList = null;
+		agenda.elTimeSel = null;
+	},
+	memTime: function( el ){
+		el.dataset.mem = el.value;
+	},
+	verTime: function( el ){
+		let els = agenda.elTimeList.getElementsByTagName("span"),
+			visibili = 0,
+			h = smartMenu ? 40 : 30;
+		el.value = el.value.replace(".",":");
+		let Filtro1 = /^[0-9]{1,2}$/,
+			Filtro2 = /^[0-9]{1,2}\:$/,
+			Filtro3 = /^[0-9]{1,2}\:[0-9]{1}[05]{0,1}$/,
+			Filtro4 = /^[0-9]{1,2}\:[0-9]{1}[05]{1}$/;
+		if(	el.value.trim() &&
+			!Filtro1.test(el.value) && 
+			!Filtro2.test(el.value) && 
+			!Filtro3.test(el.value) )el.value = el.dataset.mem;
+		
+		for(let e=0;e<els.length;e++){
+			if(els[e].innerHTML.indexOf(el.value)==-1){
+				els[e].classList.add("hidden");
+			}else{
+				els[e].classList.remove("hidden");
+				visibili++;
+			}
+		}
+		agenda.elTimeSel.classList.toggle("error",	!visibili ||
+													!Filtro4.test(el.value) || 
+													agenda.timeToT(document.getElementById("time1").value)>agenda.timeToT(document.getElementById("time2").value)-3 );
+
+
+		if(visibili<5)agenda.elTimeList.style.height = (h*visibili)+'px';
+		else agenda.elTimeList.style.height = (h*5)+'px';
+		if(event.keyCode==13){
+			agenda.overTimeBox = null;
+			agenda.elTimeSel.blur();
+			agenda.nasTime(agenda.elTimeSel);
+		}
+	},
+	setTime: function( el, t ){
+		agenda.overTimeBox = null;
+		agenda.elTimeSel.value = el.innerHTML;
+		agenda.elTimeSel.dataset.t = t;
+		agenda.nasTime(agenda.elTimeSel);
 	}
+
 }

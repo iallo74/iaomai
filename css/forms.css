@@ -170,6 +170,12 @@ body:not(.bodyStyled2):not(.smart) #scheda.schForm .annullaBtn:not(#annullaOrari
 .smart #scheda.schForm .submitBtn{
 	width: calc(50% - 20px);
 }
+#cont_sceltaAppuntamento .annullaBtn,
+#cont_sceltaAppuntamento .submitBtn{
+	width: auto !important;
+	vertical-align:middle;
+}
+
 	
 .smart.android .submitBtn,
 .smart.android .annullaBtn,
