@@ -984,6 +984,10 @@ body:not(.smart) #agCont{
 	background: rgba(255, 255, 255, 0.5) url(../img/inpbg4.png) no-repeat right bottom;
 	background-size: 15px;
 }
+.inputTimeBox::placeholder{
+	opacity:1 !important;
+	font-style:italic !important;
+}
 .smart .inputTimeBox{
 	height: 40px;
 	line-height: 40px;

@@ -119,7 +119,8 @@ var agenda = {
 			'		onKeyUp="agenda.verTime(this);"' +
 			'		onKeyDown="agenda.memTime(this);"' +
 			'		onMouseOver="agenda.overTimeBox=this;"' +
-			'		onMouseOut="agenda.overTimeBox=null;"/>';
+			'		onMouseOut="agenda.overTimeBox=null;"' +
+			H.noAutoGen + '/>';
 			
 		txtData += 
 			'<img src="img/ico_time.png" width="18" height="18" onClick="agenda.selTime(this);" id="icoTime"/>' +
@@ -895,7 +896,8 @@ var agenda = {
 			'		onKeyUp="agenda.verTime(this);"' +
 			'		onKeyDown="agenda.memTime(this);"' +
 			'		onMouseOver="agenda.overTimeBox=this;"' +
-			'		onMouseOut="agenda.overTimeBox=null;"/>';
+			'		onMouseOut="agenda.overTimeBox=null;"' +
+			H.noAutoGen + '/>';
 			
 		txtData += 
 			'<img src="img/ico_time.png" width="18" height="18" onClick="agenda.selTime(this);" id="icoTime"/>' +
@@ -1155,18 +1157,22 @@ var agenda = {
 			agenda.overTimeBox = null;
 		}
 		let ini = 0
-			fin = 288,
+			fin = 289,
 			altra = null;	
-		if(el.id=="time1"){
+		/* if(el.id=="time1"){
 			altra = document.getElementById("time2");
 			if(altra.dataset.t)fin = parseInt(altra.dataset.t)-3;
 		}else{
 			altra = document.getElementById("time1");
 			if(altra.dataset.t)ini = parseInt(altra.dataset.t)+3;
+		} */
+		if(el.id=="time2"){
+			altra = document.getElementById("time1");
+			if(altra.dataset.t)ini = parseInt(altra.dataset.t)+3;
 		}
-		if(ini<0 || !altra.value)ini=0;
-		if(fin>288 || !altra.value)fin=288;
-		
+		if(ini<0)ini=0;
+		if(fin>289)fin=289;
+		if(el.id=="time1")fin = 285;
 		for(let t=ini;t<fin;t++){
 			let o = parseInt(t/12),
 				m = twoDigits((t%12) * 5);
@@ -1174,6 +1180,8 @@ var agenda = {
 		}
 		document.body.appendChild(agenda.elTimeList);
 		el.dataset.inivalue = el.value;
+		//el.placeholder = el.value;
+		el.value = '';
 		setTimeout(function(){window.addEventListener("mouseup",agenda.nasTime);},200);
 		agenda.verTime(agenda.elTimeSel);
 	},
@@ -1189,8 +1197,12 @@ var agenda = {
 		if(agenda.elTimeSel.value && !agenda.elTimeSel.classList.contains("error")){
 			t = agenda.timeToT(agenda.elTimeSel.value);
 		}
-		if(agenda.timeToT(document.getElementById("time1").value)>agenda.timeToT(document.getElementById("time2").value)-3)agenda.elTimeSel.classList.add("error");
+		//if(agenda.timeToT(document.getElementById("time1").value)>agenda.timeToT(document.getElementById("time2").value)-3)agenda.elTimeSel.classList.add("error");
 		agenda.elTimeSel.dataset.t = t;
+		if(agenda.timeToT(document.getElementById("time1").value)>agenda.timeToT(document.getElementById("time2").value)-3){
+			document.getElementById("time2").dataset.t = parseInt(document.getElementById("time1").dataset.t)+3;
+			document.getElementById("time2").value = agenda.tToTime(parseInt(document.getElementById("time1").dataset.t)+3);
+		}
 		if(agenda.elTimeSel.id=='time1')document.getElementById("oI").value = agenda.elTimeSel.dataset.t;
 		if(agenda.elTimeSel.id=='time2')document.getElementById("oF").value = agenda.elTimeSel.dataset.t;
 		agenda.verOrari(agenda.elTimeSel);
