@@ -389,7 +389,6 @@ var agenda = {
 		rimuoviLoading(document.getElementById("ag"));
 		document.getElementById("cont_sceltaAppuntamento").classList.remove("visSch");
 		document.getElementById("cont_sceltaAppuntamento").innerHTML = '';
-		if(!noAnnulla)this.annulla(true);
 	},
 	swCal: function( id, funct ){ // apre e chiude il calendario nelle schede appuntamento e trattamento
 		if(agenda.contCal==agenda.elemento)agenda.popolaCalendario( agenda.DataPartenza.getFullYear(), agenda.DataPartenza.getMonth(), document.getElementById(id), funct );
@@ -460,16 +459,16 @@ var agenda = {
 			if(d*1==this.giornoInizio*1)HTML+=' class="hSel"';
 			
 			let pieno=0;
-			for(let h=16;h<44;h++){
+			for(let h=0;h<288;h++){
 				for(a in this.appuntamenti[d*1]){
-					if(	h*0.5>=this.appuntamenti[d*1][a].timeInizio && 
-						h*0.5<this.appuntamenti[d*1][a].timeFine){
+					if(	h>=this.appuntamenti[d*1][a].timeInizio && 
+						h<this.appuntamenti[d*1][a].timeFine){
 						pieno++;
 					}
 				}
 			}
 			let limite = 20,
-				perc=((100*pieno)/28);
+				perc=((100*pieno)/288);
 			if(perc)perc = (limite + (((100-limite)*perc)/100))/100;
 			HTML += ' style="border-bottom:4px solid rgba(255,101,36,'+perc+');"'
 			HTML += '>'+d.getDate()+'</div>';
@@ -696,15 +695,6 @@ var agenda = {
 
 
 	},
-	annulla:function( mod ){
-		setTimeout( function(mod){
-			if(!mod){
-				dvs[(k-agenda.oraInizio)*2+2].className='';
-				dvs[(k-agenda.oraInizio)*2+2].getElementsByTagName("span")[1].innerHTML='';
-			}
-			agenda.init();
-		}, 200, mod);
-	},
 	verGlobal: function(){ // verifiche ogni minuto sull'agenda
 		 // verifica che sia in corso un appuntamento
 		let adesso = new Date(),
@@ -923,12 +913,12 @@ var agenda = {
 		document.getElementById("cont_sceltaAppuntamento").innerHTML = HTML;
 		document.getElementById("cont_sceltaAppuntamento").style.left = ((tCoord(document.getElementById("scheda_testo"))+document.getElementById("scheda_testo").scrollWidth/2)-200)+'px';
 	},
-	aggiornaDataTrattamento: function( val ){
+	aggiornaDataTrattamento: function( val ){ // setta la data del trattamento
 		document.getElementById("dT").value = val*1;
 		document.getElementById("dataAgenda").innerHTML = getDataTS(val*1/1000);
 		agenda.chiudiCalendario();
 	},
-	scegliOrarioTrattamento: function( cancella=false ){
+	scegliOrarioTrattamento: function( cancella=false ){ // setta l'orario del trattamento
 		this.orarioDef = {
 			data: parseInt(document.getElementById("dT").value),//this.DataPartenza.getTime(),
 			oraInizio: cancella ? -1 : parseInt(document.getElementById("oI").value),
@@ -1126,19 +1116,19 @@ var agenda = {
 	},
 
 	/* TIME BOXES */
-	timeToT: function( time ){
+	timeToT: function( time ){ // converte il time (hh:mm) in unità di tempo
 		let pT = time.split(":");
 		return parseInt(pT[0]*12+pT[1]/5);
 	},
-	tToTime: function( t ){
+	tToTime: function( t ){ // converte l'unità di tempo in time
 		let o = parseInt(t/12),
 			m = twoDigits((t%12) * 5);
 		return o+":"+m;
 	},
-	selTime: function( el ){
+	selTime: function( el ){ // al focus sul campo time
 		el.focus();
 	},
-	visTime: function( el ){
+	visTime: function( el ){ // visualizza la lista degli orari al clic sul time
 		if(agenda.elTimeSel != el && agenda.elTimeSel){
 			agenda.nasTime(el);
 		}
@@ -1185,7 +1175,7 @@ var agenda = {
 		setTimeout(function(){window.addEventListener("mouseup",agenda.nasTime);},200);
 		agenda.verTime(agenda.elTimeSel);
 	},
-	nasTime: function( el ){
+	nasTime: function( el ){ // al blur sul campo time setta i valori e chiude la lista
 		if(agenda.overTimeBox==agenda.elTimeSel)return;
 		agenda.elTimeSel.classList.remove('sel');
 		document.body.removeChild(agenda.elTimeList);
@@ -1214,10 +1204,10 @@ var agenda = {
 		agenda.elTimeList = null;
 		agenda.elTimeSel = null;
 	},
-	memTime: function( el ){
+	memTime: function( el ){ // memorizza in dataset il valore del campo
 		el.dataset.mem = el.value;
 	},
-	verTime: function( el ){
+	verTime: function( el ){ // verifica il formato di time
 		let els = agenda.elTimeList.getElementsByTagName("span"),
 			visibili = 0,
 			h = smartMenu ? 40 : 30;
@@ -1252,7 +1242,7 @@ var agenda = {
 			agenda.nasTime(agenda.elTimeSel);
 		}
 	},
-	setTime: function( el, t ){
+	setTime: function( el, t ){ // al clic sulla voce nella lista orari
 		agenda.overTimeBox = null;
 		agenda.elTimeSel.value = el.innerHTML;
 		agenda.elTimeSel.dataset.t = t;
