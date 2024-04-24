@@ -28,6 +28,14 @@ var SET = {
 	
 	// FUNZIONI
 	_init: function(){
+		
+		if(navigator.userAgent.indexOf("Macintosh")>-1 || iPhone || iPad){
+			SET.MAT.opLine = 1;
+			SET.MAT.lineYang.opacity = 1;
+			SET.MAT.lineYin.opacity = 1;
+			SET.MAT.lineSel.opacity = 1;
+		}
+
 		SETS = new THREE.Group();
 		SETS.name = "SETS";
 		
@@ -402,7 +410,7 @@ var SET = {
 					labelPt = (pN[1]*1)+"."+SET.convSigla(pN[0].substr(1,2));
 				if(__(this.INTERSECTED.userData.sigla))labelPt = this.INTERSECTED.userData.sigla; // per i punti EX
 				visToolTip(labelPt);
-				if(!MERIDIANI[n1].meridianoAcceso)this.coloraMeridiano(this.INTERSECTED.name.substr(1,2),'Over','Over');
+				if(!MERIDIANI[n1].meridianoAcceso && !touchable)this.coloraMeridiano(this.INTERSECTED.name.substr(1,2),'Over','Over');
 				renderer.domElement.style.cursor='pointer';
 			}else{
 				this.INTERSECTED=null;
@@ -693,7 +701,8 @@ var SET = {
 		if(nascosta)SCHEDA.nascondiScheda();
 	},
 	coloraMeridiano: function( siglaMeridiano, matLine, matPoint, forza=false ){
-		if(siglaMeridiano=='EX' && !matLine && matPoint=='Base' && SET.ptSel)return;
+		let pass = !touchable ? __(SET.ptSel) : __(SET.ptSel.name);
+		if(siglaMeridiano=='EX' && !matLine && matPoint=='Base' && pass)return;
 		if(matPoint=='Base' && SET.ptSel && MERIDIANI[siglaMeridiano].meridianoAcceso && !forza)return;
 		if(SET.meridianiSecondariAccesi.length && matLine.indexOf("On")==-1)return;
 		if(controlsM._premuto && !forza)return;
@@ -859,8 +868,8 @@ var SET = {
 				MODELLO.op("Visceri",1);
 				MODELLO.op("Ossa",0.6);
 				MODELLO.orOp = -1;
-				SET.MAT.lineYang.opacity = 0.6;
-				SET.MAT.lineYin.opacity = 0.6;
+				SET.MAT.lineYang.opacity = SET.MAT.opLine;
+				SET.MAT.lineYin.opacity = SET.MAT.opLine;
 				SET.MAT.pointBase.opacity = 1;
 				SET.MAT.lineGuide.opacity = 0.6;
 			}
