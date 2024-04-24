@@ -30,6 +30,13 @@ var SET = {
 	
 	// FUNZIONI
 	_init: function(){
+		
+		if(navigator.userAgent.indexOf("Macintosh")>-1 || iPhone || iPad){
+			SET.MAT.opLine = 1;
+			SET.MAT.lineYang.opacity = 1;
+			SET.MAT.lineYin.opacity = 1;
+		}
+
 		if(!localStorage.sistemaMeridiani){
 			localStorage.sistemaMeridiani = "";
 			localStorage.sistemaMeridianiAdd = "";
@@ -511,8 +518,8 @@ var SET = {
 					
 					visToolTip(tt);
 					renderer.domElement.style.cursor='pointer';
-					if(	(n1!='NK' && !MERIDIANI[n1].meridianoAcceso) ||
-						(n1=='NK' && MERIDIANI[n1].meridianoAcceso!=pt) )this.coloraMeridiano(this.INTERSECTED.name.substr(1,5),'Over','Over');
+					if(	((n1!='NK' && !MERIDIANI[n1].meridianoAcceso) ||
+						(n1=='NK' && MERIDIANI[n1].meridianoAcceso!=pt) ) && !touchable)this.coloraMeridiano(this.INTERSECTED.name.substr(1,5),'Over','Over');
 				}
 				if(this.INTERSECTED.name.substr(2,4)=='_mas'){
 					let n1 = this.INTERSECTED.name.substr(0,2);
@@ -989,7 +996,10 @@ var SET = {
 		if(nascosta)SCHEDA.nascondiScheda();
 	},
 	coloraMeridiano: function( cod, matLine, matPoint, forza=false ){
-		
+		/* if(touchable){
+			if(matLine=='Over')matLine='Base';
+			if(matPoint=='Over')matPoint='Base';
+		} */
 		let pp = SET.splitPoint(cod);
 		if(matPoint=='Base' && SET.ptSel && MERIDIANI[pp.siglaMeridiano].meridianoAcceso && !forza)return;
 		if(controlsM._premuto && !forza)return;
