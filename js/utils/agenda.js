@@ -34,6 +34,7 @@ var agenda = {
 	elTimeList: null,
 	elTimeSel: null,
 	overTimeBox: null,
+	minStep: 1, // durata minima dell'appuntamento in step da 5 minuti (1 = 5min, 2 = 10min)
 
 	init: function(){
 		this.oraInizio=-1;
@@ -1151,14 +1152,14 @@ var agenda = {
 			altra = null;	
 		/* if(el.id=="time1"){
 			altra = document.getElementById("time2");
-			if(altra.dataset.t)fin = parseInt(altra.dataset.t)-3;
+			if(altra.dataset.t)fin = parseInt(altra.dataset.t)-agenda.minStep;
 		}else{
 			altra = document.getElementById("time1");
-			if(altra.dataset.t)ini = parseInt(altra.dataset.t)+3;
+			if(altra.dataset.t)ini = parseInt(altra.dataset.t)+agenda.minStep;
 		} */
 		if(el.id=="time2"){
 			altra = document.getElementById("time1");
-			if(altra.dataset.t)ini = parseInt(altra.dataset.t)+3;
+			if(altra.dataset.t)ini = parseInt(altra.dataset.t)+agenda.minStep;
 		}
 		if(ini<0)ini=0;
 		if(fin>289)fin=289;
@@ -1189,9 +1190,9 @@ var agenda = {
 		}
 		//if(agenda.timeToT(document.getElementById("time1").value)>agenda.timeToT(document.getElementById("time2").value)-3)agenda.elTimeSel.classList.add("error");
 		agenda.elTimeSel.dataset.t = t;
-		if(agenda.timeToT(document.getElementById("time1").value)>agenda.timeToT(document.getElementById("time2").value)-3){
-			document.getElementById("time2").dataset.t = parseInt(document.getElementById("time1").dataset.t)+3;
-			document.getElementById("time2").value = agenda.tToTime(parseInt(document.getElementById("time1").dataset.t)+3);
+		if(agenda.timeToT(document.getElementById("time1").value)>agenda.timeToT(document.getElementById("time2").value)-agenda.minStep){
+			document.getElementById("time2").dataset.t = parseInt(document.getElementById("time1").dataset.t)+agenda.minStep;
+			document.getElementById("time2").value = agenda.tToTime(parseInt(document.getElementById("time1").dataset.t)+agenda.minStep);
 		}
 		if(agenda.elTimeSel.id=='time1')document.getElementById("oI").value = agenda.elTimeSel.dataset.t;
 		if(agenda.elTimeSel.id=='time2')document.getElementById("oF").value = agenda.elTimeSel.dataset.t;
@@ -1231,7 +1232,7 @@ var agenda = {
 		}
 		agenda.elTimeSel.classList.toggle("error",	!visibili ||
 													!Filtro4.test(el.value) || 
-													agenda.timeToT(document.getElementById("time1").value)>agenda.timeToT(document.getElementById("time2").value)-3 );
+													agenda.timeToT(document.getElementById("time1").value)>agenda.timeToT(document.getElementById("time2").value)-agenda.minStep );
 
 
 		if(visibili<5)agenda.elTimeList.style.height = (h*visibili)+'px';
