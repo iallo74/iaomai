@@ -675,6 +675,12 @@ body:not(.smart) .listaMeridiani .p_aria:not(.elencoSel) span:hover{
     background-position: 19px 9px !important;
 	z-index:11;
 }
+.smart #meridianiSmart_ico.visSch{
+    height: 638px !important;
+    border-bottom-left-radius: 15px !important;
+	z-index:2 !important;
+	background-position: 13px 9px !important;
+}
 body:not(.bodyModello) #meridianiSmart_cont,
 body:not(.bodyModello) #meridianiSmart_ico,
 body:not(.bodyModello) #btns_set{
@@ -694,7 +700,7 @@ body:not(.bodyModello) #btns_set{
     right: 0px !important;
 	max-height: calc(100% - 90px) !important;
 	z-index: 10;
-	padding-top:19px;
+	padding-top:9px;
 }
 #meridianiSmart_cont div{
 	width: 30px;
@@ -705,7 +711,7 @@ body:not(.bodyModello) #btns_set{
     font-size: var(--font-11);
     margin: 2px;
     cursor: pointer;
-    background-color: rgba(255,255,255,0.2);
+    background-color: rgba(255,255,255,0.4);
 }
 body:not(.smart) #meridianiSmart_cont div:not(.elencoSel):hover{
 	background-color: rgba(255,255,255,0.3) !important;
@@ -714,8 +720,10 @@ body:not(.smart) #meridianiSmart_cont div:not(.elencoSel):hover{
 	width: 40px !important;
     height: 40px !important;
     line-height: 40px !important;
-    border-radius: 20px !important;
+   /*  border-radius: 20px !important; */
     font-size: var(--font-11) !important;
+    border-radius: 13px !important;
+	font-weight: bold;
 }
 @media (max-height: 700px){
 	.smart #meridianiSmart_cont div{
@@ -725,49 +733,49 @@ body:not(.smart) #meridianiSmart_cont div:not(.elencoSel):hover{
 	}
 }
 .sm_legno{
-	border:1px solid #009900;
+	border:2px solid #009900;
 }
 .sm_legno.elencoSel{
 	background:#009900 !important;
 	color:#FFF !important;
 }
 .sm_acqua{
-	border:1px solid #000000;
+	border:2px solid #000000;
 }
 .sm_acqua.elencoSel{
 	background:#000000 !important;
 	color:#FFF !important;
 }
 .sm_aria{
-	border:1px solid #FFFFFF;
+	border:2px solid #FFFFFF;
 }
 .sm_aria.elencoSel{
 	background:#FFFFFF !important;
 	color:#000 !important;
 }
 .sm_terra{
-	border:1px solid #FF8800;
+	border:2px solid #FF8800;
 }
 .sm_terra.elencoSel{
 	background:#FF8800 !important;
 	color:#FFF !important;
 }
 .sm_fuoco{
-	border:1px solid #FF0000;
+	border:2px solid #FF0000;
 }
 .sm_fuoco.elencoSel{
 	background:#FF0000 !important;
 	color:#FFF !important;
 }
 .sm_fuoco_supplementare{
-	border:1px solid #990000;
+	border:2px solid #990000;
 }
 .sm_fuoco_supplementare.elencoSel{
 	background:#990000 !important;
 	color:#FFF !important;
 }
 .sm_none{
-	border:1px solid #006699;
+	border:2px solid #006699;
 }
 .sm_none.elencoSel{
 	background:#006699 !important;
