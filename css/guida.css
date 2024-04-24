@@ -667,6 +667,22 @@ body:not(.smart) #guida_generica.vis{
 		margin-left: -21px;
 	}
 }
+
+@media (max-height: 725px){	
+	.smart #guida_generica_mappe{
+		height: 170px;
+		overflow-y: scroll;
+	}
+}
+@media (max-height: 630px){	
+	.smart #guida_generica_info #colSel{
+		display:none;
+	}
+	.smart #guida_generica_info #loginGuida{
+		margin-top:0px !important;
+	}
+}
+
 @media (max-width: 630px){	
 	.smart #guida_generica{
 		width: calc(100% - 20px) !important;

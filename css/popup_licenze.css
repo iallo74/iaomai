@@ -18,6 +18,9 @@
 	padding:20px;
 	text-align:left;
 }
+.smart #contLicenze{
+	height: calc(100% - 40px);
+}
 .listLicenze{
     padding-bottom: 5px;
     border-bottom: solid 1px rgba(0, 0, 0, 0.1);
