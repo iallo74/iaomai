@@ -171,6 +171,7 @@ var MODULO_MERIDIANI = { // extend SET
 		SET.filtraMeridiani();
 	},
 	eviMeridiano: function( m, b ){
+		if(touchable)return;
 		// evidenzia il meridiano al passaggio
 		if(localStorage.sistemaMeridiani=='NMK')return;
 		if(!MERIDIANI[m+localStorage.sistemaMeridianiAdd].meridianoAcceso){
@@ -181,6 +182,7 @@ var MODULO_MERIDIANI = { // extend SET
 	swMeridianiSmart: function(){
 		// visualizza/nasconde il menu rapido dei meridiani (in alto a SX)
 		document.getElementById("meridianiSmart_cont").classList.toggle("visSch");
+		document.getElementById("meridianiSmart_ico").classList.toggle("visSch");
 	},
 	swElencoPt: function( el, m ){
 		// mostra/nasconde l'elenco dei punti di un meridiano
