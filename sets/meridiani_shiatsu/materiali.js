@@ -87,7 +87,8 @@ SET.MAT = {
 	lineYang: new THREE.LineBasicMaterial( {
 		color: SET.COL.base,
 		transparent: true,
-		opacity:0.6
+		opacity:0.6,
+		linewidth: 2
 	} ),
 	lineYin: new THREE.LineDashedMaterial( {
 		color: SET.COL.base,
@@ -95,7 +96,8 @@ SET.MAT = {
 		dashSize: 1,
 		gapSize: .5,
 		transparent: true,
-		opacity:0.6
+		opacity:0.6,
+		linewidth: 2
 	} ),
 	lineGuide: new THREE.LineBasicMaterial( {
 		color: SET.COL.guide,
