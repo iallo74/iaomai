@@ -35,6 +35,7 @@ var SET = {
 			SET.MAT.lineWidth = 0.003;
 		} */
 		//SET.MAT.lineWidth = 0.005;
+		if(window.devicePixelRatio!=1)SET.MAT.lineWidth *= (window.devicePixelRatio*.5);
 
 		if(!localStorage.sistemaMeridiani){
 			localStorage.sistemaMeridiani = "";
@@ -144,7 +145,19 @@ var SET = {
 							
 							let loader = new THREE.ObjectLoader(),
 								mesh =  loader.parse(JSON.parse(LZString.decompressFromBase64(GDS[l].obj)));
-							mesh.material = this.MAT.lineGuide;
+								
+
+							positions = mesh.geometry.attributes.position.array,
+							mesh_name = mesh.name;
+							var geometry = new THREE.LineGeometry();
+							geometry.setPositions( positions );
+							
+							matLine = this.MAT.lineGuide;
+							
+							mesh = new THREE.Line2( geometry, matLine );
+							mesh.computeLineDistances();
+							mesh.name = mesh_name;
+							mesh.scale.set( 1, 1, 1 );
 							this.GD[m].add( mesh );
 							
 						}

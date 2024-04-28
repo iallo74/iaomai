@@ -33,7 +33,7 @@ var SET = {
 			SET.MAT.lineWidth = 0.003;
 		} */
 		//SET.MAT.lineWidth = 0.005;
-
+		if(window.devicePixelRatio!=1)SET.MAT.lineWidth *= (window.devicePixelRatio*.5);
 
 		SETS = new THREE.Group();
 		SETS.name = "SETS";

@@ -281,6 +281,7 @@ SET._setLineMaterials = function(){
 
 		SET.MAT.lineYangOn[elemento] = new THREE.LineMaterial( {
 
+			name: "lineYangOn["+elemento+"]",
 			color: new THREE.Color(col),
 			transparent: true,
 			linewidth: SET.MAT.lineWidth,
@@ -290,6 +291,7 @@ SET._setLineMaterials = function(){
 
 		SET.MAT.lineYinOn[elemento] = new THREE.LineMaterial( {
 
+			name: "lineYinOn["+elemento+"]",
 			color: new THREE.Color(col),
 			transparent: true,
 			linewidth: SET.MAT.lineWidth,
@@ -305,6 +307,7 @@ SET._setLineMaterials = function(){
 		} );
 		SET.MAT.lineYangIntOn[elemento] = new THREE.LineMaterial( {
 
+			name: "lineYangIntOn["+elemento+"]",
 			color: new THREE.Color(col),
 			transparent: true,
 			depthFunc: depthFunc,
@@ -317,6 +320,7 @@ SET._setLineMaterials = function(){
 
 		SET.MAT.lineYinIntOn[elemento] = new THREE.LineMaterial( {
 
+			name: "lineYinIntOn["+elemento+"]",
 			color: new THREE.Color(col),
 			transparent: true,
 			depthFunc: depthFunc,

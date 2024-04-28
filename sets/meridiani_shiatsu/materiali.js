@@ -71,6 +71,7 @@ SET.MAT = {
 	lineWidth: 0.002,
 	lineYang: new THREE.LineMaterial( {
 
+		name: "lineYang",
 		color: SET.COL.base,
 		transparent: true,
 		linewidth: 0.002,
@@ -79,6 +80,7 @@ SET.MAT = {
 	} ),
 	lineYin: new THREE.LineMaterial( {
 
+		name: "lineYin",
 		color: SET.COL.base,
 		transparent: true,
 		linewidth: 0.002,
@@ -97,6 +99,7 @@ SET.MAT = {
 	
 	lineGuide: new THREE.LineMaterial( {
 
+		name: "lineGuide",
 		color: SET.COL.guide,
 		transparent: true,
 		linewidth: 0.0015,
@@ -245,11 +248,11 @@ SET.MAT.lineYang.uniforms.opacity.value = SET.MAT.opLine;
 SET.MAT.lineYin.uniforms.opacity.value = SET.MAT.opLine;
 SET.MAT.lineGuide.uniforms.opacity.value = SET.MAT.opLine;
 
-SET.MAT.lineYangInt = cloneMAT(SET.MAT.lineYang,{color:SET.COL.selInt, depthFunc: 1});
+SET.MAT.lineYangInt = cloneMAT(SET.MAT.lineYang,{color:SET.COL.selInt, depthFunc: 3});
 SET.MAT.lineYangOver = cloneMAT(SET.MAT.lineYang,{color: SET.COL.over});
 SET.MAT.lineYangIntOver = cloneMAT(SET.MAT.lineYangInt,{color: SET.COL.over});
 	
-SET.MAT.lineYinInt = cloneMAT(SET.MAT.lineYin,{color:SET.COL.selInt, depthFunc: 1});
+SET.MAT.lineYinInt = cloneMAT(SET.MAT.lineYin,{color:SET.COL.selInt, depthFunc: 3});
 SET.MAT.lineYinOver = cloneMAT(SET.MAT.lineYin,{color: SET.COL.over});
 SET.MAT.lineYinIntOver = cloneMAT(SET.MAT.lineYinInt,{color: SET.COL.over});
 
@@ -281,11 +284,13 @@ SET._setLineMaterials = function(){
 		SET.MAT.pointBase.color.setHex(col3);
 		SET.MAT.lineYang.color.setHex(col4);
 		SET.MAT.lineYin.color.setHex(col4);
-		depthFunc = 3;
-		if(MODELLO.opAtt<1)depthFunc = 1;
+		/* depthFunc = 3;
+		if(MODELLO.opAtt<1)depthFunc = 1; */
+		depthFunc = 1;
 
 		SET.MAT.lineYangOn[elemento] = new THREE.LineMaterial( {
 
+			name: "lineYangOn["+elemento+"]",
 			color: new THREE.Color(col),
 			transparent: true,
 			linewidth: SET.MAT.lineWidth,
@@ -295,6 +300,7 @@ SET._setLineMaterials = function(){
 
 		SET.MAT.lineYinOn[elemento] = new THREE.LineMaterial( {
 
+			name: "lineYinOn["+elemento+"]",
 			color: new THREE.Color(col),
 			transparent: true,
 			linewidth: SET.MAT.lineWidth,
@@ -310,6 +316,7 @@ SET._setLineMaterials = function(){
 		} );
 		SET.MAT.lineYangIntOn[elemento] = new THREE.LineMaterial( {
 
+			name: "lineYangIntOn["+elemento+"]",
 			color: new THREE.Color(col),
 			transparent: true,
 			depthFunc: depthFunc,
@@ -322,6 +329,7 @@ SET._setLineMaterials = function(){
 
 		SET.MAT.lineYinIntOn[elemento] = new THREE.LineMaterial( {
 
+			name: "lineYinIntOn["+elemento+"]",
 			color: new THREE.Color(col),
 			transparent: true,
 			depthFunc: depthFunc,
@@ -341,6 +349,7 @@ SET._setLineMaterials = function(){
 		
 		SET.MAT.lineYangOnMAS[elemento] = new THREE.LineMaterial( {
 
+			name: "lineYangOnMAS["+elemento+"]",
 			color: new THREE.Color(col2),
 			transparent: true,
 			linewidth: 0.002,
@@ -350,6 +359,7 @@ SET._setLineMaterials = function(){
 		
 		SET.MAT.lineYinOnMAS[elemento] = new THREE.LineMaterial( {
 
+			name: "lineYinOnMAS["+elemento+"]",
 			color: new THREE.Color(col2),
 			transparent: true,
 			linewidth: SET.MAT.lineWidth,
@@ -366,6 +376,7 @@ SET._setLineMaterials = function(){
 
 		SET.MAT.lineYangIntOnMAS[elemento] = new THREE.LineMaterial( {
 
+			name: "lineYangIntOnMAS["+elemento+"]",
 			color: new THREE.Color(col2),
 			transparent: true,
 			linewidth: SET.MAT.lineWidth,
@@ -376,6 +387,7 @@ SET._setLineMaterials = function(){
 		
 		SET.MAT.lineYinIntOnMAS[elemento] = new THREE.LineMaterial( {
 
+			name: "lineYinIntOnMAS["+elemento+"]",
 			color: new THREE.Color(col2),
 			transparent: true,
 			linewidth: SET.MAT.lineWidth,
