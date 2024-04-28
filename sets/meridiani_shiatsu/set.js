@@ -27,6 +27,7 @@ var SET = {
 	geometryPallinoTrasp: null,
 	allMeridiansFree: false, // sceglie se visualizzare SEMPRE tutti i meridiani nel 3D
 	snd: null,
+	areas50: true,
 	
 	// FUNZIONI
 	_init: function(){
@@ -35,7 +36,7 @@ var SET = {
 			SET.MAT.lineWidth = 0.003;
 		} */
 		//SET.MAT.lineWidth = 0.005;
-		if(window.devicePixelRatio!=1)SET.MAT.lineWidth *= (window.devicePixelRatio*.5);
+		//if(window.devicePixelRatio!=1)SET.MAT.lineWidth *= (window.devicePixelRatio*.5);
 
 		if(!localStorage.sistemaMeridiani){
 			localStorage.sistemaMeridiani = "";
@@ -251,6 +252,10 @@ var SET = {
 				this.PT[m].userData.categoria = categoria;
 				SETS.add( this.PT[m] );
 			}
+		}
+		if(areasView){
+			MODELLO.swArea(2);
+			MODELLO.swArea(1);
 		}
 		
 		if(!localStorage.sistemaSigleMeridiani)localStorage.sistemaSigleMeridiani="INT";

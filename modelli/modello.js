@@ -758,8 +758,16 @@ var MODELLO = {
 		areasView=!areasView;
 		localStorage.areasView = (areasView) ? '1' : '';
 		if(MODELLO.meshPelle.children[0].material.name.indexOf('pelle') > -1 || forza == true){
+			// AREE
 			for(let n=0;n<MODELLO.meshPelle.children.length;n++){
 				MODELLO.meshPelle.children[n].material = MODELLO.MAT.materialAree[n];
+				if(SET?.areas50){
+					MODELLO.meshPelle.children[n].material.color = new THREE.Color( 0.55, 0.55, 0.55 );
+					MODELLO.meshPelle.children[n].material.emissive = new THREE.Color( 0.35, 0.35, 0.35 );
+				}else{
+					MODELLO.meshPelle.children[n].material.color = new THREE.Color( 1, 1, 1 );
+					MODELLO.meshPelle.children[n].material.emissive = new THREE.Color( 0, 0, 0 );
+				}
 			}
 			document.getElementById("i_aree").classList.add("btnSel");
 			document.getElementById("p_pelle").classList.add("disattLiv");
@@ -771,6 +779,7 @@ var MODELLO = {
 			MODELLO.op("Aree",MENU.getOp('Aree'));
 			if(!SET)this.meshAree.visible = true;
 		}else{
+			//PELLE
 			for(let n=0;n<MODELLO.meshPelle.children.length;n++){
 				MODELLO.meshPelle.children[n].material = MODELLO.MAT["materialPelle"+MODELLO.tipoPelle];
 			}

@@ -4,10 +4,13 @@
 SET.COL = {
 	sel: 0xFF0000,
 	selInt: 0xCC7F7F,
-	musc: 0x33FF00,
-	lineMusc: 0x99B2CC,
+	/* musc: 0x33FF00, */
+	musc: 0xFF0000,
+	/* lineMusc: 0x99B2CC, */
+	lineMusc: 0x575454,
 	basePT: 0x7F7F7F,
-	basePTmusc: 0xFFFFFF,
+	/* basePTmusc: 0xFFFFFF, */
+	basePTmusc: 0x575454,
 	base: 0x637281,
 	over: 0xFFFFFF,
 	overPT: 0xAABBCC,
@@ -44,11 +47,20 @@ SET.COL = {
 }
 
 SET.colsElementi = {
-	"none": 0x1762ae,
+	"none": 0x1762AE,
 	"legno": 0x007700,
 	"fuoco":0xFF0000,
 	"fuoco_supplementare":0x990000,
 	"terra":0xCC6600,
+	"aria":0xFFFFFF,
+	"acqua":0x000000
+}
+SET.colsElementiAreasView = {
+	"none": 0x0F82F7,
+	"legno": 0x4CE600,
+	"fuoco":0xFF0000,
+	"fuoco_supplementare":0x990000,
+	"terra":0xFCCC03,
 	"aria":0xFFFFFF,
 	"acqua":0x000000
 }
@@ -261,7 +273,7 @@ SET._setLineMaterials = function(){
 
 	for(let elemento in SET.colsElementi){
 		
-		let col =  SET.colsElementi[elemento],
+		let col = areasView ? SET.colsElementiAreasView[elemento] : SET.colsElementi[elemento],
 			col3 = SET.COL.basePT,
 			col4 = SET.COL.base;
 		if( SET.COL.contrastMethod){

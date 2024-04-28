@@ -395,7 +395,7 @@ function caricaSet( cartella, el, forzaModello='' ){
 		globals.set=JSON.parse(JSON.stringify(sets[cartella]));
 		globals.set.cartella = cartella;
 		globals.set.setSel = el;
-		if(areasView)MODELLO.swArea();
+		//if(areasView)MODELLO.swArea();
 		let modelli = filtraModelli(cartella);
 		if(modelli.indexOf(globals.modello.cartella) == -1 && globals.modello.cartella)forzaModello = modelli[0];
 		
@@ -503,6 +503,11 @@ function chiudiSet(){
 				SCHEDA.scaricaScheda()
 				document.getElementById("sc").dataset.funct = '';
 			},500);
+			
+			if(areasView){
+				MODELLO.swArea(2);
+				MODELLO.swArea(1);
+			}
 		}});
 	//}});
 }
