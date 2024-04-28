@@ -110,6 +110,11 @@ var IMPORTER = {
             
 		'js/three/three.js',
         'js/three/ObjectControls.js',
+		'js/three/LineSegmentsGeometry.js',
+		'js/three/LineGeometry.js',
+		'js/three/LineMaterial.js',
+		'js/three/LineSegments2.js',
+        'js/three/Line2.js',
         
         'js/interfaccia/guida.js',
         'js/interfaccia/reference.js',

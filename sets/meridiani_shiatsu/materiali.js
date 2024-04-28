@@ -3,9 +3,10 @@
 // colori
 SET.COL = {
 	sel: 0xFF0000,
-	musc: 0x33FF00, // 0x000000;
+	selInt: 0xCC7F7F,
+	musc: 0x33FF00,
 	lineMusc: 0x99B2CC,
-	basePT: 0x7F7F7F, // 0x8899AA (vecchio)	
+	basePT: 0x7F7F7F,
 	basePTmusc: 0xFFFFFF,
 	base: 0x637281,
 	over: 0xFFFFFF,
@@ -14,17 +15,10 @@ SET.COL = {
 	notePTSel: 0xff9900,
 	notePTemissive: 0x333300,
 	
-	/*eviPT: 0x0066FF,
-	pienoPT: 0x009900,
-	vuotoPT: 0xCC0000,*/
-	
-	/*eviPT: 0x0000FF,
-	eviPTemissive: 0x0000FF,*/
-	
 	
 	/* VERSIONE CON PALLINI BLU */
 	eviPT: 0x0066BF,
-	movFR: 0x00BB33,//0x008833,
+	movFR: 0x00BB33,
 	movFR_dark: 0x00FF22,
 	baseFR: 0x0066BF,
 	areaFR: 0x00FFFF,
@@ -36,18 +30,7 @@ SET.COL = {
 	pienoPTemissive: 0xFF5900,
 	dolorePT: 0x990000,
 	dolorePTemissive: 0xff00a8,
-	areaSostegno: 0xc079f2,//0xf2cd79,
-	
-	
-	/* VERSIONE CON PALLINI ROSSI */
-	/*
-	eviPT: 0xFF0000,
-	eviPTemissive: 0x000000,
-	vuotoPT: 0xFF6600,
-	vuotoPTemissive: 0x000000,
-	pienoPT: 0x991999,
-	pienoPTemissive: 0x000000,
-	*/
+	areaSostegno: 0xc079f2,
 	
 	
 	
@@ -62,11 +45,11 @@ SET.COL = {
 }
 
 SET.colsElementi = {
-	"none": 0x2566CF,
-	"legno": 0x009900,
+	"none": 0x1762ae,
+	"legno": 0x007700,
 	"fuoco":0xFF0000,
 	"fuoco_supplementare":0x990000,
-	"terra":0xFF8800,
+	"terra":0xCC6600,
 	"aria":0xFFFFFF,
 	"acqua":0x000000
 }
@@ -80,30 +63,52 @@ function cloneMAT(mat,par){
 
 // LINEE
 SET.MAT = {
-	opLine: 0.6,
+	opLine: 0.5,
+	opLineOver: 0.5,
 	opLineContr: 0.2,
 	opPoint: 1,
 	opPointContr: 0.3,
-	lineYang: new THREE.LineBasicMaterial( {
+	lineWidth: 0.002,
+	lineYang: new THREE.LineMaterial( {
+
 		color: SET.COL.base,
 		transparent: true,
-		opacity:0.6,
-		linewidth: 2
+		linewidth: 0.002,
+		dashed: false
+
 	} ),
-	lineYin: new THREE.LineDashedMaterial( {
+	lineYin: new THREE.LineMaterial( {
+
 		color: SET.COL.base,
-		scale: 10,
+		transparent: true,
+		linewidth: 0.002,
+		dashed: true,
+		defines: {
+			USE_DASH: ""
+		},
+		needsUpdate: true,
+		dashScale: 10,
 		dashSize: 1,
-		gapSize: .5,
-		transparent: true,
-		opacity:0.6,
-		linewidth: 2
+		gapSize:0.5,
+		dashSize: 1,
+		gapSize:0.5
+
 	} ),
-	lineGuide: new THREE.LineBasicMaterial( {
+	
+	lineGuide: new THREE.LineMaterial( {
+
+		color: SET.COL.guide,
+		transparent: true,
+		linewidth: 0.0015,
+		dashed: false,
+		depthFunc: 3
+
+	} ),
+	/* lineGuide: new THREE.LineBasicMaterial( {
 		color: SET.COL.guide,
 		transparent: true,
 		opacity:0.6
-	} ),
+	} ), */
 	lineFrecce: new THREE.LineBasicMaterial( {
 		color: SET.COL.baseFR,
 		transparent: true,
@@ -114,25 +119,15 @@ SET.MAT = {
 		transparent: true,
 		opacity:0.8
 	} ),
-	lineOn_: new THREE.ShaderMaterial( {
-		uniforms: {
-			dashSize: {value: 0.2},
-			gapSize: {value: 0.3},
-			dotSize: {value: 0.2},
-			opacity: {value: 1.0},
-			verso: {value: -1.0 }, // added uniform
-			time: {value: 0} // added uniform
-		}
-	} ),
-	vertexShader: 'attribute float lineDistance;varying float vLineDistance;void main() {vLineDistance = lineDistance;vec4 mvPosition = modelViewMatrix * vec4( position, 1.0 );gl_Position = projectionMatrix * mvPosition;}',
-	fragmentShader: 'uniform vec3 diffuse;uniform float opacity;uniform float time;uniform float verso; uniform float dashSize;uniform float gapSize;uniform float dotSize;varying float vLineDistance;void main() {float totalSize = dashSize + gapSize;float modulo = mod( vLineDistance + (time*verso), totalSize );float dotDistance = dashSize + (gapSize * .5) - (dotSize * .5);if ( modulo > dashSize && mod(modulo, dotDistance) > dotSize ) {discard;}gl_FragColor = vec4( diffuse, opacity );}',
 	
-	lineOn: [],
-	lineIntOn: [],
-	lineOnMAS: [],
-	lineIntOnMAS: [],
-	lineOnMASYin: [],
-	lineIntOnMASYin: [],
+	lineYangOn: [],
+	lineYinOn: [],
+	lineYangIntOn: [],
+	lineYinIntOn: [],
+	lineYangOnMAS: [],
+	lineYangIntOnMAS: [],
+	lineYinOnMAS: [],
+	lineYinIntOnMAS: [],
 	
 	// PUNTI
 	pointBase: new THREE.MeshStandardMaterial( {
@@ -246,13 +241,26 @@ SET.MAT = {
 	})
 };
 
-SET.MAT.lineYangInt = cloneMAT(SET.MAT.lineYang,{opacity:0.3});
+SET.MAT.lineYang.uniforms.opacity.value = SET.MAT.opLine;
+SET.MAT.lineYin.uniforms.opacity.value = SET.MAT.opLine;
+SET.MAT.lineGuide.uniforms.opacity.value = SET.MAT.opLine;
+
+SET.MAT.lineYangInt = cloneMAT(SET.MAT.lineYang,{color:SET.COL.selInt, depthFunc: 1});
 SET.MAT.lineYangOver = cloneMAT(SET.MAT.lineYang,{color: SET.COL.over});
 SET.MAT.lineYangIntOver = cloneMAT(SET.MAT.lineYangInt,{color: SET.COL.over});
 	
-SET.MAT.lineYinInt = cloneMAT(SET.MAT.lineYin,{opacity:0.3});
+SET.MAT.lineYinInt = cloneMAT(SET.MAT.lineYin,{color:SET.COL.selInt, depthFunc: 1});
 SET.MAT.lineYinOver = cloneMAT(SET.MAT.lineYin,{color: SET.COL.over});
 SET.MAT.lineYinIntOver = cloneMAT(SET.MAT.lineYinInt,{color: SET.COL.over});
+
+/* SET.MAT.lineYangInt.uniforms.opacity.value = 0.3;
+SET.MAT.lineYinInt.uniforms.opacity.value = 0.3; */
+
+
+SET.MAT.lineYangOver.uniforms.opacity.value = SET.MAT.opLineOver;
+SET.MAT.lineYangIntOver.uniforms.opacity.value = SET.MAT.opLineOver;
+SET.MAT.lineYinOver.uniforms.opacity.value = SET.MAT.opLineOver;
+SET.MAT.lineYinIntOver.uniforms.opacity.value = SET.MAT.opLineOver;
 
 SET._setLineMaterials = function(){
 	for(let elemento in SET.colsElementi){
@@ -273,74 +281,137 @@ SET._setLineMaterials = function(){
 		SET.MAT.pointBase.color.setHex(col3);
 		SET.MAT.lineYang.color.setHex(col4);
 		SET.MAT.lineYin.color.setHex(col4);
+		depthFunc = 3;
+		if(MODELLO.opAtt<1)depthFunc = 1;
 
-		SET.MAT.lineOn[elemento] = new THREE.ShaderMaterial( {
-			uniforms: {
-				diffuse: {value:  new THREE.Color(col)},
-				dashSize: {value: 0.2},
-				gapSize: {value: 0.3},
-				dotSize: {value: 0.2},
-				opacity: {value: 1.0},
-				verso: {value: -1.0 },
-				time: {value: 0}
-			},
-			vertexShader: SET.MAT.vertexShader,
-			fragmentShader: SET.MAT.fragmentShader,
-			transparent: true
-		});
-		SET.MAT.lineIntOn[elemento] = new THREE.ShaderMaterial( {
-			uniforms: {
-				diffuse: {value:  new THREE.Color(col)},
-				dashSize: {value: 0.2},
-				gapSize: {value: 0.3},
-				dotSize: {value: 0.2},
-				opacity: {value: 0.3},
-				verso: {value: -1.0 },
-				time: {value: 0}
-			},
-			vertexShader: SET.MAT.vertexShader,
-			fragmentShader: SET.MAT.fragmentShader,
-			transparent: true,
-			depthFunc: 1
-		});
+		SET.MAT.lineYangOn[elemento] = new THREE.LineMaterial( {
 
-		SET.MAT.lineOnMAS[elemento] = new THREE.LineBasicMaterial( {
-			color: new THREE.Color(col2),
+			color: new THREE.Color(col),
 			transparent: true,
-			opacity: 1
-		});
-		SET.MAT.lineOnMASYin[elemento] = new THREE.LineDashedMaterial( {
-			color: new THREE.Color(col2),
+			linewidth: SET.MAT.lineWidth,
+			dashed: false
+	
+		} );
+
+		SET.MAT.lineYinOn[elemento] = new THREE.LineMaterial( {
+
+			color: new THREE.Color(col),
 			transparent: true,
-			opacity: 1,
-			scale: 10,
+			linewidth: SET.MAT.lineWidth,
+			dashed: true,
+			defines: {
+				USE_DASH: ""
+			},
+			needsUpdate: true,
+			dashScale: 10,
 			dashSize: 1,
-			gapSize: .5
-		});
-		SET.MAT.lineIntOnMAS[elemento] = new THREE.LineBasicMaterial( {
-			color: new THREE.Color(col2),
+			gapSize:0.5
+	
+		} );
+		SET.MAT.lineYangIntOn[elemento] = new THREE.LineMaterial( {
+
+			color: new THREE.Color(col),
 			transparent: true,
-			opacity: 0.3
-		});
-		SET.MAT.lineIntOnMASYin[elemento] = new THREE.LineDashedMaterial( {
-			color: new THREE.Color(col2),
+			depthFunc: depthFunc,
+			linewidth: SET.MAT.lineWidth,
+			dashed: false
+	
+		} );
+		SET.MAT.lineYangIntOn[elemento].uniforms.opacity.value = 0.3;
+
+
+		SET.MAT.lineYinIntOn[elemento] = new THREE.LineMaterial( {
+
+			color: new THREE.Color(col),
 			transparent: true,
-			opacity: 0.3,
-			scale: 10,
+			depthFunc: depthFunc,
+			linewidth: SET.MAT.lineWidth,
+			dashed: true,
+			defines: {
+				USE_DASH: ""
+			},
+			needsUpdate: true,
+			dashScale: 10,
 			dashSize: 1,
-			gapSize: .5
-		});
+			gapSize:0.5
+	
+		} );
+		SET.MAT.lineYinIntOn[elemento].uniforms.opacity.value = 0.3;
+
+		
+		SET.MAT.lineYangOnMAS[elemento] = new THREE.LineMaterial( {
+
+			color: new THREE.Color(col2),
+			transparent: true,
+			linewidth: 0.002,
+			dashed: false
+	
+		} );
+		
+		SET.MAT.lineYinOnMAS[elemento] = new THREE.LineMaterial( {
+
+			color: new THREE.Color(col2),
+			transparent: true,
+			linewidth: SET.MAT.lineWidth,
+			dashed: true,
+			defines: {
+				USE_DASH: ""
+			},
+			needsUpdate: true,
+			dashScale: 10,
+			dashSize: 1,
+			gapSize:0.5
+	
+		} );
+
+		SET.MAT.lineYangIntOnMAS[elemento] = new THREE.LineMaterial( {
+
+			color: new THREE.Color(col2),
+			transparent: true,
+			linewidth: SET.MAT.lineWidth,
+			dashed: false
+	
+		} );
+		SET.MAT.lineYangIntOnMAS[elemento].uniforms.opacity.value = 0.3;
+		
+		SET.MAT.lineYinIntOnMAS[elemento] = new THREE.LineMaterial( {
+
+			color: new THREE.Color(col2),
+			transparent: true,
+			linewidth: SET.MAT.lineWidth,
+			dashed: true,
+			defines: {
+				USE_DASH: ""
+			},
+			needsUpdate: true,
+			dashScale: 10,
+			dashSize: 1,
+			gapSize:0.5
+	
+		} );
+		SET.MAT.lineYinIntOnMAS[elemento].uniforms.opacity.value = 0.3;
 	}
+	SET.MAT.lineYangInt.linewidth = SET.MAT.lineWidth;
+	SET.MAT.lineYangOver.linewidth = SET.MAT.lineWidth;
+	SET.MAT.lineYangIntOver.linewidth = SET.MAT.lineWidth;
+		
+	SET.MAT.lineYinInt.linewidth = SET.MAT.lineWidth;
+	SET.MAT.lineYinOver.linewidth = SET.MAT.lineWidth;
+	SET.MAT.lineYinIntOver.linewidth = SET.MAT.lineWidth;
 }
 	
 SET._setLineTrasp = function(depthFunc){
 	
 	for(let elemento in SET.colsElementi){
 	
-		SET.MAT.lineOn[elemento].depthFunc = depthFunc;
-		SET.MAT.lineIntOn[elemento].depthFunc = depthFunc;
-		SET.MAT.lineOnMAS[elemento].depthFunc = depthFunc;
-		SET.MAT.lineIntOnMAS[elemento].depthFunc = depthFunc;
+		SET.MAT.lineYangOn[elemento].depthFunc = depthFunc;
+		SET.MAT.lineYinOn[elemento].depthFunc = depthFunc;
+		SET.MAT.lineYangIntOn[elemento].depthFunc = depthFunc;
+		SET.MAT.lineYinIntOn[elemento].depthFunc = depthFunc;
+		SET.MAT.lineYangOnMAS[elemento].depthFunc = depthFunc;
+		SET.MAT.lineYinOnMAS[elemento].depthFunc = depthFunc;
+		SET.MAT.lineYangIntOnMAS[elemento].depthFunc = depthFunc;
+		SET.MAT.lineYinIntOnMAS[elemento].depthFunc = depthFunc;
 		
 	}
 		
@@ -356,4 +427,29 @@ SET._setLineTrasp = function(depthFunc){
 	SET.MAT.lineYinOver.depthFunc = depthFunc;
 	SET.MAT.lineYinIntOver.depthFunc = depthFunc;
 		
+}
+	
+SET._setResolution = function(){
+	let w = canvas.scrollWidth/canvas.scrollHeight;
+	for(let elemento in SET.colsElementi){
+		SET.MAT.lineYangOn[elemento].resolution.set( w,1 );
+		SET.MAT.lineYinOn[elemento].resolution.set( w,1 );
+		SET.MAT.lineYangIntOn[elemento].resolution.set( w,1 );
+		SET.MAT.lineYinIntOn[elemento].resolution.set( w,1 );
+		SET.MAT.lineYangOnMAS[elemento].resolution.set( w,1 );
+		SET.MAT.lineYinOnMAS[elemento].resolution.set( w,1 );
+		SET.MAT.lineYangIntOnMAS[elemento].resolution.set( w,1 );
+		SET.MAT.lineYinIntOnMAS[elemento].resolution.set( w,1 );
+		
+	}
+		
+	
+	SET.MAT.lineYang.resolution.set( w,1 );
+	SET.MAT.lineYangInt.resolution.set( w,1 );
+	SET.MAT.lineYangOver.resolution.set( w,1 );
+	SET.MAT.lineYangIntOver.resolution.set( w,1 );
+	SET.MAT.lineYin.resolution.set( w,1 );
+	SET.MAT.lineYinInt.resolution.set( w,1 );
+	SET.MAT.lineYinOver.resolution.set( w,1 );
+	SET.MAT.lineYinIntOver.resolution.set( w,1 );
 }

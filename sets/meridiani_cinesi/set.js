@@ -28,13 +28,12 @@ var SET = {
 	
 	// FUNZIONI
 	_init: function(){
-		
-		if(navigator.userAgent.indexOf("Macintosh")>-1 || iPhone || iPad){
-			SET.MAT.opLine = 1;
-			SET.MAT.lineYang.opacity = 1;
-			SET.MAT.lineYin.opacity = 1;
-			SET.MAT.lineSel.opacity = 1;
-		}
+
+		/* if(navigator.userAgent.indexOf("Macintosh")>-1 || iPhone || iPad){
+			SET.MAT.lineWidth = 0.003;
+		} */
+		//SET.MAT.lineWidth = 0.005;
+
 
 		SETS = new THREE.Group();
 		SETS.name = "SETS";
@@ -61,29 +60,52 @@ var SET = {
 					for(l in LNS){ // aggiungo le linee
 						let loader = new THREE.ObjectLoader(),
 							mesh =  loader.parse(JSON.parse(LZString.decompressFromBase64(LNS[l].obj))),
-							intAdd='';
+							intAdd='',
+							matLine=null,
+							vis=true;
+
+						positions = mesh.geometry.attributes.position.array,
+						mesh_name = mesh.name;
+						var geometry = new THREE.LineGeometry();
+						geometry.setPositions( positions );
+
 						if(LNS[l].interno)intAdd='Int';
 							
 						if(MERIDIANI[m].categoria != "" ){
-							mesh.visible=false;
+							vis=false;
 							let op = 1;
-							if(LNS[l].interno)op = 0.3;
-							mesh.material=cloneMAT(this.MAT.lineSel), {opacity: op};
-							if(!LNS[l].interno)mesh.material.depthFunc = 3;
-							mesh.material.opacity = op;
-							if(MERIDIANI[m].colore)mesh.material.color = new THREE.Color( SET.COL["sel"+MERIDIANI[m].colore] );
+							if(LNS[l].interno)op = 0.2;
+							matLine=cloneMAT(this.MAT.lineSel);
+							if(!LNS[l].interno)matLine.depthFunc = 3;
+							if(MERIDIANI[m].colore)matLine.color = new THREE.Color( SET.COL["sel"+MERIDIANI[m].colore] );
+							/* if(LNS[l].interno){ // attivare se si vuole gestire con il colore anziché con la trasparenza
+								op = 0.8; // con colore
+								matLine.color = new THREE.Color( SET.COL.selInt );
+								matLine.linewidth = 0.0015;
+							} */
+							matLine.uniforms.opacity.value = op;
+							
 							if(m.indexOf("_MT")>-1){
-								mesh.material.color = new THREE.Color( SET.COL.selMT );
+								matLine.color = new THREE.Color( SET.COL.selMT );
+								//matLine.linewidth = lineWidth*.75;
 							}
-							mesh.computeLineDistances();
+							matLine.linewidth = SET.MAT.lineWidth*.75;
 						}else{
 							if(!MERIDIANI[m].yin){
-								mesh.material=this.MAT["lineYang"+intAdd];
+								matLine=this.MAT["lineYang"+intAdd];
 							}else{
-								mesh.material=this.MAT["lineYin"+intAdd];
-								mesh.computeLineDistances();
+								matLine=this.MAT["lineYin"+intAdd];
 							}
+							matLine.linewidth = SET.MAT.lineWidth;
 						}
+						
+						if(m.indexOf("_MT")>-1)matLine.linewidth = SET.MAT.lineWidth*.75;
+
+						mesh = new THREE.Line2( geometry, matLine );
+						mesh.computeLineDistances();
+						mesh.name = mesh_name;
+						mesh.visible = vis;
+						mesh.scale.set( 1, 1, 1 );
 						mesh.userData.interno=LNS[l].interno;
 						this.LN[m].add( mesh );
 					}
@@ -100,7 +122,19 @@ var SET = {
 							
 							let loader = new THREE.ObjectLoader(),
 								mesh =  loader.parse(JSON.parse(LZString.decompressFromBase64(GDS[l].obj)));
-							mesh.material = this.MAT.lineGuide;
+								
+
+							positions = mesh.geometry.attributes.position.array,
+							mesh_name = mesh.name;
+							var geometry = new THREE.LineGeometry();
+							geometry.setPositions( positions );
+							
+							matLine = this.MAT.lineGuide;
+							
+							mesh = new THREE.Line2( geometry, matLine );
+							mesh.computeLineDistances();
+							mesh.name = mesh_name;
+							mesh.scale.set( 1, 1, 1 );
 							this.GD[m].add( mesh );
 							
 						}
@@ -155,7 +189,7 @@ var SET = {
 				if(ptAdd)SETS.add( this.PT[m] );
 			}
 		}
-		
+
 		if(!localStorage.sistemaSigleMeridiani)localStorage.sistemaSigleMeridiani="INT";
 		let contPulsanti = 	'<span class="menuElenchi" onclick="MENU.visMM(\'btnCarMapMenu\');"></span>' +
 							'<span id="btnCarMapMenu" class="btn_meridiani_cinesi titolo_set">' +
@@ -346,6 +380,10 @@ var SET = {
 	
 	// RENDER SET
 	_render: function(){
+
+		SET._setResolution();
+
+
 		let make = true;
 	 	if(manichinoCaricato && !raycastDisable && !controlsM._ZPR && !controlsM._premuto){ // roll-over sui punti
 			
@@ -466,22 +504,7 @@ var SET = {
 	},
 	// ANIMATE SET
 	_animate: function(){
-		if(typeof(MERIDIANI)!='undefined'){
-			for(let m in MERIDIANI){
-				if(MERIDIANI[m].meridianoAcceso){
-					let els = this.LN[m].children;
-					for(v in els){
-						line=this.LN[m].children[v];
-						if(line.material.uniforms){
-							this.time += clock.getDelta();
-							line.material.uniforms.time.value = this.time; // using of the time uniform
-							line.computeLineDistances();
-							line.lineDistancesNeedUpdate = true;
-						}
-					}
-				}
-			}
-		}
+		
 	},
 	
 	// CLICK sul punto
@@ -701,7 +724,7 @@ var SET = {
 		if(nascosta)SCHEDA.nascondiScheda();
 	},
 	coloraMeridiano: function( siglaMeridiano, matLine, matPoint, forza=false ){
-		let pass = !touchable ? __(SET.ptSel) : __(SET.ptSel.name);
+		let pass = !touchable ? __(SET.ptSel) : __(SET.ptSel?.name);
 		if(siglaMeridiano=='EX' && !matLine && matPoint=='Base' && pass)return;
 		if(matPoint=='Base' && SET.ptSel && MERIDIANI[siglaMeridiano].meridianoAcceso && !forza)return;
 		if(SET.meridianiSecondariAccesi.length && matLine.indexOf("On")==-1)return;
@@ -722,7 +745,7 @@ var SET = {
 		}
 		els = this.LN[siglaMeridiano].children;
 		let Y = MERIDIANI[siglaMeridiano].yin ? 'Yin' : 'Yang';
-		if(matPoint=='On')Y='';
+		//if(matPoint=='On')Y='';
 		for(v in els){
 			let int='';
 			if(els[v].userData.interno)int='Int';
@@ -827,8 +850,8 @@ var SET = {
 	swContrastMethod: function(n=SET.COL.contrastMethod){
 		SET.COL.contrastMethod=n ? false : true;
 		if(SET.COL.contrastMethod){
-			SET.MAT.lineYang.opacity = SET.MAT.opLineContr;
-			SET.MAT.lineYin.opacity = SET.MAT.opLineContr;
+			/* SET.MAT.lineYang.uniforms.opacity.value = SET.MAT.opLineContr;
+			SET.MAT.lineYin.uniforms.opacity.value = SET.MAT.opLineContr; */
 			SET.MAT.pointBase.opacity = SET.MAT.opPointContr;
 			let muscolare = false;
 			if(SET.meridianiSecondariAccesi.length){
@@ -843,35 +866,35 @@ var SET = {
 				MODELLO.op("Pelle",0.60)  ;  
 				MODELLO.op("Visceri",0);
 				MODELLO.op("Ossa",1);
-				SET.MAT.lineYang.opacity = 0;
-				SET.MAT.lineYin.opacity = 0;
-				SET.MAT.lineGuide.opacity = 0;
+				SET.MAT.lineYang.uniforms.opacity.value = 0;
+				SET.MAT.lineYin.uniforms.opacity.value = 0;
+				SET.MAT.lineGuide.uniforms.opacity.value = 0;
 				SET.MAT.pointBase.opacity = 0.4;
 			}else{
 				if(areasView)MODELLO.swArea();
 				MODELLO.op("Pelle",0.40)  ;  
 				MODELLO.op("Visceri",0.12);
 				MODELLO.op("Ossa",0.23);
-				SET.MAT.lineYang.opacity = 0.15;
-				SET.MAT.lineYin.opacity = 0.15;
-				SET.MAT.lineGuide.opacity = 0.15;
+				SET.MAT.lineYang.uniforms.opacity.value = 0.15;
+				SET.MAT.lineYin.uniforms.opacity.value = 0.15;
+				SET.MAT.lineGuide.uniforms.opacity.value = 0.15;
 				SET.MAT.pointBase.opacity = 0.15;
 			}
 		}else{
 			if(!SET.meridianiSecondariAccesi.length || (this.ptSel && this.ptSel.userData.evidenziati)){
 				if(areasView)MODELLO.swArea();
-				SET.MAT.lineYang.opacity = SET.MAT.opLine;
-				SET.MAT.lineYin.opacity = SET.MAT.opLine;
+				SET.MAT.lineYang.uniforms.opacity.value = SET.MAT.opLine;
+				SET.MAT.lineYin.uniforms.opacity.value = SET.MAT.opLine;
 				SET.MAT.pointBase.opacity = SET.MAT.opPoint;
 				
 				if(MODELLO.orOp>-1)MODELLO.op("Pelle",MODELLO.orOp);  
 				MODELLO.op("Visceri",1);
 				MODELLO.op("Ossa",0.6);
 				MODELLO.orOp = -1;
-				SET.MAT.lineYang.opacity = SET.MAT.opLine;
-				SET.MAT.lineYin.opacity = SET.MAT.opLine;
+				SET.MAT.lineYang.uniforms.opacity.value = SET.MAT.opLine;
+				SET.MAT.lineYin.uniforms.opacity.value = SET.MAT.opLine;
+				SET.MAT.lineGuide.uniforms.opacity.value = 0.6;
 				SET.MAT.pointBase.opacity = 1;
-				SET.MAT.lineGuide.opacity = 0.6;
 			}
 		}
 		SET._setLineMaterials();

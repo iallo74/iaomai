@@ -30,12 +30,11 @@ var SET = {
 	
 	// FUNZIONI
 	_init: function(){
-		
-		if(navigator.userAgent.indexOf("Macintosh")>-1 || iPhone || iPad){
-			SET.MAT.opLine = 1;
-			SET.MAT.lineYang.opacity = 1;
-			SET.MAT.lineYin.opacity = 1;
-		}
+
+		/* if(navigator.userAgent.indexOf("Macintosh")>-1 || iPhone || iPad){
+			SET.MAT.lineWidth = 0.003;
+		} */
+		//SET.MAT.lineWidth = 0.005;
 
 		if(!localStorage.sistemaMeridiani){
 			localStorage.sistemaMeridiani = "";
@@ -72,14 +71,29 @@ var SET = {
 					for(l in LNS){ // aggiungo le linee
 						let loader = new THREE.ObjectLoader(),
 							mesh =  loader.parse(JSON.parse(LZString.decompressFromBase64(LNS[l].obj))),
-							intAdd='';
+							intAdd='',
+							matLine=null;
+						
+						positions = mesh.geometry.attributes.position.array,
+						mesh_name = mesh.name;
+						var geometry = new THREE.LineGeometry();
+						geometry.setPositions( positions );
+
 						if(LNS[l].interno)intAdd='Int';
 						if(!MERIDIANI[m].yin){
-							mesh.material=this.MAT["lineYang"+intAdd];
+							matLine=this.MAT["lineYang"+intAdd];
 						}else{
-							mesh.material=this.MAT["lineYin"+intAdd];
-							mesh.computeLineDistances();
+							matLine=this.MAT["lineYin"+intAdd];
 						}
+						
+						matLine.linewidth = SET.MAT.lineWidth;
+						if(m.indexOf("_MT")>-1)matLine.linewidth = SET.MAT.lineWidth*.75;
+
+						mesh = new THREE.Line2( geometry, matLine );
+						mesh.computeLineDistances();
+						mesh.name = mesh_name;
+						mesh.scale.set( 1, 1, 1 );
+
 						mesh.userData.interno=LNS[l].interno;
 						this.LN[m].add( mesh );
 					}
@@ -445,6 +459,10 @@ var SET = {
 	
 	// RENDER SET
 	_render: function(){
+
+		SET._setResolution();
+
+
 		let make = true;
 		if(manichinoCaricato && !raycastDisable && !controlsM._ZPR && !controlsM._premuto){// roll-over sui punti
 			SET.meridianiOn = true;
@@ -506,7 +524,7 @@ var SET = {
 			if(objOver){
 				
 				this.INTERSECTED = objOver;
-				if(this.INTERSECTED.name.substr(0,1)=='_'/*  && objOver.name.substr(1,2)!='NK' */){
+				if(this.INTERSECTED.name.substr(0,1)=='_'){
 					let n1=objOver.name.substr(1,2), // meridiano intersecato
 						pt=this.INTERSECTED.name.substr(4,2),
 						pN = this.INTERSECTED.name.split("."),
@@ -576,22 +594,7 @@ var SET = {
 	},
 	// ANIMATE SET
 	_animate: function(){
-		if(typeof(MERIDIANI)!='undefined'){
-			for(let m in MERIDIANI){
-				if(MERIDIANI[m].meridianoAcceso){
-					let els = this.LN[m].children;
-					for(v in els){
-						line=this.LN[m].children[v];
-						if(line.material.uniforms){
-							this.time += clock.getDelta();
-							line.material.uniforms.time.value = this.time; // using of the time uniform
-							line.computeLineDistances();
-							line.lineDistancesNeedUpdate = true;
-						}
-					}
-				}
-			}
-		}
+		
 	},
 	
 	// CLICK sul punto
@@ -996,10 +999,6 @@ var SET = {
 		if(nascosta)SCHEDA.nascondiScheda();
 	},
 	coloraMeridiano: function( cod, matLine, matPoint, forza=false ){
-		/* if(touchable){
-			if(matLine=='Over')matLine='Base';
-			if(matPoint=='Over')matPoint='Base';
-		} */
 		let pp = SET.splitPoint(cod);
 		if(matPoint=='Base' && SET.ptSel && MERIDIANI[pp.siglaMeridiano].meridianoAcceso && !forza)return;
 		if(controlsM._premuto && !forza)return;
@@ -1049,7 +1048,6 @@ var SET = {
 		let els = this.LN[SM].children,
 			Y='Yang';
 		if(MERIDIANI[SM].yin)Y='Yin';
-		if(matPoint=='On')Y='';
 		for(v in els){
 			let int='';
 			if(els[v].userData.interno)int='Int';
@@ -1103,9 +1101,7 @@ var SET = {
 			document.getElementById("p"+siglaMeridiano).classList.add("elencoSel");
 			document.getElementById("sm"+siglaMeridiano).classList.add("elencoSel");
 			MERIDIANI[SM].meridianoAcceso=true;
-			let yinAdd = '';
-			if(localStorage.sistemaMeridiani && MERIDIANI[SM].yin)yinAdd = 'Yin';
-			this.coloraMeridiano(siglaMeridiano,'On'+localStorage.sistemaMeridiani+yinAdd+'["'+MERIDIANI[SM].elemento+'"]','On');
+			this.coloraMeridiano(siglaMeridiano,'On'+localStorage.sistemaMeridiani+'["'+MERIDIANI[SM].elemento+'"]','On');
 			if(document.getElementById("tr_p"+siglaMeridiano)){
 				document.getElementById("tr_p"+siglaMeridiano).classList.add("p_"+MERIDIANI[SM].elemento);
 			}
@@ -1159,22 +1155,20 @@ var SET = {
 	},
 	_applyLineMethod: function(){
 		for(let m in MERIDIANI){
-			if(MERIDIANI[m].meridianoAcceso && MERIDIANI[m].categoria == localStorage.sistemaMeridiani){
-				let yinAdd = '';
-				if(localStorage.sistemaMeridiani && MERIDIANI[m].yin)yinAdd = 'Yin';
-				this.coloraMeridiano(m,'On'+localStorage.sistemaMeridiani+yinAdd+'["'+MERIDIANI[m].elemento+'"]','On');
+			if(MERIDIANI[m].meridianoAcceso && __(MERIDIANI[m].categoria) == localStorage.sistemaMeridiani){
+				this.coloraMeridiano(m,'On'+'["'+MERIDIANI[m].elemento+'"]','On');
 			}
 		}
 	},
 	swContrastMethod: function(n=SET.COL.contrastMethod){
 		SET.COL.contrastMethod=n ? false : true;
 		if(SET.COL.contrastMethod){
-			SET.MAT.lineYang.opacity = SET.MAT.opLineContr;
-			SET.MAT.lineYin.opacity = SET.MAT.opLineContr;
+			SET.MAT.lineYang.uniforms.opacity.value = SET.MAT.opLineContr;
+			SET.MAT.lineYin.uniforms.opacity.value = SET.MAT.opLineContr;
 			SET.MAT.pointBase.opacity = SET.MAT.opPointContr;
 		}else{
-			SET.MAT.lineYang.opacity = SET.MAT.opLine;
-			SET.MAT.lineYin.opacity = SET.MAT.opLine;
+			SET.MAT.lineYang.uniforms.opacity.value = SET.MAT.opLine;
+			SET.MAT.lineYin.uniforms.opacity.value = SET.MAT.opLine;
 			SET.MAT.pointBase.opacity = SET.MAT.opPoint;
 		}
 		SET._setLineMaterials();

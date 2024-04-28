@@ -166,8 +166,6 @@ var MODULO_MERIDIANI = { // extend SET
 		
 
 		document.getElementById("meridianiSmart_cont").innerHTML = contSmart;
-		//document.getElementById("meridianiSmart_cont").innerHTML = '<select class="sceltaMeridianiElenco" id="sceltaMeridianiElenco_smart" onMouseOver="overInterfaccia=true;" onMouseOut="overInterfaccia=false;this.blur();" onchange="SET.cambiaSistema(this.value,true,true);"><option value="">Meridiani cinesi</option><option value="MAS">Estensioni Masunaga</option><option value="NMK">Sistema Namikoshi</option></select>'+contSmart;
-		//document.getElementById("sceltaMeridianiElenco_smart").value = localStorage.sistemaMeridiani;
 		SET.filtraMeridiani();
 	},
 	eviMeridiano: function( m, b ){
