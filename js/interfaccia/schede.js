@@ -222,7 +222,12 @@ var SCHEDA = {
 		}
 		if(smartMenu){
 			SCHEDA.chiudiElenco();
-			try{SET.swMeridianiSmart(false);}catch(err){};
+			try{
+				//SET.swMeridianiSmart(false);
+				document.getElementById("meridianiSmart_ico").classList.add("nas");
+				document.getElementById("meridianiSmart_cont").classList.add("nas");
+			
+			}catch(err){};
 		}
 	},
 	verificaSchedaRet: function(){
@@ -272,6 +277,10 @@ var SCHEDA = {
 			livello = 3;
 			SCHEDA.setMenuDim();
 			overInterfaccia=false;
+			try{
+				document.getElementById("meridianiSmart_ico").classList.remove("nas");
+				document.getElementById("meridianiSmart_cont").classList.remove("nas");
+			}catch(err){};
 		}});
 	},
 	nasScheda: function(){

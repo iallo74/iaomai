@@ -798,6 +798,10 @@ body.smart.touch .textMeridianoTratt{
 #meridianiSmart_ico.nas{
 	display:none !important;
 }
+#meridianiSmart_ico.nas,
+#meridianiSmart_cont.nas{
+	display:none !important;
+}
 /*body.bodyStyled2:not(.smart) #meridianiSmart_ico{
 	background-image:url(../../img/ico_meridiani.png);
 }*/

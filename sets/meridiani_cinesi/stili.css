@@ -646,6 +646,10 @@ body:not(.smart) .listaMeridiani .p_aria:not(.elencoSel) span:hover{
 	margin-bottom:0px !important;
 }
 
+#meridianiSmart_ico.nas,
+#meridianiSmart_cont.nas{
+	display:none !important;
+}
 #meridianiSmart_ico{
 	position: fixed;
     top: 5px;
