@@ -188,11 +188,11 @@ var SCHEDA = {
 		}
 		
 		// imposto l'altezza della scheda
-		if(smartMenu){
+		/* if(smartMenu){
 			SCHEDA.hOpened = window.innerHeight - 45;
 			document.getElementById("scheda_testo").style.height = SCHEDA.hOpened+"px";
 			document.getElementById("scheda_testo2").style.height = SCHEDA.hOpened+"px";
-		}else if(espansa){
+		}else  */if(espansa){
 			if(SCHEDA.aggancio.tipo == 'sotto'){
 				if(!SCHEDA.hOpened)SCHEDA.hOpened = 200;
 				document.getElementById("scheda_testo").scrollTop = '0px';
@@ -220,6 +220,10 @@ var SCHEDA = {
 			LINGUE.addAiMsg();
 			eval(SCHEDA.addFunct);
 			SCHEDA.finalFunct = null;
+		}
+		if(smartMenu){
+			SCHEDA.chiudiElenco();
+			try{SET.swMeridianiSmart(false);}catch(err){};
 		}
 	},
 	verificaSchedaRet: function(){
@@ -330,7 +334,7 @@ var SCHEDA = {
 			document.getElementById("scheda").style.top = "";
 			document.getElementById("scheda").style.width = "";
 			
-			let mm = smartMenu ? 1 : 20,
+			let mm = 20,//smartMenu ? 1 : 20,
 				h =(HF()-(SCHEDA.aggancio.sotto.y-SCHEDA.gapScheda)-SCHEDA.getMM()+mm);
 			
 			document.getElementById("scheda_testo").style.height = h + 'px';
@@ -359,7 +363,7 @@ var SCHEDA = {
 		SCHEDA.verPosScheda();
 		SCHEDA.swMenuScheda('chiudi');
 	},
-	nascondiScheda: function(){
+	/* nascondiScheda: function(){
 		document.getElementById("riapriTit").innerHTML = document.getElementById("scheda_titolo").innerHTML;
 		document.body.classList.add("nasSch");
 		onWindowResize();
@@ -375,12 +379,20 @@ var SCHEDA = {
 			onWindowResize();
 			stopAnimate();
 		}
+	}, */
+	riapriMenu: function(){
+		SCHEDA.scaricaScheda();
+		if(	document.getElementById("scheda").classList.contains("tab_punti") || 
+			document.getElementById("scheda").classList.contains("scheda_patologia") || 
+			document.getElementById("scheda").classList.contains("scheda_procedura") || 
+			document.getElementById("scheda").classList.contains("scheda_procedura") ||
+			document.getElementById("scheda").classList.contains("scheda_video") )SCHEDA.apriElenco('set',true);
+		else SCHEDA.apriElenco('base',true);
 	},
-	
 	
 	iniziaMoveScheda: function( event, onTitle=false ){ // sposta la scheda libera o ridimansina quella sotto
 		if(SCHEDA.aggancio.tipo == 'lato' && !onTitle)SCHEDA.iniziaRedimScheda( event, 'r', true )
-		if(SCHEDA.aggancio.tipo == 'lato' || (SCHEDA.aggancio.tipo == 'sotto' && onTitle) || smartMenu)return;
+		if(SCHEDA.aggancio.tipo == 'lato' || (SCHEDA.aggancio.tipo == 'sotto' && onTitle)/*  || smartMenu */)return;
 		event.preventDefault();
 		noAnimate = true;
 		if(!touchable){
@@ -434,6 +446,8 @@ var SCHEDA = {
 				document.getElementById("scheda").classList.remove("h150");
 			}
 			
+			if(smartMenu && h<70 && document.querySelector(".formBtn"))h=70;
+			if(smartMenu && h<40)h=40;
 			if(h>5)SCHEDA.hOpened = h;
 			else SCHEDA.hOpened = 200;
 			document.getElementById("scheda_testo").style.height = h +'px';
@@ -443,7 +457,6 @@ var SCHEDA = {
 		if(SCHEDA.aggancio.tipo == 'lato'){
 			// non esiste
 		}
-		
 		SCHEDA.verRedim();
 	},
 	arrestaMoveScheda: function( event ){
@@ -461,8 +474,10 @@ var SCHEDA = {
 		if(SCHEDA.aggancio.tipo == 'sotto'){
 			if(SCHEDA.yMouseIni == y){
 				h = "0"+document.getElementById("scheda_testo").style.height.replace("px","")+"";
-				if(h==0)h=SCHEDA.hOpened;
-				else h=0;
+				if(!smartMenu){
+					if(h==0)h=SCHEDA.hOpened;
+					else h=0;
+				}
 				document.getElementById("scheda_testo").style.height = h+'px';
 				document.getElementById("scheda_testo2").style.height = h+'px';
 				document.getElementById("scheda").classList.toggle("h150", (document.getElementById("scheda").scrollHeight<=275));
@@ -571,7 +586,6 @@ var SCHEDA = {
 				document.getElementById("scheda").style.top = ((SCHEDA.yIni + SCHEDA.hIni) - 179) + 'px';
 			}
 		}
-		
 		SCHEDA.verPosScheda();
 		SCHEDA.verRedim();
 	},
@@ -754,8 +768,8 @@ var SCHEDA = {
 	
 	initElenco: function(){
 		document.getElementById("elenchi_pulsanti").classList.add("visSch");
-		if(!smartMenu)SCHEDA.chiudiElenco();
-		else onWindowResize();
+		/* if(!smartMenu) */SCHEDA.chiudiElenco();
+		/* else onWindowResize(); */
 	},
 	caricaElenco: function( titolo, html ){
 		document.getElementById("scheda").classList.add("visSch_1");
@@ -811,7 +825,7 @@ var SCHEDA = {
 		document.getElementById("elenchi").classList.add("visSch");
 		document.getElementById("elenchi_cont").classList.add("visSch");
 		document.getElementById("scheda").classList.add("schOp");
-		if(smartMenu)SCHEDA.verPosScheda();
+		/* if(smartMenu)SCHEDA.verPosScheda(); */
 		if(visGuida){
 			if(document.getElementById("elenchi").classList.contains("vis_base")){
 				if(!SCHEDA.elencoSel)GUIDA.visFumetto("guida_archivi",false,true);
@@ -909,13 +923,13 @@ var SCHEDA = {
 		}
 	},
 	individuaElemento: function( id, lista ){
-		if(!smartMenu){
+		//if(!smartMenu){
 			let y = tCoord(document.getElementById(id),'y')-tCoord(document.querySelector('.'+lista),'y');
 			document.querySelector('.'+lista).scroll(0,y-50);
-		}else{
+		/* }else{
 			let x = tCoord(document.getElementById(id))-tCoord(document.querySelector('.'+lista));
 			document.querySelector('.'+lista).scroll(x-50,0);
-		}
+		} */
 	},
 	swPulsanti: function(forza){
 		if(	SCHEDA.elencoSelBase=='pazienti' && 
@@ -1000,14 +1014,19 @@ var SCHEDA = {
 	getMM: function(){
 		let addForm = 0,
 			mm = 90 + addForm;
-		if(smartMenu)mm += 5 + document.getElementById("elenchi").scrollHeight + document.getElementById("icone").scrollHeight;
-		else if(SCHEDA.aggancio.tipo == 'sotto')mm+=20;
+		/* if(smartMenu)mm += 5 + document.getElementById("elenchi").scrollHeight + document.getElementById("icone").scrollHeight;
+		else  */if(SCHEDA.aggancio.tipo == 'sotto')mm+=20;
 		else if(SCHEDA.aggancio.tipo == 'lato')mm-=41;
 		return mm;
 	},
 	verPosScheda: function(){
 		// effettua i controlli quando si ridimensiona la scheda
-		if(document.getElementById("scheda").classList.contains("visSch") && !smartMenu){
+		if(smartMenu){
+			if(smartMenu && SCHEDA.hOpened<70 && document.querySelector(".formBtn"))SCHEDA.hOpened=70;
+			if(smartMenu && SCHEDA.hOpened<40)SCHEDA.hOpened=40;
+			document.getElementById("scheda_testo").style.height = SCHEDA.hOpened + "px";
+		}
+		if(document.getElementById("scheda").classList.contains("visSch")  && !smartMenu ){
 			if(SCHEDA.aggancio.tipo == 'libera'){
 				let limiteW = WF(),
 					limiteH = HF()-SCHEDA.gapScheda,
@@ -1050,7 +1069,7 @@ var SCHEDA = {
 			if(SCHEDA.aggancio.tipo == 'sotto'){
 				let h = 0,
 					mm = 20;
-				if(smartMenu)mm = 1;
+				//if(smartMenu)mm = 1;
 				if(tCoord(document.getElementById("scheda"),'y') < mm){
 					h = (HF()-SCHEDA.getMM()+SCHEDA.gapScheda);
 				}else{

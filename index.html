@@ -200,7 +200,7 @@
                     	 onMouseDown="SCHEDA.iniziaRedimScheda(event, 'b');"></div>
                     
                     <div id="scheda_intestazione">
-                    	<div id="scheda_back" onClick="SCHEDA.scaricaScheda();"></div>
+                    	<div id="scheda_back" onClick="SCHEDA.riapriMenu();"></div>
                     	<div id="scheda_ritorno" onDblClick="SCHEDA.minimizzaScheda();" onMouseDown="SCHEDA.iniziaMoveScheda(event,true);" onTouchStart="SCHEDA.iniziaMoveScheda(event,true);">
 						<svg viewBox="0 0 32 32">
 							<line x1="19" x2="13" y1="10" y2="16"></line>
@@ -221,7 +221,7 @@
                              onMouseDown="SCHEDA.iniziaMoveScheda(event,true);"
                              onTouchStart="SCHEDA.iniziaMoveScheda(event,true);"></div>
                         
-                    	<div id="scheda_modello" onClick="SCHEDA.nascondiScheda();"></div>
+                    	<!-- <div id="scheda_modello" onClick="SCHEDA.nascondiScheda();"></div> -->
                     </div>
                     <div id="menuScheda">
                     	<div id="addBtnMenu"></div>
@@ -255,10 +255,10 @@
                 </div>
             </div>
             
-            <div id="riapriSch" onClick="SCHEDA.riapriScheda();"> <!-- PULSANTE (solo smart) PER RIAPRIRE SCHEDA -->
-            	<div id="riapriTit"></div>
+            <!-- <div id="riapriSch" onClick="SCHEDA.riapriScheda();"> --> <!-- PULSANTE (solo smart) PER RIAPRIRE SCHEDA -->
+            	<!-- <div id="riapriTit"></div>
                 <div id="riapriBtn">{{TXT_RiapriScheda}}</div>
-            </div>
+            </div> -->
             
 			<div id="elenchi"> <!-- MENU CONTENUTI -->
 				<div id="elenchi_cont">

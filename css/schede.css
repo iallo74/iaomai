@@ -419,8 +419,8 @@ body:not(.smart) #scheda.schForm:not(.schedaRitorno):not(.minimized):not(.tab_pu
 	width: calc(100% - 186px) !important;
 }
 .smart #scheda_titolo{
-	/* width: calc(100% - 75px); */
-	width: calc(100% - 120px) !important;
+	width: calc(100% - 75px);
+	/* width: calc(100% - 120px) !important; */
     cursor: default !important;
     text-align: center !important;
 	padding-left: 44px !important;
@@ -445,12 +445,12 @@ body:not(.smart) #scheda.schForm:not(.schedaRitorno):not(.minimized):not(.tab_pu
 	padding-left:13px !important;
 	padding-right:13px !important;
 }
-#scheda_modello,
+/* #scheda_modello, */
 #scheda_back{
 	display:none;
 	margin-top: 3px;
 }
-.smart #scheda_modello,
+/* .smart #scheda_modello, */
 .smart #scheda:not(.schedaRitorno) #scheda_back{
 	vertical-align:top;
 	width:36px;
@@ -459,42 +459,43 @@ body:not(.smart) #scheda.schForm:not(.schedaRitorno):not(.minimized):not(.tab_pu
 	background-position:center center;
 }
 
-.smart #scheda.visSch #scheda_modello,
+/* .smart #scheda.visSch #scheda_modello, */
 .smart #scheda.visSch:not(.schedaRitorno) #scheda_back{
 	display:inline-block !important;
 }
 .smart #scheda_back{
-    background-image:url(../img/frSx.png);
-	background-size:auto 60px;
+    background-image:url(../img/ico_menu.png);
+	/* background-size:auto 60px; */
 	margin-right: 4px !important;
+	opacity:0.7;
 }
-.smart #scheda_modello{
+/* .smart #scheda_modello{
     background-image: url(../img/ico_occhio.png);
 	background-size:auto 30px;
 	margin-left: 7px;
-}
+} */
 /* .smart.bodyModello #scheda_modello{
     background-image: url(../img/ico_occhio.png);
 	background-size:auto 30px;
 	margin-left: 7px;
 } */
-.smart .visSch #scheda_cont{
+/* .smart .visSch #scheda_cont{
 	padding-top: 46px;
-}
+} */
 #scheda_intestazione.visSch{
 	height:43px;
 }
 .smart #scheda_intestazione{
 	text-align: left;
-    box-shadow: 0px 0px 5px rgba(0,0,0,0.4);
+    /* box-shadow: 0px 0px 5px rgba(0,0,0,0.4);
     position: absolute;
     width: 100%;
     height: 46px !important;
     z-index: 100;
-    top: 0px;
+    top: 0px; */
 	background-color:var(--colore-grigio-scuro);
 }
-
+ 
 /* i pulsanti a destra dell'intestazione */
 #frSch{
     width: 70px;
@@ -507,7 +508,7 @@ body:not(.smart) #scheda.schForm:not(.schedaRitorno):not(.minimized):not(.tab_pu
 }
 .smart #frSch {
     margin-top: -38px !important;
-    margin-right: 55px !important;
+    margin-right: 10px !important;
 }
 /* .smart:not(.bodyModello) #frSch {
     margin-right: 12px !important;
@@ -841,9 +842,9 @@ body:not(.bodyStyled2) #scheda_testo2{
 .smart #menuScheda{
     right: 0px !important;
 }
-.smart #menuScheda{
+/* .smart #menuScheda{
 	top: 47px !important;
-}
+} */
 #scheda:not(.schLato) #menuScheda{
 	top: 71px;
 }

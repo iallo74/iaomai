@@ -177,10 +177,10 @@ var MODULO_MERIDIANI = { // extend SET
 			else SET.coloraMeridiano(m,'','Base');
 		}
 	},
-	swMeridianiSmart: function(){
+	swMeridianiSmart: function(forza){
 		// visualizza/nasconde il menu rapido dei meridiani (in alto a SX)
-		document.getElementById("meridianiSmart_cont").classList.toggle("visSch");
-		document.getElementById("meridianiSmart_ico").classList.toggle("visSch");
+		document.getElementById("meridianiSmart_cont").classList.toggle("visSch",forza);
+		document.getElementById("meridianiSmart_ico").classList.toggle("visSch",forza);
 	},
 	swElencoPt: function( el, m ){
 		// mostra/nasconde l'elenco dei punti di un meridiano

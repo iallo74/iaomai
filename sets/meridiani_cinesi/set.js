@@ -726,7 +726,7 @@ var SET = {
 		SET.swElencoPt(document.getElementById("p"+siglaMeridiano),siglaMeridiano);
 		let nascosta = document.body.classList.contains("nasSch");
 		SET.apriPunto(pt,'','','');
-		if(nascosta)SCHEDA.nascondiScheda();
+		//if(nascosta)SCHEDA.nascondiScheda();
 	},
 	coloraMeridiano: function( siglaMeridiano, matLine, matPoint, forza=false ){
 		let pass = !touchable ? __(SET.ptSel) : __(SET.ptSel?.name);

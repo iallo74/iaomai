@@ -1013,7 +1013,7 @@ var SET = {
 				SET.apriPunto(pt,'','',SET.grSel,SET.btnSel);
 				break;
 		}
-		if(nascosta)SCHEDA.nascondiScheda();
+		//if(nascosta)SCHEDA.nascondiScheda();
 	},
 	coloraMeridiano: function( cod, matLine, matPoint, forza=false ){
 		let pp = SET.splitPoint(cod);

@@ -337,7 +337,7 @@ var MODULO_PUNTO = { // extend SET
 			SWIPE.init(	'scheda_testo',
 						swFnGiu,
 						swFnSu,
-						'document.getElementById(\'scheda_back\').click();',
+						'',//'document.getElementById(\'scheda_back\').click();',
 						'document.getElementsByClassName("scheda_stampa")[0].getBoundingClientRect().y==document.getElementById("scheda_testo").getBoundingClientRect().y');
 		}
 		document.getElementById("frSch").className = classFr;

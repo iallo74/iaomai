@@ -959,7 +959,7 @@ var SET = {
 				SET.swElencoPt(document.getElementById("p_punti"),'punti',true);
 				let nascosta = document.body.classList.contains("nasSch");
 				SET.apriPunto(exPt.name,'');
-				if(nascosta)SCHEDA.nascondiScheda();
+				//if(nascosta)SCHEDA.nascondiScheda();
 				if(smartMenu)SCHEDA.apriElenco('set',true);
 			},500);
 		}
