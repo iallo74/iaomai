@@ -49,7 +49,7 @@ var SCHEDA = {
 	ultimaCartella: '', // l'id della sottocartella aperta quando si clicca su una scheda (per smartMenu)
 	finalFunct: null,
 	initScheda: function(){
-		if(!localStorage.schedaAggancio && !isTablet){
+		if(!localStorage.schedaAggancio && !isTablet && !smartphone){
 			SCHEDA.aggancio.tipo = 'lato';
 			SCHEDA.aggancia(SCHEDA.aggancio.tipo);
 		}
