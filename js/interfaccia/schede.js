@@ -106,7 +106,6 @@ var SCHEDA = {
 		
 		let nScheda='';
 		if(ritorno){ // se è una scheda derivata
-			
 			if(SCHEDA.scheda2Aperta)SCHEDA.torna( true ); // se la scheda 2 è già aperta, prima eseguo il ritorno
 			
 			SCHEDA.functRitorno = ritorno;
@@ -390,9 +389,9 @@ var SCHEDA = {
 		else SCHEDA.apriElenco('base',true);
 	},
 	
-	iniziaMoveScheda: function( event, onTitle=false ){ // sposta la scheda libera o ridimansina quella sotto
+	iniziaMoveScheda: function( event, onTitle=false, onRet=false ){ // sposta la scheda libera o ridimansina quella sotto
 		if(SCHEDA.aggancio.tipo == 'lato' && !onTitle)SCHEDA.iniziaRedimScheda( event, 'r', true )
-		if(SCHEDA.aggancio.tipo == 'lato' || (SCHEDA.aggancio.tipo == 'sotto' && onTitle)/*  || smartMenu */)return;
+		if(SCHEDA.aggancio.tipo == 'lato' || (SCHEDA.aggancio.tipo == 'sotto' && onTitle && !smartMenu) || onRet/*  || smartMenu */)return;
 		event.preventDefault();
 		noAnimate = true;
 		if(!touchable){

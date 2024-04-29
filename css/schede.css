@@ -609,7 +609,7 @@ body:not(.smart) .schedaRitorno #scheda_titolo{
 	margin-right:26px;
 }
 .smart #scheda.schedaRitorno #scheda_titolo{
-	width: calc(100% - 217px) !important;
+	width: calc(100% - 159px) !important;
 }
 /* .smart.bodyModello #scheda.schedaRitorno #scheda_titolo{
 	width: calc(100% - 210px) !important;
