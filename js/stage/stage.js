@@ -708,10 +708,10 @@ function swAnimate(){
 	}
 }
 function verAnimate(){
-	/* if(smartMenu){
+	if(smartMenu){
 		if(	(
-				(	document.getElementById("elenchi").classList.contains("visSch") ||
-					document.getElementById("scheda").classList.contains("visSch")
+				(	document.getElementById("elenchi").classList.contains("visSch")/*  ||
+					document.getElementById("scheda").classList.contains("visSch") */
 				) && !document.body.classList.contains("nasSch")
 			) || 
 			document.getElementById("sets").classList.contains("visSch") || 
@@ -733,7 +733,7 @@ function verAnimate(){
 		}else if(globals.modello.cartella && noAnimate){
 			startAnimate();
 		}
-	} */
+	}
 }
 setInterval( function(){ verAnimate(); }, 200 );
 function stopAnimate( subito ){
