@@ -384,7 +384,7 @@ var SCHEDA = {
 		if(	document.getElementById("scheda").classList.contains("tab_punti") || 
 			document.getElementById("scheda").classList.contains("scheda_patologia") || 
 			document.getElementById("scheda").classList.contains("scheda_procedura") || 
-			document.getElementById("scheda").classList.contains("scheda_procedura") ||
+			document.getElementById("scheda").classList.contains("scheda_teoria") ||
 			document.getElementById("scheda").classList.contains("scheda_video") )SCHEDA.apriElenco('set',true);
 		else SCHEDA.apriElenco('base',true);
 	},
