@@ -131,7 +131,7 @@ var H = {
 			case "t": // textarea
 				if(obj.label && !obj.noLabel)html += '<em style="line-height:25px;">'+htmlEntities(obj.label)+':</em>';
 				if(obj.noLabel)addCampo += ' placeholder="'+htmlEntities(obj.label)+'"';
-				html += '<textarea name="'+obj.name+'" id="'+id+'"'+addCampo+'>'+htmlEntities(obj.value)+'</textarea>'+H.chr10;
+				html += '<textarea name="'+obj.name+'" id="'+id+'"'+addCampo+' onFocus="return H.focusTextarea();" onBlur="return H.blurTextarea();">'+htmlEntities(obj.value)+'</textarea>'+H.chr10;
    				break;
 				
 			case "h": // hidden
@@ -214,6 +214,14 @@ var H = {
 			el.dataset.preValue = '';
 			return false;
 		}
+	},
+	focusTextarea: function(){
+		document.getElementById("scheda_testo").classList.add("focusTT");
+		document.getElementById("scheda_testo2").classList.add("focusTT");
+	},
+	blurTextarea: function(){
+		document.getElementById("scheda_testo").classList.remove("focusTT");
+		document.getElementById("scheda_testo2").classList.remove("focusTT");
 	},
 	
 	auto_height: function( elem ){ // ridimensiona un elemento textarea dinamicamente

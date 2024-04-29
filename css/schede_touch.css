@@ -315,7 +315,7 @@
 .smart #scheda_testo > div,
 .smart #scheda_testo2 > div {
 	padding: 20px;
-	padding-bottom: 310px;
+	padding-bottom: 20px;
 }
 .smart .divEspansa {
 	width:calc(100% + 40px) !important;

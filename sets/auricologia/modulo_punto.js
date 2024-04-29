@@ -193,6 +193,8 @@ var MODULO_PUNTO = { // extend SET
 					'		<textarea  	id="TestoAnnotazione"' +
 					'					name="TestoAnnotazione"' +
 					'					onKeyDown="document.getElementById(\'pulsantiAnnotazione\').style.display=\'block\';"' +
+					'					onFocus="H.focusTextarea();"' +
+					'					onBlur="H.blurTextarea();"' +
 					'					placeholder="'+TXT("Annotazioni")+'">' + TestoAnnotazione + '</textarea>' +
 					'	</form>' +
 					'</div>' +

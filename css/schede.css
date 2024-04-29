@@ -165,6 +165,11 @@ body:not(.touch) .schLato #ss{
     border-bottom: 1px solid rgba(0,0,0,0.5);	
 }
 
+#scheda_testo.focusTT,
+#scheda_testo2.focusTT{
+	padding-bottom: 310px !important;
+}
+
 
 
 /* linguette delle schede */
@@ -431,7 +436,8 @@ body:not(.smart) #scheda.schForm:not(.schedaRitorno):not(.minimized):not(.tab_pu
 
 .smart .tab_punti:not(.schedaRitorno) #scheda_titolo{
 	padding-left:13px !important;
-	padding-right:85px !important;
+	/* padding-right:85px !important; */
+	padding-right:13px !important;
 }
 /* .smart:not(.bodyModello) .tab_punti:not(.schedaRitorno) #scheda_titolo{
 	padding-left:25px !important;
@@ -507,8 +513,10 @@ body:not(.smart) #scheda.schForm:not(.schedaRitorno):not(.minimized):not(.tab_pu
 	right: 28px;
 }
 .smart #frSch {
-    margin-top: -38px !important;
-    margin-right: 10px !important;
+	margin-top: 4px !important;
+    width: calc(100% + 10px);
+    right: -4px;
+    /* padding: 0 2px; */
 }
 /* .smart:not(.bodyModello) #frSch {
     margin-right: 12px !important;
@@ -530,7 +538,20 @@ body:not(.smart) #scheda.schForm:not(.schedaRitorno):not(.minimized):not(.tab_pu
 }
 .smart .frGiu #frSchGiu,
 .smart .frSu #frSchSu{
-	background-color:rgba(0,0,0,0.1) !important;
+	background-color: rgba(0, 76, 154, 0.7) !important;
+    width: 33px;
+    height: 25px;
+}
+.smart .frGiu #frSchGiu{
+    transform: rotate(-90deg);
+	border-radius: 0px;
+    border-bottom-left-radius: 14px;
+}
+.smart .frSu #frSchSu{
+    transform: rotate(-90deg);
+	float:right;
+	border-radius: 0px;
+    border-top-left-radius: 14px;
 }
 body:not(.smart) .frGiu #frSchGiu:hover,
 body:not(.smart) .frSu #frSchSu:hover{
