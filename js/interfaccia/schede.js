@@ -209,7 +209,7 @@ var SCHEDA = {
 		SCHEDA.verPosScheda();
 		SCHEDA.setMenuDim();
 		GUIDA.nasFumetto();
-		SCHEDA.riapriScheda();
+		//SCHEDA.riapriScheda();
 		SCHEDA.swMenuScheda('chiudi');
 		MENU.comprimiIcone(true);
 		if(!ritorno)document.getElementById("scheda_testo").scrollTo(0,0);

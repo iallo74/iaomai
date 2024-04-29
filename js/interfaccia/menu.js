@@ -1023,8 +1023,8 @@ var MENU = {
 		if(ppOp)MENU.chiudiMenu();
 		
 		//scheda aperta nascosta (con l'occhietto) > deve tornare alla scheda:
-		else if(	document.getElementById("scheda").classList.contains("visSch") &&
-					document.body.classList.contains("nasSch") )SCHEDA.riapriScheda();
+		/* else if(	document.getElementById("scheda").classList.contains("visSch") &&
+					document.body.classList.contains("nasSch") )SCHEDA.riapriScheda(); */
 		
 		//scheda 2 aperta > deve chiudere la scheda 2
 		else if(	document.getElementById("scheda").classList.contains("visSch") &&
