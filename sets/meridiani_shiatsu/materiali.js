@@ -82,16 +82,13 @@ SET.MAT = {
 	opPointContr: 0.3,
 	lineWidth: 0.002,
 	lineYang: new THREE.LineMaterial( {
-
 		name: "lineYang",
 		color: SET.COL.base,
 		transparent: true,
 		linewidth: 0.002,
 		dashed: false
-
 	} ),
 	lineYin: new THREE.LineMaterial( {
-
 		name: "lineYin",
 		color: SET.COL.base,
 		transparent: true,
@@ -106,18 +103,15 @@ SET.MAT = {
 		gapSize:0.5,
 		dashSize: 1,
 		gapSize:0.5
-
 	} ),
 	
 	lineGuide: new THREE.LineMaterial( {
-
 		name: "lineGuide",
 		color: SET.COL.guide,
 		transparent: true,
 		linewidth: 0.0015,
 		dashed: false,
 		depthFunc: 3
-
 	} ),
 	/* lineGuide: new THREE.LineBasicMaterial( {
 		color: SET.COL.guide,
@@ -125,11 +119,13 @@ SET.MAT = {
 		opacity:0.6
 	} ), */
 	lineFrecce: new THREE.LineBasicMaterial( {
+		name: "lineFrecce",
 		color: SET.COL.baseFR,
 		transparent: true,
 		opacity:0.8
 	} ),
 	lineFrecceEvi: new THREE.LineBasicMaterial( {
+		name: "lineFrecceEvi",
 		color: SET.COL.eviFR,
 		transparent: true,
 		opacity:0.8
@@ -146,22 +142,26 @@ SET.MAT = {
 	
 	// PUNTI
 	pointBase: new THREE.MeshStandardMaterial( {
+		name: "pointBase",
 		color: SET.COL.basePT,
 		roughness:1,
 		transparent: true
 	}),
 	pointOver: new THREE.MeshStandardMaterial( {
+		name: "pointOver",
 		color: SET.COL.overPT,
 		roughness:1,
 		transparent: true
 	}),
 	pointNote: new THREE.MeshStandardMaterial( {
+		name: "pointNote",
 		color: SET.COL.notePT,
 		emissive: SET.COL.notePTemissive,
 		roughness:1,
 		transparent: true
 	}),
 	pointTrasp: new THREE.MeshStandardMaterial( {
+		name: "pointTrasp",
 		roughness:1, 
 		premultipliedAlpha: true, // per visualizzare il colore sul fondo scuro
 		side: 2, // per visualizzare il colore sul fondo scuro
@@ -172,22 +172,26 @@ SET.MAT = {
 		depthWrite: false // !!!! per le trasparenze del pulse (senza i pallini vengono tagliati
 	} ),
 	pointOn: new THREE.MeshStandardMaterial( {
+		name: "pointOn",
 		color: SET.COL.sel,
 		roughness:1,
 		transparent: true
 	}),
 	pointSel: new THREE.MeshStandardMaterial( {
+		name: "pointSel",
 		color: SET.COL.sel, /* 0xFFFFFF */
 		roughness:1,
 		transparent: true
 	}),
 	pointSelNote: new THREE.MeshStandardMaterial( {
+		name: "pointSelNote",
 		color: SET.COL.notePTSel,
 		emissive: SET.COL.notePTemissive,
 		roughness:1,
 		transparent: true
 	}),
 	pointSel2: new THREE.MeshStandardMaterial( {
+		name: "pointSel2",
 		side: 3,
 		color: 0xFFFFFF, /* COLsel, */
 		roughness:1,
@@ -197,6 +201,7 @@ SET.MAT = {
 		visible: false
 	}),
 	pointSel2NK: new THREE.MeshStandardMaterial( {
+		name: "pointSel2NK",
 		side: 3,
 		color: 0xFFFFFF, /* COLsel, */
 		roughness:1,
@@ -206,6 +211,7 @@ SET.MAT = {
 		visible: false
 	}),
 	pointEvi: new THREE.MeshStandardMaterial( {
+		name: "pointEvi",
 		color: SET.COL.eviPT,
 		emissive: SET.COL.eviPTemissive,
 		depthWrite: false,
@@ -214,6 +220,7 @@ SET.MAT = {
 		opacity: 0.5
 	}),
 	pointPieno: new THREE.MeshStandardMaterial( {
+		name: "pointPieno",
 		color: SET.COL.pienoPT,
 		emissive: SET.COL.pienoPTemissive,
 		depthWrite: false,
@@ -222,6 +229,7 @@ SET.MAT = {
 		opacity: 0.6
 	}),
 	pointVuoto: new THREE.MeshStandardMaterial( {
+		name: "pointVuoto",
 		color: SET.COL.vuotoPT,
 		emissive: SET.COL.vuotoPTemissive,
 		depthWrite: false,
@@ -230,6 +238,7 @@ SET.MAT = {
 		opacity: 0.4
 	}),
 	pointDolore: new THREE.MeshStandardMaterial( {
+		name: "pointDolore",
 		color: SET.COL.dolorePT,
 		emissive: SET.COL.dolorePTemissive,
 		depthWrite: false,
@@ -238,6 +247,7 @@ SET.MAT = {
 		opacity: 0.4
 	}),
 	pointBianco: new THREE.MeshStandardMaterial( {
+		name: "pointBianco",
 		color: SET.COL.biancoPT,
 		emissive: SET.COL.biancoPT,
 		roughness:1,
@@ -283,11 +293,14 @@ SET._setLineMaterials = function(){
 		let col =  areasView ? SET.colsElementiAreasView[elemento] : SET.colsElementi[elemento],
 			col2 = col,
 			col3 = SET.COL.basePT,
-			col4 = SET.COL.base;
-		if( SET.COL.contrastMethod){
+			col4 = SET.COL.base,
+			depthFunc = 3;
+		if(MODELLO.opAtt<0.85)depthFunc = 1;
+
+		/* if( SET.COL.contrastMethod){
 			if(!areasView)col =  SET.COL.sel;
 			else col =  SET.COL.musc;
-		}
+		} */
 		if(areasView){
 			col3 = SET.COL.basePTmusc;
 			col4 = SET.COL.lineMusc;
@@ -296,22 +309,16 @@ SET._setLineMaterials = function(){
 		SET.MAT.pointBase.color.setHex(col3);
 		SET.MAT.lineYang.color.setHex(col4);
 		SET.MAT.lineYin.color.setHex(col4);
-		/* depthFunc = 3;
-		if(MODELLO.opAtt<1)depthFunc = 1; */
-		depthFunc = 1;
 
 		SET.MAT.lineYangOn[elemento] = new THREE.LineMaterial( {
-
 			name: "lineYangOn["+elemento+"]",
 			color: new THREE.Color(col),
 			transparent: true,
 			linewidth: SET.MAT.lineWidth,
 			dashed: false
-	
 		} );
 
 		SET.MAT.lineYinOn[elemento] = new THREE.LineMaterial( {
-
 			name: "lineYinOn["+elemento+"]",
 			color: new THREE.Color(col),
 			transparent: true,
@@ -324,23 +331,19 @@ SET._setLineMaterials = function(){
 			dashScale: 10,
 			dashSize: 1,
 			gapSize:0.5
-	
 		} );
 		SET.MAT.lineYangIntOn[elemento] = new THREE.LineMaterial( {
-
 			name: "lineYangIntOn["+elemento+"]",
 			color: new THREE.Color(col),
 			transparent: true,
 			depthFunc: depthFunc,
 			linewidth: SET.MAT.lineWidth,
 			dashed: false
-	
 		} );
 		SET.MAT.lineYangIntOn[elemento].uniforms.opacity.value = 0.3;
 
 
 		SET.MAT.lineYinIntOn[elemento] = new THREE.LineMaterial( {
-
 			name: "lineYinIntOn["+elemento+"]",
 			color: new THREE.Color(col),
 			transparent: true,
@@ -354,23 +357,19 @@ SET._setLineMaterials = function(){
 			dashScale: 10,
 			dashSize: 1,
 			gapSize:0.5
-	
 		} );
 		SET.MAT.lineYinIntOn[elemento].uniforms.opacity.value = 0.3;
 
 		
 		SET.MAT.lineYangOnMAS[elemento] = new THREE.LineMaterial( {
-
 			name: "lineYangOnMAS["+elemento+"]",
 			color: new THREE.Color(col2),
 			transparent: true,
 			linewidth: 0.002,
 			dashed: false
-	
 		} );
 		
 		SET.MAT.lineYinOnMAS[elemento] = new THREE.LineMaterial( {
-
 			name: "lineYinOnMAS["+elemento+"]",
 			color: new THREE.Color(col2),
 			transparent: true,
@@ -383,22 +382,18 @@ SET._setLineMaterials = function(){
 			dashScale: 10,
 			dashSize: 1,
 			gapSize:0.5
-	
 		} );
 
 		SET.MAT.lineYangIntOnMAS[elemento] = new THREE.LineMaterial( {
-
 			name: "lineYangIntOnMAS["+elemento+"]",
 			color: new THREE.Color(col2),
 			transparent: true,
 			linewidth: SET.MAT.lineWidth,
 			dashed: false
-	
 		} );
 		SET.MAT.lineYangIntOnMAS[elemento].uniforms.opacity.value = 0.3;
 		
 		SET.MAT.lineYinIntOnMAS[elemento] = new THREE.LineMaterial( {
-
 			name: "lineYinIntOnMAS["+elemento+"]",
 			color: new THREE.Color(col2),
 			transparent: true,
@@ -411,7 +406,6 @@ SET._setLineMaterials = function(){
 			dashScale: 10,
 			dashSize: 1,
 			gapSize:0.5
-	
 		} );
 		SET.MAT.lineYinIntOnMAS[elemento].uniforms.opacity.value = 0.3;
 	}

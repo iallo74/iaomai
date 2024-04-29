@@ -762,7 +762,7 @@ var MODELLO = {
 			for(let n=0;n<MODELLO.meshPelle.children.length;n++){
 				MODELLO.meshPelle.children[n].material = MODELLO.MAT.materialAree[n];
 				if(SET?.areas50){
-					MODELLO.meshPelle.children[n].material.color = new THREE.Color( 0.55, 0.55, 0.55 );
+					MODELLO.meshPelle.children[n].material.color = new THREE.Color( 0.55, 0.52, 0.5 );
 					MODELLO.meshPelle.children[n].material.emissive = new THREE.Color( 0.35, 0.35, 0.35 );
 				}else{
 					MODELLO.meshPelle.children[n].material.color = new THREE.Color( 1, 1, 1 );
@@ -872,6 +872,10 @@ var MODELLO = {
 				}
 			}
 		}
+		try{
+			SET._setLineMaterials();
+			SET._applyLineMethod();
+		}catch(err){};
 	},
 	opw: function( event, livello ){
 		event.stopPropagation();
@@ -1484,6 +1488,7 @@ var MODELLO = {
 				desel = true;
 			}
 		}
+		
 		MODELLO.MAT.mask = [];
 		for(let m=0;m<MODELLO.MAT.materialAree.length;m++){
 			let IMG = '';
@@ -1515,6 +1520,20 @@ var MODELLO = {
 		}
 		MODELLO.op("Aree",1);
 		MENU.verSelected();
+		MODELLO.verOpArea();
+	},
+	verOpArea: function(){
+		if(SET?.areas50){
+			for(let n=0;n<MODELLO.meshPelle.children.length;n++){
+				if(!MODELLO.areaSel){
+					MODELLO.meshPelle.children[n].material.color = new THREE.Color( 0.55, 0.52, 0.5 );
+					MODELLO.meshPelle.children[n].material.emissive = new THREE.Color( 0.35, 0.35, 0.35 );
+				}else{
+					MODELLO.meshPelle.children[n].material.color = new THREE.Color( 1, 1, 1 );
+					MODELLO.meshPelle.children[n].material.emissive = new THREE.Color( 0, 0, 0 );
+				}
+			}
+		}
 	},
 	tutteAree: function(){
 		for(let m=0;m<MODELLO.MAT.materialAree.length;m++){

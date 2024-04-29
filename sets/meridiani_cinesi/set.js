@@ -248,7 +248,7 @@ var SET = {
 		SCHEDA.caricaBtns(contBtns,contIcona);
 		SCHEDA.swPulsanti(true);
 		
-		document.getElementById("divs").innerHTML = '<div id="meridianiSmart_ico" class="noPrint" onClick="SET.swMeridianiSmart();" title="'+htmlEntities(TXT("MeridianiSmart"))+'"></div><div id="meridianiSmart_cont" class="noPrint"></div>';
+		document.getElementById("divs").innerHTML = '<div id="meridianiSmart_ico" class="noPrint visSch" onClick="SET.swMeridianiSmart();" title="'+htmlEntities(TXT("MeridianiSmart"))+'"></div><div id="meridianiSmart_cont" class="noPrint visSch"></div>';
 		//SCHEDA.apriElenco();
 		if(preElenco)SCHEDA.selElenco(preElenco);
 		
@@ -678,7 +678,7 @@ var SET = {
 		let pp = SET.splitPoint(this.ptSel.name);
 		this.pulse=0;
 		let mat=this.MAT.pointBase;
-		if(MERIDIANI[pp.siglaMeridiano].meridianoAcceso)mat=this.MAT.pointSel;
+		if(MERIDIANI[pp.siglaMeridiano].meridianoAcceso)mat=this.MAT.pointOn;
 		if(this.ptSel.userData.nota)mat=this.MAT.pointNote;
 		SET.delEviPalls(pp.siglaMeridiano,pp.nPunto,'Select');
 		
@@ -811,15 +811,26 @@ var SET = {
 				document.getElementById("tr_p"+siglaMeridiano).classList.remove("p_"+MERIDIANI[siglaMeridiano].elemento);
 			}
 		}
-		let nAccesi = 0;
-		if(g){
-			this.mAtt='';
-			for(let m in MERIDIANI){
-				if(MERIDIANI[m].meridianoAcceso){
+		let nAccesi = 0,
+			nAccesi2 = 0;
+		if(g)this.mAtt='';
+		for(let m in MERIDIANI){
+			if(MERIDIANI[m].meridianoAcceso){
+				nAccesi2++;
+				if(g){
 					nAccesi++;
 					this.mAtt=m;
 				}
 			}
+		}
+		if(nAccesi2){
+			SET.MAT.lineYang.uniforms.opacity.value = SET.MAT.opLineContr;
+			SET.MAT.lineYin.uniforms.opacity.value = SET.MAT.opLineContr;
+			SET.MAT.pointBase.opacity = SET.MAT.opPointContr;
+		}else{
+			SET.MAT.lineYang.uniforms.opacity.value = SET.MAT.opLine;
+			SET.MAT.lineYin.uniforms.opacity.value = SET.MAT.opLine;
+			SET.MAT.pointBase.opacity = SET.MAT.opPoint;
 		}
 		if(nAccesi || !g)document.getElementById("p_contrasto").classList.add("visBtn");
 		else{
@@ -901,6 +912,21 @@ var SET = {
 				SET.MAT.lineGuide.uniforms.opacity.value = 0.6;
 				SET.MAT.pointBase.opacity = 1;
 			}
+		}
+		let nAccesi2 = 0;
+		for(let m in MERIDIANI){
+			if(MERIDIANI[m].meridianoAcceso){
+				nAccesi2++;
+			}
+		}
+		if(nAccesi2){
+			SET.MAT.lineYang.uniforms.opacity.value = SET.MAT.opLineContr;
+			SET.MAT.lineYin.uniforms.opacity.value = SET.MAT.opLineContr;
+			SET.MAT.pointBase.opacity = SET.MAT.opPointContr;
+		}else{
+			SET.MAT.lineYang.uniforms.opacity.value = SET.MAT.opLine;
+			SET.MAT.lineYin.uniforms.opacity.value = SET.MAT.opLine;
+			SET.MAT.pointBase.opacity = SET.MAT.opPoint;
 		}
 		SET._setLineMaterials();
 		SET._applyLineMethod();

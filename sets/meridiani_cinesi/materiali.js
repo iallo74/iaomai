@@ -86,26 +86,21 @@ SET.MAT = {
 		depthFunc: 1
 	} ), */
 	lineSel: new THREE.LineMaterial( {
-
 		name: "lineSel",
 		color: SET.COL.sel,
 		transparent: true,
 		linewidth: 0.002,
 		dashed: false,
 		depthFunc: 1
-
 	} ),
 	lineYang: new THREE.LineMaterial( {
-
 		name: "lineYang",
 		color: SET.COL.base,
 		transparent: true,
 		linewidth: 0.002,
 		dashed: false
-
 	} ),
 	lineYin: new THREE.LineMaterial( {
-
 		name: "lineYin",
 		color: SET.COL.base,
 		transparent: true,
@@ -120,18 +115,15 @@ SET.MAT = {
 		gapSize:0.5,
 		dashSize: 1,
 		gapSize:0.5
-
 	} ),
 	
 	lineGuide: new THREE.LineMaterial( {
-
 		name: "lineGuide",
 		color: SET.COL.guide,
 		transparent: true,
 		linewidth: 0.0015,
 		dashed: false,
 		depthFunc: 3
-
 	} ),
 
 	/* lineGuide: new THREE.LineBasicMaterial( { // meridiani YANG
@@ -147,23 +139,27 @@ SET.MAT = {
 	
 	// PUNTI
 	pointBase: new THREE.MeshStandardMaterial( {
+		name: "pointBase",
 		color: SET.COL.basePT,
 		roughness:1,
 		transparent: true,
 		depthWrite: false
 	}),
 	pointOver: new THREE.MeshStandardMaterial( {
+		name: "pointOver",
 		color: SET.COL.overPT,
 		roughness:1,
 		transparent: true
 	}),
 	pointNote: new THREE.MeshStandardMaterial( {
+		name: "pointNote",
 		color: SET.COL.notePT,
 		emissive: SET.COL.notePTemissive,
 		roughness:1,
 		transparent: true
 	}),
 	pointTrasp: new THREE.MeshStandardMaterial( {
+		name: "pointTrasp",
 		roughness:1, 
 		premultipliedAlpha: true, // per visualizzare il colore sul fondo scuro
 		side: 2, // per visualizzare il colore sul fondo scuro
@@ -174,28 +170,33 @@ SET.MAT = {
 		depthWrite: false // !!!! per le trasparenze del pulse (senza i pallini vengono tagliati
 	} ),
 	pointOn: new THREE.MeshStandardMaterial( {
+		name: "pointOn",
 		color: SET.COL.sel,
 		roughness:1,
 		transparent: true
 	}),
 	pointSel: new THREE.MeshStandardMaterial( {
+		name: "pointSel",
 		color: SET.COL.sel, /* 0xFFFFFF */
 		roughness:1,
 		transparent: true
 	}),
 	pointSelInt: new THREE.MeshStandardMaterial( {
+		name: "pointSelInt",
 		color: SET.COL.sel, /* 0xFFFFFF */
 		roughness:1,
 		depthFunc:1,
 		transparent: true
 	}),
 	pointSelNote: new THREE.MeshStandardMaterial( {
+		name: "pointSelNote",
 		color: SET.COL.notePTSel,
 		emissive: SET.COL.notePTemissive,
 		roughness:1,
 		transparent: true
 	}),
 	pointSelNoteInt: new THREE.MeshStandardMaterial( {
+		name: "pointSelNoteInt",
 		color: SET.COL.notePTSel,
 		emissive: SET.COL.notePTemissive,
 		roughness:1,
@@ -203,6 +204,7 @@ SET.MAT = {
 		transparent: true
 	}),
 	pointSel2: new THREE.MeshStandardMaterial( {
+		name: "pointSel2",
 		side: 3,
 		color: 0xFFFFFF, /* COLsel, */
 		roughness:1,
@@ -212,6 +214,7 @@ SET.MAT = {
 		visible: false
 	}),
 	pointEvi: new THREE.MeshStandardMaterial( {
+		name: "pointEvi",
 		color: SET.COL.eviPT,
 		emissive: SET.COL.eviPTemissive,
 		depthWrite: false,
@@ -220,6 +223,7 @@ SET.MAT = {
 		opacity: 0.5
 	}),
 	pointPieno: new THREE.MeshStandardMaterial( {
+		name: "pointPieno",
 		color: SET.COL.pienoPT,
 		emissive: SET.COL.pienoPTemissive,
 		depthWrite: false,
@@ -228,6 +232,7 @@ SET.MAT = {
 		opacity: 0.6
 	}),
 	pointVuoto: new THREE.MeshStandardMaterial( {
+		name: "pointVuoto",
 		color: SET.COL.vuotoPT,
 		emissive: SET.COL.vuotoPTemissive,
 		depthWrite: false,
@@ -236,6 +241,7 @@ SET.MAT = {
 		opacity: 0.4
 	}),
 	pointDolore: new THREE.MeshStandardMaterial( {
+		name: "pointDolore",
 		color: SET.COL.dolorePT,
 		emissive: SET.COL.dolorePTemissive,
 		depthWrite: false,
@@ -244,6 +250,7 @@ SET.MAT = {
 		opacity: 0.4
 	}),
 	pointBianco: new THREE.MeshStandardMaterial( {
+		name: "pointBianco",
 		color: SET.COL.biancoPT,
 		emissive: SET.COL.biancoPT,
 		roughness:1,

@@ -341,7 +341,12 @@ var MENU = {
 				e++;
 			}
 		}
-		try{ if(globals.modello.livelli.indexOf("aree") > -1)MODELLO.tutteAree(); }catch(err){}
+		try{ 
+			if(globals.modello.livelli.indexOf("aree") > -1){
+				MODELLO.tutteAree();
+				MODELLO.verOpArea();
+			}
+		}catch(err){}
 		document.getElementById("contSelected").innerHTML='';
 		globals.pezziSelezionati = [];
 		if(document.getElementById("elencoSelected").className.indexOf("visSch") > -1)MENU.visSelected();

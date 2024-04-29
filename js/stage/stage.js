@@ -395,7 +395,7 @@ function caricaSet( cartella, el, forzaModello='' ){
 		globals.set=JSON.parse(JSON.stringify(sets[cartella]));
 		globals.set.cartella = cartella;
 		globals.set.setSel = el;
-		//if(areasView)MODELLO.swArea();
+		if(areasView)MODELLO.swArea();
 		let modelli = filtraModelli(cartella);
 		if(modelli.indexOf(globals.modello.cartella) == -1 && globals.modello.cartella)forzaModello = modelli[0];
 		
@@ -411,7 +411,7 @@ function caricaSet( cartella, el, forzaModello='' ){
 			imports[i]=imports[i].replace("[lang]",LINGUE.getLinguaCont(cartella));
 		}
 		//if(el?.parentElement?.id=="guida_generica_sets")MENU.visSets();
-		
+
 		IMPORTER.importaFiles(	0,
 								imports,
 								'SET._init();MENU.aggiornaIconeModello();if(smartMenu && document.getElementById("sets").classList.contains("visSch")){SCHEDA.chiudiElenco();MENU.visSets();}',//if(!globals.modello.cartella){GUIDA.visFumetto("guida_generica");}',

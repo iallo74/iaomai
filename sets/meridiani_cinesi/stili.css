@@ -130,11 +130,13 @@ body:not(.smart) #scheda:not(.schLato) .ideogrammaMeridianoChar{
 	height:490px;
 }
 #p_contrasto{
-	background-image:url(img/p_contrasto.png);
+	/* background-image:url(img/p_contrasto.png); */
+	background-image:url(img/p_rx.png);
 	display:none;
 }
 #p_contrasto.btnSel{
-	background-image:url(img/p_contrasto_sel.png) !important;
+	/* background-image:url(img/p_contrasto_sel.png) !important; */
+	background-image:url(img/p_rx_sel.png) !important;
 	display:none;
 }
 /*.smart .btn_meridiani_cinesi{
@@ -716,6 +718,15 @@ body:not(.bodyModello) #btns_set{
 body:not(.smart) #meridianiSmart_cont div:not(.elencoSel):hover{
 	background-color: rgba(255,255,255,0.3) !important;
 }
+body.smart.sistema_MAS #meridianiSmart_ico.visSch{
+    height: 574px !important;
+}
+body:not(.smart) #meridianiSmart_ico.visSch{
+    height: 492px !important;
+	background-position:center top;
+	background-size: 41px;
+	background-image: url(../../img/frSu.png);
+}
 .smart #meridianiSmart_cont div{
 	width: 40px !important;
     height: 40px !important;
@@ -724,6 +735,9 @@ body:not(.smart) #meridianiSmart_cont div:not(.elencoSel):hover{
     font-size: var(--font-11) !important;
     border-radius: 13px !important;
 	font-weight: bold;
+}
+body:not(.smart) #meridianiSmart_cont{
+    top: 40px !important;
 }
 @media (max-height: 700px){
 	.smart #meridianiSmart_cont div{

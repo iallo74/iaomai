@@ -820,6 +820,18 @@ body.smart.touch .textMeridianoTratt{
 	z-index:2 !important;
 	background-position: 13px 9px !important;
 }
+body.smart.sistema_MAS #meridianiSmart_ico.visSch{
+    height: 574px !important;
+}
+body:not(.smart) #meridianiSmart_ico.visSch{
+    height: 492px !important;
+	background-position:center top;
+	background-size: 41px;
+	background-image: url(../../img/frSu.png);
+}
+body:not(.smart).sistema_MAS #meridianiSmart_ico.visSch{
+    height: 428px !important;
+}
 #meridianiSmart_cont{
 	position: fixed;
     top: 48px;
@@ -841,6 +853,9 @@ body:not(.bodyModello) #btns_set > div{
 	max-height: calc(100% - 103px) !important;
 	z-index: 10;
 	padding-top:9px;
+}
+body:not(.smart) #meridianiSmart_cont{
+    top: 40px !important;
 }
 #meridianiSmart_cont div{
 	width: 30px;

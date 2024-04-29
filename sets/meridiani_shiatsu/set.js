@@ -257,7 +257,6 @@ var SET = {
 			MODELLO.swArea(2);
 			MODELLO.swArea(1);
 		}
-		
 		if(!localStorage.sistemaSigleMeridiani)localStorage.sistemaSigleMeridiani="INT";
 		let contPulsanti = 	'<span class="menuElenchi" onclick="MENU.visMM(\'btnCarMapMenu\');"></span>' +
 							'<span id="btnCarMapMenu" class="btn_meridiani_shiatsu titolo_set">' +
@@ -308,7 +307,7 @@ var SET = {
 		
 		contPulsanti += '<span id="quitSet" onClick="chiudiSet();">'+TXT("EsciDa")+' ShiatsuMap</span>';
 
-		let contBtns = '<div id="p_contrasto" class="p_noTxt" onClick="SET.swContrastMethod();"></div>';
+		let contBtns = '';//'<div id="p_contrasto" class="p_noTxt" onClick="SET.swContrastMethod();"></div>';
 		
 		let contIcona = '<div id="p_set" onClick="SCHEDA.apriElenco(\'set\',true);"><svg viewBox="0 0 12 48"><polygon points="5,24 12,13 12,35"></polygon></svg><i>'+htmlEntities(TXT("ShiatsuMap"))+'</i></div>';;
 		
@@ -319,7 +318,7 @@ var SET = {
 		SCHEDA.swPulsanti(true);
 		
 		
-		document.getElementById("divs").innerHTML = '<div id="meridianiSmart_ico" class="noPrint" onClick="SET.swMeridianiSmart();" title="'+htmlEntities(TXT("MeridianiSmart"))+'"></div><div id="meridianiSmart_cont" class="noPrint"></div>';
+		document.getElementById("divs").innerHTML = '<div id="meridianiSmart_ico" class="noPrint visSch" onClick="SET.swMeridianiSmart();" title="'+htmlEntities(TXT("MeridianiSmart"))+'"></div><div id="meridianiSmart_cont" class="noPrint visSch"></div>';
 		
 		//SCHEDA.apriElenco();
 		if(preElenco)SCHEDA.selElenco(preElenco);
@@ -888,7 +887,7 @@ var SET = {
 		if(this.ptSel){
 			if(this.ptSel.userData.interno){
 				this.preCM = false;
-				this.swContrastMethod(true);
+				//this.swContrastMethod(true);
 				let evidenziati = this.ptSel.userData.evidenziati;
 				if(evidenziati){
 					for(let e in evidenziati){
@@ -907,7 +906,7 @@ var SET = {
 		if(pp.siglaMeridiano == "NK")MERIDIANI['NK'].meridianoAcceso = false;
 		this.pulse=0;
 		let mat=this.MAT.pointBase;
-		if(MERIDIANI[pp.siglaMeridiano]?.meridianoAcceso)mat=this.MAT.pointSel;
+		if(MERIDIANI[pp.siglaMeridiano]?.meridianoAcceso)mat=this.MAT.pointOn;
 		if(this.ptSel.userData.nota)mat=this.MAT.pointNote;
 		SET.delEviPalls(pp.siglaMeridiano,pp.nPunto,'Select');
 		
@@ -1135,7 +1134,7 @@ var SET = {
 			}
 		}
 		let nAccesi=0;
-		if(g){
+		//if(g){
 			this.mAtt='';
 			for(let m in MERIDIANI){
 				if(MERIDIANI[m].meridianoAcceso){
@@ -1143,12 +1142,22 @@ var SET = {
 					this.mAtt=m;
 				}
 			}
+		//}
+		
+		if(nAccesi){
+			SET.MAT.lineYang.uniforms.opacity.value = SET.MAT.opLineContr;
+			SET.MAT.lineYin.uniforms.opacity.value = SET.MAT.opLineContr;
+			SET.MAT.pointBase.opacity = SET.MAT.opPointContr;
+		}else{
+			SET.MAT.lineYang.uniforms.opacity.value = SET.MAT.opLine;
+			SET.MAT.lineYin.uniforms.opacity.value = SET.MAT.opLine;
+			SET.MAT.pointBase.opacity = SET.MAT.opPoint;
 		}
-		if(nAccesi || !g)document.getElementById("p_contrasto").classList.add("visBtn");
+		/* if(nAccesi || !g)document.getElementById("p_contrasto").classList.add("visBtn");
 		else{
 			document.getElementById("p_contrasto").classList.remove("visBtn");
 			SET.swContrastMethod(true);
-		}
+		} */
 	},
 	spegniMeridiano: function( siglaMeridiano ){
 		let SM = siglaMeridiano + localStorage.sistemaMeridianiAdd;
@@ -1178,7 +1187,7 @@ var SET = {
 			}
 		}
 	},
-	swContrastMethod: function(n=SET.COL.contrastMethod){
+	/* swContrastMethod: function(n=SET.COL.contrastMethod){
 		SET.COL.contrastMethod=n ? false : true;
 		if(SET.COL.contrastMethod){
 			SET.MAT.lineYang.uniforms.opacity.value = SET.MAT.opLineContr;
@@ -1194,7 +1203,7 @@ var SET = {
 	 	MODELLO.op('Pelle',MODELLO.opAtt);
 		if(SET.COL.contrastMethod)document.getElementById("p_contrasto").classList.add("btnSel");
 		else document.getElementById("p_contrasto").classList.remove("btnSel");
-	},
+	}, */
 	scriviPunto: function( punto, esteso=false, noRet=false, sigla=false, siglaMeridiano=false, gruppo='', seq='' ){
 		let pp = SET.splitPoint(punto),
 			siglaPunto = +pp.nPunto+"."+pp.siglaMeridiano;
@@ -1761,6 +1770,7 @@ var SET = {
 	verSistema: function(){
 		document.getElementById("noLicenze").classList.toggle("vis",LOGIN.logedin() && !SET.verAttModule() && !SET.verLightVersion());
 		document.getElementById("demoVersion").classList.toggle("vis",!LOGIN.logedin());
+		document.body.classList.toggle("sistema_MAS",localStorage.sistemaMeridiani=='MAS');
 	},
 	
 	addEviPalls: function( siglaMeridiano, nPunto, tipo ){
