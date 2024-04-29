@@ -859,6 +859,9 @@ body:not(.bodyStyled2) #scheda_testo2{
     right: 8px;
 	z-index:5;
 }
+.smart #menuScheda{
+	z-index:500;
+}
 .schLato #menuScheda,
 .smart #menuScheda{
     right: 0px !important;
@@ -887,8 +890,8 @@ body:not(.bodyStyled2) #scheda_testo2{
 	cursor:pointer;
 }
 .smart #menuCiclo{
-	margin-top: 17px;
-    margin-right: 95px;
+	margin-top: 2px;
+    margin-right: 82px;
 }
 #menuCiclo > div{
 	padding-right:10px;
