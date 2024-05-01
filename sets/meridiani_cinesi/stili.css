@@ -714,6 +714,8 @@ body:not(.bodyModello) #btns_set{
 	max-height: calc(100% - 90px) !important;
 	z-index: 10;
 	padding-top:9px;
+	max-width: 62px;
+	text-align: right;
 }
 #meridianiSmart_cont div{
 	width: 30px;
@@ -725,6 +727,11 @@ body:not(.bodyModello) #btns_set{
     margin: 2px;
     cursor: pointer;
     background-color: rgba(255,255,255,0.4);
+	display: inline-block;
+}
+.smart #meridianiSmart_cont div.elencoSel{
+	width: 55px !important;
+	margin-left: -13px;
 }
 body:not(.smart) #meridianiSmart_cont div:not(.elencoSel):hover{
 	background-color: rgba(255,255,255,0.3) !important;

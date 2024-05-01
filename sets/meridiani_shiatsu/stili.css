@@ -850,6 +850,8 @@ body:not(.bodyModello) #btns_set > div{
 	max-height: calc(100% - 90px) !important;
 	z-index: 10;
 	padding-top:9px;
+	max-width: 62px;
+	text-align: right;
 }
 body:not(.smart) #meridianiSmart_cont{
     top: 40px !important;
@@ -869,12 +871,19 @@ body:not(.smart) #meridianiSmart_cont div:not(.elencoSel):hover{
 	background-color: rgba(255,255,255,0.3) !important;
 }
 .smart #meridianiSmart_cont div{
-	width: 40px !important;
-    height: 40px !important;
+	width: 40px;
+    height: 40px;
     line-height: 40px !important;
     border-radius: 13px !important;
 	font-weight: bold;
     font-size: var(--font-11) !important;
+	display: inline-block;
+}
+
+
+.smart #meridianiSmart_cont div.elencoSel{
+	width: 55px !important;
+	margin-left: -13px;
 }
 .sm_legno{
 	border:2px solid #009900;
