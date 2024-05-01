@@ -6,6 +6,7 @@ var SWIPE = {
 	verso: '',
 	box: '',
 	box_move: '',
+	moved: false,
 	functIndietro: '',
 	functAvanti: '',
 	functChiudi: '',
@@ -13,6 +14,7 @@ var SWIPE = {
 	init: function( box, box_move, functAvanti, functIndietro, functChiudi='', closeCondition='true' ){
 		SWIPE.box = box;
 		SWIPE.box_move = box_move;
+		SWIPE.moved = false;
 		SWIPE.functIndietro = functIndietro;
 		SWIPE.functAvanti = functAvanti;
 		SWIPE.functChiudi = functChiudi;
@@ -31,6 +33,7 @@ var SWIPE = {
 		}
 	},
 	start: function(event){
+		SWIPE.moved = false;
 		let x = event.touches[ 0 ].pageX,
 			y = event.touches[ 0 ].pageY,
 			el = document.getElementById(SWIPE.box),
@@ -40,7 +43,8 @@ var SWIPE = {
 			limitBottom = limitTop+el.scrollHeight;
 		if(x>=limitLeft && x<=limitRight && y>=limitTop && y<=limitBottom){
 			SWIPE.xIni = x;
-			if(eval(SWIPE.closeCondition))SWIPE.yIni = y;
+			//if(eval(SWIPE.closeCondition))SWIPE.yIni = y;
+			SWIPE.yIni = y;
 			let W = limitRight - limitLeft,
 				area = parseInt(W/3);
 			document.addEventListener("touchmove", SWIPE.move, false );
@@ -55,6 +59,28 @@ var SWIPE = {
 		if(agenda.moved)return;
 		SWIPE.xAtt = event.touches[ 0 ].pageX;
 		SWIPE.yAtt = event.touches[ 0 ].pageY;
+		let diffX = SWIPE.xAtt-SWIPE.xIni,
+			diffY = SWIPE.yAtt-SWIPE.yIni,
+			dir = 0;
+		if(diffY<0 && diffX<0)dir = 1; // SX - UP
+		if(diffY<0 && diffX>0)dir = 2; // DX - UP
+		if(diffY>0 && diffX>0)dir = 3; // DX - DW
+		if(diffY>0 && diffX<0)dir = 4; // SX - DW
+
+		if( ((dir==1 && 0-(SWIPE.yAtt-SWIPE.yIni) >= 0-(SWIPE.xAtt-SWIPE.xIni) ) ||
+			(dir==2 && 0-(SWIPE.yAtt-SWIPE.yIni) >= SWIPE.xAtt-SWIPE.xIni ) ||
+			(dir==3 && SWIPE.yAtt-SWIPE.yIni >= SWIPE.xAtt-SWIPE.xIni ) ||
+			(dir==4 && SWIPE.yAtt-SWIPE.yIni >= 0-(SWIPE.xAtt-SWIPE.xIni) )) && !SWIPE.moved ){
+			SWIPE.end();
+			return;
+		}
+		if( ((dir==1 && 0-(SWIPE.yAtt-SWIPE.yIni) < 0-(SWIPE.xAtt-SWIPE.xIni) ) ||
+			(dir==2 && 0-(SWIPE.yAtt-SWIPE.yIni) < SWIPE.xAtt-SWIPE.xIni ) ||
+			(dir==3 && SWIPE.yAtt-SWIPE.yIni < SWIPE.xAtt-SWIPE.xIni ) ||
+			(dir==4 && SWIPE.yAtt-SWIPE.yIni < 0-(SWIPE.xAtt-SWIPE.xIni) )) && !SWIPE.moved ){
+				SWIPE.moved = true;
+		}
+		
 		let el = document.getElementById(SWIPE.box).getElementsByClassName(SWIPE.box_move)[0],
 			op = 1-Math.abs((SWIPE.xAtt-SWIPE.xIni)/200);
 		if(op<0.3)op=0.3;
@@ -82,5 +108,6 @@ var SWIPE = {
 		SWIPE.xAtt = -1;
 		SWIPE.yAtt = -1;
 		SWIPE.verso = '';
+		SWIPE.moved = false;
 	}
 }
