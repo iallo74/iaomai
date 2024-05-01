@@ -143,14 +143,6 @@ body:not(.smart) #scheda:not(.schLato) .ideogrammaMeridianoChar{
 	width:371px;
 	height:490px;
 }
-#p_contrasto{
-	background-image:url(img/p_contrasto.png);
-	display:none;
-}
-#p_contrasto.btnSel{
-	background-image:url(img/p_contrasto_sel.png) !important;
-	display:none;
-}
 .btn_meridiani_cinesi{
 	cursor:default !important;
 }

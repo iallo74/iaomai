@@ -329,6 +329,7 @@ var MODULO_PUNTO = { // extend SET
 				swFnSu = 'SET.apriPunto(\''+siglaMeridiano+"."+nPuntoSu+'\',\'\',\'\',\''+gruppoSu+'\',document.getElementById(\''+puntoSu.id+'\'));';
 			}
 			SWIPE.init(	'scheda_testo',
+						'scheda_stampa',
 						swFnGiu,
 						swFnSu,
 						'',//'document.getElementById(\'scheda_back\').click();',

@@ -487,7 +487,7 @@ var agenda = {
 		else applicaLoading(document.getElementById("ag"),'vuoto');
 		agenda.contCal.querySelector(".contCal").classList.add("visSch");
 		SWIPE.dismis();
-		SWIPE.init('calCont','document.getElementById(\'calPre\').click();','document.getElementById(\'calNext\').click();');
+		SWIPE.init('calCont','calCont','document.getElementById(\'calPre\').click();','document.getElementById(\'calNext\').click();');
 	},
 	chiudiCalendario: function(){ // chiude il calendario
 		if(agenda.contCal==agenda.elemento){
@@ -496,7 +496,7 @@ var agenda = {
 		}
 		agenda.contCal.querySelector(".contCal").classList.remove("visSch");
 		agenda.contCal.querySelector(".contCal").innerHTML = '';
-		SWIPE.init('agendaPlaceHolder','document.getElementById(\'agendaPre\').click();','document.getElementById(\'agendaNext\').click();');
+		SWIPE.init('agendaPlaceHolder','agendaOre','document.getElementById(\'agendaPre\').click();','document.getElementById(\'agendaNext\').click();');
 		agenda.contCal = agenda.elemento;
 		agenda.calFunct = null;
 	},

@@ -5,12 +5,14 @@ var SWIPE = {
 	yAtt: -1,
 	verso: '',
 	box: '',
+	box_move: '',
 	functIndietro: '',
 	functAvanti: '',
 	functChiudi: '',
 	closeCondition: '',
-	init: function( box, functAvanti, functIndietro, functChiudi='', closeCondition='true' ){
+	init: function( box, box_move, functAvanti, functIndietro, functChiudi='', closeCondition='true' ){
 		SWIPE.box = box;
+		SWIPE.box_move = box_move;
 		SWIPE.functIndietro = functIndietro;
 		SWIPE.functAvanti = functAvanti;
 		SWIPE.functChiudi = functChiudi;
@@ -21,6 +23,7 @@ var SWIPE = {
 		if(SWIPE.box){
 			document.getElementById(SWIPE.box).removeEventListener("touchstart", SWIPE.start, false );
 			SWIPE.box = '';
+			SWIPE.box_move = '';
 			SWIPE.functIndietro = '';
 			SWIPE.functAvanti = '';
 			SWIPE.functChiudi = '';
@@ -52,8 +55,17 @@ var SWIPE = {
 		if(agenda.moved)return;
 		SWIPE.xAtt = event.touches[ 0 ].pageX;
 		SWIPE.yAtt = event.touches[ 0 ].pageY;
+		let el = document.getElementById(SWIPE.box).getElementsByClassName(SWIPE.box_move)[0],
+			op = 1-Math.abs((SWIPE.xAtt-SWIPE.xIni)/200);
+		if(op<0.3)op=0.3;
+		if(op>1)op=1;
+		el.style.marginLeft = (SWIPE.xAtt-SWIPE.xIni)+'px';
+		el.style.opacity = op;
 	},
 	end: function(event){
+		let el = document.getElementById(SWIPE.box).getElementsByClassName(SWIPE.box_move)[0];
+		el.style.marginLeft = '0px';
+		el.style.opacity = 1;
 		let diffX = Math.abs(SWIPE.xAtt - SWIPE.xIni),
 			diffY = SWIPE.yAtt - SWIPE.yIni;
 		if(SWIPE.xAtt==-1)diffX = 0;

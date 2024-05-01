@@ -15,12 +15,15 @@
 #agCont #agendaPlaceHolder{
 	margin-bottom: -1px !important;
 }
+#agendaPlaceHolder{
+	width:calc(100%);
+}
 
 
 /* agenda aperta */
 .agOp,
 .agOpGen{
-	opacity:1 !important;
+	opacity:1/*  !important */;
 }
 .SCH:not(#agCont) .agOp{
     min-height: 313px !important;

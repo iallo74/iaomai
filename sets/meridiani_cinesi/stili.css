@@ -143,13 +143,13 @@ body:not(.smart) #scheda:not(.schLato) .ideogrammaMeridianoChar{
 	height:490px;
 }
 #p_contrasto{
-	/* background-image:url(img/p_contrasto.png); */
-	background-image:url(img/p_rx.png);
+	background-image:url(img/p_contrasto.png);
+	/* background-image:url(img/p_rx.png); */
 	display:none;
 }
 #p_contrasto.btnSel{
-	/* background-image:url(img/p_contrasto_sel.png) !important; */
-	background-image:url(img/p_rx_sel.png) !important;
+	background-image:url(img/p_contrasto_sel.png) !important;
+	/* background-image:url(img/p_rx_sel.png) !important; */
 	display:none;
 }
 .btn_meridiani_cinesi{

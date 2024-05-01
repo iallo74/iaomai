@@ -258,6 +258,7 @@ var MODULO_PUNTO = { // extend SET
 				};
 			}
 			SWIPE.init(	'scheda_testo',
+						'scheda_stampa',
 						swFnGiu,
 						swFnSu,
 						'document.getElementById(\'scheda_back\').click();',
