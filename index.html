@@ -283,8 +283,8 @@
 					<div id="elenchi_testa">
                         <div id="chiudiElenco" onClick="SCHEDA.chiudiElenco();"></div>
                         <div id="elenchi_titolo"><span id="elenchi_titolo_freccia" onClick="SCHEDA.swPulsanti();"></span><span id="elenchi_titolo_txt"
-                            onMouseDown="SCHEDA.iniziaMoveScheda(event);"
-                            onTouchStart="SCHEDA.iniziaMoveScheda(event);"></span></div>
+                        onMouseDown="SCHEDA.iniziaMoveScheda(event);"
+                        onTouchStart="SCHEDA.iniziaMoveScheda(event);"></span></div>
                     </div>
 					<div id="elenchi_lista">
                     	<div id="lista_base">
@@ -306,7 +306,9 @@
                     	<div id="pulsanti_base">
                         	<span id="titolo_base">
                             	<span class="elMenu" id="impostazioniArchivi" onClick="MENU.visImpset(true);" title="{{TXT_ImpostazioniArchivi}}"></span>
-                                <span id="help_clienti" class="elMenu" onClick="GUIDA.visFumetto('guida_archivi',true,true);">?</span>{{TXT_ElGestionale}}</span>
+                                <span id="help_clienti" class="elMenu" onClick="GUIDA.visFumetto('guida_archivi',true,true);">?</span><span  id="titolo_base_txt"
+                                            onMouseDown="SCHEDA.iniziaMoveScheda(event);"
+                                            onTouchStart="SCHEDA.iniziaMoveScheda(event);">{{TXT_ElGestionale}}</span></span>
                             <span id="descrizione_base">{{TXT_GuidaPazientiTxt}}</span>
                         	<div id="pulsante_pazienti" class="frdx" onClick="SCHEDA.selElenco('pazienti');">{{TXT_ElPazienti}}</div>
                         	<div id="pulsante_fornitori" class="frdx" onClick="SCHEDA.selElenco('fornitori');">{{TXT_ElFornitori}}</div>

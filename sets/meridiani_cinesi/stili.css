@@ -152,6 +152,16 @@ body:not(.smart) #scheda:not(.schLato) .ideogrammaMeridianoChar{
 	/* background-image:url(img/p_rx_sel.png) !important; */
 	display:none;
 }
+.smart #contBtnModello > div #p_contrasto{
+	position: fixed;
+	top: 49px;
+	left: 10px;
+	border-top: 1px solid rgba(255, 255, 255, 0.2);
+    width: 36px !important;
+}
+#contBtnModello.vis .smart #p_contrasto{
+	left: 10px !important;
+}
 .btn_meridiani_cinesi{
 	cursor:default !important;
 }
@@ -286,7 +296,7 @@ body:not(.smart) #scheda:not(.schLato) .ideogrammaMeridianoChar{
 body:not(.smart) #p_set{
 	background: url(img/logoMenu.png), linear-gradient(to bottom, #0f3a89 0%,#1546a1 5px,#1546a1 calc(100% - 5px),#0f3a89 100%);
 }
-*/#p_set svg polygon{
+#p_set svg polygon{
 	fill: var(--menu-fondino);
 }
 .listaMeridiani > div{
