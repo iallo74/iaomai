@@ -192,7 +192,8 @@ var SET = {
 		if(!localStorage.sistemaSigleMeridiani)localStorage.sistemaSigleMeridiani="INT";
 		let contPulsanti = 	'<span class="menuElenchi" onclick="MENU.visMM(\'btnCarMapMenu\');"></span>' +
 							'<span id="btnCarMapMenu" class="btn_meridiani_cinesi titolo_set">' +
-							'<span>AcupointsMap</span>' +
+							'<span onMouseDown="SCHEDA.iniziaMoveScheda(event);"' +
+								 ' onTouchStart="SCHEDA.iniziaMoveScheda(event);">AcupointsMap</span>' +
 							'<i class="elMenu" id="impostazioniSet" onClick="MENU.visImpset();" title="'+htmlEntities(TXT("ImpostazioniSet"))+'"><span>' +
 								htmlEntities(TXT("ImpostazioniSet")) +
 							'</span></i>' +

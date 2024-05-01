@@ -83,7 +83,8 @@ var SET = {
 		for(a in DB.set.apparati)SET.hiddenGroups[a]=false;
 		let contPulsanti = 	'<span class="menuElenchi" onclick="MENU.visMM(\'btnCarMapMenu\');"></span>' +
 							'<span id="btnCarMapMenu" class="btn_meridiani_shiatsu titolo_set">' +
-							'<span>ReflexologyMap</span>' +
+							'<span onMouseDown="SCHEDA.iniziaMoveScheda(event);"' +
+								 ' onTouchStart="SCHEDA.iniziaMoveScheda(event);">ReflexologyMap</span>' +
 							/* '<i class="elMenu" id="chiudiSet" onClick="chiudiSet();" title="'+htmlEntities(TXT("ChiudiSet"))+'"><span>' +
 								htmlEntities(TXT("ChiudiSet")) +
 							'</span></i>' + */

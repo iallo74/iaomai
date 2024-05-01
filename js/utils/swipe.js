@@ -10,15 +10,15 @@ var SWIPE = {
 	functIndietro: '',
 	functAvanti: '',
 	functChiudi: '',
-	closeCondition: '',
-	init: function( box, box_move, functAvanti, functIndietro, functChiudi='', closeCondition='true' ){
+	closeCondition: false,
+	init: function( box, box_move, functAvanti, functIndietro, functChiudi='', closeCondition=false ){
 		SWIPE.box = box;
 		SWIPE.box_move = box_move;
 		SWIPE.moved = false;
 		SWIPE.functIndietro = functIndietro;
 		SWIPE.functAvanti = functAvanti;
 		SWIPE.functChiudi = functChiudi;
-		SWIPE.closeCondition = closeCondition;
+		SWIPE.closeCondition = false;
 		document.getElementById(SWIPE.box).addEventListener("touchstart", SWIPE.start, false );
 	},
 	dismis: function(){
@@ -29,7 +29,7 @@ var SWIPE = {
 			SWIPE.functIndietro = '';
 			SWIPE.functAvanti = '';
 			SWIPE.functChiudi = '';
-			SWIPE.closeCondition = '';
+			SWIPE.closeCondition = false;
 		}
 	},
 	start: function(event){
@@ -43,7 +43,6 @@ var SWIPE = {
 			limitBottom = limitTop+el.scrollHeight;
 		if(x>=limitLeft && x<=limitRight && y>=limitTop && y<=limitBottom){
 			SWIPE.xIni = x;
-			//if(eval(SWIPE.closeCondition))SWIPE.yIni = y;
 			SWIPE.yIni = y;
 			let W = limitRight - limitLeft,
 				area = parseInt(W/3);
@@ -98,7 +97,7 @@ var SWIPE = {
 		if(diffX > 50){
 			if(SWIPE.xIni<SWIPE.xAtt && SWIPE.verso=='R')eval(SWIPE.functAvanti);
 			if(SWIPE.xIni>SWIPE.xAtt && SWIPE.verso=='L')eval(SWIPE.functIndietro);
-		}else if(diffY> 100 && SWIPE.yAtt>-1 && SWIPE.yIni>-1){
+		}else if(diffY> 100 && SWIPE.yAtt>-1 && SWIPE.closeCondition){
 			eval(SWIPE.functChiudi);
 		}
 		document.removeEventListener("touchmove", SWIPE.move, false );

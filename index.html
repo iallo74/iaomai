@@ -282,7 +282,9 @@
 				<div id="elenchi_cont">
 					<div id="elenchi_testa">
                         <div id="chiudiElenco" onClick="SCHEDA.chiudiElenco();"></div>
-                        <div id="elenchi_titolo"><span id="elenchi_titolo_freccia" onClick="SCHEDA.swPulsanti();"></span><span id="elenchi_titolo_txt"></span></div>
+                        <div id="elenchi_titolo"><span id="elenchi_titolo_freccia" onClick="SCHEDA.swPulsanti();"></span><span id="elenchi_titolo_txt"
+                            onMouseDown="SCHEDA.iniziaMoveScheda(event);"
+                            onTouchStart="SCHEDA.iniziaMoveScheda(event);"></span></div>
                     </div>
 					<div id="elenchi_lista">
                     	<div id="lista_base">

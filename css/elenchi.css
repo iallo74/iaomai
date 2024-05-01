@@ -44,7 +44,7 @@ body:not(.smart) #btnCarMapMenu i span,
     text-overflow: ellipsis;
 }
 .smart #btnCarMapMenu > span{
-	width: calc(100% - 120px);
+	width: calc(100% - 70px);
 }
 #quitSet{
 	display: block;
@@ -411,8 +411,8 @@ body:not(.smart) #elenchi_linguette{
 }
 .smart #titolo_base,
 .smart #btnCarMapMenu{
-	margin-top: 5px;
-	width: calc(100% - 35px);
+	margin-top: 10px !important;
+	/* width: calc(100% - 35px); */
 }
 #descrizione_base{
     text-align: left;
