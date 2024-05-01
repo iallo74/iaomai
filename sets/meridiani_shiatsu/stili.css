@@ -45,8 +45,6 @@ body.uomo #pulsante_modello{
 }
 .ideogrammaPuntoChar{
 	border-radius: 20px;
-	background-color: #999999;
-	color: #FFF;
 	padding: 15px 10px;
 	margin: -15px;
     margin-left: 20px !important;
@@ -54,11 +52,18 @@ body.uomo #pulsante_modello{
 	padding-top: 26px;
     border-top-left-radius: 14px;
 }
+body:not(.smart) .ideogrammaPuntoChar{
+	background-color: #999999;
+	color: #FFF;
+}
 .smart .ideogrammaPuntoChar,
 .smart .ideogrammaMeridianoChar{
-    font-size: 38px !important;
+    font-size: 44px !important;
     line-height: 44px !important;
 	font-weight: normal !important;
+}
+.smart .ideogrammaPuntoChar{
+	margin-top: -4px;
 }
 .ideogrammaMeridianoChar{
 	position: absolute;
@@ -71,13 +76,13 @@ body.uomo #pulsante_modello{
 }
 .smart .ideogrammaMeridianoChar{
 	width:59px;
-    font-size: 38px !important;
+    font-size: 44px !important;
     line-height: 44px !important;
 }
 #scheda.schLato .ideogrammaMeridianoChar,
 .smart .ideogrammaMeridianoChar{
-    top: 46px;
-    height: calc(100% - 46px);
+    top: 71px;
+    height: calc(100% - 71px);
 }
 body:not(.smart) #scheda:not(.schLato) .ideogrammaMeridianoChar{
     top: 71px;
@@ -93,6 +98,9 @@ body:not(.smart) #scheda:not(.schLato) .ideogrammaMeridianoChar{
     float: right;
     margin-top: -17px;
     opacity: 0.6;
+}
+.smart .speach_icon{
+	background-color: rgba(0, 0, 0, 0.6);
 }
 .ideogrammaMeridianoChar img{
 	width: 31px;
@@ -126,6 +134,11 @@ body:not(.smart) #scheda:not(.schLato) .ideogrammaMeridianoChar{
 	display:inline-block;
 	vertical-align:middle;
 }
+.smart .cont_simboliPunto{
+	display: inline;
+    float: right;
+    margin-left: 21px;
+}
 .zoomPunto{
 	width:371px;
 	height:490px;
@@ -138,9 +151,6 @@ body:not(.smart) #scheda:not(.schLato) .ideogrammaMeridianoChar{
 	background-image:url(img/p_contrasto_sel.png) !important;
 	display:none;
 }
-/*.smart .btn_meridiani_cinesi{
-	background-image:url(img/logoBlu.png) !important;
-}*/
 .btn_meridiani_cinesi{
 	cursor:default !important;
 }
@@ -284,10 +294,7 @@ ul{
 body:not(.smart) #p_set{
 	background: url(img/logoMenu.png), linear-gradient(to bottom, #0f3a89 0%,#1546a1 5px,#1546a1 calc(100% - 5px),#0f3a89 100%);
 }
-/* body:not(.bodyStyled1):not(.bodyStyled2):not(.smart) #p_set{
-	background-image: url(img/logoMenuN.png);
-} */
-/*body:not(.touch) */#p_set svg polygon{
+#p_set svg polygon{
 	fill: var(--menu-fondino);
 }
 .listaMeridiani > div{
@@ -311,13 +318,13 @@ body:not(.smart) #p_set{
     width:32px;
 	height:32px;
 	border-radius:16px;
-	/*background-image:url(../../img/frGiuB.png);*/
 	background-size:auto 40px;
 	background-repeat: no-repeat;
 	background-position:center center;
 }
 .smart .listaMeridiani > div strong{
-	margin-right: -4px !important;
+	margin-right: 4px !important;
+    margin-top: 4px;
 }
 
 .listaMeridiani > div:not(.frSw) strong{
@@ -455,9 +462,8 @@ body:not(.smart) #p_set{
 }
 body:not(.smart) .listaMeridiani,
 body.smart #elenchi .listaMeridiani{
-	height: 100%;/*calc(100% - 48px) !important;*/
+	height: 100%;
 }
-/* linguetta a destra */
 #lista_meridiani div span { 
     float: right;
     margin-right: -16px;
@@ -690,6 +696,9 @@ body:not(.smart) .listaMeridiani .p_aria:not(.elencoSel) span:hover{
 }
 @media (max-width: 800px){
 	.touch #elenchi #lista_meridiani div > div span{
+		height: 41px;
+	}
+	.smart.android  #elenchi #lista_meridiani div > div span{ 
 		height: 50px;
 	}
 	body:not(.smart) .listaMeridiani > div.lockedItem b {
@@ -723,7 +732,6 @@ body:not(.smart) .listaMeridiani .p_aria:not(.elencoSel) span:hover{
     border: none !important;
     background: transparent !important;
     border-radius: 0px !important;
-    /*width: calc(100% - 10px) !important;*/
 	height: 24px !important;
     margin-bottom: 3px;
 	font-style:italic;
@@ -756,9 +764,6 @@ body.smart.touch .textMeridianoTratt{
     width: calc(100% - 245px) !important;
     margin-left: 5px !important;
 }
-/*.smart #scheda:not(.sch_Max450) .textMeridianoTratt{
-	width: calc(100% - 256px) !important;
-}*/
 .touch:not(.smart) #scheda:not(.sch_Max450) .textMeridianoTratt{
 	width: calc(100% - 272px) !important;
 }
@@ -786,7 +791,6 @@ body.smart.touch .textMeridianoTratt{
     right: 5px;
 	width:40px;
 	height:40px;
-	/*background-image:url(../../img/jingB.png);*/
 	background-image:url(../../img/ico_meridianiB.png);
 	background-repeat: no-repeat;
 	background-position: center center;
@@ -802,9 +806,6 @@ body.smart.touch .textMeridianoTratt{
 #meridianiSmart_cont.nas{
 	display:none !important;
 }
-/*body.bodyStyled2:not(.smart) #meridianiSmart_ico{
-	background-image:url(../../img/ico_meridiani.png);
-}*/
 .smart #meridianiSmart_ico{
 	width: 50px !important;
     height: 50px !important;
@@ -854,7 +855,7 @@ body:not(.bodyModello) #btns_set > div{
 .smart #meridianiSmart_cont{
     top: 36px !important;
     right: 0px !important;
-	max-height: calc(100% - 103px) !important;
+	max-height: calc(100% - 90px) !important;
 	z-index: 10;
 	padding-top:9px;
 }
@@ -871,7 +872,6 @@ body:not(.smart) #meridianiSmart_cont{
     margin: 2px;
     cursor: pointer;
     background-color: rgba(255,255,255,0.4);
-	/* margin-left: 128px; */
 }
 body:not(.smart) #meridianiSmart_cont div:not(.elencoSel):hover{
 	background-color: rgba(255,255,255,0.3) !important;
@@ -880,7 +880,6 @@ body:not(.smart) #meridianiSmart_cont div:not(.elencoSel):hover{
 	width: 40px !important;
     height: 40px !important;
     line-height: 40px !important;
-   /*  border-radius: 20px !important; */
     border-radius: 13px !important;
 	font-weight: bold;
     font-size: var(--font-11) !important;
@@ -949,8 +948,7 @@ body:not(.smart) #meridianiSmart_cont div:not(.elencoSel):hover{
     height: 36px;
     line-height: 36px;
 }
-.sceltaMeridianiElenco/* ,
-#sceltaMeridianiElenco_smart */{
+.sceltaMeridianiElenco{
 	display: inline-block;
     height: 30px;
     line-height: 30px;
@@ -971,24 +969,6 @@ body:not(.smart) #meridianiSmart_cont div:not(.elencoSel):hover{
 	box-shadow:0px 0px 3px rgba(0,0,0,0.5);
 	cursor:pointer;
 }
-/* #sceltaMeridianiElenco_smart{
-    margin-right: 0px;
-    margin-left: 0px;
-    width: 160px;
-    margin-bottom: 5px;
-    margin-top: 0px;
-    padding-right: 35px !important;
-    box-shadow: none;
-    background-color: transparent;
-    color: #FFF;
-    background-image: url(../../img/frGiu.png);
-    background-size: 40px;
-    background-position: calc(100% - -3px) center;
-    text-align: right;
-} */
-/*.listaPatologie{
-	height: calc(100% - 87px);
-}*/
 body:not(.smart) #cambioSistemaMeridiani,
 body.smart #elenchi #cambioSistemaMeridiani{
 	display:none !important;
@@ -1167,13 +1147,11 @@ body.smart #elenchi #cambioSistemaMeridiani{
 }
 .dis_ric,
 .dis_prs{
-	/* border-top: 1px solid rgba(0,0,0,0.2); */
 	border-top: 4px dotted rgba(0,0,0,0.1);
 }
 .dis_ric,
 .dis_ter,
 .dis_prs{
-	/* border-top: 1px solid rgba(0,0,0,0.2); */
 	padding-top: 15px;
 	clear:both;
 	margin-top: 20px;

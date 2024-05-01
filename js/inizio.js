@@ -119,12 +119,14 @@ function INIT(){
 	LINGUE.init();
 	visLoader();
 	MENU.init();
-	
+
 	init();
 	animate();
 	
 	SCHEDA.initScheda();
 	SCHEDA.initElenco();
+	if(smartMenu)SCHEDA.resizeElenchi( parseInt(__(localStorage.hOpened,SCHEDA.hOpened)), true );
+
 	GUIDA.init('');
 	GUIDA.init('_modello');
 

@@ -123,9 +123,6 @@
 	background: var(--menu-fondino) !important;
 	width:100% !important;
 }
-.smart #elenchi_linguette{
-	display:none !important;
-}
 
 .smart #elenchi_lista{
 	width:100% !important;
@@ -176,9 +173,6 @@
 .smart #elenchi.compresso #elenchi_cont{
 	display: none !important;
 }
-/* .smart #scheda.compresso{
-	bottom:108px !important;
-} */
 
 .smart #elenchi_pulsanti .elencoSel,
 .smart #elenchi_lista div:not(.listaMeridiani) > div.elencoSel:not(.procNotCond):not(.procCond):not(.procPref){
@@ -217,83 +211,6 @@
 	width:100% !important;
 	bottom:0px;
 }
-/* .smart #scheda.visSch{
-	width:100% !important;
-	height:100% !important;
-	bottom:0px !important;
-	background: var(--schede-fondino);
-}
-.smart #scheda:not(.visSch){
-	width:100% !important;
-	bottom:54px !important;
-	overflow: hidden;
-}
-.smart .visSch_1,
-.smart #scheda_cont:not(.visSch){
-	display:block !important;
-}
-.smart .schOp #scheda_cont{
-	box-shadow: none !important;
-}
-.smart #scheda_cont:not(.visSch) #scheda_titolo,
-.smart #scheda_cont:not(.visSch) #scheda_testo,
-.smart #scheda_cont:not(.visSch) #scheda_testo2{
-	display:none !important;
-}
-.smart #scheda_linguette{
-	display: none;
-}
-.smart #scheda_linguette div{
-	width: 36px;
-	height: 26px;
-}
-.smart.nasSch #scheda,
-.smart.nasSch #elenchi{
-	display:none !important;
-}
-.smart.nasSch #icone{
-	overflow:hidden !important;
-	height:0px !important;
-}
-#riapriSch{
-	display:none !important;
-}
-.smart.nasSch #riapriSch {
-    display: block !important;
-    position: fixed;
-    top: 0;
-    left: 50%;
-    width: 180px;
-    margin-left: -90px;
-    height: 46px;
-    background-color: #1546a1;
-    text-align: center;
-    border-radius: 0px 0px 6px 6px;
-    box-shadow: 0px 0px 3px rgba(0,0,0,0.5);
-}
-.smart.nasSch #riapriTit{
-	width: 100%;
-    font-size: var(--font-12-1);
-    overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-    color: #FFF;
-    text-align: left;
-    height: 19px;
-    line-height: 15px;
-    text-align: center;
-    background-color: rgba(0,0,0,0.3);
-    font-style: italic;
-	padding-left: 10px;
-    padding-right: 10px;
-}
-.smart.nasSch #riapriBtn{
-    height: 27px;
-    line-height: 27px;
-	width:100%;
-	color:#FFF;
-	border-radius: 6px 6px 0px 0px;
-} */
 .smart #ss{
 	height: 29px !important;
 }

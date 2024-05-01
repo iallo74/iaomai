@@ -364,6 +364,7 @@ var MODULO_PROCEDURE = { // extend SET
 			PH.caricaGallery(true,idUtenteProcedura,false,true);
 			if(!globals.set.siglaProc)SET.convSigleScheda();
 			SET.evidenziaPunto();
+			SCHEDA.gestVisAnatomia(true);
 			if(!globals.set.siglaProc)SET.evidenziaMeridiani(HTML);
 			if(idProcedura)SET.car_commenti(idProcedura);
 			if(Q_resta){
@@ -680,6 +681,7 @@ var MODULO_PROCEDURE = { // extend SET
 			}
 			SET.caricaDettagli();
 			PH.caricaGallery();
+			SCHEDA.gestVisAnatomia(true);
 			
 			initChangeDetection( "formMod" ); // lasciare dopo caricaDettagli
 			

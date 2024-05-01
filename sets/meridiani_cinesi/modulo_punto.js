@@ -21,7 +21,6 @@ var MODULO_PUNTO = { // extend SET
 			pattern = /[0-9]{1,2}\.[A-Z]{2}\.\s[^\(]+\(([^\)]+)\)/g,
 			HTML = "<h1>",
 			HTML_tit = '<h1>';
-		//if(sigla)titolo = titolo.replace(nPunto+"."+siglaMeridiano,sigla);
 		
 		if(siglaMeridiano!='EX')HTML_tit += +nPunto +"."+siglaMeridiano;
 		else HTML_tit += sigla;
@@ -96,7 +95,7 @@ var MODULO_PUNTO = { // extend SET
 									htmlEntities(TXT("PuntoSelezionato")) +
 									'</div>';
 		}
-		if(HTML_simboli)HTML += '<div>'+HTML_simboli+'</div>';
+		if(HTML_simboli)HTML += '<div class="cont_simboliPunto">'+HTML_simboli+'</div>';
 		
 		HTML += SET.convPuntiScheda(DB.set.meridiani[siglaMeridiano].punti[nPunto].AzioniPunto,true);
 		
@@ -150,7 +149,6 @@ var MODULO_PUNTO = { // extend SET
 			ideogramma += ideogrammaOr[l];
 			if(l<lI-1)ideogramma += "<br>";
 		}
-		//HTML_tit = 	'<div class="ideogrammaPuntoChar">'+ideogramma+'</div><img src="img/speach2W.png" onClick="SET.speachName(\''+siglaMeridiano+nPunto+'\');" class="speach_icon noPrint">'+HTML_tit;
 
 		
 		HTML_ideo = '<div class="ideogrammaPuntoChar"';
@@ -159,11 +157,10 @@ var MODULO_PUNTO = { // extend SET
 		if(android && smartMenu && !onlineVersion)HTML_ideo += ' style="font-size: 40px !important;line-height:40px !important;"';
 
 		HTML_ideo += '>'+ideogramma+'</div><img src="img/speach2W.png" onClick="SET.speachName(\''+siglaMeridiano+nPunto+'\');" class="speach_icon noPrint">';
-		HTML_tit = HTML_ideo+HTML_tit;
 
 
 		
-		HTML = '<div id="titPoint">'+HTML_tit+'</div><div class="translatable">'+HTML+'</div>';
+		HTML = '<div id="titPoint">'+HTML_tit+'</div><div class="translatable">'+HTML_ideo+HTML+'</div>';
 		HTML += imgDettaglio;
 		
 		// annotazione
@@ -219,10 +216,6 @@ var MODULO_PUNTO = { // extend SET
 		let finalFunct = '';
 		if(!ritorno || !SCHEDA.formModificato)finalFunct += 'initChangeDetection( "formAnnotazioni");';
 
-		/* let closeFunct = '';
-		if(!SCHEDA.scheda2Aperta){
-			closeFunct += 'SWIPE.dismis();';
-		} */
 		SCHEDA.caricaScheda(	titolo,
 								HTML,
 								"SWIPE.dismis();if(SET.ptSel)SET.chiudiPunto();",
@@ -237,8 +230,8 @@ var MODULO_PUNTO = { // extend SET
 		SET.convSigleScheda();
 		SET.settaOverPunto();
 		SET.ptSel = ptSel;
-		//if(!ritorno || !SCHEDA.formModificato)initChangeDetection( "formAnnotazioni" );
 		if(ritorno && !SCHEDA.aggancio.tipo == 'libera')SCHEDA.nasScheda();
+		SCHEDA.gestVisAnatomia(true);
 		
 		document.getElementById("frSchSu").onclick = '';
 		document.getElementById("frSchGiu").onclick = '';
@@ -287,7 +280,7 @@ var MODULO_PUNTO = { // extend SET
 				pDef=p;
 			}
 		}
-		if(!nota_salvata/*  && Q_TestoAnnotazione.trim()!='' */){
+		if(!nota_salvata){
 			let idPaziente=-1;
 			if(PAZIENTI.idCL>-1)idPaziente=PAZIENTI.idPaziente;
 			JSNPUSH={	"TestoAnnotazione": Q_TestoAnnotazione,

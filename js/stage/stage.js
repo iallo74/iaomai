@@ -24,7 +24,7 @@ var camera, scene, renderer,
 
 
 function init() {
-	if(typeof(localStorage.colore)=='undefined')localStorage.colore = 2;
+	if(typeof(localStorage.colore)=='undefined')localStorage.colore = 1;//2;
 	if(typeof(localStorage.fondino)=='undefined')localStorage.fondino = 'rachide';
 	if(typeof(localStorage.textSize)=='undefined')localStorage.textSize = '';
 	if(typeof(localStorage.tipoPelle)=='undefined')localStorage.tipoPelle = '';
@@ -34,11 +34,9 @@ function init() {
 	// SCENE
 	scene = new THREE.Scene();
 	scene.userData.BGcolorPrint = new THREE.Color( 0xffffff );
-	//document.body.style.backgroundColor = colori[localStorage.colore];
 	document.body.classList.add("bodyStyled"+localStorage.colore);
 	document.body.classList.add("sf_"+localStorage.fondino);
-	//scene.userData.BGcolorScreen = new THREE.Color( colori[localStorage.colore] );
-	scene.background = null;//scene.userData.BGcolorScreen;
+	scene.background = null;
 	
 	// CAMERA
 	camera = new THREE.PerspectiveCamera( 20, window.innerWidth / window.innerHeight, 0.1, 100 );
@@ -84,15 +82,12 @@ function init() {
 	
 	// RENDER
 	canvas = document.querySelector('#container');
-	//renderer = new THREE.WebGLRenderer( { antialias: true, preserveDrawingBuffer: true  } );
 	renderer = new THREE.WebGLRenderer( { alpha: true, antialias: true, preserveDrawingBuffer: true  } );
 	renderer.setClearColor(0x000000, 0);
 	
 	let aspectRatio = window.devicePixelRatio;
 	if(isTablet)aspectRatio/=2;
-	//aspectRatio = 1;
 	renderer.setPixelRatio( aspectRatio );
-	//renderer.setSize( window.innerWidth, window.innerHeight );
 	renderer.setSize( canvas.width, canvas.height );
 	renderer.sortObjects = false; // lasciare per la questione delle trasparenze
 	
@@ -107,7 +102,6 @@ function init() {
 	manichinoCont.scale.set(0.5,0.5,0.5 );
 	manichinoCont.position.set(0,0.7,0);
 	scene.add( manichinoCont );
-	//controlsM = new THREE.ObjectControls( camera, renderer.domElement );
 	controlsM = new THREE.ObjectControls( manichinoCont, renderer.domElement );
 
 	window.addEventListener( 'resize', onWindowResize, false );
@@ -141,10 +135,6 @@ function init() {
 					getVar("demo")=='shiatsumap')cambiaModello('donna');
 				if(getVar("demo")=='auriculomap' )caricaModello('orecchio');
 				if(getVar("demo")=='reflexologymap' )caricaModello('piedi');
-				
-				/*if(getVar("demo")=='acupointsmap')caricaSet('meridiani_cinesi');
-				if(getVar("demo")=='shiatsumap')caricaSet('meridiani_shiatsu');
-				if(getVar("demo")=='auriculomap')caricaSet('auricologia');*/
 				if(getVar("demo")=='pazienti'){
 					setTimeout(function(){
 						SCHEDA.apriElenco('base');
@@ -248,7 +238,6 @@ function caricaModello( cartella ){
 	localStorage.modello = globals.modello.cartella;
 	document.body.classList.add('bodyModello');
 	document.getElementById("p_centro").classList.add("visBtn");
-	//document.getElementById("p_piuma").classList.add("visBtn");
 	if(mouseDetect)document.getElementById("nav").classList.add("visBtn");
 }
 function scaricaModello( esci ){
@@ -360,7 +349,6 @@ function cambiaModello( cartella ){
 			}
 			MENU.chiudiAllSelected();
 			MENU.chEls();
-			//if(areasView && globals.modello.livelli.indexOf("aree") == -1)MODELLO.swArea(2);
 			MODELLO.swArea(2);
 			MODELLO.removePrecarArea();
 			globals.modello.cartella=cartella;
@@ -403,18 +391,16 @@ function caricaSet( cartella, el, forzaModello='' ){
 			caricaModello(forzaModello);
 			return;
 		}
-		//globals.set.imports.push("lang_"+LINGUE.getLinguaCont(cartella)+".js");
 		visLoader(globals.set.txtLoading);
 		let imports = clone(globals.set.imports);
 		for(let i in imports){
 			if(imports[i].indexOf("/")==-1)imports[i]='sets/'+cartella+'/'+imports[i];
 			imports[i]=imports[i].replace("[lang]",LINGUE.getLinguaCont(cartella));
 		}
-		//if(el?.parentElement?.id=="guida_generica_sets")MENU.visSets();
 
 		IMPORTER.importaFiles(	0,
 								imports,
-								'SET._init();MENU.aggiornaIconeModello();if(smartMenu && document.getElementById("sets").classList.contains("visSch")){SCHEDA.chiudiElenco();MENU.visSets();}',//if(!globals.modello.cartella){GUIDA.visFumetto("guida_generica");}',
+								'SET._init();MENU.aggiornaIconeModello();if(smartMenu && document.getElementById("sets").classList.contains("visSch")){SCHEDA.chiudiElenco();MENU.visSets();}',
 								document.getElementById("scripts") );
 		if(el)el.classList.add("btnSetSel");
 		if(globals.modello.cartella){
@@ -552,10 +538,6 @@ function onWindowResize(){
 		s = window.innerWidth,
 		h = window.innerHeight;
 	if(SCHEDA.aggancio.tipo == 'lato'){
-		/*w -= 20;
-		if(document.getElementById("elenchi_cont").classList.contains("visSch"))w -= document.getElementById("elenchi_cont").scrollWidth;
-		if(document.getElementById("scheda").classList.contains("visSch"))w -= document.getElementById("scheda").scrollWidth;*/
-		//s -= 20;
 		if(document.getElementById("elenchi_cont").classList.contains("visSch"))s -= document.getElementById("elenchi_cont").scrollWidth;
 		if(document.getElementById("scheda").classList.contains("visSch"))s -= document.getElementById("scheda").scrollWidth;
 		traslStage =((w - s) / 2);
@@ -576,8 +558,6 @@ function onMouseMove( event ) {
 		const rect = renderer.domElement.getBoundingClientRect();
 		mouse.x = ( ( event.clientX - rect.left ) / ( rect.right - rect.left ) ) * 2 - 1;
 		mouse.y = - ( ( event.clientY - rect.top ) / ( rect.bottom - rect.top) ) * 2 + 1;
-		//mouse.x = ( event.clientX / window.innerWidth ) * 2 - 1;
-		//mouse.y = - ( event.clientY / window.innerHeight ) * 2 + 1;
 		mouse.xAbs = event.clientX;
 		mouse.yAbs = event.clientY;
 	}
@@ -643,7 +623,6 @@ function animate() {
 					controlsM._ZPR = false;
 					controlsM._inMovimento = false;
 					saveRotationPosition();
-					//localStorage.modelPosition = JSON.stringify({x:manichinoCont.position.x,y:manichinoCont.position.y,z:manichinoCont.position.z});
 				}
 			}
 		}
@@ -663,7 +642,6 @@ function animate() {
 					controlsM._ZPR = false;
 					controlsM._inMovimento = false;
 					saveRotationPosition();
-					//localStorage.modelPosition = JSON.stringify({x:manichinoCont.position.x,y:manichinoCont.position.y,z:manichinoCont.position.z});
 				}
 			}
 		}
@@ -709,11 +687,11 @@ function swAnimate(){
 }
 function verAnimate(){
 	if(smartMenu){
-		if(	(
-				(	document.getElementById("elenchi").classList.contains("visSch")/*  ||
-					document.getElementById("scheda").classList.contains("visSch") */
+		if(	/* (
+				(	document.getElementById("elenchi").classList.contains("visSch") ||
+					document.getElementById("scheda").classList.contains("visSch")
 				) && !document.body.classList.contains("nasSch")
-			) || 
+			) ||  */
 			document.getElementById("sets").classList.contains("visSch") || 
 			document.getElementById("schedaGlobal").classList.contains("visSch") || 
 			document.getElementById("ag").classList.contains("visSch") || 
@@ -876,7 +854,6 @@ function getCenterPoint( mesh ){ // trova il punto centrale di una mesh
 		center = new THREE.Vector3();
     geometry.computeBoundingBox();
     geometry.boundingBox.getCenter( center );
-    //mesh.localToWorld( center );
     return center;
 }
 

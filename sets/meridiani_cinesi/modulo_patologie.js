@@ -58,7 +58,6 @@ var MODULO_PATOLOGIE = { // extend SET
 			}
 		}
 		DB.set.patologie.sort(sort_by("NomePatologia"));
-		//DB_patologie = null;
 		SET.caricaPatologie();
 	},
 	caricaPatologie: function(){
@@ -133,7 +132,6 @@ var MODULO_PATOLOGIE = { // extend SET
 			html = 	"<h1>"+htmlEntities(titolo)+"</h1>" +
 					// aggiungo contenuto custom
 					CUSTOMS.addContent("patologie_"+n,SET.convPuntiScheda(DB.set.patologie[n].TestoPatologia));
-					//SET.convPuntiScheda(DB.set.patologie[n].TestoPatologia);
 		
 		// sesso
 		if(DB.set.patologie[n].sessoPatologia){
@@ -146,9 +144,7 @@ var MODULO_PATOLOGIE = { // extend SET
 			document.getElementById("scheda").classList.contains("visSch") &&
 			SCHEDA.verificaSchedaRet() )ritorno = "document.getElementById('scheda').classList.remove('scheda_patologia')";
 		
-		let btnAdd = 	'';/*'<div class="p_paz_ref_menu" onClick="REF.open(\'sets.meridiani_cinesi.pathologies\')">' +
-							TXT("ReferenceGuide") +
-						'</div>';*/
+		let btnAdd = 	'';
 		SCHEDA.caricaScheda(	titolo,
 								html,
 								'SET.annullaEvidenziaPunto();SET.spegniMeridiani(true);',
@@ -161,6 +157,7 @@ var MODULO_PATOLOGIE = { // extend SET
 		SET.convSigleScheda();
 		SET.evidenziaPunto();
 		SET.evidenziaMeridiani(html);
+		SCHEDA.gestVisAnatomia(true);
 	},
 	filtraPatologie: function( event ){
 		// filtra le patologie con il campo testuale

@@ -260,6 +260,9 @@ body:not(.touch ) .lll:hover rect.filled{
 	stroke-linecap: round;
 	stroke-width: 2px;
 }
+.smart #scheda_linguette div line{
+	stroke:#FFF !important;
+}
 #scheda.schLato #scheda_linguette > div{
 	box-shadow: none !important;
 }
@@ -425,38 +428,23 @@ body:not(.smart) #scheda.schForm:not(.schedaRitorno):not(.minimized):not(.tab_pu
 }
 .smart #scheda_titolo{
 	width: calc(100% - 75px);
-	/* width: calc(100% - 120px) !important; */
     cursor: default !important;
     text-align: center !important;
 	padding-left: 44px !important;
 }
-/* .smart.bodyModello #scheda_titolo{
-	width: calc(100% - 120px) !important;
-} */
 
 .smart .tab_punti:not(.schedaRitorno) #scheda_titolo{
 	padding-left:13px !important;
-	/* padding-right:85px !important; */
 	padding-right:13px !important;
 }
-/* .smart:not(.bodyModello) .tab_punti:not(.schedaRitorno) #scheda_titolo{
-	padding-left:25px !important;
-	padding-right:85px !important;
-}
-.smart.bodyModello .tab_punti:not(.schedaRitorno) #scheda_titolo{
-	padding-left:13px !important;
-	padding-right:85px !important;
-} */
 .smart .tab_punti.schedaRitorno #scheda_titolo{
 	padding-left:13px !important;
 	padding-right:13px !important;
 }
-/* #scheda_modello, */
 #scheda_back{
 	display:none;
 	margin-top: 3px;
 }
-/* .smart #scheda_modello, */
 .smart #scheda:not(.schedaRitorno) #scheda_back{
 	vertical-align:top;
 	width:36px;
@@ -465,40 +453,19 @@ body:not(.smart) #scheda.schForm:not(.schedaRitorno):not(.minimized):not(.tab_pu
 	background-position:center center;
 }
 
-/* .smart #scheda.visSch #scheda_modello, */
 .smart #scheda.visSch:not(.schedaRitorno) #scheda_back{
 	display:inline-block !important;
 }
 .smart #scheda_back{
     background-image:url(../img/ico_menu.png);
-	/* background-size:auto 60px; */
 	margin-right: 4px !important;
 	opacity:0.7;
 }
-/* .smart #scheda_modello{
-    background-image: url(../img/ico_occhio.png);
-	background-size:auto 30px;
-	margin-left: 7px;
-} */
-/* .smart.bodyModello #scheda_modello{
-    background-image: url(../img/ico_occhio.png);
-	background-size:auto 30px;
-	margin-left: 7px;
-} */
-/* .smart .visSch #scheda_cont{
-	padding-top: 46px;
-} */
 #scheda_intestazione.visSch{
 	height:43px;
 }
 .smart #scheda_intestazione{
 	text-align: left;
-    /* box-shadow: 0px 0px 5px rgba(0,0,0,0.4);
-    position: absolute;
-    width: 100%;
-    height: 46px !important;
-    z-index: 100;
-    top: 0px; */
 	background-color:var(--colore-grigio-scuro);
 }
  
@@ -516,11 +483,7 @@ body:not(.smart) #scheda.schForm:not(.schedaRitorno):not(.minimized):not(.tab_pu
 	margin-top: 4px !important;
     width: calc(100% + 10px);
     right: -4px;
-    /* padding: 0 2px; */
 }
-/* .smart:not(.bodyModello) #frSch {
-    margin-right: 12px !important;
-} */
 .frSu, .frGiu{
 	display:block !important;
 }
@@ -549,9 +512,11 @@ body:not(.smart) #scheda.schForm:not(.schedaRitorno):not(.minimized):not(.tab_pu
 }
 .smart .frSu #frSchSu{
     transform: rotate(-90deg);
-	float:right;
 	border-radius: 0px;
     border-top-left-radius: 14px;
+}
+.smart #frSchSu{
+	float:right;
 }
 body:not(.smart) .frGiu #frSchGiu:hover,
 body:not(.smart) .frSu #frSchSu:hover{
@@ -632,33 +597,12 @@ body:not(.smart) .schedaRitorno #scheda_titolo{
 .smart #scheda.schedaRitorno #scheda_titolo{
 	width: calc(100% - 159px) !important;
 }
-/* .smart.bodyModello #scheda.schedaRitorno #scheda_titolo{
-	width: calc(100% - 210px) !important;
-}
-.smart:not(.bodyModello) #scheda.schedaRitorno #scheda_titolo{
-	width: calc(100% - 160px) !important;
-} */
 .smart #scheda.visSch #scheda_titolo,
 .smart #scheda.visSch.schedaRitorno #scheda_ritorno{
 	display: inline-block;
     vertical-align: top;
 	margin-top: 3px;
 }
-.smart #scheda.visSch.schForm:not(.tab_punti) #scheda_titolo{
-	/*width: calc(100% - 172px) !important;
-    margin-left: 48px !important;
-    padding-left: 20px !important;
-	background: #FFF !important;
-    background: -moz-linear-gradient(top, #FFF 0%, #d5d5d5 100%) !important;
-    background:  -webkit-linear-gradient(top, #FFF 0%,#d5d5d5 100%) !important;
-    background: linear-gradient(to bottom, #FFF 0%,#d5d5d5 100%) !important;
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#FFF', endColorstr='#d5d5d5',GradientType=0 ) !important;
-	background-position:center center !important;
-	background-repeat:no-repeat !important;	
-    background-size: auto !important;
-	color:#000 !important;*/
-}
-
 
 .smart #scheda.visSch:not(.schedaRitorno) #scheda_titolo,
 .smart #scheda.visSch.schedaRitorno #scheda_ritorno{
@@ -711,8 +655,6 @@ body:not(.smart) .schedaRitorno #scheda_titolo{
 }
 .contStampa #scheda_testo > div,
 .contStampa #scheda_testo2 > div{
-	/* padding-left:0px !important;
-	padding-right:0px !important; */
 	padding:0px !important;
 	
 }
@@ -866,9 +808,6 @@ body:not(.bodyStyled2) #scheda_testo2{
 .smart #menuScheda{
     right: 0px !important;
 }
-/* .smart #menuScheda{
-	top: 47px !important;
-} */
 #scheda:not(.schLato) #menuScheda{
 	top: 71px;
 }
@@ -1009,7 +948,6 @@ body:not(.bodyStyled2) #scheda_testo2{
 	appearance:none;
 	-webkit-appearance:none;
 	border:none;
-	/*box-shadow:0px 0px 3px rgba(0,0,0,0.5);*/
 	cursor:pointer;
 }
 .p_translate span{
@@ -1078,7 +1016,6 @@ body.smart .translate_note span.translate_close{
 }
 .lang_ar #titPoint{
 	text-align:right;
-	/* direction:rtl */
 }
 .lang_ar .simboliPatologia{
 	float:left;

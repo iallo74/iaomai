@@ -13,7 +13,6 @@ var MODULO_PUNTO = { // extend SET
 		// verifico le autorizzazioni
 		let block = (!SET.verFreePunti(siglaMeridiano+"."+nPunto) ||
 					(SET.PUNTI_free.indexOf(siglaMeridiano+"."+nPunto)==-1 && !SET.verAttModule()));
-		//if(SET.verLightVersion() && localStorage.sistemaMeridiani!='NMK')block = false;
 		if(SET.verLightVersion())block = false;
 		if(	block ){
 			if(SET.verLicenses())ALERT(TXT("MsgContSoloLicensed"),false,false,true);
@@ -89,7 +88,7 @@ var MODULO_PUNTO = { // extend SET
 					cls = 'spAdd';
 				}
 			}
-			if( (SCHEDA.classeAperta == 'scheda_A' || SCHEDA.classeAperta == 'scheda_B')/* && siglaMeridiano!='NK'*/){
+			if( (SCHEDA.classeAperta == 'scheda_A' || SCHEDA.classeAperta == 'scheda_B')){
 				if(SET.pMod > -1){
 					if(siglaMeridiano!='NK')pP = PAZIENTI.puntiProvvisori[SET.pMod];
 					else pP = PAZIENTI.namikoshiProvvisori[SET.pMod];
@@ -117,7 +116,7 @@ var MODULO_PUNTO = { // extend SET
 									htmlEntities(TXT("PuntoSelezionato")) +
 									'</div>';
 		}
-		if(HTML_simboli)HTML += '<div>'+HTML_simboli+'</div>';
+		if(HTML_simboli)HTML += '<div class="cont_simboliPunto">'+HTML_simboli+'</div>';
 		
 		HTML += DB.set.meridiani[siglaMeridiano].punti[nPunto].AzioniPunto;
 		
@@ -156,11 +155,8 @@ var MODULO_PUNTO = { // extend SET
 		let rp = wCont/370,
 			bluring = '',
 			addNo = '';
-		//let onlyForPro = ''
-		//if(SET.verLightVersion() && SET.PUNTI_free.indexOf(siglaMeridiano+"."+nPunto)==-1){
 		if(SET.verLightVersion()){
 			bluring = 'filter: blur(10px);';
-			//onlyForPro = '<span>Only for the PRO version</span>';
 			let txtNo = (SET.verLicenses())?TXT("MsgContSoloLicensed"):TXT("MsgContSoloPay");
 			addNo = ' title="'+htmlEntities(txtNo)+'" onClick="ALERT(\''+txtNo+'\');"';
 			if(!SET.verAttModule()){
@@ -260,10 +256,6 @@ var MODULO_PUNTO = { // extend SET
 		let finalFunct = '';
 		if(!ritorno || !SCHEDA.formModificato)finalFunct += 'initChangeDetection( "formAnnotazioni");';
 
-		/* let closeFunct = '';
-		if(!SCHEDA.scheda2Aperta && siglaMeridiano!='NK'){
-			closeFunct += 'SWIPE.dismis();';
-		} */
 		SCHEDA.caricaScheda(	titolo,
 								HTML,
 								"SWIPE.dismis();if(SET.ptSel)SET.chiudiPunto();",
@@ -279,7 +271,7 @@ var MODULO_PUNTO = { // extend SET
 		SET.settaOverPunto();
 		SET.ptSel = ptSel;
 		if(ritorno && !SCHEDA.aggancio.tipo == 'libera')SCHEDA.nasScheda();
-		
+		SCHEDA.gestVisAnatomia(true);
 
 		// gestione e visualizzazione delle frecce di navigazione
 		document.getElementById("frSchSu").onclick = '';
@@ -359,7 +351,7 @@ var MODULO_PUNTO = { // extend SET
 				pDef=p;
 			}
 		}
-		if(!nota_salvata /* && Q_TestoAnnotazione.trim()!='' */){
+		if(!nota_salvata){
 			let idPaziente = -1;
 			if(PAZIENTI.idCL>-1)idPaziente=PAZIENTI.idPaziente;
 			JSNPUSH={	"TestoAnnotazione": Q_TestoAnnotazione,
@@ -506,12 +498,10 @@ var MODULO_PUNTO = { // extend SET
 			!SET.snd.paused && 
 			!SET.snd.ended &&
 			SET.snd.readyState > 2)return;
-		//if((SET.verLightVersion() || !LOGIN.logedin()) && SET.MERIDIANI_free.indexOf(txt.substr(0,2))==-1)txt='onlyPRO';
 		if(SET.verLightVersion() || (!LOGIN.logedin() && SET.MERIDIANI_free.indexOf(txt.substr(0,2))==-1)){
 			if(SET.verLicenses())ALERT(TXT("MsgContSoloLicensed"),false,false,true);
 			else ALERT(TXT("MsgContSoloPay"),true,true);
 			return;
-			//txt='onlyPRO';
 		}
 		SET.snd = new Audio("sets/common/mtc/audio/"+txt+".mp3");
 		SET.snd.play();

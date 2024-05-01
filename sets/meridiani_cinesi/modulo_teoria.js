@@ -81,7 +81,6 @@ var MODULO_TEORIA = { // extend SET
 
 		if(occhiello)html += "<i>"+htmlEntities(occhiello)+"</i>";
 		html += "<h1>"+htmlEntities(titolo)+"</h1>";
-		//let html_cont = SET.convPuntiScheda(DB.set.teoria[p].contenuti[t].TestoTeoria);
 
 		// aggiungo contenuto custom
 		let html_cont = CUSTOMS.addContent("teoria_"+p+"_"+t,SET.convPuntiScheda(DB.set.teoria[p].contenuti[t].TestoTeoria));
@@ -110,14 +109,19 @@ var MODULO_TEORIA = { // extend SET
 								globals.set.cartella+'_teoria_'+p+"_"+t );
 		SET.convSigleScheda();
 		SET.evidenziaPunto();
+		SCHEDA.gestVisAnatomia(true);
 		
 		SET.spegniMeridianoSecondario();
+		SET.spegniMeridiani(true);
 		setTimeout( function(meridianiSecondari){
 			if(meridianiSecondari){
 				for(let m in meridianiSecondari){
 					if(meridianiSecondari[m].indexOf("_")==-1)SET.accendiMeridiano(meridianiSecondari[m],false,true);
 					SET.accendiMeridianoSecondario(meridianiSecondari[m],true);
 				}
+				SET.MAT.lineYang.uniforms.opacity.value = SET.MAT.opLineContr;
+				SET.MAT.lineYin.uniforms.opacity.value = SET.MAT.opLineContr;
+				SET.MAT.pointBase.opacity = SET.MAT.opPointContr;
 			}
 		},250,meridianiSecondari);
 	},

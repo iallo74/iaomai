@@ -307,7 +307,7 @@ var SET = {
 		
 		contPulsanti += '<span id="quitSet" onClick="chiudiSet();">'+TXT("EsciDa")+' ShiatsuMap</span>';
 
-		let contBtns = '';//'<div id="p_contrasto" class="p_noTxt" onClick="SET.swContrastMethod();"></div>';
+		let contBtns = '';
 		
 		let contIcona = '<div id="p_set" onClick="SCHEDA.apriElenco(\'set\',true);"><svg viewBox="0 0 12 48"><polygon points="5,24 12,13 12,35"></polygon></svg><i>'+htmlEntities(TXT("ShiatsuMap"))+'</i></div>';;
 		
@@ -320,7 +320,6 @@ var SET = {
 		
 		document.getElementById("divs").innerHTML = '<div id="meridianiSmart_ico" class="noPrint visSch" onClick="SET.swMeridianiSmart();" title="'+htmlEntities(TXT("MeridianiSmart"))+'"></div><div id="meridianiSmart_cont" class="noPrint visSch"></div>';
 		
-		//SCHEDA.apriElenco();
 		if(preElenco)SCHEDA.selElenco(preElenco);
 		
 		manichino.add( SETS );
@@ -626,9 +625,11 @@ var SET = {
 					controlsM._ZPR=true;
 					controlsM._MM=false;
 				}
-				if(this.INTERSECTED.name.substr(0,1)=='_'/*  && this.INTERSECTED.name.indexOf("NK")==-1 */){
+				if(this.INTERSECTED.name.substr(0,1)=='_'){
 					let n=this.INTERSECTED.name.split("_"),
-						ritorno = '';
+						ritorno = '',
+						errore =  __(this.INTERSECTED.name,"ERRORE");
+
 					if(SCHEDA.classeAperta && SCHEDA.classeAperta!='tab_punti')ritorno = 'SET.chiudiPunto(true)';
 					if(this.INTERSECTED.name.indexOf("NK")==-1)SET.apriPunto(n[1],ritorno, this.INTERSECTED);
 					else{
@@ -672,12 +673,8 @@ var SET = {
 	apriPunto: function( PT_name, ritorno='', el='', gruppo='', btn=null ){
 		
 		// verifico le autorizzazioni
-		
-		/* if(	(!SET.verFreePunti(PT_name) ||
-			(SET.PUNTI_free.indexOf(PT_name)==-1 && !SET.verAttModule())) && !SET.verLightVersion() ){ */
 		let block = (!SET.verFreePunti(PT_name) ||
 					(SET.PUNTI_free.indexOf(PT_name)==-1 && !SET.verAttModule()));
-		//if(SET.verLightVersion() && localStorage.sistemaMeridiani!='NMK')block = false
 		if(SET.verLightVersion())block = false;
 		if(	block ){
 			if(SET.verLicenses())ALERT(TXT("MsgContSoloLicensed"),false,false,true);
@@ -710,7 +707,6 @@ var SET = {
 			
 		}
 		if(this.MAT.pointSel)SET.chiudiPunto(true,true);
-		//let pp = SET.splitPoint(PT_name);
 		let PT='';
 		if(!scene.getObjectByName( PT_name )){
 			if(scene.getObjectByName( PT_name + "." )){
@@ -795,7 +791,6 @@ var SET = {
 				for(let e in els){
 					if(	(gruppo && els[e].name == "FR."+pp.nPunto+"."+gruppo) || 
 						(!gruppo && els[e].name == "FR."+pp.nPunto) ){
-						//(!gruppo && els[e].name.indexOf("FR."+pp.nPunto)==0) ){
 						els[e].visible = true;
 						let col = new THREE.Color( SET.COL.baseFR );
 						if(SET.ptSel.name.indexOf("AR.")==0)col = new THREE.Color( SET.COL.areaFR );
@@ -837,6 +832,8 @@ var SET = {
 			let vector = this.ptSel.geometry.vertices[i].clone();
 			vector.applyMatrix4( this.ptSel.matrixWorld );
 			panEnd = { x: vector.x, y: vector.y, z: vector.z };
+		}else if(smartMenu){
+			panEnd = { x: 0, y: 0.25, z: 0 };
 		}else panEnd = { x: 0, y: 0, z: 0 };
 		
 		
@@ -1134,16 +1131,13 @@ var SET = {
 			}
 		}
 		let nAccesi=0;
-		//if(g){
-			this.mAtt='';
-			for(let m in MERIDIANI){
-				if(MERIDIANI[m].meridianoAcceso){
-					nAccesi++;
-					this.mAtt=m;
-				}
+		this.mAtt='';
+		for(let m in MERIDIANI){
+			if(MERIDIANI[m].meridianoAcceso){
+				nAccesi++;
+				this.mAtt=m;
 			}
-		//}
-		
+		}
 		if(nAccesi){
 			SET.MAT.lineYang.uniforms.opacity.value = SET.MAT.opLineContr;
 			SET.MAT.lineYin.uniforms.opacity.value = SET.MAT.opLineContr;
@@ -1153,11 +1147,6 @@ var SET = {
 			SET.MAT.lineYin.uniforms.opacity.value = SET.MAT.opLine;
 			SET.MAT.pointBase.opacity = SET.MAT.opPoint;
 		}
-		/* if(nAccesi || !g)document.getElementById("p_contrasto").classList.add("visBtn");
-		else{
-			document.getElementById("p_contrasto").classList.remove("visBtn");
-			SET.swContrastMethod(true);
-		} */
 	},
 	spegniMeridiano: function( siglaMeridiano ){
 		let SM = siglaMeridiano + localStorage.sistemaMeridianiAdd;
@@ -1187,23 +1176,6 @@ var SET = {
 			}
 		}
 	},
-	/* swContrastMethod: function(n=SET.COL.contrastMethod){
-		SET.COL.contrastMethod=n ? false : true;
-		if(SET.COL.contrastMethod){
-			SET.MAT.lineYang.uniforms.opacity.value = SET.MAT.opLineContr;
-			SET.MAT.lineYin.uniforms.opacity.value = SET.MAT.opLineContr;
-			SET.MAT.pointBase.opacity = SET.MAT.opPointContr;
-		}else{
-			SET.MAT.lineYang.uniforms.opacity.value = SET.MAT.opLine;
-			SET.MAT.lineYin.uniforms.opacity.value = SET.MAT.opLine;
-			SET.MAT.pointBase.opacity = SET.MAT.opPoint;
-		}
-		SET._setLineMaterials();
-		SET._applyLineMethod();
-	 	MODELLO.op('Pelle',MODELLO.opAtt);
-		if(SET.COL.contrastMethod)document.getElementById("p_contrasto").classList.add("btnSel");
-		else document.getElementById("p_contrasto").classList.remove("btnSel");
-	}, */
 	scriviPunto: function( punto, esteso=false, noRet=false, sigla=false, siglaMeridiano=false, gruppo='', seq='' ){
 		let pp = SET.splitPoint(punto),
 			siglaPunto = +pp.nPunto+"."+pp.siglaMeridiano;
@@ -1294,7 +1266,7 @@ var SET = {
 		SET.evidenziaPunto( el );
 		setTimeout(function(){SET.evidenziaMeridiani( el.innerHTML );},300);
 	},
-	evidenziaPunto: function( el = document.getElementById("scheda_testo")/*html*/ ){
+	evidenziaPunto: function( el = document.getElementById("scheda_testo") ){
 		SET.annullaEvidenziaPunto();
 		let els = el.getElementsByClassName("pallinoPat");
 		for(let p=0;p<els.length;p++){
@@ -1552,7 +1524,6 @@ var SET = {
 
 		// solo NK in protocolli
 		regexp = /\[\.[A-Z]{1,2}\.[A-Z0-9]{2}[\.]{0,1}[^\]]*\]/ig;
-		//str = document.getElementById("scheda_testo"+nScheda).innerHTML;
 		pts = str.match(regexp);
 		for(let p in pts){
 			let pP = pts[p].replace("[.","").replace(".]","").split(".");
@@ -1599,7 +1570,6 @@ var SET = {
 		for(let p in pts){
 			let pP = pts[p].split("."),
 				siglaMeridiano = pP[1].substr(0,2),
-				//n_M = SET.convSigla(siglaMeridiano)+pP[1].substr(2,1),
 				nome = '';
 			nome = DB.set.meridiani[siglaMeridiano].NomeMeridiano;	
 			html = html.replace(pts[p], '<span class="meridianoPat"' +
@@ -1722,7 +1692,7 @@ var SET = {
 		if(localStorage.sistemaMeridiani=='NMK')titPoints = TXT("RegioniAnatomiche");
 		if(localStorage.sistemaMeridiani=='MAS')titPoints = TXT("Meridiani");
 		document.getElementById("pulsante_meridiani").innerHTML = titPoints;
-		if(SCHEDA.elencoSel=='meridiani')document.getElementById("elenchi_titolo").innerHTML = titPoints;
+		if(SCHEDA.elencoSel=='meridiani')document.getElementById("elenchi_titolo_txt").innerHTML = titPoints;
 		
 		if(togliLoader){
 			
@@ -1766,6 +1736,7 @@ var SET = {
 			selects[s].value = sistema;
 			selects[s].blur();
 		}
+		setTimeout(function(){SCHEDA.gestVisSmart(true);},500);
 	},
 	verSistema: function(){
 		document.getElementById("noLicenze").classList.toggle("vis",LOGIN.logedin() && !SET.verAttModule() && !SET.verLightVersion());

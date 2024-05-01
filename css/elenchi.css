@@ -16,7 +16,6 @@ body:not(.smart) #btnCarMapMenu,
 	line-height:40px;
 	color:#666;
 	margin:4px;
-	/* cursor:pointer; */
 }
 .smart.android #elenchi #btnCarMapMenu{
 	margin-bottom: 20px;
@@ -39,7 +38,6 @@ body:not(.smart) #btnCarMapMenu i span,
 }
 #btnCarMapMenu > span{
     display: inline-block;
-    /* width: 175px; */
     width: 215px;
     overflow: hidden;
     white-space: nowrap;
@@ -51,7 +49,6 @@ body:not(.smart) #btnCarMapMenu i span,
 #quitSet{
 	display: block;
     text-align: left;
-    /* padding: 0 19px; */
     line-height: 49px;
     color: #000;
     background-image: url(../img/ico_quit5.png);
@@ -60,7 +57,6 @@ body:not(.smart) #btnCarMapMenu i span,
     background-position: 9px center;
     padding-left: 43px;
     cursor: pointer;
-    /* width: 180px; */
 }
 #quitSet:hover{
 	background-image: url(../img/ico_quit5On.png);
@@ -113,7 +109,6 @@ body:not(.smart) #impostazioniArchivi,
     vertical-align: middle;
     width: 30px;
     height: 32px;
-    /* background-image: url(../img/ico_modulesN.png); */
     background-image: url(../img/ico_puzzleN.png);
     background-repeat: no-repeat;
     background-position: center center;
@@ -252,7 +247,6 @@ body:not(.smart) #pulsante_agenda{
 body:not(.smart) #elenchi{
 	left: 48px;
 }
-	
 @media (min-width: 801px){	
 	#elenchi_cont{
 		box-shadow: 0px 0px 6px rgba(0,0,0,0.5);
@@ -263,24 +257,50 @@ body:not(.smart) #elenchi{
 		box-shadow: 0px 0px 6px rgba(0,0,0,0.5);
 	}
 }
-#elenchi_linguette{
-	position: absolute;
-	margin-left: -32px;
-	overflow: hidden;
-	text-align: right;
-	padding-top:80px;
+body:not(.smart) #elenchi_linguette{
+	display:none !important;
+}
+.smart #elenchi_linguette{
+	height:24px;
+	overflow:hidden;
+}
+.smart #es,
+.smart #ec{
+	display: inline-block !important;
+    background-color: var(--colore-grigio-scuro);
+	box-shadow: 0px 0px 3px #000;
+}
+.smart #es{
+	width: 100px !important;
+	height: 29px !important;
+	text-align: center;
+	height: 24px !important;
+	margin-right: -34px;
+}
+.smart #ec{
+	width:32px;
+	float:right;
+	margin-right:2px;
+}
+.smart #ec svg{
+	width: 31px;
+	height: 28px !important;
+	margin-top: 2px;
+}
+.smart #ec svg line {
+    stroke: #FFF;
+}
+.smart #es svg{
+	height: 22px !important;
+}
+.smart #es svg line {
+    stroke: #999;
 }
 #elenchi_linguette div {
 	display: none;
-	background-color: var(--menu-linguette);
-	width: 22px;
-	height: 32px;
-	padding-top: 5px;
-	margin-top: 2px;
-	margin-bottom: 2px;
-	margin-left: 10px;
+	background-color: var(--colore-grigio-scuro);
 	border-top-left-radius: 5px;
-	border-bottom-left-radius: 5px;
+	border-top-right-radius: 5px;
 	cursor: pointer;
 	box-shadow: var(--menu-linguette-ombra);
 }		
@@ -289,11 +309,7 @@ body:not(.smart) #elenchi{
 	stroke-linecap: round;
 	stroke-width: 2px;
 }
-.bodyStyled2 #elenchi_linguette div line{
-	stroke:#FFF;
-}
-.linguettaSel line,
-#elenchi_linguette div:hover line{
+.linguettaSel line{
 	stroke:var(--schede-icone-over) !important;
 }
 #elenchi_cont{
@@ -302,6 +318,11 @@ body:not(.smart) #elenchi{
 	width: var(--menu-width);
 	display:none;
 	float:left;
+}
+.smart #elenchi_cont{
+	overflow:hidden;
+	box-shadow:0 0 3px #000;
+	height: calc(100% - 23px) !important;
 }
 #elenchi_contenuti{ /* ????? */
 	width:500px;
@@ -315,7 +336,8 @@ body:not(.smart) #elenchi{
    display:none;
 }
 .smart #elenchi #elenchi_testa #chiudiElenco{
-   	position: fixed;
+   	display:none;
+	position: fixed;
     background-color: transparent;
     box-shadow: none !important;
     background-image: url(../img/chMenuB.png);
@@ -328,20 +350,30 @@ body:not(.smart) #elenchi{
 }
 #elenchi_titolo{ /* il titolo nel 2° livello */
 	height: 50px;
-    line-height: 42px;
-    padding-top: 4px;
-    padding-bottom: 4px;
     padding-right: 14px;
-    padding-left: 50px;
-    background: url(../img/frSxB.png);
-    background-size: contain, auto 100%;
-    background-repeat: no-repeat, repeat-y;
-    background-position: left center, center center;
-    cursor: pointer;
+    padding-left: 14px;
     display: none;
     text-align: right;
     overflow-x: hidden;
     white-space: nowrap;
+}
+#elenchi_titolo_freccia{
+	display: inline-block;
+    vertical-align: middle;
+    width: 36px;
+    height: 50px;
+    background: url(../img/frSxB.png);
+    background-size: auto 100%;
+    background-repeat: no-repeat;
+    background-position: -13px center;
+    cursor: pointer;
+	float: left;
+}
+#elenchi_titolo_txt{
+	height: 50px;
+    line-height: 50px;
+	display:inline-block;
+	vertical-align: middle;
     text-overflow: ellipsis;
     font-size: var(--font-23-1);
     color: rgba(0,0,0,0.6);

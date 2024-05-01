@@ -45,7 +45,7 @@ var SCHEDA = {
 	formModificato: false,
 	form: null,
 	versoRedim: '',
-	gapScheda: 16, /* 17 */
+	gapScheda: 16,
 	ultimaCartella: '', // l'id della sottocartella aperta quando si clicca su una scheda (per smartMenu)
 	finalFunct: null,
 	initScheda: function(){
@@ -187,11 +187,7 @@ var SCHEDA = {
 		}
 		
 		// imposto l'altezza della scheda
-		/* if(smartMenu){
-			SCHEDA.hOpened = window.innerHeight - 45;
-			document.getElementById("scheda_testo").style.height = SCHEDA.hOpened+"px";
-			document.getElementById("scheda_testo2").style.height = SCHEDA.hOpened+"px";
-		}else  */if(espansa){
+		if(espansa){
 			if(SCHEDA.aggancio.tipo == 'sotto'){
 				if(!SCHEDA.hOpened)SCHEDA.hOpened = 200;
 				document.getElementById("scheda_testo").scrollTop = '0px';
@@ -208,7 +204,6 @@ var SCHEDA = {
 		SCHEDA.verPosScheda();
 		SCHEDA.setMenuDim();
 		GUIDA.nasFumetto();
-		//SCHEDA.riapriScheda();
 		SCHEDA.swMenuScheda('chiudi');
 		MENU.comprimiIcone(true);
 		if(!ritorno)document.getElementById("scheda_testo").scrollTo(0,0);
@@ -221,27 +216,22 @@ var SCHEDA = {
 			SCHEDA.finalFunct = null;
 		}
 		if(smartMenu){
-			SCHEDA.chiudiElenco();
-			try{
-				//SET.swMeridianiSmart(false);
-				document.getElementById("meridianiSmart_ico").classList.add("nas");
-				document.getElementById("meridianiSmart_cont").classList.add("nas");
-			
-			}catch(err){};
+			SCHEDA.chiudiElenco(true);
+			SCHEDA.gestVisSmart(true);
 		}
 	},
 	verificaSchedaRet: function(){
 		formHasChanges();
 		return SCHEDA.formModificato;
 	},
-	scaricaScheda: function( salvato ){
+	scaricaScheda: function( salvato, noNas ){
 		if( SCHEDA.noChiudi )return;
 		CONFIRM.vis(	TXT("UscireSenzaSalvare"),
 						!SCHEDA.verificaSchedaRet(),
 						arguments ).then(function(pass){if(pass){
 						let v = getParamNames(CONFIRM.args.callee.toString());
 						for(let i in v)eval(getArguments(v,i));
-						
+			if(typeof(noNas)=='undefined')noNas = false;		
 			try{
 				SET._scaricaScheda();
 			}catch(err){}
@@ -277,10 +267,11 @@ var SCHEDA = {
 			livello = 3;
 			SCHEDA.setMenuDim();
 			overInterfaccia=false;
-			try{
-				document.getElementById("meridianiSmart_ico").classList.remove("nas");
-				document.getElementById("meridianiSmart_cont").classList.remove("nas");
-			}catch(err){};
+			
+			if(!noNas){
+				SCHEDA.gestVisSmart(false);
+			}
+			SCHEDA.gestVisAnatomia(false);
 		}});
 	},
 	nasScheda: function(){
@@ -342,7 +333,7 @@ var SCHEDA = {
 			document.getElementById("scheda").style.top = "";
 			document.getElementById("scheda").style.width = "";
 			
-			let mm = 20,//smartMenu ? 1 : 20,
+			let mm = 20,
 				h =(HF()-(SCHEDA.aggancio.sotto.y-SCHEDA.gapScheda)-SCHEDA.getMM()+mm);
 			
 			document.getElementById("scheda_testo").style.height = h + 'px';
@@ -371,31 +362,71 @@ var SCHEDA = {
 		SCHEDA.verPosScheda();
 		SCHEDA.swMenuScheda('chiudi');
 	},
-	/* nascondiScheda: function(){
-		document.getElementById("riapriTit").innerHTML = document.getElementById("scheda_titolo").innerHTML;
-		document.body.classList.add("nasSch");
-		onWindowResize();
-		startAnimate();
-		if(!globals.modello.cartella)cambiaModello(globals.set.modelli[0]);
-	},
-	riapriScheda: function(){
-		if(document.body.classList.contains("nasSch")){
-			document.body.classList.remove("nasSch");
-			document.getElementById("riapriTit").innerHTML = '';
-			document.getElementById("scheda_testo").style.height = (HF() - 47) + "px";
-			document.getElementById("scheda_testo").style.height = (HF() - 47) + "px";
-			onWindowResize();
-			stopAnimate();
-		}
-	}, */
 	riapriMenu: function(){
-		SCHEDA.scaricaScheda();
+
+		let tipologia = '',
+			M = '';
+		if(document.getElementById("scheda").classList.contains("tab_punti")){
+			if(globals.set.cartella=='meridiani_cinesi' || globals.set.cartella=='meridiani_shiatsu'){
+				tipologia = 'tsubo';
+				M = SET.splitPoint(SET.ptSel.name).siglaMeridiano;
+			}
+			if(globals.set.cartella=='auricologia'){
+				tipologia = 'punto';
+			}
+			if(globals.set.cartella=='reflessologia_plantare'){
+				tipologia = 'punto';
+			}
+		}
+		if(document.getElementById("scheda").classList.contains("scheda_patologia")){
+			tipologia = 'patologia';
+		}
+
 		if(	document.getElementById("scheda").classList.contains("tab_punti") || 
 			document.getElementById("scheda").classList.contains("scheda_patologia") || 
 			document.getElementById("scheda").classList.contains("scheda_procedura") || 
 			document.getElementById("scheda").classList.contains("scheda_teoria") ||
-			document.getElementById("scheda").classList.contains("scheda_video") )SCHEDA.apriElenco('set',true);
-		else SCHEDA.apriElenco('base',true);
+			document.getElementById("scheda").classList.contains("scheda_video") )SCHEDA.apriElenco('set',true,true);
+		else SCHEDA.apriElenco('base',true,true);
+		
+		switch(tipologia){
+			case "tsubo":
+				SCHEDA.selElenco('meridiani');
+				setTimeout(function(){
+					if(!document.getElementById("e_"+M).classList.contains("visElPt"))document.getElementById("p"+M).click();
+					document.querySelector(".listaMeridiani").scrollTo(0,tCoord(document.getElementById("p"+M),'y')-80-tCoord(document.getElementById("elenchi"),'y'))
+				},200);
+				document.getElementById("sc").dataset.funct = document.getElementById("sc").dataset.funct.replace("chiudiPunto()","chiudiPunto(true)");
+				break;
+			case "punto":
+				SCHEDA.selElenco('punti');
+				setTimeout(function(){
+					SET.swElencoPt(document.getElementById("p_punti"),'punti');
+				},200);
+				break;
+			case "area":
+				SCHEDA.selElenco('punti');
+				break;
+			case "patologia":
+				SCHEDA.selElenco('patologie');
+				break;
+		}
+		SCHEDA.scaricaScheda(false,true);
+	},
+	gestVisSmart: function( add ){
+		if(smartMenu){
+			try{
+				document.getElementById("meridianiSmart_ico").classList.toggle("nas",add);
+				document.getElementById("meridianiSmart_cont").classList.toggle("nas",add);
+			}catch(err){};
+		}
+	},
+	gestVisAnatomia: function( add ){
+		if(smartMenu){
+			try{
+				document.getElementById("contBtnModello").classList.toggle("vis",add);
+			}catch(err){};
+		}
 	},
 	
 	iniziaMoveScheda: function( event, onTitle=false, onRet=false ){ // sposta la scheda libera o ridimansina quella sotto
@@ -447,6 +478,7 @@ var SCHEDA = {
 		if(SCHEDA.aggancio.tipo == 'sotto'){
 			let h = SCHEDA.tIni-(SCHEDA.yMouseAtt - SCHEDA.yMouseIni),
 				mm = SCHEDA.getMM()-SCHEDA.gapScheda;
+			if(smartMenu)mm -= 60;
 			if(h>HF()-mm)h = HF()-mm;
 			if(document.getElementById("scheda").scrollHeight<=275){
 				document.getElementById("scheda").classList.add("h150");
@@ -458,9 +490,13 @@ var SCHEDA = {
 			if(smartMenu && h<40)h=40;
 			if(h>5)SCHEDA.hOpened = h;
 			else SCHEDA.hOpened = 200;
+			if(smartMenu)localStorage.hOpened = SCHEDA.hOpened;
 			document.getElementById("scheda_testo").style.height = h +'px';
 			document.getElementById("scheda_testo2").style.height = h +'px';
 			SCHEDA.memHrit = h + "px";
+
+			SCHEDA.resizeElenchi(h);
+			
 		}
 		if(SCHEDA.aggancio.tipo == 'lato'){
 			// non esiste
@@ -482,10 +518,7 @@ var SCHEDA = {
 		if(SCHEDA.aggancio.tipo == 'sotto'){
 			if(SCHEDA.yMouseIni == y){
 				h = "0"+document.getElementById("scheda_testo").style.height.replace("px","")+"";
-				if(!smartMenu){
-					if(h==0)h=SCHEDA.hOpened;
-					else h=0;
-				}
+				if(smartMenu)localStorage.hOpened = SCHEDA.hOpened;
 				document.getElementById("scheda_testo").style.height = h+'px';
 				document.getElementById("scheda_testo2").style.height = h+'px';
 				document.getElementById("scheda").classList.toggle("h150", (document.getElementById("scheda").scrollHeight<=275));
@@ -504,6 +537,16 @@ var SCHEDA = {
 		}else{
 			document.body.removeEventListener("touchend", SCHEDA.arrestaMoveScheda, false );
 			document.body.removeEventListener("touchmove", SCHEDA.moveMoveScheda, false );	
+		}
+	},
+	resizeElenchi: function( h, inizio ){
+		if(smartMenu){
+			document.getElementById("elenchi").style.height = 'calc(100% - '+(HF()-h+37)+'px)';
+			if(inizio){
+				SCHEDA.hOpened = h;
+				document.getElementById("scheda_testo").style.height = h +'px';
+				document.getElementById("scheda_testo2").style.height = h +'px';
+			}
 		}
 	},
 	
@@ -599,8 +642,6 @@ var SCHEDA = {
 	},
 	arrestaRedimScheda: function( event ){
 		event.preventDefault();
-		/* let x = touchable ? SCHEDA.xMouseAtt : event.clientX,
-			y = touchable ? SCHEDA.yMouseAtt : event.clientY; */
 		SCHEDA.verPosScheda();
 		if(SCHEDA.aggancio.tipo == 'libera'){
 			SCHEDA.aggancio.libera.w = document.getElementById("scheda").scrollWidth;
@@ -776,24 +817,23 @@ var SCHEDA = {
 	
 	initElenco: function(){
 		document.getElementById("elenchi_pulsanti").classList.add("visSch");
-		/* if(!smartMenu) */SCHEDA.chiudiElenco();
-		/* else onWindowResize(); */
+		SCHEDA.chiudiElenco();
 	},
 	caricaElenco: function( titolo, html ){
 		document.getElementById("scheda").classList.add("visSch_1");
-		document.getElementById("elenchi_titolo").innerHTML=titolo;
+		document.getElementById("elenchi_titolo_txt").innerHTML=titolo;
 		document.getElementById("lista_set").innerHTML=html;
 	},
 	scaricaElenco: function(){
 		document.getElementById("scheda").classList.remove("schOp");
 		document.getElementById("elenchi_lista").classList.remove("visSch");
-		document.getElementById("elenchi_titolo").innerHTML='';
+		document.getElementById("elenchi_titolo_txt").innerHTML='';
 		document.getElementById("lista_set").innerHTML='';
 		if(SCHEDA.elencoSel)SCHEDA.swPulsanti();
 		SCHEDA.elencoSel = '';
 		SCHEDA.scaricaPulsanti();
 	},
-	apriElenco: function( tipo=false, daMenu=false ){
+	apriElenco: function( tipo=false, daMenu=false, noNas=false ){
 		if(	daMenu &&
 			document.getElementById("elenchi_cont").classList.contains("visSch") &&
 			document.getElementById("elenchi").classList.contains("vis_"+tipo)){
@@ -808,7 +848,6 @@ var SCHEDA = {
 		MENU.desIcona();
 		MENU.chiudiMenu();
 		SCHEDA.setMenuDim();
-		/* let expanded = false; */
 		if(tipo){
 			document.getElementById("elenchi").classList.remove("vis_base");
 			document.getElementById("elenchi").classList.remove("vis_set");
@@ -833,24 +872,26 @@ var SCHEDA = {
 		document.getElementById("elenchi").classList.add("visSch");
 		document.getElementById("elenchi_cont").classList.add("visSch");
 		document.getElementById("scheda").classList.add("schOp");
-		/* if(smartMenu)SCHEDA.verPosScheda(); */
 		if(visGuida){
 			if(document.getElementById("elenchi").classList.contains("vis_base")){
-				if(!SCHEDA.elencoSel)GUIDA.visFumetto("guida_archivi",false,true);
+				if(!SCHEDA.elencoSel && !smartMenu)GUIDA.visFumetto("guida_archivi",false,true);
 			}else{
 				try{
-					if(!SCHEDA.elencoSel)GUIDA.visFumetto("guida_set",false,true);
+					if(!SCHEDA.elencoSel && !smartMenu)GUIDA.visFumetto("guida_set",false,true);
 				}catch(err){};
 			}
 		}
 		SCHEDA.setMenuDim();
 		SCHEDA.verPosScheda();
 		if(tipo=='set' && document.getElementById("scheda").classList.contains("visSch"))document.getElementById("p_cartella").classList.remove("p_sel");
+		if(!noNas){
+			SCHEDA.gestVisSmart(true);
+		}
 	},
 	setMenuDim: function(){
 		document.getElementById("scheda").classList.toggle("schRid", document.getElementById("elenchi").classList.contains("visSch"));
 	},
-	chiudiElenco: function(){
+	chiudiElenco: function( noNas ){
 		document.getElementById("elenchi_cont").classList.remove("visSch");
 		document.getElementById("scheda").classList.remove("schOp");
 		document.getElementById("elenchi").classList.remove("visSch");
@@ -858,6 +899,10 @@ var SCHEDA = {
 		SCHEDA.setMenuDim();
 		MENU.setTT();
 		SCHEDA.verPosScheda();
+		
+		if(!noNas){
+			SCHEDA.gestVisSmart(false);
+		}
 	},
 	torna: function( daCarica ){
 		if(document.getElementById("scheda").className.indexOf("schedaRitorno") > -1){
@@ -902,7 +947,7 @@ var SCHEDA = {
 		}
 		document.getElementById("pulsante_"+elenco).classList.add("elencoSel");
 		document.getElementById("lista_"+elenco).classList.add("visSch");
-		document.getElementById("elenchi_titolo").innerHTML = document.getElementById("pulsante_"+elenco).innerHTML + iconaAdd;
+		document.getElementById("elenchi_titolo_txt").innerHTML = document.getElementById("pulsante_"+elenco).innerHTML + iconaAdd;
 		SCHEDA.setTriploLivello( elenco );
 		document.getElementById("elenchi_titolo").classList.add("visSch");
 		document.getElementById("elenchi").classList.add("LISTE");
@@ -931,13 +976,8 @@ var SCHEDA = {
 		}
 	},
 	individuaElemento: function( id, lista ){
-		//if(!smartMenu){
-			let y = tCoord(document.getElementById(id),'y')-tCoord(document.querySelector('.'+lista),'y');
-			document.querySelector('.'+lista).scroll(0,y-50);
-		/* }else{
-			let x = tCoord(document.getElementById(id))-tCoord(document.querySelector('.'+lista));
-			document.querySelector('.'+lista).scroll(x-50,0);
-		} */
+		let y = tCoord(document.getElementById(id),'y')-tCoord(document.querySelector('.'+lista),'y');
+		document.querySelector('.'+lista).scroll(0,y-50);
 	},
 	swPulsanti: function(forza){
 		if(	SCHEDA.elencoSelBase=='pazienti' && 
@@ -1022,8 +1062,7 @@ var SCHEDA = {
 	getMM: function(){
 		let addForm = 0,
 			mm = 90 + addForm;
-		/* if(smartMenu)mm += 5 + document.getElementById("elenchi").scrollHeight + document.getElementById("icone").scrollHeight;
-		else  */if(SCHEDA.aggancio.tipo == 'sotto')mm+=20;
+		if(SCHEDA.aggancio.tipo == 'sotto')mm+=20;
 		else if(SCHEDA.aggancio.tipo == 'lato')mm-=41;
 		return mm;
 	},
@@ -1077,7 +1116,6 @@ var SCHEDA = {
 			if(SCHEDA.aggancio.tipo == 'sotto'){
 				let h = 0,
 					mm = 20;
-				//if(smartMenu)mm = 1;
 				if(tCoord(document.getElementById("scheda"),'y') < mm){
 					h = (HF()-SCHEDA.getMM()+SCHEDA.gapScheda);
 				}else{

@@ -28,6 +28,11 @@ body.uomo #pulsante_modello{
 .smart .simboliPunto{
 	margin-top: 20px;
 }
+.smart .cont_simboliPunto{
+	display: inline;
+    float: right;
+    margin-left: 21px;
+}
 .simboliPatologia{
 	float: right;
     width: 38px;
@@ -45,8 +50,6 @@ body.uomo #pulsante_modello{
 }
 .ideogrammaPuntoChar{
 	border-radius: 20px;
-	background-color: #999999;
-	color: #FFF;
 	padding: 15px 10px;
 	margin: -15px;
     margin-left: 20px !important;
@@ -54,11 +57,18 @@ body.uomo #pulsante_modello{
 	padding-top: 26px;
     border-top-left-radius: 14px;
 }
+body:not(.smart) .ideogrammaPuntoChar{
+	background-color: #999999;
+	color: #FFF;
+}
 .smart .ideogrammaPuntoChar,
 .smart .ideogrammaMeridianoChar{
     font-size: 38px !important;
     line-height: 44px !important;
 	font-weight: normal !important;
+}
+.smart .ideogrammaPuntoChar{
+	margin-top: -4px;
 }
 .ideogrammaMeridianoChar{
 	position: absolute;
@@ -74,14 +84,14 @@ body.uomo #pulsante_modello{
     font-size: 38px !important;
     line-height: 44px !important;
 }
-#scheda.schLato .ideogrammaMeridianoChar,
 .smart .ideogrammaMeridianoChar{
-    top: 46px;
-    height: calc(100% - 46px);
-}
-body:not(.smart) #scheda:not(.schLato) .ideogrammaMeridianoChar{
     top: 71px;
     height: calc(100% - 71px);
+}
+#scheda.schLato .ideogrammaMeridianoChar,
+body:not(.smart) #scheda:not(.schLato) .ideogrammaMeridianoChar{
+    top: 46px;
+    height: calc(100% - 46px);
 }
 .speach_icon{
 	width: 31px;
@@ -93,6 +103,9 @@ body:not(.smart) #scheda:not(.schLato) .ideogrammaMeridianoChar{
     float: right;
     margin-top: -17px;
     opacity: 0.6;
+}
+.smart .speach_icon{
+	background-color: rgba(0, 0, 0, 0.6);
 }
 .ideogrammaMeridianoChar img{
 	width: 31px;
@@ -139,9 +152,6 @@ body:not(.smart) #scheda:not(.schLato) .ideogrammaMeridianoChar{
 	background-image:url(img/p_rx_sel.png) !important;
 	display:none;
 }
-/*.smart .btn_meridiani_cinesi{
-	background-image:url(img/logoBlu.png) !important;
-}*/
 .btn_meridiani_cinesi{
 	cursor:default !important;
 }
@@ -172,9 +182,6 @@ body:not(.smart) #scheda:not(.schLato) .ideogrammaMeridianoChar{
 }
 
 /* SCHEDE */
-.pallinoPat,
-.pallinoPunto{
-}
 .pallinoPat:not(.pallinoPunto){
 	display:inline-block;
 	padding-left:16px;
@@ -190,7 +197,6 @@ body:not(.smart) #scheda:not(.schLato) .ideogrammaMeridianoChar{
 }
 .pallinoPunto{
 	color: #366ee1;
-	/*cursor:pointer;*/
 }
 .pallinoPat:not(.ptNoSel):not(.pallinoPunto){
 	cursor:pointer;
@@ -280,10 +286,7 @@ body:not(.smart) #scheda:not(.schLato) .ideogrammaMeridianoChar{
 body:not(.smart) #p_set{
 	background: url(img/logoMenu.png), linear-gradient(to bottom, #0f3a89 0%,#1546a1 5px,#1546a1 calc(100% - 5px),#0f3a89 100%);
 }
-/*body:not(.bodyStyled1):not(.bodyStyled2):not(.smart) #p_set{
-	background-image: url(img/logoMenuN.png);
-}*/
-/*body:not(.touch) */#p_set svg polygon{
+*/#p_set svg polygon{
 	fill: var(--menu-fondino);
 }
 .listaMeridiani > div{
@@ -296,13 +299,13 @@ body:not(.smart) #p_set{
     width:32px;
 	height:32px;
 	border-radius:16px;
-	/*background-image:url(../../img/frGiuB.png);*/
 	background-size:auto 40px;
 	background-repeat: no-repeat;
 	background-position:center center;
 }
 .smart .listaMeridiani > div strong{
-	margin-right: -4px !important;
+	margin-right: 4px !important;
+    margin-top: 4px;
 }
 
 .listaMeridiani > div:not(.frSw) strong{
@@ -405,7 +408,6 @@ body:not(.smart) .elencoPunti a *{
 body:not(.smart) .selElPt{
 	background-color:rgba(0,0,0,0.3) !important;
 }
-/* linguetta a destra */
 #lista_meridiani div span { 
     float: right;
     margin-right: -16px;
@@ -607,7 +609,6 @@ body:not(.smart) .listaMeridiani .p_aria:not(.elencoSel) span:hover{
     border: none !important;
     background: transparent !important;
     border-radius: 0px !important;
-    /*width: calc(100% - 10px) !important;*/
 	height: 24px !important;
     margin-bottom: 3px;
 	font-style:italic;
@@ -656,7 +657,6 @@ body:not(.smart) .listaMeridiani .p_aria:not(.elencoSel) span:hover{
     right: 5px;
 	width:40px;
 	height:40px;
-	/*background-image:url(../../img/jingB.png);*/
 	background-image:url(../../img/ico_meridianiB.png);
 	background-repeat: no-repeat;
 	background-position: center center;
@@ -665,9 +665,6 @@ body:not(.smart) .listaMeridiani .p_aria:not(.elencoSel) span:hover{
 	border-radius:6px;
 	background-color: rgba(0,0,0,0.2);
 }
-/*body.bodyStyled2:not(.smart) #meridianiSmart_ico{
-	background-image:url(../../img/ico_meridiani.png);
-}*/
 .smart #meridianiSmart_ico{
 	width: 50px !important;
     height: 50px !important;
@@ -735,7 +732,6 @@ body:not(.smart) #meridianiSmart_ico.visSch{
 	width: 40px !important;
     height: 40px !important;
     line-height: 40px !important;
-   /*  border-radius: 20px !important; */
     font-size: var(--font-11) !important;
     border-radius: 13px !important;
 	font-weight: bold;

@@ -79,16 +79,10 @@ var SET = {
 							matLine=cloneMAT(this.MAT.lineSel);
 							if(!LNS[l].interno)matLine.depthFunc = 3;
 							if(MERIDIANI[m].colore)matLine.color = new THREE.Color( SET.COL["sel"+MERIDIANI[m].colore] );
-							/* if(LNS[l].interno){ // attivare se si vuole gestire con il colore anziché con la trasparenza
-								op = 0.8; // con colore
-								matLine.color = new THREE.Color( SET.COL.selInt );
-								matLine.linewidth = 0.0015;
-							} */
 							matLine.uniforms.opacity.value = op;
 							
 							if(m.indexOf("_MT")>-1){
 								matLine.color = new THREE.Color( SET.COL.selMT );
-								//matLine.linewidth = lineWidth*.75;
 							}
 							matLine.linewidth = SET.MAT.lineWidth*.75;
 						}else{
@@ -199,9 +193,6 @@ var SET = {
 		let contPulsanti = 	'<span class="menuElenchi" onclick="MENU.visMM(\'btnCarMapMenu\');"></span>' +
 							'<span id="btnCarMapMenu" class="btn_meridiani_cinesi titolo_set">' +
 							'<span>AcupointsMap</span>' +
-							/* '<i class="elMenu" id="chiudiSet" onClick="chiudiSet();" title="'+htmlEntities(TXT("ChiudiSet"))+'"><span>' +
-								htmlEntities(TXT("ChiudiSet")) +
-							'</span></i>' + */
 							'<i class="elMenu" id="impostazioniSet" onClick="MENU.visImpset();" title="'+htmlEntities(TXT("ImpostazioniSet"))+'"><span>' +
 								htmlEntities(TXT("ImpostazioniSet")) +
 							'</span></i>' +
@@ -236,8 +227,6 @@ var SET = {
 
 		contPulsanti += '<span id="quitSet" onClick="chiudiSet();">'+TXT("EsciDa")+' AcupointsMap</span>';
 		
-		//contPulsanti += '<span id="tueLicenzeMappa" class="tueLicenze"><span onClick="MENU.visLicenze();">'+TXT("TueLicenze")+'</span></span>';
-		
 		let contBtns = '<div id="p_contrasto" class="p_noTxt" onClick="SET.swContrastMethod();"></div>';
 		
 		let contIcona = '<div id="p_set" onClick="SCHEDA.apriElenco(\'set\',true);"><svg viewBox="0 0 12 48"><polygon points="5,24 12,13 12,35"></polygon></svg><i>'+htmlEntities(TXT("AcupointsMap"))+'</i></div>';;
@@ -249,7 +238,7 @@ var SET = {
 		SCHEDA.swPulsanti(true);
 		
 		document.getElementById("divs").innerHTML = '<div id="meridianiSmart_ico" class="noPrint visSch" onClick="SET.swMeridianiSmart();" title="'+htmlEntities(TXT("MeridianiSmart"))+'"></div><div id="meridianiSmart_cont" class="noPrint visSch"></div>';
-		//SCHEDA.apriElenco();
+		
 		if(preElenco)SCHEDA.selElenco(preElenco);
 		
 		manichino.add( SETS );
@@ -524,7 +513,9 @@ var SET = {
 					controlsM._MM=false;
 				}
 				let n=this.INTERSECTED.name.split("_"),
-					ritorno = '';
+					ritorno = '',
+					errore = __(this.INTERSECTED.name,"ERRORE");
+					
 				if(SCHEDA.classeAperta && SCHEDA.classeAperta!='tab_punti')ritorno = 'SET.chiudiPunto(true)';
 				SET.apriPunto(n[1],ritorno,this.INTERSECTED);
 			}
@@ -589,6 +580,8 @@ var SET = {
 			let vector = this.ptSel.geometry.vertices[0].clone();
 			vector.applyMatrix4( this.ptSel.matrixWorld );
 			panEnd = { x: vector.x, y: vector.y, z: vector.z };
+		}else if(smartMenu){
+			panEnd = { x: 0, y: 0.25, z: 0 };
 		}else panEnd = { x: 0, y: 0, z: 0 };
 		
 		
@@ -750,7 +743,6 @@ var SET = {
 		}
 		els = this.LN[siglaMeridiano].children;
 		let Y = MERIDIANI[siglaMeridiano].yin ? 'Yin' : 'Yang';
-		//if(matPoint=='On')Y='';
 		for(v in els){
 			let int='';
 			if(els[v].userData.interno)int='Int';
@@ -866,8 +858,8 @@ var SET = {
 	swContrastMethod: function(n=SET.COL.contrastMethod){
 		SET.COL.contrastMethod=n ? false : true;
 		if(SET.COL.contrastMethod){
-			/* SET.MAT.lineYang.uniforms.opacity.value = SET.MAT.opLineContr;
-			SET.MAT.lineYin.uniforms.opacity.value = SET.MAT.opLineContr; */
+			SET.MAT.lineYang.uniforms.opacity.value = SET.MAT.opLineContr;
+			SET.MAT.lineYin.uniforms.opacity.value = SET.MAT.opLineContr;
 			SET.MAT.pointBase.opacity = SET.MAT.opPointContr;
 			let muscolare = false;
 			if(SET.meridianiSecondariAccesi.length){

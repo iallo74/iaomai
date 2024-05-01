@@ -893,33 +893,51 @@ var MODELLO = {
 	},
 	slw: function( event, livello ){
 		SLIDER.demolt = 2;
-		let sliderDest = document.getElementById('s_'+livello).getElementsByTagName('div')[0],
+		let sliderDestCont = document.getElementById('s_'+livello),
+			sliderDest = sliderDestCont.getElementsByTagName('div')[0],
 			modelloAperto = document.getElementById("pulsanti_modello").classList.contains("visSch");
 		if(!modelloAperto){
 			document.getElementById("pulsanti_modello").style.opacity = 0;
 			document.getElementById("pulsanti_modello").classList.add("visSch");
 		}
-		SLIDER.iniziaSlide(event,sliderDest);
+		SLIDER.iniziaSlide(event,sliderDest,true);
 		if(!modelloAperto){
 			document.getElementById("pulsanti_modello").classList.remove("visSch");
 			document.getElementById("pulsanti_modello").style.opacity = 1;
 		}
-		
 		let x = touchable ? event.touches[ 0 ].pageX : event.clientX,
 			y = touchable ? event.touches[ 0 ].pageY : event.clientY,
-			w = 210 / SLIDER.demolt;
-		if(livello=='pelle' || !document.getElementById("el_"+livello).innerHTML)w = 240 / SLIDER.demolt;
+			w = 0,
+			anatomyOp = document.getElementById("pulsanti_modello").classList.contains("visSch");
+		
+		if(!anatomyOp)document.getElementById("pulsanti_modello").classList.add("visSch");
+		w = sliderDestCont.scrollWidth / SLIDER.demolt;
+		if(!anatomyOp)document.getElementById("pulsanti_modello").classList.remove("visSch");
+
+		//if(livello=='pelle' || !document.getElementById("el_"+livello).innerHTML)w = 240 / SLIDER.demolt;
 		let posSlider = MENU.getOp(livello)*(w - 12),
 			posCont = MENU.getOp(livello)*(w - 12) + 17;
-		document.getElementById("sliderAnatomia").style.width = (w+22) + 'px';
+		if(smartMenu){
+			document.getElementById("sliderAnatomia").style.height = (w+34) + 'px';
+		}else{
+			document.getElementById("sliderAnatomia").style.width = (w+22) + 'px';
+		}
 		document.getElementById("sliderAnatomia").classList.add("visSch");
 		
 		let sliderDiv = document.getElementById("sliderAnatomia").querySelector(".slider"),
 			sliderBtn = sliderDiv.getElementsByTagName("div")[0];
 		
-		sliderBtn.style.marginLeft = posSlider + 'px';
-		document.getElementById("sliderAnatomia").style.left = (x - posCont) + 'px';
-		document.getElementById("sliderAnatomia").style.top = (y - 16) + 'px';
+		if(smartMenu){
+			sliderBtn.style.marginTop = (SLIDER.maxVal/SLIDER.demolt-posSlider) + 'px';
+			let left = (x - 20);
+			if(left<0)left = 0;
+			document.getElementById("sliderAnatomia").style.left = left + 'px';
+			document.getElementById("sliderAnatomia").style.top = (y - ( SLIDER.maxVal/SLIDER.demolt - posCont)-40) + 'px';
+		}else{
+			sliderBtn.style.marginLeft = posSlider + 'px';
+			document.getElementById("sliderAnatomia").style.left = (x - posCont) + 'px';
+			document.getElementById("sliderAnatomia").style.top = (y - 16) + 'px';
+		}
 		if(livello!='pelle' && livello!='aree'){
 			let l = 'Pelle';
 			if(areasView)l = 'Aree';

@@ -104,7 +104,6 @@ var MODULO_PATOLOGIE = { // extend SET
 		}
 		DB.set.patologie.sort(sort_by("NomePatologia"));
 		DB.set.patologie.sort(sort_by("evi",true));
-		//DB_patologie = null;
 		SET.caricaPatologie();
 		SET.componiMeridiani();
 	},
@@ -181,7 +180,6 @@ var MODULO_PATOLOGIE = { // extend SET
 			if(!vuota)contPatologie += contCartella;
 		}
 		document.getElementById("lista_patologie").innerHTML = contPatologie;
-		//SET.caricaMeridiani();
 	},
 	apriPatologia: function( n, btn ){
 		// apre la scheda della patologia
@@ -203,7 +201,6 @@ var MODULO_PATOLOGIE = { // extend SET
 			html = 	"<h1>"+htmlEntities(titolo)+"</h1>" +
 					// aggiungo contenuto custom
 					CUSTOMS.addContent("patologie_"+n,SET.convPuntiScheda(DB.set.patologie[n].TestoPatologia));
-					//SET.convPuntiScheda(DB.set.patologie[n].TestoPatologia);
 		
 		// sesso
 		if(DB.set.patologie[n].sessoPatologia){
@@ -216,9 +213,7 @@ var MODULO_PATOLOGIE = { // extend SET
 			document.getElementById("scheda").classList.contains("visSch") &&
 			SCHEDA.verificaSchedaRet() )ritorno = "document.getElementById('scheda').classList.remove('scheda_patologia')";
 			
-		let btnAdd = 	'';/*'<div class="p_paz_ref_menu" onClick="REF.open(\'sets.meridiani_shiatsu.pathologies\')">' +
-							TXT("ReferenceGuide") +
-						'</div>';*/
+		let btnAdd = 	'';
 			
 		SCHEDA.caricaScheda(	titolo,
 								html,
@@ -230,6 +225,7 @@ var MODULO_PATOLOGIE = { // extend SET
 								btnAdd,
 								globals.set.cartella+'_patologie_'+siglaPatologia );
 		SET.convSigleScheda();
+		SCHEDA.gestVisAnatomia(true);
 		
 		let els = document.getElementById("scheda_testo").getElementsByClassName("schedaSpecifica"),
 			selected = false;

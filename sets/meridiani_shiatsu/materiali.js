@@ -4,12 +4,9 @@
 SET.COL = {
 	sel: 0xFF0000,
 	selInt: 0xCC7F7F,
-	/* musc: 0x33FF00, */
 	musc: 0xFF0000,
-	/* lineMusc: 0x99B2CC, */
 	lineMusc: 0x575454,
 	basePT: 0x7F7F7F,
-	/* basePTmusc: 0xFFFFFF, */
 	basePTmusc: 0x575454,
 	base: 0x637281,
 	over: 0xFFFFFF,
@@ -113,11 +110,6 @@ SET.MAT = {
 		dashed: false,
 		depthFunc: 3
 	} ),
-	/* lineGuide: new THREE.LineBasicMaterial( {
-		color: SET.COL.guide,
-		transparent: true,
-		opacity:0.6
-	} ), */
 	lineFrecce: new THREE.LineBasicMaterial( {
 		name: "lineFrecce",
 		color: SET.COL.baseFR,
@@ -193,7 +185,7 @@ SET.MAT = {
 	pointSel2: new THREE.MeshStandardMaterial( {
 		name: "pointSel2",
 		side: 3,
-		color: 0xFFFFFF, /* COLsel, */
+		color: 0xFFFFFF,
 		roughness:1,
 		transparent: true,
 		blending: 2,
@@ -203,7 +195,7 @@ SET.MAT = {
 	pointSel2NK: new THREE.MeshStandardMaterial( {
 		name: "pointSel2NK",
 		side: 3,
-		color: 0xFFFFFF, /* COLsel, */
+		color: 0xFFFFFF,
 		roughness:1,
 		transparent: true,
 		blending: 2,
@@ -278,10 +270,6 @@ SET.MAT.lineYinInt = cloneMAT(SET.MAT.lineYin,{color:SET.COL.selInt, depthFunc: 
 SET.MAT.lineYinOver = cloneMAT(SET.MAT.lineYin,{color: SET.COL.over});
 SET.MAT.lineYinIntOver = cloneMAT(SET.MAT.lineYinInt,{color: SET.COL.over});
 
-/* SET.MAT.lineYangInt.uniforms.opacity.value = 0.3;
-SET.MAT.lineYinInt.uniforms.opacity.value = 0.3; */
-
-
 SET.MAT.lineYangOver.uniforms.opacity.value = SET.MAT.opLineOver;
 SET.MAT.lineYangIntOver.uniforms.opacity.value = SET.MAT.opLineOver;
 SET.MAT.lineYinOver.uniforms.opacity.value = SET.MAT.opLineOver;
@@ -296,11 +284,7 @@ SET._setLineMaterials = function(){
 			col4 = SET.COL.base,
 			depthFunc = 3;
 		if(MODELLO.opAtt<0.85)depthFunc = 1;
-
-		/* if( SET.COL.contrastMethod){
-			if(!areasView)col =  SET.COL.sel;
-			else col =  SET.COL.musc;
-		} */
+		
 		if(areasView){
 			col3 = SET.COL.basePTmusc;
 			col4 = SET.COL.lineMusc;
@@ -416,35 +400,6 @@ SET._setLineMaterials = function(){
 	SET.MAT.lineYinInt.linewidth = SET.MAT.lineWidth;
 	SET.MAT.lineYinOver.linewidth = SET.MAT.lineWidth;
 	SET.MAT.lineYinIntOver.linewidth = SET.MAT.lineWidth;
-}
-	
-SET._setLineTrasp = function(depthFunc){
-	
-	for(let elemento in SET.colsElementi){
-	
-		SET.MAT.lineYangOn[elemento].depthFunc = depthFunc;
-		SET.MAT.lineYinOn[elemento].depthFunc = depthFunc;
-		SET.MAT.lineYangIntOn[elemento].depthFunc = depthFunc;
-		SET.MAT.lineYinIntOn[elemento].depthFunc = depthFunc;
-		SET.MAT.lineYangOnMAS[elemento].depthFunc = depthFunc;
-		SET.MAT.lineYinOnMAS[elemento].depthFunc = depthFunc;
-		SET.MAT.lineYangIntOnMAS[elemento].depthFunc = depthFunc;
-		SET.MAT.lineYinIntOnMAS[elemento].depthFunc = depthFunc;
-		
-	}
-		
-	SET.MAT.lineYang.depthFunc = depthFunc;
-	SET.MAT.lineGuide.depthFunc = depthFunc;
-	
-	SET.MAT.lineYang.depthFunc = depthFunc;
-	SET.MAT.lineYangInt.depthFunc = depthFunc;
-	SET.MAT.lineYangOver.depthFunc = depthFunc;
-	SET.MAT.lineYangIntOver.depthFunc = depthFunc;
-	SET.MAT.lineYin.depthFunc = depthFunc;
-	SET.MAT.lineYinInt.depthFunc = depthFunc;
-	SET.MAT.lineYinOver.depthFunc = depthFunc;
-	SET.MAT.lineYinIntOver.depthFunc = depthFunc;
-		
 }
 	
 SET._setResolution = function(){

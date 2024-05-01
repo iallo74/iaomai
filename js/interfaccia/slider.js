@@ -1,20 +1,24 @@
 var SLIDER = {
-	mIni: 0,
+	mL_Ini: 0,
+	mT_Ini: 0,
 	xIni: 0,
 	xAtt: 0,
+	yIni: 0,
+	yAtt: 0,
 	maxVal: 0,
 	demolt: 1, // demoltiplicatore per il selettore rapido di anatomia
 	livelloSel: '',
 	slider: null,
 	slider_btn: null,
-	iniziaSlide: function(event,el){
+	type: '',
+	iniziaSlide: function(event,el,smart=''){
 		event.preventDefault();
 		livello=el.parentElement.parentElement.id.replace("p_","");
 		if(el.parentElement.parentElement.className.indexOf("disattLiv") > -1){
 			if(livello == 'pelle' && areasView)MODELLO.swArea(2);
 			if(livello == 'aree' && !areasView)MODELLO.swArea(1);
-			//return;
 		}
+		SLIDER.type = smart ? 'smart' : '';
 		SLIDER.livelloSel = livello;
 		SLIDER.slider = document.getElementById("p_"+SLIDER.livelloSel).getElementsByClassName("slider")[0];
 		SLIDER.slider_btn = document.getElementById("p_"+SLIDER.livelloSel).getElementsByClassName("slider_btn")[0];
@@ -28,10 +32,17 @@ var SLIDER = {
 			document.body.addEventListener("touchmove", SLIDER.moveSlider, false );	
 		}
 		let mL = "0"+SLIDER.slider_btn.style.marginLeft.replace("px","")+"";
-		SLIDER.mIni = parseInt(mL);
+		SLIDER.mL_Ini = parseInt(mL);
+		SLIDER.mT_Ini = parseInt(mL);
 		if(touchable){
-			try{ SLIDER.xIni = event.touches[ 0 ].pageX; }catch(err){};
-		}else SLIDER.xIni = event.clientX;
+			try{
+				SLIDER.xIni = event.touches[ 0 ].pageX;
+				SLIDER.yIni = event.touches[ 0 ].pageY;
+			}catch(err){};
+		}else{
+			SLIDER.xIni = event.clientX;
+			SLIDER.yIni = event.clientY;
+		}
 		if(WF()<600)document.getElementById("pulsanti_modello").classList.add("pLight");
 		raycastDisable = true;
 		if(SET)SET._applyLineMethod();
@@ -39,14 +50,30 @@ var SLIDER = {
 	moveSlider: function(event){
 		event.preventDefault();
 		SLIDER.xAtt = touchable ? event.touches[ 0 ].pageX : event.clientX;
+		SLIDER.yAtt = touchable ? event.touches[ 0 ].pageY : event.clientY;
 		let diffX = SLIDER.xAtt - SLIDER.xIni,
-			mL = SLIDER.mIni/SLIDER.demolt + diffX;
+			diffY = SLIDER.yAtt - SLIDER.yIni,
+			mL = SLIDER.mL_Ini/SLIDER.demolt + diffX,
+			mT = SLIDER.mT_Ini/SLIDER.demolt - diffY;
+
 		if(mL<0)mL = 0;
+		if(mT<0)mT = 0;
 		if(mL>SLIDER.maxVal/SLIDER.demolt)mL = SLIDER.maxVal/SLIDER.demolt;
-		SLIDER.slider_btn.style.marginLeft = (mL*SLIDER.demolt)+'px';
+		if(mT>SLIDER.maxVal/SLIDER.demolt)mT = SLIDER.maxVal/SLIDER.demolt;
+		if(SLIDER.type=='smart' && smartMenu){
+			SLIDER.slider_btn.style.marginLeft = (mT*SLIDER.demolt)+'px';
+		}else{
+			SLIDER.slider_btn.style.marginLeft = (mL*SLIDER.demolt)+'px';
+		}
 		let btnSlideAnat = document.getElementById("sliderAnatomia").querySelector(".slider").getElementsByTagName("div")[0];
-		btnSlideAnat.style.marginLeft = (mL)+'px';
-		perc=(mL/SLIDER.maxVal)*SLIDER.demolt;
+		if(!SLIDER.type || !smartMenu){
+			if(!smartMenu)btnSlideAnat.style.marginLeft = (mL)+'px';
+			perc=(mL/SLIDER.maxVal)*SLIDER.demolt;
+		}else{
+			btnSlideAnat.style.marginTop = ((SLIDER.maxVal/SLIDER.demolt)-mT)+'px';
+			perc=(mT/SLIDER.maxVal)*SLIDER.demolt;
+		}
+		
 		let l = SLIDER.livelloSel.substr(0,1).toUpperCase()+SLIDER.livelloSel.substr(1,SLIDER.livelloSel.length-1);
 		MODELLO.op(l,perc);
 		raycastDisable = true;

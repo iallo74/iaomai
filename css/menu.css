@@ -348,6 +348,21 @@ body:not(.smart) #p_rifletti{
 	display:none;
 	opacity:0.2;
 }
+.smart #contBtnModello.vis #p_centro{
+	position: fixed;
+    top: 0px;
+    left: 4px;
+}
+.smart #contBtnModello.vis{
+	margin-top: 170px;
+    background-color: rgba(0, 0, 0, 0.2);
+    border-top-right-radius: 14px;
+    border-bottom-right-radius: 14px;
+}
+.smart #contBtnModello.vis div:not(#p_centro):not(#btns_set):not(#p_liv_pelle){
+	border-top: 1px solid rgba(255,255,255,0.2);
+	width: 36px !important;
+}
 .centroAtt{
 	opacity:0.5 !important;
 }
@@ -402,13 +417,25 @@ body:not(.Muscles)  #p_liv_aree{
 	opacity:0.5 !important;
 }
 
-.smart #p_liv_aree,
+/* .smart #p_liv_aree,
 .smart #p_liv_muscoli3d,
 .smart #p_liv_ossa,
 .smart #p_liv_legamenti,
 .smart #p_liv_visceri,
 .smart #p_liv_vasi,
 .smart #p_liv_pelle{
+	position:fixed !important;
+	left:-500px !important;
+	height:0px !important;
+	width:0px !important;
+} */
+.smart #contBtnModello:not(.vis) #p_liv_aree,
+.smart #contBtnModello:not(.vis) #p_liv_muscoli3d,
+.smart #contBtnModello:not(.vis) #p_liv_ossa,
+.smart #contBtnModello:not(.vis) #p_liv_legamenti,
+.smart #contBtnModello:not(.vis) #p_liv_visceri,
+.smart #contBtnModello:not(.vis) #p_liv_vasi,
+.smart #contBtnModello:not(.vis) #p_liv_pelle{
 	display:none !important;
 	position:fixed !important;
 	left:-500px !important;
@@ -877,7 +904,6 @@ body:not(.Muscles) #i_aree{
 	height: 24px;
 	border-radius:12px;
 	margin-top:-8px;
-	margin-top:-8px;
 	background-color: #FFF;
 	box-shadow:0px 0px 3px rgba(0,0,0,0.4);
 	cursor: pointer;
@@ -1249,16 +1275,33 @@ body:not(.Muscles) .selM{
 #sliderAnatomia{
 	display:none;
 	position:fixed;
-	top:0px;
-	height:30px;
 	box-shadow:0px 0px 10px rgba(0,0,0,0.5);
 	border-radius:5px;
+}
+body:not(.smart) #sliderAnatomia{
+	top:0px;
+	height:30px;
 	background: linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(0,0,0,0.1) 100%), #FFF;
 	width:220px;
 	padding-top:5px;
 }
-#sliderAnatomia .slider{
+.smart #sliderAnatomia{
+	left:0px;
+	width:42px;
+	background: linear-gradient(to right, rgba(0,0,0,0) 0%,rgba(0,0,0,0.1) 100%), #FFF;
+	height:220px;
+}
+body:not(.smart) #sliderAnatomia .slider{
 	width: calc(100% - 10px) !important;
+}
+.smart #sliderAnatomia .slider{
+	height: calc(100% - 10px) !important;
+	width: 14px;
+}
+.smart #sliderAnatomia .slider div{
+	width: 36px;
+    height: 36px;
+	margin-left: -11px;
 }
 
 
@@ -1474,7 +1517,6 @@ body:not(.bodyStyled2) #btn_modut{
 }
 
 #p_lingua{
-	/*display: none !important; /* tolto momentaneamente perché pronto solo ITA */
 	background-image:url(../img/ico_linguaprefN.png);
 }
 .bodyStyled2 #p_lingua{

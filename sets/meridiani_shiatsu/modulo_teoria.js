@@ -114,7 +114,6 @@ var MODULO_TEORIA = { // extend SET
 		}
 
 		html += "<h1>"+htmlEntities(titolo)+"</h1>";
-		//let html_cont = SET.convPuntiScheda(DB.set.teoria[p].contenuti[t].TestoTeoria);
 		
 		// aggiungo contenuto custom
 		let html_cont = CUSTOMS.addContent("teoria_"+p+"_"+t,SET.convPuntiScheda(DB.set.teoria[p].contenuti[t].TestoTeoria));
@@ -140,6 +139,7 @@ var MODULO_TEORIA = { // extend SET
 		SET.convSigleScheda();
 		let elsSzTeo = document.getElementById("scheda_testo").getElementsByClassName("szTeo");
 		if(elsSzTeo.length == -1)SET.evidenziaPunto();
+		SCHEDA.gestVisAnatomia(true);
 	},
 	caricaVideo: function( p, t, btn ){
 		// carica un approfondimento video
