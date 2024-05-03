@@ -230,6 +230,7 @@ var LOGIN = {
 			applicaLoading(document.querySelector(".listaServizi"));
 			applicaLoading(document.querySelector(".listaAnnotazioni"));
 			localStorage.RimaniConnesso = document.getElementById("stayConnected").checked;
+			
 			LOGIN.salvaToken(txt);
 			LOGIN.tmAttesaLogin = 	setInterval( function(){
 										if(LOGIN.logedin()){
@@ -239,17 +240,21 @@ var LOGIN = {
 											if(!LOGIN.retIni)SYNCRO.globalSync(false,false,Nuovo);
 											setTimeout(function(){LOGIN.scriviUtente();},1000);
 											document.getElementById("login").classList.remove("popup_back");
+											
+											document.getElementById("notLogged").classList.remove("visSch");
 											MENU.chiudiMenu();
 											MODELLO.filtraAnatomia();
 											try{ SET.filtraSet(); }catch(err){}
 											PAZIENTI.deselPaziente();
-											if(globals.set.cartella){
+											if(globals.set.cartella && !LOGIN.verMonoApp()){
 												let vSet = globals.set.cartella;
 												scaricaSet();
 												caricaSet(vSet);
 											}
 											PAZIENTI.cancellaFiltri(true);
 											SCHEDA.scaricaScheda();
+											LOGIN.verSets();
+											if(!globals.modello.cartella){inizio=true;caricaModello('donna');}
 										}
 									}, 500);
 		}
@@ -279,6 +284,7 @@ var LOGIN = {
 				}else{
 					LOGIN.getDB(true);
 					MENU.visFeatures();
+					LOGIN.verSets();
 				}
 				LOGIN.scriviUtente();
 				if(funct)eval(funct);
@@ -301,6 +307,12 @@ var LOGIN = {
 							
 						}
 					},2000);
+				}
+				if(/* onlineVersion &&  */!LOGIN.logedin() && inizio){
+					//console.log("MOSTRO LOGIN INIZIALE")
+					// se è un'app installata e non ancora loggata e su smartphone
+					// presento la schermata di login con opzioni iniziali
+					MENU.visLogin(true);
 				}
 				/* if(location.href.indexOf("https://www.iaomai.app")==0 && !LOGIN.logedin()){
 					// autologin
@@ -622,6 +634,32 @@ var LOGIN = {
 		}
 	},
 	
+	verMonoApp: function(){
+		let auths = [],
+			mono_app = '';
+		for(a in DB.login.data.auths){
+			if(DB.login.data.auths[a]!='anatomy_full')auths.push(DB.login.data.auths[a]);
+		}
+		if(auths.length==1)mono_app = auths[0];
+		return mono_app;
+	},
+	verSets: function(){
+		let mono_app = LOGIN.verMonoApp();
+		if(mono_app){
+			localStorage.openMap = 'false';
+			localStorage.open3d = 'false';
+			localStorage.modello = sets[mono_app].modelli[0];
+			localStorage.set = mono_app;
+			globals.openMap = false;
+			globals.open3d = false;
+			globals.mapOpened = mono_app;
+			document.getElementById("memorizzaOpen3d").style.display = 'none';
+			document.getElementById("memorizzaOpenMap").style.display = 'none';
+			setTimeout(function(){
+				caricaSet(mono_app,document.getElementById("p_"+mono_app),sets[mono_app].modelli[0]);
+			},700);
+		}
+	},
 	
 	// GESTIONE UTENTE
 	registrazione: function(){ // registra l'utente su server

@@ -497,7 +497,6 @@ var MODELLO = {
 		raycastDisable=false;
 		
 		MODELLO.op('Pelle',1);
-		
 		if(inizio || getVar("demo")){
 			if(globals.openMap && globals.mapOpened && !globals.set.cartella){
 				postApreSet = true;
@@ -761,7 +760,7 @@ var MODELLO = {
 			// AREE
 			for(let n=0;n<MODELLO.meshPelle.children.length;n++){
 				MODELLO.meshPelle.children[n].material = MODELLO.MAT.materialAree[n];
-				if(SET?.areas50){
+				if(SET?.areas50 && areasView){
 					MODELLO.meshPelle.children[n].material.color = new THREE.Color( 0.55, 0.52, 0.5 );
 					MODELLO.meshPelle.children[n].material.emissive = new THREE.Color( 0.35, 0.35, 0.35 );
 				}else{
@@ -1541,7 +1540,7 @@ var MODELLO = {
 		MODELLO.verOpArea();
 	},
 	verOpArea: function(){
-		if(SET?.areas50){
+		if(SET?.areas50 && areasView){
 			for(let n=0;n<MODELLO.meshPelle.children.length;n++){
 				if(!MODELLO.areaSel){
 					MODELLO.meshPelle.children[n].material.color = new THREE.Color( 0.55, 0.52, 0.5 );

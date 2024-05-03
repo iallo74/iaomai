@@ -124,8 +124,10 @@ function init() {
 			localStorage.open3d = 'true';
 		}
 		
-		if(localStorage.modello && globals.open3d && !getVar("demo"))caricaModello(localStorage.modello);
-		else if(globals.openMap && globals.mapOpened)caricaSet(globals.mapOpened);
+		let noOpen = !LOGIN.logedin() && smartMenu && inizio;
+		
+		if(localStorage.modello && globals.open3d && !getVar("demo") && !noOpen)caricaModello(localStorage.modello);
+		else if(globals.openMap && globals.mapOpened && !noOpen)caricaSet(globals.mapOpened);
 		else{
 			inizio = false;
 			scaricaModello();
@@ -142,7 +144,7 @@ function init() {
 				}
 			}else{
 				setTimeout( function(){
-					GUIDA.visFumetto("guida_generica");
+					if(!LOGIN.verMonoApp())GUIDA.visFumetto("guida_generica");
 				}, 1000 );
 				if(mouseDetect && touchDetect && !__(localStorage.pointerType,"")){
 					setTimeout( function(){
@@ -473,7 +475,11 @@ function scaricaSet( notInit=false ){
 }
 function chiudiSet(){
 	let procOp = document.getElementById("scheda").classList.contains("scheda_procedura");
-	//CONFIRM.vis(	TXT("ChiediEsciMappa").replace("[mappa]",globals.set.nome) ).then(function(pass){if(pass){
+	let auths = [];
+	for(a in DB.login.data.auths){
+		if(DB.login.data.auths[a]!='anatomy_full')auths.push(DB.login.data.auths[a]);
+	}
+	CONFIRM.vis(	TXT("ChiediEsciMappa").replace("[mappa]",globals.set.nome), auths.length>1 ).then(function(pass){if(pass){
 		CONFIRM.vis(	TXT("UscireSenzaSalvare"),
 						!SCHEDA.verificaSchedaRet() && !procOp, 
 						arguments ).then(function(pass){if(pass){
@@ -495,7 +501,7 @@ function chiudiSet(){
 				MODELLO.swArea(1);
 			}
 		}});
-	//}});
+	}});
 }
 function updateModels(){
 	let html = '';

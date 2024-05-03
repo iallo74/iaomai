@@ -712,6 +712,9 @@ body.bodyModello #logoPartner,
     line-height: 50px;
     width: 100%;
 }
+#notLogged span{
+    color: #FFF;
+}
 .smart #notLogged{
     z-index: 21;
 	box-shadow:0px 0px 20px rgba(0,0,0,0.4);
@@ -748,6 +751,20 @@ body.bodyModello #logoPartner,
 }
 .smart .demoContinue{
 	opacity:0.8;
+}
+.smart #notLogged/* .minimized */{
+	padding: 3px;
+	background-position: right center !important;
+	width: calc(100% - 100px) !important;
+	left: 50px;
+	border-bottom-left-radius: 10px !important;
+	border-bottom-right-radius: 10px !important;
+}
+.smart #notLogged/* .minimized */ *:not(#frv_txt){
+	display: none !important
+}
+body:not(.smart) #notLogged #frv_txt{
+	display: none !important
 }
 
 .hiddenElement{

@@ -21,8 +21,73 @@
 }
 
 
+body:not(.smart) #login.inizio{
+	left:0 !important;
+	top:0 !important;
+	margin-top:0 !important;
+	margin-left: 0 !important;
+	width:100% !important;
+	height:100% !important;
+	border-radius:0 !important;
+	background-image: url(../img/rachideRed.png);
+	background-position: right bottom;
+	background-repeat: no-repeat;
+}
+body:not(.smart) #login.inizio #contLogin{
+	max-width:400px !important;
+	margin:0 auto !important;
+}
 
-
+#login:not(.inizio) #login_benvenuto,
+#login:not(.inizio) #demoContinueLogin,
+#login.inizio #labelLogin{
+	display:none;
+}
+#login_benvenuto{
+	font-size: var(--font-18);
+	width: 100%;
+	padding: 20px;
+	background-image:url(../img/logo_iaomai_mini.png);
+	background-repeat: no-repeat;
+	background-position: center 30px;
+}
+.smart #login_benvenuto{
+	padding-top: 115px;
+	background-size: auto 60px;
+}
+body:not(.smart) #login_benvenuto{
+	padding-top: 165px;
+}
+#login_benvenuto *{
+	font-size: var(--font-18);
+}
+#demoContinueLogin{
+	margin-top:40px;
+	text-align:center;
+}
+#demoContinueLogin > span{
+	display:inline-block;
+	margin-bottom:20px;
+	width:200px;
+	height:2px;
+	background-color:rgba(255,255,255,0.7);
+	border-top:1px solid rgba(0,0,0,0.2);
+}
+#demoContinueLogin > div{
+	display:inline-block !important;
+	height:41px;
+	line-height:41px;
+	padding-left:15px;
+	padding-right:15px;
+	background-color:#f1b900;
+	margin:4px;
+	margin-top:24px;
+	color:#000;
+	text-align:center;
+	border-radius:6px;
+	box-shadow:0px 0px 4px rgba(0,0,0,0.5);
+	font-size: var(--font-16);
+}
 
 
 #URS{
@@ -33,7 +98,7 @@
 	clear:both;
 	border-radius:3px;
 	border:none;
-	height:40px;
+	height:44px;
 	line-height:40px;
 	cursor:pointer;
 	background: #0a3d96;

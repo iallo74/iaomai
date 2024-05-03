@@ -25,7 +25,12 @@ var MENU = {
 	pulsanti: function(event){
 		if(touchable)return;
 		if(event.keyCode==27){ // ESC
-			if(document.getElementById("stampa").className.indexOf("visSch") == -1)MENU.chiudiMenu();
+			if(	!document.getElementById("stampa").classList.contains("visSch") && 
+				!document.getElementById("login").classList.contains("visSch") && 
+				!document.getElementById("login").classList.contains("inizio") ){
+
+				MENU.chiudiMenu();
+			}
 		}
 	},
 	aggiornaIconeModello: function(){
@@ -580,7 +585,7 @@ var MENU = {
 	},
 	setNotLogged: function(){
 		setTimeout( function(){
-			if(document.getElementById("notLogged").classList.contains("visSch")){
+			if(	document.getElementById("notLogged").classList.contains("visSch") ){
 				MENU.visLogin();
 			}
 		}, 200 );
@@ -601,9 +606,10 @@ var MENU = {
 			//document.getElementById("loader").removeEventListener("mouseup",MENU.visVersione,false);
 		}
 	},
-	visLogin: function(){
+	visLogin: function( inizio=false ){
 		MENU.chiudiMenu("login");
 		visLoader("");
+		document.getElementById("login").classList.toggle("inizio",inizio);
 		document.getElementById("login").classList.toggle("visSch");
 		document.getElementById("login").classList.remove("popup_back");
 		document.getElementById("stayConnected").checked = eval(__(localStorage.RimaniConnesso,'true'));

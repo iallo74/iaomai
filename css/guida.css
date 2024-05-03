@@ -1087,6 +1087,17 @@ body:not(.smart) .guida_set .fumetti_freccia:last-child{
     opacity: 0.7;
     color: #CCC;
 }
+.demo_ver_label{
+	color: #7cc8ff !important;
+    opacity: 1 !important;
+}
+.licensed_label{
+	padding-left: 69px;
+    background-image: url(../img/spuntaB.png);
+    background-repeat: no-repeat;
+    background-position: 45px center;
+    background-size: 25px;
+}
 
 .body_meridiani_cinesi #btnGuida_meridiani_cinesi > div,
 .body_meridiani_shiatsu #btnGuida_meridiani_shiatsu > div,

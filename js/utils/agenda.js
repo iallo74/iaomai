@@ -305,20 +305,19 @@ var agenda = {
 			DB.appuntamenti.data[document.getElementById("idApp").value*1].Cancellato = 1;
 			DB.appuntamenti.data[document.getElementById("idApp").value*1].DataModifica = DB.appuntamenti.lastSync+1;
 			
-			let postAction = 	'SCHEDA.apriElenco(\'base\');' +
+			/* let postAction = 	'SCHEDA.apriElenco(\'base\');' +
 								'SCHEDA.selElenco(\'pazienti\');' +
 								'PAZIENTI.selPaziente('+(document.getElementById("idCli").value*1)+');' +
 								'setTimeout( function(){' +
 								'	PAZIENTI.car_trattamento('+idTratt+',document.getElementById("btn_trattamento_'+idTratt+'"),"",false,-1);' +
-								'},200)';
+								'},200)'; */
 								
 			document.getElementById("cont_sceltaAppuntamento").style.opacity = 0;
 			Promise.all([
 				localPouchDB.setItem(MD5("DB"+LOGIN._frv()+".pazienti"), IMPORTER.COMPR(DB.pazienti)),
 				localPouchDB.setItem(MD5("DB"+LOGIN._frv()+".appuntamenti"), IMPORTER.COMPR(DB.appuntamenti))
 			]).then(function(){
-				SYNCRO.sincronizza(	'MENU.visAgenda();' +
-									postAction );
+				SYNCRO.sincronizza(	'agenda.popolaAgenda(new Date(agenda.DataPartenza),agenda.contCal,agenda.calFunct);' );
 			});
 		}});
 	},
@@ -951,6 +950,10 @@ var agenda = {
 	},
 	startDrag: function( el, tipo ){ // inizia a spostare l'appuntamento
 		if(document.getElementById("scheda").classList.contains("visSch") && el.id!='inLavorazione')return;
+		if(touchable && !event.touches){
+			agenda.oraInizio = -1;
+			return;
+		}
 		agenda.elDrag = el;
 		agenda.tipoDrag = tipo;
 		agenda.posIni = touchable ? event.touches[ 0 ].pageY : event.clientY;

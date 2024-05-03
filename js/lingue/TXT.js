@@ -384,6 +384,22 @@ DB.TXT = {
             por: "Seletor de anatomia",
             deu: "Anatomieauswahl"
         },
+        LicensedVersion: {
+            ita: "In licenza",
+            eng: "Licensed",
+            esp: "Con licencia",
+            fra: "Sous licence",
+            por: "Licenciado",
+            deu: "Lizenzierte"
+        },
+        DemoVersion: {
+            ita: "Versione DEMO",
+            eng: "DEMO version",
+            esp: "Versión DEMO",
+            fra: "Version DEMO",
+            por: "Versão DEMO",
+            deu: "DEMO-Version"
+        },
 
         // MENU IMPOSTAZIONI
         Impostazioni: {
@@ -4604,6 +4620,14 @@ DB.TXT = {
         }, */
 
         // Messaggi benvenuto
+        BenvenutoIaomai: {
+            ita: "Benvenuto in iáomai.<br>Effettua il login per accedere alle tue mappe tematiche.",
+            eng: "Welcome to iáomai.<br>Please log in to access your thematic maps.",
+            esp: "Bienvenido a iáomai.<br>Por favor, inicie sesión para acceder a sus mapas temáticos.",
+            fra: "Bienvenue sur iáomai.<br>Veuillez vous connecter pour accéder à vos cartes thématiques.",
+            por: "Bem-vindo ao iáomai.<br>Por favor, faça login para acessar seus mapas temáticos.",
+            deu: "Willkommen bei iáomai.<br>Bitte melden Sie sich an, um auf Ihre thematischen Karten zuzugreifen."
+        },
         MessaggioBenvenuto: {
             ita: "iáomai è la nuova piattaforma che ti consente di studiare, lavorare e condividere le tue conoscenze nel settore della salute e del benessere.",
             eng: "iáomai is the new platform that allows you to study, work and share your knowledge in the wellness and health sectors.",

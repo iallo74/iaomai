@@ -488,6 +488,20 @@ body:not(.smart) .listaMeridiani .p_aria:not(.elencoSel) span:hover{
 	background-size:auto !important;
 }
 
+.smart .listaMeridiani .p_none:not(.elencoSel) span,
+.smart .listaMeridiani .p_legno:not(.elencoSel) span,
+.smart .listaMeridiani .p_fuoco:not(.elencoSel) span,
+.smart .listaMeridiani .p_fuoco_supplementare:not(.elencoSel) span,
+.smart .listaMeridiani .p_acqua:not(.elencoSel) span,
+.smart .listaMeridiani .p_terra:not(.elencoSel) span{
+    background-image:url(../../img/ico_lampadinaB_light.png) !important;
+	background-size:auto !important;
+}
+.smart .listaMeridiani .p_aria:not(.elencoSel) span{
+	background-image:url(../../img/ico_lampadinaN_light.png) !important;
+	background-size:auto !important;
+}
+
 
 .p_none.elencoSel:not(.frSw) strong,
 .p_acqua.elencoSel:not(.frSw) strong,
@@ -689,7 +703,7 @@ body:not(.smart) .listaMeridiani .p_aria:not(.elencoSel) span:hover{
 	z-index:11;
 }
 .smart #meridianiSmart_ico.visSch{
-    height: 638px !important;
+    height: 665px !important;
     border-bottom-left-radius: 15px !important;
 	z-index:2 !important;
 	background-position: 13px 9px !important;

@@ -27,7 +27,7 @@ MODELLO.MAT = {
 		side: 3
 	} ),
 	materialPelle_mulatta: new THREE.MeshStandardMaterial( { // PELLE
-		name: "materiale pelle",
+		name: "materiale pelle mulatta",
 		color: new THREE.Color( 0.45, 0.37, 0.3 ),
 		flatShading:false,
 		transparent:true,
@@ -36,7 +36,7 @@ MODELLO.MAT = {
 		side: 3
 	} ),
 	materialPelle_nera: new THREE.MeshStandardMaterial( { // PELLE
-		name: "materiale pelle",
+		name: "materiale pelle nera",
 		color: new THREE.Color( 0.32, 0.27, 0.23 ),
 		flatShading:false,
 		transparent:true,
@@ -55,6 +55,8 @@ MODELLO.MAT = {
 		side: 3
 	} ),
 	materialOssaOver: new THREE.MeshStandardMaterial( { // OSSA rollOVER
+		name: "materiale ossa over",
+		color: new THREE.Color( 1, 1, 1 ),
 		color: new THREE.Color( 1, 0.9, 0.8 ),
 		flatShading:false,
 		transparent:true,
@@ -73,7 +75,8 @@ MODELLO.MAT = {
 		metalness: 0.4,
 		side: 3
 	} ),
-	materialOssaOverCartilagini: new THREE.MeshStandardMaterial( { // OSSA rollOVER
+	materialOssaOverCartilagini: new THREE.MeshStandardMaterial( { // CARTILAGINI rollOVER
+		name: "materiale cartilagini over",
 		color: new THREE.Color( 0.92, 0.92, 1 ),
 		flatShading:false,
 		transparent:true,
@@ -102,7 +105,8 @@ MODELLO.MAT = {
 		metalness: 0.4,
 		side: 3
 	} ),
-	materialLegamentiOver: new THREE.MeshStandardMaterial( { // OSSA rollOVER
+	materialLegamentiOver: new THREE.MeshStandardMaterial( { // LEGAMENTI rollOVER
+		name: "materiale legamenti over",
 		color: new THREE.Color( 1, 0.9, 0.8 ),
 		flatShading:false,
 		transparent:true,
@@ -121,7 +125,7 @@ MODELLO.MAT = {
 		needsUpdate: true,
 		bumpScale: 0.006
 	} ),
-	materialMuscoli3dLeg: new THREE.MeshStandardMaterial( { // MUSCOLI 3D
+	materialMuscoli3dLeg: new THREE.MeshStandardMaterial( { // MUSCOLI 3D LEG
 		name: "materiale muscoli 3d Leg",
 		flatShading:false,
 		color: new THREE.Color( 1, 1, 1 ),
@@ -131,7 +135,7 @@ MODELLO.MAT = {
 		needsUpdate: true,
 		bumpScale: 0.006
 	} ),
-	materialMuscoli3dFoot: new THREE.MeshStandardMaterial( { // MUSCOLI 3D
+	materialMuscoli3dFoot: new THREE.MeshStandardMaterial( { // MUSCOLI 3D FOOT
 		name: "materiale muscoli 3d Foot",
 		flatShading:false,
 		color: new THREE.Color( 1, 1, 1 ),
@@ -143,7 +147,8 @@ MODELLO.MAT = {
 	} ),
 
 
-	materialMuscoli3dOver: new THREE.MeshStandardMaterial( { // OSSA rollOVER
+	materialMuscoli3dOver: new THREE.MeshStandardMaterial( { // MUSCOLI 3D rollOVER
+		name: "materiale muscoli 3d over",
 		color: new THREE.Color( 1, 0.9, 0.8 ),
 		flatShading:false,
 		transparent:true,
@@ -151,8 +156,8 @@ MODELLO.MAT = {
 		metalness: 0.4,
 		side: 3
 	} ),
-	materialMuscoli3dOverLeg: new THREE.MeshStandardMaterial( { // MUSCOLI 3D
-		name: "materiale muscoli 3d Leg",
+	materialMuscoli3dOverLeg: new THREE.MeshStandardMaterial( { // MUSCOLI 3D rollOVER LEG
+		name: "materiale muscoli 3d over Leg",
 		flatShading:false,
 		color: new THREE.Color( 1, 1, 1 ),
 		emissive: new THREE.Color( 0.2, 0.2, 0.2 ),
@@ -162,8 +167,8 @@ MODELLO.MAT = {
 		needsUpdate: true,
 		bumpScale: 0.006
 	} ),
-	materialMuscoli3dOverFoot: new THREE.MeshStandardMaterial( { // MUSCOLI 3D
-		name: "materiale muscoli 3d Foot",
+	materialMuscoli3dOverFoot: new THREE.MeshStandardMaterial( { // MUSCOLI 3D rollOVER FOOT
+		name: "materiale muscoli 3d over Foot",
 		flatShading:false,
 		color: new THREE.Color( 1, 1, 1 ),
 		emissive: new THREE.Color( 0.2, 0.2, 0.2 ),
@@ -174,8 +179,8 @@ MODELLO.MAT = {
 		bumpScale: 0.006
 	} ),
 
-	materialMuscoli3dSelLeg: new THREE.MeshStandardMaterial( { // MUSCOLI 3D
-		name: "organoSelLeg",
+	materialMuscoli3dSelLeg: new THREE.MeshStandardMaterial( { // MUSCOLI 3D Sel LEG
+		name: "materiale muscoli 3D Sel LEG",
 		flatShading:false,
 		color: new THREE.Color( 1, 1, 1 ),
 		emissive: new THREE.Color( 0.3, 0, 0.4 ),
@@ -193,8 +198,8 @@ MODELLO.MAT = {
 
 
 	
-	materialMuscoli3dSelFoot: new THREE.MeshStandardMaterial( { // MUSCOLI 3D
-		name: "organoSelFoot",
+	materialMuscoli3dSelFoot: new THREE.MeshStandardMaterial( { // MUSCOLI 3D Sel FOOT
+		name: "materiale muscoli 3D Sel FOOT",
 		flatShading:false,
 		color: new THREE.Color( 1, 1, 1 ),
 		emissive: new THREE.Color( 0.3, 0, 0.4 ),
@@ -270,24 +275,28 @@ MODELLO.MAT = {
 	
 	
 	materialNERVO_TRIGEMINO: new THREE.LineBasicMaterial( {
+		name: "materiale nervo trigemino",
 		color: new THREE.Color( 1, 0.6, 0 ),
 		depthFunc: 3,
 		transparent: true,
 		opacity:0.3
 	} ),
 	materialNERVO_VAGO: new THREE.LineBasicMaterial( {
+		name: "materiale nervo vago",
 		color: new THREE.Color( 0, 0.45, 0.8 ),
 		depthFunc: 3,
 		transparent: true,
 		opacity:0.3
 	} ),
 	materialNERVO_OCCIPITALE_MINORE: new THREE.LineBasicMaterial( {
+		name: "materiale nervo occipitale minore",
 		color: new THREE.Color( 0.9, 0.2, 0 ),
 		depthFunc: 3,
 		transparent: true,
 		opacity:0.3
 	} ),
 	materialNERVO_GRANDE_AURICOLARE: new THREE.LineBasicMaterial( {
+		name: "materiale nervo grande auricolare",
 		color: new THREE.Color( 0, 0.7, 0.3 ),
 		depthFunc: 3,
 		transparent: true,
@@ -307,6 +316,7 @@ MODELLO.MAT = {
 		depthFunc: 1
 	} ),
 	materialVisceriOver: new THREE.MeshStandardMaterial( { // VISCERI rollOVER
+		name: "materiale visceri over",
 		color: new THREE.Color( 0.6, 0.4, 0.5 ),
 		flatShading:false,
 		transparent:true,
@@ -325,6 +335,7 @@ MODELLO.MAT = {
 		depthFunc: 1
 	} ),
 	materialVasiOver: new THREE.MeshStandardMaterial( { // VASI rollOVER
+		name: "materiale vasi over",
 		color: new THREE.Color( 0.6, 0.4, 0.5 ),
 		flatShading:false,
 		transparent:true,
@@ -332,6 +343,7 @@ MODELLO.MAT = {
 		side: 3
 	} ),
 	materialOrganoSel: new THREE.MeshStandardMaterial( { // ORGANO, OSSO, VASO o LAGAMENTO SELEZIONATO
+		name: "materiale organo sel",
 		color:  new THREE.Color( 0.9, 0.2, 0.5 ),
 		flatShading:false,
 		transparent:false,
@@ -345,7 +357,7 @@ MODELLO.MAT = {
 		name: "organoSel"
 	} ),
 	materialVisceriDis: new THREE.MeshStandardMaterial( { // VISCERI
-		name: "organoDis",
+		name: "materiale visceri DIS",
 		color: new THREE.Color( 0.52, 0.66, 0.99 ),
 		flatShading:false,
 		transparent:true,
@@ -354,6 +366,7 @@ MODELLO.MAT = {
 		side: 3
 	} ),
 	lineGuideSel: new THREE.LineBasicMaterial( {
+		name: "materiale guide Sel",
 		/*color: new THREE.Color( 0.9, 0.2, 0.5 ),*/
 		color: new THREE.Color( 1, 1, 1 ),
 		depthFunc: 1,
@@ -362,12 +375,13 @@ MODELLO.MAT = {
 		opacity:0.3
 	} ),
 	pointTrasp: new THREE.MeshStandardMaterial( { // OSSA rollOVER
+		name: "materiale punto trasparente",
 		color: new THREE.Color( 1, 1, 1 ),
 		transparent: true,
 		opacity:0
 	} ),
 	pinArea: new THREE.MeshStandardMaterial( { // PIN DELLE AREE
-		name: "pin aree",
+		name: "materiale pin aree",
 		/*color: new THREE.Color( 0.89, 0.56, 0.42 ),*/
 		/*color: new THREE.Color( 0.96, 0.56, 0.32 ),*/
 		color: new THREE.Color( 1, 1, 1 ),
@@ -378,6 +392,7 @@ MODELLO.MAT = {
 		side: 3
 	} ),
 	pinAreaTrasp: new THREE.MeshStandardMaterial( { // PIN TRASPARENTI DELLE AREE (PER IL CLICK)
+		name: "materiale pin area trasparente",
 		color: new THREE.Color( 0, 0, 0 ),
 		roughness:1, 
 		premultipliedAlpha: true,
@@ -390,6 +405,7 @@ MODELLO.MAT = {
 		depthWrite: false
 	} ),
 	pinAreaDemo: new THREE.MeshStandardMaterial( { // PIN TRASPARENTI DELLE AREE (PER IL CLICK)
+		name: "materiale pin area demo",
 		color: new THREE.Color( 0, 0, 0 ),
 		emissive: new THREE.Color( 0, 0, 1 ),
 		roughness:1, 

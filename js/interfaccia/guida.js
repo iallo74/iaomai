@@ -94,8 +94,11 @@ var GUIDA = {
 							HTML_elenco += 	'<div onClick="'+linkSet+'" id="btnGuida_'+cartella+'">' +
 											'<div><img src="sets/'+cartella+'/img/logoNero.png"></div>' +
 											htmlEntities(sets[cartella].nome) +
-											'<br><span>' + htmlEntities(sets[cartella].sottotitolo) + '</span>' +
-										'</div>';
+											'<br>';
+							//				htmlEntities(sets[cartella].sottotitolo) + '';
+							if(DB.login.data.auths.indexOf(cartella)>-1)HTML_elenco += 	'<span class="licensed_label">'+TXT("LicensedVersion")+'</span>';
+							else HTML_elenco += 	'<span class="demo_ver_label">'+TXT("DemoVersion")+'</span>';
+							HTML_elenco += 	'</div>';
 						}
 					}
 				}
