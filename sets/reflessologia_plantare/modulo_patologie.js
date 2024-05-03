@@ -72,6 +72,7 @@ var MODULO_PATOLOGIE = { // extend SET
 								globals.set.cartella+'_patologie_'+n );
 								SET.evidenziaPunto();
 		
+		SCHEDA.gestVisAnatomia(true);
 		SET.ripristinaVisibili();
 		let els = SETS.children[0].children;
 		for(let e in els){

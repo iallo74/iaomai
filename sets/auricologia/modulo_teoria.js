@@ -163,6 +163,8 @@ var MODULO_TEORIA = { // extend SET
 								btn,
 								btnAdd,
 								globals.set.cartella+'_teoria_'+p+"_"+t );
+		
+		SCHEDA.gestVisAnatomia(true);
 		SET.evidenziaPunto(null,anatomia,mappa,lm);
 		if(flowchart){
 			if(SET.risTest.dipendenza.tot > -1){

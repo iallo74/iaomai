@@ -644,6 +644,10 @@ body:not(.bodyModello) #btns_set > div{
 	background-color: rgba(0,0,0,0.2);
 	text-align: right;
 }
+#filtriSmart_ico.nas,
+#filtriSmart_cont.nas{
+	display:none !important;
+}
 .bodyStampa #filtriSmart_ico{
 	display:none !important;
 }

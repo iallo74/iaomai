@@ -154,10 +154,11 @@ var MODULO_PATOLOGIE = { // extend SET
 								btn,
 								btnAdd,
 								globals.set.cartella+'_patologie_'+siglaPatologia );
+		
+		SCHEDA.gestVisAnatomia(true);
 		SET.convSigleScheda();
 		SET.evidenziaPunto();
 		SET.evidenziaMeridiani(html);
-		SCHEDA.gestVisAnatomia(true);
 	},
 	filtraPatologie: function( event ){
 		// filtra le patologie con il campo testuale

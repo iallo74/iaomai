@@ -307,6 +307,8 @@ var MODULO_PATOLOGIE = { // extend SET
 								btn,
 								btnAdd,
 								globals.set.cartella+'_patologie_'+n );
+		
+		SCHEDA.gestVisAnatomia(true);
 		SET.eviPointsPat(document.getElementById("schedaTerapeutica"));
 		document.getElementById("sez_cont_descrizione").classList.toggle("sezioneChiusa",!op_descrizione);
 		document.getElementById("sez_cont_protocollo").classList.toggle("sezioneChiusa",!op_protocollo)

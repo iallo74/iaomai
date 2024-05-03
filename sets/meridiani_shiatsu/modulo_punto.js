@@ -266,12 +266,12 @@ var MODULO_PUNTO = { // extend SET
 								btnAdd,
 								globals.set.cartella+'_meridiani_'+siglaMeridiano+"_"+nPunto,
 								finalFunct );
-								
+						
+		SCHEDA.gestVisAnatomia(true);		
 		SET.convSigleScheda();
 		SET.settaOverPunto();
 		SET.ptSel = ptSel;
 		if(ritorno && !SCHEDA.aggancio.tipo == 'libera')SCHEDA.nasScheda();
-		SCHEDA.gestVisAnatomia(true);
 
 		// gestione e visualizzazione delle frecce di navigazione
 		document.getElementById("frSchSu").onclick = '';

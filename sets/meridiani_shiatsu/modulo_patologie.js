@@ -224,8 +224,9 @@ var MODULO_PATOLOGIE = { // extend SET
 								btn,
 								btnAdd,
 								globals.set.cartella+'_patologie_'+siglaPatologia );
-		SET.convSigleScheda();
+		
 		SCHEDA.gestVisAnatomia(true);
+		SET.convSigleScheda();
 		
 		let els = document.getElementById("scheda_testo").getElementsByClassName("schedaSpecifica"),
 			selected = false;

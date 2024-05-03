@@ -805,9 +805,6 @@ body.smart.touch .textMeridianoTratt{
 	border-radius:6px;
 	background-color: rgba(0,0,0,0.2);
 }
-#meridianiSmart_ico.nas{
-	display:none !important;
-}
 #meridianiSmart_ico.nas,
 #meridianiSmart_cont.nas{
 	display:none !important;

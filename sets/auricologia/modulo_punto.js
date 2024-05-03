@@ -234,6 +234,8 @@ var MODULO_PUNTO = { // extend SET
 								btnAdd,
 								globals.set.cartella+'_punti_'+"_"+siglaPunto,
 								finalFunct );
+		
+		SCHEDA.gestVisAnatomia(true);
 		SET.settaOverPunto();
 		if(!ritorno)SET.setHideButton(siglaPunto);
 		SET.ptSel = ptSel;

@@ -1503,6 +1503,12 @@ var SET = {
 	_torna: function( args ){
 		if(typeof(args.daCarica) == 'undefined')SET.pMod = '';
 	},
+	_gestVisSmart: function( add ){
+		if(smartMenu){
+			document.getElementById("filtriSmart_ico").classList.toggle("nas",add);
+			document.getElementById("filtriSmart_cont").classList.toggle("nas",add);
+		}
+	},
 	filtraSet: function( togliLoader=false ){
 		let vis = true;
 		if(	DB.login.data.auths.indexOf(globals.set.cartella)==-1 || !LOGIN.logedin())vis = false;

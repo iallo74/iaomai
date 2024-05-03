@@ -116,6 +116,8 @@ var MODULO_PUNTO = { // extend SET
 								btnAdd,
 								globals.set.cartella+'_punti_'+"_"+siglaPunto,
 								finalFunct );
+		
+		SCHEDA.gestVisAnatomia(true);
 		SET.settaOverPunto();
 		SET.ptSel = ptSel;
 		if(!ritorno || !SCHEDA.formModificato)initChangeDetection( "formAnnotazioni" );

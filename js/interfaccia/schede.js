@@ -414,12 +414,9 @@ var SCHEDA = {
 		SCHEDA.scaricaScheda(false,true);
 	},
 	gestVisSmart: function( add ){
-		if(smartMenu){
-			try{
-				document.getElementById("meridianiSmart_ico").classList.toggle("nas",add);
-				document.getElementById("meridianiSmart_cont").classList.toggle("nas",add);
-			}catch(err){};
-		}
+		try{
+			SET._gestVisSmart(add);
+		}catch(err){};
 	},
 	gestVisAnatomia: function( add ){
 		if(smartMenu){

@@ -136,10 +136,11 @@ var MODULO_TEORIA = { // extend SET
 								btn,
 								btnAdd,
 								globals.set.cartella+'_teoria_'+p+"_"+t );
+		
+		SCHEDA.gestVisAnatomia(true);
 		SET.convSigleScheda();
 		let elsSzTeo = document.getElementById("scheda_testo").getElementsByClassName("szTeo");
 		if(elsSzTeo.length == -1)SET.evidenziaPunto();
-		SCHEDA.gestVisAnatomia(true);
 	},
 	caricaVideo: function( p, t, btn ){
 		// carica un approfondimento video

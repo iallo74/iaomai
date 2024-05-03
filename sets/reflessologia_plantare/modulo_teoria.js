@@ -85,6 +85,8 @@ var MODULO_TEORIA = { // extend SET
 								btn,
 								btnAdd,
 								globals.set.cartella+'_teoria_'+p+"_"+t );
+		
+		SCHEDA.gestVisAnatomia(true);
 		SET.evidenziaPunto();
 		SET.ripristinaHiddenGroups();
 		if(apparato){

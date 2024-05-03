@@ -107,9 +107,10 @@ var MODULO_TEORIA = { // extend SET
 								btn,
 								btnAdd,
 								globals.set.cartella+'_teoria_'+p+"_"+t );
+		
+		SCHEDA.gestVisAnatomia(true);
 		SET.convSigleScheda();
 		SET.evidenziaPunto();
-		SCHEDA.gestVisAnatomia(true);
 		
 		SET.spegniMeridianoSecondario();
 		SET.spegniMeridiani(true);

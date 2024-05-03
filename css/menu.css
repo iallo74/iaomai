@@ -128,8 +128,22 @@ body:not(.smart) #icone.iconeEspanse{
 }
 .smart #contBtnModello > div:not(#btns_set),
 .smart #btns_set > div{
-	width: 48px !important;
-    height: 48px !important;
+	width: 48px;
+    height: 48px;
+}
+.smart #p_lms{
+	width:36px !important;
+	position: fixed;
+	top: 100px;
+	left: 9px;
+	border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+.smart #p_rifletti{
+	width:36px !important;
+	position: fixed;
+	top: 50px;
+	left: 9px;
+	border-top: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .smart #icone:not(.iconeHome) #p_modello,
@@ -348,10 +362,10 @@ body:not(.smart) #p_rifletti{
 	display:none;
 	opacity:0.2;
 }
-.smart #contBtnModello.vis #p_centro{
+.smart #contBtnModello #p_centro{
 	position: fixed;
     top: 0px;
-    left: 4px;
+    left: 3px;
 }
 .smart #contBtnModello.vis{
 	margin-top: 170px;

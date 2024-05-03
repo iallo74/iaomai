@@ -1357,6 +1357,12 @@ var SET = {
 	_torna: function( args ){
 		if(typeof(args.daCarica) == 'undefined')SET.pMod = -1;
 	},
+	_gestVisSmart: function( add ){
+		if(smartMenu){
+			document.getElementById("meridianiSmart_ico").classList.toggle("nas",add);
+			document.getElementById("meridianiSmart_cont").classList.toggle("nas",add);
+		}
+	},
 	filtraSet: function(){
 		let vis = true;
 		if(DB.login.data.auths.indexOf(globals.set.cartella)==-1 || !LOGIN.logedin())vis = false;
