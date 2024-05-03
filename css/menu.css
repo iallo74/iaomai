@@ -1714,6 +1714,9 @@ body #p_versione{
 	background-image:url(../img/ico_iaomaiN.png),url(../img/frDxB.png);
 	cursor:pointer;
 }
+#p_versione b{
+	font-size: inherit;
+}
 body.bodyStyled2 #p_versione{
 	background-image:url(../img/ico_iaomai.png),url(../img/frDx.png);
 }
