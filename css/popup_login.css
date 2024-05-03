@@ -21,10 +21,13 @@
 }
 
 
-body:not(.smart) #login.inizio{
+#login.inizio{
 	background-image: url(../img/rachideRed.png);
 	background-position: right bottom;
 	background-repeat: no-repeat;
+}
+.smart #login.inizio{
+	background-size: calc(190%) auto;
 }
 body:not(.smart) #login.inizio{
 	left:0 !important;
