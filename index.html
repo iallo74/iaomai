@@ -423,7 +423,7 @@
                 <div id="login_benvenuto">{{TXT_BenvenutoIaomai}}</div>
             	<div id="contLogin" class="popup_cont">
                 	<form name="loginFrom" id="loginFrom" method="post" onSubmit="return LOGIN.getLogin();"><div><input type="text" name="USR" id="USR"  placeholder="Username" class="okPlaceHolder" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" onFocus="LOGIN.focRic=true;" onBlur="LOGIN.focRic=false;"><div id="USRlabel"><span></span><div id="usrChange" onClick="LOGIN.annullaUtente();">{{TXT_Disconnetti}}</div></div></div><div><input type="password" name="PWD" id="PWD" placeholder="Password" class="okPlaceHolder" autocomplete="off"><span id="visPwd" onClick="LOGIN.swVisPwd();"></span></div><div id="loginStayConnected"><label for="stayConnected"><input type="checkbox" id="stayConnected" name="stayConnected">{{TXT_StaiConnesso}}</label></div><div id="loginButCont"><input type="submit" name="loginBut" id="loginBut" value="{{TXT_Accedi}}" /><p><!-- da popolare //--></p></div></form>
-    <div id="btnRecupero" onClick="LOGIN.recuperaPwd();">{{TXT_PWDdimenticata}}</div>
+    <div id="btnRecupero" onClick="LOGIN.recuperaPwd();">{{TXT_PWDdimenticata}} <b>&gt;</b></div>
     <div id="demoContinueLogin" onClick="MENU.chiudiMenu();if(!globals.modello.cartella){inizio=true;caricaModello('donna');}"><span></span><div>{{TXT_ContinuaDemo}}</div></div>
                 </div>
             </div>
@@ -619,7 +619,9 @@
             </div>
             <div id="dispositivi" class="popup"> <!-- DISPOSITIVI CONNESSI -->
             	<div id="labelDispositivi" class="popup_label">{{TXT_Dispositivi}}<div class="popup_chiudi" onClick="MENU.chiudiMenu();"></div></div>
+                <div id="dispositivi_logo"></div>
             	<div id="contDispositivi" class="popup_cont"></div>
+                <div id="dispositivi_torna" onClick="MENU.visLogin(true);"><span>Torna al login</span></div>
             </div>
             <div id="features" class="popup"> <!-- NUOVA VERSIONE -->
             	<div class="popup_chiudi" onClick="MENU.chiudiMenu();"></div>

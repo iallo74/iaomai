@@ -16,6 +16,78 @@ z-index:100 !important;
 	background-position:10px center;
 }
 
+
+
+
+
+
+
+#dispositivi.inizio{
+	background-image: url(../img/rachideRed.png);
+	background-position: right bottom;
+	background-repeat: no-repeat;
+}
+.smart #dispositivi.inizio{
+	background-size: calc(190%) auto;
+}
+body:not(.smart) #dispositivi.inizio{
+	left:0 !important;
+	top:0 !important;
+	margin-top:0 !important;
+	margin-left: 0 !important;
+	width:100% !important;
+	height:100% !important;
+	border-radius:0 !important;
+}
+body:not(.smart) #dispositivi.inizio #contDispositivi{
+	max-width:400px !important;
+	margin:0 auto !important;
+}
+
+#dispositivi:not(.inizio) #dispositivi_logo,
+#dispositivi.inizio #labelDispositivi{
+	display:none;
+}
+
+#dispositivi_logo{
+	font-size: var(--font-18);
+	width: 100%;
+	padding: 20px;
+	background-image:url(../img/logo_iaomai_mini.png);
+	background-repeat: no-repeat;
+	background-position: center 30px;
+}
+.smart #dispositivi_logo{
+	padding-top: 80px;
+	background-size: auto 60px;
+}
+body:not(.smart) #dispositivi_logo{
+	padding-top: 130px;
+}
+#dispositivi_logo *{
+	font-size: var(--font-18);
+}
+#dispositivi_torna{
+    max-width:400px;
+    margin:0 auto;
+    text-align:left;
+}
+#dispositivi_torna > span{
+    display: inline-block;
+	height: 40px;
+	line-height: 40px;
+	padding: 0 10px 0 35px;
+	background-image: url(../img/frSxB.png);
+    background-position: left center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    cursor:pointer;
+}
+
+
+
+
+
 #contDispositivi{
 	padding: 10px;
 	padding-top: 3px;

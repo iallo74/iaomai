@@ -92,6 +92,7 @@ body:not(.smart) #login_benvenuto{
 	border-radius:6px;
 	box-shadow:0px 0px 4px rgba(0,0,0,0.5);
 	font-size: var(--font-16);
+	cursor:pointer;
 }
 
 
@@ -205,11 +206,24 @@ body:not(.smart) #login_benvenuto{
 	line-height: 30px;
 	cursor:pointer;
 	font-weight:normal !important;
-	font-size: var(--font-12-1) !important;
+	font-size: var(--font-13-2) !important;
 	box-sizing:border-box;
+}
+#btnRecupero b{
+	color:#287fda;
+}
+#btnRecupero b{
+	font-size: var(--font-16-93) !important;
+	color:#287fda;
+	display: inline-block;
+	vertical-align: middle;
+	margin-top: -3px;
 }
 .smart.android #btnRecupero{
 	font-size: var(--font-15-39) !important;
+}
+.smart.android #btnRecupero b{
+	font-size: var(--font-19-8) !important;
 }
 .app_version.bug_font.smart.android #btnRecupero{
 	font-size: var(--font-13-94) !important;

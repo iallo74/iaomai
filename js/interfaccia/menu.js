@@ -26,8 +26,10 @@ var MENU = {
 		if(touchable)return;
 		if(event.keyCode==27){ // ESC
 			if(	!document.getElementById("stampa").classList.contains("visSch") && 
-				!document.getElementById("login").classList.contains("visSch") && 
-				!document.getElementById("login").classList.contains("inizio") ){
+				!(	document.getElementById("login").classList.contains("visSch") && 
+					document.getElementById("login").classList.contains("inizio") ) &&
+				!(	document.getElementById("dispositivi").classList.contains("visSch") && 
+					document.getElementById("dispositivi").classList.contains("inizio") ) ){
 
 				MENU.chiudiMenu();
 			}
@@ -610,6 +612,7 @@ var MENU = {
 		MENU.chiudiMenu("login");
 		visLoader("");
 		document.getElementById("login").classList.toggle("inizio",inizio);
+		document.getElementById("dispositivi").classList.toggle("inizio",inizio);
 		document.getElementById("login").classList.toggle("visSch");
 		document.getElementById("login").classList.remove("popup_back");
 		document.getElementById("stayConnected").checked = eval(__(localStorage.RimaniConnesso,'true'));

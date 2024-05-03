@@ -998,12 +998,12 @@ DB.TXT = {
             deu: "Möchtest du dich wirklich abmelden?"
         },
         PWDdimenticata: {
-            ita: "Hai dimenticato i dati di accesso?",
-            eng: "Forgot your login data?",
-            esp: "¿Olvidaste tus datos de inicio de sesión?",
-            fra: "Vous avez oublié vos données de connexion ?",
-            por: "Esqueceu seus dados de login?",
-            deu: "Haben Sie Ihre Anmeldedaten vergessen?"
+            ita: "Recupera i dati di accesso",
+            eng: "Recover data access",
+            esp: "Recupera los datos de acceso",
+            fra: "Récupère les données de connexion",
+            por: "Recupera os dados de acesso",
+            deu: "Stellen Sie Ihre Anmeldedaten wieder her"
         },
         ErroreCaricamento: {
             ita: "ATTENZIONE! Si e' verificato un errore nel caricamento sul server. Le modifiche che hai effettuato potrebbero non essere sincronizzate con gli altri dispositivi.",
