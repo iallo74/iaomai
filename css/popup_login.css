@@ -184,6 +184,7 @@ body:not(.smart) #login_benvenuto{
     font-size: var(--font-18-7);
     line-height: 30px;
     height: 30px;
+	font-weight:bold;
 }
 /* #USRlabel img{
 	opacity:0.5;

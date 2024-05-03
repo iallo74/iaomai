@@ -4621,12 +4621,12 @@ DB.TXT = {
 
         // Messaggi benvenuto
         BenvenutoIaomai: {
-            ita: "Benvenuto in iáomai.<br>Effettua il login per accedere alle tue mappe tematiche.",
-            eng: "Welcome to iáomai.<br>Please log in to access your thematic maps.",
-            esp: "Bienvenido a iáomai.<br>Por favor, inicie sesión para acceder a sus mapas temáticos.",
-            fra: "Bienvenue sur iáomai.<br>Veuillez vous connecter pour accéder à vos cartes thématiques.",
-            por: "Bem-vindo ao iáomai.<br>Por favor, faça login para acessar seus mapas temáticos.",
-            deu: "Willkommen bei iáomai.<br>Bitte melden Sie sich an, um auf Ihre thematischen Karten zuzugreifen."
+            ita: "Benvenuto in iáomai.<br>Effettua il login per accedere alla piattaforma.",
+            eng: "Welcome to iáomai. <br>Login to access the platform.",
+            esp: "Bienvenido a iáomai. <br>Inicia sesión para acceder a la plataforma.",
+            fra: "Bienvenue sur iáomai. <br>Connectez-vous pour accéder à la plateforme.",
+            por: "Bem-vindo ao iáomai. <br>Login para acessar a plataforma.",
+            deu: "Willkommen bei iáomai. <br>Melden Sie sich an, um auf die Plattform zuzugreifen."
         },
         MessaggioBenvenuto: {
             ita: "iáomai è la nuova piattaforma che ti consente di studiare, lavorare e condividere le tue conoscenze nel settore della salute e del benessere.",
