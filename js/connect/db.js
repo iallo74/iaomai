@@ -124,7 +124,6 @@ var DB = {
 			lastSync: 0,
 			data: []
 		};
-		
 		if(typeof(localStorage.dbInizializzato) == 'undefined'){
 			Promise.all([
 				localPouchDB.setItem(MD5("DBfrv.pazienti"), IMPORTER.COMPR(DB.pazienti)),

@@ -238,7 +238,7 @@ var PAZIENTI_CICLI = { // extend PAZIENTI
 			PAZIENTI.mnOver = false;
 			PAZIENTI.mn = document.createElement('div');
 			PAZIENTI.mn.id = "menuCiclo";
-			PAZIENTI.mn.style.top = (tCoord(btn,'y')-20) + 'px';
+			PAZIENTI.mn.style.top = ((tCoord(btn,'y')-15)-(HF()-SCHEDA.hOpened)) + 'px';
 			PAZIENTI.mn.className = "visSch";
 			PAZIENTI.mn.innerHTML = '<div class="p_paz_el_menu"' +
 									'	  onclick="PAZIENTI.el_trattamento('+idTrattQ+');"' +

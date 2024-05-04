@@ -47,10 +47,10 @@ var SYNCRO = {
 				
 				let elenco='';				
 				if(Nuovo){ // se è un account nuovo popolo i DB con quelli DEMO
-					DB.pazienti.data = DB._pulisciFRV(archiviDemo.pazienti);
-					DB.fornitori.data = DB._pulisciFRV(archiviDemo.fornitori);
-					DB.servizi.data = DB._pulisciFRV(archiviDemo.servizi);
-					DB.files.data = DB._pulisciFRV(archiviDemo.files);
+					DB.pazienti.data = DB._pulisciFRV(archiviDemo[globals.siglaLingua].pazienti);
+					DB.fornitori.data = DB._pulisciFRV(archiviDemo[globals.siglaLingua].fornitori);
+					DB.servizi.data = DB._pulisciFRV(archiviDemo[globals.siglaLingua].servizi);
+					DB.files.data = DB._pulisciFRV(archiviDemo[globals.siglaLingua].files);
 				}
 				
 				let elencoFiles='';
