@@ -490,16 +490,16 @@ body:not(.smart) .listaMeridiani .p_aria:not(.elencoSel) span:hover{
 
 .smart .listaMeridiani .p_none:not(.elencoSel) span,
 .smart .listaMeridiani .p_legno:not(.elencoSel) span,
-.smart .listaMeridiani .p_fuoco:not(.elencoSel) span,
 .smart .listaMeridiani .p_fuoco_supplementare:not(.elencoSel) span,
-.smart .listaMeridiani .p_acqua:not(.elencoSel) span,
-.smart .listaMeridiani .p_terra:not(.elencoSel) span{
+.smart .listaMeridiani .p_acqua:not(.elencoSel) span{
     background-image:url(../../img/ico_lampadinaB_light.png) !important;
-	background-size:auto !important;
+}
+.smart .listaMeridiani .p_fuoco:not(.elencoSel) span,
+.smart .listaMeridiani .p_terra:not(.elencoSel) span{
+    background-image:url(../../img/ico_lampadinaB_light2.png) !important;
 }
 .smart .listaMeridiani .p_aria:not(.elencoSel) span{
 	background-image:url(../../img/ico_lampadinaN_light.png) !important;
-	background-size:auto !important;
 }
 
 

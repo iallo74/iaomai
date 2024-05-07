@@ -1201,6 +1201,7 @@ var PAZIENTI = {
 					idFile: GA[i].idFile,
 					imgMini: GA[i].imgMini,
 					imgBig: GA[i].imgBig,
+					type: GA[i].type,
 					frv: (LOGIN._frv()!='')
 				});
 				let NG = {

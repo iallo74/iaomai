@@ -71,8 +71,9 @@ function nasLoader(){
 	}
 	document.getElementById("loader").getElementsByTagName("div")[0].innerHTML='';
 }
-function applicaLoading( el, style='' ){
+function applicaLoading( el, style='',txt='' ){
 	let loading = document.createElement("DIV");
+	loading.innerHTML = txt;
 	loading.className='loading';
 	if(el.id == "scheda_testo")loading.className += ' loadingScheda';
 	if(style)loading.className+=' '+style;

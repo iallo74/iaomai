@@ -32,6 +32,10 @@ var PH = {
 						"image/png",
 						"image/webp" ],
 	listaEstensioniFiles: [	"application/pdf" ],
+	listaEstensioniVideo: [	"video/avi",
+							"video/mp4",
+							"video/flv",
+							"video/mov" ],
 	maxFileSize: 20*1000*1000, // 20MB
 	
 	encodeImageFileAsURL: function( element, resizable=false, makeBig=false, functPH='', listaEstensioni ) { // trasforma l'immagine in base64
@@ -39,6 +43,7 @@ var PH = {
 			listaEstensioni = PH.listaEstensioni;
 			if(LOGIN.logedin() && !resizable){
 				listaEstensioni = listaEstensioni.concat(PH.listaEstensioniFiles);
+				listaEstensioni = listaEstensioni.concat(PH.listaEstensioniVideo);
 			}
 		}
 		let ext = "";
@@ -60,7 +65,7 @@ var PH = {
 			return;
 		}
 		let reader = new FileReader();
-		if(PH.listaEstensioniFiles.indexOf(file.type)==-1){
+		if(PH.listaEstensioni.indexOf(file.type)>-1){
 			// se è un'immagine
 			reader.onloadend = function() {
 				PH.img = document.getElementById("img_PH");
@@ -94,12 +99,16 @@ var PH = {
 				// se c'è connessione
 				reader.onloadend = function() {
 					// carico il file sul server
-					let d = new Date()*1
+					let d = new Date()*1,
+						type = 'File';
+					if(PH.listaEstensioniVideo.indexOf(file.type)>-1)type = 'Video';
+					if(type=='Video')applicaLoading(document.getElementById("scheda_testo"),'',"Caricamento in corso...");
 					
-					CONN.caricaUrl(	"putFile.php",
+					CONN.caricaUrl(	"put"+type+".php",
 									"b64=1&JSNPOST="+encodeURIComponent(window.btoa(JSON.stringify({
 										idFile: d,
 										e: file.type.split("/")[1], // pdf
+										t: file.type.split("/")[1], // pdf
 										F: reader.result,
 										n: file.name
 									}))),
@@ -367,7 +376,7 @@ var PH = {
 		PH.makeBig = false;
 		nasLoader();
 	},
-	salva: function(){ // salva l'immagine che si sta caricando (e nel caso ritaliando)
+	salva: function(){ // salva l'immagine che si sta caricando (e nel caso ritagliando)
 		if(!PH.res)PH.modify(); // se non ridimensiono
 		let imgMini = PH.returnImageConverted(),
 			obj = {
@@ -379,6 +388,7 @@ var PH = {
 		PH.chiudi();
 	},
 	salvaFile: function( txt ){
+		rimuoviLoading(document.getElementById("scheda_testo"));
 		let obj = JSON.parse(txt);
 		eval(PH.functPH+"('"+JSON.stringify(obj)+"')");
 		PH.chiudi();
@@ -436,10 +446,14 @@ var PH = {
 				let src = '',
 					cls = '',
 					name = '',
-					locale = false;
+					type = '',
+					locale = false,
+					isFile = false,
+					isVideo = false;
 				if(__(PH.galleryProvvisoria[i].nuova)){
 					locale = true;
 					src = PH.galleryProvvisoria[i].imgMini;
+					type = PH.galleryProvvisoria[i].type;
 				}
 				if(!locale){
 					for(let f in DB.files.data){
@@ -447,6 +461,7 @@ var PH = {
 							if(DB.files.data[f].imgMini){
 								locale = true;
 								src = DB.files.data[f].imgMini;
+								type = DB.files.data[f].type;
 								name = __(DB.files.data[f].name);
 							}
 						}
@@ -455,12 +470,11 @@ var PH = {
 				if(__(PH.galleryProvvisoria[i].imgMini)){
 					if(!src && PH.galleryProvvisoria[i].imgMini.indexOf("data:")!=0)src = PH.galleryProvvisoria[i].imgMini;
 				}
-				let isFile = false;
 				if(src && src.indexOf("data:")!=0){
 					isFile = true;
-					type = src;
 					src = 'img/ext/'+src+'Big.jpg';
 				}
+				if(type=='vid')isVideo = true;
 				if(!locale){
 					if(CONN.getConn()){
 						// se connesso a internet la scarico
@@ -475,20 +489,25 @@ var PH = {
 						'		  class="' +
 								  ((cls) ? cls : '') +
 							  	  ((locale) ? 'fileLocale' : '') + '">' +
-						'		<div class="imgEl"' +
+						'		<div class="file_'+type+' imgEl"' +
 						'			 data-id="'+PH.galleryProvvisoria[i].idFile+'"' +
 									 ((src) ? ' style="background-image:url(\''+src+'\');"' : '') +
 						'			 onClick="';
 						
 				if(!PH.actionClick){
 					HTML += 'if(!PH.overCestino)';
-					if(!isFile)HTML += 'PH.fullPhoto('+i+','+locale+');';
-					else HTML += 'PH.openFile('+i+',\'\',type);';
+					if(isFile)HTML += 'PH.openFile('+i+',\'\',\''+type+'\');';
+					else if(isVideo)HTML += 'PH.openVideo('+i+');';
+					else HTML += 'PH.fullPhoto('+i+','+locale+');';
 				}else HTML += PH.actionClick;
 				HTML += '"';
 				if(name)HTML += ' title="'+htmlEntities(name)+'"';
 				HTML += '>';
-				if(!PH.actionClick){
+				if(isVideo){
+					HTML += 
+						'			<img class="gall_video"' +
+						'			 	 src="img/play_big.png">';
+				}else if(!PH.actionClick){
 					HTML += 
 						'			<img class="gall_full"' +
 						'			 	 src="img/ico_';
@@ -679,8 +698,9 @@ var PH = {
 		let JSNPUSH = {	idFile: "file_"+d,
 						imgMini: obj.imgMini,
 						imgBig: obj.imgBig,
+						type: obj.type,
 						nuova: true }
-						console.log(JSNPUSH)
+						
 		PH.galleryProvvisoria.push(JSNPUSH);
 		PH.caricaGallery();
 		SCHEDA.formModificato = true;
@@ -759,11 +779,21 @@ var PH = {
 		nasLoader();
 		document.getElementById("editFileBig").classList.remove("visSch");
 	},
-	openFile: function( i, elenco = PH.galleryProvvisoria	, fileType ){ // apro il file online
+	openFile: function( i, elenco = PH.galleryProvvisoria, fileType ){ // apro il file online
 		if(!CONN.retNoConn())return;
 		if(!elenco)elenco = PH.galleryProvvisoria;	
 		if(fileType=='pdf' && !android)PH.visPdfBig(CONN.APIfolder+"getFile.php?inline=1&c="+DB.login.data.TOKEN+localStorage.UniqueId+elenco[i].idFile.replace("file_","")+DB.login.data.idUtente);
 		else CONN.openUrl(CONN.APIfolder+"getFile.php?c="+DB.login.data.TOKEN+localStorage.UniqueId+elenco[i].idFile.replace("file_","")+DB.login.data.idUtente);
+	},
+	openVideo: function( i, elenco = PH.galleryProvvisoria, fileType ){ // apro il file online
+		if(!CONN.retNoConn())return;
+		let folder = PH.galleryProvvisoria[i].idFile.split("_")[1],
+			t = new Date().getTime();
+			url = 'https://www.tecnichedelmassaggio.it/pl/?v='+DB.login.data.idUtente+'/'+folder+'&iaomai_app=true&standard=true&t='+t;
+		PH.visPdfBig(url);
+		/* if(!elenco)elenco = PH.galleryProvvisoria;	
+		if(fileType=='pdf' && !android)PH.visPdfBig(CONN.APIfolder+"getFile.php?inline=1&c="+DB.login.data.TOKEN+localStorage.UniqueId+elenco[i].idFile.replace("file_","")+DB.login.data.idUtente);
+		else CONN.openUrl(CONN.APIfolder+"getFile.php?c="+DB.login.data.TOKEN+localStorage.UniqueId+elenco[i].idFile.replace("file_","")+DB.login.data.idUtente); */
 	},
 	scriviPhotoBig: function( res ){ // scrive il file BIG
 		res = JSON.parse( res );
@@ -864,7 +894,7 @@ var PH = {
 		}
 		PH.caricaGallery(true,'',true);
 	},
-	car_gallery_online: function(){ // legge la lsta dei files online
+	car_gallery_online: function(){ // legge la lista dei files online
 		if(CONN.getConn() && LOGIN.logedin()!=''){
 			CONN.caricaUrl(	'getImgGallery_GLOBAL.php','b64=1&iU='+DB.login.data.idUtente+'&online=1&&JSNPOST='+window.btoa(encodeURIComponent(JSON.stringify([]))),'PH.car_gallery_online_post');
 		}else PH.car_gallery_online_post('');
@@ -874,6 +904,7 @@ var PH = {
 		PH.galleryOnline = [];
 		if(res){
 			let files = JSON.parse(res);
+			
 			for(let f=files.length-1;f>=0;f--){
 				presente = false;
 				for(let i in DB.files.data){

@@ -2508,6 +2508,13 @@ html:not(.htmlStampa) .contGallery{
 	margin:4px;
 	cursor:pointer;
 }
+.gall_video{
+	border-radius: 2px;
+	float: right;
+	margin: 4px;
+	cursor: pointer;
+	opacity: 1 !important;
+}
 .gall_del{
 	padding: 5px;
 	box-shadow:0px 0px 3px #000;

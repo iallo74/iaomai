@@ -830,7 +830,7 @@ var PAZIENTI_TRATTAMENTI = { // extend PAZIENTI
 					'		</span>' +
 					'	</div>' +
 					'</div>';
-			
+					
 			if(nuovoCiclo)HTML += '</div>';		 // nascondo tutto se è un nuovo ciclo
 			HTML += '</form>';
 
@@ -862,7 +862,6 @@ var PAZIENTI_TRATTAMENTI = { // extend PAZIENTI
 				if(TipoTrattamento=='A')titoloDef=TXT("CicloTrattamenti");
 				else titoloDef=TXT("CreaTrattamento");
 			}
-			
 			
 			SCHEDA.caricaScheda(	stripslashes(titoloDef),
 									HTML,
@@ -1201,6 +1200,7 @@ var PAZIENTI_TRATTAMENTI = { // extend PAZIENTI
 						idFile: GA[i].idFile,
 						imgMini: GA[i].imgMini,
 						imgBig: GA[i].imgBig,
+						type: GA[i].type,
 						frv: (LOGIN._frv()!='')
 					});
 					let NG = {
