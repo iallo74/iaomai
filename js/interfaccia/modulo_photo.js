@@ -28,6 +28,7 @@ var PH = {
 	idU: -1,
 	actionClick: '',
 	selected: [],
+	tmpParams: {},
 	listaEstensioni: [	"image/jpeg",
 						"image/png",
 						"image/webp" ],
@@ -35,7 +36,16 @@ var PH = {
 	listaEstensioniVideo: [	"video/avi",
 							"video/mp4",
 							"video/flv",
-							"video/mov" ],
+							"video/mov",
+							"video/webm",
+							"video/x-m4v",
+							"video/x-m4v",
+							"video/x-ms-wmv",
+							"video/x-flv",
+							"video/mpeg",
+							"video/x-msvideo",
+							"video/x-ms-asf",
+							"video/quicktime" ],
 	maxFileSize: 20*1000*1000, // 20MB
 	
 	encodeImageFileAsURL: function( element, resizable=false, makeBig=false, functPH='', listaEstensioni ) { // trasforma l'immagine in base64
@@ -55,7 +65,7 @@ var PH = {
 		PH.makeBig = makeBig;
 		PH.file = element;
 		file = element.files[0];
-		
+		console.log(file)
 		if(listaEstensioni.indexOf(file.type)==-1){
 			ALERT(TXT("FileNonConsentito").replace("[listaEstensioni]",ext));
 			return;
@@ -97,28 +107,71 @@ var PH = {
 			// se è un file diverso
 			if(CONN.retNoConn()){
 				// se c'è connessione
-				reader.onloadend = function() {
-					// carico il file sul server
-					let d = new Date()*1,
-						type = 'File';
-					if(PH.listaEstensioniVideo.indexOf(file.type)>-1)type = 'Video';
-					if(type=='Video')applicaLoading(document.getElementById("scheda_testo"),'',"Caricamento in corso...");
-					
-					CONN.caricaUrl(	"put"+type+".php",
-									"b64=1&JSNPOST="+encodeURIComponent(window.btoa(JSON.stringify({
-										idFile: d,
-										e: file.type.split("/")[1], // pdf
-										t: file.type.split("/")[1], // pdf
-										F: reader.result,
-										n: file.name
-									}))),
-									"PH.salvaFile");
+				if(PH.listaEstensioniVideo.indexOf(file.type)==-1){
+					reader.onloadend = function() {
+						// carico il file sul server
+						let d = new Date()*1,
+							type = 'File';
+						applicaLoading(document.getElementById("scheda_testo"),'',"Caricamento in corso...");
+						CONN.caricaUrl(	"putFile.php",
+										"b64=1&JSNPOST="+encodeURIComponent(window.btoa(JSON.stringify({
+											idFile: d,
+											e: file.type.split("/")[1], // pdf
+											t: file.type.split("/")[1], // pdf
+											F: reader.result,
+											n: file.name
+										}))),
+										"PH.salvaFile");
+					}
+					reader.readAsDataURL(file);
+				}else{
+
+					applicaLoading(document.getElementById("scheda_testo"),'',TXT("Caricamento")+' (<span id="perc_chunk">0</span>%)');
+					let d = new Date()*1;
+					CONN.totalChunks = Math.ceil(file.size / CONN.chunkSize);
+					/*CONN.tmpParams = {
+						idFile: d,
+						e: file.type.split("/")[1], // pdf
+						t: file.type.split("/")[1], // pdf
+						F: reader.result,
+						n: file.name
+					};*/
+					//if(PH.listaEstensioniVideo.indexOf(file.type)>-1){
+						CONN.uploadChunk(CONN.APIvideoFolder+'putVideo.php',0,file,DB.login.data.idUtente+"_"+d,"PH.elaboraVideo");
+					/*}else{
+						CONN.uploadChunk(CONN.APIfilesFolder+'putFile.php',0,file,DB.login.data.idUtente+"_"+d,"PH.elaboraFile");
+					}*/
 				}
-				reader.readAsDataURL(file);
+
 			}else return;
 		}
 		if(!resizable)document.getElementById("photo").classList.add("nasPH");
 		document.getElementById("photo").classList.add("visPH");
+	},
+	elaboraVideo: function( json ){
+		console.log(json)
+		CONN.caricaUrl(	"processVideo.php",
+						"b64=1&JSNPOST="+encodeURIComponent(window.btoa(JSON.stringify(json))),
+						"PH.convertiVideo");
+	},
+	convertiVideo: function( txt ){
+		let json = JSON.parse(txt);
+		console.log(json)
+		CONN.caricaUrl(	"convertVideo.php",
+						"b64=1&JSNPOST="+encodeURIComponent(window.btoa(JSON.stringify(json))),
+						"");
+		PH.salvaFile(JSON.stringify(json));
+	},
+	getVideosSpace: function(){
+		CONN.caricaUrl(	"getVideosSpace.php",
+						"b64=1&JSNPOST="+encodeURIComponent(window.btoa(JSON.stringify([]))),
+						"console.log");
+	},
+	msgQuotaVideoExeded: function( txt ){
+		let json = JSON.parse(txt);
+		console.log(json.msg)
+		ALERT(TXT(json.msg).replace("[q]",parseInt(json.max_quota/(1*1000*1000))));
+		rimuoviLoading(document.getElementById("scheda_testo"));
 	},
 	
 	inizioResizeCrop: function(event){ // inizia a intercettare il ridimensionamento del ritaglio
@@ -382,7 +435,8 @@ var PH = {
 			obj = {
 				imgMini: imgMini,
 				imgBig: (PH.makeBig) ? PH.returnImageConverted( true ) : '',
-				fileType: imgMini.split("data:")[1].split(";")[0]
+				fileType: imgMini.split("data:")[1].split(";")[0],
+				type: "img"
 			};
 		eval(PH.functPH+"('"+JSON.stringify(obj)+"')");
 		PH.chiudi();
@@ -390,6 +444,7 @@ var PH = {
 	salvaFile: function( txt ){
 		rimuoviLoading(document.getElementById("scheda_testo"));
 		let obj = JSON.parse(txt);
+		console.log(obj)
 		eval(PH.functPH+"('"+JSON.stringify(obj)+"')");
 		PH.chiudi();
 	},
@@ -446,14 +501,13 @@ var PH = {
 				let src = '',
 					cls = '',
 					name = '',
-					type = '',
+					type = PH.galleryProvvisoria[i].type,
 					locale = false,
 					isFile = false,
 					isVideo = false;
 				if(__(PH.galleryProvvisoria[i].nuova)){
 					locale = true;
 					src = PH.galleryProvvisoria[i].imgMini;
-					type = PH.galleryProvvisoria[i].type;
 				}
 				if(!locale){
 					for(let f in DB.files.data){
@@ -497,24 +551,20 @@ var PH = {
 				if(!PH.actionClick){
 					HTML += 'if(!PH.overCestino)';
 					if(isFile)HTML += 'PH.openFile('+i+',\'\',\''+type+'\');';
-					else if(isVideo)HTML += 'PH.openVideo('+i+');';
+					else if(isVideo)HTML += 'PH.openVideo('+PH.galleryProvvisoria[i].idFile.split("_")[1]+');';
 					else HTML += 'PH.fullPhoto('+i+','+locale+');';
 				}else HTML += PH.actionClick;
 				HTML += '"';
 				if(name)HTML += ' title="'+htmlEntities(name)+'"';
 				HTML += '>';
-				if(isVideo){
-					HTML += 
-						'			<img class="gall_video"' +
-						'			 	 src="img/play_big.png">';
-				}else if(!PH.actionClick){
-					HTML += 
-						'			<img class="gall_full"' +
-						'			 	 src="img/ico_';
-					if(!isFile)HTML += 'fullscreen';
-					else HTML += 'dwnl';
-					HTML += '.png">';
-				}else HTML += '<img src="img/spuntaB.png"/>';
+				HTML += 
+					'			<img class="gall_full"' +
+					'			 	 src="img/';
+				if(isFile)HTML += 'ico_dwnl';
+				else if(isVideo)HTML += 'play_big';
+				else HTML += 'ico_fullscreen';
+				HTML += '.png">';
+				if(PH.actionClick)HTML += '<img src="img/spuntaB.png" class="spunta_pic"/>';
 				if(!vis)HTML += 
 						'			<img class="gall_del"' +
 						'			 	 src="img/ico_cestinoB.png"' +
@@ -785,11 +835,10 @@ var PH = {
 		if(fileType=='pdf' && !android)PH.visPdfBig(CONN.APIfolder+"getFile.php?inline=1&c="+DB.login.data.TOKEN+localStorage.UniqueId+elenco[i].idFile.replace("file_","")+DB.login.data.idUtente);
 		else CONN.openUrl(CONN.APIfolder+"getFile.php?c="+DB.login.data.TOKEN+localStorage.UniqueId+elenco[i].idFile.replace("file_","")+DB.login.data.idUtente);
 	},
-	openVideo: function( i, elenco = PH.galleryProvvisoria, fileType ){ // apro il file online
+	openVideo: function( folder, elenco = PH.galleryProvvisoria, fileType ){ // apro il file online
 		if(!CONN.retNoConn())return;
-		let folder = PH.galleryProvvisoria[i].idFile.split("_")[1],
-			t = new Date().getTime();
-			url = 'https://www.tecnichedelmassaggio.it/pl/?v='+DB.login.data.idUtente+'/'+folder+'&iaomai_app=true&standard=true&t='+t;
+		let t = new Date().getTime();
+			url = 'https://files.iaomai.app/pl/?v='+DB.login.data.idUtente+'/'+folder+'&iaomai_app=true&standard=true&t='+t+'&msgVideoProcessing='+btoa(encodeURIComponent(TXT("msgVideoProcessing")));
 		PH.visPdfBig(url);
 		/* if(!elenco)elenco = PH.galleryProvvisoria;	
 		if(fileType=='pdf' && !android)PH.visPdfBig(CONN.APIfolder+"getFile.php?inline=1&c="+DB.login.data.TOKEN+localStorage.UniqueId+elenco[i].idFile.replace("file_","")+DB.login.data.idUtente);
@@ -822,8 +871,50 @@ var PH = {
 	visPdfBig: function( url ){ // visualizza il PDF in iframe
 		document.getElementById("pdfBig").classList.remove("noLoader");
 		document.getElementById("frPdf").src = url;
-	},	
-	
+	},
+	setSpaceGallery: function( txt ){
+		let json = JSON.parse(txt),
+			space = DB._getStringMemorySize(IMPORTER.COMPR(DB.files)),
+			spaceAvail = (45*1000*1000 - DB.__sizeDb),
+			perc = (space*100) / spaceAvail,
+			perc_images = (json.images_amount*100) / json.images_quota,
+			perc_files = (json.files_amount*100) / json.files_quota,
+			perc_videos = (json.videos_amount*100) / json.videos_quota,
+			spaceTxt = '<b>',
+			spaceImagesTxt = '<b>',
+			spaceFilesTxt = '<b>',
+			spaceVideosTxt = '<b>';
+
+		if(space<1000*1000)spaceTxt += parseInt(space/(1000))+"KB";
+		else spaceTxt += ArrotondaEuro(space/(1000*1000))+"MB";
+
+		if(json.images_amount<1000*1000)spaceImagesTxt += parseInt(json.images_amount/(1000))+"KB";
+		else spaceImagesTxt += ArrotondaEuro(json.images_amount/(1000*1000))+"MB";
+
+		if(json.files_amount<1000*1000)spaceFilesTxt += parseInt(json.files_amount/(1000))+"KB";
+		else spaceFilesTxt += ArrotondaEuro(json.files_amount/(1000*1000))+"MB";
+
+		if(json.videos_amount<1000*1000)spaceVideosTxt += parseInt(json.videos_amount/(1000))+"KB";
+		else spaceVideosTxt += ArrotondaEuro(json.videos_amount/(1000*1000))+"MB";
+
+		spaceTxt += '</b> ('+parseInt(perc)+'%)'
+		spaceImagesTxt += '</b> ('+parseInt(perc_images)+'%)'
+		spaceFilesTxt += '</b> ('+parseInt(perc_files)+'%)'
+		spaceVideosTxt += '</b> ('+parseInt(perc_videos)+'%)'
+		
+		let HTML = 	'<div>'+htmlEntities(TXT("SpaceGallery"))+': '+spaceTxt+'</div>' +
+					'<div class="perc_cont"><div style="width:'+perc+'%"></div></div>' +
+					'<div>'+htmlEntities(TXT("SpaceImages"))+': '+spaceImagesTxt+'</div>' +
+					'<div class="perc_cont"><div style="width:'+perc_images+'%"></div></div>' +
+					'<div>'+htmlEntities(TXT("SpaceFiles"))+': '+spaceFilesTxt+'</div>' +
+					'<div class="perc_cont"><div style="width:'+perc_files+'%"></div></div>' +
+					'<div>'+htmlEntities(TXT("SpaceVideos"))+': '+spaceVideosTxt+'</div>' +
+					'<div class="perc_cont"><div style="width:'+perc_videos+'%"></div></div>';
+		if(document.getElementById("space_gallery")){
+			document.getElementById("space_gallery").innerHTML = HTML;
+			document.getElementById("space_gallery").classList.remove("load");
+		}
+	},
 	car_gallery: function(){ // carica la scheda dei files del menu ARCHIVI
 		// verifico le autorizzazioni
 		if(!DB.login.data.auths.length){
@@ -833,22 +924,11 @@ var PH = {
 			return;
 		}
 		// --------------------------
-		let space = DB._getStringMemorySize(IMPORTER.COMPR(DB.files)),
-			spaceAvail = (45*1000*1000 - DB.__sizeDb),
-			perc = (space*100) / spaceAvail,
-			spaceTxt = '<b>';
-		if(space<1000*1000){
-			spaceTxt += parseInt(space/(1000))+"KB";
-		}else{
-			spaceTxt += ArrotondaEuro(space/(1000*1000))+"MB";
-		}
-		spaceTxt += '</b> ('+parseInt(perc)+'%)'
 		
 		let number = DB.files.data.length,
 			HTML = 	'<p>'+htmlEntities(TXT("SpiegazioneGallery"))+'</p>' +
-					'<div>'+htmlEntities(TXT("NumberGallery"))+': <b>'+number+'</b><br>' +
-					htmlEntities(TXT("SpaceGallery"))+': '+spaceTxt+'</div>' +
-					'<div id="perc_cont"><div style="width:'+perc+'%"></div></div>';
+					'<p>'+htmlEntities(TXT("NumberGallery"))+': <b>'+number+'</b></p>' +
+					'<div id="space_gallery" class="load"></div>';
 		
 		
 		
@@ -886,11 +966,14 @@ var PH = {
 								
 		PH.car_gallery_local();
 		PH.car_gallery_online();
+		CONN.caricaUrl( "getTotalSpace.php?t=2", 
+						"b64=1&JSNPOST="+encodeURIComponent(window.btoa(JSON.stringify([]))), 
+						"PH.setSpaceGallery" );
 	},
 	car_gallery_local: function(){ // legge la lista dei file locali
 		PH.galleryProvvisoria = [];
 		for(let f in DB.files.data){
-			if(__(DB.files.data[f].frv,false)==(LOGIN._frv()=='frv'))PH.galleryProvvisoria.push({ idFile: DB.files.data[f].idFile, Dida: '' });
+			if(__(DB.files.data[f].frv,false)==(LOGIN._frv()=='frv'))PH.galleryProvvisoria.push({ idFile: DB.files.data[f].idFile, Dida: '', type: DB.files.data[f].type });
 		}
 		PH.caricaGallery(true,'',true);
 	},
@@ -904,7 +987,6 @@ var PH = {
 		PH.galleryOnline = [];
 		if(res){
 			let files = JSON.parse(res);
-			
 			for(let f=files.length-1;f>=0;f--){
 				presente = false;
 				for(let i in DB.files.data){
@@ -918,8 +1000,12 @@ var PH = {
 			for(let f in PH.galleryOnline){
 				let src = PH.galleryOnline[f].imgMini,
 					isFile = false,
+					isVideo = false,
 					type = '';
-				if(src && src.indexOf("data:")!=0){
+				if(PH.galleryOnline[f].type=='vid'){
+					isVideo = true;
+					type = 'vid';
+				}else if(src && src.indexOf("data:")!=0 && PH.galleryOnline[f].type!='vid'){
 					isFile = true;
 					type = src;
 					src = 'img/ext/'+src+'Big.jpg';
@@ -933,20 +1019,21 @@ var PH = {
 						'	 		 onClick="';
 				if(!PH.actionClick){
 					HTML += 'if(!PH.overCestino)';
-					if(!isFile)HTML += 'PH.fullPhoto('+f+',false,PH.galleryOnline);';
-					else HTML += 'PH.openFile('+f+',PH.galleryOnline,type);';
+					if(isFile)HTML += 'PH.openFile('+f+',PH.galleryOnline,\''+type+'\')';
+					else if(isVideo)HTML += 'PH.openVideo(\''+PH.galleryOnline[f].idFile.split("_")[1]+'\');';
+					else HTML += 'PH.fullPhoto('+f+',false,PH.galleryOnline);';
 				}else HTML += PH.actionClick;
 				HTML += '"';
 				if(__(PH.galleryOnline[f].name))HTML += ' title="'+htmlEntities(PH.galleryOnline[f].name)+'"';
 				HTML += '>';
-				if(!PH.actionClick){
-					HTML += 
-						'			<img class="gall_full"' +
-						'			 	 src="img/ico_';
-					if(!isFile)HTML += 'fullscreen';
-					else HTML += 'dwnl';
-					HTML += '.png">';
-				}else HTML += '<img src="img/spuntaB.png"/>';
+				HTML += 
+					'			<img class="gall_full"' +
+					'			 	 src="img/';
+				if(isFile)HTML += 'ico_dwnl';
+				else if(isVideo)HTML += 'play_big';
+				else HTML += 'ico_fullscreen';
+				HTML += '.png">';
+				if(PH.actionClick)HTML += '<img src="img/spuntaB.png" class="spunta_pic"/>';
 				
 				HTML += 
 						'			<img class="gall_del"' +
@@ -1012,9 +1099,12 @@ var PH = {
 		for(let e=0;e<els.length;e++){
 			let JSNPUSH = {	
 				idFile: els[e].dataset.id,
+				type: els[e].dataset.type,
 				imported: true
 			};
-			if(els[e].dataset.type)JSNPUSH.imgMini = els[e].dataset.type;
+			if(els[e].dataset.type && els[e].dataset.type!='vid'){
+				JSNPUSH.imgMini = els[e].dataset.type;
+			}
 			newGallery.push(JSNPUSH);
 		}
 		MENU.visArchives();

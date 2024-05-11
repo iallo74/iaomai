@@ -573,6 +573,9 @@ body.bodyModello #logoPartner,
 	text-align: center !important;
 	padding-top: 90px !important;
 }
+.loading *{
+	color: #FFF;
+}
 .loading.trasp{
     background: rgba(255,255,255,0.6) !important;
 }
@@ -592,8 +595,8 @@ body.bodyModello #logoPartner,
     top: 46px !important;
 }
 .smart .loadingScheda{
-    height: calc(100% - 45px) !important;
-    top: 45px !important;
+    height: calc(100% - 71px) !important;
+    top: 71px !important;
 }
 #msgScheda{
     background-color:#cddcf7 !important;

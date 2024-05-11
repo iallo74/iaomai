@@ -3532,21 +3532,45 @@ DB.TXT = {
             deu: "Auf dieser Seite werden alle auf Ihrem Gerät gespeicherten Fotos angezeigt."
         },
         SpaceGallery: {
-			ita: "Spazio usato",
-			eng: "Used space",
-			esp: "Espacio utilizado",
-			fra: "Espace utilisé",
-			por: "Espaço utilizado",
-			deu: "Verwendeter Speicherplatz"
-		},
-		NumberGallery: {
-			ita: "Totale elementi",
-			eng: "Total items",
-			esp: "Elementos totales",
-			fra: "Nombre total d'éléments",
-			por: "Total de itens",
-			deu: "Gesamtanzahl der Elemente"
-		},
+            ita: "Spazio locale usato",
+            eng: "Local space used",
+            esp: "Espacio local utilizado",
+            fra: "Espace local utilisé",
+            por: "Espaço local utilizado",
+            deu: "Lokaler Speicherplatz verwendet"
+        },
+        SpaceImages: {
+            ita: "Immagini",
+            eng: "Images",
+            esp: "Imágenes",
+            fra: "Images",
+            por: "Imagens",
+            deu: "Bilder"
+        },
+        SpaceFiles: {
+            ita: "Files",
+            eng: "Files",
+            esp: "Archivos",
+            fra: "Fichiers",
+            por: "Arquivos",
+            deu: "Dateien"
+        },
+        SpaceVideos: {
+            ita: "Video",
+            eng: "Videos",
+            esp: "Videos",
+            fra: "Vidéos",
+            por: "Vídeos",
+            deu: "Videos"
+        },
+        NumberGallery: {
+            ita: "Totale elementi",
+            eng: "Total items",
+            esp: "Elementos totales",
+            fra: "Nombre total d'éléments",
+            por: "Total de itens",
+            deu: "Gesamtanzahl der Elemente"
+        },
         DettagliGallery: {
             ita: "Dettagli",
             eng: "Details",
@@ -3554,7 +3578,7 @@ DB.TXT = {
             fra: "Détails",
             por: "Detalhes",
             deu: "Details"
-        },
+            },
         DimensioniGallery: {
             ita: "Dimensioni",
             eng: "Size",
@@ -3674,6 +3698,22 @@ DB.TXT = {
             fra: "Le chargement de fichiers de plus de [maxSize] Mo n'est pas autorisé. Le fichier que vous essayez de charger fait [size] Mo.",
             por: "Não é permitido enviar arquivos maiores que [maxSize] MB. O arquivo que você está tentando enviar tem [size] MB.",
             deu: "Das Hochladen von Dateien, die größer als [maxSize] MB sind, ist nicht erlaubt. Die Datei, die du hochladen möchtest, ist [size] MB groß."
+        },
+        msgVideoProcessing: {
+            ita: "<h2>Video in fase di conversione.</h2>Riprova tra qualche istante.<div>N.B. Il tempo di attesa può variare in base alle conversioni in coda anche di altri utenti. Puoi proseguire con il tuo lavoro e salvare la scheda e tornare in seguito per visualizzare il video convertito.</div>",
+            eng: "<h2>Video in conversion phase.</h2>Retry in a few moments.<div>Note: The waiting time may vary based on conversions in queue, including those of other users. You can continue with your work and save the tab, then return later to view the converted video.</div>",
+            esp: "<h2>Vídeo en proceso de conversión.</h2>Inténtalo de nuevo en unos momentos.<div>Nota: El tiempo de espera puede variar según las conversiones en cola, incluidas las de otros usuarios. Puedes continuar con tu trabajo y guardar la pestaña, luego regresar más tarde para ver el video convertido.</div>",
+            fra: "<h2>Vidéo en cours de conversion.</h2>Réessayez dans quelques instants.<div>Remarque : Le temps d'attente peut varier en fonction des conversions en attente, y compris celles d'autres utilisateurs. Vous pouvez continuer votre travail et enregistrer l'onglet, puis revenir plus tard pour visualiser la vidéo convertie.</div>",
+            por: "<h2>Vídeo em processo de conversão.</h2>Tente novamente em alguns momentos.<div>Nota: O tempo de espera pode variar dependendo das conversões na fila, incluindo as de outros usuários. Você pode continuar com seu trabalho e salvar a guia, e depois voltar mais tarde para visualizar o vídeo convertido.</div>",
+            deu: "<h2>Video in Konvertierungsphase.</h2>Versuchen Sie es in wenigen Augenblicken erneut.<div>Hinweis: Die Wartezeit kann je nach Konvertierungen in der Warteschlange, einschließlich derer anderer Benutzer, variieren. Sie können Ihre Arbeit fortsetzen und die Registerkarte speichern, um später das konvertierte Video anzuzeigen.</div>"
+        },
+        QUOTA_EXEDED: {
+            ita: "Hai superato lo spazio massimo per i tuoi video che è di [q] MB. Cancella qualche video (anche dal cestino dei files) per fare un po' di spazio.",
+            eng: "You have exceeded the maximum space for your videos, which is [q] MB. Delete some videos (even from the trash) to free up some space.",
+            esp: "Has superado el espacio máximo para tus videos, que es de [q] MB. Elimina algunos videos (incluso de la papelera de reciclaje) para liberar espacio.",
+            fra: "Vous avez dépassé l'espace maximum pour vos vidéos, qui est de [q] Mo. Supprimez quelques vidéos (même de la corbeille) pour libérer de l'espace.",
+            por: "Você excedeu o espaço máximo para seus vídeos, que é de [q] MB. Exclua alguns vídeos (mesmo da lixeira) para liberar espaço.",
+            deu: "Du hast den maximalen Speicherplatz für deine Videos überschritten, der [q] MB beträgt. Lösche einige Videos (auch aus dem Papierkorb), um Platz zu schaffen."
         },
 
         // cartella clinica

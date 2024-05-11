@@ -1,11 +1,18 @@
 var CONN = {
 	VERSIONE: 1,
 	APIfolder: 'https://www.corpomentespirito.it/__stream/app/030_iaomai/__API/V1.7/',
-	FILESfolder: 'https://www.iaomai.app/___API/__files_utenti/files/',
+	FILESfolder: 'https://files.iaomai.app/__files_utenti/files/',
+	APIfilesFolder: 'https://files.iaomai.app/___API/V3/',
+	APIvideoFolder: 'https://files.iaomai.app/___API/V3/',
 	urlStore: 'https://www.iaomai.app/[lang]/iaomai/',
 	linkPrivacy: 'https://www.iaomai.app/privacy',
 	linkReqPwd: 'https://www.iaomai.app/account/requestpassword.php',
 	online: true,
+	
+	chunkSize: 1024 * 1024, // 1MB
+	totalChunks: 0,
+	totalBytesLoaded: 0,
+
 	caricaUrl: function( url, qs = '', funzione ){ // carica un API url e richiama la funzione
 		if(CONN.getConn()){
 			let x;
@@ -68,5 +75,57 @@ var CONN = {
 		//if(window.cordova && window.cordova.platformId !== 'windows')window.open(url,'_system');
 		if(isCordova)window.open(url,'_system');
 		else window.open(url,'_blank');
+	},
+
+
+
+	uploadChunk: function( url, chunkNumber, file, tmp_name, final_funct ) {
+		const start = chunkNumber * CONN.chunkSize;
+		const end = start + CONN.chunkSize >= file.size ? file.size : start + CONN.chunkSize;
+		const chunk = file.slice(start, end);
+		const formData = new FormData();
+		formData.append('chunk', chunk, `${tmp_name+"."+file.name.split(".")[1]}.part${chunkNumber}.tot${(CONN.totalChunks-1)}`);
+		/*formData.append('name', file.name);
+		formData.append('totalChunks', CONN.totalChunks);*/
+		return fetch(url+"?UniqueId="+localStorage.UniqueId+"&idUtente="+DB.login.data.idUtente+"&filename="+encodeURIComponent(btoa(file.name)),{
+				method: 'POST',
+				/* mode: 'no-cors', */
+				headers: {
+					'Authorization': LOGIN.getLS('TOKEN')
+				},
+				body: formData/* ,
+				redirect: 'follow',
+				keepalive: false */
+			})
+		.then(response => {
+			if(!response.ok){
+				throw new Error('Errore durante il caricamento del chunk');
+			}
+			return response.json();
+		})
+		.then(data => {
+			if(data.success){
+				CONN.totalBytesLoaded += CONN.chunkSize;
+				let perc = parseInt((chunkNumber*100)/(CONN.totalChunks-1));
+				if(CONN.totalChunks==1)perc=100;
+				document.getElementById("perc_chunk").innerHTML = perc;
+				// aggiornare la status-bar o la percentuale
+				//console.log(chunkNumber+" === "+CONN.totalChunks - 1)
+				if (chunkNumber === CONN.totalChunks - 1) {
+					//console.log(data)
+					eval(final_funct)(data);
+				}else{
+					return CONN.uploadChunk(url,chunkNumber + 1,file,tmp_name,final_funct);
+				}
+			}else{
+				//console.error(data);
+
+				PH.msgQuotaVideoExeded(JSON.stringify(data));
+			}
+		})
+		.catch(error => {
+			console.error('Errore durante il caricamento del chunk:', error);
+		});
 	}
+
 };

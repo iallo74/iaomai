@@ -2349,9 +2349,9 @@ html:not(.htmlStampa) .contGallery{
 	border-radius: 7px;
 	text-align:right;
 }
-#archives .contGallery > div > div > div:not(.sel) img{
+/* #archives .contGallery > div > div > div:not(.sel) img:not(.gall_full){
 	display:none;
-}
+} */
 #archives .contGallery > div > div > div.sel img{
 	opacity:1 !important;
 }
@@ -2364,7 +2364,7 @@ html:not(.htmlStampa) .contGallery{
 .scheda_gallery .contGallery > div:first-child{
     border-top: none !important;
 }
-.scheda_gallery #perc_cont{
+.scheda_gallery .perc_cont{
 	background-color: #8ba7c3;
     border: 1px solid #333;
     border-radius: 3px;
@@ -2372,9 +2372,10 @@ html:not(.htmlStampa) .contGallery{
     height: 12px;
     overflow: hidden;
     margin-top: 4px;
+    margin-bottom: 14px;
     padding: 1px;
 }
-.scheda_gallery #perc_cont > div{
+.scheda_gallery .perc_cont > div{
 	background-color:#2d5cb8;
 	height:8px;
     border-radius: 3px;
@@ -2426,6 +2427,13 @@ html:not(.htmlStampa) .contGallery{
 	padding-bottom: 100% !important;
 }
 
+#space_gallery.load{
+    opacity: 0.2 !important;
+   	background: url(../img/loadingBlack.gif) no-repeat center center #000;
+	border-radius:10px;
+	height:80px;
+    background-size: 50px !important;
+}
 #GalleryCestinate{
 	margin-top:20px;
 	padding-top:20px;
@@ -2453,6 +2461,8 @@ html:not(.htmlStampa) .contGallery{
 	display: inline-block;
     vertical-align: top;
 	padding: 10px;
+	width: calc(100% - 164px);
+	overflow-x: hidden;
 }
 .dettagliFile p{
 	margin:0px;
@@ -2531,8 +2541,12 @@ html:not(.htmlStampa) .contGallery{
 body:not(.touch) .contGallery > div:not(.noResults) > div img{
 	opacity:0.2;
 }
-body:not(.touch) .contGallery > div:not(.noResults) > div:hover img{
+body:not(.touch) .contGallery:not(#contGalleryAr):not(#contGalleryArOnline) > div:not(.noResults) > div:hover img:not(.spunta_pic),
+body:not(.touch) .contGallery > div:not(.noResults) > div:hover img.spunta_pic{
 	opacity:1 !important;
+}
+.spunta_pic{
+	float:left;
 }
 
 
