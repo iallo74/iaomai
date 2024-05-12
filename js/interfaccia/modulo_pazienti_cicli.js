@@ -231,14 +231,16 @@ var PAZIENTI_CICLI = { // extend PAZIENTI
 		}});
 	},
 	swMenuCiclo: function( idTrattQ, btn ){
-		let forza = false
+		let forza = false,
+			top = tCoord(btn,'y')-15;
+		if(smartMenu)top -= HF()-SCHEDA.hOpened;
 		if(typeof(idTrattQ)=='undefined' && typeof(btn)=='undefined')forza = true;
 		if(PAZIENTI.mnOver)return;
 		if(!document.getElementById("menuCiclo") && !forza){
 			PAZIENTI.mnOver = false;
 			PAZIENTI.mn = document.createElement('div');
 			PAZIENTI.mn.id = "menuCiclo";
-			PAZIENTI.mn.style.top = ((tCoord(btn,'y')-15)-(HF()-SCHEDA.hOpened)) + 'px';
+			PAZIENTI.mn.style.top = top + 'px';
 			PAZIENTI.mn.className = "visSch";
 			PAZIENTI.mn.innerHTML = '<div class="p_paz_el_menu"' +
 									'	  onclick="PAZIENTI.el_trattamento('+idTrattQ+');"' +
