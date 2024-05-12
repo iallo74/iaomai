@@ -65,7 +65,7 @@ var PH = {
 		PH.makeBig = makeBig;
 		PH.file = element;
 		file = element.files[0];
-		console.log(file)
+
 		if(listaEstensioni.indexOf(file.type)==-1){
 			ALERT(TXT("FileNonConsentito").replace("[listaEstensioni]",ext));
 			return;
@@ -126,7 +126,8 @@ var PH = {
 					reader.readAsDataURL(file);
 				}else{
 
-					applicaLoading(document.getElementById("scheda_testo"),'',TXT("Caricamento")+' (<span id="perc_chunk">0</span>%)');
+					//applicaLoading(document.getElementById("scheda_testo"),'',TXT("Caricamento")+' (<span id="perc_chunk">0</span>%)');
+					visLoader(TXT("Caricamento")+' (<span id="perc_chunk">0</span>%)');
 					let d = new Date()*1;
 					CONN.totalChunks = Math.ceil(file.size / CONN.chunkSize);
 					/*CONN.tmpParams = {
@@ -171,7 +172,8 @@ var PH = {
 		let json = JSON.parse(txt);
 		console.log(json.msg)
 		ALERT(TXT(json.msg).replace("[q]",parseInt(json.max_quota/(1*1000*1000))));
-		rimuoviLoading(document.getElementById("scheda_testo"));
+		//rimuoviLoading(document.getElementById("scheda_testo"));
+		nasLoader();
 	},
 	
 	inizioResizeCrop: function(event){ // inizia a intercettare il ridimensionamento del ritaglio
@@ -442,7 +444,8 @@ var PH = {
 		PH.chiudi();
 	},
 	salvaFile: function( txt ){
-		rimuoviLoading(document.getElementById("scheda_testo"));
+		//rimuoviLoading(document.getElementById("scheda_testo"));
+		nasLoader();
 		let obj = JSON.parse(txt);
 		console.log(obj)
 		eval(PH.functPH+"('"+JSON.stringify(obj)+"')");
