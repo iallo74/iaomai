@@ -46,7 +46,7 @@ var MODULO_PROCEDURE_COMMUNITY = { // extend SET
 			
 		let dt = new Date().getTime();
 		if(CONN.getConn()){
-			HTML += '" style="background-image:url(' + CONN.APIfolder+'getAvatarMini.php?idU='+el.idUtente+'&t='+dt+');';
+			HTML += '" style="background-image:url(' + CONN.APIfilesFolder+'getAvatarMini.php?idU='+el.idUtente+'&t='+dt+');';
 		}else HTML += ' commNoAvatar"';
 		HTML +=
 			'"></span>' +

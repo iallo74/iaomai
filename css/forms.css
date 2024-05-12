@@ -2538,6 +2538,9 @@ html:not(.htmlStampa) .contGallery{
 #contGalleryOnline .gall_del{
 	margin-top: 72px !important;
 }
+#contGalleryArOnline .gall_del{
+	display: none;
+}
 body:not(.touch) .contGallery > div:not(.noResults) > div img{
 	opacity:0.2;
 }

@@ -355,11 +355,10 @@ var SYNCRO = {
 					if(dwnl == 'locale')BACKUPS.download(JSON.parse(elenco), dateNow);
 					else{
 						if(CONN.retNoConn()){
-							
 							CONN.caricaUrl(	"sincro_backups_crea.php",
 											"b64=1&JSNPOST="+window.btoa(encodeURIComponent(syncJSN)),
-											"BACKUPS.conf_backup"
-											);
+											"BACKUPS.conf_backup",
+											CONN.APIfilesFolder );
 						}
 						return false;
 					}
@@ -1322,7 +1321,9 @@ var SYNCRO = {
 					}
 				}
 			}
-			CONN.caricaUrl(	'getImgGallery_GLOBAL.php','b64=1&iU='+DB.login.data.idUtente+'&JSNPOST='+window.btoa(encodeURIComponent(JSON.stringify(elenco))),'SYNCRO.updateGallery_save');
+			CONN.caricaUrl(	'getImgGallery_GLOBAL.php',
+							'b64=1&iU='+DB.login.data.idUtente+'&JSNPOST='+window.btoa(encodeURIComponent(JSON.stringify(elenco))),'SYNCRO.updateGallery_save',
+							CONN.APIfilesFolder );
 		}
 	},
 	updateGallery_save: function( res ){ // risposta dall'API url dell'aggiornamento gallery

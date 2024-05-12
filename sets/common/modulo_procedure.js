@@ -173,7 +173,7 @@ var MODULO_PROCEDURE = { // extend SET
 					'	<div class="p_sch_label2">' +
 					'	<span class="commAvatar';
 			let dt = new Date().getTime();
-			if(CONN.getConn())HTML += '" style="background-image:url(' + CONN.APIfolder+'getAvatarMini.php?idU='+idUtenteProcedura+'&t='+dt+');';
+			if(CONN.getConn())HTML += '" style="background-image:url(' + CONN.APIfilesFolder+'getAvatarMini.php?idU='+idUtenteProcedura+'&t='+dt+');';
 			else HTML += ' commNoAvatar"';
 			HTML +=	'"></span>' +
 					'		<b>' + Autore + '</b>'+((DataModifica>1)?' ('+getDataTS(DataModifica)+')':'') +

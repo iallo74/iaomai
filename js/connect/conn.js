@@ -3,7 +3,6 @@ var CONN = {
 	APIfolder: 'https://www.corpomentespirito.it/__stream/app/030_iaomai/__API/V1.7/',
 	FILESfolder: 'https://files.iaomai.app/__files_utenti/files/',
 	APIfilesFolder: 'https://files.iaomai.app/___API/V3/',
-	APIvideoFolder: 'https://files.iaomai.app/___API/V3/',
 	urlStore: 'https://www.iaomai.app/[lang]/iaomai/',
 	linkPrivacy: 'https://www.iaomai.app/privacy',
 	linkReqPwd: 'https://www.iaomai.app/account/requestpassword.php',
@@ -13,7 +12,7 @@ var CONN = {
 	totalChunks: 0,
 	totalBytesLoaded: 0,
 
-	caricaUrl: function( url, qs = '', funzione ){ // carica un API url e richiama la funzione
+	caricaUrl: function( url, qs = '', funzione, apiFolder = CONN.APIfolder ){ // carica un API url e richiama la funzione
 		if(CONN.getConn()){
 			let x;
 			if(typeof XMLHttpRequest!="undefined"){
@@ -45,8 +44,8 @@ var CONN = {
 				if(qs)qs+='&';
 				qs+="tm="+tm;
 				if(typeof(DB)!='undefined')qs+="&ui="+encodeURIComponent(window.btoa(__(localStorage.UniqueId)));
-				x.open("POST", CONN.APIfolder+url, true);
-				//console.log(CONN.APIfolder+url);
+				x.open("POST", apiFolder+url, true);
+				//console.log(apiFolder+url);
 				x.setRequestHeader("Content-type", "application/x-www-form-urlencoded;charset=uft-8;");
 				//x.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded; ');
 				if(qs.indexOf("TK=D6G-w34rgV")==-1)x.setRequestHeader("Authorization", LOGIN.getLS('TOKEN'));

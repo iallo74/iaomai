@@ -732,12 +732,7 @@ var LOGIN = {
 							
 			CONN.caricaUrl(	"utente_dati.php",
 							"b64=1",
-							"LOGIN.car_utente",
-							'',
-							'',
-							'',
-							'',
-							btnAdd );
+							"LOGIN.car_utente" );
 		}
 	},
 	car_utente: function( txt ){ // risposta da modUtente: carica i dati dell'utente nella scheda

@@ -75,6 +75,7 @@ var PH = {
 			return;
 		}
 		let reader = new FileReader();
+		console.log(file.type)
 		if(PH.listaEstensioni.indexOf(file.type)>-1){
 			// se è un'immagine
 			reader.onloadend = function() {
@@ -121,7 +122,8 @@ var PH = {
 											F: reader.result,
 											n: file.name
 										}))),
-										"PH.salvaFile");
+										"PH.salvaFile",
+										CONN.APIfilesFolder );
 					}
 					reader.readAsDataURL(file);
 				}else{
@@ -138,7 +140,7 @@ var PH = {
 						n: file.name
 					};*/
 					//if(PH.listaEstensioniVideo.indexOf(file.type)>-1){
-						CONN.uploadChunk(CONN.APIvideoFolder+'putVideo.php',0,file,DB.login.data.idUtente+"_"+d,"PH.elaboraVideo");
+						CONN.uploadChunk(CONN.APIfilesFolder+'putVideo.php',0,file,DB.login.data.idUtente+"_"+d,"PH.convertiVideo");
 					/*}else{
 						CONN.uploadChunk(CONN.APIfilesFolder+'putFile.php',0,file,DB.login.data.idUtente+"_"+d,"PH.elaboraFile");
 					}*/
@@ -149,24 +151,23 @@ var PH = {
 		if(!resizable)document.getElementById("photo").classList.add("nasPH");
 		document.getElementById("photo").classList.add("visPH");
 	},
-	elaboraVideo: function( json ){
+	convertiVideo: function( json ){
 		console.log(json)
-		CONN.caricaUrl(	"processVideo.php",
-						"b64=1&JSNPOST="+encodeURIComponent(window.btoa(JSON.stringify(json))),
-						"PH.convertiVideo");
-	},
-	convertiVideo: function( txt ){
-		let json = JSON.parse(txt);
-		console.log(json)
+		let JSNPOST = {
+			name: atob(json.name),
+			idFile: json.idFile
+		}
 		CONN.caricaUrl(	"convertVideo.php",
-						"b64=1&JSNPOST="+encodeURIComponent(window.btoa(JSON.stringify(json))),
-						"");
+						"b64=1&JSNPOST="+encodeURIComponent(window.btoa(JSON.stringify(JSNPOST))),
+						"",
+						CONN.APIfilesFolder );
 		PH.salvaFile(JSON.stringify(json));
 	},
 	getVideosSpace: function(){
 		CONN.caricaUrl(	"getVideosSpace.php",
 						"b64=1&JSNPOST="+encodeURIComponent(window.btoa(JSON.stringify([]))),
-						"console.log");
+						"console.log",
+						CONN.APIfilesFolder );
 	},
 	msgQuotaVideoExeded: function( txt ){
 		let json = JSON.parse(txt);
@@ -535,7 +536,7 @@ var PH = {
 				if(!locale){
 					if(CONN.getConn()){
 						// se connesso a internet la scarico
-						afterFunct += "CONN.caricaUrl(	'"+"getImgGallery.php','n="+i+"&iU="+PH.idU+"&idFile="+PH.galleryProvvisoria[i].idFile+"','PH.scriviFile');";
+						afterFunct += "CONN.caricaUrl(	'"+"getImgGallery.php','n="+i+"&iU="+PH.idU+"&t="+type+"&idFile="+PH.galleryProvvisoria[i].idFile+"','PH.scriviFile',CONN.APIfilesFolder);";
 					}else{
 						cls='noConn';
 					}
@@ -716,7 +717,6 @@ var PH = {
 		for(let f in PH.galleryProvvisoria){
 			if(res.idFile == PH.galleryProvvisoria[f].idFile && __(PH.galleryProvvisoria[f].imported,false)){
 				presente = f;
-				console.log("OK")
 			}
 		}
 		if(!presente){
@@ -779,7 +779,8 @@ var PH = {
 						for(let i in v)eval(getArguments(v,i));
 			CONN.caricaUrl(	'delImgGallery.php',
 							'iU='+PH.idU+'&idFile='+idFile,
-							'PH.car_gallery_online');
+							'PH.car_gallery_online',
+							CONN.APIfilesFolder );
 			
 		}});
 	},
@@ -800,7 +801,6 @@ var PH = {
 				}
 			}
 		}
-		//if(!locale)pass = CONN.retNoConn();
 		if(pass){
 			visLoader("");
 			PH.openedImg = i;
@@ -809,7 +809,8 @@ var PH = {
 				if(LOGIN._frv())idU = 'frv';
 				CONN.caricaUrl(	'getImgGallery.php',
 								'big=1&n='+i+'&iU='+idU+'&idFile='+elenco[i].idFile,
-								'PH.scriviPhotoBig');
+								'PH.scriviPhotoBig',
+								CONN.APIfilesFolder);
 			}else{
 				let locale = false;
 				if(__(elenco[i].nuova)){
@@ -835,17 +836,14 @@ var PH = {
 	openFile: function( i, elenco = PH.galleryProvvisoria, fileType ){ // apro il file online
 		if(!CONN.retNoConn())return;
 		if(!elenco)elenco = PH.galleryProvvisoria;	
-		if(fileType=='pdf' && !android)PH.visPdfBig(CONN.APIfolder+"getFile.php?inline=1&c="+DB.login.data.TOKEN+localStorage.UniqueId+elenco[i].idFile.replace("file_","")+DB.login.data.idUtente);
-		else CONN.openUrl(CONN.APIfolder+"getFile.php?c="+DB.login.data.TOKEN+localStorage.UniqueId+elenco[i].idFile.replace("file_","")+DB.login.data.idUtente);
+		if(fileType=='pdf' && !android)PH.visPdfBig(CONN.APIfilesFolder+"getFile.php?inline=1&c="+DB.login.data.TOKEN+localStorage.UniqueId+elenco[i].idFile.replace("file_","")+DB.login.data.idUtente);
+		else CONN.openUrl(CONN.APIfilesFolder+"getFile.php?c="+DB.login.data.TOKEN+localStorage.UniqueId+elenco[i].idFile.replace("file_","")+DB.login.data.idUtente);
 	},
 	openVideo: function( folder, elenco = PH.galleryProvvisoria, fileType ){ // apro il file online
 		if(!CONN.retNoConn())return;
 		let t = new Date().getTime();
 			url = 'https://files.iaomai.app/pl/?v='+DB.login.data.idUtente+'/'+folder+'&iaomai_app=true&standard=true&t='+t+'&msgVideoProcessing='+btoa(encodeURIComponent(TXT("msgVideoProcessing")));
 		PH.visPdfBig(url);
-		/* if(!elenco)elenco = PH.galleryProvvisoria;	
-		if(fileType=='pdf' && !android)PH.visPdfBig(CONN.APIfolder+"getFile.php?inline=1&c="+DB.login.data.TOKEN+localStorage.UniqueId+elenco[i].idFile.replace("file_","")+DB.login.data.idUtente);
-		else CONN.openUrl(CONN.APIfolder+"getFile.php?c="+DB.login.data.TOKEN+localStorage.UniqueId+elenco[i].idFile.replace("file_","")+DB.login.data.idUtente); */
 	},
 	scriviPhotoBig: function( res ){ // scrive il file BIG
 		res = JSON.parse( res );
@@ -971,7 +969,8 @@ var PH = {
 		PH.car_gallery_online();
 		CONN.caricaUrl( "getTotalSpace.php?t=2", 
 						"b64=1&JSNPOST="+encodeURIComponent(window.btoa(JSON.stringify([]))), 
-						"PH.setSpaceGallery" );
+						"PH.setSpaceGallery",
+						CONN.APIfilesFolder );
 	},
 	car_gallery_local: function(){ // legge la lista dei file locali
 		PH.galleryProvvisoria = [];
@@ -982,7 +981,9 @@ var PH = {
 	},
 	car_gallery_online: function(){ // legge la lista dei files online
 		if(CONN.getConn() && LOGIN.logedin()!=''){
-			CONN.caricaUrl(	'getImgGallery_GLOBAL.php','b64=1&iU='+DB.login.data.idUtente+'&online=1&&JSNPOST='+window.btoa(encodeURIComponent(JSON.stringify([]))),'PH.car_gallery_online_post');
+			CONN.caricaUrl(	'getImgGallery_GLOBAL.php',
+							'b64=1&iU='+DB.login.data.idUtente+'&online=1&JSNPOST='+window.btoa(encodeURIComponent(JSON.stringify([]))),'PH.car_gallery_online_post',
+							CONN.APIfilesFolder );
 		}else PH.car_gallery_online_post('');
 	},
 	car_gallery_online_post: function( res ){ // carica la gallery in contGalleryOnline

@@ -16,7 +16,8 @@ var BACKUPS = {
 		if(CONN.getConn()){
 			CONN.caricaUrl(	"sincro_backups_elenco.php",
 							"",
-							"BACKUPS.caricaBackups");
+							"BACKUPS.caricaBackups",
+							CONN.APIfilesFolder );
 		}else{
 			BACKUPS.caricaBackups('[]');
 		}
@@ -51,7 +52,8 @@ var BACKUPS = {
 		applicaLoading(document.getElementById("contBackups"));
 		CONN.caricaUrl(	"sincro_backups_download.php",
 						"f="+encodeURIComponent(file),
-						"BACKUPS.vis_backup");
+						"BACKUPS.vis_backup",
+						CONN.APIfilesFolder );
 	},
 	vis_backup: function( bkp ){ // visualizza la scheda del backup
 		document.getElementById("contBackups").classList.remove("noConn");
@@ -138,7 +140,8 @@ var BACKUPS = {
 			if(CONN.retNoConn()){
 				CONN.caricaUrl(	"sincro_backups_elimina.php",
 								"f="+BACKUPS.fileProvv,
-								"BACKUPS.car_backups");
+								"BACKUPS.car_backups",
+								CONN.APIfilesFolder );
 			}
 		}});
 	},
