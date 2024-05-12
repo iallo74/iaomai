@@ -113,7 +113,8 @@ var PH = {
 						// carico il file sul server
 						let d = new Date()*1,
 							type = 'File';
-						applicaLoading(document.getElementById("scheda_testo"),'',"Caricamento in corso...");
+						//applicaLoading(document.getElementById("scheda_testo"),'',"Caricamento in corso...");
+						visLoader(TXT("Caricamento"));
 						CONN.caricaUrl(	"putFile.php",
 										"b64=1&JSNPOST="+encodeURIComponent(window.btoa(JSON.stringify({
 											idFile: d,
