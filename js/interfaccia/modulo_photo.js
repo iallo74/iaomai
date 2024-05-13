@@ -80,7 +80,7 @@ var PH = {
 			return;
 		}
 		let reader = new FileReader();
-		console.log(file.type)
+
 		if(PH.listaEstensioni.indexOf(file.type)>-1){
 			// se è un'immagine
 			reader.onloadend = function() {
@@ -116,8 +116,9 @@ var PH = {
 				if(PH.listaEstensioniVideo.indexOf(file.type)==-1){
 					reader.onloadend = function() {
 						// carico il file sul server
-						let d = new Date()*1,
+						/* let d = new Date()*1,
 							type = 'File';
+						
 						//applicaLoading(document.getElementById("scheda_testo"),'',"Caricamento in corso...");
 						visLoader(TXT("Caricamento"));
 						CONN.caricaUrl(	"putFile.php",
@@ -129,7 +130,16 @@ var PH = {
 											n: file.name
 										}))),
 										"PH.salvaFile",
-										CONN.APIfilesFolder );
+										CONN.APIfilesFolder ); */
+						visLoader(TXT("Caricamento")+' (<span id="perc_chunk">0</span>%)');
+						let d = new Date()*1;
+						CONN.tmpParams = {
+							idFile: d,
+							t: file.type,
+							n: file.name
+						};
+						CONN.totalChunks = Math.ceil(file.size / CONN.chunkSize);
+						CONN.uploadChunk(CONN.APIfilesFolder+'putFile.php',0,file,DB.login.data.idUtente+"_"+d,"PH.elaboraFile");
 					}
 					reader.readAsDataURL(file);
 				}else{
@@ -181,6 +191,12 @@ var PH = {
 		ALERT(TXT(json.msg).replace("[q]",parseInt(json.max_quota/(1*1000*1000))));
 		//rimuoviLoading(document.getElementById("scheda_testo"));
 		nasLoader();
+	},
+	elaboraFile: function( json ){
+		CONN.caricaUrl(	"elaboraFile.php",
+						"b64=1&JSNPOST="+encodeURIComponent(window.btoa(JSON.stringify(CONN.tmpParams))),
+						"PH.salvaFile",
+						CONN.APIfilesFolder );
 	},
 	
 	inizioResizeCrop: function(event){ // inizia a intercettare il ridimensionamento del ritaglio
