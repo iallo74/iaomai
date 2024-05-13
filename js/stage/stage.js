@@ -772,7 +772,7 @@ function centro(){ // riporta al centro
 	let centro = __(globals.modello.centro,{ x: 0, y: 0.7, z: 0 }),
 		zoom = centro.z;
 	if(!centro.z)zoom = 0.5;
-	if(smartMenu)centro.x = -0.2;
+	if(smartMenu)centro.x = -0.3;
 	panEndZero = { x: 0, y: 0, z: 0 };
 	panEnd = centro;
 	normalizeRotation();
