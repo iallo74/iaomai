@@ -232,6 +232,9 @@ body:not(.touch ) .lll:hover rect.filled{
     overflow-y: hidden;
     padding-top: 8px;
 }
+.smart #scheda_linguette{
+	height: 30px;
+}
 #scheda.schLato #scheda_linguette{
 	height: 0px !important;
     padding: 0px !important;
@@ -260,7 +263,7 @@ body:not(.touch ) .lll:hover rect.filled{
 	stroke-linecap: round;
 	stroke-width: 2px;
 }
-.smart #scheda_linguette div line{
+.smart #scheda_linguette div:not(#ss) line{
 	stroke:#FFF !important;
 }
 #scheda.schLato #scheda_linguette > div{

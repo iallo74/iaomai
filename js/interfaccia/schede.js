@@ -483,8 +483,8 @@ var SCHEDA = {
 				document.getElementById("scheda").classList.remove("h150");
 			}
 			
-			if(smartMenu && h<70 && document.querySelector(".formBtn"))h=70;
-			if(smartMenu && h<40)h=40;
+			if(smartMenu && h<80 && document.querySelector(".formBtn"))h=80;
+			if(smartMenu && h<76)h=76;
 			if(h>5)SCHEDA.hOpened = h;
 			else SCHEDA.hOpened = 200;
 			if(smartMenu)localStorage.hOpened = SCHEDA.hOpened;
@@ -538,7 +538,7 @@ var SCHEDA = {
 	},
 	resizeElenchi: function( h, inizio ){
 		if(smartMenu){
-			document.getElementById("elenchi").style.height = 'calc(100% - '+(HF()-h+37)+'px)';
+			document.getElementById("elenchi").style.height = 'calc(100% - '+(HF()-h+57)+'px)';
 			if(inizio){
 				SCHEDA.hOpened = h;
 				document.getElementById("scheda_testo").style.height = h +'px';

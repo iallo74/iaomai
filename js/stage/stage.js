@@ -552,7 +552,7 @@ function onWindowResize(){
 		traslStage = 0;
 	}
 	document.getElementById("container").getElementsByTagName("canvas")[0].style.marginLeft = traslStage + "px";
-	if(smartMenu && !document.body.classList.contains("nasSch"))h -= 54;
+	if(smartMenu && !document.body.classList.contains("nasSch"))h -= 64;
 	camera.aspect = w / h;
 	camera.updateProjectionMatrix();
 	renderer.setSize( w, h );

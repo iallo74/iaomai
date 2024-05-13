@@ -896,8 +896,8 @@ body:not(.smart) #ag{
 .smart #ag{
 	padding-bottom: 35px !important;
 	z-index:1500 !important;
-	bottom: 54px;
-    height: calc(100% - 54px) !important;
+	bottom: 64px;
+    height: calc(100% - 64px) !important;
 }
 
 #labelAg{

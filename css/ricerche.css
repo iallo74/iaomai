@@ -117,8 +117,8 @@ body:not(.smart) #schedaGlobal{
 	width:100%;
 	padding-bottom: 35px !important;
 	z-index:500 !important;
-	bottom: 54px;
-    height: calc(100% - 60px) !important;
+	bottom: 64px;
+    height: calc(100% - 70px) !important;
 }
 @media (max-width: 600px){
     #schedaGlobal{

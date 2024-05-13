@@ -28,7 +28,7 @@
 	overflow: hidden;
     position: fixed;
     z-index: 1000;
-    bottom: 54px;
+    bottom: 64px;
     width: 100%;
 }
 
@@ -48,7 +48,7 @@ body:not(.smart) #icone{
 }
 body.smart #icone{
 	width:100%;
-	height:54px;
+	height:64px;
 	background-color: #333;
 	background-repeat:repeat-x;
 	background-position:top center;
@@ -100,8 +100,8 @@ body:not(.smart) #icone.iconeEspanse{
 	display:none !important;
 }
 .smart #icone div:not(#btns_set):not(#cartella_set){
-	width: 54px;
-    height: 54px;
+	width: 64px;
+    height: 64px;
     float: left;
     margin: 0px;
     background-position: center center;
@@ -112,7 +112,7 @@ body:not(.smart) #icone.iconeEspanse{
     border-right: 1px solid rgba(0,0,0,0.4);
 }
 .smart #icone:not(.iconeHome) div:not(#btns_set):not(#cartella_set):not(#p_set){
-    height: 40px !important;
+    height: 50px !important;
 }
 
 .smart #icone.iconeHome div:not(#btns_set):not(#cartella_set){
@@ -275,7 +275,7 @@ body:not(.smart) #icone.iconeEspanse div i{
 }
 .smart #p_set{
 	margin-top: 0px !important;
-    height: 54px !important;
+    height: 64px !important;
 }
 body:not(.bodyStyled1):not(.bodyStyled2):not(.smart) #p_sets{
 	background-image: url(../img/ico_mappa.png);
@@ -557,9 +557,9 @@ body:not(.smart) #ico_cliente{
 }
 .smart #ico_cliente{
    margin-top: -7px !important;
-    height: 54px !important;
+    height: 64px !important;
     background-position: center center !important;
-    padding-left: 54px !important;
+    padding-left: 64px !important;
 }
 .clientAtt #ico_cliente{
 	display:block !important;
@@ -608,7 +608,7 @@ body:not(.smart) #pulsanti_modello{
 	z-index:1600;
 }
 .smart #pulsanti_modello{
-    bottom: 54px;
+    bottom: 64px;
     top: auto;
     border-bottom-right-radius: 0px;
 }
@@ -960,7 +960,7 @@ body:not(.Muscles) #i_aree{
 	display:none;
 	margin-left:10px;
 	width:100%;
-	height:202px;
+	height:211px;
 	background-color:#575757;
 	background: linear-gradient(to bottom, #333 0%,#575757 25%);
 	margin:0px !important;
@@ -1379,7 +1379,7 @@ body:not(.smart) #impostazioni{
 .smart #impostazioni{
 	left:auto !important;
 	right:0px;
-	bottom:54px;
+	bottom:64px;
 	z-index: 550;
 	border-top-left-radius:5px;
 	border-top-right-radius:0px;
@@ -1388,7 +1388,7 @@ body:not(.smart) #impostazioni{
 	width: 100%;
     border-radius: 0px;
     position: fixed;
-    height: calc(100% - 54px);
+    height: calc(100% - 64px);
 	box-shadow:none !important;
 }
 #labelImpostazioni{

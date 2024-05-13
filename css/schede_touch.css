@@ -112,12 +112,12 @@
 /* ELENCHI */
 .smart #elenchi{
 	width:100%;
-	bottom:54px;
+	bottom:70px;
 	top:auto !important;
 	z-index:42 !important;
 }
 .smart #elenchi{
-	height: calc(100% - 54px);
+	height: calc(100% - 70px);
 }
 .smart #elenchi_cont{
 	background: var(--menu-fondino) !important;
@@ -213,9 +213,11 @@
 }
 .smart #ss{
 	height: 29px !important;
+	margin-top: 0px;
 }
 .smart #sc{
 	padding-top: 2px;
+	height:27px;
 }
 .smart #mn, #xp, sr{
 	display:none !important;

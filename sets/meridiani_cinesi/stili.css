@@ -703,7 +703,7 @@ body:not(.smart) .listaMeridiani .p_aria:not(.elencoSel) span:hover{
 	z-index:11;
 }
 .smart #meridianiSmart_ico.visSch{
-    height: 665px !important;
+    height: 721px !important;
     border-bottom-left-radius: 15px !important;
 	z-index:2 !important;
 	background-position: 13px 9px !important;
@@ -726,7 +726,7 @@ body:not(.bodyModello) #btns_set{
 .smart #meridianiSmart_cont{
     top: 36px !important;
     right: 0px !important;
-	max-height: calc(100% - 90px) !important;
+	max-height: calc(100% - 100px) !important;
 	z-index: 10;
 	padding-top:9px;
 	max-width: 62px;
@@ -761,9 +761,9 @@ body:not(.smart) #meridianiSmart_ico.visSch{
 	background-image: url(../../img/frSu.png);
 }
 .smart #meridianiSmart_cont div{
-	width: 40px !important;
-    height: 40px !important;
-    line-height: 40px !important;
+	width: 44px !important;
+    height: 44px !important;
+    line-height: 44px !important;
     font-size: var(--font-11) !important;
     border-radius: 13px !important;
 	font-weight: bold;

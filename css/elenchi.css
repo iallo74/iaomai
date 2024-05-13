@@ -261,7 +261,7 @@ body:not(.smart) #elenchi_linguette{
 	display:none !important;
 }
 .smart #elenchi_linguette{
-	height:24px;
+	height:30px;
 	overflow:hidden;
 }
 .smart #es,
@@ -276,6 +276,9 @@ body:not(.smart) #elenchi_linguette{
 	text-align: center;
 	height: 24px !important;
 	margin-right: -34px;
+}
+.smart #elenchi_linguette #es{
+	margin-top: 6px;
 }
 .smart #ec{
 	width:32px;
@@ -322,7 +325,7 @@ body:not(.smart) #elenchi_linguette{
 .smart #elenchi_cont{
 	overflow:hidden;
 	box-shadow:0 0 3px #000;
-	height: calc(100% - 23px) !important;
+	height: calc(100% - 24px) !important;
 }
 #elenchi_contenuti{ /* ????? */
 	width:500px;
