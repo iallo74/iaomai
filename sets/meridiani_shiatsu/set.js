@@ -361,6 +361,7 @@ var SET = {
 		}
 		DB_addset = null;
 		
+		centro();
 		manichinoCaricato = true;
 		SET.componiPatologie();
 		SET.caricaApprofondimenti();

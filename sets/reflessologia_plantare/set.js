@@ -160,6 +160,7 @@ var SET = {
 		
 		
 		
+		centro();
 		manichinoCaricato = true;
 		SET.caricaPunti();
 		SET.caricaPatologie();
