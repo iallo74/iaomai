@@ -73,6 +73,12 @@ var SLIDER = {
 			btnSlideAnat.style.marginTop = ((SLIDER.maxVal/SLIDER.demolt)-mT)+'px';
 			perc=(mT/SLIDER.maxVal)*SLIDER.demolt;
 		}
+		if(smartMenu){
+			document.getElementById("ttAnatomia").classList.add("visSch");
+			document.getElementById("ttAnatomia").innerHTML = parseInt(perc*100)+'%';
+			document.getElementById("ttAnatomia").style.left = (tCoord(document.getElementById("sliderAnatomia"))+5)+'px';
+			document.getElementById("ttAnatomia").style.top = (tCoord(document.getElementById("sliderAnatomia"),'y')+document.getElementById("sliderAnatomia").scrollHeight-mT)+'px';
+		}
 		
 		let l = SLIDER.livelloSel.substr(0,1).toUpperCase()+SLIDER.livelloSel.substr(1,SLIDER.livelloSel.length-1);
 		MODELLO.op(l,perc);
@@ -94,5 +100,10 @@ var SLIDER = {
 		document.getElementById("pulsanti_modello").classList.remove("pLight");
 		raycastDisable = false;
 		SLIDER.demolt = 1;
+		if(smartMenu){
+			document.getElementById("ttAnatomia").classList.remove("visSch");
+			document.getElementById("ttAnatomia").innerHTML = '';
+			document.getElementById("ttAnatomia").style.top = '-500px';
+		}
 	}
 }
