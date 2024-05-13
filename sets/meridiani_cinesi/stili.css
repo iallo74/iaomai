@@ -154,9 +154,9 @@ body:not(.smart) #scheda:not(.schLato) .ideogrammaMeridianoChar{
 }
 .smart #contBtnModello > div #p_contrasto{
 	position: fixed;
-	top: 49px;
+	top: 55px;
 	left: 10px;
-	border-top: 1px solid rgba(255, 255, 255, 0.2);
+	border-top: none !important;
     width: 36px !important;
 }
 #contBtnModello.vis .smart #p_contrasto{
@@ -694,7 +694,7 @@ body:not(.smart) .listaMeridiani .p_aria:not(.elencoSel) span:hover{
     height: 50px !important;
 	top: 0px !important;
 	right: 0px !important;
-    background-color: #333 !important;
+    /* background-color: #333 !important; */
     border-bottom-left-radius: 54px !important;
     border-bottom-right-radius: 0px !important;
     border-top-left-radius: 0px !important;
@@ -707,6 +707,7 @@ body:not(.smart) .listaMeridiani .p_aria:not(.elencoSel) span:hover{
     border-bottom-left-radius: 15px !important;
 	z-index:2 !important;
 	background-position: 13px 9px !important;
+	background-color: #333 !important;
 }
 body:not(.bodyModello) #meridianiSmart_cont,
 body:not(.bodyModello) #meridianiSmart_ico,

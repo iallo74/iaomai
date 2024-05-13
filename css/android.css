@@ -12,11 +12,13 @@
 	line-height:30px !important;
 	border-radius:15px !important;
 }
-.android #legende div{
+/* .android #legende div{
 	font-size: var(--font-12-1) !important;
-	height:20px !important;
-	line-height:20px !important;
-}
+    height: 30px !important;
+    line-height: 30px !important;
+    padding-right: 34px !important;
+    padding-left: 15px !important;
+} */
 .android .popup input[type='text'],
 .android .popup input[type='email'],
 .android .popup input[type='password']{

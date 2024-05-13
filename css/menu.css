@@ -364,16 +364,18 @@ body:not(.smart) #p_rifletti{
 }
 .smart #contBtnModello #p_centro{
 	position: fixed;
-    top: 0px;
+    top: 3px;
     left: 3px;
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 6px;
 }
-.smart #contBtnModello.vis{
+.smart #contBtnModello/* .vis */{
 	margin-top: 170px;
     background-color: rgba(0, 0, 0, 0.2);
     border-top-right-radius: 14px;
     border-bottom-right-radius: 14px;
 }
-.smart #contBtnModello.vis div:not(#p_centro):not(#btns_set):not(#p_liv_pelle){
+.smart #contBtnModello/* .vis */ div:not(#p_centro):not(#btns_set):not(#p_liv_pelle){
 	border-top: 1px solid rgba(255,255,255,0.2);
 	width: 36px !important;
 }
@@ -403,10 +405,33 @@ body:not(.smart) #p_rifletti{
 #p_liv_legamenti,
 #p_liv_visceri,
 #p_liv_vasi,
-#p_liv_pelle{
+#p_liv_pelle,
+#p_extra{
 	display:none;
 	background-size:auto 70%;
 }
+body.bodyModello.smart #p_extra{
+	display:inline-block !important;
+	/* height: 36px !important; */
+}
+
+
+#p_extra svg{
+	width: 36px;
+	height: 36px;
+	opacity: 0.5;
+    border-radius: 4px;
+	margin-left:-2px;
+}
+#p_extra svg circle{
+	r: 2px;
+	cy: 21px;
+	stroke: none;
+	stroke-width: 0px;
+	fill: #FFF;
+}
+
+
 .Muscles #p_liv_aree,
 #p_liv_muscoli3d{
 	background-image:url(../img/p_muscoli.png);
@@ -443,7 +468,7 @@ body:not(.Muscles)  #p_liv_aree{
 	height:0px !important;
 	width:0px !important;
 } */
-.smart #contBtnModello:not(.vis) #p_liv_aree,
+/* .smart #contBtnModello:not(.vis) #p_liv_aree,
 .smart #contBtnModello:not(.vis) #p_liv_muscoli3d,
 .smart #contBtnModello:not(.vis) #p_liv_ossa,
 .smart #contBtnModello:not(.vis) #p_liv_legamenti,
@@ -455,7 +480,7 @@ body:not(.Muscles)  #p_liv_aree{
 	left:-500px !important;
 	height:0px !important;
 	width:0px !important;
-}
+} */
 
 
 body #p_impostazioniAM{
@@ -597,6 +622,7 @@ body:not(.smart) #pulsanti_modello{
 		padding-top:7px;
 		background-position:5px 7px;
 		height:50px;
+		padding-left: 60px;
 	}
 }
 
@@ -1201,8 +1227,8 @@ body:not(.smart) #elencoSelected{
     right: 48px;
 }
 .smart #elencoSelected{
-	top:88px;
-	left:0px;
+	top: 373px;
+    left: 12px;
 }
 #labelSelected{
 	height:40px;

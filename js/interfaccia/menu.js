@@ -170,6 +170,8 @@ var MENU = {
 				}, ((m+1)*2 + vel) * 100, m );
 			}
 		}
+		
+		SCHEDA.gestVisSmart(document.getElementById("pulsanti_modello").classList.contains("visSch"));
 		//if(!smartMenu){
 			if(document.getElementById("pulsanti_modello").classList.contains("visSch")){
 				MENU.icoSelected = document.getElementById("p_modello");

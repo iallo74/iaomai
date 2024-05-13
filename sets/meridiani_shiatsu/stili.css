@@ -824,7 +824,7 @@ body.smart.touch .textMeridianoTratt{
     height: 50px !important;
 	top: 0px !important;
 	right: 0px !important;
-    background-color: #333 !important;
+    /* background-color: #333 !important; */
     border-bottom-left-radius: 54px !important;
     border-bottom-right-radius: 0px !important;
     border-top-left-radius: 0px !important;
@@ -837,6 +837,7 @@ body.smart.touch .textMeridianoTratt{
     border-bottom-left-radius: 15px !important;
 	z-index:2 !important;
 	background-position: 13px 9px !important;
+	background-color: #333 !important;
 }
 body.smart.sistema_MAS #meridianiSmart_ico.visSch{
     height: 577px !important;
