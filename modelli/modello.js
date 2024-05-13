@@ -575,6 +575,7 @@ var MODELLO = {
 			MODELLO.cambiaTipoPelle(''); // metto la pelle chiare se si tratta dell'orecchio
 		}
 		document.getElementById("pulsanti_modello").classList.add('modelloScelto');
+		document.getElementById("contBtnModello").classList.remove("nas");
 		inizio = false;
 	},
 	

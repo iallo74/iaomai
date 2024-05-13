@@ -141,6 +141,7 @@ var MENU = {
 			MENU.icoSelected.classList.add("p_sel");
 			MENU.comprimiIcone(true);
 		}
+		document.getElementById("contBtnModello").classList.remove("nas");
 		//verAnimate();
 	},
 	visModello: function( forza = false ){
@@ -172,6 +173,7 @@ var MENU = {
 		}
 		
 		SCHEDA.gestVisSmart(document.getElementById("pulsanti_modello").classList.contains("visSch"));
+		document.getElementById("contBtnModello").classList.toggle("nas",document.getElementById("pulsanti_modello").classList.contains("visSch"));
 		//if(!smartMenu){
 			if(document.getElementById("pulsanti_modello").classList.contains("visSch")){
 				MENU.icoSelected = document.getElementById("p_modello");
