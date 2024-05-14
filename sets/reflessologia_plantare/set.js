@@ -185,7 +185,7 @@ var SET = {
 				
 			}else{
 				if(!SET.ptSel){
-					if(!smartMenu)GUIDA.visFumetto("guida_set_mini",false,true);
+					//if(!smartMenu)GUIDA.visFumetto("guida_set_mini",false,true);
 					SCHEDA.chiudiElenco();
 					MENU.chiudiMenu();
 				}

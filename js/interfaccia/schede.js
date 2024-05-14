@@ -946,6 +946,7 @@ var SCHEDA = {
 		document.getElementById("lista_"+elenco).classList.add("visSch");
 		document.getElementById("elenchi_titolo_txt").innerHTML = document.getElementById("pulsante_"+elenco).innerHTML + iconaAdd;
 		SCHEDA.setTriploLivello( elenco );
+
 		document.getElementById("elenchi_titolo").classList.add("visSch");
 		document.getElementById("elenchi").classList.add("LISTE");
 		document.getElementById("scheda").classList.add("LISTE");
@@ -957,6 +958,7 @@ var SCHEDA = {
 		let tipo = el.parentElement.id.split("_")[1];
 		if(tipo=='base')SCHEDA.elencoSelBase = elenco;
 		if(tipo=='set')SCHEDA.elencoSelSet = elenco;
+		document.getElementById("elenchi_titolo_freccia").classList.toggle("btn_altri_archivi",tipo=='base');
 		SCHEDA.verPosScheda();
 
 		if(document.getElementById("elenchi").classList.contains("LISTE"))SCHEDA.setMenuDim(3);

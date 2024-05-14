@@ -383,14 +383,14 @@ var SET = {
 				}
 				
 			}else{
-				if(!SET.ptSel  && !smartMenu)GUIDA.visFumetto("guida_set_mini",false,false);
+				//if(!SET.ptSel  && !smartMenu)GUIDA.visFumetto("guida_set_mini",false,false);
 				SCHEDA.chiudiElenco();
 				MENU.chiudiMenu();
 			}
 		}if(!globals.modello.cartella){
 			GUIDA.visFumetto("guida_generica");
 		}
-		if(smartMenu)GUIDA.visFumetto("guida_set_mini",false,false);
+		//if(smartMenu)GUIDA.visFumetto("guida_set_mini",false,false);
 		postApreSet = false;
 		if(smartMenu)overInterfaccia=true;
 		SET.riapriPunto();

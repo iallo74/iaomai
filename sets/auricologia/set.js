@@ -483,7 +483,7 @@ var SET = {
 				}
 				
 			}else{
-				if(!SET.ptSel && !smart)MenuGUIDA.visFumetto("guida_set_mini",false,true);
+				//if(!SET.ptSel && !smart)MenuGUIDA.visFumetto("guida_set_mini",false,true);
 				SCHEDA.chiudiElenco();
 				MENU.chiudiMenu();
 			}

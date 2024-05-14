@@ -73,6 +73,7 @@ var overChiudiProva = false;
 	
 // OPERAZIONI AL CARICAMENTO DELLA PAGINA
 function INIT(){
+	if(smartMenu && localStorage.open3d=='false')localStorage.open3d = "true";
 	
 	document.getElementById("schermo_nero").style.opacity = 0;
 	setTimeout(function(){

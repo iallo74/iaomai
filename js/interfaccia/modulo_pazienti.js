@@ -154,6 +154,7 @@ var PAZIENTI = {
 				SET.leggiNote();
 			}catch(err){}
 			SCHEDA.setTriploLivello('pazienti');
+			document.getElementById("elenchi_titolo_freccia").classList.remove("btn_altri_archivi");
 		}});
 	},
 	deselPaziente: function(){ // deseleziona il paziente su cui si sta lavorando
@@ -179,11 +180,13 @@ var PAZIENTI = {
 			PAZIENTI.aperture = [];
 			document.getElementById("p_cartella").classList.remove("clientAtt");
 			//document.getElementById("elenchi_titolo").classList.remove("clientAtt");
-			document.getElementById("p_cartella").getElementsByTagName("i")[0].innerHTML = TXT("ElGestionale");
+			document.getElementById("p_cartella").getElementsByTagName("i")[0].innerHTML = !smartMenu ? TXT("ElGestionale") : TXT("LabelSmartPazienti");
 			try{
 				SET.leggiNote();
 			}catch(err){}
 			SCHEDA.setTriploLivello('pazienti');
+			
+			document.getElementById("elenchi_titolo_freccia").classList.add("btn_altri_archivi");
 		}});
 	},
 	chiudiPaziente: function( idPaziente ){ // chiude la scheda anagrafica

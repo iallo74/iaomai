@@ -334,7 +334,8 @@ body:not(.smart) #elenchi_linguette{
 }
 .smart #elenchi_testa{
     /* width: fit-content; */
-	width: calc(100% - 17px)
+	/* width: calc(100% - 17px); */
+	width: calc(100%);
 }
 .smart #elenchi.noTesta #elenchi_testa{
    display:none;
@@ -372,6 +373,26 @@ body:not(.smart) #elenchi_linguette{
     background-position: -13px center;
     cursor: pointer;
 	float: left;
+	position: relative;
+    z-index: 10;
+}
+#elenchi_titolo_freccia.btn_altri_archivi{
+    width: auto !important;
+    height: 30px !important;
+    line-height: 30px !important;
+    float: right !important;
+    background-color: rgba(0, 0, 0, 0.5) !important;
+    background-image: none !important;
+    border-radius: 8px;
+    padding: 0 13px;
+    margin: 10px -4px 0px 0px;
+}
+#elenchi_titolo_freccia:not(.btn_altri_archivi) i{
+    display:none;
+}
+#elenchi_titolo_freccia.btn_altri_archivi i{
+    color: #FFF;
+	font-style:normal;
 }
 #elenchi_titolo_txt{
 	width: calc(100% - 17px);
@@ -526,6 +547,13 @@ body:not(.bodyStyled2) #chiudiElenco{
 }
 #contImpset .separatorePulsanti{
     margin-top: -1px !important;	
+}
+#label_altri_archivi{
+	display: block;
+    padding: 16px 10px 10px 17px;
+    text-align: left;
+    color: rgba(0, 0, 0, 0.7);
+    font-size: var(--font-14-3);
 }
 .smart.android #pulsanti_base div,
 .smart.android #pulsanti_set div{

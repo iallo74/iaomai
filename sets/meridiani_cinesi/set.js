@@ -301,7 +301,7 @@ var SET = {
 				}
 				
 			}else{
-				if(!SET.ptSel && !smartMenu)GUIDA.visFumetto("guida_set_mini",false,true);
+				//if(!SET.ptSel && !smartMenu)GUIDA.visFumetto("guida_set_mini",false,true);
 				SCHEDA.chiudiElenco();
 				MENU.chiudiMenu();
 			}

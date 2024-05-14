@@ -5280,6 +5280,39 @@ DB.TXT = {
             por: "Links rápidos",
             deu: "Schnelllinks"
         },
+        
+        LabelSmartAnatomia: {
+            ita: "Anatomia",
+            eng: "Anatomy",
+            esp: "Anatomía",
+            fra: "Anatomie",
+            por: "Anatomia",
+            deu: "Anatomie"
+        },
+        LabelSmartMappe: {
+            ita: "Mappe",
+            eng: "Maps",
+            esp: "Mapas",
+            fra: "Cartes",
+            por: "Mapas",
+            deu: "Karten"
+        },
+        LabelSmartPazienti: {
+            ita: "Pazienti",
+            eng: "Patients",
+            esp: "Pacientes",
+            fra: "Patients",
+            por: "Pacientes",
+            deu: "Patienten"
+        },
+        AltriArchivi: {
+            "ita": "Altri archivi",
+            "eng": "Other archives",
+            "esp": "Otros archivos",
+            "fra": "Autres archives",
+            "por": "Outros arquivos",
+            "deu": "Andere Archive"
+        },
 
         // popup SETS
         SetAperto: {
@@ -5697,6 +5730,14 @@ DB.TXT = {
             fra: "Centrer le modèle",
             por: "Centralizar o modelo",
             deu: "Modell zentrieren"
+        },
+        Centra: {
+            ita: "Centra",
+            eng: "Center",
+            esp: "Centrar",
+            fra: "Centrer",
+            por: "Centra",
+            deu: "Zentriert"
         },
         MostraLM: {
             ita: "Mostra/nascondi i punti di repere",
@@ -8852,20 +8893,20 @@ DB.TXT = {
             deu: "Patienten"
         },
 		_Cliente_S: {
-            ita: "Ricevente - Uke",
-            eng: "Receiver - Uke",
-            esp: "Receptor - Uke",
-            fra: "Receveur - Uke",
-            por: "Receptor - Uke",
-            deu: "Empfangenden- Uke"
+            ita: "Ricevente",
+            eng: "Receiver",
+            esp: "Receptor",
+            fra: "Receveur",
+            por: "Receptor",
+            deu: "Empfangenden"
         },
         _Clienti_S: {
-            ita: "Riceventi - Uke",
-            eng: "Receivers - Uke",
-            esp: "Receptores - Uke",
-            fra: "Receveurs - Uke",
-            por: "Receptores - Uke",
-            deu: "Empfangenden - Uke"
+            ita: "Riceventi",
+            eng: "Receivers",
+            esp: "Receptores",
+            fra: "Receveurs",
+            por: "Receptores",
+            deu: "Empfangenden"
         },
         _cliente_S: {
             ita: "ricevente",

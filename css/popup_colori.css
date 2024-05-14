@@ -171,7 +171,9 @@ body:not(.smart) #guida_generica #colSel{
 	margin-left: 16px !important;
 	max-width: 233px;
 }
-
+.smart #sfSel{
+	display:none;
+}
 #sfSel select{
 	display: inline-block;
 	height: 30px;
