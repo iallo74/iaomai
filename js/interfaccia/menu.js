@@ -190,11 +190,30 @@ var MENU = {
 			MENU.icoSelected = document.getElementById("p_modello");
 			MENU.icoSelected.classList.add("p_sel");
 			document.getElementById("icone").classList.add("nasIcons");
+			if(smartMenu){
+				let sld = document.getElementById("livelli_cont").getElementsByClassName("slider_cont"),
+				elOp = null;
+				for(s=0;s<sld.length;s++){
+					if(	sld[s].classList.contains("visSch") && 
+						!sld[s].classList.contains("disattLiv") && 
+						sld[s].querySelector("#"+sld[s].id.replace("p_","fr_")) &&
+						!elOp){
+							elOp = sld[s];
+						}
+				}
+				if(elOp){
+					if(!document.getElementById(elOp.id.replace("p_","el_")+"_cont").classList.contains("elOpened")){
+						elOp.querySelector("#"+elOp.id.replace("p_","fr_")).click();
+					}
+				}
+			}
 		}else{
 			MENU.desIcona();
 			document.getElementById("icone").classList.remove("nasIcons");
 			document.getElementById("pulsanti_modello").classList.remove("schedaOpened");
-			if(smartMenu)MENU.chiudiAllSelected();
+			if(smartMenu){
+				MODELLO.op('Pelle',1);
+			}
 		}
 		MENU.comprimiIcone(true);
 		if(daScheda){

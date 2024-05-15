@@ -5644,52 +5644,52 @@ DB.TXT = {
             deu: "Isolieren"
         },
         CercaMuscoli: {
-            ita: "Filtra l'elenco",
-            eng: "Filter list",
-            esp: "Filtrar lista",
-            fra: "Filtrer la liste",
-            por: "Filtrar lista",
-            deu: "Liste filtern"
+            ita: "Cerca un muscolo",
+            eng: "Search a muscle",
+            esp: "Buscar un músculo",
+            fra: "Chercher un muscle",
+            por: "Procurar um músculo",
+            deu: "Einen Muskel suchen"
         },
         CercaAree: {
-            ita: "Filtra l'elenco",
-            eng: "Filter list",
-            esp: "Filtrar lista",
-            fra: "Filtrer la liste",
-            por: "Filtrar lista",
-            deu: "Liste filtern"
+            ita: "Cerca un muscolo",
+            eng: "Search a muscle",
+            esp: "Buscar un músculo",
+            fra: "Chercher un muscle",
+            por: "Procurar um músculo",
+            deu: "Einen Muskel suchen"
         },
         CercaOssa: {
-            ita: "Filtra l'elenco",
-            eng: "Filter list",
-            esp: "Filtrar lista",
-            fra: "Filtrer la liste",
-            por: "Filtrar lista",
-            deu: "Liste filtern"
+            ita: "Cerca un osso",
+            eng: "Search a bone",
+            esp: "Buscar un hueso",
+            fra: "Chercher un os",
+            por: "Procurar um osso",
+            deu: "Einen Knochen suchen"
         },
         CercaLegamenti: {
-            ita: "Filtra l'elenco",
-            eng: "Filter list",
-            esp: "Filtrar lista",
-            fra: "Filtrer la liste",
-            por: "Filtrar lista",
-            deu: "Liste filtern"
+            ita: "Cerca un legamento",
+            eng: "Search a ligament",
+            esp: "Buscar un ligamento",
+            fra: "Chercher un ligament",
+            por: "Procurar um ligamento",
+            deu: "Ein Band suchen"
         },
         CercaVisceri: {
-            ita: "Filtra l'elenco",
-            eng: "Filter list",
-            esp: "Filtrar lista",
-            fra: "Filtrer la liste",
-            por: "Filtrar lista",
-            deu: "Liste filtern"
+            ita: "Cerca un organo o un viscere",
+            eng: "Search an organ or a viscus",
+            esp: "Buscar un órgano o una víscera",
+            fra: "Chercher un organe ou une viscère",
+            por: "Procurar um órgão ou uma víscera",
+            deu: "Ein Organ oder ein Eingeweide suchen"
         },
         CercaVasi: {
-            ita: "Filtra l'elenco",
-            eng: "Filter list",
-            esp: "Filtrar lista",
-            fra: "Filtrer la liste",
-            por: "Filtrar lista",
-            deu: "Liste filtern"
+            ita: "Cerca un vaso o un nervo",
+            eng: "Search a vessel or a nerve",
+            esp: "Buscar un vaso o un nervio",
+            fra: "Chercher un vaisseau ou un nerf",
+            por: "Procurar um vaso ou um nervo",
+            deu: "Ein Gefäß oder einen Nerv suchen"
         },
         LivelliPrecar: {
             ita: "Scegli un modello anatomico in 3D da visualizzare, cliccando su una delle icone qui sopra.",

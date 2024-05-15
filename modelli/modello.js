@@ -1376,6 +1376,7 @@ var MODELLO = {
 							else MODELLO.op(t,0.4);
 							MENU.aggiornaIconeModello();
 						}
+						MODELLO.op("Ossa",0.4);
 						MENU.addSelected(el,'V');
 						MODELLO.swGuide("Organo_"+organo,true, noCentra);
 						if(WF() < 600)MENU.chiudiMenu();
@@ -1580,8 +1581,9 @@ var MODELLO = {
 	
 	isolaArea: function( el, modo='', noCentra=false ){
 		if(smartMenu && globals.pezziSelezionati.length && el.id!=globals.pezziSelezionati[0]){
-			MODELLO.caricaAnatomiaSmart(el.id,true);
-			document.getElementById(globals.pezziSelezionati[0]).click();
+			return;
+			/* MODELLO.caricaAnatomiaSmart(el.id,true);
+			document.getElementById(globals.pezziSelezionati[0]).click(); */
 		}
 		if(smartMenu && !document.getElementById("pulsanti_modello").classList.contains("visSch"))MENU.visModello();
 		if(!areasView || MENU.wheeling || this.areaBlock)return;
