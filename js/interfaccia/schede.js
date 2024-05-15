@@ -813,7 +813,8 @@ var SCHEDA = {
 	},
 	
 	initElenco: function(){
-		document.getElementById("elenchi_pulsanti").classList.add("visSch");
+		SCHEDA.elencoSelBase='pazienti';
+		document.getElementById(smartMenu ? "elenchi_lista" : "elenchi_pulsanti").classList.add("visSch");
 		SCHEDA.chiudiElenco();
 	},
 	caricaElenco: function( titolo, html ){
@@ -958,7 +959,7 @@ var SCHEDA = {
 		let tipo = el.parentElement.id.split("_")[1];
 		if(tipo=='base')SCHEDA.elencoSelBase = elenco;
 		if(tipo=='set')SCHEDA.elencoSelSet = elenco;
-		document.getElementById("elenchi_titolo_freccia").classList.toggle("btn_altri_archivi",tipo=='base');
+		document.getElementById("elenchi_titolo_freccia").classList.toggle("btn_altri_archivi",tipo=='base' && PAZIENTI.idCL==-1);
 		SCHEDA.verPosScheda();
 
 		if(document.getElementById("elenchi").classList.contains("LISTE"))SCHEDA.setMenuDim(3);

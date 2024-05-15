@@ -4,13 +4,19 @@ var CATALOGO = {
 		let HTML_elenco = 	'';
 		for(let cartella in sets){
 			if(	cartella != 'anatomy_full' &&
-				cartella != 'clients_full'){
+				cartella != 'clients_full' &&
+				!sets[cartella].locked){
 				let addClass = '',
 					linkSet = 'caricaSet(\''+cartella+'\',this);MENU.visSets();';
 				if(cartella == globals.set.cartella)linkSet = 'SCHEDA.apriElenco(\'set\')';
 				if(sets[cartella].locked){
 					//linkSet = 'MENU.visElencoSets(\''+cartella+'\');';
 					linkSet = '';
+					addClass = ' class="lockedMap"';
+				}
+				if(DB.login.data.auths.indexOf(cartella)==-1 && !LOGIN._frv()){
+					//linkSet = 'MENU.visElencoSets(\''+cartella+'\');';
+					//linkSet = '';
 					addClass = ' class="lockedMap"';
 				}
 

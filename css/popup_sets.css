@@ -32,7 +32,7 @@ body:not(.smart) #sets{
 	color:#000 !important;
 	font-weight:bold;
   	border-top-right-radius:5px;
-	background-image:url(../img/ico_mappa.png);/*url(../img/p_impostazioni.png);*/
+	background-image:url(../img/ico_mappa2.png);/*url(../img/p_impostazioni.png);*/
 	background-repeat:no-repeat;
 	background-position:4px center;
 }

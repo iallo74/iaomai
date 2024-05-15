@@ -85,8 +85,8 @@ body:not(.smart) .ideogrammaPuntoChar{
     line-height: 44px !important;
 }
 .smart .ideogrammaMeridianoChar{
-    top: 71px;
-    height: calc(100% - 71px);
+    top: 76px;
+    height: calc(100% - 76px);
 }
 #scheda.schLato .ideogrammaMeridianoChar,
 body:not(.smart) #scheda:not(.schLato) .ideogrammaMeridianoChar{
@@ -493,13 +493,16 @@ body:not(.smart) .listaMeridiani .p_aria:not(.elencoSel) span:hover{
 .smart .listaMeridiani .p_fuoco_supplementare:not(.elencoSel) span,
 .smart .listaMeridiani .p_acqua:not(.elencoSel) span{
     background-image:url(../../img/ico_lampadinaB_light.png) !important;
+	background-size: auto !important;
 }
 .smart .listaMeridiani .p_fuoco:not(.elencoSel) span,
 .smart .listaMeridiani .p_terra:not(.elencoSel) span{
     background-image:url(../../img/ico_lampadinaB_light2.png) !important;
+	background-size: auto !important;
 }
 .smart .listaMeridiani .p_aria:not(.elencoSel) span{
 	background-image:url(../../img/ico_lampadinaN_light.png) !important;
+	background-size: auto !important;
 }
 
 

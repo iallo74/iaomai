@@ -29,7 +29,6 @@ var MENU = {
 				document.getElementById("p_cartella").getElementsByTagName("i")[1].innerHTML = TXT("LabelSmartPazienti");
 				document.getElementById("icone").classList.add("labeled");
 			}
-			if(LOGIN.logedin())SCHEDA.selElenco('pazienti');
 		},1000);
 	},
 	pulsanti: function(event){
@@ -101,7 +100,7 @@ var MENU = {
 	},
 	chiudiMenu: function( n, stage = false ){
 		if(stage && !CONN.online)return;
-		if(n!="pulsanti_modello")document.getElementById("pulsanti_modello").classList.remove("visSch");
+		if(n!="pulsanti_modello" && !smartMenu)document.getElementById("pulsanti_modello").classList.remove("visSch");
 		if(n!="sets")document.getElementById("sets").classList.remove("visSch");
 		if(n!="elencoSelected")document.getElementById("elencoSelected").classList.remove("visSch");
 		if(n!="impostazioni")document.getElementById("impostazioni").classList.remove("visSch");
@@ -122,7 +121,7 @@ var MENU = {
 		if(n!="infolingue")document.getElementById("infolingue").classList.remove("visSch");
 		if(n!="licenze")document.getElementById("licenze").classList.remove("visSch");
 		if(n!="ag")document.getElementById("ag").classList.remove("visSch");
-		if( n=='pulsanti_modello' ||
+		if( (n=='pulsanti_modello' && !smartMenu) ||
 			n=='impostazioni' ||
 			n=='sets' ||
 			n=='ricerche' ||
@@ -151,7 +150,10 @@ var MENU = {
 			MENU.icoSelected.classList.add("p_sel");
 			MENU.comprimiIcone(true);
 		}
-		document.getElementById("contBtnModello").classList.remove("nas");
+		if(!document.getElementById("pulsanti_modello").classList.contains("visSch") && smartMenu){
+			document.getElementById("contBtnModello").classList.remove("nas");
+			document.getElementById("icone").classList.remove("nasIcons");
+		}
 		//verAnimate();
 	},
 	visModello: function( forza = false ){
@@ -184,12 +186,16 @@ var MENU = {
 		
 		SCHEDA.gestVisSmart(document.getElementById("pulsanti_modello").classList.contains("visSch"));
 		document.getElementById("contBtnModello").classList.toggle("nas",document.getElementById("pulsanti_modello").classList.contains("visSch"));
-		//if(!smartMenu){
-			if(document.getElementById("pulsanti_modello").classList.contains("visSch")){
-				MENU.icoSelected = document.getElementById("p_modello");
-				MENU.icoSelected.classList.add("p_sel");
-			}else MENU.desIcona();
-		//}
+		if(document.getElementById("pulsanti_modello").classList.contains("visSch")){
+			MENU.icoSelected = document.getElementById("p_modello");
+			MENU.icoSelected.classList.add("p_sel");
+			document.getElementById("icone").classList.add("nasIcons");
+		}else{
+			MENU.desIcona();
+			document.getElementById("icone").classList.remove("nasIcons");
+			document.getElementById("pulsanti_modello").classList.remove("schedaOpened");
+			if(smartMenu)MENU.chiudiAllSelected();
+		}
 		MENU.comprimiIcone(true);
 		if(daScheda){
 			if(document.getElementById("pulsanti_modello").classList.contains("visSch")){
@@ -338,12 +344,14 @@ var MENU = {
 		if(!globals.pezziSelezionati.length)document.getElementById("elencoSelected").classList.remove("visSch");
 	},
 	verSelected: function(){
-		if(globals.pezziSelezionati.length){
-			document.getElementById("p_selected").classList.add("visBtn");
-			document.getElementById("p_pins").classList.add("visBtn");
-		}else{
-			document.getElementById("p_selected").classList.remove("visBtn");
-			document.getElementById("p_pins").classList.remove("visBtn");
+		if(!smartMenu){
+			if(globals.pezziSelezionati.length){
+				document.getElementById("p_selected").classList.add("visBtn");
+				document.getElementById("p_pins").classList.add("visBtn");
+			}else{
+				document.getElementById("p_selected").classList.remove("visBtn");
+				document.getElementById("p_pins").classList.remove("visBtn");
+			}
 		}
 	},
 	visSelected: function(){
@@ -356,8 +364,9 @@ var MENU = {
 		let tot = els.length;
 		let e = 0;
 		for(let p=0;p<tot;p++){
-			if(els[e].id.indexOf("SEL_Muscolo_") == -1 || globals.modello.muscles3d)document.getElementById(els[e].id).click();
-			else{
+			if(els[e].id.indexOf("SEL_Muscolo_") == -1 || globals.modello.muscles3d){
+				document.getElementById(els[e].id).click();
+			}else{
 				document.getElementById(els[e].id.replace("SEL_","")).classList.remove("p_viscSel");
 				e++;
 			}
@@ -372,6 +381,9 @@ var MENU = {
 		globals.pezziSelezionati = [];
 		if(document.getElementById("elencoSelected").className.indexOf("visSch") > -1)MENU.visSelected();
 		MENU.verSelected();
+		document.getElementById("btnsModello").innerHTML='';
+		document.getElementById("btnsModello").classList.remove("vis");
+		document.getElementById("btnsModello").classList.remove("schedaOpened");
 	},
 	attBtnCentro: function(){
 		document.getElementById("p_centro").classList.add("centroAtt");

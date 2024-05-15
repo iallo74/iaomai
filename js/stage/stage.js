@@ -86,7 +86,7 @@ function init() {
 	renderer.setClearColor(0x000000, 0);
 	
 	let aspectRatio = window.devicePixelRatio;
-	if(isTablet)aspectRatio/=2;
+	//if(isTablet)aspectRatio/=2;
 	renderer.setPixelRatio( aspectRatio );
 	renderer.setSize( canvas.width, canvas.height );
 	renderer.sortObjects = false; // lasciare per la questione delle trasparenze

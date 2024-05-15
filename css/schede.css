@@ -460,7 +460,10 @@ body:not(.smart) #scheda.schForm:not(.schedaRitorno):not(.minimized):not(.tab_pu
 	display:inline-block !important;
 }
 .smart #scheda_back{
-    background-image:url(../img/ico_menu.png);
+    /* background-image:url(../img/ico_menu.png); */
+    background-image:url(../img/frSx.png);
+	background-size: auto 57px;
+
 	margin-right: 4px !important;
 	opacity:0.7;
 }
@@ -816,6 +819,9 @@ body:not(.bodyStyled2) #scheda_testo2{
 }
 #scheda:not(.schLato) #menuScheda{
 	top: 71px;
+}
+.smart #scheda:not(.schLato) #menuScheda{
+	top: 76px;
 }
 .schLato #menuScheda{
 	top: 46px;

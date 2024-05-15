@@ -745,7 +745,7 @@ var DB_anatomia = {
     },
     "Organo_VESCICA": {
         "Titolo": "Vescica urinaria",
-        "Descrizione": "p><i>Ubicazione: </i>la vescica si trova nella regione anteriore del bacino, dietro la parete addominale e la sinfisi pubica. È appoggiata al pavimento pelvico. È collocata davanti al retto e sopra la prostata nel maschio, davanti ad utero e vagina nella femmina. <br> <i>Funzione: </i>la vescica è l'organo deputato alla raccolta dell'urina proveniente dai reni e convogliata al suo interno dagli ureteri. Funge quindi da serbatoio temporaneo: si riempie tra una minzione e l'altra e si svuota occasionalmente per eliminare all'esterno, attraverso l'uretra, l'urina accumulata.</p>"
+        "Descrizione": "<p><i>Ubicazione: </i>la vescica si trova nella regione anteriore del bacino, dietro la parete addominale e la sinfisi pubica. È appoggiata al pavimento pelvico. È collocata davanti al retto e sopra la prostata nel maschio, davanti ad utero e vagina nella femmina. <br> <i>Funzione: </i>la vescica è l'organo deputato alla raccolta dell'urina proveniente dai reni e convogliata al suo interno dagli ureteri. Funge quindi da serbatoio temporaneo: si riempie tra una minzione e l'altra e si svuota occasionalmente per eliminare all'esterno, attraverso l'uretra, l'urina accumulata.</p>"
     },
     "Organo_POLMONI": {
         "Titolo": "Polmoni",

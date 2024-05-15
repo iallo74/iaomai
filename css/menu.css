@@ -82,7 +82,7 @@ body:not(.smart) #icone.iconeEspanse{
 }
 .smart #icone div svg{
 	transform: rotate(-90deg);
-    margin-left: 29px !important;
+    margin-left: 28px !important;
     margin-top: -25px;
 }
 .smart #icone div#p_set svg,
@@ -100,7 +100,7 @@ body:not(.smart) #icone.iconeEspanse{
 	background-position:center center;
 	cursor:pointer;
 }
-.smart #contBtnModello.nas{
+.smart #contBtnModello.nas > div:not(#p_centro){
 	display:none !important;
 }
 .bodyStampa #contBtnModello{
@@ -112,6 +112,9 @@ body:not(.smart) #icone.iconeEspanse{
     float: left;
     margin: 0px;
     background-position: center -1px;
+}
+.smart #icone.nasIcons div{
+	display:none  !important;
 }
 .smart #icone #p_ricerca{
     background-position: center 4px !important;
@@ -295,7 +298,7 @@ body:not(.smart) #icone.iconeEspanse div i{
     display: inline-block;
 }
 #p_sets{
-	background-image:url(../img/ico_mappaB.png);
+	background-image:url(../img/ico_mappaB2.png);
 	display:none;
 }
 .smart #p_sets{
@@ -318,7 +321,7 @@ body:not(.smart) #icone.iconeEspanse div i{
 	width: 98px !important;
 }
 body:not(.bodyStyled1):not(.bodyStyled2):not(.smart) #p_sets{
-	background-image: url(../img/ico_mappa.png);
+	background-image: url(../img/ico_mappa2.png);
 	background-position: 2px center, right center !important;
 }
 #p_sets.p_sel svg polygon,
@@ -410,7 +413,7 @@ body:not(.smart) #p_rifletti{
 }
 .smart #contBtnModello #p_centro{
 	position: fixed;
-    top: 119px;
+    top: 3px;/*119px;*/
     left: 3px;
     background-color: rgba(0, 0, 0, 0.7);
     border-radius: 6px;
@@ -430,7 +433,7 @@ body:not(.smart) #p_centro i{
 
 .smart #contBtnModello/* .vis */{
 	margin-top: 170px;
-    background-color: rgba(0, 0, 0, 0.2);
+    background-color: rgba(0, 0, 0, 0.3);
     border-top-right-radius: 14px;
     border-bottom-right-radius: 14px;
 }
@@ -565,7 +568,7 @@ body:not(.smart) #p_impostazioni.p_sel svg polygon{
 	fill: var(--impostazioni-fondino-smart);
 }
 body:not(.smart) #p_sets{
-	background-image:url(../img/ico_mappaB.png);
+	background-image:url(../img/ico_mappaB2.png);
 }
 #p_ricerca{
 	background-image:url(../img/lente.png);
@@ -615,10 +618,10 @@ body:not(.smart) #ico_cliente{
 	background-position: 3px center;
 }
 .smart #ico_cliente{
-   margin-top: -7px !important;
+   	margin-top: -7px !important;
     height: 64px !important;
-    background-position: center center !important;
-    padding-left: 64px !important;
+    background-position: center 5px !important;
+   	padding-left: 0px !important;
 }
 .clientAtt #ico_cliente{
 	display:block !important;
@@ -631,8 +634,10 @@ body:not(.smart) #ico_cliente{
 	overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
-    width: 132px !important;
     display: inline-block;
+}
+body:not(.smart) #ico_cliente i{
+    width: 132px !important;
 }
 body:not(.bodyStyled1):not(.bodyStyled2):not(.smart) #p_cartella{
 	background-image: url(../sets/clients_full/img/logoMenuN.png);
@@ -667,15 +672,25 @@ body:not(.smart) #pulsanti_modello{
 	z-index:1600;
 }
 .smart #pulsanti_modello{
-    bottom: 64px;
+    /* bottom: 74px; */
+    bottom: 10px;
     top: auto;
-    border-bottom-right-radius: 0px;
+    /* overflow: hidden; */
+	border-radius: 12px;
+	box-shadow: 0 0 15px !important;
+}
+@media (min-width: 500px){	
+	.smart #pulsanti_modello{
+        width: 500px;
+		left:50%;
+		margin-left:-250px;
+	}
 }
 @media (max-width: 500px){	
 	.smart #pulsanti_modello{
-		border-top-right-radius: 0px;
-		width: 100%;
-		box-shadow: 0px -3px 6px rgba(0,0,0,0.4);
+        width: calc(100% - 20px);
+        box-shadow: 0px -3px 6px rgba(0, 0, 0, 0.4);
+        left: 10px;
 	}
 	.smart #pulsanti_modello #labelModello{
 		padding-top:7px;
@@ -695,6 +710,155 @@ body:not(.smart) #pulsanti_modello{
 	text-align:center;
 	border-radius: 0px !important;
 }
+.smart #p1,
+.smart #labelModello{
+	border-top-left-radius: 11px !important;
+	border-top-right-radius: 11px !important;
+}
+#btnsModello:not(.vis){
+	display:none;
+}
+.smart #btnsModello{
+	height: 83px;
+    background-color: rgba(0, 0, 0, 0.6);
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+    margin: -92px 10px 0px 10px;
+}
+#pulsanti_modello.schedaOpened:not(.schedaVuota) #btnsModello{
+	height: 265px;
+    margin-top: -270px;
+}
+#pulsanti_modello.schedaOpened.schedaVuota #btnsModello {
+    height: 65px;
+    margin-top: -70px;
+}
+#pulsanti_modello.schedaOpened .s{
+	padding-right: 30px !important;
+    background-image: url(../img/chMenuB.png) !important;
+    background-repeat: no-repeat;
+    background-position: calc(100% - 1px) center;
+    background-size: auto 30px;
+}
+.smart #pulsanti_modello.schedaOpened #p1,
+.smart #pulsanti_modello.schedaOpened #livelli_precar,
+.smart #pulsanti_modello.schedaOpened #livelli_cont,
+.smart #pulsanti_modello.schedaOpened #memorizzaOpen3d/* ,
+.smart #pulsanti_modello.schedaOpened #chiudi_modello */{
+	display:none !important;
+}
+.smart #pulsanti_modello.schedaOpened #chiudi_modello{
+	margin-right: -200px;
+}
+
+.smart #pulsanti_modello.schedaOpened #labelModello{
+	/* color: #FFF !important; */
+	border-radius: 11px !important;
+	/* height: 32px; */
+}
+#cont_scheda_anatomia{
+	padding:20px;
+	overflow-y: auto;
+    height: 200px;
+    margin-top: 4px;
+}
+#pulsanti_modello.schedaOpened.schedaVuota #cont_scheda_anatomia{
+    display:none;
+}
+#cont_scheda_anatomia,
+#cont_scheda_anatomia *{
+	color:#FFF;
+}
+#cont_scheda_anatomia p{
+	text-align:left;
+	margin: 2px 0;
+}
+
+#cont_scheda_anatomia,
+#cont_scheda_anatomia *{
+	font-size: var(--font-16-5);
+}
+#cont_scheda_anatomia p i{
+	color:#efc690 !important;
+}
+.smart #btnsModello div.btns_anatomia{
+	padding:14px 0;
+}
+.smart #btnsModello div.btns_anatomia > div{
+	display: inline-block;
+    vertical-align: middle;
+    height: 40px;
+    line-height: 40px;
+    background-color: #fff;
+    color: #000;
+    padding: 0 15px;
+    margin: 0 7px;
+    background-image: none;
+    border-radius: 5px;
+    box-shadow: 0 0 5px;
+	font-size: var(--font-14-48);
+}
+/* .smart #btnsModello span{
+	display: block;
+    height: 36px;
+    line-height: 36px;
+    margin-left: 5px;
+    color: #FFF;
+    border-radius: 6px;
+    background-repeat: no-repeat;
+    background-position: 3px center;
+    background-size: auto 27px;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+} */
+#label_modello_smart{
+	display:none;
+}
+.smart #pulsanti_modello.schedaOpened #label_modello_smart{
+	display: block !important;
+    height: 36px;
+    line-height: 36px;
+    color: #FFF;
+    border-radius: 6px;
+    background-repeat: no-repeat;
+    background-position: 8px center;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    width: 100%;
+    position: absolute;
+    left: 0;
+	font-size: var(--font-16-29);
+	padding: 0 42px;
+}
+.smart #label_modello_smart.s_Osso{
+	background-image:url(../img/p_ossa.png);
+}
+.smart #label_modello_smart.s_Organo{
+	background-image:url(../img/p_visceri.png);
+}
+.smart #label_modello_smart.s_Muscolo{
+	background-image:url(../img/p_muscoli.png);
+}
+.smart #label_modello_smart.s_Legamento{
+	background-image:url(../img/p_legamenti.png);
+}
+.smart #label_modello_smart.s_Vaso{
+	background-image:url(../img/p_vasi.png);
+}
+#btnIsola.flag{
+	background-image: url(../img/p_selected.png) !important;
+    padding-left: 30px !important;
+    background-size: auto 22px;
+    background-position: 5px center;
+    background-repeat: no-repeat;
+}
+
 #p1 div,
 #chiudi_modello,
 #help_modello{
@@ -803,7 +967,15 @@ body:not(.smart) #labelModello{
     background-repeat: no-repeat;
     background-position: left top;
     background-image: url(../sets/anatomy_full/img/logoMenu.png);
+
+	
+	color: #000 !important;
+	margin-bottom: -45px;
+	background-image:none !important;
 }
+/* .smart #labelModello i{
+	display:none;
+} */
 .smart.android #labelModello{
 	font-size: var(--font-16-93);
 }
@@ -816,6 +988,11 @@ body:not(.smart) #labelModello{
     margin-left: -40px;
 	background-size:80%;
 }
+.smart #chiudi_modello{	
+	/* margin-left: -29px; */
+	margin-left: 8px;
+    margin-right: 8px;
+}
 #help_modello{
 	border-radius: 10px;
     width: 20px;
@@ -823,7 +1000,7 @@ body:not(.smart) #labelModello{
     line-height: 17px;
     float: right;
     /* margin-left: -53px; */
-    margin-left: 10x;
+    margin-left: 10px;
     text-align: center;
     font-weight: bold;
     color: #FFF;
@@ -833,6 +1010,10 @@ body:not(.smart) #labelModello{
 	cursor:pointer;
 	font-size: var(--font-18-7) !important;
 	font-weight:bold;
+}
+.smart #help_modello{
+	/* margin-left: -16px !important; */
+	display: none;
 }
 .modelloScelto #livelli_cont{
 	padding-top:5px;

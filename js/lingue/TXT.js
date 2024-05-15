@@ -5604,12 +5604,12 @@ DB.TXT = {
             deu: "Lade anatomisches Modell"
         },
         ApriScheda: {
-            ita: "Apri la scheda",
-            eng: "Open file",
-            esp: "Abrir archivo",
-            fra: "Ouvrir le fichier",
-            por: "Abrir arquivo",
-            deu: "Datei öffnen"
+            ita: "Scheda",
+            eng: "File",
+            esp: "Archivo",
+            fra: "Fichier",
+            por: "Arquivo",
+            deu: "Datei"
         },
         CentraDaQui: {
             ita: "Centra da qui",

@@ -377,15 +377,19 @@ body:not(.smart) #elenchi_linguette{
     z-index: 10;
 }
 #elenchi_titolo_freccia.btn_altri_archivi{
-    width: auto !important;
+	width: auto !important;
     height: 30px !important;
     line-height: 30px !important;
     float: right !important;
-    background-color: rgba(0, 0, 0, 0.5) !important;
-    background-image: none !important;
+    background-color: rgba(0, 0, 0, 0.4) !important;
+    /* background-image: none !important; */
     border-radius: 8px;
     padding: 0 13px;
     margin: 10px -4px 0px 0px;
+    padding-right: 24px;
+    background-image: url(../img/frDx.png);
+    background-position: calc(100% + 10px) center;
+    background-size: auto 43px;
 }
 #elenchi_titolo_freccia:not(.btn_altri_archivi) i{
     display:none;
@@ -404,6 +408,9 @@ body:not(.smart) #elenchi_linguette{
     font-size: var(--font-23-1);
     color: rgba(0,0,0,0.6);
 	text-align: left;
+}
+.smart #elenchi_titolo_txt{
+	font-size: var(--font-28) !important;
 }
 #elenchi_icona{
 	vertical-align: middle;
@@ -730,7 +737,8 @@ body:not(.bodyStyled2) #chiudiElenco{
 	overflow:hidden;
 }
 .elCestinoCont:hover,
-.elCestinoCont.op{
+.elCestinoCont.op,
+.smart .elCestinoCont{
 	background-color:rgba(255,255,255,0.2);
 }
 .elCestinoList{
