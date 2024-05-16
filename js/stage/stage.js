@@ -175,6 +175,12 @@ function init() {
 	btn.addEventListener('touchstart', eviRay);
 	btn.addEventListener('touchmove', eviRay);
 	btn.addEventListener('touchend', eviRay);
+
+	// ridefinisco i minZoom
+	if(WF()<500){
+		modelli.orecchio.minZoom = 0;
+		modelli.piedi.minZoom = 4;
+	}
 }
 
 function keyDownStage( event ){
