@@ -47,7 +47,7 @@ var PH = {
 							"video/x-ms-asf",
 							"video/quicktime" ],
 	maxFileSize: 20*1000*1000, // 20MB
-	maxVideoSize: 50*1000*1000, // 50MB
+	maxVideoSize: 60*1000*1000, // 50MB
 	
 	encodeImageFileAsURL: function( element, resizable=false, makeBig=false, functPH='', listaEstensioni ) { // trasforma l'immagine in base64
 		if(typeof(listaEstensioni) == 'undefined'){
@@ -75,7 +75,7 @@ var PH = {
 			ALERT(TXT("DimensioneNonConsentita").replace("[maxSize]",PH.maxFileSize*.000001).replace("[size]",ArrotondaEuro(file.size*.000001)));
 			return;
 		}
-		if(file.size > PH.maxFileSize && PH.listaEstensioniVideo.indexOf(file.type)>-1){
+		if(file.size > PH.maxVideoSize && PH.listaEstensioniVideo.indexOf(file.type)>-1){
 			ALERT(TXT("DimensioneNonConsentita").replace("[maxSize]",PH.maxVideoSize*.000001).replace("[size]",ArrotondaEuro(file.size*.000001)));
 			return;
 		}
