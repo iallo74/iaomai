@@ -321,9 +321,9 @@ THREE.ObjectControls = function ( object, domElement ) {
 				handleTouchStartRotate( event );
 				this.ROTATE=true;
 				
-		const rect = renderer.domElement.getBoundingClientRect();
-		mouse.x = ( ( event.targetTouches[0].pageX - rect.left ) / ( rect.right - rect.left ) ) * 2 - 1;
-		mouse.y = - ( ( event.targetTouches[0].pageY - rect.top ) / ( rect.bottom - rect.top) ) * 2 + 1;
+				const rect = renderer.domElement.getBoundingClientRect();
+				mouse.x = ( ( event.targetTouches[0].pageX - rect.left ) / ( rect.right - rect.left ) ) * 2 - 1;
+				mouse.y = - ( ( event.targetTouches[0].pageY - rect.top ) / ( rect.bottom - rect.top) ) * 2 + 1;
 				//mouse.x = + (event.targetTouches [0] .pageX / window.innerWidth) * 2 + -1;
 				//mouse.y = - (event.targetTouches [0] .pageY / window.innerHeight) * 2 + 1;
 				//console.log(mouse)
@@ -365,6 +365,8 @@ THREE.ObjectControls = function ( object, domElement ) {
 		handleTouchEnd( event );
 		this.ROTATE=false;
 		this.PAN=false;
+		mouse.x = -1;
+		mouse.y = -1;
 	}
 	scope.domElement.addEventListener( 'touchstart', onTouchStart, false );
 	scope.domElement.addEventListener( 'touchend', onTouchEnd, false );

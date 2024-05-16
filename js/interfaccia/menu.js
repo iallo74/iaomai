@@ -191,7 +191,7 @@ var MENU = {
 			document.getElementById("contBtnModello").classList.add("nas");
 			document.getElementById("scheda").classList.add("nas");
 			document.getElementById("elenchi").classList.add("nas");
-			MODELLO.op("Pelle",0.5);
+			if(smartMenu)MODELLO.op("Pelle",0.5);
 			ctrl_pressed = true;
 			MENU.icoSelected = document.getElementById("p_modello");
 			MENU.icoSelected.classList.add("p_sel");
@@ -221,9 +221,7 @@ var MENU = {
 			MENU.desIcona();
 			document.getElementById("icone").classList.remove("nasIcons");
 			document.getElementById("pulsanti_modello").classList.remove("schedaOpened");
-			if(smartMenu){
-				MODELLO.op('Pelle',1);
-			}
+			if(smartMenu)MODELLO.op('Pelle',1);
 		}
 		MENU.comprimiIcone(true);
 		if(daScheda){

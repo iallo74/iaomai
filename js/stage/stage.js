@@ -161,6 +161,20 @@ function init() {
 		window.addEventListener("keyup", 	keyUpStage, false);
 		window.addEventListener("mousemove", 	moveMouseStage, false);
 	}
+
+	// evito il raycast sugli oggetti
+	function eviRay(ev){
+		ev.stopPropagation();
+		mouse.x = -1;
+		mouse.y = -1;
+	}
+	let btn = document.getElementById("btnsModello");
+	btn.addEventListener('mousedown', eviRay);
+	btn.addEventListener('mouseup', eviRay);
+	btn.addEventListener('click', eviRay);
+	btn.addEventListener('touchstart', eviRay);
+	btn.addEventListener('touchmove', eviRay);
+	btn.addEventListener('touchend', eviRay);
 }
 
 function keyDownStage( event ){

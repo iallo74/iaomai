@@ -199,8 +199,6 @@ body:not(.smart) #scheda:not(.schLato) .ideogrammaMeridianoChar{
 .pallinoPat:not(.pallinoPunto){
 	display:inline-block;
 	padding-left:16px;
-	height:16px;
-	line-height:16px;
 	background-image:url(img/pallinoPat.png);
 	background-position:left center;
 	background-repeat:no-repeat;
@@ -208,6 +206,10 @@ body:not(.smart) #scheda:not(.schLato) .ideogrammaMeridianoChar{
 	font-weight:bold;
 	text-overflow:ellipsis;
 	overflow:hidden;
+}
+body:not(.smart) .pallinoPat:not(.pallinoPunto){
+	height:16px;
+	line-height:16px;
 }
 .pallinoPunto{
 	color: #366ee1;
@@ -749,7 +751,9 @@ body:not(.bodyModello) #btns_set{
     margin: 2px;
     cursor: pointer;
     background-color: rgba(255,255,255,0.4);
-	display: block;
+}
+body:not(.smart) #meridianiSmart_cont div:not(.elencoSel):hover{
+	background-color: rgba(255,255,255,0.3) !important;
 }
 .smart #meridianiSmart_cont div.elencoSel{
 	width: 55px !important;
@@ -774,6 +778,7 @@ body:not(.smart) #meridianiSmart_ico.visSch{
     font-size: var(--font-11) !important;
     border-radius: 13px !important;
 	font-weight: bold;
+	display: inline-block;
 }
 body:not(.smart) #meridianiSmart_cont{
     top: 40px !important;

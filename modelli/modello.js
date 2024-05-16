@@ -688,7 +688,7 @@ var MODELLO = {
 				if(gruppo == 'Legamenti')nome = 'Legamento_'+nome;
 				if(MENU.getOp("Pelle") == 1 && !areasView)pass = false;
 				if(MENU.getOp("Aree") > 0.6 && areasView && !MODELLO.areaSel)pass = false;
-console.log(nome)
+				//console.log(nome)
 				if(gruppo == 'pins_aree'){				
 					nome = nome.replace("PIN_","");		
 					nome = nome.replace("_SX","");

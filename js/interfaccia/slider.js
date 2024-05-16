@@ -37,7 +37,7 @@ var SLIDER = {
 		let sl_cont = el.parentElement,
 			type = sl_cont.id.replace("s_",""),
 			maxSl = sl_cont.scrollWidth - el.scrollWidth;
-		if(type=='aree')type="pelle";
+		//if(type=='aree')type="pelle";
 		let perc = MENU.getOp(type.charAt(0).toUpperCase() + type.slice(1)),
 			mL = maxSl*perc;
 		document.getElementById("pulsanti_modello").classList.toggle("visSch",preVis);

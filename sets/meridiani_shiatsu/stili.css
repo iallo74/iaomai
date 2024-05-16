@@ -180,8 +180,6 @@ ul{
 	display:inline-block;
 	padding-left:16px;
 	padding-right:3px;
-	height:16px;
-	line-height:16px;
 	background-image:url(img/pallinoPat.png);
 	background-position:left calc(50% + 1px);
 	background-repeat:no-repeat;
@@ -190,6 +188,10 @@ ul{
 	font-weight:bold;
 	text-overflow:ellipsis;
 	overflow:hidden;
+}
+body:not(.smart) .pallinoPat{
+	height:16px;
+	line-height:16px;
 }
 .pallinoPat:not(.ptNoSel){
 	cursor:pointer;
@@ -898,7 +900,6 @@ body:not(.smart) #meridianiSmart_cont div:not(.elencoSel):hover{
     line-height: 44px !important;
     border-radius: 13px !important;
 	font-weight: bold;
-    font-size: var(--font-11) !important;
 	display: inline-block;
 }
 
