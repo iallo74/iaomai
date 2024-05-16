@@ -262,6 +262,7 @@ var SET = {
 							'<span id="btnCarMapMenu" class="btn_meridiani_shiatsu titolo_set">' +
 							'<span onMouseDown="SCHEDA.iniziaMoveScheda(event);"' +
 								 ' onTouchStart="SCHEDA.iniziaMoveScheda(event);">ShiatsuMap</span>' +
+							'<span id="mappe_titolo_freccia" onclick="MENU.visSets();" class="btn_altri_archivi"><i>'+TXT("AltreMappe")+'</i></span>' +
 							'<i class="elMenu" id="impostazioniSet" onClick="MENU.visImpset();" title="'+htmlEntities(TXT("ImpostazioniSet"))+'"><span>' +
 								htmlEntities(TXT("ImpostazioniSet")) +
 							'</span></i>' +

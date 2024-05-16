@@ -376,6 +376,7 @@ var SET = {
 							/* '<i class="elMenu" id="chiudiSet" onClick="chiudiSet();" title="'+htmlEntities(TXT("ChiudiSet"))+'"><span>' +
 								htmlEntities(TXT("ChiudiSet")) +
 							'</span></i>' + */
+							'<span id="mappe_titolo_freccia" onclick="MENU.visSets();" class="btn_altri_archivi"><i>'+TXT("AltreMappe")+'</i></span>' +
 							'<i class="elMenu" id="impostazioniSet" onClick="MENU.visImpset();" title="'+htmlEntities(TXT("ImpostazioniSet"))+'"><span>' +
 								htmlEntities(TXT("ImpostazioniSet")) +
 							'</span></i>' +

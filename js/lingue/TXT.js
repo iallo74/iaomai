@@ -5020,6 +5020,22 @@ DB.TXT = {
             por: "Mantenha o mapa aberto",
             deu: "Halte die Karte geöffnet"
         },
+        MemorizzaScelta: {
+            "ita": "Memorizza la scelta",
+            "eng": "Save selection",
+            "esp": "Guardar selección",
+            "fra": "Enregistrer la sélection",
+            "por": "Salvar seleção",
+            "deu": "Auswahl speichern"
+        },
+        NascondiMappa: {
+            "ita": "Nascondi la mappa",
+            "eng": "Hide the map",
+            "esp": "Ocultar el mapa",
+            "fra": "Masquer la carte",
+            "por": "Ocultar o mapa",
+            "deu": "Karte ausblenden"
+        },        
 
         // ANATOMIA
         Pelle: {
@@ -5312,6 +5328,14 @@ DB.TXT = {
             "fra": "Autres archives",
             "por": "Outros arquivos",
             "deu": "Andere Archive"
+        },
+        AltreMappe: {
+            "ita": "Altre mappe",
+            "eng": "Other maps",
+            "esp": "Otros mapas",
+            "fra": "Autres cartes",
+            "por": "Outros mapas",
+            "deu": "Andere Karten"
         },
 
         // popup SETS

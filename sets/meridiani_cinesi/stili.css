@@ -154,10 +154,14 @@ body:not(.smart) #scheda:not(.schLato) .ideogrammaMeridianoChar{
 }
 .smart #contBtnModello > div #p_contrasto{
 	position: fixed;
-	top: 55px;
-	left: 10px;
-	border-top: none !important;
-    width: 36px !important;
+    top: 117px;
+    left: 3px;
+    border-top: none !important;
+    /* background-color: rgba(0, 0, 0, 0.3); */
+    border-radius: 6px;
+    background-position: center center;
+    height: 48px;
+    width: 48px !important;
 }
 #contBtnModello.vis .smart #p_contrasto{
 	left: 10px !important;

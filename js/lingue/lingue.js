@@ -125,6 +125,7 @@ var LINGUE = {
 	},
 	convTitle: function(element){
 		if(element.title.substr(0,6)=='{{TXT_'){
+			console.log(element.title)
 			txt=eval(element.title);
 			if(debug)console.log(txt);
 			

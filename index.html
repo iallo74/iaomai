@@ -277,9 +277,15 @@
 				<div id="elenchi_cont">
 					<div id="elenchi_testa">
                         <div id="chiudiElenco" onClick="SCHEDA.chiudiElenco();"></div>
-                        <div id="elenchi_titolo"><span id="elenchi_titolo_freccia" onClick="SCHEDA.swPulsanti();"><i>{{TXT_AltriArchivi}}</i></span><span id="elenchi_titolo_txt"
-                        onMouseDown="SCHEDA.iniziaMoveScheda(event);"
-                        onTouchStart="SCHEDA.iniziaMoveScheda(event);"></span></div>
+                        <div id="elenchi_titolo">
+                            <span id="elenchi_titolo_freccia"
+                                  onClick="SCHEDA.swPulsanti();"><i>{{TXT_AltriArchivi}}</i></span>
+                            <span id="elenchi_titolo_txt"
+                                  onMouseDown="SCHEDA.iniziaMoveScheda(event);"
+                                  onTouchStart="SCHEDA.iniziaMoveScheda(event);"></span>
+                            <span class="elMenu" id="impostazioniArchivi"
+                                  onClick="MENU.visImpset(true);"></span>
+                        </div>
                     </div>
 					<div id="elenchi_lista">
                     	<div id="lista_base">
@@ -300,7 +306,6 @@
                         <div id="pulsanti_set"></div>
                     	<div id="pulsanti_base">
                         	<span id="titolo_base">
-                            	<span class="elMenu" id="impostazioniArchivi" onClick="MENU.visImpset(true);" title="{{TXT_ImpostazioniArchivi}}"></span>
                                 <span id="help_clienti" class="elMenu" onClick="GUIDA.visFumetto('guida_archivi',true,true);">?</span><span  id="titolo_base_txt"
                                             onMouseDown="SCHEDA.iniziaMoveScheda(event);"
                                             onTouchStart="SCHEDA.iniziaMoveScheda(event);">{{TXT_ElGestionale}}</span></span>
@@ -798,7 +803,7 @@
                     <div id="sets_elenco">
                         <!-- da popolare -->
                     </div>
-                    <div id="memorizzaOpenMap">{{TXT_ApriMappa}} <input type="checkbox" id="mem_openMap" name="mem_openMap" value="1" onClick="set_memOpenMap();"></div>
+                    <div id="memorizzaOpenMap">{{TXT_MemorizzaScelta}} <input type="checkbox" id="mem_openMap" name="mem_openMap" value="1" onClick="set_memOpenMap();"></div>
                 </div>
                 <div id="impostazioni"> <!-- MENU IMPOSTAZIONI -->
                     <div id="labelImpostazioni">{{TXT_Impostazioni}}<div id="chiudi_impostazioni" onClick="MENU.visImpostazioni();"></div>

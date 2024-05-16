@@ -194,6 +194,7 @@ var SET = {
 							'<span id="btnCarMapMenu" class="btn_meridiani_cinesi titolo_set">' +
 							'<span onMouseDown="SCHEDA.iniziaMoveScheda(event);"' +
 								 ' onTouchStart="SCHEDA.iniziaMoveScheda(event);">AcupointsMap</span>' +
+							'<span id="mappe_titolo_freccia" onclick="MENU.visSets();" class="btn_altri_archivi"><i>'+TXT("AltreMappe")+'</i></span>' +
 							'<i class="elMenu" id="impostazioniSet" onClick="MENU.visImpset();" title="'+htmlEntities(TXT("ImpostazioniSet"))+'"><span>' +
 								htmlEntities(TXT("ImpostazioniSet")) +
 							'</span></i>' +

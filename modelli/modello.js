@@ -503,6 +503,7 @@ var MODELLO = {
 				let cartella = globals.set.cartella;
 				globals.set.cartella = '';
 				caricaSet( cartella, globals.set.setSel );
+				inizio = false;
 				return;
 			}
 		}else centro();
@@ -1122,6 +1123,9 @@ var MODELLO = {
 		if(DB_anatomia[id])txt += '<div class="s" onClick="MODELLO.caricaAnatomia(\''+id+'\',true);">'+TXT("ApriScheda")+'</div>';
 		txt += '<div class="c" onClick="MODELLO.centraAnatomia(\''+leg.dataset.idObj+'\');">'+TXT("CentraDaQui")+'</div>';
 		let isola = 'MODELLO.isola'+fnc+'(document.getElementById(\''+n+'\'))';
+		
+
+		
 		txt += '<div class="d" onClick="'+isola+';">'+TXT("Deseleziona")+'</div>';
 		if(globals.pezziSelezionati.length > 1)txt += '<div class="a" onClick="MENU.chiudiAllSelected();'+isola+';">'+TXT("DeselezionaAltri")+'</div>';
 		if(MODELLO.isolamento == null && !noIsola)txt += '<div class="i" onClick="MENU.chiudiAllSelected();'+isola+';MODELLO.isolaAnatomia(\''+fnc+'\',\''+leg.dataset.idObj+'\');">'+TXT("Isola")+'</div>';
@@ -1134,6 +1138,17 @@ var MODELLO = {
 		document.getElementById("context_menu").style.top=(tCoord(leg,"y")+leg.scrollHeight)+'px';
 		window.addEventListener("mouseup", MODELLO.nasContextMenu, false);
 		MODELLO.contextOpened = true;
+	},
+	swSet: function( forza = false ){
+		if(SET && smartMenu){
+			if(!SETS.visible || forza){
+				SETS.visible = true;
+				document.getElementById("nasMappa").classList.remove("flag");
+			}else{
+				SETS.visible = false;
+				document.getElementById("nasMappa").classList.add("flag");
+			}
+		}
 	},
 	popolaSmartMenu: function(n){ //  visualizza il menu contestuale dell'anatomia per smart
 		if(noAnimate)return;
@@ -1154,11 +1169,12 @@ var MODELLO = {
 			else fnc = 'Area';
 		}
 		//txt += '<span class="s_'+pN[0]+'">'+TXT(n)+'</span>';
+		let isola = 'MODELLO.isola'+fnc+'(document.getElementById(\''+n+'\'))';
+		txt += '<div id="ch_anatomy" onClick="'+isola+';document.getElementById(\'btnsModello\').innerHTML=\'\';document.getElementById(\'btnsModello\').classList.remove(\'vis\');document.getElementById(\'pulsanti_modello\').classList.remove(\'schedaOpened\');document.getElementById(\'pulsanti_modello\').classList.remove(\'schedaVuota\');MODELLO.swSet(true);"></div>';
 		txt += '<div id="cont_scheda_anatomia"></div>';
 		txt += '<div class="btns_anatomia">';
-		let isola = 'MODELLO.isola'+fnc+'(document.getElementById(\''+n+'\'))';
 		//if(DB_anatomia[n])txt += '<div class="s" onClick="MODELLO.caricaAnatomiaSmart(\''+n+'\');">'+TXT("ApriScheda")+'</div>';
-		txt += '<div class="d" onClick="'+isola+';document.getElementById(\'btnsModello\').innerHTML=\'\';document.getElementById(\'btnsModello\').classList.remove(\'vis\');document.getElementById(\'pulsanti_modello\').classList.remove(\'schedaOpened\');document.getElementById(\'pulsanti_modello\').classList.remove(\'schedaVuota\');">'+TXT("Deseleziona")+'</div>';
+		if(SET)txt += '<div id="nasMappa" onClick="MODELLO.swSet();">'+TXT("NascondiMappa")+'</div>';
 		//if(MODELLO.isolamento == null && !noIsola)
 		txt += '<div class="i" id="btnIsola" onClick="MODELLO.swIsolaAnatomia(\''+fnc+'\',\''+n+'\');">'+TXT("Isola")+'</div>';
 		txt += '</div>';

@@ -154,18 +154,19 @@ body:not(.smart) #icone.iconeEspanse{
     height: 48px;
 }
 .smart #p_lms{
-	width:36px !important;
+	display:none;
+	/* width:36px !important;
 	position: fixed;
 	top: 100px;
 	left: 9px;
-	border-top: 1px solid rgba(255, 255, 255, 0.2);
+	border-top: 1px solid rgba(255, 255, 255, 0.2); */
 }
 .smart #p_rifletti{
 	width:36px !important;
 	position: fixed;
-	top: 50px;
+	top: 115px;
 	left: 9px;
-	border-top: 1px solid rgba(255, 255, 255, 0.2);
+	border-top: none !important;/* 1px solid rgba(255, 255, 255, 0.2); */
 }
 
 .smart #icone:not(.iconeHome) #p_modello,
@@ -307,6 +308,13 @@ body:not(.smart) #icone.iconeEspanse div i{
 	display:none;
 }
 .smart #p_sets{
+    background-image: url(../img/loadingBlack.gif);
+    background-position: center -6px !important;
+    display: none;
+    background-size: contain;
+    mix-blend-mode: lighten;
+}
+.smart #p_sets{
 	border-left:none !important;
 	width:100px !important;
 }
@@ -444,7 +452,7 @@ body:not(.smart) #p_centro i{
 }
 .smart #contBtnModello/* .vis */ div:not(#p_centro):not(#btns_set):not(#p_liv_pelle){
 	border-top: 1px solid rgba(255,255,255,0.2);
-	width: 36px !important;
+	width: 36px/*  !important */;
 }
 .centroAtt{
 	opacity:0.5 !important;
@@ -573,7 +581,7 @@ body:not(.smart) #p_impostazioni.p_sel svg polygon{
 	fill: var(--impostazioni-fondino-smart);
 }
 body:not(.smart) #p_sets{
-	background-image:url(../img/ico_mappaB2.png);
+	background-image:url(../img/ico_mappaB.png);
 }
 #p_ricerca{
 	background-image:url(../img/lente.png);
@@ -733,6 +741,17 @@ body:not(.smart) #pulsanti_modello{
     border-top-right-radius: 6px;
     margin: -92px 10px 0px 10px;
 }
+.smart #btnsModello #ch_anatomy{
+    width: 30px;
+    height: 30px;
+    float: right;
+    margin-left: -37px;
+    margin-right: 7px;
+    margin-top: 5px;
+    background-image: url(../img/chMenu.png);
+    background-repeat: no-repeat;
+    background-position: center;
+}
 #pulsanti_modello.schedaOpened:not(.schedaVuota) #btnsModello{
 	height: 265px;
     margin-top: -270px;
@@ -859,6 +878,7 @@ body:not(.smart) #pulsanti_modello{
 .smart #label_modello_smart.s_Vaso{
 	background-image:url(../img/p_vasi.png);
 }
+#nasMappa.flag,
 #btnIsola.flag{
 	background-image: url(../img/p_selected.png) !important;
     padding-left: 30px !important;
@@ -1390,6 +1410,9 @@ body:not(.Muscles) #i_aree{
 	margin-bottom: 10px;
     padding-right: 9px;
 	margin-top: 4px;
+}
+.smart #memorizzaOpen3d{
+	display:none;
 }
 /* .tueLicenze{
     text-align: left;
