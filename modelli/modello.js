@@ -688,7 +688,7 @@ var MODELLO = {
 				if(gruppo == 'Legamenti')nome = 'Legamento_'+nome;
 				if(MENU.getOp("Pelle") == 1 && !areasView)pass = false;
 				if(MENU.getOp("Aree") > 0.6 && areasView && !MODELLO.areaSel)pass = false;
-				
+console.log(nome)
 				if(gruppo == 'pins_aree'){				
 					nome = nome.replace("PIN_","");		
 					nome = nome.replace("_SX","");
@@ -733,17 +733,18 @@ var MODELLO = {
 	_onClick: function(event){
 		if(event.button != 0 && !touchable)return;
 		if(this.INTERSECTED){
-			if(this.INTERSECTED.indexOf("Osso_") > -1)MODELLO.isolaOsso(document.getElementById(this.INTERSECTED),'',true);
-			if(this.INTERSECTED.indexOf("Legamento_") > -1)MODELLO.isolaLegamento(document.getElementById(this.INTERSECTED),'',true);
-			if(this.INTERSECTED.indexOf("Organo_") > -1)MODELLO.isolaOrgano(document.getElementById(this.INTERSECTED),'',true);
-			if(this.INTERSECTED.indexOf("Vaso_") > -1)MODELLO.isolaVaso(document.getElementById(this.INTERSECTED),'',true);
-			if(this.INTERSECTED.indexOf("Muscolo_") > -1){
-				if(globals.modello.muscles3d)MODELLO.isolaMuscolo3d(document.getElementById(this.INTERSECTED),'',true);
-				else MODELLO.isolaArea(document.getElementById(this.INTERSECTED),'',true);
+			raycastDisable = true;
+			setTimeout(function(){raycastDisable=false;},400);
+			if(this.INTERSECTED?.indexOf("Osso_") > -1)MODELLO.isolaOsso(document.getElementById(this.INTERSECTED),'',true,true);
+			if(this.INTERSECTED?.indexOf("Legamento_") > -1)MODELLO.isolaLegamento(document.getElementById(this.INTERSECTED),'',true,true);
+			if(this.INTERSECTED?.indexOf("Organo_") > -1)MODELLO.isolaOrgano(document.getElementById(this.INTERSECTED),'',true,true);
+			if(this.INTERSECTED?.indexOf("Vaso_") > -1)MODELLO.isolaVaso(document.getElementById(this.INTERSECTED),'',true,true);
+			if(this.INTERSECTED?.indexOf("Muscolo_") > -1){
+				if(globals.modello.muscles3d)MODELLO.isolaMuscolo3d(document.getElementById(this.INTERSECTED),'',true,true);
+				else MODELLO.isolaArea(document.getElementById(this.INTERSECTED),'',true,true);
 			}
 		}
 	},
-	
 	
 	
 	rifletti: function(){ // riflette il manichino
@@ -1174,7 +1175,11 @@ var MODELLO = {
 		txt += '<div id="cont_scheda_anatomia"></div>';
 		txt += '<div class="btns_anatomia">';
 		//if(DB_anatomia[n])txt += '<div class="s" onClick="MODELLO.caricaAnatomiaSmart(\''+n+'\');">'+TXT("ApriScheda")+'</div>';
-		if(SET)txt += '<div id="nasMappa" onClick="MODELLO.swSet();">'+TXT("NascondiMappa")+'</div>';
+		if(SET){
+			txt += '<div id="nasMappa" onClick="MODELLO.swSet();"';
+			if(!SETS.visible)txt += ' class="flag"';
+			txt += '>'+TXT("NascondiMappa")+'</div>';
+		}
 		//if(MODELLO.isolamento == null && !noIsola)
 		txt += '<div class="i" id="btnIsola" onClick="MODELLO.swIsolaAnatomia(\''+fnc+'\',\''+n+'\');">'+TXT("Isola")+'</div>';
 		txt += '</div>';
@@ -1368,11 +1373,21 @@ var MODELLO = {
 		}
 	},
 
-	isolaOrgano: function( el, modo='', noCentra=false ){
+	isolaOrgano: function( el, modo='', noCentra=false, from3d=false ){
+		if(smartMenu && from3d && el.id==globals.pezziSelezionati[0])return;
 		if(smartMenu && globals.pezziSelezionati.length && el.id!=globals.pezziSelezionati[0]){
-			MODELLO.caricaAnatomiaSmart(el.id,true);
-			document.getElementById(globals.pezziSelezionati[0]).click();
+			let visSet = __(SETS?.visible,false),
+				action = document.getElementById("ch_anatomy")?.onclick.toString().split("\n")[1];
+			if(!visSet)action = action.replace("MODELLO.swSet(true);","");
+			eval(action);
+			setTimeout(function(){
+				MODELLO.isolaOrgano(el,modo,noCentra);
+			},100,el,modo,noCentra);
+			return;
+			/* MODELLO.caricaAnatomiaSmart(el.id,true);
+			document.getElementById(globals.pezziSelezionati[0]).click(); */
 		}
+		
 		if(smartMenu && !document.getElementById("pulsanti_modello").classList.contains("visSch"))MENU.visModello();
 		if(!modo)MODELLO.annullaIsolamento();
 		let organo = el.id.replace("Organo_","");
@@ -1429,11 +1444,21 @@ var MODELLO = {
 		MENU.verSelected();
 	},
 
-	isolaVaso: function( el, modo='', noCentra=false ){
+	isolaVaso: function( el, modo='', noCentra=false, from3d=false ){
+		if(smartMenu && from3d && el.id==globals.pezziSelezionati[0])return;
 		if(smartMenu && globals.pezziSelezionati.length && el.id!=globals.pezziSelezionati[0]){
-			MODELLO.caricaAnatomiaSmart(el.id,true);
-			document.getElementById(globals.pezziSelezionati[0]).click();
+			let visSet = __(SETS?.visible,false),
+				action = document.getElementById("ch_anatomy").onclick.toString().split("\n")[1];
+			if(!visSet)action = action.replace("MODELLO.swSet(true);","");
+			eval(action);
+			setTimeout(function(){
+				MODELLO.isolaVaso(el,modo,noCentra);
+			},200,el,modo,noCentra);
+			return;
+			/* MODELLO.caricaAnatomiaSmart(el.id,true);
+			document.getElementById(globals.pezziSelezionati[0]).click(); */
 		}
+
 		if(smartMenu && !document.getElementById("pulsanti_modello").classList.contains("visSch"))MENU.visModello();
 		if(!modo)MODELLO.annullaIsolamento();
 		let vaso = el.id.replace("Vaso_","");
@@ -1480,11 +1505,21 @@ var MODELLO = {
 		MENU.verSelected();
 	},
 	
-	isolaOsso: function( el, modo='', noCentra=false ){
+	isolaOsso: function( el, modo='', noCentra=false, from3d=false ){
+		if(smartMenu && from3d && el.id==globals.pezziSelezionati[0])return;
 		if(smartMenu && globals.pezziSelezionati.length && el.id!=globals.pezziSelezionati[0]){
-			MODELLO.caricaAnatomiaSmart(el.id,true);
-			document.getElementById(globals.pezziSelezionati[0]).click();
+			let visSet = __(SETS?.visible,false),
+				action = document.getElementById("ch_anatomy").onclick.toString().split("\n")[1];
+			if(!visSet)action = action.replace("MODELLO.swSet(true);","");
+			eval(action);
+			setTimeout(function(){
+				MODELLO.isolaOsso(el,modo,noCentra);
+			},200,el,modo,noCentra);
+			return;
+			/*MODELLO.caricaAnatomiaSmart(el.id,true);
+			document.getElementById(globals.pezziSelezionati[0]).click();*/
 		}
+
 		if(smartMenu && !document.getElementById("pulsanti_modello").classList.contains("visSch"))MENU.visModello();
 		if(!modo)MODELLO.annullaIsolamento();
 		let osso = el.id.replace("Osso_","");
@@ -1522,11 +1557,21 @@ var MODELLO = {
 		MENU.verSelected();
 	},
 
-	isolaMuscolo3d: function( el, modo='', noCentra=false ){
+	isolaMuscolo3d: function( el, modo='', noCentra=false, from3d=false ){
+		if(smartMenu && from3d && el.id==globals.pezziSelezionati[0])return;
 		if(smartMenu && globals.pezziSelezionati.length && el.id!=globals.pezziSelezionati[0]){
-			MODELLO.caricaAnatomiaSmart(el.id,true);
-			document.getElementById(globals.pezziSelezionati[0]).click();
+			let visSet = __(SETS?.visible,false),
+				action = document.getElementById("ch_anatomy").onclick.toString().split("\n")[1];
+			if(!visSet)action = action.replace("MODELLO.swSet(true);","");
+			eval(action);
+			setTimeout(function(){
+				MODELLO.isolaMuscolo3d(el,modo,noCentra);
+			},200,el,modo,noCentra);
+			return;
+			/* MODELLO.caricaAnatomiaSmart(el.id,true);
+			document.getElementById(globals.pezziSelezionati[0]).click(); */
 		}
+
 		if(smartMenu && !document.getElementById("pulsanti_modello").classList.contains("visSch"))MENU.visModello();
 		if(!modo)MODELLO.annullaIsolamento();
 		let muscolo3d = el.id.replace("Muscolo_","");
@@ -1568,11 +1613,21 @@ var MODELLO = {
 		MENU.verSelected();
 	},
 	
-	isolaLegamento: function( el, modo='', noCentra=false ){
+	isolaLegamento: function( el, modo='', noCentra=false, from3d=false ){
+		if(smartMenu && from3d && el.id==globals.pezziSelezionati[0])return;
 		if(smartMenu && globals.pezziSelezionati.length && el.id!=globals.pezziSelezionati[0]){
-			MODELLO.caricaAnatomiaSmart(el.id,true);
-			document.getElementById(globals.pezziSelezionati[0]).click();
+			let visSet = __(SETS?.visible,false),
+				action = document.getElementById("ch_anatomy").onclick.toString().split("\n")[1];
+			if(!visSet)action = action.replace("MODELLO.swSet(true);","");
+			eval(action);
+			setTimeout(function(){
+				MODELLO.isolaLegamento(el,modo,noCentra);
+			},200,el,modo,noCentra);
+			return;
+			/* MODELLO.caricaAnatomiaSmart(el.id,true);
+			document.getElementById(globals.pezziSelezionati[0]).click(); */
 		}
+
 		if(smartMenu && !document.getElementById("pulsanti_modello").classList.contains("visSch"))MENU.visModello();
 		if(!modo)MODELLO.annullaIsolamento();
 		let legamento = el.id.replace("Legamento_","");
@@ -1610,7 +1665,8 @@ var MODELLO = {
 		MENU.verSelected();
 	},
 	
-	isolaArea: function( el, modo='', noCentra=false ){
+	isolaArea: function( el, modo='', noCentra=false, from3d=false ){
+		if(smartMenu && from3d && el.id==globals.pezziSelezionati[0])return;
 		if(smartMenu && globals.pezziSelezionati.length && el.id!=globals.pezziSelezionati[0]){
 			return;
 			/* MODELLO.caricaAnatomiaSmart(el.id,true);

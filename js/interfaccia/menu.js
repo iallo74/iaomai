@@ -191,13 +191,8 @@ var MENU = {
 			document.getElementById("contBtnModello").classList.add("nas");
 			document.getElementById("scheda").classList.add("nas");
 			document.getElementById("elenchi").classList.add("nas");
-		}else{
-			document.getElementById("contBtnModello").classList.remove("nas");
-			document.getElementById("scheda").classList.remove("nas");
-			document.getElementById("elenchi").classList.remove("nas");
-		}
-		
-		if(document.getElementById("pulsanti_modello").classList.contains("visSch")){
+			MODELLO.op("Pelle",0.5);
+			ctrl_pressed = true;
 			MENU.icoSelected = document.getElementById("p_modello");
 			MENU.icoSelected.classList.add("p_sel");
 			document.getElementById("icone").classList.add("nasIcons");
@@ -219,6 +214,10 @@ var MENU = {
 				}
 			}
 		}else{
+			document.getElementById("contBtnModello").classList.remove("nas");
+			document.getElementById("scheda").classList.remove("nas");
+			document.getElementById("elenchi").classList.remove("nas");
+			ctrl_pressed = false;
 			MENU.desIcona();
 			document.getElementById("icone").classList.remove("nasIcons");
 			document.getElementById("pulsanti_modello").classList.remove("schedaOpened");
