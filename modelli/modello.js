@@ -1143,10 +1143,10 @@ var MODELLO = {
 		if(SET && smartMenu){
 			if(!SETS.visible || forza){
 				SETS.visible = true;
-				document.getElementById("nasMappa").classList.remove("flag");
+				document.getElementById("nasMappa")?.classList.remove("flag");
 			}else{
 				SETS.visible = false;
-				document.getElementById("nasMappa").classList.add("flag");
+				document.getElementById("nasMappa")?.classList.add("flag");
 			}
 		}
 	},

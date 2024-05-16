@@ -31,9 +31,20 @@ var SLIDER = {
 			document.body.addEventListener("touchend", SLIDER.arrestaSlide, false );
 			document.body.addEventListener("touchmove", SLIDER.moveSlider, false );	
 		}
-		let mL = "0"+SLIDER.slider_btn.style.marginLeft.replace("px","")+"";
+
+		let preVis = document.getElementById("pulsanti_modello").classList.contains("visSch");
+		document.getElementById("pulsanti_modello").classList.add("visSch");
+		let sl_cont = el.parentElement,
+			type = sl_cont.id.replace("s_",""),
+			maxSl = sl_cont.scrollWidth - el.scrollWidth;
+		if(type=='aree')type="pelle";
+		let perc = MENU.getOp(type.charAt(0).toUpperCase() + type.slice(1)),
+			mL = maxSl*perc;
+		document.getElementById("pulsanti_modello").classList.toggle("visSch",preVis);
+		
 		SLIDER.mL_Ini = parseInt(mL);
 		SLIDER.mT_Ini = parseInt(mL);
+		console.log(SLIDER.slider_btn.style.marginLeft.replace("px",""))
 		if(touchable){
 			try{
 				SLIDER.xIni = event.touches[ 0 ].pageX;

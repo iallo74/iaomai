@@ -4553,6 +4553,14 @@ DB.TXT = {
             por: "Gerenciamento de arquivos",
             deu: "Dateiverwaltung"
         },
+        ElPazienti: {
+            ita: "I tuoi pazienti",
+            eng: "Your patients",
+            esp: "Tus pacientes",
+            fra: "Vos patients",
+            por: "Seus pacientes",
+            deu: "Ihre Patienten"
+        },
         ElTrattamenti: {
             ita: "Trattamenti",
             eng: "Treatments",

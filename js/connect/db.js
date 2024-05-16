@@ -73,6 +73,7 @@ var DB = {
 			fornitoriBase = [];
 		if(typeof(localStorage.dbInizializzato) == 'undefined'){
 			pazientiBase = archiviDemo[globals.siglaLingua].pazienti;
+			pazientiBase[0].avatar = archiviDemo.avatars[0];
 			serviziBase = archiviDemo[globals.siglaLingua].servizi;
 			fornitoriBase = archiviDemo[globals.siglaLingua].fornitori;
 			filesBase = archiviDemo.files;
