@@ -1,5 +1,7 @@
 var LICENZE  = {
 	
+	demo: false,
+	
 	// VISUALIZZAZIONE LICENZE
 	rowLicenza: function( label, valore, classe='' ){
 		return	'<div class="rowLicenza '+classe+'">'	+
@@ -16,6 +18,7 @@ var LICENZE  = {
 	visLicenza: function( name, cond){
 		let spunta = '<b style="color:#0b8dca;">'+H.spunta+'</b>',
 			ics = '<b style="color:#C00;">'+H.ics+'</b>';
+		if(!cond && name!='ShiatsuMap Light')LICENZE.demo = true;
 		return (cond?spunta:ics)+'<span'+(cond?'':' style="color:#888;"')+'> '+name+'</span><br>';
 	},
 	red: function( html ){
@@ -42,7 +45,7 @@ var LICENZE  = {
 			LICENZE.visLicenza('ShiatsuMap PRO '+TXT("Lic_Cinesi"),(LOGIN.logedin() && okCIN)) +
 			LICENZE.visLicenza('ShiatsuMap PRO Masunaga',(LOGIN.logedin() && okMAS)) +
 			LICENZE.visLicenza('ShiatsuMap PRO Namikoshi',(LOGIN.logedin() && okNMK)) +
-			LICENZE.visLicenza('ShiatsuMap Light',(LOGIN.logedin() && okLGT)) +
+			LICENZE.visLicenza('',(LOGIN.logedin() && okLGT)) +
 			LICENZE.visLicenza('AuriculoMap',(LOGIN.logedin() && LOGIN.verAuth("auricologia"))) +
 			LICENZE.visLicenza('ReflexologyMap',(LOGIN.logedin() && LOGIN.verAuth("reflessologia_plantare"))) +
 			LICENZE.visLicenza(TXT("Lic_SchedarioPazienti"),(LOGIN.logedin() && LOGIN.verAuth("clients_full"))) +
@@ -51,8 +54,13 @@ var LICENZE  = {
 			HTML += '<span id="demoVersion" style="display:block;">'+TXT("Lic_FreeVersion")+'</span>';
 		}
 		HTML += '</div>' +
-				'<div class="txtFeatures">'+TXT("Lic_ElencaCaratteristiche")+'</div>';
-
+				'<div class="txtFeatures">';
+		if(LICENZE.demo)HTML +=
+				'	<div id="buyLicense"><div onClick="MENU.visPurchases(true);">'+TXT("AcquistaLicenza")+'</div></div>';
+		HTML += '	<div>'+TXT("Lic_ElencaCaratteristiche")+'</div>' +
+				'</div>';
+		
+		
 
 		// AcupointsMap
 		ok = LOGIN.logedin() && LOGIN.verAuth("meridiani_cinesi");

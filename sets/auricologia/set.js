@@ -385,6 +385,7 @@ var SET = {
 		
 		contPulsanti += '<div id="pulsante_modello" onClick="cambiaModello(\'orecchio\');">'+TXT("ApriModello3D")+'</div>';
 
+		contPulsanti += '<span id="noLicenze" onClick="MENU.visLicenze();">'+TXT("noLicenze")+'</span>';
 		contPulsanti += '<span id="demoVersion" onClick="MENU.visLogin();">'+TXT("demoVersion")+'</span>';
 
 
@@ -1437,6 +1438,7 @@ var SET = {
 		SET.lmVis = false;
 	},
 	verSistema: function(){
+		document.getElementById("noLicenze").classList.toggle("vis",LOGIN.logedin() && DB.login.data.auths.indexOf("auricologia")==-1);
 		document.getElementById("demoVersion").classList.toggle("vis",!LOGIN.logedin());
 	},
 	

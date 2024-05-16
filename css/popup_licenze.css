@@ -21,6 +21,24 @@
 .smart #contLicenze{
 	height: calc(100% - 40px);
 }
+#buyLicense{
+	text-align: center;
+	height: 55px;
+}
+#buyLicense > div{
+	display:inline-block;
+	background-color:#333;
+	border-radius:6px;
+	height:40px;
+	line-height:40px;
+	padding:0 15px 0 40px;
+	background-image: url(../img/ico_purchases.png);
+	background-repeat: no-repeat;
+	background-position: 5px center;
+	background-size: auto 30px;
+	cursor:pointer;
+	color: #FFF;
+}
 .listLicenze{
     padding-bottom: 5px;
     border-bottom: solid 1px rgba(0, 0, 0, 0.1);
