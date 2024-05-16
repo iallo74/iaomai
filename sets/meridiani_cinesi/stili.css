@@ -774,13 +774,13 @@ body:not(.smart) #meridianiSmart_ico.visSch{
 body:not(.smart) #meridianiSmart_cont{
     top: 40px !important;
 }
-@media (max-height: 700px){
+/* @media (max-height: 700px){
 	.smart #meridianiSmart_cont div{
 		width: 37px !important;
 		height: 37px !important;
 		line-height: 37px !important;
 	}
-}
+} */
 .sm_legno{
 	border:2px solid #009900;
 }

@@ -481,6 +481,20 @@ var MODELLO = {
 			}else{
 				MENU.visModello();
 			}
+		}else if(!globals.openMap && inizio){
+			let elDef = null;
+			for(let cartella in sets){
+				if(	cartella != 'anatomy_full' &&
+				cartella != 'clients_full' &&
+				!sets[cartella].locked &&
+				DB.login.data.auths.indexOf(cartella)>-1 ){
+					if(!elDef)elDef=cartella;
+				}
+			}
+			if(elDef){
+				globals.set.cartella = elDef;
+				globals.mapOpened = elDef;
+			}
 		}
 		
 		if(globals.set.cartella){
@@ -578,6 +592,7 @@ var MODELLO = {
 		}
 		document.getElementById("pulsanti_modello").classList.add('modelloScelto');
 		document.getElementById("contBtnModello").classList.remove("nas");
+		document.getElementById("scheda").classList.remove("nas");
 		inizio = false;
 	},
 	

@@ -505,6 +505,7 @@ var SET = {
 	
 	// CLICK sul punto
 	_onClick: function(e){
+		if(MENU.modelExclusive())return;
 		let btn=0;
 		if(!touchable)btn=e.button;
 		if(!btn && !raycastDisable && ((controlsM.xIni==controlsM.xEnd && controlsM.yIni==controlsM.yEnd) || touchable)){

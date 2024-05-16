@@ -240,6 +240,9 @@ body:not(.smart) #pulsante_agenda{
 .smart #elenchi{
 	left: 0px;
 }
+.smart #elenchi.nas{
+	display:none !important;
+}
 .smart #elenchi.compressi{
 	overflow:hidden;
 	height:54px;

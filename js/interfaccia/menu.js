@@ -152,6 +152,8 @@ var MENU = {
 		}
 		if(!document.getElementById("pulsanti_modello").classList.contains("visSch") && smartMenu){
 			document.getElementById("contBtnModello").classList.remove("nas");
+			document.getElementById("scheda").classList.remove("nas");
+			document.getElementById("elenchi").classList.remove("nas");
 			document.getElementById("icone").classList.remove("nasIcons");
 		}
 		//verAnimate();
@@ -185,7 +187,16 @@ var MENU = {
 		}
 		
 		SCHEDA.gestVisSmart(document.getElementById("pulsanti_modello").classList.contains("visSch"));
-		document.getElementById("contBtnModello").classList.toggle("nas",document.getElementById("pulsanti_modello").classList.contains("visSch"));
+		if(document.getElementById("pulsanti_modello").classList.contains("visSch")){
+			document.getElementById("contBtnModello").classList.add("nas");
+			document.getElementById("scheda").classList.add("nas");
+			document.getElementById("elenchi").classList.add("nas");
+		}else{
+			document.getElementById("contBtnModello").classList.remove("nas");
+			document.getElementById("scheda").classList.remove("nas");
+			document.getElementById("elenchi").classList.remove("nas");
+		}
+		
 		if(document.getElementById("pulsanti_modello").classList.contains("visSch")){
 			MENU.icoSelected = document.getElementById("p_modello");
 			MENU.icoSelected.classList.add("p_sel");
@@ -232,6 +243,10 @@ var MENU = {
 		}
 		get_memOpen3d();
 		MENU.nasTT();
+	},
+	modelExclusive: function(){
+		if(!smartMenu)return false;
+		else return document.getElementById("pulsanti_modello").classList.contains("visSch");
 	},
 	visSets: function(){
 		let daScheda = (MENU.verOp() && !smartMenu);

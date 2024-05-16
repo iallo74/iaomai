@@ -113,6 +113,11 @@ body:not(.smart) #icone.iconeEspanse{
     margin: 0px;
     background-position: center -1px;
 }
+@media (max-width: 400px){
+	.smart #icone div:not(#btns_set):not(#cartella_set){
+		width: 65px;
+	}
+}
 .smart #icone.nasIcons div{
 	display:none  !important;
 }
@@ -242,7 +247,7 @@ body:not(.smart) #icone.iconeTrans div:not(#btns_set):not(#cartella_set){
     font-style: normal;
     color: #FFF;
     position: absolute;
-    bottom: 3px;
+    bottom: 5px;
     width: 68px;
     text-align: center;
     overflow-x: hidden;
@@ -298,7 +303,7 @@ body:not(.smart) #icone.iconeEspanse div i{
     display: inline-block;
 }
 #p_sets{
-	background-image:url(../img/ico_mappaB2.png);
+	background-image:url(../img/ico_mappaB.png);
 	display:none;
 }
 .smart #p_sets{
@@ -720,7 +725,10 @@ body:not(.smart) #pulsanti_modello{
 }
 .smart #btnsModello{
 	height: 83px;
-    background-color: rgba(0, 0, 0, 0.6);
+    /* background-color: rgba(0, 0, 0, 0.6); */
+    background-image: url(../img/sf_anatomy.png) !important;
+    background-repeat: repeat-x;
+    background-position: bottom center;
     border-top-left-radius: 6px;
     border-top-right-radius: 6px;
     margin: -92px 10px 0px 10px;

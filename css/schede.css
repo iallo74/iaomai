@@ -20,6 +20,9 @@
 	right:0px;
 	display:none;
 }
+.smart #scheda.nas{
+	display:none !important;
+}
 body:not(.smart) #scheda{
 	z-index: 10 !important;	
 }
