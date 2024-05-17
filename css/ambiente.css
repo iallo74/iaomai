@@ -764,8 +764,8 @@ body.bodyModello #logoPartner,
 .smart #notLogged/* .minimized */{
 	padding: 3px;
 	background-position: right center !important;
-	width: calc(100% - 100px) !important;
-	left: 50px;
+	width: calc(100% - 140px) !important;
+    left: 70px;
 	border-bottom-left-radius: 10px !important;
 	border-bottom-right-radius: 10px !important;
 }

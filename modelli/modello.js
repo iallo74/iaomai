@@ -473,7 +473,6 @@ var MODELLO = {
 		}
 		
 		MODELLO.filtraAnatomia();
-		
 		if(!smartMenu){
 			if(	SCHEDA.classeAperta != 'scheda_A' &&
 				SCHEDA.classeAperta != 'scheda_B' ){
@@ -482,15 +481,19 @@ var MODELLO = {
 				MENU.visModello();
 			}
 		}else if(!globals.openMap && inizio){
-			let elDef = null;
+			let elDef = null,
+				firstEl = null;
 			for(let cartella in sets){
 				if(	cartella != 'anatomy_full' &&
-				cartella != 'clients_full' &&
-				!sets[cartella].locked &&
-				DB.login.data.auths.indexOf(cartella)>-1 ){
-					if(!elDef)elDef=cartella;
+				cartella != 'clients_full'){
+					if(!firstEl)firstEl = cartella;
+					if(	!sets[cartella].locked &&
+						DB.login.data.auths.indexOf(cartella)>-1 ){
+						if(!elDef)elDef = cartella;
+					}
 				}
 			}
+			if(!elDef)elDef = firstEl;
 			if(elDef){
 				globals.set.cartella = elDef;
 				globals.mapOpened = elDef;
@@ -532,7 +535,7 @@ var MODELLO = {
 				if(getVar("demo")=='reflexologymap')caricaSet('reflessologia_plantare');
 			}else{
 				setTimeout( function(){
-					if(!globals.set.cartella)GUIDA.visFumetto("guida_generica");
+					if(!globals.set.cartella && !smartMenu)GUIDA.visFumetto("guida_generica");
 				}, 1000 );
 				
 				if(!__(localStorage.firstAccess)){

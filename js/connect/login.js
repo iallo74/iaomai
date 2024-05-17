@@ -254,7 +254,11 @@ var LOGIN = {
 											PAZIENTI.cancellaFiltri(true);
 											SCHEDA.scaricaScheda();
 											LOGIN.verSets();
-											if(!globals.modello.cartella){inizio=true;caricaModello('donna');}
+											if(!globals.modello.cartella){
+												console.log("QUI")
+												inizio=true;
+												caricaModello('donna');
+											}
 										}
 									}, 500);
 		}
@@ -582,7 +586,11 @@ var LOGIN = {
 		});
 		DB._reset(); // <<<<<<<< FRV
 		LOGIN.getDB();
-		scaricaSet();
+		if(globals.set.cartella){
+			let vSet = globals.set.cartella;
+			scaricaSet();
+			if(smartMenu)caricaSet(vSet);
+		}
 		PAZIENTI.cancellaFiltri(true);
 		SCHEDA.scaricaScheda();
 	},

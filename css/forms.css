@@ -2011,6 +2011,11 @@ body:not(.touch) #puntiPlantari .dettPunto:hover{
 	height: 32px;
 	line-height: 32px;
 }
+.smart .gr_3{
+	height: 40px;
+	line-height: 40px;
+	font-size: var(--font-14-94);
+}
 .gr_0,
 .gr_1{
     border-bottom-left-radius: 4px;
@@ -2023,6 +2028,9 @@ body:not(.touch) #puntiPlantari .dettPunto:hover{
 	margin-top: 0px !important;
 	padding-left: 0px !important;
 }
+.smart .gr_3 *{
+	font-size: var(--font-14-94);
+}
 .gr_btn{
 	height: 32px;
 	line-height: 32px;
@@ -2032,6 +2040,11 @@ body:not(.touch) #puntiPlantari .dettPunto:hover{
 	border-top:1px solid rgba(0,0,0,0.1);
 	background: url(../img/frDxB.png) calc(100% - -8px) center no-repeat;
     background-size: auto 42px;
+}
+.smart .gr_btn{
+	height: 40px;
+	line-height: 40px;
+	font-size: var(--font-14-94);
 }
 .gr_3{
 	border-top:1px solid rgba(0,0,0,0.1);
@@ -2056,6 +2069,11 @@ body:not(.touch) #puntiPlantari .dettPunto:hover{
 	white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+}
+.smart .gr_ret{
+	height: 40px;
+    line-height: 40px;
+	font-size: var(--font-14-94);
 }
 .gr_ret_img{
 	width: 32px;
@@ -2090,6 +2108,10 @@ body:not(.touch) #puntiPlantari .dettPunto:hover{
     height: 26px !important;
     margin: 2px;	
 }
+.smart #gr_ret_ric{
+    height: 34px !important;
+	font-size: var(--font-14-94);
+}
 .gr_tit{
 	padding-left:8px;
 	height: 32px;
@@ -2099,6 +2121,10 @@ body:not(.touch) #puntiPlantari .dettPunto:hover{
     border-top-left-radius: 4px;
     border-top-right-radius: 4px;
 }
+.smart .gr_tit{
+    height: 38px !important;
+	line-height: 38px;
+}
 .gr_tit span{
 	display: inline-block;
     cursor: pointer;
@@ -2107,6 +2133,9 @@ body:not(.touch) #puntiPlantari .dettPunto:hover{
     height: 32px;
 	background:url(../img/chMenuB.png) center center no-repeat;
 	background-size: contain;
+}
+.smart .gr_tit span{
+	margin: 3px;
 }
 .gr_imp{
 	min-height: 39px;
@@ -2135,6 +2164,9 @@ body:not(.touch) #puntiPlantari .dettPunto:hover{
     margin: 3px;
 	background:url(../img/frSelectAll.png) no-repeat left center;
 }
+.smart #grSelAll{
+    height: 33px;
+}
 #grSelAll:hover{
     color: #2c3fa8 !important;
 }
@@ -2156,6 +2188,10 @@ body:not(.touch) #puntiPlantari .dettPunto:hover{
     text-align: center;
 	box-shadow: 0px 0px 2px #000;
 	float: right;
+}
+.smart #grImporta{
+	height: 40px;
+	line-height: 40px;
 }
 #grImporta:hover{
     background: #0b2d73;
@@ -2261,7 +2297,8 @@ body:not(.touch) .sezioneChiusa:hover{
 .smart .sezioneTrattamenti > .labelTrattamenti{
 	font-style:normal !important;
 }
-.smart.android .sezioneTrattamenti > .labelTrattamenti{
+.smart.android .sezioneTrattamenti > .labelTrattamenti,
+.smart.android .sezioneTrattamenti > .labelTrattamenti *{
 	font-size: var(--font-16);
 }
 .app_version.bug_font.smart.android .sezioneTrattamenti > .labelTrattamenti{

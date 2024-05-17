@@ -21,9 +21,9 @@
 }
 .scheda_A #scheda_titolo{
     background: #FFF !important;
-    background: url(../sets/clients_full/img/logoMenuN.png), -moz-linear-gradient(top, #FFF 0%, #d5d5d5 100%) !important;
-    background: url(../sets/clients_full/img/logoMenuN.png), -webkit-linear-gradient(top, #FFF 0%,#d5d5d5 100%) !important;
-    background: url(../sets/clients_full/img/logoMenuN.png), linear-gradient(to bottom, #FFF 0%,#d5d5d5 100%) !important;
+    background: url(../img/cartellaBig.png), -moz-linear-gradient(top, #FFF 0%, #d5d5d5 100%) !important;
+    background: url(../img/cartellaBig.png), -webkit-linear-gradient(top, #FFF 0%,#d5d5d5 100%) !important;
+    background: url(../img/cartellaBig.png), linear-gradient(to bottom, #FFF 0%,#d5d5d5 100%) !important;
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#FFF', endColorstr='#d5d5d5',GradientType=0 ) !important;
 	background-position:3px 2px, center center !important;
 	background-repeat:no-repeat !important;	
@@ -1743,11 +1743,14 @@ body:not(.smart) #rgApplicaFiltri{
 .smart.android #tt_mezzival,
 .smart.android #tt_mezzival2{
 	/*width: 240px;*/
-    height: 78px;
+    /* height: 78px; */
     white-space: normal;
     /* text-align: left; */
-    border-radius: 10px;
-	max-width: 250px;
+   /*  border-radius: 10px; */
+	/* max-width: 250px; */
+	width: calc(100%);
+    overflow-x: auto;
+    white-space: nowrap;
 }
 #tt_mezzival span,
 #tt_mezzival2 span{
