@@ -71,12 +71,13 @@ body:not(.smart) #login_benvenuto{
 	text-align:center;
 }
 #demoContinueLogin > span{
-	display:inline-block;
-	margin-bottom:20px;
-	width:200px;
-	height:2px;
-	background-color:rgba(255,255,255,0.7);
-	border-top:1px solid rgba(0,0,0,0.2);
+	display: block;
+    margin: 0 auto;
+    margin-bottom: 20px;
+    width: 200px;
+    height: 2px;
+    background-color: rgba(255, 255, 255, 0.7);
+    border-top: 1px solid rgba(0, 0, 0, 0.2);
 }
 #demoContinueLogin > div{
 	display:inline-block !important;
