@@ -233,6 +233,7 @@ function moveLB(){
 
 // CARICAMENTO DEI MODELLI
 function caricaModello( cartella ){
+	if(IMPORTER.importing)return;
 	manichino.remove( SETS );
 	visLoader("");
 	startAnimate();
@@ -385,6 +386,7 @@ function cambiaModello( cartella ){
 
 // CARICAMENTO DEI SETS
 function caricaSet( cartella, el, forzaModello='' ){
+	if(IMPORTER.importing)return;
 	let daScheda = (SCHEDA.classeAperta == 'scheda_A' || SCHEDA.classeAperta == 'scheda_B' );
 	if(globals.modello.cartella)startAnimate();
 	if(el)postApreSet = true;

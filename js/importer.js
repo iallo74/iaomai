@@ -155,6 +155,7 @@ var IMPORTER = {
         'js/stage/stage.js',
         'js/addings.js'
 	],
+	importing: false,
 	jss: [],
 	produzione: true,  	// se settato a false carica solo i files locali (esclusi stores)
 						// N.B. se Android, iOs e Electron produzione diventa true in automatico
@@ -354,6 +355,7 @@ var IMPORTER = {
 		IMPORTER.importaFiles( 0, IMPORTER.files, 'INIT();', document.head );
 	},
 	importaFiles: function( n=0, lista, funct, dest ){
+		IMPORTER.importing = true;
 		let file = lista[n],
 			isModello = (file.indexOf("modelli/")==0 && typeof(modelli)!='undefined'),
 			isSet = (file.indexOf("sets/")==0 && typeof(sets)!='undefined');
@@ -420,6 +422,7 @@ var IMPORTER = {
 			this.jss[n].onload = function(){
 				n++;
 				if(n==lista.length){
+					IMPORTER.importing = false;
 					eval(funct);
 				}else{
 					IMPORTER.importaFiles( n, lista, funct, dest );
@@ -432,6 +435,7 @@ var IMPORTER = {
 			else this.jss[n].innerHTML = window.atob(content);
 			n++;
 			if(n==lista.length){
+				IMPORTER.importing = false;
 				eval(funct);
 			}else{
 				IMPORTER.importaFiles( n, lista, funct, dest );
