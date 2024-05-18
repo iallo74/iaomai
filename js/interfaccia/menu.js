@@ -8,9 +8,18 @@ var MENU = {
 	inizio: true,
 	pwdOK: false,
 	init: function(){
+		if(localStorage.opPelle=='NaN')localStorage.opPelle = 1;
+		if(localStorage.opMuscoli3d=='NaN')localStorage.opMuscoli3d = 1;
+		if(localStorage.opLegamenti=='NaN')localStorage.opLegamenti = 1;
+		if(localStorage.opOssa=='NaN')localStorage.opOssa = 1;
+		if(localStorage.opVasi=='NaN')localStorage.opVasi = 1;
+		if(localStorage.opVisceri=='NaN')localStorage.opVisceri = 1;
 		MENU.setOp('Pelle',1);
 		MENU.setOp('Aree',1);
 		MENU.setOp('Ossa',1);
+		MENU.setOp('Legamenti',1);
+		MENU.setOp('Vasi',1);
+		MENU.setOp('Muscoli3d',1);
 		MENU.setOp('Visceri',0.8);
 		document.getElementById("pulsanti_modello").addEventListener( 'wheel', function(){
 			MENU.wheeling = true;

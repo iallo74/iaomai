@@ -41,10 +41,10 @@ var SLIDER = {
 		let perc = MENU.getOp(type.charAt(0).toUpperCase() + type.slice(1)),
 			mL = maxSl*perc;
 		document.getElementById("pulsanti_modello").classList.toggle("visSch",preVis);
-		
+
 		SLIDER.mL_Ini = parseInt(mL);
 		SLIDER.mT_Ini = parseInt(mL);
-		console.log(SLIDER.slider_btn.style.marginLeft.replace("px",""))
+		
 		if(touchable){
 			try{
 				SLIDER.xIni = event.touches[ 0 ].pageX;
@@ -66,7 +66,6 @@ var SLIDER = {
 			diffY = SLIDER.yAtt - SLIDER.yIni,
 			mL = SLIDER.mL_Ini/SLIDER.demolt + diffX,
 			mT = SLIDER.mT_Ini/SLIDER.demolt - diffY;
-
 		if(mL<0)mL = 0;
 		if(mT<0)mT = 0;
 		if(mL>SLIDER.maxVal/SLIDER.demolt)mL = SLIDER.maxVal/SLIDER.demolt;

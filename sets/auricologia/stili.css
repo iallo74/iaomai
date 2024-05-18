@@ -1106,6 +1106,7 @@ body.smart #elenchi #cambioMappaPunti{
     border-top-left-radius: 0px !important;
     border-top-right-radius: 0px !important;
     background-position: 19px 9px !important;
+	z-index:11;
 }
 body:not(.bodyModello) #filtriSmart_cont,
 body:not(.bodyModello) #filtriSmart_ico,
@@ -1121,14 +1122,21 @@ body:not(.bodyModello) #btns_set{
     display: none;
     padding: 2px;
     text-align: center;
-    border-radius: 6px;
     background-color: rgba(0,0,0,0.2);
 }
-body:not(.bodyStyled2) #filtriSmart_cont{
+body:not(.smart) #filtriSmart_cont{
+    border-radius: 6px;
+}
+.smart #filtriSmart_cont{
+	background-color: rgba(0, 0, 0, 0.8) !important;
+    border-bottom-left-radius: 8px;
+}
+
+body:not(.bodyStyled2):not(.smart) #filtriSmart_cont{
     background-color: rgba(255,255,255,0.5) !important;
 }
 .smart #filtriSmart_cont{
-    top: 50px !important;
+    top: 0px !important;
     right: 0px !important;
 	width:350px;
     padding:10px;
@@ -1150,14 +1158,20 @@ body:not(.bodyStyled2) #filtriSmart_cont{
     background-repeat: no-repeat;
 }
 .smart #filtriSmart_cont div{
-	
+	background-color: rgba(255, 255, 255, 0.5) !important;
     margin: 3px;
 }
-#filtriSmart_cont div.selected{
+body:not(.smart) #filtriSmart_cont div.selected{
 	background-color: rgba(255,255,255,0.6);
     box-shadow: 0px 0px 7px rgba(255,255,255,0.8);
     border: none;
 }
+.smart #filtriSmart_cont div.selected{
+	background-color: #FC0 !important;
+	box-shadow: 0px 0px 14px rgba(0, 114, 255, 1);
+    border: none;
+}
+
 body:not(.smart) #filtriSmart_cont div:not(.elencoSel):not(.selected):hover{
 	background-color: rgba(255,255,255,0.3) !important;
 }
@@ -1181,6 +1195,9 @@ body:not(.smart) #filtriSmart_cont div:not(.elencoSel):not(.selected):hover{
     padding-top: 10px;
 	padding-bottom: 2px;
     color: rgba(0,0,0,0.6);
+}
+.smart #filtriSmart_cont i{
+	color: rgba(255, 255, 255, 0.7);
 }
 #filtriSmart_cont span{
 	/*display: block;
