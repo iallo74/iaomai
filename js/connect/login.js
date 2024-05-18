@@ -255,10 +255,10 @@ var LOGIN = {
 											SCHEDA.scaricaScheda();
 											LOGIN.verSets();
 											if(!globals.modello.cartella){
-												console.log("QUI")
 												inizio=true;
 												caricaModello('donna');
 											}
+											LOGIN.avviaVerToken();
 										}
 									}, 500);
 		}
@@ -289,6 +289,10 @@ var LOGIN = {
 					LOGIN.getDB(true);
 					MENU.visFeatures();
 					LOGIN.verSets();
+					if(smartMenu){
+						if(!localStorage.modello)localStorage.modello = 'donna';
+						caricaModello(localStorage.modello);
+					}
 				}
 				LOGIN.scriviUtente();
 				if(funct)eval(funct);
@@ -615,7 +619,11 @@ var LOGIN = {
 			SCHEDA.scaricaScheda();
 			MODELLO.filtraAnatomia();
 			try{ SET.filtraSet(); }catch(err){}
-			if(globals.set.cartella)caricaSet(globals.set.cartella,document.getElementById('p_'+globals.set.cartella));
+			if(globals.set.cartella){
+				let vSet = globals.set.cartella;
+				if(smartMenu)scaricaSet();
+				caricaSet(vSet,document.getElementById('p_'+vSet));
+			}
 		}});
 	},
 	verInternationals: function(){
