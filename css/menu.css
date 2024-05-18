@@ -164,7 +164,7 @@ body:not(.smart) #icone.iconeEspanse{
 .smart #p_rifletti{
 	width:36px !important;
 	position: fixed;
-	top: 115px;
+	top: 65px;
 	left: 9px;
 	border-top: none !important;/* 1px solid rgba(255, 255, 255, 0.2); */
 }
