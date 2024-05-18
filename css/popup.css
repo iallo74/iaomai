@@ -138,7 +138,7 @@
 	box-shadow:0px 0px 3px rgba(0,0,0,0.5);
 	cursor:pointer;
 }
-.smart.android .btn_invia:not(.btn_login_mini){
+.smart.android .btn_invia:not(.btn_login_mini):not(.btn_logout_mini){
 	font-size: var(--font-16-93);
     height: 34px !important;
     line-height: 34px !important;

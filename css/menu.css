@@ -1768,6 +1768,7 @@ body:not(.smart) #impostazioni{
 }
 
 .smart .btn_login_mini,
+.smart .btn_logout_mini,
 .smart #btn_modut{
 	width: 41px !important;
 	height: 41px !important;
