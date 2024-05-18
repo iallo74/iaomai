@@ -426,7 +426,7 @@ function caricaSet( cartella, el, forzaModello='' ){
 								document.getElementById("scripts") );
 		if(el)el.classList.add("btnSetSel");
 		if(globals.modello.cartella){
-			MODELLO.meshAree.visible = false;
+			if(MODELLO.meshAree)MODELLO.meshAree.visible = false;
 			document.getElementById("pulsanti_modello").classList.add('modelloScelto');
 		}
 		localStorage.set = globals.set.cartella;

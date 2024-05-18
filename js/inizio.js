@@ -135,7 +135,7 @@ function INIT(){
 	agenda.tmGlobal = setInterval(function(){
 		agenda.verGlobal();
 	},60000);
-	
+	//alert(screen.availWidth+" - "+screen.availHeight)
 	//DB._reset();
 	LOGIN.avviaVerToken();
 	document.getElementById("cont_debug_db").addEventListener("contextmenu", bringBackDefault, true);
