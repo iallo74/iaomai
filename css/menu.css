@@ -1766,6 +1766,14 @@ body:not(.smart) #impostazioni{
     padding-left: 30px !important;
     padding-right: 0px !important;
 }
+
+.smart .btn_login_mini,
+.smart #btn_modut{
+	width: 41px !important;
+	height: 41px !important;
+	margin-top: 5px !important;
+	padding-left:41px !important;	
+}
 .btn_login_mini:hover{
 	background-image: url(../img/ico_connessione.png), linear-gradient(to bottom, #0a3d96 0%,#052d74 100%) !important;
 }
@@ -1873,6 +1881,11 @@ body:not(.bodyStyled2) #btn_modut{
     cursor: pointer;
     color: #000;
 }
+.smart #lingueSelect{
+	height: 41px;
+    padding-left: 15px;
+    font-size: var(--font-14-94);
+}
 #lingueSelect option{
     color: #000;
 }
@@ -1897,6 +1910,11 @@ body:not(.bodyStyled2) #btn_modut{
     font-weight: bold;
     cursor: pointer;
     margin: -3px 6px 0px 0px;
+}
+.smart #ico_infolingue{
+    width: 30px;
+	height: 30px;
+	line-height: 30px;
 }
 .bodyStyled2 #ico_infolingue{
     background-color: rgba(255,255,255,0.2);
