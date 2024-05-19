@@ -171,7 +171,7 @@ body:not(.smart) #icone.iconeEspanse{
 
 	/* width:36px !important; */
 	position: fixed;
-	top: 119px;/* 
+	top: 65px;/* 
 	left: 9px; */
 	left: 3px;
 	border-top: none !important;/* 1px solid rgba(255, 255, 255, 0.2); */
@@ -435,7 +435,7 @@ body:not(.smart) #p_rifletti{
 }
 .smart #contBtnModello #p_centro{
 	position: fixed;
-    top: 3px;
+    top: 117px;
     left: 3px;
     background-color: rgba(0, 0, 0, 0.7);
     border-radius: 6px;
@@ -1434,7 +1434,7 @@ body:not(.Muscles) #i_aree{
     margin-bottom: 6px;
     height: 31px;
     line-height: 31px;
-    background-image: url(../img/ico_puzzleB.png);
+    background-image: url(../img/ico_coccardaB.png);
     background-repeat: no-repeat;
     background-position: left center;
     background-size: auto 27px;
@@ -2024,11 +2024,11 @@ body:not(.bodyStyled2) #btn_modut{
 }
 
 #p_licenze{
-	background-image:url(../img/ico_licenzeN.png),url(../img/frDxB.png);
+	background-image:url(../img/ico_coccardaN.png),url(../img/frDxB.png);
 	cursor:pointer;
 }
 .bodyStyled2 #p_licenze{
-	background-image:url(../img/ico_licenze.png),url(../img/frDx.png);
+	background-image:url(../img/ico_coccarda.png),url(../img/frDx.png);
 }
 #p_licenze:hover{
 	background-color:rgba(255,255,255,0.1);
