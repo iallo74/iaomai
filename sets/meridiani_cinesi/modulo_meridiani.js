@@ -80,6 +80,7 @@ var MODULO_MERIDIANI = { // extend SET
 			if(m!='EX')contSmart += 
 				'<div onMouseOver="SET.eviMeridiano(\''+m+'\',true);"' +
 				'     onMouseOut="SET.eviMeridiano(\''+m+'\',false);"' +
+				'	  onTouchStart="SET.startSmPress(\''+m+'\',this);"' +
 				'     onClick="SET.accendiMeridiano(\''+m+'\',true);"' + // elenco dei punti
 				'	  id="sm'+m+'"' +
 				'     class="sm_'+MERIDIANI[m].elemento+addClass+addLock+'">'+siglaMeridiano+'</div>';
@@ -87,6 +88,40 @@ var MODULO_MERIDIANI = { // extend SET
 									
 		document.getElementById("lista_meridiani").innerHTML = '<div class="lista listaMeridiani">'+contElencoMeridiani+'</div>';
 		document.getElementById("meridianiSmart_cont").innerHTML = contSmart;
+	},
+	startSmPress: function( el ){
+		SET.smPressed = el;
+		SET.smActive = !el.classList.contains("elencoSel");
+		window.addEventListener("touchmove", SET.moveSmPress,true);
+		window.addEventListener("touchend", SET.endSmPress,true);
+	},
+	moveSmPress: function(){
+		let mX = event.targetTouches[0].pageX,
+			mY = event.targetTouches[0].pageY,
+			els = document.getElementById("meridianiSmart_cont").getElementsByTagName("div");
+		for(e=0;e<els.length;e++){
+			let x = tCoord(els[e]),
+				y = tCoord(els[e],'y'),
+				w = els[e].scrollWidth,
+				h = els[e].scrollHeight;
+			if(	mX>=x && 
+				mX<=x+w && 
+				mY>=y && 
+				mY<=y+h &&
+				els[e]!=SET.smPressed &&
+				els[e].classList.contains("elencoSel")!=SET.smActive ){
+					SET.accendiMeridiano(els[e].id.replace("sm",""),true);
+			}
+		}
+		if(SET.smPressed.classList.contains("elencoSel")!=SET.smActive){
+			SET.accendiMeridiano(SET.smPressed.id.replace("sm",""),true);
+		}
+	},
+	endSmPress: function(){
+		window.removeEventListener("touchmove", SET.moveSmPress,true);
+		window.removeEventListener("touchend", SET.endSmPress,true);
+		SET.smPressed=false;
+		SET.smActive=false;
 	},
 	eviMeridiano: function( m, b ){
 		if(touchable)return;

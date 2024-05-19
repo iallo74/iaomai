@@ -26,6 +26,8 @@ var SET = {
 	idTeoMeridiani: 1,
 	snd: null,
 	areas50: true,
+	smActive: false,
+	smPressed: false,
 	
 	// FUNZIONI
 	_init: function(){
