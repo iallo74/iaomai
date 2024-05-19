@@ -844,8 +844,11 @@ body:not(.bodyStyled2) #scheda_testo2{
 	cursor:pointer;
 }
 .smart #menuCiclo{
-	margin-top: 2px;
-    margin-right: 82px;
+	margin-top: -4px;
+    margin-right: 116px;
+}
+body:not(.smart) #menuCiclo{
+	margin-right: 74px;
 }
 #menuCiclo > div{
 	padding-right:10px;

@@ -515,9 +515,12 @@ body:not(.smart) #btnAnagraficaCliente i{
 	padding-bottom:7px;
 	text-align:center;
 }
-.smart #elenchi .trattTools i,
+/* .smart #elenchi .trattTools i, */
 body:not(.smart) .trattTools i{
 	opacity:0.5;
+}
+.smart #elenchi .trattTools i{
+	opacity:0.8;
 }
 body:not(.smart) .trattTools i:not(.infoCiclo):not(.addTrattBtn):hover{
 	background-color:#EEE !important;
@@ -585,7 +588,7 @@ body:not(.smart) .trattTools i:not(.infoCiclo):not(.addTrattBtn):hover{
     background-position: 4px 2px, left center;
     padding-left: 42px;
 	margin-top: -44px;
-	width: calc(100% - 140px);
+	width: calc(100% - 155px);
 }
 .app_version.bug_font.smart.android .anamnesiBtn{
     line-height: 40.31px !important;

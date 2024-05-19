@@ -230,16 +230,25 @@ var PAZIENTI_CICLI = { // extend PAZIENTI
 			SCHEDA.caricaScheda( stripslashes(TXT("SchedaCiclo")), HTML, '', 'scheda_Riepi', false, true, btn );
 		}});
 	},
-	swMenuCiclo: function( idTrattQ, btn ){
+	swMenuCiclo: function( idTrattQ, idCiclo, btn ){
 		let forza = false,
-			top = tCoord(btn,'y')-15;
-		if(smartMenu)top -= HF()-SCHEDA.hOpened;
+			forzaSmart = false;
 		if(typeof(idTrattQ)=='undefined' && typeof(btn)=='undefined')forza = true;
 		if(PAZIENTI.mnOver)return;
-		if(!document.getElementById("menuCiclo") && !forza){
+		
+		if(touchable && PAZIENTI.mn?.dataset.idciclo!=idCiclo+"" && typeof(PAZIENTI.mn?.dataset.idciclo)!='undefined'){
+			forzaSmart = true;
+			PAZIENTI.mn.parentElement.removeChild(PAZIENTI.mn);
+			PAZIENTI.mn = null;
+		}
+		
+		if((!document.getElementById("menuCiclo") && !forza) || forzaSmart){
+			let top = tCoord(btn,'y')-136
+			if(smartMenu)top -= HF()-SCHEDA.hOpened;
 			PAZIENTI.mnOver = false;
 			PAZIENTI.mn = document.createElement('div');
 			PAZIENTI.mn.id = "menuCiclo";
+			PAZIENTI.mn.dataset.idciclo = idCiclo;
 			PAZIENTI.mn.style.top = top + 'px';
 			PAZIENTI.mn.className = "visSch";
 			PAZIENTI.mn.innerHTML = '<div class="p_paz_el_menu"' +
@@ -248,11 +257,12 @@ var PAZIENTI_CICLI = { // extend PAZIENTI
 									'	  onMouseOut="PAZIENTI.mnOver = false;">' +
 										TXT("EliminaCartella") +
 									'</div>';
-			document.getElementById("lista_pazienti").appendChild(PAZIENTI.mn);
-			window.addEventListener("mouseup", PAZIENTI.swMenuCiclo, false);
+			document.getElementById("ciclo_"+idCiclo).appendChild(PAZIENTI.mn);
+			if(!touchable)window.addEventListener("mouseup", PAZIENTI.swMenuCiclo, false);
 		}else{
-			document.getElementById("lista_pazienti").removeChild(PAZIENTI.mn);
-			window.removeEventListener("mouseup", PAZIENTI.swMenuCiclo, false);
+			PAZIENTI.mn.parentElement.removeChild(PAZIENTI.mn)
+			if(!touchable)window.removeEventListener("mouseup", PAZIENTI.swMenuCiclo, false);
+			PAZIENTI.mn = null;
 		}
 	},
 	

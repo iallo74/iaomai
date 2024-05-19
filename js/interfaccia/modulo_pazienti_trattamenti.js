@@ -227,7 +227,7 @@ var PAZIENTI_TRATTAMENTI = { // extend PAZIENTI
 							'		onclick="PAZIENTI.car_ciclo(\''+addslashes(PAZIENTI.cicli[c].NomeCiclo)+'\',this);">' +
 							'		<span>'+htmlEntities(TXT("SchedaCiclo"))+'</span>' +
 							'	</i>' +
-							'	<i onclick="PAZIENTI.swMenuCiclo('+elAn+',this);" class="eliminaBtn elMenu">' +
+							'	<i onclick="PAZIENTI.swMenuCiclo('+elAn+','+c+',this);" class="eliminaBtn elMenu">' +
 							'		<svg viewBox="0 0 24 32">' +
 							'			<circle cy="11"></circle>' +
 							'			<circle cy="18"></circle>' +
