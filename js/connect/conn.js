@@ -5,7 +5,7 @@ var CONN = {
 	APIfilesFolder: 'https://files.iaomai.app/___API/V3/',
 	urlStore: 'https://www.iaomai.app/[lang]/iaomai/',
 	linkPrivacy: 'https://www.iaomai.app/privacy',
-	linkReqPwd: 'https://www.iaomai.app/account/requestpassword.php',
+	linkReqPwd: 'https://www.iaomai.app/[lang]/account/password',
 	online: true,
 	
 	chunkSize: 1024 * 1024, // 1MB
