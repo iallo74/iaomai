@@ -934,7 +934,21 @@ body:not(.smart) #addServizioMenu{
 	margin-left:3px !important;
 }
 .smart #filtroPazienti{
-	padding-left:41px;
+	/* padding-left:41px; */
+	padding-left: 0px;
+	padding-top: 10px;
+	background-position: top center;
+	min-width: 70px !important;
+	border-right:1px solid rgba(0,0,0,0.3);
+}
+.smart #filtroPazienti span{
+	color: #000;
+	font-style: normal;
+	display:block;
+	white-space: nowrap;
+	width: calc(100%);
+	overflow: hidden;
+	text-overflow: ellipsis;
 }
 #cambioSistemaMeridiani{
 	background-image:url(../img/ico_meridiani.png);
@@ -942,6 +956,21 @@ body:not(.smart) #addServizioMenu{
 }
 #marketingPazienti{
 	background-image:url(../img/ico_marketingN.png);
+}
+.smart #marketingPazienti{
+	padding-left: 0px;
+	padding-top: 10px;
+	background-position: top center;
+	min-width: 70px !important;
+}
+.smart #marketingPazienti span{
+	color: #000;
+	font-style: normal;
+	display:block;
+	white-space: nowrap;
+	width: calc(100%);
+	overflow: hidden;
+	text-overflow: ellipsis;
 }
 body:not(.smart) #filtroPazienti,
 body:not(.smart) #cambioSistemaMeridiani,
@@ -1382,7 +1411,7 @@ body:not(.smart) #rgApplicaFiltri{
 	margin-right:-3px;
 }
 .smart #paz_ricerca{
-	width: calc(var(--menu-width) - 94px);
+	width: calc(var(--menu-width) - 149px);/* 94px); */
 }
 #proc_ricerca{
     width: calc(var(--menu-width) - 52px);

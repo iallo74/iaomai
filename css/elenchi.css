@@ -130,7 +130,7 @@ body:not(.smart) #elenchi #impostazioniArchivi{
     margin-top: 9px;
 }
 .smart #elenchi #impostazioniArchivi{
-	margin-top: 8px;
+	margin-top: 9px;
     margin-right: -6px !important;
 }
 body:not(.smart) #help_set,

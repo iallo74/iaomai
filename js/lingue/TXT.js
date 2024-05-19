@@ -2248,6 +2248,14 @@ DB.TXT = {
             por: "Filtros e estatísticas",
             deu: "Filter und Statistiken"
         },
+        LabelSmartStatistiche: {
+            ita: "Statistiche",
+            eng: "Statistics",
+            esp: "Estadísticas",
+            fra: "Statistiques",
+            por: "Estatísticas",
+            deu: "Statistiken"
+        },
         FiltriApplicati: {
             ita: "Filtri applicati",
             eng: "Filters applied",
@@ -4024,6 +4032,14 @@ DB.TXT = {
             fra: "Outils de marketing",
             por: "Ferramentas de marketing",
             deu: "Marketingtools"
+        },
+        LabelSmartMarketing: {
+            ita: "Marketing",
+            eng: "Marketing",
+            esp: "Marketing",
+            fra: "Marketing",
+            por: "Marketing",
+            deu: "Marketingì"
         },
         InviaEmailPazienti: {
             ita: "Invia email multiple",

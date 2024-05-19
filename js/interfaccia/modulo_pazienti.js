@@ -38,12 +38,12 @@ var PAZIENTI = {
 				'	<i class="elMenu"' +
 				'	   id="filtroPazienti"' +
 				'	   onclick="PAZIENTI.car_filtri();">' +
-				'		<span>'+TXT("FiltroPazienti")+'</span>' +
+				'		<span>'+ ( smartMenu ? TXT("LabelSmartStatistiche") : TXT("FiltroPazienti") ) +'</span>' +
 				'	</i>' +
 				'	<i class="elMenu"' +
 				'	   id="marketingPazienti"' +
 				'	   onclick="PAZIENTI.car_marketing();">' +
-				'		<span>'+TXT("StrumentiMarketing")+'</span>' +
+				'		<span>'+ ( smartMenu ? TXT("LabelSmartMarketing") : TXT("StrumentiMarketing") ) +'</span>' +
 				'	</i>' +
 				'	<i class="elMenu"' +
 				'	   id="addPaziente"' +

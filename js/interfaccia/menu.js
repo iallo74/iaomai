@@ -36,6 +36,8 @@ var MENU = {
 				document.getElementById("p_sets").getElementsByTagName("i")[0].innerHTML = TXT("LabelSmartMappe");
 				document.getElementById("p_cartella").getElementsByTagName("i")[0].innerHTML = TXT("LabelSmartPazienti");
 				document.getElementById("p_cartella").getElementsByTagName("i")[1].innerHTML = TXT("LabelSmartPazienti");
+				/* document.getElementById("filtroPazienti").getElementsByTagName("span")[0].innerHTML = TXT("LabelSmartStatistiche");
+				document.getElementById("marketingPazienti").getElementsByTagName("span")[0].innerHTML = TXT("LabelSmartMarketing"); */
 				document.getElementById("icone").classList.add("labeled");
 			}
 		},1000);
