@@ -26,7 +26,7 @@ var MODELLO = {
 	open_x_translate: false,
 	
 	_init: function(modello){
-		
+		if(!globals.modello.cartella)return;
 		ANATOMIA = new THREE.Group();
 		ANATOMIA.name="MODELLO";
 		
@@ -480,7 +480,7 @@ var MODELLO = {
 			}else{
 				MENU.visModello();
 			}
-		}else if(!globals.openMap && inizio){
+		}else if(/* !globals.openMap &&  */inizio){
 			let elDef = null,
 				firstEl = null;
 			for(let cartella in sets){

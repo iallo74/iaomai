@@ -575,7 +575,7 @@ var LOGIN = {
 		CONN.caricaUrl(	"logout.php",
 						"USR="+encodeURIComponent(DB.login.data.UsernameU),
 						"");
-						
+							
 		clearInterval(LOGIN.tmVerT);
 		LOGIN.tmVerT = null;
 		DB.login.data.TOKEN = '';
@@ -593,10 +593,14 @@ var LOGIN = {
 		if(globals.set.cartella){
 			let vSet = globals.set.cartella;
 			scaricaSet();
-			if(smartMenu)caricaSet(vSet);
+			//if(smartMenu)caricaSet(vSet);
 		}
 		PAZIENTI.cancellaFiltri(true);
 		SCHEDA.scaricaScheda();
+		if(smartMenu){
+			scaricaModello();
+			MENU.visLogin(true);
+		}
 	},
 	annullaUtente: function(){ // cancella tutti i dati utente in locale
 		CONFIRM.vis(	TXT("ChiediAnnullaUtente")+'<br>'+

@@ -481,7 +481,7 @@ function scaricaSet( notInit=false ){
 	MENU.aggiornaIconeModello();
 	localStorage.set = '';
 	document.getElementById("pulsanti_set").classList.remove("setAperto");
-		document.getElementById("btns_set").classList.remove("visBtn");
+	document.getElementById("btns_set").classList.remove("visBtn");
 	if(!smartMenu && !daScheda)SCHEDA.chiudiElenco();
 	document.getElementById("p_sets").classList.add("visSch");
 	document.body.classList.remove('bodySet');

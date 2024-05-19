@@ -359,6 +359,13 @@ var IMPORTER = {
 		let file = lista[n],
 			isModello = (file.indexOf("modelli/")==0 && typeof(modelli)!='undefined'),
 			isSet = (file.indexOf("sets/")==0 && typeof(sets)!='undefined');
+		
+		/* if( (isSet && !globals.set.cartella) ||
+			(isModello && !globals.modello.cartella) ){
+			funct = '';
+			nasLoader();
+			return;
+		} */
 		if( isModello || isSet ){
 			if(!n)this.dimProgr = 0;
 			let totDim = 0,
