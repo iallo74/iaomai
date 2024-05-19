@@ -154,7 +154,7 @@ var MODULO_MERIDIANI = { // extend SET
 										
 				if(m!='NK')contSmart += '<div onMouseOver="SET.eviMeridiano(\''+m+'\',true);"' +
 										'     onMouseOut="SET.eviMeridiano(\''+m+'\',false);"' +
-										'	  onTouchStart="SET.startSmPress(\''+m+'\',this);"' +
+										'	  onTouchStart="SET.startSmPress(this);"' +
 										'     onClick="SET.accendiMeridiano(\''+m+'\',true);"' + // elenco dei punti
 										'	   id="sm'+m+'"' +
 										'     class="sm_'+MERIDIANI[m].elemento+addClass+addLock+'">'+SET.convSigla(m)+'</div>';
