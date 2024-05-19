@@ -184,6 +184,24 @@ body:not(.smart) #pazienti_head{
     background-repeat: no-repeat;
     background-size: 27px;
 }
+.smart #btnAnagraficaCliente{
+   	width: 60px;
+	margin-top:-5px;
+	padding-top:27px;
+}
+body:not(.smart) #btnAnagraficaCliente i{
+	display:none;
+}
+.smart #btnAnagraficaCliente i{
+   	font-weight:normal !important;
+	text-decoration:none !important;
+	display:block;
+	width:calc(100%);
+	overflow:hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	text-align:center;
+}
 .smart.android #btnAnagraficaCliente{
 	background-size: auto;
 	margin-left: -3px;
@@ -193,8 +211,14 @@ body:not(.smart) #pazienti_head{
     margin-left: 10px;
     width: calc(100% - 77px);
 }
+.smart .trattNomeCliente.conAvatar #nomeCliente{
+    width: calc(100% - 97px) !important;
+}
 .trattNomeCliente:not(.conAvatar) #nomeCliente{
     width: calc(100% - 39px);
+}
+.smart .trattNomeCliente:not(.conAvatar) #nomeCliente{
+    width: calc(100% - 59px) !important;
 }
 
 .avatar > div,

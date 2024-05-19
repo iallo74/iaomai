@@ -203,7 +203,7 @@ var PAZIENTI = {
 				(PZ.sesso ? ' style="background-image:url(img/ico_cliente_'+sessi[PZ.sesso]+'.png);"' : '') +
 				'><span id="nomeCliente" onClick="PAZIENTI.vis_paziente();" title="'+TXT("Anagrafica")+'">'+htmlEntities(PZ.Nome)+"<br>"+htmlEntities(PZ.Cognome) +
 				'</span>' +
-				'<span id="btnAnagraficaCliente" onClick="PAZIENTI.vis_paziente();" title="'+TXT("Anagrafica")+'"></span>' +
+				'<span id="btnAnagraficaCliente" onClick="PAZIENTI.vis_paziente();" title="'+TXT("Anagrafica")+'"><i>'+TXT("Anagrafica")+'</i></span>' +
 				'<span id="esciCliente" onClick="PAZIENTI.deselPaziente();" title="'+TXT("Chiudi")+'"></span>' +
 				(PZ.avatar ? '<span onClick="PAZIENTI.vis_paziente();" class="avatarMini" style="background-image:url(\''+PZ.avatar+'\');"></span>' : '') +
 				'</p>' +

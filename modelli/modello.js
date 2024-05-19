@@ -480,7 +480,7 @@ var MODELLO = {
 			}else{
 				MENU.visModello();
 			}
-		}else if(/* !globals.openMap &&  */inizio){
+		}else if(/* !globals.openMap &&  */inizio && !localStorage.mapOpened){
 			let elDef = null,
 				firstEl = null;
 			for(let cartella in sets){
@@ -494,7 +494,7 @@ var MODELLO = {
 				}
 			}
 			if(!elDef)elDef = firstEl;
-			if(elDef){
+			if(elDef && __(localStorage.openMap)!='true'){
 				globals.set.cartella = elDef;
 				globals.mapOpened = elDef;
 			}

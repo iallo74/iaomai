@@ -296,6 +296,7 @@ var LOGIN = {
 				}
 				LOGIN.scriviUtente();
 				if(funct)eval(funct);
+				
 				if(location.href.indexOf("https://www.iaomai.app")==0 && getVar("aL") && (!DB.login.data.idUtente || !LOGIN.logedin()))LOGIN.autoLogin();
 				if(onlineVersion){
 					setTimeout( function(){
@@ -591,9 +592,7 @@ var LOGIN = {
 		DB._reset(); // <<<<<<<< FRV
 		LOGIN.getDB();
 		if(globals.set.cartella){
-			let vSet = globals.set.cartella;
 			scaricaSet();
-			//if(smartMenu)caricaSet(vSet);
 		}
 		PAZIENTI.cancellaFiltri(true);
 		SCHEDA.scaricaScheda();
