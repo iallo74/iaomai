@@ -1,6 +1,7 @@
 var CONN = {
 	VERSIONE: 1,
 	APIfolder: 'https://www.corpomentespirito.it/__stream/app/030_iaomai/__API/V1.7/',
+	APIfilesFolder: 'https://files.iaomai.app/___API/V3/',
 	FILESfolder: 'https://files.iaomai.app/__files_utenti/files/',
 	urlStore: 'https://www.iaomai.app/[lang]/iaomai/',
 	linkPrivacy: 'https://www.iaomai.app/privacy',
