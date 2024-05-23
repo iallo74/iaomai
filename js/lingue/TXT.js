@@ -6354,6 +6354,57 @@ DB.TXT = {
             deu: "Sitzungspakete"
         },
 
+        // RATING
+        PiaceIaomai: {
+            ita: "Ti piace iáomai?",
+            eng: "Do you like iáomai?",
+            esp: "¿Te gusta iáomai?",
+            fra: "Aimez-vous iáomai ?",
+            por: "Você gosta do iáomai?",
+            deu: "Gefällt dir iáomai?"
+        },
+        TapAppStore: {
+            ita: "Tocca per votare nell'AppStore",
+            eng: "Tap to rate on the AppStore",
+            esp: "Toca para calificar en el AppStore",
+            fra: "Touchez pour noter sur l'AppStore",
+            por: "Toque para avaliar na AppStore",
+            deu: "Tippen, um im AppStore zu bewerten"
+        },
+        TapPlayStore: {
+            ita: "Tocca per votare nel PlayStore",
+            eng: "Tap to rate on the PlayStore",
+            esp: "Toca para calificar en el PlayStore",
+            fra: "Touchez pour noter sur le PlayStore",
+            por: "Toque para avaliar no PlayStore",
+            deu: "Tippen, um im PlayStore zu bewerten"
+        },
+        VotaOra: {
+            ita: "Vota ora",
+            eng: "Rate now",
+            esp: "Calificar",
+            fra: "Noter",
+            por: "Avaliar",
+            deu: "Rate"
+        },
+        GiaFatto: {
+            ita: "Già fatto",
+            eng: "Already done",
+            esp: "Ya hecho",
+            fra: "Déjà fait",
+            por: "Já feito",
+            deu: "Bereits erledigt"
+        },
+        PiuTardi: {
+            ita: "Più tardi",
+            eng: "Later",
+            esp: "Más tarde",
+            fra: "Plus tard",
+            por: "Mais tarde",
+            deu: "Später"
+        },
+        
+
         // PATOLOGIE
         MTC: {
             ita: "MTC",
