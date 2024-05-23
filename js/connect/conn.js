@@ -2,10 +2,11 @@ var CONN = {
 	VERSIONE: 1,
 	APIfolder: 'https://www.corpomentespirito.it/__stream/app/030_iaomai/__API/V1.7/',
 	FILESfolder: 'https://files.iaomai.app/__files_utenti/files/',
-	APIfilesFolder: 'https://files.iaomai.app/___API/V3/',
 	urlStore: 'https://www.iaomai.app/[lang]/iaomai/',
 	linkPrivacy: 'https://www.iaomai.app/privacy',
 	linkReqPwd: 'https://www.iaomai.app/[lang]/account/password',
+	linkAppStore: 'https://apps.apple.com/it/app/i%C3%A1omai/id1588705898',
+	linkPlayStore: 'https://play.google.com/store/apps/details?id=app.iaomai.app',
 	online: true,
 	
 	chunkSize: 1024 * 1024, // 1MB
