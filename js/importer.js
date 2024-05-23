@@ -85,6 +85,7 @@ var IMPORTER = {
     	'css/addings.css',
     	'css/console.css',
     	'css/pplhd.css',
+    	'css/app_rating.css',
 		
 		'js/connect/login.js',
 		'js/connect/syncro.js',
@@ -145,6 +146,7 @@ var IMPORTER = {
 		'js/interfaccia/modulo_purchases.js',
 		'js/interfaccia/modulo_licenze.js',
 		'js/interfaccia/modulo_customs.js',
+		'js/interfaccia/modulo_app_rating.js',
 		'js/utils/agenda.js',
 		'js/utils/decpy.js',
         
