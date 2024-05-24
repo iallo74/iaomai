@@ -1330,6 +1330,9 @@ _:-webkit-full-screen,
 #formMod i { /* PAZIENTI */
 	line-height:13px;
 }
+.fieldErr{
+	outline: 3px solid rgba(255, 0, 0, 0.3);
+}
 #formMod input:not([type=checkbox]):not([type=file]):not(#paz_add):not(#tag_add):not(#medicina_add):not(#allergia_add):not(#patologia_add):not(#intervento_add):not(.label_add){ /* PAZIENTI */
 	width:100%;
 	height:32px;

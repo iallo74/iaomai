@@ -442,7 +442,7 @@ body:not(.smart) #mappe_titolo_freccia{
 	font-style:normal;
 }
 #elenchi_titolo_txt{
-	width: calc(100% - 150px);
+	width: calc(100% - 130px);
 	height: 50px;
     line-height: 50px;
 	display:inline-block;
@@ -452,6 +452,7 @@ body:not(.smart) #mappe_titolo_freccia{
     color: rgba(0,0,0,0.6);
 	text-align: left;
 	float: left;
+	overflow: hidden;
 }
 .smart #elenchi_titolo_txt{
 	font-size: var(--font-28) !important;

@@ -57,6 +57,7 @@ var H = {
 		if(obj.keyupCampo)addCampo += ' onKeyUp="'+obj.keyupCampo+'"';
 		if(obj.clickCampo)addCampo += ' onClick="'+obj.clickCampo+'"';
 		if(obj.focusCampo)addCampo += ' onFocus="'+obj.focusCampo+'"';
+		if(obj.blurCampo)addCampo += ' onBlur="'+obj.blurCampo+'"';
 		
 		let html = '';
 		
@@ -340,9 +341,11 @@ var H = {
 			return false;
 		}
 		if ( !Filtro.test(el.value) ){ 
-			el.value = el.dataset.preValue;
+			
+			el.classList.add("fieldErr");
+			//el.value = el.dataset.preValue;
 			return false;
-		}
+		}else el.classList.remove("fieldErr");
 		el.dataset.preValue = el.value;
 	},
 	

@@ -37,6 +37,7 @@ var LOGIN = {
 				"password_pazienti": "",
 				"valuta": "EUR",
 				"sistema_misure": "",
+				"rated": "",
 				"auths": [],
 				"modls": []
 			}
@@ -188,7 +189,7 @@ var LOGIN = {
 		}
 		return false;
 	},
-	autoLogin: function(){ // avviato quando si preme il pulsante Accedi nel popup LOGIN
+	autoLogin: function(){ // autologin quando si accede da WEBAPP e si è già loggati sul sito web
 		arr_decpy = decLG();
 		if(CONN.retNoConn() && arr_decpy[0].trim()!='' && (arr_decpy[1].trim()!='' || arr_decpy[2].trim()!='')){
 			document.getElementById("stayConnected").checked = true;
@@ -201,7 +202,7 @@ var LOGIN = {
 		}
 		return false;
 	},
-	setLogin: function(txt){ // la risposta di getLogin()
+	setLogin: function(txt){ // la risposta di getLogin() e autoLogin()
 		if(!txt || txt.substr(0,3)=='404'){
 			if(!LOGIN.logedout){
 				ALERT(TXT("ErroreLogin"));
@@ -258,6 +259,7 @@ var LOGIN = {
 												caricaModello('donna');
 											}
 											LOGIN.avviaVerToken();
+											APP_RATING.update();
 										}
 									}, 500);
 		}
@@ -322,6 +324,7 @@ var LOGIN = {
 					// presento la schermata di login con opzioni iniziali
 					MENU.visLogin(true);
 				}
+				APP_RATING.init();
 				/* if(location.href.indexOf("https://www.iaomai.app")==0 && !LOGIN.logedin()){
 					// autologin
 					if(!DB.login.data.UsernameU || DB.login.data.UsernameU==localStorage.getItem("u4ia")){

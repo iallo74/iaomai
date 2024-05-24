@@ -902,7 +902,12 @@ body:not(.smart) #meridianiSmart_cont div:not(.elencoSel):hover{
 	font-weight: bold;
 	display: inline-block;
 }
-
+@media (max-height: 785px){
+	.smart #meridianiSmart_cont div{
+		height: 35px !important;
+		line-height: 35px !important;
+	}
+}
 
 .smart #meridianiSmart_cont div.elencoSel{
 	width: 55px !important;

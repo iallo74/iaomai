@@ -578,6 +578,22 @@ function ver_electron() {
     return false;
 }
 
+window.addEventListener('beforeunload', () => {
+	fetch(CONN.APIfolder+"close_app.php",{
+		method: 'POST',
+		headers: {
+		  'Accept': 'application/json',
+		  'Content-Type': 'application/json'
+		},
+		body: JSON.stringify({
+			UniqueId: localStorage.UniqueId
+		}),
+		keepalive: true
+	})
+	.then(res => res.json())
+	.then(data => {});
+	return;
+});
 
 /*window.onerror = (message, source, lineno, colno, error) => {
 	if(error==null)error = '';

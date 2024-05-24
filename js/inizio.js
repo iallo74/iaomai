@@ -143,7 +143,7 @@ function INIT(){
 	window.addEventListener("resize",function(){
 		SCHEDA.verPosScheda();
 	},false);
-	APP_RATING.init();
+	
 	// DEMO
 	/* if(onlineVersion){
 		setTimeout( function(){

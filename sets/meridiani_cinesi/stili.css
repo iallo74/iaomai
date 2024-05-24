@@ -781,6 +781,13 @@ body:not(.smart) #meridianiSmart_ico.visSch{
 	font-weight: bold;
 	display: inline-block;
 }
+
+@media (max-height: 785px){
+	.smart #meridianiSmart_cont div{
+		height: 35px !important;
+		line-height: 35px !important;
+	}
+}
 body:not(.smart) #meridianiSmart_cont{
     top: 40px !important;
 }
