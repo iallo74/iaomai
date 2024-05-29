@@ -260,8 +260,8 @@ var LOGIN = {
 													selSet = true
 												}
 											}
-
 											
+
 											PAZIENTI.cancellaFiltri(true);
 											SCHEDA.scaricaScheda();
 											if(!selSet || !smartMenu){
@@ -307,13 +307,15 @@ var LOGIN = {
 				}else{
 					LOGIN.getDB(true);
 					MENU.visFeatures();
-					if(!LOGIN.verSets() && smartMenu){
+					//console.log("2")
+					//if(!LOGIN.verSets()/*  && smartMenu */){
+						
 						/* if(LOGIN.verMonoApp().indexOf(localStorage.set)==-1){
 							
 						}else */
 						/* if(!localStorage.modello)localStorage.modello = 'donna';
 						caricaModello(localStorage.modello); */
-					}
+					//}
 				}
 				LOGIN.scriviUtente();
 				if(funct)eval(funct);
@@ -737,11 +739,25 @@ var LOGIN = {
 				}
 			}
 		}
-		inizio = false;
 		LOGIN.attesaVer = false;
 		if(!__(localStorage.firstAccess)){
 			localStorage.modello = 'donna';
 			localStorage.open3d = 'true';
+			/* localStorage.set = LOGIN.verMonoApp()[0];
+			localStorage.openMap = 'true'; */
+		}
+		let licenze = __(LOGIN.verMonoApp(),[]);
+		if(licenze.length==1){
+			let mono_app = licenze[0];
+			localStorage.openMap = 'false';
+			localStorage.open3d = 'false';
+			localStorage.modello = sets[mono_app].modelli[0];
+			localStorage.set = mono_app;
+			globals.openMap = false;
+			globals.open3d = false;
+			globals.mapOpened = mono_app;
+			document.getElementById("memorizzaOpen3d").style.display = 'none';
+			document.getElementById("memorizzaOpenMap").style.display = 'none';
 		}
 		if(LOGIN.verMonoApp().indexOf(localStorage.set)==-1){
 			scaricaSet();
@@ -760,6 +776,7 @@ var LOGIN = {
 			if(!__(localStorage.modello) && smartMenu)localStorage.modello = 'donna';
 			if(__(localStorage.modello))caricaModello(localStorage.modello)
 		}
+		inizio = false;
 	},
 	
 	// GESTIONE UTENTE

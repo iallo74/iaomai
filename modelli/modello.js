@@ -517,6 +517,7 @@ var MODELLO = {
 		raycastDisable=false;
 		
 		MODELLO.op('Pelle',1);
+		
 		if(inizio || getVar("demo")){
 			if(globals.openMap && globals.mapOpened && !globals.set.cartella){
 				postApreSet = true;
