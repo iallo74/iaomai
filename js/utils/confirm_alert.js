@@ -93,6 +93,7 @@ function ALERT( msg, login=false, purchase=false, licenses=false ){
 	if(login)document.getElementById("CNF").classList.add("CNF_login");
 	if(purchase)document.getElementById("CNF").classList.add("CNF_purchase");
 	if(licenses)document.getElementById("CNF").classList.add("CNF_licenses");
+	document.getElementById("CNF_lg").classList.toggle("nasLG",LOGIN.logedin());
 	setTimeout(function(){
 		document.getElementById("CNF_dialog").classList.add("visCNF_dialog");
 		document.getElementById("CNF").classList.add("opCNF");

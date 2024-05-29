@@ -45,6 +45,7 @@ body:not(.smart) #login.inizio #contLogin{
 
 #login:not(.inizio) #login_benvenuto,
 #login:not(.inizio) #demoContinueLogin,
+#demoContinueLogin,
 #login.inizio #labelLogin{
 	display:none;
 }

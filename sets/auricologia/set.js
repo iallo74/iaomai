@@ -472,7 +472,6 @@ var SET = {
 		
 		SET.leggiNote();
 		nasLoader();
-
 		if(postApreSet){
 			if(SCHEDA.livelloApertura!=3 ){
 				
@@ -489,9 +488,10 @@ var SET = {
 				SCHEDA.chiudiElenco();
 				MENU.chiudiMenu();
 			}
-		}if(!globals.modello.cartella){
-			GUIDA.visFumetto("guida_generica");
 		}
+		/* if(!globals.modello.cartella){
+			GUIDA.visFumetto("guida_generica");
+		} */
 		postApreSet = false;
 		if(scene.getObjectByName('pins_aree') && areasView){
 			scene.getObjectByName('pins_aree').visible = false;

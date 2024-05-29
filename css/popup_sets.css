@@ -92,6 +92,11 @@ body:not(.smart) #sets{
 	opacity:0.5;
 	cursor:default !important;
 }
+.deniedMap{
+	background-color:rgba(0,0,0,0.1) !important;
+	color: rgba(0, 0, 0, 0.35) !important;
+	cursor:default !important;
+}
 .lockedMap:hover{
 	background-color:rgba(0,0,0,0.2) !important;
 }

@@ -115,10 +115,28 @@ function init() {
 			els[e].addEventListener("mouseout",function(){raycastDisable=false;},false);
 		}
 	}
-	nasLoader();
+
+
+
+		
+	document.getElementById("schermo_nero").style.opacity = 0;
+	setTimeout(function(){
+		document.getElementById("schermo_nero").style.display = 'none';
+	},2000);
+	//nasLoader();
 	document.getElementById("logo_inizio").style.display = 'none';
-	
-	setTimeout( function(){
+
+
+
+
+
+
+
+
+	/* nasLoader();
+	document.getElementById("logo_inizio").style.display = 'none'; */
+
+	/* setTimeout( function(){
 		if(!__(localStorage.firstAccess)){
 			localStorage.modello = 'donna';
 			localStorage.open3d = 'true';
@@ -144,7 +162,7 @@ function init() {
 				}
 			}else{
 				setTimeout( function(){
-					if(!LOGIN.verMonoApp())GUIDA.visFumetto("guida_generica");
+					if(!LOGIN.verMonoApp().length)GUIDA.visFumetto("guida_generica");
 				}, 1000 );
 				if(mouseDetect && touchDetect && !__(localStorage.pointerType,"")){
 					setTimeout( function(){
@@ -153,7 +171,7 @@ function init() {
 				}
 			}
 		}
-	},500);
+	},500); */
 	onWindowResize();
 	
 	if(mouseDetect){

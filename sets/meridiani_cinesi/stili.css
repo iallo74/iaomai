@@ -686,7 +686,6 @@ body:not(.smart) .listaMeridiani .p_aria:not(.elencoSel) span:hover{
     top: 5px;
     right: 5px;
 	width:40px;
-	height:40px;
 	background-image:url(../../img/ico_meridianiB.png);
 	background-repeat: no-repeat;
 	background-position: center center;
@@ -695,13 +694,15 @@ body:not(.smart) .listaMeridiani .p_aria:not(.elencoSel) span:hover{
 	border-radius:6px;
 	background-color: rgba(0,0,0,0.2);
 }
+#meridianiSmart_ico:not(.visSch){
+	height:40px;
+}
 #meridianiSmart_ico.nas,
 #meridianiSmart_cont.nas{
 	display:none !important;
 }
 .smart #meridianiSmart_ico{
 	width: 54px !important;
-    height: 50px !important;
 	top: 0px !important;
 	right: 0px !important;
     /* background-color: #333 !important; */
@@ -712,8 +713,11 @@ body:not(.smart) .listaMeridiani .p_aria:not(.elencoSel) span:hover{
     background-position: 19px 9px !important;
 	z-index:11;
 }
+.smart #meridianiSmart_ico:not(.visSch){
+    height: 50px;
+}
 .smart #meridianiSmart_ico.visSch{
-    height: 721px !important;
+    height: 721px;
     border-bottom-left-radius: 15px !important;
 	z-index:2 !important;
 	background-position: 13px 9px !important;
@@ -786,6 +790,9 @@ body:not(.smart) #meridianiSmart_ico.visSch{
 	.smart #meridianiSmart_cont div{
 		height: 35px !important;
 		line-height: 35px !important;
+	}
+	.smart #meridianiSmart_ico{
+		height: 595px !important;
 	}
 }
 body:not(.smart) #meridianiSmart_cont{

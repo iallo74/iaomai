@@ -957,7 +957,7 @@ DB.TXT = {
             por: "SAIR",
             deu: "ABMELDEN"
         },
-        "Disconnetti": {
+        Disconnetti: {
             ita: "Cambia utente",
             eng: "Change user",
             esp: "Cambiar usuario",
@@ -965,13 +965,21 @@ DB.TXT = {
             por: "Muda usuário",
             deu: "Benutzer wechseln"
         },
-        "StaiConnesso": {
+        StaiConnesso: {
             ita: "Rimani connesso",
             eng: "Stay connected",
             esp: "Permanece conectado",
             fra: "Restez connecté",
             por: "Permaneça conectado",
             deu: "Bleiben Sie verbunden"
+        },
+        ScegliMappa: {
+            ita: "Scegli una mappa tematica",
+            eng: "Choose a thematic map",
+            esp: "Elige un mapa temático",
+            fra: "Choisissez une carte thématique",
+            por: "Escolha um mapa temático",
+            deu: "Wählen Sie eine thematische Karte"
         },
         ACQUISTA: {
             ita: "ACQUISTA",
@@ -980,6 +988,14 @@ DB.TXT = {
             fra: "ACHETER",
             por: "COMPRAR",
             deu: "KAUFEN"
+        },
+        Acquista: {
+            ita: "Acquista",
+            eng: "Buy",
+            esp: "Comprar",
+            fra: "Acheter",
+            por: "Comprar",
+            deu: "Kaufen"
         },
         MsgConnMultipla: {
             ita: "ATTENZIONE!\nSei stato disconnesso perché qualcun altro è entrato sul sistema con la tua password.\nSe non sei stato tu ti consigliamo di modificarla al più presto.",

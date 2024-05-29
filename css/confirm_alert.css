@@ -121,7 +121,7 @@
 #CNF:not(.CNF_login) #CNF_an{
 	display:none;
 }
-.CNF_login #CNF_lg,
+.CNF_login #CNF_lg:not(.nasLG),
 .CNF_login #CNF_pr,
 .CNF_login #CNF_an{
 	display: inline-block !important;

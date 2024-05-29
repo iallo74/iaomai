@@ -120,6 +120,7 @@ var MENU = {
 		if(n!="colori")document.getElementById("colori").classList.remove("visSch");
 		if(n!="versione")document.getElementById("versione").classList.remove("visSch");
 		if(n!="login")document.getElementById("login").classList.remove("visSch");
+		if(n!="splashmaps")document.getElementById("splashmaps").classList.remove("visSch");
 		if(n!="registrazione")document.getElementById("registrazione").classList.remove("visSch");
 		if(n!="notifiche")document.getElementById("notifiche").classList.remove("visSch");
 		if(n!="backups")document.getElementById("backups").classList.remove("visSch");
@@ -689,6 +690,15 @@ var MENU = {
 		let USRprovv=DB.login.data.UsernameU;
 		if(typeof(USRprovv)=='undefined')USRprovv='';
 		if(!USRprovv.trim() && mouseDetect && !touchable)document.getElementById("USR").focus();
+	},
+	visSplashMaps: function( inizio=false ){
+		let els = document.getElementById("contSplashMaps").getElementsByTagName("div");
+		for(e=0;e<els.length;e++){
+			els[e].classList.toggle("nasMap", LOGIN.verMonoApp().indexOf(els[e].dataset.value)==-1 );
+		}
+		MENU.chiudiMenu("splashmaps");
+		visLoader("");
+		document.getElementById("splashmaps").classList.toggle("visSch");
 	},
 	visRegistrazione: function(){
 		if(!onlineVersion && (iPad || iPhone))return;

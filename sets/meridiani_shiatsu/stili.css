@@ -263,7 +263,7 @@ body:not(.smart) .pallinoPat{
 .scheda_teoria #scheda_titolo{
     background: #1d4eaa;
     background: url(../../img/ico_teoria2B.png), -moz-linear-gradient(top, #1d4eaa 0%, #0a3d96 100%);
-    background: url(../../img/ico_teoria2B.png), url(../img/ico_utente.png)-webkit-linear-gradient(top, #1d4eaa 0%,#0a3d96 100%);
+    background: url(../../img/ico_teoria2B.png), -webkit-linear-gradient(top, #1d4eaa 0%,#0a3d96 100%);
     background: url(../../img/ico_teoria2B.png), linear-gradient(to bottom, #1d4eaa 0%,#0a3d96 100%);
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1d4eaa', endColorstr='#0a3d96',GradientType=0 );
 	background-position:2px center, center center !important;
@@ -272,7 +272,7 @@ body:not(.smart) .pallinoPat{
 .scheda_video #scheda_titolo{
     background: #1d4eaa;
     background: url(../../img/play.png), -moz-linear-gradient(top, #1d4eaa 0%, #0a3d96 100%);
-    background: url(../../img/play.png), url(../img/ico_utente.png)-webkit-linear-gradient(top, #1d4eaa 0%,#0a3d96 100%);
+    background: url(../../img/play.png), -webkit-linear-gradient(top, #1d4eaa 0%,#0a3d96 100%);
     background: url(../../img/play.png), linear-gradient(to bottom, #1d4eaa 0%,#0a3d96 100%);
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1d4eaa', endColorstr='#0a3d96',GradientType=0 );
 	background-position:8px center, center center !important;
@@ -808,7 +808,6 @@ body.smart.touch .textMeridianoTratt{
     top: 5px;
     right: 5px;
 	width:40px;
-	height:40px;
 	background-image:url(../../img/ico_meridianiB.png);
 	background-repeat: no-repeat;
 	background-position: center center;
@@ -817,13 +816,15 @@ body.smart.touch .textMeridianoTratt{
 	border-radius:6px;
 	background-color: rgba(0,0,0,0.2);
 }
+#meridianiSmart_ico:not(.visSch){
+	height:40px;
+}
 #meridianiSmart_ico.nas,
 #meridianiSmart_cont.nas{
 	display:none !important;
 }
 .smart #meridianiSmart_ico{
 	width: 54px !important;
-    height: 54px !important;
 	top: 0px !important;
 	right: 0px !important;
     /* background-color: #333 !important; */
@@ -834,8 +835,11 @@ body.smart.touch .textMeridianoTratt{
     background-position: 19px 9px !important;
 	z-index:11;
 }
+.smart #meridianiSmart_ico:not(.visSch){
+    height: 54px;
+}
 .smart #meridianiSmart_ico.visSch{
-    height: 721px !important;
+    height: 721px;
     border-bottom-left-radius: 15px !important;
 	z-index:2 !important;
 	background-position: 13px 9px !important;
@@ -906,6 +910,9 @@ body:not(.smart) #meridianiSmart_cont div:not(.elencoSel):hover{
 	.smart #meridianiSmart_cont div{
 		height: 35px !important;
 		line-height: 35px !important;
+	}
+	.smart #meridianiSmart_ico{
+		height: 595px !important;
 	}
 }
 

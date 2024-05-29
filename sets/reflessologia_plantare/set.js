@@ -192,9 +192,10 @@ var SET = {
 					MENU.chiudiMenu();
 				}
 			}
-		}if(!globals.modello.cartella){
-			GUIDA.visFumetto("guida_generica");
 		}
+		/* if(!globals.modello.cartella){
+			GUIDA.visFumetto("guida_generica");
+		} */
 		postApreSet = false;
 
 		if(smartMenu)overInterfaccia=true;

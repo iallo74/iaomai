@@ -485,7 +485,7 @@ var MODELLO = {
 				firstEl = null;
 			for(let cartella in sets){
 				if(	cartella != 'anatomy_full' &&
-				cartella != 'clients_full'){
+					cartella != 'clients_full'){
 					if(!firstEl)firstEl = cartella;
 					if(	!sets[cartella].locked &&
 						DB.login.data.auths.indexOf(cartella)>-1 ){
@@ -494,7 +494,7 @@ var MODELLO = {
 				}
 			}
 			if(!elDef)elDef = firstEl;
-			if(elDef && __(localStorage.openMap)!='true'){
+			if(elDef && __(localStorage.openMap)!='true' && DB.login.data.auths.indexOf(elDef)>-1){
 				globals.set.cartella = elDef;
 				globals.mapOpened = elDef;
 			}

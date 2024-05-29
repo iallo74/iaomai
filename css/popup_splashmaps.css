@@ -1,0 +1,83 @@
+@charset "utf-8";
+/* CSS Document */
+
+/* SPLASH MAPS */
+#splashmaps{
+	left: 0 !important;
+    top: 0 !important;
+    margin-top: 0 !important;
+    margin-left: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    border-radius: 0 !important;
+    background-color: #77746d;
+    background-position: center 30px, right bottom, center;
+    background-repeat: no-repeat;
+    background-color: #0054a7;
+    background-image: url(../img/logo_iaomai_Fondino2.png), url(../img/rachideNegxBlu.png), url(../img/fInizio.jpg);
+    background-size: 362px auto, 928px, 100% 100%;
+}
+#contSplashMaps{
+	padding-left:30px;
+	padding-right:30px;
+	position: fixed;
+    width: 100%;
+    top: 50%;
+    margin-top: -150px;
+}
+#contSplashMaps,
+#contSplashMaps p{
+	font-size: var(--font-13-2);
+	color:rgba(0,0,0,0.5);
+}
+#labelSplashMaps{
+	font-size: var(--font-19-8);
+	top: 50%;
+    position: fixed;
+    width: 100%;
+    color: #FFF;
+    margin-top: -185px;
+    text-shadow: 0 0 7px #000;
+}
+
+#contSplashMaps > div{
+	display: inline-block;
+    vertical-align: middle;
+    width: 120px;
+    height: 120px;
+    cursor: pointer;
+    border-radius: 10px;
+    box-shadow: 0 0 4px #000;
+    font-size: 14px;
+	background: #FFF;
+    background: -moz-linear-gradient(top, #FFF 0%, #DDD 100%);
+    background: -webkit-linear-gradient(top, #FFF 0%,#DDD 100%);
+	background: linear-gradient(to bottom, #FFF 0%,#DDD 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#FFFFFF', endColorstr='#DDDDDD',GradientType=0 );
+    margin: 10px;
+}
+#contSplashMaps > div span{
+	display: inline-block;
+    vertical-align: middle;
+    width: 120px;
+    height: 120px;
+    background-repeat: no-repeat;
+    background-position: center 27px;
+    padding-top: 85px;
+    color: #000000;
+}
+#contSplashMaps > div.nasMap{
+	opacity:0.2;
+}
+#map_acupoints span{
+	background-image: url(../sets/meridiani_cinesi/img/logoNero.png);
+}
+#map_shiatsu span{
+	background-image: url(../sets/meridiani_shiatsu/img/logoNero.png);
+}
+#map_auriculo span{
+	background-image: url(../sets/auricologia/img/logoNero.png);
+}
+#map_reflexology span{
+	background-image: url(../sets/reflessologia_plantare/img/logoNero.png);
+}

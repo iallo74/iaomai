@@ -429,6 +429,15 @@
     <div id="demoContinueLogin" onClick="MENU.chiudiMenu();if(!globals.modello.cartella){inizio=true;caricaModello('donna');}"><span></span><div>{{TXT_ContinuaDemo}}</div></div>
                 </div>
             </div>
+            <div id="splashmaps" class="popup"> <!-- SPLASH MAPS -->
+            	<div id="labelSplashMaps" class="popup_label">{{TXT_ScegliMappa}}</div>
+            	<div id="contSplashMaps" class="popup_cont">
+                	<div id="map_acupoints" data-value="meridiani_cinesi" onClick="LOGIN.selMap(this);"><span>AcupointsMap</span></div>
+                	<div id="map_shiatsu" data-value="meridiani_shiatsu" onClick="LOGIN.selMap(this);"><span>ShiatsuMap</span></div>
+                	<div id="map_auriculo" data-value="auricologia" onClick="LOGIN.selMap(this);"><span>AuriculoMap</span></div>
+                	<div id="map_reflexology" data-value="reflessologia_plantare" onClick="LOGIN.selMap(this);"><span>ReflexologyMap</span></div>
+                </div>
+            </div>
             <div id="registrazione" class="popup"> <!-- REGISTRAZIONE -->
             	<div id="labelRegistrazione" class="popup_label">{{TXT_Registrati}}<div class="popup_chiudi" onClick="MENU.chiudiMenu();"></div></div>
             	<div id="contRegistrazione" class="popup_cont">
@@ -710,8 +719,11 @@
                     <svg viewBox="0 0 12 48"><polygon points="5,24 12,13 12,35"></polygon></svg>
                     <i>{{TXT_Anatomia3D}}</i></div>
                 <div id="p_sets" class="visSch" onClick="MENU.visSets();">
-                	<svg viewBox="0 0 12 48"><polygon points="5,24 12,13 12,35"></polygon></svg>
-                	<i>{{TXT_Mappe}}</i></div>
+                    <svg viewBox="0 0 12 48"><polygon points="5,24 12,13 12,35"></polygon></svg>
+                    <i>{{TXT_Mappe}}</i></div>
+                <div id="p_buy" onClick="MENU.visPurchases(true);">
+                    <svg viewBox="0 0 12 48"><polygon points="5,24 12,13 12,35"></polygon></svg>
+                    <i>{{TXT_Acquista}}</i></div>
                 <div id="cartella_set"></div>
                 <span class="sepMenu"></span>
                 <div id="p_cartella" onClick="SCHEDA.apriElenco('base',true);">

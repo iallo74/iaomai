@@ -327,6 +327,12 @@ body:not(.smart) #icone.iconeEspanse div i{
 	border-left:none !important;
 	width:100px !important;
 }
+body:not(.smart) #p_buy{
+	display:none;
+}
+.smart #p_buy{
+	border-left:none !important;
+}
 .smart #p_sets i{
 	width:98px !important;
 }
@@ -345,6 +351,16 @@ body:not(.smart) #icone.iconeEspanse div i{
 body:not(.bodyStyled1):not(.bodyStyled2):not(.smart) #p_sets{
 	background-image: url(../img/ico_mappa2.png);
 	background-position: 2px center, right center !important;
+}
+.smart #icone.noMaps #p_set,
+.smart #icone.noMaps #p_sets,
+.smart #icone:not(.noMaps) #p_buy{
+	display:none !important;
+}
+#p_buy{
+	text-align:center;
+	background-image: url(../img/ico_purchases.png);
+	background-position: center 2px !important;
 }
 #p_sets.p_sel svg polygon,
 #p_agenda.p_sel svg polygon{

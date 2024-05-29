@@ -59,6 +59,7 @@ var IMPORTER = {
     	'css/popup_community.css',
     	'css/popup_feedback.css',
     	'css/popup_login.css',
+    	'css/popup_splashmaps.css',
     	'css/popup_registrazione.css',
     	'css/popup_notifiche.css',
     	'css/popup_backups.css',

@@ -1,14 +1,12 @@
 var LOGIN = {
 	retIni: false,
-	//loginVerificato: false,
 	logedout: false,
 	connAssente: false,
 	tmVerT: null,
-	/* v_cartCicloOpened: '',
-	v_elCartCicloOp: null, */
 	tmAttesaLogin: null,
 	HTML: '',
 	daSync: false,
+	attesaVer: false,
 	getUniqueId: function(){ // restituisce un ID unico come 1234-1234567890123
 		let t = new Date().getTime()+"",
 			r = (Math.floor(Math.random() * (9999 - 1000 + 1)) + 1000)+"";
@@ -80,7 +78,10 @@ var LOGIN = {
 			ANNOTAZIONI.caricaAnnotazioni();
 			if(syncro){
 				if(CONN.getConn())LOGIN.aggiornaToken(true);
-				else SYNCRO.globalSync();
+				else{
+					SYNCRO.globalSync();
+					LOGIN.verAuthSet();
+				}
 			}
 		});
 	},
@@ -246,17 +247,33 @@ var LOGIN = {
 											MODELLO.filtraAnatomia();
 											try{ SET.filtraSet(); }catch(err){}
 											PAZIENTI.deselPaziente();
-											if(globals.set.cartella && !LOGIN.verMonoApp()){
-												let vSet = globals.set.cartella;
+											
+											LOGIN.attesaVer = true;
+											let auths = LOGIN.verMonoApp(),
+												selSet = false;
+											if(globals.set.cartella && !auths.length){
+												/* let vSet = globals.set.cartella;
 												scaricaSet();
-												caricaSet(vSet);
+												caricaSet(vSet); */
+											}else{
+												if(auths.length>1 && !__(localStorage.set)){
+													selSet = true
+												}
 											}
+
+											
 											PAZIENTI.cancellaFiltri(true);
 											SCHEDA.scaricaScheda();
-											LOGIN.verSets();
-											if(!globals.modello.cartella){
-												inizio=true;
-												caricaModello('donna');
+											if(!selSet || !smartMenu){
+												/*LOGIN.verSets();
+												if(!globals.modello.cartella){
+													inizio=true;
+													caricaModello('donna');
+												}*/
+												LOGIN.verAuthSet();
+											}else{
+												MENU.visSplashMaps();
+												LOGIN.attesaVer = false;
 											}
 											LOGIN.avviaVerToken();
 											APP_RATING.update();
@@ -274,6 +291,7 @@ var LOGIN = {
 					dateNow = new Date();
 				dateNow=dateNow.getTime()/1000;
 				dateNow=parseInt(dateNow);
+				LOGIN.attesaVer = true;
 				if((dateStored<dateNow || dateStored==0 || isNaN(dateStored) || !eval(__(localStorage.RimaniConnesso,'false')))){
 					if(!LOGIN.logedin() || !eval(__(localStorage.RimaniConnesso,'false'))){
 						DB.login.data.TOKEN='';
@@ -289,10 +307,12 @@ var LOGIN = {
 				}else{
 					LOGIN.getDB(true);
 					MENU.visFeatures();
-					LOGIN.verSets();
-					if(smartMenu){
-						if(!localStorage.modello)localStorage.modello = 'donna';
-						caricaModello(localStorage.modello);
+					if(!LOGIN.verSets() && smartMenu){
+						/* if(LOGIN.verMonoApp().indexOf(localStorage.set)==-1){
+							
+						}else */
+						/* if(!localStorage.modello)localStorage.modello = 'donna';
+						caricaModello(localStorage.modello); */
 					}
 				}
 				LOGIN.scriviUtente();
@@ -390,6 +410,7 @@ var LOGIN = {
 			lp.classList.remove("logoPartner_on");
 			lp.style.backgroundImage = "";
 		}
+		document.getElementById("icone").classList.toggle("noMaps",LOGIN.verMonoApp().length==0);
 		//document.getElementById("js_interfaccia_modulo_customs_js").src = __(localStorage.customScript)?eval(atob(localStorage.customScript)):eval('CUSTOMS._init=function(){};CUSTOMS._end=function(){};CUSTOMS._conts={};');
 	},
 	attivaX: function(){ // attiva il pulsante X nel login
@@ -598,10 +619,10 @@ var LOGIN = {
 		}
 		PAZIENTI.cancellaFiltri(true);
 		SCHEDA.scaricaScheda();
-		if(smartMenu){
+		//if(smartMenu){
 			scaricaModello();
 			MENU.visLogin(true);
-		}
+		//}
 	},
 	annullaUtente: function(){ // cancella tutti i dati utente in locale
 		CONFIRM.vis(	TXT("ChiediAnnullaUtente")+'<br>'+
@@ -625,9 +646,9 @@ var LOGIN = {
 			MODELLO.filtraAnatomia();
 			try{ SET.filtraSet(); }catch(err){}
 			if(globals.set.cartella){
-				let vSet = globals.set.cartella;
+				//let vSet = globals.set.cartella;
 				if(smartMenu)scaricaSet();
-				caricaSet(vSet,document.getElementById('p_'+vSet));
+				//caricaSet(vSet,document.getElementById('p_'+vSet));
 			}
 		}});
 	},
@@ -656,17 +677,16 @@ var LOGIN = {
 	},
 	
 	verMonoApp: function(){
-		let auths = [],
-			mono_app = '';
+		let auths = [];
 		for(a in DB.login.data.auths){
-			if(DB.login.data.auths[a]!='anatomy_full')auths.push(DB.login.data.auths[a]);
+			if(DB.login.data.auths[a]!='anatomy_full' && DB.login.data.auths[a]!='clients_full')auths.push(DB.login.data.auths[a]);
 		}
-		if(auths.length==1)mono_app = auths[0];
-		return mono_app;
+		return auths;
 	},
 	verSets: function(){
-		let mono_app = LOGIN.verMonoApp();
-		if(mono_app){
+		let licenze = __(LOGIN.verMonoApp(),[]);
+		if(licenze.length==1){
+			let mono_app = licenze[0];
 			localStorage.openMap = 'false';
 			localStorage.open3d = 'false';
 			localStorage.modello = sets[mono_app].modelli[0];
@@ -679,6 +699,66 @@ var LOGIN = {
 			setTimeout(function(){
 				caricaSet(mono_app,document.getElementById("p_"+mono_app),sets[mono_app].modelli[0]);
 			},700);
+			return true;
+		}else return false;
+	},
+	selMap: function( el ){
+		if(el.classList.contains("nasMap"))return;
+		let mappa = el.dataset.value;
+		localStorage.set = mappa;
+		localStorage.openMap = 'true';
+		globals.set.cartella = mappa;
+		MENU.chiudiMenu();
+		LOGIN.verSets();
+		inizio=true;
+		if(!globals.modello.cartella){
+			caricaModello('donna');
+		}else{
+			caricaSet(mappa);
+		}
+
+	},
+	verAuthSet: function(){
+		if(!LOGIN.attesaVer)return;
+		if(inizio){
+			let noOpen = !LOGIN.logedin() && smartMenu && inizio;
+			if(localStorage.modello && globals.open3d && !getVar("demo") && !noOpen){}
+			else if(globals.openMap && globals.mapOpened && !noOpen){}
+			else{
+				if(!getVar("demo")){
+					setTimeout( function(){
+						if(LOGIN.verMonoApp().length!=1 && !smartMenu && !__(localStorage.set))GUIDA.visFumetto("guida_generica");
+					}, 1000 );
+					if(mouseDetect && touchDetect && !__(localStorage.pointerType,"")){
+						setTimeout( function(){
+							ALERT(TXT("PointerTypeAlert")+"\n\n"+TXT("noVisPiu")+'<input type="checkbox" id="no_guida" name="no_guida" value="1" onclick="setPointerType((this.checked) ? \'TOUCH\' : \'\' );">' );
+						}, 3000 );
+					}
+				}
+			}
+		}
+		inizio = false;
+		LOGIN.attesaVer = false;
+		if(!__(localStorage.firstAccess)){
+			localStorage.modello = 'donna';
+			localStorage.open3d = 'true';
+		}
+		if(LOGIN.verMonoApp().indexOf(localStorage.set)==-1){
+			scaricaSet();
+			localStorage.set = '';
+		}
+		if(LOGIN.verMonoApp().length){
+			if(!__(localStorage.set) && smartMenu)localStorage.set = LOGIN.verMonoApp()[0];
+			if(__(localStorage.set)){
+				postApreSet = true;
+				let modello = sets[localStorage.set].modelli[0];
+				if(!smartMenu && !__(localStorage.modello))modello = '';
+				caricaSet(localStorage.set,null,modello);
+			}
+		}
+		if(!__(localStorage.set) || !LOGIN.verMonoApp().length){
+			if(!__(localStorage.modello) && smartMenu)localStorage.modello = 'donna';
+			if(__(localStorage.modello))caricaModello(localStorage.modello)
 		}
 	},
 	

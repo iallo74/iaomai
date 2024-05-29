@@ -7,21 +7,25 @@ var CATALOGO = {
 				cartella != 'clients_full' &&
 				!sets[cartella].locked){
 				let addClass = '',
+					addBK = 'url(img/frDxB.png), none';
 					linkSet = 'caricaSet(\''+cartella+'\',this);MENU.visSets();';
 				if(cartella == globals.set.cartella)linkSet = 'SCHEDA.apriElenco(\'set\')';
 				if(sets[cartella].locked){
 					//linkSet = 'MENU.visElencoSets(\''+cartella+'\');';
 					linkSet = '';
 					addClass = ' class="lockedMap"';
+					addBK = 'url(img/frDxB.png), url(img/ico_clessidraBlu.png)';
 				}
-				if(DB.login.data.auths.indexOf(cartella)==-1 && !LOGIN._frv()){
+				if(DB.login.data.auths.indexOf(cartella)==-1/*  && !LOGIN._frv() */){
 					//linkSet = 'MENU.visElencoSets(\''+cartella+'\');';
 					//linkSet = '';
-					addClass = ' class="lockedMap"';
+					addClass = ' class="deniedMap"';
+					linkSet = 'ALERT(\''+TXT("MsgContSoloPay")+'\',true,true);';
+					addBK = ' none, url(img/lock.png)';
 				}
 
 
-				HTML_elenco += 	'<div style="background-image: url(sets/'+cartella+'/img/logoNero.png), '+ ((sets[cartella].locked) ? ' none, url(img/ico_clessidraBlu.png)' : 'url(img/frDxB.png), none') +';"' +
+				HTML_elenco += 	'<div style="background-image: url(sets/'+cartella+'/img/logoNero.png), '+ addBK +';"' +
 								addClass +
 								'	  onClick="'+linkSet+'">' +
 									htmlEntities(sets[cartella].nome) +

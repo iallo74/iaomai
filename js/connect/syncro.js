@@ -1149,6 +1149,7 @@ var SYNCRO = {
 		if(SYNCRO.nSinc == SYNCRO.totSinc){ // pazienti | procedure | note | ricerche
 			SYNCRO.pulisciTabelle();
 			DB._verDbSize();
+			LOGIN.verAuthSet();
 		}
 	},
 	pulisciTabelle: function(){ // elimina gli elementi "Cancellati"
