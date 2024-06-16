@@ -32,8 +32,7 @@ var LINGUE = {
 		"6": {
 			sigla: "deu" ,
 			sigla2: "de" ,
-			text: "Deutsch",
-			ai: true
+			text: "Deutsch"
 		}
 	},
 	googleLangSel: '',

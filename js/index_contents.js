@@ -18,8 +18,7 @@ var sets = {
 			"deu"
 		],
 		lingueAI: [
-			"por",
-			"deu"
+			"por"
 		]
 	},
 	meridiani_cinesi: {
@@ -88,12 +87,10 @@ var sets = {
 			"eng",
 			"esp",
 			"fra",
-			"por",
-			"deu"
+			"por"
 		],
 		lingueAI: [
-			"por",
-			"deu"
+			"por"
 		]
 	},
 	meridiani_shiatsu: {
@@ -188,8 +185,7 @@ var sets = {
 			"deu"
 		],
 		lingueAI: [
-			"por",
-			"deu"
+			"por"
 		]
 	},
 	auricologia: {
@@ -255,8 +251,7 @@ var sets = {
 			"deu"
 		],
 		lingueAI: [
-			"por",
-			"deu"
+			"por"
 		]
 	},
 	reflessologia_plantare: {
@@ -324,8 +319,7 @@ var sets = {
 			"eng",
 			"esp",
 			"fra",
-			"por",
-			"deu"
+			"por"
 		]
 	},
 	trigger_points: {
