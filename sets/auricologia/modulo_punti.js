@@ -173,8 +173,8 @@ var MODULO_PUNTI = { // extend SET
 			}
 			sceltaPuntiTag += 	'</select>';
 		}
-		sceltaPuntiTag += 	'</select>';
-		sceltaPuntiTag += 	'</span><i class="elMenu" id="cambioSistemaPunti" onClick="MENU.visImpset();"><span>'+htmlEntities(TXT("SistemaPuntiEuropeo"))+'</span></i></p>';
+		sceltaPuntiTag += '</select>'+
+						  '</span><i class="elMenu" id="cambioSistemaPunti" onClick="MENU.visImpset();"><span>'+htmlEntities(TXT("SistemaPuntiEuropeo"))+'</span></i></p>';
 		
 		
 		
@@ -187,22 +187,22 @@ var MODULO_PUNTI = { // extend SET
 			if(legenda[l].name=='settings'){
 				settings = legenda[l];
 			}else if(legenda[l].type=='dida'){
-				elencoLegenda+='<p class="legendaDida italic">'+htmlEntities(TXT("Legenda_"+legenda[l].name))+'</p>';
+				elencoLegenda += '<p class="legendaDida italic">'+htmlEntities(TXT("Legenda_"+legenda[l].name))+'</p>';
 			}else{
-				elencoLegenda+='<p';
+				elencoLegenda += '<p';
 				if(settings.maskable){
-					elencoLegenda+=' id="zone_'+legenda[l].name+'"' +
-								   ' onClick="SET.eviZone(\''+legenda[l].name+'\',\'clic\');"' +
-								   ' onMouseOver="SET.eviZone(\''+legenda[l].name+'\',\'over\');"' +
-								   ' onMouseOut="SET.eviZone(\''+legenda[l].name+'\',\'out\');"';
+					elencoLegenda += ' id="zone_'+legenda[l].name+'"' +
+								   	 ' onClick="SET.eviZone(\''+legenda[l].name+'\',\'clic\');"' +
+								     ' onMouseOver="SET.eviZone(\''+legenda[l].name+'\',\'over\');"' +
+								     ' onMouseOut="SET.eviZone(\''+legenda[l].name+'\',\'out\');"';
 				}
-				elencoLegenda+=	'><span class="legendaColor" style="background-color:#';
-				if(__(legenda[l].color,''))elencoLegenda+=legenda[l].color;
-				else elencoLegenda+='fff;color:#000;';
-				elencoLegenda+=';">';
-				if(settings.nameInside)elencoLegenda+=legenda[l].name;
-				elencoLegenda+='</span>';
-				elencoLegenda+=htmlEntities(TXT("Legenda_"+legenda[l].name))+'</p>';
+				elencoLegenda += '><span class="legendaColor" style="background-color:#';
+				if(__(legenda[l].color,''))elencoLegenda += legenda[l].color;
+				else elencoLegenda += 'fff;color:#000;';
+				elencoLegenda += ';">';
+				if(settings.nameInside)elencoLegenda += legenda[l].name;
+				elencoLegenda += '</span>' +
+								 htmlEntities(TXT("Legenda_"+legenda[l].name))+'</p>';
 			}
 		}
 		elencoLegenda+=	'<p class="legendaDida points">'+

@@ -159,12 +159,13 @@ var MODULO_PUNTO = { // extend SET
 		
 		
 		
-		
 		if(elenco.length){
 			HTML += '<div id="patologiePunti">' +
 					'	<div onClick="this.parentElement.classList.toggle(\'vis\');">'+TXT("Patologie")+'</div>';
-			for(let e in elenco){
-				HTML += '<p onClick="SET.apriPatologia(\''+elenco[e]+'\',document.getElementById(\'btn_patologia_'+elenco[e]+'\'));"><span>• '+DB.set.patologie[elenco[e]].NomePatologia+'</span></p>';
+			for(let e in DB.set.patologie){
+				if(elenco.indexOf(e)>-1){
+					HTML += '<p onClick="SET.apriPatologia(\''+e+'\',document.getElementById(\'btn_patologia_'+e+'\'));"><span>• '+DB.set.patologie[e].NomePatologia+'</span></p>';
+				}
 			}
 			HTML += '</div>';
 		}
