@@ -113,7 +113,7 @@ function INIT(){
 		CONSOLE.crea();
 	}
 	LINGUE.init();
-	visLoader("");
+	visLoader("Loading user data...");
 	MENU.init();
 
 	init();
