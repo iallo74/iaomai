@@ -193,6 +193,9 @@ body:not(.smart) .pallinoPat{
 	height:16px;
 	line-height:16px;
 }
+body:not(.smart) .lista .pallinoPat{
+	line-height:30px;
+}
 .pallinoPat:not(.ptNoSel){
 	cursor:pointer;
 }
@@ -1243,6 +1246,9 @@ body.smart #elenchi #cambioSistemaMeridiani{
 .btTeo.szVis{
 	background-image: url(../../img/frSuB.png) !important;
 }
+.szTeo{
+	padding-bottom:10px;
+}
 .szTeo:not(.szVis){
 	display:none;
 }
@@ -1258,6 +1264,7 @@ body.smart #elenchi #cambioSistemaMeridiani{
 .szDiv{
 	border-bottom:1px solid rgba(0,0,0,0.1);
 	min-height:90px;
+	padding-bottom:10px;
 }
 .titSezTeo{
 	font-size: var(--font-16-5);
