@@ -1718,6 +1718,7 @@ body:not(.touch) #puntiPlantari .dettPunto:hover{
 }
 .sch_Max600 .prefisso{
 	width: 80px !important;
+	display:block;
 }
 
 .cellulare{
@@ -1732,7 +1733,7 @@ body:not(.touch) #puntiPlantari .dettPunto:hover{
 .sch_Max600 .cellulare{
    	margin-left: 0px !important;
    	width: calc(100% - 80px) !important;
-	
+	margin-top: -32px;
 }
 
 
