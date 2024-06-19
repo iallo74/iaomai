@@ -45,7 +45,7 @@ var LICENZE  = {
 			LICENZE.visLicenza('ShiatsuMap PRO '+TXT("Lic_Cinesi"),(LOGIN.logedin() && okCIN)) +
 			LICENZE.visLicenza('ShiatsuMap PRO Masunaga',(LOGIN.logedin() && okMAS)) +
 			LICENZE.visLicenza('ShiatsuMap PRO Namikoshi',(LOGIN.logedin() && okNMK)) +
-			LICENZE.visLicenza('ShiatsuMao Light',(LOGIN.logedin() && okLGT)) +
+			LICENZE.visLicenza('ShiatsuMap Light',(LOGIN.logedin() && okLGT)) +
 			LICENZE.visLicenza('AuriculoMap',(LOGIN.logedin() && LOGIN.verAuth("auricologia"))) +
 			LICENZE.visLicenza('ReflexologyMap',(LOGIN.logedin() && LOGIN.verAuth("reflessologia_plantare"))) +
 			LICENZE.visLicenza(TXT("Lic_SchedarioPazienti"),(LOGIN.logedin() && LOGIN.verAuth("clients_full"))) +
