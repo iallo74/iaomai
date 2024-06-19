@@ -87,6 +87,7 @@ var sets = {
 			"eng",
 			"esp",
 			"fra",
+			"deu",
 			"por"
 		],
 		lingueAI: [
@@ -181,8 +182,8 @@ var sets = {
 			"eng",
 			"esp",
 			"fra",
-			"por",
-			"deu"
+			"deu",
+			"por"
 		],
 		lingueAI: [
 			"por"
@@ -247,8 +248,8 @@ var sets = {
 			"eng",
 			"esp",
 			"fra",
-			"por",
-			"deu"
+			"deu",
+			"por"
 		],
 		lingueAI: [
 			"por"
@@ -312,8 +313,8 @@ var sets = {
 			"eng",
 			"esp",
 			"fra",
-			"por",
-			"deu"
+			"deu",
+			"por"
 		],
 		lingueAI: [
 			"eng",
