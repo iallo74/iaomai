@@ -741,8 +741,13 @@ var LOGIN = {
 		}
 		LOGIN.attesaVer = false;
 		if(!__(localStorage.firstAccess)){
-			localStorage.modello = 'donna';
-			localStorage.open3d = 'true';
+			if(smartMenu){
+				localStorage.modello = 'donna';
+				localStorage.open3d = 'true';
+			}else{
+				console.log(localStorage.open3d)
+				nasLoader();
+			}
 			/* localStorage.set = LOGIN.verMonoApp()[0];
 			localStorage.openMap = 'true'; */
 		}
@@ -774,7 +779,7 @@ var LOGIN = {
 		}
 		if(!__(localStorage.set) || !LOGIN.verMonoApp().length){
 			if(!__(localStorage.modello) && smartMenu)localStorage.modello = 'donna';
-			if(__(localStorage.modello))caricaModello(localStorage.modello)
+			if(__(localStorage.modello) && localStorage.open3d == 'true')caricaModello(localStorage.modello)
 		}
 		inizio = false;
 	},
