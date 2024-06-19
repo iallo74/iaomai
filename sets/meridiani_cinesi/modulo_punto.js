@@ -18,7 +18,7 @@ var MODULO_PUNTO = { // extend SET
 			imgZoom = __(DB.mtc.meridiani[siglaMeridiano].punti[nPunto].imgZoom),
 			TS = meridiano.punti[nPunto],
 			cartella = DB.mtc.meridiani[siglaMeridiano].cartella,
-			pattern = /[0-9]{1,2}\.[A-Z]{2}\.\s[^\(]+\(([^\)]+)\)/g,
+			pattern = /[0-9]{1,2}\.[A-Z]{2}\.\s([^\(]+)\(([^\)]+)\)/g,
 			HTML = "<h1>",
 			HTML_tit = '<h1>';
 		
@@ -30,7 +30,10 @@ var MODULO_PUNTO = { // extend SET
 		HTML += "<i";
 		//aggiunto per un bug strano su android compilata
 		if(android && smartMenu && !onlineVersion)HTML += ' style="font-size:inherit !important;"';
-		HTML += ">"+htmlEntities(titolo.replace(pattern,"$1"))+"</i></h1>";
+		HTML += ">"+htmlEntities(titolo.replace(pattern,"$2"))+"</i></h1>";
+		
+		// lasciare qui!
+		if(siglaMeridiano=='EX')titolo = sigla+". "+titolo.replace(pattern,"$1")+" ("+titolo.replace(pattern,"$2")+")";
 
 
 		let HTML_simboli = '';
