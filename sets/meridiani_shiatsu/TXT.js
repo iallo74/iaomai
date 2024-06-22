@@ -422,7 +422,7 @@ DB.TXT.set = {
 		esp: "COMENTARIOS",
 		fra: "COMMENTAIRES",
 		por: "COMENTÁRIOS",
-		deu: "KOMMENTARE"
+		deu: "KOMMENTAR"
 	},
 	AddCommento: {
 		ita: "Aggiungi un commento",

@@ -293,7 +293,7 @@ DB.TXT.set = {
         esp: "Procedimiento",
         fra: "Procédure",
         por: "Procedimento",
-        deu: "Prozedur"
+        deu: "Verfahren"
     },
     DettagliProcedura: {
         ita: "Dettagli della procedura",
@@ -301,7 +301,7 @@ DB.TXT.set = {
         esp: "Detalles del procedimiento",
         fra: "Détails de la procédure",
         por: "Detalhes do procedimento",
-        deu: "Prozedurdetails"
+        deu: "Verfahrensdetails"
     },
     ProcTue: {
         ita: "Questa procedura è tua",
@@ -309,7 +309,7 @@ DB.TXT.set = {
         esp: "Este procedimiento es tuyo",
         fra: "Cette procédure vous appartient",
         por: "Esta procedimento é sua",
-        deu: "Diese Prozedur gehört dir"
+        deu: "Diese Verfahren gehört dir"
     },
     Autore: {
         ita: "Autore",

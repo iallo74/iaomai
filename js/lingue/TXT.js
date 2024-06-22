@@ -158,7 +158,7 @@ DB.TXT = {
             esp: "Más información",
             fra: "Plus d'informations",
             por: "Mais informações",
-            deu: "Mehr Informationen"
+            deu: "Weitere Informationen"
         },
         Aggiungi: {
             ita: "Aggiungi",
@@ -198,7 +198,7 @@ DB.TXT = {
             esp: "editar",
             fra: "modifier",
             por: "editar",
-            deu: "bearbeiten"
+            deu: "ändern"
         },
         Modifica: {
             ita: "Modifica",
@@ -206,7 +206,7 @@ DB.TXT = {
             esp: "Editar",
             fra: "Modifier",
             por: "Editar",
-            deu: "Bearbeiten"
+            deu: "ändern"
         },
         Salva: {
             ita: "Salva",
@@ -432,7 +432,7 @@ DB.TXT = {
             esp: "contenidos",
             fra: "contenu",
             por: "conteúdo",
-            deu: "inhalte"
+            deu: "Inhalte"
         },
 		noteAi: {
 			ita: "Tradotto con intelligenza artificiale",
@@ -580,7 +580,7 @@ DB.TXT = {
             esp: "Agradecimientos especiales",
             fra: "Remerciements spéciaux",
             por: "Agradecimentos especiais",
-            deu: "Besonderer Dank"
+            deu: "Herzlichsten Dank"
         },
         DirittiRiservati: {
             ita: "Tutti i diritti riservati",
@@ -843,7 +843,7 @@ DB.TXT = {
             esp: "¡PRECAUCIÓN! Si continúas, se perderán todos los datos no sincronizados guardados en este dispositivo.",
             fra: "ATTENTION ! Si vous continuez, toutes les données non synchronisées enregistrées sur cet appareil seront perdues.",
             por: "CUIDADO! Se você prosseguir, todos os dados não sincronizados salvos neste dispositivo serão perdidos.",
-            deu: "ACHTUNG! Wenn Sie fortfahren, gehen alle nicht synchronisierten Daten, die auf diesem Gerät gespeichert sind, verloren."
+            deu: "ACHTUNG! Wenn Sie fortfahren, werden alle nicht synchronisierten Daten, die auf diesem Gerät gespeichert sind, verloren."
         },
         UtenteDisconnesso: {
             ita: "Utente disconnesso",
@@ -1557,7 +1557,7 @@ DB.TXT = {
             esp: "Diapasón",
             fra: "Diapason",
             por: "Diapasão",
-            deu: "Stimmgabel"
+            deu: "Diapason"
         },
         MezzoLuce: {
             ita: "Luce",
@@ -1815,7 +1815,7 @@ DB.TXT = {
             esp: "Debes indicar el campo [1]",
             fra: "Vous devez indiquer [1]",
             por: "Você deve indicar o(a) [1]",
-            deu: "Sie müssen [1] angeben"
+            deu: "Sie müssen ein Wert für das Feld [1] angeben"
         },
         selezionareValore: {
             ita: "Devi selezionare un valore per il campo [1]",
@@ -1823,7 +1823,7 @@ DB.TXT = {
             esp: "Debes seleccionar el campo [1]",
             fra: "Vous devez indiquer [1]",
             por: "Você deve indicar o(a) [1]",
-            deu: "Sie müssen [1] angeben"
+            deu: "Sie müssen ein Wert für das Feld [1] angeben"
         },
         selezionareCasella: {
             ita: "Devi selezionare la casella [1]",
@@ -1875,7 +1875,7 @@ DB.TXT = {
             esp: "Envíanos tu opinión",
             fra: "Envoyez-nous vos commentaires",
             por: "Envie seu feedback",
-            deu: "Schicke uns dein Feedback"
+            deu: "Schick uns dein Feedback"
         },
         FeedbackInviato: {
             ita: "Feedback inviato correttamente. Ti ringraziamo per il tuo contributo.",
@@ -3763,7 +3763,7 @@ DB.TXT = {
             esp: "Historial médico",
             fra: "Dossier médical",
             por: "Ficheiro médico",
-            deu: "Medizinische Akte"
+            deu: "Krankenblatt"
         },
         ModificaCiclo: {
             ita: "Modifica cartella clinica",
@@ -3771,7 +3771,7 @@ DB.TXT = {
             esp: "Editar historial médico",
             fra: "Modifier le dossier médical",
             por: "Editar ficha médica",
-            deu: "Medizinische Akte bearbeiten"
+            deu: "Krankenblatt bearbeiten"
         },
         SchedaAnamnesi: {
             ita: "Scheda di anamnesi",
@@ -3819,7 +3819,7 @@ DB.TXT = {
             esp: "¿Qué es un historial médico?",
             fra: "Qu'est-ce qu'un dossier médical",
             por: "O que é um fichário médico",
-            deu: "Was ist eine medizinische Akte"
+            deu: "Was ist ein Krankenblatt"
         },
         GuidaCiclo: {
             ita: "È una cartella dove è possibile inserire una serie di trattamenti raggruppati in base a uno specifico obiettivo terapeutico (es. Trattamento dell'insonnia). Nella scheda di anamnesi è possibile gestire alcuni parametri che non sono presenti nei singoli trattamenti, come la diagnosi. I sintomi indicati in questa scheda possono essere monitorati e aggiornati durante tutti i trattamenti e infine è possibile visualizzare e stampare la scheda riepilogativa.",
@@ -3957,7 +3957,7 @@ DB.TXT = {
             esp: "Encabezado",
             fra: "En-tête",
             por: "Cabeçalho",
-            deu: "Kopfzeile"
+            deu: "Eintragung"
         },
         IntestazioneSpiegazione: {
             ita: "Intestazione dell'azienda...",
@@ -3965,7 +3965,7 @@ DB.TXT = {
             esp: "Encabezado de documentos...",
             fra: "En-tête de l'entreprise...",
             por: "Cabeçalho da empresa...",
-            deu: "Header des Unternehmens..."
+            deu: "Eintragung des Unternehmens..."
         },
 
         // filtri e statistiche
@@ -4047,7 +4047,7 @@ DB.TXT = {
             esp: "Herramientas de marketing",
             fra: "Outils de marketing",
             por: "Ferramentas de marketing",
-            deu: "Marketingtools"
+            deu: "Marketingsinstrumente "
         },
         LabelSmartMarketing: {
             ita: "Marketing",
@@ -4055,7 +4055,7 @@ DB.TXT = {
             esp: "Marketing",
             fra: "Marketing",
             por: "Marketing",
-            deu: "Marketingì"
+            deu: "Marketing"
         },
         InviaEmailPazienti: {
             ita: "Invia email multiple",
@@ -4291,7 +4291,7 @@ DB.TXT = {
             esp: "elige una fecha",
             fra: "choisissez une date",
             por: "escolha uma data",
-            deu: "wähle ein Datum"
+            deu: "wähl ein Datum"
         },
         FinoAlle: {
             ita: "Fino alle ...",
@@ -4740,7 +4740,7 @@ DB.TXT = {
             esp: "Descubre la aplicación",
             fra: "Découvrez l'application",
             por: "Descubra o aplicativo",
-            deu: "Entdecke die App"
+            deu: "Entdecke, was du machen kannst"
         },
         GuidaGenericaTxt: {
             ita: "Utilizza il menu per navigare tutti i contenuti e le funzioni. Nell'icona delle impostazioni [*] trovi tutte le funzionalità aggiuntive e gli strumenti per effettuare l'accesso o registrarti.",
@@ -4748,7 +4748,7 @@ DB.TXT = {
             esp: "Utiliza el menú para navegar por todo el contenido y las funciones. En el icono de configuración [*] encontrarás todas las características adicionales y herramientas para iniciar sesión o registrarte.",
             fra: "Utilisez le menu pour naviguer dans tout le contenu et les fonctions. Dans l'icône des paramètres [*], vous trouverez toutes les fonctionnalités supplémentaires et les outils pour vous connecter ou vous inscrire.",
             por: "Use o menu para navegar por todo o conteúdo e funções. No ícone de configurações [*], você encontrará todos os recursos adicionais e ferramentas para fazer login ou se cadastrar.",
-            deu: "Verwenden Sie das Menü, um durch alle Inhalte und Funktionen zu navigieren. Im Einstellungssymbol [*] finden Sie alle zusätzlichen Funktionen und Tools zum Einloggen oder Registrieren."
+            deu: "Verwenden Sie das Menü, um durch alle Inhalte und Funktionen zu surfen. Im Einstellungssymbol [*] finden Sie alle zusätzlichen Funktionen und Tools zum Einloggen oder Registrieren."
         },
         GuidaPazientiTxt: {
             ita: "Da questo menu puoi gestire il tuo lavoro. Accedi ad una delle sezioni qui sotto per visualizzare, aggiungere e gestire le anagrafiche e le cartelle cliniche.",
@@ -4912,7 +4912,7 @@ DB.TXT = {
             esp: "La dirección de correo electrónico ya está en uso",
             fra: "L'adresse e-mail est déjà utilisée",
             por: "O endereço de e-mail já está em uso",
-            deu: "Die E-Mail-Adresse wird bereits verwendet"
+            deu: "Die E-Mail-Adresse wird bereits von ein anderer Surfer verwendet"
         },
         ErroreUsernameDuplicato: {
             ita: "La Username scelta è già utilizzata da un altro utente",
@@ -4920,7 +4920,7 @@ DB.TXT = {
             esp: "El nombre de usuario ya está en uso",
             fra: "Le nom d'utilisateur est déjà utilisé",
             por: "O nome de usuário já está em uso",
-            deu: "Der Benutzername wird bereits verwendet"
+            deu: "Der Benutzername wird bereits von ein anderer Surfer verwendet"
         },
         ConfermareRegistrazione: {
             ita: "Registrazione avvenuta correttamente. Accedi alla tua posta elettronica per cerificare il tuo account e iniziare ad utilizzare iáomai.",
@@ -5061,20 +5061,20 @@ DB.TXT = {
             deu: "Halte die Karte geöffnet"
         },
         MemorizzaScelta: {
-            "ita": "Memorizza la scelta",
-            "eng": "Save selection",
-            "esp": "Guardar selección",
-            "fra": "Enregistrer la sélection",
-            "por": "Salvar seleção",
-            "deu": "Auswahl speichern"
+            ita: "Memorizza la scelta",
+            eng: "Save selection",
+            esp: "Guardar selección",
+            fra: "Enregistrer la sélection",
+            por: "Salvar seleção",
+            deu: "Auswahl speichern"
         },
         NascondiMappa: {
-            "ita": "Nascondi la mappa",
-            "eng": "Hide the map",
-            "esp": "Ocultar el mapa",
-            "fra": "Masquer la carte",
-            "por": "Ocultar o mapa",
-            "deu": "Karte ausblenden"
+            ita: "Nascondi la mappa",
+            eng: "Hide the map",
+            esp: "Ocultar el mapa",
+            fra: "Masquer la carte",
+            por: "Ocultar o mapa",
+            deu: "Karte ausblenden"
         },        
 
         // ANATOMIA
@@ -5362,20 +5362,20 @@ DB.TXT = {
             deu: "Patienten"
         },
         AltriArchivi: {
-            "ita": "Altri archivi",
-            "eng": "Other archives",
-            "esp": "Otros archivos",
-            "fra": "Autres archives",
-            "por": "Outros arquivos",
-            "deu": "Andere Archive"
+            ita: "Altri archivi",
+            eng: "Other archives",
+            esp: "Otros archivos",
+            fra: "Autres archives",
+            por: "Outros arquivos",
+            deu: "Andere Archive"
         },
         AltreMappe: {
-            "ita": "Altre mappe",
-            "eng": "Other maps",
-            "esp": "Otros mapas",
-            "fra": "Autres cartes",
-            "por": "Outros mapas",
-            "deu": "Andere Karten"
+            ita: "Altre mappe",
+            eng: "Other maps",
+            esp: "Otros mapas",
+            fra: "Autres cartes",
+            por: "Outros mapas",
+            deu: "Andere Karten"
         },
 
         // popup SETS
@@ -5433,7 +5433,7 @@ DB.TXT = {
             esp: "PRÓXIMAMENTE",
             fra: "PROCHAINEMENT",
             por: "EM BREVE",
-            deu: "DEMÄCHST"
+            deu: "DEMNÄCHST"
         },
         InviaRichiesta: {
             ita: "Invia la richiesta",
@@ -6327,7 +6327,7 @@ DB.TXT = {
             esp: "riñón",
             fra: "rein",
             por: "rim",
-            deu: "rene"
+            deu: "Niere"
         },
         Lic_osteoarticolare: {
             ita: "osteoarticolare",
@@ -6401,7 +6401,7 @@ DB.TXT = {
             esp: "Calificar",
             fra: "Noter",
             por: "Avaliar",
-            deu: "Rate"
+            deu: "Rezensiert jetzt "
         },
         GiaFatto: {
             ita: "Già fatto",
@@ -7077,7 +7077,7 @@ DB.TXT = {
             esp: "FÉMUR",
             fra: "FÉMUR",
             por: "FÊMUR",
-            deu: "FEMUR"
+            deu: "OBERSCHENKELKNOCHEN"
         },
         Osso_IOIDE: {
             ita: "IOIDE",
@@ -7546,7 +7546,7 @@ DB.TXT = {
             esp: "LIGAMENTO TIBIO-TALAR POSTERIOR",
             fra: "LIGAMENT TIBIO-TALIEN POSTÉRIEUR",
             por: "LIGAMENTO TÍBIO-TÁLICO POSTERIOR",
-            deu: "HINTERES TIBIO-TALARE LIGAMENT"
+            deu: "HINTERES TIBIO-TALARE BAND"
         },
         Legamento_LEGAMENTO_TALO_FIBULARE_ANTERIORE: {
             ita: "LEGAMENTO TALO-FIBULARE ANTERIORE",
@@ -7570,7 +7570,7 @@ DB.TXT = {
             esp: "LIGAMENTO TIBIOCALCÁNEO",
             fra: "LIGAMENT TIBIO-CALCANEEN",
             por: "LIGAMENTO TIBIOCALCÂNEO",
-            deu: "TIBIOKALKANÄALES LIGAMENT"
+            deu: "TIBIOKALKANÄALES BAND"
         },
         Legamento_LEGAMENTO_TIBIO_FIBULARE_POSTERIORE: {
             ita: "LEGAMENTO TIBIO-FIBULARE POSTERIORE",
@@ -7586,7 +7586,7 @@ DB.TXT = {
             esp: "LIGAMENTO TALOCALCÁNEO MEDIAL",
             fra: "LIGAMENT TALO-CALCANEEN MÉDIAL",
             por: "LIGAMENTO TALOCALCANEO MEDIAL",
-            deu: "MEDIALES TALOKALKANÄALES LIGAMENT"
+            deu: "MEDIALES TALOKALKANÄALES BAND"
         },
         Legamento_LEGAMENTO_TALO_CALCANEARE_POSTERIORE: {
             ita: "LEGAMENTO TALO-CALCANEARE POSTERIORE",
@@ -7594,7 +7594,7 @@ DB.TXT = {
             esp: "LIGAMENTO TALOCALCÁNEO POSTERIOR",
             fra: "LIGAMENT TALO-CALCANEEN POSTÉRIEUR",
             por: "LIGAMENTO TALOCALCANEO POSTERIOR",
-            deu: "HINTERES TALOKALKANÄALES LIGAMENT"
+            deu: "HINTERES TALOKALKANÄALES BAND"
         },
         Legamento_LEGAMENTO_CALCANEO_CUBOIDEO_DORSALE: {
             ita: "LEGAMENTO CALCANEO-CUBOIDEO DORSALE",
@@ -7602,7 +7602,7 @@ DB.TXT = {
             esp: "LIGAMENTO CALCÁNEO-CUBOIDEO DORSAL",
             fra: "LIGAMENT CALCANÉO-CUBOÏDIEN DORSALE",
             por: "LIGAMENTO CALCÂNEO-CUBOIDE DORSAL",
-            deu: "DORSALES CALCANEOKUBOIDALES LIGAMENT"
+            deu: "DORSALES CALCANEOKUBOIDALES BAND"
         },
         Legamento_LEGAMENTI_TARSO_METATARSALI_DORSALI: {
             ita: "LEGAMENTI TARSO-METATARSALI DORSALI",
@@ -7610,7 +7610,7 @@ DB.TXT = {
             esp: "LIGAMENTOS TARSO-METATARSIANOS DORSALES",
             fra: "LIGAMENTS TARSO-MÉTATARSIENS DORSAUX",
             por: "LIGAMENTOS TARSO-METATARSAL DORSAIS",
-            deu: "DORSALE TARSO-METATARSAL LIGAMENTE"
+            deu: "DORSALE TARSO-METATARSAL BAND"
         },
         Legamento_LEGAMENTI_INTERCUNEIFORMI_DORSALI: {
             ita: "LEGAMENTI INTERCUNEIFORMI DORSALI",
@@ -7618,7 +7618,7 @@ DB.TXT = {
             esp: "LIGAMENTOS INTERCUNEIFORMES DORSALES",
             fra: "LIGAMENTS INTERCUNÉIFORMES DORSAUX",
             por: "LIGAMENTOS INTERCUNEIFORMES DORSAIS",
-            deu: "DORSALE INTERKUNEIFORMLIGAMENTE"
+            deu: "DORSALE INTERKUNEIFORMBAND"
         },
         Legamento_LEGAMENTO_CUNEO_NAVICOLARE_MEDIALE: {
             ita: "LEGAMENTO CUNEO-NAVICOLARE MEDIALE",
@@ -7626,7 +7626,7 @@ DB.TXT = {
             esp: "LIGAMENTO CUNEO-NAVICULAR MEDIAL",
             fra: "LIGAMENT CUNÉO-NAVICULAIRE MÉDIAL",
             por: "LIGAMENTO CUNEO-NAVICULAR MEDIAL",
-            deu: "MEDIALES KEIL-BOOTKNOCHEN-LIGAMENT"
+            deu: "MEDIALES KEIL-BOOTKNOCHEN-BAND"
         },
         Legamento_LEGAMENTO_NAVICOLO_CUBOIDEO_PLANTARE: {
             ita: "LEGAMENTO NAVICOLO-CUBOIDEO PLANTARE",
@@ -7634,7 +7634,7 @@ DB.TXT = {
             esp: "LIGAMENTO NAVICULAR-CUBOIDEO PLANTAR",
             fra: "LIGAMENT NAVICULO-CUBOÏDIEN PLANTAIRE",
             por: "LIGAMENTO NAVICULAR-CUBOIDE PLANTAR",
-            deu: "PFLANZARES BOOTKNOCHEN-KEILLIGAMENT"
+            deu: "PFLANZARES BOOTKNOCHEN-KEILBAND"
         },
         Legamento_LEGAMENTO_CALCANEO_NAVICOLARE_PLANTARE2: {
             ita: "LEGAMENTO CALCANEO-NAVICOLARE PLANTARE",
@@ -7642,15 +7642,15 @@ DB.TXT = {
             esp: "LIGAMENTO CALCÁNEO-NAVICULAR PLANTAR",
             fra: "LIGAMENT CALCANÉO-NAVICULAIRE PLANTAIRE",
             por: "LIGAMENTO CALCÂNEO-NAVICULAR PLANTAR",
-            deu: "PFLANZARES FERSENBOOTKNOCHEN-NAVICULAR-LIGAMENT"
+            deu: "PFLANZARES FERSENBOOTKNOCHEN-NAVICULAR-BAND"
         },
         Legamento_LEGAMENTO_CALCANEO_NAVICOLARE_PLANTARE: {
             ita: "LEGAMENTO CALCANEO-NAVICOLARE PLANTARE",
-            eng: "PLANTAR CALCANEONAVICULAR LIGAMENT",
+            eng: "PLANTAR CALCANEONAVICULAR BAND",
             esp: "LIGAMENTO CALCÁNEO-NAVICULAR PLANTAR",
             fra: "LIGAMENT CALCANÉO-NAVICULAIRE PLANTAIRE",
             por: "LIGAMENTO CALCÂNEO-NAVICULAR PLANTAR",
-            deu: "PFLANZARES FERSENBOOTKNOCHEN-NAVICULAR-LIGAMENT"
+            deu: "PFLANZARES FERSENBOOTKNOCHEN-NAVICULAR-BAND"
         },
         Legamento_LEGAMENTO_BIFORCATO: {
             ita: "LEGAMENTO BIFORCATO",
@@ -7658,7 +7658,7 @@ DB.TXT = {
             esp: "LIGAMENTO BIFURCADO",
             fra: "LIGAMENT BIFURQUÉ",
             por: "LIGAMENTO BIFURCADO",
-            deu: "GABELLIGAMENT"
+            deu: "GABELBAND"
         },
         Legamento_LEGAMENTO_TIBIO_NAVICOLARE: {
             ita: "LEGAMENTO TIBIO-NAVICOLARE",
@@ -7666,7 +7666,7 @@ DB.TXT = {
             esp: "LIGAMENTO TIBIO-NAVICULAR",
             fra: "LIGAMENT TIBIO-NAVICAULAIRE",
             por: "LIGAMENTO TÍBIO-NAVICULAR",
-            deu: "TIBIONAVICULAR LIGAMENT"
+            deu: "TIBIONAVICULARBAND"
         },
         Legamento_LEGAMENTO_TALO_NAVICOLARE_DORSALE: {
             ita: "LEGAMENTO TALO-NAVICOLARE DORSALE",
@@ -7674,7 +7674,7 @@ DB.TXT = {
             esp: "LIGAMENTO TALONAVICULAR DORSAL",
             fra: "LIGAMENT TALO-NAVICAULAIRE DORSALE",
             por: "LIGAMENTO TALONAVICULAR DORSAL",
-            deu: "DORSALES FESSENKNOCHEN-NAVICULAR-LIGAMENT"
+            deu: "DORSALES FESSENKNOCHEN-NAVICULAR BAND"
         },
         Legamento_LEGAMENTI_NAVICOLOCUNEIFORMI_DORSALI: {
             ita: "LEGAMENTI NAVICOLOCUNEIFORMI DORSALI",
@@ -7682,7 +7682,7 @@ DB.TXT = {
             esp: "LIGAMENTOS NAVICULOCUNEIFORMES DORSALES",
             fra: "LIGAMENTS NAVICULO-CUNÉIFORMES DORSAUX",
             por: "LIGAMENTOS NAVICULOCUNEIFORMES DORSAIS",
-            deu: "DORSALE NAVIKULO-KAHNBEIN-LIGAMENTE"
+            deu: "DORSALE NAVIKULO-KAHNBEIN-BAND"
         },
         Legamento_LEGAMENTI_METATARSALI_DORSALI: {
             ita: "LEGAMENTI METATARSALI DORSALI",
@@ -7690,7 +7690,7 @@ DB.TXT = {
             esp: "LIGAMENTOS METATARSIANOS DORSALES",
             fra: "LIGAMENTS MÉTATARSIENS DORSAUX",
             por: "LIGAMENTOS METATARSAL DORSAIS",
-            deu: "DORSALE METATARSAL LIGAMENTE"
+            deu: "DORSALE METATARSAL BAND"
         },
         Legamento_LEGAMENTO_NAVICOLO_CUBOIDEO_DORSALE: {
             ita: "LEGAMENTO NAVICOLO-CUBOIDEO DORSALE",
@@ -7698,7 +7698,7 @@ DB.TXT = {
             esp: "LIGAMENTO NAVICULAR-CUBOIDEO DORSAL",
             fra: "LIGAMENT NAVICULO-CUBOÏDIEN DORSALE",
             por: "LIGAMENTO NAVICULAR-CUBOIDE DORSAL",
-            deu: "DORSALES NAVIKULO-KEILBEIN-LIGAMENT"
+            deu: "DORSALES NAVIKULO-KEILBEIN-BAND"
         },
         Legamento_LEGAMENTO_TIBIO_TALARE_ANTERIORE: {
             ita: "LEGAMENTO TIBIO-TALARE ANTERIORE",
@@ -7714,7 +7714,7 @@ DB.TXT = {
             esp: "LIGAMENTO TALOCALCÁNEO LATERAL",
             fra: "LIGAMENT TALO-CALCANEEN LATÉRAL",
             por: "LIGAMENTO TALOCALCANEO LATERAL",
-            deu: "LATERALES TALOKALKANÄALES LIGAMENT"
+            deu: "LATERALES TALOKALKANÄALES BAND"
         },
         Legamento_LEGAMENTI_METATARSALI_PLANTARI: {
             ita: "LEGAMENTI METATARSALI PLANTARI",
@@ -7722,7 +7722,7 @@ DB.TXT = {
             esp: "LIGAMENTOS METATARSIANOS PLANTARES",
             fra: "LIGAMENTS MÉTATARSIENS PLANTAIRES",
             por: "LIGAMENTOS METATARSAL PLANTARES",
-            deu: "PFLANZARES METATARSAL LIGAMENTE"
+            deu: "PFLANZARES METATARSAL BAND"
         },
         Legamento_LEGAMENTO_CUNEO_CUBOIDEO_DORSALE: {
             ita: "LEGAMENTO CUNEO-CUBOIDEO DORSALE",
@@ -7730,7 +7730,7 @@ DB.TXT = {
             esp: "LIGAMENTO CUNEO-CUBOIDEO DORSAL",
             fra: "LIGAMENT CUNÉO-CUBOÏDIEN DORSALE",
             por: "LIGAMENTO CUNEO-CUBOIDE DORSAL",
-            deu: "DORSALES KEIL-KEILBEIN-LIGAMENT"
+            deu: "DORSALES KEIL-KEILBEIN-BAND"
         },
         Legamento_RETINACOLO_INFERIORE_MUSCOLI_ESTENSORI: {
             ita: "RETINACOLO INFERIORE DEI MUSCOLI ESTENSORI",
@@ -7754,7 +7754,7 @@ DB.TXT = {
             esp: "LIGAMENTO CALCÁNEO-CUBOIDEO PLANTAR",
             fra: "LIGAMENT CALCANÉO-CUBOÏDIEN PLANTAIRE",
             por: "LIGAMENTO CALCÂNEO-CUBOIDE PLANTAR",
-            deu: "PFLANZARES FERSENBOOTKNOCHEN-KEILBEIN-LIGAMENT"
+            deu: "PFLANZARES FERSENBOOTKNOCHEN-KEILBEIN-BAND"
         },
         Legamento_LEGAMENTO_PLANTARE_LUNGO: {
             ita: "LEGAMENTO PLANTARE LUNGO",
@@ -7762,7 +7762,7 @@ DB.TXT = {
             esp: "LIGAMENTO PLANTAR LARGO",
             fra: "LIGAMENT PLANTAIRE LONG",
             por: "LIGAMENTO PLANTAR LONGO",
-            deu: "LANGES PFLANZARES LIGAMENT"
+            deu: "LANGES PFLANZARES BAND"
         },        
 
         // MUSCOLI
@@ -7772,7 +7772,7 @@ DB.TXT = {
             esp: "DORSAL ANCHO",
             fra: "GRAND DORSAL",
             por: "DORSAL LARGO",
-            deu: "LATISSIMUS DORSI"
+            deu: "LATISSIMUS DORSAL"
         },
         Muscolo_RETTO_DELL_ADDOME: {
             ita: "RETTO DELL'ADDOME",
@@ -7804,7 +7804,7 @@ DB.TXT = {
             esp: "SERRATO ANTERIOR",
             fra: "SERRATUS ANTERIOR",
             por: "SERRÁTIL ANTERIOR",
-            deu: "SERRATUS ANTERIOR"
+            deu: "VORDER SERRATUS"
         },
         Muscolo_PETTORALE: {
             ita: "PETTORALE",
@@ -7844,7 +7844,7 @@ DB.TXT = {
             esp: "GLÚTEO MAYOR",
             fra: "GRAND FESSIER",
             por: "GLÚTEO MÁXIMO",
-            deu: "GROSSER GLUTEUSMUSKEL"
+            deu: "GROSSER GESÄßSMUSKEL"
         },
         Muscolo_TENSORE_DELLA_FASCIA_LATA: {
             ita: "TENSORE DELLA FASCIA LATA",
@@ -7860,7 +7860,7 @@ DB.TXT = {
             esp: "GLÚTEO MEDIO",
             fra: "MOYEN FESSIER",
             por: "GLÚTEO MÉDIO",
-            deu: "GLUTEUS MEDIUS"
+            deu: "MITTELGESÄß"
         },
         Muscolo_TRAPEZIO: {
             ita: "TRAPEZIO",
@@ -7876,7 +7876,7 @@ DB.TXT = {
             esp: "FRONTAL",
             fra: "FRONTAL",
             por: "FRONTAL",
-            deu: "FRONTALE"
+            deu: "FRONTAL"
         },
         Muscolo_OCCIPITALE: {
             ita: "OCCIPITALE",
@@ -7884,7 +7884,7 @@ DB.TXT = {
             esp: "OCCIPITAL",
             fra: "OCCIPITAL",
             por: "OCCIPITAL",
-            deu: "OCCIPITALIS"
+            deu: "OKZYIPITALIS"
         },
         Muscolo_ORBICOLARE_DELL_OCCHIO: {
             ita: "ORBICOLARE DELL'OCCHIO",
@@ -7892,7 +7892,7 @@ DB.TXT = {
             esp: "ORBICULAR DE LOS OJOS",
             fra: "ORBICULAIRE DE L'ŒIL",
             por: "ORBICULAR DOS OLHOS",
-            deu: "ORBICULARIS OCULI"
+            deu: "ORBICULAR DES AUGES"
         },
         Muscolo_TEMPORALE: {
             ita: "TEMPORALE",
@@ -7900,7 +7900,7 @@ DB.TXT = {
             esp: "TEMPOROPARIETAL",
             fra: "TEMPORO-PARIÉTAL",
             por: "TEMPOROPARIETAL",
-            deu: "TEMPOROPARIETALIS"
+            deu: "TEMPORALPARIETALIS"
         },
         Muscolo_MASSETERE: {
             ita: "MASSETERE",
@@ -7908,7 +7908,7 @@ DB.TXT = {
             esp: "MASÉTERO",
             fra: "MASSETER",
             por: "MASSETER",
-            deu: "MASSETER"
+            deu: "KAUMUSKEL"
         },
         Muscolo_PROCERO: {
             ita: "PROCERO",
@@ -7924,7 +7924,7 @@ DB.TXT = {
             esp: "ZIGOMÁTICO",
             fra: "ZYGOMATIQUE",
             por: "ZIGOMÁTICO",
-            deu: "ZYGOMATICUS"
+            deu: "JOCHMUSKEL"
         },
         Muscolo_ELEVATORE_DEL_LABBRO: {
             ita: "ELEVATORE DEL LABBRO",
@@ -8820,7 +8820,7 @@ DB.TXT = {
             esp: "LÓBULO",
             fra: "LOBULE",
             por: "LÓBULO",
-            deu: "LOBUS"
+            deu: "LAPPENMUSKEL"
         },
         Muscolo_SOLCO_PRELOBULARE: {
             ita: "SOLCO PRE-LOBULARE",
@@ -9013,7 +9013,7 @@ DB.TXT = {
             esp: "Receptor",
             fra: "Receveur",
             por: "Receptor",
-            deu: "Empfangenden"
+            deu: "Empfänger"
         },
         _Clienti_S: {
             ita: "Riceventi",
@@ -9021,7 +9021,7 @@ DB.TXT = {
             esp: "Receptores",
             fra: "Receveurs",
             por: "Receptores",
-            deu: "Empfangenden"
+            deu: "Empfänger"
         },
         _cliente_S: {
             ita: "ricevente",
@@ -9029,7 +9029,7 @@ DB.TXT = {
             esp: "receptor",
             fra: "receveur",
             por: "receptor",
-            deu: "empfangende"
+            deu: "Empfänger"
         },
         _clienti_S: {
             ita: "riceventi",
@@ -9037,7 +9037,7 @@ DB.TXT = {
             esp: "receptores",
             fra: "receveurs",
             por: "receptores",
-            deu: "empfangenden"
+            deu: "Empfänger"
         },
         _ciclo_C: {
             ita: "ciclo",
@@ -9085,7 +9085,7 @@ DB.TXT = {
             esp: "historial médico",
             fra: "dossier médical",
             por: "ficha médica",
-            deu: "medizinische Akte"
+            deu: "Krankenblatt"
         },
         _cicli_P: {
             ita: "cartelle cliniche",
@@ -9093,7 +9093,7 @@ DB.TXT = {
             esp: "historiales médicos",
             fra: "dossiers médicaux",
             por: "fichas médicas",
-            deu: "medizinische Akten"
+            deu: "Krankenblätter"
         },
         _un_ciclo_P: {
             ita: "una cartella clinica",
@@ -9101,7 +9101,7 @@ DB.TXT = {
             esp: "un historial médico",
             fra: "un dossier médical",
             por: "um ficha médica",
-            deu: "eine medizinische Akte"
+            deu: "eine Krankenblatt"
         },
         _il_ciclo_P: {
             ita: "la cartella clinica",
@@ -9109,7 +9109,7 @@ DB.TXT = {
             esp: "el historial médico",
             fra: "le dossier médical",
             por: "o ficha médica",
-            deu: "die medizinische Akte"
+            deu: "die Krankenblatt"
         },
         _Ciclo_P: {
             ita: "Cartella clinica",
@@ -9117,7 +9117,7 @@ DB.TXT = {
             esp: "Historial médico",
             fra: "Dossier médical",
             por: "Ficha médica",
-            deu: "Medizinische Akte"
+            deu: "Krankenblatt"
         },
 		
 		_ciclo_S: {

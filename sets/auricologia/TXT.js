@@ -61,7 +61,7 @@ DB.TXT.set = {
         esp: "Reemplaza [t] con este punto",
         fra: "Remplacez [t] par ce point",
         por: "Substitua [t] por este ponto",
-        deu: "Ersetze [t] durch diesen Punkt"
+        deu: "Ersetze [t] mit dieser Punkt"
     },
     AggiungiPuntoProc: {
         ita: "Aggiungi alla procedura",
@@ -445,7 +445,7 @@ DB.TXT.set = {
         esp: "Filtros inteligentes",
         fra: "Filtres rapides",
         por: "Filtros inteligentes",
-        deu: "Intelligente Filter"
+        deu: "Rasche Filter"
     },
     LabelSmart_Sistema: {
         ita: "Sistema di riferimento",
@@ -1271,7 +1271,7 @@ DB.TXT.set = {
         esp: "COMENTARIOS",
         fra: "COMMENTAIRES",
         por: "COMENTÁRIOS",
-        deu: "KOMMENTARE"
+        deu: "KOMMENTAR"
     },
     AddCommento: {
         ita: "Aggiungi un commento",
