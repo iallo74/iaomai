@@ -630,6 +630,7 @@ body:not(.bodyModello) #btns_set > div{
 
 #filtriSmart_ico{
 	position: fixed;
+	z-index: 11;
     top: 5px;
     right: 5px;
 	width:40px;
@@ -689,18 +690,18 @@ body:not(.bodyModello) #btns_set{
     display: none;
     padding: 2px;
     text-align: center;
-    border-radius: 6px;
+    border-bottom-left-radius: 6px;
     background-color: rgba(0,0,0,0.2);
 }
 body:not(.bodyStyled2) #filtriSmart_cont{
     background-color: rgba(255,255,255,0.5) !important;
 }
 .smart #filtriSmart_cont{
-    top: 50px !important;
+    top: 0px !important;
     right: 0px !important;
 	width:350px;
     padding:10px;
-	background-color: rgba(187,187,187,0.8);
+	background-color: rgba(51,51,51,0.7);
 }
 #filtriSmart_cont div{
 	display:inline-block;
@@ -771,7 +772,7 @@ body:not(.smart) #filtriSmart_cont div:not(.elencoSel):not(.selected):hover{
 #filtriSmart_cont i.disabled{
 	background-image:url(../../img/ico_showN.png);
 	background-color: rgba(200,200,200,0.2);
-	color:#666;
+	color:#CCC;
 }
 .pallinoGroup.hideApp,
 .pallinoGroup.disabled{

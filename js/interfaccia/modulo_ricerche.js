@@ -115,7 +115,7 @@ var RICERCHE = {
 						globals.set.cartella == 'reflessologia_plantare' ) ){
 			for (p in DB.note.data) {
 				let NT = DB.note.data[p],
-					testo = RICERCHE.pulisciTesto(NT.TestoAnnotazione()),
+					testo = RICERCHE.pulisciTesto(NT.TestoAnnotazione),
 					NomePunto = siglaPunto = '',
 					puntiPass = (globals.set.cartella == 'auricologia' || globals.set.cartella == 'reflessologia_plantare') ? (NT.numeroPunto) : (NT.numeroPunto*1-1>-1);
 				if(testo.toUpperCase().indexOf(parola.toUpperCase())>-1 && NT.Cancellato!='1' && puntiPass){

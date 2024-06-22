@@ -1116,6 +1116,11 @@ body:not(.smart) .guida_set .fumetti_freccia:last-child{
 body:not(.smart) .img_onlySM{
 	display:none;
 }
+.icoSelGuide img{
+	margin-left: 2px;
+	background-color: #003899;
+	border-radius: 5px;
+}
 @media (max-width: 820px){	
 	body:not(.smart) .guida_anatomia .fumetti_cont,
 	body:not(.smart) .guida_archivi .fumetti_cont,
