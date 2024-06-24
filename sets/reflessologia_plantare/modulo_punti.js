@@ -102,6 +102,7 @@ var MODULO_PUNTI = { // extend SET
 				}
 			}
 		}
+		document.getElementById("filtriSmart_ico").classList.toggle("filtered",SET.hiddenGroups.indexOf(true)>-1);
 	},
 	swFiltri: function(){ // mostra/nasconde i filtri
 		document.getElementById("p_filtri").classList.toggle("op");

@@ -36,6 +36,7 @@ var MENU = {
 				document.getElementById("p_sets").getElementsByTagName("i")[0].innerHTML = TXT("LabelSmartMappe");
 				document.getElementById("p_cartella").getElementsByTagName("i")[0].innerHTML = TXT("LabelSmartPazienti");
 				document.getElementById("p_cartella").getElementsByTagName("i")[1].innerHTML = TXT("LabelSmartPazienti");
+				document.getElementById("p_impostazioni").getElementsByTagName("i")[0].innerHTML =  TXT("Altro");
 				/* document.getElementById("filtroPazienti").getElementsByTagName("span")[0].innerHTML = TXT("LabelSmartStatistiche");
 				document.getElementById("marketingPazienti").getElementsByTagName("span")[0].innerHTML = TXT("LabelSmartMarketing"); */
 				document.getElementById("icone").classList.add("labeled");
@@ -115,6 +116,7 @@ var MENU = {
 		if(n!="sets")document.getElementById("sets").classList.remove("visSch");
 		if(n!="elencoSelected")document.getElementById("elencoSelected").classList.remove("visSch");
 		if(n!="impostazioni")document.getElementById("impostazioni").classList.remove("visSch");
+		if(n!="help")document.getElementById("help").classList.remove("visSch");
 		if(n!="stampa")document.getElementById("stampa").classList.remove("visSch");
 		if(n!="feedback")document.getElementById("feedback").classList.remove("visSch");
 		if(n!="colori")document.getElementById("colori").classList.remove("visSch");
@@ -434,6 +436,16 @@ var MENU = {
 	},
 	disBtnCentro: function(){
 		document.getElementById("p_centro").classList.remove("centroAtt");
+	},
+	visHelp: function(){
+		if(smartMenu)SCHEDA.chiudiElenco();
+		MENU.chiudiMenu("help");
+		document.getElementById("help").classList.toggle("visSch");
+		if(document.getElementById("help").classList.contains("visSch")){
+			MENU.icoSelected = document.getElementById("p_help");
+			MENU.icoSelected.classList.add("p_sel");
+		}else MENU.desIcona();
+		MENU.comprimiIcone(true);
 	},
 	visImpostazioni: function(){
 		if(smartMenu)SCHEDA.chiudiElenco();

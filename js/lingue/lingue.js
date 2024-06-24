@@ -348,7 +348,7 @@ var LINGUE = {
 				newNode.className = 'translate_note';
 				newNode.innerHTML = TXT("msgAiLang")+'<span class="translate_close" onClick="LINGUE.disAiMsg();"></span><span onClick="MENU.visFeedback(\''+addslashes(TXT("signAiLang"))+'\',\'\',true);">'+TXT("btnAiLang")+'</span>';
 				let parentNode = elText.querySelector('.scheda_stampa');
-				parentNode.insertBefore(newNode, parentNode.firstChild);
+				if(parentNode)parentNode.insertBefore(newNode, parentNode.firstChild);
 			}
 			//elText.querySelector(".translatable").innerHTML = jsn.txt_dest;
 		}

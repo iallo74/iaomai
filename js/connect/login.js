@@ -745,7 +745,6 @@ var LOGIN = {
 				localStorage.modello = 'donna';
 				localStorage.open3d = 'true';
 			}else{
-				console.log(localStorage.open3d)
 				nasLoader();
 			}
 			/* localStorage.set = LOGIN.verMonoApp()[0];

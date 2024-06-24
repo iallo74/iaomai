@@ -85,9 +85,13 @@ body:not(.smart) #icone.iconeEspanse{
 }
 .smart #icone div svg{
 	transform: rotate(-90deg);
-    margin-left: 28px !important;
     margin-top: -25px;
 }
+
+.smart #icone div:not(#p_impostazioni) svg{
+    margin-left: 28px !important;
+}
+
 .smart #icone div#p_set svg,
 .smart #icone div#p_sets svg{
     margin-left: 46px !important;
@@ -110,17 +114,39 @@ body:not(.smart) #icone.iconeEspanse{
 	display:none !important;
 }
 .smart #icone div:not(#btns_set):not(#cartella_set){
-	width: 70px;
+	width: 62px;
     height: 64px;
     float: left;
     margin: 0px;
     background-position: center -1px;
 }
-@media (max-width: 400px){
+@media (min-width: 412px){
+	.smart #icone div#p_impostazioni svg{
+		margin-left: 28px !important;
+	}
+}
+@media (max-width: 411px){
+	.smart #icone div:not(#btns_set):not(#cartella_set){
+		width: 60px;
+	}
+	.smart #p_impostazioni{
+		width:30px !important;
+		background-image: url(../img/p_pallini.png);
+		background-size: auto 43px;
+        background-position: center 3px !important;
+	}
+	.smart #p_impostazioni svg {
+		margin-left: 9px !important;
+	}
+	.smart #p_impostazioni i{
+		display:none !important;
+	}
+}
+/* @media (max-width: 400px){
 	.smart #icone div:not(#btns_set):not(#cartella_set){
 		width: 65px;
 	}
-}
+} */
 .smart #icone.nasIcons div{
 	display:none  !important;
 }
@@ -178,11 +204,12 @@ body:not(.smart) #icone.iconeEspanse{
 	background-color: rgba(0, 0, 0, 0.35)
 }
 
-.smart #icone:not(.iconeHome) #p_modello,
+/*.smart #icone:not(.iconeHome) #p_modello,
 .smart #icone:not(.iconeHome) #cartella_set,
+.smart #icone:not(.iconeHome) #p_help,
 .smart #icone:not(.iconeHome) #p_impostazioni{
     border-left: none !important;
-}
+}*/
 .smart #icone:not(.iconeHome) #p_impostazioni{
     border-right: none !important;
 }
@@ -258,12 +285,17 @@ body:not(.smart) #icone.iconeTrans div:not(#btns_set):not(#cartella_set){
     color: #FFF;
     position: absolute;
     bottom: 5px;
-    width: 68px;
+    width: 60px;
     text-align: center;
     overflow-x: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
     padding: 0 3px;
+}
+@media (max-width: 411px){
+	.smart #icone.labeled div i{
+		width: 58px;
+	}
 }
 .smart #icone.iconeHome div:not(#btns_set):not(#cartella_set) i{
 	display:block !important;
@@ -556,52 +588,31 @@ body:not(.Muscles)  #p_liv_aree{
 	opacity:0.5 !important;
 }
 
-/* .smart #p_liv_aree,
-.smart #p_liv_muscoli3d,
-.smart #p_liv_ossa,
-.smart #p_liv_legamenti,
-.smart #p_liv_visceri,
-.smart #p_liv_vasi,
-.smart #p_liv_pelle{
-	position:fixed !important;
-	left:-500px !important;
-	height:0px !important;
-	width:0px !important;
-} */
-/* .smart #contBtnModello:not(.vis) #p_liv_aree,
-.smart #contBtnModello:not(.vis) #p_liv_muscoli3d,
-.smart #contBtnModello:not(.vis) #p_liv_ossa,
-.smart #contBtnModello:not(.vis) #p_liv_legamenti,
-.smart #contBtnModello:not(.vis) #p_liv_visceri,
-.smart #contBtnModello:not(.vis) #p_liv_vasi,
-.smart #contBtnModello:not(.vis) #p_liv_pelle{
-	display:none !important;
-	position:fixed !important;
-	left:-500px !important;
-	height:0px !important;
-	width:0px !important;
-} */
-
-
-body #p_impostazioniAM{
-	display:none;
-}
 body:not(.smart) #p_impostazioni{
 	position:fixed;
 	bottom:0px;
 }
-.smart #p_impostazioni{
-	float: right !important;
+body:not(.smart) #p_help{
+	position:fixed;
+	bottom:48px;
 }
 #p_impostazioni{
 	background-image:url(../img/m_ingranaggio.png);
 }
+#p_help{
+	background-image:url(../img/m_help.png);
+}
 body:not(.bodyStyled1):not(.bodyStyled2):not(.smart) #p_impostazioni{
 	background-image: url(../img/m_ingranaggioN.png);
 }
+body:not(.bodyStyled1):not(.bodyStyled2):not(.smart) #p_help{
+	background-image: url(../img/m_ingranaggioN.png);
+}
+body:not(.smart) #p_help.p_sel svg polygon,
 body:not(.smart) #p_impostazioni.p_sel svg polygon{
 	fill: var(--impostazioni-fondino);
 }
+.smart #p_help.p_sel svg polygon,
 .smart #p_impostazioni.p_sel svg polygon{
 	fill: var(--impostazioni-fondino-smart);
 }
@@ -657,7 +668,7 @@ body:not(.smart) #ico_cliente{
 }
 .smart #ico_cliente{
    	margin-top: -7px !important;
-    height: 64px !important;
+    height: 56px !important;
     background-position: center 5px !important;
    	padding-left: 0px !important;
 }
@@ -1662,12 +1673,14 @@ body:not(.smart) #sliderAnatomia .slider{
 
 
 /* 3 - IMPOSTAZIONI */
+#help,
 #impostazioni{
 	display:none;
 	width:300px;
   	border-top-right-radius:5px;
 	box-shadow:0px 0px 5px rgba(0,0,0,0.6);
 }
+body:not(.smart) #help,
 body:not(.smart) #impostazioni{
 	left:48px;
 	z-index:19;
@@ -1675,6 +1688,7 @@ body:not(.smart) #impostazioni{
 	bottom:0px;
 	background-color:var(--impostazioni-fondino);
 }
+.smart #help,
 .smart #impostazioni{
 	left:auto !important;
 	right:0px;
@@ -1700,10 +1714,22 @@ body:not(.smart) #impostazioni{
 	background-repeat:no-repeat;
 	background-position:4px center;
 }
+#labelHelp{
+	height:40px;
+	line-height:40px;
+	color:var(--impostazioni-label) !important;
+	font-weight:bold;
+  	border-top-right-radius:5px;
+	background-image:url(../img/p_help.png);
+	background-repeat:no-repeat;
+	background-position:4px center;
+}
+.smart.android #labelHelp,
 .smart.android #labelImpostazioni{
 	font-size: var(--font-18) !important;
 	margin-bottom:10px;
 }
+.app_version.bug_font.smart.android #labelHelp,
 .app_version.bug_font.smart.android #labelImpostazioni{
 	font-size: var(--font-16-29) !important;
 }
@@ -1742,6 +1768,7 @@ body:not(.smart) #impostazioni{
     height: 50px;
     line-height: 50px;
 }
+#chiudi_help,
 #chiudi_impostazioni{
 	height:40px;
 	background-image:url(../img/chMenuB.png);
@@ -1754,9 +1781,11 @@ body:not(.smart) #impostazioni{
 	vertical-align:top;
 	cursor:pointer;
 }
+.smart #chiudi_help,
 .smart #chiudi_impostazioni{
 	background-size:auto;
 }
+.bodyStyled2 #chiudi_help,
 .bodyStyled2 #chiudi_impostazioni{
 	background-image:url(../img/chMenu.png);
 }

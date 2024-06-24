@@ -234,6 +234,9 @@ body:not(.smart) .stampaBtn{
     margin-top: 0px !important;
     padding-left: 5px !important;
     padding-right: 5px !important;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	overflow: hidden;
 }
 .contStampa .stampaBtn{
 	display: none !important;

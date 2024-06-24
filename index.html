@@ -739,12 +739,13 @@
                 <div id="p_ricerca" onClick="RICERCHE.historyGlobal();">
                 	<svg viewBox="0 0 12 48"><polygon points="5,24 12,13 12,35"></polygon></svg>
                     <i>{{TXT_Ricerca}}</i></div>
+                <div id="p_help" onClick="MENU.visHelp();">
+                    <svg viewBox="0 0 12 48"><polygon points="5,24 12,13 12,35"></polygon></svg>
+                    <i>{{TXT_HelpMenu}}</i></div>
                 <div id="p_impostazioni" onClick="MENU.visImpostazioni();">
                 	<svg viewBox="0 0 12 48"><polygon points="5,24 12,13 12,35"></polygon></svg>
                     <i>{{TXT_Impostazioni}}</i><span id="notificaGenerale"></span></div>
             </div>
-            
-            <div id="p_impostazioniAM" onClick="MENU.visImpostazioni();"></div>
                 
             <div id="pulsanti_modello"> <!-- MENU ANATOMIA -->
             	<div id="btnsModello"></div>
@@ -828,11 +829,17 @@
                         <div id="p_notifiche" onClick="MENU.visNotifiche();"><span id="notificaMenu"></span>{{TXT_Notifiche}}</div>
                         <div id="p_colori" onClick="MENU.visColori();">{{TXT_Personalizzazione}}</div>
                         <div id="p_download" onClick="MENU.visBackups();">{{TXT_Download}}</div>
-                        <div id="p_feedback" onClick="MENU.visFeedback();">{{TXT_Feedback}}</div>
-                        <div id="p_guide" onClick="REF.open();MENU.visImpostazioni();">{{TXT_ReferenceGuide}}</div>
                         <div id="p_licenze" onClick="MENU.visLicenze();">{{TXT_TueLicenze}}</div>
                         <div id="p_purchases" onClick="MENU.visPurchases(true);">{{TXT_AcquistaLicenza}}</div>
                         <div id="p_features" onClick="MENU.visFeatures(true);">{{TXT_NuoveCaratteristiche}}</div>
+                    </div>
+                </div>
+                <div id="help"> <!-- MENU IMPOSTAZIONI -->
+                    <div id="labelHelp">{{TXT_HelpMenu}}<div id="chiudi_help" onClick="MENU.visHelp();"></div>
+                    </div>
+                    <div id="i1">
+                        <div id="p_feedback" onClick="MENU.visFeedback();">{{TXT_Feedback}}</div>
+                        <div id="p_guide" onClick="REF.open();MENU.visHelp();">{{TXT_ReferenceGuide}}</div>
                         <div id="p_versione" onClick="MENU.visVersione();">{{TXT_Versione}}</div>
                     </div>
                 </div>

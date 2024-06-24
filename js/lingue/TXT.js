@@ -402,6 +402,14 @@ DB.TXT = {
         },
 
         // MENU IMPOSTAZIONI
+        HelpMenu: {
+            ita: "Aiuto",
+            eng: "Help",
+            esp: "Ayuda",
+            fra: "Aide",
+            por: "Aide",
+            deu: "Hilfe"
+        },
         Impostazioni: {
             ita: "Impostazioni",
             eng: "Settings",
@@ -3192,7 +3200,7 @@ DB.TXT = {
             deu: "Meridiane importieren aus..."
         },
         ModificaCon: {
-            ita: "Per modificare questo sezione devi aprire ",
+            ita: "Per modificare questa sezione devi aprire ",
             eng: "To edit this section you must open ",
             esp: "Para editar esta sección debes abrir ",
             fra: "Pour modifier cette section, vous devez ouvrir ",
@@ -5363,11 +5371,11 @@ DB.TXT = {
         },
         AltriArchivi: {
             ita: "Altri archivi",
-            eng: "Other archives",
-            esp: "Otros archivos",
-            fra: "Autres archives",
-            por: "Outros arquivos",
-            deu: "Andere Archive"
+            eng: "Archives",
+            esp: "Archivos",
+            fra: "Archives",
+            por: "Arquivos",
+            deu: "Archive"
         },
         AltreMappe: {
             ita: "Altre mappe",
