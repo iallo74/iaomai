@@ -131,6 +131,12 @@
 	background-color: rgba(0,0,0,0.1);
     border-radius: 14px;
     padding-right: 10px;
+	text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+.smart #notificaCommenti{
+	margin-bottom:10px;
 }
 .notificheDisattivate{
 	background-image:url(../../img/ico_notificheGG.png) !important;
