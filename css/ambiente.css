@@ -473,6 +473,10 @@ body.bodyModello #logoPartner,
 	z-index:1000000;
 	opacity:0.8;
 }
+
+#loader.overPopup{
+	z-index:1000001 !important;
+}
 #fileBig{
 	background-size:contain;
     background-repeat: no-repeat;

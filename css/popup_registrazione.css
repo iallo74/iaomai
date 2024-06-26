@@ -6,6 +6,7 @@
 	height:470px;
 	margin-top:-235px;
 	background-color: var(--menu-fondino);
+	z-index: 1000002;
 }
 .smart #registrazione{
 	top:0px;
@@ -38,6 +39,13 @@
 #testoRegistrazione{
 	padding-bottom:20px;
 	text-align:justify;
+}
+.smart #testoRegistrazione{
+	background-size: auto 74px;
+	background-image: url(../img/logo_iaomai_mini.png);
+	background-repeat: no-repeat;
+	background-position: center 8px;
+	padding-top: 110px;
 }
 
 

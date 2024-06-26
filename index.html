@@ -426,6 +426,7 @@
             	<div id="contLogin" class="popup_cont">
                 	<form name="loginFrom" id="loginFrom" method="post" onSubmit="return LOGIN.getLogin();"><div><input type="text" name="USR" id="USR"  placeholder="Username" class="okPlaceHolder" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" onFocus="LOGIN.focRic=true;" onBlur="LOGIN.focRic=false;"><div id="USRlabel"><span></span><div id="usrChange" onClick="LOGIN.annullaUtente();">{{TXT_Disconnetti}}</div></div></div><div><input type="password" name="PWD" id="PWD" placeholder="Password" class="okPlaceHolder" autocomplete="off"><span id="visPwd" onClick="LOGIN.swVisPwd();"></span></div><div id="loginStayConnected"><label for="stayConnected"><input type="checkbox" id="stayConnected" name="stayConnected">{{TXT_StaiConnesso}}</label></div><div id="loginButCont"><input type="submit" name="loginBut" id="loginBut" value="{{TXT_Accedi}}" /><p><!-- da popolare //--></p></div></form>
     <div id="btnRecupero" onClick="LOGIN.recuperaPwd();">{{TXT_PWDdimenticata}} <b>&gt;</b></div>
+    <div id="btnRegistrazione"><span></span><div id="btn_registrazione" onClick="MENU.visRegistrazione();">{{TXT_Registrati}}</div></div>
     <div id="demoContinueLogin" onClick="MENU.chiudiMenu();if(!globals.modello.cartella){inizio=true;caricaModello('donna');}"><span></span><div>{{TXT_ContinuaDemo}}</div></div>
                 </div>
             </div>
@@ -439,7 +440,7 @@
                 </div>
             </div>
             <div id="registrazione" class="popup"> <!-- REGISTRAZIONE -->
-            	<div id="labelRegistrazione" class="popup_label">{{TXT_Registrati}}<div class="popup_chiudi" onClick="MENU.chiudiMenu();"></div></div>
+            	<div id="labelRegistrazione" class="popup_label">{{TXT_Registrati}}<div class="popup_chiudi" onClick="MENU.chiudiRegistrazione();"></div></div>
             	<div id="contRegistrazione" class="popup_cont">
                 	<form name="registrazioneForm" id="registrazioneForm" method="post" onSubmit="return false;">
                     	<div id="testoRegistrazione">

@@ -97,6 +97,43 @@ body:not(.smart) #login_benvenuto{
 	cursor:pointer;
 }
 
+#btnRegistrazione{
+	text-align:center;
+}
+
+
+#btnRegistrazione span{
+	display: block;
+	border-top: 1px solid rgba(0, 0, 0, 0.2);
+	margin-top: 20px;
+	height: 1px;
+	border-bottom: 1px solid rgba(255, 255, 255, 0.6);
+	margin-bottom: 20px;
+}
+#btnRegistrazione div{
+	display:inline-block;
+	clear: both;
+	border-radius: 5px;
+	border: none;
+	height: 40px;
+	line-height: 37px;
+	padding: 0 20px;
+	color: #FFF;
+	box-shadow: 0 0 3px #000;
+	cursor: pointer;
+    background: #c18b17;
+    background: -moz-linear-gradient(top, #aa6c1d 0%,#c18b17 100%);
+    background: -webkit-linear-gradient(top, #aa6c1d 0%,#c18b17 100%);
+    background: linear-gradient(to bottom, #aa6c1d 0%,#c18b17 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#aa6c1d', endColorstr='#c18b17',GradientType=0 );
+}
+#btnRegistrazione div:hover{
+    background: #dea935 !important;
+    background: -moz-linear-gradient(top, #c3802a 0%,#dea935 100%) !important;
+    background: -webkit-linear-gradient(top, #c3802a 0%,#dea935 100%) !important;
+    background: linear-gradient(to bottom, #c3802a 0%,#dea935 100%) !important;
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c3802a', endColorstr='#dea935',GradientType=0 ) !important;
+}
 
 #URS{
 	margin-top:10px;

@@ -713,11 +713,16 @@ var MENU = {
 		visLoader("");
 		document.getElementById("splashmaps").classList.toggle("visSch");
 	},
+	chiudiRegistrazione: function(){
+		document.getElementById("registrazione").classList.remove("visSch");
+		document.getElementById("loader").classList.remove("overPopup");
+	},
 	visRegistrazione: function(){
-		if(!onlineVersion && (iPad || iPhone))return;
+		/* if(!onlineVersion && (iPad || iPhone))return;
 		MENU.chiudiMenu("registrazione");
-		visLoader("");
-		document.getElementById("registrazione").classList.toggle("visSch");
+		visLoader(""); */
+		document.getElementById("registrazione").classList.add("visSch");
+		document.getElementById("loader").classList.add("overPopup");
 		let A = document.getElementById("divTrattamentoDati").getElementsByTagName("a")[0];
 		A.href=CONN.linkPrivacy+"?siglaLingua="+globals.siglaLingua;
 		A.target = H.target;

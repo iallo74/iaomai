@@ -420,10 +420,12 @@ var LOGIN = {
 		if(USRprovv.trim()!=''){
 			document.getElementById("USR").type='hidden';
 			document.getElementById("USR").value=DB.login.data.UsernameU;
+			document.getElementById("btnRegistrazione").style.display='none';
 			document.getElementById("USRlabel").style.display="block";
 			document.getElementById("USRlabel").getElementsByTagName("span")[0].innerHTML=DB.login.data.UsernameU;
 		}else{
 			document.getElementById("USR").type='text';
+			document.getElementById("btnRegistrazione").style.display='block';
 			document.getElementById("USRlabel").style.display="none";
 			document.getElementById("USRlabel").getElementsByTagName("span")[0].innerHTML="";
 		}
@@ -648,10 +650,9 @@ var LOGIN = {
 			MODELLO.filtraAnatomia();
 			try{ SET.filtraSet(); }catch(err){}
 			if(globals.set.cartella){
-				//let vSet = globals.set.cartella;
 				if(smartMenu)scaricaSet();
-				//caricaSet(vSet,document.getElementById('p_'+vSet));
 			}
+			document.getElementById("btnRegistrazione").style.display="block";	
 		}});
 	},
 	verInternationals: function(){
@@ -823,6 +824,7 @@ var LOGIN = {
 			MENU.chiudiMenu();
 			GUIDA.visFumetto("guida_generica");
 		}
+		document.getElementById("loader").classList.remove("overPopup");
 		document.getElementById("registrazione").classList.remove("popup_back");
 		return;
 	},
