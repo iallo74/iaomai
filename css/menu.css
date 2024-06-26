@@ -89,7 +89,7 @@ body:not(.smart) #icone.iconeEspanse{
 }
 
 .smart #icone div:not(#p_impostazioni) svg{
-    margin-left: 28px !important;
+    margin-left: 24px !important;
 }
 
 .smart #icone div#p_set svg,
@@ -122,7 +122,7 @@ body:not(.smart) #icone.iconeEspanse{
 }
 @media (min-width: 412px){
 	.smart #icone div#p_impostazioni svg{
-		margin-left: 28px !important;
+		margin-left: 24px !important;
 	}
 }
 @media (max-width: 411px){
@@ -622,9 +622,9 @@ body:not(.smart) #p_sets{
 #p_ricerca{
 	background-image:url(../img/lente.png);
 }
-.smart #p_ricerca{
+/* .smart #p_ricerca{
 	border-right: none !important;
-}
+} */
 
 body:not(.smart) #p_ricerca{
 	background-image:url(../img/m_lente.png);
@@ -668,7 +668,7 @@ body:not(.smart) #ico_cliente{
 }
 .smart #ico_cliente{
    	margin-top: -7px !important;
-    height: 56px !important;
+    height: 64px !important;
     background-position: center 5px !important;
    	padding-left: 0px !important;
 }

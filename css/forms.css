@@ -800,6 +800,10 @@ body.bodyModello .p_paz_screenshot:hover{ /* PAZIENTI */
 	width:150px !important;
 	float:right !important;
 	margin-top:5px !important;
+	
+	text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
 	/*cursor:default !important;*/
 }
 .p_sch_punto:hover, /* procedura */

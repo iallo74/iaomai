@@ -44,7 +44,7 @@ body:not(.smart) #btnCarMapMenu i span,
     text-overflow: ellipsis;
 }
 .smart #btnCarMapMenu > span{
-	width: calc(100% - 157px);
+	width: calc(100% - 180px);
 }
 #quitSet{
 	display: block;
