@@ -17,7 +17,7 @@ DB_anatomia={
 	},
 	"Osso_CARTILAGINE_PUBICA": {
 		"Titolo": "Schambeinfuge",
-		"Descrizione": "<p>Die Schambeinfuge ist das knorpelige Gelenk, das den rechten Schambein mit dem linken Schambein verbindet. Das Schambein ist, zusammen mit Darmbein und Sitzbein, einer der drei knöchernen Bestandteile des Hüftknochens,der eine gleiche anatomische Struktur ist,&nbsp; und es gehört zu der Beckenknochen.</p><p> <i>Lage:</i> Die Schambeinfuge liegt vor und etwas oberhalb der Harnblase<br> <i>Wirkung:</i> Das Ziel der Schambeinfuge besteht darin, die Beckenknochen bei der Stützung des Rumpfes zu unterstützen<br> <i>Klassifizierung:</i> flache Knochen.</p>"
+		"Descrizione": "<p>Die Schambeinfuge ist das knorpelige Gelenk, das den rechten Schambein mit dem linken Schambein verbindet. Das Schambein ist, zusammen mit Darmbein und Sitzbein, einer der drei knöchernen Bestandteile des Hüftknochens,der eine gleiche anatomische Struktur ist, und es gehört zu der Beckenknochen.</p><p> <i>Lage:</i> Die Schambeinfuge liegt vor und etwas oberhalb der Harnblase<br> <i>Wirkung:</i> Das Ziel der Schambeinfuge besteht darin, die Beckenknochen bei der Stützung des Rumpfes zu unterstützen<br> <i>Klassifizierung:</i> flache Knochen.</p>"
 	},
 	"Osso_CARPO": {
 		"Titolo": "Handwurzel",
@@ -53,11 +53,11 @@ DB_anatomia={
 	},
 	"Osso_IOIDE": {
 		"Titolo": "Zungenbein",
-		"Descrizione": "<p>Das Zungenbein ist ein ungerader und mittlerer Knochen mit einer Form eines Hufeisens&nbsp;</p><p> <i>Lokalisation:</i> Sie befindet sich im Nacken, genau zwischen dem Kinn und dem Schildknorpel des Kehlkopfes<br> <i>Wirkung:</i> Das Zungenbein dient als Anker für Muskeln, die die Bewegungen der Zunge, des Rachens und des Kehlkopfes ermöglichen. Daher spielt es eine grundlegende Rolle bei den physiologischen Funktionen der oben genannten anatomischen Strukturen wie Kauen, Schlucken, Stimmbildung und Atmung<br> <i>Klassifizierung:</i> kurze Knochen.</p>"
+		"Descrizione": "<p>Das Zungenbein ist ein ungerader und mittlerer Knochen mit einer Form eines Hufeisens </p><p> <i>Lokalisation:</i> Sie befindet sich im Nacken, genau zwischen dem Kinn und dem Schildknorpel des Kehlkopfes<br> <i>Wirkung:</i> Das Zungenbein dient als Anker für Muskeln, die die Bewegungen der Zunge, des Rachens und des Kehlkopfes ermöglichen. Daher spielt es eine grundlegende Rolle bei den physiologischen Funktionen der oben genannten anatomischen Strukturen wie Kauen, Schlucken, Stimmbildung und Atmung<br> <i>Klassifizierung:</i> kurze Knochen.</p>"
 	},
 	"Osso_METATARSO": {
 		"Titolo": "Mittelfuß",
-		"Descrizione": "<p>Alle Mittelfußknochen haben eine prismatische Form und verlängerte Diaphysen, konvex&nbsp; auf der Rückenfläche und konkav auf der Plantar Seite. Die distalen Epiphysen, genannt Köpfe, sind auf ihrer dorsalen und plantaren Oberfläche konvex,jedoch flach auf ihrer medialen und lateralen Oberfläche.</p><p> <i>Lage:</i> In jedem Fuß befinden sie sich zwischen den Fußwurzelknochen (oder fußwurzliche Knochen) und den proximalen Phalangen (oder erste Phalangen) jedes Fingers.<br> <i>Wirkung:</i> Sie helfen, beim Stehen oder Gehen das Gleichgewicht zu halten<br> <i>Klassifizierung:</i> Röhrenknochen.</p>"
+		"Descrizione": "<p>Alle Mittelfußknochen haben eine prismatische Form und verlängerte Diaphysen, konvex auf der Rückenfläche und konkav auf der Plantar Seite. Die distalen Epiphysen, genannt Köpfe, sind auf ihrer dorsalen und plantaren Oberfläche konvex,jedoch flach auf ihrer medialen und lateralen Oberfläche.</p><p> <i>Lage:</i> In jedem Fuß befinden sie sich zwischen den Fußwurzelknochen (oder fußwurzliche Knochen) und den proximalen Phalangen (oder erste Phalangen) jedes Fingers.<br> <i>Wirkung:</i> Sie helfen, beim Stehen oder Gehen das Gleichgewicht zu halten<br> <i>Klassifizierung:</i> Röhrenknochen.</p>"
 	},
 	"Osso_ATLANTE": {
 		"Titolo": "Atlas",
@@ -97,11 +97,11 @@ DB_anatomia={
 	},
 	"Osso_RADIO": {
 		"Titolo": "Radius",
-		"Descrizione": "<p>Der Radius ist der seitliche Knochen des Unterarms in anatomischer Lage.</p><p> <i>Lage:</i> zwischen dem Oberarmknochen (nach oben) und den Handwurzelknochen (nach unten)&nbsp;<br> <i>Wirkung:</i> Es bildet zwei wesentliche Gelenke für die Bewegung der gesamten oberen Extremität: das Ellenbogengelenk und das Handgelenk<br> <i>Klassifizierung:</i> Röhrenknochen.</p>"
+		"Descrizione": "<p>Der Radius ist der seitliche Knochen des Unterarms in anatomischer Lage.</p><p> <i>Lage:</i> zwischen dem Oberarmknochen (nach oben) und den Handwurzelknochen (nach unten) <br> <i>Wirkung:</i> Es bildet zwei wesentliche Gelenke für die Bewegung der gesamten oberen Extremität: das Ellenbogengelenk und das Handgelenk<br> <i>Klassifizierung:</i> Röhrenknochen.</p>"
 	},
 	"Osso_ROTULA": {
 		"Titolo": "Kniescheibe",
-		"Descrizione": "<p>Auch Patella genannt, ist sie ein flacher, runder Knochen mit einem Durchmesser von 2–4 cm. Seine Vorderfläche ist konvex und die Hinterfläche ist konkav mit Grübchen.</p><p> <i>Lage:</i> vor dem Kniegelenk, in Kontakt mit dem Epiphyse des Oberschenkelknochen. Die Kniescheibe ist in der Sehne des femoral vierköpfiger Schenkelstrecker der Muskel eingebettet.<br><i>Wirkung:</i> Die Kniescheibe erfüllt zwei wichtige Funktionen: Sie ermöglicht die Streckung des Beins, eine grundlegende Bewegung für die Fortbewegung. Es optimiert \"die Arbeit\" der vierköpfigermuskeln. Nach der Experten zufolge fungieren die Sehnenansätze des Schenkelstrecker an der Kniescheibe als Hebel<br> <i>Klassifizierung:</i> flacher Knochen.</p>"
+		"Descrizione": "<p>Auch Patella genannt, ist sie ein flacher, runder Knochen mit einem Durchmesser von 2-4 cm. Seine Vorderfläche ist konvex und die Hinterfläche ist konkav mit Grübchen.</p><p> <i>Lage:</i> vor dem Kniegelenk, in Kontakt mit dem Epiphyse des Oberschenkelknochen. Die Kniescheibe ist in der Sehne des femoral vierköpfiger Schenkelstrecker der Muskel eingebettet.<br><i>Wirkung:</i> Die Kniescheibe erfüllt zwei wichtige Funktionen: Sie ermöglicht die Streckung des Beins, eine grundlegende Bewegung für die Fortbewegung. Es optimiert \"die Arbeit\" der vierköpfigermuskeln. Nach der Experten zufolge fungieren die Sehnenansätze des Schenkelstrecker an der Kniescheibe als Hebel<br> <i>Klassifizierung:</i> flacher Knochen.</p>"
 	},
 	"Osso_SACRO": {
 		"Titolo": "Kreuzbein und Steißbein",
@@ -113,11 +113,11 @@ DB_anatomia={
 	},
 	"Osso_SCAPOLE": {
 		"Titolo": "Schulterblätter",
-		"Descrizione": "<p>Das Schulterblatt ist ein flacher, dreieckiger Knochen, der zusammen mit dem Schlüsselbein den Schultergürtel bildet. Zahlreiche Muskeln der oberen Gliedmaßen und der Schulter setzen dort an oder entstehen daraus.</p><p> <i>Lage:</i>&nbsp;hinterseitlich des Brustkorbs gelegen, verbindet es den Rumpf mit den oberen Gliedmaßen auf jeder Körperseite. Der Verbindungspunkt zwischen Rumpf und oberer Gliedmaßen (Arm) wird als Glenooberarmlgelenk bezeichnet<br><i>Wirkung:</i> Die Schulterblätter haben zwei Hauptfunktionen:&nbsp; den Oberarmkopf in ihrer Glenoidhöhle verankern,um das Glenooberarmgelenk (oder Schultergelenk) zu bilden, und&nbsp; für die Befestigung der Anfangsextremitäten der Muskeln sorgen, die die Rotatorenmanschette bilden<br> <i>Klassifizierung:</i> flacher Knochen.</p>"
+		"Descrizione": "<p>Das Schulterblatt ist ein flacher, dreieckiger Knochen, der zusammen mit dem Schlüsselbein den Schultergürtel bildet. Zahlreiche Muskeln der oberen Gliedmaßen und der Schulter setzen dort an oder entstehen daraus.</p><p> <i>Lage:</i> hinterseitlich des Brustkorbs gelegen, verbindet es den Rumpf mit den oberen Gliedmaßen auf jeder Körperseite. Der Verbindungspunkt zwischen Rumpf und oberer Gliedmaßen (Arm) wird als Glenooberarmlgelenk bezeichnet<br><i>Wirkung:</i> Die Schulterblätter haben zwei Hauptfunktionen: den Oberarmkopf in ihrer Glenoidhöhle verankern,um das Glenooberarmgelenk (oder Schultergelenk) zu bilden, und für die Befestigung der Anfangsextremitäten der Muskeln sorgen, die die Rotatorenmanschette bilden<br> <i>Klassifizierung:</i> flacher Knochen.</p>"
 	},
 	"Osso_STERNO": {
 		"Titolo": "Brustbein",
-		"Descrizione": "<p>Das Brustbein ist ein langer, flacher und schmaler Knochen, an dem die ersten sieben Rippen durch Rippenknorpel befestigt sind. Aus Konvention, unterteilen die Anatomen es in drei Regionen: Manubrium, Körper und Schwertfortsatz.</p><p> <i>Lage:</i> in der Mitte der Brust<br><i>Wirkung:</i>&nbsp;Die Wirkung Des Brustbein ist, zusammen mit den anderen Elementen des Brustkorbs das Herz, die Lunge, die Speiseröhre und die verschiedene Brust-Blutgefäße zu schützen.<br> <i>Klassifizierung:</i> flacher Knochen.</p>"
+		"Descrizione": "<p>Das Brustbein ist ein langer, flacher und schmaler Knochen, an dem die ersten sieben Rippen durch Rippenknorpel befestigt sind. Aus Konvention, unterteilen die Anatomen es in drei Regionen: Manubrium, Körper und Schwertfortsatz.</p><p> <i>Lage:</i> in der Mitte der Brust<br><i>Wirkung:</i> Die Wirkung Des Brustbein ist, zusammen mit den anderen Elementen des Brustkorbs das Herz, die Lunge, die Speiseröhre und die verschiedene Brust-Blutgefäße zu schützen.<br> <i>Klassifizierung:</i> flacher Knochen.</p>"
 	},
 	"Osso_TARSO": {
 		"Titolo": "Fußwurzel",
@@ -125,11 +125,11 @@ DB_anatomia={
 	},
 	"Osso_TIBIA": {
 		"Titolo": "Schienbein",
-		"Descrizione": "<p>Die Schienbein besteht aus einer Diaphyse und zwei Epiphysen. Sein kranialer Teil weist eine leichte mediale Konvexität auf, die im kaudalen Teil mehr lateral wird.</p><p> <i>Lage:</i> Sie befindet sich, zusammen mit dem Wadenbein, in der unteren Gliedmaßen, unterhalb des Kniegelenks, im anatomischen Segment, das als Bein bezeichnet wird<br><i>Wirkung:</i> Das Schienbein ist anatomisch und physiologisch wichtig für seinen Beitrag zu den Knie- und Sprunggelenken<br> <i>Klassifizierung:</i>&nbsp;lange Knochen.</p>"
+		"Descrizione": "<p>Die Schienbein besteht aus einer Diaphyse und zwei Epiphysen. Sein kranialer Teil weist eine leichte mediale Konvexität auf, die im kaudalen Teil mehr lateral wird.</p><p> <i>Lage:</i> Sie befindet sich, zusammen mit dem Wadenbein, in der unteren Gliedmaßen, unterhalb des Kniegelenks, im anatomischen Segment, das als Bein bezeichnet wird<br><i>Wirkung:</i> Das Schienbein ist anatomisch und physiologisch wichtig für seinen Beitrag zu den Knie- und Sprunggelenken<br> <i>Klassifizierung:</i> lange Knochen.</p>"
 	},
 	"Osso_ULNA": {
 		"Titolo": "Elle",
-		"Descrizione": "<p>Die Elle oder der Unterarmknochen hat eine prismatische Form.</p><p> <i>Lage:</i>&nbsp;sie liegt medial im Unterarm, parallel zum Radius in anatomischer Lage<br><i>Wirkung:</i> Diese Gelenkelemente sind für zahlreiche Bewegungen und Gesten der oberen Gliedmaßen unerlässlich, wie z. B. das Werfen eines Gegenstandes, das Schreiben, das Heben von Gewichten usw. Die zweite wichtige Funktion der Elle besteht darin, die Muskeln des Unterarms und der Hand aufzunehmen<br> <i>Klassifizierung:</i>&nbsp;lange Knochen.</p>"
+		"Descrizione": "<p>Die Elle oder der Unterarmknochen hat eine prismatische Form.</p><p> <i>Lage:</i> sie liegt medial im Unterarm, parallel zum Radius in anatomischer Lage<br><i>Wirkung:</i> Diese Gelenkelemente sind für zahlreiche Bewegungen und Gesten der oberen Gliedmaßen unerlässlich, wie z. B. das Werfen eines Gegenstandes, das Schreiben, das Heben von Gewichten usw. Die zweite wichtige Funktion der Elle besteht darin, die Muskeln des Unterarms und der Hand aufzunehmen<br> <i>Klassifizierung:</i> lange Knochen.</p>"
 	},
 	"Osso_VERTEBRE_CERVICALI": {
 		"Titolo": "Halswirbel",
@@ -137,25 +137,25 @@ DB_anatomia={
 	},
 	"Osso_VERTEBRE_DORSALI": {
 		"Titolo": "Brustwirbel",
-		"Descrizione": "<p>Die Brustwirbel sind 12 (von T1 bis T12 oder von D1 bis D12). Der Rückenbereich (oder Brust-) ist der zweite Abschnitt der Wirbelsäule in kranialer nach kaudaler Richtung.</p><p> <i>Lage:</i> liegt zwischen der Hals- und Lendenwirbelsäule. Es hat Kontakt nach oben mit dem letzten C7 Halswirbel und artikuliert nach unten mit dem ersten L1&nbsp; Lendenwirbel&nbsp;<br><i>Wirkung:</i> Die Brustwirbel haben zwei Hauptrollen: sie beitragen zur Unterstützung des Körpergewichts durch die Wirbelsäule beitragen, und sie schützen den Brustbereich des Rückenmarks&nbsp;<br> <i>Klassifizierung:</i> kurze Knochen.</p>"
+		"Descrizione": "<p>Die Brustwirbel sind 12 (von T1 bis T12 oder von D1 bis D12). Der Rückenbereich (oder Brust-) ist der zweite Abschnitt der Wirbelsäule in kranialer nach kaudaler Richtung.</p><p> <i>Lage:</i> liegt zwischen der Hals- und Lendenwirbelsäule. Es hat Kontakt nach oben mit dem letzten C7 Halswirbel und artikuliert nach unten mit dem ersten L1 Lendenwirbel <br><i>Wirkung:</i> Die Brustwirbel haben zwei Hauptrollen: sie beitragen zur Unterstützung des Körpergewichts durch die Wirbelsäule beitragen, und sie schützen den Brustbereich des Rückenmarks <br> <i>Klassifizierung:</i> kurze Knochen.</p>"
 	},
 	"Osso_VERTEBRE_LOMBARI": {
 		"Titolo": "Lendenwirbel",
-		"Descrizione": "<p>Die Lendenwirbel sind 5 (von L1 bis L5). Die Lendenwirbelstrich ist das dritte Segment der Wirbelsäule von kranial nach kaudal.</p><p> <i>Lage:</i> liegt zwischen der Brust und dem Kreuzbein. Es hat Kontakt nach oben mit dem letzten T.12 Brustwirbel&nbsp; und artikuliert nach unten mit dem Kreuzbein<br><i>Wirkung:</i> Die Funktion der Lendenwirbel besteht darin, das Körpergewicht zu tragen<br> <i>Klassifizierung:</i> kurze Knochen.</p>"
+		"Descrizione": "<p>Die Lendenwirbel sind 5 (von L1 bis L5). Die Lendenwirbelstrich ist das dritte Segment der Wirbelsäule von kranial nach kaudal.</p><p> <i>Lage:</i> liegt zwischen der Brust und dem Kreuzbein. Es hat Kontakt nach oben mit dem letzten T.12 Brustwirbel und artikuliert nach unten mit dem Kreuzbein<br><i>Wirkung:</i> Die Funktion der Lendenwirbel besteht darin, das Körpergewicht zu tragen<br> <i>Klassifizierung:</i> kurze Knochen.</p>"
 	},
 	"Muscolo_FRONTALE": {
 		"Titolo": "Epicranius-Muskel (hinterhauptfrontalis)",
-		"Descrizione": "<p><i>Herkunft (okzipital):</i> Hinterhauptbein, Warzenfortsatz des Schläfenbeins<br> <i>Ansatz (okzipital):</i>&nbsp;sehnenhautliche Galea&nbsp;<br> <i>Herkunft (frontal):</i>&nbsp;sehnenhautliche Galea&nbsp;<br> <i>Ansatz (frontal):</i> Haut und Faszie über Augen und Nase<br><i>Wirkung (okzipital):</i> Zieht die Kopfhaut zurück, runzelt die Stirn und hebt die Augenbrauen<br><i>Wirkung (frontal):</i> Zieht die Kopfhaut nach vorne, hebt die Augenbrauen und legt die Stirn horizontal in Falten<br> <i>Innervation:</i> Gesichtsnerv VII<br> <i>Vaskularisation:</i>&nbsp;hinterhaupte Arterie</p>",
+		"Descrizione": "<p><i>Herkunft (okzipital):</i> Hinterhauptbein, Warzenfortsatz des Schläfenbeins<br> <i>Ansatz (okzipital):</i> sehnenhautliche Galea <br> <i>Herkunft (frontal):</i> sehnenhautliche Galea <br> <i>Ansatz (frontal):</i> Haut und Faszie über Augen und Nase<br><i>Wirkung (okzipital):</i> Zieht die Kopfhaut zurück, runzelt die Stirn und hebt die Augenbrauen<br><i>Wirkung (frontal):</i> Zieht die Kopfhaut nach vorne, hebt die Augenbrauen und legt die Stirn horizontal in Falten<br> <i>Innervation:</i> Gesichtsnerv VII<br> <i>Vaskularisation:</i> hinterhaupte Arterie</p>",
 		"baseImg": true
 	},
 	"Muscolo_OCCIPITALE": {
 		"Titolo": "Epicranius-Muskel (hinterhauptfrontalis)",
-		"Descrizione": "<i>Herkunft (okzipital):</i> Hinterhauptbein, Warzenfortsatzverfahren des Schläfenbeins<br> <i>Ansatz (okzipital):</i>&nbsp;sehnenautliche Galea&nbsp;<br> <i>Herkunft (frontal):</i>&nbsp;sehnenautliche Galea&nbsp;<br> <i>Ansatz (frontal):</i> Haut und Bindegewebe über Augen und Nase<br> <i>Aktion (Okzipital):</i> Zieht die Kopfhaut zurück, runzelt die Stirn und hebt die Augenbrauen<br> <i>Aktion (frontal):</i> Zieht die Kopfhaut nach vorne, hebt die Augenbrauen und legt die Stirn horizontal in Falten<br> <i>Innervation:</i> Gesichtsnerv VII<br> <i>Vaskularisation:</i>&nbsp;okzipitale Arteria&nbsp;",
+		"Descrizione": "<i>Herkunft (okzipital):</i> Hinterhauptbein, Warzenfortsatzverfahren des Schläfenbeins<br> <i>Ansatz (okzipital):</i> sehnenautliche Galea <br> <i>Herkunft (frontal):</i> sehnenautliche Galea <br> <i>Ansatz (frontal):</i> Haut und Bindegewebe über Augen und Nase<br> <i>Aktion (Okzipital):</i> Zieht die Kopfhaut zurück, runzelt die Stirn und hebt die Augenbrauen<br> <i>Aktion (frontal):</i> Zieht die Kopfhaut nach vorne, hebt die Augenbrauen und legt die Stirn horizontal in Falten<br> <i>Innervation:</i> Gesichtsnerv VII<br> <i>Vaskularisation:</i> okzipitale Arteria",
 		"baseImg": true
 	},
 	"Muscolo_ORBICOLARE_DELL_OCCHIO": {
 		"Titolo": "Orbikulärer Augenmuskel",
-		"Descrizione": "<i>Herkunft:</i> Stirnbein, Oberkieferknochen und Tränenbein<br> <i>Einfügung:&nbsp;</i>schließt rund die Augenhöhle um<br> <i>Wirkung:</i> Schließt die Augenlider und strafft das Auge<br> <i>Innervation:</i> Gesichtsnerv VII<br> <i>Vaskularisation:</i> Augenarterie",
+		"Descrizione": "<i>Herkunft:</i> Stirnbein, Oberkieferknochen und Tränenbein<br> <i>Einfügung: </i>schließt rund die Augenhöhle um<br> <i>Wirkung:</i> Schließt die Augenlider und strafft das Auge<br> <i>Innervation:</i> Gesichtsnerv VII<br> <i>Vaskularisation:</i> Augenarterie",
 		"baseImg": true
 	},
 	"Muscolo_MASSETERE": {
@@ -165,22 +165,22 @@ DB_anatomia={
 	},
 	"Muscolo_TEMPORALE": {
 		"Titolo": "Schläfenmuskel",
-		"Descrizione": "<i>Herkunft:</i> Schläfenbein, Scheitelbein und Stirnbein<br> <i>Ansatz:</i>&nbsp;Coronoideusverfahren und vorderer Rand des Unterkieferknochens<br> <i>Wirkung:</i> Schließt den Unterkiefer und kontrolliert seine seitlichen Bewegungen<br> <i>Innervation:</i> Trigeminusnerv<br> <i>Vaskularisation:</i> tiefe Schläfenarteria (vordere und hintere Äste)",
+		"Descrizione": "<i>Herkunft:</i> Schläfenbein, Scheitelbein und Stirnbein<br> <i>Ansatz:</i> Coronoideusverfahren und vorderer Rand des Unterkieferknochens<br> <i>Wirkung:</i> Schließt den Unterkiefer und kontrolliert seine seitlichen Bewegungen<br> <i>Innervation:</i> Trigeminusnerv<br> <i>Vaskularisation:</i> tiefe Schläfenarteria (vordere und hintere Äste)",
 		"baseImg": true
 	},
 	"Muscolo_DIGASTRICO": {
 		"Titolo": "Digastricus-Muskel",
-		"Descrizione": "<i>Herkunft (Vorderbauch):</i> innerer Unterrand des Unterkiefers<br><i>Herkunft (hinterer Bauch):</i> Warzenfortsatz des Schläfenbeins<br> <i>Ansatz:</i> Zungenbein<br> <i>Wirkung:</i> Hebt das Zungenbein an, senkt und zieht den Unterkiefer zurück<br> <i>Innervation:</i>&nbsp;mylohyoideuser Nerv (Trigeminus V) und Gesichtsnerv VII<br> <i>Vaskularisation:</i>&nbsp;okzipitale Arteria&nbsp;",
+		"Descrizione": "<i>Herkunft (Vorderbauch):</i> innerer Unterrand des Unterkiefers<br><i>Herkunft (hinterer Bauch):</i> Warzenfortsatz des Schläfenbeins<br> <i>Ansatz:</i> Zungenbein<br> <i>Wirkung:</i> Hebt das Zungenbein an, senkt und zieht den Unterkiefer zurück<br> <i>Innervation:</i> mylohyoideuser Nerv (Trigeminus V) und Gesichtsnerv VII<br> <i>Vaskularisation:</i> okzipitale Arteria",
 		"baseImg": true
 	},
 	"Muscolo_SCALENI": {
 		"Titolo": "Ungleichseitige Muskeln",
-		"Descrizione": "<i>Herkunft:</i> Querfortsätze der Halswirbel<br> <i>Ansatz (vorderer und mittlerer Skalenus):</i> 1. Rippe<br> <i>Ansatz (hinterer Skalenus):</i> 2. Rippe<br><i>Wirkung:</i> Beugung des Halses, Anhebung der 1. Rippe bei tiefer Inspiration, seitliche Beugung und Drehung des Halses<br> <i>Innervation:</i> vordere Äste der&nbsp; C3-C8 Halsnerven&nbsp;<br> <i>Vaskularisation:</i> untere Schilddrüsenarteria",
+		"Descrizione": "<i>Herkunft:</i> Querfortsätze der Halswirbel<br> <i>Ansatz (vorderer und mittlerer Skalenus):</i> 1. Rippe<br> <i>Ansatz (hinterer Skalenus):</i> 2. Rippe<br><i>Wirkung:</i> Beugung des Halses, Anhebung der 1. Rippe bei tiefer Inspiration, seitliche Beugung und Drehung des Halses<br> <i>Innervation:</i> vordere Äste der C3-C8 Halsnerven <br> <i>Vaskularisation:</i> untere Schilddrüsenarteria",
 		"baseImg": true
 	},
 	"Muscolo_STERNOCLEIDOMASTOIDEO": {
 		"Titolo": "Sternocleidomastoideus-Muskel",
-		"Descrizione": "<i>Herkunft (Sternalbauch):</i> Manubrium des Brustbeins<br><i>Herkunft (klavikularbauch):</i>&nbsp;drittel mediales des Schlüsselbeins<br> <i>Ansatz:</i> Warzenfortsatz des Schläfenbeins, Hinterhauptbein<br><i>Wirkung (beiseitig):</i> Beugung des Halses, Protraktion des Kopfes und Anhebung des Brustbeins und der Rippen während der Inspiration<br><i>Wirkung (einseitig):</i>&nbsp; Neigung und Drehung des Kopfes auf den Gegenseite&nbsp;<br> <i>Innervation:</i> akzessorischer Nerv XI<br> <i>Vaskularisation:</i> obere Schilddrüsenarterie",
+		"Descrizione": "<i>Herkunft (Sternalbauch):</i> Manubrium des Brustbeins<br><i>Herkunft (klavikularbauch):</i> drittel mediales des Schlüsselbeins<br> <i>Ansatz:</i> Warzenfortsatz des Schläfenbeins, Hinterhauptbein<br><i>Wirkung (beiseitig):</i> Beugung des Halses, Protraktion des Kopfes und Anhebung des Brustbeins und der Rippen während der Inspiration<br><i>Wirkung (einseitig):</i> Neigung und Drehung des Kopfes auf den Gegenseite <br> <i>Innervation:</i> akzessorischer Nerv XI<br> <i>Vaskularisation:</i> obere Schilddrüsenarterie",
 		"baseImg": true
 	},
 	"Muscolo_SPLENIO_DELLA_TESTA": {
@@ -190,22 +190,22 @@ DB_anatomia={
 	},
 	"Muscolo_OBLIQUO_ESTERNO": {
 		"Titolo": "Äußerer schräger Muskel",
-		"Descrizione": "<i>Herkunft:</i> 5. bis 12. Rippe<br> <i>Ansatz:</i> vorderer Teil des Beckenkamms und Linea alba<br> <i>Aktion:</i> Seitliche Beugung des Rumpfes, Druck des Bauches und Rotation des Rumpfes<br> <i>Innervation:</i>&nbsp;T5 und T12 seitliche kutane Äste<br> <i>Vaskularisation:</i>&nbsp;interkostale Arterie",
+		"Descrizione": "<i>Herkunft:</i> 5. bis 12. Rippe<br> <i>Ansatz:</i> vorderer Teil des Beckenkamms und Linea alba<br> <i>Aktion:</i> Seitliche Beugung des Rumpfes, Druck des Bauches und Rotation des Rumpfes<br> <i>Innervation:</i> T5 und T12 seitliche kutane Äste<br> <i>Vaskularisation:</i> interkostale Arterie",
 		"baseImg": true
 	},
 	"Muscolo_RETTO_DELL_ADDOME": {
 		"Titolo": "Rectus-Bauchmuskel",
-		"Descrizione": "<i>Herkunft:</i> Symphyse&nbsp; und Schambeinkamm<br> <i>Ansatz:</i> Schwertfortsatzverfahren, Rippenknorpel von 5. bis 7.<br> <i>Aktion:</i> Rumpfbeugung und Haltungsstabilisierung beim Gehen<br> <i>Innervation:</i> Spinalnerv (T5-T12), ventraler Ramus<br> <i>Vaskularisation:</i>&nbsp;untere epigastrische Arterie",
+		"Descrizione": "<i>Herkunft:</i> Symphyse und Schambeinkamm<br> <i>Ansatz:</i> Schwertfortsatzverfahren, Rippenknorpel von 5. bis 7.<br> <i>Aktion:</i> Rumpfbeugung und Haltungsstabilisierung beim Gehen<br> <i>Innervation:</i> Spinalnerv (T5-T12), ventraler Ramus<br> <i>Vaskularisation:</i> untere epigastrische Arterie",
 		"baseImg": true
 	},
 	"Muscolo_GRANDE_PSOAS": {
 		"Titolo": "Psoas-Major-Muskel",
-		"Descrizione": "<i>Herkunft:</i> Querfortsätze und Wirbeln von L1 bis L5, Wirbelkörper von T12 bis L5<br> <i>Ansatz:</i> kleinerer Trochanter des Oberschenkelknochens<br><i>Wirkung:</i> Hüftbeugung, Beugung des Oberschenkel und seitliche Rotation der Schenkel, Beugung des Rumpfes mit festem Ansatz<br> <i>Innervation:</i> Lendennerven (L1-L4)<br> <i>Vaskularisation:</i>&nbsp;Ilionlenden Arterie",
+		"Descrizione": "<i>Herkunft:</i> Querfortsätze und Wirbeln von L1 bis L5, Wirbelkörper von T12 bis L5<br> <i>Ansatz:</i> kleinerer Trochanter des Oberschenkelknochens<br><i>Wirkung:</i> Hüftbeugung, Beugung des Oberschenkel und seitliche Rotation der Schenkel, Beugung des Rumpfes mit festem Ansatz<br> <i>Innervation:</i> Lendennerven (L1-L4)<br> <i>Vaskularisation:</i> Ilionlenden Arterie",
 		"baseImg": true
 	},
 	"Muscolo_ILEO": {
 		"Titolo": "Hüftbein-Muskel",
-		"Descrizione": "<i>Herkunft:</i> Innenfläche des Hüftbeins<br> <i>Ansatz:</i> kleinerer Trochanter des Oberschenkelknochens<br><i>Wirkung:</i> Hüftbeugung, Beugung des Oberschenkels und seitliche Rotation, Beugung des Rumpfes mit festem Ansatz<br> <i>Innervation:</i>&nbsp;femorale Nerv (L1-L4)<br> <i>Vaskularisation:</i> mediale Zirkumflex-Femoralarterie",
+		"Descrizione": "<i>Herkunft:</i> Innenfläche des Hüftbeins<br> <i>Ansatz:</i> kleinerer Trochanter des Oberschenkelknochens<br><i>Wirkung:</i> Hüftbeugung, Beugung des Oberschenkels und seitliche Rotation, Beugung des Rumpfes mit festem Ansatz<br> <i>Innervation:</i> femorale Nerv (L1-L4)<br> <i>Vaskularisation:</i> mediale Zirkumflex-Femoralarterie",
 		"baseImg": true
 	},
 	"Muscolo_TRAPEZIO": {
@@ -215,7 +215,7 @@ DB_anatomia={
 	},
 	"Muscolo_ELEVATORE_DELLA_SCAPOLA": {
 		"Titolo": "Heber des Schulterblatts",
-		"Descrizione": "<i>Herkunft:</i> Querfortsätze von C1 bis C4<br> <i>Ansatz:</i> medialer oberer Rand des Schulterblatts<br><i>Wirkung:</i> Anheben und Zurückziehen des Schulterblatts<br> <i>Innervation:</i>&nbsp;Rückennerv des Schulterblatts, Halsnerven C3-C4<br> <i>Vaskularisation:</i>&nbsp;Rücken scapularis Arterie",
+		"Descrizione": "<i>Herkunft:</i> Querfortsätze von C1 bis C4<br> <i>Ansatz:</i> medialer oberer Rand des Schulterblatts<br><i>Wirkung:</i> Anheben und Zurückziehen des Schulterblatts<br> <i>Innervation:</i> Rückennerv des Schulterblatts, Halsnerven C3-C4<br> <i>Vaskularisation:</i> Rücken scapularis Arterie",
 		"baseImg": true
 	},
 	"Muscolo_DENTATO_ANTERIORE": {
@@ -225,250 +225,250 @@ DB_anatomia={
 	},
 	"Muscolo_PETTORALE": {
 		"Titolo": "Großer Brustmuskel",
-		"Descrizione": "<i>Herkunft:</i> Vorderer Rand des Schlüsselbeins, Vorderfläche des Brustbeins, Rippenknorpel von 1. bis 6.<br> <i>Ansatz:</i> Kamm des großes Tuberculum und seitliche Lippe der Sulcus bicipitalis des Humerus<br><i>Wirkung:</i> horizontale und schräge Adduktion des Arms, Beugung und mediale Rotation der Oberarmknochen<br> <i>Innervation:</i>&nbsp;seitliche pektorale Nerv (C5-C7),&nbsp; mediale seitiliche pektorale Nerven (C6-T1)<br> <i>Vaskularisation:</i>&nbsp;pektorale Ast der brustacromiale Arterie",
+		"Descrizione": "<i>Herkunft:</i> Vorderer Rand des Schlüsselbeins, Vorderfläche des Brustbeins, Rippenknorpel von 1. bis 6.<br> <i>Ansatz:</i> Kamm des großes Tuberculum und seitliche Lippe der Sulcus bicipitalis des Humerus<br><i>Wirkung:</i> horizontale und schräge Adduktion des Arms, Beugung und mediale Rotation der Oberarmknochen<br> <i>Innervation:</i> seitliche pektorale Nerv (C5-C7), mediale seitiliche pektorale Nerven (C6-T1)<br> <i>Vaskularisation:</i> pektorale Ast der brustacromiale Arterie",
 		"baseImg": true
 	},
 	"Muscolo_GRAN_DORSALE": {
 		"Titolo": "Großes dorsaler Muskel",
-		"Descrizione": "<i>Herkunft:</i> Dornfortsätze der Wirbel von T7 bis L5, Kreuzbein, Schulterblatt, Beckenkamm, Brust-Lenden-Faszie, Rippen von 9. bis 12.<br> <i>Ansatz:</i>&nbsp;Oberarmknochen, intertuberkuläre Falte<br><i>Wirkung:</i> Adduktion, Retroversion und mediale Rotation des Oberarmknochens, seitliche Flexion des Rumpfes<br> <i>Innervation:</i>&nbsp;rückenbruste Nerv, C6-C8-Ast<br> <i>Vaskularisation:</i>&nbsp; rückenbruste Arterie",
+		"Descrizione": "<i>Herkunft:</i> Dornfortsätze der Wirbel von T7 bis L5, Kreuzbein, Schulterblatt, Beckenkamm, Brust-Lenden-Faszie, Rippen von 9. bis 12.<br> <i>Ansatz:</i> Oberarmknochen, intertuberkuläre Falte<br><i>Wirkung:</i> Adduktion, Retroversion und mediale Rotation des Oberarmknochens, seitliche Flexion des Rumpfes<br> <i>Innervation:</i> rückenbruste Nerv, C6-C8-Ast<br> <i>Vaskularisation:</i> rückenbruste Arterie",
 		"baseImg": true
 	},
 	"Muscolo_DELTOIDE": {
 		"Titolo": "Deltamuskel",
-		"Descrizione": "<i>Herkunft (vorderer Kopf):</i> Schlüsselbein, seitliche Drittel<br><i>Herkunft (mittlerer Kopf):</i> Akromion<br><i>Herkunft (hinterer Kopf):</i> Wirbelsäule des Schulterblatts<br> <i>Ansatz:</i>&nbsp;Oberarmknochen, delta Knollenförmigkeit<br><i>Wirkung (vorderer Kopf):</i> Innenrotation und Flexion des Oberarmknochens<br><i>Wirkung (mittlerer Kopf):</i> Abduktion des Oberarmknochens<br><i>Wirkung (hinterer Kopf):</i>&nbsp;seitliche Rotation und Streckung des Oberarmknochens<br> <i>Innervation:</i>&nbsp;Achselnerv C5-C6<br> <i>Vaskularisation:</i> hintere zirkumflex-Arterie des Oberarmknochens",
+		"Descrizione": "<i>Herkunft (vorderer Kopf):</i> Schlüsselbein, seitliche Drittel<br><i>Herkunft (mittlerer Kopf):</i> Akromion<br><i>Herkunft (hinterer Kopf):</i> Wirbelsäule des Schulterblatts<br> <i>Ansatz:</i> Oberarmknochen, delta Knollenförmigkeit<br><i>Wirkung (vorderer Kopf):</i> Innenrotation und Flexion des Oberarmknochens<br><i>Wirkung (mittlerer Kopf):</i> Abduktion des Oberarmknochens<br><i>Wirkung (hinterer Kopf):</i> seitliche Rotation und Streckung des Oberarmknochens<br> <i>Innervation:</i> Achselnerv C5-C6<br> <i>Vaskularisation:</i> hintere zirkumflex-Arterie des Oberarmknochens",
 		"baseImg": true
 	},
 	"Muscolo_INFRASPINATO": {
 		"Titolo": "Infragrat-Muskel",
-		"Descrizione": "<i>Herkunft:</i> Schulterblatt, Fossa infraspinalis, hinterer Teil<br> <i>Ansatz: </i>Oberarmknochen, größer Knöchel&nbsp;<br> <i>Wirkung:</i> Seitliche Rotation des Oberarmknochens und Gelenkstabilisierung<br> <i>Innervation:</i>&nbsp;obere Schulterblatt Nerv C5-C6<br> <i>Vaskularisation:</i>&nbsp; obere Schulterblatte Arterie, zirkumflexe Arterie des Schulterblattes",
+		"Descrizione": "<i>Herkunft:</i> Schulterblatt, Fossa infraspinalis, hinterer Teil<br> <i>Ansatz: </i>Oberarmknochen, größer Knöchel <br> <i>Wirkung:</i> Seitliche Rotation des Oberarmknochens und Gelenkstabilisierung<br> <i>Innervation:</i> obere Schulterblatt Nerv C5-C6<br> <i>Vaskularisation:</i> obere Schulterblatte Arterie, zirkumflexe Arterie des Schulterblattes",
 		"baseImg": true
 	},
 	"Muscolo_PICCOLO_ROTONDO": {
 		"Titolo": "Rund und klein-Muskel",
-		"Descrizione": "<i>Herkunft:</i> Schulterblatt, seitlicher Rand<br> <i>Ansatz:</i>&nbsp;Oberarmknochen, großes Knollenförmigkeit<br><i>Wirkung:</i> Außenrotation des Oberarmknochens<br> <i>Innervation:</i>&nbsp;Achselnerv C5-C6<br> <i>Vaskularisation:</i>&nbsp;zirkumflexe Arterie des Schulterblatts&nbsp;",
+		"Descrizione": "<i>Herkunft:</i> Schulterblatt, seitlicher Rand<br> <i>Ansatz:</i> Oberarmknochen, großes Knollenförmigkeit<br><i>Wirkung:</i> Außenrotation des Oberarmknochens<br> <i>Innervation:</i> Achselnerv C5-C6<br> <i>Vaskularisation:</i> zirkumflexe Arterie des Schulterblatts",
 		"baseImg": true
 	},
 	"Muscolo_GRANDE_ROTONDO": {
 		"Titolo": "Rund und Großes Muskel",
-		"Descrizione": "<i>Herkunft:</i> Schulterblatt, Unterwinkel<br> <i>Ansatz:</i>&nbsp;Oberarmknochen, intertuberkuläre Furche<br><i>Wirkung:</i> Retropulsion und Adduktion des Oberarmknochens<br> <i>Innervation:</i>&nbsp;untereschulterblatte Nervus&nbsp;<br> <i>Vaskularisation:</i>&nbsp;zirkumflexe Arterie des Schulterblatts&nbsp;",
+		"Descrizione": "<i>Herkunft:</i> Schulterblatt, Unterwinkel<br> <i>Ansatz:</i> Oberarmknochen, intertuberkuläre Furche<br><i>Wirkung:</i> Retropulsion und Adduktion des Oberarmknochens<br> <i>Innervation:</i> untereschulterblatte Nervus <br> <i>Vaskularisation:</i> zirkumflexe Arterie des Schulterblatts",
 		"baseImg": true
 	},
 	"Muscolo_BICIPITE_BRACHIALE": {
 		"Titolo": "Bizeps-Brachial-Muskel",
-		"Descrizione": "<i>Herkunft (langer Kopf):</i> Schulterblatt,oberglenoideus Knötchen<br><i>Herkunft (kurzer Kopf):</i> Schulterblatt,Rabenbeinverfahren&nbsp;<br> <i>Ansatz:</i>&nbsp; radiale Knöllenförmigkeit und Aponeurose des Bizeps<br><i>Wirkung:</i> Beugung und Supination des Unterarms<br> <i>Innervation:</i> Muskel-Haut-Nerv C5-C6<br> <i>Vaskularisation:</i>brachiale Arterie&nbsp;",
+		"Descrizione": "<i>Herkunft (langer Kopf):</i> Schulterblatt,oberglenoideus Knötchen<br><i>Herkunft (kurzer Kopf):</i> Schulterblatt,Rabenbeinverfahren <br> <i>Ansatz:</i> radiale Knöllenförmigkeit und Aponeurose des Bizeps<br><i>Wirkung:</i> Beugung und Supination des Unterarms<br> <i>Innervation:</i> Muskel-Haut-Nerv C5-C6<br> <i>Vaskularisation:</i>brachiale Arterie",
 		"baseImg": true
 	},
 	"Muscolo_TRICIPITE_BRACHIALE": {
-		"Titolo": "brachiale Trizeps Muskel",
-		"Descrizione": "<i>Herkunft (lateraler Kopf):</i>&nbsp;Oberarmknochen, hintere Oberfläche<br><i>Herkunft (langer Kopf):</i> Schulterblatt, untereglenoideus Knötchen<br><i>Herkunft (medialer Kopf): </i>Oberarmknochen<i>,</i>&nbsp;hintere Oberfläche<br> <i>Ansatz:</i>&nbsp;Ellbogen, Olecranon<br><i>Wirkung:</i> Strecken des Unterarms<br> <i>Innervation:</i> Radialnerv C6-C8<br> <i>Vaskularisation:</i> tiefe brachiale Arterie",
+		"Titolo": "Brachiale Trizeps Muskel",
+		"Descrizione": "<i>Herkunft (lateraler Kopf):</i> Oberarmknochen, hintere Oberfläche<br><i>Herkunft (langer Kopf):</i> Schulterblatt, untereglenoideus Knötchen<br><i>Herkunft (medialer Kopf): </i>Oberarmknochen<i>,</i> hintere Oberfläche<br> <i>Ansatz:</i> Ellbogen, Olecranon<br><i>Wirkung:</i> Strecken des Unterarms<br> <i>Innervation:</i> Radialnerv C6-C8<br> <i>Vaskularisation:</i> tiefe brachiale Arterie",
 		"baseImg": true
 	},
 	"Muscolo_PRONATORE": {
-		"Titolo": "rund Pronation-Muskel",
-		"Descrizione": "<i>Herkunft:</i>&nbsp;Ellbogen, Kronoideus- und Oberarmknochenverfahren, medialer Epicondylus<br><i>Ansatz:</i> Radius, Mantelfläche<br><i>Wirkung:</i> Pronation und Flexion des Unterarms<br> <i>Innervation:</i>&nbsp;mittlere Nerv&nbsp; C6-C7<br> <i>Vaskularisation:</i>&nbsp;elle Arterie und radiale Arterie",
+		"Titolo": "Rund Pronation-Muskel",
+		"Descrizione": "<i>Herkunft:</i> Ellbogen, Kronoideus- und Oberarmknochenverfahren, medialer Epicondylus<br><i>Ansatz:</i> Radius, Mantelfläche<br><i>Wirkung:</i> Pronation und Flexion des Unterarms<br> <i>Innervation:</i> mittlere Nerv C6-C7<br> <i>Vaskularisation:</i> elle Arterie und radiale Arterie",
 		"baseImg": true
 	},
 	"Muscolo_PALMARE_LUNGO": {
-		"Titolo": "lange Handmuskel",
-		"Descrizione": "<i>Herkunft:</i>&nbsp;Oberarmknochen, medialer Epicondylus<br> <i>Ansatz:</i>Handsehnenhaut&nbsp;und Retinaculum&nbsp;<br><i>Wirkung:</i> Beugung der Hand und Spannung des Netzhautes<br> <i>Innervation:</i>&nbsp;mittlere Nerv C6-C7<br> <i>Vaskularisation:</i>&nbsp;elle Arteria&nbsp;",
+		"Titolo": "Lange Handmuskel",
+		"Descrizione": "<i>Herkunft:</i> Oberarmknochen, medialer Epicondylus<br> <i>Ansatz:</i>Handsehnenhaut und Retinaculum <br><i>Wirkung:</i> Beugung der Hand und Spannung des Netzhautes<br> <i>Innervation:</i> mittlere Nerv C6-C7<br> <i>Vaskularisation:</i> elle Arteria",
 		"baseImg": true
 	},
 	"Muscolo_FLESSORI_SUPERFICIALI_DITA": {
 		"Titolo": "Oberflächliche Beugemuskeln der Finger",
-		"Descrizione": "<i>Herkunft:</i>&nbsp;Oberarmknochen, medialer Epicondylus und Ellebogen, kronoideus Verfahren, Radius, radiale Knötchen<br> <i>Ansatz:</i> mittlere Fingerglieder vom 2. bis 5. Finger, Vorderflächen<br><i>Wirkung:</i> Beugung des Handgelenks und der Finger vom 2. bis 5.<br> <i>Innervation:</i>&nbsp;mittlere Nerv&nbsp; C7-T1<br> <i>Vaskularisation:</i>&nbsp;elle Arterie",
+		"Descrizione": "<i>Herkunft:</i> Oberarmknochen, medialer Epicondylus und Ellebogen, kronoideus Verfahren, Radius, radiale Knötchen<br> <i>Ansatz:</i> mittlere Fingerglieder vom 2. bis 5. Finger, Vorderflächen<br><i>Wirkung:</i> Beugung des Handgelenks und der Finger vom 2. bis 5.<br> <i>Innervation:</i> mittlere Nerv C7-T1<br> <i>Vaskularisation:</i> elle Arterie",
 		"baseImg": true
 	},
 	"Muscolo_FLESSORE_RADIALE_CARPO": {
-		"Titolo": "radiale Beugemuskel des Handwurzels",
-		"Descrizione": "<i>Herkunft:</i>&nbsp;Oberarmknochen, medialer Epicondylus<br> <i>Ansatz:</i> 2. und 3. Mittelhandknochen, Vorderfläche<br><i>Wirkung:</i> Abduktion und Beugung der Hand<br> <i>Innervation:</i>&nbsp;mittlere Nerv&nbsp; C6-C7<br> <i>Vaskularisation:</i>&nbsp;elle Arterie",
+		"Titolo": "Radiale Beugemuskel des Handwurzels",
+		"Descrizione": "<i>Herkunft:</i> Oberarmknochen, medialer Epicondylus<br> <i>Ansatz:</i> 2. und 3. Mittelhandknochen, Vorderfläche<br><i>Wirkung:</i> Abduktion und Beugung der Hand<br> <i>Innervation:</i> mittlere Nerv C6-C7<br> <i>Vaskularisation:</i> elle Arterie",
 		"baseImg": true
 	},
 	"Muscolo_FLESSORE_ULNARE_CARPO": {
-		"Titolo": "ellbogische Handmuskel des Handwurzels",
-		"Descrizione": "<i>Herkunft:</i>&nbsp;Oberarmknochen, medialer Epicondylus und Ellbogen, Olekranon<br> <i>Ansatz:</i>&nbsp;pisiformige Knochen<br><i>Wirkung:</i> Adduktion der Hand und Beugung des Handgelenks<br> <i>Innervation:</i>&nbsp;ellbogische Nerv C7-C8<br> <i>Vaskularisation:</i>&nbsp;ellbogische Arterie&nbsp;",
+		"Titolo": "Ellbogische Handmuskel des Handwurzels",
+		"Descrizione": "<i>Herkunft:</i> Oberarmknochen, medialer Epicondylus und Ellbogen, Olekranon<br> <i>Ansatz:</i> pisiformige Knochen<br><i>Wirkung:</i> Adduktion der Hand und Beugung des Handgelenks<br> <i>Innervation:</i> ellbogische Nerv C7-C8<br> <i>Vaskularisation:</i> ellbogische Arterie",
 		"baseImg": true
 	},
 	"Muscolo_BRACHIORADIALE": {
 		"Titolo": "Brachioradiale Muskel",
-		"Descrizione": "<i>Herkunft:</i>&nbsp;Oberarmknochen, seitlicher obergelenkische Kamm<br> <i>Ansatz:</i> Radius, stiloide Verfahren<br><i>Wirkung:</i> Beugung des Unterarms<br> <i>Innervation:</i> Radialnerv C5-C6<br> <i>Vaskularisation:</i>&nbsp;radiale wiederkehrende Arterie",
+		"Descrizione": "<i>Herkunft:</i> Oberarmknochen, seitlicher obergelenkische Kamm<br> <i>Ansatz:</i> Radius, stiloide Verfahren<br><i>Wirkung:</i> Beugung des Unterarms<br> <i>Innervation:</i> Radialnerv C5-C6<br> <i>Vaskularisation:</i> radiale wiederkehrende Arterie",
 		"baseImg": true
 	},
 	"Muscolo_ESTENSORE_RADIALE_LUNGO_CARPO": {
 		"Titolo": "Lange radiale Streckmuskel des Handwurzels",
-		"Descrizione": "<i>Herkunft:</i>&nbsp;Oberarmknochen, seitlicher suprakondylärer Kamm<br> <i>Ansatz:</i> 2. Mittelhandknochen, Rückenfläche<br><i>Wirkung:</i> Abduktion und Strecken des Handgelenks<br> <i>Innervation:</i> Radialnerv C6-C7<br> <i>Vaskularisation:</i>&nbsp;radiale Arterie",
+		"Descrizione": "<i>Herkunft:</i> Oberarmknochen, seitlicher suprakondylärer Kamm<br> <i>Ansatz:</i> 2. Mittelhandknochen, Rückenfläche<br><i>Wirkung:</i> Abduktion und Strecken des Handgelenks<br> <i>Innervation:</i> Radialnerv C6-C7<br> <i>Vaskularisation:</i> radiale Arterie",
 		"baseImg": true
 	},
 	"Muscolo_ESTENSORE_RADIALE_BREVE_CARPO": {
-		"Titolo": "kurze radiale Streckmuskel des Handwurzels&nbsp;",
-		"Descrizione": "<i>Herkunft:</i>&nbsp;Oberarmknochen, lateraler Epicondylus<br> <i>Ansatz:</i> 3. Mittelhandknochen, Rückenfläche<br><i>Wirkung:</i> Abduktion und Streckung des Handgelenks<br> <i>Innervation:</i> Radialnerv C6-C7<br> <i>Vaskularisation:</i>&nbsp;radiale Arterie&nbsp;",
+		"Titolo": "Kurze radiale Streckmuskel des Handwurzels",
+		"Descrizione": "<i>Herkunft:</i> Oberarmknochen, lateraler Epicondylus<br> <i>Ansatz:</i> 3. Mittelhandknochen, Rückenfläche<br><i>Wirkung:</i> Abduktion und Streckung des Handgelenks<br> <i>Innervation:</i> Radialnerv C6-C7<br> <i>Vaskularisation:</i> radiale Arterie",
 		"baseImg": true
 	},
 	"Muscolo_ESTENSORE_ULNARE_CARPO": {
 		"Titolo": "Ellbogische Streckmuskel des Handwurzels",
-		"Descrizione": "<i>Herkunft:</i>&nbsp;Oberarmknochen, lateraler Epikondylus und Ellbogen, Rückenfläche<br> <i>Ansatz:</i> 5. Mittelhandknochen,&nbsp; ellbogische Seite des Knötchens<br><i>Wirkung:</i> Adduktion und Extension des Handgelenks<br> <i>Innervation:</i> Radialnerv C6-C8, Radiale Ast&nbsp;<br> <i>Vaskularisation:</i>&nbsp;ellbogische Arterie",
+		"Descrizione": "<i>Herkunft:</i> Oberarmknochen, lateraler Epikondylus und Ellbogen, Rückenfläche<br> <i>Ansatz:</i> 5. Mittelhandknochen, ellbogische Seite des Knötchens<br><i>Wirkung:</i> Adduktion und Extension des Handgelenks<br> <i>Innervation:</i> Radialnerv C6-C8, Radiale Ast <br> <i>Vaskularisation:</i> ellbogische Arterie",
 		"baseImg": true
 	},
 	"Muscolo_ESTENSORE_COMUNE_DITA": {
-		"Titolo": "gemeine Streckmuskel des Fingers&nbsp;",
-		"Descrizione": "<i>Herkunft:</i>&nbsp;Oberarmknochen, lateraler Epicondylus<br> <i>Ansatz:</i>&nbsp;distale Streckmuskeln der Finger vom 2. bis 5., Rückenflächen<br><i>Wirkung:</i> Streckung des Handgelenks und der Finger vom 2. bis 5.<br> <i>Innervation:</i> Radialnerv C7-C8<br> <i>Vaskularisation:</i>&nbsp;hintere zwischenknochene Arterie&nbsp;",
+		"Titolo": "Gemeine Streckmuskel des Fingers",
+		"Descrizione": "<i>Herkunft:</i> Oberarmknochen, lateraler Epicondylus<br> <i>Ansatz:</i> distale Streckmuskeln der Finger vom 2. bis 5., Rückenflächen<br><i>Wirkung:</i> Streckung des Handgelenks und der Finger vom 2. bis 5.<br> <i>Innervation:</i> Radialnerv C7-C8<br> <i>Vaskularisation:</i> hintere zwischenknochene Arterie",
 		"baseImg": true
 	},
 	"Muscolo_OPPONENTE_POLLICE": {
 		"Titolo": "Gegnerischemuskel des Daumens",
-		"Descrizione": "<i>Herkunft:</i> Kahnbein, Trapezknochen und Retinaculum des Beuges<br> <i>Ansatz:</i> Erster Mittelhandknochen, Seitenfläche<br><i>Wirkung:</i>&nbsp;einwendbar Daumen<br> <i>Innervation:</i>&nbsp;mittlere Nerv C8-T1<br> <i>Vaskularisation:</i>&nbsp;radiale Arterie",
+		"Descrizione": "<i>Herkunft:</i> Kahnbein, Trapezknochen und Retinaculum des Beuges<br> <i>Ansatz:</i> Erster Mittelhandknochen, Seitenfläche<br><i>Wirkung:</i> einwendbar Daumen<br> <i>Innervation:</i> mittlere Nerv C8-T1<br> <i>Vaskularisation:</i> radiale Arterie",
 		"baseImg": true
 	},
 	"Muscolo_ADDUTTORE_POLLICE": {
 		"Titolo": "Adduktormuskel des Daumens",
-		"Descrizione": "<i>Herkunft:</i> 2. und 3. Mittelhandknochen, Vorderfläche, Schädel- und Trapezknochen<br> <i>Ansatz:</i> Grundglied des 1. Fingers, mediale Oberfläche<br><i>Wirkung:</i> Adduktion des Daumens<br> <i>Innervation:</i>&nbsp;ellbogische Nerv C8-T1, tiefer Ast<br> <i>Vaskularisation:</i> tiefer handarterieller Bogen",
+		"Descrizione": "<i>Herkunft:</i> 2. und 3. Mittelhandknochen, Vorderfläche, Schädel- und Trapezknochen<br> <i>Ansatz:</i> Grundglied des 1. Fingers, mediale Oberfläche<br><i>Wirkung:</i> Adduktion des Daumens<br> <i>Innervation:</i> ellbogische Nerv C8-T1, tiefer Ast<br> <i>Vaskularisation:</i> tiefer handarterieller Bogen",
 		"baseImg": true
 	},
 	"Muscolo_INTEROSSEI_DORSALI_MANO": {
 		"Titolo": "Dorsale Interknochige-Muskeln der Hand",
-		"Descrizione": "<i>Herkunft: </i>interne Aspekt des Mittelhandknochen<br><i>Ansatz:</i> proximale Phalangen der Finger vom 2 bis 5 und Retinaculum des Streckers<br><i>Wirkung:</i> Entführung der Ziffern vom 2. bis 4. im Vergleich zu der 3. Ziffer<br> <i>Innervation: </i>ellbogische&nbsp;Nerv C8-T1<br> <i>Vaskularisation:</i> dorsale und palmare Mittelhandarterie"
+		"Descrizione": "<i>Herkunft: </i>interne Aspekt des Mittelhandknochen<br><i>Ansatz:</i> proximale Phalangen der Finger vom 2 bis 5 und Retinaculum des Streckers<br><i>Wirkung:</i> Entführung der Ziffern vom 2. bis 4. im Vergleich zu der 3. Ziffer<br> <i>Innervation: </i>ellbogische Nerv C8-T1<br> <i>Vaskularisation:</i> dorsale und palmare Mittelhandarterie"
 	},
 	"Muscolo_LOMBRICALI": {
 		"Titolo": "Lendenmuskeln",
-		"Descrizione": "<i>Herkunft:</i> Sehnen der tiefen Beugemuskulatur der Hand<br> <i>Ansatz:</i> Sehnen der Streckmuskeln der Finger<br> <i>Wirkung:</i> Streckung der Intergliedgelenke, Beugung der Mittelhandfingergliedgelenke<br> <i>Innervation:</i>&nbsp;mittlere Nerv&nbsp; C6-T1, ellbogische Nerv C7-T1<br> <i>Vaskularisation:</i> dorsale und palmare Fingerarterien",
+		"Descrizione": "<i>Herkunft:</i> Sehnen der tiefen Beugemuskulatur der Hand<br> <i>Ansatz:</i> Sehnen der Streckmuskeln der Finger<br> <i>Wirkung:</i> Streckung der Intergliedgelenke, Beugung der Mittelhandfingergliedgelenke<br> <i>Innervation:</i> mittlere Nerv C6-T1, ellbogische Nerv C7-T1<br> <i>Vaskularisation:</i> dorsale und palmare Fingerarterien",
 		"baseImg": true
 	},
 	"Muscolo_ABDUTTORE_MIGNOLO_MANO": {
-		"Titolo": "Abduktormuskel der kleiner Finger&nbsp;",
-		"Descrizione": "<i>Herkunft:</i>&nbsp;pisiformische Knochen<br> <i>Ansatz:</i> Grundglied des 5. Fingers, mediale Seite<br><i>Wirkung:</i> Entführung des 5. Fingers<br> <i>Innervation:</i>&nbsp;ellbogische Nerv C8-T1, tiefer Ast<br> <i>Vaskularisation: </i>ellbogische&nbsp;Arterie",
+		"Titolo": "Abduktormuskel der kleiner Finger",
+		"Descrizione": "<i>Herkunft:</i> pisiformische Knochen<br> <i>Ansatz:</i> Grundglied des 5. Fingers, mediale Seite<br><i>Wirkung:</i> Entführung des 5. Fingers<br> <i>Innervation:</i> ellbogische Nerv C8-T1, tiefer Ast<br> <i>Vaskularisation: </i>ellbogische Arterie",
 		"baseImg": true
 	},
 	"Muscolo_GRANDE_GLUTEO": {
 		"Titolo": "Großes Gesäßmuskel",
-		"Descrizione": "<i>Herkunft:</i> Beckenknochen, hintere Gesäßlinie, Kreuzbein, Steißbein, kreuzknollenartige Band, kreuzspinale Sehnenhaut<br> <i>Ansatz:</i>&nbsp;Streckmuskel des seitliche Linie, untere Fasern der Gesäßknolligkeit<br><i>Wirkung:</i> Die untere Extremität wird gestreckt, abduziert und seitlich gedreht<br> <i>Innervation:</i>&nbsp;untere gesäßliche Nerv L5-S2<br> <i>Vaskularisation:</i> obere und untere Gesäßarterien",
+		"Descrizione": "<i>Herkunft:</i> Beckenknochen, hintere Gesäßlinie, Kreuzbein, Steißbein, kreuzknollenartige Band, kreuzspinale Sehnenhaut<br> <i>Ansatz:</i> Streckmuskel des seitliche Linie, untere Fasern der Gesäßknolligkeit<br><i>Wirkung:</i> Die untere Extremität wird gestreckt, abduziert und seitlich gedreht<br> <i>Innervation:</i> untere gesäßliche Nerv L5-S2<br> <i>Vaskularisation:</i> obere und untere Gesäßarterien",
 		"baseImg": true
 	},
 	"Muscolo_TENSORE_DELLA_FASCIA_LATA": {
 		"Titolo": "Streckmuskel der seitliche Stränge",
-		"Descrizione": "<i>Herkunft:</i> Spina iliaca anterior superior<br> <i>Ansatz:</i>&nbsp;Ileusschienbeine Strich<br> <i>Wirkung:</i> Spannt die seitliche Stränge an,&nbsp; dreht sich um und abduziert den Oberschenkel<br> <i>Innervation:</i>&nbsp;oberegesäße Nerv L4-S1<br> <i>Vaskularisierung:</i>&nbsp;zirkumflex-oberschenkelknochige Arterie und obere Gesäßarterie",
+		"Descrizione": "<i>Herkunft:</i> Spina iliaca anterior superior<br> <i>Ansatz:</i> Ileusschienbeine Strich<br> <i>Wirkung:</i> Spannt die seitliche Stränge an, dreht sich um und abduziert den Oberschenkel<br> <i>Innervation:</i> oberegesäße Nerv L4-S1<br> <i>Vaskularisierung:</i> zirkumflex-oberschenkelknochige Arterie und obere Gesäßarterie",
 		"baseImg": true
 	},
 	"Muscolo_PICCOLO_GLUTEO": {
-		"Titolo": "kleines Gesäßmuskel",
-		"Descrizione": "<i>Herkunft:</i> Beckenknochen, unterhalb des Herkunft des mittlere Gesäß<br> <i>Ansatz: </i>Oberschenkelknochen, großer Rollhocker, Vorderfläche<br><i>Wirkung:</i> Abduktion des Oberschenkels und Stabilisierung der Hüfte<br> <i>Innervation:</i>&nbsp;obere Gesäßnerv L4-S1<br> <i>Vaskularisation:</i>&nbsp;obere Gesäßarterie",
+		"Titolo": "Kleines Gesäßmuskel",
+		"Descrizione": "<i>Herkunft:</i> Beckenknochen, unterhalb des Herkunft des mittlere Gesäß<br> <i>Ansatz: </i>Oberschenkelknochen, großer Rollhocker, Vorderfläche<br><i>Wirkung:</i> Abduktion des Oberschenkels und Stabilisierung der Hüfte<br> <i>Innervation:</i> obere Gesäßnerv L4-S1<br> <i>Vaskularisation:</i> obere Gesäßarterie",
 		"baseImg": true
 	},
 	"Muscolo_SEMIMEMBRANOSO": {
 		"Titolo": "Semifell-Muskel",
-		"Descrizione": "<i>Ursprung:</i> Sitzbeinhöcker<br> <i>Ansatz:</i> Tibia, medialer Gelenkkopf<br><i>Wirkung:</i> Beugung und mediale Rotation des Beins<br> <i>Innervation:</i> Schienbeinnerv L5-S2<br> <i>Vaskularisation:</i>&nbsp;tiefe Arterie des Oberarmknochens und&nbsp; untere Gesäßarterie",
+		"Descrizione": "<i>Ursprung:</i> Sitzbeinhöcker<br> <i>Ansatz:</i> Tibia, medialer Gelenkkopf<br><i>Wirkung:</i> Beugung und mediale Rotation des Beins<br> <i>Innervation:</i> Schienbeinnerv L5-S2<br> <i>Vaskularisation:</i> tiefe Arterie des Oberarmknochens und untere Gesäßarterie",
 		"baseImg": true
 	},
 	"Muscolo_SEMITENDINOSO": {
 		"Titolo": "Halbsehnige Muskel",
-		"Descrizione": "<i>Herkunft:</i> Sitzbeinhöcker<br> <i>Ansatz:</i> Tibia, mediale Oberfläche des proximalen Diaphyse&nbsp;<br><i>Wirkung:</i> Beugung des Beins<br> <i>Innervation:</i> Schienbeinnerv L5-S2<br> <i>Vaskularisation: </i>tiefe&nbsp;Arterie des Oberschenkelknochens und untere Gesäßarterie",
+		"Descrizione": "<i>Herkunft:</i> Sitzbeinhöcker<br> <i>Ansatz:</i> Tibia, mediale Oberfläche des proximalen Diaphyse <br><i>Wirkung:</i> Beugung des Beins<br> <i>Innervation:</i> Schienbeinnerv L5-S2<br> <i>Vaskularisation: </i>tiefe Arterie des Oberschenkelknochens und untere Gesäßarterie",
 		"baseImg": true
 	},
 	"Muscolo_BICIPITE_FEMORALE": {
 		"Titolo": "Bizeps-Oberschenkel-Muskel",
-		"Descrizione": "<i>Herkunft (kurzer Kopf):</i>&nbsp;Oberschenkelknochen, sauere Linie<br> <i>Herkunft (langer Kopf):</i> Sitzbeinhöcker<br> <i>Ansatz:</i> Wadenbeinkopf, Seitenfläche<br> <i>Aktion:</i> Beugung und seitliche Drehung des Beins<br> <i>Innervation:</i>&nbsp;wadenbeine Nerv L5-S2, schienbeine Nerv S1-S3<br> <i>Vaskularisation:</i>&nbsp;tiefe Arterie des Oberschenkelknochens und untere Gesäßarterie",
+		"Descrizione": "<i>Herkunft (kurzer Kopf):</i> Oberschenkelknochen, sauere Linie<br> <i>Herkunft (langer Kopf):</i> Sitzbeinhöcker<br> <i>Ansatz:</i> Wadenbeinkopf, Seitenfläche<br> <i>Aktion:</i> Beugung und seitliche Drehung des Beins<br> <i>Innervation:</i> wadenbeine Nerv L5-S2, schienbeine Nerv S1-S3<br> <i>Vaskularisation:</i> tiefe Arterie des Oberschenkelknochens und untere Gesäßarterie",
 		"baseImg": true
 	},
 	"Muscolo_GRANDE_ADDUTTORE": {
 		"Titolo": "Großes Adduktormuskel",
-		"Descrizione": "<i>Herkunft:</i> Sitzbein und Schambein, Unterflächen<br> <i>Ansatz:</i>&nbsp;Oberschenkelknochen, sauere Linie und Knötchen des Adduktors<br><i>Wirkung:</i> Adduktion und mediale Rotation des Oberschenkels<br> <i>Innervation: </i>Verschlüssnerv L3-L4 und Ischiasnerv<br> <i>Vaskularisation:</i> tiefe Oberschenkelarterie",
+		"Descrizione": "<i>Herkunft:</i> Sitzbein und Schambein, Unterflächen<br> <i>Ansatz:</i> Oberschenkelknochen, sauere Linie und Knötchen des Adduktors<br><i>Wirkung:</i> Adduktion und mediale Rotation des Oberschenkels<br> <i>Innervation: </i>Verschlüssnerv L3-L4 und Ischiasnerv<br> <i>Vaskularisation:</i> tiefe Oberschenkelarterie",
 		"baseImg": true
 	},
 	"Muscolo_ADDUTTORE_LUNGO": {
 		"Titolo": "Lange Adduktormuskel",
-		"Descrizione": "<i>Herkunft:</i> oberer vorderer Schambeinstachel<br> <i>Ansatz:</i>&nbsp;Oberschenkelknochen, seitliche Linie<br><i>Wirkung:</i> Adduktion und mediale Rotation des Oberschenkels<br> <i>Innervation:</i>&nbsp;Verschlüssnerv L3-L4 und Ischiasnerv<br> <i>Vaskularisation:</i> tiefe Oberschenkelarterie",
+		"Descrizione": "<i>Herkunft:</i> oberer vorderer Schambeinstachel<br> <i>Ansatz:</i> Oberschenkelknochen, seitliche Linie<br><i>Wirkung:</i> Adduktion und mediale Rotation des Oberschenkels<br> <i>Innervation:</i> Verschlüssnerv L3-L4 und Ischiasnerv<br> <i>Vaskularisation:</i> tiefe Oberschenkelarterie",
 		"baseImg": true
 	},
 	"Muscolo_GRACILE": {
 		"Titolo": "Mager Muskel",
-		"Descrizione": "<i>Herkunft:</i> Schambeinfuge und Schambein<br> <i>Ansatz:</i> Tibia, mediale Oberfläche des proximalen Diaphyse<br><i>Wirkung:</i> Adduktion und mediale Rotation des Oberschenkels, Beugung des Beins<br> <i>Innervation:</i>&nbsp;Verschlüssnerv L3-L4<br> <i>Vaskularisation:</i>&nbsp;Verschlüssarterie"
+		"Descrizione": "<i>Herkunft:</i> Schambeinfuge und Schambein<br> <i>Ansatz:</i> Tibia, mediale Oberfläche des proximalen Diaphyse<br><i>Wirkung:</i> Adduktion und mediale Rotation des Oberschenkels, Beugung des Beins<br> <i>Innervation:</i> Verschlüssnerv L3-L4<br> <i>Vaskularisation:</i> Verschlüssarterie"
 	},
 	"Muscolo_PETTINEO": {
 		"Titolo": "Pektenmuskel",
-		"Descrizione": "<i>Herkunft:</i> Schambein, pekte Linie<br> <i>Ansatz:</i>&nbsp;Oberarmknochen, hintere Oberfläche<br><i>Wirkung:</i> Adduktion und mediale Rotation des Oberschenkels, Beugung des Beins<br> <i>Innervation:</i>&nbsp;oberschenkelknochige Nerv L2-L3 und Verschlüssnerv<br> <i>Vaskularisation:</i> mediale zirkumflex-oberschenkel Arterie",
+		"Descrizione": "<i>Herkunft:</i> Schambein, pekte Linie<br> <i>Ansatz:</i> Oberarmknochen, hintere Oberfläche<br><i>Wirkung:</i> Adduktion und mediale Rotation des Oberschenkels, Beugung des Beins<br> <i>Innervation:</i> oberschenkelknochige Nerv L2-L3 und Verschlüssnerv<br> <i>Vaskularisation:</i> mediale zirkumflex-oberschenkel Arterie",
 		"baseImg": true
 	},
 	"Muscolo_SARTORIO": {
 		"Titolo": "Schneidermuskel",
-		"Descrizione": "<i>Ursprung:</i>&nbsp;obere vordere Hüftbeinrück<br> <i>Ansatz:</i> Tibia, mediale Oberfläche des proximalen Diaphyse<br><i>Wirkung:</i> Adduktion und mediale Rotation des Oberschenkels, Beugung des Beins<br> <i>Innervation:</i>&nbsp;oberschenkelnerv L2-L3<br> <i>Vaskularisation: </i>tiefe oberschenkel&nbsp;Arterie und absteigende Genarterie, rosenadere Ast",
+		"Descrizione": "<i>Ursprung:</i> obere vordere Hüftbeinrück<br> <i>Ansatz:</i> Tibia, mediale Oberfläche des proximalen Diaphyse<br><i>Wirkung:</i> Adduktion und mediale Rotation des Oberschenkels, Beugung des Beins<br> <i>Innervation:</i> oberschenkelnerv L2-L3<br> <i>Vaskularisation: </i>tiefe oberschenkel Arterie und absteigende Genarterie, rosenadere Ast",
 		"baseImg": true
 	},
 	"Muscolo_RETTO": {
 		"Titolo": "Rektum Muskel des Oberschenkelknochens (Oberschenkel vierköpfiger Schenkelstrecker)",
-		"Descrizione": "<p><i>Herkunft:</i> stammt aus dem AIIS (untere vordere Beckenwirbelsäule)<br><i>Ansatz:</i> wird in die Schienbeinrunzligkeit eingeführt (zusammen mit den anderen drei Köpfen des femoral vierköpfiger Schenkelstreckers)</p><p><i>Wirkung:&nbsp;</i> Beugt den Oberschenkel an der Hüfte und streckt das Bein am Knie und spielt eine entscheidende Rolle beim Gehen und der Aufrechterhaltung einer aufrechten Haltung. Es handelt sich um einen Streckmuskel.</p><p> <i>Innervation:</i> innerviert durch den femorales Nerv (L2, L4)<br> <i>Vaskularisation:</i> versorgt durch die Oberschenkelarterie.</p>",
-		"baseImg": "Femoral vierköpfiger Schenkelstrecher Muskel&nbsp;"
+		"Descrizione": "<p><i>Herkunft:</i> stammt aus dem AIIS (untere vordere Beckenwirbelsäule)<br><i>Ansatz:</i> wird in die Schienbeinrunzligkeit eingeführt (zusammen mit den anderen drei Köpfen des femoral vierköpfiger Schenkelstreckers)</p><p><i>Wirkung: </i> Beugt den Oberschenkel an der Hüfte und streckt das Bein am Knie und spielt eine entscheidende Rolle beim Gehen und der Aufrechterhaltung einer aufrechten Haltung. Es handelt sich um einen Streckmuskel.</p><p> <i>Innervation:</i> innerviert durch den femorales Nerv (L2, L4)<br> <i>Vaskularisation:</i> versorgt durch die Oberschenkelarterie.</p>",
+		"baseImg": "Muscolo_QUADRICIPITE_FEMORALE"
 	},
 	"Muscolo_VASTO_LATERALE": {
 		"Titolo": "Großes seitliche Muskel (femoral vierköpfiger Schenkelstrecher)",
-		"Descrizione": "<p><i>Herkunft:</i> stammt von der Seitenfläche und dem Vorderrand des großes Rollhocker&nbsp; und der seitlichen Lippe der sauere Linie des Oberschenkelknochens<br> <i>Ansatz:</i> Wird mit einer gemeinsamen Sehne, die mit den anderen Köpfen des vierköpfiger Schenkelstrecher geteilt wird, in die Kniescheibe eingeführt<br><i>Wirkung:</i> Funktion zum Strecken des Beins<br> <i>Innervation:</i> innerviert durch den femoral Nerv (L2, L4)<br> <i>Vaskularisation:</i> versorgt durch die Oberschenkelarterie</p>",
-		"baseImg": "Femoral vierköpfiger Schenkelstrecher Muskel&nbsp;"
+		"Descrizione": "<p><i>Herkunft:</i> stammt von der Seitenfläche und dem Vorderrand des großes Rollhocker und der seitlichen Lippe der sauere Linie des Oberschenkelknochens<br> <i>Ansatz:</i> Wird mit einer gemeinsamen Sehne, die mit den anderen Köpfen des vierköpfiger Schenkelstrecher geteilt wird, in die Kniescheibe eingeführt<br><i>Wirkung:</i> Funktion zum Strecken des Beins<br> <i>Innervation:</i> innerviert durch den femoral Nerv (L2, L4)<br> <i>Vaskularisation:</i> versorgt durch die Oberschenkelarterie</p>",
+		"baseImg": "Muscolo_QUADRICIPITE_FEMORALE"
 	},
 	"Muscolo_VASTO_MEDIALE": {
-		"Titolo": "mediale Großes Muskel (vierköpfiger Schenkelstrecher)",
+		"Titolo": "Mediale Großes Muskel (vierköpfiger Schenkelstrecher)",
 		"Descrizione": "<p><i>Herkunft:</i> entspringt der medialen Lippe der sauere Linie<br> <i>Ansatz:</i> Wird mit einer gemeinsamen Sehne, die mit den anderen Köpfen geteilt wird, in die Kniescheibe eingeführt<br> <i>Wirkung:</i> Mit seiner Wirkung streckt es das Bein und stabilisiert die Kniescheibe, wodurch eine seitliche Luxation verhindert wird<br> <i>Innervation:</i> innerviert durch den femorales Nerv (L2, L4)<br> <i>Vaskularisation:</i> versorgt durch die Oberschenkelarterie</p>",
-		"baseImg": "Femoral vierköpfiger Schenkelstrecher"
+		"baseImg": "Muscolo_QUADRICIPITE_FEMORALE"
 	},
 	"Muscolo_TIBIALE_ANTERIORE": {
 		"Titolo": "Vorderer Schienbeinmuskel",
-		"Descrizione": "<i>Herkunft:</i> Tibia, lateraler Gelenkkopf und laterale Oberfläche der proximalen Diaphyse<br> <i>Ansatz:</i> 1. Mittelfußknochen und mediales Keilbein, mediale Oberfläche<br><i>Wirkung:</i> Dorsalflexion und Inversion des Fußes<br> <i>Innervation:</i> tiefer Wadenbeinnerv (L4-S1)<br> <i>Vaskularisation:</i>&nbsp;vordere Schienbeinarterie",
+		"Descrizione": "<i>Herkunft:</i> Tibia, lateraler Gelenkkopf und laterale Oberfläche der proximalen Diaphyse<br> <i>Ansatz:</i> 1. Mittelfußknochen und mediales Keilbein, mediale Oberfläche<br><i>Wirkung:</i> Dorsalflexion und Inversion des Fußes<br> <i>Innervation:</i> tiefer Wadenbeinnerv (L4-S1)<br> <i>Vaskularisation:</i> vordere Schienbeinarterie",
 		"baseImg": true
 	},
 	"Muscolo_ESTENSORE_LUNGO_DITA": {
 		"Titolo": "Langer Streckmuskel der Zehen",
-		"Descrizione": "<i>Herkunft:</i> Tibia, lateraler Gelenkkopf, laterale Oberfläche der proximalen Diaphyse und hinterknochen Fell&nbsp;<br> <i>Ansatz:</i>&nbsp;distaler Glied der 2. bis 5. Zehe<br><i>Wirkung:</i> Streckung der Zehen und Dorsalflexion des Fußes<br> <i>Innervation:</i> tiefer Wadenbeinnerv (L4-S1)<br> <i>Vaskularisation:</i>&nbsp;vordere Schienbeinarterie&nbsp;",
+		"Descrizione": "<i>Herkunft:</i> Tibia, lateraler Gelenkkopf, laterale Oberfläche der proximalen Diaphyse und hinterknochen Fell <br> <i>Ansatz:</i> distaler Glied der 2. bis 5. Zehe<br><i>Wirkung:</i> Streckung der Zehen und Dorsalflexion des Fußes<br> <i>Innervation:</i> tiefer Wadenbeinnerv (L4-S1)<br> <i>Vaskularisation:</i> vordere Schienbeinarterie",
 		"baseImg": true
 	},
 	"Muscolo_ESTENSORE_LUNGO_ALLUCE": {
 		"Titolo": "Langer Streckmuskel der großen Zehe",
-		"Descrizione": "<i>Herkunft:</i> Wadenbein, Vorderfläche und hinterknochen Fell<br> <i>Ansatz:</i> 1. Zehe (Großzehe), Rückenfläche der Endglied<br><i>Wirkung:</i> Streckung des 1. Zehes, Inversion und Dorsalflexion des Fußes<br> <i>Innervation:</i> Peroneusnerv (L4-S1)<br> <i>Vaskularisation:</i>&nbsp;vordere Schienbeinarterie&nbsp;",
+		"Descrizione": "<i>Herkunft:</i> Wadenbein, Vorderfläche und hinterknochen Fell<br> <i>Ansatz:</i> 1. Zehe (Großzehe), Rückenfläche der Endglied<br><i>Wirkung:</i> Streckung des 1. Zehes, Inversion und Dorsalflexion des Fußes<br> <i>Innervation:</i> Peroneusnerv (L4-S1)<br> <i>Vaskularisation:</i> vordere Schienbeinarterie",
 		"baseImg": true
 	},
 	"Muscolo_PERONEO_LUNGO": {
 		"Titolo": "Peroneus lange Muskel",
-		"Descrizione": "<i>Herkunft:</i> Tibia, hintere Oberfläche und hinterknochen Fell&nbsp;<br> <i>Ansatz:</i> 1. Mittelfußknochen<br><i>Wirkung:</i> Eversion und Plantarflexion des Fußes<br> <i>Innervation:</i>oberflächige peroneus&nbsp;Nerv&nbsp; &nbsp;(L4-S1)<br> <i>Vaskularisation:</i> Peroneusarterie",
+		"Descrizione": "<i>Herkunft:</i> Tibia, hintere Oberfläche und hinterknochen Fell <br> <i>Ansatz:</i> 1. Mittelfußknochen<br><i>Wirkung:</i> Eversion und Plantarflexion des Fußes<br> <i>Innervation:</i>oberflächige peroneus Nerv (L4-S1)<br> <i>Vaskularisation:</i> Peroneusarterie",
 		"baseImg": true
 	},
 	"Muscolo_PERONEO_BREVE": {
-		"Titolo": "Kurze peroneus Muskel&nbsp;",
-		"Descrizione": "<i>Herkunft:</i> Wadenbein, Seitenfläche des distalen Drittels und angrenzende Muskeln<br> <i>Ansatz:</i> 5. Mittelfußknochen, seitliche Knollenförmigkeit<br> <i>Aktion:</i> Eversion und Plantarflexion des Fußes<br> <i>Innervation:</i>&nbsp;oberflächige peroneus Nerv&nbsp; (L4-S1)<br> <i>Vaskularisation:</i> Peroneusarterie",
+		"Titolo": "Kurze peroneus Muskel",
+		"Descrizione": "<i>Herkunft:</i> Wadenbein, Seitenfläche des distalen Drittels und angrenzende Muskeln<br> <i>Ansatz:</i> 5. Mittelfußknochen, seitliche Knollenförmigkeit<br> <i>Aktion:</i> Eversion und Plantarflexion des Fußes<br> <i>Innervation:</i> oberflächige peroneus Nerv (L4-S1)<br> <i>Vaskularisation:</i> Peroneusarterie",
 		"baseImg": true
 	},
 	"Muscolo_GASTROCNEMIO": {
 		"Titolo": "Gastrocnemius-Muskel",
-		"Descrizione": "<p><i>Herkunft:</i>&nbsp;Oberschenkelknochengelenkkopf, Hinterflächen<br> <i>Ansatz:</i>&nbsp;Fersenbein, hinterer Teil, über die Achillessehne<br><i>Wirkung:</i> Plantarflexion des Fußes, Beugung des Beins<br> <i>Innervation:</i>&nbsp;tibiale Nerv (S1-S2)<br> <i>Vaskularisation:</i> Suralisarterie und hintere tibiale Arterie</p>",
+		"Descrizione": "<p><i>Herkunft:</i> Oberschenkelknochengelenkkopf, Hinterflächen<br> <i>Ansatz:</i> Fersenbein, hinterer Teil, über die Achillessehne<br><i>Wirkung:</i> Plantarflexion des Fußes, Beugung des Beins<br> <i>Innervation:</i> tibiale Nerv (S1-S2)<br> <i>Vaskularisation:</i> Suralisarterie und hintere tibiale Arterie</p>",
 		"baseImg": true
 	},
 	"Muscolo_TENDINE_ACHILLE": {
 		"Titolo": "Achillessehne",
-		"Descrizione": "<p><i>Herkunft:</i> stammt aus dem Trizepsmuskel der Wade (gebildet aus den Zwillingmuskeln und soleus)<br> <i>Insertion:</i> wird in den Calcaneusknochen eingeführt<br> <i>Wirkungsweise:</i> Die Achillessehne spielt eine grundlegende Rolle in der Fortbewegungsmechanik des Menschen. Durch die Verbindung der Gastrocnemius- und Soleus-Muskeln mit dem Fersenbein können diese Muskeln die Bewegungen wie die Plantarflexion des Fußes und die Beugung des Beins in Richtung der Oberschenkel ausführen<br> <i>Innervation:</i> Er erhält eine doppelte Innervation, vom innere kniekehle Hüftnerv und vom hintere tibiale Nerv&nbsp;<br> <i>Vaskularisierung:</i> Die Hauptarterienversorgung kommt aus einem wiederkehrenden Ast der hintere tibiale Arterie, während zusätzliche Beiträge von intramuskulären Ästen und nach unten aus den Fersenbein stammen</p>",
-		"baseImg": "GASTROCNEMIO Muskel"
+		"Descrizione": "<p><i>Herkunft:</i> stammt aus dem Trizepsmuskel der Wade (gebildet aus den Zwillingmuskeln und soleus)<br> <i>Insertion:</i> wird in den Calcaneusknochen eingeführt<br> <i>Wirkungsweise:</i> Die Achillessehne spielt eine grundlegende Rolle in der Fortbewegungsmechanik des Menschen. Durch die Verbindung der Gastrocnemius- und Soleus-Muskeln mit dem Fersenbein können diese Muskeln die Bewegungen wie die Plantarflexion des Fußes und die Beugung des Beins in Richtung der Oberschenkel ausführen<br> <i>Innervation:</i> Er erhält eine doppelte Innervation, vom innere kniekehle Hüftnerv und vom hintere tibiale Nerv <br> <i>Vaskularisierung:</i> Die Hauptarterienversorgung kommt aus einem wiederkehrenden Ast der hintere tibiale Arterie, während zusätzliche Beiträge von intramuskulären Ästen und nach unten aus den Fersenbein stammen</p>",
+		"baseImg": "Muscolo_GASTROCNEMIO"
 	},
 	"Muscolo_SOLEO": {
 		"Titolo": "Soleus-Muskel",
-		"Descrizione": "<i>Herkunft:</i> tibia, hintere Gesicht und proximale Diaphyse&nbsp;<br><b>Ansatz:&nbsp;Fersenbein, hintere Seite, durch die Achillesehne</b><br><i>Wirkung:</i> Plantarflexion des Fußes<br> <i>Innervation:</i>&nbsp;tibiale Nerv (S1-S2)<br> <i>Vaskularisation:</i>&nbsp;surale Arterie&nbsp; und hintere tibiale Arterie",
+		"Descrizione": "<i>Herkunft:</i> tibia, hintere Gesicht und proximale Diaphyse <br><b>Ansatz: Fersenbein, hintere Seite, durch die Achillesehne</b><br><i>Wirkung:</i> Plantarflexion des Fußes<br> <i>Innervation:</i> tibiale Nerv (S1-S2)<br> <i>Vaskularisation:</i> surale Arterie und hintere tibiale Arterie",
 		"baseImg": true
 	},
 	"Muscolo_FLESSORE_LUNGO_DITA": {
 		"Titolo": "Langer Beugemuskel der Zehen",
-		"Descrizione": "<i>Herkunft:</i> Tibia, hintere Oberfläche<br> <i>Ansatz:</i> Endglied der 2. bis 5. Zehe, Unterseite<br><i>Wirkung:</i> Beugung der Endglied der 2. bis 5. Zehe<br> <i>Innervation:</i>&nbsp;tibiale Nerv (L4-S2), tiefer peroneus Ast&nbsp;<br> <i>Vaskularisation:</i>&nbsp;hintere tibiale Arterie",
+		"Descrizione": "<i>Herkunft:</i> Tibia, hintere Oberfläche<br> <i>Ansatz:</i> Endglied der 2. bis 5. Zehe, Unterseite<br><i>Wirkung:</i> Beugung der Endglied der 2. bis 5. Zehe<br> <i>Innervation:</i> tibiale Nerv (L4-S2), tiefer peroneus Ast <br> <i>Vaskularisation:</i> hintere tibiale Arterie",
 		"baseImg": true
 	},
 	"Muscolo_FLESSORE_LUNGO_ALLUCE": {
-		"Titolo": "Lange Beugemuskel der großes Zehe&nbsp;",
-		"Descrizione": "<i>Herkunft:</i> Wadenbein, Hinterfläche und hinterbein Fell<br> <i>Ansatz:</i> Endglied der 1. Zehe (Großes Zehe), Unterseite<br><i>Wirkung:</i> Beugung der Endglied des großes Zehe&nbsp;<br> <i>Innervation: </i>tibiale&nbsp;&nbsp;Nerv L4-S2, peroneus Ast<br> <i>Vaskularisation:</i>&nbsp;peroneus Arterie und hintere tibiale Arterie",
+		"Titolo": "Lange Beugemuskel der großes Zehe",
+		"Descrizione": "<i>Herkunft:</i> Wadenbein, Hinterfläche und hinterbein Fell<br> <i>Ansatz:</i> Endglied der 1. Zehe (Großes Zehe), Unterseite<br><i>Wirkung:</i> Beugung der Endglied des großes Zehe <br> <i>Innervation: </i>tibiale Nerv L4-S2, peroneus Ast<br> <i>Vaskularisation:</i> peroneus Arterie und hintere tibiale Arterie",
 		"baseImg": true
 	},
 	"Muscolo_FLESSORE_BREVE_DITA": {
-		"Titolo": "Kurze Beugemuskel des Fingers der Zehe&nbsp;",
-		"Descrizione": "<i>Herkunft :</i>&nbsp;Fersenbein, medialer Prozess und Plantaraponeurose<br> <i>Ansatz:</i> Mittelglied der 2. bis 5. Zehe<br><i>Wirkung:</i> Beugung der 2. bis 5. Zehe<br> <i>Innervation:</i>&nbsp;mediale Plantarnerv L5-S1<br> <i>Vaskularisation:</i> mediale Plantararterie",
+		"Titolo": "Kurze Beugemuskel des Fingers der Zehe",
+		"Descrizione": "<i>Herkunft :</i> Fersenbein, medialer Prozess und Plantaraponeurose<br> <i>Ansatz:</i> Mittelglied der 2. bis 5. Zehe<br><i>Wirkung:</i> Beugung der 2. bis 5. Zehe<br> <i>Innervation:</i> mediale Plantarnerv L5-S1<br> <i>Vaskularisation:</i> mediale Plantararterie",
 		"baseImg": true
 	},
 	"Muscolo_ESTENSORI_BREVI_DITA": {
 		"Titolo": "Kurze Streckmuskeln der Zehen",
-		"Descrizione": "<i>Herkunft:</i>&nbsp;Fersenbein, Seiten- und Rückenflächen<br> <i>Ansatz:</i> Sehnen des extensibel Muskel, Seitenteile<br><i>Wirkung:</i> Streckung der Zehe vom 2. bis 4.<br> <i>Innervation:</i> tiefer peroneus Nerv&nbsp; L5-S1<br> <i>Vaskularisation:</i> dorsale Arterie des Fußes",
+		"Descrizione": "<i>Herkunft:</i> Fersenbein, Seiten- und Rückenflächen<br> <i>Ansatz:</i> Sehnen des extensibel Muskel, Seitenteile<br><i>Wirkung:</i> Streckung der Zehe vom 2. bis 4.<br> <i>Innervation:</i> tiefer peroneus Nerv L5-S1<br> <i>Vaskularisation:</i> dorsale Arterie des Fußes",
 		"baseImg": true
 	},
 	"Muscolo_ABDUTTORE_MIGNOLO_PIEDE": {
 		"Titolo": "Abduktor Muskel des kleines Zehe",
-		"Descrizione": "<i>Herkunft:</i>&nbsp;Fersenbein, lateraler Prozess und Plantarsehnenhaut&nbsp;<br> <i>Ansatz:</i> Grundglied der 5. Zehe, Seitenfläche<br><i>Wirkung:</i> Abduktion und Beugung des 5. Zehs<br> <i>Innervation:</i>&nbsp;seitliche plantarnerv und tibiale Nerv S2-S3<br> <i>Vaskularisation:</i>&nbsp;seitliche plantare Arterie",
+		"Descrizione": "<i>Herkunft:</i> Fersenbein, lateraler Prozess und Plantarsehnenhaut <br> <i>Ansatz:</i> Grundglied der 5. Zehe, Seitenfläche<br><i>Wirkung:</i> Abduktion und Beugung des 5. Zehs<br> <i>Innervation:</i> seitliche plantarnerv und tibiale Nerv S2-S3<br> <i>Vaskularisation:</i> seitliche plantare Arterie",
 		"baseImg": true
 	},
 	"Muscolo_ADDUTTORE_ALLUCE": {
@@ -478,11 +478,11 @@ DB_anatomia={
 	},
 	"Muscolo_OBLIQUO_INTERNO_ADDOME": {
 		"Titolo": "Innerer schräger Bauchmuskel",
-		"Descrizione": "<p><i>Herkunft:</i> unten am Leistenband, an der Beckenkamm und lumbaldorsale Sehnenhaut<br> <i>Ansatz:</i> oben an den Rippenknorpeln, unten am Schambein und Brustbein<br> <i>Wirkungsweise:</i> Bei der Kontraktion auf einer Seite kommt es zu einer seitlichen Neigung und Drehung des Rumpfes zu dieser Seite. Bei fixiertem Becken wirkt es auf die Rippen und umgekehrt. Bei beidseitiger Kontraktion stabilisiert es das Becken und beugt den Rumpf nach vorne. Es ist auch am Ablauf beteiligt<br> <i>Innervation:</i>&nbsp;durch die unteren Interkostalnerven (T8-T12) und den Hüftbeinhypogastrium und Hüftbeinleisten Nerv (L1) innerviert&nbsp;<br> <i>Vaskularisation:</i> versorgt durch die terminale Äste des obere Gesäßarterie</p>"
+		"Descrizione": "<p><i>Herkunft:</i> unten am Leistenband, an der Beckenkamm und lumbaldorsale Sehnenhaut<br> <i>Ansatz:</i> oben an den Rippenknorpeln, unten am Schambein und Brustbein<br> <i>Wirkungsweise:</i> Bei der Kontraktion auf einer Seite kommt es zu einer seitlichen Neigung und Drehung des Rumpfes zu dieser Seite. Bei fixiertem Becken wirkt es auf die Rippen und umgekehrt. Bei beidseitiger Kontraktion stabilisiert es das Becken und beugt den Rumpf nach vorne. Es ist auch am Ablauf beteiligt<br> <i>Innervation:</i> durch die unteren Interkostalnerven (T8-T12) und den Hüftbeinhypogastrium und Hüftbeinleisten Nerv (L1) innerviert <br> <i>Vaskularisation:</i> versorgt durch die terminale Äste des obere Gesäßarterie</p>"
 	},
 	"Muscolo_MEDIO_GLUTEO": {
 		"Titolo": "Mittlere Gesäßmuskel",
-		"Descrizione": "<p><i>Herkunft:</i> stammt aus der medialen Oberfläche der außere Hüftbeingrube<br><i>Ansatz:</i> Einsätze mit konvergierenden Fasern zu der großer Rollhocker, an der Seitenfläche<br><i>Wirkung:</i> Wenn das Becken fixiert ist, besteht seine Hauptaktion in der Abduktion der Hüfte. Darüber hinaus tragen seine vorderen Fasern zur Beugung&nbsp; und seine hinteren Fasern zur Hüftstreckung bei. Wenn sich beide Seiten zusammenziehen, stabilisiert es das Becken und bringt es mit seinen vorderen Fasern sowohl in die Antheversion als auch mit seinen hinteren Fasern in die Retroversion. Eine Kontraktion auf einer Seite führt zu einer Beckenneigung<br> <i>Innervation:</i> innerviert durch den obere GesäßNerv&nbsp; (L4, L5, S1)<br> <i>Vaskularisation:</i> versorgt durch die obere Gesäßarterie der terminale Äste</p>"
+		"Descrizione": "<p><i>Herkunft:</i> stammt aus der medialen Oberfläche der außere Hüftbeingrube<br><i>Ansatz:</i> Einsätze mit konvergierenden Fasern zu der großer Rollhocker, an der Seitenfläche<br><i>Wirkung:</i> Wenn das Becken fixiert ist, besteht seine Hauptaktion in der Abduktion der Hüfte. Darüber hinaus tragen seine vorderen Fasern zur Beugung und seine hinteren Fasern zur Hüftstreckung bei. Wenn sich beide Seiten zusammenziehen, stabilisiert es das Becken und bringt es mit seinen vorderen Fasern sowohl in die Antheversion als auch mit seinen hinteren Fasern in die Retroversion. Eine Kontraktion auf einer Seite führt zu einer Beckenneigung<br> <i>Innervation:</i> innerviert durch den obere GesäßNerv (L4, L5, S1)<br> <i>Vaskularisation:</i> versorgt durch die obere Gesäßarterie der terminale Äste</p>"
 	},
 	"Muscolo_TIROIDEO": {
 		"Titolo": "Schilddrüsenmuskel",
@@ -490,7 +490,7 @@ DB_anatomia={
 	},
 	"Muscolo_STERNOIOIDEO": {
 		"Titolo": "Sternohyoideus-Muskel",
-		"Descrizione": "<p><i>Herkunft:</i> Entsteht am medialen Ende des Schlüsselbeins und an der Innenfläche des Brustbeins in der Nähe der Sternoklavikulargelenkkapsel<br> <i>Ansatz:</i> Einsätze am unteren Rand des Zungenbeins, medial in Bezug auf des&nbsp; &nbsp; Zungenbeinmuskel&nbsp;<br> <i>Wirkung:</i> Seine Funktion besteht darin, die Senkung des Zungenbeins zu unterstützen<br> <i>Innervation:</i> Innerviert durch die Ansa cervicalis der ersten drei Halsnerven<br> <i>Vaskularisation:</i> versorgt durch die Schilddrüsenarterien (Äste der äußeren Halsschlagader) und die Schilddrüsenvenen</p>"
+		"Descrizione": "<p><i>Herkunft:</i> Entsteht am medialen Ende des Schlüsselbeins und an der Innenfläche des Brustbeins in der Nähe der Sternoklavikulargelenkkapsel<br> <i>Ansatz:</i> Einsätze am unteren Rand des Zungenbeins, medial in Bezug auf des Zungenbeinmuskel <br> <i>Wirkung:</i> Seine Funktion besteht darin, die Senkung des Zungenbeins zu unterstützen<br> <i>Innervation:</i> Innerviert durch die Ansa cervicalis der ersten drei Halsnerven<br> <i>Vaskularisation:</i> versorgt durch die Schilddrüsenarterien (Äste der äußeren Halsschlagader) und die Schilddrüsenvenen</p>"
 	},
 	"Muscolo_OMOIOIDEO": {
 		"Titolo": "Omohyoideus-Muskel",
@@ -498,7 +498,7 @@ DB_anatomia={
 	},
 	"Muscolo_MILOIOIDEO": {
 		"Titolo": "Mylohyoideus-Muskel",
-		"Descrizione": "<p><i>Ursprung:</i> Entspringt im Unterkiefer, beginnt unterhalb der mentale Stich, schließt den oberen Rand der Magengrube um und setzt sich in der Milohyoideus Linie fort<br> <i>Insertion:</i> Einsätze am Zungenbein<br> <i>Wirkung:</i> Es hilft, das Zungenbein anzuheben und den Unterkiefer zu senken, und unterstützt das Schlucken<br> <i>Innervation:</i> innerviert durch den mylohyoiden Ast des untere alveolär Nerv (ein Ast des Drillings-Hirnnerv V)<br> <i>Vaskularisation:</i> versorgt durch die hintere alveolär Nerv&nbsp;</p>"
+		"Descrizione": "<p><i>Ursprung:</i> Entspringt im Unterkiefer, beginnt unterhalb der mentale Stich, schließt den oberen Rand der Magengrube um und setzt sich in der Milohyoideus Linie fort<br> <i>Insertion:</i> Einsätze am Zungenbein<br> <i>Wirkung:</i> Es hilft, das Zungenbein anzuheben und den Unterkiefer zu senken, und unterstützt das Schlucken<br> <i>Innervation:</i> innerviert durch den mylohyoiden Ast des untere alveolär Nerv (ein Ast des Drillings-Hirnnerv V)<br> <i>Vaskularisation:</i> versorgt durch die hintere alveolär Nerv </p>"
 	},
 	"Muscolo_STILOIOIDEO": {
 		"Titolo": "Stylohyoideus-Muskel",
@@ -506,11 +506,11 @@ DB_anatomia={
 	},
 	"Muscolo_PLATISMA": {
 		"Titolo": "Platysma-Muskel",
-		"Descrizione": "<p><i>Ursprung:</i>&nbsp;stammt aus vorher vom großen Brustmuskel und den Deltamuskeln sowie von der Haut und den Bindegewebe des oberen Brustkorbs und der Schulter.<br><i>Ansatz:</i> Einführung in die Haut der kaumuskel Teil, des Kinns und der Lippenfuge.<br> <i>Wirkung:</i> Als mimetischer Muskel dient er dazu, die Halshaut auszustrecken und zu runzeln und die Lippenfuge nach unten und seitlich zu bewegen.<br> <i>Innervation:</i> innerviert durch den Gesichtsnerv.<br> <i>Vaskularisation:</i> versorgt durch die Gesichtsarterie.</p>"
+		"Descrizione": "<p><i>Ursprung:</i> stammt aus vorher vom großen Brustmuskel und den Deltamuskeln sowie von der Haut und den Bindegewebe des oberen Brustkorbs und der Schulter.<br><i>Ansatz:</i> Einführung in die Haut der kaumuskel Teil, des Kinns und der Lippenfuge.<br> <i>Wirkung:</i> Als mimetischer Muskel dient er dazu, die Halshaut auszustrecken und zu runzeln und die Lippenfuge nach unten und seitlich zu bewegen.<br> <i>Innervation:</i> innerviert durch den Gesichtsnerv.<br> <i>Vaskularisation:</i> versorgt durch die Gesichtsarterie.</p>"
 	},
 	"Muscolo_MENTALE": {
 		"Titolo": "Mentaler Muskel",
-		"Descrizione": "<p><i>Ursprung:</i> Entsteht aus dem Alveolarfortsatz des unteren medialen Schneidezahns.<br><i>Ansatz:</i> wird in die Haut des Kinns eingeführt.<br> <i>Wirkung:</i>&nbsp; Anhebung und Runzeln der Kinnhaut.<br> <i>Innervation:</i> innerviert durch den UnterkieferAst des Gesichtsnervs.<br> <i>Vaskularisation:</i> versorgt durch die Gesichtsarterie.</p>"
+		"Descrizione": "<p><i>Ursprung:</i> Entsteht aus dem Alveolarfortsatz des unteren medialen Schneidezahns.<br><i>Ansatz:</i> wird in die Haut des Kinns eingeführt.<br> <i>Wirkung:</i> Anhebung und Runzeln der Kinnhaut.<br> <i>Innervation:</i> innerviert durch den UnterkieferAst des Gesichtsnervs.<br> <i>Vaskularisation:</i> versorgt durch die Gesichtsarterie.</p>"
 	},
 	"Muscolo_DEPRESSORE_ANGOLO_BOCCA": {
 		"Titolo": "Depressor des Mundwinkelmuskels",
@@ -522,7 +522,7 @@ DB_anatomia={
 	},
 	"Muscolo_ORBICOLARE_BOCCA": {
 		"Titolo": "Orbicularis Mautkuskel",
-		"Descrizione": "<p><i>Ursprung:</i> Entsteht zwischen Ober- und Unterkiefer.<br><i>Ansatz:</i>&nbsp;in Kontakt mit der Haut und der Schleimhaut der Lippen&nbsp;<br> <i>Wirkung:</i> Dient der Verengung bzw. Schließung der Mundspalte und streckt die Lippen nach vorne.<br> <i>Innervation:</i> Innervation durch den bukkalen Ast des Gesichtsnervs<br> <i>Vaskularisation:</i> versorgt durch die Gesichtsarterie.</p>"
+		"Descrizione": "<p><i>Ursprung:</i> Entsteht zwischen Ober- und Unterkiefer.<br><i>Ansatz:</i> in Kontakt mit der Haut und der Schleimhaut der Lippen <br> <i>Wirkung:</i> Dient der Verengung bzw. Schließung der Mundspalte und streckt die Lippen nach vorne.<br> <i>Innervation:</i> Innervation durch den bukkalen Ast des Gesichtsnervs<br> <i>Vaskularisation:</i> versorgt durch die Gesichtsarterie.</p>"
 	},
 	"Muscolo_NASALE": {
 		"Titolo": "Nasenmuskel",
@@ -530,7 +530,7 @@ DB_anatomia={
 	},
 	"Muscolo_ELEVATORE_ALA_NASO": {
 		"Titolo": "Heber der Oberlippe und Flügel des Nasenmuskels",
-		"Descrizione": "<p><i>Herkunft:</i>&nbsp;stammt aus den oberen Frontalfortsatz des Oberkiefers.<br><i>Ansatz:</i> wird über den seitlichen Teilen der Nasenlöcher und der Oberlippe in die Haut eingeführt.<br> <i>Wirkung:</i> Dient zum Anheben der Oberlippe und der Nasenseite.<br> <i>Innervation:</i> Innervation durch den Mundast des Gesichtsnervs.<br> <i>Vaskularisation:</i> versorgt durch die Gesichtsarterie.</p>"
+		"Descrizione": "<p><i>Herkunft:</i> stammt aus den oberen Frontalfortsatz des Oberkiefers.<br><i>Ansatz:</i> wird über den seitlichen Teilen der Nasenlöcher und der Oberlippe in die Haut eingeführt.<br> <i>Wirkung:</i> Dient zum Anheben der Oberlippe und der Nasenseite.<br> <i>Innervation:</i> Innervation durch den Mundast des Gesichtsnervs.<br> <i>Vaskularisation:</i> versorgt durch die Gesichtsarterie.</p>"
 	},
 	"Muscolo_PROCERO": {
 		"Titolo": "Procero-Muskel",
@@ -558,11 +558,11 @@ DB_anatomia={
 	},
 	"Muscolo_CORACOBRACHIALE": {
 		"Titolo": "Raben-Muskel",
-		"Descrizione": "<p><i>Herkunft:</i> Wie der Name schon sagt, hat er seinen Herkunft an der Spitze des Rabenverfahren des Schulterblatts und teilt seinen Herkunft mit dem kurzen Kopf des Bizepsmuskels.<br> <i>Ansatz:</i> Der Ansatz erfolgt im mittleren Drittel der anteromedialen Oberfläche des Oberschenkelknochen. Es liegt tief und medial des kurzen Kopfes des brachiales Trizepsmuskel&nbsp;<br><i>Wirkung:</i> dient der Beugung und Adduktion des Arms. Es trägt auch dazu bei, den Oberarmkopf in seiner natürlichen Position zu halten. Wenn der Arm gebeugt wird, arbeitet er in den ersten 50° der Bewegung synergetisch mit den Muskeln des Deltamuskels und des großen Brustmuskels (Klavikularteil).<br> <i>Innervation:</i> Die Innervation erfolgt durch den Hautmuskel Nerv&nbsp;</p>(C6-C7).<span style=\"color: rgb(0, 0, 0);\"><br></span><p> <i>Vaskularisierung:</i> Die Versorgung erfolgt durch kleine Äste der Achselarterie&nbsp; und der vorderzyrkumflexArterie des Oberschenkelknochen, die sie an der tiefen Oberfläche durchdringen.</p>"
+		"Descrizione": "<p><i>Herkunft:</i> Wie der Name schon sagt, hat er seinen Herkunft an der Spitze des Rabenverfahren des Schulterblatts und teilt seinen Herkunft mit dem kurzen Kopf des Bizepsmuskels.<br> <i>Ansatz:</i> Der Ansatz erfolgt im mittleren Drittel der anteromedialen Oberfläche des Oberschenkelknochen. Es liegt tief und medial des kurzen Kopfes des brachiales Trizepsmuskel <br><i>Wirkung:</i> dient der Beugung und Adduktion des Arms. Es trägt auch dazu bei, den Oberarmkopf in seiner natürlichen Position zu halten. Wenn der Arm gebeugt wird, arbeitet er in den ersten 50° der Bewegung synergetisch mit den Muskeln des Deltamuskels und des großen Brustmuskels (Klavikularteil).<br> <i>Innervation:</i> Die Innervation erfolgt durch den Hautmuskel Nerv </p>(C6-C7).<span style=\"color: rgb(0, 0, 0);\"><br></span><p> <i>Vaskularisierung:</i> Die Versorgung erfolgt durch kleine Äste der Achselarterie und der vorderzyrkumflexArterie des Oberschenkelknochen, die sie an der tiefen Oberfläche durchdringen.</p>"
 	},
 	"Muscolo_BRACHIALE": {
 		"Titolo": "Brachial-Muskel",
-		"Descrizione": "<p><i>Herkunft:</i> Entsteht in der distalen Hälfte der Vorderfläche des Oberschenkelknochen (unterhalb des Deltamuskelansatzes) und an den intermuskulären Scheidewand.<br> <i>Ansatz:</i> Der Ansatz erfolgt an der ellbogischknollenförmigkeit und der Gelenkkapsel.</p><p><i>Wirkung:</i> Es dient dazu, den Ellenbogen in Synergie mit dem brachial Bizeps Muskel&nbsp; zu beugen.</p><p> <i>Innervation:</i> Die Innervation erfolgt durch den Hautmuskelnerv, und ein kleiner seitlicher Teil des Muskels wird durch den radialer Nerv innerviert.<br> <i>Vaskularisation:</i> Die Versorgung erfolgt durch die brachiale Arterie über den Endast der Achselarterie. Der venöse Rückfluss erfolgt über die zwei medialen und lateralen brachiale Adern.</p>"
+		"Descrizione": "<p><i>Herkunft:</i> Entsteht in der distalen Hälfte der Vorderfläche des Oberschenkelknochen (unterhalb des Deltamuskelansatzes) und an den intermuskulären Scheidewand.<br> <i>Ansatz:</i> Der Ansatz erfolgt an der ellbogischknollenförmigkeit und der Gelenkkapsel.</p><p><i>Wirkung:</i> Es dient dazu, den Ellenbogen in Synergie mit dem brachial Bizeps Muskel zu beugen.</p><p> <i>Innervation:</i> Die Innervation erfolgt durch den Hautmuskelnerv, und ein kleiner seitlicher Teil des Muskels wird durch den radialer Nerv innerviert.<br> <i>Vaskularisation:</i> Die Versorgung erfolgt durch die brachiale Arterie über den Endast der Achselarterie. Der venöse Rückfluss erfolgt über die zwei medialen und lateralen brachiale Adern.</p>"
 	},
 	"Muscolo_ANCONEO": {
 		"Titolo": "Anconeus-Muskel",
@@ -570,7 +570,7 @@ DB_anatomia={
 	},
 	"Muscolo_ESTENSORE_PROPRIO_MIGNOLO": {
 		"Titolo": "Extensor-Ziffern-Muskel des kleines Fingers",
-		"Descrizione": "<p><i>Herkunft:</i> Es entsteht an der hinteren Oberfläche des epikondylus der Oberschenkelknochen und seiner anterobrachialen Oberfläche<br> <i>Ansatz:</i> Er quert das fünfte Kompartiment des Rückverbindung quer und mündet auf der Höhe des fünften Mittelhandknochens in die Sehne des gemeinsamen Streckmuskels der Finger<br> <i>Wirkung:</i> Es streckt den kleinen Finger und trägt zur ellbogisch Abduktion und Streckung der Hand bei<br> <i>Innervation:</i> Die Innervation erfolgt durch den radiale Nerv (C6, C8)<br> <i>Vaskularisation:</i>&nbsp;gemein interbein Arterie&nbsp;</p>"
+		"Descrizione": "<p><i>Herkunft:</i> Es entsteht an der hinteren Oberfläche des epikondylus der Oberschenkelknochen und seiner anterobrachialen Oberfläche<br> <i>Ansatz:</i> Er quert das fünfte Kompartiment des Rückverbindung quer und mündet auf der Höhe des fünften Mittelhandknochens in die Sehne des gemeinsamen Streckmuskels der Finger<br> <i>Wirkung:</i> Es streckt den kleinen Finger und trägt zur ellbogisch Abduktion und Streckung der Hand bei<br> <i>Innervation:</i> Die Innervation erfolgt durch den radiale Nerv (C6, C8)<br> <i>Vaskularisation:</i> gemein interbein Arterie </p>"
 	},
 	"Muscolo_ABDUTTORE_LUNGO_POLLICE": {
 		"Titolo": "Lange Abdutormuskel des großes Fingers",
@@ -578,11 +578,11 @@ DB_anatomia={
 	},
 	"Muscolo_ESTENSORE_BREVE_POLLICE": {
 		"Titolo": "Kurze Streckmuskel des Daumens",
-		"Descrizione": "<p><i>Herkunft:</i> Es hat seinen Ursprung in der Ellbogen, der Interbeinmembran und der Rück Oberfläche des Radius<br><i>Ansatz:</i> Durch das erste Kompartiment des Rückverbindung des Handwurzel, wird es an der Rückbasis der proximalen Glied des Daumens inseriert<br> <i>Wirkungsweise:</i> Der Daumen wird gestreckt und abduziert, wobei er mit dem langen abduktor Muskel des Daumens&nbsp; zusammenarbeitet<br> <i>Innervation:</i> tiefer Ast des radiale Nerv (C7, T1)<br> <i>Vaskularisation:</i> oberflächlicher palmarer Ast der radiale Arterie</p>"
+		"Descrizione": "<p><i>Herkunft:</i> Es hat seinen Ursprung in der Ellbogen, der Interbeinmembran und der Rück Oberfläche des Radius<br><i>Ansatz:</i> Durch das erste Kompartiment des Rückverbindung des Handwurzel, wird es an der Rückbasis der proximalen Glied des Daumens inseriert<br> <i>Wirkungsweise:</i> Der Daumen wird gestreckt und abduziert, wobei er mit dem langen abduktor Muskel des Daumens zusammenarbeitet<br> <i>Innervation:</i> tiefer Ast des radiale Nerv (C7, T1)<br> <i>Vaskularisation:</i> oberflächlicher palmarer Ast der radiale Arterie</p>"
 	},
 	"Muscolo_ESTENSORE_LUNGO_POLLICE": {
 		"Titolo": "Lange Streckmuskel des Daumens",
-		"Descrizione": "<p><i>Herkunft:</i> Sie entspringt im mittleren Drittel der dorsalen Oberfläche der Elle und der entsprechenden interbeine Membran<br><i>Ansatz:</i>&nbsp;Es quert das dritte Kompartiment des Rückenverbindung des Handwurzels durch, und setzt an der Basis der distalen Glied des Daumens ein<br><i>Wirkung:</i> Der Daumen wird gestreckt und abduziert, dabei wird der Rückknollenförmigkeit des Radius ausgenutzt und die Hand zum Radius hin abduziert<br> <i>Innervation:</i> tiefer Ast des radiale Nerv (C7, C8)<br> <i>Vaskularisation:</i>&nbsp;hintere interbein Arterie</p>"
+		"Descrizione": "<p><i>Herkunft:</i> Sie entspringt im mittleren Drittel der dorsalen Oberfläche der Elle und der entsprechenden interbeine Membran<br><i>Ansatz:</i> Es quert das dritte Kompartiment des Rückenverbindung des Handwurzels durch, und setzt an der Basis der distalen Glied des Daumens ein<br><i>Wirkung:</i> Der Daumen wird gestreckt und abduziert, dabei wird der Rückknollenförmigkeit des Radius ausgenutzt und die Hand zum Radius hin abduziert<br> <i>Innervation:</i> tiefer Ast des radiale Nerv (C7, C8)<br> <i>Vaskularisation:</i> hintere interbein Arterie</p>"
 	},
 	"Muscolo_PALMARE_BREVE": {
 		"Titolo": "Kurz Handmuskel",
@@ -593,11 +593,11 @@ DB_anatomia={
 		"Descrizione": "<p><i>Herkunft:</i> Es entsteht aus dem transversalen Handwurzelband und dem Hakenfortsatz<br> <i>Ansatz:</i> Der Ansatz erfolgt an der Basis des ersten Fingerglieds des kleinen Fingers<br><i>Wirkung:</i> Es beugt die erste Glied des kleinen Fingers<br> <i>Innervation:</i> Die Innervation erfolgt durch den ellbogisch Nerv (C8, T1)<br> <i>Vaskularisation:</i> versorgt durch die Ellearterie</p>"
 	},
 	"Muscolo_ABDUTTORE_BREVE_POLLICE": {
-		"Titolo": "kurze Abduktormuskel des Daumens",
-		"Descrizione": "<p><i>Herkunft:</i> Sein Herkunft liegt auf der dorsalen Oberfläche der Ellbogen, distal des Supinatorkamms, auf der interbein Membran und der dorsalen Oberfläche des Radius<br><i>Ansatz:</i> Die Insertion erfolgt, indem sie ihre Insertionssehne durch das erste Kompartiment des Retinaculum extensorum kreuzt, und sie setzt auch an der Basis der proximalen Glied des Daumens ein<br> <i>Wirkung:</i> Es ist für die Abduktion des Daumens verantwortlich und trägt auch zur Abduktion und Palmarflexion der Hand bei<br> <i>Innervation:</i> innerviert durch den tiefen Ast des radialen Nerves (C7, C8)<br> <i>Vaskularisation:</i> versorgt durch die hintere Interbeinarterie&nbsp;</p>"
+		"Titolo": "Kurze Abduktormuskel des Daumens",
+		"Descrizione": "<p><i>Herkunft:</i> Sein Herkunft liegt auf der dorsalen Oberfläche der Ellbogen, distal des Supinatorkamms, auf der interbein Membran und der dorsalen Oberfläche des Radius<br><i>Ansatz:</i> Die Insertion erfolgt, indem sie ihre Insertionssehne durch das erste Kompartiment des Retinaculum extensorum kreuzt, und sie setzt auch an der Basis der proximalen Glied des Daumens ein<br> <i>Wirkung:</i> Es ist für die Abduktion des Daumens verantwortlich und trägt auch zur Abduktion und Palmarflexion der Hand bei<br> <i>Innervation:</i> innerviert durch den tiefen Ast des radialen Nerves (C7, C8)<br> <i>Vaskularisation:</i> versorgt durch die hintere Interbeinarterie </p>"
 	},
 	"Muscolo_FLESSORE_BREVE_POLLICE": {
-		"Titolo": "Kurze Beugemuskel des Daumens&nbsp;",
+		"Titolo": "Kurze Beugemuskel des Daumens",
 		"Descrizione": "<p><i>Herkunft:</i> Er entspringt mit dem oberflächlichen Kopf aus dem Höcker des Trapezmuskel und dem Querverbindung des Handwurzels. Beim tiefen Kopf geht er aus den Trapez- und Kopfbeinknochen der Handwurzel hervor<br><i>Ansatz:</i> Es schließt seinen Lauf mit einem einzelnen Kopf an der Basis der Daumenballenhöhe ab<br><i>Wirkung:</i> Es ermöglicht die Bewegung, bei der der Mensch den Daumen am den ersten Gliedmittelhandgelenke (dem Gelenk zwischen dem ersten Mittelhandknochen und der proximalen Glied des Daumens) beugt.<br> <i>Innervation:</i> Die Innervation erfolgt durch den medialen Nerv (oberflächlicher Kopf) und den ellbogisch Nerv(tiefer Kopf) (C6, C7)<br> <i>Vaskularisation:</i> Hauptarterie des Daumens und radiale Arterie des Zeigefingers (das sind Äste der radiale Arterie).</p>"
 	},
 	"Muscolo_FLESSORE_MIGNOLO_PIEDE": {
@@ -606,7 +606,7 @@ DB_anatomia={
 	},
 	"Muscolo_ESTENSORE_BREVE_ALLUCE": {
 		"Titolo": "Kurze Beugmuskel der großen Zehe",
-		"Descrizione": "<p><i>Herkunft:</i> Sie entspringt im Fersenbein und bildet eine Sehne, die in die Grundglied der großen Zehe eindringt<br><i>Ansatz:</i> Es wird in die Grundglied der großen Zehe eingeführt<br> <i>Wirkung:</i> Es unterstützt die Streckung der großen Zehe<br> <i>Innervation:</i> Innerviert durch den tief wadenbein Nerv<br> <i>Vaskularisation:</i>&nbsp;tibiale Arterie&nbsp;</p>"
+		"Descrizione": "<p><i>Herkunft:</i> Sie entspringt im Fersenbein und bildet eine Sehne, die in die Grundglied der großen Zehe eindringt<br><i>Ansatz:</i> Es wird in die Grundglied der großen Zehe eingeführt<br> <i>Wirkung:</i> Es unterstützt die Streckung der großen Zehe<br> <i>Innervation:</i> Innerviert durch den tief wadenbein Nerv<br> <i>Vaskularisation:</i> tibiale Arterie </p>"
 	},
 	"Organo_MAMMELLE": {
 		"Titolo": "Brüste",
@@ -622,11 +622,11 @@ DB_anatomia={
 	},
 	"Organo_TIMO": {
 		"Titolo": "Thymusdrüse",
-		"Descrizione": "<p><i>Lage:</i>&nbsp;sie befindet sich in der Brust vor der Luftröhre<br> <i>Funktion:</i> Die Thymusdrüse ist eine Drüse. Es ist für die Reifung von T-Lymphozyten verantwortlich.</p>"
+		"Descrizione": "<p><i>Lage:</i> sie befindet sich in der Brust vor der Luftröhre<br> <i>Funktion:</i> Die Thymusdrüse ist eine Drüse. Es ist für die Reifung von T-Lymphozyten verantwortlich.</p>"
 	},
 	"Organo_FEGATO": {
 		"Titolo": "Leber",
-		"Descrizione": "<p><i>Lokalisation:</i>&nbsp;sie befindet sich im oberen, rechten und mittleren Teil des Bauches. Sie befindet sich unterhalb des rechten Teils des Brustkorbs, zwischen der sechsten und elften Rippe, und erstreckt sich vom Zwerchfell nach oben, direkt über dem Magen, dem rechten Nieren-Nebennieren-Komplex und dem Querkolon<br> <i>Funktion:</i> Die Leber ist an zahlreichen lebenswichtigen Funktionen beteiligt. Zu diesen Funktionen gehören die Produktion essentieller Proteine und Hormone, die Regulierung des Kohlenhydratstoffwechsels (Glukoneogenese, Glykogenolyse und Glykogenese), die Produktion von Galle, die eine entscheidende Rolle bei der Fettverdauung spielt, die Synthese von Gerinnungsfaktoren sowie die Regulierung des Cholesterin- und Triglyceridstand im Blut und die Beseitigung von Abfallprodukten aus dem Blutkreislauf.</p>"
+		"Descrizione": "<p><i>Lokalisation:</i> sie befindet sich im oberen, rechten und mittleren Teil des Bauches. Sie befindet sich unterhalb des rechten Teils des Brustkorbs, zwischen der sechsten und elften Rippe, und erstreckt sich vom Zwerchfell nach oben, direkt über dem Magen, dem rechten Nieren-Nebennieren-Komplex und dem Querkolon<br> <i>Funktion:</i> Die Leber ist an zahlreichen lebenswichtigen Funktionen beteiligt. Zu diesen Funktionen gehören die Produktion essentieller Proteine und Hormone, die Regulierung des Kohlenhydratstoffwechsels (Glukoneogenese, Glykogenolyse und Glykogenese), die Produktion von Galle, die eine entscheidende Rolle bei der Fettverdauung spielt, die Synthese von Gerinnungsfaktoren sowie die Regulierung des Cholesterin- und Triglyceridstand im Blut und die Beseitigung von Abfallprodukten aus dem Blutkreislauf.</p>"
 	},
 	"Organo_APPENDICE": {
 		"Titolo": "Anhang",
@@ -690,7 +690,7 @@ DB_anatomia={
 	},
 	"Organo_PENE": {
 		"Titolo": "Penis",
-		"Descrizione": "<p><i>Lage:</i> Der Penis befindet sich im Beckenbereich, im Schambereich. Es wird oben vom Bauch und unten vom Hodensack begrenzt<br> <i>Funktion:</i> Der Penis ist das wichtigste männliche Sexualorgan beim Geschlechtsakt und&nbsp; auch als Struktur, die die Blasenentleerung ermöglicht.</p>"
+		"Descrizione": "<p><i>Lage:</i> Der Penis befindet sich im Beckenbereich, im Schambereich. Es wird oben vom Bauch und unten vom Hodensack begrenzt<br> <i>Funktion:</i> Der Penis ist das wichtigste männliche Sexualorgan beim Geschlechtsakt und auch als Struktur, die die Blasenentleerung ermöglicht.</p>"
 	},
 	"Organo_EPIDIDIMIO": {
 		"Titolo": "Nebenhoden",

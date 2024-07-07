@@ -7932,7 +7932,7 @@ DB.TXT = {
             esp: "ZIGOMÁTICO",
             fra: "ZYGOMATIQUE",
             por: "ZIGOMÁTICO",
-            deu: "JOCHMUSKEL"
+            deu: "JOCHBEINMUSKEL"
         },
         Muscolo_ELEVATORE_DEL_LABBRO: {
             ita: "ELEVATORE DEL LABBRO",
@@ -7940,7 +7940,7 @@ DB.TXT = {
             esp: "LEVANTADOR DEL LABIO SUPERIOR",
             fra: "LEVATEUR DE LA LÈVRE SUPÉRIEURE",
             por: "LEVANTADOR DO LÁBIO SUPERIOR",
-            deu: "LEVATOR LABII SUPERIORIS"
+            deu: "HEBENMUSKEL DES OBERLIPPE"
         },
         Muscolo_DEPRESSORE_ANGOLO_BOCCA: {
             ita: "DEPRESSORE ANGOLO DELLA BOCCA",
@@ -7948,7 +7948,7 @@ DB.TXT = {
             esp: "DEPRESOR DEL ÁNGULO DE LA BOCA",
             fra: "DÉPRESSEUR DE L'ANGLE DE LA BOUCHE",
             por: "DEPRESSOR DO CANTO DA BOCA",
-            deu: "DEPRESSOR ANGULI ORIS"
+            deu: "DEPRESSOR DES MUNDWINKELMUSKELS"
         },
         Muscolo_ELEVATORE_ALA_NASO: {
             ita: "ELEVATORE ALA DEL NASO",
@@ -7956,7 +7956,7 @@ DB.TXT = {
             esp: "ELEVADOR DEL ALA DE LA NARIZ",
             fra: "ÉLÉVATEUR DE L'AILE DU NEZ",
             por: "LEVANTADOR DA ALETA DO NARIZ",
-            deu: "LEVATOR LABII SUP. ALAEQUE NASI"
+            deu: "HEBER DER OBERLIPPE UND FLÜGEL DES NASENMUSKELS"
         },
         Muscolo_CORRUGATORE: {
             ita: "CORRUGATORE",
@@ -7964,7 +7964,7 @@ DB.TXT = {
             esp: "CORRUGADOR",
             fra: "CORRUGATEUR DU SOURCIL",
             por: "CORRUGADOR",
-            deu: "CORRUGATOR SUPERCILII"
+            deu: "RUNZELNMUSKEL"
         },
         Muscolo_BUCCINATORE: {
             ita: "BUCCINATORE",
@@ -7972,7 +7972,7 @@ DB.TXT = {
             esp: "BUCCINADOR",
             fra: "BUCCINATEUR",
             por: "BUCCINADOR",
-            deu: "BUCCINATOR"
+            deu: "BUCCINATOR-MUSKEL"
         },
         Muscolo_PLATISMA: {
             ita: "PLATISMA",
@@ -7980,7 +7980,7 @@ DB.TXT = {
             esp: "PLATISMA",
             fra: "PLATYSMA",
             por: "PLATISMA",
-            deu: "PLATYSMA"
+            deu: "PLATYSMA-MUSKEL"
         },
         Muscolo_RISORIO: {
             ita: "RISORIO",
@@ -7988,7 +7988,7 @@ DB.TXT = {
             esp: "RISORIO",
             fra: "RISORIUS",
             por: "RISÓRIO",
-            deu: "RISORIUS"
+            deu: "RISORIUS-MUSKEL"
         },
         Muscolo_DEPRESSORE_LABBRO: {
             ita: "DEPRESSORE DEL LABBRO",
@@ -7996,7 +7996,7 @@ DB.TXT = {
             esp: "DEPRESOR DEL LABIO INFERIOR",
             fra: "DÉPRESSEUR DE LA LÈVRE INFÉRIEURE",
             por: "DEPRESSOR DO LÁBIO INFERIOR",
-            deu: "DEPRESSOR LABII INFERIORIS"
+            deu: "UNTERLIPPENSENKMUSKEL"
         },
         Muscolo_ORBICOLARE_BOCCA: {
             ita: "ORBICOLARE DELLA BOCCA",
@@ -8004,7 +8004,7 @@ DB.TXT = {
             esp: "ORBICULAR DE LA BOCA",
             fra: "ORBICULAIRE DE LA BOUCHE",
             por: "ORBICULAR DOS LÁBIOS",
-            deu: "ORBICULARIS ORIS"
+            deu: "ORBICULARIS MAUTKUSKEL"
         },
         Muscolo_NASALE: {
             ita: "NASALE",
@@ -8012,7 +8012,7 @@ DB.TXT = {
             esp: "NASAL",
             fra: "NASAL",
             por: "NASAL",
-            deu: "NASALIS"
+            deu: "NASENMUSKEL"
         },
         Muscolo_MENTALE: {
             ita: "MENTALE",
@@ -8020,7 +8020,7 @@ DB.TXT = {
             esp: "MENTÓN",
             fra: "MENTONNIER",
             por: "MENTAL",
-            deu: "MENTALIS"
+            deu: "MENTALER MUSKEL"
         },
         Muscolo_MILOIOIDEO: {
             ita: "MILOIOIDEO",
@@ -8028,7 +8028,7 @@ DB.TXT = {
             esp: "MILOHIOIDEO",
             fra: "MYLO-HYOÏDIEN",
             por: "MILOHIOIDEO",
-            deu: "MYLOHYOIDEUS"
+            deu: "MYLOHYOIDEUS-MUSKEL"
         },
         Muscolo_STILOIOIDEO: {
             ita: "STILOIOIDEO",
@@ -8036,7 +8036,7 @@ DB.TXT = {
             esp: "ESTILOHIOIDEO",
             fra: "STYLO-HYOÏDIEN",
             por: "ESTILOHIOIDEO",
-            deu: "STYLOHYOIDEUS"
+            deu: "STYLOHYOIDEUS-MUSKEL"
         },
         Muscolo_DIGASTRICO: {
             ita: "DIGASTRICO",
@@ -8044,7 +8044,7 @@ DB.TXT = {
             esp: "DIGÁSTRICO",
             fra: "DIGASTRIQUE",
             por: "DIGÁSTRICO",
-            deu: "DIGASTRICUS"
+            deu: "DIGASTRICUS-MUSKEL"
         },
         Muscolo_STERNOCLEIDOMASTOIDEO: {
             ita: "STERNOCLEIDOMASTOIDEO",
@@ -8052,7 +8052,7 @@ DB.TXT = {
             esp: "ESTERNOCLEIDOMASTOIDEO",
             fra: "STERNOCLEIDOMASTOÏDIEN",
             por: "ESTERNOCLIDOMASTOIDEO",
-            deu: "STERNOCLEIDOMASTOIDEUS"
+            deu: "STERNOCLEIDOMASTOIDEUS-MUSKEL"
         },
         Muscolo_STERNOIOIDEO: {
             ita: "STERNOIOIDEO",
@@ -8060,7 +8060,7 @@ DB.TXT = {
             esp: "ESTERNOHIOIDEO",
             fra: "STERNO-HYOÏDIEN",
             por: "ESTERNOHIOIDEO",
-            deu: "STERNOHYOIDEUS"
+            deu: "STERNOHYOIDEUS-MUSKEL"
         },
         Muscolo_OMOIOIDEO: {
             ita: "OMOIOIDEO",
@@ -8068,7 +8068,7 @@ DB.TXT = {
             esp: "OMOHIOIDEO",
             fra: "OMO-HYOÏDIEN",
             por: "OMOHIOIDEO",
-            deu: "OMOHYOIDEUS"
+            deu: "OMOHYOIDEUS-MUSKEL"
         },
         Muscolo_TIROIDEO: {
             ita: "TIROIDEO",
@@ -8076,7 +8076,7 @@ DB.TXT = {
             esp: "TIROIDES",
             fra: "THYRO-HYOÏDIEN",
             por: "TIROHIOIDEO",
-            deu: "THYROHYOIDEUS"
+            deu: "SCHILDDRÜSENMUSKEL"
         },
         Muscolo_SCALENI: {
             ita: "SCALENI",
@@ -8084,7 +8084,7 @@ DB.TXT = {
             esp: "ESCALENOS",
             fra: "SCALÈNES",
             por: "ESCALENOS",
-            deu: "SCHIEFHALSMUSKELS"
+            deu: "UNGLEICHSEITIGE MUSKELN"
         },
         Muscolo_SPLENIO_DELLA_TESTA: {
             ita: "SPLENIO DELLA TESTA",
@@ -8092,7 +8092,7 @@ DB.TXT = {
             esp: "ESPLENIO DE LA CABEZA",
             fra: "SPLENIUS DE LA TÊTE",
             por: "SPLENIUS DA CABEÇA",
-            deu: "SPLENIUS CAPITIS"
+            deu: "MILZ-KOPFMUSKEL"
         },
         Muscolo_ELEVATORE_DELLA_SCAPOLA: {
             ita: "ELEVATORE DELLA SCAPOLA",
@@ -8100,7 +8100,7 @@ DB.TXT = {
             esp: "ELEVADOR DE LA ESCÁPULA",
             fra: "ÉLÉVATEUR DE LA SCAPULA",
             por: "ELEVADOR DA ESCÁPULA",
-            deu: "LEVATOR SCAPULAE"
+            deu: "HEBER DES SCHULTERBLATTS"
         },
         Muscolo_SARTORIO: {
             ita: "SARTORIO",
@@ -8108,7 +8108,7 @@ DB.TXT = {
             esp: "SARTORIO",
             fra: "SARTORIUS",
             por: "SARTÓRIO",
-            deu: "SARTORIUS"
+            deu: "SCHNEIDERMUSKEL"
         },
         Muscolo_QUADRICIPITE_FEMORALE: {
             ita: "QUADRICIPITE FEMORALE",
@@ -8124,7 +8124,7 @@ DB.TXT = {
             esp: "VASTO LATERAL",
             fra: "VASTE LATÉRAL",
             por: "VASTO LATERAL",
-            deu: "VASTUS LATERALIS"
+            deu: "GROßES SEITLICHE MUSKEL (FEMORAL VIERKÖPFIGER SCHENKELSTRECHER)"
         },
         Muscolo_VASTO_MEDIALE: {
             ita: "VASTO MEDIALE",
@@ -8132,7 +8132,7 @@ DB.TXT = {
             esp: "VASTO MEDIAL",
             fra: "VASTE MÉDIAL",
             por: "VASTO MEDIAL",
-            deu: "VASTUS MEDIALIS"
+            deu: "MEDIALE GROßES MUSKEL (VIERKÖPFIGER SCHENKELSTRECHER)"
         },
         Muscolo_RETTO: {
             ita: "RETTO DEL FEMORE",
@@ -8140,7 +8140,7 @@ DB.TXT = {
             esp: "RECTO FEMORAL",
             fra: "DROIT FÉMORAL",
             por: "RETO FEMORAL",
-            deu: "RECTUS FEMORIS"
+            deu: "REKTUM MUSKEL DES OBERSCHENKELKNOCHENS (OBERSCHENKEL VIERKÖPFIGER SCHENKELSTRECKER)"
         },
         Muscolo_GRACILE: {
             ita: "GRACILE",
@@ -8148,7 +8148,7 @@ DB.TXT = {
             esp: "GRACIL",
             fra: "GRACILE",
             por: "GRÁCIL",
-            deu: "GRACILIS"
+            deu: "MAGER MUSKEL"
         },
         Muscolo_ADDUTTORE_LUNGO: {
             ita: "ADDUTTORE LUNGO",
@@ -8156,7 +8156,7 @@ DB.TXT = {
             esp: "ADUCTOR LARGO",
             fra: "LONG ADDUCTEUR",
             por: "ADUTOR LONGO",
-            deu: "ADDUCTOR LONGUS"
+            deu: "LANGE ADDUKTORMUSKEL"
         },
         Muscolo_PETTINEO: {
             ita: "PETTINEO",
@@ -8164,7 +8164,7 @@ DB.TXT = {
             esp: "PECTÍNEO",
             fra: "PECTINE",
             por: "PECTÍNEO",
-            deu: "PECTINEUS"
+            deu: "PEKTENMUSKEL"
         },
         Muscolo_ILEO: {
             ita: "ILEO",
@@ -8172,7 +8172,7 @@ DB.TXT = {
             esp: "ILÍACO",
             fra: "ILIAQUE",
             por: "ILÍACO",
-            deu: "ILIACUS"
+            deu: "HÜFTBEIN-MUSKEL"
         },
         Muscolo_GRANDE_PSOAS: {
             ita: "GRANDE PSOAS",
@@ -8180,7 +8180,7 @@ DB.TXT = {
             esp: "PSOAS MAYOR",
             fra: "GRAND PSOAS",
             por: "PSOAS MAIOR",
-            deu: "PSOAS MAJOR"
+            deu: "PSOAS-MAJOR-MUSKEL"
         },
         Muscolo_BICIPITE_FEMORALE: {
             ita: "BICIPITE FEMORALE",
@@ -8188,7 +8188,7 @@ DB.TXT = {
             esp: "BÍCEPS FEMORAL",
             fra: "BICEPS FÉMORAL",
             por: "BÍCEPS FEMORAL",
-            deu: "BICEPS FEMORIS"
+            deu: "BIZEPS-OBERSCHENKEL-MUSKEL"
         },
         Muscolo_SEMITENDINOSO: {
             ita: "SEMITENDINOSO",
@@ -8196,7 +8196,7 @@ DB.TXT = {
             esp: "SEMITENDINOSO",
             fra: "SEMITENDINEUX",
             por: "SEMITENDÍNEO",
-            deu: "SEMITENDINOSUS"
+            deu: "HALBSEHNIGE MUSKEL"
         },
         Muscolo_SEMIMEMBRANOSO: {
             ita: "SEMIMEMBRANOSO",
@@ -8204,7 +8204,7 @@ DB.TXT = {
             esp: "SEMIMEMBRANOSO",
             fra: "SEMIMEMBRANEUX",
             por: "SEMIMEMBRANOSO",
-            deu: "SEMIMEMBRANOSUS"
+            deu: "SEMIFELL-MUSKEL"
         },
         Muscolo_GRANDE_ADDUTTORE: {
             ita: "GRANDE ADDUTTORE",
@@ -8212,7 +8212,7 @@ DB.TXT = {
             esp: "ADUCTOR MAGNO",
             fra: "ADDUCTEUR MAGNUS",
             por: "ADUTOR MAGNO",
-            deu: "ADDUCTOR MAGNUS"
+            deu: "GROßES ADDUKTORMUSKEL"
         },
         Muscolo_DELTOIDE: {
             ita: "DELTOIDE",
@@ -8220,7 +8220,7 @@ DB.TXT = {
             esp: "DELTOIDES",
             fra: "DELTOÏDE",
             por: "DELTÓIDE",
-            deu: "DELTOID"
+            deu: "DELTAMUSKEL"
         },
         Muscolo_CORACOBRACHIALE: {
             ita: "CORACO-BRACHIALE",
@@ -8228,7 +8228,7 @@ DB.TXT = {
             esp: "CORACOBRAQUIAL",
             fra: "CORACO-BRACHIAL",
             por: "CORACOBRAQUIAL",
-            deu: "CORACOBRACHIALIS"
+            deu: "RABEN-MUSKEL"
         },
         Muscolo_BICIPITE_BRACHIALE: {
             ita: "BICIPITE BRACHIALE",
@@ -8236,7 +8236,7 @@ DB.TXT = {
             esp: "BÍCEPS BRAQUIAL",
             fra: "BICEPS BRACHIAL",
             por: "BÍCEPS BRAQUIAL",
-            deu: "BICEPS BRACHII"
+            deu: "BIZEPS-BRACHIAL-MUSKEL"
         },
         Muscolo_TRICIPITE_BRACHIALE: {
             ita: "TRICIPITE BRACHIALE",
@@ -8244,7 +8244,7 @@ DB.TXT = {
             esp: "TRÍCEPS BRAQUIAL",
             fra: "TRICEPS BRACHIAL",
             por: "TRÍCEPS BRAQUIAL",
-            deu: "TRICEPS BRACHII"
+            deu: "BRACHIALE TRIZEPS MUSKEL"
         },
         Muscolo_BRACHIALE: {
             ita: "BRACHIALE",
@@ -8252,7 +8252,7 @@ DB.TXT = {
             esp: "BRAQUIAL",
             fra: "BRACHIAL",
             por: "BRAQUIAL",
-            deu: "BRACHIALIS"
+            deu: "BRACHIAL-MUSKEL"
         },
         Muscolo_ANCONEO: {
             ita: "ANCONEO",
@@ -8260,7 +8260,7 @@ DB.TXT = {
             esp: "ANCONEO",
             fra: "ANCONE",
             por: "ANCONEU",
-            deu: "ANCONEUS"
+            deu: "ANCONEUS-MUSKEL"
         },
         Muscolo_BRACHIORADIALE: {
             ita: "BRACHIORADIALE",
@@ -8268,7 +8268,7 @@ DB.TXT = {
             esp: "BRAQUIORRADIAL",
             fra: "BRACHIORADIAL",
             por: "BRAQUIORRADIAL",
-            deu: "BRACHIORADIALIS"
+            deu: "BRACHIORADIALE MUSKEL"
         },
         Muscolo_ESTENSORE_RADIALE_LUNGO_CARPO: {
             ita: "ESTENSORE RADIALE LUNGO DEL CARPO",
@@ -8276,7 +8276,7 @@ DB.TXT = {
             esp: "EXTENSOR RADIAL LARGO DEL CARPO",
             fra: "EXTENSEUR RADIAL LONG DU CARPE",
             por: "EXTENSOR RADIAL LONGO DO CARPO",
-            deu: "EXTENSOR CARPI RADIALIS LONGUS"
+            deu: "LANGE RADIALE STRECKMUSKEL DES HANDWURZELS"
         },
         Muscolo_ESTENSORE_RADIALE_BREVE_CARPO: {
             ita: "ESTENSORE RADIALE BREVE DEL CARPO",
@@ -8284,7 +8284,7 @@ DB.TXT = {
             esp: "EXTENSOR RADIAL CORTO DEL CARPO",
             fra: "EXTENSEUR RADIAL COURT DU CARPE",
             por: "EXTENSOR RADIAL CURTO DO CARPO",
-            deu: "EXTENSOR CARPI RADIALIS BREVIS"
+            deu: "KURZE RADIALE STRECKMUSKEL DES HANDWURZELS"
         },
         Muscolo_ABDUTTORE_LUNGO_POLLICE: {
             ita: "ABDUTTORE LUNGO DEL POLLICE",
@@ -8292,7 +8292,7 @@ DB.TXT = {
             esp: "ABDUCTOR LARGO DEL PULGAR",
             fra: "ABDUCTEUR LONG DU POUCE",
             por: "ABDUTOR LONGO DO POLEGAR",
-            deu: "ABDUCTOR POLLICIS LONGUS"
+            deu: "LANGE ABDUTORMUSKEL DES GROßES FINGERS"
         },
         Muscolo_ESTENSORE_BREVE_POLLICE: {
             ita: "ESTENSORE BREVE DEL POLLICE",
@@ -8300,7 +8300,7 @@ DB.TXT = {
             esp: "EXTENSOR CORTO DEL PULGAR",
             fra: "EXTENSEUR COURT DU POUCE",
             por: "EXTENSOR CURTO DO POLEGAR",
-            deu: "EXTENSOR POLLICIS BREVIS"
+            deu: "KURZE STRECKMUSKEL DES DAUMENS"
         },
         Muscolo_ESTENSORE_LUNGO_POLLICE: {
             ita: "ESTENSORE LUNGO DEL POLLICE",
@@ -8308,7 +8308,7 @@ DB.TXT = {
             esp: "EXTENSOR LARGO DEL PULGAR",
             fra: "EXTENSEUR LONG DU POUCE",
             por: "EXTENSOR LONGO DO POLEGAR",
-            deu: "EXTENSOR POLLICIS LONGUS"
+            deu: "LANGE STRECKMUSKEL DES DAUMENS"
         },
         Muscolo_ESTENSORE_COMUNE_DITA: {
             ita: "ESTENSORE COMUNE DELLE DITA",
@@ -8316,7 +8316,7 @@ DB.TXT = {
             esp: "EXTENSOR COMÚN DE LOS DEDOS",
             fra: "EXTENSEUR COMMUN DES DOIGTS",
             por: "EXTENSOR COMUM DOS DEDOS",
-            deu: "EXTENSOR DIGITORUM"
+            deu: "GEMEINE STRECKMUSKEL DES FINGERS"
         },
         Muscolo_ESTENSORE_PROPRIO_MIGNOLO: {
             ita: "ESTENSORE PROPRIO DEL MIGNOLO",
@@ -8324,7 +8324,7 @@ DB.TXT = {
             esp: "EXTENSOR PROPIO DEL MEÑIQUE",
             fra: "EXTENSEUR PROPRIÉ DU PETIT DOIGT",
             por: "EXTENSOR PRÓPRIO DO MÍNIMO",
-            deu: "EXTENSOR DIGITI MINIMI"
+            deu: "EXTENSOR-ZIFFERN-MUSKEL DES KLEINES FINGERS"
         },
         Muscolo_ESTENSORE_ULNARE_CARPO: {
             ita: "ESTENSORE ULNARE DEL CARPO",
@@ -8332,7 +8332,7 @@ DB.TXT = {
             esp: "EXTENSOR CUBITAL DEL CARPO",
             fra: "EXTENSEUR ULNAIRE DU CARPE",
             por: "EXTENSOR ULNAR DO CARPO",
-            deu: "EXTENSOR CARPI ULNARIS"
+            deu: "ELLBOGISCHE STRECKMUSKEL DES HANDWURZELS"
         },
         Muscolo_FLESSORE_ULNARE_CARPO: {
             ita: "FLESSORE ULNARE DEL CARPO",
@@ -8340,7 +8340,7 @@ DB.TXT = {
             esp: "FLEXOR CUBITAL DEL CARPO",
             fra: "FLECHISSEUR ULNAIRE DU CARPE",
             por: "FLEXOR ULNAR DO CARPO",
-            deu: "FLEXOR CARPI ULNARIS"
+            deu: "ELLBOGISCHE HANDMUSKEL DES HANDWURZELS"
         },
         Muscolo_PRONATORE: {
             ita: "PRONATORE",
@@ -8348,7 +8348,7 @@ DB.TXT = {
             esp: "PRONADOR",
             fra: "PRONATEUR",
             por: "PRONADOR",
-            deu: "PRONATOR TERES"
+            deu: "RUND PRONATION-MUSKEL"
         },
         Muscolo_FLESSORE_RADIALE_CARPO: {
             ita: "FLESSORE RADIALE DEL CARPO",
@@ -8356,7 +8356,7 @@ DB.TXT = {
             esp: "FLEXOR RADIAL DEL CARPO",
             fra: "FLECHISSEUR RADIAL DU CARPE",
             por: "FLEXOR RADIAL DO CARPO",
-            deu: "FLEXOR CARPI RADIALIS"
+            deu: "RADIALE BEUGEMUSKEL DES HANDWURZELS"
         },
         Muscolo_PALMARE_LUNGO: {
             ita: "PALMARE LUNGO",
@@ -8364,7 +8364,7 @@ DB.TXT = {
             esp: "PALMAR LARGO",
             fra: "PALMAR LONG",
             por: "PALMAR LONGO",
-            deu: "PALMARIS LONGUS"
+            deu: "LANGE HANDMUSKEL"
         },
         Muscolo_FLESSORI_SUPERFICIALI_DITA: {
             ita: "FLESSORI SUPERFICIALI DELLE DITA",
@@ -8372,7 +8372,7 @@ DB.TXT = {
             esp: "FLEXOR SUPERFICIAL DE LOS DEDOS",
             fra: "FLECHISSEURS SUPERFICIELS DES DOIGTS",
             por: "FLEXORES SUPERFICIAIS DOS DEDOS",
-            deu: "OBERFLÄCHLICHE FLEXOREN DER FINGER"
+            deu: "OBERFLÄCHLICHE BEUGEMUSKELN DER FINGER"
         },
         Muscolo_ABDUTTORE_BREVE_POLLICE: {
             ita: "ABDUTTORE BREVE DEL POLLICE",
@@ -8380,7 +8380,7 @@ DB.TXT = {
             esp: "ABDUCTOR BREVE DEL PULGAR",
             fra: "ABDUCTEUR COURT DU POUCE",
             por: "ABDUTOR CURTO DO POLEGAR",
-            deu: "KURZER ABDUKTOR DES DAUMENS"
+            deu: "KURZE ABDUKTORMUSKEL DES DAUMENS"
         },
         Muscolo_FLESSORE_BREVE_POLLICE: {
             ita: "FLESSORE BREVE DEL POLLICE",
@@ -8388,7 +8388,7 @@ DB.TXT = {
             esp: "FLEXOR BREVE DEL PULGAR",
             fra: "FLECHISSEUR COURT DU POUCE",
             por: "FLEXOR CURTO DO POLEGAR",
-            deu: "KURZER FLEXOR DES DAUMENS"
+            deu: "KURZE BEUGEMUSKEL DES DAUMENS"
         },
         Muscolo_OPPONENTE_POLLICE: {
             ita: "OPPONENTE DEL POLLICE",
@@ -8396,7 +8396,7 @@ DB.TXT = {
             esp: "OPONENTE DEL PULGAR",
             fra: "OPPOSANT DU POUCE",
             por: "OPONENTE DO POLEGAR",
-            deu: "OPPONENS DES DAUMENS"
+            deu: "GEGNERISCHEMUSKEL DES DAUMENS"
         },
         Muscolo_ADDUTTORE_POLLICE: {
             ita: "ADDUTTORE DEL POLLICE",
@@ -8404,7 +8404,7 @@ DB.TXT = {
             esp: "ADUCTOR DEL PULGAR",
             fra: "ADDUCTEUR DU POUCE",
             por: "ADUTOR DO POLEGAR",
-            deu: "ADDUKTOR DES DAUMENS"
+            deu: "ADDUKTORMUSKEL DES DAUMENS"
         },
         Muscolo_LOMBRICALI: {
             ita: "LOMBRICALI",
@@ -8412,7 +8412,7 @@ DB.TXT = {
             esp: "LUMBRICAL",
             fra: "LOMBRICAUX",
             por: "LOMBRICOS",
-            deu: "LUMBRICALIS"
+            deu: "LENDENMUSKELN"
         },
         Muscolo_FLESSORE_MIGNOLO_MANO: {
             ita: "FLESSORE BREVE DEL MIGNOLO",
@@ -8420,7 +8420,7 @@ DB.TXT = {
             esp: "FLEXOR BREVE DEL MEÑIQUE DE LA MANO",
             fra: "FLECHISSEUR COURT DE L'AURICULAIRE DE LA MAIN",
             por: "FLEXOR CURTO DO MÍNIMO DA MÃO",
-            deu: "KURZER FLEXOR DES KLEINFINGERS DER HAND"
+            deu: "BEUGE MUSKEL DES KLEINEN FINGERS"
         },
         Muscolo_ABDUTTORE_MIGNOLO_MANO: {
             ita: "ABDUTTORE DEL MIGNOLO",
@@ -8428,7 +8428,7 @@ DB.TXT = {
             esp: "ABDUCTOR DEL MEÑIQUE DE LA MANO",
             fra: "ABDUCTEUR DE L'AURICULAIRE DE LA MAIN",
             por: "ABDUTOR DO MÍNIMO DA MÃO",
-            deu: "ABDUKTOR DES KLEINFINGERS DER HAND"
+            deu: "ABDUKTORMUSKEL DER KLEINER FINGER"
         },
         Muscolo_PALMARE_BREVE: {
             ita: "PALMARE BREVE",
@@ -8436,7 +8436,7 @@ DB.TXT = {
             esp: "PALMAR BREVE",
             fra: "PALMAIRE COURT",
             por: "PALMAR CURTO",
-            deu: "KURZER PALMARIS"
+            deu: "KURZ HANDMUSKEL"
         },
         Muscolo_INTEROSSEI_DORSALI_MANO: {
             ita: "INTEROSSEI DORSALI",
@@ -8444,7 +8444,7 @@ DB.TXT = {
             esp: "INTERÓSEOS DORSALES DE LA MANO",
             fra: "INTEROSSEUX DORSAUX DE LA MAIN",
             por: "INTERÓSSEOS DORSAIS DA MÃO",
-            deu: "DORSALE INTEROSSEI DER HAND"
+            deu: "DORSALE INTERKNOCHIGE-MUSKELN DER HAND"
         },
         Muscolo_GASTROCNEMIO: {
             ita: "GASTROCNEMIO",
@@ -8452,7 +8452,7 @@ DB.TXT = {
             esp: "GASTROCNEMIO",
             fra: "GASTROCNÉMIEN",
             por: "GASTROCNÊMIO",
-            deu: "GASTROCNEMIUS"
+            deu: "GASTROCNEMIUS-MUSKEL"
         },
         Muscolo_TENDINE_ACHILLE: {
             ita: "TENDINE DI ACHILLE",
@@ -8468,7 +8468,7 @@ DB.TXT = {
             esp: "SÓLEO",
             fra: "SOLÉAIRE",
             por: "SÓLEO",
-            deu: "SOLEUS"
+            deu: "SOLEUS-MUSKEL"
         },
         Muscolo_PERONEO_LUNGO: {
             ita: "PERONEO LUNGO",
@@ -8476,7 +8476,7 @@ DB.TXT = {
             esp: "PERONEO LARGO",
             fra: "LONG PÉRONIER",
             por: "PERÔNEO LONGO",
-            deu: "LANGER WADENBEIN"
+            deu: "PERONEUS LANGE MUSKEL"
         },
         Muscolo_PERONEO_BREVE: {
             ita: "PERONEO BREVE",
@@ -8484,7 +8484,7 @@ DB.TXT = {
             esp: "PERONEO BREVE",
             fra: "COURT PÉRONIER",
             por: "PERÔNEO CURTO",
-            deu: "KURZER WADENBEIN"
+            deu: "KURZE PERONEUS MUSKEL"
         },
         Muscolo_TIBIALE_ANTERIORE: {
             ita: "TIBIALE ANTERIORE",
@@ -8492,7 +8492,7 @@ DB.TXT = {
             esp: "TIBIAL ANTERIOR",
             fra: "TIBIAL ANTÉRIEUR",
             por: "TIBIAL ANTERIOR",
-            deu: "VORDERER SCHIENBEIN"
+            deu: "VORDERER SCHIENBEINMUSKEL"
         },
         Muscolo_ESTENSORE_LUNGO_DITA: {
             ita: "ESTENSORE LUNGO DELLE DITA",
@@ -8500,7 +8500,7 @@ DB.TXT = {
             esp: "EXTENSOR LARGO DE LOS DEDOS",
             fra: "LONG EXTENSEUR DES DOIGTS",
             por: "EXTENSOR LONGO DOS DEDOS",
-            deu: "LANGER ZEHENSTRECKER"
+            deu: "LANGER STRECKMUSKEL DER ZEHEN"
         },
         Muscolo_ESTENSORE_LUNGO_ALLUCE: {
             ita: "ESTENSORE LUNGO DELL'ALLUCE",
@@ -8508,7 +8508,7 @@ DB.TXT = {
             esp: "EXTENSOR LARGO DEL HALLUX",
             fra: "LONG EXTENSEUR DE L'HALLUX",
             por: "EXTENSOR LONGO DO HALLUX",
-            deu: "LANGER GROßZEHENSTRECKER"
+            deu: "LANGER STRECKMUSKEL DER GROßEN ZEHE"
         },
         Muscolo_ESTENSORE_BREVE_ALLUCE: {
             ita: "ESTENSORE BREVE DELL'ALLUCE",
@@ -8516,7 +8516,7 @@ DB.TXT = {
             esp: "EXTENSOR BREVE DEL HALLUX",
             fra: "COURT EXTENSEUR DE L'HALLUX",
             por: "EXTENSOR CURTO DO HALLUX",
-            deu: "KURZER GROßZEHENSTRECKER"
+            deu: "KURZE BEUGMUSKEL DER GROßEN ZEHE"
         },
         Muscolo_ESTENSORI_BREVI_DITA: {
             ita: "ESTENSORI BREVI DELLE DITA",
@@ -8524,7 +8524,7 @@ DB.TXT = {
             esp: "EXTENSOR BREVE DE LOS DEDOS",
             fra: "COURT EXTENSEUR DES DOIGTS",
             por: "EXTENSOR CURTO DOS DEDOS",
-            deu: "KURZER ZEHENSTRECKER"
+            deu: "KURZE STRECKMUSKELN DER ZEHEN"
         },
         Muscolo_ADDUTTORE_ALLUCE: {
             ita: "ADDUTTORE DELL'ALLUCE",
@@ -8532,7 +8532,7 @@ DB.TXT = {
             esp: "ADUCTOR DEL HALLUX",
             fra: "ADDUCTEUR DE L'HALLUX",
             por: "ADUTOR DO HALLUX",
-            deu: "ADDUKTOR DES GROßZEHENS"
+            deu: "ADDUKTORMUSKEL DES GROßES ZEHE"
         },
         Muscolo_FLESSORE_BREVE_DITA: {
             ita: "FLESSORE BREVE DELLE DITA",
@@ -8540,7 +8540,7 @@ DB.TXT = {
             esp: "FLEXOR BREVE DE LOS DEDOS",
             fra: "COURT FLECHISSEUR DES DOIGTS",
             por: "FLEXOR CURTO DOS DEDOS",
-            deu: "KURZER FINGERBEUGER"
+            deu: "KURZE BEUGEMUSKEL DES FINGERS DER ZEHE"
         },
         Muscolo_FLESSORE_LUNGO_DITA: {
             ita: "FLESSORE LUNGO DELLE DITA",
@@ -8548,7 +8548,7 @@ DB.TXT = {
             esp: "FLEXOR LARGO DE LOS DEDOS",
             fra: "LONG FLECHISSEUR DES DOIGTS",
             por: "FLEXOR LONGO DOS DEDOS",
-            deu: "LANGER FINGERBEUGER"
+            deu: "LANGER BEUGEMUSKEL DER ZEHEN"
         },
         Muscolo_FLESSORE_LUNGO_ALLUCE: {
             ita: "FLESSORE LUNGO DELL'ALLUCE",
@@ -8556,7 +8556,7 @@ DB.TXT = {
             esp: "FLEXOR LARGO DEL HALLUX",
             fra: "LONG FLECHISSEUR DE L'HALLUX",
             por: "FLEXOR LONGO DO HALLUX",
-            deu: "LANGER GROßZEHENBEUGER"
+            deu: "LANGE BEUGEMUSKEL DER GROßES ZEHE"
         },
         Muscolo_ABDUTTORE_MIGNOLO_PIEDE: {
             ita: "ABDUTTORE DEL MIGNOLO (PIEDE)",
@@ -8564,7 +8564,7 @@ DB.TXT = {
             esp: "ABDUCTOR DEL MEÑIQUE (PIE)",
             fra: "ABDUCTEUR DE L'AURICULAIRE (PIED)",
             por: "ADUTOR DO MÍNIMO (PE)",
-            deu: "ABDUKTOR DES KLEINFINGERS (FUß)"
+            deu: "ABDUKTOR MUSKEL DES KLEINES ZEHE"
         },
         Muscolo_FLESSORE_MIGNOLO_PIEDE: {
             ita: "FLESSORE DEL MIGNOLO (PIEDE)",
@@ -8572,7 +8572,7 @@ DB.TXT = {
             esp: "FLEXOR DEL MEÑIQUE (PIE)",
             fra: "FLECHISSEUR DE L'AURICULAIRE (PIED)",
             por: "FLEXOR DO MÍNIMO (PE)",
-            deu: "FINGERBEUGER DES KLEINFINGERS (FUß)"
+            deu: "BEUGMUSKEL DES KLEINES ZEHES"
         },
 
 
