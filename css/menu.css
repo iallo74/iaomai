@@ -381,7 +381,7 @@ body:not(.smart) #p_buy{
 	width: 98px !important;
 }
 body:not(.bodyStyled1):not(.bodyStyled2):not(.smart) #p_sets{
-	background-image: url(../img/ico_mappa2.png);
+	background-image: url(../img/ico_mappa.png);
 	background-position: 2px center, right center !important;
 }
 .smart #icone.noMaps #p_set,
@@ -606,7 +606,7 @@ body:not(.bodyStyled1):not(.bodyStyled2):not(.smart) #p_impostazioni{
 	background-image: url(../img/m_ingranaggioN.png);
 }
 body:not(.bodyStyled1):not(.bodyStyled2):not(.smart) #p_help{
-	background-image: url(../img/m_ingranaggioN.png);
+	background-image: url(../img/m_helpN.png);
 }
 body:not(.smart) #p_help.p_sel svg polygon,
 body:not(.smart) #p_impostazioni.p_sel svg polygon{
