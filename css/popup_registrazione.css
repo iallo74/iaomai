@@ -25,16 +25,45 @@
 	padding-left:30px;
 	padding-right:30px;
 }
-#contRegistrazione, #contRegistrazione p{
+#contRegistrazione,
+#contRegistrazione p{
 	font-size: var(--font-13-2);
 	color:rgba(0,0,0,0.5);
+}
+#contRegistrazione{
+	overflow-y: auto;
+	height: 430px;
 }
 #labelRegistrazione{
 	font-size: var(--font-19-8);
 	color:#000;
 }
-
-
+#contRegistrazione .labelReg{
+	padding-top:15px;
+	padding-bottom:5px;
+	text-align:left;
+	font-weight:bold;
+}
+#contRegistrazione select{
+	display: inline-block;
+	height: 30px;
+	line-height: 30px;
+	margin-right: 13px;
+	width:calc(100%);
+	border-radius:6px;
+	padding-left:10px;	
+	padding-right:30px;	
+	background-image:url(../img/frGiuB.png);
+	background-size:auto 100%;
+	background-repeat:no-repeat;
+	background-position:right center;
+	background-color:#FFF;
+	appearance:none;
+	-webkit-appearance:none;
+	border:none;
+	box-shadow:0px 0px 3px rgba(0,0,0,0.5);
+	cursor:pointer;
+}
 
 #testoRegistrazione{
 	padding-bottom:20px;
@@ -94,4 +123,12 @@
 }
 #divTrattamentoDati *{
 	font-size: var(--font-12-1);
+}
+#divTrattamentoDati{
+	line-height:36px;
+	height:36px;
+	margin-top:5px;
+}
+#registrazioneButCont{
+	height: 70px;
 }

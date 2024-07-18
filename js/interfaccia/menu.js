@@ -718,15 +718,18 @@ var MENU = {
 		document.getElementById("loader").classList.remove("overPopup");
 	},
 	visRegistrazione: function(){
-		/* if(!onlineVersion && (iPad || iPhone))return;
-		MENU.chiudiMenu("registrazione");
-		visLoader(""); */
 		document.getElementById("registrazione").classList.add("visSch");
 		document.getElementById("loader").classList.add("overPopup");
 		let A = document.getElementById("divTrattamentoDati").getElementsByTagName("a")[0];
 		A.href=CONN.linkPrivacy+"?siglaLingua="+globals.siglaLingua;
 		A.target = H.target;
 		if(mouseDetect && !touchable)document.registrazioneForm.Nome.focus();
+		let paesi = elencaPaesi(),
+			html = '<option value="" disabled selected hidden>'+TXT("Stato")+'</option>';
+		for(p in paesi){
+			if(p)html +='<option value="'+p+'">'+htmlEntities(paesi[p])+'</option>'+H.chr10;
+		}
+		document.getElementById("paeseRegistrazione").innerHTML = html;
 	},
 	visImpset: function( archivi=false ){
 		MENU.chiudiMenu("impset");

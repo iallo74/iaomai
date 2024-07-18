@@ -787,6 +787,10 @@ var LOGIN = {
 	// GESTIONE UTENTE
 	registrazione: function(){ // registra l'utente su server
 		if(CONN.retNoConn()){
+			if(document.registrazioneForm.StatoRegistrazione.value==''){
+				ALERT(TXT("selezionareValore").replace("[1]"," '"+TXT("Stato")+"' "));
+				return;
+			}
 			if(verifica_form(document.registrazioneForm)){
 
 				let JSNPOST={	"Nominativo": document.registrazioneForm.Cognome.value+" "+document.registrazioneForm.Nome.value,
@@ -794,6 +798,13 @@ var LOGIN = {
 								"Telefono": document.registrazioneForm.Telefono.value,
 								"USR": document.registrazioneForm.USR.value,
 								"PWD": document.registrazioneForm.PWD.value,
+								"Indirizzo": document.registrazioneForm.Indirizzo.value,
+								"CAP": document.registrazioneForm.CAP.value,
+								"Citta": document.registrazioneForm.Citta.value,
+								"Provincia": document.registrazioneForm.Provincia.value,
+								"Stato": document.registrazioneForm.StatoRegistrazione.value,
+								"Professione": document.registrazioneForm.Professione.value,
+								"Interessi": document.registrazioneForm.Interessi.value,
 								"app": document.registrazioneForm.app.value,
 								"siglaLingua": globals.siglaLingua };
 								

@@ -2728,6 +2728,14 @@ DB.TXT = {
             por: "Profissão",
             deu: "Beruf"
         },
+        Interessi: {
+            ita: "Interessi",
+            eng: "Interest",
+            esp: "Intereses",
+            fra: "Intérêts",
+            por: "Interesses",
+            deu: "Interessen"
+        },
         Social: {
             ita: "Social usato",
             eng: "Used social network",
