@@ -58,8 +58,9 @@ body:not(.smart) #login.inizio #contLogin{
 	background-position: center 30px;
 }
 .smart #login_benvenuto{
-	padding-top: 115px;
-	background-size: auto 60px;
+	padding-top: 185px;
+    background-size: auto 75px;
+    background-position: center 80px;
 }
 body:not(.smart) #login_benvenuto{
 	padding-top: 165px;

@@ -1204,28 +1204,30 @@ var LOGIN = {
 	},
 
 	/* UPGRADE */
-	showUpgradeBox: function(){ // mostra il box di UPGRADE quando gestito da API (per blocco su nuove versioni)
-		if(document.getElementById("upgrade_box"))return;
-		let dvUpdate = document.createElement('div');
-		dvUpdate.id = 'upgrade_box';
-		document.body.appendChild(dvUpdate);
-		let html = '<div id=upgrade_content">'+stripslashes(TXT("UpgradeIntro"))+'<br><br>',
-			txtClick = TXT("CliccaQui"),
-			langWeb = (langWeb!='it' && langWeb!='en' && langWeb!='es') ? 'it' : LINGUE.getSigla2(),
-			UA=navigator.userAgent,
-			isMacUA = 0;
-		if(UA.toLowerCase().indexOf("mac")>-1)isMacUA=1;
-		if(android)html += stripslashes(TXT("UpgradeInfoAndroid")) + '<br><a id="upgrade_button" href="https://play.google.com/store/apps/details?id=app.iaomai.app&pli=1" target="_system">'+txtClick+'</a>';
-		else if((iPad || iPhone || isMacUA) && touchable)html += stripslashes(TXT("UpgradeInfoApple"))+'<br><a id="upgrade_button" href="https://apps.apple.com/it/app/i%C3%A1omai/id1588705898?ign-mpt=uo%3D4" target="_system">'+txtClick+'</a>';
-		else html += stripslashes(TXT("UpgradeInfoPC"))+'<br><a id="upgrade_button" href="https://www.iaomai.app/'+langWeb+'/iaomai/download.php" target="_blank">'+txtClick+'</a>';
-		html += '</div>';
-		document.getElementById("upgrade_box").innerHTML = html;
-		localStorage.modello = '';
-		localStorage.set= '';
-		localStorage.open3d= 'false';
-		localStorage.openMap= 'false';
+		showUpgradeBox: function(){ // mostra il box di UPGRADE quando gestito da API (per blocco su nuove versioni)
+			if(document.getElementById("upgrade_box"))return;
+			let dvUpdate = document.createElement('div');
+			dvUpdate.id = 'upgrade_box';
+			document.body.appendChild(dvUpdate);
+			let html = '<div id=upgrade_content">'+stripslashes(TXT("UpgradeIntro"))+'<br><br>',
+				txtClick = TXT("CliccaQui"),
+				langWeb = LINGUE.getSigla2(),
+				UA=navigator.userAgent,
+				isMacUA = 0;
+			
+			if(langWeb=='pt')langWeb = 'it';
+			if(UA.toLowerCase().indexOf("mac")>-1)isMacUA=1;
+			if(android)html += stripslashes(TXT("UpgradeInfoAndroid")) + '<br><a id="upgrade_button" href="https://play.google.com/store/apps/details?id=app.iaomai.app&pli=1" target="_system">'+txtClick+'</a>';
+			else if((iPad || iPhone || isMacUA) && touchable)html += stripslashes(TXT("UpgradeInfoApple"))+'<br><a id="upgrade_button" href="https://apps.apple.com/it/app/i%C3%A1omai/id1588705898?ign-mpt=uo%3D4" target="_system">'+txtClick+'</a>';
+			else html += stripslashes(TXT("UpgradeInfoPC"))+'<br><a id="upgrade_button" href="https://www.iaomai.app/'+langWeb+'/iaomai/download.php" target="_blank">'+txtClick+'</a>';
+			html += '</div>';
+			document.getElementById("upgrade_box").innerHTML = html;
+			localStorage.modello = '';
+			localStorage.set= '';
+			localStorage.open3d= 'false';
+			localStorage.openMap= 'false';
 
-	},
+		},
 
 	/* MODULI */
 	verAuth: function( n ){ // verifica se si è in possesso di una licenza per una mappa

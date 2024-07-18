@@ -1916,7 +1916,18 @@ body:not(.bodyStyled2) #btn_modut{
 .bodyStyled2 #p_lingua{
 	background-image:url(../img/ico_linguapref.png);
 }
-#lingueSelect{
+#lingueLogin{
+	position: fixed;
+	top: 0;
+	right: 0;
+	background-image: url(../img/ico_lingua.png);
+	background-position: left center;
+	background-repeat: no-repeat;
+	padding-left: 23px;
+	height: 40px;
+}
+#lingueSelect,
+#lingueLoginSelect{
 	display: inline-block;
     height: 30px;
     line-height: 30px;
@@ -1936,12 +1947,19 @@ body:not(.bodyStyled2) #btn_modut{
     cursor: pointer;
     color: #000;
 }
+#lingueLoginSelect{
+	background-color: #c5c2b9;
+	text-align: center;
+}
 .smart #lingueSelect{
-	height: 41px;
     padding-left: 15px;
     font-size: var(--font-14-94);
 }
-#lingueSelect option{
+#lingueLoginSelect{
+	margin-right: 5px;
+}
+#lingueSelect option,
+#lingueLoginSelect option{
     color: #000;
 }
 .bodyStyled2 #lingueSelect{

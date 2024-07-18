@@ -114,6 +114,9 @@ function INIT(){
 	}
 	LINGUE.init();
 	visLoader("Loading user data...");
+	setTimeout(function(){
+		if(document.getElementById("loader").getElementsByTagName("div")[0].innerHTML=='Loading user data...')nasLoader();
+	},5000);
 	MENU.init();
 
 	init();

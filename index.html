@@ -427,6 +427,9 @@
                 	<form name="loginFrom" id="loginFrom" method="post" onSubmit="return LOGIN.getLogin();"><div><input type="text" name="USR" id="USR"  placeholder="Username" class="okPlaceHolder" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" onFocus="LOGIN.focRic=true;" onBlur="LOGIN.focRic=false;"><div id="USRlabel"><span></span><div id="usrChange" onClick="LOGIN.annullaUtente();">{{TXT_Disconnetti}}</div></div></div><div><input type="password" name="PWD" id="PWD" placeholder="Password" class="okPlaceHolder" autocomplete="off"><span id="visPwd" onClick="LOGIN.swVisPwd();"></span></div><div id="loginStayConnected"><label for="stayConnected"><input type="checkbox" id="stayConnected" name="stayConnected">{{TXT_StaiConnesso}}</label></div><div id="loginButCont"><input type="submit" name="loginBut" id="loginBut" value="{{TXT_Accedi}}" /><p><!-- da popolare //--></p></div></form>
     <div id="btnRecupero" onClick="LOGIN.recuperaPwd();">{{TXT_PWDdimenticata}} <b>&gt;</b></div>
     <div id="btnRegistrazione"><span></span><div id="btn_registrazione" onClick="MENU.visRegistrazione();">{{TXT_Registrati}}</div></div>
+    <div id="lingueLogin">
+        <select id="lingueLoginSelect" onChange="cambiaLingua(this.value);"> </select>
+    </div>
     <div id="demoContinueLogin" onClick="MENU.chiudiMenu();if(!globals.modello.cartella){inizio=true;caricaModello('donna');}"><span></span><div>{{TXT_ContinuaDemo}}</div></div>
                 </div>
             </div>
@@ -448,7 +451,7 @@
                         </div>
                         <div>
                         	<input type="text"
-                            	   name="{{TXT_Nome}}"
+                            	   name="Nome"
                             	   id="@|{{TXT_Nome}}|1|0"
                                    class="mezza"
                             	   placeholder="{{TXT_Nome}}"
@@ -457,7 +460,7 @@
                             	   autocapitalize="off"
                             	   spellcheck="false">
                             <input type="text"
-                                    name="{{TXT_Cognome}}"
+                                    name="Cognome"
                                     id="@|{{TXT_Cognome}}|1|0"
                                     class="mezza"
                                     placeholder="{{TXT_Cognome}}"
@@ -478,7 +481,7 @@
                         </div>
                     	<div>
                         	<input type="text"
-                            	   name="{{TXT_Telefono}}"
+                            	   name="Telefono"
                             	   id="@|{{TXT_Telefono}}|1|0"
                             	   placeholder="{{TXT_Telefono}}"
                             	   autocomplete="off"

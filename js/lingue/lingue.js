@@ -121,6 +121,7 @@ var LINGUE = {
 					'</div>';
 		document.getElementById("contInfolingue").innerHTML = html;
 		document.getElementById("lingueSelect").innerHTML = htmlSel;
+		document.getElementById("lingueLoginSelect").innerHTML = htmlSel;
 	},
 	convTitle: function(element){
 		if(element.title.substr(0,6)=='{{TXT_'){
