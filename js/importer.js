@@ -8,7 +8,7 @@
 */
 
 // IMPORTAZIONI DI VERSIONE
-var verApp = '1.7'; // utilizzata per gli aggiornamenti dei files: FILES[]
+var verApp = '1.7.1'; // utilizzata per gli aggiornamenti dei files: FILES[]
 					// N.B. Cambia anche il numero in CONN.APIfolder
 
 // IMPOSTAZIONI DEL DEVICE
