@@ -784,8 +784,8 @@ var SCHEDA = {
 				'			   		   display: inline-block;' +
 				'			   		   width: calc(100% - 20px);">' +
 								titolo +
-				'			</h1>' +
-				'			<div id="scheda"' +
+				'			</h1>';
+		HTML += '			<div id="scheda"' +
 				'			   	 style="display:block;' +
 				'			   	 		position:relative;"' +
 				'			   	 class="schLibera sch_Max800 scheda_paziente schForm contStampa">' +
