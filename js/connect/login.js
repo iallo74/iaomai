@@ -791,6 +791,10 @@ var LOGIN = {
 				ALERT(TXT("selezionareValore").replace("[1]"," '"+TXT("Stato")+"' "));
 				return;
 			}
+			if(document.registrazioneForm.PWD.value!=document.registrazioneForm.PWD2.value){
+				ALERT(TXT("erroreRipetiPassword"));
+				return;
+			}
 			if(verifica_form(document.registrazioneForm)){
 
 				let JSNPOST={	"Nominativo": document.registrazioneForm.Cognome.value+" "+document.registrazioneForm.Nome.value,

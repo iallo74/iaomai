@@ -4906,6 +4906,22 @@ DB.TXT = {
         },
 
         // UTENTE
+        RipetiPassword: {
+            ita: "Ripeti password",
+            eng: "Repeat password",
+            esp: "Repite la contraseña",
+            fra: "Répétez le mot de passe",
+            por: "Repita a senha",
+            deu: "Passwort wiederholen"
+        },
+        erroreRipetiPassword: {
+            ita: "ATTENZIONE! I campi Password e Ripeti password devono essere uguali!",
+            eng: "CAUTION! The Password and Repeat password fields must match!",
+            esp: "¡PRECAUCIÓN! ¡Los campos Contraseña y Repite la contraseña deben coincidir!",
+            fra: "ATTENTION ! Les champs Mot de passe et Répétez le mot de passe doivent correspondre!",
+            por: "CUIDADO! Os campos Senha e Repita a senha devem coincidir!",
+            deu: "ACHTUNG! Die Felder Passwort und Passwort wiederholen müssen übereinstimmen!"
+        },
         TestoRegistrazioneEspanso: {
             ita: "Con la registrazione a iáomai avrai {10 giorni di prova gratuita di tutte le app} e allo scadere potrai usufruire di tutte le funzionalità di base dell'app:\n\n[#] Fino a 15 pazienti\n[#] Backup dei dati\n[#] Accesso multipiattaforma\n[#] Funzionalità della community",
             eng: "With the registration to iáomai you will have {10 days free trial of all apps} and upon expiry you will be able to use all the basic functions of the app:\n\n[#] Up to 15 patients\n[#] Data backup\n[#] Cross-platform access\n[#] Community functionality",
