@@ -838,8 +838,8 @@ var LOGIN = {
 			LOGIN.getLogin();
 			MENU.chiudiMenu();
 			GUIDA.visFumetto("guida_generica");
+			document.getElementById("loader").classList.remove("overPopup");
 		}
-		document.getElementById("loader").classList.remove("overPopup");
 		document.getElementById("registrazione").classList.remove("popup_back");
 		return;
 	},
