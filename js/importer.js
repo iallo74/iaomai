@@ -8,7 +8,7 @@
 */
 
 // IMPORTAZIONI DI VERSIONE
-var verApp = '1.7.3'; // utilizzata per gli aggiornamenti dei files: FILES[]
+var verApp = '1.8'; // utilizzata per gli aggiornamenti dei files: FILES[]
 					// N.B. Cambia anche il numero in CONN.APIfolder
 
 // IMPOSTAZIONI DEL DEVICE
@@ -38,7 +38,7 @@ var	smartphone = false,
 /*const checkOnlineStatus = async () => {
 	try{
 		let t = new Date().getTime();
-		const online = await fetch("https://www.iaomai.app/app/v1_3/img/checker_di_connessione_non_cancellare.png?v="+t);
+		const online = await fetch("https://www.iaomai.app/app/v1_8/img/checker_di_connessione_non_cancellare.png?v="+t);
 		return online.status >= 200 && online.status < 300;
 	}catch(err) {
 		return false;

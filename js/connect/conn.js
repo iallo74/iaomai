@@ -1,6 +1,6 @@
 var CONN = {
 	VERSIONE: 1,
-	APIfolder: 'https://www.corpomentespirito.it/__stream/app/030_iaomai/__API/V1.7/',
+	APIfolder: 'https://www.corpomentespirito.it/__stream/app/030_iaomai/__API/V1.8/',
 	APIfilesFolder: 'https://files.iaomai.app/___API/V3/',
 	FILESfolder: 'https://files.iaomai.app/__files_utenti/files/',
 	urlStore: 'https://www.iaomai.app/[lang]/iaomai/',
@@ -36,7 +36,6 @@ var CONN = {
 				x.onreadystatechange=function(){
 					if(x.readyState===4){
 						if(x.response){
-							//if(x.response.substr(0,1)=='<')ALERT(TXT("ErroreCaricamento"));
 							CONN.online = true;
 							eval(funzione)(x.response);
 						}
@@ -47,13 +46,10 @@ var CONN = {
 				qs+="tm="+tm;
 				if(typeof(DB)!='undefined')qs+="&ui="+encodeURIComponent(window.btoa(__(localStorage.UniqueId)));
 				x.open("POST", apiFolder+url, true);
-				//console.log(apiFolder+url);
 				x.setRequestHeader("Content-type", "application/x-www-form-urlencoded;charset=uft-8;");
-				//x.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded; ');
 				if(qs.indexOf("TK=D6G-w34rgV")==-1)x.setRequestHeader("Authorization", LOGIN.getLS('TOKEN'));
 				
 				x.onerror = function () {
-					//console.log("Non più connesso");
 					console.log("Errore da chiamata API");
 					CONN.online = false;
 					eval(funzione)();
@@ -73,7 +69,6 @@ var CONN = {
 		}else return true;
 	},
 	openUrl: function( url ){ // apre un URL nel browser i sistema
-		//if(window.cordova && window.cordova.platformId !== 'windows')window.open(url,'_system');
 		if(isCordova)window.open(url,'_system');
 		else window.open(url,'_blank');
 	},
@@ -86,17 +81,12 @@ var CONN = {
 		const chunk = file.slice(start, end);
 		const formData = new FormData();
 		formData.append('chunk', chunk, `${tmp_name+"."+file.name.split(".")[1]}.part${chunkNumber}.tot${(CONN.totalChunks-1)}`);
-		/*formData.append('name', file.name);
-		formData.append('totalChunks', CONN.totalChunks);*/
 		return fetch(url+"?UniqueId="+localStorage.UniqueId+"&idUtente="+DB.login.data.idUtente+"&filename="+encodeURIComponent(btoa(file.name)),{
 				method: 'POST',
-				/* mode: 'no-cors', */
 				headers: {
 					'Authorization': LOGIN.getLS('TOKEN')
 				},
-				body: formData/* ,
-				redirect: 'follow',
-				keepalive: false */
+				body: formData
 			})
 		.then(response => {
 			if(!response.ok){
@@ -110,17 +100,12 @@ var CONN = {
 				let perc = parseInt((chunkNumber*100)/(CONN.totalChunks-1));
 				if(CONN.totalChunks==1)perc=100;
 				document.getElementById("perc_chunk").innerHTML = perc;
-				// aggiornare la status-bar o la percentuale
-				//console.log(chunkNumber+" === "+CONN.totalChunks - 1)
 				if (chunkNumber === CONN.totalChunks - 1) {
-					//console.log(data)
 					eval(final_funct)(data);
 				}else{
 					return CONN.uploadChunk(url,chunkNumber + 1,file,tmp_name,final_funct);
 				}
 			}else{
-				//console.error(data);
-
 				PH.msgQuotaVideoExeded(JSON.stringify(data));
 			}
 		})
