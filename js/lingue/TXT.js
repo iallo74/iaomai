@@ -5257,12 +5257,12 @@ DB.TXT = {
             deu: "Das Set enthält die Karte der Aurikulologiepunkte und die Behandlung von Beschwerden durch Aurikulotherapie.\n\nDas Set enthält auch:\n[anatomy_full]"
         },
         TriggerPoints: {
-            ita: "TriggerPointsMap",
-            eng: "TriggerPointsMap",
-            esp: "TriggerPointsMap",
-            fra: "TriggerPointsMap",
-            por: "TriggerPointsMap",
-            deu: "TriggerPointsMap"
+            ita: "TriggerpointsMap",
+            eng: "TriggerpointsMap",
+            esp: "TriggerpointsMap",
+            fra: "TriggerpointsMap",
+            por: "TriggerpointsMap",
+            deu: "TriggerpointsMap"
         },
         TriggerPointsST: {
             ita: "Trigger points",

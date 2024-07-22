@@ -332,19 +332,56 @@ var sets = {
 			"uomo"
 		],
 		imports: [
-		
+			'TXT.js',
+			'geometrie.js',
+			'set.js',
+			'modulo_punti.js',
+			'modulo_patologie.js',
+			'modulo_punto.js',
+			'modulo_teoria.js',
+			'sets/common/modulo_procedure.js',
+			'sets/common/modulo_procedure_community.js',
+			'materiali.js',
+			'stili.css',
+			'sets/common/stili_procedure.css',
+			'stili_punto.css',
+			'lang_[lang].js',
+			'sets/common/patologie/lang_[lang].js'
+		],
+		dims: [
+			13,
+			3480,
+			22,
+			5,
+			5,
+			8,
+			8,
+			48,
+			17,
+			7,
+			23,
+			8,
+			3,
+			290
 		],
 		txtLoading: stripslashes(TXT("CaricamentoMappe")),
 		auth: false,
-		locked: true,
+		locked: false,
+		lastVer: 1,
 		opening: true,
-		dataPubblicazione: '2023-10',
+		dataPubblicazione: '',
 		siglaProc: 'TRP',
-		idApple: '',
-		idGoogle: '',
-		pageStore: 'triggerpointsmap',
+		modls: [
+			{
+				idApple: 'TP24',
+				idGoogle: 'tp24',
+				pageStore: 'triggerpointsmap',
+			}
+		],
 		lingueCont: [
-			
+			"ita"
+		],
+		lingueAI: [
 		]
 	},
 	clients_full: {
