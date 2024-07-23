@@ -73,6 +73,7 @@ var IMPORTER = {
     	'css/popup_features.css',
     	'css/popup_purchases.css',
     	'css/popup_licenze.css',
+		'css/popup_adv.css',
     	'css/schede.css',
     	'css/schede_touch.css',
     	'css/moduli.css',
@@ -148,6 +149,7 @@ var IMPORTER = {
 		'js/interfaccia/modulo_licenze.js',
 		'js/interfaccia/modulo_customs.js',
 		'js/interfaccia/modulo_app_rating.js',
+		'js/interfaccia/modulo_adv.js',
 		'js/utils/agenda.js',
 		'js/utils/decpy.js',
         

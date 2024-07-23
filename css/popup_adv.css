@@ -1,0 +1,21 @@
+@charset "utf-8";
+/* CSS Document */
+
+/* INFORMAZIONI SULLE LINGUE */
+#adv{
+	width: 620px;
+    height: 420px;
+    margin-left: -310px;
+    margin-top: -210px;
+}
+@media (max-width:620px){
+	#adv{
+		width: calc(100% - 20px) !important;
+		margin-left: 0px !important;
+		left: 10px !important;
+		border-radius:5px !important;
+	}
+}
+#txtAdv{
+	height: 310px;
+}
