@@ -111,7 +111,7 @@ THREE.ObjectControls = function ( object, domElement ) {
 				MENU.attBtnCentro();
 				scope._ZPR=true;
 				scope._inMovimento=true;
-				let r = 1.3;
+				let r = 0.755;
 				
 				// riduttore in base alla vicinanza
 				let a = ( scope.object.position.x * (22-this._zIni) ) / 22;

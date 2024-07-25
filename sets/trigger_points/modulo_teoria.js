@@ -105,7 +105,6 @@ var MODULO_TEORIA = { // extend SET
 								globals.set.cartella+'_teoria_'+p+"_"+t );
 		
 		SCHEDA.gestVisAnatomia(true);
-		SET.convSigleScheda();
 		SET.evidenziaPunto();
 		
 		SET.spegniMeridianoSecondario();
@@ -113,7 +112,7 @@ var MODULO_TEORIA = { // extend SET
 		setTimeout( function(meridianiSecondari){
 			if(meridianiSecondari){
 				for(let m in meridianiSecondari){
-					if(meridianiSecondari[m].indexOf("_")==-1)SET.accendiMeridiano(meridianiSecondari[m],false,true);
+					if(meridianiSecondari[m].indexOf("_")==-1)SET.accendiGruppo(meridianiSecondari[m],false,true);
 					SET.accendiMeridianoSecondario(meridianiSecondari[m],true);
 				}
 				SET.MAT.lineYang.uniforms.opacity.value = SET.MAT.opLineContr;

@@ -156,7 +156,6 @@ var MODULO_PATOLOGIE = { // extend SET
 								globals.set.cartella+'_patologie_'+siglaPatologia );
 		
 		SCHEDA.gestVisAnatomia(true);
-		SET.convSigleScheda();
 		SET.evidenziaPunto();
 		SET.evidenziaMeridiani(html);
 	},

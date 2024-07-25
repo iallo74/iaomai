@@ -2,7 +2,7 @@ var SET = {
 	// VARIABILI
 	INTERSECTED: null,
 	P: [],
-	PT: [],
+	PT: null,
 	time: 0,
 	pulse: 1,
 	ptSel: null,
@@ -16,16 +16,18 @@ var SET = {
 	puntiEvidenziati: [],
 	pMod: -1,
 	pointEvi: '',
-	meridianiSecondariAccesi: [],
 	preCM: false, // memorizza il contrast method prima di attivarlo su un punto interno
 	eviPalls: [],
 	geometryPallino: null,
 	geometryPallinoTrasp: null,
-	idTeoMeridiani: 1,
 	snd: null,
 	areas50: false,
 	smActive: false,
 	smPressed: false,
+	memPos: {
+		position: null,
+		rotation: null
+	},
 	
 	// FUNZIONI
 	_init: function(){
@@ -51,40 +53,38 @@ var SET = {
 		if(!modelloAperto)modelloAperto='donna';
 		this.geometryPallino = new THREE.SphereGeometry( 0.03, facce, facce );
 		this.geometryPallinoTrasp = new THREE.SphereGeometry( 0.07, facceTrasp, facceTrasp );
-		for(let m in MAPPA.punti){ // elenco i meridiani
 		
-			this.PT[m] = new THREE.Group();
-			this.PT[m].name="PT_"+m;
-			// carico i punti parametrizzati
-			n=-1;
-			let PTS=MAPPA.punti[modelloAperto],
-				ptAdd = false;
-			
-			for(let p in PTS){
-				if(PTS[p]!=''){
-					let x = PTS[p].array[0],
-						y = PTS[p].array[1],
-						z = PTS[p].array[2];
-						
-					// pallino colorato
-					n++;
-					this.P[n] = new THREE.Mesh( this.geometryPallino, this.MAT.pointBase );
-					this.P[n].position.set(x,y,z);
-					this.P[n].name=PTS[p].nome;
-					this.PT[m].add( this.P[n] );
-						
-					// pallino trasparente
-					n++;
-					this.P[n] = new THREE.Mesh( this.geometryPallinoTrasp, this.MAT.pointTrasp ); 
-					this.P[n].position.set(x,y,z);
-					this.P[n].name='_'+PTS[p].nome;
-					this.PT[m].add( this.P[n] );
-					ptAdd = true;
-				}
+		this.PT = new THREE.Group();
+		this.PT.name="PT";
+		// carico i punti parametrizzati
+		n=-1;
+		let PTS=MAPPA.punti[modelloAperto],
+			ptAdd = false;
+		
+		for(let p in PTS){
+			if(PTS[p]!=''){
+				let x = PTS[p].array[0],
+					y = PTS[p].array[1],
+					z = PTS[p].array[2];
+					
+				// pallino colorato
+				n++;
+				this.P[n] = new THREE.Mesh( this.geometryPallino, this.MAT.pointBase );
+				this.P[n].position.set(x,y,z);
+				this.P[n].name=PTS[p].nome;
+				this.PT.add( this.P[n] );
+					
+				// pallino trasparente
+				n++;
+				this.P[n] = new THREE.Mesh( this.geometryPallinoTrasp, this.MAT.pointTrasp ); 
+				this.P[n].position.set(x,y,z);
+				this.P[n].name='_'+PTS[p].nome;
+				this.PT.add( this.P[n] );
+				ptAdd = true;
 			}
-			if(ptAdd)SETS.add( this.PT[m] );
-
 		}
+		if(ptAdd)SETS.add( this.PT );
+
 
 		if(!areasView){
 			MODELLO.swArea(2);
@@ -141,7 +141,8 @@ var SET = {
 		if(preElenco)SCHEDA.selElenco(preElenco);
 		
 		manichino.add( SETS );
-		//this._setLineMaterials();
+		this._setLineMaterials();
+		SET.MAT.iniMappeMuscoli();
 		raycastDisable=false;
 		if(!globals.modello.cartella){
 			SETS.visible = false;
@@ -268,8 +269,6 @@ var SET = {
 	// RENDER SET
 	_render: function(){
 
-		SET._setResolution();
-
 
 		let make = true;
 	 	if(manichinoCaricato && !raycastDisable && !controlsM._ZPR && !controlsM._premuto){ // roll-over sui punti
@@ -328,12 +327,12 @@ var SET = {
 			SET.desIntersected();
 			if(objOver){
 				this.INTERSECTED = objOver;
-				let labelPt = this.INTERSECTED.name.split("_")[1];
+				let nPunto = this.INTERSECTED.name.split("_")[1],
+					labelPunto = DB.set.punti[nPunto].NomePunto;
 				// #### gestire i nomi da DB
 
-				// #### colorare gruppo
-
-				visToolTip(labelPt);
+				SET.coloraGruppo(nPunto,'Over');
+				visToolTip(labelPunto);
 				renderer.domElement.style.cursor='pointer';
 			}else{
 				this.INTERSECTED=null;
@@ -353,9 +352,9 @@ var SET = {
 	},
 	setPulsePt: function( pt, pulse, op, mat='' ){
 		let pp = SET.splitPoint(pt.name),
-			els = scene.getObjectByName("PT_"+pp.siglaMeridiano).children;
+			els = scene.getObjectByName("PT").children;
 		for(let e in els){
-			if(els[e].name.indexOf(pp.siglaMeridiano+"."+pp.nPunto+".")==0){
+			if(els[e].name.indexOf(pp.nPunto)==0){
 				els[e].scale.set(pulse,pulse,pulse);
 				if(mat)els[e].material=mat;
 			}
@@ -365,7 +364,8 @@ var SET = {
 	desIntersected: function(){
 		if(this.INTERSECTED){
 			if(this.INTERSECTED.name.substr(0,1)=='_'){
-				// scoloro in gruppo di punti
+				let nPunto = this.INTERSECTED.name.split("_")[1];
+				SET.coloraGruppo(nPunto,'Base',true);
 			}
 			this.INTERSECTED = null;
 		}
@@ -387,11 +387,11 @@ var SET = {
 					controlsM._ZPR=true;
 					controlsM._MM=false;
 				}
-				let n=this.INTERSECTED.name.split("_"),
+				let PT_name=this.INTERSECTED.name.substr(1,this.INTERSECTED.name.length-1),
 					ritorno = '';
 					
 				if(SCHEDA.classeAperta && SCHEDA.classeAperta!='tab_punti')ritorno = 'SET.chiudiPunto(true)';
-				SET.apriPunto(n[1],ritorno,this.INTERSECTED);
+				SET.apriPunto(PT_name,ritorno,this.INTERSECTED);
 			}
 		}
 		controlsM.xIni=-1;
@@ -413,22 +413,23 @@ var SET = {
 			if(this.ptSel.userData.nota)mat=this.MAT.pointNote;
 			SET.setPulsePt( this.ptSel, 1, 1, mat );
 			let pp = SET.splitPoint(this.ptSel.name);
-			document.getElementById("pt_"+pp.nPunto+"_"+pp.siglaMeridiano).classList.remove("selElPt");
+			document.getElementById("pt_"+pp.nPunto).classList.remove("selElPt");
 		}
 		if(this.MAT.pointSel)SET.chiudiPunto(true,true);
 		if(!scene.getObjectByName( PT_name )){
-			if(scene.getObjectByName( PT_name + "." )){
-				PT=scene.getObjectByName( PT_name + "." );
-			}else if(scene.getObjectByName( PT_name + ".SX" )){
-				PT=scene.getObjectByName( PT_name + ".SX" );
+			let els = this.PT.children;
+			for(v in els){
+				if(	els[v].name.substr(0,3)==PT_name){
+					PT = els[v];
+				}
+				
 			}
 		}else PT=scene.getObjectByName( PT_name );
 		if(this.ptSel && !SCHEDA.schedaAperta)this.chiudiPunto();
 		this.ptSel = PT;
 		let pp = SET.splitPoint(this.ptSel.name.substr(0,5));	
 		
-		if(!ritorno && PT_name.indexOf("EX")==-1)this.accendiMeridiano(pp.siglaMeridiano);
-		document.getElementById("pt_"+pp.nPunto+"_"+pp.siglaMeridiano).classList.add("selElPt");
+		document.getElementById("pt_"+pp.nPunto).classList.add("selElPt");
 		let matTxt = "this.MAT.pointSel";
 		if(PT.userData.nota)matTxt = "this.MAT.pointSelNote";
 		if(this.ptSel.userData.interno)matTxt += "Int";
@@ -437,13 +438,27 @@ var SET = {
 		this.diffY = this.ptSel.position.y*1;
 		
 		
-		let els = scene.getObjectByName("PT_"+pp.siglaMeridiano).children;
+		let els = scene.getObjectByName("PT").children;
 		for(let e in els){
-			if(els[e].name.indexOf(pp.siglaMeridiano+"."+pp.nPunto+".")==0)els[e].material=mat;
+			if(els[e].name.indexOf(pp.nPunto)==0)els[e].material=mat;
 		}
 		
 		
-		let x2 = 0-this.ptSel.position.x,
+		SET.memPos.position = {
+			x: manichinoCont.position.x,
+			y: manichinoCont.position.y,
+			z: manichinoCont.position.z
+		}
+		SET.memPos.rotation = {
+			x: manichinoCont.rotation.x,
+			y: manichinoCont.rotation.y,
+			z: manichinoCont.rotation.z
+		}
+
+		centro()
+		rotateEnd = { x:0, y:manichinoCont.rotation.y, z:0 };
+
+		/* let x2 = 0-this.ptSel.position.x,
 			y2 = 0-this.ptSel.position.y,
 			z2 = 0-this.ptSel.position.z;
 		panEndZero = { x: x2, y: y2, z: z2 };
@@ -489,14 +504,15 @@ var SET = {
 			}
 			if(manichinoCont.position.z<15 || !zoomEnd || !smothingView)zoomEnd = 15;
 			normalizeRotation();
-		}
+		} */
 		
-		SET.delEviPalls(pp.siglaMeridiano,pp.nPunto,'Over');
-		SET.addEviPalls(pp.siglaMeridiano,pp.nPunto,'Select');
+		SET.delEviPalls(pp.nPunto,'Over');
+		SET.addEviPalls(pp.nPunto,'Select');
 		this.pulse = 1;
 		
 		// ---------------------
-		SET.caricaPunto( pp.siglaMeridiano, pp.nPunto, ritorno );
+		SET.MAT.applicaMappa(pp.nPunto);
+		SET.caricaPunto( pp.nPunto, ritorno );
 	},
 	chiudiPunto: function( nonChiudereScheda=false, cambiaPunto=false ){
 		document.getElementById("scheda").classList.remove("tab_punti");
@@ -506,6 +522,7 @@ var SET = {
 			endChangeDetection();
 			SCHEDA.formModificato = false;
 		}
+		SET.MAT.applicaMappa();
 		if(this.ptSel){
 			if(this.ptSel.userData.interno){
 				this.preCM = false;
@@ -520,6 +537,17 @@ var SET = {
 				}
 			}
 		}
+		if(SET.memPos.position){
+			normalizeRotation();
+			rotateEnd = { x:SET.memPos.rotation.x, y:SET.memPos.rotation.y, z:0 };
+			//panEndZero = { x: manichinoCont.position.x, y: manichinoCont.position.y, z: manichinoCont.position.z };
+			panEndZero = { x: 0, y: 0, z: 0 };
+			panEnd = { x: SET.memPos.position.x, y: SET.memPos.position.y, z: SET.memPos.position.z };
+			zoomEnd = SET.memPos.position.z;
+			normalizeRotation();
+			SET.memPos.position = null;
+			SET.memPos.rotation = null;
+		}
 		
 		let exPt = SET.ptSel;
 		
@@ -527,14 +555,14 @@ var SET = {
 		let pp = SET.splitPoint(this.ptSel.name);
 		this.pulse=0;
 		let mat=this.MAT.pointBase;
-		if(MAPPA[pp.siglaMeridiano].meridianoAcceso)mat=this.MAT.pointOn;
+		//if(MAPPA[pp.siglaMeridiano].meridianoAcceso)mat=this.MAT.pointOn;
 		if(this.ptSel.userData.nota)mat=this.MAT.pointNote;
-		SET.delEviPalls(pp.siglaMeridiano,pp.nPunto,'Select');
+		SET.delEviPalls(pp.nPunto,'Select');
 		
 		// coloro tutti gli altri punti non SX o DX o CC
-		let els = scene.getObjectByName("PT_"+pp.siglaMeridiano).children;
+		let els = scene.getObjectByName("PT").children;
 		for(let e in els){
-			if(els[e].name.indexOf(pp.siglaMeridiano+"."+pp.nPunto+".")==0){
+			if(els[e].name.indexOf(pp.nPunto)==0){
 				els[e].material=mat;
 				els[e].material.opacity=1;
 				els[e].scale.set(1,1,1);
@@ -542,7 +570,7 @@ var SET = {
 		}
 		
 		this.ptSel=null;	
-		document.getElementById("pt_"+pp.nPunto+"_"+pp.siglaMeridiano).classList.remove("selElPt");
+		document.getElementById("pt_"+pp.nPunto).classList.remove("selElPt");
 		if(SCHEDA.scheda2Aperta){
 			nonChiudereScheda=true;
 			document.getElementById("scheda_ritorno").click();
@@ -564,141 +592,27 @@ var SET = {
 		manichinoCont.position.y = manichinoCont.position.y - (vector2.y-vector.y);
 		manichinoCont.position.z = manichinoCont.position.z - (vector2.z-vector.z);
 		render();
-		SET.spegniMeridiani();
 	},
 	riapriPunto: function(){
 		if(!SET.ptSel)return;
 		MENU.visModello();
 		if(smartMenu)SCHEDA.apriElenco('set',true);
-		let pt = SET.ptSel.name.split(".")[0]+"."+SET.ptSel.name.split(".")[1];
-		let siglaMeridiano = SET.ptSel.name.split(".")[0];
-		SET.swElencoPt(document.getElementById("p"+siglaMeridiano),siglaMeridiano);
-		let nascosta = document.body.classList.contains("nasSch");
-		SET.apriPunto(pt,'','','');
+		SET.apriPunto(SET.ptSel.name,'','','');
 	},
-	coloraMeridiano: function( siglaMeridiano, matLine, matPoint, forza=false ){
-		let pass = !touchable ? __(SET.ptSel) : __(SET.ptSel?.name);
-		if(siglaMeridiano=='EX' && !matLine && matPoint=='Base' && pass)return;
-		if(matPoint=='Base' && SET.ptSel && MAPPA[siglaMeridiano].meridianoAcceso && !forza)return;
-		if(SET.meridianiSecondariAccesi.length && matLine.indexOf("On")==-1)return;
+	coloraGruppo: function( nPunto, matPoint, forza=false ){
+		if(matPoint=='Base' && SET.ptSel && !forza)return;
 		if(controlsM._premuto && !forza)return;
-		let els = this.PT[siglaMeridiano].children;
+		let els = this.PT.children;
 		for(v in els){
-			if(	els[v].name.substr(0,1)!='_' && 
-				(!SET.ptSel || els[v].name.substr(0,5)!=SET.ptSel.name.substr(0,5))){
+			if(	els[v].name.substr(0,3)==nPunto && 
+				els[v].name.substr(0,1)!='_' && 
+				(!SET.ptSel || els[v].name.substr(0,3)!=SET.ptSel.name.substr(0,3))){
 				let mat = matPoint;
 				try{
 					if(els[v].userData.nota)mat="Note";
 				}catch(err){}
-				let pass = true;
-				if(SET.ptSel)pass = false;
-				if(pass || matPoint.indexOf("On")>-1 || matPoint.indexOf("Base")>-1)els[v].material = this.MAT['point'+mat]; // cambiare se NOTA
+				els[v].material = this.MAT['point'+mat]; // cambiare se NOTA
 				els[v].scale.set(1,1,1);
-			}
-		}
-		els = this.LN[siglaMeridiano].children;
-		let Y = MAPPA[siglaMeridiano].yin ? 'Yin' : 'Yang';
-		for(v in els){
-			let int='';
-			if(els[v].userData.interno)int='Int';
-			els[v].material = eval('SET.MAT.line'+Y+int+matLine);
-		}
-	},
-	scoloraMeridiani: function(){
-		for(let m in MAPPA){
-			if(!__(MAPPA[m].meridianoAcceso,false) && m.indexOf("_")==-1){
-				this.coloraMeridiano(m,'','Base');
-			}
-		}
-	},
-	accendiMeridiano: function( siglaMeridiano, g=false, noSw=false, noVer=false ){
-		if(!globals.modello.cartella)return;
-		// verifico le autorizzazioni
-		if(!SET.verFreePunti(siglaMeridiano)){
-			if(!noVer)ALERT(TXT("MsgFunzioneSoloPay"),true,true);
-			return;
-		}
-		// --------------------------
-		if(SET.meridianiSecondariAccesi.length){
-			SCHEDA.scaricaScheda();
-		}
-		if(!g || (g && this.ptSel)){
-			for(let m in MAPPA){
-				if(MAPPA[m].categoria == "" ){
-					let pass=true;
-					if(g && this.ptSel){
-						if(siglaMeridiano==m)pass=false;
-					}
-					if(pass){
-						document.getElementById("p"+m).classList.remove("elencoSel");
-						document.getElementById("sm"+m).classList.remove("elencoSel");
-						this.coloraMeridiano(m,'','Base',true);
-						MAPPA[m].meridianoAcceso=false;
-					}
-				}	
-			}
-		}
-		if(g && this.ptSel)this.chiudiPunto();
-		if(!MAPPA[siglaMeridiano].meridianoAcceso || !g){
-			document.getElementById("p"+siglaMeridiano).classList.add("elencoSel");
-			document.getElementById("sm"+siglaMeridiano).classList.add("elencoSel");
-			MAPPA[siglaMeridiano].meridianoAcceso=true;
-			this.coloraMeridiano(siglaMeridiano,'On["'+MAPPA[siglaMeridiano].elemento+'"]','On');
-			if(document.getElementById("tr_p"+siglaMeridiano)){
-				document.getElementById("tr_p"+siglaMeridiano).classList.add("p_"+MAPPA[siglaMeridiano].elemento);
-			}
-		}else{
-			document.getElementById("p"+siglaMeridiano).classList.remove("elencoSel");
-			document.getElementById("sm"+siglaMeridiano).classList.remove("elencoSel");
-
-			if(touchable)this.coloraMeridiano(siglaMeridiano,'', 'Base');
-			else this.coloraMeridiano(siglaMeridiano,'Over', 'Over');
-			MAPPA[siglaMeridiano].meridianoAcceso=false;
-			if(document.getElementById("tr_p"+siglaMeridiano)){
-				document.getElementById("tr_p"+siglaMeridiano).classList.remove("p_"+MAPPA[siglaMeridiano].elemento);
-			}
-		}
-		let nAccesi = 0,
-			nAccesi2 = 0;
-		if(g)this.mAtt='';
-		for(let m in MAPPA){
-			if(MAPPA[m].meridianoAcceso){
-				nAccesi2++;
-				if(g){
-					nAccesi++;
-					this.mAtt=m;
-				}
-			}
-		}
-		if(nAccesi2){
-			SET.MAT.lineYang.uniforms.opacity.value = SET.MAT.opLineContr;
-			SET.MAT.lineYin.uniforms.opacity.value = SET.MAT.opLineContr;
-			SET.MAT.pointBase.opacity = SET.MAT.opPointContr;
-		}else{
-			SET.MAT.lineYang.uniforms.opacity.value = SET.MAT.opLine;
-			SET.MAT.lineYin.uniforms.opacity.value = SET.MAT.opLine;
-			SET.MAT.pointBase.opacity = SET.MAT.opPoint;
-		}
-		if(nAccesi || !g)document.getElementById("p_contrasto").classList.add("visBtn");
-		else{
-			document.getElementById("p_contrasto").classList.remove("visBtn");
-		}
-	},
-	spegniMeridiano: function( siglaMeridiano ){
-		if(this.ptSel)this.chiudiPunto();
-		document.getElementById("p"+siglaMeridiano).classList.remove("elencoSel");
-		document.getElementById("sm"+siglaMeridiano).classList.remove("elencoSel");
-		this.coloraMeridiano(siglaMeridiano,'','Base');
-		MAPPA[siglaMeridiano].meridianoAcceso=false;
-	},
-	spegniMeridiani: function( forza=false ){
-		if(SCHEDA.scheda2Aperta || forza){
-			for(let m in MAPPA){
-				if(MAPPA[m].meridianoAcceso){
-					let mer = m;
-					SET.accendiMeridiano(m,true,false,true);
-					SET.coloraMeridiano(mer,'','Base');
-				}
 			}
 		}
 	},
@@ -718,30 +632,28 @@ var SET = {
 		html += '> <i>'+nomePunto+'</i></a>';
 		return html;
 	},
-	selPunto: function( nPunto, siglaMeridiano ){
+	selPunto: function( nPunto ){
 		// verifico le autorizzazioni
-		if(!SET.verFreePunti(siglaMeridiano)){
+		if(!SET.verFreePunti(nPunto)){
 			ALERT(TXT("MsgContSoloPay"),true,true);
 			return;
 		}
 		// --------------------------
-		SET.apriPunto(siglaMeridiano+"."+nPunto,'SET.chiudiPunto(true);');
+		SET.apriPunto(nPunto,'SET.chiudiPunto(true);');
 	},
 	selPuntoMod: function( p ){
 		SET.pMod = p;
-		let nPunto = document.getElementById("formMod")["pt_"+p].value,
-			siglaMeridiano = document.getElementById("formMod")["mr_"+p].value;
-		SET.selPunto( nPunto, siglaMeridiano );
+		let nPunto = document.getElementById("formMod")["pt_"+p].value;
+		SET.selPunto( nPunto );
 	},
 	setPuntoFrm: function(){
 		let pp = SET.splitPoint(SET.ptSel.name);
 		if( SCHEDA.classeAperta == 'scheda_procedura' ){
-			SET.dettagliProvvisori[SET.pMod].DescrizioneDettaglio = pp.nPunto+"."+pp.siglaMeridiano;
+			SET.dettagliProvvisori[SET.pMod].DescrizioneDettaglio = pp.nPunto;
 			SET.caricaDettagli();
 		}
 		if( SCHEDA.classeAperta == 'scheda_A' || SCHEDA.classeAperta == 'scheda_B' ){
 			PAZIENTI.puntiProvvisori[SET.pMod].n = pp.nPunto;
-			PAZIENTI.puntiProvvisori[SET.pMod].m = pp.siglaMeridiano;
 			PAZIENTI.caricaPuntiTrattamento();
 		}
 		SET.pMod = -1;
@@ -752,26 +664,16 @@ var SET = {
 		SET.annullaEvidenziaPunto();
 		let els = el.getElementsByClassName("pallinoPat");
 		for(let p=0;p<els.length;p++){
-			let siglaMeridiano = els[p].dataset.siglaMeridiano,
-				nPunto = els[p].dataset.nPunto,
-				el = scene.getObjectByName("PT_"+siglaMeridiano);
+			let nPunto = els[p].dataset.nPunto,
+				el = scene.getObjectByName("PT");
 			if(el){
 				for(let e in el.children){
-					if(el.children[e].name.indexOf("_"+siglaMeridiano+"."+nPunto+".")==0)el.children[e].material=SET.MAT.pointEvi;
+					if(el.children[e].name.indexOf("_"+nPunto)==0)el.children[e].material=SET.MAT.pointEvi;
 				}
 			}
-			SET.puntiEvidenziati.push(nPunto+"."+siglaMeridiano);
+			SET.puntiEvidenziati.push(nPunto);
 		}
 		SET.settaOverPunto();
-	},
-	evidenziaMeridiani: function( html ){
-		SET.spegniMeridiani(true);
-		let re = /accendiMeridiano\([^\)]+\)/ig,
-			result = html.match(re);
-		for(let k in result){
-			let siglaMeridiano=result[k].split("'")[1];
-			SET.accendiMeridiano(siglaMeridiano,true,false,true);
-		}
 	},
 	evidenziaPuntoMod: function( elenco ){ 
 		SET.annullaEvidenziaPunto();
@@ -783,19 +685,13 @@ var SET = {
 				if(pp.valutazione=='P')mat = SET.MAT.pointPieno;
 				if(pp.valutazione=='D')mat = SET.MAT.pointDolore;
 			}
-			if(scene.getObjectByName("PT_"+pp.siglaMeridiano)){
-				let els = scene.getObjectByName("PT_"+pp.siglaMeridiano).children;
+			if(scene.getObjectByName("PT")){
+				let els = scene.getObjectByName("PT").children;
 				for(let e in els){
-					if(els[e].name.indexOf("_"+pp.siglaMeridiano+"."+pp.nPunto+".")==0)els[e].material=mat;
+					if(els[e].name.indexOf("_"+pp.nPunto)==0)els[e].material=mat;
 				}
 				SET.puntiEvidenziati.push(elenco[k]);
 			}
-		}
-	},
-	evidenziaMeridianiMod: function( elenco ){
-		SET.spegniMeridiani(true);
-		for(let k in elenco){
-			SET.accendiMeridiano(elenco[k],true,false,true);
 		}
 	},
 	annullaEvidenziaPunto: function(){
@@ -803,10 +699,10 @@ var SET = {
 			for(let k in SET.puntiEvidenziati){
 				let pT=SET.puntiEvidenziati[k],
 					pp=SET.splitPoint(pT),
-					el = scene.getObjectByName("PT_"+pp.siglaMeridiano)
+					el = scene.getObjectByName("PT")
 				if(el){
 					for(let e in el.children){
-						if(el.children[e].name.indexOf("_"+pp.siglaMeridiano+"."+pp.nPunto+".")==0)el.children[e].material=SET.MAT.pointTrasp;
+						if(el.children[e].name.indexOf("_"+pp.nPunto)==0)el.children[e].material=SET.MAT.pointTrasp;
 					}
 				}
 			}
@@ -844,236 +740,39 @@ var SET = {
 		}
 	},
 	overPunto: function( el, over ){
-		let mer,
-			nPunto;
+		let nPunto;
 		if(el.classList.contains("dettPunto")){
-			mer = el.getElementsByClassName("selectTratt")[0];
 			nPunto = el.getElementsByClassName("numPoints")[0];
-			if(!nPunto)return;
-			if(mer)mer = SET.estraiSigla(mer.value);
-			if(!__(DB.set.meridiani[mer]))return; // in caso di EX
-			if(typeof(DB.set.meridiani[mer])=='undefined')return;
 		}else{
-			if(!el.dataset.siglaMeridiano)return;
 			nPunto = el.dataset.nPunto;
-			mer = el.dataset.siglaMeridiano;
 		}
+		if(!nPunto)return;
 		if(over){
-			SET.addEviPalls(mer,nPunto,'Over');
+			SET.addEviPalls(nPunto,'Over');
 		}else{
-			SET.delEviPalls(mer,nPunto,'Over');
-		}
-	},
-	convSigla: function( siglaMeridiano ){
-		if( localStorage.sistemaSigleMeridiani=='INT' || !__(DB.mtc.meridiani[siglaMeridiano]))return siglaMeridiano;
-		else return DB.mtc.meridiani[siglaMeridiano].sigle[localStorage.sistemaSigleMeridiani];
-	},
-	estraiSigla: function( siglaMeridiano ){
-		let siglaDef = siglaMeridiano;
-		if(localStorage.sistemaSigleMeridiani=='INT' || !localStorage.sistemaSigleMeridiani)return siglaMeridiano;
-		for(let m in DB.mtc.meridiani){
-			if(siglaMeridiano == DB.mtc.meridiani[m].sigle[localStorage.sistemaSigleMeridiani])siglaDef = m;
-		}
-		return siglaDef;
-	},
-	convSigleScheda: function(){
-		if(localStorage.sistemaSigleMeridiani == 'INT' || 
-		(!SCHEDA.schedaAperta && !SCHEDA.scheda2Aperta) )return;
-		let nScheda = SCHEDA.scheda2Aperta ? '2' : '',
-			regexp = /[\s>\(\.\,]{0,1}[0-9]{1,2}\.[A-Z]{2}[\s<\.,\)]{1}/ig,
-			str = document.getElementById("scheda_testo"+nScheda).innerHTML,
-			pts = str.match(regexp);
-		for(let p in pts){
-			let pP = pts[p].split(".");
-			str = str.replace(pts[p], pP[0]+"."+SET.convSigla(pP[1].substr(0,2))+pP[1].substr(2,1));
-		}
-		document.getElementById("scheda_testo"+nScheda).innerHTML = str;
-		if(!nScheda){
-			str = document.getElementById("scheda_titolo"+nScheda).innerHTML;
-			pts = str.match(regexp);
-			for(let p in pts){
-				console.log(pts[p])
-				let pP = pts[p].split(".");
-				str = str.replace(pts[p], +pP[0] +"."+SET.convSigla(pP[1].substr(0,2))+pP[1].substr(2,1));
-			}
-			document.getElementById("scheda_titolo"+nScheda).innerHTML = str;
+			SET.delEviPalls(nPunto,'Over');
 		}
 	},
 	convPuntiScheda: function( html, noPall=false ){
 		let pallClass = noPall ? ' pallinoPunto' : 'pallinoPat',
-			nScheda = SCHEDA.scheda2Aperta ? '2' : '',
 			regexp = /\[\.[0-9]{1,2}\.[A-Z]{2}[\.*]+\]/ig,
 			pts = html.match(regexp);
 		for(let p in pts){
 			let pp = SET.splitPoint(pts[p].substr(2,pts[p].length-2)),
-				n_M = SET.convSigla(pp.siglaMeridiano),
 				addClick = (noPall)?'return':'';
-			let sost = '<span class="'+pallClass+'" data-n-punto="'+pp.nPunto+'" data-sigla-meridiano="'+pp.siglaMeridiano+'" onClick="'+addClick+'SET.selPunto(\''+pp.nPunto+'\',\''+pp.siglaMeridiano+'\');">'+ +pp.nPunto+'.'+n_M;
-			if(__(pp.pinyin))sost += ' <i>'+pp.pinyin+'</i>';
-			sost += '</span>'
+			let sost = '<span class="'+pallClass+'" data-n-punto="'+pp.nPunto+'" onClick="'+addClick+'SET.selPunto(\''+pp.nPunto+'\');">'+ pp.nPunto+'</span>'
 			html = html.replace(pts[p], sost);
-		}
-		regexp = /\[\.[A-Z]{2}\.\]/ig;
-		pts = html.match(regexp);
-		for(let p in pts){
-			let pP = pts[p].split("."),
-				siglaMeridiano = pP[1].substr(0,2),
-				n_M = SET.convSigla(siglaMeridiano)+pP[1].substr(2,1),
-				nome = '';
-			for(let m in DB.set.teoria[SET.idTeoMeridiani].contenuti){
-				if(m && DB.set.teoria[SET.idTeoMeridiani].contenuti[m].sigla == siglaMeridiano)nome = DB.set.teoria[SET.idTeoMeridiani].contenuti[m].TitoloTeoria;
-			}
-			html = html.replace(pts[p], '<span class="meridianoPat"' +
-										'	   onClick="SET.accendiMeridiano(\''+siglaMeridiano+'\',true);"' +
-										'	   onMouseOver="SET.eviMeridiano(\''+siglaMeridiano+'\',true);"' +
-										'	   onMouseOut="SET.eviMeridiano(\''+siglaMeridiano+'\',false);">'+htmlEntities(nome)+'</span>');
 		}
 		return html;
 	},
-	salvaImpSet: function(){
-		localStorage.sistemaSigleMeridiani = document.getElementById("sceltaSigle").value;
-		SET.caricaMeridiani();
-		PAZIENTI.cambiaGZ(PAZIENTI.mezzoProvvisorio,true);
-		MENU.chiudiImpSet();
-	},
-	popolaImpSet: function(){
-		let mzs = PAZIENTI.mezziSet.P,
-			HTML_imp = 
-			'<p><i>'+htmlEntities(TXT("SistemaSigle"))+':</i> ' +
-			'<select id="sceltaSigle" onChange="SET.popolaSigle();">';
-		for(let k in DB.mtc.meridiani["BL"].sigle){
-			HTML_imp += '  <option value="'+k+'"';
-			if(localStorage.sistemaSigleMeridiani == k)HTML_imp += ' SELECTED';
-			HTML_imp += '>'+k+'</option>'+H.chr10;
-		}
-		HTML_imp += 
-			'</select></p>'+H.chr10 +
-			'<div id="tbSigleMeridiani"></div>' +
-			'	<span class="separatorePulsanti"></span><div><i>'+htmlEntities(TXT("MezzoDefault"))+':</i></div><div id="tt_mezzival2">';
-		for(let m in mzs){
-			HTML_imp += '<span style="background-image:url(img/mezzo_'+mzs[m]+'.png);"' +
-					'	   onClick="PAZIENTI.cambiaGZ(\''+mzs[m]+'\',false);"' +
-					'	   data-mezzo="'+mzs[m]+'"';
-			if(!__(localStorage["mezzoDefault"+globals.set.cartella]) && m==0)HTML_imp += ' class="mzSel"';
-			if(localStorage["mezzoDefault"+globals.set.cartella]==mzs[m])HTML_imp += ' class="mzSel"';
-			HTML_imp += '	   title="'+htmlEntities(PAZIENTI.mezzi[mzs[m]])+'"></span>';
-		}
-		HTML_imp += 
-			'</div>' +
-			'<div style="margin-top:30px;">' +
-			'	<span class="annullaBtn" onclick="MENU.chiudiImpSet();">'+TXT("Annulla")+'</span>' +
-			'	<span class="submitBtn" onclick="SET.salvaImpSet();">'+TXT("Salva")+'</span>' +
-			'</div>';
-		document.getElementById("labelImpset").getElementsByTagName("b")[0].innerHTML = TXT("ImpostazioniSet");
-		document.getElementById("contImpset").innerHTML = HTML_imp;
-		SET.popolaSigle();
-	},
-	popolaSigle: function(){
-		let disp = true,
-			HTML = '<table cellpadding="5" cellspacing="0" border="0" id="tbSigleMeridiani_tab">',
-			s = document.getElementById("sceltaSigle").value;
-		if(s == '')s='INT';
-		for(let m in DB.set.meridiani){
-			
-			if(disp)HTML +=
-					'	<tr>';
-			HTML +=
-					'		<td class="tbSigleMeridiani_nomi">'+htmlEntities(DB.set.meridiani[m].NomeMeridiano)+'</td>' +
-					'		<td class="tbSigleMeridiani_sigle">';
-					
-			if( s=='INT' )HTML += m;
-			else HTML += DB.mtc.meridiani[m].sigle[s];
-			
-			HTML += '		</td>';
-			if(!disp)HTML += 
-					'	</tr>';
-			disp = !disp;
-		}
-		HTML += '</table>';
-		document.getElementById("tbSigleMeridiani").innerHTML = HTML;
-	},
 	
 	
-	accendiMeridianoSecondario: function( sigla, mantieni=false ){
-		if(!globals.modello.cartella)return;
-		for(let m in MAPPA){
-			if(MAPPA[m].categoria == "" ){
-				if(MAPPA[m].meridianoAcceso){
-					if(m!=sigla)SET.spegniMeridiano(m);
-				}
-			}	
-		}
-		SET.meridianiSecondariAccesi.push(sigla);
-		
-		let meridiano = scene.getObjectByName( "LN_"+sigla ),
-			percorsoInterno = false;
-		for(let c in meridiano.children){
-			if( __(meridiano.children[c].userData.interno) )percorsoInterno = true;
-		}
-		
-		let elM = meridiano.children
-		for(let e in elM){
-			elM[e].visible = true
-		}
-		let evidenziati = meridiano.userData.evidenziati;
-		if(meridiano.userData.evidenziati){
-			for(let e in evidenziati){
-				for(let i in evidenziati[e]){
-					scene.getObjectByName( evidenziati[e][i] ).material = MODELLO.MAT.materialVisceriEvi;
-				}
-			}
-		}
-		if(isTablet){
-			SET.MAT.pointBase.visible = false;
-			SET.MAT.lineYang.visible = false;
-			SET.MAT.lineYin.visible = false;
-			MODELLO.MAT.materialVisceri.visible = false;
-		}
-	},
-	spegniMeridianoSecondario: function( sigla='', forza=false ){
-		if(!globals.modello.cartella)return;
-		let meridianoPrincipale = false;
-		for(let m=SET.meridianiSecondariAccesi.length-1;m>-1;m--){
-			if(SET.meridianiSecondariAccesi[m] == sigla || !sigla){
-				let meridiano = scene.getObjectByName( "LN_"+SET.meridianiSecondariAccesi[m] );
-				if(SET.meridianiSecondariAccesi[m].indexOf("_")==-1){
-					let mer = SET.meridianiSecondariAccesi[m];
-					setTimeout(function(mer){SET.eviMeridiano(mer,false);},200,mer);
-					if(forza)SET.accendiMeridiano(SET.meridianiSecondariAccesi[m],true,true);
-					meridianoPrincipale = true;
-				}else{
-					
-					let elM = meridiano.children
-					for(let e in elM){
-						elM[e].visible = false
-					}
-				}
-				let evidenziati = meridiano.userData.evidenziati;
-				if(evidenziati){
-					for(let e in evidenziati){
-						for(let i in evidenziati[e]){
-							let tipo = scene.getObjectByName( evidenziati[e][i] ).parent.name;
-							scene.getObjectByName( evidenziati[e][i] ).material = MODELLO.MAT["material"+tipo];
-						}
-					}
-				}
-				if(SET.meridianiSecondariAccesi.length>1)SET.meridianiSecondariAccesi.splice(m,1);
-				else SET.meridianiSecondariAccesi = [];
-			}
-		}
-		if(isTablet){
-			SET.MAT.pointBase.visible = true;
-			SET.MAT.lineYang.visible = true;
-			SET.MAT.lineYin.visible = true;
-			MODELLO.MAT.materialVisceri.visible = true;
-		}
-	},
 	
-	addEviPalls: function( siglaMeridiano, nPunto, tipo ){
-		if(!scene.getObjectByName("PT_"+siglaMeridiano))return;
-		let els = scene.getObjectByName("PT_"+siglaMeridiano).children;
+	addEviPalls: function( nPunto, tipo ){
+		if(!scene.getObjectByName("PT"))return;
+		let els = scene.getObjectByName("PT").children;
 		for(let e in els){
-			if(els[e].name.indexOf(siglaMeridiano+"."+nPunto+".")==0){
+			if(els[e].name.indexOf(nPunto)==0){
 				let geoPoint =  new THREE.SphereGeometry( 0.11, 16, 16 ),
 					eviPoint;
 				eviPoint =  new THREE.Mesh( geoPoint, this.MAT.pointSel2.clone() );
@@ -1087,10 +786,10 @@ var SET = {
 			}
 		}
 	},
-	delEviPalls: function( siglaMeridiano, nPunto, tipo ){
+	delEviPalls: function( nPunto, tipo ){
 		let els = SETS.children;
 		for(let e=els.length-1;e>=0;e--){
-			if(els[e].name.indexOf(tipo+' point: '+siglaMeridiano+"."+nPunto+".")==0){
+			if(els[e].name.indexOf(tipo+' point: '+nPunto)==0){
 				SETS.remove( els[e] );
 			}
 		}
@@ -1116,7 +815,7 @@ var SET = {
 		SET.pMod = -1;
 	},
 	_scaricaSet: function(){
-		SET.spegniMeridianoSecondario();
+		//
 	},
 	_scaricaModello: function(){
 		//
@@ -1124,11 +823,8 @@ var SET = {
 	_torna: function( args ){
 		if(typeof(args.daCarica) == 'undefined')SET.pMod = -1;
 	},
-	_gestVisSmart: function( add ){
-		if(smartMenu){
-			document.getElementById("meridianiSmart_ico").classList.toggle("nas",add);
-			document.getElementById("meridianiSmart_cont").classList.toggle("nas",add);
-		}
+	_gestVisSmart: function(){
+		//
 	},
 	filtraSet: function(){
 		let vis = true;
@@ -1136,15 +832,5 @@ var SET = {
 		for(let m in SETS.children){
 			if(SET.PUNTI_free.indexOf(SETS.children[m].name.split("_")[1])==-1)SETS.children[m].visible = vis;
 		}
-		/*let ME = document.getElementById("lista_punti").getElementsByClassName("listaMeridiani")[0].getElementsByTagName("div");
-		for(let m in ME){
-			if(ME[m].id){
-				if(!vis && ME[m].id!='pLR'){
-					ME[m].classList.add("lockedItem");
-				}else{
-					ME[m].classList.remove("lockedItem");
-				}
-			}
-		}*/
 	}
 }

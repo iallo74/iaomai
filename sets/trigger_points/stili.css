@@ -619,3 +619,12 @@ body:not(.touch) .listaPunti .spazioPrima{
 	margin-bottom:0px;
 	margin-left: 10px;
 }
+
+#imgPunto{
+	background-position: bottom right;
+	background-size: auto 125%;
+	min-height: 400px;
+	background-repeat: no-repeat;
+	margin-right: -30px;
+	padding-right: 200px;
+}

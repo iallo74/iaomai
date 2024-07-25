@@ -34,7 +34,7 @@ var PURCHASES  = {
 	updateProducts: function(){
 		if(PURCHASES.product_list.length){
 			for(let p in PURCHASES.product_list){
-				if(PURCHASES.product_list[p].folder == elenco.auths[e])PURCHASES.product_list[p].owned;
+				if(PURCHASES.product_list[p].folder == elenco.auths[p])PURCHASES.product_list[p].owned;
 			}
 			PURCHASES.productList();
 		}

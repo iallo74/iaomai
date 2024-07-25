@@ -57,11 +57,11 @@ var MODULO_PUNTI = { // extend SET
 				mY<=y+h &&
 				els[e]!=SET.smPressed &&
 				els[e].classList.contains("elencoSel")!=SET.smActive ){
-					SET.accendiMeridiano(els[e].id.replace("sm",""),true);
+					SET.accendiGruppo(els[e].id.replace("sm",""),true);
 			}
 		}
 		if(SET.smPressed.classList.contains("elencoSel")!=SET.smActive){
-			SET.accendiMeridiano(SET.smPressed.id.replace("sm",""),true);
+			SET.accendiGruppo(SET.smPressed.id.replace("sm",""),true);
 		}
 	},
 	endSmPress: function(){

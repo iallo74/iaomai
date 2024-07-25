@@ -110,20 +110,20 @@ DB.set = {
 			ChiaviPunto: "",
 			settore: 5
 		},
-        "018": {
+        "127": {
             NomePunto: "Xxx",
             AzioniPunto: "<p><b>Azione</b><br>Xxx</p><p><b>Ubicazione</b><br>Xxx</p>",
             ChiaviPunto: "",
 			settore: 5
         },
-		"019": {
-			NomePunto: "Xxx",
+		"077": {
+			NomePunto: "Multifido e rotatori",
 			AzioniPunto: "<p><b>Azione</b><br>Xxx</p><p><b>Ubicazione</b><br>Xxx</p>",
 			ChiaviPunto: "",
 			settore: 6
 		},
-		"020": {
-			NomePunto: "Xxx",
+		"053": {
+			NomePunto: "Epicranico",
 			AzioniPunto: "<p><b>Azione</b><br>Xxx</p><p><b>Ubicazione</b><br>Xxx</p>",
 			ChiaviPunto: "",
 			settore: 6

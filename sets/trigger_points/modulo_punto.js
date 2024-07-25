@@ -3,49 +3,21 @@ var MODULO_PUNTO = { // extend SET
 
 	note: [],
 	
-	caricaPunto: function( siglaMeridiano, nPunto, ritorno ){ // apre la scheda di un punto
+	caricaPunto: function( nPunto, ritorno ){ // apre la scheda di un punto
 		// verifico le autorizzazioni
-		if(!SET.verFreeMeridiani(siglaMeridiano)){
+		if(!SET.verFreePunti(nPunto)){
 			ALERT(TXT("MsgContSoloPay"),true,true);
 			return;
 		}
 		// --------------------------
 		
-		let titolo = DB.set.meridiani[siglaMeridiano].punti[nPunto].NomePunto,
-			sigla = __(DB.set.meridiani[siglaMeridiano].punti[nPunto].siglaPunto),
-			meridiano = DB.set.meridiani[siglaMeridiano],
-			coordZoom = __(DB.mtc.meridiani[siglaMeridiano].punti[nPunto].coordZoom),
-			imgZoom = __(DB.mtc.meridiani[siglaMeridiano].punti[nPunto].imgZoom),
-			TS = meridiano.punti[nPunto],
-			cartella = DB.mtc.meridiani[siglaMeridiano].cartella,
-			pattern = /[0-9]{1,2}\.[A-Z]{2}\.\s([^\(]+)\(([^\)]+)\)/g,
-			HTML = "<h1>",
-			HTML_tit = '<h1>';
-		
-		if(siglaMeridiano!='EX')HTML_tit += +nPunto +"."+siglaMeridiano;
-		else HTML_tit += sigla;
-		
-		HTML_tit += ". "+htmlEntities(DB.mtc.meridiani[siglaMeridiano].punti[nPunto].pinyin)+"</h1>";
-		
-		HTML += "<i";
-		//aggiunto per un bug strano su android compilata
-		if(android && smartMenu && !onlineVersion)HTML += ' style="font-size:inherit !important;"';
-		HTML += ">"+htmlEntities(titolo.replace(pattern,"$2"))+"</i></h1>";
-		
-		// lasciare qui!
-		if(siglaMeridiano=='EX')titolo = sigla+". "+titolo.replace(pattern,"$1")+" ("+titolo.replace(pattern,"$2")+")";
+		let titolo = DB.set.punti[nPunto].NomePunto,
+			azioni = DB.set.punti[nPunto].AzioniPunto,
+			coordZoom = __(DB.set.punti[nPunto].coordZoom),
+			imgZoom = __(DB.set.punti[nPunto].imgZoom),
+			HTML = '<h1>'+titolo+'</h1><div id="imgPunto" style="background-image:url(\'sets/trigger_points/img/punti/'+nPunto+'-min.png\');">',
+			HTML_simboli = '';
 
-
-		let HTML_simboli = '';
-		
-		// noMoxa
-		if(DB.mtc.meridiani[siglaMeridiano].punti[nPunto].noMoxa)HTML_simboli += 	'<div style="background-image:url(sets/meridiani_cinesi/img/nomoxa.png);"' +
-										'	  class="simboliPunto"></div>';
-		
-		// noGravidanza
-		if(DB.mtc.meridiani[siglaMeridiano].punti[nPunto].noGravidanza && globals.modello.cartella == 'donna')HTML_simboli += '<div style="background-image:url(sets/meridiani_cinesi/img/nogravidanza.png);" class="simboliPunto"></div>';
-		
-		
 		if( ritorno && 
 			document.getElementById("scheda_testo").innerHTML.indexOf("formMod") > -1 && 
 			SCHEDA.classeAperta != "tab_punti" ){
@@ -55,7 +27,7 @@ var MODULO_PUNTO = { // extend SET
 				txt = '',
 				cls = '',
 				stesso = false,
-				puntoNuovo = +nPunto +"."+siglaMeridiano;
+				puntoNuovo = nPunto;
 			if( SCHEDA.classeAperta == 'scheda_procedura' ){
 				if(SET.pMod > -1){
 					let puntoOr = SET.dettagliProvvisori[SET.pMod].DescrizioneDettaglio;
@@ -100,77 +72,25 @@ var MODULO_PUNTO = { // extend SET
 		}
 		if(HTML_simboli)HTML += '<div class="cont_simboliPunto">'+HTML_simboli+'</div>';
 		
-		HTML += SET.convPuntiScheda(DB.set.meridiani[siglaMeridiano].punti[nPunto].AzioniPunto,true);
-		
-		// elenco le patolige incluse
-		let elenco = [];
-		for(let p in DB.set.patologie){
-			let regexp = /[\s>\(\.\,]{0,1}[0-9]{1,2}\.[A-Z]{2}[\s<\.,\)]{1}/ig;
-				pts = DB.set.patologie[p].TestoPatologia.match(regexp);
-			for(let i in pts){
-				if(pts[i]=='.'+nPunto+'.'+siglaMeridiano+'.'){
-					let JSNPUSH = {"p": p, "NomePatologia": DB.set.patologie[p].NomePatologia} 
-					
-					if(elenco.indexOf(JSNPUSH)==-1)elenco.push(JSNPUSH);
-				}
-			}
-		}
-		if(elenco.length){
-			HTML += '<div id="patologiePunti">' +
-					'	<div onClick="this.parentElement.classList.toggle(\'vis\');">'+TXT("Patologie")+'</div>';
-			for(let e in elenco){
-				HTML += '<p onClick="SET.apriPatologia(\''+elenco[e].p+'\',document.getElementById(\'btn_patologia_'+elenco[e].p+'\'));"><span>• '+elenco[e].NomePatologia+'</span></p>';
-			}
-			HTML += '</div>';
-		}
-		
-		
-		imgDettaglio='';
-		posPunti='';
-		let wCont = 370,
-			rp = wCont/370,
-			marginLeft = 0;
-		if(touchable && smartphone){
-			wCont = WF()-40;
-		}
-		if(coordZoom.length>1){
-			let pC=coordZoom.split("|");
-			for(let pu in pC){
-				pC2=pC[pu].split(",");
-				posPunti+='<img src="sets/common/mtc/img/zoom/punto.png" width="'+parseInt(43*rp)+'" height="'+parseInt(40*rp)+'" style="position:absolute;left:'+parseInt((pC2[0]-7)*rp-marginLeft)+'px;top:'+parseInt((pC2[1]-7)*rp)+'px;">';
-			}
-		}
-		if(imgZoom)imgDettaglio='<div id="cont_imgDettPunto" style="width:'+wCont+'px;"><img src="sets/common/mtc/img/zoom/'+imgZoom+'" border="0" width="'+wCont+'" id="imgDettPunto">'+posPunti+'</div>';
-		
+		HTML += SET.convPuntiScheda(azioni,true);
+		HTML += '</div>';
 		// aggiungo contenuto custom
-		HTML = CUSTOMS.addContent("meridiani_"+siglaMeridiano+"_"+nPunto,HTML);
+		HTML = CUSTOMS.addContent("trigger_point_"+nPunto,HTML);
 		
-		let ideogramma = '',
-			ideogrammaOr = DB.mtc.meridiani[siglaMeridiano].punti[nPunto].ideogramma,
-			lI = ideogrammaOr.length;
-		for(let l=0;l<lI;l++){
-			ideogramma += ideogrammaOr[l];
-			if(l<lI-1)ideogramma += "<br>";
-		}
-
-
 		
-		HTML = '<div id="titPoint">'+HTML_tit+'</div><div class="translatable">'+HTML_ideo+HTML+'</div>';
-		HTML += imgDettaglio;
 		
 		// annotazione
 		let TestoAnnotazione = '';
-		if(SET.verificaNota(siglaMeridiano+"."+nPunto)){
-			TestoAnnotazione = SET.leggiNota( cartella, +nPunto );
-		}
+		//if(SET.verificaNota(nPunto)){
+			TestoAnnotazione = SET.leggiNota( nPunto );
+		//}
 		HTML +=  '<p id="annotazioni_label"><b>'+htmlEntities(TXT("Note"))+'</b></p>';
 		if(!ritorno || !SCHEDA.formModificato){
 			// FORM
 			HTML += '<div id="annotazioni_cont">' +
 					'	<form 	id="formAnnotazioni" name="formAnnotazioni" method="post" onSubmit="return false;">' +
 					'		<input name="stessa" type="hidden" id="stessa" value="1" />' +
-					'		<input name="siglaMeridiano" type="hidden" id="siglaMeridiano" value="'+siglaMeridiano+'" />' +
-					'		<input name="nPunto" type="hidden" id="nPunto" value="'+nPunto+'" />' +
+					'		<input name="siglaPunto" type="hidden" id="siglaPunto" value="'+nPunto+'" />' +
 					'		<textarea  	id="TestoAnnotazione"' +
 					'					name="TestoAnnotazione"' +
 					'					onKeyDown="document.getElementById(\'pulsantiAnnotazione\').style.display=\'block\';"' +
@@ -181,7 +101,7 @@ var MODULO_PUNTO = { // extend SET
 					'</div>' +
 					'<div id="pulsantiAnnotazione">' +
 					'	<div 	id="p_sch_salva"' +
-					'			onClick="if(verifica_form(document.formAnnotazioni))SET.mod_nota( \''+cartella+'\', \''+nPunto+'\' );">' +
+					'			onClick="if(verifica_form(document.formAnnotazioni))SET.mod_nota( \''+nPunto+'\' );">' +
 						TXT("Salva") +
 					'	</div>' +
 					'</div><div class="l"></div>';
@@ -192,19 +112,10 @@ var MODULO_PUNTO = { // extend SET
 				HTML += '<div class="noResults">'+ htmlEntities(TXT("NessunaAnnotazione"))+'</div>';
 			}
 		}
-		
-		
-		if(SCHEDA.classeAperta == 'scheda_meridiano'){
-			// verifico che il meridiano aperto sia lo stesso altrimenti cambio la scheda secondaria
-			if(SET.mAtt != siglaMeridiano){
-				ritorno = '';
-			}
-		}
-		
 		let ptSel = SET.ptSel;
 		SET.ptSel = null;
 		
-		let btnAdd = 	'<div class="p_paz_ref_menu" onClick="REF.open(\'sets.meridiani_cinesi.pointsmap\')">' +
+		let btnAdd = 	'<div class="p_paz_ref_menu" onClick="REF.open(\'sets.trigger_points.pointsmap\')">' +
 							TXT("ReferenceGuide") +
 						'</div>';
 		
@@ -219,25 +130,24 @@ var MODULO_PUNTO = { // extend SET
 								false,
 								'',
 								btnAdd,
-								globals.set.cartella+'_meridiani_'+siglaMeridiano+"_"+nPunto,
+								globals.set.cartella+'_punto_'+nPunto,
 								finalFunct );
 		
 		SCHEDA.gestVisAnatomia(true);
-		SET.convSigleScheda();
 		SET.settaOverPunto();
 		SET.ptSel = ptSel;
 		if(ritorno && !SCHEDA.aggancio.tipo == 'libera')SCHEDA.nasScheda();
 		
 	},
 	
-	mod_nota: function( Q_nome_meridiano, Q_p ){ // salva la nota di un punto
+	mod_nota: function( Q_p ){ // salva la nota di un punto
 		let nota_salvata = false,
 			DataModifica = DB.note.lastSync+1,
 			pDef = -1,
 			Q_TestoAnnotazione = document.getElementById("TestoAnnotazione").value;
 		for (p in DB.note.data) {
 			if(DB.note.data.length && typeof(DB.note.data[p].meridiano)=='undefined')DB.note.data.splice(p,p);
-			else if(DB.note.data[p].meridiano==Q_nome_meridiano && +DB.note.data[p].numeroPunto==Q_p && SET.verNotaCli(p)){
+			else if(DB.note.data[p].meridiano=="trigger" && DB.note.data[p].numeroPunto==Q_p && SET.verNotaCli(p)){
 				DB.note.data[p].TestoAnnotazione=Q_TestoAnnotazione;
 				DB.note.data[p].DataModifica=parseInt(DataModifica);
 				nota_salvata=true;
@@ -248,8 +158,8 @@ var MODULO_PUNTO = { // extend SET
 			let idPaziente=-1;
 			if(PAZIENTI.idCL>-1)idPaziente=PAZIENTI.idPaziente;
 			JSNPUSH={	"TestoAnnotazione": Q_TestoAnnotazione,
-						"meridiano": Q_nome_meridiano,
-						"numeroPunto": Q_p*1,
+						"meridiano": "trigger",
+						"numeroPunto": Q_p,
 						"idPaziente": idPaziente*1,
 						"idCL": PAZIENTI.idCL*1,
 						"DataModifica": parseInt(DataModifica) };
@@ -278,7 +188,7 @@ var MODULO_PUNTO = { // extend SET
 		}else pass=(DB.note.data[p].idPaziente*1==-1);
 		return pass;
 	},
-	leggiNota: function( mr, pt ){ // restituisce il testo della nota
+	leggiNota: function( pt ){ // restituisce il testo della nota
 		let TestoAnnotazione = '';
 		for(let n in DB.note.data){
 			let pass =false;
@@ -288,7 +198,7 @@ var MODULO_PUNTO = { // extend SET
 				if(DB.note.data[n].idCL == PAZIENTI.idCL)pass=true;
 			}
 			if(pass){
-				if( DB.note.data[n].meridiano == mr && DB.note.data[n].numeroPunto == pt ){
+				if( DB.note.data[n].meridiano == 'trigger' && DB.note.data[n].numeroPunto == pt ){
 					TestoAnnotazione = DB.note.data[n].TestoAnnotazione;
 				}
 			}
@@ -344,7 +254,8 @@ var MODULO_PUNTO = { // extend SET
 	},
 	splitPoint: function( siglaPunto ){
 		// elaborare il nome del punto
-		return siglaPunto;
+		let pp = siglaPunto.split("_");
+		return {nPunto: pp[0],lato: pp[1]};
 	},
 	azRicercaPunto: function( pt ){ // apre la scheda del punto dalla ricerca globale
 		SET.apriPunto(pt);

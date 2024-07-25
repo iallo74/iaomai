@@ -5,12 +5,11 @@ SET.COL = {
 	sel: 0xFF0000,
 	selInt: 0xCC7F7F,
 	musc: 0xFF0000,
-	lineMusc: 0x575454,
 	basePT: 0x7F7F7F,
-	basePTmusc: 0x55FF55,
+	basePTmusc: 0xFFEE22,// 0x55FF55,
 	base: 0x637281,
 	over: 0xFFFFFF,
-	overPT: 0xAABBCC,
+	overPT: 0x33AAFF,
 	notePT: 0xffd000,
 	notePTSel: 0xff9900,
 	notePTemissive: 0x333300,
@@ -43,25 +42,6 @@ SET.COL = {
 	contrastMethod: false
 }
 
-SET.colsElementi = {
-	"none": 0x1762AE,
-	"legno": 0x007700,
-	"fuoco":0xFF0000,
-	"fuoco_supplementare":0x990000,
-	"terra":0xCC6600,
-	"aria":0xFFFFFF,
-	"acqua":0x000000
-}
-SET.colsElementiAreasView = {
-	"none": 0x0F82F7,
-	"legno": 0x4CE600,
-	"fuoco":0xFF0000,
-	"fuoco_supplementare":0x990000,
-	"terra":0xFCCC03,
-	"aria":0xFFFFFF,
-	"acqua":0x000000
-}
-
 function cloneMAT(mat,par){
 	let matCloned = mat.clone();
 	matCloned.setValues(par);
@@ -71,57 +51,8 @@ function cloneMAT(mat,par){
 
 // LINEE
 SET.MAT = {
-	opLine: 0.5,
-	opLineContr: 0.2,
 	opPoint: 1,
 	opPointContr: 0.3,
-	lineWidth: 0.002,
-	lineSel: new THREE.LineMaterial( {
-		name: "lineSel",
-		color: SET.COL.sel,
-		transparent: true,
-		linewidth: 0.002,
-		dashed: false,
-		depthFunc: 1
-	} ),
-	lineYang: new THREE.LineMaterial( {
-		name: "lineYang",
-		color: SET.COL.base,
-		transparent: true,
-		linewidth: 0.002,
-		dashed: false
-	} ),
-	lineYin: new THREE.LineMaterial( {
-		name: "lineYin",
-		color: SET.COL.base,
-		transparent: true,
-		linewidth: 0.002,
-		dashed: true,
-		defines: {
-			USE_DASH: ""
-		},
-		needsUpdate: true,
-		dashScale: 10,
-		dashSize: 1,
-		gapSize:0.5,
-		dashSize: 1,
-		gapSize:0.5
-	} ),
-	
-	lineGuide: new THREE.LineMaterial( {
-		name: "lineGuide",
-		color: SET.COL.guide,
-		transparent: true,
-		linewidth: 0.0015,
-		dashed: false,
-		depthFunc: 3
-	} ),
-	
-	lineYangOn: [],
-	lineYinOn: [],
-	lineYangIntOn: [],
-	lineYinIntOn: [],
-	
 	// PUNTI
 	pointBase: new THREE.MeshStandardMaterial( {
 		name: "pointBase",
@@ -195,7 +126,7 @@ SET.MAT = {
 		roughness:1,
 		transparent: true,
 		blending: 2,
-		opacity: 0.2,
+		opacity: 0.25,
 		visible: false
 	}),
 	pointEvi: new THREE.MeshStandardMaterial( {
@@ -241,128 +172,209 @@ SET.MAT = {
 		roughness:1,
 		transparent: true,
 		opacity: 0.6
-	})
+	}),
+
+
+	materialAree: new THREE.MeshStandardMaterial( {
+		name: "mappa aree",
+		flatShading:false,
+		color: new THREE.Color( 1, 1, 1 ),
+		transparent:true,
+		roughness:0.7,
+		side: 3,
+		needsUpdate: true,
+		bumpScale: 0.006
+	} ),
+	mappaApplicata: false,
+	
+	MAT_torso_muscoli: null,
+	MAT_head_muscoli: null,
+	MAT_limbs_muscoli: null,
+	textureTorsoB_muscoli: null,
+	textureHeadB_muscoli: null,
+	textureLimbsB_muscoli: null,
+	imgBianca: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQAAAAEACAIAAADTED8xAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyBpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNSBXaW5kb3dzIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOjIzOTE1ODk5NEE3NTExRUZBN0M0ODA4OEJDNzk3RjM1IiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOjIzOTE1ODlBNEE3NTExRUZBN0M0ODA4OEJDNzk3RjM1Ij4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6MjM5MTU4OTc0QTc1MTFFRkE3QzQ4MDg4QkM3OTdGMzUiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6MjM5MTU4OTg0QTc1MTFFRkE3QzQ4MDg4QkM3OTdGMzUiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz537wtIAAACAUlEQVR42uzTQREAAAjDMOZf9HijgURC75q2A1/FABgADAAGAAOAAcAAYAAwABgADAAGAAOAAcAAYAAwABgADAAGAAOAAcAAYAAwABgADAAGAAOAAcAAYAAwABgADAAGAAOAAcAAYAAwABgADAAGAAOAAcAAYAAwABgADAAGwAAGwABgADAAGAAMAAYAA4ABwABgADAAGAAMAAYAA4ABwABgADAAGAAMAAYAA4ABwABgADAAGAAMAAYAA4ABwABgADAAGAAMAAYAA4ABwABgADAAGAAMAAYAA4ABwABgADAABgADgAHAAGAAMAAYAAwABgADgAHAAGAAMAAYAAwABgADgAHAAGAAMAAYAAwABgADgAHAAGAAMAAYAAwABgADgAHAAGAAMAAYAAwABgADgAHAAGAAMAAYAAwABgADgAEwgAEwABgADAAGAAOAAcAAYAAwABgADAAGAAOAAcAAYAAwABgADAAGAAOAAcAAYAAwABgADAAGAAOAAcAAYAAwABgADAAGAAOAAcAAYAAwABgADAAGAAOAAcAAYAAwABgADIABVMAAYAAwABgADAAGAAOAAcAAYAAwABgADAAGAAOAAcAAYAAwABgADAAGAAOAAcAAYAAwABgADAAGAAOAAcAAYAAwABgADAAGAAOAAcAAYAAwABgADAAGAAPAtQIMADai/h9awvPwAAAAAElFTkSuQmCC',
+	img50: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQAAAAEACAYAAABccqhmAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyBpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNSBXaW5kb3dzIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOjgxODc3RkJENEE5MTExRUZBOUNBOUYzQUVCQTA5ODlFIiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOjgxODc3RkJFNEE5MTExRUZBOUNBOUYzQUVCQTA5ODlFIj4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6ODE4NzdGQkI0QTkxMTFFRkE5Q0E5RjNBRUJBMDk4OUUiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6ODE4NzdGQkM0QTkxMTFFRkE5Q0E5RjNBRUJBMDk4OUUiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz5HTI4NAAACYElEQVR42uzUQQEAMAjEsDH/BlFzGMABiYQ+Wkn6ASd9CcAAAAMADAAwAMAAAAMADAAwAMAAAAMADAAwAMAAAAMADAAwAMAAAAMADAAwAMAAAAMADAAwAMAAAAMADAAwAMAAAAMADAAwAMAAAAMADAAwADAAwAAAAwAMADAAwAAAAwAMADAAwAAAAwAMADAAwAAAAwAMADAAwAAAAwAMADAAwAAAAwAMADAAwAAAAwAMADAAwAAAAwAMADAAwAAAAwAMADAAMADAAAADAAwAMADAAAADAAwAMADAAAADAAwAMADAAAADAAwAMADAAAADAAwAMADAAAADAAwAMADAAAADAAwAMADAAAADAAwAMADAAAADAAwAMAAwAMAAAAMADAAwAMAAAAMADAAwAMAAAAMADAAwAMAAAAMADAAwAMAAAAMADAAwAMAAAAMADAAwAMAAAAMADAAwAMAAAAMADAAwAMAAAAMADAAwADAAwAAAAwAMADAAwAAAAwAMADAAwAAAAwAMADAAwAAAAwAMADAAwAAAAwAMADAAwAAAAwAMADAAwAAAAwAMADAAwAAAAwAMADAAwAAAAwAMADAAMADAAAADAAwAMADAAAADAAwAMADAAAADAAwAMADAAAADAAwAMADAAAADAAwAMADAAAADAAwAMADAAAADAAwAMADAAAADAAwAMADAAAADAAwAMAAwAMAAAAMADAAwAMAAAAMADAAwAMAAAAMADAAwAMAAAAMADAAwAMAAAAMADAAwAMAAAAMADAAwAMAAAAMADAAwAMAAAAMADAAwAGAzAgwA8FEF1n85PigAAAAASUVORK5CYII=",
+	merges: {},
+	iniMappeMuscoli: function(){
+		let imgTorso= new Image(),
+			imgHead= new Image(),
+			imgLimbs= new Image();
+		SET.MAT.MAT_torso_muscoli = new THREE.Texture(),
+		SET.MAT.MAT_head_muscoli = new THREE.Texture(),
+		SET.MAT.MAT_limbs_muscoli = new THREE.Texture();
+		SET.MAT.textureTorsoB_muscoli = new THREE.Texture(),
+		SET.MAT.textureHeadB_muscoli = new THREE.Texture(),
+		SET.MAT.textureLimbsB_muscoli = new THREE.Texture();
+		
+		imgTorso.src = Muscle_Torso;
+		SET.MAT.MAT_torso_muscoli.image = imgTorso;
+		imgTorso.onload = (function() {
+			SET.MAT.MAT_torso_muscoli.needsUpdate = true;
+		});
+
+		imgHead.src = Muscle_Head;
+		SET.MAT.MAT_head_muscoli.image = imgHead;
+		imgHead.onload = (function() {
+			SET.MAT.MAT_head_muscoli.needsUpdate = true;
+		});
+
+		imgLimbs.src = Muscle_Limbs;
+		SET.MAT.MAT_limbs_muscoli.image = imgLimbs;
+		imgLimbs.onload = (function() {
+			SET.MAT.MAT_limbs_muscoli.needsUpdate = true;
+		});
+
+		let imageTorsoB = new Image(),
+			imageHeadB = new Image(),
+			imageLimbsB = new Image();
+
+		imageTorsoB.src = Muscle_Torso_bump;
+		SET.MAT.textureTorsoB_muscoli.image = imageTorsoB;
+		imageTorsoB.onload = function() {
+			SET.MAT.textureTorsoB_muscoli.needsUpdate = true;
+		};
+
+		imageHeadB.src =  Muscle_Head_bump;
+		SET.MAT.textureHeadB_muscoli.image = imageHeadB;
+		imageHeadB.onload = function() {
+			SET.MAT.textureHeadB_muscoli.needsUpdate = true;
+		};
+
+		imageLimbsB.src =  Muscle_Limbs_bump;
+		SET.MAT.textureLimbsB_muscoli.image = imageLimbsB;
+		imageLimbsB.onload = function() {
+			SET.MAT.textureLimbsB_muscoli.needsUpdate = true;
+		};
+	},
+	applicaMappa: function( nPunto='' ){
+		if((!__(MAPPA.textures[nPunto]) && nPunto!='') || (nPunto=='' && !SET.MAT.mappaApplicata) || !globals.modello.cartella)return;
+		SET.MAT.mappaApplicata = (nPunto!='');
+
+		let MAT_torso = null,
+			MAT_head = null,
+			MAT_limbs = null,
+			textureTorsoB = null,
+			textureHeadB = null,
+			textureLimbsB = null,
+			imageTorsoB = new Image(),
+			imageHeadB = new Image(),
+			imageLimbsB = new Image(),
+			imgProvv = '';
+
+		if(nPunto==''){
+			MAT_torso = SET.MAT.MAT_torso_muscoli,
+			MAT_head = SET.MAT.MAT_head_muscoli,
+			MAT_limbs = SET.MAT.MAT_limbs_muscoli;
+			MODELLO.MAT.materialAree[1].map = MAT_torso;
+			MODELLO.MAT.materialAree[2].map = MAT_head;
+			MODELLO.MAT.materialAree[3].map = MAT_limbs;
+		}else{
+			SET.MAT.mergeImages(nPunto,1);
+		}
+		if(nPunto==''){
+			textureTorsoB = SET.MAT.textureTorsoB_muscoli,
+			textureHeadB = SET.MAT.textureHeadB_muscoli,
+			textureLimbsB = SET.MAT.textureLimbsB_muscoli;
+		}else{
+			textureTorsoB = new THREE.Texture(),
+			textureHeadB = new THREE.Texture(),
+			textureLimbsB = new THREE.Texture(),
+			
+			imageTorsoB.src =  SET.MAT.imgBianca;
+			textureTorsoB.image = imageTorsoB;
+			imageTorsoB.onload = function() {
+				textureTorsoB.needsUpdate = true;
+			};
+
+			imageHeadB.src =  SET.MAT.imgBianca;
+			textureHeadB.image = imageHeadB;
+			imageHeadB.onload = function() {
+				textureHeadB.needsUpdate = true;
+			};
+
+			imageLimbsB.src =  SET.MAT.imgBianca;
+			textureLimbsB.image = imageLimbsB;
+			imageLimbsB.onload = function() {
+				textureLimbsB.needsUpdate = true;
+			};
+		}
+
+		MODELLO.MAT.materialAree[1].bumpMap = textureTorsoB;
+		MODELLO.MAT.materialAree[2].bumpMap = textureHeadB;
+		MODELLO.MAT.materialAree[3].bumpMap = textureLimbsB;
+		MODELLO.swArea(1);
+		setTimeout(function(){MODELLO.op('Pelle',1);},500);
+	},
+	mergeImages: function(nPunto, zona){
+		let c=document.createElement("canvas"),
+			img=MAPPA.textures[nPunto][globals.modello.cartella],
+			zone = {
+				1: "Torso",
+				2: "Head",
+				3: "Limbs"
+			};
+		c.width = 1024;
+		c.height = 1024;
+		let ctx=c.getContext("2d");
+		ctx.globalCompositeOperation = "lighten";
+		let imageObj1 = new Image();
+		imageObj1.src = eval("Muscle_"+zone[zona]);
+		let imageObj2 = new Image();
+		imageObj1.onload = function() {
+			ctx.drawImage(imageObj1, 0, 0, 1024, 1024);
+			imageObj2.src = SET.MAT.img50;
+			imageObj2.onload = function() {
+				ctx.drawImage(imageObj2, 0, 0, 1024, 1024);
+				ctx.globalCompositeOperation = "multiply";
+				imageObj1.src = c.toDataURL("image/jpeg");
+				imageObj1.onload = function() {
+					ctx.drawImage(imageObj1, 0, 0, 1024, 1024);
+					imageObj2.src = (img[zone[zona].toLowerCase()] == 'void') ? SET.MAT.imgBianca : img[zone[zona].toLowerCase()];
+					imageObj2.onload = function() {
+						ctx.drawImage(imageObj2, 0, 0, 1024, 1024);
+
+						SET.MAT.merges[zone[zona]] = c.toDataURL("image/jpeg");
+						if(zona<3){
+							setTimeout(function(){SET.MAT.mergeImages( nPunto, zona+1 );},10);
+						}else{
+							let MAT = {};
+
+							for(let e=1;e<=3;e++){
+								let imgDest = new Image(),
+									MAT_dest = new THREE.Texture();
+								imgDest.src = SET.MAT.merges[zone[e]];
+								MAT_dest.image = imgDest;
+								imgDest.onload = (function() {
+									MAT_dest.needsUpdate = true;
+								});
+								MAT[e] = MAT_dest;
+							}
+							for(let e=1;e<=3;e++){
+								let gProvv = new THREE.SphereGeometry( 0.01, 0, 0 ),
+									g = new THREE.Mesh( gProvv, MAT[e]); 
+								g.material.opacity = 0;
+								g.name = 'preM'+m;
+								g.depthTest = false;
+								g.position.y = 1;
+								manichino.add( g );
+							}
+							setTimeout(function(){
+								for(let e=1;e<=3;e++){
+									MODELLO.MAT.materialAree[e].map = MAT[e];
+								}
+								MODELLO.removePrecarArea();
+							},200);
+						}
+					}
+				}
+			}
+		}
+	},
+	
 };
 
-SET.MAT.lineYang.uniforms.opacity.value = SET.MAT.opLine;
-SET.MAT.lineYin.uniforms.opacity.value = SET.MAT.opLine;
-SET.MAT.lineGuide.uniforms.opacity.value = SET.MAT.opLine;
-SET.MAT.lineSel.uniforms.opacity.value = SET.MAT.opLine;
-
-SET.MAT.lineYangInt = cloneMAT(SET.MAT.lineYang,{color:SET.COL.selInt, depthFunc: 1, visible: false});
-SET.MAT.lineYangOver = cloneMAT(SET.MAT.lineYang,{color: SET.COL.over});
-SET.MAT.lineYangIntOver = cloneMAT(SET.MAT.lineYangInt,{color: SET.COL.over, depthFunc: 1, visible: false});
-	
-SET.MAT.lineYinInt = cloneMAT(SET.MAT.lineYin,{color:SET.COL.selInt, depthFunc: 1, visible: false});
-SET.MAT.lineYinOver = cloneMAT(SET.MAT.lineYin,{color: SET.COL.over});
-SET.MAT.lineYinIntOver = cloneMAT(SET.MAT.lineYinInt,{color: SET.COL.over, depthFunc: 1, visible: false});
-
 SET._setLineMaterials = function(){
-
-	for(let elemento in SET.colsElementi){
-		
-		let col = areasView ? SET.colsElementiAreasView[elemento] : SET.colsElementi[elemento],
-			col3 = SET.COL.basePT,
-			col4 = SET.COL.base;
-		if( SET.COL.contrastMethod){
-			if(!areasView)col =  SET.COL.sel;
-			else col =  SET.COL.musc;
-		}
-		if(areasView){
-			col3 = SET.COL.basePTmusc;
-			col4 = SET.COL.lineMusc;
-		}
-		
-		SET.MAT.pointBase.color.setHex(col3);
-		SET.MAT.lineYang.color.setHex(col4);
-		SET.MAT.lineYin.color.setHex(col4);
-		depthFunc = 3;
-		if(MODELLO.opAtt<1)depthFunc = 1;
-
-		SET.MAT.lineYangOn[elemento] = new THREE.LineMaterial( {
-
-			name: "lineYangOn["+elemento+"]",
-			color: new THREE.Color(col),
-			transparent: true,
-			linewidth: SET.MAT.lineWidth,
-			dashed: false
-	
-		} );
-
-		SET.MAT.lineYinOn[elemento] = new THREE.LineMaterial( {
-
-			name: "lineYinOn["+elemento+"]",
-			color: new THREE.Color(col),
-			transparent: true,
-			linewidth: SET.MAT.lineWidth,
-			dashed: true,
-			defines: {
-				USE_DASH: ""
-			},
-			needsUpdate: true,
-			dashScale: 10,
-			dashSize: 1,
-			gapSize:0.5
-	
-		} );
-		SET.MAT.lineYangIntOn[elemento] = new THREE.LineMaterial( {
-
-			name: "lineYangIntOn["+elemento+"]",
-			color: new THREE.Color(col),
-			transparent: true,
-			depthFunc: depthFunc,
-			linewidth: SET.MAT.lineWidth,
-			dashed: false
-	
-		} );
-		SET.MAT.lineYangIntOn[elemento].uniforms.opacity.value = 0.3;
-
-
-		SET.MAT.lineYinIntOn[elemento] = new THREE.LineMaterial( {
-
-			name: "lineYinIntOn["+elemento+"]",
-			color: new THREE.Color(col),
-			transparent: true,
-			depthFunc: depthFunc,
-			linewidth: SET.MAT.lineWidth,
-			dashed: true,
-			defines: {
-				USE_DASH: ""
-			},
-			needsUpdate: true,
-			dashScale: 10,
-			dashSize: 1,
-			gapSize:0.5
-	
-		} );
-		SET.MAT.lineYinIntOn[elemento].uniforms.opacity.value = 0.3;
-	}
-	SET.MAT.lineYangInt.linewidth = SET.MAT.lineWidth;
-	SET.MAT.lineYangOver.linewidth = SET.MAT.lineWidth;
-	SET.MAT.lineYangIntOver.linewidth = SET.MAT.lineWidth;
-		
-	SET.MAT.lineYinInt.linewidth = SET.MAT.lineWidth;
-	SET.MAT.lineYinOver.linewidth = SET.MAT.lineWidth;
-	SET.MAT.lineYinIntOver.linewidth = SET.MAT.lineWidth;
-}
-	
-SET._setResolution = function(){
-	let w = canvas.scrollWidth/canvas.scrollHeight;
-	for(let elemento in SET.colsElementi){
-		SET.MAT.lineYangOn[elemento].resolution.set( w,1 );
-		SET.MAT.lineYinOn[elemento].resolution.set( w,1 );
-		SET.MAT.lineYangIntOn[elemento].resolution.set( w,1 );
-		SET.MAT.lineYinIntOn[elemento].resolution.set( w,1 );
-		
-	}
-		
-	
-	SET.MAT.lineYang.resolution.set( w,1 );
-	SET.MAT.lineYangInt.resolution.set( w,1 );
-	SET.MAT.lineYangOver.resolution.set( w,1 );
-	SET.MAT.lineYangIntOver.resolution.set( w,1 );
-	SET.MAT.lineYin.resolution.set( w,1 );
-	SET.MAT.lineYinInt.resolution.set( w,1 );
-	SET.MAT.lineYinOver.resolution.set( w,1 );
-	SET.MAT.lineYinIntOver.resolution.set( w,1 );
+	let col3 = areasView ? SET.COL.basePTmusc : SET.COL.basePT;
+	SET.MAT.pointBase.color.setHex(col3);
 }

@@ -447,9 +447,9 @@ var MODELLO = {
 		obj_legamenti=[];
 		obj_visceri=[];
 		obj_vasi=[];
-		Muscle_Head='';
+		/* Muscle_Head='';
 		Muscle_Limbs='';
-		Muscle_Torso='';
+		Muscle_Torso=''; */
 		for(let n=0;n<globals.modello.imports.length;n++){
 			document.getElementById("scripts").removeChild(IMPORTER.jss[n]);
 		}

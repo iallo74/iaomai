@@ -5910,12 +5910,12 @@ DB.TXT = {
             deu: "Sie müssen auf den App Store zugreifen und die App aktualisieren."
         },
         UpgradeInfoPC: {
-            ita: "Assicurati di essere connesso a internet e attendi qualche minuto affinché il sistema aggiorni l'applicazione automaticamente, oppure scarica l'ultima versione.",
-            eng: "Make sure you are connected to the internet and wait a few minutes for the system to update the application automatically, or download the latest version.",
-            esp: "Asegúrate de estar conectado a internet y espera unos minutos para que el sistema actualice la aplicación automáticamente, o descarga la última versión.",
-            fra: "Assurez-vous d'être connecté à Internet et attendez quelques minutes pour que le système mette à jour l'application automatiquement, ou téléchargez la dernière version.",
-            por: "Certifique-se de estar conectado à internet e aguarde alguns minutos para que o sistema atualize o aplicativo automaticamente ou baixe a versão mais recente.",
-            deu: "Stellen Sie sicher, dass Sie mit dem Internet verbunden sind, und warten Sie einige Minuten, damit das System die Anwendung automatisch aktualisiert oder laden Sie die neueste Version herunter."
+            ita: "Scarica l'ultima versione.",
+            eng: "Download the latest version.",
+            esp: "Descarga la última versión.",
+            fra: "Téléchargez la dernière version.",
+            por: "Baixe a versão mais recente.",
+            deu: "Laden Sie die neueste Version herunter."
         },
         CliccaQui: {
             ita: "CLICCA QUI",
@@ -5924,6 +5924,14 @@ DB.TXT = {
             fra: "CLIQUEZ ICI",
             por: "CLIQUE AQUI",
             deu: "HIER KLICKEN"
+        },
+        ScaricaOra: {
+            ita: "SCARICA ORA",
+            eng: "DOWNLOAD NOW",
+            esp: "DESCARGA AHORA",
+            fra: "TÉLÉCHARGER MAINTENANT",
+            por: "BAIXE AGORA",
+            deu: "JETZT HERUNTERLADEN"
         },
 
         // PROCESSO DI ACQUISTO

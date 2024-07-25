@@ -101,6 +101,7 @@ function INIT(){
 	
 	DB._reset(); // lasciare qui
 	LOGIN.verLogin();
+	LOGIN.checkNewVersion();
 	
 	globals.initModello();
 	globals.initSet();
