@@ -458,6 +458,8 @@ var SET = {
 		centro()
 		rotateEnd = { x:0, y:manichinoCont.rotation.y, z:0 };
 
+
+		// SOLO ROTAZIONE AUTOMATICA
 		/* let x2 = 0-this.ptSel.position.x,
 			y2 = 0-this.ptSel.position.y,
 			z2 = 0-this.ptSel.position.z;
@@ -472,7 +474,7 @@ var SET = {
 			panEnd = { x: 0, y: 0.25, z: 0 };
 		}else panEnd = { x: 0, y: 0, z: 0 };
 		
-		
+		*/
 		
 		if(!el){
 			// posiziono
@@ -504,7 +506,7 @@ var SET = {
 			}
 			if(manichinoCont.position.z<15 || !zoomEnd || !smothingView)zoomEnd = 15;
 			normalizeRotation();
-		} */
+		} 
 		
 		SET.delEviPalls(pp.nPunto,'Over');
 		SET.addEviPalls(pp.nPunto,'Select');
