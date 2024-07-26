@@ -91,12 +91,13 @@ var SET = {
 		}
 		if(ptAdd)SETS.add( this.PT );
 
-
-		if(!areasView){
-			MODELLO.swArea(2);
-			MODELLO.swArea(1);
+		if(globals.modello.cartella){
+			if(!areasView){
+				MODELLO.swArea(2);
+				MODELLO.swArea(1);
+			}
+			setTimeout(function(){MODELLO.op('Pelle',1);},200);
 		}
-		setTimeout(function(){MODELLO.op('Pelle',1);},200);
 
 		let contPulsanti = 	'<span class="menuElenchi" onclick="MENU.visMM(\'btnCarMapMenu\');"></span>' +
 							'<span id="btnCarMapMenu" class="btn_meridiani_cinesi titolo_set">' +
