@@ -97,6 +97,7 @@ var SET = {
 				MODELLO.swArea(1);
 			}
 			setTimeout(function(){MODELLO.op('Pelle',1);},200);
+			SET.MAT.iniMappeMuscoli();
 		}
 
 		let contPulsanti = 	'<span class="menuElenchi" onclick="MENU.visMM(\'btnCarMapMenu\');"></span>' +
@@ -149,7 +150,6 @@ var SET = {
 		
 		manichino.add( SETS );
 		this._setLineMaterials();
-		SET.MAT.iniMappeMuscoli();
 		raycastDisable=false;
 		if(!globals.modello.cartella){
 			SETS.visible = false;
@@ -455,11 +455,23 @@ var SET = {
 		}
 		
 		
-		/*if(!el){
+		SET.memPos.position = {
+			x: manichinoCont.position.x,
+			y: manichinoCont.position.y,
+			z: manichinoCont.position.z
+		}
+		SET.memPos.rotation = {
+			x: manichinoCont.rotation.x,
+			y: manichinoCont.rotation.y,
+			z: manichinoCont.rotation.z
+		}
+		let autoRotated = false;
+		if(!el){
 			// posiziono
-			if(MAPPA.posizioni[SET.ptSel.name]){
-				let pos = MAPPA.posizioni[SET.ptSel.name];
-
+			if(MAPPA.posizioni[SET.ptSel.name.split("_")[0]]){
+				//centro();
+				let pos = MAPPA.posizioni[SET.ptSel.name.split("_")[0]];
+				centro();
 				// cerco la via più breve
 				let diffX = manichinoCont.rotation.x-pos.x,
 					diffY = manichinoCont.rotation.y-pos.y;
@@ -482,25 +494,18 @@ var SET = {
 				
 				normalizeRotation();
 				rotateEnd = { x:pos.x, y:pos.y, z:0 };
+				autoRotated = true;
+				zoomEnd = 0.0001;
 			}
-			if(manichinoCont.position.z<15 || !zoomEnd || !smothingView)zoomEnd = 15;
+			//if(manichinoCont.position.z<15 || !zoomEnd || !smothingView)zoomEnd = 15;
 			normalizeRotation();
-		} */
-
-		
-		SET.memPos.position = {
-			x: manichinoCont.position.x,
-			y: manichinoCont.position.y,
-			z: manichinoCont.position.z
 		}
-		SET.memPos.rotation = {
-			x: manichinoCont.rotation.x,
-			y: manichinoCont.rotation.y,
-			z: manichinoCont.rotation.z
-		}
+		if(!autoRotated){
 
-		centro()
-		rotateEnd = { x:0, y:manichinoCont.rotation.y, z:0 };
+			centro()
+			rotateEnd = { x:0, y:manichinoCont.rotation.y, z:0 };
+
+		}
 
 
 		// SOLO ROTAZIONE AUTOMATICA

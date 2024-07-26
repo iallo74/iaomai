@@ -89,7 +89,7 @@ var MODULO_PUNTO = { // extend SET
 			for(let p in punti){
 				HTML += '<div';
 				if(p==nPunto)HTML += ' class="sel"';
-				else HTML += ' onClick="SET.apriPunto('+p+');"';
+				else HTML += ' onClick="SET.apriPunto('+p+',false);"';
 				HTML += '>'+punti[p]+'</div><br>';
 			}
 			HTML += '</div>';
