@@ -252,7 +252,7 @@ SET.MAT = {
 		};
 	},
 	applicaMappa: function( nPunto='' ){
-		if((!__(MAPPA.textures[nPunto]) && nPunto!='') || (nPunto=='' && !SET.MAT.mappaApplicata) || !globals.modello.cartella)return;
+		if(/* (!__(MAPPA.textures[nPunto]) && nPunto!='') ||  */(nPunto=='' && !SET.MAT.mappaApplicata) || !globals.modello.cartella)return;
 		SET.MAT.mappaApplicata = (nPunto!='');
 
 		let MAT_torso = null,
@@ -317,12 +317,19 @@ SET.MAT = {
 	mergeImages: function(nPunto, zona){
 		SET.MAT.roughnessOr = MODELLO.MAT.materialAree[1].roughness;
 		let c=document.createElement("canvas"),
-			img=MAPPA.textures[nPunto][globals.modello.cartella],
+			mappa=MAPPA.textures[nPunto],
 			zone = {
 				1: "Torso",
 				2: "Head",
 				3: "Limbs"
 			};
+		if(!mappa){
+			img={
+				"torso": "void",
+				"head": "void",
+				"limbs": "void"
+			};
+		}else img=mappa[globals.modello.cartella];
 		c.width = 1024;
 		c.height = 1024;
 		let ctx=c.getContext("2d");
