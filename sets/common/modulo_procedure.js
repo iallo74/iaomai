@@ -94,6 +94,7 @@ var MODULO_PROCEDURE = { // extend SET
 		let app = '';
 		if(globals.set.cartella=='auricologia')app='AUR';
 		if(globals.set.cartella=='reflessologia_plantare')app='RFX';
+		if(globals.set.cartella=='reigger_points')app='TRP';
 		for(let p in DB.procedure.data){
 			if(DB.procedure.data[p].app == app){
 				if(DB.procedure.data[p].NomeProcedura.toLowerCase().indexOf(parola.toLowerCase()) == -1){
@@ -225,7 +226,7 @@ var MODULO_PROCEDURE = { // extend SET
 						siglaMeridiano='',
 						siglaPunto='',
 						mezzo='';
-					if(TipoDettaglio=='P' || TipoDettaglio=='N' || TipoDettaglio=='A' || TipoDettaglio=='R'){	
+					if(TipoDettaglio=='P' || TipoDettaglio=='N' || TipoDettaglio=='A' || TipoDettaglio=='R' || TipoDettaglio=='O'){	
 						if(DescrizioneDettaglio){
 							if(DescrizioneDettaglio.indexOf(".")>-1){
 								pP=DescrizioneDettaglio.split(".");
@@ -235,19 +236,19 @@ var MODULO_PROCEDURE = { // extend SET
 									siglaPunto=__(pP[2]);
 									mezzo=__(pP[3]);
 								}
-								if(TipoDettaglio=='A' || TipoDettaglio=='R'){
+								if(TipoDettaglio=='A' || TipoDettaglio=='R' || TipoDettaglio=='O'){
 									siglaPunto=pP[0];
 									mezzo=__(pP[1]);
 								}
 							}else{
 								if(TipoDettaglio=='P' || TipoDettaglio=='N')nPunto=DescrizioneDettaglio;
-								if(TipoDettaglio=='A' || TipoDettaglio=='R')siglaPunto=DescrizioneDettaglio;
+								if(TipoDettaglio=='A' || TipoDettaglio=='R' || TipoDettaglio=='O')siglaPunto=DescrizioneDettaglio;
 							}
 						}
 					}
 					
 					HTML += '<div class="rgProc_'+TipoDettaglio+'"';
-					if(!n && (TipoDettaglio=='P' || TipoDettaglio=='N' || TipoDettaglio=='A' || TipoDettaglio=='R'))HTML += ' style="margin-top:15px;"';
+					if(!n && (TipoDettaglio=='P' || TipoDettaglio=='N' || TipoDettaglio=='A' || TipoDettaglio=='R' || TipoDettaglio=='O'))HTML += ' style="margin-top:15px;"';
 					HTML += '>';
 					if(TipoDettaglio=='T')HTML += '<b>';
 					if(TipoDettaglio=='T' || TipoDettaglio=='D'){
@@ -285,10 +286,7 @@ var MODULO_PROCEDURE = { // extend SET
 								'	</span>'
 								'</span>';
 					}
-					if(TipoDettaglio=='A' && siglaPunto){
-						HTML += '[.'+siglaPunto+'.]';
-					}
-					if(TipoDettaglio=='R' && siglaPunto){
+					if(siglaPunto && (TipoDettaglio=='A' || TipoDettaglio=='R' || TipoDettaglio=='O')){
 						HTML += '[.'+siglaPunto+'.]';
 					}
 					if(mezzo)HTML += '<img src="img/mezzo_'+mezzo+'.png" class="noMod" style="vertical-align: middle;margin-top: -3px;margin-left: 5px;">';
@@ -342,7 +340,7 @@ var MODULO_PROCEDURE = { // extend SET
 					'	</div>';
 			}
 			HTML += '</div>';
-			if(globals.set.siglaProc=='AUR' || globals.set.siglaProc=='RFX')HTML = SET.convPuntiScheda(HTML); // <<<<<<<<<<< VERIFICARE
+			if(globals.set.siglaProc=='AUR' || globals.set.siglaProc=='RFX' || globals.set.siglaProc=='TRP')HTML = SET.convPuntiScheda(HTML); // <<<<<<<<<<< VERIFICARE
 			if(SCHEDA.btnSel && Q_resta)SCHEDA.btnSel=null;
 			let btnAdd = '',
 				azElimina = (Q_idProc>-1 && !Q_community) ? 'SET.el_procedura('+Q_idProc+');':'';
@@ -451,6 +449,7 @@ var MODULO_PROCEDURE = { // extend SET
 				app = '';
 			if(globals.set.cartella=='auricologia')app = 'AUR';
 			if(globals.set.cartella=='reflessologia_plantare')app = 'RFX';
+			if(globals.set.cartella=='trigger_points')app = 'TRP';
 			for(let c in DB.procedure.data){
 				if(DB.procedure.data[c].Cancellato*1==0 && __(DB.procedure.data[c].app) == app)tProc++;
 			}
@@ -561,7 +560,8 @@ var MODULO_PROCEDURE = { // extend SET
 						(LOGIN.verModule("CIN") && localStorage.sistemaMeridiani=='' || LOGIN.verModule("MAS") && localStorage.sistemaMeridiani=='MAS' ) ) ) )disabledM = ' disabled';
 
 			if(	globals.set.cartella=="auricologia" && LOGIN.verAuth("auricologia") || 
-				globals.set.cartella=="reflessologia_plantare" && LOGIN.verAuth("reflessologia_plantare") )disabledP = '';		
+				globals.set.cartella=="reflessologia_plantare" && LOGIN.verAuth("reflessologia_plantare") || 
+				globals.set.cartella=="trigger_points" && LOGIN.verAuth("trigger_points") )disabledP = '';		
 			
 			if( !LOGIN.logedin() ){
 				disabledP = ' disabled';
@@ -595,7 +595,7 @@ var MODULO_PROCEDURE = { // extend SET
 					'			</div>';
 			}else{
 				
-				// punti auricolari
+				// punti auricolari, aree piede e punti trigger
 				HTML += '		<div id="grpPt"' +
 				'			    	 class="p_proc_gruppo'+(disabledP?' disabled':'')+'"';
 
@@ -603,6 +603,7 @@ var MODULO_PROCEDURE = { // extend SET
 					HTML += '			    	 onClick="SET.aggiungiDettaglio(\'';
 					if(globals.set.cartella=='auricologia')HTML +='A';
 					if(globals.set.cartella=='reflessologia_plantare')HTML +='R';
+					if(globals.set.cartella=='trigger_points')HTML +='O';
 					HTML += '\');"';
 				}
 				
@@ -867,7 +868,22 @@ var MODULO_PROCEDURE = { // extend SET
 			}
 			puntiElenco.sort(sort_by("NomePunto", false));
 		}
-		
+		if(globals.set.siglaProc=='TRP'){
+			puntiElenco = [];
+			for(let muscolo in DB.set.punti){
+				if(__(DB.set.punti[muscolo])){
+					for(let siglaPunto in DB.set.punti[muscolo].punti){
+						let NomePunto = DB.set.punti[muscolo].NomePunto;
+						if(DB.set.punti[muscolo].punti[siglaPunto])NomePunto += ' - '+DB.set.punti[muscolo].punti[siglaPunto];
+						puntiElenco.push({
+							siglaPunto: siglaPunto,
+							NomePunto: NomePunto
+						});
+					}
+				}
+			}
+			puntiElenco.sort(sort_by("NomePunto", false));
+		}
 		for(let p in SET.dettagliProvvisori){
 			let DT = SET.dettagliProvvisori[p];
 			OrdineDettaglio++;
@@ -883,6 +899,7 @@ var MODULO_PROCEDURE = { // extend SET
 						((TipoDettaglio=='M') ? ' dettMeridiano': '') +
 						((TipoDettaglio=='A') ? ' dettPunto': '') +
 						((TipoDettaglio=='R') ? ' dettPunto': '') +
+						((TipoDettaglio=='O') ? ' dettPunto': '') +
 						'"';
 				if(mouseDetect && (TipoDettaglio=='P' || TipoDettaglio=='N')){
 					HTML += 
@@ -895,6 +912,11 @@ var MODULO_PROCEDURE = { // extend SET
 						'	  onMouseOut="SET.overPunto(\'_PT'+DescrizioneDettaglio+'\',false);"';
 				}
 				if(mouseDetect && TipoDettaglio=='R' && DescrizioneDettaglio){
+					HTML += 
+						'	  onMouseOver="SET.overPunto(\''+DescrizioneDettaglio.split(".")[0]+'\',true);"'+
+						'	  onMouseOut="SET.overPunto(\''+DescrizioneDettaglio.split(".")[0]+'\',false);"';
+				}
+				if(mouseDetect && TipoDettaglio=='O' && DescrizioneDettaglio){
 					HTML += 
 						'	  onMouseOver="SET.overPunto(\''+DescrizioneDettaglio.split(".")[0]+'\',true);"'+
 						'	  onMouseOut="SET.overPunto(\''+DescrizioneDettaglio.split(".")[0]+'\',false);"';
@@ -931,7 +953,7 @@ var MODULO_PROCEDURE = { // extend SET
 						'		   value="'+TipoDettaglio+'" />';
 				
 				
-				if(TipoDettaglio=='P' || TipoDettaglio=='N' || TipoDettaglio=='A' || TipoDettaglio=='R'){	
+				if(TipoDettaglio=='P' || TipoDettaglio=='N' || TipoDettaglio=='A' || TipoDettaglio=='R' || TipoDettaglio=='O'){	
 				
 					nPunto='';
 					siglaMeridiano='';
@@ -946,13 +968,13 @@ var MODULO_PROCEDURE = { // extend SET
 								siglaPunto = __(pP[2]);
 								mezzo = __(pP[3]);
 							}
-							if(TipoDettaglio=='A' || TipoDettaglio=='R'){
+							if(TipoDettaglio=='A' || TipoDettaglio=='R' || TipoDettaglio=='O'){
 								siglaPunto = pP[0];
 								mezzo = __(pP[1]);
 							}
 						}else{
 							if(TipoDettaglio=='P' || TipoDettaglio=='N')nPunto = DescrizioneDettaglio;
-							if(TipoDettaglio=='A' || TipoDettaglio=='R')siglaPunto = DescrizioneDettaglio;
+							if(TipoDettaglio=='A' || TipoDettaglio=='R' || TipoDettaglio=='O')siglaPunto = DescrizioneDettaglio;
 						}
 					}
 					
@@ -972,6 +994,9 @@ var MODULO_PROCEDURE = { // extend SET
 					}
 					if(TipoDettaglio=='R'){
 						if(	!(	globals.set.cartella=="reflessologia_plantare" && LOGIN.verAuth("reflessologia_plantare") ) )disabledP = ' disabled';
+					}
+					if(TipoDettaglio=='O'){
+						if(	!(	globals.set.cartella=="trigger_points" && LOGIN.verAuth("trigger_points") ) )disabledP = ' disabled';
 					}
 					if( !(	globals.set.cartella=="meridiani_cinesi" && LOGIN.verAuth("meridiani_cinesi") ||
 							(	globals.set.cartella=="meridiani_shiatsu" && LOGIN.verAuth("meridiani_shiatsu") && 
@@ -1159,7 +1184,7 @@ var MODULO_PROCEDURE = { // extend SET
 					}
 					HTML += '	</select>';
 				}
-				if(TipoDettaglio=='A' || TipoDettaglio=='R'){
+				if(TipoDettaglio=='A' || TipoDettaglio=='R' || TipoDettaglio=='O'){
 					puntiProvvisoriProc.push( DescrizioneDettaglio );
 					HTML += '	<select class="numPoints"' +
 							' 			name="pt_'+p+'"' +
@@ -1206,8 +1231,8 @@ var MODULO_PROCEDURE = { // extend SET
 		}catch(err){}
 		if(eviUltimo){
 			if(TipoDettaglio=='P' || TipoDettaglio=='N')document.formMod["mr_"+lastP].focus();
-			else if(TipoDettaglio=='A' || TipoDettaglio=='R')document.formMod["pt_"+lastP].focus();
-			else if(TipoDettaglio!='M')document.formMod["de_"+lastP].focus();
+			else if(TipoDettaglio=='A' || TipoDettaglio=='R' || TipoDettaglio=='O')document.formMod["pt_"+lastP].focus();
+			else if(TipoDettaglio!='M' && document.formMod["de_"+lastP])document.formMod["de_"+lastP].focus();
 		}
 	},
 	aggiungiDettaglio: function( t, c='', u=1 ){ // aggiunge un dettaglio vuoto alla proceura
@@ -1272,7 +1297,7 @@ var MODULO_PROCEDURE = { // extend SET
 				}
 				val += "."+sg+"."+mz;
 			}
-			if(globals.set.siglaProc=='AUR'){
+			if(globals.set.siglaProc=='AUR' || globals.set.siglaProc=='RFX' || globals.set.siglaProc=='TRP'){
 				val = document.getElementById("pt_"+n).value+"."+__(DP[1]);
 			}
 		}

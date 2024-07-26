@@ -317,6 +317,7 @@ var PAZIENTI_TRATTAMENTI = { // extend PAZIENTI
 				puntiAuricolari=[],
 				puntiPlantari=[],
 				puntiNamikoshi=[],
+				puntiTrigger=[],
 				TimeTrattamento=0,
 				CostoTrattamento=0,
 				ordine=0,
@@ -349,6 +350,7 @@ var PAZIENTI_TRATTAMENTI = { // extend PAZIENTI
 				puntiMTC=__(TR.puntiMTC,[]);
 				puntiAuricolari=toJson(__(TR.puntiAuricolari,[]));
 				puntiPlantari=toJson(__(TR.puntiPlantari,[]));
+				puntiTrigger=toJson(__(TR.puntiTrigger,[]));
 				puntiNamikoshi=toJson(__(TR.puntiNamikoshi,[]));
 				sintomi=toJson(__(TR.sintomi,[]));
 				gallery=toJson(__(TR.gallery,[]));
@@ -404,6 +406,7 @@ var PAZIENTI_TRATTAMENTI = { // extend PAZIENTI
 			PAZIENTI.puntiProvvisori=clone(puntiMTC);
 			PAZIENTI.auriculoProvvisori=clone(puntiAuricolari);
 			PAZIENTI.reflexProvvisori=clone(puntiPlantari);
+			PAZIENTI.triggerProvvisori=clone(puntiTrigger);
 			PAZIENTI.namikoshiProvvisori=clone(puntiNamikoshi);
 			PAZIENTI.sintomiProvvisori=clone(sintomi);
 			PAZIENTI.meridianiProvvisori=clone(meridiani);
@@ -794,6 +797,24 @@ var PAZIENTI_TRATTAMENTI = { // extend PAZIENTI
 					'		 class="noPrint"></div>' +
 					'</div>' +
 			
+					// TRIGGER
+					'<div id="tratt_cont_trigger"' +
+					'	  class="sezioneTrattamenti divEspansa '+ 
+						((localStorage.getItem("op_trigger")) ? '' : 'sezioneChiusa') +
+						'">' +
+					'	<em id="label_puntiTrigger"' +
+					'		class="labelMobile labelTrattamenti"' +
+					'		onClick="H.swSezione(this);">' +
+					'		<img class="icoLabel"' +
+					'		     src="img/ico_trigger.png">' +
+							TXT("PuntiTrigger")+' (<span id="totTrigger"></span>)' +
+					'	</em>' +
+					'	<div id="puntiTrigger">' +
+					'	</div>' +
+					'	<div id="tratt_btns_trigger"' +
+					'		 class="noPrint"></div>' +
+					'</div>' +
+			
 					// GALLERY
 					'<div id="tratt_cont_gallery"' +
 					'	  class="sezioneTrattamenti divEspansa '+ 
@@ -999,6 +1020,28 @@ var PAZIENTI_TRATTAMENTI = { // extend PAZIENTI
 		}
 		document.getElementById("tratt_btns_reflex").innerHTML = HTML;
 		PAZIENTI.caricaReflexTrattamento();
+
+		// PUNTI-TRIGGER
+		HTML = '';
+		if( globals.set.cartella == 'trigger_points' ){
+			HTML+=
+				'	<div id="p_add_dett"' +
+				'		 class="noPrint">' +
+				'		<div id="grpTrp"' +
+				'		    class="p_paz_gruppo"' +
+				'		    onClick="PAZIENTI.gruppoPunti(\'O\');">' +
+							htmlEntities(TXT("AggiungiPunti")) +
+				'		</div>' +
+				'	</div>';
+		}else if(LOGIN.logedin() && LOGIN.verAuth('trigger_points')){
+			HTML += '<div class="labelModificaCon">'+htmlEntities(TXT("ModificaCon"))+'<br><span onClick="caricaSet(\'trigger_points\',this);"><img src="sets/trigger_points/img/logoNero.png" width="25" height="25"> TriggerpointsMap</span></div>';
+		}else{
+			HTML += html_licenzaNonPermette;
+		}
+		document.getElementById("tratt_btns_trigger").innerHTML = HTML;
+		PAZIENTI.caricaTriggerTrattamento();
+
+
 	},
 	apriSpostaTrattamento: function( Q_idTratt){
 		applicaLoading(document.getElementById("scheda_testo"),'vuoto');
@@ -1231,6 +1274,7 @@ var PAZIENTI_TRATTAMENTI = { // extend PAZIENTI
 							"puntiMTC": PAZIENTI.puntiProvvisori,
 							"puntiAuricolari": PAZIENTI.auriculoProvvisori,
 							"puntiPlantari": PAZIENTI.reflexProvvisori,
+							"puntiTrigger": PAZIENTI.triggerProvvisori,
 							"puntiNamikoshi": PAZIENTI.namikoshiProvvisori,
 							"sintomi": PAZIENTI.sintomiProvvisori,
 							"meridiani": PAZIENTI.meridianiProvvisori,

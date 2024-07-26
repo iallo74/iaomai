@@ -52,6 +52,7 @@ var PAZIENTI_CICLI = { // extend PAZIENTI
 					puntiMTC=__(TR.puntiMTC,[]);
 					puntiAuricolari=__(TR.puntiAuricolari,[]);
 					puntiPlantari=__(TR.puntiPlantari,[]);
+					puntiTrigger=__(TR.puntiTrigger,[]);
 					puntiNamikoshi=__(TR.puntiNamikoshi,[]);
 					meridiani = __(TR.meridiani,[]);
 					sintomi=__(TR.sintomi,[]);
@@ -173,6 +174,25 @@ var PAZIENTI_CICLI = { // extend PAZIENTI
 							valutazione=__(puntiPlantari[p].e);
 							mezzo=__(puntiPlantari[p].z);
 							descrizione=__(puntiPlantari[p].t);
+							
+							HTML += '<span class="tsb"><img src="img/mezzo_'+mezzo+'.png" class="noMod" style="vertical-align: middle;margin-top: -2px;margin-right: -2px;"> ' +
+									'<b>'+nomePunto+'</b>';
+							if(valutazione)HTML += '<img src="img/ico_PV'+valutazione+'.png" class="noMod" style="vertical-align: middle;margin-top: -3px;">';
+							if(descrizione)HTML += ' <span style="font-style:italic;">'+htmlEntities(descrizione)+'</span>';
+							HTML += '</span> '+H.chr10;
+						}
+						HTML += '</div>' +
+								'</div>';
+					}
+					if(puntiTrigger.length){
+						HTML += '<div class="app_report_sch"> ' +
+								'<br><i>'+TXT_P+':</i> ' +
+								'<div id="puntiCiclo">';
+						for(let p in puntiTrigger){
+							nomePunto=puntiTrigger[p].n;
+							valutazione=__(puntiTrigger[p].e);
+							mezzo=__(puntiTrigger[p].z);
+							descrizione=__(puntiTrigger[p].t);
 							
 							HTML += '<span class="tsb"><img src="img/mezzo_'+mezzo+'.png" class="noMod" style="vertical-align: middle;margin-top: -2px;margin-right: -2px;"> ' +
 									'<b>'+nomePunto+'</b>';

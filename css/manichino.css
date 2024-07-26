@@ -97,7 +97,8 @@
 .touch #lb_move.lbProc span,
 .touch #lb_move.lbMeridiano span,
 .touch #lb_move.lbAuriculo span,
-.touch #lb_move.lbReflex span{
+.touch #lb_move.lbReflex span,
+.touch #lb_move.lbTrigger span{
 	background-image: url(../img/ico_move.png) !important;
 	margin-left:30px;
 }
@@ -108,6 +109,7 @@
 	background-image:url(../img/cartellaClinicaG.png);
 }
 
+.lbTrigger,
 .lbReflex,
 .lbAuriculo,
 .lbPunto,
@@ -131,7 +133,8 @@
 .touch #lb_move.lbProc,
 .touch #lb_move.lbMeridiano,
 .touch #lb_move.lbAuriculo,
-.touch #lb_move.lbReflex{
+.touch #lb_move.lbReflex,
+.touch #lb_move.lbTrigger{
 	margin-top:70px !important;
 	margin-left:-30px !important;
 }

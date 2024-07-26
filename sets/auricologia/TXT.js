@@ -111,6 +111,14 @@ DB.TXT.set = {
         por: "Sistema europeu",
         deu: "Europäisches System"
     },
+    Mappa_Pelle: {
+        ita: "Pelle",
+        eng: "Skin",
+        esp: "Piel",
+        fra: "Peau",
+        por: "Pele",
+        deu: "Haut"
+    },
     Mappa_BN: {
         ita: "Settori",
         eng: "Sectors",

@@ -54,12 +54,16 @@ var PAZIENTI_SETS = { // extend PAZIENTI
 			"dito",
 			"moxa",
 			"pauper" ],
+		O: ["",
+			"dito",
+			"moxa",
+			"pauper" ],
 		M: []
 	},
 	mezzoProvvisorio: '',
 	elencoGruppoPunti: {},
 	elencoGruppoAtt: {},
-	tipoGruppo: '', // M (meridiani) - P (punti) - A (auricolo-punti) - R (zone-reflessologia-plantare)
+	tipoGruppo: '', // M (meridiani) - P (punti) - A (auricolo-punti) - R (zone-reflessologia-plantare) - T (trigger-points)
 	
 	// punti
 	modNumPunti: function( frm, n ){ // al cambio di punti o meridiano
@@ -429,6 +433,19 @@ var PAZIENTI_SETS = { // extend PAZIENTI
 				}
 				if(pass){
 					PAZIENTI.aggiungiReflexTrattamento(siglaPunto);
+					totAggiunti++;
+				}
+			}
+			if(PAZIENTI.tipoGruppo=='O'){
+				let siglaPunto = punti[p].split(".")[0];
+				for(let k in PAZIENTI.triggerProvvisori){
+					if(PAZIENTI.triggerProvvisori[k].siglaMeridiano == siglaPunto){
+						pass=false;
+						presenti=true;
+					}
+				}
+				if(pass){
+					PAZIENTI.aggiungiTriggerTrattamento(siglaPunto);
 					totAggiunti++;
 				}
 			}
@@ -1196,6 +1213,268 @@ var PAZIENTI_SETS = { // extend PAZIENTI
 		if(toIndex>fromIndex)toIndex--;
 		PAZIENTI.reflexProvvisori.splice(toIndex,0,arr2);
 		PAZIENTI.caricaReflexTrattamento(toIndex);
+		SCHEDA.formModificato = true;
+	},
+	
+	// punti-trigger
+	ricTrigger: function( frm, n ){ // ricarica tutti i punti
+		SET.overPunto("PT"+PAZIENTI.triggerProvvisori[n].s,false);
+		let siglaPunto = document[frm]["pt_"+n].value,
+			muscolo = SET.getMuscle(siglaPunto),
+			NomePunto = DB.set.punti[muscolo].NomePunto;
+		if(DB.set.punti[muscolo].punti[siglaPunto])NomePunto += ' - '+DB.set.punti[muscolo].punti[siglaPunto];
+
+		PAZIENTI.triggerProvvisori[n].s = siglaPunto;
+		PAZIENTI.triggerProvvisori[n].n = NomePunto;
+		PAZIENTI.triggerProvvisori[n].t = document[frm]["de_"+n].value;
+		try{
+			PAZIENTI.caricaTriggerTrattamento();
+		}catch(err){}
+	},
+	caricaTriggerTrattamento: function( ev = -1 ){ // carica i punti del trattamento
+		document.getElementById('puntiTrigger').style.display = 'block';
+		document.getElementById('label_puntiTrigger').style.display = 'block';
+		let HTML = '<div></div>', // serve lasciarlo per il drag&drop
+			elenco = [];
+		if(PAZIENTI.triggerProvvisori.length){
+			if( globals.set.cartella == 'trigger_points' ){
+				let puntiElenco = [];
+				for(let muscolo in DB.set.punti){
+					if(__(DB.set.punti[muscolo])){
+						for(let siglaPunto in DB.set.punti[muscolo].punti){
+							let NomePunto = DB.set.punti[muscolo].NomePunto;
+							if(DB.set.punti[muscolo].punti[siglaPunto])NomePunto += ' - '+DB.set.punti[muscolo].punti[siglaPunto];
+							puntiElenco.push({
+								siglaPunto: siglaPunto,
+								NomePunto: NomePunto,
+								punti: DB.set.punti[muscolo].punti
+							});
+						}
+					}
+				}
+				puntiElenco.sort(sort_by("NomePunto", false));
+				for(let p in PAZIENTI.triggerProvvisori){
+					
+					valutazione=__(PAZIENTI.triggerProvvisori[p].e);
+					mezzo=__(PAZIENTI.triggerProvvisori[p].z);
+					descrizione=__(PAZIENTI.triggerProvvisori[p].t);
+					siglaPunto=__(PAZIENTI.triggerProvvisori[p].s);
+					nomePunto=__(PAZIENTI.triggerProvvisori[p].n);
+					elenco.push(siglaPunto+"."+valutazione);
+					
+					HTML += '<div class="rgProcMod rgMod dettTrigger'+((ev==p)?' eviPunto':'')+'"' +
+							'	  id="rg_'+p+'"';
+					if(mouseDetect && siglaPunto){
+						HTML += 	' onMouseOver="SET.overPunto(\''+siglaPunto+'\',true);"' +
+									' onMouseOut="SET.overPunto(\''+siglaPunto+'\',false);"';
+					}
+					HTML += '><div class="grabElement"' +
+							'	   data-drag-class="lbTrigger"' +
+							'	   data-drag-family="trigger"' +
+							'	   data-drag-type="move">' +
+							
+							'	<div class="grabBtn"' +
+							'	     onMouseDown="DRAGGER.startDrag(this.parentElement,\'PAZIENTI.spostaTrigger\');"' +
+							'	     onTouchStart="DRAGGER.startDrag(this.parentElement,\'PAZIENTI.spostaTrigger\');"></div>' +
+						
+						
+							'	<img src="img/ico_cestino.png"' +
+							'		 width="16"' +
+							'		 height="16"' +
+							'		 align="absmiddle"' +
+							'		 id="ico_vis'+p+'"' +
+							'		 title="'+TXT("DelDett")+'"' +
+							'		 onClick="PAZIENTI.eliminaTriggerTrattamento('+p+')"' +
+							'		 class="cestino">';
+					
+					// mezzo
+					let addMezzoTit = '';
+					if(mezzo)addMezzoTit = ': '+PAZIENTI.mezzi[mezzo];
+					HTML += '	<span id="ico_PZ'+p+'"' +
+							'	      class="mezzoPunto"' +
+							'	      onClick="PAZIENTI.selMezzo('+p+',\'O\');">' +
+							'		<img src="img/mezzo_'+mezzo+'.png"' +
+							'	  	     width="20"' +
+							'	  	     height="20"' +
+							'	  	     align="absmiddle"' +
+							'	  	     title="'+htmlEntities(TXT("PZDett"))+'"'+
+							'	  	     class="occhio valEn"> ' +
+							'	</span>';
+							
+					
+					
+					HTML += '<input type="hidden" id="hd_'+p+'" name="hd_'+p+'" value="'+siglaPunto+'">';
+					
+					// verifico che esista il punto
+					if(globals.set.cartella != 'trigger_points'){
+						HTML += '<span class="ptNo" style="text-align:left">'+nomePunto+'</span>' +
+								'<input type="hidden" id="pt_'+p+'" name="pt_'+p+'" value="'+siglaPunto+'">';
+					}else{
+						// punto
+						HTML +=	'	<select class="numPoints"' +
+								'	     	 name="pt_'+p+'"' +
+								'	     	 id="pt_'+p+'"' +
+								'	     	 onChange="this.blur();' +
+								'	     	 		   PAZIENTI.ricTrigger(\'formMod\','+p+');' +
+								'	     	 		   SCHEDA.formModificato=true;">' +
+								'		<option></option>';
+						for(let n in puntiElenco){
+							// verifico le autorizzazioni
+							//if(SET.verFreePunti(puntiElenco[n].siglaPunto)){
+								HTML += '<option value="'+puntiElenco[n].siglaPunto+'"';
+								if(siglaPunto==puntiElenco[n].siglaPunto)HTML += ' SELECTED';
+								HTML += '>'+puntiElenco[n].NomePunto+'</option>';
+							//}
+							// --------------------------
+						}
+						HTML += '	</select>';
+					
+						// icona visualizzazione
+						HTML += '	<img src="img/ico_vedi.png"' +
+								'	     width="16"' +
+								'	     height="16"' +
+								'	     align="absmiddle"' +
+								'	     id="ico_vis'+p+'"' +
+								'	     style="' +
+								'				margin-left:5px;' +
+								'				margin-right:7px;' +
+								'				margin-top: -4px;' +
+								'				cursor:pointer;"' +
+								'		 class="occhio"' +
+								'		 title="'+htmlEntities(TXT("VisualizzaPunto"))+'"' +
+								'		 onClick="SET.selPuntoMod(\''+siglaPunto+'\','+p+');">';
+					}
+					
+					
+					
+					
+					// valutazione energetica
+					HTML += '	<span id="ico_PV'+p+'"' +
+							'	      class="valPunto"' +
+							'	      onClick="PAZIENTI.selOV('+p+');">'+
+							'		<img src="img/ico_PV'+valutazione+'.png"' +
+							'	  	     width="16"' +
+							'	  	     height="16"' +
+							'	  	     align="absmiddle"' +
+							'	  	     title="'+htmlEntities(TXT("PVDett"))+'"' +
+							'	  	     class="occhio valEn"> ' +
+							'	</span>';
+					
+					HTML += '<input id="de_'+p+'"' +
+							' 		name="de_'+p+'"' +
+							' 		class="textPuntoTratt okPlaceHolder"' +
+							' 		value="'+htmlEntities(descrizione)+'"' +
+							' 		placeholder="'+htmlEntities(TXT("SpiegazioneTriggerTratt"))+'"' +
+							'		onBlur="PAZIENTI.triggerProvvisori['+p+'].t=this.value"' +
+							'		'+H.noAutoGen+'>';
+					HTML += '</div></div>';
+				}
+				HTML +=	'<div style="clear:both;height:1px;"></div>';
+			}else{
+				let HTML_noMod = '';
+				for(let p in PAZIENTI.triggerProvvisori){
+					valutazione=__(PAZIENTI.triggerProvvisori[p].e);
+					mezzo=__(PAZIENTI.triggerProvvisori[p].z);
+					descrizione=__(PAZIENTI.triggerProvvisori[p].t);
+					siglaPunto=__(PAZIENTI.triggerProvvisori[p].s);
+					NomePunto=__(PAZIENTI.triggerProvvisori[p].n);
+					HTML_noMod += '<span class="tsb"><img src="img/mezzo_'+mezzo+'.png" class="noMod" style="vertical-align: middle;margin-top: -2px;margin-right: -2px;"> ';
+					HTML_noMod += NomePunto;
+					if(valutazione)HTML_noMod += '<img src="img/ico_PV'+valutazione+'.png" class="noMod" style="vertical-align: middle;margin-top: -3px;">';
+					if(descrizione)HTML_noMod += ' <span style="font-style:italic;">'+htmlEntities(descrizione)+'</span>';
+					HTML_noMod += '</span> ';
+					elenco.push(siglaPunto);
+				}
+				HTML = '<span style="margin-bottom: 15px;display: inline-block;">'+HTML_noMod+'</span>';
+			}
+		}else{
+			HTML +=	'<div class="noResults"' +
+					'	  style="padding-left:30px;">' +
+						TXT("NoRes") +'...' +
+					'</div>';
+		}
+		document.getElementById('totTrigger').innerHTML = PAZIENTI.triggerProvvisori.length;
+		document.getElementById('puntiTrigger').innerHTML=HTML;
+		
+		if(ev>-1){
+			setTimeout(function(){document.getElementById("rg_"+ev)?.classList.remove("eviPunto");},2000);
+		}
+		try{
+			if( globals.set.cartella == 'trigger_points' )SET.evidenziaPuntoMod(elenco);
+		}catch(err){}
+		
+		if(PAZIENTI.topAdd)document.getElementById("scheda_testo").scrollTo(0,document.getElementById("scheda_testo").scrollTop+(tCoord(document.getElementById("p_add_dett"),'y')-PAZIENTI.topAdd));
+		PAZIENTI.topAdd = null;
+	},
+	aggiungiTriggerTrattamento: function( PT ){ // aggiunge un singolo punto al trattamento;
+		let muscolo = SET.getMuscle(PT),
+			NomePunto = DB.set.punti[muscolo].NomePunto;
+		if(DB.set.punti[muscolo].punti[PT])NomePunto += ' - '+DB.set.punti[muscolo].punti[PT];
+		JSNPUSH = {
+			s: PT,
+			n: NomePunto,
+			z: PAZIENTI.mezzoProvvisorio,
+			e: "",
+			t: ""
+		}
+		PAZIENTI.triggerProvvisori.push(JSNPUSH);
+		SCHEDA.formModificato = true;
+		PAZIENTI.caricaTriggerTrattamento();
+		document.getElementById("grpTrp").selectedIndex = 0;
+	},
+	eliminaTriggerTrattamento: function( n ){ // elimina un punto del trattamento
+		SET.overPunto("PT"+PAZIENTI.triggerProvvisori[n].s,false);
+		PAZIENTI.triggerProvvisori.splice(n, 1); 		PAZIENTI.caricaTriggerTrattamento();
+		SCHEDA.formModificato = true;
+	},
+	selOV: function( n ){ // cambia la valutazione energetica
+		let html = '',
+			pvs = [ '', 'D' ];
+		for(let m=0;m<pvs.length;m++){
+			html += '<span style="background-image:url(img/ico_PV'+pvs[m]+'.png);"' +
+					'	   onClick="PAZIENTI.cambiaOV('+n+',\''+pvs[m]+'\');"' +
+					'	   title="'+htmlEntities(TXT("Valutazione"+pvs[m]))+'"></span>';
+		}
+		H.selTT(n,"ico_PV",html);
+	},
+	cambiaOV: function( n, m ){ // cambia la valutazione energetica su un punto
+		let el = document.getElementById("ico_PV"+n);
+		el.getElementsByTagName("img")[0].src='img/ico_PV'+m+'.png';
+		//SET.overPunto(document.getElementById("pt_"+n).parentElement,false);
+		PAZIENTI.triggerProvvisori[n].e = m;
+		SCHEDA.formModificato = true;
+		PAZIENTI.ricTrigger("formMod",n);
+		//SET.overPunto(document.getElementById("pt_"+n).parentElement,true);
+		document.getElementById("tt_mezzival").dataset.on='0';
+		H.removeTT();
+	},
+	cambiaOZ: function( n, m, isProc=false ){ // cambia il mezzo su un punto
+		let el = document.getElementById("ico_PZ"+n);
+		el.getElementsByTagName("img")[0].src='img/mezzo_'+m+'.png';
+		if(globals.modello.cartella)SET.overPunto("_"+document.getElementById("pt_"+n).value,false);
+		if(!isProc){
+			PAZIENTI.triggerProvvisori[n].z = m;
+		}else{
+			let pD = SET.dettagliProvvisori[n].DescrizioneDettaglio.split(".");
+			SET.dettagliProvvisori[n].DescrizioneDettaglio = __(pD[0])+"."+__(m);
+			SET.caricaDettagli();
+		}
+		SCHEDA.formModificato = true;
+		if(globals.modello.cartella)SET.overPunto("_"+document.getElementById("pt_"+n).value,true);
+		document.getElementById("tt_mezzival").dataset.on='0';
+		H.removeTT();
+		PAZIENTI.verMezzo(m);
+	},
+	spostaTrigger: function( elMove, elTarget ){ // sposta dopo il drag&drop
+		if(	!elTarget ||
+			elMove.parentElement==elTarget)return;
+		let fromIndex = parseInt(elMove.parentElement.id.split("_")[1]),
+			toIndex = parseInt(elTarget.id.split("_")[1]),
+			arr2 = PAZIENTI.triggerProvvisori.splice(fromIndex, 1)[0]; // l'elemento eliminato va in arr2
+		if(DRAGGER.pushPos=='after')toIndex++;
+		if(toIndex>fromIndex)toIndex--;
+		PAZIENTI.triggerProvvisori.splice(toIndex,0,arr2);
+		PAZIENTI.caricaTriggerTrattamento(toIndex);
 		SCHEDA.formModificato = true;
 	},
 	

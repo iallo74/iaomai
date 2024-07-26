@@ -1,4 +1,4 @@
-
+;
 var MODULO_PUNTO = { // extend SET
 
 	note: [],
@@ -11,12 +11,19 @@ var MODULO_PUNTO = { // extend SET
 		}
 		// --------------------------
 		
-		let titolo = DB.set.punti[nPunto].NomePunto,
-			azioni = DB.set.punti[nPunto].AzioniPunto,
-			coordZoom = __(DB.set.punti[nPunto].coordZoom),
-			imgZoom = __(DB.set.punti[nPunto].imgZoom),
-			HTML = '<h1>'+titolo+'</h1><div id="imgPunto" style="background-image:url(\'sets/trigger_points/img/punti/'+nPunto+'-min.png\');">',
-			HTML_simboli = '';
+		let muscolo = SET.getMuscle(nPunto),
+			HTML = '',
+			HTML_simboli = '',
+			titolo = DB.set.punti[muscolo].NomePunto,
+			azioni = DB.set.punti[muscolo].AzioniPunto,
+			punti = DB.set.punti[muscolo].punti;
+	
+
+		HTML += '<h1>'+titolo+'</h1>';
+		
+		/* HTML += '<div id="imgPunto"';
+		if(muscolo)HTML += ' style="background-image:url(\'sets/trigger_points/img/punti/'+muscolo+'-min.png\');"';
+		HTML += '>'; */
 
 		if( ritorno && 
 			document.getElementById("scheda_testo").innerHTML.indexOf("formMod") > -1 && 
@@ -57,7 +64,7 @@ var MODULO_PUNTO = { // extend SET
 				}else{
 					// aggiungi il punto al trattamento
 					txt = TXT("AggiungiPuntoTratt");
-					az = "PAZIENTI.aggiungiPuntoTrattamento('"+puntoNuovo+"');SCHEDA.torna();";
+					az = "PAZIENTI.aggiungiTriggerTrattamento('"+puntoNuovo+"');SCHEDA.torna();";
 					cls = 'spAdd';
 				}
 			}
@@ -73,7 +80,22 @@ var MODULO_PUNTO = { // extend SET
 		if(HTML_simboli)HTML += '<div class="cont_simboliPunto">'+HTML_simboli+'</div>';
 		
 		HTML += SET.convPuntiScheda(azioni,true);
+
+		HTML += '<div id="imgPunto"';
+		if(muscolo)HTML += ' style="background-image:url(\'sets/trigger_points/img/punti/'+muscolo+'-min.png\');"';
+		HTML += '>';
+		if(Object.keys(punti).length>1){
+			HTML += '<b>'+TXT("Settori")+'</b><br><div id="punti_sel_cont">';
+			for(let p in punti){
+				HTML += '<div';
+				if(p==nPunto)HTML += ' class="sel"';
+				else HTML += ' onClick="SET.apriPunto('+p+');"';
+				HTML += '>'+punti[p]+'</div><br>';
+			}
+			HTML += '</div>';
+		}
 		HTML += '</div>';
+		HTML += '<div id="note_utilizzo">Utilizza lo schema qui sopra per scegliere e visualizzare i punti e il modello 3D per visualizzare le aree di dolore riferito.</div>';
 		// aggiungo contenuto custom
 		HTML = CUSTOMS.addContent("trigger_point_"+nPunto,HTML);
 		
@@ -256,6 +278,29 @@ var MODULO_PUNTO = { // extend SET
 		// elaborare il nome del punto
 		let pp = siglaPunto.split("_");
 		return {nPunto: pp[0],lato: pp[1]};
+	},
+	getMuscle: function( siglaPunto ){
+		let els = scene.getObjectByName("PT").children,
+			muscolo = '';
+		for(let e in els){
+			if(els[e].name.indexOf(siglaPunto)==0){
+				muscolo = els[e].userData.muscolo;
+			}
+		};
+		return muscolo;
+	},
+	getFirstPoint: function( muscolo ){
+		let nPunto = '';
+		for(p in DB.set.punti[muscolo].punti){
+			if(!nPunto)nPunto = p;
+		}
+		return nPunto;
+	},
+	ptToStr: function( nPunto ){
+		nPunto = nPunto+"";
+		if(nPunto.length == 1)nPunto = "00"+nPunto;
+		if(nPunto.length == 2)nPunto = "0"+nPunto;
+		return nPunto;
 	},
 	azRicercaPunto: function( pt ){ // apre la scheda del punto dalla ricerca globale
 		SET.apriPunto(pt);

@@ -526,7 +526,6 @@ body:not(.smart) #p_centro i{
 
 
 
-
 #p_liv_pelle{
 	background-image:url(../img/p_pelle.png);
 	display:none;
@@ -545,6 +544,21 @@ body:not(.smart) #p_centro i{
 body.bodyModello.smart #p_extra{
 	display:inline-block !important;
 	/* height: 36px !important; */
+}
+body.orecchio #p_liv_pelle,
+body.body_trigger_points #p_liv_pelle,
+body.orecchio #p_pelle,
+body.body_trigger_points #p_pelle{
+	position:fixed;
+	left:-1000px !important;
+	overflow:hidden !important;
+	width:0px !important;
+	height:0px !important;
+	opacity:0 !important;
+}
+body.orecchio #p_aree,
+body.body_trigger_points #p_aree{
+	border-top:none !important;
 }
 
 
@@ -569,7 +583,8 @@ body.bodyModello.smart #p_extra{
 	background-image:url(../img/p_muscoli.png);
 }
 body:not(.Muscles)  #p_liv_aree{
-	background-image:url(../img/p_aree2.png);
+	/* background-image:url(../img/p_aree2.png); */
+	background-image:url(../img/p_orecchio2.png);
 }
 #p_liv_ossa{
 	background-image:url(../img/p_ossa.png);
@@ -1178,7 +1193,8 @@ body:not(.smart) #labelModello{
 	background-image:url(../img/p_muscoliB.png);
 }
 body:not(.Muscles) #i_aree{
-	background-image:url(../img/p_aree2B.png);
+	/* background-image:url(../img/p_aree2B.png); */
+	background-image:url(../img/p_orecchio2B.png);
 }
 #p_aree.disattLiv #i_aree:hover,
 #p_pelle.disattLiv #i_pelle:hover{
@@ -1598,7 +1614,8 @@ body:not(.smart) #labelSelected{
 	background-image:url(../img/chMenu.png), url(../img/p_muscoli.png) !important;
 }
 body:not(.Muscles) .selM{
-	background-image:url(../img/chMenu.png), url(../img/p_aree2.png) !important;
+	/* background-image:url(../img/chMenu.png), url(../img/p_aree2.png) !important; */
+	background-image:url(../img/chMenu.png), url(../img/p_orecchio2.png) !important;
 }
 .selO{
 	background-image:url(../img/chMenu.png), url(../img/p_ossa.png) !important;

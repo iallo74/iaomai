@@ -377,6 +377,9 @@ var SCHEDA = {
 			if(globals.set.cartella=='reflessologia_plantare'){
 				tipologia = 'punto';
 			}
+			if(globals.set.cartella=='trigger_points'){
+				tipologia = 'punto';
+			}
 		}
 		if(document.getElementById("scheda").classList.contains("scheda_patologia")){
 			tipologia = 'patologia';

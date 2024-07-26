@@ -902,9 +902,6 @@ body:not(.smart) .listaPunti .p_aria:not(.elencoSel) span:hover{
 .numPoints{
     width: 107px !important;
 }
-.textPuntoTratt{
-    width: calc(100% - 216px) !important;
-}
 .smart #scheda:not(.sch_Max450) .textPuntoTratt{
 	width: calc(100% - 285px) !important;
 }

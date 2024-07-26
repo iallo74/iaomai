@@ -1687,6 +1687,14 @@ DB.TXT = {
             por: "Anotações sobre a área...",
             deu: "Anmerkungen zum Bereich..."
         },
+        SpiegazioneTriggerTratt: {
+            ita: "Annotazioni sul punto ...",
+            eng: "Annotations on the point ...",
+            esp: "Anotaciones sobre el punto ...",
+            fra: "Annotations sur le point...",
+            por: "Anotações sobre o ponto...",
+            deu: "Anmerkungen zum Punkt..."
+        },
         AlertMezzoSalasso: {
             ita: "Attenzione!! Non utilizzare il salasso in pazienti sotto terapia anticoagulante. Potrebbe comportare rischio di sanguinamento incontrollato.",
             eng: "Warning! Do not use bloodletting in patients on anticoagulant therapy. This may lead to the risk of uncontrolled bleeding.",
@@ -3134,6 +3142,14 @@ DB.TXT = {
             fra: "Zones plantaires",
             por: "Áreas plantares",
             deu: "Pflanzliche Bereiche"
+        },
+        PuntiTrigger: {
+            ita: "Punti trigger",
+            eng: "Trigger points",
+            esp: "Puntos trigger",
+            fra: "Points trigger",
+            por: "Pontos trigger",
+            deu: "Triggerpunkte"
         },
         PuntiTrattamento: {
             ita: "Punti trattati",

@@ -1115,7 +1115,7 @@ var SET = {
 				};
 				MODELLO.op("Pelle",parseFloat(anatomia.Pelle));
 				MODELLO.op("Ossa",parseFloat(anatomia.Ossa));
-				MODELLO.op("Visceri",parseFloat(anatomia.Visceri));
+				MODELLO.op("Vasi",parseFloat(anatomia.Vasi));
 				SET.puntiEvidenziati.push("999"); // evita l'illuminazione dei punti al passaggio del mouse
 			}, 500, anatomia);
 		}
@@ -1299,9 +1299,9 @@ var SET = {
 		let regexp = /\[\.[^\]]+\.\]/ig,
 			pts = html.match(regexp);
 		for(let p in pts){
-			siglaPunto = pts[p].split(".")[1];
-			NomePunto = DB.set.punti[siglaPunto].NomePunto;
-			let EL = null;
+			let siglaPunto = pts[p].split(".")[1],
+				NomePunto = DB.set.punti[siglaPunto].NomePunto,
+				EL = null;
 			if(scene.getObjectByName( "PT"+siglaPunto ))EL=scene.getObjectByName( "PT"+siglaPunto );
 			if(scene.getObjectByName( "AR"+siglaPunto ))EL=scene.getObjectByName( "AR"+siglaPunto );
 			let system = EL.userData.system;

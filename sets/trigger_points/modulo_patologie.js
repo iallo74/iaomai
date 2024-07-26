@@ -6,25 +6,25 @@ var MODULO_PATOLOGIE = { // extend SET
 	componiPatologie: function(){
 		DB.set.patologie = [];
 
-		for(let p in DB.set.protocolliMTC){
-			for(let m in DB.set.protocolliMTC[p].patologie){
-				let pat = DB_patologie[DB.set.protocolliMTC[p].patologie[m]];
-				if(!__(pat.mtc))pat.mtc = [];
-				if(pat.mtc.indexOf(p)===-1)pat.mtc.push(p);
+		for(let p in DB.set.protocolliTrigger){
+			for(let m in DB.set.protocolliTrigger[p].patologie){
+				let pat = DB_patologie[DB.set.protocolliTrigger[p].patologie[m]];
+				if(!__(pat.trigger))pat.trigger = [];
+				if(pat.trigger.indexOf(p)===-1)pat.trigger.push(p);
 			}
 		}
 
 		for(let p in DB_patologie){
-			if(__(DB_patologie[p].mtc)){
+			if(__(DB_patologie[p].trigger)){
 				let TestoPatologia = '';
 				if(__(DB_patologie[p].descrizione))TestoPatologia += '<div class="schedaDescrittiva">'+DB_patologie[p].descrizione+"</div>";
 				
 				
-				for(let m in DB_patologie[p].mtc){
-					let schedaMtc = __(DB.set.protocolliMTC[DB_patologie[p].mtc[m]]);
+				for(let m in DB_patologie[p].trigger){
+					let schedaTrigger = __(DB.set.protocolliTrigger[DB_patologie[p].trigger[m]]);
 					TestoPatologia += '<div class="schedaSpecifica">';
 
-					TestoPatologia += '<b>'+TXT("MTC")+'</b><br>'+schedaMtc.scheda+'</div>';
+					TestoPatologia += '<b>'+TXT("TrattamentoTrigger")+'</b><br>'+schedaTrigger.scheda+'</div>';
 				}
 
 
@@ -147,7 +147,7 @@ var MODULO_PATOLOGIE = { // extend SET
 		let btnAdd = 	'';
 		SCHEDA.caricaScheda(	titolo,
 								html,
-								'SET.annullaEvidenziaPunto();SET.spegniMeridiani(true);',
+								'SET.annullaEvidenziaPunto();',
 								'scheda_patologia',
 								ritorno,
 								true,
@@ -157,7 +157,6 @@ var MODULO_PATOLOGIE = { // extend SET
 		
 		SCHEDA.gestVisAnatomia(true);
 		SET.evidenziaPunto();
-		SET.evidenziaMeridiani(html);
 	},
 	filtraPatologie: function( event ){
 		// filtra le patologie con il campo testuale

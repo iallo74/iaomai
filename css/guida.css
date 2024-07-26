@@ -1102,14 +1102,16 @@ body:not(.smart) .guida_set .fumetti_freccia:last-child{
 .body_meridiani_cinesi #btnGuida_meridiani_cinesi > div,
 .body_meridiani_shiatsu #btnGuida_meridiani_shiatsu > div,
 .body_auricologia #btnGuida_auricologia > div,
-.body_reflessologia_plantare #btnGuida_reflessologia_plantare > div{
+.body_reflessologia_plantare #btnGuida_reflessologia_plantare > div,
+.body_trigger_points #btnGuida_trigger_points > div{
 	background-color: #FFF;
     box-shadow: 0 0 4px;
 }
 .body_meridiani_cinesi #btnGuida_meridiani_cinesi,
 .body_meridiani_shiatsu #btnGuida_meridiani_shiatsu,
 .body_auricologia #btnGuida_auricologia,
-.body_reflessologia_plantare #btnGuida_reflessologia_plantare{
+.body_reflessologia_plantare #btnGuida_reflessologia_plantare,
+.body_trigger_points #btnGuida_trigger_points{
 	background-color: #0050a0;
 }
 .smart .img_noSM,

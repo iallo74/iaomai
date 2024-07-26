@@ -8,126 +8,149 @@ DB.set = {
 		6: "Gamba e piede",
 	},
 	punti: {
-        "001": {
-            NomePunto: "Xxx",
+        "epicranico": {
+            NomePunto: "Epicranico",
             AzioniPunto: "<p><b>Azione</b><br>Xxx</p><p><b>Ubicazione</b><br>Xxx</p>",
             ChiaviPunto: "",
+			punti: {
+				"153": "Frontali",
+				"253": "Posteriori",
+			},
 			settore: 1
         },
-		"002": {
-			NomePunto: "Xxx",
+        "orbicolare_occhio": {
+            NomePunto: "Orbicolare dell'occhio",
+            AzioniPunto: "<p><b>Azione</b><br>Xxx</p><p><b>Ubicazione</b><br>Xxx</p>",
+            ChiaviPunto: "",
+			punti: {
+				"155": "",
+			},
+			settore: 1
+        },
+		"massetere": {
+			NomePunto: "Massetere",
 			AzioniPunto: "<p><b>Azione</b><br>Xxx</p><p><b>Ubicazione</b><br>Xxx</p>",
 			ChiaviPunto: "",
+			punti: {
+				"157": "Alti",
+				"257": "Medi",
+				"357": "Bassi",
+				"457": "Posteriori",
+			},
 			settore: 1
 		},
-        "003": {
-            NomePunto: "Xxx",
+        "temporale": {
+            NomePunto: "Temporale",
             AzioniPunto: "<p><b>Azione</b><br>Xxx</p><p><b>Ubicazione</b><br>Xxx</p>",
             ChiaviPunto: "",
+			punti: {
+				"159": "Anteriori",
+				"259": "Medio-anteriori",
+				"359": "Medio-posteriori",
+				"459": "Posteriori",
+			},
 			settore: 1
         },
-		"004": {
-			NomePunto: "Xxx",
+		"pterigoideo": {
+			NomePunto: "Pterigoideo esterno",
 			AzioniPunto: "<p><b>Azione</b><br>Xxx</p><p><b>Ubicazione</b><br>Xxx</p>",
 			ChiaviPunto: "",
+			punti: {
+				"161": "",
+			},
+			settore: 1
+		},
+		"digastrico": {
+			NomePunto: "Digastrico",
+			AzioniPunto: "<p><b>Azione</b><br>Xxx</p><p><b>Ubicazione</b><br>Xxx</p>",
+			ChiaviPunto: "",
+			punti: {
+				"165": "Posteriore",
+				"265": "Mediale",
+			},
+			settore: 1
+		},
+        "scaleni": {
+            NomePunto: "Scaleni",
+            AzioniPunto: "<p><b>Azione</b><br>Xxx</p><p><b>Ubicazione</b><br>Xxx</p>",
+            ChiaviPunto: "",
+			punti: {
+				"167": "Medi, anteriori e posteriori",
+				"267": "Medi",
+			},
+			settore: 1
+        },
+		"sternocleidomastoideo": {
+			NomePunto: "Sternocleidomastoideo",
+			AzioniPunto: "<p><b>Azione</b><br>Xxx</p><p><b>Ubicazione</b><br>Xxx</p>",
+			ChiaviPunto: "",
+			punti: {
+				"169": "Capo anteriore",
+				"269": "Capo posteriore",
+			},
+			settore: 1
+		},
+        "capo_collo": {
+            NomePunto: "Lunghissimo del capo e semispinale del capo/collo",
+            AzioniPunto: "<p><b>Azione</b><br>Xxx</p><p><b>Ubicazione</b><br>Xxx</p>",
+            ChiaviPunto: "",
+			punti: {
+				"151": "Fasci superiori",
+				"251": "Fasci inferiori",
+			},
+			settore: 2
+        },
+		"sacrospinale": {
+			NomePunto: "Erettore della colonna vertebrale (Sacrispinale)",
+			AzioniPunto: "<p><b>Azione</b><br>Xxx</p><p><b>Ubicazione</b><br>Xxx</p>",
+			ChiaviPunto: "",
+			punti: {
+				"173": "Muscolo iliocostale dei lombi",
+				"273": "Muscolo iliocostale del dorso - Parte alta",
+				"373": "Muscolo iliocostale del dorso - Parte bassa",
+				"152": "Muscolo lunghissimo del dorso",
+			},
 			settore: 2
 		},
-		"005": {
-			NomePunto: "Xxx",
+		"rotatori_multifido": {
+			NomePunto: "Rotatori e multifido",
 			AzioniPunto: "<p><b>Azione</b><br>Xxx</p><p><b>Ubicazione</b><br>Xxx</p>",
 			ChiaviPunto: "",
+			punti: {
+				"176": "Alti",
+				"276": "Dorsali",
+				"376": "Lombari",
+				"476": "Sacrali",
+			},
 			settore: 2
 		},
-        "006": {
-            NomePunto: "Xxx",
+        "splenio_collo": {
+            NomePunto: "Splenio del collo",
             AzioniPunto: "<p><b>Azione</b><br>Xxx</p><p><b>Ubicazione</b><br>Xxx</p>",
             ChiaviPunto: "",
-			settore: 3
+			punti: {
+				"179": "Fasci superiori",
+				"279": "Fasci inferiori",
+			},
+			settore: 2
         },
-		"007": {
-			NomePunto: "Xxx",
+		"splenio_testa": {
+			NomePunto: "Splenio della testa",
 			AzioniPunto: "<p><b>Azione</b><br>Xxx</p><p><b>Ubicazione</b><br>Xxx</p>",
 			ChiaviPunto: "",
-			settore: 3
+			punti: {
+				"180": "",
+			},
+			settore: 2
 		},
-        "008": {
-            NomePunto: "Xxx",
-            AzioniPunto: "<p><b>Azione</b><br>Xxx</p><p><b>Ubicazione</b><br>Xxx</p>",
-            ChiaviPunto: "",
-			settore: 3
-        },
-		"009": {
-			NomePunto: "Xxx",
-			AzioniPunto: "<p><b>Azione</b><br>Xxx</p><p><b>Ubicazione</b><br>Xxx</p>",
-			ChiaviPunto: "",
-			settore: 3
+	},
+	protocolliTrigger: {
+		"0": {
+			scheda: "Trattare il punto [.179.] con il fibrolisore",
+			patologie: [
+				"133"
+			]
 		},
-		"010": {
-			NomePunto: "Xxx",
-			AzioniPunto: "<p><b>Azione</b><br>Xxx</p><p><b>Ubicazione</b><br>Xxx</p>",
-			ChiaviPunto: "",
-			settore: 3
-		},
-        "011": {
-            NomePunto: "Xxx",
-            AzioniPunto: "<p><b>Azione</b><br>Xxx</p><p><b>Ubicazione</b><br>Xxx</p>",
-            ChiaviPunto: "",
-			settore: 3
-        },
-		"012": {
-			NomePunto: "Xxx",
-			AzioniPunto: "<p><b>Azione</b><br>Xxx</p><p><b>Ubicazione</b><br>Xxx</p>",
-			ChiaviPunto: "",
-			settore: 3
-		},
-        "013": {
-            NomePunto: "Xxx",
-            AzioniPunto: "<p><b>Azione</b><br>Xxx</p><p><b>Ubicazione</b><br>Xxx</p>",
-            ChiaviPunto: "",
-			settore: 4
-        },
-		"014": {
-			NomePunto: "Xxx",
-			AzioniPunto: "<p><b>Azione</b><br>Xxx</p><p><b>Ubicazione</b><br>Xxx</p>",
-			ChiaviPunto: "",
-			settore: 4
-		},
-		"015": {
-			NomePunto: "Xxx",
-			AzioniPunto: "<p><b>Azione</b><br>Xxx</p><p><b>Ubicazione</b><br>Xxx</p>",
-			ChiaviPunto: "",
-			settore: 4
-		},
-        "016": {
-            NomePunto: "Xxx",
-            AzioniPunto: "<p><b>Azione</b><br>Xxx</p><p><b>Ubicazione</b><br>Xxx</p>",
-            ChiaviPunto: "",
-			settore: 4
-        },
-		"017": {
-			NomePunto: "Xxx",
-			AzioniPunto: "<p><b>Azione</b><br>Xxx</p><p><b>Ubicazione</b><br>Xxx</p>",
-			ChiaviPunto: "",
-			settore: 5
-		},
-        "127": {
-            NomePunto: "Xxx",
-            AzioniPunto: "<p><b>Azione</b><br>Xxx</p><p><b>Ubicazione</b><br>Xxx</p>",
-            ChiaviPunto: "",
-			settore: 5
-        },
-		"077": {
-			NomePunto: "Multifido e rotatori",
-			AzioniPunto: "<p><b>Azione</b><br>Xxx</p><p><b>Ubicazione</b><br>Xxx</p>",
-			ChiaviPunto: "",
-			settore: 6
-		},
-		"053": {
-			NomePunto: "Epicranico",
-			AzioniPunto: "<p><b>Azione</b><br>Xxx</p><p><b>Ubicazione</b><br>Xxx</p>",
-			ChiaviPunto: "",
-			settore: 6
-		}
 	},
 	teoria: [
 		{
@@ -154,7 +177,7 @@ DB.set = {
 				},
 				{
 				 TitoloTeoria: "Crediti",
-				 TestoTeoria: "Xxx"
+				 TestoTeoria: "Xxx test [.179.]"
 				}
 			],
 			noList: true

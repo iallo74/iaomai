@@ -486,6 +486,23 @@ var BACKUPS = {
 								txtPunti=txtPunti.substr(0,txtPunti.length-2);
 								if(txtPunti)HTML += "<i>"+TXT("PuntiReflex")+":</i> <div class=\"rientro\">"+txtPunti+"<br></div><br>";
 							}
+							if(trattamenti[t].puntiTrigger){
+								let punti=JSON.parse(trattamenti[t].puntiTrigger),
+									txtPunti='';
+								for(let f in punti){
+									siglaPunto=punti[f].s;
+									valutazione=__(punti[f].e);
+									mezzo=__(punti[f].z);
+									descrizione=__(punti[f].t);
+									txtPunti+="<b><font color=\"#999999\">•</font> "+punti[f].n+"</b>";
+									if(valutazione=='D')txtPunti+=' (dolorante)';
+									if(mezzo)txtPunti+=' '+mezzo+' - ';
+									if(descrizione)txtPunti+=' '+descrizione;
+									txtPunti+="<br> ";
+								}
+								txtPunti=txtPunti.substr(0,txtPunti.length-2);
+								if(txtPunti)HTML += "<i>"+TXT("PuntiTrigger")+":</i> <div class=\"rientro\">"+txtPunti+"<br></div><br>";
+							}
 							HTML += "<br>";
 						}
 						HTML += "</div>";

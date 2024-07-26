@@ -122,3 +122,56 @@
 	margin-top: 30px;
     margin-bottom: 5px;
 }
+#punti_sel_cont{
+	margin-top:6px;
+	margin-left:-6px;
+}
+#punti_sel_cont > div{
+	display:inline-block;
+	border-radius:12px;
+	padding:0 11px 0 24px;
+	line-height:24px;
+	margin-bottom:0px;
+	background-image:url(img/pallinoPat.png);
+	background-repeat: no-repeat;
+	background-position: 6px center;
+	overflow:hidden;
+	text-overflow:ellipsis;
+	white-space: nowrap;
+}
+#punti_sel_cont > div:not(.sel){
+	cursor:pointer;
+}
+#punti_sel_cont > div:not(.sel):hover{
+	background-color:rgba(255,255,255,0.05);
+}
+#punti_sel_cont > div.sel{
+	background-color:rgba(255,255,255,0.1);
+}
+#imgPunto{
+	background-position: bottom right;
+	background-size: auto 125%;
+	min-height: 400px;
+	background-repeat: no-repeat;
+	margin-left: -5px;
+	margin-right: -25px;
+	margin-top: 25px;
+	background-color: #231a10d4;
+	border-radius: 15px;
+	padding: 20px;
+}
+#imgPunto *{
+	color:#FFF !important;
+}
+#imgPunto > b{
+	display: inline-block;
+	font-size: 20px;
+	margin-top: -5px;
+}
+#note_utilizzo{
+	background-image:url(../../img/ico_aggiuntive.png);
+	background-repeat: no-repeat;
+	background-position: left center;
+	padding-left:40px;
+	margin-top:10px;
+}

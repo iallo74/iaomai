@@ -530,6 +530,10 @@ body:not(.touch) .listaPunti .spazioPrima{
 	display: none;
 }
 
+
+.numPoints{
+    width: 107px !important;
+}
 .textPuntoTratt,
 .textMeridianoTratt{
 	margin-top: 0px !important;
@@ -545,24 +549,13 @@ body:not(.touch) .listaPunti .spazioPrima{
 	margin-top: 0px !important;
 }
 .textPuntoTratt{
-    width: calc(100% - 213px) !important;
+    width: calc(100% - 238px) !important;
 }
 .smart #scheda:not(.sch_Max450) .textPuntoTratt{
-	width: calc(100% - 282px) !important;
+	width: calc(100% - 285px) !important;
 }
 .touch:not(.smart) #scheda:not(.sch_Max450) .textPuntoTratt{
-	width: calc(100% - 298px) !important;
-}
-
-.textMeridianoTratt{
-    width: calc(100% - 245px) !important;
-    margin-left: 5px !important;
-}
-.smart #scheda:not(.sch_Max450) .textMeridianoTratt{
-	width: calc(100% - 256px) !important;
-}
-.touch:not(.smart) #scheda:not(.sch_Max450) .textMeridianoTratt{
-	width: calc(100% - 272px) !important;
+	width: calc(100% - 301px) !important;
 }
 
 .sch_Max450 .textPuntoTratt,
@@ -618,13 +611,4 @@ body:not(.touch) .listaPunti .spazioPrima{
 #titPoint h1{
 	margin-bottom:0px;
 	margin-left: 10px;
-}
-
-#imgPunto{
-	background-position: bottom right;
-	background-size: auto 125%;
-	min-height: 400px;
-	background-repeat: no-repeat;
-	margin-right: -30px;
-	padding-right: 200px;
 }

@@ -6,15 +6,15 @@ var MODULO_PUNTI = { // extend SET
 		let n = 0,
 			elencoPunti = '',
 			puntiElenco = [];
-		for(let siglaPunto in DB.set.punti){
-			if(__(DB.set.punti[siglaPunto])){
-				if(!__(DB.set.punti[siglaPunto].hidden,false)){
-					puntiElenco.push({
-						siglaPunto: siglaPunto,
-						NomePunto: DB.set.punti[siglaPunto].NomePunto,
-						settore: DB.set.punti[siglaPunto].settore
-					});
-				}
+		for(let muscolo in DB.set.punti){
+			if(__(DB.set.punti[muscolo])){
+				let siglaPunto = SET.getFirstPoint(muscolo);
+				puntiElenco.push({
+					siglaPunto: siglaPunto,
+					muscolo: muscolo,
+					NomePunto: DB.set.punti[muscolo].NomePunto,
+					settore: DB.set.punti[muscolo].settore
+				});
 			}
 		}
 		puntiElenco.sort(sort_by("NomePunto", false));
@@ -23,13 +23,14 @@ var MODULO_PUNTI = { // extend SET
 			elencoPunti += '<div class="settori" id="apr_'+settore+'" onClick="SET.swSettori(this,'+settore+');">'+DB.set.settori[settore]+'</div><span id="e_'+settore+'" class="elencoPunti">';
 			for(a=0;a<puntiElenco.length;a++){
 				if(puntiElenco[a].settore == settore){
-					let siglaPunto = puntiElenco[a].siglaPunto;
+					let siglaPunto = puntiElenco[a].siglaPunto,
+						muscolo = puntiElenco[a].muscolo;
 					n++;
 					
 					// verifico le autorizzazioni
-					let addLock =	(!SET.verFreePunti(siglaPunto)) ? ' lockedItem' : '';
+					let addLock =	(!SET.verFreePunti(muscolo)) ? ' lockedItem' : '';
 					// --------------------------
-					elencoPunti+='<p>'+this.scriviPunto(siglaPunto,true,true,'')+'</p>';
+					elencoPunti+='<p>'+this.scriviPunto(muscolo,true,true,'')+'</p>';
 				}
 			}
 			elencoPunti += '</span>';

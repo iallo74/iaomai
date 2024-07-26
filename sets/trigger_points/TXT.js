@@ -454,5 +454,21 @@ DB.TXT.set = {
         fra: "Rechercher une procédure...",
         por: "Buscar um procedimento...",
         deu: "Suche nach einem Verfahren..."
+    },
+    TrattamentoTrigger: {
+        ita: "Trattamento con i Trigger Points",
+        eng: "Trigger Point Treatment",
+        esp: "Tratamiento con Puntos Trigger",
+        fra: "Traitement avec Points Trigger",
+        por: "Tratamento com Pontos Trigger",
+        deu: "Behandlung mit Triggerpunkten"
+    },
+    Settori: {
+        ita: "Settori",
+        eng: "Sectors",
+        esp: "Sectores",
+        fra: "Secteurs",
+        por: "Setores",
+        deu: "Sektoren"
     }
 }

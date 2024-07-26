@@ -1000,7 +1000,8 @@ cont_p_paz_label{
 #puntiNamikoshi,
 #meridianiMTC,
 #puntiAuricolari,
-#puntiPlantari{ /* PAZIENTI */
+#puntiPlantari,
+#puntiTrigger{ /* PAZIENTI */
 	height:auto !important;
 	padding-top: 12px;
 }
@@ -1008,7 +1009,8 @@ cont_p_paz_label{
 #puntiNamikoshi > div,
 #meridianiMTC > div,
 #puntiAuricolari > div,
-#puntiPlantari > div{ /* PAZIENTI */
+#puntiPlantari > div,
+#puntiTrigger > div{ /* PAZIENTI */
 	border-bottom:none !important;
     border-radius: 6px;
 	background-color:rgba(0,0,0,0.05);
@@ -1017,20 +1019,23 @@ cont_p_paz_label{
 #puntiNamikoshi > div:not(.pushDrag_before),
 #meridianiMTC > div:not(.pushDrag_before),
 #puntiAuricolari > div:not(.pushDrag_before),
-#puntiPlantari > div:not(.pushDrag_before){ /* PAZIENTI */
+#puntiPlantari > div:not(.pushDrag_before),
+#puntiTrigger > div:not(.pushDrag_before){ /* PAZIENTI */
 	margin-top:0px !important;
 }
 #puntiMTC > div:not(.pushDrag_after),
 #puntiNamikoshi > div:not(.pushDrag_after),
 #meridianiMTC > div:not(.pushDrag_after),
 #puntiAuricolari > div:not(.pushDrag_after),
-#puntiPlantari > div:not(.pushDrag_after){ /* PAZIENTI */
+#puntiPlantari > div:not(.pushDrag_after),
+#puntiTrigger > div:not(.pushDrag_after){ /* PAZIENTI */
 	margin-bottom: 2px !important;
 }
 #puntiMTC > div,
 #puntiNamikoshi > div,
 #puntiAuricolari > div,
-#puntiPlantari > div{ /* PAZIENTI */
+#puntiPlantari > div,
+#puntiTrigger > div{ /* PAZIENTI */
 	height:auto !important;
 	line-height:normal !important;
 }
@@ -1038,7 +1043,8 @@ cont_p_paz_label{
 #puntiNamikoshi img.noMod,
 #meridianiMTC img.noMod,
 #puntiAuricolari img.noMod,
-#puntiPlantari img.noMod{ /* PAZIENTI */
+#puntiPlantari img.noMod,
+#puntiTrigger img.noMod{ /* PAZIENTI */
 	vertical-align: -webkit-baseline-middle;
 	margin-top: -9px;
 	height: 15px;
@@ -1599,7 +1605,8 @@ body:not(.smart) #scheda:not(.scheda_procedura) .dettMeridiano span:not(.valPunt
 body:not(.touch) #puntiMTC .dettPunto:hover,
 body:not(.touch) #puntiNamikoshi .dettPunto:hover,
 body:not(.touch) #puntiAuricolari .dettPunto:hover,
-body:not(.touch) #puntiPlantari .dettPunto:hover{
+body:not(.touch) #puntiPlantari .dettPunto:hover,
+body:not(.touch) #puntiTrigger .dettPunto:hover{
 	background-color:rgba(0,0,0,0.1) !important;
 }
 #dettagliCont .dettPunto,
@@ -1630,7 +1637,8 @@ body:not(.touch) #puntiPlantari .dettPunto:hover{
 #puntiNamikoshi .cestino,
 #meridianiMTC .cestino,
 #puntiAuricolari .cestino,
-#puntiPlantari .cestino{
+#puntiPlantari .cestino,
+#puntiTrigger .cestino{
 	margin:7px 10px 7px 10px;
 	margin-left:0px;
 	cursor:pointer !important;
@@ -1641,7 +1649,8 @@ body:not(.touch) #puntiPlantari .dettPunto:hover{
 .smart #puntiNamikoshi .cestino,
 .smart #meridianiMTC .cestino,
 .smart #puntiAuricolari .cestino,
-.smart #puntiPlantari .cestino{
+.smart #puntiPlantari .cestino,
+.smart #puntiTrigger .cestino{
 	margin: 13px 9px 12px 0px !important;
 }
 
@@ -1921,7 +1930,8 @@ body:not(.touch) #puntiPlantari .dettPunto:hover{
 }
 .sch_Max450 .dettNamikoshi .numPoints,
 .sch_Max450 .dettAuriculo .numPoints,
-.sch_Max450 .dettReflex .numPoints{
+.sch_Max450 .dettReflex .numPoints,
+.sch_Max450 .dettTrigger .numPoints{
 	width:130px !important;
 }
 #dettagliCont .selectTratt:not(.numPoints){

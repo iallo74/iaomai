@@ -1,6 +1,6 @@
 var PAZIENTI_SETS_GRUPPI = { // extend PAZIENTI
 	
-	// importazione GRUPPI di punti, meridiani e auriculopunti
+	// importazione GRUPPI di punti, meridiani, auriculopunti, aree piede e trigger points
 	gruppoPunti: function( tipo = 'P' ){ // costruisce il JSON dei gruppi punti (all'apertura del trattamento)
 		PAZIENTI.tipoGruppo = tipo;
 		applicaLoading(document.getElementById("scheda_testo"));
@@ -13,7 +13,7 @@ var PAZIENTI_SETS_GRUPPI = { // extend PAZIENTI
 		let presenti = false;
 		
 		// punti da MERIDIANI
-		if(PAZIENTI.tipoGruppo=='P' || PAZIENTI.tipoGruppo=='M' || PAZIENTI.tipoGruppo=='A' || PAZIENTI.tipoGruppo=='R'){
+		if(PAZIENTI.tipoGruppo=='P' || PAZIENTI.tipoGruppo=='M' || PAZIENTI.tipoGruppo=='A' || PAZIENTI.tipoGruppo=='R' || PAZIENTI.tipoGruppo=='O'){
 			EL = {};
 			EL.contenuto = [];
 			if(PAZIENTI.tipoGruppo=='P')EL.livello = 2;
@@ -70,6 +70,36 @@ var PAZIENTI_SETS_GRUPPI = { // extend PAZIENTI
 				
 				if(PAZIENTI.tipoGruppo=='A')EL.titolo = TXT("PuntiAuriculo");
 				if(PAZIENTI.tipoGruppo=='R')EL.titolo = TXT("PuntiReflex");
+				if(PAZIENTI.tipoGruppo=='O')EL.titolo = TXT("PuntiTrigger");
+				for(a in puntiElenco){
+					if(puntiElenco[a].NomePunto){
+						EL.contenuto.push(puntiElenco[a].siglaPunto);
+					}
+				}
+			}
+			if(PAZIENTI.tipoGruppo=='O'){ // auricolo-punti
+				let puntiElenco = [];
+				for(let muscolo in DB.set.punti){
+					// verifico le autorizzazioni
+					if(SET.verFreePunti(muscolo)){ // verifico le autorizzazioni
+						if(__(DB.set.punti[muscolo])){
+							for(let siglaPunto in DB.set.punti[muscolo].punti){
+								let NomePunto = DB.set.punti[muscolo].NomePunto;
+								if(DB.set.punti[muscolo].punti[siglaPunto])NomePunto += ' - '+DB.set.punti[muscolo].punti[siglaPunto];
+								puntiElenco.push({
+									siglaPunto: siglaPunto,
+									NomePunto: NomePunto
+								});
+							}
+						}
+					}
+					// --------------------------
+				}
+				puntiElenco.sort(sort_by("NomePunto", false));
+				
+				if(PAZIENTI.tipoGruppo=='A')EL.titolo = TXT("PuntiAuriculo");
+				if(PAZIENTI.tipoGruppo=='R')EL.titolo = TXT("PuntiReflex");
+				if(PAZIENTI.tipoGruppo=='O')EL.titolo = TXT("PuntiTrigger");
 				for(a in puntiElenco){
 					if(puntiElenco[a].NomePunto){
 						EL.contenuto.push(puntiElenco[a].siglaPunto);
@@ -125,6 +155,7 @@ var PAZIENTI_SETS_GRUPPI = { // extend PAZIENTI
 					if(PAZIENTI.tipoGruppo=='M')re = /\[\.[A-Z]{2}\.\]/ig;
 					if(PAZIENTI.tipoGruppo=='A')re = /\[\.[0-9]{3}\.\]/ig;
 					if(PAZIENTI.tipoGruppo=='R')re = /\[\.[0-9]{3}\.\]/ig;
+					if(PAZIENTI.tipoGruppo=='O')re = /\[\.[0-9]{3}\.\]/ig;
 					let result = txtTeo.match(re);
 					for(let k in result){
 						let pP = result[k].split(".");
@@ -145,7 +176,7 @@ var PAZIENTI_SETS_GRUPPI = { // extend PAZIENTI
 							}
 						}
 					}
-					if(PAZIENTI.tipoGruppo=='A' || PAZIENTI.tipoGruppo=='R'){
+					if(PAZIENTI.tipoGruppo=='A' || PAZIENTI.tipoGruppo=='R' || PAZIENTI.tipoGruppo=='O'){
 						let gr = DB.set.teoria[t].contenuti[i].gruppo;
 						if(gr){
 							let punti = GEOMETRIE.gruppi[gr].punti;
@@ -233,7 +264,7 @@ var PAZIENTI_SETS_GRUPPI = { // extend PAZIENTI
 		if(txt.substr(0,3) != '404' && txt != 'vuoto'){
 			
 			
-			if(PAZIENTI.tipoGruppo=='P' || PAZIENTI.tipoGruppo=='N' || PAZIENTI.tipoGruppo=='A' || PAZIENTI.tipoGruppo=='R'){ // DA RIVEDERE <<<<<<<<<<<<<<<<<<<<<<<<<<<<<|!!!!!!!!!!!!!!!!
+			if(PAZIENTI.tipoGruppo=='P' || PAZIENTI.tipoGruppo=='N' || PAZIENTI.tipoGruppo=='A' || PAZIENTI.tipoGruppo=='R' || PAZIENTI.tipoGruppo=='O'){ // DA RIVEDERE <<<<<<<<<<<<<<<<<<<<<<<<<<<<<|!!!!!!!!!!!!!!!!
 				
 				
 				EL = {};
@@ -296,6 +327,7 @@ var PAZIENTI_SETS_GRUPPI = { // extend PAZIENTI
 					re = /\[\.[0-9]{3}\.\]/ig;
 				}
 				if(PAZIENTI.tipoGruppo=='R')re = /\[\.[0-9]{3}\.\]/ig;
+				if(PAZIENTI.tipoGruppo=='O')re = /\[\.[0-9]{3}\.\]/ig;
 				let result = txtPat.match(re);
 				for(let k in result){
 					let pP = result[k].split(".");
@@ -391,6 +423,7 @@ var PAZIENTI_SETS_GRUPPI = { // extend PAZIENTI
 				globals.set.cartella=='meridiani_shiatsu' )mzs = PAZIENTI.mezziSet.P;
 			if(globals.set.cartella=='auricologia')mzs = PAZIENTI.mezziSet.A;
 			if(globals.set.cartella=='reflessologia_plantare')mzs = PAZIENTI.mezziSet.R;
+			if(globals.set.cartella=='trigger_points')mzs = PAZIENTI.mezziSet.O;
 			if(mzs.length && PAZIENTI.mezziSet[PAZIENTI.tipoGruppo].length){
 				HTML += '	<span class="separatorePulsanti"></span><div id="tt_mezzival2">';
 				for(let m in mzs){
@@ -446,7 +479,7 @@ var PAZIENTI_SETS_GRUPPI = { // extend PAZIENTI
 			mer = pP[1];
 			nPunto = SET.ptToStr(pP[0]);
 		}
-		if(PAZIENTI.tipoGruppo=='A' || PAZIENTI.tipoGruppo=='R')pP[1]='';
+		if(PAZIENTI.tipoGruppo=='A' || PAZIENTI.tipoGruppo=='R' || PAZIENTI.tipoGruppo=='O')pP[1]='';
 		if((pP[0] && __(DB.set?.meridiani?.[mer])) || !pP[1]){
 			HTML += '<label class="gr_3"' +
 					'		for="'+n+'">' +
@@ -471,6 +504,11 @@ var PAZIENTI_SETS_GRUPPI = { // extend PAZIENTI
 			}
 			if(PAZIENTI.tipoGruppo=='A' || PAZIENTI.tipoGruppo=='R'){
 				HTML +=	DB.set.punti[pP[0]].NomePunto;
+			}
+			if(PAZIENTI.tipoGruppo=='O'){
+				let muscolo = SET.getMuscle(pP[0]);
+				HTML +=	DB.set.punti[muscolo].NomePunto;
+				if(DB.set.punti[muscolo].punti[pP[0]])HTML += " - "+DB.set.punti[muscolo].punti[pP[0]];
 			}
 			HTML +=	'</label>';
 		}

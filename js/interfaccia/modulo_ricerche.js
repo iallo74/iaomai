@@ -22,7 +22,7 @@ var RICERCHE = {
 		
 		
 		
-		// AMap e ShiatsuMap
+		// AcupointsMap e ShiatsuMap
 		if(	globals.set.cartella == 'meridiani_cinesi' ||
 			globals.set.cartella == 'meridiani_shiatsu' ){
 			let R_parz='',
@@ -73,8 +73,8 @@ var RICERCHE = {
 		}
 		
 		
-		// AuriculoMap e ReflexologyMap
-		if(	globals.set.cartella == 'auricologia' || globals.set.cartella == 'reflessologia_plantare' ){
+		// AuriculoMap, ReflexologyMap e TriggerpointsMap
+		if(	globals.set.cartella == 'auricologia' || globals.set.cartella == 'reflessologia_plantare' || globals.set.cartella == 'trigger_points' ){
 			let R_parz='',
 				nRisParz = 0;
 			// CERCO nei PUNTI AURICOLARI e nei PUNTI PLANTARI
@@ -112,12 +112,13 @@ var RICERCHE = {
 		if(DB.note && (	globals.set.cartella == 'meridiani_cinesi' || 
 						globals.set.cartella == 'meridiani_shiatsu' || 
 						globals.set.cartella == 'auricologia' || 
-						globals.set.cartella == 'reflessologia_plantare' ) ){
+						globals.set.cartella == 'reflessologia_plantare' || 
+						globals.set.cartella == 'trigger_points' ) ){
 			for (p in DB.note.data) {
 				let NT = DB.note.data[p],
 					testo = RICERCHE.pulisciTesto(NT.TestoAnnotazione),
 					NomePunto = siglaPunto = '',
-					puntiPass = (globals.set.cartella == 'auricologia' || globals.set.cartella == 'reflessologia_plantare') ? (NT.numeroPunto) : (NT.numeroPunto*1-1>-1);
+					puntiPass = (globals.set.cartella == 'auricologia' || globals.set.cartella == 'reflessologia_plantare' || globals.set.cartella == 'trigger_points') ? (NT.numeroPunto) : (NT.numeroPunto*1-1>-1);
 				if(testo.toUpperCase().indexOf(parola.toUpperCase())>-1 && NT.Cancellato!='1' && puntiPass){
 					
 					if(	( globals.set.cartella == 'meridiani_cinesi' || 
@@ -133,7 +134,8 @@ var RICERCHE = {
 						siglaPunto = partiNT[1]+"."+partiNT[0];
 					}
 					if(	(globals.set.cartella == 'auricologia' && __(NT.app,'') == 'AUR') ||
-						(globals.set.cartella == 'reflessologia_plantare' && __(NT.app,'') == 'RFX')){
+						(globals.set.cartella == 'reflessologia_plantare' && __(NT.app,'') == 'RFX') ||
+						(globals.set.cartella == 'trigger_points' && __(NT.app,'') == 'TRP')){
 						NomePunto='<b>'+htmlEntities(DB.set.punti[NT.numeroPunto].NomePunto)+"</b>";
 						siglaPunto = "PT"+NT.numeroPunto;
 					}
@@ -171,7 +173,8 @@ var RICERCHE = {
 		if(DB.set.patologie && (globals.set.cartella == 'meridiani_cinesi' || 
 								globals.set.cartella == 'meridiani_shiatsu' || 
 								globals.set.cartella == 'auricologia' || 
-								globals.set.cartella == 'reflessologia_plantare') ){
+								globals.set.cartella == 'reflessologia_plantare') || 
+								globals.set.cartella == 'trigger_points' ){
 			for (p in DB.set.patologie) {
 				let PT = DB.set.patologie[p],
 					testo=PT.NomePatologia+" "+PT.TestoPatologia+" "+PT.chiaviPatologia;
@@ -200,7 +203,8 @@ var RICERCHE = {
 		if(DB.set.teoria && (	globals.set.cartella == 'meridiani_cinesi' || 
 								globals.set.cartella == 'meridiani_shiatsu' || 
 								globals.set.cartella == 'auricologia' || 
-								globals.set.cartella == 'reflessologia_plantare')){
+								globals.set.cartella == 'reflessologia_plantare') || 
+								globals.set.cartella == 'trigger_points' ){
 			for (i in DB.set.teoria) {
 				for (p in DB.set.teoria[i].contenuti) {
 					let TEO = DB.set.teoria[i].contenuti[p],
@@ -231,7 +235,8 @@ var RICERCHE = {
 		if(DB.procedure && (globals.set.cartella == 'meridiani_cinesi' || 
 							globals.set.cartella == 'meridiani_shiatsu' || 
 							globals.set.cartella == 'auricologia' || 
-							globals.set.cartella == 'reflessologia_plantare') ){
+							globals.set.cartella == 'reflessologia_plantare') || 
+							globals.set.cartella == 'trigger_points' ){
 			for (p in DB.procedure.data) {
 				let PR = DB.procedure.data[p],
 					testo = PR.NomeProcedura;
