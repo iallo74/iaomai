@@ -28,6 +28,8 @@ var SET = {
 		position: null,
 		rotation: null
 	},
+	wVideo: 0,
+	tmResVideo: null,
 	
 	// FUNZIONI
 	_init: function(){

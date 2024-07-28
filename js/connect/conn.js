@@ -112,6 +112,11 @@ var CONN = {
 		.catch(error => {
 			console.error('Errore durante il caricamento del chunk:', error);
 		});
+	},
+	corsCMS: function (msg){
+		setTimeout(function(){
+			document.getElementById("frVideo").contentWindow.postMessage(msg, "https://www.corpomentespirito.it");
+		},100);
 	}
 
 };

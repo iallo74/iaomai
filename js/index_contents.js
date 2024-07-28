@@ -328,8 +328,8 @@ var sets = {
 		sottotitolo: TXT("TriggerPointsST"),
 		descrizione: TXT("TriggerPointsDESCR"),
 		modelli: [
-			"donna",
-			"uomo"
+			"donna"/* ,
+			"uomo" */
 		],
 		imports: [
 			'TXT.js',

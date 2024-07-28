@@ -16,9 +16,10 @@ var MODULO_PUNTO = { // extend SET
 			HTML_simboli = '',
 			titolo = DB.set.punti[muscolo].NomePunto,
 			azioni = DB.set.punti[muscolo].AzioniPunto,
-			punti = DB.set.punti[muscolo].punti;
+			punti = DB.set.punti[muscolo].punti,
+			video = DB.set.punti[muscolo].video;
 	
-
+		if(DB.login.data.modls.indexOf("videoTP")==-1)video='';
 		HTML += '<h1>'+titolo+'</h1>';
 		
 		/* HTML += '<div id="imgPunto"';
@@ -96,6 +97,13 @@ var MODULO_PUNTO = { // extend SET
 		}
 		HTML += '</div>';
 		HTML += '<div id="note_utilizzo">Utilizza lo schema qui sopra per scegliere e visualizzare i punti e il modello 3D per visualizzare le aree di dolore riferito.</div>';
+
+		if(video){
+			let str = 'c='+MD5((48*178).toString())+'&i='+DB.login.data.idUtente+'&t='+LOGIN.logedin()+'&v='+btoa(video);
+			HTML += '<b id="titVideo">Video tutorial</b><br><div id="cont_video"><iframe allow="fullscreen" id="frVideo" src="'+CONN.APIfolder+'video.php?'+str+'&z='+MD5(str)+'"></iframe></div>';
+		}
+
+
 		// aggiungo contenuto custom
 		HTML = CUSTOMS.addContent("trigger_point_"+nPunto,HTML);
 		
@@ -146,7 +154,7 @@ var MODULO_PUNTO = { // extend SET
 
 		SCHEDA.caricaScheda(	titolo,
 								HTML,
-								"SWIPE.dismis();if(SET.ptSel)SET.chiudiPunto();",
+								"SWIPE.dismis();if(SET.ptSel)SET.chiudiPunto();clearInterval(SET.tmResVideo);SET.wVideo=0;",
 								"tab_punti",
 								ritorno,
 								false,
@@ -159,7 +167,22 @@ var MODULO_PUNTO = { // extend SET
 		SET.settaOverPunto();
 		SET.ptSel = ptSel;
 		if(ritorno && !SCHEDA.aggancio.tipo == 'libera')SCHEDA.nasScheda();
+
+		if(video){
+			SET.wVideo = 0;
+			SET.tmResVideo = setInterval(function(){SET.resizeVideo();},100);
+		}
 		
+	},
+	resizeVideo: function(){
+		if(SET.wVideo!=document.getElementById("frVideo").scrollWidth){
+			SET.wVideo=document.getElementById("frVideo").scrollWidth;
+			let hVideo=(SET.wVideo/16)*9;
+			document.getElementById("frVideo").style.height = hVideo+"px";
+			document.getElementById("cont_video").style.height = hVideo+"px";
+			CONN.corsCMS({cmd: 'document.getElementById("VideoID").style.height="'+hVideo+'px";'});
+			
+		}
 	},
 	
 	mod_nota: function( Q_p ){ // salva la nota di un punto

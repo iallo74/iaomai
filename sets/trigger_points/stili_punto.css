@@ -154,7 +154,7 @@
 	min-height: 400px;
 	background-repeat: no-repeat;
 	margin-left: -5px;
-	margin-right: -25px;
+	margin-right: -5px;
 	margin-top: 25px;
 	background-color: #231a10d4;
 	border-radius: 15px;
@@ -174,4 +174,21 @@
 	background-position: left center;
 	padding-left:40px;
 	margin-top:10px;
+	min-height: 30px;
+	padding-top:7px;
+}
+#cont_video{
+	border-radius:10px;
+	overflow:hidden;
+	background-color:#000;
+	margin-top: 10px;
+}
+#cont_video iframe{
+	width:100%;
+	border:none;
+}
+#titVideo{
+	display: inline-block;
+	font-size: 20px;
+	margin-top: 35px;
 }

@@ -16,6 +16,7 @@ DB.set = {
 				"153": "Frontali",
 				"253": "Posteriori",
 			},
+			video: "01_cuoio_capelluto_faccia_e_collo",
 			settore: 1
         },
         "orbicolare_occhio": {
