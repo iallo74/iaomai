@@ -886,7 +886,7 @@ DB.TXT = {
             deu: "BITTE BEACHTEN SIE! Sie haben beantragt, Ihr Konto zu löschen. Dieser Vorgang führt zum vollständigen Verlust aller Ihrer Daten und Dienste. Möchten Sie Ihr Konto wirklich löschen?"
         },
         ConfermaEliminaAccount: {
-            ita: "OPERAZIONE IRREVERSIVILE! Ti chiediamo ancora una volta se davvero vuoi procedere con l'eliminazione definitiva del tuo account.",
+            ita: "OPERAZIONE IRREVERSIBILE! Ti chiediamo ancora una volta se davvero vuoi procedere con l'eliminazione definitiva del tuo account.",
             eng: "TRANSACTION IRREVERSIBLE! We ask you once again if you really want to proceed with the permanent deletion of your account.",
             esp: "¡TRANSACCIÓN IRREVERSIBLE! Te preguntamos una vez más si realmente quieres proceder con la eliminación permanente de tu cuenta.",
             fra: "OPÉRATION IRREVERSIBLE ! Nous vous demandons une fois de plus si vous voulez vraiment procéder à la suppression définitive de votre compte.",
@@ -2688,6 +2688,38 @@ DB.TXT = {
             por: "Adicionar um campo",
             deu: "Ein Feld hinzufügen"
         },
+        AggiungiMedicina: {
+            ita: "Aggiungi una medicina",
+            eng: "Add a medicine",
+            esp: "Añadir una medicina",
+            fra: "Ajouter un médicament",
+            por: "Adicionar um medicamento",
+            deu: "Ein Medikament hinzufügen"
+        },
+        AggiungiAllergia: {
+            ita: "Aggiungi un'allergia",
+            eng: "Add an allergy",
+            esp: "Añadir una alergia",
+            fra: "Ajouter une allergie",
+            por: "Adicionar uma alergia",
+            deu: "Eine Allergie hinzufügen"
+        },
+        AggiungiPatologia: {
+            ita: "Aggiungi una patologia",
+            eng: "Add a condition",
+            esp: "Añadir una patología",
+            fra: "Ajouter une pathologie",
+            por: "Adicionar uma patologia",
+            deu: "Eine Krankheit hinzufügen"
+        },
+        AggiungiIntervento: {
+            ita: "Aggiungi un intervento",
+            eng: "Add a surgery",
+            esp: "Añadir una cirugía",
+            fra: "Ajouter une intervention",
+            por: "Adicionar uma cirurgia",
+            deu: "Einen Eingriff hinzufügen"
+        },        
         TipoString: {
             ita: "testuale",
             eng: "string",

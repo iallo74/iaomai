@@ -17,7 +17,7 @@ var MODULO_PUNTO = { // extend SET
 			titolo = DB.set.punti[muscolo].NomePunto,
 			azioni = DB.set.punti[muscolo].AzioniPunto,
 			punti = DB.set.punti[muscolo].punti,
-			video = DB.set.punti[muscolo].video;
+			noVideo = __(DB.set.punti[muscolo].noVideo);
 	
 		if(DB.login.data.modls.indexOf("videoTP")==-1)video='';
 		HTML += '<h1>'+titolo+'</h1>';
@@ -98,8 +98,8 @@ var MODULO_PUNTO = { // extend SET
 		HTML += '</div>';
 		HTML += '<div id="note_utilizzo">Utilizza lo schema qui sopra per scegliere e visualizzare i punti e il modello 3D per visualizzare le aree di dolore riferito.</div>';
 
-		if(video){
-			let str = 'c='+MD5((48*178).toString())+'&i='+DB.login.data.idUtente+'&t='+LOGIN.logedin()+'&v='+btoa(video);
+		if(!noVideo && muscolo){
+			let str = 'c='+MD5((48*178).toString())+'&i='+DB.login.data.idUtente+'&t='+LOGIN.logedin()+'&v='+btoa(muscolo);
 			HTML += '<b id="titVideo">Video tutorial</b><br><div id="cont_video"><iframe allow="fullscreen" id="frVideo" src="'+CONN.APIfolder+'video.php?'+str+'&z='+MD5(str)+'"></iframe></div>';
 		}
 
@@ -168,7 +168,7 @@ var MODULO_PUNTO = { // extend SET
 		SET.ptSel = ptSel;
 		if(ritorno && !SCHEDA.aggancio.tipo == 'libera')SCHEDA.nasScheda();
 
-		if(video){
+		if(!noVideo && muscolo){
 			SET.wVideo = 0;
 			SET.tmResVideo = setInterval(function(){SET.resizeVideo();},100);
 		}

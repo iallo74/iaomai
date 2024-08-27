@@ -529,7 +529,7 @@ body.bodyModello .p_paz_screenshot:hover{ /* PAZIENTI */
     line-height: 38.48px !important;
 	font-size: var(--font-14-48) !important;
 }
-.sch_Max450 .p_paz_add,
+.sch_Max450 .p_paz_add/* ,
 .p_tag_add,
 .p_medicina_add,
 .p_allergia_add,
@@ -539,7 +539,7 @@ body.bodyModello .p_paz_screenshot:hover{ /* PAZIENTI */
 .p_medicina_ann,
 .p_allergia_ann,
 .p_patologia_ann,
-.p_intervento_ann{
+.p_intervento_ann */{
     float: right !important;
 }
 .p_tag_add,
@@ -663,12 +663,12 @@ body.bodyModello .p_paz_screenshot:hover{ /* PAZIENTI */
     margin-left: 0px !important;
     margin-bottom: 0px !important;
 }
-#elencoMedicine,
+/* #elencoMedicine,
 #elencoAllergie,
 #elencoPatologie,
 #elencoInterventi{
 	margin-top: 36px !important;
-}
+} */
 .smart.android #elencoMedicine,
 .smart.android #elencoAllergie,
 .smart.android #elencoPatologie,
@@ -1453,7 +1453,7 @@ _:-webkit-full-screen,
 #intervento_add{
     height: 32px !important;
     line-height: 32px;
-	width: calc(100% - 95px) !important;
+	width: calc(100% - 127px) !important;
 }
 .smart.android #tag_add,
 .smart.android #medicina_add,

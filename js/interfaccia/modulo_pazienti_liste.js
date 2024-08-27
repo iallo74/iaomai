@@ -663,10 +663,22 @@ var PAZIENTI_LISTE = {
 			JSNPUSH["Nome"+obj.el] = txt.trim();
 			
 			let EL = null;
-			if(tipo=='medicine')EL = PAZIENTI.medicineProvvisorie;
-			if(tipo=='allergie')EL = PAZIENTI.allergieProvvisorie;
-			if(tipo=='patologie')EL = PAZIENTI.patologieProvvisorie;
-			if(tipo=='interventi')EL = PAZIENTI.interventiProvvisori;
+			if(tipo=='medicine'){
+				EL = PAZIENTI.medicineProvvisorie;
+				PAZIENTI.nasElementi('medicina');
+			}
+			if(tipo=='allergie'){
+				EL = PAZIENTI.allergieProvvisorie;
+				PAZIENTI.nasElementi('allergia');
+			}
+			if(tipo=='patologie'){
+				EL = PAZIENTI.patologieProvvisorie;
+				PAZIENTI.nasElementi('patologia');
+			}
+			if(tipo=='interventi'){
+				EL = PAZIENTI.interventiProvvisori;
+				PAZIENTI.nasElementi('intervento');
+			}
 			// verifico doppione
 			if(!oldValue){
 				for(let e in EL){
@@ -762,10 +774,22 @@ var PAZIENTI_LISTE = {
 		JSNPUSH["id"+obj.el] = id*1;
 		JSNPUSH["Nome"+obj.el] = global[m]["Nome"+obj.el].trim();
 		SCHEDA.formModificato = true;
-		if(tipo=='medicine')PAZIENTI.medicineProvvisorie.push(JSNPUSH);
-		if(tipo=='allergie')PAZIENTI.allergieProvvisorie.push(JSNPUSH);
-		if(tipo=='patologie')PAZIENTI.patologieProvvisorie.push(JSNPUSH);
-		if(tipo=='interventi')PAZIENTI.interventiProvvisori.push(JSNPUSH);
+		if(tipo=='medicine'){
+			PAZIENTI.medicineProvvisorie.push(JSNPUSH);
+			PAZIENTI.nasElementi('medicina');
+		}
+		if(tipo=='allergie'){
+			PAZIENTI.allergieProvvisorie.push(JSNPUSH);
+			PAZIENTI.nasElementi('allergia');
+		}
+		if(tipo=='patologie'){
+			PAZIENTI.patologieProvvisorie.push(JSNPUSH);
+			PAZIENTI.nasElementi('patologia');
+		}
+		if(tipo=='interventi'){
+			PAZIENTI.interventiProvvisori.push(JSNPUSH);
+			PAZIENTI.nasElementi('intervento');
+		}
 		PAZIENTI.caricaElementi(tipo);
 		PAZIENTI.popolaElementi(tipo);
 		PAZIENTI.annullaElemento(tipo);
@@ -821,7 +845,7 @@ var PAZIENTI_LISTE = {
 		pulsanteAnnulla.classList.remove("visBtn");
 		cont.classList.remove("modEl");
 	},
-	filtraElemento: function(tipo, el){
+	filtraElemento: function( tipo, el ){
 		if(event.keyCode==13){
 			el.blur();
 			PAZIENTI.aggiungiElemento(tipo, el);
@@ -849,6 +873,14 @@ var PAZIENTI_LISTE = {
 				else elenco.style.display = 'none';
 			}
 		}
+	},
+	visElementi: function( tipo ){
+		document.getElementById('cont_'+tipo+'_add').style.display = 'block';
+		document.getElementById('cont_p_paz_label_'+tipo).style.display = 'none';
+	},
+	nasElementi: function( tipo ){
+		document.getElementById('cont_'+tipo+'_add').style.display = 'none';
+		document.getElementById('cont_p_paz_label_'+tipo).style.display = 'block';
 	}
 	
 }

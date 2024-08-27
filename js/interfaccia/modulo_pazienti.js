@@ -594,7 +594,14 @@ var PAZIENTI = {
 			// sezione MEDICINE
 			cont = 	'		<div id="contMedicine">' +
 					'		</div>' +
-					'		<div id="cont_medicina_add">' +
+					'		<div class="cont_p_paz_label" id="cont_p_paz_label_medicina">' +
+					'			<div id="p_paz_label_medicina"' +
+					'				 class="p_paz_label"' +
+					'				 onclick="PAZIENTI.visElementi(\'medicina\');">' +
+									htmlEntities(TXT("AggiungiMedicina")) +
+					'			</div>'+
+					'		</div>' +
+					'		<div id="cont_medicina_add" style="display:none;">' +
 					'			<input type="text"' +
 					'				   id="medicina_add"' +
 					'				   placeholder="'+htmlEntities(TXT("MedicineSpiegazione"))+'"' +
@@ -607,6 +614,8 @@ var PAZIENTI = {
 					'				 onClick="PAZIENTI.aggiungiElemento(\'medicine\',this);">' +
 									TXT("Nuova") +
 					'			</div>' +
+					'			<span id="label_close"' +
+					'				  onClick="PAZIENTI.nasElementi(\'medicina\');"></span>' +
 					'			<div id="elencoMedicine">' +
 					'			</div>' +
 					'			<div class="l"></div>' +
@@ -620,7 +629,14 @@ var PAZIENTI = {
 			// sezione ALLERGIE
 			cont = 	'		<div id="contAllergie">' +
 					'		</div>' +
-					'		<div id="cont_allergia_add">' +
+					'		<div class="cont_p_paz_label" id="cont_p_paz_label_allergia">' +
+					'			<div id="p_paz_label_allergia"' +
+					'				 class="p_paz_label"' +
+					'				 onclick="PAZIENTI.visElementi(\'allergia\');">' +
+									htmlEntities(TXT("AggiungiAllergia")) +
+					'			</div>'+
+					'		</div>' +
+					'		<div id="cont_allergia_add" style="display:none;">' +
 					'			<input type="text"' +
 					'				   id="allergia_add"' +
 					'				   placeholder="'+htmlEntities(TXT("AllergieSpiegazione"))+'"' +
@@ -633,6 +649,8 @@ var PAZIENTI = {
 					'				 onClick="PAZIENTI.aggiungiElemento(\'allergie\',this);">' +
 									TXT("Nuova") +
 					'			</div>' +
+					'			<span id="label_close"' +
+					'				  onClick="PAZIENTI.nasElementi(\'allergia\');"></span>' +
 					'			<div id="elencoAllergie">' +
 					'			</div>' +
 					'			<div class="l"></div>' +
@@ -646,7 +664,14 @@ var PAZIENTI = {
 			// sezione PATOLOGIE
 			cont = 	'		<div id="contPatologie">' +
 					'		</div>' +
-					'		<div id="cont_patologia_add">' +
+					'		<div class="cont_p_paz_label" id="cont_p_paz_label_patologia">' +
+					'			<div id="p_paz_label_patologia"' +
+					'				 class="p_paz_label"' +
+					'				 onclick="PAZIENTI.visElementi(\'patologia\');">' +
+									htmlEntities(TXT("AggiungiPatologia")) +
+					'			</div>'+
+					'		</div>' +
+					'		<div id="cont_patologia_add" style="display:none;">' +
 					'			<input type="text"' +
 					'				   id="patologia_add"' +
 					'				   placeholder="'+htmlEntities(TXT("PatologieSpiegazione"))+'"' +
@@ -659,6 +684,8 @@ var PAZIENTI = {
 					'				 onClick="PAZIENTI.aggiungiElemento(\'patologie\',this);">' +
 									TXT("Nuova") +
 					'			</div>' +
+					'			<span id="label_close"' +
+					'				  onClick="PAZIENTI.nasElementi(\'patologia\');"></span>' +
 					'			<div id="elencoPatologie">' +
 					'			</div>' +
 					'			<div class="l"></div>' +
@@ -673,7 +700,14 @@ var PAZIENTI = {
 			// sezione INTERVENTI
 			cont = 	'		<div id="contInterventi">' +
 					'		</div>' +
-					'		<div id="cont_intervento_add">' +
+					'		<div class="cont_p_paz_label" id="cont_p_paz_label_intervento">' +
+					'			<div id="p_paz_label_intervento"' +
+					'				 class="p_paz_label"' +
+					'				 onclick="PAZIENTI.visElementi(\'intervento\');">' +
+									htmlEntities(TXT("AggiungiIntervento")) +
+					'			</div>'+
+					'		</div>' +
+					'		<div id="cont_intervento_add" style="display:none;">' +
 					'			<input type="text"' +
 					'				   id="intervento_add"' +
 					'				   placeholder="'+htmlEntities(TXT("InterventiSpiegazione"))+'"' +
@@ -686,6 +720,8 @@ var PAZIENTI = {
 					'				 onClick="PAZIENTI.aggiungiElemento(\'interventi\',this);">' +
 									TXT("Nuovo") +
 					'			</div>' +
+					'			<span id="label_close"' +
+					'				  onClick="PAZIENTI.nasElementi(\'intervento\');"></span>' +
 					'			<div id="elencoInterventi">' +
 					'			</div>' +
 					'			<div class="l"></div>' +
