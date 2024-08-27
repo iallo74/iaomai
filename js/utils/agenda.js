@@ -335,8 +335,8 @@ var agenda = {
 		}
 	},
 	salvaAppuntamento: function(){ // conferma e salva l'elemento in agenda
-		if(	!document.getElementById("TestoAppuntamento").value.trim() && 
-			document.getElementById("idCli").value=='-1'){
+		if(	!document.getElementById("TestoAppuntamento").value.trim()/*  && 
+			document.getElementById("idCli").value=='-1' */){
 			ALERT(stripslashes(TXT("ErroreTestoApp")));
 			return;
 		}
