@@ -786,13 +786,22 @@ body:not(.smart) #meridianiSmart_ico.visSch{
 	display: inline-block;
 }
 
-@media (max-height: 785px){
+@media (max-height: 785px) and (min-height: 661px){
 	.smart #meridianiSmart_cont div{
 		height: 35px !important;
 		line-height: 35px !important;
 	}
-	.smart #meridianiSmart_ico{
+}
+@media (max-height: 785px){
+	.smart #meridianiSmart_ico.visSch{
 		height: 595px !important;
+	}
+}
+@media (max-height: 660px){
+	.smart #meridianiSmart_cont div{
+		height: 32px !important;
+		line-height: 32px !important;
+		margin:1px;
 	}
 }
 body:not(.smart) #meridianiSmart_cont{
