@@ -142,11 +142,23 @@ body:not(.smart) #icone.iconeEspanse{
 		display:none !important;
 	}
 }
-@media (max-width: 360px){
+@media (max-width: 370px){
 	.smart #icone:not(.iconeHome) div:not(#btns_set):not(#cartella_set) i{
 		font-size:var(--font-12);
 		text-overflow:ellipsis;
 		white-space:nowrap;
+	}
+	.smart #icone:not(.iconeHome) div:not(#btns_set):not(#p_sets){
+		float:none;
+		display: inline-block;
+		vertical-align: top;
+	}
+	.smart #icone:not(.iconeHome) div:not(#btns_set):not(#p_sets):not(#p_cartella){
+		margin-right: -3px;
+	}
+	.smart #icone:not(.iconeHome) div#p_cartella{
+		margin-right: -2px !important;
+        margin-left: 2px !important;
 	}
 	.smart #icone:not(.iconeHome) div:not(#cartella_set):not(#p_set):not(#p_sets) i{
 		width:50px !important;
@@ -161,6 +173,12 @@ body:not(.smart) #icone.iconeEspanse{
 	.smart #icone:not(.iconeHome) #p_set,
 	.smart #icone:not(.iconeHome) #p_sets{
 		width:82px !important;
+	}
+	body.smart #icone {
+		white-space: nowrap;
+		overflow-x: auto;
+		overflow-y: hidden;
+		text-align:left;
 	}
 }
 /* @media (max-width: 400px){
