@@ -142,6 +142,27 @@ body:not(.smart) #icone.iconeEspanse{
 		display:none !important;
 	}
 }
+@media (max-width: 360px){
+	.smart #icone:not(.iconeHome) div:not(#btns_set):not(#cartella_set) i{
+		font-size:var(--font-12);
+		text-overflow:ellipsis;
+		white-space:nowrap;
+	}
+	.smart #icone:not(.iconeHome) div:not(#cartella_set):not(#p_set):not(#p_sets) i{
+		width:50px !important;
+	}
+	.smart #icone:not(.iconeHome) div#p_set i,
+	.smart #icone:not(.iconeHome) div#p_sets i{
+		width:80px !important;
+	}
+	.smart #icone:not(.iconeHome) div:not(#btns_set):not(#cartella_set):not(#p_set):not(#p_sets):not(#p_impostazioni){
+		width:52px !important;
+	}
+	.smart #icone:not(.iconeHome) #p_set,
+	.smart #icone:not(.iconeHome) #p_sets{
+		width:82px !important;
+	}
+}
 /* @media (max-width: 400px){
 	.smart #icone div:not(#btns_set):not(#cartella_set){
 		width: 65px;
