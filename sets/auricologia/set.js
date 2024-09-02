@@ -1067,13 +1067,32 @@ var SET = {
 	evidenziaPuntoMod: function( elenco ){
 		SET.annullaEvidenziaPunto();
 		for(let k in elenco){
-			let pp=elenco[k].split("."),
-				mat = SET.MAT.pointEvi;
-			if(pp[1]=='D')mat = SET.MAT.pointDolore;
+			let pp=elenco[k].split(".");
 			if(scene.getObjectByName("_PT"+pp[0])){
-				scene.getObjectByName("_PT"+pp[0]).material=mat;
-				siglaPunto = elenco[k].split(".")[0];
-				SET.puntiEvidenziati.push(siglaPunto);
+				let mat = SET.MAT.pointEvi
+				scene.getObjectByName("_PT"+pp[0]).userData.val = '';
+				if(pp[1]=='D'){
+					mat = SET.MAT.pointDolore;
+					scene.getObjectByName("_PT"+pp[0]).userData.val = 'D';
+				}
+				if(scene.getObjectByName("_PT"+pp[0])){
+					scene.getObjectByName("_PT"+pp[0]).material=mat;
+					siglaPunto = elenco[k].split(".")[0];
+					SET.puntiEvidenziati.push(siglaPunto);
+				}
+			}
+			if(scene.getObjectByName("AR"+pp[0])){
+				let mat = SET.MAT.areaEvi
+				scene.getObjectByName("AR"+pp[0]).userData.val = '';
+				if(pp[1]=='D'){
+					mat = SET.MAT.areaDolore;
+					scene.getObjectByName("AR"+pp[0]).userData.val = 'D';
+				}
+				if(scene.getObjectByName("AR"+pp[0])){
+					scene.getObjectByName("AR"+pp[0]).material=mat;
+					siglaPunto = elenco[k].split(".")[0];
+					SET.puntiEvidenziati.push(siglaPunto);
+				}
 			}
 		}
 		SET.applicaEvidenziaPunto();
@@ -1086,7 +1105,8 @@ var SET = {
 				for(let e in els){
 					let siglaPunto = els[e].name.replace("_","").substr(2,3);
 					if(SET.puntiEvidenziati.indexOf(siglaPunto)>-1){
-						if(els[e].name.substr(0,1)=='_')els[e].material=SET.MAT.pointEvi;
+						let mat = (els[e].userData.val=='D') ? SET.MAT.pointDolore : SET.MAT.pointEvi;
+						if(els[e].name.substr(0,1)=='_')els[e].material=mat;
 						else els[e].material.opacity = 1;
 						els[e].visible = true;
 					}else{
@@ -1097,7 +1117,8 @@ var SET = {
 				for(let e in els){
 					let siglaPunto = els[e].name.substr(2,3);
 					if(SET.puntiEvidenziati.indexOf(siglaPunto)>-1){
-						els[e].material=SET.MAT.areaEvi;
+						let mat = (els[e].userData.val=='D') ? SET.MAT.areaDolore : SET.MAT.areaEvi;
+						els[e].material=mat;
 						els[e].material.opacity = 0.7;
 						els[e].visible = true;
 					}else{
@@ -1244,13 +1265,17 @@ var SET = {
 				system = els[e].userData.system;
 				if(els[e].material.name.indexOf('EVI')>-1){
 					system = 'Evi';
+					if(els[e].userData.val=='D')system='Dolore';
 					if(tipo=='Base')tipo='';
 				}
 				if(SET.MAT["area"+tipo+system].name != els[e].material.name){
 					els[e].material = cloneMAT(SET.MAT["area"+tipo+system]);
-					if(SET.puntiEvidenziati.length){
+					/* if(SET.puntiEvidenziati.length){
 						if(SET.puntiEvidenziati.indexOf(PT_name)>-1)els[e].material.opacity = 0.7;
 						else els[e].material.opacity = 0.2;
+					} */
+					if(SET.puntiEvidenziati.indexOf(PT_name)==-1 && tipo!='Over'){
+						els[e].material.opacity = 0.2;
 					}
 				}
 			}
@@ -1284,6 +1309,7 @@ var SET = {
 					system = els[e].userData.system;
 					if(els[e].material.name.indexOf('EVI')>-1){
 						system = 'Evi';
+						if(els[e].userData.val=='D')system='Dolore';
 						tipo = (over) ? "Over" : "";
 					}else{
 						tipo = (over) ? "Over" : "Base";

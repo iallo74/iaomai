@@ -340,6 +340,30 @@ SET.MAT = {
 		opacity: 0.7
 	}),
 	
+	areaDolore: new THREE.MeshStandardMaterial( {
+		name: "materiale Area EVI DOLORE",
+		color: SET.COL.dolorePT,
+		emissive: SET.COL.dolorePTemissive,
+		flatShading:false,
+		transparent:true,
+		roughness:1,
+		metalness:0.3,
+		side: 3,
+		opacity: 0.7
+	}),
+	
+	areaOverDolore: new THREE.MeshStandardMaterial( {
+		name: "materiale Area EVI OVER DOLORE",
+		color: SET.COL.dolorePT,
+		emissive: SET.COL.dolorePTemissive,
+		flatShading:false,
+		transparent:true,
+		roughness:1,
+		metalness:0.3,
+		side: 3,
+		opacity: 0.5
+	}),
+	
 	
 	materialAree: new THREE.MeshStandardMaterial( {
 		name: "mappa aree",
