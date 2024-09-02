@@ -8,8 +8,7 @@
 */
 
 // IMPORTAZIONI DI VERSIONE
-var verApp = '1.8'; // utilizzata per gli aggiornamenti dei files: FILES[]
-					// N.B. Cambia anche il numero in CONN.APIfolder
+var verApp = '1.8'; // utilizzata per gli aggiornamenti dei files: FILES[] (i files caricati dinamicamente da DB)
 
 // IMPOSTAZIONI DEL DEVICE
 var	smartphone = false,
