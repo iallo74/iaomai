@@ -392,7 +392,7 @@ var PAZIENTI_SETS_GRUPPI = { // extend PAZIENTI
 			if(globals.set.cartella=='auricologia')mzs = PAZIENTI.mezziSet.A;
 			if(globals.set.cartella=='reflessologia_plantare')mzs = PAZIENTI.mezziSet.R;
 			if(mzs.length && PAZIENTI.mezziSet[PAZIENTI.tipoGruppo].length){
-				HTML += '	<span class="separatorePulsanti"></span><div id="tt_mezzival2">';
+				HTML += '	<span class="separatorePulsanti"></span><div id="tt_mezzival3">';
 				for(let m in mzs){
 					HTML += '<span style="background-image:url(img/mezzo_'+mzs[m]+'.png);"' +
 							'	   onClick="PAZIENTI.cambiaGZ(\''+mzs[m]+'\');"' +
@@ -535,7 +535,9 @@ var PAZIENTI_SETS_GRUPPI = { // extend PAZIENTI
 	cambiaGZ: function( mezzo, setDefault=false ){ // cambia il mezzo sui punti aggiunti da popup
 		if(setDefault)localStorage["mezzoDefault"+globals.set.cartella] = mezzo;
 		else PAZIENTI.mezzoProvvisorio = mezzo;
-		let els = document.getElementById("tt_mezzival2").getElementsByTagName("span");
+		let tt_cont = document.getElementById("tt_mezzival3")
+		if(document.getElementById("impset").classList.contains("visSch"))tt_cont = document.getElementById("tt_mezzival2");
+		let els = tt_cont.getElementsByTagName("span");
 		for(let e=0;e<els.length;e++){
 			els[e].classList.toggle("mzSel",(els[e].dataset.mezzo == mezzo));
 		}

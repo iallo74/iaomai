@@ -1191,11 +1191,13 @@ var SET = {
 					'	   data-mezzo="'+mzs[m]+'"';
 			if(!__(localStorage["mezzoDefault"+globals.set.cartella]) && m==0)HTML_imp += ' class="mzSel"';
 			if(localStorage["mezzoDefault"+globals.set.cartella]==mzs[m])HTML_imp += ' class="mzSel"';
-			HTML_imp += '	   title="'+htmlEntities(PAZIENTI.mezzi[mzs[m]])+'"></span>';
+			HTML_imp += '	   title="'+htmlEntities(PAZIENTI.mezzi[mzs[m]])+'">'  +
+			(smartMenu ? htmlEntities(PAZIENTI.mezzi[mzs[m]]).toUpperCase() : '') +
+			'</span>';
 		}
 		HTML_imp += 
 			'</div>' +
-			'<div style="margin-top:30px;">' +
+			'<div style="margin-top:30px;margin-bottom:30px;">' +
 			'	<span class="annullaBtn" onclick="MENU.chiudiImpSet();">'+TXT("Annulla")+'</span>' +
 			'	<span class="submitBtn" onclick="SET.salvaImpSet();">'+TXT("Salva")+'</span>' +
 			'</div>';

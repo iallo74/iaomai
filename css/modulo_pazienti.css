@@ -1785,49 +1785,82 @@ body:not(.smart) #rgApplicaFiltri{
 }
 #tt_mezzival{
 	background-color: #FFF;
-    border-radius: 15px;
-    height: 30px;
+    border-radius: 8px;
     line-height: 30px;
-    box-shadow: 0px 0px 5px rgb(0 0 0 / 50%);
+    box-shadow: 0px 0px 5px rgba(0,0,0,0.5);
     z-index: 1;
     white-space: nowrap;
     position: absolute;
     left: 19px;
 	overflow:hidden;
 }
-#tt_mezzival2{
+.smart #tt_mezzival2{
 	margin-top: -3px;
 }
-#contImpset #tt_mezzival2{
+#tt_mezzival3,
+body:not(.smart) #tt_mezzival2{
+    line-height: 30px;
+    text-align:center;
+}
+#tt_mezzival3{
+    white-space: nowrap;
+	overflow:hidden;
+}
+.smart #contImpset #tt_mezzival2{
 	margin-top: 12px !important;
-    /*width: 228px;*/
     margin: 0 auto;
 }
 .mzSel{
 	background-color:#8db0ee;
 }
 .smart.android #tt_mezzival,
-.smart.android #tt_mezzival2{
-	/*width: 240px;*/
-    /* height: 78px; */
+.smart.android #tt_mezzival2,
+.smart.android #tt_mezzival3{
+	max-width: calc(100% - 12px);
     white-space: normal;
-    /* text-align: left; */
-   /*  border-radius: 10px; */
-	/* max-width: 250px; */
-	width: calc(100%);
+}
+.smart.android #tt_mezzival{
     overflow-x: auto;
     white-space: nowrap;
 }
+body:not(.smart) #tt_mezzival,
+body:not(.smart) #tt_mezzival3{
+	height:30px;
+}
 #tt_mezzival span,
-#tt_mezzival2 span{
+body:not(.smart) #tt_mezzival2 span,
+#tt_mezzival3 span{
     width:30px;
 	height:30px;
 	display:inline-block;
 	vertical-align:middle;
 	background-repeat:no-repeat;
-	background-position:center center;
-	margin-top: -1px;
+	background-position:center 6px;
+	/* margin-top: -1px; */
     cursor: pointer;
+    font-size: 8px;
+	overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    padding-left: 2px;
+    padding-right: 2px;
+	font-family: Arial;
+    padding-top: 18px;
+}
+.smart #tt_mezzival2 span{
+    width:30px;
+	height:30px;
+	display:block;
+	background-repeat:no-repeat;
+	background-position:5px center;
+    cursor: pointer;
+    padding-left: 35px;
+	text-align:left;
+}
+body:not(.smart) #tt_mezzival span,
+body:not(.smart) #tt_mezzival2 span,
+body:not(.smart) #tt_mezzival3 span{
+	margin-top: -3px;
 }
 #tt_mezzival span{
     border-left: 1px solid rgba(0,0,0,0.15);
@@ -1836,16 +1869,21 @@ body:not(.smart) #rgApplicaFiltri{
     border-radius: 6px;
 }
 .smart.android #tt_mezzival span,
-.smart.android #tt_mezzival2 span{
-    width:40px !important;
+.smart.android #tt_mezzival3 span{
+    width:44px !important;
 	height:40px !important;
-   /* border-bottom: 1px solid rgba(0,0,0,0.15);*/
+}
+.smart.android #tt_mezzival2 span{
+    width:100% !important;
+	height:40px !important;
+	line-height:40px !important;
 }
 .smart.android #tt_mezzival span{
 	border-bottom: 1px solid rgba(0,0,0,0.15);
 }
 #tt_mezzival span:first-child,
-#tt_mezzival2 span:first-child{
+#tt_mezzival2 span:first-child,
+#tt_mezzival3 span:first-child{
 	border:none;
 }
 #tt_mezzival span:hover,

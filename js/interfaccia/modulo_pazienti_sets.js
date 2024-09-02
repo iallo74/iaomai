@@ -125,7 +125,9 @@ var PAZIENTI_SETS = { // extend PAZIENTI
 		for(let m in mzs){
 			html += '<span style="background-image:url(img/mezzo_'+mzs[m]+'.png);"' +
 					'	   onClick="PAZIENTI.cambia'+tipo+'Z('+n+',\''+mzs[m]+'\','+isProc+');"' +
-					'	   title="'+htmlEntities(PAZIENTI.mezzi[mzs[m]])+'"></span>';
+					'	   title="'+htmlEntities(PAZIENTI.mezzi[mzs[m]])+'">'+
+					(smartMenu ? htmlEntities(PAZIENTI.mezzi[mzs[m]]).toUpperCase() : '') +
+					'</span>';
 		}
 		H.selTT(n,((tipo=='N' && !isProc)?"n-":"")+"ico_PZ",html);
 	},
@@ -514,7 +516,9 @@ var PAZIENTI_SETS = { // extend PAZIENTI
 		for(let m=0;m<pvs.length;m++){
 			html += '<span style="background-image:url(img/ico_PV'+pvs[m]+'.png);"' +
 					'	   onClick="PAZIENTI.cambiaPV('+n+',\''+pvs[m]+'\');"' +
-					'	   title="'+htmlEntities(TXT("Valutazione"+pvs[m]))+'"></span>';
+					'	   title="'+htmlEntities(TXT("Valutazione"+pvs[m]))+'">' +
+					(smartMenu ? htmlEntities(TXT("Valutazione"+pvs[m])).toUpperCase() : '') +
+					'</span>';
 		}
 		H.selTT(n,"ico_PV",html);
 	},
@@ -678,7 +682,9 @@ var PAZIENTI_SETS = { // extend PAZIENTI
 		for(let m=0;m<pvs.length;m++){
 			html += '<span style="background-image:url(img/ico_PV'+pvs[m]+'.png);"' +
 					'	   onClick="PAZIENTI.cambiaMV('+n+',\''+pvs[m]+'\');"' +
-					'	   title="'+htmlEntities(TXT("Valutazione"+pvs[m]))+'"></span>';
+					'	   title="'+htmlEntities(TXT("Valutazione"+pvs[m]))+'">' +
+					(smartMenu ? htmlEntities(TXT("Valutazione"+pvs[m])) : '') +
+					'</span>';
 		}
 		H.selTT(n,"ico_MV",html);
 	},
@@ -768,7 +774,7 @@ var PAZIENTI_SETS = { // extend PAZIENTI
 							'	  	     height="20"' +
 							'	  	     align="absmiddle"' +
 							'	  	     title="'+htmlEntities(TXT("PZDett"))+'"'+
-							'	  	     class="occhio valEn"> ' +
+							'	  	     class="occhio valEn">' +
 							'	</span>';
 							
 					
@@ -902,7 +908,9 @@ var PAZIENTI_SETS = { // extend PAZIENTI
 		for(let m=0;m<pvs.length;m++){
 			html += '<span style="background-image:url(img/ico_PV'+pvs[m]+'.png);"' +
 					'	   onClick="PAZIENTI.cambiaAV('+n+',\''+pvs[m]+'\');"' +
-					'	   title="'+htmlEntities(TXT("Valutazione"+pvs[m]))+'"></span>';
+					'	   title="'+htmlEntities(TXT("Valutazione"+pvs[m]))+'">' +
+					(smartMenu ? htmlEntities(TXT("Valutazione"+pvs[m])) : '') +
+					'</span>';
 		}
 		H.selTT(n,"ico_PV",html);
 	},
@@ -1154,7 +1162,9 @@ var PAZIENTI_SETS = { // extend PAZIENTI
 		for(let m=0;m<pvs.length;m++){
 			html += '<span style="background-image:url(img/ico_PV'+pvs[m]+'.png);"' +
 					'	   onClick="PAZIENTI.cambiaRV('+n+',\''+pvs[m]+'\');"' +
-					'	   title="'+htmlEntities(TXT("Valutazione"+pvs[m]))+'"></span>';
+					'	   title="'+htmlEntities(TXT("Valutazione"+pvs[m]))+'">' +
+					(smartMenu ? htmlEntities(TXT("Valutazione"+pvs[m])) : '') +
+					'</span>';
 		}
 		H.selTT(n,"ico_PV",html);
 	},
@@ -1414,7 +1424,9 @@ var PAZIENTI_SETS = { // extend PAZIENTI
 		for(let m=0;m<pvs.length;m++){
 			html += '<span style="background-image:url(img/ico_PV'+pvs[m]+'.png);"' +
 					'	   onClick="PAZIENTI.cambiaNV('+n+',\''+pvs[m]+'\');"' +
-					'	   title="'+htmlEntities(TXT("Valutazione"+pvs[m]))+'"></span>';
+					'	   title="'+htmlEntities(TXT("Valutazione"+pvs[m]))+'">' +
+					(smartMenu ? htmlEntities(TXT("Valutazione"+pvs[m])) : '') +
+					'</span>';
 		}
 		H.selTT(n,"n-ico_PV",html);
 	},
