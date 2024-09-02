@@ -8,6 +8,9 @@
     margin-left: -200px;
     margin-top: -190px;
 }
+.smart #impset .popup_cont{
+	height: calc(100% - 40px);
+}
 #labelImpset{
 	background-image:url(../img/p_impostazioniN.png);
 	background-position:10px center;
