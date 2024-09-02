@@ -416,10 +416,11 @@ var PAZIENTI_SETS_GRUPPI = { // extend PAZIENTI
 			lista = '.gr_1',
 			cont = document.getElementById("gruppoPunti_cont"),
 			val = document.getElementById("gr_ret_ric").value.toLowerCase().trim(),
-			tags = document.querySelector(lista).getElementsByTagName(tag);
+			tags = document.querySelector(lista)?.getElementsByTagName(tag);
 		if(cont.getElementsByClassName("gr_2").length){
 			tag = 'label';
 			lista = '.gr_2';
+			tags = document.querySelector(lista)?.getElementsByTagName(tag);
 		}
 		for(t=0;t<tags.length;t++){
 			let txt = tags[t].innerText+"";
