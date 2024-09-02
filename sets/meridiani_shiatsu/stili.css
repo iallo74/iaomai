@@ -896,7 +896,7 @@ body:not(.smart) #meridianiSmart_cont{
     font-size: var(--font-11);
     margin: 2px;
     cursor: pointer;
-    background-color: rgba(255,255,255,0.4);
+    background-color: rgba(255,255,255,0.55);
 }
 body:not(.smart) #meridianiSmart_cont div:not(.elencoSel):hover{
 	background-color: rgba(255,255,255,0.3) !important;
