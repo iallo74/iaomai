@@ -573,7 +573,9 @@ var PAZIENTI_SETS_GRUPPI = { // extend PAZIENTI
 	cambiaGZ: function( mezzo, setDefault=false ){ // cambia il mezzo sui punti aggiunti da popup
 		if(setDefault)localStorage["mezzoDefault"+globals.set.cartella] = mezzo;
 		else PAZIENTI.mezzoProvvisorio = mezzo;
-		let els = document.getElementById("tt_mezzival3").getElementsByTagName("span");
+		let tt_cont = document.getElementById("tt_mezzival3")
+		if(document.getElementById("impset").classList.contains("visSch"))tt_cont = document.getElementById("tt_mezzival2");
+		let els = tt_cont.getElementsByTagName("span");
 		for(let e=0;e<els.length;e++){
 			els[e].classList.toggle("mzSel",(els[e].dataset.mezzo == mezzo));
 		}
