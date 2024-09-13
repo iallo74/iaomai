@@ -86,7 +86,7 @@ var PURCHASES  = {
             PURCHASES.idBuying = id;
 			store.get(PURCHASES.productId)?.getOffer()?.order();
 		}else{
-			let tk = encodeURIComponent(window.btoa(LOGIN.logedin() + MD5(DB.login.data.idUtente))),
+			let tk = encodeURIComponent(window.btoa(LOGIN.logedin() + MD5(DB.login.data.idUtente.toString()))),
 				fl = encodeURIComponent(window.btoa(PURCHASES.getProdById(PURCHASES.productId).folder)),
 				md = encodeURIComponent(window.btoa(PURCHASES.getProdById(PURCHASES.productId).code));
 			CONN.openUrl(convLangPath(CONN.urlStore)+"in_app_purchase?tk="+tk+"&mp="+fl+"&md="+md);
