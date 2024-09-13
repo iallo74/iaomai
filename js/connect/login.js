@@ -538,7 +538,7 @@ var LOGIN = {
 		LINGUE.getGoogleLanguages();
 	},
 	avviaVerToken: function(){ // Avvia la verifica del TOKEN ogni 10 secondi
-		LOGIN.tmVerT = setInterval(function(){LOGIN.verificaToken();},10000); // verifico ogni 10 secondi
+		LOGIN.tmVerT = setInterval(function(){LOGIN.verificaToken();},20*1000); // verifico ogni 10 secondi
 	},
 	resToken: function(txt){ // Risposta dalla verifica del TOKEN
 		if(typeof(txt) != 'undefined'){;
@@ -619,7 +619,7 @@ var LOGIN = {
 		DB._reset(); // <<<<<<<< FRV
 		LOGIN.getDB();
 		if(globals.set.cartella){
-			scaricaSet();
+			setTimeout(function(){scaricaSet();},1000)
 		}
 		PAZIENTI.cancellaFiltri(true);
 		SCHEDA.scaricaScheda();
@@ -868,7 +868,7 @@ var LOGIN = {
 			/* let btnAdd = 	'<div class="p_paz_ref_menu" onClick="REF.open(\'feature.login\')">' +
 								TXT("ReferenceGuide") +
 							'</div>'; */
-							
+			
 			CONN.caricaUrl(	"utente_dati.php",
 							"b64=1",
 							"LOGIN.car_utente" );
@@ -1175,6 +1175,7 @@ var LOGIN = {
 				nasLoader();
 				SCHEDA.noChiudi = false;
 				SCHEDA.msgSalvataggio();
+				LOGIN.scriviUtente();
 			});
 		}
 	},
