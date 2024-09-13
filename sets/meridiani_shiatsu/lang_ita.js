@@ -1116,7 +1116,7 @@ DB.set = {
 			],
 			noList: true
 		},
-		{
+		/*{
 			TitoloSezione: "Risorse video",
 			contenuti: [
 				{
@@ -1161,7 +1161,7 @@ DB.set = {
 				}
 			],
 			noList: true
-		},
+		},*/
 		{
 			label: "Appendice",
 			TitoloSezione: "Autori e bibliografia",
