@@ -1115,7 +1115,7 @@ DB.set = {
 			],
 			noList: true
 		},
-		{
+		/*{
 			TitoloSezione: "Video Resources",
 			contenuti: [
 				{
@@ -1160,7 +1160,7 @@ DB.set = {
 				}
 			],
 			noList: true
-		},
+		},*/
 		{
 			label: "Appendix",
 			TitoloSezione: "Authors and Bibliography",

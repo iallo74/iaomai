@@ -1078,7 +1078,7 @@ DB.set={
 			],
 			"noList": true
 		},
-		{
+		/*{
 			"TitoloSezione": "Videoressourcen",
 			"contenuti": [
 				{
@@ -1123,7 +1123,7 @@ DB.set={
 				}
 			],
 			"noList": true
-		},
+		},*/
 		{
 			"label": "Anhang",
 			"TitoloSezione": "Autoren und Bibliographie",

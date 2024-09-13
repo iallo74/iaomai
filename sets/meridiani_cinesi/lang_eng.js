@@ -679,7 +679,7 @@ DB.set = {
 				}
 			]
 		},
-		{
+		/*{
 			TitoloSezione: "Video Resources",
 			contenuti: [
 				{
@@ -724,7 +724,7 @@ DB.set = {
 				}
 			],
 			noList: true
-		},
+		},*/
 		{
 			TitoloSezione: "Glossary and References",
 			contenuti: [

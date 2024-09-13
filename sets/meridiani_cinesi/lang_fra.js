@@ -670,7 +670,7 @@ DB.set={
                 }
             ]
         },
-        {
+        /*{
             "TitoloSezione": "Ressources vidéo",
             "contenuti": [
                 {
@@ -715,7 +715,7 @@ DB.set={
                 }
             ],
             "noList": true
-        },
+        },*/
         {
             "TitoloSezione": "Glossaire et références",
             "contenuti": [
