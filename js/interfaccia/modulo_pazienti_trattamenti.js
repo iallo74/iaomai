@@ -1476,12 +1476,16 @@ var PAZIENTI_TRATTAMENTI = { // extend PAZIENTI
 		}
 		visLoader(TXT("ElaborazioneInCorso"));
 		CONN.caricaUrl(	"diagnosi_mtc.php",
-						"b64=1&JSNPOST="+window.btoa(encodeURIComponent(JSON.stringify(JSNPOST))),
+						"b64=1&JSNPOST="+window.btoa(encodeURIComponent(JSON.stringify(JSNPOST)))+"&NominativoPaziente="+window.btoa(encodeURIComponent(DB.pazienti.data[PAZIENTI.idCL].Nome+" "+DB.pazienti.data[PAZIENTI.idCL].Cognome)),
 						"PAZIENTI.diagnosiMTC_response");
 	},
-	diagnosiMTC_response: function( res ){
-		if(res=='404'){
+	diagnosiMTC_response: function( json ){
+		let res = JSON.parse(json);
+		if(res.esito.substr(0,5)=='ERROR'){
+			console.log(res.esito);
 			ALERT("Si è verificato un errore!");
+		}else if(res.esito=='TOKEN_FINISH'){
+			ALERT("Gettoni finiti");
 		}else{
 			let re1 = /[\*]{2}([^\*]+)[\*]{2}/g,
 				re2 = /[#]{4} ([^\n]+)\n/g,
@@ -1489,7 +1493,7 @@ var PAZIENTI_TRATTAMENTI = { // extend PAZIENTI
 				re5 = /[#]{2} ([^\n]+)\n/g,
 				re6 = /[#]{1} ([^\n]+)\n/g,
 				re4 = /\n/g,
-				html = res;
+				html = res.response;
 			html = html.replace(re1,"<b>$1</b>");
 			html = html.replace(re2,"<h4>$1</h4>");
 			html = html.replace(re3,"<h3>$1</h3>");
