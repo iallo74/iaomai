@@ -1,0 +1,46 @@
+@charset "utf-8";
+/* CSS Document */
+
+/* INFORMAZIONI SULLE LINGUE */
+#ai{
+	width: 420px;
+    min-height: 220px;
+    margin-left: -210px;
+    margin-top: -110px;
+	background-image: url(../img/f_magic.png);
+	background-repeat: no-repeat;
+}
+#contAI{
+	padding-bottom:30px;
+}
+@media (max-width:620px){
+	#ai{
+		width: calc(100% - 20px) !important;
+		margin-left: 0px !important;
+		left: 10px !important;
+		border-radius:5px !important;
+	}
+}
+#ai.disclaimer{
+	background-image: url(../img/f_disclaimer.png);
+}
+#txtAI{
+	padding: 0 20px 30px 20px;
+}
+#btnAI{
+	display: inline-block;
+    line-height: 34px;
+    border-radius: 3px;
+    margin: 2px;
+    cursor: pointer;
+    background-color: #1157b9;
+    color: #FFF;
+    border: 1px solid #9fbde6;
+    padding: 0 15px;
+}
+#btnAI:hover{
+    background-color: #094599 !important;
+}
+#ai.disclaimer #btnAI{
+	display:none;
+}

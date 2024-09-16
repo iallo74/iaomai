@@ -52,8 +52,9 @@ var PAZIENTI_CICLI = { // extend PAZIENTI
 					puntiMTC=__(TR.puntiMTC,[]);
 					puntiAuricolari=__(TR.puntiAuricolari,[]);
 					puntiPlantari=__(TR.puntiPlantari,[]);
-					puntiTrigger=__(TR.puntiTrigger,[]);
 					puntiNamikoshi=__(TR.puntiNamikoshi,[]);
+					puntiTrigger=__(TR.puntiTrigger,[]);
+					diagnosiMTC=__(TR.diagnosiMTC,[]);
 					meridiani = __(TR.meridiani,[]);
 					sintomi=__(TR.sintomi,[]);
 					

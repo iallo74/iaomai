@@ -321,6 +321,8 @@ var PAZIENTI_SETS = { // extend PAZIENTI
 		}
 		document.getElementById('totPunto').innerHTML = PAZIENTI.puntiProvvisori.length;
 		document.getElementById('puntiMTC').innerHTML=HTML;
+		PAZIENTI.diagnosi_swPoints();
+		PAZIENTI.vis_tabs();
 		
 		
 		if(ev>-1){
@@ -654,6 +656,7 @@ var PAZIENTI_SETS = { // extend PAZIENTI
 		}
 		document.getElementById('totMeridiani').innerHTML = PAZIENTI.meridianiProvvisori.length;
 		document.getElementById('meridianiMTC').innerHTML=HTML;
+		PAZIENTI.vis_tabs();
 		
 		if(ev>-1){
 			setTimeout(function(){document.getElementById("tr_p"+ev)?.classList.remove("eviPunto");},2000);
@@ -889,6 +892,7 @@ var PAZIENTI_SETS = { // extend PAZIENTI
 		}
 		document.getElementById('totAuriculo').innerHTML = PAZIENTI.auriculoProvvisori.length;
 		document.getElementById('puntiAuricolari').innerHTML=HTML;
+		PAZIENTI.vis_tabs();
 		
 		if(ev>-1){
 			setTimeout(function(){document.getElementById("rg_"+ev)?.classList.remove("eviPunto");},2000);
@@ -1143,6 +1147,7 @@ var PAZIENTI_SETS = { // extend PAZIENTI
 		}
 		document.getElementById('totReflex').innerHTML = PAZIENTI.reflexProvvisori.length;
 		document.getElementById('puntiPlantari').innerHTML=HTML;
+		PAZIENTI.vis_tabs();
 		
 		if(ev>-1){
 			setTimeout(function(){document.getElementById("rg_"+ev)?.classList.remove("eviPunto");},2000);
@@ -1405,6 +1410,7 @@ var PAZIENTI_SETS = { // extend PAZIENTI
 		}
 		document.getElementById('totTrigger').innerHTML = PAZIENTI.triggerProvvisori.length;
 		document.getElementById('puntiTrigger').innerHTML=HTML;
+		PAZIENTI.vis_tabs();
 		
 		if(ev>-1){
 			setTimeout(function(){document.getElementById("rg_"+ev)?.classList.remove("eviPunto");},2000);
@@ -1665,6 +1671,7 @@ var PAZIENTI_SETS = { // extend PAZIENTI
 		}
 		document.getElementById('totNamikoshi').innerHTML = PAZIENTI.namikoshiProvvisori.length;
 		document.getElementById('puntiNamikoshi').innerHTML=HTML;
+		PAZIENTI.vis_tabs();
 		
 		if(ev>-1){
 			setTimeout(function(){document.getElementById("rg_"+ev)?.classList.remove("eviPunto");},2000);
@@ -1750,6 +1757,40 @@ var PAZIENTI_SETS = { // extend PAZIENTI
 		SCHEDA.formModificato = true;
 	},
 	
+	// visualizzazione tabs
+	vis_tabs: function(){
+		if(	!document.getElementById("scheda").classList.contains("scheda_A") &&
+			!document.getElementById("scheda").classList.contains("scheda_B"))return;
+		
+		document.getElementById('tratt_cont_punti').classList.remove("nasTab");
+		document.getElementById('tratt_cont_punti').getElementsByClassName("spiegazioneAI")[0].classList.remove("nasTab");
+		document.getElementById('tratt_cont_punti').getElementsByClassName("diagnosiBtns")[0].classList.remove("nasTab");
+		document.getElementById('tratt_cont_meridiani').classList.remove("nasTab");
+		document.getElementById('tratt_cont_auriculo').classList.remove("nasTab");
+		document.getElementById('tratt_cont_reflex').classList.remove("nasTab");
+		document.getElementById('tratt_cont_trigger').classList.remove("nasTab");
+		document.getElementById('tratt_cont_namikoshi').classList.remove("nasTab");
+		if(	!PAZIENTI.puntiProvvisori.length && 
+			!( 	globals.set.cartella == 'meridiani_cinesi' || 
+				(globals.set.cartella == 'meridiani_shiatsu' && LOGIN.verModule("CIN"))) )document.getElementById('tratt_cont_punti').classList.add("nasTab");
+		if(	( 	!(globals.set.cartella == 'meridiani_cinesi' || 
+				(globals.set.cartella == 'meridiani_shiatsu' && LOGIN.verModule("CIN")))) ){
+					document.getElementById('tratt_cont_punti').getElementsByClassName("spiegazioneAI")[0].classList.add("nasTab");
+					document.getElementById('tratt_cont_punti').getElementsByClassName("diagnosiBtns")[0].classList.add("nasTab");
+		}
+		if(	!PAZIENTI.meridianiProvvisori.length &&
+			!(	globals.set.cartella == 'meridiani_cinesi' || 
+				(globals.set.cartella == 'meridiani_shiatsu' && (LOGIN.verModule("CIN") || LOGIN.verModule("MAS")))) )document.getElementById('tratt_cont_meridiani').classList.add("nasTab");
+		if(	!PAZIENTI.auriculoProvvisori.length &&
+			globals.set.cartella != 'auricologia' )document.getElementById('tratt_cont_auriculo').classList.add("nasTab");
+		if(	!PAZIENTI.reflexProvvisori.length &&
+			globals.set.cartella != 'reflessologia_plantare' )document.getElementById('tratt_cont_reflex').classList.add("nasTab");
+		if(	!PAZIENTI.triggerProvvisori.length && 
+			globals.set.cartella!='trigger_points')document.getElementById('tratt_cont_trigger').classList.add("nasTab");
+		if(	!PAZIENTI.namikoshiProvvisori.length &&
+			!(globals.set.cartella == 'meridiani_shiatsu' && LOGIN.verModule("NMK")) )document.getElementById('tratt_cont_namikoshi').classList.add("nasTab");
+			
+	},
 	
 	// ALERT sui mezzi (anticoagulanti e pace-maker)
 	verMezzo: function( m ){

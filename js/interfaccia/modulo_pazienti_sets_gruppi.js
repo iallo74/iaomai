@@ -547,6 +547,7 @@ var PAZIENTI_SETS_GRUPPI = { // extend PAZIENTI
 			}
 		}
 		if(punti.length){
+			console.log(punti)
 			if(!isProc)PAZIENTI.aggiungiGruppoTrattamento(punti);
 			else SET.aggiungiGruppoProcedura(punti);
 			PAZIENTI.swGruppoPunti();

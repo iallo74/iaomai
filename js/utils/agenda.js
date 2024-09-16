@@ -290,6 +290,8 @@ var agenda = {
 						"puntiMTC": [],
 						"puntiAuricolari": [],
 						"puntiNamikoshi": [],
+						"puntiTrigger": [],
+						"diagnosiMTC": "",
 						"sintomi": [],
 						"meridiani": [],
 						"gallery": [],

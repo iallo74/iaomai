@@ -455,6 +455,7 @@ function caricaSet( cartella, el, forzaModello='' ){
 		document.body.classList.add('bodySet');
 		document.body.classList.add('body_'+globals.set.cartella);
 		updateModels();
+		PAZIENTI.vis_tabs();
 	}
 	try{
 		SET.leggiNote();

@@ -135,6 +135,7 @@ var MENU = {
 		if(n!="infolingue")document.getElementById("infolingue").classList.remove("visSch");
 		if(n!="licenze")document.getElementById("licenze").classList.remove("visSch");
 		if(n!="ag")document.getElementById("ag").classList.remove("visSch");
+		if(n!="ai")document.getElementById("ai").classList.remove("visSch");
 		if( (n=='pulsanti_modello' && !smartMenu) ||
 			n=='impostazioni' ||
 			n=='sets' ||
@@ -937,6 +938,21 @@ var MENU = {
 			visLoader('');
 		}else{
 			nasLoader();
+		}
+	},
+	visAI: function(){
+		if(!LOGIN.logedin()){
+			ALERT(TXT("ErroreUtenteNonConnesso"));
+			return false;
+		}else{
+			MENU.chiudiMenu("ai");
+			visLoader("");
+			document.getElementById("ai").classList.toggle("visSch");
+			if(document.getElementById("ai").className.indexOf("visSch") > -1){
+				visLoader('');
+			}else{
+				nasLoader();
+			}
 		}
 	},
 

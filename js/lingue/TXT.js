@@ -3465,6 +3465,70 @@ DB.TXT = {
             por: "Descrição do desequilíbrio",
             deu: "Beschreibung des Ungleichgewichts"
         },
+        DiagnosiAI: {
+            ita: "Magic Diagnosi",
+            eng: "Magic Diagnosis",
+            esp: "Magic Diagnóstico",
+            fra: "Magic Diagnostic",
+            por: "Magic Diagnóstico",
+            deu: "Magic Diagnose"
+        },
+        SpiegazioneAI: {
+            ita: "Questo strumento serve per produrre una proposta di diagnosi basata sugli elementi inseriti nella scheda di trattamento e nello storico del paziente. Assicurati di avere inserito correttamente tutti gli elementi necessari come i sintomi e la descrizione/anamnesi e poi clicca sul pulsante qui sotto.",
+            eng: "This tool is used to produce a diagnostic proposal based on the elements entered in the treatment form and the patient's history. Make sure you have correctly entered all the necessary elements, such as symptoms and description/history, and then click the button below.",
+            esp: "Esta herramienta se utiliza para producir una propuesta de diagnóstico basada en los elementos introducidos en la ficha de tratamiento y en el historial del paciente. Asegúrate de haber introducido correctamente todos los elementos necesarios, como los síntomas y la descripción/anamnesis, y luego haz clic en el botón de abajo.",
+            fra: "Cet outil est utilisé pour produire une proposition de diagnostic basée sur les éléments saisis dans la fiche de traitement et l'historique du patient. Assurez-vous d'avoir correctement saisi tous les éléments nécessaires, tels que les symptômes et la description/anamnèse, puis cliquez sur le bouton ci-dessous.",
+            por: "Esta ferramenta é usada para produzir uma proposta de diagnóstico com base nos elementos inseridos na ficha de tratamento e no histórico do paciente. Certifique-se de ter inserido corretamente todos os elementos necessários, como sintomas e descrição/anamnese, e clique no botão abaixo.",
+            deu: "Dieses Tool dient dazu, einen Diagnosevorschlag basierend auf den in das Behandlungsformular und die Patientenhistorie eingegebenen Elementen zu erstellen. Stellen Sie sicher, dass Sie alle erforderlichen Elemente, wie Symptome und Anamnese/Beschreibung, korrekt eingegeben haben, und klicken Sie dann auf die Schaltfläche unten."
+        },
+        RequestAI: {
+            ita: "CREA DIAGNOSI",
+            eng: "CREATE DIAGNOSIS",
+            esp: "CREAR DIAGNÓSTICO",
+            fra: "CRÉER DIAGNOSTIC",
+            por: "CRIAR DIAGNÓSTICO",
+            deu: "DIAGNOSE ERSTELLEN"
+        },
+        DiagnosiAddPoints: {
+            ita: "Aggiungi i punti al trattamento",
+            eng: "Add points to treatment",
+            esp: "Agregar puntos al tratamiento",
+            fra: "Ajouter des points au traitement",
+            por: "Adicionar pontos ao tratamento",
+            deu: "Punkte zur Behandlung hinzufügen"
+        },
+        DisclaimerAI: {
+            "ita": "Questa diagnosi è un'ipotesi fornita a scopo di supporto e integrazione nel processo decisionale clinico e non sostituisce il giudizio professionale del medico. Tale diagnosi non deve essere utilizzata come un sostituto di una diagnosi clinica definitiva. Gli utenti, in qualità di professionisti della salute, sono tenuti a esercitare il proprio giudizio clinico e a verificare i risultati ottenuti attraverso strumenti e protocolli appropriati.",
+            "eng": "This diagnosis is a hypothesis provided to support and complement the clinical decision-making process and does not replace the physician's professional judgment. This diagnosis should not be used as a substitute for a definitive clinical diagnosis. Users, as healthcare professionals, are required to exercise their clinical judgment and verify the results obtained through appropriate tools and protocols.",
+            "esp": "Este diagnóstico es una hipótesis proporcionada para apoyar y complementar el proceso de toma de decisiones clínicas y no sustituye el juicio profesional del médico. Este diagnóstico no debe utilizarse como sustituto de un diagnóstico clínico definitivo. Los usuarios, como profesionales de la salud, deben ejercer su juicio clínico y verificar los resultados obtenidos mediante herramientas y protocolos apropiados.",
+            "fra": "Ce diagnostic est une hypothèse fournie pour soutenir et compléter le processus de prise de décision clinique et ne remplace pas le jugement professionnel du médecin. Ce diagnostic ne doit pas être utilisé comme substitut d'un diagnostic clinique définitif. Les utilisateurs, en tant que professionnels de la santé, sont tenus d'exercer leur jugement clinique et de vérifier les résultats obtenus à l'aide d'outils et de protocoles appropriés.",
+            "por": "Este diagnóstico é uma hipótese fornecida para apoiar e complementar o processo de tomada de decisões clínicas e não substitui o julgamento profissional do médico. Este diagnóstico não deve ser utilizado como substituto de um diagnóstico clínico definitivo. Os usuários, como profissionais de saúde, devem exercer seu julgamento clínico e verificar os resultados obtidos através de ferramentas e protocolos apropriados.",
+            "deu": "Diese Diagnose ist eine Hypothese, die zur Unterstützung und Ergänzung des klinischen Entscheidungsprozesses bereitgestellt wird und nicht das professionelle Urteil des Arztes ersetzt. Diese Diagnose sollte nicht als Ersatz für eine endgültige klinische Diagnose verwendet werden. Die Benutzer, als Angehörige der Gesundheitsberufe, sind verpflichtet, ihr klinisches Urteilsvermögen anzuwenden und die erzielten Ergebnisse mit geeigneten Instrumenten und Protokollen zu überprüfen."
+          },          
+        ElaborazioneInCorso: {
+            ita: "Elaborazione in corso",
+            eng: "Processing in progress",
+            esp: "Procesamiento en curso",
+            fra: "Traitement en cours",
+            por: "Processamento em andamento",
+            deu: "Verarbeitung läuft"
+        },
+        ChiediEliminaDiagnosi: {
+            ita: "Vuoi davvero eliminare la proposta di diagnosi?",
+            eng: "Do you really want to delete the diagnostic proposal?",
+            esp: "¿Realmente quieres eliminar la propuesta de diagnóstico?",
+            fra: "Voulez-vous vraiment supprimer la proposition de diagnostic?",
+            por: "Você realmente quer excluir a proposta de diagnóstico?",
+            deu: "Möchten Sie den Diagnosevorschlag wirklich löschen?"
+        },
+        PuntiTuttiPresenti: {
+            ita: "I punti sono già tutti presenti nel trattamento",
+            eng: "All points are already present in the treatment",
+            esp: "Todos los puntos ya están presentes en el tratamiento",
+            fra: "Tous les points sont déjà présents dans le traitement",
+            por: "Todos os pontos já estão presentes no tratamento",
+            deu: "Alle Punkte sind bereits in der Behandlung vorhanden"
+        },
         Sintomi: {
             ita: "Sintomi",
             eng: "Symptoms",

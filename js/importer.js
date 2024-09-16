@@ -73,6 +73,7 @@ var IMPORTER = {
     	'css/popup_purchases.css',
     	'css/popup_licenze.css',
 		'css/popup_adv.css',
+    	'css/popup_ai.css',
     	'css/schede.css',
     	'css/schede_touch.css',
     	'css/moduli.css',

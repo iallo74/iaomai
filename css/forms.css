@@ -828,7 +828,7 @@ body.bodyModello .p_paz_screenshot:hover{ /* PAZIENTI */
 	padding-right:10px !important;
 	text-align:left !important;
 	width:auto !important;
-	text-wrap:none !important;
+	text-wrap:nowrap !important;
 	font-size: var(--font-13-2) !important;
 	padding-left:29px !important;
 }
@@ -2289,7 +2289,9 @@ body:not(.touch) #puntiTrigger .dettPunto:hover{
     opacity: 0.6;
 }
 
-
+.nasTab{
+	display:none;
+}
 .sezioneTrattamenti{
     padding-top: 13px;
 	margin-bottom:0px !important;
@@ -2692,5 +2694,106 @@ body:not(.touch) .contGallery > div:not(.noResults) > div:hover img.spunta_pic{
 }
 #scheda:not(.sch_Max600) .contStato select{
 	margin-bottom:0px !important;
+}
+.diagnosiAI{
+    border-radius: 10px;
+    margin-top: 15px;
+    max-height: 237px;
+    border: 1px solid rgba(7, 96, 157, 0.3);
+	overflow: hidden;
+}
+.diagnosiAI_txt{
+	background-color: rgba(255, 255, 255, 0.2);
+    padding: 0px 10px 10px 10px;
+    border-top-left-radius: 10px;
+    overflow-y: auto;
+    line-height: 18px;
+    max-height: 200px;
+}
+.spiegazioneAI{
+	margin-top:5px;
+	line-height: 18px;
+	text-align:right;
+}
+.contDiagnosiAI:not(.fullAI) .diagnosiAI,
+.contDiagnosiAI.fullAI .spiegazioneAI{
+	display:none;
+}
+.diagnosiAI_txt h3,
+.diagnosiAI_txt h4{
+	margin:10px 0px 5px 0px;
+}
+.diagnosiAI_txt h3{
+	font-size: var(--font-16) !important;
+}
+.diagnosiAI_txt h3{
+	font-size: var(--font-14-94) !important;
+}
+.requestAI{
+	background-image: url(../img/ico_diagnosiAI.png) !important;
+    margin: 15px 0 0 0 !important;
+    background-repeat: no-repeat;
+    background-position: 5px center;
+    padding-right: 10px !important;
+    text-align: left !important;
+    width: auto !important;
+    text-wrap: nowrap !important;
+    font-size: var(--font-13-2) !important;
+    padding-left: 37px !important;
+    line-height: 34px;
+    background-color: #b9c9ff;
+    display: inline-block;
+    border-radius: 11px;
+	cursor:pointer;
+}
+.requestAI:hover{
+    background-color: #95a7e2;
+}
+.diagnosiBtns{
+	text-align:right;
+    background-image: url(../img/ico_diagnosiAI.png);
+    background-repeat: no-repeat;
+    background-position: left center;
+    background-color: #c8d2fc;
+    padding: 3px;
+	border-top:1px solid rgba(0,0,0,0.1);
+}
+.diagnosiAzione{
+    font-size: var(--font-13-2) !important;
+    padding: 0 10px;
+    line-height: 26px;
+    display: inline-block;
+    border-radius: 6px;
+	cursor:pointer;
+	margin:1px;
+}
+.diagnosiAzione.nas{
+	display:none;
+}
+.diagnosiCancella{
+    opacity:0.6;
+	margin: 0 3px 3px 3px;
+	cursor:pointer;
+}
+.diagnosiCancella:hover{
+    opacity:0.75;
+}
+.diagnosiAzione{
+    background-color: rgba(0, 0, 0, 0.1);
+    color: #000000;
+}
+.diagnosiAzione:hover{
+    background-color: rgba(0, 0, 0, 0.15);
+}
+.disclaimerAI{
+	display: inline-block;
+    vertical-align: middle;
+    cursor: pointer;
+    float: left;
+    margin-left: 30px;
+    border-radius: 30px;
+    background-color: rgba(0, 0, 0, 0.1);
+    margin-top: 1px;
+	height:26px;
 }
 -->

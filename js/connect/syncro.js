@@ -255,8 +255,8 @@ var SYNCRO = {
 							elencoTrattamenti[n].puntiMTC = JSON.stringify(elencoTrattamenti[n].puntiMTC);
 							elencoTrattamenti[n].puntiAuricolari = JSON.stringify(elencoTrattamenti[n].puntiAuricolari);
 							elencoTrattamenti[n].puntiPlantari = JSON.stringify(elencoTrattamenti[n].puntiPlantari);
-							elencoTrattamenti[n].puntiTrigger = JSON.stringify(elencoTrattamenti[n].puntiTrigger);
 							elencoTrattamenti[n].puntiNamikoshi = JSON.stringify(elencoTrattamenti[n].puntiNamikoshi);
+							elencoTrattamenti[n].puntiTrigger = JSON.stringify(elencoTrattamenti[n].puntiTrigger);
 							aggiungereTrattamenti=true;
 						}
 					}
@@ -942,6 +942,7 @@ var SYNCRO = {
 									"puntiPlantari": toJson(__(trattamenti[t].puntiPlantari,'')),
 									"puntiTrigger": toJson(__(trattamenti[t].puntiTrigger,'')),
 									"puntiNamikoshi": toJson(__(trattamenti[t].puntiNamikoshi,'')),
+									"diagnosiMTC": trattamenti[t].diagnosiMTC,
 									"meridiani": toJson(trattamenti[t].meridiani),
 									"sintomi": toJson(trattamenti[t].sintomi),
 									"gallery": toJson(trattamenti[t].gallery),
