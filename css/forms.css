@@ -2695,6 +2695,8 @@ body:not(.touch) .contGallery > div:not(.noResults) > div:hover img.spunta_pic{
 #scheda:not(.sch_Max600) .contStato select{
 	margin-bottom:0px !important;
 }
+
+/* DIAGNOSI AI */
 .diagnosiAI{
     border-radius: 10px;
     margin-top: 15px;

@@ -2995,6 +2995,38 @@ DB.TXT = {
             por: "Você realmente deseja mover o tratamento para [cartella]?",
             deu: "Möchten Sie die Behandlung wirklich in [cartella] verschieben?"
         },
+        GettoniFiniti: {
+            "ita": "Hai finito di gettoni a disposizione. Acquistane altri per poter continuare ad utilizzare lo strumento di Magic Diagnosi.",
+            "eng": "You have run out of available tokens. Purchase more to continue using the Magic Diagnosis tool.",
+            "esp": "Te has quedado sin fichas disponibles. Compra más para seguir utilizando la herramienta de Magic Diagnóstico.",
+            "fra": "Vous n'avez plus de jetons disponibles. Achetez-en d'autres pour continuer à utiliser l'outil Magic Diagnostic.",
+            "por": "Você ficou sem fichas disponíveis. Compre mais para continuar a usar a ferramenta de Diagnóstico Mágico.",
+            "deu": "Sie haben keine verfügbaren Token mehr. Kaufen Sie weitere, um das Magic-Diagnose-Tool weiterhin zu verwenden."
+        },
+        NoDataAI: {
+            "ita": "Non hai indicato alcun elemento utile a produrre una diagnosi. Compila correttamente la scheda e riprova.",
+            "eng": "You did not provide any useful information to make a diagnosis. Please fill out the form correctly and try again.",
+            "esp": "No has indicado ningún elemento útil para producir un diagnóstico. Completa correctamente el formulario y vuelve a intentarlo.",
+            "fra": "Vous n'avez fourni aucun élément utile pour établir un diagnostic. Remplissez correctement le formulaire et réessayez.",
+            "por": "Você não indicou nenhum elemento útil para produzir um diagnóstico. Preencha corretamente o formulário e tente novamente.",
+            "deu": "Sie haben keine nützlichen Angaben für eine Diagnose gemacht. Bitte füllen Sie das Formular korrekt aus und versuchen Sie es erneut."
+        },
+        PurchaseAI: {
+            "ita": "ACQUISTA",
+            "eng": "BUY",
+            "esp": "COMPRAR",
+            "fra": "ACHETER",
+            "por": "COMPRAR",
+            "deu": "KAUFEN"
+        },
+        ConteggioGettoniAI: {
+            "ita": "Magic Diagnosi disponibili [r].<br><span>Ne hai utilizzate [u] su [t].</span>",
+            "eng": "Magic Diagnosis available [r].<br><span>You have used [u] out of [t].</span>",
+            "esp": "Magic Diagnóstico disponibles [r].<br><span>Has utilizado [u] de [t].</span>",
+            "fra": "Magic Diagnostic disponibles [r].<br><span>Vous en avez utilisé [u] sur [t].</span>",
+            "por": "Diagnóstico Mágico disponíveis [r].<br><span>Você utilizou [u] de [t].</span>",
+            "deu": "Magic-Diagnose verfügbar [r].<br><span>Sie haben [u] von [t] verwendet.</span>"
+        },
 
         // scheda
         ChiediEliminaTrattamento: {

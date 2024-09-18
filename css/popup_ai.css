@@ -21,16 +21,18 @@
 		border-radius:5px !important;
 	}
 }
-#ai.disclaimer{
+#ai.disclaimer,
+#ai.purchaseTokens{
 	background-image: url(../img/f_disclaimer.png);
 }
 #txtAI{
-	padding: 0 20px 30px 20px;
+	padding: 0 20px 25px 20px;
 }
-#btnAI{
+#btnAI,
+#btnAIpurchase{
 	display: inline-block;
     line-height: 34px;
-    border-radius: 3px;
+    border-radius: 6px;
     margin: 2px;
     cursor: pointer;
     background-color: #1157b9;
@@ -38,9 +40,42 @@
     border: 1px solid #9fbde6;
     padding: 0 15px;
 }
+#btnAIpurchase{
+	padding-left: 40px;
+    background-image: url(../img/ico_purchases.png);
+    background-repeat: no-repeat;
+    background-position: 5px center;
+    background-size: auto 30px;
+}
 #btnAI:hover{
     background-color: #094599 !important;
 }
-#ai.disclaimer #btnAI{
+#ai.disclaimer #btnAI,
+#ai.purchaseTokens #btnAI{
 	display:none;
+}
+#ai:not(.purchaseTokens) #btnAIpurchase{
+	display:none;
+}
+#cont_gettoniAI{
+    padding: 10px 0;
+    margin-bottom: 25px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    text-align: right;
+    color: rgba(0, 0, 0, 0.6);
+    padding-right: 30px;
+    background-image: url(../img/ico_token4.png);
+    background-repeat: no-repeat;
+    background-position: right center;
+    background-size: auto 25px;
+    margin-top: -21px;
+}
+#cont_gettoniAI span{
+	font-size:var(--font-12) !important;
+}
+#cont_gettoniAI_err{
+    margin-top: 10px;
+	padding: 10px;
+	border: 1px solid #dd949c !important;
+	background-color: #dbc3c3 !important;
 }

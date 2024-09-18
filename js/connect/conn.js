@@ -5,6 +5,7 @@ var CONN = {
 	APIfilesFolder: 'https://files.iaomai.app/___API/V3/',
 	FILESfolder: 'https://files.iaomai.app/__files_utenti/files/',
 	urlStore: 'https://www.iaomai.app/[lang]/iaomai/',
+	urlAItokens: 'https://www.iaomai.app/[lang]/iaomai/tokens',
 	linkPrivacy: 'https://www.iaomai.app/privacy',
 	linkReqPwd: 'https://www.iaomai.app/[lang]/account/password',
 	linkAppStore: 'https://apps.apple.com/it/app/i%C3%A1omai/id1588705898',

@@ -2,6 +2,11 @@ var PAZIENTI_TRATTAMENTI = { // extend PAZIENTI
 	
 	mn: null, // il menu contestuale dei cicli
 	mnOver: false, // il menu contestuale dei cicli
+	endpointAI: '',
+	gettoniAI: {
+		usati: 0,
+		totali: 0
+	},
 	 
 	// TRATTAMENTI
 	vis_add: function( daPiu='' ){
@@ -723,11 +728,11 @@ var PAZIENTI_TRATTAMENTI = { // extend PAZIENTI
 							TXT_P+' (<span id="totPunto"></span>)' +
 					'	</em>' +
 					'	<div id="contDiagnosiMTC" class="contDiagnosiAI'+(diagnosiMTC?' fullAI':'')+'">'+
-					'		<div class="spiegazioneAI"><div class="requestAI" onClick="PAZIENTI.ai_popup(\'PAZIENTI.diagnosiMTC_request();\');">'+TXT("DiagnosiAI")+'</div></div>'+
+					'		<div class="spiegazioneAI"><div class="requestAI" onClick="PAZIENTI.ai_get_gettoni(\'PAZIENTI.diagnosiMTC_request();\');">'+TXT("DiagnosiAI")+'</div></div>'+
 					'		<div class="diagnosiAI">'+
 					'			<div class="diagnosiAI_txt" id="diagnosiMTC">'+diagnosiMTC+'</div>'+
 					'			<div class="diagnosiBtns">'+
-					'				<img src="img/ico_disclaimer.png" class="disclaimerAI" title="'+TXT("DisclaimerAI")+'" onClick="PAZIENTI.ai_popup(\'\');"/>'+
+					'				<img src="img/ico_disclaimer.png" class="disclaimerAI" title="'+TXT("DisclaimerAI")+'" onClick="PAZIENTI.ai_popup();"/>'+
 					'				<div class="diagnosiAzione" onClick="PAZIENTI.diagnosiMTC_addPoints();">'+TXT("DiagnosiAddPoints")+'</div>'+
 					'				<img class="diagnosiCancella" src="img/ico_cestino.png" width="16" height="16" align="absmiddle" title="'+TXT("Elimina")+'" onclick="PAZIENTI.diagnosiMTC_delete();" class="cestino">'+
 					'			</div>'+
@@ -1427,21 +1432,54 @@ var PAZIENTI_TRATTAMENTI = { // extend PAZIENTI
 	},
 
 	// AI
-	ai_popup: function( endpoint ){
+	ai_get_gettoni: function( endpoint ){
+		PAZIENTI.endpointAI = endpoint;
+		visLoader();
+		CONN.caricaUrl(	"diagnosi_gettoni.php",
+						"",
+						"PAZIENTI.ai_res_gettoni");
+	},
+	ai_res_gettoni: function( res ){
+		PAZIENTI.gettoniAI = JSON.parse(res);
+		PAZIENTI.ai_popup();
+	},
+	ai_popup: function( purchase=false ){
+		let endpoint = PAZIENTI.endpointAI;
+		PAZIENTI.endpointAI = '';
 		if(CONN.retNoConn()){
 			PAZIENTI.aiEndPoint = endpoint;
 			MENU.visAI();
-			document.getElementById("txtAI").innerHTML = TXT("SpiegazioneAI");
-			document.getElementById("ai").classList.remove("disclaimer");
-			if(!endpoint){
-				document.getElementById("txtAI").innerHTML = TXT("DisclaimerAI");
-				document.getElementById("ai").classList.add("disclaimer");
+			if(endpoint){
+				let gettoniRestanti = PAZIENTI.gettoniAI.totali-PAZIENTI.gettoniAI.usati;
+				if(gettoniRestanti>0){
+					let conteggio = TXT("ConteggioGettoniAI");
+					conteggio = conteggio.replace("[r]",'<b>'+gettoniRestanti+'</b>')
+					conteggio = conteggio.replace("[u]",PAZIENTI.gettoniAI.usati);
+					conteggio = conteggio.replace("[t]",PAZIENTI.gettoniAI.totali);
+					document.getElementById("txtAI").innerHTML = '<div id="cont_gettoniAI">'+conteggio+'</div>'+TXT("SpiegazioneAI");
+					document.getElementById("ai").classList.remove("disclaimer");
+					document.getElementById("ai").classList.remove("purchaseTokens");
+				}else{
+					document.getElementById("txtAI").innerHTML = '<div id="cont_gettoniAI_err">'+TXT("GettoniFiniti")+'</div>';
+					document.getElementById("ai").classList.add("purchaseTokens");
+				}
+			}else{
+				if(!purchase){
+					document.getElementById("txtAI").innerHTML = TXT("DisclaimerAI");
+					document.getElementById("ai").classList.add("disclaimer");
+				}else{
+					document.getElementById("txtAI").innerHTML = '<div id="cont_gettoniAI_err"><div>'+TXT("GettoniFiniti")+'</div>';
+					document.getElementById("ai").classList.add("purchaseTokens");
+				}
 			}
 		}
 	},
 	ai_request: function(){
 		MENU.chiudiMenu();
 		eval(PAZIENTI.aiEndPoint);
+	},
+	ai_purchase: function(){
+		CONN.openUrl(convLangPath(CONN.urlAItokens)+"?p="+MD5(DB.login.data.TOKEN+(DB.login.data.idUtente*123))+(DB.login.data.idUtente*45));
 	},
 	diagnosiMTC_request: function(){
 		let JSNPOST = {
@@ -1474,6 +1512,10 @@ var PAZIENTI_TRATTAMENTI = { // extend PAZIENTI
 		for(p in DB.pazienti.data[PAZIENTI.idCL].medicine){
 			JSNPOST.medicine.push(DB.pazienti.data[PAZIENTI.idCL].medicine[p].NomeMedicina);
 		}
+		if(!PAZIENTI.sintomiProvvisori && !document.getElementById("TestoTrattamento").value.trim()){
+			ALERT(TXT("NoDataAI"));
+			return;
+		}
 		visLoader(TXT("ElaborazioneInCorso"));
 		CONN.caricaUrl(	"diagnosi_mtc.php",
 						"b64=1&JSNPOST="+window.btoa(encodeURIComponent(JSON.stringify(JSNPOST)))+"&NominativoPaziente="+window.btoa(encodeURIComponent(DB.pazienti.data[PAZIENTI.idCL].Nome+" "+DB.pazienti.data[PAZIENTI.idCL].Cognome)),
@@ -1482,10 +1524,11 @@ var PAZIENTI_TRATTAMENTI = { // extend PAZIENTI
 	diagnosiMTC_response: function( json ){
 		let res = JSON.parse(json);
 		if(res.esito.substr(0,5)=='ERROR'){
-			console.log(res.esito);
-			ALERT("Si è verificato un errore!");
+			ALERT(TXT("ErroreGenerico"));
+		}else if(res.esito=='NO_DATA'){
+			ALERT(TXT("NoDataAI"));
 		}else if(res.esito=='TOKEN_FINISH'){
-			ALERT("Gettoni finiti");
+			PAZIENTI.ai_popup(true);
 		}else{
 			let re1 = /[\*]{2}([^\*]+)[\*]{2}/g,
 				re2 = /[#]{4} ([^\n]+)\n/g,
