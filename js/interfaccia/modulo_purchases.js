@@ -46,18 +46,18 @@ var PURCHASES  = {
 			store.error(function(error) {
 				console.log('ERROR ' + error.code + ': ' + error.message);
 			});
+			let regs = [];
 			for(let id in PURCHASES.product_list){
-				store.register({
+				regs.push({
 					id:    PURCHASES.product_list[id].idStore,
 					type:  store.NON_CONSUMABLE,
 					platform: android ? "android-playstore" : "ios-appstore"
 				});
-				store.when()
-					.productUpdated(product => PURCHASES.makeProductList(product))
-					.approved(transaction => PURCHASES.finishPurchase(transaction));
-
-
 			}
+			store.register(regs);
+			store.when()
+				.productUpdated(product => PURCHASES.makeProductList(product))
+				.approved(transaction => PURCHASES.finishPurchase(transaction));
 			store.initialize();
 		}else{
 			PURCHASES.getPrices();
@@ -115,6 +115,7 @@ var PURCHASES  = {
 	
 	// visualizzazioni
 	viewProduct: function( product ){ // scrive la scheda del prodotto
+		console.log(product)
 		if(window.store){	
 			if(product.state=='requested')PURCHASES.orderState = 'requested';
 			if(PURCHASES.orderState == 'requested' && product.state=='approved'){
