@@ -1482,8 +1482,14 @@ var PAZIENTI_TRATTAMENTI = { // extend PAZIENTI
 		CONN.openUrl(convLangPath(CONN.urlAItokens)+"?p="+MD5(DB.login.data.TOKEN+(DB.login.data.idUtente*123))+(DB.login.data.idUtente*45));
 	},
 	diagnosiMTC_request: function(){
+		let anamnesi = '';
+		if(document.getElementById("TestoTrattamento"))anamnesi = document.getElementById("TestoTrattamento").value;
+		else{
+			anamnesi += H.chr10+TXT("AnamnesiDiagnosiMTC")+H.chr10+document.getElementById("AnamnesiDiagnosiMTC").value +
+						H.chr10+TXT("AnamnesiDiagnosiOccidentale")+H.chr10+document.getElementById("AnamnesiDiagnosiOccidentale").value;
+		}
 		let JSNPOST = {
-			anamnesi: document.getElementById("TestoTrattamento").value,
+			anamnesi: anamnesi,
 			sesso: DB.pazienti.data[PAZIENTI.idCL].sesso,
 			siglaLingua: globals.siglaLingua.toLowerCase(),
 			sintomi: [],
