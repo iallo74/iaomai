@@ -163,7 +163,7 @@ DB.set = {
 			settore: 2
 		},
 		"retto_addome": {
-			NomePunto: "",
+			NomePunto: "Retto dell'addome",
 			AzioniPunto: "<p><b>Azione</b><br>Xxx</p><p><b>Ubicazione</b><br>Xxx</p>",
 			ChiaviPunto: "",
 			punti: {
