@@ -116,7 +116,7 @@ var CONN = {
 	},
 	corsCMS: function (msg){
 		setTimeout(function(){
-			document.getElementById("frVideo").contentWindow.postMessage(msg, "https://www.corpomentespirito.it");
+			document.getElementById("frVideo").contentWindow.postMessage(msg, "https://www.iaomai.it");
 		},100);
 	}
 
