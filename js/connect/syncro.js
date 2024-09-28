@@ -1326,7 +1326,8 @@ var SYNCRO = {
 				}
 			}
 			CONN.caricaUrl(	'getImgGallery_GLOBAL.php',
-							'b64=1&iU='+DB.login.data.idUtente+'&JSNPOST='+window.btoa(encodeURIComponent(JSON.stringify(elenco))),'SYNCRO.updateGallery_save',
+							'b64=1&iU='+DB.login.data.idUtente+'&JSNPOST='+window.btoa(encodeURIComponent(JSON.stringify(elenco))),
+							'SYNCRO.updateGallery_save',
 							CONN.APIfilesFolder );
 		}
 	},
