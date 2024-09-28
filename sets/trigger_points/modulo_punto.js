@@ -19,7 +19,10 @@ var MODULO_PUNTO = { // extend SET
 			punti = DB.set.punti[muscolo].punti,
 			noVideo = __(DB.set.punti[muscolo].noVideo);
 	
-		if(DB.login.data.modls.indexOf("videoTP")==-1)video='';
+		if(DB.login.data.modls.indexOf("videoTP")==-1){
+			video = '';
+			noVideo = true;
+		}
 		HTML += '<h1>'+titolo+'</h1>';
 		
 		/* HTML += '<div id="imgPunto"';
