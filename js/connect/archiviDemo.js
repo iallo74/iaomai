@@ -153,6 +153,7 @@ var archiviDemo = {
                         "idTrattamento": 0,
                         "idPaziente": 0,
                         "TitoloTrattamento": "Trattamento Shiatsu - Rigidità arti inferiori",
+                        "NoteTrattamento": "",
                         "Prescrizione": "Possibilità di lavoro per una conoscenza personale del corpo e delle sue dinamiche in chiave MTC",
                         "puntiMTC": [
                             {
@@ -422,6 +423,7 @@ var archiviDemo = {
                         "idTrattamento": 0,
                         "idPaziente": 0,
                         "TitoloTrattamento": "Anamnesi",
+                        "NoteTrattamento": "",
                         "Prescrizione": "Terapia\nDisperdere e regolare il Qi nei meridiani del Cuore e di Mastro del cuore, \nRistabilire la comunicazione tra Cuore e Rene -  Livello Energetico Shao Yin -  \nCalmare lo Shen",
                         "puntiMTC": [
                             {
@@ -557,6 +559,7 @@ var archiviDemo = {
                         "idTrattamento": 0,
                         "idPaziente": 0,
                         "TitoloTrattamento": "Anamnesi",
+                        "NoteTrattamento": "",
                         "Prescrizione": "• Si evidenzia una stasi nel  meridiano della vescica biliare perchè mette in movimento il QI essendo il livello shaoyang che permette la messa in movimento dell'energia sia yang che yin. \n• Moxa su 25VB punto Mu del Rene che permette la nascita dello yang.\n• Moxa su 31VB punto vento indicato per i ristagni.\n• 34VB punto hui dei muscoli, secondo Leung KwokPo tratta il muscolo in quanto capace di indurre \"movimento\"\n• Importanti i punti che mobilizzano il sangue sul meridiano di vescica 17BL,40BL,  32 BL e 53BL\n• LV3 punto shu terra e yuan che muove il sangue.\n• Yao fa per mobilizzare la zona lombare. ",
                         "puntiMTC": [
                             {
@@ -691,6 +694,7 @@ var archiviDemo = {
                         "idTrattamento": 0,
                         "idPaziente": 0,
                         "TitoloTrattamento": "Seduta 1: Valutazione iniziale e rilassamento",
+                        "NoteTrattamento": "",
                         "Prescrizione": "",
                         "puntiMTC": [
                             {
@@ -834,6 +838,7 @@ var archiviDemo = {
                         "idTrattamento": 0,
                         "idPaziente": 0,
                         "TitoloTrattamento": "Seduta 2: Riduzione dell'infiammazione e del dolore",
+                        "NoteTrattamento": "",
                         "Prescrizione": "",
                         "puntiMTC": [
                             {
@@ -1001,6 +1006,7 @@ var archiviDemo = {
                         "idTrattamento": 0,
                         "idPaziente": 0,
                         "TitoloTrattamento": "Seduta 3: Miglioramento della circolazione e del flusso energetico",
+                        "NoteTrattamento": "",
                         "Prescrizione": "",
                         "puntiMTC": [
                             {
@@ -1142,6 +1148,7 @@ var archiviDemo = {
                         "idTrattamento": 0,
                         "idPaziente": 0,
                         "TitoloTrattamento": "Seduta 4: Riequilibrio muscolare e posturale",
+                        "NoteTrattamento": "",
                         "Prescrizione": "",
                         "puntiMTC": [
                             {
@@ -1288,6 +1295,7 @@ var archiviDemo = {
                         "idTrattamento": 0,
                         "idPaziente": 0,
                         "TitoloTrattamento": "Seduta 5: Mantenimento e pianificazione futura",
+                        "NoteTrattamento": "",
                         "Prescrizione": "",
                         "puntiMTC": [
                             {
@@ -1398,6 +1406,7 @@ var archiviDemo = {
                         "idTrattamento": 0,
                         "idPaziente": 0,
                         "TitoloTrattamento": "Primo trattamento Ansia",
+                        "NoteTrattamento": "",
                         "Prescrizione": "Pressione Shiatsu sul meridiano della Vescica da 11BL a 28BL, tonificando i punti 15BL e 20BL rispettivamente punti Shu di Cuore e Milza.\n\n- Pressione Shiatsu su tutto il  meridiano della Milza soffermandosi sul punto 6SP e 10SP proseguendo poi lungo tutto il meridiano fino al torace.\n\n- Pressione Shiatsu sul tutto il meridiano del Cuore soffermandosi al punto 7HT proseguendo fino al punto  9HT \n\n-Pressione Shiatsu sul Meridiano del Mastro di Cuore. ",
                         "puntiMTC": [
                             {
@@ -1560,6 +1569,7 @@ var archiviDemo = {
                         "idTrattamento": 0,
                         "idPaziente": 0,
                         "TitoloTrattamento": "Secondo trattamento Ansia",
+                        "NoteTrattamento": "",
                         "Prescrizione": "",
                         "puntiMTC": [
                             {
@@ -1706,6 +1716,7 @@ var archiviDemo = {
                         "idTrattamento": 0,
                         "idPaziente": 0,
                         "TitoloTrattamento": "Terzo trattamento Ansia",
+                        "NoteTrattamento": "",
                         "Prescrizione": "Trattamento:\n\nDisperdere il fuoco del Fegato e della Vescica Biliare e tonificare i rispettivi organi. \nPressione Shiatsu sul meridiano della Vescica da 11BL a 28BL soffermandosi su 18BL e 19BL  quali punti SHU di Fegato e Vescica Biliare. \n\nPressione Shiatsu lungo tutto il meridiano della Vescica Biliare soffermandosi su GB20 e GB21.\nPressione Shiatsu su tutto il meridiano del Fegato. Per la regola Mezzogiorno-Mezzanotte, trattato anche il meridiano del Cuore. ",
                         "puntiMTC": [
                             {
@@ -1860,6 +1871,7 @@ var archiviDemo = {
                         "idTrattamento": 0,
                         "idPaziente": 0,
                         "TitoloTrattamento": "Quarto trattamento Ansia",
+                        "NoteTrattamento": "",
                         "Prescrizione": "",
                         "puntiMTC": [
                             {
@@ -2007,6 +2019,7 @@ var archiviDemo = {
                         "idTrattamento": 0,
                         "idPaziente": 0,
                         "TitoloTrattamento": "Quinto trattamento Ansia",
+                        "NoteTrattamento": "",
                         "Prescrizione": "",
                         "puntiMTC": [],
                         "puntiAuricolari": [],
@@ -2112,6 +2125,7 @@ var archiviDemo = {
                         "idTrattamento": 0,
                         "idPaziente": 0,
                         "TitoloTrattamento": "Guida alla sessione singola",
+                        "NoteTrattamento": "",
                         "Prescrizione": "",
                         "puntiMTC": [],
                         "puntiAuricolari": [],
@@ -2137,6 +2151,7 @@ var archiviDemo = {
                         "idTrattamento": 0,
                         "idPaziente": 0,
                         "TitoloTrattamento": "Anamnesi",
+                        "NoteTrattamento": "",
                         "Prescrizione": "Auricoloterapia:\nSottoporsi a sessioni settimanali di auricoloterapia per un totale di 6-8 settimane. Durante queste sessioni, verranno stimolati i punti auricolari correlati al rilassamento, al sonno e alla riduzione dell'ansia. L'auricoloterapeuta valuterà la risposta del corpo e regolerà il trattamento di conseguenza.\n\nTerapia Cognitivo-Comportamentale per l'Insonnia (CBT-I):\nPartecipare a un programma di terapia cognitivo-comportamentale per l'insonnia. Questo programma prevede sessioni settimanali durante le prime 4-6 settimane, seguite da sessioni di follow-up a cadenza quindicinale. La CBT-I mira a migliorare l'igiene del sonno, ad affrontare i pensieri negativi legati al sonno e a stabilire un regime regolare di sonno-veglia.\n\nStrategie di Gestione dello Stress:\nPraticare tecniche di rilassamento come la meditazione e la respirazione profonda almeno 10-15 minuti al giorno, preferibilmente prima di coricarsi. Queste pratiche possono aiutare a ridurre l'ansia e a preparare il corpo per il sonno.\n\nRaccomandazioni per lo Stile di Vita:\n\nEvitare il consumo di caffeina e alcol nel pomeriggio e alla sera.\nLimitare l'uso di dispositivi elettronici prima di coricarsi.\nMantenere un ambiente di sonno confortevole, con luce tenue e temperatura adeguata.\nEvitare pasti pesanti poco prima di andare a letto.\nFollow-up:\nSarà programmato un follow-up a distanza di 8 settimane per valutare la risposta al trattamento e apportare eventuali modifiche. Si prega di tenere un diario del sonno e annotare eventuali miglioramenti o cambiamenti.\n\nNote Aggiuntive:\nSi prega di seguire le indicazioni fornite dal terapeuta auricoloterapista e dal terapeuta CBT-I. In caso di effetti collaterali o preoccupazioni, contattare immediatamente il medico.",
                         "puntiMTC": [],
                         "puntiAuricolari": [
@@ -2222,6 +2237,7 @@ var archiviDemo = {
                         "idTrattamento": 0,
                         "idPaziente": 0,
                         "TitoloTrattamento": "Seduta 1: Valutazione iniziale e rilassamento",
+                        "NoteTrattamento": "",
                         "Prescrizione": "",
                         "puntiMTC": [],
                         "puntiAuricolari": [
@@ -2288,6 +2304,7 @@ var archiviDemo = {
                         "idTrattamento": 0,
                         "idPaziente": 0,
                         "TitoloTrattamento": "Seduta 2: Stimolazione dei punti del sonno",
+                        "NoteTrattamento": "",
                         "Prescrizione": "",
                         "puntiMTC": [],
                         "puntiAuricolari": [
@@ -2354,6 +2371,7 @@ var archiviDemo = {
                         "idTrattamento": 0,
                         "idPaziente": 0,
                         "TitoloTrattamento": " Seduta 3: Equilibrio energetico",
+                        "NoteTrattamento": "",
                         "Prescrizione": "",
                         "puntiMTC": [],
                         "puntiAuricolari": [
@@ -2427,6 +2445,7 @@ var archiviDemo = {
                         "idTrattamento": 0,
                         "idPaziente": 0,
                         "TitoloTrattamento": "Seduta 4: Consolidamento del progresso",
+                        "NoteTrattamento": "",
                         "Prescrizione": "",
                         "puntiMTC": [],
                         "puntiAuricolari": [
@@ -2500,6 +2519,7 @@ var archiviDemo = {
                         "idTrattamento": 0,
                         "idPaziente": 0,
                         "TitoloTrattamento": "Seduta 5: Mantenimento e conclusioni",
+                        "NoteTrattamento": "",
                         "Prescrizione": "",
                         "puntiMTC": [],
                         "puntiAuricolari": [
@@ -2876,6 +2896,7 @@ var archiviDemo = {
                         "idTrattamento": 0,
                         "idPaziente": 0,
                         "TitoloTrattamento": "Shiatsu Treatment - Lower Limb Stiffness",
+                        "NoteTrattamento": "",
                         "Prescrizione": "Possibility of work for a personal understanding of the body and its dynamics in terms of TCM.",
                         "puntiMTC": [
                             {
@@ -3145,6 +3166,7 @@ var archiviDemo = {
                         "idTrattamento": 0,
                         "idPaziente": 0,
                         "TitoloTrattamento": "Anamnesis",
+                        "NoteTrattamento": "",
                         "Prescrizione": "Therapy\nDisperse and regulate the Qi in the Heart and Master of the heart meridians,\nRestore communication between Heart and Kidney - Shao Yin Energetic Level -\nCalm the Shen",
                         "puntiMTC": [
                             {
@@ -3280,6 +3302,7 @@ var archiviDemo = {
                         "idTrattamento": 0,
                         "idPaziente": 0,
                         "TitoloTrattamento": "Anamnesis",
+                        "NoteTrattamento": "",
                         "Prescrizione": "• A stagnation is evident in the gallbladder meridian because it mobilizes the Qi being the shaoyang level that allows the movement of both yang and yin energy. \n• Moxa on 25VB, Ren Mu point that allows the birth of yang. \n• Moxa on 31VB, wind point indicated for stagnation. \n• 34VB, muscle meeting point, according to Leung KwokPo treats the muscle as capable of inducing 'movement'. \n• Important points that mobilize blood on the bladder meridian 17BL, 40BL, 32 BL, and 53BL \n• LV3, earth and yuan shu point that moves the blood. \n• Yao fa to mobilize the lumbar area.",
                         "puntiMTC": [
                             {
@@ -3414,6 +3437,7 @@ var archiviDemo = {
                         "idTrattamento": 0,
                         "idPaziente": 0,
                         "TitoloTrattamento": "Session 1: Initial Assessment and Relaxation",
+                        "NoteTrattamento": "",
                         "Prescrizione": "",
                         "puntiMTC": [
                             {
@@ -3557,6 +3581,7 @@ var archiviDemo = {
                         "idTrattamento": 0,
                         "idPaziente": 0,
                         "TitoloTrattamento": "Session 2: Reducing Inflammation and Pain",
+                        "NoteTrattamento": "",
                         "Prescrizione": "",
                         "puntiMTC": [
                             {
@@ -3724,6 +3749,7 @@ var archiviDemo = {
                         "idTrattamento": 0,
                         "idPaziente": 0,
                         "TitoloTrattamento": "Session 3: Improving Circulation and Energy Flow",
+                        "NoteTrattamento": "",
                         "Prescrizione": "",
                         "puntiMTC": [
                             {
@@ -3865,6 +3891,7 @@ var archiviDemo = {
                         "idTrattamento": 0,
                         "idPaziente": 0,
                         "TitoloTrattamento": "Session 4: Muscular and Postural Rebalancing",
+                        "NoteTrattamento": "",
                         "Prescrizione": "",
                         "puntiMTC": [
                             {
@@ -4011,6 +4038,7 @@ var archiviDemo = {
                         "idTrattamento": 0,
                         "idPaziente": 0,
                         "TitoloTrattamento": "Session 5: Maintenance and Future Planning",
+                        "NoteTrattamento": "",
                         "Prescrizione": "",
                         "puntiMTC": [
                             {
@@ -4121,6 +4149,7 @@ var archiviDemo = {
                         "idTrattamento": 0,
                         "idPaziente": 0,
                         "TitoloTrattamento": "First Anxiety Treatment",
+                        "NoteTrattamento": "",
                         "Prescrizione": "Shiatsu pressure on the Urinary Bladder meridian from 11BL to 28BL, tonifying points 15BL and 20BL, respectively Heart and Spleen Shu points.\n\n- Shiatsu pressure on the entire Spleen meridian, pausing at points 6SP and 10SP, then continuing along the entire meridian to the chest.\n\n- Shiatsu pressure on the entire Heart meridian, pausing at point 7HT and continuing to point 9HT.\n\n- Shiatsu pressure on the Pericardium meridian.",
                         "puntiMTC": [
                             {
@@ -4283,6 +4312,7 @@ var archiviDemo = {
                         "idTrattamento": 0,
                         "idPaziente": 0,
                         "TitoloTrattamento": "Second Anxiety Treatment",
+                        "NoteTrattamento": "",
                         "Prescrizione": "",
                         "puntiMTC": [
                             {
@@ -4429,6 +4459,7 @@ var archiviDemo = {
                         "idTrattamento": 0,
                         "idPaziente": 0,
                         "TitoloTrattamento": "Third Anxiety Treatment",
+                        "NoteTrattamento": "",
                         "Prescrizione": "Treatment:\n\nDisperse the Fire of the Liver and Gallbladder and tonify the respective organs. Shiatsu pressure on the Bladder meridian from 11BL to 28BL, pausing at 18BL and 19BL as the Liver and Gallbladder Shu points.\n\nShiatsu pressure along the entire Gallbladder meridian, pausing at GB20 and GB21.\nShiatsu pressure on the entire Liver meridian. Also treated the Heart meridian for the Noon-Midnight regulation. ",
                         "puntiMTC": [
                             {
@@ -4583,6 +4614,7 @@ var archiviDemo = {
                         "idTrattamento": 0,
                         "idPaziente": 0,
                         "TitoloTrattamento": "Fourth Anxiety Treatment",
+                        "NoteTrattamento": "",
                         "Prescrizione": "",
                         "puntiMTC": [
                             {
@@ -4730,6 +4762,7 @@ var archiviDemo = {
                         "idTrattamento": 0,
                         "idPaziente": 0,
                         "TitoloTrattamento": "Fifth Anxiety Treatment",
+                        "NoteTrattamento": "",
                         "Prescrizione": "",
                         "puntiMTC": [],
                         "puntiAuricolari": [],
@@ -4835,6 +4868,7 @@ var archiviDemo = {
                         "idTrattamento": 0,
                         "idPaziente": 0,
                         "TitoloTrattamento": "Guide to the single session",
+                        "NoteTrattamento": "",
                         "Prescrizione": "",
                         "puntiMTC": [],
                         "puntiAuricolari": [],
@@ -4860,6 +4894,7 @@ var archiviDemo = {
                         "idTrattamento": 0,
                         "idPaziente": 0,
                         "TitoloTrattamento": "Anamnesis",
+                        "NoteTrattamento": "",
                         "Prescrizione": "Auriculotherapy:\nUndergo weekly auriculotherapy sessions for a total of 6-8 weeks. During these sessions, auricular points related to relaxation, sleep, and anxiety reduction will be stimulated. The auriculotherapist will assess the body's response and adjust the treatment accordingly.\n\nCognitive-Behavioral Therapy for Insomnia (CBT-I):\nParticipate in a cognitive-behavioral therapy program for insomnia. This program involves weekly sessions for the first 4-6 weeks, followed by biweekly follow-up sessions. CBT-I aims to improve sleep hygiene, address negative sleep-related thoughts, and establish a regular sleep-wake schedule.\n\nStress Management Strategies:\nPractice relaxation techniques such as meditation and deep breathing for at least 10-15 minutes daily, preferably before bedtime. These practices can help reduce anxiety and prepare the body for sleep.\n\nLifestyle Recommendations:\n\nAvoid consuming caffeine and alcohol in the afternoon and evening.\nLimit the use of electronic devices before bedtime.\nMaintain a comfortable sleep environment, with dim lighting and appropriate temperature.\nAvoid heavy meals just before bedtime.\nFollow-up:\nA follow-up will be scheduled after 8 weeks to assess the response to treatment and make any necessary adjustments. Please keep a sleep diary and note any improvements or changes.\n\nAdditional Notes:\nPlease follow the instructions provided by the auriculotherapy therapist and the CBT-I therapist. In case of side effects or concerns, please contact the doctor immediately.",
                         "puntiMTC": [],
                         "puntiAuricolari": [
@@ -4945,6 +4980,7 @@ var archiviDemo = {
                         "idTrattamento": 0,
                         "idPaziente": 0,
                         "TitoloTrattamento": "Session 1: Initial Assessment and Relaxation",
+                        "NoteTrattamento": "",
                         "Prescrizione": "",
                         "puntiMTC": [],
                         "puntiAuricolari": [
@@ -5011,6 +5047,7 @@ var archiviDemo = {
                         "idTrattamento": 0,
                         "idPaziente": 0,
                         "TitoloTrattamento": "Session 2: Stimulation of Sleep Points",
+                        "NoteTrattamento": "",
                         "Prescrizione": "",
                         "puntiMTC": [],
                         "puntiAuricolari": [
@@ -5077,6 +5114,7 @@ var archiviDemo = {
                         "idTrattamento": 0,
                         "idPaziente": 0,
                         "TitoloTrattamento": "Session 3: Energy Balance",
+                        "NoteTrattamento": "",
                         "Prescrizione": "",
                         "puntiMTC": [],
                         "puntiAuricolari": [
@@ -5150,6 +5188,7 @@ var archiviDemo = {
                         "idTrattamento": 0,
                         "idPaziente": 0,
                         "TitoloTrattamento": "Session 4: Consolidation of Progress",
+                        "NoteTrattamento": "",
                         "Prescrizione": "",
                         "puntiMTC": [],
                         "puntiAuricolari": [
@@ -5223,6 +5262,7 @@ var archiviDemo = {
                         "idTrattamento": 0,
                         "idPaziente": 0,
                         "TitoloTrattamento": "Session 5: Maintenance and Conclusion",
+                        "NoteTrattamento": "",
                         "Prescrizione": "",
                         "puntiMTC": [],
                         "puntiAuricolari": [
@@ -5599,6 +5639,7 @@ var archiviDemo = {
                         "idTrattamento": 0,
                         "idPaziente": 0,
                         "TitoloTrattamento": "Tratamiento Shiatsu - Rigidez de extremidades inferiores",
+                        "NoteTrattamento": "",
                         "Prescrizione": "Posibilidad de trabajo para comprender personalmente el cuerpo y sus dinámicas en términos de MTC.",
                         "puntiMTC": [
                             {
@@ -5868,6 +5909,7 @@ var archiviDemo = {
                         "idTrattamento": 0,
                         "idPaziente": 0,
                         "TitoloTrattamento": "Anamnesis",
+                        "NoteTrattamento": "",
                         "Prescrizione": "Terapia\nDispersar y regular el Qi en los meridianos del Corazón y del Maestro del corazón,\nRestaurar la comunicación entre Corazón y Riñón - Nivel Energético Shao Yin -\nCalmar el Shen",
                         "puntiMTC": [
                             {
@@ -6003,6 +6045,7 @@ var archiviDemo = {
                         "idTrattamento": 0,
                         "idPaziente": 0,
                         "TitoloTrattamento": "Anamnesis",
+                        "NoteTrattamento": "",
                         "Prescrizione": "• Se evidencia una estasis en el meridiano de la vesícula biliar porque pone en movimiento el Qi al ser el nivel shaoyang que permite el movimiento de la energía tanto yang como yin. \n• Moxa en 25VB, punto Mu de Ren que permite el nacimiento de yang. \n• Moxa en 31VB, punto del viento indicado para la estasis. \n• 34VB, punto de encuentro muscular, según Leung KwokPo trata el músculo como capaz de inducir 'movimiento'. \n• Puntos importantes que movilizan la sangre en el meridiano de la vesícula biliar 17BL, 40BL, 32 BL y 53BL \n• LV3, punto shu de tierra y yuan que mueve la sangre. \n• Yao fa para movilizar la zona lumbar.",
                         "puntiMTC": [
                             {
@@ -6137,6 +6180,7 @@ var archiviDemo = {
                         "idTrattamento": 0,
                         "idPaziente": 0,
                         "TitoloTrattamento": "Sesión 1: Evaluación inicial y relajación",
+                        "NoteTrattamento": "",
                         "Prescrizione": "",
                         "puntiMTC": [
                             {
@@ -6280,6 +6324,7 @@ var archiviDemo = {
                         "idTrattamento": 0,
                         "idPaziente": 0,
                         "TitoloTrattamento": "Sesión 2: Reducción de la inflamación y el dolor",
+                        "NoteTrattamento": "",
                         "Prescrizione": "",
                         "puntiMTC": [
                             {
@@ -6447,6 +6492,7 @@ var archiviDemo = {
                         "idTrattamento": 0,
                         "idPaziente": 0,
                         "TitoloTrattamento": "Sesión 3: Mejora de la circulación y del flujo de energía",
+                        "NoteTrattamento": "",
                         "Prescrizione": "",
                         "puntiMTC": [
                             {
@@ -6588,6 +6634,7 @@ var archiviDemo = {
                         "idTrattamento": 0,
                         "idPaziente": 0,
                         "TitoloTrattamento": "Sesión 4: Reequilibrio Muscular y Postural",
+                        "NoteTrattamento": "",
                         "Prescrizione": "",
                         "puntiMTC": [
                             {
@@ -6734,6 +6781,7 @@ var archiviDemo = {
                         "idTrattamento": 0,
                         "idPaziente": 0,
                         "TitoloTrattamento": "Sesión 5: Mantenimiento y Planificación Futura",
+                        "NoteTrattamento": "",
                         "Prescrizione": "",
                         "puntiMTC": [
                             {
@@ -6844,6 +6892,7 @@ var archiviDemo = {
                         "idTrattamento": 0,
                         "idPaziente": 0,
                         "TitoloTrattamento": "Primer Tratamiento de Ansiedad",
+                        "NoteTrattamento": "",
                         "Prescrizione": "Presión de Shiatsu en el meridiano de la Vejiga de 11BL a 28BL, tonificando los puntos 15BL y 20BL, respectivamente puntos Shu del Corazón y del Bazo.\n\n- Presión de Shiatsu en todo el meridiano del Bazo, deteniéndose en los puntos 6SP y 10SP, y luego continuando a lo largo de todo el meridiano hasta el pecho.\n\n- Presión de Shiatsu en todo el meridiano del Corazón, deteniéndose en el punto 7HT y continuando hasta el punto 9HT.\n\n- Presión de Shiatsu en el meridiano del Pericardio.",
                         "puntiMTC": [
                             {
@@ -7006,6 +7055,7 @@ var archiviDemo = {
                         "idTrattamento": 0,
                         "idPaziente": 0,
                         "TitoloTrattamento": "Segundo Tratamiento de Ansiedad",
+                        "NoteTrattamento": "",
                         "Prescrizione": "",
                         "puntiMTC": [
                             {
@@ -7152,6 +7202,7 @@ var archiviDemo = {
                         "idTrattamento": 0,
                         "idPaziente": 0,
                         "TitoloTrattamento": "Tercer Tratamiento de Ansiedad",
+                        "NoteTrattamento": "",
                         "Prescrizione": "Tratamiento:\n\nDispersar el Fuego del Hígado y la Vesícula Biliar y tonificar los órganos respectivos. Presión de Shiatsu en el meridiano de la Vejiga de 11BL a 28BL, deteniéndose en 18BL y 19BL como los puntos Shu del Hígado y la Vesícula Biliar.\n\nPresión de Shiatsu a lo largo de todo el meridiano de la Vesícula Biliar, deteniéndose en GB20 y GB21.\nPresión de Shiatsu en todo el meridiano del Hígado. También se trató el meridiano del Corazón para la regulación del Mediodía-Medianoche.",
                         "puntiMTC": [
                             {
@@ -7306,6 +7357,7 @@ var archiviDemo = {
                         "idTrattamento": 0,
                         "idPaziente": 0,
                         "TitoloTrattamento": "Cuarto Tratamiento de Ansiedad",
+                        "NoteTrattamento": "",
                         "Prescrizione": "",
                         "puntiMTC": [
                             {
@@ -7453,6 +7505,7 @@ var archiviDemo = {
                         "idTrattamento": 0,
                         "idPaziente": 0,
                         "TitoloTrattamento": "Quinto Tratamiento de Ansiedad",
+                        "NoteTrattamento": "",
                         "Prescrizione": "",
                         "puntiMTC": [],
                         "puntiAuricolari": [],
@@ -7558,6 +7611,7 @@ var archiviDemo = {
                         "idTrattamento": 0,
                         "idPaziente": 0,
                         "TitoloTrattamento": "Guía para la sesión individual",
+                        "NoteTrattamento": "",
                         "Prescrizione": "",
                         "puntiMTC": [],
                         "puntiAuricolari": [],
@@ -7583,6 +7637,7 @@ var archiviDemo = {
                         "idTrattamento": 0,
                         "idPaziente": 0,
                         "TitoloTrattamento": "Anamnesis",
+                        "NoteTrattamento": "",
                         "Prescrizione": "Auriculoterapia:\nSometerse a sesiones semanales de auriculoterapia durante un total de 6-8 semanas. Durante estas sesiones, se estimularán los puntos auriculares relacionados con la relajación, el sueño y la reducción de la ansiedad. El auriculoterapeuta evaluará la respuesta del cuerpo y ajustará el tratamiento en consecuencia.\n\nTerapia Cognitivo-Conductual para el Insomnio (CBT-I):\nParticipar en un programa de terapia cognitivo-conductual para el insomnio. Este programa incluye sesiones semanales durante las primeras 4-6 semanas, seguidas de sesiones de seguimiento quincenales. La CBT-I tiene como objetivo mejorar la higiene del sueño, abordar los pensamientos negativos relacionados con el sueño y establecer un horario regular de sueño-vigilia.\n\nEstrategias de Manejo del Estrés:\nPracticar técnicas de relajación como la meditación y la respiración profunda durante al menos 10-15 minutos al día, preferiblemente antes de acostarse. Estas prácticas pueden ayudar a reducir la ansiedad y preparar el cuerpo para dormir.\n\nRecomendaciones de Estilo de Vida:\n\nEvitar el consumo de cafeína y alcohol por la tarde y por la noche.\nLimitar el uso de dispositivos electrónicos antes de acostarse.\nMantener un entorno de sueño cómodo, con una iluminación tenue y una temperatura adecuada.\nEvitar comidas pesadas justo antes de acostarse.\nSeguimiento:\nSe programará un seguimiento después de 8 semanas para evaluar la respuesta al tratamiento y realizar los ajustes necesarios. Por favor, lleve un diario del sueño y anote cualquier mejora o cambio.\n\nNotas Adicionales:\nSiga las instrucciones proporcionadas por el terapeuta auriculoterapeuta y el terapeuta de CBT-I. En caso de efectos secundarios o preocupaciones, comuníquese con el médico de inmediato.",
                         "puntiMTC": [],
                         "puntiAuricolari": [
@@ -7668,6 +7723,7 @@ var archiviDemo = {
                         "idTrattamento": 0,
                         "idPaziente": 0,
                         "TitoloTrattamento": "Sesión 1: Evaluación inicial y relajación",
+                        "NoteTrattamento": "",
                         "Prescrizione": "",
                         "puntiMTC": [],
                         "puntiAuricolari": [
@@ -7734,6 +7790,7 @@ var archiviDemo = {
                         "idTrattamento": 0,
                         "idPaziente": 0,
                         "TitoloTrattamento": "Sesión 2: Estimulación de los Puntos de Sueño",
+                        "NoteTrattamento": "",
                         "Prescrizione": "",
                         "puntiMTC": [],
                         "puntiAuricolari": [
@@ -7800,6 +7857,7 @@ var archiviDemo = {
                         "idTrattamento": 0,
                         "idPaziente": 0,
                         "TitoloTrattamento": " Sesión 3: Equilibrio Energético",
+                        "NoteTrattamento": "",
                         "Prescrizione": "",
                         "puntiMTC": [],
                         "puntiAuricolari": [
@@ -7873,6 +7931,7 @@ var archiviDemo = {
                         "idTrattamento": 0,
                         "idPaziente": 0,
                         "TitoloTrattamento": "Sesión 4: Consolidación del progreso",
+                        "NoteTrattamento": "",
                         "Prescrizione": "",
                         "puntiMTC": [],
                         "puntiAuricolari": [
@@ -7946,6 +8005,7 @@ var archiviDemo = {
                         "idTrattamento": 0,
                         "idPaziente": 0,
                         "TitoloTrattamento": "Sesión 5: Mantenimiento y Conclusiones",
+                        "NoteTrattamento": "",
                         "Prescrizione": "",
                         "puntiMTC": [],
                         "puntiAuricolari": [
@@ -8322,6 +8382,7 @@ var archiviDemo = {
                         "idTrattamento": 0,
                         "idPaziente": 0,
                         "TitoloTrattamento": "Traitement Shiatsu - Raideur des membres inférieurs",
+                        "NoteTrattamento": "",
                         "Prescrizione": "Possibilité de travail pour une compréhension personnelle du corps et de ses dynamiques en termes de MTC.",
                         "puntiMTC": [
                             {
@@ -8591,6 +8652,7 @@ var archiviDemo = {
                         "idTrattamento": 0,
                         "idPaziente": 0,
                         "TitoloTrattamento": "Anamnèse",
+                        "NoteTrattamento": "",
                         "Prescrizione": "Thérapie\nDisperser et réguler le Qi dans les méridiens du Cœur et du Maître du cœur,\nRestaurer la communication entre le Cœur et le Rein - Niveau énergétique Shao Yin -\nCalmer le Shen",
                         "puntiMTC": [
                             {
@@ -8726,6 +8788,7 @@ var archiviDemo = {
                         "idTrattamento": 0,
                         "idPaziente": 0,
                         "TitoloTrattamento": "Anamnèse",
+                        "NoteTrattamento": "",
                         "Prescrizione": "• Une stagnation est évidente dans le méridien de la vésicule biliaire car elle mobilise le Qi étant le niveau shaoyang qui permet le mouvement à la fois de l'énergie yang et yin. \n• Moxa sur 25VB, point Mu de Ren qui permet la naissance du yang. \n• Moxa sur 31VB, point du vent indiqué pour la stagnation. \n• 34VB, point de rencontre musculaire, selon Leung KwokPo traite le muscle capable d'induire le 'mouvement'. \n• Points importants qui mobilisent le sang sur le méridien de la vésicule biliaire 17BL, 40BL, 32 BL et 53BL \n• LV3, point shu de terre et yuan qui déplace le sang. \n• Yao fa pour mobiliser la région lombaire.",
                         "puntiMTC": [
                             {
@@ -8860,6 +8923,7 @@ var archiviDemo = {
                         "idTrattamento": 0,
                         "idPaziente": 0,
                         "TitoloTrattamento": "Séance 1 : Évaluation initiale et relaxation",
+                        "NoteTrattamento": "",
                         "Prescrizione": "",
                         "puntiMTC": [
                             {
@@ -9003,6 +9067,7 @@ var archiviDemo = {
                         "idTrattamento": 0,
                         "idPaziente": 0,
                         "TitoloTrattamento": "Séance 2 : Réduction de l'inflammation et de la douleur",
+                        "NoteTrattamento": "",
                         "Prescrizione": "",
                         "puntiMTC": [
                             {
@@ -9170,6 +9235,7 @@ var archiviDemo = {
                         "idTrattamento": 0,
                         "idPaziente": 0,
                         "TitoloTrattamento": "Séance 3 : Amélioration de la circulation et du flux énergétique",
+                        "NoteTrattamento": "",
                         "Prescrizione": "",
                         "puntiMTC": [
                             {
@@ -9311,6 +9377,7 @@ var archiviDemo = {
                         "idTrattamento": 0,
                         "idPaziente": 0,
                         "TitoloTrattamento": "Séance 4 : Rééquilibrage musculaire et postural",
+                        "NoteTrattamento": "",
                         "Prescrizione": "",
                         "puntiMTC": [
                             {
@@ -9457,6 +9524,7 @@ var archiviDemo = {
                         "idTrattamento": 0,
                         "idPaziente": 0,
                         "TitoloTrattamento": "Séance 5 : Maintenance et planification future",
+                        "NoteTrattamento": "",
                         "Prescrizione": "",
                         "puntiMTC": [
                             {
@@ -9567,6 +9635,7 @@ var archiviDemo = {
                         "idTrattamento": 0,
                         "idPaziente": 0,
                         "TitoloTrattamento": "Premier Traitement de l'Anxiété",
+                        "NoteTrattamento": "",
                         "Prescrizione": "Pression Shiatsu sur le méridien de la Vessie de 11BL à 28BL, tonifiant les points 15BL et 20BL, respectivement points Shu du Cœur et de la Rate.\n\n- Pression Shiatsu sur tout le méridien de la Rate, en faisant une pause aux points 6SP et 10SP, puis en continuant le long de tout le méridien jusqu'à la poitrine.\n\n- Pression Shiatsu sur tout le méridien du Cœur, en faisant une pause au point 7HT et en continuant jusqu'au point 9HT.\n\n- Pression Shiatsu sur le méridien du Péricarde.",
                         "puntiMTC": [
                             {
@@ -9729,6 +9798,7 @@ var archiviDemo = {
                         "idTrattamento": 0,
                         "idPaziente": 0,
                         "TitoloTrattamento": "Deuxième Traitement de l'Anxiété",
+                        "NoteTrattamento": "",
                         "Prescrizione": "",
                         "puntiMTC": [
                             {
@@ -9875,6 +9945,7 @@ var archiviDemo = {
                         "idTrattamento": 0,
                         "idPaziente": 0,
                         "TitoloTrattamento": "Troisième Traitement de l'Anxiété",
+                        "NoteTrattamento": "",
                         "Prescrizione": "Traitement:\n\nDisperser le Feu du Foie et de la Vésicule Biliaire et tonifier les organes respectifs. Pression Shiatsu sur le méridien de la Vessie de 11BL à 28BL, en s'arrêtant à 18BL et 19BL comme les points Shu du Foie et de la Vésicule Biliaire.\n\nPression Shiatsu le long de tout le méridien de la Vésicule Biliaire, en s'arrêtant à GB20 et GB21.\nPression Shiatsu sur tout le méridien du Foie. Le méridien du Cœur a également été traité pour la régulation du Midi-Minuit.",
                         "puntiMTC": [
                             {
@@ -10029,6 +10100,7 @@ var archiviDemo = {
                         "idTrattamento": 0,
                         "idPaziente": 0,
                         "TitoloTrattamento": "Quatrième Traitement de l'Anxiété",
+                        "NoteTrattamento": "",
                         "Prescrizione": "",
                         "puntiMTC": [
                             {
@@ -10176,6 +10248,7 @@ var archiviDemo = {
                         "idTrattamento": 0,
                         "idPaziente": 0,
                         "TitoloTrattamento": "Cinquième Traitement de l'Anxiété",
+                        "NoteTrattamento": "",
                         "Prescrizione": "",
                         "puntiMTC": [],
                         "puntiAuricolari": [],
@@ -10281,6 +10354,7 @@ var archiviDemo = {
                         "idTrattamento": 0,
                         "idPaziente": 0,
                         "TitoloTrattamento": "Guide de la session individuelle",
+                        "NoteTrattamento": "",
                         "Prescrizione": "",
                         "puntiMTC": [],
                         "puntiAuricolari": [],
@@ -10306,6 +10380,7 @@ var archiviDemo = {
                         "idTrattamento": 0,
                         "idPaziente": 0,
                         "TitoloTrattamento": "Anamnèse",
+                        "NoteTrattamento": "",
                         "Prescrizione": "Auriculothérapie :\nSuivre des séances hebdomadaires d'auriculothérapie pendant un total de 6 à 8 semaines. Au cours de ces séances, les points auriculaires liés à la relaxation, au sommeil et à la réduction de l'anxiété seront stimulés. L'auriculothérapeute évaluera la réponse du corps et ajustera le traitement en conséquence.\n\nThérapie Cognitivo-Comportementale pour l'Insomnie (TCC-I) :\nParticiper à un programme de thérapie cognitivo-comportementale pour l'insomnie. Ce programme comprend des séances hebdomadaires pendant les 4 à 6 premières semaines, suivies de séances de suivi tous les quinze jours. La TCC-I vise à améliorer l'hygiène du sommeil, à aborder les pensées négatives liées au sommeil et à établir un horaire régulier de sommeil-réveil.\n\nStratégies de Gestion du Stress :\nPratiquer des techniques de relaxation telles que la méditation et la respiration profonde pendant au moins 10 à 15 minutes par jour, de préférence avant de se coucher. Ces pratiques peuvent aider à réduire l'anxiété et à préparer le corps au sommeil.\n\nRecommandations de Style de Vie :\n\nÉviter de consommer de la caféine et de l'alcool l'après-midi et le soir.\nLimitez l'utilisation d'appareils électroniques avant de vous coucher.\nMaintenir un environnement de sommeil confortable, avec un éclairage tamisé et une température adéquate.\nÉviter les repas copieux juste avant de se coucher.\nSuivi :\nUn suivi sera programmé après 8 semaines pour évaluer la réponse au traitement et apporter les ajustements nécessaires. Veuillez tenir un journal de sommeil et noter toute amélioration ou changement.\n\nNotes Additionnelles :\nVeuillez suivre les instructions fournies par l'auriculothérapeute et le thérapeute TCC-I. En cas d'effets secondaires ou de préoccupations, veuillez contacter immédiatement le médecin.",
                         "puntiMTC": [],
                         "puntiAuricolari": [
@@ -10391,6 +10466,7 @@ var archiviDemo = {
                         "idTrattamento": 0,
                         "idPaziente": 0,
                         "TitoloTrattamento": "Session 1: Évaluation initiale et relaxation",
+                        "NoteTrattamento": "",
                         "Prescrizione": "",
                         "puntiMTC": [],
                         "puntiAuricolari": [
@@ -10457,6 +10533,7 @@ var archiviDemo = {
                         "idTrattamento": 0,
                         "idPaziente": 0,
                         "TitoloTrattamento": "Séance 2 : Stimulation des Points de Sommeil",
+                        "NoteTrattamento": "",
                         "Prescrizione": "",
                         "puntiMTC": [],
                         "puntiAuricolari": [
@@ -10523,6 +10600,7 @@ var archiviDemo = {
                         "idTrattamento": 0,
                         "idPaziente": 0,
                         "TitoloTrattamento": " Séance 3 : Équilibre Énergétique",
+                        "NoteTrattamento": "",
                         "Prescrizione": "",
                         "puntiMTC": [],
                         "puntiAuricolari": [
@@ -10596,6 +10674,7 @@ var archiviDemo = {
                         "idTrattamento": 0,
                         "idPaziente": 0,
                         "TitoloTrattamento": "Séance 4: Consolidation des progrès",
+                        "NoteTrattamento": "",
                         "Prescrizione": "",
                         "puntiMTC": [],
                         "puntiAuricolari": [
@@ -10669,6 +10748,7 @@ var archiviDemo = {
                         "idTrattamento": 0,
                         "idPaziente": 0,
                         "TitoloTrattamento": "Séance 5 : Maintenance et conclusions",
+                        "NoteTrattamento": "",
                         "Prescrizione": "",
                         "puntiMTC": [],
                         "puntiAuricolari": [
@@ -11045,6 +11125,7 @@ var archiviDemo = {
                         "idTrattamento": 0,
                         "idPaziente": 0,
                         "TitoloTrattamento": "Tratamento Shiatsu - Rigidez dos membros inferiores",
+                        "NoteTrattamento": "",
                         "Prescrizione": "Possibilidade de trabalho para uma compreensão pessoal do corpo e de suas dinâmicas em termos de MTC.",
                         "puntiMTC": [
                             {
@@ -11314,6 +11395,7 @@ var archiviDemo = {
                         "idTrattamento": 0,
                         "idPaziente": 0,
                         "TitoloTrattamento": "Anamnese",
+                        "NoteTrattamento": "",
                         "Prescrizione": "Terapia\nDispersar e regular o Qi nos meridianos do Coração e do Mestre do coração,\nRestaurar a comunicação entre Coração e Rim - Nível Energético Shao Yin -\nAcalmar o Shen",
                         "puntiMTC": [
                             {
@@ -11449,6 +11531,7 @@ var archiviDemo = {
                         "idTrattamento": 0,
                         "idPaziente": 0,
                         "TitoloTrattamento": "Anamnese",
+                        "NoteTrattamento": "",
                         "Prescrizione": "• Evidencia-se uma estase no meridiano da vesícula biliar porque movimenta o Qi sendo o nível shaoyang que permite o movimento da energia tanto yang como yin. \n• Moxa em 25VB, ponto Mu do Rim que permite o nascimento do yang. \n• Moxa em 31VB, ponto do vento indicado para a estase. \n• 34VB, ponto de encontro muscular, segundo Leung KwokPo trata o músculo como capaz de induzir o 'movimento'. \n• Pontos importantes que mobilizam o sangue no meridiano da vesícula biliar 17BL, 40BL, 32 BL e 53BL \n• LV3, ponto shu de terra e yuan que movimenta o sangue. \n• Yao fa para mobilizar a região lombar.",
                         "puntiMTC": [
                             {
@@ -11583,6 +11666,7 @@ var archiviDemo = {
                         "idTrattamento": 0,
                         "idPaziente": 0,
                         "TitoloTrattamento": "Sessão 1: Avaliação inicial e relaxamento",
+                        "NoteTrattamento": "",
                         "Prescrizione": "",
                         "puntiMTC": [
                             {
@@ -11726,6 +11810,7 @@ var archiviDemo = {
                         "idTrattamento": 0,
                         "idPaziente": 0,
                         "TitoloTrattamento": "Sessão 2: Redução da Inflamação e da Dor",
+                        "NoteTrattamento": "",
                         "Prescrizione": "",
                         "puntiMTC": [
                             {
@@ -11893,6 +11978,7 @@ var archiviDemo = {
                         "idTrattamento": 0,
                         "idPaziente": 0,
                         "TitoloTrattamento": "Duração: 50 minutos\n\nNa terceira sessão, o acupunturista continua a trabalhar na redução da dor e inflamação, mas também foca no aumento da circulação sanguínea e do fluxo energético na área afetada. As agulhas são colocadas para estimular o fluxo de energia ao longo dos meridianos conectados à região lombar e ciática.",
+                        "NoteTrattamento": "",
                         "Prescrizione": "",
                         "puntiMTC": [
                             {
@@ -12033,6 +12119,7 @@ var archiviDemo = {
                         "idTrattamento": 0,
                         "idPaziente": 0,
                         "TitoloTrattamento": "Sessão 4: Reequilíbrio Muscular e Postural",
+                        "NoteTrattamento": "",
                         "Prescrizione": "",
                         "puntiMTC": [
                             {
@@ -12179,6 +12266,7 @@ var archiviDemo = {
                         "idTrattamento": 0,
                         "idPaziente": 0,
                         "TitoloTrattamento": "Sessão 5: Manutenção e Planejamento Futuro",
+                        "NoteTrattamento": "",
                         "Prescrizione": "",
                         "puntiMTC": [
                             {
@@ -12289,6 +12377,7 @@ var archiviDemo = {
                         "idTrattamento": 0,
                         "idPaziente": 0,
                         "TitoloTrattamento": "Primeiro Tratamento de Ansiedade",
+                        "NoteTrattamento": "",
                         "Prescrizione": "Pressão de Shiatsu no meridiano da Bexiga de 11BL a 28BL, tonificando os pontos 15BL e 20BL, respectivamente pontos Shu do Coração e do Baço.\n\n- Pressão de Shiatsu em todo o meridiano do Baço, fazendo uma pausa nos pontos 6SP e 10SP e depois continuando ao longo de todo o meridiano até o peito.\n\n- Pressão de Shiatsu em todo o meridiano do Coração, fazendo uma pausa no ponto 7HT e continuando até o ponto 9HT.\n\n- Pressão de Shiatsu no meridiano do Pericárdio.",
                         "puntiMTC": [
                             {
@@ -12451,6 +12540,7 @@ var archiviDemo = {
                         "idTrattamento": 0,
                         "idPaziente": 0,
                         "TitoloTrattamento": "Segundo Tratamento de Ansiedade",
+                        "NoteTrattamento": "",
                         "Prescrizione": "",
                         "puntiMTC": [
                             {
@@ -12597,6 +12687,7 @@ var archiviDemo = {
                         "idTrattamento": 0,
                         "idPaziente": 0,
                         "TitoloTrattamento": "Terceiro Tratamento de Ansiedade",
+                        "NoteTrattamento": "",
                         "Prescrizione": "Tratamento:\n\nDispersar o Fogo do Fígado e da Vesícula Biliar e tonificar os respectivos órgãos. Pressão de Shiatsu no meridiano da Bexiga de 11BL a 28BL, pausando em 18BL e 19BL como os pontos Shu do Fígado e da Vesícula Biliar.\n\nPressão de Shiatsu ao longo de todo o meridiano da Vesícula Biliar, pausando em GB20 e GB21.\nPressão de Shiatsu em todo o meridiano do Fígado. O meridiano do Coração também foi tratado para a regulação do Meio-Dia-Meia-Noite.",
                         "puntiMTC": [
                             {
@@ -12751,6 +12842,7 @@ var archiviDemo = {
                         "idTrattamento": 0,
                         "idPaziente": 0,
                         "TitoloTrattamento": "Quarto Tratamento de Ansiedade",
+                        "NoteTrattamento": "",
                         "Prescrizione": "",
                         "puntiMTC": [
                             {
@@ -12898,6 +12990,7 @@ var archiviDemo = {
                         "idTrattamento": 0,
                         "idPaziente": 0,
                         "TitoloTrattamento": "Quinto Tratamento de Ansiedade",
+                        "NoteTrattamento": "",
                         "Prescrizione": "",
                         "puntiMTC": [],
                         "puntiAuricolari": [],
@@ -13003,6 +13096,7 @@ var archiviDemo = {
                         "idTrattamento": 0,
                         "idPaziente": 0,
                         "TitoloTrattamento": "Guia para a sessão única",
+                        "NoteTrattamento": "",
                         "Prescrizione": "",
                         "puntiMTC": [],
                         "puntiAuricolari": [],
@@ -13028,6 +13122,7 @@ var archiviDemo = {
                         "idTrattamento": 0,
                         "idPaziente": 0,
                         "TitoloTrattamento": "Anamnese",
+                        "NoteTrattamento": "",
                         "Prescrizione": "Auriculoterapia:\nPassar por sessões semanais de auriculoterapia por um total de 6-8 semanas. Durante essas sessões, os pontos auriculares relacionados ao relaxamento, sono e redução da ansiedade serão estimulados. O auriculoterapeuta avaliará a resposta do corpo e ajustará o tratamento conforme necessário.\n\nTerapia Cognitivo-Comportamental para a Insônia (TCC-I):\nParticipar de um programa de terapia cognitivo-comportamental para a insônia. Este programa inclui sessões semanais durante as primeiras 4-6 semanas, seguidas de sessões de acompanhamento a cada duas semanas. A TCC-I tem como objetivo melhorar a higiene do sono, abordar os pensamentos negativos relacionados ao sono e estabelecer uma rotina regular de sono-vigília.\n\nEstratégias de Gerenciamento do Estresse:\nPraticar técnicas de relaxamento, como meditação e respiração profunda, por pelo menos 10-15 minutos por dia, preferencialmente antes de dormir. Essas práticas podem ajudar a reduzir a ansiedade e preparar o corpo para o sono.\n\nRecomendações de Estilo de Vida:\n\nEvitar o consumo de cafeína e álcool à tarde e à noite.\nLimitar o uso de dispositivos eletrônicos antes de dormir.\nManter um ambiente de sono confortável, com iluminação suave e temperatura adequada.\nEvitar refeições pesadas logo antes de dormir.\nAcompanhamento:\nSerá agendado um acompanhamento após 8 semanas para avaliar a resposta ao tratamento e fazer os ajustes necessários. Por favor, mantenha um diário de sono e anote quaisquer melhorias ou mudanças.\n\nNotas Adicionais:\nSiga as instruções fornecidas pelo auriculoterapeuta e pelo terapeuta de TCC-I. Em caso de efeitos colaterais ou preocupações, entre em contato imediatamente com o médico.\"",
                         "puntiMTC": [],
                         "puntiAuricolari": [
@@ -13113,6 +13208,7 @@ var archiviDemo = {
                         "idTrattamento": 0,
                         "idPaziente": 0,
                         "TitoloTrattamento": "Sessão 1: Avaliação inicial e relaxamento",
+                        "NoteTrattamento": "",
                         "Prescrizione": "",
                         "puntiMTC": [],
                         "puntiAuricolari": [
@@ -13179,6 +13275,7 @@ var archiviDemo = {
                         "idTrattamento": 0,
                         "idPaziente": 0,
                         "TitoloTrattamento": "Sessão 2: Estimulação dos Pontos de Sono",
+                        "NoteTrattamento": "",
                         "Prescrizione": "",
                         "puntiMTC": [],
                         "puntiAuricolari": [
@@ -13245,6 +13342,7 @@ var archiviDemo = {
                         "idTrattamento": 0,
                         "idPaziente": 0,
                         "TitoloTrattamento": "Sessão 3: Equilíbrio Energético",
+                        "NoteTrattamento": "",
                         "Prescrizione": "",
                         "puntiMTC": [],
                         "puntiAuricolari": [
@@ -13318,6 +13416,7 @@ var archiviDemo = {
                         "idTrattamento": 0,
                         "idPaziente": 0,
                         "TitoloTrattamento": "Sessão 4: Consolidação do progresso",
+                        "NoteTrattamento": "",
                         "Prescrizione": "",
                         "puntiMTC": [],
                         "puntiAuricolari": [
@@ -13391,6 +13490,7 @@ var archiviDemo = {
                         "idTrattamento": 0,
                         "idPaziente": 0,
                         "TitoloTrattamento": "Sessão 5: Manutenção e conclusões",
+                        "NoteTrattamento": "",
                         "Prescrizione": "",
                         "puntiMTC": [],
                         "puntiAuricolari": [
@@ -13767,6 +13867,7 @@ var archiviDemo = {
                         "idTrattamento": 0,
                         "idPaziente": 0,
                         "TitoloTrattamento": "Shiatsu-Behandlung - Steifheit der unteren Gliedmaßen",
+                        "NoteTrattamento": "",
                         "Prescrizione": "Möglichkeit der Arbeit für ein persönliches Verständnis des Körpers und seiner Dynamik im Sinne der TCM.",
                         "puntiMTC": [
                             {
@@ -14036,6 +14137,7 @@ var archiviDemo = {
                         "idTrattamento": 0,
                         "idPaziente": 0,
                         "TitoloTrattamento": "Anamnese",
+                        "NoteTrattamento": "",
                         "Prescrizione": "Therapie\nDas Qi in den Meridianen des Herzens und des Meisters des Herzens verteilen und regulieren,\nDie Kommunikation zwischen Herz und Niere wiederherstellen - Shao Yin Energetisches Niveau -\nDen Shen beruhigen",
                         "puntiMTC": [
                             {
@@ -14171,6 +14273,7 @@ var archiviDemo = {
                         "idTrattamento": 0,
                         "idPaziente": 0,
                         "TitoloTrattamento": "Anamnese",
+                        "NoteTrattamento": "",
                         "Prescrizione": "• Es zeigt sich eine Stagnation im Gallenblasenmeridian, weil es das Qi in Bewegung bringt und der Shaoyang-Level ist, der die Bewegung von sowohl Yang als auch Yin ermöglicht. \n• Moxa auf 25VB, Ren Mu Punkt, der die Geburt des Yang ermöglicht. \n• Moxa auf 31VB, Windpunkt, der für die Stagnation angezeigt ist. \n• 34VB, Muskeltreffpunkt, laut Leung KwokPo behandelt den Muskel, der in der Lage ist, 'Bewegung' zu induzieren. \n• Wichtige Punkte, die das Blut im Gallenblasenmeridian mobilisieren 17BL, 40BL, 32 BL und 53BL \n• LV3, Erde Shu Punkt und Yuan, der das Blut bewegt. \n• Yao fa zur Mobilisierung der Lendenwirbelsäule.",
                         "puntiMTC": [
                             {
@@ -14305,6 +14408,7 @@ var archiviDemo = {
                         "idTrattamento": 0,
                         "idPaziente": 0,
                         "TitoloTrattamento": "Sitzung 1: Erstbewertung und Entspannung",
+                        "NoteTrattamento": "",
                         "Prescrizione": "",
                         "puntiMTC": [
                             {
@@ -14448,6 +14552,7 @@ var archiviDemo = {
                         "idTrattamento": 0,
                         "idPaziente": 0,
                         "TitoloTrattamento": "Sitzung 2: Reduzierung von Entzündungen und Schmerzen",
+                        "NoteTrattamento": "",
                         "Prescrizione": "",
                         "puntiMTC": [
                             {
@@ -14615,6 +14720,7 @@ var archiviDemo = {
                         "idTrattamento": 0,
                         "idPaziente": 0,
                         "TitoloTrattamento": "Sitzung 3: Verbesserung der Durchblutung und des Energieflusses",
+                        "NoteTrattamento": "",
                         "Prescrizione": "",
                         "puntiMTC": [
                             {
@@ -14756,6 +14862,7 @@ var archiviDemo = {
                         "idTrattamento": 0,
                         "idPaziente": 0,
                         "TitoloTrattamento": "Dauer: 45 Minuten\n\nIn der vierten Sitzung bewertet der Akupunkteur die Haltung und Muskeln des Patienten und versucht, etwaige Ungleichgewichte zu identifizieren, die zur Lumbosciatalgia beitragen können. Nadeln werden an Stellen eingeführt, die dazu beitragen, die Muskeln auszugleichen und die Haltung zu verbessern. Der Patient kann auch Ratschläge zu Dehnungs- oder Kräftigungsübungen für zu Hause erhalten.",
+                        "NoteTrattamento": "",
                         "Prescrizione": "",
                         "puntiMTC": [
                             {
@@ -14901,6 +15008,7 @@ var archiviDemo = {
                         "idTrattamento": 0,
                         "idPaziente": 0,
                         "TitoloTrattamento": "Sitzung 5: Wartung und zukünftige Planung",
+                        "NoteTrattamento": "",
                         "Prescrizione": "",
                         "puntiMTC": [
                             {
@@ -15011,6 +15119,7 @@ var archiviDemo = {
                         "idTrattamento": 0,
                         "idPaziente": 0,
                         "TitoloTrattamento": "Erstbehandlung von Angstzuständen",
+                        "NoteTrattamento": "",
                         "Prescrizione": "Shiatsu-Druck auf dem Blasenmeridian von 11BL bis 28BL, tonisierende Punkte 15BL und 20BL, jeweils Herz- und Milz-Shu-Punkte.\n\n- Shiatsu-Druck auf dem gesamten Milzmeridian, mit Pausen an den Punkten 6SP und 10SP, dann entlang des gesamten Meridians bis zur Brust fortsetzen.\n\n- Shiatsu-Druck auf dem gesamten Herzmeridian, mit Pausen am Punkt 7HT und Fortsetzung bis zum Punkt 9HT.\n\n- Shiatsu-Druck auf dem Perikardmeridian.",
                         "puntiMTC": [
                             {
@@ -15173,6 +15282,7 @@ var archiviDemo = {
                         "idTrattamento": 0,
                         "idPaziente": 0,
                         "TitoloTrattamento": "Zweite Behandlung von Angstzuständen",
+                        "NoteTrattamento": "",
                         "Prescrizione": "",
                         "puntiMTC": [
                             {
@@ -15319,6 +15429,7 @@ var archiviDemo = {
                         "idTrattamento": 0,
                         "idPaziente": 0,
                         "TitoloTrattamento": "Dritte Angstbehandlung",
+                        "NoteTrattamento": "",
                         "Prescrizione": "Behandlung:\n\nFeuerleitbahnen der Leber und Gallenblase zerstreuen und die entsprechenden Organe stärken. Shiatsu-Druck auf dem Blasenmeridian von 11BL bis 28BL, Halt an 18BL und 19BL als die Shu-Punkte der Leber und Gallenblase.\n\nShiatsu-Druck entlang des gesamten Gallenblasenmeridians, Halt an GB20 und GB21.\nShiatsu-Druck auf dem gesamten Lebermeridian. Auch der Herzmeridian wurde zur Mittags-Mitternacht-Regulierung behandelt.",
                         "puntiMTC": [
                             {
@@ -15473,6 +15584,7 @@ var archiviDemo = {
                         "idTrattamento": 0,
                         "idPaziente": 0,
                         "TitoloTrattamento": "Vierte Angstbehandlung",
+                        "NoteTrattamento": "",
                         "Prescrizione": "",
                         "puntiMTC": [
                             {
@@ -15620,6 +15732,7 @@ var archiviDemo = {
                         "idTrattamento": 0,
                         "idPaziente": 0,
                         "TitoloTrattamento": "Fünfte Angstbehandlung",
+                        "NoteTrattamento": "",
                         "Prescrizione": "",
                         "puntiMTC": [],
                         "puntiAuricolari": [],
@@ -15725,6 +15838,7 @@ var archiviDemo = {
                         "idTrattamento": 0,
                         "idPaziente": 0,
                         "TitoloTrattamento": "Leitfaden zur Einzelsitzung",
+                        "NoteTrattamento": "",
                         "Prescrizione": "",
                         "puntiMTC": [],
                         "puntiAuricolari": [],
@@ -15750,6 +15864,7 @@ var archiviDemo = {
                         "idTrattamento": 0,
                         "idPaziente": 0,
                         "TitoloTrattamento": "Anamnese",
+                        "NoteTrattamento": "",
                         "Prescrizione": "Aurikulotherapie:\nWöchentliche Sitzungen zur Aurikulotherapie über einen Zeitraum von 6-8 Wochen durchführen. Während dieser Sitzungen werden die am Entspannung, Schlaf und der Reduzierung von Angstzuständen beteiligten Ohrpunkte stimuliert. Der Aurikulotherapeut wird die Reaktion des Körpers bewerten und die Behandlung entsprechend anpassen.\n\nKognitive Verhaltenstherapie für Insomnie (CBT-I):\nTeilnahme an einem Programm zur kognitiven Verhaltenstherapie für Insomnie. Dieses Programm umfasst wöchentliche Sitzungen während der ersten 4-6 Wochen, gefolgt von alle zwei Wochen stattfindenden Folgeterminen. CBT-I zielt darauf ab, die Schlafhygiene zu verbessern, negative Gedanken im Zusammenhang mit dem Schlaf anzugehen und einen regelmäßigen Schlaf-Wach-Rhythmus einzurichten.\n\nStressbewältigungsstrategien:\nTäglich mindestens 10-15 Minuten Entspannungstechniken wie Meditation und tiefe Atmung praktizieren, vorzugsweise vor dem Zubettgehen. Diese Praktiken können dazu beitragen, Angstzustände zu reduzieren und den Körper auf den Schlaf vorzubereiten.\n\nEmpfehlungen für den Lebensstil:\n\nDen Konsum von Koffein und Alkohol am Nachmittag und Abend vermeiden.\nDie Verwendung von elektronischen Geräten vor dem Schlafengehen einschränken.\nEine komfortable Schlafumgebung mit gedämpftem Licht und angemessener Temperatur aufrechterhalten.\nDas Essen von schweren Mahlzeiten kurz vor dem Schlafengehen vermeiden.\nFollow-up:\nEin Follow-up-Termin wird nach 8 Wochen vereinbart, um die Reaktion auf die Behandlung zu bewerten und gegebenenfalls Anpassungen vorzunehmen. Bitte führen Sie ein Schlaftagebuch und notieren Sie etwaige Verbesserungen oder Veränderungen.\n\nZusätzliche Hinweise:\nBitte befolgen Sie die Anweisungen des Aurikulotherapie-Therapeuten und des CBT-I-Therapeuten. Bei auftretenden Nebenwirkungen oder Bedenken wenden Sie sich bitte sofort an Ihren Arzt.",
                         "puntiMTC": [],
                         "puntiAuricolari": [
@@ -15835,6 +15950,7 @@ var archiviDemo = {
                         "idTrattamento": 0,
                         "idPaziente": 0,
                         "TitoloTrattamento": "Sitzung 1: Erstbewertung und Entspannung",
+                        "NoteTrattamento": "",
                         "Prescrizione": "",
                         "puntiMTC": [],
                         "puntiAuricolari": [
@@ -15901,6 +16017,7 @@ var archiviDemo = {
                         "idTrattamento": 0,
                         "idPaziente": 0,
                         "TitoloTrattamento": "Sitzung 2: Stimulation der Schlafpunkte",
+                        "NoteTrattamento": "",
                         "Prescrizione": "",
                         "puntiMTC": [],
                         "puntiAuricolari": [
@@ -15967,6 +16084,7 @@ var archiviDemo = {
                         "idTrattamento": 0,
                         "idPaziente": 0,
                         "TitoloTrattamento": "Sitzung 3: Energieausgleich",
+                        "NoteTrattamento": "",
                         "Prescrizione": "",
                         "puntiMTC": [],
                         "puntiAuricolari": [
@@ -16040,6 +16158,7 @@ var archiviDemo = {
                         "idTrattamento": 0,
                         "idPaziente": 0,
                         "TitoloTrattamento": "Sitzung 4: Konsolidierung des Fortschritts",
+                        "NoteTrattamento": "",
                         "Prescrizione": "",
                         "puntiMTC": [],
                         "puntiAuricolari": [
@@ -16113,6 +16232,7 @@ var archiviDemo = {
                         "idTrattamento": 0,
                         "idPaziente": 0,
                         "TitoloTrattamento": "Sitzung 5: Wartung und Abschluss",
+                        "NoteTrattamento": "",
                         "Prescrizione": "",
                         "puntiMTC": [],
                         "puntiAuricolari": [
