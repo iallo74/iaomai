@@ -2289,6 +2289,27 @@ body:not(.touch) #puntiTrigger .dettPunto:hover{
     opacity: 0.6;
 }
 
+.labelTrattamento{
+	font-size: var(--font-14-94);
+    font-weight: bold;
+    padding-top: 30px;
+    color: rgba(0, 0, 0, 0.6);
+    font-style: italic;
+    width: calc(100% + 60px);
+    margin-left: -30px;
+    margin-right: -30px;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-bottom: 7px;
+    margin-bottom: 0px !important;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+.labelTrattamento:not(.noBorder){
+    border-top: 1px solid rgba(255, 255, 255, 0.4);
+}
+.labelTrattamento.noBorder{
+    padding-top: 15px !important;
+}
 .nasTab{
 	display:none;
 }
@@ -2721,6 +2742,9 @@ body:not(.touch) .contGallery > div:not(.noResults) > div:hover img.spunta_pic{
 	margin-top:5px;
 	line-height: 18px;
 	text-align:right;
+}
+#contDiagnosiMTC{
+	margin-bottom: 20px;
 }
 .contDiagnosiAI:not(.fullAI) .diagnosiAI,
 .contDiagnosiAI.fullAI .spiegazioneAI{

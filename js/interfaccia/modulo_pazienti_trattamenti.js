@@ -316,14 +316,19 @@ var PAZIENTI_TRATTAMENTI = { // extend PAZIENTI
 			let nuovoCiclo = Q_idTratt==-1 && idCiclo==-1 ? true : false,
 				idTrattamento=0,
 				TitoloTrattamento='',
-				TestoTrattamento='',
+				NoteTrattamento='',
+				Anamnesi='',
+				DiagnosiOccidentale='',
+				DiagnosiMTC,
 				Prescrizione='',
+				ConsiderazioniOperatore='',
+				ConsiderazioniPaziente='',
 				puntiMTC=[],
 				puntiAuricolari=[],
 				puntiPlantari=[],
 				puntiNamikoshi=[],
 				puntiTrigger=[],
-				diagnosiMTC='',
+				diagnosiAI='',
 				TimeTrattamento=0,
 				CostoTrattamento=0,
 				ordine=0,
@@ -349,8 +354,13 @@ var PAZIENTI_TRATTAMENTI = { // extend PAZIENTI
 				localPouchDB.setItem(MD5("DB"+LOGIN._frv()+".pazienti"), IMPORTER.COMPR(DB.pazienti));
 				idTrattamento=TR.idTrattamento*1;
 				TitoloTrattamento=TR.TitoloTrattamento;
-				TestoTrattamento=TR.TestoTrattamento;
+				NoteTrattamento=TR.NoteTrattamento;
+				Anamnesi=TR.Anamnesi;
+				DiagnosiOccidentale=TR.DiagnosiOccidentale;
+				DiagnosiMTC=TR.DiagnosiMTC;
 				Prescrizione=__(TR.Prescrizione);
+				ConsiderazioniOperatore=__(TR.ConsiderazioniOperatore);
+				ConsiderazioniPaziente=__(TR.ConsiderazioniPaziente);
 				ordine=__(TR.ordine,0);
 				meridiani=toJson(__(TR.meridiani,[]));
 				puntiMTC=__(TR.puntiMTC,[]);
@@ -358,7 +368,7 @@ var PAZIENTI_TRATTAMENTI = { // extend PAZIENTI
 				puntiPlantari=toJson(__(TR.puntiPlantari,[]));
 				puntiNamikoshi=toJson(__(TR.puntiNamikoshi,[]));
 				puntiTrigger=toJson(__(TR.puntiTrigger,[]));
-				diagnosiMTC=__(TR.diagnosiMTC);
+				diagnosiAI=__(TR.diagnosiAI);
 				sintomi=toJson(__(TR.sintomi,[]));
 				gallery=toJson(__(TR.gallery,[]));
 				
@@ -375,9 +385,8 @@ var PAZIENTI_TRATTAMENTI = { // extend PAZIENTI
 					TipoTrattamento = 'A';
 					LabelCiclo = TitoloTrattamento;
 					TitoloTrattamento = '';
-					TestoTrattamento=JSON.stringify({	"AnamnesiMotivo": TestoTrattamento,
-														"AnamnesiDiagnosiOccidentale": "",
-														"AnamnesiDiagnosiMTC": "" });
+					DiagnosiOccidentale='';
+					DiagnosiMTC='';
 				}
 			}else if(agenda.orarioDef){
 				TimeTrattamento = agenda.orarioDef.data/1000000;
@@ -490,13 +499,6 @@ var PAZIENTI_TRATTAMENTI = { // extend PAZIENTI
 				HTML += H.r({	t: "h", name: "TipoTrattamento",	value: "B" 				}) +
 						H.r({	t: "h", name: "LabelCiclo",			value: LabelCiclo 		});
 			}else{
-				if(!TestoTrattamento)TestoTrattamento={	"AnamnesiMotivo":"",
-										"AnamnesiDiagnosiOccidentale":"",
-										"AnamnesiDiagnosiMTC":"" };
-				else TestoTrattamento=JSON.parse(TestoTrattamento);
-				AnamnesiMotivo=TestoTrattamento.AnamnesiMotivo;
-				AnamnesiDiagnosiOccidentale=TestoTrattamento.AnamnesiDiagnosiOccidentale;
-				AnamnesiDiagnosiMTC=TestoTrattamento.AnamnesiDiagnosiMTC;
 				
 				let LC='';
 				if(Q_idTratt==-1 && !LabelCiclo){
@@ -515,16 +517,16 @@ var PAZIENTI_TRATTAMENTI = { // extend PAZIENTI
 								value: TXT("Anamnesi"+(globals.set.cartella=='meridiani_shiatsu'?'Shiatsu':'')) });
 				if(nuovoCiclo){
 					HTML +=  	'<div style="text-align:right;"><div id="anamnesi_btn"' +
-								'		   onClick="PAZIENTI.vis_anamnesi();">'+htmlEntities(TXT("Anamnesi_e_Diagnosi"+(globals.set.cartella=='meridiani_shiatsu'?'Shiatsu':'')))+'</div></div>' +
+								'		   onClick="PAZIENTI.vis_anamnesi();">'+htmlEntities(TXT("SchedaAnamnesi"+(globals.set.cartella=='meridiani_shiatsu'?'Shiatsu':'')))+'</div></div>' +
 								'<div style="display:none;"' +
 								'	  id="anamnesi_cont">'; // nascondo tutto se è un nuovo ciclo
 				}
-				HTML += H.r({	t: "t",	
-								name: "AnamnesiMotivo",	
-								value: AnamnesiMotivo,
-								label: TXT("AnamnesiMotivo"+(globals.set.cartella=='meridiani_shiatsu'?'Shiatsu':'')),
+				/* HTML += H.r({	t: "t",	
+								name: "Anamnesi",	
+								value: Anamnesi,
+								label: TXT("Anamnesi"+(globals.set.cartella=='meridiani_shiatsu'?'Shiatsu':'')),
 								noLabel: true,
-								classCampo: "okPlaceHolder" });		
+								classCampo: "okPlaceHolder" });		 */
 			}
 			let TXT_DT=TXT("Data");
 			if(TimeTrattamento*1>(oggi*1)/1000)TXT_DT=TXT("DataProgrammata");
@@ -542,7 +544,6 @@ var PAZIENTI_TRATTAMENTI = { // extend PAZIENTI
 				oraFine: oraFine
 			}
 			agenda.opened = false;
-			
 			let separatore = 
 					'<div class="sezioneTrattamenti divEspansa"'+
 					'     style="background:transparent !important;'+
@@ -581,8 +582,6 @@ var PAZIENTI_TRATTAMENTI = { // extend PAZIENTI
 			}else{
 				HTML += H.r({	t: "h", name: "CostoTrattamento",		value: CostoTrattamento*1 		});
 			}
-			let TXT_P,
-				TXT_M;
 			if(TipoTrattamento!='A'){
 				HTML += H.r({	t: "r",	
 								name: "TitoloTrattamento",	
@@ -590,84 +589,44 @@ var PAZIENTI_TRATTAMENTI = { // extend PAZIENTI
 								label: TXT("Etichetta"),
 								classCampo: 'TitTrattDx',
 								classRiga: "labelSx",
-								styleRiga: "text-align:right;" }) +
-								
+								styleRiga: "text-align:right;" })/*  +
 						H.r({	t: "t",	
-								name: "TestoTrattamento",	
-								value: TestoTrattamento,
+								name: "Anamnesi",	
+								value: Anamnesi,
 								noLabel: true,
 								classCampo: "okPlaceHolder",
-								styleCampo: "margin-bottom:10px;" });
-				
-				TXT_P = TXT("PuntiMTC");	
-				TXT_M = TXT("MeridianiTrattamento");
-				HTML += separatore;
-				
-			}else{
-				HTML += separatore.replace('padding: 0px;','padding: 5px;') +
-						'<div id="tratt_cont_diagnosi"' +
-						'	  class="sezioneTrattamenti divEspansa '+ 
-						((localStorage.getItem("op_diagnosi")) ? '' : 'sezioneChiusa') +
-						'">' +	
-						'	<em class="labelMobile labelTrattamenti"' +
-						'  		onClick="H.swSezione(this);">' +
-						'		<img class="icoLabel"' +
-						'			 src="img/ico_diagnosi'+(globals.set.cartella=='meridiani_shiatsu'?'_shiatsu':'')+'.png">' +
-								TXT("Diagnosi"+(globals.set.cartella=='meridiani_shiatsu'?'Shiatsu':'')) +
-						'	</em>' +	
-						'	<div id="contDiagnosi" style="min-height:240px;">'+
-						'		<div class="l"></div>' +
-						'		<div class="schDx">' +
-						H.r({	t: "t",	
-								name: "AnamnesiDiagnosiOccidentale",	
-								value: AnamnesiDiagnosiOccidentale,
-								label: TXT("AnamnesiDiagnosiOccidentale"+(globals.set.cartella=='meridiani_shiatsu'?'Shiatsu':'')),
-								styleCampo: "margin-bottom:10px;" }) +
-						'		</div>' +
-						'		<div class="schSx">' +
-						H.r({	t: "t",	
-								name: "AnamnesiDiagnosiMTC",	
-								value: AnamnesiDiagnosiMTC,
-								label: TXT("AnamnesiDiagnosiMTC"+(globals.set.cartella=='meridiani_shiatsu'?'Shiatsu':'')),
-								styleCampo: "margin-bottom:10px;" }) +
-						'		</div>' +
-						'		<div class="l"></div>' +
-						'	</div>' +
-						'</div>';
-				
-				TXT_P = TXT("PuntiAnamnesi");
-				TXT_M = TXT("MeridianiAnamnesi");
+								styleCampo: "margin-bottom:10px;" }) */;
 			}
 
+			
+			
+					
+			HTML += '<div class="labelTrattamento noBorder">'+TXT("labelRaccoltaDati")+'</div>' +	
+			
 
-			// PRESCRIZIONE
-			HTML += 
-				'<div id="tratt_cont_prescrizione"' +
-				'	  class="sezioneTrattamenti divEspansa '+ 
-						((localStorage.getItem("op_prescrizione")) ? '' : 'sezioneChiusa') +
-						'">' +	
-				'	<em class="labelMobile labelTrattamenti"' +
-				'  		onClick="H.swSezione(this);">' +
-				'		<img class="icoLabel"' +
-				'			 src="img/ico_prescrizione.png">' +
-						TXT("Prescrizione"+(globals.set.cartella=='meridiani_shiatsu'?'Shiatsu':'')) +
-				'	</em>' +	
-				'	<img src="img/ico_stampa.png"' +
-				'		 id="stampa_prescr"' +
-				'		 class="noPrint"' +
-				'		 onClick="SCHEDA.stampaScheda({\'titolo\':\''+addslashes(htmlEntities(TXT("Prescrizione")))+'\',\'corpo\':document.formMod.Prescrizione.value,\'intestazione\':DB.pazienti.data[PAZIENTI.idCL].Nome+\' \'+DB.pazienti.data[PAZIENTI.idCL].Cognome});">' +	
-				'	<div id="contPrescrizione">'+
-				H.r({	t: "t",	
-						name: "Prescrizione",	
-						value: Prescrizione,
-						noLabel: true,
-						styleCampo: "margin-bottom:10px;margin-top:8px;" }) +
-				'	</div>' +
-				'</div>';
-			
-			
-			// SINTOMI
-			HTML += '<div id="tratt_cont_sintomi"' +
+					// ANAMNESI
+					'<div id="tratt_cont_anamnesi"' +
+					'	  class="sezioneTrattamenti divEspansa '+ 
+							((localStorage.getItem("op_anamnesi")) ? '' : 'sezioneChiusa') +
+							'">' +	
+					'	<em class="labelMobile labelTrattamenti"' +
+					'  		onClick="H.swSezione(this);">' +
+					'		<img class="icoLabel"' +
+					'			 src="img/ico_anamnesi.png">' +
+							TXT("Anamnesi") +
+					'	</em>' +
+					'	<div id="contAnamnesi">'+
+					H.r({	t: "t",	
+							name: "Anamnesi",	
+							value: Anamnesi,
+							noLabel: true,
+							styleCampo: "margin-bottom:10px;margin-top:8px;" }) +
+					'	</div>' +
+					'</div>' +
+
+
+					// SINTOMI
+					'<div id="tratt_cont_sintomi"' +
 					'	  class="sezioneTrattamenti divEspansa '+ 
 						((localStorage.getItem("op_sintomi")) ? '' : 'sezioneChiusa') +
 						'">' +
@@ -711,7 +670,89 @@ var PAZIENTI_TRATTAMENTI = { // extend PAZIENTI
 
 					'	<div class="l_a"></div>' +
 					'</div>' +
+			
+					// GALLERY
+					'<div id="tratt_cont_gallery"' +
+					'	  class="sezioneTrattamenti divEspansa '+ 
+						((localStorage.getItem("op_gallery")) ? '' : 'sezioneChiusa') +
+						'">' +
+					'	<em class="labelMobile labelTrattamenti"' +
+					'		onClick="H.swSezione(this);PH.resizeDida();">' +
+					'		<img class="icoLabel"' +
+					'		     src="img/ico_foto.png">' +
+							TXT("Gallery")+' (<span id="totFiles"></span>)' +
+					'	</em>' +
+					'	<div id="contGallery"' +
+					'		 class="divEspansa contGallery">' +
+					'	</div>' +
+					'	<div id="p_add_dett"' +
+					'		 class="noPrint"' +
+					'		 style="margin-top: 0px;">' +
+					'		<input type="file"' +
+					'			   id="fileProvv_FL"' +
+					'			   class="p_paz_file"' +
+					'		       onChange="PH.selezionaFile(this);">' +
+					'		<span id="addFile">' +
+								TXT("AggiungiFile") +
+					'		</span>' +
+					'		<span class="p_paz_screenshot"' +
+					'		      onClick="PH.editImg(true);"></span>' +
+					'		<span id="screenShot">' +
+								TXT("ScreenShot") +
+					'		</span>' +
+					'		<span class="p_paz_choose"' +
+					'		      onClick="MENU.visArchives();"></span>' +
+					'		<span id="chooFile">' +
+								TXT("ScegliFile") +
+					'		</span>' +
+					'	</div>' +
+					'</div>';
+			
+			HTML += '<div id="tratt_cont_diagnosi"' +
+					'	  class="sezioneTrattamenti divEspansa '+ 
+					((localStorage.getItem("op_diagnosi")) ? '' : 'sezioneChiusa') +
+					'">' +	
+					'	<em class="labelMobile labelTrattamenti"' +
+					'  		onClick="H.swSezione(this);">' +
+					'		<img class="icoLabel"' +
+					'			 src="img/ico_diagnosi'+(globals.set.cartella=='meridiani_shiatsu'?'_shiatsu':'')+'.png">' +
+							TXT("Diagnosi"+(globals.set.cartella=='meridiani_shiatsu'?'Shiatsu':'')) +
+					'	</em>'+	
 					
+					// DIAGNOSI
+					'	<div id="contDiagnosi" style="min-height:240px;">'+
+					'		<div class="l"></div>' +
+					'		<div class="schDx">' +
+					H.r({	t: "t",	
+							name: "DiagnosiOccidentale",	
+							value: DiagnosiOccidentale,
+							label: TXT("DiagnosiOccidentale"+(globals.set.cartella=='meridiani_shiatsu'?'Shiatsu':'')),
+							styleCampo: "margin-bottom:10px;" }) +
+					'		</div>' +
+					'		<div class="schSx">' +
+					H.r({	t: "t",	
+							name: "DiagnosiMTC",	
+							value: DiagnosiMTC,
+							label: TXT("DiagnosiMTC"+(globals.set.cartella=='meridiani_shiatsu'?'Shiatsu':'')),
+							styleCampo: "margin-bottom:10px;" }) +
+					'		</div>' +
+					'		<div class="l"></div>' +
+					'	</div>'+
+					'	<div id="contDiagnosiMTC" class="contDiagnosiAI'+(diagnosiAI?' fullAI':'')+'">'+
+					'		<div class="spiegazioneAI"><div class="requestAI" onClick="PAZIENTI.ai_get_gettoni(\'PAZIENTI.diagnosiAI_request();\');">'+TXT("DiagnosiAI")+'</div></div>'+
+					'		<div class="diagnosiAI">'+
+					'			<div class="diagnosiAI_txt" id="diagnosiAI">'+diagnosiAI+'</div>'+
+					'			<div class="diagnosiBtns">'+
+					'				<img src="img/ico_disclaimer.png" class="disclaimerAI" title="'+TXT("DisclaimerAI")+'" onClick="PAZIENTI.ai_popup();"/>'+
+					'				<div class="diagnosiAzione" onClick="PAZIENTI.diagnosiAI_addPoints();">'+TXT("DiagnosiAddPoints")+'</div>'+
+					'				<img class="diagnosiCancella" src="img/ico_cestino.png" width="16" height="16" align="absmiddle" title="'+TXT("Elimina")+'" onclick="PAZIENTI.diagnosiAI_delete();" class="cestino">'+
+					'			</div>'+
+					'		</div>'+
+					'	</div>'+
+					'</div>';
+					
+			HTML += '<div class="labelTrattamento" id="labelTrattamento">'+TXT("labelTrattamento")+'</div>' +
+
 					// POPUP di caricamento punti e meridiani
 					'<div id="gruppoPunti_cont"></div>' +
 			
@@ -725,19 +766,8 @@ var PAZIENTI_TRATTAMENTI = { // extend PAZIENTI
 					'		onClick="H.swSezione(this);">' +
 					'		<img class="icoLabel"' +
 					'		     src="img/ico_punti.png">' +
-							TXT_P+' (<span id="totPunto"></span>)' +
+					TXT("PuntiMTC")+' (<span id="totPunto"></span>)' +
 					'	</em>' +
-					'	<div id="contDiagnosiMTC" class="contDiagnosiAI'+(diagnosiMTC?' fullAI':'')+'">'+
-					'		<div class="spiegazioneAI"><div class="requestAI" onClick="PAZIENTI.ai_get_gettoni(\'PAZIENTI.diagnosiMTC_request();\');">'+TXT("DiagnosiAI")+'</div></div>'+
-					'		<div class="diagnosiAI">'+
-					'			<div class="diagnosiAI_txt" id="diagnosiMTC">'+diagnosiMTC+'</div>'+
-					'			<div class="diagnosiBtns">'+
-					'				<img src="img/ico_disclaimer.png" class="disclaimerAI" title="'+TXT("DisclaimerAI")+'" onClick="PAZIENTI.ai_popup();"/>'+
-					'				<div class="diagnosiAzione" onClick="PAZIENTI.diagnosiMTC_addPoints();">'+TXT("DiagnosiAddPoints")+'</div>'+
-					'				<img class="diagnosiCancella" src="img/ico_cestino.png" width="16" height="16" align="absmiddle" title="'+TXT("Elimina")+'" onclick="PAZIENTI.diagnosiMTC_delete();" class="cestino">'+
-					'			</div>'+
-					'		</div>'+
-					'	</div>'+
 					'	<div id="puntiMTC">' +
 					'	</div>' +
 					'	<div id="tratt_btns_punti"' +
@@ -772,7 +802,7 @@ var PAZIENTI_TRATTAMENTI = { // extend PAZIENTI
 					'		onClick="H.swSezione(this);">' +
 					'		<img class="icoLabel"' +
 					'		     src="img/ico_meridiani.png">' +
-							TXT_M+' (<span id="totMeridiani"></span>)' +
+					TXT("MeridianiTrattamento")+' (<span id="totMeridiani"></span>)' +
 					'	</em>' +
 					'	<div id="meridianiMTC">' +
 					'	</div>' +
@@ -833,41 +863,82 @@ var PAZIENTI_TRATTAMENTI = { // extend PAZIENTI
 					'	<div id="tratt_btns_trigger"' +
 					'		 class="noPrint"></div>' +
 					'</div>' +
-			
-					// GALLERY
-					'<div id="tratt_cont_gallery"' +
+
+					// NOTE TRATTAMENTO
+					'<div id="tratt_cont_notetrattamento"' +
 					'	  class="sezioneTrattamenti divEspansa '+ 
-						((localStorage.getItem("op_gallery")) ? '' : 'sezioneChiusa') +
-						'">' +
+							((localStorage.getItem("op_notetrattamento")) ? '' : 'sezioneChiusa') +
+							'">' +	
 					'	<em class="labelMobile labelTrattamenti"' +
-					'		onClick="H.swSezione(this);PH.resizeDida();">' +
+					'  		onClick="H.swSezione(this);">' +
 					'		<img class="icoLabel"' +
-					'		     src="img/ico_foto.png">' +
-							TXT("Gallery")+' (<span id="totFiles"></span>)' +
+					'			 src="img/ico_notetrattamento.png">' +
+							TXT("NoteTrattamento") +
 					'	</em>' +
-					'	<div id="contGallery"' +
-					'		 class="divEspansa contGallery">' +
+					'	<div id="contNotetrattamento">'+
+					H.r({	t: "t",	
+							name: "NoteTrattamento",	
+							value: NoteTrattamento,
+							noLabel: true,
+							styleCampo: "margin-bottom:10px;margin-top:8px;" }) +
 					'	</div>' +
-					'	<div id="p_add_dett"' +
+					'</div>' +
+					
+					'<div class="labelTrattamento">'+TXT("labelConsiderazioniFineTrattamento")+'</div>' +
+
+					// CONSIDERAZIONI
+					'<div id="tratt_cont_considerazioni"' +
+					'	  class="sezioneTrattamenti divEspansa '+ 
+							((localStorage.getItem("op_considerazioni")) ? '' : 'sezioneChiusa') +
+							'">' +	
+					'	<em class="labelMobile labelTrattamenti"' +
+					'  		onClick="H.swSezione(this);">' +
+					'		<img class="icoLabel"' +
+					'			 src="img/ico_considerazioni.png">' +
+							TXT("Considerazioni") +
+					'	</em>' +
+
+					'	<div id="contConsiderazioni" style="min-height:240px;">'+
+					'		<div class="l"></div>' +
+					'		<div class="schDx">' +
+					H.r({	t: "t",	
+							name: "ConsiderazioniOperatore",	
+							value: ConsiderazioniOperatore,
+							label: TXT("ConsiderazioniOperatore"),
+							styleCampo: "margin-bottom:10px;" }) +
+					'		</div>' +
+					'		<div class="schSx">' +
+					H.r({	t: "t",	
+							name: "ConsiderazioniPaziente",	
+							value: ConsiderazioniPaziente,
+							label: TXT("ConsiderazioniPaziente"),
+							styleCampo: "margin-bottom:10px;" }) +
+					'		</div>' +
+					'		<div class="l"></div>' +
+					'	</div>' +
+					'</div>' +
+
+					// PRESCRIZIONE
+					'<div id="tratt_cont_prescrizione"' +
+					'	  class="sezioneTrattamenti divEspansa '+ 
+							((localStorage.getItem("op_prescrizione")) ? '' : 'sezioneChiusa') +
+							'">' +	
+					'	<em class="labelMobile labelTrattamenti"' +
+					'  		onClick="H.swSezione(this);">' +
+					'		<img class="icoLabel"' +
+					'			 src="img/ico_prescrizione.png">' +
+							TXT("Prescrizione"+(globals.set.cartella=='meridiani_shiatsu'?'Shiatsu':'')) +
+					'	</em>' +	
+					'	<img src="img/ico_stampa.png"' +
+					'		 id="stampa_prescr"' +
 					'		 class="noPrint"' +
-					'		 style="margin-top: 0px;">' +
-					'		<input type="file"' +
-					'			   id="fileProvv_FL"' +
-					'			   class="p_paz_file"' +
-					'		       onChange="PH.selezionaFile(this);">' +
-					'		<span id="addFile">' +
-								TXT("AggiungiFile") +
-					'		</span>' +
-					'		<span class="p_paz_screenshot"' +
-					'		      onClick="PH.editImg(true);"></span>' +
-					'		<span id="screenShot">' +
-								TXT("ScreenShot") +
-					'		</span>' +
-					'		<span class="p_paz_choose"' +
-					'		      onClick="MENU.visArchives();"></span>' +
-					'		<span id="chooFile">' +
-								TXT("ScegliFile") +
-					'		</span>' +
+					'		 onClick="SCHEDA.stampaScheda({\'titolo\':\''+addslashes(htmlEntities(TXT("Prescrizione")))+'\',\'corpo\':document.formMod.Prescrizione.value,\'intestazione\':DB.pazienti.data[PAZIENTI.idCL].Nome+\' \'+DB.pazienti.data[PAZIENTI.idCL].Cognome});">' +	
+					'	<div id="contPrescrizione">'+
+					H.r({	t: "t",	
+							name: "Prescrizione",	
+							value: Prescrizione,
+							noLabel: true,
+							styleCampo: "margin-bottom:10px;margin-top:8px;" }) +
 					'	</div>' +
 					'</div>';
 					
@@ -1275,27 +1346,25 @@ var PAZIENTI_TRATTAMENTI = { // extend PAZIENTI
 				delete(GA[i].imported);
 			}
 			localPouchDB.setItem(MD5("DB"+LOGIN._frv()+".files"), IMPORTER.COMPR(DB.files)).then(function(){
-				PAZIENTI.ricPuntiTratt();	
-				if(TipoTrattamento=='A'){
-					TestoTrattamento={};
-					TestoTrattamento.AnamnesiMotivo=document.formMod.AnamnesiMotivo.value;
-					TestoTrattamento.AnamnesiDiagnosiOccidentale=document.formMod.AnamnesiDiagnosiOccidentale.value;
-					TestoTrattamento.AnamnesiDiagnosiMTC=document.formMod.AnamnesiDiagnosiMTC.value;
-					TestoTrattamento=JSON.stringify(TestoTrattamento);
-				}else TestoTrattamento=document.formMod.TestoTrattamento.value;
+				PAZIENTI.ricPuntiTratt();
 				JSNPUSH={	"idTrattamento": document.formMod.idTrattamento.value*1,
 							"TitoloTrattamento": document.formMod.TitoloTrattamento.value,
+							"NoteTrattamento": document.formMod.NoteTrattamento.value,
 							"TimeTrattamento": document.formMod.TimeTrattamento.value*1,
 							"oraInizio": document.formMod.oraInizio.value*1,
 							"oraFine": document.formMod.oraFine.value*1,
-							"TestoTrattamento": TestoTrattamento,
+							"Anamnesi": document.formMod.Anamnesi.value,
+							"DiagnosiOccidentale": document.formMod.DiagnosiOccidentale.value,
+							"DiagnosiMTC": document.formMod.DiagnosiMTC.value,
 							"Prescrizione": document.formMod.Prescrizione.value,
+							"ConsiderazioniOperatore": document.formMod.ConsiderazioniOperatore.value,
+							"ConsiderazioniPaziente": document.formMod.ConsiderazioniPaziente.value,
 							"puntiMTC": PAZIENTI.puntiProvvisori,
 							"puntiAuricolari": PAZIENTI.auriculoProvvisori,
 							"puntiPlantari": PAZIENTI.reflexProvvisori,
 							"puntiNamikoshi": PAZIENTI.namikoshiProvvisori,
 							"puntiTrigger": PAZIENTI.triggerProvvisori,
-							"diagnosiMTC": document.getElementById("diagnosiMTC").innerHTML,
+							"diagnosiAI": document.getElementById("diagnosiAI").innerHTML,
 							"sintomi": PAZIENTI.sintomiProvvisori,
 							"meridiani": PAZIENTI.meridianiProvvisori,
 							"gallery": GA,
@@ -1481,12 +1550,12 @@ var PAZIENTI_TRATTAMENTI = { // extend PAZIENTI
 	ai_purchase: function(){
 		CONN.openUrl(convLangPath(CONN.urlAItokens)+"?p="+MD5(DB.login.data.TOKEN+(DB.login.data.idUtente*123))+(DB.login.data.idUtente*45));
 	},
-	diagnosiMTC_request: function(){
+	diagnosiAI_request: function(){
 		let anamnesi = '';
-		if(document.getElementById("TestoTrattamento"))anamnesi = document.getElementById("TestoTrattamento").value;
+		if(document.getElementById("Anamnesi"))anamnesi = document.getElementById("Anamnesi").value;
 		else{
-			anamnesi += H.chr10+TXT("AnamnesiDiagnosiMTC")+H.chr10+document.getElementById("AnamnesiDiagnosiMTC").value +
-						H.chr10+TXT("AnamnesiDiagnosiOccidentale")+H.chr10+document.getElementById("AnamnesiDiagnosiOccidentale").value;
+			anamnesi += H.chr10+TXT("DiagnosiMTC")+H.chr10+document.getElementById("DiagnosiMTC").value +
+						H.chr10+TXT("DiagnosiOccidentale")+H.chr10+document.getElementById("DiagnosiOccidentale").value;
 		}
 		let JSNPOST = {
 			anamnesi: anamnesi,
@@ -1518,16 +1587,16 @@ var PAZIENTI_TRATTAMENTI = { // extend PAZIENTI
 		for(p in DB.pazienti.data[PAZIENTI.idCL].medicine){
 			JSNPOST.medicine.push(DB.pazienti.data[PAZIENTI.idCL].medicine[p].NomeMedicina);
 		}
-		if(!PAZIENTI.sintomiProvvisori && !document.getElementById("TestoTrattamento").value.trim()){
+		if(!PAZIENTI.sintomiProvvisori && !document.getElementById("Anamnesi").value.trim()){
 			ALERT(TXT("NoDataAI"));
 			return;
 		}
 		visLoader(TXT("ElaborazioneInCorso"));
 		CONN.caricaUrl(	"diagnosi_mtc.php",
 						"b64=1&JSNPOST="+window.btoa(encodeURIComponent(JSON.stringify(JSNPOST)))+"&NominativoPaziente="+window.btoa(encodeURIComponent(DB.pazienti.data[PAZIENTI.idCL].Nome+" "+DB.pazienti.data[PAZIENTI.idCL].Cognome)),
-						"PAZIENTI.diagnosiMTC_response");
+						"PAZIENTI.diagnosiAI_response");
 	},
-	diagnosiMTC_response: function( json ){
+	diagnosiAI_response: function( json ){
 		let res = JSON.parse(json);
 		if(res.esito.substr(0,5)=='ERROR'){
 			ALERT(TXT("ErroreGenerico"));
@@ -1549,7 +1618,7 @@ var PAZIENTI_TRATTAMENTI = { // extend PAZIENTI
 			html = html.replace(re5,"<h3>$1</h3>");
 			html = html.replace(re6,"<h4>$1</h4>");
 			html = html.replace(re4,"<br>");
-			document.getElementById("diagnosiMTC").innerHTML = html;
+			document.getElementById("diagnosiAI").innerHTML = html;
 			document.getElementById("contDiagnosiMTC").classList.add("fullAI");
 			PAZIENTI.diagnosi_swPoints();
 			SCHEDA.formModificato = true;
@@ -1557,18 +1626,18 @@ var PAZIENTI_TRATTAMENTI = { // extend PAZIENTI
 		nasLoader();
 		PAZIENTI.aiEndPoint = '';
 	},
-	diagnosiMTC_delete: function(){
+	diagnosiAI_delete: function(){
 		CONFIRM.vis(	TXT("ChiediEliminaDiagnosi"),
 						false, 
 						arguments ).then(function(pass){if(pass){
 						let v = getParamNames(CONFIRM.args.callee.toString());
 						for(let i in v)eval(getArguments(v,i));
-			document.getElementById("diagnosiMTC").innerHTML = '';
+			document.getElementById("diagnosiAI").innerHTML = '';
 			document.getElementById("contDiagnosiMTC").classList.remove("fullAI");
 			SCHEDA.formModificato = true;
 		}});
 	},
-	diagnosiMTC_addPoints: function(){
+	diagnosiAI_addPoints: function(){
 		let punti = PAZIENTI.diagnosi_verPoints();
 		if(punti.length){
 			PAZIENTI.tipoGruppo = 'P';
@@ -1576,7 +1645,7 @@ var PAZIENTI_TRATTAMENTI = { // extend PAZIENTI
 		}else ALERT(TXT("PuntiTuttiPresenti"));
 	},
 	diagnosi_verPoints: function(){
-		let html = document.getElementById("diagnosiMTC").innerHTML,
+		let html = document.getElementById("diagnosiAI").innerHTML,
 			re = /[A-Z]{2}\.[0-9]{1,2}/g,
 			els = html.match(re),
 			punti = [];

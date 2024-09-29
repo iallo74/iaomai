@@ -357,26 +357,17 @@ var BACKUPS = {
 							
 							let titoletto = TXT("ModificaTrattamento")+" "+((isCiclo)?(t*1):(t*1)+1);
 							if(trattamenti[t].TipoTrattamento=='A'){
-								titoletto = TXT("Anamnesi"+addShiatsu);
 								isCiclo = true;
+								titoletto = TXT("SchedaAnamnesi");
 							}
 
 							HTML += "<b class=\"tits\" style=\"color:#666;\">"+titoletto+"</b><br>";
 							if(trattamenti[t].TimeTrattamento)HTML += "<i>"+TXT("Data")+txtOrario+": </i> "+getFullDataTS(trattamenti[t].TimeTrattamento)+" "+orario+"<br>";
 							HTML += "<i>"+TXT("Titolo")+":</i> <b>"+trattamenti[t].TitoloTrattamento+"</b><br>";
 							HTML += "<i>"+TXT("Costo")+":</i> <b>"+ArrotondaEuro(trattamenti[t].CostoTrattamento)+"</b><br>";
-							let TT=trattamenti[t].TestoTrattamento;
-							if(trattamenti[t].TipoTrattamento=='A'){
-								//console.log(TT)
-								if(TT){
-									TT=JSON.parse(TT);
-									if(TT.AnamnesiMotivo)HTML += "<i>"+TXT("AnamnesiMotivo"+addShiatsu)+":</i> "+TT.AnamnesiMotivo+"<br>";
-									if(TT.AnamnesiDiagnosiOccidentale)HTML += "<i>"+TXT("AnamnesiDiagnosiOccidentale"+addShiatsu)+":</i> "+TT.AnamnesiDiagnosiOccidentale+"<br>";
-									if(TT.AnamnesiDiagnosiMTC)HTML += "<i>"+TXT("AnamnesiDiagnosiMTC"+addShiatsu)+":</i> "+TT.AnamnesiDiagnosiMTC+"<br>";
-								}
-							}else{
-								if(TT)HTML += "<i>"+TXT("Descrizione")+":</i> "+TT.replace(/\n/gi,"<br>")+"<br>";
-							}
+							if(trattamenti[t].Anamnesi)HTML += "<i>"+TXT("Anamnesi"+addShiatsu)+":</i> "+trattamenti[t].Anamnesi+"<br>";
+							if(trattamenti[t].DiagnosiOccidentale)HTML += "<i>"+TXT("DiagnosiOccidentale"+addShiatsu)+":</i> "+trattamenti[t].DiagnosiOccidentale+"<br>";
+							if(trattamenti[t].DiagnosiMTC)HTML += "<i>"+TXT("DiagnosiMTC"+addShiatsu)+":</i> "+trattamenti[t].DiagnosiMTC+"<br>";
 							
 							let sintomi = JSON.parse(trattamenti[t].sintomi);
 							if(sintomi.length==0 && trattamenti[t].LabelCiclo){
@@ -503,6 +494,8 @@ var BACKUPS = {
 								txtPunti=txtPunti.substr(0,txtPunti.length-2);
 								if(txtPunti)HTML += "<i>"+TXT("PuntiTrigger")+":</i> <div class=\"rientro\">"+txtPunti+"<br></div><br>";
 							}
+							
+							HTML += "<i>"+TXT("NoteTrattamento")+":</i> <b>"+trattamenti[t].NoteTrattamento+"</b><br>";
 							HTML += "<br>";
 						}
 						HTML += "</div>";

@@ -3069,14 +3069,54 @@ DB.TXT = {
             por: "Título",
             deu: "Titel"
         },
-        TestoTrattamento: {
-            ita: "Descrizione del trattamento ...",
-            eng: "Treatment description ...",
-            esp: "Descripción del tratamiento ...",
-            fra: "Description du traitement ...",
-            por: "Descrição do tratamento ...",
-            deu: "Behandlungsbeschreibung ..."
+        NoteTrattamento: {
+            ita: "Note sul trattamento",
+            eng: "Notes on the treatment",
+            esp: "Notas sobre el tratamiento",
+            fra: "Notes sur le traitement",
+            por: "Notas sobre o tratamento",
+            deu: "Notizen zur Behandlung"
         },
+        ValutazioneIniziale: {
+            ita: "Valutazione iniziale ...",
+            eng: "Initial assessment ...",
+            esp: "Evaluación inicial ...",
+            fra: "Évaluation initiale ...",
+            por: "Avaliação inicial ...",
+            deu: "Erste Bewertung ..."
+        },   
+        labelRaccoltaDati:  {
+            ita: "Raccolta dati",
+            eng: "Data Collection",
+            esp: "Recopilación de datos",
+            fra: "Collecte de données",
+            por: "Coleta de dados",
+            deu: "Datenerfassung"
+        },   
+        labelTrattamento:  {
+            ita: "Trattamento",
+            eng: "Treatment",
+            esp: "Tratamiento",
+            fra: "Traitement",
+            por: "Tratamento",
+            deu: "Behandlung"
+        },  
+        labelConsiderazioniFineTrattamento:  {
+            "ita": "Considerazioni fine trattamento",
+            "eng": "End of Treatment Considerations",
+            "esp": "Consideraciones al final del tratamiento",
+            "fra": "Considérations en fin de traitement",
+            "por": "Considerações ao final do tratamento",
+            "deu": "Überlegungen zum Behandlungsabschluss"
+        },     
+        Considerazioni:  {
+            "ita": "Considerazioni",
+            "eng": "Considerations",
+            "esp": "Consideraciones",
+            "fra": "Considérations",
+            "por": "Considerações",
+            "deu": "Überlegungen"
+        },      
         Note: {
             ita: "Note",
             eng: "Notes",
@@ -3101,23 +3141,15 @@ DB.TXT = {
             por: "Preço",
             deu: "Preis"
         },
-        AnamnesiMotivo: {
-            ita: "Anamnesi...",
-            eng: "Anamnesis...",
-            esp: "Antecedente...",
-            fra: "Anamnèse...",
-            por: "Anamnese...",
-            deu: "Anamnese..."
+        AnamnesiShiatsu: {
+            ita: "Valutazione energetica",
+            eng: "Energy assessment",
+            esp: "Evaluación energética",
+            fra: "Évaluation énergétique",
+            por: "Avaliação energética",
+            deu: "Energiebewertung"
         },
-        AnamnesiMotivoShiatsu: {
-            ita: "Valutazione energetica...",
-            eng: "Energy assessment...",
-            esp: "Evaluación energética...",
-            fra: "Évaluation énergétique...",
-            por: "Avaliação energética...",
-            deu: "Energiebewertung..."
-        },
-        AnamnesiDiagnosiOccidentale: {
+        DiagnosiOccidentale: {
             ita: "Diagnosi occidentale",
             eng: "Western diagnosis",
             esp: "Diagnóstico occidental",
@@ -3125,7 +3157,7 @@ DB.TXT = {
             por: "Diagnóstico ocidental",
             deu: "Westliche Diagnose"
         },
-        AnamnesiDiagnosiMTC: {
+        DiagnosiMTC: {
             ita: "Diagnosi MTC",
             eng: "TCM diagnosis",
             esp: "Diagnóstico MTC",
@@ -3133,7 +3165,7 @@ DB.TXT = {
             por: "Diagnóstico MTC",
             deu: "TCM-Diagnose"
         },
-        AnamnesiDiagnosiOccidentaleShiatsu: {
+        DiagnosiOccidentaleShiatsu: {
             ita: "Descrizione occidentale",
             eng: "Western description",
             esp: "Descripción occidental",
@@ -3141,7 +3173,7 @@ DB.TXT = {
             por: "Descrição ocidental",
             deu: "Westliche Beschreibung"
         },
-        AnamnesiDiagnosiMTCShiatsu: {
+        DiagnosiMTCShiatsu: {
             ita: "Descrizione MTC",
             eng: "TCM Description",
             esp: "Descripción MTC",
@@ -3156,6 +3188,22 @@ DB.TXT = {
             fra: "Ordonnance",
             por: "Prescrição",
             deu: "Verschreibung"
+        },
+        ConsiderazioniOperatore: {
+            ita: "Considerazioni operatore",
+            eng: "Operator's considerations",
+            esp: "Consideraciones del operador",
+            fra: "Considérations de l'opérateur",
+            por: "Considerações do operador",
+            deu: "Überlegungen des Bedieners"
+        },
+        ConsiderazioniPaziente: {
+            ita: "Considerazioni paziente",
+            eng: "Patient's considerations",
+            esp: "Consideraciones del paciente",
+            fra: "Considérations du patient",
+            por: "Considerações do paciente",
+            deu: "Überlegungen des Patienten"
         },
         PrescrizioneShiatsu: {
             ita: "Consigli al ricevente",
@@ -3506,12 +3554,12 @@ DB.TXT = {
             deu: "Magic Diagnose"
         },
         SpiegazioneAI: {
-            ita: "Questo strumento serve per produrre una proposta di diagnosi basata sugli elementi inseriti nella scheda di trattamento e nello storico del paziente. Assicurati di avere inserito correttamente tutti gli elementi necessari come i sintomi e la descrizione/anamnesi e poi clicca sul pulsante qui sotto.",
-            eng: "This tool is used to produce a diagnostic proposal based on the elements entered in the treatment form and the patient's history. Make sure you have correctly entered all the necessary elements, such as symptoms and description/history, and then click the button below.",
-            esp: "Esta herramienta se utiliza para producir una propuesta de diagnóstico basada en los elementos introducidos en la ficha de tratamiento y en el historial del paciente. Asegúrate de haber introducido correctamente todos los elementos necesarios, como los síntomas y la descripción/anamnesis, y luego haz clic en el botón de abajo.",
-            fra: "Cet outil est utilisé pour produire une proposition de diagnostic basée sur les éléments saisis dans la fiche de traitement et l'historique du patient. Assurez-vous d'avoir correctement saisi tous les éléments nécessaires, tels que les symptômes et la description/anamnèse, puis cliquez sur le bouton ci-dessous.",
-            por: "Esta ferramenta é usada para produzir uma proposta de diagnóstico com base nos elementos inseridos na ficha de tratamento e no histórico do paciente. Certifique-se de ter inserido corretamente todos os elementos necessários, como sintomas e descrição/anamnese, e clique no botão abaixo.",
-            deu: "Dieses Tool dient dazu, einen Diagnosevorschlag basierend auf den in das Behandlungsformular und die Patientenhistorie eingegebenen Elementen zu erstellen. Stellen Sie sicher, dass Sie alle erforderlichen Elemente, wie Symptome und Anamnese/Beschreibung, korrekt eingegeben haben, und klicken Sie dann auf die Schaltfläche unten."
+            "ita": "Questo strumento serve per produrre una proposta di diagnosi basata sugli elementi inseriti nella scheda di trattamento e nello storico del paziente. Assicurati di avere inserito correttamente tutti gli elementi necessari come la <b>valutazione iniziale</b> e i <b>sintomi</b> e poi clicca sul pulsante qui sotto.",
+            "eng": "This tool is used to produce a diagnosis proposal based on the elements entered in the treatment form and the patient's history. Make sure you have correctly entered all the necessary elements such as the <b>initial assessment</b> and the <b>symptoms</b> and then click the button below.",
+            "esp": "Esta herramienta se utiliza para producir una propuesta de diagnóstico basada en los elementos ingresados en la ficha de tratamiento y en el historial del paciente. Asegúrate de haber ingresado correctamente todos los elementos necesarios, como la <b>evaluación inicial</b> y los <b>síntomas</b>, y luego haz clic en el botón de abajo.",
+            "fra": "Cet outil sert à produire une proposition de diagnostic basée sur les éléments saisis dans la fiche de traitement et l'historique du patient. Assurez-vous d'avoir correctement saisi tous les éléments nécessaires, tels que l'<b>évaluation initiale</b> et les <b>symptômes</b>, puis cliquez sur le bouton ci-dessous.",
+            "por": "Esta ferramenta serve para produzir uma proposta de diagnóstico com base nos elementos inseridos na ficha de tratamento e no histórico do paciente. Certifique-se de ter inserido corretamente todos os elementos necessários, como a <b>avaliação inicial</b> e os <b>sintomas</b>, e depois clique no botão abaixo.",
+            "deu": "Dieses Tool dient dazu, einen Diagnosevorschlag basierend auf den in das Behandlungsformular und die Patientenhistorie eingegebenen Elementen zu erstellen. Stellen Sie sicher, dass Sie alle erforderlichen Elemente wie die <b>Erstbewertung</b> und die <b>Symptome</b> korrekt eingegeben haben, und klicken Sie dann auf die Schaltfläche unten."
         },
         RequestAI: {
             ita: "CREA DIAGNOSI",
@@ -3933,7 +3981,7 @@ DB.TXT = {
             por: "Editar ficha médica",
             deu: "Krankenblatt bearbeiten"
         },
-        SchedaAnamnesi: {
+        /* SchedaAnamnesi: {
             ita: "Scheda di anamnesi",
             eng: "Anamnesis file",
             esp: "Ficha de antecedente",
@@ -3948,6 +3996,22 @@ DB.TXT = {
             fra: "Formulaire d'évaluation",
             por: "Formulário de avaliação",
             deu: "Bewertungsformular"
+        }, */
+        SchedaAnamnesi: {
+            ita: "Scheda preliminare",
+            eng: "Preliminary card",
+            esp: "Ficha preliminar",
+            fra: "Fiche préliminaire",
+            por: "Ficha preliminar",
+            deu: "Vorläufige Karte"
+        },
+        SchedaAnamnesiShiatsu: {
+            ita: "Scheda preliminare",
+            eng: "Preliminary card",
+            esp: "Ficha preliminar",
+            fra: "Fiche préliminaire",
+            por: "Ficha preliminar",
+            deu: "Vorläufige Karte"
         },
         AggiungiCiclo: {
             ita: "Aggiungi una cartella",

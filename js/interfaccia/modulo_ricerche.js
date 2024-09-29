@@ -280,7 +280,7 @@ var RICERCHE = {
 				// CERCO nei TRATTAMENTI
 				for (d in PZ.trattamenti){
 					let TR = PZ.trattamenti[d],
-						testo = RICERCHE.pulisciTesto(TR.TitoloTrattamento+" "+TR.TestoTrattamento+" "+TR.Prescrizione+" "+TR.sintomi);
+						testo = RICERCHE.pulisciTesto(TR.TitoloTrattamento+" "+TR.NoteTrattamento+" "+TR.Anamnesi+" "+TR.DiagnosiOccidentale+" "+TR.DiagnosiMTC+" "+TR.Prescrizione+" "+TR.ConsiderazioniOperatore+" "+TR.ConsiderazioniPaziente+" "+TR.sintomi);
 					kS++;
 					if(testo.toUpperCase().indexOf(parola.toUpperCase())>-1 && TR.Cancellato!='1'){
 						Titolo = TR.TitoloTrattamento;

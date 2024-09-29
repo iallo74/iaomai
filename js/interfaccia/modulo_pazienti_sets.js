@@ -1762,21 +1762,28 @@ var PAZIENTI_SETS = { // extend PAZIENTI
 		if(	!document.getElementById("scheda").classList.contains("scheda_A") &&
 			!document.getElementById("scheda").classList.contains("scheda_B"))return;
 		
-		document.getElementById('tratt_cont_punti').classList.remove("nasTab");
-		document.getElementById('tratt_cont_punti').getElementsByClassName("spiegazioneAI")[0].classList.remove("nasTab");
-		document.getElementById('tratt_cont_punti').getElementsByClassName("diagnosiBtns")[0].classList.remove("nasTab");
-		document.getElementById('tratt_cont_meridiani').classList.remove("nasTab");
-		document.getElementById('tratt_cont_auriculo').classList.remove("nasTab");
-		document.getElementById('tratt_cont_reflex').classList.remove("nasTab");
-		document.getElementById('tratt_cont_trigger').classList.remove("nasTab");
-		document.getElementById('tratt_cont_namikoshi').classList.remove("nasTab");
+		document.getElementById('tratt_cont_diagnosi').getElementsByClassName("spiegazioneAI")[0].classList.remove("nasTab");
+		document.getElementById('tratt_cont_diagnosi').getElementsByClassName("diagnosiBtns")[0].classList.remove("nasTab");
+
+		let elsTab = [
+			'tratt_cont_punti',
+			'tratt_cont_meridiani',
+			'tratt_cont_auriculo',
+			'tratt_cont_reflex',
+			'tratt_cont_trigger',
+			'tratt_cont_namikoshi'
+		];
+		for(e in elsTab){
+			document.getElementById(elsTab[e]).classList.remove("nasTab");
+		}
+
 		if(	!PAZIENTI.puntiProvvisori.length && 
 			!( 	globals.set.cartella == 'meridiani_cinesi' || 
 				(globals.set.cartella == 'meridiani_shiatsu' && LOGIN.verModule("CIN"))) )document.getElementById('tratt_cont_punti').classList.add("nasTab");
 		if(	( 	!(globals.set.cartella == 'meridiani_cinesi' || 
 				(globals.set.cartella == 'meridiani_shiatsu' && LOGIN.verModule("CIN")))) ){
-					document.getElementById('tratt_cont_punti').getElementsByClassName("spiegazioneAI")[0].classList.add("nasTab");
-					document.getElementById('tratt_cont_punti').getElementsByClassName("diagnosiBtns")[0].classList.add("nasTab");
+					document.getElementById('tratt_cont_diagnosi').getElementsByClassName("spiegazioneAI")[0].classList.add("nasTab");
+					document.getElementById('tratt_cont_diagnosi').getElementsByClassName("diagnosiBtns")[0].classList.add("nasTab");
 		}
 		if(	!PAZIENTI.meridianiProvvisori.length &&
 			!(	globals.set.cartella == 'meridiani_cinesi' || 
@@ -1789,7 +1796,13 @@ var PAZIENTI_SETS = { // extend PAZIENTI
 			globals.set.cartella!='trigger_points')document.getElementById('tratt_cont_trigger').classList.add("nasTab");
 		if(	!PAZIENTI.namikoshiProvvisori.length &&
 			!(globals.set.cartella == 'meridiani_shiatsu' && LOGIN.verModule("NMK")) )document.getElementById('tratt_cont_namikoshi').classList.add("nasTab");
-			
+		/* let numNas = 0
+			maxNas = 0;
+		for(e in elsTab){
+			maxNas++;
+			if(document.getElementById(elsTab[e]).classList.contains("nasTab"))numNas++;
+		}
+		document.getElementById('labelTrattamento').classList.toggle("nasTab",numNas==maxNas); */
 	},
 	
 	// ALERT sui mezzi (anticoagulanti e pace-maker)

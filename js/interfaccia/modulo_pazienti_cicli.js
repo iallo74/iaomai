@@ -47,19 +47,23 @@ var PAZIENTI_CICLI = { // extend PAZIENTI
 					n++;
 					idTrattamento=TR.idTrattamento*1;
 					TitoloTrattamento=TR.TitoloTrattamento;
-					TestoTrattamento=TR.TestoTrattamento;
+					NoteTrattamento=TR.NoteTrattamento;
+					Anamnesi=TR.Anamnesi;
+					DiagnosiOccidentale=TR.DiagnosiOccidentale;
+					DiagnosiMTC=TR.DiagnosiMTC;
 					Prescrizione=__(TR.Prescrizione);
+					ConsiderazioniOperatore=__(TR.ConsiderazioniOperatore);
+					ConsiderazioniPaziente=__(TR.ConsiderazioniPaziente);
 					puntiMTC=__(TR.puntiMTC,[]);
 					puntiAuricolari=__(TR.puntiAuricolari,[]);
 					puntiPlantari=__(TR.puntiPlantari,[]);
 					puntiNamikoshi=__(TR.puntiNamikoshi,[]);
 					puntiTrigger=__(TR.puntiTrigger,[]);
-					diagnosiMTC=__(TR.diagnosiMTC,[]);
+					diagnosiAI=__(TR.diagnosiAI,[]);
 					meridiani = __(TR.meridiani,[]);
 					sintomi=__(TR.sintomi,[]);
 					
 					TipoTrattamento=TR.TipoTrattamento;
-					if(debug)console.log(i+" - "+TipoTrattamento+" - "+TitoloTrattamento)
 					TimeTrattamento=TR.TimeTrattamento*1;
 					Data=TimeTrattamento;
 					if(!TimeTrattamento)TimeTrattamento=new Date()/1000;
@@ -77,24 +81,10 @@ var PAZIENTI_CICLI = { // extend PAZIENTI
 					
 					if(i>0)HTML += '<hr>';
 					let TXT_P;
-					if(TipoTrattamento!='A'){
-						HTML+='<h3>'+data+'</h3><p class="labelCicli"><i>'+htmlEntities(TitoloTrattamento)+'</i></p>';
-						HTML+='<p>'+htmlEntities(TestoTrattamento).replace(/\n/g, '<br>')+'</p>';
-						TXT_P=TXT("Punto");
-						TXT_M=TXT("MeridianiTrattamento");
-						
-					}else{
-						if(!TestoTrattamento)TestoTrattamento={"AnamnesiMotivo":"","AnamnesiDiagnosiOccidentale":"","AnamnesiDiagnosiMTC":""};
-						else TestoTrattamento=JSON.parse(TestoTrattamento);
-						AnamnesiMotivo=TestoTrattamento.AnamnesiMotivo;
-						AnamnesiDiagnosiOccidentale=TestoTrattamento.AnamnesiDiagnosiOccidentale;
-						AnamnesiDiagnosiMTC=TestoTrattamento.AnamnesiDiagnosiMTC;
-						if(AnamnesiMotivo)HTML+='<p><i>'+htmlEntities(TXT("AnamnesiMotivo"+(globals.set.cartella=='meridiani_shiatsu'?'Shiatsu':'')))+':</i><br>'+htmlEntities(AnamnesiMotivo).replace(/\n/g, '<br>')+'</p>';
-						if(AnamnesiDiagnosiOccidentale)HTML+='<p><i>'+htmlEntities(TXT("AnamnesiDiagnosiOccidentale"+(globals.set.cartella=='meridiani_shiatsu'?'Shiatsu':'')))+':</i><br>'+htmlEntities(AnamnesiDiagnosiOccidentale).replace(/\n/g, '<br>')+'</p>';
-						if(AnamnesiDiagnosiMTC)HTML+='<p><i>'+htmlEntities(TXT("AnamnesiDiagnosiMTC"+(globals.set.cartella=='meridiani_shiatsu'?'Shiatsu':'')))+':</i><br>'+htmlEntities(AnamnesiDiagnosiMTC).replace(/\n/g, '<br>')+'</i></p>';
-						TXT_P=TXT("PuntiAnamnesi");
-						TXT_M=TXT("MeridianiAnamnesi");
-					}
+					if(TipoTrattamento!='A')HTML+='<h3>'+data+'</h3><p class="labelCicli"><i>'+htmlEntities(TitoloTrattamento)+'</i></p>';
+					if(Anamnesi)HTML+='<p><i>'+htmlEntities(TXT("Anamnesi"+(globals.set.cartella=='meridiani_shiatsu'?'Shiatsu':'')))+':</i><br>'+htmlEntities(Anamnesi).replace(/\n/g, '<br>')+'</p>';
+					if(DiagnosiOccidentale)HTML+='<p><i>'+htmlEntities(TXT("DiagnosiOccidentale"+(globals.set.cartella=='meridiani_shiatsu'?'Shiatsu':'')))+':</i><br>'+htmlEntities(DiagnosiOccidentale).replace(/\n/g, '<br>')+'</p>';
+					if(DiagnosiMTC)HTML+='<p><i>'+htmlEntities(TXT("DiagnosiMTC"+(globals.set.cartella=='meridiani_shiatsu'?'Shiatsu':'')))+':</i><br>'+htmlEntities(DiagnosiMTC).replace(/\n/g, '<br>')+'</i></p>';
 					for(v in valori){
 						let score = -1;
 						for(let s in sintomi){
@@ -108,7 +98,7 @@ var PAZIENTI_CICLI = { // extend PAZIENTI
 					}
 					if(puntiMTC.length){
 						HTML += '<div class="app_report_sch"> ' +
-								'<br><i>'+TXT_P+':</i> ' +
+								'<br><i>'+TXT("Punto")+':</i> ' +
 								'<div id="puntiCiclo">';
 						for(let p in puntiMTC){
 							nPunto = puntiMTC[p].n;
@@ -206,7 +196,7 @@ var PAZIENTI_CICLI = { // extend PAZIENTI
 					}
 					if(meridiani.length){
 						HTML += '<div class="app_report_sch"> ' +
-								'<br><i>'+TXT_M+':</i> ' +
+								'<br><i>'+TXT("MeridianiTrattamento")+':</i> ' +
 								'<div id="meridianiCiclo">';
 						for(let m in meridiani){
 							NomeMeridiano=meridiani[m].NomeMeridiano;
@@ -223,6 +213,7 @@ var PAZIENTI_CICLI = { // extend PAZIENTI
 						HTML += '</div>' +
 								'</div>';
 					}
+					if(NoteTrattamento)HTML+='<p><i>'+htmlEntities(TXT("NoteTrattamento"))+':</i><br>'+htmlEntities(NoteTrattamento).replace(/\n/g, '<br>')+'</p>';
 				}
 			}
 			HTML2 = HTML;

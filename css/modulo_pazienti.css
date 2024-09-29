@@ -21,9 +21,9 @@
 }
 .scheda_A #scheda_titolo{
     background: #FFF !important;
-    background: url(../img/cartellaBig.png), -moz-linear-gradient(top, #FFF 0%, #d5d5d5 100%) !important;
-    background: url(../img/cartellaBig.png), -webkit-linear-gradient(top, #FFF 0%,#d5d5d5 100%) !important;
-    background: url(../img/cartellaBig.png), linear-gradient(to bottom, #FFF 0%,#d5d5d5 100%) !important;
+    background: url(../img/certella.png), -moz-linear-gradient(top, #FFF 0%, #d5d5d5 100%) !important;
+    background: url(../img/cartella.png), -webkit-linear-gradient(top, #FFF 0%,#d5d5d5 100%) !important;
+    background: url(../img/cartella.png), linear-gradient(to bottom, #FFF 0%,#d5d5d5 100%) !important;
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#FFF', endColorstr='#d5d5d5',GradientType=0 ) !important;
 	background-position:3px 2px, center center !important;
 	background-repeat:no-repeat !important;	
@@ -569,9 +569,9 @@ body:not(.smart) .trattTools i:not(.infoCiclo):not(.addTrattBtn):hover{
     fill: #000;
 }
 .anamnesiBtn{
-	background-image: url(../img/ico_anamnesi.png);
-    padding-left: 36px;
-    background-position: left -4px, left center;
+	background-image: url(../img/ico_trattamentiN.png);
+    padding-left: 34px;
+    background-position:1px -4px, left center;
     padding-right: 10px;
     float: left;
     margin-left: 0px;
@@ -611,7 +611,7 @@ body:not(.smart) .trattTools i:not(.infoCiclo):not(.addTrattBtn):hover{
 }
 
 .anamnesiBtn.elencoSel{
-	background-image: url(../img/ico_anamnesiB.png), linear-gradient(to bottom, #1d4eaa 0%,#0a3d96 100%) !important;
+	background-image: url(../img/ico_trattamentiB.png), linear-gradient(to bottom, #1d4eaa 0%,#0a3d96 100%) !important;
 }
 .trattTools span img{
 	vertical-align:middle;
