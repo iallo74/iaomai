@@ -613,7 +613,7 @@ var PAZIENTI_TRATTAMENTI = { // extend PAZIENTI
 					'  		onClick="H.swSezione(this);">' +
 					'		<img class="icoLabel"' +
 					'			 src="img/ico_anamnesi.png">' +
-							TXT("Anamnesi") +
+								TXT("AnamnesiShiatsu"+(globals.set.cartella=='meridiani_shiatsu'?'Shiatsu':'')) +
 					'	</em>' +
 					'	<div id="contAnamnesi">'+
 					H.r({	t: "t",	
