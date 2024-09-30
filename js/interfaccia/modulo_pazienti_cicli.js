@@ -48,6 +48,7 @@ var PAZIENTI_CICLI = { // extend PAZIENTI
 					idTrattamento=TR.idTrattamento*1;
 					TitoloTrattamento=TR.TitoloTrattamento;
 					NoteTrattamento=TR.NoteTrattamento;
+					jsonValutazione=__(TR.jsonValutazione,[]);
 					Anamnesi=TR.Anamnesi;
 					DiagnosiOccidentale=TR.DiagnosiOccidentale;
 					DiagnosiMTC=TR.DiagnosiMTC;
@@ -80,9 +81,20 @@ var PAZIENTI_CICLI = { // extend PAZIENTI
 					else data += '-';
 					
 					if(i>0)HTML += '<hr>';
-					let TXT_P;
 					if(TipoTrattamento!='A')HTML+='<h3>'+data+'</h3><p class="labelCicli"><i>'+htmlEntities(TitoloTrattamento)+'</i></p>';
+
+					//anamnesi
 					if(Anamnesi)HTML+='<p><i>'+htmlEntities(TXT("Anamnesi"+(globals.set.cartella=='meridiani_shiatsu'?'Shiatsu':'')))+':</i><br>'+htmlEntities(Anamnesi).replace(/\n/g, '<br>')+'</p>';
+
+					// modulo valutazione
+					if(jsonValutazione){
+						for(d in jsonValutazione){
+							HTML+='<p><i>'+htmlEntities(jsonValutazione[d].d)+':</i><br>'+htmlEntities(jsonValutazione[d].r)+'</p>';
+						}
+					}
+
+
+					// diagnosi
 					if(DiagnosiOccidentale)HTML+='<p><i>'+htmlEntities(TXT("DiagnosiOccidentale"+(globals.set.cartella=='meridiani_shiatsu'?'Shiatsu':'')))+':</i><br>'+htmlEntities(DiagnosiOccidentale).replace(/\n/g, '<br>')+'</p>';
 					if(DiagnosiMTC)HTML+='<p><i>'+htmlEntities(TXT("DiagnosiMTC"+(globals.set.cartella=='meridiani_shiatsu'?'Shiatsu':'')))+':</i><br>'+htmlEntities(DiagnosiMTC).replace(/\n/g, '<br>')+'</i></p>';
 					for(v in valori){
@@ -98,7 +110,7 @@ var PAZIENTI_CICLI = { // extend PAZIENTI
 					}
 					if(puntiMTC.length){
 						HTML += '<div class="app_report_sch"> ' +
-								'<br><i>'+TXT("Punto")+':</i> ' +
+								'<br><i>'+TXT("PuntiMTC")+':</i> ' +
 								'<div id="puntiCiclo">';
 						for(let p in puntiMTC){
 							nPunto = puntiMTC[p].n;
@@ -139,7 +151,7 @@ var PAZIENTI_CICLI = { // extend PAZIENTI
 					}
 					if(puntiAuricolari.length){
 						HTML += '<div class="app_report_sch"> ' +
-								'<br><i>'+TXT_P+':</i> ' +
+								'<br><i>'+TXT("PuntiAuriculo")+':</i> ' +
 								'<div id="puntiCiclo">';
 						for(let p in puntiAuricolari){
 							nomePunto=puntiAuricolari[p].n;
@@ -158,7 +170,7 @@ var PAZIENTI_CICLI = { // extend PAZIENTI
 					}
 					if(puntiPlantari.length){
 						HTML += '<div class="app_report_sch"> ' +
-								'<br><i>'+TXT_P+':</i> ' +
+								'<br><i>'+TXT("PuntiReflex")+':</i> ' +
 								'<div id="puntiCiclo">';
 						for(let p in puntiPlantari){
 							nomePunto=puntiPlantari[p].n;
@@ -177,7 +189,7 @@ var PAZIENTI_CICLI = { // extend PAZIENTI
 					}
 					if(puntiTrigger.length){
 						HTML += '<div class="app_report_sch"> ' +
-								'<br><i>'+TXT_P+':</i> ' +
+								'<br><i>'+TXT("PuntiTrigger")+':</i> ' +
 								'<div id="puntiCiclo">';
 						for(let p in puntiTrigger){
 							nomePunto=puntiTrigger[p].n;

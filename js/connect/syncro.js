@@ -30,6 +30,7 @@ var SYNCRO = {
 				localPouchDB.getItem(MD5("DB"+LOGIN._frv()+".servizi")),
 				localPouchDB.getItem(MD5("DB"+LOGIN._frv()+".appuntamenti")),
 				localPouchDB.getItem(MD5("DB"+LOGIN._frv()+".annotazioni")),
+				localPouchDB.getItem(MD5("DB"+LOGIN._frv()+".moduli")),
 				localPouchDB.getItem(MD5("DB"+LOGIN._frv()+".ricerche")),
 				localPouchDB.getItem(MD5("DB"+LOGIN._frv()+".files"))
 			]).then(function( dbs ){
@@ -40,8 +41,9 @@ var SYNCRO = {
 				DB.servizi=IMPORTER.DECOMPR(dbs[4]);
 				DB.appuntamenti=IMPORTER.DECOMPR(dbs[5]);
 				DB.annotazioni=IMPORTER.DECOMPR(dbs[6]);
-				DB.ricerche=IMPORTER.DECOMPR(dbs[7]);
-				DB.files=IMPORTER.DECOMPR(dbs[8]);
+				DB.moduli=IMPORTER.DECOMPR(dbs[7]);
+				DB.ricerche=IMPORTER.DECOMPR(dbs[8]);
+				DB.files=IMPORTER.DECOMPR(dbs[9]);
 				
 				SYNCRO.totSinc = dbs.length-1; /* i files non contano perché sono solo in upload */
 				
@@ -150,6 +152,24 @@ var SYNCRO = {
 				}
 				if(elencoAnnotazioni)elenco+='"annotazioni": ['+elencoAnnotazioni.substr(0,elencoAnnotazioni.length-2)+'], ';
 				
+				let elencoModuli='';
+				for(let k in DB.moduli.data){
+					let db={ 	"idModulo": DB.moduli.data[k].idModulo*1,
+								"NomeModulo": DB.moduli.data[k].NomeModulo,
+								"jsonModulo": JSON.stringify(DB.moduli.data[k].jsonModulo),
+								"DataModifica":DB.moduli.data[k].DataModifica*1,
+								"DataCreazione":DB.moduli.data[k].DataCreazione*1,
+								"Cancellato": DB.moduli.data[k].Cancellato*1 };
+					
+					let aggiungere=false;
+					
+					if((DB.moduli.data[k].DataModifica*1>DB.moduli.lastSync*1 || dwnl || bkp) && !__(DB.moduli.data[k].frv))aggiungere=true;
+					if(aggiungere){
+						elencoModuli+=JSON.stringify(db)+", ";
+					}
+				}
+				if(elencoModuli)elenco+='"moduli": ['+elencoModuli.substr(0,elencoModuli.length-2)+'], ';
+				
 				let elencoServizi='';
 				for(let k in DB.servizi.data){
 					let db={ 	"idServizio": DB.servizi.data[k].idServizio*1,
@@ -249,6 +269,7 @@ var SYNCRO = {
 						if(DB.pazienti.data[k].trattamenti[t].DataModifica*1>DB.pazienti.lastSync*1 || dwnl || bkp){
 							DB.pazienti.data[k].trattamenti[t].id_interno=t*1;
 							n++;elencoTrattamenti[n]=clone(DB.pazienti.data[k].trattamenti[t]);
+							elencoTrattamenti[n].jsonValutazione = JSON.stringify(elencoTrattamenti[n].jsonValutazione);
 							elencoTrattamenti[n].gallery = JSON.stringify(elencoTrattamenti[n].gallery);
 							elencoTrattamenti[n].meridiani = JSON.stringify(elencoTrattamenti[n].meridiani);
 							elencoTrattamenti[n].sintomi = JSON.stringify(elencoTrattamenti[n].sintomi);
@@ -338,6 +359,7 @@ var SYNCRO = {
 							'"cicli":"'+DB.cicli.lastSync+'",' +
 							'"appuntamenti":"'+DB.appuntamenti.lastSync+'",' +
 							'"annotazioni":"'+DB.annotazioni.lastSync+'",' +
+							'"moduli":"'+DB.moduli.lastSync+'",' +
 							'"JSNPOST":';
 				if(!BACKUPS.titleProvv)syncJSN += elenco;
 				else syncJSN += '"'+window.btoa(encodeURIComponent(elenco))+'"';
@@ -388,7 +410,7 @@ var SYNCRO = {
 		DB.pazienti.lastSync=lastSync;
 		DB.appuntamenti.lastSync=lastSync;
 		DB.annotazioni.lastSync=lastSync;
-		//console.log(DB.annotazioni);
+		DB.moduli.lastSync=lastSync;
 		
 		// RICERCHE
 		if(elenco.ricerche){
@@ -830,6 +852,66 @@ var SYNCRO = {
 				SYNCRO.verSincro('annotazioni');
 			});
 		}else SYNCRO.verSincro('annotazioni');
+
+		
+		// MODULI VALUTAZIONE
+		if(elenco.moduli){
+			syncUp=true;
+			for(let p in elenco.moduli){
+				// per ogni novità verifico l'esistenza
+				passato=false;
+				if(BACKUPS.bkpProvv)elenco.moduli[p].DataModifica = lastSync*1;
+				JSNPUSH={ 	"idModulo": elenco.moduli[p].idModulo*1,
+							"NomeModulo": elenco.moduli[p].NomeModulo+"",
+							"jsonModulo": toJson(elenco.moduli[p].jsonModulo),
+							"DataModifica": elenco.moduli[p].DataModifica*1,
+							"DataCreazione": elenco.moduli[p].DataCreazione*1,
+							"Cancellato": elenco.moduli[p].Cancellato*1,
+							"frv": false };
+				for(let k in DB.moduli.data){
+					let MD = DB.moduli.data[k];
+					if(	( MD.idModulo*1>0 && MD.idModulo*1==elenco.moduli[p].idModulo*1 ) || 
+						(	MD.idModulo*1==0 &&
+							MD.NomeModulo==elenco.moduli[p].NomeModulo && 
+							MD.DataCreazione*1==elenco.moduli[p].DataCreazione*1)	){ // se esiste aggiorna
+							
+						DB.moduli.data[k] = JSNPUSH;
+						passato=true;
+					}
+				}
+				if(!passato){ // se non esiste aggiungo
+					DB.moduli.data.push(JSNPUSH);
+				}
+			}
+			
+			if(BACKUPS.bkpProvv){ // <<<<<<< per il backup
+				for(let k in DB.moduli.data){
+					let trovato = false,
+					MD = DB.moduli.data[k];
+					for(let p in elenco.moduli){
+						/*
+							se sto ripristinando un backup
+							se non trovo l'elemento del DB locale nel DB backuppato
+							oppure non è mai stato backuppato
+							cancello l'elemento locale
+						*/
+						if(	(MD.idModulo*1>0 && elenco.moduli[p].idModulo*1==MD.idModulo*1) ||
+						MD.idModulo*1 == 0){
+							trovato = true;
+						}
+					}
+					if(!trovato){
+						DB.moduli.data[k].Cancellato = 1;
+						DB.moduli.data[k].DataModifica = lastSync + 1;
+					}
+				}
+			}
+			
+			DB.moduli.lastSync=lastSync;
+			localPouchDB.setItem(MD5("DB"+LOGIN._frv()+".moduli"), IMPORTER.COMPR(DB.moduli)).then(function(){ // salvo il DB
+				SYNCRO.verSincro('moduli');
+			});
+		}else SYNCRO.verSincro('moduli');
 		
 		// PAZIENTI
 		if(elenco.pazienti){
@@ -936,6 +1018,7 @@ var SYNCRO = {
 									"idPaziente": DB.pazienti.data[kDef].idPaziente*1,
 									"TitoloTrattamento": trattamenti[t].TitoloTrattamento,
 									"NoteTrattamento": trattamenti[t].NoteTrattamento,
+									"jsonValutazione": toJson(__(trattamenti[t].jsonValutazione,'')),
 									"Anamnesi": trattamenti[t].Anamnesi,
 									"DiagnosiOccidentale": trattamenti[t].DiagnosiOccidentale,
 									"DiagnosiMTC": trattamenti[t].DiagnosiMTC,
@@ -1128,6 +1211,10 @@ var SYNCRO = {
 					ANNOTAZIONI.caricaAnnotazioni();
 					break;
 				
+				case "moduli":
+					MODULI.caricaModuli();
+					break;
+				
 				case "servizi":
 					SERVIZI.caricaServizi();
 					break;
@@ -1209,6 +1296,12 @@ var SYNCRO = {
 			for(let p=tot-1;p>=0;p--){
 				if(ANS[p].Cancellato=='1' || __(ANS[p].frv))ANS.splice(p, 1)
 			}
+			DB.moduli.data = __(DB.moduli.data,[]);
+			let MDS = DB.moduli.data;
+			tot = MDS.length;
+			for(let p=tot-1;p>=0;p--){
+				if(MDS[p].Cancellato=='1' || __(MDS[p].frv))MDS.splice(p, 1)
+			}
 			DB.procedure.data = __(DB.procedure.data,[]);
 			let PRS = DB.procedure.data;
 			tot = PRS.length;
@@ -1234,6 +1327,7 @@ var SYNCRO = {
 			localPouchDB.setItem(MD5("DB"+LOGIN._frv()+".fornitori"), IMPORTER.COMPR(DB.fornitori)),
 			localPouchDB.setItem(MD5("DB"+LOGIN._frv()+".servizi"), IMPORTER.COMPR(DB.servizi)),
 			localPouchDB.setItem(MD5("DB"+LOGIN._frv()+".annotazioni"), IMPORTER.COMPR(DB.annotazioni)),
+			localPouchDB.setItem(MD5("DB"+LOGIN._frv()+".moduli"), IMPORTER.COMPR(DB.moduli)),
 			localPouchDB.setItem(MD5("DB"+LOGIN._frv()+".appuntamenti"), IMPORTER.COMPR(DB.appuntamenti)),
 			localPouchDB.setItem(MD5("DB"+LOGIN._frv()+".procedure"), IMPORTER.COMPR(DB.procedure)),
 			localPouchDB.setItem(MD5("DB"+LOGIN._frv()+".ricerche"), IMPORTER.COMPR(DB.ricerche)),
@@ -1259,6 +1353,7 @@ var SYNCRO = {
 			FORNITORI.caricaFornitori();
 			SERVIZI.caricaServizi();
 			ANNOTAZIONI.caricaAnnotazioni();
+			MODULI.caricaModuli();
 			
 			if(agenda.opened){
 				agenda.apri(agenda.DataPartenza,agenda.elemento,null,agenda.elemento);

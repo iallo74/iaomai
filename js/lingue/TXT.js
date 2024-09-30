@@ -2236,7 +2236,113 @@ DB.TXT = {
             fra: "Rechercher une note...",
             por: "Buscar uma nota...",
             deu: "Suche nach einer Notiz..."
-        },     
+        },   
+        
+        // MODULI VALUTAZIONE
+        NoResModulo: {
+            ita: "Nessun modulo",
+            eng: "No form",
+            esp: "Ningún formulario",
+            fra: "Aucun formulaire",
+            por: "Nenhum formulário",
+            deu: "Kein Formular"
+        },
+        ChiediEliminaModulo: {
+            ita: "Vuoi davvero eliminare il modulo? N.B. Non sarà più possibile recuperarla.",
+            eng: "Do you really want to delete the form? Note: It will not be recoverable.",
+            esp: "¿Realmente deseas eliminar el formulario? Nota: No se podrá recuperar.",
+            fra: "Voulez-vous vraiment supprimer le formulaire ? Remarque : il ne sera plus récupérable.",
+            por: "Você realmente deseja excluir o formulário? Nota: Não será possível recuperá-lo.",
+            deu: "Möchten Sie das Formular wirklich löschen? Hinweis: Es wird nicht wiederherstellbar sein."
+        },
+        AggiungiModulo: {
+            ita: "Aggiungi un modulo",
+            eng: "Add a form",
+            esp: "Agregar un formulario",
+            fra: "Ajouter un formulaire",
+            por: "Adicionar um formulário",
+            deu: "Ein Formular hinzufügen"
+        },
+        ModificaModulo: {
+            ita: "Modulo",
+            eng: "Form",
+            esp: "Formulario",
+            fra: "Formulaire",
+            por: "Formulário",
+            deu: "Formular"
+        },
+        CreaModulo: {
+            ita: "Nuovo modulo",
+            eng: "New form",
+            esp: "Nuevo formulario",
+            fra: "Nouveau formulaire",
+            por: "Novo formulário",
+            deu: "Neues Formular"
+        },
+        CercaModulo: {
+            ita: "Cerca un modulo...",
+            eng: "Search for a form...",
+            esp: "Busca un formulario...",
+            fra: "Rechercher un formulaire...",
+            por: "Procure um formulário...",
+            deu: "Suche ein Formular..."
+        }, 
+        AggiungiDomanda: {
+            ita: "Aggiungi un quesito",
+            eng: "Add a query",
+            esp: "Agregar una consulta",
+            fra: "Ajouter une question",
+            por: "Adicionar uma questão",
+            deu: "Füge eine Frage hinzu"
+        },
+        InserisciDomanda: {
+            ita: "Inserisci la domanda",
+            eng: "Enter the question",
+            esp: "Ingresa la pregunta",
+            fra: "Saisissez la question",
+            por: "Insira a pergunta",
+            deu: "Geben Sie die Frage ein"
+        },
+        ImportaModulo: {
+            ita: "Importa un modulo di valutazione",
+            eng: "Import an evaluation form",
+            esp: "Importar un formulario de evaluación",
+            fra: "Importer un formulaire d'évaluation",
+            por: "Importar um formulário de avaliação",
+            deu: "Importiere ein Bewertungsformular"
+        },  
+        erroreModuloVuoto: {
+            ita: "Il modulo che stai provando ad importare è vuoto",
+            eng: "The form you are trying to import is empty",
+            esp: "El formulario que estás intentando importar está vacío",
+            fra: "Le formulaire que vous essayez d'importer est vide",
+            por: "O formulário que você está tentando importar está vazio",
+            deu: "Das Formular, das Sie zu importieren versuchen, ist leer"
+        }, 
+        RimuoviModulo: {
+            ita: "Rimuovi",
+            eng: "Remove",
+            esp: "Eliminar",
+            fra: "Supprimer",
+            por: "Remover",
+            deu: "Entferne"
+        },
+        chiediRimuoviModulo: {
+            ita: "Vuoi davvero rimuovere il modulo?",
+            eng: "Do you really want to remove the form?",
+            esp: "¿Realmente deseas eliminar el formulario?",
+            fra: "Voulez-vous vraiment supprimer le formulaire ?",
+            por: "Você realmente deseja remover o formulário?",
+            deu: "Möchten Sie das Formular wirklich entfernen?"
+        },
+        ModuloValutazione: {
+            ita: "Modulo di valutazione",
+            eng: "Evaluation form",
+            esp: "Formulario de evaluación",
+            fra: "Formulaire d'évaluation",
+            por: "Formulário de avaliação",
+            deu: "Bewertungsformular"
+        },
 
         // PAZIENTI
         // menu
@@ -4800,6 +4906,14 @@ DB.TXT = {
             fra: "Notes",
             por: "Notas",
             deu: "Notizen"
+        },
+        ElSchedeAnamnesi: {
+            ita: "Moduli di valutazione",
+            eng: "Evaluation forms",
+            esp: "Formularios de evaluación",
+            fra: "Fiches d'évaluation",
+            por: "Formulários de avaliação",
+            deu: "Bewertungsbögen"
         },
         ElGestionale: {
             ita: "Gestione archivi",

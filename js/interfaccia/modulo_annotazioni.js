@@ -207,7 +207,7 @@ var ANNOTAZIONI = {
 		});
 		return false;
 	},
-	el_annotazione: function( Q_idAnn ){ // elimina l'annotazione'
+	el_annotazione: function( Q_idAnn ){ // elimina l'annotazione
 		CONFIRM.vis(	TXT("ChiediEliminaAnnotazione"),
 						false,
 						arguments ).then(function(pass){if(pass){

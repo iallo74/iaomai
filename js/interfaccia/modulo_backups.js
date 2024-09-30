@@ -366,6 +366,14 @@ var BACKUPS = {
 							HTML += "<i>"+TXT("Titolo")+":</i> <b>"+trattamenti[t].TitoloTrattamento+"</b><br>";
 							HTML += "<i>"+TXT("Costo")+":</i> <b>"+ArrotondaEuro(trattamenti[t].CostoTrattamento)+"</b><br>";
 							if(trattamenti[t].Anamnesi)HTML += "<i>"+TXT("Anamnesi"+addShiatsu)+":</i> "+trattamenti[t].Anamnesi+"<br>";
+							if(trattamenti[t].jsonValutazione!='""'){
+								jsonValutazione = JSON.parse(trattamenti[t].jsonValutazione);
+								HTML += '<i>'+TXT("ModuloValutazione")+':</i><div class="rientro">';
+								for(d in jsonValutazione){
+									HTML += "<i>"+jsonValutazione[d].d+":</i> "+jsonValutazione[d].r+"<br>";
+								}
+								HTML += '</div>';
+							}
 							if(trattamenti[t].DiagnosiOccidentale)HTML += "<i>"+TXT("DiagnosiOccidentale"+addShiatsu)+":</i> "+trattamenti[t].DiagnosiOccidentale+"<br>";
 							if(trattamenti[t].DiagnosiMTC)HTML += "<i>"+TXT("DiagnosiMTC"+addShiatsu)+":</i> "+trattamenti[t].DiagnosiMTC+"<br>";
 							
@@ -495,7 +503,7 @@ var BACKUPS = {
 								if(txtPunti)HTML += "<i>"+TXT("PuntiTrigger")+":</i> <div class=\"rientro\">"+txtPunti+"<br></div><br>";
 							}
 							
-							HTML += "<i>"+TXT("NoteTrattamento")+":</i> <b>"+trattamenti[t].NoteTrattamento+"</b><br>";
+							if(trattamenti[t].NoteTrattamento)HTML += "<i>"+TXT("NoteTrattamento")+":</i> <b>"+trattamenti[t].NoteTrattamento+"</b><br>";
 							HTML += "<br>";
 						}
 						HTML += "</div>";

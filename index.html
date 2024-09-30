@@ -294,6 +294,7 @@
                         	<div id="lista_fornitori"></div>
                         	<div id="lista_servizi"></div>
                         	<div id="lista_annotazioni"></div>
+                        	<div id="lista_moduli"></div>
                         	<div id="requestPwd">
                             	<span>{{TXT_PatientPwdConfirm}}</span>
                                 <input type="text" id="patientPwdRequest">
@@ -315,6 +316,7 @@
                         	<i id="label_altri_archivi">{{TXT_AltriArchivi}}</i>
                         	<div id="pulsante_fornitori" class="frdx" onClick="SCHEDA.selElenco('fornitori');">{{TXT_ElFornitori}}</div>
                         	<div id="pulsante_servizi" class="frdx" onClick="SCHEDA.selElenco('servizi');">{{TXT_ElServizi}}</div>
+                        	<div id="pulsante_moduli" class="frdx" onClick="SCHEDA.selElenco('moduli');">{{TXT_ElSchedeAnamnesi}}</div>
                         	<div id="pulsante_annotazioni" class="frdx" onClick="SCHEDA.selElenco('annotazioni');">{{TXT_ElNote}}</div>
                             <span class="separatorePulsanti"></span>
                         	<div id="pulsante_file" class="frdx" onClick="PH.car_gallery();">{{TXT_ElFiles}}</div>
@@ -747,8 +749,8 @@
             	<div id="labelAI" class="popup_label"><div class="popup_chiudi" onClick="MENU.chiudiMenu();"></div></div>
             	<div id="contAI" class="popup_cont">
                     <div id="txtAI"></div>
-                    <div id="btnAI" onClick="PAZIENTI.ai_request();">{{TXT_RequestAI}}</div>
-                    <div id="btnAIpurchase" onClick="PAZIENTI.ai_purchase();">{{TXT_PurchaseAI}}</div>
+                    <div id="btnAI" onClick="AI.request();">{{TXT_RequestAI}}</div>
+                    <div id="btnAIpurchase" onClick="AI.purchase();">{{TXT_PurchaseAI}}</div>
                 </div>
             </div>
            	<!---------------------------- fine popups ... -->

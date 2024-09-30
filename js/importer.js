@@ -136,6 +136,7 @@ var IMPORTER = {
         'js/interfaccia/modulo_fornitori.js',
         'js/interfaccia/modulo_servizi.js',
         'js/interfaccia/modulo_annotazioni.js',
+        'js/interfaccia/modulo_moduli.js',
         'js/interfaccia/modulo_ricerche.js',
         'js/interfaccia/modulo_notifiche.js',
         'js/interfaccia/modulo_backups.js',
@@ -150,6 +151,7 @@ var IMPORTER = {
 		'js/interfaccia/modulo_customs.js',
 		'js/interfaccia/modulo_app_rating.js',
 		'js/interfaccia/modulo_adv.js',
+		'js/interfaccia/modulo_ai.js',
 		'js/utils/agenda.js',
 		'js/utils/decpy.js',
         

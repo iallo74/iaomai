@@ -76,6 +76,15 @@
 	background-position:left center, center center !important;
 	background-repeat:no-repeat !important;
 }
+.scheda_moduli #scheda_titolo{
+    background: #1daeaa;
+    background: url(../img/ico_anamnesiB.png), -moz-linear-gradient(top, #1daeaa 0%, #0e7c79 100%);
+    background: url(../img/ico_anamnesiB.png), -webkit-linear-gradient(top, #1daeaa 0%,#0e7c79 100%);
+    background: url(../img/ico_anamnesiB.png), linear-gradient(to bottom, #1daeaa 0%,#0e7c79 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1daeaa', endColorstr='#0e7c79',GradientType=0 );
+	background-position:left center, center center !important;
+	background-repeat:no-repeat !important;
+}
 .scheda_servizio #scheda_titolo{
     background: #1d4eaa;
     background: url(../img/ico_servizioB.png), -moz-linear-gradient(top, #1d4eaa 0%, #0a3d96 100%);
@@ -684,6 +693,7 @@ body:not(.smart) .trattTools i:not(.infoCiclo):not(.addTrattBtn):hover{
 body:not(.smart) #addPaziente,
 body:not(.smart) #addFornitore,
 body:not(.smart) #addAnnotazione,
+body:not(.smart) #addModulo,
 body:not(.smart) #addServizio,
 body:not(.smart) #addProcedura,
 body:not(.smart) #add_saldo .elMenu{
@@ -726,6 +736,7 @@ body:not(.smart) .cartellaSingoli .addTrattBtn{
 body:not(.smart) #addPaziente:hover,
 body:not(.smart) #addFornitore:hover,
 body:not(.smart) #addAnnotazione:hover,
+body:not(.smart) #addModulo:hover,
 body:not(.smart) #addServizio:hover{
     background-color: #337cd7 !important;
 }
@@ -752,6 +763,7 @@ body:not(.smart) #add_saldo .elMenu:hover{
 #add_paz,
 #add_forn,
 #add_ann,
+#add_modl,
 #add_serv,
 #add_pat,
 #add_saldo,
@@ -767,6 +779,7 @@ body:not(.smart) #add_saldo .elMenu:hover{
 .smart.android #add_paz,
 .smart.android #add_forn,
 .smart.android #add_ann,
+.smart.android #add_modl,
 .smart.android #add_serv,
 .smart.android #add_pat,
 .smart.android #add_saldo,
@@ -780,6 +793,7 @@ body:not(.smart) #add_saldo .elMenu:hover{
 .sistemaMeridiani_p,
 #add_forn,
 #add_ann,
+#add_modl,
 #add_serv,
 #add_pat{
 	padding-left: 6px !important;
@@ -787,6 +801,7 @@ body:not(.smart) #add_saldo .elMenu:hover{
 body:not(.smart) #add_paz,
 body:not(.smart) #add_forn,
 body:not(.smart) #add_ann,
+body:not(.smart) #add_modl,
 body:not(.smart) #add_serv,
 body:not(.smart) #add_pat{
 	padding-right: 45px;
@@ -796,6 +811,7 @@ body:not(.smart) #add_pat{
 .sistemaMeridiani_p i,
 #add_forn i,
 #add_ann i,
+#add_modl i,
 #add_serv i,
 #add_saldo i,
 #add_proc i{ /* specifico di PROCEDURE */
@@ -810,6 +826,7 @@ body:not(.smart) #add_pat{
 .smart .sistemaMeridiani_p i,
 .smart #add_forn i,
 .smart #add_ann i,
+.smart #add_modl i,
 .smart #add_serv i,
 .smart #add_saldo i,
 .smart #add_proc i{ /* specifico di PROCEDURE */
@@ -821,6 +838,7 @@ body:not(.smart) #add_pat{
 .smart #addPaziente,
 .smart #addFornitore,
 .smart #addAnnotazione,
+.smart #addModulo,
 .smart #addServizio,
 .smart #addProcedura,
 .smart #add_saldo .elMenu{
@@ -841,6 +859,7 @@ body:not(.smart) #add_pat{
 .smart.android #addPaziente,
 .smart.android #addFornitore,
 .smart.android #addAnnotazione,
+.smart.android #addModulo,
 .smart.android #addServizio,
 .smart.android #addProcedura,
 .smart #add_saldo .elMenu{
@@ -852,6 +871,7 @@ body:not(.smart) #add_pat{
 .smart #addPaziente,
 .smart #addFornitore,
 .smart #addAnnotazione,
+.smart #addModulo,
 .smart #addServizio{
     background-color: #FFF;
     background-image: url(../img/addBlu3.png);
@@ -878,6 +898,7 @@ body:not(.smart) #add_pat{
 .sistemaMeridiani_p i span,
 #add_forn i span,
 #add_ann i span,
+#add_modl i span,
 #add_serv i span{
     font-size: var(--font-12-1);
     color: #525252;
@@ -905,12 +926,14 @@ body:not(.smart) #add_proc{
 .sistemaMeridiani_p i,
 #add_forn i,
 #add_ann i,
+#add_modl i,
 #add_serv i{
     color: #666;
 }
 #add_ciclo img:not(.noBG),
 #add_forn img,
 #add_ann img,
+#add_modl img,
 #add_serv img,
 #add_proc img{ /* specifico di PROCEDURE */
     box-shadow: 0px 0px 3px rgb(0 0 0 / 50%);
@@ -936,6 +959,7 @@ body:not(.smart) #addServizioMenu{
 
 #add_forn img,
 #add_ann img,
+#add_modl img,
 #add_serv img{
 	background-color: #555;
 }
@@ -1018,6 +1042,7 @@ body:not(.smart) #marketingPazienti{
 .listaPazienti,
 .listaFornitori,
 .listaAnnotazioni,
+.listaModuli,
 .listaServizi,
 .listaPatologie{
 	height: calc(100% - 39px);
@@ -1025,6 +1050,7 @@ body:not(.smart) #marketingPazienti{
 body:not(.smart) .listaPazienti,
 body:not(.smart) .listaFornitori,
 body:not(.smart) .listaAnnotazioni,
+body:not(.smart) .listaModuli,
 body:not(.smart) .listaServizi,
 body:not(.smart) .listaTeoria,
 body:not(.smart) .listaPatologie,
@@ -1399,6 +1425,7 @@ body:not(.smart) #rgApplicaFiltri{
 #paz_ricerca,
 #forn_ricerca,
 #ann_ricerca,
+#modl_ricerca,
 #serv_ricerca,
 #proc_ricerca,
 #pat_ricerca{
@@ -1418,6 +1445,7 @@ body:not(.smart) #rgApplicaFiltri{
 .smart.android #paz_ricerca,
 .smart.android #forn_ricerca,
 .smart.android #ann_ricerca,
+.smart.android #modl_ricerca,
 .smart.android #serv_ricerca,
 .smart.android #proc_ricerca,
 .smart.android #pat_ricerca{
@@ -1429,6 +1457,7 @@ body:not(.smart) #rgApplicaFiltri{
 .app_version.bug_font.smart.android #paz_ricerca,
 .app_version.bug_font.smart.android #forn_ricerca,
 .app_version.bug_font.smart.android #ann_ricerca,
+.app_version.bug_font.smart.android #modl_ricerca,
 .app_version.bug_font.smart.android #serv_ricerca,
 .app_version.bug_font.smart.android #proc_ricerca,
 .app_version.bug_font.smart.android #pat_ricerca{
@@ -1438,6 +1467,7 @@ body:not(.smart) #rgApplicaFiltri{
 #paz_ricerca,
 #forn_ricerca,
 #ann_ricerca,
+#modl_ricerca,
 #serv_ricerca,
 #pat_ricerca{
     border: 1px solid #999;
@@ -1467,11 +1497,13 @@ body:not(.smart) #rgApplicaFiltri{
 }
 #forn_ricerca,
 #ann_ricerca,
+#modl_ricerca,
 #serv_ricerca{
 	width: calc(var(--menu-width) - 48px);
 }
 .smart #forn_ricerca,
 .smart #ann_ricerca,
+.smart #modl_ricerca,
 .smart #serv_ricerca{
 	width: calc(var(--menu-width) - 6px);
 }
@@ -1913,21 +1945,69 @@ body:not(.smart) #tt_mezzival3 span{
     background-color: rgba(0,0,0,0.2) !important;
 }
 
-#anamnesi_btn{
-	background-image: url(../img/frGiuB.png);
-    background-position: right center;
+#anamnesi_btn,
+#modulo_btn{
     background-repeat: no-repeat;
-    padding-left: 15px;
-    padding-right: 40px;
     border-radius: 6px;
     background-color: rgba(0,0,0,0.1);
     cursor: pointer;
+    display: inline-block;
+}
+#anamnesi_btn{
+	background-image: url(../img/frGiuB.png);
+    background-position: right center;
+    background-size: auto 40px;
+    padding-left: 15px;
+    padding-right: 40px;
+	margin: 20px;
     height: 40px;
     line-height: 40px;
+}
+#modulo_btn_cont{
+	text-align:right;
+}
+#modulo_btn{
+	background-image: url(../img/ico_inserisci.png);
+    background-position: 2px 8px;
+    background-size: auto 25px;
+    padding-left: 31px;
+    padding-right: 13px;
+    margin-right: 10px;
+    height: 36px;
+    line-height: 36px;
+}
+#modulo_del{
     display: inline-block;
-    background-size: auto 40px;
-	margin: 20px;
-    /*float: right;*/
+    color: #A00;
+    cursor: pointer;
+    padding: 0 9px;
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.25);
+}
+#modulo_del:hover{
+background-color:rgba(0,0,0,0.1);
+}
+#modulo_tit{
+	display: inline-block;
+    float: left;
+    padding-left: 6px;
+    font-weight: bold;
+}
+#modulo.moduloFull #modulo_btn,
+#modulo:not(.moduloFull) #modulo_del,
+#modulo:not(.moduloFull) #modulo_tit{
+	display:none;
+}
+#modulo{
+	margin-bottom:30px;
+}
+#modulo.moduloFull{
+	background-color: rgba(0, 0, 0, 0.05);
+	border-radius: 6px;
+	padding: 7px;
+}
+.domandeModuli{
+    margin-bottom: 6px;
 }
 .anaVis{
 	background-image: url(../img/frSuB.png) !important;

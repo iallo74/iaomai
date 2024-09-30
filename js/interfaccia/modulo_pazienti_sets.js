@@ -321,7 +321,7 @@ var PAZIENTI_SETS = { // extend PAZIENTI
 		}
 		document.getElementById('totPunto').innerHTML = PAZIENTI.puntiProvvisori.length;
 		document.getElementById('puntiMTC').innerHTML=HTML;
-		PAZIENTI.diagnosi_swPoints();
+		AI.diagnosi_swPoints();
 		PAZIENTI.vis_tabs();
 		
 		
@@ -1762,8 +1762,9 @@ var PAZIENTI_SETS = { // extend PAZIENTI
 		if(	!document.getElementById("scheda").classList.contains("scheda_A") &&
 			!document.getElementById("scheda").classList.contains("scheda_B"))return;
 		
-		document.getElementById('tratt_cont_diagnosi').getElementsByClassName("spiegazioneAI")[0].classList.remove("nasTab");
-		document.getElementById('tratt_cont_diagnosi').getElementsByClassName("diagnosiBtns")[0].classList.remove("nasTab");
+		//document.getElementById('tratt_cont_diagnosi').getElementsByClassName("spiegazioneAI")[0].classList.remove("nasTab");
+		document.getElementById('tratt_cont_diagnosi').getElementsByClassName("diagnosiAzione")[0].classList.remove("nasTab");
+		//document.getElementById('tratt_cont_diagnosi').getElementsByClassName("diagnosiCancella")[0].classList.remove("nasTab");
 
 		let elsTab = [
 			'tratt_cont_punti',
@@ -1782,8 +1783,9 @@ var PAZIENTI_SETS = { // extend PAZIENTI
 				(globals.set.cartella == 'meridiani_shiatsu' && LOGIN.verModule("CIN"))) )document.getElementById('tratt_cont_punti').classList.add("nasTab");
 		if(	( 	!(globals.set.cartella == 'meridiani_cinesi' || 
 				(globals.set.cartella == 'meridiani_shiatsu' && LOGIN.verModule("CIN")))) ){
-					document.getElementById('tratt_cont_diagnosi').getElementsByClassName("spiegazioneAI")[0].classList.add("nasTab");
-					document.getElementById('tratt_cont_diagnosi').getElementsByClassName("diagnosiBtns")[0].classList.add("nasTab");
+					//document.getElementById('tratt_cont_diagnosi').getElementsByClassName("spiegazioneAI")[0].classList.add("nasTab");
+					document.getElementById('tratt_cont_diagnosi').getElementsByClassName("diagnosiAzione")[0].classList.add("nasTab");
+					//document.getElementById('tratt_cont_diagnosi').getElementsByClassName("diagnosiCancella")[0].classList.add("nasTab");
 		}
 		if(	!PAZIENTI.meridianiProvvisori.length &&
 			!(	globals.set.cartella == 'meridiani_cinesi' || 

@@ -50,6 +50,7 @@ var DB = {
 		"DB.files",
 		"DB.appuntamenti",
 		"DB.annotazioni",
+		"DB.moduli",
 		"FILES" ],
 	
 	// i metodi
@@ -122,6 +123,10 @@ var DB = {
 			data: []
 		};
 		DB.annotazioni = {
+			lastSync: 0,
+			data: []
+		};
+		DB.moduli = {
 			lastSync: 0,
 			data: []
 		};

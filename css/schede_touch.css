@@ -145,6 +145,7 @@
 .smart #elenchi .listaPazienti,
 .smart #elenchi .listaFornitori,
 .smart #elenchi .listaAnnotazioni,
+.smart #elenchi .listaModuli,
 .smart #elenchi .listaServizi{
 	height: calc(100% - 39px);
 }

@@ -2,11 +2,6 @@ var PAZIENTI_TRATTAMENTI = { // extend PAZIENTI
 	
 	mn: null, // il menu contestuale dei cicli
 	mnOver: false, // il menu contestuale dei cicli
-	endpointAI: '',
-	gettoniAI: {
-		usati: 0,
-		totali: 0
-	},
 	 
 	// TRATTAMENTI
 	vis_add: function( daPiu='' ){
@@ -18,7 +13,7 @@ var PAZIENTI_TRATTAMENTI = { // extend PAZIENTI
 			document.removeEventListener("mouseup",PAZIENTI.vis_add);
 		}
 	},
-	vis_anamnesi: function(){
+	vis_anamnesi: function(){ // visualizza/nasconde la scheda preliminare nella creazione di una cartella
 		let btn = document.getElementById("anamnesi_btn"),
 			cont = document.getElementById("anamnesi_cont");
 		if(!btn.classList.contains("anaVis")){
@@ -317,6 +312,7 @@ var PAZIENTI_TRATTAMENTI = { // extend PAZIENTI
 				idTrattamento=0,
 				TitoloTrattamento='',
 				NoteTrattamento='',
+				jsonValutazione=[],
 				Anamnesi='',
 				DiagnosiOccidentale='',
 				DiagnosiMTC,
@@ -355,6 +351,7 @@ var PAZIENTI_TRATTAMENTI = { // extend PAZIENTI
 				idTrattamento=TR.idTrattamento*1;
 				TitoloTrattamento=TR.TitoloTrattamento;
 				NoteTrattamento=TR.NoteTrattamento;
+				jsonValutazione=__(TR.jsonValutazione,[]);
 				Anamnesi=TR.Anamnesi;
 				DiagnosiOccidentale=TR.DiagnosiOccidentale;
 				DiagnosiMTC=TR.DiagnosiMTC;
@@ -622,6 +619,27 @@ var PAZIENTI_TRATTAMENTI = { // extend PAZIENTI
 							noLabel: true,
 							styleCampo: "margin-bottom:10px;margin-top:8px;" }) +
 					'	</div>' +
+					'	<div id="modulo"'+(jsonValutazione.length?' class="moduloFull"':'')+'>' +
+					'		<div id="modulo_btn_cont">' +
+					'			<div id="modulo_tit">'+TXT("ModuloValutazione")+'</div>' +
+					'			<div id="modulo_btn" onClick="PAZIENTI.swImportaModulo();">'+TXT("ImportaModulo")+'</div>' +
+					'			<div id="modulo_del" onClick="PAZIENTI.rimuoviModulo();">'+TXT("RimuoviModulo")+'</div>' +
+					'		</div>' +
+					'		<div id="modulo_cont">';
+			for(d in jsonValutazione){
+				HTML += '<div class="domandeModuli"><i>'+jsonValutazione[d].d+'</i>' +
+						H.r({	t: "r",
+								name: "risposta"+d,
+								value: "",
+								noLabel: true,
+								value: jsonValutazione[d].r,
+								classCampo: "okPlaceHolder styled",
+								ver: "1|0" }) +
+						'</div>';
+			}
+					
+			HTML += '		</div>' +
+					'	</div>' +
 					'</div>' +
 
 
@@ -720,6 +738,17 @@ var PAZIENTI_TRATTAMENTI = { // extend PAZIENTI
 					'	</em>'+	
 					
 					// DIAGNOSI
+					'	<div id="contDiagnosiMTC" class="contDiagnosiAI'+(diagnosiAI?' fullAI':'')+'">'+
+					'		<div class="spiegazioneAI"><div class="requestAI" onClick="AI.get_gettoni(\'AI.diagnosi_request();\');">'+TXT("DiagnosiAI")+'</div></div>'+
+					'		<div class="diagnosiAI">'+
+					'			<div class="diagnosiAI_txt" id="diagnosiAI">'+diagnosiAI+'</div>'+
+					'			<div class="diagnosiBtns">'+
+					'				<img src="img/ico_disclaimer.png" class="disclaimerAI" title="'+TXT("DisclaimerAI")+'" onClick="AI.popup();"/>'+
+					'				<div class="diagnosiAzione" onClick="AI.diagnosi_addPoints();">'+TXT("DiagnosiAddPoints")+'</div>'+
+					'				<img class="diagnosiCancella" src="img/ico_cestino.png" width="16" height="16" align="absmiddle" title="'+TXT("Elimina")+'" onclick="AI.diagnosi_delete();" class="cestino">'+
+					'			</div>'+
+					'		</div>'+
+					'	</div>'+
 					'	<div id="contDiagnosi" style="min-height:240px;">'+
 					'		<div class="l"></div>' +
 					'		<div class="schDx">' +
@@ -737,17 +766,6 @@ var PAZIENTI_TRATTAMENTI = { // extend PAZIENTI
 							styleCampo: "margin-bottom:10px;" }) +
 					'		</div>' +
 					'		<div class="l"></div>' +
-					'	</div>'+
-					'	<div id="contDiagnosiMTC" class="contDiagnosiAI'+(diagnosiAI?' fullAI':'')+'">'+
-					'		<div class="spiegazioneAI"><div class="requestAI" onClick="PAZIENTI.ai_get_gettoni(\'PAZIENTI.diagnosiAI_request();\');">'+TXT("DiagnosiAI")+'</div></div>'+
-					'		<div class="diagnosiAI">'+
-					'			<div class="diagnosiAI_txt" id="diagnosiAI">'+diagnosiAI+'</div>'+
-					'			<div class="diagnosiBtns">'+
-					'				<img src="img/ico_disclaimer.png" class="disclaimerAI" title="'+TXT("DisclaimerAI")+'" onClick="PAZIENTI.ai_popup();"/>'+
-					'				<div class="diagnosiAzione" onClick="PAZIENTI.diagnosiAI_addPoints();">'+TXT("DiagnosiAddPoints")+'</div>'+
-					'				<img class="diagnosiCancella" src="img/ico_cestino.png" width="16" height="16" align="absmiddle" title="'+TXT("Elimina")+'" onclick="PAZIENTI.diagnosiAI_delete();" class="cestino">'+
-					'			</div>'+
-					'		</div>'+
 					'	</div>'+
 					'</div>';
 					
@@ -990,6 +1008,7 @@ var PAZIENTI_TRATTAMENTI = { // extend PAZIENTI
 			if(TipoTrattamento=='A' || !LabelCiclo)PAZIENTI.popolaSintomi();
 			PAZIENTI.caricaDettagliSet(); // carico le schede dei singoli sets
 			PAZIENTI.caricaSintomi();
+			console.log(jsonValutazione)
 			PH.caricaGallery();
 			PAZIENTI.trattOp = true;
 			initChangeDetection( "formMod" );
@@ -1133,7 +1152,7 @@ var PAZIENTI_TRATTAMENTI = { // extend PAZIENTI
 
 
 	},
-	apriSpostaTrattamento: function( Q_idTratt){
+	apriSpostaTrattamento: function( Q_idTratt){ // fa comparire l'elemento fluttuante che sposta un elemento
 		applicaLoading(document.getElementById("scheda_testo"),'vuoto');
 		let HTML =  '<div id="titCartelle">'+htmlEntities(TXT("SpostaIn"))+'<span onClick="PAZIENTI.chiudiSpostaTrattamento();"></span></div>' +
 					'<div id="elencoCartelle">';
@@ -1160,13 +1179,13 @@ var PAZIENTI_TRATTAMENTI = { // extend PAZIENTI
 		cont.classList.add("cartelle");
 		cont.classList.add("visSch");
 	},
-	spostaTrattamento: function( el ){
+	spostaTrattamento: function( el ){ // sposta il trattamento
 		document.getElementById("label_ciclo").innerHTML = '<span>'+htmlEntities(el.innerText)+'</span>';
 		document.formMod.LabelCiclo.value = el.innerText;
 		document.formMod.idCiclo.value = el.dataset.id;
 		PAZIENTI.chiudiSpostaTrattamento();
 	},
-	chiudiSpostaTrattamento: function(){
+	chiudiSpostaTrattamento: function(){ // chiude l'elemento fluttuante che sposta l'elemento
 		document.getElementById("gruppoPunti_cont").classList.remove("visSch");
 		document.getElementById("gruppoPunti_cont").classList.remove("cartelle");
 		rimuoviLoading(document.getElementById("scheda_testo"));
@@ -1182,7 +1201,7 @@ var PAZIENTI_TRATTAMENTI = { // extend PAZIENTI
 		// tolgo il blocco online dall'elemento
 		LOGIN.closeLocked("trattamenti",idTrattamento);
 	},
-	moveTratt: function( el, cont){
+	moveTratt: function( el, cont){ // onmove: sposta il trattamento
 		if(!cont)return;
 		if(el.dataset.typeDrag != cont.dataset.typeDrag)return;
 		let idTrattamento = el.id.split("_")[2],
@@ -1219,7 +1238,7 @@ var PAZIENTI_TRATTAMENTI = { // extend PAZIENTI
 			});
 		}});
 	},
-	moveCiclo: function( el, cont ){
+	moveCiclo: function( el, cont ){ // onmove: sposta la cartella
 		if(!cont)return;
 		if(el==cont.getElementsByTagName("span")[0])return;
 		let elMoved = parseInt(el.id.split("_")[1]),
@@ -1345,12 +1364,22 @@ var PAZIENTI_TRATTAMENTI = { // extend PAZIENTI
 				}
 				delete(GA[i].imported);
 			}
+			let jsonValutazione = [],
+				els = document.getElementById("modulo_cont").getElementsByClassName("domandeModuli");
+			for(e=0;e<els.length;e++){
+				jsonValutazione.push({
+					"d": els[e].getElementsByTagName("I")[0].innerText,
+					"r": els[e].getElementsByTagName("INPUT")[0].value,
+				});
+			}
+
 			localPouchDB.setItem(MD5("DB"+LOGIN._frv()+".files"), IMPORTER.COMPR(DB.files)).then(function(){
 				PAZIENTI.ricPuntiTratt();
 				JSNPUSH={	"idTrattamento": document.formMod.idTrattamento.value*1,
 							"TitoloTrattamento": document.formMod.TitoloTrattamento.value,
 							"NoteTrattamento": document.formMod.NoteTrattamento.value,
 							"TimeTrattamento": document.formMod.TimeTrattamento.value*1,
+							"jsonValutazione": jsonValutazione,
 							"oraInizio": document.formMod.oraInizio.value*1,
 							"oraFine": document.formMod.oraFine.value*1,
 							"Anamnesi": document.formMod.Anamnesi.value,
@@ -1398,7 +1427,7 @@ var PAZIENTI_TRATTAMENTI = { // extend PAZIENTI
 		}
 		return false;
 	},
-	el_trattamento: function( Q_idTratt ){
+	el_trattamento: function( Q_idTratt ){ // elimina il trattamento
 		// elimina il trattamento
 		let TXT_EL_AL=TXT("ChiediEliminaTrattamento");
 		if(DB.pazienti.data[PAZIENTI.idCL].trattamenti[Q_idTratt].TipoTrattamento=='A'){
@@ -1500,167 +1529,74 @@ var PAZIENTI_TRATTAMENTI = { // extend PAZIENTI
 		},200, d);
 	},
 
-	// AI
-	ai_get_gettoni: function( endpoint ){
-		PAZIENTI.endpointAI = endpoint;
-		visLoader();
-		CONN.caricaUrl(	"diagnosi_gettoni.php",
-						"",
-						"PAZIENTI.ai_res_gettoni");
-	},
-	ai_res_gettoni: function( res ){
-		PAZIENTI.gettoniAI = JSON.parse(res);
-		PAZIENTI.ai_popup();
-	},
-	ai_popup: function( purchase=false ){
-		let endpoint = PAZIENTI.endpointAI;
-		PAZIENTI.endpointAI = '';
-		if(CONN.retNoConn()){
-			PAZIENTI.aiEndPoint = endpoint;
-			MENU.visAI();
-			if(endpoint){
-				let gettoniRestanti = PAZIENTI.gettoniAI.totali-PAZIENTI.gettoniAI.usati;
-				if(gettoniRestanti>0){
-					let conteggio = TXT("ConteggioGettoniAI");
-					conteggio = conteggio.replace("[r]",'<b>'+gettoniRestanti+'</b>')
-					conteggio = conteggio.replace("[u]",PAZIENTI.gettoniAI.usati);
-					conteggio = conteggio.replace("[t]",PAZIENTI.gettoniAI.totali);
-					document.getElementById("txtAI").innerHTML = '<div id="cont_gettoniAI">'+conteggio+'</div>'+TXT("SpiegazioneAI");
-					document.getElementById("ai").classList.remove("disclaimer");
-					document.getElementById("ai").classList.remove("purchaseTokens");
-				}else{
-					document.getElementById("txtAI").innerHTML = '<div id="cont_gettoniAI_err">'+TXT("GettoniFiniti")+'</div>';
-					document.getElementById("ai").classList.add("purchaseTokens");
-				}
-			}else{
-				if(!purchase){
-					document.getElementById("txtAI").innerHTML = TXT("DisclaimerAI");
-					document.getElementById("ai").classList.add("disclaimer");
-				}else{
-					document.getElementById("txtAI").innerHTML = '<div id="cont_gettoniAI_err"><div>'+TXT("GettoniFiniti")+'</div>';
-					document.getElementById("ai").classList.add("purchaseTokens");
-				}
+	// moduli valutazione
+	swImportaModulo: function(){ // visualizza/nasconde il menu dell'elenco moduli da improtare
+		if(!document.getElementById("gruppoPunti_cont").classList.contains("visSch")){
+			rimuoviLoading(document.getElementById("scheda_testo"));
+			applicaLoading(document.getElementById("scheda_testo"),'vuoto');
+			document.getElementById("LL").onclick = function(){PAZIENTI.swGruppoPunti();};
+			let w = (document.getElementById("scheda_testo").scrollWidth-60),
+				l = 30,
+				maxW = 400;
+			if(w>maxW){
+				w = maxW;
+				l = (document.getElementById("scheda").scrollWidth/2-maxW/2);
 			}
-		}
-	},
-	ai_request: function(){
-		MENU.chiudiMenu();
-		eval(PAZIENTI.aiEndPoint);
-	},
-	ai_purchase: function(){
-		CONN.openUrl(convLangPath(CONN.urlAItokens)+"?p="+MD5(DB.login.data.TOKEN+(DB.login.data.idUtente*123))+(DB.login.data.idUtente*45));
-	},
-	diagnosiAI_request: function(){
-		let anamnesi = '';
-		if(document.getElementById("Anamnesi"))anamnesi = document.getElementById("Anamnesi").value;
-		else{
-			anamnesi += H.chr10+TXT("DiagnosiMTC")+H.chr10+document.getElementById("DiagnosiMTC").value +
-						H.chr10+TXT("DiagnosiOccidentale")+H.chr10+document.getElementById("DiagnosiOccidentale").value;
-		}
-		let JSNPOST = {
-			anamnesi: anamnesi,
-			sesso: DB.pazienti.data[PAZIENTI.idCL].sesso,
-			siglaLingua: globals.siglaLingua.toLowerCase(),
-			sintomi: [],
-			patologie: [],
-			allergie: [],
-			interventi: [],
-			medicine: []
-		};
-		for(s in PAZIENTI.sintomiProvvisori){
-			if(PAZIENTI.sintomiProvvisori[s].score>-1){
-				JSNPOST.sintomi.push({
-					"sintomo": PAZIENTI.sintomiProvvisori[s].NomeSintomo,
-					"score": PAZIENTI.sintomiProvvisori[s].score
-				});
+			document.getElementById("gruppoPunti_cont").style.left = l+"px";
+			document.getElementById("gruppoPunti_cont").style.width = w+"px";
+			document.getElementById("gruppoPunti_cont").style.top = '118px';
+			document.getElementById("gruppoPunti_cont").classList.add("visSch");
+			let HTML = '',
+				txt = htmlEntities(TXT("ImportaModulo"));
+			HTML += '<div class="gr_tit">' +
+						txt +
+					'	<span onClick="PAZIENTI.swImportaModulo();">' +
+					'</span>' +
+					'</div>' +
+					'<div class="gr_0">';
+			for(m in DB.moduli.data){
+				HTML += '<div class="gr_btn"' +
+						'	  id="gr_btn_'+m+'"' +
+						'	  onClick="PAZIENTI.importaModulo('+m+');">' +
+						DB.moduli.data[m].NomeModulo +
+						'</div>';
 			}
-		}
-		for(p in DB.pazienti.data[PAZIENTI.idCL].patologie){
-			JSNPOST.patologie.push(DB.pazienti.data[PAZIENTI.idCL].patologie[p].NomePatologia);
-		}
-		for(p in DB.pazienti.data[PAZIENTI.idCL].allergie){
-			JSNPOST.allergie.push(DB.pazienti.data[PAZIENTI.idCL].allergie[p].NomeAllergia);
-		}
-		for(p in DB.pazienti.data[PAZIENTI.idCL].interventi){
-			JSNPOST.interventi.push(DB.pazienti.data[PAZIENTI.idCL].interventi[p].NomeIntervento);
-		}
-		for(p in DB.pazienti.data[PAZIENTI.idCL].medicine){
-			JSNPOST.medicine.push(DB.pazienti.data[PAZIENTI.idCL].medicine[p].NomeMedicina);
-		}
-		if(!PAZIENTI.sintomiProvvisori && !document.getElementById("Anamnesi").value.trim()){
-			ALERT(TXT("NoDataAI"));
-			return;
-		}
-		visLoader(TXT("ElaborazioneInCorso"));
-		CONN.caricaUrl(	"diagnosi_mtc.php",
-						"b64=1&JSNPOST="+window.btoa(encodeURIComponent(JSON.stringify(JSNPOST)))+"&NominativoPaziente="+window.btoa(encodeURIComponent(DB.pazienti.data[PAZIENTI.idCL].Nome+" "+DB.pazienti.data[PAZIENTI.idCL].Cognome)),
-						"PAZIENTI.diagnosiAI_response");
-	},
-	diagnosiAI_response: function( json ){
-		let res = JSON.parse(json);
-		if(res.esito.substr(0,5)=='ERROR'){
-			ALERT(TXT("ErroreGenerico"));
-		}else if(res.esito=='NO_DATA'){
-			ALERT(TXT("NoDataAI"));
-		}else if(res.esito=='TOKEN_FINISH'){
-			PAZIENTI.ai_popup(true);
+			if(!DB.moduli.data.length)HTML += '<i>'+TXT("NoRes")+'</i>'
+			HTML += '</div>';
+			document.getElementById("gruppoPunti_cont").innerHTML = HTML;
+
+
 		}else{
-			let re1 = /[\*]{2}([^\*]+)[\*]{2}/g,
-				re2 = /[#]{4} ([^\n]+)\n/g,
-				re3 = /[#]{3} ([^\n]+)\n/g,
-				re5 = /[#]{2} ([^\n]+)\n/g,
-				re6 = /[#]{1} ([^\n]+)\n/g,
-				re4 = /\n/g,
-				html = res.response;
-			html = html.replace(re1,"<b>$1</b>");
-			html = html.replace(re2,"<h4>$1</h4>");
-			html = html.replace(re3,"<h3>$1</h3>");
-			html = html.replace(re5,"<h3>$1</h3>");
-			html = html.replace(re6,"<h4>$1</h4>");
-			html = html.replace(re4,"<br>");
-			document.getElementById("diagnosiAI").innerHTML = html;
-			document.getElementById("contDiagnosiMTC").classList.add("fullAI");
-			PAZIENTI.diagnosi_swPoints();
-			SCHEDA.formModificato = true;
+			document.getElementById("LL").onclick = '';
+			rimuoviLoading(document.getElementById("scheda_testo"));
+			document.getElementById("gruppoPunti_cont").classList.remove("visSch");
 		}
-		nasLoader();
-		PAZIENTI.aiEndPoint = '';
 	},
-	diagnosiAI_delete: function(){
-		CONFIRM.vis(	TXT("ChiediEliminaDiagnosi"),
+	importaModulo: function( m ){ // importa un modulo di valutazione della scheda trattamento
+		let HTML = '';
+		for(d in DB.moduli.data[m].jsonModulo){
+			HTML += '<div class="domandeModuli"><i>'+DB.moduli.data[m].jsonModulo[d]+'</i>' +
+					H.r({	t: "r",
+							name: "risposta"+d,
+							value: "",
+							noLabel: true,
+							classCampo: "okPlaceHolder styled",
+							ver: "1|0" }) +
+					'</div>';
+		}
+		document.getElementById("modulo_cont").innerHTML = HTML;
+		document.getElementById("modulo").classList.toggle("moduloFull",HTML);
+		if(!HTML)ALERT(TXT("erroreModuloVuoto"));
+		PAZIENTI.swImportaModulo();
+	},
+	rimuoviModulo: function(){ // rimuove il modulo dalla scheda di trattamento
+		CONFIRM.vis(	TXT("chiediRimuoviModulo"),
 						false, 
 						arguments ).then(function(pass){if(pass){
 						let v = getParamNames(CONFIRM.args.callee.toString());
 						for(let i in v)eval(getArguments(v,i));
-			document.getElementById("diagnosiAI").innerHTML = '';
-			document.getElementById("contDiagnosiMTC").classList.remove("fullAI");
-			SCHEDA.formModificato = true;
+			document.getElementById("modulo_cont").innerHTML = '';
+			document.getElementById("modulo").classList.remove("moduloFull");
 		}});
-	},
-	diagnosiAI_addPoints: function(){
-		let punti = PAZIENTI.diagnosi_verPoints();
-		if(punti.length){
-			PAZIENTI.tipoGruppo = 'P';
-			PAZIENTI.aggiungiGruppoTrattamento(punti);
-		}else ALERT(TXT("PuntiTuttiPresenti"));
-	},
-	diagnosi_verPoints: function(){
-		let html = document.getElementById("diagnosiAI").innerHTML,
-			re = /[A-Z]{2}\.[0-9]{1,2}/g,
-			els = html.match(re),
-			punti = [];
-		for(e in els){
-			let pP = els[e].split("."),
-				pass = true;
-			for(p in PAZIENTI.puntiProvvisori){
-				if(parseInt(PAZIENTI.puntiProvvisori[p].n)==parseInt(pP[1]) && PAZIENTI.puntiProvvisori[p].m==pP[0])pass=false;
-			}
-			if(pass)punti.push(pP[1]+"."+pP[0]+"..");
-		}
-		return punti;
-	},
-	diagnosi_swPoints: function(){
-		if(!document.getElementById('tratt_cont_punti').getElementsByClassName("diagnosiAzione")[0])return;
-		document.getElementById('tratt_cont_punti').getElementsByClassName("diagnosiAzione")[0].classList.toggle("nas",!PAZIENTI.diagnosi_verPoints().length);
 	}
 }

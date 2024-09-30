@@ -59,6 +59,7 @@ var LOGIN = {
 			localPouchDB.getItem(MD5("DB"+LOGIN._frv()+".servizi")),
 			localPouchDB.getItem(MD5("DB"+LOGIN._frv()+".appuntamenti")),
 			localPouchDB.getItem(MD5("DB"+LOGIN._frv()+".annotazioni")),
+			localPouchDB.getItem(MD5("DB"+LOGIN._frv()+".moduli")),
 			localPouchDB.getItem(MD5("DB"+LOGIN._frv()+".ricerche")),
 			localPouchDB.getItem(MD5("DB"+LOGIN._frv()+".files"))
 		]).then(function( dbs ){
@@ -69,13 +70,15 @@ var LOGIN = {
 			DB.servizi=IMPORTER.DECOMPR(dbs[4]);
 			DB.appuntamenti=IMPORTER.DECOMPR(dbs[5]);
 			DB.annotazioni=IMPORTER.DECOMPR(dbs[6]);
-			DB.ricerche=IMPORTER.DECOMPR(dbs[7]);
-			DB.files=IMPORTER.DECOMPR(dbs[8]);
+			DB.moduli=IMPORTER.DECOMPR(dbs[7]);
+			DB.ricerche=IMPORTER.DECOMPR(dbs[8]);
+			DB.files=IMPORTER.DECOMPR(dbs[9]);
 			
 			if(PAZIENTI.idCL == -1)PAZIENTI.caricaPazienti();
 			FORNITORI.caricaFornitori();
 			SERVIZI.caricaServizi();
 			ANNOTAZIONI.caricaAnnotazioni();
+			MODULI.caricaModuli();
 			if(syncro){
 				if(CONN.getConn())LOGIN.aggiornaToken(true);
 				else{
@@ -230,6 +233,7 @@ var LOGIN = {
 			applicaLoading(document.querySelector(".listaFornitori"));
 			applicaLoading(document.querySelector(".listaServizi"));
 			applicaLoading(document.querySelector(".listaAnnotazioni"));
+			applicaLoading(document.querySelector(".listaModuli"));
 			localStorage.RimaniConnesso = document.getElementById("stayConnected").checked;
 			
 			LOGIN.salvaToken(txt);
@@ -480,7 +484,8 @@ var LOGIN = {
 				"ricerche": DB.ricerche.lastSync,
 				//"cicli": DB.cicli.lastSync, // SERVE SOLO IN UPLOAD
 				"appuntamenti": DB.appuntamenti.lastSync,
-				"annotazioni": DB.annotazioni.lastSync
+				"annotazioni": DB.annotazioni.lastSync,
+				"moduli": DB.moduli.lastSync
 			};
 			if(LOGIN.logedin())CONN.caricaUrl(	"vertoken.php",
 												"SL="+globals.siglaLingua.toUpperCase() +
@@ -522,6 +527,11 @@ var LOGIN = {
 			if(DB.annotazioni){
 				for(let p in DB.annotazioni.data){
 					if(DB.annotazioni.data[p].DataModifica>DB.annotazioni.lastSync)LOGIN.daSync=true;
+				}
+			}
+			if(DB.moduli){
+				for(let p in DB.moduli.data){
+					if(DB.moduli.data[p].DataModifica>DB.moduli.lastSync)LOGIN.daSync=true;
 				}
 			}
 			if(DB.procedure){
@@ -596,6 +606,7 @@ var LOGIN = {
 		//localStorage.removeItem('DB.servizi');
 		//localStorage.removeItem('DB.appuntamenti');
 		//localStorage.removeItem('DB.annotazioni');
+		//localStorage.removeItem('DB.moduli');
 		//localStorage.removeItem('DB.login');
 		
 		//inizializzaLogin();

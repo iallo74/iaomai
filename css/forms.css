@@ -1001,9 +1001,18 @@ cont_p_paz_label{
 #meridianiMTC,
 #puntiAuricolari,
 #puntiPlantari,
-#puntiTrigger{ /* PAZIENTI */
+#puntiTrigger,
+#dettagli_modulo{ /* PAZIENTI */
 	height:auto !important;
 	padding-top: 12px;
+}
+#dettagli_modulo{
+	padding: 10px;
+    background-color: #dddad6;
+    border-radius: 8px;
+}
+#dettagli_modulo input{
+	margin:2px 0;
 }
 #puntiMTC > div,
 #puntiNamikoshi > div,
@@ -2311,7 +2320,7 @@ body:not(.touch) #puntiTrigger .dettPunto:hover{
     padding-top: 15px !important;
 }
 .nasTab{
-	display:none;
+	display:none !important;
 }
 .sezioneTrattamenti{
     padding-top: 13px;
@@ -2762,7 +2771,7 @@ body:not(.touch) .contGallery > div:not(.noResults) > div:hover img.spunta_pic{
 }
 .requestAI{
 	background-image: url(../img/ico_diagnosiAI.png) !important;
-    margin: 15px 0 0 0 !important;
+    margin: 15px 0 -8px 0 !important;
     background-repeat: no-repeat;
     background-position: 5px center;
     padding-right: 10px !important;
@@ -2788,6 +2797,7 @@ body:not(.touch) .contGallery > div:not(.noResults) > div:hover img.spunta_pic{
     background-color: #c8d2fc;
     padding: 3px;
 	border-top:1px solid rgba(0,0,0,0.1);
+	height:34px;
 }
 .diagnosiAzione{
     font-size: var(--font-13-2) !important;
