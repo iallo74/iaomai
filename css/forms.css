@@ -2759,7 +2759,7 @@ body:not(.touch) .contGallery > div:not(.noResults) > div:hover img.spunta_pic{
 .diagnosiAI{
     border-radius: 10px;
     margin-top: 15px;
-    max-height: 237px;
+    max-height: 356px;
     border: 1px solid rgba(7, 96, 157, 0.3);
 	overflow: hidden;
 }
@@ -2769,7 +2769,7 @@ body:not(.touch) .contGallery > div:not(.noResults) > div:hover img.spunta_pic{
     border-top-left-radius: 10px;
     overflow-y: auto;
     line-height: 18px;
-    max-height: 200px;
+    max-height: 300px;
 	-webkit-user-select: text !important;
 	-khtml-user-select: text !important;
 	-moz-user-select: text !important;
