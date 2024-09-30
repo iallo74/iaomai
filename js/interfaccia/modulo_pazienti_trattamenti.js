@@ -312,7 +312,7 @@ var PAZIENTI_TRATTAMENTI = { // extend PAZIENTI
 				idTrattamento=0,
 				TitoloTrattamento='',
 				NoteTrattamento='',
-				jsonValutazione=[],
+				jsonValutazione={},
 				Anamnesi='',
 				DiagnosiOccidentale='',
 				DiagnosiMTC,
@@ -351,7 +351,7 @@ var PAZIENTI_TRATTAMENTI = { // extend PAZIENTI
 				idTrattamento=TR.idTrattamento*1;
 				TitoloTrattamento=TR.TitoloTrattamento;
 				NoteTrattamento=TR.NoteTrattamento;
-				jsonValutazione=__(TR.jsonValutazione,[]);
+				jsonValutazione=__(TR.jsonValutazione,{});
 				Anamnesi=TR.Anamnesi;
 				DiagnosiOccidentale=TR.DiagnosiOccidentale;
 				DiagnosiMTC=TR.DiagnosiMTC;
@@ -619,23 +619,28 @@ var PAZIENTI_TRATTAMENTI = { // extend PAZIENTI
 							noLabel: true,
 							styleCampo: "margin-bottom:10px;margin-top:8px;" }) +
 					'	</div>' +
-					'	<div id="modulo"'+(jsonValutazione.length?' class="moduloFull"':'')+'>' +
+					'	<div id="modulo"'+(Object.keys(jsonValutazione).length?' class="moduloFull"':'')+'>' +
 					'		<div id="modulo_btn_cont">' +
-					'			<div id="modulo_tit">'+TXT("ModuloValutazione")+'</div>' +
+					'			<div id="modulo_tit">'+(jsonValutazione?.title?jsonValutazione.title:TXT("ModuloValutazione"))+'</div>' +
 					'			<div id="modulo_btn" onClick="PAZIENTI.swImportaModulo();">'+TXT("ImportaModulo")+'</div>' +
 					'			<div id="modulo_del" onClick="PAZIENTI.rimuoviModulo();">'+TXT("RimuoviModulo")+'</div>' +
 					'		</div>' +
 					'		<div id="modulo_cont">';
-			for(d in jsonValutazione){
-				HTML += '<div class="domandeModuli"><i>'+jsonValutazione[d].d+'</i>' +
-						H.r({	t: "r",
-								name: "risposta"+d,
-								value: "",
-								noLabel: true,
-								value: jsonValutazione[d].r,
-								classCampo: "okPlaceHolder styled",
-								ver: "1|0" }) +
-						'</div>';
+			if(jsonValutazione?.data){
+				for(d in jsonValutazione.data){
+					if(jsonValutazione.data[d].t=='e'){
+						HTML += '<div class="domandeModuli etichetteModuli"><i>'+jsonValutazione.data[d].d+'</i></div>';
+					}
+					if(jsonValutazione.data[d].t=='d'){
+						HTML += '<div class="domandeModuli"><i>'+jsonValutazione.data[d].d+'</i>' +
+								H.r({	t: "r",
+										name: "risposta"+d,
+										value: jsonValutazione.data[d].r,
+										noLabel: true,
+										classCampo: "okPlaceHolder styled" }) +
+								'</div>';
+					}
+				}
 			}
 					
 			HTML += '		</div>' +
@@ -1008,7 +1013,6 @@ var PAZIENTI_TRATTAMENTI = { // extend PAZIENTI
 			if(TipoTrattamento=='A' || !LabelCiclo)PAZIENTI.popolaSintomi();
 			PAZIENTI.caricaDettagliSet(); // carico le schede dei singoli sets
 			PAZIENTI.caricaSintomi();
-			console.log(jsonValutazione)
 			PH.caricaGallery();
 			PAZIENTI.trattOp = true;
 			initChangeDetection( "formMod" );
@@ -1364,14 +1368,21 @@ var PAZIENTI_TRATTAMENTI = { // extend PAZIENTI
 				}
 				delete(GA[i].imported);
 			}
+
+			// modulo valutazione
 			let jsonValutazione = [],
 				els = document.getElementById("modulo_cont").getElementsByClassName("domandeModuli");
 			for(e=0;e<els.length;e++){
 				jsonValutazione.push({
 					"d": els[e].getElementsByTagName("I")[0].innerText,
-					"r": els[e].getElementsByTagName("INPUT")[0].value,
+					"r": els[e].getElementsByTagName("INPUT").length?els[e].getElementsByTagName("INPUT")[0].value:'',
+					"t": els[e].classList.contains("etichetteModuli")?'e':'d'
 				});
 			}
+			if(jsonValutazione != [])jsonValutazione = {
+				title: document.getElementById("modulo_tit").innerText,
+				data: jsonValutazione
+			};
 
 			localPouchDB.setItem(MD5("DB"+LOGIN._frv()+".files"), IMPORTER.COMPR(DB.files)).then(function(){
 				PAZIENTI.ricPuntiTratt();
@@ -1575,15 +1586,20 @@ var PAZIENTI_TRATTAMENTI = { // extend PAZIENTI
 	importaModulo: function( m ){ // importa un modulo di valutazione della scheda trattamento
 		let HTML = '';
 		for(d in DB.moduli.data[m].jsonModulo){
-			HTML += '<div class="domandeModuli"><i>'+DB.moduli.data[m].jsonModulo[d]+'</i>' +
-					H.r({	t: "r",
-							name: "risposta"+d,
-							value: "",
-							noLabel: true,
-							classCampo: "okPlaceHolder styled",
-							ver: "1|0" }) +
-					'</div>';
+			if(DB.moduli.data[m].jsonModulo[d].t=='e'){
+				HTML += '<div class="domandeModuli etichetteModuli"><i>'+DB.moduli.data[m].jsonModulo[d].d+'</i></div>';
+			}
+			if(DB.moduli.data[m].jsonModulo[d].t=='d'){
+				HTML += '<div class="domandeModuli"><i>'+DB.moduli.data[m].jsonModulo[d].d+'</i>' +
+						H.r({	t: "r",
+								name: "risposta"+d,
+								value: "",
+								noLabel: true,
+								classCampo: "okPlaceHolder styled" }) +
+						'</div>';
+			}
 		}
+		document.getElementById("modulo_tit").innerHTML = DB.moduli.data[m].NomeModulo;
 		document.getElementById("modulo_cont").innerHTML = HTML;
 		document.getElementById("modulo").classList.toggle("moduloFull",HTML);
 		if(!HTML)ALERT(TXT("erroreModuloVuoto"));

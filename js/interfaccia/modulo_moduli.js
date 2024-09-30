@@ -116,8 +116,10 @@ var MODULI = {
 
 			// DETTAGLI DEL MODULO
 			HTML += '<div id="dettagli_modulo"></div>'+
+					'<div class="p_sch_label">'+TXT("Aggiungi")+':	</div>'+
 					'<div id="btns_modulo">'+
-						'<div class="p_paz_label" onClick="MODULI.aggiungiDomanda();">'+TXT("AggiungiDomanda")+'</div>'+
+						'<div class="p_paz_label p_quesito" onClick="MODULI.aggiungiDomanda(\'d\');">'+TXT("Quesito")+'</div>'+
+						'<div class="p_paz_label p_etichetta" onClick="MODULI.aggiungiDomanda(\'e\');">'+TXT("Etichetta")+'</div>'+
 					'</div>';	
 
 
@@ -240,20 +242,29 @@ var MODULI = {
 		for(d in MODULI.domande){
 			HTML += H.r({	t: "r",
 							name: "domanda"+d,
-							value: MODULI.domande[d],
+							value: MODULI.domande[d].d,
 							noLabel: true,
 							classCampo: "okPlaceHolder",
+							classRiga: "riga_modulo_"+MODULI.domande[d].t,
+							azCancella: "MODULI.eliminaDomanda("+d+");",
 							keyupCampo: "MODULI.updateDomanda(this,'"+d+"');",
 							ver: "1|0" });
 		}
 		if(!HTML)HTML = '<div class="noResults">'+TXT("NoRes")+'...</div>';
 		document.getElementById("dettagli_modulo").innerHTML = HTML;
 	},
-	aggiungiDomanda: function(){ // aggiunge una domanda all'elenco
-		MODULI.domande.push("");
+	aggiungiDomanda: function( tipo ){ // aggiunge una domanda all'elenco
+		MODULI.domande.push({
+			d: "",
+			t: tipo
+		});
+		MODULI.caricaDomande();
+	},
+	eliminaDomanda: function( d ){ // aggiunge una domanda all'elenco
+		MODULI.domande.splice(d,1);
 		MODULI.caricaDomande();
 	},
 	updateDomanda: function( el, d ){ // aggiorna le domande alla digitazione
-		MODULI.domande[d] = el.value;
+		MODULI.domande[d].d = el.value;
 	}
 }

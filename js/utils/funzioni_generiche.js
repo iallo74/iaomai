@@ -212,11 +212,11 @@ function __( txt, def='' ){
 	if(typeof(txt) == 'undefined')txt = def;
 	return txt;
 }
-function toJson( txt ){
+function toJson( txt, deflt=[] ){
 	if(typeof(txt) != 'object'){
 		if(txt.substr(0,1)!="{" && txt.substr(0,1)!="[")txt='';
 		if(txt)txt = JSON.parse(txt);
-		else txt = [];
+		else txt = deflt;
 	}
 	return txt;
 }

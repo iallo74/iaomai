@@ -1012,13 +1012,12 @@ var SYNCRO = {
 								puntiMTC = JSON.stringify(puntiProvvisori);
 							}else puntiMTC = '[]';
 						} //-------------------------------------------------------------
-						
 						if(BACKUPS.bkpProvv)trattamenti[t].DataModifica = lastSync*1;
 						JSNPUSH={ 	"idTrattamento": trattamenti[t].idTrattamento*1,
 									"idPaziente": DB.pazienti.data[kDef].idPaziente*1,
 									"TitoloTrattamento": trattamenti[t].TitoloTrattamento,
 									"NoteTrattamento": trattamenti[t].NoteTrattamento,
-									"jsonValutazione": toJson(__(trattamenti[t].jsonValutazione,'')),
+									"jsonValutazione": toJson(__(trattamenti[t].jsonValutazione,{}),{}),
 									"Anamnesi": trattamenti[t].Anamnesi,
 									"DiagnosiOccidentale": trattamenti[t].DiagnosiOccidentale,
 									"DiagnosiMTC": trattamenti[t].DiagnosiMTC,

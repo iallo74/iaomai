@@ -1137,13 +1137,12 @@ var SCHEDA = {
 				document.getElementById("scheda").style.left = (48 + x) + "px";
 				
 				if(tCoord(document.getElementById("scheda")) + document.getElementById("scheda").scrollWidth > WF()){
-				let w = WF() - tCoord(document.getElementById("scheda"));
-				if(w < 350)w = 350;
-				document.getElementById("scheda").style.width = (w - 31) + "px";
-				
-				
+					let w = WF() - tCoord(document.getElementById("scheda"));
+					if(w < 350)w = 350;
+					document.getElementById("scheda").style.width = (w - 31) + "px";
 				
 				}
+				SCHEDA.aggancio.lato.w = document.getElementById("scheda").scrollWidth-27;
 			}
 			localStorage.schedaAggancio = JSON.stringify(SCHEDA.aggancio);
 		}

@@ -83,13 +83,21 @@ var AI = {
 		}
 		let els = document.getElementById("modulo_cont").getElementsByClassName("domandeModuli");
 		if(els.length){
+			let et = '';
 			for(e=0;e<els.length;e++){
-				if(els[e].getElementsByTagName("INPUT")[0].value){
-					JSNPOST.modulo.push({
-						"domanda": els[e].getElementsByTagName("I")[0].innerText,
-						"risposta": els[e].getElementsByTagName("INPUT")[0].value
-					});
+				let el = '';
+				if(els[e].classList.contains("etichetteModuli")){
+					et = els[e].getElementsByTagName("I")[0].innerText;
 				}
+				if(!els[e].classList.contains("etichetteModuli")){
+					if(els[e].getElementsByTagName("INPUT")[0].value){
+						el = {
+							"domanda": et+", "+els[e].getElementsByTagName("I")[0].innerText,
+							"risposta": els[e].getElementsByTagName("INPUT")[0].value
+						};
+					}
+				}
+				if(el)JSNPOST.modulo.push(el);
 			}
 		}
 		for(p in DB.pazienti.data[PAZIENTI.idCL].patologie){

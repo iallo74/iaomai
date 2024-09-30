@@ -2287,13 +2287,21 @@ DB.TXT = {
             por: "Procure um formulário...",
             deu: "Suche ein Formular..."
         }, 
-        AggiungiDomanda: {
-            ita: "Aggiungi un quesito",
-            eng: "Add a query",
-            esp: "Agregar una consulta",
-            fra: "Ajouter une question",
-            por: "Adicionar uma questão",
-            deu: "Füge eine Frage hinzu"
+        Quesito: {
+            ita: "Quesito",
+            eng: "Query",
+            esp: "Consulta",
+            fra: "Question",
+            por: "Questão",
+            deu: "Frage"
+        },
+        Etichetta: {
+            ita: "Etichetta",
+            eng: "Label",
+            esp: "Etiqueta",
+            fra: "Étiquette",
+            por: "Etiqueta",
+            deu: "Label"
         },
         InserisciDomanda: {
             ita: "Inserisci la domanda",

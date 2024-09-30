@@ -2008,6 +2008,21 @@ background-color:rgba(0,0,0,0.1);
 }
 .domandeModuli{
     margin-bottom: 6px;
+	margin-left: -3px;
+    margin-right: -3px;
+}
+.etichetteModuli{
+    padding-top: 6px;
+    margin: 15px 7px 0 7px;
+    text-align: right;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+.etichetteModuli i{
+	margin: 0 !important;
+}
+.etichetteModuli i{
+    opacity:1 !important;
+	width: auto !important;
 }
 .anaVis{
 	background-image: url(../img/frSuB.png) !important;

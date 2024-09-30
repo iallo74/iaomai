@@ -892,6 +892,32 @@ body.bodyModello .p_paz_screenshot:hover{ /* PAZIENTI */
     background-position: 3px center;
 	margin-top:5px !important;
 }
+.p_quesito{
+	background-image:url(../img/ico_quesito.png) !important;
+}
+.p_etichetta{
+	margin-left:5px;
+	background-image:url(../img/ico_etichetta.png) !important;
+}
+.riga_modulo_d,
+.riga_modulo_e{
+	padding-left: 27px !important;
+    background-repeat: no-repeat;
+    background-position: -4px center;
+}
+.riga_modulo_e input{
+	font-style: italic;
+    background-color: rgba(0, 0, 0, 0.05) !important;
+    border: none !important;
+}
+.riga_modulo_d{
+	background-image:url(../img/ico_quesitoN.png) !important;
+}
+.riga_modulo_e{
+	background-image:url(../img/ico_etichettaN.png) !important;
+	background-size: auto 27px;
+    background-position: 0px center !important;
+}
 cont_p_paz_label{
 	height: 35px;
 	padding-top: 5px;
@@ -1007,12 +1033,15 @@ cont_p_paz_label{
 	padding-top: 12px;
 }
 #dettagli_modulo{
-	padding: 10px;
+	padding: 10px 10px 10px 5px;
     background-color: #dddad6;
     border-radius: 8px;
 }
 #dettagli_modulo input{
 	margin:2px 0;
+}
+#btns_modulo{
+	margin-top: 10px;
 }
 #puntiMTC > div,
 #puntiNamikoshi > div,

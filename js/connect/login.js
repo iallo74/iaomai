@@ -95,6 +95,8 @@ var LOGIN = {
 		localPouchDB.setItem(MD5("DB.fornitori"), IMPORTER.COMPR(DB.fornitori));
 		localPouchDB.setItem(MD5("DB.servizi"), IMPORTER.COMPR(DB.servizi));
 		localPouchDB.setItem(MD5("DB.appuntamenti"), IMPORTER.COMPR(DB.appuntamenti));
+		localPouchDB.setItem(MD5("DB.annotazioni"), IMPORTER.COMPR(DB.annotazioni));
+		localPouchDB.setItem(MD5("DB.moduli"), IMPORTER.COMPR(DB.moduli));
 		localPouchDB.setItem(MD5("DB.ricerche"), IMPORTER.COMPR(DB.ricerche));
 		localPouchDB.setItem(MD5("DB.files"), IMPORTER.COMPR(DB.files));
 	},
