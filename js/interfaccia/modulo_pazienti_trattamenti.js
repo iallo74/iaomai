@@ -1588,6 +1588,7 @@ var PAZIENTI_TRATTAMENTI = { // extend PAZIENTI
 		document.getElementById("modulo").classList.toggle("moduloFull",HTML);
 		if(!HTML)ALERT(TXT("erroreModuloVuoto"));
 		PAZIENTI.swImportaModulo();
+		SCHEDA.formModificato = true;
 	},
 	rimuoviModulo: function(){ // rimuove il modulo dalla scheda di trattamento
 		CONFIRM.vis(	TXT("chiediRimuoviModulo"),
@@ -1597,6 +1598,7 @@ var PAZIENTI_TRATTAMENTI = { // extend PAZIENTI
 						for(let i in v)eval(getArguments(v,i));
 			document.getElementById("modulo_cont").innerHTML = '';
 			document.getElementById("modulo").classList.remove("moduloFull");
+			SCHEDA.formModificato = true;
 		}});
 	}
 }
