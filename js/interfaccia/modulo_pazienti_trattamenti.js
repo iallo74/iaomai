@@ -744,7 +744,7 @@ var PAZIENTI_TRATTAMENTI = { // extend PAZIENTI
 					
 					// DIAGNOSI
 					'	<div id="contDiagnosiMTC" class="contDiagnosiAI'+(diagnosiAI?' fullAI':'')+'">'+
-					'		<div class="spiegazioneAI"><div class="requestAI" onClick="AI.get_gettoni(\'AI.diagnosi_request();\');">'+TXT("DiagnosiAI")+'</div></div>'+
+					'		<div class="spiegazioneAI"><div class="requestAI" onClick="AI.get_gettoni(true);">'+TXT("DiagnosiAI")+'</div></div>'+
 					'		<div class="diagnosiAI">'+
 					'			<div class="diagnosiAI_txt" id="diagnosiAI">'+diagnosiAI+'</div>'+
 					'			<div class="diagnosiBtns">'+

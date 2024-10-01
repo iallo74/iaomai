@@ -2798,6 +2798,13 @@ body:not(.touch) .contGallery > div:not(.noResults) > div:hover img.spunta_pic{
 .diagnosiAI_txt h3{
 	font-size: var(--font-14-94) !important;
 }
+.diagnosiAI_txt b,
+.diagnosiAI_txt strong,
+.diagnosiAI_txt em,
+.diagnosiAI_txt i{
+	display: inline !important;
+	padding:0 !important;
+}
 .requestAI{
 	background-image: url(../img/ico_diagnosiAI.png) !important;
     margin: 15px 0 -8px 0 !important;

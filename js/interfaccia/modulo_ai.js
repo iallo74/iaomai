@@ -1,5 +1,5 @@
 var AI = {
-	endpointAI: '',
+	endpoint: false,
 	aiEndPoint: '',
 	gettoniAI: {
 		usati: 0,
@@ -7,7 +7,7 @@ var AI = {
 	},
 	
 	get_gettoni: function( endpoint ){
-		AI.endpointAI = endpoint;
+		AI.endpoint = endpoint;
 		visLoader();
 		CONN.caricaUrl(	"diagnosi_gettoni.php",
 						"",
@@ -18,8 +18,8 @@ var AI = {
 		AI.popup();
 	},
 	popup: function( purchase=false ){
-		let endpoint = AI.endpointAI;
-		AI.endpointAI = '';
+		let endpoint = AI.endpoint;
+		AI.endpoint = false;
 		if(CONN.retNoConn()){
 			AI.aiEndPoint = endpoint;
 			MENU.visAI();
@@ -30,7 +30,16 @@ var AI = {
 					conteggio = conteggio.replace("[r]",'<b>'+gettoniRestanti+'</b>')
 					conteggio = conteggio.replace("[u]",AI.gettoniAI.usati);
 					conteggio = conteggio.replace("[t]",AI.gettoniAI.totali);
-					document.getElementById("txtAI").innerHTML = '<div id="cont_gettoniAI">'+conteggio+'</div>'+TXT("SpiegazioneAI");
+					document.getElementById("txtAI").innerHTML = 	'<div id="cont_gettoniAI">'+conteggio+'</div>'+TXT("SpiegazioneAI");
+					document.getElementById("cont_selectAI").innerHTML = 	H.r({	t: "s", 
+																					name: "modelloDiagnosi",
+																					value: "",
+																					opts: {
+																						"mtc": "MTC",
+																						"shiatsu": "Shiatsu"
+																					},
+																					styleRiga: "display:inline-block;",
+																					label: "Tipo" });
 					document.getElementById("ai").classList.remove("disclaimer");
 					document.getElementById("ai").classList.remove("purchaseTokens");
 				}else{
@@ -50,13 +59,15 @@ var AI = {
 	},
 	request: function(){
 		MENU.chiudiMenu();
-		eval(AI.aiEndPoint);
+		AI.diagnosi_request();
+;
 	},
 	purchase: function(){
 		CONN.openUrl(convLangPath(CONN.urlAItokens)+"?p="+MD5(DB.login.data.TOKEN+(DB.login.data.idUtente*123))+(DB.login.data.idUtente*45));
 	},
 	diagnosi_request: function(){
-		let anamnesi = '';
+		let anamnesi = '',
+			modello = document.getElementById("modelloDiagnosi").value;
 		if(document.getElementById("Anamnesi"))anamnesi = document.getElementById("Anamnesi").value;
 		else{
 			anamnesi += H.chr10+TXT("DiagnosiMTC")+H.chr10+document.getElementById("DiagnosiMTC").value +
@@ -71,7 +82,8 @@ var AI = {
 			patologie: [],
 			allergie: [],
 			interventi: [],
-			medicine: []
+			medicine: [],
+			modello: modello
 		};
 		for(s in PAZIENTI.sintomiProvvisori){
 			if(PAZIENTI.sintomiProvvisori[s].score>-1){
@@ -117,7 +129,7 @@ var AI = {
 			return;
 		}
 		visLoader(TXT("ElaborazioneInCorso"));
-		CONN.caricaUrl(	"diagnosi_mtc.php",
+		CONN.caricaUrl(	"diagnosi.php",
 						"b64=1&JSNPOST="+window.btoa(encodeURIComponent(JSON.stringify(JSNPOST)))+"&NominativoPaziente="+window.btoa(encodeURIComponent(DB.pazienti.data[PAZIENTI.idCL].Nome+" "+DB.pazienti.data[PAZIENTI.idCL].Cognome)),
 						"AI.diagnosi_response");
 	},
@@ -130,19 +142,21 @@ var AI = {
 		}else if(res.esito=='TOKEN_FINISH'){
 			AI.popup(true);
 		}else{
-			let re1 = /[\*]{2}([^\*]+)[\*]{2}/g,
+			let re1b = /[\*]{2}([^\*]+)[\*]{2}/g,
+				re1i = /[\*]{1}([^\*]+)[\*]{1}/g,
 				re2 = /[#]{4} ([^\n]+)\n/g,
 				re3 = /[#]{3} ([^\n]+)\n/g,
 				re5 = /[#]{2} ([^\n]+)\n/g,
 				re6 = /[#]{1} ([^\n]+)\n/g,
-				re4 = /\n/g,
+				ren = /\n/g,
 				html = res.response;
-			html = html.replace(re1,"<b>$1</b>");
+			html = html.replace(re1b,"<b>$1</b>");
+			html = html.replace(re1i,"<i>$1</i>");
 			html = html.replace(re2,"<h4>$1</h4>");
 			html = html.replace(re3,"<h3>$1</h3>");
 			html = html.replace(re5,"<h3>$1</h3>");
 			html = html.replace(re6,"<h4>$1</h4>");
-			html = html.replace(re4,"<br>");
+			html = html.replace(ren,"<br>");
 			document.getElementById("diagnosiAI").innerHTML = html;
 			document.getElementById("contDiagnosiMTC").classList.add("fullAI");
 			AI.diagnosi_swPoints();
