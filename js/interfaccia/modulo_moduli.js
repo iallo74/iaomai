@@ -109,7 +109,7 @@ var MODULI = {
 							name: "NomeModulo",
 							value: NomeModulo,
 							noLabel: true,
-							label: TXT("Titolo"),
+							label: TXT("NomeModulo"),
 							classCampo: "okPlaceHolder",
 							ver: "1|0" });
 			
@@ -119,7 +119,7 @@ var MODULI = {
 					'<div class="p_sch_label">'+TXT("Aggiungi")+':	</div>'+
 					'<div id="btns_modulo">'+
 						'<div class="p_paz_label p_quesito" onClick="MODULI.aggiungiDomanda(\'d\');">'+TXT("Quesito")+'</div>'+
-						'<div class="p_paz_label p_etichetta" onClick="MODULI.aggiungiDomanda(\'e\');">'+TXT("Etichetta")+'</div>'+
+						'<div class="p_paz_label p_etichetta" onClick="MODULI.aggiungiDomanda(\'e\');">'+TXT("Categoria")+'</div>'+
 					'</div>';	
 
 

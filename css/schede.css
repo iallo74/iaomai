@@ -912,6 +912,17 @@ body:not(.smart) #menuCiclo{
 	padding-left:30px;
 	padding-right:30px;
 }
+@media print{
+	.sezioneChiusa{
+		height:auto !important;
+	}
+	.sezioneChiusa > div{
+		display:block !important;
+	}
+	.sezioneTrattamenti i{
+		color: #999 !important;
+	}
+}
 
 
 .autore,

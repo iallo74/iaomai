@@ -353,8 +353,8 @@ var PAZIENTI_TRATTAMENTI = { // extend PAZIENTI
 				NoteTrattamento=TR.NoteTrattamento;
 				jsonValutazione=__(TR.jsonValutazione,{});
 				Anamnesi=TR.Anamnesi;
-				DiagnosiOccidentale=TR.DiagnosiOccidentale;
-				DiagnosiMTC=TR.DiagnosiMTC;
+				DiagnosiOccidentale=__(TR.DiagnosiOccidentale);
+				DiagnosiMTC=__(TR.DiagnosiMTC);
 				Prescrizione=__(TR.Prescrizione);
 				ConsiderazioniOperatore=__(TR.ConsiderazioniOperatore);
 				ConsiderazioniPaziente=__(TR.ConsiderazioniPaziente);
@@ -629,15 +629,15 @@ var PAZIENTI_TRATTAMENTI = { // extend PAZIENTI
 			if(jsonValutazione?.data){
 				for(d in jsonValutazione.data){
 					if(jsonValutazione.data[d].t=='e'){
-						HTML += '<div class="domandeModuli etichetteModuli"><i>'+jsonValutazione.data[d].d+'</i></div>';
+						HTML += '<div class="domandeModuli etichetteModuli"><i class="tagDomanda">'+jsonValutazione.data[d].d+'</i></div>';
 					}
 					if(jsonValutazione.data[d].t=='d'){
-						HTML += '<div class="domandeModuli"><i>'+jsonValutazione.data[d].d+'</i>' +
+						HTML += '<div class="domandeModuli"><i class="tagDomanda">'+jsonValutazione.data[d].d+'</i>' +
 								H.r({	t: "r",
 										name: "risposta"+d,
 										value: jsonValutazione.data[d].r,
 										noLabel: true,
-										classCampo: "okPlaceHolder styled" }) +
+										classCampo: "okPlaceHolder styled tagDomanda" }) +
 								'</div>';
 					}
 				}
@@ -1587,15 +1587,15 @@ var PAZIENTI_TRATTAMENTI = { // extend PAZIENTI
 		let HTML = '';
 		for(d in DB.moduli.data[m].jsonModulo){
 			if(DB.moduli.data[m].jsonModulo[d].t=='e'){
-				HTML += '<div class="domandeModuli etichetteModuli"><i>'+DB.moduli.data[m].jsonModulo[d].d+'</i></div>';
+				HTML += '<div class="domandeModuli etichetteModuli"><i class="tagDomanda">'+DB.moduli.data[m].jsonModulo[d].d+'</i></div>';
 			}
 			if(DB.moduli.data[m].jsonModulo[d].t=='d'){
-				HTML += '<div class="domandeModuli"><i>'+DB.moduli.data[m].jsonModulo[d].d+'</i>' +
+				HTML += '<div class="domandeModuli"><i class="tagDomanda">'+DB.moduli.data[m].jsonModulo[d].d+'</i>' +
 						H.r({	t: "r",
 								name: "risposta"+d,
 								value: "",
 								noLabel: true,
-								classCampo: "okPlaceHolder styled" }) +
+								classCampo: "okPlaceHolder styled tagDomanda" }) +
 						'</div>';
 			}
 		}
@@ -1617,4 +1617,5 @@ var PAZIENTI_TRATTAMENTI = { // extend PAZIENTI
 			SCHEDA.formModificato = true;
 		}});
 	}
+	
 }

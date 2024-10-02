@@ -2295,13 +2295,13 @@ DB.TXT = {
             por: "Questão",
             deu: "Frage"
         },
-        Etichetta: {
-            ita: "Etichetta",
-            eng: "Label",
-            esp: "Etiqueta",
-            fra: "Étiquette",
-            por: "Etiqueta",
-            deu: "Label"
+        Categoria: {
+            ita: "Categoria",
+            eng: "Category",
+            esp: "Categoría",
+            fra: "Catégorie",
+            por: "Categoria",
+            deu: "Kategorie"
         },
         InserisciDomanda: {
             ita: "Inserisci la domanda",
@@ -2350,6 +2350,14 @@ DB.TXT = {
             fra: "Formulaire d'évaluation",
             por: "Formulário de avaliação",
             deu: "Bewertungsformular"
+        },
+        NomeModulo: {
+            ita: "Nome del modulo",
+            eng: "Module name",
+            esp: "Nombre del módulo",
+            fra: "Nom du module",
+            por: "Nome do módulo",
+            deu: "Modulname"
         },
 
         // PAZIENTI

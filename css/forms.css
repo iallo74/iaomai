@@ -897,7 +897,9 @@ body.bodyModello .p_paz_screenshot:hover{ /* PAZIENTI */
 }
 .p_etichetta{
 	margin-left:5px;
-	background-image:url(../img/ico_etichetta.png) !important;
+	/* background-image:url(../img/ico_etichetta.png) !important; */
+	background-image: none !important;
+	padding-left: 10px !important;
 }
 .riga_modulo_d,
 .riga_modulo_e{
@@ -914,9 +916,9 @@ body.bodyModello .p_paz_screenshot:hover{ /* PAZIENTI */
 	background-image:url(../img/ico_quesitoN.png) !important;
 }
 .riga_modulo_e{
-	background-image:url(../img/ico_etichettaN.png) !important;
+	/* background-image:url(../img/ico_etichettaN.png) !important;
 	background-size: auto 27px;
-    background-position: 0px center !important;
+    background-position: 0px center !important; */
 }
 cont_p_paz_label{
 	height: 35px;
@@ -1324,13 +1326,13 @@ cont_p_paz_label{
     width: fit-content;
 }
 
-#scheda:not(.sch_Max600) #formMod i{  /* PAZIENTI */
+#scheda:not(.sch_Max600) #formMod i:not(.tagDomanda){  /* PAZIENTI */
 	margin-bottom: -29px;
 	width: 100px;
     text-overflow: ellipsis;
     white-space: nowrap;
 }
-#scheda:not(.sch_Max600) #formMod div:not(.labelSx) > i{  /* PAZIENTI */
+#scheda:not(.sch_Max600) #formMod div:not(.labelSx) > i:not(.tagDomanda){  /* PAZIENTI */
     overflow: hidden;
 	display: block;
 }
@@ -1347,6 +1349,7 @@ cont_p_paz_label{
 	line-height: 12px;
 }
 .sch_Max600 #formMod i,
+i.tagDomanda,
 .sch_Max600 #formMod em:not(.labelTrattamenti) {
     opacity: 0.5;
 }
@@ -1401,7 +1404,7 @@ _:-webkit-full-screen,
 	margin-left:0px !important;
 }
 
-#scheda:not(.sch_Max600) .styled{
+#scheda:not(.sch_Max600) .styled:not(.tagDomanda){
 	padding-left:100px !important;
 }
 #dettagliCont input:not([type=checkbox]):not([type=file]){
