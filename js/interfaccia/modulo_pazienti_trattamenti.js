@@ -312,7 +312,7 @@ var PAZIENTI_TRATTAMENTI = { // extend PAZIENTI
 				idTrattamento=0,
 				TitoloTrattamento='',
 				NoteTrattamento='',
-				jsonValutazione={},
+				moduli=[],
 				Anamnesi='',
 				DiagnosiOccidentale='',
 				DiagnosiMTC,
@@ -351,7 +351,7 @@ var PAZIENTI_TRATTAMENTI = { // extend PAZIENTI
 				idTrattamento=TR.idTrattamento*1;
 				TitoloTrattamento=TR.TitoloTrattamento;
 				NoteTrattamento=TR.NoteTrattamento;
-				jsonValutazione=__(TR.jsonValutazione,{});
+				moduli=__(TR.moduli,[]);
 				Anamnesi=TR.Anamnesi;
 				DiagnosiOccidentale=__(TR.DiagnosiOccidentale);
 				DiagnosiMTC=__(TR.DiagnosiMTC);
@@ -423,6 +423,7 @@ var PAZIENTI_TRATTAMENTI = { // extend PAZIENTI
 			PAZIENTI.namikoshiProvvisori=clone(puntiNamikoshi);
 			PAZIENTI.sintomiProvvisori=clone(sintomi);
 			PAZIENTI.meridianiProvvisori=clone(meridiani);
+			PAZIENTI.moduliProvvisori=clone(moduli);
 			PH.galleryProvvisoria=gallery;
 			let HTML='';
 			// GUIDA
@@ -518,12 +519,6 @@ var PAZIENTI_TRATTAMENTI = { // extend PAZIENTI
 								'<div style="display:none;"' +
 								'	  id="anamnesi_cont">'; // nascondo tutto se è un nuovo ciclo
 				}
-				/* HTML += H.r({	t: "t",	
-								name: "Anamnesi",	
-								value: Anamnesi,
-								label: TXT("Anamnesi"+(globals.set.cartella=='meridiani_shiatsu'?'Shiatsu':'')),
-								noLabel: true,
-								classCampo: "okPlaceHolder" });		 */
 			}
 			let TXT_DT=TXT("Data");
 			if(TimeTrattamento*1>(oggi*1)/1000)TXT_DT=TXT("DataProgrammata");
@@ -586,13 +581,7 @@ var PAZIENTI_TRATTAMENTI = { // extend PAZIENTI
 								label: TXT("Etichetta"),
 								classCampo: 'TitTrattDx',
 								classRiga: "labelSx",
-								styleRiga: "text-align:right;" })/*  +
-						H.r({	t: "t",	
-								name: "Anamnesi",	
-								value: Anamnesi,
-								noLabel: true,
-								classCampo: "okPlaceHolder",
-								styleCampo: "margin-bottom:10px;" }) */;
+								styleRiga: "text-align:right;" });
 			}
 
 			
@@ -619,31 +608,11 @@ var PAZIENTI_TRATTAMENTI = { // extend PAZIENTI
 							noLabel: true,
 							styleCampo: "margin-bottom:10px;margin-top:8px;" }) +
 					'	</div>' +
-					'	<div id="modulo"'+(Object.keys(jsonValutazione).length?' class="moduloFull"':'')+'>' +
+					'	<div id="modulo"'+(Object.keys(moduli).length?' class="moduloFull"':'')+'>' +
+					'		<div id="modulo_cont"></div>' +
 					'		<div id="modulo_btn_cont">' +
-					'			<div id="modulo_tit">'+(jsonValutazione?.title?jsonValutazione.title:TXT("ModuloValutazione"))+'</div>' +
-					'			<div id="modulo_btn" onClick="PAZIENTI.swImportaModulo();">'+TXT("ImportaModulo")+'</div>' +
-					'			<div id="modulo_del" onClick="PAZIENTI.rimuoviModulo();">'+TXT("RimuoviModulo")+'</div>' +
+					'			<div id="modulo_btn" onClick="PAZIENTI.swImportaModuli();">'+TXT("ImportaModulo")+'</div>' +
 					'		</div>' +
-					'		<div id="modulo_cont">';
-			if(jsonValutazione?.data){
-				for(d in jsonValutazione.data){
-					if(jsonValutazione.data[d].t=='e'){
-						HTML += '<div class="domandeModuli etichetteModuli"><i class="tagDomanda">'+jsonValutazione.data[d].d+'</i></div>';
-					}
-					if(jsonValutazione.data[d].t=='d'){
-						HTML += '<div class="domandeModuli"><i class="tagDomanda">'+jsonValutazione.data[d].d+'</i>' +
-								H.r({	t: "r",
-										name: "risposta"+d,
-										value: jsonValutazione.data[d].r,
-										noLabel: true,
-										classCampo: "okPlaceHolder styled tagDomanda" }) +
-								'</div>';
-					}
-				}
-			}
-					
-			HTML += '		</div>' +
 					'	</div>' +
 					'</div>' +
 
@@ -1013,6 +982,7 @@ var PAZIENTI_TRATTAMENTI = { // extend PAZIENTI
 			if(TipoTrattamento=='A' || !LabelCiclo)PAZIENTI.popolaSintomi();
 			PAZIENTI.caricaDettagliSet(); // carico le schede dei singoli sets
 			PAZIENTI.caricaSintomi();
+			PAZIENTI.popolaModuli();
 			PH.caricaGallery();
 			PAZIENTI.trattOp = true;
 			initChangeDetection( "formMod" );
@@ -1368,29 +1338,13 @@ var PAZIENTI_TRATTAMENTI = { // extend PAZIENTI
 				}
 				delete(GA[i].imported);
 			}
-
-			// modulo valutazione
-			let jsonValutazione = [],
-				els = document.getElementById("modulo_cont").getElementsByClassName("domandeModuli");
-			for(e=0;e<els.length;e++){
-				jsonValutazione.push({
-					"d": els[e].getElementsByTagName("I")[0].innerText,
-					"r": els[e].getElementsByTagName("INPUT").length?els[e].getElementsByTagName("INPUT")[0].value:'',
-					"t": els[e].classList.contains("etichetteModuli")?'e':'d'
-				});
-			}
-			if(jsonValutazione != [])jsonValutazione = {
-				title: document.getElementById("modulo_tit").innerText,
-				data: jsonValutazione
-			};
-
 			localPouchDB.setItem(MD5("DB"+LOGIN._frv()+".files"), IMPORTER.COMPR(DB.files)).then(function(){
 				PAZIENTI.ricPuntiTratt();
 				JSNPUSH={	"idTrattamento": document.formMod.idTrattamento.value*1,
 							"TitoloTrattamento": document.formMod.TitoloTrattamento.value,
 							"NoteTrattamento": document.formMod.NoteTrattamento.value,
 							"TimeTrattamento": document.formMod.TimeTrattamento.value*1,
-							"jsonValutazione": jsonValutazione,
+							"moduli": PAZIENTI.moduliProvvisori,
 							"oraInizio": document.formMod.oraInizio.value*1,
 							"oraFine": document.formMod.oraFine.value*1,
 							"Anamnesi": document.formMod.Anamnesi.value,
@@ -1538,84 +1492,6 @@ var PAZIENTI_TRATTAMENTI = { // extend PAZIENTI
 			SCHEDA.getCartella(document.getElementById('ciclo_'+idCiclo)).classList.add("cartellaAperta");
 			RICERCHE.nascondiGlobal();
 		},200, d);
-	},
-
-	// moduli valutazione
-	swImportaModulo: function(){ // visualizza/nasconde il menu dell'elenco moduli da improtare
-		if(!document.getElementById("gruppoPunti_cont").classList.contains("visSch")){
-			rimuoviLoading(document.getElementById("scheda_testo"));
-			applicaLoading(document.getElementById("scheda_testo"),'vuoto');
-			document.getElementById("LL").onclick = function(){PAZIENTI.swGruppoPunti();};
-			let w = (document.getElementById("scheda_testo").scrollWidth-60),
-				l = 30,
-				maxW = 400;
-			if(w>maxW){
-				w = maxW;
-				l = (document.getElementById("scheda").scrollWidth/2-maxW/2);
-			}
-			document.getElementById("gruppoPunti_cont").style.left = l+"px";
-			document.getElementById("gruppoPunti_cont").style.width = w+"px";
-			document.getElementById("gruppoPunti_cont").style.top = '118px';
-			document.getElementById("gruppoPunti_cont").classList.add("visSch");
-			let HTML = '',
-				txt = htmlEntities(TXT("ImportaModulo"));
-			HTML += '<div class="gr_tit">' +
-						txt +
-					'	<span onClick="PAZIENTI.swImportaModulo();">' +
-					'</span>' +
-					'</div>' +
-					'<div class="gr_0">';
-			for(m in DB.moduli.data){
-				HTML += '<div class="gr_btn"' +
-						'	  id="gr_btn_'+m+'"' +
-						'	  onClick="PAZIENTI.importaModulo('+m+');">' +
-						DB.moduli.data[m].NomeModulo +
-						'</div>';
-			}
-			if(!DB.moduli.data.length)HTML += '<i>'+TXT("NoRes")+'</i>'
-			HTML += '</div>';
-			document.getElementById("gruppoPunti_cont").innerHTML = HTML;
-
-
-		}else{
-			document.getElementById("LL").onclick = '';
-			rimuoviLoading(document.getElementById("scheda_testo"));
-			document.getElementById("gruppoPunti_cont").classList.remove("visSch");
-		}
-	},
-	importaModulo: function( m ){ // importa un modulo di valutazione della scheda trattamento
-		let HTML = '';
-		for(d in DB.moduli.data[m].jsonModulo){
-			if(DB.moduli.data[m].jsonModulo[d].t=='e'){
-				HTML += '<div class="domandeModuli etichetteModuli"><i class="tagDomanda">'+DB.moduli.data[m].jsonModulo[d].d+'</i></div>';
-			}
-			if(DB.moduli.data[m].jsonModulo[d].t=='d'){
-				HTML += '<div class="domandeModuli"><i class="tagDomanda">'+DB.moduli.data[m].jsonModulo[d].d+'</i>' +
-						H.r({	t: "r",
-								name: "risposta"+d,
-								value: "",
-								noLabel: true,
-								classCampo: "okPlaceHolder styled tagDomanda" }) +
-						'</div>';
-			}
-		}
-		document.getElementById("modulo_tit").innerHTML = DB.moduli.data[m].NomeModulo;
-		document.getElementById("modulo_cont").innerHTML = HTML;
-		document.getElementById("modulo").classList.toggle("moduloFull",HTML);
-		if(!HTML)ALERT(TXT("erroreModuloVuoto"));
-		PAZIENTI.swImportaModulo();
-		SCHEDA.formModificato = true;
-	},
-	rimuoviModulo: function(){ // rimuove il modulo dalla scheda di trattamento
-		CONFIRM.vis(	TXT("chiediRimuoviModulo"),
-						false, 
-						arguments ).then(function(pass){if(pass){
-						let v = getParamNames(CONFIRM.args.callee.toString());
-						for(let i in v)eval(getArguments(v,i));
-			document.getElementById("modulo_cont").innerHTML = '';
-			document.getElementById("modulo").classList.remove("moduloFull");
-			SCHEDA.formModificato = true;
-		}});
 	}
 	
 }

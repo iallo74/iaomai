@@ -2320,12 +2320,12 @@ DB.TXT = {
             deu: "Importiere ein Bewertungsformular"
         },  
         erroreModuloVuoto: {
-            ita: "Il modulo che stai provando ad importare è vuoto",
-            eng: "The form you are trying to import is empty",
-            esp: "El formulario que estás intentando importar está vacío",
-            fra: "Le formulaire que vous essayez d'importer est vide",
-            por: "O formulário que você está tentando importar está vazio",
-            deu: "Das Formular, das Sie zu importieren versuchen, ist leer"
+            ita: "Uno dei moduli che stai provando ad importare è vuoto",
+            eng: "One of the forms you are trying to import is empty",
+            esp: "Uno de los formularios que estás intentando importar está vacío",
+            fra: "L'un des formulaires que vous essayez d'importer est vide",
+            por: "Um dos formulários que você está tentando importar está vazio",
+            deu: "Eines der Formulare, die Sie importieren möchten, ist leer"
         }, 
         RimuoviModulo: {
             ita: "Rimuovi",
@@ -2334,6 +2334,14 @@ DB.TXT = {
             fra: "Supprimer",
             por: "Remover",
             deu: "Entferne"
+        },
+        SpostaModulo: {
+            ita: "Sposta",
+            eng: "Move",
+            esp: "Mover",
+            fra: "Déplacer",
+            por: "Mover",
+            deu: "Verschieben"
         },
         chiediRimuoviModulo: {
             ita: "Vuoi davvero rimuovere il modulo?",
@@ -2358,6 +2366,14 @@ DB.TXT = {
             fra: "Nom du module",
             por: "Nome do módulo",
             deu: "Modulname"
+        },
+        TuoiModuli: {
+            ita: "I tuoi moduli",
+            eng: "Your forms",
+            esp: "Tus formularios",
+            fra: "Vos formulaires",
+            por: "Seus formulários",
+            deu: "Ihre Formulare"
         },
 
         // PAZIENTI

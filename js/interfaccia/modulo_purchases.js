@@ -89,7 +89,7 @@ var PURCHASES  = {
 			let tk = encodeURIComponent(window.btoa(LOGIN.logedin() + MD5(DB.login.data.idUtente.toString()))),
 				fl = encodeURIComponent(window.btoa(PURCHASES.getProdById(PURCHASES.productId).folder)),
 				md = encodeURIComponent(window.btoa(PURCHASES.getProdById(PURCHASES.productId).code));
-			CONN.openUrl(convLangPath(CONN.urlStore)+"in_app_purchase?tk="+tk+"&mp="+fl+"&md="+md);
+			CONN.openUrl(convLangPath(CONN.urlStore)+"in_app_purchase?tk="+tk+"&mp="+fl+"&md="+md+"&lang="+LINGUE.getSigla2());
 			
 		}
 	},

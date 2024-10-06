@@ -88,6 +88,7 @@ var IMPORTER = {
     	'css/console.css',
     	'css/pplhd.css',
     	'css/app_rating.css',
+    	'css/moduliValutazione.css',
 		
 		'js/connect/login.js',
 		'js/connect/syncro.js',
@@ -110,6 +111,7 @@ var IMPORTER = {
         'js/lingue/guide.js',
         'modelli/zone.js',
         'js/lingue/lingue.js',
+        'js/lingue/moduliValutazione.js',
             
 		'js/three/three.js',
         'js/three/ObjectControls.js',
@@ -127,6 +129,7 @@ var IMPORTER = {
         'js/interfaccia/schede.js',
         'js/interfaccia/modulo_pazienti.js',
         'js/interfaccia/modulo_pazienti_trattamenti.js',
+        'js/interfaccia/modulo_pazienti_moduli.js',
         'js/interfaccia/modulo_pazienti_cicli.js',
         'js/interfaccia/modulo_pazienti_liste.js',
         'js/interfaccia/modulo_pazienti_sets.js',

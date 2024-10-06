@@ -1270,7 +1270,7 @@ cont_p_paz_label{
 }
 #formCommenti input:not([type="checkbox"]), /* procedura */
 #formAnnotazioni input:not([type="checkbox"]), /* --punti-- */
-#formMod input:not([type="checkbox"]):not([type="file"]), /* PAZIENTI */
+#formMod input:not([type="checkbox"]):not([type="file"]):not([type=radio]), /* PAZIENTI */
 #formFeedback input:not([type="checkbox"]){ /* #feedback# */
 	background-color:rgba(255,255,255,0.5);
 	border-radius:3px;
@@ -1387,20 +1387,20 @@ _:-webkit-full-screen,
 .fieldErr{
 	outline: 3px solid rgba(255, 0, 0, 0.3);
 }
-#formMod input:not([type=checkbox]):not([type=file]):not(#paz_add):not(#tag_add):not(#medicina_add):not(#allergia_add):not(#patologia_add):not(#intervento_add):not(.label_add){ /* PAZIENTI */
+#formMod input:not([type=checkbox]):not([type=file]):not([type=radio]):not(#paz_add):not(#tag_add):not(#medicina_add):not(#allergia_add):not(#patologia_add):not(#intervento_add):not(.label_add){ /* PAZIENTI */
 	width:100%;
 	height:32px;
 	line-height:15px;
 	font-weight:normal !important;
 }
-.smart.android #formMod input:not([type=checkbox]):not([type=file]):not(#paz_add):not(#tag_add):not(#medicina_add):not(#allergia_add):not(#patologia_add):not(#intervento_add):not(.label_add):not(#gr_ret_ric){ /* PAZIENTI */
+.smart.android #formMod input:not([type=checkbox]):not([type=file]):not([type=radio]):not(#paz_add):not(#tag_add):not(#medicina_add):not(#allergia_add):not(#patologia_add):not(#intervento_add):not(.label_add):not(#gr_ret_ric){ /* PAZIENTI */
 	height:42px !important;
 	line-height:20px !important;
 }
-.app_version.bug_font.smart.android #formMod input:not([type=checkbox]):not([type=file]):not(#paz_add):not(#tag_add):not(#medicina_add):not(#allergia_add):not(#patologia_add):not(#intervento_add):not(.label_add){ /* PAZIENTI */
+.app_version.bug_font.smart.android #formMod input:not([type=checkbox]):not([type=file]):not([type=radio]):not(#paz_add):not(#tag_add):not(#medicina_add):not(#allergia_add):not(#patologia_add):not(#intervento_add):not(.label_add){ /* PAZIENTI */
 	line-height:18.32px !important;
 }
-#formMod input:not([type=checkbox]):not([type=file]):not(#paz_add):not(#tag_add):not(#medicina_add):not(#allergia_add):not(#patologia_add):not(#intervento_add):not(.label_add):not(.textPuntoTratt){ /* PAZIENTI */
+#formMod input:not([type=checkbox]):not([type=file]):not([type=radio]):not(#paz_add):not(#tag_add):not(#medicina_add):not(#allergia_add):not(#patologia_add):not(#intervento_add):not(.label_add):not(.textPuntoTratt){ /* PAZIENTI */
 	margin-left:0px !important;
 }
 
@@ -2265,7 +2265,10 @@ body:not(.touch) #puntiTrigger .dettPunto:hover{
 .hide{
 	display:none;
 }
-
+#tuoiModuli{
+	display:block;
+	padding-top:10px;
+}
 
 
 

@@ -366,11 +366,11 @@ var BACKUPS = {
 							HTML += "<i>"+TXT("Titolo")+":</i> <b>"+trattamenti[t].TitoloTrattamento+"</b><br>";
 							HTML += "<i>"+TXT("Costo")+":</i> <b>"+ArrotondaEuro(trattamenti[t].CostoTrattamento)+"</b><br>";
 							if(trattamenti[t].Anamnesi)HTML += "<i>"+TXT("Anamnesi"+addShiatsu)+":</i> "+trattamenti[t].Anamnesi+"<br>";
-							if(trattamenti[t].jsonValutazione!='""'){
-								jsonValutazione = JSON.parse(trattamenti[t].jsonValutazione);
+							if(trattamenti[t].moduli!='""'){
+								moduli = JSON.parse(trattamenti[t].moduli);
 								HTML += '<i>'+TXT("ModuloValutazione")+':</i><div class="rientro">';
-								for(d in jsonValutazione){
-									HTML += "<i>"+jsonValutazione[d].d+":</i> "+jsonValutazione[d].r+"<br>";
+								for(d in moduli){
+									HTML += "<i>"+moduli[d].d+":</i> "+moduli[d].r+"<br>";
 								}
 								HTML += '</div>';
 							}

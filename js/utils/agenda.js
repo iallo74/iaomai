@@ -283,7 +283,7 @@ var agenda = {
 			JSNPUSH={	"idTrattamento": 0,
 						"TitoloTrattamento": document.getElementById("TestoAppuntamento").value,
 						"NoteTrattamento": '',
-						"jsonValutazione": {},
+						"moduli": {},
 						"TimeTrattamento": parseInt(document.getElementById("dataAppuntamento").value)/1000,
 						"oraInizio": document.getElementById("oraInizioAppuntamento").value*1,
 						"oraFine": document.getElementById("oraFineAppuntamento").value*1,

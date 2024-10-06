@@ -58,6 +58,7 @@ var H = {
 		if(obj.clickCampo)addCampo += ' onClick="'+obj.clickCampo+'"';
 		if(obj.focusCampo)addCampo += ' onFocus="'+obj.focusCampo+'"';
 		if(obj.blurCampo)addCampo += ' onBlur="'+obj.blurCampo+'"';
+		if(obj.dataCampo)addCampo += ' '+obj.dataCampo;
 		
 		let html = '';
 		
@@ -192,6 +193,7 @@ var H = {
 						'		name="'+obj.name+'"'+
 						'		id="'+htmlEntities(id)+'"'+
 						'		value="1"' +
+						'	  	onClick="'+obj.clickCampo+';"' +
 						'		'+(obj.value*1 ? 'CHECKED':'0')+'>';
 						
 				if(obj.label && !obj.noLabel)html += '<span>'+htmlEntities(obj.label)+'</span> ';

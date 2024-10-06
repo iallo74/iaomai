@@ -1,0 +1,446 @@
+@charset "utf-8";
+/* CSS Document */
+
+/* LINGUA */
+#moduloLinguaSinteticaMTC{
+
+}
+.md_radioCmpr{
+	display: inline-block;
+    overflow: hidden;
+    width: 20px;
+    height: 20px;
+    line-height: 20px;
+	text-align:center;
+    white-space: nowrap;
+}
+.md_radioCmpr span{
+	display:none;
+}
+.md_radioCmpr input{
+	margin:0;
+}
+
+.md_radioExp{
+	display: inline-block;
+	width:200px;
+	height:220px;
+	text-align:center;
+	margin:3px;
+}
+.md_radioExp label:has(input:checked){
+	box-shadow: 0 0 4px rgba(66, 79, 190, 0.4);
+	background-color: #FFF;
+	mix-blend-mode: normal;
+}
+.md_radioExp label:hover{
+	box-shadow: 0 0 4px rgba(66, 79, 190, 0.2);
+}
+.md_radioExp label{
+	cursor:pointer;
+	display: inline-block;
+	border-radius:8px;
+	width:200px;
+	height:220px;
+	padding-top:190px;
+	text-align:center;
+}
+
+.md_contRadioExp{
+    overflow-x: auto;
+    margin-top: 10px;
+    padding: 1px;
+    white-space: nowrap;
+}
+.md_radioExp label{
+	background-repeat: no-repeat;
+	background-position: top center;
+	mix-blend-mode: multiply;
+}
+#md_lingua0 label{
+	background-image: url(../img/valutazioni/lingua_normal.png);
+}
+#md_lingua1 label{
+	background-image: url(../img/valutazioni/lingua_qi_deficiency.png);
+}
+#md_lingua2 label{
+	background-image: url(../img/valutazioni/lingua_heat.png);
+}
+#md_lingua3 label{
+	background-image: url(../img/valutazioni/lingua_qi_stagnation.png);
+}
+#md_lingua4 label{
+	background-image: url(../img/valutazioni/lingua_blood_stasis.png);
+}
+#md_lingua5 label{
+	background-image: url(../img/valutazioni/lingua_yang_deficiency.png);
+}
+#md_lingua6 label{
+	background-image: url(../img/valutazioni/lingua_yin_deficiency.png);
+}
+#md_lingua7 label{
+	background-image: url(../img/valutazioni/lingua_damp_heat.png);
+}
+#md_lingua8 label{
+	background-image: url(../img/valutazioni/lingua_damp_retantion.png);
+}
+#md_lingua9 label{
+	background-image: url(../img/valutazioni/lingua_blood_deficiency.png);
+}
+
+
+/* LINGUA ANALITICA, VISO, OCCHI  e  CAPELLI */
+#moduloVisoMTC{
+	background-image: url(../img/valutazioni/viso.png);
+}
+#moduloCapelliMTC{
+	background-image: url(../img/valutazioni/capelli.png);
+}
+#moduloLinguaAnaliticaMTC{
+	background-image: url(../img/valutazioni/lingua.png);
+}
+#moduloPelleMTC{
+	background-image: url(../img/valutazioni/pelle.png);
+}
+#moduloPosturaMTC{
+	background-image: url(../img/valutazioni/postura.png);
+}
+#moduloOcchiMTC{
+	background-image: url(../img/valutazioni/occhio.png);
+}
+.moduloImg{
+	background-size: 130px auto;
+}
+.moduloImg > div:first-child{
+	padding-left: 144px;
+}
+.moduloImg .etichetteModuli:first-child{
+	margin-top:0px !important;
+	border-top:none !important;
+}
+.sch_Max600 .moduloImg{
+	background-position: left 10px;
+	background-size: auto 120px;
+}
+.sch_Max600 .moduloImg > div:first-child{
+	padding-top:140px;
+}
+
+/* OCCHI */
+.sch_Max600 #moduloOcchiMTC > div:first-child{
+	padding-top:80px;
+}
+/* VISO, CAPELLI e PELLE */
+.sch_Max600 #moduloVisoMTC > div:first-child,
+.sch_Max600 #moduloCapelliMTC > div:first-child,
+.sch_Max600 #moduloPelleMTC > div:first-child{
+	padding-top:126px;
+}
+
+
+/* MANI */
+#moduloManiMTC{
+	background-image: url(../img/valutazioni/mano.png);
+	background-size: auto 188px;
+}
+#moduloManiMTC > div:first-child{
+	padding-left: 144px;
+}
+#moduloManiMTC .etichetteModuli:first-child{
+	margin-top:0px !important;
+	border-top:none !important;
+}
+.sch_Max600 #moduloManiMTC{
+	background-position: left 10px;
+	background-size: auto 160px;
+}
+.sch_Max600 #moduloManiMTC > div:first-child{
+	padding-top:150px;
+}
+
+/* DENTI */
+#moduloDentiMTC{
+	background-image: url(../img/valutazioni/denti.png);
+	background-size: auto 188px;
+}
+#moduloDentiMTC > div:first-child{
+	padding-left: 144px;
+}
+.sch_Max600 #moduloDentiMTC{
+	background-position: left 10px;
+	background-size: auto 160px;
+}
+.sch_Max600 #moduloDentiMTC > div:first-child{
+	padding-top:105px;
+}
+
+
+/* generica */
+.moduloAnaliticoMTC{
+	background-repeat: no-repeat;
+}
+.moduloAnaliticoMTC > div:first-child > div > i{
+	float: left;
+    margin-top: 3px !important;
+    width: 99px;
+    text-align: right;
+	white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.moduloAnaliticoMTC .etichetteModuli:first-child{
+	margin-top:0px !important;
+	border-top:none !important;
+}
+.sch_Max600 .moduloAnaliticoMTC > div:first-child{
+	padding-left:0px !important;
+}
+.sch_Max600 .moduloAnaliticoMTC > div:first-child > div > i{
+    margin-top: 9px !important;
+}
+
+
+
+
+/* POLSI */
+#moduloPolsiMTC{
+	overflow-x:auto;
+	white-space: nowrap;	
+	text-align:center;
+}
+#moduloPolsiMTC > div > div{
+	display:inline-block;
+	vertical-align: top;
+	width:300px;
+	height:470px;
+	background-image: url(../img/valutazioni/polsi.png);
+	background-repeat: no-repeat;
+	white-space: normal;
+}
+#moduloPolsiMTC > div > div > div{
+	background-color: rgba(0, 0, 0, 0.1);
+	border:1px solid rgba(0,0,0,0.5);
+    border-radius: 6px;
+	padding:3px;
+	width: 166px;
+	display:inline-block;
+}
+#moduloPolsiMTC > div > div > div > div{
+	margin:0;
+	text-align:left;
+}
+#moduloPolsiMTC > div > div > div > div:nth-child(2) i,
+#moduloPolsiMTC > div > div > div > div:nth-child(3) i{
+	display:none;
+}
+#moduloPolsiMTC select{
+	width: 158px;
+}
+#md_polsoSX{
+	background-position: top left;	
+	text-align:left;
+}
+#md_polsoDX{
+	background-position: top right;
+	text-align:right;
+}
+
+#md_CIN_sx{
+	margin-top:24px;
+}
+#md_GUAN_sx{
+	margin-top: 31px;
+    margin-left: 14px;
+}
+#md_CHI_sx{
+	margin-top: 31px;
+    margin-left: 100px;
+}
+#md_CIN_dx{
+	margin-top:24px;
+}
+#md_GUAN_dx{
+	margin-top: 31px;
+    margin-right: 14px;
+}
+#md_CHI_dx{
+	margin-top: 31px;
+    margin-right: 100px;
+}
+
+
+.sch_Max600 #moduloPolsiMTC > div > div{
+	width: 210px;
+    height: 500px;
+    background-image: url(../img/valutazioni/polsiH.png);
+}
+.sch_Max600 #md_CIN_sx{
+	margin-top:111px;
+	margin-left:25px;
+}
+.sch_Max600 #md_GUAN_sx{
+	margin-top: 9px;
+	margin-left:25px;
+}
+.sch_Max600 #md_CHI_sx{
+	margin-top: 9px;
+	margin-left:25px;
+}
+.sch_Max600 #md_CIN_dx{
+	margin-top:111px;
+	margin-right:25px;
+}
+.sch_Max600 #md_GUAN_dx{
+	margin-top: 9px;
+	margin-right:25px;
+}
+.sch_Max600 #md_CHI_dx{
+	margin-top: 9px;
+	margin-right:25px;
+}
+
+
+/* HARA e SHIENA */
+#moduloHaraSchienaShiatsu > div{
+	display:inline-block;
+	vertical-align: top;
+	background-position: center;
+	background-repeat: no-repeat;
+}
+#md_hara{
+	background-image:url(../img/valutazioni/hara.png);
+	background-size: 250px auto;
+	width: 250px;
+	height:370px;
+}
+#md_schiena{
+	background-image:url(../img/valutazioni/schiena.png);
+	background-size: 210px auto;
+	width: 210px;
+	height:400px;
+}
+#moduloHaraSchienaShiatsu > div > div > div,
+#moduloHaraSchienaShiatsu .domandeModuli{
+	display:inline-block;
+	position:relative;
+	width:32px;
+	height:30px;
+	margin:0px;
+}
+#moduloHaraSchienaShiatsu .domandeModuli i{
+	display:none;
+}
+#moduloHaraSchienaShiatsu select{
+	background-color: rgba(255, 255, 255, 0.2) !important;
+    border: none !important;
+    background-image: url(../img/frGiuB.png) !important;
+    background-size: 19px auto !important;
+    background-position: right calc(100% + 5px) !important;
+    border-radius: 50px !important;
+    padding: 0 10px 0 11px !important;
+}
+#md_hara .md_HT{
+	margin-top: 46px;
+    margin-left: 111px;
+}
+#md_hara .md_GB{
+    margin-left: 77px;
+}
+#md_hara .md_ST{
+    margin-left: 30px;
+}
+#md_hara .md_LR{
+    margin-left: 57px;
+}
+#md_hara .md_PC{
+    margin-left: 17px;
+}
+#md_hara .md_TE{
+    margin-left: 24px;
+}
+#md_hara .md_LUdx{
+    margin-left: 23px;
+    margin-top: 1px;
+}
+#md_hara .md_LUsx{
+    margin-left: 136px;
+}
+#md_hara .md_SPup{
+    margin-left: 110px;
+	display: block;
+}
+#md_hara .md_LIdx{
+	margin-left: 28px;
+    margin-top: 5px;
+}
+#md_hara .md_SPdown{
+    margin-left: 47px;
+}
+#md_hara .md_LIsx{
+	margin-left: 49px;
+}
+#md_hara .md_SIdx{
+	margin-left: 53px;
+    margin-top: 14px;
+}
+#md_hara .md_KI{
+	margin-left: 19px;
+}
+#md_hara .md_SIsx{
+	margin-left: 26px;
+}
+#md_hara .md_BL{
+	margin-left: 110px;
+	margin-top: 16px;
+}
+
+#md_schiena .md_LU{
+	margin-top: 14px;
+    margin-left: 90px;
+}
+#md_schiena .md_HT{
+	margin-top: 20px;
+    margin-left: 90px;
+}
+#md_schiena .md_ST{
+	margin-left: 51px;
+    margin-top: 8px;
+}
+#md_schiena .md_PC{
+	margin-left: 47px;
+}
+#md_schiena .md_LR{
+	margin-top: 18px;
+    margin-left: 58px;
+}
+#md_schiena .md_TE{
+	margin-left: -2px;
+}
+#md_schiena .md_GB{
+	margin-left: -3px;
+}
+#md_schiena .md_SP{
+	margin-left: 90px;
+    margin-top: 33px;
+}
+#md_schiena .md_SIsx{
+	margin-left: 67px;
+	margin-top: 20px;
+}
+#md_schiena .md_SIdx{
+	margin-left: 12px;
+}
+#md_schiena .md_LIsx{
+	margin-top: 8px;
+	margin-left: 20px;
+}
+#md_schiena .md_KI{
+	margin-left: 35px;
+}
+#md_schiena .md_LIdx{
+	margin-left: 35px;
+}
+#md_schiena .md_BL{
+	margin-top: 21px;
+	margin-left: 90px;
+}

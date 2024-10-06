@@ -48,7 +48,7 @@ var PAZIENTI_CICLI = { // extend PAZIENTI
 					idTrattamento=TR.idTrattamento*1;
 					TitoloTrattamento=TR.TitoloTrattamento;
 					NoteTrattamento=TR.NoteTrattamento;
-					jsonValutazione=__(TR.jsonValutazione,{});
+					moduli=__(TR.moduli,{});
 					Anamnesi=TR.Anamnesi;
 					DiagnosiOccidentale=TR.DiagnosiOccidentale;
 					DiagnosiMTC=TR.DiagnosiMTC;
@@ -87,9 +87,9 @@ var PAZIENTI_CICLI = { // extend PAZIENTI
 					if(Anamnesi)HTML+='<p><i>'+htmlEntities(TXT("Anamnesi"+(globals.set.cartella=='meridiani_shiatsu'?'Shiatsu':'')))+':</i><br>'+htmlEntities(Anamnesi).replace(/\n/g, '<br>')+'</p>';
 
 					// modulo valutazione
-					if(jsonValutazione){
-						for(d in jsonValutazione){
-							HTML+='<p><i>'+htmlEntities(jsonValutazione[d].d)+':</i><br>'+htmlEntities(jsonValutazione[d].r)+'</p>';
+					if(moduli){
+						for(d in moduli){
+							HTML+='<p><i>'+htmlEntities(moduli[d].d)+':</i><br>'+htmlEntities(moduli[d].r)+'</p>';
 						}
 					}
 

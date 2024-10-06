@@ -1976,40 +1976,59 @@ body:not(.smart) #tt_mezzival3 span{
     height: 36px;
     line-height: 36px;
 }
-#modulo_del{
+.modulo_del{
     display: inline-block;
     color: #A00;
     cursor: pointer;
     padding: 0 9px;
     border-radius: 5px;
     background-color: rgba(255, 255, 255, 0.25);
+	float:right;
 }
-#modulo_del:hover{
-background-color:rgba(0,0,0,0.1);
+.modulo_moveup{
+    display: inline-block;
+    float: right;
+    cursor: pointer;
+    border-radius: 5px;
+    background-image: url(../img/frSuB.png);
+    background-repeat: no-repeat;
+    background-position: center right;
+    background-size: contain;
+    height: 24px;
+    background-color: rgba(0, 0, 0, 0.05);
+    padding-right: 24px;
+    padding-left: 7px;
+	margin-right:3px;
 }
-#modulo_tit{
+.modulo_del:hover,
+.modulo_moveup:hover{
+	background-color:rgba(0,0,0,0.1);
+}
+
+.modulo_tit{
 	display: inline-block;
-    float: left;
     padding-left: 6px;
     font-weight: bold;
-}
-#modulo.moduloFull #modulo_btn,
-#modulo:not(.moduloFull) #modulo_del,
-#modulo:not(.moduloFull) #modulo_tit{
-	display:none;
+    /* width: calc(100% - 85px); */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 #modulo{
 	margin-bottom:30px;
 }
-#modulo.moduloFull{
+#modulo_cont > div{
 	background-color: rgba(0, 0, 0, 0.05);
-	border-radius: 6px;
-	padding: 7px;
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.4);
+    border-radius: 6px;
+    padding: 7px;
+    margin-bottom: 15px;
 }
 .domandeModuli{
     margin-top: 6px;
 	margin-left: -3px;
     margin-right: -3px;
+	clear: both;
 }
 .etichetteModuli{
     padding-top: 6px;

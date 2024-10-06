@@ -21,6 +21,7 @@ var PAZIENTI = {
 	pazSelMD5: '',
 	mnMobileOpened: null,
 	pazientiFiltrati: [],
+	moduliProvvisori: [],
 		
 	caricaPazienti: function(){ // carica l'elenco dei pazienti
 		if(PAZIENTI.idCL>-1)return;

@@ -77,6 +77,7 @@ function INIT(){
 
 	// unisco i moduli
 	Object.assign(PAZIENTI, PAZIENTI_TRATTAMENTI);
+	Object.assign(PAZIENTI, PAZIENTI_MODULI);
 	Object.assign(PAZIENTI, PAZIENTI_CICLI);
 	Object.assign(PAZIENTI, PAZIENTI_SETS);
 	Object.assign(PAZIENTI, PAZIENTI_SETS_GRUPPI);
@@ -86,6 +87,7 @@ function INIT(){
 	
 	// svuoto la memoria
 	PAZIENTI_TRATTAMENTI = null;
+	PAZIENTI_MODULI = null;
 	PAZIENTI_CICLI = null;
 	PAZIENTI_SETS = null;
 	PAZIENTI_SETS_GRUPPI = null;

@@ -269,7 +269,7 @@ var SYNCRO = {
 						if(DB.pazienti.data[k].trattamenti[t].DataModifica*1>DB.pazienti.lastSync*1 || dwnl || bkp){
 							DB.pazienti.data[k].trattamenti[t].id_interno=t*1;
 							n++;elencoTrattamenti[n]=clone(DB.pazienti.data[k].trattamenti[t]);
-							elencoTrattamenti[n].jsonValutazione = JSON.stringify(elencoTrattamenti[n].jsonValutazione);
+							elencoTrattamenti[n].moduli = JSON.stringify(elencoTrattamenti[n].moduli);
 							elencoTrattamenti[n].gallery = JSON.stringify(elencoTrattamenti[n].gallery);
 							elencoTrattamenti[n].meridiani = JSON.stringify(elencoTrattamenti[n].meridiani);
 							elencoTrattamenti[n].sintomi = JSON.stringify(elencoTrattamenti[n].sintomi);
@@ -1017,7 +1017,7 @@ var SYNCRO = {
 									"idPaziente": DB.pazienti.data[kDef].idPaziente*1,
 									"TitoloTrattamento": trattamenti[t].TitoloTrattamento,
 									"NoteTrattamento": trattamenti[t].NoteTrattamento,
-									"jsonValutazione": toJson(__(trattamenti[t].jsonValutazione,{}),{}),
+									"moduli": toJson(__(trattamenti[t].moduli,'')),
 									"Anamnesi": trattamenti[t].Anamnesi,
 									"DiagnosiOccidentale": trattamenti[t].DiagnosiOccidentale,
 									"DiagnosiMTC": trattamenti[t].DiagnosiMTC,
