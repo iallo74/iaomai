@@ -108,7 +108,8 @@ var PAZIENTI_MODULI = { // extend PAZIENTI
 		SCHEDA.formModificato = true;
 	},
 	popolaModuli: function(){
-		let HTML = '';
+		let HTML = '',
+			functs = [];
 		for(m=0;m<PAZIENTI.moduliProvvisori.length;m++){
 			let MDL = PAZIENTI.moduliProvvisori[m];
 			HTML += '<div class="moduli">'+
@@ -146,13 +147,19 @@ var PAZIENTI_MODULI = { // extend PAZIENTI
 							sost = '<div class="domandeModuli etichetteModuli"><i class="tagDomanda">'+el.d+'</i></div>';
 							break;
 						case "c":
+							let funct = '';
+							if(moduliValutazione.modelli[PAZIENTI.moduliProvvisori[m].id]?.funct){
+								funct = PAZIENTI.moduliProvvisori[m].id;
+								functs.push(PAZIENTI.moduliProvvisori[m].id);
+							}
 							sost = '<div class="domandeModuli"><label for="risposta'+m+"_"+d+'">' +
 									H.r({	t: "c",
 											name: "risposta"+m+"_"+d,
 											value: r,
 											label: el.d,
 											idRiga: 'dm_'+m+'_'+d,
-											clickCampo: 'PAZIENTI.updateDomanda(this)' }) +
+											dataCampo: el?.v ? ' data-v="'+el.v+'"' : '',
+											clickCampo: 'PAZIENTI.updateDomanda(this,\''+funct+'\')' }) +
 									'</label></div>';
 							break;
 						case "d":
@@ -172,7 +179,8 @@ var PAZIENTI_MODULI = { // extend PAZIENTI
 								let els = moduliValutazione.liste[opts];
 								opts = [];
 								for(let e in els){
-									opts.push(els[e][globals.siglaLingua]);
+									let txt = typeof(els[e])=='object' ? els[e][globals.siglaLingua] : els[e];
+									opts.push(txt);
 								}
 							}
 							sost = '<div class="domandeModuli"><i class="tagDomanda">'+el.d+'</i>' +
@@ -205,6 +213,11 @@ var PAZIENTI_MODULI = { // extend PAZIENTI
 			HTML += '</div>';
 		}
 		document.getElementById("modulo_cont").innerHTML = HTML;
+		if(functs.length){ // eseguo tutte le funzioni
+			for(f in functs){
+				moduliValutazione.modelli[functs[f]].funct();
+			}
+		}
 	},
 	rimuoviModulo: function( m ){ // rimuove il modulo dalla scheda di trattamento
 		CONFIRM.vis(	TXT("chiediRimuoviModulo"),
@@ -225,7 +238,7 @@ var PAZIENTI_MODULI = { // extend PAZIENTI
 		PAZIENTI.popolaModuli();
 		SCHEDA.formModificato = true;
 	},
-	updateDomanda: function( el ){
+	updateDomanda: function( el, funct=null ){
 		let pM = el.parentElement.id.split("_")
 			m = parseInt(pM[1]),
 			d = parseInt(pM[2]),
@@ -244,6 +257,7 @@ var PAZIENTI_MODULI = { // extend PAZIENTI
 		}
 		PAZIENTI.moduliProvvisori[m].data[d].r = r;
 		SCHEDA.formModificato = true;
+		if(funct)moduliValutazione.modelli[funct].funct();
 	}
 	
 }

@@ -194,6 +194,7 @@ var H = {
 						'		id="'+htmlEntities(id)+'"'+
 						'		value="1"' +
 						'	  	onClick="'+obj.clickCampo+';"' +
+						'		'+obj.dataCampo +
 						'		'+(obj.value*1 ? 'CHECKED':'0')+'>';
 						
 				if(obj.label && !obj.noLabel)html += '<span>'+htmlEntities(obj.label)+'</span> ';

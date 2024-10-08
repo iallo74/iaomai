@@ -341,6 +341,20 @@ var moduliValutazione = {
                 por: "D",
                 deu: "M"
             }                      
+        ],
+        rates: [
+            "",
+            "0",
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10"
         ]
     },
     modelli: {
@@ -2999,11 +3013,11 @@ var moduliValutazione = {
                     t: "s",
                     d: {
                         ita: "HARA - Cuore",
-                        eng: "",
-                        esp: "",
-                        fra: "",
-                        por: "",
-                        deu: ""
+                        eng: "HARA - Heart",
+                        esp: "HARA - Corazón",
+                        fra: "HARA - Cœur",
+                        por: "HARA - Coração",
+                        deu: "HARA - Herzens"
                     },
                     l: "stati_energetici"
                 },
@@ -3436,6 +3450,1389 @@ var moduliValutazione = {
                     '       </div>' +
                     '   </div>' +
                     '</div>'
+        },
+        "pdi": {
+            title: {
+                ita: "Pain Disability Index (PDI)",
+                eng: "Pain Disability Index (PDI)",
+                esp: "Pain Disability Index (PDI)",
+                fra: "Pain Disability Index (PDI)",
+                por: "Pain Disability Index (PDI)",
+                deu: "Pain Disability Index (PDI)"
+            },
+            data: [
+                {
+                    t: "s",
+                    d: {
+                        ita: "Cura personale",
+                        eng: "Personal care",
+                        esp: "Cuidado personal",
+                        fra: "Soins personnels",
+                        por: "Cuidados pessoais",
+                        deu: "Persönliche Pflege"
+                    },
+                    l: "rates"
+                },
+                {
+                    t: "s",
+                    d: {
+                        ita: "Attività domestiche",
+                        eng: "Household activities",
+                        esp: "Actividades domésticas",
+                        fra: "Activités domestiques",
+                        por: "Atividades domésticas",
+                        deu: "Haushaltsaktivitäten"
+                    },
+                    l: "rates"
+                },
+                {
+                    t: "s",
+                    d: {
+                        ita: "Attività ricreative",
+                        eng: "Recreational activities",
+                        esp: "Actividades recreativas",
+                        fra: "Activités récréatives",
+                        por: "Atividades recreativas",
+                        deu: "Freizeitaktivitäten"
+                    },
+                    l: "rates"
+                },
+                {
+                    t: "s",
+                    d: {
+                        ita: "Lavoro",
+                        eng: "Work",
+                        esp: "Trabajo",
+                        fra: "Travail",
+                        por: "Trabalho",
+                        deu: "Arbeit"
+                    },
+                    l: "rates"
+                },
+                {
+                    t: "s",
+                    d: {
+                        ita: "Relazioni sociali",
+                        eng: "Social relationships",
+                        esp: "Relaciones sociales",
+                        fra: "Relations sociales",
+                        por: "Relações sociais",
+                        deu: "Soziale Beziehungen"
+                    },
+                    l: "rates"
+                },
+                {
+                    t: "s",
+                    d: {
+                        ita: "Attività sessuale",
+                        eng: "Sexual activity",
+                        esp: "Actividad sexual",
+                        fra: "Activité sexuelle",
+                        por: "Atividade sexual",
+                        deu: "Sexuelle Aktivität"
+                    },
+                    l: "rates"
+                },
+                {
+                    t: "s",
+                    d: {
+                        ita: "Attività di vita generale",
+                        eng: "General life activities",
+                        esp: "Actividades de vida general",
+                        fra: "Activités de la vie générale",
+                        por: "Atividades de vida geral",
+                        deu: "Allgemeine Lebensaktivitäten"
+                    },
+                    l: "rates"
+                }                         
+            ],
+            html:   '<div id="moduloPDI">[0][1][2][3][4][5][6]</div>'
+        },
+        "mpq": {
+            title: {
+                ita: "McGill Pain Questionnaire (MPQ)",
+                eng: "McGill Pain Questionnaire (MPQ)",
+                esp: "McGill Pain Questionnaire (MPQ)",
+                fra: "McGill Pain Questionnaire (MPQ)",
+                por: "McGill Pain Questionnaire (MPQ)",
+                deu: "McGill Pain Questionnaire (MPQ)"
+            },
+            data: [
+                {
+                    t: "e",
+                    d: {
+                        ita: "Descrittori sensoriali",
+                        eng: "",
+                        esp: "",
+                        fra: "",
+                        por: "",
+                        deu: ""
+                    }
+                },
+                {
+                    t: "e",
+                    d: {
+                        ita: "Gruppo 1 (temporale)",
+                        eng: "",
+                        esp: "",
+                        fra: "",
+                        por: "",
+                        deu: ""
+                    }
+                },
+                {
+                    t: "c",
+                    d: {
+                        ita: "Tremolante",
+                        eng: "",
+                        esp: "",
+                        fra: "",
+                        por: "",
+                        deu: ""
+                    },
+                    v: 1
+                },
+                {
+                    t: "c",
+                    d: {
+                        ita: "Fremente",
+                        eng: "",
+                        esp: "",
+                        fra: "",
+                        por: "",
+                        deu: ""
+                    },
+                    v: 2
+                },
+                {
+                    t: "c",
+                    d: {
+                        ita: "Pulsante",
+                        eng: "",
+                        esp: "",
+                        fra: "",
+                        por: "",
+                        deu: ""
+                    },
+                    v: 3
+                },
+                {
+                    t: "c",
+                    d: {
+                        ita: "Palpitante",
+                        eng: "",
+                        esp: "",
+                        fra: "",
+                        por: "",
+                        deu: ""
+                    },
+                    v: 4
+                },
+                {
+                    t: "c",
+                    d: {
+                        ita: "Battente",
+                        eng: "",
+                        esp: "",
+                        fra: "",
+                        por: "",
+                        deu: ""
+                    },
+                    v: 5
+                },
+                {
+                    t: "c",
+                    d: {
+                        ita: "Calpestante",
+                        eng: "",
+                        esp: "",
+                        fra: "",
+                        por: "",
+                        deu: ""
+                    },
+                    v: 6
+                },
+                {
+                    t: "e",
+                    d: {
+                        ita: "Gruppo 2 (spaziale)",
+                        eng: "",
+                        esp: "",
+                        fra: "",
+                        por: "",
+                        deu: ""
+                    }
+                },
+                {
+                    t: "c",
+                    d: {
+                        ita: "Saltellante",
+                        eng: "",
+                        esp: "",
+                        fra: "",
+                        por: "",
+                        deu: ""
+                    },
+                    v: 1
+                },
+                {
+                    t: "c",
+                    d: {
+                        ita: "Fulmineo",
+                        eng: "",
+                        esp: "",
+                        fra: "",
+                        por: "",
+                        deu: ""
+                    },
+                    v: 2
+                },
+                {
+                    t: "c",
+                    d: {
+                        ita: "Tirante",
+                        eng: "",
+                        esp: "",
+                        fra: "",
+                        por: "",
+                        deu: ""
+                    },
+                    v: 3
+                },
+                {
+                    t: "e",
+                    d: {
+                        ita: "Gruppo 3 (pressione puntiforme)",
+                        eng: "",
+                        esp: "",
+                        fra: "",
+                        por: "",
+                        deu: ""
+                    }
+                },
+                {
+                    t: "c",
+                    d: {
+                        ita: "Pizzicante",
+                        eng: "",
+                        esp: "",
+                        fra: "",
+                        por: "",
+                        deu: ""
+                    },
+                    v: 1
+                },
+                {
+                    t: "c",
+                    d: {
+                        ita: "Tediante",
+                        eng: "",
+                        esp: "",
+                        fra: "",
+                        por: "",
+                        deu: ""
+                    },
+                    v: 2
+                },
+                {
+                    t: "c",
+                    d: {
+                        ita: "Perforante",
+                        eng: "",
+                        esp: "",
+                        fra: "",
+                        por: "",
+                        deu: ""
+                    },
+                    v: 3
+                },
+                {
+                    t: "c",
+                    d: {
+                        ita: "Fitta",
+                        eng: "",
+                        esp: "",
+                        fra: "",
+                        por: "",
+                        deu: ""
+                    },
+                    v: 4
+                },
+                {
+                    t: "c",
+                    d: {
+                        ita: "Lacrimante",
+                        eng: "",
+                        esp: "",
+                        fra: "",
+                        por: "",
+                        deu: ""
+                    },
+                    v: 5
+                },
+                {
+                    t: "e",
+                    d: {
+                        ita: "Gruppo 4 (tipo di pressione)",
+                        eng: "",
+                        esp: "",
+                        fra: "",
+                        por: "",
+                        deu: ""
+                    }
+                },
+                {
+                    t: "c",
+                    d: {
+                        ita: "Definito",
+                        eng: "",
+                        esp: "",
+                        fra: "",
+                        por: "",
+                        deu: ""
+                    },
+                    v: 1
+                },
+                {
+                    t: "c",
+                    d: {
+                        ita: "Tagliente",
+                        eng: "",
+                        esp: "",
+                        fra: "",
+                        por: "",
+                        deu: ""
+                    },
+                    v: 2
+                },
+                {
+                    t: "c",
+                    d: {
+                        ita: "Lacerante",
+                        eng: "",
+                        esp: "",
+                        fra: "",
+                        por: "",
+                        deu: ""
+                    },
+                    v: 3
+                },
+                {
+                    t: "e",
+                    d: {
+                        ita: "Gruppo 5(pressione costrittiva)",
+                        eng: "",
+                        esp: "",
+                        fra: "",
+                        por: "",
+                        deu: ""
+                    }
+                },
+                {
+                    t: "c",
+                    d: {
+                        ita: "Pizzicante",
+                        eng: "",
+                        esp: "",
+                        fra: "",
+                        por: "",
+                        deu: ""
+                    },
+                    v: 1
+                },
+                {
+                    t: "c",
+                    d: {
+                        ita: "Pressante",
+                        eng: "",
+                        esp: "",
+                        fra: "",
+                        por: "",
+                        deu: ""
+                    },
+                    v: 2
+                },
+                {
+                    t: "c",
+                    d: {
+                        ita: "Rodente",
+                        eng: "",
+                        esp: "",
+                        fra: "",
+                        por: "",
+                        deu: ""
+                    },
+                    v: 3
+                },
+                {
+                    t: "c",
+                    d: {
+                        ita: "Crampiforme",
+                        eng: "",
+                        esp: "",
+                        fra: "",
+                        por: "",
+                        deu: ""
+                    },
+                    v: 4
+                },
+                {
+                    t: "c",
+                    d: {
+                        ita: "Stritolante",
+                        eng: "",
+                        esp: "",
+                        fra: "",
+                        por: "",
+                        deu: ""
+                    },
+                    v: 5
+                },
+                {
+                    t: "e",
+                    d: {
+                        ita: "Gruppo 6 (pressione di trazione)",
+                        eng: "",
+                        esp: "",
+                        fra: "",
+                        por: "",
+                        deu: ""
+                    },
+                },
+                {
+                    t: "c",
+                    d: {
+                        ita: "Strattonante",
+                        eng: "",
+                        esp: "",
+                        fra: "",
+                        por: "",
+                        deu: ""
+                    },
+                    v: 1
+                },
+                {
+                    t: "c",
+                    d: {
+                        ita: "Tirante",
+                        eng: "",
+                        esp: "",
+                        fra: "",
+                        por: "",
+                        deu: ""
+                    },
+                    v: 2
+                },
+                {
+                    t: "c",
+                    d: {
+                        ita: "Straziante",
+                        eng: "",
+                        esp: "",
+                        fra: "",
+                        por: "",
+                        deu: ""
+                    },
+                    v: 3
+                },
+                {
+                    t: "e",
+                    d: {
+                        ita: "Gruppo 7 (termale)",
+                        eng: "",
+                        esp: "",
+                        fra: "",
+                        por: "",
+                        deu: ""
+                    }
+                },
+                {
+                    t: "c",
+                    d: {
+                        ita: "Caldo",
+                        eng: "",
+                        esp: "",
+                        fra: "",
+                        por: "",
+                        deu: ""
+                    },
+                    v: 1
+                },
+                {
+                    t: "c",
+                    d: {
+                        ita: "Secco",
+                        eng: "",
+                        esp: "",
+                        fra: "",
+                        por: "",
+                        deu: ""
+                    },
+                    v: 2
+                },
+                {
+                    t: "c",
+                    d: {
+                        ita: "Scottante",
+                        eng: "",
+                        esp: "",
+                        fra: "",
+                        por: "",
+                        deu: ""
+                    },
+                    v: 3
+                },
+                {
+                    t: "c",
+                    d: {
+                        ita: "Bruciante",
+                        eng: "",
+                        esp: "",
+                        fra: "",
+                        por: "",
+                        deu: ""
+                    },
+                    v: 4
+                },
+                {
+                    t: "e",
+                    d: {
+                        ita: "Gruppo 8 (movimento)",
+                        eng: "",
+                        esp: "",
+                        fra: "",
+                        por: "",
+                        deu: ""
+                    }
+                },
+                {
+                    t: "c",
+                    d: {
+                        ita: "Formicolio",
+                        eng: "",
+                        esp: "",
+                        fra: "",
+                        por: "",
+                        deu: ""
+                    },
+                    v: 1
+                },
+                {
+                    t: "c",
+                    d: {
+                        ita: "Pruriginoso",
+                        eng: "",
+                        esp: "",
+                        fra: "",
+                        por: "",
+                        deu: ""
+                    },
+                    v: 2
+                },
+                {
+                    t: "c",
+                    d: {
+                        ita: "Frizzante",
+                        eng: "",
+                        esp: "",
+                        fra: "",
+                        por: "",
+                        deu: ""
+                    },
+                    v: 3
+                },
+                {
+                    t: "c",
+                    d: {
+                        ita: "Pungente",
+                        eng: "",
+                        esp: "",
+                        fra: "",
+                        por: "",
+                        deu: ""
+                    },
+                    v: 4
+                },
+                {
+                    t: "e",
+                    d: {
+                        ita: "Gruppo 9 (durezza)",
+                        eng: "",
+                        esp: "",
+                        fra: "",
+                        por: "",
+                        deu: ""
+                    }
+                },
+                {
+                    t: "c",
+                    d: {
+                        ita: "Torpido",
+                        eng: "",
+                        esp: "",
+                        fra: "",
+                        por: "",
+                        deu: ""
+                    },
+                    v: 1
+                },
+                {
+                    t: "c",
+                    d: {
+                        ita: "Ulceroso",
+                        eng: "",
+                        esp: "",
+                        fra: "",
+                        por: "",
+                        deu: ""
+                    },
+                    v: 2
+                },
+                {
+                    t: "c",
+                    d: {
+                        ita: "Dolente",
+                        eng: "",
+                        esp: "",
+                        fra: "",
+                        por: "",
+                        deu: ""
+                    },
+                    v: 3
+                },
+                {
+                    t: "c",
+                    d: {
+                        ita: "Indolenzito",
+                        eng: "",
+                        esp: "",
+                        fra: "",
+                        por: "",
+                        deu: ""
+                    },
+                    v: 4
+                },
+                {
+                    t: "c",
+                    d: {
+                        ita: "Gravoso",
+                        eng: "",
+                        esp: "",
+                        fra: "",
+                        por: "",
+                        deu: ""
+                    },
+                    v: 5
+                },
+                {
+                    t: "e",
+                    d: {
+                        ita: "Gruppo 10 (differenze sensoriali)",
+                        eng: "",
+                        esp: "",
+                        fra: "",
+                        por: "",
+                        deu: ""
+                    }
+                },
+                {
+                    t: "c",
+                    d: {
+                        ita: "Lieve",
+                        eng: "",
+                        esp: "",
+                        fra: "",
+                        por: "",
+                        deu: ""
+                    },
+                    v: 1
+                },
+                {
+                    t: "c",
+                    d: {
+                        ita: "Teso",
+                        eng: "",
+                        esp: "",
+                        fra: "",
+                        por: "",
+                        deu: ""
+                    },
+                    v: 2
+                },
+                {
+                    t: "c",
+                    d: {
+                        ita: "Stridente",
+                        eng: "",
+                        esp: "",
+                        fra: "",
+                        por: "",
+                        deu: ""
+                    },
+                    v: 3
+                },
+                {
+                    t: "c",
+                    d: {
+                        ita: "Fendente",
+                        eng: "",
+                        esp: "",
+                        fra: "",
+                        por: "",
+                        deu: ""
+                    },
+                    v: 4
+                },
+                {
+                    t: "e",
+                    d: {
+                        ita: "Descrittori emotivi",
+                        eng: "",
+                        esp: "",
+                        fra: "",
+                        por: "",
+                        deu: ""
+                    }
+                },
+                {
+                    t: "e",
+                    d: {
+                        ita: "Gruppo 11 (tensione)",
+                        eng: "",
+                        esp: "",
+                        fra: "",
+                        por: "",
+                        deu: ""
+                    }
+                },
+                {
+                    t: "c",
+                    d: {
+                        ita: "Faticoso",
+                        eng: "",
+                        esp: "",
+                        fra: "",
+                        por: "",
+                        deu: ""
+                    },
+                    v: 1
+                },
+                {
+                    t: "c",
+                    d: {
+                        ita: "Spossante",
+                        eng: "",
+                        esp: "",
+                        fra: "",
+                        por: "",
+                        deu: ""
+                    },
+                    v: 2
+                },
+                {
+                    t: "e",
+                    d: {
+                        ita: "Gruppo 12 (autonomo)",
+                        eng: "",
+                        esp: "",
+                        fra: "",
+                        por: "",
+                        deu: ""
+                    }
+                },
+                {
+                    t: "c",
+                    d: {
+                        ita: "Nauseabondo",
+                        eng: "",
+                        esp: "",
+                        fra: "",
+                        por: "",
+                        deu: ""
+                    },
+                    v: 1
+                },
+                {
+                    t: "c",
+                    d: {
+                        ita: "Soffocante",
+                        eng: "",
+                        esp: "",
+                        fra: "",
+                        por: "",
+                        deu: ""
+                    },
+                    v: 2
+                },
+                {
+                    t: "e",
+                    d: {
+                        ita: "Gruppo 13 (paura)",
+                        eng: "",
+                        esp: "",
+                        fra: "",
+                        por: "",
+                        deu: ""
+                    }
+                },
+                {
+                    t: "c",
+                    d: {
+                        ita: "Pauroso",
+                        eng: "",
+                        esp: "",
+                        fra: "",
+                        por: "",
+                        deu: ""
+                    },
+                    v: 1
+                },
+                {
+                    t: "c",
+                    d: {
+                        ita: "Spaventevole",
+                        eng: "",
+                        esp: "",
+                        fra: "",
+                        por: "",
+                        deu: ""
+                    },
+                    v: 2
+                },
+                {
+                    t: "c",
+                    d: {
+                        ita: "Terrificante",
+                        eng: "",
+                        esp: "",
+                        fra: "",
+                        por: "",
+                        deu: ""
+                    },
+                    v: 3
+                },
+                {
+                    t: "e",
+                    d: {
+                        ita: "Gruppo 14 (persecutorio)",
+                        eng: "",
+                        esp: "",
+                        fra: "",
+                        por: "",
+                        deu: ""
+                    }
+                },
+                {
+                    t: "c",
+                    d: {
+                        ita: "Punitivo",
+                        eng: "",
+                        esp: "",
+                        fra: "",
+                        por: "",
+                        deu: ""
+                    },
+                    v: 1
+                },
+                {
+                    t: "c",
+                    d: {
+                        ita: "Estenuante",
+                        eng: "",
+                        esp: "",
+                        fra: "",
+                        por: "",
+                        deu: ""
+                    },
+                    v: 2
+                },
+                {
+                    t: "c",
+                    d: {
+                        ita: "Crudele",
+                        eng: "",
+                        esp: "",
+                        fra: "",
+                        por: "",
+                        deu: ""
+                    },
+                    v: 3
+                },
+                {
+                    t: "c",
+                    d: {
+                        ita: "Feroce",
+                        eng: "",
+                        esp: "",
+                        fra: "",
+                        por: "",
+                        deu: ""
+                    },
+                    v: 4
+                },
+                {
+                    t: "c",
+                    d: {
+                        ita: "Micidiale",
+                        eng: "",
+                        esp: "",
+                        fra: "",
+                        por: "",
+                        deu: ""
+                    },
+                    v: 5
+                },
+                {
+                    t: "e",
+                    d: {
+                        ita: "Gruppo 15 (affettivo-valutativo-sensoriale)",
+                        eng: "",
+                        esp: "",
+                        fra: "",
+                        por: "",
+                        deu: ""
+                    }
+                },
+                {
+                    t: "c",
+                    d: {
+                        ita: "Infelice",
+                        eng: "",
+                        esp: "",
+                        fra: "",
+                        por: "",
+                        deu: ""
+                    },
+                    v: 1
+                },
+                {
+                    t: "c",
+                    d: {
+                        ita: "Accecante",
+                        eng: "",
+                        esp: "",
+                        fra: "",
+                        por: "",
+                        deu: ""
+                    },
+                    v: 2
+                },
+                {
+                    t: "e",
+                    d: {
+                        ita: "Descrittori valutativi",
+                        eng: "",
+                        esp: "",
+                        fra: "",
+                        por: "",
+                        deu: ""
+                    }
+                },
+                {
+                    t: "e",
+                    d: {
+                        ita: "Gruppo 16 (valutativo)",
+                        eng: "",
+                        esp: "",
+                        fra: "",
+                        por: "",
+                        deu: ""
+                    }
+                },
+                {
+                    t: "c",
+                    d: {
+                        ita: "Noioso",
+                        eng: "",
+                        esp: "",
+                        fra: "",
+                        por: "",
+                        deu: ""
+                    },
+                    v: 1
+                },
+                {
+                    t: "c",
+                    d: {
+                        ita: "Problematico",
+                        eng: "",
+                        esp: "",
+                        fra: "",
+                        por: "",
+                        deu: ""
+                    },
+                    v: 2
+                },
+                {
+                    t: "c",
+                    d: {
+                        ita: "Misero",
+                        eng: "",
+                        esp: "",
+                        fra: "",
+                        por: "",
+                        deu: ""
+                    },
+                    v: 3
+                },
+                {
+                    t: "c",
+                    d: {
+                        ita: "Intenso",
+                        eng: "",
+                        esp: "",
+                        fra: "",
+                        por: "",
+                        deu: ""
+                    },
+                    v: 4
+                },
+                {
+                    t: "c",
+                    d: {
+                        ita: "Insopportabile",
+                        eng: "",
+                        esp: "",
+                        fra: "",
+                        por: "",
+                        deu: ""
+                    },
+                    v: 5
+                },
+                {
+                    t: "e",
+                    d: {
+                        ita: "Varie",
+                        eng: "",
+                        esp: "",
+                        fra: "",
+                        por: "",
+                        deu: ""
+                    }
+                },
+                {
+                    t: "e",
+                    d: {
+                        ita: "Gruppo 17 (sensoriale: varie)",
+                        eng: "",
+                        esp: "",
+                        fra: "",
+                        por: "",
+                        deu: ""
+                    }
+                },
+                {
+                    t: "c",
+                    d: {
+                        ita: "Diffuso",
+                        eng: "",
+                        esp: "",
+                        fra: "",
+                        por: "",
+                        deu: ""
+                    },
+                    v: 1
+                },
+                {
+                    t: "c",
+                    d: {
+                        ita: "Radiante",
+                        eng: "",
+                        esp: "",
+                        fra: "",
+                        por: "",
+                        deu: ""
+                    },
+                    v: 2
+                },
+                {
+                    t: "c",
+                    d: {
+                        ita: "Penetrante",
+                        eng: "",
+                        esp: "",
+                        fra: "",
+                        por: "",
+                        deu: ""
+                    },
+                    v: 3
+                },
+                {
+                    t: "c",
+                    d: {
+                        ita: "Pungente",
+                        eng: "",
+                        esp: "",
+                        fra: "",
+                        por: "",
+                        deu: ""
+                    },
+                    v: 4
+                },
+                {
+                    t: "e",
+                    d: {
+                        ita: "Gruppo 18 (sensoriale: varie)",
+                        eng: "",
+                        esp: "",
+                        fra: "",
+                        por: "",
+                        deu: ""
+                    }
+                },
+                {
+                    t: "c",
+                    d: {
+                        ita: "Stretto",
+                        eng: "",
+                        esp: "",
+                        fra: "",
+                        por: "",
+                        deu: ""
+                    },
+                    v: 1
+                },
+                {
+                    t: "c",
+                    d: {
+                        ita: "Intorpidito",
+                        eng: "",
+                        esp: "",
+                        fra: "",
+                        por: "",
+                        deu: ""
+                    },
+                    v: 2
+                },
+                {
+                    t: "c",
+                    d: {
+                        ita: "Tirante",
+                        eng: "",
+                        esp: "",
+                        fra: "",
+                        por: "",
+                        deu: ""
+                    },
+                    v: 3
+                },
+                {
+                    t: "c",
+                    d: {
+                        ita: "Strizzante",
+                        eng: "",
+                        esp: "",
+                        fra: "",
+                        por: "",
+                        deu: ""
+                    },
+                    v: 4
+                },
+                {
+                    t: "c",
+                    d: {
+                        ita: "Lacerante",
+                        eng: "",
+                        esp: "",
+                        fra: "",
+                        por: "",
+                        deu: ""
+                    },
+                    v: 5
+                },
+                {
+                    t: "e",
+                    d: {
+                        ita: "Gruppo 19 (sensoriale)",
+                        eng: "",
+                        esp: "",
+                        fra: "",
+                        por: "",
+                        deu: ""
+                    }
+                },
+                {
+                    t: "c",
+                    d: {
+                        ita: "Fresco",
+                        eng: "",
+                        esp: "",
+                        fra: "",
+                        por: "",
+                        deu: ""
+                    },
+                    v: 1
+                },
+                {
+                    t: "c",
+                    d: {
+                        ita: "Freddo",
+                        eng: "",
+                        esp: "",
+                        fra: "",
+                        por: "",
+                        deu: ""
+                    },
+                    v: 2
+                },
+                {
+                    t: "c",
+                    d: {
+                        ita: "Ghiacciante",
+                        eng: "",
+                        esp: "",
+                        fra: "",
+                        por: "",
+                        deu: ""
+                    },
+                    v: 3
+                },
+                {
+                    t: "e",
+                    d: {
+                        ita: "Gruppo 20 (affettivo-valutativo: varie)",
+                        eng: "",
+                        esp: "",
+                        fra: "",
+                        por: "",
+                        deu: ""
+                    }
+                },
+                {
+                    t: "c",
+                    d: {
+                        ita: "Fastidioso",
+                        eng: "",
+                        esp: "",
+                        fra: "",
+                        por: "",
+                        deu: ""
+                    },
+                    v: 1
+                },
+                {
+                    t: "c",
+                    d: {
+                        ita: "Nauseabondo",
+                        eng: "",
+                        esp: "",
+                        fra: "",
+                        por: "",
+                        deu: ""
+                    },
+                    v: 2
+                },
+                {
+                    t: "c",
+                    d: {
+                        ita: "Agonizzante",
+                        eng: "",
+                        esp: "",
+                        fra: "",
+                        por: "",
+                        deu: ""
+                    },
+                    v: 3
+                },
+                {
+                    t: "c",
+                    d: {
+                        ita: "Terribile",
+                        eng: "",
+                        esp: "",
+                        fra: "",
+                        por: "",
+                        deu: ""
+                    },
+                    v: 4
+                },
+                {
+                    t: "c",
+                    d: {
+                        ita: "Torturante",
+                        eng: "",
+                        esp: "",
+                        fra: "",
+                        por: "",
+                        deu: ""
+                    },
+                    v: 5
+                },
+                {
+                    t: "e",
+                    d: {
+                        ita: "Pain Rating Index (PRI)",
+                        eng: "Pain Rating Index (PRI)",
+                        esp: "Pain Rating Index (PRI)",
+                        fra: "Pain Rating Index (PRI)",
+                        por: "Pain Rating Index (PRI)",
+                        deu: "Pain Rating Index (PRI)"
+                    }
+                },
+            ],
+            html:   '<div id="moduloMPQ">' +
+                    '   <div>' +
+                    '       <div>[0]</div>' +
+                    '       <div class="mpq_lists">' +
+                    '           <div id="mpq_sez01" class="mpq_sez">[1] [2][3][4][5][6][7]</div>' +
+                    '           <div id="mpq_sez02" class="mpq_sez">[8] [9][10][11]</div>' +
+                    '           <div id="mpq_sez03" class="mpq_sez">[12] [13][14][15][16][17]</div>' +
+                    '           <div id="mpq_sez04" class="mpq_sez">[18] [19][20][21]</div>' +
+                    '           <div id="mpq_sez05" class="mpq_sez">[22] [23][24][25][26][27]</div>' +
+                    '           <div id="mpq_sez06" class="mpq_sez">[28] [29][30][31]</div>' +
+                    '           <div id="mpq_sez07" class="mpq_sez">[32] [33][34][35][36]</div>' +
+                    '           <div id="mpq_sez08" class="mpq_sez">[37] [38][39][40][41]</div>' +
+                    '           <div id="mpq_sez09" class="mpq_sez">[42] [43][44][45][46][47]</div>' +
+                    '           <div id="mpq_sez10" class="mpq_sez">[48] [49][50][51][52]</div>' +
+                    '       </div>' +
+                    '   </div>' +
+                    '   <div>' +
+                    '       <div>[53]</div>' +
+                    '       <div class="mpq_lists">' +
+                    '           <div id="mpq_sez11" class="mpq_sez">[54] [55][56]</div>' +
+                    '           <div id="mpq_sez12" class="mpq_sez">[57] [58][59]</div>' +
+                    '           <div id="mpq_sez13" class="mpq_sez">[60] [61][62][63]</div>' +
+                    '           <div id="mpq_sez14" class="mpq_sez">[64] [65][66][67][68][69]</div>' +
+                    '           <div id="mpq_sez15" class="mpq_sez">[70] [71][72]</div>' +
+                    '       </div>' +
+                    '   </div>' +
+                    '   <div>' +
+                    '       <div>[73]</div>' +
+                    '       <div class="mpq_lists">' +
+                    '           <div id="mpq_sez16" class="mpq_sez">[74] [75][76][77][78][79]</div>' +
+                    '       </div>' +
+                    '   </div>' +
+                    '   <div>' +
+                    '       <div>[80]</div>' +
+                    '       <div class="mpq_lists">' +
+                    '           <div id="mpq_sez17" class="mpq_sez">[81] [82][83][84][85]</div>' +
+                    '           <div id="mpq_sez18" class="mpq_sez">[86] [87][88][89][90][91]</div>' +
+                    '           <div id="mpq_sez19" class="mpq_sez">[92] [93][94][95]</div>' +
+                    '           <div id="mpq_sez20" class="mpq_sez">[96] [97][98][99][100][101]</div>' +
+                    '       </div>' +
+                    '   </div>' +
+                    '   <div id="mpq_cont_total">' +
+                    '       <div id="mpq_label_total">[102]</div>' +
+                    '       <div id="mpq_total"></div>' +
+                    '   </div>' +
+                    '</div>',
+            funct: function(){
+                // aggiorno il totale dei valori
+                let tot = 0,
+                    sezs = document.getElementById("moduloMPQ").getElementsByClassName("mpq_sez");
+                for(s=0;s<sezs.length;s++){
+                    let els = sezs[s].getElementsByTagName("input"),
+                        max = 0;
+                    for(e in els){
+                        if(els[e].checked){
+                            let val = parseInt(els[e].dataset.v);
+                            if(val>max)max = val;
+                        }
+                    }
+                    tot += max;
+                }
+                document.getElementById("mpq_total").innerHTML = tot;
+            }
         }
 
     }

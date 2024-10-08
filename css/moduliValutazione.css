@@ -444,3 +444,88 @@
 	margin-top: 21px;
 	margin-left: 90px;
 }
+
+
+/* PDI */
+#moduloPDI i{
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0px !important;
+    width: calc(100% - 40px);
+    text-align: left;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    height: 30px;
+    line-height: 30px !important;
+	opacity: 1;
+    font-style: normal;
+}
+#moduloPDI .domandeModuli{
+	border-top: 1px solid rgba(0, 0, 0, 0.1);
+	margin: 0;
+}
+#moduloPDI .domandeModuli select{
+	margin-top:1px;
+}
+#moduloPDI > div > div{
+	display: inline-block;
+}
+
+/* MPQ */
+#moduloMPQ .mpq_lists .etichetteModuli{
+    display: none;
+}
+#moduloMPQ .mpq_lists select{
+    width: 100%;
+}
+.mpq_lists{
+	column-count: 3;
+    column-gap: 20px;
+}
+#moduloMPQ .mpq_lists input{
+	position: relative;
+    z-index: 1;
+    margin-bottom: 5px;
+    margin-right: 5px;
+    display: inline-block;
+    vertical-align: bottom;
+    outline: 2px solid rgba(0, 0, 0, 0.2);
+    width: 16px;
+    height: 16px;
+}
+#moduloMPQ .domandeModuli.etichetteModuli{
+	text-align: left !important;
+    font-weight: bold;
+}
+#mpq_label_total{
+	width: 100%;
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: -50px;
+    text-align: right !important;
+}
+#mpq_label_total .etichetteModuli{
+	padding: 0 !important;
+    margin: 0 !important;
+    border: none !important;
+}
+#mpq_label_total .etichetteModuli i{
+	text-align: right !important;
+    display: block;
+    padding-right: 50px;
+}
+#mpq_total{
+	display: inline-block;
+    vertical-align: middle;
+    width: 46px;
+    text-align: right;
+    padding: 10px;
+    font-weight: bold;
+    font-size: 17px;
+}
+#mpq_cont_total{
+	background-color: rgba(0,0,0,0.1);
+	border-radius:8px;
+	margin-top:20px;
+}
