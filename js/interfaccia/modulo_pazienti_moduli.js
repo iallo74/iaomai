@@ -17,58 +17,84 @@ var PAZIENTI_MODULI = { // extend PAZIENTI
 			document.getElementById("gruppoPunti_cont").style.width = w+"px";
 			document.getElementById("gruppoPunti_cont").style.top = '118px';
 			document.getElementById("gruppoPunti_cont").classList.add("visSch");
-			let HTML = '',
-				txt = htmlEntities(TXT("ImportaModulo"));
-			HTML += '<div class="gr_tit">' +
-						txt +
-					'	<span onClick="PAZIENTI.swImportaModuli();">' +
-					'</span>' +
-					'</div>' +
-					'<div class="gr_1">';
-			for(m in moduliValutazione.modelli){
-				let pass = true;
-				for(let p in PAZIENTI.moduliProvvisori){
-					if(PAZIENTI.moduliProvvisori[p].id == m)pass=false;
-				}
-				if(pass)HTML += '<label class="gr_3"' +
-								'	  	for="gr_btn_'+m+'">' +
-								'	<input 	type="checkbox"' +
-								'			id="gr_btn_'+m+'"' +
-								'			value="'+m+'"' +
-								'			data-type="system">' +
-								'	<b>'+moduliValutazione.modelli[m].title[globals.siglaLingua]+'</b>' +
-								'</label>';
-			}
-			HTML += '<i id="tuoiModuli" class="tagDomanda">'+TXT("TuoiModuli")+'</i>';
-			for(m in DB.moduli.data){
-				let pass = true;
-				for(let p in PAZIENTI.moduliProvvisori){
-					if(PAZIENTI.moduliProvvisori[p].id == m)pass=false;
-				}
-				if(pass)HTML += '<label class="gr_3"' +
-								'	  	for="gr_btn_'+m+'">' +
-								'	<input 	type="checkbox"' +
-								'			id="gr_btn_'+m+'"' +
-								'			value="'+m+'"' +
-								'			data-type="custom">' +
-								'	<b>'+DB.moduli.data[m].NomeModulo+'</b>' +
-								'</label>';
-			}
-			if(!DB.moduli.data.length)HTML += '<i>'+TXT("NoRes")+'</i>'
-			HTML += '</div>';
-			if(DB.moduli.data.length)HTML += '<div class="gr_imp"><span id="grImporta" onclick="PAZIENTI.importaModuli();">'+TXT("Importa").toUpperCase()+'</span></div>';
-			document.getElementById("gruppoPunti_cont").innerHTML = HTML;
+			
+			document.getElementById("gruppoPunti_cont").classList.remove("addOpts");
 
-
+			PAZIENTI.popolaCategorieModuli();
 		}else{
 			document.getElementById("LL").onclick = '';
 			rimuoviLoading(document.getElementById("scheda_testo"));
 			document.getElementById("gruppoPunti_cont").classList.remove("visSch");
 		}
 	},
+	popolaCategorieModuli: function( category='' ){
+		let HTML = '',
+			HTML_provv = '';
+		if(!category){
+			for(m in moduliValutazione.categorie){
+				HTML_provv += '<div class="gr_btn"' +
+						'	  id="gr_btn_'+m+'"' +
+						'	  onClick="PAZIENTI.popolaCategorieModuli(\''+m+'\')">' +
+						'	<b>'+moduliValutazione.categorie[m][globals.siglaLingua]+'</b>' +
+						'</div>';
+			}
+		}else{
+			if(category!='custom'){
+				for(m in moduliValutazione.modelli){
+					let pass = true;
+					for(let p in PAZIENTI.moduliProvvisori){
+						if(PAZIENTI.moduliProvvisori[p].id == m)pass=false;
+					}
+					if(moduliValutazione.modelli[m].category!=category)pass = false;
+					if(pass)HTML_provv += 	'<label class="gr_3"' +
+											'	  	for="gr_btn_'+m+'">' +
+											'	<input 	type="checkbox"' +
+											'			id="gr_btn_'+m+'"' +
+											'			value="'+m+'"' +
+											'			data-type="system">' +
+											'	<b>'+moduliValutazione.modelli[m].title[globals.siglaLingua]+'</b>' +
+											'</label>';
+				}
+			}else{
+				for(m in DB.moduli.data){
+					let pass = true;
+					for(let p in PAZIENTI.moduliProvvisori){
+						if(PAZIENTI.moduliProvvisori[p].id == m)pass=false;
+					}
+					if(pass)HTML_provv += 	'<label class="gr_3"' +
+											'	  	for="gr_btn_'+m+'">' +
+											'	<input 	type="checkbox"' +
+											'			id="gr_btn_'+m+'"' +
+											'			value="'+m+'"' +
+											'			data-type="custom">' +
+											'	<b>'+DB.moduli.data[m].NomeModulo+'</b>' +
+											'</label>';
+				}
+			}
+		}
+		
+		if(!HTML_provv)HTML_provv += '<i style="width: 100%;">'+TXT("NoRes")+'</i>';
+		HTML = 	'<div class="gr_tit">' +
+					htmlEntities(TXT("ImportaModulo")) +
+				'	<span onClick="PAZIENTI.swImportaModuli();"></span>' +
+				'</div>';
+		if(category){
+			HTML += '<div class="gr_ret">' +
+					'	<div class="gr_ret_img" onclick="PAZIENTI.popolaCategorieModuli();"></div>' +
+					'	<div class="gr_ret_txt">'+moduliValutazione.categorie[category][globals.siglaLingua]+'</div>' +
+					'	<input id="gr_ret_ric" onkeyup="PAZIENTI.filtraGruppoPunti();">' +
+					'</div>';
+		}
+		HTML += '<div class="gr_'+(category?'2':'0')+'">' +
+				HTML_provv +
+				'</div>';
+		if(category)HTML += '<div class="gr_imp"><span id="grImporta" onclick="PAZIENTI.importaModuli();">'+TXT("Importa").toUpperCase()+'</span></div>';
+		document.getElementById("gruppoPunti_cont").innerHTML = HTML;
+	},
 	importaModuli: function(){ // importa un modulo di valutazione della scheda trattamento
 		let els = document.getElementById("gruppoPunti_cont").getElementsByTagName("input"),
-			errVuoto = false;
+			errVuoto = false,
+			nChecked = 0;
 		for(let e in els){
 			if(els[e].checked){
 				let m = els[e].value;
@@ -92,9 +118,13 @@ var PAZIENTI_MODULI = { // extend PAZIENTI
 						"data": data
 					});
 				}
+				nChecked++;
 			}
 		}
 		if(errVuoto)ALERT(TXT("erroreModuloVuoto"));
+		if(!nChecked){ALERT(TXT("erroreNessunModulo"));
+			return;
+		}
 		PAZIENTI.popolaModuli();
 		PAZIENTI.swImportaModuli();
 		SCHEDA.formModificato = true;

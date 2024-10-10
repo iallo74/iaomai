@@ -33,7 +33,48 @@ var moduliValutazione = {
 
 
     */
-
+    categorie: {
+        mtc: {
+            ita: "MTC",
+            eng: "TCM",
+            esp: "MTC",
+            fra: "MTC",
+            por: "MTC",
+            deu: "TCM"
+        },
+        shiatsu: {
+            ita: "Shiatsu",
+            eng: "Shiatsu",
+            esp: "Shiatsu",
+            fra: "Shiatsu",
+            por: "Shiatsu",
+            deu: "Shiatsu"
+        },
+        pain: {
+            ita: "Dolore",
+            eng: "Pain",
+            esp: "Dolor",
+            fra: "Douleur",
+            por: "Dor",
+            deu: "Schmerz"
+        },
+        auriculo:  {
+            ita: "Auricolo-terapia",
+            eng: "Auriculotherapy",
+            esp: "Auriculoterapia",
+            fra: "Auriculothérapie",
+            por: "Auriculoterapia",
+            deu: "Auriculotherapie"
+        } ,
+        custom:  { // per i moduli personali
+            ita: "I tuoi moduli",
+            eng: "Your forms",
+            esp: "Tus formularios",
+            fra: "Vos formulaires",
+            por: "Seus formulários",
+            deu: "Ihre Formulare"
+        }        
+    },
     liste: {
         stati_polsi: [
             {
@@ -588,6 +629,7 @@ var moduliValutazione = {
     },
     modelli: {
         "mtc_lingua_sintetica": {
+            category: "mtc",
             title: {
                 "ita": "Valutazione MTC Lingua (sintetica)",
                 "eng": "TCM Tongue Assessment (concise)",
@@ -719,6 +761,7 @@ var moduliValutazione = {
                     '</div>'
         },
         "mtc_lingua_analitica": {
+            category: "mtc",
             title: {
                 "ita": "Valutazione MTC Lingua (analitica)",
                 "eng": "TCM Tongue Assessment (analytical)",
@@ -1134,6 +1177,7 @@ var moduliValutazione = {
                     '</div>'
         },
         "mtc_polsi": {
+            category: "mtc",
             title: {
                 ita: "Valutazione MTC Polsi",
                 eng: "TCM Pulse Assessment",
@@ -1377,6 +1421,7 @@ var moduliValutazione = {
                     '</div>'
         },
         "mtc_viso": {
+            category: "mtc",
             title: {
                 ita: "Valutazione MTC Viso",
                 eng: "TCM Face Assessment",
@@ -1544,6 +1589,7 @@ var moduliValutazione = {
                     '</div>'
         },
         "mtc_occhi": {
+            category: "mtc",
             title: {
                 ita: "Valutazione MTC Occhi",
                 eng: "TCM Eye Assessment",
@@ -1711,6 +1757,7 @@ var moduliValutazione = {
                     '</div>'
         },
         "mtc_capelli": {
+            category: "mtc",
             title: {
                 ita: "Valutazione MTC Capelli",
                 eng: "TCM Hair Assessment",
@@ -1906,6 +1953,7 @@ var moduliValutazione = {
                     '</div>'
         },
         "mtc_pelle": {
+            category: "mtc",
             title: {
                 ita: "Valutazione MTC Pelle",
                 eng: "TCM Skin Assessment",
@@ -2081,6 +2129,7 @@ var moduliValutazione = {
                     '</div>'
         },
         "mtc_postura": {
+            category: "mtc",
             title: {
                 ita: "Valutazione MTC Corpo e Postura",
                 eng: "TCM Body and Posture Assessment",
@@ -2337,6 +2386,7 @@ var moduliValutazione = {
                     '</div>'
         },
         "mtc_mani": {
+            category: "mtc",
             title: {
                 ita: "Valutazione MTC Mani e Unghie",
                 eng: "TCM Hands and Nails Assessment",
@@ -2638,6 +2688,7 @@ var moduliValutazione = {
                     '</div>'
         },
         "mtc_denti": {
+            category: "mtc",
             title: {
                 ita: "Valutazione MTC Gengive e Denti",
                 eng: "TCM Gums and Teeth Assessment",
@@ -2697,6 +2748,7 @@ var moduliValutazione = {
                     '</div>'
         },
         "mtc_secrezioni": {
+            category: "mtc",
             title: {
                 ita: "Valutazione MTC Secrezioni corporee",
                 eng: "TCM Body Secretions Assessment",
@@ -3228,6 +3280,7 @@ var moduliValutazione = {
                     '</div>'
         },
         "shiatsu_hara_schiena": {
+            category: "shiatsu",
             title: {
                 ita: "Valutazione Shiatsu Zone HARA e SCHIENA",
                 eng: "Shiatsu Assessment of HARA and BACK Areas",
@@ -3706,6 +3759,7 @@ var moduliValutazione = {
                     '</div>'
         },
         "pdi": {
+            category: "pain",
             title: {
                 ita: "Pain Disability Index (PDI)",
                 eng: "Pain Disability Index (PDI)",
@@ -3888,6 +3942,7 @@ var moduliValutazione = {
             }
         },
         "mpq": {
+            category: "pain",
             title: {
                 ita: "McGill Pain Questionnaire (MPQ)",
                 eng: "McGill Pain Questionnaire (MPQ)",
@@ -5233,6 +5288,7 @@ var moduliValutazione = {
             }
         },
         "sf-mpq": {
+            category: "pain",
             title: {
                 ita: "Short-form McGill Pain Questionaire (SF-MPQ)",
                 eng: "Short-form McGill Pain Questionaire (SF-MPQ)",
@@ -5600,6 +5656,7 @@ var moduliValutazione = {
             }
         },
         "odi": {
+            category: "pain",
             title: {
                 ita: "Oswestry Disability Index (ODI)",
                 eng: "Oswestry Disability Index (ODI)",
@@ -6357,6 +6414,7 @@ var moduliValutazione = {
             }
         },
         "bpi": {
+            category: "pain",
             title: {
                 ita: "Brief Pain Inventory (BPI)",
                 eng: "Brief Pain Inventory (BPI)",
@@ -6661,6 +6719,7 @@ var moduliValutazione = {
             }
         },
         "mondor": {
+            category: "auriculo",
             title: {
                 ita: "Test antitabacco di Mondor (motivazione)",
                 eng: "Mondor Anti-Smoking Test (motivation)",
@@ -6905,6 +6964,7 @@ var moduliValutazione = {
             }
         },
         "fagerstrom": {
+            category: "auriculo",
             title: {
                 ita: "Test antitabacco di Fagerström (dipendenza)",
                 eng: "Fagerström Anti-Smoking Test (dependence)",

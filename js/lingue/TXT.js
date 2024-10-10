@@ -2326,6 +2326,14 @@ DB.TXT = {
             fra: "L'un des formulaires que vous essayez d'importer est vide",
             por: "Um dos formulários que você está tentando importar está vazio",
             deu: "Eines der Formulare, die Sie importieren möchten, ist leer"
+        },  
+        erroreNessunModulo: {
+            ita: "Devi selezionare almeno un modulo",
+            eng: "You must select at least one module",
+            esp: "Debes seleccionar al menos un módulo",
+            fra: "Vous devez sélectionner au moins un module",
+            por: "Você deve selecionar pelo menos um módulo",
+            deu: "Sie müssen mindestens ein Modul auswählen"
         }, 
         RimuoviModulo: {
             ita: "Rimuovi",
@@ -2366,14 +2374,6 @@ DB.TXT = {
             fra: "Nom du module",
             por: "Nome do módulo",
             deu: "Modulname"
-        },
-        TuoiModuli: {
-            ita: "I tuoi moduli",
-            eng: "Your forms",
-            esp: "Tus formularios",
-            fra: "Vos formulaires",
-            por: "Seus formulários",
-            deu: "Ihre Formulare"
         },
 
         // PAZIENTI

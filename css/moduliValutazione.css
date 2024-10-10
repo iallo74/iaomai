@@ -162,6 +162,7 @@
 	background-color: rgba(0,0,0,0.1);
 	border-radius:8px;
 	margin-top:20px;
+	min-height: 27px;
 }
 .md_descr{
 	text-align:right;
