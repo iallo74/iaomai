@@ -315,7 +315,7 @@ var PAZIENTI_TRATTAMENTI = { // extend PAZIENTI
 				moduli=[],
 				Anamnesi='',
 				DiagnosiOccidentale='',
-				DiagnosiMTC,
+				DiagnosiMTC='',
 				Prescrizione='',
 				ConsiderazioniOperatore='',
 				ConsiderazioniPaziente='',

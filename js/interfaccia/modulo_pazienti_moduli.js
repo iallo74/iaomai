@@ -83,20 +83,12 @@ var PAZIENTI_MODULI = { // extend PAZIENTI
 						});
 					}
 				}else{
-					let data = moduliValutazione.modelli[m].data;
-					for(d in data){
-						if(data[d].d){
-							data[d].d = data[d].d[globals.siglaLingua]
-						}
-						if(data[d].l){
-							for(l in data[d].l){
-								data[d].l[l] = data[d].l[l][globals.siglaLingua]
-							}
-						}
+					let data = [];
+					for(let d in moduliValutazione.modelli[m].data){
+						data[d] = {};
 					}
 					PAZIENTI.moduliProvvisori.push({
 						"id": m,
-						"title": moduliValutazione.modelli[m].title[globals.siglaLingua],
 						"data": data
 					});
 				}
@@ -107,22 +99,22 @@ var PAZIENTI_MODULI = { // extend PAZIENTI
 		PAZIENTI.swImportaModuli();
 		SCHEDA.formModificato = true;
 	},
-	popolaModuli: function(){
+	popolaModuli: function(){ // popola i moduli da PAZIENTI.moduliProvvisori
 		let HTML = '',
-			functs = [];
+			HTML_provv = '',
+			functs = [],
+			title = '';
 		for(m=0;m<PAZIENTI.moduliProvvisori.length;m++){
 			let MDL = PAZIENTI.moduliProvvisori[m];
-			HTML += '<div class="moduli">'+
-					'	<div class="modulo_tit">'+MDL.title+'</div>' +
-					'	<div class="modulo_del" onClick="PAZIENTI.rimuoviModulo('+m+');">'+TXT("RimuoviModulo")+'</div>';
-			if(m)HTML += '	<div class="modulo_moveup" onClick="PAZIENTI.spostaModulo('+m+');">'+TXT("SpostaModulo")+'</div>';
-			if(typeof(PAZIENTI.moduliProvvisori[m].id)=='number'){ // moduli custom
-				for(d in PAZIENTI.moduliProvvisori[m].data){
+			HTML_provv = '';
+			if(typeof(MDL.id)=='number'){ // moduli custom
+				title = MDL.title;
+				for(d in MDL.data){
 					if(MDL.data[d].t=='e'){
-						HTML += '<div class="domandeModuli etichetteModuli"><i class="tagDomanda">'+MDL.data[d].d+'</i></div>';
+						HTML_provv += '<div class="domandeModuli etichetteModuli"><i class="tagDomanda">'+MDL.data[d].d+'</i></div>';
 					}
 					if(MDL.data[d].t=='d'){
-						HTML += '<div class="domandeModuli"><i class="tagDomanda">'+MDL.data[d].d+'</i>' +
+						HTML_provv += '<div class="domandeModuli"><i class="tagDomanda">'+MDL.data[d].d+'</i>' +
 								H.r({	t: "r",
 										name: "risposta"+d,
 										value: MDL.data[d]?.r ? MDL.data[d].r : "",
@@ -133,48 +125,56 @@ var PAZIENTI_MODULI = { // extend PAZIENTI
 								'</div>';
 					}
 				}
-			}else{ // moduli si sistema
-				HTML += moduliValutazione.modelli[PAZIENTI.moduliProvvisori[m].id].html;
-				let matches = [...HTML.matchAll(/\[([\d,]+)\]/g)].map(match => match[1]);
+			}else{ // moduli di sistema
+
+				let GLB = moduliValutazione.modelli[MDL.id];
+				title = GLB.title[globals.siglaLingua];
+
+				HTML_provv += GLB.html;
+				let matches = [...HTML_provv.matchAll(/\[([\d,d]+)\]/g)].map(match => match[1]);
 				for(e in matches){
 					let mt = matches[e].split(","),
 						d = parseInt(mt[0]), // il numero d'ordine in data
-						el = PAZIENTI.moduliProvvisori[m].data[d], // l'elemento in data
+						elGLB = GLB.data[d], // l'elemento in data
+						risposta = __(MDL.data[d].r,''),
 						sost = '',
-						r = el?.r ? el.r : '';
-					switch(el.t){
+						funct = '',
+						domanda = elGLB.d[globals.siglaLingua];
+					if(GLB?.funct){
+						funct = MDL.id;
+						functs.push(funct);
+					}
+					switch(elGLB.t){
 						case "e":
-							sost = '<div class="domandeModuli etichetteModuli"><i class="tagDomanda">'+el.d+'</i></div>';
+							sost = '<div class="domandeModuli etichetteModuli"><i class="tagDomanda">'+domanda+'</i></div>';
 							break;
 						case "c":
-							let funct = '';
-							if(moduliValutazione.modelli[PAZIENTI.moduliProvvisori[m].id]?.funct){
-								funct = PAZIENTI.moduliProvvisori[m].id;
-								functs.push(PAZIENTI.moduliProvvisori[m].id);
-							}
 							sost = '<div class="domandeModuli"><label for="risposta'+m+"_"+d+'">' +
 									H.r({	t: "c",
 											name: "risposta"+m+"_"+d,
-											value: r,
-											label: el.d,
+											value: risposta,
+											label: domanda,
 											idRiga: 'dm_'+m+'_'+d,
-											dataCampo: el?.v ? ' data-v="'+el.v+'"' : '',
+											dataCampo: elGLB?.v ? ' data-v="'+elGLB.v+'"' : '',
 											clickCampo: 'PAZIENTI.updateDomanda(this,\''+funct+'\')' }) +
 									'</label></div>';
 							break;
 						case "d":
-							sost = '<div class="domandeModuli"><i class="tagDomanda">'+el.d+'</i>' +
+							sost = '<div class="domandeModuli"><i class="tagDomanda">'+domanda+'</i>' +
 									H.r({	t: "r",
 											name: "risposta"+d,
-											value: r,
+											value: risposta,
 											noLabel: true,
 											classCampo: "okPlaceHolder styled tagDomanda",
 											idRiga: 'dm_'+m+'_'+d,
-											keyupCampo: 'PAZIENTI.updateDomanda(this)' }) +
+											keyupCampo: 'PAZIENTI.updateDomanda(this,\''+funct+'\')' }) +
 									'</div>';
 							break;
+						case "t":
+							sost = '<div class="didaModuli">'+domanda+'</div>';
+							break;
 						case "s":
-							let opts = el.l;
+							let opts = elGLB.l;
 							if(typeof(opts)=='string'){
 								let els = moduliValutazione.liste[opts];
 								opts = [];
@@ -182,35 +182,48 @@ var PAZIENTI_MODULI = { // extend PAZIENTI
 									let txt = typeof(els[e])=='object' ? els[e][globals.siglaLingua] : els[e];
 									opts.push(txt);
 								}
+							}else{
+								for(let o in opts){
+									if(typeof(opts[o])=='object')opts[o] = opts[o][globals.siglaLingua];
+								}
 							}
-							sost = '<div class="domandeModuli"><i class="tagDomanda">'+el.d+'</i>' +
+							sost = '<div class="domandeModuli"><i class="tagDomanda">'+domanda+'</i>' +
 									H.r({	t: "s",
 											name: "risposta"+d,
-											value: r,
+											value: risposta,
 											opts: opts,
 											classCampo: "okPlaceHolder styled tagDomanda",
 											idRiga: 'dm_'+m+'_'+d,
-											onChange: 'PAZIENTI.updateDomanda(this)' }) +
+											onChange: 'PAZIENTI.updateDomanda(this,\''+funct+'\')' }) +
 									'</div>';
 							break;
 						case "r":
-							sost = 	'<label for="risposta'+d+'_'+mt[1]+'" id="dm_'+m+'_'+d+'">' +
-									'	<input 	type="radio"' +
-									'			name="risposta'+d+'"' +
-									'			id="risposta'+d+'_'+mt[1]+'"' +
-									'			value="'+el.l[mt[1]]+'"' +
-									'			'+(r==el.l[mt[1]] ? 'CHECKED':'') +
-									'			onClick="PAZIENTI.updateDomanda(this);">' +
-									'	<span>' +
-											el.l[mt[1]]+
-									'	</span>';
-									'</span>';
+							if(mt[1]=='d'){
+								sost = '<div class="label_ratio">'+domanda+'</div>';
+							}else{
+								sost = 	'<label for="risposta'+m+'_'+d+'_'+mt[1]+'" id="dm_'+m+'_'+d+'">' +
+										'	<input 	type="radio"' +
+										'			name="risposta'+d+'"' +
+										'			id="risposta'+m+'_'+d+'_'+mt[1]+'"' +
+										'			value="'+elGLB.l[mt[1]][globals.siglaLingua]+'"' +
+										'			'+(risposta==elGLB.l[mt[1]][globals.siglaLingua] ? 'CHECKED':'') +
+										'			onClick="PAZIENTI.updateDomanda(this,\''+funct+'\');">' +
+										'	<span>' +
+												elGLB.l[mt[1]][globals.siglaLingua]+
+										'	</span>';
+										'</span>';
+							}
 							break;
 					}
-					HTML = HTML.replace("["+matches[e]+"]",sost);
+					HTML_provv = HTML_provv.replace("["+matches[e]+"]",sost);
 				}
 			}
-			HTML += '</div>';
+			HTML += '<div class="moduli">'+
+					'	<div class="modulo_tit">'+title+'</div>' +
+					'	<div class="modulo_del" onClick="PAZIENTI.rimuoviModulo('+m+');">'+TXT("RimuoviModulo")+'</div>' +
+					((m)?('	<div class="modulo_moveup" onClick="PAZIENTI.spostaModulo('+m+');">'+TXT("SpostaModulo")+'</div>'):'')+
+					HTML_provv +
+					'</div>';
 		}
 		document.getElementById("modulo_cont").innerHTML = HTML;
 		if(functs.length){ // eseguo tutte le funzioni
@@ -238,7 +251,7 @@ var PAZIENTI_MODULI = { // extend PAZIENTI
 		PAZIENTI.popolaModuli();
 		SCHEDA.formModificato = true;
 	},
-	updateDomanda: function( el, funct=null ){
+	updateDomanda: function( el, funct=null ){ // aggiorna PAZIENTI.moduliProvvisori alla modifica di un campo
 		let pM = el.parentElement.id.split("_")
 			m = parseInt(pM[1]),
 			d = parseInt(pM[2]),
@@ -252,7 +265,7 @@ var PAZIENTI_MODULI = { // extend PAZIENTI
 				break;
 			default:
 				r = el.value;
-				if(document.getElementById("risposta1").tagName=='SELECT')r = parseInt(r);
+				if(el.tagName=='SELECT')r = parseInt(r);
 				break;
 		}
 		PAZIENTI.moduliProvvisori[m].data[d].r = r;

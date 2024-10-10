@@ -20,6 +20,10 @@
 .md_radioCmpr input{
 	margin:0;
 }
+.label_ratio{
+	font-weight:bold;
+	border-top:1px solid rgba(0,0,0,0.1);
+}
 
 .md_radioExp{
 	display: inline-block;
@@ -86,6 +90,88 @@
 }
 #md_lingua9 label{
 	background-image: url(../img/valutazioni/lingua_blood_deficiency.png);
+}
+
+.md_dida{
+	padding:10px 0;
+	line-height: normal;
+}
+.md_lists i{
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0px !important;
+    width: calc(100% - 40px);
+    text-align: left;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    height: 30px;
+    line-height: 30px !important;
+	opacity: 1;
+    font-style: normal !important;
+}
+.md_lists .domandeModuli{
+	border-top: 1px solid rgba(0, 0, 0, 0.1);
+	margin: 0;
+}
+.md_lists .domandeModuli select{
+	margin-top:1px;
+}
+.md_lists > div > div > div{
+	display: inline-block;
+}
+.md_label_total{
+	width: 100%;
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: -50px;
+    text-align: right !important;
+	font-weight: bold;
+}
+.md_label_total .etichetteModuli{
+	padding: 0 !important;
+    margin: 0 !important;
+    border: none !important;
+}
+.md_label_total .etichetteModuli i{
+	text-align: right !important;
+    display: block;
+    padding-right: 50px !important;
+}
+.md_cont_total.largo .md_label_total{
+	width: 200px;
+	margin:0;
+}
+.md_cont_total.largo .md_label_total .etichetteModuli i{
+	padding-right: 0 !important;
+    text-align: left !important;
+}
+.md_total{
+	display: inline-block;
+    vertical-align: middle;
+    width: 46px;
+    text-align: right;
+    padding: 10px;
+    font-weight: bold;
+    font-size: 17px;
+}
+.md_cont_total.largo .md_total{
+	width: calc(100% - 204px);
+}
+.md_cont_total{
+	background-color: rgba(0,0,0,0.1);
+	border-radius:8px;
+	margin-top:20px;
+}
+.md_descr{
+	text-align:right;
+}
+.md_descr span{
+	display: none;
+    line-height: normal;
+    text-align: left;
+    padding: 10px;
+	width: 100%;
 }
 
 
@@ -303,7 +389,7 @@
 /* HARA e SHIENA */
 #moduloHaraSchienaShiatsu > div{
 	display:inline-block;
-	vertical-align: top;
+	vertical-align: bottom;
 	background-position: center;
 	background-repeat: no-repeat;
 }
@@ -311,7 +397,7 @@
 	background-image:url(../img/valutazioni/hara.png);
 	background-size: 250px auto;
 	width: 250px;
-	height:370px;
+	height:310px;
 }
 #md_schiena{
 	background-image:url(../img/valutazioni/schiena.png);
@@ -340,8 +426,8 @@
     padding: 0 10px 0 11px !important;
 }
 #md_hara .md_HT{
-	margin-top: 46px;
-    margin-left: 111px;
+	margin-top: 16px;
+    margin-left: 109px;
 }
 #md_hara .md_GB{
     margin-left: 77px;
@@ -444,32 +530,36 @@
 	margin-top: 21px;
 	margin-left: 90px;
 }
-
+#shiatsu_legenda{
+    display: block !important;
+    width: 250px;
+    height: 100px;
+    margin-bottom: -100px;
+	padding-left: 15px;
+	opacity:0.6;
+}
+#shiatsu_legenda > div{
+	display: block !important;
+    border: none;
+    width: 100% !important;
+    text-align: left;
+	margin: 0 !important;
+    padding: 0 !important;
+	height: 16px !important;
+}
+#shiatsu_legenda > div i{
+	display:inline-block !important;
+	font-style:normal !important;
+	height: 16px !important;
+	font-size: var(--font-12);
+}
 
 /* PDI */
-#moduloPDI i{
-    display: inline-block;
-    vertical-align: middle;
-    margin: 0px !important;
-    width: calc(100% - 40px);
-    text-align: left;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    height: 30px;
-    line-height: 30px !important;
-	opacity: 1;
-    font-style: normal;
-}
-#moduloPDI .domandeModuli{
-	border-top: 1px solid rgba(0, 0, 0, 0.1);
-	margin: 0;
-}
-#moduloPDI .domandeModuli select{
-	margin-top:1px;
-}
-#moduloPDI > div > div{
-	display: inline-block;
+#pdi_descr.vis1 span#pdi_1,
+#pdi_descr.vis2 span#pdi_2,
+#pdi_descr.vis3 span#pdi_3,
+#pdi_descr.vis4 span#pdi_4{
+	display:inline-block !important;
 }
 
 /* MPQ */
@@ -494,38 +584,116 @@
     width: 16px;
     height: 16px;
 }
-#moduloMPQ .domandeModuli.etichetteModuli{
-	text-align: left !important;
+#mpq_descr.vis1 span#mpq_1,
+#mpq_descr.vis2 span#mpq_2,
+#mpq_descr.vis3 span#mpq_3,
+#mpq_descr.vis4 span#mpq_4{
+	display:inline-block !important;
+}
+
+
+/* SF-MPQ */
+#moduloSFMPQ i{
+    width: calc(100% - 100px);
+}
+#sfmpq_lists .domandeModuli select{
+	width:100px;
+}
+#sfmpq_ppi .label_ratio{
+	padding-top:20px;
+}
+#sfmpq_ppi label{
+	display:block;
+}
+#sfmpq_descr.vis1 span#sfmpq_1,
+#sfmpq_descr.vis2 span#sfmpq_2,
+#sfmpq_descr.vis3 span#sfmpq_3,
+#sfmpq_descr.vis4 span#sfmpq_4{
+	display:inline-block !important;
+}
+
+
+
+/* ODI */
+#odi_lists > div{
+	border-top:1px solid rgba(0,0,0,0.1);
+}
+#odi_lists label{
+	display:block;
+}
+#odi_total > span{
+	display:none;
     font-weight: bold;
+    font-size: 17px !important;
 }
-#mpq_label_total{
-	width: 100%;
-    display: inline-block;
-    vertical-align: middle;
-    margin-right: -50px;
-    text-align: right !important;
+#odi_total > span *{
+    font-size: 17px !important;
 }
-#mpq_label_total .etichetteModuli{
-	padding: 0 !important;
-    margin: 0 !important;
-    border: none !important;
+#odi_total.odi_ris1 > span#odi_ris_1,
+#odi_total.odi_ris2 > span#odi_ris_2,
+#odi_total.odi_ris3 > span#odi_ris_3,
+#odi_total.odi_ris4 > span#odi_ris_4,
+#odi_total.odi_ris5 > span#odi_ris_5{
+	display:inline !important;
 }
-#mpq_label_total .etichetteModuli i{
-	text-align: right !important;
-    display: block;
-    padding-right: 50px;
+
+
+
+/* BPI */
+#bpi_lists > div .etichetteModuli{
+	text-align:left;
+	font-weight:bold;
 }
-#mpq_total{
-	display: inline-block;
-    vertical-align: middle;
-    width: 46px;
-    text-align: right;
-    padding: 10px;
-    font-weight: bold;
-    font-size: 17px;
+#bpi_localizzazione > div:not(.etichetteModuli) i.tagDomanda{
+	display:none;
 }
-#mpq_cont_total{
-	background-color: rgba(0,0,0,0.1);
-	border-radius:8px;
-	margin-top:20px;
+#bpi_farmaci > div:nth-child(2) > div,
+#bpi_farmaci > div input,
+#bpi_localizzazione > div input{
+	margin:3px 0;
+	width:100% !important;
+}
+#bpi_farmaci > div:nth-child(3){
+	border-top:none;
+	padding-bottom:3px;
+}
+#bpi_localizzazione > div > div{
+	width:100% !important;
+}
+#bpi_farmaci i{
+	width: calc(100% - 52px);
+}
+#moduloBPI .md_cont_total > div{
+	display:block;
+}
+#moduloBPI .md_cont_total > div:first-child .tagDomanda{
+	padding-right:0 !important;
+	text-align:left !important;
+}
+#bpi_total{
+	display:block;
+	width:100%;
+}
+#bpi_total .etichetteModuli{
+	margin:0;
+	padding:0;
+	border:none;
+	display: inline;
+}
+#bpi_total span{
+	font-weight: bold;
+	font-size: 17px;
+}
+
+
+
+/* MONDOR */
+
+
+/* FAGERSTROM */
+#fagerstrom_lists i{
+    width: calc(100% - 140px);
+}
+#fagerstrom_lists .domandeModuli > div{
+	text-align:right !important;
 }

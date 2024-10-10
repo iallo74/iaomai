@@ -16,9 +16,12 @@ var moduliValutazione = {
             t: textarea
         - d: il contenuto della domanda
         - l: lista delle risposte in caso di select, checkbox o radio
+        - v: in caso di checkbox è il valore di data-v="valore"
+        - h: se presente e true indica che non deve essere inviato all'AI
 
     - html: il modello di rappresentazione del modulo
         gli elementi [n] saranno sostituiti in automatico dagli elementi di data dove n è il numero sequenziale dell'elemento
+    - funct: la funzione che viene eseguita ad ogni cambio di opzione del modulo (es. cambio di select o click su una checkbox)
 
     se "data.l" è un valore stringa (es. "lista") vuol dire che lista è una variabile riferita in moduliValutazione.list.lista
 
@@ -326,6 +329,14 @@ var moduliValutazione = {
                 deu: ""
             },
             {
+                ita: "V",
+                eng: "D",
+                esp: "D",
+                fra: "D",
+                por: "D",
+                deu: "M"
+            },
+            {
                 ita: "P",
                 eng: "E",
                 esp: "E",
@@ -334,12 +345,12 @@ var moduliValutazione = {
                 deu: "Ü"
             },
             {
-                ita: "V",
-                eng: "D",
-                esp: "D",
-                fra: "D",
-                por: "D",
-                deu: "M"
+                ita: "X",
+                eng: "X",
+                esp: "X",
+                fra: "X",
+                por: "X",
+                deu: "X"
             }                      
         ],
         rates: [
@@ -355,7 +366,225 @@ var moduliValutazione = {
             "8",
             "9",
             "10"
-        ]
+        ],
+        rates_perc: [
+            "",
+            "0%",
+            "10%",
+            "20%",
+            "30%",
+            "40%",
+            "50%",
+            "60%",
+            "70%",
+            "80%",
+            "90%",
+            "10"
+        ],
+        mpq_scala_dolore: [
+            {
+                ita: "",
+                eng: "",
+                esp: "",
+                fra: "",
+                por: "",
+                deu: ""
+            },
+            {
+                ita: "0 (nessuno)",
+                eng: "0 (none)",
+                esp: "0 (ninguno)",
+                fra: "0 (aucun)",
+                por: "0 (nenhum)",
+                deu: "0 (keiner)"
+            },
+            {
+                ita: "1 (lieve)",
+                eng: "1 (mild)",
+                esp: "1 (leve)",
+                fra: "1 (léger)",
+                por: "1 (leve)",
+                deu: "1 (leicht)"
+            },
+            {
+                ita: "2 (moderato)",
+                eng: "2 (moderate)",
+                esp: "2 (moderado)",
+                fra: "2 (modéré)",
+                por: "2 (moderado)",
+                deu: "2 (mäßig)"
+            },
+            {
+                ita: "3 (grave)",
+                eng: "3 (severe)",
+                esp: "3 (grave)",
+                fra: "3 (grave)",
+                por: "3 (grave)",
+                deu: "3 (schwer)"
+            }
+        ],
+        si_no: [
+            {
+                ita: "",
+                eng: "",
+                esp: "",
+                fra: "",
+                por: "",
+                deu: ""
+            },
+            {
+                ita: "Sì",
+                eng: "Yes",
+                esp: "Sí",
+                fra: "Oui",
+                por: "Sim",
+                deu: "Ja"
+            },
+            {
+                ita: "No",
+                eng: "No",
+                esp: "No",
+                fra: "Non",
+                por: "Não",
+                deu: "Nein"
+            },
+        ],
+        ris_motivazione: [
+            {
+				ita: "Scarsa motivazione",
+                eng: "Poor motivation",
+                esp: "Escasa motivación",
+                fra: "Motivation faible",
+                por: "Baixa motivação",
+                deu: "Schlechte Motivation"
+            },
+			{
+				ita: "Discreta motivazione",
+                eng: "Reasonable motivation",
+                esp: "Motivación decente",
+                fra: "Motivation modérée",
+                por: "Motivação razoável",
+                deu: "Vernünftige Motivation"
+            },
+			{
+				ita: "Buona motivazione",
+                eng: "Good motivation",
+                esp: "Buena motivación",
+                fra: "Bonne motivation",
+                por: "Boa motivação",
+                deu: "Gute Motivation"
+            },
+			{
+				ita: "Alta motivazione",
+                eng: "High motivation",
+                esp: "Alta motivación",
+                fra: "Motivation élevée",
+                por: "Alta motivação",
+                deu: "Hohe Motivation"
+            }
+        ],
+        ris_dipendenza: [
+            {
+				ita: "Dipendenza bassa",
+                eng: "Low addiction",
+                esp: "Baja dependencia",
+                fra: "Dépendance faible",
+                por: "Baixo vício",
+                deu: "Niedrige Sucht"
+            },
+			{
+				ita: "Dipendenza media",
+                eng: "Average addiction",
+                esp: "Dependencia media",
+                fra: "Dépendance modérée",
+                por: "Vício médio",
+                deu: "Durchschnittliche Sucht"
+            },
+			{
+				ita: "Dipendenza alta",
+                eng: "High addiction",
+                esp: "Alta dependencia",
+                fra: "Dépendance élevée",
+                por: "Alta dependência",
+                deu: "Hohe Sucht"
+            },
+			{
+				ita: "Dipendenza molto alta",
+                eng: "Very high addiction",
+                esp: "Adicción muy alta",
+                fra: "Dépendance très élevée",
+                por: "Muito alta dependência",
+                deu: "Sehr hohe Sucht"
+            }
+        ],
+        ris_intensita: [
+            {
+                ita: "Nessun dolore",
+                eng: "No pain",
+                esp: "Sin dolor",
+                fra: "Pas de douleur",
+                por: "Sem dor",
+                deu: "Kein Schmerz"
+            },
+            {
+                ita: "Dolore lieve",
+                eng: "Mild pain",
+                esp: "Dolor leve",
+                fra: "Douleur légère",
+                por: "Dor leve",
+                deu: "Leichter Schmerz"
+            },
+            {
+                ita: "Dolore moderato",
+                eng: "Moderate pain",
+                esp: "Dolor moderado",
+                fra: "Douleur modérée",
+                por: "Dor moderada",
+                deu: "Moderater Schmerz"
+            },
+            {
+                ita: "Dolore grave",
+                eng: "Severe pain",
+                esp: "Dolor grave",
+                fra: "Douleur sévère",
+                por: "Dor grave",
+                deu: "Schwerer Schmerz"
+            }
+        ],
+        ris_impatto: [
+            {
+                ita: "Nessuna interferenza",
+                eng: "No interference",
+                esp: "Sin interferencia",
+                fra: "Pas d'interférence",
+                por: "Sem interferência",
+                deu: "Keine Beeinträchtigung"
+            },
+            {
+                ita: "Interferenza lieve",
+                eng: "Mild interference",
+                esp: "Interferencia leve",
+                fra: "Interférence légère",
+                por: "Interferência leve",
+                deu: "Leichte Beeinträchtigung"
+            },
+            {
+                ita: "Interferenza moderata",
+                eng: "Moderate interference",
+                esp: "Interferencia moderada",
+                fra: "Interférence modérée",
+                por: "Interferência moderada",
+                deu: "Mäßige Beeinträchtigung"
+            },
+            {
+                ita: "Interferenza grave",
+                eng: "Severe interference",
+                esp: "Interferencia grave",
+                fra: "Interférence sévère",
+                por: "Interferência grave",
+                deu: "Schwere Beeinträchtigung"
+            }
+        ]    
     },
     modelli: {
         "mtc_lingua_sintetica": {
@@ -3276,24 +3505,12 @@ var moduliValutazione = {
                 {
                     t: "s",
                     d: {
-                        ita: "SCHIENA - Rene (zona sinistra)",
-                        eng: "BACK - Kidney (left area)",
-                        esp: "ESPALDA - Riñón (zona izquierda)",
-                        fra: "DOS - Rein (zone gauche)",
-                        por: "COSTAS - Rim (zona esquerda)",
-                        deu: "RÜCKEN - Niere (linke Zone)"
-                    },
-                    l: "stati_energetici"
-                },
-                {
-                    t: "s",
-                    d: {
-                        ita: "SCHIENA - Rene (zona destra)",
-                        eng: "BACK - Kidney (right area)",
-                        esp: "ESPALDA - Riñón (zona derecha)",
-                        fra: "DOS - Rein (zone droite)",
-                        por: "COSTAS - Rim (zona direita)",
-                        deu: "RÜCKEN - Niere (rechte Zone)"
+                        ita: "SCHIENA - Rene",
+                        eng: "BACK - Kidney",
+                        esp: "ESPALDA - Riñón",
+                        fra: "DOS - Rein",
+                        por: "COSTAS - Rim",
+                        deu: "RÜCKEN - Niere"
                     },
                     l: "stati_energetici"
                 },
@@ -3380,9 +3597,46 @@ var moduliValutazione = {
                         deu: "RÜCKEN - Dickdarm (rechte Zone)"
                     },
                     l: "stati_energetici"
+                },
+                {
+                    t: "e",
+                    d: {
+                        ita: "V = VUOTO",
+                        eng: "D = DEFICIENCY",
+                        esp: "D = DEFICIENCIA",
+                        fra: "D = DÉFICIT",
+                        por: "D = DEFICIÊNCIA",
+                        deu: "M = MANGEL"
+                    },
+                    h: true
+                },
+                {
+                    t: "e",
+                    d: {
+                        ita: "P = PIENO",
+                        eng: "E = EXCESS",
+                        esp: "E = EXCESO",
+                        fra: "E = EXCÈS",
+                        por: "E = EXCESSO",
+                        deu: "Ü = ÜBERFLUSS"
+                    },
+                    h: true
+                },
+                {
+                    t: "e",
+                    d: {
+                        ita: "X = DOLORANTE",
+                        eng: "X = PAINFUL",
+                        esp: "X = DOLOROSO",
+                        fra: "X = DOULEUREUX",
+                        por: "X = DOLOROSO",
+                        deu: "X = SCHMERZHAFT"
+                    },
+                    h: true
                 }                
             ],
             html:   '<div id="moduloHaraSchienaShiatsu">' +
+                    '   <div id="shiatsu_legenda">[30][31][32]</div>' +
                     '   <div id="md_hara">' +
                     '       <div>' +
                     '           <div class="md_HT">[0]</div>' +
@@ -3441,9 +3695,9 @@ var moduliValutazione = {
                     '           <div class="md_SIdx">[21]</div>' +
                     '       </div>' +
                     '       <div>' +
-                    '           <div class="md_LIsx">[28]</div>' +
+                    '           <div class="md_LIsx">[29]</div>' +
                     '           <div class="md_KI">[22]</div>' +
-                    '           <div class="md_LIdx">[29]</div>' +
+                    '           <div class="md_LIdx">[28]</div>' +
                     '       </div>' +
                     '       <div>' +
                     '           <div class="md_BL">[23]</div>' +
@@ -3544,9 +3798,94 @@ var moduliValutazione = {
                         deu: "Allgemeine Lebensaktivitäten"
                     },
                     l: "rates"
-                }                         
+                },
+                {
+                    t: "e",
+                    d: {
+                        ita: "Indice generale di disabilità",
+                        eng: "",
+                        esp: "",
+                        fra: "",
+                        por: "",
+                        deu: ""
+                    }
+                },
+                {
+                    t: "t",
+                    d: {
+                        ita: "<b>Nessuna o lieve disabilità</b><br>Il dolore ha un impatto minimo sulle attività quotidiane. Il paziente può continuare a svolgere la maggior parte delle attività senza problemi significativi.",
+                        eng: "",
+                        esp: "",
+                        fra: "",
+                        por: "",
+                        deu: ""
+                    },
+                    h: true
+                },
+                {
+                    t: "t",
+                    d: {
+                        ita: "<b>Disabilità moderata</b><br>Il dolore inizia a influire su alcune aree della vita del paziente. L'individuo può avere difficoltà a svolgere alcune attività quotidiane, ma non è completamente debilitato.",
+                        eng: "",
+                        esp: "",
+                        fra: "",
+                        por: "",
+                        deu: ""
+                    },
+                    h: true
+                },
+                {
+                    t: "t",
+                    d: {
+                        ita: "<b>Disabilità grave</b><br>Il dolore influisce notevolmente sulla maggior parte delle aree della vita del paziente, limitando molte attività. Potrebbero esserci difficoltà significative nello svolgimento delle attività lavorative, sociali e domestiche.",
+                        eng: "",
+                        esp: "",
+                        fra: "",
+                        por: "",
+                        deu: ""
+                    },
+                    h: true
+                },
+                {
+                    t: "t",
+                    d: {
+                        ita: "<b>Disabilità molto grave</b><br>Il dolore è debilitante e impedisce di svolgere quasi tutte le attività quotidiane. Il paziente potrebbe avere bisogno di assistenza per molte delle sue funzioni quotidiane.",
+                        eng: "",
+                        esp: "",
+                        fra: "",
+                        por: "",
+                        deu: ""
+                    },
+                    h: true
+                },                    
             ],
-            html:   '<div id="moduloPDI">[0][1][2][3][4][5][6]</div>'
+            html:   '<div id="moduloPDI">' +
+                    '   <div class="md_lists"><div>[0][1][2][3][4][5][6]</div></div>' +
+                    '   <div class="md_cont_total">' +
+                    '       <div class="md_label_total">[7]</div>' +
+                    '       <div id="pdi_total" class="md_total"></div>' +
+                    '   </div>' +
+                    '   <div id="pdi_descr" class="md_descr">' +
+                    '       <span id="pdi_1">[8]</span>' +
+                    '       <span id="pdi_2">[9]</span>' +
+                    '       <span id="pdi_3">[10]</span>' +
+                    '       <span id="pdi_4">[11]</span>' +
+                    '   </div>' +
+                    '</div>',
+            funct: function(){
+                // aggiorno il totale dei valori
+                let tot = 0,
+                    els = document.getElementById("moduloPDI").getElementsByTagName("select");
+                for(e in els){
+                    if(els[e].selectedIndex>0)tot += parseInt(els[e].selectedIndex)-1;
+                }
+                document.getElementById("pdi_total").innerHTML = tot;
+                for(let o=1;o<=4;o++)document.getElementById("pdi_descr").classList.remove("vis"+o);
+                if(tot<=10)document.getElementById("pdi_descr").classList.add("vis1");
+                if(tot>10 && tot<=30)document.getElementById("pdi_descr").classList.add("vis2");
+                if(tot>30 && tot<=50)document.getElementById("pdi_descr").classList.add("vis3");
+                if(tot>50)document.getElementById("pdi_descr").classList.add("vis4");
+            }
         },
         "mpq": {
             title: {
@@ -3562,33 +3901,33 @@ var moduliValutazione = {
                     t: "e",
                     d: {
                         ita: "Descrittori sensoriali",
-                        eng: "",
-                        esp: "",
-                        fra: "",
-                        por: "",
-                        deu: ""
+                        eng: "Sensory descriptors",
+                        esp: "Descriptores sensoriales",
+                        fra: "Descripteurs sensoriels",
+                        por: "Descritores sensoriais",
+                        deu: "Sinnesbeschreibungen"
                     }
                 },
                 {
                     t: "e",
                     d: {
                         ita: "Gruppo 1 (temporale)",
-                        eng: "",
-                        esp: "",
-                        fra: "",
-                        por: "",
-                        deu: ""
+                        eng: "Group 1 (temporal)",
+                        esp: "Grupo 1 (temporal)",
+                        fra: "Groupe 1 (temporel)",
+                        por: "Grupo 1 (temporal)",
+                        deu: "Gruppe 1 (zeitlich)"
                     }
                 },
                 {
                     t: "c",
                     d: {
                         ita: "Tremolante",
-                        eng: "",
-                        esp: "",
-                        fra: "",
-                        por: "",
-                        deu: ""
+                        eng: "Trembling",
+                        esp: "Tembloroso",
+                        fra: "Tremblant",
+                        por: "Tremulante",
+                        deu: "Zitternd"
                     },
                     v: 1
                 },
@@ -3596,11 +3935,11 @@ var moduliValutazione = {
                     t: "c",
                     d: {
                         ita: "Fremente",
-                        eng: "",
-                        esp: "",
-                        fra: "",
-                        por: "",
-                        deu: ""
+                        eng: "Quivering",
+                        esp: "Tembloroso",
+                        fra: "Vibrant",
+                        por: "Vibrante",
+                        deu: "Vibrierend"
                     },
                     v: 2
                 },
@@ -3608,11 +3947,11 @@ var moduliValutazione = {
                     t: "c",
                     d: {
                         ita: "Pulsante",
-                        eng: "",
-                        esp: "",
-                        fra: "",
-                        por: "",
-                        deu: ""
+                        eng: "Pulsating",
+                        esp: "Palpitante",
+                        fra: "Pulsant",
+                        por: "Pulsante",
+                        deu: "Pulsierend"
                     },
                     v: 3
                 },
@@ -3620,11 +3959,11 @@ var moduliValutazione = {
                     t: "c",
                     d: {
                         ita: "Palpitante",
-                        eng: "",
-                        esp: "",
-                        fra: "",
-                        por: "",
-                        deu: ""
+                        eng: "Throbbing",
+                        esp: "Palpitante",
+                        fra: "Palpitant",
+                        por: "Palpitante",
+                        deu: "Pochen"
                     },
                     v: 4
                 },
@@ -3632,11 +3971,11 @@ var moduliValutazione = {
                     t: "c",
                     d: {
                         ita: "Battente",
-                        eng: "",
-                        esp: "",
-                        fra: "",
-                        por: "",
-                        deu: ""
+                        eng: "Beating",
+                        esp: "Latido",
+                        fra: "Battant",
+                        por: "Batendo",
+                        deu: "Schlagend"
                     },
                     v: 5
                 },
@@ -3644,11 +3983,11 @@ var moduliValutazione = {
                     t: "c",
                     d: {
                         ita: "Calpestante",
-                        eng: "",
-                        esp: "",
-                        fra: "",
-                        por: "",
-                        deu: ""
+                        eng: "Stamping",
+                        esp: "Pisoteante",
+                        fra: "Piétinement",
+                        por: "Pisoteante",
+                        deu: "Stampfend"
                     },
                     v: 6
                 },
@@ -3656,22 +3995,22 @@ var moduliValutazione = {
                     t: "e",
                     d: {
                         ita: "Gruppo 2 (spaziale)",
-                        eng: "",
-                        esp: "",
-                        fra: "",
-                        por: "",
-                        deu: ""
+                        eng: "Group 2 (spatial)",
+                        esp: "Grupo 2 (espacial)",
+                        fra: "Groupe 2 (spatial)",
+                        por: "Grupo 2 (espacial)",
+                        deu: "Gruppe 2 (räumlich)"
                     }
                 },
                 {
                     t: "c",
                     d: {
                         ita: "Saltellante",
-                        eng: "",
-                        esp: "",
-                        fra: "",
-                        por: "",
-                        deu: ""
+                        eng: "Bouncing",
+                        esp: "Rebotante",
+                        fra: "Sautillant",
+                        por: "Saltitante",
+                        deu: "Springend"
                     },
                     v: 1
                 },
@@ -3679,11 +4018,11 @@ var moduliValutazione = {
                     t: "c",
                     d: {
                         ita: "Fulmineo",
-                        eng: "",
-                        esp: "",
-                        fra: "",
-                        por: "",
-                        deu: ""
+                        eng: "Lightning",
+                        esp: "Fulminante",
+                        fra: "Fulgurant",
+                        por: "Relâmpago",
+                        deu: "Blitzartig"
                     },
                     v: 2
                 },
@@ -3691,11 +4030,11 @@ var moduliValutazione = {
                     t: "c",
                     d: {
                         ita: "Tirante",
-                        eng: "",
-                        esp: "",
-                        fra: "",
-                        por: "",
-                        deu: ""
+                        eng: "Tightening",
+                        esp: "Tirante",
+                        fra: "Tirant",
+                        por: "Tensionando",
+                        deu: "Ziehen"
                     },
                     v: 3
                 },
@@ -3703,22 +4042,22 @@ var moduliValutazione = {
                     t: "e",
                     d: {
                         ita: "Gruppo 3 (pressione puntiforme)",
-                        eng: "",
-                        esp: "",
-                        fra: "",
-                        por: "",
-                        deu: ""
+                        eng: "Group 3 (point pressure)",
+                        esp: "Grupo 3 (presión puntual)",
+                        fra: "Groupe 3 (pression ponctuelle)",
+                        por: "Grupo 3 (pressão pontual)",
+                        deu: "Gruppe 3 (Punktdruck)"
                     }
                 },
                 {
                     t: "c",
                     d: {
                         ita: "Pizzicante",
-                        eng: "",
-                        esp: "",
-                        fra: "",
-                        por: "",
-                        deu: ""
+                        eng: "Pinching",
+                        esp: "Punzante",
+                        fra: "Pinçant",
+                        por: "Beliscante",
+                        deu: "Zwickend"
                     },
                     v: 1
                 },
@@ -3726,11 +4065,11 @@ var moduliValutazione = {
                     t: "c",
                     d: {
                         ita: "Tediante",
-                        eng: "",
-                        esp: "",
-                        fra: "",
-                        por: "",
-                        deu: ""
+                        eng: "Dull",
+                        esp: "Sordo",
+                        fra: "Sourd",
+                        por: "Surdo",
+                        deu: "Dumpf"
                     },
                     v: 2
                 },
@@ -3738,11 +4077,11 @@ var moduliValutazione = {
                     t: "c",
                     d: {
                         ita: "Perforante",
-                        eng: "",
-                        esp: "",
-                        fra: "",
-                        por: "",
-                        deu: ""
+                        eng: "Piercing",
+                        esp: "Perforante",
+                        fra: "Perçant",
+                        por: "Perfurante",
+                        deu: "Durchdringend"
                     },
                     v: 3
                 },
@@ -3750,11 +4089,11 @@ var moduliValutazione = {
                     t: "c",
                     d: {
                         ita: "Fitta",
-                        eng: "",
-                        esp: "",
-                        fra: "",
-                        por: "",
-                        deu: ""
+                        eng: "Stitching",
+                        esp: "Punzante",
+                        fra: "Coupure",
+                        por: "Corte",
+                        deu: "Stechen"
                     },
                     v: 4
                 },
@@ -3762,11 +4101,11 @@ var moduliValutazione = {
                     t: "c",
                     d: {
                         ita: "Lacrimante",
-                        eng: "",
-                        esp: "",
-                        fra: "",
-                        por: "",
-                        deu: ""
+                        eng: "Tearing",
+                        esp: "Lacrimoso",
+                        fra: "Larmoyant",
+                        por: "Lacrime",
+                        deu: "Tränen"
                     },
                     v: 5
                 },
@@ -3774,22 +4113,22 @@ var moduliValutazione = {
                     t: "e",
                     d: {
                         ita: "Gruppo 4 (tipo di pressione)",
-                        eng: "",
-                        esp: "",
-                        fra: "",
-                        por: "",
-                        deu: ""
+                        eng: "Group 4 (type of pressure)",
+                        esp: "Grupo 4 (tipo de presión)",
+                        fra: "Groupe 4 (type de pression)",
+                        por: "Grupo 4 (tipo de pressão)",
+                        deu: "Gruppe 4 (Druckart)"
                     }
                 },
                 {
                     t: "c",
                     d: {
                         ita: "Definito",
-                        eng: "",
-                        esp: "",
-                        fra: "",
-                        por: "",
-                        deu: ""
+                        eng: "Defined",
+                        esp: "Definido",
+                        fra: "Défini",
+                        por: "Definido",
+                        deu: "Definiert"
                     },
                     v: 1
                 },
@@ -3797,11 +4136,11 @@ var moduliValutazione = {
                     t: "c",
                     d: {
                         ita: "Tagliente",
-                        eng: "",
-                        esp: "",
-                        fra: "",
-                        por: "",
-                        deu: ""
+                        eng: "Cutting",
+                        esp: "Cortante",
+                        fra: "Coupant",
+                        por: "Cortante",
+                        deu: "Schneidend"
                     },
                     v: 2
                 },
@@ -3809,34 +4148,34 @@ var moduliValutazione = {
                     t: "c",
                     d: {
                         ita: "Lacerante",
-                        eng: "",
-                        esp: "",
-                        fra: "",
-                        por: "",
-                        deu: ""
+                        eng: "Lacerating",
+                        esp: "Desgarrador",
+                        fra: "Déchirant",
+                        por: "Rasgando",
+                        deu: "Reißend"
                     },
                     v: 3
                 },
                 {
                     t: "e",
                     d: {
-                        ita: "Gruppo 5(pressione costrittiva)",
-                        eng: "",
-                        esp: "",
-                        fra: "",
-                        por: "",
-                        deu: ""
+                        ita: "Gruppo 5 (pressione costrittiva)",
+                        eng: "Group 5 (constrictive pressure)",
+                        esp: "Grupo 5 (presión constrictiva)",
+                        fra: "Groupe 5 (pression restrictive)",
+                        por: "Grupo 5 (pressão constritiva)",
+                        deu: "Gruppe 5 (kontrahierender Druck)"
                     }
                 },
                 {
                     t: "c",
                     d: {
                         ita: "Pizzicante",
-                        eng: "",
-                        esp: "",
-                        fra: "",
-                        por: "",
-                        deu: ""
+                        eng: "Pinching",
+                        esp: "Punzante",
+                        fra: "Pinçant",
+                        por: "Beliscante",
+                        deu: "Zwickend"
                     },
                     v: 1
                 },
@@ -3844,11 +4183,11 @@ var moduliValutazione = {
                     t: "c",
                     d: {
                         ita: "Pressante",
-                        eng: "",
-                        esp: "",
-                        fra: "",
-                        por: "",
-                        deu: ""
+                        eng: "Pressing",
+                        esp: "Presionando",
+                        fra: "Pressant",
+                        por: "Pressionando",
+                        deu: "Drückend"
                     },
                     v: 2
                 },
@@ -3856,11 +4195,11 @@ var moduliValutazione = {
                     t: "c",
                     d: {
                         ita: "Rodente",
-                        eng: "",
-                        esp: "",
-                        fra: "",
-                        por: "",
-                        deu: ""
+                        eng: "Gnawing",
+                        esp: "Roedor",
+                        fra: "Rongeant",
+                        por: "Roupedor",
+                        deu: "Nagen"
                     },
                     v: 3
                 },
@@ -3868,11 +4207,11 @@ var moduliValutazione = {
                     t: "c",
                     d: {
                         ita: "Crampiforme",
-                        eng: "",
-                        esp: "",
-                        fra: "",
-                        por: "",
-                        deu: ""
+                        eng: "Cramplike",
+                        esp: "Cólico",
+                        fra: "Crampes",
+                        por: "Cãibras",
+                        deu: "Krampfartig"
                     },
                     v: 4
                 },
@@ -3880,11 +4219,11 @@ var moduliValutazione = {
                     t: "c",
                     d: {
                         ita: "Stritolante",
-                        eng: "",
-                        esp: "",
-                        fra: "",
-                        por: "",
-                        deu: ""
+                        eng: "Squeezing",
+                        esp: "Apertura",
+                        fra: "Serrer",
+                        por: "Esmagar",
+                        deu: "Zerdrücken"
                     },
                     v: 5
                 },
@@ -3892,22 +4231,22 @@ var moduliValutazione = {
                     t: "e",
                     d: {
                         ita: "Gruppo 6 (pressione di trazione)",
-                        eng: "",
-                        esp: "",
-                        fra: "",
-                        por: "",
-                        deu: ""
-                    },
+                        eng: "Group 6 (traction pressure)",
+                        esp: "Grupo 6 (presión de tracción)",
+                        fra: "Groupe 6 (pression de traction)",
+                        por: "Grupo 6 (pressão de tração)",
+                        deu: "Gruppe 6 (Zugdruck)"
+                    }
                 },
                 {
                     t: "c",
                     d: {
                         ita: "Strattonante",
-                        eng: "",
-                        esp: "",
-                        fra: "",
-                        por: "",
-                        deu: ""
+                        eng: "Yanking",
+                        esp: "Tirante",
+                        fra: "Tirant",
+                        por: "Puxando",
+                        deu: "Ziehen"
                     },
                     v: 1
                 },
@@ -3915,11 +4254,11 @@ var moduliValutazione = {
                     t: "c",
                     d: {
                         ita: "Tirante",
-                        eng: "",
-                        esp: "",
-                        fra: "",
-                        por: "",
-                        deu: ""
+                        eng: "Tightening",
+                        esp: "Tirante",
+                        fra: "Tirant",
+                        por: "Tensionando",
+                        deu: "Ziehen"
                     },
                     v: 2
                 },
@@ -3927,11 +4266,11 @@ var moduliValutazione = {
                     t: "c",
                     d: {
                         ita: "Straziante",
-                        eng: "",
-                        esp: "",
-                        fra: "",
-                        por: "",
-                        deu: ""
+                        eng: "Wrenching",
+                        esp: "Desgarrador",
+                        fra: "Déchirant",
+                        por: "Rasgador",
+                        deu: "Zerrend"
                     },
                     v: 3
                 },
@@ -3939,22 +4278,22 @@ var moduliValutazione = {
                     t: "e",
                     d: {
                         ita: "Gruppo 7 (termale)",
-                        eng: "",
-                        esp: "",
-                        fra: "",
-                        por: "",
-                        deu: ""
+                        eng: "Group 7 (thermal)",
+                        esp: "Grupo 7 (térmico)",
+                        fra: "Groupe 7 (thermique)",
+                        por: "Grupo 7 (térmico)",
+                        deu: "Gruppe 7 (thermisch)"
                     }
                 },
                 {
                     t: "c",
                     d: {
                         ita: "Caldo",
-                        eng: "",
-                        esp: "",
-                        fra: "",
-                        por: "",
-                        deu: ""
+                        eng: "Warm",
+                        esp: "Caliente",
+                        fra: "Chaud",
+                        por: "Quente",
+                        deu: "Warm"
                     },
                     v: 1
                 },
@@ -3962,11 +4301,11 @@ var moduliValutazione = {
                     t: "c",
                     d: {
                         ita: "Secco",
-                        eng: "",
-                        esp: "",
-                        fra: "",
-                        por: "",
-                        deu: ""
+                        eng: "Dry",
+                        esp: "Seco",
+                        fra: "Sec",
+                        por: "Seco",
+                        deu: "Trocken"
                     },
                     v: 2
                 },
@@ -3974,11 +4313,11 @@ var moduliValutazione = {
                     t: "c",
                     d: {
                         ita: "Scottante",
-                        eng: "",
-                        esp: "",
-                        fra: "",
-                        por: "",
-                        deu: ""
+                        eng: "Scalding",
+                        esp: "Escaldante",
+                        fra: "Brûlant",
+                        por: "Escaldante",
+                        deu: "Sengend"
                     },
                     v: 3
                 },
@@ -3986,11 +4325,11 @@ var moduliValutazione = {
                     t: "c",
                     d: {
                         ita: "Bruciante",
-                        eng: "",
-                        esp: "",
-                        fra: "",
-                        por: "",
-                        deu: ""
+                        eng: "Burning",
+                        esp: "Ardor",
+                        fra: "Brûlant",
+                        por: "Ardente",
+                        deu: "Brennend"
                     },
                     v: 4
                 },
@@ -3998,22 +4337,22 @@ var moduliValutazione = {
                     t: "e",
                     d: {
                         ita: "Gruppo 8 (movimento)",
-                        eng: "",
-                        esp: "",
-                        fra: "",
-                        por: "",
-                        deu: ""
+                        eng: "Group 8 (movement)",
+                        esp: "Grupo 8 (movimiento)",
+                        fra: "Groupe 8 (mouvement)",
+                        por: "Grupo 8 (movimento)",
+                        deu: "Gruppe 8 (Bewegung)"
                     }
                 },
                 {
                     t: "c",
                     d: {
                         ita: "Formicolio",
-                        eng: "",
-                        esp: "",
-                        fra: "",
-                        por: "",
-                        deu: ""
+                        eng: "Tingling",
+                        esp: "Hormigueo",
+                        fra: "Picotement",
+                        por: "Formigamento",
+                        deu: "Kribbeln"
                     },
                     v: 1
                 },
@@ -4021,11 +4360,11 @@ var moduliValutazione = {
                     t: "c",
                     d: {
                         ita: "Pruriginoso",
-                        eng: "",
-                        esp: "",
-                        fra: "",
-                        por: "",
-                        deu: ""
+                        eng: "Itchy",
+                        esp: "Picazón",
+                        fra: "Démangeaison",
+                        por: "Coceira",
+                        deu: "Juckend"
                     },
                     v: 2
                 },
@@ -4033,11 +4372,11 @@ var moduliValutazione = {
                     t: "c",
                     d: {
                         ita: "Frizzante",
-                        eng: "",
-                        esp: "",
-                        fra: "",
-                        por: "",
-                        deu: ""
+                        eng: "Fizzing",
+                        esp: "Burbujeante",
+                        fra: "Frémissant",
+                        por: "Borbulhante",
+                        deu: "Sprudelnd"
                     },
                     v: 3
                 },
@@ -4045,11 +4384,11 @@ var moduliValutazione = {
                     t: "c",
                     d: {
                         ita: "Pungente",
-                        eng: "",
-                        esp: "",
-                        fra: "",
-                        por: "",
-                        deu: ""
+                        eng: "Stinging",
+                        esp: "Punzante",
+                        fra: "Piquant",
+                        por: "Picante",
+                        deu: "Stechend"
                     },
                     v: 4
                 },
@@ -4057,22 +4396,22 @@ var moduliValutazione = {
                     t: "e",
                     d: {
                         ita: "Gruppo 9 (durezza)",
-                        eng: "",
-                        esp: "",
-                        fra: "",
-                        por: "",
-                        deu: ""
+                        eng: "Group 9 (hardness)",
+                        esp: "Grupo 9 (dureza)",
+                        fra: "Groupe 9 (dureté)",
+                        por: "Grupo 9 (dureza)",
+                        deu: "Gruppe 9 (Härte)"
                     }
                 },
                 {
                     t: "c",
                     d: {
                         ita: "Torpido",
-                        eng: "",
-                        esp: "",
-                        fra: "",
-                        por: "",
-                        deu: ""
+                        eng: "Dull",
+                        esp: "Sordo",
+                        fra: "Sourd",
+                        por: "Surdo",
+                        deu: "Dumpf"
                     },
                     v: 1
                 },
@@ -4080,11 +4419,11 @@ var moduliValutazione = {
                     t: "c",
                     d: {
                         ita: "Ulceroso",
-                        eng: "",
-                        esp: "",
-                        fra: "",
-                        por: "",
-                        deu: ""
+                        eng: "Ulcerous",
+                        esp: "Ulceroso",
+                        fra: "Ulcéreux",
+                        por: "Ulceroso",
+                        deu: "Ulkus"
                     },
                     v: 2
                 },
@@ -4092,11 +4431,11 @@ var moduliValutazione = {
                     t: "c",
                     d: {
                         ita: "Dolente",
-                        eng: "",
-                        esp: "",
-                        fra: "",
-                        por: "",
-                        deu: ""
+                        eng: "Sore",
+                        esp: "Doloroso",
+                        fra: "Douloureux",
+                        por: "Doloroso",
+                        deu: "Schmerzhaft"
                     },
                     v: 3
                 },
@@ -4104,11 +4443,11 @@ var moduliValutazione = {
                     t: "c",
                     d: {
                         ita: "Indolenzito",
-                        eng: "",
-                        esp: "",
-                        fra: "",
-                        por: "",
-                        deu: ""
+                        eng: "Sore",
+                        esp: "Adolorido",
+                        fra: "Endolori",
+                        por: "Dói",
+                        deu: "Schmerzhaft"
                     },
                     v: 4
                 },
@@ -4116,11 +4455,11 @@ var moduliValutazione = {
                     t: "c",
                     d: {
                         ita: "Gravoso",
-                        eng: "",
-                        esp: "",
-                        fra: "",
-                        por: "",
-                        deu: ""
+                        eng: "Heavy",
+                        esp: "Pesado",
+                        fra: "Lourd",
+                        por: "Pesado",
+                        deu: "Schwer"
                     },
                     v: 5
                 },
@@ -4128,22 +4467,22 @@ var moduliValutazione = {
                     t: "e",
                     d: {
                         ita: "Gruppo 10 (differenze sensoriali)",
-                        eng: "",
-                        esp: "",
-                        fra: "",
-                        por: "",
-                        deu: ""
+                        eng: "Group 10 (sensory differences)",
+                        esp: "Grupo 10 (diferencias sensoriales)",
+                        fra: "Groupe 10 (différences sensorielles)",
+                        por: "Grupo 10 (diferenças sensoriais)",
+                        deu: "Gruppe 10 (sensorische Unterschiede)"
                     }
                 },
                 {
                     t: "c",
                     d: {
                         ita: "Lieve",
-                        eng: "",
-                        esp: "",
-                        fra: "",
-                        por: "",
-                        deu: ""
+                        eng: "Mild",
+                        esp: "Leve",
+                        fra: "Léger",
+                        por: "Leve",
+                        deu: "Leicht"
                     },
                     v: 1
                 },
@@ -4151,11 +4490,11 @@ var moduliValutazione = {
                     t: "c",
                     d: {
                         ita: "Teso",
-                        eng: "",
-                        esp: "",
-                        fra: "",
-                        por: "",
-                        deu: ""
+                        eng: "Tight",
+                        esp: "Tenso",
+                        fra: "Tendu",
+                        por: "Tenso",
+                        deu: "Spannend"
                     },
                     v: 2
                 },
@@ -4163,11 +4502,11 @@ var moduliValutazione = {
                     t: "c",
                     d: {
                         ita: "Stridente",
-                        eng: "",
-                        esp: "",
-                        fra: "",
-                        por: "",
-                        deu: ""
+                        eng: "Shrill",
+                        esp: "Agudo",
+                        fra: "Strident",
+                        por: "Estridente",
+                        deu: "Schrill"
                     },
                     v: 3
                 },
@@ -4175,11 +4514,11 @@ var moduliValutazione = {
                     t: "c",
                     d: {
                         ita: "Fendente",
-                        eng: "",
-                        esp: "",
-                        fra: "",
-                        por: "",
-                        deu: ""
+                        eng: "Cutting",
+                        esp: "Cortante",
+                        fra: "Tranchant",
+                        por: "Cortante",
+                        deu: "Schneidend"
                     },
                     v: 4
                 },
@@ -4187,33 +4526,33 @@ var moduliValutazione = {
                     t: "e",
                     d: {
                         ita: "Descrittori emotivi",
-                        eng: "",
-                        esp: "",
-                        fra: "",
-                        por: "",
-                        deu: ""
+                        eng: "Emotional descriptors",
+                        esp: "Descriptores emocionales",
+                        fra: "Descripteurs émotionnels",
+                        por: "Descritores emocionais",
+                        deu: "Emotionale Beschreibungen"
                     }
                 },
                 {
                     t: "e",
                     d: {
                         ita: "Gruppo 11 (tensione)",
-                        eng: "",
-                        esp: "",
-                        fra: "",
-                        por: "",
-                        deu: ""
+                        eng: "Group 11 (tension)",
+                        esp: "Grupo 11 (tensión)",
+                        fra: "Groupe 11 (tension)",
+                        por: "Grupo 11 (tensão)",
+                        deu: "Gruppe 11 (Spannung)"
                     }
                 },
                 {
                     t: "c",
                     d: {
                         ita: "Faticoso",
-                        eng: "",
-                        esp: "",
-                        fra: "",
-                        por: "",
-                        deu: ""
+                        eng: "Tiring",
+                        esp: "Cansado",
+                        fra: "Fatigant",
+                        por: "Cansativo",
+                        deu: "Ermüdend"
                     },
                     v: 1
                 },
@@ -4221,11 +4560,11 @@ var moduliValutazione = {
                     t: "c",
                     d: {
                         ita: "Spossante",
-                        eng: "",
-                        esp: "",
-                        fra: "",
-                        por: "",
-                        deu: ""
+                        eng: "Exhausting",
+                        esp: "Agotador",
+                        fra: "Épuisant",
+                        por: "Esgotante",
+                        deu: "Erschöpfend"
                     },
                     v: 2
                 },
@@ -4233,22 +4572,22 @@ var moduliValutazione = {
                     t: "e",
                     d: {
                         ita: "Gruppo 12 (autonomo)",
-                        eng: "",
-                        esp: "",
-                        fra: "",
-                        por: "",
-                        deu: ""
+                        eng: "Group 12 (autonomous)",
+                        esp: "Grupo 12 (autónomo)",
+                        fra: "Groupe 12 (autonome)",
+                        por: "Grupo 12 (autônomo)",
+                        deu: "Gruppe 12 (autonom)"
                     }
                 },
                 {
                     t: "c",
                     d: {
                         ita: "Nauseabondo",
-                        eng: "",
-                        esp: "",
-                        fra: "",
-                        por: "",
-                        deu: ""
+                        eng: "Nauseating",
+                        esp: "Nauseabundo",
+                        fra: "Nauséabond",
+                        por: "Nauseante",
+                        deu: "Übelkeit"
                     },
                     v: 1
                 },
@@ -4256,11 +4595,11 @@ var moduliValutazione = {
                     t: "c",
                     d: {
                         ita: "Soffocante",
-                        eng: "",
-                        esp: "",
-                        fra: "",
-                        por: "",
-                        deu: ""
+                        eng: "Suffocating",
+                        esp: "Sofocante",
+                        fra: "Étouffant",
+                        por: "Sufocante",
+                        deu: "Erstickend"
                     },
                     v: 2
                 },
@@ -4268,22 +4607,22 @@ var moduliValutazione = {
                     t: "e",
                     d: {
                         ita: "Gruppo 13 (paura)",
-                        eng: "",
-                        esp: "",
-                        fra: "",
-                        por: "",
-                        deu: ""
+                        eng: "Group 13 (fear)",
+                        esp: "Grupo 13 (miedo)",
+                        fra: "Groupe 13 (peur)",
+                        por: "Grupo 13 (medo)",
+                        deu: "Gruppe 13 (Angst)"
                     }
                 },
                 {
                     t: "c",
                     d: {
                         ita: "Pauroso",
-                        eng: "",
-                        esp: "",
-                        fra: "",
-                        por: "",
-                        deu: ""
+                        eng: "Fearful",
+                        esp: "Miedoso",
+                        fra: "Craintif",
+                        por: "Medroso",
+                        deu: "Ängstlich"
                     },
                     v: 1
                 },
@@ -4291,11 +4630,11 @@ var moduliValutazione = {
                     t: "c",
                     d: {
                         ita: "Spaventevole",
-                        eng: "",
-                        esp: "",
-                        fra: "",
-                        por: "",
-                        deu: ""
+                        eng: "Scary",
+                        esp: "Espeluznante",
+                        fra: "Effrayant",
+                        por: "Assustador",
+                        deu: "Angsteinflößend"
                     },
                     v: 2
                 },
@@ -4303,11 +4642,11 @@ var moduliValutazione = {
                     t: "c",
                     d: {
                         ita: "Terrificante",
-                        eng: "",
-                        esp: "",
-                        fra: "",
-                        por: "",
-                        deu: ""
+                        eng: "Terrifying",
+                        esp: "Atormentador",
+                        fra: "Terrifiant",
+                        por: "Aterrorizante",
+                        deu: "Schrecklich"
                     },
                     v: 3
                 },
@@ -4315,22 +4654,22 @@ var moduliValutazione = {
                     t: "e",
                     d: {
                         ita: "Gruppo 14 (persecutorio)",
-                        eng: "",
-                        esp: "",
-                        fra: "",
-                        por: "",
-                        deu: ""
+                        eng: "Group 14 (persecutory)",
+                        esp: "Grupo 14 (persecutorio)",
+                        fra: "Groupe 14 (persécuteur)",
+                        por: "Grupo 14 (persecutório)",
+                        deu: "Gruppe 14 (verfolgungsartig)"
                     }
                 },
                 {
                     t: "c",
                     d: {
                         ita: "Punitivo",
-                        eng: "",
-                        esp: "",
-                        fra: "",
-                        por: "",
-                        deu: ""
+                        eng: "Punitive",
+                        esp: "Punitivo",
+                        fra: "Punitif",
+                        por: "Punitivo",
+                        deu: "Strafend"
                     },
                     v: 1
                 },
@@ -4338,11 +4677,11 @@ var moduliValutazione = {
                     t: "c",
                     d: {
                         ita: "Estenuante",
-                        eng: "",
-                        esp: "",
-                        fra: "",
-                        por: "",
-                        deu: ""
+                        eng: "Exhausting",
+                        esp: "Agotador",
+                        fra: "Éreintant",
+                        por: "Esgotante",
+                        deu: "Erschöpfend"
                     },
                     v: 2
                 },
@@ -4350,11 +4689,11 @@ var moduliValutazione = {
                     t: "c",
                     d: {
                         ita: "Crudele",
-                        eng: "",
-                        esp: "",
-                        fra: "",
-                        por: "",
-                        deu: ""
+                        eng: "Cruel",
+                        esp: "Cruel",
+                        fra: "Cruel",
+                        por: "Cruel",
+                        deu: "Grausam"
                     },
                     v: 3
                 },
@@ -4362,11 +4701,11 @@ var moduliValutazione = {
                     t: "c",
                     d: {
                         ita: "Feroce",
-                        eng: "",
-                        esp: "",
-                        fra: "",
-                        por: "",
-                        deu: ""
+                        eng: "Fierce",
+                        esp: "Feroz",
+                        fra: "Féroce",
+                        por: "Feroz",
+                        deu: "Heftig"
                     },
                     v: 4
                 },
@@ -4374,11 +4713,11 @@ var moduliValutazione = {
                     t: "c",
                     d: {
                         ita: "Micidiale",
-                        eng: "",
-                        esp: "",
-                        fra: "",
-                        por: "",
-                        deu: ""
+                        eng: "Deadly",
+                        esp: "Mortal",
+                        fra: "Mortel",
+                        por: "Mortal",
+                        deu: "Tödlich"
                     },
                     v: 5
                 },
@@ -4386,22 +4725,22 @@ var moduliValutazione = {
                     t: "e",
                     d: {
                         ita: "Gruppo 15 (affettivo-valutativo-sensoriale)",
-                        eng: "",
-                        esp: "",
-                        fra: "",
-                        por: "",
-                        deu: ""
+                        eng: "Group 15 (affective-evaluative-sensory)",
+                        esp: "Grupo 15 (afectivo-evaluativo-sensorial)",
+                        fra: "Groupe 15 (affectif-évaluatif-sensoriel)",
+                        por: "Grupo 15 (afetivo-avaliativo-sensorial)",
+                        deu: "Gruppe 15 (affektiv-evaluativ-sensorisch)"
                     }
                 },
                 {
                     t: "c",
                     d: {
                         ita: "Infelice",
-                        eng: "",
-                        esp: "",
-                        fra: "",
-                        por: "",
-                        deu: ""
+                        eng: "Unhappy",
+                        esp: "Infeliz",
+                        fra: "Malheureux",
+                        por: "Infeliz",
+                        deu: "Unglücklich"
                     },
                     v: 1
                 },
@@ -4409,11 +4748,11 @@ var moduliValutazione = {
                     t: "c",
                     d: {
                         ita: "Accecante",
-                        eng: "",
-                        esp: "",
-                        fra: "",
-                        por: "",
-                        deu: ""
+                        eng: "Blinding",
+                        esp: "Cegador",
+                        fra: "Éblouissant",
+                        por: "Cegante",
+                        deu: "Blendend"
                     },
                     v: 2
                 },
@@ -4421,33 +4760,33 @@ var moduliValutazione = {
                     t: "e",
                     d: {
                         ita: "Descrittori valutativi",
-                        eng: "",
-                        esp: "",
-                        fra: "",
-                        por: "",
-                        deu: ""
+                        eng: "Evaluative descriptors",
+                        esp: "Descriptores evaluativos",
+                        fra: "Descripteurs évaluatifs",
+                        por: "Descritores avaliativos",
+                        deu: "Bewertende Beschreibungen"
                     }
                 },
                 {
                     t: "e",
                     d: {
                         ita: "Gruppo 16 (valutativo)",
-                        eng: "",
-                        esp: "",
-                        fra: "",
-                        por: "",
-                        deu: ""
+                        eng: "Group 16 (evaluative)",
+                        esp: "Grupo 16 (evaluativo)",
+                        fra: "Groupe 16 (évaluatif)",
+                        por: "Grupo 16 (avaliativo)",
+                        deu: "Gruppe 16 (bewertend)"
                     }
                 },
                 {
                     t: "c",
                     d: {
                         ita: "Noioso",
-                        eng: "",
-                        esp: "",
-                        fra: "",
-                        por: "",
-                        deu: ""
+                        eng: "Boring",
+                        esp: "Aburrido",
+                        fra: "Ennuyeux",
+                        por: "Chato",
+                        deu: "Langweilig"
                     },
                     v: 1
                 },
@@ -4455,11 +4794,11 @@ var moduliValutazione = {
                     t: "c",
                     d: {
                         ita: "Problematico",
-                        eng: "",
-                        esp: "",
-                        fra: "",
-                        por: "",
-                        deu: ""
+                        eng: "Problematic",
+                        esp: "Problemático",
+                        fra: "Problématique",
+                        por: "Problemático",
+                        deu: "Problematisch"
                     },
                     v: 2
                 },
@@ -4467,11 +4806,11 @@ var moduliValutazione = {
                     t: "c",
                     d: {
                         ita: "Misero",
-                        eng: "",
-                        esp: "",
-                        fra: "",
-                        por: "",
-                        deu: ""
+                        eng: "Miserable",
+                        esp: "Miserable",
+                        fra: "Misérable",
+                        por: "Miserável",
+                        deu: "Elend"
                     },
                     v: 3
                 },
@@ -4479,11 +4818,11 @@ var moduliValutazione = {
                     t: "c",
                     d: {
                         ita: "Intenso",
-                        eng: "",
-                        esp: "",
-                        fra: "",
-                        por: "",
-                        deu: ""
+                        eng: "Intense",
+                        esp: "Intenso",
+                        fra: "Intense",
+                        por: "Intenso",
+                        deu: "Intensiv"
                     },
                     v: 4
                 },
@@ -4491,11 +4830,11 @@ var moduliValutazione = {
                     t: "c",
                     d: {
                         ita: "Insopportabile",
-                        eng: "",
-                        esp: "",
-                        fra: "",
-                        por: "",
-                        deu: ""
+                        eng: "Unbearable",
+                        esp: "Insoportable",
+                        fra: "Insupportable",
+                        por: "Insuportável",
+                        deu: "Unerträglich"
                     },
                     v: 5
                 },
@@ -4503,33 +4842,33 @@ var moduliValutazione = {
                     t: "e",
                     d: {
                         ita: "Varie",
-                        eng: "",
-                        esp: "",
-                        fra: "",
-                        por: "",
-                        deu: ""
+                        eng: "Various",
+                        esp: "Varios",
+                        fra: "Divers",
+                        por: "Vários",
+                        deu: "Verschiedene"
                     }
                 },
                 {
                     t: "e",
                     d: {
                         ita: "Gruppo 17 (sensoriale: varie)",
-                        eng: "",
-                        esp: "",
-                        fra: "",
-                        por: "",
-                        deu: ""
+                        eng: "Group 17 (sensory: various)",
+                        esp: "Grupo 17 (sensorial: varios)",
+                        fra: "Groupe 17 (sensoriel : divers)",
+                        por: "Grupo 17 (sensorial: vários)",
+                        deu: "Gruppe 17 (sensorisch: verschiedene)"
                     }
                 },
                 {
                     t: "c",
                     d: {
                         ita: "Diffuso",
-                        eng: "",
-                        esp: "",
-                        fra: "",
-                        por: "",
-                        deu: ""
+                        eng: "Diffuse",
+                        esp: "Difuso",
+                        fra: "Diffuse",
+                        por: "Difuso",
+                        deu: "Diffuse"
                     },
                     v: 1
                 },
@@ -4537,11 +4876,11 @@ var moduliValutazione = {
                     t: "c",
                     d: {
                         ita: "Radiante",
-                        eng: "",
-                        esp: "",
-                        fra: "",
-                        por: "",
-                        deu: ""
+                        eng: "Radiating",
+                        esp: "Radiante",
+                        fra: "Rayonnant",
+                        por: "Radiante",
+                        deu: "Ausstrahlend"
                     },
                     v: 2
                 },
@@ -4549,11 +4888,11 @@ var moduliValutazione = {
                     t: "c",
                     d: {
                         ita: "Penetrante",
-                        eng: "",
-                        esp: "",
-                        fra: "",
-                        por: "",
-                        deu: ""
+                        eng: "Penetrating",
+                        esp: "Penetrante",
+                        fra: "Pénétrant",
+                        por: "Penetrante",
+                        deu: "Durchdringend"
                     },
                     v: 3
                 },
@@ -4561,11 +4900,11 @@ var moduliValutazione = {
                     t: "c",
                     d: {
                         ita: "Pungente",
-                        eng: "",
-                        esp: "",
-                        fra: "",
-                        por: "",
-                        deu: ""
+                        eng: "Stinging",
+                        esp: "Punzante",
+                        fra: "Piquant",
+                        por: "Picante",
+                        deu: "Stechend"
                     },
                     v: 4
                 },
@@ -4573,22 +4912,22 @@ var moduliValutazione = {
                     t: "e",
                     d: {
                         ita: "Gruppo 18 (sensoriale: varie)",
-                        eng: "",
-                        esp: "",
-                        fra: "",
-                        por: "",
-                        deu: ""
+                        eng: "Group 18 (sensory: various)",
+                        esp: "Grupo 18 (sensorial: varios)",
+                        fra: "Groupe 18 (sensoriel : divers)",
+                        por: "Grupo 18 (sensorial: vários)",
+                        deu: "Gruppe 18 (sensorisch: verschiedene)"
                     }
                 },
                 {
                     t: "c",
                     d: {
                         ita: "Stretto",
-                        eng: "",
-                        esp: "",
-                        fra: "",
-                        por: "",
-                        deu: ""
+                        eng: "Narrow",
+                        esp: "Estrecho",
+                        fra: "Étroite",
+                        por: "Estreito",
+                        deu: "Eng"
                     },
                     v: 1
                 },
@@ -4596,11 +4935,11 @@ var moduliValutazione = {
                     t: "c",
                     d: {
                         ita: "Intorpidito",
-                        eng: "",
-                        esp: "",
-                        fra: "",
-                        por: "",
-                        deu: ""
+                        eng: "Numb",
+                        esp: "Adormecido",
+                        fra: "Engourdi",
+                        por: "Dormido",
+                        deu: "Taub"
                     },
                     v: 2
                 },
@@ -4608,11 +4947,11 @@ var moduliValutazione = {
                     t: "c",
                     d: {
                         ita: "Tirante",
-                        eng: "",
-                        esp: "",
-                        fra: "",
-                        por: "",
-                        deu: ""
+                        eng: "Tight",
+                        esp: "Tenso",
+                        fra: "Tendu",
+                        por: "Tenso",
+                        deu: "Spannend"
                     },
                     v: 3
                 },
@@ -4620,11 +4959,11 @@ var moduliValutazione = {
                     t: "c",
                     d: {
                         ita: "Strizzante",
-                        eng: "",
-                        esp: "",
-                        fra: "",
-                        por: "",
-                        deu: ""
+                        eng: "Squeezing",
+                        esp: "Estrangulante",
+                        fra: "Serrer",
+                        por: "Apertura",
+                        deu: "Zerdrücken"
                     },
                     v: 4
                 },
@@ -4632,11 +4971,11 @@ var moduliValutazione = {
                     t: "c",
                     d: {
                         ita: "Lacerante",
-                        eng: "",
-                        esp: "",
-                        fra: "",
-                        por: "",
-                        deu: ""
+                        eng: "Lacerating",
+                        esp: "Desgarrador",
+                        fra: "Déchirant",
+                        por: "Rasgador",
+                        deu: "Reißend"
                     },
                     v: 5
                 },
@@ -4644,22 +4983,22 @@ var moduliValutazione = {
                     t: "e",
                     d: {
                         ita: "Gruppo 19 (sensoriale)",
-                        eng: "",
-                        esp: "",
-                        fra: "",
-                        por: "",
-                        deu: ""
+                        eng: "Group 19 (sensory)",
+                        esp: "Grupo 19 (sensorial)",
+                        fra: "Groupe 19 (sensoriel)",
+                        por: "Grupo 19 (sensorial)",
+                        deu: "Gruppe 19 (sensorisch)"
                     }
                 },
                 {
                     t: "c",
                     d: {
                         ita: "Fresco",
-                        eng: "",
-                        esp: "",
-                        fra: "",
-                        por: "",
-                        deu: ""
+                        eng: "Cool",
+                        esp: "Fresco",
+                        fra: "Frais",
+                        por: "Fresco",
+                        deu: "Kühl"
                     },
                     v: 1
                 },
@@ -4667,11 +5006,11 @@ var moduliValutazione = {
                     t: "c",
                     d: {
                         ita: "Freddo",
-                        eng: "",
-                        esp: "",
-                        fra: "",
-                        por: "",
-                        deu: ""
+                        eng: "Cold",
+                        esp: "Frío",
+                        fra: "Froid",
+                        por: "Frio",
+                        deu: "Kalt"
                     },
                     v: 2
                 },
@@ -4679,11 +5018,11 @@ var moduliValutazione = {
                     t: "c",
                     d: {
                         ita: "Ghiacciante",
-                        eng: "",
-                        esp: "",
-                        fra: "",
-                        por: "",
-                        deu: ""
+                        eng: "Icy",
+                        esp: "Helado",
+                        fra: "Glacial",
+                        por: "Gelado",
+                        deu: "Eisig"
                     },
                     v: 3
                 },
@@ -4691,22 +5030,22 @@ var moduliValutazione = {
                     t: "e",
                     d: {
                         ita: "Gruppo 20 (affettivo-valutativo: varie)",
-                        eng: "",
-                        esp: "",
-                        fra: "",
-                        por: "",
-                        deu: ""
+                        eng: "Group 20 (affective-evaluative: various)",
+                        esp: "Grupo 20 (afectivo-evaluativo: varios)",
+                        fra: "Groupe 20 (affectif-évaluatif : divers)",
+                        por: "Grupo 20 (afetivo-avaliativo: vários)",
+                        deu: "Gruppe 20 (affektiv-evaluativ: verschiedene)"
                     }
                 },
                 {
                     t: "c",
                     d: {
                         ita: "Fastidioso",
-                        eng: "",
-                        esp: "",
-                        fra: "",
-                        por: "",
-                        deu: ""
+                        eng: "Annoying",
+                        esp: "Molesto",
+                        fra: "Ennuyeux",
+                        por: "Chato",
+                        deu: "Lästig"
                     },
                     v: 1
                 },
@@ -4714,11 +5053,11 @@ var moduliValutazione = {
                     t: "c",
                     d: {
                         ita: "Nauseabondo",
-                        eng: "",
-                        esp: "",
-                        fra: "",
-                        por: "",
-                        deu: ""
+                        eng: "Nauseating",
+                        esp: "Nauseabundo",
+                        fra: "Nauséabond",
+                        por: "Nauseante",
+                        deu: "Übelkeit"
                     },
                     v: 2
                 },
@@ -4726,11 +5065,11 @@ var moduliValutazione = {
                     t: "c",
                     d: {
                         ita: "Agonizzante",
-                        eng: "",
-                        esp: "",
-                        fra: "",
-                        por: "",
-                        deu: ""
+                        eng: "Agonizing",
+                        esp: "Agonizante",
+                        fra: "Agonisant",
+                        por: "Agonizante",
+                        deu: "Qualvoll"
                     },
                     v: 3
                 },
@@ -4738,11 +5077,11 @@ var moduliValutazione = {
                     t: "c",
                     d: {
                         ita: "Terribile",
-                        eng: "",
-                        esp: "",
-                        fra: "",
-                        por: "",
-                        deu: ""
+                        eng: "Terrible",
+                        esp: "Terrible",
+                        fra: "Terrible",
+                        por: "Terrível",
+                        deu: "Schrecklich"
                     },
                     v: 4
                 },
@@ -4750,11 +5089,11 @@ var moduliValutazione = {
                     t: "c",
                     d: {
                         ita: "Torturante",
-                        eng: "",
-                        esp: "",
-                        fra: "",
-                        por: "",
-                        deu: ""
+                        eng: "Torturing",
+                        esp: "Torturante",
+                        fra: "Torturant",
+                        por: "Torturante",
+                        deu: "Folternd"
                     },
                     v: 5
                 },
@@ -4769,6 +5108,54 @@ var moduliValutazione = {
                         deu: "Pain Rating Index (PRI)"
                     }
                 },
+                {
+                    t: "t",
+                    d: {
+                        ita: "<b>Dolore lieve</b><br>Il paziente sperimenta un dolore che è percepito ma non influisce in modo significativo sulla vita quotidiana. Il dolore è descritto come \"gestibile\" o \"lieve\".",
+                        eng: "<b>Mild pain</b><br>The patient experiences pain that is noticeable but does not significantly impact daily life. The pain is described as \"manageable\" or \"mild.\"",
+                        esp: "<b>Dolor leve</b><br>El paciente experimenta un dolor que es percibido pero no afecta significativamente la vida diaria. El dolor se describe como \"manejable\" o \"leve.\"",
+                        fra: "<b>Douleur légère</b><br>Le patient ressent une douleur qui est perçue mais n'affecte pas de manière significative la vie quotidienne. La douleur est décrite comme \"gérable\" ou \"légère.\"",
+                        por: "<b>Dor leve</b><br>O paciente experimenta uma dor que é percebida, mas não afeta significativamente a vida diária. A dor é descrita como \"gerenciável\" ou \"leve.\"",
+                        deu: "<b>Leichter Schmerz</b><br>Der Patient erfährt Schmerzen, die wahrgenommen werden, aber keinen wesentlichen Einfluss auf das tägliche Leben haben. Der Schmerz wird als \"handhabbar\" oder \"mild\" beschrieben."
+                    },
+                    h: true
+                },
+                {
+                    t: "t",
+                    d: {
+                        ita: "<b>Dolore moderato</b><br>Il dolore inizia a interferire con le attività quotidiane del paziente, che potrebbe descriverlo come fastidioso o persistente. Può essere più difficile ignorare il dolore, ma è ancora possibile svolgere molte attività con qualche limitazione.",
+                        eng: "<b>Moderate pain</b><br>The pain begins to interfere with the patient's daily activities, which they may describe as annoying or persistent. It may become more difficult to ignore the pain, but it is still possible to perform many activities with some limitations.",
+                        esp: "<b>Dolor moderado</b><br>El dolor comienza a interferir con las actividades diarias del paciente, que puede describirlo como molesto o persistente. Puede ser más difícil ignorar el dolor, pero aún es posible realizar muchas actividades con algunas limitaciones.",
+                        fra: "<b>Douleur modérée</b><br>La douleur commence à interférer avec les activités quotidiennes du patient, qu'il pourrait décrire comme gênantes ou persistantes. Il peut devenir plus difficile d'ignorer la douleur, mais il est encore possible d'effectuer de nombreuses activités avec quelques limitations.",
+                        por: "<b>Dor moderada</b><br>A dor começa a interferir nas atividades diárias do paciente, que pode descrevê-la como incômoda ou persistente. Pode ser mais difícil ignorar a dor, mas ainda é possível realizar muitas atividades com algumas limitações.",
+                        deu: "<b>Moderater Schmerz</b><br>Der Schmerz beginnt, die täglichen Aktivitäten des Patienten zu stören, die ihn als lästig oder anhaltend beschreiben könnten. Es kann schwieriger werden, den Schmerz zu ignorieren, aber es ist immer noch möglich, viele Aktivitäten mit einigen Einschränkungen auszuführen."
+                    },
+                    h: true
+                },
+                {
+                    t: "t",
+                    d: {
+                        ita: "<b>Dolore forte</b><br>Il paziente riferisce un dolore che ha un impatto significativo sulle attività quotidiane e la qualità della vita. Il dolore è difficile da ignorare e richiede spesso interventi medici più intensivi. È descritto come \"intenso\" o \"debilitante\".",
+                        eng: "<b>Severe pain</b><br>The patient reports pain that has a significant impact on daily activities and quality of life. The pain is difficult to ignore and often requires more intensive medical interventions. It is described as \"intense\" or \"debilitating.\"",
+                        esp: "<b>Dolor fuerte</b><br>El paciente informa de un dolor que tiene un impacto significativo en las actividades diarias y en la calidad de vida. El dolor es difícil de ignorar y a menudo requiere intervenciones médicas más intensivas. Se describe como \"intenso\" o \"debilitante.\"",
+                        fra: "<b>Douleur forte</b><br>Le patient signale une douleur qui a un impact significatif sur les activités quotidiennes et la qualité de vie. La douleur est difficile à ignorer et nécessite souvent des interventions médicales plus intensives. Elle est décrite comme \"intense\" ou \"débilitante.\"",
+                        por: "<b>Dor forte</b><br>O paciente relata uma dor que tem um impacto significativo nas atividades diárias e na qualidade de vida. A dor é difícil de ignorar e muitas vezes requer intervenções médicas mais intensivas. É descrita como \"intensa\" ou \"debilitante.\"",
+                        deu: "<b>Starker Schmerz</b><br>Der Patient berichtet von Schmerzen, die erhebliche Auswirkungen auf die täglichen Aktivitäten und die Lebensqualität haben. Der Schmerz ist schwer zu ignorieren und erfordert oft intensivere medizinische Interventionen. Er wird als \"intensiv\" oder \"debilitierend\" beschrieben."
+                    },
+                    h: true
+                },
+                {
+                    t: "t",
+                    d: {
+                        ita: "<b>Dolore molto forte o insopportabile</b><br>Il dolore è estremamente grave e limita fortemente la capacità del paziente di svolgere qualsiasi attività quotidiana. Viene spesso descritto come \"intollerabile\" o \"insopportabile\", influenzando sia il benessere fisico che emotivo.",
+                        eng: "<b>Very severe or unbearable pain</b><br>The pain is extremely severe and greatly limits the patient's ability to perform any daily activities. It is often described as \"unbearable\" or \"intolerable,\" affecting both physical and emotional well-being.",
+                        esp: "<b>Dolor muy fuerte o insoportable</b><br>El dolor es extremadamente grave y limita en gran medida la capacidad del paciente para realizar cualquier actividad diaria. A menudo se describe como \"insoportable\" o \"intolerable\", afectando tanto el bienestar físico como el emocional.",
+                        fra: "<b>Douleur très forte ou insupportable</b><br>La douleur est extrêmement grave et limite fortement la capacité du patient à effectuer toute activité quotidienne. Elle est souvent décrite comme \"insupportable\" ou \"intolérable\", affectant à la fois le bien-être physique et émotionnel.",
+                        por: "<b>Dor muito forte ou insuportável</b><br>A dor é extremamente grave e limita muito a capacidade do paciente de realizar qualquer atividade diária. Muitas vezes é descrita como \"insuportável\" ou \"intolerável\", afetando tanto o bem-estar físico quanto emocional.",
+                        deu: "<b>Sehr starker oder unerträglicher Schmerz</b><br>Der Schmerz ist extrem stark und schränkt die Fähigkeit des Patienten, irgendwelche täglichen Aktivitäten auszuführen, erheblich ein. Er wird oft als \"unerträglich\" oder \"intolerabel\" beschrieben und beeinträchtigt sowohl das körperliche als auch das emotionale Wohlbefinden."
+                    },
+                    h: true
+                }                
             ],
             html:   '<div id="moduloMPQ">' +
                     '   <div>' +
@@ -4811,9 +5198,15 @@ var moduliValutazione = {
                     '           <div id="mpq_sez20" class="mpq_sez">[96] [97][98][99][100][101]</div>' +
                     '       </div>' +
                     '   </div>' +
-                    '   <div id="mpq_cont_total">' +
-                    '       <div id="mpq_label_total">[102]</div>' +
-                    '       <div id="mpq_total"></div>' +
+                    '   <div class="md_cont_total">' +
+                    '       <div class="md_label_total">[102]</div>' +
+                    '       <div id="mpq_total" class="md_total"></div>' +
+                    '   </div>' +
+                    '   <div id="mpq_descr" class="md_descr">' +
+                    '       <span id="mpq_1">[103]</span>' +
+                    '       <span id="mpq_2">[104]</span>' +
+                    '       <span id="mpq_3">[105]</span>' +
+                    '       <span id="mpq_4">[106]</span>' +
                     '   </div>' +
                     '</div>',
             funct: function(){
@@ -4832,6 +5225,1933 @@ var moduliValutazione = {
                     tot += max;
                 }
                 document.getElementById("mpq_total").innerHTML = tot;
+                for(let o=1;o<=4;o++)document.getElementById("mpq_descr").classList.remove("vis"+o);
+                if(tot<=15)document.getElementById("mpq_descr").classList.add("vis1");
+                if(tot>15 && tot<=30)document.getElementById("mpq_descr").classList.add("vis2");
+                if(tot>30 && tot<=45)document.getElementById("mpq_descr").classList.add("vis3");
+                if(tot>45)document.getElementById("mpq_descr").classList.add("vis4");
+            }
+        },
+        "sf-mpq": {
+            title: {
+                ita: "Short-form McGill Pain Questionaire (SF-MPQ)",
+                eng: "Short-form McGill Pain Questionaire (SF-MPQ)",
+                esp: "Short-form McGill Pain Questionaire (SF-MPQ)",
+                fra: "Short-form McGill Pain Questionaire (SF-MPQ)",
+                por: "Short-form McGill Pain Questionaire (SF-MPQ)",
+                deu: "Short-form McGill Pain Questionaire (SF-MPQ)"
+            },
+            data:[
+                {
+                    t: "t",
+                    d: {
+                        ita: "Indicare l'intensità di ognuno dei seguenti aspetti del dolore.",
+                        eng: "Indicate the intensity of each of the following aspects of pain.",
+                        esp: "Indique la intensidad de cada uno de los siguientes aspectos del dolor.",
+                        fra: "Indiquez l'intensité de chacun des aspects suivants de la douleur.",
+                        por: "Indique a intensidade de cada um dos seguintes aspectos da dor.",
+                        deu: "Geben Sie die Intensität jedes der folgenden Schmerzmerkmale an."
+                    },
+                    h: true
+                },
+                {
+                    t: "s",
+                    d: {
+                        ita: "Pulsante",
+                        eng: "Pulsating",
+                        esp: "Palpitante",
+                        fra: "Pulsant",
+                        por: "Pulsante",
+                        deu: "Pulsierend"
+                    },
+                    l: "mpq_scala_dolore"
+                },
+                {
+                    t: "s",
+                    d: {
+                        ita: "Pungente",
+                        eng: "Stabbing",
+                        esp: "Punzante",
+                        fra: "Perçant",
+                        por: "Aguçado",
+                        deu: "Stechend"
+                    },
+                    l: "mpq_scala_dolore"
+                },
+                {
+                    t: "s",
+                    d: {
+                        ita: "Acuto",
+                        eng: "Sharp",
+                        esp: "Agudo",
+                        fra: "Aigu",
+                        por: "Afiado",
+                        deu: "Scharf"
+                    },
+                    l: "mpq_scala_dolore"
+                },
+                {
+                    t: "s",
+                    d: {
+                        ita: "Lacerante",
+                        eng: "Tearing",
+                        esp: "Desgarrador",
+                        fra: "Déchirant",
+                        por: "Rasgando",
+                        deu: "Reißend"
+                    },
+                    l: "mpq_scala_dolore"
+                },
+                {
+                    t: "s",
+                    d: {
+                        ita: "Crampo",
+                        eng: "Cramplike",
+                        esp: "Cólico",
+                        fra: "Crampes",
+                        por: "Cãibras",
+                        deu: "Krampfartig"
+                    },
+                    l: "mpq_scala_dolore"
+                },
+                {
+                    t: "s",
+                    d: {
+                        ita: "Fastidioso",
+                        eng: "Annoying",
+                        esp: "Molesto",
+                        fra: "Ennuyeux",
+                        por: "Incômodo",
+                        deu: "Lästig"
+                    },
+                    l: "mpq_scala_dolore"
+                },
+                {
+                    t: "s",
+                    d: {
+                        ita: "Pesante",
+                        eng: "Heavy",
+                        esp: "Pesado",
+                        fra: "Lourd",
+                        por: "Pesado",
+                        deu: "Schwer"
+                    },
+                    l: "mpq_scala_dolore"
+                },
+                {
+                    t: "s",
+                    d: {
+                        ita: "Doloroso",
+                        eng: "Painful",
+                        esp: "Doloroso",
+                        fra: "Douloureux",
+                        por: "Doloroso",
+                        deu: "Schmerzhaft"
+                    },
+                    l: "mpq_scala_dolore"
+                },
+                {
+                    t: "s",
+                    d: {
+                        ita: "Scossa elettrica",
+                        eng: "Electric shock",
+                        esp: "Descarga eléctrica",
+                        fra: "Choc électrique",
+                        por: "Choque elétrico",
+                        deu: "Stromschlag"
+                    },
+                    l: "mpq_scala_dolore"
+                },
+                {
+                    t: "s",
+                    d: {
+                        ita: "Bruciore",
+                        eng: "Burning",
+                        esp: "Ardor",
+                        fra: "Brûlant",
+                        por: "Ardente",
+                        deu: "Brennend"
+                    },
+                    l: "mpq_scala_dolore"
+                },
+                {
+                    t: "s",
+                    d: {
+                        ita: "Formicolio",
+                        eng: "Tingling",
+                        esp: "Hormigueo",
+                        fra: "Picotement",
+                        por: "Formigamento",
+                        deu: "Kribbeln"
+                    },
+                    l: "mpq_scala_dolore"
+                },
+                {
+                    t: "s",
+                    d: {
+                        ita: "Stanco",
+                        eng: "Fatigued",
+                        esp: "Cansado",
+                        fra: "Fatigué",
+                        por: "Cansado",
+                        deu: "Müde"
+                    },
+                    l: "mpq_scala_dolore"
+                },
+                {
+                    t: "s",
+                    d: {
+                        ita: "Spaventoso",
+                        eng: "Fearful",
+                        esp: "Espeluznante",
+                        fra: "Effrayant",
+                        por: "Assustador",
+                        deu: "Angsteinflößend"
+                    },
+                    l: "mpq_scala_dolore"
+                },
+                {
+                    t: "s",
+                    d: {
+                        ita: "Angosciante",
+                        eng: "Distressing",
+                        esp: "Angustiante",
+                        fra: "Douloureux",
+                        por: "Angustiante",
+                        deu: "Quälend"
+                    },
+                    l: "mpq_scala_dolore"
+                },
+                {
+                    t: "s",
+                    d: {
+                        ita: "Punizione terribile",
+                        eng: "Terrible punishment",
+                        esp: "Castigo terrible",
+                        fra: "Punition terrible",
+                        por: "Punição terrível",
+                        deu: "Schreckliche Bestrafung"
+                    },
+                    l: "mpq_scala_dolore"
+                },
+                {
+                    t: "r",
+                    d: {
+                        ita: "Present Pain Intensity (PPI)",
+                        eng: "Present Pain Intensity (PPI)",
+                        esp: "Present Pain Intensity (PPI)",
+                        fra: "Present Pain Intensity (PPI)",
+                        por: "Present Pain Intensity (PPI)",
+                        deu: "Present Pain Intensity (PPI)"
+                    },
+                    l: [
+                        {
+                            ita: "0 - Nessun dolore",
+                            eng: "0 - No pain",
+                            esp: "0 - Ningún dolor",
+                            fra: "0 - Aucune douleur",
+                            por: "0 - Nenhuma dor",
+                            deu: "0 - Kein Schmerz"
+                        },
+                        {
+                            ita: "1 - Lieve",
+                            eng: "1 - Mild",
+                            esp: "1 - Leve",
+                            fra: "1 - Léger",
+                            por: "1 - Leve",
+                            deu: "1 - Leicht"
+                        },
+                        {
+                            ita: "2 - Disagio lieve",
+                            eng: "2 - Mild discomfort",
+                            esp: "2 - Malestar leve",
+                            fra: "2 - Inconfort léger",
+                            por: "2 - Desconforto leve",
+                            deu: "2 - Leichtes Unbehagen"
+                        },
+                        {
+                            ita: "3 - Moderato",
+                            eng: "3 - Moderate",
+                            esp: "3 - Moderado",
+                            fra: "3 - Modéré",
+                            por: "3 - Moderado",
+                            deu: "3 - Mäßig"
+                        },
+                        {
+                            ita: "4 - Grave",
+                            eng: "4 - Severe",
+                            esp: "4 - Grave",
+                            fra: "4 - Grave",
+                            por: "4 - Grave",
+                            deu: "4 - Schwer"
+                        },
+                        {
+                            ita: "5 - Molto grave",
+                            eng: "5 - Very severe",
+                            esp: "5 - Muy grave",
+                            fra: "5 - Très grave",
+                            por: "5 - Muito grave",
+                            deu: "5 - Sehr schwer"
+                        },
+                        {
+                            ita: "6 - Insopportabile",
+                            eng: "6 - Unbearable",
+                            esp: "6 - Insoportable",
+                            fra: "6 - Insupportable",
+                            por: "6 - Insuportável",
+                            deu: "6 - Unerträglich"
+                        }
+                    ]
+                },
+                {
+                    t: "e",
+                    d: {
+                        ita: "Indice generale del dolore",
+                        eng: "General pain index",
+                        esp: "Índice general del dolor",
+                        fra: "Indice général de la douleur",
+                        por: "Índice geral da dor",
+                        deu: "Allgemeiner Schmerzindex"
+                    }
+                },
+                {
+                    t: "t",
+                    d: {
+                        ita: "<b>Dolore lieve</b><br>Il paziente può gestire il dolore senza che esso interferisca gravemente con la sua vita quotidiana.",
+                        eng: "<b>Mild pain</b><br>The patient can manage the pain without it significantly interfering with their daily life.",
+                        esp: "<b>Dolor leve</b><br>El paciente puede manejar el dolor sin que interfiera gravemente en su vida diaria.",
+                        fra: "<b>Douleur légère</b><br>Le patient peut gérer la douleur sans qu'elle n'interfère gravement avec sa vie quotidienne.",
+                        por: "<b>Dor leve</b><br>O paciente pode gerenciar a dor sem que ela interfira gravemente em sua vida diária.",
+                        deu: "<b>Leichter Schmerz</b><br>Der Patient kann den Schmerz bewältigen, ohne dass er erheblich in sein tägliches Leben eingreift."
+                    },
+                    h: true
+                },
+                {
+                    t: "t",
+                    d: {
+                        ita: "<b>Dolore moderato</b><br>Il dolore è presente in modo significativo e influisce su varie attività quotidiane e sulla qualità della vita.",
+                        eng: "<b>Moderate pain</b><br>The pain is significantly present and affects various daily activities and quality of life.",
+                        esp: "<b>Dolor moderado</b><br>El dolor está presente de manera significativa e influye en varias actividades diarias y en la calidad de vida.",
+                        fra: "<b>Douleur modérée</b><br>La douleur est significativement présente et affecte diverses activités quotidiennes et la qualité de vie.",
+                        por: "<b>Dor moderada</b><br>A dor está presente de maneira significativa e afeta várias atividades diárias e a qualidade de vida.",
+                        deu: "<b>Moderater Schmerz</b><br>Der Schmerz ist signifikant vorhanden und beeinträchtigt verschiedene tägliche Aktivitäten und die Lebensqualität."
+                    },
+                    h: true
+                },
+                {
+                    t: "t",
+                    d: {
+                        ita: "<b>Dolore forte o grave</b><br>Il dolore ha un impatto sostanziale sulla vita del paziente, limitando le attività e causando disagio emotivo e fisico.",
+                        eng: "<b>Severe pain</b><br>The pain has a substantial impact on the patient's life, limiting activities and causing emotional and physical distress.",
+                        esp: "<b>Dolor fuerte o grave</b><br>El dolor tiene un impacto sustancial en la vida del paciente, limitando las actividades y causando angustia emocional y física.",
+                        fra: "<b>Douleur forte ou grave</b><br>La douleur a un impact substantiel sur la vie du patient, limitant les activités et causant une détresse émotionnelle et physique.",
+                        por: "<b>Dor forte ou grave</b><br>A dor tem um impacto substancial na vida do paciente, limitando as atividades e causando desconforto emocional e físico.",
+                        deu: "<b>Starker oder schwerer Schmerz</b><br>Der Schmerz hat erhebliche Auswirkungen auf das Leben des Patienten, schränkt die Aktivitäten ein und verursacht emotionale und körperliche Belastung."
+                    },
+                    h: true
+                },
+                {
+                    t: "t",
+                    d: {
+                        ita: "<b>Dolore molto grave o insopportabile</b><br>Il paziente percepisce un dolore debilitante che limita la capacità di svolgere le attività quotidiane. Potrebbe essere descritto come un dolore estremo o distruttivo.",
+                        eng: "<b>Very severe or unbearable pain</b><br>The patient perceives debilitating pain that limits their ability to perform daily activities. It may be described as extreme or destructive pain.",
+                        esp: "<b>Dolor muy grave o insoportable</b><br>El paciente percibe un dolor debilitante que limita su capacidad para realizar actividades diarias. Podría describirse como un dolor extremo o destructivo.",
+                        fra: "<b>Douleur très grave ou insupportable</b><br>Le patient ressent une douleur débilitante qui limite sa capacité à effectuer des activités quotidiennes. Cela peut être décrit comme une douleur extrême ou destructrice.",
+                        por: "<b>Dor muito grave ou insuportável</b><br>O paciente percebe uma dor debilitante que limita sua capacidade de realizar atividades diárias. Pode ser descrita como uma dor extrema ou destrutiva.",
+                        deu: "<b>Sehr starker oder unerträglicher Schmerz</b><br>Der Patient empfindet debilitating Schmerzen, die seine Fähigkeit einschränken, tägliche Aktivitäten auszuführen. Es kann als extrem oder zerstörerisch beschrieben werden."
+                    },
+                    h: true
+                }                
+            ],
+            html:   '<div id="moduloSFMPQ">' +
+                    '   <div class="md_dida">[0]</div>' +
+                    '   <div id="sfmpq_lists" class="md_lists"><div>[1][2][3][4][5][6][7][8][9][10][11][12][13][14][15]</div></div>' +
+                    '   <div id="sfmpq_ppi">[16,d][16,0][16,1][16,2][16,3][16,4][16,5][16,6]</div>' +
+                    '   <div class="md_cont_total">' +
+                    '       <div class="md_label_total">[17]</div>' +
+                    '       <div id="sfmpq_total" class="md_total"></div>' +
+                    '   </div>' +
+                    '   <div id="sfmpq_descr" class="md_descr">' +
+                    '       <span id="sfmpq_1">[18]</span>' +
+                    '       <span id="sfmpq_2">[19]</span>' +
+                    '       <span id="sfmpq_3">[20]</span>' +
+                    '       <span id="sfmpq_4">[21]</span>' +
+                    '   </div>' +
+                    '</div>',
+            funct: function(){
+                // aggiorno il totale dei valori
+                let tot = 0,
+                    els = document.getElementById("moduloSFMPQ").getElementsByTagName("select");
+                for(e in els){
+                    if(els[e].selectedIndex>0)tot += parseInt(els[e].selectedIndex)-1;
+                }
+                els = document.getElementById("moduloSFMPQ").getElementsByTagName("input");
+                for(e in els){
+                    if(els[e].name == 'risposta17'){
+                        if(els[e].checked)tot += parseInt(e);
+                    }
+                }
+                document.getElementById("sfmpq_total").innerHTML = tot;
+                for(let o=1;o<=4;o++)document.getElementById("sfmpq_descr").classList.remove("vis"+o);
+                if(tot<=15)document.getElementById("sfmpq_descr").classList.add("vis1");
+                if(tot>15 && tot<=30)document.getElementById("sfmpq_descr").classList.add("vis2");
+                if(tot>30 && tot<=45)document.getElementById("sfmpq_descr").classList.add("vis3");
+                if(tot>45)document.getElementById("sfmpq_descr").classList.add("vis4");
+            }
+        },
+        "odi": {
+            title: {
+                ita: "Oswestry Disability Index (ODI)",
+                eng: "Oswestry Disability Index (ODI)",
+                esp: "Oswestry Disability Index (ODI)",
+                fra: "Oswestry Disability Index (ODI)",
+                por: "Oswestry Disability Index (ODI)",
+                deu: "Oswestry Disability Index (ODI)"
+            },
+            data: [
+                {
+                    t: "t",
+                    d: {
+                        ita: "Questo questionario è stato progettato per raccogliere informazioni su quanto i problemi alla schiena (o alla gamba) del paziente influenzino la sua capacità di svolgere le attività quotidiane. Si raccomanda al medico di assicurarsi che il paziente risponda a tutte le domande del questionario.",
+                        eng: "This questionnaire is designed to gather information on how the patient's back (or leg) issues affect their ability to perform daily activities. The physician is advised to ensure that the patient answers all the questions in the questionnaire.",
+                        esp: "Este cuestionario está diseñado para recopilar información sobre cómo los problemas de espalda (o de pierna) del paciente afectan su capacidad para realizar actividades diarias. Se recomienda al médico asegurarse de que el paciente responda a todas las preguntas del cuestionario.",
+                        fra: "Ce questionnaire a été conçu pour recueillir des informations sur la mesure dans laquelle les problèmes de dos (ou de jambe) du patient affectent sa capacité à effectuer des activités quotidiennes. Il est recommandé au médecin de s'assurer que le patient répond à toutes les questions du questionnaire.",
+                        por: "Este questionário foi projetado para coletar informações sobre como os problemas nas costas (ou na perna) do paciente afetam sua capacidade de realizar atividades diárias. O médico é aconselhado a garantir que o paciente responda a todas as perguntas do questionário.",
+                        deu: "Dieser Fragebogen wurde entwickelt, um Informationen darüber zu sammeln, wie die Rücken- (oder Bein-)Probleme des Patienten seine Fähigkeit beeinträchtigen, alltägliche Aktivitäten auszuführen. Es wird empfohlen, dass der Arzt sicherstellt, dass der Patient alle Fragen des Fragebogens beantwortet."
+                    }
+                },
+                {
+                    t: "r",
+                    d: {
+                        ita: "Intensità del dolore attuale",
+                        eng: "Current pain intensity",
+                        esp: "Intensidad del dolor actual",
+                        fra: "Intensité de la douleur actuelle",
+                        por: "Intensidade da dor atual",
+                        deu: "Aktuelle Schmerzintensität"
+                    },
+                    l: [
+                        {
+                            ita: "Nessuna",
+                            eng: "None",
+                            esp: "Ninguna",
+                            fra: "Aucune",
+                            por: "Nenhuma",
+                            deu: "Keine"
+                        },
+                        {
+                            ita: "Lieve",
+                            eng: "Mild",
+                            esp: "Leve",
+                            fra: "Léger",
+                            por: "Leve",
+                            deu: "Leicht"
+                        },
+                        {
+                            ita: "Media",
+                            eng: "Moderate",
+                            esp: "Moderado",
+                            fra: "Modéré",
+                            por: "Moderada",
+                            deu: "Mittel"
+                        },
+                        {
+                            ita: "Abbastanza forte",
+                            eng: "Fairly strong",
+                            esp: "Bastante fuerte",
+                            fra: "Assez fort",
+                            por: "Bastante forte",
+                            deu: "Ziemlich stark"
+                        },
+                        {
+                            ita: "Molto forte",
+                            eng: "Very strong",
+                            esp: "Muy fuerte",
+                            fra: "Très fort",
+                            por: "Muito forte",
+                            deu: "Sehr stark"
+                        },
+                        {
+                            ita: "Massima immaginabile",
+                            eng: "Maximum imaginable",
+                            esp: "Máximo imaginable",
+                            fra: "Maximum imaginable",
+                            por: "Máximo imaginável",
+                            deu: "Maximal vorstellbar"
+                        }
+                    ]
+                },
+                {
+                    t: "r",
+                    d: {
+                        ita: "Cura personale (lavarsi, vestirsi, ecc.)",
+                        eng: "Personal care (washing, dressing, etc.)",
+                        esp: "Cuidado personal (lavarse, vestirse, etc.)",
+                        fra: "Soins personnels (se laver, s'habiller, etc.)",
+                        por: "Cuidados pessoais (lavar-se, vestir-se, etc.)",
+                        deu: "Persönliche Pflege (Waschen, Ankleiden usw.)"
+                    },
+                    l: [
+                        {
+                            ita: "Riesce a prendersi cura di sé senza aumentare il dolore",
+                            eng: "Can take care of themselves without increasing pain",
+                            esp: "Puede cuidarse sin aumentar el dolor",
+                            fra: "Peut s'occuper de lui-même sans aggraver la douleur",
+                            por: "Consegue cuidar de si mesmo sem aumentar a dor",
+                            deu: "Kann sich selbst versorgen, ohne den Schmerz zu verstärken"
+                        },
+                        {
+                            ita: "Riesce a prendersi cura di sé ma ha molto dolore",
+                            eng: "Can take care of themselves but has a lot of pain",
+                            esp: "Puede cuidarse pero tiene mucho dolor",
+                            fra: "Peut s'occuper de lui-même mais a beaucoup de douleur",
+                            por: "Consegue cuidar de si mesmo, mas tem muita dor",
+                            deu: "Kann sich selbst versorgen, hat aber viel Schmerz"
+                        },
+                        {
+                            ita: "Fa male prendersi cura di sé, quindi è lento e prudente",
+                            eng: "It hurts to take care of oneself, so is slow and careful",
+                            esp: "Duele cuidarse, por lo que es lento y cuidadoso",
+                            fra: "Cela fait mal de prendre soin de soi, donc il est lent et prudent",
+                            por: "Dói cuidar de si mesmo, então é lento e cuidadoso",
+                            deu: "Es tut weh, sich selbst zu versorgen, also ist er langsam und vorsichtig"
+                        },
+                        {
+                            ita: "Ha bisogno di aiuto ma riesce per lo più a prendersi cura di sé",
+                            eng: "Needs help but mostly can take care of themselves",
+                            esp: "Necesita ayuda pero principalmente puede cuidarse",
+                            fra: "A besoin d'aide mais peut principalement s'occuper de lui-même",
+                            por: "Precisa de ajuda, mas na maioria das vezes consegue cuidar de si mesmo",
+                            deu: "Braucht Hilfe, kann sich aber größtenteils selbst versorgen"
+                        },
+                        {
+                            ita: "Ha bisogno di aiuto costante nel prendersi cura di sé",
+                            eng: "Needs constant help in taking care of themselves",
+                            esp: "Necesita ayuda constante para cuidarse",
+                            fra: "A besoin d'une aide constante pour s'occuper de lui-même",
+                            por: "Precisa de ajuda constante para cuidar de si mesmo",
+                            deu: "Braucht ständige Hilfe bei der Selbstversorgung"
+                        },
+                        {
+                            ita: "Non si veste, si lava con difficoltà e sta a letto",
+                            eng: "Does not dress, washes with difficulty, and stays in bed",
+                            esp: "No se viste, se lava con dificultad y permanece en la cama",
+                            fra: "Ne s'habille pas, se lave avec difficulté et reste au lit",
+                            por: "Não se veste, se lava com dificuldade e fica na cama",
+                            deu: "Zieht sich nicht an, wäscht sich mit Schwierigkeiten und bleibt im Bett"
+                        }
+                    ]
+                },
+                {
+                    t: "r",
+                    d: {
+                        ita: "Alzare pesi",
+                        eng: "Lifting weights",
+                        esp: "Levantamiento de pesas",
+                        fra: "Soulever des poids",
+                        por: "Levantamento de pesos",
+                        deu: "Gewichte heben"
+                    },
+                    l: [
+                        {
+                            ita: "Solleva oggetti pesanti senza accusare più dolore del solito",
+                            eng: "Lifts heavy objects without experiencing more pain than usual",
+                            esp: "Levanta objetos pesados sin experimentar más dolor de lo habitual",
+                            fra: "Soulève des objets lourds sans ressentir plus de douleur que d'habitude",
+                            por: "Levanta objetos pesados sem sentir mais dor do que o habitual",
+                            deu: "Hebt schwere Gegenstände, ohne mehr Schmerz als üblich zu verspüren"
+                        },
+                        {
+                            ita: "Solleva oggetti pesanti ma accusa più dolore del solito",
+                            eng: "Lifts heavy objects but feels more pain than usual",
+                            esp: "Levanta objetos pesados, pero siente más dolor de lo habitual",
+                            fra: "Soulève des objets lourds mais ressent plus de douleur que d'habitude",
+                            por: "Levanta objetos pesados, mas sente mais dor do que o habitual",
+                            deu: "Hebt schwere Gegenstände, verspürt aber mehr Schmerz als üblich"
+                        },
+                        {
+                            ita: "Il dolore gli impedisce di sollevare oggetti pesanti da terra",
+                            eng: "Pain prevents them from lifting heavy objects from the ground",
+                            esp: "El dolor le impide levantar objetos pesados del suelo",
+                            fra: "La douleur l'empêche de soulever des objets lourds du sol",
+                            por: "A dor impede-o de levantar objetos pesados do chão",
+                            deu: "Schmerzen hindern ihn daran, schwere Gegenstände vom Boden zu heben"
+                        },
+                        {
+                            ita: "Non riesce a sollevare da terra oggetti pesanti, solo quelli leggeri e ben posizionati",
+                            eng: "Cannot lift heavy objects from the ground, only light and well-positioned ones",
+                            esp: "No puede levantar objetos pesados del suelo, solo los ligeros y bien colocados",
+                            fra: "Ne peut pas soulever des objets lourds du sol, seulement ceux légers et bien placés",
+                            por: "Não consegue levantar objetos pesados do chão, apenas os leves e bem posicionados",
+                            deu: "Kann schwere Gegenstände vom Boden nicht heben, nur leichte und gut platzierte"
+                        },
+                        {
+                            ita: "Riesce a sollevare solo oggetti leggeri",
+                            eng: "Can only lift light objects",
+                            esp: "Solo puede levantar objetos ligeros",
+                            fra: "Ne peut soulever que des objets légers",
+                            por: "Só consegue levantar objetos leves",
+                            deu: "Kann nur leichte Gegenstände heben"
+                        },
+                        {
+                            ita: "Non riesce a trasportare praticamente niente",
+                            eng: "Can hardly carry anything",
+                            esp: "Prácticamente no puede transportar nada",
+                            fra: "Ne peut pratiquement rien porter",
+                            por: "Mal consegue carregar praticamente nada",
+                            deu: "Kann praktisch nichts tragen"
+                        }
+                    ]
+                },
+                {
+                    t: "r",
+                    d: {
+                        ita: "Camminare",
+                        eng: "Walking",
+                        esp: "Caminar",
+                        fra: "Marcher",
+                        por: "Caminhando",
+                        deu: "Gehen"
+                    },
+                    l: [
+                        {
+                            ita: "Percorre qualsiasi distanza",
+                            eng: "Can walk any distance",
+                            esp: "Puede caminar cualquier distancia",
+                            fra: "Peut marcher n'importe quelle distance",
+                            por: "Consegue caminhar qualquer distância",
+                            deu: "Kann jede Entfernung gehen"
+                        },
+                        {
+                            ita: "Non riesce a camminare per più di un chilometro",
+                            eng: "Cannot walk more than one kilometer",
+                            esp: "No puede caminar más de un kilómetro",
+                            fra: "Ne peut pas marcher plus d'un kilomètre",
+                            por: "Não consegue caminhar mais de um quilômetro",
+                            deu: "Kann nicht mehr als einen Kilometer gehen"
+                        },
+                        {
+                            ita: "Non riesce a camminare per più di 500 metri",
+                            eng: "Cannot walk more than 500 meters",
+                            esp: "No puede caminar más de 500 metros",
+                            fra: "Ne peut pas marcher plus de 500 mètres",
+                            por: "Não consegue caminhar mais de 500 metros",
+                            deu: "Kann nicht mehr als 500 Meter gehen"
+                        },
+                        {
+                            ita: "Non riesce a camminare per più di 100 metri",
+                            eng: "Cannot walk more than 100 meters",
+                            esp: "No puede caminar más de 100 metros",
+                            fra: "Ne peut pas marcher plus de 100 mètres",
+                            por: "Não consegue caminhar mais de 100 metros",
+                            deu: "Kann nicht mehr als 100 Meter gehen"
+                        },
+                        {
+                            ita: "Riesce a camminare solo con un supporto (bastone o stampelle)",
+                            eng: "Can walk only with support (cane or crutches)",
+                            esp: "Solo puede caminar con apoyo (bastón o muletas)",
+                            fra: "Ne peut marcher qu'avec un support (cane ou béquilles)",
+                            por: "Consegue caminhar apenas com suporte (bastão ou muletas)",
+                            deu: "Kann nur mit Unterstützung (Stock oder Krücken) gehen"
+                        },
+                        {
+                            ita: "Sta per lo più a letto e si trascina per andare in bagno",
+                            eng: "Mostly stays in bed and drags to the bathroom",
+                            esp: "Principalmente se queda en la cama y se arrastra al baño",
+                            fra: "Reste principalement au lit et se traîne jusqu'aux toilettes",
+                            por: "Fica principalmente na cama e se arrasta para ir ao banheiro",
+                            deu: "Verbringt die meiste Zeit im Bett und zieht sich ins Bad"
+                        }
+                    ]
+                },
+                {
+                    t: "r",
+                    d: {
+                        ita: "Stare seduto",
+                        eng: "Sitting",
+                        esp: "Sentado",
+                        fra: "Assis",
+                        por: "Sentado",
+                        deu: "Sitzend"
+                    },
+                    l: [
+                        {
+                            ita: "Sta seduto su qualsiasi sedia senza problemi",
+                            eng: "Sits on any chair without problems",
+                            esp: "Se sienta en cualquier silla sin problemas",
+                            fra: "S'assoit sur n'importe quelle chaise sans problème",
+                            por: "Senta-se em qualquer cadeira sem problemas",
+                            deu: "Sitzt auf jedem Stuhl ohne Probleme"
+                        },
+                        {
+                            ita: "Sta seduto senza problemi sulla sedia preferita",
+                            eng: "Sits comfortably in their preferred chair",
+                            esp: "Se sienta cómodamente en su silla favorita",
+                            fra: "S'assoit confortablement sur sa chaise préférée",
+                            por: "Senta-se confortavelmente na sua cadeira favorita",
+                            deu: "Sitzt bequem in seinem Lieblingsstuhl"
+                        },
+                        {
+                            ita: "Non riesce a stare seduto per più di un'ora",
+                            eng: "Cannot sit for more than one hour",
+                            esp: "No puede estar sentado más de una hora",
+                            fra: "Ne peut pas rester assis plus d'une heure",
+                            por: "Não consegue ficar sentado por mais de uma hora",
+                            deu: "Kann nicht länger als eine Stunde sitzen"
+                        },
+                        {
+                            ita: "Non riesce a stare seduto per più di mezz'ora",
+                            eng: "Cannot sit for more than half an hour",
+                            esp: "No puede estar sentado más de media hora",
+                            fra: "Ne peut pas rester assis plus de trente minutes",
+                            por: "Não consegue ficar sentado por mais de meia hora",
+                            deu: "Kann nicht länger als eine halbe Stunde sitzen"
+                        },
+                        {
+                            ita: "Non riesce a stare seduto per più di 10 minuti",
+                            eng: "Cannot sit for more than 10 minutes",
+                            esp: "No puede estar sentado más de 10 minutos",
+                            fra: "Ne peut pas rester assis plus de dix minutes",
+                            por: "Não consegue ficar sentado por mais de 10 minutos",
+                            deu: "Kann nicht länger als zehn Minuten sitzen"
+                        },
+                        {
+                            ita: "Il dolore impedisce del tutto di stare seduto",
+                            eng: "Pain completely prevents sitting",
+                            esp: "El dolor impide completamente sentarse",
+                            fra: "La douleur empêche complètement de s'asseoir",
+                            por: "A dor impede completamente de sentar-se",
+                            deu: "Schmerzen hindern ihn vollständig daran, zu sitzen"
+                        }
+                    ]
+                },
+                {
+                    t: "r",
+                    d: {
+                        ita: "Stare in piedi",
+                        eng: "Standing",
+                        esp: "De pie",
+                        fra: "Debout",
+                        por: "De pé",
+                        deu: "Stehen"
+                    },
+                    l: [
+                        {
+                            ita: "Sta in piedi per tutto il tempo desiderato senza problemi",
+                            eng: "Stands for as long as desired without issues",
+                            esp: "Se mantiene de pie todo el tiempo que desea sin problemas",
+                            fra: "Reste debout aussi longtemps qu'il le souhaite sans problème",
+                            por: "Fica em pé o tempo que desejar sem problemas",
+                            deu: "Steht so lange, wie er möchte, ohne Probleme"
+                        },
+                        {
+                            ita: "Sta in piedi per tutto il tempo desiderato, ma accusando dolore",
+                            eng: "Stands for as long as desired, but with pain",
+                            esp: "Se mantiene de pie todo el tiempo que desea, pero con dolor",
+                            fra: "Reste debout aussi longtemps qu'il le souhaite, mais avec douleur",
+                            por: "Fica em pé o tempo que desejar, mas com dor",
+                            deu: "Steht so lange, wie er möchte, aber mit Schmerz"
+                        },
+                        {
+                            ita: "Non riesce a stare in piedi per più di un'ora",
+                            eng: "Cannot stand for more than one hour",
+                            esp: "No puede estar de pie más de una hora",
+                            fra: "Ne peut pas rester debout plus d'une heure",
+                            por: "Não consegue ficar em pé por mais de uma hora",
+                            deu: "Kann nicht länger als eine Stunde stehen"
+                        },
+                        {
+                            ita: "Non riesce a stare in piedi per più di mezz'ora",
+                            eng: "Cannot stand for more than half an hour",
+                            esp: "No puede estar de pie más de media hora",
+                            fra: "Ne peut pas rester debout plus de trente minutes",
+                            por: "Não consegue ficar em pé por mais de meia hora",
+                            deu: "Kann nicht länger als eine halbe Stunde stehen"
+                        },
+                        {
+                            ita: "Non riesce a stare in piedi per più di 10 minuti",
+                            eng: "Cannot stand for more than 10 minutes",
+                            esp: "No puede estar de pie más de 10 minutos",
+                            fra: "Ne peut pas rester debout plus de dix minutes",
+                            por: "Não consegue ficar em pé por mais de 10 minutos",
+                            deu: "Kann nicht länger als zehn Minuten stehen"
+                        },
+                        {
+                            ita: "Il dolore impedisce del tutto di stare in piedi",
+                            eng: "Pain completely prevents standing",
+                            esp: "El dolor impide completamente estar de pie",
+                            fra: "La douleur empêche complètement de rester debout",
+                            por: "A dor impede completamente de ficar em pé",
+                            deu: "Schmerzen hindern ihn vollständig daran, zu stehen"
+                        }
+                    ]
+                },
+                {
+                    t: "r",
+                    d: {
+                        ita: "Dormire",
+                        eng: "Sleeping",
+                        esp: "Durmiendo",
+                        fra: "Dormir",
+                        por: "Dormindo",
+                        deu: "Schlafen"
+                    },
+                    l: [
+                        {
+                            ita: "Il dolore non disturba mai il sonno",
+                            eng: "Pain never disturbs sleep",
+                            esp: "El dolor nunca interfiere con el sueño",
+                            fra: "La douleur ne dérange jamais le sommeil",
+                            por: "A dor nunca atrapalha o sono",
+                            deu: "Schmerzen stören nie den Schlaf"
+                        },
+                        {
+                            ita: "Il dolore disturba il sonno ogni tanto",
+                            eng: "Pain occasionally disturbs sleep",
+                            esp: "El dolor interfiere con el sueño de vez en cuando",
+                            fra: "La douleur dérange le sommeil de temps en temps",
+                            por: "A dor atrapalha o sono de vez em quando",
+                            deu: "Schmerzen stören gelegentlich den Schlaf"
+                        },
+                        {
+                            ita: "Dorme meno di 6 ore a causa del dolore",
+                            eng: "Sleeps less than 6 hours due to pain",
+                            esp: "Duerme menos de 6 horas debido al dolor",
+                            fra: "Dort moins de 6 heures à cause de la douleur",
+                            por: "Dorme menos de 6 horas devido à dor",
+                            deu: "Schläft wegen Schmerzen weniger als 6 Stunden"
+                        },
+                        {
+                            ita: "Dorme meno di 4 ore a causa del dolore",
+                            eng: "Sleeps less than 4 hours due to pain",
+                            esp: "Duerme menos de 4 horas debido al dolor",
+                            fra: "Dort moins de 4 heures à cause de la douleur",
+                            por: "Dorme menos de 4 horas devido à dor",
+                            deu: "Schläft wegen Schmerzen weniger als 4 Stunden"
+                        },
+                        {
+                            ita: "Dorme meno di 2 ore a causa del dolore",
+                            eng: "Sleeps less than 2 hours due to pain",
+                            esp: "Duerme menos de 2 horas debido al dolor",
+                            fra: "Dort moins de 2 heures à cause de la douleur",
+                            por: "Dorme menos de 2 horas devido à dor",
+                            deu: "Schläft wegen Schmerzen weniger als 2 Stunden"
+                        },
+                        {
+                            ita: "Il dolore impedisce del tutto di dormire",
+                            eng: "Pain completely prevents sleeping",
+                            esp: "El dolor impide completamente dormir",
+                            fra: "La douleur empêche complètement de dormir",
+                            por: "A dor impede completamente de dormir",
+                            deu: "Schmerzen hindern ihn vollständig daran, zu schlafen"
+                        }
+                    ]
+                },
+                {
+                    t: "r",
+                    d: {
+                        ita: "Attività sessuale",
+                        eng: "Sexual activity",
+                        esp: "Actividad sexual",
+                        fra: "Activité sexuelle",
+                        por: "Atividade sexual",
+                        deu: "Sexuelle Aktivität"
+                    },
+                    l: [
+                        {
+                            ita: "Il dolore non disturba l'attività sessuale",
+                            eng: "Pain does not disturb sexual activity",
+                            esp: "El dolor no interfiere con la actividad sexual",
+                            fra: "La douleur ne dérange pas l'activité sexuelle",
+                            por: "A dor não atrapalha a atividade sexual",
+                            deu: "Schmerzen stören die sexuelle Aktivität nicht"
+                        },
+                        {
+                            ita: "Durante l'attività sessuale accusa dolore",
+                            eng: "Experiences pain during sexual activity",
+                            esp: "Siente dolor durante la actividad sexual",
+                            fra: "Ressent de la douleur pendant l'activité sexuelle",
+                            por: "Sente dor durante a atividade sexual",
+                            deu: "Hat Schmerzen während der sexuellen Aktivität"
+                        },
+                        {
+                            ita: "Durante l'attività sessuale accusa molto dolore",
+                            eng: "Experiences a lot of pain during sexual activity",
+                            esp: "Siente mucho dolor durante la actividad sexual",
+                            fra: "Ressent beaucoup de douleur pendant l'activité sexuelle",
+                            por: "Sente muita dor durante a atividade sexual",
+                            deu: "Hat während der sexuellen Aktivität sehr starke Schmerzen"
+                        },
+                        {
+                            ita: "L'attività è molto limitata dal dolore",
+                            eng: "Activity is greatly limited by pain",
+                            esp: "La actividad está muy limitada por el dolor",
+                            fra: "L'activité est fortement limitée par la douleur",
+                            por: "A atividade é muito limitada pela dor",
+                            deu: "Die Aktivität ist stark durch Schmerzen eingeschränkt"
+                        },
+                        {
+                            ita: "Il dolore impedisce quasi l'attività sessuale",
+                            eng: "Pain almost prevents sexual activity",
+                            esp: "El dolor casi impide la actividad sexual",
+                            fra: "La douleur empêche presque l'activité sexuelle",
+                            por: "A dor quase impede a atividade sexual",
+                            deu: "Schmerzen verhindern fast die sexuelle Aktivität"
+                        },
+                        {
+                            ita: "Il dolore impedisce del tutto l'attività sessuale",
+                            eng: "Pain completely prevents sexual activity",
+                            esp: "El dolor impide completamente la actividad sexual",
+                            fra: "La douleur empêche complètement l'activité sexuelle",
+                            por: "A dor impede completamente a atividade sexual",
+                            deu: "Schmerzen hindern ihn vollständig daran, sexuelle Aktivitäten durchzuführen"
+                        }
+                    ]
+                },
+                {
+                    t: "r",
+                    d: {
+                        ita: "Vita sociale",
+                        eng: "Social life",
+                        esp: "Vida social",
+                        fra: "Vie sociale",
+                        por: "Vida social",
+                        deu: "Soziales Leben"
+                    },
+                    l: [
+                        {
+                            ita: "La vita sociale non è disturbata dal dolore",
+                            eng: "Social life is not disturbed by pain",
+                            esp: "La vida social no se ve perturbada por el dolor",
+                            fra: "La vie sociale n'est pas perturbée par la douleur",
+                            por: "A vida social não é afetada pela dor",
+                            deu: "Das soziale Leben wird nicht durch Schmerzen gestört"
+                        },
+                        {
+                            ita: "La vita sociale è normale ma accusa dolore",
+                            eng: "Social life is normal but has pain",
+                            esp: "La vida social es normal pero siente dolor",
+                            fra: "La vie sociale est normale mais ressent de la douleur",
+                            por: "A vida social é normal, mas sente dor",
+                            deu: "Das soziale Leben ist normal, hat aber Schmerzen"
+                        },
+                        {
+                            ita: "Solo alcune attività che richiedono più energie vengono limitate dal dolore",
+                            eng: "Only some activities that require more energy are limited by pain",
+                            esp: "Solo algunas actividades que requieren más energía están limitadas por el dolor",
+                            fra: "Seules quelques activités nécessitant plus d'énergie sont limitées par la douleur",
+                            por: "Apenas algumas atividades que requerem mais energia são limitadas pela dor",
+                            deu: "Nur einige Aktivitäten, die mehr Energie erfordern, werden durch Schmerzen eingeschränkt"
+                        },
+                        {
+                            ita: "Il dolore limita la vita sociale e non esce quanto vorrebbe",
+                            eng: "Pain limits social life and does not go out as much as wanted",
+                            esp: "El dolor limita la vida social y no sale tanto como quisiera",
+                            fra: "La douleur limite la vie sociale et ne sort pas autant qu'il le souhaiterait",
+                            por: "A dor limita a vida social e não sai tanto quanto gostaria",
+                            deu: "Schmerzen schränken das soziale Leben ein und er kann nicht so oft ausgehen, wie er möchte"
+                        },
+                        {
+                            ita: "Il dolore limita la vita sociale all'ambiente domestico",
+                            eng: "Pain limits social life to the home environment",
+                            esp: "El dolor limita la vida social al entorno doméstico",
+                            fra: "La douleur limite la vie sociale à l'environnement domestique",
+                            por: "A dor limita a vida social ao ambiente doméstico",
+                            deu: "Schmerzen schränken das soziale Leben auf das häusliche Umfeld ein"
+                        },
+                        {
+                            ita: "Il dolore limita totalmente la vita sociale",
+                            eng: "Pain completely limits social life",
+                            esp: "El dolor limita completamente la vida social",
+                            fra: "La douleur limite complètement la vie sociale",
+                            por: "A dor limita totalmente a vida social",
+                            deu: "Schmerzen schränken das soziale Leben vollständig ein"
+                        }
+                    ]
+                },
+                {
+                    t: "r",
+                    d: {
+                        ita: "Viaggiare",
+                        eng: "Traveling",
+                        esp: "Viajar",
+                        fra: "Voyager",
+                        por: "Viajando",
+                        deu: "Reisen"
+                    },
+                    l: [
+                        {
+                            ita: "Riesce a viaggiare senza accusare dolore",
+                            eng: "Can travel without feeling pain",
+                            esp: "Puede viajar sin sentir dolor",
+                            fra: "Peut voyager sans ressentir de douleur",
+                            por: "Consegue viajar sem sentir dor",
+                            deu: "Kann reisen, ohne Schmerzen zu empfinden"
+                        },
+                        {
+                            ita: "Riesce a viaggiare ma accusa dolore",
+                            eng: "Can travel but feels pain",
+                            esp: "Puede viajar pero siente dolor",
+                            fra: "Peut voyager mais ressent de la douleur",
+                            por: "Consegue viajar, mas sente dor",
+                            deu: "Kann reisen, fühlt aber Schmerzen"
+                        },
+                        {
+                            ita: "Nonostante il dolore riesce a viaggiare per più di 2 ore",
+                            eng: "Can travel for more than 2 hours despite the pain",
+                            esp: "A pesar del dolor, puede viajar durante más de 2 horas",
+                            fra: "Peut voyager plus de 2 heures malgré la douleur",
+                            por: "Apesar da dor, consegue viajar por mais de 2 horas",
+                            deu: "Kann trotz Schmerzen mehr als 2 Stunden reisen"
+                        },
+                        {
+                            ita: "Il dolore non consente di viaggiare per più di un'ora",
+                            eng: "Pain does not allow traveling for more than one hour",
+                            esp: "El dolor no permite viajar más de una hora",
+                            fra: "La douleur ne permet pas de voyager plus d'une heure",
+                            por: "A dor não permite viajar por mais de uma hora",
+                            deu: "Schmerzen erlauben es nicht, mehr als eine Stunde zu reisen"
+                        },
+                        {
+                            ita: "Il dolore limita i viaggi a quelli necessari e di meno di 30 minuti",
+                            eng: "Pain limits travel to necessary trips of less than 30 minutes",
+                            esp: "El dolor limita los viajes a aquellos necesarios y de menos de 30 minutos",
+                            fra: "La douleur limite les voyages à ceux nécessaires et de moins de 30 minutes",
+                            por: "A dor limita as viagens às necessárias e de menos de 30 minutos",
+                            deu: "Schmerzen beschränken Reisen auf notwendige Reisen von weniger als 30 Minuten"
+                        },
+                        {
+                            ita: "Il dolore impedisce di viaggiare se non per le cure necessarie",
+                            eng: "Pain prevents traveling except for necessary medical care",
+                            esp: "El dolor impide viajar, excepto para cuidados médicos necesarios",
+                            fra: "La douleur empêche de voyager sauf pour des soins médicaux nécessaires",
+                            por: "A dor impede viajar, exceto para cuidados médicos necessários",
+                            deu: "Schmerzen hindern daran zu reisen, es sei denn, es handelt sich um notwendige medizinische Versorgung"
+                        }
+                    ]
+                },
+                {
+                    t: "e",
+                    d: {
+                        ita: "Risultato del test",
+                        eng: "Test result",
+                        esp: "Resultado del test",
+                        fra: "Résultat du test",
+                        por: "Resultado do teste",
+                        deu: "Testergebnis"
+                    },
+                    h: true
+                },
+                {
+                    t: "t",
+                    d: {
+                        ita: "Minima disabilità",
+                        eng: "Minimal disability",
+                        esp: "Discapacidad mínima",
+                        fra: "Handicap minimal",
+                        por: "Deficiência mínima",
+                        deu: "Minimale Behinderung"
+                    },
+                    h: true
+                },
+                {
+                    t: "t",
+                    d: {
+                        ita: "Moderata disabilità",
+                        eng: "Moderate disability",
+                        esp: "Discapacidad moderada",
+                        fra: "Handicap modéré",
+                        por: "Deficiência moderada",
+                        deu: "Mäßige Behinderung"
+                    },
+                    h: true
+                },
+                {
+                    t: "t",
+                    d: {
+                        ita: "Severa disabilità",
+                        eng: "Severe disability",
+                        esp: "Discapacidad severa",
+                        fra: "Handicap sévère",
+                        por: "Deficiência severa",
+                        deu: "Schwere Behinderung"
+                    },
+                    h: true
+                },
+                {
+                    t: "t",
+                    d: {
+                        ita: "Grave disabilità",
+                        eng: "Profound disability",
+                        esp: "Discapacidad grave",
+                        fra: "Handicap grave",
+                        por: "Deficiência grave",
+                        deu: "Schwerste Behinderung"
+                    },
+                    h: true
+                },
+                {
+                    t: "t",
+                    d: {
+                        ita: "Completa disabilità",
+                        eng: "Total disability",
+                        esp: "Discapacidad total",
+                        fra: "Handicap total",
+                        por: "Deficiência total",
+                        deu: "Vollständige Behinderung"
+                    },
+                    h: true
+                }                
+            ],
+            html:   '<div id="moduloODI">' +
+                    '   <div class="md_dida">[0]</div>' +
+                    '   <div id="odi_lists">' +
+                    '       <div class="odi_sez" id="odi_sez01">[1,d][1,0][1,1][1,2][1,3][1,4][1,5]</div>' +
+                    '       <div class="odi_sez" id="odi_sez02">[2,d][2,0][2,1][2,2][2,3][2,4][2,5]</div>' +
+                    '       <div class="odi_sez" id="odi_sez03">[3,d][3,0][3,1][3,2][3,3][3,4][3,5]</div>' +
+                    '       <div class="odi_sez" id="odi_sez04">[4,d][4,0][4,1][4,2][4,3][4,4][4,5]</div>' +
+                    '       <div class="odi_sez" id="odi_sez05">[5,d][5,0][5,1][5,2][5,3][5,4][5,5]</div>' +
+                    '       <div class="odi_sez" id="odi_sez06">[6,d][6,0][6,1][6,2][6,3][6,4][6,5]</div>' +
+                    '       <div class="odi_sez" id="odi_sez07">[7,d][7,0][7,1][7,2][7,3][7,4][7,5]</div>' +
+                    '       <div class="odi_sez" id="odi_sez08">[8,d][8,0][8,1][8,2][8,3][8,4][8,5]</div>' +
+                    '       <div class="odi_sez" id="odi_sez09">[9,d][9,0][9,1][9,2][9,3][9,4][9,5]</div>' +
+                    '       <div class="odi_sez" id="odi_sez10">[10,d][10,0][10,1][10,2][10,3][10,4][10,5]</div>' +
+                    '   </div>' +
+                    '   <div class="md_cont_total largo">' +
+                    '       <div class="md_label_total">[11]</div>' +
+                    '       <div id="odi_total" class="md_total">' +
+                    '           <span id="odi_ris_1">[12]</span>' +
+                    '           <span id="odi_ris_2">[13]</span>' +
+                    '           <span id="odi_ris_3">[14]</span>' +
+                    '           <span id="odi_ris_4">[15]</span>' +
+                    '           <span id="odi_ris_5">[16]</span>' +
+                    '       </div>' +
+                    '   </div>' +
+                    '</div>',
+            funct: function(){
+                // aggiorno il totale dei valori
+                let tot = 0,
+                    sezs = document.getElementById("moduloODI").getElementsByClassName("odi_sez"),
+                    cmpls = 0;
+                    html = '';
+                for(let s=0;s<sezs.length;s++){
+                    let els = sezs[s].getElementsByTagName("INPUT");
+                    for(let e=0;e<els.length;e++){
+                        if(els[e].checked){
+                            tot += e;
+                            cmpls++;
+                        }
+                    }
+                }
+                if(cmpls>=9){
+                    let max = cmpls*5,
+                        perc = (tot/max)*100;
+                    for(let o=1;o<=5;o++)document.getElementById("odi_total").classList.remove("odi_ris"+o);
+                    if(perc<=20)document.getElementById("odi_total").classList.add("odi_ris1");
+                    if(perc>20 && perc<=40)document.getElementById("odi_total").classList.add("odi_ris2");
+                    if(perc>40 && perc<=60)document.getElementById("odi_total").classList.add("odi_ris3");
+                    if(perc>60 && perc<=80)document.getElementById("odi_total").classList.add("odi_ris4");
+                    if(perc>80)document.getElementById("odi_total").classList.add("odi_ris5");
+                }
+                
+            }
+        },
+        "bpi": {
+            title: {
+                ita: "Brief Pain Inventory (BPI)",
+                eng: "Brief Pain Inventory (BPI)",
+                esp: "Brief Pain Inventory (BPI)",
+                fra: "Brief Pain Inventory (BPI)",
+                por: "Brief Pain Inventory (BPI)",
+                deu: "Brief Pain Inventory (BPI)"
+            },
+            data: [
+                {
+                    t: "t",
+                    d: {
+                        ita: "La Brief Pain Inventory (BPI) è uno strumento utilizzato per misurare l'intensità del dolore e l'impatto che il dolore ha sulla vita quotidiana del paziente. Originariamente sviluppato per i pazienti oncologici, è ampiamente utilizzato anche per altre condizioni dolorose croniche. Il BPI consente ai medici di comprendere non solo la gravità del dolore, ma anche come esso interferisce con diverse aree funzionali.",
+                        eng: "The Brief Pain Inventory (BPI) is a tool used to measure pain intensity and the impact that pain has on a patient's daily life. Originally developed for cancer patients, it is widely used for other chronic pain conditions as well. The BPI allows healthcare providers to understand not only the severity of pain but also how it interferes with various functional areas.",
+                        esp: "El Inventario Breve de Dolor (BPI) es una herramienta utilizada para medir la intensidad del dolor y el impacto que el dolor tiene en la vida diaria del paciente. Originalmente desarrollado para pacientes con cáncer, también se utiliza ampliamente para otras condiciones de dolor crónico. El BPI permite a los proveedores de atención médica comprender no solo la gravedad del dolor, sino también cómo interfiere con diversas áreas funcionales.",
+                        fra: "L'Inventaire de la douleur abrégé (BPI) est un outil utilisé pour mesurer l'intensité de la douleur et l'impact que la douleur a sur la vie quotidienne du patient. À l'origine développé pour les patients atteints de cancer, il est également largement utilisé pour d'autres affections douloureuses chroniques. Le BPI permet aux professionnels de santé de comprendre non seulement la gravité de la douleur, mais aussi comment elle interfère avec différentes zones fonctionnelles.",
+                        por: "O Inventário Breve da Dor (BPI) é uma ferramenta usada para medir a intensidade da dor e o impacto que a dor tem na vida diária do paciente. Originalmente desenvolvido para pacientes com câncer, é amplamente utilizado também para outras condições de dor crônica. O BPI permite que os profissionais de saúde compreendam não apenas a gravidade da dor, mas também como ela interfere em várias áreas funcionais.",
+                        deu: "Das Brief Pain Inventory (BPI) ist ein Instrument zur Messung der Schmerzintensität und der Auswirkungen, die der Schmerz auf das tägliche Leben des Patienten hat. Ursprünglich für Krebspatienten entwickelt, wird es auch häufig für andere chronische Schmerzzustände verwendet. Das BPI ermöglicht es den Gesundheitsdienstleistern, nicht nur die Schwere des Schmerzes zu verstehen, sondern auch, wie dieser in verschiedenen Funktionsbereichen interferiert."
+                    }
+                },
+                {
+                    t: "e",
+                    d: {
+                        ita: "Valutazione dell'intensità del dolore",
+                        eng: "Pain intensity assessment",
+                        esp: "Evaluación de la intensidad del dolor",
+                        fra: "Évaluation de l'intensité de la douleur",
+                        por: "Avaliação da intensidade da dor",
+                        deu: "Schmerzmessung"
+                    }
+                },
+                {
+                    t: "s",
+                    d: {
+                        ita: "Il più forte nelle ultime 24 ore",
+                        eng: "The worst in the last 24 hours",
+                        esp: "El más fuerte en las últimas 24 horas",
+                        fra: "Le plus fort au cours des dernières 24 heures",
+                        por: "O mais forte nas últimas 24 horas",
+                        deu: "Der stärkste Schmerz in den letzten 24 Stunden"
+                    },
+                    l: "rates"
+                },
+                {
+                    t: "s",
+                    d: {
+                        ita: "Il più lieve nelle ultime 24 ore",
+                        eng: "The mildest in the last 24 hours",
+                        esp: "El más leve en las últimas 24 horas",
+                        fra: "Le plus léger au cours des dernières 24 heures",
+                        por: "O mais leve nas últimas 24 horas",
+                        deu: "Der mildeste Schmerz in den letzten 24 Stunden"
+                    },
+                    l: "rates"
+                },
+                {
+                    t: "s",
+                    d: {
+                        ita: "Intensità media nelle ultime 24 ore",
+                        eng: "Average intensity in the last 24 hours",
+                        esp: "Intensidad media en las últimas 24 horas",
+                        fra: "Intensité moyenne au cours des dernières 24 heures",
+                        por: "Intensidade média nas últimas 24 horas",
+                        deu: "Durchschnittliche Intensität in den letzten 24 Stunden"
+                    },
+                    l: "rates"
+                },
+                {
+                    t: "s",
+                    d: {
+                        ita: "Quantità di dolore in questo momento",
+                        eng: "Amount of pain right now",
+                        esp: "Cantidad de dolor en este momento",
+                        fra: "Quantité de douleur en ce moment",
+                        por: "Quantidade de dor neste momento",
+                        deu: "Schmerzmenge gerade jetzt"
+                    },
+                    l: "rates"
+                },
+                {
+                    t: "e",
+                    d: {
+                        ita: "Localizzazione del dolore",
+                        eng: "Location of pain",
+                        esp: "Localización del dolor",
+                        fra: "Localisation de la douleur",
+                        por: "Localização da dor",
+                        deu: "Schmerzlokalisierung"
+                    }
+                },
+                {
+                    t: "d",
+                    d: {
+                        ita: "Localizzazione",
+                        eng: "Location",
+                        esp: "Localización",
+                        fra: "Localisation",
+                        por: "Localização",
+                        deu: "Standort"
+                    }
+                },
+                {
+                    t: "e",
+                    d: {
+                        ita: "Impatto del dolore sulle attività quotidiane",
+                        eng: "Impact of pain on daily activities",
+                        esp: "Impacto del dolor en las actividades diarias",
+                        fra: "Impact de la douleur sur les activités quotidiennes",
+                        por: "Impacto da dor nas atividades diárias",
+                        deu: "Auswirkungen von Schmerz auf tägliche Aktivitäten"
+                    }
+                },
+                {
+                    t: "s",
+                    d: {
+                        ita: "Attività generali",
+                        eng: "General activities",
+                        esp: "Actividades generales",
+                        fra: "Activités générales",
+                        por: "Atividades gerais",
+                        deu: "Allgemeine Aktivitäten"
+                    },
+                    l: "rates"
+                },
+                {
+                    t: "s",
+                    d: {
+                        ita: "Umore",
+                        eng: "Mood",
+                        esp: "Estado de ánimo",
+                        fra: "Humeur",
+                        por: "Humor",
+                        deu: "Stimmung"
+                    },
+                    l: "rates"
+                },
+                {
+                    t: "s",
+                    d: {
+                        ita: "Capacità di camminare o muoversi",
+                        eng: "Ability to walk or move",
+                        esp: "Capacidad para caminar o moverse",
+                        fra: "Capacité à marcher ou à bouger",
+                        por: "Capacidade de andar ou se mover",
+                        deu: "Fähigkeit zu gehen oder sich zu bewegen"
+                    },
+                    l: "rates"
+                },
+                {
+                    t: "s",
+                    d: {
+                        ita: "Lavoro o attività scolastiche",
+                        eng: "Work or school activities",
+                        esp: "Trabajo o actividades escolares",
+                        fra: "Travail ou activités scolaires",
+                        por: "Trabalho ou atividades escolares",
+                        deu: "Arbeit oder Schulaktivitäten"
+                    },
+                    l: "rates"
+                },
+                {
+                    t: "s",
+                    d: {
+                        ita: "Relazioni personali",
+                        eng: "Personal relationships",
+                        esp: "Relaciones personales",
+                        fra: "Relations personnelles",
+                        por: "Relações pessoais",
+                        deu: "Persönliche Beziehungen"
+                    },
+                    l: "rates"
+                },
+                {
+                    t: "s",
+                    d: {
+                        ita: "Sonno",
+                        eng: "Sleep",
+                        esp: "Sueño",
+                        fra: "Sommeil",
+                        por: "Sono",
+                        deu: "Schlaf"
+                    },
+                    l: "rates"
+                },
+                {
+                    t: "s",
+                    d: {
+                        ita: "Provare piacere o godersi la vita",
+                        eng: "Enjoying life or having fun",
+                        esp: "Disfrutar de la vida o divertirse",
+                        fra: "Profiter de la vie ou s'amuser",
+                        por: "Aproveitar a vida ou divertir-se",
+                        deu: "Das Leben genießen oder Spaß haben"
+                    },
+                    l: "rates"
+                },
+                {
+                    t: "e",
+                    d: {
+                        ita: "Terapie o farmaci",
+                        eng: "Therapies or medications",
+                        esp: "Terapias o medicamentos",
+                        fra: "Thérapies ou de médicaments",
+                        por: "Terapias ou medicamentos",
+                        deu: "Therapien oder Medikamenten"
+                    }
+                },
+                {
+                    t: "d",
+                    d: {
+                        ita: "Terapie o farmaci assunti nelle ultime 24 ore",
+                        eng: "Therapies or medications taken in the last 24 hours",
+                        esp: "Terapias o medicamentos tomados en las últimas 24 horas",
+                        fra: "Thérapies ou médicaments pris au cours des dernières 24 heures",
+                        por: "Terapias ou medicamentos tomados nas últimas 24 horas",
+                        deu: "In den letzten 24 Stunden eingenommene Therapien oder Medikamente"
+                    }
+                },
+                {
+                    t: "s",
+                    d: {
+                        ita: "Sollievo avuto",
+                        eng: "Relief obtained",
+                        esp: "Alivio obtenido",
+                        fra: "Soulagement obtenu",
+                        por: "Alívio obtido",
+                        deu: "Erzielte Erleichterung"
+                    },
+                    l: "rates_perc"
+                },
+                {
+                    t: "e",
+                    d: {
+                        ita: "Risultato del test",
+                        eng: "Test result",
+                        esp: "Resultado del test",
+                        fra: "Résultat du test",
+                        por: "Resultado do teste",
+                        deu: "Testergebnis"
+                    },
+                    h: true
+                }
+            ],
+            html:   '<div id="moduloBPI">' +
+                    '   <div class="md_dida">[0]</div>' +
+                    '   <div id="bpi_lists" class="md_lists">' +
+                    '       <div id="bpi_intensita">[1][2][3][4][5]</div>' +
+                    '       <div id="bpi_impatto">[8][9][10][11][12][13][14][15]</div>' +
+                    '       <div id="bpi_farmaci">[16][17][18]</div>' +
+                    '       <div id="bpi_localizzazione">[6][7]</div>' +
+                    '   </div>' +
+                    '   <div class="md_cont_total">' +
+                    '       <div class="md_label_total">[19]</div>' +
+                    '       <div id="bpi_total" class="md_total">' +
+                    '           <div><span id="bpi_ris_intensita"></span></div>' +
+                    '           <div><span id="bpi_ris_impatto"></span></div>' +
+                    '       </div>' +
+                    '   </div>' +
+                    '</div>',
+            funct: function(){
+                // aggiorno il totale dei valori
+                let tot = 0,
+                    totIntensita = 0,
+                    totImpatto = 0,
+                    nIntensita = 0,
+                    nImpatto = 0,
+                    mediaIntensita = 0,
+                    mediaImpatto = 0,
+                    risIntensita = 0,
+                    risImpatto = 0,
+                    els = document.getElementById("bpi_intensita").getElementsByTagName("SELECT"),
+                    htmlIntensita = '-',
+                    htmlImpatto = '-';
+                for(let e=0;e<els.length;e++){
+                    if(els[e].selectedIndex>0){
+                        totIntensita += els[e].selectedIndex-1;
+                        nIntensita++;
+                    }
+                }
+                els = document.getElementById("bpi_impatto").getElementsByTagName("SELECT");
+                for(let e=0;e<els.length;e++){
+                    if(els[e].selectedIndex>0){
+                        totImpatto += els[e].selectedIndex-1;
+                        nImpatto++;
+                    }
+                }
+                mediaIntensita = parseInt(totIntensita/nIntensita);
+                if(mediaIntensita<2)risIntensita = 0;
+                if(mediaIntensita>=2 && mediaIntensita<5)risIntensita = 1;
+                if(mediaIntensita>=5 && mediaIntensita<8)risIntensita = 2;
+                if(mediaIntensita>=8)risIntensita = 3;
+                if(nIntensita)htmlIntensita = moduliValutazione.liste.ris_intensita[risIntensita][globals.siglaLingua];
+                mediaImpatto = parseInt(totImpatto/nImpatto);
+                if(mediaImpatto<2)risImpatto = 0;
+                if(mediaImpatto>=2 && mediaImpatto<5)risImpatto = 1;
+                if(mediaImpatto>=5 && mediaImpatto<8)risImpatto = 2;
+                if(mediaImpatto>=8)risImpatto = 3;
+                if(nImpatto)htmlImpatto = moduliValutazione.liste.ris_impatto[risImpatto][globals.siglaLingua];
+                document.getElementById("bpi_ris_intensita").innerHTML = htmlIntensita;
+                document.getElementById("bpi_ris_impatto").innerHTML = htmlImpatto;
+                
+            }
+        },
+        "mondor": {
+            title: {
+                ita: "Test antitabacco di Mondor (motivazione)",
+                eng: "Mondor Anti-Smoking Test (motivation)",
+                esp: "Prueba antitabaco de Mondor (motivación)",
+                fra: "Test anti-tabac de Mondor (motivation)",
+                por: "Teste Antifumo de Mondor (motivação)",
+                deu: "Mondor-Anti-Raucher-Test (Motivation) "
+            },
+            data: [
+                {
+                    t: "t",
+                    d: {
+                        ita: "Questo test è utile a valutare il livello di motivazione a smettere di fumare.",
+                        eng: "This test is useful to assess the level of motivation to quit smoking.",
+                        esp: "Esta prueba es útil para evaluar el nivel de motivación para dejar de fumar.",
+                        fra: "Ce test est utile pour évaluer le niveau de motivation à arrêter de fumer.",
+                        por: "Este teste é útil para avaliar o nível de motivação para parar de fumar.",
+                        deu: "Dieser Test ist nützlich, um den Grad der Motivation, mit dem Rauchen aufzuhören, zu beurteilen."
+                    }
+                },
+                {
+                    t: "s",
+                    d: {
+                        ita: "Ho deciso di presentarmi spontaneamente",
+                        eng: "I have decided to undergo spontaneously",
+                        esp: "Decidí presentarme voluntariamente",
+                        fra: "J'ai décidé de subir spontanément",
+                        por: "Eu decidi me submeter espontaneamente",
+                        deu: "Ich habe mich spontan dazu entschieden, mich zu unterziehen"
+                    },
+                    l: "si_no"
+                },
+                {
+                    t: "s",
+                    d: {
+                        ita: "Ho già smesso di fumare per più di una settimana",
+                        eng: "I have already quit smoking for more than a week",
+                        esp: "Ya dejé de fumar por más de una semana",
+                        fra: "J'ai déjà arrêté de fumer depuis plus d'une semaine",
+                        por: "Eu já parei de fumar por mais de uma semana",
+                        deu: "Ich habe bereits seit mehr als einer Woche mit dem Rauchen aufgehört"
+                    },
+                    l: "si_no"
+                },
+                {
+                    t: "s",
+                    d: {
+                        ita: "Attualmente non ho problemi sul lavoro",
+                        eng: "Currently, I have no problems at work",
+                        esp: "Actualmente no tengo problemas en el trabajo",
+                        fra: "Actuellement, je n'ai aucun problème au travail",
+                        por: "Atualmente, não tenho problemas no trabalho",
+                        deu: "Derzeit habe ich keine Probleme bei der Arbeit"
+                    },
+                    l: "si_no"
+                },
+                {
+                    t: "s",
+                    d: {
+                        ita: "Attualmente non ho problemi sul piano familiare",
+                        eng: "Currently, I have no problems on the family front",
+                        esp: "Actualmente no tengo problemas en el ámbito familiar",
+                        fra: "Actuellement, je n'ai aucun problème sur le plan familial",
+                        por: "Atualmente, não tenho problemas na frente familiar",
+                        deu: "Derzeit habe ich keine familiären Probleme"
+                    },
+                    l: "si_no"
+                },
+                {
+                    t: "s",
+                    d: {
+                        ita: "Mi voglio liberare da questa schiavitù",
+                        eng: "I want to free myself from this addiction",
+                        esp: "Quiero liberarme de esta esclavitud",
+                        fra: "Je veux me libérer de cette dépendance",
+                        por: "Eu quero me livrar desse vício",
+                        deu: "Ich möchte mich von dieser Sucht befreien"
+                    },
+                    l: "si_no"
+                },
+                {
+                    t: "s",
+                    d: {
+                        ita: "Pratico dello sport/ho intenzione di praticarlo",
+                        eng: "I practice sports/have the intention to practice",
+                        esp: "Practico deporte/tengo intención de practicarlo",
+                        fra: "Je fais du sport/ai l'intention de pratiquer",
+                        por: "Pratico esportes/tenho a intenção de praticar",
+                        deu: "Ich treibe Sport/habe die Absicht, Sport zu treiben"
+                    },
+                    l: "si_no"
+                },
+                {
+                    t: "s",
+                    d: {
+                        ita: "Voglio raggiungere una forma fisica migliore",
+                        eng: "I want to improve my physical fitness",
+                        esp: "Quiero alcanzar una mejor forma física",
+                        fra: "Je veux améliorer ma condition physique",
+                        por: "Quero melhorar meu condicionamento físico",
+                        deu: "Ich möchte meine körperliche Fitness verbessern"
+                    },
+                    l: "si_no"
+                },
+                {
+                    t: "s",
+                    d: {
+                        ita: "Voglio curare il mio aspetto fisico",
+                        eng: "I want to take care of my physical appearance",
+                        esp: "Quiero cuidar mi apariencia física",
+                        fra: "Je veux prendre soin de mon apparence physique",
+                        por: "Quero cuidar da minha aparência física",
+                        deu: "Ich möchte auf mein äußeres Erscheinungsbild achten"
+                    },
+                    l: "si_no"
+                },
+                {
+                    t: "s",
+                    d: {
+                        ita: "Sono incinta/Mia moglie è incinta",
+                        eng: "I am pregnant/My wife is pregnant",
+                        esp: "Estoy embarazada/Mi esposa está embarazada",
+                        fra: "Je suis enceinte/Ma femme est enceinte",
+                        por: "Estou grávida/minha esposa está grávida",
+                        deu: "Ich bin schwanger/Meine Frau ist schwanger"
+                    },
+                    l: "si_no"
+                },
+                {
+                    t: "s",
+                    d: {
+                        ita: "Ho dei bambini piccoli",
+                        eng: "I have young children",
+                        esp: "Tengo hijos pequeños",
+                        fra: "J'ai de jeunes enfants",
+                        por: "Eu tenho filhos pequenos",
+                        deu: "Ich habe kleine Kinder"
+                    },
+                    l: "si_no"
+                },
+                {
+                    t: "s",
+                    d: {
+                        ita: "Attualmente sono di buon umore",
+                        eng: "Currently, I am in a good mood",
+                        esp: "Actualmente estoy de buen humor",
+                        fra: "Actuellement, je suis de bonne humeur",
+                        por: "Atualmente, estou de bom humor",
+                        deu: "Momentan bin ich gut gelaunt"
+                    },
+                    l: "si_no"
+                },
+                {
+                    t: "s",
+                    d: {
+                        ita: "Di solito porto a termine quello che intraprendo",
+                        eng: "I usually follow through on what I start",
+                        esp: "Normalmente termino lo que comienzo",
+                        fra: "Je suis généralement ce que je commence",
+                        por: "Eu costumo seguir o que eu começo",
+                        deu: "Normalerweise folge ich dem, was ich anfange"
+                    },
+                    l: "si_no"
+                },
+                {
+                    t: "s",
+                    d: {
+                        ita: "Sono di temperamento calmo e disteso",
+                        eng: "I have a calm and relaxed temperament",
+                        esp: "Soy de temperamento tranquilo y relajado",
+                        fra: "J'ai un tempérament calme et détendu",
+                        por: "Eu tenho um temperamento calmo e relaxado",
+                        deu: "Ich habe ein ruhiges und entspanntes Temperament"
+                    },
+                    l: "si_no"
+                },
+                {
+                    t: "s",
+                    d: {
+                        ita: "Il mio peso è abitualmente stabile",
+                        eng: "My weight is usually stable",
+                        esp: "Mi peso suele mantenerse estable",
+                        fra: "Mon poids est généralement stable",
+                        por: "Meu peso geralmente é estável",
+                        deu: "Mein Gewicht ist normalerweise stabil"
+                    },
+                    l: "si_no"
+                },
+                {
+                    t: "s",
+                    d: {
+                        ita: "Voglio migliorare la qualità della mia vita",
+                        eng: "I want to improve the quality of my life",
+                        esp: "Quiero mejorar la calidad de mi vida",
+                        fra: "Je veux améliorer ma qualité de vie",
+                        por: "Quero melhorar a qualidade da minha vida",
+                        deu: "Ich möchte meine Lebensqualität verbessern"
+                    },
+                    l: "si_no"
+                },
+                {
+                    t: "e",
+                    d: {
+                        ita: "Risultato del test",
+                        eng: "Test result",
+                        esp: "Resultado del test",
+                        fra: "Résultat du test",
+                        por: "Resultado do teste",
+                        deu: "Testergebnis"
+                    },
+                    h: true
+                }
+            ],
+            html:   '<div id="moduloMONDOR">' +
+                    '   <div class="md_dida">[0]</div>' +
+                    '   <div id="mondor_lists" class="md_lists"><div>[1][2][3][4][5][6][7][8][9][10][11][12][13][14][15]</div></div>' +
+                    '   <div class="md_cont_total largo">' +
+                    '       <div class="md_label_total">[16]</div>' +
+                    '       <div id="mondor_total" class="md_total"></div>' +
+                    '   </div>' +
+                    '</div>',
+            funct: function(){
+                // aggiorno il totale dei valori
+                let tot = 0,
+                    els = document.getElementById("moduloMONDOR").getElementsByTagName("select"),
+                    vals = [2,1,1,1,2,1,1,1,2,2,1,1,1,1,1],
+                    ris = -1,
+                    html = '';
+                for(let e=0;e<els.length;e++){
+                    if(els[e].selectedIndex==1)tot += vals[e];
+                }
+                if(tot){
+                    if(tot<6)ris = 0;
+                    if(tot>=6 && tot<12)ris = 1;
+                    if(tot>=12 && tot<16)ris = 2;
+                    if(tot>=16)ris = 3;
+                    for(let e in moduliValutazione.liste.ris_motivazione){
+                        if(e == ris)html = moduliValutazione.liste.ris_motivazione[e][globals.siglaLingua]
+                    }
+                }
+                document.getElementById("mondor_total").innerHTML = html;
+            }
+        },
+        "fagerstrom": {
+            title: {
+                ita: "Test antitabacco di Fagerström (dipendenza)",
+                eng: "Fagerström Anti-Smoking Test (dependence)",
+                esp: "Prueba antitabaco de Fagerström (dependencia)",
+                fra: "Test anti-tabac de Fagerström (dépendance)",
+                por: "Teste Antifumo de Fagerström (dependência)",
+                deu: "Fagerström-Anti-Raucher-Test (Abhängigkeit) "
+            },
+            data: [
+                {
+                    t: "t",
+                    d: {
+                        ita: "Questo test è necessario per definire il grado di dipendenza dal fumo.",
+                        eng: "This test is necessary to determine the degree of dependence on smoking.",
+                        esp: "Esta prueba es necesaria para determinar el grado de dependencia del tabaco.",
+                        fra: "Ce test est nécessaire pour déterminer le degré de dépendance au tabagisme.",
+                        por: "Este teste é necessário para determinar o grau de dependência do tabagismo.",
+                        deu: "Dieser Test ist notwendig, um den Grad der Rauchabhängigkeit festzustellen."
+                    }
+                },
+                {
+                    t: "s",
+                    d: {
+                        ita: "Quanto tempo dopo il risveglio accende la prima sigaretta?",
+                        eng: "How soon after waking up do you smoke your first cigarette?",
+                        esp: "¿Cuánto tiempo después de despertar enciende su primer cigarrillo?",
+                        fra: "Combien de temps après le réveil fumez-vous votre première cigarette ?",
+                        por: "Quanto tempo depois de acordar você fuma seu primeiro cigarro?",
+                        deu: "Wie kurz nach dem Aufwachen rauchen Sie Ihre erste Zigarette?"
+                    },
+                    l: [
+                        {
+                            ita: "",
+                            eng: "",
+                            esp: "",
+                            fra: "",
+                            por: "",
+                            deu: ""
+                        },
+                        {
+                            ita: "Entro 5 minuti",
+                            eng: "Within 5 minutes",
+                            esp: "En menos de 5 minutos",
+                            fra: "Dans les 5 minutes",
+                            por: "Dentro de 5 minutos",
+                            deu: "Innerhalb von 5 Minuten"
+                        },
+                        {
+                            ita: "Dopo 6-30 minuti",
+                            eng: "After 6-30 minutes",
+                            esp: "Después de 6-30 minutos",
+                            fra: "Après 6-30 minutes",
+                            por: "Após 6-30 minutos",
+                            deu: "Nach 6-30 Minuten"
+                        },
+                        {
+                            ita: "Dopo 31-60 minuti",
+                            eng: "After 31-60 minutes",
+                            esp: "Después de 31-60 minutos",
+                            fra: "Après 31-60 minutes",
+                            por: "Após 31-60 minutos",
+                            deu: "Nach 31-60 Minuten"
+                        },
+                        {
+                            ita: "Dopo 60 minuti",
+                            eng: "After 60 minutes",
+                            esp: "Después de 60 minutos",
+                            fra: "Après 60 minutes",
+                            por: "Após 60 minutos",
+                            deu: "Nach 60 Minuten"
+                        }
+                    ]
+                },
+                {
+                    t: "s",
+                    d: {
+                        ita: "Fa fatica a non fumare nei luoghi in cui è proibito?",
+                        eng: "Do you have difficulty not smoking in places where it is prohibited?",
+                        esp: "¿Le cuesta no fumar en lugares donde está prohibido?",
+                        fra: "Vous avez de la difficulté à ne pas fumer dans les endroits où c'est interdit ?",
+                        por: "Você tem dificuldade em não fumar em locais onde é proibido?",
+                        deu: "Fällt es Ihnen schwer, an Orten, an denen es verboten ist, nicht zu rauchen?"
+                    },
+                    l: "si_no"
+                },
+                {
+                    t: "s",
+                    d: {
+                        ita: "A quale sigaretta le costa di più rinunciare?",
+                        eng: "Which cigarette would you find the hardest to give up?",
+                        esp: "¿A qué cigarrillo le cuesta más renunciar?",
+                        fra: "Quelle cigarette auriez-vous le plus de mal à abandonner?",
+                        por: "Qual cigarro você acharia mais difícil de largar?",
+                        deu: "Auf welche Zigarette würden Sie am schwersten verzichten?"
+                    },
+                    l: [
+                        {
+                            ita: "",
+                            eng: "",
+                            esp: "",
+                            fra: "",
+                            por: "",
+                            deu: ""
+                        },
+                        {
+                            ita: "La prima del mattino",
+                            eng: "The first one in the morning",
+                            esp: "Al primero de la mañana",
+                            fra: "Le premier du matin",
+                            por: "A primeira da manhã",
+                            deu: "Der Erste am Morgen"
+                        },
+                        {
+                            ita: "Tutte le altre",
+                            eng: "All the others",
+                            esp: "A todos los demás",
+                            fra: "Tous les autres",
+                            por: "Todos os outros",
+                            deu: "All die anderen"
+                        }
+                    ]
+                },
+                {
+                    t: "s",
+                    d: {
+                        ita: "Quante sigarette fuma al giorno?",
+                        eng: "How many cigarettes do you smoke per day?",
+                        esp: "¿Cuántos cigarrillos fuma al día?",
+                        fra: "Combien de cigarettes fumez-vous par jour ?",
+                        por: "Quantos cigarros você fuma por dia?",
+                        deu: "Wie viele Zigaretten rauchen Sie pro Tag?"
+                    },
+                    l: [
+                        {
+                            ita: "",
+                            eng: "",
+                            esp: "",
+                            fra: "",
+                            por: "",
+                            deu: ""
+                        },
+                        {
+                            ita: "10 o meno",
+                            eng: "10 or less",
+                            esp: "Menos de 11",
+                            fra: "10 ou moins",
+                            por: "10 ou menos",
+                            deu: "10 oder weniger"
+                        },
+                        {
+                            ita: "Da 11 a 20",
+                            eng: "From 11 to 20",
+                            esp: "De 11 a 20",
+                            fra: "De 11 à 20",
+                            por: "De 11 a 20",
+                            deu: "Von 11 bis 20"
+                        },
+                        {
+                            ita: "Da 21 a 30",
+                            eng: "From 21 to 30",
+                            esp: "De 21 a 30",
+                            fra: "Du 21 au 30",
+                            por: "De 21 a 30",
+                            deu: "Von 21 bis 30"
+                        },
+                        {
+                            ita: "31 o più",
+                            eng: "31 or more",
+                            esp: "31 o más",
+                            fra: "31 ou plus",
+                            por: "31 ou mais",
+                            deu: "31 oder mehr"
+                        }
+                    ]
+                },
+                {
+                    t: "s",
+                    d: {
+                        ita: "Fuma più frequentemente durante la prima ora dal risveglio che durante il resto del giorno?",
+                        eng: "Do you smoke more frequently during the first hour after waking up than during the rest of the day?",
+                        esp: "¿Fuma con mayor frecuencia durante la primera hora después de despertar que durante el resto del día?",
+                        fra: "Fumez-vous plus fréquemment pendant la première heure après le réveil que pendant le reste de la journée?",
+                        por: "Você fuma com mais frequência na primeira hora depois de acordar do que no resto do dia?",
+                        deu: "Rauchen Sie in der ersten Stunde nach dem Aufwachen häufiger als im Rest des Tages?"
+                    },
+                    l: "si_no"
+                },
+                {
+                    t: "s",
+                    d: {
+                        ita: "Fuma anche quando è così malato da passare a letto la maggior parte del giorno?",
+                        eng: "Do you smoke even when you are so sick that you are confined to bed for most of the day?",
+                        esp: "¿Fuma incluso cuando está tan enfermo/a que pasa la mayor parte del día en la cama?",
+                        fra: "Fumez-vous même lorsque vous êtes tellement malade que vous êtes confiné au lit la majeure partie de la journée?",
+                        por: "Você fuma mesmo quando está tão doente que fica confinado à cama a maior parte do dia?",
+                        deu: "Rauchen Sie, auch wenn Sie so krank sind, dass Sie den größten Teil des Tages ans Bett gefesselt sind?"
+                    },
+                    l: "si_no"
+                },
+                {
+                    t: "e",
+                    d: {
+                        ita: "Risultato del test",
+                        eng: "Test result",
+                        esp: "Resultado del test",
+                        fra: "Résultat du test",
+                        por: "Resultado do teste",
+                        deu: "Testergebnis"
+                    },
+                    h: true
+                }
+            ],
+            html:   '<div id="moduloFAGERSTROM">' +
+                    '   <div class="md_dida">[0]</div>' +
+                    '   <div id="fagerstrom_lists" class="md_lists"><div>[1][2][3][4][5][6]</div></div>' +
+                    '   <div class="md_cont_total largo">' +
+                    '       <div class="md_label_total">[7]</div>' +
+                    '       <div id="fagerstrom_total" class="md_total"></div>' +
+                    '   </div>' +
+                    '</div>',
+            funct: function(){
+                // aggiorno il totale dei valori
+                let tot = 0,
+                    els = document.getElementById("moduloFAGERSTROM").getElementsByTagName("select"),
+                    vals = [
+                        [3,2,1,0],
+                        [1,0],
+                        [1,0],
+                        [0,1,2,3],
+                        [1,0],
+                        [1,0]
+                    ],
+                    ris = -1,
+                    html = '';
+                for(let e=0;e<els.length;e++){
+                    if(els[e].selectedIndex>0)tot += vals[e][els[e].selectedIndex-1];
+                }
+                if(tot){
+                    if(tot<3)ris = 0;
+                    if(tot>=3 && tot<6)ris = 0;
+                    if(tot>=6 && tot<8)ris = 2;
+                    if(tot>=8)ris = 3;
+                    for(let e in moduliValutazione.liste.ris_dipendenza){
+                        if(e == ris)html = moduliValutazione.liste.ris_dipendenza[e][globals.siglaLingua]
+                    }
+                }
+                document.getElementById("fagerstrom_total").innerHTML = html;
             }
         }
 

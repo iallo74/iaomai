@@ -9586,7 +9586,7 @@ DB.set = {
                     ]
                 },
                 {
-                    "d": "eu tenho filhos pequenos",
+                    "d": "Eu tenho filhos pequenos",
                     "r": [
                         {
                             "t": "Sim",

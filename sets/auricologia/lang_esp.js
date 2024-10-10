@@ -9559,7 +9559,7 @@ DB.set = {
 			],
 			"ris": {
 				0: "Escasa motivación",
-				6: "Buena motivación",
+				6: "Motivación decente",
 				12: "Buena motivación",
 				16: "Alta motivación"
 			}

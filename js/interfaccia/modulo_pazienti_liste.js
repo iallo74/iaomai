@@ -476,7 +476,7 @@ var PAZIENTI_LISTE = {
 	},
 	selezionaTag: function( t=0 ){
 		let globalTags = PAZIENTI.getTags();
-		JSNPUSH={	"idTag": id*1,
+		JSNPUSH={	"idTag": -1,
 					"NomeTag": globalTags[t].NomeTag.trim(),
 					"colore": globalTags[t].colore };
 			
