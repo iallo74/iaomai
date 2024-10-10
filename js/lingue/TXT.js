@@ -2375,6 +2375,14 @@ DB.TXT = {
             por: "Nome do módulo",
             deu: "Modulname"
         },
+        CategorieModulo: {
+            ita: "Categorie",
+            eng: "Categories",
+            esp: "Categorías",
+            fra: "Catégories",
+            por: "Categorias",
+            deu: "Kategorien"
+        },
 
         // PAZIENTI
         // menu

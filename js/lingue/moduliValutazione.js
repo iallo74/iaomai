@@ -35,44 +35,88 @@ var moduliValutazione = {
     */
     categorie: {
         mtc: {
-            ita: "MTC",
-            eng: "TCM",
-            esp: "MTC",
-            fra: "MTC",
-            por: "MTC",
-            deu: "TCM"
+            ct: {
+                ita: "MTC",
+                eng: "TCM",
+                esp: "MTC",
+                fra: "MTC",
+                por: "MTC",
+                deu: "TCM"
+            },
+            sc: {
+                osservazione: {
+                    ita: "Osservazione",
+                    eng: "",
+                    esp: "",
+                    fra: "",
+                    por: "",
+                    deu: ""
+                },
+                ascolto: {
+                    ita: "Ascolto",
+                    eng: "",
+                    esp: "",
+                    fra: "",
+                    por: "",
+                    deu: ""
+                },
+                interrogazione: {
+                    ita: "Interrogazione",
+                    eng: "",
+                    esp: "",
+                    fra: "",
+                    por: "",
+                    deu: ""
+                },
+                palpazione: {
+                    ita: "Palpazione",
+                    eng: "",
+                    esp: "",
+                    fra: "",
+                    por: "",
+                    deu: ""
+                }
+            }
         },
         shiatsu: {
-            ita: "Shiatsu",
-            eng: "Shiatsu",
-            esp: "Shiatsu",
-            fra: "Shiatsu",
-            por: "Shiatsu",
-            deu: "Shiatsu"
+            ct: {
+                ita: "Shiatsu",
+                eng: "Shiatsu",
+                esp: "Shiatsu",
+                fra: "Shiatsu",
+                por: "Shiatsu",
+                deu: "Shiatsu"
+            }
         },
         pain: {
-            ita: "Dolore",
-            eng: "Pain",
-            esp: "Dolor",
-            fra: "Douleur",
-            por: "Dor",
-            deu: "Schmerz"
+            ct: {
+                ita: "Dolore",
+                eng: "Pain",
+                esp: "Dolor",
+                fra: "Douleur",
+                por: "Dor",
+                deu: "Schmerz"
+            }
         },
         auriculo:  {
-            ita: "Auricolo-terapia",
-            eng: "Auriculotherapy",
-            esp: "Auriculoterapia",
-            fra: "Auriculothérapie",
-            por: "Auriculoterapia",
-            deu: "Auriculotherapie"
+            ct: {
+                ita: "Auricolo-terapia",
+                eng: "Auriculotherapy",
+                esp: "Auriculoterapia",
+                fra: "Auriculothérapie",
+                por: "Auriculoterapia",
+                deu: "Auriculotherapie"
+            }
         } ,
         custom:  { // per i moduli personali
-            ita: "I tuoi moduli",
-            eng: "Your forms",
-            esp: "Tus formularios",
-            fra: "Vos formulaires",
-            por: "Seus formulários",
-            deu: "Ihre Formulare"
+            ct: {
+                ita: "I tuoi moduli",
+                eng: "Your forms",
+                esp: "Tus formularios",
+                fra: "Vos formulaires",
+                por: "Seus formulários",
+                deu: "Ihre Formulare"
+            }
         }        
     },
     liste: {
@@ -370,29 +414,29 @@ var moduliValutazione = {
                 deu: ""
             },
             {
-                ita: "V",
-                eng: "D",
-                esp: "D",
-                fra: "D",
-                por: "D",
-                deu: "M"
+                ita: "VUOTO",
+                eng: "DEFICIENCY",
+                esp: "DEFICIENCIA",
+                fra: "DÉFICIT",
+                por: "DEFICIÊNCIA",
+                deu: "MANGEL"
             },
             {
-                ita: "P",
-                eng: "E",
-                esp: "E",
-                fra: "E",
-                por: "E",
-                deu: "Ü"
+                ita: "PIENO",
+                eng: "EXCESS",
+                esp: "EXCESO",
+                fra: "EXCÈS",
+                por: "EXCESSO",
+                deu: "ÜBERFLUSS"
             },
             {
-                ita: "X",
-                eng: "X",
-                esp: "X",
-                fra: "X",
-                por: "X",
-                deu: "X"
-            }                      
+                ita: "DOLORANTE",
+                eng: "PAINFUL",
+                esp: "DOLOROSO",
+                fra: "DOULEUREUX",
+                por: "DOLOROSO",
+                deu: "SCHMERZHAFT"
+            }             
         ],
         rates: [
             "",
@@ -630,6 +674,7 @@ var moduliValutazione = {
     modelli: {
         "mtc_lingua_sintetica": {
             category: "mtc",
+            subcategory: "osservazione",
             title: {
                 "ita": "Valutazione MTC Lingua (sintetica)",
                 "eng": "TCM Tongue Assessment (concise)",
@@ -762,6 +807,7 @@ var moduliValutazione = {
         },
         "mtc_lingua_analitica": {
             category: "mtc",
+            subcategory: "osservazione",
             title: {
                 "ita": "Valutazione MTC Lingua (analitica)",
                 "eng": "TCM Tongue Assessment (analytical)",
@@ -1178,6 +1224,7 @@ var moduliValutazione = {
         },
         "mtc_polsi": {
             category: "mtc",
+            subcategory: "osservazione",
             title: {
                 ita: "Valutazione MTC Polsi",
                 eng: "TCM Pulse Assessment",
@@ -1422,6 +1469,7 @@ var moduliValutazione = {
         },
         "mtc_viso": {
             category: "mtc",
+            subcategory: "osservazione",
             title: {
                 ita: "Valutazione MTC Viso",
                 eng: "TCM Face Assessment",
@@ -1590,6 +1638,7 @@ var moduliValutazione = {
         },
         "mtc_occhi": {
             category: "mtc",
+            subcategory: "osservazione",
             title: {
                 ita: "Valutazione MTC Occhi",
                 eng: "TCM Eye Assessment",
@@ -1758,6 +1807,7 @@ var moduliValutazione = {
         },
         "mtc_capelli": {
             category: "mtc",
+            subcategory: "osservazione",
             title: {
                 ita: "Valutazione MTC Capelli",
                 eng: "TCM Hair Assessment",
@@ -1954,6 +2004,7 @@ var moduliValutazione = {
         },
         "mtc_pelle": {
             category: "mtc",
+            subcategory: "osservazione",
             title: {
                 ita: "Valutazione MTC Pelle",
                 eng: "TCM Skin Assessment",
@@ -2130,6 +2181,7 @@ var moduliValutazione = {
         },
         "mtc_postura": {
             category: "mtc",
+            subcategory: "osservazione",
             title: {
                 ita: "Valutazione MTC Corpo e Postura",
                 eng: "TCM Body and Posture Assessment",
@@ -2387,6 +2439,7 @@ var moduliValutazione = {
         },
         "mtc_mani": {
             category: "mtc",
+            subcategory: "osservazione",
             title: {
                 ita: "Valutazione MTC Mani e Unghie",
                 eng: "TCM Hands and Nails Assessment",
@@ -2689,6 +2742,7 @@ var moduliValutazione = {
         },
         "mtc_denti": {
             category: "mtc",
+            subcategory: "osservazione",
             title: {
                 ita: "Valutazione MTC Gengive e Denti",
                 eng: "TCM Gums and Teeth Assessment",
@@ -3692,71 +3746,83 @@ var moduliValutazione = {
                     '   <div id="shiatsu_legenda">[30][31][32]</div>' +
                     '   <div id="md_hara">' +
                     '       <div>' +
-                    '           <div class="md_HT">[0]</div>' +
+                    '           <div class="md_HT"><span></span>[0]</div>' +
                     '       </div>' +
                     '       <div>' +
-                    '           <div class="md_GB">[4]</div>' +
-                    '           <div class="md_ST">[6]</div>' +
+                    '           <div class="md_GB"><span></span>[4]</div>' +
+                    '           <div class="md_ST"><span></span>[6]</div>' +
                     '       </div>' +
                     '       <div>' +
-                    '           <div class="md_LR">[5]</div>' +
-                    '           <div class="md_PC">[1]</div>' +
-                    '           <div class="md_TE">[7]</div>' +
+                    '           <div class="md_LR"><span></span>[5]</div>' +
+                    '           <div class="md_PC"><span></span>[1]</div>' +
+                    '           <div class="md_TE"><span></span>[7]</div>' +
                     '       </div>' +
                     '       <div>' +
-                    '           <div class="md_LUdx">[8]</div>' +
-                    '           <div class="md_LUsx">[9]</div>' +
+                    '           <div class="md_LUdx"><span></span>[8]</div>' +
+                    '           <div class="md_LUsx"><span></span>[9]</div>' +
                     '       </div>' +
                     '       <div>' +
-                    '           <div class="md_SPup">[2]</div>' +
+                    '           <div class="md_SPup"><span></span>[2]</div>' +
                     '       </div>' +
                     '       <div>' +
-                    '           <div class="md_LIdx">[10]</div>' +
-                    '           <div class="md_SPdown">[3]</div>' +
-                    '           <div class="md_LIsx">[11]</div>' +
+                    '           <div class="md_LIdx"><span></span>[10]</div>' +
+                    '           <div class="md_SPdown"><span></span>[3]</div>' +
+                    '           <div class="md_LIsx"><span></span>[11]</div>' +
                     '       </div>' +
                     '       <div>' +
-                    '           <div class="md_SIdx">[14]</div>' +
-                    '           <div class="md_KI">[13]</div>' +
-                    '           <div class="md_SIsx">[15]</div>' +
+                    '           <div class="md_SIdx"><span></span>[14]</div>' +
+                    '           <div class="md_KI"><span></span>[13]</div>' +
+                    '           <div class="md_SIsx"><span></span>[15]</div>' +
                     '       </div>' +
                     '       <div>' +
-                    '           <div class="md_BL">[12]</div>' +
+                    '           <div class="md_BL"><span></span>[12]</div>' +
                     '       </div>' +
                     '   </div>' +
                     '   <div id="md_schiena">' +
                     '       <div>' +
-                    '           <div class="md_LU">[16]</div>' +
+                    '           <div class="md_LU"><span></span>[16]</div>' +
                     '       </div>' +
                     '       <div>' +
-                    '           <div class="md_HT">[17]</div>' +
+                    '           <div class="md_HT"><span></span>[17]</div>' +
                     '       </div>' +
                     '       <div>' +
-                    '           <div class="md_ST">[24]</div>' +
-                    '           <div class="md_PC">[18]</div>' +
+                    '           <div class="md_ST"><span></span>[24]</div>' +
+                    '           <div class="md_LR"><span></span>[27]</div>' +
                     '       </div>' +
                     '       <div>' +
-                    '           <div class="md_LR">[27]</div>' +
-                    '           <div class="md_TE">[25]</div>' +
-                    '           <div class="md_GB">[26]</div>' +
+                    '           <div class="md_TE"><span></span>[25]</div>' +
+                    '           <div class="md_PC"><span></span>[18]</div>' +
+                    '           <div class="md_GB"><span></span>[26]</div>' +
                     '       </div>' +
                     '       <div>' +
-                    '           <div class="md_SP">[19]</div>' +
+                    '           <div class="md_SP"><span></span>[19]</div>' +
                     '       </div>' +
                     '       <div>' +
-                    '           <div class="md_SIsx">[20]</div>' +
-                    '           <div class="md_SIdx">[21]</div>' +
+                    '           <div class="md_SIsx"><span></span>[20]</div>' +
+                    '           <div class="md_SIdx"><span></span>[21]</div>' +
                     '       </div>' +
                     '       <div>' +
-                    '           <div class="md_LIsx">[29]</div>' +
-                    '           <div class="md_KI">[22]</div>' +
-                    '           <div class="md_LIdx">[28]</div>' +
+                    '           <div class="md_LIsx"><span></span>[28]</div>' +
+                    '           <div class="md_KI"><span></span>[22]</div>' +
+                    '           <div class="md_LIdx"><span></span>[29]</div>' +
                     '       </div>' +
                     '       <div>' +
-                    '           <div class="md_BL">[23]</div>' +
+                    '           <div class="md_BL"><span></span>[23]</div>' +
                     '       </div>' +
                     '   </div>' +
-                    '</div>'
+                    '</div>',
+            funct: function(){
+                let els = '';
+                for(let d of ["hara","schiena"]){
+                    els = document.getElementById("md_"+d).getElementsByTagName("SELECT");
+                    for(let e=0;e<els.length;e++){
+                        let val = '';
+                        if(els[e].selectedIndex==3)val = 'X';
+                        else if(els[e].selectedIndex>0)val = els[e].options[els[e].selectedIndex].innerText.substr(0,1);
+                        els[e].parentElement.parentElement.parentElement.getElementsByTagName("SPAN")[0].innerHTML = val;
+                    }
+                }
+            }
         },
         "pdi": {
             category: "pain",
@@ -7214,7 +7280,6 @@ var moduliValutazione = {
                 document.getElementById("fagerstrom_total").innerHTML = html;
             }
         }
-
     }
 
 };

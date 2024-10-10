@@ -2159,6 +2159,28 @@ body:not(.touch) #puntiTrigger .dettPunto:hover{
     vertical-align: middle;
 	margin-top:-4px;
 }
+.gr_ret_short{
+    width: calc(100% - 240px) !important;
+}
+#gr_sw_cat{
+	background-image: url(../img/ico_listW.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 28px;
+    height: 28px;
+    display: inline-block;
+    vertical-align: top;
+    margin: 1px;
+    border-left: 1px solid rgba(255, 255, 255, 0.2);
+	float:right;
+	cursor:pointer;
+}
+#gr_sw_cat:hover{
+	background-color:rgba(255,255,255,0.1);
+}
+#gr_sw_cat.list{
+	background-image: url(../img/ico_categoryW.png) !important;
+}
 #gr_ret_ric{
 	background-image: url(../img/lenteB.png);
     background-repeat: no-repeat;

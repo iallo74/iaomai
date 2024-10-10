@@ -1,7 +1,10 @@
 var PAZIENTI_MODULI = { // extend PAZIENTI
 	
+	tipoElencoModuli: '',
+
 	// moduli valutazione
 	swImportaModuli: function(){ // visualizza/nasconde il menu dell'elenco moduli da improtare
+		PAZIENTI.tipoElencoModuli = '';
 		if(!document.getElementById("gruppoPunti_cont").classList.contains("visSch")){
 			rimuoviLoading(document.getElementById("scheda_testo"));
 			applicaLoading(document.getElementById("scheda_testo"),'vuoto');
@@ -27,48 +30,72 @@ var PAZIENTI_MODULI = { // extend PAZIENTI
 			document.getElementById("gruppoPunti_cont").classList.remove("visSch");
 		}
 	},
-	popolaCategorieModuli: function( category='' ){
+	popolaCategorieModuli: function( category='', subcategory='' ){
 		let HTML = '',
-			HTML_provv = '';
-		if(!category){
+			HTML_provv = '',
+			livello = '0',
+			livelloGr = '0';
+		if(!category && !PAZIENTI.tipoElencoModuli){
+			livelloGr = '1';
 			for(m in moduliValutazione.categorie){
 				HTML_provv += '<div class="gr_btn"' +
 						'	  id="gr_btn_'+m+'"' +
 						'	  onClick="PAZIENTI.popolaCategorieModuli(\''+m+'\')">' +
-						'	<b>'+moduliValutazione.categorie[m][globals.siglaLingua]+'</b>' +
+						'	<b>'+moduliValutazione.categorie[m].ct[globals.siglaLingua]+'</b>' +
 						'</div>';
 			}
 		}else{
-			if(category!='custom'){
-				for(m in moduliValutazione.modelli){
-					let pass = true;
-					for(let p in PAZIENTI.moduliProvvisori){
-						if(PAZIENTI.moduliProvvisori[p].id == m)pass=false;
-					}
-					if(moduliValutazione.modelli[m].category!=category)pass = false;
-					if(pass)HTML_provv += 	'<label class="gr_3"' +
-											'	  	for="gr_btn_'+m+'">' +
-											'	<input 	type="checkbox"' +
-											'			id="gr_btn_'+m+'"' +
-											'			value="'+m+'"' +
-											'			data-type="system">' +
-											'	<b>'+moduliValutazione.modelli[m].title[globals.siglaLingua]+'</b>' +
-											'</label>';
+			let sc = {};
+			if(category)sc = __(moduliValutazione.categorie[category].sc,{});
+			if(!subcategory && Object.keys(sc).length>0 && !PAZIENTI.tipoElencoModuli){
+				livello = '1';
+				livelloGr = '1';
+				for(m in moduliValutazione.categorie[category].sc){
+					HTML_provv += 	'<div class="gr_btn"' +
+									'	  id="gr_btn_'+m+'"' +
+									'	  onClick="PAZIENTI.popolaCategorieModuli(\''+category+'\',\''+m+'\')">' +
+									'	<b>'+moduliValutazione.categorie[category].sc[m][globals.siglaLingua]+'</b>' +
+									'</div>';
 				}
+
 			}else{
-				for(m in DB.moduli.data){
-					let pass = true;
-					for(let p in PAZIENTI.moduliProvvisori){
-						if(PAZIENTI.moduliProvvisori[p].id == m)pass=false;
+				livello = '2';
+				livelloGr = '2';
+				if(category!='custom'){
+					for(m in moduliValutazione.modelli){
+						let pass = true,
+							sc = __(moduliValutazione.modelli[m].subcategory);
+						for(let p in PAZIENTI.moduliProvvisori){
+							if(PAZIENTI.moduliProvvisori[p].id == m)pass=false;
+						}
+						if(PAZIENTI.tipoElencoModuli!='elenco'){
+							if(moduliValutazione.modelli[m].category.indexOf(category)==-1)pass = false;
+							if(sc.indexOf(subcategory)==-1)pass = false;
+						}
+						if(pass)HTML_provv += 	'<label class="gr_3"' +
+												'	  	for="gr_btn_'+m+'">' +
+												'	<input 	type="checkbox"' +
+												'			id="gr_btn_'+m+'"' +
+												'			value="'+m+'"' +
+												'			data-type="system">' +
+												'	<b>'+moduliValutazione.modelli[m].title[globals.siglaLingua]+'</b>' +
+												'</label>';
 					}
-					if(pass)HTML_provv += 	'<label class="gr_3"' +
-											'	  	for="gr_btn_'+m+'">' +
-											'	<input 	type="checkbox"' +
-											'			id="gr_btn_'+m+'"' +
-											'			value="'+m+'"' +
-											'			data-type="custom">' +
-											'	<b>'+DB.moduli.data[m].NomeModulo+'</b>' +
-											'</label>';
+				}else{
+					for(m in DB.moduli.data){
+						let pass = true;
+						for(let p in PAZIENTI.moduliProvvisori){
+							if(PAZIENTI.moduliProvvisori[p].id == m)pass=false;
+						}
+						if(pass)HTML_provv += 	'<label class="gr_3"' +
+												'	  	for="gr_btn_'+m+'">' +
+												'	<input 	type="checkbox"' +
+												'			id="gr_btn_'+m+'"' +
+												'			value="'+m+'"' +
+												'			data-type="custom">' +
+												'	<b>'+DB.moduli.data[m].NomeModulo+'</b>' +
+												'</label>';
+					}
 				}
 			}
 		}
@@ -77,19 +104,42 @@ var PAZIENTI_MODULI = { // extend PAZIENTI
 		HTML = 	'<div class="gr_tit">' +
 					htmlEntities(TXT("ImportaModulo")) +
 				'	<span onClick="PAZIENTI.swImportaModuli();"></span>' +
-				'</div>';
-		if(category){
-			HTML += '<div class="gr_ret">' +
-					'	<div class="gr_ret_img" onclick="PAZIENTI.popolaCategorieModuli();"></div>' +
-					'	<div class="gr_ret_txt">'+moduliValutazione.categorie[category][globals.siglaLingua]+'</div>' +
-					'	<input id="gr_ret_ric" onkeyup="PAZIENTI.filtraGruppoPunti();">' +
-					'</div>';
+				'</div>' +
+				'<div class="gr_ret">';
+				
+		if(livello=='0' || PAZIENTI.tipoElencoModuli)HTML += 	'	<div id="gr_sw_cat" onClick="PAZIENTI.swCatModuli();"'+(PAZIENTI.tipoElencoModuli?' class="list"':'')+'></div>';
+		let tit = ' '+TXT("CategorieModulo");
+		if(!PAZIENTI.tipoElencoModuli && category){
+			HTML += '	<div class="gr_ret_img" onclick="PAZIENTI.popolaCategorieModuli(' +
+					( subcategory ? "\'"+category+"\'" : '' ) +
+					');"></div>';
+			tit = moduliValutazione.categorie[category].ct[globals.siglaLingua];
+			if(subcategory)tit += ' - '+moduliValutazione.categorie[category].sc[subcategory][globals.siglaLingua];
+			
 		}
-		HTML += '<div class="gr_'+(category?'2':'0')+'">' +
-				HTML_provv +
+		HTML += '	<div class="gr_ret_txt'+((PAZIENTI.tipoElencoModuli || category) ? ' gr_re_short' : '')+'"' +
+					((!PAZIENTI.tipoElencoModuli && category) ? '' : ' style="padding-left:10px;"')+
+					'>'+tit+'</div>';
+		if(PAZIENTI.tipoElencoModuli || category){
+			HTML += '	<input id="gr_ret_ric" onkeyup="PAZIENTI.filtraGruppoPunti();">';
+		}
+		HTML += '</div>' +
+				'<div class="gr_'+livelloGr+'">' +
+					HTML_provv +
 				'</div>';
-		if(category)HTML += '<div class="gr_imp"><span id="grImporta" onclick="PAZIENTI.importaModuli();">'+TXT("Importa").toUpperCase()+'</span></div>';
+		if(livello=='2')HTML +=	'<div class="gr_imp">' +
+								'	<span id="grSelAll" onClick="PAZIENTI.ptGruppoSelAll(this);">' +
+										htmlEntities(TXT("SelezionaTutti")) +
+								'	</span>' +
+								'	<span id="grImporta" onclick="PAZIENTI.importaModuli();">' +
+										TXT("Importa").toUpperCase() +
+								'	</span>' +
+								'</div>';
 		document.getElementById("gruppoPunti_cont").innerHTML = HTML;
+	},
+	swCatModuli: function(){
+		PAZIENTI.tipoElencoModuli = PAZIENTI.tipoElencoModuli?'':'elenco';
+		PAZIENTI.popolaCategorieModuli();
 	},
 	importaModuli: function(){ // importa un modulo di valutazione della scheda trattamento
 		let els = document.getElementById("gruppoPunti_cont").getElementsByTagName("input"),

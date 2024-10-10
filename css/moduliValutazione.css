@@ -388,6 +388,9 @@
 
 
 /* HARA e SHIENA */
+#moduloHaraSchienaShiatsu{
+	padding-bottom: 20px;
+}
 #moduloHaraSchienaShiatsu > div{
 	display:inline-block;
 	vertical-align: bottom;
@@ -419,12 +422,30 @@
 }
 #moduloHaraSchienaShiatsu select{
 	background-color: rgba(255, 255, 255, 0.2) !important;
+	width: 30px;
     border: none !important;
     background-image: url(../img/frGiuB.png) !important;
     background-size: 19px auto !important;
     background-position: right calc(100% + 5px) !important;
     border-radius: 50px !important;
-    padding: 0 10px 0 11px !important;
+    padding: 0 10px 0 20px !important;
+}
+
+#moduloHaraSchienaShiatsu > div > div > div > span{
+	position: relative;
+    display: block;
+    z-index: 0;
+    width: 32px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: -30px;
+}
+#moduloHaraSchienaShiatsu > div > div > div > div.domandeModuli{
+	display: block;
+    position: relative;
+    z-index: 1;
 }
 #md_hara .md_HT{
 	margin-top: 16px;
@@ -493,14 +514,14 @@
 	margin-left: 51px;
     margin-top: 8px;
 }
-#md_schiena .md_PC{
+#md_schiena .md_LR{
 	margin-left: 47px;
 }
-#md_schiena .md_LR{
+#md_schiena .md_TE{
 	margin-top: 18px;
     margin-left: 58px;
 }
-#md_schiena .md_TE{
+#md_schiena .md_PC{
 	margin-left: -2px;
 }
 #md_schiena .md_GB{
