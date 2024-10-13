@@ -94,45 +94,38 @@ var AI = {
 			}
 		}
 		for(let m in PAZIENTI.moduliProvvisori){
-			let data = [];
-			for(let d in PAZIENTI.moduliProvvisori[m].data){
-				let el = {
-					t: PAZIENTI.moduliProvvisori[m].data[d].t,
-					d: "",
-					r: ""
-				}
-				switch(el.t){
-					case "e":
-						el.d = PAZIENTI.moduliProvvisori[m].data[d].d;
-						delete(el.r);
-						break;
-					case "d":
-					case "c":
-					case "r":
-						if(PAZIENTI.moduliProvvisori[m].data[d]?.r){
-							el.d = PAZIENTI.moduliProvvisori[m].data[d].d;
-							el.r = PAZIENTI.moduliProvvisori[m].data[d].r;
-							if(el.t=='c')delete(el.r)
-						}
-						break;
-					case "s":
-						if(typeof(PAZIENTI.moduliProvvisori[m].data[d]?.r)!='undefined'){
-							if(typeof(PAZIENTI.moduliProvvisori[m].data[d].l)=='string'){
-								r = moduliValutazione.liste[PAZIENTI.moduliProvvisori[m].data[d].l][PAZIENTI.moduliProvvisori[m].data[d].r][globals.siglaLingua];
-							}else{
-								r = PAZIENTI.moduliProvvisori[m].data[d].l[PAZIENTI.moduliProvvisori[m].data[d].r]
-							}
-							el.d = PAZIENTI.moduliProvvisori[m].data[d].d;
-							el.r =r;
-						}
-						break;
-				}
-				if(el.d)data.push(el);
+			let el = {
+					title: '',
+					data: []
+				},
+				dts = 0;
+			if(typeof(PAZIENTI.moduliProvvisori[m].id)=='string'){
+				el.title = moduliValutazione.modelli[PAZIENTI.moduliProvvisori[m].id].title[globals.siglaLingua];
+			}else{
+				el.title = PAZIENTI.moduliProvvisori[m].title;
 			}
-			if(data.length>0)JSNPOST.moduli.push({
-				title: PAZIENTI.moduliProvvisori[m].title,
-				data: data
-			});
+			for(let d in PAZIENTI.moduliProvvisori[m].data){
+				let dt = {};
+				if(typeof(PAZIENTI.moduliProvvisori[m].id)=='string'){
+					dt.t = moduliValutazione.modelli[PAZIENTI.moduliProvvisori[m].id].data[d].t;
+					dt.d = moduliValutazione.modelli[PAZIENTI.moduliProvvisori[m].id].data[d].d[globals.siglaLingua];
+					dt.r = __(PAZIENTI.moduliProvvisori[m].data[d].r);
+					if(moduliValutazione.modelli[PAZIENTI.moduliProvvisori[m].id].data[d].l && !dt.r)dt.r=0;
+					if(typeof(dt.r)=='number'){
+						let lista = moduliValutazione.modelli[PAZIENTI.moduliProvvisori[m].id].data[d].l;
+						if(typeof(lista)=='string')lista = moduliValutazione.liste[lista];
+						dt.r = lista[dt.r][globals.siglaLingua];
+					}
+				}else{
+					dt.t = PAZIENTI.moduliProvvisori[m].data[d].t;
+					dt.d = PAZIENTI.moduliProvvisori[m].data[d].d;
+					dt.r =  __(PAZIENTI.moduliProvvisori[m].data[d].r);
+				}
+				if(dt.r || dt.t=='e')el.data.push(dt);
+				if(dt.t=='e')delete(dt.r)
+				if(dt.r)dts++;
+			}
+			if(dts)JSNPOST.moduli.push(el);
 		}
 		for(p in DB.pazienti.data[PAZIENTI.idCL].patologie){
 			JSNPOST.patologie.push(DB.pazienti.data[PAZIENTI.idCL].patologie[p].NomePatologia);
@@ -150,7 +143,6 @@ var AI = {
 			ALERT(TXT("NoDataAI"));
 			return;
 		}
-		console.log(JSNPOST)
 		visLoader(TXT("ElaborazioneInCorso"));
 		CONN.caricaUrl(	"diagnosi.php",
 						"b64=1&JSNPOST="+window.btoa(encodeURIComponent(JSON.stringify(JSNPOST)))+"&NominativoPaziente="+window.btoa(encodeURIComponent(DB.pazienti.data[PAZIENTI.idCL].Nome+" "+DB.pazienti.data[PAZIENTI.idCL].Cognome)),

@@ -387,6 +387,164 @@
 }
 
 
+/* MTC ASCOLTO */
+#moduloASCOLTO > div{
+	height: 33px;
+}
+#moduloASCOLTO > div > i{
+	width:auto;
+}
+#moduloASCOLTO > div > div{
+	display:inline-block;
+	float:right;
+}
+
+/* MTC ODORI */
+#moduloODORI > div{
+	border-top:1px solid rgba(0,0,0,0.1);
+}
+#moduloODORI label{
+	display:block;
+}
+
+
+/* MU e SHU */
+#moduloMUSHU > div{
+	display:inline-block;
+	vertical-align: top;
+	margin-right:10px;
+	width:184px;
+}
+.sch_Max600 #moduloMUSHU > div{
+	display:block !important;
+	margin:0px !important;
+}
+#moduloMUSHU > div > div:not(.mushu_header){
+	border-radius: 4px;
+    overflow: hidden;
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
+    margin-top: 4px;
+}
+.mushu_left_right{
+	display:block !important;
+	padding-left: 32px !important;
+	width:188px !important;
+	height: 20px;
+	margin-top: -8px;
+    opacity: 0.5;
+}
+.mushu_left_right > div{
+	height: 20px;
+	line-height: 20px;
+	font-style:italic;
+	padding: 0px !important;
+}
+#moduloMUSHU > div > div > div,
+#moduloMUSHU > div > div > div > div,
+.mushu_left_right > div,
+.mushu_left_right > div > div{
+	display:inline-block;
+	text-align:center;
+	vertical-align: top;
+	margin-right:-4px;
+}
+#moduloMUSHU > div > div > div:not(.mushu_left_right),
+.mushu_left_right > div{
+	width: 75px !important;
+	padding: 3px 3px 3px 0px;
+}
+#moduloMUSHU > div > div:not(.mushu_header) > div{
+	border-right: 1px solid rgba(0, 0, 0, 0.1);
+}
+#moduloMUSHU > div > div > div > div{
+	width:36px;
+}
+.mushu_left_right > div > div{
+	width:36px !important;
+}
+#moduloMUSHU > div > div > div:first-child{
+	font-weight:bold;
+	width:40px !important;
+	height: 37px;
+    padding: 6px;
+}
+#moduloMUSHU > div > div > div > div div.domandeModuli i{
+	display:none;
+}
+#moduloMUSHU .domandeModuli{
+	margin:0px !important;
+}
+#moduloMUSHU > div > div > div select{
+	background-color: rgba(255, 255, 255, 0.2) !important;
+	width: 30px;
+    border: none !important;
+    background-image: url(../img/frGiuB.png) !important;
+    background-size: 19px auto !important;
+    background-position: right calc(100% + 5px) !important;
+    border-radius: 6px !important;
+    padding: 0 10px 0 20px !important;
+	z-index: 1;
+    position: relative;
+}
+#moduloMUSHU > div > div > div span{
+	position: relative;
+    display: block;
+    z-index: 0;
+    width: 36px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: -30px;
+}
+.sch_Max600 #second_header{
+	display:none;
+}
+#mushuLR,
+#mushuGB{
+	border-left: 5px solid #009900 !important;
+}
+#mushuHT,
+#mushuSI{
+	border-left: 5px solid #FF0000 !important;
+}
+#mushuPC,
+#mushuTE{
+	border-left: 5px solid #990000 !important;
+}
+#mushuSP,
+#mushuST{
+	border-left: 5px solid #FF8800 !important;
+}
+#mushuLU,
+#mushuLI{
+	border-left: 5px solid #FFF !important;
+}
+#mushuKI,
+#mushuBL{
+	border-left: 5px solid #000 !important;
+}
+#mushu_legenda{
+    display: block !important;
+	padding: 15px;
+	opacity:0.6;
+}
+#mushu_legenda > div{
+	display: block !important;
+    border: none;
+    width: 100% !important;
+    text-align: left;
+	margin: 0 !important;
+    padding: 0 !important;
+	height: 16px !important;
+}
+#mushu_legenda > div i{
+	display:inline-block !important;
+	font-style:normal !important;
+	height: 16px !important;
+	font-size: var(--font-12);
+}
+
 /* HARA e SHIENA */
 #moduloHaraSchienaShiatsu{
 	padding-bottom: 20px;
@@ -396,6 +554,9 @@
 	vertical-align: bottom;
 	background-position: center;
 	background-repeat: no-repeat;
+}
+.sch_Max600 #moduloHaraSchienaShiatsu > div{
+	display:block !important;
 }
 #md_hara{
 	background-image:url(../img/valutazioni/hara.png);
@@ -408,6 +569,9 @@
 	background-size: 210px auto;
 	width: 210px;
 	height:400px;
+}
+.sch_Max600 #md_schiena{
+	margin: 20px 20px 0px 20px;
 }
 #moduloHaraSchienaShiatsu > div > div > div,
 #moduloHaraSchienaShiatsu .domandeModuli{
@@ -559,6 +723,9 @@
     margin-bottom: -100px;
 	padding-left: 15px;
 	opacity:0.6;
+}
+.sch_Max600 #shiatsu_legenda{
+    margin-bottom: 0px !important;
 }
 #shiatsu_legenda > div{
 	display: block !important;

@@ -4,7 +4,7 @@ var PAZIENTI = {
 	cicli: [],
 	maxCicli: 3,
 	maxPazientiFree: 1,
-	maxPazientiLogged: 15,
+	maxPazientiLogged: 5,
 	pazOp: false,
 	trattOp: false,
 	cicOp: false,

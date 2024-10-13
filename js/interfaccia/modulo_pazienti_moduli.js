@@ -207,7 +207,7 @@ var PAZIENTI_MODULI = { // extend PAZIENTI
 				}
 			}else{ // moduli di sistema
 
-				let GLB = moduliValutazione.modelli[MDL.id];
+				let GLB = clone(moduliValutazione.modelli[MDL.id]);
 				title = GLB.title[globals.siglaLingua];
 
 				HTML_provv += GLB.html;
@@ -256,7 +256,7 @@ var PAZIENTI_MODULI = { // extend PAZIENTI
 						case "s":
 							let opts = elGLB.l;
 							if(typeof(opts)=='string'){
-								let els = moduliValutazione.liste[opts];
+								let els = clone(moduliValutazione.liste[opts]);
 								opts = [];
 								for(let e in els){
 									let txt = typeof(els[e])=='object' ? els[e][globals.siglaLingua] : els[e];

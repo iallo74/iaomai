@@ -45,37 +45,37 @@ var moduliValutazione = {
             },
             sc: {
                 osservazione: {
-                    ita: "Osservazione",
-                    eng: "",
-                    esp: "",
-                    fra: "",
-                    por: "",
-                    deu: ""
+                    ita: "Osservazione (望诊, Wàng Zhěn)",
+                    eng: "Observation (望诊, Wàng Zhěn)",
+                    esp: "Observación (望诊, Wàng Zhěn)",
+                    fra: "Observation (望诊, Wàng Zhěn)",
+                    por: "Observação (望诊, Wàng Zhěn)",
+                    deu: "Beobachtung (望诊, Wàng Zhěn)"
                 },
                 ascolto: {
-                    ita: "Ascolto",
-                    eng: "",
-                    esp: "",
-                    fra: "",
-                    por: "",
-                    deu: ""
+                    ita: "Ascolto e olfatto (闻诊, Wén Zhěn)",
+                    eng: "Listening and Smell (闻诊, Wén Zhěn)",
+                    esp: "Escucha y olfato (闻诊, Wén Zhěn)",
+                    fra: "Écoute et odorat (闻诊, Wén Zhěn)",
+                    por: "Escuta e olfato (闻诊, Wén Zhěn)",
+                    deu: "Hören und Riechen (闻诊, Wén Zhěn)"
                 },
                 interrogazione: {
-                    ita: "Interrogazione",
-                    eng: "",
-                    esp: "",
-                    fra: "",
-                    por: "",
-                    deu: ""
+                    ita: "Interrogatorio (问诊, Wèn Zhěn)",
+                    eng: "Interrogation (问诊, Wèn Zhěn)",
+                    esp: "Interrogatorio (问诊, Wèn Zhěn)",
+                    fra: "Interrogatoire (问诊, Wèn Zhěn)",
+                    por: "Interrogatório (问诊, Wèn Zhěn)",
+                    deu: "Befragung (问诊, Wèn Zhěn)"
                 },
                 palpazione: {
-                    ita: "Palpazione",
-                    eng: "",
-                    esp: "",
-                    fra: "",
-                    por: "",
-                    deu: ""
-                }
+                    ita: "Palpazione (切诊, Qiè Zhěn)",
+                    eng: "Palpation (切诊, Qiè Zhěn)",
+                    esp: "Palpación (切诊, Qiè Zhěn)",
+                    fra: "Palpation (切诊, Qiè Zhěn)",
+                    por: "Palpação (切诊, Qiè Zhěn)",
+                    deu: "Palpation (切诊, Qiè Zhěn)"
+                }                
             }
         },
         shiatsu: {
@@ -672,7 +672,7 @@ var moduliValutazione = {
         ]    
     },
     modelli: {
-        "mtc_lingua_sintetica": {
+        mtc_lingua_sintetica: {
             category: "mtc",
             subcategory: "osservazione",
             title: {
@@ -805,7 +805,7 @@ var moduliValutazione = {
                     '<div>[1]</div>' +
                     '</div>'
         },
-        "mtc_lingua_analitica": {
+        mtc_lingua_analitica: {
             category: "mtc",
             subcategory: "osservazione",
             title: {
@@ -1222,9 +1222,9 @@ var moduliValutazione = {
                     '   <div>[0][1][2][3][4][5][6][7]</div>' +
                     '</div>'
         },
-        "mtc_polsi": {
+        mtc_polsi: {
             category: "mtc",
-            subcategory: "osservazione",
+            subcategory: "palpazione",
             title: {
                 ita: "Valutazione MTC Polsi",
                 eng: "TCM Pulse Assessment",
@@ -1467,7 +1467,7 @@ var moduliValutazione = {
                     '</div>' +
                     '</div>'
         },
-        "mtc_viso": {
+        mtc_viso: {
             category: "mtc",
             subcategory: "osservazione",
             title: {
@@ -1636,7 +1636,7 @@ var moduliValutazione = {
                     '   <div>[0][1][2][3][4][5][6][7]</div>' +
                     '</div>'
         },
-        "mtc_occhi": {
+        mtc_occhi: {
             category: "mtc",
             subcategory: "osservazione",
             title: {
@@ -1805,7 +1805,7 @@ var moduliValutazione = {
                     '   <div>[0][1][2][3][4][5]</div>' +
                     '</div>'
         },
-        "mtc_capelli": {
+        mtc_capelli: {
             category: "mtc",
             subcategory: "osservazione",
             title: {
@@ -2002,7 +2002,7 @@ var moduliValutazione = {
                     '   <div>[0][1][2][3]</div>' +
                     '</div>'
         },
-        "mtc_pelle": {
+        mtc_pelle: {
             category: "mtc",
             subcategory: "osservazione",
             title: {
@@ -2179,7 +2179,7 @@ var moduliValutazione = {
                     '   <div>[0][1][2][3][4][5]</div>' +
                     '</div>'
         },
-        "mtc_postura": {
+        mtc_postura: {
             category: "mtc",
             subcategory: "osservazione",
             title: {
@@ -2437,7 +2437,7 @@ var moduliValutazione = {
                     '   <div>[0][1][2][3][4]</div>' +
                     '</div>'
         },
-        "mtc_mani": {
+        mtc_mani: {
             category: "mtc",
             subcategory: "osservazione",
             title: {
@@ -2740,7 +2740,7 @@ var moduliValutazione = {
                     '   <div>[0][1][2][3][4][5][6][7][8][9][10][11]</div>' +
                     '</div>'
         },
-        "mtc_denti": {
+        mtc_denti: {
             category: "mtc",
             subcategory: "osservazione",
             title: {
@@ -2801,8 +2801,9 @@ var moduliValutazione = {
                     '   <div>[0][1][2][3]</div>' +
                     '</div>'
         },
-        "mtc_secrezioni": {
+        mtc_secrezioni: {
             category: "mtc",
+            subcategory: "osservazione",
             title: {
                 ita: "Valutazione MTC Secrezioni corporee",
                 eng: "TCM Body Secretions Assessment",
@@ -3333,7 +3334,2427 @@ var moduliValutazione = {
                     '   <div>[0][1][2][3][4][5][6][7][8][9][10][11][12][13][14][15][16][17]</div>' +
                     '</div>'
         },
-        "shiatsu_hara_schiena": {
+        mtc_mushu: {
+            category: "mtc",
+            subcategory: "palpazione",
+            title: {
+                ita: "Valutazione MTC punti MU e SHU",
+                eng: "TCM Assessment of MU and SHU Points",
+                esp: "Evaluación MTC de los puntos MU y SHU",
+                fra: "Évaluation MTC des points MU et SHU",
+                por: "Avaliação MTC dos pontos MU e SHU",
+                deu: "TCM-Bewertung der MU- und SHU-Punkte"
+            },
+            data: [
+                {
+                    t: "s",
+                    d: {
+                        ita: "MU - Fegato (destra)",
+                        eng: "MU - Liver (right)",
+                        esp: "MU - Hígado (derecha)",
+                        fra: "MU - Foie (droite)",
+                        por: "MU - Fígado (direita)",
+                        deu: "MU - Leber (rechte)"
+                    },
+                    l: "stati_energetici"
+                },
+                {
+                    t: "s",
+                    d: {
+                        ita: "MU - Fegato (sinistra)",
+                        eng: "MU - Liver (left)",
+                        esp: "MU - Hígado (izquierda)",
+                        fra: "MU - Foie (gauche)",
+                        por: "MU - Fígado (esquerda)",
+                        deu: "MU - Leber (linke)"
+                    },
+                    l: "stati_energetici"
+                },
+                {
+                    t: "s",
+                    d: {
+                        ita: "MU - Cistifellea (destra)",
+                        eng: "MU - Gallbladder (right)",
+                        esp: "MU - Vesícula biliar (derecha)",
+                        fra: "MU - Vésicule biliaire (droite)",
+                        por: "MU - Vesícula biliar (direita)",
+                        deu: "MU - Gallenblase (rechte)"
+                    },
+                    l: "stati_energetici"
+                },
+                {
+                    t: "s",
+                    d: {
+                        ita: "MU - Cistifellea (sinistra)",
+                        eng: "MU - Gallbladder (left)",
+                        esp: "MU - Vesícula biliar (izquierda)",
+                        fra: "MU - Vésicule biliaire (gauche)",
+                        por: "MU - Vesícula biliar (esquerda)",
+                        deu: "MU - Gallenblase (linke)"
+                    },
+                    l: "stati_energetici"
+                },
+                {
+                    t: "s",
+                    d: {
+                        ita: "MU - Cuore",
+                        eng: "MU - Heart",
+                        esp: "MU - Corazón",
+                        fra: "MU - Cœur",
+                        por: "MU - Coração",
+                        deu: "MU - Herzens"
+                    },
+                    l: "stati_energetici"
+                },
+                {
+                    t: "s",
+                    d: {
+                        ita: "MU - Intestino tenue",
+                        eng: "MU - Small Intestine",
+                        esp: "MU - Intestino delgado",
+                        fra: "MU - Intestin grêle",
+                        por: "MU - Intestino delgado",
+                        deu: "MU - Dünndarm"
+                    },
+                    l: "stati_energetici"
+                },
+                {
+                    t: "s",
+                    d: {
+                        ita: "MU - Mastro del cuore",
+                        eng: "MU - Master of the Heart",
+                        esp: "MU - Maestro del corazón",
+                        fra: "MU - Maître du cœur",
+                        por: "MU - Mestre do coração",
+                        deu: "MU - Meister des Herzens"
+                    },
+                    l: "stati_energetici"
+                },
+                {
+                    t: "s",
+                    d: {
+                        ita: "SHU - Triplo riscaldatore",
+                        eng: "SHU - Triple Warmer",
+                        esp: "SHU - Triple calentador",
+                        fra: "SHU - Triple réchauffeur",
+                        por: "SHU - Triplo aquecedor",
+                        deu: "SHU - Dreifacher Erwärmer"
+                    },
+                    l: "stati_energetici"
+                },
+                {
+                    t: "s",
+                    d: {
+                        ita: "MU - Milza-pancreas (destra)",
+                        eng: "MU - Spleen-Pancreas (right)",
+                        esp: "MU - Bazo-páncreas (derecha)",
+                        fra: "MU - Rate-pancréas (droite)",
+                        por: "MU - Baço-pâncreas (direita)",
+                        deu: "MU - Milz-Bauchspeicheldrüse (rechte)"
+                    },
+                    l: "stati_energetici"
+                },
+                {
+                    t: "s",
+                    d: {
+                        ita: "MU - Milza-pancreas (sinistra)",
+                        eng: "MU - Spleen-Pancreas (left)",
+                        esp: "MU - Bazo-páncreas (izquierda)",
+                        fra: "MU - Rate-pancréas (gauche)",
+                        por: "MU - Baço-pâncreas (esquerda)",
+                        deu: "MU - Milz-Bauchspeicheldrüse (linke)"
+                    },
+                    l: "stati_energetici"
+                },
+                {
+                    t: "s",
+                    d: {
+                        ita: "MU - Stomaco",
+                        eng: "MU - Stomach",
+                        esp: "MU - Estómago",
+                        fra: "MU - Estomac",
+                        por: "MU - Estômago",
+                        deu: "MU - Magen"
+                    },
+                    l: "stati_energetici"
+                },
+                {
+                    t: "s",
+                    d: {
+                        ita: "MU - Polmone (destra)",
+                        eng: "MU - Lung (right)",
+                        esp: "MU - Pulmón (derecha)",
+                        fra: "MU - Poumon (droite)",
+                        por: "MU - Pulmão (direita)",
+                        deu: "MU - Lunge (rechte)"
+                    },
+                    l: "stati_energetici"
+                },
+                {
+                    t: "s",
+                    d: {
+                        ita: "MU - Polmone (sinistra)",
+                        eng: "MU - Lung (left)",
+                        esp: "MU - Pulmón (izquierda)",
+                        fra: "MU - Poumon (gauche)",
+                        por: "MU - Pulmão (esquerda)",
+                        deu: "MU - Lunge (linke)"
+                    },
+                    l: "stati_energetici"
+                },
+                {
+                    t: "s",
+                    d: {
+                        ita: "MU - Intestino crasso (destra)",
+                        eng: "MU - Large Intestine (right)",
+                        esp: "MU - Intestino grueso (derecha)",
+                        fra: "MU - Gros intestin (droite)",
+                        por: "MU - Intestino grosso (direita)",
+                        deu: "MU - Dickdarm (rechte)"
+                    },
+                    l: "stati_energetici"
+                },
+                {
+                    t: "s",
+                    d: {
+                        ita: "MU - Intestino crasso (sinistra)",
+                        eng: "MU - Large Intestine (left)",
+                        esp: "MU - Intestino grueso (izquierda)",
+                        fra: "MU - Gros intestin (gauche)",
+                        por: "MU - Intestino grosso (esquerda)",
+                        deu: "MU - Dickdarm (linke)"
+                    },
+                    l: "stati_energetici"
+                },
+                {
+                    t: "s",
+                    d: {
+                        ita: "MU - Rene (destra)",
+                        eng: "MU - Kidney (right)",
+                        esp: "MU - Riñón (derecha)",
+                        fra: "MU - Rein (droite)",
+                        por: "MU - Rim (direita)",
+                        deu: "MU - Niere (rechte)"
+                    },
+                    l: "stati_energetici"
+                },
+                {
+                    t: "s",
+                    d: {
+                        ita: "MU - Rene (sinistra)",
+                        eng: "MU - Kidney (left)",
+                        esp: "MU - Riñón (izquierda)",
+                        fra: "MU - Rein (gauche)",
+                        por: "MU - Rim (esquerda)",
+                        deu: "MU - Niere (linke)"
+                    },
+                    l: "stati_energetici"
+                },
+                {
+                    t: "s",
+                    d: {
+                        ita: "MU - Vescica",
+                        eng: "MU - Bladder",
+                        esp: "MU - Vejiga",
+                        fra: "MU - Vésicule urinaire",
+                        por: "MU - Bexiga",
+                        deu: "MU - Blase"
+                    },
+                    l: "stati_energetici"
+                },
+                {
+                    t: "s",
+                    d: {
+                        ita: "SHU - Fegato (sinistra)",
+                        eng: "SHU - Liver (left)",
+                        esp: "SHU - Hígado (izquierda)",
+                        fra: "SHU - Foie (gauche)",
+                        por: "SHU - Fígado (esquerda)",
+                        deu: "SHU - Leber (linke)"
+                    },
+                    l: "stati_energetici"
+                },
+                {
+                    t: "s",
+                    d: {
+                        ita: "SHU - Fegato (destra)",
+                        eng: "SHU - Liver (right)",
+                        esp: "SHU - Hígado (derecha)",
+                        fra: "SHU - Foie (droite)",
+                        por: "SHU - Fígado (direita)",
+                        deu: "SHU - Leber (rechte)"
+                    },
+                    l: "stati_energetici"
+                },
+                {
+                    t: "s",
+                    d: {
+                        ita: "SHU - Cistifellea (sinistra)",
+                        eng: "SHU - Gallbladder (left)",
+                        esp: "SHU - Vesícula biliar (izquierda)",
+                        fra: "SHU - Vésicule biliaire (gauche)",
+                        por: "SHU - Vesícula biliar (esquerda)",
+                        deu: "SHU - Gallenblase (linke)"
+                    },
+                    l: "stati_energetici"
+                },
+                {
+                    t: "s",
+                    d: {
+                        ita: "SHU - Cistifellea (destra)",
+                        eng: "SHU - Gallbladder (right)",
+                        esp: "SHU - Vesícula biliar (derecha)",
+                        fra: "SHU - Vésicule biliaire (droite)",
+                        por: "SHU - Vesícula biliar (direita)",
+                        deu: "SHU - Gallenblase (rechte)"
+                    },
+                    l: "stati_energetici"
+                },
+                {
+                    t: "s",
+                    d: {
+                        ita: "SHU - Cuore (sinistra)",
+                        eng: "SHU - Heart (left)",
+                        esp: "SHU - Corazón (izquierda)",
+                        fra: "SHU - Cœur (gauche)",
+                        por: "SHU - Coração (esquerda)",
+                        deu: "SHU - Herz (linke)"
+                    },
+                    l: "stati_energetici"
+                },
+                {
+                    t: "s",
+                    d: {
+                        ita: "SHU - Cuore (destra)",
+                        eng: "SHU - Heart (right)",
+                        esp: "SHU - Corazón (derecha)",
+                        fra: "SHU - Cœur (droite)",
+                        por: "SHU - Coração (direita)",
+                        deu: "SHU - Herz (rechte)"
+                    },
+                    l: "stati_energetici"
+                },
+                {
+                    t: "s",
+                    d: {
+                        ita: "SHU - Intestino tenue (sinistra)",
+                        eng: "SHU - Small Intestine (left)",
+                        esp: "SHU - Intestino delgado (izquierda)",
+                        fra: "SHU - Intestin grêle (gauche)",
+                        por: "SHU - Intestino delgado (esquerda)",
+                        deu: "SHU - Dünndarm (linke)"
+                    },
+                    l: "stati_energetici"
+                },
+                {
+                    t: "s",
+                    d: {
+                        ita: "SHU - Intestino tenue (destra)",
+                        eng: "SHU - Small Intestine (right)",
+                        esp: "SHU - Intestino delgado (derecha)",
+                        fra: "SHU - Intestin grêle (droite)",
+                        por: "SHU - Intestino delgado (direita)",
+                        deu: "SHU - Dünndarm (rechte)"
+                    },
+                    l: "stati_energetici"
+                },
+                {
+                    t: "s",
+                    d: {
+                        ita: "SHU - Mastro del cuore (sinistra)",
+                        eng: "SHU - Master of the Heart (left)",
+                        esp: "SHU - Maestro del corazón (izquierda)",
+                        fra: "SHU - Maître du cœur (gauche)",
+                        por: "SHU - Mestre do coração (esquerda)",
+                        deu: "SHU - Meister des Herzens (linke)"
+                    },
+                    l: "stati_energetici"
+                },
+                {
+                    t: "s",
+                    d: {
+                        ita: "SHU - Mastro del cuore (destra)",
+                        eng: "SHU - Master of the Heart (right)",
+                        esp: "SHU - Maestro del corazón (derecha)",
+                        fra: "SHU - Maître du cœur (droite)",
+                        por: "SHU - Mestre do coração (direita)",
+                        deu: "SHU - Meister des Herzens (rechte)"
+                    },
+                    l: "stati_energetici"
+                },
+                {
+                    t: "s",
+                    d: {
+                        ita: "SHU - Triplo riscaldatore (sinistra)",
+                        eng: "SHU - Triple Warmer (left)",
+                        esp: "SHU - Triple calentador (izquierda)",
+                        fra: "SHU - Triple réchauffeur (gauche)",
+                        por: "SHU - Triplo aquecedor (esquerda)",
+                        deu: "SHU - Dreifacher Erwärmer (linke)"
+                    },
+                    l: "stati_energetici"
+                },
+                {
+                    t: "s",
+                    d: {
+                        ita: "SHU - Triplo riscaldatore (destra)",
+                        eng: "SHU - Triple Warmer (right)",
+                        esp: "SHU - Triple calentador (derecha)",
+                        fra: "SHU - Triple réchauffeur (droite)",
+                        por: "SHU - Triplo aquecedor (direita)",
+                        deu: "SHU - Dreifacher Erwärmer (rechte)"
+                    },
+                    l: "stati_energetici"
+                },
+                {
+                    t: "s",
+                    d: {
+                        ita: "SHU - Milza-pancreas (sinistra)",
+                        eng: "SHU - Spleen-Pancreas (left)",
+                        esp: "SHU - Bazo-páncreas (izquierda)",
+                        fra: "SHU - Rate-pancréas (gauche)",
+                        por: "SHU - Baço-pâncreas (esquerda)",
+                        deu: "SHU - Milz-Bauchspeicheldrüse (linke)"
+                    },
+                    l: "stati_energetici"
+                },
+                {
+                    t: "s",
+                    d: {
+                        ita: "SHU - Milza-pancreas (destra)",
+                        eng: "SHU - Spleen-Pancreas (right)",
+                        esp: "SHU - Bazo-páncreas (derecha)",
+                        fra: "SHU - Rate-pancréas (droite)",
+                        por: "SHU - Baço-pâncreas (direita)",
+                        deu: "SHU - Milz-Bauchspeicheldrüse (rechte)"
+                    },
+                    l: "stati_energetici"
+                },
+                {
+                    t: "s",
+                    d: {
+                        ita: "SHU - Stomaco (sinistra)",
+                        eng: "SHU - Stomach (left)",
+                        esp: "SHU - Estómago (izquierda)",
+                        fra: "SHU - Estomac (gauche)",
+                        por: "SHU - Estômago (esquerda)",
+                        deu: "SHU - Magen (linke)"
+                    },
+                    l: "stati_energetici"
+                },
+                {
+                    t: "s",
+                    d: {
+                        ita: "SHU - Stomaco (destra)",
+                        eng: "SHU - Stomach (right)",
+                        esp: "SHU - Estómago (derecha)",
+                        fra: "SHU - Estomac (droite)",
+                        por: "SHU - Estômago (direita)",
+                        deu: "SHU - Magen (rechte)"
+                    },
+                    l: "stati_energetici"
+                },
+                {
+                    t: "s",
+                    d: {
+                        ita: "SHU - Polmone (sinistra)",
+                        eng: "SHU - Lung (left)",
+                        esp: "SHU - Pulmón (izquierda)",
+                        fra: "SHU - Poumon (gauche)",
+                        por: "SHU - Pulmão (esquerda)",
+                        deu: "SHU - Lunge (linke)"
+                    },
+                    l: "stati_energetici"
+                },
+                {
+                    t: "s",
+                    d: {
+                        ita: "SHU - Polmone (destra)",
+                        eng: "SHU - Lung (right)",
+                        esp: "SHU - Pulmón (derecha)",
+                        fra: "SHU - Poumon (droite)",
+                        por: "SHU - Pulmão (direita)",
+                        deu: "SHU - Lunge (rechte)"
+                    },
+                    l: "stati_energetici"
+                },
+                {
+                    t: "s",
+                    d: {
+                        ita: "SHU - Intestino crasso (sinistra)",
+                        eng: "SHU - Large Intestine (left)",
+                        esp: "SHU - Intestino grueso (izquierda)",
+                        fra: "SHU - Gros intestin (gauche)",
+                        por: "SHU - Intestino grosso (esquerda)",
+                        deu: "SHU - Dickdarm (linke)"
+                    },
+                    l: "stati_energetici"
+                },
+                {
+                    t: "s",
+                    d: {
+                        ita: "SHU - Intestino crasso (destra)",
+                        eng: "SHU - Large Intestine (right)",
+                        esp: "SHU - Intestino grueso (derecha)",
+                        fra: "SHU - Gros intestin (droite)",
+                        por: "SHU - Intestino grosso (direita)",
+                        deu: "SHU - Dickdarm (rechte)"
+                    },
+                    l: "stati_energetici"
+                },
+                {
+                    t: "s",
+                    d: {
+                        ita: "SHU - Rene (sinistra)",
+                        eng: "SHU - Kidney (left)",
+                        esp: "SHU - Riñón (izquierda)",
+                        fra: "SHU - Rein (gauche)",
+                        por: "SHU - Rim (esquerda)",
+                        deu: "SHU - Niere (linke)"
+                    },
+                    l: "stati_energetici"
+                },
+                {
+                    t: "s",
+                    d: {
+                        ita: "SHU - Rene (destra)",
+                        eng: "SHU - Kidney (right)",
+                        esp: "SHU - Riñón (derecha)",
+                        fra: "SHU - Rein (droite)",
+                        por: "SHU - Rim (direita)",
+                        deu: "SHU - Niere (rechte)"
+                    },
+                    l: "stati_energetici"
+                },
+                {
+                    t: "s",
+                    d: {
+                        ita: "SHU - Vescica urinaria (sinistra)",
+                        eng: "SHU - Urinary Bladder (left)",
+                        esp: "SHU - Vejiga urinaria (izquierda)",
+                        fra: "SHU - Vésicule urinaire (gauche)",
+                        por: "SHU - Bexiga urinária (esquerda)",
+                        deu: "SHU - Harnblase (linke)"
+                    },
+                    l: "stati_energetici"
+                },
+                {
+                    t: "s",
+                    d: {
+                        ita: "SHU - Vescica urinaria (destra)",
+                        eng: "SHU - Urinary Bladder (right)",
+                        esp: "SHU - Vejiga urinaria (derecha)",
+                        fra: "SHU - Vésicule urinaire (droite)",
+                        por: "SHU - Bexiga urinária (direita)",
+                        deu: "SHU - Harnblase (rechte)"
+                    },
+                    l: "stati_energetici"
+                },
+                {
+                    t: "e",
+                    d: {
+                        ita: "V = VUOTO",
+                        eng: "D = DEFICIENCY",
+                        esp: "D = DEFICIENCIA",
+                        fra: "D = DÉFICIT",
+                        por: "D = DEFICIÊNCIA",
+                        deu: "M = MANGEL"
+                    },
+                    h: true
+                },
+                {
+                    t: "e",
+                    d: {
+                        ita: "P = PIENO",
+                        eng: "E = EXCESS",
+                        esp: "E = EXCESO",
+                        fra: "E = EXCÈS",
+                        por: "E = EXCESSO",
+                        deu: "Ü = ÜBERFLUSS"
+                    },
+                    h: true
+                },
+                {
+                    t: "e",
+                    d: {
+                        ita: "X = DOLORANTE",
+                        eng: "X = PAINFUL",
+                        esp: "X = DOLOROSO",
+                        fra: "X = DOULEUREUX",
+                        por: "X = DOLOROSO",
+                        deu: "X = SCHMERZHAFT"
+                    },
+                    h: true
+                }  
+            ],
+            html:   '<div id="moduloMUSHU">' +
+                    '   <div>' +
+                    '       <div class="mushu_header">' +
+                    '           <div></div>' +
+                    '           <div>MU</div>' +
+                    '           <div>SHU</div>' +
+                    '           <div class="mushu_left_right">' +
+                    '               <div><div>L</div><div>R</div></div>' +
+                    '               <div><div>L</div><div>R</div></div>' +
+                    '           </div>' +
+                    '       </div>' +
+                    '       <div>' +
+                    '           <div id="mushuLR">LR</div>' +
+                    '           <div>' +
+                    '               <div><span></span>[0]</div>' +
+                    '               <div><span></span>[1]</div>' +
+                    '           </div>' +
+                    '           <div>' +
+                    '               <div><span></span>[18]</div>' +
+                    '               <div><span></span>[19]</div>' +
+                    '           </div>' +
+                    '       </div>' +
+                    '       <div>' +
+                    '           <div id="mushuGB">GB</div>' +
+                    '           <div>' +
+                    '               <div><span></span>[2]</div>' +
+                    '               <div><span></span>[3]</div>' +
+                    '           </div>' +
+                    '           <div>' +
+                    '               <div><span></span>[20]</div>' +
+                    '               <div><span></span>[21]</div>' +
+                    '           </div>' +
+                    '       </div>' +
+                    '       <div>' +
+                    '           <div id="mushuHT">HT</div>' +
+                    '           <div>' +
+                    '               <div><span></span>[4]</div>' +
+                    '           </div>' +
+                    '           <div>' +
+                    '               <div><span></span>[22]</div>' +
+                    '               <div><span></span>[23]</div>' +
+                    '           </div>' +
+                    '       </div>' +
+                    '       <div>' +
+                    '           <div id="mushuSI">SI</div>' +
+                    '           <div>' +
+                    '               <div><span></span>[5]</div>' +
+                    '           </div>' +
+                    '           <div>' +
+                    '               <div><span></span>[24]</div>' +
+                    '               <div><span></span>[25]</div>' +
+                    '           </div>' +
+                    '       </div>' +
+                    '       <div>' +
+                    '           <div id="mushuPC">PC</div>' +
+                    '           <div>' +
+                    '               <div><span></span>[6]</div>' +
+                    '           </div>' +
+                    '           <div>' +
+                    '               <div><span></span>[26]</div>' +
+                    '               <div><span></span>[27]</div>' +
+                    '           </div>' +
+                    '       </div>' +
+                    '       <div>' +
+                    '           <div id="mushuTE">TE</div>' +
+                    '           <div>' +
+                    '               <div><span></span>[7]</div>' +
+                    '           </div>' +
+                    '           <div>' +
+                    '               <div><span></span>[28]</div>' +
+                    '               <div><span></span>[29]</div>' +
+                    '           </div>' +
+                    '       </div>' +
+                    '   </div>' +
+                    '   <div>' +
+                    '       <div class="mushu_header" id="second_header">' +
+                    '           <div></div>' +
+                    '           <div>MU</div>' +
+                    '           <div>SHU</div>' +
+                    '           <div class="mushu_left_right">' +
+                    '               <div><div>L</div><div>R</div></div>' +
+                    '               <div><div>L</div><div>R</div></div>' +
+                    '           </div>' +
+                    '       </div>' +
+                    '       <div>' +
+                    '           <div id="mushuSP">SP</div>' +
+                    '           <div>' +
+                    '               <div><span></span>[8]</div>' +
+                    '               <div><span></span>[9]</div>' +
+                    '           </div>' +
+                    '           <div>' +
+                    '               <div><span></span>[30]</div>' +
+                    '               <div><span></span>[31]</div>' +
+                    '           </div>' +
+                    '       </div>' +
+                    '       <div>' +
+                    '           <div id="mushuST">ST</div>' +
+                    '           <div>' +
+                    '               <div><span></span>[10]</div>' +
+                    '           </div>' +
+                    '           <div>' +
+                    '               <div><span></span>[32]</div>' +
+                    '               <div><span></span>[33]</div>' +
+                    '           </div>' +
+                    '       </div>' +
+                    '       <div>' +
+                    '           <div id="mushuLU">LU</div>' +
+                    '           <div>' +
+                    '               <div><span></span>[11]</div>' +
+                    '               <div><span></span>[12]</div>' +
+                    '           </div>' +
+                    '           <div>' +
+                    '               <div><span></span>[34]</div>' +
+                    '               <div><span></span>[35]</div>' +
+                    '           </div>' +
+                    '       </div>' +
+                    '       <div>' +
+                    '           <div id="mushuLI">LI</div>' +
+                    '           <div>' +
+                    '               <div><span></span>[13]</div>' +
+                    '               <div><span></span>[14]</div>' +
+                    '           </div>' +
+                    '           <div>' +
+                    '               <div><span></span>[36]</div>' +
+                    '               <div><span></span>[37]</div>' +
+                    '           </div>' +
+                    '       </div>' +
+                    '       <div>' +
+                    '           <div id="mushuKI">KI</div>' +
+                    '           <div>' +
+                    '               <div><span></span>[15]</div>' +
+                    '               <div><span></span>[16]</div>' +
+                    '           </div>' +
+                    '           <div>' +
+                    '               <div><span></span>[38]</div>' +
+                    '               <div><span></span>[39]</div>' +
+                    '           </div>' +
+                    '       </div>' +
+                    '       <div>' +
+                    '           <div id="mushuBL">BL</div>' +
+                    '           <div>' +
+                    '               <div><span></span>[17]</div>' +
+                    '           </div>' +
+                    '           <div>' +
+                    '               <div><span></span>[40]</div>' +
+                    '               <div><span></span>[41]</div>' +
+                    '           </div>' +
+                    '       </div>' +
+                    '   </div>' +
+                    '   <div>' +
+                    '       <span id="mushu_legenda">[42][43][44]</span>' +
+                    '   </div>' +
+                    '</div>',
+            funct: function(){
+                let els = '';
+                els = document.getElementById("moduloMUSHU").getElementsByTagName("SELECT");
+                for(let e=0;e<els.length;e++){
+                    let val = '';
+                    if(els[e].selectedIndex==3)val = 'X';
+                    else if(els[e].selectedIndex>0)val = els[e].options[els[e].selectedIndex].innerText.substr(0,1);
+                    els[e].parentElement.parentElement.parentElement.getElementsByTagName("SPAN")[0].innerHTML = val;
+                }
+            }
+        },
+        mtc_generale: {
+            category: "mtc",
+            subcategory: "interrogazione",
+            title: {
+                ita: "Valutazione MTC Condizione generale",
+                eng: "TCM Assessment of General Condition",
+                esp: "Evaluación MTC de la Condición General",
+                fra: "Évaluation MTC de l'État Général",
+                por: "Avaliação MTC da Condição Geral",
+                deu: "TCM-Bewertung des Allgemeinzustands"
+            },
+            data: [
+                {
+                    t: "d",
+                    d: {
+                        ita: "Come si sente in generale?",
+                        eng: "How do you feel in general?",
+                        esp: "¿Cómo se siente en general?",
+                        fra: "Comment vous sentez-vous en général?",
+                        por: "Como você se sente em geral?",
+                        deu: "Wie fühlen Sie sich im Allgemeinen?"
+                    }
+                },
+                {
+                    t: "d",
+                    d: {
+                        ita: "Da quanto tempo ha questo disturbo?",
+                        eng: "How long have you had this condition?",
+                        esp: "¿Cuánto tiempo ha tenido este problema?",
+                        fra: "Depuis combien de temps avez-vous ce trouble?",
+                        por: "Há quanto tempo você tem esse distúrbio?",
+                        deu: "Seit wann haben Sie dieses Problem?"
+                    }
+                },
+                {
+                    t: "d",
+                    d: {
+                        ita: "Ha avuto episodi simili in passato?",
+                        eng: "Have you had similar episodes in the past?",
+                        esp: "¿Ha tenido episodios similares en el pasado?",
+                        fra: "Avez-vous eu des épisodes similaires dans le passé?",
+                        por: "Você já teve episódios semelhantes no passado?",
+                        deu: "Hatten Sie in der Vergangenheit ähnliche Episoden?"
+                    }
+                },
+                {
+                    t: "d",
+                    d: {
+                        ita: "Ha subito traumi o interventi recenti?",
+                        eng: "Have you undergone any recent injuries or surgeries?",
+                        esp: "¿Ha sufrido alguna lesión o cirugía reciente?",
+                        fra: "Avez-vous subi des traumatismes ou des interventions récentes?",
+                        por: "Você sofreu lesões ou fez cirurgias recentes?",
+                        deu: "Haben Sie kürzlich Verletzungen oder Operationen gehabt?"
+                    }
+                }
+            ],
+            html: '<div id="moduloGENERALE">[0][1][2][3]</div>'
+        },
+        mtc_energia: {
+            category: "mtc",
+            subcategory: "interrogazione",
+            title: {
+                ita: "Valutazione MTC Energia e affaticamento",
+                eng: "TCM Assessment of Energy and Fatigue",
+                esp: "Evaluación MTC de Energía y Fatiga",
+                fra: "Évaluation MTC de l'Énergie et de la Fatigue",
+                por: "Avaliação MTC da Energia e Fadiga",
+                deu: "TCM-Bewertung von Energie und Müdigkeit"
+            },
+            data: [
+                {
+                    t: "d",
+                    d: {
+                        ita: "Si sente stanco o debole durante il giorno?",
+                        eng: "Do you feel tired or weak during the day?",
+                        esp: "¿Se siente cansado o débil durante el día?",
+                        fra: "Vous sentez-vous fatigué ou faible pendant la journée?",
+                        por: "Você se sente cansado ou fraco durante o dia?",
+                        deu: "Fühlen Sie sich tagsüber müde oder schwach?"
+                    }
+                },
+                {
+                    t: "d",
+                    d: {
+                        ita: "La sua energia è peggiore al mattino, al pomeriggio o alla sera?",
+                        eng: "Is your energy worse in the morning, afternoon, or evening?",
+                        esp: "¿Su energía es peor por la mañana, por la tarde o por la noche?",
+                        fra: "Votre énergie est-elle pire le matin, l'après-midi ou le soir?",
+                        por: "Sua energia é pior pela manhã, à tarde ou à noite?",
+                        deu: "Ist Ihre Energie morgens, nachmittags oder abends schlechter?"
+                    }
+                },
+                {
+                    t: "d",
+                    d: {
+                        ita: "Ha notato una diminuzione della resistenza fisica o mentale?",
+                        eng: "Have you noticed a decrease in physical or mental stamina?",
+                        esp: "¿Ha notado una disminución de la resistencia física o mental?",
+                        fra: "Avez-vous remarqué une diminution de l'endurance physique ou mentale?",
+                        por: "Você notou uma diminuição da resistência física ou mental?",
+                        deu: "Haben Sie einen Rückgang der körperlichen oder geistigen Ausdauer bemerkt?"
+                    }
+                },
+                {
+                    t: "d",
+                    d: {
+                        ita: "Si sente meglio o peggio dopo aver mangiato?",
+                        eng: "Do you feel better or worse after eating?",
+                        esp: "¿Se siente mejor o peor después de comer?",
+                        fra: "Vous sentez-vous mieux ou pire après avoir mangé?",
+                        por: "Você se sente melhor ou pior depois de comer?",
+                        deu: "Fühlen Sie sich nach dem Essen besser oder schlechter?"
+                    }
+                }
+            ],
+            html: '<div id="moduloENERGIA">[0][1][2][3]</div>'
+        },
+        mtc_temperatura: {
+            category: "mtc",
+            subcategory: "interrogazione",
+            title: {
+                ita: "Valutazione MTC Temperatura e sudorazione",
+                eng: "TCM Assessment of Temperature and Sweating",
+                esp: "Evaluación MTC de Temperatura y Sudoración",
+                fra: "Évaluation MTC de la Température et de la Transpiration",
+                por: "Avaliação MTC da Temperatura e Sudorese",
+                deu: "TCM-Bewertung von Temperatur und Schwitzen"
+            },
+            data: [
+                {
+                    t: "d",
+                    d: {
+                        ita: "Sente spesso freddo o calore?",
+                        eng: "Do you often feel cold or hot?",
+                        esp: "¿A menudo siente frío o calor?",
+                        fra: "Ressentez-vous souvent du froid ou de la chaleur?",
+                        por: "Você sente frequentemente frio ou calor?",
+                        deu: "Fühlen Sie sich oft kalt oder heiß?"
+                    }
+                },
+                {
+                    t: "d",
+                    d: {
+                        ita: "Qual è la sua tolleranza al freddo e al caldo?",
+                        eng: "What is your tolerance to cold and heat?",
+                        esp: "¿Cuál es su tolerancia al frío y al calor?",
+                        fra: "Quelle est votre tolérance au froid et à la chaleur?",
+                        por: "Qual é a sua tolerância ao frio e ao calor?",
+                        deu: "Wie ist Ihre Toleranz gegenüber Kälte und Wärme?"
+                    }
+                },
+                {
+                    t: "d",
+                    d: {
+                        ita: "Suda facilmente? Se sì, in quali momenti o zone del corpo?",
+                        eng: "Do you sweat easily? If so, at what times or body areas?",
+                        esp: "¿Suda fácilmente? Si es así, en qué momentos o áreas del cuerpo?",
+                        fra: "Transpirez-vous facilement? Si oui, à quels moments ou sur quelles zones du corps?",
+                        por: "Você sua facilmente? Se sim, em quais momentos ou áreas do corpo?",
+                        deu: "Schwitzen Sie leicht? Wenn ja, zu welchen Zeiten oder an welchen Körperstellen?"
+                    }
+                },
+                {
+                    t: "d",
+                    d: {
+                        ita: "Ha sudorazione notturna o sudorazione spontanea durante il giorno?",
+                        eng: "Do you experience night sweats or spontaneous sweating during the day?",
+                        esp: "¿Experimenta sudores nocturnos o sudoración espontánea durante el día?",
+                        fra: "Avez-vous des sueurs nocturnes ou de la transpiration spontanée pendant la journée?",
+                        por: "Você tem sudorese noturna ou sudorese espontânea durante o dia?",
+                        deu: "Haben Sie Nachtschweiß oder spontane Schweißausbrüche während des Tages?"
+                    }
+                },
+                {
+                    t: "d",
+                    d: {
+                        ita: "La sudorazione è accompagnata da una sensazione di calore o freddo?",
+                        eng: "Is the sweating accompanied by a sensation of heat or cold?",
+                        esp: "¿La sudoración va acompañada de una sensación de calor o frío?",
+                        fra: "La transpiration est-elle accompagnée d'une sensation de chaleur ou de froid?",
+                        por: "A sudore é acompanhada de uma sensação de calor ou frio?",
+                        deu: "Ist das Schwitzen von einem Gefühl von Hitze oder Kälte begleitet?"
+                    }
+                }
+            ],
+            html: '<div id="moduloTEMPERATURA">[0][1][2][3][4]</div>'
+        },
+        mtc_sonno: {
+            category: "mtc",
+            subcategory: "interrogazione",
+            title: {
+                ita: "Valutazione MTC Sonno",
+                eng: "TCM Assessment of Sleep",
+                esp: "Evaluación MTC del Sueño",
+                fra: "Évaluation MTC du Sommeil",
+                por: "Avaliação MTC do Sono",
+                deu: "TCM-Bewertung des Schlafs"
+            },
+            data: [
+                {
+                    t: "d",
+                    d: {
+                        ita: "Come dorme di notte?",
+                        eng: "How do you sleep at night?",
+                        esp: "¿Cómo duerme por la noche?",
+                        fra: "Comment dormez-vous la nuit?",
+                        por: "Como você dorme à noite?",
+                        deu: "Wie schlafen Sie in der Nacht?"
+                    }
+                },
+                {
+                    t: "d",
+                    d: {
+                        ita: "Si sveglia facilmente o fa fatica a dormire?",
+                        eng: "Do you wake up easily or have trouble sleeping?",
+                        esp: "¿Se despierta fácilmente o tiene problemas para dormir?",
+                        fra: "Vous réveillez-vous facilement ou avez-vous des problèmes pour dormir?",
+                        por: "Você acorda facilmente ou tem dificuldade para dormir?",
+                        deu: "Wachen Sie leicht auf oder haben Sie Schwierigkeiten beim Schlafen?"
+                    }
+                },
+                {
+                    t: "d",
+                    d: {
+                        ita: "Si sveglia spesso durante la notte? A che ora?",
+                        eng: "Do you often wake up during the night? At what time?",
+                        esp: "¿Se despierta a menudo durante la noche? ¿A qué hora?",
+                        fra: "Vous réveillez-vous souvent pendant la nuit? À quelle heure?",
+                        por: "Você se acorda frequentemente durante a noite? A que horas?",
+                        deu: "Wachen Sie nachts oft auf? Um wie viel Uhr?"
+                    }
+                },
+                {
+                    t: "d",
+                    d: {
+                        ita: "Sogna molto? Se sì, sono sogni agitati o disturbanti?",
+                        eng: "Do you dream a lot? If so, are they restless or disturbing dreams?",
+                        esp: "¿Sueña mucho? Si es así, son sueños inquietos o perturbadores?",
+                        fra: "Rêvez-vous beaucoup? Si oui, ce sont des rêves agités ou troublants?",
+                        por: "Você sonha muito? Se sim, são sonhos agitados ou perturbadores?",
+                        deu: "Träumen Sie viel? Wenn ja, sind es unruhige oder störende Träume?"
+                    }
+                }
+            ],
+            html: '<div id="moduloSONNO">[0][1][2][3]</div>'
+        },
+        mtc_emozioni: {
+            category: "mtc",
+            subcategory: "interrogazione",
+            title: {
+                ita: "Valutazione MTC Emozioni",
+                eng: "TCM Assessment of Emotions",
+                esp: "Evaluación MTC de las Emociones",
+                fra: "Évaluation MTC des Émotions",
+                por: "Avaliação MTC das Emoções",
+                deu: "TCM-Bewertung der Emotionen"
+            },
+            data: [
+                {
+                    t: "d",
+                    d: {
+                        ita: "Come si sente emotivamente?",
+                        eng: "How do you feel emotionally?",
+                        esp: "¿Cómo se siente emocionalmente?",
+                        fra: "Comment vous sentez-vous émotionnellement?",
+                        por: "Como você se sente emocionalmente?",
+                        deu: "Wie fühlen Sie sich emotional?"
+                    }
+                },
+                {
+                    t: "d",
+                    d: {
+                        ita: "Ha avuto sbalzi d'umore recenti?",
+                        eng: "Have you had recent mood swings?",
+                        esp: "¿Ha tenido cambios de humor recientes?",
+                        fra: "Avez-vous eu des sautes d'humeur récentes?",
+                        por: "Você teve mudanças de humor recentes?",
+                        deu: "Hatten Sie in letzter Zeit Stimmungsschwankungen?"
+                    }
+                },
+                {
+                    t: "d",
+                    d: {
+                        ita: "Si sente irritabile o impaziente?",
+                        eng: "Do you feel irritable or impatient?",
+                        esp: "¿Se siente irritable o impaciente?",
+                        fra: "Vous sentez-vous irritable ou impatient?",
+                        por: "Você se sente irritado ou impaciente?",
+                        deu: "Fühlen Sie sich gereizt oder ungeduldig?"
+                    }
+                },
+                {
+                    t: "d",
+                    d: {
+                        ita: "Si preoccupa molto?",
+                        eng: "Do you worry a lot?",
+                        esp: "¿Se preocupa mucho?",
+                        fra: "Vous inquiétez-vous beaucoup?",
+                        por: "Você se preocupa muito?",
+                        deu: "Machen Sie sich viele Sorgen?"
+                    }
+                },
+                {
+                    t: "d",
+                    d: {
+                        ita: "Ha avuto episodi di tristezza o depressione senza motivo apparente?",
+                        eng: "Have you experienced episodes of sadness or depression without apparent reason?",
+                        esp: "¿Ha tenido episodios de tristeza o depresión sin motivo aparente?",
+                        fra: "Avez-vous eu des épisodes de tristesse ou de dépression sans raison apparente?",
+                        por: "Você teve episódios de tristeza ou depressão sem motivo aparente?",
+                        deu: "Hatten Sie Episoden von Traurigkeit oder Depression ohne ersichtlichen Grund?"
+                    }
+                }
+            ],
+            html: '<div id="moduloEMOZIONI">[0][1][2][3][4]</div>'
+        },
+        mtc_digestione: {
+            category: "mtc",
+            subcategory: "interrogazione",
+            title: {
+                ita: "Valutazione MTC Appetito e digestione",
+                eng: "",
+                esp: "",
+                fra: "",
+                por: "",
+                deu: ""
+            },
+            data: [
+                {
+                    t: "d",
+                    d: {
+                        ita: "Ha fame regolarmente? Se no, quando si riduce l’appetito?",
+                        eng: "",
+                        esp: "",
+                        fra: "",
+                        por: "",
+                        deu: ""
+                    }
+                },
+                {
+                    t: "d",
+                    d: {
+                        ita: "Sente sazietà o pesantezza dopo aver mangiato?",
+                        eng: "",
+                        esp: "",
+                        fra: "",
+                        por: "",
+                        deu: ""
+                    }
+                },
+                {
+                    t: "d",
+                    d: {
+                        ita: "Ha avuto episodi di nausea o vomito?",
+                        eng: "",
+                        esp: "",
+                        fra: "",
+                        por: "",
+                        deu: ""
+                    }
+                },
+                {
+                    t: "d",
+                    d: {
+                        ita: "Ha eruttazioni frequenti?",
+                        eng: "",
+                        esp: "",
+                        fra: "",
+                        por: "",
+                        deu: ""
+                    }
+                },
+                {
+                    t: "d",
+                    d: {
+                        ita: "Ha un sapore amaro o acido in bocca?",
+                        eng: "",
+                        esp: "",
+                        fra: "",
+                        por: "",
+                        deu: ""
+                    }
+                },
+                {
+                    t: "d",
+                    d: {
+                        ita: "Soffre di bruciore di stomaco o reflusso gastrico?",
+                        eng: "",
+                        esp: "",
+                        fra: "",
+                        por: "",
+                        deu: ""
+                    }
+                },
+                {
+                    t: "d",
+                    d: {
+                        ita: "Ha desiderio di particolari tipi di cibo?",
+                        eng: "",
+                        esp: "",
+                        fra: "",
+                        por: "",
+                        deu: ""
+                    }
+                }
+            ],
+            html: '<div id="moduloDIGESTIONE">[0][1][2][3][4][5][6]</div>'
+        },
+        mtc_sete: {
+            category: "mtc",
+            subcategory: "interrogazione",
+            title: {
+                ita: "Valutazione MTC Sete e liquidi corporei",
+                eng: "TCM Assessment of Thirst and Body Fluids",
+                esp: "Evaluación MTC de Sed y Líquidos Corporales",
+                fra: "Évaluation MTC de la Soif et des Liquides Corporels",
+                por: "Avaliação MTC da Sede e Líquidos Corporais",
+                deu: "TCM-Bewertung von Durst und Körperflüssigkeiten"
+            },
+            data: [
+                {
+                    t: "d",
+                    d: {
+                        ita: "Ha sete spesso?",
+                        eng: "Do you often feel thirsty?",
+                        esp: "¿Tiene sed a menudo?",
+                        fra: "Avez-vous souvent soif?",
+                        por: "Você sente sede com frequência?",
+                        deu: "Haben Sie oft Durst?"
+                    }
+                },
+                {
+                    t: "d",
+                    d: {
+                        ita: "Beve molti liquidi o poca acqua?",
+                        eng: "Do you drink a lot of fluids or little water?",
+                        esp: "¿Bebe muchos líquidos o poca agua?",
+                        fra: "Buvez-vous beaucoup de liquides ou peu d'eau?",
+                        por: "Você bebe muitos líquidos ou pouca água?",
+                        deu: "Trinken Sie viele Flüssigkeiten oder wenig Wasser?"
+                    }
+                },
+                {
+                    t: "d",
+                    d: {
+                        ita: "Preferisce bevande fredde o calde?",
+                        eng: "Do you prefer cold or hot drinks?",
+                        esp: "¿Prefiere bebidas frías o calientes?",
+                        fra: "Préférez-vous les boissons froides ou chaudes?",
+                        por: "Você prefere bebidas frias ou quentes?",
+                        deu: "Bevorzugen Sie kalte oder heiße Getränke?"
+                    }
+                },
+                {
+                    t: "d",
+                    d: {
+                        ita: "Ha bocca secca o sensazione di calore interno?",
+                        eng: "Do you have a dry mouth or a sensation of internal heat?",
+                        esp: "¿Tiene la boca seca o sensación de calor interno?",
+                        fra: "Avez-vous la bouche sèche ou une sensation de chaleur interne?",
+                        por: "Você tem boca seca ou sensação de calor interno?",
+                        deu: "Haben Sie einen trockenen Mund oder ein Gefühl von innerer Hitze?"
+                    }
+                }
+            ],
+            html: '<div id="moduloSETE">[0][1][2][3]</div>'
+        },
+        mtc_urine: {
+            category: "mtc",
+            subcategory: "interrogazione",
+            title: {
+                ita: "Valutazione MTC Urine",
+                eng: "TCM Assessment of Urine",
+                esp: "Evaluación MTC de la Orina",
+                fra: "Évaluation MTC des Urines",
+                por: "Avaliação MTC da Urina",
+                deu: "TCM-Bewertung des Urins"
+            },
+            data: [
+                {
+                    t: "d",
+                    d: {
+                        ita: "La frequenza della minzione è normale, aumentata o ridotta?",
+                        eng: "Is your urination frequency normal, increased, or decreased?",
+                        esp: "¿Es normal, aumentada o reducida la frecuencia de micción?",
+                        fra: "La fréquence des mictions est-elle normale, augmentée ou diminuée?",
+                        por: "A frequência da micção é normal, aumentada ou reduzida?",
+                        deu: "Ist Ihre Urinfrequenz normal, erhöht oder verringert?"
+                    }
+                },
+                {
+                    t: "d",
+                    d: {
+                        ita: "Il colore dell'urina è chiaro, scuro, o torbido?",
+                        eng: "Is the color of your urine clear, dark, or cloudy?",
+                        esp: "¿Es el color de su orina claro, oscuro o turbio?",
+                        fra: "La couleur de votre urine est-elle claire, foncée ou trouble?",
+                        por: "A cor da sua urina é clara, escura ou turva?",
+                        deu: "Ist Ihre Urinfarbe klar, dunkel oder trüb?"
+                    }
+                },
+                {
+                    t: "d",
+                    d: {
+                        ita: "Hai dolori o fastidi durante la minzione?",
+                        eng: "Do you experience pain or discomfort during urination?",
+                        esp: "¿Siente dolor o molestias al orinar?",
+                        fra: "Ressentez-vous de la douleur ou de l'inconfort pendant la miction?",
+                        por: "Você sente dor ou desconforto ao urinar?",
+                        deu: "Haben Sie Schmerzen oder Beschwerden beim Urinieren?"
+                    }
+                },
+                {
+                    t: "d",
+                    d: {
+                        ita: "Si alza di notte per urinare?",
+                        eng: "Do you get up at night to urinate?",
+                        esp: "¿Se levanta por la noche para orinar?",
+                        fra: "Vous levez-vous la nuit pour uriner?",
+                        por: "Você se levanta à noite para urinar?",
+                        deu: "Stehen Sie nachts auf, um zu urinieren?"
+                    }
+                }
+            ],
+            html: '<div id="moduloURINE">[0][1][2][3]</div>'
+        },
+        mtc_feci: {
+            category: "mtc",
+            subcategory: "interrogazione",
+            title: {
+                ita: "Valutazione MTC Feci e intestino",
+                eng: "TCM Assessment of Feces and Intestine",
+                esp: "Evaluación MTC de las Heces y el Intestino",
+                fra: "Évaluation MTC des Selles et de l'Intestin",
+                por: "Avaliação MTC das Fezes e do Intestino",
+                deu: "TCM-Bewertung von Stuhl und Darm"
+            },
+            data: [
+                {
+                    t: "d",
+                    d: {
+                        ita: "Ha problemi di stitichezza o diarrea?",
+                        eng: "Do you have issues with constipation or diarrhea?",
+                        esp: "¿Tiene problemas de estreñimiento o diarrea?",
+                        fra: "Avez-vous des problèmes de constipation ou de diarrhée?",
+                        por: "Você tem problemas de constipação ou diarreia?",
+                        deu: "Haben Sie Probleme mit Verstopfung oder Durchfall?"
+                    }
+                },
+                {
+                    t: "d",
+                    d: {
+                        ita: "Quanto spesso evacua?",
+                        eng: "How often do you have bowel movements?",
+                        esp: "¿Con qué frecuencia evacua?",
+                        fra: "À quelle fréquence évacuez-vous?",
+                        por: "Com que frequência você evacua?",
+                        deu: "Wie oft haben Sie Stuhlgang?"
+                    }
+                },
+                {
+                    t: "d",
+                    d: {
+                        ita: "Le feci sono dure, molli o acquose?",
+                        eng: "Are your stools hard, soft, or watery?",
+                        esp: "¿Las heces son duras, blandas o acuosas?",
+                        fra: "Les selles sont-elles dures, molles ou aqueuses?",
+                        por: "As fezes são duras, moles ou aquosas?",
+                        deu: "Sind Ihre Stühle hart, weich oder wässrig?"
+                    }
+                },
+                {
+                    t: "d",
+                    d: {
+                        ita: "Nota muco o sangue nelle feci?",
+                        eng: "Do you notice mucus or blood in your stools?",
+                        esp: "¿Nota moco o sangre en las heces?",
+                        fra: "Remarquez-vous des mucus ou du sang dans vos selles?",
+                        por: "Você nota muco ou sangue nas fezes?",
+                        deu: "Bemerkten Sie Schleim oder Blut in Ihrem Stuhl?"
+                    }
+                },
+                {
+                    t: "d",
+                    d: {
+                        ita: "Ha gonfiore addominale o crampi?",
+                        eng: "Do you have abdominal bloating or cramps?",
+                        esp: "¿Tiene hinchazón abdominal o calambres?",
+                        fra: "Avez-vous des ballonnements abdominaux ou des crampes?",
+                        por: "Você tem inchaço abdominal ou cólicas?",
+                        deu: "Haben Sie Bauchschwellungen oder Krämpfe?"
+                    }
+                },
+                {
+                    t: "d",
+                    d: {
+                        ita: "Le evacuazioni sono accompagnate da un odore molto forte?",
+                        eng: "Are your bowel movements accompanied by a very strong odor?",
+                        esp: "¿Las evacuaciones vienen acompañadas de un olor muy fuerte?",
+                        fra: "Les selles sont-elles accompagnées d'une odeur très forte?",
+                        por: "As evacuações são acompanhadas de um odor muito forte?",
+                        deu: "Sind Ihre Stuhlgänge von einem sehr starken Geruch begleitet?"
+                    }
+                }
+            ],
+            html: '<div id="moduloFECI">[0][1][2][3][4][5]</div>'
+        },
+        mtc_dolori: {
+            category: "mtc",
+            subcategory: "interrogazione",
+            title: {
+                ita: "Valutazione MTC Dolori e tensioni",
+                eng: "TCM Assessment of Pain and Tension",
+                esp: "Evaluación MTC del Dolor y la Tensión",
+                fra: "Évaluation MTC de la Douleur et de la Tension",
+                por: "Avaliação MTC da Dor e da Tensão",
+                deu: "TCM-Bewertung von Schmerz und Spannung"
+            },
+            data: [
+                {
+                    t: "d",
+                    d: {
+                        ita: "Ha dolori o fastidi in qualche parte del corpo?",
+                        eng: "Do you have pain or discomfort in any part of your body?",
+                        esp: "¿Tiene dolor o molestias en alguna parte del cuerpo?",
+                        fra: "Avez-vous des douleurs ou des inconforts dans une partie de votre corps?",
+                        por: "Você tem dor ou desconforto em alguma parte do corpo?",
+                        deu: "Haben Sie Schmerzen oder Beschwerden in irgendeinem Teil Ihres Körpers?"
+                    }
+                },
+                {
+                    t: "d",
+                    d: {
+                        ita: "Il dolore è fisso o si sposta?",
+                        eng: "Is the pain constant or does it move?",
+                        esp: "¿El dolor es fijo o se mueve?",
+                        fra: "La douleur est-elle fixe ou se déplace-t-elle?",
+                        por: "A dor é constante ou se move?",
+                        deu: "Ist der Schmerz konstant oder bewegt er sich?"
+                    }
+                },
+                {
+                    t: "d",
+                    d: {
+                        ita: "Il dolore è acuto, sordo, pulsante, o bruciante?",
+                        eng: "Is the pain sharp, dull, throbbing, or burning?",
+                        esp: "¿El dolor es agudo, sordo, pulsante o ardiente?",
+                        fra: "La douleur est-elle aiguë, sourde, lancinante ou brûlante?",
+                        por: "A dor é aguda, surda, latejante ou ardente?",
+                        deu: "Ist der Schmerz stechend, dumpf, pulsierend oder brennend?"
+                    }
+                },
+                {
+                    t: "d",
+                    d: {
+                        ita: "Il dolore è peggiore al freddo, al caldo o con il movimento?",
+                        eng: "Is the pain worse in the cold, heat, or with movement?",
+                        esp: "¿El dolor empeora con el frío, el calor o el movimiento?",
+                        fra: "La douleur est-elle pire au froid, à la chaleur ou avec le mouvement?",
+                        por: "A dor é pior com frio, calor ou movimento?",
+                        deu: "Ist der Schmerz bei Kälte, Wärme oder Bewegung schlimmer?"
+                    }
+                },
+                {
+                    t: "d",
+                    d: {
+                        ita: "Ci sono particolari momenti della giornata in cui il dolore aumenta?",
+                        eng: "Are there specific times of the day when the pain increases?",
+                        esp: "¿Hay momentos específicos del día en los que el dolor aumenta?",
+                        fra: "Y a-t-il des moments spécifiques de la journée où la douleur augmente?",
+                        por: "Há momentos específicos do dia em que a dor aumenta?",
+                        deu: "Gibt es bestimmte Tageszeiten, zu denen der Schmerz zunimmt?"
+                    }
+                }
+            ],
+            html: '<div id="moduloDOLORI">[0][1][2][3][4]</div>'
+        },
+        mtc_respirazione: {
+            category: "mtc",
+            subcategory: "interrogazione",
+            title: {
+                ita: "Valutazione MTC Respirazione",
+                eng: "TCM Assessment of Breathing",
+                esp: "Evaluación MTC de la Respiración",
+                fra: "Évaluation MTC de la Respiration",
+                por: "Avaliação MTC da Respiração",
+                deu: "TCM-Bewertung der Atmung"
+            },
+            data: [
+                {
+                    t: "d",
+                    d: {
+                        ita: "Ha problemi a respirare profondamente?",
+                        eng: "Do you have trouble taking deep breaths?",
+                        esp: "¿Tiene problemas para respirar profundamente?",
+                        fra: "Avez-vous des problèmes pour respirer profondément?",
+                        por: "Você tem dificuldade para respirar profundamente?",
+                        deu: "Haben Sie Schwierigkeiten, tief zu atmen?"
+                    }
+                },
+                {
+                    t: "d",
+                    d: {
+                        ita: "Ha episodi di dispnea o affanno?",
+                        eng: "Do you have episodes of shortness of breath?",
+                        esp: "¿Tiene episodios de disnea o falta de aliento?",
+                        fra: "Avez-vous des épisodes d'essoufflement?",
+                        por: "Você tem episódios de falta de ar?",
+                        deu: "Haben Sie Atemnot-Episoden?"
+                    }
+                },
+                {
+                    t: "d",
+                    d: {
+                        ita: "Soffre di tosse frequente? Se sì, è secca o con espettorato?",
+                        eng: "Do you suffer from frequent coughing? If so, is it dry or with phlegm?",
+                        esp: "¿Sufre de tos frecuente? Si es así, ¿es seca o con esputo?",
+                        fra: "Souffrez-vous de toux fréquente? Si oui, est-elle sèche ou avec des mucosités?",
+                        por: "Você sofre de tosse frequente? Se sim, é seca ou com muco?",
+                        deu: "Haben Sie häufigen Husten? Wenn ja, ist er trocken oder mit Schleim?"
+                    }
+                },
+                {
+                    t: "d",
+                    d: {
+                        ita: "Ha sensazione di costrizione toracica o respiro sibilante?",
+                        eng: "Do you feel tightness in your chest or wheezing?",
+                        esp: "¿Siente opresión en el pecho o sibilancias?",
+                        fra: "Ressentez-vous une oppression dans la poitrine ou un wheezing?",
+                        por: "Você sente aperto no peito ou chiado?",
+                        deu: "Fühlen Sie ein Engegefühl in der Brust oder Pfeifen?"
+                    }
+                }
+            ],
+            html: '<div id="moduloRESPIRAZIONE">[0][1][2][3]</div>'
+        },
+        mtc_mestruazioni: {
+            category: "mtc",
+            subcategory: "interrogazione",
+            title: {
+                ita: "Valutazione MTC Mestruazioni",
+                eng: "TCM Assessment of Menstruation",
+                esp: "Evaluación MTC de la Menstruación",
+                fra: "Évaluation MTC de la Ménstruation",
+                por: "Avaliação MTC da Menstruação",
+                deu: "TCM-Bewertung der Menstruation"
+            },
+            data: [
+                {
+                    t: "d",
+                    d: {
+                        ita: "Il ciclo mestruale è regolare?",
+                        eng: "Is your menstrual cycle regular?",
+                        esp: "¿Es regular su ciclo menstrual?",
+                        fra: "Votre cycle menstruel est-il régulier?",
+                        por: "Seu ciclo menstrual é regular?",
+                        deu: "Ist Ihr Menstruationszyklus regelmäßig?"
+                    }
+                },
+                {
+                    t: "d",
+                    d: {
+                        ita: "Quanto dura il ciclo?",
+                        eng: "How long does your cycle last?",
+                        esp: "¿Cuánto dura su ciclo?",
+                        fra: "Combien de temps dure votre cycle?",
+                        por: "Quanto tempo dura seu ciclo?",
+                        deu: "Wie lange dauert Ihr Zyklus?"
+                    }
+                },
+                {
+                    t: "d",
+                    d: {
+                        ita: "Il flusso è abbondante o scarso?",
+                        eng: "Is your flow heavy or light?",
+                        esp: "¿Es su flujo abundante o escaso?",
+                        fra: "Votre flux est-il abondant ou léger?",
+                        por: "Seu fluxo é abundante ou leve?",
+                        deu: "Ist Ihr Fluss schwer oder leicht?"
+                    }
+                },
+                {
+                    t: "d",
+                    d: {
+                        ita: "Ha dolori mestruali? Se sì, quando compaiono?",
+                        eng: "Do you have menstrual pain? If so, when does it occur?",
+                        esp: "¿Tiene dolor menstrual? Si es así, ¿cuándo aparece?",
+                        fra: "Avez-vous des douleurs menstruelles? Si oui, quand apparaissent-elles?",
+                        por: "Você sente dor menstrual? Se sim, quando aparece?",
+                        deu: "Haben Sie Menstruationsschmerzen? Wenn ja, wann treten sie auf?"
+                    }
+                },
+                {
+                    t: "d",
+                    d: {
+                        ita: "Ha notato coaguli nel sangue mestruale?",
+                        eng: "Have you noticed clots in your menstrual blood?",
+                        esp: "¿Ha notado coágulos en su sangre menstrual?",
+                        fra: "Avez-vous remarqué des caillots dans votre sang menstruel?",
+                        por: "Você notou coágulos em seu sangue menstrual?",
+                        deu: "Haben Sie Klumpen in Ihrem Menstruationsblut bemerkt?"
+                    }
+                },
+                {
+                    t: "d",
+                    d: {
+                        ita: "Ha sintomi premestruali (PMS)?",
+                        eng: "Do you have premenstrual symptoms (PMS)?",
+                        esp: "¿Tiene síntomas premenstruali (PMS)?",
+                        fra: "Avez-vous des symptômes prémenstruels (PMS)?",
+                        por: "Você tem sintomas pré-menstruais (PMS)?",
+                        deu: "Haben Sie prämenstruelle Symptome (PMS)?"
+                    }
+                },
+                {
+                    t: "d",
+                    d: {
+                        ita: "Ha mai avuto irregolarità mestruali o amenorrea?",
+                        eng: "Have you ever had menstrual irregularities or amenorrhea?",
+                        esp: "¿Alguna vez ha tenido irregularidades menstruali o amenorrea?",
+                        fra: "Avez-vous déjà eu des irrégularités menstruelles ou une aménorrhée?",
+                        por: "Você já teve irregularidades menstruais ou amenorreia?",
+                        deu: "Hatten Sie jemals Menstruationsunregelmäßigkeiten oder Amenorrhoe?"
+                    }
+                }
+            ],
+            html: '<div id="moduloMESTRUAZIONI">[0][1][2][3][4][5][6]</div>'
+        },
+        mtc_gravidanza: {
+            category: "mtc",
+            subcategory: "interrogazione",
+            title: {
+                ita: "Valutazione MTC Gravidanza e fertilità",
+                eng: "TCM Assessment of Pregnancy and Fertility",
+                esp: "Evaluación MTC del Embarazo y la Fertilidad",
+                fra: "Évaluation MTC de la Grossesse et de la Fertilité",
+                por: "Avaliação MTC da Gravidez e Fertilidade",
+                deu: "TCM-Bewertung von Schwangerschaft und Fruchtbarkeit"
+            },
+            data: [
+                {
+                    t: "d",
+                    d: {
+                        ita: "Ha difficoltà a rimanere incinta?",
+                        eng: "Do you have difficulty getting pregnant?",
+                        esp: "¿Tiene dificultad para quedar embarazada?",
+                        fra: "Avez-vous des difficultés à tomber enceinte?",
+                        por: "Você tem dificuldade para engravidar?",
+                        deu: "Haben Sie Schwierigkeiten, schwanger zu werden?"
+                    }
+                },
+                {
+                    t: "d",
+                    d: {
+                        ita: "Ha avuto aborti spontanei?",
+                        eng: "Have you had any miscarriages?",
+                        esp: "¿Ha tenido abortos espontáneos?",
+                        fra: "Avez-vous eu des fausses couches?",
+                        por: "Você teve abortos espontâneos?",
+                        deu: "Hatten Sie Fehlgeburten?"
+                    }
+                },
+                {
+                    t: "d",
+                    d: {
+                        ita: "Ha sintomi particolari durante la gravidanza?",
+                        eng: "Do you have any particular symptoms during pregnancy?",
+                        esp: "¿Tiene síntomas particulares durante el embarazo?",
+                        fra: "Avez-vous des symptômes particuliers pendant la grossesse?",
+                        por: "Você tem sintomas específicos durante a gravidez?",
+                        deu: "Haben Sie während der Schwangerschaft besondere Symptome?"
+                    }
+                }
+            ],
+            html: '<div id="moduloGRAVIDANZA">[0][1][2]</div>'
+        },
+        mtc_menopausa: {
+            category: "mtc",
+            subcategory: "interrogazione",
+            title: {
+                ita: "Valutazione MTC Menopausa",
+                eng: "TCM Assessment of Menopause",
+                esp: "Evaluación MTC de la Menopausia",
+                fra: "Évaluation MTC de la Ménopause",
+                por: "Avaliação MTC da Menopausa",
+                deu: "TCM-Bewertung der Menopause"
+            },
+            data: [
+                {
+                    t: "d",
+                    d: {
+                        ita: "Ha avuto vampate di calore o sudorazioni notturne?",
+                        eng: "Have you experienced hot flashes or night sweats?",
+                        esp: "¿Ha tenido sofocos o sudores nocturnos?",
+                        fra: "Avez-vous eu des bouffées de chaleur ou des sueurs nocturnes?",
+                        por: "Você teve ondas de calor ou suores noturnos?",
+                        deu: "Hatten Sie Hitzewallungen oder Nachtschweiß?"
+                    }
+                },
+                {
+                    t: "d",
+                    d: {
+                        ita: "Ha irritabilità, ansia o insonnia?",
+                        eng: "Do you experience irritability, anxiety, or insomnia?",
+                        esp: "¿Siente irritabilidad, ansiedad o insomnio?",
+                        fra: "Ressentez-vous de l'irritabilité, de l'anxiété ou de l'insomnie?",
+                        por: "Você sente irritabilidade, ansiedade ou insônia?",
+                        deu: "Haben Sie Reizbarkeit, Angst oder Schlaflosigkeit?"
+                    }
+                },
+                {
+                    t: "d",
+                    d: {
+                        ita: "Ha avuto secchezza vaginale o altri sintomi fisici?",
+                        eng: "Do you have vaginal dryness or other physical symptoms?",
+                        esp: "¿Tiene sequedad vaginal u otros síntomas físicos?",
+                        fra: "Avez-vous une sécheresse vaginale ou d'autres symptômes physiques?",
+                        por: "Você tem secura vaginal ou outros sintomas físicos?",
+                        deu: "Haben Sie vaginale Trockenheit oder andere körperliche Symptome?"
+                    }
+                }
+            ],
+            html: '<div id="moduloMENOPAUSA">[0][1][2]</div>'
+        },
+        mtc_sesso: {
+            category: "mtc",
+            subcategory: "interrogazione",
+            title: {
+                ita: "Valutazione MTC Stato sessuale",
+                eng: "TCM Assessment of Sexual Health",
+                esp: "Evaluación MTC de la Salud Sexual",
+                fra: "Évaluation MTC de la Santé Sexuelle",
+                por: "Avaliação MTC da Saúde Sexual",
+                deu: "TCM-Bewertung der sexuellen Gesundheit"
+            },
+            data: [
+                {
+                    t: "d",
+                    d: {
+                        ita: "Ha avuto cambiamenti nella libido?",
+                        eng: "Have you experienced changes in libido?",
+                        esp: "¿Ha tenido cambios en la libido?",
+                        fra: "Avez-vous eu des changements dans la libido?",
+                        por: "Você teve mudanças na libido?",
+                        deu: "Hatten Sie Veränderungen in der Libido?"
+                    }
+                },
+                {
+                    t: "d",
+                    d: {
+                        ita: "Ha problemi di disfunzione sessuale?",
+                        eng: "Do you have any sexual dysfunction issues?",
+                        esp: "¿Tiene problemas de disfunción sexual?",
+                        fra: "Avez-vous des problèmes de dysfonction sexuelle?",
+                        por: "Você tem problemas de disfunção sexual?",
+                        deu: "Haben Sie Probleme mit sexueller Dysfunktion?"
+                    }
+                },
+                {
+                    t: "d",
+                    d: {
+                        ita: "Soffre di impotenza o eiaculazione precoce?",
+                        eng: "Do you suffer from impotence or premature ejaculation?",
+                        esp: "¿Sufre de impotencia o eyaculación precoz?",
+                        fra: "Souffrez-vous d'impuissance ou d'éjaculation précoce?",
+                        por: "Você sofre de impotência ou ejaculação precoce?",
+                        deu: "Leiden Sie unter Impotenz oder vorzeitiger Ejakulation?"
+                    }
+                },
+                {
+                    t: "d",
+                    d: {
+                        ita: "Ha avuto dolore durante i rapporti sessuali?",
+                        eng: "Have you experienced pain during sexual intercourse?",
+                        esp: "¿Ha tenido dolor durante las relaciones sexuales?",
+                        fra: "Avez-vous ressenti de la douleur pendant les rapports sexuels?",
+                        por: "Você sentiu dor durante as relações sexuais?",
+                        deu: "Hatten Sie Schmerzen beim Geschlechtsverkehr?"
+                    }
+                }
+            ],
+            html: '<div id="moduloSESSO">[0][1][2][3]</div>'
+        },
+        mtc_suoni: {
+            category: "mtc",
+            subcategory: "ascolto",
+            title: {
+                ita: "Valutazione MTC Ascolto",
+                eng: "MTC Listening Assessment",
+                esp: "Evaluación MTC de Escucha",
+                fra: "Évaluation MTC de l'Écoute",
+                por: "Avaliação MTC de Escuta",
+                deu: "MTC Hörbewertung"
+            },
+            data: [
+                {
+                    t: "s",
+                    d: {
+                        ita: "Voce",
+                        eng: "Voice",
+                        esp: "Voz",
+                        fra: "Voix",
+                        por: "Voz",
+                        deu: "Stimme"
+                    },
+                    l: [
+                        {
+                            ita: "",
+                            eng: "",
+                            esp: "",
+                            fra: "",
+                            por: "",
+                            deu: ""
+                        },
+                        {
+                            ita: "Forte e alta",
+                            eng: "Loud and high",
+                            esp: "Fuerte y alta",
+                            fra: "Fort et élevé",
+                            por: "Forte e alto",
+                            deu: "Laut und hoch"
+                        },
+                        {
+                            ita: "Debole e bassa",
+                            eng: "Weak and low",
+                            esp: "Débil y baja",
+                            fra: "Faible et bas",
+                            por: "Fraco e baixo",
+                            deu: "Schwach und niedrig"
+                        },
+                        {
+                            ita: "Tremolante",
+                            eng: "Trembling",
+                            esp: "Temblorosa",
+                            fra: "Tremblante",
+                            por: "Tremendo",
+                            deu: "Zitternd"
+                        },
+                        {
+                            ita: "Rauca",
+                            eng: "Hoarse",
+                            esp: "Ronca",
+                            fra: "Enrouée",
+                            por: "Rouca",
+                            deu: "Heiser"
+                        }
+                    ]
+                },
+                {
+                    t: "s",
+                    d: {
+                        ita: "Respiro",
+                        eng: "Breath",
+                        esp: "Respiración",
+                        fra: "Respiration",
+                        por: "Respiração",
+                        deu: "Atmung"
+                    },
+                    l: [
+                        {
+                            ita: "",
+                            eng: "",
+                            esp: "",
+                            fra: "",
+                            por: "",
+                            deu: ""
+                        },
+                        {
+                            ita: "Profondo e rapido",
+                            eng: "Deep and rapid",
+                            esp: "Profundo y rápido",
+                            fra: "Profond et rapide",
+                            por: "Profundo e rápido",
+                            deu: "Tief und schnell"
+                        },
+                        {
+                            ita: "Superficiale e debole",
+                            eng: "Shallow and weak",
+                            esp: "Superficial y débil",
+                            fra: "Superficiel et faible",
+                            por: "Superficial e fraco",
+                            deu: "Oberflächlich und schwach"
+                        },
+                        {
+                            ita: "Affannoso",
+                            eng: "Labored",
+                            esp: "Con dificultad",
+                            fra: "Laborieux",
+                            por: "Difícil",
+                            deu: "Mühsam"
+                        },
+                        {
+                            ita: "Sibilante",
+                            eng: "Wheezing",
+                            esp: "Sibilante",
+                            fra: "Sibilant",
+                            por: "Sibilante",
+                            deu: "Pfeifendes Geräusch"
+                        }
+                    ]
+                },
+                {
+                    t: "s",
+                    d: {
+                        ita: "Tosse",
+                        eng: "Cough",
+                        esp: "Tos",
+                        fra: "Toux",
+                        por: "Tosse",
+                        deu: "Husten"
+                    },
+                    l: [
+                        {
+                            ita: "",
+                            eng: "",
+                            esp: "",
+                            fra: "",
+                            por: "",
+                            deu: ""
+                        },
+                        {
+                            ita: "Secca",
+                            eng: "Dry",
+                            esp: "Seca",
+                            fra: "Sèche",
+                            por: "Seca",
+                            deu: "Trocken"
+                        },
+                        {
+                            ita: "Con espettorato",
+                            eng: "With sputum",
+                            esp: "Con esputo",
+                            fra: "Avec expectoration",
+                            por: "Com escarro",
+                            deu: "Mit Auswurf"
+                        },
+                        {
+                            ita: "Con suono profondo e pensante",
+                            eng: "With a deep and heavy sound",
+                            esp: "Con sonido profundo y pesado",
+                            fra: "Avec un son profond et lourd",
+                            por: "Com um som profundo e pesado",
+                            deu: "Mit tiefem und schwerem Klang"
+                        },
+                        {
+                            ita: "Con suono acuto e forte",
+                            eng: "With a sharp and loud sound",
+                            esp: "Con sonido agudo y fuerte",
+                            fra: "Avec un son aigu et fort",
+                            por: "Com um som agudo e alto",
+                            deu: "Mit scharfem und lautem Klang"
+                        }
+                    ]
+                },
+                {
+                    t: "s",
+                    d: {
+                        ita: "Rantoli e respiri anomali",
+                        eng: "Rattles and abnormal breaths",
+                        esp: "Estertores y respiraciones anormales",
+                        fra: "Ronflements et respirations anormales",
+                        por: "Roncos e respirações anormais",
+                        deu: "Rasseln und abnormale Atemgeräusche"
+                    },
+                    l: [
+                        {
+                            ita: "",
+                            eng: "",
+                            esp: "",
+                            fra: "",
+                            por: "",
+                            deu: ""
+                        },
+                        {
+                            ita: "Rantoli umidi",
+                            eng: "Moist rattles",
+                            esp: "Estertores húmedos",
+                            fra: "Ronflements humides",
+                            por: "Roncos úmidos",
+                            deu: "Feuchte Rasselgeräusche"
+                        },
+                        {
+                            ita: "Sibili",
+                            eng: "Wheezes",
+                            esp: "Sibilancias",
+                            fra: "Sibilances",
+                            por: "Sibilos",
+                            deu: "Pfeifen"
+                        },
+                        {
+                            ita: "Rantoli secchi",
+                            eng: "Dry rattles",
+                            esp: "Estertores secos",
+                            fra: "Ronflements secs",
+                            por: "Roncos secos",
+                            deu: "Trockene Rasselgeräusche"
+                        }
+                    ]
+                },
+                {
+                    t: "s",
+                    d: {
+                        ita: "Singhiozzo",
+                        eng: "Hiccup",
+                        esp: "Hipo",
+                        fra: "Hoquet",
+                        por: "Arrotos",
+                        deu: "Schluckauf"
+                    },
+                    l: [
+                        {
+                            ita: "",
+                            eng: "",
+                            esp: "",
+                            fra: "",
+                            por: "",
+                            deu: ""
+                        },
+                        {
+                            ita: "Forte e continuo",
+                            eng: "Strong and continuous",
+                            esp: "Fuerte y continuo",
+                            fra: "Fort et continu",
+                            por: "Forte e contínuo",
+                            deu: "Stark und kontinuierlich"
+                        },
+                        {
+                            ita: "Debole e intermittente",
+                            eng: "Weak and intermittent",
+                            esp: "Débil e intermitente",
+                            fra: "Faible et intermittent",
+                            por: "Fraco e intermitente",
+                            deu: "Schwach und intermittierend"
+                        }
+                    ]
+                },
+                {
+                    t: "s",
+                    d: {
+                        ita: "Vomito",
+                        eng: "Vomiting",
+                        esp: "Vómito",
+                        fra: "Vomissement",
+                        por: "Vômito",
+                        deu: "Erbrechen"
+                    },
+                    l: [
+                        {
+                            ita: "",
+                            eng: "",
+                            esp: "",
+                            fra: "",
+                            por: "",
+                            deu: ""
+                        },
+                        {
+                            ita: "Rumoroso e violento",
+                            eng: "Noisy and violent",
+                            esp: "Ruidoso y violento",
+                            fra: "Bruyant et violent",
+                            por: "Barulhento e violento",
+                            deu: "Laut und gewalttätig"
+                        },
+                        {
+                            ita: "Debole e silenzioso",
+                            eng: "Weak and silent",
+                            esp: "Débil y silencioso",
+                            fra: "Faible et silencieux",
+                            por: "Fraco e silencioso",
+                            deu: "Schwach und leise"
+                        }
+                    ]
+                },
+                {
+                    t: "s",
+                    d: {
+                        ita: "Eruttazione",
+                        eng: "Belching",
+                        esp: "Eructo",
+                        fra: "Rôt",
+                        por: "Arrotos",
+                        deu: "Rülpsen"
+                    },
+                    l: [
+                        {
+                            ita: "",
+                            eng: "",
+                            esp: "",
+                            fra: "",
+                            por: "",
+                            deu: ""
+                        },
+                        {
+                            ita: "Rumorosa",
+                            eng: "Noisy",
+                            esp: "Ruidosa",
+                            fra: "Bruyante",
+                            por: "Barulhenta",
+                            deu: "Laut"
+                        },
+                        {
+                            ita: "Rilensiosa e debole",
+                            eng: "Silent and weak",
+                            esp: "Silenciosa y débil",
+                            fra: "Silencieuse et faible",
+                            por: "Silenciosa e fraca",
+                            deu: "Leise und schwach"
+                        }
+                    ]
+                },
+                {
+                    t: "s",
+                    d: {
+                        ita: "Borbottii addominali",
+                        eng: "Abdominal borborygmi",
+                        esp: "Borborigmos abdominales",
+                        fra: "Borborygmes abdominaux",
+                        por: "Borborygmos abdominais",
+                        deu: "Borborygmi im Bauch"
+                    },
+                    l: [
+                        {
+                            ita: "",
+                            eng: "",
+                            esp: "",
+                            fra: "",
+                            por: "",
+                            deu: ""
+                        },
+                        {
+                            ita: "Forti e frequenti",
+                            eng: "Strong and frequent",
+                            esp: "Fuertes y frecuentes",
+                            fra: "Forts et fréquents",
+                            por: "Fortes e frequentes",
+                            deu: "Stark und häufig"
+                        },
+                        {
+                            ita: "Deboli o assenti",
+                            eng: "Weak or absent",
+                            esp: "Débiles o ausentes",
+                            fra: "Faibles ou absents",
+                            por: "Fracos ou ausentes",
+                            deu: "Schwach oder nicht vorhanden"
+                        }
+                    ]
+                },
+                {
+                    t: "s",
+                    d: {
+                        ita: "Flatulenza",
+                        eng: "Flatulence",
+                        esp: "Flatulencia",
+                        fra: "Flatulences",
+                        por: "Flatulência",
+                        deu: "Blähungen"
+                    },
+                    l: [
+                        {
+                            ita: "",
+                            eng: "",
+                            esp: "",
+                            fra: "",
+                            por: "",
+                            deu: ""
+                        },
+                        {
+                            ita: "Rumorosa e frequente",
+                            eng: "Noisy and frequent",
+                            esp: "Ruidosa y frecuente",
+                            fra: "Bruyante et fréquente",
+                            por: "Barulhenta e frequente",
+                            deu: "Laut und häufig"
+                        },
+                        {
+                            ita: "Debole e rara",
+                            eng: "Weak and rare",
+                            esp: "Débil y rara",
+                            fra: "Faible et rare",
+                            por: "Fraca e rara",
+                            deu: "Schwach und selten"
+                        }
+                    ]
+                },
+                {
+                    t: "s",
+                    d: {
+                        ita: "Pianto o riso anomali",
+                        eng: "Abnormal crying or laughing",
+                        esp: "Llanto o risa anormales",
+                        fra: "Pleurs ou rires anormaux",
+                        por: "Choro ou riso anormais",
+                        deu: "Anormales Weinen oder Lachen"
+                    },
+                    l: [
+                        {
+                            ita: "",
+                            eng: "",
+                            esp: "",
+                            fra: "",
+                            por: "",
+                            deu: ""
+                        },
+                        {
+                            ita: "Pianto continuo e forte",
+                            eng: "Continuous and loud crying",
+                            esp: "Llanto continuo y fuerte",
+                            fra: "Pleurs continus et forts",
+                            por: "Choro contínuo e alto",
+                            deu: "Kontinuierliches und lautes Weinen"
+                        },
+                        {
+                            ita: "Risate incontrollabili",
+                            eng: "Uncontrollable laughter",
+                            esp: "Risas incontrolables",
+                            fra: "Rires incontrôlables",
+                            por: "Risos incontroláveis",
+                            deu: "Unkontrollierbares Lachen"
+                        }
+                    ]
+                }
+            ],
+            html: '<div id="moduloASCOLTO" class="md_lists">[0][1][2][3][4][5][6][7][8][9]</div>'
+        },
+        mtc_odori: {
+            category: "mtc",
+            subcategory: "ascolto",
+            title: {
+                ita: "Valutazione MTC Odori",
+                eng: "MTC Smell Assessment",
+                esp: "Evaluación MTC de Olores",
+                fra: "Évaluation MTC des Odeurs",
+                por: "Avaliação MTC de Cheiros",
+                deu: "MTC Geruchsbewertung"
+            },
+            data: [
+                {
+                    t: "r",
+                    d: {
+                        ita: "Ha notato cambiamenti nell'odore del suo corpo o del sudore?",
+                        eng: "Have you noticed changes in the smell of your body or sweat?",
+                        esp: "¿Ha notado cambios en el olor de su cuerpo o sudor?",
+                        fra: "Avez-vous remarqué des changements dans l'odeur de votre corps ou de votre sueur?",
+                        por: "Você notou mudanças no cheiro do seu corpo ou do suor?",
+                        deu: "Haben Sie Veränderungen im Geruch Ihres Körpers oder Schweißes bemerkt?"
+                    },
+                    l: [
+                        {
+                            ita: "Nessun cambiamento",
+                            eng: "No change",
+                            esp: "Ningún cambio",
+                            fra: "Aucun changement",
+                            por: "Nenhuma mudança",
+                            deu: "Keine Änderung"
+                        },
+                        {
+                            ita: "Odore dolce",
+                            eng: "Sweet smell",
+                            esp: "Olor dulce",
+                            fra: "Odeur douce",
+                            por: "Cheiro doce",
+                            deu: "Süßer Geruch"
+                        },
+                        {
+                            ita: "Odore acido",
+                            eng: "Sour smell",
+                            esp: "Olor ácido",
+                            fra: "Odeur acide",
+                            por: "Cheiro azedo",
+                            deu: "Saurer Geruch"
+                        },
+                        {
+                            ita: "Odore forte e pungente",
+                            eng: "Strong and pungent smell",
+                            esp: "Olor fuerte y penetrante",
+                            fra: "Odeur forte et piquante",
+                            por: "Cheiro forte e pungente",
+                            deu: "Starker und stechender Geruch"
+                        },
+                        {
+                            ita: "Odore metallico",
+                            eng: "Metallic smell",
+                            esp: "Olor metálico",
+                            fra: "Odeur métallique",
+                            por: "Cheiro metálico",
+                            deu: "Metallischer Geruch"
+                        },
+                        {
+                            ita: "Odore fetido",
+                            eng: "Fetid smell",
+                            esp: "Olor fétido",
+                            fra: "Odeur fétide",
+                            por: "Cheiro fétido",
+                            deu: "Fauliger Geruch"
+                        },
+                        {
+                            ita: "Odore putrido",
+                            eng: "Putrid smell",
+                            esp: "Olor putrefacto",
+                            fra: "Odeur putride",
+                            por: "Cheiro podre",
+                            deu: "Verdorbener Geruch"
+                        },
+                        {
+                            ita: "Odore rancido",
+                            eng: "Rancid smell",
+                            esp: "Olor rancio",
+                            fra: "Odeur rance",
+                            por: "Cheiro rançoso",
+                            deu: "Ranziger Geruch"
+                        }
+                    ]
+                },
+                {
+                    t: "r",
+                    d: {
+                        ita: "Altri ti hanno segnalato cambiamenti nell'odore del suo alito?",
+                        eng: "Have others reported changes in your breath smell?",
+                        esp: "¿Otros han señalado cambios en el olor de su aliento?",
+                        fra: "D'autres ont signalé des changements dans l'odeur de votre haleine?",
+                        por: "Outros relataram mudanças no cheiro do seu hálito?",
+                        deu: "Haben andere Veränderungen im Geruch Ihres Atems bemerkt?"
+                    },
+                    l: [
+                        {
+                            ita: "Nessun cambiamento",
+                            eng: "No change",
+                            esp: "Ningún cambio",
+                            fra: "Aucun changement",
+                            por: "Nenhuma mudança",
+                            deu: "Keine Änderung"
+                        },
+                        {
+                            ita: "Odore dolce",
+                            eng: "Sweet smell",
+                            esp: "Olor dulce",
+                            fra: "Odeur douce",
+                            por: "Cheiro doce",
+                            deu: "Süßer Geruch"
+                        },
+                        {
+                            ita: "Odore acido",
+                            eng: "Sour smell",
+                            esp: "Olor ácido",
+                            fra: "Odeur acide",
+                            por: "Cheiro azedo",
+                            deu: "Saurer Geruch"
+                        },
+                        {
+                            ita: "Odore forte e pungente",
+                            eng: "Strong and pungent smell",
+                            esp: "Olor fuerte y penetrante",
+                            fra: "Odeur forte et piquante",
+                            por: "Cheiro forte e pungente",
+                            deu: "Starker und stechender Geruch"
+                        },
+                        {
+                            ita: "Odore di carne bruciata",
+                            eng: "Burnt meat smell",
+                            esp: "Olor a carne quemada",
+                            fra: "Odeur de viande brûlée",
+                            por: "Cheiro de carne queimada",
+                            deu: "Geruch von verbranntem Fleisch"
+                        }
+                    ]
+                },
+                {
+                    t: "r",
+                    d: {
+                        ita: "L'odore delle sue urine è diverso dal solito?",
+                        eng: "Is the smell of your urine different from usual?",
+                        esp: "¿El olor de su orina es diferente al habitual?",
+                        fra: "L'odeur de votre urine est-elle différente de d'habitude?",
+                        por: "O cheiro da sua urina é diferente do habitual?",
+                        deu: "Riecht Ihr Urin anders als sonst?"
+                    },
+                    l: [
+                        {
+                            ita: "Nessun cambiamento",
+                            eng: "No change",
+                            esp: "Ningún cambio",
+                            fra: "Aucun changement",
+                            por: "Nenhuma mudança",
+                            deu: "Keine Änderung"
+                        },
+                        {
+                            ita: "Forte e penetrante",
+                            eng: "Strong and penetrating",
+                            esp: "Fuerte y penetrante",
+                            fra: "Fort et pénétrant",
+                            por: "Forte e penetrante",
+                            deu: "Stark und durchdringend"
+                        },
+                        {
+                            ita: "Ammoniacale",
+                            eng: "Ammoniacal",
+                            esp: "Amoniacal",
+                            fra: "Ammoniacal",
+                            por: "Amoníaco",
+                            deu: "Ammoniakartig"
+                        },
+                        {
+                            ita: "Dolciastro",
+                            eng: "Sweetish",
+                            esp: "Dulce",
+                            fra: "Sucré",
+                            por: "Adoçado",
+                            deu: "Süßlich"
+                        }
+                    ]
+                },
+                {
+                    t: "r",
+                    d: {
+                        ita: "Hai notato cambiamenti nell'odore delle feci?",
+                        eng: "Have you noticed changes in the smell of your stool?",
+                        esp: "¿Ha notado cambios en el olor de sus heces?",
+                        fra: "Avez-vous remarqué des changements dans l'odeur de vos selles?",
+                        por: "Você notou mudanças no cheiro das suas fezes?",
+                        deu: "Haben Sie Veränderungen im Geruch Ihres Stuhls bemerkt?"
+                    },
+                    l: [
+                        {
+                            ita: "Nessun cambiamento",
+                            eng: "No change",
+                            esp: "Ningún cambio",
+                            fra: "Aucun changement",
+                            por: "Nenhuma mudança",
+                            deu: "Keine Änderung"
+                        },
+                        {
+                            ita: "Odore molto forte e pungente",
+                            eng: "Very strong and pungent smell",
+                            esp: "Olor muy fuerte y penetrante",
+                            fra: "Odeur très forte et piquante",
+                            por: "Cheiro muito forte e pungente",
+                            deu: "Sehr starker und stechender Geruch"
+                        },
+                        {
+                            ita: "Odore putrido",
+                            eng: "Putrid smell",
+                            esp: "Olor putrefacto",
+                            fra: "Odeur putride",
+                            por: "Cheiro podre",
+                            deu: "Fauliger Geruch"
+                        }
+                    ]
+                },
+                {
+                    t: "r",
+                    d: {
+                        ita: "Ha notato un odore particolare nelle secrezioni vaginali o genitali?",
+                        eng: "Have you noticed any particular smell in vaginal or genital secretions?",
+                        esp: "¿Ha notado un olor particular en las secreciones vaginales o genitales?",
+                        fra: "Avez-vous remarqué une odeur particulière dans les sécrétions vaginales ou génitales?",
+                        por: "Você notou um cheiro particular nas secreções vaginais ou genitais?",
+                        deu: "Haben Sie einen besonderen Geruch in vaginalen oder genitalen Sekreten bemerkt?"
+                    },
+                    l: [
+                        {
+                            ita: "Nessun cambiamento",
+                            eng: "No change",
+                            esp: "Ningún cambio",
+                            fra: "Aucun changement",
+                            por: "Nenhuma mudança",
+                            deu: "Keine Änderung"
+                        },
+                        {
+                            ita: "Odore di pesce marcio",
+                            eng: "Rotten fish smell",
+                            esp: "Olor a pescado podrido",
+                            fra: "Odeur de poisson pourri",
+                            por: "Cheiro de peixe podre",
+                            deu: "Geruch von fauligem Fisch"
+                        },
+                        {
+                            ita: "Dolciastro",
+                            eng: "Sweetish",
+                            esp: "Dulce",
+                            fra: "Sucré",
+                            por: "Adoçado",
+                            deu: "Süßlich"
+                        },
+                        {
+                            ita: "Forte e pungente",
+                            eng: "Strong and pungent",
+                            esp: "Fuerte y penetrante",
+                            fra: "Fort et piquant",
+                            por: "Forte e pungente",
+                            deu: "Stark und stechend"
+                        }
+                    ]
+                }
+            ],
+            html: '<div id="moduloODORI">' +
+                  '   <div>[0,d][0,0][0,1][0,2][0,3][0,4][0,5][0,6][0,7]</div>' +
+                  '   <div>[1,d][1,0][1,1][1,2][1,3][1,4]</div>' +
+                  '   <div>[2,d][2,0][2,1][2,2][2,3]</div>' +
+                  '   <div>[3,d][3,0][3,1][3,2]</div>' +
+                  '   <div>[4,d][4,0][4,1][4,2][4,3]</div>' +
+                  '</div>'
+        },
+        shiatsu_hara_schiena: {
             category: "shiatsu",
             title: {
                 ita: "Valutazione Shiatsu Zone HARA e SCHIENA",
@@ -3824,7 +6245,7 @@ var moduliValutazione = {
                 }
             }
         },
-        "pdi": {
+        pdi: {
             category: "pain",
             title: {
                 ita: "Pain Disability Index (PDI)",
@@ -4007,7 +6428,7 @@ var moduliValutazione = {
                 if(tot>50)document.getElementById("pdi_descr").classList.add("vis4");
             }
         },
-        "mpq": {
+        mpq: {
             category: "pain",
             title: {
                 ita: "McGill Pain Questionnaire (MPQ)",
@@ -5353,7 +7774,7 @@ var moduliValutazione = {
                 if(tot>45)document.getElementById("mpq_descr").classList.add("vis4");
             }
         },
-        "sf-mpq": {
+        sf_mpq: {
             category: "pain",
             title: {
                 ita: "Short-form McGill Pain Questionaire (SF-MPQ)",
@@ -5721,7 +8142,7 @@ var moduliValutazione = {
                 if(tot>45)document.getElementById("sfmpq_descr").classList.add("vis4");
             }
         },
-        "odi": {
+        odi: {
             category: "pain",
             title: {
                 ita: "Oswestry Disability Index (ODI)",
@@ -6479,7 +8900,7 @@ var moduliValutazione = {
                 
             }
         },
-        "bpi": {
+        bpi: {
             category: "pain",
             title: {
                 ita: "Brief Pain Inventory (BPI)",
@@ -6784,7 +9205,7 @@ var moduliValutazione = {
                 
             }
         },
-        "mondor": {
+        mondor: {
             category: "auriculo",
             title: {
                 ita: "Test antitabacco di Mondor (motivazione)",
@@ -7029,7 +9450,7 @@ var moduliValutazione = {
                 document.getElementById("mondor_total").innerHTML = html;
             }
         },
-        "fagerstrom": {
+        fagerstrom: {
             category: "auriculo",
             title: {
                 ita: "Test antitabacco di Fagerström (dipendenza)",
