@@ -220,7 +220,7 @@ var PAZIENTI_MODULI = { // extend PAZIENTI
 						sost = '',
 						funct = '',
 						domanda = elGLB.d[globals.siglaLingua];
-					if(GLB?.funct){
+					if(moduliValutazione.modelli[MDL.id]?.funct){
 						funct = MDL.id;
 						functs.push(funct);
 					}
@@ -306,6 +306,7 @@ var PAZIENTI_MODULI = { // extend PAZIENTI
 					'</div>';
 		}
 		document.getElementById("modulo_cont").innerHTML = HTML;
+		console.log(functs)
 		if(functs.length){ // eseguo tutte le funzioni
 			for(f in functs){
 				moduliValutazione.modelli[functs[f]].funct();
