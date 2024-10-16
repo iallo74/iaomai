@@ -6257,6 +6257,18 @@ var moduliValutazione = {
             },
             data: [
                 {
+                    t: "t",
+                    d: {
+                        ita: "Il Pain Disability Index (PDI) è uno strumento di autovalutazione progettato per misurare l'impatto del dolore cronico sulle attività quotidiane e sul funzionamento del paziente. Il PDI è utilizzato per monitorare l'impatto funzionale del dolore cronico nel tempo e per personalizzare i piani di trattamento.",
+                        eng: "The Pain Disability Index (PDI) is a self-assessment tool designed to measure the impact of chronic pain on daily activities and patient functioning. The PDI is used to monitor the functional impact of chronic pain over time and to customize treatment plans.",
+                        esp: "El Índice de Discapacidad por Dolor (PDI) es una herramienta de autoevaluación diseñada para medir el impacto del dolor crónico en las actividades diarias y en el funcionamiento del paciente. El PDI se utiliza para monitorear el impacto funcional del dolor crónico a lo largo del tiempo y para personalizar los planes de tratamiento.",
+                        fra: "L'Indice de Discapacité par la Douleur (PDI) est un outil d'auto-évaluation conçu pour mesurer l'impact de la douleur chronique sur les activités quotidiennes et le fonctionnement du patient. Le PDI est utilisé pour surveiller l'impact fonctionnel de la douleur chronique dans le temps et pour personnaliser les plans de traitement.",
+                        por: "O Índice de Discapacidade por Dor (PDI) é uma ferramenta de autoavaliação projetada para medir o impacto da dor crônica nas atividades diárias e no funcionamento do paciente. O PDI é utilizado para monitorar o impacto funcional da dor crônica ao longo do tempo e para personalizar os planos de tratamento.",
+                        deu: "Der Pain Disability Index (PDI) ist ein Selbstbewertungsinstrument, das entwickelt wurde, um die Auswirkungen von chronischen Schmerzen auf die täglichen Aktivitäten und die Funktionsfähigkeit des Patienten zu messen. Der PDI wird verwendet, um die funktionalen Auswirkungen chronischer Schmerzen im Laufe der Zeit zu überwachen und um Behandlungspläne anzupassen."
+                    },
+                    h: true
+                },
+                {
                     t: "s",
                     d: {
                         ita: "Cura personale",
@@ -6401,16 +6413,17 @@ var moduliValutazione = {
                 },                    
             ],
             html:   '<div id="moduloPDI">' +
-                    '   <div class="md_lists"><div>[0][1][2][3][4][5][6]</div></div>' +
+                    '   <div class="md_dida">[0]</div>' +
+                    '   <div class="md_lists"><div>[1][2][3][4][5][6][7]</div></div>' +
                     '   <div class="md_cont_total">' +
-                    '       <div class="md_label_total">[7]</div>' +
+                    '       <div class="md_label_total">[8]</div>' +
                     '       <div id="pdi_total" class="md_total"></div>' +
                     '   </div>' +
                     '   <div id="pdi_descr" class="md_descr">' +
-                    '       <span id="pdi_1">[8]</span>' +
-                    '       <span id="pdi_2">[9]</span>' +
-                    '       <span id="pdi_3">[10]</span>' +
-                    '       <span id="pdi_4">[11]</span>' +
+                    '       <span id="pdi_1">[9]</span>' +
+                    '       <span id="pdi_2">[10]</span>' +
+                    '       <span id="pdi_3">[11]</span>' +
+                    '       <span id="pdi_4">[12]</span>' +
                     '   </div>' +
                     '</div>',
             funct: function(){
@@ -6439,6 +6452,18 @@ var moduliValutazione = {
                 deu: "McGill Pain Questionnaire (MPQ)"
             },
             data: [
+                {
+                    t: "t",
+                    d: {
+                        ita: "Il McGill Pain Questionnaire (MPQ) è uno strumento di valutazione del dolore utilizzato per misurare la qualità e l'intensità del dolore percepito dai pazienti. Sviluppato nel 1971 da Ronald Melzack, il questionario aiuta a comprendere meglio l'esperienza soggettiva del dolore. Il MPQ è utilizzato per comprendere meglio l'esperienza soggettiva del dolore in pazienti affetti da dolore cronico o acuto, aiutando clinici e ricercatori a valutare il tipo e l'impatto del dolore e a monitorarne l'evoluzione nel tempo.",
+                        eng: "The McGill Pain Questionnaire (MPQ) is a pain assessment tool used to measure the quality and intensity of pain perceived by patients. Developed in 1971 by Ronald Melzack, the questionnaire helps to better understand the subjective experience of pain. The MPQ is used to gain insight into the subjective experience of pain in patients suffering from chronic or acute pain, assisting clinicians and researchers in evaluating the type and impact of pain and monitoring its evolution over time.",
+                        esp: "El Cuestionario de Dolor de McGill (MPQ) es una herramienta de evaluación del dolor utilizada para medir la calidad y la intensidad del dolor percibido por los pacientes. Desarrollado en 1971 por Ronald Melzack, el cuestionario ayuda a comprender mejor la experiencia subjetiva del dolor. El MPQ se utiliza para comprender mejor la experiencia subjetiva del dolor en pacientes que sufren de dolor crónico o agudo, ayudando a clínicos e investigadores a evaluar el tipo y el impacto del dolor y a monitorear su evolución a lo largo del tiempo.",
+                        fra: "Le Questionnaire de douleur de McGill (MPQ) est un outil d'évaluation de la douleur utilisé pour mesurer la qualité et l'intensité de la douleur perçue par les patients. Développé en 1971 par Ronald Melzack, le questionnaire aide à mieux comprendre l'expérience subjective de la douleur. Le MPQ est utilisé pour mieux comprendre l'expérience subjective de la douleur chez les patients souffrant de douleur chronique ou aiguë, aidant les cliniciens et les chercheurs à évaluer le type et l'impact de la douleur et à en suivre l'évolution dans le temps.",
+                        por: "O Questionário de Dor de McGill (MPQ) é uma ferramenta de avaliação da dor usada para medir a qualidade e a intensidade da dor percebida pelos pacientes. Desenvolvido em 1971 por Ronald Melzack, o questionário ajuda a entender melhor a experiência subjetiva da dor. O MPQ é usado para entender melhor a experiência subjetiva da dor em pacientes que sofrem de dor crônica ou aguda, ajudando clínicos e pesquisadores a avaliar o tipo e o impacto da dor e a monitorar sua evolução ao longo do tempo.",
+                        deu: "Das McGill Schmerzfragebogen (MPQ) ist ein Schmerzbewertungsinstrument, das verwendet wird, um die Qualität und Intensität des von den Patienten wahrgenommenen Schmerzes zu messen. Entwickelt im Jahr 1971 von Ronald Melzack, hilft der Fragebogen, das subjektive Schmerzempfinden besser zu verstehen. Der MPQ wird verwendet, um das subjektive Schmerzempfinden bei Patienten mit chronischen oder akuten Schmerzen besser zu verstehen und Clinicians und Forschern dabei zu helfen, die Art und die Auswirkungen von Schmerzen zu bewerten und deren Entwicklung im Laufe der Zeit zu überwachen."
+                    },
+                    h: true                  
+                },
                 {
                     t: "e",
                     d: {
@@ -7701,54 +7726,55 @@ var moduliValutazione = {
             ],
             html:   '<div id="moduloMPQ">' +
                     '   <div>' +
-                    '       <div>[0]</div>' +
+                    '       <div class="md_dida">[0]</div>' +
+                    '       <div>[1]</div>' +
                     '       <div class="mpq_lists">' +
-                    '           <div id="mpq_sez01" class="mpq_sez">[1] [2][3][4][5][6][7]</div>' +
-                    '           <div id="mpq_sez02" class="mpq_sez">[8] [9][10][11]</div>' +
-                    '           <div id="mpq_sez03" class="mpq_sez">[12] [13][14][15][16][17]</div>' +
-                    '           <div id="mpq_sez04" class="mpq_sez">[18] [19][20][21]</div>' +
-                    '           <div id="mpq_sez05" class="mpq_sez">[22] [23][24][25][26][27]</div>' +
-                    '           <div id="mpq_sez06" class="mpq_sez">[28] [29][30][31]</div>' +
-                    '           <div id="mpq_sez07" class="mpq_sez">[32] [33][34][35][36]</div>' +
-                    '           <div id="mpq_sez08" class="mpq_sez">[37] [38][39][40][41]</div>' +
-                    '           <div id="mpq_sez09" class="mpq_sez">[42] [43][44][45][46][47]</div>' +
-                    '           <div id="mpq_sez10" class="mpq_sez">[48] [49][50][51][52]</div>' +
+                    '           <div id="mpq_sez01" class="mpq_sez">[2] [3][4][5][6][7][8]</div>' +
+                    '           <div id="mpq_sez02" class="mpq_sez">[9] [10][11][12]</div>' +
+                    '           <div id="mpq_sez03" class="mpq_sez">[13] [14][15][16][17][18]</div>' +
+                    '           <div id="mpq_sez04" class="mpq_sez">[19] [20][21][22]</div>' +
+                    '           <div id="mpq_sez05" class="mpq_sez">[23] [24][25][26][27][28]</div>' +
+                    '           <div id="mpq_sez06" class="mpq_sez">[29] [30][31][32]</div>' +
+                    '           <div id="mpq_sez07" class="mpq_sez">[33] [34][35][36][37]</div>' +
+                    '           <div id="mpq_sez08" class="mpq_sez">[38] [39][40][41][42]</div>' +
+                    '           <div id="mpq_sez09" class="mpq_sez">[43] [44][45][46][47][48]</div>' +
+                    '           <div id="mpq_sez10" class="mpq_sez">[49] [50][51][52][53]</div>' +
                     '       </div>' +
                     '   </div>' +
                     '   <div>' +
-                    '       <div>[53]</div>' +
+                    '       <div>[54]</div>' +
                     '       <div class="mpq_lists">' +
-                    '           <div id="mpq_sez11" class="mpq_sez">[54] [55][56]</div>' +
-                    '           <div id="mpq_sez12" class="mpq_sez">[57] [58][59]</div>' +
-                    '           <div id="mpq_sez13" class="mpq_sez">[60] [61][62][63]</div>' +
-                    '           <div id="mpq_sez14" class="mpq_sez">[64] [65][66][67][68][69]</div>' +
-                    '           <div id="mpq_sez15" class="mpq_sez">[70] [71][72]</div>' +
+                    '           <div id="mpq_sez11" class="mpq_sez">[55] [56][57]</div>' +
+                    '           <div id="mpq_sez12" class="mpq_sez">[58] [59][60]</div>' +
+                    '           <div id="mpq_sez13" class="mpq_sez">[61] [62][63][64]</div>' +
+                    '           <div id="mpq_sez14" class="mpq_sez">[65] [66][67][68][69][70]</div>' +
+                    '           <div id="mpq_sez15" class="mpq_sez">[71] [72][73]</div>' +
                     '       </div>' +
                     '   </div>' +
                     '   <div>' +
-                    '       <div>[73]</div>' +
+                    '       <div>[74]</div>' +
                     '       <div class="mpq_lists">' +
-                    '           <div id="mpq_sez16" class="mpq_sez">[74] [75][76][77][78][79]</div>' +
+                    '           <div id="mpq_sez16" class="mpq_sez">[75] [76][77][78][79][80]</div>' +
                     '       </div>' +
                     '   </div>' +
                     '   <div>' +
-                    '       <div>[80]</div>' +
+                    '       <div>[81]</div>' +
                     '       <div class="mpq_lists">' +
-                    '           <div id="mpq_sez17" class="mpq_sez">[81] [82][83][84][85]</div>' +
-                    '           <div id="mpq_sez18" class="mpq_sez">[86] [87][88][89][90][91]</div>' +
-                    '           <div id="mpq_sez19" class="mpq_sez">[92] [93][94][95]</div>' +
-                    '           <div id="mpq_sez20" class="mpq_sez">[96] [97][98][99][100][101]</div>' +
+                    '           <div id="mpq_sez17" class="mpq_sez">[82] [83][84][85][86]</div>' +
+                    '           <div id="mpq_sez18" class="mpq_sez">[87] [88][89][90][91][92]</div>' +
+                    '           <div id="mpq_sez19" class="mpq_sez">[93] [94][95][96]</div>' +
+                    '           <div id="mpq_sez20" class="mpq_sez">[97] [98][99][100][101][102]</div>' +
                     '       </div>' +
                     '   </div>' +
                     '   <div class="md_cont_total">' +
-                    '       <div class="md_label_total">[102]</div>' +
+                    '       <div class="md_label_total">[103]</div>' +
                     '       <div id="mpq_total" class="md_total"></div>' +
                     '   </div>' +
                     '   <div id="mpq_descr" class="md_descr">' +
-                    '       <span id="mpq_1">[103]</span>' +
-                    '       <span id="mpq_2">[104]</span>' +
-                    '       <span id="mpq_3">[105]</span>' +
-                    '       <span id="mpq_4">[106]</span>' +
+                    '       <span id="mpq_1">[104]</span>' +
+                    '       <span id="mpq_2">[105]</span>' +
+                    '       <span id="mpq_3">[106]</span>' +
+                    '       <span id="mpq_4">[107]</span>' +
                     '   </div>' +
                     '</div>',
             funct: function(){
@@ -7785,6 +7811,18 @@ var moduliValutazione = {
                 deu: "Short-form McGill Pain Questionaire (SF-MPQ)"
             },
             data:[
+                {
+                    t: "t",
+                    d: {
+                        ita: "Il Short-Form McGill Pain Questionnaire (SF-MPQ) è una versione abbreviata del McGill Pain Questionnaire, progettata per valutare rapidamente la qualità e l'intensità del dolore percepito dai pazienti. Il SF-MPQ fornisce un modo rapido e pratico per valutare il dolore in contesti clinici, mantenendo una buona precisione diagnostica pur riducendo il tempo di compilazione.",
+                        eng: "The Short-Form McGill Pain Questionnaire (SF-MPQ) is a shortened version of the McGill Pain Questionnaire, designed to quickly assess the quality and intensity of pain perceived by patients. The SF-MPQ provides a quick and practical way to evaluate pain in clinical settings, maintaining good diagnostic accuracy while reducing completion time.",
+                        esp: "El Cuestionario de Dolor de McGill en su forma corta (SF-MPQ) es una versión abreviada del Cuestionario de Dolor de McGill, diseñado para evaluar rápidamente la calidad y la intensidad del dolor percibido por los pacientes. El SF-MPQ proporciona una forma rápida y práctica de evaluar el dolor en contextos clínicos, manteniendo una buena precisión diagnóstica mientras se reduce el tiempo de finalización.",
+                        fra: "Le Questionnaire de douleur de McGill au format abrégé (SF-MPQ) est une version raccourcie du Questionnaire de douleur de McGill, conçue pour évaluer rapidement la qualité et l'intensité de la douleur perçue par les patients. Le SF-MPQ offre un moyen rapide et pratique d'évaluer la douleur dans les contextes cliniques, tout en maintenant une bonne précision diagnostique et en réduisant le temps de complétion.",
+                        por: "O Questionário de Dor de McGill em formato abreviado (SF-MPQ) é uma versão encurtada do Questionário de Dor de McGill, projetada para avaliar rapidamente a qualidade e a intensidade da dor percebida pelos pacientes. O SF-MPQ fornece uma maneira rápida e prática de avaliar a dor em contextos clínicos, mantendo uma boa precisão diagnóstica enquanto reduz o tempo de preenchimento.",
+                        deu: "Der Short-Form McGill Schmerzfragebogen (SF-MPQ) ist eine verkürzte Version des McGill Schmerzfragebogens, die entwickelt wurde, um schnell die Qualität und Intensität des von den Patienten wahrgenommenen Schmerzes zu bewerten. Der SF-MPQ bietet eine schnelle und praktische Möglichkeit, Schmerzen in klinischen Kontexten zu bewerten, während er eine gute diagnostische Genauigkeit aufrechterhält und die Ausfüllzeit verkürzt."
+                    },
+                    h: true
+                },
                 {
                     t: "t",
                     d: {
@@ -8108,17 +8146,17 @@ var moduliValutazione = {
             ],
             html:   '<div id="moduloSFMPQ">' +
                     '   <div class="md_dida">[0]</div>' +
-                    '   <div id="sfmpq_lists" class="md_lists"><div>[1][2][3][4][5][6][7][8][9][10][11][12][13][14][15]</div></div>' +
-                    '   <div id="sfmpq_ppi">[16,d][16,0][16,1][16,2][16,3][16,4][16,5][16,6]</div>' +
+                    '   <div id="sfmpq_lists" class="md_lists"><div>[1][2][3][4][5][6][7][8][9][10][11][12][13][14][15][16]</div></div>' +
+                    '   <div id="sfmpq_ppi">[17,d][17,0][17,1][17,2][17,3][17,4][17,5][17,6]</div>' +
                     '   <div class="md_cont_total">' +
-                    '       <div class="md_label_total">[17]</div>' +
+                    '       <div class="md_label_total">[18]</div>' +
                     '       <div id="sfmpq_total" class="md_total"></div>' +
                     '   </div>' +
                     '   <div id="sfmpq_descr" class="md_descr">' +
-                    '       <span id="sfmpq_1">[18]</span>' +
-                    '       <span id="sfmpq_2">[19]</span>' +
-                    '       <span id="sfmpq_3">[20]</span>' +
-                    '       <span id="sfmpq_4">[21]</span>' +
+                    '       <span id="sfmpq_1">[19]</span>' +
+                    '       <span id="sfmpq_2">[20]</span>' +
+                    '       <span id="sfmpq_3">[21]</span>' +
+                    '       <span id="sfmpq_4">[22]</span>' +
                     '   </div>' +
                     '</div>',
             funct: function(){
