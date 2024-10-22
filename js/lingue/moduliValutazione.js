@@ -414,20 +414,20 @@ var moduliValutazione = {
                 deu: ""
             },
             {
-                ita: "VUOTO",
-                eng: "DEFICIENCY",
-                esp: "DEFICIENCIA",
-                fra: "DÉFICIT",
-                por: "DEFICIÊNCIA",
-                deu: "MANGEL"
-            },
-            {
                 ita: "PIENO",
                 eng: "EXCESS",
                 esp: "EXCESO",
                 fra: "EXCÈS",
                 por: "EXCESSO",
                 deu: "ÜBERFLUSS"
+            },
+            {
+                ita: "VUOTO",
+                eng: "DEFICIENCY",
+                esp: "DEFICIENCIA",
+                fra: "DÉFICIT",
+                por: "DEFICIÊNCIA",
+                deu: "MANGEL"
             },
             {
                 ita: "DOLORANTE",
@@ -3338,12 +3338,12 @@ var moduliValutazione = {
             category: "mtc",
             subcategory: "palpazione",
             title: {
-                ita: "Valutazione MTC punti MU e SHU",
-                eng: "TCM Assessment of MU and SHU Points",
-                esp: "Evaluación MTC de los puntos MU y SHU",
-                fra: "Évaluation MTC des points MU et SHU",
-                por: "Avaliação MTC dos pontos MU e SHU",
-                deu: "TCM-Bewertung der MU- und SHU-Punkte"
+                ita: "Valutazione MTC punti MU e SHU (schema)",
+                eng: "TCM Assessment of MU and SHU Points (schema)",
+                esp: "Evaluación MTC de los puntos MU y SHU (esquema)",
+                fra: "Évaluation MTC des points MU et SHU (schéma)",
+                por: "Avaliação MTC dos pontos MU e SHU (esquema)",
+                deu: "TCM-Bewertung der MU- und SHU-Punkte (Schema)"
             },
             data: [
                 {
@@ -3894,7 +3894,7 @@ var moduliValutazione = {
                     '           <div>MU</div>' +
                     '           <div>SHU</div>' +
                     '           <div class="mushu_left_right">' +
-                    '               <div><div>L</div><div>R</div></div>' +
+                    '               <div><div>R</div><div>L</div></div>' +
                     '               <div><div>L</div><div>R</div></div>' +
                     '           </div>' +
                     '       </div>' +
@@ -3967,7 +3967,7 @@ var moduliValutazione = {
                     '           <div>MU</div>' +
                     '           <div>SHU</div>' +
                     '           <div class="mushu_left_right">' +
-                    '               <div><div>L</div><div>R</div></div>' +
+                    '               <div><div>R</div><div>L</div></div>' +
                     '               <div><div>L</div><div>R</div></div>' +
                     '           </div>' +
                     '       </div>' +
@@ -4048,6 +4048,677 @@ var moduliValutazione = {
                     if(els[e].selectedIndex==3)val = 'X';
                     else if(els[e].selectedIndex>0)val = els[e].options[els[e].selectedIndex].innerText.substr(0,1);
                     els[e].parentElement.parentElement.parentElement.getElementsByTagName("SPAN")[0].innerHTML = val;
+                }
+            }
+        },
+        mtc_mushu_vis: {
+            category: "mtc",
+            subcategory: "palpazione",
+            title: {
+                ita: "Valutazione MTC punti MU e SHU (grafica)",
+                eng: "TCM Assessment of MU and SHU Points (graphic)",
+                esp: "Evaluación MTC de los puntos MU y SHU (gráfica)",
+                fra: "Évaluation MTC des points MU et SHU (graphique)",
+                por: "Avaliação MTC dos pontos MU e SHU (gráfica)",
+                deu: "TCM-Bewertung der MU- und SHU-Punkte (grafisch)"
+            },
+            data: [
+                {
+                    t: "s",
+                    d: {
+                        ita: "MU - Fegato (destra)",
+                        eng: "MU - Liver (right)",
+                        esp: "MU - Hígado (derecha)",
+                        fra: "MU - Foie (droite)",
+                        por: "MU - Fígado (direita)",
+                        deu: "MU - Leber (rechte)"
+                    },
+                    l: "stati_energetici"
+                },
+                {
+                    t: "s",
+                    d: {
+                        ita: "MU - Fegato (sinistra)",
+                        eng: "MU - Liver (left)",
+                        esp: "MU - Hígado (izquierda)",
+                        fra: "MU - Foie (gauche)",
+                        por: "MU - Fígado (esquerda)",
+                        deu: "MU - Leber (linke)"
+                    },
+                    l: "stati_energetici"
+                },
+                {
+                    t: "s",
+                    d: {
+                        ita: "MU - Cistifellea (destra)",
+                        eng: "MU - Gallbladder (right)",
+                        esp: "MU - Vesícula biliar (derecha)",
+                        fra: "MU - Vésicule biliaire (droite)",
+                        por: "MU - Vesícula biliar (direita)",
+                        deu: "MU - Gallenblase (rechte)"
+                    },
+                    l: "stati_energetici"
+                },
+                {
+                    t: "s",
+                    d: {
+                        ita: "MU - Cistifellea (sinistra)",
+                        eng: "MU - Gallbladder (left)",
+                        esp: "MU - Vesícula biliar (izquierda)",
+                        fra: "MU - Vésicule biliaire (gauche)",
+                        por: "MU - Vesícula biliar (esquerda)",
+                        deu: "MU - Gallenblase (linke)"
+                    },
+                    l: "stati_energetici"
+                },
+                {
+                    t: "s",
+                    d: {
+                        ita: "MU - Cuore",
+                        eng: "MU - Heart",
+                        esp: "MU - Corazón",
+                        fra: "MU - Cœur",
+                        por: "MU - Coração",
+                        deu: "MU - Herzens"
+                    },
+                    l: "stati_energetici"
+                },
+                {
+                    t: "s",
+                    d: {
+                        ita: "MU - Intestino tenue",
+                        eng: "MU - Small Intestine",
+                        esp: "MU - Intestino delgado",
+                        fra: "MU - Intestin grêle",
+                        por: "MU - Intestino delgado",
+                        deu: "MU - Dünndarm"
+                    },
+                    l: "stati_energetici"
+                },
+                {
+                    t: "s",
+                    d: {
+                        ita: "MU - Mastro del cuore",
+                        eng: "MU - Master of the Heart",
+                        esp: "MU - Maestro del corazón",
+                        fra: "MU - Maître du cœur",
+                        por: "MU - Mestre do coração",
+                        deu: "MU - Meister des Herzens"
+                    },
+                    l: "stati_energetici"
+                },
+                {
+                    t: "s",
+                    d: {
+                        ita: "SHU - Triplo riscaldatore",
+                        eng: "SHU - Triple Warmer",
+                        esp: "SHU - Triple calentador",
+                        fra: "SHU - Triple réchauffeur",
+                        por: "SHU - Triplo aquecedor",
+                        deu: "SHU - Dreifacher Erwärmer"
+                    },
+                    l: "stati_energetici"
+                },
+                {
+                    t: "s",
+                    d: {
+                        ita: "MU - Milza-pancreas (destra)",
+                        eng: "MU - Spleen-Pancreas (right)",
+                        esp: "MU - Bazo-páncreas (derecha)",
+                        fra: "MU - Rate-pancréas (droite)",
+                        por: "MU - Baço-pâncreas (direita)",
+                        deu: "MU - Milz-Bauchspeicheldrüse (rechte)"
+                    },
+                    l: "stati_energetici"
+                },
+                {
+                    t: "s",
+                    d: {
+                        ita: "MU - Milza-pancreas (sinistra)",
+                        eng: "MU - Spleen-Pancreas (left)",
+                        esp: "MU - Bazo-páncreas (izquierda)",
+                        fra: "MU - Rate-pancréas (gauche)",
+                        por: "MU - Baço-pâncreas (esquerda)",
+                        deu: "MU - Milz-Bauchspeicheldrüse (linke)"
+                    },
+                    l: "stati_energetici"
+                },
+                {
+                    t: "s",
+                    d: {
+                        ita: "MU - Stomaco",
+                        eng: "MU - Stomach",
+                        esp: "MU - Estómago",
+                        fra: "MU - Estomac",
+                        por: "MU - Estômago",
+                        deu: "MU - Magen"
+                    },
+                    l: "stati_energetici"
+                },
+                {
+                    t: "s",
+                    d: {
+                        ita: "MU - Polmone (destra)",
+                        eng: "MU - Lung (right)",
+                        esp: "MU - Pulmón (derecha)",
+                        fra: "MU - Poumon (droite)",
+                        por: "MU - Pulmão (direita)",
+                        deu: "MU - Lunge (rechte)"
+                    },
+                    l: "stati_energetici"
+                },
+                {
+                    t: "s",
+                    d: {
+                        ita: "MU - Polmone (sinistra)",
+                        eng: "MU - Lung (left)",
+                        esp: "MU - Pulmón (izquierda)",
+                        fra: "MU - Poumon (gauche)",
+                        por: "MU - Pulmão (esquerda)",
+                        deu: "MU - Lunge (linke)"
+                    },
+                    l: "stati_energetici"
+                },
+                {
+                    t: "s",
+                    d: {
+                        ita: "MU - Intestino crasso (destra)",
+                        eng: "MU - Large Intestine (right)",
+                        esp: "MU - Intestino grueso (derecha)",
+                        fra: "MU - Gros intestin (droite)",
+                        por: "MU - Intestino grosso (direita)",
+                        deu: "MU - Dickdarm (rechte)"
+                    },
+                    l: "stati_energetici"
+                },
+                {
+                    t: "s",
+                    d: {
+                        ita: "MU - Intestino crasso (sinistra)",
+                        eng: "MU - Large Intestine (left)",
+                        esp: "MU - Intestino grueso (izquierda)",
+                        fra: "MU - Gros intestin (gauche)",
+                        por: "MU - Intestino grosso (esquerda)",
+                        deu: "MU - Dickdarm (linke)"
+                    },
+                    l: "stati_energetici"
+                },
+                {
+                    t: "s",
+                    d: {
+                        ita: "MU - Rene (destra)",
+                        eng: "MU - Kidney (right)",
+                        esp: "MU - Riñón (derecha)",
+                        fra: "MU - Rein (droite)",
+                        por: "MU - Rim (direita)",
+                        deu: "MU - Niere (rechte)"
+                    },
+                    l: "stati_energetici"
+                },
+                {
+                    t: "s",
+                    d: {
+                        ita: "MU - Rene (sinistra)",
+                        eng: "MU - Kidney (left)",
+                        esp: "MU - Riñón (izquierda)",
+                        fra: "MU - Rein (gauche)",
+                        por: "MU - Rim (esquerda)",
+                        deu: "MU - Niere (linke)"
+                    },
+                    l: "stati_energetici"
+                },
+                {
+                    t: "s",
+                    d: {
+                        ita: "MU - Vescica",
+                        eng: "MU - Bladder",
+                        esp: "MU - Vejiga",
+                        fra: "MU - Vésicule urinaire",
+                        por: "MU - Bexiga",
+                        deu: "MU - Blase"
+                    },
+                    l: "stati_energetici"
+                },
+                {
+                    t: "s",
+                    d: {
+                        ita: "SHU - Fegato (sinistra)",
+                        eng: "SHU - Liver (left)",
+                        esp: "SHU - Hígado (izquierda)",
+                        fra: "SHU - Foie (gauche)",
+                        por: "SHU - Fígado (esquerda)",
+                        deu: "SHU - Leber (linke)"
+                    },
+                    l: "stati_energetici"
+                },
+                {
+                    t: "s",
+                    d: {
+                        ita: "SHU - Fegato (destra)",
+                        eng: "SHU - Liver (right)",
+                        esp: "SHU - Hígado (derecha)",
+                        fra: "SHU - Foie (droite)",
+                        por: "SHU - Fígado (direita)",
+                        deu: "SHU - Leber (rechte)"
+                    },
+                    l: "stati_energetici"
+                },
+                {
+                    t: "s",
+                    d: {
+                        ita: "SHU - Cistifellea (sinistra)",
+                        eng: "SHU - Gallbladder (left)",
+                        esp: "SHU - Vesícula biliar (izquierda)",
+                        fra: "SHU - Vésicule biliaire (gauche)",
+                        por: "SHU - Vesícula biliar (esquerda)",
+                        deu: "SHU - Gallenblase (linke)"
+                    },
+                    l: "stati_energetici"
+                },
+                {
+                    t: "s",
+                    d: {
+                        ita: "SHU - Cistifellea (destra)",
+                        eng: "SHU - Gallbladder (right)",
+                        esp: "SHU - Vesícula biliar (derecha)",
+                        fra: "SHU - Vésicule biliaire (droite)",
+                        por: "SHU - Vesícula biliar (direita)",
+                        deu: "SHU - Gallenblase (rechte)"
+                    },
+                    l: "stati_energetici"
+                },
+                {
+                    t: "s",
+                    d: {
+                        ita: "SHU - Cuore (sinistra)",
+                        eng: "SHU - Heart (left)",
+                        esp: "SHU - Corazón (izquierda)",
+                        fra: "SHU - Cœur (gauche)",
+                        por: "SHU - Coração (esquerda)",
+                        deu: "SHU - Herz (linke)"
+                    },
+                    l: "stati_energetici"
+                },
+                {
+                    t: "s",
+                    d: {
+                        ita: "SHU - Cuore (destra)",
+                        eng: "SHU - Heart (right)",
+                        esp: "SHU - Corazón (derecha)",
+                        fra: "SHU - Cœur (droite)",
+                        por: "SHU - Coração (direita)",
+                        deu: "SHU - Herz (rechte)"
+                    },
+                    l: "stati_energetici"
+                },
+                {
+                    t: "s",
+                    d: {
+                        ita: "SHU - Intestino tenue (sinistra)",
+                        eng: "SHU - Small Intestine (left)",
+                        esp: "SHU - Intestino delgado (izquierda)",
+                        fra: "SHU - Intestin grêle (gauche)",
+                        por: "SHU - Intestino delgado (esquerda)",
+                        deu: "SHU - Dünndarm (linke)"
+                    },
+                    l: "stati_energetici"
+                },
+                {
+                    t: "s",
+                    d: {
+                        ita: "SHU - Intestino tenue (destra)",
+                        eng: "SHU - Small Intestine (right)",
+                        esp: "SHU - Intestino delgado (derecha)",
+                        fra: "SHU - Intestin grêle (droite)",
+                        por: "SHU - Intestino delgado (direita)",
+                        deu: "SHU - Dünndarm (rechte)"
+                    },
+                    l: "stati_energetici"
+                },
+                {
+                    t: "s",
+                    d: {
+                        ita: "SHU - Mastro del cuore (sinistra)",
+                        eng: "SHU - Master of the Heart (left)",
+                        esp: "SHU - Maestro del corazón (izquierda)",
+                        fra: "SHU - Maître du cœur (gauche)",
+                        por: "SHU - Mestre do coração (esquerda)",
+                        deu: "SHU - Meister des Herzens (linke)"
+                    },
+                    l: "stati_energetici"
+                },
+                {
+                    t: "s",
+                    d: {
+                        ita: "SHU - Mastro del cuore (destra)",
+                        eng: "SHU - Master of the Heart (right)",
+                        esp: "SHU - Maestro del corazón (derecha)",
+                        fra: "SHU - Maître du cœur (droite)",
+                        por: "SHU - Mestre do coração (direita)",
+                        deu: "SHU - Meister des Herzens (rechte)"
+                    },
+                    l: "stati_energetici"
+                },
+                {
+                    t: "s",
+                    d: {
+                        ita: "SHU - Triplo riscaldatore (sinistra)",
+                        eng: "SHU - Triple Warmer (left)",
+                        esp: "SHU - Triple calentador (izquierda)",
+                        fra: "SHU - Triple réchauffeur (gauche)",
+                        por: "SHU - Triplo aquecedor (esquerda)",
+                        deu: "SHU - Dreifacher Erwärmer (linke)"
+                    },
+                    l: "stati_energetici"
+                },
+                {
+                    t: "s",
+                    d: {
+                        ita: "SHU - Triplo riscaldatore (destra)",
+                        eng: "SHU - Triple Warmer (right)",
+                        esp: "SHU - Triple calentador (derecha)",
+                        fra: "SHU - Triple réchauffeur (droite)",
+                        por: "SHU - Triplo aquecedor (direita)",
+                        deu: "SHU - Dreifacher Erwärmer (rechte)"
+                    },
+                    l: "stati_energetici"
+                },
+                {
+                    t: "s",
+                    d: {
+                        ita: "SHU - Milza-pancreas (sinistra)",
+                        eng: "SHU - Spleen-Pancreas (left)",
+                        esp: "SHU - Bazo-páncreas (izquierda)",
+                        fra: "SHU - Rate-pancréas (gauche)",
+                        por: "SHU - Baço-pâncreas (esquerda)",
+                        deu: "SHU - Milz-Bauchspeicheldrüse (linke)"
+                    },
+                    l: "stati_energetici"
+                },
+                {
+                    t: "s",
+                    d: {
+                        ita: "SHU - Milza-pancreas (destra)",
+                        eng: "SHU - Spleen-Pancreas (right)",
+                        esp: "SHU - Bazo-páncreas (derecha)",
+                        fra: "SHU - Rate-pancréas (droite)",
+                        por: "SHU - Baço-pâncreas (direita)",
+                        deu: "SHU - Milz-Bauchspeicheldrüse (rechte)"
+                    },
+                    l: "stati_energetici"
+                },
+                {
+                    t: "s",
+                    d: {
+                        ita: "SHU - Stomaco (sinistra)",
+                        eng: "SHU - Stomach (left)",
+                        esp: "SHU - Estómago (izquierda)",
+                        fra: "SHU - Estomac (gauche)",
+                        por: "SHU - Estômago (esquerda)",
+                        deu: "SHU - Magen (linke)"
+                    },
+                    l: "stati_energetici"
+                },
+                {
+                    t: "s",
+                    d: {
+                        ita: "SHU - Stomaco (destra)",
+                        eng: "SHU - Stomach (right)",
+                        esp: "SHU - Estómago (derecha)",
+                        fra: "SHU - Estomac (droite)",
+                        por: "SHU - Estômago (direita)",
+                        deu: "SHU - Magen (rechte)"
+                    },
+                    l: "stati_energetici"
+                },
+                {
+                    t: "s",
+                    d: {
+                        ita: "SHU - Polmone (sinistra)",
+                        eng: "SHU - Lung (left)",
+                        esp: "SHU - Pulmón (izquierda)",
+                        fra: "SHU - Poumon (gauche)",
+                        por: "SHU - Pulmão (esquerda)",
+                        deu: "SHU - Lunge (linke)"
+                    },
+                    l: "stati_energetici"
+                },
+                {
+                    t: "s",
+                    d: {
+                        ita: "SHU - Polmone (destra)",
+                        eng: "SHU - Lung (right)",
+                        esp: "SHU - Pulmón (derecha)",
+                        fra: "SHU - Poumon (droite)",
+                        por: "SHU - Pulmão (direita)",
+                        deu: "SHU - Lunge (rechte)"
+                    },
+                    l: "stati_energetici"
+                },
+                {
+                    t: "s",
+                    d: {
+                        ita: "SHU - Intestino crasso (sinistra)",
+                        eng: "SHU - Large Intestine (left)",
+                        esp: "SHU - Intestino grueso (izquierda)",
+                        fra: "SHU - Gros intestin (gauche)",
+                        por: "SHU - Intestino grosso (esquerda)",
+                        deu: "SHU - Dickdarm (linke)"
+                    },
+                    l: "stati_energetici"
+                },
+                {
+                    t: "s",
+                    d: {
+                        ita: "SHU - Intestino crasso (destra)",
+                        eng: "SHU - Large Intestine (right)",
+                        esp: "SHU - Intestino grueso (derecha)",
+                        fra: "SHU - Gros intestin (droite)",
+                        por: "SHU - Intestino grosso (direita)",
+                        deu: "SHU - Dickdarm (rechte)"
+                    },
+                    l: "stati_energetici"
+                },
+                {
+                    t: "s",
+                    d: {
+                        ita: "SHU - Rene (sinistra)",
+                        eng: "SHU - Kidney (left)",
+                        esp: "SHU - Riñón (izquierda)",
+                        fra: "SHU - Rein (gauche)",
+                        por: "SHU - Rim (esquerda)",
+                        deu: "SHU - Niere (linke)"
+                    },
+                    l: "stati_energetici"
+                },
+                {
+                    t: "s",
+                    d: {
+                        ita: "SHU - Rene (destra)",
+                        eng: "SHU - Kidney (right)",
+                        esp: "SHU - Riñón (derecha)",
+                        fra: "SHU - Rein (droite)",
+                        por: "SHU - Rim (direita)",
+                        deu: "SHU - Niere (rechte)"
+                    },
+                    l: "stati_energetici"
+                },
+                {
+                    t: "s",
+                    d: {
+                        ita: "SHU - Vescica urinaria (sinistra)",
+                        eng: "SHU - Urinary Bladder (left)",
+                        esp: "SHU - Vejiga urinaria (izquierda)",
+                        fra: "SHU - Vésicule urinaire (gauche)",
+                        por: "SHU - Bexiga urinária (esquerda)",
+                        deu: "SHU - Harnblase (linke)"
+                    },
+                    l: "stati_energetici"
+                },
+                {
+                    t: "s",
+                    d: {
+                        ita: "SHU - Vescica urinaria (destra)",
+                        eng: "SHU - Urinary Bladder (right)",
+                        esp: "SHU - Vejiga urinaria (derecha)",
+                        fra: "SHU - Vésicule urinaire (droite)",
+                        por: "SHU - Bexiga urinária (direita)",
+                        deu: "SHU - Harnblase (rechte)"
+                    },
+                    l: "stati_energetici"
+                },
+                {
+                    t: "e",
+                    d: {
+                        ita: "V = VUOTO",
+                        eng: "D = DEFICIENCY",
+                        esp: "D = DEFICIENCIA",
+                        fra: "D = DÉFICIT",
+                        por: "D = DEFICIÊNCIA",
+                        deu: "M = MANGEL"
+                    },
+                    h: true
+                },
+                {
+                    t: "e",
+                    d: {
+                        ita: "P = PIENO",
+                        eng: "E = EXCESS",
+                        esp: "E = EXCESO",
+                        fra: "E = EXCÈS",
+                        por: "E = EXCESSO",
+                        deu: "Ü = ÜBERFLUSS"
+                    },
+                    h: true
+                },
+                {
+                    t: "e",
+                    d: {
+                        ita: "X = DOLORANTE",
+                        eng: "X = PAINFUL",
+                        esp: "X = DOLOROSO",
+                        fra: "X = DOULEUREUX",
+                        por: "X = DOLOROSO",
+                        deu: "X = SCHMERZHAFT"
+                    },
+                    h: true
+                }  
+            ],
+            html:   '<div id="moduloMUSHUVIS">' +
+                    '   <div id="mushuvis_davanti">' +
+                    '       <div>' +
+                    '           <div id="muLUdx"><span></span>[11]</div>' + // LU
+                    '           <div id="muLRdx"><span></span>[0]</div>' + // LR
+                    '           <div id="muGBdx"><span></span>[2]</div>' + // GB
+                    '           <div id="muKIdx"><span></span>[15]</div>' + // KI
+                    '           <div id="muSPdx"><span></span>[8]</div>' + // SP
+                    '           <div id="muLIdx"><span></span>[13]</div>' + // LI
+                    '       </div>' +
+                    '       <div>' +
+                    '           <div id="muPC"><span></span>[6]</div>' + // PC
+                    '           <div id="muHT"><span></span>[4]</div>' + // HT
+                    '           <div id="muST"><span></span>[10]</div>' + // ST
+                    '           <div id="muTE"><span></span>[7]</div>' + // TE
+                    '           <div id="muSI"><span></span>[5]</div>' + // SI
+                    '           <div id="muBL"><span></span>[17]</div>' + // BL
+                    '       </div>' +
+                    '       <div>' +
+                    '           <div id="muLUsx"><span></span>[12]</div>' + // LU
+                    '           <div id="muLRsx"><span></span>[1]</div>' + // LR
+                    '           <div id="muGBsx"><span></span>[3]</div>' + // GB
+                    '           <div id="muKIsx"><span></span>[16]</div>' + // KI
+                    '           <div id="muSPsx"><span></span>[9]</div>' + // SP
+                    '           <div id="muLIsx"><span></span>[14]</div>' + // LI
+                    '       </div>' +
+                    '   </div>' +
+                    '   <div id="mushuvis_dietro">' +
+                    '       <div>' +
+                    '           <div id="shuLUsx"><span></span>[34]</div>' + // LU
+                    '           <div id="shuPCsx"><span></span>[26]</div>' + // PC
+                    '           <div id="shuHTsx"><span></span>[22]</div>' + // HT
+                    '           <div id="shuLRsx"><span></span>[18]</div>' + // LR
+                    '           <div id="shuGBsx"><span></span>[20]</div>' + // GB
+                    '           <div id="shuSPsx"><span></span>[30]</div>' + // SP
+                    '           <div id="shuSTsx"><span></span>[32]</div>' + // ST
+                    '           <div id="shuTEsx"><span></span>[28]</div>' + // TE
+                    '           <div id="shuKIsx"><span></span>[38]</div>' + // KI
+                    '           <div id="shuLIsx"><span></span>[36]</div>' + // LI
+                    '           <div id="shuSIsx"><span></span>[24]</div>' + // SI
+                    '           <div id="shuBLsx"><span></span>[40]</div>' + // BL
+                    '       </div>' +
+                    '       <div>' +
+                    '           <div id="shuLUdx"><span></span>[35]</div>' + // LU
+                    '           <div id="shuPCdx"><span></span>[27]</div>' + // PC
+                    '           <div id="shuHTdx"><span></span>[23]</div>' + // HT
+                    '           <div id="shuLRdx"><span></span>[19]</div>' + // LR
+                    '           <div id="shuGBdx"><span></span>[21]</div>' + // GB
+                    '           <div id="shuSPdx"><span></span>[31]</div>' + // SP
+                    '           <div id="shuSTdx"><span></span>[33]</div>' + // ST
+                    '           <div id="shuTEdx"><span></span>[29]</div>' + // TE
+                    '           <div id="shuKIdx"><span></span>[39]</div>' + // KI
+                    '           <div id="shuLIdx"><span></span>[37]</div>' + // LI
+                    '           <div id="shuSIdx"><span></span>[25]</div>' + // SI
+                    '           <div id="shuBLdx"><span></span>[41]</div>' + // BL
+                    '       </div>' +
+                    '   </div>' +
+                    '   <div>' +
+                    '       <span id="mushu_legenda">[43][42][44]</span>' +
+                    '       <span id="mushu_grafico">' +
+                    '           <svg width="230" height="61" xmlns="http://www.w3.org/2000/svg">' +
+                    '               <line x1="0" y1="30" x2="230" y2="30" style="stroke:rgba(0,0,0,0.4);stroke-width:1" />' +
+                    '               <line x1="0" y1="0" x2="0" y2="61" style="stroke:rgba(0,0,0,0.2);stroke-width:1" />' +
+                    '               <line x1="46" y1="0" x2="46" y2="61" style="stroke:rgba(0,0,0,0.2);stroke-width:1" />' +
+                    '               <line x1="92" y1="0" x2="92" y2="61" style="stroke:rgba(0,0,0,0.2);stroke-width:1" />' +
+                    '               <line x1="138" y1="0" x2="138" y2="61" style="stroke:rgba(0,0,0,0.2);stroke-width:1" />' +
+                    '               <line x1="184" y1="0" x2="184" y2="61" style="stroke:rgba(0,0,0,0.2);stroke-width:1" />' +
+                    '               <line x1="230" y1="0" x2="230" y2="61" style="stroke:rgba(0,0,0,0.2);stroke-width:1" />' +
+                    '               <rect x="2" y="30" width="42" height="1" style="fill:#339a16;" id="md_val_0" />' +
+                    '               <rect x="48" y="30" width="42" height="1" style="fill:#F00;" id="md_val_1" />' +
+                    '               <rect x="94" y="30" width="42" height="1" style="fill:#eb9b13;" id="md_val_2" />' +
+                    '               <rect x="140" y="30" width="42" height="1" style="fill:#FFF;" id="md_val_3" />' +
+                    '               <rect x="186" y="30" width="42" height="1" style="fill:#000;" id="md_val_4" />' +
+                    '           </svg>' +
+                    '       </span>' +
+                    '   </div>' +
+                    '</div>',
+            funct: function(){
+                let els = '',
+                    fasi = [
+                        ["LR","GB"],
+                        ["HT","SI","PC","TE"],
+                        ["ST","SP"],
+                        ["LI","LU"],
+                        ["BL","KI"]
+                    ],
+                    stati = [ 0,0,0,0,0 ],
+                    maxs = [ 8,12,7,8,7 ];
+                els = document.getElementById("moduloMUSHUVIS").getElementsByTagName("SELECT");
+                for(let e=0;e<els.length;e++){
+                    let val = '',
+                        cont = els[e].parentElement.parentElement.parentElement,
+                        sigla = cont.id.replace("mu","").replace("shu","").substr(0,2);
+                    if(els[e].selectedIndex==3)val = 'X';
+                    else if(els[e].selectedIndex>0)val = els[e].options[els[e].selectedIndex].innerText.substr(0,1);
+                    cont.getElementsByTagName("SPAN")[0].innerHTML = val;
+                    for(f in fasi){
+                        if(fasi[f].indexOf(sigla)>-1){
+                            if(els[e].selectedIndex == 1)stati[f]++;
+                            if(els[e].selectedIndex == 2)stati[f]--;
+                        }
+                    } 
+                }
+                for(s in stati){
+                    let h = (stati[s]*30)/maxs[s],
+                        y = 30;
+                    if(h>0){
+                        y-=h;
+                    }
+                    if(h<0){
+                        h=0-h;
+                    }
+                    if(h==0)h=1;
+                    document.getElementById("md_val_"+s).style.y = y;
+                    document.getElementById("md_val_"+s).style.height = h;
                 }
             }
         },
@@ -6231,17 +6902,65 @@ var moduliValutazione = {
                     '           <div class="md_BL"><span></span>[23]</div>' +
                     '       </div>' +
                     '   </div>' +
+                    '   <div>' +
+                    '       <span id="mushu_grafico">' +
+                    '           <svg width="230" height="61" xmlns="http://www.w3.org/2000/svg">' +
+                    '               <line x1="0" y1="30" x2="230" y2="30" style="stroke:rgba(0,0,0,0.4);stroke-width:1" />' +
+                    '               <line x1="0" y1="0" x2="0" y2="61" style="stroke:rgba(0,0,0,0.2);stroke-width:1" />' +
+                    '               <line x1="46" y1="0" x2="46" y2="61" style="stroke:rgba(0,0,0,0.2);stroke-width:1" />' +
+                    '               <line x1="92" y1="0" x2="92" y2="61" style="stroke:rgba(0,0,0,0.2);stroke-width:1" />' +
+                    '               <line x1="138" y1="0" x2="138" y2="61" style="stroke:rgba(0,0,0,0.2);stroke-width:1" />' +
+                    '               <line x1="184" y1="0" x2="184" y2="61" style="stroke:rgba(0,0,0,0.2);stroke-width:1" />' +
+                    '               <line x1="230" y1="0" x2="230" y2="61" style="stroke:rgba(0,0,0,0.2);stroke-width:1" />' +
+                    '               <rect x="2" y="30" width="42" height="1" style="fill:#339a16;" id="md_shi_0" />' +
+                    '               <rect x="48" y="30" width="42" height="1" style="fill:#F00;" id="md_shi_1" />' +
+                    '               <rect x="94" y="30" width="42" height="1" style="fill:#eb9b13;" id="md_shi_2" />' +
+                    '               <rect x="140" y="30" width="42" height="1" style="fill:#FFF;" id="md_shi_3" />' +
+                    '               <rect x="186" y="30" width="42" height="1" style="fill:#000;" id="md_shi_4" />' +
+                    '           </svg>' +
+                    '       </span>' +
+                    '   </div>' +
                     '</div>',
             funct: function(){
-                let els = '';
+                let els = '',
+                fasi = [
+                    ["LR","GB"],
+                    ["HT","SI","PC","TE"],
+                    ["ST","SP"],
+                    ["LI","LU"],
+                    ["BL","KI"]
+                ],
+                stati = [ 0,0,0,0,0 ],
+                maxs = [ 4,10,5,4,7 ];
                 for(let d of ["hara","schiena"]){
                     els = document.getElementById("md_"+d).getElementsByTagName("SELECT");
                     for(let e=0;e<els.length;e++){
-                        let val = '';
+                        let val = '',
+                            cont = els[e].parentElement.parentElement.parentElement,
+                            sigla = cont.className.substr(3,2);
                         if(els[e].selectedIndex==3)val = 'X';
                         else if(els[e].selectedIndex>0)val = els[e].options[els[e].selectedIndex].innerText.substr(0,1);
-                        els[e].parentElement.parentElement.parentElement.getElementsByTagName("SPAN")[0].innerHTML = val;
+                        cont.getElementsByTagName("SPAN")[0].innerHTML = val;
+                        for(f in fasi){
+                            if(fasi[f].indexOf(sigla)>-1){
+                                if(els[e].selectedIndex == 1)stati[f]++;
+                                if(els[e].selectedIndex == 2)stati[f]--;
+                            }
+                        } 
                     }
+                }
+                for(s in stati){
+                    let h = (stati[s]*30)/maxs[s],
+                        y = 30;
+                    if(h>0){
+                        y-=h;
+                    }
+                    if(h<0){
+                        h=0-h;
+                    }
+                    if(h==0)h=1;
+                    document.getElementById("md_shi_"+s).style.y = y;
+                    document.getElementById("md_shi_"+s).style.height = h;
                 }
             }
         },

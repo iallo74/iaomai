@@ -5,6 +5,8 @@ var SET = {
 	PT: [],
 	LN: [],
 	GD: [],
+	DD: [],
+	textures: [],
 	time: 0,
 	pulse: 1,
 	ptSel: null,
@@ -141,9 +143,11 @@ var SET = {
 				
 				this.PT[m] = new THREE.Group();
 				this.PT[m].name="PT_"+m;
+
 				// carico i punti parametrizzati
 				n=-1;
 				let PTS=MERIDIANI[m][modelloAperto].punti,
+					DDS=MERIDIANI[m][modelloAperto]?.dida,
 					ptAdd = false;
 				
 				for(let p in PTS){
@@ -181,9 +185,75 @@ var SET = {
 						if(evidenziati)this.P[n].userData.evidenziati = evidenziati;
 						this.PT[m].add( this.P[n] );
 						ptAdd = true;
+						
 					}
 				}
 				if(ptAdd)SETS.add( this.PT[m] );
+
+
+				// ideogrammi
+				this.DD[m] = new THREE.Group();
+				this.DD[m].name="DD_"+m;
+				this.DD[m].visible=false;
+				ptAdd = false;
+				n=-1;
+				for(let p in DDS){
+					if(DDS[p]!=''){
+						n++;
+						let pN = DDS[p].nome.split("."),
+							N = pN[1],
+							text = DB.mtc.meridiani[m].punti[N].ideogramma;
+						
+							
+
+
+
+						
+						/* const canvas = document.createElement('canvas');
+						const context = canvas.getContext('2d');
+
+						// Definisci la dimensione del canvas (può variare in base alla risoluzione che vuoi)
+						canvas.width = 256;
+						canvas.height = 64;
+						texture = new THREE.CanvasTexture(canvas);
+						context.clearRect(0, 0, canvas.width, canvas.height);
+						context.fillStyle = 'rgba(255, 255, 255, 0)';
+						context.fillRect(0, 0, canvas.width, canvas.height);
+						context.fillStyle = 'black';  // Colore del testo
+						context.font = '56px Arial';  // Dimensione e stile del font
+						context.textAlign = 'center';
+						context.textBaseline = 'middle';
+						context.fillText(text, canvas.width / 2, canvas.height / 2); */
+						const material = new THREE.MeshBasicMaterial({
+							//map: texture,
+							transparent: true,
+							depthWrite: false,
+							alphaTest: 0.1,
+							side: 3
+						});
+						const ideogramma = new THREE.Mesh(new THREE.PlaneGeometry(0.20, 0.10), material);
+						ideogramma.position.x = DDS[p].array[0];
+						ideogramma.position.y = DDS[p].array[1];
+						ideogramma.position.z = DDS[p].array[2];
+						ideogramma.name = DDS[p].nome.replace("DD__",'tsubo_');
+						let el = SETS.getObjectByName(DDS[p].nome.replace("DD__",""));
+						if(typeof(el)!='undefined'){
+							let dx = el.position.x - ideogramma.position.x;
+							let dz = el.position.z - ideogramma.position.z;
+							let angleY = Math.atan2(dx, dz);
+							ideogramma.rotation.y = angleY;
+							/* const direction = new THREE.Vector3().subVectors(ideogramma.position, el.position);
+							direction.multiplyScalar(2);
+							ideogramma.position.add(direction); */
+						}
+						ptAdd = true;
+						this.DD[m].add(ideogramma);
+					}
+				}
+				if(ptAdd)SETS.add( this.DD[m] );
+
+
+
 			}
 		}
 		if(areasView){
@@ -232,7 +302,8 @@ var SET = {
 
 		contPulsanti += '<span id="quitSet" onClick="chiudiSet();">'+TXT("EsciDa")+' AcupointsMap</span>';
 		
-		let contBtns = '<div id="p_contrasto" class="p_noTxt" onClick="SET.swContrastMethod();"></div>';
+		let contBtns = 	'<div id="p_contrasto" class="p_noTxt" onClick="SET.swContrastMethod();"></div>' +
+						'<div id="p_idgrm" class="p_noTxt" onClick="SET.swIdeogrammi();" title="'+htmlEntities(TXT("MostraIdeogrammi"))+'"></div>';
 		
 		let contIcona = '<div id="p_set" onClick="SCHEDA.apriElenco(\'set\',true);"><svg viewBox="0 0 12 48"><polygon points="5,24 12,13 12,35"></polygon></svg><i>'+htmlEntities(TXT("AcupointsMap"))+'</i></div>';;
 		
@@ -399,7 +470,8 @@ var SET = {
 					if(	SETS.children[i].visible &&
 						SETS.children[i].isGroup && 
 						SETS.children[i].name.substr(0,2)!='LN' && 
-						SETS.children[i].name.substr(0,2)!='GD'){
+						SETS.children[i].name.substr(0,2)!='GD' && 
+						SETS.children[i].name.substr(0,2)!='DD'){
 						let intersects = raycaster.intersectObjects( SETS.children[i].children );
 						if ( intersects.length > 0 ) { // roll-over
 							for(l in intersects){
@@ -505,8 +577,18 @@ var SET = {
 	},
 	// ANIMATE SET
 	_animate: function(){
-		
-	},
+		if(SETS){
+			for(let s in SETS.children){
+				if(SETS.children[s].name.indexOf("DD_")==0){
+					for(let p in SETS.children[s].children){
+						if(SETS.children[s].children[p].name.indexOf("tsubo_")==0){
+							SETS.children[s].children[p].lookAt(camera.position);
+						}
+					}
+				}
+			}
+		}
+	},	
 	
 	// CLICK sul punto
 	_onClick: function(e){
@@ -648,6 +730,8 @@ var SET = {
 		}
 		// ---------------------
 		SET.caricaPunto( pp.siglaMeridiano, pp.nPunto, ritorno );
+		SET.visIdeogrammi();
+		SET.swBtnIdeogrammi();
 	},
 	chiudiPunto: function( nonChiudereScheda=false, cambiaPunto=false ){
 		document.getElementById("scheda").classList.remove("tab_punti");
@@ -717,6 +801,8 @@ var SET = {
 		manichinoCont.position.z = manichinoCont.position.z - (vector2.z-vector.z);
 		render();
 		SET.spegniMeridiani();
+		SET.visIdeogrammi();
+		SET.swBtnIdeogrammi();
 	},
 	riapriPunto: function(){
 		if(!SET.ptSel)return;
@@ -832,10 +918,77 @@ var SET = {
 			SET.MAT.lineYin.uniforms.opacity.value = SET.MAT.opLine;
 			SET.MAT.pointBase.opacity = SET.MAT.opPoint;
 		}
-		if(nAccesi || !g)document.getElementById("p_contrasto").classList.add("visBtn");
-		else{
+		if(nAccesi || !g){
+			document.getElementById("p_contrasto").classList.add("visBtn");
+		}else{
 			document.getElementById("p_contrasto").classList.remove("visBtn");
 			if(!noSw)SET.swContrastMethod(true);
+		}
+		SET.visIdeogrammi();
+		SET.swBtnIdeogrammi();
+	},
+	swBtnIdeogrammi: function(){
+		let att = false;
+		for(let m in MERIDIANI){
+			if(MERIDIANI[m].meridianoAcceso)att = true;
+		}
+		if(SET.ptSel){
+			if(SET.ptSel.name.substr(0,3)=='EX.')att = true;
+		}
+		document.getElementById("p_idgrm").classList.toggle("visBtn",att);
+	},
+	swIdeogrammi: function(){
+		if(document.getElementById("p_idgrm").classList.contains("btnSel")){
+			document.getElementById("p_idgrm").classList.remove("btnSel");
+			document.getElementById("p_idgrm").classList.add("btnSel2");
+		}else if(document.getElementById("p_idgrm").classList.contains("btnSel2")){
+			document.getElementById("p_idgrm").classList.remove("btnSel2");
+		}else{
+			document.getElementById("p_idgrm").classList.add("btnSel");
+		}
+		SET.visIdeogrammi();
+	},
+	visIdeogrammi: function(){
+		let visIdgrm = document.getElementById("p_idgrm").classList.contains("btnSel"),
+			visSigle = document.getElementById("p_idgrm").classList.contains("btnSel2");
+		for(let m in MERIDIANI){
+			if(m.length==2 && SETS.getObjectByName("DD_"+m)){
+				SETS.getObjectByName("DD_"+m).visible = __(MERIDIANI[m].meridianoAcceso,false) && (visIdgrm || visSigle);
+			}
+		}
+		if(SET.ptSel){
+			if(SET.ptSel.name.substr(0,3)=='EX.' && (visIdgrm || visSigle))SETS.getObjectByName("DD_EX").visible = true;
+		}
+		if(visIdgrm || visSigle){
+			for(let s in SETS.children){
+				if(SETS.children[s].name.substr(0,3)=='DD_'){
+					for(let p in SETS.children[s].children){
+						let canvas = document.createElement('canvas'),
+							context = canvas.getContext('2d'),
+							texture = new THREE.CanvasTexture(canvas),
+							pP = SETS.children[s].children[p].name.replace("tsubo_","").split(".");
+							m = pP[0],
+							N = pP[1],
+							text = DB.mtc.meridiani[m].punti[N].ideogramma;
+						canvas.width = 256;
+						canvas.height = 96;
+						if(visSigle){
+							text = parseInt(N) +"."+SET.convSigla(m);
+							let pt = SETS.getObjectByName(SETS.children[s].children[p].name.replace("tsubo_",""));
+							if(pt?.userData.sigla)text = pt.userData.sigla;
+						}
+						context.clearRect(0, 0, canvas.width, canvas.height);
+						context.fillStyle = 'rgba(255, 255, 255, 0)';
+						context.fillRect(0, 0, canvas.width, canvas.height);
+						context.fillStyle = 'black';  // Colore del testo
+						context.font = (visSigle?'50':'53')+'px Arial';  // Dimensione e stile del font
+						context.textAlign = 'center';
+						context.textBaseline = 'middle';
+						context.fillText(text, canvas.width / 2, canvas.height / 2);
+						SETS.children[s].children[p].material.map = texture;
+					}
+				}
+			}
 		}
 	},
 	spegniMeridiano: function( siglaMeridiano ){
@@ -1168,8 +1321,10 @@ var SET = {
 	salvaImpSet: function(){
 		localStorage.sistemaSigleMeridiani = document.getElementById("sceltaSigle").value;
 		SET.caricaMeridiani();
+		SET.visIdeogrammi();
 		PAZIENTI.cambiaGZ(PAZIENTI.mezzoProvvisorio,true);
 		MENU.chiudiImpSet();
+		overInterfaccia = false;
 	},
 	popolaImpSet: function(){
 		let mzs = PAZIENTI.mezziSet.P,
@@ -1377,7 +1532,8 @@ var SET = {
 		let vis = true;
 		if(DB.login.data.auths.indexOf(globals.set.cartella)==-1 || !LOGIN.logedin())vis = false;
 		for(let m in SETS.children){
-			if(SET.MERIDIANI_free.indexOf(SETS.children[m].name.split("_")[1])==-1)SETS.children[m].visible = vis;
+			if(	SET.MERIDIANI_free.indexOf(SETS.children[m].name.split("_")[1])==-1 && 
+				SETS.children[m].name.substr(0,2)!="DD")SETS.children[m].visible = vis;
 		}
 		let ME = document.getElementById("lista_meridiani").getElementsByClassName("listaMeridiani")[0].getElementsByTagName("div");
 		for(let m in ME){

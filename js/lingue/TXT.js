@@ -6205,6 +6205,14 @@ DB.TXT = {
             por: "Mostrar/ocultar pontos de referência",
             deu: "Zeige/verstecke Landmarken"
         },
+        MostraIdeogrammi: {
+            ita: "Mostra/nascondi ideogrammi",
+            eng: "Show/hide ideograms",
+            esp: "Mostrar/ocultar ideogramas",
+            fra: "Afficher/masquer idéogrammes",
+            por: "Mostrar/ocultar ideogramas",
+            deu: "Zeige/verstecke Ideogramme"
+        },
         ElementiSelezionati: {
             ita: "Elementi selezionati",
             eng: "Selected items",

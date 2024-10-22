@@ -306,7 +306,6 @@ var PAZIENTI_MODULI = { // extend PAZIENTI
 					'</div>';
 		}
 		document.getElementById("modulo_cont").innerHTML = HTML;
-		console.log(functs)
 		if(functs.length){ // eseguo tutte le funzioni
 			for(f in functs){
 				moduliValutazione.modelli[functs[f]].funct();

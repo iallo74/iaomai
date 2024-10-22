@@ -152,6 +152,16 @@ body:not(.smart) #scheda:not(.schLato) .ideogrammaMeridianoChar{
 	/* background-image:url(img/p_rx_sel.png) !important; */
 	display:none;
 }
+#p_idgrm{
+	background-image:url(../../img/p_idgrm.png);
+	display:none;
+}
+#p_idgrm.btnSel{
+	background-image:url(../../img/p_idgrm_sel.png) !important;
+}
+#p_idgrm.btnSel2{
+	background-image:url(../../img/p_sigle_sel.png) !important;
+}
 .smart #contBtnModello > div #p_contrasto{
 	position: fixed;
     top: 65px;
