@@ -969,7 +969,9 @@ var SET = {
 							pP = SETS.children[s].children[p].name.replace("tsubo_","").split(".");
 							m = pP[0],
 							N = pP[1],
-							text = DB.mtc.meridiani[m].punti[N].ideogramma;
+							text = DB.mtc.meridiani[m].punti[N].ideogramma,
+							dim1 = smartMenu ? 60 : 50,
+							dim2 = smartMenu ? 60 : 53;
 						canvas.width = 256;
 						canvas.height = 96;
 						if(visSigle){
@@ -981,7 +983,7 @@ var SET = {
 						context.fillStyle = 'rgba(255, 255, 255, 0)';
 						context.fillRect(0, 0, canvas.width, canvas.height);
 						context.fillStyle = 'black';  // Colore del testo
-						context.font = (visSigle?'50':'53')+'px Arial';  // Dimensione e stile del font
+						context.font = (visSigle?dim1:dim2)+'px Arial';  // Dimensione e stile del font
 						context.textAlign = 'center';
 						context.textBaseline = 'middle';
 						context.fillText(text, canvas.width / 2, canvas.height / 2);

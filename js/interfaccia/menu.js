@@ -170,6 +170,8 @@ var MENU = {
 			document.getElementById("scheda").classList.remove("nas");
 			document.getElementById("elenchi").classList.remove("nas");
 			document.getElementById("icone").classList.remove("nasIcons");
+			document.getElementById("p_contrasto")?.classList.remove("nas");
+			document.getElementById("p_idgrm")?.classList.remove("nas");
 		}
 		//verAnimate();
 	},
@@ -205,6 +207,8 @@ var MENU = {
 			document.getElementById("contBtnModello").classList.add("nas");
 			document.getElementById("scheda").classList.add("nas");
 			document.getElementById("elenchi").classList.add("nas");
+			document.getElementById("p_contrasto")?.classList.add("nas");
+			document.getElementById("p_idgrm")?.classList.add("nas");
 			if(smartMenu){
 				MODELLO.op("Pelle",0.5);
 				ctrl_pressed = true;
@@ -233,6 +237,8 @@ var MENU = {
 			document.getElementById("contBtnModello").classList.remove("nas");
 			document.getElementById("scheda").classList.remove("nas");
 			document.getElementById("elenchi").classList.remove("nas");
+			document.getElementById("p_contrasto")?.classList.remove("nas");
+			document.getElementById("p_idgrm")?.classList.remove("nas");
 			if(smartMenu)ctrl_pressed = false;
 			MENU.desIcona();
 			document.getElementById("icone").classList.remove("nasIcons");
