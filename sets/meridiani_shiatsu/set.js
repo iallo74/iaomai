@@ -7,6 +7,7 @@ var SET = {
 	LN: [],
 	AR: [],
 	GD: [],
+	DD: [],
 	FR: [],
 	time: 0,
 	pulse: 1,
@@ -195,7 +196,8 @@ var SET = {
 				this.PT[m].name="PT_"+m;
 				// carico i punti parametrizzati
 				n=-1;
-				let PTS=MERIDIANI[m][modelloAperto].punti;
+				let PTS=MERIDIANI[m][modelloAperto].punti
+					DDS=MERIDIANI[m][modelloAperto]?.dida;
 				
 				for(let p in PTS){
 					if(PTS[p]!=''){
@@ -251,6 +253,47 @@ var SET = {
 				this.PT[m].visible=vis;
 				this.PT[m].userData.categoria = categoria;
 				SETS.add( this.PT[m] );
+
+
+				// ideogrammi
+				this.DD[m] = new THREE.Group();
+				this.DD[m].name="DD_"+m;
+				this.DD[m].visible=false;
+				ptAdd = false;
+				n=-1;
+				for(let p in DDS){
+					if(DDS[p]!=''){
+						n++;
+						let pN = DDS[p].nome.split("."),
+							N = pN[1];
+						const material = new THREE.MeshBasicMaterial({
+							transparent: true,
+							depthWrite: false,
+							alphaTest: 0.1,
+							side: 3
+						});
+						const ideogramma = new THREE.Mesh(new THREE.PlaneGeometry(0.20, 0.10), material);
+						ideogramma.position.x = DDS[p].array[0];
+						ideogramma.position.y = DDS[p].array[1];
+						ideogramma.position.z = DDS[p].array[2];
+						ideogramma.name = DDS[p].nome.replace("DD__",'tsubo_');
+						let el = SETS.getObjectByName(DDS[p].nome.replace("DD__",""));
+						if(typeof(el)!='undefined'){
+							let dx = el.position.x - ideogramma.position.x;
+							let dz = el.position.z - ideogramma.position.z;
+							let angleY = Math.atan2(dx, dz);
+							ideogramma.rotation.y = angleY;
+							/* const direction = new THREE.Vector3().subVectors(ideogramma.position, el.position);
+							direction.multiplyScalar(2);
+							ideogramma.position.add(direction); */
+						}
+						ptAdd = true;
+						this.DD[m].add(ideogramma);
+					}
+				}
+				if(ptAdd)SETS.add( this.DD[m] );
+
+
 			}
 		}
 		if(areasView){
@@ -309,7 +352,7 @@ var SET = {
 		
 		contPulsanti += '<span id="quitSet" onClick="chiudiSet();">'+TXT("EsciDa")+' ShiatsuMap</span>';
 
-		let contBtns = '';
+		let contBtns =  '<div id="p_idgrm" class="p_noTxt" onClick="SET.swIdeogrammi();" title="'+htmlEntities(TXT("MostraIdeogrammi"))+'"></div>';
 		
 		let contIcona = '<div id="p_set" onClick="SCHEDA.apriElenco(\'set\',true);"><svg viewBox="0 0 12 48"><polygon points="5,24 12,13 12,35"></polygon></svg><i>'+htmlEntities(TXT("ShiatsuMap"))+'</i></div>';;
 		
@@ -614,7 +657,17 @@ var SET = {
 	},
 	// ANIMATE SET
 	_animate: function(){
-		
+		if(SETS){
+			for(let s in SETS.children){
+				if(SETS.children[s].name.indexOf("DD_")==0){
+					for(let p in SETS.children[s].children){
+						if(SETS.children[s].children[p].name.indexOf("tsubo_")==0){
+							SETS.children[s].children[p].lookAt(camera.position);
+						}
+					}
+				}
+			}
+		}
 	},
 	
 	// CLICK sul punto
@@ -877,6 +930,8 @@ var SET = {
 		SET.addEviPalls(pp.siglaMeridiano,pp.nPunto,'Select');
 		this.pulse = 1;
 		SET.caricaPunto( pp.siglaMeridiano, pp.nPunto, ritorno );
+		SET.visIdeogrammi();
+		SET.swBtnIdeogrammi();
 	},
 	chiudiPunto: function( nonChiudereScheda=false, cambiaPunto=false ){
 		document.getElementById("scheda").classList.remove("tab_punti");
@@ -997,6 +1052,8 @@ var SET = {
 		render();
 		
 		SET.spegniMeridiani();
+		SET.visIdeogrammi();
+		SET.swBtnIdeogrammi();
 	},
 	riapriPunto: function(){
 		if(!SET.ptSel)return;
@@ -1152,7 +1209,73 @@ var SET = {
 			SET.MAT.lineYin.uniforms.opacity.value = SET.MAT.opLine;
 			SET.MAT.pointBase.opacity = SET.MAT.opPoint;
 		}
+		SET.visIdeogrammi();
+		SET.swBtnIdeogrammi();
 	},
+	
+	swBtnIdeogrammi: function(){
+		if(localStorage.sistemaMeridiani!='')return;
+		let att = false;
+		for(let m in MERIDIANI){
+			if(MERIDIANI[m].meridianoAcceso)att = true;
+		}
+		document.getElementById("p_idgrm").classList.toggle("visBtn",att);
+	},
+	swIdeogrammi: function(){
+		if(document.getElementById("p_idgrm").classList.contains("btnSel")){
+			document.getElementById("p_idgrm").classList.remove("btnSel");
+			document.getElementById("p_idgrm").classList.add("btnSel2");
+		}else if(document.getElementById("p_idgrm").classList.contains("btnSel2")){
+			document.getElementById("p_idgrm").classList.remove("btnSel2");
+		}else{
+			document.getElementById("p_idgrm").classList.add("btnSel");
+		}
+		SET.visIdeogrammi();
+	},
+	visIdeogrammi: function(){
+		if(localStorage.sistemaMeridiani!='')return;
+		let visIdgrm = document.getElementById("p_idgrm").classList.contains("btnSel"),
+			visSigle = document.getElementById("p_idgrm").classList.contains("btnSel2");
+		for(let m in MERIDIANI){
+			if(m.length==2 && SETS.getObjectByName("DD_"+m)){
+				SETS.getObjectByName("DD_"+m).visible = __(MERIDIANI[m].meridianoAcceso,false) && (visIdgrm || visSigle);
+			}
+		}
+		if(visIdgrm || visSigle){
+			for(let s in SETS.children){
+				if(SETS.children[s].name.substr(0,3)=='DD_'){
+					for(let p in SETS.children[s].children){
+						let canvas = document.createElement('canvas'),
+							context = canvas.getContext('2d'),
+							texture = new THREE.CanvasTexture(canvas),
+							pP = SETS.children[s].children[p].name.replace("tsubo_","").split(".");
+							m = pP[0],
+							N = pP[1],
+							text = DB.mtc.meridiani[m].punti[N].ideogramma,
+							dim1 = smartMenu ? 60 : 50,
+							dim2 = smartMenu ? 60 : 53;
+						canvas.width = 256;
+						canvas.height = 96;
+						if(visSigle){
+							text = parseInt(N) +"."+SET.convSigla(m);
+							let pt = SETS.getObjectByName(SETS.children[s].children[p].name.replace("tsubo_",""));
+							if(pt?.userData.sigla)text = pt.userData.sigla;
+						}
+						context.clearRect(0, 0, canvas.width, canvas.height);
+						context.fillStyle = 'rgba(255, 255, 255, 0)';
+						context.fillRect(0, 0, canvas.width, canvas.height);
+						context.fillStyle = 'black';  // Colore del testo
+						context.font = (visSigle?dim1:dim2)+'px Arial';  // Dimensione e stile del font
+						context.textAlign = 'center';
+						context.textBaseline = 'middle';
+						context.fillText(text, canvas.width / 2, canvas.height / 2);
+						SETS.children[s].children[p].material.map = texture;
+					}
+				}
+			}
+		}
+	},
+
 	spegniMeridiano: function( siglaMeridiano ){
 		let SM = siglaMeridiano + localStorage.sistemaMeridianiAdd;
 		if(this.ptSel)this.chiudiPunto();
@@ -1589,6 +1712,7 @@ var SET = {
 	salvaImpSet: function(){
 		localStorage.sistemaSigleMeridiani = document.getElementById("sceltaSigle").value;
 		SET.caricaMeridiani();
+		SET.visIdeogrammi();
 		PAZIENTI.cambiaGZ(PAZIENTI.mezzoProvvisorio,true);
 		MENU.chiudiImpSet();
 	},

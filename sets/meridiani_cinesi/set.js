@@ -6,7 +6,6 @@ var SET = {
 	LN: [],
 	GD: [],
 	DD: [],
-	textures: [],
 	time: 0,
 	pulse: 1,
 	ptSel: null,
@@ -201,31 +200,8 @@ var SET = {
 					if(DDS[p]!=''){
 						n++;
 						let pN = DDS[p].nome.split("."),
-							N = pN[1],
-							text = DB.mtc.meridiani[m].punti[N].ideogramma;
-						
-							
-
-
-
-						
-						/* const canvas = document.createElement('canvas');
-						const context = canvas.getContext('2d');
-
-						// Definisci la dimensione del canvas (può variare in base alla risoluzione che vuoi)
-						canvas.width = 256;
-						canvas.height = 64;
-						texture = new THREE.CanvasTexture(canvas);
-						context.clearRect(0, 0, canvas.width, canvas.height);
-						context.fillStyle = 'rgba(255, 255, 255, 0)';
-						context.fillRect(0, 0, canvas.width, canvas.height);
-						context.fillStyle = 'black';  // Colore del testo
-						context.font = '56px Arial';  // Dimensione e stile del font
-						context.textAlign = 'center';
-						context.textBaseline = 'middle';
-						context.fillText(text, canvas.width / 2, canvas.height / 2); */
+							N = pN[1];
 						const material = new THREE.MeshBasicMaterial({
-							//map: texture,
 							transparent: true,
 							depthWrite: false,
 							alphaTest: 0.1,

@@ -147,6 +147,36 @@ body:not(.smart) #scheda:not(.schLato) .ideogrammaMeridianoChar{
 	cursor:default !important;
 }
 
+#p_idgrm{
+	background-image:url(../../img/p_idgrm.png);
+	display:none;
+}
+#p_idgrm.btnSel{
+	background-image:url(../../img/p_idgrm_sel.png) !important;
+}
+#p_idgrm.btnSel2{
+	background-image:url(../../img/p_sigle_sel.png) !important;
+}
+#p_idgrm.nas{
+	display:none !important; 	
+}
+.smart #contBtnModello > div #p_idgrm{
+	position: fixed;
+    left: 3px;
+    border-top: none !important;
+    border-radius: 6px;
+    background-position: center center;
+    height: 48px;
+    width: 48px !important;
+	background-color: rgba(0, 0, 0, 0.35);
+}
+#contBtnModello.vis .smart #p_idgrm{
+	left: 10px !important;
+}
+.smart #contBtnModello > div #p_idgrm{
+    top: 15px;
+}
+
 
 /* POPUP IMPOSTAZIONI */
 #tbSigleMeridiani{
