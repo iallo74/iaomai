@@ -936,34 +936,38 @@ var SET = {
 			if(SET.ptSel.name.substr(0,3)=='EX.' && (visIdgrm || visSigle))SETS.getObjectByName("DD_EX").visible = true;
 		}
 		if(visIdgrm || visSigle){
+			let typeDest = visSigle ? 'sigla' : 'ideogramma';
 			for(let s in SETS.children){
 				if(SETS.children[s].name.substr(0,3)=='DD_'){
 					for(let p in SETS.children[s].children){
-						let canvas = document.createElement('canvas'),
-							context = canvas.getContext('2d'),
-							texture = new THREE.CanvasTexture(canvas),
-							pP = SETS.children[s].children[p].name.replace("tsubo_","").split(".");
-							m = pP[0],
-							N = pP[1],
-							text = DB.mtc.meridiani[m].punti[N].ideogramma,
-							dim1 = smartMenu ? 60 : 50,
-							dim2 = smartMenu ? 60 : 53;
-						canvas.width = 256;
-						canvas.height = 96;
-						if(visSigle){
-							text = parseInt(N) +"."+SET.convSigla(m);
-							let pt = SETS.getObjectByName(SETS.children[s].children[p].name.replace("tsubo_",""));
-							if(pt?.userData.sigla)text = pt.userData.sigla;
+						if(__(SETS.children[s].children[p].userData.type,'')!=typeDest){
+							let canvas = document.createElement('canvas'),
+								context = canvas.getContext('2d'),
+								texture = new THREE.CanvasTexture(canvas),
+								pP = SETS.children[s].children[p].name.replace("tsubo_","").split(".");
+								m = pP[0],
+								N = pP[1],
+								text = DB.mtc.meridiani[m].punti[N].ideogramma,
+								dim1 = smartMenu ? 60 : 50,
+								dim2 = smartMenu ? 60 : 53;
+							canvas.width = 256;
+							canvas.height = 96;
+							if(visSigle){
+								text = parseInt(N) +"."+SET.convSigla(m);
+								let pt = SETS.getObjectByName(SETS.children[s].children[p].name.replace("tsubo_",""));
+								if(pt?.userData.sigla)text = pt.userData.sigla;
+							}
+							context.clearRect(0, 0, canvas.width, canvas.height);
+							context.fillStyle = 'rgba(255, 255, 255, 0)';
+							context.fillRect(0, 0, canvas.width, canvas.height);
+							context.fillStyle = 'black';  // Colore del testo
+							context.font = (visSigle?dim1:dim2)+'px Arial';  // Dimensione e stile del font
+							context.textAlign = 'center';
+							context.textBaseline = 'middle';
+							context.fillText(text, canvas.width / 2, canvas.height / 2);
+							SETS.children[s].children[p].material.map = texture;
+							SETS.children[s].children[p].userData.type = (visSigle?"sigla":"ideogramma");
 						}
-						context.clearRect(0, 0, canvas.width, canvas.height);
-						context.fillStyle = 'rgba(255, 255, 255, 0)';
-						context.fillRect(0, 0, canvas.width, canvas.height);
-						context.fillStyle = 'black';  // Colore del testo
-						context.font = (visSigle?dim1:dim2)+'px Arial';  // Dimensione e stile del font
-						context.textAlign = 'center';
-						context.textBaseline = 'middle';
-						context.fillText(text, canvas.width / 2, canvas.height / 2);
-						SETS.children[s].children[p].material.map = texture;
 					}
 				}
 			}
