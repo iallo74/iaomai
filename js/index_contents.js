@@ -92,7 +92,25 @@ var sets = {
 		],
 		lingueAI: [
 			"por"
-		]
+		],
+		abbs: {
+			m: {
+				idApple: 'sub_tm_m',
+				idGoogle: 'sub_tm_m',
+				idPc: 'sub_tm_m'
+			},
+			a: {
+				idApple: 'sub_ap_a',
+				idGoogle: 'sub_tm_a',
+				idPc: 'sub_tm_a'
+			},
+			ac: {
+				idApple: 'sub_tm_ac',
+				idGoogle: 'sub_tm_ac',
+				idPc: 'sub_tm_ac'
+			}
+		},
+		pageStore: 'acupointsmap'
 	},
 	meridiani_shiatsu: {
 		nome: TXT("ShiatsuMap"),
@@ -174,7 +192,7 @@ var sets = {
 				code: "light",
 				idApple: 'SMlight24',
 				idGoogle: 'smlight24',
-				pageStore: 'shiatsumap'
+				pageStore: ''
 			}
 		],
 		lingueCont: [
@@ -187,7 +205,25 @@ var sets = {
 		],
 		lingueAI: [
 			"por"
-		]
+		],
+		abbs: {
+			m: {
+				idApple: 'sub_sm_m',
+				idGoogle: 'sub_sm_m',
+				idPc: 'sub_sm_m'
+			},
+			a: {
+				idApple: 'sub_sm_a',
+				idGoogle: 'sub_sm_a',
+				idPc: 'sub_sm_a'
+			},
+			ac: {
+				idApple: 'sub_sm_ac',
+				idGoogle: 'sub_sm_ac',
+				idPc: 'sub_sm_ac'
+			}
+		},
+		pageStore: 'shiatsumap'
 	},
 	auricologia: {
 		nome: TXT("AuriculoMap"),
@@ -253,7 +289,25 @@ var sets = {
 		],
 		lingueAI: [
 			"por"
-		]
+		],
+		abbs: {
+			m: {
+				idApple: 'sub_au_m',
+				idGoogle: 'sub_au_m',
+				idPc: 'sub_au_m'
+			},
+			a: {
+				idApple: 'sub_au_a',
+				idGoogle: 'sub_au_a',
+				idPc: 'sub_au_a'
+			},
+			ac: {
+				idApple: 'sub_au_ac',
+				idGoogle: 'sub_au_ac',
+				idPc: 'sub_au_ac'
+			}
+		},
+		pageStore: 'auriculomap'
 	},
 	reflessologia_plantare: {
 		nome: TXT("ReflessologiaPlantare"),
@@ -321,7 +375,25 @@ var sets = {
 			"esp",
 			"fra",
 			"por"
-		]
+		],
+		abbs: {
+			m: {
+				idApple: 'sub_rm_m',
+				idGoogle: 'sub_rm_m',
+				idPc: 'sub_rm_m'
+			},
+			a: {
+				idApple: 'sub_rm_a',
+				idGoogle: 'sub_rm_a',
+				idPc: 'sub_rm_a'
+			},
+			ac: {
+				idApple: 'sub_rm_ac',
+				idGoogle: 'sub_rm_ac',
+				idPc: 'sub_rm_ac'
+			}
+		},
+		pageStore: 'reflexologymap'
 	},
 	trigger_points: {
 		nome: TXT("TriggerPoints"),
@@ -382,7 +454,25 @@ var sets = {
 			"ita"
 		],
 		lingueAI: [
-		]
+		],
+		abbs: {
+			m: {
+				idApple: 'sub_tp_m',
+				idGoogle: 'sub_tp_m',
+				idPc: 'sub_tp_m'
+			},
+			a: {
+				idApple: 'sub_tp_a',
+				idGoogle: 'sub_tp_a',
+				idPc: 'sub_tp_a'
+			},
+			ac: {
+				idApple: 'sub_tp_ac',
+				idGoogle: 'sub_tp_ac',
+				idPc: 'sub_tp_ac'
+			}
+		},
+		pageStore: 'triggerpointsmap'
 	},
 	clients_full: {
 		nome: TXT("MedicalFiles"),
@@ -397,7 +487,25 @@ var sets = {
 				idGoogle: 'sp22',
 				pageStore: 'medicalfile',
 			}
-		]
+		],
+		abbs: {
+			m: {
+				idApple: 'sub_pz_m',
+				idGoogle: 'sub_pz_m',
+				idPc: 'sub_pz_m'
+			},
+			a: {
+				idApple: 'sub_pz_a',
+				idGoogle: 'sub_pz_a',
+				idPc: 'sub_pz_a'
+			},
+			ac: {
+				idApple: 'sub_pz_ac',
+				idGoogle: 'sub_pz_ac',
+				idPc: 'sub_pz_ac'
+			}
+		},
+		pageStore: 'medicalfile'
 	}
 };
 

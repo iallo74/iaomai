@@ -997,6 +997,142 @@ DB.TXT = {
             por: "COMPRAR",
             deu: "KAUFEN"
         },
+        sub_m: {
+            ita: "Abbonamento mensile",
+            eng: "Monthly subscription",
+            esp: "Suscripción mensual",
+            fra: "Abonnement mensuel",
+            por: "Assinatura mensal",
+            deu: "Monatliches Abonnement"
+        },
+        sub_a: {
+            ita: "Abbonamento annuale",
+            eng: "Annual subscription",
+            esp: "Suscripción anual",
+            fra: "Abonnement annuel",
+            por: "Assinatura anual",
+            deu: "Jahresabonnement"
+        },
+        sub_ac: {
+            ita: "Abbonamento annuale in convenzione",
+            eng: "Annual subscription with agreement",
+            esp: "Suscripción anual con convenio",
+            fra: "Abonnement annuel avec convention",
+            por: "Assinatura anual com convenção",
+            deu: "Jahresabonnement mit Vereinbarung"
+        },
+        PrimoMese1Euro: {
+            ita: "Il primo mese a 1 €",
+            eng: "The first month for 1 €",
+            esp: "El primer mes por 1 €",
+            fra: "Le premier mois à 1 €",
+            por: "O primeiro mês por 1 €",
+            deu: "Der erste Monat für 1 €"
+        },
+        NotePrimoMese1Euro: {
+            ita: "Offerta disponibile solo se non hai ancora provato [mappa].",
+            eng: "Offer available only if you haven't tried [map] yet.",
+            esp: "Oferta disponible solo si aún no has probado [mapa].",
+            fra: "Offre disponible uniquement si vous n'avez pas encore essayé [carte].",
+            por: "Oferta disponível apenas se você ainda não tentou [mapa].",
+            deu: "Angebot nur verfügbar, wenn Sie [Karte] noch nicht ausprobiert haben."
+        },
+        RinnovoAutomatico: {
+            ita: "Tutti gli abbonamenti sono a rinnovo automatico. Annulla quando vuoi.",
+            eng: "All subscriptions are auto-renewal. Cancel anytime.",
+            esp: "Todas las suscripciones son de renovación automática. Cancela cuando quieras.",
+            fra: "Tous les abonnements sont à renouvellement automatique. Annulez quand vous le souhaitez.",
+            por: "Todas as assinaturas são de renovação automática. Cancele quando quiser.",
+            deu: "Alle Abonnements sind automatisch verlängert. Kündigen Sie jederzeit."
+        },
+        AnnullaSub: {
+            ita: "Annulla quando vuoi",
+            eng: "Cancel anytime",
+            esp: "Cancela cuando quieras",
+            fra: "Annulez quand vous voulez",
+            por: "Cancele a qualquer momento",
+            deu: "Kündigen Sie jederzeit"
+        },
+        add_m: {
+            ita: "mese",
+            eng: "month",
+            esp: "mes",
+            fra: "mois",
+            por: "mês",
+            deu: "Monat"
+        },
+        add_a: {
+            ita: "anno",
+            eng: "year",
+            esp: "año",
+            fra: "an",
+            por: "ano",
+            deu: "Jahr"
+        },
+        PrezzoInConvenzione: {
+            ita: "Prezzo in convenzione",
+            eng: "Price in agreement",
+            esp: "Precio en convenio",
+            fra: "Prix en convention",
+            por: "Preço em convenção",
+            deu: "Preis im Vertrag"
+        },
+        HaiConvenzione: {
+            ita: "Hai una convenzione?",
+            eng: "Do you have an agreement?",
+            esp: "¿Tienes un convenio?",
+            fra: "Avez-vous un accord?",
+            por: "Você tem um acordo?",
+            deu: "Haben Sie eine Vereinbarung?"
+        },
+        InserisciCodice: {
+            ita: "Inserisci il codice",
+            eng: "Enter the code",
+            esp: "Ingrese el código",
+            fra: "Entrez le code",
+            por: "Digite o código",
+            deu: "Geben Sie den Code ein"
+        },
+        APPLICA: {
+            ita: "APPLICA",
+            eng: "APPLY",
+            esp: "APLICAR",
+            fra: "APPLIQUER",
+            por: "APLICAR",
+            deu: "ANWENDEN"
+        },
+        ConvenzioneAttiva: {
+            ita: "Convenzione attiva",
+            eng: "Active agreement",
+            esp: "Convenio activo",
+            fra: "Accord actif",
+            por: "Acordo ativo",
+            deu: "Aktive Vereinbarung"
+        },
+        ConvenzioneNonTrovata: {
+            ita: "Convenzione non trovata",
+            eng: "Agreement not found",
+            esp: "Convenio no encontrado",
+            fra: "Accord non trouvé",
+            por: "Acordo não encontrado",
+            deu: "Vereinbarung nicht gefunden"
+        },     
+        TornaProdotti: {
+            ita: "Torna ai prodotti",
+            eng: "Back to products",
+            esp: "Volver a los productos",
+            fra: "Retour aux produits",
+            por: "Voltar aos produtos",
+            deu: "Zurück zu den Produkten"
+        },
+        SCOPRI: {
+            ita: "SCOPRI",
+            eng: "DISCOVER",
+            esp: "DESCUBRE",
+            fra: "DÉCOUVREZ",
+            por: "DESCUBRA",
+            deu: "ENTDECKEN"
+        },
         Acquista: {
             ita: "Acquista",
             eng: "Buy",
@@ -5667,12 +5803,12 @@ DB.TXT = {
             deu: "Mit AnatomyMap haben Sie vollständige 3D-Anatomiemodelle, die Muskeln, Knochen, Organe und Eingeweide enthalten. Für jedes anatomische Detail können Sie auch das beschreibende Datenblatt konsultieren und persönliche Anmerkungen einfügen."
         },
         MedicalFiles: {
-            ita: "Gestione pazienti",
-            eng: "Patients management",
-            esp: "Gestión de pacientes",
-            fra: "Gestion des patients",
-            por: "Gestão de pacientes",
-            deu: "Patientenverwaltung"
+            ita: "Schedario pazienti",
+            eng: "Medical file",
+            esp: "Registro pacientes",
+            fra: "Fichier patients",
+            por: "Ficheiro de pacientes",
+            deu: "Patientenkartei"
         },
         MedicalFilesST: {
             ita: "Anagrafiche e cartelle cliniche",
@@ -6363,6 +6499,14 @@ DB.TXT = {
         },
         CompraOra: {
             ita: "COMPRA ORA",
+            eng: "SUBSCRIBE NOW",
+            esp: "SUSCRÍBETE AHORA",
+            fra: "ABONNEZ-VOUS",
+            por: "ASSINE-SE AGORA",
+            deu: "JETZT ABONNIEREN"
+        },
+        AbbonatiOra: {
+            ita: "ABBONATI ORA",
             eng: "BUY NOW",
             esp: "COMPRAR AHORA",
             fra: "ACHETER MAINTENANT",
@@ -6384,6 +6528,14 @@ DB.TXT = {
             fra: "Acheté",
             por: "Comprado",
             deu: "Gekauft"
+        },
+        Abbonato: {
+            ita: "Abbonato",
+            eng: "Subscribed",
+            esp: "Suscrito",
+            fra: "Abonné",
+            por: "Assinado",
+            deu: "Abonniert"
         },
         PagaOra: {
             ita: "PAGA ORA",
