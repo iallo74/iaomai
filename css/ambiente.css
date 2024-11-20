@@ -468,10 +468,24 @@ body.bodyModello #logoPartner,
 	color:inherit;
 }
 #loader{
-	background:url(../img/loadingBlack.gif) no-repeat center center #000;
+	/*background:url(../img/loadingBlack.gif) no-repeat center center #000;
 	background-size:50px;
 	z-index:1000000;
-	opacity:0.8;
+	opacity:0.8;*/
+
+	background: url(../img/loading_new.gif) no-repeat center center rgba(0, 0, 0, 0.7);
+    background-size: 26px;
+    z-index: 1000000;
+}
+@supports ((-webkit-backdrop-filter: initial) or (backdrop-filter: initial)){
+    #loader.blured{
+        --globalnav-backdrop-filter: saturate(130%) blur(7px);
+    }
+}
+#loader.blured{
+    backdrop-filter: blur(3px);
+    backdrop-filter: var(--globalnav-backdrop-filter);
+    background-color: rgba(0, 0, 0, 0.55);
 }
 
 #loader.overPopup{

@@ -466,7 +466,7 @@ var MENU = {
 	},
 	visInfolingue: function(){
 		MENU.chiudiMenu("infolingue");
-		visLoader("");
+		visLoader("","blured");
 		document.getElementById("infolingue").classList.toggle("visSch");
 		if(document.getElementById("infolingue").className.indexOf("visSch") > -1){
 			visLoader('');
@@ -476,7 +476,7 @@ var MENU = {
 	},
 	visLicenze: function(){
 		MENU.chiudiMenu("licenze");
-		visLoader("");
+		visLoader("","blured");
 		document.getElementById("licenze").classList.toggle("visSch");
 		if(document.getElementById("licenze").className.indexOf("visSch") > -1){
 			LICENZE.visLicenses();
@@ -502,14 +502,14 @@ var MENU = {
 				document.feedbackForm.Email.value = DB.login.data.Email;
 			}
 			if(focus && !smartphone)document.feedbackForm.Messaggio.focus();
-			visLoader('');
+			visLoader('',"blured");
 		}else{
 			nasLoader();
 		}
 	},
 	visColori: function(){
 		MENU.chiudiMenu("colori");
-		visLoader("");
+		visLoader("","blured");
 		document.getElementById("colori").classList.toggle("visSch");
 		let els = document.getElementById("colSel").getElementsByTagName("span");
 		for(let i = 0; i<els.length; i++){
@@ -552,7 +552,7 @@ var MENU = {
 		}
 		document.getElementById("no_guida_settings").checked = (localStorage.no_guida_generica!='true');
 		
-		if(document.getElementById("colori").className.indexOf("visSch") > -1)visLoader('');
+		if(document.getElementById("colori").className.indexOf("visSch") > -1)visLoader('',"blured");
 		else nasLoader();
 	},
 	visNotifiche: function(){
@@ -561,10 +561,10 @@ var MENU = {
 			return false;
 		}else{
 			MENU.chiudiMenu("notifiche");
-			visLoader("");
+			visLoader("","blured");
 			document.getElementById("notifiche").classList.toggle("visSch");
 			if(document.getElementById("notifiche").className.indexOf("visSch") > -1){
-				visLoader('');
+				visLoader('',"blured");
 				NOTIFICHE.dwnl_notifiche();
 			}else{
 				nasLoader();
@@ -572,10 +572,10 @@ var MENU = {
 		}
 	},
 	visDispositivi: function( jsn ){
-		visLoader("");
+		visLoader("","blured");
 		document.getElementById("dispositivi").classList.add("visSch");
 		document.getElementById("dispositivi").classList.remove("blur");
-		visLoader('');
+		visLoader('',"blured");
 		DISPOSITIVI.carica(jsn);
 	},
 	visFeatures: function( forza=false ){
@@ -588,11 +588,11 @@ var MENU = {
 			maxDate>now) || forza ){
 			document.getElementById("contFeatures").innerHTML = stripslashes(TXT("features"));
 			if(forza){
-				visLoader("");
+				visLoader("","blured");
 				MENU.chiudiMenu("features");
 			}
 			setTimeout(function(){
-				visLoader("");
+				visLoader("","blured");
 				document.getElementById("features").classList.add("visSch");
 				setTimeout(function(){document.getElementById("features").style.opacity = 1;},200);
 			},tmRit);
@@ -605,10 +605,10 @@ var MENU = {
 			return false;
 		}else{
 			MENU.chiudiMenu("backups");
-			visLoader("");
+			visLoader("","blured");
 			document.getElementById("backups").classList.toggle("visSch");
 			if(document.getElementById("backups").className.indexOf("visSch") > -1){
-				visLoader('');
+				visLoader('',"blured");
 				BACKUPS.car_backups();
 			}else{
 				nasLoader();
@@ -621,10 +621,10 @@ var MENU = {
 			return false;
 		}else{
 			MENU.chiudiMenu("community");
-			visLoader("");
+			visLoader("","blured");
 			document.getElementById("community").classList.toggle("visSch");
 			if(document.getElementById("community").className.indexOf("visSch") > -1){
-				visLoader('');
+				visLoader('',"blured");
 			}else{
 				nasLoader();
 			}
@@ -687,10 +687,10 @@ var MENU = {
 	
 	visVersione: function(){
 		MENU.chiudiMenu("versione");
-		visLoader("");
+		visLoader("","blured");
 		document.getElementById("versione").classList.toggle("visSch");
 		if(document.getElementById("versione").className.indexOf("visSch") > -1){
-			visLoader('');
+			visLoader('',"blured");
 			//document.getElementById("loader").addEventListener("mouseup",MENU.visVersione,false);
 		}else{
 			nasLoader();
@@ -740,7 +740,7 @@ var MENU = {
 	},
 	visImpset: function( archivi=false ){
 		MENU.chiudiMenu("impset");
-		visLoader("");
+		visLoader("","blured");
 		document.getElementById("impset").classList.toggle("visSch");
 		document.getElementById("impset").classList.toggle("impSet",!archivi);
 		if(!archivi){
@@ -924,10 +924,10 @@ var MENU = {
 		}
 		// --------------------------
 		MENU.chiudiMenu("archives");
-		visLoader("");
+		visLoader("","blured");
 		document.getElementById("archives").classList.toggle("visSch");
 		if(document.getElementById("archives").className.indexOf("visSch") > -1){
-			visLoader('');
+			visLoader('',"blured");
 			PH.apriArchives();
 		}else{
 			PH.chiudiArchives();
@@ -938,10 +938,10 @@ var MENU = {
 		//if(!PURCHASES.initiated)
 		PURCHASES.init();
 		MENU.chiudiMenu("purchases");
-		visLoader("");
+		visLoader("","blured");
 		document.getElementById("purchases").classList.toggle("visSch");
 		if(document.getElementById("purchases").className.indexOf("visSch") > -1){
-			visLoader('');
+			visLoader('',"blured");
 		}else{
 			nasLoader();
 		}
@@ -952,10 +952,10 @@ var MENU = {
 			return false;
 		}else{
 			MENU.chiudiMenu("ai");
-			visLoader("");
+			visLoader("","blured");
 			document.getElementById("ai").classList.toggle("visSch");
 			if(document.getElementById("ai").className.indexOf("visSch") > -1){
-				visLoader('');
+				visLoader('',"blured");
 			}else{
 				nasLoader();
 			}
