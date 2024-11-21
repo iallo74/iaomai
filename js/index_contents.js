@@ -438,7 +438,7 @@ var sets = {
 		],
 		txtLoading: stripslashes(TXT("CaricamentoMappe")),
 		auth: false,
-		locked: false,
+		locked: true,
 		lastVer: 1,
 		opening: true,
 		dataPubblicazione: '',
