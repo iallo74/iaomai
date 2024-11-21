@@ -7,8 +7,10 @@ var PURCHASES  = {
 	orderState: '',
     idBuying: '',
 	convenzione: '',
+	abbs_owned: [],
 	
 	init: function(){ // inizializza il catalogo
+		PURCHASES.verAbbs();
 		PURCHASES.product_list = [];
 		for(let s in sets){
 			if(sets[s].abbs && !sets[s].locked){
@@ -92,9 +94,11 @@ var PURCHASES  = {
 		}else{
 			let tk = encodeURIComponent(window.btoa(LOGIN.logedin() + MD5(DB.login.data.idUtente.toString()))),
 				fl = encodeURIComponent(window.btoa(PURCHASES.getProdById(PURCHASES.productId).folder)),
-				idP = (PURCHASES.convenzione) ? PURCHASES.convenzione.idPartner : '0';
-			CONN.openUrl(convLangPath(CONN.urlStore)+"in_app_purchase_subs?tk="+tk+"&mp="+fl+"&type="+type+"&idP="+idP+"&lang="+LINGUE.getSigla2());
-			
+				idP = (PURCHASES.convenzione) ? PURCHASES.convenzione.idPartner : '0',
+				pr1 = PURCHASES.abbs_owned.indexOf(PURCHASES.getProdById(PURCHASES.productId).folder)==-1 ? '1' : '';
+			CONN.openUrl(convLangPath(CONN.urlStore)+"in_app_purchase_subs?tk="+tk+"&mp="+fl+"&type="+type+"&idP="+idP+"&pr1="+pr1+"&lang="+LINGUE.getSigla2());
+			PURCHASES.verAbbs();
+			PURCHASES.abbsList();
 		}
 	},
 	finishPurchase: function(p){
@@ -166,7 +170,7 @@ var PURCHASES  = {
 		let button = '';
 		if(canPurchase){
 			button = '';
-			if(!window.store && type=='m'){
+			if(!window.store && type=='m' && PURCHASES.abbs_owned.indexOf(folder)==-1){
 				button += '<div class="promoEuro inDett"><b>'+TXT("PrimoMese1Euro")+'*</b><br>(*) '+TXT("NotePrimoMese1Euro").replace("[mappa]",product.title)+'</div>';
 			}
 			if(visRet)button += '<div class="ann" onClick="PURCHASES.abbsList();">'+TXT("Annulla")+'</div> ';
@@ -174,7 +178,7 @@ var PURCHASES  = {
 		}else if(owned){
 			button = '<div>'+TXT("Abbonato")+'</div>';
 		}else if(loadingPurchase){
-			button = '<div><img src="img/loadingWhite2.gif" id="imgLoadingPurchase">'+stripslashes(TXT("CaricamentoAcquisto"))+'...</div>';
+			button = '<div><img src="img/loading_newB.gif" id="imgLoadingPurchase" style="width:25px;">'+stripslashes(TXT("CaricamentoAcquisto"))+'...</div>';
 		}
 		let el = document.getElementById('contPurchases');
 		el.classList.remove("ini");
@@ -228,7 +232,7 @@ var PURCHASES  = {
 								(type=='ac' ? '<div id="label_prezzo_conv">'+TXT("PrezzoInConvenzione")+'</div>' : '') +
 								'<div class="btn buy" onClick="PURCHASES.showProduct(\''+idStore+'\',\''+type+'\');">'+TXT("sub_"+type.substr(0,1))+': <b>'+price+' / '+TXT("add_"+type.substr(0,1))+'</b></div>' +
 								'</div>';
-				if(!window.store && type=='m'){
+				if(!window.store && type=='m' && PURCHASES.abbs_owned.indexOf(folder)==-1){
 					html_provv += '<div class="promoEuro"><b>'+TXT("PrimoMese1Euro")+'*</b><br>(*) '+TXT("NotePrimoMese1Euro").replace("[mappa]",PURCHASES.product_list[id].title)+'</div>';
 				}
 				html_provv += 	'<span class="sep"></span>';
@@ -336,7 +340,6 @@ var PURCHASES  = {
 			ALERT("An error has occurred");
 		}else{
 			let json = JSON.parse(txt);
-			console.log(json)
 			if(json.convenzione){
 				PURCHASES.convenzione = json;
 				PURCHASES.abbsList();
@@ -348,7 +351,18 @@ var PURCHASES  = {
 	delConv: function(){
 		PURCHASES.convenzione = '';
 		PURCHASES.abbsList();
-	}
+	},
+	verAbbs: function(){
+		CONN.caricaUrl(	"purchases_verAbbs.php",
+			"",
+			"PURCHASES.ret_verAbbs");
+	},
+	ret_verAbbs: function( txt ){
+		if(txt!='404'){
+			let json = JSON.parse(txt);
+			PURCHASES.abbs_owned = json;
+		}
+	},
 	
 }
 

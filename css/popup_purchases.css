@@ -20,10 +20,10 @@
 	overflow-y: auto;
 }
 #contPurchases.ini{
-	background-image:url(../img/loadingWhite2.gif);
+	background-image:url(../img/loading_newB.gif);
 	background-repeat:no-repeat;
 	background-position:center center;
-	background-size:60px;
+	background-size:25px;
 }
 
 #contPurchases div.btn_cont{

@@ -974,7 +974,7 @@ var MENU = {
 		let el = document.getElementById("cestino_"+archivio);
 		el.classList.toggle('op');
 		if(el.classList.contains('op')){
-			el.getElementsByClassName("elCestinoList")[0].innerHTML = '<img src="img/loadingWhite2.gif" class="loading_cestino">';
+			el.getElementsByClassName("elCestinoList")[0].innerHTML = '<img src="img/loading_new.gif" class="loading_cestino" style="width:25px;">';
 			CONN.caricaUrl(	"cestino_elenco.php",
 							"archivio="+archivio,
 							"MENU.cestinoPopola");
