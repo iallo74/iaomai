@@ -11,7 +11,7 @@ var PURCHASES  = {
 	init: function(){ // inizializza il catalogo
 		PURCHASES.product_list = [];
 		for(let s in sets){
-			if(sets[s].abbs){
+			if(sets[s].abbs && !sets[s].locked){
 				let el = {
 						folder: s,
 						title: sets[s].nome,
