@@ -1022,12 +1022,20 @@ DB.TXT = {
             deu: "Jahresabonnement mit Vereinbarung"
         },
         PrimoMese1Euro: {
-            ita: "Il primo mese a 1 €",
-            eng: "The first month for 1 €",
-            esp: "El primer mes por 1 €",
-            fra: "Le premier mois à 1 €",
-            por: "O primeiro mês por 1 €",
-            deu: "Der erste Monat für 1 €"
+            ita: "Il primo mese a [price]",
+            eng: "The first month for [price]",
+            esp: "El primer mes por [price]",
+            fra: "Le premier mois à [price]",
+            por: "O primeiro mês por [price]",
+            deu: "Der erste Monat für [price]"
+        },
+        PrimiXMesiXEuro: {
+            ita: "I primi [n] mesi a [price]",
+            eng: "The first [n] months at [price]",
+            esp: "Los primeros [n] meses a [price]",
+            fra: "Les premiers [n] mois à [price]",
+            por: "Os primeiros [n] meses a [price]",
+            deu: "Die ersten [n] Monate zu [price]"
         },
         NotePrimoMese1Euro: {
             ita: "Offerta disponibile solo se non hai ancora provato [mappa].",
@@ -2518,6 +2526,14 @@ DB.TXT = {
             fra: "Catégories",
             por: "Categorias",
             deu: "Kategorien"
+        },
+        TimerModuliFree: {
+            ita: "Questa funzionalità è in prova per te fino al 31 Marzo 2025.\nDopo tale data avrà un costo mensile o annuale.",
+            eng: "This feature is in trial for you until March 31, 2025.\nAfter that date, it will have a monthly or annual fee.",
+            esp: "Esta función está en prueba para ti hasta el 31 de marzo de 2025.\nDespués de esa fecha, tendrá un costo mensual o anual.",
+            fra: "Cette fonctionnalité est en essai pour vous jusqu'au 31 mars 2025.\nAprès cette date, elle aura un coût mensuel ou annuel.",
+            por: "Esta funcionalidade está em teste para você até 31 de março de 2025.\nApós essa data, terá um custo mensal ou anual.",
+            deu: "Diese Funktion ist für Sie bis zum 31. März 2025 in der Testphase.\nNach diesem Datum wird sie monatlich oder jährlich kosten."
         },
 
         // PAZIENTI
