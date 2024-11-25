@@ -95,17 +95,17 @@ var sets = {
 		],
 		abbs: {
 			m: {
-				idApple: 'sub_tm_m',
+				idApple: 'sub_40_m',
 				idGoogle: 'sub_tm_m',
 				idPc: 'sub_tm_m'
 			},
 			a: {
-				idApple: 'sub_ap_a',
+				idApple: 'sub_40_a',
 				idGoogle: 'sub_tm_a',
 				idPc: 'sub_tm_a'
 			},
 			ac: {
-				idApple: 'sub_tm_ac',
+				idApple: 'sub_40_ac',
 				idGoogle: 'sub_tm_ac',
 				idPc: 'sub_tm_ac'
 			}
@@ -208,17 +208,17 @@ var sets = {
 		],
 		abbs: {
 			m: {
-				idApple: 'sub_sm_m',
+				idApple: 'sub_37_m',
 				idGoogle: 'sub_sm_m',
 				idPc: 'sub_sm_m'
 			},
 			a: {
-				idApple: 'sub_sm_a',
+				idApple: 'sub_37_a',
 				idGoogle: 'sub_sm_a',
 				idPc: 'sub_sm_a'
 			},
 			ac: {
-				idApple: 'sub_sm_ac',
+				idApple: 'sub_37_ac',
 				idGoogle: 'sub_sm_ac',
 				idPc: 'sub_sm_ac'
 			}
@@ -292,17 +292,17 @@ var sets = {
 		],
 		abbs: {
 			m: {
-				idApple: 'sub_au_m',
+				idApple: 'sub_39_m',
 				idGoogle: 'sub_au_m',
 				idPc: 'sub_au_m'
 			},
 			a: {
-				idApple: 'sub_au_a',
+				idApple: 'sub_39_a',
 				idGoogle: 'sub_au_a',
 				idPc: 'sub_au_a'
 			},
 			ac: {
-				idApple: 'sub_au_ac',
+				idApple: 'sub_39_ac',
 				idGoogle: 'sub_au_ac',
 				idPc: 'sub_au_ac'
 			}
@@ -378,17 +378,17 @@ var sets = {
 		],
 		abbs: {
 			m: {
-				idApple: 'sub_rm_m',
+				idApple: 'sub_36_m',
 				idGoogle: 'sub_rm_m',
 				idPc: 'sub_rm_m'
 			},
 			a: {
-				idApple: 'sub_rm_a',
+				idApple: 'sub_36_a',
 				idGoogle: 'sub_rm_a',
 				idPc: 'sub_rm_a'
 			},
 			ac: {
-				idApple: 'sub_rm_ac',
+				idApple: 'sub_36_ac',
 				idGoogle: 'sub_rm_ac',
 				idPc: 'sub_rm_ac'
 			}
@@ -490,17 +490,17 @@ var sets = {
 		],
 		abbs: {
 			m: {
-				idApple: 'sub_pz_m',
+				idApple: 'sub_41_m',
 				idGoogle: 'sub_pz_m',
 				idPc: 'sub_pz_m'
 			},
 			a: {
-				idApple: 'sub_pz_a',
+				idApple: 'sub_41_a',
 				idGoogle: 'sub_pz_a',
 				idPc: 'sub_pz_a'
 			},
 			ac: {
-				idApple: 'sub_pz_ac',
+				idApple: 'sub_41_ac',
 				idGoogle: 'sub_pz_ac',
 				idPc: 'sub_pz_ac'
 			}
