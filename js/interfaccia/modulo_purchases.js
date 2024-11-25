@@ -8,6 +8,9 @@ var PURCHASES  = {
     idBuying: '',
 	convenzione: '',
 	abbs_owned: [],
+	transaction: '',
+	firstMonth: '1€',
+	cycles: 1,
 	
 	init: function(){ // inizializza il catalogo
 		PURCHASES.verAbbs();
@@ -26,6 +29,7 @@ var PURCHASES  = {
 					el.abbs.push({
 						type: m,
 						idStore: (window.store) ? ((android) ? abb.idGoogle : abb.idApple) : abb.idPc,
+						idPc: abb.idPc,
 						price: ''
 					});
 				}
@@ -47,8 +51,14 @@ var PURCHASES  = {
 		PURCHASES.initiated = true;
 		if(window?.CdvPurchase?.store)window.store = window.CdvPurchase.store;
 		if(window.store){
+			store.update();
+			store.when('app.iaomai.app')
+				.approved(transaction => {
+					transaction.finish();
+				});
 			store.error(function(error) {
-				console.log('ERROR ' + error.code + ': ' + error.message);
+				//console.log('ERROR ' + error.code + ': ' + error.message);
+				PURCHASES.idBuying = '';
 			});
 			let regs = [];
 			for(let id in PURCHASES.product_list){
@@ -63,7 +73,8 @@ var PURCHASES  = {
 			store.register(regs);
 			store.when()
 				.productUpdated(product => PURCHASES.makeProductList(product))
-				.approved(transaction => PURCHASES.finishPurchase(transaction));
+				.approved(transaction => PURCHASES.verifyTransaction(transaction))
+				.verified(receipt => PURCHASES.finishPurchase(receipt));
 			store.initialize();
 		}else{
 			PURCHASES.getPrices();
@@ -79,6 +90,7 @@ var PURCHASES  = {
 	},
 	purchaseLicense: function( id, type ){ // acquista la licenza
 		if(window.store){
+			PURCHASES.transaction = '';
 			if(!android){ // ritardo per apple
 				let el = document.getElementById('contPurchases');
 				let preHTML = el.innerHTML;
@@ -95,22 +107,57 @@ var PURCHASES  = {
 			let tk = encodeURIComponent(window.btoa(LOGIN.logedin() + MD5(DB.login.data.idUtente.toString()))),
 				fl = encodeURIComponent(window.btoa(PURCHASES.getProdById(PURCHASES.productId).folder)),
 				idP = (PURCHASES.convenzione) ? PURCHASES.convenzione.idPartner : '0',
-				pr1 = PURCHASES.abbs_owned.indexOf(PURCHASES.getProdById(PURCHASES.productId).folder)==-1 ? '1' : '';
-			CONN.openUrl(convLangPath(CONN.urlStore)+"in_app_purchase_subs?tk="+tk+"&mp="+fl+"&type="+type+"&idP="+idP+"&pr1="+pr1+"&lang="+LINGUE.getSigla2());
+				pr1 = (PURCHASES.abbs_owned.indexOf(PURCHASES.getProdById(PURCHASES.productId).folder)==-1 && type=='m') ? PURCHASES.firstMonth : '',
+				idPc = PURCHASES.getIdPc(id);
+			CONN.openUrl(convLangPath(CONN.urlStore)+"in_app_purchase_subs?idPc="+idPc+"&tk="+tk+"&mp="+fl+"&type="+type+"&idP="+idP+"&pr1="+pr1+"&lang="+LINGUE.getSigla2());
 			PURCHASES.verAbbs();
 			PURCHASES.abbsList();
 		}
 	},
-	finishPurchase: function(p){
-		if(!p.products[0].id)return;
-		if(p.products[0].id = PURCHASES.idBuying){
+	verifyTransaction: function(transaction){
+		if (!transaction) {
+			return Promise.reject(new Error('Transazione non valida.'));
+		}
+		if(transaction.state=='finished')return;
+		if(!transaction.products[0].id)return;
+		PURCHASES.transaction = transaction;
+		return transaction.verify();
+	},
+	finishPurchase: finishPurchase = function(receipt){
+		let p = PURCHASES.transaction;
+		try {
+			receipt.finish();
+		} catch (err) {
 			PURCHASES.idBuying = '';
-
-			p.finish();
+			return;
+		}
+		if(!PURCHASES.idBuying)return;
+		if(p.products[0].id == PURCHASES.idBuying){
+			
 			let pr = PURCHASES.getProdById(p.products[0].id),
-				price = store.get(p.products[0].id).offers[0].pricingPhases[0].price;
-			CONN.caricaUrl(	"purchases_activate.php",
-							"folder="+pr.folder+"&price="+price+"&siglaLingua="+globals.siglaLingua+"&transactionId="+encodeURIComponent(btoa(p.transactionId))+"&purchaseToken="+encodeURIComponent(btoa(p.nativePurchase.purchaseToken))+"&productId="+p.products[0].id,
+				priceFT = '',
+				price = store.get(p.products[0].id).offers[0].pricingPhases[store.get(p.products[0].id).offers[0].pricingPhases.length-1].price,
+				idP = '';
+			if(store.get(p.products[0].id).offers[0].pricingPhases.length>1){
+				priceFT = store.get(p.products[0].id).offers[0].pricingPhases[0].price;
+			}
+			let idPc = PURCHASES.getIdPc(PURCHASES.idBuying);
+			PURCHASES.idBuying = '';
+			if(p.transactionId != receipt.sourceReceipt.transactions[android?0:receipt.sourceReceipt.transactions.length-1].transactionId)return;
+
+			let purchaseToken = '',
+				transactionId = '';
+			if(android){
+				purchaseToken= p.nativePurchase.purchaseToken
+				transactionId = p.transactionId;
+			}else{
+				purchaseToken = receipt.sourceReceipt.transactions[receipt.sourceReceipt.transactions.length-1].originalTransactionId;
+				transactionId = receipt.sourceReceipt.transactions[receipt.sourceReceipt.transactions.length-1].transactionId;
+			}
+			if(PURCHASES.convenzione)idP = PURCHASES.convenzione.idPartner;
+			
+			CONN.caricaUrl(	"purchases_activate_from_stores.php",
+							"idPc="+idPc+"&folder="+pr.folder+"&price="+price+"&priceFT="+priceFT+"&idP="+idP+"&siglaLingua="+globals.siglaLingua+"&transactionId="+encodeURIComponent(btoa(transactionId))+"&purchaseToken="+encodeURIComponent(btoa(purchaseToken))+"&productId="+p.products[0].id,
 							"PURCHASES.ret_activate");
 		}
 	},
@@ -119,7 +166,9 @@ var PURCHASES  = {
 			ALERT("An error has occurred");
 		}else{
 			DB.login.data.auths.push(txt);
-			PURCHASES.productList();
+			//PURCHASES.productList();
+			PURCHASES.verAbbs();
+			PURCHASES.abbsList();
 		}
 	},
 	
@@ -144,10 +193,18 @@ var PURCHASES  = {
 			loadingPurchase = false,
 			folder = '',
 			price = 0,
+			priceFT = '',
+			cycles = 0,
+			title = '',
 			typeAbb = TXT("sub_"+type);
 		if(!price)TXT("AccediAlloStore");
 		if(window.store){
-			price = product.offers[0].pricingPhases[0].price;
+			//price = product.offers[0].pricingPhases[0].price;
+			price = product.offers[0].pricingPhases[product.offers[0].pricingPhases.length-1].price;
+			if(product.offers[0].pricingPhases.length>1){
+				priceFT = product.offers[0].pricingPhases[0].price;
+				cycles = product.offers[0].pricingPhases[0].billingCycles;
+			}
 			if(product.state == 'requested' || product.state == 'initiated')visRet = false;
 			loaded = product.loaded;
 			canPurchase = product.canPurchase;
@@ -155,23 +212,31 @@ var PURCHASES  = {
 			if(product.state == 'requested' || product.state == 'initiated')loadingPurchase = true;
 			if(product.price)price = product.price;
 			folder = PURCHASES.getProdById(product.id).folder;
+			title = PURCHASES.getProdById(product.id).title;
 		}else{
 			for(let m in product.abbs){
 				if(product.abbs[m].type == type)price = product.abbs[m].price;
 			}
 			folder = product.folder;
+			if(type=='m' && PURCHASES.firstMonth){
+				priceFT = PURCHASES.firstMonth;
+				cycles = PURCHASES.cycles;
+			}
+			title = product.title;
 		}
 		
 		if(!owned)owned = (DB.login.data.auths.indexOf(folder)>-1) ? true : false;
 		let info = '<div id="copertinaPurchase" style="background-image:url(img/sf_copertine.png),url(sets/'+folder+'/img/copertina.png);"></div>' +
-					'<b id="titLicenze"><img src="sets/'+folder+'/img/logoMenu.png"> '+product.title+'</b><br/>' +
+					'<b id="titLicenze"><img src="sets/'+folder+'/img/logoMenu.png"> '+title+'</b><br/>' +
 					typeAbb+'<br/>' +
 						price+'<br/>';
 		let button = '';
 		if(canPurchase){
 			button = '';
-			if(!window.store && type=='m' && PURCHASES.abbs_owned.indexOf(folder)==-1){
-				button += '<div class="promoEuro inDett"><b>'+TXT("PrimoMese1Euro")+'*</b><br>(*) '+TXT("NotePrimoMese1Euro").replace("[mappa]",product.title)+'</div>';
+			if(type=='m' && PURCHASES.abbs_owned.indexOf(folder)==-1 && priceFT){
+				let txtMesi = TXT("PrimoMese1Euro").replace("[price]",priceFT);
+				if(cycles>1)txtMesi = TXT("PrimiXMesiXEuro").replace("[price]",priceFT).replace("[n]",cycles);
+				button += '<div class="promoEuro inDett"><b>'+txtMesi+'*</b><br>(*) '+TXT("NotePrimoMese1Euro").replace("[mappa]",product.title)+'</div>';
 			}
 			if(visRet)button += '<div class="ann" onClick="PURCHASES.abbsList();">'+TXT("Annulla")+'</div> ';
 			button += '<div class="btn" onClick="PURCHASES.purchaseLicense(\''+PURCHASES.productId+'\',\''+type+'\')">'+TXT("AbbonatiOra")+'</div>';
@@ -193,10 +258,19 @@ var PURCHASES  = {
 		}
 		return el;
 	},
+	getIdPc: function( idStore ){ // ottiene un prodotto tramite ID
+		let idPc = null;
+		for(let id in PURCHASES.product_list){
+			for(let m in PURCHASES.product_list[id].abbs){
+				if(PURCHASES.product_list[id].abbs[m].idStore == idStore)idPc = PURCHASES.product_list[id].abbs[m].idPc;
+			}
+		}
+		return idPc ;
+	},
 	makeProductList: function( product ){ // crea la lista prodotti (solo per Cordova)
 		if(!PURCHASES.list_view)return;
 		let el = PURCHASES.getProdById(product.id);
-		el.title = product.title;
+		//el.title = product.title;
 		el.price = product.pricing?.price;
 		el.owned = product.owned;
 		PURCHASES.abbsList();
@@ -213,6 +287,8 @@ var PURCHASES  = {
 				idStore = PURCHASES.product_list[id].abbs[m].idStore,
 				type = PURCHASES.product_list[id].abbs[m].type,
 				price = PURCHASES.product_list[id].abbs[m].price,
+				priceFT = '',
+				cycles = 0,
 				pass = true,
 				corsoInConv = (PURCHASES.convenzione) ? PURCHASES.convenzione.folders.indexOf(folder)>-1 : false;
 			
@@ -225,15 +301,28 @@ var PURCHASES  = {
 			if(	PURCHASES.product_list[id].title && PURCHASES.product_list[id].title!='undefined' && pass ){
 				if(window.store){
 					let p = store.get(idStore);
-					price = p.offers[0].pricingPhases[0].price;
+					//price = p.offers[0].pricingPhases[0].price;
+					price = p.offers[0].pricingPhases[p.offers[0].pricingPhases.length-1].price;
+					priceFT = '';
+					cycles = 0;
+					if(p.offers[0].pricingPhases.length>1){
+						priceFT = p.offers[0].pricingPhases[0].price;
+						cycles =  p.offers[0].pricingPhases[0].billingCycles;
+					}
+					
+				}else if(type=='m' && PURCHASES.firstMonth){
+					priceFT = PURCHASES.firstMonth;
+					cycles = PURCHASES.cycles;
 				}
 				html_provv += 	'<div class="acqOk'+((type=='ac')?' acq_conv':'')+'" style="margin-top:15px;"><div class="tit">' +
 								'</div>' +
 								(type=='ac' ? '<div id="label_prezzo_conv">'+TXT("PrezzoInConvenzione")+'</div>' : '') +
 								'<div class="btn buy" onClick="PURCHASES.showProduct(\''+idStore+'\',\''+type+'\');">'+TXT("sub_"+type.substr(0,1))+': <b>'+price+' / '+TXT("add_"+type.substr(0,1))+'</b></div>' +
 								'</div>';
-				if(!window.store && type=='m' && PURCHASES.abbs_owned.indexOf(folder)==-1){
-					html_provv += '<div class="promoEuro"><b>'+TXT("PrimoMese1Euro")+'*</b><br>(*) '+TXT("NotePrimoMese1Euro").replace("[mappa]",PURCHASES.product_list[id].title)+'</div>';
+				if(type=='m' && PURCHASES.abbs_owned.indexOf(folder)==-1 && priceFT){
+					let txtMesi = TXT("PrimoMese1Euro").replace("[price]",priceFT);
+					if(cycles>1)txtMesi = TXT("PrimiXMesiXEuro").replace("[price]",priceFT).replace("[n]",cycles);
+					html_provv += '<div class="promoEuro"><b>'+txtMesi+'*</b><br>(*) '+TXT("NotePrimoMese1Euro").replace("[mappa]",PURCHASES.product_list[id].title)+'</div>';
 				}
 				html_provv += 	'<span class="sep"></span>';
 				html += html_provv;
@@ -308,7 +397,10 @@ var PURCHASES  = {
 		if(txt=='404'){
 			ALERT("An error has occurred");
 		}else{
-			let prices = JSON.parse( txt );
+			let obj=JSON.parse( txt ),
+				prices = obj.prices;
+			PURCHASES.firstMonth = obj.firstMonth ? obj.firstMonth +getValuta() : '';
+			PURCHASES.cycles = obj.cycles;
 			for(let p in prices){
 				if(p.indexOf(' a')>-1){
 					prices[p.replace(" a"," ac")] = (prices[p]*.8).toFixed(2);
@@ -318,7 +410,7 @@ var PURCHASES  = {
 				for(let e in prices){
 					if(	PURCHASES.product_list[p].folder == e.split(" ")[0] ){
 						for(let m in PURCHASES.product_list[p].abbs){
-							if(e.split(" ")[1] == PURCHASES.product_list[p].abbs[m].type)PURCHASES.product_list[p].abbs[m].price =  prices[e]+getValuta();
+							if(e.split(" ")[1] == PURCHASES.product_list[p].abbs[m].type)PURCHASES.product_list[p].abbs[m].price = prices[e]+getValuta();
 						}
 						
 					}
