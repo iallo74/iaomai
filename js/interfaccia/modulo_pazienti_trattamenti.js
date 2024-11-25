@@ -608,9 +608,12 @@ var PAZIENTI_TRATTAMENTI = { // extend PAZIENTI
 							noLabel: true,
 							styleCampo: "margin-bottom:10px;margin-top:8px;" }) +
 					'	</div>' +
-					'	<div id="modulo"'+(Object.keys(moduli).length?' class="moduloFull"':'')+'>' +
+					'	<div id="modulo"'+(Object.keys(moduli).length?' class="moduloFull"':'')+
+					//' style="display:none;"' + // MOMENTANEAMENTE NASCOSTO
+					'>' +
 					'		<div id="modulo_cont"></div>' +
 					'		<div id="modulo_btn_cont">' +
+					'			<img src="img/ico_timer_mini.png" style="height:20px;margin-right:10px;vertical-align:middle;" title="'+TXT("TimerModuliFree")+'">' +
 					'			<div id="modulo_btn" onClick="PAZIENTI.swImportaModuli();">'+TXT("ImportaModulo")+'</div>' +
 					'		</div>' +
 					'	</div>' +
