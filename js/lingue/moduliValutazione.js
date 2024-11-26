@@ -1237,36 +1237,36 @@ var moduliValutazione = {
                 {
                     t: "s",
                     d: {
-                        ita: "CIN sinistro",
-                        eng: "Left CIN",
-                        esp: "CIN izquierdo",
-                        fra: "CIN gauche",
-                        por: "CIN esquerdo",
-                        deu: "Linkes CIN"
+                        ita: "CUN sinistro",
+                        eng: "Left CUN",
+                        esp: "CUN izquierdo",
+                        fra: "CUN gauche",
+                        por: "CUN esquerdo",
+                        deu: "Linkes CUN"
                     },
                     l: "stati_polsi"
                 },
                 {
                     t: "s",
                     d: {
-                        ita: "CIN sinistro 2",
-                        eng: "Left CIN 2",
-                        esp: "CIN izquierdo 2",
-                        fra: "CIN gauche 2",
-                        por: "CIN esquerdo 2",
-                        deu: "Linkes CIN 2"
+                        ita: "CUN sinistro 2",
+                        eng: "Left CUN 2",
+                        esp: "CUN izquierdo 2",
+                        fra: "CUN gauche 2",
+                        por: "CUN esquerdo 2",
+                        deu: "Linkes CUN 2"
                     },
                     l: "stati_polsi"
                 },
                 {
                     t: "s",
                     d: {
-                        ita: "CIN sinistro 3",
-                        eng: "Left CIN 3",
-                        esp: "CIN izquierdo 3",
-                        fra: "CIN gauche 3",
-                        por: "CIN esquerdo 3",
-                        deu: "Linkes CIN 3"
+                        ita: "CUN sinistro 3",
+                        eng: "Left CUN 3",
+                        esp: "CUN izquierdo 3",
+                        fra: "CUN gauche 3",
+                        por: "CUN esquerdo 3",
+                        deu: "Linkes CUN 3"
                     },
                     l: "stati_polsi"
                 },
@@ -1345,36 +1345,36 @@ var moduliValutazione = {
                 {
                     t: "s",
                     d: {
-                        ita: "CIN destro",
-                        eng: "Right CIN",
-                        esp: "CIN derecho",
-                        fra: "CIN droit",
-                        por: "CIN direito",
-                        deu: "Rechter CIN"
+                        ita: "CUN destro",
+                        eng: "Right CUN",
+                        esp: "CUN derecho",
+                        fra: "CUN droit",
+                        por: "CUN direito",
+                        deu: "Rechter CUN"
                     },
                     l: "stati_polsi"
                 },
                 {
                     t: "s",
                     d: {
-                        ita: "CIN destro 2",
-                        eng: "Right CIN 2",
-                        esp: "CIN derecho 2",
-                        fra: "CIN droit 2",
-                        por: "CIN direito 2",
-                        deu: "Rechter CIN 2"
+                        ita: "CUN destro 2",
+                        eng: "Right CUN 2",
+                        esp: "CUN derecho 2",
+                        fra: "CUN droit 2",
+                        por: "CUN direito 2",
+                        deu: "Rechter CUN 2"
                     },
                     l: "stati_polsi"
                 },
                 {
                     t: "s",
                     d: {
-                        ita: "CIN destro 3",
-                        eng: "Right CIN 3",
-                        esp: "CIN derecho 3",
-                        fra: "CIN droit 3",
-                        por: "CIN direito 3",
-                        deu: "Rechter CIN 3"
+                        ita: "CUN destro 3",
+                        eng: "Right CUN 3",
+                        esp: "CUN derecho 3",
+                        fra: "CUN droit 3",
+                        por: "CUN direito 3",
+                        deu: "Rechter CUN 3"
                     },
                     l: "stati_polsi"
                 },
@@ -1454,12 +1454,12 @@ var moduliValutazione = {
             html:   '<div id="moduloPolsiMTC">' +
                     '   <div>' +
                     '       <div id="md_polsoSX">' +
-                    '           <div id="md_CIN_sx">[0][1][2]</div>' +
+                    '           <div id="md_CUN_sx">[0][1][2]</div>' +
                     '           <div id="md_GUAN_sx">[3][4][5]</div>' +
                     '           <div id="md_CHI_sx">[6][7][8]</div>' +
                     '       </div>' +
                     '       <div id="md_polsoDX">' +
-                    '           <div id="md_CIN_dx">[9][10][11]</div>' +
+                    '           <div id="md_CUN_dx">[9][10][11]</div>' +
                     '           <div id="md_GUAN_dx">[12][13][14]</div>' +
                     '           <div id="md_CHI_dx">[15][16][17]</div>' +
                     '       </div>' +

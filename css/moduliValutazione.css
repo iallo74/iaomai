@@ -332,7 +332,7 @@
 	text-align:right;
 }
 
-#md_CIN_sx{
+#md_CUN_sx{
 	margin-top:24px;
 }
 #md_GUAN_sx{
@@ -343,7 +343,7 @@
 	margin-top: 31px;
     margin-left: 100px;
 }
-#md_CIN_dx{
+#md_CUN_dx{
 	margin-top:24px;
 }
 #md_GUAN_dx{
@@ -361,7 +361,7 @@
     height: 500px;
     background-image: url(../img/valutazioni/polsiH.png);
 }
-.sch_Max600 #md_CIN_sx{
+.sch_Max600 #md_CUN_sx{
 	margin-top:111px;
 	margin-left:25px;
 }
@@ -373,7 +373,7 @@
 	margin-top: 9px;
 	margin-left:25px;
 }
-.sch_Max600 #md_CIN_dx{
+.sch_Max600 #md_CUN_dx{
 	margin-top:111px;
 	margin-right:25px;
 }
