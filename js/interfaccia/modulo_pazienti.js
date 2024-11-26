@@ -64,8 +64,13 @@ var PAZIENTI = {
 			for(let p in clonePAZIENTI){
 				clonePAZIENTI[p].p = p;
 			}
-			clonePAZIENTI.sort(sort_by("Cognome", false));
-			clonePAZIENTI.sort(sort_by("Nome", false));
+			if(DB.login.data.ordinamento_archivi=='nc'){
+				clonePAZIENTI.sort(sort_by("Cognome", false));
+				clonePAZIENTI.sort(sort_by("Nome", false));
+			}else{
+				clonePAZIENTI.sort(sort_by("Nome", false));
+				clonePAZIENTI.sort(sort_by("Cognome", false));
+			}
 			for(let p in clonePAZIENTI){
 				let PZ = clonePAZIENTI[p];
 				
@@ -86,7 +91,12 @@ var PAZIENTI = {
 					'		<img src="img/ico_cliente_'+sessi[PZ.sesso]+'.png"' +
 					'			 class="imgList">';
 					}
-					HTML += htmlEntities(PZ.Nome+" "+PZ.Cognome) +
+					if(DB.login.data.ordinamento_archivi=='nc'){
+						nominativo = PZ.Nome+" "+PZ.Cognome;
+					}else{
+						nominativo = PZ.Cognome+" "+PZ.Nome;
+					}
+					HTML += htmlEntities(nominativo) +
 							'	</div>';
 				}
 			}
@@ -123,22 +133,22 @@ var PAZIENTI = {
 		if(parola)document.getElementById("paz_ricerca").classList.add("filtro_attivo");
 		else document.getElementById("paz_ricerca").classList.remove("filtro_attivo");
 	},
-	selPaziente: function( n ){ // seleziona il paziente su cui lavorare
+	selPaziente: function( n, lasciaAperto ){ // seleziona il paziente su cui lavorare
 		CONFIRM.vis(	TXT("UscireSenzaSalvare"),
 						!SCHEDA.verificaSchedaRet(),
 						arguments ).then(function(pass){if(pass){
 						let v = getParamNames(CONFIRM.args.callee.toString());
 						for(let i in v)eval(getArguments(v,i));
-				
+			if(typeof(lasciaAperto)=='undefined')lasciaAperto = false;
 			if(SCHEDA.formModificato){
 				SCHEDA.formModificato = false;
 				endChangeDetection();
 			}		
-			if( SCHEDA.classeAperta == 'scheda_A' ||
+			if((SCHEDA.classeAperta == 'scheda_A' ||
 				SCHEDA.classeAperta == 'scheda_B' ||
 				SCHEDA.classeAperta == 'scheda_paziente' ||
 				SCHEDA.classeAperta == 'scheda_Riepi' || 
-				SCHEDA.classeAperta == 'tab_punti' )SCHEDA.scaricaScheda();
+				SCHEDA.classeAperta == 'tab_punti') && !lasciaAperto)SCHEDA.scaricaScheda();
 				
 			PAZIENTI.idCL = n*1;
 			PAZIENTI.idPaziente = DB.pazienti.data[PAZIENTI.idCL].idPaziente;
@@ -1313,9 +1323,8 @@ var PAZIENTI = {
 					DB.pazienti.data[p].id_interno=p;
 					if(md5==DB.pazienti.data[p].md5)PAZIENTI.idCL=p;
 				}
-				postAction = 'PAZIENTI.selPaziente('+PAZIENTI.idCL+');';
+				postAction = 'PAZIENTI.selPaziente('+PAZIENTI.idCL+',true);';
 			}
-			
 			endChangeDetection();
 			SCHEDA.formModificato = false;
 			localPouchDB.setItem(MD5("DB"+LOGIN._frv()+".pazienti"), IMPORTER.COMPR(DB.pazienti)).then(function(){ // salvo il DB
@@ -1387,29 +1396,5 @@ var PAZIENTI = {
 		document.getElementById('avatarPaziente').getElementsByTagName('div')[0].style.backgroundImage="";
 		document.getElementById('delAvatarPaziente').style.display = 'none';
 		SCHEDA.formModificato = true;
-	}/* ,
-	
-	// AGENDA GENERICA
-	car_agenda: function( data ){ // scheda dell'agenda
-		if(smartMenu){
-			SCHEDA.chiudiElenco();
-			MENU.chiudiMenu();
-		}
-		if(typeof(data) == 'undefined')data = oggi;
-		else data = new Date(data);
-		
-		HTML = 	'<div id="cont_sceltaAppuntamento">' +
-				'</div>' +
-				'<div id="agendaPlaceHolder">' +
-				'</div>' +
-				'<div class="l"' +
-				'	 style="height:1px !important;"' +
-				'	 data-d="'+(data*1)+'">' +
-				'</div>';
-		
-		SCHEDA.caricaScheda( stripslashes(TXT("Agenda")), HTML, '', 'scheda_agenda', false, true );
-		
-		agenda.apri(data,document.getElementById("agendaPlaceHolder"),null,document.getElementById("agendaPlaceHolder"));
-		MENU.comprimiIcone(true);
-	} */
+	}
 }
