@@ -107,7 +107,7 @@ var sets = {
 			ac: {
 				idApple: 'sub_40_ac',
 				idGoogle: 'sub_tm_ac',
-				idPc: 'sub_tm_ac'
+				idPc: 'sub_tm_a'
 			}
 		},
 		pageStore: 'acupointsmap'
@@ -220,7 +220,7 @@ var sets = {
 			ac: {
 				idApple: 'sub_37_ac',
 				idGoogle: 'sub_sm_ac',
-				idPc: 'sub_sm_ac'
+				idPc: 'sub_sm_a'
 			}
 		},
 		pageStore: 'shiatsumap'
@@ -304,7 +304,7 @@ var sets = {
 			ac: {
 				idApple: 'sub_39_ac',
 				idGoogle: 'sub_au_ac',
-				idPc: 'sub_au_ac'
+				idPc: 'sub_au_a'
 			}
 		},
 		pageStore: 'auriculomap'
@@ -390,7 +390,7 @@ var sets = {
 			ac: {
 				idApple: 'sub_36_ac',
 				idGoogle: 'sub_rm_ac',
-				idPc: 'sub_rm_ac'
+				idPc: 'sub_rm_a'
 			}
 		},
 		pageStore: 'reflexologymap'
@@ -469,7 +469,7 @@ var sets = {
 			ac: {
 				idApple: 'sub_tp_ac',
 				idGoogle: 'sub_tp_ac',
-				idPc: 'sub_tp_ac'
+				idPc: 'sub_tp_a'
 			}
 		},
 		pageStore: 'triggerpointsmap'
@@ -502,7 +502,7 @@ var sets = {
 			ac: {
 				idApple: 'sub_41_ac',
 				idGoogle: 'sub_pz_ac',
-				idPc: 'sub_pz_ac'
+				idPc: 'sub_pz_a'
 			}
 		},
 		pageStore: 'medicalfile'
