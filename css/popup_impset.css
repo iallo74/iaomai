@@ -4,9 +4,9 @@
 /* IMPOSTAZIONIE DEL SET */
 #impset{
 	width: 400px;
-    height: 380px;
+    height: 430px;
     margin-left: -200px;
-    margin-top: -190px;
+    margin-top: -215px;
 }
 .smart #impset .popup_cont{
 	height: calc(100% - 40px);

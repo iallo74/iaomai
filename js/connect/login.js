@@ -35,6 +35,7 @@ var LOGIN = {
 				"password_pazienti": "",
 				"valuta": "EUR",
 				"sistema_misure": "",
+				"ordinamento_archivi": "nc",
 				"rated": "",
 				"auths": [],
 				"modls": []

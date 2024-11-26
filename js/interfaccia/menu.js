@@ -775,11 +775,13 @@ var MENU = {
 		localStorage.tipo_utilizzo = naming;
 		DB.login.data.valuta = document.getElementById("valuta").value;
 		DB.login.data.sistema_misure = document.getElementById("sistema_misure").value;
+		DB.login.data.ordinamento_archivi = document.getElementById("ordinamento_archivi").value;
 		
 		let JSNPOST = {
 			password_pazienti: DB.login.data.password_pazienti,
 			valuta: DB.login.data.valuta,
-			sistema_misure: DB.login.data.sistema_misure
+			sistema_misure: DB.login.data.sistema_misure,
+			ordinamento_archivi: DB.login.data.ordinamento_archivi
 		}
 		document.getElementById("impset").classList.add("popup_back");
 		if(CONN.getConn() && LOGIN.logedin()!=''){
@@ -798,7 +800,7 @@ var MENU = {
 		}
 		MENU.updateNaming();
 		localPouchDB.setItem(MD5("DB.login"), IMPORTER.COMPR(DB.login)).then(function(){ // salvo il DB
-			
+			if(!PAZIENTI.idCL)PAZIENTI.caricaPazienti();
 		});
 	},
 	updateNaming: function(){
@@ -831,6 +833,7 @@ var MENU = {
 
 		let valuta = __(DB.login.data.valuta,'EUR'),
 			sistema_misure = __(DB.login.data.sistema_misure,'i'),
+			ordinamento_archivi = __(DB.login.data.ordinamento_archivi,'nc'),
 			elenco = {};
 		for(v in DB.INT.valute){
 			elenco[v] = DB.INT.valute[v].simbolo+" ("+DB.INT.valute[v][globals.siglaLingua]+")";
@@ -848,6 +851,13 @@ var MENU = {
 							opts: { "i":TXT("SistemaMisureMetrico"), "a":TXT("SistemaMisureImperiale") },
 							label: TXT("SistemaMisure"),
 							classRiga: "patientMisura" });
+
+		HTML_imp += H.r({	t: "s", 
+							name: "ordinamento_archivi",
+							value: ordinamento_archivi,
+							opts: { "nc":TXT("OrdinamentoArchiviNC"), "cn":TXT("OrdinamentoArchiviCN") },
+							label: TXT("OrdinamentoArchivi"),
+							classRiga: "patientOrdinamento" });
 							
 		if(LOGIN.logedin() && DB.login.data.PasswordU)HTML_imp += 
 			'<p id="patientPwd">' +

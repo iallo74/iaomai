@@ -490,6 +490,30 @@ DB.TXT = {
             por: "Sistema de medição",
             deu: "Messsystem"
         },
+        OrdinamentoArchivi: {
+            ita: "Ordinamento",
+            eng: "Sorting",
+            esp: "Ordenación",
+            fra: "Classement",
+            por: "Ordenação",
+            deu: "Sortierung"
+        },
+        OrdinamentoArchiviNC: {
+            ita: "Nome e cognome",
+            eng: "First name and last name",
+            esp: "Nombre y apellido",
+            fra: "Prénom et nom",
+            por: "Nome e sobrenome",
+            deu: "Vorname und Nachname"
+        },
+        OrdinamentoArchiviCN: {
+            ita: "Cognome e nome",
+            eng: "Last name and first name",
+            esp: "Apellido y nombre",
+            fra: "Nom et prénom",
+            por: "Sobrenome e nome",
+            deu: "Nachname und Vorname"
+        },
 
         //popup NUOVA VERSIONE
         NuoveCaratteristiche: {
