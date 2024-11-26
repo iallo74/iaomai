@@ -24,6 +24,7 @@ var MODELLO = {
 	posOver: null, // test per posizione x,y,z su oggetto
 	editor: false, // test per editor di punti
 	open_x_translate: false,
+	isola_aree: false,
 	
 	_init: function(modello){
 		if(!globals.modello.cartella)return;
@@ -1129,11 +1130,10 @@ var MODELLO = {
 		txt += '<div class="c" onClick="MODELLO.centraAnatomia(\''+leg.dataset.idObj+'\');">'+TXT("CentraDaQui")+'</div>';
 		let isola = 'MODELLO.isola'+fnc+'(document.getElementById(\''+n+'\'))';
 		
-
 		
 		txt += '<div class="d" onClick="'+isola+';">'+TXT("Deseleziona")+'</div>';
 		if(globals.pezziSelezionati.length > 1)txt += '<div class="a" onClick="MENU.chiudiAllSelected();'+isola+';">'+TXT("DeselezionaAltri")+'</div>';
-		if(MODELLO.isolamento == null && !noIsola)txt += '<div class="i" onClick="MENU.chiudiAllSelected();'+isola+';MODELLO.isolaAnatomia(\''+fnc+'\',\''+leg.dataset.idObj+'\');">'+TXT("Isola")+'</div>';
+		if(MODELLO.isolamento == null && !noIsola && (fnc!='Area' || MODELLO.isola_aree))txt += '<div class="i" onClick="MENU.chiudiAllSelected();'+isola+';MODELLO.isolaAnatomia(\''+fnc+'\',\''+leg.dataset.idObj+'\');">'+TXT("Isola")+'</div>';
 		let x = tCoord(leg);
 		document.getElementById("context_menu").classList.add("tooltipVis");
 		document.getElementById("context_menu").innerHTML=txt;
@@ -1719,11 +1719,13 @@ var MODELLO = {
 					else MODELLO.swGuide("Muscolo_"+area,false);
 				}
 			}
-			if(!IMG)IMG = decomprA(MODELLO.MAT.maskVuota);
-			IMG = 'data:image/jpeg;base64,' + IMG;
-			if(!modo)MODELLO.areaBlock = MODELLO.MAT.materialAree.length;
-			if(!desel)MODELLO.mergeImages( m, IMG, modo, el );
-			else MODELLO.diffImages( m, IMG, modo, el );
+			if(MODELLO.isola_aree){
+				if(!IMG)IMG = decomprA(MODELLO.MAT.maskVuota);
+				IMG = 'data:image/jpeg;base64,' + IMG;
+				if(!modo)MODELLO.areaBlock = MODELLO.MAT.materialAree.length;
+				if(!desel)MODELLO.mergeImages( m, IMG, modo, el );
+				else MODELLO.diffImages( m, IMG, modo, el );
+			}else nasLoader();
 		}
 		if(!modo){
 			if(!desel){
