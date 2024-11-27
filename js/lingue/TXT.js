@@ -3253,6 +3253,22 @@ DB.TXT = {
 
         // TRATTAMENTI
         // elenco
+        DatiPaziente: {
+            ita: "Dati paziente",
+            eng: "",
+            esp: "",
+            fra: "",
+            por: "",
+            deu: ""
+        },
+        DatiPazienteShiatsu: {
+            ita: "Dati ricevente",
+            eng: "",
+            esp: "",
+            fra: "",
+            por: "",
+            deu: ""
+        },
         Anamnesi: {
             ita: "Anamnesi",
             eng: "Anamnesis",

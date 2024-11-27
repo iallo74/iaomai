@@ -926,7 +926,7 @@ var PAZIENTI = {
 		
 			let eta = DataNascita ? oggi.getFullYear() - DataNascita.getFullYear() : '',
 				HTML = '';
-			
+				
 			// avatar
 			let sessoAvatar = sesso ? sessi[sesso] : 'uomo';
 			HTML += '<div id="pazienti_vis">' +

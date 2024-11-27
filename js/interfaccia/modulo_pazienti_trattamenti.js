@@ -585,13 +585,138 @@ var PAZIENTI_TRATTAMENTI = { // extend PAZIENTI
 			}
 
 			
-			
-					
-			HTML += '<div class="labelTrattamento noBorder">'+TXT("labelRaccoltaDati")+'</div>' +	
+
+			HTML += '<div class="labelTrattamento noBorder">'+TXT("labelRaccoltaDati")+'</div>';	
 			
 
+			// DATI PAZIENTE
+
+			// dati generici
+			let PZ = DB.pazienti.data[PAZIENTI.idCL],
+				DataNascita = 0,
+				HTML_generici = '';
+			if(PZ.DataNascita!='0000-00-00')DataNascita = new Date(PZ.DataNascita);
+			if(DataNascita){
+				let eta = oggi.getFullYear() - DataNascita.getFullYear();
+				HTML_generici += 
+					'		<div>'+
+					'			<span>'+htmlEntities(TXT("Eta"))+':</span> '+eta+
+					'		</div>';
+			}
+			if(PZ.Professione){
+				HTML_generici += 
+					'		<div>'+
+					'			<span>'+htmlEntities(TXT("Professione"))+':</span> '+PZ.Professione+
+					'		</div>';
+			}
+			etichette = toJson(PZ.etichette);
+			H.etichetteProvvisorie = clone(etichette);
+			HTML_generici += H.scriviEtichette('aggiuntive').replace(/<i>/g,"<span>").replace(/<\/i>/g,"</span>");
+
+			let HTML_ana = '';
+			if(PZ.Altezza.trim()){
+				HTML_ana += '<div><span>'+htmlEntities(convertMisure(TXT("Altezza")))+':</span> ' + htmlEntities(PZ.Altezza) + '</div>';
+			}
+			if(PZ.Peso.trim()){
+				HTML_ana += '<div><span>'+htmlEntities(convertMisure(TXT("Peso")))+':</span> ' + htmlEntities(PZ.Peso) + '</div>';
+			}
+
+			PAZIENTI.medicineProvvisorie = clone(PZ.medicine);
+			PAZIENTI.allergieProvvisorie = clone(PZ.allergie);
+			PAZIENTI.patologieProvvisorie = clone(PZ.patologie);
+			PAZIENTI.interventiProvvisori = clone(PZ.interventi);
+			obj = PAZIENTI.defElemento( 'medicine' );
+			if(obj.ELS.length>0){
+				
+				HTML_ana +=	'	<div class="rgAnag rgMedicine">' +
+						'			<div>';
+				for(let p in obj.ELS){
+					HTML_ana += '<span class="tag" style="background-color:#FFF;">' +
+								htmlEntities(obj.ELS[p].NomeMedicina) +
+							'</span>';
+				}
+				HTML_ana += '			</div>' +
+						'		<div class="l"></div>' +
+						'	</div>';
+			}
+			
+			
+			obj = PAZIENTI.defElemento( 'allergie' );
+			if(obj.ELS.length>0){
+				
+				HTML_ana+=	'	<div class="rgAnag rgAllergie">' +
+						'			<div>';
+				for(let p in obj.ELS){
+					HTML_ana += '<span class="tag" style="background-color:#FFF;">' +
+								htmlEntities(obj.ELS[p].NomeAllergia) +
+							'</span>';
+				}
+				HTML_ana += '			</div>' +
+						'		<div class="l"></div>' +
+						'	</div>';
+			}
+			
+			
+			obj = PAZIENTI.defElemento( 'patologie' );
+			if(obj.ELS.length>0){
+				
+				HTML_ana +=	'	<div class="rgAnag rgPatologie">' +
+						'			<div>';
+				for(let p in obj.ELS){
+					HTML_ana += '<span class="tag" style="background-color:#FFF;">' +
+								htmlEntities(obj.ELS[p].NomePatologia) +
+							'</span>';
+				}
+				HTML_ana += '			</div>' +
+						'		<div class="l"></div>' +
+						'	</div>';
+			}
+			
+			
+			obj = PAZIENTI.defElemento( 'interventi' );
+			if(obj.ELS.length>0){
+				
+				HTML_ana +=	'	<div class="rgAnag rgInterventi">' +
+						'			<div>';
+				for(let p in obj.ELS){
+					HTML_ana += '<span class="tag" style="background-color:#FFF;">' +
+								htmlEntities(obj.ELS[p].NomeIntervento) +
+							'</span>';
+				}
+				HTML_ana += '			</div>' +
+						'		<div class="l"></div>' +
+						'	</div>';
+			}
+
+			
+			if(HTML_generici || HTML_ana){
+				HTML += '<div id="tratt_cont_datipaziente"' +
+						'	  class="sezioneTrattamenti divEspansa '+ 
+								((localStorage.getItem("op_datipaziente")) ? '' : 'sezioneChiusa') +
+								'">' +	
+						'	<em class="labelMobile labelTrattamenti"' +
+						'  		onClick="H.swSezione(this);">' +
+						'		<img class="icoLabel"' +
+						'			 src="img/ico_aggiuntive.png">' +
+									TXT("DatiPaziente"+(globals.set.cartella=='meridiani_shiatsu'?'Shiatsu':'')) +
+						'	</em>' +
+						'	<div id="contDatipaziente">';
+				if(HTML_generici)HTML += 
+						'		<div id="datiGenericiPaziente">' +
+						HTML_generici +
+						'		</div>';
+				if(HTML_ana)HTML += 
+						'		<div id="datiAnamnesiPaziente">' +
+									HTML_ana +
+						'		</div>';
+				HTML += '	</div>' +
+						'</div>';
+			}
+
+
+
 					// ANAMNESI
-					'<div id="tratt_cont_anamnesi"' +
+			HTML += '<div id="tratt_cont_anamnesi"' +
 					'	  class="sezioneTrattamenti divEspansa '+ 
 							((localStorage.getItem("op_anamnesi")) ? '' : 'sezioneChiusa') +
 							'">' +	

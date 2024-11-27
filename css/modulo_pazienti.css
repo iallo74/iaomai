@@ -2093,3 +2093,54 @@ body:not(.smart) #tt_mezzival3 span{
     color: inherit;
     font-style: normal;
 }
+
+#contDatipaziente{
+	padding: 10px 0 20px 0;
+}
+#contDatipaziente > div{
+	display:inline-block;
+	vertical-align:top;
+	width: calc(50% - 7px);
+	border-radius: 4px;
+    box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.6);
+	padding: 5px 10px;
+}
+.sch_Max600 #contDatipaziente > div{
+	display:block;
+	width: 100%;
+}
+#datiGenericiPaziente{
+	margin-right:9px;
+    box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.6);
+	background-color: rgba(255, 255, 255, 0.5);
+}
+#datiGenericiPaziente span,
+#datiAnamnesiPaziente > div > span{
+	font-style:italic;
+	color:rgba(0,0,0,0.6);
+}
+#datiAnamnesiPaziente{
+	background-color: #f0d1a2;
+}
+#datiAnamnesiPaziente > div{
+	border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+}
+#datiAnamnesiPaziente > div:last-child{
+	border-bottom: none;
+}
+#datiAnamnesiPaziente span{
+	margin: 2px;
+    line-height: 18px;
+}
+#datiAnamnesiPaziente > div{
+	margin-bottom:5px !important;
+}
+#datiAnamnesiPaziente > div > div{
+	height:auto !important;
+}
+#datiAnamnesiPaziente > div:last-child{
+	margin-bottom:0px !important;
+}
+.sch_Max600 #datiAnamnesiPaziente{
+	margin-top:10px;
+}
