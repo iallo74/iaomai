@@ -1,7 +1,7 @@
 
 var moduliValutazione = {
     /*
-    ogni modello ha3 campi:
+    ogni modello ha 3 campi:
 
     - title: il nome del modello
 
@@ -1454,14 +1454,14 @@ var moduliValutazione = {
             html:   '<div id="moduloPolsiMTC">' +
                     '   <div>' +
                     '       <div id="md_polsoSX">' +
-                    '           <div id="md_CUN_sx">[0][1][2]</div>' +
-                    '           <div id="md_GUAN_sx">[3][4][5]</div>' +
-                    '           <div id="md_CHI_sx">[6][7][8]</div>' +
+                    '           <div id="md_CHI_dx">[15][16][17]</div>' +
+                    '           <div id="md_GUAN_dx">[12][13][14]</div>' +
+                    '           <div id="md_CUN_dx">[9][10][11]</div>' +
                     '       </div>' +
                     '       <div id="md_polsoDX">' +
-                    '           <div id="md_CUN_dx">[9][10][11]</div>' +
-                    '           <div id="md_GUAN_dx">[12][13][14]</div>' +
-                    '           <div id="md_CHI_dx">[15][16][17]</div>' +
+                    '           <div id="md_CHI_sx">[6][7][8]</div>' +
+                    '           <div id="md_GUAN_sx">[3][4][5]</div>' +
+                    '           <div id="md_CUN_sx">[0][1][2]</div>' +
                     '       </div>' +
                     '   </div>' +
                     '</div>' +

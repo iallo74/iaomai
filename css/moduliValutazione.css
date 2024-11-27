@@ -300,7 +300,7 @@
 	vertical-align: top;
 	width:300px;
 	height:470px;
-	background-image: url(../img/valutazioni/polsi.png);
+	background-image: url(../img/valutazioni/polsiInv.png);
 	background-repeat: no-repeat;
 	white-space: normal;
 }
@@ -324,35 +324,35 @@
 	width: 158px;
 }
 #md_polsoSX{
-	background-position: top left;	
+	background-position: left 2px;	
 	text-align:left;
 }
 #md_polsoDX{
-	background-position: top right;
+	background-position: right 2px;
 	text-align:right;
 }
 
 #md_CUN_sx{
-	margin-top:24px;
+	margin-bottom:24px;
 }
 #md_GUAN_sx{
-	margin-top: 31px;
-    margin-left: 14px;
-}
-#md_CHI_sx{
-	margin-top: 31px;
-    margin-left: 100px;
-}
-#md_CUN_dx{
-	margin-top:24px;
-}
-#md_GUAN_dx{
-	margin-top: 31px;
+	margin-bottom: 31px;
     margin-right: 14px;
 }
-#md_CHI_dx{
-	margin-top: 31px;
+#md_CHI_sx{
+	margin-bottom: 31px;
     margin-right: 100px;
+}
+#md_CUN_dx{
+	margin-bottom:24px;
+}
+#md_GUAN_dx{
+	margin-bottom: 31px;
+    margin-left: 14px;
+}
+#md_CHI_dx{
+	margin-bottom: 31px;
+    margin-left: 100px;
 }
 
 
@@ -361,29 +361,47 @@
     height: 500px;
     background-image: url(../img/valutazioni/polsiH.png);
 }
+
+.sch_Max600 #md_polsoSX{
+	background-position: right top;
+	float:right;
+	display: flex;
+    flex-direction: column-reverse;
+	padding-left: 18px;
+}
+.sch_Max600 #md_polsoDX{
+	background-position: left top;
+	float:left;
+	display: flex;
+    flex-direction: column-reverse;
+	
+}
 .sch_Max600 #md_CUN_sx{
-	margin-top:111px;
+	margin-bottom:6px;
 	margin-left:25px;
+	margin-right:0px;
 }
 .sch_Max600 #md_GUAN_sx{
-	margin-top: 9px;
+	margin-bottom: 9px;
 	margin-left:25px;
+	margin-right:0px;
 }
 .sch_Max600 #md_CHI_sx{
-	margin-top: 9px;
+	margin-bottom: 9px;
 	margin-left:25px;
+	margin-right:0px;
 }
 .sch_Max600 #md_CUN_dx{
-	margin-top:111px;
-	margin-right:25px;
+	margin-bottom:6px;
+	margin-left:0px;
 }
 .sch_Max600 #md_GUAN_dx{
-	margin-top: 9px;
-	margin-right:25px;
+	margin-bottom: 9px;
+	margin-left:0px;
 }
 .sch_Max600 #md_CHI_dx{
-	margin-top: 9px;
-	margin-right:25px;
+	margin-bottom: 9px;
+	margin-left:0px;
 }
 
 
