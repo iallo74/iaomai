@@ -320,7 +320,8 @@ DB.set = {
 				}
 				],
 			/* noList: true, */
-			meridiani: true
+			meridiani: true,
+			noList: true
 		},
 		{
 			TitoloSezione: "Meridianos distintos",
@@ -428,7 +429,8 @@ DB.set = {
 				}
 				],
 			/* noList: true, */
-			meridiani: true
+			meridiani: true,
+			noList: true
 		},
 		{
 			TitoloSezione: "Meridianos extraordinarios",
@@ -508,7 +510,8 @@ DB.set = {
 				}
 			],
 			/* noList: true, */
-			meridiani: true
+			meridiani: true,
+			noList: true
 		},
 		{
 			TitoloSezione: "Meridianos muscolares",
@@ -631,7 +634,8 @@ DB.set = {
 				}
 				],
 			/* noList: true, */
-			meridiani: true
+			meridiani: true,
+			noList: true
 		},
 		{
 			TitoloSezione: "Puntos particulares",

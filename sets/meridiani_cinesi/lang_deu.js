@@ -318,7 +318,8 @@ DB.set={
 					]
 				}
 			],
-			"meridiani": true
+			"meridiani": true,
+			noList: true
 		},
 		{
 			"TitoloSezione": "Deutliche Meridiane",
@@ -425,7 +426,8 @@ DB.set={
 					]
 				}
 			],
-			"meridiani": true
+			"meridiani": true,
+			noList: true
 		},
 		{
 			"TitoloSezione": "Außergewöhnliche Meridiane",
@@ -504,7 +506,8 @@ DB.set={
 					]
 				}
 			],
-			"meridiani": true
+			"meridiani": true,
+			noList: true
 		},
 		{
 			"TitoloSezione": "Muskelmeridiane",
@@ -623,7 +626,8 @@ DB.set={
 					]
 				}
 			],
-			"meridiani": true
+			"meridiani": true,
+			noList: true
 		},
 		{
 			"TitoloSezione": "Punktkategorien",

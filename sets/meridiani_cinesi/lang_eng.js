@@ -320,7 +320,8 @@ DB.set = {
 				}
 			],
 			/* noList: true, */
-			meridiani: true
+			meridiani: true,
+			noList: true
 		},
 		{
 			TitoloSezione: "Distinct Meridians",
@@ -432,7 +433,8 @@ DB.set = {
 				}
 			],
 			/* noList: true, */
-			meridiani: true
+			meridiani: true,
+			noList: true
 		},
 		{
 			TitoloSezione: "Extraordinary Meridians",
@@ -512,7 +514,8 @@ DB.set = {
 				}
 			],
 			/* noList: true, */
-			meridiani: true
+			meridiani: true,
+			noList: true
 		},
 		{
 			TitoloSezione: "Muscular Meridians",
@@ -632,7 +635,8 @@ DB.set = {
 				}
 			],
 			/* noList: true, */
-			meridiani: true
+			meridiani: true,
+			noList: true
 		},
 		{
 			TitoloSezione: "Point Categories",

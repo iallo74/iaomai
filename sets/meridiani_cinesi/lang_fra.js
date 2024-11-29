@@ -318,7 +318,8 @@ DB.set={
                     ]
                 }
             ],
-            "meridiani": true
+            "meridiani": true,
+			noList: true
         },
         {
             "TitoloSezione": "Méridiens distincts",
@@ -425,7 +426,8 @@ DB.set={
                     ]
                 }
             ],
-            "meridiani": true
+            "meridiani": true,
+			noList: true
         },
         {
             "TitoloSezione": "Méridiens extraordinaires",
@@ -504,7 +506,8 @@ DB.set={
                     ]
                 }
             ],
-            "meridiani": true
+            "meridiani": true,
+			noList: true
         },
         {
             "TitoloSezione": "Méridiens musculaires",
@@ -623,7 +626,8 @@ DB.set={
                     ]
                 }
             ],
-            "meridiani": true
+            "meridiani": true,
+			noList: true
         },
         {
             "TitoloSezione": "Catégories de points",
