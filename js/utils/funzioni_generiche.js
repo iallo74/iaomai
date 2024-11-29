@@ -188,7 +188,7 @@ function removeByAttr(arr, attr, value){
 
 function initChangeDetection(form) {
 	SCHEDA.formModificato = false;
-	SCHEDA.form = document.getElementById( form );
+	SCHEDA.form = document[form];
 	document.getElementById("scheda").classList.add("schForm");
 	Array.from( SCHEDA.form ).forEach(el => el.dataset.origValue = el.value);
 	SCHEDA.verPosScheda();
@@ -249,4 +249,12 @@ function visDebug(){ // mostra il DB in JSON in una finestra
 function nasDebug(){
 	document.getElementById("cont_debug_db_cont").classList.remove("visSch");
 	document.getElementById("cont_debug_db").innerHTML = "";
+}
+function indexOfSimilar(base, search) {
+    // Normalizza, rimuove i diacritici e converte in minuscolo
+    const normalizeBase = base.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
+    const normalizeSearch = search.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
+    
+    // Utilizza indexOf con le stringhe normalizzate
+    return normalizeBase.indexOf(normalizeSearch);
 }
