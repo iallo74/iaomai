@@ -399,7 +399,7 @@
                <p id="guideSel">
                    <i>{{TXT_ShowGuide}}:</i>
                    <span>
-                        <input type="checkbox" id="no_guida_settings" name="no_guida_settings" value="1" onClick="GUIDA.swGuide(this);"><b onClick="GUIDA.showNow();">{{TXT_ShowNow}}</b>
+                        <input type="checkbox" id="no_guida_settings" name="no_guida_settings" data-name="no_guida_settings" value="1" onClick="GUIDA.swGuide(this);"><b onClick="GUIDA.showNow();">{{TXT_ShowNow}}</b>
                    </span>
                </p>
                 </div>
@@ -1077,7 +1077,7 @@
                             <span class="c0" onClick="selCol(0);"></span>
                         </p>
                     </div>
-                    <div class="noVisPiu">{{TXT_noVisPiu}} <input type="checkbox" id="no_guida_generica" name="no_guida_generica" value="1"></div>
+                    <div class="noVisPiu">{{TXT_noVisPiu}} <input type="checkbox" id="no_guida_generica" name="no_guida_generica" data-name="no_guida_generica" value="1"></div>
                     <div id="loginGuida">
                         <i>{{TXT_LinkRapidi}}:</i>
                         <div class="btnReference" onClick="REF.open();">{{TXT_ReferenceGuide}}</div>
@@ -1104,7 +1104,7 @@
                     <p id="fumetti_testo"></p>
                 </div>
         		<div class="btnsGuide"><div class="btnReference" onClick="REF.open();">{{TXT_ReferenceGuide}}</div><!-- <div class="btnLicenze" onClick="MENU.visLicenze();">{{TXT_TueLicenze}}</div> --></div>
-        		<div class="noVisPiu">{{TXT_noVisPiu}} <input type="checkbox" id="no_guida" name="no_guida" value="1" onClick="GUIDA.noVis(this);"></div>
+        		<div class="noVisPiu">{{TXT_noVisPiu}} <input type="checkbox" id="no_guida" name="no_guida" data-name="no_guida" value="1" onClick="GUIDA.noVis(this);"></div>
             </div>
             <div class="fumetti_freccia"></div>
         </div>

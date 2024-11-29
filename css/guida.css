@@ -815,7 +815,7 @@ body:not(.smart) #guida_generica .fumetti_freccia:last-child{
     width: 20px;
     height: 20px;
     line-height: 17px;
-    float: right;
+    /*float: right;*/
     text-align: center;
     font-weight: bold;
     color: #000;
