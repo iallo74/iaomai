@@ -1944,9 +1944,15 @@ body:not(.smart) #tt_mezzival3 span{
 #btnTrasf:hover{
     background-color: rgba(0,0,0,0.2) !important;
 }
-
+#moduli_titolo{
+	font-weight: bold;
+    padding-right: 14px;
+    text-align: right;
+    margin-bottom: 5px;
+}
 #anamnesi_btn,
-#modulo_btn{
+#modulo_btn,
+#modulo_crea{
     background-repeat: no-repeat;
     border-radius: 6px;
     background-color: rgba(0,0,0,0.1);
@@ -1971,6 +1977,13 @@ body:not(.smart) #tt_mezzival3 span{
     background-position: 2px 8px;
     background-size: auto 25px;
     padding-left: 31px;
+    padding-right: 13px;
+    margin-right: 10px;
+    height: 36px;
+    line-height: 36px;
+}
+#modulo_crea{
+    padding-left: 13px;
     padding-right: 13px;
     margin-right: 10px;
     height: 36px;
