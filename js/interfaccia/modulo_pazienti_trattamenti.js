@@ -429,16 +429,12 @@ var PAZIENTI_TRATTAMENTI = { // extend PAZIENTI
 			// GUIDA
 			if(TipoTrattamento == 'A' && Q_idTratt<0){
 				ordine = PAZIENTI.cicli.length-1;
-				HTML += '<div class="guide_scheda_btn"' +
+				HTML += '<div style="text-align: right;"><div class="guide_scheda_btn"' +
 						'	  id="btn_guida_ciclo"' +
-						'	  onClick="GUIDA.visGuida(\'guida_ciclo\')"';
-				if(!__(localStorage.getItem("no_guida_ciclo")))HTML += ' style="display:none"';
-				HTML += '>?</div>';
-				
-				HTML += '<div class="guide_scheda"' +
-						'	  id="guida_ciclo"';
-				if(__(localStorage.getItem("no_guida_ciclo")))HTML += ' style="display:none"';
-				HTML += '>' +
+						'	  onClick="GUIDA.visGuida(\'guida_ciclo\')">?</div></div>' +
+						'<div class="guide_scheda"' +
+						'	  id="guida_ciclo"' +
+						'	  style="display:none">' +
 						'	<div class="guide_chiudi"' +
 						'		 onClick="GUIDA.nasGuida(\'guida_ciclo\');"></div>' +
 						'	<div>' +
@@ -448,18 +444,8 @@ var PAZIENTI_TRATTAMENTI = { // extend PAZIENTI
 						'		<p>' +
 									htmlEntities(TXT("GuidaCiclo")).replace(/\n/g,"<br>") +
 						'		</p>' +
-						'	</div>';
-				if(!__(localStorage.getItem("no_guida_ciclo")))HTML += 
-						'	<span class="noVisPiu"' +
-						'		  style="display: inline-block;">' +
-								htmlEntities(TXT("NonVisualizzarePiu")) +
-						'		<input type="checkbox"' +
-						'			   id="no_guida_ciclo"' +
-						'			   name="no_guida_ciclo"' +
-						'			   value="1"' +
-						'			   onClick="GUIDA.noVis(this);">' +
-						'	</span>';
-				HTML += '</div>';
+						'	</div>' +
+						'</div>';
 			}
 			
 			if(TipoTrattamento != 'A'){
@@ -737,9 +723,11 @@ var PAZIENTI_TRATTAMENTI = { // extend PAZIENTI
 					//' style="display:none;"' + // MOMENTANEAMENTE NASCOSTO
 					'>' +
 					'		<div id="modulo_cont"></div>' +
+					'		<div id="moduli_titolo">'+TXT("ElSchedeAnamnesi")+'</div>' +
 					'		<div id="modulo_btn_cont">' +
 					'			<img src="img/ico_timer_mini.png" style="height:20px;margin-right:10px;vertical-align:middle;" title="'+TXT("TimerModuliFree")+'">' +
 					'			<div id="modulo_btn" onClick="PAZIENTI.swImportaModuli();">'+TXT("ImportaModulo")+'</div>' +
+					'			<div id="modulo_crea" onClick="MODULI.car_modulo(-1,false,true);">'+TXT("CreaNuovo")+'</div>' +
 					'		</div>' +
 					'	</div>' +
 					'</div>' +
