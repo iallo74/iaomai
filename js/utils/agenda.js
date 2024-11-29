@@ -54,6 +54,7 @@ var agenda = {
 			this.oraInizio = h;
 			this.giornoInizio = g;
 			this.oraFine = h+12;
+			if(this.oraFine>288)this.oraFine = 288;
 			this.giornoFine = g;
 			this.elFine = document.getElementById("day_"+g).getElementsByTagName("div")[(h-this.oraMin)*2+24];
 			
