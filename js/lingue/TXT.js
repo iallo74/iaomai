@@ -2471,6 +2471,14 @@ DB.TXT = {
             por: "Categoria",
             deu: "Kategorie"
         },
+        Titoletto: {
+            ita: "Titoletto",
+            eng: "Title",
+            esp: "Título",
+            fra: "Titre",
+            por: "Título",
+            deu: "Titel"
+        },
         InserisciDomanda: {
             ita: "Inserisci la domanda",
             eng: "Enter the question",
@@ -2480,13 +2488,29 @@ DB.TXT = {
             deu: "Geben Sie die Frage ein"
         },
         ImportaModulo: {
-            ita: "Importa un modulo di valutazione",
+            ita: "Importa esistente",
             eng: "Import an evaluation form",
             esp: "Importar un formulario de evaluación",
             fra: "Importer un formulaire d'évaluation",
             por: "Importar um formulário de avaliação",
             deu: "Importiere ein Bewertungsformular"
         },  
+        CreaNuovo: {
+            ita: "Crea nuovo",
+            eng: "Create new",
+            esp: "Crear nuevo",
+            fra: "Créer nouveau",
+            por: "Criar novo",
+            deu: "Neu erstellen"
+        },
+        ErroreModuloVuoto: {
+            ita: "Il modulo non può essere vuoto",
+            eng: "The form cannot be empty",
+            esp: "El formulario no puede estar vacío",
+            fra: "Le formulaire ne peut pas être vide",
+            por: "O formulário não pode estar vazio",
+            deu: "Das Formular kann nicht leer sein"
+        },
         erroreModuloVuoto: {
             ita: "Uno dei moduli che stai provando ad importare è vuoto",
             eng: "One of the forms you are trying to import is empty",
@@ -2558,6 +2582,23 @@ DB.TXT = {
             fra: "Cette fonctionnalité est en essai pour vous jusqu'au 31 mars 2025.\nAprès cette date, elle aura un coût mensuel ou annuel.",
             por: "Esta funcionalidade está em teste para você até 31 de março de 2025.\nApós essa data, terá um custo mensal ou anual.",
             deu: "Diese Funktion ist für Sie bis zum 31. März 2025 in der Testphase.\nNach diesem Datum wird sie monatlich oder jährlich kosten."
+        },
+        
+        GuidaModuloTit: {
+            ita: "Cos'è un modulo di valutazione",
+            eng: "What is an evaluation form",
+            esp: "Qué es un formulario de evaluación",
+            fra: "Qu'est-ce qu'un formulaire d'évaluation",
+            por: "O que é um formulário de avaliação",
+            deu: "Was ist ein Bewertungsformular"
+        },
+        GuidaModulo: {
+            ita: "Si tratta di uno strumento strutturato utile per raccogliere informazioni dettagliate sullo stato di salute di un individuo. Include domande e sezioni per identificare precedenti clinici, stili di vita, e fattori ambientali, al fine di supportare una diagnosi accurata e personalizzare il trattamento.",
+            eng: "It is a structured tool useful for collecting detailed information about an individual's health status. It includes questions and sections to identify clinical history, lifestyle, and environmental factors, in order to support an accurate diagnosis and customize treatment.",
+            esp: "Es una herramienta estructurada útil para recopilar información detallada sobre el estado de salud de un individuo. Incluye preguntas y secciones para identificar antecedentes clínicos, estilos de vida y factores ambientales, con el fin de apoyar un diagnóstico preciso y personalizar el tratamiento.",
+            fra: "Il s'agit d'un outil structuré utile pour recueillir des informations détaillées sur l'état de santé d'un individu. Il comprend des questions et des sections pour identifier les antécédents cliniques, les modes de vie et les facteurs environnementaux, afin de soutenir un diagnostic précis et de personnaliser le traitement.",
+            por: "É uma ferramenta estruturada útil para coletar informações detalhadas sobre o estado de saúde de um indivíduo. Inclui perguntas e seções para identificar histórico clínico, estilo de vida e fatores ambientais, a fim de apoiar um diagnóstico preciso e personalizar o tratamento.",
+            deu: "Es ist ein strukturiertes Werkzeug, das nützlich ist, um detaillierte Informationen über den Gesundheitszustand einer Person zu sammeln. Es enthält Fragen und Abschnitte, um klinische Vorgeschichte, Lebensstil und Umweltfaktoren zu identifizieren, um eine genaue Diagnose zu unterstützen und die Behandlung anzupassen."
         },
 
         // PAZIENTI
@@ -3658,20 +3699,20 @@ DB.TXT = {
             deu: "Punkt"
         },
         ImportaPunti: {
-            ita: "Importa punto da...",
-			eng: "Import point from...",
-			esp: "Importar punto desde...",
-			fra: "Importer point depuis...",
-			por: "Importar ponto de...",
-			deu: "Punkt importieren von..."
+            ita: "Importa punto",
+			eng: "Import point",
+			esp: "Importar punto",
+			fra: "Importer point",
+			por: "Importar ponto",
+			deu: "Punkt importieren"
         },
         ImportaMeridiani: {
-            ita: "Importa meridiani da...",
-            eng: "Import meridians from...",
-            esp: "Importar meridianos desde...",
-            fra: "Importer méridiens depuis...",
-            por: "Importar meridianos de...",
-            deu: "Meridiane importieren aus..."
+            ita: "Importa meridiani",
+            eng: "Import meridians",
+            esp: "Importar meridianos",
+            fra: "Importer méridiens",
+            por: "Importar meridianos",
+            deu: "Meridiane importieren"
         },
         ModificaCon: {
             ita: "Per modificare questa sezione devi aprire ",
