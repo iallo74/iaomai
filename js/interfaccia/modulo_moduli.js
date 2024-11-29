@@ -104,10 +104,9 @@ var MODULI = {
 				cont = '';
 			HTML += '<div style="text-align: right;"><div class="guide_scheda_btn"' +
 					'	  id="btn_guida_modulo"' +
-					'	  onClick="GUIDA.visGuida(\'guida_modulo\')">?</div></div>';
-			
-			HTML += '<div class="guide_scheda"' +
-					'	  id="guida_modulo"';
+					'	  onClick="GUIDA.visGuida(\'guida_modulo\')">?</div></div>' +
+					'<div class="guide_scheda"' +
+					'	  id="guida_modulo"' +
 					'	  style="display:none">' +
 					'	<div class="guide_chiudi"' +
 					'		 onClick="GUIDA.nasGuida(\'guida_modulo\');"></div>' +
