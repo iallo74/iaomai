@@ -1736,20 +1736,20 @@ DB.TXT = {
             deu: "Diapason"
         },
         MezzoLuce: {
-            ita: "Luce",
-            eng: "Light",
-            esp: "Luz",
-            fra: "Lumière",
-            por: "Luz",
-            deu: "Licht"
+            ita: "Cromo-agopuntura",
+            eng: "Chromo-puncture",
+            esp: "Cromo-acupuntura",
+            fra: "Cromo-acupuncture",
+            por: "Cromo-acupuntura",
+            deu: "Chromo-punktur"
         },
         MezzoDito: {
-            ita: "Dito",
-            eng: "Finger",
-            esp: "Dedo",
-            fra: "Doigt",
-            por: "Dedo",
-            deu: "Finger"
+            ita: "Digitopressione",
+            eng: "Acupressure",
+            esp: "Digitopresión",
+            fra: "Digitopression",
+            por: "Digitopressão",
+            deu: "Akupressur"
         },
         MezzoPauper: {
             ita: "Palpeur",
