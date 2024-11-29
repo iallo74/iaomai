@@ -748,7 +748,7 @@ var LOGIN = {
 					}, 1000 );
 					if(mouseDetect && touchDetect && !__(localStorage.pointerType,"")){
 						setTimeout( function(){
-							ALERT(TXT("PointerTypeAlert")+"\n\n"+TXT("noVisPiu")+'<input type="checkbox" id="no_guida" name="no_guida" value="1" onclick="setPointerType((this.checked) ? \'TOUCH\' : \'\' );">' );
+							ALERT(TXT("PointerTypeAlert")+"\n\n"+TXT("noVisPiu")+'<input type="checkbox" id="no_guida" name="no_guida" data-name="no_guida" value="1" onclick="setPointerType((this.checked) ? \'TOUCH\' : \'\' );">' );
 						}, 3000 );
 					}
 				}

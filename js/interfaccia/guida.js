@@ -126,7 +126,7 @@ var GUIDA = {
 		}
 	},
 	noVis: function( el ){
-		localStorage.setItem(document.getElementById("no_guida").dataset.name,el.checked);
+		localStorage.setItem(el.dataset.name,el.checked);
 	},
 	swGuide: function( el ){
 		if(el.checked){
