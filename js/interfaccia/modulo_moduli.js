@@ -1,6 +1,7 @@
 var MODULI = {
 	modlOp: false,
 	domande: [],
+	add: false,
 	
 	caricaModuli: function(){ // carica l'elenco dei moduli
 		let HTML = '';
@@ -71,13 +72,21 @@ var MODULI = {
 		if(parola)document.getElementById("modl_ricerca").classList.add("filtro_attivo");
 		else document.getElementById("modl_ricerca").classList.remove("filtro_attivo");
 	},
-	car_modulo: function( Q_idModl, salvato ){ // carica la scheda del modulo
+	car_modulo: function( Q_idModl, salvato, ritorno ){ // carica la scheda del modulo
+		if(typeof(ritorno)=='undefined')ritorno = false;
+		
 		CONFIRM.vis(	TXT("UscireSenzaSalvare"),
-						!SCHEDA.verificaSchedaRet(),
+						(!SCHEDA.verificaSchedaRet() || ritorno),
 						arguments ).then(function(pass){if(pass){
 						let v = getParamNames(CONFIRM.args.callee.toString());
 						for(let i in v)eval(getArguments(v,i));
 			
+			let addForm = '';
+			MODULI.add = false;
+			if(ritorno){
+				addForm = '2';
+				MODULI.add = true;
+			}
 			Q_idModl = __(Q_idModl, -1);
 			salvato = __(salvato, false);
 			MENU.nasMM();
@@ -93,8 +102,26 @@ var MODULI = {
 			MODULI.domande = clone(jsonModulo);
 			let HTML = '',
 				cont = '';
-			HTML += '<form id="formMod"' +
-					'	   name="formMod"' +
+			HTML += '<div style="text-align: right;"><div class="guide_scheda_btn"' +
+					'	  id="btn_guida_modulo"' +
+					'	  onClick="GUIDA.visGuida(\'guida_modulo\')">?</div></div>';
+			
+			HTML += '<div class="guide_scheda"' +
+					'	  id="guida_modulo"';
+					'	  style="display:none">' +
+					'	<div class="guide_chiudi"' +
+					'		 onClick="GUIDA.nasGuida(\'guida_modulo\');"></div>' +
+					'	<div>' +
+					'		<h2>' +
+								htmlEntities(TXT("GuidaModuloTit")) +
+					'		</h2>' +
+					'		<p>' +
+								htmlEntities(TXT("GuidaModulo")).replace(/\n/g,"<br>") +
+					'		</p>' +
+					'	</div>' +
+					'</div>' +
+					'<form id="formMod"' +
+					'	   name="formMod'+addForm+'"' +
 					'	   method="post"' +
 					'	   onSubmit="return false;">' +
 					
@@ -119,7 +146,7 @@ var MODULI = {
 					'<div class="p_sch_label">'+TXT("Aggiungi")+':	</div>'+
 					'<div id="btns_modulo">'+
 						'<div class="p_paz_label p_quesito" onClick="MODULI.aggiungiDomanda(\'d\');">'+TXT("Quesito")+'</div>'+
-						'<div class="p_paz_label p_etichetta" onClick="MODULI.aggiungiDomanda(\'e\');">'+TXT("Categoria")+'</div>'+
+						'<div class="p_paz_label p_etichetta" onClick="MODULI.aggiungiDomanda(\'e\');">'+TXT("Titoletto")+'</div>'+
 					'</div>';	
 
 
@@ -136,7 +163,7 @@ var MODULI = {
 			btnAdd += 	'<div class="p_paz_ref_menu" onClick="REF.open(\'modules.notes\')">' +
 							TXT("ReferenceGuide") +
 						'</div>';
-			
+			if(MODULI.add)azAnnulla = "SCHEDA.torna();";
 			HTML += SCHEDA.pulsantiForm(
 						Q_idModl>-1 ? "MODULI.el_modulo("+Q_idModl+");":"",
 						azAnnulla, 
@@ -151,15 +178,15 @@ var MODULI = {
 									HTML,
 									'MODULI.chiudiModulo('+idModulo+');',
 									'scheda_modulo',
-									false,
+									ritorno,
 									true,
 									document.getElementById("modulo_"+Q_idModl),
 									btnAdd );
 			
 			MODULI.caricaDomande();					
-			initChangeDetection( "formMod" );
+			initChangeDetection( "formMod"+(ritorno?'2':'') );
 			
-			if(mouseDetect)document.formMod.NomeModulo.focus();
+			if(mouseDetect)document["formMod"+addForm].NomeModulo.focus();
 	
 			SCHEDA.formModificato = false;
 			
@@ -171,20 +198,33 @@ var MODULI = {
 		}});
 	},
 	chiudiModulo: function( idModulo ){ // chiude il modulo
-		SCHEDA.formModificato = false;
+		if(!MODULI.add)SCHEDA.formModificato = false;
 		MODULI.modlOp = false;
-			
+		MODULI.add = false;
 		// tolgo il blocco online dall'elemento
 		if(typeof(idModulo)!='undefined')LOGIN.closeLocked("moduli",idModulo);
 	},
 	mod_modulo: function( Q_idModl ){ //salva il modulo
 		if(!verifica_form(document.getElementById("formMod")))return;
+		let frm = document.formMod;
+		if(MODULI.add)frm = document.formMod2;
 		let DataModifica = DB.moduli.lastSync+1;
-		if(document.formMod.idModulo.value*1>-1)DataCreazione=DataModifica;
+		if(frm.idModulo.value*1>-1)DataCreazione=DataModifica;
 		else DataCreazione = DB.moduli.data[Q_idModl].DataCreazione;
 		
-		JSNPUSH={ 	"idModulo": document.formMod.idModulo.value*1,
-					"NomeModulo": document.formMod.NomeModulo.value,
+
+		if(MODULI.add){
+			// in caso di seconda scheda verifico che il modulo non sia vuoto
+			if(!frm.NomeModulo.value.trim() || !MODULI.domande.length){
+				ALERT(TXT("ErroreModuloVuoto"));
+				return;
+			}
+		}
+
+
+
+		JSNPUSH={ 	"idModulo": frm.idModulo.value*1,
+					"NomeModulo": frm.NomeModulo.value,
 					"jsonModulo": clone(MODULI.domande),
 					"DataModifica": parseInt(DataModifica),
 					"DataCreazione": parseInt(DataCreazione),
@@ -206,10 +246,13 @@ var MODULI = {
 		applicaLoading(document.getElementById("scheda_testo"));
 		applicaLoading(document.getElementById("elenchi_lista"));
 		localPouchDB.setItem(MD5("DB"+LOGIN._frv()+".moduli"), IMPORTER.COMPR(DB.moduli)).then(function(){ // salvo il DB
+			
+			let azPost = 'MODULI.car_modulo('+Q_idModl+',true);if(smartMenu)SCHEDA.scaricaScheda(true);'; /* CHIUSURA DOPO SALVATAGGIO */
+			if(MODULI.add)azPost = 'SCHEDA.torna();PAZIENTI.importaModulo('+Q_idModl+');SCHEDA.formModificato=true;' /* RITORNO ALLA SCHEDA TRATT. E AGGIUNTA MODULO */
+
 			SYNCRO.sincronizza(	'rimuoviLoading(document.getElementById("scheda_testo"));' +
 								'rimuoviLoading(document.getElementById("elenchi_lista"));' +
-								'MODULI.car_modulo('+Q_idModl+',true);' +
-								'if(smartMenu)SCHEDA.scaricaScheda(true);' +/* CHIUSURA DOPO SALVATAGGIO*/
+								azPost +
 								postAction );
 		});
 		return false;
