@@ -141,6 +141,14 @@ var PAZIENTI_MODULI = { // extend PAZIENTI
 		PAZIENTI.tipoElencoModuli = PAZIENTI.tipoElencoModuli?'':'elenco';
 		PAZIENTI.popolaCategorieModuli();
 	},
+	importaModulo: function(m){
+		PAZIENTI.moduliProvvisori.push({
+			"id": m,
+			"title": DB.moduli.data[m].NomeModulo,
+			"data": DB.moduli.data[m].jsonModulo
+		});
+		PAZIENTI.popolaModuli();
+	},
 	importaModuli: function(){ // importa un modulo di valutazione della scheda trattamento
 		let els = document.getElementById("gruppoPunti_cont").getElementsByTagName("input"),
 			errVuoto = false,
