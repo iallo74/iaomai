@@ -398,6 +398,10 @@ var PAZIENTI_SETS_GRUPPI = { // extend PAZIENTI
 					'</div>';
 		}
 		HTML += '<div class="gr_'+(PAZIENTI.elencoGruppoAtt.livello-1)+'">';
+		if(PAZIENTI.elencoGruppoAtt.livello==1 && PAZIENTI.tipoGruppo=='P'){
+			HTML += '<div id="cerca_punto"><input type="text" id="cercaPunto" onKeyUp="PAZIENTI.filtraPunti();"'+H.noAutoGen+'></div>' +
+					'<div id="elenco_punti"></div>';
+		}
 		for(let k in PAZIENTI.elencoGruppoAtt.contenuto){
 			if(PAZIENTI.elencoGruppoAtt.livello<3){
 				HTML += '<div class="gr_btn"' +
@@ -443,6 +447,31 @@ var PAZIENTI_SETS_GRUPPI = { // extend PAZIENTI
 		document.getElementById("gruppoPunti_cont").classList.toggle("addOpts",(PAZIENTI.tipoGruppo!='M'));
 		document.getElementById("gruppoPunti_cont").scrollTo(0,0);
 		if(document.getElementById("gr_ret_ric"))document.getElementById("gr_ret_ric").focus();
+		if(PAZIENTI.elencoGruppoAtt.livello==1 && !touchable)document.getElementById("cercaPunto").focus();
+	},
+	filtraPunti: function(){
+		let text = document.getElementById("cercaPunto").value,
+			HTML = '';
+		if(text.length>=2){
+			if(globals.set.cartella=='meridiani_cinesi' || globals.set.cartella=='meridiani_shiatsu'){
+				for(m in DB.set.meridiani){
+					for(p in DB.set.meridiani[m].punti){
+						if(indexOfSimilar(DB.set.meridiani[m].punti[p].NomePunto,text)>-1){
+							let punto = p+'.'+m+'.'+__(DB.set.meridiani[m].punti[p].siglaPunto,'')+'.';
+							
+							HTML += '<div class="punti_import">' +
+									'	<span onClick="PAZIENTI.ptImporta(\''+punto+'\');">'+TXT("Importa")+'</span>' +
+										DB.set.meridiani[m].punti[p].NomePunto +
+									'</div>';
+						}
+					}
+				}
+			}
+			if(!HTML)HTML = '<div class="noResults">'+TXT("NessunRisultato")+'</div>';
+		}
+		document.getElementById("elenco_punti").classList.toggle("vis",HTML);
+		document.getElementById("elenco_punti").innerHTML = HTML;
+		// scrivo l'elenco
 	},
 	filtraGruppoPunti: function(){
 		let tag = 'div',
@@ -529,6 +558,15 @@ var PAZIENTI_SETS_GRUPPI = { // extend PAZIENTI
 				}else els[e].checked = false;
 			}
 		}
+	},
+	ptImporta: function( el ){ // importa il punti singolo (dalla ricerca) nel trattamento
+		let isProc = (document.getElementById("scheda").classList.contains("scheda_procedura")),
+			els = document.getElementById("gruppoPunti_cont").getElementsByTagName("input");
+		let punti = [el];
+		if(!isProc)PAZIENTI.aggiungiGruppoTrattamento(punti);
+		else SET.aggiungiGruppoProcedura(punti);
+		PAZIENTI.swGruppoPunti();
+		PAZIENTI.elencoGruppoAtt = PAZIENTI.elencoGruppoPunti;
 	},
 	ptGruppoImporta: function(){ // importa il gruppo dei punti nel trattamento
 		let isProc = (document.getElementById("scheda").classList.contains("scheda_procedura")),
