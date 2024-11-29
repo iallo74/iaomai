@@ -43,6 +43,7 @@ var SCHEDA = {
 	btnSel: null,
 	noChiudi: false,
 	formModificato: false,
+	formModificato_save: false,
 	form: null,
 	versoRedim: '',
 	gapScheda: 16,
@@ -219,6 +220,7 @@ var SCHEDA = {
 			SCHEDA.chiudiElenco(true);
 			SCHEDA.gestVisSmart(true);
 		}
+		if(ritorno)SCHEDA.formModificato_save = SCHEDA.formModificato;
 	},
 	verificaSchedaRet: function(){
 		formHasChanges();
@@ -924,6 +926,7 @@ var SCHEDA = {
 			document.getElementById("scheda").classList.toggle("h150", (document.getElementById("scheda").scrollHeight<=275));
 			document.getElementById("scheda").classList.toggle("schForm", (document.getElementById("scheda").querySelector(".formBtn")));
 			SCHEDA.verPosScheda();
+			SCHEDA.formModificato = SCHEDA.formModificato_save;
 		}
 	},
 	selElenco: function( elenco, el ){
