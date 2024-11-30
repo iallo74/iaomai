@@ -107,7 +107,7 @@ var PURCHASES  = {
 			let tk = encodeURIComponent(window.btoa(LOGIN.logedin() + MD5(DB.login.data.idUtente.toString()))),
 				fl = encodeURIComponent(window.btoa(PURCHASES.getProdById(PURCHASES.productId).folder)),
 				idP = (PURCHASES.convenzione) ? PURCHASES.convenzione.idPartner : '0',
-				pr1 = (PURCHASES.abbs_owned.indexOf(PURCHASES.getProdById(PURCHASES.productId).folder)==-1 && type=='m') ? PURCHASES.firstMonth : '',
+				pr1 = (PURCHASES.abbs_owned.indexOf(PURCHASES.getProdById(PURCHASES.productId).folder)==-1/* && type=='m'*/) ? PURCHASES.firstMonth : '',
 				idPc = PURCHASES.getIdPc(id);
 			CONN.openUrl(convLangPath(CONN.urlStore)+"in_app_purchase_subs?idPc="+idPc+"&tk="+tk+"&mp="+fl+"&type="+type+"&idP="+idP+"&pr1="+pr1+"&lang="+LINGUE.getSigla2());
 			PURCHASES.verAbbs();
@@ -218,7 +218,7 @@ var PURCHASES  = {
 				if(product.abbs[m].type == type)price = product.abbs[m].price;
 			}
 			folder = product.folder;
-			if(type=='m' && PURCHASES.firstMonth){
+			if(/*type=='m' && */PURCHASES.firstMonth){
 				priceFT = PURCHASES.firstMonth;
 				cycles = PURCHASES.cycles;
 			}
@@ -310,7 +310,7 @@ var PURCHASES  = {
 						cycles =  p.offers[0].pricingPhases[0].billingCycles;
 					}
 					
-				}else if(type=='m' && PURCHASES.firstMonth){
+				}else if(/*type=='m' && */PURCHASES.firstMonth){
 					priceFT = PURCHASES.firstMonth;
 					cycles = PURCHASES.cycles;
 				}
