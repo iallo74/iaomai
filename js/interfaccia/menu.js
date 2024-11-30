@@ -33,7 +33,7 @@ var MENU = {
 		setTimeout(function(){
 			if(smartMenu){
 				document.getElementById("p_modello").getElementsByTagName("i")[0].innerHTML = TXT("LabelSmartAnatomia");
-				document.getElementById("p_sets").getElementsByTagName("i")[0].innerHTML = TXT("LabelSmartMappe");
+				//document.getElementById("p_sets").getElementsByTagName("i")[0].innerHTML = TXT("LabelSmartMappe");
 				document.getElementById("p_cartella").getElementsByTagName("i")[0].innerHTML = TXT("LabelSmartPazienti");
 				document.getElementById("p_cartella").getElementsByTagName("i")[1].innerHTML = TXT("LabelSmartPazienti");
 				document.getElementById("p_impostazioni").getElementsByTagName("i")[0].innerHTML =  TXT("Altro");

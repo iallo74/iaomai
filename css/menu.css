@@ -387,13 +387,13 @@ body:not(.smart) #icone.iconeEspanse div i{
 	background-image:url(../img/ico_mappaB.png);
 	display:none;
 }
-.smart #p_sets{
+/*.smart #p_sets{
     background-image: url(../img/loadingBlack.gif);
     background-position: center -6px !important;
     display: none;
     background-size: contain;
     mix-blend-mode: lighten;
-}
+}*/
 .smart #p_sets{
 	border-left:none !important;
 	width:100px !important;
