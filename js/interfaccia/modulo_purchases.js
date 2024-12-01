@@ -233,7 +233,7 @@ var PURCHASES  = {
 		let button = '';
 		if(canPurchase){
 			button = '';
-			if(type=='m' && PURCHASES.abbs_owned.indexOf(folder)==-1 && priceFT){
+			if(/* type=='m' &&  */PURCHASES.abbs_owned.indexOf(folder)==-1 && priceFT){
 				let txtMesi = TXT("PrimoMese1Euro").replace("[price]",priceFT);
 				if(cycles>1)txtMesi = TXT("PrimiXMesiXEuro").replace("[price]",priceFT).replace("[n]",cycles);
 				button += '<div class="promoEuro inDett"><b>'+txtMesi+'*</b><br>(*) '+TXT("NotePrimoMese1Euro").replace("[mappa]",product.title)+'</div>';
@@ -278,6 +278,7 @@ var PURCHASES  = {
 	productList: function( id ){ // elenca i prodotti
 		PURCHASES.list_view = true;
 		let folder = PURCHASES.product_list[id].folder,
+			ast = false,
 			html =  '<div class="torna" onClick="PURCHASES.abbsList();">'+TXT("TornaProdotti")+'</div>' +
 					'<div id="copertinaPurchase" style="background-image:url(img/sf_copertine.png),url(sets/'+folder+'/img/copertina.png);"></div>' +
 					'<b id="titLicenze"><img src="sets/'+folder+'/img/logoMenu.png"> '+PURCHASES.product_list[id].title+'</b><br/>';
@@ -299,6 +300,8 @@ var PURCHASES  = {
 			}
 			
 			if(	PURCHASES.product_list[id].title && PURCHASES.product_list[id].title!='undefined' && pass ){
+				let priceFT = '',
+					cycles = '';
 				if(window.store){
 					let p = store.get(idStore);
 					//price = p.offers[0].pricingPhases[0].price;
@@ -319,15 +322,16 @@ var PURCHASES  = {
 								(type=='ac' ? '<div id="label_prezzo_conv">'+TXT("PrezzoInConvenzione")+'</div>' : '') +
 								'<div class="btn buy" onClick="PURCHASES.showProduct(\''+idStore+'\',\''+type+'\');">'+TXT("sub_"+type.substr(0,1))+': <b>'+price+' / '+TXT("add_"+type.substr(0,1))+'</b></div>' +
 								'</div>';
-				if(type=='m' && PURCHASES.abbs_owned.indexOf(folder)==-1 && priceFT){
+				if(/* type=='m' &&  */PURCHASES.abbs_owned.indexOf(folder)==-1 && priceFT){
 					let txtMesi = TXT("PrimoMese1Euro").replace("[price]",priceFT);
-					if(cycles>1)txtMesi = TXT("PrimiXMesiXEuro").replace("[price]",priceFT).replace("[n]",cycles);
-					html_provv += '<div class="promoEuro"><b>'+txtMesi+'*</b><br>(*) '+TXT("NotePrimoMese1Euro").replace("[mappa]",PURCHASES.product_list[id].title)+'</div>';
+					html_provv += '<div class="promoEuro"><b>'+txtMesi+'*</b></div>';
+					ast = true;
 				}
 				html_provv += 	'<span class="sep"></span>';
 				html += html_provv;
 			}
 		}
+		if(ast)html += '<div>(*) '+TXT("NotePrimoMese1Euro").replace("[mappa]",PURCHASES.product_list[id].title)+'</div>';
 		html += '<div style="margin:10px 0;">'+TXT("RinnovoAutomatico")+'</div>' +
 				'</div>';
 		let el = document.getElementById('contPurchases');
