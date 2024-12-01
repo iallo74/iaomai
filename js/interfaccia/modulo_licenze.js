@@ -48,7 +48,7 @@ var LICENZE  = {
 			LICENZE.visLicenza('ShiatsuMap Light',(LOGIN.logedin() && okLGT)) +
 			LICENZE.visLicenza('AuriculoMap',(LOGIN.logedin() && LOGIN.verAuth("auricologia"))) +
 			LICENZE.visLicenza('ReflexologyMap',(LOGIN.logedin() && LOGIN.verAuth("reflessologia_plantare"))) +
-			LICENZE.visLicenza('TriggerpointsMap',(LOGIN.logedin() && LOGIN.verAuth("trigger_points"))) +
+			//LICENZE.visLicenza('TriggerpointsMap',(LOGIN.logedin() && LOGIN.verAuth("trigger_points"))) +
 			LICENZE.visLicenza(TXT("Lic_SchedarioPazienti"),(LOGIN.logedin() && LOGIN.verAuth("clients_full"))) +
 			'</div>';
 		}else{
@@ -126,7 +126,7 @@ var LICENZE  = {
 		LICENZE.rowLicenza( TXT("Lic_AggiuntaAree"), 					ok?spunta			:ics );
 		
 		// TriggerpointsMap
-		ok = LOGIN.logedin() && LOGIN.verAuth("trigger_points");
+		/*ok = LOGIN.logedin() && LOGIN.verAuth("trigger_points");
 		HTML +=	
 		LICENZE.appLicenza( 'TriggerpointsMap', 'sets/trigger_point/img/logoMenu.png' )/*  +
 		LICENZE.rowLicenza( TXT("Lic_PuntiAree"), 						ok?spunta			:this.red('19') ) +
