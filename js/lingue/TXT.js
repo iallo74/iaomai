@@ -1063,11 +1063,11 @@ DB.TXT = {
         },
         NotePrimoMese1Euro: {
             ita: "Offerta disponibile solo se non hai ancora provato [mappa].",
-            eng: "Offer available only if you haven't tried [map] yet.",
-            esp: "Oferta disponible solo si aún no has probado [mapa].",
-            fra: "Offre disponible uniquement si vous n'avez pas encore essayé [carte].",
-            por: "Oferta disponível apenas se você ainda não tentou [mapa].",
-            deu: "Angebot nur verfügbar, wenn Sie [Karte] noch nicht ausprobiert haben."
+            eng: "Offer available only if you haven't tried [mappa] yet.",
+            esp: "Oferta disponible solo si aún no has probado [mappa].",
+            fra: "Offre disponible uniquement si vous n'avez pas encore essayé [mappa].",
+            por: "Oferta disponível apenas se você ainda não tentou [mappa].",
+            deu: "Angebot nur verfügbar, wenn Sie [mappa] noch nicht ausprobiert haben."
         },
         RinnovoAutomatico: {
             ita: "Tutti gli abbonamenti sono a rinnovo automatico. Annulla quando vuoi.",
