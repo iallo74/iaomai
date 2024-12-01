@@ -197,7 +197,7 @@ var PURCHASES  = {
 			cycles = 0,
 			title = '',
 			typeAbb = TXT("sub_"+type);
-		if(!price)TXT("AccediAlloStore");
+		//if(!price)TXT("AccediAlloStore");
 		if(window.store){
 			//price = product.offers[0].pricingPhases[0].price;
 			price = product.offers[0].pricingPhases[product.offers[0].pricingPhases.length-1].price;
@@ -215,7 +215,7 @@ var PURCHASES  = {
 			title = PURCHASES.getProdById(product.id).title;
 		}else{
 			for(let m in product.abbs){
-				if(product.abbs[m].type == type)price = product.abbs[m].price;
+				if(product.abbs[m].type == type)price = product.abbs[m].price.replace(".",",");
 			}
 			folder = product.folder;
 			if(/*type=='m' && */PURCHASES.firstMonth){
@@ -287,7 +287,7 @@ var PURCHASES  = {
 			let html_provv = '',
 				idStore = PURCHASES.product_list[id].abbs[m].idStore,
 				type = PURCHASES.product_list[id].abbs[m].type,
-				price = PURCHASES.product_list[id].abbs[m].price,
+				price = PURCHASES.product_list[id].abbs[m].price.replace(".",","),
 				priceFT = '',
 				cycles = 0,
 				pass = true,
