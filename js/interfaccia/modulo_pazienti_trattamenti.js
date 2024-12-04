@@ -266,6 +266,7 @@ var PAZIENTI_TRATTAMENTI = { // extend PAZIENTI
 				try{
 					SCHEDA.btnSel = document.getElementById(SCHEDA.btnSel.id);
 					SCHEDA.btnSel.classList.add("elencoSel");
+					SCHEDA.btnSel.parentElement.parentElement.classList.add("cartellaAperta");
 					if(typeof(Q_resta) == 'number' && Q_resta>-1)setTimeout(function(){ SCHEDA.msgSalvataggio(); }, 200 );
 				}catch(err){}
 			}
