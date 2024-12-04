@@ -322,6 +322,7 @@ var agenda = {
 								'},200)'; */
 								
 			document.getElementById("cont_sceltaAppuntamento").style.opacity = 0;
+			agenda.chiudiScelta();
 			Promise.all([
 				localPouchDB.setItem(MD5("DB"+LOGIN._frv()+".pazienti"), IMPORTER.COMPR(DB.pazienti)),
 				localPouchDB.setItem(MD5("DB"+LOGIN._frv()+".appuntamenti"), IMPORTER.COMPR(DB.appuntamenti))
