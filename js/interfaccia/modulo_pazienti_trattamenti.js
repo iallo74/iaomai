@@ -725,7 +725,7 @@ var PAZIENTI_TRATTAMENTI = { // extend PAZIENTI
 					'>' +
 					'		<div id="modulo_cont"></div>' +
 					'		<div id="moduli_titolo">'+TXT("ElSchedeAnamnesi")+'</div>' +
-					'		<div style="line-height: normal;text-align:right;color: #045c9f;"><img src="img/ico_timer_mini.png" style="float:right;margin-left:10px;height:20px;margin-right:10px;vertical-align:middle;"> '+TXT("TimerModuliFree")+'</div>' +
+					'		<div style="margin-bottom: 10px;line-height: normal;text-align:right;color: #045c9f;"><img src="img/ico_timer_mini.png" style="float:right;margin-left:10px;height:20px;margin-right:10px;vertical-align:middle;"> '+TXT("TimerModuliFree")+'</div>' +
 					'		<div id="modulo_btn_cont">' +
 					'			<div id="modulo_btn" onClick="PAZIENTI.swImportaModuli();">'+TXT("ImportaModulo")+'</div>' +
 					'			<div id="modulo_crea" onClick="MODULI.car_modulo(-1,false,true);">'+TXT("CreaNuovo")+'</div>' +
