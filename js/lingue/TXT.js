@@ -2584,12 +2584,12 @@ DB.TXT = {
             deu: "Kategorien"
         },
         TimerModuliFree: {
-            ita: "Questa funzionalità è in prova per te fino al 31 Marzo 2025.\nDopo tale data avrà un costo mensile o annuale.",
-            eng: "This feature is in trial for you until March 31, 2025.\nAfter that date, it will have a monthly or annual fee.",
-            esp: "Esta función está en prueba para ti hasta el 31 de marzo de 2025.\nDespués de esa fecha, tendrá un costo mensual o anual.",
-            fra: "Cette fonctionnalité est en essai pour vous jusqu'au 31 mars 2025.\nAprès cette date, elle aura un coût mensuel ou annuel.",
-            por: "Esta funcionalidade está em teste para você até 31 de março de 2025.\nApós essa data, terá um custo mensal ou anual.",
-            deu: "Diese Funktion ist für Sie bis zum 31. März 2025 in der Testphase.\nNach diesem Datum wird sie monatlich oder jährlich kosten."
+            ita: "Questa funzionalità è in prova per te fino al 31 Marzo 2025.<br>Dopo tale data avrà un costo mensile o annuale.",
+            eng: "This feature is in trial for you until March 31, 2025.<br>After that date, it will have a monthly or annual fee.",
+            esp: "Esta función está en prueba para ti hasta el 31 de marzo de 2025.<br>Después de esa fecha, tendrá un costo mensual o anual.",
+            fra: "Cette fonctionnalité est en essai pour vous jusqu'au 31 mars 2025.<br>Après cette date, elle aura un coût mensuel ou annuel.",
+            por: "Esta funcionalidade está em teste para você até 31 de março de 2025.<br>Após essa data, terá um custo mensal ou anual.",
+            deu: "Diese Funktion ist für Sie bis zum 31. März 2025 in der Testphase.<br>Nach diesem Datum wird sie monatlich oder jährlich kosten."
         },
         
         GuidaModuloTit: {
