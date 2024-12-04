@@ -728,7 +728,7 @@ var MENU = {
 		document.getElementById("registrazione").classList.add("visSch");
 		document.getElementById("loader").classList.add("overPopup");
 		let A = document.getElementById("divTrattamentoDati").getElementsByTagName("a")[0];
-		A.href=CONN.linkPrivacy+"?siglaLingua="+globals.siglaLingua;
+		A.href=convLangPath(CONN.linkPrivacy)+"?siglaLingua="+globals.siglaLingua;
 		A.target = H.target;
 		if(mouseDetect && !touchable)document.registrazioneForm.Nome.focus();
 		let paesi = elencaPaesi(),

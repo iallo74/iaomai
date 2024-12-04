@@ -239,7 +239,8 @@ var PURCHASES  = {
 				button += '<div class="promoEuro inDett"><b>'+txtMesi+'*</b><br>(*) '+TXT("NotePrimoMese1Euro").replace("[mappa]",product.title)+'</div>';
 			}
 			if(visRet)button += '<div class="ann" onClick="PURCHASES.abbsList();">'+TXT("Annulla")+'</div> ';
-			button += '<div class="btn" onClick="PURCHASES.purchaseLicense(\''+PURCHASES.productId+'\',\''+type+'\')">'+TXT("AbbonatiOra")+'</div>';
+			button += '<div class="btn" onClick="PURCHASES.purchaseLicense(\''+PURCHASES.productId+'\',\''+type+'\')">'+TXT("AbbonatiOra")+'</div>'+
+					  '<div style="margin-top:10px;"><u style="font-size:12px;cursor:pointer;" onClick="PURCHASES.visCondizioni();">'+TXT("SiApplicanoCondizioni")+'</u></a>';
 		}else if(owned){
 			button = '<div>'+TXT("Abbonato")+'</div>';
 		}else if(loadingPurchase){
@@ -459,6 +460,10 @@ var PURCHASES  = {
 			PURCHASES.abbs_owned = json;
 		}
 	},
-	
+	visCondizioni: function(){ // apre il link delle condizioni d'uso
+		let url=convLangPath(CONN.linkCondizioni);
+		if(isCordova)window.open(url,'_system');
+		else window.open(url,'_blank');
+	},
 }
 

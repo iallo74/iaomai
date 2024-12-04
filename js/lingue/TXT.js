@@ -1101,6 +1101,14 @@ DB.TXT = {
             por: "ano",
             deu: "Jahr"
         },
+        SiApplicanoCondizioni: {
+            ita: "Si applicano termini e condizioni",
+            eng: "Terms and conditions apply",
+            esp: "Se aplican términos y condiciones",
+            fra: "Des termes et conditions s'appliquent",
+            por: "Termos e condições aplicáveis",
+            deu: "Es gelten die Geschäftsbedingungen"
+        },
         PrezzoInConvenzione: {
             ita: "Prezzo in convenzione",
             eng: "Price in agreement",
