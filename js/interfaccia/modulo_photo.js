@@ -1104,10 +1104,10 @@ var PH = {
 	chiudiArchives: function(){ // richiamato alla chiusura del popup degli archivi
 		PH.actionClick = '';
 		document.getElementById("listsArchives").innerHTML = '';
-		if(PH.oldGallery.length){
+		//if(PH.oldGallery.length){
 			PH.galleryProvvisoria = PH.oldGallery;
 			PH.oldGallery = [];
-		}
+		//}
 	},
 	selArchive: function( online ){ // seleziona l'archivio (locale o online) nel popup di scelta file
 		document.getElementById("contArchives").classList.toggle("online",online);
