@@ -149,6 +149,7 @@ var PAZIENTI = {
 				SCHEDA.classeAperta == 'scheda_paziente' ||
 				SCHEDA.classeAperta == 'scheda_Riepi' || 
 				SCHEDA.classeAperta == 'tab_punti') && !lasciaAperto)SCHEDA.scaricaScheda();
+			if(lasciaAperto)PAZIENTI.vis_paziente(true);
 				
 			PAZIENTI.idCL = n*1;
 			PAZIENTI.idPaziente = DB.pazienti.data[PAZIENTI.idCL].idPaziente;
@@ -1332,6 +1333,7 @@ var PAZIENTI = {
 									'startAnimate();' +
 									'nasLoader();' +
 									'SYNCRO.pulisciGallery();' +
+									'console.log(\''+btoa(postAction)+'\');' +
 									postAction );
 			});
 		});
