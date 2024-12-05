@@ -75,6 +75,7 @@ var MODULO_PUNTO = { // extend SET
 			if( SCHEDA.classeAperta == 'scheda_procedura' ){
 				if(SET.pMod > -1){
 					let puntoOr = SET.dettagliProvvisori[SET.pMod].DescrizioneDettaglio;
+					puntoOr = +puntoOr.split(".")[0]+"."+puntoOr.split(".")[1];
 					if(puntoOr == puntoNuovo)stesso = true;
 					else{
 						// cambia il punto
@@ -92,7 +93,7 @@ var MODULO_PUNTO = { // extend SET
 				if(SET.pMod > -1){
 					if(siglaMeridiano!='NK')pP = PAZIENTI.puntiProvvisori[SET.pMod];
 					else pP = PAZIENTI.namikoshiProvvisori[SET.pMod];
-					let puntoOr = pP.n+"."+pP.m;
+					let puntoOr = +pP.n+"."+pP.m;
 					if(puntoOr == puntoNuovo)stesso = true;
 					else{
 						// cambia il punto

@@ -1,6 +1,6 @@
 
 var MODULO_PUNTO = { // extend SET
-
+	
 	note: [],
 	
 	caricaPunto: function( siglaMeridiano, nPunto, ritorno ){ // apre la scheda di un punto
@@ -59,6 +59,7 @@ var MODULO_PUNTO = { // extend SET
 			if( SCHEDA.classeAperta == 'scheda_procedura' ){
 				if(SET.pMod > -1){
 					let puntoOr = SET.dettagliProvvisori[SET.pMod].DescrizioneDettaglio;
+					puntoOr = +puntoOr.split(".")[0]+"."+puntoOr.split(".")[1];
 					if( puntoOr == puntoNuovo)stesso = true;
 					else{
 						// cambia il punto
@@ -75,7 +76,7 @@ var MODULO_PUNTO = { // extend SET
 			if( SCHEDA.classeAperta == 'scheda_A' || SCHEDA.classeAperta == 'scheda_B' ){
 				if(SET.pMod > -1){
 					let pP = PAZIENTI.puntiProvvisori[SET.pMod],
-						puntoOr = pP.n+"."+pP.m;
+						puntoOr = +pP.n+"."+pP.m;
 					if(puntoOr == puntoNuovo)stesso = true;
 					else{
 						// cambia il punto
