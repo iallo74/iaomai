@@ -240,7 +240,7 @@ var PURCHASES  = {
 			}
 			if(visRet)button += '<div class="ann" onClick="PURCHASES.abbsList();">'+TXT("Annulla")+'</div> ';
 			button += '<div class="btn" onClick="PURCHASES.purchaseLicense(\''+PURCHASES.productId+'\',\''+type+'\')">'+TXT("AbbonatiOra")+'</div>'+
-					  '<div style="margin-top:10px;"><u style="font-size:12px;cursor:pointer;" onClick="PURCHASES.visCondizioni();">'+TXT("SiApplicanoCondizioni")+'</u></a>';
+					  '<div style="margin-top:15px;"><u style="font-size:12px;cursor:pointer;" onClick="PURCHASES.visCondizioni();">'+TXT("SiApplicanoCondizioni")+'</u><br><u style="font-size:12px;cursor:pointer;" onClick="PURCHASES.visLink(\'https://www.apple.com/legal/internet-services/itunes/dev/stdeula/\');">Terms of Use (EULA)</u> &nbsp; - &nbsp; <u style="font-size:12px;cursor:pointer;" onClick="PURCHASES.visLink(\'https://www.iaomai.app/[lang]/info/privacy.php\');">Privacy Polocy</u></div>';
 		}else if(owned){
 			button = '<div>'+TXT("Abbonato")+'</div>';
 		}else if(loadingPurchase){
@@ -248,7 +248,7 @@ var PURCHASES  = {
 		}
 		let el = document.getElementById('contPurchases');
 		el.classList.remove("ini");
-		el.innerHTML = info + '<div class="btn_cont">' + button + '</div>';
+		el.innerHTML = info + '<div class="btn_cont">' + convLangPath(button) + '</div>';
 	},
 	getProdById: function( idStore ){ // ottiene un prodotto tramite ID
 		let el = null;
@@ -462,6 +462,10 @@ var PURCHASES  = {
 	},
 	visCondizioni: function(){ // apre il link delle condizioni d'uso
 		let url=convLangPath(CONN.linkCondizioni);
+		if(isCordova)window.open(url,'_system');
+		else window.open(url,'_blank');
+	},
+	visLink: function( url ){ // apre il link delle condizioni d'uso
 		if(isCordova)window.open(url,'_system');
 		else window.open(url,'_blank');
 	},
