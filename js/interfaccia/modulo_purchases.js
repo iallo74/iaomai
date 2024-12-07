@@ -196,7 +196,8 @@ var PURCHASES  = {
 			priceFT = '',
 			cycles = 0,
 			title = '',
-			typeAbb = TXT("sub_"+type);
+			typeAbb = TXT("sub_"+type),
+			typePeriod = TXT("add_"+type);
 		//if(!price)TXT("AccediAlloStore");
 		if(window.store){
 			//price = product.offers[0].pricingPhases[0].price;
@@ -229,7 +230,7 @@ var PURCHASES  = {
 		let info = '<div id="copertinaPurchase" style="background-image:url(img/sf_copertine.png),url(sets/'+folder+'/img/copertina.png);"></div>' +
 					'<b id="titLicenze"><img src="sets/'+folder+'/img/logoMenu.png"> '+title+'</b><br/>' +
 					typeAbb+'<br/>' +
-						price+'<br/>';
+						price+' / '+typePeriod+'<br/>';
 		let button = '';
 		if(canPurchase){
 			button = '';
@@ -239,8 +240,9 @@ var PURCHASES  = {
 				button += '<div class="promoEuro inDett"><b>'+txtMesi+'*</b><br>(*) '+TXT("NotePrimoMese1Euro").replace("[mappa]",product.title)+'</div>';
 			}
 			if(visRet)button += '<div class="ann" onClick="PURCHASES.abbsList();">'+TXT("Annulla")+'</div> ';
-			button += '<div class="btn" onClick="PURCHASES.purchaseLicense(\''+PURCHASES.productId+'\',\''+type+'\')">'+TXT("AbbonatiOra")+'</div>'+
-					  '<div style="margin-top:15px;"><u style="font-size:12px;cursor:pointer;" onClick="PURCHASES.visCondizioni();">'+TXT("SiApplicanoCondizioni")+'</u><br><u style="font-size:12px;cursor:pointer;" onClick="PURCHASES.visLink(\'https://www.apple.com/legal/internet-services/itunes/dev/stdeula/\');">Terms of Use (EULA)</u> &nbsp; - &nbsp; <u style="font-size:12px;cursor:pointer;" onClick="PURCHASES.visLink(\'https://www.iaomai.app/[lang]/info/privacy.php\');">Privacy Polocy</u></div>';
+			button += '<div class="btn" onClick="PURCHASES.purchaseLicense(\''+PURCHASES.productId+'\',\''+type+'\')">'+TXT("AbbonatiOra")+'</div>' +
+					  PURCHASES.getConditions();
+
 		}else if(owned){
 			button = '<div>'+TXT("Abbonato")+'</div>';
 		}else if(loadingPurchase){
@@ -337,7 +339,7 @@ var PURCHASES  = {
 				'</div>';
 		let el = document.getElementById('contPurchases');
 		el.classList.remove("ini");
-		el.innerHTML = html;
+		el.innerHTML = html + PURCHASES.getConditions();
 	},
 	abbsList: function(){ // elenca i prodotti
 		PURCHASES.list_view = true;
@@ -386,7 +388,7 @@ var PURCHASES  = {
 			}
 		}
 		html += html_ok + html_no +
-				'</div>';
+				'</div>' + PURCHASES.getConditions();
 		let el = document.getElementById('contPurchases');
 		el.classList.remove("ini");
 		el.innerHTML = html;
@@ -469,5 +471,13 @@ var PURCHASES  = {
 		if(isCordova)window.open(url,'_system');
 		else window.open(url,'_blank');
 	},
+	getConditions: function(){
+		let html = '<div style="margin-top:15px;"><u style="font-size:12px;cursor:pointer;" onClick="PURCHASES.visCondizioni();">'+TXT("SiApplicanoCondizioni")+'</u>';
+		if(isCordova){
+			if(!android)html += '<br><u style="font-size:12px;cursor:pointer;" onClick="PURCHASES.visLink(\'https://www.apple.com/legal/internet-services/itunes/dev/stdeula/\');">Terms of Use (EULA)</u>';
+		}
+		html += ' &nbsp; - &nbsp; <u style="font-size:12px;cursor:pointer;" onClick="PURCHASES.visLink(\''+convLangPath('https://www.iaomai.app/[lang]/info/privacy.php')+'\');">Privacy Policy</u></div>';
+		return html;
+	}
 }
 
