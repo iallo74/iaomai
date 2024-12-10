@@ -818,6 +818,9 @@ body:not(.smart) #pulsanti_modello{
 	border-top-left-radius: 11px !important;
 	border-top-right-radius: 11px !important;
 }
+.smart #p1{
+	text-align:right;
+}
 #btnsModello:not(.vis){
 	display:none;
 }
@@ -1068,6 +1071,20 @@ body:not(.smart) #pulsanti_modello{
 	background-image:url(../img/pG_orecchio_sel.png), url(../img/frSelModello.png) !important;
 	background-position:center center, center bottom !important;
 }
+.smart.body_auricologia #p_donna,
+.smart.body_auricologia #p_uomo,
+.smart.body_auricologia #p_piedi,
+.smart.body_reflessologia_plantare #p_donna,
+.smart.body_reflessologia_plantare #p_uomo,
+.smart.body_reflessologia_plantare #p_orecchio,
+.smart.body_meridiani_cinesi #p_piedi,
+.smart.body_meridiani_cinesi #p_orecchio,
+.smart.body_meridiani_shiatsu #p_piedi,
+.smart.body_meridiani_shiatsu #p_orecchio,
+.smart.body_trigger_points #p_piedi,
+.smart.body_trigger_points #p_orecchio{
+	display:none;
+}
 #labelModello{
 	height: 40px;
     line-height: 40px;
@@ -1080,16 +1097,19 @@ body:not(.smart) #labelModello{
     font-size: var(--font-18-7);
 }
 .smart #labelModello{
-	color: #FFF !important;
+	/* color: #FFF !important;
     font-weight: bold;
     background-repeat: no-repeat;
     background-position: left top;
     background-image: url(../sets/anatomy_full/img/logoMenu.png);
-
-	
 	color: #000 !important;
 	margin-bottom: -45px;
-	background-image:none !important;
+	background-image:none !important; */
+	
+	color: #FFF !important;
+    margin-bottom: -45px;
+    text-align: left;
+    padding-left: 21px !important;
 }
 /* .smart #labelModello i{
 	display:none;
