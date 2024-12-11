@@ -96,7 +96,7 @@ var LINGUE = {
 					'</div>' +
 					'<i class="tdLabel">'+TXT("contenuti")+'</i>';
 		for(let s in sets){
-			if(__(sets[s].lingueCont,[]).length){
+			if(__(sets[s].lingueCont,[]).length && !sets[s].locked){
 				html += '<div><div>'+sets[s].nome+'</div>';
 				for(let l in LINGUE.NLS){
 					html += '<div';
