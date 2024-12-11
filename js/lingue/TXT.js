@@ -1512,7 +1512,7 @@ DB.TXT = {
             deu: "Tab-Hooking"
         },
         StampaStage: {
-            ita: "Stampa il manichino",
+            ita: "Stampa il modello 3D",
             eng: "Print 3D model",
             esp: "Imprimir modelo 3D",
             fra: "Imprimer le modèle 3D",
