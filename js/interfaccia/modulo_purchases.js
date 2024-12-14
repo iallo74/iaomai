@@ -237,7 +237,7 @@ var PURCHASES  = {
 			if(/* type=='m' &&  */PURCHASES.abbs_owned.indexOf(folder)==-1 && priceFT){
 				let txtMesi = TXT("PrimoMese1Euro").replace("[price]",priceFT);
 				if(cycles>1)txtMesi = TXT("PrimiXMesiXEuro").replace("[price]",priceFT).replace("[n]",cycles);
-				button += '<div class="promoEuro inDett"><b>'+txtMesi+'*</b><br>(*) '+TXT("NotePrimoMese1Euro").replace("[mappa]",PURCHASES.getProdById(product.id).title)+'</div>';
+				button += '<div class="promoEuro inDett"><b>'+txtMesi+'*</b><br>(*) '+TXT("NotePrimoMese1Euro").replace("[mappa]",title)+'</div>';
 			}
 			if(visRet)button += '<div class="ann" onClick="PURCHASES.abbsList();">'+TXT("Annulla")+'</div> ';
 			button += '<div class="btn" onClick="PURCHASES.purchaseLicense(\''+PURCHASES.productId+'\',\''+type+'\')">'+TXT("AbbonatiOra")+'</div>' +
