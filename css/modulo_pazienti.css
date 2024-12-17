@@ -1848,8 +1848,9 @@ body:not(.smart) #tt_mezzival2{
 .smart.android #tt_mezzival,
 .smart.android #tt_mezzival2,
 .smart.android #tt_mezzival3{
-	max-width: calc(100% - 12px);
-    white-space: normal;
+	/* max-width: calc(100% - 12px);
+    white-space: normal; */
+	overflow-x: auto;
 }
 .smart.android #tt_mezzival{
     overflow-x: auto;
