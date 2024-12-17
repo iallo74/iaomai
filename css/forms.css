@@ -2112,6 +2112,11 @@ body:not(.touch) #puntiTrigger .dettPunto:hover{
     position: absolute;
 	box-shadow: 0px 0px 10px #000;
 }
+.smart #gruppoPunti_cont{
+	position:fixed;
+	bottom:86px !important;
+	top:auto !important;
+}
 .gr_0,
 .gr_1,
 .gr_2{
