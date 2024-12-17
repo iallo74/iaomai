@@ -371,7 +371,8 @@ var PAZIENTI_SETS_GRUPPI = { // extend PAZIENTI
 			}
 			document.getElementById("gruppoPunti_cont").style.left = l+"px";
 			document.getElementById("gruppoPunti_cont").style.width = w+"px";
-			document.getElementById("gruppoPunti_cont").style.top = '118px';
+			if(smartMenu)document.getElementById("gruppoPunti_cont").style.bottom = '86px';
+			else document.getElementById("gruppoPunti_cont").style.top = '118px';
 			document.getElementById("gruppoPunti_cont").classList.add("visSch");
 			PAZIENTI.popolaGruppoPunti();
 		}else{
