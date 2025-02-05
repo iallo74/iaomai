@@ -432,7 +432,7 @@ var LOGIN = {
 			document.getElementById("USRlabel").getElementsByTagName("span")[0].innerHTML=DB.login.data.UsernameU;
 		}else{
 			document.getElementById("USR").type='text';
-			document.getElementById("btnRegistrazione").style.display='block';
+			if(isCordova)document.getElementById("btnRegistrazione").style.display='block';
 			document.getElementById("USRlabel").style.display="none";
 			document.getElementById("USRlabel").getElementsByTagName("span")[0].innerHTML="";
 		}
@@ -666,7 +666,7 @@ var LOGIN = {
 			if(globals.set.cartella){
 				if(smartMenu)scaricaSet();
 			}
-			document.getElementById("btnRegistrazione").style.display="block";	
+			if(isCordova)document.getElementById("btnRegistrazione").style.display="block";	
 		}});
 	},
 	verInternationals: function(){
@@ -1204,6 +1204,121 @@ var LOGIN = {
 	deleteAvatar: function( n ){ // cancella l'avatar o il logo
 		document.getElementById(n).getElementsByTagName('div')[0].style.backgroundImage="";
 		SCHEDA.formModificato = true;
+	},
+
+	// RECUPERO DATI
+	verUsr: function(){
+		if(CONN.retNoConn()){
+			if(document.recuperoForm.recuperoUSR.value.trim()){
+
+				let JSNPOST={	"USR": document.recuperoForm.recuperoUSR.value };
+								
+				document.getElementById("recupero").classList.add("popup_back");
+				CONN.caricaUrl(	"utente_verusr.php",
+								"b64=1&JSNPOST="+window.btoa(encodeURIComponent(JSON.stringify(JSNPOST))),
+								"LOGIN.insPwd");	
+			}
+		}
+	},
+	insPwd: function( txt ){
+		document.getElementById("recupero").classList.remove("popup_back");
+		if(typeof(txt)=='undefined' || txt.substr(0,3)=='404'){
+			// si è verificato un errore generico
+			switch( txt ){
+				case '404':
+					ALERT(TXT("ErroreUsernameErrata"));
+					break;
+			}
+		}else{
+			document.getElementById("recupero").classList.add("inspwd");
+		}
+	},
+	recupera: function(){ // registra l'utente su server
+		if(CONN.retNoConn()){
+			if(document.recuperoForm.recuperoPWD.value!=document.recuperoForm.recuperoPWD2.value){
+				ALERT(TXT("erroreRipetiPassword"));
+				return;
+			}
+			if(verifica_form(document.recuperoForm)){
+
+				let JSNPOST={	"USR": document.recuperoForm.recuperoUSR.value,
+								"PWD": document.recuperoForm.recuperoPWD.value };
+								
+				document.getElementById("recupero").classList.add("popup_back");
+				CONN.caricaUrl(	"utente_recupero.php",
+								"b64=1&JSNPOST="+window.btoa(encodeURIComponent(JSON.stringify(JSNPOST))),
+								"LOGIN.retRecupero");	
+			}
+		}
+	},
+	retRecupero: function( txt ){ // risposta dalla registrazione utente sul server (registrazione)
+		document.getElementById("recupero").classList.remove("popup_back");
+		if(typeof(txt)=='undefined' || txt.substr(0,3)=='404'){
+			// si è verificato un errore generico
+			switch( txt ){
+				case '404-1':
+					ALERT(TXT("ErroreUsernameErrata"));
+					break;
+				case '404-2':
+					ALERT(TXT("ErroreTroppiTentativi"));
+					document.recuperoForm.recuperoPWD.value = '';
+					document.recuperoForm.recuperoPWD2.value = '';
+					break;
+			}
+		}else{
+			document.getElementById("recupero").classList.add("confcode");
+			document.confcodeForm.Confcode.value = '';
+			if(mouseDetect && !touchable){
+				document.confcodeForm.Confcode.focus();
+			}
+		}
+	},
+	confcode: function(){ // registra l'utente su server
+		if(CONN.retNoConn()){
+			if(verifica_form(document.confcodeForm)){
+
+				let JSNPOST={	"USR": document.recuperoForm.recuperoUSR.value,
+								"codice": document.confcodeForm.Confcode.value };
+								
+				document.getElementById("recupero").classList.add("popup_back");
+				CONN.caricaUrl(	"utente_confcode.php",
+								"b64=1&JSNPOST="+window.btoa(encodeURIComponent(JSON.stringify(JSNPOST))),
+								"LOGIN.retConfcode");	
+			}
+		}
+	},
+	retConfcode: function( txt ){ // risposta dalla registrazione utente sul server (registrazione)
+		document.getElementById("recupero").classList.remove("popup_back");
+		if(typeof(txt)=='undefined' || txt.substr(0,3)=='404'){
+			// si è verificato un errore generico
+			switch( txt ){
+				case '404':
+					ALERT(TXT("ErroreGenerico"));
+					break;
+				case '404-1':
+					ALERT(TXT("ErroreConfcode"));
+					break;
+				case '404-2':
+					ALERT(TXT("ErroreTimeoutCode"));
+					break;
+				case '404-3':
+					ALERT(TXT("ErroreTroppiTentativi"));
+					document.getElementById("recupero").classList.remove("confcode");
+					document.recuperoForm.recuperoPWD.value = '';
+					document.recuperoForm.recuperoPWD2.value = '';
+					break;
+			}
+			document.confcodeForm.Confcode.value = '';
+		}else{
+			document.getElementById("recupero").classList.remove("confcode");
+			document.getElementById("recupero").classList.remove("popup_back");
+			MENU.chiudiRecupero();
+			ALERT(TXT("CodiceConfermato"));
+			document.loginFrom.USR.value = atob(txt);
+			document.loginFrom.PWD.value = document.recuperoForm.recuperoPWD.value;
+			document.getElementById("stayConnected").checked = true;
+			document.getElementById("loginBut").click();
+		}
 	},
 	
 	

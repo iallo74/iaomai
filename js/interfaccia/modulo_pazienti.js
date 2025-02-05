@@ -1237,7 +1237,7 @@ var PAZIENTI = {
 		AnnoNascita = document.formMod.annoDataNascita.value;
 		DataNascita = '0000-00-00';
 		if(GiornoNascita && MeseNascita && AnnoNascita){
-			DataNascita=AnnoNascita+"-"+MeseNascita+"-"+GiornoNascita;
+			DataNascita=AnnoNascita+"-"+padTwoDigits(MeseNascita)+"-"+padTwoDigits(GiornoNascita);
 		}
 		
 		

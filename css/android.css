@@ -27,7 +27,9 @@
 	font-size: var(--font-17-6) !important;
 }
 .android .popup#login input[type='text'],
-.android .popup#login input[type='password']{
+.android .popup#login input[type='password'],
+.android .popup#recupero input[type='text'],
+.android .popup#recupero input[type='password']{
 	height:45px !important;
 	line-height:45px !important;
 }

@@ -1,6 +1,6 @@
 var PAZIENTI_FILTRI = { // extend PAZIENTI
-	maxInvii: 100,
-	maxInviiMese: 1000,
+	maxInvii: 400,
+	maxInviiMese: 4000,
 	coda: 0,
 	inviiMensili: 0,
 	parametriFiltri:[],

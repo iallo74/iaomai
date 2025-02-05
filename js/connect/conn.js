@@ -61,6 +61,20 @@ var CONN = {
 			return false;
 		}
 	},
+
+	getRealConn: async function(){
+		if(!navigator.onLine)return false; // Se già risulta offline, evitiamo la richiesta
+		try{
+            const response = await fetch(CONN.APIfolder+"checker_di_connessione.php", {
+                method: "POST"
+            });
+            return response.ok || response.status === 200;
+        }catch(error){
+            return false; // Se fallisce la richiesta, non c'è connessione reale
+        }
+	},
+
+
 	getConn: function(){ // verifica la connessione a internet
 		return navigator.onLine;
 	},

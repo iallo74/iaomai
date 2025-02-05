@@ -100,6 +100,7 @@ body:not(.smart) #login_benvenuto{
 
 #btnRegistrazione{
 	text-align:center;
+	display:none;
 }
 
 
@@ -241,7 +242,8 @@ body:not(.smart) #login_benvenuto{
 #USRlabel img:hover{
 	opacity:0.8;
 } */
-#btnRecupero{
+#btnRecupero,
+#richiediConfcode{
 	color:#333 !important;
 	line-height: 30px;
 	cursor:pointer;
@@ -249,22 +251,23 @@ body:not(.smart) #login_benvenuto{
 	font-size: var(--font-13-2) !important;
 	box-sizing:border-box;
 }
-#btnRecupero b{
-	color:#287fda;
-}
-#btnRecupero b{
+#btnRecupero b,
+#richiediConfcode b{
 	font-size: var(--font-16-93) !important;
 	color:#287fda;
 	display: inline-block;
 	vertical-align: middle;
 	margin-top: -3px;
 }
-.smart.android #btnRecupero{
+.smart.android #btnRecupero,
+.smart.android #richiediConfcode{
 	font-size: var(--font-15-39) !important;
 }
-.smart.android #btnRecupero b{
+.smart.android #btnRecupero b,
+.smart.android #richiediConfcode b{
 	font-size: var(--font-19-8) !important;
 }
-.app_version.bug_font.smart.android #btnRecupero{
+.app_version.bug_font.smart.android #btnRecupero,
+.app_version.bug_font.smart.android #richiediConfcode{
 	font-size: var(--font-13-94) !important;
 }

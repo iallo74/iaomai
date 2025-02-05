@@ -427,8 +427,8 @@
                 <div id="login_benvenuto">{{TXT_BenvenutoIaomai}}</div>
             	<div id="contLogin" class="popup_cont">
                 	<form name="loginFrom" id="loginFrom" method="post" onSubmit="return LOGIN.getLogin();"><div><input type="text" name="USR" id="USR"  placeholder="Username" class="okPlaceHolder" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" onFocus="LOGIN.focRic=true;" onBlur="LOGIN.focRic=false;"><div id="USRlabel"><span></span><div id="usrChange" onClick="LOGIN.annullaUtente();">{{TXT_Disconnetti}}</div></div></div><div><input type="password" name="PWD" id="PWD" placeholder="Password" class="okPlaceHolder" autocomplete="off"><span id="visPwd" onClick="LOGIN.swVisPwd();"></span></div><div id="loginStayConnected"><label for="stayConnected"><input type="checkbox" id="stayConnected" name="stayConnected">{{TXT_StaiConnesso}}</label></div><div id="loginButCont"><input type="submit" name="loginBut" id="loginBut" value="{{TXT_Accedi}}" /><p><!-- da popolare //--></p></div></form>
-    <div id="btnRecupero" onClick="LOGIN.recuperaPwd();">{{TXT_PWDdimenticata}} <b>&gt;</b></div>
-    <div id="btnRegistrazione"><span></span><div id="btn_registrazione" onClick="MENU.visRegistrazione();">{{TXT_Registrati}}</div></div>
+    <div id="btnRecupero" onClick="MENU.visRecupera();">{{TXT_PWDdimenticata}} <b>&gt;</b></div>
+    <div id="btnRegistrazione"><span></span><div id="btn_registrazione" onClick="MENU.visRegistrazione();">{{TXT_ProvalaGratuitamente}}</div></div>
     <div id="lingueLogin">
         <select id="lingueLoginSelect" onChange="cambiaLingua(this.value);"> </select>
     </div>
@@ -442,6 +442,89 @@
                 	<div id="map_shiatsu" data-value="meridiani_shiatsu" onClick="LOGIN.selMap(this);"><span>ShiatsuMap</span></div>
                 	<div id="map_auriculo" data-value="auricologia" onClick="LOGIN.selMap(this);"><span>AuriculoMap</span></div>
                 	<div id="map_reflexology" data-value="reflessologia_plantare" onClick="LOGIN.selMap(this);"><span>ReflexologyMap</span></div>
+                </div>
+            </div>
+            <div id="recupero" class="popup"> <!-- RECUPERO -->
+            	<div id="labelRecupero" class="popup_label">{{TXT_PWDdimenticata}}<div class="popup_chiudi" onClick="MENU.chiudiRecupero();"></div></div>
+            	<div id="contRecupero" class="popup_cont">
+                	<form name="recuperoForm" id="recuperoForm" method="post" onSubmit="return false;">
+                    	<div id="testoRecupero">
+                        	{{TXT_TestoRecupero}}
+                        </div>
+                        <div id="box_recupero_usr">
+                            <div class="titrec">{{TXT_InserisciUSRrecupero}}</div>
+                            <input type="text"
+                                name="recuperoUSR"
+                                id="@|{{TXT_Username_Email}}|5|0"
+                                placeholder="{{TXT_Username_Email}}"
+                                autocomplete="off"
+                                autocapitalize="off"
+                                autocorrect="off"
+                                spellcheck="false">
+                            <div>
+                                <div class="butrec" onClick="LOGIN.verUsr();">{{TXT_Prosegui}}</div>
+                            </div>
+                        </div>
+                        <div id="box_recupero_pwd">
+                            <div class="titrec">{{TXT_InserisciPWDrecupero}}</div>
+                            <input type="password"
+                                name="recuperoPWD"
+                                id="@|Password|5|0"
+                                placeholder="Password"
+                                autocomplete="off"
+                                autocapitalize="off"
+                                autocorrect="off"
+                                spellcheck="false">
+                            <input type="password"
+                                name="recuperoPWD2"
+                                id="@|{{TXT_RipetiPassword}}|5|0"
+                                placeholder="{{TXT_RipetiPassword}}"
+                                autocomplete="off"
+                                autocapitalize="off"
+                                autocorrect="off"
+                                spellcheck="false">
+                        </div>
+                        <div id="recuperoButCont">
+                        	<input type="hidden"
+                            	   name="app"
+                            	   id="app"
+                            	   value="">
+                        	<input type="submit"
+                            	   name="recuperoBut"
+                            	   id="recuperoBut"
+                            	   value="{{TXT_InviaDati}}"
+                            	   onClick="LOGIN.recupera();"/>
+                        </div>
+                    </form>
+                	<form name="confcodeForm" id="confcodeForm" method="post" onSubmit="return false;">
+                    	<div id="testoConfcode">
+                        	{{TXT_TestoConfcode}}
+                        </div>
+                        <div>
+                            <input type="text"
+                                name="Confcode"
+                                id="@|{{TXT_CodiceConferma}}|6|6"
+                                placeholder="{{TXT_CodiceConferma}}"
+                                autocomplete="off"
+                                autocapitalize="off"
+                                autocorrect="off"
+                                spellcheck="false">
+                        </div>
+                        <div id="confcodeButCont">
+                        	<input type="hidden"
+                            	   name="app"
+                            	   id="app"
+                            	   value="">
+                        	<input type="submit"
+                            	   name="confcodeBut"
+                            	   id="confcodeBut"
+                            	   value="{{TXT_Conferma}}"
+                            	   onClick="LOGIN.confcode();"/>
+                        </div>
+                    	<div id="richiediConfcode">
+                        	<div id="btnRichiediConcode" onClick="LOGIN.recupera();">{{TXT_RichiediConfcode}} <b>&gt;</b></div>
+                        </div>
+                    </form>
                 </div>
             </div>
             <div id="registrazione" class="popup"> <!-- REGISTRAZIONE -->

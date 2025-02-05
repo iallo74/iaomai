@@ -258,3 +258,6 @@ function indexOfSimilar(base, search) {
     // Utilizza indexOf con le stringhe normalizzate
     return normalizeBase.indexOf(normalizeSearch);
 }
+function padTwoDigits(num) {
+    return num.toString().padStart(2, '0');
+}

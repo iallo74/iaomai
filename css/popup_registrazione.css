@@ -2,13 +2,25 @@
 /* CSS Document */
 
 /* LOGIN */
-#registrazione{
-	height:470px;
-	margin-top:-235px;
+#registrazione,
+#recupero{
 	background-color: var(--menu-fondino);
 	z-index: 1000002;
 }
-.smart #registrazione{
+#registrazione{
+	height:470px;
+	margin-top:-235px;
+}
+#recupero{
+	height:330px;
+	/* margin-top:-160px; */
+	top: 165px;
+}
+/* .smart #recupero{
+	top:0px !important;
+} */
+.smart #registrazione,
+.smart #recupero{
 	top:0px;
 	left:0px;
 	height: 100%;
@@ -16,28 +28,40 @@
 	border-radius:0px;
 	margin-left:0px;
 }
-.smart #registrazione .popup_chiudi{
+.smart #registrazione .popup_chiudi,
+.smart #recupero .popup_chiudi{
     position: fixed;
     top: 0px;
     right: 0px;
 }
-#contRegistrazione{
+#contRegistrazione,
+#contRecupero{
 	padding-left:30px;
 	padding-right:30px;
 }
 #contRegistrazione,
-#contRegistrazione p{
+#contRegistrazione p,
+#contRecupero,
+#contRecupero p{
 	font-size: var(--font-13-2);
 	color:rgba(0,0,0,0.5);
 }
-#contRegistrazione{
+#contRegistrazione,
+#contRecupero{
 	overflow-y: auto;
+}
+#contRegistrazione{
 	height: 430px;
 }
-.smart #contRegistrazione{
+#contRecupero{
+	height: 300px;
+}
+.smart #contRegistrazione,
+.smart #contRecupero{
 	height: calc(100% - 40px);
 }
-#labelRegistrazione{
+#labelRegistrazione,
+#labelRecupero{
 	font-size: var(--font-19-8);
 	color:#000;
 }
@@ -68,26 +92,46 @@
 	cursor:pointer;
 }
 
-#testoRegistrazione{
+#testoRegistrazione,
+#testoRecupero,
+#testoConfcode{
 	padding-bottom:20px;
 	text-align:justify;
 }
-.smart #testoRegistrazione{
+.smart #testoRegistrazione,
+.smart #testoRecupero,
+.smart #testoConfcode{
 	background-size: auto 75px;
     background-image: url(../img/logo_iaomai_mini.png);
     background-repeat: no-repeat;
     background-position: center 30px;
     padding-top: 141px;
 }
-
-
+.smart.android #testoRegistrazione,
+.smart.android #testoRecupero,
+.smart.android #testoConfcode{
+	font-size: var(--font-16-93) !important;
+}
+.smart.android #Confcode{
+	height:45px !important;
+	line-height:45px !important;
+}
 #URS{
 	margin-top:10px;
 }
-#registrazioneForm input::placeholder{
+#recupero:not(.confcode) #confcodeForm,
+#recupero.confcode #recuperoForm{
+	display:none;
+}
+#registrazioneForm input::placeholder,
+#recuperoForm input::placeholder,
+#confcodeForm input::placeholder{
 	opacity:1 !important;
 }
-#registrazioneForm input[type='submit']{
+#registrazioneForm input[type='submit'],
+#recuperoForm input[type='submit'],
+#confcodeForm input[type='submit'],
+.butrec{
 	width:auto;
 	clear:both;
 	border-radius:3px;
@@ -107,17 +151,37 @@
     box-shadow: 0px 0px 3px rgb(0 0 0 / 50%);
 	-webkit-appearance: none;
 }
-.mezza{
-	width:calc(50% - 2px) !important;
+.butrec{
+	display:inline-block;
 }
-.smart.android #registrazioneForm input[type='submit']{
-	font-size: var(--font-16-93);
+body:not(.smart) .butrec{
+	float:right;
 }
-.app_version.bug_font.smart.android #registrazioneForm input[type='submit']{
+.smart.android #recuperoForm input[type='submit'],
+.smart.android #confcodeForm input[type='submit'],
+.smart.android .butrec{
 	font-size: var(--font-15-39) !important;
 	line-height:36.64px !important;
 }
-#registrazioneForm input[type='submit']:hover{
+.mezza{
+	width:calc(50% - 2px) !important;
+}
+.smart.android #registrazioneForm input[type='submit'],
+.smart.android #recuperoForm input[type='submit'],
+.smart.android #confcodeForm input[type='submit'],
+.smart.android .butrec:hover{
+	font-size: var(--font-16-93);
+}
+.app_version.bug_font.smart.android #registrazioneForm input[type='submit'],
+.app_version.bug_font.smart.android #recuperoForm input[type='submit'],
+.app_version.bug_font.smart.android #confcodeForm input[type='submit']{
+	font-size: var(--font-15-39) !important;
+	line-height:36.64px !important;
+}
+#registrazioneForm input[type='submit']:hover,
+#recuperoForm input[type='submit']:hover,
+#confcodeForm input[type='submit']:hover,
+.butrec:hover{
 	background: #062865;
     background: -moz-linear-gradient(top, #144092 0%, #062865 100%);
     background: -webkit-linear-gradient(top, #144092 0%,#062865 100%);
@@ -132,6 +196,25 @@
 	height:36px;
 	margin-top:5px;
 }
-#registrazioneButCont{
+#registrazioneButCont,
+#recuperoButCont,
+#confcodeButCont{
 	height: 70px;
+}
+
+#richiediConfcode{
+	margin-top:20px;
+}
+
+#box_recupero_usr div.titrec,
+#box_recupero_pwd div.titrec{
+	font-weight:bold;
+	text-align:left;
+	padding-top:10px;
+	padding-bottom:5px;
+}
+#recupero.inspwd #box_recupero_usr,
+#recupero:not(.inspwd) #box_recupero_pwd,
+#recupero:not(.inspwd) #recuperoButCont{
+	display:none;
 }

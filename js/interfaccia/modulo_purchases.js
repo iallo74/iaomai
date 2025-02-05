@@ -123,7 +123,7 @@ var PURCHASES  = {
 		PURCHASES.transaction = transaction;
 		return transaction.verify();
 	},
-	finishPurchase: finishPurchase = function(receipt){
+	finishPurchase: function(receipt){
 		let p = PURCHASES.transaction;
 		try {
 			receipt.finish();
@@ -157,7 +157,7 @@ var PURCHASES  = {
 			if(PURCHASES.convenzione)idP = PURCHASES.convenzione.idPartner;
 			
 			CONN.caricaUrl(	"purchases_activate_from_stores.php",
-							"idPc="+idPc+"&folder="+pr.folder+"&price="+price+"&priceFT="+priceFT+"&idP="+idP+"&siglaLingua="+globals.siglaLingua+"&transactionId="+encodeURIComponent(btoa(transactionId))+"&purchaseToken="+encodeURIComponent(btoa(purchaseToken))+"&productId="+p.products[0].id,
+							"idPc="+idPc+"&folder="+pr.folder+"&price="+price+"&priceFT="+priceFT+"&idP="+idP+"&siglaLingua="+globals.siglaLingua+"&transactionId="+encodeURIComponent(btoa(transactionId))+"&purchaseToken="+encodeURIComponent(btoa(purchaseToken))+"&productId="+p.products[0].id+"&pl="+((android)?'google':'apple'),
 							"PURCHASES.ret_activate");
 		}
 	},

@@ -1028,6 +1028,7 @@ body:not(.smart) #meridianiSmart_cont div:not(.elencoSel):hover{
 }
 .sceltaMeridianiElenco{
 	display: inline-block;
+	max-width: 190px;
     height: 30px;
     line-height: 30px;
     margin-right: 13px;

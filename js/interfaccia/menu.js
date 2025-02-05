@@ -738,6 +738,24 @@ var MENU = {
 		}
 		document.getElementById("paeseRegistrazione").innerHTML = html;
 	},
+	chiudiRecupero: function(){
+		document.getElementById("recupero").classList.remove("visSch");
+		document.getElementById("loader").classList.remove("overPopup");
+	},
+	visRecupera: function(){
+		document.getElementById("recupero").classList.remove("confcode");
+		document.getElementById("recupero").classList.add("visSch");
+		document.getElementById("recupero").classList.remove("inspwd");
+		document.getElementById("loader").classList.add("overPopup");
+		document.recuperoForm.recuperoUSR.value = document.loginFrom.USR.value;
+		document.recuperoForm.recuperoPWD.value = '';
+		document.recuperoForm.recuperoPWD2.value = '';
+		document.confcodeForm.Confcode.value = '';
+		if(mouseDetect && !touchable){
+			if(document.recuperoForm.recuperoUSR.value.trim())document.recuperoForm.recuperoPWD.focus();
+			else document.recuperoForm.recuperoUSR.focus();
+		}
+	},
 	visImpset: function( archivi=false ){
 		MENU.chiudiMenu("impset");
 		visLoader("","blured");

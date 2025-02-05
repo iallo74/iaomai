@@ -232,6 +232,14 @@ DB.TXT = {
             por: "Enviar",
             deu: "Senden"
         },
+        InviaDati: {
+            ita: "Invia i dati",
+            eng: "Send the data",
+            esp: "Enviar los datos",
+            fra: "Envoyer les données",
+            por: "Enviar os dados",
+            deu: "Daten senden"
+        },
         Conferma: {
             ita: "Conferma",
             eng: "Confirm",
@@ -5483,6 +5491,14 @@ DB.TXT = {
             por: "Cadastre-se gratuitamente",
             deu: "Kostenlos registrieren"
         },
+        ProvalaGratuitamente: {
+            ita: "Provala gratuitamente",
+            eng: "Try it for free",
+            esp: "Pruébala gratis", 
+            fra: "Essayez-la gratuitement",
+            por: "Experimente gratuitamente",
+            deu: "Probieren Sie es kostenlos aus"
+        },
         TrattamentoDati: {
             ita: "Acconsento al trattamento dei dati",
             eng: "I agree to data treatment",
@@ -5526,13 +5542,117 @@ DB.TXT = {
             deu: "ACHTUNG! Die Felder Passwort und Passwort wiederholen müssen übereinstimmen!"
         },
         TestoRegistrazioneEspanso: {
-            ita: "Con la registrazione a iáomai avrai {10 giorni di prova gratuita di tutte le app} e allo scadere potrai usufruire di tutte le funzionalità di base dell'app:\n\n[#] Fino a 15 pazienti\n[#] Backup dei dati\n[#] Accesso multipiattaforma\n[#] Funzionalità della community",
-            eng: "With the registration to iáomai you will have {10 days free trial of all apps} and upon expiry you will be able to use all the basic functions of the app:\n\n[#] Up to 15 patients\n[#] Data backup\n[#] Cross-platform access\n[#] Community functionality",
-            esp: "Al registrarte en iáomai, obtendrás {10 días de prueba gratuita de todas las aplicaciones} y al vencimiento podrás utilizar todas las funciones básicas de la aplicación:\n\n[#] Hasta 15 pacientes\n[#] Respaldo de datos\n[#] Acceso multiplataforma\n[#] Funciones de la comunidad",
-            fra: "Avec l'inscription à iáomai, vous bénéficierez de {10 jours d'essai gratuit pour toutes les applications} et à l'expiration, vous pourrez utiliser toutes les fonctions de base de l'application:\n\n[#] Jusqu'à 15 patients\n[#] Sauvegarde des données\n[#] Accès multiplateforme\n[#] Fonctionnalité de communauté",
-            por: "Ao se registrar em iáomai, você terá {10 dias de teste gratuito de todos os aplicativos} e, ao expirar, poderá usar todas as funções básicas do aplicativo:\n\n[#] Até 15 pacientes\n[#] Backup de dados\n[#] Acesso multiplataforma\n[#] Funcionalidade da comunidade",
-            deu: "Mit der Registrierung bei iáomai erhalten Sie {10 Tage kostenlose Testversion aller Apps} und nach Ablauf können Sie alle grundlegenden Funktionen der App nutzen:\n\n[#] Bis zu 15 Patienten\n[#] Datensicherung\n[#] Cross-Plattform-Zugriff\n[#] Community-Funktionalität"
+            ita: "Con la registrazione a iáomai avrai {48 ore di prova gratuita di tutte le app} e allo scadere potrai decidere se sottoscrivere un abbonamento.",
+            eng: "By registering with iáomai, you will get {48 hours of free trial for all apps}, and at the end, you can decide whether to subscribe.",
+            esp: "Al registrarte en iáomai, tendrás {48 horas de prueba gratuita de todas las aplicaciones}, y al finalizar podrás decidir si suscribirte.",
+            fra: "En vous inscrivant à iáomai, vous bénéficierez de {48 heures d'essai gratuit pour toutes les applications}, et à l'échéance, vous pourrez décider de souscrire un abonnement.",
+            por: "Ao se registrar no iáomai, você terá {48 horas de teste gratuito de todos os aplicativos} e, ao final, poderá decidir se deseja assinar.",
+            deu: "Mit der Registrierung bei iáomai erhalten Sie {48 Stunden kostenlosen Testzugang zu allen Apps}, und am Ende können Sie entscheiden, ob Sie ein Abonnement abschließen möchten."
         },
+        Username_Email: {
+            ita: "Username o email",
+            eng: "Username or email",
+            esp: "Nombre de usuario o correo electrónico",
+            fra: "Nom d'utilisateur ou e-mail",
+            por: "Nome de usuário ou e-mail",
+            deu: "Benutzernamen oder Ihre E-Mail ein"
+        },
+        Prosegui: {
+            ita: "Prosegui",
+            eng: "Continue",
+            esp: "Continuar",
+            fra: "Continuer",
+            por: "Continuar",
+            deu: "Weiter"
+        },
+        InserisciUSRrecupero: {  
+            ita: "Inserisci l'username o l'email",  
+            eng: "Enter your username or email",  
+            esp: "Introduce tu nombre de usuario o correo electrónico",  
+            fra: "Entrez votre nom d'utilisateur ou votre e-mail",  
+            por: "Insira seu nome de usuário ou e-mail",  
+            deu: "Geben Sie Ihren Benutzernamen oder Ihre E-Mail ein"  
+        },  
+        InserisciPWDrecupero: {  
+            ita: "Inserisci la nuova password",  
+            eng: "Enter the new password",  
+            esp: "Introduce la nueva contraseña",  
+            fra: "Entrez le nouveau mot de passe",  
+            por: "Insira a nova senha",  
+            deu: "Geben Sie das neue Passwort ein"  
+        },
+        TestoRecupero: {
+            ita: "Se hai dimenticato la password, puoi reimpostarla attraverso questo strumento. Inserisci la username o la mail e la nuova password e clicca su 'Invia dati'. Ti verrà inviato un messaggio sulla tua casella di posta elettronica contenente un codice per attivare la nuova password.",
+            eng: "If you have forgotten your password, you can reset it using this tool. Enter your username or email and the new password, then click 'Send data'. You will receive a message in your email inbox containing a code to activate the new password.",
+            esp: "Si has olvidado tu contraseña, puedes restablecerla con esta herramienta. Ingresa tu nombre de usuario o correo electrónico y la nueva contraseña, luego haz clic en 'Enviar datos'. Recibirás un mensaje en tu bandeja de entrada con un código para activar la nueva contraseña.",
+            fra: "Si vous avez oublié votre mot de passe, vous pouvez le réinitialiser avec cet outil. Entrez votre nom d'utilisateur ou votre e-mail et le nouveau mot de passe, puis cliquez sur 'Envoyer les données'. Vous recevrez un message dans votre boîte de réception contenant un code pour activer le nouveau mot de passe.",
+            por: "Se você esqueceu sua senha, pode redefini-la usando esta ferramenta. Insira seu nome de usuário ou e-mail e a nova senha, depois clique em 'Enviar dados'. Você receberá uma mensagem em sua caixa de entrada com um código para ativar a nova senha.",
+            deu: "Wenn Sie Ihr Passwort vergessen haben, können Sie es mit diesem Tool zurücksetzen. Geben Sie Ihren Benutzernamen oder Ihre E-Mail-Adresse und das neue Passwort ein und klicken Sie auf 'Daten senden'. Sie erhalten eine Nachricht in Ihrem Posteingang mit einem Code zur Aktivierung des neuen Passworts."
+        },
+        ErroreUsernameErrata: {
+            ita: "Username o email non valida. Verifica di averla scritta correttamente.",
+            eng: "Invalid username or email. Please check that you have entered it correctly.",
+            esp: "Nombre de usuario o correo electrónico no válido. Verifica que lo hayas escrito correctamente.",
+            fra: "Nom d'utilisateur ou e-mail invalide. Vérifiez que vous l'avez saisi correctement.",
+            por: "Nome de usuário ou e-mail inválido. Verifique se digitou corretamente.",
+            deu: "Ungültiger Benutzername oder E-Mail. Bitte überprüfen Sie, ob Sie es richtig eingegeben haben."
+        },
+        TestoConfcode: {
+            ita: "Inserisci il codice di conferma che hai ricevuto per email. Se non trovi il messaggio controlla la cartella spam.",
+            eng: "Enter the confirmation code you received via email. If you can't find the message, check your spam folder.",
+            esp: "Introduce el código de confirmación que has recibido por correo electrónico. Si no encuentras el mensaje, revisa la carpeta de spam.",
+            fra: "Saisissez le code de confirmation que vous avez reçu par e-mail. Si vous ne trouvez pas le message, vérifiez votre dossier spam.",
+            por: "Insira o código de confirmação que você recebeu por e-mail. Se não encontrar a mensagem, verifique a pasta de spam.",
+            deu: "Geben Sie den Bestätigungscode ein, den Sie per E-Mail erhalten haben. Wenn Sie die Nachricht nicht finden, überprüfen Sie Ihren Spam-Ordner."
+        },
+        ErroreConfcode: {
+            ita: "Il codice inserito è errato.",
+            eng: "The code entered is incorrect.",
+            esp: "El código introducido es incorrecto.",
+            fra: "Le code saisi est incorrect.",
+            por: "O código inserido está incorreto.",
+            deu: "Der eingegebene Code ist falsch."
+        },
+        ErroreTimeoutCode: {
+            ita: "Sono passati più di 5 minuti dalla tua richiesta. Richiedi nuovamente il codice.",
+            eng: "More than 5 minutes have passed since your request. Please request the code again.",
+            esp: "Han pasado más de 5 minutos desde tu solicitud. Solicita el código nuevamente.",
+            fra: "Plus de 5 minutes se sont écoulées depuis votre demande. Veuillez demander un nouveau code.",
+            por: "Mais de 5 minutos se passaram desde sua solicitação. Solicite o código novamente.",
+            deu: "Seit Ihrer Anfrage sind mehr als 5 Minuten vergangen. Fordern Sie den Code erneut an."
+        },
+        ErroreTroppiTentativi: {
+            ita: "Hai tentato troppe volte di inserire il codice. Attendi 5 minuti per riprovare",
+            eng: "You have attempted to enter the code too many times. Please wait 5 minutes before trying again.",
+            esp: "Has intentado ingresar el código demasiadas veces. Espera 5 minutos antes de intentarlo de nuevo.",
+            fra: "Vous avez essayé de saisir le code trop de fois. Veuillez attendre 5 minutes avant de réessayer.",
+            por: "Você tentou inserir o código muitas vezes. Aguarde 5 minutos antes de tentar novamente.",
+            deu: "Sie haben den Code zu oft eingegeben. Bitte warten Sie 5 Minuten, bevor Sie es erneut versuchen."
+        },
+        RichiediConfcode: {
+            ita: "Richiedi nuovamente il codice",
+            eng: "Request the code again",
+            esp: "Solicita el código nuevamente",
+            fra: "Demander un nouveau code",
+            por: "Solicite o código novamente",
+            deu: "Fordern Sie den Code erneut an"
+        },
+        CodiceConferma: {
+            ita: "Codice di conferma",
+            eng: "Confirmation code",
+            esp: "Código de confirmación",
+            fra: "Code de confirmation",
+            por: "Código de confirmação",
+            deu: "Bestätigungscode"
+        },  
+        CodiceConfermato: {
+            ita: "Codice confermato. La tua nuova password è ora attiva.",
+            eng: "Code confirmed. Your new password is now active.",
+            esp: "Código confirmado. Tu nueva contraseña ya está activa.",
+            fra: "Code confirmé. Votre nouveau mot de passe est maintenant actif.",
+            por: "Código confirmado. Sua nova senha está agora ativa.",
+            deu: "Code bestätigt. Ihr neues Passwort ist nun aktiv."
+        },        
         ErroreGenerico: {
             ita: "Si è verificato un errore",
             eng: "An error has occurred",

@@ -181,6 +181,7 @@ var H = {
 						'		   name="'+obj.name+'"' +
 						'		   value="'+anno+'"' +
 						'		   data-pre-value="'+anno+'"' +
+						'		   data-funct="H.verAnno"' +
 						'		   maxlength="4"' +
 						'		   onKeyUp="return H.keyData(event,this);"' +
 						'		   onBlur="return H.blurCampo(event,this);">'+
@@ -217,6 +218,10 @@ var H = {
 			el.value = '';
 			el.dataset.preValue = '';
 			return false;
+		}else{
+			if(el.dataset.funct){
+				eval(el.dataset.funct+"(el)");
+			}
 		}
 	},
 	focusTextarea: function(){
@@ -297,6 +302,16 @@ var H = {
 				document.getElementById("anno" + id).focus();
 				document.getElementById("anno" + id).select();
 			}
+		}
+	},
+	verAnno: function( el ){
+		const shortYear = new Date().getFullYear().toString().slice(-2);
+		if(el.value.length==1){
+			el.value = "200"+el.value;
+		}else if(el.value.length==2){
+			el.value = (parseInt(el.value)>shortYear ? '19' : '20') +el.value;
+		}else if(el.value.length==3){
+			el.value = (parseInt(el.value)>shortYear ? '1' : '2') +el.value;
 		}
 	},
 	verData: function( id, notNull=false ){ 
