@@ -1509,14 +1509,16 @@ var SET = {
 			els = scene.getObjectByName("LNs"+phs[ph]).children;
 			for(let e in els){
 				let name = els[e].name.substr(2,3);
-				if(els[e].name.substr(0,2)=='AG' && name == SET.ptSel.name.substr(2,3)){
+				if(els[e].name.substr(0,2)=='AG' && name == SET.ptSel?.name.substr(2,3)){
 					if(DB.set.punti[name].hidden || __(els[e].userData.hidePunto,'0')=='1')els[e].visible = false;
 					else if(els[e].userData.lato == opposite)els[e].visible = false;
 					else if(!els[e].visible && !__(els[e].userData.locked,false))els[e].visible = true;
 				}
 			}
 		}
-		if(SET.groupSel.id)SET.filtraGruppo( SET.groupSel.type, SET.groupSel.val, SET.groupSel.id, true );
+		if(SET.groupSel.id){
+			SET.filtraGruppo( SET.groupSel.type, SET.groupSel.val, SET.groupSel.id, true );
+		}
 	},
 	_caricaScheda: function( args ){
 		if( args.classe != 'tab_punti' && args.classe != SCHEDA.classeAperta)SET.pMod = '';
