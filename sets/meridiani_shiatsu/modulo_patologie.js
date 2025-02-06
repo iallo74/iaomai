@@ -196,7 +196,7 @@ var MODULO_PATOLOGIE = { // extend SET
 			return;
 		}
 		// --------------------------
-		
+		SET.patOp = n;
 		let titolo = DB.set.patologie[n].NomePatologia,
 			html = 	"<h1>"+htmlEntities(titolo)+"</h1>" +
 					// aggiungo contenuto custom
@@ -245,6 +245,9 @@ var MODULO_PATOLOGIE = { // extend SET
 			SET.spegniMeridiani(true);
 		}
 	},
+	chiudiPatologia: function(){
+		SET.patOp = -1;
+	},
 	filtraPatologie: function( event ){
 		// filtra le patologie con il campo testuale
 		let parola = document.getElementById("pat_ricerca").value.trim();
@@ -262,6 +265,10 @@ var MODULO_PATOLOGIE = { // extend SET
 		if(__(localStorage.listPatType)!='category')localStorage.listPatType = 'category';
 		else localStorage.listPatType = 'list';
 		SET.componiPatologie();
+		if(SET.patOp){
+			SCHEDA.btnSel = document.getElementById("btn_patologia_"+SET.patOp);//.classList.add("elencoSel");
+			SCHEDA.btnSel.classList.add("elencoSel");
+		}
 	},
 	azRicercaPatologie: function( p ){
 		// apre una patologia della ricerca globale

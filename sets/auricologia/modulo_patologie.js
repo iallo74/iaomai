@@ -346,6 +346,10 @@ var MODULO_PATOLOGIE = { // extend SET
 		if(__(localStorage.listPatType)!='category')localStorage.listPatType = 'category';
 		else localStorage.listPatType = 'list';
 		SET.caricaPatologie();
+		if(SET.patOp){
+			SCHEDA.btnSel = document.getElementById("btn_patologia_"+SET.patOp);//.classList.add("elencoSel");
+			SCHEDA.btnSel.classList.add("elencoSel");
+		}
 	},
 	azRicercaPatologie: function( p ){ // apre la scheda della patologia dalla ricerca globale
 		SCHEDA.apriElenco('set');
