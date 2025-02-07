@@ -454,6 +454,9 @@ body:not(.smart) #mappe_titolo_freccia{
 	float: left;
 	overflow: hidden;
 }
+#elenchi.vis_set #elenchi_titolo_txt {
+    width: calc(100% - 70px);
+}
 .smart #elenchi_titolo_txt{
 	font-size: var(--font-28) !important;
 }
