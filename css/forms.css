@@ -2370,7 +2370,7 @@ body:not(.touch) #puntiTrigger .dettPunto:hover{
     border-radius: 3px;
     border: 1px solid rgba(0,0,0,0.3);
     height: 32px;
-    line-height: 32px;
+    line-height: 30px;
     display: inline-block;
     width: 119px;
     padding-left: 7px !important;
