@@ -124,10 +124,18 @@ var LOGIN = {
 	swVisPwd: function( forza = false ){
 		if(document.getElementById("PWD").type=='text' || forza){
 			document.getElementById("PWD").type = 'password';
+			document.recuperoForm.recuperoPWD.type = 'password';
+			document.recuperoForm.recuperoPWD2.type = 'password';
 			document.getElementById("visPwd").classList.remove("hide");
+			document.getElementById("visRecPwd").classList.remove("hide");
+			document.getElementById("visRecPwd2").classList.remove("hide");
 		}else{
 			document.getElementById("PWD").type = 'text';
+			document.recuperoForm.recuperoPWD.type = 'text';
+			document.recuperoForm.recuperoPWD2.type = 'text';
 			document.getElementById("visPwd").classList.add("hide");
+			document.getElementById("visRecPwd").classList.add("hide");
+			document.getElementById("visRecPwd2").classList.add("hide");
 		}
 	},
 	logedin: function(){ // restituisce il TOKEN, indicando che si è connessi
@@ -1236,7 +1244,7 @@ var LOGIN = {
 			document.getElementById("recupero").classList.add("inspwd");
 		}
 	},
-	recupera: function(){ // registra l'utente su server
+	pwd_recupero: function(){ // registra l'utente su server
 		if(CONN.retNoConn()){
 			if(document.recuperoForm.recuperoPWD.value!=document.recuperoForm.recuperoPWD2.value){
 				ALERT(TXT("erroreRipetiPassword"));
@@ -1248,13 +1256,13 @@ var LOGIN = {
 								"PWD": document.recuperoForm.recuperoPWD.value };
 								
 				document.getElementById("recupero").classList.add("popup_back");
-				CONN.caricaUrl(	"utente_recupero.php",
+				CONN.caricaUrl(	"utente_pwd_recupero.php",
 								"b64=1&JSNPOST="+window.btoa(encodeURIComponent(JSON.stringify(JSNPOST))),
-								"LOGIN.retRecupero");	
+								"LOGIN.retPwdRecupero");	
 			}
 		}
 	},
-	retRecupero: function( txt ){ // risposta dalla registrazione utente sul server (registrazione)
+	retPwdRecupero: function( txt ){ // risposta dalla registrazione utente sul server (registrazione)
 		document.getElementById("recupero").classList.remove("popup_back");
 		if(typeof(txt)=='undefined' || txt.substr(0,3)=='404'){
 			// si è verificato un errore generico
@@ -1276,7 +1284,7 @@ var LOGIN = {
 			}
 		}
 	},
-	confcode: function(){ // registra l'utente su server
+	pwd_confcode: function(){ // registra l'utente su server
 		if(CONN.retNoConn()){
 			if(verifica_form(document.confcodeForm)){
 
@@ -1284,13 +1292,13 @@ var LOGIN = {
 								"codice": document.confcodeForm.Confcode.value };
 								
 				document.getElementById("recupero").classList.add("popup_back");
-				CONN.caricaUrl(	"utente_confcode.php",
+				CONN.caricaUrl(	"utente_pwd_confcode.php",
 								"b64=1&JSNPOST="+window.btoa(encodeURIComponent(JSON.stringify(JSNPOST))),
-								"LOGIN.retConfcode");	
+								"LOGIN.retPwdConfcode");	
 			}
 		}
 	},
-	retConfcode: function( txt ){ // risposta dalla registrazione utente sul server (registrazione)
+	retPwdConfcode: function( txt ){ // risposta dalla registrazione utente sul server (registrazione)
 		document.getElementById("recupero").classList.remove("popup_back");
 		if(typeof(txt)=='undefined' || txt.substr(0,3)=='404'){
 			// si è verificato un errore generico

@@ -742,7 +742,7 @@ var MENU = {
 		document.getElementById("recupero").classList.remove("visSch");
 		document.getElementById("loader").classList.remove("overPopup");
 	},
-	visRecupera: function(){
+	visRecupero: function(){
 		document.getElementById("recupero").classList.remove("confcode");
 		document.getElementById("recupero").classList.add("visSch");
 		document.getElementById("recupero").classList.remove("inspwd");
