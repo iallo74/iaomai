@@ -16,6 +16,9 @@
 	/* margin-top:-160px; */
 	top: 165px;
 }
+#recupero.inspwd:not(.confcode){
+	height:380px;
+}
 /* .smart #recupero{
 	top:0px !important;
 } */
@@ -55,6 +58,9 @@
 }
 #contRecupero{
 	height: 300px;
+}
+.inspwd:not(.confcode) #contRecupero{
+	height: 340px;
 }
 .smart #contRegistrazione,
 .smart #contRecupero{
@@ -97,6 +103,7 @@
 #testoConfcode{
 	padding-bottom:20px;
 	text-align:justify;
+	font-size: 15px;
 }
 .smart #testoRegistrazione,
 .smart #testoRecupero,
@@ -129,7 +136,7 @@
 	opacity:1 !important;
 }
 #registrazioneForm input[type='submit'],
-#recuperoForm input[type='submit'],
+#recuperoBut,
 #confcodeForm input[type='submit'],
 .butrec{
 	width:auto;
@@ -151,35 +158,43 @@
     box-shadow: 0px 0px 3px rgb(0 0 0 / 50%);
 	-webkit-appearance: none;
 }
+#recuperoBut,
+#confcodeForm input[type='submit'],
+.butrec{
+	font-size: 15px;
+}
+#recuperoBut{
+	display:inline-block;
+}
 .butrec{
 	display:inline-block;
 }
 body:not(.smart) .butrec{
 	float:right;
 }
-.smart.android #recuperoForm input[type='submit'],
+/* .smart.android #recuperoBut,
 .smart.android #confcodeForm input[type='submit'],
 .smart.android .butrec{
 	font-size: var(--font-15-39) !important;
 	line-height:36.64px !important;
-}
+} */
 .mezza{
 	width:calc(50% - 2px) !important;
 }
-.smart.android #registrazioneForm input[type='submit'],
-.smart.android #recuperoForm input[type='submit'],
+.smart.android #registrazioneForm input[type='submit']/* ,
+.smart.android #recuperoBut,
 .smart.android #confcodeForm input[type='submit'],
-.smart.android .butrec:hover{
+.smart.android .butrec:hover */{
 	font-size: var(--font-16-93);
 }
-.app_version.bug_font.smart.android #registrazioneForm input[type='submit'],
-.app_version.bug_font.smart.android #recuperoForm input[type='submit'],
-.app_version.bug_font.smart.android #confcodeForm input[type='submit']{
+.app_version.bug_font.smart.android #registrazioneForm input[type='submit']/* ,
+.app_version.bug_font.smart.android #recuperoBut,
+.app_version.bug_font.smart.android #confcodeForm input[type='submit'] */{
 	font-size: var(--font-15-39) !important;
 	line-height:36.64px !important;
 }
 #registrazioneForm input[type='submit']:hover,
-#recuperoForm input[type='submit']:hover,
+#recuperoBut:hover,
 #confcodeForm input[type='submit']:hover,
 .butrec:hover{
 	background: #062865;
@@ -212,9 +227,19 @@ body:not(.smart) .butrec{
 	text-align:left;
 	padding-top:10px;
 	padding-bottom:5px;
+	font-size: 15px;
 }
 #recupero.inspwd #box_recupero_usr,
 #recupero:not(.inspwd) #box_recupero_pwd,
 #recupero:not(.inspwd) #recuperoButCont{
 	display:none;
+}
+#recuperoForm input[type='text'],
+#recuperoForm input[type='password'],
+#confcodeForm input[type='text'],
+#confcodeForm input[type='password']{
+	font-size: 16px !important;
+	line-height:36.64px !important;
+	height:36.64px !important;
+	padding-left:10px !important;
 }
