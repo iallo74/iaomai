@@ -8,7 +8,7 @@
 */
 
 // IMPORTAZIONI DI VERSIONE
-var verApp = '1.8'; // utilizzata per gli aggiornamenti dei files: FILES[] (i files caricati dinamicamente da DB)
+var verApp = '1.8.3'; // utilizzata per gli aggiornamenti dei files: FILES[] (i files caricati dinamicamente da DB)
 
 // IMPOSTAZIONI DEL DEVICE
 var	smartphone = false,
@@ -300,26 +300,29 @@ var IMPORTER = {
 		});
 	},
 	verificaAggiornamenti: function( ){ // funzione iniziale per aggiornare tutti i files
-		if(this.produzione && CONN.getConn()){
-			// verifico la presenza di aggiornamenti di versione (solo in "produzione")
-			let versioni = {};
-			if(!FILES[verApp])FILES[verApp]={};
-			for(let f in FILES[verApp]){
-				versioni[f] = FILES[verApp][f].lastVer;
-			}
-			let JSNPOST = JSON.stringify( versioni );
-			while(JSNPOST.indexOf("/")>-1)JSNPOST=JSNPOST.replace("/","_");
-			while(JSNPOST.indexOf(".")>-1)JSNPOST=JSNPOST.replace(".","_");
-			console.log("Sto inviando: "+JSNPOST);
-			localPouchDB.getItem(MD5("DB.login")).then(function(dbCont){
-				let id = IMPORTER.DECOMPR(dbCont).data.idUtente;
-				IMPORTER.id = id;
-				if(typeof(id)=='undefined')id = '';
-				CONN.caricaUrl(	"verificaScripts.php",
-								'TK=D6G-w34rgV&b64=1&idUtenteScript='+id+'&verApp='+verApp+'&JSNPOST='+window.btoa(encodeURIComponent(JSON.stringify(JSNPOST))), 
-								"IMPORTER.applicaAggiornamenti" );
-			});
-		}else IMPORTER.applicaAggiornamenti('');
+		CONN.getRealConn().then(isOnline => {
+			if(this.produzione && isOnline){
+				// verifico la presenza di aggiornamenti di versione (solo in "produzione")
+				let versioni = {};
+				if(!FILES[verApp])FILES[verApp]={};
+				for(let f in FILES[verApp]){
+					versioni[f] = FILES[verApp][f].lastVer;
+				}
+				let JSNPOST = JSON.stringify( versioni );
+				while(JSNPOST.indexOf("/")>-1)JSNPOST=JSNPOST.replace("/","_");
+				while(JSNPOST.indexOf(".")>-1)JSNPOST=JSNPOST.replace(".","_");
+				console.log("Sto inviando: "+JSNPOST);
+				localPouchDB.getItem(MD5("DB.login")).then(function(dbCont){
+					let id = IMPORTER.DECOMPR(dbCont).data.idUtente;
+					IMPORTER.id = id;
+					if(typeof(id)=='undefined')id = '';
+					CONN.caricaUrl(	"verificaScripts.php",
+									'TK=D6G-w34rgV&b64=1&idUtenteScript='+id+'&verApp='+verApp+'&JSNPOST='+window.btoa(encodeURIComponent(JSON.stringify(JSNPOST))), 
+									"IMPORTER.applicaAggiornamenti" );
+				});
+			}else IMPORTER.applicaAggiornamenti('');
+			CONN.online = isOnline;
+		});
 	},
 	applicaAggiornamenti: function( txt ){
 		if(txt!='' && txt!='404' && txt!='404-1' && txt!='undefined' && typeof(txt)!='undefined'){
