@@ -603,13 +603,15 @@ var MODELLO = {
 	},
 	
 	creaPunto: function(){
+		if(!MODELLO.posOver)return;
 		let pointBase = new THREE.MeshStandardMaterial( {
 			color: 0xCC0000,
 			roughness:1,
 			transparent: true,
 			depthWrite: false
 		}),
-			geometryPallino = new THREE.SphereGeometry( 0.02, 5, 5 ),
+			dimPoint = globals.modello.cartella == 'orecchio' ? 0.04 : 0.02,
+			geometryPallino = new THREE.SphereGeometry( dimPoint, 5, 5 ),
 			pallino = new THREE.Mesh( geometryPallino, pointBase );
 			pallino.name = 'pallino';
 		ANATOMIA.add( pallino );
