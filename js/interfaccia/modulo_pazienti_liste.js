@@ -831,6 +831,7 @@ var PAZIENTI_LISTE = {
 		pulsanteAnnulla.classList.add("visBtn");
 		cont.classList.add("modEl");
 		campo.focus();
+		PAZIENTI.visElementi(PAZIENTI.defElemento(tipo).el.toLowerCase());
 	},
 	annullaElemento: function( tipo ){
 		let obj = PAZIENTI.defElemento( tipo ),

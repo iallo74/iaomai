@@ -586,7 +586,8 @@ body.bodyModello .p_paz_screenshot:hover{ /* PAZIENTI */
     background-position: center center;
     background-size: 24px;
     cursor: pointer;
-    margin-left: -36px;
+    margin-left: -1px;
+    margin-right: -4px;
 }
 .smart.android #tag_col{
 	height: 36px;
@@ -757,7 +758,7 @@ body.bodyModello .p_paz_screenshot:hover{ /* PAZIENTI */
 .modEl .p_patologia_ann,
 .modEl .p_intervento_ann{
 	background-color: #CCC !important;
-	margin-left: 5px;
+	margin-right: 5px;
 }
 .tagElenco,
 .medicineElenco,
@@ -1518,7 +1519,7 @@ _:-webkit-full-screen,
 .modEl #allergia_add,
 .modEl #patologia_add,
 .modEl #intervento_add{
-	width: calc(100% - 190px) !important;
+	width: calc(100% - 224px) !important;
 }
 .sch_Max450 .modEl #tag_add,
 .sch_Max450 .modEl #medicina_add,

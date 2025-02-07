@@ -1552,8 +1552,9 @@ var PAZIENTI_TRATTAMENTI = { // extend PAZIENTI
 		}});
 	},
 	swAgenda: function( data, elemento, funct, el, Q_idTratt ){ // apre e chiude l'agenda in un trattamento
-		if(!data)data=oggi;
+		if(!data)data=new Date();
 		else data=new Date(data);
+		console.log(data)
 		if(el.dataset.d){
 			let D=JSON.parse(el.dataset.d);
 			if(typeof(D.data)!='undefined')data=new Date(D.data);
