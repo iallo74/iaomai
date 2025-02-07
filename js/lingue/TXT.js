@@ -408,6 +408,14 @@ DB.TXT = {
             por: "Versão DEMO",
             deu: "DEMO-Version"
         },
+        ErroreDataGenerico: {
+            ita: "La data indicata non è consentita",
+            eng: "The specified date is not allowed",
+            esp: "La fecha indicada no está permitida",
+            fra: "La date indiquée n'est pas autorisée",
+            por: "A data indicada não é permitida",
+            deu: "Das angegebene Datum ist nicht erlaubt"
+        },
 
         // MENU IMPOSTAZIONI
         HelpMenu: {
@@ -2858,6 +2866,14 @@ DB.TXT = {
             fra: "Date de naissance",
             por: "Data de nascimento",
             deu: "Geburtsdatum"
+        },
+        ErroreDataNascita: {
+            ita: "La data di nascita non può essere maggiore di oggi",
+            eng: "The date of birth cannot be later than today",
+            esp: "La fecha de nacimiento no puede ser mayor que hoy",
+            fra: "La date de naissance ne peut pas être postérieure à aujourd'hui",
+            por: "A data de nascimento não pode ser maior que hoje",
+            deu: "Das Geburtsdatum darf nicht später als heute sein"
         },
         LuogoNascita: {
             ita: "Luogo di nascita",

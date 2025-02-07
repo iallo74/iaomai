@@ -409,7 +409,9 @@ var PAZIENTI = {
 					H.r({	t: "d",
 							name: "DataNascita",
 							value: DataNascita,
-							classRiga: "labelSx" }) +
+							classRiga: "labelSx",
+							maxvalue: parseInt(new Date().getTime()) ,
+							msgerror: htmlEntities(TXT("ErroreDataNascita")) }) +
 							
 					H.r({	t: "r", name: "LuogoNascita",	value: LuogoNascita,	classCampo: 'styled' });
 							

@@ -25,6 +25,8 @@ var H = {
 			- styleCampo
 			- labelOut
 			- maxChars
+			- maxvalue
+			- msgerror
 		*/
 		
 		// controllo i valori
@@ -46,6 +48,8 @@ var H = {
 		if(typeof(obj.azModifica) == 'undefined')obj.azModifica = '';
 		if(typeof(obj.labelOut) == 'undefined')obj.labelOut = '';
 		if(typeof(obj.maxChars) == 'undefined')obj.maxChars = '';
+		if(typeof(obj.maxvalue) == 'undefined')obj.maxvalue = '';
+		if(typeof(obj.msgerror) == 'undefined')obj.msgerror = '';
 		
 		if(typeof(obj.ver) == 'undefined')obj.ver = '';
 		else obj.ver = '@|'+obj.label+'|'+obj.ver;
@@ -162,6 +166,8 @@ var H = {
 						'		   value="'+giorno+'"' +
 						'		   data-pre-value="'+giorno+'"' +
 						'		   maxlength="2"' +
+						'		   data-maxvalue="'+obj.maxvalue+'"' +
+						'		   data-msgerror="'+obj.msgerror+'"' +
 						'		   onKeyUp="return H.keyData(event,this);"' +
 						'		   onBlur="return H.blurCampo(event,this);">'+
 						'	<span>/</span>'+
@@ -172,6 +178,8 @@ var H = {
 						'		   value="'+mese+'"' +
 						'		   data-pre-value="'+mese+'"' +
 						'		   maxlength="2"' +
+						'		   data-maxvalue="'+obj.maxvalue+'"' +
+						'		   data-msgerror="'+obj.msgerror+'"' +
 						'		   onKeyUp="return H.keyData(event,this);"' +
 						'		   onBlur="return H.blurCampo(event,this);">'+
 						'	<span>/</span>'+
@@ -183,6 +191,8 @@ var H = {
 						'		   data-pre-value="'+anno+'"' +
 						'		   data-funct="H.verAnno"' +
 						'		   maxlength="4"' +
+						'		   data-maxvalue="'+obj.maxvalue+'"' +
+						'		   data-msgerror="'+obj.msgerror+'"' +
 						'		   onKeyUp="return H.keyData(event,this);"' +
 						'		   onBlur="return H.blurCampo(event,this);">'+
 						'</div>';
@@ -244,7 +254,20 @@ var H = {
 			mese=document.getElementById("mese" + id).value,
 			anno=document.getElementById("anno" + id).value,
 			maxGiorni = 31,
-			errore = false;
+			errore = false,
+			maxvalue = el.dataset.maxvalue;
+		
+		if( mese*1 > 0 && anno*1 > 0 && giorno*1 > 0 && maxvalue){
+			let d = new Date(anno*1,mese*1-1,giorno*1).getTime(),
+				msg = el.dataset.msgerror;
+			if(!msg)msg = TXT("ErroreData")
+			if(d>parseInt(maxvalue)){
+				ALERT(msg);
+				el.value = '';
+				el.dataset.preValue = '';
+				return false;
+			}
+		}
 		if( mese*1 > 0 && anno*1 > 0 ){
 			let d = new Date(anno*1,mese*1,0);
 			maxGiorni = d.getDate();	
@@ -309,10 +332,12 @@ var H = {
 		if(el.value.length==1){
 			el.value = "200"+el.value;
 		}else if(el.value.length==2){
-			el.value = (parseInt(el.value)>shortYear ? '19' : '20') +el.value;
+			//el.value = (parseInt(el.value)>shortYear ? '19' : '20') +el.value;
+			el.value = "20" +el.value;
 		}else if(el.value.length==3){
 			el.value = (parseInt(el.value)>shortYear ? '1' : '2') +el.value;
 		}
+		H.keyData(null,el);
 	},
 	verData: function( id, notNull=false ){ 
 		let giorno = document.getElementById("giorno" + id).value,
