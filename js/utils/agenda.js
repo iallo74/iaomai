@@ -686,7 +686,7 @@ var agenda = {
 			//agenda.scrollY = 0;
 		}else{
 			if(document.getElementById("lineaAdesso")){
-				document.getElementById('agCont').scrollTop = tCoord(document.getElementById("lineaAdesso"),'y')-250;
+				document.querySelector('.agendaCol').scrollTop = tCoord(document.getElementById("lineaAdesso"),'y')-250;
 			}
 		}
 		
