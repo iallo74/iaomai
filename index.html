@@ -427,7 +427,7 @@
                 <div id="login_benvenuto">{{TXT_BenvenutoIaomai}}</div>
             	<div id="contLogin" class="popup_cont">
                 	<form name="loginFrom" id="loginFrom" method="post" onSubmit="return LOGIN.getLogin();"><div><input type="text" name="USR" id="USR"  placeholder="Username" class="okPlaceHolder" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" onFocus="LOGIN.focRic=true;" onBlur="LOGIN.focRic=false;"><div id="USRlabel"><span></span><div id="usrChange" onClick="LOGIN.annullaUtente();">{{TXT_Disconnetti}}</div></div></div><div><input type="password" name="PWD" id="PWD" placeholder="Password" class="okPlaceHolder" autocomplete="off"><span id="visPwd" onClick="LOGIN.swVisPwd();"></span></div><div id="loginStayConnected"><label for="stayConnected"><input type="checkbox" id="stayConnected" name="stayConnected">{{TXT_StaiConnesso}}</label></div><div id="loginButCont"><input type="submit" name="loginBut" id="loginBut" value="{{TXT_Accedi}}" /><p><!-- da popolare //--></p></div></form>
-    <div id="btnRecupero" onClick="MENU.visRecupera();">{{TXT_PWDdimenticata}} <b>&gt;</b></div>
+    <div id="btnRecupero" onClick="MENU.visRecupero();">{{TXT_PWDdimenticata}} <b>&gt;</b></div>
     <div id="btnRegistrazione"><span></span><div id="btn_registrazione" onClick="MENU.visRegistrazione();">{{TXT_ProvalaGratuitamente}}</div></div>
     <div id="lingueLogin">
         <select id="lingueLoginSelect" onChange="cambiaLingua(this.value);"> </select>
@@ -474,7 +474,7 @@
                                 autocomplete="off"
                                 autocapitalize="off"
                                 autocorrect="off"
-                                spellcheck="false">
+                                spellcheck="false"><span id="visRecPwd" onClick="LOGIN.swVisPwd();"></span>
                             <input type="password"
                                 name="recuperoPWD2"
                                 id="@|{{TXT_RipetiPassword}}|5|0"
@@ -482,18 +482,15 @@
                                 autocomplete="off"
                                 autocapitalize="off"
                                 autocorrect="off"
-                                spellcheck="false">
+                                spellcheck="false"><span id="visRecPwd2" onClick="LOGIN.swVisPwd();"></span>
                         </div>
                         <div id="recuperoButCont">
                         	<input type="hidden"
                             	   name="app"
                             	   id="app"
                             	   value="">
-                        	<input type="submit"
-                            	   name="recuperoBut"
-                            	   id="recuperoBut"
-                            	   value="{{TXT_InviaDati}}"
-                            	   onClick="LOGIN.recupera();"/>
+                        	<div   id="recuperoBut"
+                            	   onClick="LOGIN.pwd_recupero();"/>{{TXT_InviaDati}}</div>
                         </div>
                     </form>
                 	<form name="confcodeForm" id="confcodeForm" method="post" onSubmit="return false;">
@@ -519,10 +516,10 @@
                             	   name="confcodeBut"
                             	   id="confcodeBut"
                             	   value="{{TXT_Conferma}}"
-                            	   onClick="LOGIN.confcode();"/>
+                            	   onClick="LOGIN.pwd_confcode();"/>
                         </div>
                     	<div id="richiediConfcode">
-                        	<div id="btnRichiediConcode" onClick="LOGIN.recupera();">{{TXT_RichiediConfcode}} <b>&gt;</b></div>
+                        	<div id="btnRichiediConcode" onClick="LOGIN.pwd_recupero();">{{TXT_RichiediConfcode}} <b>&gt;</b></div>
                         </div>
                     </form>
                 </div>
