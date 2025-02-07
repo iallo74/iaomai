@@ -756,7 +756,9 @@ var MENU = {
 			else document.recuperoForm.recuperoUSR.focus();
 		}
 	},
-	visImpset: function( archivi=false ){
+	visImpset: function(){
+		let archivi = 	!document.getElementById('elenchi_titolo').classList.contains('visSch') || 
+						document.getElementById('elenchi').classList.contains('vis_set') ? false : true;
 		MENU.chiudiMenu("impset");
 		visLoader("","blured");
 		document.getElementById("impset").classList.toggle("visSch");
