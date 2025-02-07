@@ -52,11 +52,11 @@ function nasToolTip(){
 	document.getElementById("tooltip").style.top='-500px';
 }
 
-function visLoader( txt, cls='' ){
+function visLoader( txt='', cls='' ){
 	document.getElementById("loader").classList.remove("noLoader");
 	if(cls)document.getElementById("loader").classList.add(cls);
 	document.getElementById("loader").dataset.cls = cls;
-	document.getElementById("loader").getElementsByTagName("div")[0].innerHTML=txt;
+	document.getElementById("loader").getElementsByTagName("div")[0].innerHTML = txt;
 }
 
 function nasLoader(){
