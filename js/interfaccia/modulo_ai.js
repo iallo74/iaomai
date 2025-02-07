@@ -7,11 +7,15 @@ var AI = {
 	},
 	
 	get_gettoni: function( endpoint ){
-		AI.endpoint = endpoint;
-		visLoader();
-		CONN.caricaUrl(	"diagnosi_gettoni.php",
-						"",
-						"AI.res_gettoni");
+		CONN.retRealNoConn().then(isOnline => {
+			if(isOnline){
+				AI.endpoint = endpoint;
+				visLoader('');
+				CONN.caricaUrl(	"diagnosi_gettoni.php",
+								"",
+								"AI.res_gettoni");
+			}
+		});
 	},
 	res_gettoni: function( res ){
 		AI.gettoniAI = JSON.parse(res);
@@ -58,9 +62,12 @@ var AI = {
 		}
 	},
 	request: function(){
-		MENU.chiudiMenu();
-		AI.diagnosi_request();
-;
+		CONN.retRealNoConn().then(isOnline => {
+			if(isOnline){
+				MENU.chiudiMenu();
+				AI.diagnosi_request();
+			}
+		});
 	},
 	purchase: function(){
 		CONN.openUrl(convLangPath(CONN.urlAItokens)+"?p="+MD5(DB.login.data.TOKEN+(DB.login.data.idUtente*123))+(DB.login.data.idUtente*45));
@@ -149,6 +156,11 @@ var AI = {
 						"AI.diagnosi_response");
 	},
 	diagnosi_response: function( json ){
+		if(typeof(json)=='undefined'){
+			ALERT(TXT("ErroreConnessione"));
+			nasLoader();
+			return false;
+		}
 		let res = JSON.parse(json);
 		if(res.esito.substr(0,5)=='ERROR'){
 			ALERT(TXT("ErroreGenerico"));

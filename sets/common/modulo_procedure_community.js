@@ -252,32 +252,36 @@ var MODULO_PROCEDURE_COMMUNITY = { // extend SET
 							SET.elProcCommOp);
 	},
 	caricaCommunity: function(){ // carica l'elenco delle procedure
-		if(CONN.getConn())applicaLoading(document.querySelector(".listaProcedure"));
-		SET.idProcCommOp=-1;
-		SET.elProcCommOp=null;
-		//retNoFree();
-		CONN.retNoConn();
-						
-		let JSNPOST={	"idLinguaRic": 1,
-						"parolaRic": "",
-						"parolaRicCrypt": "",
-						"prefRic": "",
-						"app": globals.set.siglaProc,
-						"record": 0 };
-						
-		if(document.formRicProc){
-			JSNPOST={	"idLinguaRic": document.formRicProc.idLinguaRic.value*1,
-							"parolaRic": document.formRicProc.parolaRic.value,
-							"parolaRicCrypt": document.formRicProc.parolaRic.value,
-							"prefRic": document.formRicProc.prefRic.value,
-							"app": globals.set.siglaProc,
-							"record": document.formRicProc.record.value*1 };
-		}			
-						
+		CONN.retRealNoConn().then(isOnline => {
+			if(isOnline){
+				/* if(CONN.getConn()) */applicaLoading(document.querySelector(".listaProcedure"));
+				SET.idProcCommOp=-1;
+				SET.elProcCommOp=null;
+				//retNoFree();
+				/* CONN.retNoConn(); */
+								
+				let JSNPOST={	"idLinguaRic": 1,
+								"parolaRic": "",
+								"parolaRicCrypt": "",
+								"prefRic": "",
+								"app": globals.set.siglaProc,
+								"record": 0 };
+								
+				if(document.formRicProc){
+					JSNPOST={	"idLinguaRic": document.formRicProc.idLinguaRic.value*1,
+									"parolaRic": document.formRicProc.parolaRic.value,
+									"parolaRicCrypt": document.formRicProc.parolaRic.value,
+									"prefRic": document.formRicProc.prefRic.value,
+									"app": globals.set.siglaProc,
+									"record": document.formRicProc.record.value*1 };
+				}			
+								
 
-		CONN.caricaUrl(	"community_elenco.php",
-						"b64=1&JSNPOST="+window.btoa(encodeURIComponent(JSON.stringify(JSNPOST))),
-						"SET.confermaCommunity");
+				CONN.caricaUrl(	"community_elenco.php",
+								"b64=1&JSNPOST="+window.btoa(encodeURIComponent(JSON.stringify(JSNPOST))),
+								"SET.confermaCommunity");
+			}
+		});
 		return false;
 	},
 	caricaProceduraCommunity: function( Q_idProc, k, el ){ // carica una procedura condivisa per la visualizzazione

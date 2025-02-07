@@ -2059,6 +2059,14 @@ DB.TXT = {
             por: "Última conexão",
             deu: "Letzte Verbindung"
         },
+        ErroreConnessione: {
+            ita: "Errore di connessione",
+            eng: "Connection error",
+            esp: "Error de conexión",
+            fra: "Erreur de connexion",
+            por: "Erro de conexão",
+            deu: "Verbindungsfehler"
+        },
 
         // FEEDBACK
         Feedback: {

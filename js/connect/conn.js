@@ -68,14 +68,35 @@ var CONN = {
             const response = await fetch(CONN.APIfolder+"checker_di_connessione.php", {
                 method: "POST"
             });
-            return response.ok || response.status === 200;
+			CONN.online = response.ok || response.status === 200;
+            return CONN.online;
         }catch(error){
+			CONN.online = false;
             return false; // Se fallisce la richiesta, non c'è connessione reale
         }
+	},
+	retRealNoConn: async function(){ // avvisa della connessione assente
+		try{
+			const response = await fetch(CONN.APIfolder+"checker_di_connessione.php", {
+				method: "POST"
+			});
+			CONN.online = response.ok || response.status === 200;
+			isOnline = CONN.online;
+		}catch(error){
+			CONN.online = false;
+			isOnline = false;
+		}
+		if(isOnline){
+			return true;
+		}else{
+			ALERT(TXT("ConnessioneAssente"));
+			return false;
+		}
 	},
 
 
 	getConn: function(){ // verifica la connessione a internet
+		return CONN.online;
 		return navigator.onLine;
 	},
 	retNoConn: function(){ // avvisa della connessione assente

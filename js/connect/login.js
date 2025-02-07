@@ -474,84 +474,87 @@ var LOGIN = {
 		}
 	},
 	verificaToken: function(){ // Verifico che il token sia valido
-		if(CONN.getConn() && LOGIN.logedin()){
-			// se c'è connessione e ho il TOKEN
-			
-			// invio di dati di sincro per verificare modifiche
-			let JSNPOST = {
-				"note": DB.note.lastSync,
-				"procedure": DB.procedure.lastSync,
-				"servizi": DB.servizi.lastSync,
-				"fornitori": DB.fornitori.lastSync,
-				"pazienti": DB.pazienti.lastSync,
-				"ricerche": DB.ricerche.lastSync,
-				//"cicli": DB.cicli.lastSync, // SERVE SOLO IN UPLOAD
-				"appuntamenti": DB.appuntamenti.lastSync,
-				"annotazioni": DB.annotazioni.lastSync,
-				"moduli": DB.moduli.lastSync
-			};
-			if(LOGIN.logedin())CONN.caricaUrl(	"vertoken.php",
-												"SL="+globals.siglaLingua.toUpperCase() +
-												"&tab="+SCHEDA.locked.tab +
-												"&idEl="+SCHEDA.locked.idEl +
-												"&JSNPOST="+window.btoa(encodeURIComponent(JSON.stringify(JSNPOST))),
-												"LOGIN.resToken");
-			return false;
-		}else{
-			// se non c'è connessione o non ho il token
-			LOGIN.connAssente=true;
-			// verifico se ci sono elementi da sincronizzare
-			//!!!!! POTREBBE ESSERE ESCLUSA LA FUNZIONE in quanto abbiamo tolto la visualizzazione del loghino
-			LOGIN.daSync=false;
-			for(let p in DB.pazienti.data){
-				if(DB.pazienti.data[p].DataModifica>DB.pazienti.lastSync)LOGIN.daSync=true;
-				for(t in DB.pazienti.data[p].trattamenti){
-					if(DB.pazienti.data[p].trattamenti[t].DataModifica>DB.pazienti.lastSync)LOGIN.daSync=true;
+		CONN.getRealConn().then(isOnline => {
+			CONN.online = isOnline;
+			if(isOnline && LOGIN.logedin()){
+				// se c'è connessione e ho il TOKEN
+				
+				// invio di dati di sincro per verificare modifiche
+				let JSNPOST = {
+					"note": DB.note.lastSync,
+					"procedure": DB.procedure.lastSync,
+					"servizi": DB.servizi.lastSync,
+					"fornitori": DB.fornitori.lastSync,
+					"pazienti": DB.pazienti.lastSync,
+					"ricerche": DB.ricerche.lastSync,
+					//"cicli": DB.cicli.lastSync, // SERVE SOLO IN UPLOAD
+					"appuntamenti": DB.appuntamenti.lastSync,
+					"annotazioni": DB.annotazioni.lastSync,
+					"moduli": DB.moduli.lastSync
+				};
+				if(LOGIN.logedin())CONN.caricaUrl(	"vertoken.php",
+													"SL="+globals.siglaLingua.toUpperCase() +
+													"&tab="+SCHEDA.locked.tab +
+													"&idEl="+SCHEDA.locked.idEl +
+													"&JSNPOST="+window.btoa(encodeURIComponent(JSON.stringify(JSNPOST))),
+													"LOGIN.resToken");
+				return false;
+			}else{
+				// se non c'è connessione o non ho il token
+				LOGIN.connAssente=true;
+				// verifico se ci sono elementi da sincronizzare
+				//!!!!! POTREBBE ESSERE ESCLUSA LA FUNZIONE in quanto abbiamo tolto la visualizzazione del loghino
+				LOGIN.daSync=false;
+				for(let p in DB.pazienti.data){
+					if(DB.pazienti.data[p].DataModifica>DB.pazienti.lastSync)LOGIN.daSync=true;
+					for(t in DB.pazienti.data[p].trattamenti){
+						if(DB.pazienti.data[p].trattamenti[t].DataModifica>DB.pazienti.lastSync)LOGIN.daSync=true;
+					}
+					for(t in DB.pazienti.data[p].saldi){
+						if(DB.pazienti.data[p].saldi[t].DataModifica>DB.pazienti.lastSync)LOGIN.daSync=true;
+					}
 				}
-				for(t in DB.pazienti.data[p].saldi){
-					if(DB.pazienti.data[p].saldi[t].DataModifica>DB.pazienti.lastSync)LOGIN.daSync=true;
+				if(DB.fornitori){
+					for(let p in DB.fornitori.data){
+						if(DB.fornitori.data[p].DataModifica>DB.fornitori.lastSync)LOGIN.daSync=true;
+					}
+				}
+				if(DB.servizi){
+					for(let p in DB.servizi.data){
+						if(DB.servizi.data[p].DataModifica>DB.servizi.lastSync)LOGIN.daSync=true;
+					}
+				}
+				if(DB.appuntamenti){
+					for(let p in DB.appuntamenti.data){
+						if(DB.appuntamenti.data[p].DataModifica>DB.appuntamenti.lastSync)LOGIN.daSync=true;
+					}
+				}
+				if(DB.annotazioni){
+					for(let p in DB.annotazioni.data){
+						if(DB.annotazioni.data[p].DataModifica>DB.annotazioni.lastSync)LOGIN.daSync=true;
+					}
+				}
+				if(DB.moduli){
+					for(let p in DB.moduli.data){
+						if(DB.moduli.data[p].DataModifica>DB.moduli.lastSync)LOGIN.daSync=true;
+					}
+				}
+				if(DB.procedure){
+					for(let p in DB.procedure.data){
+						if(DB.procedure.data[p].DataModifica>DB.procedure.lastSync)LOGIN.daSync=true;
+					}
+				}
+				if(DB.note){
+					for(let p in DB.note.data){
+						if(DB.note.data[p].DataModifica>DB.note.lastSync)LOGIN.daSync=true;
+					}
 				}
 			}
-			if(DB.fornitori){
-				for(let p in DB.fornitori.data){
-					if(DB.fornitori.data[p].DataModifica>DB.fornitori.lastSync)LOGIN.daSync=true;
-				}
-			}
-			if(DB.servizi){
-				for(let p in DB.servizi.data){
-					if(DB.servizi.data[p].DataModifica>DB.servizi.lastSync)LOGIN.daSync=true;
-				}
-			}
-			if(DB.appuntamenti){
-				for(let p in DB.appuntamenti.data){
-					if(DB.appuntamenti.data[p].DataModifica>DB.appuntamenti.lastSync)LOGIN.daSync=true;
-				}
-			}
-			if(DB.annotazioni){
-				for(let p in DB.annotazioni.data){
-					if(DB.annotazioni.data[p].DataModifica>DB.annotazioni.lastSync)LOGIN.daSync=true;
-				}
-			}
-			if(DB.moduli){
-				for(let p in DB.moduli.data){
-					if(DB.moduli.data[p].DataModifica>DB.moduli.lastSync)LOGIN.daSync=true;
-				}
-			}
-			if(DB.procedure){
-				for(let p in DB.procedure.data){
-					if(DB.procedure.data[p].DataModifica>DB.procedure.lastSync)LOGIN.daSync=true;
-				}
-			}
-			if(DB.note){
-				for(let p in DB.note.data){
-					if(DB.note.data[p].DataModifica>DB.note.lastSync)LOGIN.daSync=true;
-				}
-			}
-		}
-		LINGUE.getGoogleLanguages();
+			LINGUE.getGoogleLanguages();
+		});
 	},
 	avviaVerToken: function(){ // Avvia la verifica del TOKEN ogni 10 secondi
-		LOGIN.tmVerT = setInterval(function(){LOGIN.verificaToken();},20*1000); // verifico ogni 10 secondi
+		LOGIN.tmVerT = setInterval(function(){LOGIN.verificaToken();},10*1000); // verifico ogni 10 secondi
 	},
 	resToken: function(txt){ // Risposta dalla verifica del TOKEN
 		if(typeof(txt) != 'undefined'){;
@@ -1350,9 +1353,13 @@ var LOGIN = {
 
 	/* UPGRADE */
 	checkNewVersion: function(){ // verifica online se c'è una nuova versione
-		CONN.caricaUrl(	"check_new_version.php",
-						"TK=D6G-w34rgV",
-						"LOGIN.resNewVersion");
+		CONN.getRealConn().then(isOnline => {
+			if(isOnline){
+				CONN.caricaUrl(	"check_new_version.php",
+								"TK=D6G-w34rgV",
+								"LOGIN.resNewVersion");
+			}
+		});
 	},
 	resNewVersion: function( res ){ // la risposta del check sulla nuova versione
 		let jsn = JSON.parse(res);

@@ -868,6 +868,11 @@ var PH = {
 		PH.visPdfBig(url);
 	},
 	scriviPhotoBig: function( res ){ // scrive il file BIG
+		if(typeof(res)=='undefined'){
+			ALERT(TXT("ErroreConnessione"));
+			nasLoader();
+			return false;
+		}
 		res = JSON.parse( res );
 		let lowRes = false,
 			urlImg = res.imgBig;
@@ -1004,7 +1009,8 @@ var PH = {
 	car_gallery_online: function(){ // legge la lista dei files online
 		if(CONN.getConn() && LOGIN.logedin()!=''){
 			CONN.caricaUrl(	'getImgGallery_GLOBAL.php',
-							'b64=1&iU='+DB.login.data.idUtente+'&online=1&JSNPOST='+window.btoa(encodeURIComponent(JSON.stringify([]))),'PH.car_gallery_online_post',
+							'b64=1&iU='+DB.login.data.idUtente+'&online=1&JSNPOST='+window.btoa(encodeURIComponent(JSON.stringify([]))),
+							'PH.car_gallery_online_post',
 							CONN.APIfilesFolder );
 		}else PH.car_gallery_online_post('');
 	},

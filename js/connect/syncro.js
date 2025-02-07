@@ -9,13 +9,14 @@ var SYNCRO = {
 		DB._verDbSize();
 		if(typeof(funct)!='undefined')SYNCRO.afterFunct=funct;
 		else if(!SYNCRO.afterFunct)SYNCRO.afterFunct=null;
-		
-		if(CONN.getConn() && LOGIN.logedin()!=''){
-			SYNCRO.globalSync( false, bkp );
-		}else if(SYNCRO.afterFunct){
-			eval(SYNCRO.afterFunct);
-			SYNCRO.afterFunct = null;
-		}
+		CONN.getRealConn().then(isOnline => {
+			if(isOnline && CONN.getConn() && LOGIN.logedin()!=''){
+				SYNCRO.globalSync( false, bkp );
+			}else if(SYNCRO.afterFunct){
+				eval(SYNCRO.afterFunct);
+				SYNCRO.afterFunct = null;
+			}
+		});
 	},
 	globalSync: function( dwnl = false, bkp = false, Nuovo = false ){ // sincro globale up e down
 		// da controllare all'avvio dell'app e ogni volta che riprende la connessione
