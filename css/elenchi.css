@@ -93,7 +93,9 @@ body:not(.smart) #chiudiCliente:hover,
 body:not(.smart) #impostazioniSet,
 .smart #elenchi #impostazioniSet,
 body:not(.smart) #impostazioniArchivi,
-.smart #elenchi #impostazioniArchivi{
+.smart #elenchi #impostazioniArchivi,
+body:not(.smart) #impostazioniArchivi2,
+.smart #elenchi #impostazioniArchivi2{
 	float: right;
     display: inline-block;
     vertical-align: middle;
@@ -120,7 +122,8 @@ body:not(.smart) #impostazioniArchivi,
     opacity: 0.5;
 }
 .smart #elenchi #impostazioniSet,
-.smart #elenchi #impostazioniArchivi{
+.smart #elenchi #impostazioniArchivi,
+.smart #elenchi #impostazioniArchivi2{
 	background-size: auto 32px;
     opacity: 0.8;
     margin-right: 7px;
@@ -129,9 +132,15 @@ body:not(.smart) #impostazioniArchivi,
 body:not(.smart) #elenchi #impostazioniArchivi{
     margin-top: 9px;
 }
+body:not(.smart) #elenchi #impostazioniArchivi2{
+    margin-top: 4px;
+}
 .smart #elenchi #impostazioniArchivi{
 	margin-top: 9px;
     margin-right: -6px !important;
+}
+.smart #elenchi #impostazioniArchivi2{
+    margin-right: 8px !important;
 }
 body:not(.smart) #help_set,
 .smart #elenchi #help_set,
@@ -416,13 +425,12 @@ body:not(.smart) #elenchi_linguette{
 body:not(.smart) #mappe_titolo_freccia{
 	display:none;
 }
-#elenchi_titolo_freccia.btn_altri_archivi{
+/* #elenchi_titolo_freccia.btn_altri_archivi{
 	width: auto !important;
     height: 30px !important;
     line-height: 29px !important;
     float: right !important;
     background-color: rgba(0, 0, 0, 0.4) !important;
-    /* background-image: none !important; */
     border-radius: 8px;
     padding: 0 13px;
     margin: 10px -4px 0px 2px;
@@ -440,7 +448,7 @@ body:not(.smart) #mappe_titolo_freccia{
 #elenchi_titolo_freccia.btn_altri_archivi i{
     color: #FFF;
 	font-style:normal;
-}
+} */
 #elenchi_titolo_txt{
 	width: calc(100% - 130px);
 	height: 50px;
@@ -470,7 +478,7 @@ body:not(.smart) #mappe_titolo_freccia{
 	height: 44px;
     padding-left: 15px;
     display: block;
-    padding-right: 20px;
+    padding-right: 4px;
 }
 #titolo_base_txt{
 	display:inline-block;
