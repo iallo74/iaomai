@@ -34,8 +34,8 @@ var MENU = {
 			if(smartMenu){
 				document.getElementById("p_modello").getElementsByTagName("i")[0].innerHTML = TXT("LabelSmartAnatomia");
 				//document.getElementById("p_sets").getElementsByTagName("i")[0].innerHTML = TXT("LabelSmartMappe");
-				document.getElementById("p_cartella").getElementsByTagName("i")[0].innerHTML = TXT("LabelSmartPazienti");
-				document.getElementById("p_cartella").getElementsByTagName("i")[1].innerHTML = TXT("LabelSmartPazienti");
+				document.getElementById("p_cartella").getElementsByTagName("i")[0].innerHTML = TXT("LabelSmartArchivi");
+				document.getElementById("p_cartella").getElementsByTagName("i")[1].innerHTML = TXT("LabelSmartArchivi");
 				document.getElementById("p_impostazioni").getElementsByTagName("i")[0].innerHTML =  TXT("Altro");
 				/* document.getElementById("filtroPazienti").getElementsByTagName("span")[0].innerHTML = TXT("LabelSmartStatistiche");
 				document.getElementById("marketingPazienti").getElementsByTagName("span")[0].innerHTML = TXT("LabelSmartMarketing"); */
@@ -756,9 +756,10 @@ var MENU = {
 			else document.recuperoForm.recuperoUSR.focus();
 		}
 	},
-	visImpset: function(){
-		let archivi = 	!document.getElementById('elenchi_titolo').classList.contains('visSch') || 
-						document.getElementById('elenchi').classList.contains('vis_set') ? false : true;
+	visImpset: function(forza=false){
+		let archivi = 	(document.getElementById('elenchi_titolo').classList.contains('visSch') && 
+						!document.getElementById('elenchi').classList.contains('vis_set')) ||
+						forza ? true : false;
 		MENU.chiudiMenu("impset");
 		visLoader("","blured");
 		document.getElementById("impset").classList.toggle("visSch");
