@@ -367,9 +367,11 @@ var agenda = {
 			oraInizio = pP[1]*1;
 			oraFine = pP[2]*1;
 		}
+		DateAppuntamento = TimeAppuntamento ? formatDate(TimeAppuntamento*1000) : '';
 		
 		JSNPUSH={ 	"TestoAppuntamento": document.getElementById("TestoAppuntamento").value,
 					"TimeAppuntamento": TimeAppuntamento,
+					"DateAppuntamento": DateAppuntamento,
 					"oraInizio": oraInizio,
 					"oraFine": oraFine,
 					"DataModifica": parseInt(DataModifica),

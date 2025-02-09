@@ -1373,8 +1373,10 @@ var PAZIENTI_TRATTAMENTI = { // extend PAZIENTI
 			visLoader(TXT("SalvataggioInCorso"),'loadingLight');
 			if(!ControllaNumero(document.formMod.CostoTrattamento,stripslashes(TXT("Costo"))))return;
 			//if(agenda.oraFine>-1)agenda.conferma();
-			LabelCiclo=document.formMod.LabelCiclo.value;
-			TipoTrattamento=document.formMod.TipoTrattamento.value;
+			LabelCiclo = document.formMod.LabelCiclo.value;
+			TipoTrattamento = document.formMod.TipoTrattamento.value;
+			TimeTrattamento = document.formMod.TimeTrattamento.value*1;
+			DateTrattamento = TimeTrattamento ? formatDate(TimeTrattamento*1000) : '';
 			let DataModifica = DB.pazienti.lastSync+1;
 			
 			if(agenda.opened)document.getElementById("dataTxt").click();
@@ -1460,7 +1462,8 @@ var PAZIENTI_TRATTAMENTI = { // extend PAZIENTI
 				JSNPUSH={	"idTrattamento": document.formMod.idTrattamento.value*1,
 							"TitoloTrattamento": document.formMod.TitoloTrattamento.value,
 							"NoteTrattamento": document.formMod.NoteTrattamento.value,
-							"TimeTrattamento": document.formMod.TimeTrattamento.value*1,
+							"TimeTrattamento": TimeTrattamento,
+							"DateTrattamento": DateTrattamento,
 							"moduli": PAZIENTI.moduliProvvisori,
 							"oraInizio": document.formMod.oraInizio.value*1,
 							"oraFine": document.formMod.oraFine.value*1,
@@ -1554,7 +1557,6 @@ var PAZIENTI_TRATTAMENTI = { // extend PAZIENTI
 	swAgenda: function( data, elemento, funct, el, Q_idTratt ){ // apre e chiude l'agenda in un trattamento
 		if(!data)data=new Date();
 		else data=new Date(data);
-		console.log(data)
 		if(el.dataset.d){
 			let D=JSON.parse(el.dataset.d);
 			if(typeof(D.data)!='undefined')data=new Date(D.data);

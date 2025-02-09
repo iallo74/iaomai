@@ -243,10 +243,12 @@ var PAZIENTI_SALDI = { // extend PAZIENTI
 								document.formMod.giornoDataSaldo.value*1);
 			DataSaldo=DataSaldo.getTime();
 			DataSaldo=parseInt(DataSaldo/1000);
+			DateSaldo = DataSaldo ? formatDate(DataSaldo*1000) : '';
 			JSNPUSH={	"idSaldo": document.formMod.idSaldo.value*1,
 						"MotivoSaldo": document.formMod.MotivoSaldo.value,
 						"RicevutaSaldo": document.formMod.RicevutaSaldo.value,
 						"DataSaldo": DataSaldo*1,
+						"DateSaldo": DateSaldo,
 						"DataModifica": parseInt(DataModifica),
 						"ValoreSaldo": parseFloat(document.formMod.ValoreSaldo.value.replace(",","."))*1,
 						"Cancellato": 0,

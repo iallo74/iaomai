@@ -737,9 +737,12 @@ var SYNCRO = {
 				// per ogni novità verifico l'esistenza
 				passato=false;
 				if(BACKUPS.bkpProvv)elenco.appuntamenti[p].DataModifica = lastSync*1;
+				TimeAppuntamento = elenco.appuntamenti[p].TimeAppuntamento*1;
+				DateAppuntamento = elenco.appuntamenti[p].DateAppuntamento;
+				if(DateAppuntamento && DateAppuntamento!='0000-00-00')TimeAppuntamento = new Date(DateAppuntamento)*1;
 				JSNPUSH={ 	"idAppuntamento": elenco.appuntamenti[p].idAppuntamento*1,
 							"TestoAppuntamento": elenco.appuntamenti[p].TestoAppuntamento+"",
-							"TimeAppuntamento": elenco.appuntamenti[p].TimeAppuntamento*1,
+							"TimeAppuntamento": TimeAppuntamento,
 							"oraInizio": elenco.appuntamenti[p].oraInizio*1,
 							"oraFine": elenco.appuntamenti[p].oraFine*1,
 							"idPaziente": elenco.appuntamenti[p].idPaziente*1,
@@ -1014,6 +1017,9 @@ var SYNCRO = {
 							}else puntiMTC = '[]';
 						} //-------------------------------------------------------------
 						if(BACKUPS.bkpProvv)trattamenti[t].DataModifica = lastSync*1;
+						TimeTrattamento = trattamenti[t].TimeTrattamento*1;
+						DateTrattamento = trattamenti[t].DateTrattamento;
+						if(DateTrattamento && DateTrattamento!='0000-00-00')TimeTrattamento = new Date(DateTrattamento)/1000;
 						JSNPUSH={ 	"idTrattamento": trattamenti[t].idTrattamento*1,
 									"idPaziente": DB.pazienti.data[kDef].idPaziente*1,
 									"TitoloTrattamento": trattamenti[t].TitoloTrattamento,
@@ -1034,7 +1040,7 @@ var SYNCRO = {
 									"meridiani": toJson(trattamenti[t].meridiani),
 									"sintomi": toJson(trattamenti[t].sintomi),
 									"gallery": toJson(trattamenti[t].gallery),
-									"TimeTrattamento": trattamenti[t].TimeTrattamento*1,
+									"TimeTrattamento": TimeTrattamento,
 									"oraInizio": trattamenti[t].oraInizio*1,
 									"oraFine": trattamenti[t].oraFine*1,
 									"DataModifica": trattamenti[t].DataModifica*1,
@@ -1095,12 +1101,15 @@ var SYNCRO = {
 					for(t in saldi){ // in tutti i trattamenti arrivati
 						passato=false;
 						if(BACKUPS.bkpProvv)saldi[t].DataModifica = lastSync*1;
+						DataSaldo = saldi[t].DataSaldo*1;
+						DateSaldo = saldi[t].DateSaldo;
+						if(DateSaldo && DateSaldo!='0000-00-00')DataSaldo = new Date(DateSaldo)/1000;
 						JSNPUSH={ 	"idSaldo": saldi[t].idSaldo*1,
 									"idPaziente": DB.pazienti.data[kDef].idPaziente*1,
 									"MotivoSaldo": saldi[t].MotivoSaldo,
 									"RicevutaSaldo": __(saldi[t].RicevutaSaldo),
 									"ValoreSaldo": saldi[t].ValoreSaldo*1,
-									"DataSaldo": saldi[t].DataSaldo*1,
+									"DataSaldo": DataSaldo,
 									"DataModifica": saldi[t].DataModifica*1,
 									"Cancellato": saldi[t].Cancellato*1,
 									"frv": false };		
