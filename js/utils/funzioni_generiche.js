@@ -261,3 +261,48 @@ function indexOfSimilar(base, search) {
 function padTwoDigits(num) {
     return num.toString().padStart(2, '0');
 }
+function formatDate(timestamp) {
+    return new Intl.DateTimeFormat('it-IT', {
+        year: 'numeric',
+        month: '2-digit',
+        day: '2-digit'
+    }).format(new Date(timestamp)).split('/').reverse().join('-');
+}
+/* function getRomeTimestamp(date = new Date()) {
+    const romeDate = getRomeDate(date);
+    return romeDate.getTime();
+}
+function getRomeDate(date = new Date()) {
+    const romeDateStr = date.toLocaleString('sv-SE', { timeZone: 'Europe/Rome' }).replace(' ', 'T');
+    const romeDate = new Date(romeDateStr + 'Z');
+    return romeDate;
+}
+function diffTimezone(){
+    // Ottiene l'offset locale in minuti (JavaScript lo restituisce con segno inverso)
+    const localOffsetMinutes = new Date().getTimezoneOffset();
+
+    // Ottiene l'offset di Roma in minuti utilizzando `Intl.DateTimeFormat`
+    const romeOffsetMinutes = new Date().toLocaleString('en-US', { timeZone: 'Europe/Rome' });
+    
+    // Creiamo una data nel fuso orario di Roma e otteniamo il suo offset
+    const romeDate = new Date();
+    const romeFormatter = new Intl.DateTimeFormat('en-US', {
+        timeZone: 'Europe/Rome',
+        timeZoneName: 'short'
+    }).formatToParts(romeDate);
+
+    // Estrarre il valore dell'offset da "GMT+1" o "GMT+2"
+    const romeOffsetString = romeFormatter.find(part => part.type === 'timeZoneName').value;
+    const romeOffsetHours = parseInt(romeOffsetString.replace("GMT", ""), 10);
+
+    // Calcola la differenza tra il fuso orario locale e Roma
+    const localOffsetHours = -localOffsetMinutes / 60; // Convertiamo minuti in ore
+
+    return localOffsetHours - romeOffsetHours;
+}
+function convTZ(date){
+	return date - 3600*diffTimezone();
+}
+function reConvTZ(date){
+	return date + 3600*diffTimezone();
+} */
