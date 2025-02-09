@@ -5236,7 +5236,7 @@ DB.TXT = {
             por: "Gerenciamento de arquivos",
             deu: "Dateiverwaltung"
         },
-        ElPazienti: {
+        TuoiPazienti: {
             ita: "I tuoi pazienti",
             eng: "Your patients",
             esp: "Tus pacientes",
@@ -6139,6 +6139,14 @@ DB.TXT = {
             fra: "Patients",
             por: "Pacientes",
             deu: "Patienten"
+        },
+        LabelSmartArchivi: {
+            ita: "Archivi",
+            eng: "Archives",
+            esp: "Archivos",
+            fra: "Fichiers",
+            por: "Arquivos",
+            deu: "Archiv"
         },
         AltriArchivi: {
             ita: "Altri archivi",
