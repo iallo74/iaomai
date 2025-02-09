@@ -818,7 +818,7 @@ var SCHEDA = {
 	},
 	
 	initElenco: function(){
-		SCHEDA.elencoSelBase='pazienti';
+		//SCHEDA.elencoSelBase='pazienti'; // fa andare subito sui pazienti
 		document.getElementById(smartMenu ? "elenchi_lista" : "elenchi_pulsanti").classList.add("visSch");
 		SCHEDA.chiudiElenco();
 	},
