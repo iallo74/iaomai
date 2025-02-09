@@ -279,7 +279,7 @@
                         <div id="chiudiElenco" onClick="SCHEDA.chiudiElenco();"></div>
                         <div id="elenchi_titolo">
                             <span id="elenchi_titolo_freccia"
-                                  onClick="SCHEDA.swPulsanti();"><i>{{TXT_AltriArchivi}}</i></span>
+                                  onClick="SCHEDA.swPulsanti();"></span>
                             <span id="elenchi_titolo_txt"
                                   onMouseDown="SCHEDA.iniziaMoveScheda(event);"
                                   onTouchStart="SCHEDA.iniziaMoveScheda(event);"></span>
@@ -307,7 +307,10 @@
                         <div id="pulsanti_set"></div>
                     	<div id="pulsanti_base">
                         	<span id="titolo_base">
-                                <span id="help_clienti" class="elMenu" onClick="GUIDA.visFumetto('guida_archivi',true,true);">?</span><span  id="titolo_base_txt"
+                                <span class="elMenu" id="impostazioniArchivi2"
+                                      onClick="MENU.visImpset(true);"></span>
+                                <span id="help_clienti" class="elMenu" onClick="GUIDA.visFumetto('guida_archivi',true,true);">?</span>
+                                <span  id="titolo_base_txt"
                                             onMouseDown="SCHEDA.iniziaMoveScheda(event);"
                                             onTouchStart="SCHEDA.iniziaMoveScheda(event);">{{TXT_ElGestionale}}</span></span>
                             <span id="descrizione_base">{{TXT_GuidaPazientiTxt}}</span>
@@ -801,7 +804,7 @@
             	<div class="popup_chiudi" onClick="MENU.chiudiMenu();"></div>
                 <div id="contFeatures" class="popup_cont"></div>
                 
-                <div class="noVisPiu">{{TXT_noVisPiu}} <input type="checkbox" id="no_info_features" name="no_info_features" value="1" onclick="localStorage.setItem(this.dataset.name,this.checked);" data-name="no_info_features"></div>
+                <div class="noVisPiu">{{TXT_noVisPiu}} <input type="checkbox" id="no_info_features" name="no_info_features" value="1" onclick="if(this.checked){localStorage.setItem(this.dataset.name,true);}else{localStorage.removeItem(this.dataset.name);}" data-name="no_info_features"></div>
             </div>
             <div id="purchases" class="popup"> <!-- ACQUISTI -->
             	<div id="labelPurchases" class="popup_label">{{TXT_AcquistaLicenza}}<div class="popup_chiudi" onClick="MENU.chiudiMenu();"></div></div>
@@ -909,7 +912,7 @@
                 <div id="p_cartella" onClick="SCHEDA.apriElenco('base',true);">
                 	<span id="ico_cliente"><i></i></span>
                 	<svg viewBox="0 0 12 48"><polygon points="5,24 12,13 12,35"></polygon></svg>
-                    <i>{{TXT_ElPazienti}}</i></div>
+                    <i>{{TXT_ElGestionale}}</i></div>
                 <div id="p_agenda" onClick="MENU.visAgenda();">
                     <span id="notificaAgenda"></span>
                 	<svg viewBox="0 0 12 48"><polygon points="5,24 12,13 12,35"></polygon></svg>
