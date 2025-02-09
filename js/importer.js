@@ -32,7 +32,7 @@ var	smartphone = false,
 	onlineVersion=false,
 	isTablet = false,
 	globals = {},
-	dateEndFeatures = new Date("2024-05-01").getTime();
+	dateEndFeatures = new Date("2025-02-28").getTime();
 
 /*const checkOnlineStatus = async () => {
 	try{
