@@ -59,7 +59,7 @@
 #contRecupero{
 	height: 300px;
 }
-.inspwd:not(.confcode) #contRecupero{
+body:not(.smart) .inspwd:not(.confcode) #contRecupero{
 	height: 340px;
 }
 .smart #contRegistrazione,
@@ -172,12 +172,15 @@
 body:not(.smart) .butrec{
 	float:right;
 }
-/* .smart.android #recuperoBut,
+.smart.android #recuperoBut,
 .smart.android #confcodeForm input[type='submit'],
 .smart.android .butrec{
-	font-size: var(--font-15-39) !important;
-	line-height:36.64px !important;
-} */
+	height:44px;
+	line-height:44px;
+	padding-left:20px;
+	padding-right:20px;
+	font-size: 16.93px;
+}
 .mezza{
 	width:calc(50% - 2px) !important;
 }

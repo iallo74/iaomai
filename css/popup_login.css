@@ -247,7 +247,7 @@ body:not(.smart) #login_benvenuto{
 	opacity:0.8;
 } */
 #btnRecupero,
-#richiediConfcode{
+#btnRichiediConfcode{
 	color:#333 !important;
 	line-height: 30px;
 	cursor:pointer;
@@ -256,7 +256,7 @@ body:not(.smart) #login_benvenuto{
 	box-sizing:border-box;
 }
 #btnRecupero b,
-#richiediConfcode b{
+#btnRichiediConfcode b{
 	font-size: var(--font-16-93) !important;
 	color:#287fda;
 	display: inline-block;
@@ -264,14 +264,14 @@ body:not(.smart) #login_benvenuto{
 	margin-top: -3px;
 }
 .smart.android #btnRecupero,
-.smart.android #richiediConfcode{
+.smart.android #btnRichiediConfcode{
 	font-size: var(--font-15-39) !important;
 }
 .smart.android #btnRecupero b,
-.smart.android #richiediConfcode b{
+.smart.android #btnRichiediConfcode b{
 	font-size: var(--font-19-8) !important;
 }
 .app_version.bug_font.smart.android #btnRecupero,
-.app_version.bug_font.smart.android #richiediConfcode{
+.app_version.bug_font.smart.android #btnRichiediConfcode{
 	font-size: var(--font-13-94) !important;
 }
