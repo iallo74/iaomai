@@ -78,7 +78,7 @@ var MODULO_PROCEDURE_COMMUNITY = { // extend SET
 			'		</span>';
 		}
 		
-		if(HTML_btns)HTML += '<div class="commTL">' + HTML_btns + '</div>';
+		if(HTML_btns)HTML += '<div class="commTL noPrint">' + HTML_btns + '</div>';
 			
 		if(el.risposte){
 			if(el.risposte.length){

@@ -9,6 +9,10 @@
 #dettagliCont.TRP .dettPunto .iProc{
 	display:none !important;
 }
+.contStampa .rgProcMod {
+	box-shadow:none !important;
+	border: none !important;
+}
 #procTue{
 	width:80px;
 }

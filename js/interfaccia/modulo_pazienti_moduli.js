@@ -309,8 +309,8 @@ var PAZIENTI_MODULI = { // extend PAZIENTI
 			}
 			HTML += '<div class="moduli">'+
 					'	<div class="modulo_tit">'+title+'</div>' +
-					'	<div class="modulo_del" onClick="PAZIENTI.rimuoviModulo('+m+');">'+TXT("RimuoviModulo")+'</div>' +
-					((m)?('	<div class="modulo_moveup" onClick="PAZIENTI.spostaModulo('+m+');">'+TXT("SpostaModulo")+'</div>'):'')+
+					'	<div class="modulo_del noPrint" onClick="PAZIENTI.rimuoviModulo('+m+');">'+TXT("RimuoviModulo")+'</div>' +
+					((m)?('	<div class="modulo_moveup noPrint" onClick="PAZIENTI.spostaModulo('+m+');">'+TXT("SpostaModulo")+'</div>'):'')+
 					HTML_provv +
 					'</div>';
 		}

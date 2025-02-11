@@ -584,7 +584,7 @@ var PH = {
 				if(name)HTML += ' title="'+htmlEntities(name)+'"';
 				HTML += '>';
 				HTML += 
-					'			<img class="gall_full"' +
+					'			<img class="gall_full noPrint"' +
 					'			 	 src="img/';
 				if(isFile)HTML += 'ico_dwnl';
 				else if(isVideo)HTML += 'play_big';
@@ -592,7 +592,7 @@ var PH = {
 				HTML += '.png">';
 				if(PH.actionClick)HTML += '<img src="img/spuntaB.png" class="spunta_pic"/>';
 				if(!vis)HTML += 
-						'			<img class="gall_del"' +
+						'			<img class="gall_del noPrint"' +
 						'			 	 src="img/ico_cestinoB.png"' +
 						'			 	 onMouseOver="PH.overCestino=true;"' +
 						'			 	 onMouseOut="PH.overCestino=false;"' +
@@ -1059,7 +1059,7 @@ var PH = {
 				if(__(PH.galleryOnline[f].name))HTML += ' title="'+htmlEntities(PH.galleryOnline[f].name)+'"';
 				HTML += '>';
 				HTML += 
-					'			<img class="gall_full"' +
+					'			<img class="gall_full noPrint"' +
 					'			 	 src="img/';
 				if(isFile)HTML += 'ico_dwnl';
 				else if(isVideo)HTML += 'play_big';
@@ -1068,7 +1068,7 @@ var PH = {
 				if(PH.actionClick)HTML += '<img src="img/spuntaB.png" class="spunta_pic"/>';
 				
 				HTML += 
-						'			<img class="gall_del"' +
+						'			<img class="gall_del noPrint"' +
 						'			 	 src="img/ico_cestinoB.png"' +
 						'			 	 onMouseOver="PH.overCestino=true;"' +
 						'			 	 onMouseOut="PH.overCestino=false;"' +

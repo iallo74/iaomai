@@ -368,12 +368,12 @@ var PAZIENTI = {
 					'			<div style="background-image:url(\''+avatar+'\')"></div>' +
 					'		</div>' +
 					'		<div style="float:left;height: 120px;">' +
-					'			<input class="ico_foto"' +
+					'			<input class="ico_foto noPrint"' +
 					'				   id="avatarPaziente_FL"' +
 					'				   type="file"' +
 					'				   onchange="PH.encodeImageFileAsURL(this, true, false, \'PAZIENTI.salvaAvatar\');"' +
 					'				   title="'+htmlEntities(TXT("CaricaImmagine"))+'" />' +
-					'			<div class="ico_del"' +
+					'			<div class="ico_del noPrint"' +
 					'			   	 id="delAvatarPaziente"' +
 					'			   	 onClick="PAZIENTI.deleteAvatar();"' +
 					'			   	 style="'+(!avatar ? 'display:none;' : '')+'"></div>' +
@@ -558,7 +558,7 @@ var PAZIENTI = {
 			// sezione TAGS
 			cont = 	'		<div id="contTags">' +
 					'		</div>' +
-					'		<div id="cont_tag_add">' +
+					'		<div id="cont_tag_add" class="noPrint">' +
 					'			<input type="text"' +
 					'				   id="tag_add"' +
 					'				   placeholder="'+htmlEntities(TXT("TagsSpiegazione"))+'"' +
@@ -608,7 +608,7 @@ var PAZIENTI = {
 			// sezione MEDICINE
 			cont = 	'		<div id="contMedicine">' +
 					'		</div>' +
-					'		<div class="cont_p_paz_label" id="cont_p_paz_label_medicina">' +
+					'		<div class="cont_p_paz_label noPrint" id="cont_p_paz_label_medicina">' +
 					'			<div id="p_paz_label_medicina"' +
 					'				 class="p_paz_label"' +
 					'				 onclick="PAZIENTI.visElementi(\'medicina\');">' +
@@ -643,7 +643,7 @@ var PAZIENTI = {
 			// sezione ALLERGIE
 			cont = 	'		<div id="contAllergie">' +
 					'		</div>' +
-					'		<div class="cont_p_paz_label" id="cont_p_paz_label_allergia">' +
+					'		<div class="cont_p_paz_label noPrint" id="cont_p_paz_label_allergia">' +
 					'			<div id="p_paz_label_allergia"' +
 					'				 class="p_paz_label"' +
 					'				 onclick="PAZIENTI.visElementi(\'allergia\');">' +
@@ -678,7 +678,7 @@ var PAZIENTI = {
 			// sezione PATOLOGIE
 			cont = 	'		<div id="contPatologie">' +
 					'		</div>' +
-					'		<div class="cont_p_paz_label" id="cont_p_paz_label_patologia">' +
+					'		<div class="cont_p_paz_label noPrint" id="cont_p_paz_label_patologia">' +
 					'			<div id="p_paz_label_patologia"' +
 					'				 class="p_paz_label"' +
 					'				 onclick="PAZIENTI.visElementi(\'patologia\');">' +
@@ -714,7 +714,7 @@ var PAZIENTI = {
 			// sezione INTERVENTI
 			cont = 	'		<div id="contInterventi">' +
 					'		</div>' +
-					'		<div class="cont_p_paz_label" id="cont_p_paz_label_intervento">' +
+					'		<div class="cont_p_paz_label noPrint" id="cont_p_paz_label_intervento">' +
 					'			<div id="p_paz_label_intervento"' +
 					'				 class="p_paz_label"' +
 					'				 onclick="PAZIENTI.visElementi(\'intervento\');">' +
@@ -784,7 +784,7 @@ var PAZIENTI = {
 								TXT("ScegliFile") +
 					'		</span>' +
 					'	</div>' +
-					'	<div class="allowedFormats">* '+TXT("FormatiConsentiti")+": "+ext+'</div>';
+					'	<div class="allowedFormats noPrint">* '+TXT("FormatiConsentiti")+": "+ext+'</div>';
 					
 			HTML += H.r({	t: "h", name: "totFiles",	value: "0" });
 			HTML += H.sezione({

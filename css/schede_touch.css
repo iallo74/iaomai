@@ -82,6 +82,9 @@
 .touch.android .campoData{
 	padding-left:0px !important;
 }
+.contStampa .campoData{
+	box-shadow: none !important;
+}
 .touch.android .giorno,
 .touch.android .mese{
 	width:26px !important;

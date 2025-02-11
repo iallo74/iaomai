@@ -93,7 +93,7 @@ var H = {
 						'	  align="absmiddle"' +
 						'	  onClick="'+obj.azModifica+';"' +
 						'	  data-value="'+htmlEntities(obj.label)+'"' +
-						'	  class="occhio">';
+						'	  class="occhio noPrint">';
 				if(obj.label && !obj.noLabel){
 					if(obj.labelOut)tgLab = 'em';
 					else tgLab = 'i';
@@ -118,7 +118,7 @@ var H = {
 						'	  style="margin-left: -24px;cursor:pointer;opacity:0.5;"' +
 						'	  title="Elimina"' +
 						'	  onclick="'+obj.azCancella+';"' +
-						'	  class="occhio">';
+						'	  class="occhio noPrint">';
    				break;
 			
 			case "s": // select
@@ -560,7 +560,7 @@ var H = {
 				'			<div id="contEtichette_'+obj.nome+'">' +
 				'			</div>' +
 				'			<div id="cont_label_add_'+obj.nome+'"' +
-				'				 class="cont_label_add">' +
+				'				 class="cont_label_add noPrint">' +
 				'				<input type="text"' +
 				'					   id="label_add_'+obj.nome+'"' +
 				'					   class="label_add"' +
@@ -582,7 +582,7 @@ var H = {
 				'				</div>' +
 				'				<div class="l"></div>' +
 				'			</div>' +
-				'			<div class="cont_p_paz_label" id="cont_p_paz_label_'+obj.nome+'">' +
+				'			<div class="cont_p_paz_label noPrint" id="cont_p_paz_label_'+obj.nome+'">' +
 				'				<div id="p_paz_label_'+obj.nome+'"' +
 				'					 class="p_paz_label"' +
 				'					 onclick="H.visAggiungiEtichetta(\''+obj.nome+'\');">' +

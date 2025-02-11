@@ -325,7 +325,7 @@ var PAZIENTI_LISTE = {
 						'			 onClick="PAZIENTI.modificaTag(this);"' +
 						'			 data-value="'+htmlEntities(PAZIENTI.tagsProvvisori[p].NomeTag)+'"' +
 						'			 data-colore="'+PAZIENTI.tagsProvvisori[p].colore+'"' +
-						'			 class="occhio">' +
+						'			 class="occhio noPrint">' +
 								htmlEntities(PAZIENTI.tagsProvvisori[p].NomeTag) +
 						'	</span>' +
 						'	<img src="img/ico_cestino.png"' +
@@ -338,7 +338,7 @@ var PAZIENTI_LISTE = {
 						'		 		opacity:0.5;"' +
 						'		 title="'+TXT("DelDett")+'"' +
 						'		 onClick="PAZIENTI.eliminaTag('+p+');"' +
-						'		 class="occhio">' +
+						'		 class="occhio noPrint">' +
 						'</div>';
 			}
 		}else{
@@ -613,7 +613,7 @@ var PAZIENTI_LISTE = {
 						'			 align="absmiddle"' +
 						'			 onClick="PAZIENTI.modificaElemento(this,\''+tipo+'\');"' +
 						'			 data-value="'+htmlEntities(obj.ELS[p]["Nome"+obj.el])+'"' +
-						'			 class="occhio">' +
+						'			 class="occhio noPrint">' +
 								htmlEntities(obj.ELS[p]["Nome"+obj.el]) +
 						'	</span>' +
 						'	<img src="img/ico_cestino.png"' +
@@ -626,7 +626,7 @@ var PAZIENTI_LISTE = {
 						'		 		opacity:0.5;"' +
 						'		 title="'+TXT("DelDett")+'"' +
 						'		 onClick="PAZIENTI.eliminaElemento('+p+',\''+tipo+'\');"' +
-						'		 class="occhio">' +
+						'		 class="occhio noPrint">' +
 						'</div>';
 			}
 		}else{

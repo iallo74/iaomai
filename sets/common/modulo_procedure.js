@@ -323,11 +323,13 @@ var MODULO_PROCEDURE = { // extend SET
 					'			</em>' +
 					'			<div id="elencoCommenti">' +
 					'				<div id="notificaCommenti"' +
+					'					 class="noPrint"' +
 					'					 onClick="SET.swNotificabile('+idProcedura+');">' +
 					'				</div>' +
 					'				<div id="placeholderCommento"' +
 					'				 	 class="placeholderCommento"></div>' +
 					'				<div id="p_add_comm"' +
+					'					 class="noPrint"' +
 					'					 onClick="if(COMMUNITY.verifica())SET.attivaCommento('+idProcedura+');">' +
 									TXT("AddCommento") +
 					'				</div>' +
@@ -503,6 +505,7 @@ var MODULO_PROCEDURE = { // extend SET
 					'		<div id="linguaModProc">' +
 					'			<select name="idLinguaProcedura"' +
 					'				    id="idLinguaProcedura"' +
+					'				    class="noPrint"' +
 					'		  			onChange="this.blur();">';
 			for(let p in DB.lingueProcedure){
 				HTML += 

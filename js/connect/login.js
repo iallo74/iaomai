@@ -931,12 +931,12 @@ var LOGIN = {
 						'			<div style="background-image:url(\''+UT.imgAvatar+'\')"></div>' +
 						'		</div>' +
 						'		<div style="float:left;height: 120px;">' +
-						'			<input class="ico_foto"' +
+						'			<input class="ico_foto noPrint"' +
 						'				   id="avatarUtente_FL"' +
 						'				   type="file"' +
 						'				   onchange="PH.encodeImageFileAsURL(this, true, false, \'LOGIN.salvaAvatar\');"' +
 						'				   title="'+htmlEntities(TXT("CaricaImmagine"))+'" />' +
-						'			<div class="ico_del"' +
+						'			<div class="ico_del noPrint"' +
 						'			   	 onClick="LOGIN.deleteAvatar(\'avatarUtente\');"></div>' +
 						'		</div>' +
 						'	</div>' +
@@ -1008,12 +1008,12 @@ var LOGIN = {
 						'			<div style="background-image:url(\''+UT.logoAzienda+'\')"></div>' +
 						'		</div>' +
 						'		<div style="float:left;height: 120px;">' +
-						'			<input class="ico_foto"' +
+						'			<input class="ico_foto noPrint"' +
 						'				   id="logoAzienda_FL"' +
 						'				   type="file"' +
 						'				   onchange="PH.encodeImageFileAsURL(this, true, false, \'LOGIN.salvaLogo\');"' +
 						'				   title="'+htmlEntities(TXT("CaricaImmagine"))+'" />' +
-						'			<div class="ico_del"' +
+						'			<div class="ico_del noPrint"' +
 						'			   	 onClick="LOGIN.deleteAvatar(\'logoAzienda\');"></div>' +
 						'		</div>' +
 						'	</div>' +

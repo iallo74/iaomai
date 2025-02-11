@@ -720,13 +720,13 @@ var PAZIENTI_TRATTAMENTI = { // extend PAZIENTI
 							noLabel: true,
 							styleCampo: "margin-bottom:10px;margin-top:8px;" }) +
 					'	</div>' +
-					'	<div id="modulo"'+(Object.keys(moduli).length?' class="moduloFull"':'')+
+					'	<div id="modulo" class="'+(Object.keys(moduli).length?'moduloFull ':'')+'"'+
 					//' style="display:none;"' + // MOMENTANEAMENTE NASCOSTO
 					'>' +
 					'		<div id="modulo_cont"></div>' +
-					'		<div id="moduli_titolo">'+TXT("ElSchedeAnamnesi")+'</div>' +
-					'		<div style="margin-bottom: 10px;line-height: normal;text-align:right;color: #045c9f;"><img src="img/ico_timer_mini.png" style="float:right;margin-left:5px;height:16px;margin-right:10px;vertical-align:middle;"> '+TXT("TimerModuliFree")+'</div>' +
-					'		<div id="modulo_btn_cont">' +
+					'		<div id="moduli_titolo" class="noPrint">'+TXT("ElSchedeAnamnesi")+'</div>' +
+					'		<div style="margin-bottom: 10px;line-height: normal;text-align:right;color: #045c9f;" class="noPrint"><img src="img/ico_timer_mini.png" style="float:right;margin-left:5px;height:16px;margin-right:10px;vertical-align:middle;"> '+TXT("TimerModuliFree")+'</div>' +
+					'		<div id="modulo_btn_cont" class="noPrint">' +
 					'			<div id="modulo_btn" onClick="PAZIENTI.swImportaModuli();">'+TXT("ImportaModulo")+'</div>' +
 					'			<div id="modulo_crea" onClick="MODULI.car_modulo(-1,false,true);">'+TXT("CreaNuovo")+'</div>' +
 					'		</div>' +
@@ -748,7 +748,7 @@ var PAZIENTI_TRATTAMENTI = { // extend PAZIENTI
 					'	<div id="contSintomi"></div>' +
 					
 					'<div id="cont_label_add_sintomi"' +
-					'	  class="cont_label_add">' +
+					'	  class="cont_label_add noPrint">' +
 					'	<input type="text"' +
 					'		   id="paz_add"' +
 					'		   placeholder="'+htmlEntities(stripslashes(TXT("SintomoSpiegazione")))+'"' +
@@ -830,10 +830,10 @@ var PAZIENTI_TRATTAMENTI = { // extend PAZIENTI
 					
 					// DIAGNOSI
 					'	<div id="contDiagnosiMTC" class="contDiagnosiAI'+(diagnosiAI?' fullAI':'')+'">'+
-					'		<div class="spiegazioneAI"><div class="requestAI" onClick="AI.get_gettoni(true);">'+TXT("DiagnosiAI")+'</div></div>'+
+					'		<div class="spiegazioneAI noPrint"><div class="requestAI" onClick="AI.get_gettoni(true);">'+TXT("DiagnosiAI")+'</div></div>'+
 					'		<div class="diagnosiAI">'+
 					'			<div class="diagnosiAI_txt" id="diagnosiAI">'+diagnosiAI+'</div>'+
-					'			<div class="diagnosiBtns">'+
+					'			<div class="diagnosiBtns noPrint">'+
 					'				<img src="img/ico_disclaimer.png" class="disclaimerAI" title="'+TXT("DisclaimerAI")+'" onClick="AI.popup();"/>'+
 					'				<div class="diagnosiAzione" onClick="AI.diagnosi_addPoints();">'+TXT("DiagnosiAddPoints")+'</div>'+
 					'				<img class="diagnosiCancella" src="img/ico_cestino.png" width="16" height="16" align="absmiddle" title="'+TXT("Elimina")+'" onclick="AI.diagnosi_delete();" class="cestino">'+
@@ -1113,7 +1113,7 @@ var PAZIENTI_TRATTAMENTI = { // extend PAZIENTI
 	caricaDettagliSet: function(){ // carica i dettagli trattamento dei singoli set
 		// PUNTI
 		let HTML = '',
-			html_licenzaNonPermette = '<div class="labelModificaCon labelNoLicenza" onClick="MENU.visLicenze();">'+TXT("LicenzaNonPermette")+'</div>';
+			html_licenzaNonPermette = '<div class="labelModificaCon labelNoLicenza noPrint" onClick="MENU.visLicenze();">'+TXT("LicenzaNonPermette")+'</div>';
 		if( globals.set.cartella == 'meridiani_cinesi' ||
 			(globals.set.cartella == 'meridiani_shiatsu' && LOGIN.verModule("CIN")) ){
 			HTML+=
@@ -1126,7 +1126,7 @@ var PAZIENTI_TRATTAMENTI = { // extend PAZIENTI
 				'		</div>' +
 				'	</div>';
 		}else if(LOGIN.logedin() && (LOGIN.verModule("CIN") || LOGIN.verAuth('meridiani_cinesi'))){
-			HTML += '<div class="labelModificaCon">'+htmlEntities(TXT("ModificaCon"))+'<br>';
+			HTML += '<div class="labelModificaCon noPrint">'+htmlEntities(TXT("ModificaCon"))+'<br>';
 			if(LOGIN.verAuth('meridiani_cinesi'))HTML += '<span onClick="caricaSet(\'meridiani_cinesi\',this);"><img src="sets/meridiani_cinesi/img/logoNero.png" width="25" height="25"> AcupointsMap</span>';
 			if(LOGIN.verModule("CIN") && LOGIN.verAuth('meridiani_cinesi'))HTML += ' o ';
 			if(LOGIN.verModule("CIN"))HTML += '<span onClick="caricaSet(\'meridiani_shiatsu\',this);"><img src="sets/meridiani_shiatsu/img/logoNero.png" width="25" height="25"> ShiatsuMap</span>';
@@ -1150,7 +1150,7 @@ var PAZIENTI_TRATTAMENTI = { // extend PAZIENTI
 				'		</div>' +
 				'	</div>';
 		}else if(LOGIN.logedin() && LOGIN.verModule("NMK")){
-			HTML += '<div class="labelModificaCon">'+htmlEntities(TXT("ModificaCon"))+'<br><span onClick="caricaSet(\'meridiani_shiatsu\',this);"><img src="sets/meridiani_shiatsu/img/logoNero.png" width="25" height="25"> ShiatsuMap</span></div>';
+			HTML += '<div class="labelModificaCon noPrint">'+htmlEntities(TXT("ModificaCon"))+'<br><span onClick="caricaSet(\'meridiani_shiatsu\',this);"><img src="sets/meridiani_shiatsu/img/logoNero.png" width="25" height="25"> ShiatsuMap</span></div>';
 		}else{
 			HTML += html_licenzaNonPermette;
 		}
@@ -1170,7 +1170,7 @@ var PAZIENTI_TRATTAMENTI = { // extend PAZIENTI
 				'		</div>' +
 				'	</div>';
 		}else if(LOGIN.logedin() && (LOGIN.verModule("CIN") || LOGIN.verModule("MAS") || LOGIN.verAuth('meridiani_cinesi'))){
-			HTML += '<div class="labelModificaCon">'+htmlEntities(TXT("ModificaCon"))+'<br>';
+			HTML += '<div class="labelModificaCon noPrint">'+htmlEntities(TXT("ModificaCon"))+'<br>';
 			if(LOGIN.verAuth('meridiani_cinesi'))HTML += '<span onClick="caricaSet(\'meridiani_cinesi\',this);"><img src="sets/meridiani_cinesi/img/logoNero.png" width="25" height="25"> AcupointsMap</span>';
 			if((LOGIN.verModule("CIN") || LOGIN.verModule("MAS")) && LOGIN.verAuth('meridiani_cinesi'))HTML += ' o ';
 			if(LOGIN.verModule("CIN") || LOGIN.verModule("MAS"))HTML += '<span onClick="caricaSet(\'meridiani_shiatsu\',this);"><img src="sets/meridiani_shiatsu/img/logoNero.png" width="25" height="25"> ShiatsuMap</span>';
@@ -1194,7 +1194,7 @@ var PAZIENTI_TRATTAMENTI = { // extend PAZIENTI
 				'		</div>' +
 				'	</div>';
 		}else if(LOGIN.logedin() && LOGIN.verAuth('auricologia')){
-			HTML += '<div class="labelModificaCon">'+htmlEntities(TXT("ModificaCon"))+'<br><span onClick="caricaSet(\'auricologia\',this);"><img src="sets/auricologia/img/logoNero.png" width="25" height="25"> AuriculoMap</span></div>';
+			HTML += '<div class="labelModificaCon noPrint">'+htmlEntities(TXT("ModificaCon"))+'<br><span onClick="caricaSet(\'auricologia\',this);"><img src="sets/auricologia/img/logoNero.png" width="25" height="25"> AuriculoMap</span></div>';
 		}else{
 			HTML += html_licenzaNonPermette;
 		}
@@ -1214,7 +1214,7 @@ var PAZIENTI_TRATTAMENTI = { // extend PAZIENTI
 				'		</div>' +
 				'	</div>';
 		}else if(LOGIN.logedin() && LOGIN.verAuth('reflessologia_plantare')){
-			HTML += '<div class="labelModificaCon">'+htmlEntities(TXT("ModificaCon"))+'<br><span onClick="caricaSet(\'reflessologia_plantare\',this);"><img src="sets/reflessologia_plantare/img/logoNero.png" width="25" height="25"> ReflexologyMap</span></div>';
+			HTML += '<div class="labelModificaCon noPrint">'+htmlEntities(TXT("ModificaCon"))+'<br><span onClick="caricaSet(\'reflessologia_plantare\',this);"><img src="sets/reflessologia_plantare/img/logoNero.png" width="25" height="25"> ReflexologyMap</span></div>';
 		}else{
 			HTML += html_licenzaNonPermette;
 		}
@@ -1234,7 +1234,7 @@ var PAZIENTI_TRATTAMENTI = { // extend PAZIENTI
 				'		</div>' +
 				'	</div>';
 		}else if(LOGIN.logedin() && LOGIN.verAuth('trigger_points')){
-			HTML += '<div class="labelModificaCon">'+htmlEntities(TXT("ModificaCon"))+'<br><span onClick="caricaSet(\'trigger_points\',this);"><img src="sets/trigger_points/img/logoNero.png" width="25" height="25"> TriggerpointsMap</span></div>';
+			HTML += '<div class="labelModificaConnoPrint">'+htmlEntities(TXT("ModificaCon"))+'<br><span onClick="caricaSet(\'trigger_points\',this);"><img src="sets/trigger_points/img/logoNero.png" width="25" height="25"> TriggerpointsMap</span></div>';
 		}else{
 			HTML += html_licenzaNonPermette;
 		}

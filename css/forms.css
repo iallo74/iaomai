@@ -35,11 +35,17 @@ textarea{
 .contStampa input[type='email'],
 .contStampa textarea,
 .contStampa .date,
-.contStampa #dataTxt{
-	border-top:none !important;
+.contStampa #dataTxt,
+.contStampa select{
+	/* border-top:none !important;
 	border-left:none !important;
-	border-right:none !important;
+	border-right:none !important; */
+	border:none !important;
 	border-radius:0px !important;
+	box-shadow: 0px 1px 0px 0px rgba(0, 0, 0, 0.3);
+}
+.contStampa select{
+	background-image: none !important;
 }
 .contStampa #dataTxt{
     background: none !important;
@@ -393,6 +399,14 @@ body.bodyModello .p_paz_screenshot:hover{ /* PAZIENTI */
 	background-color:rgba(0,0,0,0.05);
 	height: 36px;
     line-height: 36px;
+}
+.contStampa #contSintomi div:not(.noResults){
+	background-color:transparent !important;
+	border-radius:0px !important;
+	box-shadow: 0px 1px 0px 0px rgba(0, 0, 0, 0.3);
+}
+.contStampa #contSintomi div:not(.noResults) select{
+	box-shadow: none !important;
 }
 #contSintomi div span{
 	display: inline-block;
@@ -1320,6 +1334,12 @@ cont_p_paz_label{
 	font-style:italic;
 	color:#000;
 	/* display: block; */
+}
+.contStampa #formMod i, 
+.contStampa #formMod em, 
+.contStampa .sezioneTrattamenti em {
+	position: relative;
+    z-index: 1000;
 }
 #formMod em,  /* PAZIENTI */
 .sezioneTrattamenti em{  /* PAZIENTI */
@@ -2454,6 +2474,13 @@ body:not(.touch) #puntiTrigger .dettPunto:hover{
 	border-bottom: 1px solid rgba(0,0,0,0.1);
     border-top: 1px solid rgba(255,255,255,0.4);
 }
+@media only print{
+	.sezioneTrattamenti{
+		border-bottom: none !important;
+		border-top: none !important;
+		box-shadow: 0 1px 0.5px rgba(0,0,0,0.3);
+	}
+}
 body:not(.touch) .sezioneChiusa:hover{
 	background-color:rgba(0,0,0,0.05);
 }
@@ -2472,6 +2499,18 @@ body:not(.touch) .sezioneChiusa:hover{
 	background:url(../img/frSuB.png) no-repeat right center;
 	background-size:auto 170%;
 	    line-height: 24px;
+}
+.contStampa .sezioneTrattamenti{
+	border-bottom: none !important;
+	border-top: none !important;
+	box-shadow: 0 1px 0.5px rgba(0,0,0,0.4);
+}
+.contStampa .sezioneTrattamenti > .labelTrattamenti{
+	background:none !important;
+}
+.contStampa .DidaFile textarea{
+	min-height: max-content !important;
+	box-shadow: none !important;
 }
 .smart .sezioneTrattamenti > .labelTrattamenti{
 	font-style:normal !important;
@@ -2872,6 +2911,14 @@ body:not(.touch) .contGallery > div:not(.noResults) > div:hover img.spunta_pic{
 	-moz-user-select: text !important;
 	-ms-user-select: text !important;
 	user-select: text !important;
+}
+.contStampa .diagnosiAI,
+.contStampa .diagnosiAI_txt{
+	max-height: none !important;
+}
+.contStampa .diagnosiAI{
+	border: none !important;
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.5);
 }
 .spiegazioneAI{
 	margin-top:5px;

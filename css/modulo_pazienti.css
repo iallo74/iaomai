@@ -378,6 +378,9 @@ body:not(.smart) #btnAnagraficaCliente i{
 .dwnl .noPrint{
 	display:none;
 }
+.contStampa .noPrint{
+    display: none !important;
+}
 .chart {
   background: transparent;
   padding: 0;
@@ -2030,6 +2033,9 @@ body:not(.smart) #tt_mezzival3 span{
 }
 #modulo{
 	margin-bottom:30px;
+}
+#modulo_cont{
+	padding-bottom:2px;
 }
 #modulo_cont > div{
 	background-color: rgba(0, 0, 0, 0.05);
