@@ -1730,6 +1730,11 @@ body:not(.touch) #puntiTrigger .dettPunto:hover{
 	background-position: calc(100% - 3px) calc(100% - 1px);
     background-size: 10px;
 }
+.contStampa .rgMod .valPunto, 
+.contStampa .rgMod .mezzoPunto {
+    border: none !important;
+    padding-top: 7px;
+}
 .valPunto{
     border-left: 1px solid rgba(0,0,0,0.1);
 }
