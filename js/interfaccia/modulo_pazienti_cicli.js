@@ -84,7 +84,7 @@ var PAZIENTI_CICLI = { // extend PAZIENTI
 					if(TipoTrattamento!='A')HTML+='<h3>'+data+'</h3><p class="labelCicli"><i>'+htmlEntities(TitoloTrattamento)+'</i></p>';
 
 					//anamnesi
-					if(Anamnesi)HTML+='<p><i>'+htmlEntities(TXT("Anamnesi"+(globals.set.cartella=='meridiani_shiatsu'?'Shiatsu':'')))+':</i><br>'+htmlEntities(Anamnesi).replace(/\n/g, '<br>')+'</p>';
+					if(Anamnesi)HTML+='<p><i>'+htmlEntities(TXT("Anamnesi"+(PAZIENTI.isHolistic()?'Shiatsu':'')))+':</i><br>'+htmlEntities(Anamnesi).replace(/\n/g, '<br>')+'</p>';
 
 					// modulo valutazione
 					if(moduli){
@@ -95,8 +95,8 @@ var PAZIENTI_CICLI = { // extend PAZIENTI
 
 
 					// diagnosi
-					if(DiagnosiOccidentale)HTML+='<p><i>'+htmlEntities(TXT("DiagnosiOccidentale"+(globals.set.cartella=='meridiani_shiatsu'?'Shiatsu':'')))+':</i><br>'+htmlEntities(DiagnosiOccidentale).replace(/\n/g, '<br>')+'</p>';
-					if(DiagnosiMTC)HTML+='<p><i>'+htmlEntities(TXT("DiagnosiMTC"+(globals.set.cartella=='meridiani_shiatsu'?'Shiatsu':'')))+':</i><br>'+htmlEntities(DiagnosiMTC).replace(/\n/g, '<br>')+'</i></p>';
+					if(DiagnosiOccidentale)HTML+='<p><i>'+htmlEntities(TXT("DiagnosiOccidentale"+(PAZIENTI.isHolistic()?'Shiatsu':'')))+':</i><br>'+htmlEntities(DiagnosiOccidentale).replace(/\n/g, '<br>')+'</p>';
+					if(DiagnosiMTC)HTML+='<p><i>'+htmlEntities(TXT("DiagnosiMTC"+(PAZIENTI.isHolistic()?'Shiatsu':'')))+':</i><br>'+htmlEntities(DiagnosiMTC).replace(/\n/g, '<br>')+'</i></p>';
 					for(v in valori){
 						let score = -1;
 						for(let s in sintomi){
