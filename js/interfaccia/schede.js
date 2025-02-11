@@ -743,7 +743,10 @@ var SCHEDA = {
 				'		<script language="Javascript">' +
 				'			setTimeout(function(){' +
 				'				parent.document.getElementById("stampa").classList.toggle("visSch");' +
-				'				window.print();' +
+				'				if(parent.isElectron){' +
+				'					const { ipcRenderer } = require("electron");' +
+				'					ipcRenderer.send("print-document");' +
+				'				}else window.print();' +
 				//'				window.close();' +
 				'			},2000);' +
 				'		</script>' +
