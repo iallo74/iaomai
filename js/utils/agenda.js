@@ -512,7 +512,7 @@ var agenda = {
 		agenda.calFunct = null;
 	},
 	popolaAgenda:function( DataPartenza, elemento ){ // popola l'agenda
-		let icoUtente = '<img src="img/ico_utenteN.png" style="width: 16px;vertical-align: middle;margin-top: -3px;">',
+		let icoUtente = '<img src="img/ico_utenteN.png" style="width: 16px;">',
 			d = new Date();
 		
 		this.DataPartenza = DataPartenza;

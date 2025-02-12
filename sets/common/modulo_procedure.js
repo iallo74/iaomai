@@ -289,7 +289,7 @@ var MODULO_PROCEDURE = { // extend SET
 					if(siglaPunto && (TipoDettaglio=='A' || TipoDettaglio=='R' || TipoDettaglio=='O')){
 						HTML += '[.'+siglaPunto+'.]';
 					}
-					if(mezzo)HTML += '<img src="img/mezzo_'+mezzo+'.png" class="noMod" style="vertical-align: middle;margin-top: -3px;margin-left: 5px;">';
+					if(mezzo)HTML += '<img src="img/mezzo_'+mezzo+'.png" class="noMod" style="margin-left: 5px;">';
 					if(TipoDettaglio=='T')HTML += '</b>';
 					HTML += '</div>';
 					presente=true;
@@ -930,12 +930,12 @@ var MODULO_PROCEDURE = { // extend SET
 						'	   data-drag-family="proc"' +
 						'	   data-drag-type="move">' +
 				
-						'	<div class="grabBtn"' +
+						'	<div class="grabBtn noPrint"' +
 						'	     onMouseDown="DRAGGER.startDrag(this.parentElement,\'SET.spostaDettaglio\');"' +
 						'	     onTouchStart="DRAGGER.startDrag(this.parentElement,\'SET.spostaDettaglio\');"></div>';
 				
 				// pulsantini gestione dettagli
-				HTML += '	<div class="delProcDett"' +
+				HTML += '	<div class="delProcDett noPrint"' +
 						'	     onClick="SET.eliminaDettaglio(\''+p+'\');"' +
 						'	     title="'+TXT("DelDett")+'">' +
 						'	</div>';

@@ -167,7 +167,7 @@ var PAZIENTI_SETS = { // extend PAZIENTI
 							'	   data-drag-family="punto"' +
 							'	   data-drag-type="move">' +
 							
-							'	<div class="grabBtn"' +
+							'	<div class="grabBtn noPrint"' +
 							'	     onMouseDown="DRAGGER.startDrag(this.parentElement,\'PAZIENTI.spostaPunto\');"' +
 							'	     onTouchStart="DRAGGER.startDrag(this.parentElement,\'PAZIENTI.spostaPunto\');"></div>' +
 							
@@ -178,7 +178,7 @@ var PAZIENTI_SETS = { // extend PAZIENTI
 							'		 id="ico_vis'+p+'"' +
 							'		 title="'+TXT("DelDett")+'"' +
 							'		 onClick="PAZIENTI.eliminaPuntoTrattamento('+p+')"' +
-							'		 class="cestino">';
+							'		 class="cestino noPrint">';
 					
 					// mezzo
 					let addMezzoTit = '';
@@ -305,9 +305,9 @@ var PAZIENTI_SETS = { // extend PAZIENTI
 					siglaPunto=__(PAZIENTI.puntiProvvisori[p].s);
 					if(!siglaPunto)siglaPunto = nPunto+'.'+siglaMeridiano;
 					elenco.push(nPunto+'.'+siglaMeridiano+'.'+valutazione);
-					HTML_noMod += '<span class="tsb"><img src="img/mezzo_'+mezzo+'.png" class="noMod" style="vertical-align: middle;margin-top: -3px;margin-right: -2px;"> ';
+					HTML_noMod += '<span class="tsb"><img src="img/mezzo_'+mezzo+'.png" class="noMod" style="margin-right: -2px;"> ';
 					HTML_noMod += '<b>'+siglaPunto+'</b>';
-					if(valutazione)HTML_noMod += '<img src="img/ico_PV'+valutazione+'.png" class="noMod" style="vertical-align: middle;margin-top: -3px;">';
+					if(valutazione)HTML_noMod += '<img src="img/ico_PV'+valutazione+'.png" class="noMod">';
 					if(descrizione)HTML_noMod += ' <span style="font-style:italic;">'+htmlEntities(descrizione)+'</span>';
 					HTML_noMod += '</span> ';
 				}
@@ -584,7 +584,7 @@ var PAZIENTI_SETS = { // extend PAZIENTI
 							'	   data-drag-type="move"' +
 							'	   data-drag-el="'+p+'">' +
 							
-							'	<div class="grabBtn"' +
+							'	<div class="grabBtn noPrint"' +
 							'	     onMouseDown="DRAGGER.startDrag(this.parentElement,\'PAZIENTI.spostaMeridiano\');"' +
 							'	     onTouchStart="DRAGGER.startDrag(this.parentElement,\'PAZIENTI.spostaMeridiano\');"></div>' +
 								
@@ -597,7 +597,7 @@ var PAZIENTI_SETS = { // extend PAZIENTI
 							'		 onMouseOver="PAZIENTI.overCestino=true;"' +
 							'		 onMouseOut="PAZIENTI.overCestino=false;"' +
 							'		 onClick="PAZIENTI.eliminaMeridianoTrattamento('+m+')"' +
-							'		 class="cestino">' +
+							'		 class="cestino noPrint">' +
 							'	<span';
 							' class="meridModif"' +
 							' style="cursor:pointer;"' +
@@ -642,7 +642,7 @@ var PAZIENTI_SETS = { // extend PAZIENTI
 					descrizione = __(PAZIENTI.meridianiProvvisori[m].descrizione);
 					HTML_noMod += '<span class="tsb"><img src="img/lineaPat.png" class="noMod" style="vertical-align: middle;margin: -3px 2px 0px 3px;"> ';
 					HTML_noMod += '<b>'+NomeMeridiano+'</b>';
-					if(m2)HTML_noMod += '<img src="img/ico_PV'+m2+'.png" class="noMod" style="vertical-align: middle;margin-top: -3px;">';
+					if(m2)HTML_noMod += '<img src="img/ico_PV'+m2+'.png" class="noMod">';
 					if(descrizione)HTML_noMod += ' <span style="font-style:italic;">'+htmlEntities(descrizione)+'</span>';
 					HTML_noMod += '</span> ';
 				}
@@ -769,7 +769,7 @@ var PAZIENTI_SETS = { // extend PAZIENTI
 							'	   data-drag-family="auriculo"' +
 							'	   data-drag-type="move">' +
 							
-							'	<div class="grabBtn"' +
+							'	<div class="grabBtn noPrint"' +
 							'	     onMouseDown="DRAGGER.startDrag(this.parentElement,\'PAZIENTI.spostaAuriculo\');"' +
 							'	     onTouchStart="DRAGGER.startDrag(this.parentElement,\'PAZIENTI.spostaAuriculo\');"></div>' +
 						
@@ -781,7 +781,7 @@ var PAZIENTI_SETS = { // extend PAZIENTI
 							'		 id="ico_vis'+p+'"' +
 							'		 title="'+TXT("DelDett")+'"' +
 							'		 onClick="PAZIENTI.eliminaAuriculoTrattamento('+p+')"' +
-							'		 class="cestino">';
+							'		 class="cestino noPrint">';
 					
 					// mezzo
 					let addMezzoTit = '';
@@ -877,7 +877,7 @@ var PAZIENTI_SETS = { // extend PAZIENTI
 					NomePunto=__(PAZIENTI.auriculoProvvisori[p].n);
 					HTML_noMod += '<span class="tsb"><img src="img/mezzo_'+mezzo+'.png" class="noMod" style="vertical-align: middle;margin-top: -2px;margin-right: -2px;"> ';
 					HTML_noMod += NomePunto;
-					if(valutazione)HTML_noMod += '<img src="img/ico_PV'+valutazione+'.png" class="noMod" style="vertical-align: middle;margin-top: -3px;">';
+					if(valutazione)HTML_noMod += '<img src="img/ico_PV'+valutazione+'.png" class="noMod">';
 					if(descrizione)HTML_noMod += ' <span style="font-style:italic;">'+htmlEntities(descrizione)+'</span>';
 					HTML_noMod += '</span> ';
 					elenco.push(siglaPunto);
@@ -1024,7 +1024,7 @@ var PAZIENTI_SETS = { // extend PAZIENTI
 							'	   data-drag-family="reflex"' +
 							'	   data-drag-type="move">' +
 							
-							'	<div class="grabBtn"' +
+							'	<div class="grabBtn noPrint"' +
 							'	     onMouseDown="DRAGGER.startDrag(this.parentElement,\'PAZIENTI.spostaReflex\');"' +
 							'	     onTouchStart="DRAGGER.startDrag(this.parentElement,\'PAZIENTI.spostaReflex\');"></div>' +
 						
@@ -1036,7 +1036,7 @@ var PAZIENTI_SETS = { // extend PAZIENTI
 							'		 id="ico_vis'+p+'"' +
 							'		 title="'+TXT("DelDett")+'"' +
 							'		 onClick="PAZIENTI.eliminaReflexTrattamento('+p+')"' +
-							'		 class="cestino">';
+							'		 class="cestino noPrint">';
 					
 					// mezzo
 					let addMezzoTit = '';
@@ -1132,7 +1132,7 @@ var PAZIENTI_SETS = { // extend PAZIENTI
 					NomePunto=__(PAZIENTI.reflexProvvisori[p].n);
 					HTML_noMod += '<span class="tsb"><img src="img/mezzo_'+mezzo+'.png" class="noMod" style="vertical-align: middle;margin-top: -2px;margin-right: -2px;"> ';
 					HTML_noMod += NomePunto;
-					if(valutazione)HTML_noMod += '<img src="img/ico_PV'+valutazione+'.png" class="noMod" style="vertical-align: middle;margin-top: -3px;">';
+					if(valutazione)HTML_noMod += '<img src="img/ico_PV'+valutazione+'.png" class="noMod">';
 					if(descrizione)HTML_noMod += ' <span style="font-style:italic;">'+htmlEntities(descrizione)+'</span>';
 					HTML_noMod += '</span> ';
 					elenco.push(siglaPunto);
@@ -1288,7 +1288,7 @@ var PAZIENTI_SETS = { // extend PAZIENTI
 							'	   data-drag-family="trigger"' +
 							'	   data-drag-type="move">' +
 							
-							'	<div class="grabBtn"' +
+							'	<div class="grabBtn noPrint"' +
 							'	     onMouseDown="DRAGGER.startDrag(this.parentElement,\'PAZIENTI.spostaTrigger\');"' +
 							'	     onTouchStart="DRAGGER.startDrag(this.parentElement,\'PAZIENTI.spostaTrigger\');"></div>' +
 						
@@ -1300,7 +1300,7 @@ var PAZIENTI_SETS = { // extend PAZIENTI
 							'		 id="ico_vis'+p+'"' +
 							'		 title="'+TXT("DelDett")+'"' +
 							'		 onClick="PAZIENTI.eliminaTriggerTrattamento('+p+')"' +
-							'		 class="cestino">';
+							'		 class="cestino noPrint">';
 					
 					// mezzo
 					let addMezzoTit = '';
@@ -1395,7 +1395,7 @@ var PAZIENTI_SETS = { // extend PAZIENTI
 					NomePunto=__(PAZIENTI.triggerProvvisori[p].n);
 					HTML_noMod += '<span class="tsb"><img src="img/mezzo_'+mezzo+'.png" class="noMod" style="vertical-align: middle;margin-top: -2px;margin-right: -2px;"> ';
 					HTML_noMod += NomePunto;
-					if(valutazione)HTML_noMod += '<img src="img/ico_PV'+valutazione+'.png" class="noMod" style="vertical-align: middle;margin-top: -3px;">';
+					if(valutazione)HTML_noMod += '<img src="img/ico_PV'+valutazione+'.png" class="noMod">';
 					if(descrizione)HTML_noMod += ' <span style="font-style:italic;">'+htmlEntities(descrizione)+'</span>';
 					HTML_noMod += '</span> ';
 					elenco.push(siglaPunto);
@@ -1548,7 +1548,7 @@ var PAZIENTI_SETS = { // extend PAZIENTI
 							'	   data-drag-family="namikoshi"' +
 							'	   data-drag-type="move">' +
 							
-							'	<div class="grabBtn"' +
+							'	<div class="grabBtn noPrint"' +
 							'	     onMouseDown="DRAGGER.startDrag(this.parentElement,\'PAZIENTI.spostaNamikoshi\');"' +
 							'	     onTouchStart="DRAGGER.startDrag(this.parentElement,\'PAZIENTI.spostaNamikoshi\');"></div>' +
 						
@@ -1560,7 +1560,7 @@ var PAZIENTI_SETS = { // extend PAZIENTI
 							'		 id="ico_vis'+p+'"' +
 							'		 title="'+TXT("DelDett")+'"' +
 							'		 onClick="PAZIENTI.eliminaNamikoshiTrattamento('+p+')"' +
-							'		 class="cestino">';
+							'		 class="cestino noPrint">';
 					
 					// mezzo
 					let addMezzoTit = '';
@@ -1657,7 +1657,7 @@ var PAZIENTI_SETS = { // extend PAZIENTI
 					
 					HTML_noMod += '<span class="tsb"><img src="img/mezzo_'+mezzo+'.png" class="noMod" style="vertical-align: middle;margin-top: -2px;margin-right: -2px;"> ';
 					HTML_noMod += siglaPunto;
-					if(valutazione)HTML_noMod += '<img src="img/ico_PV'+valutazione+'.png" class="noMod" style="vertical-align: middle;margin-top: -3px;">';
+					if(valutazione)HTML_noMod += '<img src="img/ico_PV'+valutazione+'.png" class="noMod">';
 					if(descrizione)HTML_noMod += ' <span style="font-style:italic;">'+htmlEntities(descrizione)+'</span>';
 					HTML_noMod += '</span> ';
 				}

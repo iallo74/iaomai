@@ -121,9 +121,9 @@ var PAZIENTI_CICLI = { // extend PAZIENTI
 							siglaPunto = __(puntiMTC[p].s);
 							if(!siglaPunto)siglaPunto = nPunto+'.'+siglaMeridiano;
 							
-							HTML += '<span class="tsb"><img src="img/mezzo_'+mezzo+'.png" class="noMod" style="vertical-align: middle;margin-top: -2px;margin-right: -2px;"> ' +
+							HTML += '<span class="tsb"><img src="img/mezzo_'+mezzo+'.png" class="noMod" style="vertical-align: middle;margin-top: -2px;margin-right: -2px;margin-left: -3px;"> ' +
 									'<b>'+siglaPunto+'</b>';
-							if(valutazione)HTML += '<img src="img/ico_PV'+valutazione+'.png" class="noMod" style="vertical-align: middle;margin-top: -3px;">';
+							if(valutazione)HTML += '<img src="img/ico_PV'+valutazione+'.png" class="noMod">';
 							if(descrizione)HTML += ' <span style="font-style:italic;">'+htmlEntities(descrizione)+'</span>';
 							HTML += '</span> '+H.chr10;
 						}
@@ -140,9 +140,9 @@ var PAZIENTI_CICLI = { // extend PAZIENTI
 							mezzo=__(puntiNamikoshi[p].z);
 							descrizione=__(puntiNamikoshi[p].t);
 							
-							HTML += '<span class="tsb"><img src="img/mezzo_'+mezzo+'.png" class="noMod" style="vertical-align: middle;margin-top: -2px;margin-right: -2px;"> ' +
+							HTML += '<span class="tsb"><img src="img/mezzo_'+mezzo+'.png" class="noMod" style="vertical-align: middle;margin-top: -2px;margin-right: -2px;margin-left: -3px;"> ' +
 									'<b>'+nomePunto+'</b>';
-							if(valutazione)HTML += '<img src="img/ico_PV'+valutazione+'.png" class="noMod" style="vertical-align: middle;margin-top: -3px;">';
+							if(valutazione)HTML += '<img src="img/ico_PV'+valutazione+'.png" class="noMod">';
 							if(descrizione)HTML += ' <span style="font-style:italic;">'+htmlEntities(descrizione)+'</span>';
 							HTML += '</span> '+H.chr10;
 						}
@@ -159,9 +159,9 @@ var PAZIENTI_CICLI = { // extend PAZIENTI
 							mezzo=__(puntiAuricolari[p].z);
 							descrizione=__(puntiAuricolari[p].t);
 							
-							HTML += '<span class="tsb"><img src="img/mezzo_'+mezzo+'.png" class="noMod" style="vertical-align: middle;margin-top: -2px;margin-right: -2px;"> ' +
+							HTML += '<span class="tsb"><img src="img/mezzo_'+mezzo+'.png" class="noMod" style="vertical-align: middle;margin-top: -2px;margin-right: -2px;margin-left: -3px;"> ' +
 									'<b>'+nomePunto+'</b>';
-							if(valutazione)HTML += '<img src="img/ico_PV'+valutazione+'.png" class="noMod" style="vertical-align: middle;margin-top: -3px;">';
+							if(valutazione)HTML += '<img src="img/ico_PV'+valutazione+'.png" class="noMod">';
 							if(descrizione)HTML += ' <span style="font-style:italic;">'+htmlEntities(descrizione)+'</span>';
 							HTML += '</span> '+H.chr10;
 						}
@@ -178,9 +178,9 @@ var PAZIENTI_CICLI = { // extend PAZIENTI
 							mezzo=__(puntiPlantari[p].z);
 							descrizione=__(puntiPlantari[p].t);
 							
-							HTML += '<span class="tsb"><img src="img/mezzo_'+mezzo+'.png" class="noMod" style="vertical-align: middle;margin-top: -2px;margin-right: -2px;"> ' +
+							HTML += '<span class="tsb"><img src="img/mezzo_'+mezzo+'.png" class="noMod" style="vertical-align: middle;margin-top: -2px;margin-right: -2px;margin-left: -3px;"> ' +
 									'<b>'+nomePunto+'</b>';
-							if(valutazione)HTML += '<img src="img/ico_PV'+valutazione+'.png" class="noMod" style="vertical-align: middle;margin-top: -3px;">';
+							if(valutazione)HTML += '<img src="img/ico_PV'+valutazione+'.png" class="noMod">';
 							if(descrizione)HTML += ' <span style="font-style:italic;">'+htmlEntities(descrizione)+'</span>';
 							HTML += '</span> '+H.chr10;
 						}
@@ -197,9 +197,9 @@ var PAZIENTI_CICLI = { // extend PAZIENTI
 							mezzo=__(puntiTrigger[p].z);
 							descrizione=__(puntiTrigger[p].t);
 							
-							HTML += '<span class="tsb"><img src="img/mezzo_'+mezzo+'.png" class="noMod" style="vertical-align: middle;margin-top: -2px;margin-right: -2px;"> ' +
+							HTML += '<span class="tsb"><img src="img/mezzo_'+mezzo+'.png" class="noMod" style="vertical-align: middle;margin-top: -2px;margin-right: -2px;margin-left: -3px;"> ' +
 									'<b>'+nomePunto+'</b>';
-							if(valutazione)HTML += '<img src="img/ico_PV'+valutazione+'.png" class="noMod" style="vertical-align: middle;margin-top: -3px;">';
+							if(valutazione)HTML += '<img src="img/ico_PV'+valutazione+'.png" class="noMod">';
 							if(descrizione)HTML += ' <span style="font-style:italic;">'+htmlEntities(descrizione)+'</span>';
 							HTML += '</span> '+H.chr10;
 						}
@@ -218,7 +218,7 @@ var PAZIENTI_CICLI = { // extend PAZIENTI
 							
 							HTML += 	'<span class="tsb">' +
 										'<b>'+NomeMeridiano+'</b>';
-							if(valutazione)HTML += '<img src="img/ico_PV'+valutazione+'.png" class="noMod" style="vertical-align: middle;margin-top: -3px;">';
+							if(valutazione)HTML += '<img src="img/ico_PV'+valutazione+'.png" class="noMod">';
 							if(descrizione)HTML += ' '+descrizione;
 							HTML += '</span>'+H.chr10;
 						}

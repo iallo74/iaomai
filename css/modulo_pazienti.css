@@ -343,6 +343,12 @@ body:not(.smart) #btnAnagraficaCliente i{
 	background-color:rgba(0,0,0,0.1);
 	font-size: var(--font-12-1);
 }
+.contStampa #puntiCiclo,
+.contStampa #meridianiCiclo{
+	border:none !important;
+	border-radius:0px !important;
+	box-shadow: 0px 1px 0px 0px rgba(0, 0, 0, 0.3);
+}
 #totSaldi{
 	background-color: #ffe3a4 !important;
     text-align: center;
@@ -1264,7 +1270,7 @@ html:not(.htmlStampa) #noteAnag{
 }
 .contStampa .schMedica{
 	margin-left: 0px !important;
-    width: 100% !important;
+    /* width: 100% !important; */
 }
 .sch_Max600 .schMedica{
 	margin-left: 0px !important;
