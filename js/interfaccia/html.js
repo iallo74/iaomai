@@ -265,6 +265,7 @@ var H = {
 				ALERT(msg);
 				el.value = '';
 				el.dataset.preValue = '';
+				if(touchable)el.blur();
 				return false;
 			}
 		}
