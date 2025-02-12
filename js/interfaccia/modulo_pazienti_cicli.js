@@ -48,7 +48,7 @@ var PAZIENTI_CICLI = { // extend PAZIENTI
 					idTrattamento=TR.idTrattamento*1;
 					TitoloTrattamento=TR.TitoloTrattamento;
 					NoteTrattamento=TR.NoteTrattamento;
-					moduli=__(TR.moduli,{});
+					//moduli=__(TR.moduli,{});
 					Anamnesi=TR.Anamnesi;
 					DiagnosiOccidentale=TR.DiagnosiOccidentale;
 					DiagnosiMTC=TR.DiagnosiMTC;
@@ -87,11 +87,11 @@ var PAZIENTI_CICLI = { // extend PAZIENTI
 					if(Anamnesi)HTML+='<p><i>'+htmlEntities(TXT("Anamnesi"+(PAZIENTI.isHolistic()?'Shiatsu':'')))+':</i><br>'+htmlEntities(Anamnesi).replace(/\n/g, '<br>')+'</p>';
 
 					// modulo valutazione
-					if(moduli){
+					/*if(moduli){
 						for(d in moduli){
 							HTML+='<p><i>'+htmlEntities(moduli[d].d)+':</i><br>'+htmlEntities(moduli[d].r)+'</p>';
 						}
-					}
+					}*/
 
 
 					// diagnosi
@@ -226,13 +226,15 @@ var PAZIENTI_CICLI = { // extend PAZIENTI
 								'</div>';
 					}
 					if(NoteTrattamento)HTML+='<p><i>'+htmlEntities(TXT("NoteTrattamento"))+':</i><br>'+htmlEntities(NoteTrattamento).replace(/\n/g, '<br>')+'</p>';
+					if(ConsiderazioniOperatore)HTML+='<p><i>'+htmlEntities(TXT("ConsiderazioniOperatore"))+':</i><br>'+htmlEntities(ConsiderazioniOperatore).replace(/\n/g, '<br>')+'</p>';
+					if(ConsiderazioniPaziente)HTML+='<p><i>'+htmlEntities(TXT("ConsiderazioniPaziente"))+':</i><br>'+htmlEntities(ConsiderazioniPaziente).replace(/\n/g, '<br>')+'</p>';
 				}
 			}
 			HTML2 = HTML;
 			HTML = '';
 			if(valori.length>0){
-				HTML+='<hr><h2>'+htmlEntities(TXT("ScoresSintomi"))+'</h2>';
-				HTML+='<div id="graficoCont">';
+				HTML += '<hr><h2>'+htmlEntities(TXT("ScoresSintomi"))+'</h2>';
+				HTML += '<div id="graficoCont">';
 				let tot=0;
 				for(let d in valori[0]){
 					if(d!='NomeSintomo')tot++;
@@ -243,6 +245,19 @@ var PAZIENTI_CICLI = { // extend PAZIENTI
 					step = Wg/tot;
 				if(WF()<1024)Wg = WF()-120;
 				if(WF()<510)Wg = WF()-80;
+
+				HTML += '<div class="graficoDate"><div class="graficoEtichetta"></div><div class="graficoDati">';
+				let totvals = valori[0].length;
+				for(v in valori[0]){
+					if(v!='NomeSintomo'){
+						let pD = getDataTS(valori[0][v]["Data"]).split("/"),
+							data = twoDigits(pD[0])+"."+twoDigits(pD[1]);//+"."+pD[2].substr(2,2);
+						if(v==0)data = '<img src="img/ico_trattamentiN.png">';
+						HTML += '<div><div>'+data+'</div></div>';
+					}
+				}
+				HTML += '</div></div>';
+
 				for(v in valori){
 					HTML+='<div class="grafico"><div class="graficoEtichetta">'+htmlEntities(valori[v].NomeSintomo)+'</div><div class="graficoDati">';
 					HTML+=PAZIENTI.scriviGrafico(valori[v],Wg,Hg,step,tot);

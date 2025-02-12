@@ -403,9 +403,50 @@ body:not(.smart) #btnAnagraficaCliente i{
 .graficoDati{
 	width: calc(100% - 150px);
 }
-.grafico div{
+.grafico div,
+.graficoDate div{
 	float:left;
 }
+.graficoDate{
+	width: calc(100% + 28px);
+    margin-left: -15px;
+    height: 30px;
+    background-color: rgba(0, 0, 0, 0.1);
+    padding-top: 8px;
+    border-radius: 6px;
+    margin-top: -20px;
+}
+.graficoDate .graficoEtichetta{
+	height:30px;
+	width: 160px;
+}
+.sch_Max600 .graficoDate .graficoEtichetta {
+	display:none;
+}
+.sch_Max600 .graficoDate{
+	padding-left: 12px;
+}
+.graficoDate .graficoDati{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	width: calc(100% - 160px);
+}
+.graficoDate .graficoDati > div{
+	overflow: hidden;
+    width: 40px;
+    height: 20px;
+}
+.graficoDate .graficoDati > div > div{
+	height: 13px;
+    font-size: 12px;
+    width: 40px;
+}
+.graficoDate .graficoDati > div > div img{
+	width: 24px;
+	margin-top: -7px;
+}
+
 .grafico:not(.graficoInt):hover{
 	background-color:rgba(255,255,255,0.3);
 }
@@ -1950,9 +1991,10 @@ body:not(.smart) #tt_mezzival3 span{
 }
 #moduli_titolo{
 	font-weight: bold;
-    padding-right: 14px;
-    text-align: right;
+    padding-left: 14px;
     margin-bottom: 5px;
+    font-size: var(--font-14-94);
+    padding-bottom: 10px;
 }
 #anamnesi_btn,
 #modulo_btn,
