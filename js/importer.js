@@ -8,7 +8,7 @@
 */
 
 // IMPORTAZIONI DI VERSIONE
-var verApp = '1.8.3'; // utilizzata per gli aggiornamenti dei files: FILES[] (i files caricati dinamicamente da DB)
+var verApp = '1.9'; // utilizzata per gli aggiornamenti dei files: FILES[] (i files caricati dinamicamente da DB)
 
 // IMPOSTAZIONI DEL DEVICE
 var	smartphone = false,

@@ -1,6 +1,6 @@
 var CONN = {
 	VERSIONE: 1,
-	APIfolder: 'https://www.iaomai.it/___API/app/V1.8/',
+	APIfolder: 'https://www.iaomai.it/___API/app/V1.9/',
 	APIfilesFolder: 'https://files.iaomai.app/___API/V4/',
 	FILESfolder: 'https://files.iaomai.app/__files_utenti/files/',
 	urlStore: 'https://www.iaomai.app/[lang]/iaomai/',
