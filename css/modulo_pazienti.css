@@ -431,6 +431,8 @@ body:not(.smart) #btnAnagraficaCliente i{
 	justify-content: space-between;
 	align-items: center;
 	width: calc(100% - 160px);
+	padding-left: 1.1%;
+    padding-right: 1.1%;
 }
 .graficoDate .graficoDati > div{
 	overflow: hidden;
