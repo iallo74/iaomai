@@ -314,6 +314,13 @@ var PAZIENTI_MODULI = { // extend PAZIENTI
 					HTML_provv +
 					'</div>';
 		}
+		if(!HTML)HTML = 	'	<span class="noResults"' +
+							'		  style="padding-left:30px;' +
+							'		  		 background-color:rgba(255,255,255,0.2) !important;' +
+							'		  		 border-radius:10px;' +
+							'		  		 margin-bottom: 10px;">' +
+									TXT("NoRes") +
+							'	</span>';
 		document.getElementById("modulo_cont").innerHTML = HTML;
 		if(functs.length){ // eseguo tutte le funzioni
 			for(f in functs){

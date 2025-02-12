@@ -723,8 +723,8 @@ var PAZIENTI_TRATTAMENTI = { // extend PAZIENTI
 					'	<div id="modulo" class="'+(Object.keys(moduli).length?'moduloFull ':'')+'"'+
 					//' style="display:none;"' + // MOMENTANEAMENTE NASCOSTO
 					'>' +
+					'		<div id="moduli_titolo">'+TXT("ElSchedeAnamnesi")+'</div>' +
 					'		<div id="modulo_cont"></div>' +
-					'		<div id="moduli_titolo" class="noPrint">'+TXT("ElSchedeAnamnesi")+'</div>' +
 					'		<div style="margin-bottom: 10px;line-height: normal;text-align:right;color: #045c9f;" class="noPrint"><img src="img/ico_timer_mini.png" style="float:right;margin-left:5px;height:16px;margin-right:10px;vertical-align:middle;"> '+TXT("TimerModuliFree")+'</div>' +
 					'		<div id="modulo_btn_cont" class="noPrint">' +
 					'			<div id="modulo_btn" onClick="PAZIENTI.swImportaModuli();">'+TXT("ImportaModulo")+'</div>' +
@@ -1041,7 +1041,7 @@ var PAZIENTI_TRATTAMENTI = { // extend PAZIENTI
 					'	<img src="img/ico_stampa.png"' +
 					'		 id="stampa_prescr"' +
 					'		 class="noPrint"' +
-					'		 onClick="SCHEDA.stampaScheda({\'titolo\':\''+addslashes(htmlEntities(TXT("Prescrizione")))+'\',\'corpo\':document.formMod.Prescrizione.value,\'intestazione\':DB.pazienti.data[PAZIENTI.idCL].Nome+\' \'+DB.pazienti.data[PAZIENTI.idCL].Cognome});">' +	
+					'		 onClick="STAMPE.stampaScheda({\'titolo\':\''+addslashes(htmlEntities(TXT("Prescrizione")))+'\',\'corpo\':document.formMod.Prescrizione.value,\'intestazione\':DB.pazienti.data[PAZIENTI.idCL].Nome+\' \'+DB.pazienti.data[PAZIENTI.idCL].Cognome});">' +	
 					'	<div id="contPrescrizione">'+
 					H.r({	t: "t",	
 							name: "Prescrizione",	
