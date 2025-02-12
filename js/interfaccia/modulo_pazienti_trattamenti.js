@@ -430,10 +430,10 @@ var PAZIENTI_TRATTAMENTI = { // extend PAZIENTI
 			// GUIDA
 			if(TipoTrattamento == 'A' && Q_idTratt<0){
 				ordine = PAZIENTI.cicli.length-1;
-				HTML += '<div style="text-align: right;"><div class="guide_scheda_btn"' +
+				HTML += '<div style="text-align: right;"><div class="guide_scheda_btn noPrint"' +
 						'	  id="btn_guida_ciclo"' +
 						'	  onClick="GUIDA.visGuida(\'guida_ciclo\')">?</div></div>' +
-						'<div class="guide_scheda"' +
+						'<div class="guide_scheda noPrint"' +
 						'	  id="guida_ciclo"' +
 						'	  style="display:none">' +
 						'	<div class="guide_chiudi"' +

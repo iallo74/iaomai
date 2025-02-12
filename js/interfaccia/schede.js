@@ -741,14 +741,15 @@ var SCHEDA = {
 				'<html class="htmlStampa">' +
 				'	<head>' +
 				'		<script language="Javascript">' +
+				'			var caricato = false;' +
 				'			setTimeout(function(){' +
-				'				parent.document.getElementById("stampa").classList.toggle("visSch");' +
-				'				if(parent.isElectron){' +
-				'					const { ipcRenderer } = require("electron");' +
-				'					ipcRenderer.send("print-document");' +
-				'				}else window.print();' +
+				'				parent.convImgsFrame();' +
+				'				setTimeout(function(){' +
+				'					window.print();' +
+				'					parent.document.getElementById("stampa").classList.toggle("visSch");' +
+				'				},2000);' +
 				//'				window.close();' +
-				'			},2000);' +
+				'			},1000);' +
 				'		</script>' +
 						HTML_styles +
 				'		<title>' +

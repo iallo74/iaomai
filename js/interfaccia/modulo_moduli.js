@@ -102,10 +102,10 @@ var MODULI = {
 			MODULI.domande = clone(jsonModulo);
 			let HTML = '',
 				cont = '';
-			HTML += '<div style="text-align: right;"><div class="guide_scheda_btn"' +
+			HTML += '<div style="text-align: right;"><div class="guide_scheda_btn noPrint"' +
 					'	  id="btn_guida_modulo"' +
 					'	  onClick="GUIDA.visGuida(\'guida_modulo\')">?</div></div>' +
-					'<div class="guide_scheda"' +
+					'<div class="guide_scheda noPrint"' +
 					'	  id="guida_modulo"' +
 					'	  style="display:none">' +
 					'	<div class="guide_chiudi"' +
@@ -142,8 +142,8 @@ var MODULI = {
 
 			// DETTAGLI DEL MODULO
 			HTML += '<div id="dettagli_modulo"></div>'+
-					'<div class="p_sch_label">'+TXT("Aggiungi")+':	</div>'+
-					'<div id="btns_modulo">'+
+					'<div class="p_sch_label noPrint">'+TXT("Aggiungi")+':	</div>'+
+					'<div id="btns_modulo" class="noPrint">'+
 						'<div class="p_paz_label p_quesito" onClick="MODULI.aggiungiDomanda(\'d\');">'+TXT("Quesito")+'</div>'+
 						'<div class="p_paz_label p_etichetta" onClick="MODULI.aggiungiDomanda(\'e\');">'+TXT("Titoletto")+'</div>'+
 					'</div>';	

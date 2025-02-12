@@ -306,3 +306,244 @@ function convTZ(date){
 function reConvTZ(date){
 	return date + 3600*diffTimezone();
 } */
+
+// Funzione per sostituire un background-image con un tag img
+function convertBackgroundToImg(targetElement) {
+
+    //if (!(targetElement instanceof Element)) {
+    //   console.error("L'elemento passato non è un nodo DOM valido.");
+    //   return;
+    //}
+
+    // Ottieni lo stile calcolato del div
+    let computedStyle = window.getComputedStyle(targetElement);
+
+    // Estrai il background-image e rimuovi `url("...")`
+    let backgroundImage = computedStyle.backgroundImage;
+    if (!backgroundImage || backgroundImage === "none") {
+        //console.warn("Nessuna immagine di sfondo trovata");
+        return;
+    }
+    let imageUrl = backgroundImage.replace(/url\(["']?(.*?)["']?\)/, '$1');
+		imageUrl = imageUrl.replace("(&quot;","").replace("&quot;)","");
+		imageUrl = imageUrl.replace('("','').replace('")','');
+    if(imageUrl.indexOf("loadingBlack")>-1)return;
+    if(!imageUrl)return;
+    // Crea il tag <img>
+    let imgElement = document.createElement("img");
+    imgElement.src = imageUrl;
+    imgElement.classList.add("background-img-replacement");
+
+    // Assicura che il div abbia `position: relative` o `absolute`
+    if (computedStyle.position === "static") {
+        targetElement.style.position = "relative";
+    }
+
+    // Configura posizione base dell'img
+    imgElement.style.position = "absolute";
+    imgElement.style.top = "0";
+    imgElement.style.left = "0";
+    imgElement.style.zIndex = imageUrl.indexOf("avatar")>-1 ? "0" : "1"; // Ora è sopra tutti gli elementi
+
+    // Gestisce `background-size`
+    let bgSize = computedStyle.backgroundSize;
+
+    if (bgSize === "cover") {
+        imgElement.style.width = "100%";
+        imgElement.style.height = "100%";
+        imgElement.style.objectFit = "cover"; 
+    } else if (bgSize === "contain") {
+        imgElement.style.width = "100%";
+        imgElement.style.height = "100%";
+        imgElement.style.objectFit = "contain";
+    } else if (bgSize.includes("px") || bgSize.includes("%")) {
+        let [sizeX, sizeY] = bgSize.split(" ");
+        imgElement.style.width = sizeX;
+        imgElement.style.height = sizeY || "auto"; // Auto per mantenere le proporzioni
+    } else {
+        imgElement.style.width = "auto";
+        imgElement.style.height = "auto";
+    }
+
+    // **Gestione precisa del background-position**
+    let bgPosition = computedStyle.backgroundPosition.split(" ");
+    let posX = bgPosition[0] || "50%";
+    let posY = bgPosition[1] || "50%";
+
+    // Converti valori di posizione in percentuali (se servono)
+    const positionMap = {
+        "left": "0%", "center": "50%", "right": "100%",
+        "top": "0%", "bottom": "100%"
+    };
+
+    posX = positionMap[posX] || posX;
+    posY = positionMap[posY] || posY;
+
+    imgElement.style.objectPosition = `${posX} ${posY}`;
+    if(posX=='100%'){
+        imgElement.style.left = 'auto';
+        imgElement.style.right = '0';
+    }else if(posX!="50%")imgElement.style.marginLeft = "-"+posX;
+    if(posY=='100%'){
+        imgElement.style.top = 'auto';
+        imgElement.style.bottom = '0';
+    }else if(posY!="50%")imgElement.style.marginTop = "-"+posY;
+	imgElement.style.opacity = 1;
+    
+    // Aggiungi l'immagine al div
+    targetElement.appendChild(imgElement);
+
+    // Rimuovi il background-image originale
+    targetElement.style.backgroundImage = "none";
+    targetElement.style.overflow = 'hidden';
+    // Aggiorna l'immagine quando la finestra viene ridimensionata
+    window.addEventListener("resize", () => {
+        let computedStyle = window.getComputedStyle(targetElement);
+        imgElement.style.width = computedStyle.width;
+        imgElement.style.height = computedStyle.height;
+    });
+}
+/* function convertBackgroundToImg(targetElement) {
+    let computedStyle = window.getComputedStyle(targetElement);
+
+    // Ottieni il background-image
+    let backgroundImage = computedStyle.backgroundImage;
+    if (!backgroundImage || backgroundImage === "none") return;
+
+    let imageUrl = backgroundImage.replace(/url\(["']?(.*?)["']?\)/, '$1');
+    imageUrl = imageUrl.replace("(&quot;","").replace("&quot;)","").replace('("','').replace('")','');
+    if(imageUrl.indexOf("loadingBlack")>-1) return;
+    if(!imageUrl) return;
+
+    // Crea il tag <img>
+    let imgElement = document.createElement("img");
+    imgElement.src = imageUrl;
+    imgElement.classList.add("background-img-replacement");
+
+    // Assicura che il div abbia `position: relative`
+    if (computedStyle.position === "static") {
+        targetElement.style.position = "relative";
+    }
+
+    // Configura posizione base dell'img
+    imgElement.style.position = "absolute";
+    imgElement.style.zIndex = imageUrl.indexOf("avatar") > -1 ? "0" : "1";
+
+    // Gestisce `background-size`
+    let bgSize = computedStyle.backgroundSize;
+
+    if (bgSize === "cover") {
+        imgElement.style.width = "100%";
+        imgElement.style.height = "100%";
+        imgElement.style.objectFit = "cover"; 
+    } else if (bgSize === "contain") {
+        imgElement.style.width = "100%";
+        imgElement.style.height = "100%";
+        imgElement.style.objectFit = "contain";
+    } else if (bgSize.includes("px") || bgSize.includes("%")) {
+        let [sizeX, sizeY] = bgSize.split(" ");
+        imgElement.style.width = sizeX;
+        imgElement.style.height = sizeY || "auto"; 
+    } else {
+        imgElement.style.width = "auto";
+        imgElement.style.height = "auto";
+    }
+
+    // **Gestione precisa del background-position**
+    let bgPosition = computedStyle.backgroundPosition.split(" ");
+    let posX = bgPosition[0] || "50%";
+    let posY = bgPosition[1] || "50%";
+
+    // Converti valori di posizione in percentuali
+    const positionMap = {
+        "left": "0%", "center": "50%", "right": "100%",
+        "top": "0%", "bottom": "100%"
+    };
+
+    posX = positionMap[posX] || posX;
+    posY = positionMap[posY] || posY;
+
+    // **Correzione per tutte le posizioni**
+    if (posX === "0%") {
+        imgElement.style.left = "0";
+        imgElement.style.right = "auto";
+    } else if (posX === "100%") {
+        imgElement.style.left = "auto";
+        imgElement.style.right = "0";
+    } else {
+        imgElement.style.left = `calc(${posX} - (${imgElement.style.width} / 2))`;
+        imgElement.style.right = "auto";
+    }
+
+    if (posY === "0%") {
+        imgElement.style.top = "0";
+        imgElement.style.bottom = "auto";
+    } else if (posY === "100%") {
+        imgElement.style.top = "auto";
+        imgElement.style.bottom = "0";
+    } else {
+        imgElement.style.top = `calc(${posY} - (${imgElement.style.height} / 2))`;
+        imgElement.style.bottom = "auto";
+    }
+
+    imgElement.style.opacity = 1;
+
+    // Aggiungi l'immagine al div
+    targetElement.appendChild(imgElement);
+
+    // Rimuovi il background-image originale
+    targetElement.style.backgroundImage = "none";
+    targetElement.style.overflow = 'hidden';
+
+    // Aggiorna l'immagine quando la finestra viene ridimensionata
+    window.addEventListener("resize", () => {
+        let computedStyle = window.getComputedStyle(targetElement);
+        imgElement.style.width = computedStyle.width;
+        imgElement.style.height = computedStyle.height;
+    });
+} */
+
+function convImgsFrame(){
+	if(document.getElementById("formMod"))syncFormValuesToIframe("#formMod", "stampaFrame");
+	var divs = document.getElementById("stampaFrame").contentWindow.document.getElementsByTagName("div");
+	for(d in divs){
+		if(typeof(divs[d])=='object'){
+			if(!divs[d]?.classList?.contains("noPrint"))convertBackgroundToImg(divs[d]);
+		}
+	}
+}
+
+
+function syncFormValuesToIframe(formSelector, frameId) {
+    let form = document.querySelector(formSelector);
+    let iframe = document.getElementById(frameId);
+
+    if (!form || !iframe) {
+        console.error("Form o iframe non trovati.");
+        return;
+    }
+
+    let iframeDocument = iframe.contentWindow.document;
+    let iframeForm = iframeDocument.querySelector(formSelector);
+
+    if (!iframeForm) {
+        console.error("Il form non esiste nell'iframe.");
+        return;
+    }
+
+    // **1️ Trova tutti gli input, textarea e select**
+    let originalInputs = form.querySelectorAll("input, textarea, select");
+    let iframeInputs = iframeForm.querySelectorAll("input, textarea, select");
+
+    // **2️ Aggiorna solo i valori nei campi corrispondenti**
+    originalInputs.forEach((input, index) => {
+        if (iframeInputs[index]) {
+            if (input.type === "checkbox" || input.type === "radio") {
+                iframeInputs[index].checked = input.checked;
+            } else {
+                iframeInputs[index].value = input.value;
+            }
+        }
+    });
+}
+

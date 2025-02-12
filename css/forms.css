@@ -1857,7 +1857,10 @@ body:not(.touch) #puntiTrigger .dettPunto:hover{
 #scheda.schLato .txtFull{
 	height: calc(100% - 142px) !important;
 }
-#scheda:not(.schLato) .txtFull{
+.contStampa .txtFull{
+	height: auto !important;
+}
+body:not() #scheda:not(.schLato) .txtFull{
 	height: calc(100% - 167px) !important;
 }
 #Intestazione{

@@ -1187,10 +1187,9 @@ var PAZIENTI = {
 			if(H__2){
 				HTML += '<div class="schDx schMedica">' +
 						H__2 +
-						'</div>' +
-						'<div class="l"></div>';
+						'</div>';
 			}
-					
+			HTML += '<div class="l"></div>';	
 			
 			// GALLERY
 			HTML += '<div id="contGallery" class="contGallery"></div>';
