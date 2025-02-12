@@ -127,6 +127,7 @@ var IMPORTER = {
         'js/interfaccia/dragger.js',
         'js/interfaccia/slider.js',
         'js/interfaccia/schede.js',
+        'js/interfaccia/stampe.js',
         'js/interfaccia/modulo_pazienti.js',
         'js/interfaccia/modulo_pazienti_trattamenti.js',
         'js/interfaccia/modulo_pazienti_moduli.js',

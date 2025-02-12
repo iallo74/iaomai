@@ -188,7 +188,7 @@ var PAZIENTI_SALDI = { // extend PAZIENTI
 							styleRiga: "text-align:right;",
 							classRiga: "div_saldi" }) +
 							
-					'		<span id="btn_stampa" class="stampaBtn noPrint" onclick="SCHEDA.stampaScheda({});">'+TXT("StampaRicevuta")+'</span>' +
+					'		<span id="btn_stampa" class="stampaBtn noPrint" onclick="STAMPE.stampaScheda({});">'+TXT("StampaRicevuta")+'</span>' +
 					'	</div>' +
 					
 					// pulsanti SALVA, ANNULLA e ELIMINA

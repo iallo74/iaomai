@@ -1064,42 +1064,6 @@ var MENU = {
 		}
 	},
 	
-
-	stampaStage: function(){
-		if(!DB.login.data.auths.length){
-			setTimeout(function(){
-				ALERT(TXT("MsgFunzioneSoloPay"));
-			},100);
-			return;
-		}
-		// --------------------------
-		MENU.visStampa();
-		document.body.classList.add("bodyStampa");
-		let rapp = window.innerWidth / window.innerHeight,
-			bw = 28,
-			bh = 21,
-			h = window.innerHeight+210,
-			w = (window.innerHeight * (bw+10) ) / bh;
-		if(rapp > bw/bh ){
-			w = window.innerWidth;
-			h = (window.innerWidth * bh ) / (bw+2);
-		}
-		camera.aspect =  w / h;
-		camera.updateProjectionMatrix();
-		renderer.setSize( w, h );
-		render();
-		setTimeout(function(){
-			//console.log(Canvas2Img());
-			document.getElementById("container").getElementsByTagName("canvas")[0].style.marginLeft = '-400px';
-			if(isMac)document.documentElement.style.position = 'relative'; // aggiunto per MAC
-			window.print();
-			if(isMac)document.documentElement.style.position = 'fixed';
-			document.body.classList.remove("bodyStampa");
-			onWindowResize();
-			setTimeout(function(){MENU.chiudiMenu();},500);
-		},500);
-	},
-	
 	visMM: function( id ){
 		MENU.mnMobOp = document.getElementById(id)
 		MENU.mnMobOp.classList.toggle("visSch");
