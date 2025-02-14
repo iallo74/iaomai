@@ -521,7 +521,8 @@ var agenda = {
 			this.oraInizio=-1;
 			this.elInizio=null;
 		}
-		DataPartenza = new Date(DataPartenza.getFullYear(), DataPartenza.getMonth(), DataPartenza.getDate(), 0,0,0,0);
+		//DataPartenza = new Date(DataPartenza.getFullYear(), DataPartenza.getMonth(), DataPartenza.getDate(), 0,0,0,0);
+		DataPartenza = new Date(DataPartenza.getFullYear()+"-"+twoDigits(DataPartenza.getMonth()+1)+"-"+twoDigits(DataPartenza.getDate()));
 		
 		d = DataPartenza;
 		giorno=d.getDate();
@@ -570,7 +571,7 @@ var agenda = {
 		let occ = [],
 			maxLiv = 0;
 		for(let o=0;o<288;o++)occ[o]=0;
-
+		
 		for(a in this.appuntamenti[d*1]){
 			let add_clsG = ''
 				id = '',
@@ -755,7 +756,6 @@ var agenda = {
 		}
 	},
 	apri:function( DataPartenza, elemento, funct, el, Q_idTratt=-1 ){ // apre e compone l'agenda
-		
 		this.opened = true;
 		this.inTratt = false;
 		

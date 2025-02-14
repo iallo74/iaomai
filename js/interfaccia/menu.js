@@ -647,7 +647,7 @@ var MENU = {
 					document.getElementById("ag").classList.add("visSch");
 					MENU.icoSelected = document.getElementById("p_agenda");
 					MENU.icoSelected.classList.add("p_sel");
-					if(typeof(data) == 'undefined')data = oggi;
+					if(typeof(data) == 'undefined')data = new Date(oggi.getFullYear()+"-"+twoDigits(oggi.getMonth()+1)+"-"+twoDigits(oggi.getDate()));
 					else data = new Date(data);
 					HTML = 	'<div id="cont_sceltaAppuntamento">' +
 							'</div>' +
