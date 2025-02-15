@@ -579,12 +579,12 @@ var MENU = {
 		DISPOSITIVI.carica(jsn);
 	},
 	visFeatures: function( forza=false ){
+		if(!LOGIN.logedin())return;
 		let maxDate = dateEndFeatures,
 			now = new Date().getTime(),
 			tmRit = forza?10:6500;
 		if(	(!__(localStorage.getItem("no_info_features_"+verApp.replace(".","_")),'') &&
 			!__(MENU["no_info_features_"+verApp.replace(".","_")],false) &&
-			LOGIN.logedin() &&
 			maxDate>now) || forza ){
 			document.getElementById("contFeatures").innerHTML = stripslashes(TXT("features"));
 			if(forza){
