@@ -228,9 +228,9 @@ var PURCHASES  = {
 		
 		if(!owned)owned = (DB.login.data.auths.indexOf(folder)>-1) ? true : false;
 		let info = '<div id="copertinaPurchase" style="background-image:url(img/sf_copertine.png),url(sets/'+folder+'/img/copertina.png);"></div>' +
-					'<b id="titLicenze"><img src="sets/'+folder+'/img/logoMenu.png"> '+title+'</b><br/>' +
+					'<b id="titLicenze"><img src="sets/'+folder+'/img/logoMenu.png"> '+title+'</b><br/><b style="font-size: var(--font-16);">' +
 					typeAbb+'<br/>' +
-						price+' / '+typePeriod+'<br/>';
+						price+' / '+typePeriod+'</b><br/>';
 		let button = '';
 		if(canPurchase){
 			button = '';
@@ -241,6 +241,7 @@ var PURCHASES  = {
 			}
 			if(visRet)button += '<div class="ann" onClick="PURCHASES.abbsList();">'+TXT("Annulla")+'</div> ';
 			button += '<div class="btn" onClick="PURCHASES.purchaseLicense(\''+PURCHASES.productId+'\',\''+type+'\')">'+TXT("AbbonatiOra")+'</div>' +
+			'<div style="margin: 16px 0;background-color: rgba(0,0,0,0.6);border-radius: 6px;padding: 10px;color: #FFF;">'+TXT("NoteAbbonamento").replace("[mappa]",title)+' '+TXT("RinnovoAutomatico")+'</div>' +
 					  PURCHASES.getConditions();
 
 		}else if(owned){
@@ -335,7 +336,7 @@ var PURCHASES  = {
 			}
 		}
 		if(ast)html += '<div>(*) '+TXT("NotePrimoMese1Euro").replace("[mappa]",PURCHASES.product_list[id].title)+'</div>';
-		html += '<div style="margin:10px 0;">'+TXT("RinnovoAutomatico")+'</div>' +
+		html += '<div style="margin: 16px 0;background-color: rgba(0,0,0,0.6);border-radius: 6px;padding: 10px;color: #FFF;">'+TXT("NoteAbbonamento").replace("[mappa]",PURCHASES.product_list[id].title)+' '+TXT("RinnovoAutomatico")+'</div>' +
 				'</div>';
 		let el = document.getElementById('contPurchases');
 		el.classList.remove("ini");
