@@ -234,11 +234,11 @@ var PURCHASES  = {
 		let button = '';
 		if(canPurchase){
 			button = '';
-			if(/* type=='m' &&  */PURCHASES.abbs_owned.indexOf(folder)==-1 && priceFT){
+			//if(/* type=='m' &&  */PURCHASES.abbs_owned.indexOf(folder)==-1 && priceFT){
 				let txtMesi = TXT("PrimoMese1Euro").replace("[price]",priceFT);
 				if(cycles>1)txtMesi = TXT("PrimiXMesiXEuro").replace("[price]",priceFT).replace("[n]",cycles);
 				button += '<div class="promoEuro inDett"><b>'+txtMesi+'*</b><br>(*) '+TXT("NotePrimoMese1Euro").replace("[mappa]",title)+'</div>';
-			}
+			//}
 			if(visRet)button += '<div class="ann" onClick="PURCHASES.abbsList();">'+TXT("Annulla")+'</div> ';
 			button += '<div class="btn" onClick="PURCHASES.purchaseLicense(\''+PURCHASES.productId+'\',\''+type+'\')">'+TXT("AbbonatiOra")+'</div>' +
 			'<div style="margin: 16px 0;background-color: rgba(0,0,0,0.6);border-radius: 6px;padding: 10px;color: #FFF;">'+TXT("NoteAbbonamento").replace("[mappa]",title)+' '+TXT("RinnovoAutomatico")+'</div>' +
@@ -326,11 +326,11 @@ var PURCHASES  = {
 								(type=='ac' ? '<div id="label_prezzo_conv">'+TXT("PrezzoInConvenzione")+'</div>' : '') +
 								'<div class="btn buy" onClick="PURCHASES.showProduct(\''+idStore+'\',\''+type+'\');">'+TXT("sub_"+type.substr(0,1))+': <b>'+price+' / '+TXT("add_"+type.substr(0,1))+'</b></div>' +
 								'</div>';
-				if(/* type=='m' &&  */PURCHASES.abbs_owned.indexOf(folder)==-1 && priceFT){
+				//if(/* type=='m' &&  */PURCHASES.abbs_owned.indexOf(folder)==-1 && priceFT){
 					let txtMesi = TXT("PrimoMese1Euro").replace("[price]",priceFT);
 					html_provv += '<div class="promoEuro"><b>'+txtMesi+'*</b></div>';
 					ast = true;
-				}
+				//}
 				html_provv += 	'<span class="sep"></span>';
 				html += html_provv;
 			}
