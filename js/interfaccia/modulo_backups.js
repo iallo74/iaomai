@@ -153,7 +153,6 @@ var BACKUPS = {
 					// prima di ripristinare il backup sincronizzo con il server per verificare l'ultimo lastSync e salvare la versione attuale
 					applicaLoading(document.getElementById("contBackups"));
 					SYNCRO.sincronizza(	'BACKUPS.ripristinaBackup()' );
-					
 				}});
 			},500 );
 		}});
@@ -165,7 +164,8 @@ var BACKUPS = {
 		DB.ricerche.lastSync = 0;
 		BACKUPS.bkpProvv.JSNPOST.lastSync = lastSync;
 		let txt = JSON.stringify(BACKUPS.bkpProvv.JSNPOST);
-		SYNCRO.globalSync(txt);
+		//SYNCRO.globalSync(txt);
+		SYNCRO.retGlobalSyncro(txt);
 	},
 	ripristinoTerminato: function(){ // avverte che il ripristino è terminato
 		localPouchDB.getItem(MD5("DB"+LOGIN._frv()+".note")).then(function(dbCont){ // leggo il DB
