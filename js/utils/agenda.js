@@ -426,7 +426,8 @@ var agenda = {
 			M=0;
 			Y++;
 		}
-		d=new Date(Y,M,1,0,0,0,0);
+		//d=new Date(Y,M,1,0,0,0,0);
+		d = new Date(Y+"-"+twoDigits(M+1)+"-01");
 		d.setDate(d.getDate());
 		HTML +=	'<div class="chiudiCal"' +
 				'	  onClick="agenda.chiudiCalendario();"></div>' +
