@@ -713,7 +713,7 @@ var agenda = {
 		 // verifica che sia in corso un appuntamento
 		let adesso = new Date(),
 			adessoStr = adesso.getFullYear()+"-"+adesso.getMonth()+"-"+adesso.getDate(),
-			oggi = new Date(adesso.getFullYear()+"-"+(adesso.getMonth()+1)+"-"+adesso.getDate()),
+			oggi = new Date(adesso.getFullYear()+"-"+twoDigits(adesso.getMonth()+1)+"-"+adesso.getDate()),
 			adessoTime = adesso*1,
 			act = false;
 
