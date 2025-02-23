@@ -1138,21 +1138,30 @@ var MENU = {
 	backButton: function(){ //  gestione del back button di android
 		//Fare il controllo in questo ordine:
 		//popupaperto > deve chiuderlo
-		let pps = document.getElementsByClassName("popup");
-		let ppOp = false;
+		let pps = document.getElementsByClassName("popup"),
+			ppOp = false,
+			ids = [];
 		for(let p in pps){
 			if(pps[p].classList){
-				if(pps[p].classList.contains("visSch") && pps[p].id!='login')ppOp = true;
+				if(pps[p].classList.contains("visSch")){
+					ppOp = true;
+					ids.push(pps[p].id);
+				}
 			}
 		}
-		if(ppOp)MENU.chiudiMenu();
-		
+		if(ppOp){
+			if(ids.indexOf("login")>-1){
+				if(ids.indexOf("recupero")>-1)MENU.chiudiRecupero();
+				if(ids.indexOf("registrazione")>-1)MENU.chiudiRegistrazione();
+			}else{
+				MENU.chiudiMenu();
+			}
 		//scheda aperta nascosta (con l'occhietto) > deve tornare alla scheda:
 		/* else if(	document.getElementById("scheda").classList.contains("visSch") &&
 					document.body.classList.contains("nasSch") )SCHEDA.riapriScheda(); */
 		
 		//scheda 2 aperta > deve chiudere la scheda 2
-		else if(	document.getElementById("scheda").classList.contains("visSch") &&
+		}else if(	document.getElementById("scheda").classList.contains("visSch") &&
 					!document.body.classList.contains("nasSch") && 
 					document.getElementById("scheda").classList.contains("schedaRitorno") )document.getElementById("scheda_ritorno").click()
 	
