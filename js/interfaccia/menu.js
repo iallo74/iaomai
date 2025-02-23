@@ -1142,7 +1142,7 @@ var MENU = {
 		let ppOp = false;
 		for(let p in pps){
 			if(pps[p].classList){
-				if(pps[p].classList.contains("visSch"))ppOp = true;
+				if(pps[p].classList.contains("visSch") && pps[p].id!='login')ppOp = true;
 			}
 		}
 		if(ppOp)MENU.chiudiMenu();
