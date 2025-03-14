@@ -426,8 +426,7 @@ var agenda = {
 			M=0;
 			Y++;
 		}
-		//d=new Date(Y,M,1,0,0,0,0);
-		d = new Date(Y+"-"+twoDigits(M+1)+"-01");
+		d=new Date(Y,M,1,0,0,0,0);
 		d.setDate(d.getDate());
 		HTML +=	'<div class="chiudiCal"' +
 				'	  onClick="agenda.chiudiCalendario();"></div>' +
@@ -522,8 +521,7 @@ var agenda = {
 			this.oraInizio=-1;
 			this.elInizio=null;
 		}
-		//DataPartenza = new Date(DataPartenza.getFullYear(), DataPartenza.getMonth(), DataPartenza.getDate(), 0,0,0,0);
-		DataPartenza = new Date(DataPartenza.getFullYear()+"-"+twoDigits(DataPartenza.getMonth()+1)+"-"+twoDigits(DataPartenza.getDate()));
+		DataPartenza = new Date(DataPartenza.getFullYear(), DataPartenza.getMonth(), DataPartenza.getDate(), 0,0,0,0);
 		
 		d = DataPartenza;
 		giorno=d.getDate();
@@ -572,7 +570,7 @@ var agenda = {
 		let occ = [],
 			maxLiv = 0;
 		for(let o=0;o<288;o++)occ[o]=0;
-		
+
 		for(a in this.appuntamenti[d*1]){
 			let add_clsG = ''
 				id = '',
@@ -713,7 +711,7 @@ var agenda = {
 		 // verifica che sia in corso un appuntamento
 		let adesso = new Date(),
 			adessoStr = adesso.getFullYear()+"-"+adesso.getMonth()+"-"+adesso.getDate(),
-			oggi = new Date(adesso.getFullYear()+"-"+twoDigits(adesso.getMonth()+1)+"-"+adesso.getDate()),
+			oggi = new Date(adesso.getFullYear()+"-"+(adesso.getMonth()+1)+"-"+adesso.getDate()),
 			adessoTime = adesso*1,
 			act = false;
 
@@ -757,6 +755,7 @@ var agenda = {
 		}
 	},
 	apri:function( DataPartenza, elemento, funct, el, Q_idTratt=-1 ){ // apre e compone l'agenda
+		
 		this.opened = true;
 		this.inTratt = false;
 		
