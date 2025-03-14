@@ -579,12 +579,12 @@ var MENU = {
 		DISPOSITIVI.carica(jsn);
 	},
 	visFeatures: function( forza=false ){
-		if(!LOGIN.logedin())return;
 		let maxDate = dateEndFeatures,
 			now = new Date().getTime(),
 			tmRit = forza?10:6500;
 		if(	(!__(localStorage.getItem("no_info_features_"+verApp.replace(".","_")),'') &&
 			!__(MENU["no_info_features_"+verApp.replace(".","_")],false) &&
+			LOGIN.logedin() &&
 			maxDate>now) || forza ){
 			document.getElementById("contFeatures").innerHTML = stripslashes(TXT("features"));
 			if(forza){
@@ -647,7 +647,7 @@ var MENU = {
 					document.getElementById("ag").classList.add("visSch");
 					MENU.icoSelected = document.getElementById("p_agenda");
 					MENU.icoSelected.classList.add("p_sel");
-					if(typeof(data) == 'undefined')data = new Date(oggi.getFullYear()+"-"+twoDigits(oggi.getMonth()+1)+"-"+twoDigits(oggi.getDate()));
+					if(typeof(data) == 'undefined')data = oggi;
 					else data = new Date(data);
 					HTML = 	'<div id="cont_sceltaAppuntamento">' +
 							'</div>' +
@@ -1138,30 +1138,21 @@ var MENU = {
 	backButton: function(){ //  gestione del back button di android
 		//Fare il controllo in questo ordine:
 		//popupaperto > deve chiuderlo
-		let pps = document.getElementsByClassName("popup"),
-			ppOp = false,
-			ids = [];
+		let pps = document.getElementsByClassName("popup");
+		let ppOp = false;
 		for(let p in pps){
 			if(pps[p].classList){
-				if(pps[p].classList.contains("visSch")){
-					ppOp = true;
-					ids.push(pps[p].id);
-				}
+				if(pps[p].classList.contains("visSch"))ppOp = true;
 			}
 		}
-		if(ppOp){
-			if(ids.indexOf("login")>-1){
-				if(ids.indexOf("recupero")>-1)MENU.chiudiRecupero();
-				if(ids.indexOf("registrazione")>-1)MENU.chiudiRegistrazione();
-			}else{
-				MENU.chiudiMenu();
-			}
+		if(ppOp)MENU.chiudiMenu();
+		
 		//scheda aperta nascosta (con l'occhietto) > deve tornare alla scheda:
 		/* else if(	document.getElementById("scheda").classList.contains("visSch") &&
 					document.body.classList.contains("nasSch") )SCHEDA.riapriScheda(); */
 		
 		//scheda 2 aperta > deve chiudere la scheda 2
-		}else if(	document.getElementById("scheda").classList.contains("visSch") &&
+		else if(	document.getElementById("scheda").classList.contains("visSch") &&
 					!document.body.classList.contains("nasSch") && 
 					document.getElementById("scheda").classList.contains("schedaRitorno") )document.getElementById("scheda_ritorno").click()
 	
