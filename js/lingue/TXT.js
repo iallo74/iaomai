@@ -1085,14 +1085,6 @@ DB.TXT = {
             por: "Oferta disponível apenas se você ainda não tentou [mappa].",
             deu: "Angebot nur verfügbar, wenn Sie [mappa] noch nicht ausprobiert haben."
         },
-        NoteAbbonamento: {
-            ita: "Per utilizzare [mappa] è necessario un abbonamento, mensile o annuale.",
-            eng: "To use [mappa], a monthly or annual subscription is required.",
-            esp: "Para utilizar [mappa], se requiere una suscripción mensual o anual.",
-            fra: "Pour utiliser [mappa], un abonnement mensuel ou annuel est requis.",
-            por: "Para utilizar [mappa], é necessária uma assinatura mensal ou anual.",
-            deu: "Um [mappa] zu nutzen, ist ein monatliches oder jährliches Abonnement erforderlich."
-        },
         RinnovoAutomatico: {
             ita: "Tutti gli abbonamenti sono a rinnovo automatico. Annulla quando vuoi.",
             eng: "All subscriptions are auto-renewal. Cancel anytime.",
@@ -1205,7 +1197,6 @@ DB.TXT = {
             por: "Comprar",
             deu: "Kaufen"
         },
-
         MsgConnMultipla: {
             ita: "ATTENZIONE!\nSei stato disconnesso perché qualcun altro è entrato sul sistema con la tua password.\nSe non sei stato tu ti consigliamo di modificarla al più presto.",
             eng: "WARNING!\nYou're being disconnected because someone else logged in using your username and password.\nIf it's not you, we recommend changing your password as soon as possible.",

@@ -228,13 +228,12 @@ var PURCHASES  = {
 		
 		if(!owned)owned = (DB.login.data.auths.indexOf(folder)>-1) ? true : false;
 		let info = '<div id="copertinaPurchase" style="background-image:url(img/sf_copertine.png),url(sets/'+folder+'/img/copertina.png);"></div>' +
-					'<b id="titLicenze"><img src="sets/'+folder+'/img/logoMenu.png"> '+title+'</b><br/><b style="font-size: var(--font-16);">' +
+					'<b id="titLicenze"><img src="sets/'+folder+'/img/logoMenu.png"> '+title+'</b><br/>' +
 					typeAbb+'<br/>' +
-						price+' / '+typePeriod+'</b><br/>';
+						price+' / '+typePeriod+'<br/>';
 		let button = '';
 		if(canPurchase){
 			button = '';
-			//if(!priceFT)priceFT = "₹85,00";
 			if(/* type=='m' &&  */PURCHASES.abbs_owned.indexOf(folder)==-1 && priceFT){
 				let txtMesi = TXT("PrimoMese1Euro").replace("[price]",priceFT);
 				if(cycles>1)txtMesi = TXT("PrimiXMesiXEuro").replace("[price]",priceFT).replace("[n]",cycles);
@@ -242,7 +241,6 @@ var PURCHASES  = {
 			}
 			if(visRet)button += '<div class="ann" onClick="PURCHASES.abbsList();">'+TXT("Annulla")+'</div> ';
 			button += '<div class="btn" onClick="PURCHASES.purchaseLicense(\''+PURCHASES.productId+'\',\''+type+'\')">'+TXT("AbbonatiOra")+'</div>' +
-			'<div style="margin: 16px 0;background-color: rgba(0,0,0,0.6);border-radius: 6px;padding: 10px;color: #FFF;">'+TXT("NoteAbbonamento").replace("[mappa]",title)+' '+TXT("RinnovoAutomatico")+'</div>' +
 					  PURCHASES.getConditions();
 
 		}else if(owned){
@@ -327,8 +325,6 @@ var PURCHASES  = {
 								(type=='ac' ? '<div id="label_prezzo_conv">'+TXT("PrezzoInConvenzione")+'</div>' : '') +
 								'<div class="btn buy" onClick="PURCHASES.showProduct(\''+idStore+'\',\''+type+'\');">'+TXT("sub_"+type.substr(0,1))+': <b>'+price+' / '+TXT("add_"+type.substr(0,1))+'</b></div>' +
 								'</div>';
-								
-				//if(!priceFT)priceFT = "₹85,00";
 				if(/* type=='m' &&  */PURCHASES.abbs_owned.indexOf(folder)==-1 && priceFT){
 					let txtMesi = TXT("PrimoMese1Euro").replace("[price]",priceFT);
 					html_provv += '<div class="promoEuro"><b>'+txtMesi+'*</b></div>';
@@ -339,7 +335,7 @@ var PURCHASES  = {
 			}
 		}
 		if(ast)html += '<div>(*) '+TXT("NotePrimoMese1Euro").replace("[mappa]",PURCHASES.product_list[id].title)+'</div>';
-		html += '<div style="margin: 16px 0;background-color: rgba(0,0,0,0.6);border-radius: 6px;padding: 10px;color: #FFF;">'+TXT("NoteAbbonamento").replace("[mappa]",PURCHASES.product_list[id].title)+' '+TXT("RinnovoAutomatico")+'</div>' +
+		html += '<div style="margin:10px 0;">'+TXT("RinnovoAutomatico")+'</div>' +
 				'</div>';
 		let el = document.getElementById('contPurchases');
 		el.classList.remove("ini");
