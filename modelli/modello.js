@@ -1883,9 +1883,10 @@ var MODELLO = {
 		for(let i = 0; i<els.length; i++){
 			els[i].classList.remove("cSel");
 		}
-		if(localStorage.tipoPelle == '')els[0].classList.add("cSel");
-		if(localStorage.tipoPelle == '_mulatta')els[1].classList.add("cSel");
-		if(localStorage.tipoPelle == '_nera')els[2].classList.add("cSel");
+		if(localStorage.tipoPelle == '')els[1].classList.add("cSel");
+		if(localStorage.tipoPelle == '_mulatta')els[2].classList.add("cSel");
+		if(localStorage.tipoPelle == '_nera')els[3].classList.add("cSel");
+		if(localStorage.tipoPelle == '_bianca')els[0].classList.add("cSel");
 		if(globals.modello.cartella){
 			for(let p in scene.getObjectByName('PELLE').children){
 				scene.getObjectByName('PELLE').children[p].material = MODELLO.MAT["materialPelle"+MODELLO.tipoPelle];

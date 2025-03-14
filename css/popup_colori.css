@@ -38,12 +38,19 @@
 #skinSel span{
 	display:inline-block;
     vertical-align: middle;
-	width:40px;
-	height:40px;
-	margin:5px;
 	border-radius:4px;
 	box-shadow:0px 0px 5px #000;
 	cursor:pointer;
+}
+#colSel span{
+	width:40px;
+	height:40px;
+	margin:5px;
+}
+#skinSel span{
+	width:36px;
+	height:36px;
+	margin:8px 3px 3px 3px;
 }
 #guida_generica #colSel{
     text-align: right;
@@ -264,4 +271,7 @@ body:not(.smart) #guida_generica #colSel{
 }
 .p2{
 	background-color:#52453b;
+}
+.p3{
+	background-color:#e2e2e2;
 }

@@ -37,11 +37,20 @@ MODELLO.MAT = {
 	} ),
 	materialPelle_nera: new THREE.MeshStandardMaterial( { // PELLE
 		name: "materiale pelle nera",
-		color: new THREE.Color( 0.32, 0.27, 0.23 ),
+		color: new THREE.Color( 0.18, 0.15, 0.13 ),//new THREE.Color( 0.32, 0.27, 0.23 ),
 		flatShading:false,
 		transparent:true,
 		roughness:0.45,
 		metalness:0,
+		side: 3
+	} ),
+	materialPelle_bianca: new THREE.MeshStandardMaterial( { // PELLE
+		name: "materiale pelle",
+		color: new THREE.Color( 0.7, 0.7, 0.7 ),
+		flatShading:false,
+		transparent:true,
+		roughness:0.6,
+		metalness:0.1,
 		side: 3
 	} ),
 	materialOssa: new THREE.MeshStandardMaterial( { // OSSA
