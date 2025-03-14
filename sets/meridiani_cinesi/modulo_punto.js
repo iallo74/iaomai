@@ -127,21 +127,27 @@ var MODULO_PUNTO = { // extend SET
 		
 		
 		imgDettaglio='';
-		posPunti='';
-		let wCont = 370,
-			rp = wCont/370,
-			marginLeft = 0;
+		pointsPositions = [];
+		let wCont = 370;
 		if(touchable && smartphone){
 			wCont = WF()-40;
 		}
+		let rp = wCont/370;
 		if(coordZoom.length>1){
 			let pC=coordZoom.split("|");
 			for(let pu in pC){
 				pC2=pC[pu].split(",");
-				posPunti+='<img src="sets/common/mtc/img/zoom/punto.png" width="'+parseInt(43*rp)+'" height="'+parseInt(40*rp)+'" style="position:absolute;left:'+parseInt((pC2[0]-7)*rp-marginLeft)+'px;top:'+parseInt((pC2[1]-7)*rp)+'px;">';
+				pointsPositions.push({
+					x: parseInt((pC2[0]-7)*rp),
+					y: parseInt((pC2[1]-7)*rp)
+				})
 			}
 		}
-		if(imgZoom)imgDettaglio='<div id="cont_imgDettPunto" style="width:'+wCont+'px;"><img src="sets/common/mtc/img/zoom/'+imgZoom+'" border="0" width="'+wCont+'" id="imgDettPunto">'+posPunti+'</div>';
+		if(imgZoom)imgDettaglio='<div id="cont_imgDettPunto" style="width:'+wCont+'px;"><img border="0" width="'+wCont+'" id="imgDettPunto"></div>';
+		SET.overlayImages(imgZoom.split(".")[0], pointsPositions);
+
+
+
 		
 		// aggiungo contenuto custom
 		HTML = CUSTOMS.addContent("meridiani_"+siglaMeridiano+"_"+nPunto,HTML);
@@ -270,7 +276,41 @@ var MODULO_PUNTO = { // extend SET
 		}
 		document.getElementById("frSch").className = classFr;
 	},
+	overlayImages: function(bgSrc, overlayPoints) {
+		// Crea un elemento canvas
+		const canvasDett = document.createElement("canvas");
+		const ctx = canvasDett.getContext("2d");
 	
+		const backgroundImage = new Image();
+		backgroundImage.src = "data:image/png;base64," + zoom_imgs[bgSrc];
+	
+		backgroundImage.onload = function () {
+			// Imposta le dimensioni del canvas in base all'immagine di sfondo
+			canvasDett.width = 370;
+			const aspectRatio = backgroundImage.width / backgroundImage.height;
+			canvasDett.height = canvasDett.width / aspectRatio;
+			
+			ctx.drawImage(backgroundImage, 0, 0, canvasDett.width, canvasDett.height);
+	
+			// Caricare e posizionare ogni overlay
+			let loadedImages = 0;
+			overlayPoints.forEach(point => {
+				const overlayImage = new Image();
+				overlayImage.src = "data:image/png;base64," + zoom_imgs.punto;
+	
+				overlayImage.onload = function () {
+					ctx.drawImage(overlayImage, point.x, point.y, 43, 40);
+	
+					// Assicurati che tutti i punti siano caricati prima di esportare l'immagine
+					loadedImages++;
+					if (loadedImages === overlayPoints.length) {
+						const base64Image = canvasDett.toDataURL("image/jpg", 1);
+						document.getElementById("imgDettPunto").src = base64Image;
+					}
+				};
+			});
+		};
+	},
 	mod_nota: function( Q_nome_meridiano, Q_p ){ // salva la nota di un punto
 		let nota_salvata = false,
 			DataModifica = DB.note.lastSync+1,

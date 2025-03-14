@@ -47,7 +47,8 @@ var sets = {
 			'stili_punto.css',
 			'lang_[lang].js',
 			'sets/common/mtc/lang_[lang].js',
-			'sets/common/patologie/lang_[lang].js'
+			'sets/common/patologie/lang_[lang].js',
+			'sets/common/mtc/img/zoom.js'
 		],
 		dims: [
 			65,
@@ -66,7 +67,8 @@ var sets = {
 			2,
 			369,
 			513,
-			322
+			322,
+			2000
 		],
 		txtLoading: stripslashes(TXT("CaricamentoMeridiani")),
 		auth: false,
@@ -137,7 +139,8 @@ var sets = {
 			'stili_punto.css',
 			'lang_[lang].js',
 			'sets/common/mtc/lang_[lang].js',
-			'sets/common/patologie/lang_[lang].js'
+			'sets/common/patologie/lang_[lang].js',
+			'sets/common/mtc/img/zoom.js'
 		],
 		dims: [
 			65,
@@ -156,7 +159,8 @@ var sets = {
 			2,
 			369,
 			513,
-			322
+			322,
+			2000
 		],
 		txtLoading: stripslashes(TXT("CaricamentoMappa")),
 		auth: false,
