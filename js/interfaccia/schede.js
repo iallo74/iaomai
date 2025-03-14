@@ -32,7 +32,6 @@ var SCHEDA = {
 	yMouseAtt: 0,
 	wLimit: 800,
 	hOpened: 200,
-	hMem: 0,
 	schedaAperta: false,
 	scheda2Aperta: false,
 	classeAperta: '',
@@ -944,23 +943,8 @@ var SCHEDA = {
 	verPosScheda: function(){
 		// effettua i controlli quando si ridimensiona la scheda
 		if(smartMenu){
-			if(SCHEDA.hOpened<70 && document.querySelector(".formBtn"))SCHEDA.hOpened=70;
-			if(SCHEDA.hOpened<40)SCHEDA.hOpened=40;
-			
-			// in caso di resize a seguito di comparsa della tastiera Android
-			if(smartMenu && android && document.getElementById("formMod")){
-				let h = document.getElementById("scheda_testo").scrollHeight,
-					hOr = parseInt(localStorage.hOpened);
-				if(h+36!=HF()){
-					h=HF()-36;
-					if(h>hOr)h=hOr;
-					document.getElementById("scheda_testo").style.height = h +'px';
-					document.getElementById("scheda_testo2").style.height = h +'px';
-					SCHEDA.hOpened = h;
-				}
-			}
-
-
+			if(smartMenu && SCHEDA.hOpened<70 && document.querySelector(".formBtn"))SCHEDA.hOpened=70;
+			if(smartMenu && SCHEDA.hOpened<40)SCHEDA.hOpened=40;
 			document.getElementById("scheda_testo").style.height = SCHEDA.hOpened + "px";
 		}
 		if(document.getElementById("scheda").classList.contains("visSch")  && !smartMenu ){
