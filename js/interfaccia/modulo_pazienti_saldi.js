@@ -111,7 +111,7 @@ var PAZIENTI_SALDI = { // extend PAZIENTI
 				DataSaldo=SA.DataSaldo*1;
 				SA.md5=PAZIENTI.pazSelMD5;
 				
-				localPouchDB.setItem(MD5("DB"+LOGIN._frv()+".pazienti"), IMPORTER.COMPR(DB.pazienti));
+				//localPouchDB.setItem(MD5("DB"+LOGIN._frv()+".pazienti"), IMPORTER.COMPR(DB.pazienti));
 			}else{
 				DataSaldo = new Date()*1;
 				DataSaldo /= 1000;

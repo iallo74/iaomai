@@ -348,7 +348,7 @@ var PAZIENTI_TRATTAMENTI = { // extend PAZIENTI
 				oraFine=132;
 				TR.id_interno=Q_idTratt;
 				TR.md5=PAZIENTI.pazSelMD5;
-				localPouchDB.setItem(MD5("DB"+LOGIN._frv()+".pazienti"), IMPORTER.COMPR(DB.pazienti));
+				//localPouchDB.setItem(MD5("DB"+LOGIN._frv()+".pazienti"), IMPORTER.COMPR(DB.pazienti));
 				idTrattamento=TR.idTrattamento*1;
 				TitoloTrattamento=TR.TitoloTrattamento;
 				NoteTrattamento=TR.NoteTrattamento;
@@ -404,7 +404,6 @@ var PAZIENTI_TRATTAMENTI = { // extend PAZIENTI
 				}
 				sintomi = sintomiCiclo;
 			}
-			
 			
 			agenda.init();
 			let TimeAgenda = TimeTrattamento;
