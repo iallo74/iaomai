@@ -6656,6 +6656,14 @@ DB.TXT = {
             por: "ATENÇÃO!<br>O IAOMAI requer uma atualização importante.",
             deu: "WARNUNG!<br>IAOMAI erfordert ein wichtiges Update."
         },
+        UpgradeIntro2: {
+            ita: "È disponibile una nuova versione dell'app.",
+            eng: "A new version of the app is available.",
+            esp: "Hay una nueva versión de la aplicación disponible.",
+            fra: "Une nouvelle version de l'application est disponible.",
+            por: "Uma nova versão do aplicativo está disponível.",
+            deu: "Eine neue Version der App ist verfügbar."
+        },
         UpgradeInfoAndroid: {
             ita: "È necessario accedere al PlayStore e aggiornare l'app.",
             eng: "You need to access the Play Store and update the app.",
