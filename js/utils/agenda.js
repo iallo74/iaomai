@@ -1,4 +1,4 @@
-var agenda = {
+var agenda = { 
 
 	opened: false,
 	appuntamenti: [],
@@ -76,28 +76,30 @@ var agenda = {
 		}
 	},
 	modificaAppuntamento: function( d, a ){ // modifica l'appuntamento
+
 		let TestoAppuntamento = "",
 			idCli = -1,
 			idPaziente = -1,
 			idApp = -1,
 			idAppuntamento = -1,
-			tit = TXT("AggiungiAppuntamento");
+			tit = TXT("AggiungiAppuntamento"),
+			dddTxt = this.convDateTxt(d);
 		if(typeof(a)!='undefined'){
-			TestoAppuntamento = this.appuntamenti[d][a].TestoAppuntamento;
-			idCli = __(this.appuntamenti[d][a].idCli,-1);
-			idPaziente = __(this.appuntamenti[d][a].idPaziente,-1);
+			TestoAppuntamento = this.appuntamenti[dddTxt][a].TestoAppuntamento;
+			idCli = __(this.appuntamenti[dddTxt][a].idCli,-1);
+			idPaziente = __(this.appuntamenti[dddTxt][a].idPaziente,-1);
 			if(!idCli)idCli = -1;
 			if(!idPaziente)idPaziente = -1;
-			idApp = this.appuntamenti[d][a].idApp;
-			idAppuntamento = this.appuntamenti[d][a].idAppuntamento;
+			idApp = this.appuntamenti[dddTxt][a].idApp;
+			idAppuntamento = this.appuntamenti[dddTxt][a].idAppuntamento;
 			this.orarioDef = {
-				data: this.appuntamenti[d][a].data,
-				oraInizio: this.appuntamenti[d][a].timeInizio,
-				oraFine: this.appuntamenti[d][a].timeFine
+				data: this.appuntamenti[dddTxt][a].data,
+				oraInizio: this.appuntamenti[dddTxt][a].timeInizio,
+				oraFine: this.appuntamenti[dddTxt][a].timeFine
 			}
-			agenda.giornoInizio = this.appuntamenti[d][a].data;
-			agenda.oraInizio = this.appuntamenti[d][a].timeInizio;
-			agenda.oraFine = this.appuntamenti[d][a].timeFine;
+			agenda.giornoInizio = this.appuntamenti[dddTxt][a].data;
+			agenda.oraInizio = this.appuntamenti[dddTxt][a].timeInizio;
+			agenda.oraFine = this.appuntamenti[dddTxt][a].timeFine;
 			tit = TXT("ModificaAppuntamento")
 		}
 		applicaLoading(document.getElementById("ag"));
@@ -426,7 +428,9 @@ var agenda = {
 			M=0;
 			Y++;
 		}
-		d=new Date(Y,M,1,0,0,0,0);
+		//d=new Date(Y,M,1,0,0,0,0);
+		//d = new Date(Y+"-"+twoDigits(M+1)+"-01");
+		d = new Date(Y,M,1);
 		d.setDate(d.getDate());
 		HTML +=	'<div class="chiudiCal"' +
 				'	  onClick="agenda.chiudiCalendario();"></div>' +
@@ -470,11 +474,12 @@ var agenda = {
 			HTML += '"';
 			if(d*1==this.giornoInizio*1)HTML+=' class="hSel"';
 			
-			let pieno=0;
+			let pieno=0,
+				dddTxt = this.convDateTxt(d);
 			for(let h=0;h<288;h++){
-				for(a in this.appuntamenti[d*1]){
-					if(	h>=this.appuntamenti[d*1][a].timeInizio && 
-						h<this.appuntamenti[d*1][a].timeFine){
+				for(a in this.appuntamenti[dddTxt]){
+					if(	h>=this.appuntamenti[dddTxt][a].timeInizio && 
+						h<this.appuntamenti[dddTxt][a].timeFine){
 						pieno++;
 					}
 				}
@@ -521,7 +526,9 @@ var agenda = {
 			this.oraInizio=-1;
 			this.elInizio=null;
 		}
-		DataPartenza = new Date(DataPartenza.getFullYear(), DataPartenza.getMonth(), DataPartenza.getDate(), 0,0,0,0);
+		//DataPartenza = new Date(DataPartenza.getFullYear(), DataPartenza.getMonth(), DataPartenza.getDate(), 0,0,0,0);
+		//DataPartenza = new Date(DataPartenza.getFullYear()+"-"+twoDigits(DataPartenza.getMonth()+1)+"-"+twoDigits(DataPartenza.getDate()));
+		DataPartenza = new Date(DataPartenza.getFullYear(),DataPartenza.getMonth(),DataPartenza.getDate());
 		
 		d = DataPartenza;
 		giorno=d.getDate();
@@ -568,46 +575,46 @@ var agenda = {
 		}
 
 		let occ = [],
-			maxLiv = 0;
+			maxLiv = 0,
+			dddTxt = this.convDateTxt(d);
 		for(let o=0;o<288;o++)occ[o]=0;
-
-		for(a in this.appuntamenti[d*1]){
+		for(a in this.appuntamenti[dddTxt]){
 			let add_clsG = ''
 				id = '',
 				scost = 30,
 				maxStep = 0,
 				height = 0,
 				lavorata = false,
-				cnt = __(this.appuntamenti[d*1][a].TestoAppuntamento);
+				cnt = __(this.appuntamenti[dddTxt][a].TestoAppuntamento);
 
-			if(	this.appuntamenti[d*1][a].Nominativo){
-				cnt += ' <i class="nTAg">'+icoUtente+this.appuntamenti[d*1][a].Nominativo+'</i>';
+			if(	this.appuntamenti[dddTxt][a].Nominativo){
+				cnt += ' <i class="nTAg">'+icoUtente+this.appuntamenti[dddTxt][a].Nominativo+'</i>';
 			}
 
-			if(__(this.appuntamenti[d*1][a].idApp,-1)>-1)add_clsG+='Gen';
-			if(__(this.appuntamenti[d*1][a].inLavorazione)){
+			if(__(this.appuntamenti[dddTxt][a].idApp,-1)>-1)add_clsG+='Gen';
+			if(__(this.appuntamenti[dddTxt][a].inLavorazione)){
 				id=' id="inLavorazione"';
 				lavorata = true;
 			}
-			for(let o=this.appuntamenti[d*1][a].timeInizio;o<this.appuntamenti[d*1][a].timeFine;o++){
+			for(let o=this.appuntamenti[dddTxt][a].timeInizio;o<this.appuntamenti[dddTxt][a].timeFine;o++){
 				if(occ[o]>maxStep)maxStep=occ[o];
 				occ[o]++;
 			}
 			if(maxStep>maxLiv)maxLiv = maxStep;
 			scost += maxStep*20+2;
-			height = ((4*(this.appuntamenti[d*1][a].timeFine-this.appuntamenti[d*1][a].timeInizio))-2);
+			height = ((4*(this.appuntamenti[dddTxt][a].timeFine-this.appuntamenti[dddTxt][a].timeInizio))-2);
 			if(height<16)height=16;
 			HTML += '<div class="elApp elAppSt timeFull'+add_clsG+'"' +
 					id +
 					'	  data-liv="'+maxStep+'"' +
-					'	  data-ini="'+this.appuntamenti[d*1][a].timeInizio+'"' +
-					'	  data-fin="'+this.appuntamenti[d*1][a].timeFine+'"' +
+					'	  data-ini="'+this.appuntamenti[dddTxt][a].timeInizio+'"' +
+					'	  data-fin="'+this.appuntamenti[dddTxt][a].timeFine+'"' +
 					'	  style="width: calc(100% - '+(scost+2)+'px);'+
 					'			 left:'+scost+'px;' +
-					'			 top:'+((this.appuntamenti[d*1][a].timeInizio*4)-1)+'px;"' +
+					'			 top:'+((this.appuntamenti[dddTxt][a].timeInizio*4)-1)+'px;"' +
 					(!document.getElementById("scheda").classList.contains("visSch") ? '	  onMouseOver="if(!agenda.moved){agenda.zIndex++;this.style.zIndex=agenda.zIndex;}"' : '') +
-					'	  data-id="'+(__(this.appuntamenti[d*1][a].idTratt,'')==''?__(this.appuntamenti[d*1][a].idApp,'0'):this.appuntamenti[d*1][a].idTratt)+'"' +
-					'	  data-idcl="' +(__(this.appuntamenti[d*1][a].idCL,'')?this.appuntamenti[d*1][a].idCL:'')+'">' +
+					'	  data-id="'+(__(this.appuntamenti[dddTxt][a].idTratt,'')==''?__(this.appuntamenti[dddTxt][a].idApp,'0'):this.appuntamenti[dddTxt][a].idTratt)+'"' +
+					'	  data-idcl="' +(__(this.appuntamenti[dddTxt][a].idCL,'')?this.appuntamenti[dddTxt][a].idCL:'')+'">' +
 					'	<span style="height:'+height+'px;"' +
 					'	  	  onMouseDown="agenda.startDrag(this.parentElement,\'drag\');"' +
 					'	  	  onTouchStart="agenda.startDrag(this.parentElement,\'drag\');"' +
@@ -711,7 +718,8 @@ var agenda = {
 		 // verifica che sia in corso un appuntamento
 		let adesso = new Date(),
 			adessoStr = adesso.getFullYear()+"-"+adesso.getMonth()+"-"+adesso.getDate(),
-			oggi = new Date(adesso.getFullYear()+"-"+(adesso.getMonth()+1)+"-"+adesso.getDate()),
+			//oggi = new Date(adesso.getFullYear()+"-"+twoDigits(adesso.getMonth()+1)+"-"+adesso.getDate()),
+			oggi = new Date(adesso.getFullYear(),adesso.getMonth(),adesso.getDate()),
 			adessoTime = adesso*1,
 			act = false;
 
@@ -755,7 +763,6 @@ var agenda = {
 		}
 	},
 	apri:function( DataPartenza, elemento, funct, el, Q_idTratt=-1 ){ // apre e compone l'agenda
-		
 		this.opened = true;
 		this.inTratt = false;
 		
@@ -768,7 +775,7 @@ var agenda = {
 		if(el.dataset.d)d=JSON.parse(el.dataset.d);
 		this.init();
 		if(Q_idTratt!=-1)this.inTratt = true;
-		this.appuntamenti=[];
+		this.appuntamenti={};
 		if(d){
 			this.orarioDef=d;
 			this.giornoInizio=d.data;
@@ -782,7 +789,23 @@ var agenda = {
 		for(let i in DB.pazienti.data){
 			for(let t in DB.pazienti.data[i].trattamenti){
 				if(!DB.pazienti.data[i].trattamenti[t].Cancellato){
-					if(!this.appuntamenti[DB.pazienti.data[i].trattamenti[t].TimeTrattamento*1000])this.appuntamenti[DB.pazienti.data[i].trattamenti[t].TimeTrattamento*1000]=[];
+					
+
+					/* // creo le date in formato testo
+					for(a in DB.appuntamenti.data){
+						let ddd = new Date(DB.appuntamenti.data[a].TimeAppuntamento);
+						DB.appuntamenti.data[a].DateAppuntamento = ddd.getFullYear()+"-"+twoDigits(ddd.getMonth()+1)+"-"+twoDigits(ddd.getDate());
+					} */
+
+
+
+
+					//if(!this.appuntamenti[DB.pazienti.data[i].trattamenti[t].TimeTrattamento*1000])this.appuntamenti[DB.pazienti.data[i].trattamenti[t].TimeTrattamento*1000]=[];
+					let dddTxt = this.convDateTxt(DB.pazienti.data[i].trattamenti[t].TimeTrattamento*1000);
+					if(!this.appuntamenti[dddTxt])this.appuntamenti[dddTxt]=[];
+
+
+
 					let oraInizio = -1,
 						oraFine = -1;
 					if(typeof(DB.pazienti.data[i].trattamenti[t].oraInizio)!='undefined')oraInizio=DB.pazienti.data[i].trattamenti[t].oraInizio;
@@ -797,7 +820,7 @@ var agenda = {
 						"timeInizio": oraInizio,
 						"timeFine": oraFine
 					}
-					if(!(PAZIENTI.idCL==i && t==Q_idTratt))this.appuntamenti[DB.pazienti.data[i].trattamenti[t].TimeTrattamento*1000].push(JSNPUSH);
+					if(!(PAZIENTI.idCL==i && t==Q_idTratt))this.appuntamenti[dddTxt].push(JSNPUSH);
 				}
 			}
 		}
@@ -805,7 +828,8 @@ var agenda = {
 		// popolo agenda.appuntamenti con gli appuntamenti
 		for(let i in DB.appuntamenti.data){
 			if(!DB.appuntamenti.data[i].Cancellato){
-				if(!this.appuntamenti[DB.appuntamenti.data[i].TimeTrattamento])this.appuntamenti[DB.appuntamenti.data[i].TimeTrattamento]=[];
+				let dddTxt = this.convDateTxt(DB.appuntamenti.data[i].TimeAppuntamento);
+				if(!this.appuntamenti[dddTxt])this.appuntamenti[dddTxt]=[];
 				let oraInizio = -1,
 					oraFine = -1;
 				if(typeof(DB.appuntamenti.data[i].oraInizio)!='undefined')oraInizio=DB.appuntamenti.data[i].oraInizio;
@@ -831,8 +855,8 @@ var agenda = {
 					"Nominativo": Nominativo,
 					"idPaziente": DB.appuntamenti.data[i].idPaziente
 				}
-				if(!this.appuntamenti[DB.appuntamenti.data[i].TimeAppuntamento])this.appuntamenti[DB.appuntamenti.data[i].TimeAppuntamento] = []
-				this.appuntamenti[DB.appuntamenti.data[i].TimeAppuntamento].push(JSNPUSH);
+				if(!this.appuntamenti[dddTxt])this.appuntamenti[dddTxt] = []
+				this.appuntamenti[dddTxt].push(JSNPUSH);
 			}
 		}
 		this.popolaAgenda(DataPartenza,elemento);
@@ -848,7 +872,8 @@ var agenda = {
 	},
 	gestisciAppuntamento: function( d, a ){ // a seconda che sia un apuntamento o un trattamento reindirizza
 		if(this.oraInizio>-1 || agenda.moved)return;
-		let app = this.appuntamenti[d*1][a*1];
+		let dddTxt = this.convDateTxt(d);
+		let app = this.appuntamenti[dddTxt][a*1];
 		if(	typeof(app.idCL) != 'undefined' && 
 			typeof(app.idTratt) != 'undefined'){
 			PAZIENTI.selPaziente(app.idCL);
@@ -1263,6 +1288,11 @@ var agenda = {
 		agenda.elTimeSel.value = el.innerHTML;
 		agenda.elTimeSel.dataset.t = t;
 		agenda.nasTime(agenda.elTimeSel);
+	},
+
+	convDateTxt: function ( d ){
+		let ddd = new Date(d*1);
+		return ddd.getFullYear()+"-"+twoDigits(ddd.getMonth()+1)+"-"+twoDigits(ddd.getDate());
 	}
 
 }

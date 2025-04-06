@@ -27,6 +27,7 @@ var AI = {
 		if(CONN.retNoConn()){
 			AI.aiEndPoint = endpoint;
 			MENU.visAI();
+			document.getElementById("cont_selectAI").innerHTML = '';
 			if(endpoint){
 				let gettoniRestanti = AI.gettoniAI.totali-AI.gettoniAI.usati;
 				if(gettoniRestanti>0){

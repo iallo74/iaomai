@@ -234,6 +234,7 @@ var PURCHASES  = {
 		let button = '';
 		if(canPurchase){
 			button = '';
+			//priceFT = "₹85,00";
 			if(/* type=='m' &&  */PURCHASES.abbs_owned.indexOf(folder)==-1 && priceFT){
 				let txtMesi = TXT("PrimoMese1Euro").replace("[price]",priceFT);
 				if(cycles>1)txtMesi = TXT("PrimiXMesiXEuro").replace("[price]",priceFT).replace("[n]",cycles);
@@ -325,6 +326,7 @@ var PURCHASES  = {
 								(type=='ac' ? '<div id="label_prezzo_conv">'+TXT("PrezzoInConvenzione")+'</div>' : '') +
 								'<div class="btn buy" onClick="PURCHASES.showProduct(\''+idStore+'\',\''+type+'\');">'+TXT("sub_"+type.substr(0,1))+': <b>'+price+' / '+TXT("add_"+type.substr(0,1))+'</b></div>' +
 								'</div>';
+				//priceFT = "₹85,00";
 				if(/* type=='m' &&  */PURCHASES.abbs_owned.indexOf(folder)==-1 && priceFT){
 					let txtMesi = TXT("PrimoMese1Euro").replace("[price]",priceFT);
 					html_provv += '<div class="promoEuro"><b>'+txtMesi+'*</b></div>';

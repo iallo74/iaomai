@@ -65,7 +65,7 @@ var sessi = {
 	"a": "altro"
 }
 var oggi=new Date(),
-oggi=new Date(oggi.getFullYear(),oggi.getMonth(),oggi.getDate(),0,0,0,0);
+oggi=new Date(oggi.getFullYear(),oggi.getMonth(),oggi.getDate());
 //var elTXprovv = null;
 var overChiudiProva = false;
 
