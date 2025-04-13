@@ -115,8 +115,11 @@ body:not(.smart) .inspwd:not(.confcode) #contRecupero{
     padding-top: 141px;
 }
 .smart.android #testoRegistrazione,
+.smart.android #testoRegistrazione *,
 .smart.android #testoRecupero,
-.smart.android #testoConfcode{
+.smart.android #testoRecupero *,
+.smart.android #testoConfcode,
+.smart.android #testoConfcode *{
 	font-size: var(--font-16-93) !important;
 }
 .smart.android #Confcode{
@@ -245,4 +248,32 @@ body:not(.smart) .butrec{
 	line-height:36.64px !important;
 	height:36.64px !important;
 	padding-left:10px !important;
+}
+#datanascitaRegistrazione{
+	margin-top: 8px;
+}
+#datanascitaRegistrazione > span{
+	padding: 0px 10px;
+	display: inline-block;
+	vertical-align: middle;
+	height: 30px;
+	line-height: 30px;
+}
+#datanascitaRegistrazione > input{
+	appearance: none;
+	-webkit-appearance: none;
+	background-color:#FFF;
+	background-image:url(../img/ico_agendaM2.png);
+	background-position:right center;
+	padding-right:10px;
+	background-repeat:no-repeat;
+	display: inline-block;
+	vertical-align: middle;
+	border: 0px;
+	border-radius: 6px;
+	height: 30px;
+	line-height: 30px;
+	text-align: center;
+	box-shadow: rgba(0, 0, 0, 0.5) 0px 0px 3px;
+	font-size: 17px;
 }

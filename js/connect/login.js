@@ -820,6 +820,10 @@ var LOGIN = {
 				ALERT(TXT("erroreRipetiPassword"));
 				return;
 			}
+			if(!document.registrazioneForm.DataNascita.value){
+				ALERT(TXT("erroreDataNascita"));
+				return;
+			}
 			if(verifica_form(document.registrazioneForm)){
 
 				let JSNPOST={	"Nominativo": document.registrazioneForm.Cognome.value+" "+document.registrazioneForm.Nome.value,

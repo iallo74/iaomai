@@ -5565,6 +5565,14 @@ DB.TXT = {
             por: "CUIDADO! Os campos Senha e Repita a senha devem coincidir!",
             deu: "ACHTUNG! Die Felder Passwort und Passwort wiederholen müssen übereinstimmen!"
         },
+        erroreDataNascita: {
+            ita: "Devi indicare la tua data di nascita",
+            eng: "You must enter your date of birth",
+            esp: "Debes indicar tu fecha de nacimiento",
+            fra: "Vous devez indiquer votre date de naissance",
+            por: "Você deve informar sua data de nascimento",
+            deu: "Du musst dein Geburtsdatum angeben"
+        },
         TestoRegistrazioneEspanso: {
             ita: "Con la registrazione a iáomai avrai {48 ore di prova gratuita di tutte le app} e allo scadere potrai decidere se sottoscrivere un abbonamento.",
             eng: "By registering with iáomai, you will get {48 hours of free trial for all apps}, and at the end, you can decide whether to subscribe.",
