@@ -91,6 +91,13 @@ body:not(.smart) #dispositivi_logo{
 #contDispositivi{
 	padding: 10px;
 	padding-top: 3px;
+	overflow-y: scroll;
+}
+body.smart #contDispositivi{
+	max-height: calc(100% - 144px);
+}
+body:not(.smart) #contDispositivi{
+	max-height: calc(100% - 202px);
 }
 #contDispositivi > div > p{
 	background-color: #FC0;
