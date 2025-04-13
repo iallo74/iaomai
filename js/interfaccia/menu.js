@@ -1138,6 +1138,7 @@ var MENU = {
 	backButton: function(){ //  gestione del back button di android
 		//Fare il controllo in questo ordine:
 		//popupaperto > deve chiuderlo
+		if(!LOGIN.logedin())return;
 		let pps = document.getElementsByClassName("popup");
 		let ppOp = false;
 		for(let p in pps){
