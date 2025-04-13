@@ -21,7 +21,8 @@
 } */
 .android .popup input[type='text'],
 .android .popup input[type='email'],
-.android .popup input[type='password']{
+.android .popup input[type='password'],
+.android .popup select{
 	height:32px !important;
 	line-height:32px !important;
 	font-size: var(--font-17-6) !important;
