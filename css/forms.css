@@ -1445,6 +1445,12 @@ _:-webkit-full-screen,
 #dettagliCont textarea{
 	margin-bottom:-7px !important;
 }
+#ProfessioneAltro:not(.vis){
+	display:none;
+}
+#ProfessioneAltro{
+	margin-top: 2px;
+}
 
 
 #paz_add, /* PAZIENTI */

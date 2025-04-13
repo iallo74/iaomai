@@ -737,6 +737,7 @@ var MENU = {
 			if(p)html +='<option value="'+p+'">'+htmlEntities(paesi[p])+'</option>'+H.chr10;
 		}
 		document.getElementById("paeseRegistrazione").innerHTML = html;
+		LOGIN.getProfessioni();
 	},
 	chiudiRecupero: function(){
 		document.getElementById("recupero").classList.remove("visSch");

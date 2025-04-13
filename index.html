@@ -651,15 +651,18 @@
                         </div>
 
                         <div class="labelReg">{{TXT_LabelAggiuntive}}</div>
-                    	<div>
+                    	<div style="padding-bottom: 4px;">
+                            <select name="Professione"
+                                    id="@|{{TXT_Professione}}"
+                                    onChange="LOGIN.verProfessioneRegistrazione();"></select>
                         	<input type="text"
-                            	   name="Professione"
-                            	   id="@|{{TXT_Professione}}|1|0"
-                            	   placeholder="{{TXT_Professione}}"
+                            	   name="ProfessioneAltro"
+                            	   id="ProfessioneAltro"
                             	   autocomplete="off"
                             	   autocorrect="off"
                             	   autocapitalize="off"
-                            	   spellcheck="false">
+                            	   spellcheck="false"
+                                   style="display:none;">
                         </div>
                     	<div>
                         	<input type="text"

@@ -5573,6 +5573,14 @@ DB.TXT = {
             por: "Você deve informar sua data de nascimento",
             deu: "Du musst dein Geburtsdatum angeben"
         },
+        erroreSesso: {
+            ita: "Devi indicare il genere",
+            eng: "You must indicate your gender",
+            esp: "Debes indicar tu género",
+            fra: "Vous devez indiquer votre genre",
+            por: "Você deve indicar seu gênero",
+            deu: "Du musst dein Geschlecht angeben"
+        },
         TestoRegistrazioneEspanso: {
             ita: "Con la registrazione a iáomai avrai {48 ore di prova gratuita di tutte le app} e allo scadere potrai decidere se sottoscrivere un abbonamento.",
             eng: "By registering with iáomai, you will get {48 hours of free trial for all apps}, and at the end, you can decide whether to subscribe.",

@@ -903,6 +903,33 @@ var LOGIN = {
 							"LOGIN.car_utente" );
 		}
 	},
+	getProfessioni: function(){
+		CONN.caricaUrl(	"get_professioni.php",
+						"b64=1",
+						"LOGIN.setProfessioni" );
+	},
+	setProfessioni: function( txt ){
+		let professioni = JSON.parse(txt);
+		for(p in professioni){
+			professioni[p] = professioni[p][LINGUE.getSigla2()];
+		}
+		professioni['altro'] = TXT("Altro");
+		for(p in professioni){
+			var el = document.createElement("option");
+			el.value = p;
+			el.innerHTML = professioni[p];
+			document.registrazioneForm.Professione.appendChild(el);
+		}
+		LOGIN.verProfessioneRegistrazione();
+	},
+	verProfessioneRegistrazione: function(){
+		if(document.registrazioneForm.Professione.value == 'altro'){
+			document.registrazioneForm.ProfessioneAltro.style.display = 'inline';
+		}else{
+			document.registrazioneForm.ProfessioneAltro.style.display = 'none';
+			document.registrazioneForm.ProfessioneAltro.value = '';
+		}
+	},
 	car_utente: function( txt ){ // risposta da modUtente: carica i dati dell'utente nella scheda
 		if(txt.substr(0,3)=='404'){
 			
@@ -917,7 +944,13 @@ var LOGIN = {
 				rimuoviLoading(document.getElementById("scheda_testo"));
 				let UT = JSON.parse(txt),
 					DataNascita = 0,
-					HTML = '';
+					HTML = '',
+					professioni = {};
+				for(p in UT.professioni){
+					professioni[p] = UT.professioni[p][LINGUE.getSigla2()];
+				}
+				professioni['altro'] = TXT("Altro");
+
 				if(UT.DataNascita!='0000-00-00')DataNascita = new Date(UT.DataNascita);
 				HTML += '<form id="formMod"' +
 						'	   name="formMod"' +
@@ -1035,9 +1068,16 @@ var LOGIN = {
 							
 				//HTML += H.r({	t: "r", name: "tags",			value: tags });
 				HTML += H.r({	t: "r", name: "Web",			value: UT.Web,			classCampo: 'styled' });
-				HTML += H.r({	t: "r", name: "Professione",	value: UT.Professione,	classCampo: 'styled' });
+				//HTML += H.r({	t: "r", name: "Professione",	value: UT.Professione,	classCampo: 'styled' });
 	
-					
+				HTML += H.r({	t: "s", 
+								name: "Professione",
+								value: UT.Professione,
+								opts: professioni,
+								label: TXT("Professione"),
+								classCampo: "selectLargo",
+								onChange: "LOGIN.verProfessione();" });	
+				HTML += H.r({	t: "r", name: "ProfessioneAltro",	value: !professioni.hasOwnProperty(UT.Professione)?UT.Professione:'',	classCampo: 'styled '+!professioni.hasOwnProperty(UT.Professione)?'vis':'',styleRiga: "margin-top:-2px;" });	
 					
 				HTML += H.r({	t: "t", 
 								name: "Curriculum",
@@ -1099,6 +1139,11 @@ var LOGIN = {
 			}});
 		}
 	},
+	verProfessione: function(){
+		document.formMod.ProfessioneAltro.classList.toggle("vis", document.formMod.Professione.value == 'altro');
+		if(document.formMod.Professione.value == 'altro')document.formMod.ProfessioneAltro.focus();
+		else document.formMod.ProfessioneAltro.value = '';
+	},
 	el_utente: function(){ // elimina l'utente (richiesto da apple)
 		CONFIRM.vis(	TXT("ChiediEliminaAccount"), false, arguments, "warning" ).then(function(pass){if(pass){
 			CONFIRM.vis(	TXT("ConfermaEliminaAccount"), false, arguments, "warning", TXT("EliminaAccount") ).then(function(pass){if(pass){
@@ -1117,8 +1162,6 @@ var LOGIN = {
 	},
 	mod_utente: function(){ // salva i dati dell'utente e li carica sul server
 		if(!verifica_form(document.getElementById("formMod")))return;
-		stopAnimate(true);
-		visLoader(TXT("SalvataggioInCorso"),'loadingLight');
 		
 		let imgAvatar = document.getElementById("avatarUtente").getElementsByTagName("div")[0].style.backgroundImage;
 		if(imgAvatar)imgAvatar = imgAvatar.split(imgAvatar[4])[1].replace(location.origin+location.pathname,'');
@@ -1144,7 +1187,17 @@ var LOGIN = {
 			for(let n=l;n<2;n++)gg='0'+gg;
 		}
 		DataNascita = aaaa+"-"+mm+"-"+gg;
+		if(DataNascita=='0000-00-00'){
+			ALERT(TXT("erroreDataNascita"));
+			return;
+		}
+		if(!document.formMod.Sesso.value){
+			ALERT(TXT("erroreSesso"));
+			return;
+		}
 		
+		stopAnimate(true);
+		visLoader(TXT("SalvataggioInCorso"),'loadingLight');
 		JSNPOST={ 	"imgAvatar": imgAvatar,
 					"logoAzienda": logoAzienda,
 					
@@ -1164,7 +1217,7 @@ var LOGIN = {
 					"Email": document.formMod.Email.value,
 					
 					"Web": document.formMod.Web.value,
-					"Professione": document.formMod.Professione.value,
+					"Professione": document.formMod.Professione.value == 'altro'?document.formMod.ProfessioneAltro.value:document.formMod.Professione.value,
 					"DescrizionePersonale": document.formMod.DescrizionePersonale.value,
 					"Curriculum": document.formMod.Curriculum.value,
 					
