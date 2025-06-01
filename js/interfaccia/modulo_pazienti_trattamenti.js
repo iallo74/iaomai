@@ -1099,6 +1099,7 @@ var PAZIENTI_TRATTAMENTI = { // extend PAZIENTI
 			PAZIENTI.caricaDettagliSet(); // carico le schede dei singoli sets
 			PAZIENTI.caricaSintomi();
 			PAZIENTI.popolaModuli();
+			CUSTOMS.postTrattamento();
 			PH.caricaGallery();
 			PAZIENTI.trattOp = true;
 			initChangeDetection( "formMod" );
