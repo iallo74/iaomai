@@ -1006,8 +1006,7 @@ body:not(.bodyModello) #btns_set > div{
     line-height: 36px;
 }
 #sceltaSistemaElenco,
-#sceltaMappaElenco,
-#sceltaPhaseElenco{
+#sceltaMappaElenco{
 	width: calc(50% - 15px);
 	display: inline-block;
     height: 30px;
@@ -1029,18 +1028,9 @@ body:not(.bodyModello) #btns_set > div{
 	box-shadow:0px 0px 3px rgba(0,0,0,0.5);
 	cursor:pointer;
 }
-
-.noPH #sceltaPhaseElenco{
-	display:none;
-}
-.noPH #sceltaMappaElenco{
-	width:calc(100% - 30px) !important;
-}
 #sceltaMappaElenco{
+	width:calc(100% - 30px) !important;
 	background-image:url(../../img/frGiuB.png), url(../../img/p_aree2B.png);
-}
-#sceltaPhaseElenco{
-	background-image:url(../../img/frGiuB.png), url(../../img/p_areeB.png);
 }
 body:not(.smart) #cambioSistemaPunti,
 body.smart #elenchi #cambioSistemaPunti,

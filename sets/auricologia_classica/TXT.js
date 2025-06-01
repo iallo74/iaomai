@@ -1441,5 +1441,5 @@ DB.TXT.set = {
         por: "Auriculoterapia clássica",
         deu: "Klassische Aurikulotherapie"
     }
-
+    
 }

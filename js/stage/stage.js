@@ -530,7 +530,7 @@ function chiudiSet(){
 				SCHEDA.formModificato = false;
 				endChangeDetection();
 			}
-			if(globals.set.cartella=='auricologia' && areasView)MODELLO.swArea();
+			if((globals.set.cartella=='auricologia' || globals.set.cartella=='auricologia_classica') && areasView)MODELLO.swArea();
 			caricaSet(globals.set.cartella,document.getElementById('p_'+globals.set.cartella));
 			if(procOp)setTimeout(function(){
 				SCHEDA.scaricaScheda()

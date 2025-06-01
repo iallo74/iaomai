@@ -373,7 +373,7 @@ var SCHEDA = {
 				tipologia = 'tsubo';
 				M = SET.splitPoint(SET.ptSel.name).siglaMeridiano;
 			}
-			if(globals.set.cartella=='auricologia'){
+			if(globals.set.cartella=='auricologia' || globals.set.cartella=='auricologia_classica'){
 				tipologia = 'punto';
 			}
 			if(globals.set.cartella=='reflessologia_plantare'){

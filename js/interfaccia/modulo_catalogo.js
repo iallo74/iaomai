@@ -2,35 +2,53 @@ var CATALOGO = {
 	//
 	scriviListaSets: function(){
 		let HTML_elenco = 	'';
-		for(let cartella in sets){
-			if(	cartella != 'anatomy_full' &&
-				cartella != 'clients_full' &&
-				!sets[cartella].locked){
-				let addClass = '',
-					addBK = 'url(img/frDxB.png), none';
-					linkSet = 'caricaSet(\''+cartella+'\',this);MENU.visSets();';
-				if(cartella == globals.set.cartella)linkSet = 'SCHEDA.apriElenco(\'set\')';
-				if(sets[cartella].locked){
-					//linkSet = 'MENU.visElencoSets(\''+cartella+'\');';
-					linkSet = '';
-					addClass = ' class="lockedMap"';
-					addBK = 'url(img/frDxB.png), url(img/ico_clessidraBlu.png)';
+		for(let c in sets){
+			if(	c != 'anatomy_full' &&
+				c != 'clients_full' ){
+
+				// verifico le cartelle che hanno come parent questa cartella
+				let cartella = c,
+					isChild = false;
+				if(sets[cartella].locked || DB.login.data.auths.indexOf(cartella)==-1){
+					for(let s in sets){
+						if(__(sets[s].parent,'')==c){
+							if(!sets[s].locked && DB.login.data.auths.indexOf(s)!=-1){
+								cartella = s;
+								isChild = true;
+							}
+						}
+					}
 				}
-				if(DB.login.data.auths.indexOf(cartella)==-1/*  && !LOGIN._frv() */){
-					//linkSet = 'MENU.visElencoSets(\''+cartella+'\');';
-					//linkSet = '';
-					addClass = ' class="deniedMap"';
-					linkSet = 'ALERT(\''+TXT("MsgContSoloPay")+'\',true,true);';
-					addBK = ' none, url(img/lock.png)';
-				}
+				
+				if(	!sets[cartella].locked &&
+					(!__(sets[cartella].parent) || isChild)){
+
+					let addClass = '',
+						addBK = 'url(img/frDxB.png), none';
+						linkSet = 'caricaSet(\''+cartella+'\',this);MENU.visSets();';
+					if(cartella == globals.set.cartella)linkSet = 'SCHEDA.apriElenco(\'set\')';
+					if(sets[cartella].locked){
+						//linkSet = 'MENU.visElencoSets(\''+cartella+'\');';
+						linkSet = '';
+						addClass = ' class="lockedMap"';
+						addBK = 'url(img/frDxB.png), url(img/ico_clessidraBlu.png)';
+					}
+					if(DB.login.data.auths.indexOf(cartella)==-1/*  && !LOGIN._frv() */){
+						//linkSet = 'MENU.visElencoSets(\''+cartella+'\');';
+						//linkSet = '';
+						addClass = ' class="deniedMap"';
+						linkSet = 'ALERT(\''+TXT("MsgContSoloPay")+'\',true,true);';
+						addBK = ' none, url(img/lock.png)';
+					}
 
 
-				HTML_elenco += 	'<div style="background-image: url(sets/'+cartella+'/img/logoNero.png), '+ addBK +';"' +
-								addClass +
-								'	  onClick="'+linkSet+'">' +
-									htmlEntities(sets[cartella].nome) +
-									( (sets[cartella].locked) ? "<span>"+TXT("PrestoInArrivo")+"</span>" : "" ) +
-								'</div>';
+					HTML_elenco += 	'<div style="background-image: url(sets/'+cartella+'/img/logoNero.png), '+ addBK +';"' +
+									addClass +
+									'	  onClick="'+linkSet+'">' +
+										htmlEntities(sets[cartella].nome) +
+										( (sets[cartella].locked) ? "<span>"+TXT("PrestoInArrivo")+"</span>" : "" ) +
+									'</div>';
+				}
 			}
 		}
 		document.getElementById("sets_elenco").innerHTML = HTML_elenco;

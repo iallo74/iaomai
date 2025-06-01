@@ -93,6 +93,7 @@ var MODULO_PROCEDURE = { // extend SET
 		let parola = document.getElementById("proc_ricerca").value.trim();
 		let app = '';
 		if(globals.set.cartella=='auricologia')app='AUR';
+		if(globals.set.cartella=='auricologia_classica')app='AUZ';
 		if(globals.set.cartella=='reflessologia_plantare')app='RFX';
 		if(globals.set.cartella=='reigger_points')app='TRP';
 		for(let p in DB.procedure.data){
@@ -342,7 +343,7 @@ var MODULO_PROCEDURE = { // extend SET
 					'	</div>';
 			}
 			HTML += '</div>';
-			if(globals.set.siglaProc=='AUR' || globals.set.siglaProc=='RFX' || globals.set.siglaProc=='TRP')HTML = SET.convPuntiScheda(HTML); // <<<<<<<<<<< VERIFICARE
+			if(globals.set.siglaProc=='AUR' || globals.set.siglaProc=='AUZ' || globals.set.siglaProc=='RFX' || globals.set.siglaProc=='TRP')HTML = SET.convPuntiScheda(HTML); // <<<<<<<<<<< VERIFICARE
 			if(SCHEDA.btnSel && Q_resta)SCHEDA.btnSel=null;
 			let btnAdd = '',
 				azElimina = (Q_idProc>-1 && !Q_community) ? 'SET.el_procedura('+Q_idProc+');':'';
@@ -450,6 +451,7 @@ var MODULO_PROCEDURE = { // extend SET
 			let tProc = 0,
 				app = '';
 			if(globals.set.cartella=='auricologia')app = 'AUR';
+			if(globals.set.cartella=='auricologia_classica')app = 'AUZ';
 			if(globals.set.cartella=='reflessologia_plantare')app = 'RFX';
 			if(globals.set.cartella=='trigger_points')app = 'TRP';
 			for(let c in DB.procedure.data){
@@ -859,7 +861,7 @@ var MODULO_PROCEDURE = { // extend SET
 			siglaPunto = '',
 			mezzo = '';
 		
-		if(globals.set.siglaProc=='AUR' || globals.set.siglaProc=='RFX'){
+		if(globals.set.siglaProc=='AUR' || globals.set.siglaProc=='AUZ' || globals.set.siglaProc=='RFX'){
 			puntiElenco = [];
 			for(let siglaPunto in DB.set.punti){
 				if(__(DB.set.punti[siglaPunto])){
@@ -1300,7 +1302,7 @@ var MODULO_PROCEDURE = { // extend SET
 				}
 				val += "."+sg+"."+mz;
 			}
-			if(globals.set.siglaProc=='AUR' || globals.set.siglaProc=='RFX' || globals.set.siglaProc=='TRP'){
+			if(globals.set.siglaProc=='AUR' || globals.set.siglaProc=='AUZ' || globals.set.siglaProc=='RFX' || globals.set.siglaProc=='TRP'){
 				val = document.getElementById("pt_"+n).value+"."+__(DP[1]);
 			}
 		}

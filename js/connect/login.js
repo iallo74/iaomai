@@ -575,6 +575,7 @@ var LOGIN = {
 			}else if(txt){
 				// se c'è una notifica la gestisco
 				elenco=JSON.parse(txt);
+				
 				//if(__(elenco.nuova_versione_presente))LOGIN.showUpgradeBox();
 				if(__(elenco.upgrade_info,false))MENU.visFeatures();
 				NOTIFICHE.aggiornaIcona(elenco.notificheDaleggere*1);

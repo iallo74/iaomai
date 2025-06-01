@@ -313,6 +313,91 @@ var sets = {
 		},
 		pageStore: 'auriculomap'
 	},
+	auricologia_classica: {
+		parent: "auricologia",
+		nome: TXT("AuriculoMap"),
+		sottotitolo: TXT("AuriculoMapST"),
+		descrizione: TXT("AuriculoMapDESCR"),
+		modelli: [
+			"orecchio"
+		],
+		imports: [
+			'TXT.js',
+			'geometrie.js',
+			'set.js',
+			'modulo_punti.js',
+			'modulo_patologie.js',
+			'modulo_punto.js',
+			'modulo_teoria.js',
+			'sets/common/modulo_procedure.js',
+			'sets/common/modulo_procedure_community.js',
+			'materiali.js',
+			'stili.css',
+			'sets/common/stili_procedure.css',
+			'stili_punto.css',
+			'lang_[lang].js',
+			'sets/common/patologie/lang_[lang].js'
+		],
+		dims: [
+			19,
+			3460,
+			44,
+			12,
+			12,
+			21,
+			15,
+			48,
+			17,
+			11,
+			37,
+			8,
+			3,
+			462,
+			322
+		],
+		txtLoading: stripslashes(TXT("CaricamentoMappe")),
+		auth: false,
+		locked: false,
+		opening: true,
+		dataPubblicazione: '',
+		siglaProc: 'AUZ',
+		modls: [
+			{
+				idApple: 'AZ23',
+				idGoogle: 'az23',
+				pageStore: 'auriculomap',
+			}
+		],
+		lingueCont: [
+			"ita",
+			"eng",
+			"esp",
+			"fra",
+			"deu",
+			"por"
+		],
+		lingueAI: [
+			"por"
+		],
+		abbs: {
+			m: {
+				idApple: 'sub_39_m',
+				idGoogle: 'sub_az_m',
+				idPc: 'sub_az_m'
+			},
+			a: {
+				idApple: 'sub_39_a',
+				idGoogle: 'sub_az_a',
+				idPc: 'sub_az_a'
+			},
+			ac: {
+				idApple: 'sub_39_ac',
+				idGoogle: 'sub_az_ac',
+				idPc: 'sub_az_a'
+			}
+		},
+		pageStore: 'auriculomap'
+	},
 	reflessologia_plantare: {
 		nome: TXT("ReflessologiaPlantare"),
 		sottotitolo: TXT("ReflessologiaPlantareST"),

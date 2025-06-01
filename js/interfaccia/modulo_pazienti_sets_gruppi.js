@@ -426,7 +426,8 @@ var PAZIENTI_SETS_GRUPPI = { // extend PAZIENTI
 			let mzs = [];
 			if( globals.set.cartella=='meridiani_cinesi' || 
 				globals.set.cartella=='meridiani_shiatsu' )mzs = PAZIENTI.mezziSet.P;
-			if(globals.set.cartella=='auricologia')mzs = PAZIENTI.mezziSet.A;
+			if(	globals.set.cartella=='auricologia' || 
+				globals.set.cartella=='auricologia_classica')mzs = PAZIENTI.mezziSet.A;
 			if(globals.set.cartella=='reflessologia_plantare')mzs = PAZIENTI.mezziSet.R;
 			if(globals.set.cartella=='trigger_points')mzs = PAZIENTI.mezziSet.O;
 			if(mzs.length && PAZIENTI.mezziSet[PAZIENTI.tipoGruppo].length){

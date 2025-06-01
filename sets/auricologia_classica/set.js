@@ -28,21 +28,9 @@ var SET = {
 	lmVis: false,
 	patOp: -1,
 	schEvi: null,
-	testTOT: 0,
 	forzaDissolve: false,
 	mappaOr: '',
 	lmOr: '',
-	risTest:{
-		dipendenza: {
-			tot: -1,
-			vals: {}
-		},
-		motivazione: {
-			tot: -1,
-			vals: {}
-		}
-	},
-	test: '',
 	groupSel: {
 		type: '',
 		val: '',
@@ -55,31 +43,26 @@ var SET = {
 					"4672",
 					"2336",
 					"292" ],
-	phase: '',
-	PH_full: false,
-	PH2_full: false,
-	PH3_full: false,
 	
 	idTeoAnatomia: 0,
 	idTeoLM: '0_2',
 	idTeoCategorie: 2,
-	idTeoTests: 3,
 	
 	// FUNZIONI
 	_init: function(){
 		// controllo che sia il sistema giusto
-		if(localStorage.sistemaAuriculo!=''){
+		if(localStorage.sistemaAuriculo!='_classica'){
 			caricaSet("auricologia"+localStorage.sistemaAuriculo);
 			return;
 		}
-		if(DB.login.data.auths.indexOf("auricologia")==-1){
-			localStorage.sistemaAuriculo = '_classica';
+		if(DB.login.data.auths.indexOf("auricologia_classica")==-1){
+			localStorage.sistemaAuriculo = '';
 			caricaSet("auricologia"+localStorage.sistemaAuriculo);
 			return;
 		}
 		SCHEDA.apriElenco('set',false);
 
-		if(!__(localStorage.imgMappa))localStorage.imgMappa = 'BN';
+		if(!__(localStorage.imgMappaZ))localStorage.imgMappaZ = 'Pelle';
 		if(!__(localStorage.listPatType))localStorage.listPatType = 'category';
 		
 		SETS = new THREE.Group();
@@ -142,7 +125,6 @@ var SET = {
 						name = mesh.name.split(" ")[0],
 						orName = mesh.name,
 						vis = true,
-						PH = '',
 						type = '';
 					mesh.name = name;
 					if(	orName.indexOf("AG")==0 ||
@@ -150,14 +132,6 @@ var SET = {
 						mesh.visible = false;
 						if(mesh.name.indexOf("AG")==0){
 							mesh.material = this.MAT.lineNeedle;
-							if(mesh.name.indexOf("PH2")>-1){
-								vis = false;
-								PH = '2';
-							}
-							if(mesh.name.indexOf("PH3")>-1){
-								vis = false;
-								PH = '3';
-							}
 							let lato = "";
 							if(orName.indexOf("SX")>-1)lato = "SX";
 							if(orName.indexOf("DX")>-1)lato = "DX";
@@ -171,9 +145,7 @@ var SET = {
 							mesh.userData.hidden = true;
 						}
 						mesh.userData.gruppo = true;
-						mesh.PH = PH;
-						SET["PH"+PH+"_full"] = true;
-						eval("LN"+PH+".add( mesh )");
+						LN.add( mesh );
 					}else if( orName.indexOf("LM")==0 ){
 						mesh.material = this.MAT.lineLM;
 						LM.add( mesh );
@@ -216,20 +188,11 @@ var SET = {
 				if(mesh.name.indexOf("SX")>-1)lato = "SX";
 				if(mesh.name.indexOf("DX")>-1)lato = "DX";
 				
-				let PH = '';
-				if(mesh.name.indexOf("PH2")>-1)PH = '2';
-				if(mesh.name.indexOf("PH3")>-1)PH = '3';
-				
 				let FN = (GEOMETRIE.gruppi.FN.punti.indexOf(name.substr(2,3))>-1),
 					master = (GEOMETRIE.gruppi.MASTER.punti.indexOf(name.substr(2,3))>-1),
 					freq = [];
 				for(let f in SET.frequenze){
 					if(mesh.name.indexOf("_"+SET.frequenze[f])>-1)freq.push( SET.frequenze[f] );
-				}
-				if(PH){
-					system = 'EUR';
-					if(PH=='2')DB.set.punti[name.substr(2,3)].PH2 = true;
-					if(PH=='3')DB.set.punti[name.substr(2,3)].PH3 = true;
 				}
 				let mat = this.MAT["areaBase"+system];
 				
@@ -249,9 +212,7 @@ var SET = {
 				mesh.userData.lato = lato;
 				mesh.userData.raycastable = true;
 				mesh.userData.type = 'area';
-				mesh.userData.PH = PH;
-				SET["PH"+PH+"_full"] = true;
-				eval("AR"+PH+".add( mesh )");
+				AR.add( mesh );
 			}
 			sysMesh.add( AR );
 			sysMesh.add( AR2 );
@@ -307,10 +268,6 @@ var SET = {
 				if(PTS[p].nome.indexOf("SX")>-1)lato = "SX";
 				if(PTS[p].nome.indexOf("DX")>-1)lato = "DX";
 				
-				let PH = '';
-				if(PTS[p].nome.indexOf("PH2")>-1)PH = '2';
-				if(PTS[p].nome.indexOf("PH3")>-1)PH = '3';
-				
 				let freq = [];
 				for(let f in SET.frequenze){
 					if(PTS[p].nome.indexOf(" "+SET.frequenze[f])>-1)freq.push( SET.frequenze[f] );
@@ -323,11 +280,6 @@ var SET = {
 				
 				// pallino colorato
 				n++;
-				if(PH){
-					system = 'EUR';
-					if(PH=='2')DB.set.punti[name.substr(2,3)].PH2 = true;
-					if(PH=='3')DB.set.punti[name.substr(2,3)].PH3 = true;
-				}
 				let mat = this.MAT["pointBase"+system];
 				
 				this.P[n] = new THREE.Mesh( this.geometryPallino, cloneMAT(mat) );
@@ -346,9 +298,7 @@ var SET = {
 				this.P[n].userData.master = master;
 				this.P[n].userData.FN = FN;
 				this.P[n].userData.lato = lato;
-				this.P[n].userData.PH = PH;
-				SET["PH"+PH+"_full"] = true;
-				eval("PT"+PH+".add( this.P[n] )");
+				PT.add( this.P[n] );
 					
 				// pallino trasparente
 				n++;
@@ -369,9 +319,7 @@ var SET = {
 				this.P[n].userData.master = master;
 				this.P[n].userData.FN = FN;
 				this.P[n].userData.lato = lato;
-				this.P[n].userData.PH = PH;
-				SET["PH"+PH+"_full"] = true;
-				eval("PT"+PH+".add( this.P[n] )");
+				PT.add( this.P[n] );
 			}
 		}
 		sysMesh.add( PT );
@@ -399,7 +347,7 @@ var SET = {
 		
 
 		// scelta sistema
-		//if(DB.login.data.auths.indexOf("auricologia_classica")!=-1){
+		//if(DB.login.data.auths.indexOf("auricologia")!=-1){
 			contPulsanti += '<p class="sistema_p"><span class="selectCambioSistema"><i>'+htmlEntities(TXT("Sistema"))+':</i><select id="sceltaSistemaElenco1" class="sceltaSistemaElenco" onChange="SET.cambiaSistema(this.value);">'+
 			'  <option value=""';
 			if(localStorage.sistemaAuriculo == '' || !__(localStorage.sistemaAuriculo) )contPulsanti += ' SELECTED';
@@ -409,7 +357,6 @@ var SET = {
 			contPulsanti += 	'>'+htmlEntities(TXT("AuricologiaClassica"))+'</option>' +
 					'</select></span></p>';
 		//}
-				
 
 		contPulsanti += '<span id="noLicenze" onClick="MENU.visLicenze();">'+TXT("noLicenze")+'</span>';
 		contPulsanti += '<span id="demoVersion" onClick="MENU.visLogin();">'+TXT("demoVersion")+'</span>';
@@ -522,7 +469,6 @@ var SET = {
 		if(scene.getObjectByName('pins_aree') && areasView){
 			scene.getObjectByName('pins_aree').visible = false;
 		}
-		if(__(localStorage.risTest))SET.risTest = JSON.parse(localStorage.risTest);
 
 		if(smartMenu)overInterfaccia=true;
 		SET.chiudiPunto(false,true); // riapre il punto se è aperto
@@ -774,33 +720,28 @@ var SET = {
 			AR_name_first= null;
 		mat = this.MAT.pointSel;
 		if(PT.userData.nota)mat = this.MAT.pointSelNote;
-		let phs = ["","2","3"];
-		for(let ph in phs){
-			let els = scene.getObjectByName("PTs"+phs[ph]).children;
-			for(let e in els){
-				if(els[e].name.indexOf("PT"+name)==0){
-					els[e].visible = true;
-					els[e].material=mat;
-					if(!PT_name_first && els[e].userData.PH == SET.phase){
-						PT_name_first = "PT"+name;
-						this.ptSel = els[e];
-					}
-				}
+		let els = scene.getObjectByName("PTs").children;
+		for(let e in els){
+			if(els[e].name.indexOf("PT"+name)==0){
+				els[e].visible = true;
+				els[e].material=mat;
+				PT_name_first = "PT"+name;
+				this.ptSel = els[e];
 			}
-			els = scene.getObjectByName("LNs"+phs[ph]).children;
-			for(let e in els){
-				if(els[e].name.indexOf("AG"+name)==0){
-					els[e].visible=true;
-				}
+		}
+		els = scene.getObjectByName("LNs").children;
+		for(let e in els){
+			if(els[e].name.indexOf("AG"+name)==0){
+				els[e].visible=true;
 			}
-			mat = this.MAT.areaSel;
-			els = scene.getObjectByName("ARs"+phs[ph]).children;
-			for(let e in els){
-				if(els[e].name.indexOf("AR"+name)==0){
-					els[e].visible = true;
-					els[e].material=mat;
-					if(els[e].userData.PH == SET.phase)AR_name_first = "AR"+name;
-				}
+		}
+		mat = this.MAT.areaSel;
+		els = scene.getObjectByName("ARs").children;
+		for(let e in els){
+			if(els[e].name.indexOf("AR"+name)==0){
+				els[e].visible = true;
+				els[e].material=mat;
+				AR_name_first = "AR"+name;
 			}
 		}
 		
@@ -847,7 +788,7 @@ var SET = {
 		
 		if(!el){
 			// posiziono
-			if(GEOMETRIE.posizioni[name] && !SET.phase){
+			if(GEOMETRIE.posizioni[name]){
 				let pos = GEOMETRIE.posizioni[name];
 
 				// cerco la via più breve
@@ -1168,7 +1109,7 @@ var SET = {
 		}
 		if(mappa){
 			setTimeout( function(){
-				SET.mappaOr = localStorage.imgMappa;
+				SET.mappaOr = localStorage.imgMappaZ;
 				SET.cambiaMappa(mappa);
 			}, 200, mappa);
 		}
@@ -1269,7 +1210,7 @@ var SET = {
 	},
 	coloraPunti: function( PT_name, tipo ){
 		if(touchable)return;
-		let els = scene.getObjectByName("PTs"+SET.phase).children;
+		let els = scene.getObjectByName("PTs").children;
 		for(let e in els){
 			if(	els[e].name.indexOf("PT"+PT_name) == 0 && 
 				els[e].material.name.indexOf("SEL") == -1 && 
@@ -1283,7 +1224,7 @@ var SET = {
 				}
 			}
 		}
-		els = scene.getObjectByName("ARs"+SET.phase).children;
+		els = scene.getObjectByName("ARs").children;
 		for(let e in els){
 			if(	els[e].name.indexOf("AR"+PT_name) == 0 && 
 				els[e].material.name.indexOf("SEL") == -1 && 
@@ -1401,13 +1342,13 @@ var SET = {
 			SET.MAT.setAlphaMap( SET.maskAtt, 'clic' );
 			SET.MAT.setAlphaMap( SET.maskAtt, 'out' );
 		}
-		localStorage.imgMappa = name;
+		localStorage.imgMappaZ = name;
 		SET.MAT.mappaAree( true );
 		SET.caricaPunti();
 	},
 	
 	addEviPalls: function( PT_name, tipo ){
-		let els = scene.getObjectByName("PTs"+SET.phase).children;
+		let els = scene.getObjectByName("PTs").children;
 		for(let e in els){
 			if(els[e].name.indexOf(PT_name)==0){
 				let name = ' point: '+els[e].name+"_"+e;
@@ -1453,7 +1394,7 @@ var SET = {
 		}*/
 		// --------------------------
 		// verifico le autorizzazioni
-		if(!DB.login.data.auths.indexOf("auricologia")==-1){
+		if(!DB.login.data.auths.indexOf("auricologia_classica")==-1){
 			ALERT(TXT("MsgFunzioneSoloPay"));
 			return;
 		}
@@ -1492,7 +1433,7 @@ var SET = {
 		SET.lmVis = false;
 	},
 	verSistema: function(){
-		document.getElementById("noLicenze").classList.toggle("vis",LOGIN.logedin() && DB.login.data.auths.indexOf("auricologia")==-1);
+		document.getElementById("noLicenze").classList.toggle("vis",LOGIN.logedin() && DB.login.data.auths.indexOf("auricologia_classica")==-1);
 		document.getElementById("demoVersion").classList.toggle("vis",!LOGIN.logedin());
 	},
 	
@@ -1512,7 +1453,7 @@ var SET = {
 		}
 	},
 
-	
+
 	cambiaSistema: function( sistema ){
 		if(localStorage.sistemaAuriculo == sistema)return;
 		if(DB.login.data.auths.indexOf("auricologia"+sistema)==-1){
@@ -1530,7 +1471,7 @@ var SET = {
 	
 	/* FUNZIONI DERIVATE */
 	_rifletti: function(){
-		if(areasView)SET.MAT.applicaMappa(localStorage.imgMappa);
+		if(areasView)SET.MAT.applicaMappa(localStorage.imgMappaZ);
 		let opposite = (MODELLO.flip) ? 'DX' : 'SX',
 			phs = ["","2","3"];
 		for(let ph in phs){

@@ -46,7 +46,7 @@ var LICENZE  = {
 			LICENZE.visLicenza('ShiatsuMap PRO Masunaga',(LOGIN.logedin() && okMAS)) +
 			LICENZE.visLicenza('ShiatsuMap PRO Namikoshi',(LOGIN.logedin() && okNMK)) +
 			LICENZE.visLicenza('ShiatsuMap Light',(LOGIN.logedin() && okLGT)) +
-			LICENZE.visLicenza('AuriculoMap',(LOGIN.logedin() && LOGIN.verAuth("auricologia"))) +
+			LICENZE.visLicenza('AuriculoMap',(LOGIN.logedin() && (LOGIN.verAuth("auricologia") || LOGIN.verAuth("auricologia_classica")))) +
 			LICENZE.visLicenza('ReflexologyMap',(LOGIN.logedin() && LOGIN.verAuth("reflessologia_plantare"))) +
 			//LICENZE.visLicenza('TriggerpointsMap',(LOGIN.logedin() && LOGIN.verAuth("trigger_points"))) +
 			LICENZE.visLicenza(TXT("Lic_SchedarioPazienti"),(LOGIN.logedin() && LOGIN.verAuth("clients_full"))) +
@@ -103,7 +103,7 @@ var LICENZE  = {
 		LICENZE.rowLicenza( TXT("Lic_AggiuntaMeridiani"),				okMAS?spunta		:ics );
 		
 		// AuriculoMap
-		ok = LOGIN.logedin() && LOGIN.verAuth("auricologia");
+		ok = LOGIN.logedin() && (LOGIN.verAuth("auricologia") || LOGIN.verAuth("auricologia_classica"));
 		HTML +=	
 		LICENZE.appLicenza( 'AuriculoMap', 'sets/auricologia/img/logoMenu.png' ) +
 		LICENZE.rowLicenza( TXT("Lic_PuntiAree"), 						ok?spunta			:this.red('19') ) +
