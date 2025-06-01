@@ -31,5 +31,6 @@ var CUSTOMS = {
 				break;
 		}
 		return HTML;
-	}
+	},
+	postTrattamento: function(){}
 }
