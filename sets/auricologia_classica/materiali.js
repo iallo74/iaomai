@@ -5,30 +5,18 @@ SET.COL = {
 	nero: 0x000000,
 	
 	sel: 0xFF0000,
-	musc: 0x33FF00, // 0x000000;
-	basePT: 0x666666,//0x8899AA,
-	//basePT_CIN: 0x0b830b,//0xc97c30,//0xbe8842,
-	basePT_CIN: 0xbc580d,
-	basePT_EUR: 0x5c8fa8,
+	musc: 0x33FF00,
+	basePT: 0x5c8fa8,
 	base: 0x637281,
 	over: 0xFFFFFF,
-	overPT: 0x999999,//0xAABBCC,
-	//overPT_CIN: 0x349234,//0xda9f67,//0xdfb57f,
-	overPT_CIN: 0xc5784d,
-	overPT_EUR: 0x99BBCC,
+	overPT: 0x99BBCC,
 	notePT: 0xffd000,
 	notePTSel: 0xff9900,
 	notePTemissive: 0x333300,
 	
 	selAR: 0xFF0000,
-	baseAR: 0x333333,
-	//baseAR_CIN: 0x0b830b,//0xab551b,//0x7e5726,
-	baseAR_CIN: 0x792f03,
-	baseAR_EUR: 0x0a6da0,
-	overAR: 0x666666,
-	//overAR_CIN: 0x349234,//0xa7663b,//0x9c784a,
-	overAR_CIN: 0xbc6d31,
-	overAR_EUR: 0x428fb7,
+	baseAR: 0x0a6da0,
+	overAR: 0x428fb7,
 	
 	eviAR: 0x5ba4e4,
 	eviPT: 0x0066BF,
@@ -109,33 +97,9 @@ SET.MAT = {
 		roughness:1,
 		transparent: true
 	}),
-	pointBaseCIN: new THREE.MeshStandardMaterial( {
-		name: "Point Base CIN",
-		color: SET.COL.basePT_CIN,
-		roughness:1,
-		transparent: true
-	}),
-	pointBaseEUR: new THREE.MeshStandardMaterial( {
-		name: "Point Base EUR",
-		color: SET.COL.basePT_EUR,
-		roughness:1,
-		transparent: true
-	}),
 	pointOver: new THREE.MeshStandardMaterial( {
 		name: "Point Over",
 		color: SET.COL.overPT,
-		roughness:1,
-		transparent: true
-	}),
-	pointOverCIN: new THREE.MeshStandardMaterial( {
-		name: "Point Over CIN",
-		color: SET.COL.overPT_CIN,
-		roughness:1,
-		transparent: true
-	}),
-	pointOverEUR: new THREE.MeshStandardMaterial( {
-		name: "Point Over EUR",
-		color: SET.COL.overPT_EUR,
 		roughness:1,
 		transparent: true
 	}),
@@ -238,54 +202,10 @@ SET.MAT = {
 		side: 3,
 		opacity: 0.4
 	}),
-	areaBaseEUR: new THREE.MeshStandardMaterial( {
-		name: "materiale Area EUR",
-		color: new THREE.Color( 0, 0, 0 ),
-		emissive: SET.COL.baseAR_EUR,
-		flatShading:false,
-		transparent:true,
-		roughness:1,
-		metalness:0.3,
-		side: 3,
-		opacity: 0.4
-	}),
-	areaBaseCIN: new THREE.MeshStandardMaterial( {
-		name: "materiale Area CIN",
-		color: new THREE.Color( 0, 0, 0 ),
-		emissive: SET.COL.baseAR_CIN,
-		flatShading:false,
-		transparent:true,
-		roughness:1,
-		metalness:0.3,
-		side: 3,
-		opacity: 0.4
-	}),
 	areaOver: new THREE.MeshStandardMaterial( {
 		name: "materiale Area OVER",
 		color: new THREE.Color( 0, 0, 0 ),
 		emissive: SET.COL.overAR,
-		flatShading:false,
-		transparent:true,
-		roughness:1,
-		metalness:0.3,
-		side: 3,
-		opacity: 0.4
-	}),
-	areaOverEUR: new THREE.MeshStandardMaterial( {
-		name: "materiale Area OVER EUR",
-		color: new THREE.Color( 0, 0, 0 ),
-		emissive: SET.COL.overAR_EUR,
-		flatShading:false,
-		transparent:true,
-		roughness:1,
-		metalness:0.3,
-		side: 3,
-		opacity: 0.4
-	}),
-	areaOverCIN: new THREE.MeshStandardMaterial( {
-		name: "materiale Area OVER CIN",
-		color: new THREE.Color( 0, 0, 0 ),
-		emissive: SET.COL.overAR_CIN,
 		flatShading:false,
 		transparent:true,
 		roughness:1,

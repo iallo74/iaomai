@@ -25,12 +25,10 @@ var SET = {
 	tmZone: null,
 	groupSel: '',
 	maskAtt: '',
-	lmVis: false,
 	patOp: -1,
 	schEvi: null,
 	forzaDissolve: false,
 	mappaOr: '',
-	lmOr: '',
 	groupSel: {
 		type: '',
 		val: '',
@@ -45,7 +43,6 @@ var SET = {
 					"292" ],
 	
 	idTeoAnatomia: 0,
-	idTeoLM: '0_2',
 	idTeoCategorie: 2,
 	
 	// FUNZIONI
@@ -109,16 +106,13 @@ var SET = {
 			if(LNS.length){
 				let LN = new THREE.Group(),
 					LN2 = new THREE.Group(),
-					LN3 = new THREE.Group(),
-					LM = new THREE.Group();
+					LN3 = new THREE.Group();
 				LN.name="LNs";
 				LN2.name="LNs2";
 				LN3.name="LNs3";
-				LM.name="LMs";
 				LN.visible=true;
 				LN2.visible=false;
 				LN3.visible=false;
-				LM.visible=false;
 				for(l in LNS){ // aggiungo le guide
 					let loader = new THREE.ObjectLoader(),
 						mesh =  loader.parse(JSON.parse(LZString.decompressFromBase64(LNS[l].obj))),
@@ -146,9 +140,6 @@ var SET = {
 						}
 						mesh.userData.gruppo = true;
 						LN.add( mesh );
-					}else if( orName.indexOf("LM")==0 ){
-						mesh.material = this.MAT.lineLM;
-						LM.add( mesh );
 					}else{
 						mesh.material = this.MAT.line;
 					}
@@ -156,7 +147,6 @@ var SET = {
 				sysMesh.add( LN );
 				sysMesh.add( LN2 );
 				sysMesh.add( LN3 );
-				sysMesh.add( LM );
 			}
 		}
 		
@@ -180,10 +170,6 @@ var SET = {
 					name = mesh.name.split("_")[0];
 				
 				
-				let system = "";
-				if(mesh.name.indexOf("EUR")>-1)system = "EUR";
-				if(mesh.name.indexOf("CIN")>-1)system = "CIN";
-				if(mesh.name.indexOf("INT")>-1)system = "";
 				let lato = "";
 				if(mesh.name.indexOf("SX")>-1)lato = "SX";
 				if(mesh.name.indexOf("DX")>-1)lato = "DX";
@@ -194,7 +180,7 @@ var SET = {
 				for(let f in SET.frequenze){
 					if(mesh.name.indexOf("_"+SET.frequenze[f])>-1)freq.push( SET.frequenze[f] );
 				}
-				let mat = this.MAT["areaBase"+system];
+				let mat = this.MAT["areaBase"];
 				
 				mesh.material = cloneMAT(mat);
 				if(mesh.name.indexOf("HIDE")>-1){
@@ -205,7 +191,6 @@ var SET = {
 					(!MODELLO.flip && lato == 'SX') )mesh.visible = false;
 				mesh.name = name;
 				mesh.userData.area = area;
-				mesh.userData.system = system;
 				mesh.userData.freq = freq;
 				mesh.userData.master = master;
 				mesh.userData.FN = FN;
@@ -259,11 +244,7 @@ var SET = {
 				let x = PTS[p].array[0],
 					y = PTS[p].array[1],
 					z = PTS[p].array[2],
-					name = PTS[p].nome.split("(")[0].trim(),
-					system = "";
-				if(PTS[p].nome.indexOf("EUR")>-1)system = "EUR";
-				if(PTS[p].nome.indexOf("CIN")>-1)system = "CIN";
-				if(PTS[p].nome.indexOf("INT")>-1)system = "";
+					name = PTS[p].nome.split("(")[0].trim();
 				let lato = "";
 				if(PTS[p].nome.indexOf("SX")>-1)lato = "SX";
 				if(PTS[p].nome.indexOf("DX")>-1)lato = "DX";
@@ -280,7 +261,7 @@ var SET = {
 				
 				// pallino colorato
 				n++;
-				let mat = this.MAT["pointBase"+system];
+				let mat = this.MAT["pointBase"];
 				
 				this.P[n] = new THREE.Mesh( this.geometryPallino, cloneMAT(mat) );
 				
@@ -293,7 +274,6 @@ var SET = {
 				if(	(MODELLO.flip && lato == 'DX') ||
 					(!MODELLO.flip && lato == 'SX') )this.P[n].visible = false;
 				this.P[n].userData.type = 'point';
-				this.P[n].userData.system = system;
 				this.P[n].userData.freq = freq;
 				this.P[n].userData.master = master;
 				this.P[n].userData.FN = FN;
@@ -314,7 +294,6 @@ var SET = {
 				this.P[n].userData.raycastable = true;
 				this.P[n].userData.nota = false;
 				this.P[n].userData.type = 'point';
-				this.P[n].userData.system = system;
 				this.P[n].userData.freq = freq;
 				this.P[n].userData.master = master;
 				this.P[n].userData.FN = FN;
@@ -383,8 +362,7 @@ var SET = {
 		
 		//contPulsanti += '<span id="tueLicenzeMappa" class="tueLicenze"><span onClick="MENU.visLicenze();">'+TXT("TueLicenze")+'</span></span>';
 		
-		let contBtns = 	'<div id="p_contrasto" class="p_noTxt" onClick="SET.swContrastMethod();"></div>' +
-						'<div id="p_lms" class="p_noTxt" onClick="SET.swLM();" title="'+htmlEntities(TXT("MostraLM"))+'"></div>';
+		let contBtns = 	'<div id="p_contrasto" class="p_noTxt" onClick="SET.swContrastMethod();"></div>';
 		
 		let contIcona = '<div id="p_set" onClick="SCHEDA.apriElenco(\'set\',true);"><svg viewBox="0 0 12 48"><polygon points="5,24 12,13 12,35"></polygon></svg><i>'+htmlEntities(TXT("AuriculoMap"))+'</i></div>';;
 		
@@ -533,8 +511,7 @@ var SET = {
 							if(	SETS.children[i].children[ii].visible &&
 								SETS.children[i].children[ii].isGroup &&
 								SETS.children[i].children[ii].name.substr(0,2)!='LN' &&
-								SETS.children[i].children[ii].name.substr(0,2)!='GD' &&
-								SETS.children[i].children[ii].name.substr(0,2)!='LM'){
+								SETS.children[i].children[ii].name.substr(0,2)!='GD' ){
 								let intersects = raycaster.intersectObjects( SETS.children[i].children[ii].children );
 								if ( intersects.length > 0 ) { // roll-over
 									for(l in intersects){
@@ -615,22 +592,6 @@ var SET = {
 			}
 		}
 		
-		if(SET.lmVis){
-			// mostro/nascondo i landmarks
-			let nascosto = (manichinoCont.rotation.x>1.5 || 
-							manichinoCont.rotation.x<-1.5 || 
-							manichinoCont.rotation.y>1.3 || 
-							manichinoCont.rotation.y<-1.8 );
-			if(nascosto && !document.getElementById("legende").classList.contains("noLms")){ // nascondo
-				document.getElementById("legende").classList.add("noLms");
-				scene.getObjectByName("LMs").visible = false;
-			}
-			if(!nascosto && document.getElementById("legende").classList.contains("noLms")){ // mostro
-				document.getElementById("legende").classList.remove("noLms");
-				scene.getObjectByName("LMs").visible = true;
-			}
-		}
-		
 		return make;
 	},
 	setPulsePt: function( pt, pulse, op, mat='' ){
@@ -704,8 +665,7 @@ var SET = {
 
 		if(this.ptSel){
 			if(name == this.ptSel.name.substr(2,3))return;
-			system = this.ptSel.userData.system;
-			mat = SET.MAT["pointBase"+system];
+			mat = SET.MAT["pointBase"];
 			if(this.ptSel.userData.nota)mat=this.MAT.pointNote;
 			SET.setPulsePt( this.ptSel, 1, 1, mat );
 			if(document.getElementById("ts_"+this.ptSel.name.substr(2,3)))document.getElementById("ts_"+this.ptSel.name.substr(2,3)).classList.remove("selElPt");
@@ -841,7 +801,7 @@ var SET = {
 		if(this.ptSel.userData.type == 'point'){
 			this.eviPoint.material.visible = false;
 			this.pulse=0;
-			mat = cloneMAT(SET.MAT["pointBase"+this.ptSel.userData.system]);
+			mat = cloneMAT(SET.MAT["pointBase"]);
 			if(this.ptSel.userData.nota)mat=this.MAT.pointNote;
 			this.ptSel.material=mat;
 			this.ptSel.material.opacity=1;
@@ -852,7 +812,7 @@ var SET = {
 		exPt = SET.ptSel;
 			
 		// coloro tutti gli altri punti
-		mat = cloneMAT(SET.MAT["pointBase"+this.ptSel.userData.system]);
+		mat = cloneMAT(SET.MAT["pointBase"]);
 		if(this.ptSel.userData.nota)mat=this.MAT.pointNote;
 		let phs = ["","2","3"];
 		for(let ph in phs){
@@ -878,7 +838,7 @@ var SET = {
 			for(let e in els){
 				if(els[e].name.indexOf("AR"+this.ptSel.name.substr(2,3))==0){
 					if(__(els[e].userData.hidePunto,'0')=='1')els[e].visible = false;
-					system = els[e].userData.system;
+					system = "";
 					if(SET.puntiEvidenziati.indexOf(this.ptSel.name.substr(2,3))>-1){
 						system = 'Evi';
 						tipo='';
@@ -959,9 +919,7 @@ var SET = {
 						 '  onMouseOut="SET.overPunto(\''+EL.name+'\',false);"' +
 						 '	id="ts_'+siglaPunto.replace('.','_')+'"';
 		html += '>';
-		let system = EL.userData.system;
-		if(!system)system = 'INT';
-		html += '<span class="p'+system+'"></span>';
+		html += '<span class="pINT"></span>';
 		if(esteso)html+='<i>'+nomePunto+'</i>';
 		html+='</a>';
 		return html;
@@ -998,7 +956,7 @@ var SET = {
 		SCHEDA.torna();
 		SCHEDA.formModificato = true;
 	},
-	evidenziaPunto: function( el, anatomia='', mappa='', lm='' ){
+	evidenziaPunto: function( el, anatomia='', mappa='' ){
 		if(!el || typeof(el)=='undefined')el = document.getElementById("scheda_testo");
 		let html = el.innerHTML;
 		SET.annullaEvidenziaPunto(true);
@@ -1015,7 +973,7 @@ var SET = {
 			}
 			// --------------------------
 		}
-		SET.applicaEvidenziaPunto(anatomia,mappa,lm);
+		SET.applicaEvidenziaPunto(anatomia,mappa );
 		/*
 		//-------------------- MOSTRA LINEE
 		//SET.hideGroupLines();
@@ -1064,7 +1022,7 @@ var SET = {
 		}
 		SET.applicaEvidenziaPunto();
 	},
-	applicaEvidenziaPunto: function( anatomia, mappa, lm='' ){
+	applicaEvidenziaPunto: function( anatomia, mappa ){
 		if(SET.puntiEvidenziati.length || anatomia){
 			let phs = ["","2","3"];
 			for(let ph in phs){
@@ -1113,12 +1071,6 @@ var SET = {
 				SET.cambiaMappa(mappa);
 			}, 200, mappa);
 		}
-		if(lm!==''){
-			setTimeout( function(){
-				SET.lmOr = SET.lmVis;
-				if(SET.lmVis != lm && globals.modello.cartella)SET.swLM();
-			}, 200, lm);
-		}
 	},
 	annullaEvidenziaPunto: function( forzaDissolve=false ){
 		if(SET.puntiEvidenziati.length || forzaDissolve){
@@ -1148,7 +1100,7 @@ var SET = {
 					let vis = !__(DB.set.punti[siglaPunto].hidden,false) && __(els[e].userData.hidePunto,'0')=='0';
 					if(SET.puntiEvidenziati.indexOf(siglaPunto)>-1){
 						if(els[e].name.indexOf("AR"+siglaPunto)==0){
-							els[e].material=cloneMAT(SET.MAT["areaBase"+els[e].userData.system]);
+							els[e].material=cloneMAT(SET.MAT["areaBase"]);
 							els[e].visible = vis;
 						}
 					}
@@ -1166,10 +1118,6 @@ var SET = {
 			if(SET.mappaOr){
 				SET.cambiaMappa(SET.mappaOr);
 				SET.mappaOr = '';
-			}
-			if(SET.lmOr!==''){
-				if(SET.lmVis != SET.lmOr && globals.modello.cartella)SET.swLM();
-				SET.lmOr = '';
 			}
 		}
 		SET.puntiEvidenziati = [];
@@ -1215,9 +1163,8 @@ var SET = {
 			if(	els[e].name.indexOf("PT"+PT_name) == 0 && 
 				els[e].material.name.indexOf("SEL") == -1 && 
 				SET.note.indexOf(PT_name) == -1 ){
-				system = els[e].userData.system;
-				if(SET.MAT["point"+tipo+system].name != els[e].material.name){
-					els[e].material = cloneMAT(SET.MAT["point"+tipo+system]);
+				if(SET.MAT["point"+tipo].name != els[e].material.name){
+					els[e].material = cloneMAT(SET.MAT["point"+tipo]);
 					if(SET.puntiEvidenziati.length && SET.puntiEvidenziati.indexOf(PT_name)==-1){
 						els[e].material.opacity = 0.5;
 					}else els[e].material.opacity = 1;
@@ -1229,7 +1176,7 @@ var SET = {
 			if(	els[e].name.indexOf("AR"+PT_name) == 0 && 
 				els[e].material.name.indexOf("SEL") == -1 && 
 				SET.note.indexOf(PT_name) == -1  ){
-				system = els[e].userData.system;
+				system = ""
 				if(els[e].material.name.indexOf('EVI')>-1){
 					system = 'Evi';
 					if(els[e].userData.val=='D')system='Dolore';
@@ -1273,7 +1220,7 @@ var SET = {
 			els = scene.getObjectByName("ARs"+phs[ph]).children;
 			for(let e in els){
 				if(els[e].name.indexOf("AR"+name)==0 && els[e].material.name.indexOf("SEL")==-1){
-					system = els[e].userData.system;
+					system = "";
 					if(els[e].material.name.indexOf('EVI')>-1){
 						system = 'Evi';
 						if(els[e].userData.val=='D')system='Dolore';
@@ -1297,15 +1244,13 @@ var SET = {
 				EL = null;
 			if(scene.getObjectByName( "PT"+siglaPunto ))EL=scene.getObjectByName( "PT"+siglaPunto );
 			if(scene.getObjectByName( "AR"+siglaPunto ))EL=scene.getObjectByName( "AR"+siglaPunto );
-			let system = EL.userData.system;
-			if(!system)system = 'INT';
 			let pallClass = 'pallinoPat',
 				addClick = '';
 			if(noPall){
 				pallClass += ' pallinoPunto';
 				addClick = 'return;';
 			}
-			html = html.replace(pts[p], '<span class="'+pallClass+'" onClick="'+addClick+'SET.selPunto(\''+siglaPunto+'\')"><span class="p'+system+'"></span>'+NomePunto+'</span>');
+			html = html.replace(pts[p], '<span class="'+pallClass+'" onClick="'+addClick+'SET.selPunto(\''+siglaPunto+'\')"><span class="pINT"></span>'+NomePunto+'</span>');
 		}
 		
 		return html;
@@ -1381,57 +1326,6 @@ var SET = {
 		}
 	},
 	
-	// LM
-	swLM: function(){ // mostra/nasconde i landmarks
-		if(SET.lmVis)SET.nasLM();
-		else SET.visLM();
-	},
-	visLM: function(){ // mostra i landmarks
-		// verifico le autorizzazioni
-		/*if(!SET.verFreePatologia(n*1)){
-			ALERT(TXT("MsgContSoloPay"),true,true);
-			return;
-		}*/
-		// --------------------------
-		// verifico le autorizzazioni
-		if(!DB.login.data.auths.indexOf("auricologia_classica")==-1){
-			ALERT(TXT("MsgFunzioneSoloPay"));
-			return;
-		}
-		// --------------------------
-		document.getElementById("p_lms").classList.add("btnSel");
-		let lms = scene.getObjectByName("LMs");
-		for(let l in lms.children){
-			let leg = document.createElement('div'),
-				l2 = l.toString();
-			if(l2.length==1)l2="0"+l2;
-			leg.id = 'LM'+l2;
-			leg.dataset.idObj = leg.id;
-			leg.className = "noFr";
-			leg.style.cursor = "pointer";
-			leg.innerHTML = leg.id;
-			leg.onclick = function(){
-				SET.caricaApprofondimento(	parseInt(SET.idTeoLM.split("_")[0]),
-									parseInt(SET.idTeoLM.split("_")[1]),
-									document.getElementById("btn_teoria_"+SET.idTeoLM));
-			}
-			document.getElementById("legende").appendChild(leg);
-		}
-		lms.visible = true;
-		SET.lmVis = true;
-	},
-	nasLM: function(){ // nasconde i landmarks
-		document.getElementById("p_lms").classList.remove("btnSel");
-		let lms = scene.getObjectByName("LMs");
-		for(let l in lms.children){
-			let l2 = l.toString();
-			if(l2.length==1)l2="0"+l2;
-			document.getElementById("legende").removeChild(document.getElementById('LM'+l2));
-		}
-		document.getElementById("legende").classList.remove("noLms");
-		lms.visible = false;
-		SET.lmVis = false;
-	},
 	verSistema: function(){
 		document.getElementById("noLicenze").classList.toggle("vis",LOGIN.logedin() && DB.login.data.auths.indexOf("auricologia_classica")==-1);
 		document.getElementById("demoVersion").classList.toggle("vis",!LOGIN.logedin());
@@ -1513,10 +1407,8 @@ var SET = {
 		// risetto la mappa delle aree
 		MODELLO.MAT.mappaAree();
 		if(areasView)MODELLO.meshPelle.children[0].material = MODELLO.MAT.materialAree[0];
-		SET.nasLM(); //  nascondo i landmarks
 	},
 	_scaricaModello: function(){
-		SET.nasLM(); //  nascondo i landmarks
 	},
 	_torna: function( args ){
 		if(typeof(args.daCarica) == 'undefined')SET.pMod = '';

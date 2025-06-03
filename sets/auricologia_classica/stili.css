@@ -430,8 +430,6 @@ body:not(.touch) .listaPunti .spazioDopo{
 	opacity:0.7;
 }
 .pINT,
-.pEUR,
-.pCIN,
 .pNUL{
 	display: inline-block;
     vertical-align: middle;
@@ -443,8 +441,6 @@ body:not(.touch) .listaPunti .spazioDopo{
     border: 1px solid #444;
 }
 .smart.android .pINT,
-.smart.android .pEUR,
-.smart.android .pCIN,
 .smart.android .pNUL{
 	width: 14px;
     height: 14px;
@@ -452,13 +448,7 @@ body:not(.touch) .listaPunti .spazioDopo{
     margin-right: 8px;
 }
 .pINT{
-	background-color:#333;
-}
-.pEUR{
 	background-color:#06C;
-}
-.pCIN{
-	background-color:#8f3500;/*#960;*/
 }
 
 

@@ -52,8 +52,7 @@ var MODULO_TEORIA = { // extend SET
 			html = "<h1>"+htmlEntities(titolo)+"</h1>",
 			html_cont = SET.convPuntiScheda(DB.set.teoria[p].contenuti[t].TestoTeoria),
 			anatomia = __(DB.set.teoria[p].contenuti[t].anatomia,''),
-			mappa = __(DB.set.teoria[p].contenuti[t].mappa,''),
-			lm = __(DB.set.teoria[p].contenuti[t].lm,'');
+			mappa = __(DB.set.teoria[p].contenuti[t].mappa,'');
 		if(SET.forzaDissolve){
 			MODELLO.op("Pelle",SET.forzaDissolve.Pelle);
 			MODELLO.op("Ossa",SET.forzaDissolve.Ossa);
@@ -63,10 +62,6 @@ var MODULO_TEORIA = { // extend SET
 		if(SET.mappaOr){
 			SET.cambiaMappa(SET.mappaOr);
 			SET.mappaOr = '';
-		}
-		if(SET.lmOr!==''){
-			if(SET.lmVis != SET.lmOr && globals.modello.cartella)SET.swLM();
-			SET.lmOr = '';
 		}
 		
 		SET.hideGroupLines();
@@ -158,7 +153,7 @@ var MODULO_TEORIA = { // extend SET
 								globals.set.cartella+'_teoria_'+p+"_"+t );
 		
 		SCHEDA.gestVisAnatomia(true);
-		SET.evidenziaPunto(null,anatomia,mappa,lm);
+		SET.evidenziaPunto(null,anatomia,mappa);
 	},
 	
 	scriviProtocollo: function( protocollo ){
