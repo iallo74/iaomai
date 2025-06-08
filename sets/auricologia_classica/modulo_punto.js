@@ -394,28 +394,25 @@ var MODULO_PUNTO = { // extend SET
 		});
 	},
 	setHide3D: function( siglaPunto, hidePunto ){
-		let phs = ["","2","3"];
-		for(let ph in phs){
-			let els = scene.getObjectByName("PTs"+phs[ph]).children;
-			for(let e in els){
-				if(els[e].name.indexOf("PT"+siglaPunto)==0 || els[e].name.indexOf("_PT"+siglaPunto)==0){
-					els[e].userData.hidePunto = hidePunto;
-					els[e].visible = (hidePunto=='0');
-				}
+		let els = scene.getObjectByName("PTs").children;
+		for(let e in els){
+			if(els[e].name.indexOf("PT"+siglaPunto)==0 || els[e].name.indexOf("_PT"+siglaPunto)==0){
+				els[e].userData.hidePunto = hidePunto;
+				els[e].visible = (hidePunto=='0');
 			}
-			els = scene.getObjectByName("LNs"+phs[ph]).children;
-			for(let e in els){
-				if(els[e].name.indexOf("AG"+siglaPunto)==0){
-					els[e].userData.hidePunto = hidePunto;
-					els[e].visible = (hidePunto=='0');
-				}
+		}
+		els = scene.getObjectByName("LNs").children;
+		for(let e in els){
+			if(els[e].name.indexOf("AG"+siglaPunto)==0){
+				els[e].userData.hidePunto = hidePunto;
+				els[e].visible = (hidePunto=='0');
 			}
-			els = scene.getObjectByName("ARs"+phs[ph]).children;
-			for(let e in els){
-				if(els[e].name.indexOf("AR"+siglaPunto)==0){
-					els[e].userData.hidePunto = hidePunto;
-					els[e].visible = (hidePunto=='0');
-				}
+		}
+		els = scene.getObjectByName("ARs").children;
+		for(let e in els){
+			if(els[e].name.indexOf("AR"+siglaPunto)==0){
+				els[e].userData.hidePunto = hidePunto;
+				els[e].visible = (hidePunto=='0');
 			}
 		}
 		document.getElementById("ts_"+siglaPunto).classList.toggle("hide_point_list",(hidePunto=='1'))

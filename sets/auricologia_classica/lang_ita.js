@@ -4,7 +4,627 @@ DB.set = {
             NomePunto: "Punto ZERO",
             AzioniPunto: "Xxx",
             ChiaviPunto: ""
-        }
+        },
+        "501": {
+            NomePunto: "Vertebre cervicali",
+            AzioniPunto: "Xxx",
+            ChiaviPunto: ""
+        },
+        "508": {
+            NomePunto: "Vertebre dorsali",
+            AzioniPunto: "Xxx",
+            ChiaviPunto: ""
+        },
+        "520": {
+            NomePunto: "Vertebre lombari",
+            AzioniPunto: "Xxx",
+            ChiaviPunto: ""
+        },
+        "525": {
+            NomePunto: "Vertebre sacrali",
+            AzioniPunto: "Xxx",
+            ChiaviPunto: ""
+        },
+        "530": {
+            NomePunto: "Coccige",
+            AzioniPunto: "Xxx",
+            ChiaviPunto: ""
+        },
+		"531": {
+			NomePunto: "ARTICULATION_SACRO-LOMBAIRE",
+			AzioniPunto: "Xxx",
+			ChiaviPunto: ""
+		},
+		"532": {
+			NomePunto: "HANCHE",
+			AzioniPunto: "Xxx",
+			ChiaviPunto: ""
+		},
+		"541": {
+			NomePunto: "MUSCLES_PELVI-TROCHANTERIENS",
+			AzioniPunto: "Xxx",
+			ChiaviPunto: ""
+		},
+		"544": {
+			NomePunto: "SYMPHYSE_PUBIENNE",
+			AzioniPunto: "Xxx",
+			ChiaviPunto: ""
+		},
+		"536": {
+			NomePunto: "FEMUR",
+			AzioniPunto: "Xxx",
+			ChiaviPunto: ""
+		},
+		"537": {
+			NomePunto: "GENOU",
+			AzioniPunto: "Xxx",
+			ChiaviPunto: ""
+		},
+		"545": {
+			NomePunto: "TIBIA_ET_PERONE",
+			AzioniPunto: "Xxx",
+			ChiaviPunto: ""
+		},
+		"539": {
+			NomePunto: "LIGAMENT_LATERAL_EXTERNE",
+			AzioniPunto: "Xxx",
+			ChiaviPunto: ""
+		},
+		"540": {
+			NomePunto: "LIGAMENT_LATERAL_INTERNE",
+			AzioniPunto: "Xxx",
+			ChiaviPunto: ""
+		},
+		"543": {
+			NomePunto: "PIED_-_HARCHE_INTERNE",
+			AzioniPunto: "Xxx",
+			ChiaviPunto: ""
+		},
+		"534": {
+			NomePunto: "ASTRAGALE",
+			AzioniPunto: "Xxx",
+			ChiaviPunto: ""
+		},
+		"542": {
+			NomePunto: "PIED_-_HARCHE_EXTERNE",
+			AzioniPunto: "Xxx",
+			ChiaviPunto: ""
+		},
+		"535": {
+			NomePunto: "CALCANEUM",
+			AzioniPunto: "Xxx",
+			ChiaviPunto: ""
+		},
+		"550": {
+			NomePunto: "DOIGTS",
+			AzioniPunto: "Xxx",
+			ChiaviPunto: ""
+		},
+		"554": {
+			NomePunto: "POIGNET",
+			AzioniPunto: "Xxx",
+			ChiaviPunto: ""
+		},
+		"556": {
+			NomePunto: "REGION_RADIAL",
+			AzioniPunto: "Xxx",
+			ChiaviPunto: ""
+		},
+		"555": {
+			NomePunto: "REGION_CUBITAL",
+			AzioniPunto: "Xxx",
+			ChiaviPunto: ""
+		},
+		"549": {
+			NomePunto: "COUDE",
+			AzioniPunto: "Xxx",
+			ChiaviPunto: ""
+		},
+		"546": {
+			NomePunto: "ART._HUMERO-CUBITALE",
+			AzioniPunto: "Xxx",
+			ChiaviPunto: ""
+		},
+		"547": {
+			NomePunto: "ART._HUMERO-RADIALE",
+			AzioniPunto: "Xxx",
+			ChiaviPunto: ""
+		},
+		"552": {
+			NomePunto: "HUMERUS",
+			AzioniPunto: "Xxx",
+			ChiaviPunto: ""
+		},
+		"551": {
+			NomePunto: "EPAULE",
+			AzioniPunto: "Xxx",
+			ChiaviPunto: ""
+		},
+		"548": {
+			NomePunto: "CLAVICULE",
+			AzioniPunto: "Xxx",
+			ChiaviPunto: ""
+		},
+		"553": {
+			NomePunto: "OMOPLATE",
+			AzioniPunto: "Xxx",
+			ChiaviPunto: ""
+		},
+		"557": {
+			NomePunto: "TEGUMENTS_SCAPULAIRES",
+			AzioniPunto: "Xxx",
+			ChiaviPunto: ""
+		},
+		"558": {
+			NomePunto: "COTE",
+			AzioniPunto: "Xxx",
+			ChiaviPunto: ""
+		},
+		"559": {
+			NomePunto: "STERNUM",
+			AzioniPunto: "Xxx",
+			ChiaviPunto: ""
+		},
+		"560": {
+			NomePunto: "MUSCLES_ABDOMINAUX",
+			AzioniPunto: "Xxx",
+			ChiaviPunto: ""
+		},
+		"561": {
+			NomePunto: "MUSCLES_CERVICALES_ANTERIEURS",
+			AzioniPunto: "Xxx",
+			ChiaviPunto: ""
+		},
+		"562": {
+			NomePunto: "MUSCLES_CERVICALES_POSTERIEURS",
+			AzioniPunto: "Xxx",
+			ChiaviPunto: ""
+		},
+		"563": {
+			NomePunto: "MUSCLES_SUS-HYOIDIENS",
+			AzioniPunto: "Xxx",
+			ChiaviPunto: ""
+		},
+		"564": {
+			NomePunto: "OS_HYOIDE",
+			AzioniPunto: "Xxx",
+			ChiaviPunto: ""
+		},
+		"575": {
+			NomePunto: "URETERE - METANEPHROS",
+			AzioniPunto: "Xxx",
+			ChiaviPunto: ""
+		},
+		"578": {
+			NomePunto: "REIN",
+			AzioniPunto: "Xxx",
+			ChiaviPunto: ""
+		},
+		"607": {
+			NomePunto: "PEAU",
+			AzioniPunto: "Xxx",
+			ChiaviPunto: ""
+		},
+		"665": {
+			NomePunto: "MOELLE_EPINIERE_-_LOMBO_SACREE_MOTRICE",
+			AzioniPunto: "Xxx",
+			ChiaviPunto: ""
+		},
+		"666": {
+			NomePunto: "MOELLE_EPINIERE_-_LOMBO_SACREE_SENSITIVE",
+			AzioniPunto: "Xxx",
+			ChiaviPunto: ""
+		},
+		"616": {
+			NomePunto: "MOELLE_EPINIERE_-_SENSITIVE",
+			AzioniPunto: "Xxx",
+			ChiaviPunto: ""
+		},
+		"618": {
+			NomePunto: "MOELLE_EPINIERE_-_MOTRICE",
+			AzioniPunto: "Xxx",
+			ChiaviPunto: ""
+		},
+		"617": {
+			NomePunto: "MOELLE_EPINIERE_-_NEURO-VEGETATIVE",
+			AzioniPunto: "Xxx",
+			ChiaviPunto: ""
+		},
+		"645": {
+			NomePunto: "TRONC_CEREBRALE_PONT",
+			AzioniPunto: "Xxx",
+			ChiaviPunto: ""
+		},
+		"645": {
+			NomePunto: "TRONC_CEREBRALE_MESENCEPHALE",
+			AzioniPunto: "Xxx",
+			ChiaviPunto: ""
+		},
+		"652": {
+			NomePunto: "N._GLOSSO-PHARYNGIEN_-_IX_SENSITIF",
+			AzioniPunto: "Xxx",
+			ChiaviPunto: ""
+		},
+		"645": {
+			NomePunto: "TRONC_CEREBRALE_BULBE",
+			AzioniPunto: "Xxx",
+			ChiaviPunto: ""
+		},
+		"633": {
+			NomePunto: "NOYAUX_DORSAUX_RETICULAIRES_BULBAIRES",
+			AzioniPunto: "Xxx",
+			ChiaviPunto: ""
+		},
+		"661": {
+			NomePunto: "N._VAGUE_-_X_SENSITIF",
+			AzioniPunto: "Xxx",
+			ChiaviPunto: ""
+		},
+		"635": {
+			NomePunto: "NOYAUX_SENSITIF_LABYRINTH",
+			AzioniPunto: "Xxx",
+			ChiaviPunto: ""
+		},
+		"615": {
+			NomePunto: "LAME_QUADRIJUMELLE_SENSITIVE",
+			AzioniPunto: "Xxx",
+			ChiaviPunto: ""
+		},
+		"651": {
+			NomePunto: "PEDONCULES_CEREBRAUX_SENSITIF",
+			AzioniPunto: "Xxx",
+			ChiaviPunto: ""
+		},
+		"632": {
+			NomePunto: "CERVELET_NEOCEREBELLUM",
+			AzioniPunto: "Xxx",
+			ChiaviPunto: ""
+		},
+		"642": {
+			NomePunto: "THALAMUS_-_NOYAU__LATERO-VENTRAL_POSTERIEUR",
+			AzioniPunto: "Xxx",
+			ChiaviPunto: ""
+		},
+		"641": {
+			NomePunto: "THALAMUS_-_NOYAU__LATERO-DORSAL",
+			AzioniPunto: "Xxx",
+			ChiaviPunto: ""
+		},
+		"643": {
+			NomePunto: "THALAMUS_-_NOYAU__MEDIO_DORSAL",
+			AzioniPunto: "Xxx",
+			ChiaviPunto: ""
+		},
+		"644": {
+			NomePunto: "THALAMUS_-_NOYAU_ANTERIEUR",
+			AzioniPunto: "Xxx",
+			ChiaviPunto: ""
+		},
+		"623": {
+			NomePunto: "N._INT._DE_WRISBERG_-_VII_b",
+			AzioniPunto: "Xxx",
+			ChiaviPunto: ""
+		},
+		"664": {
+			NomePunto: "ADENO_HYPOPHYSE",
+			AzioniPunto: "Xxx",
+			ChiaviPunto: ""
+		},
+		"614": {
+			NomePunto: "HYPOTALAMUS_POSTERIEUR_NEURO_VEGETATIF",
+			AzioniPunto: "Xxx",
+			ChiaviPunto: ""
+		},
+		"638": {
+			NomePunto: "NEURO_HYPOPHYSE",
+			AzioniPunto: "Xxx",
+			ChiaviPunto: ""
+		},
+		"613": {
+			NomePunto: "HYPOTALAMUS_ANTERIEUR_NEURO_VEGETATIF",
+			AzioniPunto: "Xxx",
+			ChiaviPunto: ""
+		},
+		"628": {
+			NomePunto: "N._PATHETIQUE_-_IV",
+			AzioniPunto: "Xxx",
+			ChiaviPunto: ""
+		},
+		"637": {
+			NomePunto: "PEDONCULES_CEREBRAUX_MOTEUR",
+			AzioniPunto: "Xxx",
+			ChiaviPunto: ""
+		},
+		"634": {
+			NomePunto: "NOYAUX_RETICULAIRE_BULBAIRES",
+			AzioniPunto: "Xxx",
+			ChiaviPunto: ""
+		},
+		"636": {
+			NomePunto: "OLIVE_BULBAIRE",
+			AzioniPunto: "Xxx",
+			ChiaviPunto: ""
+		},
+		"640": {
+			NomePunto: "SYSTEME_MOTEUR_LABYRINTHIQUE",
+			AzioniPunto: "Xxx",
+			ChiaviPunto: ""
+		},
+		"646": {
+			NomePunto: "N._TRIJUMEAU_MOTEUR",
+			AzioniPunto: "Xxx",
+			ChiaviPunto: ""
+		},
+		"619": {
+			NomePunto: "N._COCHLEO_VESTIBULAIRE_-_VIII",
+			AzioniPunto: "Xxx",
+			ChiaviPunto: ""
+		},
+		"621": {
+			NomePunto: "N._GLOSSO-PHARYNGIEN_-_IX_MOTEUR",
+			AzioniPunto: "Xxx",
+			ChiaviPunto: ""
+		},
+		"622": {
+			NomePunto: "N._GRAND_HYPOGLOSSE_-_XII",
+			AzioniPunto: "Xxx",
+			ChiaviPunto: ""
+		},
+		"609": {
+			NomePunto: "CERVELET_MOTEUR",
+			AzioniPunto: "Xxx",
+			ChiaviPunto: ""
+		},
+		"612": {
+			NomePunto: "RETICULEE_THALAMIQUE_MOTRICE",
+			AzioniPunto: "Xxx",
+			ChiaviPunto: ""
+		},
+		"615": {
+			NomePunto: "LAME_QUADRIJUMELLE_MOTRICE",
+			AzioniPunto: "Xxx",
+			ChiaviPunto: ""
+		},
+		"620": {
+			NomePunto: "N._FACIAL_-_VII",
+			AzioniPunto: "Xxx",
+			ChiaviPunto: ""
+		},
+		"624": {
+			NomePunto: "N._MOTEUR_OCULAIRE_COMMUN_-_III",
+			AzioniPunto: "Xxx",
+			ChiaviPunto: ""
+		},
+		"625": {
+			NomePunto: "N._MOTEUR_OCULAIRE_EXTERNE_-_VI",
+			AzioniPunto: "Xxx",
+			ChiaviPunto: ""
+		},
+		"629": {
+			NomePunto: "N._SPINAL_-_XI",
+			AzioniPunto: "Xxx",
+			ChiaviPunto: ""
+		},
+		"631": {
+			NomePunto: "N._VAGUE_-_X_MOTEUR",
+			AzioniPunto: "Xxx",
+			ChiaviPunto: ""
+		},
+		"639": {
+			NomePunto: "SOUS-THALAMUS",
+			AzioniPunto: "Xxx",
+			ChiaviPunto: ""
+		},
+		"611": {
+			NomePunto: "THALAMUS_MOTEUR",
+			AzioniPunto: "Xxx",
+			ChiaviPunto: ""
+		},
+		"630": {
+			NomePunto: "N._TRIJUMEAU_-_V2_-_MAXILLAIRE",
+			AzioniPunto: "Xxx",
+			ChiaviPunto: ""
+		},
+		"630": {
+			NomePunto: "N._TRIJUMEAU_-_V3_-_MANDIBULAIRE",
+			AzioniPunto: "Xxx",
+			ChiaviPunto: ""
+		},
+		"630": {
+			NomePunto: "N._TRIJUMEAU_-_V1_-_OPHTALMIQUE",
+			AzioniPunto: "Xxx",
+			ChiaviPunto: ""
+		},
+		"610": {
+			NomePunto: "HORMONE PROLACTINE",
+			AzioniPunto: "Xxx",
+			ChiaviPunto: ""
+		},
+		"646": {
+			NomePunto: "HORMONE MELANOTROPE - MSH",
+			AzioniPunto: "Xxx",
+			ChiaviPunto: ""
+		},
+		"647": {
+			NomePunto: "PARATHYREOSTIMULINE - PTH",
+			AzioniPunto: "Xxx",
+			ChiaviPunto: ""
+		},
+		"648": {
+			NomePunto: "HORMONE SOMATOTROPE - STH",
+			AzioniPunto: "Xxx",
+			ChiaviPunto: ""
+		},
+		"649": {
+			NomePunto: "THYREOSTIMULINE - TSH",
+			AzioniPunto: "Xxx",
+			ChiaviPunto: ""
+		},
+		"650": {
+			NomePunto: "CORTICOSTINULINE - ACTH",
+			AzioniPunto: "Xxx",
+			ChiaviPunto: ""
+		},
+		"653": {
+			NomePunto: "HIPPOCAMPE",
+			AzioniPunto: "Xxx",
+			ChiaviPunto: ""
+		},
+		"654": {
+			NomePunto: "POINT GENITAL - LHFSH",
+			AzioniPunto: "Xxx",
+			ChiaviPunto: ""
+		},
+		"655": {
+			NomePunto: "HORMONE DE CROISSANCE - GA",
+			AzioniPunto: "Xxx",
+			ChiaviPunto: ""
+		},
+		"656": {
+			NomePunto: "HORMONE OSSYTOCINE",
+			AzioniPunto: "Xxx",
+			ChiaviPunto: ""
+		},
+		"657": {
+			NomePunto: "HORMONE ANTI DIURETIQUE - HAD",
+			AzioniPunto: "Xxx",
+			ChiaviPunto: ""
+		},
+		"658": {
+			NomePunto: "HYPOPHYSE",
+			AzioniPunto: "Xxx",
+			ChiaviPunto: ""
+		},
+		"659": {
+			NomePunto: "MAITRE DU THALAMUS",
+			AzioniPunto: "Xxx",
+			ChiaviPunto: ""
+		},
+		"660": {
+			NomePunto: "POINT RETICULEE THALAMIQUE",
+			AzioniPunto: "Xxx",
+			ChiaviPunto: ""
+		},
+		"662": {
+			NomePunto: "ART. TEMPORO MANDIBULAIRE - ATM",
+			AzioniPunto: "Xxx",
+			ChiaviPunto: ""
+		},
+		"608": {
+			NomePunto: "POINT MAITRE SENSORIEL - OEIL",
+			AzioniPunto: "Xxx",
+			ChiaviPunto: ""
+		},
+		"663": {
+			NomePunto: "AMYGDALE CEREBRALE",
+			AzioniPunto: "Xxx",
+			ChiaviPunto: ""
+		},
+		"664": {
+			NomePunto: "EPIPHYSE",
+			AzioniPunto: "Xxx",
+			ChiaviPunto: ""
+		},
+		"665": {
+			NomePunto: "O PRIME",
+			AzioniPunto: "Xxx",
+			ChiaviPunto: ""
+		},
+		"667": {
+			NomePunto: "POINT MAITRE DE DARWIN - L1",
+			AzioniPunto: "Xxx",
+			ChiaviPunto: ""
+		},
+		"668": {
+			NomePunto: "COLLICULUS SUPERIEUR",
+			AzioniPunto: "Xxx",
+			ChiaviPunto: ""
+		},
+		"669": {
+			NomePunto: "NOYAUX VESTIBULAIRES",
+			AzioniPunto: "Xxx",
+			ChiaviPunto: ""
+		},
+		"670": {
+			NomePunto: "LOCUS COERULEUS",
+			AzioniPunto: "Xxx",
+			ChiaviPunto: ""
+		},
+		"671": {
+			NomePunto: "NOYAUX DU RAPHE MEDIAN",
+			AzioniPunto: "Xxx",
+			ChiaviPunto: ""
+		},
+		"672": {
+			NomePunto: "COMMISSURE BLANCHE ANTERIEURE",
+			AzioniPunto: "Xxx",
+			ChiaviPunto: ""
+		},
+		"673": {
+			NomePunto: "COMMISSURE BLANCHE POSTERIEURE",
+			AzioniPunto: "Xxx",
+			ChiaviPunto: ""
+		},
+		"673": {
+			NomePunto: "COMMISSURE HABENULAIRE",
+			AzioniPunto: "Xxx",
+			ChiaviPunto: ""
+		},
+		"674": {
+			NomePunto: "POINT DE LA GORGE",
+			AzioniPunto: "Xxx",
+			ChiaviPunto: ""
+		},
+		"675": {
+			NomePunto: "GANGLION SPHENO -PALATIN",
+			AzioniPunto: "Xxx",
+			ChiaviPunto: ""
+		},
+		"676": {
+			NomePunto: "GANGLION D'ANDERSCH",
+			AzioniPunto: "Xxx",
+			ChiaviPunto: ""
+		},
+		"677": {
+			NomePunto: "PARASYMPATHIQUE PELVIEN",
+			AzioniPunto: "Xxx",
+			ChiaviPunto: ""
+		},
+		"678": {
+			NomePunto: "PARASYMPATHIQUE CRANIEN",
+			AzioniPunto: "Xxx",
+			ChiaviPunto: ""
+		},
+		"679": {
+			NomePunto: "NOYAU CARDIO-PNEUMO-ENTERIQUE VAGAL X",
+			AzioniPunto: "Xxx",
+			ChiaviPunto: ""
+		},
+		"680": {
+			NomePunto: "PARATHYROIDES",
+			AzioniPunto: "Xxx",
+			ChiaviPunto: ""
+		},
+		"681": {
+			NomePunto: "POINT D'ELIMINATION",
+			AzioniPunto: "Xxx",
+			ChiaviPunto: ""
+		},
+		"682": {
+			NomePunto: "THYROIDE ORGANE",
+			AzioniPunto: "Xxx",
+			ChiaviPunto: ""
+		},
+		"683": {
+			NomePunto: "POINT R - REACTIONNEL",
+			AzioniPunto: "Xxx",
+			ChiaviPunto: ""
+		},
+		"684": {
+			NomePunto: "POINT ALLERGIE",
+			AzioniPunto: "Xxx",
+			ChiaviPunto: ""
+		},
     },
     apparati: {
 		1: "Apparato locomotore",
