@@ -1287,7 +1287,7 @@ var MODELLO = {
 			if(exMI.Visceri!=NaN)MODELLO.op('Visceri',exMI.Visceri);
 			if(exMI.Vasi!=NaN)MODELLO.op('Vasi',exMI.Vasi);
 			if(exMI.Ossa!=NaN)MODELLO.op('Ossa',exMI.Ossa);
-			if(exMI.Muscoli3D!=NaN)MODELLO.op('Muscoli3d',exMI.Muscoli3D);
+			if(exMI.Muscoli3d!=NaN)MODELLO.op('Muscoli3d',exMI.Muscoli3d);
 			if(exMI.Legamenti!=NaN)MODELLO.op('Pelle',exMI.Legamenti);
 			if(exMI.Pelle!=NaN)MODELLO.op('Pelle',exMI.Pelle);
 			document.getElementById("btnIsola").classList.remove("flag");
@@ -1564,6 +1564,7 @@ var MODELLO = {
 	},
 
 	isolaMuscolo3d: function( el, modo='', noCentra=false, from3d=false ){
+		if(touchable && (modo=='over' || modo=='out'))return;
 		if(smartMenu && from3d && el.id==globals.pezziSelezionati[0])return;
 		if(smartMenu && globals.pezziSelezionati.length && el.id!=globals.pezziSelezionati[0]){
 			let visSet = __(SETS?.visible,false),
@@ -1585,7 +1586,7 @@ var MODELLO = {
 		
 		for(let n=0;n<MODELLO.meshMuscoli3d.children.length;n++){
 			if(MODELLO.meshMuscoli3d.children[n].name == muscolo3d){
-				if(MODELLO.meshMuscoli3d.children[n].material.name != 'organoSel'+MODELLO.meshMuscoli3d.children[n].userData.matAdd){
+				if(MODELLO.meshMuscoli3d.children[n].material.name != 'materiale muscoli 3D Sel '+MODELLO.meshMuscoli3d.children[n].userData.matAdd){
 					if(modo == 'over'){
 						MODELLO.meshMuscoli3d.children[n].material = eval("MODELLO.MAT.materialMuscoli3dOver"+MODELLO.meshMuscoli3d.children[n].userData.matAdd);
 					}else if(modo == 'out'){
