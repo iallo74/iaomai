@@ -192,6 +192,6 @@ var MODULO_PATOLOGIE = { // extend SET
 				pass = SET.PATOLOGIE_free.indexOf(DB.set.patologie[t].siglaPatologia)==-1;
 			}
 		}
-		return !(pass && (DB.login.data.auths.indexOf(globals.set.cartella)==-1 || !LOGIN.logedin()));
+		return !(pass && (SET.blur || !LOGIN.logedin()));
 	}
 }

@@ -11,12 +11,13 @@ var PURCHASES  = {
 	transaction: '',
 	firstMonth: '1€',
 	cycles: 1,
+	foldeOp: '',
 	
 	init: function(){ // inizializza il catalogo
 		PURCHASES.verAbbs();
 		PURCHASES.product_list = [];
 		for(let s in sets){
-			if(sets[s].abbs && !sets[s].locked){
+			if(sets[s].abbs && !sets[s].locked && getVerNumber()>=getVerNumber(__(sets[s].minVer))){
 				let el = {
 						folder: s,
 						title: sets[s].nome,
@@ -44,7 +45,8 @@ var PURCHASES  = {
 			for(let p in PURCHASES.product_list){
 				if(PURCHASES.product_list[p].folder == elenco.auths[p])PURCHASES.product_list[p].owned;
 			}
-			PURCHASES.productList();
+			//PURCHASES.productList();
+			PURCHASES.abbsList();
 		}
 	},
 	initStore: function(){ // inizializza l'acquisto
@@ -166,7 +168,6 @@ var PURCHASES  = {
 			ALERT("An error has occurred");
 		}else{
 			DB.login.data.auths.push(txt);
-			//PURCHASES.productList();
 			PURCHASES.verAbbs();
 			PURCHASES.abbsList();
 		}
@@ -348,7 +349,8 @@ var PURCHASES  = {
 		let addApple = (!onlineVersion && (iPad || iPhone || isMacUA)) ? 'Apple' : '',
 			html =  '',
 	    	html_ok = '',
-	    	html_no = '';
+	    	html_no = '',
+			nFolder = -1;
 
 		html += '<div id="descrLicenze">' +
 					TXT("DescrPurchase") +
@@ -379,7 +381,7 @@ var PURCHASES  = {
 				}
 				html_provv += 	'<div' +
 								(!owned ? ' class="acqOk"' : '') +
-								'><div class="tit'+addTit+'">' +
+								'><div class="tit'+addTit+'" data-folder="'+folder+'">' +
 								'<img src="sets/'+folder+'/img/logoNero.png">' +
 								'<b>'+title+'</b>' +
 								'</div>'+
@@ -387,6 +389,7 @@ var PURCHASES  = {
 								'</div>';
 				if(owned)html_ok += html_provv;
 				else html_no += html_provv;
+				if(folder==PURCHASES.folderOp)nFolder = id;
 			}
 		}
 		html += html_ok + html_no +
@@ -394,6 +397,8 @@ var PURCHASES  = {
 		let el = document.getElementById('contPurchases');
 		el.classList.remove("ini");
 		el.innerHTML = html;
+		if(PURCHASES.folderOp && nFolder>-1)PURCHASES.productList(nFolder);
+		PURCHASES.folderOp = '';
 	},
 	
 	// reperimento prezzi da DB
@@ -480,6 +485,17 @@ var PURCHASES  = {
 		}
 		html += ' &nbsp; - &nbsp; <u style="font-size:12px;cursor:pointer;" onClick="PURCHASES.visLink(\''+convLangPath('https://www.iaomai.app/[lang]/info/privacy.php')+'\');">Privacy Policy</u></div>';
 		return html;
+	},
+	getFirstMonth: function(){
+		const match = PURCHASES.firstMonth.match(/^([\d,\.]+)\s*(\D+)$/);
+		if (!match) {
+			throw new Error("Formato non valido");
+		}
+		const numero = match[1];
+		const valuta = match[2];
+		
+		// Costruiamo la stringa invertita
+		return `${valuta.trim()} ${numero}`;
 	}
 }
 

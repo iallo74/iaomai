@@ -8,7 +8,7 @@
 */
 
 // IMPORTAZIONI DI VERSIONE
-var verApp = '1.9.1'; // utilizzata per gli aggiornamenti dei files: FILES[] (i files caricati dinamicamente da DB)
+var verApp = '1.9.2'; // utilizzata per gli aggiornamenti dei files: FILES[] (i files caricati dinamicamente da DB)
 
 // IMPOSTAZIONI DEL DEVICE
 var	smartphone = false,
@@ -240,7 +240,7 @@ var IMPORTER = {
 				smartMenu=true;
 				smartphone=true;
 			}
-		}, false);
+		}, { passive: false });
 		if(userAgent.indexOf("macintosh") && touchable && !smartMenu)isTablet = true;
 		if(smartMenu)document.body.classList.add("smart");
 		if(isTablet)document.body.classList.add("tablet");
@@ -271,7 +271,7 @@ var IMPORTER = {
 			}else{
 				throw new Error('Exit'); // This will suspend the app
 			}
-		}, false);
+		}, { passive: false });
 
 
 		/*if(!touchable){

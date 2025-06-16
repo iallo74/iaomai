@@ -57,6 +57,7 @@ var MODULO_TEORIA = { // extend SET
 						(	DB.login.data.modls.indexOf("CIN")==-1 && 
 							DB.login.data.modls.indexOf("MAS")==-1 && 
 							DB.login.data.modls.indexOf("NMK")==-1 && (p==4 || p==5) ) )addLock = ' lockedItem';
+					if(globals.allowFreeVer)addLock = '';
 					// --------------------------
 					let TitoloTeoria = DB.set.teoria[p].contenuti[t].TitoloTeoria,
 						funct = 'Approfondimento';
@@ -90,7 +91,7 @@ var MODULO_TEORIA = { // extend SET
 			(	DB.login.data.modls.indexOf("CIN")==-1 && 
 				DB.login.data.modls.indexOf("MAS")==-1 && 
 				DB.login.data.modls.indexOf("NMK")==-1 && p==4 ) )block = true;
-		if( block ){
+		if( block && !globals.allowFreeVer ){
 			if(SET.verLicenses())ALERT(TXT("MsgContSoloLicensed"),false,false,true);
 			else ALERT(TXT("MsgContSoloPay"),true,true);
 			return;
@@ -136,11 +137,16 @@ var MODULO_TEORIA = { // extend SET
 								btn,
 								btnAdd,
 								globals.set.cartella+'_teoria_'+p+"_"+t );
-		
-		SCHEDA.gestVisAnatomia(true);
-		SET.convSigleScheda();
-		let elsSzTeo = document.getElementById("scheda_testo").getElementsByClassName("szTeo");
-		if(elsSzTeo.length == -1)SET.evidenziaPunto();
+		if(!SET.blur){
+			SCHEDA.gestVisAnatomia(true);
+			SET.convSigleScheda();
+			let elsSzTeo = document.getElementById("scheda_testo").getElementsByClassName("szTeo");
+			if(elsSzTeo.length == -1)SET.evidenziaPunto();
+		}
+		if(SET.blur && !(p==5)){
+			SCHEDA.addSblocca(	[document.getElementsByClassName("ideogrammaPuntoChar")[0]],
+								['h1'] );
+		}
 	},
 	caricaVideo: function( p, t, btn ){
 		// carica un approfondimento video
@@ -203,6 +209,6 @@ var MODULO_TEORIA = { // extend SET
 		SCHEDA.individuaElemento( 'btn_teoria_cart_'+i, "listaTeoria" );
 	},
 	verFreeTeoria: function( t ){
-		return !(SET.TEORIA_free.indexOf(t)==-1 && (DB.login.data.auths.indexOf(globals.set.cartella)==-1 || !LOGIN.logedin()));
+		return !(SET.TEORIA_free.indexOf(t)==-1 && (SET.blur || !LOGIN.logedin()));
 	} 
 }

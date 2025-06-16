@@ -67,37 +67,37 @@ var LICENZE  = {
 		ok = LOGIN.logedin() && LOGIN.verAuth("meridiani_cinesi");
 		HTML +=	
 		LICENZE.appLicenza( 'AcupointsMap', 'sets/meridiani_cinesi/img/logoMenu.png' ) +
-		LICENZE.rowLicenza( TXT("Lic_PercorsiMeridiani3D"), 			ok?spunta			:this.red(TXT("Lic_rene")) ) +
-		LICENZE.rowLicenza( TXT("Lic_SchedeAgopunti"), 					ok?spunta			:this.red('14 ('+TXT("Lic_rene")+')') ) +
-		LICENZE.rowLicenza( TXT("Lic_Patologie"), 						ok?spunta			:this.red('19') ) +
-		LICENZE.rowLicenza( TXT("Lic_Approfondimenti"), 				ok?spunta			:this.red(TXT("Lic_estratto")) ) +
+		LICENZE.rowLicenza( TXT("Lic_PercorsiMeridiani3D"), 			spunta ) +
+		LICENZE.rowLicenza( TXT("Lic_SchedeAgopunti"), 					ok?spunta			:ics ) +
+		LICENZE.rowLicenza( TXT("Lic_Patologie"), 						ok?spunta			:ics ) +
+		LICENZE.rowLicenza( TXT("Lic_Approfondimenti"), 				ok?spunta			:ics ) +
 		LICENZE.rowLicenza( TXT("Lic_AggiuntaAgopunti"), 				ok?spunta			:ics );
 
 		// ShiatsuMap PRO Cinesi
 		ok = LOGIN.logedin() && LOGIN.verAuth("meridiani_shiatsu") && (LOGIN.verModule("CIN") || LOGIN.verModule("light"));
 		HTML +=	
 		LICENZE.appLicenza( 'ShiatsuMap', 'sets/meridiani_shiatsu/img/logoMenu.png' ) +
-		LICENZE.rowLicenza( TXT("Lic_SchedeTsubo"), 					ok?spunta			:this.red('14 ('+TXT("Lic_rene")+')') ) +
+		LICENZE.rowLicenza( TXT("Lic_SchedeTsubo"), 					ok?spunta			:ics ) +
 		LICENZE.rowLicenza( TXT("Lic_DettagliAnatomici"), 				okCIN?spunta		:ics ) +
 		LICENZE.rowLicenza( TXT("Lic_PronunciaCinese"), 				okCIN?spunta		:ics );
 
 		// ShiatsuMap PRO Masunaga
 		ok = LOGIN.logedin() && LOGIN.verAuth("meridiani_shiatsu") && (LOGIN.verModule("MAS") || LOGIN.verModule("light"));
 		HTML +=	
-		LICENZE.rowLicenza( TXT("Lic_EstensioniMasunaga"), 				ok?spunta			:this.red(TXT("Lic_rene")) );
+		LICENZE.rowLicenza( TXT("Lic_EstensioniMasunaga"), 				spunta );
 
 		// ShiatsuMap PRO Namikoshi
 		ok = LOGIN.logedin() && LOGIN.verAuth("meridiani_shiatsu") && (LOGIN.verModule("NMK") || LOGIN.verModule("light"));
 		let okALL = okCIN||okMAS||okNMK;
 		HTML +=	
-		LICENZE.rowLicenza( TXT("Lic_ZoneNamikoshi"),					ok?spunta			:this.red('7') ) +
+		LICENZE.rowLicenza( TXT("Lic_ZoneNamikoshi"),					spunta ) +
 		LICENZE.rowLicenza( TXT("Lic_DisegniPosizioni"), 				okNMK?spunta		:ics );
 
 		HTML +=	
-		LICENZE.rowLicenza( TXT("Lic_ProtocolliMTC"),					okCIN?spunta		:this.red('6') ) +
-		LICENZE.rowLicenza( TXT("Lic_ProtocolliMasunaga"),				okMAS?spunta		:this.red('6') ) +
-		LICENZE.rowLicenza( TXT("Lic_ProtocolliNamikoshi"),				okNMK?spunta		:this.red('3') ) +
-		LICENZE.rowLicenza( TXT("Lic_Approfondimenti"), 				okALL?spunta		:this.red(TXT("Lic_estratto")) ) +
+		LICENZE.rowLicenza( TXT("Lic_ProtocolliMTC"),					okCIN?spunta		:ics ) +
+		LICENZE.rowLicenza( TXT("Lic_ProtocolliMasunaga"),				okMAS?spunta		:ics ) +
+		LICENZE.rowLicenza( TXT("Lic_ProtocolliNamikoshi"),				okNMK?spunta		:ics ) +
+		LICENZE.rowLicenza( TXT("Lic_Approfondimenti"), 				okALL?spunta		:ics ) +
 		LICENZE.rowLicenza( TXT("Lic_AggiuntaPuntiMTC"),				okCIN?spunta		:ics ) +
 		LICENZE.rowLicenza( TXT("Lic_AggiuntaAreeNamikoshi"),			okNMK?spunta		:ics ) +
 		LICENZE.rowLicenza( TXT("Lic_AggiuntaMeridiani"),				okMAS?spunta		:ics );
@@ -106,12 +106,12 @@ var LICENZE  = {
 		ok = LOGIN.logedin() && (LOGIN.verAuth("auricologia") || LOGIN.verAuth("auricologia_classica"));
 		HTML +=	
 		LICENZE.appLicenza( 'AuriculoMap', 'sets/auricologia/img/logoMenu.png' ) +
-		LICENZE.rowLicenza( TXT("Lic_PuntiAree"), 						ok?spunta			:this.red('19') ) +
-		LICENZE.rowLicenza( TXT("Lic_SchedePunti"), 					ok?spunta			:this.red('19') ) +
+		LICENZE.rowLicenza( TXT("Lic_PuntiAree"), 						spunta ) +
+		LICENZE.rowLicenza( TXT("Lic_SchedePunti"), 					ok?spunta			:ics ) +
 		LICENZE.rowLicenza( TXT("Lic_Settori"), 						spunta ) +
 		LICENZE.rowLicenza( TXT("Lic_FiltriAree"), 						spunta ) +
-		LICENZE.rowLicenza( TXT("Lic_ProtocolliTerapeutici"), 			ok?spunta			:this.red('5') ) +
-		LICENZE.rowLicenza( TXT("Lic_Approfondimenti"), 				ok?spunta			:this.red(TXT("Lic_estratto")) ) +
+		LICENZE.rowLicenza( TXT("Lic_ProtocolliTerapeutici"), 			ok?spunta			:ics ) +
+		LICENZE.rowLicenza( TXT("Lic_Approfondimenti"), 				ok?spunta			:ics ) +
 		LICENZE.rowLicenza( TXT("Lic_AggiuntaPunti"), 					ok?spunta			:ics );
 		
 		// ReflexologyMap
@@ -141,7 +141,7 @@ var LICENZE  = {
 		ok = LOGIN.logedin() && LOGIN.verAuth("clients_full");
 		HTML +=	
 		LICENZE.appLicenza( TXT("Lic_SchedarioPazienti"), 'sets/clients_full/img/logoMenu.png' )  +
-		LICENZE.rowLicenza( TXT("Lic_NumeroPazienti"),					ok?spunta			:this.red(15) ) +
+		LICENZE.rowLicenza( TXT("Lic_NumeroPazienti"),					ok?spunta			:this.red(5) ) +
 		LICENZE.rowLicenza( TXT("Lic_ProtezionePassword"),				ok?spunta			:ics ) +
 		LICENZE.rowLicenza( TXT("Lic_Fornitori"),						ok?spunta			:this.red(5) ) +
 		LICENZE.rowLicenza( TXT("Lic_PacchettiSedute"),					ok?spunta			:this.red(5) );

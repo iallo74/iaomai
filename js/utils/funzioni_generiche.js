@@ -229,6 +229,98 @@ function hexToRgb(hex) {
   } : null;
 }
 
+function getVerNumber( ver = verApp	){
+	return parseInt(
+		ver
+		.split('.')                  // ["1", "9", "5"]
+		.map(n => n.padStart(2, '0')) // ["01", "09", "05"]
+		.join('')                    // "010905"
+	, 10);  
+}
+function obfuscateText(text) {
+    const charset = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz!@#$%^&*()_+-=[]{}|;:',.<>?/àèéìòù";
+    const preserveChars = [' ', '•', '.'];
+    
+    let result = '';
+
+    for (let i = 0; i < text.length; i++) {
+        const char = text[i];
+        if (preserveChars.includes(char) || /[0-9]/.test(char)) {
+            result += char;
+        } else {
+            const randomChar = charset.charAt(Math.floor(Math.random() * charset.length));
+            result += randomChar;
+        }
+    }
+    return result;
+}
+function wrapTextNodes(node, isRoot = true) {
+    node.childNodes.forEach(child => {
+        if (child.nodeType === Node.TEXT_NODE && child.textContent.trim() !== "" && isRoot) {
+            const wrapper = document.createElement('span');
+            wrapper.textContent = child.textContent;
+            child.parentNode.replaceChild(wrapper, child);
+        } else if (child.nodeType === Node.ELEMENT_NODE) {
+            wrapTextNodes(child, false);
+        }
+    });
+}
+function obfuscateDOMTree(rootNode, excludedElements = [], excludedTags = []) {
+    wrapTextNodes(rootNode, true);  // Normalizzazione
+
+    excludedTags.push("br");
+    const excludedSet = new Set(excludedElements);
+    const excludedTagsSet = new Set(excludedTags.map(tag => tag.toUpperCase()));
+
+    const nodeIterator = document.createNodeIterator(
+        rootNode,
+        NodeFilter.SHOW_ALL,
+        null
+    );
+
+    let currentNode;
+
+    while ((currentNode = nodeIterator.nextNode())) {
+
+        // Verifica ricorsiva se il nodo o i suoi antenati vanno esclusi
+        let excluded = false;
+        let ancestor = currentNode;
+
+        while (ancestor) {
+            if (ancestor.nodeType === Node.ELEMENT_NODE) {
+                if (excludedSet.has(ancestor)) {
+                    excluded = true;
+                    break;
+                }
+                if (excludedTagsSet.has(ancestor.nodeName)) {
+                    excluded = true;
+                    break;
+                }
+            }
+            ancestor = ancestor.parentNode;
+        }
+
+        if (excluded) continue;
+
+        if (currentNode.nodeType === Node.TEXT_NODE) {
+            if (currentNode.textContent.trim() !== "") {
+                currentNode.textContent = obfuscateText(currentNode.textContent);
+            }
+        } else if (currentNode.nodeType === Node.ELEMENT_NODE) {
+            if (currentNode !== rootNode) {
+                currentNode.style.filter = 'blur(5px)';
+                currentNode.style.cursor = 'default';
+                currentNode.onclick = null;
+                currentNode.onmouseover = null;
+                currentNode.onmouseout = null;
+            }
+        }
+    }
+}
+
+
+
+
 var debugTimes = 0;
 function incrDebug(){
 	debugTimes++;

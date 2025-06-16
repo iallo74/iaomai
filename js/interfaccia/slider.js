@@ -29,7 +29,7 @@ var SLIDER = {
 			document.body.addEventListener("mouseleave",SLIDER.arrestaSlide,false);
 		}else{
 			document.body.addEventListener("touchend", SLIDER.arrestaSlide, false );
-			document.body.addEventListener("touchmove", SLIDER.moveSlider, false );	
+			document.body.addEventListener("touchmove", SLIDER.moveSlider, { passive: false } );	
 		}
 
 		let preVis = document.getElementById("pulsanti_modello").classList.contains("visSch");

@@ -113,28 +113,19 @@ body:not(.smart) #scheda.schForm .annullaBtn{
 .stampaBtn{
 	color: #FFF;
 	background: #2b2b2b;
-	background: -moz-linear-gradient(top, #606060 0%, #2b2b2b 100%);
-	background: -webkit-linear-gradient(top, #606060 0%,#2b2b2b 100%);
 	background: linear-gradient(to bottom, #606060 0%,#2b2b2b 100%);
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#606060', endColorstr='#2b2b2b',GradientType=0 );
 	box-shadow: 0px 0px 3px rgba(0,0,0,0.5);
 }
 .submitBtn{
 	color: #000;
 	background: #FFF;
-	background: -moz-linear-gradient(top, #FFF 0%, #BBB 100%);
-	background: -webkit-linear-gradient(top, #FFF 0%,#BBB 100%);
 	background: linear-gradient(to bottom, #FFF 0%,#BBB 100%);
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#FFF', endColorstr='#BBB',GradientType=0 );
 	box-shadow: 0px 0px 3px rgba(0,0,0,0.5);
 }
 .annullaBtn{
     color: #000;
 	background: #b0b0b0;
-	background: -moz-linear-gradient(top, #999 0%, #b0b0b0 100%);
-	background: -webkit-linear-gradient(top, #999 0%,#b0b0b0 100%);
 	background: linear-gradient(to bottom, #999 0%,#b0b0b0 100%);
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#999', endColorstr='#b0b0b0',GradientType=0 );
 }
 body.bodyStyled2:not(.smart) #scheda.schForm .annullaBtn:not(#annullaOrario){
 	color:#FFF !important;
@@ -195,24 +186,15 @@ body:not(.bodyStyled2):not(.smart) #scheda.schForm .annullaBtn:not(#annullaOrari
 }
 .stampaBtn:not(.disBtn):hover{
 	background: #3b3b3b;
-	background: -moz-linear-gradient(top, #707070 0%, #3b3b3b 100%);
-	background: -webkit-linear-gradient(top, #707070 0%,#3b3b3b 100%);
 	background: linear-gradient(to bottom, #707070 0%,#3b3b3b 100%);
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#707070', endColorstr='#3b3b3b',GradientType=0 );
 }
 .submitBtn:not(.disBtn):hover{
 	background: #EEE;
-	background: -moz-linear-gradient(top, #EEE 0%, #AAA 100%);
-	background: -webkit-linear-gradient(top, #EEE 0%,#AAA 100%);
 	background: linear-gradient(to bottom, #EEE 0%,#AAA 100%);
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#EEE', endColorstr='#AAA',GradientType=0 );
 }
 .annullaBtn:not(.disBtn):hover{
 	background: #bcbcbc;
-	background: -moz-linear-gradient(top, #9c9c9c 0%, #bcbcbc 100%);
-	background: -webkit-linear-gradient(top, #9c9c9c 0%,#bcbcbc 100%);
 	background: linear-gradient(to bottom, #9c9c9c 0%,#bcbcbc 100%);
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#9c9c9c', endColorstr='#bcbcbc',GradientType=0 );
 }
 .disBtn{
 	opacity:0.5;
@@ -2139,10 +2121,7 @@ body:not() #scheda:not(.schLato) .txtFull{
     line-height: 27px;
 	margin-top:2px;
     border-radius: 5px;
-	background: -moz-linear-gradient(top, #1a4ba6 0%, #133f98 100%);
-	background: -webkit-linear-gradient(top, #1a4ba6 0%,#133f98 100%);
 	background: linear-gradient(to bottom, #1a4ba6 0%,#133f98 100%);
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1a4ba6', endColorstr='#133f98',GradientType=0 );
     color: #FFF;
     padding-left: 8px;
     padding-right: 8px;
@@ -2383,10 +2362,7 @@ body:not() #scheda:not(.schLato) .txtFull{
     font-weight: bold;
     cursor: pointer;
     border-radius: 5px;
-	background: -moz-linear-gradient(top, #1a4ba6 0%, #133f98 100%);
-	background: -webkit-linear-gradient(top, #1a4ba6 0%,#133f98 100%);
 	background: linear-gradient(to bottom, #1a4ba6 0%,#133f98 100%);
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1a4ba6', endColorstr='#133f98',GradientType=0 );
     color: #FFF;
     padding-left: 8px;
     padding-right: 8px;
@@ -2401,10 +2377,7 @@ body:not() #scheda:not(.schLato) .txtFull{
 }
 #grImporta:hover{
     background: #0b2d73;
-	background: -moz-linear-gradient(top, #133f98 0%, #0b2d73 100%);
-	background: -webkit-linear-gradient(top, #133f98 0%,#0b2d73 100%);
 	background: linear-gradient(to bottom, #133f98 0%,#0b2d73 100%);
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#133f98', endColorstr='#0b2d73',GradientType=0 );
 }
 .hide{
 	display:none;

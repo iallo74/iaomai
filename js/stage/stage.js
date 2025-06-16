@@ -422,6 +422,7 @@ function caricaSet( cartella, el, forzaModello='' ){
 			MENU.chiudiMenu();
 		}
 		visLoader("");
+		
 		globals.set=JSON.parse(JSON.stringify(sets[cartella]));
 		globals.set.cartella = cartella;
 		globals.set.setSel = el;

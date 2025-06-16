@@ -165,6 +165,6 @@ var MODULO_TEORIA = { // extend SET
 		SCHEDA.individuaElemento( 'btn_teoria_cart_'+i, "listaTeoria" );
 	},
 	verFreeTeoria: function( t ){
-		return !(SET.TEORIA_free.indexOf(t)==-1 && (DB.login.data.auths.indexOf(globals.set.cartella)==-1 || !LOGIN.logedin()));
+		return !(SET.TEORIA_free.indexOf(t)==-1 && (SET.blur || !LOGIN.logedin()));
 	}
 }

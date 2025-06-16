@@ -264,6 +264,14 @@ var LINGUE = {
 		}
 	},
 	googleTranslate: function( lang, codice ){
+		// verifico le autorizzazioni
+		if(SET && __(SET?.blur,false)){
+			setTimeout(function(){
+				ALERT(TXT("MsgFunzioneSoloPay"));
+			},100);
+			return;
+		}
+		// --------------------------
 		if(!CONN.retNoConn()){
 			LINGUE.resetGoogleTranslate();
 			return;

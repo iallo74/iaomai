@@ -172,10 +172,11 @@ var MODULO_MERIDIANI = { // extend SET
 	startSmPress: function( el ){
 		SET.smPressed = el;
 		SET.smActive = !el.classList.contains("elencoSel");
-		window.addEventListener("touchmove", SET.moveSmPress,true);
+		window.addEventListener("touchmove", SET.moveSmPress,{ passive: false });
 		window.addEventListener("touchend", SET.endSmPress,true);
 	},
-	moveSmPress: function(){
+	moveSmPress: function( event ){
+		event.preventDefault();
 		let mX = event.targetTouches[0].pageX,
 			mY = event.targetTouches[0].pageY,
 			els = document.getElementById("meridianiSmart_cont").getElementsByTagName("div");
@@ -198,7 +199,7 @@ var MODULO_MERIDIANI = { // extend SET
 		}
 	},
 	endSmPress: function(){
-		window.removeEventListener("touchmove", SET.moveSmPress,true);
+		window.removeEventListener("touchmove", SET.moveSmPress,{ passive: false });
 		window.removeEventListener("touchend", SET.endSmPress,true);
 		SET.smPressed=false;
 		SET.smActive=false;
@@ -255,15 +256,19 @@ var MODULO_MERIDIANI = { // extend SET
 		}
 	},
 	verFreeMeridiani: function( m ){
-		return !(SET.MERIDIANI_free.indexOf(m)==-1 && (DB.login.data.auths.indexOf(globals.set.cartella)==-1 || !LOGIN.logedin()));
+		if(globals.allowFreeVer)return true; // bypassato per versione free
+		return !(SET.MERIDIANI_free.indexOf(m)==-1 && (SET.blur || !LOGIN.logedin()));
 	},
 	verFreePunti: function( siglaPunto ){
-		return !(SET.PUNTI_free.indexOf(siglaPunto)==-1 && (DB.login.data.auths.indexOf(globals.set.cartella)==-1 || !LOGIN.logedin()));
+		if(globals.allowFreeVer)return true; // bypassato per versione free
+		return !(SET.PUNTI_free.indexOf(siglaPunto)==-1 && (SET.blur || !LOGIN.logedin()));
 	},
 	verAttModule: function(){
+		if(globals.allowFreeVer)return true; // bypassato per versione free
 		return DB.login.data.modls.indexOf(localStorage.sistemaMeridiani==''?'CIN':localStorage.sistemaMeridiani)>-1;
 	},
 	verLightVersion: function(){
+		if(globals.allowFreeVer)return true; // bypassato per versione free
 		let ret = DB.login.data.modls.indexOf("light")>-1;
 		if(	DB.login.data.modls.indexOf("CIN")>-1 ||
 			DB.login.data.modls.indexOf("MAS")>-1/*  ||

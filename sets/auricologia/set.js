@@ -64,15 +64,22 @@ var SET = {
 	idTeoLM: '0_2',
 	idTeoCategorie: 2,
 	idTeoTests: 3,
+
+	blur: DB.login.data.auths.indexOf(globals.set.cartella)==-1,
+	old_owner: DB.login.data.old_auths.indexOf(globals.set.cartella)>-1,
 	
 	// FUNZIONI
 	_init: function(){
+
+		if(SET.blur)PURCHASES.init();
+
 		// controllo che sia il sistema giusto
+		if(!localStorage.sistemaAuriculo)localStorage.sistemaAuriculo = '';
 		if(localStorage.sistemaAuriculo!=''){
 			caricaSet("auricologia"+localStorage.sistemaAuriculo);
 			return;
 		}
-		if(DB.login.data.auths.indexOf("auricologia")==-1){
+		if(SET.blur && !globals.allowFreeVer){
 			localStorage.sistemaAuriculo = '_classica';
 			caricaSet("auricologia"+localStorage.sistemaAuriculo);
 			return;
@@ -399,7 +406,8 @@ var SET = {
 		
 
 		// scelta sistema
-		//if(DB.login.data.auths.indexOf("auricologia_classica")!=-1){
+		//if(SET.blur){
+		if(getVerNumber()>=10905){
 			contPulsanti += '<p class="sistema_p"><span class="selectCambioSistema"><i>'+htmlEntities(TXT("Sistema"))+':</i><select id="sceltaSistemaElenco1" class="sceltaSistemaElenco" onChange="SET.cambiaSistema(this.value);">'+
 			'  <option value=""';
 			if(localStorage.sistemaAuriculo == '' || !__(localStorage.sistemaAuriculo) )contPulsanti += ' SELECTED';
@@ -408,7 +416,7 @@ var SET = {
 			if(localStorage.sistemaAuriculo == '_classica')contPulsanti += ' SELECTED';
 			contPulsanti += 	'>'+htmlEntities(TXT("AuricologiaClassica"))+'</option>' +
 					'</select></span></p>';
-		//}
+		}
 				
 
 		contPulsanti += '<span id="noLicenze" onClick="MENU.visLicenze();">'+TXT("noLicenze")+'</span>';
@@ -1397,6 +1405,17 @@ var SET = {
 		document.getElementById("contImpset").innerHTML = HTML_imp;
 	},
 	cambiaMappa: function( name, loader ){
+		// verifico le autorizzazioni
+		if(name!='Pelle' && name!='BN' && SET.blur){
+			ALERT(TXT("MsgContSoloPay"),true,true);
+			let els = document.getElementById("sceltaMappaElenco").getElementsByTagName("option")
+			for(let e=0;e<els.length;e++){
+				if(els[e].value == localStorage.imgMappa)document.getElementById("sceltaMappaElenco").selectedIndex = e;
+			}
+			return;
+		}
+		// --------------------------
+		
 		if(SET.maskAtt){
 			SET.MAT.setAlphaMap( SET.maskAtt, 'clic' );
 			SET.MAT.setAlphaMap( SET.maskAtt, 'out' );
@@ -1442,6 +1461,12 @@ var SET = {
 	
 	// LM
 	swLM: function(){ // mostra/nasconde i landmarks
+		// verifico le autorizzazioni
+		if(SET.blur){
+			ALERT(TXT("MsgContSoloPay"),true,true);
+			return;
+		}
+		// --------------------------
 		if(SET.lmVis)SET.nasLM();
 		else SET.visLM();
 	},
@@ -1453,7 +1478,7 @@ var SET = {
 		}*/
 		// --------------------------
 		// verifico le autorizzazioni
-		if(!DB.login.data.auths.indexOf("auricologia")==-1){
+		if(!SET.blur){
 			ALERT(TXT("MsgFunzioneSoloPay"));
 			return;
 		}
@@ -1492,13 +1517,16 @@ var SET = {
 		SET.lmVis = false;
 	},
 	verSistema: function(){
-		document.getElementById("noLicenze").classList.toggle("vis",LOGIN.logedin() && DB.login.data.auths.indexOf("auricologia")==-1);
+		document.getElementById("noLicenze").classList.toggle("vis",LOGIN.logedin() && SET.blur);
 		document.getElementById("demoVersion").classList.toggle("vis",!LOGIN.logedin());
 	},
 	
 	
 	// EVIDENZIA ZONE
 	eviZone: function( zona, act ){
+		// verifico le autorizzazioni
+		if(SET.blur)return;
+		// --------------------------
 		if(!touchable){
 			if(act == 'over' || act == 'clic'){
 				clearTimeout(SET.tmZone);
@@ -1515,7 +1543,7 @@ var SET = {
 	
 	cambiaSistema: function( sistema ){
 		if(localStorage.sistemaAuriculo == sistema)return;
-		if(DB.login.data.auths.indexOf("auricologia"+sistema)==-1){
+		if(DB.login.data.auths.indexOf("auricologia"+sistema)==-1 && !globals.allowFreeVer){
 			let select = document.getElementById("sceltaSistemaElenco1"),
 				els = select.options;
 			for(let e in els){
@@ -1587,24 +1615,26 @@ var SET = {
 		}
 	},
 	filtraSet: function( togliLoader=false ){
-		let vis = true;
-		if(	DB.login.data.auths.indexOf(globals.set.cartella)==-1 || !LOGIN.logedin())vis = false;
-		for(let c in SETS.children[0].children){
-			let gruppo = SETS.children[0].children[c].children;
-			for(let g in gruppo){
-				let name = gruppo[g].name.replace("_","");
-				// verifico le autorizzazioni
-				if(	!SET.verFreePunti(name.substr(2,3))){
-					gruppo[g].visible = vis;
-					gruppo[g].userData.locked = true;
-					if(document.getElementById("ts_"+name.substr(2,3)))document.getElementById("ts_"+name.substr(2,3)).classList.toggle("lockedItem",!vis);
-				}else{
-					gruppo[g].userData.locked = false;
+		if(!globals.allowFreeVer){
+			let vis = true;
+			if(	SET.blur || !LOGIN.logedin())vis = false;
+			for(let c in SETS.children[0].children){
+				let gruppo = SETS.children[0].children[c].children;
+				for(let g in gruppo){
+					let name = gruppo[g].name.replace("_","");
+					// verifico le autorizzazioni
+					if(	!SET.verFreePunti(name.substr(2,3))){
+						gruppo[g].visible = vis;
+						gruppo[g].userData.locked = true;
+						if(document.getElementById("ts_"+name.substr(2,3)))document.getElementById("ts_"+name.substr(2,3)).classList.toggle("lockedItem",!vis);
+					}else{
+						gruppo[g].userData.locked = false;
+					}
 				}
 			}
-		}
-		if(togliLoader){
-			nasLoader();
+			if(togliLoader){
+				nasLoader();
+			}
 		}
 	}
 }

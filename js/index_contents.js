@@ -358,6 +358,7 @@ var sets = {
 		txtLoading: stripslashes(TXT("CaricamentoMappe")),
 		auth: false,
 		locked: false,
+		minVer: "1.9.5",
 		opening: true,
 		dataPubblicazione: '',
 		siglaProc: 'AUZ',

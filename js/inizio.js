@@ -37,6 +37,7 @@ globals = {
 	modello: null,
 	set: null,
 	pezziSelezionati: [],
+	allowFreeVer: true,
 	initModello: function(){
 		globals.modello = {
 			cartella: '',

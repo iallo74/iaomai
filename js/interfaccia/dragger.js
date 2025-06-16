@@ -41,7 +41,7 @@ var DRAGGER = {
 			window.addEventListener("mousemove", DRAGGER.moveDrag ,false);
 		}else{
 			window.addEventListener("touchend", DRAGGER.stopDrag ,false);
-			window.addEventListener("touchmove", DRAGGER.moveDrag ,false);
+			window.addEventListener("touchmove", DRAGGER.moveDrag ,{ passive: false });
 		}
 		DRAGGER.diffIni = {
 			x: DRAGGER.posIni.x-(tCoord(el)+(el.scrollWidth*.5)),

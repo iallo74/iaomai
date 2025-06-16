@@ -57,7 +57,7 @@ var MODULO_PATOLOGIE = { // extend SET
 					
 					if(DB.set.patologie[p].apparato == a){
 						// verifico le autorizzazioni
-						let addLock =	(!SET.verFreePatologia(p*1)) ? ' lockedItem' : '';
+						let addLock =	(!SET.verFreePatologia(p*1) && !globals.allowFreeVer) ? ' lockedItem' : '';
 						// --------------------------
 						
 						let addClass = '';
@@ -79,7 +79,7 @@ var MODULO_PATOLOGIE = { // extend SET
 			for(let p in DB.set.patologie){
 				
 				// verifico le autorizzazioni
-				let addLock =	(!SET.verFreePatologia(p*1)) ? ' lockedItem' : '';
+				let addLock =	(!SET.verFreePatologia(p*1) && !globals.allowFreeVer) ? ' lockedItem' : '';
 				// --------------------------
 							
 				contPatologie +=	'<div id="btn_patologia_'+p+'"' +
@@ -293,25 +293,29 @@ var MODULO_PATOLOGIE = { // extend SET
 			document.getElementById("scheda").classList.contains("visSch") &&
 			SCHEDA.verificaSchedaRet() )ritorno = "document.getElementById('scheda').classList.remove('scheda_patologia')";
 		
-		let btnAdd = 	'',
-			addClose = '';
+		let btnAdd = 	'';
 			
 		SCHEDA.caricaScheda(	titolo,
 								html,
 								'SET.chiudiPatologia();' +
 								'SET.annullaEvidenziaPunto();' +
-								'SET.hideGroupLines();'+addClose,
+								'SET.hideGroupLines();',
 								'scheda_patologia',
 								ritorno,
 								true,
 								btn,
 								btnAdd,
 								globals.set.cartella+'_patologie_'+n );
-		
-		SCHEDA.gestVisAnatomia(true);
-		SET.eviPointsPat(document.getElementById("schedaTerapeutica"));
-		document.getElementById("sez_cont_descrizione").classList.toggle("sezioneChiusa",!op_descrizione);
-		document.getElementById("sez_cont_protocollo").classList.toggle("sezioneChiusa",!op_protocollo)
+		if(!SET.blur){
+			SCHEDA.gestVisAnatomia(true);
+			SET.eviPointsPat(document.getElementById("schedaTerapeutica"));
+			document.getElementById("sez_cont_descrizione").classList.toggle("sezioneChiusa",!op_descrizione);
+			document.getElementById("sez_cont_protocollo").classList.toggle("sezioneChiusa",!op_protocollo);
+		}
+		if(SET.blur){
+			SCHEDA.addSblocca(	[],
+								['h1'] );
+		}
 	},
 	getPatFromScheda: function( scheda ){
 		for(let p in DB.set.patologie){
@@ -346,7 +350,7 @@ var MODULO_PATOLOGIE = { // extend SET
 		if(__(localStorage.listPatType)!='category')localStorage.listPatType = 'category';
 		else localStorage.listPatType = 'list';
 		SET.caricaPatologie();
-		if(SET.patOp){
+		if(SET.patOp && SCHEDA.btnSel){
 			SCHEDA.btnSel = document.getElementById("btn_patologia_"+SET.patOp);//.classList.add("elencoSel");
 			SCHEDA.btnSel.classList.add("elencoSel");
 		}
@@ -360,6 +364,7 @@ var MODULO_PATOLOGIE = { // extend SET
 		SCHEDA.individuaElemento( "btn_patologia_"+p, "listaPatologie" );
 	},
 	verFreePatologia: function( p ){
+		if(globals.allowFreeVer)return true; // bypassato per versione free
 		return !(SET.PATOLOGIE_free.indexOf(parseInt(p))==-1 && (DB.login.data.auths.indexOf(globals.set.cartella)==-1 || !LOGIN.logedin()));
 	}
 }

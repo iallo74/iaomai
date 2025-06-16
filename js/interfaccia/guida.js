@@ -90,7 +90,8 @@ var GUIDA = {
 						cartella != 'clients_full'){
 						let linkSet = 'caricaSet(\''+cartella+'\',this,\''+sets[cartella].modelli[0]+'\');MENU.visSets();';
 						if(cartella == globals.set.cartella)linkSet = 'SCHEDA.apriElenco(\'set\')';
-						if(!sets[cartella].locked){
+						if(	!sets[cartella].locked &&
+							getVerNumber()>=getVerNumber(__(sets[cartella].minVer))){
 							HTML_elenco += 	'<div onClick="'+linkSet+'" id="btnGuida_'+cartella+'">' +
 											'<div><img src="sets/'+cartella+'/img/logoNero.png"></div>' +
 											htmlEntities(sets[cartella].nome) +

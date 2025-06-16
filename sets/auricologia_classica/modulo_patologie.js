@@ -341,7 +341,7 @@ var MODULO_PATOLOGIE = { // extend SET
 		if(__(localStorage.listPatType)!='category')localStorage.listPatType = 'category';
 		else localStorage.listPatType = 'list';
 		SET.caricaPatologie();
-		if(SET.patOp){
+		if(SET.patOp && SCHEDA.btnSel){
 			SCHEDA.btnSel = document.getElementById("btn_patologia_"+SET.patOp);//.classList.add("elencoSel");
 			SCHEDA.btnSel.classList.add("elencoSel");
 		}
@@ -355,6 +355,6 @@ var MODULO_PATOLOGIE = { // extend SET
 		SCHEDA.individuaElemento( "btn_patologia_"+p, "listaPatologie" );
 	},
 	verFreePatologia: function( p ){
-		return !(SET.PATOLOGIE_free.indexOf(parseInt(p))==-1 && (DB.login.data.auths.indexOf(globals.set.cartella)==-1 || !LOGIN.logedin()));
+		return !(SET.PATOLOGIE_free.indexOf(parseInt(p))==-1 && (SET.blur || !LOGIN.logedin()));
 	}
 }

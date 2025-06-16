@@ -96,7 +96,7 @@ var MODULO_PATOLOGIE = { // extend SET
 				if(DB.set.patologie[p].categoria == a || __(localStorage.listPatType)!='category'){
 		
 					// verifico le autorizzazioni
-					let addLock =	(!SET.verFreePatologia(DB.set.patologie[p].siglaPatologia)) ? ' lockedItem' : '';
+					let addLock =	(!SET.verFreePatologia(DB.set.patologie[p].siglaPatologia) && !globals.allowFreeVer) ? ' lockedItem' : '';
 					// --------------------------
 					vuota = false;		
 					contCartella +=	'<div id="btn_patologia_'+p+'"' +
@@ -156,11 +156,16 @@ var MODULO_PATOLOGIE = { // extend SET
 								btn,
 								btnAdd,
 								globals.set.cartella+'_patologie_'+siglaPatologia );
-		
-		SCHEDA.gestVisAnatomia(true);
-		SET.convSigleScheda();
-		SET.evidenziaPunto();
-		SET.evidenziaMeridiani(html);
+		if(!SET.blur){
+			SCHEDA.gestVisAnatomia(true);
+			SET.convSigleScheda();
+			SET.evidenziaPunto();
+			SET.evidenziaMeridiani(html);
+		}
+		if(SET.blur){
+			SCHEDA.addSblocca(	[document.getElementsByClassName("ideogrammaPuntoChar")[0]],
+								['h1'] );
+		}
 	},
 	chiudiPatologia: function(){
 		SET.patOp = -1;
@@ -182,7 +187,7 @@ var MODULO_PATOLOGIE = { // extend SET
 		if(__(localStorage.listPatType)!='category')localStorage.listPatType = 'category';
 		else localStorage.listPatType = 'list';
 		SET.caricaPatologie();
-		if(SET.patOp){
+		if(SET.patOp && SCHEDA.btnSel){
 			SCHEDA.btnSel = document.getElementById("btn_patologia_"+SET.patOp);//.classList.add("elencoSel");
 			SCHEDA.btnSel.classList.add("elencoSel");
 		}
@@ -197,12 +202,13 @@ var MODULO_PATOLOGIE = { // extend SET
 		SCHEDA.individuaElemento( "btn_patologia_"+p, "listaPatologie" );
 	},
 	verFreePatologia: function( p ){
+		if(globals.allowFreeVer)return true;
 		let pass = true;
 		for(t in DB.set.patologie){
 			if(DB.set.patologie[t].siglaPatologia == p){
 				pass = SET.PATOLOGIE_free.indexOf(DB.set.patologie[t].siglaPatologia)==-1;
 			}
 		}
-		return !(pass && (DB.login.data.auths.indexOf(globals.set.cartella)==-1 || !LOGIN.logedin()));
+		return !(pass && (SET.blur || !LOGIN.logedin()));
 	}
 }

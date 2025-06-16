@@ -215,7 +215,7 @@ var PH = {
 			document.addEventListener("mousemove", PH.moveResizeCrop, false);
 		}else{
 			document.addEventListener("touchend", PH.fineResizeCrop, false);
-			document.addEventListener("touchmove", PH.moveResizeCrop, false);
+			document.addEventListener("touchmove", PH.moveResizeCrop, { passive: false });
 		}
 	},
 	moveResizeCrop: function(event){ // intercetta il ridimensionamento del ritaglio
@@ -277,10 +277,10 @@ var PH = {
 		PH.orDim = document.getElementById("img_resizer").scrollWidth;
 		if(mouseDetect){
 			document.addEventListener("mouseup", PH.fineMoveCrop, false);
-			document.addEventListener("mousemove", PH.moveMoveCrop, false);
+			document.addEventListener("mousemove", PH.moveMoveCrop, { passive: false });
 		}else{
 			document.addEventListener("touchend", PH.fineMoveCrop, false);
-			document.addEventListener("touchmove", PH.moveMoveCrop, false);
+			document.addEventListener("touchmove", PH.moveMoveCrop, { passive: false });
 		}
 	},
 	moveMoveCrop: function( event ){ // intercetta lo spostamento del ritaglio
@@ -945,7 +945,7 @@ var PH = {
 	},
 	car_gallery: function(){ // carica la scheda dei files del menu ARCHIVI
 		// verifico le autorizzazioni
-		if(!DB.login.data.auths.length){
+		if(!DB.login.data.auths.length && !globals.allowFreeVer){
 			setTimeout(function(){
 				ALERT(TXT("MsgFunzioneSoloPay"));
 			},100);

@@ -385,7 +385,7 @@ var MODULO_PROCEDURE = { // extend SET
 		}});
 	},
 	swCond: function( Q_idProc=-1 ){ // setta sì/no le condizioni della community
-		if((DB.login.data.auths.indexOf(globals.set.cartella)==-1 || !LOGIN.logedin())){
+		if((SET.blur || !LOGIN.logedin())){
 			ALERT(TXT("MsgFunzioneSoloPay"));
 			return false;
 		}

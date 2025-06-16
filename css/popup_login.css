@@ -100,7 +100,7 @@ body:not(.smart) #login_benvenuto{
 
 #btnRegistrazione{
 	text-align:center;
-	display:none;
+	/*display:none;*/
 }
 
 
@@ -115,26 +115,16 @@ body:not(.smart) #login_benvenuto{
 #btnRegistrazione div{
 	display:inline-block;
 	clear: both;
-	border-radius: 5px;
+	border-radius: 3px;
 	border: none;
-	height: 40px;
-	line-height: 38px;
+	height: 44px;
+	line-height: 44px;
 	padding: 0 20px;
 	color: #FFF;
-	box-shadow: 0 0 3px #000;
+	font-size:var(--font-16);
 	cursor: pointer;
-    background: #c18b17;
-    background: -moz-linear-gradient(top, #aa6c1d 0%,#c18b17 100%);
-    background: -webkit-linear-gradient(top, #aa6c1d 0%,#c18b17 100%);
-    background: linear-gradient(to bottom, #aa6c1d 0%,#c18b17 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#aa6c1d', endColorstr='#c18b17',GradientType=0 );
-}
-#btnRegistrazione div:hover{
-    background: #dea935 !important;
-    background: -moz-linear-gradient(top, #c3802a 0%,#dea935 100%) !important;
-    background: -webkit-linear-gradient(top, #c3802a 0%,#dea935 100%) !important;
-    background: linear-gradient(to bottom, #c3802a 0%,#dea935 100%) !important;
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c3802a', endColorstr='#dea935',GradientType=0 ) !important;
+	box-shadow: 0px 0px 3px rgba(0,0,0,0.5);
+	font-size:var(--font-16);
 }
 
 #URS{
@@ -149,14 +139,12 @@ body:not(.smart) #login_benvenuto{
 	line-height:40px;
 	cursor:pointer;
 	background: #0a3d96;
-    background: -moz-linear-gradient(top, #1d4eaa 0%, #0a3d96 100%);
-    background: -webkit-linear-gradient(top, #1d4eaa 0%,#0a3d96 100%);
     background: linear-gradient(to bottom, #1d4eaa 0%,#0a3d96 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1d4eaa', endColorstr='#0a3d96',GradientType=0 );
     color: #FFF;
 	margin-top:10px;
-    box-shadow: 0px 0px 3px rgb(0 0 0 / 50%);
+    box-shadow: 0px 0px 3px rgba(0,0,0,0.5);
 	-webkit-appearance: none;
+	font-size: var(--font-16);
 }
 #usrChange{
     border-radius: 7px;
@@ -217,10 +205,7 @@ body:not(.smart) #login_benvenuto{
 }
 #loginFrom input[type='submit']:hover{
 	background: #062865;
-    background: -moz-linear-gradient(top, #144092 0%, #062865 100%);
-    background: -webkit-linear-gradient(top, #144092 0%,#062865 100%);
     background: linear-gradient(to bottom, #144092 0%,#062865 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#144092', endColorstr='#062865',GradientType=0 );
 }
 #USRlabel{
 	display: none;
@@ -274,4 +259,7 @@ body:not(.smart) #login_benvenuto{
 .app_version.bug_font.smart.android #btnRecupero,
 .app_version.bug_font.smart.android #btnRichiediConfcode{
 	font-size: var(--font-13-94) !important;
+}
+#paeseRegistrazione{
+	margin-bottom:4px;
 }

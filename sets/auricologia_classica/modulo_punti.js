@@ -416,6 +416,6 @@ var MODULO_PUNTI = { // extend SET
 		document.getElementById("filtriSmart_cont").classList.toggle("visSch");
 	},
 	verFreePunti: function( siglaPunto ){
-		return !(SET.PUNTI_free.indexOf(siglaPunto)==-1 && (DB.login.data.auths.indexOf(globals.set.cartella)==-1 || !LOGIN.logedin()));
+		return !(SET.PUNTI_free.indexOf(siglaPunto)==-1 && (SET.blur || !LOGIN.logedin()));
 	}
 }

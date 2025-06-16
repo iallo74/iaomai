@@ -421,10 +421,7 @@ body:not(.smart) #scheda_cont{
 	padding-right:20px;
     box-shadow: 0px 0px 3px rgba(0,0,0,0.5);
     background: #1d4eaa;
-    background: -moz-linear-gradient(top, #1d4eaa 0%, #0a3d96 100%);
-    background: -webkit-linear-gradient(top, #1d4eaa 0%,#0a3d96 100%);
     background: linear-gradient(to bottom, #1d4eaa 0%,#0a3d96 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1d4eaa', endColorstr='#0a3d96',GradientType=0 );
 }
 .app_version.bug_font.smart.android #scheda_titolo{
 	line-height:36.64px !important;
@@ -713,6 +710,8 @@ body:not(.bodyStyled2) #scheda_testo2{
     font-weight: normal;
     margin-top: 0px;
 	line-height: normal !important;
+	position: relative;
+    z-index: 7;
 }
 @media only print{
 	h1{
@@ -1078,4 +1077,84 @@ body.smart .translate_note span.translate_close{
 .lang_ar .pNUL {
     margin-right: 0px;
     margin-left: 5px;
+}
+#box_sblocca{
+    position: absolute;
+    top: 180px;
+    width: calc(100% - 70px);
+    text-align: center;
+}
+body.smart #box_sblocca{
+	width: calc(100% - 40px) !important;
+}
+#btn_sblocca{
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    background: #ffae00;
+    background: linear-gradient(to bottom, #ffae00 0%, #c58701 100%);
+    height: 55px;
+    line-height: 55px !important;
+    padding: 0 25px 0 25px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5), 0 0 4px rgba(0, 0, 0, 0.8);
+    font-weight: bold;
+    z-index: 21;
+    overflow-x: hidden;
+    white-space: nowrap;
+    font-size: 16px;
+	text-shadow: -1px -1px 1px rgba(0, 0, 0, 0.2), 1px 1px 1px rgba(255, 255, 255, 0.4);
+    color: rgba(0, 0, 0, 0.7);
+}
+#btn_sblocca br{
+	display:none;
+}
+#descr_sblocca{
+	width: 247px;
+    display: inline-block;
+    position: relative;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: #FFF;
+    padding: 15px 15px 15px 50px;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    font-size: 15px;
+    z-index: 20;
+    background-image: url(../img/lockB.png);
+    background-repeat: no-repeat;
+    background-position: 10px center;
+}
+#descr_sblocca *{
+	color:#FFF;
+	font-size:17px;
+}
+.blur_sfum{
+	position: relative;
+    z-index: 5;
+    width: calc(100% + 60px);
+    height: 200px;
+    margin-top: -193px;
+    margin-left: -30px;
+    background-image: url(../img/blur_sfum.png);
+    background-size: 100% 100%;
+	filter: blur(10px);
+}
+@media (max-width: 400px){
+	#btn_sblocca{
+    	padding: 15px !important;
+        max-width: calc(100%);
+        line-height: normal !important;
+        height: auto !important;
+        min-width: 280px;
+	}
+	#descr_sblocca{
+		padding: 15px 35px !important;
+		background-position: left 4px !important;
+	}
+	#btn_sblocca br{
+		display:inline-block !important;
+	}
+	.blur_sfum {
+		width: calc(100% + 50px) !important;
+	}
 }

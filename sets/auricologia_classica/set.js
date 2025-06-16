@@ -37,15 +37,27 @@ var SET = {
 	
 	idTeoAnatomia: 0,
 	idTeoCategorie: 2,
+
+	blur: DB.login.data.auths.indexOf(globals.set.cartella)==-1,
+	old_owner: DB.login.data.old_auths.indexOf(globals.set.cartella)>-1,
 	
 	// FUNZIONI
 	_init: function(){
+
+		if(SET.blur)PURCHASES.init();
+		
 		// controllo che sia il sistema giusto
+		if(!localStorage.sistemaAuriculo)localStorage.sistemaAuriculo = '';
+		if(getVerNumber()<10905){ // downgrade
+			localStorage.sistemaAuriculo = '';
+			caricaSet("auricologia");
+			return;
+		}
 		if(localStorage.sistemaAuriculo!='_classica'){
 			caricaSet("auricologia"+localStorage.sistemaAuriculo);
 			return;
 		}
-		if(DB.login.data.auths.indexOf("auricologia_classica")==-1){
+		if(SET.blur && !globals.allowFreeVer){
 			localStorage.sistemaAuriculo = '';
 			caricaSet("auricologia"+localStorage.sistemaAuriculo);
 			return;
@@ -267,7 +279,7 @@ var SET = {
 		
 
 		// scelta sistema
-		//if(DB.login.data.auths.indexOf("auricologia")!=-1){
+		//if(SET.blur){
 			contPulsanti += '<p class="sistema_p"><span class="selectCambioSistema"><i>'+htmlEntities(TXT("Sistema"))+':</i><select id="sceltaSistemaElenco1" class="sceltaSistemaElenco" onChange="SET.cambiaSistema(this.value);">'+
 			'  <option value=""';
 			if(localStorage.sistemaAuriculo == '' || !__(localStorage.sistemaAuriculo) )contPulsanti += ' SELECTED';
@@ -1252,7 +1264,7 @@ var SET = {
 	},
 	
 	verSistema: function(){
-		document.getElementById("noLicenze").classList.toggle("vis",LOGIN.logedin() && DB.login.data.auths.indexOf("auricologia_classica")==-1);
+		document.getElementById("noLicenze").classList.toggle("vis",LOGIN.logedin() && SET.blur);
 		document.getElementById("demoVersion").classList.toggle("vis",!LOGIN.logedin());
 	},
 	
@@ -1275,7 +1287,7 @@ var SET = {
 
 	cambiaSistema: function( sistema ){
 		if(localStorage.sistemaAuriculo == sistema)return;
-		if(DB.login.data.auths.indexOf("auricologia"+sistema)==-1){
+		if(DB.login.data.auths.indexOf("auricologia"+sistema)==-1 && !globals.allowFreeVer){
 			let select = document.getElementById("sceltaSistemaElenco1"),
 				els = select.options;
 			for(let e in els){
@@ -1343,7 +1355,7 @@ var SET = {
 	},
 	filtraSet: function( togliLoader=false ){
 		let vis = true;
-		if(	DB.login.data.auths.indexOf(globals.set.cartella)==-1 || !LOGIN.logedin())vis = false;
+		if(	SET.blur || !LOGIN.logedin())vis = false;
 		for(let c in SETS.children[0].children){
 			let gruppo = SETS.children[0].children[c].children;
 			for(let g in gruppo){

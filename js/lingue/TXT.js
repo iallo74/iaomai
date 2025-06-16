@@ -3770,6 +3770,30 @@ DB.TXT = {
             por: "Com sua licença você não pode usar este menu<br><u>Clique para mais info</u>",
             deu: "Mit Ihrer Lizenz können Sie dieses Menü nicht verwenden<br><u>Klicken Sie hier für mehr Info</u>"
         },
+        SbloccaContenuto: {
+            ita: "ATTIVA IL PRIMO MESE <br>A SOLI [value]",
+            eng: "ACTIVATE THE FIRST MONTH <br>FOR ONLY [value]",
+            esp: "ACTIVA EL PRIMER MES <br>POR SOLO [value]",
+            fra: "ACTIVEZ LE PREMIER MOIS <br>POUR SEULEMENT [value]",
+            por: "ATIVE O PRIMEIRO MÊS <br>POR APENAS [value]",
+            deu: "AKTIVIEREN SIE DEN ERSTEN MONAT <br>FÜR NUR [value]"
+        },
+        RitornaPro: {
+            ita: "RITORNA ALLA VERSIONE PRO",
+            eng: "RETURN TO THE PRO VERSION",
+            esp: "VOLVER A LA VERSIÓN PRO",
+            fra: "REVENIR À LA VERSION PRO",
+            por: "VOLTAR PARA A VERSÃO PRO",
+            deu: "ZURÜCK ZUR PRO-VERSION"
+        },
+        SbloccaContenutoDescr: {
+            ita: "Questo contenuto è visibile solamente per gli utenti PRO",
+            eng: "This content is only visible to PRO users",
+            esp: "Este contenido solo está disponible para usuarios PRO",
+            fra: "Ce contenu est uniquement visible par les utilisateurs PRO",
+            por: "Este conteúdo está disponível apenas para usuários PRO",
+            deu: "Dieser Inhalt ist nur für PRO-Nutzer sichtbar"
+        },
         PuntiAnamnesi: {
             ita: "Valutazione sui punti",
 			eng: "Evaluation on points",
@@ -5524,20 +5548,20 @@ DB.TXT = {
             deu: "Probieren Sie es kostenlos aus"
         },
         TrattamentoDati: {
-            ita: "Acconsento al trattamento dei dati",
-            eng: "I agree to data treatment",
-            esp: "Acepto el tratamiento de datos",
-            fra: "J'accepte le traitement des données",
-            por: "Concordo com o tratamento de dados",
-            deu: "Ich stimme der Datenverarbeitung zu"
+            ita: "Inviando questo modulo acconsento al",
+            eng: "By submitting this form, I consent to the",
+            esp: "Al enviar este formulario, consiento el",
+            fra: "En soumettant ce formulaire, je consens au",
+            por: "Ao enviar este formulário, eu consinto o",
+            deu: "Durch das Absenden dieses Formulars stimme ich der"
         },
         linkPrivacy: {
-            ita: "visualizza",
-            eng: "show",
-            esp: "mostrar",
-            fra: "afficher",
-            por: "mostrar",
-            deu: "anzeigen"
+            ita: "trattamento dei dati",
+            eng: "processing of data",
+            esp: "tratamiento de datos",
+            fra: "traitement des données",
+            por: "processamento de dados",
+            deu: "Datenverarbeitung zu"
         },
         TestoRegistrazione: {
             ita: "Effettua la registrazione per usufruire di tutte le funzionalità della versione gratuita.",
@@ -7211,6 +7235,14 @@ DB.TXT = {
             fra: "Paquets de séances",
             por: "Pacotes de sessões",
             deu: "Sitzungspakete"
+        },
+        Lic_Tutti: {
+            ita: "Tutti",
+            eng: "All",
+            esp: "Todos",
+            fra: "Tous",
+            por: "Todos",
+            deu: "Alle"
         },
 
         // RATING

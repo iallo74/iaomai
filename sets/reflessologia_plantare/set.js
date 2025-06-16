@@ -749,13 +749,13 @@ var SET = {
 		let els = document.getElementById("filtriSmart_cont").getElementsByTagName("i");
 		for(let e=0;e<els.length;e++){
 			let app = parseInt(els[e].id.replace("f_app",""));
-			let dis = SET.APPARATI_free.indexOf(app)==-1 && (DB.login.data.auths.indexOf(globals.set.cartella)==-1 || !LOGIN.logedin());
+			let dis = SET.APPARATI_free.indexOf(app)==-1 && (SET.blur || !LOGIN.logedin());
 			els[e].classList.toggle("disabled", dis );
 			document.getElementById("f_"+app).classList.toggle("disabled", dis );
 		}
 	},
 	verSistema: function(){
-		document.getElementById("noLicenze").classList.toggle("vis",LOGIN.logedin() && DB.login.data.auths.indexOf("reflessologia_plantare")==-1);
+		document.getElementById("noLicenze").classList.toggle("vis",LOGIN.logedin() && SET.blur);
 		document.getElementById("demoVersion").classList.toggle("vis",!LOGIN.logedin());
 	},
 	

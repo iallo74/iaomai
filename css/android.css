@@ -22,9 +22,10 @@
 .android .popup input[type='text'],
 .android .popup input[type='email'],
 .android .popup input[type='password'],
+.android .popup input[type='date'],
 .android .popup select{
-	height:32px !important;
-	line-height:32px !important;
+	height:45px !important;
+	line-height:45px !important;
 	font-size: var(--font-17-6) !important;
 }
 .android .popup#login input[type='text'],

@@ -432,7 +432,7 @@
             	<div id="contLogin" class="popup_cont">
                 	<form name="loginFrom" id="loginFrom" method="post" onSubmit="return LOGIN.getLogin();"><div><input type="text" name="USR" id="USR"  placeholder="Username" class="okPlaceHolder" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" onFocus="LOGIN.focRic=true;" onBlur="LOGIN.focRic=false;"><div id="USRlabel"><span></span><div id="usrChange" onClick="LOGIN.annullaUtente();">{{TXT_Disconnetti}}</div></div></div><div><input type="password" name="PWD" id="PWD" placeholder="Password" class="okPlaceHolder" autocomplete="off"><span id="visPwd" onClick="LOGIN.swVisPwd();"></span></div><div id="loginStayConnected"><label for="stayConnected"><input type="checkbox" id="stayConnected" name="stayConnected">{{TXT_StaiConnesso}}</label></div><div id="loginButCont"><input type="submit" name="loginBut" id="loginBut" value="{{TXT_Accedi}}" /><p><!-- da popolare //--></p></div></form>
     <div id="btnRecupero" onClick="MENU.visRecupero();">{{TXT_PWDdimenticata}} <b>&gt;</b></div>
-    <div id="btnRegistrazione"><span></span><div id="btn_registrazione" onClick="MENU.visRegistrazione();">{{TXT_ProvalaGratuitamente}}</div></div>
+    <div id="btnRegistrazione"><span></span><div id="btn_registrazione" onClick="MENU.visRegistrazione();">{{TXT_Registrati}}</div></div>
     <div id="lingueLogin">
         <select id="lingueLoginSelect" onChange="cambiaLingua(this.value);"> </select>
     </div>
@@ -533,13 +533,13 @@
             	<div id="contRegistrazione" class="popup_cont">
                 	<form name="registrazioneForm" id="registrazioneForm" method="post" onSubmit="return false;">
                     	<div id="testoRegistrazione">
-                        	{{TXT_TestoRegistrazioneEspanso}}
                         </div>
                         <div>
                         	<input type="text"
                             	   name="Nome"
                             	   id="@|{{TXT_Nome}}|1|0"
                                    class="mezza"
+                                   style="margin-right:1px;"
                             	   placeholder="{{TXT_Nome}}"
                             	   autocomplete="off"
                             	   autocorrect="off"
@@ -644,7 +644,16 @@
                     	<div>
                         	<select name="StatoRegistrazione"
                             	    id="paeseRegistrazione"
-                            	    placeholder="Paese"></select>
+                            	    placeholder="{{TXT_Paese}}"></select>
+                        </div>
+                    	<div>
+                        	<select name="Sesso"
+                            	    id="SessoRegistrazione"
+                            	    placeholder="{{TXT_Sesso}}">
+                                <option>{{TXT_Sesso}}</option>
+                                <option value="m">{{TXT_Maschio}}</option>
+                                <option value="f">{{TXT_Femmina}}</option>
+                            </select>
                         </div>
                         <div id="datanascitaRegistrazione">
                             <span>Data di nascita</span><input type="date" name="DataNascita" id="DataNascita">
@@ -667,7 +676,7 @@
                     	<div>
                         	<input type="text"
                             	   name="Interessi"
-                            	   id="@|{{TXT_Interessi}}|1|0"
+                            	   id="Interessi"
                             	   placeholder="{{TXT_Interessi}}"
                             	   autocomplete="off"
                             	   autocorrect="off"
@@ -676,13 +685,7 @@
                         </div>
 
                         <div id="divTrattamentoDati">
-                        	<label for="privacy">
-                                <input type="checkbox"
-                                       name="privacy"
-                                       id="@|Privacy"
-                                       autocomplete="off">
-                                {{TXT_TrattamentoDati}} <a>{{TXT_linkPrivacy}}</a>
-                            </label>
+                            {{TXT_TrattamentoDati}} <a>{{TXT_linkPrivacy}}</a>
                         </div>
                         <div id="registrazioneButCont">
                         	<input type="hidden"
@@ -692,7 +695,7 @@
                         	<input type="submit"
                             	   name="registrazioneBut"
                             	   id="registrazioneBut"
-                            	   value="{{TXT_Registrati}}"
+                            	   value="{{TXT_InviaDati}}"
                             	   onClick="LOGIN.registrazione();"/>
                         </div>
                     </form>

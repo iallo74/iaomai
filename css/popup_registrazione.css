@@ -77,6 +77,12 @@ body:not(.smart) .inspwd:not(.confcode) #contRecupero{
 	text-align:left;
 	font-weight:bold;
 }
+.android #contRegistrazione .labelReg{
+	font-size: var(--font-16);
+	padding-top: 30px;
+    padding-bottom: 10px;
+}
+
 #contRegistrazione select{
 	display: inline-block;
 	height: 30px;
@@ -152,15 +158,13 @@ body:not(.smart) .inspwd:not(.confcode) #contRecupero{
 	line-height:40px;
 	cursor:pointer;
 	background: #0a3d96;
-    background: -moz-linear-gradient(top, #1d4eaa 0%, #0a3d96 100%);
-    background: -webkit-linear-gradient(top, #1d4eaa 0%,#0a3d96 100%);
     background: linear-gradient(to bottom, #1d4eaa 0%,#0a3d96 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1d4eaa', endColorstr='#0a3d96',GradientType=0 );
     color: #FFF;
 	margin-top:10px;
     box-shadow: 0px 0px 3px rgb(0 0 0 / 50%);
 	-webkit-appearance: none;
 }
+#registrazioneForm input[type='submit'],
 #recuperoBut,
 #confcodeForm input[type='submit'],
 .butrec{
@@ -204,25 +208,28 @@ body:not(.smart) .butrec{
 #confcodeForm input[type='submit']:hover,
 .butrec:hover{
 	background: #062865;
-    background: -moz-linear-gradient(top, #144092 0%, #062865 100%);
-    background: -webkit-linear-gradient(top, #144092 0%,#062865 100%);
     background: linear-gradient(to bottom, #144092 0%,#062865 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#144092', endColorstr='#062865',GradientType=0 );
 }
 #divTrattamentoDati *{
 	font-size: var(--font-12-1);
 }
 #divTrattamentoDati{
-	line-height:36px;
-	height:36px;
+	/*line-height:36px;
+	height:36px;*/
 	margin-top:5px;
 }
-#registrazioneButCont,
+.android #divTrattamentoDati,
+.android #divTrattamentoDati *,
+.android #datanascitaRegistrazione span{
+	font-size: var(--font-14-3);
+}
 #recuperoButCont,
 #confcodeButCont{
 	height: 70px;
 }
-
+#registrazioneButCont{
+	padding: 10px 0 30px 0;
+}
 #richiediConfcode{
 	margin-top:20px;
 }
@@ -251,6 +258,7 @@ body:not(.smart) .butrec{
 }
 #datanascitaRegistrazione{
 	margin-top: 8px;
+	text-align: left;
 }
 #datanascitaRegistrazione > span{
 	padding: 0px 10px;
@@ -263,9 +271,9 @@ body:not(.smart) .butrec{
 	appearance: none;
 	-webkit-appearance: none;
 	background-color:#FFF;
-	background-image:url(../img/ico_agendaM2.png);
+	/*background-image:url(../img/ico_agendaM2.png);
 	background-position:right center;
-	padding-right:10px;
+	padding-right:10px;*/
 	background-repeat:no-repeat;
 	display: inline-block;
 	vertical-align: middle;
@@ -275,5 +283,7 @@ body:not(.smart) .butrec{
 	line-height: 30px;
 	text-align: center;
 	box-shadow: rgba(0, 0, 0, 0.5) 0px 0px 3px;
+}
+.smart.android #datanascitaRegistrazione > input{
 	font-size: 17px;
 }

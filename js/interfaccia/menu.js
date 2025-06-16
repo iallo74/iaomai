@@ -713,8 +713,10 @@ var MENU = {
 	},
 	visSplashMaps: function( inizio=false ){
 		let els = document.getElementById("contSplashMaps").getElementsByTagName("div");
-		for(e=0;e<els.length;e++){
-			els[e].classList.toggle("nasMap", LOGIN.verMonoApp().indexOf(els[e].dataset.value)==-1 );
+		if(!globals.allowFreeVer && LOGIN.verMonoApp().length){
+			for(e=0;e<els.length;e++){
+				els[e].classList.toggle("nasMap", LOGIN.verMonoApp().indexOf(els[e].dataset.value)==-1 );
+			}
 		}
 		MENU.chiudiMenu("splashmaps");
 		visLoader("");

@@ -24,7 +24,7 @@ var MODULO_PUNTI = { // extend SET
 			n++;
 			
 			// verifico le autorizzazioni
-			let addLock =	(!SET.verFreePunti(siglaPunto)) ? ' lockedItem' : '';
+			let addLock =	(!SET.verFreePunti(siglaPunto) && !globals.allowFreeVer) ? ' lockedItem' : '';
 			// --------------------------
 			elencoPunti+='<p>'+this.scriviPunto(siglaPunto,true,true,'')+'</p>';
 		}
@@ -195,6 +195,7 @@ var MODULO_PUNTI = { // extend SET
 								   	 ' onClick="SET.eviZone(\''+legenda[l].name+'\',\'clic\');"' +
 								     ' onMouseOver="SET.eviZone(\''+legenda[l].name+'\',\'over\');"' +
 								     ' onMouseOut="SET.eviZone(\''+legenda[l].name+'\',\'out\');"';
+					if(SET.blur)elencoLegenda += ' style="cursor:default !important;"';
 				}
 				elencoLegenda += '><span class="legendaColor" style="background-color:#';
 				if(__(legenda[l].color,''))elencoLegenda += legenda[l].color;
@@ -271,6 +272,12 @@ var MODULO_PUNTI = { // extend SET
 		}
 	},
 	filtraGruppo: function( type='', val='', id ='', forza=false){ // filtra i punti pruppo
+		// verifico le autorizzazioni
+		if(SET.blur){
+			ALERT(TXT("MsgContSoloPay"),true,true);
+			return;
+		}
+		// --------------------------
 		if(document.getElementById("punti_ricerca").value.trim()!='' && id){
 			document.getElementById("punti_ricerca").value = '';
 			document.getElementById("punti_ricerca").classList.remove("filtro_attivo_bordo");
@@ -459,6 +466,7 @@ var MODULO_PUNTI = { // extend SET
 		}
 	},
 	verFreePunti: function( siglaPunto ){
-		return !(SET.PUNTI_free.indexOf(siglaPunto)==-1 && (DB.login.data.auths.indexOf(globals.set.cartella)==-1 || !LOGIN.logedin()));
+		if(globals.allowFreeVer)return true; // bypassato per versione free
+		return !(SET.PUNTI_free.indexOf(siglaPunto)==-1 && (SET.blur || !LOGIN.logedin()));
 	}
 }

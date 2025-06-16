@@ -1006,7 +1006,7 @@ var agenda = {
 			window.addEventListener("mousemove", agenda.moveDrag ,false);
 		}else{
 			window.addEventListener("touchend", agenda.stopDrag ,false);
-			window.addEventListener("touchmove", agenda.moveDrag ,false);
+			window.addEventListener("touchmove", agenda.moveDrag ,{ passive: false });
 		}
 		agenda.tm = setTimeout(function(){
 			agenda.attDrag(true);

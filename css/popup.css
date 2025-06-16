@@ -149,17 +149,11 @@
 }
 .btn_invia:not(.btn_logout_mini):not(.btn_login_mini):not(.btn_dis){
 	background: #0a3d96;
-    background: -moz-linear-gradient(top, #1d4eaa 0%, #0a3d96 100%);
-    background: -webkit-linear-gradient(top, #1d4eaa 0%,#0a3d96 100%);
    background: linear-gradient(to bottom, #1d4eaa 0%,#0a3d96 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1d4eaa', endColorstr='#0a3d96',GradientType=0 );
 }
 .btn_invia:not(.btn_logout_mini):not(.btn_login_mini):not(.btn_dis):hover{
 	background: #052d74 !important;
-    background: -moz-linear-gradient(top, #0a3d96 0%, #052d74 100%) !important;
-    background: -webkit-linear-gradient(top, #0a3d96 0%,#052d74 100%) !important;
    	background: linear-gradient(to bottom, #0a3d96 0%,#052d74 100%) !important;
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0a3d96', endColorstr='#052d74',GradientType=0 ) !important;
 }
 
 

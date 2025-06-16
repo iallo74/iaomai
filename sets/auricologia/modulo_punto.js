@@ -243,8 +243,18 @@ var MODULO_PUNTO = { // extend SET
 		if(!ritorno || !SCHEDA.formModificato)initChangeDetection( "formAnnotazioni" );
 		
 		if(ritorno && !SCHEDA.aggancio.tipo == 'libera')SCHEDA.nasScheda();
+		if(SET.blur){
+			SCHEDA.addSblocca(	[],
+								['h1'] );
+		}
 	},
 	mod_nota: function( siglaPunto ){ // salva la nota di un punto
+		// verifico le autorizzazioni
+		if(SET.blur){
+			ALERT(TXT("MsgContSoloPay"),true,true);
+			return;
+		}
+		// --------------------------
 		let nota_salvata=false;
 		let DataModifica = DB.note.lastSync+1,
 			pDef=-1,

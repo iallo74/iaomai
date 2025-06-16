@@ -131,7 +131,6 @@ var SCHEDA = {
 			SCHEDA.classeAperta = classe;
 			SCHEDA.torna();
 		}
-		
 		if(html){
 			if(html.indexOf(' class="translatable"')==-1)html = '<div class="translatable">'+html+'</div>';
 			html = '<div class="scheda_stampa">'+html+'</div>';
@@ -442,7 +441,7 @@ var SCHEDA = {
 			document.body.addEventListener("mouseleave",SCHEDA.arrestaMoveScheda,false);
 		}else{
 			document.body.addEventListener("touchend", SCHEDA.arrestaMoveScheda, false );
-			document.body.addEventListener("touchmove", SCHEDA.moveMoveScheda, false );	
+			document.body.addEventListener("touchmove", SCHEDA.moveMoveScheda, { passive: false } );	
 		}
 		if(SCHEDA.aggancio.tipo == 'libera'){
 			SCHEDA.xIni = tCoord(document.getElementById("scheda"));
@@ -573,7 +572,7 @@ var SCHEDA = {
 			document.body.addEventListener("mouseleave",SCHEDA.arrestaRedimScheda,false);
 		}else{
 			document.body.addEventListener("touchend", SCHEDA.arrestaRedimScheda, false );
-			document.body.addEventListener("touchmove", SCHEDA.moveRedimScheda, false );	
+			document.body.addEventListener("touchmove", SCHEDA.moveRedimScheda, { passive: false } );	
 		}
 		
 		SCHEDA.wIni = document.getElementById("scheda").scrollWidth;
@@ -1017,7 +1016,7 @@ var SCHEDA = {
 			}
 			localStorage.schedaAggancio = JSON.stringify(SCHEDA.aggancio);
 		}
-		onWindowResize();
+		setTimeout(function(){onWindowResize();},10);
 	},
 	verRedim: function(){
 		// assegna le classi alla scheda in base alla larghezza (per i CSS)
@@ -1044,5 +1043,19 @@ var SCHEDA = {
 		HTML = '<div class="formBtn noPrint">';
 		HTML += '<span id="btn_annulla" class="annullaBtn" onclick="'+azAnnulla+'">'+TXT("Annulla")+'</span><span class="submitBtn" onclick="if(verifica_form(document.formMod))'+azSubmit+'">'+TXT("Salva")+'</span></div>'+H.chr10;	
 		return HTML;
+	},
+
+	addSblocca: function( excludedElements = [], excludedTags = [] ){
+		let scheda = document.getElementById("scheda_testo"+(SCHEDA.scheda2Aperta?"2":""));
+		rootNode = scheda.getElementsByClassName("translatable")[0];
+		obfuscateDOMTree(rootNode,excludedElements,excludedTags);
+		let newElement = document.createElement("div");
+		newElement.innerHTML = '<div id="descr_sblocca">'+TXT("SbloccaContenutoDescr")+'</div><br><div id="btn_sblocca" onClick="PURCHASES.folderOp=globals.set.cartella;MENU.visPurchases();">'+(!SET.old_owner?TXT("SbloccaContenuto").replace("[value]",PURCHASES.getFirstMonth()):TXT("RitornaPro"))+'</div>';
+		newElement.id = "box_sblocca";
+		rootNode.insertAdjacentElement("afterend", newElement);
+		let cont = scheda.getElementsByClassName("translatable")[0],
+			elSfum = document.createElement("div");
+		elSfum.className = 'blur_sfum';
+		cont.appendChild(elSfum);
 	}
 }

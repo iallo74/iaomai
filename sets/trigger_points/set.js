@@ -30,9 +30,14 @@ var SET = {
 	},
 	wVideo: 0,
 	tmResVideo: null,
+
+	blur: DB.login.data.auths.indexOf(globals.set.cartella)==-1,
+	old_owner: DB.login.data.old_auths.indexOf(globals.set.cartella)>-1,
 	
 	// FUNZIONI
 	_init: function(){
+
+		if(SET.blur)PURCHASES.init();
 
 		/* if(navigator.userAgent.indexOf("Macintosh")>-1 || iPhone || iPad){
 			SET.MAT.lineWidth = 0.003;
@@ -884,7 +889,7 @@ var SET = {
 		}
 	},
 	verSistema: function(){
-		document.getElementById("noLicenze").classList.toggle("vis",LOGIN.logedin() && DB.login.data.auths.indexOf("trigger_points")==-1);
+		document.getElementById("noLicenze").classList.toggle("vis",LOGIN.logedin() && SET.blur);
 		document.getElementById("demoVersion").classList.toggle("vis",!LOGIN.logedin());
 	},
 	
@@ -909,7 +914,7 @@ var SET = {
 	},
 	filtraSet: function(){
 		let vis = true;
-		if(DB.login.data.auths.indexOf(globals.set.cartella)==-1 || !LOGIN.logedin())vis = false;
+		if(SET.blur || !LOGIN.logedin())vis = false;
 		for(let m in SETS.children){
 			if(SET.PUNTI_free.indexOf(SETS.children[m].name.split("_")[1])==-1)SETS.children[m].visible = vis;
 		}

@@ -50,10 +50,7 @@
     box-shadow: 0 0 4px #000;
     font-size: 14px;
 	background: #FFF;
-    background: -moz-linear-gradient(top, #FFF 0%, #DDD 100%);
-    background: -webkit-linear-gradient(top, #FFF 0%,#DDD 100%);
 	background: linear-gradient(to bottom, #FFF 0%,#DDD 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#FFFFFF', endColorstr='#DDDDDD',GradientType=0 );
     margin: 10px;
 }
 #contSplashMaps > div span{

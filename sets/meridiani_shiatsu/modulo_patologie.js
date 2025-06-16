@@ -224,25 +224,30 @@ var MODULO_PATOLOGIE = { // extend SET
 								btn,
 								btnAdd,
 								globals.set.cartella+'_patologie_'+siglaPatologia );
-		
-		SCHEDA.gestVisAnatomia(true);
-		SET.convSigleScheda();
-		
-		let els = document.getElementById("scheda_testo").getElementsByClassName("schedaSpecifica"),
-			selected = false;
-		for(let e=0;e<els.length;e++){
-			let sistema = __(els[e].dataset.sistema,''),
-				sistemaVer = localStorage.sistemaMeridiani;
-			if(sistemaVer=='MAS')sistemaVer = '';
-			if(sistema == sistemaVer && !selected){
-				SET.evidenziaPat(els[e]);
-				els[e].classList.add("eviPoints");
-				selected = true;
+		if(!SET.blur){
+			SCHEDA.gestVisAnatomia(true);
+			SET.convSigleScheda();
+			
+			let els = document.getElementById("scheda_testo").getElementsByClassName("schedaSpecifica"),
+				selected = false;
+			for(let e=0;e<els.length;e++){
+				let sistema = __(els[e].dataset.sistema,''),
+					sistemaVer = localStorage.sistemaMeridiani;
+				if(sistemaVer=='MAS')sistemaVer = '';
+				if(sistema == sistemaVer && !selected){
+					SET.evidenziaPat(els[e]);
+					els[e].classList.add("eviPoints");
+					selected = true;
+				}
+			}
+			if(!selected){
+				SET.annullaEvidenziaPunto();
+				SET.spegniMeridiani(true);
 			}
 		}
-		if(!selected){
-			SET.annullaEvidenziaPunto();
-			SET.spegniMeridiani(true);
+		if(SET.blur){
+			SCHEDA.addSblocca(	[document.getElementsByClassName("ideogrammaPuntoChar")[0]],
+								['h1'] );
 		}
 	},
 	chiudiPatologia: function(){
@@ -265,7 +270,7 @@ var MODULO_PATOLOGIE = { // extend SET
 		if(__(localStorage.listPatType)!='category')localStorage.listPatType = 'category';
 		else localStorage.listPatType = 'list';
 		SET.componiPatologie();
-		if(SET.patOp){
+		if(SET.patOp && SCHEDA.btnSel){
 			SCHEDA.btnSel = document.getElementById("btn_patologia_"+SET.patOp);//.classList.add("elencoSel");
 			SCHEDA.btnSel.classList.add("elencoSel");
 		}
@@ -286,6 +291,6 @@ var MODULO_PATOLOGIE = { // extend SET
 				pass = SET.PATOLOGIE_free.indexOf(DB.set.patologie[t].siglaPatologia)==-1;
 			}
 		}
-		return !(pass && (DB.login.data.auths.indexOf(globals.set.cartella)==-1 || !LOGIN.logedin()));
+		return !(pass && (SET.blur || !LOGIN.logedin()));
 	}
 }

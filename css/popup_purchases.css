@@ -48,10 +48,7 @@
 	color:#FFF;
 	box-shadow: 0px 0px 3px rgba(0,0,0,0.5);
 	background: #0a3d96;
-	background: -moz-linear-gradient(top, #1d4eaa 0%, #0a3d96 100%);
-	background: -webkit-linear-gradient(top, #1d4eaa 0%,#0a3d96 100%);
 	background: linear-gradient(to bottom, #1d4eaa 0%,#0a3d96 100%);
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1d4eaa', endColorstr='#0a3d96',GradientType=0 );
 }
 #contPurchases div.btn b{
 	font-size:inherit;
@@ -60,10 +57,7 @@
 #contPurchases div.ann{
 	color: #000;
 	background: #b0b0b0;
-	background: -moz-linear-gradient(top, #999 0%, #b0b0b0 100%);
-	background: -webkit-linear-gradient(top, #999 0%,#b0b0b0 100%);
 	background: linear-gradient(to bottom, #999 0%,#b0b0b0 100%);
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#999', endColorstr='#b0b0b0',GradientType=0 );
 	opacity:0.8;
 	margin-right:10px;
 }

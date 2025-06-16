@@ -179,46 +179,31 @@ body.piedi #pulsante_modello{
 /* STILI DELLE SCHEDE */
 .scheda_meridiano #scheda_titolo{
 	background: #eb9a00 !important;
-    background: -moz-linear-gradient(top, #eb9a00 0%, #ce8707 100%) !important;
-    background: -webkit-linear-gradient(top, #eb9a00 0%,#ce8707 100%) !important;
     background: linear-gradient(to bottom, #eb9a00 0%,#ce8707 100%) !important;
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#eb9a00', endColorstr='#ce8707',GradientType=0 ) !important;
 }
 .scheda_procedura #scheda_titolo{
 	background: #eb9a00 !important;
-    background: url(../../img/ico_prescrizioneB.png), -moz-linear-gradient(top, #eb9a00 0%, #ce8707 100%) !important;
-    background: url(../../img/ico_prescrizioneB.png), -webkit-linear-gradient(top, #eb9a00 0%,#ce8707 100%) !important;
     background: url(../../img/ico_prescrizioneB.png), linear-gradient(to bottom, #eb9a00 0%,#ce8707 100%) !important;
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#eb9a00', endColorstr='#ce8707',GradientType=0 ) !important;
 	background-position:5px center, center center !important;
 	background-repeat:no-repeat !important;
 }
 
 .scheda_patologia #scheda_titolo{
 	background: #eb9a00 !important;
-    background: url(../../img/ico_patologie2B.png), -moz-linear-gradient(top, #eb9a00 0%, #ce8707 100%) !important;
-    background: url(../../img/ico_patologie2B.png), -webkit-linear-gradient(top, #eb9a00 0%,#ce8707 100%) !important;
     background: url(../../img/ico_patologie2B.png), linear-gradient(to bottom, #eb9a00 0%,#ce8707 100%) !important;
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#eb9a00', endColorstr='#ce8707',GradientType=0 ) !important;
 	background-position:5px center, center center !important;
 	background-repeat:no-repeat !important;
 }
 
 .scheda_teoria #scheda_titolo{
     background: #1d4eaa;
-    background: url(../../img/ico_teoria2B.png), -moz-linear-gradient(top, #1d4eaa 0%, #0a3d96 100%);
-    background: url(../../img/ico_teoria2B.png), url(../img/ico_utente.png)-webkit-linear-gradient(top, #1d4eaa 0%,#0a3d96 100%);
     background: url(../../img/ico_teoria2B.png), linear-gradient(to bottom, #1d4eaa 0%,#0a3d96 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1d4eaa', endColorstr='#0a3d96',GradientType=0 );
 	background-position:2px center, center center !important;
 	background-repeat:no-repeat !important;
 }
 .scheda_video #scheda_titolo{
     background: #1d4eaa;
-    background: url(../../img/play.png), -moz-linear-gradient(top, #1d4eaa 0%, #0a3d96 100%);
-    background: url(../../img/play.png), url(../img/ico_utente.png)-webkit-linear-gradient(top, #1d4eaa 0%,#0a3d96 100%);
     background: url(../../img/play.png), linear-gradient(to bottom, #1d4eaa 0%,#0a3d96 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1d4eaa', endColorstr='#0a3d96',GradientType=0 );
 	background-position:8px center, center center !important;
 	background-repeat:no-repeat !important;
 }

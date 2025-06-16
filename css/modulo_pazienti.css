@@ -12,19 +12,13 @@
 
 .scheda_paziente #scheda_titolo{
 	background: #1d4eaa;
-    background: url(../img/ico_utente.png), -moz-linear-gradient(top, #1d4eaa 0%, #0a3d96 100%);
-    background: url(../img/ico_utente.png), url(../img/ico_utente.png)-webkit-linear-gradient(top, #1d4eaa 0%,#0a3d96 100%);
     background: url(../img/ico_utente.png), linear-gradient(to bottom, #1d4eaa 0%,#0a3d96 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1d4eaa', endColorstr='#0a3d96',GradientType=0 );
 	background-position:left center, center center !important;
 	background-repeat:no-repeat !important;
 }
 .scheda_A #scheda_titolo{
     background: #FFF !important;
-    background: url(../img/certella.png), -moz-linear-gradient(top, #FFF 0%, #d5d5d5 100%) !important;
-    background: url(../img/cartella.png), -webkit-linear-gradient(top, #FFF 0%,#d5d5d5 100%) !important;
     background: url(../img/cartella.png), linear-gradient(to bottom, #FFF 0%,#d5d5d5 100%) !important;
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#FFF', endColorstr='#d5d5d5',GradientType=0 ) !important;
 	background-position:3px 2px, center center !important;
 	background-repeat:no-repeat !important;	
 	color:#000 !important;
@@ -32,92 +26,62 @@
 .scheda_R #scheda_titolo,
 .scheda_B #scheda_titolo{
     background: #c78230 !important;
-    background: url(../img/ico_trattamenti2B.png), -moz-linear-gradient(top, #e2a05f 0%, #c78230 100%) !important;
-    background: url(../img/ico_trattamenti2B.png), -webkit-linear-gradient(top, #e2a05f 0%,#c78230 100%) !important;
     background: url(../img/ico_trattamenti2B.png), linear-gradient(to bottom, #e2a05f 0%,#c78230 100%) !important;
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e2a05f', endColorstr='#c78230',GradientType=0 ) !important;
 	background-position:6px 1px, center center !important;
 	background-repeat:no-repeat !important;	
 }
 .scheda_saldo #scheda_titolo{
     background: #604ea7 !important;
-    background: url(../img/ico_saldiB.png), -moz-linear-gradient(top, #7c65d8 0%, #604ea7 100%) !important;
-	background: url(../img/ico_saldiB.png), -webkit-linear-gradient(top, #7c65d8 0%,#604ea7 100%) !important;
     background: url(../img/ico_saldiB.png), linear-gradient(to bottom, #7c65d8 0%,#604ea7 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7c65d8', endColorstr='#604ea7',GradientType=0 ) !important;
 	background-position:5px center, center center !important;
 	background-repeat:no-repeat !important;
 }
 
 .scheda_Riepi #scheda_titolo{
     background: #cca23d !important;
-    background: url(../img/ico_statsTB.png), -moz-linear-gradient(top, #f9d269 0%, #cca23d 100%) !important;
-    background: url(../img/ico_statsTB.png), -webkit-linear-gradient(top, #f9d269 0%,#cca23d 100%) !important;
     background: url(../img/ico_statsTB.png), linear-gradient(to bottom, #f9d269 0%,#cca23d 100%) !important;
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f9d269', endColorstr='#cca23d',GradientType=0 ) !important;
 	background-position:5px center, center center !important;
 	background-repeat:no-repeat !important;
 }
 .scheda_fornitore #scheda_titolo{
     background: #1d4eaa;
-    background: url(../img/ico_fornitoreB.png), -moz-linear-gradient(top, #1d4eaa 0%, #0a3d96 100%);
-    background: url(../img/ico_fornitoreB.png), -webkit-linear-gradient(top, #1d4eaa 0%,#0a3d96 100%);
     background: url(../img/ico_fornitoreB.png), linear-gradient(to bottom, #1d4eaa 0%,#0a3d96 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1d4eaa', endColorstr='#0a3d96',GradientType=0 );
 	background-position:left center, center center !important;
 	background-repeat:no-repeat !important;
 }
 .scheda_annotazione #scheda_titolo{
     background: #1daeaa;
-    background: url(../img/ico_annotazioniB.png), -moz-linear-gradient(top, #1daeaa 0%, #0e7c79 100%);
-    background: url(../img/ico_annotazioniB.png), -webkit-linear-gradient(top, #1daeaa 0%,#0e7c79 100%);
     background: url(../img/ico_annotazioniB.png), linear-gradient(to bottom, #1daeaa 0%,#0e7c79 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1daeaa', endColorstr='#0e7c79',GradientType=0 );
 	background-position:left center, center center !important;
 	background-repeat:no-repeat !important;
 }
 .scheda_moduli #scheda_titolo{
     background: #1daeaa;
-    background: url(../img/ico_anamnesiB.png), -moz-linear-gradient(top, #1daeaa 0%, #0e7c79 100%);
-    background: url(../img/ico_anamnesiB.png), -webkit-linear-gradient(top, #1daeaa 0%,#0e7c79 100%);
     background: url(../img/ico_anamnesiB.png), linear-gradient(to bottom, #1daeaa 0%,#0e7c79 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1daeaa', endColorstr='#0e7c79',GradientType=0 );
 	background-position:left center, center center !important;
 	background-repeat:no-repeat !important;
 }
 .scheda_servizio #scheda_titolo{
     background: #1d4eaa;
-    background: url(../img/ico_servizioB.png), -moz-linear-gradient(top, #1d4eaa 0%, #0a3d96 100%);
-    background: url(../img/ico_servizioB.png), -webkit-linear-gradient(top, #1d4eaa 0%,#0a3d96 100%);
     background: url(../img/ico_servizioB.png), linear-gradient(to bottom, #1d4eaa 0%,#0a3d96 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1d4eaa', endColorstr='#0a3d96',GradientType=0 );
 	background-position:left center, center center !important;
 	background-repeat:no-repeat !important;
 }
 .scheda_stats #scheda_titolo{
     background: #1d4eaa;
-    background: url(../img/ico_stats.png), -moz-linear-gradient(top, #1d4eaa 0%, #0a3d96 100%);
-    background: url(../img/ico_stats.png), -webkit-linear-gradient(top, #1d4eaa 0%,#0a3d96 100%);
     background: url(../img/ico_stats.png), linear-gradient(to bottom, #1d4eaa 0%,#0a3d96 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1d4eaa', endColorstr='#0a3d96',GradientType=0 );
 	background-position:5px center, center center !important;
 	background-repeat:no-repeat !important;
 }
 .scheda_marketing #scheda_titolo{
     background: #1d4eaa;
-    background: url(../img/ico_marketing.png), -moz-linear-gradient(top, #1d4eaa 0%, #0a3d96 100%);
-    background: url(../img/ico_marketing.png), -webkit-linear-gradient(top, #1d4eaa 0%,#0a3d96 100%);
     background: url(../img/ico_marketing.png), linear-gradient(to bottom, #1d4eaa 0%,#0a3d96 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1d4eaa', endColorstr='#0a3d96',GradientType=0 );
 	background-position:5px center, center center !important;
 	background-repeat:no-repeat !important;
 }
 .scheda_agenda #scheda_titolo{
     background: #1d4eaa;
-    background: url(../img/m_agenda.png), -moz-linear-gradient(top, #1d4eaa 0%, #0a3d96 100%);
-    background: url(../img/m_agenda.png), -webkit-linear-gradient(top, #1d4eaa 0%,#0a3d96 100%);
     background: url(../img/m_agenda.png), linear-gradient(to bottom, #1d4eaa 0%,#0a3d96 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1d4eaa', endColorstr='#0a3d96',GradientType=0 );
 	background-position:5px center, center center !important;
 	background-repeat:no-repeat !important;
 }

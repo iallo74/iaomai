@@ -1,7 +1,8 @@
 var STAMPE = {
 
 	stampaStage: function(){
-		if(!DB.login.data.auths.length){
+		// verifico le autorizzazioni
+		if(SET && __(SET?.blur,false)){
 			setTimeout(function(){
 				ALERT(TXT("MsgFunzioneSoloPay"));
 			},100);
@@ -38,7 +39,16 @@ var STAMPE = {
 	stampaScheda: function( obj ){
 		if(document.getElementById("menuScheda").className.indexOf("visSch")>-1)SCHEDA.swMenuScheda();
 		// verifico le autorizzazioni
-		if(!DB.login.data.auths.length){
+		if(	SET && 
+			__(SET?.blur,false) && 
+			!document.getElementById("scheda").classList.contains("schedaA") && 
+			!document.getElementById("scheda").classList.contains("schedaB") && 
+			!document.getElementById("scheda").classList.contains("scheda_Riepi") && 
+			!document.getElementById("scheda").classList.contains("scheda_paziente") && 
+			!document.getElementById("scheda").classList.contains("scheda_fornitore") && 
+			!document.getElementById("scheda").classList.contains("scheda_servizio") && 
+			!document.getElementById("scheda").classList.contains("scheda_modulo") && 
+			!document.getElementById("scheda").classList.contains("scheda_annotazione") ){
 			setTimeout(function(){
 				ALERT(TXT("MsgFunzioneSoloPay"));
 			},100);

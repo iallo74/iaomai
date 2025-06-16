@@ -49,7 +49,7 @@ var MODULO_PUNTO = { // extend SET
 			if(android && smartMenu && !onlineVersion)HTML += ' style="font-size:inherit !important;"';
 			HTML += ">"+htmlEntities(titolo.replace(pattern,"$1"))+"</i></h1>";
 		}
-
+		if(SET.blur)titolo = titolo.replace(/\((.*?)\)/, (_, p1) => '');
 
 
 		let HTML_simboli = '';
@@ -157,7 +157,7 @@ var MODULO_PUNTO = { // extend SET
 		let rp = wCont/370,
 			bluring = '',
 			addNo = '';
-		if(SET.verLightVersion()){
+		/* if(SET.verLightVersion()){
 			bluring = 'filter: blur(10px);';
 			let txtNo = (SET.verLicenses())?TXT("MsgContSoloLicensed"):TXT("MsgContSoloPay");
 			addNo = ' title="'+htmlEntities(txtNo)+'" onClick="ALERT(\''+txtNo+'\');"';
@@ -166,7 +166,7 @@ var MODULO_PUNTO = { // extend SET
 				HTML = HTML.replace(/class="dis_ter"/g,'class="dis_ter bluring"'+addNo);
 				HTML = HTML.replace(/class="dis_prs"/g,'class="dis_prs bluring"'+addNo);
 			}
-		}
+		} */
 		if(coordZoom.length>1){
 			let pC=coordZoom.split("|");
 			for(let pu in pC){
@@ -177,8 +177,10 @@ var MODULO_PUNTO = { // extend SET
 				})
 			}
 		}
-		if(imgZoom)imgDettaglio='<div id="cont_imgDettPunto" style="width:'+wCont+'px;"><img border="0" width="'+wCont+'" id="imgDettPunto" style="'+bluring+'"'+addNo+'></div>';
-		SET.overlayImages(imgZoom.split(".")[0], pointsPositions);
+		if(imgZoom){
+			imgDettaglio='<div id="cont_imgDettPunto" style="width:'+wCont+'px;"><img border="0" width="'+wCont+'" id="imgDettPunto" style="'+bluring+'"'+addNo+'></div>';
+			SET.overlayImages(imgZoom.split(".")[0], pointsPositions,SET.blur);
+		}
 
 
 
@@ -197,12 +199,16 @@ var MODULO_PUNTO = { // extend SET
 				ideogramma += ideogrammaOr[l];
 				if(l<lI-1)ideogramma += "<br>";
 			}
-			HTML_ideo = '<div class="ideogrammaPuntoChar"';
+			HTML_ideo = '<div class="ideogrammaPuntoChar" style="';
 
 			//aggiunto per un bug strano su android compilata
-			if(android && smartMenu && !onlineVersion)HTML_ideo += ' style="font-size: 40px !important;line-height:40px !important;"';
+			if(android && smartMenu && !onlineVersion)HTML_ideo += 'font-size: 40px !important;line-height:40px !important;';
+			if(SET.blur)HTML_ideo += 'filter:blur(5px);cursor:default;';
+			HTML_ideo += '"';
 
-			HTML_ideo += '>'+ideogramma+'</div><img src="img/speach2W.png" onClick="SET.speachName(\''+siglaMeridiano+nPunto+'\');" class="speach_icon noPrint">';
+			HTML_ideo += '>'+ideogramma+'</div><img src="img/speach2W.png"';
+			if(!SET.blur)HTML_ideo += ' onClick="SET.speachName(\''+siglaMeridiano+nPunto+'\');"';
+			HTML_ideo += ' class="speach_icon noPrint">';
 			HTML = HTML_ideo+HTML;
 		}
 		
@@ -344,8 +350,12 @@ var MODULO_PUNTO = { // extend SET
 						'document.getElementsByClassName("scheda_stampa")[0].getBoundingClientRect().y==document.getElementById("scheda_testo").getBoundingClientRect().y');
 		}
 		document.getElementById("frSch").className = classFr;
+		if(SET.blur){
+			SCHEDA.addSblocca(	[document.getElementsByClassName("ideogrammaPuntoChar")[0]],
+								[/* 'h1' */] );
+		}
 	},
-	overlayImages: function(bgSrc, overlayPoints) {
+	overlayImages: function(bgSrc, overlayPoints, blur = false) {
 		// Crea un elemento canvas
 		const canvasDett = document.createElement("canvas");
 		const ctx = canvasDett.getContext("2d");
@@ -358,9 +368,18 @@ var MODULO_PUNTO = { // extend SET
 			canvasDett.width = 370;
 			const aspectRatio = backgroundImage.width / backgroundImage.height;
 			canvasDett.height = canvasDett.width / aspectRatio;
-			
-			ctx.drawImage(backgroundImage, 0, 0, canvasDett.width, canvasDett.height);
-	
+			if(blur){
+				let blurAmount = 15;
+				ctx.filter = "blur("+blurAmount+"px)";
+				const safeWidth = canvasDett.width - (blurAmount * 3);
+				const safeHeight = canvasDett.height - (blurAmount * 3);
+				const offsetX = (canvasDett.width - safeWidth) / 2;
+				const offsetY = (canvasDett.height - safeHeight) / 2;
+				ctx.drawImage(backgroundImage, offsetX, offsetY, safeWidth, safeHeight);
+				ctx.filter = "none";
+			}else{
+				ctx.drawImage(backgroundImage, 0, 0, canvasDett.width, canvasDett.height);
+			}
 			// Caricare e posizionare ogni overlay
 			let loadedImages = 0;
 			overlayPoints.forEach(point => {
@@ -368,7 +387,10 @@ var MODULO_PUNTO = { // extend SET
 				overlayImage.src = "data:image/png;base64," + zoom_imgs.punto;
 	
 				overlayImage.onload = function () {
-					ctx.drawImage(overlayImage, point.x, point.y, 43, 40);
+
+					if(blur)ctx.filter = "blur(10px)";
+					if(!blur)ctx.drawImage(overlayImage, point.x, point.y, 43, 40);
+					if(blur)ctx.filter = "none";
 	
 					// Assicurati che tutti i punti siano caricati prima di esportare l'immagine
 					loadedImages++;
@@ -381,6 +403,12 @@ var MODULO_PUNTO = { // extend SET
 		};
 	},
 	mod_nota: function( Q_nome_meridiano, Q_p ){
+		// verifico le autorizzazioni
+		if(SET.blur){
+			ALERT(TXT("MsgContSoloPay"),true,true);
+			return;
+		}
+		// --------------------------
 		// salva la nota di un punto
 		let nota_salvata = false,
 			DataModifica = DB.note.lastSync+1,

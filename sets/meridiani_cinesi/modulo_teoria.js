@@ -21,7 +21,7 @@ var MODULO_TEORIA = { // extend SET
 			for(t in DB.set.teoria[p].contenuti){
 				
 				// verifico le autorizzazioni
-				let addLock = 	(!SET.verFreeTeoria(p+"_"+t))? ' lockedItem' : '';
+				let addLock = 	(!SET.verFreeTeoria(p+"_"+t) && !globals.allowFreeVer)? ' lockedItem' : '';
 				// --------------------------
 				let TitoloTeoria = DB.set.teoria[p].contenuti[t].TitoloTeoria,
 					funct = 'Approfondimento',
@@ -54,7 +54,7 @@ var MODULO_TEORIA = { // extend SET
 	caricaApprofondimento: function( p, t, btn ){
 		// apre la scheda di un approfondimento
 		// verifico le autorizzazioni
-		if(!SET.verFreeTeoria(p+"_"+t)){
+		if(!SET.verFreeTeoria(p+"_"+t) && !globals.allowFreeVer){
 			ALERT(TXT("MsgContSoloPay"),true,true);
 			return;
 		}
@@ -108,23 +108,29 @@ var MODULO_TEORIA = { // extend SET
 								btnAdd,
 								globals.set.cartella+'_teoria_'+p+"_"+t );
 		
-		SCHEDA.gestVisAnatomia(true);
-		SET.convSigleScheda();
-		SET.evidenziaPunto();
-		
-		SET.spegniMeridianoSecondario();
-		SET.spegniMeridiani(true);
-		setTimeout( function(meridianiSecondari){
-			if(meridianiSecondari){
-				for(let m in meridianiSecondari){
-					if(meridianiSecondari[m].indexOf("_")==-1)SET.accendiMeridiano(meridianiSecondari[m],false,true);
-					SET.accendiMeridianoSecondario(meridianiSecondari[m],true);
+		if(!SET.blur){
+			SCHEDA.gestVisAnatomia(true);
+			SET.convSigleScheda();
+			SET.evidenziaPunto();
+			
+			SET.spegniMeridianoSecondario();
+			SET.spegniMeridiani(true);
+			setTimeout( function(meridianiSecondari){
+				if(meridianiSecondari){
+					for(let m in meridianiSecondari){
+						if(meridianiSecondari[m].indexOf("_")==-1)SET.accendiMeridiano(meridianiSecondari[m],false,true);
+						SET.accendiMeridianoSecondario(meridianiSecondari[m],true);
+					}
+					SET.MAT.lineYang.uniforms.opacity.value = SET.MAT.opLineContr;
+					SET.MAT.lineYin.uniforms.opacity.value = SET.MAT.opLineContr;
+					SET.MAT.pointBase.opacity = SET.MAT.opPointContr;
 				}
-				SET.MAT.lineYang.uniforms.opacity.value = SET.MAT.opLineContr;
-				SET.MAT.lineYin.uniforms.opacity.value = SET.MAT.opLineContr;
-				SET.MAT.pointBase.opacity = SET.MAT.opPointContr;
-			}
-		},250,meridianiSecondari);
+			},250,meridianiSecondari);
+		}
+		if(SET.blur && !(p==7 && (t==3 || t==4))){
+			SCHEDA.addSblocca(	[document.getElementsByClassName("ideogrammaPuntoChar")[0]],
+								['h1'] );
+		}
 	},
 	caricaVideo: function( p, t, btn ){
 		// carica un approfondimento video
@@ -170,6 +176,7 @@ var MODULO_TEORIA = { // extend SET
 		SCHEDA.individuaElemento( 'btn_teoria_cart_'+i, "listaTeoria" );
 	},
 	verFreeTeoria: function( t ){
-		return !(SET.TEORIA_free.indexOf(t)==-1 && (DB.login.data.auths.indexOf(globals.set.cartella)==-1 || !LOGIN.logedin()));
+		if(globals.allowFreeVer)return true;
+		return !(SET.TEORIA_free.indexOf(t)==-1 && (SET.blur || !LOGIN.logedin()));
 	}
 }

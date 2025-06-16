@@ -38,6 +38,7 @@ var LOGIN = {
 				"ordinamento_archivi": "nc",
 				"rated": "",
 				"auths": [],
+				"old_auths": [],
 				"modls": []
 			}
 		};
@@ -279,7 +280,7 @@ var LOGIN = {
 
 											PAZIENTI.cancellaFiltri(true);
 											SCHEDA.scaricaScheda();
-											if(!selSet || !smartMenu){
+											if((!selSet && !globals.allowFreeVer) || !smartMenu){
 												/*LOGIN.verSets();
 												if(!globals.modello.cartella){
 													inizio=true;
@@ -304,17 +305,19 @@ var LOGIN = {
 				localStorage.UniqueId = __(localStorage.UniqueId,LOGIN.getUniqueId());
 				let dateStored=DB.login.data.ExpDate*1,
 					dateNow = new Date();
-				dateNow=dateNow.getTime()/1000;
-				dateNow=parseInt(dateNow);
+				dateNow = dateNow.getTime()/1000;
+				dateNow = parseInt(dateNow);
 				LOGIN.attesaVer = true;
 				if((dateStored<dateNow || dateStored==0 || isNaN(dateStored) || !eval(__(localStorage.RimaniConnesso,'false')))){
 					if(!LOGIN.logedin() || !eval(__(localStorage.RimaniConnesso,'false'))){
 						DB.login.data.TOKEN='';
 						DB.login.data.ExpDate=0;
 						if(!DB.login.data.auths)DB.login.data.auths = [];
+						if(!DB.login.data.old_auths)DB.login.data.old_auths = [];
 						if(!DB.login.data.modls)DB.login.data.modls = [];
 						if(typeof(DB.login.data)=='undefined'){
 							DB.login.data.auths=[];
+							DB.login.data.old_auths=[];
 							DB.login.data.modls=[];
 						}
 						LOGIN.getDB();
@@ -427,11 +430,11 @@ var LOGIN = {
 			lp.classList.remove("logoPartner_on");
 			lp.style.backgroundImage = "";
 		}
-		document.getElementById("icone").classList.toggle("noMaps",LOGIN.verMonoApp().length==0);
+		//document.getElementById("icone").classList.toggle("noMaps",LOGIN.verMonoApp().length==0);
 		//document.getElementById("js_interfaccia_modulo_customs_js").src = __(localStorage.customScript)?eval(atob(localStorage.customScript)):eval('CUSTOMS._init=function(){};CUSTOMS._end=function(){};CUSTOMS._conts={};');
 	},
 	attivaX: function(){ // attiva il pulsante X nel login
-		let USRprovv = __(DB.login.data.UsernameU);
+		let USRprovv = __(DB.login.data.UsernameU);	
 		if(USRprovv.trim()!=''){
 			document.getElementById("USR").type='hidden';
 			document.getElementById("USR").value=DB.login.data.UsernameU;
@@ -440,7 +443,7 @@ var LOGIN = {
 			document.getElementById("USRlabel").getElementsByTagName("span")[0].innerHTML=DB.login.data.UsernameU;
 		}else{
 			document.getElementById("USR").type='text';
-			if(isCordova)document.getElementById("btnRegistrazione").style.display='block';
+			document.getElementById("btnRegistrazione").style.display='block';
 			document.getElementById("USRlabel").style.display="none";
 			document.getElementById("USRlabel").getElementsByTagName("span")[0].innerHTML="";
 		}
@@ -456,9 +459,9 @@ var LOGIN = {
 				
 			});*/
 			CONN.caricaUrl(	"testauth.php",
-			"",
-			"LOGIN.salvaToken");
-			return false;
+							"",
+							"LOGIN.salvaToken");
+							return false;
 		}
 	},
 	salvaToken: function( txt ){ // salva il TOKEN in DB.login
@@ -635,6 +638,7 @@ var LOGIN = {
 		DB.login.data.TOKEN = '';
 		DB.login.data.ExpDate = 0;
 		DB.login.data.auths = [];
+		DB.login.data.old_auths = [];
 		DB.login.data.modls = [];
 			
 		LOGIN.scriviUtente();
@@ -671,6 +675,7 @@ var LOGIN = {
 			document.getElementById("USR").type='text';
 			document.getElementById("USRlabel").style.display="none";
 			document.getElementById("utDisc").style.display = 'none';
+			document.getElementById("btnRegistrazione").style.display='block';
 			LOGIN.scriviUtente();
 			SCHEDA.scaricaScheda();
 			MODELLO.filtraAnatomia();
@@ -678,7 +683,6 @@ var LOGIN = {
 			if(globals.set.cartella){
 				if(smartMenu)scaricaSet();
 			}
-			if(isCordova)document.getElementById("btnRegistrazione").style.display="block";	
 		}});
 	},
 	verInternationals: function(){
@@ -790,12 +794,12 @@ var LOGIN = {
 			document.getElementById("memorizzaOpen3d").style.display = 'none';
 			document.getElementById("memorizzaOpenMap").style.display = 'none';
 		}
-		if(LOGIN.verMonoApp().indexOf(localStorage.set)==-1){
+		if(LOGIN.verMonoApp().indexOf(localStorage.set)==-1 && !globals.allowFreeVer){
 			scaricaSet();
 			localStorage.set = '';
 		}
-		if(LOGIN.verMonoApp().length){
-			if(!__(localStorage.set) && smartMenu)localStorage.set = LOGIN.verMonoApp()[0];
+		if(LOGIN.verMonoApp().length || globals.allowFreeVer){
+			if(!__(localStorage.set) && LOGIN.verMonoApp().length && smartMenu)localStorage.set = LOGIN.verMonoApp()[0];
 			if(__(localStorage.set)){
 				postApreSet = true;
 				let modello = sets[localStorage.set].modelli[0];
@@ -807,6 +811,10 @@ var LOGIN = {
 			if(!__(localStorage.modello) && smartMenu)localStorage.modello = 'donna';
 			if(__(localStorage.modello) && localStorage.open3d == 'true')caricaModello(localStorage.modello)
 		}
+		if(smartMenu && !__(localStorage.set) && globals.allowFreeVer && !postApreSet){
+			globals.modello.cartella = '';
+			MENU.visSplashMaps();
+		}
 		inizio = false;
 	},
 	
@@ -815,6 +823,10 @@ var LOGIN = {
 		if(CONN.retNoConn()){
 			if(document.registrazioneForm.StatoRegistrazione.value==''){
 				ALERT(TXT("selezionareValore").replace("[1]"," '"+TXT("Stato")+"' "));
+				return;
+			}
+			if(document.registrazioneForm.SessoRegistrazione.value==''){
+				ALERT(TXT("selezionareValore").replace("[1]"," '"+TXT("Sesso")+"' "));
 				return;
 			}
 			if(document.registrazioneForm.PWD.value!=document.registrazioneForm.PWD2.value){
@@ -840,6 +852,7 @@ var LOGIN = {
 								"Professione": document.registrazioneForm.Professione.value,
 								"Interessi": document.registrazioneForm.Interessi.value,
 								"app": document.registrazioneForm.app.value,
+								"free": true,
 								"siglaLingua": globals.siglaLingua };
 								
 				document.getElementById("registrazione").classList.add("popup_back");
@@ -915,6 +928,11 @@ var LOGIN = {
 			professioni[p] = professioni[p][LINGUE.getSigla2()];
 		}
 		professioni['altro'] = TXT("Altro");
+		professioni = {
+			"": TXT("Professione"),
+			...professioni
+		};
+		console.log(professioni)
 		for(p in professioni){
 			var el = document.createElement("option");
 			el.value = p;

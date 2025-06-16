@@ -30,8 +30,13 @@ var SET = {
 	smActive: false,
 	smPressed: false,
 	
+	blur: DB.login.data.auths.indexOf(globals.set.cartella)==-1,
+	old_owner: DB.login.data.old_auths.indexOf(globals.set.cartella)>-1,
+	
 	// FUNZIONI
 	_init: function(){
+
+		if(SET.blur)PURCHASES.init();
 
 		/* if(navigator.userAgent.indexOf("Macintosh")>-1 || iPhone || iPad){
 			SET.MAT.lineWidth = 0.003;
@@ -434,7 +439,6 @@ var SET = {
 
 		let make = true;
 	 	if(manichinoCaricato && !raycastDisable && !controlsM._ZPR && !controlsM._premuto){ // roll-over sui punti
-			
 			camera.updateMatrixWorld();
 			raycaster.setFromCamera( mouse, camera );
 			raycaster.params.Points.threshold = 20;
@@ -629,7 +633,6 @@ var SET = {
 		this.diffX = this.ptSel.position.x*1;
 		this.diffY = this.ptSel.position.y*1;
 		
-		
 		let els = scene.getObjectByName("PT_"+pp.siglaMeridiano).children;
 		for(let e in els){
 			if(els[e].name.indexOf(pp.siglaMeridiano+"."+pp.nPunto+".")==0)els[e].material=mat;
@@ -687,7 +690,6 @@ var SET = {
 		SET.delEviPalls(pp.siglaMeridiano,pp.nPunto,'Over');
 		SET.addEviPalls(pp.siglaMeridiano,pp.nPunto,'Select');
 		this.pulse = 1;
-		
 		
 		
 		// se è un punto interno evidenzio gli organi o le ossa
@@ -914,6 +916,12 @@ var SET = {
 		document.getElementById("p_idgrm").classList.toggle("visBtn",att);
 	},
 	swIdeogrammi: function(){
+		// verifico le autorizzazioni
+		if(SET.blur){
+			ALERT(TXT("MsgContSoloPay"),true,true);
+			return;
+		}
+		// --------------------------
 		if(document.getElementById("p_idgrm").classList.contains("btnSel")){
 			document.getElementById("p_idgrm").classList.remove("btnSel");
 			document.getElementById("p_idgrm").classList.add("btnSel2");
@@ -999,6 +1007,14 @@ var SET = {
 		}
 	},
 	swContrastMethod: function(n=SET.COL.contrastMethod){
+		// verifico le autorizzazioni
+		if(!n){
+			if(SET.blur){
+				ALERT(TXT("MsgContSoloPay"),true,true);
+				return;
+			}
+		}
+		// --------------------------
 		SET.COL.contrastMethod=n ? false : true;
 		if(SET.COL.contrastMethod){
 			SET.MAT.lineYang.uniforms.opacity.value = SET.MAT.opLineContr;
@@ -1081,8 +1097,11 @@ var SET = {
 		html += '" onClick="SET.apriPunto(\''+pp.siglaMeridiano+"."+pp.nPunto+'\',\''+ret+'\');"';
 		if(noRet)html += '  onMouseOver="SET.overPunto(this,true);"' +
 						 '  onMouseOut="SET.overPunto(this,false);"' +
+						 '  data-n-punto="'+pp.nPunto+'"' +
+						 '  data-sigla-meridiano="'+pp.siglaMeridiano+'"' +
 						 '	id="pt_'+pp.nPunto+'_'+pp.siglaMeridiano+'"';
 		html += '> '+siglaPunto;//+' ';
+		if(SET.blur)nomePunto = nomePunto.replace(/\((.*?)\)/, (_, p1) => '');
 		if(esteso)html+='<i>'+nomePunto;
 		html+='</i></a>';
 		return html;
@@ -1484,7 +1503,7 @@ var SET = {
 		}
 	},
 	verSistema: function(){
-		document.getElementById("noLicenze").classList.toggle("vis",LOGIN.logedin() && DB.login.data.auths.indexOf("meridiani_cinesi")==-1);
+		document.getElementById("noLicenze").classList.toggle("vis",LOGIN.logedin() && SET.blur);
 		document.getElementById("demoVersion").classList.toggle("vis",!LOGIN.logedin());
 	},
 	
@@ -1511,19 +1530,21 @@ var SET = {
 		}
 	},
 	filtraSet: function(){
-		let vis = true;
-		if(DB.login.data.auths.indexOf(globals.set.cartella)==-1 || !LOGIN.logedin())vis = false;
-		for(let m in SETS.children){
-			if(	SET.MERIDIANI_free.indexOf(SETS.children[m].name.split("_")[1])==-1 && 
-				SETS.children[m].name.substr(0,2)!="DD")SETS.children[m].visible = vis;
-		}
-		let ME = document.getElementById("lista_meridiani").getElementsByClassName("listaMeridiani")[0].getElementsByTagName("div");
-		for(let m in ME){
-			if(ME[m].id){
-				if(!vis && ME[m].id!='pLR'){
-					ME[m].classList.add("lockedItem");
-				}else{
-					ME[m].classList.remove("lockedItem");
+		if(!globals.allowFreeVer){
+			let vis = true;
+			if(SET.blur || !LOGIN.logedin())vis = false;
+			for(let m in SETS.children){
+				if(	SET.MERIDIANI_free.indexOf(SETS.children[m].name.split("_")[1])==-1 && 
+					SETS.children[m].name.substr(0,2)!="DD")SETS.children[m].visible = vis;
+			}
+			let ME = document.getElementById("lista_meridiani").getElementsByClassName("listaMeridiani")[0].getElementsByTagName("div");
+			for(let m in ME){
+				if(ME[m].id){
+					if(!vis && ME[m].id!='pLR'){
+						ME[m].classList.add("lockedItem");
+					}else{
+						ME[m].classList.remove("lockedItem");
+					}
 				}
 			}
 		}

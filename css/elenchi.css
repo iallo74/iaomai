@@ -405,18 +405,19 @@ body:not(.smart) #elenchi_linguette{
     z-index: 10;
     width: auto !important;
     height: 30px !important;
-    line-height: 19px !important;
+    line-height: 23px !important;
     float: right !important;
-    background-color: rgba(0, 0, 0, 0.4) !important;
+    background-color: rgba(0, 0, 0, 0.8) !important;
     border-radius: 8px;
     padding: 0 13px;
     margin: 10px -4px 0px 0px;
-    padding-right: 24px;
+    padding-right: 31px;
     background-image: url(../img/frDx.png);
     background-position: calc(100% + 10px) center;
-    background-size: auto 43px;
+    background-size: auto;
     margin-top: 0px;
     margin-right: 6px;
+    background-image: url(../img/ico_mappaB.png);
 }
 .smart #mappe_titolo_freccia i{
 	color: #FFF;

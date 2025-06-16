@@ -92,10 +92,11 @@ var MODULO_MERIDIANI = { // extend SET
 	startSmPress: function( el ){
 		SET.smPressed = el;
 		SET.smActive = !el.classList.contains("elencoSel");
-		window.addEventListener("touchmove", SET.moveSmPress,true);
+		window.addEventListener("touchmove", SET.moveSmPress,{ passive: false });
 		window.addEventListener("touchend", SET.endSmPress,true);
 	},
-	moveSmPress: function(){
+	moveSmPress: function( event ){
+		event.preventDefault();
 		let mX = event.targetTouches[0].pageX,
 			mY = event.targetTouches[0].pageY,
 			els = document.getElementById("meridianiSmart_cont").getElementsByTagName("div");
@@ -118,7 +119,7 @@ var MODULO_MERIDIANI = { // extend SET
 		}
 	},
 	endSmPress: function(){
-		window.removeEventListener("touchmove", SET.moveSmPress,true);
+		window.removeEventListener("touchmove", SET.moveSmPress,{ passive: false });
 		window.removeEventListener("touchend", SET.endSmPress,true);
 		SET.smPressed=false;
 		SET.smActive=false;
@@ -147,9 +148,11 @@ var MODULO_MERIDIANI = { // extend SET
 		}
 	},
 	verFreeMeridiani: function( m ){
-		return !(SET.MERIDIANI_free.indexOf(m)==-1 && (DB.login.data.auths.indexOf(globals.set.cartella)==-1 || !LOGIN.logedin()));
+		if(globals.allowFreeVer)return true; // bypassato per versione free
+		return !(SET.MERIDIANI_free.indexOf(m)==-1 && (SET.blur || !LOGIN.logedin()));
 	},
 	verFreePunti: function( siglaPunto ){
+		if(globals.allowFreeVer)return true; // bypassato per versione free
 		let siglaMeridiano = siglaPunto.split(".")[1];
 		return SET.verFreeMeridiani(siglaMeridiano);
 	}

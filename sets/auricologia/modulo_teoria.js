@@ -15,7 +15,7 @@ var MODULO_TEORIA = { // extend SET
 			for(t in DB.set.teoria[p].contenuti){
 				
 				// verifico le autorizzazioni
-				let addLock = 	(!SET.verFreeTeoria(p+"_"+t))? ' lockedItem' : '';
+				let addLock = 	(!SET.verFreeTeoria(p+"_"+t) && !globals.allowFreeVer)? ' lockedItem' : '';
 				// --------------------------
 				let TitoloTeoria = DB.set.teoria[p].contenuti[t].TitoloTeoria;
 				funct = 'Approfondimento';
@@ -164,39 +164,45 @@ var MODULO_TEORIA = { // extend SET
 								btnAdd,
 								globals.set.cartella+'_teoria_'+p+"_"+t );
 		
-		SCHEDA.gestVisAnatomia(true);
-		SET.evidenziaPunto(null,anatomia,mappa,lm);
-		if(flowchart){
-			if(SET.risTest.dipendenza.tot > -1){
-				for(let o=0;o<document.getElementById("dipendenze").options.length;o++){
-					if(SET.risTest.dipendenza.tot>=parseInt("0"+document.getElementById("dipendenze").options[o].value)){
-						document.getElementById("dipendenze").selectedIndex = o;
-					}
-				}
-			}
-			if(SET.risTest.motivazione.tot > -1){
-				for(let o=0;o<document.getElementById("motivazioni").options.length;o++){
-					if(SET.risTest.motivazione.tot>=parseInt("0"+document.getElementById("motivazioni").options[o].value)){
-						document.getElementById("motivazioni").selectedIndex = o;
-					}
-				}
-			}
-			SET.ricalcFlowChart();
-		}
-		if(test){
-			if(SET.risTest[test].tot > -1){
-				let els = document.getElementById("test_cont").getElementsByTagName("select");
-				for(let e=0;e<els.length;e++){
-					let vals = els[e].options;
-					for(v=0;v<vals.length;v++){
-						if(SET.risTest[test].vals[e] == parseInt("0"+vals[v].value)){
-							els[e].selectedIndex = v;
-							els[e].parentElement.classList.add("checked");
+		if(!SET.blur){
+			SCHEDA.gestVisAnatomia(true);
+			SET.evidenziaPunto(null,anatomia,mappa,lm);
+			if(flowchart){
+				if(SET.risTest.dipendenza.tot > -1){
+					for(let o=0;o<document.getElementById("dipendenze").options.length;o++){
+						if(SET.risTest.dipendenza.tot>=parseInt("0"+document.getElementById("dipendenze").options[o].value)){
+							document.getElementById("dipendenze").selectedIndex = o;
 						}
 					}
 				}
-				SET.setTestVal();
+				if(SET.risTest.motivazione.tot > -1){
+					for(let o=0;o<document.getElementById("motivazioni").options.length;o++){
+						if(SET.risTest.motivazione.tot>=parseInt("0"+document.getElementById("motivazioni").options[o].value)){
+							document.getElementById("motivazioni").selectedIndex = o;
+						}
+					}
+				}
+				SET.ricalcFlowChart();
 			}
+			if(test){
+				if(SET.risTest[test].tot > -1){
+					let els = document.getElementById("test_cont").getElementsByTagName("select");
+					for(let e=0;e<els.length;e++){
+						let vals = els[e].options;
+						for(v=0;v<vals.length;v++){
+							if(SET.risTest[test].vals[e] == parseInt("0"+vals[v].value)){
+								els[e].selectedIndex = v;
+								els[e].parentElement.classList.add("checked");
+							}
+						}
+					}
+					SET.setTestVal();
+				}
+			}
+		}
+		if(SET.blur && !(p==4)){
+			SCHEDA.addSblocca(	[],
+								['h1'] );
 		}
 	},
 	
@@ -454,6 +460,7 @@ var MODULO_TEORIA = { // extend SET
 		SCHEDA.individuaElemento( 'btn_teoria_cart_'+i, "listaTeoria" );
 	},
 	verFreeTeoria: function( t ){
-		return !(SET.TEORIA_free.indexOf(t)==-1 && (DB.login.data.auths.indexOf(globals.set.cartella)==-1 || !LOGIN.logedin()));
+		if(globals.allowFreeVer)return true; // bypassato per versione free
+		return !(SET.TEORIA_free.indexOf(t)==-1 && (SET.blur || !LOGIN.logedin()));
 	}
 }

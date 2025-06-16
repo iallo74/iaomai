@@ -30,8 +30,13 @@ var SET = {
 	snd: null,
 	areas50: true,
 	
+	blur: DB.login.data.auths.indexOf(globals.set.cartella)==-1,
+	old_owner: DB.login.data.old_auths.indexOf(globals.set.cartella)>-1,
+	
 	// FUNZIONI
 	_init: function(){
+
+		if(SET.blur)PURCHASES.init();
 
 		/* if(navigator.userAgent.indexOf("Macintosh")>-1 || iPhone || iPad){
 			SET.MAT.lineWidth = 0.003;
@@ -944,7 +949,6 @@ var SET = {
 		if(this.ptSel){
 			if(this.ptSel.userData.interno){
 				this.preCM = false;
-				//this.swContrastMethod(true);
 				let evidenziati = this.ptSel.userData.evidenziati;
 				if(evidenziati){
 					for(let e in evidenziati){
@@ -1222,6 +1226,12 @@ var SET = {
 		document.getElementById("p_idgrm").classList.toggle("visBtn",att);
 	},
 	swIdeogrammi: function(){
+		// verifico le autorizzazioni
+		if(SET.blur){
+			ALERT(TXT("MsgContSoloPay"),true,true);
+			return;
+		}
+		// --------------------------
 		if(document.getElementById("p_idgrm").classList.contains("btnSel")){
 			document.getElementById("p_idgrm").classList.remove("btnSel");
 			document.getElementById("p_idgrm").classList.add("btnSel2");
@@ -1326,9 +1336,12 @@ var SET = {
 			let addPT = (siglaMeridiano=='NK')?"_"+((gruppo)?gruppo:"")+"_"+((seq)?seq:""):"";
 			html += '  onMouseOver="SET.overPunto(this,true);"' +
 					'  onMouseOut="SET.overPunto(this,false);"' +
+					'  data-n-punto="'+pp.nPunto+'"' +
+					'  data-sigla-meridiano="'+pp.siglaMeridiano+'"' +
 					'  id="pt_'+pp.nPunto+'_'+pp.siglaMeridiano+addPT+'"';
 		}
 		html += '> '+siglaPunto;//+' ';
+		if(SET.blur)nomePunto = nomePunto.replace(/\((.*?)\)/, (_, p1) => '');
 		if(esteso)html += (siglaMeridiano=='NK' ? "":".")+' <i>'+nomePunto+'</i>';
 		html+='</a>';
 		return html;
@@ -1793,8 +1806,8 @@ var SET = {
 
 	filtraSet: function( togliLoader=false ){
 		let vis = true;
-		if(	(DB.login.data.auths.indexOf(globals.set.cartella)==-1 || !LOGIN.logedin() || !SET.verAttModule()) && !SET.verLightVersion() )vis = false;
-		
+		if(	(SET.blur || !LOGIN.logedin() || !SET.verAttModule()) && !SET.verLightVersion() )vis = false;
+	
 		for(let m in SETS.children){
 			let visMer = vis;
 			if(	SET.MERIDIANI_free.indexOf(SETS.children[m].name.split("_")[1])!=-1 )visMer = true;
@@ -1812,13 +1825,15 @@ var SET = {
 				}
 			}
 		}
-		let ME = document.getElementById("lista_meridiani").getElementsByClassName("listaMeridiani")[0].getElementsByTagName("div");
-		for(let m in ME){
-			if(ME[m].id){
-				if(!vis && ME[m].id!='pLR'){
-					ME[m].classList.add("lockedItem");
-				}else{
-					ME[m].classList.remove("lockedItem");
+		if(!globals.allowFreeVer){
+			let ME = document.getElementById("lista_meridiani").getElementsByClassName("listaMeridiani")[0].getElementsByTagName("div");
+			for(let m in ME){
+				if(ME[m].id){
+					if(!vis && ME[m].id!='pLR'){
+						ME[m].classList.add("lockedItem");
+					}else{
+						ME[m].classList.remove("lockedItem");
+					}
 				}
 			}
 		}
@@ -1874,7 +1889,7 @@ var SET = {
 		setTimeout(function(){SCHEDA.gestVisSmart(true);},500);
 	},
 	verSistema: function(){
-		document.getElementById("noLicenze").classList.toggle("vis",LOGIN.logedin() && !SET.verAttModule() && !SET.verLightVersion());
+		document.getElementById("noLicenze").classList.toggle("vis",(SET.blur || (LOGIN.logedin() && !SET.verAttModule() && !SET.verLightVersion())));
 		document.getElementById("demoVersion").classList.toggle("vis",!LOGIN.logedin());
 		document.body.classList.toggle("sistema_MAS",localStorage.sistemaMeridiani=='MAS');
 	},

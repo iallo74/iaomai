@@ -129,20 +129,8 @@ body:not(.smart) #icone.iconeEspanse{
 	.smart #icone div:not(#btns_set):not(#cartella_set){
 		width: 60px;
 	}
-	.smart #p_impostazioni{
-		width:30px !important;
-		background-image: url(../img/p_pallini.png);
-		background-size: auto 43px;
-        background-position: center 3px !important;
-	}
-	.smart #p_impostazioni svg {
-		margin-left: 9px !important;
-	}
-	.smart #p_impostazioni i{
-		display:none !important;
-	}
 }
-@media (max-width: 370px){
+@media (max-width: 390px){
 	.smart #icone:not(.iconeHome) div:not(#btns_set):not(#cartella_set) i{
 		font-size:var(--font-12);
 		text-overflow:ellipsis;
@@ -160,7 +148,7 @@ body:not(.smart) #icone.iconeEspanse{
 		margin-right: -2px !important;
         margin-left: 2px !important;
 	}
-	.smart #icone:not(.iconeHome) div:not(#cartella_set):not(#p_set):not(#p_sets) i{
+	.smart #icone:not(.iconeHome) div:not(#cartella_set):not(#p_set):not(#p_sets):not(#p_impostazioni) i{
 		width:50px !important;
 	}
 	.smart #icone:not(.iconeHome) div#p_set i,
@@ -181,11 +169,20 @@ body:not(.smart) #icone.iconeEspanse{
 		text-align:left;
 	}
 }
-/* @media (max-width: 400px){
-	.smart #icone div:not(#btns_set):not(#cartella_set){
-		width: 65px;
+@media (max-width: 340px){
+	.smart #p_impostazioni{
+		width:30px !important;
+		background-image: url(../img/p_pallini.png);
+		background-size: auto 43px;
+        background-position: center 3px !important;
 	}
-} */
+	.smart #p_impostazioni svg {
+		margin-left: 9px !important;
+	}
+	.smart #p_impostazioni i{
+		display:none !important;
+	}
+}
 .smart #icone.nasIcons div{
 	display:none  !important;
 }
@@ -200,6 +197,7 @@ body:not(.smart) #icone.iconeEspanse{
     margin-top: 7px;
     border-left: 1px solid rgba(255,255,255,0.1);
     border-right: 1px solid rgba(0,0,0,0.4);
+	margin-right: -2px;
 }
 .smart #icone:not(.iconeHome) div:not(#btns_set):not(#cartella_set):not(#p_set){
     height: 50px !important;
@@ -1111,6 +1109,9 @@ body:not(.smart) #labelModello{
     text-align: left;
     padding-left: 21px !important;
 }
+.smart #pulsanti_modello.schedaOpened #labelModello{
+	color: #000 !important;
+}
 /* .smart #labelModello i{
 	display:none;
 } */
@@ -1972,18 +1973,12 @@ body:not(.bodyStyled2) #btn_modut{
 }
 
 #btn_registrazione{
-    background: #c18b17;
-    background: -moz-linear-gradient(top, #aa6c1d 0%,#c18b17 100%);
-    background: -webkit-linear-gradient(top, #aa6c1d 0%,#c18b17 100%);
-    background: linear-gradient(to bottom, #aa6c1d 0%,#c18b17 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#aa6c1d', endColorstr='#c18b17',GradientType=0 );
+    background: #c17d17;
+    background: linear-gradient(to bottom, #c17d17 0%, #a76b11 100%);
 }
 #btn_registrazione:hover{
-    background: #dea935 !important;
-    background: -moz-linear-gradient(top, #c3802a 0%,#dea935 100%) !important;
-    background: -webkit-linear-gradient(top, #c3802a 0%,#dea935 100%) !important;
-    background: linear-gradient(to bottom, #c3802a 0%,#dea935 100%) !important;
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c3802a', endColorstr='#dea935',GradientType=0 ) !important;
+    background: #ad6f11;
+    background: linear-gradient(to bottom, #ad6f11 0%, #925d0c 100%);
 }
 
 #p_lingua{

@@ -46,7 +46,7 @@ var SWIPE = {
 			SWIPE.yIni = y;
 			let W = limitRight - limitLeft,
 				area = parseInt(W/3);
-			document.addEventListener("touchmove", SWIPE.move, false );
+			document.addEventListener("touchmove", SWIPE.move, { passive: false } );
 			document.addEventListener("touchend", SWIPE.end, false );
 			if(SWIPE.xIni<area+limitLeft || SWIPE.xIni>(W-area)+limitLeft){
 				if(SWIPE.xIni>=limitLeft && SWIPE.xIni<limitLeft+area)SWIPE.verso = 'R';

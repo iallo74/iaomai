@@ -189,7 +189,7 @@ MODELLO.MAT = {
 	} ),
 
 	materialMuscoli3dSelLeg: new THREE.MeshStandardMaterial( { // MUSCOLI 3D Sel LEG
-		name: "materiale muscoli 3D Sel LEG",
+		name: "materiale muscoli 3D Sel Leg",
 		flatShading:false,
 		color: new THREE.Color( 1, 1, 1 ),
 		emissive: new THREE.Color( 0.3, 0, 0.4 ),
@@ -203,12 +203,9 @@ MODELLO.MAT = {
 		opacity: 1,
 		//depthFunc: 1
 	} ),
-
-
-
 	
 	materialMuscoli3dSelFoot: new THREE.MeshStandardMaterial( { // MUSCOLI 3D Sel FOOT
-		name: "materiale muscoli 3D Sel FOOT",
+		name: "materiale muscoli 3D Sel Foot",
 		flatShading:false,
 		color: new THREE.Color( 1, 1, 1 ),
 		emissive: new THREE.Color( 0.3, 0, 0.4 ),

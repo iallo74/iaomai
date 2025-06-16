@@ -85,7 +85,7 @@ THREE.ObjectControls = function ( object, domElement ) {
 		//if(!overInterfaccia){
 			//event.preventDefault();
 		if(noAnimate)return;
-		
+		ctrl_pressed = false;
 		if(this.ROTATE || this.PAN){
 			try{SET.desIntersected();}catch(err){}
 			startInteractionTimer();
