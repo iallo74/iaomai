@@ -1228,7 +1228,7 @@ var SET = {
 	swIdeogrammi: function(){
 		// verifico le autorizzazioni
 		if(SET.blur){
-			ALERT(TXT("MsgContSoloPay"),true,true);
+			ALERT(TXT("MsgFunzioneSoloPay"),true,true);
 			return;
 		}
 		// --------------------------

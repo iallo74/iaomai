@@ -21,6 +21,7 @@ var SET = {
 	pMod: '',
 	pointEvi: '',
 	geometryPallino: null,
+	geometryPallino2: null,
 	geometryPallinoTrasp: null,
 	tmZone: null,
 	groupSel: '',
@@ -79,6 +80,8 @@ var SET = {
 		let modelloAperto = globals.modello.cartella;
 		if(!modelloAperto)modelloAperto='orecchio';
 		this.geometryPallino = new THREE.SphereGeometry( 0.04, facce, facce );
+		this.geometryPallino2 = new THREE.SphereGeometry( 0.05, facce, facce );
+		this.geometryPallino3 = new THREE.SphereGeometry( 0.06, facce, facce );
 		this.geometryPallinoTrasp = new THREE.SphereGeometry( 0.08, facceTrasp, facceTrasp );
 			
 		
@@ -229,7 +232,7 @@ var SET = {
 				n++;
 				let mat = this.MAT["pointBase"];
 				
-				this.P[n] = new THREE.Mesh( this.geometryPallino, cloneMAT(mat) );
+				this.P[n] = new THREE.Mesh( this["geometryPallino"+__(PTS[p].size,"")], cloneMAT(mat) );
 				
 				this.P[n].position.set(x,y,z);
 				this.P[n].name=name;

@@ -154,26 +154,15 @@ var MODULO_PUNTO = { // extend SET
 		if(touchable && smartphone){
 			wCont = WF()-40;
 		}
-		let rp = wCont/370,
-			bluring = '',
+		let bluring = '',
 			addNo = '';
-		/* if(SET.verLightVersion()){
-			bluring = 'filter: blur(10px);';
-			let txtNo = (SET.verLicenses())?TXT("MsgContSoloLicensed"):TXT("MsgContSoloPay");
-			addNo = ' title="'+htmlEntities(txtNo)+'" onClick="ALERT(\''+txtNo+'\');"';
-			if(!SET.verAttModule()){
-				HTML = HTML.replace(/class="dis_ric"/g,'class="dis_ric bluring"'+addNo);
-				HTML = HTML.replace(/class="dis_ter"/g,'class="dis_ter bluring"'+addNo);
-				HTML = HTML.replace(/class="dis_prs"/g,'class="dis_prs bluring"'+addNo);
-			}
-		} */
 		if(coordZoom.length>1){
 			let pC=coordZoom.split("|");
 			for(let pu in pC){
 				pC2=pC[pu].split(",");
 				pointsPositions.push({
-					x: parseInt((pC2[0]-7)*rp),
-					y: parseInt((pC2[1]-7)*rp)
+					x: parseInt((pC2[0]-7)),
+					y: parseInt((pC2[1]-7))
 				})
 			}
 		}

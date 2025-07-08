@@ -821,11 +821,12 @@ var LOGIN = {
 	// GESTIONE UTENTE
 	registrazione: function(){ // registra l'utente su server
 		if(CONN.retNoConn()){
-			if(document.registrazioneForm.StatoRegistrazione.value==''){
+			let verMac = isMac && !onlineVersion;
+			if(!verMac && document.registrazioneForm.StatoRegistrazione.value==''){
 				ALERT(TXT("selezionareValore").replace("[1]"," '"+TXT("Stato")+"' "));
 				return;
 			}
-			if(document.registrazioneForm.SessoRegistrazione.value==''){
+			if(!verMac && document.registrazioneForm.SessoRegistrazione.value==''){
 				ALERT(TXT("selezionareValore").replace("[1]"," '"+TXT("Sesso")+"' "));
 				return;
 			}
@@ -833,7 +834,7 @@ var LOGIN = {
 				ALERT(TXT("erroreRipetiPassword"));
 				return;
 			}
-			if(!document.registrazioneForm.DataNascita.value){
+			if(!verMac && !document.registrazioneForm.DataNascita.value){
 				ALERT(TXT("erroreDataNascita"));
 				return;
 			}

@@ -1,35 +1,30 @@
 DB.set = {
     punti: {
-        "500": {
-            NomePunto: "Punto ZERO",
-            AzioniPunto: "Xxx",
-            ChiaviPunto: ""
-        },
-        "501": {
-            NomePunto: "Vertebre cervicali",
-            AzioniPunto: "Xxx",
-            ChiaviPunto: ""
-        },
-        "508": {
-            NomePunto: "Vertebre dorsali",
-            AzioniPunto: "Xxx",
-            ChiaviPunto: ""
-        },
-        "520": {
-            NomePunto: "Vertebre lombari",
-            AzioniPunto: "Xxx",
-            ChiaviPunto: ""
-        },
-        "525": {
-            NomePunto: "Vertebre sacrali",
-            AzioniPunto: "Xxx",
-            ChiaviPunto: ""
-        },
-        "530": {
-            NomePunto: "Coccige",
-            AzioniPunto: "Xxx",
-            ChiaviPunto: ""
-        },
+        "727": {
+			NomePunto: "CORTEX_PRE-FRONTAL",
+			AzioniPunto: "Xxx",
+			ChiaviPunto: ""
+		},
+		"728": {
+			NomePunto: "CORTEX_FRONTAL",
+			AzioniPunto: "Xxx",
+			ChiaviPunto: ""
+		},
+		"729": {
+			NomePunto: "CORTEX_TEMPORAL",
+			AzioniPunto: "Xxx",
+			ChiaviPunto: ""
+		},
+		"730": {
+			NomePunto: "CORTEX_PARIETAL",
+			AzioniPunto: "Xxx",
+			ChiaviPunto: ""
+		},
+		"731": {
+			NomePunto: "CORTEX_OCCIPITAL",
+			AzioniPunto: "Xxx",
+			ChiaviPunto: ""
+		},
 		"531": {
 			NomePunto: "ARTICULATION_SACRO-LOMBAIRE",
 			AzioniPunto: "Xxx",
@@ -190,16 +185,6 @@ DB.set = {
 			AzioniPunto: "Xxx",
 			ChiaviPunto: ""
 		},
-		"575": {
-			NomePunto: "URETERE - METANEPHROS",
-			AzioniPunto: "Xxx",
-			ChiaviPunto: ""
-		},
-		"578": {
-			NomePunto: "REIN",
-			AzioniPunto: "Xxx",
-			ChiaviPunto: ""
-		},
 		"607": {
 			NomePunto: "PEAU",
 			AzioniPunto: "Xxx",
@@ -230,23 +215,8 @@ DB.set = {
 			AzioniPunto: "Xxx",
 			ChiaviPunto: ""
 		},
-		"645": {
-			NomePunto: "TRONC_CEREBRALE_PONT",
-			AzioniPunto: "Xxx",
-			ChiaviPunto: ""
-		},
-		"645": {
-			NomePunto: "TRONC_CEREBRALE_MESENCEPHALE",
-			AzioniPunto: "Xxx",
-			ChiaviPunto: ""
-		},
 		"652": {
 			NomePunto: "N._GLOSSO-PHARYNGIEN_-_IX_SENSITIF",
-			AzioniPunto: "Xxx",
-			ChiaviPunto: ""
-		},
-		"645": {
-			NomePunto: "TRONC_CEREBRALE_BULBE",
 			AzioniPunto: "Xxx",
 			ChiaviPunto: ""
 		},
@@ -260,18 +230,8 @@ DB.set = {
 			AzioniPunto: "Xxx",
 			ChiaviPunto: ""
 		},
-		"635": {
-			NomePunto: "NOYAUX_SENSITIF_LABYRINTH",
-			AzioniPunto: "Xxx",
-			ChiaviPunto: ""
-		},
 		"615": {
 			NomePunto: "LAME_QUADRIJUMELLE_SENSITIVE",
-			AzioniPunto: "Xxx",
-			ChiaviPunto: ""
-		},
-		"651": {
-			NomePunto: "PEDONCULES_CEREBRAUX_SENSITIF",
 			AzioniPunto: "Xxx",
 			ChiaviPunto: ""
 		},
@@ -300,11 +260,6 @@ DB.set = {
 			AzioniPunto: "Xxx",
 			ChiaviPunto: ""
 		},
-		"623": {
-			NomePunto: "N._INT._DE_WRISBERG_-_VII_b",
-			AzioniPunto: "Xxx",
-			ChiaviPunto: ""
-		},
 		"664": {
 			NomePunto: "ADENO_HYPOPHYSE",
 			AzioniPunto: "Xxx",
@@ -322,16 +277,6 @@ DB.set = {
 		},
 		"613": {
 			NomePunto: "HYPOTALAMUS_ANTERIEUR_NEURO_VEGETATIF",
-			AzioniPunto: "Xxx",
-			ChiaviPunto: ""
-		},
-		"628": {
-			NomePunto: "N._PATHETIQUE_-_IV",
-			AzioniPunto: "Xxx",
-			ChiaviPunto: ""
-		},
-		"637": {
-			NomePunto: "PEDONCULES_CEREBRAUX_MOTEUR",
 			AzioniPunto: "Xxx",
 			ChiaviPunto: ""
 		},
@@ -355,11 +300,6 @@ DB.set = {
 			AzioniPunto: "Xxx",
 			ChiaviPunto: ""
 		},
-		"619": {
-			NomePunto: "N._COCHLEO_VESTIBULAIRE_-_VIII",
-			AzioniPunto: "Xxx",
-			ChiaviPunto: ""
-		},
 		"621": {
 			NomePunto: "N._GLOSSO-PHARYNGIEN_-_IX_MOTEUR",
 			AzioniPunto: "Xxx",
@@ -380,28 +320,8 @@ DB.set = {
 			AzioniPunto: "Xxx",
 			ChiaviPunto: ""
 		},
-		"615": {
+		"736": {
 			NomePunto: "LAME_QUADRIJUMELLE_MOTRICE",
-			AzioniPunto: "Xxx",
-			ChiaviPunto: ""
-		},
-		"620": {
-			NomePunto: "N._FACIAL_-_VII",
-			AzioniPunto: "Xxx",
-			ChiaviPunto: ""
-		},
-		"624": {
-			NomePunto: "N._MOTEUR_OCULAIRE_COMMUN_-_III",
-			AzioniPunto: "Xxx",
-			ChiaviPunto: ""
-		},
-		"625": {
-			NomePunto: "N._MOTEUR_OCULAIRE_EXTERNE_-_VI",
-			AzioniPunto: "Xxx",
-			ChiaviPunto: ""
-		},
-		"629": {
-			NomePunto: "N._SPINAL_-_XI",
 			AzioniPunto: "Xxx",
 			ChiaviPunto: ""
 		},
@@ -420,12 +340,27 @@ DB.set = {
 			AzioniPunto: "Xxx",
 			ChiaviPunto: ""
 		},
-		"630": {
+		"735": {
+			NomePunto: "TRONC_CEREBRALE_PONT",
+			AzioniPunto: "Xxx",
+			ChiaviPunto: ""
+		},
+		"645": {
+			NomePunto: "TRONC_CEREBRALE_MESENCEPHALE",
+			AzioniPunto: "Xxx",
+			ChiaviPunto: ""
+		},
+		"734": {
+			NomePunto: "TRONC_CEREBRALE_BULBE",
+			AzioniPunto: "Xxx",
+			ChiaviPunto: ""
+		},
+		"732": {
 			NomePunto: "N._TRIJUMEAU_-_V2_-_MAXILLAIRE",
 			AzioniPunto: "Xxx",
 			ChiaviPunto: ""
 		},
-		"630": {
+		"733": {
 			NomePunto: "N._TRIJUMEAU_-_V3_-_MANDIBULAIRE",
 			AzioniPunto: "Xxx",
 			ChiaviPunto: ""
@@ -435,12 +370,397 @@ DB.set = {
 			AzioniPunto: "Xxx",
 			ChiaviPunto: ""
 		},
+		"623": {
+			NomePunto: "N._INT._DE_WRISBERG_-_VII_b",
+			AzioniPunto: "Xxx",
+			ChiaviPunto: ""
+		},
+		"575": {
+			NomePunto: "URETERE_-_METANEPHROS",
+			AzioniPunto: "Xxx",
+			ChiaviPunto: ""
+		},
+		"578": {
+			NomePunto: "REIN",
+			AzioniPunto: "Xxx",
+			ChiaviPunto: ""
+		},
+		"619": {
+			NomePunto: "N._COCHLEO_VESTIBULAIRE_-_VIII",
+			AzioniPunto: "Xxx",
+			ChiaviPunto: ""
+		},
+		"678": {
+			NomePunto: "PARASYMPATHIQUE_cranien",
+			AzioniPunto: "Xxx",
+			ChiaviPunto: ""
+		},
+		"677": {
+			NomePunto: "PARASYMPATHIQUE_PELVIEN",
+			AzioniPunto: "Xxx",
+			ChiaviPunto: ""
+		},
+		"685": {
+			NomePunto: "LIGNE_DES_SONS",
+			AzioniPunto: "Xxx",
+			ChiaviPunto: ""
+		},
+		"566": {
+			NomePunto: "OS_DE_LA_VOUTE",
+			AzioniPunto: "Xxx",
+			ChiaviPunto: ""
+		},
+		"565": {
+			NomePunto: "OS_DE_LA_FACE",
+			AzioniPunto: "Xxx",
+			ChiaviPunto: ""
+		},
+		"726": {
+			NomePunto: "VESSIE_SENSITIVE",
+			AzioniPunto: "Xxx",
+			ChiaviPunto: ""
+		},
+		"581": {
+			NomePunto: "UTERUS-VESICULE_SEMINALE",
+			AzioniPunto: "Xxx",
+			ChiaviPunto: ""
+		},
+		"576": {
+			NomePunto: "OVAIRE-TESTICULE",
+			AzioniPunto: "Xxx",
+			ChiaviPunto: ""
+		},
+		"579": {
+			NomePunto: "TROMPE_-_EPIDIDYME",
+			AzioniPunto: "Xxx",
+			ChiaviPunto: ""
+		},
+		"582": {
+			NomePunto: "VAGIN-PROSTATE",
+			AzioniPunto: "Xxx",
+			ChiaviPunto: ""
+		},
+		"538": {
+			NomePunto: "VESSIE_MOTRICE",
+			AzioniPunto: "Xxx",
+			ChiaviPunto: ""
+		},
+		"586": {
+			NomePunto: "POUMON",
+			AzioniPunto: "Xxx",
+			ChiaviPunto: ""
+		},
+		"587": {
+			NomePunto: "TRACHEE",
+			AzioniPunto: "Xxx",
+			ChiaviPunto: ""
+		},
+		"585": {
+			NomePunto: "LARYNX",
+			AzioniPunto: "Xxx",
+			ChiaviPunto: ""
+		},
+		"592": {
+			NomePunto: "ŒSOPHAGE",
+			AzioniPunto: "Xxx",
+			ChiaviPunto: ""
+		},
+		"591": {
+			NomePunto: "RECTUM",
+			AzioniPunto: "Xxx",
+			ChiaviPunto: ""
+		},
+		"599": {
+			NomePunto: "FOIE_DX",
+			AzioniPunto: "Xxx",
+			ChiaviPunto: ""
+		},
+		"598": {
+			NomePunto: "ESTOMAC_DX",
+			AzioniPunto: "Xxx",
+			ChiaviPunto: ""
+		},
+		"601": {
+			NomePunto: "PANCREAS_TETE_DX",
+			AzioniPunto: "Xxx",
+			ChiaviPunto: ""
+		},
+		"600": {
+			NomePunto: "ILEON_DX",
+			AzioniPunto: "Xxx",
+			ChiaviPunto: ""
+		},
+		"597": {
+			NomePunto: "DUODENUM_1_DX",
+			AzioniPunto: "Xxx",
+			ChiaviPunto: ""
+		},
+		"737": {
+			NomePunto: "DUODENUM_2_DX",
+			AzioniPunto: "Xxx",
+			ChiaviPunto: ""
+		},
+		"594": {
+			NomePunto: "CAECUM_DX",
+			AzioniPunto: "Xxx",
+			ChiaviPunto: ""
+		},
+		"596": {
+			NomePunto: "COLON_ACENDENT_DX",
+			AzioniPunto: "Xxx",
+			ChiaviPunto: ""
+		},
+		"595": {
+			NomePunto: "COLON_TRANSVERSE_DX",
+			AzioniPunto: "Xxx",
+			ChiaviPunto: ""
+		},
+		"605": {
+			NomePunto: "RATE_SX",
+			AzioniPunto: "Xxx",
+			ChiaviPunto: ""
+		},
+		"740": {
+			NomePunto: "PANCREAS_CORP_SX",
+			AzioniPunto: "Xxx",
+			ChiaviPunto: ""
+		},
+		"598": {
+			NomePunto: "ESTOMAC_SX",
+			AzioniPunto: "Xxx",
+			ChiaviPunto: ""
+		},
+		"739": {
+			NomePunto: "DUODENUM_4_SX",
+			AzioniPunto: "Xxx",
+			ChiaviPunto: ""
+		},
+		"738": {
+			NomePunto: "DUODENUM_3_SX",
+			AzioniPunto: "Xxx",
+			ChiaviPunto: ""
+		},
+		"604": {
+			NomePunto: "JEJINUM_SX",
+			AzioniPunto: "Xxx",
+			ChiaviPunto: ""
+		},
+		"741": {
+			NomePunto: "COLON_TRANSVERSE_SX",
+			AzioniPunto: "Xxx",
+			ChiaviPunto: ""
+		},
+		"603": {
+			NomePunto: "COLON_DESCENDANT_SX",
+			AzioniPunto: "Xxx",
+			ChiaviPunto: ""
+		},
+		"606": {
+			NomePunto: "COLON_SIGMOIDE_SX",
+			AzioniPunto: "Xxx",
+			ChiaviPunto: ""
+		},
+		"620": {
+			NomePunto: "N._MOTEUR_FACIAL_-_VII).00",
+			AzioniPunto: "Xxx",
+			ChiaviPunto: ""
+		},
+		"629": {
+			NomePunto: "N._ACCESSOIRE_MOTEUR_-_XI).00",
+			AzioniPunto: "Xxx",
+			ChiaviPunto: ""
+		},
+		"679": {
+			NomePunto: "NOYAU_NEURO-VEGETATIF_DU_NERF_VAGUE_X",
+			AzioniPunto: "Xxx",
+			ChiaviPunto: ""
+		},
+		"635": {
+			NomePunto: "NOYAUX_SENSITIF_LABYRINTH",
+			AzioniPunto: "Xxx",
+			ChiaviPunto: ""
+		},
+		"624": {
+			NomePunto: "N._MOTEUR_OCULAIRE_COMMUN_-_III",
+			AzioniPunto: "Xxx",
+			ChiaviPunto: ""
+		},
+		"625": {
+			NomePunto: "N._MOTEUR_OCULAIRE_EXTERNE_-_VI",
+			AzioniPunto: "Xxx",
+			ChiaviPunto: ""
+		},
+		"628": {
+			NomePunto: "N._PATHETIQUE_-_IV",
+			AzioniPunto: "Xxx",
+			ChiaviPunto: ""
+		},
+		"651": {
+			NomePunto: "PEDONCULES_CEREBRAUX_SENSITIF",
+			AzioniPunto: "Xxx",
+			ChiaviPunto: ""
+		},
+		"500": {
+			NomePunto: "Punto zero MASTER FRONTE",
+			AzioniPunto: "Xxx",
+			ChiaviPunto: ""
+		},
+		"501": {
+			NomePunto: "C1",
+			AzioniPunto: "Xxx",
+			ChiaviPunto: ""
+		},
+		"504": {
+			NomePunto: "C4",
+			AzioniPunto: "Xxx",
+			ChiaviPunto: ""
+		},
+		"503": {
+			NomePunto: "C3",
+			AzioniPunto: "Xxx",
+			ChiaviPunto: ""
+		},
+		"502": {
+			NomePunto: "C2",
+			AzioniPunto: "Xxx",
+			ChiaviPunto: ""
+		},
+		"505": {
+			NomePunto: "C5",
+			AzioniPunto: "Xxx",
+			ChiaviPunto: ""
+		},
+		"506": {
+			NomePunto: "C6",
+			AzioniPunto: "Xxx",
+			ChiaviPunto: ""
+		},
+		"507": {
+			NomePunto: "C7",
+			AzioniPunto: "Xxx",
+			ChiaviPunto: ""
+		},
+		"508": {
+			NomePunto: "D1",
+			AzioniPunto: "Xxx",
+			ChiaviPunto: ""
+		},
+		"509": {
+			NomePunto: "D2",
+			AzioniPunto: "Xxx",
+			ChiaviPunto: ""
+		},
+		"510": {
+			NomePunto: "D3",
+			AzioniPunto: "Xxx",
+			ChiaviPunto: ""
+		},
+		"511": {
+			NomePunto: "D4",
+			AzioniPunto: "Xxx",
+			ChiaviPunto: ""
+		},
+		"512": {
+			NomePunto: "D5",
+			AzioniPunto: "Xxx",
+			ChiaviPunto: ""
+		},
+		"513": {
+			NomePunto: "D6",
+			AzioniPunto: "Xxx",
+			ChiaviPunto: ""
+		},
+		"514": {
+			NomePunto: "D7",
+			AzioniPunto: "Xxx",
+			ChiaviPunto: ""
+		},
+		"515": {
+			NomePunto: "D8",
+			AzioniPunto: "Xxx",
+			ChiaviPunto: ""
+		},
+		"516": {
+			NomePunto: "D9",
+			AzioniPunto: "Xxx",
+			ChiaviPunto: ""
+		},
+		"517": {
+			NomePunto: "D10",
+			AzioniPunto: "Xxx",
+			ChiaviPunto: ""
+		},
+		"518": {
+			NomePunto: "D11",
+			AzioniPunto: "Xxx",
+			ChiaviPunto: ""
+		},
+		"519": {
+			NomePunto: "D12",
+			AzioniPunto: "Xxx",
+			ChiaviPunto: ""
+		},
+		"520": {
+			NomePunto: "L1",
+			AzioniPunto: "Xxx",
+			ChiaviPunto: ""
+		},
+		"521": {
+			NomePunto: "L2",
+			AzioniPunto: "Xxx",
+			ChiaviPunto: ""
+		},
+		"522": {
+			NomePunto: "L3",
+			AzioniPunto: "Xxx",
+			ChiaviPunto: ""
+		},
+		"523": {
+			NomePunto: "L4",
+			AzioniPunto: "Xxx",
+			ChiaviPunto: ""
+		},
+		"524": {
+			NomePunto: "L5",
+			AzioniPunto: "Xxx",
+			ChiaviPunto: ""
+		},
+		"525": {
+			NomePunto: "S1",
+			AzioniPunto: "Xxx",
+			ChiaviPunto: ""
+		},
+		"526": {
+			NomePunto: "S2",
+			AzioniPunto: "Xxx",
+			ChiaviPunto: ""
+		},
+		"527": {
+			NomePunto: "S3",
+			AzioniPunto: "Xxx",
+			ChiaviPunto: ""
+		},
+		"528": {
+			NomePunto: "S4",
+			AzioniPunto: "Xxx",
+			ChiaviPunto: ""
+		},
+		"529": {
+			NomePunto: "S5",
+			AzioniPunto: "Xxx",
+			ChiaviPunto: ""
+		},
+		"530": {
+			NomePunto: "COCCYX",
+			AzioniPunto: "Xxx",
+			ChiaviPunto: ""
+		},
 		"610": {
 			NomePunto: "HORMONE PROLACTINE",
 			AzioniPunto: "Xxx",
 			ChiaviPunto: ""
 		},
-		"646": {
+		"743": {
 			NomePunto: "HORMONE MELANOTROPE - MSH",
 			AzioniPunto: "Xxx",
 			ChiaviPunto: ""
@@ -455,11 +775,6 @@ DB.set = {
 			AzioniPunto: "Xxx",
 			ChiaviPunto: ""
 		},
-		"649": {
-			NomePunto: "THYREOSTIMULINE - TSH",
-			AzioniPunto: "Xxx",
-			ChiaviPunto: ""
-		},
 		"650": {
 			NomePunto: "CORTICOSTINULINE - ACTH",
 			AzioniPunto: "Xxx",
@@ -467,16 +782,6 @@ DB.set = {
 		},
 		"653": {
 			NomePunto: "HIPPOCAMPE",
-			AzioniPunto: "Xxx",
-			ChiaviPunto: ""
-		},
-		"654": {
-			NomePunto: "POINT GENITAL - LHFSH",
-			AzioniPunto: "Xxx",
-			ChiaviPunto: ""
-		},
-		"655": {
-			NomePunto: "HORMONE DE CROISSANCE - GA",
 			AzioniPunto: "Xxx",
 			ChiaviPunto: ""
 		},
@@ -520,12 +825,12 @@ DB.set = {
 			AzioniPunto: "Xxx",
 			ChiaviPunto: ""
 		},
-		"664": {
+		"744": {
 			NomePunto: "EPIPHYSE",
 			AzioniPunto: "Xxx",
 			ChiaviPunto: ""
 		},
-		"665": {
+		"745": {
 			NomePunto: "O PRIME",
 			AzioniPunto: "Xxx",
 			ChiaviPunto: ""
@@ -565,7 +870,7 @@ DB.set = {
 			AzioniPunto: "Xxx",
 			ChiaviPunto: ""
 		},
-		"673": {
+		"746": {
 			NomePunto: "COMMISSURE HABENULAIRE",
 			AzioniPunto: "Xxx",
 			ChiaviPunto: ""
@@ -576,27 +881,12 @@ DB.set = {
 			ChiaviPunto: ""
 		},
 		"675": {
-			NomePunto: "GANGLION SPHENO -PALATIN",
+			NomePunto: "GANGLION PTERYGOPALATIN",
 			AzioniPunto: "Xxx",
 			ChiaviPunto: ""
 		},
 		"676": {
-			NomePunto: "GANGLION D'ANDERSCH",
-			AzioniPunto: "Xxx",
-			ChiaviPunto: ""
-		},
-		"677": {
-			NomePunto: "PARASYMPATHIQUE PELVIEN",
-			AzioniPunto: "Xxx",
-			ChiaviPunto: ""
-		},
-		"678": {
-			NomePunto: "PARASYMPATHIQUE CRANIEN",
-			AzioniPunto: "Xxx",
-			ChiaviPunto: ""
-		},
-		"679": {
-			NomePunto: "NOYAU CARDIO-PNEUMO-ENTERIQUE VAGAL X",
+			NomePunto: "GANGLION OPTIQUE",
 			AzioniPunto: "Xxx",
 			ChiaviPunto: ""
 		},
@@ -622,6 +912,271 @@ DB.set = {
 		},
 		"684": {
 			NomePunto: "POINT ALLERGIE",
+			AzioniPunto: "Xxx",
+			ChiaviPunto: ""
+		},
+		"725": {
+			NomePunto: "URETHRE",
+			AzioniPunto: "Xxx",
+			ChiaviPunto: ""
+		},
+		"574": {
+			NomePunto: "CLITORIS-GLANDE PENNIEN",
+			AzioniPunto: "Xxx",
+			ChiaviPunto: ""
+		},
+		"722": {
+			NomePunto: "HYPO-PHARYNX",
+			AzioniPunto: "Xxx",
+			ChiaviPunto: ""
+		},
+		"588": {
+			NomePunto: "EPIGLOTTE",
+			AzioniPunto: "Xxx",
+			ChiaviPunto: ""
+		},
+		"720": {
+			NomePunto: "CARDIAS",
+			AzioniPunto: "Xxx",
+			ChiaviPunto: ""
+		},
+		"724": {
+			NomePunto: "PYLORE",
+			AzioniPunto: "Xxx",
+			ChiaviPunto: ""
+		},
+		"723": {
+			NomePunto: "PHARYNX",
+			AzioniPunto: "Xxx",
+			ChiaviPunto: ""
+		},
+		"590": {
+			NomePunto: "MUQUEUSE LINGUALE",
+			AzioniPunto: "Xxx",
+			ChiaviPunto: ""
+		},
+		"721": {
+			NomePunto: "HEMORROIDES - ANUS",
+			AzioniPunto: "Xxx",
+			ChiaviPunto: ""
+		},
+		"602": {
+			NomePunto: "VESICULE BILIAIRE DX",
+			AzioniPunto: "Xxx",
+			ChiaviPunto: ""
+		},
+		"593": {
+			NomePunto: "APPENDICE DX",
+			AzioniPunto: "Xxx",
+			ChiaviPunto: ""
+		},
+		"717": {
+			NomePunto: "GLANDE THYROIDE - c7",
+			AzioniPunto: "Xxx",
+			ChiaviPunto: ""
+		},
+		"719": {
+			NomePunto: "THYMUS - T1",
+			AzioniPunto: "Xxx",
+			ChiaviPunto: ""
+		},
+		"718": {
+			NomePunto: "PANCREAS ENDOCRINE - T6",
+			AzioniPunto: "Xxx",
+			ChiaviPunto: ""
+		},
+		"716": {
+			NomePunto: "GLANDE MEDULLO SURRENALE ENDOCRINE - T12",
+			AzioniPunto: "Xxx",
+			ChiaviPunto: ""
+		},
+		"715": {
+			NomePunto: "GLANDE  PARATHYROIDE ENDOCRINE- C5",
+			AzioniPunto: "Xxx",
+			ChiaviPunto: ""
+		},
+		"649": {
+			NomePunto: "THYREOSTIMULINE - TSH",
+			AzioniPunto: "Xxx",
+			ChiaviPunto: ""
+		},
+		"654": {
+			NomePunto: "POINT GENITAL - LHFSH",
+			AzioniPunto: "Xxx",
+			ChiaviPunto: ""
+		},
+		"655": {
+			NomePunto: "HORMONE DE CROISSANCE - GA",
+			AzioniPunto: "Xxx",
+			ChiaviPunto: ""
+		},
+		"571": {
+			NomePunto: "N. SENSITIF DU NERF VAGUE - X",
+			AzioniPunto: "Xxx",
+			ChiaviPunto: ""
+		},
+		"573": {
+			NomePunto: "N. SENSITIF DU GLOSSOPHARYNGIEN - IX",
+			AzioniPunto: "Xxx",
+			ChiaviPunto: ""
+		},
+		"570": {
+			NomePunto: "N. SENSITIF OLFACTIF - I",
+			AzioniPunto: "Xxx",
+			ChiaviPunto: ""
+		},
+		"584": {
+			NomePunto: "N. SENSITIF OPTIQUE - II",
+			AzioniPunto: "Xxx",
+			ChiaviPunto: ""
+		},
+		"572": {
+			NomePunto: "NEZ",
+			AzioniPunto: "Xxx",
+			ChiaviPunto: ""
+		},
+		"714": {
+			NomePunto: "FORNIX - TRIGONE",
+			AzioniPunto: "Xxx",
+			ChiaviPunto: ""
+		},
+		"569": {
+			NomePunto: "SINUS MAXILLAIRE",
+			AzioniPunto: "Xxx",
+			ChiaviPunto: ""
+		},
+		"567": {
+			NomePunto: "SINUS ETHMOIDAL",
+			AzioniPunto: "Xxx",
+			ChiaviPunto: ""
+		},
+		"568": {
+			NomePunto: "SINUS FRONTAL",
+			AzioniPunto: "Xxx",
+			ChiaviPunto: ""
+		},
+		"686": {
+			NomePunto: "GANGLION C1",
+			AzioniPunto: "Xxx",
+			ChiaviPunto: ""
+		},
+		"688": {
+			NomePunto: "GANGLION C3",
+			AzioniPunto: "Xxx",
+			ChiaviPunto: ""
+		},
+		"692": {
+			NomePunto: "GANGLION C7",
+			AzioniPunto: "Xxx",
+			ChiaviPunto: ""
+		},
+		"702": {
+			NomePunto: "GANGLION T1",
+			AzioniPunto: "Xxx",
+			ChiaviPunto: ""
+		},
+		"703": {
+			NomePunto: "GANGLION T2",
+			AzioniPunto: "Xxx",
+			ChiaviPunto: ""
+		},
+		"704": {
+			NomePunto: "GANGLION T3",
+			AzioniPunto: "Xxx",
+			ChiaviPunto: ""
+		},
+		"705": {
+			NomePunto: "GANGLION T4",
+			AzioniPunto: "Xxx",
+			ChiaviPunto: ""
+		},
+		"706": {
+			NomePunto: "GANGLION T5",
+			AzioniPunto: "Xxx",
+			ChiaviPunto: ""
+		},
+		"707": {
+			NomePunto: "GANGLION T6",
+			AzioniPunto: "Xxx",
+			ChiaviPunto: ""
+		},
+		"708": {
+			NomePunto: "GANGLION T7",
+			AzioniPunto: "Xxx",
+			ChiaviPunto: ""
+		},
+		"709": {
+			NomePunto: "GANGLION T8",
+			AzioniPunto: "Xxx",
+			ChiaviPunto: ""
+		},
+		"710": {
+			NomePunto: "GANGLION T9",
+			AzioniPunto: "Xxx",
+			ChiaviPunto: ""
+		},
+		"711": {
+			NomePunto: "GANGLION T10",
+			AzioniPunto: "Xxx",
+			ChiaviPunto: ""
+		},
+		"712": {
+			NomePunto: "GANGLION T11",
+			AzioniPunto: "Xxx",
+			ChiaviPunto: ""
+		},
+		"713": {
+			NomePunto: "GANGLION T12",
+			AzioniPunto: "Xxx",
+			ChiaviPunto: ""
+		},
+		"693": {
+			NomePunto: "GANGLION L1",
+			AzioniPunto: "Xxx",
+			ChiaviPunto: ""
+		},
+		"694": {
+			NomePunto: "GANGLION L2",
+			AzioniPunto: "Xxx",
+			ChiaviPunto: ""
+		},
+		"695": {
+			NomePunto: "GANGLION L3",
+			AzioniPunto: "Xxx",
+			ChiaviPunto: ""
+		},
+		"696": {
+			NomePunto: "GANGLION L4",
+			AzioniPunto: "Xxx",
+			ChiaviPunto: ""
+		},
+		"697": {
+			NomePunto: "GANGLION L5",
+			AzioniPunto: "Xxx",
+			ChiaviPunto: ""
+		},
+		"698": {
+			NomePunto: "GANGLION S1",
+			AzioniPunto: "Xxx",
+			ChiaviPunto: ""
+		},
+		"699": {
+			NomePunto: "GANGLION S2",
+			AzioniPunto: "Xxx",
+			ChiaviPunto: ""
+		},
+		"700": {
+			NomePunto: "GANGLION S3",
+			AzioniPunto: "Xxx",
+			ChiaviPunto: ""
+		},
+		"701": {
+			NomePunto: "GANGLION S4",
+			AzioniPunto: "Xxx",
+			ChiaviPunto: ""
+		},
+		"626": {
+			NomePunto: "BULBE OLFACTIF",
 			AzioniPunto: "Xxx",
 			ChiaviPunto: ""
 		},

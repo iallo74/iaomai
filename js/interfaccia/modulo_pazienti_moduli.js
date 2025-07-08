@@ -137,6 +137,7 @@ var PAZIENTI_MODULI = { // extend PAZIENTI
 								'	</span>' +
 								'</div>';
 		document.getElementById("gruppoPunti_cont").innerHTML = HTML;
+		document.getElementById("gruppoPunti_cont").dataset.category = category;
 	},
 	swCatModuli: function(){
 		PAZIENTI.tipoElencoModuli = PAZIENTI.tipoElencoModuli?'':'elenco';
@@ -151,6 +152,12 @@ var PAZIENTI_MODULI = { // extend PAZIENTI
 		PAZIENTI.popolaModuli();
 	},
 	importaModuli: function(){ // importa un modulo di valutazione della scheda trattamento
+		// verifico le autorizzazioni
+		if(!LOGIN.verMonoApp().length && document.getElementById("gruppoPunti_cont").dataset.category!='custom'){
+			ALERT(TXT("MsgFunzioneSoloPay"),true,true);
+			return;
+		}
+		// --------------------------
 		let els = document.getElementById("gruppoPunti_cont").getElementsByTagName("input"),
 			errVuoto = false,
 			nChecked = 0;

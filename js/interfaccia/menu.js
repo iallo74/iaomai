@@ -739,6 +739,14 @@ var MENU = {
 			if(p)html +='<option value="'+p+'">'+htmlEntities(paesi[p])+'</option>'+H.chr10;
 		}
 		document.getElementById("paeseRegistrazione").innerHTML = html;
+		let verMac = isMac && !onlineVersion;
+		if(verMac){
+			let frm = document.registrazioneForm,
+				list = ["Indirizzo","CAP","Citta","Provincia","Professione"];
+			for(e in list){
+				frm[list[e]].id = frm[list[e]].name;
+			}
+		}
 		LOGIN.getProfessioni();
 	},
 	chiudiRecupero: function(){

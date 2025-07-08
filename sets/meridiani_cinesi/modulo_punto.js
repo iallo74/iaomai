@@ -132,14 +132,13 @@ var MODULO_PUNTO = { // extend SET
 		if(touchable && smartphone){
 			wCont = WF()-40;
 		}
-		let rp = wCont/370;
 		if(coordZoom.length>1){
 			let pC=coordZoom.split("|");
 			for(let pu in pC){
 				pC2=pC[pu].split(",");
 				pointsPositions.push({
-					x: parseInt((pC2[0]-7)*rp),
-					y: parseInt((pC2[1]-7)*rp)
+					x: parseInt((pC2[0]-7)),
+					y: parseInt((pC2[1]-7))
 				})
 			}
 		}

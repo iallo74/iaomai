@@ -1407,7 +1407,7 @@ var SET = {
 	cambiaMappa: function( name, loader ){
 		// verifico le autorizzazioni
 		if(name!='Pelle' && name!='BN' && SET.blur){
-			ALERT(TXT("MsgContSoloPay"),true,true);
+			ALERT(TXT("MsgFunzioneSoloPay"),true,true);
 			let els = document.getElementById("sceltaMappaElenco").getElementsByTagName("option")
 			for(let e=0;e<els.length;e++){
 				if(els[e].value == localStorage.imgMappa)document.getElementById("sceltaMappaElenco").selectedIndex = e;
@@ -1463,7 +1463,7 @@ var SET = {
 	swLM: function(){ // mostra/nasconde i landmarks
 		// verifico le autorizzazioni
 		if(SET.blur){
-			ALERT(TXT("MsgContSoloPay"),true,true);
+			ALERT(TXT("MsgFunzioneSoloPay"),true,true);
 			return;
 		}
 		// --------------------------

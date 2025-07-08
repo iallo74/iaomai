@@ -189,12 +189,12 @@ var MODULO_PUNTI = { // extend SET
 								 htmlEntities(TXT("Legenda_"+legenda[l].name))+'</p>';
 			}
 		}
-		elencoLegenda+=	'<p class="legendaDida points">'+
+		/* elencoLegenda+=	'<p class="legendaDida points">'+
 						'<i>' + htmlEntities(TXT("Legenda_DidaPunti_tit")) + '</i>' +
 						'<br><span class="pINT"></span>' + htmlEntities(TXT("Legenda_DidaPunti_INT")) + 
 						'<br><span class="pEUR"></span>' + htmlEntities(TXT("Legenda_DidaPunti_EUR")) + 
 						'<br><span class="pCIN"></span>' + htmlEntities(TXT("Legenda_DidaPunti_CIN")) + 
-						'</p>';
+						'</p>'; */
 		if(elencoLegenda){
 			contElenco +=	'<div id="p_legenda"';
 			if(!globals.modello.cartella)contElenco +=	
